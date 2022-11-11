@@ -1285,17 +1285,17 @@
     "description": "hCaptcha is the name of a website, should not be translated"
   },
   "loadAccessibilityCookie": {
-    "message": "Load accessibility cookie"
+    "message": "Зареждане на бисквитка за достъпност"
   },
   "registerAccessibilityUser": {
-    "message": "Register as an accessibility user at",
+    "message": "Регистрирайте се като потребител на достъпност на",
     "description": "ex. Register as an accessibility user at hcaptcha.com"
   },
   "copyPasteLink": {
     "message": "Копирайте връзката изпратена на е-пощата Ви и я поставете по-долу"
   },
   "enterhCaptchaUrl": {
-    "message": "Enter URL to load accessibility cookie for hCaptcha",
+    "message": "Въведете URL за зареждане на бисквитка за достъпност за hCaptcha",
     "description": "hCaptcha is the name of a website, should not be translated"
   },
   "hCaptchaUrlRequired": {
@@ -1309,10 +1309,10 @@
     "message": "Готово"
   },
   "accessibilityCookieSaved": {
-    "message": "Accessibility cookie saved!"
+    "message": "Бисквитката за достъпност е запазена!"
   },
   "noAccessibilityCookieSaved": {
-    "message": "No accessibility cookie saved"
+    "message": "Няма запазена бисквитка за достъпност"
   },
   "warning": {
     "message": "ВНИМАНИЕ",
@@ -1955,17 +1955,17 @@
     "message": "Тип потребителско име"
   },
   "plusAddressedEmail": {
-    "message": "Plus addressed email",
+    "message": "Плюс адресиран имейл",
     "description": "Username generator option that appends a random sub-address to the username. For example: address+subaddress@email.com"
   },
   "plusAddressedEmailDesc": {
     "message": "Използвайте възможностите за под-адресиране на е-поща на своя доставчик."
   },
   "catchallEmail": {
-    "message": "Catch-all email"
+    "message": "Всички имейли"
   },
   "catchallEmailDesc": {
-    "message": "Use your domain's configured catch-all inbox."
+    "message": "Използвайте конфигурираната входяща кутия за събиране на всичко."
   },
   "random": {
     "message": "Произволно"
@@ -1989,10 +1989,10 @@
     "message": "Търсене в моя трезор"
   },
   "forwardedEmail": {
-    "message": "Forwarded email alias"
+    "message": "Псевдоним на препратен имейл"
   },
   "forwardedEmailDesc": {
-    "message": "Generate an email alias with an external forwarding service."
+    "message": "Генерирайте имейл псевдоним с външна услуга за препращане."
   },
   "hostname": {
     "message": "Име на сървъра",

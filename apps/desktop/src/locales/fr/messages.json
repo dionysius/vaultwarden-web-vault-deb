@@ -2023,22 +2023,22 @@
     "message": "Coffre"
   },
   "loginWithMasterPassword": {
-    "message": "Log in with master password"
+    "message": "Connectez-vous avec le mot de passe maître"
   },
   "loggingInAs": {
-    "message": "Logging in as"
+    "message": "Connexion en tant que"
   },
   "rememberEmail": {
-    "message": "Remember email"
+    "message": "Se souvenir de l'e-mail"
   },
   "notYou": {
-    "message": "Not you?"
+    "message": "Ce n'est pas vous ?"
   },
   "newAroundHere": {
-    "message": "New around here?"
+    "message": "Vous êtes nouveau ici ?"
   },
   "loggingInTo": {
-    "message": "Logging in to $DOMAIN$",
+    "message": "Connexion à $DOMAIN$",
     "placeholders": {
       "domain": {
         "content": "$1",
@@ -2047,6 +2047,6 @@
     }
   },
   "logInWithAnotherDevice": {
-    "message": "Log in with another device"
+    "message": "Connectez-vous avec un autre appareil"
   }
 }

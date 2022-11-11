@@ -1267,7 +1267,7 @@
     "description": "ex. Date this item was updated"
   },
   "dateCreated": {
-    "message": "Created",
+    "message": "נוצר",
     "description": "ex. Date this item was created"
   },
   "datePasswordUpdated": {
@@ -1575,10 +1575,10 @@
     "message": "אינטגרצייה עם הדפדפן מאפשרת שימוש באמצעיים ביומטריים בדפדפן."
   },
   "enableDuckDuckGoBrowserIntegration": {
-    "message": "Allow DuckDuckGo browser integration"
+    "message": "אפשר שילוב דפדפן DuckDuckGo"
   },
   "enableDuckDuckGoBrowserIntegrationDesc": {
-    "message": "Use your Bitwarden vault when browsing with DuckDuckGo."
+    "message": "השתמש בכספת Bitwarden שלך בעת גלישה עם DuckDuckGo."
   },
   "browserIntegrationUnsupportedTitle": {
     "message": "שילוב הדפדפן אינו נתמך"
@@ -1608,7 +1608,7 @@
     "message": "בבקשה, וודא כי חתימת האצבע הדיגיטלית המוצגת זהה לחתימה שמופיע בתוסף הדפדפן."
   },
   "verifyNativeMessagingConnectionTitle": {
-    "message": "$APPID$ wants to connect to Bitwarden",
+    "message": "$APPID$ רוצה להתחבר ל-Bitwarden",
     "placeholders": {
       "appid": {
         "content": "$1",
@@ -1617,10 +1617,10 @@
     }
   },
   "verifyNativeMessagingConnectionDesc": {
-    "message": "Would you like to approve this request?"
+    "message": "האם תרצה לאשר בקשה זו?"
   },
   "verifyNativeMessagingConnectionWarning": {
-    "message": "If you did not initiate this request, do not approve it."
+    "message": "אם לא יזמת בקשה זו, אל תאשר אותה."
   },
   "biometricsNotEnabledTitle": {
     "message": "לא הופעלו אמצעי זיהוי ביומטריים"
@@ -2020,25 +2020,25 @@
     "message": "Mir"
   },
   "vault": {
-    "message": "Vault"
+    "message": "כספת"
   },
   "loginWithMasterPassword": {
-    "message": "Log in with master password"
+    "message": "היכנס עם סיסמת מאסטר"
   },
   "loggingInAs": {
-    "message": "Logging in as"
+    "message": "כניסה בתור"
   },
   "rememberEmail": {
-    "message": "Remember email"
+    "message": "זכור אימייל"
   },
   "notYou": {
-    "message": "Not you?"
+    "message": "לא אתה?"
   },
   "newAroundHere": {
-    "message": "New around here?"
+    "message": "חדש כאן?"
   },
   "loggingInTo": {
-    "message": "Logging in to $DOMAIN$",
+    "message": "נכנס ל-$DOMAIN$",
     "placeholders": {
       "domain": {
         "content": "$1",
@@ -2047,6 +2047,6 @@
     }
   },
   "logInWithAnotherDevice": {
-    "message": "Log in with another device"
+    "message": "התחבר עם מכשיר אחר"
   }
 }

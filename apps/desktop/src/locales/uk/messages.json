@@ -461,13 +461,13 @@
     "message": "Ви дійсно хочете видалити це вкладення?"
   },
   "attachmentSaved": {
-    "message": "Вкладення збережено."
+    "message": "Вкладення збережено"
   },
   "file": {
     "message": "Файл"
   },
   "selectFile": {
-    "message": "Оберіть файл."
+    "message": "Оберіть файл"
   },
   "maxFileSize": {
     "message": "Максимальний розмір файлу 500 Мб."
@@ -476,7 +476,7 @@
     "message": "Ви не можете використовувати цю функцію доки не оновите свій ключ шифрування."
   },
   "editedFolder": {
-    "message": "Теку змінено"
+    "message": "Теку збережено"
   },
   "addedFolder": {
     "message": "Теку додано"
@@ -650,7 +650,7 @@
     "message": "FIDO2 WebAuthn"
   },
   "webAuthnDesc": {
-    "message": "Використовуйте будь-який ключ безпеки WebAuthn для доступу до сховища."
+    "message": "Використовуйте будь-який сумісний з WebAuthn ключ безпеки для доступу до сховища."
   },
   "emailTitle": {
     "message": "Е-пошта"
@@ -662,7 +662,7 @@
     "message": "Вхід недоступний"
   },
   "noTwoStepProviders": {
-    "message": "Для цього облікового запису увімкнено двоетапну перевірку. Однак, жоден з налаштованих провайдерів двоетапної перевірки не підтримується цим пристроєм."
+    "message": "Для цього облікового запису налаштовано двоетапну перевірку. Однак, жоден із налаштованих провайдерів двоетапної перевірки не підтримується цим пристроєм."
   },
   "noTwoStepProviders2": {
     "message": "Додайте інших провайдерів, які краще підтримуються різними пристроями, наприклад програма авторизації."
@@ -701,7 +701,7 @@
     "message": "URL-адреса сервера піктограм"
   },
   "environmentSaved": {
-    "message": "URL-адреси середовища збережено."
+    "message": "URL-адреси середовища збережено"
   },
   "ok": {
     "message": "Ok"
@@ -734,13 +734,13 @@
     "message": "Вийти"
   },
   "addNewLogin": {
-    "message": "Додати новий запис"
+    "message": "Новий вхід"
   },
   "addNewItem": {
-    "message": "Додати новий елемент"
+    "message": "Новий елемент"
   },
   "addNewFolder": {
-    "message": "Додати нову теку"
+    "message": "Нова тека"
   },
   "view": {
     "message": "Перегляд"
@@ -770,7 +770,7 @@
     "message": "Блог"
   },
   "followUs": {
-    "message": "Слідкуйте за нами"
+    "message": "Стежте за нами"
   },
   "syncVault": {
     "message": "Синхронізувати сховище"
@@ -827,7 +827,7 @@
     "message": "Неправильний головний пароль"
   },
   "twoStepLoginConfirmation": {
-    "message": "Двоетапна перевірка робить ваш обліковий запис більш захищеним, вимагаючи підтвердження входу з використанням іншого пристрою, наприклад, за допомогою коду безпеки, програми авторизації, SMS, телефонного виклику, або е-пошти. Ви можете увімкнути двоетапну перевірку в сховищі на bitwarden.com. Хочете перейти на вебсайт зараз?"
+    "message": "Двоетапна перевірка дає змогу надійніше захистити ваш обліковий запис, вимагаючи підтвердження входу з використанням іншого пристрою, наприклад, за допомогою коду безпеки, програми авторизації, SMS, телефонного виклику, або е-пошти. Ви можете налаштувати двоетапну перевірку в сховищі на bitwarden.com. Хочете перейти на вебсайт зараз?"
   },
   "twoStepLogin": {
     "message": "Двоетапна перевірка"
@@ -928,7 +928,7 @@
     "message": "При закритті вікна, показувати піктограму в панелі завдань."
   },
   "enableTray": {
-    "message": "Увімкнути піктограму в системному лотку"
+    "message": "Увімкнути піктограму в панелі сповіщень"
   },
   "enableTrayDesc": {
     "message": "Завжди показувати піктограму в системному лотку."
@@ -1256,10 +1256,10 @@
     "description": "Text for a button that toggles the visibility of the window. Shows the window when it is hidden or hides the window if it is currently open."
   },
   "hideToTray": {
-    "message": "Згорнути в лоток"
+    "message": "Згорнути до панелі сповіщень"
   },
   "alwaysOnTop": {
-    "message": "Завжди поверх всіх вікон",
+    "message": "Завжди на передньому плані",
     "description": "Application window should always stay on top of other windows"
   },
   "dateUpdated": {
@@ -1275,7 +1275,7 @@
     "description": "ex. Date this password was updated"
   },
   "exportVault": {
-    "message": "Експорт сховища"
+    "message": "Експортувати сховище"
   },
   "fileFormat": {
     "message": "Формат файлу"
@@ -1450,7 +1450,7 @@
     "message": "Ви справді хочете піти? Якщо ви зараз підете, вашу поточну інформацію не буде збережено."
   },
   "unsavedChangesTitle": {
-    "message": "Є незбережені зміни"
+    "message": "Незбережені зміни"
   },
   "clone": {
     "message": "Клонувати"
@@ -1623,13 +1623,13 @@
     "message": "Відхиліть цей запит, якщо ви його не ініціювали."
   },
   "biometricsNotEnabledTitle": {
-    "message": "Біометрію не увімкнено"
+    "message": "Біометрію не налаштовано"
   },
   "biometricsNotEnabledDesc": {
-    "message": "Для активації біометрії в браузері необхідно спершу увімкнути біометрію в програмі на комп'ютері."
+    "message": "Для використання біометрії в браузері необхідно спершу налаштувати її в програмі на комп'ютері."
   },
   "personalOwnershipSubmitError": {
-    "message": "У зв'язку з корпоративною політикою, вам не дозволено зберігати записи до особистого сховища. Змініть налаштування власності на організацію та виберіть серед доступних збірок."
+    "message": "Згідно з політикою компанії, вам заборонено зберігати записи в особистому сховищі. Змініть опцію власника на організацію та виберіть серед доступних збірок."
   },
   "hintEqualsPassword": {
     "message": "Підказка для пароля не може бути такою самою, як ваш пароль."
@@ -1711,11 +1711,11 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createdSend": {
-    "message": "Відправлення створено",
+    "message": "Відправлення додано",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editedSend": {
-    "message": "Відправлення змінено",
+    "message": "Відправлення збережено",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "deletedSend": {
@@ -1730,7 +1730,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createSend": {
-    "message": "Створити відправлення",
+    "message": "Нове відправлення",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendTextDesc": {
@@ -1766,7 +1766,7 @@
     "message": "Копіювати посилання, щоб поділитися відправленням після збереження."
   },
   "sendDisabled": {
-    "message": "Відправлення вимкнено",
+    "message": "Відправлення вилучено",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendDisabledWarning": {
@@ -1844,13 +1844,13 @@
     "message": "Час очікування сховища перевищує обмеження, встановлені вашою організацією."
   },
   "resetPasswordPolicyAutoEnroll": {
-    "message": "Автоматичне розгортання"
+    "message": "Автоматичне подання запиту"
   },
   "resetPasswordAutoEnrollInviteWarning": {
     "message": "Ця організація має корпоративну політику, яка автоматично розгортає вас на скидання пароля. Розгортання дозволятиме адміністраторам організації змінювати ваш головний пароль."
   },
   "vaultExportDisabled": {
-    "message": "Експорт сховища вимкнено"
+    "message": "Експорт сховища вилучено"
   },
   "personalVaultExportPolicyInEffect": {
     "message": "Одна чи декілька організаційних політик не дозволяють вам експортувати особисте сховище."
@@ -1862,7 +1862,7 @@
     "message": "Вилучити головний пароль"
   },
   "removedMasterPassword": {
-    "message": "Головний пароль вилучено."
+    "message": "Головний пароль вилучено"
   },
   "convertOrganizationEncryptionDesc": {
     "message": "$ORGANIZATION$ використовує SSO з власним сервером ключів. Головний пароль для учасників цієї організації більше не вимагається.",
@@ -1895,7 +1895,7 @@
     "message": "Налаштування"
   },
   "appPreferences": {
-    "message": "Налаштування програми (Усі облікові записи)"
+    "message": "Налаштування програми (усі облікові записи)"
   },
   "accountSwitcherLimitReached": {
     "message": "Досягнуто обмеження облікового запису. Вийдіть, щоб додати інший обліковий запис."
@@ -2008,10 +2008,10 @@
     "message": "Необхідна передплата преміум"
   },
   "organizationIsDisabled": {
-    "message": "Організацію вимкнено."
+    "message": "Організацію призупинено"
   },
   "disabledOrganizationFilterError": {
-    "message": "Записи у вимкнених організаціях недоступні. Зверніться до власника вашої організації для отримання допомоги."
+    "message": "Записи у призупинених організаціях недоступні. Зверніться до власника вашої організації для отримання допомоги."
   },
   "neverLockWarning": {
     "message": "Ви впевнені, що ніколи не хочете блокувати? Встановивши параметр блокування \"Ніколи\", ключ шифрування сховища зберігатиметься на вашому пристрої. Користуючись цим параметром, ви маєте бути впевнені в тому, що ваш пристрій надійно захищений."

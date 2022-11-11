@@ -45,10 +45,10 @@
     "message": "Partilhar"
   },
   "moveToOrganization": {
-    "message": "Move to organization"
+    "message": "Mover para a organização"
   },
   "movedItemToOrg": {
-    "message": "$ITEMNAME$ moved to $ORGNAME$",
+    "message": "$ITEMNAME$ movido para $ORGNAME$",
     "placeholders": {
       "itemname": {
         "content": "$1",
@@ -61,7 +61,7 @@
     }
   },
   "moveToOrgDesc": {
-    "message": "Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved."
+    "message": "Escolha uma organização para a qual deseja mover este item. A mudança para uma organização transfere a propriedade do item para essa organização. Deixará de ser o proprietário directo deste item uma vez que tenha sido movido."
   },
   "attachments": {
     "message": "Anexos"
@@ -332,7 +332,7 @@
     "message": "Booleano"
   },
   "cfTypeLinked": {
-    "message": "Linked",
+    "message": "Ligado",
     "description": "This describes a field that is 'linked' (related) to another field."
   },
   "linkedValue": {

@@ -2023,22 +2023,22 @@
     "message": "Cassaforte"
   },
   "loginWithMasterPassword": {
-    "message": "Log in with master password"
+    "message": "Accedi con la password principale"
   },
   "loggingInAs": {
-    "message": "Logging in as"
+    "message": "Accesso eseguito come"
   },
   "rememberEmail": {
-    "message": "Remember email"
+    "message": "Ricorda email"
   },
   "notYou": {
-    "message": "Not you?"
+    "message": "Non sei tu?"
   },
   "newAroundHere": {
-    "message": "New around here?"
+    "message": "Nuovo da queste parti?"
   },
   "loggingInTo": {
-    "message": "Logging in to $DOMAIN$",
+    "message": "Accedo a $DOMAIN$",
     "placeholders": {
       "domain": {
         "content": "$1",
@@ -2047,6 +2047,6 @@
     }
   },
   "logInWithAnotherDevice": {
-    "message": "Log in with another device"
+    "message": "Accedi con un altro dispositivo"
   }
 }

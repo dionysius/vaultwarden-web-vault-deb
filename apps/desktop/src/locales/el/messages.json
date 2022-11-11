@@ -536,10 +536,10 @@
     "message": "Απαιτείται κύριος κωδικός πρόσβασης."
   },
   "confirmMasterPasswordRequired": {
-    "message": "Master password retype is required."
+    "message": "Απαιτείται ξανά ο κύριος κωδικός πρόσβασης."
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least 8 characters long."
+    "message": "Ο κύριος κωδικός πρέπει να έχει μήκος τουλάχιστον 8 χαρακτήρες."
   },
   "masterPassDoesntMatch": {
     "message": "Η επιβεβαίωση κύριου κωδικού δεν ταιριάζει."
@@ -901,7 +901,7 @@
     "message": "Εμφάνιση εικονιδίων ιστοτόπων"
   },
   "faviconDesc": {
-    "message": "Show a recognizable image next to each login."
+    "message": "Εμφάνιση μιας αναγνωρίσιμης εικόνας δίπλα σε κάθε σύνδεση."
   },
   "enableMinToTray": {
     "message": "Ελαχιστοποίηση σε Εικονίδιο Δίσκου"
@@ -1267,7 +1267,7 @@
     "description": "ex. Date this item was updated"
   },
   "dateCreated": {
-    "message": "Created",
+    "message": "Δημιουργήθηκε",
     "description": "ex. Date this item was created"
   },
   "datePasswordUpdated": {
@@ -1389,10 +1389,10 @@
     "message": "Ξεκλειδώστε το vault σας"
   },
   "autoPromptWindowsHello": {
-    "message": "Ask for Windows Hello on launch"
+    "message": "Ζητήστε από τα Windows Γεια σας κατά την έναρξη"
   },
   "autoPromptTouchId": {
-    "message": "Ask for Touch ID on launch"
+    "message": "Ερώτηση για το Touch ID κατά την εκκίνηση"
   },
   "lockWithMasterPassOnRestart": {
     "message": "Κλείδωμα με τον κύριο κωδικό πρόσβασης κατά την επανεκκίνηση"
@@ -1401,16 +1401,16 @@
     "message": "Διαγραφή λογαριασμού"
   },
   "deleteAccountDesc": {
-    "message": "Proceed below to delete your account and all vault data."
+    "message": "Προχωρήστε παρακάτω για να διαγράψετε το λογαριασμό σας και όλα τα δεδομένα θησαυ/κιού."
   },
   "deleteAccountWarning": {
-    "message": "Deleting your account is permanent. It cannot be undone."
+    "message": "Η διαγραφή του λογαριασμού σας είναι μόνιμη. Δε μπορεί να αναιρεθεί."
   },
   "accountDeleted": {
     "message": "Ο λογαριασμός διαγράφηκε"
   },
   "accountDeletedDesc": {
-    "message": "Your account has been closed and all associated data has been deleted."
+    "message": "Ο λογαριασμός σας έκλεισε και όλα τα σχετικά δεδομένα διαγράφηκαν."
   },
   "preferences": {
     "message": "Προτιμήσεις"
@@ -1566,7 +1566,7 @@
     "message": "Επιλέγοντας αυτό το πλαίσιο, συμφωνείτε με τα εξής:"
   },
   "acceptPoliciesRequired": {
-    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+    "message": "Οι Όροι Παροχής Υπηρεσιών και η Πολιτική Απορρήτου δεν έχουν αναγνωριστεί."
   },
   "enableBrowserIntegration": {
     "message": "Ενεργοποίηση ενσωμάτωσης περιηγητή"
@@ -1575,10 +1575,10 @@
     "message": "Η ενσωμάτωση του προγράμματος περιήγησης χρησιμοποιείται για βιομετρικά στοιχεία στο πρόγραμμα περιήγησης."
   },
   "enableDuckDuckGoBrowserIntegration": {
-    "message": "Allow DuckDuckGo browser integration"
+    "message": "Επίτρεψε ολοκλήρωση περιηγητή DuckDuckGo"
   },
   "enableDuckDuckGoBrowserIntegrationDesc": {
-    "message": "Use your Bitwarden vault when browsing with DuckDuckGo."
+    "message": "Χρησιμοποιήστε το θησαυ/κιο Bitwarden κατά την περιήγηση με το DuckDuckGo."
   },
   "browserIntegrationUnsupportedTitle": {
     "message": "Η ενσωμάτωση του περιηγητή δεν υποστηρίζεται"
@@ -1608,7 +1608,7 @@
     "message": "Βεβαιωθείτε ότι το εμφανιζόμενο δακτυλικό αποτύπωμα είναι ταυτόσημο με το δακτυλικό αποτύπωμα που εμφανίζεται στην επέκταση του προγράμματος περιήγησης."
   },
   "verifyNativeMessagingConnectionTitle": {
-    "message": "$APPID$ wants to connect to Bitwarden",
+    "message": "$APPID$ θέλει να συνδεθεί με το Bitwarden",
     "placeholders": {
       "appid": {
         "content": "$1",
@@ -1617,10 +1617,10 @@
     }
   },
   "verifyNativeMessagingConnectionDesc": {
-    "message": "Would you like to approve this request?"
+    "message": "Θα θέλατε να εγκρίνετε αυτό το αίτημα?"
   },
   "verifyNativeMessagingConnectionWarning": {
-    "message": "If you did not initiate this request, do not approve it."
+    "message": "Εάν δεν εκκινήσατε αυτό το αίτημα, μην το εγκρίνετε."
   },
   "biometricsNotEnabledTitle": {
     "message": "Η βιομετρική δεν είναι ενεργοποιημένη"
@@ -2008,37 +2008,37 @@
     "message": "Απαιτείται συνδρομή Premium"
   },
   "organizationIsDisabled": {
-    "message": "Organization suspended"
+    "message": "Ο οργανισμός διακόπηκε"
   },
   "disabledOrganizationFilterError": {
-    "message": "Items in suspended organizations cannot be accessed. Contact your organization owner for assistance."
+    "message": "Δεν είναι δυνατή η πρόσβαση σε ανασταλμένους οργανισμούς. Επικοινωνήστε με τον ιδιοκτήτη του οργανισμού σας για βοήθεια."
   },
   "neverLockWarning": {
-    "message": "Are you sure you want to use the \"Never\" option? Setting your lock options to \"Never\" stores your vault's encryption key on your device. If you use this option you should ensure that you keep your device properly protected."
+    "message": "Είστε βέβαιοι ότι θέλετε να χρησιμοποιήσετε την επιλογή \"Ποτέ\"; Ο ορισμός των επιλογών κλειδώματος σε \"Ποτέ\" αποθηκεύει το κλειδί κρυπτογράφησης του vault στη συσκευή σας. Εάν χρησιμοποιήσετε αυτήν την επιλογή, θα πρέπει να διασφαλίσετε ότι θα διατηρείτε τη συσκευή σας σωστά προστατευμένη."
   },
   "cardBrandMir": {
     "message": "Mir"
   },
   "vault": {
-    "message": "Vault"
+    "message": "Υπόγειο"
   },
   "loginWithMasterPassword": {
-    "message": "Log in with master password"
+    "message": "Συνδεθείτε με τον κύριο κωδικό"
   },
   "loggingInAs": {
-    "message": "Logging in as"
+    "message": "Σύνδεση ως"
   },
   "rememberEmail": {
-    "message": "Remember email"
+    "message": "Απομνημόνευση email"
   },
   "notYou": {
-    "message": "Not you?"
+    "message": "Όχι εσείς?"
   },
   "newAroundHere": {
-    "message": "New around here?"
+    "message": "Νέο εδώ?"
   },
   "loggingInTo": {
-    "message": "Logging in to $DOMAIN$",
+    "message": "Σύνδεση στο $DOMAIN$",
     "placeholders": {
       "domain": {
         "content": "$1",
@@ -2047,6 +2047,6 @@
     }
   },
   "logInWithAnotherDevice": {
-    "message": "Log in with another device"
+    "message": "Συνδεθείτε με άλλη συσκευή"
   }
 }

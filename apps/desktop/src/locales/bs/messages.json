@@ -533,13 +533,13 @@
     "message": "Neispravna email adresa."
   },
   "masterPasswordRequired": {
-    "message": "Master password is required."
+    "message": "Potrebna je glavna lozinka."
   },
   "confirmMasterPasswordRequired": {
     "message": "Master password retype is required."
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least 8 characters long."
+    "message": "Glavna lozinka mora imati najmanje 8 znakova."
   },
   "masterPassDoesntMatch": {
     "message": "Potvrda glavne lozinke se ne podudara."
@@ -1267,7 +1267,7 @@
     "description": "ex. Date this item was updated"
   },
   "dateCreated": {
-    "message": "Created",
+    "message": "Kreirano",
     "description": "ex. Date this item was created"
   },
   "datePasswordUpdated": {
@@ -1398,7 +1398,7 @@
     "message": "Lock with master password on restart"
   },
   "deleteAccount": {
-    "message": "Delete account"
+    "message": "Brisanje računa"
   },
   "deleteAccountDesc": {
     "message": "Proceed below to delete your account and all vault data."

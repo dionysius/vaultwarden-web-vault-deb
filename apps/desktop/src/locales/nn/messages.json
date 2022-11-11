@@ -123,10 +123,10 @@
     "description": "Copy value to clipboard"
   },
   "minimizeOnCopyToClipboard": {
-    "message": "Minimize when copying to clipboard"
+    "message": "Minimer ved kopiering til utklippstavle"
   },
   "minimizeOnCopyToClipboardDesc": {
-    "message": "Minimize application when copying an item's data to the clipboard."
+    "message": "Minimer programmet når du kopierer et element data til utklippstavlen."
   },
   "toggleVisibility": {
     "message": "Gjer synleg/usynleg"
@@ -172,7 +172,7 @@
     "message": "Telefon"
   },
   "address": {
-    "message": "Address"
+    "message": "Adresse"
   },
   "premiumRequired": {
     "message": "Premium er påkravd"
@@ -254,10 +254,10 @@
     "message": "Anna"
   },
   "generatePassword": {
-    "message": "Generate password"
+    "message": "Generer passord"
   },
   "type": {
-    "message": "Type"
+    "message": "Slag"
   },
   "firstName": {
     "message": "Førenamn"
@@ -284,7 +284,7 @@
     "message": "By / Tettstad"
   },
   "stateProvince": {
-    "message": "State / Province"
+    "message": "Fylke/område"
   },
   "zipPostalCode": {
     "message": "Postnummer"
@@ -296,10 +296,10 @@
     "message": "Lagra"
   },
   "cancel": {
-    "message": "Cancel"
+    "message": "Avbryt"
   },
   "delete": {
-    "message": "Delete"
+    "message": "Sletta"
   },
   "favorite": {
     "message": "Gjer til favoritt"
@@ -320,7 +320,7 @@
     "message": "Verdi"
   },
   "dragToSort": {
-    "message": "Drag to sort"
+    "message": "Dra for å sortera"
   },
   "cfTypeText": {
     "message": "Tekst"
@@ -329,7 +329,7 @@
     "message": "Gøymd"
   },
   "cfTypeBoolean": {
-    "message": "Boolean"
+    "message": "Boolsk"
   },
   "cfTypeLinked": {
     "message": "Tilknytt",
@@ -367,101 +367,101 @@
     "message": "Oppføringa sendt til papirkorga"
   },
   "overwritePasswordConfirmation": {
-    "message": "Are you sure you want to overwrite the current password?"
+    "message": "Er du trygg på at du vil skriva over passordet du har no?"
   },
   "overwriteUsername": {
-    "message": "Overwrite username"
+    "message": "Overskriv brukernavn"
   },
   "overwriteUsernameConfirmation": {
-    "message": "Are you sure you want to overwrite the current username?"
+    "message": "Er du sikker på at du vil overskrive det nåværende brukernavnet?"
   },
   "noneFolder": {
     "message": "Inga mappe",
     "description": "This is the folder for uncategorized items"
   },
   "addFolder": {
-    "message": "Add folder"
+    "message": "Legg til mappe"
   },
   "editFolder": {
     "message": "Rei mappa"
   },
   "regeneratePassword": {
-    "message": "Regenerate password"
+    "message": "Regenerer passord"
   },
   "copyPassword": {
-    "message": "Copy password"
+    "message": "Kopier passordet"
   },
   "copyUri": {
-    "message": "Copy URI"
+    "message": "Skriv av URI-en"
   },
   "copyVerificationCodeTotp": {
-    "message": "Copy verification code (TOTP)"
+    "message": "Kopier verifiseringskoden (TOTP)"
   },
   "length": {
-    "message": "Length"
+    "message": "Lengd"
   },
   "uppercase": {
-    "message": "Uppercase (A-Z)"
+    "message": "Store bokstavar (A-Z)"
   },
   "lowercase": {
-    "message": "Lowercase (a-z)"
+    "message": "Små bokstavar (a-z)"
   },
   "numbers": {
-    "message": "Numbers (0-9)"
+    "message": "Tal (0-9)"
   },
   "specialCharacters": {
-    "message": "Special characters (!@#$%^&*)"
+    "message": "Spesialtegn (!@#$%^&*)"
   },
   "numWords": {
-    "message": "Number of words"
+    "message": "Antall ord"
   },
   "wordSeparator": {
-    "message": "Word separator"
+    "message": "Ord separator"
   },
   "capitalize": {
-    "message": "Capitalize",
+    "message": "Stor førebokstav",
     "description": "Make the first letter of a word uppercase."
   },
   "includeNumber": {
-    "message": "Include number"
+    "message": "Inkluder nummer"
   },
   "close": {
-    "message": "Close"
+    "message": "Lat att"
   },
   "minNumbers": {
-    "message": "Minimum numbers"
+    "message": "Minst antall numre"
   },
   "minSpecial": {
-    "message": "Minimum special",
+    "message": "Minst antall spesialtegn",
     "description": "Minimum Special Characters"
   },
   "ambiguous": {
-    "message": "Avoid ambiguous characters"
+    "message": "Unngå forvekslingsbare tegn"
   },
   "searchCollection": {
-    "message": "Search collection"
+    "message": "Leita i samling"
   },
   "searchFolder": {
-    "message": "Search folder"
+    "message": "Søk i mappe"
   },
   "searchFavorites": {
-    "message": "Search favorites"
+    "message": "Søk i favoritter"
   },
   "searchType": {
-    "message": "Search type",
+    "message": "Søk i typer",
     "description": "Search item type"
   },
   "newAttachment": {
-    "message": "Add new attachment"
+    "message": "Legg til nytt vedlegg"
   },
   "deletedAttachment": {
-    "message": "Attachment deleted"
+    "message": "Vedlegg sletta"
   },
   "deleteAttachmentConfirmation": {
-    "message": "Are you sure you want to delete this attachment?"
+    "message": "Er du trygg på at du vil sletta dette vedlegget?"
   },
   "attachmentSaved": {
-    "message": "Attachment saved"
+    "message": "Vedlegg lagret"
   },
   "file": {
     "message": "Fil"
@@ -479,85 +479,85 @@
     "message": "Reidde mappa"
   },
   "addedFolder": {
-    "message": "Folder added"
+    "message": "Mappe lagt til"
   },
   "deleteFolderConfirmation": {
-    "message": "Are you sure you want to delete this folder?"
+    "message": "Er du sikker på at du vil slette denne mappen?"
   },
   "deletedFolder": {
-    "message": "Folder deleted"
+    "message": "Mappe slettet"
   },
   "loginOrCreateNewAccount": {
-    "message": "Log in or create a new account to access your secure vault."
+    "message": "Skriv deg inn eller oppretta ein ny konto for å få tilgjenge til det trygge kvelvet ditt."
   },
   "createAccount": {
-    "message": "Create account"
+    "message": "Opprett konto"
   },
   "logIn": {
-    "message": "Log in"
+    "message": "Logg inn"
   },
   "submit": {
-    "message": "Submit"
+    "message": "Send inn"
   },
   "masterPass": {
-    "message": "Master password"
+    "message": "Superpassordet"
   },
   "masterPassDesc": {
-    "message": "The master password is the password you use to access your vault. It is very important that you do not forget your master password. There is no way to recover the password in the event that you forget it."
+    "message": "Hovudpassordet er passordet du brukar for å få tilgjenge til kvelvet ditt. Det er veldig viktig at du ikkje gløymer hovudpassordet ditt. Det er umogleg å få tilbake passordet om du so gløymer det."
   },
   "masterPassHintDesc": {
-    "message": "A master password hint can help you remember your password if you forget it."
+    "message": "Eit hovudpassordvink kan hjelpa deg med å hugsa passordet ditt om du gløymer det."
   },
   "reTypeMasterPass": {
-    "message": "Re-type master password"
+    "message": "Tast inn hovedpassordet"
   },
   "masterPassHint": {
-    "message": "Master password hint (optional)"
+    "message": "Et hint for superpassordet (valgfritt)"
   },
   "settings": {
-    "message": "Settings"
+    "message": "Innstillingar"
   },
   "passwordHint": {
-    "message": "Password hint"
+    "message": "Passord hint"
   },
   "enterEmailToGetHint": {
-    "message": "Enter your account email address to receive your master password hint."
+    "message": "Skriv inn e-postadressa til kontoen din for å få vinket til hovudpassordet ditt."
   },
   "getMasterPasswordHint": {
-    "message": "Get master password hint"
+    "message": "Få vink om hovudpassordet ditt"
   },
   "emailRequired": {
-    "message": "Email address is required."
+    "message": "E-postadresse er påkravd."
   },
   "invalidEmail": {
-    "message": "Invalid email address."
+    "message": "Ugild e-postadresse."
   },
   "masterPasswordRequired": {
-    "message": "Master password is required."
+    "message": "Hovudpassord er påkravt."
   },
   "confirmMasterPasswordRequired": {
-    "message": "Master password retype is required."
+    "message": "Master password retype er nødvendig."
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least 8 characters long."
+    "message": "Hovudpassordet ditt må vera på minst 8 teikn."
   },
   "masterPassDoesntMatch": {
-    "message": "Master password confirmation does not match."
+    "message": "Stadfesting av hovudpassordet samsvarar ikkje."
   },
   "newAccountCreated": {
-    "message": "Your new account has been created! You may now log in."
+    "message": "Den nye kontoen din er laga! Du kan no skriva deg inn."
   },
   "masterPassSent": {
-    "message": "We've sent you an email with your master password hint."
+    "message": "Me har sendt deg ein e-post med vink til hovudpassordet ditt."
   },
   "unexpectedError": {
-    "message": "An unexpected error has occurred."
+    "message": "Eit uventa problem oppstod."
   },
   "itemInformation": {
-    "message": "Item information"
+    "message": "Element Informasjon"
   },
   "noItemsInList": {
-    "message": "There are no items to list."
+    "message": "Det er inga oppføringar å lista opp."
   },
   "sendVerificationCode": {
     "message": "Send a verification code to your email"

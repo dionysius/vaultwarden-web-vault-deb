@@ -1267,7 +1267,7 @@
     "description": "ex. Date this item was updated"
   },
   "dateCreated": {
-    "message": "Created",
+    "message": "Loodud",
     "description": "ex. Date this item was created"
   },
   "datePasswordUpdated": {
@@ -1575,10 +1575,10 @@
     "message": "Brauseri integratsioon on vajalik biomeetria kasutamiseks brauseris."
   },
   "enableDuckDuckGoBrowserIntegration": {
-    "message": "Allow DuckDuckGo browser integration"
+    "message": "Lubage DuckDuckGo brauseri integreerimine"
   },
   "enableDuckDuckGoBrowserIntegrationDesc": {
-    "message": "Use your Bitwarden vault when browsing with DuckDuckGo."
+    "message": "Kasutage DuckDuckGoga sirvimisel oma Bitwardeni varahoidlat."
   },
   "browserIntegrationUnsupportedTitle": {
     "message": "Brauseri integratsioon ei ole toetatud"
@@ -1608,7 +1608,7 @@
     "message": "Veendu, et kuvatav sõrmejälje fraas on identne sellega, mida kuvatakse brauseri lisas."
   },
   "verifyNativeMessagingConnectionTitle": {
-    "message": "$APPID$ wants to connect to Bitwarden",
+    "message": "$APPID$ soovib Bitwardeniga ühendust luua",
     "placeholders": {
       "appid": {
         "content": "$1",
@@ -1617,10 +1617,10 @@
     }
   },
   "verifyNativeMessagingConnectionDesc": {
-    "message": "Would you like to approve this request?"
+    "message": "Kas soovite selle taotluse heaks kiita?"
   },
   "verifyNativeMessagingConnectionWarning": {
-    "message": "If you did not initiate this request, do not approve it."
+    "message": "Kui te seda taotlust ei algatanud, ärge kinnitage seda."
   },
   "biometricsNotEnabledTitle": {
     "message": "Biomeetria ei ole sisse lülitatud"

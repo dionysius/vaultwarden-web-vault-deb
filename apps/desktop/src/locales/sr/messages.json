@@ -2023,22 +2023,22 @@
     "message": "Сеф"
   },
   "loginWithMasterPassword": {
-    "message": "Log in with master password"
+    "message": "Пријавите се са главном лозинком"
   },
   "loggingInAs": {
-    "message": "Logging in as"
+    "message": "Пријављивање као"
   },
   "rememberEmail": {
-    "message": "Remember email"
+    "message": "Запамти имејл"
   },
   "notYou": {
-    "message": "Not you?"
+    "message": "Не ти?"
   },
   "newAroundHere": {
-    "message": "New around here?"
+    "message": "Нов овде?"
   },
   "loggingInTo": {
-    "message": "Logging in to $DOMAIN$",
+    "message": "Пријављивање на $DOMAIN$",
     "placeholders": {
       "domain": {
         "content": "$1",
@@ -2047,6 +2047,6 @@
     }
   },
   "logInWithAnotherDevice": {
-    "message": "Log in with another device"
+    "message": "Пријавите се са другим уређајем"
   }
 }

@@ -432,7 +432,7 @@
     "message": "Najmanje brojeva"
   },
   "minSpecial": {
-    "message": "Najmanje specijalnih",
+    "message": "Najmanje posebnih",
     "description": "Minimum Special Characters"
   },
   "ambiguous": {
@@ -455,19 +455,19 @@
     "message": "Dodaj novi privitak"
   },
   "deletedAttachment": {
-    "message": "Izbrisani privitak"
+    "message": "Privitak izbrisan"
   },
   "deleteAttachmentConfirmation": {
     "message": "Sigurno želiš izbrisati ovaj privitak?"
   },
   "attachmentSaved": {
-    "message": "Privitak je spremljen."
+    "message": "Privitak spremljen"
   },
   "file": {
     "message": "Datoteka"
   },
   "selectFile": {
-    "message": "Odaberi datoteku."
+    "message": "Odaberi datoteku"
   },
   "maxFileSize": {
     "message": "Najveća veličina datoteke je 500 MB."
@@ -476,7 +476,7 @@
     "message": "Ne možeš koristiti ovu značajku prije nego ažuriraš ključ za šifriranje."
   },
   "editedFolder": {
-    "message": "Uređena mapa"
+    "message": "Mapa spremljena"
   },
   "addedFolder": {
     "message": "Mapa dodana"
@@ -734,13 +734,13 @@
     "message": "Odjavi se"
   },
   "addNewLogin": {
-    "message": "Dodaj novu prijavu"
+    "message": "Nova prijava"
   },
   "addNewItem": {
-    "message": "Dodaj novu stavku"
+    "message": "Nova stavka"
   },
   "addNewFolder": {
-    "message": "Dodaj novu mapu"
+    "message": "Nova mapa"
   },
   "view": {
     "message": "Prikaz"
@@ -1462,10 +1462,10 @@
     "message": "Nakon isteka trezora"
   },
   "vaultTimeoutActionLockDesc": {
-    "message": "Zaključani trezor, za ponovni pristup, zahtijeva ponovni unos tvoje glavne lozinke."
+    "message": "Potrebno je ponovno unijeti glavnu lozinku ili na drugi način otključati za pristup tvom trezoru."
   },
   "vaultTimeoutActionLogOutDesc": {
-    "message": "Odjavljeni trezor, za ponovni pristup, zahtijeva ponovnu provjeru autentičnosti."
+    "message": "Potrebno je ponovno unijeti korisničko ime i glavnu lozinku za pristup tvom trezoru."
   },
   "lock": {
     "message": "Zaključaj",
@@ -1485,7 +1485,7 @@
     "message": "Želiš li zaista trajno izbrisati ovu stavku?"
   },
   "permanentlyDeletedItem": {
-    "message": "Trajno izbirsana stavka"
+    "message": "Stavka trajno izbrisana"
   },
   "restoreItem": {
     "message": "Vrati stavku"
@@ -1587,10 +1587,10 @@
     "message": "Nažalost, za sada je integracija s preglednikom podržana samo u Mac App Store verziji aplikacije."
   },
   "browserIntegrationWindowsStoreDesc": {
-    "message": "Nažalost, integracija s preglednikom nije podržana u Windows Store verziji aplikacije."
+    "message": "Nažalost, integracija s preglednikom trenutno nije podržana u Windows Store verziji aplikacije."
   },
   "browserIntegrationLinuxDesc": {
-    "message": "Nažalost, integracija preglednika trenutno nije podržana u verziji Linuxa."
+    "message": "Nažalost, integracija preglednika trenutno nije podržana u Linux verziji aplikacije."
   },
   "enableBrowserIntegrationFingerprint": {
     "message": "Traži verifikaciju za integraciju s preglednikom"
@@ -1623,7 +1623,7 @@
     "message": "Ako nisi pokrenuo ovaj zahtijev, nemoj ga odobriti."
   },
   "biometricsNotEnabledTitle": {
-    "message": "Biometrija nije omogućena"
+    "message": "Biometrija nije postavljena"
   },
   "biometricsNotEnabledDesc": {
     "message": "Biometrija preglednika zahtijeva prethodno omogućenu biometriju u Bitwarden desktop aplikaciji."
@@ -1995,7 +1995,7 @@
     "message": "Generiraj pseudonim e-pošte s vanjskom uslugom prosljeđivanja."
   },
   "hostname": {
-    "message": "Naziv hosta",
+    "message": "Naziv poslužitelja",
     "description": "Part of a URL."
   },
   "apiAccessToken": {
@@ -2035,7 +2035,7 @@
     "message": "Nisi ti?"
   },
   "newAroundHere": {
-    "message": "New around here?"
+    "message": "Novi korisnik?"
   },
   "loggingInTo": {
     "message": "Prijava u $DOMAIN$",
