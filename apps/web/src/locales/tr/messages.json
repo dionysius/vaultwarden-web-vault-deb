@@ -278,7 +278,7 @@
     "message": "Favorilerde ara"
   },
   "searchType": {
-    "message": "Arama Tipi",
+    "message": "Arama türü",
     "description": "Search item type"
   },
   "searchVault": {
@@ -467,7 +467,7 @@
     "message": "Bu dosyayı silmek istediğinizden emin misiniz?"
   },
   "attachmentSaved": {
-    "message": "Dosya kaydedildi."
+    "message": "Dosya kaydedildi"
   },
   "file": {
     "message": "Dosya"
@@ -485,7 +485,7 @@
     "message": "Kayıt eklendi"
   },
   "editedItem": {
-    "message": "Kayıt düzenlendi"
+    "message": "Kayıt kaydedildi"
   },
   "movedItemToOrg": {
     "message": "$ITEMNAME$ $ORGNAME$ kuruluşuna taşındı",
@@ -534,10 +534,10 @@
     "message": "Mevcut parolanın üzerine kaydetmek istediğinizden emin misiniz?"
   },
   "editedFolder": {
-    "message": "Klasör düzenlendi"
+    "message": "Klasör kaydedildi"
   },
   "addedFolder": {
-    "message": "Klasör Eklendi"
+    "message": "Klasör eklendi"
   },
   "deleteFolderConfirmation": {
     "message": "Bu klasörü silmek istediğinizden emin misiniz?"
@@ -570,10 +570,10 @@
     "message": "Güvenli kasanıza ulaşmak için giriş yapın veya yeni bir hesap oluşturun."
   },
   "loginWithDevice": {
-    "message": "Cihaz ile Giriş Yap"
+    "message": "Cihazla giriş yap"
   },
   "loginWithDeviceEnabledInfo": {
-    "message": "Cihazla oturum açma, Bitwarden mobil uygulamasının ayarlarında etkinleştirilmelidir. Başka bir seçeneğe mi ihtiyacınız var?"
+    "message": "Cihazla girişi Bitwarden mobil uygulamasının ayarlarından etkinleştirmelisiniz. Başka bir seçeneğe mi ihtiyacınız var?"
   },
   "loginWithMasterPassword": {
     "message": "Ana parola ile giriş yap"
@@ -591,7 +591,7 @@
     "message": "Giriş yap"
   },
   "logInInitiated": {
-    "message": "Oturum açma başlatıldı"
+    "message": "Giriş başlatıldı"
   },
   "submit": {
     "message": "Gönder"
@@ -612,7 +612,7 @@
     "message": "Ana parola, kasanıza ulaşmak için kullanacağınız paroladır. Ana parolanızı unutmamanız çok önemlidir. Unutursanız parolalarınızı asla kurtaramazsınız."
   },
   "masterPassImportant": {
-    "message": "Ana şifreler, unutursanız kurtarılamaz!"
+    "message": "Ana parolayı unutursanız kurtaramazsınız!"
   },
   "masterPassHintDesc": {
     "message": "Ana parolanızı unutursanız bu ipucuna bakınca size ana parolanızı hatırlatacak bir şey yazabilirsiniz."
@@ -694,7 +694,7 @@
     "message": "Geçersiz ana parola"
   },
   "invalidFilePassword": {
-    "message": "Geçersiz dosya şifresi, lütfen dışa aktarma dosyasını oluştururken girdiğiniz şifreyi kullanın."
+    "message": "Geçersiz dosya parolası. Lütfen dışa aktardığınız dosyayı oluştururken girdiğiniz parolayı kullanın."
   },
   "lockNow": {
     "message": "Şimdi kilitle"
@@ -772,7 +772,7 @@
     "message": "Giriş yapılamıyor"
   },
   "noTwoStepProviders": {
-    "message": "Bu hesapta iki aşamalı giriş özelliği etkin ama yapılandırdığınız iki aşamalı giriş sağlayıcılarının hiçbiri bu tarayıcıyı desteklemiyor."
+    "message": "Bu hesapta iki aşamalı giriş açık ama yapılandırdığınız iki aşamalı giriş sağlayıcılarının hiçbiri bu web tarayıcısını desteklemiyor."
   },
   "noTwoStepProviders2": {
     "message": "Lütfen desteklenen bir web tarayıcısı (örn. Chrome) kullanın ve/veya web tarayıcılarında daha iyi desteklenen sağlayıcılar (örn. kimlik doğrulama uygulaması) ekleyin."
@@ -781,7 +781,7 @@
     "message": "İki aşamalı giriş seçenekleri"
   },
   "recoveryCodeDesc": {
-    "message": "İki aşamalı doğrulama sağlayıcılarınıza ulaşamıyor musunuz? Kurtarma kodunuzu kullanarak hesabınızdaki tüm iki aşamalı giriş sağlayıcılarını devre dışı bırakabilirsiniz."
+    "message": "İki aşamalı giriş sağlayıcılarınıza ulaşamıyor musunuz? Kurtarma kodunuzu kullanarak hesabınızdaki tüm iki aşamalı giriş sağlayıcılarını devre dışı bırakabilirsiniz."
   },
   "recoveryCodeTitle": {
     "message": "Kurtarma kodu"
@@ -912,49 +912,49 @@
     "message": "Dosya biçimi"
   },
   "fileEncryptedExportWarningDesc": {
-    "message": "Bu dosya dışa aktarma, şifre korumalı olacak ve şifrenin çözülmesi için dosya şifresi gerektirecek."
+    "message": "Dışarı aktarılan bu dosya parola korumalı olacak ve dosyanın çözülmesi için parolayı girmeniz gerekecek."
   },
   "exportPasswordDescription": {
-    "message": "Bu şifre, bu dosyayı dışa ve içe aktarmak için kullanılacaktır"
+    "message": "Bu parola, bu dosyayı dışa ve içe aktarmak için kullanılacaktır"
   },
   "confirmMasterPassword": {
-    "message": "Ana Şifreyi Onayla"
+    "message": "Ana parolayı onaylayın"
   },
   "confirmFormat": {
-    "message": "Biçimi Onayla"
+    "message": "Biçimi onaylayın"
   },
   "filePassword": {
-    "message": "Dosya Şifresi"
+    "message": "Dosya parolası"
   },
   "confirmFilePassword": {
-    "message": "Dosya Şifresini Onayla"
+    "message": "Dosya parolasını onaylayın"
   },
   "accountBackupOptionDescription": {
-    "message": "Dışa aktarmayı şifrelemek ve içe aktarmayı yalnızca geçerli Bitwarden hesabıyla kısıtlamak için hesap çözme anahtarınızı kullanın."
+    "message": "Dışa aktarmayı şifrelemek ve içe aktarmayı yalnızca geçerli Bitwarden hesabıyla sınırlandırmak için hesap şifreleme anahtarınızı kullanın."
   },
   "passwordProtectedOptionDescription": {
-    "message": "Dışa aktarmayı şifrelemek için bir şifre belirleyin ve şifre çözme parolasını kullanarak herhangi bir Bitwarden hesabına içe aktarın."
+    "message": "Dışa aktardığınız dosyayı şifrelemek ve bir Bitwarden hesabına içe aktarmak için kullanacağınız parolayı belirleyin."
   },
   "fileTypeHeading": {
-    "message": "Dosya Tipi"
+    "message": "Dosya türü"
   },
   "accountBackup": {
-    "message": "Hesap Yedeği"
+    "message": "Hesap yedeği"
   },
   "passwordProtected": {
-    "message": "Şifre Korumalı"
+    "message": "Parola korumalı"
   },
   "filePasswordAndConfirmFilePasswordDoNotMatch": {
-    "message": "\"Dosya şifresi\" ve \"Dosya Şifresini Onayla\" eşleşmiyor."
+    "message": "\"Dosya parolası\" ile \"Dosya parolasını onaylayın\" eşleşmiyor."
   },
   "confirmVaultImport": {
-    "message": "Kasayı İçe Aktarmayı Onaylayın"
+    "message": "Kasayı içe aktarmayı onaylayın"
   },
   "confirmVaultImportDesc": {
-    "message": "Bu dosya şifre korumalıdır. Verileri içe aktarmak için lütfen dosya şifresini girin."
+    "message": "Bu dosya parola korumalıdır. Verileri içe aktarmak için lütfen dosya parolasını girin."
   },
   "exportSuccess": {
-    "message": "Kasadaki verileriniz dışa aktarıldı."
+    "message": "Kasa verileriniz dışa aktarıldı"
   },
   "passwordGenerator": {
     "message": "Parola oluşturucu"
@@ -1016,13 +1016,13 @@
     "description": "To clear something out. Example: To clear browser history."
   },
   "accountUpdated": {
-    "message": "Hesap güncellendi"
+    "message": "Hesap kaydedildi"
   },
   "changeEmail": {
     "message": "E-postayı değiştir"
   },
   "changeEmailTwoFactorWarning": {
-    "message": "Devam ederseniz hesabınızın e-posta adresi değişecek. İki aşamalı doğrulama için kullandığınız e-posta adresiniz değişmeyecek. Onu iki aşamalı doğrulama ayarlarından değiştirebilirsiniz."
+    "message": "Devam ederseniz hesabınızın e-posta adresi değişecek. İki aşamalı giriş için kullandığınız e-posta adresiniz değişmeyecek. Onu iki aşamalı giriş ayarlarından değiştirebilirsiniz."
   },
   "newEmail": {
     "message": "Yeni e-posta"
@@ -1043,7 +1043,7 @@
     "message": "Devam ederseniz geçerli oturumunuz sonlanacak ve yeniden oturum açmanız gerekecek. Diğer cihazlardaki aktif oturumlar bir saate kadar aktif kalabilir."
   },
   "emailChanged": {
-    "message": "E-posta değiştirildi"
+    "message": "E-posta kaydedildi"
   },
   "logBackIn": {
     "message": "Lütfen yeniden giriş yapın."
@@ -1055,7 +1055,7 @@
     "message": "Ana parolayı değiştir"
   },
   "masterPasswordChanged": {
-    "message": "Ana parola değiştirildi"
+    "message": "Ana parola kaydedildi"
   },
   "currentMasterPass": {
     "message": "Mevcut ana parola"
@@ -1097,10 +1097,10 @@
     "message": "KDF'i değiştir"
   },
   "encKeySettingsChanged": {
-    "message": "Şifreleme anahtarı ayarları değişti"
+    "message": "Şifreleme anahtarı ayarları kaydedildi"
   },
   "dangerZone": {
-    "message": "Tehlikeli Bölge"
+    "message": "Tehlikeli bölge"
   },
   "dangerZoneDesc": {
     "message": "Dikkatli olun, bu işlemleri geri alamazsınız!"
@@ -1118,7 +1118,7 @@
     "message": "Tüm oturumlar kapatıldı"
   },
   "purgeVault": {
-    "message": "Kasayı sil"
+    "message": "Kasayı boşalt"
   },
   "purgedOrganizationVault": {
     "message": "Kuruluş kasası silindi."
@@ -1136,13 +1136,13 @@
     "message": "Kasanızı silmek kalıcıdır. Bu işlem geri alınamaz."
   },
   "vaultPurged": {
-    "message": "Kasanız silindi."
+    "message": "Kasanız boşaltıldı."
   },
   "deleteAccount": {
     "message": "Hesabı sil"
   },
   "deleteAccountDesc": {
-    "message": "Hesabınızı ve ilişkili tüm verileri silmek için aşağıya devam edin."
+    "message": "Hesabınızı ve kasanızdaki tüm verileri silmek için aşağıdan devam edin."
   },
   "deleteAccountWarning": {
     "message": "Hesabınızı silmek kalıcıdır. Geri alınamaz."
@@ -1169,7 +1169,7 @@
     "message": "İçe aktarmaya çalıştığınız verilerle ilgili bir problem var. Lütfen kaynak dosyanızdaki aşağıda belirtilen hataları çözüp tekrar deneyin."
   },
   "importSuccess": {
-    "message": "Veriler kasanıza başarıyla aktarıldı."
+    "message": "Veriler başarıyla içe aktarıldı"
   },
   "importWarning": {
     "message": "$ORGANIZATION$ kuruluşuna veri aktarıyorsunuz. Verileriniz bu kuruluşun üyeleriyle paylaşılabilir. Devam etmek istiyor musunuz?",
@@ -1224,7 +1224,7 @@
     "message": "Web kasası deneyiminizi özelleştirin."
   },
   "preferencesUpdated": {
-    "message": "Tercihler güncellendi"
+    "message": "Tercihler kaydedildi"
   },
   "language": {
     "message": "Dil"
@@ -1239,7 +1239,7 @@
     "message": "Hesapların yanında tanıdık görseller göster."
   },
   "enableFullWidth": {
-    "message": "Tam genişlik görünümünü etkinleştir",
+    "message": "Tam genişlik düzeninde göster",
     "description": "Allows scaling the web vault UI's width"
   },
   "enableFullWidthDesc": {
@@ -1285,29 +1285,29 @@
     }
   },
   "domainsUpdated": {
-    "message": "Alan adları güncellendi"
+    "message": "Alan adları kaydedildi"
   },
   "twoStepLogin": {
     "message": "İki aşamalı giriş"
   },
   "twoStepLoginEnforcement": {
-    "message": "Two-step Login Enforcement"
+    "message": "İki-Aşamalı Giriş Zorunluluğu"
   },
   "twoStepLoginDesc": {
     "message": "Oturum açarken ek bir adım talep ederek hesabınızı güvenceye alabilirsiniz."
   },
   "twoStepLoginOrganizationDescStart": {
-    "message": "Enforce Bitwarden Two-step Login options for members by using the ",
+    "message": "Bitwarden İki-Aşamalı Giriş seçeneklerini zorunlu tut ",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enforce Bitwarden Two-step Login options for members by using the Two-step Login Policy.'"
   },
   "twoStepLoginPolicy": {
-    "message": "Two-step Login Policy"
+    "message": "İki-Aşamalı Oturum Açma Seçenekleri"
   },
   "twoStepLoginOrganizationDuoDesc": {
-    "message": "To enforce Two-step Login through Duo, use the options below."
+    "message": "Duo ile İki-Aşamalı Giriş için aşağıdaki seçenekleri kullanın."
   },
   "twoStepLoginOrganizationSsoDesc": {
-    "message": "If you have setup SSO or plan to, Two-step Login may already be enforced through your Identity Provider."
+    "message": "Eğer SSO kurduysanız ya da kurmayı planlıyorsanız, Kimlik Sağlayıcınız tarafından İki-Aşamalı Giriş halihazırda sağlanıyor olabilir."
   },
   "twoStepLoginRecoveryWarning": {
     "message": "İki aşamalı girişi etkinleştirmek, Bitwarden hesabınızı kalıcı olarak kilitleyebilir. Kurtarma kodunuz, iki aşamalı giriş sağlayıcınızı kullanamamanız durumunda hesabınıza erişmenize olanak sağlar (ör. cihazınızı kaybedersiniz). Hesabınıza erişiminizi kaybederseniz Bitwarden destek ekibi size yardımcı olamaz. Kurtarma kodunu not almanızı veya yazdırmanızı ve güvenli bir yerde saklamanızı öneririz."
@@ -1320,23 +1320,23 @@
     "description": "Two-step login providers such as YubiKey, Duo, Authenticator apps, Email, etc."
   },
   "enable": {
-    "message": "Etkinleştir"
+    "message": "Aç"
   },
   "enabled": {
-    "message": "Etkin"
+    "message": "Açıldı"
   },
   "restoreAccess": {
-    "message": "Erişimi geri yükle"
+    "message": "Erişimi geri getir"
   },
   "premium": {
     "message": "Premium",
     "description": "Premium membership"
   },
   "premiumMembership": {
-    "message": "Premium Üyelik"
+    "message": "Premium üyelik"
   },
   "premiumRequired": {
-    "message": "Premium Gerekli"
+    "message": "Premium gerekli"
   },
   "premiumRequiredDesc": {
     "message": "Bu özelliği kullanmak için premium üyelik gereklidir."
@@ -1345,13 +1345,13 @@
     "message": "Premium erişiminiz var"
   },
   "alreadyPremiumFromOrg": {
-    "message": "Üyesi olduğunuz bir organizasyon nedeniyle premium özelliklere zaten erişiminiz var."
+    "message": "Üyesi olduğunuz kuruluş sayesinde premium özelliklere zaten erişiminiz var."
   },
   "manage": {
     "message": "Yönet"
   },
   "disable": {
-    "message": "Devre dışı bırak"
+    "message": "Kapat"
   },
   "revokeAccess": {
     "message": "Erişimi iptal et"
@@ -1396,10 +1396,10 @@
     "message": "Başka bir cihaza eklemeniz gerekirse kimlik doğrulama uygulamanıza aşağıdaki QR kodunu (veya anahtarı) verebilirsiniz."
   },
   "twoStepDisableDesc": {
-    "message": "Bu iki aşamalı giriş sağlayıcısını devre dışı bırakmak istediğinize emin misiniz?"
+    "message": "Bu iki aşamalı giriş sağlayıcısını kaptmak istediğinizden emin misiniz?"
   },
   "twoStepDisabled": {
-    "message": "İki aşamalı giriş sağlayıcısı devre dışı."
+    "message": "İki aşamalı giriş sağlayıcısı kapatıldı."
   },
   "twoFactorYubikeyAdd": {
     "message": "Hesabıma yeni bir YubiKey ekle"
@@ -1557,11 +1557,11 @@
     "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization vault."
   },
   "orgsReportsDesc": {
-    "message": "Identify and close security gaps in your organization's accounts by clicking the reports below.",
+    "message": "Aşağıdaki raporlara tıklayarak kuruluş hesaplarınızdaki güvenlik açıklarını tanımlayın ve kapatın.",
     "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization Vault."
   },
   "unsecuredWebsitesReport": {
-    "message": "Güvensiz Web Siteleri"
+    "message": "Güvensiz web siteleri"
   },
   "unsecuredWebsitesReportDesc": {
     "message": "http:// ile başlayan adreslerde şifreleme kullanılmıyor demektir. Daha güvenli gezinti için bu hesapların adreslerini https:// ile değiştirin."
@@ -1582,16 +1582,16 @@
     "message": "Kasanızda güvenli olmayan URI'ye sahip hiç kayıt yok."
   },
   "inactive2faReport": {
-    "message": "Pasif İki Aşamalı Giriş"
+    "message": "Pasif iki aşamalı giriş"
   },
   "inactive2faReportDesc": {
-    "message": "İki aşamalı kimlik doğrulama (2FA), hesaplarınızı güvenceye almanızı sağlayan önemli bir güvenlik ayarıdır. İki aşamalı kimlik doğrulamayı destekleyen sitelerde bu ayarı her zaman etkinleştirmenizi öneririz."
+    "message": "İki aşamalı giriş, hesaplarınızı güvenceye almanızı sağlayan bir güvenlik ayarıdır. Bu hesaplar için Bitwarden şifrematiği veya alternatif bir yöntemi kullanabilirsiniz."
   },
   "inactive2faFound": {
-    "message": "2FA olmayan hesaplar bulundu"
+    "message": "İki aşamalı girişi olmayan hesaplar bulundu"
   },
   "inactive2faFoundDesc": {
-    "message": "Kasanızda iki aşamalı kimlik doğrulaması kullanmıyor olabilecek $COUNT$ web sitesi bulduk (2fa.directory’ye göre). Bu hesapları daha iyi korumak için iki aşamalı kimlik doğrulamasını etkinleştirmelisiniz.",
+    "message": "Kasanızda iki aşamalı giriş kullanmıyor olabilecek $COUNT$ web sitesi bulduk (2fa.directory’ye göre). Bu hesapları daha iyi korumak için iki aşamalı girişi etkinleştirmelisiniz.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -1600,19 +1600,19 @@
     }
   },
   "noInactive2fa": {
-    "message": "Kasanızda iki aşamalı kimlik doğrulama yapılandırması eksik olan web sitesi bulunamadı."
+    "message": "Kasanızda iki aşamalı giriş yapılandırması eksik olan web sitesi bulunamadı."
   },
   "instructions": {
     "message": "Yönergeler"
   },
   "exposedPasswordsReport": {
-    "message": "Açığa Çıkmış Parolalar"
+    "message": "Açığa çıkmış parolalar"
   },
   "exposedPasswordsReportDesc": {
-    "message": "Açığa çıkmış parolalar, kamuya açık olarak yayınlanan veya bilgisayar korsanları tarafından karanlık ağda satıldığı bilinen parolalardır."
+    "message": "Veri ihlallerinde açığa çıkmış parolalar saldırganlar için kolay hedeftir. Olası saldırıları önlemek için bu parolaları değiştirin."
   },
   "exposedPasswordsFound": {
-    "message": "Açığa Çıkmış Parolalar Bulundu"
+    "message": "Açığa çıkmış parolalar bulundu"
   },
   "exposedPasswordsFoundDesc": {
     "message": "Kasanızda, bilinen veri ihlallerine maruz kalmış parolalara sahip $COUNT$ kayıt bulundu. Bu parolaları değiştirmelisiniz.",
@@ -1627,7 +1627,7 @@
     "message": "Kasanızdaki hiçbir kaydın parolası bilinen veri ihlallerinde ele geçirilmemiş."
   },
   "checkExposedPasswords": {
-    "message": "Açığa Çıkmış Parolaları Kontrol Et"
+    "message": "Açığa çıkmış parolaları kontrol et"
   },
   "exposedXTimes": {
     "message": "$COUNT$ kez açığa çıkmış",
@@ -1639,7 +1639,7 @@
     }
   },
   "weakPasswordsReport": {
-    "message": "Zayıf Parolalar"
+    "message": "Zayıf parolalar"
   },
   "weakPasswordsReportDesc": {
     "message": "Zayıf parolalar saldırganlar tarafından kolayca tahmin edilebilir. Bitwarden parola üreticisi ile daha güçlü parolalar oluşturarak bu parolaları değiştirin."
@@ -1660,7 +1660,7 @@
     "message": "Kasanızdaki hiçbir kaydın parolası zayıf değil."
   },
   "reusedPasswordsReport": {
-    "message": "Yeniden Kullanılmış Parolalar"
+    "message": "Yeniden kullanılmış parolalar"
   },
   "reusedPasswordsReportDesc": {
     "message": "Kullandığınız bir servis ele geçirilirse, aynı parolayı başka yerlerde kullanmanız hacker'ların diğer hesaplarınıza da kolayca erişmesine olanak tanıyabilir. bu yüzden her hesap ve hizmet için farklı bir parola kullanmalısınız."
@@ -1690,7 +1690,7 @@
     }
   },
   "dataBreachReport": {
-    "message": "Veri İhlali"
+    "message": "Veri ihlali"
   },
   "breachDesc": {
     "message": "Hacker'ların bir sitenin verilerine yasadışı bir şekilde erişip bunları herkese açık bir şekilde yayımlamalarına \"ihlal\" denir. Ele geçirilen veri türlerini (e-posta adresleri, parolalar, kredi kartları vb.) inceleyin ve gerekli önlemleri alın (örn. parolaları değiştirin)."
@@ -1752,10 +1752,10 @@
     "message": "Faturalandırma"
   },
   "billingPlanLabel": {
-    "message": "Ödeme Planı"
+    "message": "Ödeme planı"
   },
   "paymentType": {
-    "message": "Ödeme Türü"
+    "message": "Ödeme türü"
   },
   "accountCredit": {
     "message": "Hesap kredisi",
@@ -1787,7 +1787,7 @@
     "description": "Another way of saying \"Get a Premium membership\""
   },
   "premiumUpdated": {
-    "message": "Premium'a yükselttiniz."
+    "message": "Premium'a geçtiniz."
   },
   "premiumUpgradeUnlockFeatures": {
     "message": "Hesabınızı premium üyeliğe yükselterek harika ek özelliklere sahip olabilirsiniz."
@@ -1899,13 +1899,13 @@
     "message": "Paketiniz 7 günlük ücretsiz deneme süresiyle geliyor. Deneme süresi bitene kadar sizden ücret alınmayacak. İstediğiniz zaman aboneliğinizi iptal edebilirsiniz."
   },
   "paymentInformation": {
-    "message": "Ödeme Bilgileri"
+    "message": "Ödeme bilgileri"
   },
   "billingInformation": {
-    "message": "Fatura Bilgileri"
+    "message": "Fatura bilgileri"
   },
   "billingTrialSubLabel": {
-    "message": "7 günlük ücretsiz deneme süresi boyunca ödeme yönteminizden ücret alınmayacaktır."
+    "message": "7 günlük ücretsiz deneme süresi boyunca ücret tahsil edilmeyecektir."
   },
   "creditCard": {
     "message": "Kredi kartı"
@@ -1938,7 +1938,7 @@
     "message": "İptal etmek istediğinden emin misin? Bu fatura döneminin sonunda bu aboneliğin tüm özelliklerine erişiminizi kaybedeceksiniz."
   },
   "canceledSubscription": {
-    "message": "Abonelik iptal edildi."
+    "message": "Abonelik iptal edildi"
   },
   "neverExpires": {
     "message": "Zaman aşımı yok"
@@ -1962,7 +1962,7 @@
     "message": "Lisans güncellendi"
   },
   "manageSubscription": {
-    "message": "Aboneliğimi yönet"
+    "message": "Aboneliği yönet"
   },
   "storage": {
     "message": "Depolama"
@@ -2264,7 +2264,7 @@
     }
   },
   "trialThankYou": {
-    "message": "$PLAN$ karşılığında Bitwarden'a kaydolduğunuz için teşekkür ederiz!",
+    "message": "Bitwarden $PLAN$ aboneliğinizi başlattığınız teşekkür ederiz!",
     "placeholders": {
       "plan": {
         "content": "$1",
@@ -2273,7 +2273,7 @@
     }
   },
   "trialPaidInfoMessage": {
-    "message": "$PLAN$ 7 günlük ücretsiz denemeniz, 7 gün sonra ücretli aboneliğe dönüştürülecektir.",
+    "message": "7 günlük ücretsiz $PLAN$ denemeniz, 7 gün sonra ücretli aboneliğe dönüştürülecektir.",
     "placeholders": {
       "plan": {
         "content": "$1",
@@ -2303,7 +2303,7 @@
     "message": "Yeni kuruluşunuz hazır!"
   },
   "organizationUpgraded": {
-    "message": "Kuruluşunuz yükseltildi."
+    "message": "Kuruluş yükseltildi"
   },
   "leave": {
     "message": "Ayrıl"
@@ -2312,7 +2312,7 @@
     "message": "Bu kuruluştan ayrılmak istediğinizden emin misiniz?"
   },
   "leftOrganization": {
-    "message": "Kuruluştan ayrıldınız."
+    "message": "Kuruluştan ayrıldınız"
   },
   "defaultCollection": {
     "message": "Varsayılan koleksiyon"
@@ -2336,7 +2336,7 @@
     "message": "İlkeler"
   },
   "singleSignOn": {
-    "message": "Tek Oturum Açma"
+    "message": "Tek oturum açma"
   },
   "editPolicy": {
     "message": "İlkeyi düzenle"
@@ -2501,19 +2501,19 @@
     "message": "Web kasası"
   },
   "loggedIn": {
-    "message": "Giriş yapıldı."
+    "message": "Giriş yapıldı"
   },
   "changedPassword": {
-    "message": "Hesap parolası değiştirildi."
+    "message": "Hesap parolası değiştirildi"
   },
   "enabledUpdated2fa": {
-    "message": "İki aşamalı giriş açıldı/güncellendi."
+    "message": "İki aşamalı giriş kaydedildi"
   },
   "disabled2fa": {
-    "message": "İki aşamalı giriş kapatıldı."
+    "message": "İki aşamalı giriş kapatıldı"
   },
   "recovered2fa": {
-    "message": "İki aşamalı giriş ile hesap kurtarıldı."
+    "message": "Hesap iki aşamalı girişten kurtarıldı."
   },
   "failedLogin": {
     "message": "Hatalı parola sebebiyle oturum açma başarısız oldu."
@@ -2522,7 +2522,7 @@
     "message": "Hatalı iki aşamalı doğrulama sebebiyle oturum açma başarısız oldu."
   },
   "exportedVault": {
-    "message": "Kasa dışa aktarıldı."
+    "message": "Kasa dışa aktarıldı"
   },
   "exportedOrganizationVault": {
     "message": "Kuruluş kasası dışa aktarıldı."
@@ -2567,7 +2567,7 @@
     }
   },
   "viewAllLoginOptions": {
-    "message": "Tüm oturum açma seçeneklerini gör"
+    "message": "Tüm giriş seçeneklerini gör"
   },
   "viewedItemId": {
     "message": "$ID$ kaydı görüntülendi.",
@@ -2593,6 +2593,15 @@
       "id": {
         "content": "$1",
         "example": "Google"
+      }
+    }
+  },
+  "viewedCardNumberItemId": {
+    "message": "$ID$ kaydının kart numarası görüntülendi.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Unique ID"
       }
     }
   },
@@ -2714,7 +2723,7 @@
     }
   },
   "removeUserIdAccess": {
-    "message": "$ID$ Erişimini kaldır",
+    "message": "$ID$ erişimini kaldır",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2723,7 +2732,7 @@
     }
   },
   "revokedUserId": {
-    "message": "$ID$ İçin kuruluş erişimi iptal edildi.",
+    "message": "$ID$ için kuruluş erişimi iptal edildi.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2732,7 +2741,7 @@
     }
   },
   "restoredUserId": {
-    "message": "$ID$ İçin kuruluş erişimi geri yüklendi.",
+    "message": "$ID$ için kuruluş erişimi geri getirildi.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2741,7 +2750,7 @@
     }
   },
   "revokeUserId": {
-    "message": "$ID$ Erişimini iptal et",
+    "message": "$ID$ erişimini iptal et",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2882,7 +2891,7 @@
     "message": "Bu kullanıcının gruplarını düzenleyin."
   },
   "invitedUsers": {
-    "message": "Kullanıcı(lar) davet edildi."
+    "message": "Kullanıcı(lar) davet edildi"
   },
   "resendInvitation": {
     "message": "Daveti yeniden gönder"
@@ -2891,7 +2900,7 @@
     "message": "E-postayı yeniden gönder"
   },
   "hasBeenReinvited": {
-    "message": "$USER$ yeniden davet edildi.",
+    "message": "$USER$ yeniden davet edildi",
     "placeholders": {
       "user": {
         "content": "$1",
@@ -2939,13 +2948,13 @@
     "message": "Doğrulama linki için e-posta hesabınızı kontrol edin."
   },
   "emailVerified": {
-    "message": "E-posta hesabınız doğrulandı."
+    "message": "Hesap e-postası doğrulandı"
   },
   "emailVerifiedFailed": {
     "message": "E-posta hesabı doğrulanamadı. Yeniden doğrulama e-postası göndermeyi deneyin."
   },
   "emailVerificationRequired": {
-    "message": "E-posta Doğrulaması Gerekli"
+    "message": "E-posta doğrulaması gerekiyor"
   },
   "emailVerificationRequiredDesc": {
     "message": "Bu özelliği kullanmak için e-postanızı doğrulamalısınız."
@@ -3008,7 +3017,7 @@
     "message": "Kuruluşum"
   },
   "organizationInfo": {
-    "message": "Organization info"
+    "message": "Kuruluş bilgileri"
   },
   "deleteOrganization": {
     "message": "Kuruluşu sil"
@@ -3041,7 +3050,7 @@
     "message": "Kuruluş ve ilişkili tüm veriler silindi."
   },
   "organizationUpdated": {
-    "message": "Kuruluş güncellendi"
+    "message": "Kuruluş kaydedildi"
   },
   "taxInformation": {
     "message": "Vergi bilgileri"
@@ -3054,7 +3063,7 @@
     "description": "A billing plan/package. For example: Families, Teams, Enterprise, etc."
   },
   "changeBillingPlan": {
-    "message": "Paketi yükselt",
+    "message": "Planı yükselt",
     "description": "A billing plan/package. For example: Families, Teams, Enterprise, etc."
   },
   "changeBillingPlanUpgrade": {
@@ -3090,7 +3099,7 @@
     "message": "Banka hesabınız doğrulanmazsa ödeme yapılamaz ve aboneliğiniz devre dışı bırakılır."
   },
   "verifiedBankAccount": {
-    "message": "Banka hesabınız doğrulandı."
+    "message": "Banka hesabı doğrulandı"
   },
   "bankAccount": {
     "message": "Banka hesabı"
@@ -3128,7 +3137,7 @@
     "message": "Yükleme numarasını girin"
   },
   "limitSubscriptionDesc": {
-    "message": "Aboneliğiniz için kullanıcı sayısı sınırını belirleyin. Bu sınıra ulaşıldıktan sonra yeni kullanıcı davet edemezsiniz."
+    "message": "Aboneliğiniz için kullanıcı sayısı sınırını belirleyin. Bu sınıra ulaşıldıktan sonra yeni üye davet edemezsiniz."
   },
   "maxSeatLimit": {
     "message": "Maksimum kullanıcı sayısı (isteğe bağlı)",
@@ -3149,7 +3158,7 @@
     "message": "Aboneliğinizde yapacağınız değişiklikler toplam faturanızın değişmesine yol açacaktır. Yeni davet edilen kullanıcıların sayısı abonelik paketinizdeki kullanıcı sayınızı aşarsa ek kullanıcılar için derhal ödeme alınır."
   },
   "subscriptionUserSeats": {
-    "message": "Aboneliğiniz toplam $COUNT$ kullanıcıya izin veriyor.",
+    "message": "Aboneliğiniz toplam $COUNT$ üyeye izin veriyor.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -3167,7 +3176,7 @@
     "message": "Abonelik güncellendi"
   },
   "additionalOptions": {
-    "message": "Ek Seçenekler"
+    "message": "Ek seçenekler"
   },
   "additionalOptionsDesc": {
     "message": "Aboneliğinizin yönetimiyle ilgili ek yardım için lütfen müşteri hizmetleri ile iletişime geçin."
@@ -3707,10 +3716,10 @@
     "message": "Kuruluş tanımlayıcısı gereklidir."
   },
   "ssoIdentifier": {
-    "message": "SSO Identifier"
+    "message": "SSO Tanımlayıcı"
   },
   "ssoIdentifierHint": {
-    "message": "Provide this ID to your members to login with SSO."
+    "message": "SSO ile giriş yapan üyelere bu kimliği sağlayın."
   },
   "unlinkSso": {
     "message": "SSO bağlantısını kes"
@@ -4114,7 +4123,7 @@
     "message": "İzinler"
   },
   "permission": {
-    "message": "Permission"
+    "message": "Yetki"
   },
   "managerPermissions": {
     "message": "Yetkili İzinleri"
@@ -4522,7 +4531,7 @@
     "message": "Müşteriler"
   },
   "client": {
-    "message": "Client",
+    "message": "İstemci",
     "description": "This is used as a table header to describe which client application created an event log."
   },
   "providerAdmin": {
@@ -5410,7 +5419,7 @@
     }
   },
   "inputMaxLength": {
-    "message": "Input must not exceed $COUNT$ characters in length.",
+    "message": "Girdi, $COUNT$ karakter uzunluğunu geçmemelidir.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -5434,10 +5443,10 @@
     "message": "Açık"
   },
   "members": {
-    "message": "Members"
+    "message": "Üyeler"
   },
   "reporting": {
-    "message": "Reporting"
+    "message": "Raporlama"
   },
   "cardBrandMir": {
     "message": "Mir"
@@ -5452,7 +5461,7 @@
     "message": "Siz değil misiniz?"
   },
   "multiSelectPlaceholder": {
-    "message": "-- Type to Filter --"
+    "message": "-- Filtrelemek İçin Yazın --"
   },
   "multiSelectLoading": {
     "message": "Seçenekler alınıyor..."
@@ -5464,39 +5473,39 @@
     "message": "Tümünü temizle"
   },
   "from": {
-    "message": "From"
+    "message": "Kimden"
   },
   "to": {
-    "message": "To"
+    "message": "Kime"
   },
   "member": {
-    "message": "Member"
+    "message": "Üye"
   },
   "update": {
-    "message": "Update"
+    "message": "Güncelle"
   },
   "role": {
-    "message": "Role"
+    "message": "Rol"
   },
   "canView": {
-    "message": "Can view"
+    "message": "Görüntüleyebilir"
   },
   "canViewExceptPass": {
-    "message": "Can view, except passwords"
+    "message": "Parolalar hariç görüntüleyebilir"
   },
   "canEdit": {
-    "message": "Can edit"
+    "message": "Düzenleyebilir"
   },
   "canEditExceptPass": {
-    "message": "Can edit, except passwords"
+    "message": "Parolalar hariç düzenleyebilir"
   },
   "group": {
-    "message": "Group"
+    "message": "Grup"
   },
   "groupAccessAll": {
-    "message": "This group can access and modify all items."
+    "message": "Bu grup tüm kayıtlara erişebilir ve kayıtları değiştirebilir."
   },
   "memberAccessAll": {
-    "message": "This member can access and modify all items."
+    "message": "Bu kullanıcı tüm kayıtlara erişebilir ve kayıtları değiştirebilir."
   }
 }

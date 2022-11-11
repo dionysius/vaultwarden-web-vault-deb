@@ -2596,6 +2596,15 @@
       }
     }
   },
+  "viewedCardNumberItemId": {
+    "message": "Viewed Card Number for item $ID$.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Unique ID"
+      }
+    }
+  },
   "viewedSecurityCodeItemId": {
     "message": "Προβεβλημένος κωδικός ασφαλείας για το στοιχείο $ID$.",
     "placeholders": {
@@ -3707,7 +3716,7 @@
     "message": "Απαιτείται αναγνωριστικό οργανισμού."
   },
   "ssoIdentifier": {
-    "message": "SSO Identifier"
+    "message": "SSO identifier"
   },
   "ssoIdentifierHint": {
     "message": "Provide this ID to your members to login with SSO."

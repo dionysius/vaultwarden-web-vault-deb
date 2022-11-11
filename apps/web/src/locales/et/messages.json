@@ -2596,6 +2596,15 @@
       }
     }
   },
+  "viewedCardNumberItemId": {
+    "message": "Viewed Card Number for item $ID$.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Unique ID"
+      }
+    }
+  },
   "viewedSecurityCodeItemId": {
     "message": "Vaatas kirje $ID$ turvakoodi.",
     "placeholders": {
@@ -3707,7 +3716,7 @@
     "message": "Nõutud on organisatsioon identifikaator."
   },
   "ssoIdentifier": {
-    "message": "SSO Identifier"
+    "message": "SSO identifier"
   },
   "ssoIdentifierHint": {
     "message": "Provide this ID to your members to login with SSO."

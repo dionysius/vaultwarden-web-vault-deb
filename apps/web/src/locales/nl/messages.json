@@ -2596,6 +2596,15 @@
       }
     }
   },
+  "viewedCardNumberItemId": {
+    "message": "Kaartnummer bekeken voor item $ID$.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Unique ID"
+      }
+    }
+  },
   "viewedSecurityCodeItemId": {
     "message": "Beveiligingscode bekeken voor item $ID$.",
     "placeholders": {

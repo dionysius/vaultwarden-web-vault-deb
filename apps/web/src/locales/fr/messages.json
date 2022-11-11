@@ -1557,7 +1557,7 @@
     "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization vault."
   },
   "orgsReportsDesc": {
-    "message": "Identify and close security gaps in your organization's accounts by clicking the reports below.",
+    "message": "Identifiez et fermez les trous de sécurité dans les comptes de votre organisation en cliquant sur les rapports ci-dessous.",
     "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization Vault."
   },
   "unsecuredWebsitesReport": {
@@ -2596,6 +2596,15 @@
       }
     }
   },
+  "viewedCardNumberItemId": {
+    "message": "Numéro de Carte visionné pour l'article $ID$.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Unique ID"
+      }
+    }
+  },
   "viewedSecurityCodeItemId": {
     "message": "Le code de sécurité de l’élément $ID$ a été consulté.",
     "placeholders": {
@@ -3008,7 +3017,7 @@
     "message": "Mon organisation"
   },
   "organizationInfo": {
-    "message": "Organization info"
+    "message": "Informations sur l'Organisation"
   },
   "deleteOrganization": {
     "message": "Supprimer l'organisation"
@@ -3707,10 +3716,10 @@
     "message": "L'identifiant de l'organisation est requis."
   },
   "ssoIdentifier": {
-    "message": "SSO Identifier"
+    "message": "Identifiant SSO"
   },
   "ssoIdentifierHint": {
-    "message": "Provide this ID to your members to login with SSO."
+    "message": "Fournissez cet ID à vos membres pour se connecter avec SSO."
   },
   "unlinkSso": {
     "message": "Délier SSO"
@@ -5410,7 +5419,7 @@
     }
   },
   "inputMaxLength": {
-    "message": "Input must not exceed $COUNT$ characters in length.",
+    "message": "L'entrée ne doit pas dépasser $COUNT$ caractères de long.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -5434,10 +5443,10 @@
     "message": "Activé"
   },
   "members": {
-    "message": "Members"
+    "message": "Membres"
   },
   "reporting": {
-    "message": "Reporting"
+    "message": "Compte Rendu"
   },
   "cardBrandMir": {
     "message": "Mir"
@@ -5464,39 +5473,39 @@
     "message": "Effacer tout"
   },
   "from": {
-    "message": "From"
+    "message": "De"
   },
   "to": {
-    "message": "To"
+    "message": "À"
   },
   "member": {
-    "message": "Member"
+    "message": "Membre"
   },
   "update": {
-    "message": "Update"
+    "message": "Mis à jour"
   },
   "role": {
-    "message": "Role"
+    "message": "Rôle"
   },
   "canView": {
-    "message": "Can view"
+    "message": "Peut voir"
   },
   "canViewExceptPass": {
-    "message": "Can view, except passwords"
+    "message": "Peut voir, sauf les mots de passe"
   },
   "canEdit": {
-    "message": "Can edit"
+    "message": "Peut modifier"
   },
   "canEditExceptPass": {
-    "message": "Can edit, except passwords"
+    "message": "Peut modifier, sauf les mots de passe"
   },
   "group": {
-    "message": "Group"
+    "message": "Groupe"
   },
   "groupAccessAll": {
-    "message": "This group can access and modify all items."
+    "message": "Ce groupe peut accéder et modifier tous les éléments."
   },
   "memberAccessAll": {
-    "message": "This member can access and modify all items."
+    "message": "Ce groupe peut voir et modifier tous les éléments."
   }
 }

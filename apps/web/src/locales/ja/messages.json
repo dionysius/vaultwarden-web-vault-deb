@@ -2596,6 +2596,15 @@
       }
     }
   },
+  "viewedCardNumberItemId": {
+    "message": "アイテム $ID$ のカード番号を表示しました。",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Unique ID"
+      }
+    }
+  },
   "viewedSecurityCodeItemId": {
     "message": "アイテム $ID$ のセキュリティコードを表示しました。",
     "placeholders": {

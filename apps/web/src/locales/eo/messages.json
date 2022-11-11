@@ -209,11 +209,11 @@
     "description": "A programming term, also known as 'RegEx'."
   },
   "matchDetection": {
-    "message": "Detektilo de interrespondo",
+    "message": "Eltrovado de kongruo",
     "description": "URI match detection for auto-fill."
   },
   "defaultMatchDetection": {
-    "message": "Implicita detektilo de interrespondo",
+    "message": "Implicita eltrovado de kongruo",
     "description": "Default URI match detection for auto-fill."
   },
   "never": {
@@ -570,13 +570,13 @@
     "message": "Ensalutu aŭ kreu novan konton por aliri vian sekuran trezorejon."
   },
   "loginWithDevice": {
-    "message": "Log in with device"
+    "message": "Saluti kun la aparato"
   },
   "loginWithDeviceEnabledInfo": {
     "message": "Log in with device must be set up in the settings of the Bitwarden mobile app. Need another option?"
   },
   "loginWithMasterPassword": {
-    "message": "Log in with master password"
+    "message": "Saluti kun la ĉefpasvorto"
   },
   "createAccount": {
     "message": "Krei konton"
@@ -606,7 +606,7 @@
     "message": "Kiel ni nomu vin?"
   },
   "masterPass": {
-    "message": "Majstra Pasvorto"
+    "message": "Ĉefpasvorto"
   },
   "masterPassDesc": {
     "message": "La ĉefa pasvorto estas la pasvorto, kiun vi uzas por aliri vian trezorejon. Tre gravas, ke vi ne forgesu vian ĉefan pasvorton. Ne eblas retrovi la pasvorton, se vi forgesos ĝin."
@@ -654,7 +654,7 @@
     "message": "Master password must be at least 8 characters long."
   },
   "masterPassDoesntMatch": {
-    "message": "La konfirmo de la ĉefa pasvorto ne interrespondas."
+    "message": "La konfirmo de la ĉefa pasvorto ne kongruas."
   },
   "newAccountCreated": {
     "message": "Via nova konto kreiĝis! Vi nun povas ensaluti."
@@ -918,7 +918,7 @@
     "message": "This password will be used to export and import this file"
   },
   "confirmMasterPassword": {
-    "message": "Confirm master password"
+    "message": "Konfirmi la ĉefpasvorton"
   },
   "confirmFormat": {
     "message": "Confirm format"
@@ -1187,7 +1187,7 @@
     "message": "Nenio estis importita."
   },
   "importEncKeyError": {
-    "message": "Eraro de deĉifrado de la elportaĵo. Via ŝlosilo de ĉifrado ne interrespondas kun la ŝlosilo de ĉifrado uzita por elporti la datenon."
+    "message": "Eraro de ĉifrado de la elporta dosiero. Via ŝlosilo de ĉifrado ne kongruas kun la ŝlosilo de ĉifrado uzita por elporti la datumojn."
   },
   "selectFormat": {
     "message": "Elektu la formaton de la importa dosiero"
@@ -1540,7 +1540,7 @@
     "message": "Web vault and browser extensions on a desktop/laptop with a WebAuthn supported browser (Chrome, Opera, Vivaldi, or Firefox with FIDO U2F turned on)."
   },
   "twoFactorRecoveryYourCode": {
-    "message": "Via kodo de senpaneigo de la du-ŝtupa saluto de Bitwarden"
+    "message": "Via kodo de senpaneigo de du-ŝtupa saluto de Bitwarden"
   },
   "twoFactorRecoveryNoCode": {
     "message": "Vi ankoraŭ ne ebligis du-paŝajn ensalutajn provizantojn. Post kiam vi ebligis du-ŝtupan ensalut-provizanton, vi povas kontroli ĉi tie vian reakiran kodon."
@@ -2593,6 +2593,15 @@
       "id": {
         "content": "$1",
         "example": "Google"
+      }
+    }
+  },
+  "viewedCardNumberItemId": {
+    "message": "Viewed Card Number for item $ID$.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Unique ID"
       }
     }
   },
@@ -3707,7 +3716,7 @@
     "message": "La identigilo de la organizo estas postulata."
   },
   "ssoIdentifier": {
-    "message": "SSO Identifier"
+    "message": "SSO identifier"
   },
   "ssoIdentifierHint": {
     "message": "Provide this ID to your members to login with SSO."
@@ -4315,7 +4324,7 @@
     "message": "Withdrawal success!"
   },
   "eventEnrollPasswordReset": {
-    "message": "User $ID$ enrolled in password reset assistance.",
+    "message": "User $ID$ enrolled in password reset.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -4324,7 +4333,7 @@
     }
   },
   "eventWithdrawPasswordReset": {
-    "message": "User $ID$ withdrew from password reset assistance.",
+    "message": "User $ID$ withdrew from password reset.",
     "placeholders": {
       "id": {
         "content": "$1",

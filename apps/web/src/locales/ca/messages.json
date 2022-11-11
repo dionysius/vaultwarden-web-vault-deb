@@ -534,7 +534,7 @@
     "message": "Esteu segur que voleu sobreescriure la contrasenya actual?"
   },
   "editedFolder": {
-    "message": "Carpeta editada"
+    "message": "Carpeta guardada"
   },
   "addedFolder": {
     "message": "Carpeta afegida"
@@ -576,7 +576,7 @@
     "message": "L'inici de sessió amb el dispositiu ha d'estar activat a la configuració de l'aplicació mòbil Bitwarden. Necessiteu una altra opció?"
   },
   "loginWithMasterPassword": {
-    "message": "Log in with master password"
+    "message": "Inicia sessió amb la contrasenya mestra"
   },
   "createAccount": {
     "message": "Crea un compte"
@@ -772,13 +772,13 @@
     "message": "Inici de sessió no disponible"
   },
   "noTwoStepProviders": {
-    "message": "Aquest compte té habilitat l'inici de sessió en dues passes, però aquest navegador web no admet cap dels dos proveïdors configurats."
+    "message": "Aquest compte té habilitat l'inici de sessió en dos passos, però aquest navegador web no admet cap dels dos proveïdors configurats."
   },
   "noTwoStepProviders2": {
     "message": "Utilitzeu un navegador web compatible (com ara Chrome) o afegiu proveïdors addicionals que siguen compatibles amb tots els navegadors web (com una aplicació d'autenticació)."
   },
   "twoStepOptions": {
-    "message": "Opcions d'inici de sessió en dues passes"
+    "message": "Opcions d'inici de sessió en dos passos"
   },
   "recoveryCodeDesc": {
     "message": "Heu perdut l'accés a tots els vostres proveïdors de dos factors? Utilitzeu el vostre codi de recuperació per desactivar tots els proveïdors de dos factors del vostre compte."
@@ -1016,7 +1016,7 @@
     "description": "To clear something out. Example: To clear browser history."
   },
   "accountUpdated": {
-    "message": "Compte actualitzat"
+    "message": "Compte guardat"
   },
   "changeEmail": {
     "message": "Canvia el correu electrònic"
@@ -1043,7 +1043,7 @@
     "message": "Si es procedeix, es tancarà la vostra sessió actual i l'haureu de tornar a iniciar. Les sessions d'altres dispositius poden mantenir-se actives fins a una hora."
   },
   "emailChanged": {
-    "message": "El correu electrònic s'ha canviat"
+    "message": "El correu electrònic s'ha guardat"
   },
   "logBackIn": {
     "message": "Torneu a iniciar sessió."
@@ -1148,7 +1148,7 @@
     "message": "La supressió del compte és permanent. No es pot desfer."
   },
   "accountDeleted": {
-    "message": "S'ha eliminat el compte"
+    "message": "S'ha suprimit el compte"
   },
   "accountDeletedDesc": {
     "message": "El vostre compte s'ha tancat i s'han eliminat totes les dades associades."
@@ -1169,7 +1169,7 @@
     "message": "Hi ha hagut un problema amb les dades que heu intentat importar. Resoleu els errors que es mostren a continuació al fitxer font i torneu-ho a provar."
   },
   "importSuccess": {
-    "message": "Les dades s'han importat amb èxit a la vostra caixa forta."
+    "message": "Les dades s'han importat amb èxit"
   },
   "importWarning": {
     "message": "Esteu important dades a $ORGANIZATION$. Les vostres dades es poden compartir amb membres d'aquesta organització. Voleu continuar?",
@@ -1196,10 +1196,10 @@
     "message": "Seleccioneu el fitxer d'importació"
   },
   "chooseFile": {
-    "message": "Choose File"
+    "message": "Trieu fitxer"
   },
   "noFileChosen": {
-    "message": "No file chosen"
+    "message": "No s'ha triat cap fitxer"
   },
   "orCopyPasteFileContents": {
     "message": "o copieu/enganxeu el contingut dels fitxers d'importació"
@@ -1224,7 +1224,7 @@
     "message": "Personalitzeu la vostra experiència de caixa forta web."
   },
   "preferencesUpdated": {
-    "message": "Preferències actualitzades"
+    "message": "Preferències guardades"
   },
   "language": {
     "message": "Idioma"
@@ -1285,29 +1285,29 @@
     }
   },
   "domainsUpdated": {
-    "message": "Dominis actualitzats"
+    "message": "Dominis guardats"
   },
   "twoStepLogin": {
     "message": "Inici de sessió en dues passes"
   },
   "twoStepLoginEnforcement": {
-    "message": "Two-step Login Enforcement"
+    "message": "Aplicació d'inici de sessió en dos passos"
   },
   "twoStepLoginDesc": {
     "message": "Protegiu el vostre compte exigint un pas addicional en iniciar sessió."
   },
   "twoStepLoginOrganizationDescStart": {
-    "message": "Enforce Bitwarden Two-step Login options for members by using the ",
+    "message": "Apliqueu les opcions d'inici de sessió en dos passos de Bitwarden per als membres mitjançant la ",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enforce Bitwarden Two-step Login options for members by using the Two-step Login Policy.'"
   },
   "twoStepLoginPolicy": {
-    "message": "Two-step Login Policy"
+    "message": "Política d'inici de sessió en dos passos"
   },
   "twoStepLoginOrganizationDuoDesc": {
-    "message": "To enforce Two-step Login through Duo, use the options below."
+    "message": "Per aplicar l'inici de sessió en dos passos mitjançant Duo, utilitzeu les opcions següents."
   },
   "twoStepLoginOrganizationSsoDesc": {
-    "message": "If you have setup SSO or plan to, Two-step Login may already be enforced through your Identity Provider."
+    "message": "Si heu configurat l'SSO o teniu previst fer-ho, és possible que l'inici de sessió en dos passos ja s'aplique a través del vostre proveïdor d'identitat."
   },
   "twoStepLoginRecoveryWarning": {
     "message": "Si habiliteu l'inici de sessió en dues passes, pot bloquejar-vos de manera definitiva el compte de Bitwarden. Un codi de recuperació us permet accedir al vostre compte en cas que no pugueu utilitzar el proveïdor d'inici de sessió en dues passes (p. Ex. Perdre el dispositiu). El suport de Bitwarden no podrà ajudar-vos si perdeu l'accés al vostre compte. Us recomanem que escriviu o imprimiu el codi de recuperació i el mantingueu en un lloc segur."
@@ -1357,7 +1357,7 @@
     "message": "Revoca l'accés"
   },
   "twoStepLoginProviderEnabled": {
-    "message": "Aquest proveïdor d'inici de sessió en dues passes està habilitat al vostre compte."
+    "message": "Aquest proveïdor d'inici de sessió en dos passos està habilitat al vostre compte."
   },
   "twoStepLoginAuthDesc": {
     "message": "Introduïu la vostra contrasenya mestra per modificar la configuració d'inici de sessió en dues passes."
@@ -1396,10 +1396,10 @@
     "message": "En cas que hàgeu d'afegir-lo a un altre dispositiu, a continuació teniu el codi QR (o clau) requerit per l'aplicació autenticadora."
   },
   "twoStepDisableDesc": {
-    "message": "Esteu segur que voleu inhabilitar aquest proveïdor d'inici de sessió en dues passes?"
+    "message": "Esteu segur que voleu inhabilitar aquest proveïdor d'inici de sessió en dos passos?"
   },
   "twoStepDisabled": {
-    "message": "El proveïdor d'inici de sessió en dues passes està inhabilitat."
+    "message": "El proveïdor d'inici de sessió en dos passos està inhabilitat."
   },
   "twoFactorYubikeyAdd": {
     "message": "Afegiu una nova YubiKey al vostre compte"
@@ -1417,7 +1417,7 @@
     "message": "Guardeu el formulari."
   },
   "twoFactorYubikeyWarning": {
-    "message": "A causa de les limitacions de la plataforma, les YubiKeys no es poden utilitzar en totes les aplicacions de Bitwarden. Heu d'habilitar un altre proveïdor d'inici de sessió en dues passes per accedir al compte quan no es puguen utilitzar les YubiKeys. Plataformes compatibles:"
+    "message": "A causa de les limitacions de la plataforma, les YubiKeys no es poden utilitzar en totes les aplicacions de Bitwarden. Heu d'habilitar un altre proveïdor d'inici de sessió en dos passos per accedir al compte quan no es puguen utilitzar les YubiKeys. Plataformes compatibles:"
   },
   "twoFactorYubikeySupportUsb": {
     "message": "Caixa forta web, aplicació d'escriptori, CLI i totes les extensions de navegador en un dispositiu amb un port USB que puga acceptar la vostra YubiKey."
@@ -1501,7 +1501,7 @@
     "message": "Afegiu una clau de seguretat de WebAuthn al vostre compte"
   },
   "readKey": {
-    "message": "Llegeix la clau"
+    "message": "Llig la clau"
   },
   "keyCompromised": {
     "message": "La clau està compromesa."
@@ -1519,7 +1519,7 @@
     "message": "Guardeu el formulari."
   },
   "twoFactorU2fWarning": {
-    "message": "A causa de les limitacions de la plataforma, FIDO U2F no es pot utilitzar en totes les aplicacions de Bitwarden. Heu d'habilitar un altre proveïdor d'inici de sessió en dues passes perquè pugueu accedir al vostre compte quan FIDO U2F no es puga utilitzar. Plataformes compatibles:"
+    "message": "A causa de les limitacions de la plataforma, FIDO U2F no es pot utilitzar en totes les aplicacions de Bitwarden. Heu d'habilitar un altre proveïdor d'inici de sessió en dos passos perquè pugueu accedir al vostre compte quan FIDO U2F no es puga utilitzar. Plataformes compatibles:"
   },
   "twoFactorU2fSupportWeb": {
     "message": "Caixa forta web i extensions de navegador en un escriptori/portàtil amb un navegador compatible amb U2F (Chrome, Opera, Vivaldi, o Firefox amb FIDO U2F activat)."
@@ -1528,13 +1528,13 @@
     "message": "S'està esperant que toqueu el botó de la vostra clau de seguretat"
   },
   "twoFactorU2fClickSave": {
-    "message": "Feu clic al botó \"Guarda\" que apareix a continuació per habilitar aquesta clau de seguretat per iniciar sessió en dues passes."
+    "message": "Feu clic al botó \"Guarda\" que apareix a continuació per habilitar aquesta clau de seguretat per iniciar sessió en dos passos."
   },
   "twoFactorU2fProblemReadingTryAgain": {
     "message": "Hi ha hagut un problema en llegir la clau de seguretat. Torneu-ho a provar."
   },
   "twoFactorWebAuthnWarning": {
-    "message": "A causa de les limitacions de la plataforma, WebAuthn no es pot utilitzar en totes les aplicacions Bitwarden. Heu d’habilitar un altre proveïdor d’inici de sessió en dues passas perquè pugueu accedir al vostre compte quan no es puga utilitzar WebAuthn. Plataformes compatibles:"
+    "message": "A causa de les limitacions de la plataforma, WebAuthn no es pot utilitzar en totes les aplicacions Bitwarden. Heu d’habilitar un altre proveïdor d’inici de sessió en dos passos perquè pugueu accedir al vostre compte quan no es puga utilitzar WebAuthn. Plataformes compatibles:"
   },
   "twoFactorWebAuthnSupportWeb": {
     "message": "Caixa forta web i extensions de navegador en un escriptori/portàtil amb un navegador compatible amb WebAuthn (Chrome, Opera, Vivaldi, o Firefox amb FIDO U2F activat)."
@@ -1543,7 +1543,7 @@
     "message": "El codi de recuperació d'inici de sessió en dues passes de Bitwarden"
   },
   "twoFactorRecoveryNoCode": {
-    "message": "Encara no heu habilitat cap proveïdor d'inici de sessió en dues passes. Després d'activar-lo, podeu consultar ací el codi de recuperació."
+    "message": "Encara no heu habilitat cap proveïdor d'inici de sessió en dos passos. Després d'activar-lo, podeu consultar ací el codi de recuperació."
   },
   "printCode": {
     "message": "Imprimeix el codi",
@@ -1557,7 +1557,7 @@
     "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization vault."
   },
   "orgsReportsDesc": {
-    "message": "Identify and close security gaps in your organization's accounts by clicking the reports below.",
+    "message": "Identifiqueu i tanqueu els forats de seguretat dels comptes en línia fent clic en els informes següents.",
     "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization Vault."
   },
   "unsecuredWebsitesReport": {
@@ -1585,13 +1585,13 @@
     "message": "Inici de sessió inactiu en dos passos"
   },
   "inactive2faReportDesc": {
-    "message": "L'inici de sessió en dues passes afegeix una capa de protecció als comptes. Activeu l'inici de sessió en dues passes mitjançant Bitwarden Authenticator per a aquests comptes o utilitzeu un mètode alternatiu."
+    "message": "L'inici de sessió en dos passos afegeix una capa de protecció als comptes. Activeu l'inici de sessió en dos passos mitjançant Bitwarden Authenticator per a aquests comptes o utilitzeu un mètode alternatiu."
   },
   "inactive2faFound": {
     "message": "S'han trobat registres sense 2FA"
   },
   "inactive2faFoundDesc": {
-    "message": "We found $COUNT$ website(s) in your vault that may not be configured with two-step login (according to 2fa.directory). To further protect these accounts, you should set up two-step login.",
+    "message": "Hem trobat $COUNT$ llocs web a la vostra caixa forta que no es poden configurar amb l'autenticació de dos factors (d'acord amb 2fa.directory). Per protegir encara més aquests comptes, haureu d'habilitar l'autenticació de dos factors.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -2507,13 +2507,13 @@
     "message": "S'ha canviat la contrasenya del compte."
   },
   "enabledUpdated2fa": {
-    "message": "Inici de sessió en dues passes habilitat/actualitzat."
+    "message": "Inici de sessió en dos passos guardat"
   },
   "disabled2fa": {
-    "message": "S'ha inhabilitat l'inici de sessió en dues passes."
+    "message": "S'ha inhabilitat l'inici de sessió en dos passos"
   },
   "recovered2fa": {
-    "message": "S'ha recuperat el compte des de l'inici de sessió en dues passes."
+    "message": "S'ha recuperat el compte des de l'inici de sessió en dos passos."
   },
   "failedLogin": {
     "message": "S'ha produït un error d'inici de sessió amb una contrasenya incorrecta."
@@ -2522,7 +2522,7 @@
     "message": "S'ha produït un error amb un inici de sessió en dues passes incorrecte."
   },
   "exportedVault": {
-    "message": "Caixa forta exportada."
+    "message": "S'ha exportat la caixa forta"
   },
   "exportedOrganizationVault": {
     "message": "Caixa forta de l’organització exportada."
@@ -2593,6 +2593,15 @@
       "id": {
         "content": "$1",
         "example": "Google"
+      }
+    }
+  },
+  "viewedCardNumberItemId": {
+    "message": "Número de targeta vist per a l'article $ID$.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Unique ID"
       }
     }
   },
@@ -2990,7 +2999,7 @@
     "message": "Recupera l'inici de sessió en dues passes del compte"
   },
   "twoStepRecoverDisabled": {
-    "message": "S'ha inhabilitat l'inici de sessió en dues passes al vostre compte."
+    "message": "S'ha inhabilitat l'inici de sessió en dos passos al vostre compte."
   },
   "learnMore": {
     "message": "Més informació"
@@ -3002,13 +3011,13 @@
     "message": "Si el vostre compte existeix, rebreu un correu electrònic amb més instruccions."
   },
   "deleteRecoverConfirmDesc": {
-    "message": "Heu sol·licitat suprimir el compte de Bitwarden. Feu clic al botó seguüent per confirmar-ho."
+    "message": "Heu sol·licitat suprimir el compte de Bitwarden. Feu clic al botó següent per confirmar-ho."
   },
   "myOrganization": {
     "message": "La meua organització"
   },
   "organizationInfo": {
-    "message": "Organization info"
+    "message": "Informació de l'organització"
   },
   "deleteOrganization": {
     "message": "Suprimeix l'organització"
@@ -3041,7 +3050,7 @@
     "message": "S'ha suprimit l'organització i totes les dades associades."
   },
   "organizationUpdated": {
-    "message": "S'ha actualitzat l'organització"
+    "message": "S'ha guardat l'organització"
   },
   "taxInformation": {
     "message": "Informació fiscal"
@@ -3054,7 +3063,7 @@
     "description": "A billing plan/package. For example: Families, Teams, Enterprise, etc."
   },
   "changeBillingPlan": {
-    "message": "Canvi de pla",
+    "message": "Pla d'actualització",
     "description": "A billing plan/package. For example: Families, Teams, Enterprise, etc."
   },
   "changeBillingPlanUpgrade": {
@@ -3078,7 +3087,7 @@
     "message": "Baixa factura"
   },
   "verifyBankAccount": {
-    "message": "Comproveu compte"
+    "message": "Comproveu compte bancari"
   },
   "verifyBankAccountDesc": {
     "message": "Hem realitzat dos dipòsits en el vostre compte bancari (pot tardar entre 1-2 dies laborables). Introduïu aquests imports per verificar el compte bancari."
@@ -3138,11 +3147,11 @@
     "message": "Cost potencial màxim per plaça"
   },
   "addSeats": {
-    "message": "Afegeix reserves",
+    "message": "Afegeix places",
     "description": "Seat = User Seat"
   },
   "removeSeats": {
-    "message": "Suprimeix llocs",
+    "message": "Suprimeix places",
     "description": "Seat = User Seat"
   },
   "subscriptionDesc": {
@@ -3176,7 +3185,7 @@
     "message": "Els ajustos a la vostra subscripció donaran lloc a canvis prorratejats als vostres totals de facturació. Si els nous usuaris convidats superen les vostres places de subscripció, rebreu immediatament un càrrec prorratejat pels usuaris addicionals."
   },
   "subscriptionUserSeatsLimitedAutoscale": {
-    "message": "Els ajustaments a la vostra subscripció es traduiran en canvis prorratejats en els vostres totals de facturació. Si els usuaris recentment convidats excedeixen les vostres places de subscripció, rebreu immediatament un càrrec previst dels usuaris addicionals fins que s'aconseguisca arribar al vostre límit de places ($MAX$).",
+    "message": "Els ajustos a la vostra subscripció donaran lloc a canvis prorratejats en els vostres totals de facturació. Si els usuaris recentment convidats excedeixen les vostres places de subscripció, rebreu immediatament un càrrec previst dels usuaris addicionals fins que s'aconseguisca arribar al vostre límit de places ($MAX$).",
     "placeholders": {
       "max": {
         "content": "$1",
@@ -3221,10 +3230,10 @@
     }
   },
   "seatsToAdd": {
-    "message": "Reserves a afegir"
+    "message": "Places a afegir"
   },
   "seatsToRemove": {
-    "message": "Reserves a suprimir"
+    "message": "Places a suprimir"
   },
   "seatsAddNote": {
     "message": "Si afegiu reserves d'usuari, es generaran ajustos al total de facturació i carregarem el mètode de pagament immediatament al fitxer. El primer càrrec serà prorratejat per a la resta del cicle de facturació actual."
@@ -3248,7 +3257,7 @@
     "message": "Actualitza clau"
   },
   "updateEncryptionKey": {
-    "message": "Actualitzeu la clau de xifratge"
+    "message": "Actualitza la clau de xifratge"
   },
   "updateEncryptionKeyShortDesc": {
     "message": "Esteu fent servir un esquema de xifrage antiquat."
@@ -3495,7 +3504,7 @@
     "message": "Els membres de l’organització que no tinguen activat l’inici de sessió en dos passos per al seu compte personal s'eliminaran de l’organització i rebran un correu electrònic que els notificarà sobre el canvi."
   },
   "twoStepLoginPolicyUserWarning": {
-    "message": "Eres membre d’una organització que necessita l’inici de sessió en dues passes per estar habilitat al vostre compte d’usuari. Si desactiveu tots els proveïdors d’inici de sessió en dues passes, sereu eliminats automàticament d’aquestes organitzacions."
+    "message": "Eres membre d’una organització que necessita l’inici de sessió en dos passos per estar habilitat al vostre compte d’usuari. Si desactiveu tots els proveïdors d’inici de sessió en dos passos, sereu eliminats automàticament d’aquestes organitzacions."
   },
   "passwordGeneratorPolicyDesc": {
     "message": "Estableix els requisits mínims per a la configuració del generador de contrasenyes."
@@ -3707,10 +3716,10 @@
     "message": "Cal identificador d’organització."
   },
   "ssoIdentifier": {
-    "message": "SSO Identifier"
+    "message": "Identificador SSO"
   },
   "ssoIdentifierHint": {
-    "message": "Provide this ID to your members to login with SSO."
+    "message": "Proporcioneu aquest identificador als vostres membres per iniciar sessió amb SSO."
   },
   "unlinkSso": {
     "message": "Desenllaça SSO"
@@ -3758,7 +3767,7 @@
     "message": "Text"
   },
   "createSend": {
-    "message": "Crea un nou Send",
+    "message": "Nou Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editSend": {
@@ -3770,7 +3779,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editedSend": {
-    "message": "Send editat",
+    "message": "Send guardat",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "deletedSend": {
@@ -4060,7 +4069,7 @@
     "message": "Els usuaris de l’organització que poden gestionar les polítiques d'aquesta, estan exempts de la seua aplicació."
   },
   "sendDisabled": {
-    "message": "Send desactivat",
+    "message": "Send suprimit",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendDisabledWarning": {
@@ -4114,7 +4123,7 @@
     "message": "Permisos"
   },
   "permission": {
-    "message": "Permission"
+    "message": "Permisos"
   },
   "managerPermissions": {
     "message": "Permisos de l'administrador"
@@ -4197,10 +4206,10 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendTextDesc": {
-    "message": "El text que voleu enviar."
+    "message": "El text que voleu pel Send."
   },
   "sendFileDesc": {
-    "message": "El fitxer que voleu enviar."
+    "message": "El fitxer que voleu pel Send."
   },
   "copySendLinkOnSave": {
     "message": "Copie l'enllaç per compartir aquest Send al meu porta-retalls després de guardar-lo."
@@ -4687,7 +4696,7 @@
     "message": "Prohibeix als usuaris exportar les dades de la seua caixa forta privada."
   },
   "vaultExportDisabled": {
-    "message": "L'exportació de la caixa forta està Inhabilitada"
+    "message": "L'exportació de la caixa forta s'ha suprimit"
   },
   "personalVaultExportPolicyInEffect": {
     "message": "Una o més polítiques d'organització us impedeixen exportar la vostra caixa forta."
@@ -4720,7 +4729,7 @@
     "message": "ID de Client"
   },
   "clientSecret": {
-    "message": "Client Secret"
+    "message": "Secret de client"
   },
   "metadataAddress": {
     "message": "Adreça de metadades"
@@ -4960,7 +4969,7 @@
     "message": "Abandona l'organització"
   },
   "removeMasterPassword": {
-    "message": "Suprimiu la contrasenya mestra"
+    "message": "Suprimeix la contrasenya mestra"
   },
   "removedMasterPassword": {
     "message": "S'ha suprimit la contrasenya mestra."
@@ -5014,7 +5023,7 @@
     "message": "Connector de claus inhabilitat"
   },
   "keyConnectorWarning": {
-    "message": "Una vegada els membres comencen a utilitzarel connector de claus, la vostra organització no pot tornar al desxifrat de la contrasenya mestra. Continueu només si us sentiu còmode implementant i gestionant un servidor de claus."
+    "message": "Una vegada els membres comencen a utilitzar el connector de claus, la vostra organització no pot tornar al desxifrat de la contrasenya mestra. Continueu només si us sentiu còmode implementant i gestionant un servidor de claus."
   },
   "migratedKeyConnector": {
     "message": "S'ha migrat al connector claus"
@@ -5410,7 +5419,7 @@
     }
   },
   "inputMaxLength": {
-    "message": "Input must not exceed $COUNT$ characters in length.",
+    "message": "L'entrada no ha de superar $COUNT$ caràcters de longitud.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -5434,10 +5443,10 @@
     "message": "Activat"
   },
   "members": {
-    "message": "Members"
+    "message": "Membres"
   },
   "reporting": {
-    "message": "Reporting"
+    "message": "Informes"
   },
   "cardBrandMir": {
     "message": "Mir"
@@ -5446,10 +5455,10 @@
     "message": "Nombre d'usuaris"
   },
   "loggingInAs": {
-    "message": "Logging in as"
+    "message": "Has iniciat sessió com"
   },
   "notYou": {
-    "message": "Not you?"
+    "message": "No sou vosaltres?"
   },
   "multiSelectPlaceholder": {
     "message": "-- Escriviu per filtrar --"
@@ -5464,39 +5473,39 @@
     "message": "Esborra-ho tot"
   },
   "from": {
-    "message": "From"
+    "message": "De"
   },
   "to": {
-    "message": "To"
+    "message": "A"
   },
   "member": {
-    "message": "Member"
+    "message": "Membre"
   },
   "update": {
-    "message": "Update"
+    "message": "Actualitza"
   },
   "role": {
-    "message": "Role"
+    "message": "Rol"
   },
   "canView": {
-    "message": "Can view"
+    "message": "Pot veure"
   },
   "canViewExceptPass": {
-    "message": "Can view, except passwords"
+    "message": "Pot veure, excepte les contrasenyes"
   },
   "canEdit": {
-    "message": "Can edit"
+    "message": "Pot editar"
   },
   "canEditExceptPass": {
-    "message": "Can edit, except passwords"
+    "message": "Pot editar, excepte les contrasenyes"
   },
   "group": {
-    "message": "Group"
+    "message": "Grup"
   },
   "groupAccessAll": {
-    "message": "This group can access and modify all items."
+    "message": "Aquest grup pot accedir i modificar tots els elements."
   },
   "memberAccessAll": {
-    "message": "This member can access and modify all items."
+    "message": "Aquest usuari pot accedir i modificar tots els elements."
   }
 }

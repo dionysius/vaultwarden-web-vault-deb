@@ -1291,23 +1291,23 @@
     "message": "Zwei-Faktor-Authentifizierung"
   },
   "twoStepLoginEnforcement": {
-    "message": "Two-step Login Enforcement"
+    "message": "Erzwungene Zwei-Faktor-Authentifizierung"
   },
   "twoStepLoginDesc": {
     "message": "Sichern Sie Ihr Konto mit Zwei-Faktor-Authentifizierung."
   },
   "twoStepLoginOrganizationDescStart": {
-    "message": "Enforce Bitwarden Two-step Login options for members by using the ",
+    "message": "Erzwinge Zwei-Faktor-Authentifizierung in Bitwarden für Mitglieder durch Verwendung der ",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enforce Bitwarden Two-step Login options for members by using the Two-step Login Policy.'"
   },
   "twoStepLoginPolicy": {
-    "message": "Two-step Login Policy"
+    "message": "Richtlinie für Zwei-Faktor-Authentifizierung"
   },
   "twoStepLoginOrganizationDuoDesc": {
-    "message": "To enforce Two-step Login through Duo, use the options below."
+    "message": "Verwende die folgenden Optionen, um Zwei-Faktor-Authentifizierung über Duo zu erzwingen."
   },
   "twoStepLoginOrganizationSsoDesc": {
-    "message": "If you have setup SSO or plan to, Two-step Login may already be enforced through your Identity Provider."
+    "message": "Wenn SSO eingerichtet oder dies geplant ist, wird die Zwei-Faktor-Authentifizierung möglicherweise bereits über den Identity Provider erzwungen."
   },
   "twoStepLoginRecoveryWarning": {
     "message": "Durch die Aktivierung der Zwei-Faktor-Authentifizierung könnten Sie sich dauerhaft aus Ihrem Bitwarden-Konto aussperren. Ein Wiederherstellungscode ermöglicht es Ihnen, auf Ihr Konto zuzugreifen, falls Sie Ihren normalen Zwei-Faktor-Anbieter nicht mehr verwenden können (z.B. wenn Sie Ihr Gerät verlieren). Der Bitwarden-Support kann Ihnen nicht helfen, wenn Sie den Zugang zu Ihrem Konto verlieren. Wir empfehlen Ihnen, den Wiederherstellungscode aufzuschreiben oder auszudrucken und an einem sicheren Ort aufzubewahren."
@@ -1557,7 +1557,7 @@
     "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization vault."
   },
   "orgsReportsDesc": {
-    "message": "Identify and close security gaps in your organization's accounts by clicking the reports below.",
+    "message": "Identifiziere und schließe Sicherheitslücken in den Konten deiner Organisation, indem du auf die folgenden Berichte klickst.",
     "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization Vault."
   },
   "unsecuredWebsitesReport": {
@@ -2596,6 +2596,15 @@
       }
     }
   },
+  "viewedCardNumberItemId": {
+    "message": "Kartennummer für Eintrag $ID$ angesehen.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Unique ID"
+      }
+    }
+  },
   "viewedSecurityCodeItemId": {
     "message": "Sicherheitscode für Eintrag $ID$ angesehen.",
     "placeholders": {
@@ -3008,7 +3017,7 @@
     "message": "Meine Organisation"
   },
   "organizationInfo": {
-    "message": "Organization info"
+    "message": "Organisationsinfo"
   },
   "deleteOrganization": {
     "message": "Organisation löschen"
@@ -3384,7 +3393,7 @@
     "message": "Schwaches Master-Passwort"
   },
   "weakMasterPasswordDesc": {
-    "message": "The master password you have chosen is weak. You should use a strong master password (or a passphrase) to properly protect your Bitwarden account. Are you sure you want to use this master password?"
+    "message": "Das Master-Passwort, das du gewählt hast, ist schwach. Du solltest ein starkes Master-Passwort (oder eine Passphrase) auswählen, um dein Bitwarden-Konto richtig zu schützen. Bist du sicher, dass du dieses Master-Passwort verwenden willst?"
   },
   "rotateAccountEncKey": {
     "message": "Auch den Verschlüsselungscode meines Kontos aktualisieren"
@@ -3707,10 +3716,10 @@
     "message": "Unternehmenskennung ist erforderlich."
   },
   "ssoIdentifier": {
-    "message": "SSO Identifier"
+    "message": "SSO-Kennung"
   },
   "ssoIdentifierHint": {
-    "message": "Provide this ID to your members to login with SSO."
+    "message": "Gib den Mitgliedern diese ID, um sich mit SSO anzumelden."
   },
   "unlinkSso": {
     "message": "SSO Verknüpfung aufheben"
@@ -4114,7 +4123,7 @@
     "message": "Berechtigungen"
   },
   "permission": {
-    "message": "Permission"
+    "message": "Berechtigung"
   },
   "managerPermissions": {
     "message": "Manager-Berechtigungen"
@@ -5410,7 +5419,7 @@
     }
   },
   "inputMaxLength": {
-    "message": "Input must not exceed $COUNT$ characters in length.",
+    "message": "Die Eingabe darf nicht länger als $COUNT$ Zeichen sein.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -5434,10 +5443,10 @@
     "message": "Ein"
   },
   "members": {
-    "message": "Members"
+    "message": "Mitglieder"
   },
   "reporting": {
-    "message": "Reporting"
+    "message": "Bericht"
   },
   "cardBrandMir": {
     "message": "Mir"
@@ -5464,39 +5473,39 @@
     "message": "Alles löschen"
   },
   "from": {
-    "message": "From"
+    "message": "Von"
   },
   "to": {
-    "message": "To"
+    "message": "Bis"
   },
   "member": {
-    "message": "Member"
+    "message": "Mitglied"
   },
   "update": {
-    "message": "Update"
+    "message": "Aktualisierung"
   },
   "role": {
-    "message": "Role"
+    "message": "Rolle"
   },
   "canView": {
-    "message": "Can view"
+    "message": "Darf anzeigen"
   },
   "canViewExceptPass": {
-    "message": "Can view, except passwords"
+    "message": "Darf anzeigen, Passwörter ausgenommen"
   },
   "canEdit": {
-    "message": "Can edit"
+    "message": "Darf bearbeiten"
   },
   "canEditExceptPass": {
-    "message": "Can edit, except passwords"
+    "message": "Darf bearbeiten, Passwörter ausgenommen"
   },
   "group": {
-    "message": "Group"
+    "message": "Gruppe"
   },
   "groupAccessAll": {
-    "message": "This group can access and modify all items."
+    "message": "Diese Gruppe darf auf alle Einträge zugreifen und diese ändern."
   },
   "memberAccessAll": {
-    "message": "This member can access and modify all items."
+    "message": "Dieses Mitglied darf auf alle Elemente zugreifen und diese ändern."
   }
 }

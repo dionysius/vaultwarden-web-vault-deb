@@ -2596,6 +2596,15 @@
       }
     }
   },
+  "viewedCardNumberItemId": {
+    "message": "Viewed Card Number for item $ID$.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Unique ID"
+      }
+    }
+  },
   "viewedSecurityCodeItemId": {
     "message": "Bezpečnostní kód pro položku $ID$ byl zobrazen.",
     "placeholders": {
@@ -3707,7 +3716,7 @@
     "message": "Je vyžadován identifikátor organizace."
   },
   "ssoIdentifier": {
-    "message": "SSO Identifier"
+    "message": "SSO identifier"
   },
   "ssoIdentifierHint": {
     "message": "Provide this ID to your members to login with SSO."

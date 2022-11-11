@@ -1291,23 +1291,23 @@
     "message": "Dvojstupňové prihlásenie"
   },
   "twoStepLoginEnforcement": {
-    "message": "Two-step Login Enforcement"
+    "message": "Vynútenie dvojstupňového prihlásenia"
   },
   "twoStepLoginDesc": {
     "message": "Zabezpečte svoj účet požadovaním ďalšieho kroku pri prihlasovaní."
   },
   "twoStepLoginOrganizationDescStart": {
-    "message": "Enforce Bitwarden Two-step Login options for members by using the ",
+    "message": "Vynútiť Bitwarden dvojstupňové prihlásenie pre členov použitím ",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enforce Bitwarden Two-step Login options for members by using the Two-step Login Policy.'"
   },
   "twoStepLoginPolicy": {
-    "message": "Two-step Login Policy"
+    "message": "Pravidlá dvojstupňového prihlásenia"
   },
   "twoStepLoginOrganizationDuoDesc": {
-    "message": "To enforce Two-step Login through Duo, use the options below."
+    "message": "Pre vynútenie dvojstupňového prihlásenia cez Duo, použite voľby nižšie."
   },
   "twoStepLoginOrganizationSsoDesc": {
-    "message": "If you have setup SSO or plan to, Two-step Login may already be enforced through your Identity Provider."
+    "message": "Ak už máte alebo plánujete nastaviť SSO, dvojstupňové prihlásenie môže už byť vynútené vaším poskytovateľom identity."
   },
   "twoStepLoginRecoveryWarning": {
     "message": "Zapnutie dvojstupňového prihlásenia vás môže natrvalo vymknúť z vášho Bitwarden účtu. Záchranný kód umožňuje prístup k vášmu kontu v prípade že už nemôžete použiť svoj normálny dvojstupňový spôsob overenia. (napríklad ak stratíte zariadenie) Zákaznícka podpora nebude schopná pomôcť vám ak stratíte prístup k účtu. Preto vám odporúčame zapísať si, alebo si vytlačiť záchranný kód a uložiť ho na bezpečnom mieste."
@@ -1557,7 +1557,7 @@
     "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization vault."
   },
   "orgsReportsDesc": {
-    "message": "Identify and close security gaps in your organization's accounts by clicking the reports below.",
+    "message": "Identifikujte a opravte bezpečnostné nedostatky vo vašej organizácii kliknutím na reporty nižšie.",
     "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization Vault."
   },
   "unsecuredWebsitesReport": {
@@ -2596,6 +2596,15 @@
       }
     }
   },
+  "viewedCardNumberItemId": {
+    "message": "Zobrazené číslo karty položky $ID$.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Unique ID"
+      }
+    }
+  },
   "viewedSecurityCodeItemId": {
     "message": "Zobrazený bezpečnostný kód položky $ID$.",
     "placeholders": {
@@ -3008,7 +3017,7 @@
     "message": "Moja organizácia"
   },
   "organizationInfo": {
-    "message": "Organization info"
+    "message": "Informácie o organizácii"
   },
   "deleteOrganization": {
     "message": "Odstrániť organizáciu"
@@ -3683,7 +3692,7 @@
     "message": "Identifikátor organizácie"
   },
   "ssoLogInWithOrgIdentifier": {
-    "message": "Prihláste sa prostredníctvom jednotného prihlasovania (SSO) vašej organizácie. Najskôr zadajte identifikátor vašej organizácie."
+    "message": "Prihláste sa prostredníctvom jednotného prihlásenie (SSO) vašej organizácie. Najskôr zadajte identifikátor vašej organizácie."
   },
   "enterpriseSingleSignOn": {
     "message": "Jednotné prihlásenie pre podniky (SSO)"
@@ -3707,10 +3716,10 @@
     "message": "Pole identifikátora organizácie je povinné."
   },
   "ssoIdentifier": {
-    "message": "SSO Identifier"
+    "message": "SSO identifikátor"
   },
   "ssoIdentifierHint": {
-    "message": "Provide this ID to your members to login with SSO."
+    "message": "Poskytnite toto ID vaším členom pre prihlásenie prostredníctvom SSO."
   },
   "unlinkSso": {
     "message": "Odpojiť SSO"
@@ -4114,7 +4123,7 @@
     "message": "Povolenia"
   },
   "permission": {
-    "message": "Permission"
+    "message": "Oprávnenie"
   },
   "managerPermissions": {
     "message": "Oprávnenia manažéra"
@@ -4522,7 +4531,7 @@
     "message": "Klienti"
   },
   "client": {
-    "message": "Client",
+    "message": "Klient",
     "description": "This is used as a table header to describe which client application created an event log."
   },
   "providerAdmin": {
@@ -5410,7 +5419,7 @@
     }
   },
   "inputMaxLength": {
-    "message": "Input must not exceed $COUNT$ characters in length.",
+    "message": "Nemôžete zadať viac než $COUNT$ znakov.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -5434,10 +5443,10 @@
     "message": "Zapnuté"
   },
   "members": {
-    "message": "Members"
+    "message": "Členovia"
   },
   "reporting": {
-    "message": "Reporting"
+    "message": "Reportuje"
   },
   "cardBrandMir": {
     "message": "Mir"
@@ -5464,39 +5473,39 @@
     "message": "Vyčistiť všetko"
   },
   "from": {
-    "message": "From"
+    "message": "Od"
   },
   "to": {
-    "message": "To"
+    "message": "Do"
   },
   "member": {
-    "message": "Member"
+    "message": "Člen"
   },
   "update": {
-    "message": "Update"
+    "message": "Aktualizovať"
   },
   "role": {
-    "message": "Role"
+    "message": "Rola"
   },
   "canView": {
-    "message": "Can view"
+    "message": "Môže zobraziť"
   },
   "canViewExceptPass": {
-    "message": "Can view, except passwords"
+    "message": "Môže zobraziť okrem hesiel"
   },
   "canEdit": {
-    "message": "Can edit"
+    "message": "Môže upraviť"
   },
   "canEditExceptPass": {
-    "message": "Can edit, except passwords"
+    "message": "Môže upravovať okrem hesiel"
   },
   "group": {
-    "message": "Group"
+    "message": "Skupina"
   },
   "groupAccessAll": {
-    "message": "This group can access and modify all items."
+    "message": "Táto skupina môže upravovať a pristupovať k všetkým položkám."
   },
   "memberAccessAll": {
-    "message": "This member can access and modify all items."
+    "message": "Tento člen môže upravovať a pristupovať k všetkým položkám."
   }
 }

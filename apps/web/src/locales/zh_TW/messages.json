@@ -1557,7 +1557,7 @@
     "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization vault."
   },
   "orgsReportsDesc": {
-    "message": "Identify and close security gaps in your organization's accounts by clicking the reports below.",
+    "message": "點選下方的報告，識別並消除組織帳號的安全漏洞。",
     "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization Vault."
   },
   "unsecuredWebsitesReport": {
@@ -2525,7 +2525,7 @@
     "message": "已匯出密碼庫"
   },
   "exportedOrganizationVault": {
-    "message": "已匯出組織密碼庫"
+    "message": "已匯出組織密碼庫。"
   },
   "editedOrgSettings": {
     "message": "組織設定已儲存"
@@ -2593,6 +2593,15 @@
       "id": {
         "content": "$1",
         "example": "Google"
+      }
+    }
+  },
+  "viewedCardNumberItemId": {
+    "message": "檢視了項目 $ID$ 的卡號。",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Unique ID"
       }
     }
   },
@@ -5410,7 +5419,7 @@
     }
   },
   "inputMaxLength": {
-    "message": "Input must not exceed $COUNT$ characters in length.",
+    "message": "輸入的內容長度不得超過 $COUNT$ 字元。",
     "placeholders": {
       "count": {
         "content": "$1",

@@ -576,7 +576,7 @@
     "message": "Пријава помоћу уређаја мора бити омогућена у подешавањима Bitwarden апликације. Потребна је друга опција?"
   },
   "loginWithMasterPassword": {
-    "message": "Log in with master password"
+    "message": "Пријавите се са главном лозинком"
   },
   "createAccount": {
     "message": "Креирај налог"
@@ -2596,6 +2596,15 @@
       }
     }
   },
+  "viewedCardNumberItemId": {
+    "message": "Прегледан број картице за ставку $ID$.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Unique ID"
+      }
+    }
+  },
   "viewedSecurityCodeItemId": {
     "message": "Прогледан сигурносни код за $ID$.",
     "placeholders": {
@@ -3008,7 +3017,7 @@
     "message": "Моја организација"
   },
   "organizationInfo": {
-    "message": "Organization info"
+    "message": "Инфо о организацији"
   },
   "deleteOrganization": {
     "message": "Уклони организацију"
@@ -3707,7 +3716,7 @@
     "message": "Потребан је идентификатор организације."
   },
   "ssoIdentifier": {
-    "message": "SSO Identifier"
+    "message": "SSO identifier"
   },
   "ssoIdentifierHint": {
     "message": "Provide this ID to your members to login with SSO."
@@ -4114,7 +4123,7 @@
     "message": "Дозволе"
   },
   "permission": {
-    "message": "Permission"
+    "message": "Дозвола"
   },
   "managerPermissions": {
     "message": "Менаџер созвола"
@@ -4522,7 +4531,7 @@
     "message": "Клијента"
   },
   "client": {
-    "message": "Client",
+    "message": "Клијент",
     "description": "This is used as a table header to describe which client application created an event log."
   },
   "providerAdmin": {
@@ -5434,10 +5443,10 @@
     "message": "Укључено"
   },
   "members": {
-    "message": "Members"
+    "message": "Чланови"
   },
   "reporting": {
-    "message": "Reporting"
+    "message": "Пријављивање"
   },
   "cardBrandMir": {
     "message": "Mir"
@@ -5446,10 +5455,10 @@
     "message": "Број корисника"
   },
   "loggingInAs": {
-    "message": "Logging in as"
+    "message": "Пријављивање као"
   },
   "notYou": {
-    "message": "Not you?"
+    "message": "Нисте Ви?"
   },
   "multiSelectPlaceholder": {
     "message": "-- Тип за филтрирање --"
@@ -5464,39 +5473,39 @@
     "message": "Обриши све"
   },
   "from": {
-    "message": "From"
+    "message": "Од"
   },
   "to": {
-    "message": "To"
+    "message": "За"
   },
   "member": {
-    "message": "Member"
+    "message": "Члан"
   },
   "update": {
-    "message": "Update"
+    "message": "Ажурирај"
   },
   "role": {
-    "message": "Role"
+    "message": "Улога"
   },
   "canView": {
-    "message": "Can view"
+    "message": "Може прегледати"
   },
   "canViewExceptPass": {
-    "message": "Can view, except passwords"
+    "message": "Може видетим осим лозинке"
   },
   "canEdit": {
-    "message": "Can edit"
+    "message": "Може уређивати"
   },
   "canEditExceptPass": {
-    "message": "Can edit, except passwords"
+    "message": "Ноже уређивати осим лозинке"
   },
   "group": {
-    "message": "Group"
+    "message": "Група"
   },
   "groupAccessAll": {
-    "message": "This group can access and modify all items."
+    "message": "Ова група може приступити и изменити све ставке."
   },
   "memberAccessAll": {
-    "message": "This member can access and modify all items."
+    "message": "Овај члан може приступити и изменити све ставке."
   }
 }

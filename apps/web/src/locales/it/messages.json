@@ -576,7 +576,7 @@
     "message": "Il login con il dispositivo deve essere abilitato nelle impostazioni dell'app mobile Bitwarden. Hai bisogno di un'altra opzione?"
   },
   "loginWithMasterPassword": {
-    "message": "Log in with master password"
+    "message": "Accedi con la password principale"
   },
   "createAccount": {
     "message": "Crea account"
@@ -1196,10 +1196,10 @@
     "message": "Seleziona il file da importare"
   },
   "chooseFile": {
-    "message": "Choose File"
+    "message": "Seleziona File"
   },
   "noFileChosen": {
-    "message": "No file chosen"
+    "message": "Nessun file selezionato"
   },
   "orCopyPasteFileContents": {
     "message": "oppure copia e incolla il contenuto del file da importare"
@@ -1291,23 +1291,23 @@
     "message": "Verifica in due passaggi"
   },
   "twoStepLoginEnforcement": {
-    "message": "Two-step Login Enforcement"
+    "message": "Attuazione accesso a due passaggi"
   },
   "twoStepLoginDesc": {
     "message": "Proteggi il tuo account richiedendo un passaggio aggiuntivo all'accesso."
   },
   "twoStepLoginOrganizationDescStart": {
-    "message": "Enforce Bitwarden Two-step Login options for members by using the ",
+    "message": "Forza le opzioni di accesso in due passaggi di Bitwarden per i membri utilizzando il ",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enforce Bitwarden Two-step Login options for members by using the Two-step Login Policy.'"
   },
   "twoStepLoginPolicy": {
-    "message": "Two-step Login Policy"
+    "message": "Politica di accesso in due passaggi"
   },
   "twoStepLoginOrganizationDuoDesc": {
-    "message": "To enforce Two-step Login through Duo, use the options below."
+    "message": "Per applicare l'accesso in due passaggi tramite Duo, utilizzare le opzioni qui sotto."
   },
   "twoStepLoginOrganizationSsoDesc": {
-    "message": "If you have setup SSO or plan to, Two-step Login may already be enforced through your Identity Provider."
+    "message": "Se hai configurato SSO o pianifichi di farlo, il login in due passaggi potrebbe già essere applicato tramite il tuo Identity Provider."
   },
   "twoStepLoginRecoveryWarning": {
     "message": "Con la verifica in due passaggi potresti bloccare permanentemente il tuo account di Bitwarden. Un codice di recupero ti permette di accedere al tuo account nel caso in cui non fossi più in grado di utilizzare il tuo solito metodo di verifica (ad esempio se perdi il tuo telefono). L'assistenza di Bitwarden non sarà in grado di aiutarti qualora dovessi perdere l'accesso al tuo account. Ti consigliamo di scrivere o stampare il tuo codice di recupero e di conservarlo in un luogo sicuro."
@@ -1557,7 +1557,7 @@
     "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization vault."
   },
   "orgsReportsDesc": {
-    "message": "Identify and close security gaps in your organization's accounts by clicking the reports below.",
+    "message": "Identifica e chiudi i problemi di sicurezza negli account della tua organizzazione facendo clic sui rapporti qui sotto.",
     "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization Vault."
   },
   "unsecuredWebsitesReport": {
@@ -1591,7 +1591,7 @@
     "message": "Accessi senza 2FA trovati"
   },
   "inactive2faFoundDesc": {
-    "message": "We found $COUNT$ website(s) in your vault that may not be configured with two-step login (according to 2fa.directory). To further protect these accounts, you should set up two-step login.",
+    "message": "Abbiamo trovato $COUNT$ siti web nella tua cassaforte che potrebbero non essere configurati con l'accesso in due passaggi (secondo 2fa.directory). Per proteggere ulteriormente questi account, è necessario impostare il login in due passaggi.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -2596,6 +2596,15 @@
       }
     }
   },
+  "viewedCardNumberItemId": {
+    "message": "Numero di carta visualizzato per l'articolo $ID$.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Unique ID"
+      }
+    }
+  },
   "viewedSecurityCodeItemId": {
     "message": "Codice di sicurezza visualizzato per l'elemento $ID$.",
     "placeholders": {
@@ -3008,7 +3017,7 @@
     "message": "La mia organizzazione"
   },
   "organizationInfo": {
-    "message": "Organization info"
+    "message": "Informazioni dell'Organizzazione"
   },
   "deleteOrganization": {
     "message": "Elimina organizzazione"
@@ -3336,7 +3345,7 @@
     "description": "ex. Date this item was updated"
   },
   "dateCreated": {
-    "message": "Created",
+    "message": "Creato",
     "description": "ex. Date this item was created"
   },
   "datePasswordUpdated": {
@@ -3707,10 +3716,10 @@
     "message": "L'identificativo dell'organizzazione è obbligatorio."
   },
   "ssoIdentifier": {
-    "message": "SSO Identifier"
+    "message": "Identificativo SSO"
   },
   "ssoIdentifierHint": {
-    "message": "Provide this ID to your members to login with SSO."
+    "message": "Fornisci questo ID ai tuoi membri per accedere con SSO."
   },
   "unlinkSso": {
     "message": "Scollega SSO"
@@ -4114,7 +4123,7 @@
     "message": "Permessi"
   },
   "permission": {
-    "message": "Permission"
+    "message": "Permessi"
   },
   "managerPermissions": {
     "message": "Permessi del Manager"
@@ -4315,7 +4324,7 @@
     "message": "Rinuncia completata!"
   },
   "eventEnrollPasswordReset": {
-    "message": "Utente $ID$ registrato all'assistenza per il ripristino della password.",
+    "message": "L'utente $ID$ ha aderito all'assistenza per il reset della password.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -4522,7 +4531,7 @@
     "message": "Clienti"
   },
   "client": {
-    "message": "Client",
+    "message": "Cliente",
     "description": "This is used as a table header to describe which client application created an event log."
   },
   "providerAdmin": {
@@ -5410,7 +5419,7 @@
     }
   },
   "inputMaxLength": {
-    "message": "Input must not exceed $COUNT$ characters in length.",
+    "message": "L'input non deve superare i $COUNT$ caratteri di lunghezza.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -5434,10 +5443,10 @@
     "message": "Attivo"
   },
   "members": {
-    "message": "Members"
+    "message": "Membri"
   },
   "reporting": {
-    "message": "Reporting"
+    "message": "Relazioni"
   },
   "cardBrandMir": {
     "message": "Mir"
@@ -5446,57 +5455,57 @@
     "message": "Numero di utenti"
   },
   "loggingInAs": {
-    "message": "Logging in as"
+    "message": "Accesso in corso come"
   },
   "notYou": {
-    "message": "Not you?"
+    "message": "Non sei tu?"
   },
   "multiSelectPlaceholder": {
-    "message": "-- Type to Filter --"
+    "message": "-- Scrivi per filtrare --"
   },
   "multiSelectLoading": {
-    "message": "Retrieving options..."
+    "message": "Recupero opzioni..."
   },
   "multiSelectNotFound": {
-    "message": "No items found"
+    "message": "Nessun elemento trovato"
   },
   "multiSelectClearAll": {
-    "message": "Clear all"
+    "message": "Cancella tutto"
   },
   "from": {
-    "message": "From"
+    "message": "Da"
   },
   "to": {
-    "message": "To"
+    "message": "A"
   },
   "member": {
-    "message": "Member"
+    "message": "Membro"
   },
   "update": {
-    "message": "Update"
+    "message": "Aggiorna"
   },
   "role": {
-    "message": "Role"
+    "message": "Ruolo"
   },
   "canView": {
-    "message": "Can view"
+    "message": "Può visualizzare"
   },
   "canViewExceptPass": {
-    "message": "Can view, except passwords"
+    "message": "Può visualizzare, eccetto le password"
   },
   "canEdit": {
-    "message": "Can edit"
+    "message": "Può modificare"
   },
   "canEditExceptPass": {
-    "message": "Can edit, except passwords"
+    "message": "Può modificare, eccetto le password"
   },
   "group": {
-    "message": "Group"
+    "message": "Gruppo"
   },
   "groupAccessAll": {
-    "message": "This group can access and modify all items."
+    "message": "Questo gruppo può accedere e modificare tutti gli elementi."
   },
   "memberAccessAll": {
-    "message": "This member can access and modify all items."
+    "message": "Questo utente può accedere e modificare tutti gli elementi."
   }
 }

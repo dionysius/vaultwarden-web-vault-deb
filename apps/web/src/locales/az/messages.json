@@ -2596,6 +2596,15 @@
       }
     }
   },
+  "viewedCardNumberItemId": {
+    "message": "$ID$ elementi üçün baxılan kart nömrəsi.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Unique ID"
+      }
+    }
+  },
   "viewedSecurityCodeItemId": {
     "message": "$ID$ elementi üçün güvənlik koduna baxıldı.",
     "placeholders": {

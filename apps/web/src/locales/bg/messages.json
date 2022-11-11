@@ -1291,7 +1291,7 @@
     "message": "Двустепенно удостоверяване"
   },
   "twoStepLoginEnforcement": {
-    "message": "Two-step Login Enforcement"
+    "message": "Задължително двустепенно удостоверяване"
   },
   "twoStepLoginDesc": {
     "message": "Допълнителна защита на абонамента чрез изискването на допълнително действие при вписване."
@@ -1304,10 +1304,10 @@
     "message": "Two-step Login Policy"
   },
   "twoStepLoginOrganizationDuoDesc": {
-    "message": "To enforce Two-step Login through Duo, use the options below."
+    "message": "За да направите двустепенното удостоверяване чрез Duo задължително, използвайте настройките по-долу."
   },
   "twoStepLoginOrganizationSsoDesc": {
-    "message": "If you have setup SSO or plan to, Two-step Login may already be enforced through your Identity Provider."
+    "message": "Ако сте настроили еднократната идентификация, двустепенното удостоверяване може вече да е зададено като задължително от Вашия доставчик на удостоверителни данни."
   },
   "twoStepLoginRecoveryWarning": {
     "message": "Включването на двустепенна идентификация може завинаги да предотврати вписването ви в абонамента към Битуорден. Кодът за възстановяване ще ви позволи да достъпите абонамента дори и да имате проблем с доставчика на двустепенна идентификация (напр. ако изгубите устройството си). Дори и екипът по поддръжката към няма да ви помогне в такъв случай. Силно препоръчваме да отпечатате или запишете кодовете и да ги пазете на надеждно място."
@@ -1557,7 +1557,7 @@
     "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization vault."
   },
   "orgsReportsDesc": {
-    "message": "Identify and close security gaps in your organization's accounts by clicking the reports below.",
+    "message": "Открийте и отстранете проблемите със защитата на профилите в организацията си като щракнете върху докладите по-долу.",
     "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization Vault."
   },
   "unsecuredWebsitesReport": {
@@ -2596,6 +2596,15 @@
       }
     }
   },
+  "viewedCardNumberItemId": {
+    "message": "Номерът на карта от запис $ID$ е прегледан.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Unique ID"
+      }
+    }
+  },
   "viewedSecurityCodeItemId": {
     "message": "Кодът за сигурност за запис № $ID$ е прегледан.",
     "placeholders": {
@@ -3008,7 +3017,7 @@
     "message": "Моята организация"
   },
   "organizationInfo": {
-    "message": "Organization info"
+    "message": "Информация за организацията"
   },
   "deleteOrganization": {
     "message": "Изтриване на организация"
@@ -3707,10 +3716,10 @@
     "message": "Идентификаторът на организация е задължителен."
   },
   "ssoIdentifier": {
-    "message": "SSO Identifier"
+    "message": "Идентификатор за еднократна идентификация"
   },
   "ssoIdentifierHint": {
-    "message": "Provide this ID to your members to login with SSO."
+    "message": "Дайте този идентификатор на членовете си, за да могат да се вписват чрез еднократна идентификация."
   },
   "unlinkSso": {
     "message": "Прекъсване на еднократна идентификация"
@@ -4522,7 +4531,7 @@
     "message": "Клиенти"
   },
   "client": {
-    "message": "Client",
+    "message": "Клиент",
     "description": "This is used as a table header to describe which client application created an event log."
   },
   "providerAdmin": {
@@ -5410,7 +5419,7 @@
     }
   },
   "inputMaxLength": {
-    "message": "Input must not exceed $COUNT$ characters in length.",
+    "message": "Полето не може да съдържа повече от $COUNT$ знака.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -5434,10 +5443,10 @@
     "message": "Включено"
   },
   "members": {
-    "message": "Members"
+    "message": "Членове"
   },
   "reporting": {
-    "message": "Reporting"
+    "message": "Докладване"
   },
   "cardBrandMir": {
     "message": "Мир"
@@ -5470,33 +5479,33 @@
     "message": "To"
   },
   "member": {
-    "message": "Member"
+    "message": "Член"
   },
   "update": {
-    "message": "Update"
+    "message": "Обновяване"
   },
   "role": {
-    "message": "Role"
+    "message": "Роля"
   },
   "canView": {
-    "message": "Can view"
+    "message": "Може да преглежда"
   },
   "canViewExceptPass": {
-    "message": "Can view, except passwords"
+    "message": "Може да преглежда, без пароли"
   },
   "canEdit": {
-    "message": "Can edit"
+    "message": "Може да редактира"
   },
   "canEditExceptPass": {
-    "message": "Can edit, except passwords"
+    "message": "Може да редактира, без пароли"
   },
   "group": {
-    "message": "Group"
+    "message": "Група"
   },
   "groupAccessAll": {
-    "message": "This group can access and modify all items."
+    "message": "Тази група има достъп до всички записи и може да ги редактира."
   },
   "memberAccessAll": {
-    "message": "This member can access and modify all items."
+    "message": "Този член има достъп до всички записи и може да ги редактира."
   }
 }

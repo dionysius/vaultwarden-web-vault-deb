@@ -2596,6 +2596,15 @@
       }
     }
   },
+  "viewedCardNumberItemId": {
+    "message": "Megtekintett kártyaszám $ID$ elemhez.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Unique ID"
+      }
+    }
+  },
   "viewedSecurityCodeItemId": {
     "message": "$ID$ azonosítójú elem biztonsági kódja megtekintésre került.",
     "placeholders": {

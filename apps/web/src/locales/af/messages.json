@@ -2513,7 +2513,7 @@
     "message": "Tweestapaantekening gedeaktiveer."
   },
   "recovered2fa": {
-    "message": "Account recovered from two-step login"
+    "message": "Recovered account from two-step login."
   },
   "failedLogin": {
     "message": "Login attempt failed with incorrect password."
@@ -2593,6 +2593,15 @@
       "id": {
         "content": "$1",
         "example": "Google"
+      }
+    }
+  },
+  "viewedCardNumberItemId": {
+    "message": "Viewed Card Number for item $ID$.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Unique ID"
       }
     }
   },
@@ -3707,7 +3716,7 @@
     "message": "Organisasie-identifiseerder word benodig."
   },
   "ssoIdentifier": {
-    "message": "SSO Identifier"
+    "message": "SSO identifier"
   },
   "ssoIdentifierHint": {
     "message": "Provide this ID to your members to login with SSO."
@@ -4324,7 +4333,7 @@
     }
   },
   "eventWithdrawPasswordReset": {
-    "message": "User $ID$ withdrew from password reset assistance.",
+    "message": "User $ID$ withdrew from password reset.",
     "placeholders": {
       "id": {
         "content": "$1",

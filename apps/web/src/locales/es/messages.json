@@ -1591,7 +1591,7 @@
     "message": "Inicios de sesión sin 2FA encontrados"
   },
   "inactive2faFoundDesc": {
-    "message": "We found $COUNT$ website(s) in your vault that may not be configured with two-step login (according to 2fa.directory). To further protect these accounts, you should set up two-step login.",
+    "message": "Hemos encontrado $COUNT$ sitios web en tu bóveda que pueden no estar configurados con inicio de sesión en dos pasos (de acuerdo a 2fa. irectory). Para proteger aún más estas cuentas, debe configurar el inicio de sesión en dos pasos.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -2593,6 +2593,15 @@
       "id": {
         "content": "$1",
         "example": "Google"
+      }
+    }
+  },
+  "viewedCardNumberItemId": {
+    "message": "Número de tarjeta visto para el elemento $ID$.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Unique ID"
       }
     }
   },
@@ -4771,7 +4780,7 @@
     "message": "Algoritmo mínimo de firma entrante"
   },
   "spWantAssertionsSigned": {
-    "message": "Expect signed assertions"
+    "message": "Esperar afirmaciones firmadas"
   },
   "spValidateCertificates": {
     "message": "Validar certificado"
@@ -5095,7 +5104,7 @@
     "message": "La sincronización de facturación proveé planes Famliares gratuitos para los miembros y facilidades de facturación avanzada, conectando la bóveda autoalojada de Bitwarden al servidor en la nube de Bitwarden."
   },
   "billingSyncKeyDesc": {
-    "message": "A billing sync token from your cloud organization's subscription settings is required to complete this form."
+    "message": "Para completar este formulario se requiere un token de sincronización de facturación de la configuración de suscripción de su organización en la nube."
   },
   "billingSyncKey": {
     "message": "Token de sincronización de facturación"
@@ -5228,17 +5237,17 @@
     "message": "Tipo de nombre de usuario"
   },
   "plusAddressedEmail": {
-    "message": "Plus addressed email",
+    "message": "Correo electrónico más dirigido",
     "description": "Username generator option that appends a random sub-address to the username. For example: address+subaddress@email.com"
   },
   "plusAddressedEmailDesc": {
-    "message": "Use your email provider's sub-addressing capabilities."
+    "message": "Utiliza las capacidades de subdireccionamiento de tu proveedor de correo electrónico."
   },
   "catchallEmail": {
-    "message": "Catch-all email"
+    "message": "Correo catch-all"
   },
   "catchallEmailDesc": {
-    "message": "Use your domain's configured catch-all inbox."
+    "message": "Utiliza la bandeja de entrada global configurada de tu dominio."
   },
   "random": {
     "message": "Aleatorio",

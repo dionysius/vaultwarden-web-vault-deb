@@ -309,13 +309,13 @@
     "message": "Logins"
   },
   "typeCardPlural": {
-    "message": "Cards"
+    "message": "Plačilne kartice"
   },
   "typeIdentityPlural": {
-    "message": "Identities"
+    "message": "Identitete"
   },
   "typeSecureNotePlural": {
-    "message": "Secure notes"
+    "message": "Varni zapiski"
   },
   "folders": {
     "message": "Mape"
@@ -422,22 +422,22 @@
     "description": "Copy URI to clipboard"
   },
   "me": {
-    "message": "Me"
+    "message": "Jaz"
   },
   "myVault": {
     "message": "Moj sef"
   },
   "allVaults": {
-    "message": "All vaults"
+    "message": "Vsi trezorji"
   },
   "vault": {
     "message": "Sef"
   },
   "vaults": {
-    "message": "Vaults"
+    "message": "Trezorji"
   },
   "vaultItems": {
-    "message": "Vault items"
+    "message": "Predmeti trezorja"
   },
   "moveSelectedToOrg": {
     "message": "Premakni označeno v organizacijo"
@@ -570,13 +570,13 @@
     "message": "Prijavite se ali ustvarite nov račun za dostop do vašega varnega trezorja."
   },
   "loginWithDevice": {
-    "message": "Log in with device"
+    "message": "Prijava z napravo"
   },
   "loginWithDeviceEnabledInfo": {
-    "message": "Log in with device must be set up in the settings of the Bitwarden mobile app. Need another option?"
+    "message": "Prijava z napravo mora biti nastavljena v nastavitvah mobilne aplikacije Bitwarden. Potrebujete drugo možnost?"
   },
   "loginWithMasterPassword": {
-    "message": "Log in with master password"
+    "message": "Prijava z glavnim geslom"
   },
   "createAccount": {
     "message": "Ustvari račun"
@@ -585,13 +585,13 @@
     "message": "New around here?"
   },
   "startTrial": {
-    "message": "Start trial"
+    "message": "Začnite z brezplačnim poskusom"
   },
   "logIn": {
     "message": "Prijava"
   },
   "logInInitiated": {
-    "message": "Log in initiated"
+    "message": "Prijava se je začela"
   },
   "submit": {
     "message": "Potrdi"
@@ -612,7 +612,7 @@
     "message": "Glavno geslo je geslo, ki ga uporabljate za dostop do vašega trezorja. Zelo pomembno je, da ne pozabite vaše glavno geslo. Gesla ni mogoče obnoviti v primeru, če ga pozabite."
   },
   "masterPassImportant": {
-    "message": "Master passwords cannot be recovered if you forget it!"
+    "message": "Če ga pozabiš, glavnega gesla ni mogoče obnoviti!"
   },
   "masterPassHintDesc": {
     "message": "Namig glavnega gesla vam lahko pomaga, da se spomnite vašega gesla, če ga pozabite."
@@ -645,13 +645,13 @@
     "message": "Neveljaven e-poštni naslov."
   },
   "masterPasswordRequired": {
-    "message": "Master password is required."
+    "message": "Glavno geslo je obvezno."
   },
   "confirmMasterPasswordRequired": {
-    "message": "Master password retype is required."
+    "message": "Potrebno je ponovno vnesti glavno geslo."
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least 8 characters long."
+    "message": "Glavno geslo mora biti dolgo najmanj 8 znakov."
   },
   "masterPassDoesntMatch": {
     "message": "Potrditev glavnega gesla se ne ujema."
@@ -660,7 +660,7 @@
     "message": "Vaš nov račun je bil ustvarjen! Sedaj se lahko prijavite."
   },
   "trialAccountCreated": {
-    "message": "Account created successfully."
+    "message": "Račun uspešno ustvarjen."
   },
   "masterPassSent": {
     "message": "Poslali smo vam epoštno spročilo z namigom za vaše glavno geslo."
@@ -2513,7 +2513,7 @@
     "message": "Two-step login turned off"
   },
   "recovered2fa": {
-    "message": "Account recovered from two-step login"
+    "message": "Recovered account from two-step login."
   },
   "failedLogin": {
     "message": "Login attempt failed with incorrect password."
@@ -2525,10 +2525,10 @@
     "message": "Vault exported"
   },
   "exportedOrganizationVault": {
-    "message": "Organization vault exported"
+    "message": "Exported organization vault."
   },
   "editedOrgSettings": {
-    "message": "Organization settings saved"
+    "message": "Edited organization settings."
   },
   "createdItemId": {
     "message": "Created item $ID$.",
@@ -2593,6 +2593,15 @@
       "id": {
         "content": "$1",
         "example": "Google"
+      }
+    }
+  },
+  "viewedCardNumberItemId": {
+    "message": "Viewed Card Number for item $ID$.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Unique ID"
       }
     }
   },
@@ -3683,7 +3692,7 @@
     "message": "Organization identifier"
   },
   "ssoLogInWithOrgIdentifier": {
-    "message": "Log in using your organization's single sign-on portal. Please enter your organization's identifier to begin."
+    "message": "Log in using your organization's single sign-on portal. Please enter your organization's SSO identifier to begin."
   },
   "enterpriseSingleSignOn": {
     "message": "Enterprise single sign-on"
@@ -3704,10 +3713,10 @@
     "message": "SSO validation failed"
   },
   "ssoIdentifierRequired": {
-    "message": "Organization identifier is required."
+    "message": "Organization SSO identifier is required."
   },
   "ssoIdentifier": {
-    "message": "SSO Identifier"
+    "message": "SSO identifier"
   },
   "ssoIdentifierHint": {
     "message": "Provide this ID to your members to login with SSO."
@@ -4315,7 +4324,7 @@
     "message": "Withdrawal success!"
   },
   "eventEnrollPasswordReset": {
-    "message": "User $ID$ enrolled in password reset assistance.",
+    "message": "User $ID$ enrolled in password reset.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -4324,7 +4333,7 @@
     }
   },
   "eventWithdrawPasswordReset": {
-    "message": "User $ID$ withdrew from password reset assistance.",
+    "message": "User $ID$ withdrew from password reset.",
     "placeholders": {
       "id": {
         "content": "$1",

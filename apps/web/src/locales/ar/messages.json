@@ -2513,7 +2513,7 @@
     "message": "Two-step login turned off"
   },
   "recovered2fa": {
-    "message": "Account recovered from two-step login"
+    "message": "Recovered account from two-step login."
   },
   "failedLogin": {
     "message": "Login attempt failed with incorrect password."
@@ -2525,10 +2525,10 @@
     "message": "Vault exported"
   },
   "exportedOrganizationVault": {
-    "message": "Organization vault exported"
+    "message": "Exported organization vault."
   },
   "editedOrgSettings": {
-    "message": "Organization settings saved"
+    "message": "Edited organization settings."
   },
   "createdItemId": {
     "message": "Created item $ID$.",
@@ -2593,6 +2593,15 @@
       "id": {
         "content": "$1",
         "example": "Google"
+      }
+    }
+  },
+  "viewedCardNumberItemId": {
+    "message": "Viewed Card Number for item $ID$.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Unique ID"
       }
     }
   },
@@ -3683,7 +3692,7 @@
     "message": "Organization identifier"
   },
   "ssoLogInWithOrgIdentifier": {
-    "message": "Log in using your organization's single sign-on portal. Please enter your organization's identifier to begin."
+    "message": "Log in using your organization's single sign-on portal. Please enter your organization's SSO identifier to begin."
   },
   "enterpriseSingleSignOn": {
     "message": "Enterprise single sign-on"
@@ -3704,10 +3713,10 @@
     "message": "SSO validation failed"
   },
   "ssoIdentifierRequired": {
-    "message": "Organization identifier is required."
+    "message": "Organization SSO identifier is required."
   },
   "ssoIdentifier": {
-    "message": "SSO Identifier"
+    "message": "SSO identifier"
   },
   "ssoIdentifierHint": {
     "message": "Provide this ID to your members to login with SSO."
@@ -4315,7 +4324,7 @@
     "message": "تم الانسحاب بنجاح!"
   },
   "eventEnrollPasswordReset": {
-    "message": "User $ID$ enrolled in password reset assistance.",
+    "message": "User $ID$ enrolled in password reset.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -4324,7 +4333,7 @@
     }
   },
   "eventWithdrawPasswordReset": {
-    "message": "User $ID$ withdrew from password reset assistance.",
+    "message": "User $ID$ withdrew from password reset.",
     "placeholders": {
       "id": {
         "content": "$1",

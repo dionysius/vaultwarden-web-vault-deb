@@ -576,7 +576,7 @@
     "message": "Bitwarden mugikorreko aplikazioaren konfigurazioan, gailuarekin saioa hastea gaituta egon behar du. Beste aukerarik behar duzu?"
   },
   "loginWithMasterPassword": {
-    "message": "Log in with master password"
+    "message": "Hasi saioa pasahitz nagusiarekin"
   },
   "createAccount": {
     "message": "Sortu kontua"
@@ -1196,10 +1196,10 @@
     "message": "Hautatu inportazio fitxategia"
   },
   "chooseFile": {
-    "message": "Choose File"
+    "message": "Hautatu fitxategia"
   },
   "noFileChosen": {
-    "message": "No file chosen"
+    "message": "Ez da fitxategirik hautatu"
   },
   "orCopyPasteFileContents": {
     "message": "edo kopiatu/pegatu inportazio fitxategiaren edukia"
@@ -1291,7 +1291,7 @@
     "message": "Bi urratseko saio hasiera"
   },
   "twoStepLoginEnforcement": {
-    "message": "Two-step Login Enforcement"
+    "message": "Bi urratseko saio hasiera aplikatu"
   },
   "twoStepLoginDesc": {
     "message": "Ziurtatu zure kontua saioa hastean beste urrats bat egitea eskatuz."
@@ -2596,6 +2596,15 @@
       }
     }
   },
+  "viewedCardNumberItemId": {
+    "message": "Viewed Card Number for item $ID$.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Unique ID"
+      }
+    }
+  },
   "viewedSecurityCodeItemId": {
     "message": "$ID$ elementuko segurtasun-kodea ikusia.",
     "placeholders": {
@@ -3707,7 +3716,7 @@
     "message": "Erakundearen identifikatzailea beharrezkoa da."
   },
   "ssoIdentifier": {
-    "message": "SSO Identifier"
+    "message": "SSO identifier"
   },
   "ssoIdentifierHint": {
     "message": "Provide this ID to your members to login with SSO."

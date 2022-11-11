@@ -2596,6 +2596,15 @@
       }
     }
   },
+  "viewedCardNumberItemId": {
+    "message": "Viewed Card Number for item $ID$.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Unique ID"
+      }
+    }
+  },
   "viewedSecurityCodeItemId": {
     "message": "Visade säkerhetskod för objektet $ID$.",
     "placeholders": {
@@ -3707,7 +3716,7 @@
     "message": "Organisationens identifierare krävs."
   },
   "ssoIdentifier": {
-    "message": "SSO Identifier"
+    "message": "SSO identifier"
   },
   "ssoIdentifierHint": {
     "message": "Provide this ID to your members to login with SSO."
@@ -5434,7 +5443,7 @@
     "message": "On"
   },
   "members": {
-    "message": "Members"
+    "message": "Medlemmar"
   },
   "reporting": {
     "message": "Reporting"
@@ -5464,19 +5473,19 @@
     "message": "Clear all"
   },
   "from": {
-    "message": "From"
+    "message": "Från"
   },
   "to": {
-    "message": "To"
+    "message": "Till"
   },
   "member": {
-    "message": "Member"
+    "message": "Medlem"
   },
   "update": {
     "message": "Update"
   },
   "role": {
-    "message": "Role"
+    "message": "Roll"
   },
   "canView": {
     "message": "Can view"
@@ -5491,7 +5500,7 @@
     "message": "Can edit, except passwords"
   },
   "group": {
-    "message": "Group"
+    "message": "Grupp"
   },
   "groupAccessAll": {
     "message": "This group can access and modify all items."

@@ -2504,7 +2504,7 @@
     "message": "Kirjautui sisään"
   },
   "changedPassword": {
-    "message": "Tilin salasana tallennettiin"
+    "message": "Tilin salasana vaihdettiin"
   },
   "enabledUpdated2fa": {
     "message": "Kaksivaiheinen kirjautuminen tallennettiin"
@@ -2567,7 +2567,7 @@
     }
   },
   "viewAllLoginOptions": {
-    "message": "Näytä kaikki kirjautumisvaihtoehdot"
+    "message": "Näytä kaikki kirjautumisvalinnat"
   },
   "viewedItemId": {
     "message": "Kohdetta $ID$ tarkasteltu.",
@@ -2593,6 +2593,15 @@
       "id": {
         "content": "$1",
         "example": "Google"
+      }
+    }
+  },
+  "viewedCardNumberItemId": {
+    "message": "Tarkasteltiin kohteen $ID$ korttinumeroa.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Unique ID"
       }
     }
   },
@@ -4324,7 +4333,7 @@
     }
   },
   "eventWithdrawPasswordReset": {
-    "message": "Käyttäjä $ID$ erosi salasanan palautusavusta.",
+    "message": "Käyttäjä $ID$ poistui salasanan palautusavusta.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -5494,9 +5503,9 @@
     "message": "Ryhmä"
   },
   "groupAccessAll": {
-    "message": "Tämä ryhmä voi käyttää ja muokata kaikkia kohteita."
+    "message": "Tämä ryhmä voi tarkastella ja muokata kaikkia kohteita."
   },
   "memberAccessAll": {
-    "message": "Tämä jäsen voi käyttää ja muokata kaikkia kohteita."
+    "message": "Tämä jäsen voi tarkastella ja muokata kaikkia kohteita."
   }
 }

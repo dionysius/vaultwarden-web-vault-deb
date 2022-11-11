@@ -1297,17 +1297,17 @@
     "message": "在登录时要求使用额外的步骤来保护您的账户。"
   },
   "twoStepLoginOrganizationDescStart": {
-    "message": "Enforce Bitwarden Two-step Login options for members by using the ",
+    "message": "要强制成员使用 Bitwarden 两步登录选项，请使用 ",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enforce Bitwarden Two-step Login options for members by using the Two-step Login Policy.'"
   },
   "twoStepLoginPolicy": {
     "message": "两步登录策略"
   },
   "twoStepLoginOrganizationDuoDesc": {
-    "message": "To enforce Two-step Login through Duo, use the options below."
+    "message": "要强制 Duo 方式的两步登录，请使用下面的选项。"
   },
   "twoStepLoginOrganizationSsoDesc": {
-    "message": "If you have setup SSO or plan to, Two-step Login may already be enforced through your Identity Provider."
+    "message": "如果您已设置或计划设置 SSO，两步登录可能已经通过您的身份提供程序强制执行了。"
   },
   "twoStepLoginRecoveryWarning": {
     "message": "启用两步登录可能会将您永久锁定在 Bitwarden 账户之外。如果您无法使用常规的两步登录提供程序（例如您丢失了设备），则可以使用恢复代码访问您的账户。如果您失去对您账户的访问，Bitwarden 支持也无法帮助您。我们建议您记下或打印恢复代码，并将其妥善保管。"
@@ -2504,7 +2504,7 @@
     "message": "已登录。"
   },
   "changedPassword": {
-    "message": "账户密码已保存"
+    "message": "已更改帐户密码"
   },
   "enabledUpdated2fa": {
     "message": "两步登录已保存"
@@ -2513,7 +2513,7 @@
     "message": "两步登录已停用"
   },
   "recovered2fa": {
-    "message": "账户已从两步登录中恢复"
+    "message": "已从两步登录中恢复帐户。"
   },
   "failedLogin": {
     "message": "登录失败，密码不正确。"
@@ -2525,10 +2525,10 @@
     "message": "密码库已导出"
   },
   "exportedOrganizationVault": {
-    "message": "组织密码库已导出"
+    "message": "已导出组织密码库。"
   },
   "editedOrgSettings": {
-    "message": "组织设置已保存"
+    "message": "已编辑组织设置。"
   },
   "createdItemId": {
     "message": "已创建项目 $ID$。",
@@ -2593,6 +2593,15 @@
       "id": {
         "content": "$1",
         "example": "Google"
+      }
+    }
+  },
+  "viewedCardNumberItemId": {
+    "message": "已查看项目 $ID$ 的卡号。",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Unique ID"
       }
     }
   },
@@ -3128,7 +3137,7 @@
     "message": "输入您的安装 ID"
   },
   "limitSubscriptionDesc": {
-    "message": "为您的订阅设置席位限制。达到此限制后，您将无法邀请新的用户。"
+    "message": "为您的订阅设置席位限制。达到此限制后，您将无法邀请新的成员。"
   },
   "maxSeatLimit": {
     "message": "席位限制（可选）",
@@ -3149,7 +3158,7 @@
     "message": "调整订阅将导致按比例调整您的计费总金额。如果新邀请的用户超过了您的订阅席位，您将立即收到按比例的额外用户费用。"
   },
   "subscriptionUserSeats": {
-    "message": "您的订阅一共允许 $COUNT$ 位用户。",
+    "message": "您的订阅一共允许 $COUNT$ 位成员。",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -3173,10 +3182,10 @@
     "message": "如需更多订阅管理的帮助，请联系客服支持。"
   },
   "subscriptionUserSeatsUnlimitedAutoscale": {
-    "message": "调整订阅将导致按比例调整您的计费总金额。如果新邀请的用户超过了您的订阅席位，您将立即收到按比例的额外用户费用。"
+    "message": "调整订阅将导致按比例调整您的计费总金额。如果新邀请的成员超过了您的订阅席位，您将立即收到按比例的额外成员费用。"
   },
   "subscriptionUserSeatsLimitedAutoscale": {
-    "message": "调整订阅将导致按比例调整您的计费总金额。如果新邀请的用户超过了您的订阅席位，您将立即收到按比例的额外用户费用，直到达到您的 $MAX$ 席位限制。",
+    "message": "调整订阅将导致按比例调整您的计费总金额。如果新邀请的成员超过了您的订阅席位，您将立即收到按比例的额外成员费用，直到达到您的 $MAX$ 席位限制。",
     "placeholders": {
       "max": {
         "content": "$1",
@@ -3185,7 +3194,7 @@
     }
   },
   "subscriptionFreePlan": {
-    "message": "如果不升级您的计划，你最多只能邀请 $COUNT$ 位用户。",
+    "message": "如果不升级您的计划，您最多只能邀请 $COUNT$ 位成员。",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -3194,7 +3203,7 @@
     }
   },
   "subscriptionFamiliesPlan": {
-    "message": "如果不升级您的计划，你最多只能邀请 $COUNT$ 位用户。请联系客户支持进行升级。",
+    "message": "如果不升级您的计划，您最多只能邀请 $COUNT$ 位成员。请联系客户支持进行升级。",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -3203,7 +3212,7 @@
     }
   },
   "subscriptionSponsoredFamiliesPlan": {
-    "message": "您的订阅允许总共 $COUNT$ 位用户。您的计划由一个外部组织赞助和支付费用。",
+    "message": "您的订阅允许总共 $COUNT$ 位成员。您的计划由一个外部组织赞助和支付费用。",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -3212,7 +3221,7 @@
     }
   },
   "subscriptionMaxReached": {
-    "message": "调整订阅将导致按比例调整您的计费总金额。如果不增加订阅席位，您将不能邀请超过 $COUNT$ 位用户。",
+    "message": "调整订阅将导致按比例调整您的计费总金额。如果不增加订阅席位，您将不能邀请超过 $COUNT$ 位成员。",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -3704,13 +3713,13 @@
     "message": "SSO 验证失败"
   },
   "ssoIdentifierRequired": {
-    "message": "需要组织标识符。"
+    "message": "必须填写组织 SSO 标识符。"
   },
   "ssoIdentifier": {
     "message": "SSO 标识符"
   },
   "ssoIdentifierHint": {
-    "message": "提供此 ID 给您的会员以使用 SSO 登录。"
+    "message": "提供此 ID 给您的成员以使用 SSO 登录。"
   },
   "unlinkSso": {
     "message": "取消链接 SSO"
@@ -4057,7 +4066,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "disableSendExemption": {
-    "message": "可以管理组织策略的组织用户豁免此策略的执行。"
+    "message": "可以管理组织策略的组织成员豁免此策略的执行。"
   },
   "sendDisabled": {
     "message": "Send 已禁用",
@@ -4076,7 +4085,7 @@
     "description": "'Sends' is a plural noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendOptionsExemption": {
-    "message": "可以管理组织策略的组织用户豁免此策略的执行。"
+    "message": "可以管理组织策略的组织成员豁免此策略的执行。"
   },
   "disableHideEmail": {
     "message": "在创建或编辑 Send 时，始终向收件人显示成员的电子邮件地址。",
@@ -4315,7 +4324,7 @@
     "message": "撤销成功！"
   },
   "eventEnrollPasswordReset": {
-    "message": "用户 $ID$ 注册了密码重置协助。",
+    "message": "用户 $ID$ 注册了密码重置。",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -4324,7 +4333,7 @@
     }
   },
   "eventWithdrawPasswordReset": {
-    "message": "用户 $ID$ 撤销了密码重置协助。",
+    "message": "用户 $ID$ 撤销了密码重置。",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -4390,16 +4399,16 @@
     "message": "允许管理员重置成员的主密码。"
   },
   "resetPasswordPolicyWarning": {
-    "message": "组织中的用户自行注册或被自动注册后，管理员才能重置他们的主密码。"
+    "message": "组织中的成员自行注册或被自动注册后，管理员才能重置他们的主密码。"
   },
   "resetPasswordPolicyAutoEnroll": {
     "message": "自动注册"
   },
   "resetPasswordPolicyAutoEnrollDescription": {
-    "message": "所有接受邀请的用戶，将会被自动注册密码重置，并且不允许撤销。"
+    "message": "邀请被接受后的所有成员，将会被自动注册密码重置，并且不允许撤销。"
   },
   "resetPasswordPolicyAutoEnrollWarning": {
-    "message": "已经在组织中的用户将不会被注册密码重置。需要他们自行注册后，管理员才能重置他们的主密码。"
+    "message": "已经在组织中的成员将不会被注册密码重置。需要他们自行注册后，管理员才能重置他们的主密码。"
   },
   "resetPasswordPolicyAutoEnrollCheckbox": {
     "message": "为新用户启用自动注册"
