@@ -98,6 +98,25 @@ button {
   font-family: $font-family-sans-serif;
 }
 
+input[type*="date"] {
+  @include themify($themes) {
+    color-scheme: themed("dateInputColorScheme");
+  }
+}
+
+::-webkit-calendar-picker-indicator {
+  @include themify($themes) {
+    filter: themed("webkitCalendarPickerFilter");
+  }
+}
+
+::-webkit-calendar-picker-indicator:hover {
+  @include themify($themes) {
+    filter: themed("webkitCalendarPickerHoverFilter");
+  }
+  cursor: pointer;
+}
+
 select {
   width: 100%;
   padding: 0.35rem;

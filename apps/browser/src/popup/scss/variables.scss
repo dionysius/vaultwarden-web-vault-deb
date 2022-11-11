@@ -114,6 +114,13 @@ $themes: (
     toastTextColor: #ffffff,
     svgSuffix: "-light.svg",
     transparentColor: rgba(0, 0, 0, 0),
+    dateInputColorScheme: light,
+    // https://stackoverflow.com/a/53336754
+    webkitCalendarPickerFilter: invert(46%) sepia(69%) saturate(6397%) hue-rotate(211deg)
+      brightness(85%) contrast(103%),
+    // light has no hover so use same color
+    webkitCalendarPickerHoverFilter: invert(46%) sepia(69%) saturate(6397%) hue-rotate(211deg)
+      brightness(85%) contrast(103%),
   ),
   dark: (
     textColor: #ffffff,
@@ -168,6 +175,12 @@ $themes: (
     toastTextColor: #1f242e,
     svgSuffix: "-dark.svg",
     transparentColor: rgba(0, 0, 0, 0),
+    dateInputColorScheme: dark,
+    // https://stackoverflow.com/a/53336754 - must prepend brightness(0) saturate(100%) to dark themed date inputs
+    webkitCalendarPickerFilter: brightness(0) saturate(100%) invert(86%) sepia(19%) saturate(152%)
+      hue-rotate(184deg) brightness(87%) contrast(93%),
+    webkitCalendarPickerHoverFilter: brightness(0) saturate(100%) invert(100%) sepia(0%)
+      saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%),
   ),
   nord: (
     textColor: $nord5,
@@ -222,6 +235,12 @@ $themes: (
     toastTextColor: #ffffff,
     svgSuffix: "-dark.svg",
     transparentColor: rgba(0, 0, 0, 0),
+    dateInputColorScheme: dark,
+    webkitCalendarPickerFilter: brightness(0) saturate(100%) invert(94%) sepia(5%) saturate(454%)
+      hue-rotate(185deg) brightness(93%) contrast(96%),
+    // has no hover so use same color
+    webkitCalendarPickerHoverFilter: brightness(0) saturate(100%) invert(94%) sepia(5%)
+      saturate(454%) hue-rotate(185deg) brightness(93%) contrast(96%),
   ),
   solarizedDark: (
     textColor: $solarizedDarkBase2,
@@ -276,6 +295,11 @@ $themes: (
     toastTextColor: #ffffff,
     svgSuffix: "-solarized.svg",
     transparentColor: rgba(0, 0, 0, 0),
+    dateInputColorScheme: dark,
+    webkitCalendarPickerFilter: brightness(0) saturate(100%) invert(61%) sepia(13%) saturate(289%)
+      hue-rotate(138deg) brightness(92%) contrast(90%),
+    webkitCalendarPickerHoverFilter: brightness(0) saturate(100%) invert(94%) sepia(10%)
+      saturate(462%) hue-rotate(345deg) brightness(103%) contrast(87%),
   ),
 );
 
