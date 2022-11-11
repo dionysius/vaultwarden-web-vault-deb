@@ -50,6 +50,12 @@ describe("PolicyService", () => {
     organizationService.getAll(null).resolves([]);
     activeAccount = new BehaviorSubject("123");
     activeAccountUnlocked = new BehaviorSubject(true);
+    stateService.getDecryptedPolicies({ userId: "user" }).resolves(null);
+    stateService.getEncryptedPolicies({ userId: "user" }).resolves({
+      "1": policyData("1", "test-organization", PolicyType.MaximumVaultTimeout, true, {
+        minutes: 14,
+      }),
+    });
     stateService.getEncryptedPolicies().resolves({
       "1": policyData("1", "test-organization", PolicyType.MaximumVaultTimeout, true, {
         minutes: 14,
@@ -296,7 +302,7 @@ describe("PolicyService", () => {
     });
   });
 
-  describe("policyAppliesToActiveUser", () => {
+  describe("policyAppliesToActiveUser$", () => {
     it("MasterPassword does not apply", async () => {
       const result = await firstValueFrom(
         policyService.policyAppliesToActiveUser$(PolicyType.MasterPassword)
@@ -313,9 +319,59 @@ describe("PolicyService", () => {
       expect(result).toEqual(true);
     });
 
+    it("PolicyFilter filters result", async () => {
+      const result = await firstValueFrom(
+        policyService.policyAppliesToActiveUser$(PolicyType.MaximumVaultTimeout, (p) => false)
+      );
+
+      expect(result).toEqual(false);
+    });
+
     it("DisablePersonalVaultExport does not apply", async () => {
       const result = await firstValueFrom(
         policyService.policyAppliesToActiveUser$(PolicyType.DisablePersonalVaultExport)
+      );
+
+      expect(result).toEqual(false);
+    });
+  });
+
+  describe("policyAppliesToUser", () => {
+    it("MasterPassword does not apply", async () => {
+      const result = await policyService.policyAppliesToUser(
+        PolicyType.MasterPassword,
+        null,
+        "user"
+      );
+
+      expect(result).toEqual(false);
+    });
+
+    it("MaximumVaultTimeout applies", async () => {
+      const result = await policyService.policyAppliesToUser(
+        PolicyType.MaximumVaultTimeout,
+        null,
+        "user"
+      );
+
+      expect(result).toEqual(true);
+    });
+
+    it("PolicyFilter filters result", async () => {
+      const result = await policyService.policyAppliesToUser(
+        PolicyType.MaximumVaultTimeout,
+        (p) => false,
+        "user"
+      );
+
+      expect(result).toEqual(false);
+    });
+
+    it("DisablePersonalVaultExport does not apply", async () => {
+      const result = await policyService.policyAppliesToUser(
+        PolicyType.DisablePersonalVaultExport,
+        null,
+        "user"
       );
 
       expect(result).toEqual(false);
