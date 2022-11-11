@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
 
+import { ModalRef } from "@bitwarden/angular/components/modal/modal.ref";
 import { ShareComponent as BaseShareComponent } from "@bitwarden/angular/components/share.component";
 import { CipherService } from "@bitwarden/common/abstractions/cipher.service";
 import { CollectionService } from "@bitwarden/common/abstractions/collection.service";
@@ -19,7 +20,8 @@ export class ShareComponent extends BaseShareComponent {
     collectionService: CollectionService,
     platformUtilsService: PlatformUtilsService,
     logService: LogService,
-    organizationService: OrganizationService
+    organizationService: OrganizationService,
+    private modalRef: ModalRef
   ) {
     super(
       collectionService,
@@ -29,5 +31,9 @@ export class ShareComponent extends BaseShareComponent {
       logService,
       organizationService
     );
+  }
+
+  protected close() {
+    this.modalRef.close();
   }
 }
