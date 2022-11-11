@@ -96,8 +96,11 @@ export class AddEditComponent extends BaseAddEditComponent {
     }
     const response = await this.apiService.getCipherAdmin(this.cipherId);
     const data = new CipherData(response);
-    this.originalCipher = new Cipher(data);
-    return new Cipher(data);
+
+    data.edit = true;
+    const cipher = new Cipher(data);
+    this.originalCipher = cipher;
+    return cipher;
   }
 
   protected encryptCipher() {
