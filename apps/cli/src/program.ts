@@ -478,7 +478,7 @@ export class Program extends BaseProgram {
       .option("--port <port>", "The port to run your API webserver on.")
       .option(
         "--disable-origin-protection",
-        "If set, allows requests with origin header. Not recommended!"
+        "If set, allows requests with origin header. Warning, this option exists for backwards compatibility reasons and exposes your environment to known CSRF attacks."
       )
       .on("--help", () => {
         writeLn("\n  Notes:");
