@@ -222,11 +222,13 @@ export class PolicyService implements InternalPolicyServiceAbstraction {
     policies[policy.id] = policy;
 
     await this.updateObservables(policies);
+    await this.stateService.setDecryptedPolicies(null);
     await this.stateService.setEncryptedPolicies(policies);
   }
 
   async replace(policies: { [id: string]: PolicyData }): Promise<void> {
     await this.updateObservables(policies);
+    await this.stateService.setDecryptedPolicies(null);
     await this.stateService.setEncryptedPolicies(policies);
   }
 
@@ -234,6 +236,7 @@ export class PolicyService implements InternalPolicyServiceAbstraction {
     if (userId == null || userId == (await this.stateService.getUserId())) {
       this._policies.next([]);
     }
+    await this.stateService.setDecryptedPolicies(null, { userId: userId });
     await this.stateService.setEncryptedPolicies(null, { userId: userId });
   }
 
