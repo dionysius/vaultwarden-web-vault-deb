@@ -7,7 +7,7 @@ import { CollectionService } from "@bitwarden/common/abstractions/collection.ser
 import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
 import { FolderService } from "@bitwarden/common/abstractions/folder/folder.service.abstraction";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
-import { BitwardenPasswordProtectedImporter } from "@bitwarden/common/importers/bitwardenPasswordProtectedImporter";
+import { BitwardenPasswordProtectedImporter } from "@bitwarden/common/importers/bitwarden-password-protected-importer";
 import { Importer } from "@bitwarden/common/importers/importer";
 import { Utils } from "@bitwarden/common/misc/utils";
 import { ImportService } from "@bitwarden/common/services/import.service";

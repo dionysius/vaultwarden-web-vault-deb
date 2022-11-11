@@ -3,9 +3,7 @@ import { ImportResult } from "../models/domain/import-result";
 import { BaseImporter } from "./base-importer";
 import { Importer } from "./importer";
 
-export class ChromeCsvImporter extends BaseImporter implements Importer {
-  private androidPatternRegex = new RegExp("^android:\\/\\/.*(?<=@)(.*)(?=\\/)");
-
+export class YotiCsvImporter extends BaseImporter implements Importer {
   parse(data: string): Promise<ImportResult> {
     const result = new ImportResult();
     const results = this.parseCsv(data, true);
@@ -16,14 +14,10 @@ export class ChromeCsvImporter extends BaseImporter implements Importer {
 
     results.forEach((value) => {
       const cipher = this.initLoginCipher();
-      let name = value.name;
-      if (!name && this.androidPatternRegex.test(value.url)) {
-        name = value.url.match(this.androidPatternRegex)[1];
-      }
-      cipher.name = this.getValueOrDefault(name, "--");
-      cipher.login.username = this.getValueOrDefault(value.username);
-      cipher.login.password = this.getValueOrDefault(value.password);
-      cipher.login.uris = this.makeUriArray(value.url);
+      cipher.name = this.getValueOrDefault(value.Name, "--");
+      cipher.login.username = this.getValueOrDefault(value["User name"]);
+      cipher.login.password = this.getValueOrDefault(value.Password);
+      cipher.login.uris = this.makeUriArray(value.URL);
       this.cleanupCipher(cipher);
       result.ciphers.push(cipher);
     });

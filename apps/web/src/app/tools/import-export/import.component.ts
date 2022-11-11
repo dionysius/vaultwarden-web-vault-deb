@@ -12,7 +12,7 @@ import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUti
 import { PolicyService } from "@bitwarden/common/abstractions/policy/policy.service.abstraction";
 import { ImportOption, ImportType } from "@bitwarden/common/enums/importOptions";
 import { PolicyType } from "@bitwarden/common/enums/policyType";
-import { ImportError } from "@bitwarden/common/importers/importError";
+import { ImportError } from "@bitwarden/common/importers/import-error";
 
 import { FilePasswordPromptComponent } from "./file-password-prompt.component";
 

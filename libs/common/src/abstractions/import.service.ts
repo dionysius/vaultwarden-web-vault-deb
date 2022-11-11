@@ -1,5 +1,5 @@
 import { ImportOption, ImportType } from "../enums/importOptions";
-import { ImportError } from "../importers/importError";
+import { ImportError } from "../importers/import-error";
 import { Importer } from "../importers/importer";
 
 export abstract class ImportService {
