@@ -61,6 +61,7 @@ export class AddEditComponent extends BaseAddEditComponent implements OnChanges,
   }
 
   async ngOnInit() {
+    await super.ngOnInit();
     this.broadcasterService.subscribe(BroadcasterSubscriptionId, async (message: any) => {
       this.ngZone.run(() => {
         switch (message.command) {
@@ -75,7 +76,6 @@ export class AddEditComponent extends BaseAddEditComponent implements OnChanges,
   }
 
   async ngOnChanges() {
-    await super.init();
     await this.load();
   }
 
