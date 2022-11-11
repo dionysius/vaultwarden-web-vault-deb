@@ -571,7 +571,7 @@
     "description": "This is the folder for uncategorized items"
   },
   "enableAddLoginNotification": {
-    "message": "Ask to add login"
+    "message": "Demander à ajouter un identifiant"
   },
   "addLoginNotificationDesc": {
     "message": "La \"Notification de demande d'ajout d'identifiant\" apparait automatiquement pour vous demander d'enregistrer dans votre coffre les identifiants que vous utilisez pour la première fois."
@@ -2006,7 +2006,7 @@
     "message": "Server version"
   },
   "selfHosted": {
-    "message": "Self-hosted"
+    "message": "Auto-hébergé"
   },
   "thirdParty": {
     "message": "Third-party"
@@ -2036,10 +2036,10 @@
     "message": "Logging in as"
   },
   "notYou": {
-    "message": "Not you?"
+    "message": "Ce n'est pas vous ?"
   },
   "newAroundHere": {
-    "message": "New around here?"
+    "message": "Êtes-vous nouveau ici ?"
   },
   "rememberEmail": {
     "message": "Remember email"

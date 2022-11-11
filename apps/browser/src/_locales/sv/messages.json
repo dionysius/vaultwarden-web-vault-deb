@@ -439,7 +439,7 @@
     "message": "Ditt nya konto har blivit skapat! Du kan nu logga in."
   },
   "masterPassSent": {
-    "message": "Vi har skickat ett mejl till dig med din huvudlösenordsledtråd."
+    "message": "Vi har skickat ett e-postmeddelande till dig med din huvudlösenordsledtråd."
   },
   "verificationCodeRequired": {
     "message": "Verifieringskod krävs."
@@ -837,7 +837,7 @@
     }
   },
   "verificationCodeEmailSent": {
-    "message": "Verifieringsmejl skickat till $EMAIL$.",
+    "message": "Verifieringsmeddelande har skickats till $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -849,7 +849,7 @@
     "message": "Kom ihåg mig"
   },
   "sendVerificationCodeEmailAgain": {
-    "message": "Skicka verifieringskod-mejlet igen"
+    "message": "Skicka e-postmeddelandet med verifieringskoden igen"
   },
   "useAnotherTwoStepMethod": {
     "message": "Använd en annan inloggningsmetod för tvåstegsverifiering"
@@ -918,7 +918,7 @@
     "message": "E-post"
   },
   "emailDesc": {
-    "message": "Verifieringskoder kommer att skickas till dig."
+    "message": "Verifieringskoder kommer att skickas till dig via e-post."
   },
   "selfHostedEnvironment": {
     "message": "Egen-hostad miljö"
