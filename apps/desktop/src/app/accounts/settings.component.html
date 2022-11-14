@@ -309,23 +309,6 @@
                 </div>
                 <small class="help-block">{{ "enableBrowserIntegrationDesc" | i18n }}</small>
               </div>
-              <div class="form-group" *ngIf="showDuckDuckGoIntegrationOption">
-                <div class="checkbox">
-                  <label for="enableDuckDuckGoBrowserIntegration">
-                    <input
-                      id="enableDuckDuckGoBrowserIntegration"
-                      type="checkbox"
-                      name="enableDuckDuckGoBrowserIntegration"
-                      [(ngModel)]="enableDuckDuckGoBrowserIntegration"
-                      (change)="saveDdgBrowserIntegration()"
-                    />
-                    {{ "enableDuckDuckGoBrowserIntegration" | i18n }}
-                  </label>
-                </div>
-                <small class="help-block">{{
-                  "enableDuckDuckGoBrowserIntegrationDesc" | i18n
-                }}</small>
-              </div>
               <div class="form-group">
                 <div class="checkbox">
                   <label for="enableBrowserIntegrationFingerprint">
@@ -342,6 +325,23 @@
                 </div>
                 <small class="help-block">{{
                   "enableBrowserIntegrationFingerprintDesc" | i18n
+                }}</small>
+              </div>
+              <div class="form-group" *ngIf="showDuckDuckGoIntegrationOption">
+                <div class="checkbox">
+                  <label for="enableDuckDuckGoBrowserIntegration">
+                    <input
+                      id="enableDuckDuckGoBrowserIntegration"
+                      type="checkbox"
+                      name="enableDuckDuckGoBrowserIntegration"
+                      [(ngModel)]="enableDuckDuckGoBrowserIntegration"
+                      (change)="saveDdgBrowserIntegration()"
+                    />
+                    {{ "enableDuckDuckGoBrowserIntegration" | i18n }}
+                  </label>
+                </div>
+                <small class="help-block">{{
+                  "enableDuckDuckGoBrowserIntegrationDesc" | i18n
                 }}</small>
               </div>
               <div class="form-group">
