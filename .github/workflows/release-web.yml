@@ -162,7 +162,7 @@ jobs:
           branch: ${{ github.ref_name }}
           artifacts: web-*-cloud-COMMERCIAL.zip
 
-      - name: Download latest cloud asset (Dry Run)
+      - name: Dry Run - Download latest cloud asset
         if: ${{ github.event.inputs.release_type == 'Dry Run' }}
         uses: bitwarden/gh-actions/download-artifacts@850faad0cf6c02a8c0dc46eddde2363fbd6c373a
         with:
@@ -248,7 +248,7 @@ jobs:
           artifacts: "web-*-selfhosted-COMMERCIAL.zip,
             web-*-selfhosted-open-source.zip"
 
-      - name: Download latest build artifacts
+      - name: Dry Run - Download latest build artifacts
         if: ${{ github.event.inputs.release_type == 'Dry Run' }}
         uses: bitwarden/gh-actions/download-artifacts@850faad0cf6c02a8c0dc46eddde2363fbd6c373a
         with:

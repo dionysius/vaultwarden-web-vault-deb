@@ -119,7 +119,7 @@ jobs:
           branch: ${{ github.ref_name }}
           path: apps/desktop/artifacts
 
-      - name: Download all artifacts
+      - name: Dry Run - Download all artifacts
         if: ${{ github.event.inputs.release_type == 'Dry Run' }}
         uses: bitwarden/gh-actions/download-artifacts@850faad0cf6c02a8c0dc46eddde2363fbd6c373a
         with:
@@ -268,7 +268,7 @@ jobs:
           artifacts: bitwarden_${{ env._PKG_VERSION }}_amd64.snap
           path: apps/desktop/dist
 
-      - name: Download Snap artifact
+      - name: Dry Run - Download Snap artifact
         if: ${{ github.event.inputs.release_type == 'Dry Run' }}
         uses: bitwarden/gh-actions/download-artifacts@850faad0cf6c02a8c0dc46eddde2363fbd6c373a
         with:
@@ -334,7 +334,7 @@ jobs:
           artifacts: bitwarden.${{ env._PKG_VERSION }}.nupkg
           path: apps/desktop/dist
 
-      - name: Download choco artifact
+      - name: Dry Run - Download choco artifact
         if: ${{ github.event.inputs.release_type == 'Dry Run' }}
         uses: bitwarden/gh-actions/download-artifacts@850faad0cf6c02a8c0dc46eddde2363fbd6c373a
         with:

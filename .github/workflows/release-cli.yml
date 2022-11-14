@@ -84,7 +84,7 @@ jobs:
           workflow_conclusion: success
           branch: ${{ github.ref_name }}
 
-      - name: Download all artifacts
+      - name: Dry Run - Download all artifacts
         if: ${{ github.event.inputs.release_type == 'Dry Run' }}
         uses: bitwarden/gh-actions/download-artifacts@850faad0cf6c02a8c0dc46eddde2363fbd6c373a
         with:
@@ -169,7 +169,7 @@ jobs:
           branch: ${{ github.ref_name }}
           artifacts: bw_${{ env._PKG_VERSION }}_amd64.snap
 
-      - name: Download artifacts
+      - name: Dry Run - Download artifacts
         if: ${{ github.event.inputs.release_type == 'Dry Run' }}
         uses: bitwarden/gh-actions/download-artifacts@850faad0cf6c02a8c0dc46eddde2363fbd6c373a
         with:
@@ -227,7 +227,7 @@ jobs:
           branch: ${{ github.ref_name }}
           artifacts: bitwarden-cli.${{ env._PKG_VERSION }}.nupkg
 
-      - name: Download artifacts
+      - name: Dry Run - Download artifacts
         if: ${{ github.event.inputs.release_type == 'Dry Run' }}
         uses: bitwarden/gh-actions/download-artifacts@850faad0cf6c02a8c0dc46eddde2363fbd6c373a
         with:
@@ -277,7 +277,7 @@ jobs:
           branch: ${{ github.ref_name }}
           artifacts: bitwarden-cli-${{ env._PKG_VERSION }}-npm-build.zip
 
-      - name: Download artifacts
+      - name: Dry Run - Download artifacts
         if: ${{ github.event.inputs.release_type == 'Dry Run' }}
         uses: bitwarden/gh-actions/download-artifacts@850faad0cf6c02a8c0dc46eddde2363fbd6c373a
         with:
