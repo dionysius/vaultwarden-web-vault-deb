@@ -19,14 +19,6 @@ jobs:
           environment: 'Web Vault - QA'
           description: 'Deployment from branch ${{ github.ref_name }}'
 
-      - name: Update deployment status to In Progress
-        uses: chrnorm/deployment-status@07b3930847f65e71c9c6802ff5a402f6dfb46b86
-        with:
-          token: '${{ secrets.GITHUB_TOKEN }}'
-          environment-url: http://vault.qa.bitwarden.pw
-          state: 'in_progress'
-          deployment-id: ${{ steps.deployment.outputs.deployment_id }}
-
       - name: Checkout Repo
         uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b  # v3.0.2
 
