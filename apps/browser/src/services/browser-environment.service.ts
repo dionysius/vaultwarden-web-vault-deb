@@ -20,6 +20,10 @@ export class BrowserEnvironmentService extends EnvironmentService {
   }
 
   async settingsHaveChanged() {
+    if (!(await this.hasManagedEnvironment())) {
+      return false;
+    }
+
     const env = await this.getManagedEnvironment();
 
     return (
@@ -37,6 +41,10 @@ export class BrowserEnvironmentService extends EnvironmentService {
     return devFlagEnabled("managedEnvironment")
       ? new Promise((resolve) => resolve(devFlagValue("managedEnvironment")))
       : new Promise((resolve, reject) => {
+          if (chrome.storage.managed == null) {
+            return resolve(null);
+          }
+
           chrome.storage.managed.get("environment", (result) => {
             if (chrome.runtime.lastError) {
               return reject(chrome.runtime.lastError);
