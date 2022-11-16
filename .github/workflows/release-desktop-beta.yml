@@ -27,7 +27,7 @@ jobs:
 
       - name: Branch check
         run: |
-          if [[ "$GITHUB_REF" != "refs/heads/master" ]] && [[ "$GITHUB_REF" != "refs/heads/rc" ]] && [[ $GITHUB_REF != "refs/heads/hotfix-rc" ]]; then
+          if [[ "$GITHUB_REF" != "refs/heads/master" ]] && [[ "$GITHUB_REF" != "refs/heads/rc" ]] && [[ "$GITHUB_REF" != "refs/heads/hotfix-rc" ]]; then
             echo "==================================="
             echo "[!] Can only release from the 'master', 'rc' or 'hotfix-rc' branches"
             echo "==================================="
