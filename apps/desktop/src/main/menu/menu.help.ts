@@ -126,6 +126,11 @@ export class HelpMenu implements IMenubarMenu {
         label: "GitHub",
         click: () => shell.openExternal("https://github.com/bitwarden"),
       },
+      {
+        id: "mastodon",
+        label: "Mastodon",
+        click: () => shell.openExternal("https://fosstodon.org/@bitwarden"),
+      },
     ];
   }
 
