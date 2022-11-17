@@ -353,7 +353,7 @@ export class GetCommand extends DownloadCommand {
   private async getFolder(id: string) {
     let decFolder: FolderView = null;
     if (Utils.isGuid(id)) {
-      const folder = await this.folderService.get(id);
+      const folder = await this.folderService.getFromState(id);
       if (folder != null) {
         decFolder = await folder.decrypt();
       }

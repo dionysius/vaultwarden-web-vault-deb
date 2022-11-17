@@ -65,6 +65,20 @@ export class FolderService implements InternalFolderServiceAbstraction {
   }
 
   /**
+   * @deprecated For the CLI only
+   * @param id id of the folder
+   */
+  async getFromState(id: string): Promise<Folder> {
+    const foldersMap = await this.stateService.getEncryptedFolders();
+    const folder = foldersMap[id];
+    if (folder == null) {
+      return null;
+    }
+
+    return new Folder(folder);
+  }
+
+  /**
    * @deprecated Only use in CLI!
    */
   async getAllDecryptedFromState(): Promise<FolderView[]> {

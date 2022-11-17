@@ -88,7 +88,7 @@ export class DeleteCommand {
   }
 
   private async deleteFolder(id: string) {
-    const folder = await this.folderService.get(id);
+    const folder = await this.folderService.getFromState(id);
     if (folder == null) {
       return Response.notFound();
     }

@@ -118,7 +118,7 @@ export class EditCommand {
   }
 
   private async editFolder(id: string, req: FolderExport) {
-    const folder = await this.folderService.get(id);
+    const folder = await this.folderService.getFromState(id);
     if (folder == null) {
       return Response.notFound();
     }
