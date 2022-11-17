@@ -12,13 +12,13 @@ import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUti
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { TokenService } from "@bitwarden/common/abstractions/token.service";
 import { TwoFactorService } from "@bitwarden/common/abstractions/twoFactor.service";
-import { ApiLogInStrategy } from "@bitwarden/common/misc/logInStrategies/apiLogin.strategy";
+import { UserApiLogInStrategy } from "@bitwarden/common/misc/logInStrategies/user-api-login.strategy";
 import { Utils } from "@bitwarden/common/misc/utils";
-import { ApiLogInCredentials } from "@bitwarden/common/models/domain/log-in-credentials";
+import { UserApiLogInCredentials } from "@bitwarden/common/models/domain/log-in-credentials";
 
 import { identityTokenResponseFactory } from "./logIn.strategy.spec";
 
-describe("ApiLogInStrategy", () => {
+describe("UserApiLogInStrategy", () => {
   let cryptoService: SubstituteOf<CryptoService>;
   let apiService: SubstituteOf<ApiService>;
   let tokenService: SubstituteOf<TokenService>;
@@ -31,8 +31,8 @@ describe("ApiLogInStrategy", () => {
   let stateService: SubstituteOf<StateService>;
   let twoFactorService: SubstituteOf<TwoFactorService>;
 
-  let apiLogInStrategy: ApiLogInStrategy;
-  let credentials: ApiLogInCredentials;
+  let apiLogInStrategy: UserApiLogInStrategy;
+  let credentials: UserApiLogInCredentials;
 
   const deviceId = Utils.newGuid();
   const keyConnectorUrl = "KEY_CONNECTOR_URL";
@@ -55,7 +55,7 @@ describe("ApiLogInStrategy", () => {
     appIdService.getAppId().resolves(deviceId);
     tokenService.getTwoFactorToken().resolves(null);
 
-    apiLogInStrategy = new ApiLogInStrategy(
+    apiLogInStrategy = new UserApiLogInStrategy(
       cryptoService,
       apiService,
       tokenService,
@@ -69,7 +69,7 @@ describe("ApiLogInStrategy", () => {
       keyConnectorService
     );
 
-    credentials = new ApiLogInCredentials(apiClientId, apiClientSecret);
+    credentials = new UserApiLogInCredentials(apiClientId, apiClientSecret);
   });
 
   it("sends api key credentials to the server", async () => {

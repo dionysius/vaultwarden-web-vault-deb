@@ -9,14 +9,14 @@ import { PlatformUtilsService } from "../../abstractions/platformUtils.service";
 import { StateService } from "../../abstractions/state.service";
 import { TokenService } from "../../abstractions/token.service";
 import { TwoFactorService } from "../../abstractions/twoFactor.service";
-import { ApiLogInCredentials } from "../../models/domain/log-in-credentials";
-import { ApiTokenRequest } from "../../models/request/identity-token/api-token.request";
+import { UserApiLogInCredentials } from "../../models/domain/log-in-credentials";
+import { UserApiTokenRequest } from "../../models/request/identity-token/user-api-token.request";
 import { IdentityTokenResponse } from "../../models/response/identity-token.response";
 
 import { LogInStrategy } from "./logIn.strategy";
 
-export class ApiLogInStrategy extends LogInStrategy {
-  tokenRequest: ApiTokenRequest;
+export class UserApiLogInStrategy extends LogInStrategy {
+  tokenRequest: UserApiTokenRequest;
 
   constructor(
     cryptoService: CryptoService,
@@ -51,8 +51,8 @@ export class ApiLogInStrategy extends LogInStrategy {
     }
   }
 
-  async logIn(credentials: ApiLogInCredentials) {
-    this.tokenRequest = new ApiTokenRequest(
+  async logIn(credentials: UserApiLogInCredentials) {
+    this.tokenRequest = new UserApiTokenRequest(
       credentials.clientId,
       credentials.clientSecret,
       await this.buildTwoFactor(),

@@ -11,23 +11,23 @@ import { TwoFactorProviderType } from "../../enums/twoFactorProviderType";
 import { Account, AccountProfile, AccountTokens } from "../../models/domain/account";
 import { AuthResult } from "../../models/domain/auth-result";
 import {
-  ApiLogInCredentials,
+  UserApiLogInCredentials,
   PasswordLogInCredentials,
   SsoLogInCredentials,
   PasswordlessLogInCredentials,
 } from "../../models/domain/log-in-credentials";
 import { DeviceRequest } from "../../models/request/device.request";
-import { ApiTokenRequest } from "../../models/request/identity-token/api-token.request";
 import { PasswordTokenRequest } from "../../models/request/identity-token/password-token.request";
 import { SsoTokenRequest } from "../../models/request/identity-token/sso-token.request";
 import { TokenTwoFactorRequest } from "../../models/request/identity-token/token-two-factor.request";
+import { UserApiTokenRequest } from "../../models/request/identity-token/user-api-token.request";
 import { KeysRequest } from "../../models/request/keys.request";
 import { IdentityCaptchaResponse } from "../../models/response/identity-captcha.response";
 import { IdentityTokenResponse } from "../../models/response/identity-token.response";
 import { IdentityTwoFactorResponse } from "../../models/response/identity-two-factor.response";
 
 export abstract class LogInStrategy {
-  protected abstract tokenRequest: ApiTokenRequest | PasswordTokenRequest | SsoTokenRequest;
+  protected abstract tokenRequest: UserApiTokenRequest | PasswordTokenRequest | SsoTokenRequest;
   protected captchaBypassToken: string = null;
 
   constructor(
@@ -44,7 +44,7 @@ export abstract class LogInStrategy {
 
   abstract logIn(
     credentials:
-      | ApiLogInCredentials
+      | UserApiLogInCredentials
       | PasswordLogInCredentials
       | SsoLogInCredentials
       | PasswordlessLogInCredentials

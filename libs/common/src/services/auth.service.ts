@@ -17,13 +17,13 @@ import { AuthenticationStatus } from "../enums/authenticationStatus";
 import { AuthenticationType } from "../enums/authenticationType";
 import { KdfType } from "../enums/kdfType";
 import { KeySuffixOptions } from "../enums/keySuffixOptions";
-import { ApiLogInStrategy } from "../misc/logInStrategies/apiLogin.strategy";
 import { PasswordLogInStrategy } from "../misc/logInStrategies/passwordLogin.strategy";
 import { PasswordlessLogInStrategy } from "../misc/logInStrategies/passwordlessLogin.strategy";
 import { SsoLogInStrategy } from "../misc/logInStrategies/ssoLogin.strategy";
+import { UserApiLogInStrategy } from "../misc/logInStrategies/user-api-login.strategy";
 import { AuthResult } from "../models/domain/auth-result";
 import {
-  ApiLogInCredentials,
+  UserApiLogInCredentials,
   PasswordLogInCredentials,
   SsoLogInCredentials,
   PasswordlessLogInCredentials,
@@ -67,7 +67,7 @@ export class AuthService implements AuthServiceAbstraction {
   }
 
   private logInStrategy:
-    | ApiLogInStrategy
+    | UserApiLogInStrategy
     | PasswordLogInStrategy
     | SsoLogInStrategy
     | PasswordlessLogInStrategy;
@@ -92,7 +92,7 @@ export class AuthService implements AuthServiceAbstraction {
 
   async logIn(
     credentials:
-      | ApiLogInCredentials
+      | UserApiLogInCredentials
       | PasswordLogInCredentials
       | SsoLogInCredentials
       | PasswordlessLogInCredentials
@@ -100,7 +100,7 @@ export class AuthService implements AuthServiceAbstraction {
     this.clearState();
 
     let strategy:
-      | ApiLogInStrategy
+      | UserApiLogInStrategy
       | PasswordLogInStrategy
       | SsoLogInStrategy
       | PasswordlessLogInStrategy;
@@ -134,8 +134,8 @@ export class AuthService implements AuthServiceAbstraction {
           this.keyConnectorService
         );
         break;
-      case AuthenticationType.Api:
-        strategy = new ApiLogInStrategy(
+      case AuthenticationType.UserApi:
+        strategy = new UserApiLogInStrategy(
           this.cryptoService,
           this.apiService,
           this.tokenService,
@@ -203,8 +203,8 @@ export class AuthService implements AuthServiceAbstraction {
     this.messagingService.send("loggedOut");
   }
 
-  authingWithApiKey(): boolean {
-    return this.logInStrategy instanceof ApiLogInStrategy;
+  authingWithUserApiKey(): boolean {
+    return this.logInStrategy instanceof UserApiLogInStrategy;
   }
 
   authingWithSso(): boolean {
@@ -272,7 +272,7 @@ export class AuthService implements AuthServiceAbstraction {
 
   private saveState(
     strategy:
-      | ApiLogInStrategy
+      | UserApiLogInStrategy
       | PasswordLogInStrategy
       | SsoLogInStrategy
       | PasswordlessLogInStrategy

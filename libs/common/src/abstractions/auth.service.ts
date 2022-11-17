@@ -3,7 +3,7 @@ import { Observable } from "rxjs";
 import { AuthenticationStatus } from "../enums/authenticationStatus";
 import { AuthResult } from "../models/domain/auth-result";
 import {
-  ApiLogInCredentials,
+  UserApiLogInCredentials,
   PasswordLogInCredentials,
   SsoLogInCredentials,
   PasswordlessLogInCredentials,
@@ -20,7 +20,7 @@ export abstract class AuthService {
 
   logIn: (
     credentials:
-      | ApiLogInCredentials
+      | UserApiLogInCredentials
       | PasswordLogInCredentials
       | SsoLogInCredentials
       | PasswordlessLogInCredentials
@@ -31,7 +31,7 @@ export abstract class AuthService {
   ) => Promise<AuthResult>;
   logOut: (callback: () => void) => void;
   makePreloginKey: (masterPassword: string, email: string) => Promise<SymmetricCryptoKey>;
-  authingWithApiKey: () => boolean;
+  authingWithUserApiKey: () => boolean;
   authingWithSso: () => boolean;
   authingWithPassword: () => boolean;
   authingWithPasswordless: () => boolean;

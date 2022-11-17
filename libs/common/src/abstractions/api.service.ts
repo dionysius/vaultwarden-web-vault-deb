@@ -24,9 +24,9 @@ import { EmergencyAccessUpdateRequest } from "../models/request/emergency-access
 import { EventRequest } from "../models/request/event.request";
 import { GroupRequest } from "../models/request/group.request";
 import { IapCheckRequest } from "../models/request/iap-check.request";
-import { ApiTokenRequest } from "../models/request/identity-token/api-token.request";
 import { PasswordTokenRequest } from "../models/request/identity-token/password-token.request";
 import { SsoTokenRequest } from "../models/request/identity-token/sso-token.request";
+import { UserApiTokenRequest } from "../models/request/identity-token/user-api-token.request";
 import { ImportCiphersRequest } from "../models/request/import-ciphers.request";
 import { ImportOrganizationCiphersRequest } from "../models/request/import-organization-ciphers.request";
 import { KdfRequest } from "../models/request/kdf.request";
@@ -175,7 +175,7 @@ export abstract class ApiService {
   ) => Promise<any>;
 
   postIdentityToken: (
-    request: PasswordTokenRequest | SsoTokenRequest | ApiTokenRequest
+    request: PasswordTokenRequest | SsoTokenRequest | UserApiTokenRequest
   ) => Promise<IdentityTokenResponse | IdentityTwoFactorResponse | IdentityCaptchaResponse>;
   refreshIdentityToken: () => Promise<any>;
 

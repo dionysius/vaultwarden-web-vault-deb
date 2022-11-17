@@ -42,10 +42,12 @@ export abstract class TokenRequest {
       obj.authRequest = this.passwordlessAuthRequest;
     }
 
-    if (this.twoFactor.token && this.twoFactor.provider != null) {
-      obj.twoFactorToken = this.twoFactor.token;
-      obj.twoFactorProvider = this.twoFactor.provider;
-      obj.twoFactorRemember = this.twoFactor.remember ? "1" : "0";
+    if (this.twoFactor) {
+      if (this.twoFactor.token && this.twoFactor.provider != null) {
+        obj.twoFactorToken = this.twoFactor.token;
+        obj.twoFactorProvider = this.twoFactor.provider;
+        obj.twoFactorRemember = this.twoFactor.remember ? "1" : "0";
+      }
     }
 
     return obj;

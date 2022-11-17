@@ -3,7 +3,7 @@ import { DeviceRequest } from "../device.request";
 import { TokenTwoFactorRequest } from "./token-two-factor.request";
 import { TokenRequest } from "./token.request";
 
-export class ApiTokenRequest extends TokenRequest {
+export class UserApiTokenRequest extends TokenRequest {
   constructor(
     public clientId: string,
     public clientSecret: string,

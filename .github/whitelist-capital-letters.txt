@@ -36,7 +36,6 @@
 ./libs/angular/src/interfaces/selectOptions.ts
 ./libs/components/src/stories/Introduction.stories.mdx
 ./libs/common/spec/misc/logInStrategies/logIn.strategy.spec.ts
-./libs/common/spec/misc/logInStrategies/apiLogIn.strategy.spec.ts
 ./libs/common/spec/misc/logInStrategies/passwordLogIn.strategy.spec.ts
 ./libs/common/spec/misc/logInStrategies/ssoLogIn.strategy.spec.ts
 ./libs/common/spec/web/services/webCryptoFunction.service.spec.ts
@@ -60,7 +59,6 @@
 ./libs/common/spec/services/consoleLog.service.spec.ts
 ./libs/common/src/misc/logInStrategies/ssoLogin.strategy.ts
 ./libs/common/src/misc/logInStrategies/passwordLogin.strategy.ts
-./libs/common/src/misc/logInStrategies/apiLogin.strategy.ts
 ./libs/common/src/misc/logInStrategies/passwordlessLogin.strategy.ts
 ./libs/common/src/misc/logInStrategies/logIn.strategy.ts
 ./libs/common/src/misc/nodeUtils.ts
