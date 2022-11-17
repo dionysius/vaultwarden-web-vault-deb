@@ -3,6 +3,9 @@ import { Component } from "@angular/core";
 import { RouterModule } from "@angular/router";
 import { Meta, moduleMetadata, Story } from "@storybook/angular";
 
+import { ButtonModule } from "../button";
+import { FormFieldModule } from "../form-field";
+
 import { TabGroupComponent } from "./tab-group/tab-group.component";
 import { TabsModule } from "./tabs.module";
 
@@ -44,6 +47,8 @@ export default {
       imports: [
         CommonModule,
         TabsModule,
+        ButtonModule,
+        FormFieldModule,
         RouterModule.forRoot(
           [
             { path: "", redirectTo: "active", pathMatch: "full" },
@@ -125,3 +130,32 @@ const PreserveContentTabGroupTemplate: Story<TabGroupComponent> = (args: any) =>
 });
 
 export const PreserveContentTabs = PreserveContentTabGroupTemplate.bind({});
+
+const KeyboardNavTabGroupTemplate: Story<TabGroupComponent> = (args: any) => ({
+  props: args,
+  template: `
+    <bit-tab-group label="Keyboard Navigation Tabs" class="tw-text-main">
+        <bit-tab label="Form Tab">
+          <p>
+            You can navigate through all tab labels, form inputs, and the button that is outside the tab group via
+            the keyboard.
+          </p>
+          <bit-form-field>
+            <bit-label>First Input</bit-label>
+            <input type="text" bitInput />
+          </bit-form-field>
+          <bit-form-field>
+            <bit-label>Second Input</bit-label>
+            <input type="text" bitInput />
+          </bit-form-field>
+        </bit-tab>
+
+        <bit-tab label="No Focusable Content Tab" [contentTabIndex]="0">
+          <p>This tab has no focusable content, but the panel should still be focusable</p>
+        </bit-tab>
+    </bit-tab-group>
+    <button bitButton buttonType="primary" class="tw-mt-5">External Button</button>
+`,
+});
+
+export const KeyboardNavigation = KeyboardNavTabGroupTemplate.bind({});

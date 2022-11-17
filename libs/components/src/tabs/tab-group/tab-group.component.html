@@ -34,7 +34,7 @@
     role="tabpanel"
     *ngFor="let tab of tabs; let i = index"
     [id]="getTabContentId(i)"
-    [attr.tabindex]="selectedIndex === i ? 0 : -1"
+    [attr.tabindex]="tab.contentTabIndex"
     [attr.labeledby]="getTabLabelId(i)"
     [active]="tab.isActive"
     [content]="tab.content"

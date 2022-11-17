@@ -1,10 +1,12 @@
-import { DialogModule, DialogRef, DIALOG_DATA } from "@angular/cdk/dialog";
+import { DIALOG_DATA, DialogModule, DialogRef } from "@angular/cdk/dialog";
 import { Component, Inject } from "@angular/core";
 import { Meta, moduleMetadata, Story } from "@storybook/angular";
 
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 
 import { ButtonModule } from "../button";
+import { IconButtonModule } from "../icon-button";
+import { SharedModule } from "../shared";
 import { I18nMockService } from "../utils/i18n-mock.service";
 
 import { DialogService } from "./dialog.service";
@@ -35,7 +37,7 @@ class StoryDialogComponent {
 @Component({
   selector: "story-dialog-content",
   template: `
-    <bit-dialog [dialogSize]="large">
+    <bit-dialog dialogSize="large">
       <span bitDialogTitle>Dialog Title</span>
       <span bitDialogContent>
         Dialog body text goes here.
@@ -68,7 +70,7 @@ export default {
         DialogTitleContainerDirective,
         StoryDialogContentComponent,
       ],
-      imports: [ButtonModule, DialogModule],
+      imports: [SharedModule, ButtonModule, DialogModule, IconButtonModule],
       providers: [
         DialogService,
         {
