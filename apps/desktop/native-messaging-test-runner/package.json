@@ -30,6 +30,6 @@
   },
   "_moduleAliases": {
     "@bitwarden/common": "dist/libs/common/src",
-    "@bitwarden/node/services/nodeCryptoFunction.service": "dist/libs/node/src/services/nodeCryptoFunction.service"
+    "@bitwarden/node/services/node-crypto-function.service": "dist/libs/node/src/services/node-crypto-function.service"
   }
 }

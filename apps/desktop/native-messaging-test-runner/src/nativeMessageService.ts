@@ -7,7 +7,7 @@ import { EncString } from "@bitwarden/common/models/domain/enc-string";
 import { SymmetricCryptoKey } from "@bitwarden/common/models/domain/symmetric-crypto-key";
 import { ConsoleLogService } from "@bitwarden/common/services/consoleLog.service";
 import { EncryptServiceImplementation } from "@bitwarden/common/services/cryptography/encrypt.service.implementation";
-import { NodeCryptoFunctionService } from "@bitwarden/node/services/nodeCryptoFunction.service";
+import { NodeCryptoFunctionService } from "@bitwarden/node/services/node-crypto-function.service";
 
 import { DecryptedCommandData } from "../../src/models/nativeMessaging/decryptedCommandData";
 import { EncryptedMessage } from "../../src/models/nativeMessaging/encryptedMessage";

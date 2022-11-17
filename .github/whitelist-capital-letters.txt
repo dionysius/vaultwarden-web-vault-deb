@@ -163,7 +163,6 @@
 ./libs/common/src/services/webCryptoFunction.service.ts
 ./libs/common/src/interfaces/IEncrypted.ts
 ./libs/node/spec/cli/consoleLog.service.spec.ts
-./libs/node/spec/services/nodeCryptoFunction.service.spec.ts
 ./libs/node/src/cli/models/response/baseResponse.ts
 ./libs/node/src/cli/models/response/stringResponse.ts
 ./libs/node/src/cli/models/response/fileResponse.ts
@@ -173,7 +172,6 @@
 ./libs/node/src/cli/services/consoleLog.service.ts
 ./libs/node/src/cli/services/cliPlatformUtils.service.ts
 ./libs/node/src/services/nodeApi.service.ts
-./libs/node/src/services/nodeCryptoFunction.service.ts
 ./libs/node/src/services/lowdbStorage.service.ts
 ./libs/electron/spec/services/electronLog.service.spec.ts
 ./libs/electron/src/baseMenu.ts
