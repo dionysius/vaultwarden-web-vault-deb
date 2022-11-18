@@ -17,7 +17,7 @@ import { KeyConnectorService as KeyConnectorServiceAbstraction } from "@bitwarde
 import { LogService as LogServiceAbstraction } from "@bitwarden/common/abstractions/log.service";
 import { MessagingService as MessagingServiceAbstraction } from "@bitwarden/common/abstractions/messaging.service";
 import { NotificationsService as NotificationsServiceAbstraction } from "@bitwarden/common/abstractions/notifications.service";
-import { OrganizationService as OrganizationServiceAbstraction } from "@bitwarden/common/abstractions/organization/organization.service.abstraction";
+import { InternalOrganizationService as InternalOrganizationServiceAbstraction } from "@bitwarden/common/abstractions/organization/organization.service.abstraction";
 import { PasswordGenerationService as PasswordGenerationServiceAbstraction } from "@bitwarden/common/abstractions/passwordGeneration.service";
 import { PlatformUtilsService as PlatformUtilsServiceAbstraction } from "@bitwarden/common/abstractions/platformUtils.service";
 import { PolicyApiServiceAbstraction } from "@bitwarden/common/abstractions/policy/policy-api.service.abstraction";
@@ -153,7 +153,7 @@ export default class MainBackground {
   popupUtilsService: PopupUtilsService;
   sendService: SendServiceAbstraction;
   fileUploadService: FileUploadServiceAbstraction;
-  organizationService: OrganizationServiceAbstraction;
+  organizationService: InternalOrganizationServiceAbstraction;
   providerService: ProviderServiceAbstraction;
   keyConnectorService: KeyConnectorServiceAbstraction;
   userVerificationService: UserVerificationServiceAbstraction;
@@ -317,7 +317,7 @@ export default class MainBackground {
       this.stateService
     );
     this.syncNotifierService = new SyncNotifierService();
-    this.organizationService = new OrganizationService(this.stateService, this.syncNotifierService);
+    this.organizationService = new OrganizationService(this.stateService);
     this.policyService = new PolicyService(this.stateService, this.organizationService);
     this.policyApiService = new PolicyApiService(
       this.policyService,
@@ -409,7 +409,7 @@ export default class MainBackground {
       this.stateService,
       this.providerService,
       this.folderApiService,
-      this.syncNotifierService,
+      this.organizationService,
       logoutCallback
     );
     this.eventService = new EventService(

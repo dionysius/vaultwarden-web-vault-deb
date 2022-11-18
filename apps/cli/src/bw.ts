@@ -240,7 +240,7 @@ export class Main {
 
     this.providerService = new ProviderService(this.stateService);
 
-    this.organizationService = new OrganizationService(this.stateService, this.syncNotifierService);
+    this.organizationService = new OrganizationService(this.stateService);
 
     this.policyService = new PolicyService(this.stateService, this.organizationService);
 
@@ -322,7 +322,7 @@ export class Main {
       this.stateService,
       this.providerService,
       this.folderApiService,
-      this.syncNotifierService,
+      this.organizationService,
       async (expired: boolean) => await this.logout()
     );
 

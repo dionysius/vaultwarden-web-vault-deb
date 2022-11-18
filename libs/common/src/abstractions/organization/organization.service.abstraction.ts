@@ -1,6 +1,7 @@
 import { map, Observable } from "rxjs";
 
 import { Utils } from "../../misc/utils";
+import { OrganizationData } from "../../models/data/organization.data";
 import { Organization } from "../../models/domain/organization";
 import { I18nService } from "../i18n.service";
 
@@ -82,4 +83,8 @@ export abstract class OrganizationService {
   getFromState: (id: string) => Promise<Organization>;
   canManageSponsorships: () => Promise<boolean>;
   hasOrganizations: () => boolean;
+}
+
+export abstract class InternalOrganizationService extends OrganizationService {
+  replace: (organizations: { [id: string]: OrganizationData }) => Promise<void>;
 }

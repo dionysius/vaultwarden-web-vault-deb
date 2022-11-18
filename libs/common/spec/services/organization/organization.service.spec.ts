@@ -1,12 +1,9 @@
-import { MockProxy, mock, any, mockClear, matches } from "jest-mock-extended";
-import { BehaviorSubject, firstValueFrom, Subject } from "rxjs";
+import { MockProxy, mock, any, mockClear } from "jest-mock-extended";
+import { BehaviorSubject, firstValueFrom } from "rxjs";
 
 import { StateService } from "@bitwarden/common/abstractions/state.service";
-import { SyncNotifierService } from "@bitwarden/common/abstractions/sync/syncNotifier.service.abstraction";
 import { OrganizationData } from "@bitwarden/common/models/data/organization.data";
-import { SyncResponse } from "@bitwarden/common/models/response/sync.response";
 import { OrganizationService } from "@bitwarden/common/services/organization/organization.service";
-import { SyncEventArgs } from "@bitwarden/common/types/syncEventArgs";
 
 describe("Organization Service", () => {
   let organizationService: OrganizationService;
@@ -14,8 +11,6 @@ describe("Organization Service", () => {
   let stateService: MockProxy<StateService>;
   let activeAccount: BehaviorSubject<string>;
   let activeAccountUnlocked: BehaviorSubject<boolean>;
-  let syncNotifierService: MockProxy<SyncNotifierService>;
-  let sync: Subject<SyncEventArgs>;
 
   const resetStateService = async (
     customizeStateService: (stateService: MockProxy<StateService>) => void
@@ -25,7 +20,7 @@ describe("Organization Service", () => {
     stateService.activeAccount$ = activeAccount;
     stateService.activeAccountUnlocked$ = activeAccountUnlocked;
     customizeStateService(stateService);
-    organizationService = new OrganizationService(stateService, syncNotifierService);
+    organizationService = new OrganizationService(stateService);
     await new Promise((r) => setTimeout(r, 50));
   };
 
@@ -41,12 +36,7 @@ describe("Organization Service", () => {
       "1": organizationData("1", "Test Org"),
     });
 
-    sync = new Subject<SyncEventArgs>();
-
-    syncNotifierService = mock<SyncNotifierService>();
-    syncNotifierService.sync$ = sync;
-
-    organizationService = new OrganizationService(stateService, syncNotifierService);
+    organizationService = new OrganizationService(stateService);
   });
 
   afterEach(() => {
@@ -166,36 +156,6 @@ describe("Organization Service", () => {
       organizationService.delete("1");
 
       expect(stateService.getOrganizations).toHaveBeenCalledTimes(2);
-    });
-  });
-
-  describe("syncEvent works", () => {
-    it("Complete event updates data", async () => {
-      sync.next({
-        status: "Completed",
-        successfully: true,
-        data: new SyncResponse({
-          profile: {
-            organizations: [
-              {
-                id: "1",
-                name: "Updated Name",
-              },
-            ],
-          },
-        }),
-      });
-
-      await new Promise((r) => setTimeout(r, 500));
-
-      expect(stateService.setOrganizations).toHaveBeenCalledTimes(1);
-
-      expect(stateService.setOrganizations).toHaveBeenLastCalledWith(
-        matches((organizationData: { [id: string]: OrganizationData }) => {
-          const organization = organizationData["1"];
-          return organization?.name === "Updated Name";
-        })
-      );
     });
   });
 
