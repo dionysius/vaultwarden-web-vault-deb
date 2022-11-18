@@ -1,6 +1,6 @@
 import { CollectionExport } from "@bitwarden/common/models/export/collection.export";
 
-import { SelectionReadOnly } from "../selectionReadOnly";
+import { SelectionReadOnly } from "../selection-read-only";
 
 export class OrganizationCollectionRequest extends CollectionExport {
   static template(): OrganizationCollectionRequest {

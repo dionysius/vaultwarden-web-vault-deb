@@ -3,12 +3,21 @@ import * as path from "path";
 
 import * as lowdb from "lowdb";
 import * as FileSync from "lowdb/adapters/FileSync";
+import * as lock from "proper-lockfile";
+import { OperationOptions } from "retry";
 
 import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { AbstractStorageService } from "@bitwarden/common/abstractions/storage.service";
 import { NodeUtils } from "@bitwarden/common/misc/nodeUtils";
 import { sequentialize } from "@bitwarden/common/misc/sequentialize";
 import { Utils } from "@bitwarden/common/misc/utils";
+
+const retries: OperationOptions = {
+  retries: 50,
+  minTimeout: 100,
+  maxTimeout: 250,
+  factor: 2,
+};
 
 export class LowdbStorageService implements AbstractStorageService {
   protected dataFilePath: string;
@@ -20,7 +29,8 @@ export class LowdbStorageService implements AbstractStorageService {
     protected logService: LogService,
     defaults?: any,
     private dir?: string,
-    private allowCache = false
+    private allowCache = false,
+    private requireLock = false
   ) {
     this.defaults = defaults;
   }
@@ -130,8 +140,18 @@ export class LowdbStorageService implements AbstractStorageService {
   }
 
   protected async lockDbFile<T>(action: () => T): Promise<T> {
-    // Lock methods implemented in clients
-    return Promise.resolve(action());
+    if (this.requireLock && !Utils.isNullOrWhitespace(this.dataFilePath)) {
+      this.logService.info("acquiring db file lock");
+      return await lock.lock(this.dataFilePath, { retries: retries }).then((release) => {
+        try {
+          return action();
+        } finally {
+          release();
+        }
+      });
+    } else {
+      return action();
+    }
   }
 
   private readForNoCache() {

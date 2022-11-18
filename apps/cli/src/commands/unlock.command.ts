@@ -10,12 +10,12 @@ import { HashPurpose } from "@bitwarden/common/enums/hashPurpose";
 import { Utils } from "@bitwarden/common/misc/utils";
 import { SecretVerificationRequest } from "@bitwarden/common/models/request/secret-verification.request";
 import { ConsoleLogService } from "@bitwarden/common/services/consoleLog.service";
-import { Response } from "@bitwarden/node/cli/models/response";
-import { MessageResponse } from "@bitwarden/node/cli/models/response/messageResponse";
 
+import { Response } from "../models/response";
+import { MessageResponse } from "../models/response/message.response";
 import { CliUtils } from "../utils";
 
-import { ConvertToKeyConnectorCommand } from "./convertToKeyConnector.command";
+import { ConvertToKeyConnectorCommand } from "./convert-to-key-connector.command";
 
 export class UnlockCommand {
   constructor(

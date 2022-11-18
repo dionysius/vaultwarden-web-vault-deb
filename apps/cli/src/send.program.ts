@@ -6,7 +6,6 @@ import * as program from "commander";
 
 import { SendType } from "@bitwarden/common/enums/sendType";
 import { Utils } from "@bitwarden/common/misc/utils";
-import { Response } from "@bitwarden/node/cli/models/response";
 
 import { Main } from "./bw";
 import { GetCommand } from "./commands/get.command";
@@ -16,10 +15,11 @@ import { SendEditCommand } from "./commands/send/edit.command";
 import { SendGetCommand } from "./commands/send/get.command";
 import { SendListCommand } from "./commands/send/list.command";
 import { SendReceiveCommand } from "./commands/send/receive.command";
-import { SendRemovePasswordCommand } from "./commands/send/removePassword.command";
-import { SendFileResponse } from "./models/response/sendFileResponse";
-import { SendResponse } from "./models/response/sendResponse";
-import { SendTextResponse } from "./models/response/sendTextResponse";
+import { SendRemovePasswordCommand } from "./commands/send/remove-password.command";
+import { Response } from "./models/response";
+import { SendFileResponse } from "./models/response/send-file.response";
+import { SendTextResponse } from "./models/response/send-text.response";
+import { SendResponse } from "./models/response/send.response";
 import { Program } from "./program";
 import { CliUtils } from "./utils";
 

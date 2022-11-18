@@ -4,8 +4,8 @@ import { FolderApiServiceAbstraction } from "@bitwarden/common/abstractions/fold
 import { FolderService } from "@bitwarden/common/abstractions/folder/folder.service.abstraction";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { Utils } from "@bitwarden/common/misc/utils";
-import { Response } from "@bitwarden/node/cli/models/response";
 
+import { Response } from "../models/response";
 import { CliUtils } from "../utils";
 
 export class DeleteCommand {

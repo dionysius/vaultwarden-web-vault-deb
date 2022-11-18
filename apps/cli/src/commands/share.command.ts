@@ -1,7 +1,7 @@
 import { CipherService } from "@bitwarden/common/abstractions/cipher.service";
-import { Response } from "@bitwarden/node/cli/models/response";
 
-import { CipherResponse } from "../models/response/cipherResponse";
+import { Response } from "../models/response";
+import { CipherResponse } from "../models/response/cipher.response";
 import { CliUtils } from "../utils";
 
 export class ShareCommand {

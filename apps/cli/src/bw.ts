@@ -49,16 +49,16 @@ import { UserVerificationApiService } from "@bitwarden/common/services/userVerif
 import { UserVerificationService } from "@bitwarden/common/services/userVerification/userVerification.service";
 import { VaultTimeoutService } from "@bitwarden/common/services/vaultTimeout/vaultTimeout.service";
 import { VaultTimeoutSettingsService } from "@bitwarden/common/services/vaultTimeout/vaultTimeoutSettings.service";
-import { CliPlatformUtilsService } from "@bitwarden/node/cli/services/cliPlatformUtils.service";
-import { ConsoleLogService } from "@bitwarden/node/cli/services/consoleLog.service";
 import { NodeCryptoFunctionService } from "@bitwarden/node/services/node-crypto-function.service";
-import { NodeApiService } from "@bitwarden/node/services/nodeApi.service";
 
 import { Program } from "./program";
 import { SendProgram } from "./send.program";
+import { CliPlatformUtilsService } from "./services/cli-platform-utils.service";
+import { ConsoleLogService } from "./services/console-log.service";
 import { I18nService } from "./services/i18n.service";
-import { LowdbStorageService } from "./services/lowdbStorage.service";
-import { NodeEnvSecureStorageService } from "./services/nodeEnvSecureStorage.service";
+import { LowdbStorageService } from "./services/lowdb-storage.service";
+import { NodeApiService } from "./services/node-api.service";
+import { NodeEnvSecureStorageService } from "./services/node-env-secure-storage.service";
 import { VaultProgram } from "./vault.program";
 
 // Polyfills

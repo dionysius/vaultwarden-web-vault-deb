@@ -1,4 +1,4 @@
-import { BaseResponse } from "./baseResponse";
+import { BaseResponse } from "./base.response";
 
 export class ListResponse implements BaseResponse {
   object: string;

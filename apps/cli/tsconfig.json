@@ -12,9 +12,10 @@
     "sourceMap": true,
     "baseUrl": ".",
     "paths": {
+      "@bitwarden/common/spec/*": ["../../libs/common/spec/*"],
       "@bitwarden/common/*": ["../../libs/common/src/*"],
       "@bitwarden/node/*": ["../../libs/node/src/*"]
     }
   },
-  "include": ["src"]
+  "include": ["src", "src/**/*.spec.ts"]
 }

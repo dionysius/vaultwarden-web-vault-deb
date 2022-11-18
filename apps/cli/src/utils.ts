@@ -10,8 +10,9 @@ import { Utils } from "@bitwarden/common/misc/utils";
 import { Organization } from "@bitwarden/common/models/domain/organization";
 import { CollectionView } from "@bitwarden/common/models/view/collection.view";
 import { FolderView } from "@bitwarden/common/models/view/folder.view";
-import { Response } from "@bitwarden/node/cli/models/response";
-import { MessageResponse } from "@bitwarden/node/cli/models/response/messageResponse";
+
+import { Response } from "./models/response";
+import { MessageResponse } from "./models/response/message.response";
 
 export class CliUtils {
   static writeLn(s: string, finalLine = false, error = false) {

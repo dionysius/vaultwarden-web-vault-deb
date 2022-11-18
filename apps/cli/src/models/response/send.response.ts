@@ -1,10 +1,10 @@
 import { SendType } from "@bitwarden/common/enums/sendType";
 import { Utils } from "@bitwarden/common/misc/utils";
 import { SendView } from "@bitwarden/common/models/view/send.view";
-import { BaseResponse } from "@bitwarden/node/cli/models/response/baseResponse";
 
-import { SendFileResponse } from "./sendFileResponse";
-import { SendTextResponse } from "./sendTextResponse";
+import { BaseResponse } from "./base.response";
+import { SendFileResponse } from "./send-file.response";
+import { SendTextResponse } from "./send-text.response";
 
 const dateProperties: string[] = [
   Utils.nameOf<SendResponse>("deletionDate"),

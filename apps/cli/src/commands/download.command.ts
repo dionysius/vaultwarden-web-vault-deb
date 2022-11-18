@@ -3,9 +3,9 @@ import * as fet from "node-fetch";
 import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
 import { EncArrayBuffer } from "@bitwarden/common/models/domain/enc-array-buffer";
 import { SymmetricCryptoKey } from "@bitwarden/common/models/domain/symmetric-crypto-key";
-import { Response } from "@bitwarden/node/cli/models/response";
-import { FileResponse } from "@bitwarden/node/cli/models/response/fileResponse";
 
+import { Response } from "../models/response";
+import { FileResponse } from "../models/response/file.response";
 import { CliUtils } from "../utils";
 
 export abstract class DownloadCommand {

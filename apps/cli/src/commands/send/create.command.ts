@@ -6,10 +6,10 @@ import { SendService } from "@bitwarden/common/abstractions/send.service";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { SendType } from "@bitwarden/common/enums/sendType";
 import { NodeUtils } from "@bitwarden/common/misc/nodeUtils";
-import { Response } from "@bitwarden/node/cli/models/response";
 
-import { SendResponse } from "../../models/response/sendResponse";
-import { SendTextResponse } from "../../models/response/sendTextResponse";
+import { Response } from "../../models/response";
+import { SendTextResponse } from "../../models/response/send-text.response";
+import { SendResponse } from "../../models/response/send.response";
 import { CliUtils } from "../../utils";
 
 export class SendCreateCommand {
