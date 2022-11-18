@@ -1085,7 +1085,7 @@
     }
   },
   "kdfIterationsWarning": {
-    "message": "Hvis du indstiller dine KDF iterationer for højt, kan det resultere i dårlig ydeevne, når du logger ind på (og låser op for) Bitwarden på enheder med langsomme CPU'er. Vi anbefaler at du øger værdien i trin på $INCREMENT$ og derefter tester alle dine enheder.",
+    "message": "Indstilles KDF-iterationer for højt, kan det resultere i dårlig ydeevne under indlogning på (og oplåsning af) Bitwarden på enheder med langsomme CPU'er. En værdiforøgelse i trin á $INCREMENT$ anbefales med efterfølgende test på alle dine enheder.",
     "placeholders": {
       "increment": {
         "content": "$1",
@@ -1094,7 +1094,7 @@
     }
   },
   "changeKdf": {
-    "message": "Ændre KDF"
+    "message": "Ændr KDF"
   },
   "encKeySettingsChanged": {
     "message": "Indstillinger for krypteringsnøgle gemt"
@@ -1103,7 +1103,7 @@
     "message": "Farezone"
   },
   "dangerZoneDesc": {
-    "message": "Pas på, disse handlinger kan ikke fortrydes!"
+    "message": "Pas på, disse handlinger er irreversible!"
   },
   "deauthorizeSessions": {
     "message": "Fjern sessionsgodkendelser"
@@ -1112,7 +1112,7 @@
     "message": "Bekymret for om kontoen er logget ind på en anden enhed? Fortsæt nedenfor for at fjerne godkendelsen for alle tidligere anvendte enhedstyper. Dette sikkerhedstrin tilrådes, hvis man tidligere har anvendt en offentlig computer eller ved et uheld har gemt sin adgangskode på en enhed, der ikke er ens egen. Dette trin rydder også alle tidligere lagrede totrins-login sessioner."
   },
   "deauthorizeSessionsWarning": {
-    "message": "Fortsættes, logges man også ud af den nuværende session og vil skulle logge ind igen. Der anmodes også om totrins-login igen, såfremt funktionen er opsat. Aktive sessioner på andre enheder vil kunne forblive aktive i op til én time."
+    "message": "Fortsættes, logges man også ud af denne session og vil skulle logge ind igen. Der anmodes også om totrins-login igen, såfremt funktionen er opsat. Aktive sessioner på andre enheder kan forblive aktive i op til én time."
   },
   "sessionsDeauthorized": {
     "message": "Godkendelser for alle sessioner fjernet"
@@ -1127,13 +1127,13 @@
     "message": "Boks tilgået af udbyder."
   },
   "purgeVaultDesc": {
-    "message": "Fortsæt nedenfor for at slette alle elementer og mapper i din boks. Elementer, der tilhører en organisation du deler med, slettes ikke."
+    "message": "Fortsæt nedenfor for at slette alle emner og mapper i din boks. Emner, tilhørende en organisation du deler med, slettes ikke."
   },
   "purgeOrgVaultDesc": {
-    "message": "Fortsæt nedenfor for at slette alle elementer i organisationens boks."
+    "message": "Fortsæt nedenfor for at slette alle emner i organisationens boks."
   },
   "purgeVaultWarning": {
-    "message": "Tømning af din boks er permanent. Det kan ikke fortrydes."
+    "message": "Tømning af din boks er permanent og irreversibel."
   },
   "vaultPurged": {
     "message": "Boks er tømt."
@@ -1145,13 +1145,13 @@
     "message": "Fortsæt nedenfor for at slette din konto og alle boks-data."
   },
   "deleteAccountWarning": {
-    "message": "Sletning af din konto er permanent. Det kan ikke fortrydes."
+    "message": "Sletning af din konto er permanent og irreversibel."
   },
   "accountDeleted": {
     "message": "Konto slettet"
   },
   "accountDeletedDesc": {
-    "message": "Din konto er blevet lukket, og alle tilknyttede data er blevet slettet."
+    "message": "Din konto er blevet lukket og alle tilknyttede data slettet."
   },
   "myAccount": {
     "message": "Min konto"
@@ -1172,7 +1172,7 @@
     "message": "Data er nu importeret"
   },
   "importWarning": {
-    "message": "Du importerer data til $ORGANIZATION$. Dine data kan blive delt med medlemmer af denne organisation. Vil du fortsætte?",
+    "message": "Du er ved at importere data til $ORGANIZATION$, som kan blive delt med medlemmer af denne organisation. Fortsæt?",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -1181,13 +1181,13 @@
     }
   },
   "importFormatError": {
-    "message": "Data er ikke formateret korrekt. Kontroller din importfil og prøv igen."
+    "message": "Data er ikke korrekt formateret. Tjek importfilen og forsøg igen."
   },
   "importNothingError": {
     "message": "Intet blev importeret."
   },
   "importEncKeyError": {
-    "message": "Fejl ved dekryptering af den eksporterede fil. Din krypteringsnøglen matcher ikke den krypteringsnøgle, som blev anvendt til dataeksporten."
+    "message": "Fejl under dekryptering af den eksporterede fil. Krypteringsnøglen matcher ikke den til dataeksporten anvendte krypteringsnøgle."
   },
   "selectFormat": {
     "message": "Vælg formatet for importfilen"
@@ -1205,7 +1205,7 @@
     "message": "eller kopiér/indsæt importfilens indhold"
   },
   "instructionsFor": {
-    "message": "$NAME$ instruktioner",
+    "message": "$NAME$-vejledning",
     "description": "The title for the import tool instructions.",
     "placeholders": {
       "name": {
@@ -1230,7 +1230,7 @@
     "message": "Sprog"
   },
   "languageDesc": {
-    "message": "Skift det sprog, der bruges af web-boksen."
+    "message": "Skift sproget brugt af web-boksen."
   },
   "enableFavicon": {
     "message": "Vis webstedsikoner"
@@ -1239,11 +1239,11 @@
     "message": "Vis et genkendeligt billede ud for hvert login."
   },
   "enableFullWidth": {
-    "message": "Vis layout med fuld bredde",
+    "message": "Vis layout i fuld bredde",
     "description": "Allows scaling the web vault UI's width"
   },
   "enableFullWidthDesc": {
-    "message": "Lad web-boksen udfylde browservinduets fulde bredde."
+    "message": "Lad web-boksen udnytte browservinduets fulde bredde."
   },
   "default": {
     "message": "Standard"
@@ -1252,7 +1252,7 @@
     "message": "Domæneregler"
   },
   "domainRulesDesc": {
-    "message": "Hvis du har samme login på tværs af flere forskellige website-domæner, kan du markere hjemmesiden som \"ækvivalent\". \"Globale\" domæner er dem, der allerede er oprettet til dig af Bitwarden."
+    "message": "Har man samme login på tværs af flere forskellige website-domæner, kan webstedet markeres som \"ækvivalent\". \"Globale\" domæner er dem, som allerede er oprettet til dig af Bitwarden."
   },
   "globalEqDomains": {
     "message": "Globale ækvivalente domæner"
@@ -1264,7 +1264,7 @@
     "message": "Udeluk"
   },
   "include": {
-    "message": "Inkluder"
+    "message": "Inkludér"
   },
   "customize": {
     "message": "Tilpas"
@@ -1273,7 +1273,7 @@
     "message": "Nyt tilpasset domæne"
   },
   "newCustomDomainDesc": {
-    "message": "Indtast en liste over domæner adskilt af kommaer. Kun \"grund\"-domæner er tilladt. Indtast ikke underdomæner. F.eks. Indtast \"google.com\" i stedet for \"www.google.com\". Du kan også indtaste \"androidapp://package.name\" for at knytte en androidapp til andre website-domæner."
+    "message": "Opret en liste ved at angive domæner adskilt af kommaer. Kun domæner er tilladt, ingen underdomæner (f.eks. \"google.com\", men ikke \"www.google.com\"). Du kan også angive \"androidapp://package.name \"for at knytte en Android-app til andre webstedsdomæner."
   },
   "customDomainX": {
     "message": "Tilpasset domæne $INDEX$",
@@ -1294,7 +1294,7 @@
     "message": "Totrins-login håndhævelse"
   },
   "twoStepLoginDesc": {
-    "message": "Gør din konto sikrere ved at kræve et ekstra trin, når du logger ind."
+    "message": "Beskyt kontoen ved at kræve et ekstra trin under indlogning."
   },
   "twoStepLoginOrganizationDescStart": {
     "message": "Håndhæv Bitwarden totrins-login indstillinger for medlemmer vha. ",
@@ -1310,7 +1310,7 @@
     "message": "Er SSO opsat, eller planlægges opsat, håndhæves totrins-login muligvis allerede gennem identitetsudbyderen."
   },
   "twoStepLoginRecoveryWarning": {
-    "message": "Opsætning af totrins-login kan permanent låse en bruger ude af sin Bitwarden-konto. En gendannelseskode muliggør kontoadgang, såfremt den normale totrins-loginudbyder ikke længere kan bruges (f.eks. ved tab af en enhed). Bitwarden-supporten kan ikke hjælpe ved mistet kontoadgang. Det anbefales at nedskrive/udskrive gendannelseskoden og gemmer denne et sikkert sted."
+    "message": "Opsætning af totrins-login kan permanent låse en bruger ude af sin Bitwarden-konto. En gendannelseskode muliggør kontoadgang, såfremt den normale totrins-loginudbyder ikke længere kan bruges (f.eks. ved tab af en enhed). Bitwarden-supporten kan ikke hjælpe ved mistet kontoadgang. Det anbefales at nedskrive/udskrive gendannelseskoden samt gemme denne et sikkert sted."
   },
   "viewRecoveryCode": {
     "message": "Vis gendannelseskode"
@@ -1336,16 +1336,16 @@
     "message": "Premium-medlemskab"
   },
   "premiumRequired": {
-    "message": "Premium påkrævet"
+    "message": "Premium kræves"
   },
   "premiumRequiredDesc": {
-    "message": "Premium-medlemskab kræves for at anvende denne funktion."
+    "message": "Premium-medlemskab kræves for brug af denne funktion."
   },
   "youHavePremiumAccess": {
-    "message": "Du har premium adgang"
+    "message": "Du har Premium-adgang"
   },
   "alreadyPremiumFromOrg": {
-    "message": "Du har allerede adgang til premium-funktioner på grund af en organisation, du er medlem af."
+    "message": "Premium-funktioner er allerede tilgængelige via en organisation, du er medlem af."
   },
   "manage": {
     "message": "Håndtér"
@@ -1354,7 +1354,7 @@
     "message": "Deaktivér"
   },
   "revokeAccess": {
-    "message": "Fjern Adgang"
+    "message": "Ophæv adgang"
   },
   "twoStepLoginProviderEnabled": {
     "message": "Denne totrins-loginudbyder er aktiveret på kontoen."
@@ -1381,19 +1381,19 @@
     "message": "Windows-enheder"
   },
   "twoStepAuthenticatorAppsRecommended": {
-    "message": "Disse apps anbefales, men andre autentificeringsapps vil også fungere."
+    "message": "Disse apps anbefales, men andre godkendelses-apps vil også fungere."
   },
   "twoStepAuthenticatorScanCode": {
-    "message": "Scan denne QR-kode med din autentiseringsapp"
+    "message": "Skan denne QR-kode med godkendelses-appen"
   },
   "key": {
     "message": "Nøgle"
   },
   "twoStepAuthenticatorEnterCode": {
-    "message": "Indtast den 6-cifrede verifikationskode fra appen"
+    "message": "Angiv den 6-cifrede bekræftelseskode fra appen"
   },
   "twoStepAuthenticatorReaddDesc": {
-    "message": "Hvis du har brug for at tilføje den til en anden enhed, er nedenstående QR-koden (eller nøglen), der kræves af din autentificeringsapp."
+    "message": "Ønskes den føjet til en anden enhed, er nedenstående den QR-kode (eller nøgle), der kræves af godkendelses-appen."
   },
   "twoStepDisableDesc": {
     "message": "Sikker på, at denne totrins-loginudbyder skal deaktiveres?"
@@ -1405,13 +1405,13 @@
     "message": "Tilføj en ny YubiKey til din konto"
   },
   "twoFactorYubikeyPlugIn": {
-    "message": "Sæt YubiKey'en i din computers USB-port."
+    "message": "Isæt YubiKey'en i computerens USB-port."
   },
   "twoFactorYubikeySelectKey": {
     "message": "Vælg det første tomme YubiKey-indtastningsfelt nedenfor."
   },
   "twoFactorYubikeyTouchButton": {
-    "message": "Tryk på YubiKey knappen."
+    "message": "Tryk på YubiKey-knappen."
   },
   "twoFactorYubikeySaveForm": {
     "message": "Gem formularen."
@@ -1420,10 +1420,10 @@
     "message": "Grundet platformsbegrænsninger kan YubiKeys ikke bruges i alle Bitwarden-applikationer. Man bør opsætter en anden totrins-loginudbyder, så man kan tilgå sin konto, når YubiKeys ikke kan benyttes. Understøttede platforme:"
   },
   "twoFactorYubikeySupportUsb": {
-    "message": "Web-boks, desktop-program, CLI og alle browserudvidelser på en enhed med en USB-port, der kan benyttes af din YubiKey."
+    "message": "Web-boks, computerapplikation, CLI og alle browserudvidelser på en enhed med en USB-port, der accepterer din YubiKey."
   },
   "twoFactorYubikeySupportMobile": {
-    "message": "Mobilapps på en enhed med NFC-understøttelse eller en data-port, der kan benyttes af din YubiKey."
+    "message": "Mobil-apps på en enhed med NFC-funktionalitet eller en dataport, der accepterer din YubiKey."
   },
   "yubikeyX": {
     "message": "YubiKey $INDEX$",
@@ -1435,7 +1435,7 @@
     }
   },
   "u2fkeyX": {
-    "message": "U2F nøgle $INDEX$",
+    "message": "U2F-nøgle $INDEX$",
     "placeholders": {
       "index": {
         "content": "$1",
@@ -1453,13 +1453,13 @@
     }
   },
   "nfcSupport": {
-    "message": "NFC understøttelse"
+    "message": "NFC-understøttelse"
   },
   "twoFactorYubikeySupportsNfc": {
     "message": "En af mine nøgler understøtter NFC."
   },
   "twoFactorYubikeySupportsNfcDesc": {
-    "message": "Hvis en af dine YubiKeys understøtter NFC (f.eks. en YubiKey NEO), bliver du bedt om denne på mobilenheder, når NFC-tilgængelighed registreres."
+    "message": "Understøtter en YubiKey NFC (f.eks. YubiKey NEO), vises en prompt denne på mobilenheder, når NFC-tilgængelighed registreres."
   },
   "yubikeysUpdated": {
     "message": "YubiKeys opdateret"
@@ -1468,7 +1468,7 @@
     "message": "Deaktivér alle nøgler"
   },
   "twoFactorDuoDesc": {
-    "message": "Indtast Bitwarden-programoplysningerne fra dit Duo-administrationspanel."
+    "message": "Angiv Bitwarden-applikationsoplysningerne fra Duo Admin-panelet."
   },
   "twoFactorDuoIntegrationKey": {
     "message": "Integrationsnøgle"
@@ -1477,25 +1477,25 @@
     "message": "Hemmelig nøgle"
   },
   "twoFactorDuoApiHostname": {
-    "message": "API værtsnavn"
+    "message": "API-værtsnavn"
   },
   "twoFactorEmailDesc": {
     "message": "Følg disse trin for at opsætte totrins-login vha. e-mail:"
   },
   "twoFactorEmailEnterEmail": {
-    "message": "Indtast den e-mail, som du ønsker skal modtage verifikationskoder"
+    "message": "Angiv den e-mail, hvor bekræftelseskoder ønskes modtaget"
   },
   "twoFactorEmailEnterCode": {
-    "message": "Indtast den 6-cifrede verifikationskode fra e-mailen"
+    "message": "Angiv den 6-cifrede bekræftelseskode fra e-mailen"
   },
   "sendEmail": {
-    "message": "Send email"
+    "message": "Send e-mail"
   },
   "twoFactorU2fAdd": {
-    "message": "Tilføj en FIDO U2F sikkerhedsnøgle til din konto"
+    "message": "Tilføj en FIDO U2F-sikkerhedsnøgle til din konto"
   },
   "removeU2fConfirmation": {
-    "message": "Er du sikker på, at du vil fjerne denne sikkerhedsnøgle?"
+    "message": "Sikker på, at denne sikkerhedsnøgle skal fjernes?"
   },
   "twoFactorWebAuthnAdd": {
     "message": "Føj en WebAuthn-sikkerhedsnøgle til din konto"
@@ -1513,7 +1513,7 @@
     "message": "Sæt sikkerhedsnøglen i computerens USB-port, og klik på knappen \"Læs nøgle\"."
   },
   "twoFactorU2fTouchButton": {
-    "message": "Hvis sikkerhedsnøglen har en knap, skal du trykke på den."
+    "message": "Har sikkerhedsnøglen en knap, så tryk på denne."
   },
   "twoFactorU2fSaveForm": {
     "message": "Gem formularen."
@@ -1522,16 +1522,16 @@
     "message": "Grundet platformsbegrænsninger kan FIDO U2F ikke bruges i alle Bitwarden-applikationer. Man bør opsætte en anden totrins-loginudbyder, så man kan tilgå sin konto, når FIDO U2F ikke kan benyttes. Understøttede platforme:"
   },
   "twoFactorU2fSupportWeb": {
-    "message": "Web-boks og browserudvidelser på en desktop/laptop med en U2F-aktiveret browser (Chrome, Opera, Vivaldi eller Firefox med FIDO U2F aktiveret)."
+    "message": "Web-boks og browserudvidelser på en stationær/bærbar computer med en U2F-aktiveret browser (Chrome, Opera, Vivaldi eller Firefox med FIDO U2F aktiveret)."
   },
   "twoFactorU2fWaiting": {
-    "message": "Venter på at du trykker på knappen på din sikkerhedsnøgle"
+    "message": "Afventer et tryk på knappen på din sikkerhedsnøgle"
   },
   "twoFactorU2fClickSave": {
     "message": "Klik på knappen \"Gem\" nedenfor for at aktivere denne sikkerhedsnøgle til totrins-login."
   },
   "twoFactorU2fProblemReadingTryAgain": {
-    "message": "Der opstod et problem med at læse sikkerhedsnøglen. Prøv igen."
+    "message": "Problem med at læse sikkerhedsnøglen. Forsøg igen."
   },
   "twoFactorWebAuthnWarning": {
     "message": "Grundet platformsbegrænsninger kan WebAuthn ikke bruges i alle Bitwarden-applikationer. Man bør opsætte en anden totrins-loginudbyder, så man kan tilgå sin konto, når WebAuthn ikke kan benyttes. Understøttede platforme:"
@@ -1540,10 +1540,10 @@
     "message": "Web-boks og browserudvidelser på en stationær/bærbar computer med en WebAuthn-aktiveret browser (Chrome, Opera, Vivaldi eller Firefox med FIDO U2F aktiveret)."
   },
   "twoFactorRecoveryYourCode": {
-    "message": "Bitwarden totrins-login gendannelseskoden"
+    "message": "Gendannelseskoden til Bitwarden totrins-login"
   },
   "twoFactorRecoveryNoCode": {
-    "message": "Der er ikke opsat nogle totrins-loginudbydere endnu. Efter at have opsat én, kan man se sin gendannelseskode her."
+    "message": "Der er ikke opsat nogle totrins-loginudbydere endnu. Efter at have opsat én, kan du se din gendannelseskode her."
   },
   "printCode": {
     "message": "Udskriv kode",
@@ -1561,16 +1561,16 @@
     "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization Vault."
   },
   "unsecuredWebsitesReport": {
-    "message": "Usikre hjemmesider"
+    "message": "Usikre websteder"
   },
   "unsecuredWebsitesReportDesc": {
-    "message": "URL'er, der starter med http://, bruger ikke den bedst tilgængelige kryptering. Skift login-URI'erne for disse konti til https:// for sikrere browsing."
+    "message": "URL'er startende med http:// bruger ikke den bedste tilgængelige kryptering. Skift login-URI'erne for disse konti til https:// for sikrere browsing."
   },
   "unsecuredWebsitesFound": {
-    "message": "Ikke-sikrede hjemmesider fundet"
+    "message": "Ikke-sikrede websteder fundet"
   },
   "unsecuredWebsitesFoundDesc": {
-    "message": "Vi fandt $COUNT$ elementer i din boks med ikke-sikrede URI'er. Du bør ændre deres URI-protokol til https:// hvis hjemmesiden tillader det.",
+    "message": "$COUNT$ emner fundet i din boks med ikke-sikrede URI'er. Deres URI-protokoller bør ændres til https://, såfremt webstedet tillader det.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -1579,19 +1579,19 @@
     }
   },
   "noUnsecuredWebsites": {
-    "message": "Ingen elementer i din boks har ikke-sikrede URI'er."
+    "message": "Ingen emner i din boks med ikke-sikrede URI'er."
   },
   "inactive2faReport": {
-    "message": "Inaktive totrins-login"
+    "message": "Inaktivt totrins-login"
   },
   "inactive2faReportDesc": {
     "message": "Med totrins-login føjer man et beskyttelseslag til sine konti. Opsæt totrins-login vha. Bitwarden Authenticator for disse konti, eller brug en alternativ metode."
   },
   "inactive2faFound": {
-    "message": "Logins uden totrinsopsætning fundet"
+    "message": "Logins uden totrins-login fundet"
   },
   "inactive2faFoundDesc": {
-    "message": "$COUNT$ websted(er) fundet i boksen, som muligvis ikke er opsat med totrins-login (jf. 2fa.directory). For yderligere at beskytte disse konti, bør totrins-login aktiveres.",
+    "message": "$COUNT$ websted(er) fundet i boksen, som muligvis ikke er opsat med totrins-login (jf. 2fa.directory). For yderligere at beskytte disse konti, bør totrins-login opsættes.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -1600,22 +1600,22 @@
     }
   },
   "noInactive2fa": {
-    "message": "Ingen websteder med manglende opsætning af totrins-login fundet i boksen."
+    "message": "Ingen websteder uden opsat totrins-login fundet i boksen."
   },
   "instructions": {
     "message": "Instruktioner"
   },
   "exposedPasswordsReport": {
-    "message": "Afslørede adgangskoder"
+    "message": "Kompromitterede adgangskoder"
   },
   "exposedPasswordsReportDesc": {
-    "message": "Adgangskoder afsløret i et datalæk er nemme mål for angribere. Skift disse adgangskoder for at forhindre potentielle indbrud."
+    "message": "Adgangskoder kompromitteret i et datalæk er nemme mål for angribere. Skift disse adgangskoder for at forhindre potentielle indbrud."
   },
   "exposedPasswordsFound": {
-    "message": "Afslørede adgangskoder fundet"
+    "message": "Kompromitterede adgangskoder fundet"
   },
   "exposedPasswordsFoundDesc": {
-    "message": "Vi fandt $COUNT$ elementer i din boks, som har adgangskoder, der blev afsløret i kendte datalæk. Du bør ændre dem og bruge en ny adgangskode.",
+    "message": "$COUNT$ emner fundet i din boks med adgangskoder kompromitteret i kendte datalæk. En ny adgangskode bør opsættes for disse emner.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -1624,13 +1624,13 @@
     }
   },
   "noExposedPasswords": {
-    "message": "Ingen elementer i din boks har adgangskoder, der har været afsløret i kendte datalæk."
+    "message": "Ingen emner i din boks med adgangskoder kompromitteret i kendte datalæk."
   },
   "checkExposedPasswords": {
-    "message": "Tjek for afslørede adgangskoder"
+    "message": "Tjek for kompromitterede adgangskoder"
   },
   "exposedXTimes": {
-    "message": "Afsløret $COUNT$ gang(e)",
+    "message": "$COUNT$ kompromittering(er)",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -1642,13 +1642,13 @@
     "message": "Svage adgangskoder"
   },
   "weakPasswordsReportDesc": {
-    "message": "Svage adgangskoder kan let gættes af angribere. Skift disse adgangskoder til stærke koder ved hjælp af adgangskodegeneratoren."
+    "message": "Svage adgangskoder kan let gættes af angribere. Skift disse adgangskoder til stærke koder vha. adgangskodegeneratoren."
   },
   "weakPasswordsFound": {
     "message": "Svage adgangskoder fundet"
   },
   "weakPasswordsFoundDesc": {
-    "message": "Vi fandt $COUNT$ elementer i din boks med adgangskoder, der ikke er stærke. Du bør opdatere dem og bruge stærkere adgangskoder.",
+    "message": "$COUNT$ emner fundet i din boks med adgangskoder, som ikke er stærke. Disse bør opdateres med stærkere adgangskoder.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -2597,7 +2597,7 @@
     }
   },
   "viewedCardNumberItemId": {
-    "message": "Viewed Card Number for item $ID$.",
+    "message": "Kortnummer for emne $ID$ blev kigget.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -3422,7 +3422,7 @@
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "fingerprintEnsureIntegrityVerify": {
-    "message": "For at sikre integriteten af dine krypteringsnøgler, bedes du bekræfte brugerens fingeraftrykssætning, inden du fortsætter.",
+    "message": "For at sikre integriteten af dine krypteringsnøgler, så bekræft brugerens fingeraftrykssætning, inden der fortsættes.",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "fingerprintMatchInfo": {
@@ -3443,22 +3443,22 @@
     "message": "API-nøgle"
   },
   "apiKeyDesc": {
-    "message": "Din API-nøgle kan bruges til godkendelse mod det offentlige Bitwarden-API."
+    "message": "Din API-nøgle kan bruges til godkendelse i det offentlige Bitwarden-API."
   },
   "apiKeyRotateDesc": {
-    "message": "Hvis du roterer API-nøglen, bliver den forrige nøgle ugyldig. Du kan rotere din API-nøgle, hvis du mener at den nuværende nøgle ikke længere er sikker at bruge."
+    "message": "Rotation af API-nøglen ugyldiggør den foregående nøgle. API-nøglen kan roteres, såfremt brug af den aktuelle nøgle ikke længere anses for sikker."
   },
   "apiKeyWarning": {
-    "message": "Din API-nøgle har fuld adgang til organisationen. Den skal holdes hemmelig."
+    "message": "Din API-nøgle har fuld adgang til organisationen og skal holdes hemmelig."
   },
   "userApiKeyDesc": {
     "message": "Din API-nøgle kan bruges til godkendelse i Bitwarden-CLI."
   },
   "userApiKeyWarning": {
-    "message": "Din API-nøgle er en alternativ godkendelsesmekanisme. Den bør holdes hemmelig."
+    "message": "Din API-nøgle er en alternativ godkendelsesmekanisme, der skal holdes hemmelig."
   },
   "oauth2ClientCredentials": {
-    "message": "OAuth 2.0 legitimationsoplysninger",
+    "message": "OAuth 2.0-legitimationsoplysninger",
     "description": "'OAuth 2.0' is a programming protocol. It should probably not be translated."
   },
   "viewApiKey": {
@@ -3471,16 +3471,16 @@
     "message": "Du skal vælge minimum én samling."
   },
   "couldNotChargeCardPayInvoice": {
-    "message": "Vi kunne ikke trække på dit kort. Se og betal den ubetalte faktura, der er anført nedenfor."
+    "message": "Dit betalingskort kunne ikke debiteres. Se og betal den ubetalte faktura vist nedenfor."
   },
   "inAppPurchase": {
-    "message": "Køb i appen"
+    "message": "In-app køb"
   },
   "cannotPerformInAppPurchase": {
-    "message": "Du kan ikke udføre denne handling, når du bruger en 'køb i appen'-betalingsmetode."
+    "message": "Denne handling kan ikke udføres under brug af 'in-app' betalingsmetoden."
   },
   "manageSubscriptionFromStore": {
-    "message": "Du skal administrere dit abonnement fra den butik, hvor dit køb i appen blev foretaget."
+    "message": "Dit abonnement skal håndteres fra den butik, hvori in-app købet blev foretaget."
   },
   "minLength": {
     "message": "Minimumslængde"
@@ -3534,16 +3534,16 @@
     }
   },
   "policyInEffectUppercase": {
-    "message": "Indeholder ét eller flere store bogstaver"
+    "message": "Indeholdende én/flere majuskler"
   },
   "policyInEffectLowercase": {
-    "message": "Indeholder ét eller flere små bogstaver"
+    "message": "Indeholdende én/flere minuskler"
   },
   "policyInEffectNumbers": {
-    "message": "Indeholder ét eller flere tal"
+    "message": "Indeholdende ét/flere cifre"
   },
   "policyInEffectSpecial": {
-    "message": "Indeholder ét eller flere af følgende specialtegn $CHARS$",
+    "message": "Indeholdende ét/flere af flg. specialtegn $CHARS$",
     "placeholders": {
       "chars": {
         "content": "$1",
@@ -3561,7 +3561,7 @@
     "message": "Standard type"
   },
   "userPreference": {
-    "message": "Brugerindstilling"
+    "message": "Brugerpræference"
   },
   "vaultTimeoutAction": {
     "message": "Boks timeout-handling"
@@ -3587,22 +3587,22 @@
     "message": "Slette permanent"
   },
   "permanentlyDeleteSelected": {
-    "message": "Slet valgte elementer permanent"
+    "message": "Slet valgte emner permanent"
   },
   "permanentlyDeleteItem": {
-    "message": "Slet element permanent"
+    "message": "Slet emner permanent"
   },
   "permanentlyDeleteItemConfirmation": {
-    "message": "Er du sikker på, at du vil slette dette element permanent?"
+    "message": "Sikker på, at dette emne skal slettes permanent?"
   },
   "permanentlyDeletedItem": {
-    "message": "Element slettet permanent"
+    "message": "Emne slettet permanent"
   },
   "permanentlyDeletedItems": {
-    "message": "Elementer slettet permanent"
+    "message": "Emner slettet permanent"
   },
   "permanentlyDeleteSelectedItemsDesc": {
-    "message": "Du har valgt $COUNT$ element(er), der skal slettes permanent. Er du sikker på, at du vil slette alle disse elementer permanent?",
+    "message": "$COUNT$ emne(r) valgt til permanent sletning. Sikker på, at de alle skal slettes permanent?",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -3611,7 +3611,7 @@
     }
   },
   "permanentlyDeletedItemId": {
-    "message": "Element $ID$ slettet permanent.",
+    "message": "Emnet $ID$ slettet permanent",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -3626,22 +3626,22 @@
     "message": "Gendan valgte"
   },
   "restoreItem": {
-    "message": "Gendan element"
+    "message": "Gendan emne"
   },
   "restoredItem": {
-    "message": "Element gendannet"
+    "message": "Emne gendannet"
   },
   "restoredItems": {
-    "message": "Elementer gendannet"
+    "message": "Emner gendannet"
   },
   "restoreItemConfirmation": {
-    "message": "Er du sikker på, at du vil gendanne dette element?"
+    "message": "Sikker på, at dette emne skal gendannes?"
   },
   "restoreItems": {
-    "message": "Gendan elementer"
+    "message": "Gendan emner"
   },
   "restoreSelectedItemsDesc": {
-    "message": "Du har valgt $COUNT$ element(er), der skal gendannes. Er du sikker på, at du vil gendanne alle disse elementer?",
+    "message": "$COUNT$ emne(r) valgt til gendannelse. Sikker på, at alle de alle skal gendannes?",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -3650,7 +3650,7 @@
     }
   },
   "restoredItemId": {
-    "message": "Element $ID$ gendannet.",
+    "message": "Emnet $ID$ gendannet",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -3659,7 +3659,7 @@
     }
   },
   "vaultTimeoutLogOutConfirmation": {
-    "message": "Ved at logge ud fjernes al adgang til din boks og kræver online-godkendelse efter timeout-perioden. Er du sikker på, at du vil bruge denne indstilling?"
+    "message": "Udlogning fjerner al adgang til din boks og vil kræver online-godkendelse efter timeout-perioden. Sikker på, at denne indstilling skal anvendes?"
   },
   "vaultTimeoutLogOutConfirmationTitle": {
     "message": "Bekræft timeout-handling"
@@ -3692,10 +3692,10 @@
     "message": "Organisationsidentifikator"
   },
   "ssoLogInWithOrgIdentifier": {
-    "message": "Log ind vha. din organisations single sign-on portal. Angiv din organisations identifikator for at begynde."
+    "message": "Log ind via din organisations single sign-on portal. Angiv organisationens SSO-identifikator for at begynde."
   },
   "enterpriseSingleSignOn": {
-    "message": "Virksomheds Single Sign On"
+    "message": "Virksomheds Single Sign-On"
   },
   "ssoHandOff": {
     "message": "Du kan nu lukke denne fane og fortsætte i udvidelsen."
@@ -3704,16 +3704,16 @@
     "message": "Alle teamfunktioner, plus:"
   },
   "includeSsoAuthentication": {
-    "message": "SSO godkendelse via SAML2.0 og OpenID Connect"
+    "message": "SSO-godkendelse via SAML2.0 og OpenID Connect"
   },
   "includeEnterprisePolicies": {
     "message": "Virksomhedspolitikker"
   },
   "ssoValidationFailed": {
-    "message": "SSO validering mislykkedes"
+    "message": "SSO-bekræftelse mislykkedes"
   },
   "ssoIdentifierRequired": {
-    "message": "Organisationsidentifikator kræves."
+    "message": "Organisations-SSO kræves."
   },
   "ssoIdentifier": {
     "message": "SSO-identifikator"
@@ -3722,10 +3722,10 @@
     "message": "Oplys dette ID til medlemmerne til brug for indlogning med SSO."
   },
   "unlinkSso": {
-    "message": "Fjern SSO tilknytning"
+    "message": "Fjern SSO-tilknytning"
   },
   "unlinkSsoConfirmation": {
-    "message": "Er du sikker på, at du vil fjerne SSO-tilknytningen for denne organisation?"
+    "message": "Sikker på, at SSO-tilknytningen for denne organisation skal fjernes?"
   },
   "linkSso": {
     "message": "Tilknyt SSO"
@@ -3737,16 +3737,16 @@
     "message": "Begræns medlemmer fra at blive medlem af andre organisationer."
   },
   "singleOrgBlockCreateMessage": {
-    "message": "Din nuværende organisation har en politik, der ikke tillader dig at deltage i mere end en organisation. Kontakt din organisations administratorer, eller tilmeld dig fra en anden Bitwarden-konto."
+    "message": "Den nuværende organisationspolitik tillader dig ikke at deltage i mere end én organisation. Kontakt organisationsadministratorerne eller benyt en anden Bitwarden-konto under tilmelding."
   },
   "singleOrgPolicyWarning": {
     "message": "Organisationsmedlemmer, som ikke er ejere eller admins og allerede medlem af en anden organisation, fjernes fra organisationen."
   },
   "requireSso": {
-    "message": "Kræv single sign-on-godkendelse"
+    "message": "Kræv single sign-on godkendelse"
   },
   "requireSsoPolicyDesc": {
-    "message": "Kræv at medlemmer logger ind vha. virksomheds Single Sign-On metoden."
+    "message": "Kræv at medlemmer logger ind vha. Virksomheds single sign-on metoden."
   },
   "prerequisite": {
     "message": "Forudsætning"

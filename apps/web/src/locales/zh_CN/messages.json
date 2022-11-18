@@ -2501,19 +2501,19 @@
     "message": "网页密码库"
   },
   "loggedIn": {
-    "message": "已登录。"
+    "message": "已登录"
   },
   "changedPassword": {
-    "message": "已更改帐户密码"
+    "message": "更改了帐户密码"
   },
   "enabledUpdated2fa": {
-    "message": "两步登录已保存"
+    "message": "保存了两步登录"
   },
   "disabled2fa": {
-    "message": "两步登录已停用"
+    "message": "停用了两步登录"
   },
   "recovered2fa": {
-    "message": "已从两步登录中恢复帐户。"
+    "message": "从两步登录中恢复了帐户。"
   },
   "failedLogin": {
     "message": "登录失败，密码不正确。"
@@ -2522,16 +2522,16 @@
     "message": "登录失败，两步登录不正确。"
   },
   "exportedVault": {
-    "message": "密码库已导出"
+    "message": "导出了密码库。"
   },
   "exportedOrganizationVault": {
-    "message": "已导出组织密码库。"
+    "message": "导出了组织密码库。"
   },
   "editedOrgSettings": {
-    "message": "已编辑组织设置。"
+    "message": "编辑了组织设置。"
   },
   "createdItemId": {
-    "message": "已创建项目 $ID$。",
+    "message": "创建了项目 $ID$。",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2540,7 +2540,7 @@
     }
   },
   "editedItemId": {
-    "message": "已编辑项目 $ID$。",
+    "message": "编辑了项目 $ID$。",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2549,7 +2549,7 @@
     }
   },
   "deletedItemId": {
-    "message": "发送项目 $ID$ 到回收站。",
+    "message": "发送了项目 $ID$ 到回收站。",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2558,7 +2558,7 @@
     }
   },
   "movedItemIdToOrg": {
-    "message": "已将项目 $ID$ 移动到组织。",
+    "message": "移动了项目 $ID$ 到组织。",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2597,7 +2597,7 @@
     }
   },
   "viewedCardNumberItemId": {
-    "message": "已查看项目 $ID$ 的卡号。",
+    "message": "查看了项目 $ID$ 的卡号。",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2633,7 +2633,7 @@
     }
   },
   "copiedSecurityCodeItemId": {
-    "message": "复制项目 $ID$ 的安全代码。",
+    "message": "复制了项目 $ID$ 的安全代码。",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2642,7 +2642,7 @@
     }
   },
   "autofilledItemId": {
-    "message": "项目 $ID$ 已自动填充。",
+    "message": "自动填充了项目 $ID$。",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -4123,7 +4123,7 @@
     "message": "权限"
   },
   "permission": {
-    "message": "Permission"
+    "message": "权限"
   },
   "managerPermissions": {
     "message": "经理权限"
@@ -4405,7 +4405,7 @@
     "message": "自动注册"
   },
   "resetPasswordPolicyAutoEnrollDescription": {
-    "message": "邀请被接受后的所有成员，将会被自动注册密码重置，并且不允许撤销。"
+    "message": "所有接受邀请的用戶，将会被自动注册密码重置，并且不允许撤销。"
   },
   "resetPasswordPolicyAutoEnrollWarning": {
     "message": "已经在组织中的成员将不会被注册密码重置。需要他们自行注册后，管理员才能重置他们的主密码。"
@@ -4492,7 +4492,7 @@
     "message": "成功恢复组织的访问权限"
   },
   "bulkFilteredMessage": {
-    "message": "排除，不适用于此操作"
+    "message": "已排除，不适用于此操作"
   },
   "fingerprint": {
     "message": "指纹"
@@ -5011,7 +5011,7 @@
     "message": "「SSO 登录和 Key Connector 解密」已启用。此策略仅适用于所有者和管理员。"
   },
   "enabledSso": {
-    "message": "SSO 已启用"
+    "message": "启用了 SSO"
   },
   "disabledSso": {
     "message": "SSO 已停用"
@@ -5020,7 +5020,7 @@
     "message": "Key Connector 已启用"
   },
   "disabledKeyConnector": {
-    "message": "Key Connector 已停用"
+    "message": "停用了 Key Connector"
   },
   "keyConnectorWarning": {
     "message": "一旦成员开始使用 Key Connector，您的组织就无法恢复为使用主密码解密。仅当您可以轻松地部署和管理密钥服务器时才继续操作。"
@@ -5446,7 +5446,7 @@
     "message": "成员"
   },
   "reporting": {
-    "message": "Reporting"
+    "message": "报告"
   },
   "cardBrandMir": {
     "message": "Mir"
@@ -5485,22 +5485,22 @@
     "message": "更新"
   },
   "role": {
-    "message": "Role"
+    "message": "角色"
   },
   "canView": {
-    "message": "Can view"
+    "message": "可以查看"
   },
   "canViewExceptPass": {
-    "message": "Can view, except passwords"
+    "message": "除密码外，可以查看"
   },
   "canEdit": {
-    "message": "Can edit"
+    "message": "可以编辑"
   },
   "canEditExceptPass": {
-    "message": "Can edit, except passwords"
+    "message": "除密码外，可以编辑"
   },
   "group": {
-    "message": "Group"
+    "message": "群组"
   },
   "groupAccessAll": {
     "message": "此群组可以访问和修改所有项目。"

@@ -1291,23 +1291,23 @@
     "message": "Divpakāpju pierakstīšanās"
   },
   "twoStepLoginEnforcement": {
-    "message": "Two-step Login Enforcement"
+    "message": "Divpakāpju pierakstīšanās piemērošana"
   },
   "twoStepLoginDesc": {
     "message": "Nodrošināt kontu, pieprasot papildus darbību pierakstoties."
   },
   "twoStepLoginOrganizationDescStart": {
-    "message": "Enforce Bitwarden Two-step Login options for members by using the ",
+    "message": "Piemērot Bitwarden divpakāpju pierakstīšanāš iespējas dalībniekiem ar ",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enforce Bitwarden Two-step Login options for members by using the Two-step Login Policy.'"
   },
   "twoStepLoginPolicy": {
-    "message": "Two-step Login Policy"
+    "message": "Divpakāpju pierakstīšanās nosacījumi"
   },
   "twoStepLoginOrganizationDuoDesc": {
-    "message": "To enforce Two-step Login through Duo, use the options below."
+    "message": "Lai piemērotu divpakāpju pierakstīšanos ar Duo, jāizmanto zemāk esošās iespējas."
   },
   "twoStepLoginOrganizationSsoDesc": {
-    "message": "If you have setup SSO or plan to, Two-step Login may already be enforced through your Identity Provider."
+    "message": "Ja ir uzstādīta vienotā pieteikšanās vai tas ir iecerēts, identitātes nodrošinātājs jau var būt piemērojis divpakāpju pierakstīšanos."
   },
   "twoStepLoginRecoveryWarning": {
     "message": "Divpakāpju pierakstīšanās var pastāvīgi liegt piekļuvi Bitwarden kontam. Atkopšanas kods ļauj piekļūt tam gadījumā, kad vairs nav iespējams izmantot ierasto divpakāpju pierakstīšanās nodrošinātāju (piemēram, ir pazaudēta ierīce). Bitwarden atbalsts nevarēs palīdzēt, ja tiks pazaudēta piekļuve kontam. Ir ieteicams, ka atkopšanas kods tiek pierakstīts vai izdrukāts un turēts drošā vietā."
@@ -1557,7 +1557,7 @@
     "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization vault."
   },
   "orgsReportsDesc": {
-    "message": "Identify and close security gaps in your organization's accounts by clicking the reports below.",
+    "message": "Noteikt un novērst drošības nepilnības apvienības kontos klikšķinot uz zemāk esošajām atskaitēm.",
     "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization Vault."
   },
   "unsecuredWebsitesReport": {
@@ -3017,7 +3017,7 @@
     "message": "Mana apvienība"
   },
   "organizationInfo": {
-    "message": "Organization info"
+    "message": "Apvienības informācija"
   },
   "deleteOrganization": {
     "message": "Izdzēst apvienību"
@@ -3716,10 +3716,10 @@
     "message": "Ir nepieciešams apvienības identifikators."
   },
   "ssoIdentifier": {
-    "message": "SSO identifier"
+    "message": "Vienotās pieteikšanās identifikators"
   },
   "ssoIdentifierHint": {
-    "message": "Provide this ID to your members to login with SSO."
+    "message": "Šis Id jāsniedz dalībniekiem, lai pierakstītos ar vienoto pieteikšanos."
   },
   "unlinkSso": {
     "message": "Atsaistīt SSO"
@@ -4123,7 +4123,7 @@
     "message": "Atļaujas"
   },
   "permission": {
-    "message": "Permission"
+    "message": "Atļauja"
   },
   "managerPermissions": {
     "message": "Pārvaldnieka atļaujas"
@@ -4531,7 +4531,7 @@
     "message": "Pasūtītāji"
   },
   "client": {
-    "message": "Client",
+    "message": "Klients",
     "description": "This is used as a table header to describe which client application created an event log."
   },
   "providerAdmin": {
@@ -5419,7 +5419,7 @@
     }
   },
   "inputMaxLength": {
-    "message": "Input must not exceed $COUNT$ characters in length.",
+    "message": "Ievadītās vērtības garums nedrīkst pārsniegt $COUNT$ rakstzīmes.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -5443,10 +5443,10 @@
     "message": "Ieslēgts"
   },
   "members": {
-    "message": "Members"
+    "message": "Dalībnieki"
   },
   "reporting": {
-    "message": "Reporting"
+    "message": "Atskaišu sagatavošana"
   },
   "cardBrandMir": {
     "message": "Mir"
@@ -5473,39 +5473,39 @@
     "message": "Notīrīt visu"
   },
   "from": {
-    "message": "From"
+    "message": "No"
   },
   "to": {
-    "message": "To"
+    "message": "Kam"
   },
   "member": {
-    "message": "Member"
+    "message": "Dalībnieks"
   },
   "update": {
-    "message": "Update"
+    "message": "Atjaunināt"
   },
   "role": {
-    "message": "Role"
+    "message": "Loma"
   },
   "canView": {
-    "message": "Can view"
+    "message": "Var skatīt"
   },
   "canViewExceptPass": {
-    "message": "Can view, except passwords"
+    "message": "Var skatīt, izņemot paroles"
   },
   "canEdit": {
-    "message": "Can edit"
+    "message": "Var labot"
   },
   "canEditExceptPass": {
-    "message": "Can edit, except passwords"
+    "message": "Var labot, izņemot paroles"
   },
   "group": {
-    "message": "Group"
+    "message": "Kopa"
   },
   "groupAccessAll": {
-    "message": "This group can access and modify all items."
+    "message": "Šī kopa var piekļūt visiem vienumiem un mainīt tos."
   },
   "memberAccessAll": {
-    "message": "This member can access and modify all items."
+    "message": "Šis dalībnieks var piekļūt visiem vienumiem un mainīt tos."
   }
 }

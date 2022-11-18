@@ -1291,23 +1291,23 @@
     "message": "İki aşamalı giriş"
   },
   "twoStepLoginEnforcement": {
-    "message": "İki-Aşamalı Giriş Zorunluluğu"
+    "message": "İki aşamalı giriş zorunluluğu"
   },
   "twoStepLoginDesc": {
     "message": "Oturum açarken ek bir adım talep ederek hesabınızı güvenceye alabilirsiniz."
   },
   "twoStepLoginOrganizationDescStart": {
-    "message": "Bitwarden İki-Aşamalı Giriş seçeneklerini zorunlu tut ",
+    "message": "Üyeler için Bitwarden iki aşamalı giriş seçeneklerini ",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enforce Bitwarden Two-step Login options for members by using the Two-step Login Policy.'"
   },
   "twoStepLoginPolicy": {
-    "message": "İki-Aşamalı Oturum Açma Seçenekleri"
+    "message": "iki aşamalı giriş ilkesi ile zorunlu tut"
   },
   "twoStepLoginOrganizationDuoDesc": {
-    "message": "Duo ile İki-Aşamalı Giriş için aşağıdaki seçenekleri kullanın."
+    "message": "Duo ile iki aşamalı girişi zorunlu tutmak için aşağıdaki seçenekleri kullanın."
   },
   "twoStepLoginOrganizationSsoDesc": {
-    "message": "Eğer SSO kurduysanız ya da kurmayı planlıyorsanız, Kimlik Sağlayıcınız tarafından İki-Aşamalı Giriş halihazırda sağlanıyor olabilir."
+    "message": "SSO kurduysanız veya kurmayı planlıyorsanız kimlik sağlayıcınız iki aşamalı girişi zaten zorunlu tutmuş olabilir."
   },
   "twoStepLoginRecoveryWarning": {
     "message": "İki aşamalı girişi etkinleştirmek, Bitwarden hesabınızı kalıcı olarak kilitleyebilir. Kurtarma kodunuz, iki aşamalı giriş sağlayıcınızı kullanamamanız durumunda hesabınıza erişmenize olanak sağlar (ör. cihazınızı kaybedersiniz). Hesabınıza erişiminizi kaybederseniz Bitwarden destek ekibi size yardımcı olamaz. Kurtarma kodunu not almanızı veya yazdırmanızı ve güvenli bir yerde saklamanızı öneririz."
@@ -1663,7 +1663,7 @@
     "message": "Yeniden kullanılmış parolalar"
   },
   "reusedPasswordsReportDesc": {
-    "message": "Kullandığınız bir servis ele geçirilirse, aynı parolayı başka yerlerde kullanmanız hacker'ların diğer hesaplarınıza da kolayca erişmesine olanak tanıyabilir. bu yüzden her hesap ve hizmet için farklı bir parola kullanmalısınız."
+    "message": "Aynı parolayı başka yerlerde kullanmanız saldırganların diğer hesaplarınıza da erişmesini kolaylaştırır. Bu parolaları değiştirin ve aynı parolayı farklı yerlerde kullanmayın."
   },
   "reusedPasswordsFound": {
     "message": "Yeniden kullanılmış parolalar bulundu"
@@ -1693,7 +1693,7 @@
     "message": "Veri ihlali"
   },
   "breachDesc": {
-    "message": "Hacker'ların bir sitenin verilerine yasadışı bir şekilde erişip bunları herkese açık bir şekilde yayımlamalarına \"ihlal\" denir. Ele geçirilen veri türlerini (e-posta adresleri, parolalar, kredi kartları vb.) inceleyin ve gerekli önlemleri alın (örn. parolaları değiştirin)."
+    "message": "Ele geçirilen hesaplar kişisel bilgilerinizi açığa çıkarabilir. İki aşamalı girişi etkinleştirerek veya daha güçlü parolalar kullanarak ele geçirilen hesapları güvence altına alın."
   },
   "breachCheckUsernameEmail": {
     "message": "Kullandığınız kullanıcı adlarını ve e-posta adreslerini kontrol edin."
@@ -2993,13 +2993,13 @@
     "message": "E-postamı hatırla"
   },
   "recoverAccountTwoStepDesc": {
-    "message": "Eğer hesabınıza iki aşamalı doğrulama ile erişimde bir sorun yaşıyorsanız, kurtarma kodunuz ile iki aşamalı doğrulama özelliğini kapatabilirsiniz."
+    "message": "Hesabınıza normalde kullandığınız iki aşamalı giriş yöntemleriyle erişemiyorsanız iki aşamalı giriş kurtarma kodunuzu kullanarak heasbınızdaki tüm iki aşamalı giriş sağlayıcılarını kapatabilirsiniz."
   },
   "recoverAccountTwoStep": {
-    "message": "İki-Adımlı Hesap Girişini Kurtar"
+    "message": "Hesabı iki aşamalı girişten kurtar"
   },
   "twoStepRecoverDisabled": {
-    "message": "İki aşamalı doğrulama hesabınızda devre dışı bırakıldı."
+    "message": "Hesabınızda iki aşamalı giriş devre dışı bırakıldı."
   },
   "learnMore": {
     "message": "Daha fazla bilgi al"
@@ -3011,7 +3011,7 @@
     "message": "Hesabınız varsa gerekli talimatları içeren bir mesajı e-posta adresinize gönderdik."
   },
   "deleteRecoverConfirmDesc": {
-    "message": "Bitwarden hesabınızı silme talebinde bulundunuz. Onaylamak için aşağıdaki düğmeye tıklayın."
+    "message": "Bitwarden hesabınızı silme talebinde bulundunuz. Onaylamak için aşağıdaki düğmeyi kullanın."
   },
   "myOrganization": {
     "message": "Kuruluşum"
@@ -3096,7 +3096,7 @@
     "message": "Banka hesabıyla ödeme yalnızca Amerika Birleşik Devletleri'ndeki müşteriler tarafından kullanılabilir. Banka hesabınızı doğrulamanız istenecektir. Önümüzdeki 1-2 iş günü içinde iki mikro para yatırma işlemi yapacağız. Banka hesabını doğrulamak için bu tutarları kuruluşun faturalandırma sayfasına girin."
   },
   "verifyBankAccountFailureWarning": {
-    "message": "Banka hesabınız doğrulanmazsa ödeme yapılamaz ve aboneliğiniz devre dışı bırakılır."
+    "message": "Banka hesabınız doğrulanmazsa ödeme yapılamaz ve aboneliğiniz duraklatılır."
   },
   "verifiedBankAccount": {
     "message": "Banka hesabı doğrulandı"
@@ -3492,10 +3492,10 @@
     "message": "Ana parola gereksinimleri"
   },
   "masterPassPolicyDesc": {
-    "message": "Ana parola gücü için minimum gereksinimleri ayarlayın."
+    "message": "Ana parola gücü gereksinimlerini ayarlayın."
   },
   "twoStepLoginPolicyTitle": {
-    "message": "İki adımlı giriş gereklidir"
+    "message": "İki adımlı girişi zorunlu tut"
   },
   "twoStepLoginPolicyDesc": {
     "message": "Kullanıcıların hesaplarında iki aşamalı giriş kullanmalarını zorunlu tutun."
@@ -3611,7 +3611,7 @@
     }
   },
   "permanentlyDeletedItemId": {
-    "message": "$ID$ kaydı kalıcı olarak silindi.",
+    "message": "$ID$ kaydı kalıcı olarak silindi",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -3650,7 +3650,7 @@
     }
   },
   "restoredItemId": {
-    "message": "$ID$ kaydı geri yüklendi.",
+    "message": "$ID$ kaydı geri yüklendi",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -3662,7 +3662,7 @@
     "message": "Çıkış yaptığınızda kasanıza erişiminiz tamamen sonlanacak ve zaman aşımının ardından çevrimiçi kimlik doğrulaması yapmanız gerekecek. Bu ayarı kullanmak istediğinizden emin misiniz?"
   },
   "vaultTimeoutLogOutConfirmationTitle": {
-    "message": "Zaman Aşımı Eylem Onayı"
+    "message": "Zaman aşımı eylem onayı"
   },
   "hidePasswords": {
     "message": "Parolaları gizle"
@@ -3692,7 +3692,7 @@
     "message": "Kuruluş tanımlayıcı"
   },
   "ssoLogInWithOrgIdentifier": {
-    "message": "Kuruluşunuzun tek oturum açma portalını kullanarak giriş yapabilirsiniz. Başlamak için lütfen kuruluşunuzun tanımlayıcısını girin."
+    "message": "Kuruluşunuzun tek oturum açma portalını kullanarak giriş yapabilirsiniz. Başlamak için lütfen kuruluşunuzun SSO tanımlayıcısını girin."
   },
   "enterpriseSingleSignOn": {
     "message": "Kurumsal tek oturum açma"
@@ -3713,10 +3713,10 @@
     "message": "SSO doğrulaması başarısız oldu"
   },
   "ssoIdentifierRequired": {
-    "message": "Kuruluş tanımlayıcısı gereklidir."
+    "message": "Kuruluş SSO tanımlayıcısı gereklidir."
   },
   "ssoIdentifier": {
-    "message": "SSO Tanımlayıcı"
+    "message": "SSO tanımlayıcı"
   },
   "ssoIdentifierHint": {
     "message": "SSO ile giriş yapan üyelere bu kimliği sağlayın."
@@ -3734,7 +3734,7 @@
     "message": "Tek kuruluş"
   },
   "singleOrgDesc": {
-    "message": "Kullanıcıların diğer kuruluşlara katılmasını kısıtlayın."
+    "message": "Üyelerin diğer kuruluşlara katılmasını kısıtlayın."
   },
   "singleOrgBlockCreateMessage": {
     "message": "Mevcut kuruluşunuzun birden fazla kuruluşa katılmanıza izin vermeyen bir ilkesi var. Lütfen kuruluş yöneticilerinizle iletişime geçin veya farklı bir Bitwarden hesabı açın."
@@ -3767,7 +3767,7 @@
     "message": "Metin"
   },
   "createSend": {
-    "message": "Yeni Send oluştur",
+    "message": "Yeni Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editSend": {
@@ -3775,11 +3775,11 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createdSend": {
-    "message": "Send oluşturuldu",
+    "message": "Send kaydedildi",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editedSend": {
-    "message": "Send düzenlendi",
+    "message": "Send kaydedildi",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "deletedSend": {
@@ -3834,7 +3834,7 @@
     "message": "Devre dışı"
   },
   "revoked": {
-    "message": "İptal Edildi"
+    "message": "İptal edildi"
   },
   "sendLink": {
     "message": "Send bağlantısı",
@@ -4032,7 +4032,7 @@
     }
   },
   "emergencyApproved": {
-    "message": "Acil durum erişimi onaylandı."
+    "message": "Acil durum erişimi onaylandı"
   },
   "emergencyRejected": {
     "message": "Acil durum erişimi reddedildi"
@@ -4059,7 +4059,7 @@
     "message": "Bir kuruluş ilkesi nedeniyle kişisel kasanıza hesap kaydetmeniz kısıtlanmış. Sahip seçeneğini bir kuruluş olarak değiştirin ve mevcut koleksiyonlar arasından seçim yapın."
   },
   "disableSend": {
-    "message": "Send'i devre dışı bırak"
+    "message": "Send'i sil"
   },
   "disableSendPolicyDesc": {
     "message": "Kullanıcıların Bitwarden Send oluşturmasına veya düzenlemesine izin verme. Mevcut Send'leri silmeye yine de izin verilir.",
@@ -4069,7 +4069,7 @@
     "message": "Kuruluş ilkelerini yönetebilen kullanıcılar bu ilkenin uygulanmasından muaf tutulur."
   },
   "sendDisabled": {
-    "message": "Send devre dışı",
+    "message": "Send silindi",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendDisabledWarning": {
@@ -4077,7 +4077,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendOptions": {
-    "message": "Send Seçenekleri",
+    "message": "Send seçenekleri",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendOptionsPolicyDesc": {
@@ -4123,7 +4123,7 @@
     "message": "İzinler"
   },
   "permission": {
-    "message": "Yetki"
+    "message": "İzin"
   },
   "managerPermissions": {
     "message": "Yetkili İzinleri"
@@ -4333,7 +4333,7 @@
     }
   },
   "eventWithdrawPasswordReset": {
-    "message": "$ID$ kullanıcı parola sıfırlama desteğinden geri çekildi.",
+    "message": "$ID$ adlı kullanıcı parola sıfırlamadan geri çekildi.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -4351,7 +4351,7 @@
     }
   },
   "eventResetSsoLink": {
-    "message": "$ID$ kullanıcısı için Toa bağlantısını sıfırla",
+    "message": "$ID$ kullanıcısı için SSO bağlantısını sıfırla",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -4441,7 +4441,7 @@
     "message": "Davetleri yeniden gönder"
   },
   "resendNotification": {
-    "message": "Bildirimi Tekrar Yolla"
+    "message": "Bildirimi yeniden gönder"
   },
   "noSelectedUsersApplicable": {
     "message": "Bu eylem seçilen kullanıcılardan hiçbirine uygulanamıyor."
@@ -4477,10 +4477,10 @@
     "message": "Toplu işlem durumu"
   },
   "bulkConfirmMessage": {
-    "message": "Başarıyla onaylandı."
+    "message": "Başarıyla onaylandı"
   },
   "bulkReinviteMessage": {
-    "message": "Yeniden davet edildi."
+    "message": "Yeniden davet edildi"
   },
   "bulkRemovedMessage": {
     "message": "Başarıyla kaldırıldı"
@@ -4489,7 +4489,7 @@
     "message": "Kuruluş erişimi başarıyla iptal edildi"
   },
   "bulkRestoredMessage": {
-    "message": "Kuruluş erişimi başarıyla geri yüklendi"
+    "message": "Kuruluş erişimi başarıyla geri getirildi"
   },
   "bulkFilteredMessage": {
     "message": "İstisna. Bu eylem için geçerli değildir."
@@ -4635,7 +4635,7 @@
     "message": "Ekle"
   },
   "updatedMasterPassword": {
-    "message": "Ana parola güncellendi"
+    "message": "Ana parola kaydedildi"
   },
   "updateMasterPassword": {
     "message": "Ana parolayı güncelle"
@@ -4687,7 +4687,7 @@
     "message": "Minimum özel zaman aşımı 1 dakikadır."
   },
   "vaultTimeoutRangeError": {
-    "message": "Kasa Zaman Aşımı izin verilen aralıkta değil."
+    "message": "Kasa zaman aşımı izin verilen aralıkta değil."
   },
   "disablePersonalVaultExport": {
     "message": "Kişisel kasayı dışa aktarmayı devre dışı bırak"
@@ -4918,7 +4918,7 @@
     "message": "Bir sponsorluğu kaldırdıktan sonra, bu abonelikten ve ilgili faturalardan siz sorumlu olacaksınız. Devam etmek istediğine emin misin?"
   },
   "sponsorshipCreated": {
-    "message": "Sponsorluk oluştur"
+    "message": "Sponsorluk oluşturuldu"
   },
   "emailSent": {
     "message": "E-posta gönderildi"
@@ -4972,7 +4972,7 @@
     "message": "Ana parolayı kaldır"
   },
   "removedMasterPassword": {
-    "message": "Ana parola kaldırıldı."
+    "message": "Ana parola kaldırıldı"
   },
   "allowSso": {
     "message": "SSO doğrulamasına izin ver"
@@ -5011,7 +5011,7 @@
     "message": "\"TOA ve Anahtar Bağlayıcı Şifre Çözme ile Oturum Açma\" etkinleştirildi. Bu politika yalnızca Sahipler ve Yöneticiler için geçerli olacaktır."
   },
   "enabledSso": {
-    "message": "SSO etkinleştirildi"
+    "message": "SSO açıldı"
   },
   "disabledSso": {
     "message": "SSO kapatıldı"
@@ -5329,7 +5329,7 @@
     "message": "Cihaz doğrulama"
   },
   "enableDeviceVerification": {
-    "message": "Cihaz doğrulamasını etkinleştir"
+    "message": "Cihaz doğrulamasını aç"
   },
   "deviceVerificationDesc": {
     "message": "Etkinleştirildiğinde, tanınmayan bir cihazdan oturum açarken e-posta adresinize doğrulama kodları gönderilir"
@@ -5373,7 +5373,7 @@
     "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
   },
   "rotateScimKey": {
-    "message": "SCIM API Anahtarını yenileyin",
+    "message": "SCIM API anahtarını yenile",
     "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
   },
   "rotateScimKeyWarning": {
@@ -5381,10 +5381,10 @@
     "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
   },
   "rotateKey": {
-    "message": "Anahtarı Yenile"
+    "message": "Anahtarı yenile"
   },
   "scimApiKey": {
-    "message": "SCIM API Anahtarı",
+    "message": "SCIM API anahtarı",
     "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
   },
   "copyScimUrl": {
@@ -5400,7 +5400,7 @@
     "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
   },
   "scimSettingsSaved": {
-    "message": "SCIM ayarları başarıyla kaydedildi",
+    "message": "SCIM ayarları kaydedildi",
     "description": "the text, 'SCIM', is an acronymn and should not be translated."
   },
   "inputRequired": {

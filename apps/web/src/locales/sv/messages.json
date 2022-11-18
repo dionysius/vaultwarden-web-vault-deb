@@ -570,19 +570,19 @@
     "message": "Logga in eller skapa ett nytt konto för att komma åt ditt valv."
   },
   "loginWithDevice": {
-    "message": "Log in with device"
+    "message": "Logga in med enhet"
   },
   "loginWithDeviceEnabledInfo": {
-    "message": "Log in with device must be set up in the settings of the Bitwarden mobile app. Need another option?"
+    "message": "\"Logga in med enhet\" måste ställas in i inställningarna i Bitwardens mobilapp. Behöver du ett annat alternativ?"
   },
   "loginWithMasterPassword": {
-    "message": "Log in with master password"
+    "message": "Logga in med huvudlösenord"
   },
   "createAccount": {
     "message": "Skapa konto"
   },
   "newAroundHere": {
-    "message": "New around here?"
+    "message": "Är du ny här?"
   },
   "startTrial": {
     "message": "Starta provversion"
@@ -591,7 +591,7 @@
     "message": "Logga in"
   },
   "logInInitiated": {
-    "message": "Log in initiated"
+    "message": "Inloggning påbörjad"
   },
   "submit": {
     "message": "Skicka"
@@ -612,7 +612,7 @@
     "message": "Huvudlösenordet är det lösenord som du använder för att komma åt ditt valv. Det är väldigt viktigt att du inte glömmer bort ditt huvudlösenord, eftersom det inte går att återställa lösenordet ifall du skulle glömma bort det."
   },
   "masterPassImportant": {
-    "message": "Master passwords cannot be recovered if you forget it!"
+    "message": "Huvudlösenordet kan inte återställas om du glömmer det!"
   },
   "masterPassHintDesc": {
     "message": "En huvudlösenordsledtråd kan hjälpa dig att komma ihåg ditt lösenord om du glömmer bort det."
@@ -645,13 +645,13 @@
     "message": "Ogiltig e-postadress."
   },
   "masterPasswordRequired": {
-    "message": "Master password is required."
+    "message": "Huvudlösenord krävs."
   },
   "confirmMasterPasswordRequired": {
-    "message": "Master password retype is required."
+    "message": "Huvudlösenord måste anges igen."
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least 8 characters long."
+    "message": "Huvudlösenordet måste vara minst 8 tecken långt."
   },
   "masterPassDoesntMatch": {
     "message": "Huvudlösenorden stämmer inte överens."
@@ -660,7 +660,7 @@
     "message": "Ditt nya konto har skapats! Du kan nu logga in."
   },
   "trialAccountCreated": {
-    "message": "Account created successfully."
+    "message": "Kontot har skapats."
   },
   "masterPassSent": {
     "message": "Vi har skickat ett e-postmeddelande till dig med din huvudlösenordsledtråd."
@@ -694,7 +694,7 @@
     "message": "Ogiltigt huvudlösenord"
   },
   "invalidFilePassword": {
-    "message": "Invalid file password, please use the password you entered when you created the export file."
+    "message": "Ogiltigt fillösenord, använd lösenordet du angav när du skapade exportfilen."
   },
   "lockNow": {
     "message": "Lås nu"
@@ -721,7 +721,7 @@
     "message": "Du tillhör inte några organisationer. Organisationer möjliggör säker delning av objekt med andra användare."
   },
   "notificationSentDevice": {
-    "message": "A notification has been sent to your device."
+    "message": "En avisering har skickats till din enhet."
   },
   "versionNumber": {
     "message": "Version $VERSION_NUMBER$",
@@ -912,10 +912,10 @@
     "message": "Filformat"
   },
   "fileEncryptedExportWarningDesc": {
-    "message": "This file export will be password protected and require the file password to decrypt."
+    "message": "Den exporterade filen kommer vara lösenordsskyddad. Du kommer behöva ange fillösenordet för att dekryptera den."
   },
   "exportPasswordDescription": {
-    "message": "This password will be used to export and import this file"
+    "message": "Detta lösenord kommer att användas för att exportera och importera denna fil"
   },
   "confirmMasterPassword": {
     "message": "Bekräfta huvudlösenord"
@@ -924,16 +924,16 @@
     "message": "Bekräfta format"
   },
   "filePassword": {
-    "message": "File password"
+    "message": "Fillösenord"
   },
   "confirmFilePassword": {
-    "message": "Confirm file password"
+    "message": "Bekräfta fillösenord"
   },
   "accountBackupOptionDescription": {
-    "message": "Use your account encryption key to encrypt the export and restrict import to only the current Bitwarden account."
+    "message": "Kryptera exportfilen med ditt kontos krypteringsnyckel så att filen endast kan importeras till ditt Bitwarden-konto."
   },
   "passwordProtectedOptionDescription": {
-    "message": "Set a password to encrypt the export and import it to any Bitwarden account using the password for decryption."
+    "message": "Välj ett fillösenord för att kryptera exportfilen. Filen kan sedan importeras till valfritt Bitwarden-konto med hjälp av fillösenordet."
   },
   "fileTypeHeading": {
     "message": "Filtyp"
@@ -942,16 +942,16 @@
     "message": "Kontobackup"
   },
   "passwordProtected": {
-    "message": "Password protected"
+    "message": "Lösenordsskyddad"
   },
   "filePasswordAndConfirmFilePasswordDoNotMatch": {
-    "message": "“File password”  and “Confirm file password“ do not match."
+    "message": "“Fillösenord” och “Bekräfta fillösenord” matchar inte."
   },
   "confirmVaultImport": {
-    "message": "Confirm vault import"
+    "message": "Bekräfta importering av valv"
   },
   "confirmVaultImportDesc": {
-    "message": "This file is password-protected. Please enter the file password to import data."
+    "message": "Den här filen är lösenordsskyddad. Ange lösenordet för att importera data."
   },
   "exportSuccess": {
     "message": "Ditt valv har exporterats"
@@ -1233,10 +1233,10 @@
     "message": "Ändra språket som används i webbvalvet."
   },
   "enableFavicon": {
-    "message": "Show website icons"
+    "message": "Visa webbplatsikoner"
   },
   "faviconDesc": {
-    "message": "Show a recognizable image next to each login."
+    "message": "Visa en igenkännbar bild bredvid varje inloggning."
   },
   "enableFullWidth": {
     "message": "Aktivera layout med full bredd",
@@ -1291,23 +1291,23 @@
     "message": "Tvåfaktorsautentisering"
   },
   "twoStepLoginEnforcement": {
-    "message": "Two-step Login Enforcement"
+    "message": "Kräv tvåstegsverifiering"
   },
   "twoStepLoginDesc": {
     "message": "Säkra ditt konto genom att kräva ett ytterligare steg vid inloggning."
   },
   "twoStepLoginOrganizationDescStart": {
-    "message": "Enforce Bitwarden Two-step Login options for members by using the ",
+    "message": "Kräv att medlemmar använder tvåstegsverifiering genom att använda ",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enforce Bitwarden Two-step Login options for members by using the Two-step Login Policy.'"
   },
   "twoStepLoginPolicy": {
-    "message": "Two-step Login Policy"
+    "message": "policyn för tvåstegsinloggning"
   },
   "twoStepLoginOrganizationDuoDesc": {
-    "message": "To enforce Two-step Login through Duo, use the options below."
+    "message": "För att kräva tvåstegsverifiering med Duo, använd alternativen nedan."
   },
   "twoStepLoginOrganizationSsoDesc": {
-    "message": "If you have setup SSO or plan to, Two-step Login may already be enforced through your Identity Provider."
+    "message": "Om du har konfigurerat SSO eller planerar att göra det, kan tvåstegsverifiering redan krävas av din ID-leverantör."
   },
   "twoStepLoginRecoveryWarning": {
     "message": "Att aktivera tvåstegsverifiering kan låsa ute dig från ditt Bitwarden-konto permanent. En återställningskod låter dig komma åt ditt konto om du inte längre kan använda din vanliga metod för tvåstegsverifiering (t.ex. om du förlorar din enhet). Bitwardens kundservice kommer inte att kunna hjälpa dig om du förlorar åtkomst till ditt konto. Vi rekommenderar att du skriver ner eller skriver ut återställningskoden och förvarar den på ett säkert ställe."
@@ -1326,7 +1326,7 @@
     "message": "Aktiverad"
   },
   "restoreAccess": {
-    "message": "Restore access"
+    "message": "Återställ åtkomst"
   },
   "premium": {
     "message": "Premium",
@@ -1354,7 +1354,7 @@
     "message": "Inaktivera"
   },
   "revokeAccess": {
-    "message": "Revoke access"
+    "message": "Återkalla åtkomst"
   },
   "twoStepLoginProviderEnabled": {
     "message": "Denna metod för tvåstegsverifiering är aktiverad på ditt konto."
@@ -1557,7 +1557,7 @@
     "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization vault."
   },
   "orgsReportsDesc": {
-    "message": "Identify and close security gaps in your organization's accounts by clicking the reports below.",
+    "message": "Identifiera och åtgärda säkerhetsluckor i din organisations konton genom att klicka på rapporterna nedan.",
     "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization Vault."
   },
   "unsecuredWebsitesReport": {
@@ -1755,7 +1755,7 @@
     "message": "Faktureringsplan"
   },
   "paymentType": {
-    "message": "Payment type"
+    "message": "Betalningssätt"
   },
   "accountCredit": {
     "message": "Kontokredit",
@@ -1905,7 +1905,7 @@
     "message": "Faktureringsuppgifter"
   },
   "billingTrialSubLabel": {
-    "message": "Your payment method will not be charged during the 7 day free trial."
+    "message": "Du kommer inte att debiteras under din 7-dagars gratis provperiod."
   },
   "creditCard": {
     "message": "Kreditkort"

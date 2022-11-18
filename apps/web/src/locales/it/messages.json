@@ -1291,7 +1291,7 @@
     "message": "Verifica in due passaggi"
   },
   "twoStepLoginEnforcement": {
-    "message": "Attuazione accesso a due passaggi"
+    "message": "Forza accesso a due passaggi"
   },
   "twoStepLoginDesc": {
     "message": "Proteggi il tuo account richiedendo un passaggio aggiuntivo all'accesso."
@@ -1557,7 +1557,7 @@
     "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization vault."
   },
   "orgsReportsDesc": {
-    "message": "Identifica e chiudi i problemi di sicurezza negli account della tua organizzazione facendo clic sui rapporti qui sotto.",
+    "message": "Identifica e chiudi le falle di sicurezza negli account della tua organizzazione facendo click sui report in basso.",
     "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization Vault."
   },
   "unsecuredWebsitesReport": {
@@ -3017,7 +3017,7 @@
     "message": "La mia organizzazione"
   },
   "organizationInfo": {
-    "message": "Informazioni dell'Organizzazione"
+    "message": "Informazioni dell'organizzazione"
   },
   "deleteOrganization": {
     "message": "Elimina organizzazione"
@@ -4123,7 +4123,7 @@
     "message": "Permessi"
   },
   "permission": {
-    "message": "Permessi"
+    "message": "Permesso"
   },
   "managerPermissions": {
     "message": "Permessi del Manager"
@@ -4531,7 +4531,7 @@
     "message": "Clienti"
   },
   "client": {
-    "message": "Cliente",
+    "message": "Client",
     "description": "This is used as a table header to describe which client application created an event log."
   },
   "providerAdmin": {
@@ -5446,7 +5446,7 @@
     "message": "Membri"
   },
   "reporting": {
-    "message": "Relazioni"
+    "message": "Segnalazione"
   },
   "cardBrandMir": {
     "message": "Mir"

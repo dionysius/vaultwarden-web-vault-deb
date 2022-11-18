@@ -4420,7 +4420,7 @@
     "message": "La resposta de les claus d’organització és nul·la"
   },
   "resetPasswordDetailsError": {
-    "message": "La resposta Restableix detalls de contrasenya és nul·la"
+    "message": "La resposta dels detalls de restabliment de la contrasenya és nul·la"
   },
   "trashCleanupWarning": {
     "message": "Els elements que porten més de 30 dies a la paperera se suprimiran automàticament."
@@ -4516,7 +4516,7 @@
     "message": "Configuració del proveïdor"
   },
   "setupProviderLoginDesc": {
-    "message": "T'han convidat a configurar un proveïdor nou. Per continuar, heu d'iniciar sessió o crear un nou compte de Bitwarden."
+    "message": "Us han convidat a configurar un proveïdor nou. Per continuar, heu d'iniciar sessió o crear un nou compte de Bitwarden."
   },
   "setupProviderDesc": {
     "message": "Introduïu els detalls a continuació per completar la configuració del proveïdor. Poseu-vos en contacte amb el servei d'atenció al client si teniu cap pregunta."
@@ -4547,7 +4547,7 @@
     "message": "Els usuaris del servei poden accedir i gestionar totes les organitzacions client."
   },
   "providerInviteUserDesc": {
-    "message": "Convida un nou usuari a la vostra organització introduint l'adreça electrònica del compte de Bitwarden a continuació. Si encara no tenen un compte de Bitwarden, se us demanarà que creeu un compte nou."
+    "message": "Convideu un nou usuari a la vostra organització introduint l'adreça electrònica del compte de Bitwarden a continuació. Si encara no tenen un compte de Bitwarden, se us demanarà que creeu un compte nou."
   },
   "joinProvider": {
     "message": "Uniu-vos al proveïdor"
@@ -4556,7 +4556,7 @@
     "message": "Heu estat convidat a unir-vos al proveïdor llistat més amunt. Per acceptar la invitació, heu d'iniciar sessió o crear un compte nou a Bitwarden."
   },
   "providerInviteAcceptFailed": {
-    "message": "No es pot acceptar la invitació. Demaneu a l'administrador d'una organització que envie una invitació nova."
+    "message": "No es pot acceptar la invitació. Demaneu a un administrador del proveïdor que envie una nova invitació."
   },
   "providerInviteAcceptedDesc": {
     "message": "Podeu accedir a aquesta organització una vegada que un administrador confirme la vostra pertinença. Rebreu un correu electrònic quan això passe."
@@ -4608,10 +4608,10 @@
     "message": "S'ha inhabilitat el proveïdor."
   },
   "providerUpdated": {
-    "message": "S'ha actualitzat el proveïdor"
+    "message": "S'ha guardat el proveïdor"
   },
   "yourProviderIs": {
-    "message": "El vostre proveïdor és $PROVIDER$. Tenen privilegis administratius i de facturació en la vostra organització.",
+    "message": "El vostre proveïdor és $PROVIDER$. Té privilegis administratius i de facturació en la vostra organització.",
     "placeholders": {
       "provider": {
         "content": "$1",
@@ -4635,7 +4635,7 @@
     "message": "Afig"
   },
   "updatedMasterPassword": {
-    "message": "Contrasenya mestra actualitzada"
+    "message": "Contrasenya mestra guardada"
   },
   "updateMasterPassword": {
     "message": "Actualitza contrasenya mestra"
