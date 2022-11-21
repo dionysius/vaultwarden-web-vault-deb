@@ -320,22 +320,18 @@
     </div>
     <div class="box" *ngIf="usernameOptions.type === 'forwarded'">
       <div class="box-content">
-        <div class="box-content-row" role="radiogroup" aria-labelledby="forwardTypeHeading">
-          <label id="forwardTypeHeading" class="radio-header">{{ "service" | i18n }}</label>
-          <div class="radio-group text-default" appBoxRow *ngFor="let o of forwardOptions">
-            <input
-              type="radio"
-              [(ngModel)]="usernameOptions.forwardedService"
-              name="ForwardType"
-              id="forwardtype_{{ o.value }}"
-              [value]="o.value"
-              (change)="saveUsernameOptions()"
-              [checked]="usernameOptions.forwardedService === o.value"
-            />
-            <label for="forwardtype_{{ o.value }}">
+        <div class="box-content-row" role="listbox" aria-labelledby="forwardTypeHeading">
+          <label id="forwardTypeHeading">{{ "service" | i18n }}</label>
+          <select
+            id="ForwardTypeDropdown"
+            name="ForwardType"
+            [(ngModel)]="usernameOptions.forwardedService"
+            (change)="saveUsernameOptions()"
+          >
+            <option *ngFor="let o of forwardOptions" [ngValue]="o.value" role="option">
               {{ o.name }}
-            </label>
-          </div>
+            </option>
+          </select>
         </div>
         <ng-container *ngIf="usernameOptions.forwardedService === 'simplelogin'">
           <div class="box-content-row" appBoxRow>
