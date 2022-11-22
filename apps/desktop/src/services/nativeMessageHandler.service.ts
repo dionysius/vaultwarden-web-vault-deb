@@ -114,7 +114,7 @@ export class NativeMessageHandlerService {
 
       const secret = await this.cryptoFunctionService.randomBytes(64);
       this.ddgSharedSecret = new SymmetricCryptoKey(secret);
-      const sharedKeyB64 = new SymmetricCryptoKey(secret).toJSON().keyB64;
+      const sharedKeyB64 = new SymmetricCryptoKey(secret).keyB64;
 
       await this.stateService.setDuckDuckGoSharedKey(sharedKeyB64);
 
