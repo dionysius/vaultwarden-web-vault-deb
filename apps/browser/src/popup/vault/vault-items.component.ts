@@ -3,7 +3,7 @@ import { ChangeDetectorRef, Component, NgZone, OnDestroy, OnInit } from "@angula
 import { ActivatedRoute, Router } from "@angular/router";
 import { first } from "rxjs/operators";
 
-import { CiphersComponent as BaseCiphersComponent } from "@bitwarden/angular/components/ciphers.component";
+import { VaultItemsComponent as BaseVaultItemsComponent } from "@bitwarden/angular/components/vault-items.component";
 import { VaultFilter } from "@bitwarden/angular/vault/vault-filter/models/vault-filter.model";
 import { BroadcasterService } from "@bitwarden/common/abstractions/broadcaster.service";
 import { CipherService } from "@bitwarden/common/abstractions/cipher.service";
@@ -25,13 +25,13 @@ import { StateService } from "../../services/abstractions/state.service";
 import { VaultFilterService } from "../../services/vaultFilter.service";
 import { PopupUtilsService } from "../services/popup-utils.service";
 
-const ComponentId = "CiphersComponent";
+const ComponentId = "VaultItemsComponent";
 
 @Component({
-  selector: "app-vault-ciphers",
-  templateUrl: "ciphers.component.html",
+  selector: "app-vault-items",
+  templateUrl: "vault-items.component.html",
 })
-export class CiphersComponent extends BaseCiphersComponent implements OnInit, OnDestroy {
+export class VaultItemsComponent extends BaseVaultItemsComponent implements OnInit, OnDestroy {
   groupingTitle: string;
   state: BrowserComponentState;
   folderId: string = null;
@@ -82,7 +82,7 @@ export class CiphersComponent extends BaseCiphersComponent implements OnInit, On
     // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
     this.route.queryParams.pipe(first()).subscribe(async (params) => {
       if (this.applySavedState) {
-        this.state = await this.stateService.getBrowserCipherComponentState();
+        this.state = await this.stateService.getBrowserVaultItemsComponentState();
         if (this.state?.searchText) {
           this.searchText = this.state.searchText;
         }
@@ -161,7 +161,7 @@ export class CiphersComponent extends BaseCiphersComponent implements OnInit, On
           0
         );
       }
-      await this.stateService.setBrowserCipherComponentState(null);
+      await this.stateService.setBrowserVaultItemsComponentState(null);
     });
 
     this.broadcasterService.subscribe(ComponentId, (message: any) => {
@@ -291,6 +291,6 @@ export class CiphersComponent extends BaseCiphersComponent implements OnInit, On
       scrollY: this.popupUtils.getContentScrollY(window, this.scrollingContainer),
       searchText: this.searchText,
     };
-    await this.stateService.setBrowserCipherComponentState(this.state);
+    await this.stateService.setBrowserVaultItemsComponentState(this.state);
   }
 }

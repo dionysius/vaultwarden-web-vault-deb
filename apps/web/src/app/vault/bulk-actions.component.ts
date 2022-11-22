@@ -11,7 +11,7 @@ import { BulkDeleteComponent } from "./bulk-delete.component";
 import { BulkMoveComponent } from "./bulk-move.component";
 import { BulkRestoreComponent } from "./bulk-restore.component";
 import { BulkShareComponent } from "./bulk-share.component";
-import { CiphersComponent } from "./ciphers.component";
+import { VaultItemsComponent } from "./vault-items.component";
 
 @Component({
   selector: "app-vault-bulk-actions",
@@ -19,7 +19,7 @@ import { CiphersComponent } from "./ciphers.component";
 })
 // eslint-disable-next-line rxjs-angular/prefer-takeuntil
 export class BulkActionsComponent {
-  @Input() ciphersComponent: CiphersComponent;
+  @Input() vaultItemsComponent: VaultItemsComponent;
   @Input() deleted: boolean;
   @Input() organization: Organization;
 
@@ -44,7 +44,7 @@ export class BulkActionsComponent {
       return;
     }
 
-    const selectedIds = this.ciphersComponent.getSelectedIds();
+    const selectedIds = this.vaultItemsComponent.getSelectedIds();
     if (selectedIds.length === 0) {
       this.platformUtilsService.showToast(
         "error",
@@ -64,7 +64,7 @@ export class BulkActionsComponent {
         // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
         comp.onDeleted.subscribe(async () => {
           modal.close();
-          await this.ciphersComponent.refresh();
+          await this.vaultItemsComponent.refresh();
         });
       }
     );
@@ -75,7 +75,7 @@ export class BulkActionsComponent {
       return;
     }
 
-    const selectedIds = this.ciphersComponent.getSelectedIds();
+    const selectedIds = this.vaultItemsComponent.getSelectedIds();
     if (selectedIds.length === 0) {
       this.platformUtilsService.showToast(
         "error",
@@ -93,7 +93,7 @@ export class BulkActionsComponent {
         // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
         comp.onRestored.subscribe(async () => {
           modal.close();
-          await this.ciphersComponent.refresh();
+          await this.vaultItemsComponent.refresh();
         });
       }
     );
@@ -104,7 +104,7 @@ export class BulkActionsComponent {
       return;
     }
 
-    const selectedCiphers = this.ciphersComponent.getSelected();
+    const selectedCiphers = this.vaultItemsComponent.getSelected();
     if (selectedCiphers.length === 0) {
       this.platformUtilsService.showToast(
         "error",
@@ -122,7 +122,7 @@ export class BulkActionsComponent {
         // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
         comp.onShared.subscribe(async () => {
           modal.close();
-          await this.ciphersComponent.refresh();
+          await this.vaultItemsComponent.refresh();
         });
       }
     );
@@ -133,7 +133,7 @@ export class BulkActionsComponent {
       return;
     }
 
-    const selectedIds = this.ciphersComponent.getSelectedIds();
+    const selectedIds = this.vaultItemsComponent.getSelectedIds();
     if (selectedIds.length === 0) {
       this.platformUtilsService.showToast(
         "error",
@@ -151,18 +151,18 @@ export class BulkActionsComponent {
         // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
         comp.onMoved.subscribe(async () => {
           modal.close();
-          await this.ciphersComponent.refresh();
+          await this.vaultItemsComponent.refresh();
         });
       }
     );
   }
 
   selectAll(select: boolean) {
-    this.ciphersComponent.selectAll(select);
+    this.vaultItemsComponent.selectAll(select);
   }
 
   private async promptPassword() {
-    const selectedCiphers = this.ciphersComponent.getSelected();
+    const selectedCiphers = this.vaultItemsComponent.getSelected();
     const notProtected = !selectedCiphers.find(
       (cipher) => cipher.reprompt !== CipherRepromptType.None
     );

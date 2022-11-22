@@ -107,14 +107,14 @@ describe("Browser State Service", () => {
       });
     });
 
-    describe("getBrowserCipherComponentState", () => {
+    describe("getBrowserVaultItemsComponentState", () => {
       it("should return a BrowserComponentState", async () => {
         const componentState = new BrowserComponentState();
         componentState.scrollY = 0;
         componentState.searchText = "test";
         state.accounts[userId].ciphers = componentState;
 
-        const actual = await sut.getBrowserCipherComponentState();
+        const actual = await sut.getBrowserVaultItemsComponentState();
         expect(actual).toStrictEqual(componentState);
       });
     });

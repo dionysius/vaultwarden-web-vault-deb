@@ -18,7 +18,7 @@
       <div class="page-header d-flex">
         <h1>
           {{ "vaultItems" | i18n }}
-          <small #actionSpinner [appApiAction]="ciphersComponent.actionPromise">
+          <small #actionSpinner [appApiAction]="vaultItemsComponent.actionPromise">
             <ng-container *ngIf="actionSpinner.loading">
               <i
                 class="bwi bwi-spinner bwi-spin text-muted"
@@ -31,7 +31,7 @@
         </h1>
         <div class="ml-auto d-flex">
           <app-vault-bulk-actions
-            [ciphersComponent]="ciphersComponent"
+            [vaultItemsComponent]="vaultItemsComponent"
             [deleted]="deleted"
             [organization]="organization"
           >
@@ -49,7 +49,7 @@
       <app-callout type="warning" *ngIf="deleted" icon="bwi bwi-exclamation-triangle">
         {{ trashCleanupWarning }}
       </app-callout>
-      <app-org-vault-ciphers
+      <app-org-vault-items
         (onCipherClicked)="editCipher($event)"
         (onAttachmentsClicked)="editCipherAttachments($event)"
         (onAddCipher)="addCipher()"
@@ -57,7 +57,7 @@
         (onEventsClicked)="viewEvents($event)"
         (onCloneClicked)="cloneCipher($event)"
       >
-      </app-org-vault-ciphers>
+      </app-org-vault-items>
     </div>
   </div>
 </div>

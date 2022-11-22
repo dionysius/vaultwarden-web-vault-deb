@@ -29,9 +29,9 @@ import { EntityEventsComponent } from "../manage/entity-events.component";
 
 import { AddEditComponent } from "./add-edit.component";
 import { AttachmentsComponent } from "./attachments.component";
-import { CiphersComponent } from "./ciphers.component";
 import { CollectionsComponent } from "./collections.component";
 import { VaultFilterComponent } from "./vault-filter/vault-filter.component";
+import { VaultItemsComponent } from "./vault-items.component";
 
 const BroadcasterSubscriptionId = "OrgVaultComponent";
 
@@ -42,7 +42,7 @@ const BroadcasterSubscriptionId = "OrgVaultComponent";
 export class VaultComponent implements OnInit, OnDestroy {
   @ViewChild("vaultFilter", { static: true })
   vaultFilterComponent: VaultFilterComponent;
-  @ViewChild(CiphersComponent, { static: true }) ciphersComponent: CiphersComponent;
+  @ViewChild(VaultItemsComponent, { static: true }) vaultItemsComponent: VaultItemsComponent;
   @ViewChild("attachments", { read: ViewContainerRef, static: true })
   attachmentsModalRef: ViewContainerRef;
   @ViewChild("cipherAddEdit", { read: ViewContainerRef, static: true })
@@ -90,11 +90,11 @@ export class VaultComponent implements OnInit, OnDestroy {
     this.route.parent.params.subscribe(async (params: any) => {
       this.organization = await this.organizationService.get(params.organizationId);
       this.vaultFilterComponent.organization = this.organization;
-      this.ciphersComponent.organization = this.organization;
+      this.vaultItemsComponent.organization = this.organization;
 
       /* eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe, rxjs/no-nested-subscribe */
       this.route.queryParams.pipe(first()).subscribe(async (qParams) => {
-        this.ciphersComponent.searchText = this.vaultFilterComponent.searchText = qParams.search;
+        this.vaultItemsComponent.searchText = this.vaultFilterComponent.searchText = qParams.search;
         if (!this.organization.canViewAllCollections) {
           await this.syncService.fullSync(false);
           this.broadcasterService.subscribe(BroadcasterSubscriptionId, (message: any) => {
@@ -104,7 +104,7 @@ export class VaultComponent implements OnInit, OnDestroy {
                   if (message.successfully) {
                     await Promise.all([
                       this.vaultFilterComponent.reloadCollectionsAndFolders(),
-                      this.ciphersComponent.refresh(),
+                      this.vaultItemsComponent.refresh(),
                     ]);
                     this.changeDetectorRef.detectChanges();
                   }
@@ -119,10 +119,12 @@ export class VaultComponent implements OnInit, OnDestroy {
         }
         this.firstLoaded = true;
 
-        await this.ciphersComponent.reload();
+        await this.vaultItemsComponent.reload();
 
         if (qParams.viewEvents != null) {
-          const cipher = this.ciphersComponent.ciphers.filter((c) => c.id === qParams.viewEvents);
+          const cipher = this.vaultItemsComponent.ciphers.filter(
+            (c) => c.id === qParams.viewEvents
+          );
           if (cipher.length > 0) {
             this.viewEvents(cipher[0]);
           }
@@ -164,16 +166,16 @@ export class VaultComponent implements OnInit, OnDestroy {
   }
 
   async applyVaultFilter(vaultFilter: VaultFilter) {
-    this.ciphersComponent.showAddNew = vaultFilter.status !== "trash";
+    this.vaultItemsComponent.showAddNew = vaultFilter.status !== "trash";
     this.activeFilter = vaultFilter;
 
     // Hack to avoid calling cipherService.getAllFromApiForOrganization every time the vault filter changes.
-    // Call CiphersComponent.applyFilter directly instead of going through CiphersComponent.reload, which
+    // Call VaultItemsComponent.applyFilter directly instead of going through VaultItemsComponent.reload, which
     // reloads all the ciphers unnecessarily. Will be fixed properly by EC-14.
-    this.ciphersComponent.loaded = false;
-    this.ciphersComponent.deleted = vaultFilter.status === "trash" || false;
-    await this.ciphersComponent.applyFilter(this.activeFilter.buildFilter());
-    this.ciphersComponent.loaded = true;
+    this.vaultItemsComponent.loaded = false;
+    this.vaultItemsComponent.deleted = vaultFilter.status === "trash" || false;
+    await this.vaultItemsComponent.applyFilter(this.activeFilter.buildFilter());
+    this.vaultItemsComponent.loaded = true;
     // End hack
 
     this.vaultFilterComponent.searchPlaceholder =
@@ -182,8 +184,8 @@ export class VaultComponent implements OnInit, OnDestroy {
   }
 
   filterSearchText(searchText: string) {
-    this.ciphersComponent.searchText = searchText;
-    this.ciphersComponent.search(200);
+    this.vaultItemsComponent.searchText = searchText;
+    this.vaultItemsComponent.search(200);
   }
 
   async editCipherAttachments(cipher: CipherView) {
@@ -210,7 +212,7 @@ export class VaultComponent implements OnInit, OnDestroy {
     // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
     modal.onClosed.subscribe(async () => {
       if (madeAttachmentChanges) {
-        await this.ciphersComponent.refresh();
+        await this.vaultItemsComponent.refresh();
       }
       madeAttachmentChanges = false;
     });
@@ -232,7 +234,7 @@ export class VaultComponent implements OnInit, OnDestroy {
         // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
         comp.onSavedCollections.subscribe(async () => {
           modal.close();
-          await this.ciphersComponent.refresh();
+          await this.vaultItemsComponent.refresh();
         });
       }
     );
@@ -274,17 +276,17 @@ export class VaultComponent implements OnInit, OnDestroy {
         // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
         comp.onSavedCipher.subscribe(async () => {
           modal.close();
-          await this.ciphersComponent.refresh();
+          await this.vaultItemsComponent.refresh();
         });
         // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
         comp.onDeletedCipher.subscribe(async () => {
           modal.close();
-          await this.ciphersComponent.refresh();
+          await this.vaultItemsComponent.refresh();
         });
         // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
         comp.onRestoredCipher.subscribe(async () => {
           modal.close();
-          await this.ciphersComponent.refresh();
+          await this.vaultItemsComponent.refresh();
         });
       }
     );

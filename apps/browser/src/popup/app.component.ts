@@ -276,7 +276,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
     await Promise.all([
       this.stateService.setBrowserGroupingComponentState(null),
-      this.stateService.setBrowserCipherComponentState(null),
+      this.stateService.setBrowserVaultItemsComponentState(null),
       this.stateService.setBrowserSendComponentState(null),
       this.stateService.setBrowserSendTypeComponentState(null),
     ]);

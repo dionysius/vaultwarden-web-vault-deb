@@ -34,12 +34,12 @@ import { SyncComponent } from "./settings/sync.component";
 import { TabsComponent } from "./tabs.component";
 import { AddEditComponent } from "./vault/add-edit.component";
 import { AttachmentsComponent } from "./vault/attachments.component";
-import { CiphersComponent } from "./vault/ciphers.component";
 import { CollectionsComponent } from "./vault/collections.component";
 import { CurrentTabComponent } from "./vault/current-tab.component";
 import { PasswordHistoryComponent } from "./vault/password-history.component";
 import { ShareComponent } from "./vault/share.component";
 import { VaultFilterComponent } from "./vault/vault-filter.component";
+import { VaultItemsComponent } from "./vault/vault-items.component";
 import { ViewComponent } from "./vault/view.component";
 
 const routes: Routes = [
@@ -120,7 +120,7 @@ const routes: Routes = [
   },
   {
     path: "ciphers",
-    component: CiphersComponent,
+    component: VaultItemsComponent,
     canActivate: [AuthGuard],
     data: { state: "ciphers" },
   },

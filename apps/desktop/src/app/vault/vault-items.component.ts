@@ -1,17 +1,17 @@
 import { Component } from "@angular/core";
 
-import { CiphersComponent as BaseCiphersComponent } from "@bitwarden/angular/components/ciphers.component";
+import { VaultItemsComponent as BaseVaultItemsComponent } from "@bitwarden/angular/components/vault-items.component";
 import { SearchService } from "@bitwarden/common/abstractions/search.service";
 import { CipherView } from "@bitwarden/common/models/view/cipher.view";
 
 import { SearchBarService } from "../layout/search/search-bar.service";
 
 @Component({
-  selector: "app-vault-ciphers",
-  templateUrl: "ciphers.component.html",
+  selector: "app-vault-items",
+  templateUrl: "vault-items.component.html",
 })
 // eslint-disable-next-line rxjs-angular/prefer-takeuntil
-export class CiphersComponent extends BaseCiphersComponent {
+export class VaultItemsComponent extends BaseVaultItemsComponent {
   constructor(searchService: SearchService, searchBarService: SearchBarService) {
     super(searchService);
 

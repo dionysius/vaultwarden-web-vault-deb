@@ -15,13 +15,13 @@ import { TotpService } from "@bitwarden/common/abstractions/totp.service";
 import { Organization } from "@bitwarden/common/models/domain/organization";
 import { CipherView } from "@bitwarden/common/models/view/cipher.view";
 
-import { CiphersComponent as BaseCiphersComponent } from "../../vault/ciphers.component";
+import { VaultItemsComponent as BaseVaultItemsComponent } from "../../vault/vault-items.component";
 
 @Component({
-  selector: "app-org-vault-ciphers",
-  templateUrl: "../../vault/ciphers.component.html",
+  selector: "app-org-vault-items",
+  templateUrl: "../../vault/vault-items.component.html",
 })
-export class CiphersComponent extends BaseCiphersComponent {
+export class VaultItemsComponent extends BaseVaultItemsComponent {
   @Output() onEventsClicked = new EventEmitter<CipherView>();
 
   organization: Organization;

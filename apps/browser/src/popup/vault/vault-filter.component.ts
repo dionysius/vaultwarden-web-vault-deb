@@ -94,7 +94,7 @@ export class VaultFilterComponent implements OnInit, OnDestroy {
     this.showLeftHeader = !(
       this.popupUtils.inSidebar(window) && this.platformUtilsService.isFirefox()
     );
-    await this.browserStateService.setBrowserCipherComponentState(null);
+    await this.browserStateService.setBrowserVaultItemsComponentState(null);
 
     this.broadcasterService.subscribe(ComponentId, (message: any) => {
       this.ngZone.run(async () => {
