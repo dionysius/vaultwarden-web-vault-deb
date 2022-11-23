@@ -12,7 +12,7 @@ import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUti
 import { PolicyService } from "@bitwarden/common/abstractions/policy/policy.service.abstraction";
 import { SendService } from "@bitwarden/common/abstractions/send.service";
 
-import { StateService } from "../../services/abstractions/state.service";
+import { BrowserStateService } from "../../services/abstractions/browser-state.service";
 import { PopupUtilsService } from "../services/popup-utils.service";
 
 @Component({
@@ -33,7 +33,7 @@ export class SendAddEditComponent extends BaseAddEditComponent {
   constructor(
     i18nService: I18nService,
     platformUtilsService: PlatformUtilsService,
-    stateService: StateService,
+    stateService: BrowserStateService,
     messagingService: MessagingService,
     policyService: PolicyService,
     environmentService: EnvironmentService,

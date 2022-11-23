@@ -15,7 +15,7 @@ import { LoginView } from "@bitwarden/common/models/view/login.view";
 
 import { BrowserApi } from "../browser/browserApi";
 import { AutofillService } from "../services/abstractions/autofill.service";
-import { StateService } from "../services/abstractions/state.service";
+import { BrowserStateService } from "../services/abstractions/browser-state.service";
 
 import AddChangePasswordQueueMessage from "./models/addChangePasswordQueueMessage";
 import AddLoginQueueMessage from "./models/addLoginQueueMessage";
@@ -33,7 +33,7 @@ export default class NotificationBackground {
     private authService: AuthService,
     private policyService: PolicyService,
     private folderService: FolderService,
-    private stateService: StateService
+    private stateService: BrowserStateService
   ) {}
 
   async init() {

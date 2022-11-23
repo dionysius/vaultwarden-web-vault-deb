@@ -1,5 +1,6 @@
 import { SettingsService as AbstractSettingsService } from "@bitwarden/common/abstractions/settings.service";
-import { SettingsService } from "@bitwarden/common/services/settings.service";
+
+import { BrowserSettingsService } from "../../services/browser-settings.service";
 
 import { FactoryOptions, CachedServices, factory } from "./factory-options";
 import { stateServiceFactory, StateServiceInitOptions } from "./state-service.factory";
@@ -16,6 +17,6 @@ export function settingsServiceFactory(
     cache,
     "settingsService",
     opts,
-    async () => new SettingsService(await stateServiceFactory(cache, opts))
+    async () => new BrowserSettingsService(await stateServiceFactory(cache, opts))
   );
 }

@@ -1,5 +1,6 @@
 import { OrganizationService as AbstractOrganizationService } from "@bitwarden/common/abstractions/organization/organization.service.abstraction";
-import { OrganizationService } from "@bitwarden/common/services/organization/organization.service";
+
+import { BrowserOrganizationService } from "../../services/browser-organization.service";
 
 import { FactoryOptions, CachedServices, factory } from "./factory-options";
 import { stateServiceFactory, StateServiceInitOptions } from "./state-service.factory";
@@ -17,6 +18,6 @@ export function organizationServiceFactory(
     cache,
     "organizationService",
     opts,
-    async () => new OrganizationService(await stateServiceFactory(cache, opts))
+    async () => new BrowserOrganizationService(await stateServiceFactory(cache, opts))
   );
 }

@@ -3,7 +3,7 @@ import { mock, MockProxy } from "jest-mock-extended";
 import { PasswordGenerationService } from "@bitwarden/common/abstractions/passwordGeneration.service";
 
 import { BrowserApi } from "../browser/browserApi";
-import { StateService } from "../services/abstractions/state.service";
+import { BrowserStateService } from "../services/abstractions/browser-state.service";
 
 import { setClearClipboardTime } from "./clipboard-state";
 import { GeneratePasswordToClipboardCommand } from "./generate-password-to-clipboard-command";
@@ -19,13 +19,13 @@ const setClearClipboardTimeMock = setClearClipboardTime as jest.Mock;
 
 describe("GeneratePasswordToClipboardCommand", () => {
   let passwordGenerationService: MockProxy<PasswordGenerationService>;
-  let stateService: MockProxy<StateService>;
+  let stateService: MockProxy<BrowserStateService>;
 
   let sut: GeneratePasswordToClipboardCommand;
 
   beforeEach(() => {
     passwordGenerationService = mock<PasswordGenerationService>();
-    stateService = mock<StateService>();
+    stateService = mock<BrowserStateService>();
 
     passwordGenerationService.getOptions.mockResolvedValue([{ length: 8 }, {} as any]);
 
