@@ -19,26 +19,28 @@ export class State<
 
   // TODO, make Jsonify<State,TGlobalState,TAccount> work. It currently doesn't because Globals doesn't implement Jsonify.
   static fromJSON<TGlobalState extends GlobalState, TAccount extends Account>(
-    obj: any
+    obj: any,
+    accountDeserializer: (json: Jsonify<TAccount>) => TAccount
   ): State<TGlobalState, TAccount> {
     if (obj == null) {
       return null;
     }
 
     return Object.assign(new State(null), obj, {
-      accounts: State.buildAccountMapFromJSON(obj?.accounts),
+      accounts: State.buildAccountMapFromJSON(obj?.accounts, accountDeserializer),
     });
   }
 
-  private static buildAccountMapFromJSON(
-    jsonAccounts: Jsonify<{ [userId: string]: Jsonify<Account> }>
+  private static buildAccountMapFromJSON<TAccount extends Account>(
+    jsonAccounts: { [userId: string]: Jsonify<TAccount> },
+    accountDeserializer: (json: Jsonify<TAccount>) => TAccount
   ) {
     if (!jsonAccounts) {
       return {};
     }
-    const accounts: { [userId: string]: Account } = {};
+    const accounts: { [userId: string]: TAccount } = {};
     for (const userId in jsonAccounts) {
-      accounts[userId] = Account.fromJSON(jsonAccounts[userId]);
+      accounts[userId] = accountDeserializer(jsonAccounts[userId]);
     }
     return accounts;
   }

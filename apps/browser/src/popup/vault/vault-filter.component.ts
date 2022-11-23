@@ -18,7 +18,7 @@ import { FolderView } from "@bitwarden/common/models/view/folder.view";
 
 import { BrowserApi } from "../../browser/browserApi";
 import { BrowserGroupingsComponentState } from "../../models/browserGroupingsComponentState";
-import { StateService } from "../../services/abstractions/state.service";
+import { BrowserStateService } from "../../services/abstractions/browser-state.service";
 import { VaultFilterService } from "../../services/vaultFilter.service";
 import { PopupUtilsService } from "../services/popup-utils.service";
 
@@ -83,7 +83,7 @@ export class VaultFilterComponent implements OnInit, OnDestroy {
     private platformUtilsService: PlatformUtilsService,
     private searchService: SearchService,
     private location: Location,
-    private browserStateService: StateService,
+    private browserStateService: BrowserStateService,
     private vaultFilterService: VaultFilterService
   ) {
     this.noFolderListSize = 100;
@@ -373,7 +373,7 @@ export class VaultFilterComponent implements OnInit, OnDestroy {
   }
 
   private async saveState() {
-    this.state = {
+    this.state = Object.assign(new BrowserGroupingsComponentState(), {
       scrollY: this.popupUtils.getContentScrollY(window),
       searchText: this.searchText,
       favoriteCiphers: this.favoriteCiphers,
@@ -385,7 +385,7 @@ export class VaultFilterComponent implements OnInit, OnDestroy {
       folders: this.folders,
       collections: this.collections,
       deletedCount: this.deletedCount,
-    };
+    });
     await this.browserStateService.setBrowserGroupingComponentState(this.state);
   }
 

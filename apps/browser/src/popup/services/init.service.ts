@@ -5,7 +5,7 @@ import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService as LogServiceAbstraction } from "@bitwarden/common/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 
-import { StateService as StateServiceAbstraction } from "../../services/abstractions/state.service";
+import { BrowserStateService as StateServiceAbstraction } from "../../services/abstractions/browser-state.service";
 
 import { PopupUtilsService } from "./popup-utils.service";
 

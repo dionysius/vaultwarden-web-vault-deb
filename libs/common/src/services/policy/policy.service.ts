@@ -16,7 +16,7 @@ import { ListResponse } from "../../models/response/list.response";
 import { PolicyResponse } from "../../models/response/policy.response";
 
 export class PolicyService implements InternalPolicyServiceAbstraction {
-  private _policies: BehaviorSubject<Policy[]> = new BehaviorSubject([]);
+  protected _policies: BehaviorSubject<Policy[]> = new BehaviorSubject([]);
 
   policies$ = this._policies.asObservable();
 

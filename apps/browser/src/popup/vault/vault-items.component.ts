@@ -21,7 +21,7 @@ import { FolderView } from "@bitwarden/common/models/view/folder.view";
 
 import { BrowserApi } from "../../browser/browserApi";
 import { BrowserComponentState } from "../../models/browserComponentState";
-import { StateService } from "../../services/abstractions/state.service";
+import { BrowserStateService } from "../../services/abstractions/browser-state.service";
 import { VaultFilterService } from "../../services/vaultFilter.service";
 import { PopupUtilsService } from "../services/popup-utils.service";
 
@@ -60,7 +60,7 @@ export class VaultItemsComponent extends BaseVaultItemsComponent implements OnIn
     private ngZone: NgZone,
     private broadcasterService: BroadcasterService,
     private changeDetectorRef: ChangeDetectorRef,
-    private stateService: StateService,
+    private stateService: BrowserStateService,
     private popupUtils: PopupUtilsService,
     private i18nService: I18nService,
     private folderService: FolderService,

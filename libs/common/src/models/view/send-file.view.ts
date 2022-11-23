@@ -1,3 +1,4 @@
+import { DeepJsonify } from "../../types/deep-jsonify";
 import { SendFile } from "../domain/send-file";
 
 import { View } from "./view";
@@ -27,5 +28,13 @@ export class SendFileView implements View {
       // Invalid file size.
     }
     return 0;
+  }
+
+  static fromJSON(json: DeepJsonify<SendFileView>) {
+    if (json == null) {
+      return null;
+    }
+
+    return Object.assign(new SendFileView(), json);
   }
 }

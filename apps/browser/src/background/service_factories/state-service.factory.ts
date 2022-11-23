@@ -2,7 +2,7 @@ import { StateFactory } from "@bitwarden/common/factories/stateFactory";
 import { GlobalState } from "@bitwarden/common/models/domain/global-state";
 
 import { Account } from "../../models/account";
-import { StateService } from "../../services/state.service";
+import { BrowserStateService } from "../../services/browser-state.service";
 
 import { CachedServices, factory, FactoryOptions } from "./factory-options";
 import { logServiceFactory, LogServiceInitOptions } from "./log-service.factory";
@@ -34,15 +34,15 @@ export type StateServiceInitOptions = StateServiceFactoryOptions &
   StateMigrationServiceInitOptions;
 
 export async function stateServiceFactory(
-  cache: { stateService?: StateService } & CachedServices,
+  cache: { stateService?: BrowserStateService } & CachedServices,
   opts: StateServiceInitOptions
-): Promise<StateService> {
+): Promise<BrowserStateService> {
   const service = await factory(
     cache,
     "stateService",
     opts,
     async () =>
-      await new StateService(
+      await new BrowserStateService(
         await diskStorageServiceFactory(cache, opts),
         await secureStorageServiceFactory(cache, opts),
         await memoryStorageServiceFactory(cache, opts),

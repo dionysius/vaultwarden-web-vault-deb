@@ -1,6 +1,6 @@
-// eslint-disable-next-line no-restricted-imports
-import { Arg, Substitute, SubstituteOf } from "@fluffy-spoon/substitute";
+import { mock, MockProxy } from "jest-mock-extended";
 
+import { EncryptService } from "@bitwarden/common/abstractions/encrypt.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
 import {
   MemoryStorageServiceInterface,
@@ -18,28 +18,29 @@ import { BrowserComponentState } from "../models/browserComponentState";
 import { BrowserGroupingsComponentState } from "../models/browserGroupingsComponentState";
 import { BrowserSendComponentState } from "../models/browserSendComponentState";
 
+import { AbstractKeyGenerationService } from "./abstractions/abstractKeyGeneration.service";
+import { BrowserStateService } from "./browser-state.service";
 import { LocalBackedSessionStorageService } from "./localBackedSessionStorage.service";
-import { StateService } from "./state.service";
 
 describe("Browser State Service", () => {
-  let secureStorageService: SubstituteOf<AbstractStorageService>;
-  let diskStorageService: SubstituteOf<AbstractStorageService>;
-  let logService: SubstituteOf<LogService>;
-  let stateMigrationService: SubstituteOf<StateMigrationService>;
-  let stateFactory: SubstituteOf<StateFactory<GlobalState, Account>>;
+  let secureStorageService: MockProxy<AbstractStorageService>;
+  let diskStorageService: MockProxy<AbstractStorageService>;
+  let logService: MockProxy<LogService>;
+  let stateMigrationService: MockProxy<StateMigrationService>;
+  let stateFactory: MockProxy<StateFactory<GlobalState, Account>>;
   let useAccountCache: boolean;
 
   let state: State<GlobalState, Account>;
   const userId = "userId";
 
-  let sut: StateService;
+  let sut: BrowserStateService;
 
   beforeEach(() => {
-    secureStorageService = Substitute.for();
-    diskStorageService = Substitute.for();
-    logService = Substitute.for();
-    stateMigrationService = Substitute.for();
-    stateFactory = Substitute.for();
+    secureStorageService = mock();
+    diskStorageService = mock();
+    logService = mock();
+    stateMigrationService = mock();
+    stateFactory = mock();
     useAccountCache = true;
 
     state = new State(new GlobalState());
@@ -54,9 +55,12 @@ describe("Browser State Service", () => {
 
     beforeEach(() => {
       // We need `AbstractCachedStorageService` in the prototype chain to correctly test cache bypass.
-      memoryStorageService = Object.create(LocalBackedSessionStorageService.prototype);
+      memoryStorageService = new LocalBackedSessionStorageService(
+        mock<EncryptService>(),
+        mock<AbstractKeyGenerationService>()
+      );
 
-      sut = new StateService(
+      sut = new BrowserStateService(
         diskStorageService,
         secureStorageService,
         memoryStorageService,
@@ -80,14 +84,14 @@ describe("Browser State Service", () => {
   });
 
   describe("state methods", () => {
-    let memoryStorageService: SubstituteOf<AbstractStorageService & MemoryStorageServiceInterface>;
+    let memoryStorageService: MockProxy<AbstractStorageService & MemoryStorageServiceInterface>;
 
     beforeEach(() => {
-      memoryStorageService = Substitute.for();
-      const stateGetter = (key: string) => Promise.resolve(JSON.parse(JSON.stringify(state)));
-      memoryStorageService.get("state", Arg.any()).mimicks(stateGetter);
+      memoryStorageService = mock();
+      const stateGetter = (key: string) => Promise.resolve(state);
+      memoryStorageService.get.mockImplementation(stateGetter);
 
-      sut = new StateService(
+      sut = new BrowserStateService(
         diskStorageService,
         secureStorageService,
         memoryStorageService,
@@ -128,6 +132,7 @@ describe("Browser State Service", () => {
           [SendType.Text, 5],
         ]);
         state.accounts[userId].send = sendState;
+        (global as any)["watch"] = state;
 
         const actual = await sut.getBrowserSendComponentState();
         expect(actual).toBeInstanceOf(BrowserSendComponentState);

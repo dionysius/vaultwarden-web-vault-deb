@@ -1,24 +1,40 @@
+import { BehaviorSubject } from "rxjs";
 import { Jsonify } from "type-fest";
 
 import { AbstractCachedStorageService } from "@bitwarden/common/abstractions/storage.service";
 import { GlobalState } from "@bitwarden/common/models/domain/global-state";
 import { StorageOptions } from "@bitwarden/common/models/domain/storage-options";
-import {
-  StateService as BaseStateService,
-  withPrototype,
-} from "@bitwarden/common/services/state.service";
+import { StateService as BaseStateService } from "@bitwarden/common/services/state.service";
 
+import { browserSession, sessionSync } from "../decorators/session-sync-observable";
 import { Account } from "../models/account";
 import { BrowserComponentState } from "../models/browserComponentState";
 import { BrowserGroupingsComponentState } from "../models/browserGroupingsComponentState";
 import { BrowserSendComponentState } from "../models/browserSendComponentState";
 
-import { StateService as StateServiceAbstraction } from "./abstractions/state.service";
+import { BrowserStateService as StateServiceAbstraction } from "./abstractions/browser-state.service";
 
-export class StateService
+@browserSession
+export class BrowserStateService
   extends BaseStateService<GlobalState, Account>
   implements StateServiceAbstraction
 {
+  @sessionSync({
+    initializer: Account.fromJSON as any, // TODO: Remove this any when all any types are removed from Account
+    initializeAs: "record",
+  })
+  protected accountsSubject: BehaviorSubject<{ [userId: string]: Account }>;
+  @sessionSync({ ctor: String })
+  protected activeAccountSubject: BehaviorSubject<string>;
+  @sessionSync({ ctor: Boolean })
+  protected activeAccountUnlockedSubject: BehaviorSubject<boolean>;
+
+  protected accountDeserializer = Account.fromJSON;
+
+  async hasInSessionMemory(key: string): Promise<boolean> {
+    return await this.memoryStorageService.has(key);
+  }
+
   async getFromSessionMemory<T>(key: string, deserializer?: (obj: Jsonify<T>) => T): Promise<T> {
     return this.memoryStorageService instanceof AbstractCachedStorageService
       ? await this.memoryStorageService.getBypassCache<T>(key, { deserializer: deserializer })
@@ -44,7 +60,6 @@ export class StateService
     );
   }
 
-  @withPrototype(BrowserGroupingsComponentState)
   async getBrowserGroupingComponentState(
     options?: StorageOptions
   ): Promise<BrowserGroupingsComponentState> {
@@ -67,7 +82,6 @@ export class StateService
     );
   }
 
-  @withPrototype(BrowserComponentState)
   async getBrowserVaultItemsComponentState(
     options?: StorageOptions
   ): Promise<BrowserComponentState> {
@@ -90,7 +104,6 @@ export class StateService
     );
   }
 
-  @withPrototype(BrowserSendComponentState)
   async getBrowserSendComponentState(options?: StorageOptions): Promise<BrowserSendComponentState> {
     return (
       await this.getAccount(this.reconcileOptions(options, await this.defaultInMemoryOptions()))
@@ -111,7 +124,6 @@ export class StateService
     );
   }
 
-  @withPrototype(BrowserComponentState)
   async getBrowserSendTypeComponentState(options?: StorageOptions): Promise<BrowserComponentState> {
     return (
       await this.getAccount(this.reconcileOptions(options, await this.defaultInMemoryOptions()))
