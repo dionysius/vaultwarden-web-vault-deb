@@ -1,7 +1,7 @@
 import { ApiService } from "../abstractions/api.service";
 
 import { Forwarder } from "./forwarder";
-import { ForwarderOptions } from "./forwarderOptions";
+import { ForwarderOptions } from "./forwarder-options";
 
 export class FastmailForwarder implements Forwarder {
   async generate(apiService: ApiService, options: ForwarderOptions): Promise<string> {

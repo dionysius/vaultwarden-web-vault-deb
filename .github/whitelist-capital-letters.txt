@@ -11,7 +11,6 @@
 ./libs/common/src/abstractions/fileDownload
 ./libs/common/src/abstractions/userVerification
 ./libs/common/src/abstractions/vaultTimeout
-./libs/common/src/emailForwarders
 ./libs/common/src/misc/logInStrategies
 ./libs/common/src/services/userVerification
 ./libs/common/src/services/vaultTimeout
@@ -112,12 +111,6 @@
 ./libs/common/src/enums/nativeMessagingVersion.ts
 ./libs/common/src/enums/cipherRepromptType.ts
 ./libs/common/src/enums/organizationUserType.ts
-./libs/common/src/emailForwarders/fastmailForwarder.ts
-./libs/common/src/emailForwarders/duckDuckGoForwarder.ts
-./libs/common/src/emailForwarders/firefoxRelayForwarder.ts
-./libs/common/src/emailForwarders/anonAddyForwarder.ts
-./libs/common/src/emailForwarders/simpleLoginForwarder.ts
-./libs/common/src/emailForwarders/forwarderOptions.ts
 ./libs/common/src/factories/accountFactory.ts
 ./libs/common/src/factories/globalStateFactory.ts
 ./libs/common/src/factories/stateFactory.ts

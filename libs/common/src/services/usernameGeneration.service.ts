@@ -2,13 +2,13 @@ import { ApiService } from "../abstractions/api.service";
 import { CryptoService } from "../abstractions/crypto.service";
 import { StateService } from "../abstractions/state.service";
 import { UsernameGenerationService as BaseUsernameGenerationService } from "../abstractions/usernameGeneration.service";
-import { AnonAddyForwarder } from "../emailForwarders/anonAddyForwarder";
-import { DuckDuckGoForwarder } from "../emailForwarders/duckDuckGoForwarder";
-import { FastmailForwarder } from "../emailForwarders/fastmailForwarder";
-import { FirefoxRelayForwarder } from "../emailForwarders/firefoxRelayForwarder";
-import { Forwarder } from "../emailForwarders/forwarder";
-import { ForwarderOptions } from "../emailForwarders/forwarderOptions";
-import { SimpleLoginForwarder } from "../emailForwarders/simpleLoginForwarder";
+import { AnonAddyForwarder } from "../email-forwarders/anon-addy-forwarder";
+import { DuckDuckGoForwarder } from "../email-forwarders/duck-duck-go-forwarder";
+import { FastmailForwarder } from "../email-forwarders/fastmail-forwarder";
+import { FirefoxRelayForwarder } from "../email-forwarders/firefox-relay-forwarder";
+import { Forwarder } from "../email-forwarders/forwarder";
+import { ForwarderOptions } from "../email-forwarders/forwarder-options";
+import { SimpleLoginForwarder } from "../email-forwarders/simple-login-forwarder";
 import { EFFLongWordList } from "../misc/wordlist";
 
 const DefaultOptions = {
