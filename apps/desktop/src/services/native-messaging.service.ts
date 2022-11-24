@@ -15,11 +15,11 @@ import { Utils } from "@bitwarden/common/misc/utils";
 import { EncString } from "@bitwarden/common/models/domain/enc-string";
 import { SymmetricCryptoKey } from "@bitwarden/common/models/domain/symmetric-crypto-key";
 
-import { LegacyMessage } from "../models/nativeMessaging/legacyMessage";
-import { LegacyMessageWrapper } from "../models/nativeMessaging/legacyMessageWrapper";
-import { Message } from "../models/nativeMessaging/message";
+import { LegacyMessage } from "../models/native-messaging/legacy-message";
+import { LegacyMessageWrapper } from "../models/native-messaging/legacy-message-wrapper";
+import { Message } from "../models/native-messaging/message";
 
-import { NativeMessageHandlerService } from "./nativeMessageHandler.service";
+import { NativeMessageHandlerService } from "./native-message-handler.service";
 
 const MessageValidTimeout = 10 * 1000;
 const EncryptionAlgorithm = "sha1";

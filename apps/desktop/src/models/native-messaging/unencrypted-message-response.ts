@@ -1,4 +1,4 @@
-import { MessageCommon } from "./messageCommon";
+import { MessageCommon } from "./message-common";
 
 export type UnencryptedMessageResponse = MessageCommon &
   (

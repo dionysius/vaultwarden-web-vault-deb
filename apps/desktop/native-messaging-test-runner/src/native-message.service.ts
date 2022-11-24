@@ -9,16 +9,16 @@ import { ConsoleLogService } from "@bitwarden/common/services/consoleLog.service
 import { EncryptServiceImplementation } from "@bitwarden/common/services/cryptography/encrypt.service.implementation";
 import { NodeCryptoFunctionService } from "@bitwarden/node/services/node-crypto-function.service";
 
-import { DecryptedCommandData } from "../../src/models/nativeMessaging/decryptedCommandData";
-import { EncryptedMessage } from "../../src/models/nativeMessaging/encryptedMessage";
-import { CredentialCreatePayload } from "../../src/models/nativeMessaging/encryptedMessagePayloads/credentialCreatePayload";
-import { CredentialUpdatePayload } from "../../src/models/nativeMessaging/encryptedMessagePayloads/credentialUpdatePayload";
-import { EncryptedMessageResponse } from "../../src/models/nativeMessaging/encryptedMessageResponse";
-import { MessageCommon } from "../../src/models/nativeMessaging/messageCommon";
-import { UnencryptedMessage } from "../../src/models/nativeMessaging/unencryptedMessage";
-import { UnencryptedMessageResponse } from "../../src/models/nativeMessaging/unencryptedMessageResponse";
+import { DecryptedCommandData } from "../../src/models/native-messaging/decrypted-command-data";
+import { EncryptedMessage } from "../../src/models/native-messaging/encrypted-message";
+import { CredentialCreatePayload } from "../../src/models/native-messaging/encrypted-message-payloads/credential-create-payload";
+import { CredentialUpdatePayload } from "../../src/models/native-messaging/encrypted-message-payloads/credential-update-payload";
+import { EncryptedMessageResponse } from "../../src/models/native-messaging/encrypted-message-response";
+import { MessageCommon } from "../../src/models/native-messaging/message-common";
+import { UnencryptedMessage } from "../../src/models/native-messaging/unencrypted-message";
+import { UnencryptedMessageResponse } from "../../src/models/native-messaging/unencrypted-message-response";
 
-import IPCService, { IPCOptions } from "./ipcService";
+import IPCService, { IPCOptions } from "./ipc.service";
 import * as config from "./variables";
 
 type HandshakeResponse = {

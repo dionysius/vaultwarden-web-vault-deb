@@ -12,14 +12,14 @@ import { EncString } from "@bitwarden/common/models/domain/enc-string";
 import { SymmetricCryptoKey } from "@bitwarden/common/models/domain/symmetric-crypto-key";
 import { StateService } from "@bitwarden/common/services/state.service";
 
-import { DecryptedCommandData } from "../models/nativeMessaging/decryptedCommandData";
-import { EncryptedMessage } from "../models/nativeMessaging/encryptedMessage";
-import { EncryptedMessageResponse } from "../models/nativeMessaging/encryptedMessageResponse";
-import { Message } from "../models/nativeMessaging/message";
-import { UnencryptedMessage } from "../models/nativeMessaging/unencryptedMessage";
-import { UnencryptedMessageResponse } from "../models/nativeMessaging/unencryptedMessageResponse";
+import { DecryptedCommandData } from "../models/native-messaging/decrypted-command-data";
+import { EncryptedMessage } from "../models/native-messaging/encrypted-message";
+import { EncryptedMessageResponse } from "../models/native-messaging/encrypted-message-response";
+import { Message } from "../models/native-messaging/message";
+import { UnencryptedMessage } from "../models/native-messaging/unencrypted-message";
+import { UnencryptedMessageResponse } from "../models/native-messaging/unencrypted-message-response";
 
-import { EncryptedMessageHandlerService } from "./encryptedMessageHandlerService";
+import { EncryptedMessageHandlerService } from "./encrypted-message-handler.service";
 
 const EncryptionAlgorithm = "sha1";
 

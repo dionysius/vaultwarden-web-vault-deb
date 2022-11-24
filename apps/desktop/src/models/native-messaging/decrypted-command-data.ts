@@ -1,4 +1,4 @@
-import { EncryptedCommand } from "./encryptedCommand";
+import { EncryptedCommand } from "./encrypted-command";
 
 export type DecryptedCommandData = {
   command: EncryptedCommand;

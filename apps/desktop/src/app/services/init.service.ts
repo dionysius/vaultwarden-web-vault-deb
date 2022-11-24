@@ -18,7 +18,7 @@ import { EventService } from "@bitwarden/common/services/event.service";
 import { VaultTimeoutService } from "@bitwarden/common/services/vaultTimeout/vaultTimeout.service";
 
 import { I18nService } from "../../services/i18n.service";
-import { NativeMessagingService } from "../../services/nativeMessaging.service";
+import { NativeMessagingService } from "../../services/native-messaging.service";
 
 @Injectable()
 export class InitService {

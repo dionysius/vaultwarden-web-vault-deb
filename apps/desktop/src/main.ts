@@ -14,11 +14,11 @@ import { UpdaterMain } from "@bitwarden/electron/updater.main";
 import { WindowMain } from "@bitwarden/electron/window.main";
 
 import { BiometricMain } from "./main/biometric/biometric.main";
-import { DesktopCredentialStorageListener } from "./main/desktopCredentialStorageListener";
+import { DesktopCredentialStorageListener } from "./main/desktop-credential-storage-listener";
 import { MenuMain } from "./main/menu/menu.main";
 import { MessagingMain } from "./main/messaging.main";
-import { NativeMessagingMain } from "./main/nativeMessaging.main";
-import { PowerMonitorMain } from "./main/powerMonitor.main";
+import { NativeMessagingMain } from "./main/native-messaging.main";
+import { PowerMonitorMain } from "./main/power-monitor.main";
 import { Account } from "./models/account";
 import { I18nService } from "./services/i18n.service";
 

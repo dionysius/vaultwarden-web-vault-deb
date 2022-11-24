@@ -12,18 +12,18 @@ import { CipherView } from "@bitwarden/common/models/view/cipher.view";
 import { LoginUriView } from "@bitwarden/common/models/view/login-uri.view";
 import { LoginView } from "@bitwarden/common/models/view/login.view";
 
-import { DecryptedCommandData } from "../models/nativeMessaging/decryptedCommandData";
-import { CredentialCreatePayload } from "../models/nativeMessaging/encryptedMessagePayloads/credentialCreatePayload";
-import { CredentialRetrievePayload } from "../models/nativeMessaging/encryptedMessagePayloads/credentialRetrievePayload";
-import { CredentialUpdatePayload } from "../models/nativeMessaging/encryptedMessagePayloads/credentialUpdatePayload";
-import { PasswordGeneratePayload } from "../models/nativeMessaging/encryptedMessagePayloads/passwordGeneratePayload";
-import { AccountStatusResponse } from "../models/nativeMessaging/encryptedMessageResponses/accountStatusResponse";
-import { CipherResponse } from "../models/nativeMessaging/encryptedMessageResponses/cipherResponse";
-import { EncyptedMessageResponse } from "../models/nativeMessaging/encryptedMessageResponses/encryptedMessageResponse";
-import { FailureStatusResponse } from "../models/nativeMessaging/encryptedMessageResponses/failureStatusResponse";
-import { GenerateResponse } from "../models/nativeMessaging/encryptedMessageResponses/generateResponse";
-import { SuccessStatusResponse } from "../models/nativeMessaging/encryptedMessageResponses/successStatusResponse";
-import { UserStatusErrorResponse } from "../models/nativeMessaging/encryptedMessageResponses/userStatusErrorResponse";
+import { DecryptedCommandData } from "../models/native-messaging/decrypted-command-data";
+import { CredentialCreatePayload } from "../models/native-messaging/encrypted-message-payloads/credential-create-payload";
+import { CredentialRetrievePayload } from "../models/native-messaging/encrypted-message-payloads/credential-retrieve-payload";
+import { CredentialUpdatePayload } from "../models/native-messaging/encrypted-message-payloads/credential-update-payload";
+import { PasswordGeneratePayload } from "../models/native-messaging/encrypted-message-payloads/password-generate-payload";
+import { AccountStatusResponse } from "../models/native-messaging/encrypted-message-responses/account-status-response";
+import { CipherResponse } from "../models/native-messaging/encrypted-message-responses/cipher-response";
+import { EncyptedMessageResponse } from "../models/native-messaging/encrypted-message-responses/encrypted-message-response";
+import { FailureStatusResponse } from "../models/native-messaging/encrypted-message-responses/failure-status-response";
+import { GenerateResponse } from "../models/native-messaging/encrypted-message-responses/generate-response";
+import { SuccessStatusResponse } from "../models/native-messaging/encrypted-message-responses/success-status-response";
+import { UserStatusErrorResponse } from "../models/native-messaging/encrypted-message-responses/user-status-error-response";
 
 import { StateService } from "./state.service";
 
