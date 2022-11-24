@@ -534,3 +534,9 @@ img,
 app-vault-view .box-footer {
   user-select: auto;
 }
+
+/* tweak for inconsistent line heights in cipher view */
+.box-footer button,
+.box-footer a {
+  line-height: 1;
+}

@@ -432,6 +432,12 @@ app-vault-view .box-footer {
   user-select: auto;
 }
 
+/* tweak for inconsistent line heights in cipher view */
+.box-footer button,
+.box-footer a {
+  line-height: 1;
+}
+
 // Workaround for slow performance on external monitors on Chrome + MacOS
 // See: https://bugs.chromium.org/p/chromium/issues/detail?id=971701#c64
 @keyframes redraw {
