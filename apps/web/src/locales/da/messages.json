@@ -3668,7 +3668,7 @@
     "message": "Skjul adgangskoder"
   },
   "countryPostalCodeRequiredDesc": {
-    "message": "Vi benytter udelukkende disse oplysninger til beregning af moms og finansiel rapportering."
+    "message": "Disse oplysninger benyttes udelukkende til momsberegning og finansiel rapportering."
   },
   "includeVAT": {
     "message": "Inkludér momsoplysninger (valgfrit)"
@@ -3731,31 +3731,31 @@
     "message": "Tilknyt SSO"
   },
   "singleOrg": {
-    "message": "Enkel organisation"
+    "message": "Enkeltorganisation"
   },
   "singleOrgDesc": {
-    "message": "Begræns medlemmer fra at blive medlem af andre organisationer."
+    "message": "Begræns medlemmer i at tilmelde sig andre organisationer."
   },
   "singleOrgBlockCreateMessage": {
-    "message": "Den nuværende organisationspolitik tillader dig ikke at deltage i mere end én organisation. Kontakt organisationsadministratorerne eller benyt en anden Bitwarden-konto under tilmelding."
+    "message": "Den nuværende organisationspolitik tillader dig ikke at deltage i mere end én organisation. Kontakt organisationens admins eller benyt en anden Bitwarden-konto under tilmelding."
   },
   "singleOrgPolicyWarning": {
-    "message": "Organisationsmedlemmer, som ikke er ejere eller admins og allerede medlem af en anden organisation, fjernes fra organisationen."
+    "message": "Organisationsmedlemmer, undtagen ejere eller admins, som allerede er medlem af en anden organisation, fjernes fra organisationen."
   },
   "requireSso": {
     "message": "Kræv single sign-on godkendelse"
   },
   "requireSsoPolicyDesc": {
-    "message": "Kræv at medlemmer logger ind vha. Virksomheds single sign-on metoden."
+    "message": "Kræv, at medlemmer logger ind vha. Virksomheds single sign-on metoden."
   },
   "prerequisite": {
     "message": "Forudsætning"
   },
   "requireSsoPolicyReq": {
-    "message": "Enkel organisation virksomhedspolitikken skal være aktiveret, før denne politik aktiveres."
+    "message": "Enkeltorganisations Virksomhedspolitik skal være aktiveret, før denne politik aktiveres."
   },
   "requireSsoPolicyReqError": {
-    "message": "Single organization-politik er ikke opsat."
+    "message": "Enkeltorganisationspolitik er ikke opsat."
   },
   "requireSsoExemption": {
     "message": "Denne politik håndhæves ikke for organisationsejere og -admins."
@@ -3791,7 +3791,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "deleteSendConfirmation": {
-    "message": "Er du sikker på, at du vil slette denne Send?",
+    "message": "Sikker på, at denne Send skal slettes?",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "whatTypeOfSend": {
@@ -3802,7 +3802,7 @@
     "message": "Sletningsdato"
   },
   "deletionDateDesc": {
-    "message": "Send slettes permanent på den angivne dato og tidspunkt.",
+    "message": "Denne Send slettes permanent på den angivne dato og tidspunkt.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "expirationDate": {
@@ -3837,7 +3837,7 @@
     "message": "Tilbagekaldt"
   },
   "sendLink": {
-    "message": "Send link",
+    "message": "Send-link",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "copySendLink": {
@@ -3851,7 +3851,7 @@
     "message": "Adgangskode fjernet"
   },
   "removePasswordConfirmation": {
-    "message": "Er du sikker på, at du vil fjerne adgangskoden?"
+    "message": "Sikker på, at adgangskoden skal fjernes?"
   },
   "hideEmail": {
     "message": "Skjul min e-mailadresse for modtagere."
@@ -3908,7 +3908,7 @@
     "message": "Nødadgang"
   },
   "emergencyAccessDesc": {
-    "message": "Tildel og håndtér nødadgang for betroede kontakter. Betroede kontakter kan anmode om adgang til enten at se eller overtage din konto i nødstilfælde. Besøg vores hjælpeside for mere information og detaljer om, hvordan nul-videndeling fungerer."
+    "message": "Tildel og håndtér nødadgang for betroede kontakter. Betroede kontakter kan anmode om adgang til enten at se eller overtage din konto i nødstilfælde. Besøg vores hjælpeside for mere information og detaljer om, hvordan nul-vidensdeling fungerer."
   },
   "emergencyAccessOwnerWarning": {
     "message": "Du er ejer af en eller flere organisationer. Tildeler du overtagelsesrettighed til en nødkontakt, kan vedkommende bruge alle dine tilladelser som ejer efter en overtagelse."
@@ -3935,7 +3935,7 @@
     "message": "Redigér nødkontakt"
   },
   "inviteEmergencyContactDesc": {
-    "message": "Invitér en ny nødkontakt ved at angive e-mailadressen på vedkommendes Bitwarden-konto nedenfor. Har vedkommende ikke allerede en Bitwarden-konto, anmoders vedkommende om at oprette én."
+    "message": "Invitér en ny nødkontakt ved at angive e-mailadressen på vedkommendes Bitwarden-konto nedenfor. Har vedkommende endnu ikke en Bitwarden-konto, anmoders vedkommende om at oprette en."
   },
   "emergencyAccessRecoveryInitiated": {
     "message": "Nødadgang igangsat"
@@ -3944,7 +3944,7 @@
     "message": "Nødadgang godkendt"
   },
   "viewDesc": {
-    "message": "Kan se alle elementer i din egen boks."
+    "message": "Kan se alle emner i din egen boks."
   },
   "takeover": {
     "message": "Overtagelse"
@@ -4414,7 +4414,7 @@
     "message": "Kræv at nye brugere automatisk indrulleres"
   },
   "resetPasswordAutoEnrollInviteWarning": {
-    "message": "Denne organisation har en virksomhedspolitik, der auto-opsætter dig til adgangskodenulstilling. Opsætningen giver organisationsadministratorer mulighed for at ændre din hovedadgangskode."
+    "message": "Denne organisation har en Virksomhedspolitik, der auto-tilmelder dig til adgangskodenulstilling. Tilmeldingen giver organisationsadministratorer mulighed for at ændre din hovedadgangskode."
   },
   "resetPasswordOrgKeysError": {
     "message": "Organisationsnøgler svar er null"

@@ -1121,7 +1121,7 @@
     "message": "清空密码库"
   },
   "purgedOrganizationVault": {
-    "message": "组织密码库已清空。"
+    "message": "清空了组织密码库。"
   },
   "vaultAccessedByProvider": {
     "message": "密码库被提供商访问。"
@@ -2522,7 +2522,7 @@
     "message": "登录失败，两步登录不正确。"
   },
   "exportedVault": {
-    "message": "导出了密码库。"
+    "message": "导出了密码库"
   },
   "exportedOrganizationVault": {
     "message": "导出了组织密码库。"
@@ -2651,7 +2651,7 @@
     }
   },
   "createdCollectionId": {
-    "message": "已创建集合 $ID$。",
+    "message": "创建了集合 $ID$。",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2660,7 +2660,7 @@
     }
   },
   "editedCollectionId": {
-    "message": "已编辑集合 $ID$。",
+    "message": "编辑了集合 $ID$。",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2669,7 +2669,7 @@
     }
   },
   "deletedCollectionId": {
-    "message": "已删除集合 $ID$。",
+    "message": "删除了集合 $ID$。",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2678,7 +2678,7 @@
     }
   },
   "editedPolicyId": {
-    "message": "已编辑策略 $ID$。",
+    "message": "编辑了策略 $ID$。",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2687,7 +2687,7 @@
     }
   },
   "createdGroupId": {
-    "message": "已创建群组 $ID$。",
+    "message": "创建了群组 $ID$。",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2696,7 +2696,7 @@
     }
   },
   "editedGroupId": {
-    "message": "已编辑群组 $ID$。",
+    "message": "编辑了群组 $ID$。",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2705,7 +2705,7 @@
     }
   },
   "deletedGroupId": {
-    "message": "已删除群组 $ID$。",
+    "message": "删除了群组 $ID$。",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2714,7 +2714,7 @@
     }
   },
   "removedUserId": {
-    "message": "已移除用户 $ID$。",
+    "message": "移除了用户 $ID$。",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2723,7 +2723,7 @@
     }
   },
   "removeUserIdAccess": {
-    "message": "移除 $ID$ 的访问权限",
+    "message": "移除了 $ID$ 的访问权限",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2732,7 +2732,7 @@
     }
   },
   "revokedUserId": {
-    "message": "已撤销 $ID$ 的组织访问权限。",
+    "message": "撤销了 $ID$ 的组织访问权限。",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2741,7 +2741,7 @@
     }
   },
   "restoredUserId": {
-    "message": "已恢复 $ID$ 的组织访问权限。",
+    "message": "恢复了 $ID$ 的组织访问权限。",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2759,7 +2759,7 @@
     }
   },
   "createdAttachmentForItem": {
-    "message": "已为项目 $ID$ 创建附件。",
+    "message": "为项目 $ID$ 创建了附件。",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2768,7 +2768,7 @@
     }
   },
   "deletedAttachmentForItem": {
-    "message": "已删除项目 $ID$ 的附件。",
+    "message": "删除了项目 $ID$ 的附件。",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2777,7 +2777,7 @@
     }
   },
   "editedCollectionsForItem": {
-    "message": "已为项目 $ID$ 编辑集合。",
+    "message": "编辑了项目 $ID$ 集合。",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2786,7 +2786,7 @@
     }
   },
   "invitedUserId": {
-    "message": "已邀请用户 $ID$。",
+    "message": "邀请了用户 $ID$。",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2795,7 +2795,7 @@
     }
   },
   "confirmedUserId": {
-    "message": "已确认用户 $ID$。",
+    "message": "确认了用户 $ID$。",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2804,7 +2804,7 @@
     }
   },
   "editedUserId": {
-    "message": "已编辑用户 $ID$。",
+    "message": "编辑了用户 $ID$。",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2813,7 +2813,7 @@
     }
   },
   "editedGroupsForUser": {
-    "message": "已为用户 $ID$ 编辑群组。",
+    "message": "编辑了用户 $ID$ 的群组。",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2831,7 +2831,7 @@
     }
   },
   "createdOrganizationId": {
-    "message": "已创建组织 $ID$。",
+    "message": "创建了组织 $ID$。",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2840,7 +2840,7 @@
     }
   },
   "addedOrganizationId": {
-    "message": "已添加组织 $ID$。",
+    "message": "添加了组织 $ID$。",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2849,7 +2849,7 @@
     }
   },
   "removedOrganizationId": {
-    "message": "已移除组织 $ID$。",
+    "message": "移除了组织 $ID$。",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2858,7 +2858,7 @@
     }
   },
   "accessedClientVault": {
-    "message": "已访问 $ID$ 组织密码库。",
+    "message": "访问了 $ID$ 组织密码库。",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -3611,7 +3611,7 @@
     }
   },
   "permanentlyDeletedItemId": {
-    "message": "项目 $ID$ 已永久删除",
+    "message": "永久删除了项目 $ID$",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -3650,7 +3650,7 @@
     }
   },
   "restoredItemId": {
-    "message": "项目 $ID$ 已恢复",
+    "message": "恢复了项目 $ID$",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -4099,7 +4099,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "modifiedPolicyId": {
-    "message": "策略 $ID$ 已修改。",
+    "message": "修改了策略 $ID$。",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -4342,7 +4342,7 @@
     }
   },
   "eventAdminPasswordReset": {
-    "message": "已重置用户 $ID$ 的主密码。",
+    "message": "重置了用户 $ID$ 的主密码。",
     "placeholders": {
       "id": {
         "content": "$1",

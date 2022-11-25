@@ -434,7 +434,7 @@
     "message": "Kho"
   },
   "vaults": {
-    "message": "Vaults"
+    "message": "Kho"
   },
   "vaultItems": {
     "message": "Vault items"
@@ -936,22 +936,22 @@
     "message": "Set a password to encrypt the export and import it to any Bitwarden account using the password for decryption."
   },
   "fileTypeHeading": {
-    "message": "File type"
+    "message": "Loại tệp"
   },
   "accountBackup": {
-    "message": "Account backup"
+    "message": "Sao lưu tài khoản"
   },
   "passwordProtected": {
-    "message": "Password protected"
+    "message": "Mật khẩu đã được bảo vệ"
   },
   "filePasswordAndConfirmFilePasswordDoNotMatch": {
     "message": "“File password”  and “Confirm file password“ do not match."
   },
   "confirmVaultImport": {
-    "message": "Confirm vault import"
+    "message": "Xác nhận nhập kho lưu trữ"
   },
   "confirmVaultImportDesc": {
-    "message": "This file is password-protected. Please enter the file password to import data."
+    "message": "Tập tin này được mật khẩu bảo vệ. Vui lòng nhập mật khẩu tệp để nhập dữ liệu."
   },
   "exportSuccess": {
     "message": "Dữ liệu kho cảu bạn đã được trích xuất."
@@ -979,15 +979,15 @@
     "message": "Độ dài"
   },
   "uppercase": {
-    "message": "Uppercase (A-Z)",
+    "message": "Chữ in hoa (A-Z)",
     "description": "Include uppercase letters in the password generator."
   },
   "lowercase": {
-    "message": "Lowercase (a-z)",
+    "message": "Chữ in thường (a-z)",
     "description": "Include lowercase letters in the password generator."
   },
   "numbers": {
-    "message": "Numbers (0-9)"
+    "message": "Số (0-9)"
   },
   "specialCharacters": {
     "message": "Special characters (!@#$%^&*)"
@@ -1787,10 +1787,10 @@
     "description": "Another way of saying \"Get a Premium membership\""
   },
   "premiumUpdated": {
-    "message": "You've upgraded to Premium."
+    "message": "Bạn đã nâng cấp lên Cao Cấp."
   },
   "premiumUpgradeUnlockFeatures": {
-    "message": "Upgrade your account to a Premium membership and unlock some great additional features."
+    "message": "Nâng cấp tài khoản của bạn lên thành viên Cao Cấp và mở khóa một số tính năng bổ sung tuyệt vời."
   },
   "premiumSignUpStorage": {
     "message": "1 GB encrypted storage for file attachments."
@@ -2990,7 +2990,7 @@
     }
   },
   "rememberEmail": {
-    "message": "Remember email"
+    "message": "Ghi nhớ đăng nhập"
   },
   "recoverAccountTwoStepDesc": {
     "message": "If you cannot access your account through your normal two-step login methods, you can use your two-step login recovery code to turn off all two-step providers on your account."
@@ -3278,13 +3278,13 @@
     "message": "Loading"
   },
   "upgrade": {
-    "message": "Upgrade"
+    "message": "Nâng cấp"
   },
   "upgradeOrganization": {
     "message": "Upgrade organization"
   },
   "upgradeOrganizationDesc": {
-    "message": "This feature is not available for free organizations. Switch to a paid plan to unlock more features."
+    "message": "Tính năng này không có sẵn cho các tổ chức miễn phí. Chuyển sang gói trả phí để mở khóa nhiều tính năng hơn."
   },
   "createOrganizationStep1": {
     "message": "Create organization: Step 1"
@@ -3311,7 +3311,7 @@
     "message": "Privacy Policy"
   },
   "filters": {
-    "message": "Filters"
+    "message": "Bộ lọc"
   },
   "vaultTimeout": {
     "message": "Vault timeout"
@@ -3486,7 +3486,7 @@
     "message": "Minimum length"
   },
   "clone": {
-    "message": "Clone"
+    "message": "Tạo bản sao"
   },
   "masterPassPolicyTitle": {
     "message": "Master password requirements"

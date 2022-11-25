@@ -181,7 +181,7 @@
     "description": "This is the folder for uncategorized items"
   },
   "addFolder": {
-    "message": "Skapa mapp"
+    "message": "Lägg till mapp"
   },
   "editFolder": {
     "message": "Redigera mapp"
@@ -1351,7 +1351,7 @@
     "message": "Hantera"
   },
   "disable": {
-    "message": "Inaktivera"
+    "message": "Stäng av"
   },
   "revokeAccess": {
     "message": "Återkalla åtkomst"
@@ -1639,7 +1639,7 @@
     }
   },
   "weakPasswordsReport": {
-    "message": "Rapport om svaga lösenord"
+    "message": "Svaga lösenord"
   },
   "weakPasswordsReportDesc": {
     "message": "Svaga lösenord kan enkelt gissas av hackare och automatiserade verktyg som används för att knäcka lösenord. Bitwardens lösenordsgenerator kan hjälpa dig att skapa starka lösenord."
@@ -2567,7 +2567,7 @@
     }
   },
   "viewAllLoginOptions": {
-    "message": "View all log in options"
+    "message": "Visa alla inloggningsalternativ"
   },
   "viewedItemId": {
     "message": "Visade objektet $ID$.",
@@ -2960,7 +2960,7 @@
     "message": "Du måste verifiera din e-post för att använda den här funktionen."
   },
   "updateBrowser": {
-    "message": "Uppdatera webbläsaren"
+    "message": "Uppdatera webbläsare"
   },
   "updateBrowserDesc": {
     "message": "Du använder en webbläsare som inte stöds. Webbvalvet kanske inte fungerar som det ska."
@@ -3345,7 +3345,7 @@
     "description": "ex. Date this item was updated"
   },
   "dateCreated": {
-    "message": "Created",
+    "message": "Skapad",
     "description": "ex. Date this item was created"
   },
   "datePasswordUpdated": {
@@ -4702,7 +4702,7 @@
     "message": "One or more organization policies prevents you from exporting your individual vault."
   },
   "selectType": {
-    "message": "Select SSO type"
+    "message": "Välj SSO-typ"
   },
   "type": {
     "message": "Typ"
@@ -5110,10 +5110,10 @@
     "message": "Billing sync token"
   },
   "active": {
-    "message": "Active"
+    "message": "Aktiv"
   },
   "inactive": {
-    "message": "Inactive"
+    "message": "Inaktiv"
   },
   "sentAwaitingSync": {
     "message": "Sent (awaiting sync)"
@@ -5266,7 +5266,7 @@
     "message": "You cannot redeem for the active account. Enter a different email."
   },
   "revokeWhenExpired": {
-    "message": "Expires $DATE$",
+    "message": "Upphör $DATE$",
     "placeholders": {
       "date": {
         "content": "$1",
@@ -5358,7 +5358,7 @@
     "description": "the text, 'SCIM', is an acronymn and should not be translated."
   },
   "scimEnabledCheckboxDesc": {
-    "message": "Enable SCIM",
+    "message": "Aktivera SCIM",
     "description": "the text, 'SCIM', is an acronymn and should not be translated."
   },
   "scimEnabledCheckboxDescHelpText": {
@@ -5440,7 +5440,7 @@
     "message": "Turn on"
   },
   "on": {
-    "message": "On"
+    "message": "På"
   },
   "members": {
     "message": "Medlemmar"
@@ -5467,7 +5467,7 @@
     "message": "Retrieving options..."
   },
   "multiSelectNotFound": {
-    "message": "No items found"
+    "message": "Inga objekt hittades"
   },
   "multiSelectClearAll": {
     "message": "Clear all"
