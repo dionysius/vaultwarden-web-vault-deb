@@ -48,7 +48,7 @@
     "message": "Chuyển tới Tổ chức"
   },
   "movedItemToOrg": {
-    "message": "$ITEMNAME$ moved to $ORGNAME$",
+    "message": "$ITEMNAME$ đã di chuyển tới $ORGNAME$",
     "placeholders": {
       "itemname": {
         "content": "$1",
@@ -805,7 +805,7 @@
     "message": "Đồng bộ thất bại"
   },
   "yourVaultIsLocked": {
-    "message": "Kho mật khẩu đã bị khóa. Xác minh mật khẩu chinhs của bạn để mở."
+    "message": "Kho mật khẩu đã bị khóa. Xác minh mật khẩu chính của bạn để mở."
   },
   "unlock": {
     "message": "Mở khóa"
@@ -1213,7 +1213,7 @@
     "description": "Domain name. Ex. website.com"
   },
   "domainName": {
-    "message": "Domain name",
+    "message": "Tên miền",
     "description": "Domain name. Ex. website.com"
   },
   "host": {
@@ -1662,7 +1662,7 @@
     "message": "Văn bản"
   },
   "deletionDate": {
-    "message": "Deletion date"
+    "message": "Ngày xóa"
   },
   "deletionDateDesc": {
     "message": "Send sẽ được xóa vĩnh viễn vào ngày và giờ được chỉ định.",
@@ -1703,7 +1703,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLinkLabel": {
-    "message": "Send link",
+    "message": "Gửi liên kết",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "textHiddenByDefault": {
@@ -1752,14 +1752,14 @@
     "message": "1 ngày"
   },
   "custom": {
-    "message": "Custom"
+    "message": "Tùy chỉnh"
   },
   "deleteSendConfirmation": {
     "message": "Bạn có chắc chắn muốn xóa Send này?",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "copySendLinkToClipboard": {
-    "message": "Copy Send link to clipboard",
+    "message": "Sao chép liên kết tới Khay nhớ tạm",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "copySendLinkOnSave": {
@@ -1777,58 +1777,58 @@
     "message": "Sao chép liên kết"
   },
   "disabled": {
-    "message": "Disabled"
+    "message": "Đã tắt"
   },
   "maxAccessCountReached": {
-    "message": "Max access count reached"
+    "message": "Đã đạt đến số lượng truy cập tối đa"
   },
   "expired": {
-    "message": "Expired"
+    "message": "Đã hết hạn"
   },
   "pendingDeletion": {
     "message": "Đang chờ xóa"
   },
   "webAuthnAuthenticate": {
-    "message": "Authenticate WebAuthn"
+    "message": "Xác thực WebAuthn"
   },
   "hideEmail": {
-    "message": "Hide my email address from recipients."
+    "message": "Ẩn địa chỉ email của tôi khỏi người nhận."
   },
   "sendOptionsPolicyInEffect": {
-    "message": "One or more organization policies are affecting your Send options."
+    "message": "Có một hoặc vài chính sách của tổ chức đang làm ảnh hưởng đến cài đặt tạo mật khẩu của bạn."
   },
   "emailVerificationRequired": {
-    "message": "Email verification required"
+    "message": "Yêu cầu xác nhận danh tính qua Email"
   },
   "emailVerificationRequiredDesc": {
-    "message": "You must verify your email to use this feature."
+    "message": "Bạn phải xác minh email của mình để sử dụng tính năng này."
   },
   "passwordPrompt": {
-    "message": "Master password re-prompt"
+    "message": "Nhắc lại mật khẩu chính"
   },
   "passwordConfirmation": {
-    "message": "Master password confirmation"
+    "message": "Xác nhận mật khẩu chính"
   },
   "passwordConfirmationDesc": {
-    "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
+    "message": "Hành động này được bảo vệ. Để tiếp tục, vui lòng nhập lại mật khẩu chính của bạn để xác minh danh tính của bạn."
   },
   "updatedMasterPassword": {
-    "message": "Updated master password"
+    "message": "Mật khẩu chính đã được cập nhật"
   },
   "updateMasterPassword": {
-    "message": "Update master password"
+    "message": "Cập nhật Mật khẩu chính"
   },
   "updateMasterPasswordWarning": {
-    "message": "Your master password was recently changed by an administrator in your organization. In order to access the vault, you must update it now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
+    "message": "Mật khẩu chính của bạn gần đây đã được thay đổi bởi một quản trị viên trong tổ chức của bạn. Để truy cập Kho, bạn phải cập nhật nó ngay bây giờ. Tiếp tục sẽ đăng xuất bạn khỏi phiên hiện tại của bạn, yêu cầu bạn đăng nhập lại. Các phiên hoạt động trên các thiết bị khác có thể tiếp tục hoạt động trong tối đa một giờ."
   },
   "hours": {
-    "message": "Hours"
+    "message": "Giờ"
   },
   "minutes": {
-    "message": "Minutes"
+    "message": "Phút"
   },
   "vaultTimeoutPolicyInEffect": {
-    "message": "Your organization policies are affecting your vault timeout. Maximum allowed vault timeout is $HOURS$ hour(s) and $MINUTES$ minute(s)",
+    "message": "Chính sách tổ chức của bạn đang ảnh hưởng đến thời gian chờ Kho của bạn. Thời gian chờ kho tối đa được phép là $HOURS$ giờ và $MINUTES$ phút",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -1841,10 +1841,10 @@
     }
   },
   "vaultTimeoutTooLarge": {
-    "message": "Your vault timeout exceeds the restrictions set by your organization."
+    "message": "Thời gian chờ Kho của bạn vượt quá các hạn chế do tổ chức của bạn đặt ra."
   },
   "resetPasswordPolicyAutoEnroll": {
-    "message": "Automatic enrollment"
+    "message": "Đăng ký tự động"
   },
   "resetPasswordAutoEnrollInviteWarning": {
     "message": "This organization has an enterprise policy that will automatically enroll you in password reset. Enrollment will allow organization administrators to change your master password."
@@ -1856,13 +1856,13 @@
     "message": "One or more organization policies prevents you from exporting your personal vault."
   },
   "addAccount": {
-    "message": "Add account"
+    "message": "Thêm tài khoản"
   },
   "removeMasterPassword": {
-    "message": "Remove master password"
+    "message": "Xóa mật khẩu chính"
   },
   "removedMasterPassword": {
-    "message": "Master password removed"
+    "message": "Đã xóa mật khẩu chính"
   },
   "convertOrganizationEncryptionDesc": {
     "message": "$ORGANIZATION$ is using SSO with a self-hosted key server. A master password is no longer required to log in for members of this organization.",
@@ -1874,7 +1874,7 @@
     }
   },
   "leaveOrganization": {
-    "message": "Leave organization"
+    "message": "Rời khỏi tổ chức"
   },
   "leaveOrganizationConfirmation": {
     "message": "Are you sure you want to leave this organization?"
@@ -1892,7 +1892,7 @@
     "message": "No more than 5 accounts may be logged in at the same time."
   },
   "accountPreferences": {
-    "message": "Preferences"
+    "message": "Tuỳ chỉnh"
   },
   "appPreferences": {
     "message": "App settings (all accounts)"
@@ -1910,10 +1910,10 @@
     }
   },
   "switchAccount": {
-    "message": "Switch account"
+    "message": "Chuyển tài khoản"
   },
   "options": {
-    "message": "Options"
+    "message": "Tùy chọn"
   },
   "sessionTimeout": {
     "message": "Your session has timed out. Please go back and try logging in again."
@@ -1937,19 +1937,19 @@
     "message": "Đã mở khóa"
   },
   "generator": {
-    "message": "Generator"
+    "message": "Tạo"
   },
   "whatWouldYouLikeToGenerate": {
-    "message": "What would you like to generate?"
+    "message": "Bạn muốn tạo gì?"
   },
   "passwordType": {
-    "message": "Password type"
+    "message": "Loại mật khẩu"
   },
   "regenerateUsername": {
     "message": "Regenerate username"
   },
   "generateUsername": {
-    "message": "Generate username"
+    "message": "Tạo tên tài khoản"
   },
   "usernameType": {
     "message": "Username type"
@@ -1968,22 +1968,22 @@
     "message": "Use your domain's configured catch-all inbox."
   },
   "random": {
-    "message": "Random"
+    "message": "Ngẫu nhiên"
   },
   "randomWord": {
-    "message": "Random word"
+    "message": "Từ ngẫu nhiên"
   },
   "websiteName": {
-    "message": "Website name"
+    "message": "Tên website"
   },
   "service": {
-    "message": "Service"
+    "message": "Dịch vụ"
   },
   "allVaults": {
-    "message": "All vaults"
+    "message": "Tất cả kho"
   },
   "searchOrganization": {
-    "message": "Search organization"
+    "message": "Tìm tổ chức"
   },
   "searchMyVault": {
     "message": "Search my vault"
