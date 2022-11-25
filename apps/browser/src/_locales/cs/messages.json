@@ -149,7 +149,7 @@
     "message": "Změnit hlavní heslo"
   },
   "fingerprintPhrase": {
-    "message": "Fráze otisku účtu",
+    "message": "Unikátní přístupová fráze",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "yourAccountsFingerprint": {
@@ -606,7 +606,7 @@
     "message": "Zeptat se na aktualizaci existujícího přihlášení"
   },
   "changedPasswordNotificationDesc": {
-    "message": "Ask to update a login's password when a change is detected on a website."
+    "message": "Dotázat se na aktualizaci hesla pro přihlášení, pokud je na webové stránce zjištěno použití jiného hesla."
   },
   "notificationChangeDesc": {
     "message": "Chcete aktualizovat toto heslo v Bitwarden?"
@@ -618,7 +618,7 @@
     "message": "Zobrazit v kontextovém menu"
   },
   "contextMenuItemDesc": {
-    "message": "Use a secondary click to access password generation and matching logins for the website. "
+    "message": "Použijte pravé tlačítko pro přístup k vytvoření hesla a odpovídajícímu přihlášení pro tuto stránku. "
   },
   "defaultUriMatchDetection": {
     "message": "Výchozí zjišťování shody URI",
@@ -1043,10 +1043,10 @@
     "message": "Zobrazit rozeznatelný obrázek vedle každého přihlášení."
   },
   "enableBadgeCounter": {
-    "message": "Show badge counter"
+    "message": "Zobrazovat počet uložených přihlašovacích údajů na stránce"
   },
   "badgeCounterDesc": {
-    "message": "Zobrazit počet přihlašovacích údajů pro aktuální webovou stránku."
+    "message": "Zobrazit počet přihlašovacích údajů pro aktuální webovou stránku na ikoně rozšíření prohlížeče."
   },
   "cardholderName": {
     "message": "Jméno držitele karty"
@@ -1632,7 +1632,7 @@
     "message": "Odstraněné heslo"
   },
   "deletedSend": {
-    "message": "Smazaný Send",
+    "message": "Send odstraněn",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLink": {
@@ -1899,10 +1899,10 @@
     "message": "Vypršel časový limit relace. Vraťte se prosím zpět a zkuste se znovu přihlásit."
   },
   "exportingPersonalVaultTitle": {
-    "message": "Exporting individual vault"
+    "message": "Export mého trezoru"
   },
   "exportingPersonalVaultDescription": {
-    "message": "Only the individual vault items associated with $EMAIL$ will be exported. Organization vault items will not be included.",
+    "message": "Budou exportovány pouze položky trezoru spojené s účtem $EMAIL$. Nebudou zahrnuty položky trezoru v organizaci.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -1970,16 +1970,16 @@
     "message": "API klíč"
   },
   "ssoKeyConnectorError": {
-    "message": "Key connector error: make sure key connector is available and working correctly."
+    "message": "Chyba Key Connector: ujistěte se, že je Key Connector k dispozici a funguje správně."
   },
   "premiumSubcriptionRequired": {
     "message": "Vyžadováno prémiové předplatné"
   },
   "organizationIsDisabled": {
-    "message": "Organization suspended."
+    "message": "Organizace je deaktivována."
   },
   "disabledOrganizationFilterError": {
-    "message": "Items in suspended Organizations cannot be accessed. Contact your Organization owner for assistance."
+    "message": "K položkám v deaktivované organizaci nemáte přístup. Požádejte o pomoc vlastníka organizace."
   },
   "cardBrandMir": {
     "message": "Mir"
@@ -2000,19 +2000,19 @@
     "message": "Klikněte zde"
   },
   "environmentEditedReset": {
-    "message": "to reset to pre-configured settings"
+    "message": "pro obnovení do přednastavených nastavení"
   },
   "serverVersion": {
     "message": "Verze serveru"
   },
   "selfHosted": {
-    "message": "Self-hosted"
+    "message": "Vlastní hosting"
   },
   "thirdParty": {
-    "message": "Third-party"
+    "message": "Tretí strana"
   },
   "thirdPartyServerMessage": {
-    "message": "Connected to third-party server implementation, $SERVERNAME$. Please verify bugs using the official server, or report them to the third-party server.",
+    "message": "Připojeno k serveru třetí strany $SERVERNAME$. Ověřte chyby připojením na oficiální server nebo nahlaste problém správci serveru.",
     "placeholders": {
       "servername": {
         "content": "$1",

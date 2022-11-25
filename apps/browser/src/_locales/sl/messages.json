@@ -53,13 +53,13 @@
     "message": "Zavihek"
   },
   "vault": {
-    "message": "Sef"
+    "message": "Trezor"
   },
   "myVault": {
     "message": "Moj trezor"
   },
   "allVaults": {
-    "message": "All vaults"
+    "message": "Vsi trezorji"
   },
   "tools": {
     "message": "Orodja"
@@ -101,7 +101,7 @@
     "message": "Nobenih ujemajočih prijav."
   },
   "unlockVaultMenu": {
-    "message": "Unlock your vault"
+    "message": "Odkleni svoj trezor"
   },
   "loginToVaultMenu": {
     "message": "Log in to your vault"
@@ -131,10 +131,10 @@
     "message": "Send a verification code to your email"
   },
   "sendCode": {
-    "message": "Send code"
+    "message": "Pošlji kodo"
   },
   "codeSent": {
-    "message": "Code sent"
+    "message": "Koda poslana"
   },
   "verificationCode": {
     "message": "Verifikacijska koda"
@@ -242,10 +242,10 @@
     "message": "Lowercase (a-z)"
   },
   "numbers": {
-    "message": "Numbers (0-9)"
+    "message": "Številke (0-9)"
   },
   "specialCharacters": {
-    "message": "Special characters (!@#$%^&*)"
+    "message": "Posebni znaki (!@#$%^&*)"
   },
   "numWords": {
     "message": "Število besed"
@@ -864,7 +864,7 @@
     "message": "To start the WebAuthn 2FA verification. Click the button below to open a new tab and follow the instructions provided in the new tab."
   },
   "webAuthnNewTabOpen": {
-    "message": "Open new tab"
+    "message": "Odpri nov zavihek"
   },
   "webAuthnAuthenticate": {
     "message": "Authenticate WebAuthn"
@@ -879,10 +879,10 @@
     "message": "Please use a supported web browser (such as Chrome) and/or add additional providers that are better supported across web browsers (such as an authenticator app)."
   },
   "twoStepOptions": {
-    "message": "Two-step login options"
+    "message": "Možnosti dvostopenjske prijave"
   },
   "recoveryCodeDesc": {
-    "message": "Lost access to all of your two-factor providers? Use your recovery code to turn off all two-factor providers from your account."
+    "message": "Ste izgubili dostop do vseh vaših ponudnikov dvostopenjske prijave? Uporabite svojo kodo za obnovitev in tako onemogočite dvostopenjsko prijavo v svoj račun."
   },
   "recoveryCodeTitle": {
     "message": "Koda za obnovitev"
@@ -927,7 +927,7 @@
     "message": "Specify the base URL of your on-premises hosted Bitwarden installation."
   },
   "customEnvironment": {
-    "message": "Custom environment"
+    "message": "Okolje po meri"
   },
   "customEnvironmentFooter": {
     "message": "For advanced users. You can specify the base URL of each service independently."
@@ -993,7 +993,7 @@
     "message": "Generate and copy a new random password to the clipboard"
   },
   "commandLockVaultDesc": {
-    "message": "Lock the vault"
+    "message": "Zakleni trezor"
   },
   "privateModeWarning": {
     "message": "Private mode support is experimental and some features are limited."
@@ -1002,10 +1002,10 @@
     "message": "Custom fields"
   },
   "copyValue": {
-    "message": "Copy value"
+    "message": "Kopiraj vrednost"
   },
   "value": {
-    "message": "Value"
+    "message": "Vrednost"
   },
   "newCustomField": {
     "message": "New custom field"
@@ -1020,7 +1020,7 @@
     "message": "Skrito"
   },
   "cfTypeBoolean": {
-    "message": "Boolean"
+    "message": "Logična vrednost"
   },
   "cfTypeLinked": {
     "message": "Linked",
@@ -1133,7 +1133,7 @@
     "message": "Priimek"
   },
   "fullName": {
-    "message": "Full name"
+    "message": "Polno ime"
   },
   "identityName": {
     "message": "Ime identitete"
@@ -1190,22 +1190,22 @@
     "message": "Prijave"
   },
   "typeSecureNote": {
-    "message": "Secure note"
+    "message": "Varni zapisek"
   },
   "typeCard": {
-    "message": "Card"
+    "message": "Kartica"
   },
   "typeIdentity": {
-    "message": "Identity"
+    "message": "Identiteta"
   },
   "passwordHistory": {
-    "message": "Password history"
+    "message": "Zgodovina gesel"
   },
   "back": {
-    "message": "Back"
+    "message": "Nazaj"
   },
   "collections": {
-    "message": "Collections"
+    "message": "Zbirke"
   },
   "favorites": {
     "message": "Priljubljeno"
@@ -1226,7 +1226,7 @@
     "message": "Prijave"
   },
   "secureNotes": {
-    "message": "Secure notes"
+    "message": "Varni zapiski"
   },
   "clear": {
     "message": "Počisti",
@@ -1285,15 +1285,15 @@
     "description": "Toggle the display of the URIs of the currently open tabs in the browser."
   },
   "currentUri": {
-    "message": "Current URI",
+    "message": "Trenutni URI",
     "description": "The URI of one of the current open tabs in the browser."
   },
   "organization": {
-    "message": "Organization",
+    "message": "Organizacija",
     "description": "An entity of multiple related people (ex. a team or business organization)."
   },
   "types": {
-    "message": "Types"
+    "message": "Tipi"
   },
   "allItems": {
     "message": "All items"
@@ -1302,13 +1302,13 @@
     "message": "There are no passwords to list."
   },
   "remove": {
-    "message": "Remove"
+    "message": "Odstrani"
   },
   "default": {
-    "message": "Default"
+    "message": "Privzeto"
   },
   "dateUpdated": {
-    "message": "Updated",
+    "message": "Posodobljeno",
     "description": "ex. Date this item was updated"
   },
   "dateCreated": {
@@ -1329,25 +1329,25 @@
     "message": "There are no collections to list."
   },
   "ownership": {
-    "message": "Ownership"
+    "message": "Lastništvo"
   },
   "whoOwnsThisItem": {
     "message": "Who owns this item?"
   },
   "strong": {
-    "message": "Strong",
+    "message": "Močno",
     "description": "ex. A strong password. Scale: Weak -> Good -> Strong"
   },
   "good": {
-    "message": "Good",
+    "message": "Dobro",
     "description": "ex. A good password. Scale: Weak -> Good -> Strong"
   },
   "weak": {
-    "message": "Weak",
+    "message": "Šibko",
     "description": "ex. A weak password. Scale: Weak -> Good -> Strong"
   },
   "weakMasterPassword": {
-    "message": "Weak master password"
+    "message": "Šibko glavno geslo"
   },
   "weakMasterPasswordDesc": {
     "message": "The master password you have chosen is weak. You should use a strong master password (or a passphrase) to properly protect your Bitwarden account. Are you sure you want to use this master password?"
@@ -1357,19 +1357,19 @@
     "description": "PIN code. Ex. The short code (often numeric) that you use to unlock a device."
   },
   "unlockWithPin": {
-    "message": "Unlock with PIN"
+    "message": "Odkleni s PIN kodo"
   },
   "setYourPinCode": {
     "message": "Set your PIN code for unlocking Bitwarden. Your PIN settings will be reset if you ever fully log out of the application."
   },
   "pinRequired": {
-    "message": "PIN code is required."
+    "message": "Potrebna je PIN koda."
   },
   "invalidPin": {
-    "message": "Invalid PIN code."
+    "message": "Nepravilna PIN koda."
   },
   "unlockWithBiometrics": {
-    "message": "Unlock with biometrics"
+    "message": "Prijava z biometriko"
   },
   "awaitDesktop": {
     "message": "Awaiting confirmation from desktop"
@@ -1387,7 +1387,7 @@
     "message": "Clone item"
   },
   "clone": {
-    "message": "Clone"
+    "message": "Kloniraj"
   },
   "passwordGeneratorPolicyInEffect": {
     "message": "One or more organization policies are affecting your generator settings."
@@ -1396,15 +1396,15 @@
     "message": "Vault timeout action"
   },
   "lock": {
-    "message": "Lock",
+    "message": "Zakleni",
     "description": "Verb form: to make secure or inaccesible by"
   },
   "trash": {
-    "message": "Trash",
+    "message": "Koš",
     "description": "Noun: a special folder to hold deleted items"
   },
   "searchTrash": {
-    "message": "Search trash"
+    "message": "Preišči koš"
   },
   "permanentlyDeleteItem": {
     "message": "Permanently delete item"
@@ -1440,7 +1440,7 @@
     "message": "Item auto-filled "
   },
   "setMasterPassword": {
-    "message": "Set master password"
+    "message": "Nastavi glavno geslo"
   },
   "masterPasswordPolicyInEffect": {
     "message": "One or more organization policies require your master password to meet the following requirements:"
@@ -1494,13 +1494,13 @@
     "message": "Terms of Service"
   },
   "privacyPolicy": {
-    "message": "Privacy Policy"
+    "message": "Pravilnik o zasebnosti"
   },
   "hintEqualsPassword": {
     "message": "Your password hint cannot be the same as your password."
   },
   "ok": {
-    "message": "Ok"
+    "message": "V redu"
   },
   "desktopSyncVerificationTitle": {
     "message": "Desktop sync verification"
@@ -1584,7 +1584,7 @@
     }
   },
   "send": {
-    "message": "Send",
+    "message": "Pošlji",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "searchSends": {
@@ -1596,10 +1596,10 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendTypeText": {
-    "message": "Text"
+    "message": "Besedilo"
   },
   "sendTypeFile": {
-    "message": "File"
+    "message": "Datoteka"
   },
   "allSends": {
     "message": "All Sends",
@@ -1610,7 +1610,7 @@
     "description": "This text will be displayed after a Send has been accessed the maximum amount of times."
   },
   "expired": {
-    "message": "Expired"
+    "message": "Poteklo"
   },
   "pendingDeletion": {
     "message": "Pending deletion"
@@ -1626,7 +1626,7 @@
     "message": "Remove Password"
   },
   "delete": {
-    "message": "Delete"
+    "message": "Izbriši"
   },
   "removedPassword": {
     "message": "Password removed"
@@ -1636,11 +1636,11 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLink": {
-    "message": "Send link",
+    "message": "Pošlji povezavo",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "disabled": {
-    "message": "Disabled"
+    "message": "Onemogočeno"
   },
   "removePasswordConfirmation": {
     "message": "Are you sure you want to remove the password?"
@@ -1683,10 +1683,10 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "oneDay": {
-    "message": "1 day"
+    "message": "1 dan"
   },
   "days": {
-    "message": "$DAYS$ days",
+    "message": "$DAYS$ dni",
     "placeholders": {
       "days": {
         "content": "$1",
@@ -1835,10 +1835,10 @@
     "message": "In order to complete logging in with SSO, please set a master password to access and protect your vault."
   },
   "hours": {
-    "message": "Hours"
+    "message": "Ur"
   },
   "minutes": {
-    "message": "Minutes"
+    "message": "Minut"
   },
   "vaultTimeoutPolicyInEffect": {
     "message": "Your organization policies are affecting your vault timeout. Maximum allowed Vault Timeout is $HOURS$ hour(s) and $MINUTES$ minute(s)",
@@ -1911,7 +1911,7 @@
     }
   },
   "error": {
-    "message": "Error"
+    "message": "Napaka"
   },
   "regenerateUsername": {
     "message": "Regenerate username"
@@ -1936,13 +1936,13 @@
     "message": "Use your domain's configured catch-all inbox."
   },
   "random": {
-    "message": "Random"
+    "message": "Naključno"
   },
   "randomWord": {
-    "message": "Random word"
+    "message": "Naključna beseda"
   },
   "websiteName": {
-    "message": "Website name"
+    "message": "Ime spletne strani"
   },
   "whatWouldYouLikeToGenerate": {
     "message": "What would you like to generate?"
@@ -1997,13 +1997,13 @@
     "message": "Settings have been edited"
   },
   "environmentEditedClick": {
-    "message": "Click here"
+    "message": "Kliknite tukaj"
   },
   "environmentEditedReset": {
     "message": "to reset to pre-configured settings"
   },
   "serverVersion": {
-    "message": "Server version"
+    "message": "Verzija strežnika"
   },
   "selfHosted": {
     "message": "Self-hosted"
@@ -2036,12 +2036,12 @@
     "message": "Logging in as"
   },
   "notYou": {
-    "message": "Not you?"
+    "message": "Niste vi?"
   },
   "newAroundHere": {
     "message": "New around here?"
   },
   "rememberEmail": {
-    "message": "Remember email"
+    "message": "Zapomni si e-pošto"
   }
 }
