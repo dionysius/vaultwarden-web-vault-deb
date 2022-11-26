@@ -25,7 +25,7 @@
 
 This repository houses all Bitwarden client applications except the [Mobile application](https://github.com/bitwarden/mobile).
 
-Please refer to the [Clients section](https://contributing.bitwarden.com/clients/) of the [Contributing Documentation](https://contributing.bitwarden.com/) for build instructions, recommended tooling, code style tips, and lots of other great information to get you started.
+Please refer to the [Clients section](https://contributing.bitwarden.com/docs/clients/) of the [Contributing Documentation](https://contributing.bitwarden.com/) for build instructions, recommended tooling, code style tips, and lots of other great information to get you started.
 
 ## Related projects:
 
