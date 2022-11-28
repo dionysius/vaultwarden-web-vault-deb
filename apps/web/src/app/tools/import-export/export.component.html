@@ -89,7 +89,7 @@
               <bit-label>{{ "filePassword" | i18n }}</bit-label>
               <input
                 bitInput
-                type="{{ showFilePassword ? 'text' : 'password' }}"
+                [type]="showFilePassword ? 'text' : 'password'"
                 id="filePassword"
                 formControlName="filePassword"
                 name="password"
@@ -123,7 +123,7 @@
               <bit-label>{{ "confirmFilePassword" | i18n }}</bit-label>
               <input
                 bitInput
-                type="{{ showConfirmFilePassword ? 'text' : 'password' }}"
+                [type]="showConfirmFilePassword ? 'text' : 'password'"
                 id="confirmFilePassword"
                 formControlName="confirmFilePassword"
                 name="confirmFilePassword"

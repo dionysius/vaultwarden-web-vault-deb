@@ -1,3 +1,5 @@
+export type InputTypes = "text" | "password" | "number" | "datetime-local" | "email" | "checkbox";
+
 export abstract class BitFormFieldControl {
   ariaDescribedBy: string;
   id: string;
@@ -5,7 +7,7 @@ export abstract class BitFormFieldControl {
   required: boolean;
   hasError: boolean;
   error: [string, any];
-  type?: "text" | "password";
+  type?: InputTypes;
   spellcheck?: boolean;
   focus?: () => void;
 }

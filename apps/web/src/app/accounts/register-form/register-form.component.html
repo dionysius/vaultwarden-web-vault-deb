@@ -34,7 +34,7 @@
         <input
           id="register-form_input_master-password"
           bitInput
-          type="{{ showPassword ? 'text' : 'password' }}"
+          [type]="showPassword ? 'text' : 'password'"
           formControlName="masterPassword"
         />
         <button type="button" bitSuffix bitButton (click)="togglePassword()">
@@ -65,7 +65,7 @@
         <input
           id="register-form_input_confirm-master-password"
           bitInput
-          type="{{ showPassword ? 'text' : 'password' }}"
+          [type]="showPassword ? 'text' : 'password'"
           formControlName="confirmMasterPassword"
         />
         <button type="button" bitSuffix bitButton (click)="togglePassword()">

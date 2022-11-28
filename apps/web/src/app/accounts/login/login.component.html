@@ -78,7 +78,7 @@
       <input
         id="login_input_master-password"
         bitInput
-        type="{{ showPassword ? 'text' : 'password' }}"
+        [type]="showPassword ? 'text' : 'password'"
         formControlName="masterPassword"
         appAutofocus
       />
