@@ -157,7 +157,8 @@
       <button
         type="submit"
         class="btn btn-primary btn-submit"
-        [disabled]="form.loading || disabled"
+        [disabled]="form.loading || disabledByPolicy"
+        [ngClass]="{ manual: disabledByPolicy }"
       >
         <i class="bwi bwi-spinner bwi-spin" title="{{ 'loading' | i18n }}" aria-hidden="true"></i>
         <span>{{ "confirmFormat" | i18n }}</span>

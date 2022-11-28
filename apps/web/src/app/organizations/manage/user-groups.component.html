@@ -34,7 +34,7 @@
               <td class="table-list-checkbox" (click)="check(g)">
                 <input
                   type="checkbox"
-                  [(ngModel)]="g.checked"
+                  [(ngModel)]="$any(g).checked"
                   name="Groups[{{ i }}].Checked"
                   appStopProp
                 />

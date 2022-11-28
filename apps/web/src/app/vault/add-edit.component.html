@@ -118,13 +118,13 @@
                   >
                     <i
                       class="bwi bwi-lg bwi-fw bwi-check-circle"
-                      [hidden]="checkPasswordBtn.loading"
+                      [hidden]="$any(checkPasswordBtn).loading"
                       aria-hidden="true"
                     ></i>
                     <i
                       class="bwi bwi-lg bwi-fw bwi-spinner bwi-spin"
                       aria-hidden="true"
-                      [hidden]="!checkPasswordBtn.loading"
+                      [hidden]="!$any(checkPasswordBtn).loading"
                       title="{{ 'loading' | i18n }}"
                     ></i>
                   </a>
@@ -838,7 +838,7 @@
               <input
                 class="form-check-input"
                 type="checkbox"
-                [(ngModel)]="c.checked"
+                [(ngModel)]="$any(c).checked"
                 id="collection-{{ i }}"
                 name="Collection[{{ i }}].Checked"
                 [disabled]="cipher.isDeleted || viewOnly"
@@ -935,17 +935,17 @@
             class="btn btn-outline-danger"
             appA11yTitle="{{ (cipher.isDeleted ? 'permanentlyDelete' : 'delete') | i18n }}"
             *ngIf="editMode && !cloneMode && !(!cipher.edit && editMode)"
-            [disabled]="deleteBtn.loading"
+            [disabled]="$any(deleteBtn).loading"
             [appApiAction]="deletePromise"
           >
             <i
               class="bwi bwi-trash bwi-lg bwi-fw"
-              [hidden]="deleteBtn.loading"
+              [hidden]="$any(deleteBtn).loading"
               aria-hidden="true"
             ></i>
             <i
               class="bwi bwi-spinner bwi-spin bwi-lg bwi-fw"
-              [hidden]="!deleteBtn.loading"
+              [hidden]="!$any(deleteBtn).loading"
               title="{{ 'loading' | i18n }}"
               aria-hidden="true"
             ></i>

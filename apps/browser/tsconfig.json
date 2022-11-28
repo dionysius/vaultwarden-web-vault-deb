@@ -15,6 +15,7 @@
     }
   },
   "angularCompilerOptions": {
+    "strictTemplates": true,
     "preserveWhitespaces": true
   },
   "include": ["src", "../../libs/common/src/services/**/*.worker.ts"]

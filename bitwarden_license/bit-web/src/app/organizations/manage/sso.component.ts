@@ -97,13 +97,13 @@ export class SsoComponent implements OnInit, OnDestroy {
   spMetadataUrl: string;
   spAcsUrl: string;
 
-  private enabled = this.formBuilder.control(false);
+  protected enabled = this.formBuilder.control(false);
 
-  private ssoIdentifier = this.formBuilder.control("", {
+  protected ssoIdentifier = this.formBuilder.control("", {
     validators: [Validators.maxLength(50), Validators.required],
   });
 
-  private openIdForm = this.formBuilder.group<ControlsOf<SsoConfigView["openId"]>>(
+  protected openIdForm = this.formBuilder.group<ControlsOf<SsoConfigView["openId"]>>(
     {
       authority: new FormControl("", Validators.required),
       clientId: new FormControl("", Validators.required),
@@ -126,7 +126,7 @@ export class SsoComponent implements OnInit, OnDestroy {
     }
   );
 
-  private samlForm = this.formBuilder.group<ControlsOf<SsoConfigView["saml"]>>(
+  protected samlForm = this.formBuilder.group<ControlsOf<SsoConfigView["saml"]>>(
     {
       spNameIdFormat: new FormControl(Saml2NameIdFormat.NotConfigured),
       spOutboundSigningAlgorithm: new FormControl(defaultSigningAlgorithm),
@@ -150,7 +150,7 @@ export class SsoComponent implements OnInit, OnDestroy {
     }
   );
 
-  private ssoConfigForm = this.formBuilder.group<ControlsOf<SsoConfigView>>({
+  protected ssoConfigForm = this.formBuilder.group<ControlsOf<SsoConfigView>>({
     configType: new FormControl(SsoType.None),
     keyConnectorEnabled: new FormControl(false),
     keyConnectorUrl: new FormControl(""),

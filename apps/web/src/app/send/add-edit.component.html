@@ -55,7 +55,7 @@
                 name="Type_{{ o.value }}"
                 id="type_{{ o.value }}"
                 [value]="o.value"
-                (change)="typeChanged(o)"
+                (change)="typeChanged()"
                 [checked]="send.type === o.value"
               />
               <label class="form-check-label" for="type_{{ o.value }}">
@@ -120,14 +120,7 @@
         <h3 class="mt-5">{{ "share" | i18n }}</h3>
         <div class="form-group" *ngIf="link">
           <label for="link">{{ "sendLinkLabel" | i18n }}</label>
-          <input
-            type="text"
-            readonly
-            id="link"
-            name="Link"
-            [(ngModel)]="link"
-            class="form-control"
-          />
+          <input type="text" readonly id="link" name="Link" [ngModel]="link" class="form-control" />
         </div>
         <div class="form-group">
           <div class="form-check">
@@ -286,17 +279,17 @@
             class="btn btn-outline-danger"
             appA11yTitle="{{ 'delete' | i18n }}"
             *ngIf="editMode"
-            [disabled]="deleteBtn.loading"
+            [disabled]="$any(deleteBtn).loading"
             [appApiAction]="deletePromise"
           >
             <i
               class="bwi bwi-trash bwi-lg bwi-fw"
-              [hidden]="deleteBtn.loading"
+              [hidden]="$any(deleteBtn).loading"
               aria-hidden="true"
             ></i>
             <i
               class="bwi bwi-spinner bwi-spin bwi-lg bwi-fw"
-              [hidden]="!deleteBtn.loading"
+              [hidden]="!$any(deleteBtn).loading"
               title="{{ 'loading' | i18n }}"
               aria-hidden="true"
             ></i>

@@ -27,11 +27,7 @@
         role="dialog"
         aria-modal="true"
       >
-        <button
-          appStopClick
-          (click)="selectAllVaults()"
-          [ngClass]="{ active: !myVaultOnly && !selectOrganizationId }"
-        >
+        <button appStopClick (click)="selectAllVaults()">
           <i class="bwi bwi-fw bwi-filter" aria-hidden="true"></i>
           &nbsp;{{ "allVaults" | i18n }}
         </button>
@@ -60,7 +56,7 @@
           <i
             *ngIf="!organization.enabled"
             class="bwi bwi-fw bwi-exclamation-triangle text-danger"
-            aria-label="{{ 'organizationIsDisabled' | i18n }}"
+            attr.aria-label="{{ 'organizationIsDisabled' | i18n }}"
             appA11yTitle="{{ 'organizationIsDisabled' | i18n }}"
           ></i>
         </button>

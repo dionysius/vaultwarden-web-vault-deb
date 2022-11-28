@@ -46,7 +46,7 @@
       class="btn-submit"
       (click)="reinstate()"
       [appApiAction]="reinstatePromise"
-      [disabled]="reinstateBtn.loading"
+      [disabled]="$any(reinstateBtn).loading"
     >
       <i class="bwi bwi-spinner bwi-spin" title="{{ 'loading' | i18n }}" aria-hidden="true"></i>
       <span>{{ "reinstateSubscription" | i18n }}</span>
@@ -147,7 +147,7 @@
         class="btn-submit tw-ml-auto"
         (click)="cancel()"
         [appApiAction]="cancelPromise"
-        [disabled]="cancelBtn.loading"
+        [disabled]="$any(cancelBtn).loading"
         *ngIf="subscription && !subscription.cancelled && !subscriptionMarkedForCancel"
       >
         <i class="bwi bwi-spinner bwi-spin" title="{{ 'loading' | i18n }}" aria-hidden="true"></i>

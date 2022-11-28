@@ -1,6 +1,9 @@
 import { NgModule } from "@angular/core";
 
 import { SharedModule } from "../../../shared";
+import { LinkSsoComponent } from "../organization-filter/link-sso.component";
+import { OrganizationFilterComponent } from "../organization-filter/organization-filter.component";
+import { OrganizationOptionsComponent } from "../organization-filter/organization-options.component";
 
 import { CollectionFilterComponent } from "./collection-filter/collection-filter.component";
 import { FolderFilterComponent } from "./folder-filter/folder-filter.component";
@@ -15,6 +18,9 @@ import { VaultFilterService } from "./vault-filter.service";
     FolderFilterComponent,
     StatusFilterComponent,
     TypeFilterComponent,
+    OrganizationFilterComponent,
+    OrganizationOptionsComponent,
+    LinkSsoComponent,
   ],
   exports: [
     SharedModule,
@@ -22,6 +28,9 @@ import { VaultFilterService } from "./vault-filter.service";
     FolderFilterComponent,
     StatusFilterComponent,
     TypeFilterComponent,
+    OrganizationFilterComponent,
+    OrganizationOptionsComponent,
+    LinkSsoComponent,
   ],
   providers: [VaultFilterService],
 })

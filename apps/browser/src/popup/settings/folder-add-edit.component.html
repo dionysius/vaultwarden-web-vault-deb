@@ -40,8 +40,11 @@
         >
           <div class="row-main text-danger">
             <div class="icon text-danger" aria-hidden="true">
-              <i class="bwi bwi-trash bwi-lg bwi-fw" [hidden]="deleteBtn.loading"></i>
-              <i class="bwi bwi-spinner bwi-spin bwi-lg bwi-fw" [hidden]="!deleteBtn.loading"></i>
+              <i class="bwi bwi-trash bwi-lg bwi-fw" [hidden]="$any(deleteBtn).loading"></i>
+              <i
+                class="bwi bwi-spinner bwi-spin bwi-lg bwi-fw"
+                [hidden]="!$any(deleteBtn).loading"
+              ></i>
             </div>
             <span>{{ "deleteFolder" | i18n }}</span>
           </div>

@@ -88,17 +88,17 @@
                 appA11yTitle="{{ 'checkPassword' | i18n }}"
                 (click)="checkPassword()"
                 [appApiAction]="checkPasswordPromise"
-                [disabled]="checkPasswordBtn.loading"
+                [disabled]="$any(checkPasswordBtn).loading"
                 *ngIf="cipher.viewPassword"
               >
                 <i
                   class="bwi bwi-lg bwi-check-circle"
-                  [hidden]="checkPasswordBtn.loading"
+                  [hidden]="$any(checkPasswordBtn).loading"
                   aria-hidden="true"
                 ></i>
                 <i
                   class="bwi bwi-lg bwi-spinner bwi-spin"
-                  [hidden]="!checkPasswordBtn.loading"
+                  [hidden]="!$any(checkPasswordBtn).loading"
                   aria-hidden="true"
                 ></i>
               </button>
@@ -487,7 +487,7 @@
                 type="text"
                 name="Login.Uris[{{ i }}].Uri"
                 [(ngModel)]="u.uri"
-                [hidden]="u.showUriOptionsInput === true"
+                [hidden]="$any(u).showUriOptionsInput === true"
                 placeholder="{{ 'ex' | i18n }} https://google.com"
                 inputmode="url"
                 appInputVerbatim
@@ -500,7 +500,7 @@
                 id="currentUris{{ i }}"
                 name="Login.Uris[{{ i }}].CurrentUris"
                 [(ngModel)]="u.uri"
-                [hidden]="!u.showCurrentUris"
+                [hidden]="!$any(u).showCurrentUris"
               >
                 <option [ngValue]="null">-- {{ "select" | i18n }} --</option>
                 <option *ngFor="let u of currentUris" [ngValue]="u">{{ u }}</option>
@@ -512,7 +512,9 @@
                 id="loginUriMatch{{ i }}"
                 name="Login.Uris[{{ i }}].Match"
                 [(ngModel)]="u.match"
-                [hidden]="u.showOptions === false || (u.showOptions == null && u.match == null)"
+                [hidden]="
+                  $any(u).showOptions === false || ($any(u).showOptions == null && u.match == null)
+                "
                 (change)="loginUriMatchChanged(u)"
               >
                 <option *ngFor="let o of uriMatchOptions" [ngValue]="o.value">{{ o.name }}</option>
@@ -526,7 +528,7 @@
                 appStopClick
                 appA11yTitle="{{ 'toggleCurrentUris' | i18n }}"
                 (click)="toggleUriInput(u)"
-                [attr.aria-pressed]="u.showCurrentUris === true"
+                [attr.aria-pressed]="$any(u).showCurrentUris === true"
               >
                 <i aria-hidden="true" class="bwi bwi-lg bwi-list"></i>
               </button>
@@ -536,7 +538,7 @@
                 appStopClick
                 appA11yTitle="{{ 'toggleOptions' | i18n }}"
                 (click)="toggleUriOptions(u)"
-                [attr.aria-pressed]="u.showOptions === true"
+                [attr.aria-pressed]="$any(u).showOptions === true"
               >
                 <i class="bwi bwi-lg bwi-cog" aria-hidden="true"></i>
               </button>
@@ -695,7 +697,7 @@
           <input
             id="collection_{{ i }}"
             type="checkbox"
-            [(ngModel)]="c.checked"
+            [(ngModel)]="$any(c).checked"
             name="Collection[{{ i }}].Checked"
           />
         </div>
@@ -713,8 +715,11 @@
         >
           <div class="row-main text-danger">
             <div class="icon text-danger" aria-hidden="true">
-              <i class="bwi bwi-trash bwi-lg bwi-fw" [hidden]="deleteBtn.loading"></i>
-              <i class="bwi bwi-spinner bwi-spin bwi-lg bwi-fw" [hidden]="!deleteBtn.loading"></i>
+              <i class="bwi bwi-trash bwi-lg bwi-fw" [hidden]="$any(deleteBtn).loading"></i>
+              <i
+                class="bwi bwi-spinner bwi-spin bwi-lg bwi-fw"
+                [hidden]="!$any(deleteBtn).loading"
+              ></i>
             </div>
             <span>{{ "deleteItem" | i18n }}</span>
           </div>

@@ -81,8 +81,8 @@
           [(ngModel)]="f.value"
           *ngIf="f.type === fieldType.Boolean"
           appTrueFalseValue
-          trueValue="true"
-          falseValue="false"
+          [trueValue]="true"
+          [falseValue]="false"
           attr.aria-describedby="fieldName{{ i }}"
           [readonly]="!cipher.edit && editMode"
         />

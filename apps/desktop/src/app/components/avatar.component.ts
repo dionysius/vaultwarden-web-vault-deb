@@ -5,12 +5,7 @@ import { Utils } from "@bitwarden/common/misc/utils";
 
 @Component({
   selector: "app-avatar",
-  template: `<img
-    *ngIf="src"
-    [src]="src"
-    title="{{ data }}"
-    [ngClass]="{ 'rounded-circle': circle }"
-  />`,
+  template: `<img *ngIf="src" [src]="src" [ngClass]="{ 'rounded-circle': circle }" />`,
 })
 export class AvatarComponent implements OnChanges, OnInit {
   @Input() size = 45;
@@ -20,7 +15,7 @@ export class AvatarComponent implements OnChanges, OnInit {
   @Input() circle = false;
 
   @Input() color?: string;
-  @Input() id?: number;
+  @Input() id?: string;
   @Input() text?: string;
 
   private svgCharCount = 2;

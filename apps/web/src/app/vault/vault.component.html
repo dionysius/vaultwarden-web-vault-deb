@@ -21,7 +21,7 @@
         <h1>
           {{ "vaultItems" | i18n }}
           <small #actionSpinner [appApiAction]="vaultItemsComponent.actionPromise">
-            <ng-container *ngIf="actionSpinner.loading">
+            <ng-container *ngIf="$any(actionSpinner).loading">
               <i
                 class="bwi bwi-spinner bwi-spin text-muted"
                 title="{{ 'loading' | i18n }}"

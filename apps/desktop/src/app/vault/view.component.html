@@ -64,16 +64,16 @@
                 appA11yTitle="{{ 'checkPassword' | i18n }}"
                 (click)="checkPassword()"
                 [appApiAction]="checkPasswordPromise"
-                [disabled]="checkPasswordBtn.loading"
+                [disabled]="$any(checkPasswordBtn).loading"
               >
                 <i
                   class="bwi bwi-lg bwi-check-circle"
-                  [hidden]="checkPasswordBtn.loading"
+                  [hidden]="$any(checkPasswordBtn).loading"
                   aria-hidden="true"
                 ></i>
                 <i
                   class="bwi bwi-lg bwi-spinner bwi-spin"
-                  [hidden]="!checkPasswordBtn.loading"
+                  [hidden]="!$any(checkPasswordBtn).loading"
                   aria-hidden="true"
                 ></i>
               </button>
@@ -472,12 +472,12 @@
           <small class="row-sub-label">{{ attachment.sizeName }}</small>
           <i
             class="bwi bwi-download bwi-fw row-sub-icon"
-            *ngIf="!attachment.downloading"
+            *ngIf="!$any(attachment).downloading"
             aria-hidden="true"
           ></i>
           <i
             class="bwi bwi-spinner bwi-fw bwi-spin row-sub-icon"
-            *ngIf="attachment.downloading"
+            *ngIf="$any(attachment).downloading"
             aria-hidden="true"
           ></i>
         </button>

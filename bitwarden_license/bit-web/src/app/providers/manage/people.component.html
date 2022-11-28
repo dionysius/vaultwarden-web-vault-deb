@@ -149,7 +149,6 @@
           <td>
             <span *ngIf="u.type === userType.ProviderAdmin">{{ "providerAdmin" | i18n }}</span>
             <span *ngIf="u.type === userType.ServiceUser">{{ "serviceUser" | i18n }}</span>
-            <span *ngIf="u.type === userType.Custom">{{ "custom" | i18n }}</span>
           </td>
           <td class="table-list-options">
             <div class="dropdown" appListDropdown>
@@ -183,16 +182,6 @@
                 >
                   <i class="bwi bwi-fw bwi-check" aria-hidden="true"></i>
                   {{ "confirm" | i18n }}
-                </a>
-                <a
-                  class="dropdown-item"
-                  href="#"
-                  appStopClick
-                  (click)="groups(u)"
-                  *ngIf="accessGroups"
-                >
-                  <i class="bwi bwi-fw bwi-sitemap" aria-hidden="true"></i>
-                  {{ "groups" | i18n }}
                 </a>
                 <a
                   class="dropdown-item"

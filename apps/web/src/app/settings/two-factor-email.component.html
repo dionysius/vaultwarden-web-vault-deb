@@ -18,7 +18,7 @@
       <app-two-factor-verify
         [organizationId]="organizationId"
         [type]="type"
-        (onAuthed)="auth($event)"
+        (onAuthed)="auth($any($event))"
         *ngIf="!authed"
       >
       </app-two-factor-verify>
@@ -61,7 +61,7 @@
                 class="btn btn-outline-primary btn-sm btn-submit align-self-start"
                 (click)="sendEmail()"
                 [appApiAction]="emailPromise"
-                [disabled]="sendBtn.loading"
+                [disabled]="$any(sendBtn).loading"
               >
                 <i
                   class="bwi bwi-spinner bwi-spin"

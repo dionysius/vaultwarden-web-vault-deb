@@ -44,7 +44,7 @@
       class="btn btn-outline-secondary btn-submit"
       (click)="reinstate()"
       [appApiAction]="reinstatePromise"
-      [disabled]="reinstateBtn.loading"
+      [disabled]="$any(reinstateBtn).loading"
     >
       <i class="bwi bwi-spinner bwi-spin" title="{{ 'loading' | i18n }}" aria-hidden="true"></i>
       <span>{{ "reinstateSubscription" | i18n }}</span>
@@ -113,8 +113,8 @@
       </button>
       <app-change-plan
         [organizationId]="organizationId"
-        (onChanged)="closeChangePlan(true)"
-        (onCanceled)="closeChangePlan(false)"
+        (onChanged)="closeChangePlan()"
+        (onCanceled)="closeChangePlan()"
         *ngIf="showChangePlan"
       ></app-change-plan>
     </ng-container>
@@ -143,7 +143,7 @@
       class="btn btn-outline-danger btn-submit"
       (click)="removeSponsorship()"
       [appApiAction]="removeSponsorshipPromise"
-      [disabled]="removeSponsorshipBtn.loading"
+      [disabled]="$any(removeSponsorshipBtn).loading"
       *ngIf="isSponsoredSubscription"
     >
       <i class="bwi bwi-spinner bwi-spin" title="{{ 'loading' | i18n }}" aria-hidden="true"></i>
@@ -230,7 +230,7 @@
         class="btn btn-outline-danger btn-submit ml-1"
         (click)="cancel()"
         [appApiAction]="cancelPromise"
-        [disabled]="cancelBtn.loading"
+        [disabled]="$any(cancelBtn).loading"
         *ngIf="subscription && !subscription.cancelled && !subscriptionMarkedForCancel"
       >
         <i class="bwi bwi-spinner bwi-spin" title="{{ 'loading' | i18n }}" aria-hidden="true"></i>

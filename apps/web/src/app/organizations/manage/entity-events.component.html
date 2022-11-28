@@ -52,11 +52,11 @@
             type="button"
             class="btn btn-sm btn-outline-primary ml-3"
             (click)="loadEvents(true)"
-            [disabled]="loaded && refreshBtn.loading"
+            [disabled]="loaded && $any(refreshBtn).loading"
           >
             <i
               class="bwi bwi-refresh bwi-fw"
-              [ngClass]="{ 'bwi-spin': loaded && refreshBtn.loading }"
+              [ngClass]="{ 'bwi-spin': loaded && $any(refreshBtn).loading }"
               aria-hidden="true"
             ></i>
             {{ "refresh" | i18n }}
@@ -101,7 +101,7 @@
           type="button"
           class="btn btn-block btn-link btn-submit"
           (click)="loadEvents(false)"
-          [disabled]="loaded && moreBtn.loading"
+          [disabled]="loaded && $any(moreBtn).loading"
           *ngIf="continuationToken"
         >
           <i class="bwi bwi-spinner bwi-spin" title="{{ 'loading' | i18n }}" aria-hidden="true"></i>

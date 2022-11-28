@@ -17,11 +17,15 @@
       class="btn block primary"
       (click)="sync()"
       #syncBtn
-      [disabled]="syncBtn.loading"
+      [disabled]="$any(syncBtn).loading"
       [appApiAction]="syncPromise"
     >
-      <span [hidden]="syncBtn.loading">{{ "syncVaultNow" | i18n }}</span>
-      <i class="bwi bwi-spinner bwi-lg bwi-spin" [hidden]="!syncBtn.loading" aria-hidden="true"></i>
+      <span [hidden]="$any(syncBtn).loading">{{ "syncVaultNow" | i18n }}</span>
+      <i
+        class="bwi bwi-spinner bwi-lg bwi-spin"
+        [hidden]="!$any(syncBtn).loading"
+        aria-hidden="true"
+      ></i>
     </button>
     <p class="text-center text-muted small">{{ "lastSync" | i18n }} {{ lastSync }}</p>
   </div>

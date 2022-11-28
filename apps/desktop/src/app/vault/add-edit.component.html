@@ -75,16 +75,16 @@
                   appA11yTitle="{{ 'checkPassword' | i18n }}"
                   (click)="checkPassword()"
                   [appApiAction]="checkPasswordPromise"
-                  [disabled]="checkPasswordBtn.loading"
+                  [disabled]="$any(checkPasswordBtn).loading"
                 >
                   <i
                     class="bwi bwi-lg bwi-check-circle"
-                    [hidden]="checkPasswordBtn.loading"
+                    [hidden]="$any(checkPasswordBtn).loading"
                     aria-hidden="true"
                   ></i>
                   <i
                     class="bwi bwi-lg bwi-spinner bwi-spin"
-                    [hidden]="!checkPasswordBtn.loading"
+                    [hidden]="!$any(checkPasswordBtn).loading"
                     aria-hidden="true"
                   ></i>
                 </button>
@@ -485,7 +485,10 @@
                   id="loginUriMatch{{ i }}"
                   name="Login.Uris[{{ i }}].Match"
                   [(ngModel)]="u.match"
-                  [hidden]="u.showOptions === false || (u.showOptions == null && u.match == null)"
+                  [hidden]="
+                    $any(u).showOptions === false ||
+                    ($any(u).showOptions == null && u.match == null)
+                  "
                   (change)="loginUriMatchChanged(u)"
                 >
                   <option *ngFor="let o of uriMatchOptions" [ngValue]="o.value">
@@ -501,7 +504,10 @@
                   appA11yTitle="{{ 'toggleOptions' | i18n }}"
                   (click)="toggleUriOptions(u)"
                   [attr.aria-expanded]="
-                    !(u.showOptions === false || (u.showOptions == null && u.match == null))
+                    !(
+                      $any(u).showOptions === false ||
+                      ($any(u).showOptions == null && u.match == null)
+                    )
                   "
                 >
                   <i class="bwi bwi-lg bwi-cog" aria-hidden="true"></i>
@@ -634,7 +640,7 @@
             <input
               id="collection_{{ i }}"
               type="checkbox"
-              [(ngModel)]="c.checked"
+              [(ngModel)]="$any(c).checked"
               name="Collection[{{ i }}].Checked"
             />
           </div>
@@ -647,12 +653,16 @@
       type="submit"
       class="primary"
       appA11yTitle="{{ 'save' | i18n }}"
-      [disabled]="form.loading"
+      [disabled]="$any(form).loading"
     >
-      <i class="bwi bwi-save-changes bwi-lg bwi-fw" [hidden]="form.loading" aria-hidden="true"></i>
+      <i
+        class="bwi bwi-save-changes bwi-lg bwi-fw"
+        [hidden]="$any(form).loading"
+        aria-hidden="true"
+      ></i>
       <i
         class="bwi bwi-spinner bwi-spin bwi-lg bwi-fw"
-        [hidden]="!form.loading"
+        [hidden]="!$any(form).loading"
         aria-hidden="true"
       ></i>
     </button>
@@ -675,13 +685,17 @@
         class="danger"
         appA11yTitle="{{ 'delete' | i18n }}"
         *ngIf="editMode && !cloneMode"
-        [disabled]="deleteBtn.loading"
+        [disabled]="$any(deleteBtn).loading"
         [appApiAction]="deletePromise"
       >
-        <i class="bwi bwi-trash bwi-lg bwi-fw" [hidden]="deleteBtn.loading" aria-hidden="true"></i>
+        <i
+          class="bwi bwi-trash bwi-lg bwi-fw"
+          [hidden]="$any(deleteBtn).loading"
+          aria-hidden="true"
+        ></i>
         <i
           class="bwi bwi-spinner bwi-spin bwi-lg bwi-fw"
-          [hidden]="!deleteBtn.loading"
+          [hidden]="!$any(deleteBtn).loading"
           aria-hidden="true"
         ></i>
       </button>

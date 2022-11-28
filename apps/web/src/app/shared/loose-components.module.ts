@@ -1,7 +1,5 @@
 import { NgModule } from "@angular/core";
 
-import { UserVerificationComponent } from "@bitwarden/angular/components/user-verification.component";
-
 import { AcceptEmergencyComponent } from "../accounts/accept-emergency.component";
 import { AcceptOrganizationComponent } from "../accounts/accept-organization.component";
 import { HintComponent } from "../accounts/hint.component";
@@ -24,6 +22,7 @@ import { OrganizationSwitcherComponent } from "../components/organization-switch
 import { PasswordRepromptComponent } from "../components/password-reprompt.component";
 import { PremiumBadgeComponent } from "../components/premium-badge.component";
 import { UserVerificationPromptComponent } from "../components/user-verification-prompt.component";
+import { UserVerificationComponent } from "../components/user-verification.component";
 import { FooterComponent } from "../layouts/footer.component";
 import { FrontendLayoutComponent } from "../layouts/frontend-layout.component";
 import { NavbarComponent } from "../layouts/navbar.component";
@@ -124,7 +123,6 @@ import { BulkRestoreComponent } from "../vault/bulk-restore.component";
 import { BulkShareComponent } from "../vault/bulk-share.component";
 import { CollectionsComponent } from "../vault/collections.component";
 import { FolderAddEditComponent } from "../vault/folder-add-edit.component";
-import { OrganizationBadgeModule } from "../vault/organization-badge/organization-badge.module";
 import { ShareComponent } from "../vault/share.component";
 import { VaultFilterModule } from "../vault/vault-filter/vault-filter.module";
 
@@ -133,13 +131,7 @@ import { SharedModule } from ".";
 // Please do not add to this list of declarations - we should refactor these into modules when doing so makes sense until there are none left.
 // If you are building new functionality, please create or extend a feature module instead.
 @NgModule({
-  imports: [
-    SharedModule,
-    VaultFilterModule,
-    OrganizationBadgeModule,
-    OrganizationCreateModule,
-    RegisterFormModule,
-  ],
+  imports: [SharedModule, VaultFilterModule, OrganizationCreateModule, RegisterFormModule],
   declarations: [
     PremiumBadgeComponent,
     AcceptEmergencyComponent,

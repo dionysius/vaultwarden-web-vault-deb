@@ -1,6 +1,7 @@
 import { Directive, EventEmitter, Input, Output } from "@angular/core";
 
 import { SearchService } from "@bitwarden/common/abstractions/search.service";
+import { Organization } from "@bitwarden/common/models/domain/organization";
 import { CipherView } from "@bitwarden/common/models/view/cipher.view";
 
 @Directive()
@@ -17,6 +18,8 @@ export class VaultItemsComponent {
   searchPlaceholder: string = null;
   filter: (cipher: CipherView) => boolean = null;
   deleted = false;
+  organization: Organization;
+  accessEvents = false;
 
   protected searchPending = false;
 

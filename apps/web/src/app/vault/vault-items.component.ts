@@ -289,6 +289,10 @@ export class VaultItemsComponent extends BaseVaultItemsComponent implements OnDe
     this.onOrganzationBadgeClicked.emit(organizationId);
   }
 
+  events(c: CipherView) {
+    // TODO: This should be removed but is needed since we reuse the same template
+  }
+
   protected deleteCipher(id: string, permanent: boolean) {
     return permanent
       ? this.cipherService.deleteWithServer(id)

@@ -1,5 +1,7 @@
 import { CdkStepper } from "@angular/cdk/stepper";
-import { Component, Input } from "@angular/core";
+import { Component, Input, QueryList } from "@angular/core";
+
+import { VerticalStep } from "./vertical-step.component";
 
 @Component({
   selector: "app-vertical-stepper",
@@ -7,6 +9,8 @@ import { Component, Input } from "@angular/core";
   providers: [{ provide: CdkStepper, useExisting: VerticalStepperComponent }],
 })
 export class VerticalStepperComponent extends CdkStepper {
+  readonly steps: QueryList<VerticalStep>;
+
   @Input()
   activeClass = "active";
 

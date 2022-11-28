@@ -200,7 +200,7 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
     }
   }
 
-  private async load() {
+  protected async load() {
     this.isLoading = false;
     this.tab = await BrowserApi.getTabFromCurrentWindow();
     if (this.tab != null) {

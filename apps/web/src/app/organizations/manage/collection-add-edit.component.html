@@ -81,7 +81,7 @@
                 <td class="table-list-checkbox" (click)="check(g)">
                   <input
                     type="checkbox"
-                    [(ngModel)]="g.checked"
+                    [(ngModel)]="$any(g).checked"
                     name="Groups[{{ i }}].Checked"
                     [disabled]="g.accessAll || !this.canSave"
                     appStopProp
@@ -101,17 +101,17 @@
                 <td class="text-center">
                   <input
                     type="checkbox"
-                    [(ngModel)]="g.hidePasswords"
+                    [(ngModel)]="$any(g).hidePasswords"
                     name="Groups[{{ i }}].HidePasswords"
-                    [disabled]="!g.checked || g.accessAll || !this.canSave"
+                    [disabled]="!$any(g).checked || g.accessAll || !this.canSave"
                   />
                 </td>
                 <td class="text-center">
                   <input
                     type="checkbox"
-                    [(ngModel)]="g.readOnly"
+                    [(ngModel)]="$any(g).readOnly"
                     name="Groups[{{ i }}].ReadOnly"
-                    [disabled]="!g.checked || g.accessAll || !this.canSave"
+                    [disabled]="!$any(g).checked || g.accessAll || !this.canSave"
                   />
                 </td>
               </tr>
@@ -140,17 +140,17 @@
             class="btn btn-outline-danger"
             appA11yTitle="{{ 'delete' | i18n }}"
             *ngIf="editMode"
-            [disabled]="deleteBtn.loading"
+            [disabled]="$any(deleteBtn).loading"
             [appApiAction]="deletePromise"
           >
             <i
               class="bwi bwi-trash bwi-lg bwi-fw"
-              [hidden]="deleteBtn.loading"
+              [hidden]="$any(deleteBtn).loading"
               aria-hidden="true"
             ></i>
             <i
               class="bwi bwi-spinner bwi-spin bwi-lg bwi-fw"
-              [hidden]="!deleteBtn.loading"
+              [hidden]="!$any(deleteBtn).loading"
               title="{{ 'loading' | i18n }}"
               aria-hidden="true"
             ></i>

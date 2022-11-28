@@ -29,7 +29,7 @@ export class PoliciesComponent implements OnInit {
   organization: Organization;
 
   private orgPolicies: PolicyResponse[];
-  private policiesEnabledMap: Map<PolicyType, boolean> = new Map<PolicyType, boolean>();
+  protected policiesEnabledMap: Map<PolicyType, boolean> = new Map<PolicyType, boolean>();
 
   constructor(
     private route: ActivatedRoute,

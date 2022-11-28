@@ -98,7 +98,7 @@
     type="button"
     class="btn btn-block btn-link btn-submit"
     (click)="loadEvents(false)"
-    [disabled]="loaded && moreBtn.loading"
+    [disabled]="loaded && $any(moreBtn).loading"
     *ngIf="continuationToken"
   >
     <i class="bwi bwi-spinner bwi-spin" title="{{ 'loading' | i18n }}" aria-hidden="true"></i>

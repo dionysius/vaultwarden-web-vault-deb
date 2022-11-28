@@ -292,4 +292,8 @@ export class AttachmentsComponent implements OnInit {
   protected deleteCipherAttachment(attachmentId: string) {
     return this.cipherService.deleteAttachmentWithServer(this.cipher.id, attachmentId);
   }
+
+  protected async reupload(attachment: AttachmentView) {
+    // TODO: This should be removed but is needed since we re-use the same template
+  }
 }

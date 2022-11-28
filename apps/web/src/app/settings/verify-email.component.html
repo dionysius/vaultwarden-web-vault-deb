@@ -9,7 +9,7 @@
       class="btn btn-block btn-outline-secondary btn-submit"
       #sendBtn
       [appApiAction]="actionPromise"
-      [disabled]="sendBtn.loading"
+      [disabled]="$any(sendBtn).loading"
       (click)="send()"
     >
       <i class="bwi bwi-spin bwi-spinner" title="{{ 'loading' | i18n }}" aria-hidden="true"></i>

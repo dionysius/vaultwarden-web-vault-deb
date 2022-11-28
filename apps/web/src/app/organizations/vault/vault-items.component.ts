@@ -12,7 +12,6 @@ import { SearchService } from "@bitwarden/common/abstractions/search.service";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { TokenService } from "@bitwarden/common/abstractions/token.service";
 import { TotpService } from "@bitwarden/common/abstractions/totp.service";
-import { Organization } from "@bitwarden/common/models/domain/organization";
 import { CipherView } from "@bitwarden/common/models/view/cipher.view";
 
 import { VaultItemsComponent as BaseVaultItemsComponent } from "../../vault/vault-items.component";
@@ -23,9 +22,6 @@ import { VaultItemsComponent as BaseVaultItemsComponent } from "../../vault/vaul
 })
 export class VaultItemsComponent extends BaseVaultItemsComponent {
   @Output() onEventsClicked = new EventEmitter<CipherView>();
-
-  organization: Organization;
-  accessEvents = false;
 
   protected allCiphers: CipherView[] = [];
 
@@ -86,6 +82,7 @@ export class VaultItemsComponent extends BaseVaultItemsComponent {
   async search(timeout: number = null) {
     await super.search(timeout, this.allCiphers);
   }
+
   events(c: CipherView) {
     this.onEventsClicked.emit(c);
   }

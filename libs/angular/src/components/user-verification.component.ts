@@ -1,6 +1,5 @@
-import { animate, style, transition, trigger } from "@angular/animations";
-import { Component, OnInit } from "@angular/core";
-import { ControlValueAccessor, NG_VALUE_ACCESSOR, FormControl } from "@angular/forms";
+import { Directive, OnInit } from "@angular/core";
+import { ControlValueAccessor, FormControl } from "@angular/forms";
 
 import { KeyConnectorService } from "@bitwarden/common/abstractions/keyConnector.service";
 import { UserVerificationService } from "@bitwarden/common/abstractions/userVerification/userVerification.service.abstraction";
@@ -14,21 +13,8 @@ import { Verification } from "@bitwarden/common/types/verification";
  * This is exposed to the parent component via the ControlValueAccessor interface (e.g. bind it to a FormControl).
  * Use UserVerificationService to verify the user's input.
  */
-@Component({
+@Directive({
   selector: "app-user-verification",
-  templateUrl: "user-verification.component.html",
-  providers: [
-    {
-      provide: NG_VALUE_ACCESSOR,
-      multi: true,
-      useExisting: UserVerificationComponent,
-    },
-  ],
-  animations: [
-    trigger("sent", [
-      transition(":enter", [style({ opacity: 0 }), animate("100ms", style({ opacity: 1 }))]),
-    ]),
-  ],
 })
 // eslint-disable-next-line rxjs-angular/prefer-takeuntil
 export class UserVerificationComponent implements ControlValueAccessor, OnInit {

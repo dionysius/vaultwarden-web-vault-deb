@@ -25,7 +25,7 @@
         *ngIf="!isSelfHosted && !sponsoringOrg.familySponsorshipValidUntil"
         [appApiAction]="resendEmailPromise"
         class="dropdown-item btn-submit"
-        [disabled]="resendEmailBtn.loading"
+        [disabled]="$any(resendEmailBtn).loading"
         (click)="resendEmail()"
         [attr.aria-label]="'resendEmailLabel' | i18n: sponsoringOrg.familySponsorshipFriendlyName"
       >
@@ -36,7 +36,7 @@
         #revokeSponsorshipBtn
         [appApiAction]="revokeSponsorshipPromise"
         class="dropdown-item text-danger btn-submit"
-        [disabled]="revokeSponsorshipBtn.loading"
+        [disabled]="$any(revokeSponsorshipBtn).loading"
         (click)="revokeSponsorship()"
         [attr.aria-label]="'revokeAccount' | i18n: sponsoringOrg.familySponsorshipFriendlyName"
       >

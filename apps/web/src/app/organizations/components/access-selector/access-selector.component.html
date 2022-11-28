@@ -53,11 +53,13 @@
           <div class="tw-flex tw-flex-col">
             <div class="tw-text-sm">
               {{ item.labelName }}
-              <span *ngIf="item.status == 0" bitBadge badgeType="secondary">
+              <span *ngIf="$any(item).status == 0" bitBadge badgeType="secondary">
                 {{ "invited" | i18n }}
               </span>
             </div>
-            <div class="tw-text-xs tw-text-muted" *ngIf="item.status != 0">{{ item.email }}</div>
+            <div class="tw-text-xs tw-text-muted" *ngIf="$any(item).status != 0">
+              {{ $any(item).email }}
+            </div>
           </div>
         </div>
 
@@ -110,11 +112,11 @@
       </td>
 
       <td bitCell *ngIf="showMemberRoles">
-        {{ item.role | userType: "-" }}
+        {{ $any(item).role | userType: "-" }}
       </td>
 
       <td bitCell *ngIf="showGroupColumn">
-        {{ item.viaGroupName ?? "-" }}
+        {{ $any(item).viaGroupName ?? "-" }}
       </td>
 
       <td bitCell>

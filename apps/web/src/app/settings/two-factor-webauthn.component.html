@@ -18,7 +18,7 @@
       <app-two-factor-verify
         [organizationId]="organizationId"
         [type]="type"
-        (onAuthed)="auth($event)"
+        (onAuthed)="auth($any($event))"
         *ngIf="!authed"
       >
       </app-two-factor-verify>
@@ -54,7 +54,7 @@
               <i class="bwi bwi-li bwi-key"></i>
               <strong *ngIf="!k.configured || !k.name">{{ "webAuthnkeyX" | i18n: i + 1 }}</strong>
               <strong *ngIf="k.configured && k.name">{{ k.name }}</strong>
-              <ng-container *ngIf="k.configured && !removeKeyBtn.loading">
+              <ng-container *ngIf="k.configured && !$any(removeKeyBtn).loading">
                 <ng-container *ngIf="k.migrated">
                   <span>{{ "webAuthnMigrated" | i18n }}</span>
                 </ng-container>
@@ -63,7 +63,7 @@
                 <i
                   class="bwi bwi-spin bwi-spinner text-muted bwi-fw"
                   title="{{ 'loading' | i18n }}"
-                  *ngIf="removeKeyBtn.loading"
+                  *ngIf="$any(removeKeyBtn).loading"
                   aria-hidden="true"
                 ></i>
                 -
@@ -96,16 +96,16 @@
             type="button"
             (click)="readKey()"
             class="btn btn-outline-secondary mr-2"
-            [disabled]="readKeyBtn.loading || webAuthnListening || !keyIdAvailable"
+            [disabled]="$any(readKeyBtn).loading || webAuthnListening || !keyIdAvailable"
             #readKeyBtn
             [appApiAction]="challengePromise"
           >
             {{ "readKey" | i18n }}
           </button>
-          <ng-container *ngIf="readKeyBtn.loading">
+          <ng-container *ngIf="$any(readKeyBtn).loading">
             <i class="bwi bwi-spinner bwi-spin text-muted" aria-hidden="true"></i>
           </ng-container>
-          <ng-container *ngIf="!readKeyBtn.loading">
+          <ng-container *ngIf="!$any(readKeyBtn).loading">
             <ng-container *ngIf="webAuthnListening">
               <i class="bwi bwi-spinner bwi-spin text-muted" aria-hidden="true"></i>
               {{ "twoFactorU2fWaiting" | i18n }}...
@@ -138,8 +138,7 @@
             #disableBtn
             type="button"
             class="btn btn-outline-secondary btn-submit"
-            [appApiAction]="disablePromise"
-            [disabled]="disableBtn.loading"
+            [disabled]="$any(disableBtn).loading"
             (click)="disable()"
             *ngIf="enabled"
           >

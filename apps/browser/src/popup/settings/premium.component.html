@@ -49,14 +49,14 @@
         #refreshBtn
         type="button"
         (click)="refresh()"
-        [disabled]="refreshBtn.loading"
+        [disabled]="$any(refreshBtn).loading"
         [appApiAction]="refreshPromise"
         class="btn link block"
       >
-        <span [hidden]="refreshBtn.loading">{{ "premiumRefresh" | i18n }}</span>
+        <span [hidden]="$any(refreshBtn).loading">{{ "premiumRefresh" | i18n }}</span>
         <i
           class="bwi bwi-spinner bwi-spin bwi-lg bwi-fw"
-          [hidden]="!refreshBtn.loading"
+          [hidden]="!$any(refreshBtn).loading"
           aria-hidden="true"
         ></i>
       </button>

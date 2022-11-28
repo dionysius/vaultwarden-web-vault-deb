@@ -12,7 +12,7 @@
     <app-avatar
       [text]="activeAccount.name"
       [id]="activeAccount.id"
-      size="25"
+      [size]="25"
       [circle]="true"
       [fontSize]="14"
       [dynamic]="true"
@@ -61,7 +61,7 @@
         <app-avatar
           [text]="a.value.profile.name ?? a.value.profile.email"
           [id]="a.value.profile.userId"
-          size="25"
+          [size]="25"
           [circle]="true"
           [fontSize]="14"
           [dynamic]="true"

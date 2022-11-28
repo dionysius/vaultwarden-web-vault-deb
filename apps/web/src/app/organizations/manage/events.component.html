@@ -95,7 +95,7 @@
     bitButton
     buttonType="primary"
     (click)="loadEvents(false)"
-    [disabled]="loaded && moreBtn.loading"
+    [disabled]="loaded && $any(moreBtn).loading"
     *ngIf="continuationToken"
   >
     <i

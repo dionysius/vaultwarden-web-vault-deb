@@ -18,7 +18,7 @@
       <app-two-factor-verify
         [organizationId]="organizationId"
         [type]="type"
-        (onAuthed)="auth($event)"
+        (onAuthed)="auth($any($event))"
         *ngIf="!authed"
       >
       </app-two-factor-verify>
@@ -104,7 +104,7 @@
             type="button"
             class="btn btn-outline-secondary btn-submit"
             [appApiAction]="disablePromise"
-            [disabled]="disableBtn.loading"
+            [disabled]="$any(disableBtn).loading"
             (click)="disable()"
             *ngIf="enabled"
           >

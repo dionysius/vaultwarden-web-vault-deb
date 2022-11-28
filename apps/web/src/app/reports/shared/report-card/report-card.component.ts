@@ -1,5 +1,7 @@
 import { Component, Input } from "@angular/core";
 
+import { Icon } from "@bitwarden/components";
+
 import { ReportVariant } from "../models/report-variant";
 
 @Component({
@@ -10,7 +12,7 @@ export class ReportCardComponent {
   @Input() title: string;
   @Input() description: string;
   @Input() route: string;
-  @Input() icon: string;
+  @Input() icon: Icon;
   @Input() variant: ReportVariant;
 
   protected get disabled() {

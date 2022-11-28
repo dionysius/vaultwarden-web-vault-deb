@@ -10,7 +10,7 @@
     <tbody>
       <tr *ngFor="let c of filteredCiphers">
         <td (click)="checkCipher(c)" class="table-list-checkbox">
-          <input type="checkbox" [(ngModel)]="c.checked" appStopProp />
+          <input type="checkbox" [(ngModel)]="$any(c).checked" appStopProp />
         </td>
         <td (click)="checkCipher(c)" class="table-list-icon">
           <app-vault-icon [cipher]="c"></app-vault-icon>

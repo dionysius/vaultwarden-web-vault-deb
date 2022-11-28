@@ -23,6 +23,7 @@ import { SecureNoteType } from "@bitwarden/common/enums/secureNoteType";
 import { UriMatchType } from "@bitwarden/common/enums/uriMatchType";
 import { Utils } from "@bitwarden/common/misc/utils";
 import { Cipher } from "@bitwarden/common/models/domain/cipher";
+import { Organization } from "@bitwarden/common/models/domain/organization";
 import { CardView } from "@bitwarden/common/models/view/card.view";
 import { CipherView } from "@bitwarden/common/models/view/cipher.view";
 import { CollectionView } from "@bitwarden/common/models/view/collection.view";
@@ -74,6 +75,7 @@ export class AddEditComponent implements OnInit, OnDestroy {
   allowPersonal = true;
   reprompt = false;
   canUseReprompt = true;
+  organization: Organization;
 
   protected destroy$ = new Subject<void>();
   protected writeableCollections: CollectionView[];
