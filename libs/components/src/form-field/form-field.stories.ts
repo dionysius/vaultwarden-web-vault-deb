@@ -166,13 +166,9 @@ const ButtonGroupTemplate: Story<BitFormFieldComponent> = (args: BitFormFieldCom
   template: `
     <bit-form-field>
       <bit-label>Label</bit-label>
-      <input bitInput placeholder="Placeholder" />
-      <button bitSuffix bitButton>
-        <i aria-hidden="true" class="bwi bwi-lg bwi-eye"></i>
-      </button>
-      <button bitSuffix bitButton>
-        <i aria-hidden="true" class="bwi bwi-lg bwi-clone"></i>
-      </button>
+      <input bitInput placeholder="Placeholder" type="password" />
+      <button bitSuffix bitButton bitIconButton="bwi-eye"></button>
+      <button bitSuffix bitButton bitIconButton="bwi-clone"></button>
     </bit-form-field>
   `,
 });
@@ -188,12 +184,8 @@ const DisabledButtonInputGroupTemplate: Story<BitFormFieldComponent> = (
     <bit-form-field>
       <bit-label>Label</bit-label>
       <input bitInput placeholder="Placeholder" disabled />
-      <button bitSuffix bitButton disabled>
-        <i aria-hidden="true" class="bwi bwi-lg bwi-eye"></i>
-      </button>
-      <button bitSuffix bitButton>
-        <i aria-hidden="true" class="bwi bwi-lg bwi-clone"></i>
-      </button>
+      <button bitSuffix bitButton bitIconButton="bwi-eye" disabled></button>
+      <button bitSuffix bitButton bitIconButton="bwi-clone"></button>
     </bit-form-field>
   `,
 });

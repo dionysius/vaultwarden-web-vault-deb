@@ -79,7 +79,7 @@ const sizes: Record<IconButtonSize, string[]> = {
 };
 
 @Component({
-  selector: "button[bitIconButton]",
+  selector: "button[bitIconButton]:not(button[bitButton])",
   templateUrl: "icon-button.component.html",
   providers: [{ provide: ButtonLikeAbstraction, useExisting: BitIconButtonComponent }],
 })

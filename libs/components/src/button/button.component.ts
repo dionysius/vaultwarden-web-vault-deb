@@ -76,7 +76,16 @@ export class ButtonComponent implements ButtonLikeAbstraction {
   }
 
   @Input() buttonType: ButtonTypes = null;
+
   @Input() block?: boolean;
+
   @Input() loading = false;
+
   @Input() disabled = false;
+
+  @Input("bitIconButton") icon: string;
+
+  get iconClass() {
+    return [this.icon, "!tw-m-0"];
+  }
 }

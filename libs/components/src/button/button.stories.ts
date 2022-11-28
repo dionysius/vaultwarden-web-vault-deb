@@ -101,3 +101,17 @@ export const Block = BlockTemplate.bind({});
 Block.args = {
   block: true,
 };
+
+const IconTemplate: Story = (args) => ({
+  props: args,
+  template: `
+    <button bitButton [bitIconButton]="icon" buttonType="primary" class="tw-mr-2"></button>
+    <button bitButton [bitIconButton]="icon"buttonType="secondary" class="tw-mr-2"></button>
+    <button bitButton [bitIconButton]="icon" buttonType="danger" class="tw-mr-2"></button>
+  `,
+});
+
+export const Icon = IconTemplate.bind({});
+Icon.args = {
+  icon: "bwi-eye",
+};

@@ -1,4 +1,4 @@
-import { Directive, HostBinding, Input, Optional, Self } from "@angular/core";
+import { Directive, ElementRef, HostBinding, Input, NgZone, Optional, Self } from "@angular/core";
 import { NgControl, Validators } from "@angular/forms";
 
 import { BitFormFieldControl } from "../form-field/form-field-control";
@@ -41,13 +41,13 @@ export class BitInputDirective implements BitFormFieldControl {
 
   @HostBinding("attr.aria-describedby") ariaDescribedBy: string;
 
-  get labelForId(): string {
-    return this.id;
-  }
-
   @HostBinding("attr.aria-invalid") get ariaInvalid() {
     return this.hasError ? true : undefined;
   }
+
+  @HostBinding("attr.type") @Input() type?: "text" | "password";
+
+  @HostBinding("attr.spellcheck") @Input() spellcheck?: boolean;
 
   @HostBinding()
   @Input()
@@ -62,6 +62,10 @@ export class BitInputDirective implements BitFormFieldControl {
   @Input() hasPrefix = false;
   @Input() hasSuffix = false;
 
+  get labelForId(): string {
+    return this.id;
+  }
+
   get hasError() {
     return this.ngControl?.status === "INVALID" && this.ngControl?.touched;
   }
@@ -70,5 +74,18 @@ export class BitInputDirective implements BitFormFieldControl {
     const key = Object.keys(this.ngControl.errors)[0];
     return [key, this.ngControl.errors[key]];
   }
-  constructor(@Optional() @Self() private ngControl: NgControl) {}
+
+  constructor(
+    @Optional() @Self() private ngControl: NgControl,
+    private ngZone: NgZone,
+    private elementRef: ElementRef<HTMLInputElement>
+  ) {}
+
+  focus() {
+    this.ngZone.runOutsideAngular(() => {
+      const end = this.elementRef.nativeElement.value.length;
+      this.elementRef.nativeElement.setSelectionRange(end, end);
+      this.elementRef.nativeElement.focus();
+    });
+  }
 }
