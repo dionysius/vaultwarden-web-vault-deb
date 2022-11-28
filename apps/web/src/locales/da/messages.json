@@ -3878,7 +3878,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendProtectedPassword": {
-    "message": "Denne Send er beskyttet med en adgangskode. Indtast adgangskoden nedenfor for at fortsætte.",
+    "message": "Denne Send er adgangskodebeskyttet. Angiv adgangskoden nedenfor for at fortsætte.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendProtectedPasswordDontKnow": {
@@ -3893,11 +3893,11 @@
     "message": "Download fil"
   },
   "sendAccessUnavailable": {
-    "message": "Den Send, du forsøger at tilgå, findes ikke eller er ikke længere tilgængelig.",
+    "message": "Den Send, der forsøges tilgået, findes ikke, eller er ikke længere tilgængelig.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "missingSendFile": {
-    "message": "Filen, der er knyttet til denne Send, blev ikke fundet.",
+    "message": "Filen tilknyttet denne Send kunne ikke findes.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "noSendsInList": {
@@ -3917,7 +3917,7 @@
     "message": "Betroede nødkontakter"
   },
   "noTrustedContacts": {
-    "message": "Du har endnu ikke tilføjet nødkontakter. Invitér en betroet kontakt for at komme i gang."
+    "message": "Ingen nødkontakter tilføjet endnu. Invitér en betroet kontakt for at komme i gang."
   },
   "addEmergencyContact": {
     "message": "Tilføj nødkontakt"
@@ -3995,7 +3995,7 @@
     "message": "Anmod om adgang"
   },
   "requestAccessConfirmation": {
-    "message": "Er du sikker på, at du vil anmode om nødadgang? Du vil opnå adgang efter $WAITTIME$ dag(e) eller når brugeren godkender anmodningen.",
+    "message": "Sikker på, at du vil anmode om nødadgang? Du tildeles adgang efter $WAITTIME$ dag(e), eller når brugeren godkender anmodningen.",
     "placeholders": {
       "waittime": {
         "content": "$1",
@@ -4019,7 +4019,7 @@
     "message": "Afvis"
   },
   "approveAccessConfirmation": {
-    "message": "Er du sikker på, at du vil godkende nødadgang? Dette vil tillade $USER$ at $ACTION$ din konto.",
+    "message": "Sikker på, at du vil godkende nødadgang? Dette vil tillade $USER$ at $ACTION$ din konto.",
     "placeholders": {
       "user": {
         "content": "$1",
@@ -4035,7 +4035,7 @@
     "message": "Nødadgang godkendt"
   },
   "emergencyRejected": {
-    "message": "Nødadgang afvist"
+    "message": "Nødadgang nægtet"
   },
   "passwordResetFor": {
     "message": "Adgangskode nulstillet for $USER$. Du kan nu logge ind med den nye adgangskode.",
@@ -4050,7 +4050,7 @@
     "message": "Fjern individuel boks"
   },
   "personalOwnershipPolicyDesc": {
-    "message": "Kræv at medlemmer gemmer elementer i en organisation ved at fjerne muligheden for individuelle bokse."
+    "message": "Kræv, at medlemmer gemmer emner i en organisation ved at fjerne muligheden for individuelle bokse."
   },
   "personalOwnershipExemption": {
     "message": "Organisationsejere og administratorer er undtaget fra denne politik."
@@ -4066,7 +4066,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "disableSendExemption": {
-    "message": "Organisationsbrugere, der kan håndtere organisationens politikker, er undtaget fra denne politiks håndhævelse."
+    "message": "Organisationsbrugere, som kan håndtere organisationens politikker, er undtaget fra håndhævelsen af denne politik."
   },
   "sendDisabled": {
     "message": "Send fjernet",
@@ -4085,7 +4085,7 @@
     "description": "'Sends' is a plural noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendOptionsExemption": {
-    "message": "Organisationsbrugere, som kan håndtere organisationens politikker, er undtaget fra denne politiks håndhævelse."
+    "message": "Organisationsbrugere, som kan håndtere organisationens politikker, er undtaget fra håndhævelsen af denne politik."
   },
   "disableHideEmail": {
     "message": "Vis altid medlemmets e-mailadresse med modtagere, når Sends oprettes eller redigeres.",
@@ -4095,7 +4095,7 @@
     "message": "Følgende organisationspolitikker er i øjeblikket gældende:"
   },
   "sendDisableHideEmailInEffect": {
-    "message": "Brugere har ikke lov til at skjule deres e-mailadresser for modtagere når en Send oprettes eller redigeres.",
+    "message": "Brugere har ikke lov til at skjule deres e-mailadresser for modtagere, når en Send oprettes eller redigeres.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "modifiedPolicyId": {
@@ -4108,7 +4108,7 @@
     }
   },
   "planPrice": {
-    "message": "Abonnementspris"
+    "message": "Abonnementstypepris"
   },
   "estimatedTax": {
     "message": "Anslået moms"
@@ -4202,17 +4202,17 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendNameDesc": {
-    "message": "Et venligt navn til at beskrive denne Send.",
+    "message": "Et logisk navn til at beskrive denne Send.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendTextDesc": {
-    "message": "Den tekst, du vil sende."
+    "message": "Teksten, du vil sende."
   },
   "sendFileDesc": {
-    "message": "Den fil, du vil sende."
+    "message": "Filen, du vil sende."
   },
   "copySendLinkOnSave": {
-    "message": "Kopier linket for at dele denne Send til min udklipsholder ved gem."
+    "message": "Kopiér linket for at dele denne Send til udklipsholden ved gem."
   },
   "sendLinkLabel": {
     "message": "Send link",
@@ -4266,7 +4266,7 @@
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Learn more about Bitwarden Send or sign up to **try it today.**'"
   },
   "sendCreatorIdentifier": {
-    "message": "Bitwarden bruger $USER_IDENTIFIER$ delte følgende med dig",
+    "message": "Bitwarden-bruger $USER_IDENTIFIER$ delte flg. med dig",
     "placeholders": {
       "user_identifier": {
         "content": "$1",
@@ -4275,7 +4275,7 @@
     }
   },
   "viewSendHiddenEmailWarning": {
-    "message": "Bitwarden-brugeren, der oprettede denne Send, har valgt at skjule sin e-mailadresse. Du bør sikre dig, at du stoler på kilden til dette link, inden du bruger eller downloader dets indhold.",
+    "message": "Bitwarden-brugeren, der oprettede denne Send, har valgt at skjule sin e-mailadresse. Du bør sikre dig, at du stoler på kilden til dette link, inden dets indhold downloades/benyttes.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "expirationDateIsInvalid": {
@@ -4285,13 +4285,13 @@
     "message": "Den angivne sletningsdato er ugyldig."
   },
   "expirationDateAndTimeRequired": {
-    "message": "Der kræves en udløbsdato og -tid."
+    "message": "Udløbsdato og -tidspunkt er obligatorisk."
   },
   "deletionDateAndTimeRequired": {
-    "message": "En sletningsdato og -tid er påkrævet."
+    "message": "Sletningsdato og -tidspunkt er obligatorisk."
   },
   "dateParsingError": {
-    "message": "Der opstod en fejl under forsøget på at gemme dine sletnings- og udløbsdatoer."
+    "message": "En fejl opstod under forsøget på at gemme sletnings- og udløbsdatoer."
   },
   "webAuthnFallbackMsg": {
     "message": "Klik på knappen nedenfor for at bekræfte din 2FA."
@@ -4324,7 +4324,7 @@
     "message": "Afmelding lykkedes!"
   },
   "eventEnrollPasswordReset": {
-    "message": "Bruger $ID$ tilmeldt hjælp til nulstilling af adgangskode.",
+    "message": "Bruger $ID$ tilmeldt adgangskodenulstilling.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -4333,7 +4333,7 @@
     }
   },
   "eventWithdrawPasswordReset": {
-    "message": "Bruger $ID$ afmeldt hjælp til nulstilling af adgangskode.",
+    "message": "Bruger $ID$ afmeldt adgangskodenulstilling.",
     "placeholders": {
       "id": {
         "content": "$1",

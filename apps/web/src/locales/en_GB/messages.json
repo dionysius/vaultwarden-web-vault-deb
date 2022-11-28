@@ -3137,10 +3137,10 @@
     "message": "Enter your installation ID"
   },
   "limitSubscriptionDesc": {
-    "message": "Set a seat limit for your subscription. Once this limit is reached, you will not be able to invite new users."
+    "message": "Set a seat limit for your subscription. Once this limit is reached, you will not be able to invite new members."
   },
   "maxSeatLimit": {
-    "message": "Maximum Seat Limit (optional)",
+    "message": "Seat Limit (optional)",
     "description": "Upper limit of seats to allow through autoscaling"
   },
   "maxSeatCost": {
@@ -3158,7 +3158,7 @@
     "message": "Adjustments to your subscription will result in prorated changes to your billing totals. If newly invited users exceed your subscription seats, you will immediately receive a prorated charge for the additional users."
   },
   "subscriptionUserSeats": {
-    "message": "Your subscription allows for a total of $COUNT$ users.",
+    "message": "Your subscription allows for a total of $COUNT$ members.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -3167,25 +3167,25 @@
     }
   },
   "limitSubscription": {
-    "message": "Limit Subscription (Optional)"
+    "message": "Limit subscription (optional)"
   },
   "subscriptionSeats": {
-    "message": "Subscription Seats"
+    "message": "Subscription seats"
   },
   "subscriptionUpdated": {
     "message": "Subscription updated"
   },
   "additionalOptions": {
-    "message": "Additional Options"
+    "message": "Additional options"
   },
   "additionalOptionsDesc": {
     "message": "For additional help in managing your subscription, please contact Customer Support."
   },
   "subscriptionUserSeatsUnlimitedAutoscale": {
-    "message": "Adjustments to your subscription will result in prorated changes to your billing totals. If newly invited users exceed your subscription seats, you will immediately receive a prorated charge for the additional users."
+    "message": "Adjustments to your subscription will result in pro-rated changes to your billing totals. If newly invited members exceed your subscription seats, you will immediately receive a pro-rated charge for the additional members."
   },
   "subscriptionUserSeatsLimitedAutoscale": {
-    "message": "Adjustments to your subscription will result in prorated changes to your billing totals. If newly invited users exceed your subscription seats, you will immediately receive a prorated charge for the additional users until your $MAX$ seat limit is reached.",
+    "message": "Adjustments to your subscription will result in pro-rated changes to your billing totals. If newly invited members exceed your subscription seats, you will immediately receive a pro-rated charge for the additional members until your $MAX$ seat limit is reached.",
     "placeholders": {
       "max": {
         "content": "$1",
@@ -3194,7 +3194,7 @@
     }
   },
   "subscriptionFreePlan": {
-    "message": "You cannot invite more than $COUNT$ users without upgrading your plan.",
+    "message": "You cannot invite more than $COUNT$ members without upgrading your plan.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -3203,7 +3203,7 @@
     }
   },
   "subscriptionFamiliesPlan": {
-    "message": "You cannot invite more than $COUNT$ users without upgrading your plan. Please contact Customer Support to upgrade.",
+    "message": "You cannot invite more than $COUNT$ members without upgrading your plan. Please contact Customer Support to upgrade.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -3212,7 +3212,7 @@
     }
   },
   "subscriptionSponsoredFamiliesPlan": {
-    "message": "Your subscription allows for a total of $COUNT$ users. Your plan is sponsored and billed to an external organisation.",
+    "message": "Your subscription allows for a total of $COUNT$ members. Your plan is sponsored and billed to an external organisation.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -3221,7 +3221,7 @@
     }
   },
   "subscriptionMaxReached": {
-    "message": "Adjustments to your subscription will result in prorated changes to your billing totals. You cannot invite more than $COUNT$ users without increasing your subscription seats.",
+    "message": "Adjustments to your subscription will result in pro-rated changes to your billing totals. You cannot invite more than $COUNT$ members without increasing your subscription seats.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -3287,7 +3287,7 @@
     "message": "This feature is not available for free organisations. Switch to a paid plan to unlock more features."
   },
   "createOrganizationStep1": {
-    "message": "Create organisation: step 1"
+    "message": "Create organisation: Step 1"
   },
   "createOrganizationCreatePersonalAccount": {
     "message": "Before creating your organisation, you first need to create a free personal account."
@@ -3353,10 +3353,10 @@
     "description": "ex. Date this password was updated"
   },
   "organizationIsDisabled": {
-    "message": "Organisation is disabled."
+    "message": "Organisation suspended"
   },
   "disabledOrganizationFilterError": {
-    "message": "Items in disabled Organisations cannot be accessed. Contact your Organisation owner for assistance."
+    "message": "Items in suspended organisations cannot be accessed. Contact your organisation owner for assistance."
   },
   "licenseIsExpired": {
     "message": "Licence is expired."
@@ -3432,7 +3432,7 @@
     "message": "Fingerprint phrase"
   },
   "dontAskFingerprintAgain": {
-    "message": "Never prompt to verify fingerprint phrases for invited users (Not recommended)",
+    "message": "Never prompt to verify fingerprint phrases for invited users (not recommended)",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "free": {
@@ -3501,10 +3501,10 @@
     "message": "Require members to set up two-step login."
   },
   "twoStepLoginPolicyWarning": {
-    "message": "Organisation members who are not Owners or Administrators and do not have two-step login turned on for their account will be removed from the organisation and will receive an email notifying them about the change."
+    "message": "Organisation members who are not owners or admins and do not have two-step login setup for their account will be removed from the organisation and will receive an email notifying them about the change."
   },
   "twoStepLoginPolicyUserWarning": {
-    "message": "You are a member of an organisation that requires two-step login to be enabled on your user account. If you disable all two-step login providers you will be automatically removed from these organisations."
+    "message": "You are a member of an organisation that requires two-step login to be setup on your user account. If you turn off all two-step login providers you will be automatically removed from these organisations."
   },
   "passwordGeneratorPolicyDesc": {
     "message": "Set requirements for password generator."
@@ -3596,10 +3596,10 @@
     "message": "Are you sure you want to permanently delete this item?"
   },
   "permanentlyDeletedItem": {
-    "message": "Permanently deleted item"
+    "message": "Item permanently deleted"
   },
   "permanentlyDeletedItems": {
-    "message": "Permanently deleted items"
+    "message": "Items permanently deleted"
   },
   "permanentlyDeleteSelectedItemsDesc": {
     "message": "You have selected $COUNT$ item(s) to permanently delete. Are you sure you want to permanently delete all of these items?",
@@ -3611,7 +3611,7 @@
     }
   },
   "permanentlyDeletedItemId": {
-    "message": "Permanently deleted item $ID$.",
+    "message": "Item $ID$ permanently deleted",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -3629,10 +3629,10 @@
     "message": "Restore item"
   },
   "restoredItem": {
-    "message": "Restored item"
+    "message": "Item restored"
   },
   "restoredItems": {
-    "message": "Restored items"
+    "message": "Items restored"
   },
   "restoreItemConfirmation": {
     "message": "Are you sure you want to restore this item?"
@@ -3650,7 +3650,7 @@
     }
   },
   "restoredItemId": {
-    "message": "Restored item $ID$.",
+    "message": "Item $ID$ restored",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -3692,7 +3692,7 @@
     "message": "Organisation identifier"
   },
   "ssoLogInWithOrgIdentifier": {
-    "message": "Log in using your organisation's single sign-on portal. Please enter your organisation's identifier to begin."
+    "message": "Log in using your organisation's single sign-on portal. Please enter your organisation's SSO identifier to begin."
   },
   "enterpriseSingleSignOn": {
     "message": "Enterprise single sign-on"
@@ -3713,7 +3713,7 @@
     "message": "SSO validation failed"
   },
   "ssoIdentifierRequired": {
-    "message": "Organisation identifier is required."
+    "message": "Organisation SSO identifier is required."
   },
   "ssoIdentifier": {
     "message": "SSO identifier"
@@ -3740,25 +3740,25 @@
     "message": "Your current organisation has a policy that does not allow you to join more than one organisation. Please contact your organisation admins or sign up from a different Bitwarden account."
   },
   "singleOrgPolicyWarning": {
-    "message": "Organisation members who are not Owners or Administrators and are already a member of another organisation will be removed from your organisation."
+    "message": "Organisation members who are not owners or admins and are already a member of another organisation will be removed from your organisation."
   },
   "requireSso": {
     "message": "Require single sign-on authentication"
   },
   "requireSsoPolicyDesc": {
-    "message": "Require members to log in with the Enterprise Single Sign-On method."
+    "message": "Require members to log in with the Enterprise single sign-on method."
   },
   "prerequisite": {
     "message": "Prerequisite"
   },
   "requireSsoPolicyReq": {
-    "message": "The Single Organization enterprise policy must be turned on before activating this policy."
+    "message": "The single organisation Enterprise policy must be turned on before activating this policy."
   },
   "requireSsoPolicyReqError": {
-    "message": "Single Organisation policy not enabled."
+    "message": "Single organisation policy not set up."
   },
   "requireSsoExemption": {
-    "message": "Organisation Owners and Administrators are exempt from this policy's enforcement."
+    "message": "Organisation owners and admins are exempt from this policy's enforcement."
   },
   "sendTypeFile": {
     "message": "File"
@@ -3767,7 +3767,7 @@
     "message": "Text"
   },
   "createSend": {
-    "message": "Create new send",
+    "message": "New Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editSend": {
@@ -3775,15 +3775,15 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createdSend": {
-    "message": "Created send",
+    "message": "Send saved",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editedSend": {
-    "message": "Edited send",
+    "message": "Send saved",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "deletedSend": {
-    "message": "Deleted send",
+    "message": "Send deleted",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "deleteSend": {
@@ -3841,14 +3841,14 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "copySendLink": {
-    "message": "Copy send link",
+    "message": "Copy Send link",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "removePassword": {
     "message": "Remove password"
   },
   "removedPassword": {
-    "message": "Removed password"
+    "message": "Password removed"
   },
   "removePasswordConfirmation": {
     "message": "Are you sure you want to remove the password?"
@@ -3857,7 +3857,7 @@
     "message": "Hide my email address from recipients."
   },
   "disableThisSend": {
-    "message": "Disable this Send so that no one can access it.",
+    "message": "Deactivate this Send so that no one can access it.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "allSends": {
@@ -3882,11 +3882,11 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendProtectedPasswordDontKnow": {
-    "message": "Don't know the password? Ask the sender for the password needed to access this send.",
+    "message": "Don't know the password? Ask the sender for the password needed to access this Send.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendHiddenByDefault": {
-    "message": "This send is hidden by default. You can toggle its visibility using the button below.",
+    "message": "This Send is hidden by default. You can toggle its visibility using the button below.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "downloadFile": {
@@ -3905,13 +3905,13 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "emergencyAccess": {
-    "message": "Emergency Access"
+    "message": "Emergency access"
   },
   "emergencyAccessDesc": {
     "message": "Grant and manage emergency access for trusted contacts. Trusted contacts may request access to either View or Takeover your account in case of a emergency. Visit our help page for more information and details into how zero knowledge sharing works."
   },
   "emergencyAccessOwnerWarning": {
-    "message": "You are an Owner of one or more organisations. If you give takeover access to an emergency contact, they will be able to use all your permissions as Owner after a takeover."
+    "message": "You are an owner of one or more organisations. If you give takeover access to an emergency contact, they will be able to use all your permissions as owner after a takeover."
   },
   "trustedEmergencyContacts": {
     "message": "Trusted emergency contacts"
@@ -3938,10 +3938,10 @@
     "message": "Invite a new emergency contact by entering their Bitwarden account email address below. If they do not have a Bitwarden account already, they will be prompted to create a new account."
   },
   "emergencyAccessRecoveryInitiated": {
-    "message": "Emergency Access Initiated"
+    "message": "Emergency access initiated"
   },
   "emergencyAccessRecoveryApproved": {
-    "message": "Emergency Access Approved"
+    "message": "Emergency access approved"
   },
   "viewDesc": {
     "message": "Can view all items in your own vault."
@@ -3953,7 +3953,7 @@
     "message": "Can reset your account with a new master password."
   },
   "waitTime": {
-    "message": "Wait Time"
+    "message": "Wait time"
   },
   "waitTimeDesc": {
     "message": "Time required before automatically granting access."
@@ -4032,7 +4032,7 @@
     }
   },
   "emergencyApproved": {
-    "message": "Emergency access approved."
+    "message": "Emergency access approved"
   },
   "emergencyRejected": {
     "message": "Emergency access rejected"
@@ -4053,27 +4053,27 @@
     "message": "Require members to save items to an organization by removing the individual vault option."
   },
   "personalOwnershipExemption": {
-    "message": "Organisation Owners and Administrators are exempt from this policy's enforcement."
+    "message": "Organisation owners and administrators are exempt from this policy's enforcement."
   },
   "personalOwnershipSubmitError": {
-    "message": "Due to an Enterprise Policy, you are restricted from saving items to your personal vault. Change the Ownership option to an organisation and choose from available Collections."
+    "message": "Due to an Enterprise policy, you are restricted from saving items to your individual vault. Change the ownership option to an organisation and choose from available collections."
   },
   "disableSend": {
     "message": "Remove Send"
   },
   "disableSendPolicyDesc": {
-    "message": "Do not allow members to create or edit sends.",
+    "message": "Do not allow members to create or edit Sends.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "disableSendExemption": {
-    "message": "Organisation users that can manage the organisation's policies are exempt from this policy's enforcement."
+    "message": "Organisation members that can manage the organisation's policies are exempt from this policy's enforcement."
   },
   "sendDisabled": {
-    "message": "Send disabled",
+    "message": "Send removed",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendDisabledWarning": {
-    "message": "Due to an enterprise policy, you are only able to delete an existing Send.",
+    "message": "Due to an Enterprise policy, you are only able to delete an existing Send.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendOptions": {
@@ -4085,10 +4085,10 @@
     "description": "'Sends' is a plural noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendOptionsExemption": {
-    "message": "Organisation users that can manage the organisation's policies are exempt from this policy's enforcement."
+    "message": "Organisation members that can manage the organisation's policies are exempt from this policy's enforcement."
   },
   "disableHideEmail": {
-    "message": "Always show member’s email address with recipients when creating or editing a send.",
+    "message": "Always show member’s email address with recipients when creating or editing a Send.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendOptionsPolicyInEffect": {
@@ -4132,22 +4132,22 @@
     "message": "Admin Permissions"
   },
   "accessEventLogs": {
-    "message": "Access Event Logs"
+    "message": "Access event logs"
   },
   "accessImportExport": {
-    "message": "Access Import/Export"
+    "message": "Access import/export"
   },
   "accessReports": {
-    "message": "Access Reports"
+    "message": "Access reports"
   },
   "missingPermissions": {
     "message": "You lack the necessary permissions to perform this action."
   },
   "manageAllCollections": {
-    "message": "Manage All Collections"
+    "message": "Manage all collections"
   },
   "createNewCollections": {
-    "message": "Create New Collections"
+    "message": "Create new collections"
   },
   "editAnyCollection": {
     "message": "Edit Any Collection"
