@@ -99,7 +99,7 @@ jobs:
             echo
             echo "If you want to pull a staged release because it hasn’t gone well, you must increment the version \
                   number higher than your broken release. Because some of your users will be on the broken 1.0.1, \
-                  releasing a new 1.0.1 would result in them staying on a broken version.”
+                  releasing a new 1.0.1 would result in them staying on a broken version."
             exit 1
           fi
 
