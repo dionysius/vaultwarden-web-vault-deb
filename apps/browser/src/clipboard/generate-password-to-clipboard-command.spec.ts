@@ -2,20 +2,20 @@ import { mock, MockProxy } from "jest-mock-extended";
 
 import { PasswordGenerationService } from "@bitwarden/common/abstractions/passwordGeneration.service";
 
+import { setAlarmTime } from "../alarms/alarm-state";
 import { BrowserApi } from "../browser/browserApi";
 import { BrowserStateService } from "../services/abstractions/browser-state.service";
 
-import { setClearClipboardTime } from "./clipboard-state";
+import { clearClipboardAlarmName } from "./clear-clipboard";
 import { GeneratePasswordToClipboardCommand } from "./generate-password-to-clipboard-command";
 
-jest.mock("./clipboard-state", () => {
+jest.mock("../alarms/alarm-state", () => {
   return {
-    getClearClipboardTime: jest.fn(),
-    setClearClipboardTime: jest.fn(),
+    setAlarmTime: jest.fn(),
   };
 });
 
-const setClearClipboardTimeMock = setClearClipboardTime as jest.Mock;
+const setAlarmTimeMock = setAlarmTime as jest.Mock;
 
 describe("GeneratePasswordToClipboardCommand", () => {
   let passwordGenerationService: MockProxy<PasswordGenerationService>;
@@ -53,9 +53,9 @@ describe("GeneratePasswordToClipboardCommand", () => {
         text: "PASSWORD",
       });
 
-      expect(setClearClipboardTimeMock).toHaveBeenCalledTimes(1);
+      expect(setAlarmTimeMock).toHaveBeenCalledTimes(1);
 
-      expect(setClearClipboardTimeMock).toHaveBeenCalledWith(stateService, expect.any(Number));
+      expect(setAlarmTimeMock).toHaveBeenCalledWith(clearClipboardAlarmName, expect.any(Number));
     });
 
     it("does not have clear clipboard value", async () => {
@@ -70,7 +70,7 @@ describe("GeneratePasswordToClipboardCommand", () => {
         text: "PASSWORD",
       });
 
-      expect(setClearClipboardTimeMock).not.toHaveBeenCalled();
+      expect(setAlarmTimeMock).not.toHaveBeenCalled();
     });
   });
 });

@@ -1,43 +1,15 @@
-import { StateFactory } from "@bitwarden/common/factories/stateFactory";
-import { GlobalState } from "@bitwarden/common/models/domain/global-state";
-
-import { stateServiceFactory } from "../background/service_factories/state-service.factory";
 import { BrowserApi } from "../browser/browserApi";
-import { Account } from "../models/account";
 
-import { getClearClipboardTime } from "./clipboard-state";
+export const clearClipboardAlarmName = "clearClipboard";
 
 export class ClearClipboard {
-  static async run(executionTime: Date, serviceCache: Record<string, unknown>) {
-    const stateFactory = new StateFactory(GlobalState, Account);
-    const stateService = await stateServiceFactory(serviceCache, {
-      cryptoFunctionServiceOptions: {
-        win: self,
-      },
-      encryptServiceOptions: {
-        logMacFailures: false,
-      },
-      logServiceOptions: {
-        isDev: false,
-      },
-      stateMigrationServiceOptions: {
-        stateFactory: stateFactory,
-      },
-      stateServiceOptions: {
-        stateFactory: stateFactory,
-      },
-    });
-
-    const clearClipboardTime = await getClearClipboardTime(stateService);
-
-    if (!clearClipboardTime) {
-      return;
-    }
-
-    if (clearClipboardTime < executionTime.getTime()) {
-      return;
-    }
-
+  /**
+    We currently rely on an active tab with an injected content script (`../content/misc-utils.ts`) to clear the clipboard via `window.navigator.clipboard.writeText(text)`
+    
+    With https://bugs.chromium.org/p/chromium/issues/detail?id=1160302 it was said that service workers,
+    would have access to the clipboard api and then we could migrate to a simpler solution
+    */
+  static async run() {
     const activeTabs = await BrowserApi.getActiveTabs();
     if (!activeTabs || activeTabs.length === 0) {
       return;
