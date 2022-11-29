@@ -9,6 +9,9 @@ class BuildOptions<T, TJson = Jsonify<T>> {
   initializeAs?: InitializeOptions;
 }
 
+// Used to ensure uniqueness for each synced observable
+let index = 0;
+
 /**
  * A decorator used to indicate the BehaviorSubject should be synced for this browser session across all contexts.
  *
@@ -44,7 +47,7 @@ export function sessionSync<T>(buildOptions: BuildOptions<T>) {
 
     p.__syncedItemMetadata.push({
       propertyKey,
-      sessionKey: `${prototype.constructor.name}_${propertyKey}`,
+      sessionKey: `${propertyKey}_${index++}`,
       ctor: buildOptions.ctor,
       initializer: buildOptions.initializer,
       initializeAs: buildOptions.initializeAs ?? "object",
