@@ -403,13 +403,7 @@ export class Program {
         writeLn("", true);
       })
       .action(async () => {
-        const command = new UpdateCommand(
-          this.main.platformUtilsService,
-          this.main.i18nService,
-          "cli",
-          "bw",
-          true
-        );
+        const command = new UpdateCommand(this.main.platformUtilsService);
         const response = await command.run();
         this.processResponse(response);
       });
