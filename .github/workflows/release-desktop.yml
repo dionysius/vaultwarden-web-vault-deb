@@ -29,6 +29,16 @@ on:
         required: true
         default: true
         type: boolean
+      electron_publish:
+        description: 'Publish electron to S3 bucket'
+        required: true
+        default: true
+        type: boolean
+      github_release:
+        description: 'Publish github release'
+        required: true
+        default: true
+        type: boolean
 
 defaults:
   run:
@@ -136,6 +146,7 @@ jobs:
         run: mv Bitwarden-${{ env.PKG_VERSION }}-universal.pkg Bitwarden-${{ env.PKG_VERSION }}-universal.pkg.archive
 
       - name: Set staged rollout percentage
+        if: ${{ github.event.inputs.electron_publish }}
         env:
           RELEASE_CHANNEL: ${{ steps.release-channel.outputs.channel }}
           ROLLOUT_PCT: ${{ github.event.inputs.rollout_percentage }}
@@ -145,7 +156,7 @@ jobs:
           echo "stagingPercentage: ${ROLLOUT_PCT}" >> apps/desktop/artifacts/${RELEASE_CHANNEL}-mac.yml
 
       - name: Publish artifacts to S3
-        if: ${{ github.event.inputs.release_type != 'Dry Run' }}
+        if: ${{ github.event.inputs.release_type != 'Dry Run' && github.event.inputs.electron_publish }}
         env:
           AWS_ACCESS_KEY_ID: ${{ steps.retrieve-secrets.outputs.aws-electron-access-id }}
           AWS_SECRET_ACCESS_KEY: ${{ steps.retrieve-secrets.outputs.aws-electron-access-key }}
@@ -159,7 +170,7 @@ jobs:
           --quiet
 
       - name: Publish artifacts to R2
-        if: ${{ github.event.inputs.release_type != 'Dry Run' }}
+        if: ${{ github.event.inputs.release_type != 'Dry Run' && github.event.inputs.electron_publish }}
         env:
           AWS_ACCESS_KEY_ID: ${{ steps.retrieve-secrets.outputs.r2-electron-access-id }}
           AWS_SECRET_ACCESS_KEY: ${{ steps.retrieve-secrets.outputs.r2-electron-access-key }}
@@ -175,7 +186,7 @@ jobs:
 
       - name: Create Release
         uses: ncipollo/release-action@95215a3cb6e6a1908b3c44e00b4fdb15548b1e09
-        if: ${{ steps.release-channel.outputs.channel == 'latest' && github.event.inputs.release_type != 'Dry Run' }}
+        if: ${{ steps.release-channel.outputs.channel == 'latest' && github.event.inputs.release_type != 'Dry Run' && github.event.inputs.github_release }}
         env:
           PKG_VERSION: ${{ steps.version.outputs.version }}
           RELEASE_CHANNEL: ${{ steps.release-channel.outputs.channel }}
