@@ -118,7 +118,7 @@ jobs:
           AWS_DEFAULT_REGION: 'us-west-2'
           AWS_S3_BUCKET_NAME: ${{ steps.retrieve-secrets.outputs.aws-electron-bucket-name }}
         run: |
-          aws s3 cp ./ $AWS_S3_BUCKET_NAME/desktop/ \
+          aws s3 cp ./$AWS_S3_BUCKET_NAME/desktop/ \
           --include "latest*.yml" \
           --acl "public-read" \
           --quiet
@@ -131,7 +131,7 @@ jobs:
           AWS_S3_BUCKET_NAME: ${{ steps.retrieve-secrets.outputs.r2-electron-bucket-name }}
           CF_ACCOUNT: ${{ steps.retrieve-secrets.outputs.cf-prod-account }}
         run: |
-          aws s3 cp ./ $AWS_S3_BUCKET_NAME/desktop/ \
+          aws s3 cp ./$AWS_S3_BUCKET_NAME/desktop/ \
           --include "latest*.yml" \
           --quiet \
           --endpoint-url https://${CF_ACCOUNT}.r2.cloudflarestorage.com
