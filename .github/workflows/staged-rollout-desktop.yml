@@ -54,20 +54,6 @@ jobs:
             r2-electron-bucket-name,
             cf-prod-account"
 
-      - name: Download channel update info files from S3
-        env:
-          AWS_ACCESS_KEY_ID: ${{ steps.retrieve-secrets.outputs.aws-electron-access-id }}
-          AWS_SECRET_ACCESS_KEY: ${{ steps.retrieve-secrets.outputs.aws-electron-access-key }}
-          AWS_DEFAULT_REGION: 'us-west-2'
-          AWS_S3_BUCKET_NAME: ${{ steps.retrieve-secrets.outputs.aws-electron-bucket-name }}
-        run: |
-          aws s3 cp $AWS_S3_BUCKET_NAME/desktop/latest.yml . \
-          --quiet
-          aws s3 cp $AWS_S3_BUCKET_NAME/desktop/latest-linux.yml . \
-          --quiet
-          aws s3 cp $AWS_S3_BUCKET_NAME/desktop/latest-mac.yml . \
-          --quiet
-
       - name: Download channel update info files from R2
         env:
           AWS_ACCESS_KEY_ID: ${{ steps.retrieve-secrets.outputs.r2-electron-access-id }}
@@ -118,10 +104,14 @@ jobs:
           AWS_DEFAULT_REGION: 'us-west-2'
           AWS_S3_BUCKET_NAME: ${{ steps.retrieve-secrets.outputs.aws-electron-bucket-name }}
         run: |
-          aws s3 cp ./$AWS_S3_BUCKET_NAME/desktop/ \
-          --include "latest*.yml" \
-          --acl "public-read" \
-          --quiet
+          aws s3 cp latest.yml $AWS_S3_BUCKET_NAME/desktop/ \
+          --acl "public-read"
+
+          aws s3 cp latest-linux.yml $AWS_S3_BUCKET_NAME/desktop/ \
+          --acl "public-read"
+
+          aws s3 cp latest-mac.yml $AWS_S3_BUCKET_NAME/desktop/ \
+          --acl "public-read"
 
       - name: Publish channel update info files to R2
         env:
@@ -131,7 +121,11 @@ jobs:
           AWS_S3_BUCKET_NAME: ${{ steps.retrieve-secrets.outputs.r2-electron-bucket-name }}
           CF_ACCOUNT: ${{ steps.retrieve-secrets.outputs.cf-prod-account }}
         run: |
-          aws s3 cp ./$AWS_S3_BUCKET_NAME/desktop/ \
-          --include "latest*.yml" \
-          --quiet \
+          aws s3 cp latest.yml $AWS_S3_BUCKET_NAME/desktop/ \
+          --endpoint-url https://${CF_ACCOUNT}.r2.cloudflarestorage.com
+          
+          aws s3 cp latest-linux.yml $AWS_S3_BUCKET_NAME/desktop/ \
+          --endpoint-url https://${CF_ACCOUNT}.r2.cloudflarestorage.com
+
+          aws s3 cp latest-mac.yml $AWS_S3_BUCKET_NAME/desktop/ \
           --endpoint-url https://${CF_ACCOUNT}.r2.cloudflarestorage.com
