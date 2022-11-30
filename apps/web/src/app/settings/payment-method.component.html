@@ -32,6 +32,7 @@
     {{ "addCredit" | i18n }}
   </button>
   <app-add-credit
+    [organizationId]="organizationId"
     (onAdded)="closeAddCredit(true)"
     (onCanceled)="closeAddCredit(false)"
     *ngIf="showAddCredit"
@@ -90,6 +91,7 @@
     {{ (paymentSource ? "changePaymentMethod" : "addPaymentMethod") | i18n }}
   </button>
   <app-adjust-payment
+    [organizationId]="organizationId"
     [currentType]="paymentSource != null ? paymentSource.type : null"
     (onAdjusted)="closePayment(true)"
     (onCanceled)="closePayment(false)"

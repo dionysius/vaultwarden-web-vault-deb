@@ -6,6 +6,7 @@ import { CipherRepromptType } from "@bitwarden/common/enums/cipherRepromptType";
 import { CipherType } from "@bitwarden/common/enums/cipherType";
 import { EventType } from "@bitwarden/common/enums/eventType";
 import { FieldType } from "@bitwarden/common/enums/fieldType";
+import { UriMatchType } from "@bitwarden/common/enums/uriMatchType";
 import { CipherView } from "@bitwarden/common/models/view/cipher.view";
 import { FieldView } from "@bitwarden/common/models/view/field.view";
 
@@ -305,6 +306,8 @@ export default class AutofillService implements AutofillServiceInterface {
     let pf: AutofillField = null;
     let username: AutofillField = null;
     const login = options.cipher.login;
+    fillScript.savedUrls =
+      login?.uris?.filter((u) => u.match != UriMatchType.Never).map((u) => u.uri) ?? [];
 
     if (!login.password || login.password === "") {
       // No password for this login. Maybe they just wanted to auto-fill some custom fields?

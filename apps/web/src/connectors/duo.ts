@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   DuoWebSDK.init({
     iframe: "duo_iframe",
-    host: hostParam,
+    host: hostUrl.hostname,
     sig_request: requestParam,
     submit_callback: (form: any) => {
       invokeCSCode(form.elements.sig_response.value);

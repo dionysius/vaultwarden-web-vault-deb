@@ -88,6 +88,18 @@
       padding: 0;
     }
 
+    button.btn.primary {
+      font-size: $font-size-base;
+      padding: 7px 15px;
+      width: 100%;
+
+      &:hover {
+        @include themify($themes) {
+          border-color: themed("borderHoverColor") !important;
+        }
+      }
+    }
+
     @include themify($themes) {
       color: themed("mutedColor");
     }

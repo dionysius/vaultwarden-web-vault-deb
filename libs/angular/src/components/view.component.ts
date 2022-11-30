@@ -257,7 +257,7 @@ export class ViewComponent implements OnDestroy, OnInit {
 
     this.showCardNumber = !this.showCardNumber;
     if (this.showCardNumber) {
-      this.eventService.collect(EventType.Cipher_ClientToggledCardCodeVisible, this.cipherId);
+      this.eventService.collect(EventType.Cipher_ClientToggledCardNumberVisible, this.cipherId);
     }
   }
 

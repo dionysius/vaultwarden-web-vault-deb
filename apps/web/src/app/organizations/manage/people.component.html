@@ -1,6 +1,8 @@
-<div class="page-header d-flex">
-  <h1>{{ "members" | i18n }}</h1>
-  <div class="ml-auto d-flex">
+<div
+  class="-tw-mt-2 tw-mb-2 tw-flex tw-flex-wrap tw-border-0 tw-border-b tw-border-solid tw-border-secondary-300 tw-pb-2.5"
+>
+  <h1 class="tw-mt-2 tw-mb-0 tw-grow tw-pr-3">{{ "members" | i18n }}</h1>
+  <div class="tw-mt-2 tw-flex tw-justify-start tw-space-x-3">
     <div class="btn-group btn-group-sm" role="group">
       <button
         type="button"
@@ -39,7 +41,7 @@
         <span bitBadge badgeType="info" *ngIf="revokedCount">{{ revokedCount }}</span>
       </button>
     </div>
-    <div class="ml-3">
+    <div class="tw-w-44">
       <label class="sr-only" for="search">{{ "search" | i18n }}</label>
       <input
         type="search"
@@ -49,7 +51,7 @@
         [(ngModel)]="searchText"
       />
     </div>
-    <div class="dropdown ml-3" appListDropdown>
+    <div class="dropdown" appListDropdown>
       <button
         class="btn btn-sm btn-outline-secondary dropdown-toggle"
         type="button"
@@ -98,7 +100,7 @@
         </button>
       </div>
     </div>
-    <button type="button" class="btn btn-sm btn-outline-primary ml-3" (click)="invite()">
+    <button type="button" class="btn btn-sm btn-outline-primary" (click)="invite()">
       <i class="bwi bwi-plus bwi-fw" aria-hidden="true"></i>
       {{ "inviteUser" | i18n }}
     </button>

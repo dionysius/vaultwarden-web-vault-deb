@@ -108,7 +108,7 @@ export class SendAddEditComponent extends BaseAddEditComponent {
         const type = parseInt(params.type, null);
         this.type = type;
       }
-      await this.load();
+      await super.ngOnInit();
     });
 
     window.setTimeout(() => {

@@ -5,6 +5,7 @@ export default class AutofillScript {
   options: any = {};
   metadata: any = {};
   autosubmit: any = null;
+  savedUrls: string[];
 
   constructor(documentUUID: string) {
     this.documentUUID = documentUUID;

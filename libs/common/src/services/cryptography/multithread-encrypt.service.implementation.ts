@@ -33,7 +33,11 @@ export class MultithreadEncryptServiceImplementation extends EncryptServiceImple
     this.logService.info("Starting decryption using multithreading");
 
     this.worker ??= new Worker(
-      new URL("@bitwarden/common/services/cryptography/encrypt.worker.ts", import.meta.url)
+      new URL(
+        /* webpackChunkName: 'encrypt-worker' */
+        "@bitwarden/common/services/cryptography/encrypt.worker.ts",
+        import.meta.url
+      )
     );
 
     this.restartTimeout();

@@ -1,6 +1,6 @@
 import { FocusableOption } from "@angular/cdk/a11y";
 import { AfterViewInit, Component, HostListener, Input, OnDestroy, ViewChild } from "@angular/core";
-import { RouterLinkActive } from "@angular/router";
+import { IsActiveMatchOptions, RouterLinkActive } from "@angular/router";
 import { Subject, takeUntil } from "rxjs";
 
 import { TabListItemDirective } from "../shared/tab-list-item.directive";
@@ -16,6 +16,13 @@ export class TabLinkComponent implements FocusableOption, AfterViewInit, OnDestr
 
   @ViewChild(TabListItemDirective) tabItem: TabListItemDirective;
   @ViewChild("rla") routerLinkActive: RouterLinkActive;
+
+  readonly routerLinkMatchOptions: IsActiveMatchOptions = {
+    queryParams: "ignored",
+    matrixParams: "ignored",
+    paths: "subset",
+    fragment: "ignored",
+  };
 
   @Input() route: string;
   @Input() disabled = false;
