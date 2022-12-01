@@ -24,7 +24,7 @@
             class="filter-button"
             (click)="clearFilter()"
             [attr.aria-pressed]="!hasActiveFilter"
-            appA11yTitle="{{ 'vault' | i18n }}: {{ organizationGrouping.name }}"
+            appA11yTitle="{{ 'vault' | i18n }}: {{ organizationGrouping.name | i18n }}"
           >
             {{ organizationGrouping.name | i18n }}
           </button>
@@ -73,7 +73,7 @@
             class="filter-button"
             (click)="clearFilter()"
             [attr.aria-pressed]="!hasActiveFilter"
-            appA11yTitle="{{ 'vault' | i18n }}: {{ organizationGrouping.name }}"
+            appA11yTitle="{{ 'vault' | i18n }}: {{ organizationGrouping.name | i18n }}"
           >
             {{ organizationGrouping.name | i18n }}
           </button>
@@ -102,17 +102,18 @@
             <button
               class="filter-button"
               (click)="applyOrganizationFilter(organization)"
-              appA11yTitle="{{ 'vault' | i18n }}: {{ organization.name }}"
+              appA11yTitle="{{ 'vault' | i18n }}: {{ organization.name }} {{
+                organization.enabled ? '' : '(' + ('organizationIsDisabled' | i18n) + ')'
+              }}"
               [attr.aria-pressed]="activeFilter.selectedOrganizationId === organization.id"
             >
               <i class="bwi bwi-fw bwi-business" aria-hidden="true"></i>
               &nbsp;{{ organization.name }}
             </button>
-            <span class="ml-auto">
+            <span *ngIf="!organization.enabled" class="ml-auto">
               <i
-                *ngIf="!organization.enabled"
                 class="bwi bwi-fw bwi-exclamation-triangle text-danger mr-auto"
-                appA11yTitle="{{ 'organizationIsDisabled' | i18n }}"
+                aria-hidden="true"
               ></i>
             </span>
           </span>

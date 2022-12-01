@@ -63,7 +63,7 @@
             class="edit-button"
             *ngIf="f.node.id"
             (click)="editFolder(f.node)"
-            appA11yTitle="{{ 'editFolder' | i18n }}"
+            appA11yTitle="{{ 'editFolder' | i18n }}: {{ f.node.name }}"
           >
             <i class="bwi bwi-pencil bwi-fw" aria-hidden="true"></i>
           </button>
