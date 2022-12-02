@@ -4150,37 +4150,37 @@
     "message": "Create new collections"
   },
   "editAnyCollection": {
-    "message": "Edit Any Collection"
+    "message": "Edit any collection"
   },
   "deleteAnyCollection": {
-    "message": "Delete Any Collection"
+    "message": "Delete any collection"
   },
   "manageAssignedCollections": {
-    "message": "Manage Assigned Collections"
+    "message": "Manage assigned collections"
   },
   "editAssignedCollections": {
-    "message": "Edit Assigned Collections"
+    "message": "Edit assigned collections"
   },
   "deleteAssignedCollections": {
-    "message": "Delete Assigned Collections"
+    "message": "Delete assigned collections"
   },
   "manageGroups": {
-    "message": "Manage Groups"
+    "message": "Manage groups"
   },
   "managePolicies": {
-    "message": "Manage Policies"
+    "message": "Manage policies"
   },
   "manageSso": {
     "message": "Manage SSO"
   },
   "manageUsers": {
-    "message": "Manage Users"
+    "message": "Manage users"
   },
   "manageResetPassword": {
-    "message": "Manage Password Reset"
+    "message": "Manage password reset"
   },
   "disableRequiredError": {
-    "message": "You must manually disable the $POLICYNAME$ policy before this policy can be disabled.",
+    "message": "You must manually turn the $POLICYNAME$ policy before this policy can be turned off.",
     "placeholders": {
       "policyName": {
         "content": "$1",
@@ -4192,10 +4192,10 @@
     "message": "An organisation policy is affecting your ownership options."
   },
   "personalOwnershipPolicyInEffectImports": {
-    "message": "An organisation policy has disabled importing items into your personal vault."
+    "message": "An organisation policy has blocked importing items into your individual vault."
   },
   "personalOwnershipCheckboxDesc": {
-    "message": "Disable personal ownership for organisation users"
+    "message": "Remove individual ownership for organisation users"
   },
   "textHiddenByDefault": {
     "message": "When accessing the Send, hide the text by default",
@@ -4206,10 +4206,10 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendTextDesc": {
-    "message": "The text you want to send."
+    "message": "The text you want to Send."
   },
   "sendFileDesc": {
-    "message": "The file you want to send."
+    "message": "The file you want to Send."
   },
   "copySendLinkOnSave": {
     "message": "Copy the link to share this Send to my clipboard upon save."
@@ -4309,13 +4309,13 @@
     "message": "Your password hint cannot be the same as your password."
   },
   "enrollPasswordReset": {
-    "message": "Enroll in Password Reset"
+    "message": "Enroll in password reset"
   },
   "enrolledPasswordReset": {
-    "message": "Enrolled in Password Reset"
+    "message": "Enrolled in password reset"
   },
   "withdrawPasswordReset": {
-    "message": "Withdraw from Password Reset"
+    "message": "Withdraw from password reset"
   },
   "enrollPasswordResetSuccess": {
     "message": "Enrolment success!"
@@ -4324,7 +4324,7 @@
     "message": "Withdrawal success!"
   },
   "eventEnrollPasswordReset": {
-    "message": "User $ID$ enrolled in password reset assistance.",
+    "message": "User $ID$ enrolled in password reset.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -4333,7 +4333,7 @@
     }
   },
   "eventWithdrawPasswordReset": {
-    "message": "User $ID$ withdrew from password reset assistance.",
+    "message": "User $ID$ withdrew from password reset.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -4351,7 +4351,7 @@
     }
   },
   "eventResetSsoLink": {
-    "message": "Reset Sso link for user $ID$",
+    "message": "Reset SSO link for user $ID$",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -4369,7 +4369,7 @@
     }
   },
   "resetPassword": {
-    "message": "Reset Password"
+    "message": "Reset password"
   },
   "resetPasswordLoggedOutWarning": {
     "message": "Proceeding will log $NAME$ out of their current session, requiring them to log back in. Active sessions on other devices may continue to remain active for up to one hour.",
@@ -4399,34 +4399,34 @@
     "message": "Allow admins to reset master passwords for members."
   },
   "resetPasswordPolicyWarning": {
-    "message": "Users in the organisation will need to self-enroll or be auto-enrolled before administrators can reset their master password."
+    "message": "Members in the organisation will need to self-enroll or be auto-enrolled before administrators can reset their master password."
   },
   "resetPasswordPolicyAutoEnroll": {
-    "message": "Automatic Enrollment"
+    "message": "Automatic enrollment"
   },
   "resetPasswordPolicyAutoEnrollDescription": {
-    "message": "All users will be automatically enrolled in password reset once their invite is accepted."
+    "message": "All members will be automatically enrolled in password reset once their invite is accepted and will not be allowed to withdraw."
   },
   "resetPasswordPolicyAutoEnrollWarning": {
-    "message": "Users already in the organisation will not be retroactively enrolled in password reset. They will need to self-enroll before administrators can reset their master password."
+    "message": "Members already in the organisation will not be retroactively enrolled in password reset. They will need to self-enroll before administrators can reset their master password."
   },
   "resetPasswordPolicyAutoEnrollCheckbox": {
-    "message": "Automatically enroll new users"
+    "message": "Require new members to be enrolled automatically"
   },
   "resetPasswordAutoEnrollInviteWarning": {
-    "message": "This organisation has an enterprise policy that will automatically enroll you in password reset. Enrollment will allow organisation administrators to change your master password."
+    "message": "This organisation has an Enterprise policy that will automatically enroll you in password reset. Enrollment will allow organisation administrators to change your master password."
   },
   "resetPasswordOrgKeysError": {
-    "message": "Organisation Keys response is null"
+    "message": "Organisation keys response is null"
   },
   "resetPasswordDetailsError": {
-    "message": "Reset Password Details response is null"
+    "message": "Reset password details response is null"
   },
   "trashCleanupWarning": {
-    "message": "Items that have been in Trash more than 30 days will be automatically deleted."
+    "message": "Items that have been in the bin more than 30 days will be automatically deleted."
   },
   "trashCleanupWarningSelfHosted": {
-    "message": "Items that have been in Trash for a while will be automatically deleted."
+    "message": "Items that have been in the bin for a while will be automatically deleted."
   },
   "passwordPrompt": {
     "message": "Master password re-prompt"
@@ -4438,7 +4438,7 @@
     "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
   },
   "reinviteSelected": {
-    "message": "Resend Invitations"
+    "message": "Resend invitations"
   },
   "resendNotification": {
     "message": "Resend notification"
@@ -4462,7 +4462,7 @@
     "message": "Choose a theme for your web vault."
   },
   "themeSystem": {
-    "message": "Use System Theme"
+    "message": "Use system theme"
   },
   "themeDark": {
     "message": "Dark"
@@ -4471,16 +4471,16 @@
     "message": "Light"
   },
   "confirmSelected": {
-    "message": "Confirm Selected"
+    "message": "Confirm selected"
   },
   "bulkConfirmStatus": {
     "message": "Bulk action status"
   },
   "bulkConfirmMessage": {
-    "message": "Confirmed successfully."
+    "message": "Confirmed successfully"
   },
   "bulkReinviteMessage": {
-    "message": "Reinvited successfully."
+    "message": "Reinvited successfully"
   },
   "bulkRemovedMessage": {
     "message": "Removed successfully"
@@ -4492,40 +4492,40 @@
     "message": "Restored organisation access successfully"
   },
   "bulkFilteredMessage": {
-    "message": "Excluded, not applicable for this action."
+    "message": "Excluded, not applicable for this action"
   },
   "fingerprint": {
     "message": "Fingerprint"
   },
   "removeUsers": {
-    "message": "Remove Users"
+    "message": "Remove users"
   },
   "revokeUsers": {
-    "message": "Revoke Users"
+    "message": "Revoke users"
   },
   "restoreUsers": {
-    "message": "Restore Users"
+    "message": "Restore users"
   },
   "error": {
     "message": "Error"
   },
   "resetPasswordManageUsers": {
-    "message": "Manage Users must also be enabled with the Manage Password Reset permission"
+    "message": "Manage users must also be granted with the manage password reset permission"
   },
   "setupProvider": {
-    "message": "Provider Setup"
+    "message": "Provider setup"
   },
   "setupProviderLoginDesc": {
-    "message": "You've been invited to setup a new provider. To continue, you need to log in or create a new Bitwarden account."
+    "message": "You've been invited to setup a new Provider. To continue, you need to log in or create a new Bitwarden account."
   },
   "setupProviderDesc": {
-    "message": "Please enter the details below to complete the provider setup. Contact Customer Support if you have any questions."
+    "message": "Please enter the details below to complete the Provider setup. Contact Customer Support if you have any questions."
   },
   "providerName": {
-    "message": "Provider Name"
+    "message": "Provider name"
   },
   "providerSetup": {
-    "message": "The provider has been set up."
+    "message": "Provider successfully set up"
   },
   "clients": {
     "message": "Clients"
@@ -4535,19 +4535,19 @@
     "description": "This is used as a table header to describe which client application created an event log."
   },
   "providerAdmin": {
-    "message": "Provider Admin"
+    "message": "Provider admin"
   },
   "providerAdminDesc": {
-    "message": "The highest access user that can manage all aspects of your provider as well as access and manage client organisations."
+    "message": "The highest access user that can manage all aspects of your Provider as well as access and manage client organisations."
   },
   "serviceUser": {
-    "message": "Service User"
+    "message": "Service user"
   },
   "serviceUserDesc": {
     "message": "Service users can access and manage all client organisations."
   },
   "providerInviteUserDesc": {
-    "message": "Invite a new user to your provider by entering their Bitwarden account email address below. If they do not have a Bitwarden account already, they will be prompted to create a new account."
+    "message": "Invite a new user to your Provider by entering their Bitwarden account email address below. If they do not have a Bitwarden account already, they will be prompted to create a new account."
   },
   "joinProvider": {
     "message": "Join Provider"

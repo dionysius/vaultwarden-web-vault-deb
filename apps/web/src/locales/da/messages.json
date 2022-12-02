@@ -4372,7 +4372,7 @@
     "message": "Nulstil adgangskode"
   },
   "resetPasswordLoggedOutWarning": {
-    "message": "Ved at fortsætte logges $NAME$ ud af sin nuværende session, hvilket kræver, at vedkommende logger ind igen. Aktive sessioner på andre enheder forbliver muligvis aktive i op til en time.",
+    "message": "Fortsættes, logges der ud af $NAME$s nuværende session (vil kræve genindlogning). Aktive sessioner på andre enheder kan forbliver aktive i op til en time.",
     "placeholders": {
       "name": {
         "content": "$1",
@@ -4384,37 +4384,37 @@
     "message": "denne bruger"
   },
   "resetPasswordMasterPasswordPolicyInEffect": {
-    "message": "Én eller flere organisationspolitikker kræver, at hovedadgangskoden opfylder følgende krav:"
+    "message": "Én eller flere organisationspolitikker kræver, at hovedadgangskoden opfylder flg. krav:"
   },
   "resetPasswordSuccess": {
     "message": "Adgangskode nulstillet!"
   },
   "resetPasswordEnrollmentWarning": {
-    "message": "Indrullering giver organisationsadministratorer mulighed for at ændre din hovedadgangskode"
+    "message": "Indrullering vil tillade organisationsadministratorer at ændre din hovedadgangskode"
   },
   "resetPasswordPolicy": {
-    "message": "Nulstil hovedadgangskode"
+    "message": "Nulstilling af hovedadgangskode"
   },
   "resetPasswordPolicyDescription": {
-    "message": "Tillad administratorer at nulstille hovedadgangskoder for medlemmer."
+    "message": "Tillad admins at nulstille hovedadgangskoder for medlemmer."
   },
   "resetPasswordPolicyWarning": {
-    "message": "Brugere i organisationen skal selvindrullere eller være auto-indrulleret, før administratorer kan nulstille deres hovedadgangskode."
+    "message": "Organisationsmedlemmer skal selvindrullere eller være auto-indrulleret, før admins kan nulstille deres hovedadgangskode."
   },
   "resetPasswordPolicyAutoEnroll": {
     "message": "Auto-indrullering"
   },
   "resetPasswordPolicyAutoEnrollDescription": {
-    "message": "Alle brugere vil automatisk blive tilmeldt adgangskodenulstilling, når deres invitation er accepteret og vil ikke have lov til at afmelde sig."
+    "message": "Adgangskodenulstilling indrullerer automatisk alle medlemmer (uden mulighed for afmelding), når deres invitation accepteres."
   },
   "resetPasswordPolicyAutoEnrollWarning": {
-    "message": "Brugere, som allerede er i organisationen, opsættes ikke med tilbagevirkende kraft til adgangskodenulstilling. De skal selvindrullere, før administratorer kan nulstille deres hovedadgangskode."
+    "message": "Adgangskodenulstilling indrullerer ikke allerede eksisterernde organisationmedlemmer med tilbagevirkende kraft. De skal selvindrullere, før admins kan nulstille deres hovedadgangskode."
   },
   "resetPasswordPolicyAutoEnrollCheckbox": {
-    "message": "Kræv at nye brugere automatisk indrulleres"
+    "message": "Kræv auto-indrullering af nye brugere"
   },
   "resetPasswordAutoEnrollInviteWarning": {
-    "message": "Denne organisation har en Virksomhedspolitik, der auto-tilmelder dig til adgangskodenulstilling. Tilmeldingen giver organisationsadministratorer mulighed for at ændre din hovedadgangskode."
+    "message": "Denne organisation har en Virksomhedspolitik, der auto-indrullerer dig i adgangskodenulstilling. Tilmeldingen giver organisationsadminis mulighed for at ændre din hovedadgangskode."
   },
   "resetPasswordOrgKeysError": {
     "message": "Organisationsnøgler svar er null"
@@ -4423,10 +4423,10 @@
     "message": "Nulstil adgangskode detaljer svar er null"
   },
   "trashCleanupWarning": {
-    "message": "Elementer, som har været i papirkurven i mere end 30 dage, slettes automatisk."
+    "message": "Emner, som har været i papirkurven i flere end 30 dage, slettes automatisk."
   },
   "trashCleanupWarningSelfHosted": {
-    "message": "Elementer, som har været i papirkurven i et stykke tid, slettes automatisk."
+    "message": "Emner, som har befundet i papirkurven i et stykke tid, slettes automatisk."
   },
   "passwordPrompt": {
     "message": "Genanmodning om hovedadgangskode"
@@ -4444,16 +4444,16 @@
     "message": "Gensend notifikation"
   },
   "noSelectedUsersApplicable": {
-    "message": "Denne handling er ikke anvendelig for nogen af de valgte brugere."
+    "message": "Denne handling er ikke relevant for de valgte brugere."
   },
   "removeUsersWarning": {
-    "message": "Er du sikker på, at du vil fjerne følgende brugere? Processen kan tage et par sekunder at fuldføre og kan ikke afbrydes eller annulleres."
+    "message": "Sikker på, at flg. brugere skal fjerne? Processen kan tage nogle sekunder at fuldføre og kan hverken afbrydes eller annulleres."
   },
   "removeOrgUsersConfirmation": {
-    "message": "Når medlemmer fjernes, har de ikke længere adgang til organisationsdata, og denne handling er irreversibel. For at gentilføje medlemmer til organisationen, skal de inviteres og onboardes igen. Processen kan tage et par sekunder at udføre og kan ikke afbrydes eller annulleres."
+    "message": "Når medlemmer fjernes — en handling, der er irreversibel— kan de ikke længere tilgå organisationsdata. For at gentilføje medlemmer til organisationen, skal de inviteres og onboardes igen. Processen, og der hverken kan afbrydes eller annulleres, kan tage nogle sekunder at fuldføre."
   },
   "revokeUsersWarning": {
-    "message": "Når medlemmers adgang tilbagekaldes, har de ikke længere adgang til organisationsdata. For hurtigt at genoprette medlemsadgang, så gå til fanen Tilbagekaldt. Processen kan tage et par sekunder at udføre og kan ikke afbrydes."
+    "message": "Ophæves medlemsstatusser, kan medlemmer ikke længere tilgå organisationsdata. For hurtigt at genoprette medlemsadgang — en process, der ikke kan afbrydes eller annulleres og tager nogle sekunder at udføre —, så gå til fanen Ophævet."
   },
   "theme": {
     "message": "Tema"
@@ -4474,25 +4474,25 @@
     "message": "Bekræft valgte"
   },
   "bulkConfirmStatus": {
-    "message": "Status for massehandling"
+    "message": "Massehandlingsstatus"
   },
   "bulkConfirmMessage": {
-    "message": "Bekræftet med succes."
+    "message": "Hermed bekræftet."
   },
   "bulkReinviteMessage": {
-    "message": "Geninviteret med succes."
+    "message": "Hermed geninviteret."
   },
   "bulkRemovedMessage": {
-    "message": "Fjernet med succes"
+    "message": "Hermed fjernet"
   },
   "bulkRevokedMessage": {
-    "message": "Organisationsadgang tilbagekaldt"
+    "message": "Organisationsadgang ophævet"
   },
   "bulkRestoredMessage": {
-    "message": "Organisationsadgang genetableret"
+    "message": "Organisationsadgang hermed genetableret"
   },
   "bulkFilteredMessage": {
-    "message": "Udelukket, ikke anvendeligt til denne handling."
+    "message": "Udelukket, ikke anvendelig til denne handling"
   },
   "fingerprint": {
     "message": "Fingeraftryk"
@@ -4501,31 +4501,31 @@
     "message": "Fjern brugere"
   },
   "revokeUsers": {
-    "message": "Ophæv brugeradgang"
+    "message": "Ophæv status som bruger"
   },
   "restoreUsers": {
-    "message": "Genetablér brugeradgang"
+    "message": "Gendan status som bruger"
   },
   "error": {
     "message": "Fejl"
   },
   "resetPasswordManageUsers": {
-    "message": "Administrér brugere skal også være aktiveret med tilladelsen Håndtér adgangskodenulstilling"
+    "message": "\"Håndtér brugere\" skal også tildeles med tilladelsen \"Håndtér adgangskodenulstilling\""
   },
   "setupProvider": {
     "message": "Udbyderopsætning"
   },
   "setupProviderLoginDesc": {
-    "message": "Du er blevet inviteret til at oprette en ny udbyder. For at fortsætte skal du logge ind eller oprette en ny Bitwarden-konto."
+    "message": "Du er inviteret til at opsætte en ny udbyder. Log ind/opret en ny Bitwarden-konto for at fortsætte."
   },
   "setupProviderDesc": {
-    "message": "Angiv venligst nedenstående oplysninger for at fuldføre udbyderopsætningen. Kontakt kundesupport, hvis du har spørgsmål."
+    "message": "Angiv nedenstående oplysninger for at fuldføre udbyderopsætningen. Kontakt kundesupporten ved evt. spørgsmål."
   },
   "providerName": {
     "message": "Udbydernavn"
   },
   "providerSetup": {
-    "message": "Udbyderen er nu opsat."
+    "message": "Udbyderen hermed opsat"
   },
   "clients": {
     "message": "Klienter"
@@ -4535,7 +4535,7 @@
     "description": "This is used as a table header to describe which client application created an event log."
   },
   "providerAdmin": {
-    "message": "Udbyder admin"
+    "message": "Udbyder-admin"
   },
   "providerAdminDesc": {
     "message": "Brugeren med den højeste adgang, der kan håndtere alle aspekter af din udbyder samt tilgå og håndtere klientorganisationer."
@@ -4544,25 +4544,25 @@
     "message": "Tjenestebruger"
   },
   "serviceUserDesc": {
-    "message": "Servicebrugere kan få adgang til samt administrere alle klientorganisationer."
+    "message": "Tjenestebrugere kan tilgå samt håndtere alle klientorganisationer."
   },
   "providerInviteUserDesc": {
-    "message": "Invitér en ny bruger til din udbyder ved at angive deres Bitwarden-konto e-mailadresse nedenfor. Hvis de ikke allerede har en Bitwarden-konto, bliver de bedt om at oprette en ny konto."
+    "message": "Invitér en ny bruger til din udbyder ved at angive deres Bitwarden-konto e-mailadresse nedenfor. Har personen ikke allerede har en Bitwarden-konto, anmodes vedkommende om at oprette én."
   },
   "joinProvider": {
     "message": "Tilmeld dig udbyder"
   },
   "joinProviderDesc": {
-    "message": "Du er blevet inviteret til at tilmelde dig udbyderen ovenfor. For at acceptere invitationen skal du logge ind eller oprette en ny Bitwarden-konto."
+    "message": "Du er inviteret til at tilmelde dig udbyderen ovenfor. Log ind eller opret en ny Bitwarden-konto for at acceptere invitationen."
   },
   "providerInviteAcceptFailed": {
-    "message": "Kan ikke acceptere invitationen. Bed en udbyder-admin om at sende en ny invitation."
+    "message": "Kan ikke acceptere invitationen. Bed en udbyder-admin sende en ny invitation."
   },
   "providerInviteAcceptedDesc": {
-    "message": "Du kan få adgang til denne udbyder, når en administrator bekræfter dit medlemskab. Vi sender dig en e-mail, når det sker."
+    "message": "Denne udbyder kan tilgås, når en admin bekræfter dit medlemskab. Du tilsendes en e-mail, når dette sker."
   },
   "providerUsersNeedConfirmed": {
-    "message": "Du har brugere, der har accepteret deres invitation, men som stadig skal bekræftes. Brugere vil ikke have adgang til udbyderen, før de er bekræftet."
+    "message": "Du har brugere, som har accepteret deres invitation uden endnu at være bekræftet. Brugere kan ikke tilgå udbyderen, før de er bekræftet."
   },
   "provider": {
     "message": "Udbyder"
@@ -4571,7 +4571,7 @@
     "message": "Ny klientorganisation"
   },
   "newClientOrganizationDesc": {
-    "message": "Opret en ny klientorganisation, der vil blive knyttet til dig som udbyder. Du vil kunne tilgå og håndtere denne organisation."
+    "message": "Opret en ny klientorganisation, der tilknyttes dig som udbyderen. Du vil kunne tilgå og håndtere denne organisation."
   },
   "addExistingOrganization": {
     "message": "Tilføj eksisterende organisation"
@@ -4580,7 +4580,7 @@
     "message": "Min udbyder"
   },
   "addOrganizationConfirmation": {
-    "message": "Er du sikker på, at du vil tilføje $ORGANIZATION$ som klient til $PROVIDER$?",
+    "message": "Sikker på, at du vil tilføje $ORGANIZATION$ som en klient til $PROVIDER$?",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -4593,10 +4593,10 @@
     }
   },
   "organizationJoinedProvider": {
-    "message": "Organisation blev tilføjet udbyderen"
+    "message": "Organisation hermed tilføjet udbyderen"
   },
   "accessingUsingProvider": {
-    "message": "Tilgår organisation ved hjælp af udbyderen $PROVIDER$",
+    "message": "Tilgår organisation vha. udbyderen $PROVIDER$",
     "placeholders": {
       "provider": {
         "content": "$1",
@@ -4605,10 +4605,10 @@
     }
   },
   "providerIsDisabled": {
-    "message": "Udbyder er deaktiveret."
+    "message": "Udbyder suspenderet"
   },
   "providerUpdated": {
-    "message": "Udbyder opdateret"
+    "message": "Udbyder gemt"
   },
   "yourProviderIs": {
     "message": "Din udbyder er $PROVIDER$. De har administrative- og faktureringsrettigheder for din organisation.",
@@ -4629,22 +4629,22 @@
     }
   },
   "detachOrganizationConfirmation": {
-    "message": "Er du sikker på, at du vil frigøre denne organisation? Organisationen vil fortsætte med at eksistere, men vil ikke længere blive håndteret af udbyderen."
+    "message": "Sikker på, at du vil frigøre denne organisation? Organisationen vil fortsat eksistere, men håndteres ikke længere af udbyderen."
   },
   "add": {
     "message": "Tilføj"
   },
   "updatedMasterPassword": {
-    "message": "Hovedadgangskode opdateret"
+    "message": "Hovedadgangskode gemt"
   },
   "updateMasterPassword": {
     "message": "Opdatér hovedadgangskode"
   },
   "updateMasterPasswordWarning": {
-    "message": "Dit hovedadgangskode blev for nylig ændret af en administrator i din organisation. For at få adgang til boksen skal du opdatere din hovedadgangskode nu. Hvis du fortsætter, logges du ud af din nuværende session, hvilket kræver, at du logger ind igen. Aktive sessioner på andre enheder kan fortsætte med at være aktive i op til én time."
+    "message": "Din hovedadgangskode blev for nylig ændret af en admin i din organisation. Opdatér hovedadgangskoden nu for at tilgå boksen. Fortsættes, logges der ud af den nuværende session, og du vil skulle logge ind igen. Aktive sessioner på andre enheder kan forblive aktive i op til én time."
   },
   "masterPasswordInvalidWarning": {
-    "message": "Din hovedadgangskode opfylder ikke organisationspolitikken. For at blive medlem af organisationen skal du opdatere din hovedadgangskode først. Hvis du fortsætter, logges du ud af din aktuelle session, hvilket kræver, at du logger ind igen. Aktive sessioner på andre enheder kan fortsat være aktive i op til én time."
+    "message": "Din hovedadgangskode opfylder ikke organisationspolitikkens krav. For at kunne blive organisationsmedlem, skal din hovedadgangskode derfor opdateres nu. Fortsættes, logges der ud af den nuværende session, og du vil skulle logge ind igen. Aktive sessioner på andre enheder kan forblive aktive i op til én time."
   },
   "maximumVaultTimeout": {
     "message": "Boks-timeout"
@@ -4665,7 +4665,7 @@
     "message": "Minutter"
   },
   "vaultTimeoutPolicyInEffect": {
-    "message": "Din organisations politikker påvirker din boks-timeout. Maksimalt tilladt boks-timeout er $HOURS$ time(r) og $MINUTES$ minut(ter)",
+    "message": "Organisationspolitikkerne påvirker din boks-timeout. Maks. tilladt boks-timeout udgør $HOURS$ time(r) og $MINUTES$ minut(ter)",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -4681,25 +4681,25 @@
     "message": "Tilpasset boks-timeout"
   },
   "vaultTimeoutToLarge": {
-    "message": "Din boks-timeout overskrider den begrænsning, der er fastsat af din organisation."
+    "message": "Din boks-timeout overskrider den organisationsfastsatte begrænsning."
   },
   "vaultCustomTimeoutMinimum": {
-    "message": "Minimum brugerdefineret timeout er 1 minut."
+    "message": "Tilpasset minimumstimeout udgør 1 minut."
   },
   "vaultTimeoutRangeError": {
     "message": "Boks-timeout er ikke inden for det tilladte interval."
   },
   "disablePersonalVaultExport": {
-    "message": "Deaktivér individuel bokseksport"
+    "message": "Fjern individuel bokseksport"
   },
   "disablePersonalVaultExportDesc": {
     "message": "Tillad ikke medlemmer at eksportere deres individuelle boksdata."
   },
   "vaultExportDisabled": {
-    "message": "Bokseksport deaktiveret"
+    "message": "Bokseksport fjernet"
   },
   "personalVaultExportPolicyInEffect": {
-    "message": "En eller flere organisationspolitikker forhindrer dig i at eksportere din personlige boks."
+    "message": "En eller flere organisationspolitikker forhindrer eksport af din personlige boks."
   },
   "selectType": {
     "message": "Vælg SSO-type"
@@ -4708,7 +4708,7 @@
     "message": "Type"
   },
   "openIdConnectConfig": {
-    "message": "OpenID-forbindelsesopsætning"
+    "message": "OpenID Connect-opsætning"
   },
   "samlSpConfig": {
     "message": "SAML-tjenesteudbyderopsætning"
@@ -4720,10 +4720,10 @@
     "message": "Callback-sti"
   },
   "signedOutCallbackPath": {
-    "message": "Udlogget Callback-sti"
+    "message": "Udlogget callback-sti"
   },
   "authority": {
-    "message": "Myndighed"
+    "message": "Godkender"
   },
   "clientId": {
     "message": "Klient-ID"
@@ -4738,10 +4738,10 @@
     "message": "OIDC-omdirigeringsadfærd"
   },
   "getClaimsFromUserInfoEndpoint": {
-    "message": "Hent claims fra endpoint for brugeroplysninger"
+    "message": "Hent claims fra brugerinfo-slutpunkt"
   },
   "additionalScopes": {
-    "message": "Brugerdefinerede omfang"
+    "message": "Tilpassede scopes (omfang)"
   },
   "additionalUserIdClaimTypes": {
     "message": "Tilpassede bruger-id claim-typer"
@@ -4750,16 +4750,16 @@
     "message": "E-mail claim-typer"
   },
   "additionalNameClaimTypes": {
-    "message": "Tilpassede navne-claimtyper"
+    "message": "Tilpassede navne claim-typer"
   },
   "acrValues": {
     "message": "Anmodet godkendelseskontekst klassereferenceværdier"
   },
   "expectedReturnAcrValue": {
-    "message": "Forventet \"acr\"-claimværdi i svar"
+    "message": "Forventet \"acr\" claim-værdi i svar"
   },
   "spEntityId": {
-    "message": "SP Enheds-ID"
+    "message": "SP enheds-ID"
   },
   "spMetadataUrl": {
     "message": "SAML 2.0 Metadata-URL"
@@ -4792,10 +4792,10 @@
     "message": "Bindingstype"
   },
   "idpSingleSignOnServiceUrl": {
-    "message": "Single Sign-On tjeneste URL"
+    "message": "Single Sign-On tjeneste-URL"
   },
   "idpSingleLogoutServiceUrl": {
-    "message": "Single Log Out-tjeneste URL"
+    "message": "Single Log Out tjeneste-URL"
   },
   "idpX509PublicCert": {
     "message": "X509 offentligt certifikat"
@@ -4813,7 +4813,7 @@
     "message": "Signér godkendelsesanmodninger"
   },
   "ssoSettingsSaved": {
-    "message": "Single Sign-On opsætning blev gemt."
+    "message": "Single Sign-On opsætning gemt"
   },
   "sponsoredFamilies": {
     "message": "Gratis Bitwarden Familier"
@@ -4837,31 +4837,31 @@
     "message": "Linket er ikke længere gyldigt. Bed sponsoren sende et nyt tilbud."
   },
   "reclaimedFreePlan": {
-    "message": "Konvertér til gratis abonnement"
+    "message": "Genindløst gratis abonnement"
   },
   "redeem": {
     "message": "Indløs"
   },
   "sponsoredFamiliesSelectOffer": {
-    "message": "Vælg den organisation, du gerne vil have sponsoreret"
+    "message": "Vælg organisation, du vil sponsorere"
   },
   "familiesSponsoringOrgSelect": {
     "message": "Hvilket gratis Familier-tilbud vil du gerne indløse?"
   },
   "sponsoredFamiliesEmail": {
-    "message": "Angiv din personlige e-mail for at indløse Bitwarden Familier"
+    "message": "Angiv personlig e-mail for at indløse Bitwarden Families"
   },
   "sponsoredFamiliesLeaveCopy": {
-    "message": "Hvis du fjerner et tilbud eller bliver fjernet fra sponsororganisationen, udløber dit Familier-abonnement ved næste fornyelsesdato."
+    "message": "Fjerner du et tilbud eller fjernes du fra sponsororganisationen, udløber dit Familier-abonnement ved næste fornyelsesdato."
   },
   "acceptBitwardenFamiliesHelp": {
     "message": "Acceptér tilbud for en eksisterende organisation, eller opret en ny Familier-organisation."
   },
   "setupSponsoredFamiliesLoginDesc": {
-    "message": "Du er blevet tilbudt en gratis Bitwarden Familier-abonnement organisation. For at fortsætte skal du logge ind på den konto, der modtog tilbuddet."
+    "message": "Du er blevet tilbudt en gratis Bitwarden Familier-abonnementsorganisation. Log ind på den konto, der modtog tilbuddet, for at fortsætte."
   },
   "sponsoredFamiliesAcceptFailed": {
-    "message": "Tilbuddet kan ikke accepteres. Gensend venligst tilbudsmailen fra din virksomhedskonto, og forsøg igen."
+    "message": "Tilbud kan ikke accepteres. Gensend tilbudsmailen fra din Virksomhedskonto, og forsøg igen."
   },
   "sponsoredFamiliesAcceptFailedShort": {
     "message": "Kan ikke acceptere tilbud. $DESCRIPTION$",
@@ -4876,16 +4876,16 @@
     "message": "Acceptér gratis Bitwarden Familier"
   },
   "sponsoredFamiliesOfferRedeemed": {
-    "message": "Gratis Bitwarden Familier-tilbud er blevet indløst"
+    "message": "Gratis Bitwarden Familier-tilbud hermed indløst"
   },
   "redeemed": {
     "message": "Indløst"
   },
   "redeemedAccount": {
-    "message": "Indløst konto"
+    "message": "Konto indløst"
   },
   "revokeAccount": {
-    "message": "Ophæv kontoen $NAME$",
+    "message": "Ophæv konto $NAME$",
     "placeholders": {
       "name": {
         "content": "$1",
@@ -4894,7 +4894,7 @@
     }
   },
   "resendEmailLabel": {
-    "message": "Gensend sponsorat-e-mail til $NAME$ sponsorat",
+    "message": "Gensend sponsoratmail til $NAME$-sponsorat",
     "placeholders": {
       "name": {
         "content": "$1",
@@ -4915,7 +4915,7 @@
     "message": "Fjern sponsorat"
   },
   "removeSponsorshipConfirmation": {
-    "message": "Efter at have fjernet et sponsorat, vil du være ansvarlig for dette abonnement og relaterede fakturaer. Er du sikker på, at du vil fortsætte?"
+    "message": "Efter fjernelse af et sponsorat vil du være ansvarlig for abonnementet og relaterede fakturaer. Sikker på, at du vil fortsætte?"
   },
   "sponsorshipCreated": {
     "message": "Sponsorat oprettet"
@@ -4924,7 +4924,7 @@
     "message": "E-mail sendt"
   },
   "revokeSponsorshipConfirmation": {
-    "message": "Efter at have fjernet denne konto, udløber familie-abonnementets sponsorat ved slutningen af faktureringsperioden. Du vil ikke kunne indløse et nyt sponsortilbud, før det eksisterende udløber. Er du sikker på, at du vil fortsætte?"
+    "message": "Efter fjernelse af denne konto udløber Familie-abonnementets sponsorat ved slutningen af faktureringsperioden. Du vil ikke kunne indløse et nyt sponsortilbud, før det eksisterende udløber. Sikker på, at du vil fortsætte?"
   },
   "removeSponsorshipSuccess": {
     "message": "Sponsoratet fjernet"
@@ -4951,13 +4951,13 @@
     "message": "Bekræft din identitet for at fortsætte."
   },
   "verificationCodeRequired": {
-    "message": "Bekræftelseskode er påkrævet."
+    "message": "Bekræftelseskode kræves."
   },
   "invalidVerificationCode": {
     "message": "Ugyldig bekræftelseskode"
   },
   "convertOrganizationEncryptionDesc": {
-    "message": "$ORGANIZATION$ bruger SSO med en selv-hostet nøgleserver. En hovedadgangskode er ikke længere påkrævet for at logge ind for medlemmer af denne organisation.",
+    "message": "$ORGANIZATION$ anvender SSO med en selv-hostet nøgleserver. Organisationsmedlemmer afkræves ikke længere en hovedadgangskode for at logge ind.",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -4978,14 +4978,14 @@
     "message": "Tillad SSO-godkendelse"
   },
   "allowSsoDesc": {
-    "message": "Når den er indstillet, vil din konfiguration blive gemt, og medlemmer vil være i stand til at autentificere ved hjælp af deres identitetsudbyder-akkreditiver."
+    "message": "Når indstillet, gemmes opsætningen, og medlemmer vil kunne godkendes vha. deres identitetsudbyderlegitimationsoplysninger."
   },
   "ssoPolicyHelpStart": {
     "message": "Brug",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Use the require single-sign-on authentication policy to require all members to log in with SSO.'"
   },
   "ssoPolicyHelpLink": {
-    "message": "kræv enkelt-logon-godkendelsespolitik",
+    "message": "kræv Single Sign-On godkendelsespolitik",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Use the require single-sign-on authentication policy to require all members to log in with SSO.'"
   },
   "ssoPolicyHelpEnd": {
@@ -4993,22 +4993,22 @@
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Use the require single-sign-on authentication policy to require all members to log in with SSO.'"
   },
   "ssoPolicyHelpKeyConnector": {
-    "message": "Kræv SSO-godkendelse og enkeltorganisationspolitikker er påkrævet for at konfigurere Key Connector-dekryptering."
+    "message": "\"Kræv SSO-godkendelse\" samt enkeltorganisationspolitikker kræves for opsætning af Key Connector-dekryptering."
   },
   "memberDecryptionOption": {
     "message": "Medlemsdekrypteringsindstillinger"
   },
   "memberDecryptionPassDesc": {
-    "message": "Når godkendt, dekrypterer medlemmer boks-data ved hjælp af deres hovedadgangskode."
+    "message": "Når godkendt, dekrypterer medlemmer boks-data vha. deres hovedadgangskode."
   },
   "keyConnector": {
     "message": "Key Connector"
   },
   "memberDecryptionKeyConnectorDesc": {
-    "message": "Forbind Login med SSO til din selv-hostede dekrypteringsnøgleserver. Ved at bruge denne mulighed behøver medlemmer ikke at bruge deres hovedadgangskoder til at dekryptere boksdata. Kontakt Bitwarden support for at få hjælp til opsætning."
+    "message": "Forbind login med SSO til din selv-hostet dekrypteringsnøgleserver. Muligheden overflødiggør medlemmers brug af hovedadgangskode ifm. boks-datadekryptering. Kontakt Bitwarden Support for hjælp til opsætningen."
   },
   "keyConnectorPolicyRestriction": {
-    "message": "\"Login med SSO og Key Connector-dekryptering\" er aktiveret. Denne politik omfatter kun ejere og Admins."
+    "message": "\"Login med SSO og Key Connector-dekryptering\" er aktiveret. Denne politik omfatter kun ejere og admins."
   },
   "enabledSso": {
     "message": "SSO aktiveret"
@@ -5023,7 +5023,7 @@
     "message": "Key Connector deaktiveret"
   },
   "keyConnectorWarning": {
-    "message": "Når medlemmer begynder at bruge Key Connector, kan din organisation ikke vende tilbage til hovedadgangskode-dekryptering. Fortsæt kun, hvis du er fortrolig med at implementere og administrere en nøgleserver."
+    "message": "Når medlemmer begynder at bruge Key Connector, kan din organisation ikke vende tilbage til hovedadgangskode-dekryptering. Fortsæt kun, hvis du er fortrolig med at implementere og håndtere en nøgleserver."
   },
   "migratedKeyConnector": {
     "message": "Migreret til Key Connector"
@@ -5032,7 +5032,7 @@
     "message": "Angiv en betalingsmetode der skal tilknyttes organisationen. Bare rolig, vi vil ikke opkræve dig noget, medmindre du vælger yderligere funktioner, eller dit sponsorat udløber."
   },
   "orgCreatedSponsorshipInvalid": {
-    "message": "Sponsortilbuddet er udløbet. Du kan slette den organisation, du har oprettet, for at undgå en opkrævning ved udløbet af din 7-dages prøveperiode. Ellers kan du lukke denne prompt for at beholde organisationen og påtage dig faktureringsansvaret."
+    "message": "Sponsortilbuddet er udløbet. Den oprettede organisation kan slettes for at undgå opkrævning ved udkøb af den 7-dages prøveperiode. Ellers luk denne prompt for at beholde organisationen og påtage dig faktureringsforpligtigelsen."
   },
   "newFamiliesOrganization": {
     "message": "Ny Familier-organisation"
@@ -5047,7 +5047,7 @@
     "message": "Test"
   },
   "keyConnectorTestSuccess": {
-    "message": "Succes! Key Connector nået."
+    "message": "Lykkedes! Key Connector nået."
   },
   "keyConnectorTestFail": {
     "message": "Key Connector kan ikke nås. Tjek URL'en."
@@ -5083,16 +5083,16 @@
     "message": "Rotér token"
   },
   "rotateBillingSyncTokenWarning": {
-    "message": "Hvis du fortsætter, skal du genopsætte faktureringssynk på din selvhostede server."
+    "message": "Fortsættes, vil faktureringssynk skulle genopsættes på din selvhostede server."
   },
   "rotateBillingSyncTokenTitle": {
-    "message": "Rotation af faktureringssynk-token vil ugyldiggøre det foregående token."
+    "message": "Rotering af faktureringssynk-tokenet vil ugyldiggøre det foregående token."
   },
   "selfHostingTitle": {
     "message": "Selvhosting"
   },
   "selfHostingEnterpriseOrganizationSectionCopy": {
-    "message": "For at opsætte din organisation på din egen server, skal du uploade din licensfil. For at understøtte gratis familieabonnementer og avancerede faktureringsmuligheder for din selv-hostede organisation, skal du konfigurere faktureringssynk."
+    "message": "For at opsætte din organisation på egen server, så upload din licensfil. Opsæt faktureringssynk for at understøtte gratis Familier-abonnementstyper og avancerede faktureringsmuligheder for din selvhostede organisation."
   },
   "billingSyncApiKeyRotated": {
     "message": "Token roteret."
@@ -5101,10 +5101,10 @@
     "message": "Faktureringssynk"
   },
   "billingSyncDesc": {
-    "message": "Faktureringssynk giver gratis familieabonnementer til medlemmer og avancerede faktureringsmuligheder ved at linke din selvhostede Bitwarden til Bitwarden-cloudserveren."
+    "message": "Faktureringssynk giver gratis Familier-abonnementstyper til medlemmer samt avancerede faktureringsmuligheder ved at linke din selvhostede Bitwarden til Bitwarden-cloudserveren."
   },
   "billingSyncKeyDesc": {
-    "message": "Et faktureringssynk-token fra din cloud-organisations abonnementsindstillinger er påkrævet for at udfylde denne formular."
+    "message": "Et faktureringssynk-token fra din cloud-organisations abonnementsindstillinger kræves for at udfylde denne formular."
   },
   "billingSyncKey": {
     "message": "Faktureringssynk-token"
@@ -5137,10 +5137,10 @@
     }
   },
   "formErrorSummarySingle": {
-    "message": "1 felt ovenfor kræver din opmærksomhed."
+    "message": "1 felt ovenfor kræver opmærksomhed."
   },
   "fieldRequiredError": {
-    "message": "$FIELDNAME$ er påkrævet.",
+    "message": "$FIELDNAME$ er obligatorisk.",
     "placeholders": {
       "fieldname": {
         "content": "$1",
@@ -5149,31 +5149,31 @@
     }
   },
   "required": {
-    "message": "krævet"
+    "message": "obligatorisk"
   },
   "idpSingleSignOnServiceUrlRequired": {
-    "message": "Krævet, hvis enheds-id ikke er en URL."
+    "message": "Obligatorisk, såfremt Enheds-ID ikke er en URL."
   },
   "openIdOptionalCustomizations": {
     "message": "Valgfrie tilpasninger"
   },
   "openIdAuthorityRequired": {
-    "message": "Påkrævet, hvis autoriteten ikke er gyldig."
+    "message": "Obligatorisk, såfremt Godkender ikke er gyldig."
   },
   "separateMultipleWithComma": {
     "message": "Adskil flere med et komma."
   },
   "sessionTimeout": {
-    "message": "Din session er udløbet. Gå tilbage og prøv at logge ind igen."
+    "message": "Session udløbet. Gå tilbage og prøv at logge ind igen."
   },
   "exportingPersonalVaultTitle": {
-    "message": "Eksporterer personlig boks"
+    "message": "Eksport af individuel boks"
   },
   "exportingOrganizationVaultTitle": {
-    "message": "Eksporterer organisationsboks"
+    "message": "Eksport af organisationsboks"
   },
   "exportingPersonalVaultDescription": {
-    "message": "Kun de personlige bokselementer tilknyttet $EMAIL$ eksporteres. Organisationsbokseelementer medtages ikke.",
+    "message": "Kun individuelle boksemner tilknyttet $EMAIL$ eksporteres. Organisationsboksemner medtages ikke.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -5182,7 +5182,7 @@
     }
   },
   "exportingOrganizationVaultDescription": {
-    "message": "Kun organisationsboksen tilknyttet $ORGANIZATION$ eksporteres. Personlige bokseelementer, samt elementer fra andre organisationer, medtages ikke.",
+    "message": "Kun organisationsboksen tilknyttet $ORGANIZATION$ eksporteres. Individuelle boksemner, samt emner fra andre organisationer, medtages ikke.",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -5191,7 +5191,7 @@
     }
   },
   "accessDenied": {
-    "message": "Adgang nægtet. Du har ikke tilladelse til at se denne side."
+    "message": "Adgang nægtet. Nødvendig tilladelse til at se siden mangler."
   },
   "masterPassword": {
     "message": "Hovedadgangskode"

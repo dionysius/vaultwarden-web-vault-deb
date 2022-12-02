@@ -1297,17 +1297,17 @@
     "message": "Ziurtatu zure kontua saioa hastean beste urrats bat egitea eskatuz."
   },
   "twoStepLoginOrganizationDescStart": {
-    "message": "Enforce Bitwarden Two-step Login options for members by using the ",
+    "message": "Behartu kideei Bitwardenen saioa hasteko bi urratseko aukera, hau erabiliz",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enforce Bitwarden Two-step Login options for members by using the Two-step Login Policy.'"
   },
   "twoStepLoginPolicy": {
-    "message": "Two-step Login Policy"
+    "message": "Bi urratseko saio hasieraren politika"
   },
   "twoStepLoginOrganizationDuoDesc": {
-    "message": "To enforce Two-step Login through Duo, use the options below."
+    "message": "Duo bidezko bi urratseko saio hasiera behartzeko, erabili hurrengo aukerak."
   },
   "twoStepLoginOrganizationSsoDesc": {
-    "message": "If you have setup SSO or plan to, Two-step Login may already be enforced through your Identity Provider."
+    "message": "SSO ezarrita baduzu edo hori egiteko asmoa baduzu, baliteke bi urratseko saio-hasiera iada zure identitate-hornitzailearen bidez erabiltzen aritzea."
   },
   "twoStepLoginRecoveryWarning": {
     "message": "Bi urratseko saio hasiera gaitzeak betirako blokea dezake Bitwarden kontura sartzea. Berreskuratze-kode baten bidez, zure kontura sar zaitezke, bi urratseko saio hasierako hornitzailea erabili ezin baduzu (adb. gailua galtzen baduzu). Bitwarden-ek ezingo dizu lagundu zure konturako sarbidea galtzen baduzu. Berreskuratze-kodea idatzi edo inprimatzea eta leku seguruan edukitzea gomendatzen dugu."
@@ -1557,7 +1557,7 @@
     "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization vault."
   },
   "orgsReportsDesc": {
-    "message": "Identify and close security gaps in your organization's accounts by clicking the reports below.",
+    "message": "Identifikatu eta itxi erakundetako kontuetako segurtasun hutsuneak, ondorengo txostenetan klik eginez.",
     "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization Vault."
   },
   "unsecuredWebsitesReport": {
@@ -2597,7 +2597,7 @@
     }
   },
   "viewedCardNumberItemId": {
-    "message": "Viewed Card Number for item $ID$.",
+    "message": "$ID$ elementuko txartel zenbakia ikusia.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -3017,7 +3017,7 @@
     "message": "Nire erakundea"
   },
   "organizationInfo": {
-    "message": "Organization info"
+    "message": "Erakundearen informazioa"
   },
   "deleteOrganization": {
     "message": "Ezabatu erakundea"
@@ -3345,7 +3345,7 @@
     "description": "ex. Date this item was updated"
   },
   "dateCreated": {
-    "message": "Created",
+    "message": "Sortuta",
     "description": "ex. Date this item was created"
   },
   "datePasswordUpdated": {
@@ -3716,10 +3716,10 @@
     "message": "Erakundearen identifikatzailea beharrezkoa da."
   },
   "ssoIdentifier": {
-    "message": "SSO identifier"
+    "message": "SSO identifikatzailea"
   },
   "ssoIdentifierHint": {
-    "message": "Provide this ID to your members to login with SSO."
+    "message": "Eman ID hau kideei, SSOrekin saioa hasteko."
   },
   "unlinkSso": {
     "message": "SSO deskonektatu"
@@ -4123,7 +4123,7 @@
     "message": "Baimenak"
   },
   "permission": {
-    "message": "Permission"
+    "message": "Baimena"
   },
   "managerPermissions": {
     "message": "Kudeatu baimenak"
@@ -4531,7 +4531,7 @@
     "message": "Bezeroa"
   },
   "client": {
-    "message": "Client",
+    "message": "Bezeroa",
     "description": "This is used as a table header to describe which client application created an event log."
   },
   "providerAdmin": {
@@ -5419,7 +5419,7 @@
     }
   },
   "inputMaxLength": {
-    "message": "Input must not exceed $COUNT$ characters in length.",
+    "message": "Sarrerak ezin ditu $COUNT$ karaktere baino gehiago eduki.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -5443,10 +5443,10 @@
     "message": "Piztuta"
   },
   "members": {
-    "message": "Members"
+    "message": "Kideak"
   },
   "reporting": {
-    "message": "Reporting"
+    "message": "Informatzen"
   },
   "cardBrandMir": {
     "message": "Mir"
@@ -5455,57 +5455,57 @@
     "message": "Erabiltzaile kopurua"
   },
   "loggingInAs": {
-    "message": "Logging in as"
+    "message": "Honela hasi saioa"
   },
   "notYou": {
-    "message": "Not you?"
+    "message": "Ez zara zu?"
   },
   "multiSelectPlaceholder": {
-    "message": "-- Type to Filter --"
+    "message": "-- Idatzi iragazteko --"
   },
   "multiSelectLoading": {
-    "message": "Retrieving options..."
+    "message": "Aukerak berreskuratzen..."
   },
   "multiSelectNotFound": {
-    "message": "No items found"
+    "message": "Ez da elementurik aurkitu"
   },
   "multiSelectClearAll": {
-    "message": "Clear all"
+    "message": "Ezabatu dena"
   },
   "from": {
-    "message": "From"
+    "message": "Igorlea"
   },
   "to": {
-    "message": "To"
+    "message": "Nora"
   },
   "member": {
-    "message": "Member"
+    "message": "Kidea"
   },
   "update": {
-    "message": "Update"
+    "message": "Eguneratu"
   },
   "role": {
-    "message": "Role"
+    "message": "Rola"
   },
   "canView": {
-    "message": "Can view"
+    "message": "Ikus dezake"
   },
   "canViewExceptPass": {
-    "message": "Can view, except passwords"
+    "message": "Ikus dezake, pasahitza izan ezik"
   },
   "canEdit": {
-    "message": "Can edit"
+    "message": "Editatu dezake"
   },
   "canEditExceptPass": {
-    "message": "Can edit, except passwords"
+    "message": "Editatu dezake, pasahitza izan ezik"
   },
   "group": {
-    "message": "Group"
+    "message": "Taldea"
   },
   "groupAccessAll": {
-    "message": "This group can access and modify all items."
+    "message": "Talde hau elementu guztietara sartu eta aldaketak egin ditzake."
   },
   "memberAccessAll": {
-    "message": "This member can access and modify all items."
+    "message": "Kide hau elementu guztietara sartu eta aldaketak egin ditzake."
   }
 }
