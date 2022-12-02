@@ -2081,7 +2081,7 @@ export class ApiService implements ApiServiceAbstraction {
     request.headers.set("Bitwarden-Client-Name", this.platformUtilsService.getClientType());
     request.headers.set(
       "Bitwarden-Client-Version",
-      await this.platformUtilsService.getApplicationVersion()
+      await this.platformUtilsService.getApplicationVersionNumber()
     );
     return this.nativeFetch(request);
   }
