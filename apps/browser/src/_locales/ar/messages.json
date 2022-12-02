@@ -482,7 +482,7 @@
     "message": "الاسم مطلوب."
   },
   "addedFolder": {
-    "message": "Folder added"
+    "message": "أُضيف المجلد"
   },
   "changeMasterPass": {
     "message": "تغيير كلمة المرور الرئيسية"
@@ -494,7 +494,7 @@
     "message": "تسجيل الدخول بخطوتين يجعل حسابك أكثر أمنا من خلال مطالبتك بالتحقق من تسجيل الدخول باستخدام جهاز آخر مثل مفتاح الأمان، تطبيق المصادقة، الرسائل القصيرة، المكالمة الهاتفية، أو البريد الإلكتروني. يمكن تمكين تسجيل الدخول بخطوتين على خزنة الويب bitwarden.com. هل تريد زيارة الموقع الآن؟"
   },
   "editedFolder": {
-    "message": "Folder saved"
+    "message": "حُفظ المجلد"
   },
   "deleteFolderConfirmation": {
     "message": "هل أنت متأكد من حذف هذا المجلّد؟"
@@ -521,7 +521,7 @@
     "message": "عنوان الـ URI"
   },
   "uriPosition": {
-    "message": "URI $POSITION$",
+    "message": "رابط $POSITION$",
     "description": "A listing of URIs. Ex: URI 1, URI 2, URI 3, etc.",
     "placeholders": {
       "position": {
@@ -571,13 +571,13 @@
     "description": "This is the folder for uncategorized items"
   },
   "enableAddLoginNotification": {
-    "message": "Ask to add login"
+    "message": "اطلب إضافة تسجيل الدخول"
   },
   "addLoginNotificationDesc": {
-    "message": "Ask to add an item if one isn't found in your vault."
+    "message": "اطلب إضافة عنصر إذا لم يُعثر عليه في خزنتك."
   },
   "showCardsCurrentTab": {
-    "message": "Show cards on Tab page"
+    "message": "أظهر البطاقات في صفحة التبويبات"
   },
   "showCardsCurrentTabDesc": {
     "message": "List card items on the Tab page for easy auto-fill."

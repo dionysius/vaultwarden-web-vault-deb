@@ -2012,7 +2012,7 @@
     "message": "Трећа страна"
   },
   "thirdPartyServerMessage": {
-    "message": "Connected to third-party server implementation, $SERVERNAME$. Please verify bugs using the official server, or report them to the third-party server.",
+    "message": "Повезан са имплементацијом сервера треће стране, $SERVERNAME$. Проверите грешке користећи званични сервер или их пријавите серверу треће стране.",
     "placeholders": {
       "servername": {
         "content": "$1",

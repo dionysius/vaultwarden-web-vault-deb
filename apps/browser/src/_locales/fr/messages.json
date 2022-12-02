@@ -577,16 +577,16 @@
     "message": "La \"Notification de demande d'ajout d'identifiant\" apparait automatiquement pour vous demander d'enregistrer dans votre coffre les identifiants que vous utilisez pour la première fois."
   },
   "showCardsCurrentTab": {
-    "message": "Show cards on Tab page"
+    "message": "Afficher les cartes sur la page de l'onglet"
   },
   "showCardsCurrentTabDesc": {
-    "message": "List card items on the Tab page for easy auto-fill."
+    "message": "Lister les éléments de la carte sur la page de l'onglet pour faciliter le remplissage automatique."
   },
   "showIdentitiesCurrentTab": {
-    "message": "Show identities on Tab page"
+    "message": "Afficher les identités sur la page Onglet courant"
   },
   "showIdentitiesCurrentTabDesc": {
-    "message": "List identity items on the Tab page for easy auto-fill."
+    "message": "Lister les éléments d'identité sur la page de l'onglet pour faciliter le remplissage automatique."
   },
   "clearClipboard": {
     "message": "Effacer le presse-papiers",
@@ -618,7 +618,7 @@
     "message": "Afficher les options du menu contextuel"
   },
   "contextMenuItemDesc": {
-    "message": "Use a secondary click to access password generation and matching logins for the website. "
+    "message": "Utilisez un clic secondaire pour accéder à la génération de mots de passe et les identifiants correspondants pour le site Web. "
   },
   "defaultUriMatchDetection": {
     "message": "Détection de correspondance URI par défaut",
@@ -816,7 +816,7 @@
     "message": "Si une clé d'authentification est rattachée à votre identifiant, alors le code de vérification TOTP est automatiquement copié dans le presse-papiers lorsque vous renseignez l'identifiant."
   },
   "enableAutoBiometricsPrompt": {
-    "message": "Ask for biometrics on launch"
+    "message": "Demander la biométrie au lancement"
   },
   "premiumRequired": {
     "message": "Version Premium requise"
@@ -1043,10 +1043,10 @@
     "message": "Afficher une image reconnaissable à côté de chaque identifiant."
   },
   "enableBadgeCounter": {
-    "message": "Show badge counter"
+    "message": "Afficher le compteur de badge"
   },
   "badgeCounterDesc": {
-    "message": "Indicate how many logins you have for the current web page."
+    "message": "Indique le nombre d'identifiants que vous avez pour la page web actuelle."
   },
   "cardholderName": {
     "message": "Nom du titulaire de la carte"
@@ -2000,19 +2000,19 @@
     "message": "Cliquez ici"
   },
   "environmentEditedReset": {
-    "message": "to reset to pre-configured settings"
+    "message": "pour réinitialiser aux paramètres par défaut"
   },
   "serverVersion": {
-    "message": "Server version"
+    "message": "Version du serveur"
   },
   "selfHosted": {
     "message": "Auto-hébergé"
   },
   "thirdParty": {
-    "message": "Third-party"
+    "message": "Tierce partie"
   },
   "thirdPartyServerMessage": {
-    "message": "Connected to third-party server implementation, $SERVERNAME$. Please verify bugs using the official server, or report them to the third-party server.",
+    "message": "Connecté à l'implémentation du serveur tiers, $SERVERNAME$. Veuillez contrôler les bugs en utilisant le serveur officiel, ou rapportez-les au serveur tiers.",
     "placeholders": {
       "servername": {
         "content": "$1",
@@ -2021,7 +2021,7 @@
     }
   },
   "lastSeenOn": {
-    "message": "last seen on: $DATE$",
+    "message": "vu pour la dernière fois le : $DATE$",
     "placeholders": {
       "date": {
         "content": "$1",
@@ -2030,10 +2030,10 @@
     }
   },
   "loginWithMasterPassword": {
-    "message": "Log in with master password"
+    "message": "Connectez-vous avec le mot de passe maître"
   },
   "loggingInAs": {
-    "message": "Logging in as"
+    "message": "Connexion en tant que"
   },
   "notYou": {
     "message": "Ce n'est pas vous ?"
@@ -2042,6 +2042,6 @@
     "message": "Êtes-vous nouveau ici ?"
   },
   "rememberEmail": {
-    "message": "Remember email"
+    "message": "Se souvenir de l'e-mail"
   }
 }
