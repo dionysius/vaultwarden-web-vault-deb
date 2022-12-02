@@ -1,8 +1,9 @@
 import { BrowserWindow, clipboard, dialog, MenuItemConstructorOptions } from "electron";
 
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
-import { UpdaterMain } from "@bitwarden/electron/updater.main";
-import { isMacAppStore, isSnapStore, isWindowsStore } from "@bitwarden/electron/utils";
+
+import { isMacAppStore, isSnapStore, isWindowsStore } from "../../utils";
+import { UpdaterMain } from "../updater.main";
 
 import { IMenubarMenu } from "./menubar";
 

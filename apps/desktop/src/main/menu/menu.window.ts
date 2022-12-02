@@ -2,8 +2,9 @@ import { MenuItemConstructorOptions } from "electron";
 
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { MessagingService } from "@bitwarden/common/abstractions/messaging.service";
-import { isMac } from "@bitwarden/electron/utils";
-import { WindowMain } from "@bitwarden/electron/window.main";
+
+import { isMac } from "../../utils";
+import { WindowMain } from "../window.main";
 
 import { IMenubarMenu } from "./menubar";
 

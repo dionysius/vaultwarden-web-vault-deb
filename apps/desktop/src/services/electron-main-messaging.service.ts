@@ -3,8 +3,8 @@ import { app, dialog, ipcMain, Menu, MenuItem, nativeTheme, session } from "elec
 import { MessagingService } from "@bitwarden/common/abstractions/messaging.service";
 import { ThemeType } from "@bitwarden/common/enums/themeType";
 
+import { WindowMain } from "../main/window.main";
 import { RendererMenuItem } from "../utils";
-import { WindowMain } from "../window.main";
 
 export class ElectronMainMessagingService implements MessagingService {
   constructor(private windowMain: WindowMain, private onMessage: (message: any) => void) {

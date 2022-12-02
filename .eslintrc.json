@@ -86,7 +86,7 @@
       "error",
       {
         "zones": [
-          // Do not allow angular/node/electron code to be imported into common
+          // Do not allow angular/node code to be imported into common
           {
             "target": "./libs/common/**/*",
             "from": "./libs/angular/**/*"
@@ -94,10 +94,6 @@
           {
             "target": "./libs/common/**/*",
             "from": "./libs/node/**/*"
-          },
-          {
-            "target": "./libs/common/**/*",
-            "from": "./libs/electron/**/*"
           }
         ]
       }
@@ -130,12 +126,6 @@
       "files": ["libs/node/src/**/*.ts"],
       "rules": {
         "no-restricted-imports": ["error", { "patterns": ["@bitwarden/node/*", "src/**/*"] }]
-      }
-    },
-    {
-      "files": ["libs/electron/src/**/*.ts"],
-      "rules": {
-        "no-restricted-imports": ["error", { "patterns": ["@bitwarden/electron/*", "src/**/*"] }]
       }
     }
   ]

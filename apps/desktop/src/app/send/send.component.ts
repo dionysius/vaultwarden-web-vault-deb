@@ -10,8 +10,8 @@ import { PolicyService } from "@bitwarden/common/abstractions/policy/policy.serv
 import { SearchService } from "@bitwarden/common/abstractions/search.service";
 import { SendService } from "@bitwarden/common/abstractions/send.service";
 import { SendView } from "@bitwarden/common/models/view/send.view";
-import { invokeMenu, RendererMenuItem } from "@bitwarden/electron/utils";
 
+import { invokeMenu, RendererMenuItem } from "../../utils";
 import { SearchBarService } from "../layout/search/search-bar.service";
 
 import { AddEditComponent } from "./add-edit.component";

@@ -8,7 +8,8 @@ import { ipcMain } from "electron";
 import * as ipc from "node-ipc";
 
 import { LogService } from "@bitwarden/common/abstractions/log.service";
-import { WindowMain } from "@bitwarden/electron/window.main";
+
+import { WindowMain } from "./window.main";
 
 export class NativeMessagingMain {
   private connected: Socket[] = [];

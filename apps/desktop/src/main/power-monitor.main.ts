@@ -1,8 +1,7 @@
 import { powerMonitor } from "electron";
 
-import { isSnapStore } from "@bitwarden/electron/utils";
-
 import { Main } from "../main";
+import { isSnapStore } from "../utils";
 
 // tslint:disable-next-line
 const IdleLockSeconds = 5 * 60; // 5 minutes

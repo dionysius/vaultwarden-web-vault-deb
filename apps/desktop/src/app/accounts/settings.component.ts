@@ -14,9 +14,9 @@ import { DeviceType } from "@bitwarden/common/enums/deviceType";
 import { StorageLocation } from "@bitwarden/common/enums/storageLocation";
 import { ThemeType } from "@bitwarden/common/enums/themeType";
 import { Utils } from "@bitwarden/common/misc/utils";
-import { isWindowsStore } from "@bitwarden/electron/utils";
 
 import { flagEnabled } from "../../flags";
+import { isWindowsStore } from "../../utils";
 import { SetPinComponent } from "../components/set-pin.component";
 
 @Component({

@@ -1,4 +1,4 @@
-import { cleanUserAgent } from "@bitwarden/electron/utils";
+import { cleanUserAgent } from "./utils";
 
 const expectedUserAgent = `Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/${process.versions.chrome} Safari/537.36`;
 

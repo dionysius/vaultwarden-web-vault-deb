@@ -7,7 +7,8 @@ import { EnvironmentService } from "@bitwarden/common/abstractions/environment.s
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { Utils } from "@bitwarden/common/misc/utils";
-import { getCookie } from "@bitwarden/electron/utils";
+
+import { getCookie } from "../../utils";
 
 const BroadcasterSubscriptionId = "AccessibilityCookieComponent";
 

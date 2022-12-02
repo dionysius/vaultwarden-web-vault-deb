@@ -19,7 +19,6 @@ module.exports = {
     "<rootDir>/libs/angular/jest.config.js",
     "<rootDir>/libs/common/jest.config.js",
     "<rootDir>/libs/components/jest.config.js",
-    "<rootDir>/libs/electron/jest.config.js",
     "<rootDir>/libs/node/jest.config.js",
   ],
 

@@ -27,8 +27,8 @@ import { CipherType } from "@bitwarden/common/enums/cipherType";
 import { EventType } from "@bitwarden/common/enums/eventType";
 import { CipherView } from "@bitwarden/common/models/view/cipher.view";
 import { FolderView } from "@bitwarden/common/models/view/folder.view";
-import { invokeMenu, RendererMenuItem } from "@bitwarden/electron/utils";
 
+import { invokeMenu, RendererMenuItem } from "../../utils";
 import { SearchBarService } from "../layout/search/search-bar.service";
 
 import { AddEditComponent } from "./add-edit.component";

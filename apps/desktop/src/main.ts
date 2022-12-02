@@ -6,12 +6,6 @@ import { StateFactory } from "@bitwarden/common/factories/stateFactory";
 import { GlobalState } from "@bitwarden/common/models/domain/global-state";
 import { MemoryStorageService } from "@bitwarden/common/services/memoryStorage.service";
 import { StateService } from "@bitwarden/common/services/state.service";
-import { ElectronLogService } from "@bitwarden/electron/services/electronLog.service";
-import { ElectronMainMessagingService } from "@bitwarden/electron/services/electronMainMessaging.service";
-import { ElectronStorageService } from "@bitwarden/electron/services/electronStorage.service";
-import { TrayMain } from "@bitwarden/electron/tray.main";
-import { UpdaterMain } from "@bitwarden/electron/updater.main";
-import { WindowMain } from "@bitwarden/electron/window.main";
 
 import { BiometricMain } from "./main/biometric/biometric.main";
 import { DesktopCredentialStorageListener } from "./main/desktop-credential-storage-listener";
@@ -19,7 +13,13 @@ import { MenuMain } from "./main/menu/menu.main";
 import { MessagingMain } from "./main/messaging.main";
 import { NativeMessagingMain } from "./main/native-messaging.main";
 import { PowerMonitorMain } from "./main/power-monitor.main";
+import { TrayMain } from "./main/tray.main";
+import { UpdaterMain } from "./main/updater.main";
+import { WindowMain } from "./main/window.main";
 import { Account } from "./models/account";
+import { ElectronLogService } from "./services/electron-log.service";
+import { ElectronMainMessagingService } from "./services/electron-main-messaging.service";
+import { ElectronStorageService } from "./services/electron-storage.service";
 import { I18nService } from "./services/i18n.service";
 
 export class Main {
@@ -105,15 +105,7 @@ export class Main {
       (win) => this.trayMain.setupWindowListeners(win)
     );
     this.messagingMain = new MessagingMain(this, this.stateService);
-    this.updaterMain = new UpdaterMain(
-      this.i18nService,
-      this.windowMain,
-      "clients",
-      null,
-      null,
-      null,
-      "bitwarden"
-    );
+    this.updaterMain = new UpdaterMain(this.i18nService, this.windowMain, "bitwarden");
     this.menuMain = new MenuMain(this);
     this.powerMonitorMain = new PowerMonitorMain(this);
     this.trayMain = new TrayMain(this.windowMain, this.i18nService, this.stateService);

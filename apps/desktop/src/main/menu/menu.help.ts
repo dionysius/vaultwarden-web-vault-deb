@@ -1,7 +1,8 @@
 import { shell, MenuItemConstructorOptions } from "electron";
 
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
-import { isMacAppStore, isWindowsStore } from "@bitwarden/electron/utils";
+
+import { isMacAppStore, isWindowsStore } from "../../utils";
 
 import { AboutMenu } from "./menu.about";
 import { IMenubarMenu } from "./menubar";

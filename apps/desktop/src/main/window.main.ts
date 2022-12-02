@@ -6,7 +6,7 @@ import { app, BrowserWindow, screen } from "electron";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 
-import { cleanUserAgent, isDev, isMacAppStore, isSnapStore } from "./utils";
+import { cleanUserAgent, isDev, isMacAppStore, isSnapStore } from "../utils";
 
 const mainWindowSizeKey = "mainWindowSize";
 const WindowEventHandlingDelay = 100;

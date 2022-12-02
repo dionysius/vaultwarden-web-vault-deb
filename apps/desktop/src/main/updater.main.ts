@@ -4,10 +4,11 @@ import { autoUpdater } from "electron-updater";
 
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 
-import { isAppImage, isDev, isMacAppStore, isWindowsPortable, isWindowsStore } from "./utils";
+import { isAppImage, isDev, isMacAppStore, isWindowsPortable, isWindowsStore } from "../utils";
+
 import { WindowMain } from "./window.main";
 
-const UpdaterCheckInitalDelay = 5 * 1000; // 5 seconds
+const UpdaterCheckInitialDelay = 5 * 1000; // 5 seconds
 const UpdaterCheckInterval = 12 * 60 * 60 * 1000; // 12 hours
 
 export class UpdaterMain {
@@ -18,10 +19,6 @@ export class UpdaterMain {
   constructor(
     private i18nService: I18nService,
     private windowMain: WindowMain,
-    private gitHubProject: string,
-    private onCheckingForUpdate: () => void = null,
-    private onReset: () => void = null,
-    private onUpdateDownloaded: () => void = null,
     private projectName: string
   ) {
     autoUpdater.logger = log;
@@ -36,13 +33,10 @@ export class UpdaterMain {
   }
 
   async init() {
-    global.setTimeout(async () => await this.checkForUpdate(), UpdaterCheckInitalDelay);
+    global.setTimeout(async () => await this.checkForUpdate(), UpdaterCheckInitialDelay);
     global.setInterval(async () => await this.checkForUpdate(), UpdaterCheckInterval);
 
     autoUpdater.on("checking-for-update", () => {
-      if (this.onCheckingForUpdate != null) {
-        this.onCheckingForUpdate();
-      }
       this.doingUpdateCheck = true;
     });
 
@@ -87,10 +81,6 @@ export class UpdaterMain {
     });
 
     autoUpdater.on("update-downloaded", async (info) => {
-      if (this.onUpdateDownloaded != null) {
-        this.onUpdateDownloaded();
-      }
-
       if (this.windowMain.win == null) {
         return;
       }
@@ -132,7 +122,7 @@ export class UpdaterMain {
 
     if (!this.canUpdate) {
       if (withFeedback) {
-        shell.openExternal("https://github.com/bitwarden/" + this.gitHubProject + "/releases");
+        shell.openExternal("https://github.com/bitwarden/clients/releases");
       }
 
       return;
@@ -147,9 +137,6 @@ export class UpdaterMain {
   }
 
   private reset() {
-    if (this.onReset != null) {
-      this.onReset();
-    }
     autoUpdater.autoDownload = true;
     this.doingUpdateCheck = false;
   }
