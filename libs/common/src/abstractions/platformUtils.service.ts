@@ -19,6 +19,7 @@ export abstract class PlatformUtilsService {
   isViewOpen: () => Promise<boolean>;
   launchUri: (uri: string, options?: any) => void;
   getApplicationVersion: () => Promise<string>;
+  getApplicationVersionNumber: () => Promise<string>;
   supportsWebAuthn: (win: Window) => boolean;
   supportsDuo: () => boolean;
   showToast: (
