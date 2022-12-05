@@ -1,4 +1,5 @@
 import { BehaviorSubject, concatMap } from "rxjs";
+import { Jsonify } from "type-fest";
 
 import { LogService } from "../abstractions/log.service";
 import { StateService as StateServiceAbstraction } from "../abstractions/state.service";
@@ -13,6 +14,7 @@ import { StorageLocation } from "../enums/storageLocation";
 import { ThemeType } from "../enums/themeType";
 import { UriMatchType } from "../enums/uriMatchType";
 import { StateFactory } from "../factories/stateFactory";
+import { Utils } from "../misc/utils";
 import { CipherData } from "../models/data/cipher.data";
 import { CollectionData } from "../models/data/collection.data";
 import { EncryptedOrganizationKeyData } from "../models/data/encrypted-organization-key.data";
@@ -66,16 +68,19 @@ export class StateService<
 > implements StateServiceAbstraction<TAccount>
 {
   accounts = new BehaviorSubject<{ [userId: string]: TAccount }>({});
-  private activeAccountSubject = new BehaviorSubject<string>(null);
+  protected activeAccountSubject = new BehaviorSubject<string>(null);
   activeAccount$ = this.activeAccountSubject.asObservable();
 
-  private activeAccountUnlockedSubject = new BehaviorSubject<boolean>(false);
+  protected activeAccountUnlockedSubject = new BehaviorSubject<boolean>(false);
   activeAccountUnlocked$ = this.activeAccountUnlockedSubject.asObservable();
 
   private hasBeenInited = false;
   private isRecoveredSession = false;
 
   private accountDiskCache = new Map<string, TAccount>();
+
+  // default account serializer, must be overridden by child class
+  protected accountDeserializer = Account.fromJSON as (json: Jsonify<TAccount>) => TAccount;
 
   constructor(
     protected storageService: AbstractStorageService,
@@ -674,7 +679,7 @@ export class StateService<
     const account = await this.getAccount(
       this.reconcileOptions(options, await this.defaultInMemoryOptions())
     );
-    return this.recordToMap(account?.keys?.organizationKeys?.decrypted);
+    return Utils.recordToMap(account?.keys?.organizationKeys?.decrypted);
   }
 
   async setDecryptedOrganizationKeys(
@@ -684,7 +689,7 @@ export class StateService<
     const account = await this.getAccount(
       this.reconcileOptions(options, await this.defaultInMemoryOptions())
     );
-    account.keys.organizationKeys.decrypted = this.mapToRecord(value);
+    account.keys.organizationKeys.decrypted = Utils.mapToRecord(value);
     await this.saveAccount(
       account,
       this.reconcileOptions(options, await this.defaultInMemoryOptions())
@@ -772,7 +777,7 @@ export class StateService<
     const account = await this.getAccount(
       this.reconcileOptions(options, await this.defaultInMemoryOptions())
     );
-    return this.recordToMap(account?.keys?.providerKeys?.decrypted);
+    return Utils.recordToMap(account?.keys?.providerKeys?.decrypted);
   }
 
   async setDecryptedProviderKeys(
@@ -782,7 +787,7 @@ export class StateService<
     const account = await this.getAccount(
       this.reconcileOptions(options, await this.defaultInMemoryOptions())
     );
-    account.keys.providerKeys.decrypted = this.mapToRecord(value);
+    account.keys.providerKeys.decrypted = Utils.mapToRecord(value);
     await this.saveAccount(
       account,
       this.reconcileOptions(options, await this.defaultInMemoryOptions())
@@ -2742,7 +2747,7 @@ export class StateService<
 
   protected async state(): Promise<State<TGlobalState, TAccount>> {
     const state = await this.memoryStorageService.get<State<TGlobalState, TAccount>>(keys.state, {
-      deserializer: (s) => State.fromJSON(s),
+      deserializer: (s) => State.fromJSON(s, this.accountDeserializer),
     });
     return state;
   }
@@ -2763,50 +2768,6 @@ export class StateService<
       await this.setState(updatedState);
     });
   }
-
-  private mapToRecord<V>(map: Map<string, V>): Record<string, V> {
-    return map == null ? null : Object.fromEntries(map);
-  }
-
-  private recordToMap<V>(record: Record<string, V>): Map<string, V> {
-    return record == null ? null : new Map(Object.entries(record));
-  }
-}
-
-export function withPrototype<T>(
-  constructor: new (...args: any[]) => T,
-  converter: (input: any) => T = (i) => i
-): (
-  target: any,
-  propertyKey: string | symbol,
-  descriptor: PropertyDescriptor
-) => { value: (...args: any[]) => Promise<T> } {
-  return (target: any, propertyKey: string | symbol, descriptor: PropertyDescriptor) => {
-    const originalMethod = descriptor.value;
-
-    return {
-      value: function (...args: any[]) {
-        const originalResult: Promise<T> = originalMethod.apply(this, args);
-
-        if (!(originalResult instanceof Promise)) {
-          throw new Error(
-            `Error applying prototype to stored value -- result is not a promise for method ${String(
-              propertyKey
-            )}`
-          );
-        }
-
-        return originalResult.then((result) => {
-          return result == null ||
-            result.constructor.name === constructor.prototype.constructor.name
-            ? converter(result as T)
-            : converter(
-                Object.create(constructor.prototype, Object.getOwnPropertyDescriptors(result)) as T
-              );
-        });
-      },
-    };
-  };
 }
 
 function withPrototypeForArrayMembers<T>(
@@ -2845,7 +2806,7 @@ function withPrototypeForArrayMembers<T>(
             return result.map((r) => {
               return r == null ||
                 r.constructor.name === memberConstructor.prototype.constructor.name
-                ? memberConverter(r)
+                ? r
                 : memberConverter(
                     Object.create(memberConstructor.prototype, Object.getOwnPropertyDescriptors(r))
                   );

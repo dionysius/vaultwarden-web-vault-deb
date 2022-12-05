@@ -412,7 +412,7 @@ export class CipherService implements CipherServiceAbstraction {
         : firstValueFrom(this.settingsService.settings$).then(
             (settings: AccountSettingsSettings) => {
               let matches: any[] = [];
-              settings.equivalentDomains?.forEach((eqDomain: any) => {
+              settings?.equivalentDomains?.forEach((eqDomain: any) => {
                 if (eqDomain.length && eqDomain.indexOf(domain) >= 0) {
                   matches = matches.concat(eqDomain);
                 }

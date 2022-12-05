@@ -1,12 +1,16 @@
 import { Jsonify } from "type-fest";
 
 import { SessionStorable } from "./session-storable";
+import { InitializeOptions } from "./sync-item-metadata";
 
-class BuildOptions<T> {
+class BuildOptions<T, TJson = Jsonify<T>> {
   ctor?: new () => T;
-  initializer?: (keyValuePair: Jsonify<T>) => T;
-  initializeAsArray? = false;
+  initializer?: (keyValuePair: TJson) => T;
+  initializeAs?: InitializeOptions;
 }
+
+// Used to ensure uniqueness for each synced observable
+let index = 0;
 
 /**
  * A decorator used to indicate the BehaviorSubject should be synced for this browser session across all contexts.
@@ -20,10 +24,10 @@ class BuildOptions<T> {
  * @param buildOptions
  * Builders for the value, requires either a constructor (ctor) for your BehaviorSubject type or an
  * initializer function that takes a key value pair representation of the BehaviorSubject data
- * and returns your instantiated BehaviorSubject value. `initializeAsArray can optionally be used to indicate
+ * and returns your instantiated BehaviorSubject value. `initializeAs can optionally be used to indicate
  * the provided initializer function should be used to build an array of values. For example,
  * ```ts
- * \@sessionSync({ initializer: Foo.fromJSON, initializeAsArray: true })
+ * \@sessionSync({ initializer: Foo.fromJSON, initializeAs: 'array' })
  * ```
  * is equivalent to
  * ```
@@ -43,10 +47,10 @@ export function sessionSync<T>(buildOptions: BuildOptions<T>) {
 
     p.__syncedItemMetadata.push({
       propertyKey,
-      sessionKey: `${prototype.constructor.name}_${propertyKey}`,
+      sessionKey: `${propertyKey}_${index++}`,
       ctor: buildOptions.ctor,
       initializer: buildOptions.initializer,
-      initializeAsArray: buildOptions.initializeAsArray,
+      initializeAs: buildOptions.initializeAs ?? "object",
     });
   };
 }

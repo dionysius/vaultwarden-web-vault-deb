@@ -1,5 +1,6 @@
 import { SendType } from "../../enums/sendType";
 import { Utils } from "../../misc/utils";
+import { DeepJsonify } from "../../types/deep-jsonify";
 import { Send } from "../domain/send";
 import { SymmetricCryptoKey } from "../domain/symmetric-crypto-key";
 
@@ -64,5 +65,27 @@ export class SendView implements View {
 
   get pendingDelete(): boolean {
     return this.deletionDate <= new Date();
+  }
+
+  toJSON() {
+    return Utils.merge(this, {
+      key: Utils.fromBufferToB64(this.key),
+    });
+  }
+
+  static fromJSON(json: DeepJsonify<SendView>) {
+    if (json == null) {
+      return null;
+    }
+
+    return Object.assign(new SendView(), json, {
+      key: Utils.fromB64ToArray(json.key)?.buffer,
+      cryptoKey: SymmetricCryptoKey.fromJSON(json.cryptoKey),
+      text: SendTextView.fromJSON(json.text),
+      file: SendFileView.fromJSON(json.file),
+      revisionDate: json.revisionDate == null ? null : new Date(json.revisionDate),
+      deletionDate: json.deletionDate == null ? null : new Date(json.deletionDate),
+      expirationDate: json.expirationDate == null ? null : new Date(json.expirationDate),
+    });
   }
 }

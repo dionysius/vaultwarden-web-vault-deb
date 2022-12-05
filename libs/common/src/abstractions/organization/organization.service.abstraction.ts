@@ -70,6 +70,10 @@ export function canAccessAdmin(i18nService: I18nService) {
   );
 }
 
+export function isNotProviderUser(org: Organization): boolean {
+  return !org.isProviderUser;
+}
+
 export abstract class OrganizationService {
   organizations$: Observable<Organization[]>;
 

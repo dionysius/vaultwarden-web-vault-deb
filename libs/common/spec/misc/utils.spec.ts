@@ -241,4 +241,72 @@ describe("Utils Service", () => {
       expect(Utils.fromByteStringToArray(null)).toEqual(null);
     });
   });
+
+  describe("mapToRecord", () => {
+    it("should handle null", () => {
+      expect(Utils.mapToRecord(null)).toEqual(null);
+    });
+
+    it("should handle empty map", () => {
+      expect(Utils.mapToRecord(new Map())).toEqual({});
+    });
+
+    it("should handle convert a Map to a Record", () => {
+      const map = new Map([
+        ["key1", "value1"],
+        ["key2", "value2"],
+      ]);
+      expect(Utils.mapToRecord(map)).toEqual({ key1: "value1", key2: "value2" });
+    });
+
+    it("should handle convert a Map to a Record with non-string keys", () => {
+      const map = new Map([
+        [1, "value1"],
+        [2, "value2"],
+      ]);
+      const result = Utils.mapToRecord(map);
+      expect(result).toEqual({ 1: "value1", 2: "value2" });
+      expect(Utils.recordToMap(result)).toEqual(map);
+    });
+
+    it("should not convert an object if it's not a map", () => {
+      const obj = { key1: "value1", key2: "value2" };
+      expect(Utils.mapToRecord(obj as any)).toEqual(obj);
+    });
+  });
+
+  describe("recordToMap", () => {
+    it("should handle null", () => {
+      expect(Utils.recordToMap(null)).toEqual(null);
+    });
+
+    it("should handle empty record", () => {
+      expect(Utils.recordToMap({})).toEqual(new Map());
+    });
+
+    it("should handle convert a Record to a Map", () => {
+      const record = { key1: "value1", key2: "value2" };
+      expect(Utils.recordToMap(record)).toEqual(new Map(Object.entries(record)));
+    });
+
+    it("should handle convert a Record to a Map with non-string keys", () => {
+      const record = { 1: "value1", 2: "value2" };
+      const result = Utils.recordToMap(record);
+      expect(result).toEqual(
+        new Map([
+          [1, "value1"],
+          [2, "value2"],
+        ])
+      );
+      expect(Utils.mapToRecord(result)).toEqual(record);
+    });
+
+    it("should not convert an object if already a map", () => {
+      const map = new Map([
+        ["key1", "value1"],
+        ["key2", "value2"],
+      ]);
+      expect(Utils.recordToMap(map as any)).toEqual(map);
+    });
+  });
 });

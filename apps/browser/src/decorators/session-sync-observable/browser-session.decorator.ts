@@ -1,6 +1,6 @@
 import { Constructor } from "type-fest";
 
-import { StateService } from "../../services/state.service";
+import { BrowserStateService } from "../../services/browser-state.service";
 
 import { SessionStorable } from "./session-storable";
 import { SessionSyncer } from "./session-syncer";
@@ -22,7 +22,13 @@ export function browserSession<TCtor extends Constructor<any>>(constructor: TCto
       super(...args);
 
       // Require state service to be injected
-      const stateService = args.find((arg) => arg instanceof StateService);
+      const stateService: BrowserStateService = [this as any]
+        .concat(args)
+        .find(
+          (arg) =>
+            typeof arg.setInSessionMemory === "function" &&
+            typeof arg.getFromSessionMemory === "function"
+        );
       if (!stateService) {
         throw new Error(
           `Cannot decorate ${constructor.name} with browserSession, Browser's StateService must be injected`
@@ -38,7 +44,7 @@ export function browserSession<TCtor extends Constructor<any>>(constructor: TCto
       );
     }
 
-    buildSyncer(metadata: SyncedItemMetadata, stateService: StateService) {
+    buildSyncer(metadata: SyncedItemMetadata, stateService: BrowserStateService) {
       const syncer = new SessionSyncer((this as any)[metadata.propertyKey], stateService, metadata);
       syncer.init();
       return syncer;

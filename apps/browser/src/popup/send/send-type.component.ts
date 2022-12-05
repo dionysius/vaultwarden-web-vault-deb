@@ -16,7 +16,7 @@ import { SendType } from "@bitwarden/common/enums/sendType";
 import { SendView } from "@bitwarden/common/models/view/send.view";
 
 import { BrowserComponentState } from "../../models/browserComponentState";
-import { StateService } from "../../services/abstractions/state.service";
+import { BrowserStateService } from "../../services/abstractions/browser-state.service";
 import { PopupUtilsService } from "../services/popup-utils.service";
 
 const ComponentId = "SendTypeComponent";
@@ -41,7 +41,7 @@ export class SendTypeComponent extends BaseSendComponent {
     policyService: PolicyService,
     searchService: SearchService,
     private popupUtils: PopupUtilsService,
-    private stateService: StateService,
+    private stateService: BrowserStateService,
     private route: ActivatedRoute,
     private location: Location,
     private changeDetectorRef: ChangeDetectorRef,

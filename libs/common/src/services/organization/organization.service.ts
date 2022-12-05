@@ -6,7 +6,7 @@ import { OrganizationData } from "../../models/data/organization.data";
 import { Organization } from "../../models/domain/organization";
 
 export class OrganizationService implements InternalOrganizationServiceAbstraction {
-  private _organizations = new BehaviorSubject<Organization[]>([]);
+  protected _organizations = new BehaviorSubject<Organization[]>([]);
 
   organizations$ = this._organizations.asObservable();
 

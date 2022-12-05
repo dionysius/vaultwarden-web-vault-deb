@@ -4,7 +4,10 @@ import { firstValueFrom, from, mergeMap, Observable } from "rxjs";
 import { CipherService } from "@bitwarden/common/abstractions/cipher.service";
 import { CollectionService } from "@bitwarden/common/abstractions/collection.service";
 import { FolderService } from "@bitwarden/common/abstractions/folder/folder.service.abstraction";
-import { OrganizationService } from "@bitwarden/common/abstractions/organization/organization.service.abstraction";
+import {
+  isNotProviderUser,
+  OrganizationService,
+} from "@bitwarden/common/abstractions/organization/organization.service.abstraction";
 import { PolicyService } from "@bitwarden/common/abstractions/policy/policy.service.abstraction";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { PolicyType } from "@bitwarden/common/enums/policyType";
@@ -37,8 +40,13 @@ export class VaultFilterService {
     return new Set(await this.stateService.getCollapsedGroupings());
   }
 
-  buildOrganizations(): Promise<Organization[]> {
-    return this.organizationService.getAll();
+  async buildOrganizations(): Promise<Organization[]> {
+    let organizations = await this.organizationService.getAll();
+    if (organizations != null) {
+      organizations = organizations.filter(isNotProviderUser);
+    }
+
+    return organizations;
   }
 
   buildNestedFolders(organizationId?: string): Observable<DynamicTreeNode<FolderView>> {

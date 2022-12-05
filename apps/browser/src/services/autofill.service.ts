@@ -14,7 +14,6 @@ import { BrowserApi } from "../browser/browserApi";
 import AutofillField from "../models/autofillField";
 import AutofillPageDetails from "../models/autofillPageDetails";
 import AutofillScript from "../models/autofillScript";
-import { StateService } from "../services/abstractions/state.service";
 
 import {
   AutoFillOptions,
@@ -22,6 +21,7 @@ import {
   PageDetail,
   FormData,
 } from "./abstractions/autofill.service";
+import { BrowserStateService } from "./abstractions/browser-state.service";
 import {
   AutoFillConstants,
   CreditCardAutoFillConstants,
@@ -39,7 +39,7 @@ export interface GenerateFillScriptOptions {
 export default class AutofillService implements AutofillServiceInterface {
   constructor(
     private cipherService: CipherService,
-    private stateService: StateService,
+    private stateService: BrowserStateService,
     private totpService: TotpService,
     private eventService: EventService,
     private logService: LogService
