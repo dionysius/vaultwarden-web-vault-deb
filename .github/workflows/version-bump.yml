@@ -56,7 +56,7 @@ jobs:
           VERSION: ${{ github.event.inputs.version_number }}
         run: |
           CLIENT=$(python -c "print('$CLIENT_NAME'.lower())")
-          echo "::set-output name=client::$CLIENT"
+          echo "client=$CLIENT" >> $GITHUB_OUTPUT
 
           git switch -c ${CLIENT}_version_bump_${VERSION}
 
@@ -131,9 +131,9 @@ jobs:
         id: version-changed
         run: |
           if [ -n "$(git status --porcelain)" ]; then
-            echo "::set-output name=changes_to_commit::TRUE"
+            echo "changes_to_commit=TRUE" >> $GITHUB_OUTPUT
           else
-            echo "::set-output name=changes_to_commit::FALSE"
+            echo "changes_to_commit=FALSE" >> $GITHUB_OUTPUT
             echo "No changes to commit!";
           fi
 
@@ -142,8 +142,7 @@ jobs:
         env:
           CLIENT: ${{ steps.branch.outputs.client }}
           VERSION: ${{ github.event.inputs.version_number }}
-        run: |
-          git commit -m "Bumped ${CLIENT} version to ${VERSION}" -a
+        run: git commit -m "Bumped ${CLIENT} version to ${VERSION}" -a
 
       - name: Push changes
         if: ${{ steps.version-changed.outputs.changes_to_commit == 'TRUE' }}

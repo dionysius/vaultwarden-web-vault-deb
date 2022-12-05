@@ -80,15 +80,15 @@ jobs:
         run: |
           case "${{ steps.version.outputs.version }}" in
             *"alpha"*)
-              echo "::set-output name=channel::alpha"
+              echo "channel=alpha" >> $GITHUB_OUTPUT
               echo "[!] We do not yet support 'alpha'"
               exit 1
               ;;
             *"beta"*)
-              echo "::set-output name=channel::beta"
+              echo "channel=beta" >> $GITHUB_OUTPUT
               ;;
             *)
-              echo "::set-output name=channel::latest"
+              echo "channel=latest" >> $GITHUB_OUTPUT
               ;;
           esac
 

@@ -87,29 +87,29 @@ jobs:
         id: retrieve-version
         run: |
           PKG_VERSION=$(jq -r .version src/package.json)
-          echo "::set-output name=package_version::$PKG_VERSION"
+          echo "package_version=$PKG_VERSION" >> $GITHUB_OUTPUT
 
       - name: Increment Version
         id: increment-version
         run: |
           BUILD_NUMBER=$(expr 3000 + $GITHUB_RUN_NUMBER)
           echo "Setting build number to $BUILD_NUMBER"
-          echo "::set-output name=build_number::$BUILD_NUMBER"
+          echo "build_number=$BUILD_NUMBER" >> $GITHUB_OUTPUT
 
       - name: Get Version Channel
         id: release-channel
         run: |
           case "${{ steps.retrieve-version.outputs.package_version }}" in
             *"alpha"*)
-              echo "::set-output name=channel::alpha"
+              echo "channel=alpha" >> $GITHUB_OUTPUT
               echo "[!] We do not yet support 'alpha'"
               exit 1
               ;;
             *"beta"*)
-              echo "::set-output name=channel::beta"
+              echo "channel=beta" >> $GITHUB_OUTPUT
               ;;
             *)
-              echo "::set-output name=channel::latest"
+              echo "channel=latest" >> $GITHUB_OUTPUT
               ;;
           esac
 
@@ -117,15 +117,15 @@ jobs:
         id: branch-check
         run: |
           if [[ $(git ls-remote --heads origin rc) ]]; then
-            echo "::set-output name=rc_branch_exists::1"
+            echo "rc_branch_exists=1" >> $GITHUB_OUTPUT
           else
-            echo "::set-output name=rc_branch_exists::0"
+            echo "rc_branch_exists=0" >> $GITHUB_OUTPUT
           fi
 
           if [[ $(git ls-remote --heads origin hotfix-rc-desktop) ]]; then
-            echo "::set-output name=hotfix_branch_exists::1"
+            echo "hotfix_branch_exists=1" >> $GITHUB_OUTPUT
           else
-            echo "::set-output name=hotfix_branch_exists::0"
+            echo "hotfix_branch_exists=0" >> $GITHUB_OUTPUT
           fi
 
 

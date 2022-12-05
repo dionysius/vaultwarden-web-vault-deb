@@ -62,7 +62,7 @@ jobs:
         id: retrieve-version
         run: |
           PKG_VERSION=$(jq -r .version package.json)
-          echo "::set-output name=package_version::$PKG_VERSION"
+          echo "package_version=$PKG_VERSION" >> $GITHUB_OUTPUT
 
 
   cli:

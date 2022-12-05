@@ -63,8 +63,8 @@ jobs:
           repo_url=https://github.com/$GITHUB_REPOSITORY.git
           adj_build_num=${GITHUB_SHA:0:7}
 
-          echo "::set-output name=repo_url::$repo_url"
-          echo "::set-output name=adj_build_number::$adj_build_num"
+          echo "repo_url=$repo_url" >> $GITHUB_OUTPUT
+          echo "adj_build_number=$adj_build_num" >> $GITHUB_OUTPUT
 
 
   locales-test:
@@ -183,7 +183,7 @@ jobs:
           name: dist-opera-MV3-${{ env._BUILD_NUMBER }}.zip
           path: apps/browser/dist/dist-opera-mv3.zip
           if-no-files-found: error
-          
+
       - name: Upload Chrome artifact
         uses: actions/upload-artifact@6673cd052c4cd6fcf4b4e6e60ea986c889389535  # v3.0.0
         with:

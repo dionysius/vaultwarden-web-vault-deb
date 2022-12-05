@@ -60,22 +60,22 @@ jobs:
         run: |
           BUILD_NUMBER=$(expr 3000 + $GITHUB_RUN_NUMBER)
           echo "Setting build number to $BUILD_NUMBER"
-          echo "::set-output name=build_number::$BUILD_NUMBER"
+          echo "build_number=$BUILD_NUMBER" >> $GITHUB_OUTPUT
 
       - name: Get Version Channel
         id: release-channel
         run: |
           case "${{ steps.version.outputs.version }}" in
             *"alpha"*)
-              echo "::set-output name=channel::alpha"
+              echo "channel=alpha" >> $GITHUB_OUTPUT
               echo "[!] We do not yet support 'alpha'"
               exit 1
               ;;
             *"beta"*)
-              echo "::set-output name=channel::beta"
+              echo "channel=beta" >> $GITHUB_OUTPUT
               ;;
             *)
-              echo "::set-output name=channel::latest"
+              echo "channel=latest" >> $GITHUB_OUTPUT
               ;;
           esac
 
@@ -102,7 +102,7 @@ jobs:
 
           git push -u origin $branch_name
 
-          echo "::set-output name=branch-name::$branch_name"
+          echo "branch-name=$branch_name" >> $GITHUB_OUTPUT
 
   linux:
     name: Linux Build
