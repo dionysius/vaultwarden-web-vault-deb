@@ -1,0 +1,14 @@
+<bit-form-control inline>
+  <input
+    type="radio"
+    bitRadio
+    [id]="inputId"
+    [name]="name"
+    [disabled]="disabled"
+    [value]="value"
+    [checked]="selected"
+    (change)="onInputChange()"
+    (blur)="onBlur()"
+  />
+  <bit-label><ng-content></ng-content></bit-label>
+</bit-form-control>

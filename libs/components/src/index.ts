@@ -4,6 +4,7 @@ export * from "./badge";
 export * from "./banner";
 export * from "./button";
 export * from "./callout";
+export * from "./checkbox";
 export * from "./dialog";
 export * from "./form-field";
 export * from "./icon-button";

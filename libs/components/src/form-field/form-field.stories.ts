@@ -12,7 +12,9 @@ import { Meta, moduleMetadata, Story } from "@storybook/angular";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 
 import { ButtonModule } from "../button";
+import { CheckboxModule } from "../checkbox";
 import { InputModule } from "../input/input.module";
+import { RadioButtonModule } from "../radio-button";
 import { I18nMockService } from "../utils/i18n-mock.service";
 
 import { BitFormFieldComponent } from "./form-field.component";
@@ -23,7 +25,15 @@ export default {
   component: BitFormFieldComponent,
   decorators: [
     moduleMetadata({
-      imports: [FormsModule, ReactiveFormsModule, FormFieldModule, InputModule, ButtonModule],
+      imports: [
+        FormsModule,
+        ReactiveFormsModule,
+        FormFieldModule,
+        InputModule,
+        ButtonModule,
+        CheckboxModule,
+        RadioButtonModule,
+      ],
       providers: [
         {
           provide: I18nService,
@@ -55,6 +65,8 @@ const formObj = fb.group({
 const defaultFormObj = fb.group({
   name: ["", [Validators.required]],
   email: ["", [Validators.required, Validators.email, forbiddenNameValidator(/bit/i)]],
+  terms: [false, [Validators.requiredTrue]],
+  updates: ["yes"],
 });
 
 // Custom error message, `message` is shown as the error message

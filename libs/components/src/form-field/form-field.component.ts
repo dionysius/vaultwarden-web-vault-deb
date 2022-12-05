@@ -7,9 +7,10 @@ import {
   ViewChild,
 } from "@angular/core";
 
+import { BitHintComponent } from "../form-control/hint.component";
+
 import { BitErrorComponent } from "./error.component";
 import { BitFormFieldControl } from "./form-field-control";
-import { BitHintComponent } from "./hint.component";
 import { BitPrefixDirective } from "./prefix.directive";
 import { BitSuffixDirective } from "./suffix.directive";
 
