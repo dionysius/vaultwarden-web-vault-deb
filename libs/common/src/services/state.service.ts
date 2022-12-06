@@ -77,7 +77,7 @@ export class StateService<
   private hasBeenInited = false;
   private isRecoveredSession = false;
 
-  private accountDiskCache = new Map<string, TAccount>();
+  protected accountDiskCache = new BehaviorSubject<Record<string, TAccount>>({});
 
   // default account serializer, must be overridden by child class
   protected accountDeserializer = Account.fromJSON as (json: Jsonify<TAccount>) => TAccount;
@@ -2381,7 +2381,7 @@ export class StateService<
     }
 
     if (this.useAccountCache) {
-      const cachedAccount = this.accountDiskCache.get(options.userId);
+      const cachedAccount = this.accountDiskCache.value[options.userId];
       if (cachedAccount != null) {
         return cachedAccount;
       }
@@ -2395,9 +2395,7 @@ export class StateService<
         ))
       : await this.storageService.get<TAccount>(options.userId, options);
 
-    if (this.useAccountCache) {
-      this.accountDiskCache.set(options.userId, account);
-    }
+    this.setDiskCache(options.userId, account);
     return account;
   }
 
@@ -2428,9 +2426,7 @@ export class StateService<
 
     await storageLocation.save(`${options.userId}`, account, options);
 
-    if (this.useAccountCache) {
-      this.accountDiskCache.delete(options.userId);
-    }
+    this.deleteDiskCache(options.userId);
   }
 
   protected async saveAccountToMemory(account: TAccount): Promise<void> {
@@ -2641,9 +2637,7 @@ export class StateService<
       userId = userId ?? state.activeUserId;
       delete state.accounts[userId];
 
-      if (this.useAccountCache) {
-        this.accountDiskCache.delete(userId);
-      }
+      this.deleteDiskCache(userId);
 
       return state;
     });
@@ -2767,6 +2761,20 @@ export class StateService<
 
       await this.setState(updatedState);
     });
+  }
+
+  private setDiskCache(key: string, value: TAccount, options?: StorageOptions) {
+    if (this.useAccountCache) {
+      this.accountDiskCache.value[key] = value;
+      this.accountDiskCache.next(this.accountDiskCache.value);
+    }
+  }
+
+  private deleteDiskCache(key: string) {
+    if (this.useAccountCache) {
+      delete this.accountDiskCache.value[key];
+      this.accountDiskCache.next(this.accountDiskCache.value);
+    }
   }
 }
 

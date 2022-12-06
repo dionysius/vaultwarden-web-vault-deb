@@ -42,9 +42,12 @@ export class SessionSyncer {
     }
 
     this.observe();
-    if (this.stateService.hasInSessionMemory(this.metaData.sessionKey)) {
-      this.update();
-    }
+    // must be synchronous
+    this.stateService.hasInSessionMemory(this.metaData.sessionKey).then((hasInSessionMemory) => {
+      if (hasInSessionMemory) {
+        this.update();
+      }
+    });
 
     this.listenForUpdates();
   }

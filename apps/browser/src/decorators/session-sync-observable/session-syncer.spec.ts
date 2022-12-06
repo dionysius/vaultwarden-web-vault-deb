@@ -1,4 +1,4 @@
-import { awaitAsync as flushAsyncObservables } from "@bitwarden/angular/../test-utils";
+import { awaitAsync, awaitAsync as flushAsyncObservables } from "@bitwarden/angular/../test-utils";
 import { mock, MockProxy } from "jest-mock-extended";
 import { BehaviorSubject, ReplaySubject } from "rxjs";
 
@@ -30,6 +30,7 @@ describe("session syncer", () => {
     });
 
     stateService = mock<BrowserStateService>();
+    stateService.hasInSessionMemory.mockResolvedValue(false);
     sut = new SessionSyncer(behaviorSubject, stateService, metaData);
   });
 
@@ -101,24 +102,26 @@ describe("session syncer", () => {
       expect(sut["ignoreNUpdates"]).toBe(1);
     });
 
-    it("should grab an initial value from storage if it exists", () => {
+    it("should grab an initial value from storage if it exists", async () => {
       stateService.hasInSessionMemory.mockResolvedValue(true);
       //Block a call to update
       const updateSpy = jest.spyOn(sut as any, "update").mockImplementation();
 
       sut.init();
+      await awaitAsync();
 
       expect(updateSpy).toHaveBeenCalledWith();
     });
 
-    it("should not grab an initial value from storage if it does not exist", () => {
+    it("should not grab an initial value from storage if it does not exist", async () => {
       stateService.hasInSessionMemory.mockResolvedValue(false);
       //Block a call to update
       const updateSpy = jest.spyOn(sut as any, "update").mockImplementation();
 
       sut.init();
+      await awaitAsync();
 
-      expect(updateSpy).toHaveBeenCalledWith();
+      expect(updateSpy).not.toHaveBeenCalled();
     });
   });
 
