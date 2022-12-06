@@ -2,7 +2,7 @@ import { Component, EventEmitter, Input, OnDestroy, Output } from "@angular/core
 
 import { VaultItemsComponent as BaseVaultItemsComponent } from "@bitwarden/angular/components/vault-items.component";
 import { CipherService } from "@bitwarden/common/abstractions/cipher.service";
-import { EventService } from "@bitwarden/common/abstractions/event.service";
+import { EventCollectionService } from "@bitwarden/common/abstractions/event/event-collection.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { OrganizationService } from "@bitwarden/common/abstractions/organization/organization.service.abstraction";
@@ -51,7 +51,7 @@ export class VaultItemsComponent extends BaseVaultItemsComponent implements OnDe
     protected i18nService: I18nService,
     protected platformUtilsService: PlatformUtilsService,
     protected cipherService: CipherService,
-    protected eventService: EventService,
+    protected eventCollectionService: EventCollectionService,
     protected totpService: TotpService,
     protected stateService: StateService,
     protected passwordRepromptService: PasswordRepromptService,
@@ -241,9 +241,12 @@ export class VaultItemsComponent extends BaseVaultItemsComponent implements OnDe
     );
 
     if (typeI18nKey === "password" || typeI18nKey === "verificationCodeTotp") {
-      this.eventService.collect(EventType.Cipher_ClientToggledHiddenFieldVisible, cipher.id);
+      this.eventCollectionService.collect(
+        EventType.Cipher_ClientToggledHiddenFieldVisible,
+        cipher.id
+      );
     } else if (typeI18nKey === "securityCode") {
-      this.eventService.collect(EventType.Cipher_ClientCopiedCardCode, cipher.id);
+      this.eventCollectionService.collect(EventType.Cipher_ClientCopiedCardCode, cipher.id);
     }
   }
 

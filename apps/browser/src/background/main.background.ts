@@ -7,7 +7,8 @@ import { CollectionService as CollectionServiceAbstraction } from "@bitwarden/co
 import { CryptoService as CryptoServiceAbstraction } from "@bitwarden/common/abstractions/crypto.service";
 import { CryptoFunctionService as CryptoFunctionServiceAbstraction } from "@bitwarden/common/abstractions/cryptoFunction.service";
 import { EncryptService } from "@bitwarden/common/abstractions/encrypt.service";
-import { EventService as EventServiceAbstraction } from "@bitwarden/common/abstractions/event.service";
+import { EventCollectionService as EventCollectionServiceAbstraction } from "@bitwarden/common/abstractions/event/event-collection.service";
+import { EventUploadService as EventUploadServiceAbstraction } from "@bitwarden/common/abstractions/event/event-upload.service";
 import { ExportService as ExportServiceAbstraction } from "@bitwarden/common/abstractions/export.service";
 import { FileUploadService as FileUploadServiceAbstraction } from "@bitwarden/common/abstractions/fileUpload.service";
 import { FolderApiServiceAbstraction } from "@bitwarden/common/abstractions/folder/folder-api.service.abstraction";
@@ -54,7 +55,8 @@ import { ConsoleLogService } from "@bitwarden/common/services/consoleLog.service
 import { ContainerService } from "@bitwarden/common/services/container.service";
 import { EncryptServiceImplementation } from "@bitwarden/common/services/cryptography/encrypt.service.implementation";
 import { MultithreadEncryptServiceImplementation } from "@bitwarden/common/services/cryptography/multithread-encrypt.service.implementation";
-import { EventService } from "@bitwarden/common/services/event.service";
+import { EventCollectionService } from "@bitwarden/common/services/event/event-collection.service";
+import { EventUploadService } from "@bitwarden/common/services/event/event-upload.service";
 import { ExportService } from "@bitwarden/common/services/export.service";
 import { FileUploadService } from "@bitwarden/common/services/fileUpload.service";
 import { FolderApiService } from "@bitwarden/common/services/folder/folder-api.service";
@@ -148,7 +150,8 @@ export default class MainBackground {
   stateService: StateServiceAbstraction;
   stateMigrationService: StateMigrationService;
   systemService: SystemServiceAbstraction;
-  eventService: EventServiceAbstraction;
+  eventCollectionService: EventCollectionServiceAbstraction;
+  eventUploadService: EventUploadServiceAbstraction;
   policyService: InternalPolicyServiceAbstraction;
   popupUtilsService: PopupUtilsService;
   sendService: SendServiceAbstraction;
@@ -412,12 +415,16 @@ export default class MainBackground {
       this.organizationService,
       logoutCallback
     );
-    this.eventService = new EventService(
+    this.eventUploadService = new EventUploadService(
       this.apiService,
+      this.stateService,
+      this.logService
+    );
+    this.eventCollectionService = new EventCollectionService(
       this.cipherService,
       this.stateService,
-      this.logService,
-      this.organizationService
+      this.organizationService,
+      this.eventUploadService
     );
     this.passwordGenerationService = new PasswordGenerationService(
       this.cryptoService,
@@ -429,7 +436,7 @@ export default class MainBackground {
       this.cipherService,
       this.stateService,
       this.totpService,
-      this.eventService,
+      this.eventCollectionService,
       this.logService
     );
     this.containerService = new ContainerService(this.cryptoService, this.encryptService);
@@ -532,7 +539,7 @@ export default class MainBackground {
       this.passwordGenerationService,
       this.platformUtilsService,
       this.authService,
-      this.eventService,
+      this.eventCollectionService,
       this.totpService
     );
     this.idleBackground = new IdleBackground(
@@ -560,7 +567,7 @@ export default class MainBackground {
 
     await (this.vaultTimeoutService as VaultTimeoutService).init(true);
     await (this.i18nService as I18nService).init();
-    await (this.eventService as EventService).init(true);
+    await (this.eventUploadService as EventUploadService).init(true);
     await this.runtimeBackground.init();
     await this.notificationBackground.init();
     await this.commandsBackground.init();
@@ -626,10 +633,9 @@ export default class MainBackground {
   }
 
   async logout(expired: boolean, userId?: string) {
-    await this.eventService.uploadEvents(userId);
+    await this.eventUploadService.uploadEvents(userId);
 
     await Promise.all([
-      this.eventService.clearEvents(userId),
       this.syncService.setLastSync(new Date(0), userId),
       this.cryptoService.clearKeys(userId),
       this.settingsService.clear(userId),

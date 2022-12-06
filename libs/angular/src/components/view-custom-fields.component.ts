@@ -1,6 +1,6 @@
 import { Directive, Input } from "@angular/core";
 
-import { EventService } from "@bitwarden/common/abstractions/event.service";
+import { EventCollectionService } from "@bitwarden/common/abstractions/event/event-collection.service";
 import { EventType } from "@bitwarden/common/enums/eventType";
 import { FieldType } from "@bitwarden/common/enums/fieldType";
 import { CipherView } from "@bitwarden/common/models/view/cipher.view";
@@ -14,7 +14,7 @@ export class ViewCustomFieldsComponent {
 
   fieldType = FieldType;
 
-  constructor(private eventService: EventService) {}
+  constructor(private eventCollectionService: EventCollectionService) {}
 
   async toggleFieldValue(field: FieldView) {
     if (!(await this.promptPassword())) {
@@ -25,7 +25,10 @@ export class ViewCustomFieldsComponent {
     f.showValue = !f.showValue;
     f.showCount = false;
     if (f.showValue) {
-      this.eventService.collect(EventType.Cipher_ClientToggledHiddenFieldVisible, this.cipher.id);
+      this.eventCollectionService.collect(
+        EventType.Cipher_ClientToggledHiddenFieldVisible,
+        this.cipher.id
+      );
     }
   }
 

@@ -15,7 +15,7 @@ import { AuditService } from "@bitwarden/common/abstractions/audit.service";
 import { BroadcasterService } from "@bitwarden/common/abstractions/broadcaster.service";
 import { CipherService } from "@bitwarden/common/abstractions/cipher.service";
 import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
-import { EventService } from "@bitwarden/common/abstractions/event.service";
+import { EventCollectionService } from "@bitwarden/common/abstractions/event/event-collection.service";
 import { FileDownloadService } from "@bitwarden/common/abstractions/fileDownload/fileDownload.service";
 import { FolderService } from "@bitwarden/common/abstractions/folder/folder.service.abstraction";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
@@ -80,7 +80,7 @@ export class ViewComponent implements OnDestroy, OnInit {
     protected broadcasterService: BroadcasterService,
     protected ngZone: NgZone,
     protected changeDetectorRef: ChangeDetectorRef,
-    protected eventService: EventService,
+    protected eventCollectionService: EventCollectionService,
     protected apiService: ApiService,
     protected passwordRepromptService: PasswordRepromptService,
     private logService: LogService,
@@ -138,7 +138,7 @@ export class ViewComponent implements OnDestroy, OnInit {
     }
 
     if (this.previousCipherId !== this.cipherId) {
-      this.eventService.collect(EventType.Cipher_ClientViewed, this.cipherId);
+      this.eventCollectionService.collect(EventType.Cipher_ClientViewed, this.cipherId);
     }
     this.previousCipherId = this.cipherId;
   }
@@ -238,7 +238,10 @@ export class ViewComponent implements OnDestroy, OnInit {
     this.showPassword = !this.showPassword;
     this.showPasswordCount = false;
     if (this.showPassword) {
-      this.eventService.collect(EventType.Cipher_ClientToggledPasswordVisible, this.cipherId);
+      this.eventCollectionService.collect(
+        EventType.Cipher_ClientToggledPasswordVisible,
+        this.cipherId
+      );
     }
   }
 
@@ -257,7 +260,10 @@ export class ViewComponent implements OnDestroy, OnInit {
 
     this.showCardNumber = !this.showCardNumber;
     if (this.showCardNumber) {
-      this.eventService.collect(EventType.Cipher_ClientToggledCardNumberVisible, this.cipherId);
+      this.eventCollectionService.collect(
+        EventType.Cipher_ClientToggledCardNumberVisible,
+        this.cipherId
+      );
     }
   }
 
@@ -268,7 +274,10 @@ export class ViewComponent implements OnDestroy, OnInit {
 
     this.showCardCode = !this.showCardCode;
     if (this.showCardCode) {
-      this.eventService.collect(EventType.Cipher_ClientToggledCardCodeVisible, this.cipherId);
+      this.eventCollectionService.collect(
+        EventType.Cipher_ClientToggledCardCodeVisible,
+        this.cipherId
+      );
     }
   }
 
@@ -328,11 +337,14 @@ export class ViewComponent implements OnDestroy, OnInit {
     );
 
     if (typeI18nKey === "password") {
-      this.eventService.collect(EventType.Cipher_ClientToggledHiddenFieldVisible, this.cipherId);
+      this.eventCollectionService.collect(
+        EventType.Cipher_ClientToggledHiddenFieldVisible,
+        this.cipherId
+      );
     } else if (typeI18nKey === "securityCode") {
-      this.eventService.collect(EventType.Cipher_ClientCopiedCardCode, this.cipherId);
+      this.eventCollectionService.collect(EventType.Cipher_ClientCopiedCardCode, this.cipherId);
     } else if (aType === "H_Field") {
-      this.eventService.collect(EventType.Cipher_ClientCopiedHiddenField, this.cipherId);
+      this.eventCollectionService.collect(EventType.Cipher_ClientCopiedHiddenField, this.cipherId);
     }
   }
 

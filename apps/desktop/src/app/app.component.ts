@@ -20,7 +20,7 @@ import { BroadcasterService } from "@bitwarden/common/abstractions/broadcaster.s
 import { CipherService } from "@bitwarden/common/abstractions/cipher.service";
 import { CollectionService } from "@bitwarden/common/abstractions/collection.service";
 import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
-import { EventService } from "@bitwarden/common/abstractions/event.service";
+import { EventUploadService } from "@bitwarden/common/abstractions/event/event-upload.service";
 import { InternalFolderService } from "@bitwarden/common/abstractions/folder/folder.service.abstraction";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { KeyConnectorService } from "@bitwarden/common/abstractions/keyConnector.service";
@@ -125,7 +125,7 @@ export class AppComponent implements OnInit, OnDestroy {
     private platformUtilsService: PlatformUtilsService,
     private systemService: SystemService,
     private stateService: StateService,
-    private eventService: EventService,
+    private eventUploadService: EventUploadService,
     private policyService: InternalPolicyService,
     private modalService: ModalService,
     private keyConnectorService: KeyConnectorService
@@ -465,7 +465,7 @@ export class AppComponent implements OnInit, OnDestroy {
   private async logOut(expired: boolean, userId?: string) {
     const userBeingLoggedOut = await this.stateService.getUserId({ userId: userId });
     await Promise.all([
-      this.eventService.uploadEvents(userBeingLoggedOut),
+      this.eventUploadService.uploadEvents(userBeingLoggedOut),
       this.syncService.setLastSync(new Date(0), userBeingLoggedOut),
       this.cryptoService.clearKeys(userBeingLoggedOut),
       this.settingsService.clear(userBeingLoggedOut),

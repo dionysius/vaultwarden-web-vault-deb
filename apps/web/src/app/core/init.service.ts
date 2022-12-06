@@ -8,14 +8,14 @@ import {
   EnvironmentService as EnvironmentServiceAbstraction,
   Urls,
 } from "@bitwarden/common/abstractions/environment.service";
-import { EventService as EventLoggingServiceAbstraction } from "@bitwarden/common/abstractions/event.service";
+import { EventUploadService as EventUploadServiceAbstraction } from "@bitwarden/common/abstractions/event/event-upload.service";
 import { I18nService as I18nServiceAbstraction } from "@bitwarden/common/abstractions/i18n.service";
 import { NotificationsService as NotificationsServiceAbstraction } from "@bitwarden/common/abstractions/notifications.service";
 import { StateService as StateServiceAbstraction } from "@bitwarden/common/abstractions/state.service";
 import { TwoFactorService as TwoFactorServiceAbstraction } from "@bitwarden/common/abstractions/twoFactor.service";
 import { VaultTimeoutService as VaultTimeoutServiceAbstraction } from "@bitwarden/common/abstractions/vaultTimeout/vaultTimeout.service";
 import { ContainerService } from "@bitwarden/common/services/container.service";
-import { EventService as EventLoggingService } from "@bitwarden/common/services/event.service";
+import { EventUploadService } from "@bitwarden/common/services/event/event-upload.service";
 import { VaultTimeoutService as VaultTimeoutService } from "@bitwarden/common/services/vaultTimeout/vaultTimeout.service";
 
 import { I18nService } from "./i18n.service";
@@ -28,7 +28,7 @@ export class InitService {
     private notificationsService: NotificationsServiceAbstraction,
     private vaultTimeoutService: VaultTimeoutServiceAbstraction,
     private i18nService: I18nServiceAbstraction,
-    private eventLoggingService: EventLoggingServiceAbstraction,
+    private eventUploadService: EventUploadServiceAbstraction,
     private twoFactorService: TwoFactorServiceAbstraction,
     private stateService: StateServiceAbstraction,
     private cryptoService: CryptoServiceAbstraction,
@@ -48,7 +48,7 @@ export class InitService {
       (this.vaultTimeoutService as VaultTimeoutService).init(true);
       const locale = await this.stateService.getLocale();
       await (this.i18nService as I18nService).init(locale);
-      (this.eventLoggingService as EventLoggingService).init(true);
+      (this.eventUploadService as EventUploadService).init(true);
       this.twoFactorService.init();
       const htmlEl = this.win.document.documentElement;
       htmlEl.classList.add("locale_" + this.i18nService.translationLocale);

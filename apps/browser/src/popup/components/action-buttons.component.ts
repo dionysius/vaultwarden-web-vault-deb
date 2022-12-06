@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from "@angular/core";
 
-import { EventService } from "@bitwarden/common/abstractions/event.service";
+import { EventCollectionService } from "@bitwarden/common/abstractions/event/event-collection.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { PasswordRepromptService } from "@bitwarden/common/abstractions/passwordReprompt.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
@@ -27,7 +27,7 @@ export class ActionButtonsComponent {
   constructor(
     private i18nService: I18nService,
     private platformUtilsService: PlatformUtilsService,
-    private eventService: EventService,
+    private eventCollectionService: EventCollectionService,
     private totpService: TotpService,
     private stateService: StateService,
     private passwordRepromptService: PasswordRepromptService
@@ -68,9 +68,12 @@ export class ActionButtonsComponent {
     );
 
     if (typeI18nKey === "password" || typeI18nKey === "verificationCodeTotp") {
-      this.eventService.collect(EventType.Cipher_ClientToggledHiddenFieldVisible, cipher.id);
+      this.eventCollectionService.collect(
+        EventType.Cipher_ClientToggledHiddenFieldVisible,
+        cipher.id
+      );
     } else if (typeI18nKey === "securityCode") {
-      this.eventService.collect(EventType.Cipher_ClientCopiedCardCode, cipher.id);
+      this.eventCollectionService.collect(EventType.Cipher_ClientCopiedCardCode, cipher.id);
     }
   }
 

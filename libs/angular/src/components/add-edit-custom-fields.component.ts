@@ -1,7 +1,7 @@
 import { CdkDragDrop, moveItemInArray } from "@angular/cdk/drag-drop";
 import { Directive, Input, OnChanges, SimpleChanges } from "@angular/core";
 
-import { EventService } from "@bitwarden/common/abstractions/event.service";
+import { EventCollectionService } from "@bitwarden/common/abstractions/event/event-collection.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { CipherType } from "@bitwarden/common/enums/cipherType";
 import { EventType } from "@bitwarden/common/enums/eventType";
@@ -25,7 +25,10 @@ export class AddEditCustomFieldsComponent implements OnChanges {
   fieldType = FieldType;
   eventType = EventType;
 
-  constructor(private i18nService: I18nService, private eventService: EventService) {
+  constructor(
+    private i18nService: I18nService,
+    private eventCollectionService: EventCollectionService
+  ) {
     this.addFieldTypeOptions = [
       { name: i18nService.t("cfTypeText"), value: FieldType.Text },
       { name: i18nService.t("cfTypeHidden"), value: FieldType.Hidden },
@@ -74,7 +77,10 @@ export class AddEditCustomFieldsComponent implements OnChanges {
     const f = field as any;
     f.showValue = !f.showValue;
     if (this.editMode && f.showValue) {
-      this.eventService.collect(EventType.Cipher_ClientToggledHiddenFieldVisible, this.cipher.id);
+      this.eventCollectionService.collect(
+        EventType.Cipher_ClientToggledHiddenFieldVisible,
+        this.cipher.id
+      );
     }
   }
 

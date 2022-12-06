@@ -9,7 +9,7 @@ import { AuditService } from "@bitwarden/common/abstractions/audit.service";
 import { BroadcasterService } from "@bitwarden/common/abstractions/broadcaster.service";
 import { CipherService } from "@bitwarden/common/abstractions/cipher.service";
 import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
-import { EventService } from "@bitwarden/common/abstractions/event.service";
+import { EventCollectionService } from "@bitwarden/common/abstractions/event/event-collection.service";
 import { FileDownloadService } from "@bitwarden/common/abstractions/fileDownload/fileDownload.service";
 import { FolderService } from "@bitwarden/common/abstractions/folder/folder.service.abstraction";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
@@ -58,7 +58,7 @@ export class ViewComponent extends BaseViewComponent {
     ngZone: NgZone,
     changeDetectorRef: ChangeDetectorRef,
     stateService: StateService,
-    eventService: EventService,
+    eventCollectionService: EventCollectionService,
     private autofillService: AutofillService,
     private messagingService: MessagingService,
     private popupUtilsService: PopupUtilsService,
@@ -80,7 +80,7 @@ export class ViewComponent extends BaseViewComponent {
       broadcasterService,
       ngZone,
       changeDetectorRef,
-      eventService,
+      eventCollectionService,
       apiService,
       passwordRepromptService,
       logService,

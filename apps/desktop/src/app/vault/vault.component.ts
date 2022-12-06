@@ -14,7 +14,7 @@ import { ModalRef } from "@bitwarden/angular/components/modal/modal.ref";
 import { ModalService } from "@bitwarden/angular/services/modal.service";
 import { VaultFilter } from "@bitwarden/angular/vault/vault-filter/models/vault-filter.model";
 import { BroadcasterService } from "@bitwarden/common/abstractions/broadcaster.service";
-import { EventService } from "@bitwarden/common/abstractions/event.service";
+import { EventCollectionService } from "@bitwarden/common/abstractions/event/event-collection.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { MessagingService } from "@bitwarden/common/abstractions/messaging.service";
 import { PasswordRepromptService } from "@bitwarden/common/abstractions/passwordReprompt.service";
@@ -94,7 +94,7 @@ export class VaultComponent implements OnInit, OnDestroy {
     private syncService: SyncService,
     private messagingService: MessagingService,
     private platformUtilsService: PlatformUtilsService,
-    private eventService: EventService,
+    private eventCollectionService: EventCollectionService,
     private totpService: TotpService,
     private passwordRepromptService: PasswordRepromptService,
     private stateService: StateService,
@@ -309,7 +309,7 @@ export class VaultComponent implements OnInit, OnDestroy {
             label: this.i18nService.t("copyPassword"),
             click: () => {
               this.copyValue(cipher, cipher.login.password, "password", "Password");
-              this.eventService.collect(EventType.Cipher_ClientCopiedPassword, cipher.id);
+              this.eventCollectionService.collect(EventType.Cipher_ClientCopiedPassword, cipher.id);
             },
           });
         }
@@ -338,7 +338,7 @@ export class VaultComponent implements OnInit, OnDestroy {
             label: this.i18nService.t("copySecurityCode"),
             click: () => {
               this.copyValue(cipher, cipher.card.code, "securityCode", "Security Code");
-              this.eventService.collect(EventType.Cipher_ClientCopiedCardCode, cipher.id);
+              this.eventCollectionService.collect(EventType.Cipher_ClientCopiedCardCode, cipher.id);
             },
           });
         }

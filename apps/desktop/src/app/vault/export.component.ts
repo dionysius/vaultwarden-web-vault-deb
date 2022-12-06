@@ -6,7 +6,7 @@ import { UntypedFormBuilder } from "@angular/forms";
 import { ExportComponent as BaseExportComponent } from "@bitwarden/angular/components/export.component";
 import { BroadcasterService } from "@bitwarden/common/abstractions/broadcaster.service";
 import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
-import { EventService } from "@bitwarden/common/abstractions/event.service";
+import { EventCollectionService } from "@bitwarden/common/abstractions/event/event-collection.service";
 import { ExportService } from "@bitwarden/common/abstractions/export.service";
 import { FileDownloadService } from "@bitwarden/common/abstractions/fileDownload/fileDownload.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
@@ -27,7 +27,7 @@ export class ExportComponent extends BaseExportComponent implements OnInit {
     i18nService: I18nService,
     platformUtilsService: PlatformUtilsService,
     exportService: ExportService,
-    eventService: EventService,
+    eventCollectionService: EventCollectionService,
     policyService: PolicyService,
     userVerificationService: UserVerificationService,
     formBuilder: UntypedFormBuilder,
@@ -40,7 +40,7 @@ export class ExportComponent extends BaseExportComponent implements OnInit {
       i18nService,
       platformUtilsService,
       exportService,
-      eventService,
+      eventCollectionService,
       policyService,
       window,
       logService,

@@ -2,7 +2,7 @@ import { Component, EventEmitter, Output } from "@angular/core";
 
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { CipherService } from "@bitwarden/common/abstractions/cipher.service";
-import { EventService } from "@bitwarden/common/abstractions/event.service";
+import { EventCollectionService } from "@bitwarden/common/abstractions/event/event-collection.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { OrganizationService } from "@bitwarden/common/abstractions/organization/organization.service.abstraction";
@@ -30,7 +30,7 @@ export class VaultItemsComponent extends BaseVaultItemsComponent {
     i18nService: I18nService,
     platformUtilsService: PlatformUtilsService,
     cipherService: CipherService,
-    eventService: EventService,
+    eventCollectionService: EventCollectionService,
     totpService: TotpService,
     passwordRepromptService: PasswordRepromptService,
     logService: LogService,
@@ -44,7 +44,7 @@ export class VaultItemsComponent extends BaseVaultItemsComponent {
       i18nService,
       platformUtilsService,
       cipherService,
-      eventService,
+      eventCollectionService,
       totpService,
       stateService,
       passwordRepromptService,

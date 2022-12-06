@@ -5,7 +5,7 @@ import { AbstractThemingService } from "@bitwarden/angular/services/theming/them
 import { CryptoService as CryptoServiceAbstraction } from "@bitwarden/common/abstractions/crypto.service";
 import { EncryptService } from "@bitwarden/common/abstractions/encrypt.service";
 import { EnvironmentService as EnvironmentServiceAbstraction } from "@bitwarden/common/abstractions/environment.service";
-import { EventService as EventServiceAbstraction } from "@bitwarden/common/abstractions/event.service";
+import { EventUploadService as EventUploadServiceAbstraction } from "@bitwarden/common/abstractions/event/event-upload.service";
 import { I18nService as I18nServiceAbstraction } from "@bitwarden/common/abstractions/i18n.service";
 import { NotificationsService as NotificationsServiceAbstraction } from "@bitwarden/common/abstractions/notifications.service";
 import { PlatformUtilsService as PlatformUtilsServiceAbstraction } from "@bitwarden/common/abstractions/platformUtils.service";
@@ -14,7 +14,7 @@ import { SyncService as SyncServiceAbstraction } from "@bitwarden/common/abstrac
 import { TwoFactorService as TwoFactorServiceAbstraction } from "@bitwarden/common/abstractions/twoFactor.service";
 import { VaultTimeoutService as VaultTimeoutServiceAbstraction } from "@bitwarden/common/abstractions/vaultTimeout/vaultTimeout.service";
 import { ContainerService } from "@bitwarden/common/services/container.service";
-import { EventService } from "@bitwarden/common/services/event.service";
+import { EventUploadService } from "@bitwarden/common/services/event/event-upload.service";
 import { VaultTimeoutService } from "@bitwarden/common/services/vaultTimeout/vaultTimeout.service";
 
 import { I18nService } from "../../services/i18n.service";
@@ -28,7 +28,7 @@ export class InitService {
     private syncService: SyncServiceAbstraction,
     private vaultTimeoutService: VaultTimeoutServiceAbstraction,
     private i18nService: I18nServiceAbstraction,
-    private eventService: EventServiceAbstraction,
+    private eventUploadService: EventUploadServiceAbstraction,
     private twoFactorService: TwoFactorServiceAbstraction,
     private notificationsService: NotificationsServiceAbstraction,
     private platformUtilsService: PlatformUtilsServiceAbstraction,
@@ -48,7 +48,7 @@ export class InitService {
       (this.vaultTimeoutService as VaultTimeoutService).init(true);
       const locale = await this.stateService.getLocale();
       await (this.i18nService as I18nService).init(locale);
-      (this.eventService as EventService).init(true);
+      (this.eventUploadService as EventUploadService).init(true);
       this.twoFactorService.init();
       setTimeout(() => this.notificationsService.init(), 3000);
       const htmlEl = this.win.document.documentElement;

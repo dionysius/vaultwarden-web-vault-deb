@@ -2,7 +2,10 @@ import { AutofillService as AbstractAutoFillService } from "../../services/abstr
 import AutofillService from "../../services/autofill.service";
 
 import { cipherServiceFactory, CipherServiceInitOptions } from "./cipher-service.factory";
-import { EventServiceInitOptions, eventServiceFactory } from "./event-service.factory";
+import {
+  EventCollectionServiceInitOptions,
+  eventCollectionServiceFactory,
+} from "./event-collection-service.factory";
 import { CachedServices, factory, FactoryOptions } from "./factory-options";
 import { logServiceFactory, LogServiceInitOptions } from "./log-service.factory";
 import { stateServiceFactory, StateServiceInitOptions } from "./state-service.factory";
@@ -14,7 +17,7 @@ export type AutoFillServiceInitOptions = AutoFillServiceOptions &
   CipherServiceInitOptions &
   StateServiceInitOptions &
   TotpServiceInitOptions &
-  EventServiceInitOptions &
+  EventCollectionServiceInitOptions &
   LogServiceInitOptions;
 
 export function autofillServiceFactory(
@@ -30,7 +33,7 @@ export function autofillServiceFactory(
         await cipherServiceFactory(cache, opts),
         await stateServiceFactory(cache, opts),
         await totpServiceFactory(cache, opts),
-        await eventServiceFactory(cache, opts),
+        await eventCollectionServiceFactory(cache, opts),
         await logServiceFactory(cache, opts)
       )
   );

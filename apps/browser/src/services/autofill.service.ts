@@ -1,5 +1,5 @@
 import { CipherService } from "@bitwarden/common/abstractions/cipher.service";
-import { EventService } from "@bitwarden/common/abstractions/event.service";
+import { EventCollectionService } from "@bitwarden/common/abstractions/event/event-collection.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { TotpService } from "@bitwarden/common/abstractions/totp.service";
 import { CipherRepromptType } from "@bitwarden/common/enums/cipherRepromptType";
@@ -41,7 +41,7 @@ export default class AutofillService implements AutofillServiceInterface {
     private cipherService: CipherService,
     private stateService: BrowserStateService,
     private totpService: TotpService,
-    private eventService: EventService,
+    private eventCollectionService: EventCollectionService,
     private logService: LogService
   ) {}
 
@@ -148,7 +148,7 @@ export default class AutofillService implements AutofillServiceInterface {
     });
 
     if (didAutofill) {
-      this.eventService.collect(EventType.Cipher_ClientAutofilled, options.cipher.id);
+      this.eventCollectionService.collect(EventType.Cipher_ClientAutofilled, options.cipher.id);
       if (totpPromise != null) {
         return await totpPromise;
       } else {

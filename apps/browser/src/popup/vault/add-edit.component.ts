@@ -7,7 +7,7 @@ import { AddEditComponent as BaseAddEditComponent } from "@bitwarden/angular/com
 import { AuditService } from "@bitwarden/common/abstractions/audit.service";
 import { CipherService } from "@bitwarden/common/abstractions/cipher.service";
 import { CollectionService } from "@bitwarden/common/abstractions/collection.service";
-import { EventService } from "@bitwarden/common/abstractions/event.service";
+import { EventCollectionService } from "@bitwarden/common/abstractions/event/event-collection.service";
 import { FolderService } from "@bitwarden/common/abstractions/folder/folder.service.abstraction";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
@@ -46,7 +46,7 @@ export class AddEditComponent extends BaseAddEditComponent {
     private route: ActivatedRoute,
     private router: Router,
     private location: Location,
-    eventService: EventService,
+    eventCollectionService: EventCollectionService,
     policyService: PolicyService,
     private popupUtilsService: PopupUtilsService,
     organizationService: OrganizationService,
@@ -62,7 +62,7 @@ export class AddEditComponent extends BaseAddEditComponent {
       stateService,
       collectionService,
       messagingService,
-      eventService,
+      eventCollectionService,
       policyService,
       logService,
       passwordRepromptService,
