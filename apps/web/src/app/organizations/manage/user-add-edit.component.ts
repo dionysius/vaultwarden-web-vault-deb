@@ -4,6 +4,7 @@ import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { CollectionService } from "@bitwarden/common/abstractions/collection.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
+import { OrganizationService } from "@bitwarden/common/abstractions/organization/organization.service.abstraction";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { OrganizationUserStatusType } from "@bitwarden/common/enums/organizationUserStatusType";
 import { OrganizationUserType } from "@bitwarden/common/enums/organizationUserType";
@@ -43,6 +44,7 @@ export class UserAddEditComponent implements OnInit {
   formPromise: Promise<any>;
   deletePromise: Promise<any>;
   organizationUserType = OrganizationUserType;
+  canUseCustomPermissions: boolean;
 
   manageAllCollectionsCheckboxes = [
     {
@@ -84,11 +86,14 @@ export class UserAddEditComponent implements OnInit {
     private i18nService: I18nService,
     private collectionService: CollectionService,
     private platformUtilsService: PlatformUtilsService,
+    private organizationService: OrganizationService,
     private logService: LogService
   ) {}
 
   async ngOnInit() {
     this.editMode = this.loading = this.organizationUserId != null;
+    const organization = this.organizationService.get(this.organizationId);
+    this.canUseCustomPermissions = organization.useCustomPermissions;
     await this.loadCollections();
 
     if (this.editMode) {
@@ -163,6 +168,15 @@ export class UserAddEditComponent implements OnInit {
   }
 
   async submit() {
+    if (!this.canUseCustomPermissions && this.type === OrganizationUserType.Custom) {
+      this.platformUtilsService.showToast(
+        "error",
+        null,
+        this.i18nService.t("customNonEnterpriseError")
+      );
+      return;
+    }
+
     let collections: SelectionReadOnlyRequest[] = null;
     if (this.access !== "all") {
       collections = this.collections
@@ -172,30 +186,9 @@ export class UserAddEditComponent implements OnInit {
 
     try {
       if (this.editMode) {
-        const request = new OrganizationUserUpdateRequest();
-        request.accessAll = this.access === "all";
-        request.type = this.type;
-        request.collections = collections;
-        request.permissions = this.setRequestPermissions(
-          request.permissions ?? new PermissionsApi(),
-          request.type !== OrganizationUserType.Custom
-        );
-        this.formPromise = this.apiService.putOrganizationUser(
-          this.organizationId,
-          this.organizationUserId,
-          request
-        );
+        this.updateUser(collections);
       } else {
-        const request = new OrganizationUserInviteRequest();
-        request.emails = [...new Set(this.emails.trim().split(/\s*,\s*/))];
-        request.accessAll = this.access === "all";
-        request.type = this.type;
-        request.permissions = this.setRequestPermissions(
-          request.permissions ?? new PermissionsApi(),
-          request.type !== OrganizationUserType.Custom
-        );
-        request.collections = collections;
-        this.formPromise = this.apiService.postOrganizationUserInvite(this.organizationId, request);
+        this.inviteUser(collections);
       }
       await this.formPromise;
       this.platformUtilsService.showToast(
@@ -300,5 +293,34 @@ export class UserAddEditComponent implements OnInit {
     } catch (e) {
       this.logService.error(e);
     }
+  }
+
+  updateUser(collections: SelectionReadOnlyRequest[]) {
+    const request = new OrganizationUserUpdateRequest();
+    request.accessAll = this.access === "all";
+    request.type = this.type;
+    request.collections = collections;
+    request.permissions = this.setRequestPermissions(
+      request.permissions ?? new PermissionsApi(),
+      request.type !== OrganizationUserType.Custom
+    );
+    this.formPromise = this.apiService.putOrganizationUser(
+      this.organizationId,
+      this.organizationUserId,
+      request
+    );
+  }
+
+  inviteUser(collections: SelectionReadOnlyRequest[]) {
+    const request = new OrganizationUserInviteRequest();
+    request.emails = [...new Set(this.emails.trim().split(/\s*,\s*/))];
+    request.accessAll = this.access === "all";
+    request.type = this.type;
+    request.permissions = this.setRequestPermissions(
+      request.permissions ?? new PermissionsApi(),
+      request.type !== OrganizationUserType.Custom
+    );
+    request.collections = collections;
+    this.formPromise = this.apiService.postOrganizationUserInvite(this.organizationId, request);
   }
 }
