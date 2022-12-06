@@ -11,7 +11,7 @@ The Bitwarden CLI is a powerful, full-featured command-line interface (CLI) tool
 
 ## Developer Documentation
 
-Please refer to the [CLI section](https://contributing.bitwarden.com/docs/clients/cli/) of the [Contributing Documentation](https://contributing.bitwarden.com/) for build instructions, recommended tooling, code style tips, and lots of other great information to get you started.
+Please refer to the [CLI section](https://contributing.bitwarden.com/getting-started/clients/cli/) of the [Contributing Documentation](https://contributing.bitwarden.com/) for build instructions, recommended tooling, code style tips, and lots of other great information to get you started.
 
 ## User Documentation
 
