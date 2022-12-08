@@ -1,4 +1,11 @@
-export type InputTypes = "text" | "password" | "number" | "datetime-local" | "email" | "checkbox";
+export type InputTypes =
+  | "text"
+  | "password"
+  | "number"
+  | "datetime-local"
+  | "email"
+  | "checkbox"
+  | "search";
 
 export abstract class BitFormFieldControl {
   ariaDescribedBy: string;
