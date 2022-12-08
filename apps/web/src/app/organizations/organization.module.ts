@@ -1,11 +1,10 @@
 import { NgModule } from "@angular/core";
 
-import { SharedModule } from "../shared";
-
 import { AccessSelectorModule } from "./components/access-selector";
 import { OrganizationsRoutingModule } from "./organization-routing.module";
+import { SharedOrganizationModule } from "./shared";
 
 @NgModule({
-  imports: [SharedModule, AccessSelectorModule, OrganizationsRoutingModule],
+  imports: [SharedOrganizationModule, AccessSelectorModule, OrganizationsRoutingModule],
 })
 export class OrganizationModule {}
