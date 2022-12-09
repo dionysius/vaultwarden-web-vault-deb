@@ -122,16 +122,16 @@
     "message": "كانون الأول"
   },
   "title": {
-    "message": "Title"
+    "message": "اللقب"
   },
   "mr": {
-    "message": "Mr"
+    "message": "السيد"
   },
   "mrs": {
-    "message": "Mrs"
+    "message": "السيدة"
   },
   "ms": {
-    "message": "Ms"
+    "message": "الآنسة"
   },
   "dr": {
     "message": "د"
@@ -152,7 +152,7 @@
     "message": "حقل مخصص جديد"
   },
   "value": {
-    "message": "Value"
+    "message": "القيمة"
   },
   "dragToSort": {
     "message": "اسحب للفرز"
@@ -164,7 +164,7 @@
     "message": "مخفي"
   },
   "cfTypeBoolean": {
-    "message": "Boolean"
+    "message": "قيمة منطقية"
   },
   "cfTypeLinked": {
     "message": "Linked",
@@ -174,7 +174,7 @@
     "message": "إزالة"
   },
   "unassigned": {
-    "message": "Unassigned"
+    "message": "غير معين"
   },
   "noneFolder": {
     "message": "لا يوجد مجلد",
@@ -233,7 +233,7 @@
     "message": "Check if password has been exposed."
   },
   "passwordExposed": {
-    "message": "This password has been exposed $VALUE$ time(s) in data breaches. You should change it.",
+    "message": "تم كشف كلمة المرور هذه {0} مرة (مرات) في عمليات اختراق البيانات. يجب عليك تغييرها.",
     "placeholders": {
       "value": {
         "content": "$1",
@@ -242,7 +242,7 @@
     }
   },
   "passwordSafe": {
-    "message": "This password was not found in any known data breaches. It should be safe to use."
+    "message": "لم يتم العثور على كلمة المرور هذه في أي عمليات اختراق معروفة للبيانات. من المفترض أن تكون آمنة للاستخدام."
   },
   "save": {
     "message": "حفظ"
@@ -269,16 +269,16 @@
     "message": "تعديل"
   },
   "searchCollection": {
-    "message": "Search collection"
+    "message": "ابحث في المجموعة"
   },
   "searchFolder": {
-    "message": "Search folder"
+    "message": "ابحث في المجلّد"
   },
   "searchFavorites": {
     "message": "بحث في المفضلة"
   },
   "searchType": {
-    "message": "Search type",
+    "message": "نوع البحث",
     "description": "Search item type"
   },
   "searchVault": {
@@ -321,7 +321,7 @@
     "message": "المجلدات"
   },
   "collections": {
-    "message": "Collections"
+    "message": "المجموعات"
   },
   "firstName": {
     "message": "الاسم الأول"
@@ -357,7 +357,7 @@
     "message": "الدولة"
   },
   "shared": {
-    "message": "Shared"
+    "message": "مشترك"
   },
   "attachments": {
     "message": "المرفقات"
@@ -375,7 +375,7 @@
     "message": "عرض العنصر"
   },
   "ex": {
-    "message": "ex.",
+    "message": "مثال.",
     "description": "Short abbreviation for 'example'."
   },
   "other": {
@@ -388,7 +388,7 @@
     "message": "نقل إلى مؤسسة"
   },
   "valueCopied": {
-    "message": "$VALUE$ copied",
+    "message": "تم نسخ $VALUE$",
     "description": "Value has been copied to the clipboard.",
     "placeholders": {
       "value": {
@@ -428,7 +428,7 @@
     "message": "خزنتي"
   },
   "allVaults": {
-    "message": "All vaults"
+    "message": "جميع الخزنات"
   },
   "vault": {
     "message": "الخزنة"
@@ -479,7 +479,7 @@
     "message": "الحجم الأقصى للملف هو 500 ميجابايت."
   },
   "updateKey": {
-    "message": "You cannot use this feature until you update your encryption key."
+    "message": "لا يمكنك استخدام هذه المِيزة حتى تحديث مفتاح التشفير الخاص بك."
   },
   "addedItem": {
     "message": "تمت إضافة العنصر"
@@ -501,7 +501,7 @@
     }
   },
   "movedItemsToOrg": {
-    "message": "Selected items moved to $ORGNAME$",
+    "message": "تم نقل العناصر المحددة إلى $ORGNAME$",
     "placeholders": {
       "orgname": {
         "content": "$1",
@@ -519,7 +519,7 @@
     "message": "حذف المرفق"
   },
   "deleteItemConfirmation": {
-    "message": "Do you really want to send to the trash?"
+    "message": "هل تريد فعلًا أن تحذف؟"
   },
   "deletedItem": {
     "message": "تم حذف العنصر"
@@ -531,13 +531,13 @@
     "message": "تم نقل العناصر"
   },
   "overwritePasswordConfirmation": {
-    "message": "Are you sure you want to overwrite the current password?"
+    "message": "هل أنت متأكد من أنك تريد الكتابة فوق كلمة المرور الحالية؟"
   },
   "editedFolder": {
     "message": "تم تعديل المجلد"
   },
   "addedFolder": {
-    "message": "Folder added"
+    "message": "تمت إضافة المجلد"
   },
   "deleteFolderConfirmation": {
     "message": "هل أنت متأكد من حذف هذا المجلد؟"
@@ -546,13 +546,13 @@
     "message": "تم حذف المجلد"
   },
   "loggedOut": {
-    "message": "Logged out"
+    "message": "تم تسجيل الخروج"
   },
   "loginExpired": {
-    "message": "Your login session has expired."
+    "message": "انتهت صَلاحِيَة جَلسة الدخول."
   },
   "logOutConfirmation": {
-    "message": "Are you sure you want to log out?"
+    "message": "هل أنت متأكد من أنك تريد تسجيل الخروج؟"
   },
   "logOut": {
     "message": "تسجيل الخروج"
@@ -567,31 +567,31 @@
     "message": "لا"
   },
   "loginOrCreateNewAccount": {
-    "message": "Log in or create a new account to access your secure vault."
+    "message": "قم بتسجيل الدخول أو أنشئ حساباً جديداً لتتمكن من الوصول إلى خزنتك السرية."
   },
   "loginWithDevice": {
-    "message": "Log in with device"
+    "message": "تسجيل الدخول باستخدام جهاز"
   },
   "loginWithDeviceEnabledInfo": {
-    "message": "Log in with device must be set up in the settings of the Bitwarden mobile app. Need another option?"
+    "message": "تسجيل الدخول باستخدام الجهاز يجب أن يكون مفعلاً في إعدادات تطبيق بيتواردن على هاتفك. هل تحتاج إلى خِيار آخر؟"
   },
   "loginWithMasterPassword": {
-    "message": "Log in with master password"
+    "message": "تسجيل الدخول باستخدام كلمة المرور الرئيسية"
   },
   "createAccount": {
     "message": "إنشاء حساب"
   },
   "newAroundHere": {
-    "message": "New around here?"
+    "message": "هل أنت جديد هنا؟"
   },
   "startTrial": {
-    "message": "Start trial"
+    "message": "ابدأ تجرِبة مجانية"
   },
   "logIn": {
     "message": "تسجيل الدخول"
   },
   "logInInitiated": {
-    "message": "Log in initiated"
+    "message": "بَدْء تسجيل الدخول"
   },
   "submit": {
     "message": "قدِّم"
@@ -603,7 +603,7 @@
     "message": "اسمك"
   },
   "yourNameDesc": {
-    "message": "What should we call you?"
+    "message": "ماذا تحب أن ندعوك؟"
   },
   "masterPass": {
     "message": "كلمة المرور الرئيسية"
@@ -645,10 +645,10 @@
     "message": "عنوان البريد الإلكتروني غير صالح."
   },
   "masterPasswordRequired": {
-    "message": "Master password is required."
+    "message": "كلمة المرور الرئيسية مطلوبة."
   },
   "confirmMasterPasswordRequired": {
-    "message": "Master password retype is required."
+    "message": "مطلوب إعادة إدخال كلمة المرور الرئيسية."
   },
   "masterPasswordMinlength": {
     "message": "Master password must be at least 8 characters long."
@@ -700,19 +700,19 @@
     "message": "قفل الآن"
   },
   "noItemsInList": {
-    "message": "There are no items to list."
+    "message": "لا توجد عناصر لعرضها."
   },
   "noCollectionsInList": {
     "message": "There are no collections to list."
   },
   "noGroupsInList": {
-    "message": "There are no groups to list."
+    "message": "لا توجد أية مجموعات لعرضها."
   },
   "noUsersInList": {
-    "message": "There are no users to list."
+    "message": "ليس هناك مستخدمون لعرضهم."
   },
   "noEventsInList": {
-    "message": "There are no events to list."
+    "message": "لا توجد أية أحداث لعرضها."
   },
   "newOrganization": {
     "message": "مؤسسة جديدة"
@@ -721,7 +721,7 @@
     "message": "أنت لا تنتمي إلى أي مؤسسة. تسمح لك المؤسسات بمشاركة العناصر بأمان مع مستخدمين آخرين."
   },
   "notificationSentDevice": {
-    "message": "A notification has been sent to your device."
+    "message": "تم إرسال إشعار إلى جهازك."
   },
   "versionNumber": {
     "message": "الإصدار $VERSION_NUMBER$",
@@ -757,7 +757,7 @@
     "message": "تذكرني"
   },
   "sendVerificationCodeEmailAgain": {
-    "message": "Send verification code email again"
+    "message": "إرسال رمز التحقق إلى البريد الإلكتروني مرة أخرى"
   },
   "useAnotherTwoStepMethod": {
     "message": "Use another two-step login method"
@@ -2444,7 +2444,7 @@
     "message": "Owner"
   },
   "ownerDesc": {
-    "message": "The highest access user that can manage all aspects of your organization."
+    "message": "Manage all aspects of your organization, including billing and subscriptions"
   },
   "clientOwnerDesc": {
     "message": "This user should be independent of the Provider. If the Provider is disassociated with the organization, this user will maintain ownership of the organization."
@@ -2453,19 +2453,19 @@
     "message": "Admin"
   },
   "adminDesc": {
-    "message": "Admins can access and manage all items, collections and users in your organization."
+    "message": "Manage organization access, all collections, members, reporting, and security settings"
   },
   "user": {
     "message": "User"
   },
   "userDesc": {
-    "message": "A regular user with access to assigned collections in your organization."
+    "message": "Access and add items to assigned collections"
   },
   "manager": {
     "message": "Manager"
   },
   "managerDesc": {
-    "message": "Managers can access and manage assigned collections in your organization."
+    "message": "Create, delete, and manage access in assigned collections"
   },
   "all": {
     "message": "All"
@@ -2567,7 +2567,7 @@
     }
   },
   "viewAllLoginOptions": {
-    "message": "View all log in options"
+    "message": "عرض جميع خيارات تسجيل الدخول"
   },
   "viewedItemId": {
     "message": "Viewed item $ID$.",
@@ -2876,7 +2876,7 @@
     "message": "Invalid date range."
   },
   "errorOccurred": {
-    "message": "An error has occurred."
+    "message": "لقد حدث خطأ."
   },
   "userAccess": {
     "message": "User access"
@@ -2954,7 +2954,7 @@
     "message": "Unable to verify your email. Try sending a new verification email."
   },
   "emailVerificationRequired": {
-    "message": "Email verification required"
+    "message": "تأكيد البريد الإلكتروني مطلوب"
   },
   "emailVerificationRequiredDesc": {
     "message": "You must verify your email to use this feature."
@@ -2990,7 +2990,7 @@
     }
   },
   "rememberEmail": {
-    "message": "Remember email"
+    "message": "تذكرني"
   },
   "recoverAccountTwoStepDesc": {
     "message": "If you cannot access your account through your normal two-step login methods, you can use your two-step login recovery code to turn off all two-step providers on your account."
@@ -3426,10 +3426,10 @@
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "fingerprintMatchInfo": {
-    "message": "Please make sure your vault is unlocked and Fingerprint phrase matches the other device."
+    "message": "الرجاء التأكد من أن الخزنة الخاصة بك غير مقفلة وأن بصمة الإصبع تتطابق مع الجهاز الآخر."
   },
   "fingerprintPhraseHeader": {
-    "message": "Fingerprint phrase"
+    "message": "بصمة الإصبع"
   },
   "dontAskFingerprintAgain": {
     "message": "Never prompt to verify fingerprint phrases for invited users (not recommended)",
@@ -3692,10 +3692,10 @@
     "message": "Organization identifier"
   },
   "ssoLogInWithOrgIdentifier": {
-    "message": "Log in using your organization's single sign-on portal. Please enter your organization's SSO identifier to begin."
+    "message": "قم بتسجيل الدخول بسرعة باستخدام بوابة تسجيل الدخول الأحادي لمؤسستك. الرجاء إدخال معرف الـSSO الخاص بمؤسستك للبدء."
   },
   "enterpriseSingleSignOn": {
-    "message": "Enterprise single sign-on"
+    "message": "تسجيل الدخول الأُحادي للمؤسسات – SSO"
   },
   "ssoHandOff": {
     "message": "You may now close this tab and continue in the extension."
@@ -3713,10 +3713,10 @@
     "message": "SSO validation failed"
   },
   "ssoIdentifierRequired": {
-    "message": "Organization SSO identifier is required."
+    "message": "معرف الSSO للمنظمة مطلوب"
   },
   "ssoIdentifier": {
-    "message": "SSO identifier"
+    "message": "معرف SSO"
   },
   "ssoIdentifierHint": {
     "message": "Provide this ID to your members to login with SSO."
@@ -4117,7 +4117,22 @@
     "message": "Custom"
   },
   "customDesc": {
-    "message": "Allows more granular control of user permissions for advanced configurations."
+    "message": "Grant customized permissions to members"
+  },
+  "customDescNonEnterpriseStart": {
+    "message": "Custom roles is an ",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Custom roles is an enterprise feature. Contact our support team to upgrade your subscription'"
+  },
+  "customDescNonEnterpriseLink": {
+    "message": "enterprise feature",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Custom roles is an enterprise feature. Contact our support team to upgrade your subscription'"
+  },
+  "customDescNonEnterpriseEnd": {
+    "message": ". Contact our support team to upgrade your subscription",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Custom roles is an enterprise feature. Contact our support team to upgrade your subscription'"
+  },
+  "customNonEnterpriseError": {
+    "message": "To enable custom permissions the organization must be on an Enterprise 2020 plan."
   },
   "permissions": {
     "message": "Permissions"
@@ -4285,10 +4300,10 @@
     "message": "The deletion date provided is not valid."
   },
   "expirationDateAndTimeRequired": {
-    "message": "An expiration date and time are required."
+    "message": "مطلوب تاريخ ووقت انتهاء الصلاحية."
   },
   "deletionDateAndTimeRequired": {
-    "message": "A deletion date and time are required."
+    "message": "مطلوب تاريخ ووقت الحذف."
   },
   "dateParsingError": {
     "message": "There was an error saving your deletion and expiration dates."
@@ -4441,7 +4456,7 @@
     "message": "Resend invitations"
   },
   "resendNotification": {
-    "message": "Resend notification"
+    "message": "إعادة إرسال الإشعار"
   },
   "noSelectedUsersApplicable": {
     "message": "This action is not applicable to any of the selected users."
@@ -5140,7 +5155,7 @@
     "message": "1 field above needs your attention."
   },
   "fieldRequiredError": {
-    "message": "$FIELDNAME$ is required.",
+    "message": "$FIELDNAME$ مطلوب.",
     "placeholders": {
       "fieldname": {
         "content": "$1",
@@ -5404,10 +5419,10 @@
     "description": "the text, 'SCIM', is an acronymn and should not be translated."
   },
   "inputRequired": {
-    "message": "Input is required."
+    "message": "هذا الحقل مطلوب."
   },
   "inputEmail": {
-    "message": "Input is not an email address."
+    "message": "القيمة المدخلة ليست عنوان بريد إلكتروني."
   },
   "inputMinLength": {
     "message": "Input must be at least $COUNT$ characters long.",
@@ -5455,10 +5470,10 @@
     "message": "Number of users"
   },
   "loggingInAs": {
-    "message": "Logging in as"
+    "message": "تسجيل الدخول كـ"
   },
   "notYou": {
-    "message": "Not you?"
+    "message": "ليس حسابك؟"
   },
   "multiSelectPlaceholder": {
     "message": "-- Type to Filter --"

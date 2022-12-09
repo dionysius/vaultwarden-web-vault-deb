@@ -4119,6 +4119,21 @@
   "customDesc": {
     "message": "Дазваляе больш паглыблена кантраляваць дазволы карыстальніка для дадатковых канфігурацый."
   },
+  "customDescNonEnterpriseStart": {
+    "message": "Карыстальніцкія ролі з'яўляюцца ",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Custom roles is an enterprise feature. Contact our support team to upgrade your subscription'"
+  },
+  "customDescNonEnterpriseLink": {
+    "message": "функцыяй для прадпрыемства",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Custom roles is an enterprise feature. Contact our support team to upgrade your subscription'"
+  },
+  "customDescNonEnterpriseEnd": {
+    "message": ". Звяжыцеся з нашай камандай падтрымкі для паляпшэння падпіскі",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Custom roles is an enterprise feature. Contact our support team to upgrade your subscription'"
+  },
+  "customNonEnterpriseError": {
+    "message": "Каб уключыць дазволы карыстальніка, арганізацыя павінна мець тарыфны план Enterprise 2020."
+  },
   "permissions": {
     "message": "Дазволы"
   },

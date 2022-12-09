@@ -4119,6 +4119,21 @@
   "customDesc": {
     "message": "Feinere Kontrolle der Benutzer Berechtigungen für erweiterte Konfigurationen erlauben."
   },
+  "customDescNonEnterpriseStart": {
+    "message": "Benutzerdefinierte Rollen sind eine ",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Custom roles is an enterprise feature. Contact our support team to upgrade your subscription'"
+  },
+  "customDescNonEnterpriseLink": {
+    "message": "Funktion für Unternehmen",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Custom roles is an enterprise feature. Contact our support team to upgrade your subscription'"
+  },
+  "customDescNonEnterpriseEnd": {
+    "message": ". Kontaktiere unser Kundenserviceteam, um dein Abo hochzustufen",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Custom roles is an enterprise feature. Contact our support team to upgrade your subscription'"
+  },
+  "customNonEnterpriseError": {
+    "message": "Um benutzerdefinierte Berechtigungen zu ermöglichen, muss sich die Organisation auf einem 2020er Unternehmensabo befinden."
+  },
   "permissions": {
     "message": "Berechtigungen"
   },

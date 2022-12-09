@@ -3063,7 +3063,7 @@
     "description": "A billing plan/package. For example: Families, Teams, Enterprise, etc."
   },
   "changeBillingPlan": {
-    "message": "Mainīt plānu",
+    "message": "Uzlabot plānu",
     "description": "A billing plan/package. For example: Families, Teams, Enterprise, etc."
   },
   "changeBillingPlanUpgrade": {
@@ -4118,6 +4118,21 @@
   },
   "customDesc": {
     "message": "Nodrošina izvērstāku lietotāju tiesību pārvaldību sarežģītākos uzstādījumos."
+  },
+  "customDescNonEnterpriseStart": {
+    "message": "Pielāgotas lomas ir ",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Custom roles is an enterprise feature. Contact our support team to upgrade your subscription'"
+  },
+  "customDescNonEnterpriseLink": {
+    "message": "uzņēmumu iespēja",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Custom roles is an enterprise feature. Contact our support team to upgrade your subscription'"
+  },
+  "customDescNonEnterpriseEnd": {
+    "message": ". Lai uzlabotu abonementu, jāsazinās ar mūsu atbalsta komandu",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Custom roles is an enterprise feature. Contact our support team to upgrade your subscription'"
+  },
+  "customNonEnterpriseError": {
+    "message": "Lai iespējotu pielāgotas atļaujas, apvienībai jābūt plānam Enterprise 2020."
   },
   "permissions": {
     "message": "Atļaujas"

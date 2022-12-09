@@ -4119,6 +4119,21 @@
   "customDesc": {
     "message": "Maakt een fijnmazige controle van gebruikersrechten voor geavanceerde configuraties mogelijk."
   },
+  "customDescNonEnterpriseStart": {
+    "message": "Aangepaste rollen is een ",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Custom roles is an enterprise feature. Contact our support team to upgrade your subscription'"
+  },
+  "customDescNonEnterpriseLink": {
+    "message": "Enterprise feature",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Custom roles is an enterprise feature. Contact our support team to upgrade your subscription'"
+  },
+  "customDescNonEnterpriseEnd": {
+    "message": ". Neem contact op met ons ondersteuningsteam voor het aanpassen van je abonnement",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Custom roles is an enterprise feature. Contact our support team to upgrade your subscription'"
+  },
+  "customNonEnterpriseError": {
+    "message": "Voor het inschakelen van aangepaste rechten moet de organisatie een Enterprise 2020-abonnement hebben."
+  },
   "permissions": {
     "message": "Rechten"
   },

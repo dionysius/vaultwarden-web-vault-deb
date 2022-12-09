@@ -4119,6 +4119,21 @@
   "customDesc": {
     "message": "Consente un controllo più granulare delle autorizzazioni utente per le configurazioni avanzate."
   },
+  "customDescNonEnterpriseStart": {
+    "message": "I ruoli personalizzati sono una ",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Custom roles is an enterprise feature. Contact our support team to upgrade your subscription'"
+  },
+  "customDescNonEnterpriseLink": {
+    "message": "feature enterprise",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Custom roles is an enterprise feature. Contact our support team to upgrade your subscription'"
+  },
+  "customDescNonEnterpriseEnd": {
+    "message": ". Contatta il nostro team di supporto per aggiornare il tuo abbonamento",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Custom roles is an enterprise feature. Contact our support team to upgrade your subscription'"
+  },
+  "customNonEnterpriseError": {
+    "message": "Per abilitare i permessi personalizzati, l'organizzazione deve essere su un piano Enterprise 2020."
+  },
   "permissions": {
     "message": "Permessi"
   },

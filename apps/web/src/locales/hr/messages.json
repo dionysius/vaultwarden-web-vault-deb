@@ -2444,7 +2444,7 @@
     "message": "Vlasnik"
   },
   "ownerDesc": {
-    "message": "Korisnik s najvišim pravima pristupa koji može upravljati svim mogućnostima tvoje organziacije."
+    "message": "Upravljaj svim mogućnostima tvoje organizacije uključujući naplatu i pretplate"
   },
   "clientOwnerDesc": {
     "message": "Korisnik bi trebao biti neovisan o davatelju. Ako se davatelja razdvoji od organizacije, ovaj će korisnik zadržati vlasništvo nad organizacijom."
@@ -2453,19 +2453,19 @@
     "message": "Admin"
   },
   "adminDesc": {
-    "message": "Admini mogu pristupiti i upravljati svim stavkama, zbirkama i korisnicima u organizaciji."
+    "message": "Upravljaj: pristupu organizaciji, svim zbirkama, korisnicima, izvještavanju i sigurnosnom postavkama"
   },
   "user": {
     "message": "Korisnik"
   },
   "userDesc": {
-    "message": "Obični korisnik s pristupom dodijeljenim zbirkama u tvojoj organizaciji."
+    "message": "Pristupi i dodaj stavke dodijeljenim zbirkama"
   },
   "manager": {
     "message": "Upravitelj"
   },
   "managerDesc": {
-    "message": "Upravitelji mogu pristupiti i upravljati dodijeljenim zbirkama u tvojoj organizaciji."
+    "message": "Stvori, obriši i upravljaj pristupom u dodijeljenim zbirkama"
   },
   "all": {
     "message": "Sve"
@@ -4117,7 +4117,22 @@
     "message": "Prilagođeno"
   },
   "customDesc": {
-    "message": "Omogućuje detaljnije upravljanje korisničkim dozvolama za napredne konfiguracije."
+    "message": "Dodijeli prilagođena dopuštenja članovima"
+  },
+  "customDescNonEnterpriseStart": {
+    "message": "Custom roles is an ",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Custom roles is an enterprise feature. Contact our support team to upgrade your subscription'"
+  },
+  "customDescNonEnterpriseLink": {
+    "message": "enterprise feature",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Custom roles is an enterprise feature. Contact our support team to upgrade your subscription'"
+  },
+  "customDescNonEnterpriseEnd": {
+    "message": ". Contact our support team to upgrade your subscription",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Custom roles is an enterprise feature. Contact our support team to upgrade your subscription'"
+  },
+  "customNonEnterpriseError": {
+    "message": "To enable custom permissions the organization must be on an Enterprise 2020 plan."
   },
   "permissions": {
     "message": "Dozvole"
@@ -5155,16 +5170,16 @@
     "message": "Required if Entity ID is not a URL."
   },
   "openIdOptionalCustomizations": {
-    "message": "Optional customizations"
+    "message": "Izborne prilagodbe"
   },
   "openIdAuthorityRequired": {
-    "message": "Required if Authority is not valid."
+    "message": "Obavezno ako ovlaštenje nije važeće."
   },
   "separateMultipleWithComma": {
     "message": "Odvoji zarezom."
   },
   "sessionTimeout": {
-    "message": "Your session has timed out. Please go back and try logging in again."
+    "message": "Tvoja sesija je istekla. Vrati se i pokušaj s ponovnom prijavom."
   },
   "exportingPersonalVaultTitle": {
     "message": "Izvoz osobnog trezora"
@@ -5173,7 +5188,7 @@
     "message": "Izvoz organizacijskog trezora"
   },
   "exportingPersonalVaultDescription": {
-    "message": "Only the individual vault items associated with $EMAIL$ will be exported. Organization vault items will not be included.",
+    "message": "Izvest će se samo stavke osobnog trezora povezanog s $EMAIL$. Stavke organizacijskog trezora neće biti uključene.",
     "placeholders": {
       "email": {
         "content": "$1",

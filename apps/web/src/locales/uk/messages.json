@@ -2444,7 +2444,7 @@
     "message": "Власник"
   },
   "ownerDesc": {
-    "message": "Користувач з найвищими привілеями, який може керувати всіма налаштуваннями організації."
+    "message": "Керування всіма налаштуваннями організації, як-от платежі й передплати"
   },
   "clientOwnerDesc": {
     "message": "Цей користувач має бути незалежним від постачальника. Якщо постачальник не пов'язаний з організацією, цей користувач підтримуватиме право власності організації."
@@ -2453,19 +2453,19 @@
     "message": "Адміністратор"
   },
   "adminDesc": {
-    "message": "Адміністратори мають доступ і можливість керування всіма записами, збірками та користувачами вашої організації."
+    "message": "Керування доступом до організації, всіма збірками, учасниками, звітами та налаштуваннями безпеки"
   },
   "user": {
     "message": "Користувач"
   },
   "userDesc": {
-    "message": "Звичайний користувач з доступом до пов'язаних збірок вашої організації."
+    "message": "Доступ та додавання елементів до призначених збірок"
   },
   "manager": {
     "message": "Менеджер"
   },
   "managerDesc": {
-    "message": "Менеджери мають доступ і можуть керувати пов'язаними збірками вашої організації."
+    "message": "Створення, видалення та керування доступом у призначених збірках"
   },
   "all": {
     "message": "Усі"
@@ -4117,7 +4117,22 @@
     "message": "Спеціальний"
   },
   "customDesc": {
-    "message": "Дозволяє детальніший контроль дозволів користувача для розширеної конфігурації."
+    "message": "Надання користувацьких дозволів учасникам"
+  },
+  "customDescNonEnterpriseStart": {
+    "message": "Користувацькі ролі є ",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Custom roles is an enterprise feature. Contact our support team to upgrade your subscription'"
+  },
+  "customDescNonEnterpriseLink": {
+    "message": "корпоративною функцією",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Custom roles is an enterprise feature. Contact our support team to upgrade your subscription'"
+  },
+  "customDescNonEnterpriseEnd": {
+    "message": ". Зверніться до своєї команди підтримки або оновіть передплату",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Custom roles is an enterprise feature. Contact our support team to upgrade your subscription'"
+  },
+  "customNonEnterpriseError": {
+    "message": "Щоб увімкнути користувацькі дозволи, організація повинна мати тарифний план Enterprise 2020."
   },
   "permissions": {
     "message": "Дозволи"

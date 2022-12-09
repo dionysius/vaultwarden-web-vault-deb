@@ -2453,13 +2453,13 @@
     "message": "Administrateur"
   },
   "adminDesc": {
-    "message": "Les administrateurs peuvent voir et gérer tous les éléments, les collections et les utilisateurs de votre organisation."
+    "message": " Les administrateurs peuvent voir et gérer tous les éléments, les collections et les utilisateurs de votre organisation."
   },
   "user": {
     "message": "Utilisateur"
   },
   "userDesc": {
-    "message": "Un utilisateur standard avec accès aux collections qui lui sont assignées dans votre organisation."
+    "message": "Un utilisateur normal avec accès aux collections de votre organisation."
   },
   "manager": {
     "message": "Gestionnaire"
@@ -4118,6 +4118,21 @@
   },
   "customDesc": {
     "message": "Permet un contrôle plus précis des permissions utilisateur pour les configurations avancées."
+  },
+  "customDescNonEnterpriseStart": {
+    "message": "Rôles personnalisés est une ",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Custom roles is an enterprise feature. Contact our support team to upgrade your subscription'"
+  },
+  "customDescNonEnterpriseLink": {
+    "message": "fonctionnalité d'entreprise",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Custom roles is an enterprise feature. Contact our support team to upgrade your subscription'"
+  },
+  "customDescNonEnterpriseEnd": {
+    "message": ". Contactez notre équipe de support pour mettre à jour votre abonnement",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Custom roles is an enterprise feature. Contact our support team to upgrade your subscription'"
+  },
+  "customNonEnterpriseError": {
+    "message": "Pour activer les autorisations personnalisées, l'organisation doit être sur un plan Entreprise 2020."
   },
   "permissions": {
     "message": "Permissions"

@@ -2444,7 +2444,7 @@
     "message": "Propietari"
   },
   "ownerDesc": {
-    "message": "L'usuari d'accés més elevat que pot gestionar tots els aspectes de la vostra organització."
+    "message": "Gestioneu tots els aspectes de la vostra organització, incloses la facturació i les subscripcions"
   },
   "clientOwnerDesc": {
     "message": "Aquest usuari ha de ser independent del proveïdor. Si el proveïdor està desvinculat de l'organització, aquest usuari mantindrà la propietat de l'organització."
@@ -2453,19 +2453,19 @@
     "message": "Administrador"
   },
   "adminDesc": {
-    "message": "Els administradors poden accedir i gestionar tots els elements, col·leccions i usuaris de la vostra organització."
+    "message": "Gestioneu l'accés a l'organització, totes les col·leccions, els membres, els informes i la configuració de seguretat"
   },
   "user": {
     "message": "Usuari"
   },
   "userDesc": {
-    "message": "Un usuari habitual amb accés a les col·leccions assignades a la vostra organització."
+    "message": "Accediu i afegiu elements a les col·leccions assignades"
   },
   "manager": {
     "message": "Gestor"
   },
   "managerDesc": {
-    "message": "Els gestors poden accedir i gestionar les col·leccions assignades a la vostra organització."
+    "message": "Creeu, suprimiu i gestioneu l'accés a les col·leccions assignades"
   },
   "all": {
     "message": "Tot"
@@ -4117,7 +4117,22 @@
     "message": "Personalitzat"
   },
   "customDesc": {
-    "message": "Permet un control més granular dels permisos d'usuari per a configuracions avançades."
+    "message": "Concediu permisos personalitzats als membres"
+  },
+  "customDescNonEnterpriseStart": {
+    "message": "Els rols personalitzats són una ",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Custom roles is an enterprise feature. Contact our support team to upgrade your subscription'"
+  },
+  "customDescNonEnterpriseLink": {
+    "message": "característica empresarial",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Custom roles is an enterprise feature. Contact our support team to upgrade your subscription'"
+  },
+  "customDescNonEnterpriseEnd": {
+    "message": ". Contacta amb el nostre equip d'assistència per actualitzar la teua subscripció",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Custom roles is an enterprise feature. Contact our support team to upgrade your subscription'"
+  },
+  "customNonEnterpriseError": {
+    "message": "Per habilitar els permisos personalitzats, l'organització ha de tenir un pla Enterprise 2020."
   },
   "permissions": {
     "message": "Permisos"

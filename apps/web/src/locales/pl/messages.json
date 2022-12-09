@@ -2444,7 +2444,7 @@
     "message": "Właściciel"
   },
   "ownerDesc": {
-    "message": "Użytkownik z najwyższym uprawnieniem, który może zarządzać wszystkimi ustawieniami organizacji."
+    "message": "Użytkownik z najszerszym dostępem, mogący zarządzać wszystkimi właściwościami organizacji."
   },
   "clientOwnerDesc": {
     "message": "Ten użytkownik powinien być niezależny od dostawcy. Jeśli dostawca zostanie odłączony od organizacji, użytkownik ten zachowa własność organizacji."
@@ -2453,7 +2453,7 @@
     "message": "Administrator"
   },
   "adminDesc": {
-    "message": "Administratorzy posiadają dostęp do wszystkich elementów, kolekcji i użytkowników w Twojej organizacji."
+    "message": "Administratorzy mają dostęp do wszystkich elementów, kolekcji i użytkowników w Twojej organizacji."
   },
   "user": {
     "message": "Użytkownik"
@@ -4118,6 +4118,21 @@
   },
   "customDesc": {
     "message": "Umożliwia zaawansowaną kontrolę uprawnień użytkownika."
+  },
+  "customDescNonEnterpriseStart": {
+    "message": "Role niestandardowe to ",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Custom roles is an enterprise feature. Contact our support team to upgrade your subscription'"
+  },
+  "customDescNonEnterpriseLink": {
+    "message": "funkcja dla przedsiębiorstw",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Custom roles is an enterprise feature. Contact our support team to upgrade your subscription'"
+  },
+  "customDescNonEnterpriseEnd": {
+    "message": ". Skontaktuj się z naszym zespołem pomocy technicznej, aby ulepszyć subskrypcję",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Custom roles is an enterprise feature. Contact our support team to upgrade your subscription'"
+  },
+  "customNonEnterpriseError": {
+    "message": "Aby włączyć uprawnienia niestandardowe, organizacja musi korzystać z planu Enterprise 2020."
   },
   "permissions": {
     "message": "Uprawnienia"

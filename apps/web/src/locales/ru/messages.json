@@ -555,7 +555,7 @@
     "message": "Вы действительно хотите выйти?"
   },
   "logOut": {
-    "message": "Выход"
+    "message": "Выйти"
   },
   "ok": {
     "message": "Ok"
@@ -1022,7 +1022,7 @@
     "message": "Изменить email"
   },
   "changeEmailTwoFactorWarning": {
-    "message": "При продолжении будет изменен адрес email вашего аккаунта. Это не изменит адрес email для двухэтапной аутентификации. Его можно изменить в настройках двухэтапной аутентификации."
+    "message": "В результате будет изменен адрес электронной почты вашей учетной записи. Это не приведет к изменению адреса электронной почты, используемого для двухэтапной аутентификации. Этот адрес можно изменить в настройках двухэтапной аутентификации."
   },
   "newEmail": {
     "message": "Новый email"
@@ -1100,7 +1100,7 @@
     "message": "Настройки ключа шифрования сохранены"
   },
   "dangerZone": {
-    "message": "Зона опасности"
+    "message": "Зона риска"
   },
   "dangerZoneDesc": {
     "message": "Осторожно, эти действия необратимы!"
@@ -2444,7 +2444,7 @@
     "message": "Владелец"
   },
   "ownerDesc": {
-    "message": "Высший пользовательский уровень доступа, который позволяет управлять всеми аспектами вашей организации."
+    "message": "Управление всеми аспектами деятельности вашей организации, включая биллинг и подписки"
   },
   "clientOwnerDesc": {
     "message": "Этот пользователь должен быть независимым от поставщика. Если поставщик будет отсоединен от организации, этот пользователь сохранит право собственности на организацию."
@@ -2453,19 +2453,19 @@
     "message": "Администратор"
   },
   "adminDesc": {
-    "message": "Администраторы могут получать доступ и управлять всеми элементами, коллекциями и пользователями вашей организации."
+    "message": "Управление доступом к организации, всеми коллекциями, членами, отчетностью и настройками безопасности"
   },
   "user": {
     "message": "Пользователь"
   },
   "userDesc": {
-    "message": "Обычный пользователь с доступом к коллекциям вашей организации."
+    "message": "Доступ и добавление элементов в соответствующие коллекции"
   },
   "manager": {
     "message": "Менеджер"
   },
   "managerDesc": {
-    "message": "Менеджеры могут получать доступ и управлять назначенными коллекциями вашей организации."
+    "message": "Создание, удаление и управление доступом в соответствующих коллекциях"
   },
   "all": {
     "message": "Все"
@@ -3573,7 +3573,7 @@
     "message": "Чтобы получить доступ к хранилищу после выхода из него требуется повторная авторизация."
   },
   "lock": {
-    "message": "Заблокировать",
+    "message": "Блокировка",
     "description": "Verb form: to make secure or inaccesible by"
   },
   "trash": {
@@ -4117,7 +4117,22 @@
     "message": "Пользовательский"
   },
   "customDesc": {
-    "message": "Позволяет более гибко контролировать права пользователей для расширенных конфигураций."
+    "message": "Предоставление членам настраиваемых разрешений"
+  },
+  "customDescNonEnterpriseStart": {
+    "message": "Пользовательские роли - ",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Custom roles is an enterprise feature. Contact our support team to upgrade your subscription'"
+  },
+  "customDescNonEnterpriseLink": {
+    "message": "это функционал для предприятий",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Custom roles is an enterprise feature. Contact our support team to upgrade your subscription'"
+  },
+  "customDescNonEnterpriseEnd": {
+    "message": ". Свяжитесь с нашей службой поддержки для обновления подписки,",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Custom roles is an enterprise feature. Contact our support team to upgrade your subscription'"
+  },
+  "customNonEnterpriseError": {
+    "message": "Для включения пользовательских разрешений организация должна быть на тарифном плане Enterprise 2020."
   },
   "permissions": {
     "message": "Разрешения"

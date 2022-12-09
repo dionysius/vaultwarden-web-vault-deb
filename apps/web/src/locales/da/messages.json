@@ -10,7 +10,7 @@
     }
   },
   "whatTypeOfItem": {
-    "message": "Hvilken type element er dette?"
+    "message": "Hvilken emnetype er denne?"
   },
   "name": {
     "message": "Navn"
@@ -50,7 +50,7 @@
     "message": "Tilpassede felter"
   },
   "cardholderName": {
-    "message": "Kortholders navn"
+    "message": "Kortholdernavn"
   },
   "number": {
     "message": "Nummer"
@@ -125,16 +125,16 @@
     "message": "Titel"
   },
   "mr": {
-    "message": "Hr"
+    "message": "Hr."
   },
   "mrs": {
     "message": "Fru"
   },
   "ms": {
-    "message": "Frk"
+    "message": "Frk."
   },
   "dr": {
-    "message": "Dr"
+    "message": "Dr."
   },
   "expirationMonth": {
     "message": "Udløbsmåned"
@@ -143,7 +143,7 @@
     "message": "Udløbsår"
   },
   "authenticatorKeyTotp": {
-    "message": "Autentificeringsnøgle (TOTP)"
+    "message": "Godkendelsesnøgle (TOTP)"
   },
   "folder": {
     "message": "Mappe"
@@ -187,7 +187,7 @@
     "message": "Redigér mappe"
   },
   "baseDomain": {
-    "message": "Grund-domæne",
+    "message": "Basisdomæne",
     "description": "Domain name. Example: website.com"
   },
   "domainName": {
@@ -213,7 +213,7 @@
     "description": "URI match detection for auto-fill."
   },
   "defaultMatchDetection": {
-    "message": "Standard matchmetode",
+    "message": "Standard matchdetektering",
     "description": "Default URI match detection for auto-fill."
   },
   "never": {
@@ -230,10 +230,10 @@
     "message": "Generér adgangskode"
   },
   "checkPassword": {
-    "message": "Undersøg om adgangskoden er blevet afsløret."
+    "message": "Tjek, om adgangskode er blevet kompromitteret."
   },
   "passwordExposed": {
-    "message": "Denne adgangskode er blevet afsløret $VALUE$ gang(e) i datalæk. Du burde skifte den.",
+    "message": "Denne adgangskode er viderebragt $VALUE$ gang(e) i datalæk og bør straks skiftes.",
     "placeholders": {
       "value": {
         "content": "$1",
@@ -414,7 +414,7 @@
     "description": "Copy credit card number"
   },
   "copySecurityCode": {
-    "message": "Kopiér kortverifikationskode",
+    "message": "Kopiér verifikationskode",
     "description": "Copy credit card security code (CVV)"
   },
   "copyUri": {
@@ -479,7 +479,7 @@
     "message": "Maks. filstørrelse er 500 MB."
   },
   "updateKey": {
-    "message": "Denne funktion kan ikke bruges, før du har opdateret din krypteringsnøgle."
+    "message": "Denne funktion kan ikke bruges, før du opdaterer din krypteringsnøgle."
   },
   "addedItem": {
     "message": "Emne tilføjet"
@@ -576,7 +576,7 @@
     "message": "Log ind med enhed skal være opsat i indstillingerne i Bitwarden mobil-appen. Behov for en anden mulighed?"
   },
   "loginWithMasterPassword": {
-    "message": "Log ind med hovedadgangskoden"
+    "message": "Log ind med hovedadgangskode"
   },
   "createAccount": {
     "message": "Opret konto"
@@ -612,31 +612,31 @@
     "message": "Hovedadgangskoden er den adgangskode, du bruger, når du tilgår din boks. Det er meget vigtigt, at hovedadgangskoden ikke glemmes, da der ikke er nogen måde, hvorpå den kan genoprettes."
   },
   "masterPassImportant": {
-    "message": "Hovedadgangskoder kan ikke gendannes, hvis du glemmer dem!"
+    "message": "Hovedadgangskoder kan ikke gendannes, hvis de glemmes!"
   },
   "masterPassHintDesc": {
-    "message": "Et hovedadgangskode-tip kan bidrage til at komme i tanke om adgangskoden, hvis den glemmes."
+    "message": "Et hovedadgangskodetip kan bidrage til at komme i tanke om adgangskoden, hvis den glemmes."
   },
   "reTypeMasterPass": {
     "message": "Angiv hovedadgangskoden igen"
   },
   "masterPassHint": {
-    "message": "Hovedadgangskode-tip (valgfrit)"
+    "message": "Hovedadgangskodetip (valgfri)"
   },
   "masterPassHintLabel": {
-    "message": "Hovedadgangskode-tip"
+    "message": "Hovedadgangskodetip"
   },
   "settings": {
     "message": "Indstillinger"
   },
   "passwordHint": {
-    "message": "Adgangskode-tip"
+    "message": "Adgangskodetip"
   },
   "enterEmailToGetHint": {
-    "message": "Angiv din kontos e-mailadresse for at modtage hovedadgangskode-tip."
+    "message": "Angiv din kontos e-mailadresse for at modtage dit hovedadgangskodetip."
   },
   "getMasterPasswordHint": {
-    "message": "Få hovedadgangskode-tip"
+    "message": "Få hovedadgangskodetip"
   },
   "emailRequired": {
     "message": "E-mailadresse er påkrævet."
@@ -663,7 +663,7 @@
     "message": "Konto oprettet."
   },
   "masterPassSent": {
-    "message": "En e-mail med dit hovedadgangskode-tip er sendt."
+    "message": "En e-mail med dit hovedadgangskodetip er sendt til dig."
   },
   "unexpectedError": {
     "message": "En uventet fejl opstod."
@@ -718,7 +718,7 @@
     "message": "Ny organisation"
   },
   "noOrganizationsList": {
-    "message": "Du tilhører ikke nogen organisation. Organisationer muliggør sikker deling af emner med andre brugere."
+    "message": "Du tilhører ingen organisationer. Organisationer muliggør sikker deling af emner med andre brugere."
   },
   "notificationSentDevice": {
     "message": "En notifikation er sendt til din enhed."
@@ -763,7 +763,7 @@
     "message": "Brug en anden totrins-login metode"
   },
   "insertYubiKey": {
-    "message": "Indsæt din YubiKey i computerens USB-port, tryk dernæst på dens knap."
+    "message": "Indsæt din YubiKey i computerens USB-port og tryk på dens knap."
   },
   "insertU2f": {
     "message": "Indsæt din sikkerhedsnøgle i computerens USB-port. Har den en knap, tryk på den."
@@ -1711,7 +1711,7 @@
     }
   },
   "goodNews": {
-    "message": "Gode nyheder",
+    "message": "Godt nyt",
     "description": "ex. Good News, No Breached Accounts Found!"
   },
   "breachUsernameFound": {
@@ -1740,10 +1740,10 @@
     "message": "Berørte brugere"
   },
   "breachOccurred": {
-    "message": "Læk forekom"
+    "message": "Læk forekommet"
   },
   "breachReported": {
-    "message": "Læk rapporteret"
+    "message": "Læk anmeldt"
   },
   "reportError": {
     "message": "Der opstod en fejl under forsøget på at indlæse rapporten. Prøv igen"
@@ -1752,7 +1752,7 @@
     "message": "Fakturering"
   },
   "billingPlanLabel": {
-    "message": "Faktureringsabonnement"
+    "message": "Faktureringsplan"
   },
   "paymentType": {
     "message": "Betalingstype"
@@ -2336,7 +2336,7 @@
     "message": "Politikker"
   },
   "singleSignOn": {
-    "message": "Single Sign On"
+    "message": "Single Sign-On"
   },
   "editPolicy": {
     "message": "Redigér politik"
@@ -2366,7 +2366,7 @@
     "message": "Når et medlems rettigheder tilbagekaldes, har vedkommende ikke længere adgang til organisationsdata. For hurtigt at genoprette medlemsadgang, så gå til fanen Tilbagekaldt."
   },
   "removeUserConfirmationKeyConnector": {
-    "message": "Advarsel! Denne bruger behøver Key Connector til krypteringshåndtering. Fjernes brugeren fra din organisation, deaktiveres vedkommendes konto permanent. Denne handling kan ikke fortrydes. Vil du fortsætte?"
+    "message": "Advarsel! Denne bruger behøver Key Connector til krypteringshåndtering. Fjernes brugeren fra din organisation, deaktiveres vedkommendes konto permanent. Denne handling er irreversibel. Fortsæt alligevel?"
   },
   "externalId": {
     "message": "Eksternt id"
@@ -2438,13 +2438,13 @@
     "message": "Bekræftet"
   },
   "clientOwnerEmail": {
-    "message": "Klientejer e-mail"
+    "message": "Klientejers e-mail"
   },
   "owner": {
     "message": "Ejer"
   },
   "ownerDesc": {
-    "message": "Den bruger med højeste rettigheder, som kan håndtere alle aspekter af din organisation."
+    "message": "Håndtér alle aspekter af organisationen, herunder fakturering og abonnementer"
   },
   "clientOwnerDesc": {
     "message": "Denne bruger bør være uafhængig af udbyderen. Hvis udbyderen frakobles organisationen, bevarer denne bruger ejerskabet af organisationen."
@@ -2453,19 +2453,19 @@
     "message": "Administrator"
   },
   "adminDesc": {
-    "message": "Administratorer kan få adgang til og håndtere alle elementer, samlinger og brugere i din organisation."
+    "message": "Håndtér adgang, alle samlinger, medlemmer, rapportering og sikkerhedsindstillinger i organisationen"
   },
   "user": {
     "message": "Bruger"
   },
   "userDesc": {
-    "message": "En almindelig bruger med adgang til tildelte samlinger i din organisation."
+    "message": "Tilgå og føj emner til tildelte samlinger"
   },
   "manager": {
     "message": "Manager"
   },
   "managerDesc": {
-    "message": "Managere kan få adgang til og håndtere tildelte samlinger i din organisation."
+    "message": "Opret, slet og håndtér adgang i tildelte samlinger"
   },
   "all": {
     "message": "Alle"
@@ -2501,10 +2501,10 @@
     "message": "Web-boks"
   },
   "loggedIn": {
-    "message": "Logget ind."
+    "message": "Logget ind"
   },
   "changedPassword": {
-    "message": "Ændrede konto kodeord."
+    "message": "Skift kontoadgangskode"
   },
   "enabledUpdated2fa": {
     "message": "Totrins-login gemt"
@@ -2522,7 +2522,7 @@
     "message": "Loginforsøg mislykkedes med forkert totrins-login."
   },
   "exportedVault": {
-    "message": "Eksporterede boks."
+    "message": "Boks eksporteret"
   },
   "exportedOrganizationVault": {
     "message": "Eksporterede organisationsboks."
@@ -2900,7 +2900,7 @@
     "message": "Gensend e-mail"
   },
   "hasBeenReinvited": {
-    "message": "$USER$ er blevet inviteret igen.",
+    "message": "$USER$ inviteret igen",
     "placeholders": {
       "user": {
         "content": "$1",
@@ -4119,6 +4119,21 @@
   "customDesc": {
     "message": "Tillader mere granulær kontrol af brugertilladelser for avancerede opsætninger."
   },
+  "customDescNonEnterpriseStart": {
+    "message": "Tilpassede roller er en ",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Custom roles is an enterprise feature. Contact our support team to upgrade your subscription'"
+  },
+  "customDescNonEnterpriseLink": {
+    "message": "Enterprise-funktion",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Custom roles is an enterprise feature. Contact our support team to upgrade your subscription'"
+  },
+  "customDescNonEnterpriseEnd": {
+    "message": ". Kontakt supportteamet for at opgradere abonnementet",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Custom roles is an enterprise feature. Contact our support team to upgrade your subscription'"
+  },
+  "customNonEnterpriseError": {
+    "message": "Aktivering af tilpassede tilladelser kræver, at organisationen bruger en Enterprise 2020-abonnementstype."
+  },
   "permissions": {
     "message": "Tilladelser"
   },
@@ -4306,7 +4321,7 @@
     "message": "WebAuthn bekræftet Du kan lukke denne fane."
   },
   "hintEqualsPassword": {
-    "message": "Dit kodeordstip må ikke være identisk med din adgangskode."
+    "message": "Adgangskodetip og adgangskode må ikke være identiske."
   },
   "enrollPasswordReset": {
     "message": "Tilmeld Adgangskodenulstilling"
@@ -5023,13 +5038,13 @@
     "message": "Key Connector deaktiveret"
   },
   "keyConnectorWarning": {
-    "message": "Når medlemmer begynder at bruge Key Connector, kan din organisation ikke vende tilbage til hovedadgangskode-dekryptering. Fortsæt kun, hvis du er fortrolig med at implementere og håndtere en nøgleserver."
+    "message": "Når medlemmer begynder at bruge Key Connector, kan en organisation ikke vende tilbage til hovedadgangskode-dekryptering. Fortsæt kun, hvis du er fortrolig med at implementere og håndtere en nøgleserver."
   },
   "migratedKeyConnector": {
     "message": "Migreret til Key Connector"
   },
   "paymentSponsored": {
-    "message": "Angiv en betalingsmetode der skal tilknyttes organisationen. Bare rolig, vi vil ikke opkræve dig noget, medmindre du vælger yderligere funktioner, eller dit sponsorat udløber."
+    "message": "Angiv en betalingsmetode der skal tilknyttes organisationen. Bare rolig, der sker ingen opkrævning, medmindre yderligere funktioner tilvælges, eller dit sponsorat udløber. "
   },
   "orgCreatedSponsorshipInvalid": {
     "message": "Sponsortilbuddet er udløbet. Den oprettede organisation kan slettes for at undgå opkrævning ved udkøb af den 7-dages prøveperiode. Ellers luk denne prompt for at beholde organisationen og påtage dig faktureringsforpligtigelsen."
@@ -5065,7 +5080,7 @@
     "message": "Generering af faktureringssynk-token"
   },
   "copyPasteBillingSync": {
-    "message": "Kopiér og indsæt dette token i indstillingerne Faktureringssynk i din selvhostede organisation."
+    "message": "Kopiér og indsæt dette token i indstillingerne Faktureringssynk i din selv-hostede organisation."
   },
   "billingSyncCanAccess": {
     "message": "Din faktureringssynk-token kan tilgå og redigere denne organisations abonnementsindstillinger."
@@ -5083,7 +5098,7 @@
     "message": "Rotér token"
   },
   "rotateBillingSyncTokenWarning": {
-    "message": "Fortsættes, vil faktureringssynk skulle genopsættes på din selvhostede server."
+    "message": "Fortsættes, vil faktureringssynk skulle genopsættes på din selv-hostede server."
   },
   "rotateBillingSyncTokenTitle": {
     "message": "Rotering af faktureringssynk-tokenet vil ugyldiggøre det foregående token."
@@ -5092,7 +5107,7 @@
     "message": "Selvhosting"
   },
   "selfHostingEnterpriseOrganizationSectionCopy": {
-    "message": "For at opsætte din organisation på egen server, så upload din licensfil. Opsæt faktureringssynk for at understøtte gratis Familier-abonnementstyper og avancerede faktureringsmuligheder for din selvhostede organisation."
+    "message": "For at opsætte din organisation på egen server, skal din licensfil uploads. Opsæt faktureringssynk for at understøtte gratis Familier-abonnementstyper og avancerede faktureringsmuligheder for din selv-hostede organisation."
   },
   "billingSyncApiKeyRotated": {
     "message": "Token roteret."
@@ -5101,7 +5116,7 @@
     "message": "Faktureringssynk"
   },
   "billingSyncDesc": {
-    "message": "Faktureringssynk giver gratis Familier-abonnementstyper til medlemmer samt avancerede faktureringsmuligheder ved at linke din selvhostede Bitwarden til Bitwarden-cloudserveren."
+    "message": "Faktureringssynk giver gratis Familier-abonnementstyper til medlemmer samt avancerede faktureringsmuligheder ved at linke din selv-hostede Bitwarden til Bitwarden-cloudserveren."
   },
   "billingSyncKeyDesc": {
     "message": "Et faktureringssynk-token fra din cloud-organisations abonnementsindstillinger kræves for at udfylde denne formular."
@@ -5212,7 +5227,7 @@
     "message": "Organisationsvælger"
   },
   "currentOrganization": {
-    "message": "Aktuel organisation",
+    "message": "Nuværende organisation",
     "description": "This is used by screen readers to indicate the organization that is currently being shown to the user."
   },
   "accountSettings": {
@@ -5222,7 +5237,7 @@
     "message": "Generator"
   },
   "whatWouldYouLikeToGenerate": {
-    "message": "Hvad vil du gerne generere?"
+    "message": "Hvad ønskes genereret?"
   },
   "passwordType": {
     "message": "Adgangskodetype"
@@ -5241,13 +5256,13 @@
     "description": "Username generator option that appends a random sub-address to the username. For example: address+subaddress@email.com"
   },
   "plusAddressedEmailDesc": {
-    "message": "Brug din e-mailudbyders underadresseringsmuligheder."
+    "message": "Brug e-mailudbyderens underadresseringsmuligheder."
   },
   "catchallEmail": {
     "message": "Fang-alle e-mail"
   },
   "catchallEmailDesc": {
-    "message": "Brug dit domænes konfigurerede fang-alle-indbakke."
+    "message": "Brug den for domænet opsatte Fang-alle indbakke."
   },
   "random": {
     "message": "Tilfældig",
@@ -5260,7 +5275,7 @@
     "message": "Tjeneste"
   },
   "unknownCipher": {
-    "message": "Ukendt element. Du skal muligvis anmode om tilladelse for at få adgang til dette element."
+    "message": "Ukendt emne. Du skal muligvis anmode om tilladelse til at tilgå emnet."
   },
   "cannotSponsorSelf": {
     "message": "Du kan ikke indløse for den aktive konto. Angiv en anden e-mail."
@@ -5275,7 +5290,7 @@
     }
   },
   "awaitingSyncSingular": {
-    "message": "Token er roteret for $DAYS$ dag siden. Opdatér faktureringssynk i de selvhostede organisationsindstillinger.",
+    "message": "Token er roteret for $DAYS$ dag siden. Opdatér faktureringssynk under selv-hostet organisationsindstillingerne.",
     "placeholders": {
       "days": {
         "content": "$1",
@@ -5284,7 +5299,7 @@
     }
   },
   "awaitingSyncPlural": {
-    "message": "Token er roteret for $DAYS$ dage siden. Opdatér faktureringssynk i de selvhostede organisationsindstillinger.",
+    "message": "Token er roteret for $DAYS$ dage siden. Opdatér faktureringssynk under selv-hostet organisationsindstillingerne.",
     "placeholders": {
       "days": {
         "content": "$1",
@@ -5309,11 +5324,11 @@
     }
   },
   "billingContactProviderForAssistance": {
-    "message": "Kontakt venligst dem for yderligere assistance",
+    "message": "Kontakt dem for yderligere assistance",
     "description": "This text is displayed if an organization's billing is managed by a Provider. It tells the user to contact the Provider for assistance."
   },
   "forwardedEmail": {
-    "message": "Videresendt E-mail Alias"
+    "message": "Videresendt e-mail alias"
   },
   "forwardedEmailDesc": {
     "message": "Generér et e-mail alias med en ekstern viderestillingstjeneste."
@@ -5332,13 +5347,13 @@
     "message": "Aktivér enhedsbekræftelse"
   },
   "deviceVerificationDesc": {
-    "message": "Når aktiveret, sendes bekræftelseskoder til din e-mailadresse ved indlogning fra en ikke genkendt enhed"
+    "message": "Bekræftelseskoder sendes til din e-mailadresse ved loginforsøg fra en ikke-genkendt enhed"
   },
   "updatedDeviceVerification": {
     "message": "Opdateret enhedsbekræftelse"
   },
   "areYouSureYouWantToEnableDeviceVerificationTheVerificationCodeEmailsWillArriveAtX": {
-    "message": "Er du sikker på, at du vil aktivere enhedsbekræftelse? Bekræftelseskoder e-mailes til: $EMAIL$",
+    "message": "Sikker på, at du vil aktivere enhedsbekræftelse? Bekræftelseskoder e-mailes til: $EMAIL$",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -5354,7 +5369,7 @@
     "description": "The text, 'SCIM', is an acronymn and should not be translated."
   },
   "scimDescription": {
-    "message": "Opret automatisk brugere og grupper med din foretrukne identitetsudbyder via SCIM-provisionering",
+    "message": "Tildel automatisk brugere og grupper den foretrukne identitetsudbyder via SCIM-provisionering",
     "description": "the text, 'SCIM', is an acronymn and should not be translated."
   },
   "scimEnabledCheckboxDesc": {
@@ -5362,7 +5377,7 @@
     "description": "the text, 'SCIM', is an acronymn and should not be translated."
   },
   "scimEnabledCheckboxDescHelpText": {
-    "message": "Opsæt din foretrukne identitetsudbyder ved at konfigurere URL'en og SCIM API-nøglen",
+    "message": "Opsæt foretrukken identitetsudbyder ved at opsætte URL samt SCIM API-nøgle",
     "description": "the text, 'SCIM', is an acronymn and should not be translated."
   },
   "scimApiKeyHelperText": {
@@ -5377,7 +5392,7 @@
     "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
   },
   "rotateScimKeyWarning": {
-    "message": "Er du sikker på, at du vil rotere SCIM API-nøglen? Den nuværende nøgle vil ikke længere fungere for eksisterende integrationer.",
+    "message": "Sikker på, at SCIM API-nøglen skal roteres? Nøglen vil i så fald ikke længere fungere for eksisterende integrationer.",
     "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
   },
   "rotateKey": {
@@ -5396,11 +5411,11 @@
     "description": "the text, 'SCIM' and 'URL', are acronymns and should not be translated."
   },
   "scimApiKeyRotated": {
-    "message": "SCIM API-nøglen er blevet roteret",
+    "message": "SCIM API-nøglen er hermed roteret",
     "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
   },
   "scimSettingsSaved": {
-    "message": "SCIM-indstillingerne er blevet gemt",
+    "message": "SCIM-ændringer er hermed gemt",
     "description": "the text, 'SCIM', is an acronymn and should not be translated."
   },
   "inputRequired": {
@@ -5410,7 +5425,7 @@
     "message": "Input er ikke en e-mailadresse."
   },
   "inputMinLength": {
-    "message": "Input skal være mindst $COUNT$ tegn langt.",
+    "message": "Input skal udgøre min. $COUNT$ tegn.",
     "placeholders": {
       "count": {
         "content": "$1",

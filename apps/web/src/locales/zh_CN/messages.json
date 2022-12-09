@@ -573,7 +573,7 @@
     "message": "使用设备登录"
   },
   "loginWithDeviceEnabledInfo": {
-    "message": "设备登录必须在 Bitwarden 移动应用程序的设置中启用。需要其他选项吗？"
+    "message": "必须在 Bitwarden 移动应用程序的设置中启用设备登录。需要其他选项吗？"
   },
   "loginWithMasterPassword": {
     "message": "使用主密码登录"
@@ -582,7 +582,7 @@
     "message": "创建账户"
   },
   "newAroundHere": {
-    "message": "New around here?"
+    "message": "初来乍到吗？"
   },
   "startTrial": {
     "message": "开始试用"
@@ -1291,23 +1291,23 @@
     "message": "两步登录"
   },
   "twoStepLoginEnforcement": {
-    "message": "强制两步登录"
+    "message": "两步登录实施"
   },
   "twoStepLoginDesc": {
     "message": "在登录时要求使用额外的步骤来保护您的账户。"
   },
   "twoStepLoginOrganizationDescStart": {
-    "message": "要强制成员使用 Bitwarden 两步登录选项，请使用 ",
+    "message": "要为成员实施 Bitwarden 两步登录选项，请使用 ",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enforce Bitwarden Two-step Login options for members by using the Two-step Login Policy.'"
   },
   "twoStepLoginPolicy": {
     "message": "两步登录策略"
   },
   "twoStepLoginOrganizationDuoDesc": {
-    "message": "要强制 Duo 方式的两步登录，请使用下面的选项。"
+    "message": "要实施 Duo 方式的两步登录，请使用下面的选项。"
   },
   "twoStepLoginOrganizationSsoDesc": {
-    "message": "如果您已设置或计划设置 SSO，两步登录可能已经通过您的身份提供程序强制执行了。"
+    "message": "如果您已设置或计划设置 SSO，两步登录可能已经通过您的身份提供程序实施了。"
   },
   "twoStepLoginRecoveryWarning": {
     "message": "启用两步登录可能会将您永久锁定在 Bitwarden 账户之外。如果您无法使用常规的两步登录提供程序（例如您丢失了设备），则可以使用恢复代码访问您的账户。如果您失去对您账户的访问，Bitwarden 支持也无法帮助您。我们建议您记下或打印恢复代码，并将其妥善保管。"
@@ -2444,7 +2444,7 @@
     "message": "所有者"
   },
   "ownerDesc": {
-    "message": "可以管理组织的所有方面的最高权限用户。"
+    "message": "管理您组织的所有方面，包括计费和订阅"
   },
   "clientOwnerDesc": {
     "message": "此用户应独立于提供商。如果提供商与组织断开关联，该用户将保留该组织的所有权。"
@@ -2453,19 +2453,19 @@
     "message": "管理员"
   },
   "adminDesc": {
-    "message": " 管理员可以访问和管理组织中的所有项目、集合和用户。"
+    "message": "管理组织访问权限，所有集合，成员，报告以及安全设置"
   },
   "user": {
     "message": "用户"
   },
   "userDesc": {
-    "message": "具有对组织所分配的集合有访问权限的普通用户。"
+    "message": "访问并将项目添加到已分配的集合"
   },
   "manager": {
     "message": "经理"
   },
   "managerDesc": {
-    "message": "经理可以访问和管理组织所分配的集合。"
+    "message": "在已分配的集合中创建、删除和管理访问权限"
   },
   "all": {
     "message": "全部"
@@ -4117,7 +4117,22 @@
     "message": "自定义"
   },
   "customDesc": {
-    "message": "高级配置允许对用户权限进行更多的粒度控制。"
+    "message": "授予成员自定义权限"
+  },
+  "customDescNonEnterpriseStart": {
+    "message": "自定义角色是 ",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Custom roles is an enterprise feature. Contact our support team to upgrade your subscription'"
+  },
+  "customDescNonEnterpriseLink": {
+    "message": "企业功能",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Custom roles is an enterprise feature. Contact our support team to upgrade your subscription'"
+  },
+  "customDescNonEnterpriseEnd": {
+    "message": "。请联系我们的支持团队升级您的订阅",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Custom roles is an enterprise feature. Contact our support team to upgrade your subscription'"
+  },
+  "customNonEnterpriseError": {
+    "message": "要启用自定义权限，该组织必须处于 2020 企业计划中。"
   },
   "permissions": {
     "message": "权限"

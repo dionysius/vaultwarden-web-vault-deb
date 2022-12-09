@@ -4119,6 +4119,21 @@
   "customDesc": {
     "message": "A fejlett konfigurációk felhasználói engedélyeinek részletesebb ellenőrzését teszi lehetővé."
   },
+  "customDescNonEnterpriseStart": {
+    "message": "Az egyedi szerepek egy ",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Custom roles is an enterprise feature. Contact our support team to upgrade your subscription'"
+  },
+  "customDescNonEnterpriseLink": {
+    "message": "vállalati funkció",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Custom roles is an enterprise feature. Contact our support team to upgrade your subscription'"
+  },
+  "customDescNonEnterpriseEnd": {
+    "message": ". Vegyük fel a kapcsolatot a támogató csoporttal más előfizetésre áttéréshez.",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Custom roles is an enterprise feature. Contact our support team to upgrade your subscription'"
+  },
+  "customNonEnterpriseError": {
+    "message": "Az egyedi jogosultságok engedélyezéséhez a szervezetnek Enterprise 2020 csomaggal kell rendelkeznie."
+  },
   "permissions": {
     "message": "Jogosultságok"
   },

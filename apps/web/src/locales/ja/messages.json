@@ -4119,6 +4119,21 @@
   "customDesc": {
     "message": "ユーザー権限をより詳細に制御できます。"
   },
+  "customDescNonEnterpriseStart": {
+    "message": "カスタムロールは",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Custom roles is an enterprise feature. Contact our support team to upgrade your subscription'"
+  },
+  "customDescNonEnterpriseLink": {
+    "message": "企業向け機能",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Custom roles is an enterprise feature. Contact our support team to upgrade your subscription'"
+  },
+  "customDescNonEnterpriseEnd": {
+    "message": "です。サブスクリプションのアップグレードについては、弊社サポートチームまでお問い合わせください。",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Custom roles is an enterprise feature. Contact our support team to upgrade your subscription'"
+  },
+  "customNonEnterpriseError": {
+    "message": "カスタム権限を有効にするには、組織が Enterprise 2020 プランに登録済みである必要があります。"
+  },
   "permissions": {
     "message": "権限"
   },
@@ -4723,19 +4738,19 @@
     "message": "Signed out callback path"
   },
   "authority": {
-    "message": "Authority"
+    "message": "権限"
   },
   "clientId": {
-    "message": "Client ID"
+    "message": "クライアントID"
   },
   "clientSecret": {
     "message": "Client secret"
   },
   "metadataAddress": {
-    "message": "Metadata address"
+    "message": "メタデータアドレス"
   },
   "oidcRedirectBehavior": {
-    "message": "OIDC redirect behavior"
+    "message": "OIDCリダイレクトの動作"
   },
   "getClaimsFromUserInfoEndpoint": {
     "message": "Get claims from user info endpoint"

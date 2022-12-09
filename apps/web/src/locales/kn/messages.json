@@ -4119,6 +4119,21 @@
   "customDesc": {
     "message": "ಸುಧಾರಿತ ಸಂರಚನೆಗಳಿಗಾಗಿ ಬಳಕೆದಾರರ ಅನುಮತಿಗಳ ಹೆಚ್ಚಿನ ಹರಳಿನ ನಿಯಂತ್ರಣವನ್ನು ಅನುಮತಿಸುತ್ತದೆ."
   },
+  "customDescNonEnterpriseStart": {
+    "message": "Custom roles is an ",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Custom roles is an enterprise feature. Contact our support team to upgrade your subscription'"
+  },
+  "customDescNonEnterpriseLink": {
+    "message": "enterprise feature",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Custom roles is an enterprise feature. Contact our support team to upgrade your subscription'"
+  },
+  "customDescNonEnterpriseEnd": {
+    "message": ". Contact our support team to upgrade your subscription",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Custom roles is an enterprise feature. Contact our support team to upgrade your subscription'"
+  },
+  "customNonEnterpriseError": {
+    "message": "To enable custom permissions the organization must be on an Enterprise 2020 plan."
+  },
   "permissions": {
     "message": "ಅನುಮತಿಗಳು"
   },

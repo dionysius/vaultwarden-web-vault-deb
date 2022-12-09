@@ -4119,6 +4119,21 @@
   "customDesc": {
     "message": "Qabaqcıl konfiqurasiya üçün istifadəçi icazələrinin daha təfsilatlı nəzarətinə icazə verər."
   },
+  "customDescNonEnterpriseStart": {
+    "message": "Özəl rollar ",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Custom roles is an enterprise feature. Contact our support team to upgrade your subscription'"
+  },
+  "customDescNonEnterpriseLink": {
+    "message": "bir müəssisə özəlliyidir",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Custom roles is an enterprise feature. Contact our support team to upgrade your subscription'"
+  },
+  "customDescNonEnterpriseEnd": {
+    "message": ". Abunəliyinizi yüksəltmək üçün dəstək komandamızla əlaqə saxlayın",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Custom roles is an enterprise feature. Contact our support team to upgrade your subscription'"
+  },
+  "customNonEnterpriseError": {
+    "message": "Özəl icazələri fəallaşdırmaq üçün təşkilat, Enterprise 2020 planında olmalıdır."
+  },
   "permissions": {
     "message": "İcazələr"
   },
