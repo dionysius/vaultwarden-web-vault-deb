@@ -1779,6 +1779,15 @@
   "disabled": {
     "message": "已禁用"
   },
+  "removePassword": {
+    "message": "移除密码"
+  },
+  "removedPassword": {
+    "message": "密码已移除"
+  },
+  "removePasswordConfirmation": {
+    "message": "确定要移除此密码吗？"
+  },
   "maxAccessCountReached": {
     "message": "已达最大访问次数"
   },
@@ -2035,7 +2044,7 @@
     "message": "不是你？"
   },
   "newAroundHere": {
-    "message": "新建在这里？"
+    "message": "初来乍到吗？"
   },
   "loggingInTo": {
     "message": "正在登录到 $DOMAIN$",

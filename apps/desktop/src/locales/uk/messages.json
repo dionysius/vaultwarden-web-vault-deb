@@ -1779,6 +1779,15 @@
   "disabled": {
     "message": "Вимкнено"
   },
+  "removePassword": {
+    "message": "Вилучити пароль"
+  },
+  "removedPassword": {
+    "message": "Пароль вилучено"
+  },
+  "removePasswordConfirmation": {
+    "message": "Ви дійсно хочете вилучити пароль?"
+  },
   "maxAccessCountReached": {
     "message": "Досягнуто максимальну кількість доступів"
   },

@@ -958,7 +958,7 @@
     "message": "即使最小化到選單列，也在 Docker 中顯示 Bitwarden 圖示。"
   },
   "confirmTrayTitle": {
-    "message": "確認禁用系統匣"
+    "message": "確認隱藏到系統匣"
   },
   "confirmTrayDesc": {
     "message": "禁用此設定也將禁用所有其他系統匣相關設定。"
@@ -1778,6 +1778,15 @@
   },
   "disabled": {
     "message": "已停用"
+  },
+  "removePassword": {
+    "message": "移除密碼"
+  },
+  "removedPassword": {
+    "message": "已移除密碼"
+  },
+  "removePasswordConfirmation": {
+    "message": "您確定要移除密碼嗎？"
   },
   "maxAccessCountReached": {
     "message": "已達最大存取次數"

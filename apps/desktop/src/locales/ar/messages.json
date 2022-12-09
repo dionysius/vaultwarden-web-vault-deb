@@ -1779,6 +1779,15 @@
   "disabled": {
     "message": "معطّل"
   },
+  "removePassword": {
+    "message": "إزالة كلمة المرور"
+  },
+  "removedPassword": {
+    "message": "تمت إزالة كلمة المرور"
+  },
+  "removePasswordConfirmation": {
+    "message": "هل أنت متأكد من أنك تريد إزالة كلمة المرور؟"
+  },
   "maxAccessCountReached": {
     "message": "تم بلوغ الحد الأقصى لعدد الدخول"
   },

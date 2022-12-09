@@ -1779,6 +1779,15 @@
   "disabled": {
     "message": "Poistettu käytöstä"
   },
+  "removePassword": {
+    "message": "Poista salasana"
+  },
+  "removedPassword": {
+    "message": "Salasana poistettiin"
+  },
+  "removePasswordConfirmation": {
+    "message": "Haluatko varmasti poistaa salasanan?"
+  },
   "maxAccessCountReached": {
     "message": "Käyttökertojen enimmäismäärä on saavutettu"
   },

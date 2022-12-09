@@ -1779,6 +1779,15 @@
   "disabled": {
     "message": "Letiltva"
   },
+  "removePassword": {
+    "message": "Jelszó eltávolítása"
+  },
+  "removedPassword": {
+    "message": "A jelszó eltávolításra került."
+  },
+  "removePasswordConfirmation": {
+    "message": "Biztosan eltávolításra kerüljön ez a jelszó?"
+  },
   "maxAccessCountReached": {
     "message": "A maximális hozzáférések száma elérésre került."
   },

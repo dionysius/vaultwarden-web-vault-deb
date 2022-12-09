@@ -1779,6 +1779,15 @@
   "disabled": {
     "message": "無効"
   },
+  "removePassword": {
+    "message": "パスワードを削除"
+  },
+  "removedPassword": {
+    "message": "パスワードを削除しました"
+  },
+  "removePasswordConfirmation": {
+    "message": "パスワードを削除してもよろしいですか？"
+  },
   "maxAccessCountReached": {
     "message": "最大アクセス数に達しました"
   },

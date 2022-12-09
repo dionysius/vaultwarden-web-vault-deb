@@ -1779,6 +1779,15 @@
   "disabled": {
     "message": "Inaktiverad"
   },
+  "removePassword": {
+    "message": "Ta bort lösenord"
+  },
+  "removedPassword": {
+    "message": "Tog bort lösenord"
+  },
+  "removePasswordConfirmation": {
+    "message": "Är du säker på att du vill ta bort lösenordet?"
+  },
   "maxAccessCountReached": {
     "message": "Det maximala antalet åtkomster har uppnåtts"
   },
