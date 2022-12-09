@@ -11,6 +11,7 @@
   },
   "flags": {
     "showTrial": true,
+    "secretsManager": true,
     "showPasswordless": true
   }
 }

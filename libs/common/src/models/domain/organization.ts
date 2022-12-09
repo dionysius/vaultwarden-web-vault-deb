@@ -24,6 +24,7 @@ export class Organization {
   useScim: boolean;
   useCustomPermissions: boolean;
   useResetPassword: boolean;
+  useSecretsManager: boolean;
   selfHost: boolean;
   usersGetPremium: boolean;
   seats: number;
@@ -69,6 +70,7 @@ export class Organization {
     this.useScim = obj.useScim;
     this.useCustomPermissions = obj.useCustomPermissions;
     this.useResetPassword = obj.useResetPassword;
+    this.useSecretsManager = obj.useSecretsManager;
     this.selfHost = obj.selfHost;
     this.usersGetPremium = obj.usersGetPremium;
     this.seats = obj.seats;
@@ -204,6 +206,10 @@ export class Organization {
 
   get hasProvider() {
     return this.providerId != null || this.providerName != null;
+  }
+
+  get canAccessSecretsManager() {
+    return this.useSecretsManager;
   }
 
   static fromJSON(json: Jsonify<Organization>) {

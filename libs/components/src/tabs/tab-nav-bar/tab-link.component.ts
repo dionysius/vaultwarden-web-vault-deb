@@ -24,7 +24,7 @@ export class TabLinkComponent implements FocusableOption, AfterViewInit, OnDestr
     fragment: "ignored",
   };
 
-  @Input() route: string;
+  @Input() route: string | any[];
   @Input() disabled = false;
 
   @HostListener("keydown", ["$event"]) onKeyDown(event: KeyboardEvent) {

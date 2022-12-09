@@ -1,0 +1,4 @@
+<sm-access-list
+  [tokens]="accessTokens$ | async"
+  (newAccessTokenEvent)="openNewAccessTokenDialog()"
+></sm-access-list>

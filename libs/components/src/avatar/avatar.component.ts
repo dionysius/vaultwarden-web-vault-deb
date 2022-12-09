@@ -7,7 +7,7 @@ type SizeTypes = "large" | "default" | "small";
 
 const SizeClasses: Record<SizeTypes, string[]> = {
   large: ["tw-h-16", "tw-w-16"],
-  default: ["tw-h-12", "tw-w-12"],
+  default: ["tw-h-10", "tw-w-10"],
   small: ["tw-h-7", "tw-w-7"],
 };
 

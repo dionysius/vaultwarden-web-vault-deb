@@ -1,0 +1,22 @@
+<form [formGroup]="formGroup" [bitSubmit]="submit">
+  <bit-dialog dialogSize="small">
+    <span bitDialogTitle>{{ title | i18n }}</span>
+    <span bitDialogContent>
+      <div *ngIf="loading" class="tw-text-center">
+        <i class="bwi bwi-spinner bwi-spin bwi-3x"></i>
+      </div>
+      <bit-form-field *ngIf="!loading">
+        <bit-label>{{ "projectName" | i18n }}</bit-label>
+        <input formControlName="name" maxlength="1000" bitInput />
+      </bit-form-field>
+    </span>
+    <div bitDialogFooter class="tw-flex tw-gap-2">
+      <button type="submit" bitButton buttonType="primary" bitFormButton>
+        {{ "save" | i18n }}
+      </button>
+      <button type="button" bitButton buttonType="secondary" bitFormButton bitDialogClose>
+        {{ "cancel" | i18n }}
+      </button>
+    </div>
+  </bit-dialog>
+</form>

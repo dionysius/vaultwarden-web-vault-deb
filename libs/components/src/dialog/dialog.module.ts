@@ -18,7 +18,7 @@ import { SimpleDialogComponent } from "./simple-dialog/simple-dialog.component";
     DialogComponent,
     SimpleDialogComponent,
   ],
-  exports: [CdkDialogModule, DialogComponent, SimpleDialogComponent],
+  exports: [CdkDialogModule, DialogComponent, SimpleDialogComponent, DialogCloseDirective],
   providers: [DialogService],
 })
 export class DialogModule {}

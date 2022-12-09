@@ -1,0 +1,46 @@
+<!-- This a higher order component that composes `NavItemComponent`  -->
+<bit-nav-item
+  [text]="text"
+  [icon]="icon"
+  [route]="route"
+  [variant]="variant"
+  (mainContentClicked)="toggle()"
+  [treeDepth]="treeDepth"
+  (mainContentClicked)="mainContentClicked.emit()"
+  [ariaLabel]="ariaLabel"
+>
+  <ng-template #button>
+    <button
+      class="tw-ml-auto"
+      [bitIconButton]="
+        open ? 'bwi-chevron-up' : variant === 'tree' ? 'bwi-angle-right' : 'bwi-angle-down'
+      "
+      [buttonType]="'main'"
+      (click)="toggle($event)"
+      size="small"
+      [title]="'toggleCollapse' | i18n"
+      aria-haspopup="true"
+      [attr.aria-expanded]="open.toString()"
+      [attr.aria-controls]="contentId"
+      [attr.aria-label]="['toggleCollapse' | i18n, text].join(' ')"
+    ></button>
+  </ng-template>
+
+  <!-- Show toggle to the left for trees otherwise to the right -->
+  <ng-container slot-start *ngIf="variant === 'tree'">
+    <ng-container *ngTemplateOutlet="button"></ng-container>
+  </ng-container>
+  <ng-container slot-end *ngIf="variant !== 'tree'">
+    <ng-container *ngTemplateOutlet="button"></ng-container>
+  </ng-container>
+</bit-nav-item>
+
+<!-- [attr.aria-controls] of the above button expects a unique ID on the controlled element -->
+<div
+  *ngIf="open"
+  [attr.id]="contentId"
+  [attr.aria-label]="[text, 'submenu' | i18n].join(' ')"
+  role="group"
+>
+  <ng-content></ng-content>
+</div>

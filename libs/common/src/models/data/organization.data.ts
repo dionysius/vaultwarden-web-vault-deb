@@ -22,6 +22,7 @@ export class OrganizationData {
   useScim: boolean;
   useCustomPermissions: boolean;
   useResetPassword: boolean;
+  useSecretsManager: boolean;
   selfHost: boolean;
   usersGetPremium: boolean;
   seats: number;
@@ -63,6 +64,7 @@ export class OrganizationData {
     this.useScim = response.useScim;
     this.useCustomPermissions = response.useCustomPermissions;
     this.useResetPassword = response.useResetPassword;
+    this.useSecretsManager = response.useSecretsManager;
     this.selfHost = response.selfHost;
     this.usersGetPremium = response.usersGetPremium;
     this.seats = response.seats;

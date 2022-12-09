@@ -18,7 +18,8 @@
       "@bitwarden/common/*": ["./libs/common/src/*"],
       "@bitwarden/angular/*": ["./libs/angular/src/*"],
       "@bitwarden/node/*": ["./libs/node/src/*"],
-      "@bitwarden/components": ["./libs/components/src"]
+      "@bitwarden/components": ["./libs/components/src"],
+      "@bitwarden/web-vault/*": ["./apps/web/src/*"]
     },
     "plugins": [
       {
@@ -26,6 +27,6 @@
       }
     ]
   },
-  "include": ["apps/web/src/**/*", "libs/*/src/**/*"],
+  "include": ["apps/web/src/**/*", "libs/*/src/**/*", "bitwarden_license/bit-web/src/**/*"],
   "exclude": ["apps/web/src/**/*.spec.ts", "libs/*/src/**/*.spec.ts"]
 }

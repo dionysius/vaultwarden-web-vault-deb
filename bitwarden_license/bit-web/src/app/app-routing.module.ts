@@ -10,7 +10,8 @@ const routes: Routes = [
   },
   {
     path: "sm",
-    loadChildren: async () => (await import("./sm/sm.module")).SecretsManagerModule,
+    loadChildren: async () =>
+      (await import("./secrets-manager/secrets-manager.module")).SecretsManagerModule,
   },
 ];
 

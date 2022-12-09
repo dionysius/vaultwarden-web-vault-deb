@@ -10,6 +10,7 @@ import {
 /* eslint-disable-next-line @typescript-eslint/ban-types */
 export type Flags = {
   showTrial?: boolean;
+  secretsManager?: boolean;
   showPasswordless?: boolean;
 } & SharedFlags;
 
