@@ -3,6 +3,7 @@ import { action } from "@storybook/addon-actions";
 import { Meta, moduleMetadata, Story } from "@storybook/angular";
 import { delay, of } from "rxjs";
 
+import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { ValidationService } from "@bitwarden/common/abstractions/validation.service";
 
 import { ButtonModule } from "../button";
@@ -67,6 +68,12 @@ export default {
           useValue: {
             showError: action("ValidationService.showError"),
           } as Partial<ValidationService>,
+        },
+        {
+          provide: LogService,
+          useValue: {
+            error: action("LogService.error"),
+          } as Partial<LogService>,
         },
       ],
     }),

@@ -2,6 +2,7 @@ import { Directive, Input, OnDestroy, OnInit, Optional } from "@angular/core";
 import { FormGroupDirective } from "@angular/forms";
 import { BehaviorSubject, catchError, filter, of, Subject, switchMap, takeUntil } from "rxjs";
 
+import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { ValidationService } from "@bitwarden/common/abstractions/validation.service";
 
 import { FunctionReturningAwaitable, functionToObservable } from "../utils/function-to-observable";
@@ -24,7 +25,8 @@ export class BitSubmitDirective implements OnInit, OnDestroy {
 
   constructor(
     private formGroupDirective: FormGroupDirective,
-    @Optional() validationService?: ValidationService
+    @Optional() validationService?: ValidationService,
+    @Optional() logService?: LogService
   ) {
     formGroupDirective.ngSubmit
       .pipe(
@@ -39,6 +41,7 @@ export class BitSubmitDirective implements OnInit, OnDestroy {
 
           return awaitable.pipe(
             catchError((err: unknown) => {
+              logService?.error(`Async submit exception: ${err}`);
               validationService?.showError(err);
               return of(undefined);
             })
