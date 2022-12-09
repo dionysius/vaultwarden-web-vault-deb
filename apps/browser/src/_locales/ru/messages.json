@@ -642,7 +642,7 @@
     "description": "Light color"
   },
   "solarizedDark": {
-    "message": "Солнечная темная",
+    "message": "Solarized dark",
     "description": "'Solarized' is a noun and the name of a color scheme. It should not be translated."
   },
   "exportVault": {
@@ -921,7 +921,7 @@
     "message": "Коды подтверждения будут отправлены вам по электронной почте."
   },
   "selfHostedEnvironment": {
-    "message": "Окружение собственного хостинга"
+    "message": "Окружение пользовательского хостинга"
   },
   "selfHostedEnvironmentFooter": {
     "message": "Укажите URL Bitwarden на вашем сервере."
@@ -1396,7 +1396,7 @@
     "message": "Действие по тайм-ауту хранилища"
   },
   "lock": {
-    "message": "Заблокировать",
+    "message": "Блокировка",
     "description": "Verb form: to make secure or inaccesible by"
   },
   "trash": {

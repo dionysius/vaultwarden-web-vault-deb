@@ -53,13 +53,13 @@
     "message": "แท็บ"
   },
   "vault": {
-    "message": "Vault"
+    "message": "ตู้นิรภัย"
   },
   "myVault": {
     "message": "My Vault"
   },
   "allVaults": {
-    "message": "All vaults"
+    "message": "ตู้นิรภัยทั้งหมด"
   },
   "tools": {
     "message": "เครื่องมือ"
@@ -95,16 +95,16 @@
     "message": "Generate Password (copied)"
   },
   "copyElementIdentifier": {
-    "message": "Copy custom field name"
+    "message": "คัดลอกชื่อของช่องที่กำหนดเอง"
   },
   "noMatchingLogins": {
     "message": "ไม่พบข้อมูลล็อกอินที่ตรงกัน"
   },
   "unlockVaultMenu": {
-    "message": "Unlock your vault"
+    "message": "ปลดล็อกกตู้นิรภัยของคุณ"
   },
   "loginToVaultMenu": {
-    "message": "Log in to your vault"
+    "message": "ลงชื่อเข้าใช้ตู้นิรภัยของคุณ"
   },
   "autoFillInfo": {
     "message": "ไม่พบข้อมูลล็อกอินเพื่อใช้กรอกข้อมูลอัตโนมัติ สำหรับแท็บปัจจุบันของเบราว์เซอร์"
@@ -153,7 +153,7 @@
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "yourAccountsFingerprint": {
-    "message": "Your account's fingerprint phrase",
+    "message": "ข้อความลายนิ้วมือของบัญชีของคุณ",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "twoStepLogin": {
@@ -212,7 +212,7 @@
     "description": "Short for 'Password Generator'."
   },
   "passGenInfo": {
-    "message": "Automatically generate strong, unique passwords for your logins."
+    "message": "สร้างรหัสผ่านที่รัดกุมและไม่ซ้ำใครโดยอัตโนมัติสำหรับการเข้าสู่ระบบของคุณ"
   },
   "bitWebVault": {
     "message": "bitwarden Web Vault"
@@ -291,7 +291,7 @@
     "message": "รหัสผ่าน"
   },
   "passphrase": {
-    "message": "Passphrase"
+    "message": "ข้อความรหัสผ่าน"
   },
   "favorite": {
     "message": "รายการโปรด"
@@ -333,10 +333,10 @@
     "message": "Rate the Extension"
   },
   "rateExtensionDesc": {
-    "message": "Please consider helping us out with a good review!"
+    "message": "โปรดพิจารณา ช่วยเราด้วยการตรวจสอบที่ดี!"
   },
   "browserNotSupportClipboard": {
-    "message": "Your web browser does not support easy clipboard copying. Copy it manually instead."
+    "message": "เว็บเบราว์เซอร์ของคุณไม่รองรับการคัดลอกคลิปบอร์ดอย่างง่าย คัดลอกด้วยตนเองแทน"
   },
   "verifyIdentity": {
     "message": "ยืนยันตัวตน"
@@ -424,22 +424,22 @@
     "message": "ที่อยู่อีเมลไม่ถูกต้อง"
   },
   "masterPasswordRequired": {
-    "message": "Master password is required."
+    "message": "ต้องใช้รหัสผ่านหลัก"
   },
   "confirmMasterPasswordRequired": {
-    "message": "Master password retype is required."
+    "message": "ต้องพิมพ์รหัสผ่านหลักอีกครั้ง"
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least 8 characters long."
+    "message": "รหัสผ่านหลักต้องมีความยาวอย่างน้อย 8 ตัวอักษร"
   },
   "masterPassDoesntMatch": {
-    "message": "Master password confirmation does not match."
+    "message": "การยืนยันรหัสผ่านหลักไม่ตรงกัน"
   },
   "newAccountCreated": {
-    "message": "Your new account has been created! You may now log in."
+    "message": "บัญชีใหม่ของคุณถูกสร้างขึ้นแล้ว! ตอนนี้คุณสามารถเข้าสู่ระบบ"
   },
   "masterPassSent": {
-    "message": "We've sent you an email with your master password hint."
+    "message": "เราได้ส่งอีเมลพร้อมคำใบ้รหัสผ่านหลักของคุณออกไปแล้ว"
   },
   "verificationCodeRequired": {
     "message": "ต้องระบุโค้ดยืนยัน"
@@ -497,7 +497,7 @@
     "message": "Edited Folder"
   },
   "deleteFolderConfirmation": {
-    "message": "Are you sure you want to delete this folder?"
+    "message": "คุณแน่ใจหรือไม่ว่าต้องการลบโฟลเดอร์นี้"
   },
   "deletedFolder": {
     "message": "ลบโฟลเดอร์แล้ว"
@@ -506,7 +506,7 @@
     "message": "Getting Started Tutorial"
   },
   "gettingStartedTutorialVideo": {
-    "message": "Watch our getting started tutorial to learn how to get the most out of the browser extension."
+    "message": "ดูบทช่วยสอนการเริ่มต้นของเราเพื่อเรียนรู้วิธีใช้ประโยชน์สูงสุดจากส่วนขยายเบราว์เซอร์"
   },
   "syncingComplete": {
     "message": "การซิงก์เสร็จสมบูรณ์"
@@ -552,48 +552,48 @@
     "message": "คุณต้องการเขียนทับรหัสผ่านปัจจุบันใช่หรือไม่?"
   },
   "overwriteUsername": {
-    "message": "Overwrite username"
+    "message": "เขียนทับชื่อผู้ใช้"
   },
   "overwriteUsernameConfirmation": {
-    "message": "Are you sure you want to overwrite the current username?"
+    "message": "คุณแน่ใจหรือไม่ว่าต้องการเขียนทับชื่อผู้ใช้ปัจจุบัน"
   },
   "searchFolder": {
     "message": "ค้นหาในโพลเดอร์"
   },
   "searchCollection": {
-    "message": "Search collection"
+    "message": "คอลเลกชันการค้นหา"
   },
   "searchType": {
-    "message": "Search type"
+    "message": "ประเภทการค้นหา"
   },
   "noneFolder": {
     "message": "No Folder",
     "description": "This is the folder for uncategorized items"
   },
   "enableAddLoginNotification": {
-    "message": "Ask to add login"
+    "message": "ถามเพื่อให้เพิ่มการเข้าสู่ระบบ"
   },
   "addLoginNotificationDesc": {
     "message": "The \"Add Login Notification\" automatically prompts you to save new logins to your vault whenever you log into them for the first time."
   },
   "showCardsCurrentTab": {
-    "message": "Show cards on Tab page"
+    "message": "แสดงการ์ดบนหน้าแท็บ"
   },
   "showCardsCurrentTabDesc": {
-    "message": "List card items on the Tab page for easy auto-fill."
+    "message": "บัตรรายการในหน้าแท็บเพื่อให้ป้อนอัตโนมัติได้ง่าย"
   },
   "showIdentitiesCurrentTab": {
-    "message": "Show identities on Tab page"
+    "message": "แสดงตัวตนบนหน้าแท็บ"
   },
   "showIdentitiesCurrentTabDesc": {
-    "message": "List identity items on the Tab page for easy auto-fill."
+    "message": "แสดงรายการข้อมูลประจำตัวในหน้าแท็บเพื่อให้ป้อนอัตโนมัติได้ง่าย"
   },
   "clearClipboard": {
     "message": "ล้างคลิปบอร์ด",
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "clearClipboardDesc": {
-    "message": "Automatically clear copied values from your clipboard.",
+    "message": "ล้างค่าที่คัดลอกโดยอัตโนมัติจากคลิปบอร์ดของคุณ",
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "notificationAddDesc": {
@@ -603,7 +603,7 @@
     "message": "Yes, Save Now"
   },
   "enableChangedPasswordNotification": {
-    "message": "Ask to update existing login"
+    "message": "ขอให้ปรับปรุงการเข้าสู่ระบบที่มีอยู่"
   },
   "changedPasswordNotificationDesc": {
     "message": "Ask to update a login's password when a change is detected on a website."
@@ -615,17 +615,17 @@
     "message": "Yes, Update Now"
   },
   "enableContextMenuItem": {
-    "message": "Show context menu options"
+    "message": "แสดงตัวเลือกเมนูบริบท"
   },
   "contextMenuItemDesc": {
-    "message": "Use a secondary click to access password generation and matching logins for the website. "
+    "message": "ใช้การคลิกสำรองเพื่อเข้าถึงการสร้างรหัสผ่านและการเข้าสู่ระบบที่ตรงกันสำหรับเว็บไซต์ "
   },
   "defaultUriMatchDetection": {
-    "message": "Default URI match detection",
+    "message": "การตรวจจับการจับคู่ URI เริ่มต้น",
     "description": "Default URI match detection for auto-fill."
   },
   "defaultUriMatchDetectionDesc": {
-    "message": "Choose the default way that URI match detection is handled for logins when performing actions such as auto-fill."
+    "message": "เลือกวิธีเริ่มต้นในการจัดการการตรวจหาการจับคู่ URI สำหรับการเข้าสู่ระบบเมื่อดำเนินการต่างๆ เช่น การป้อนอัตโนมัติ"
   },
   "theme": {
     "message": "ธีม"
@@ -656,31 +656,31 @@
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "confirmVaultExport": {
-    "message": "Confirm vault export"
+    "message": "ยืนยันการส่งออกตู้นิรภัย"
   },
   "exportWarningDesc": {
     "message": "This export contains your vault data in an unencrypted format. You should not store or send the exported file over unsecure channels (such as email). Delete it immediately after you are done using it."
   },
   "encExportKeyWarningDesc": {
-    "message": "This export encrypts your data using your account's encryption key. If you ever rotate your account's encryption key you should export again since you will not be able to decrypt this export file."
+    "message": "การส่งออกนี้เข้ารหัสข้อมูลของคุณโดยใช้คีย์เข้ารหัสของบัญชีของคุณ หากคุณเคยหมุนเวียนคีย์เข้ารหัสของบัญชี คุณควรส่งออกอีกครั้ง เนื่องจากคุณจะไม่สามารถถอดรหัสไฟล์ส่งออกนี้ได้"
   },
   "encExportAccountWarningDesc": {
-    "message": "Account encryption keys are unique to each Bitwarden user account, so you can't import an encrypted export into a different account."
+    "message": "คีย์การเข้ารหัสบัญชีจะไม่ซ้ำกันสำหรับบัญชีผู้ใช้ Bitwarden แต่ละบัญชี ดังนั้นคุณจึงไม่สามารถนำเข้าการส่งออกที่เข้ารหัสไปยังบัญชีอื่นได้"
   },
   "exportMasterPassword": {
-    "message": "Enter your master password to export your vault data."
+    "message": "ป้อนรหัสผ่านหลักของคุณเพื่อส่งออกข้อมูลตู้นิรภัยของคุณ"
   },
   "shared": {
     "message": "แชร์แล้ว"
   },
   "learnOrg": {
-    "message": "Learn about organizations"
+    "message": "เรียนรู้เกี่ยวกับองค์กร"
   },
   "learnOrgConfirmation": {
-    "message": "Bitwarden allows you to share your vault items with others by using an organization. Would you like to visit the bitwarden.com website to learn more?"
+    "message": "Bitwarden อนุญาตให้คุณแชร์รายการตู้นิรภัยของคุณกับผู้อื่นโดยใช้องค์กร คุณต้องการเยี่ยมชมเว็บไซต์ bitwarden.com เพื่อเรียนรู้เพิ่มเติมหรือไม่?"
   },
   "moveToOrganization": {
-    "message": "Move to organization"
+    "message": "ย้ายไปยังแบบองค์กร"
   },
   "share": {
     "message": "แชร์"
@@ -699,10 +699,10 @@
     }
   },
   "moveToOrgDesc": {
-    "message": "Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved."
+    "message": "เลือกองค์กรที่คุณต้องการย้ายรายการนี้ไป การย้ายไปยังองค์กรจะโอนความเป็นเจ้าของรายการไปยังองค์กรนั้น คุณจะไม่ได้เป็นเจ้าของโดยตรงของรายการนี้อีกต่อไปเมื่อมีการย้ายแล้ว"
   },
   "learnMore": {
-    "message": "Learn more"
+    "message": "เรียนรู้เพิ่มเติม"
   },
   "authenticatorKeyTotp": {
     "message": "Authenticator Key (TOTP)"
@@ -747,7 +747,7 @@
     "message": "Feature Unavailable"
   },
   "updateKey": {
-    "message": "You cannot use this feature until you update your encryption key."
+    "message": "คุณไม่สามารถใช้คุณลักษณะนี้ได้จนกว่าคุณจะปรับปรุงคีย์การเข้ารหัสลับของคุณ"
   },
   "premiumMembership": {
     "message": "Premium Membership"
@@ -756,28 +756,28 @@
     "message": "Manage Membership"
   },
   "premiumManageAlert": {
-    "message": "You can manage your membership on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "คุณสามารถจัดการการเป็นสมาชิกของคุณได้ที่ bitwarden.com web vault คุณต้องการเข้าชมเว็บไซต์ตอนนี้หรือไม่?"
   },
   "premiumRefresh": {
     "message": "Refresh Membership"
   },
   "premiumNotCurrentMember": {
-    "message": "You are not currently a Premium member."
+    "message": "คุณยังไม่ได้เป็นสมาชิกพรีเมียม"
   },
   "premiumSignUpAndGet": {
-    "message": "Sign up for a Premium membership and get:"
+    "message": "สมัครสมาชิกพรีเมี่ยมและรับ:"
   },
   "ppremiumSignUpStorage": {
     "message": "1 GB of encrypted file storage."
   },
   "ppremiumSignUpTwoStep": {
-    "message": "Additional two-step login options such as YubiKey, FIDO U2F, and Duo."
+    "message": "ตัวเลือกการเข้าสู่ระบบแบบสองขั้นตอนเพิ่มเติม เช่น YubiKey, FIDO U2F และ Duo"
   },
   "ppremiumSignUpReports": {
-    "message": "Password hygiene, account health, and data breach reports to keep your vault safe."
+    "message": "สุขอนามัยของรหัสผ่าน ความสมบูรณ์ของบัญชี และรายงานการละเมิดข้อมูลเพื่อให้ตู้นิรภัยของคุณปลอดภัย"
   },
   "ppremiumSignUpTotp": {
-    "message": "TOTP verification code (2FA) generator for logins in your vault."
+    "message": "ตัวสร้างรหัสยืนยัน TOTP (2FA) สำหรับการเข้าสู่ระบบในตู้นิรภัยของคุณ"
   },
   "ppremiumSignUpSupport": {
     "message": "Priority customer support."
@@ -1055,7 +1055,7 @@
     "message": "หมายเลข"
   },
   "brand": {
-    "message": "Brand"
+    "message": "แบรนด์"
   },
   "expirationMonth": {
     "message": "Expiration Month"
@@ -1133,7 +1133,7 @@
     "message": "Last Name"
   },
   "fullName": {
-    "message": "Full name"
+    "message": "ชื่อเต็ม"
   },
   "identityName": {
     "message": "Identity Name"
@@ -1181,7 +1181,7 @@
     "message": "ประเทศ"
   },
   "type": {
-    "message": "Type"
+    "message": "ชนิด"
   },
   "typeLogin": {
     "message": "ล็อกอิน"
@@ -1205,35 +1205,35 @@
     "message": "ย้อนกลับ"
   },
   "collections": {
-    "message": "Collections"
+    "message": "คอลเลกชัน"
   },
   "favorites": {
     "message": "รายการโปรด"
   },
   "popOutNewWindow": {
-    "message": "Pop out to a new window"
+    "message": "เปิดหน้าต่างใหม่"
   },
   "refresh": {
-    "message": "Refresh"
+    "message": "รีเฟรช"
   },
   "cards": {
-    "message": "Cards"
+    "message": "บัตร"
   },
   "identities": {
-    "message": "Identities"
+    "message": "ข้อมูลระบุตัวตน"
   },
   "logins": {
-    "message": "Logins"
+    "message": "เข้าสู่ระบบ"
   },
   "secureNotes": {
     "message": "Secure Notes"
   },
   "clear": {
-    "message": "Clear",
+    "message": "ลบทิ้ง",
     "description": "To clear something out. example: To clear browser history."
   },
   "checkPassword": {
-    "message": "Check if password has been exposed."
+    "message": "ตรวจสอบว่ารหัสผ่านถูกเปิดเผยหรือไม่"
   },
   "passwordExposed": {
     "message": "This password has been exposed in data breaches. You should change it.",
@@ -1245,28 +1245,28 @@
     }
   },
   "passwordSafe": {
-    "message": "This password was not found in any known data breaches. It should be safe to use."
+    "message": "ไม่พบรหัสผ่านนี้ในการละเมิดข้อมูลที่มี ควรใช้อย่างปลอดภัย"
   },
   "baseDomain": {
-    "message": "Base domain",
+    "message": "โดเมนพื้นฐาน",
     "description": "Domain name. Ex. website.com"
   },
   "domainName": {
-    "message": "Domain name",
+    "message": "ชื่อโดเมน",
     "description": "Domain name. Ex. website.com"
   },
   "host": {
-    "message": "Host",
+    "message": "โฮสต์",
     "description": "A URL's host value. For example, the host of https://sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
-    "message": "Exact"
+    "message": "ถูกต้อง"
   },
   "startsWith": {
-    "message": "Starts with"
+    "message": "เริ่มต้นด้วย"
   },
   "regEx": {
-    "message": "Regular expression",
+    "message": "นิพจน์ทั่วไป",
     "description": "A programming term, also known as 'RegEx'."
   },
   "matchDetection": {
@@ -1274,14 +1274,14 @@
     "description": "URI match detection for auto-fill."
   },
   "defaultMatchDetection": {
-    "message": "Default match detection",
+    "message": "การตรวจจับการจับคู่เริ่มต้น",
     "description": "Default URI match detection for auto-fill."
   },
   "toggleOptions": {
     "message": "Toggle Options"
   },
   "toggleCurrentUris": {
-    "message": "Toggle current URIs",
+    "message": "สลับ URI ปัจจุบัน",
     "description": "Toggle the display of the URIs of the currently open tabs in the browser."
   },
   "currentUri": {
@@ -1293,26 +1293,26 @@
     "description": "An entity of multiple related people (ex. a team or business organization)."
   },
   "types": {
-    "message": "Types"
+    "message": "ชนิด"
   },
   "allItems": {
     "message": "รายการทั้งหมด"
   },
   "noPasswordsInList": {
-    "message": "There are no passwords to list."
+    "message": "ไม่มีรหัสผ่านที่จะแสดง"
   },
   "remove": {
     "message": "ลบ"
   },
   "default": {
-    "message": "Default"
+    "message": "ค่าเริ่มต้น"
   },
   "dateUpdated": {
     "message": "อัปเดตแล้ว",
     "description": "ex. Date this item was updated"
   },
   "dateCreated": {
-    "message": "Created",
+    "message": "สร้างเมื่อ",
     "description": "ex. Date this item was created"
   },
   "datePasswordUpdated": {
@@ -1320,13 +1320,13 @@
     "description": "ex. Date this password was updated"
   },
   "neverLockWarning": {
-    "message": "Are you sure you want to use the \"Never\" option? Setting your lock options to \"Never\" stores your vault's encryption key on your device. If you use this option you should ensure that you keep your device properly protected."
+    "message": "คุณแน่ใจหรือไม่ว่าต้องการใช้ตัวเลือก \"ไม่เคย\" การตั้งค่าตัวเลือกการล็อกเป็น \"ไม่\" จะเก็บคีย์เข้ารหัสของห้องนิรภัยไว้ในอุปกรณ์ของคุณ หากคุณใช้ตัวเลือกนี้ คุณควรตรวจสอบให้แน่ใจว่าคุณปกป้องอุปกรณ์ของคุณอย่างเหมาะสม"
   },
   "noOrganizationsList": {
     "message": "You do not belong to any organizations. Organizations allow you to securely share items with other users."
   },
   "noCollectionsInList": {
-    "message": "There are no collections to list."
+    "message": "ไม่มีคอลเลกชันที่จะแสดง"
   },
   "ownership": {
     "message": "เจ้าของ"
@@ -1350,7 +1350,7 @@
     "message": "Weak Master Password"
   },
   "weakMasterPasswordDesc": {
-    "message": "The master password you have chosen is weak. You should use a strong master password (or a passphrase) to properly protect your Bitwarden account. Are you sure you want to use this master password?"
+    "message": "รหัสผ่านหลักที่คุณเลือกนั้นไม่รัดกุม คุณควรใช้รหัสผ่านหลักที่รัดกุม (หรือวลีรหัสผ่าน) เพื่อปกป้องบัญชี Bitwarden ของคุณอย่างเหมาะสม คุณแน่ใจหรือไม่ว่าต้องการใช้รหัสผ่านหลักนี้"
   },
   "pin": {
     "message": "PIN",
@@ -1369,31 +1369,31 @@
     "message": "PIN ไม่ถูกต้อง"
   },
   "unlockWithBiometrics": {
-    "message": "Unlock with biometrics"
+    "message": "ปลดล็อกด้วยไบโอเมตริก"
   },
   "awaitDesktop": {
     "message": "Awaiting confirmation from desktop"
   },
   "awaitDesktopDesc": {
-    "message": "Please confirm using biometrics in the Bitwarden desktop application to set up biometrics for browser."
+    "message": "โปรดยืนยันการใช้ไบโอเมตริกในแอปพลิเคชันเดสก์ท็อป Bitwarden เพื่อตั้งค่าไบโอเมตริกสำหรับเบราว์เซอร์"
   },
   "lockWithMasterPassOnRestart": {
-    "message": "Lock with master password on browser restart"
+    "message": "ล็อคด้วยรหัสผ่านหลักเมื่อรีสตาร์ทเบราว์เซอร์"
   },
   "selectOneCollection": {
-    "message": "You must select at least one collection."
+    "message": "คุณต้องเลือกอย่างน้อยหนึ่งคอลเลกชัน"
   },
   "cloneItem": {
-    "message": "Clone item"
+    "message": "โคลนรายการ"
   },
   "clone": {
-    "message": "Clone"
+    "message": "โคลน"
   },
   "passwordGeneratorPolicyInEffect": {
-    "message": "One or more organization policies are affecting your generator settings."
+    "message": "นโยบายองค์กรอย่างน้อยหนึ่งนโยบายส่งผลต่อการตั้งค่าตัวสร้างของคุณ"
   },
   "vaultTimeoutAction": {
-    "message": "Vault timeout action"
+    "message": "การดำเนินการหลังหมดเวลาล็อคตู้เซฟ"
   },
   "lock": {
     "message": "ล็อก",
@@ -1407,46 +1407,46 @@
     "message": "ค้นหาในถังขยะ"
   },
   "permanentlyDeleteItem": {
-    "message": "Permanently delete item"
+    "message": "ลบรายการอย่างถาวร"
   },
   "permanentlyDeleteItemConfirmation": {
-    "message": "Are you sure you want to permanently delete this item?"
+    "message": "คุณแน่ใจหรือไม่ว่าต้องการลบรายการนี้อย่างถาวร?"
   },
   "permanentlyDeletedItem": {
-    "message": "Item permanently deleted"
+    "message": "ลบรายการอย่างถาวรแล้ว"
   },
   "restoreItem": {
-    "message": "Restore item"
+    "message": "กู้คืนรายการ"
   },
   "restoreItemConfirmation": {
-    "message": "Are you sure you want to restore this item?"
+    "message": "คุณแน่ใจหรือไม่ว่าต้องการกู้คืนรายการนี้"
   },
   "restoredItem": {
-    "message": "Item restored"
+    "message": "คืนค่ารายการแล้ว"
   },
   "vaultTimeoutLogOutConfirmation": {
-    "message": "Logging out will remove all access to your vault and requires online authentication after the timeout period. Are you sure you want to use this setting?"
+    "message": "การออกจากระบบจะลบการเข้าถึงตู้นิรภัยของคุณทั้งหมด และต้องมีการตรวจสอบสิทธิ์ออนไลน์หลังจากหมดเวลา คุณแน่ใจหรือไม่ว่าต้องการใช้การตั้งค่านี้"
   },
   "vaultTimeoutLogOutConfirmationTitle": {
-    "message": "Timeout action confirmation"
+    "message": "การยืนยันการดำเนินการหมดเวลา"
   },
   "autoFillAndSave": {
-    "message": "Auto-fill and save"
+    "message": "กรอกอัตโนมัติและบันทึก"
   },
   "autoFillSuccessAndSavedUri": {
-    "message": "Item auto-filled and URI saved"
+    "message": "เติมรายการอัตโนมัติและบันทึก URI แล้ว"
   },
   "autoFillSuccess": {
-    "message": "Item auto-filled "
+    "message": "รายการเติมอัตโนมัติ "
   },
   "setMasterPassword": {
     "message": "ตั้งรหัสผ่านหลัก"
   },
   "masterPasswordPolicyInEffect": {
-    "message": "One or more organization policies require your master password to meet the following requirements:"
+    "message": "นโยบายองค์กรอย่างน้อยหนึ่งนโยบายกำหนดให้รหัสผ่านหลักของคุณเป็นไปตามข้อกำหนดต่อไปนี้:"
   },
   "policyInEffectMinComplexity": {
-    "message": "Minimum complexity score of $SCORE$",
+    "message": "คะแนนความซับซ้อนขั้นต่ำ $SCORE$",
     "placeholders": {
       "score": {
         "content": "$1",
@@ -1482,7 +1482,7 @@
     }
   },
   "masterPasswordPolicyRequirementsNotMet": {
-    "message": "Your new master password does not meet the policy requirements."
+    "message": "รหัสผ่านหลักใหม่ของคุณไม่เป็นไปตามข้อกำหนดของนโยบาย"
   },
   "acceptPolicies": {
     "message": "By checking this box you agree to the following:"
