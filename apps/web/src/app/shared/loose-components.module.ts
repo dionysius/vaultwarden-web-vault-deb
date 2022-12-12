@@ -7,7 +7,6 @@ import { LockComponent } from "../accounts/lock.component";
 import { RecoverDeleteComponent } from "../accounts/recover-delete.component";
 import { RecoverTwoFactorComponent } from "../accounts/recover-two-factor.component";
 import { RegisterFormModule } from "../accounts/register-form/register-form.module";
-import { RegisterComponent } from "../accounts/register.component";
 import { RemovePasswordComponent } from "../accounts/remove-password.component";
 import { SetPasswordComponent } from "../accounts/set-password.component";
 import { SsoComponent } from "../accounts/sso.component";
@@ -218,7 +217,6 @@ import { SharedModule } from ".";
     PurgeVaultComponent,
     RecoverDeleteComponent,
     RecoverTwoFactorComponent,
-    RegisterComponent,
     RemovePasswordComponent,
     SecurityComponent,
     SecurityKeysComponent,
@@ -341,7 +339,6 @@ import { SharedModule } from ".";
     PurgeVaultComponent,
     RecoverDeleteComponent,
     RecoverTwoFactorComponent,
-    RegisterComponent,
     RemovePasswordComponent,
     SecurityComponent,
     SecurityKeysComponent,

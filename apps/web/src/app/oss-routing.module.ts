@@ -15,7 +15,6 @@ import { LoginWithDeviceComponent } from "./accounts/login/login-with-device.com
 import { LoginComponent } from "./accounts/login/login.component";
 import { RecoverDeleteComponent } from "./accounts/recover-delete.component";
 import { RecoverTwoFactorComponent } from "./accounts/recover-two-factor.component";
-import { RegisterComponent } from "./accounts/register.component";
 import { RemovePasswordComponent } from "./accounts/remove-password.component";
 import { SetPasswordComponent } from "./accounts/set-password.component";
 import { SsoComponent } from "./accounts/sso.component";
@@ -69,16 +68,15 @@ const routes: Routes = [
       { path: "2fa", component: TwoFactorComponent, canActivate: [UnauthGuard] },
       {
         path: "register",
-        component: RegisterComponent,
+        component: TrialInitiationComponent,
         canActivate: [UnauthGuard],
         data: { titleId: "createAccount" },
       },
-      buildFlaggedRoute("showTrial", {
+      {
         path: "trial",
-        component: TrialInitiationComponent,
-        canActivate: [UnauthGuard],
-        data: { titleId: "startTrial" },
-      }),
+        redirectTo: "register",
+        pathMatch: "full",
+      },
       {
         path: "sso",
         component: SsoComponent,

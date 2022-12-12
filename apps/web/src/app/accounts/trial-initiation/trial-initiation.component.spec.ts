@@ -168,8 +168,9 @@ describe("TrialInitiationComponent", () => {
     it("should set org variable to be enterprise and plan to EnterpriseAnnually if org param is enterprise", fakeAsync(() => {
       mockQueryParams.next({ org: "enterprise" });
       tick(); // wait for resolution
+      fixture = TestBed.createComponent(TrialInitiationComponent);
+      component = fixture.componentInstance;
       fixture.detectChanges();
-      component.ngOnInit();
       expect(component.org).toBe("enterprise");
       expect(component.plan).toBe(PlanType.EnterpriseAnnually);
     }));
@@ -182,13 +183,33 @@ describe("TrialInitiationComponent", () => {
       expect(component.org).toBe("");
       expect(component.accountCreateOnly).toBe(true);
     }));
-    it("should set the org to be families and plan to FamiliesAnnually if org param is invalid ", fakeAsync(async () => {
+    it("should not set the org if org param is invalid ", fakeAsync(async () => {
       mockQueryParams.next({ org: "hahahaha" });
       tick(); // wait for resolution
+      fixture = TestBed.createComponent(TrialInitiationComponent);
+      component = fixture.componentInstance;
+      fixture.detectChanges();
+      expect(component.org).toBe("");
+      expect(component.accountCreateOnly).toBe(true);
+    }));
+    it("should set the layout variable if layout param is valid ", fakeAsync(async () => {
+      mockQueryParams.next({ layout: "teams1" });
+      tick(); // wait for resolution
+      fixture = TestBed.createComponent(TrialInitiationComponent);
+      component = fixture.componentInstance;
+      fixture.detectChanges();
+      expect(component.layout).toBe("teams1");
+      expect(component.accountCreateOnly).toBe(false);
+    }));
+    it("should not set the layout variable and leave as 'default' if layout param is invalid ", fakeAsync(async () => {
+      mockQueryParams.next({ layout: "asdfasdf" });
+      tick(); // wait for resolution
+      fixture = TestBed.createComponent(TrialInitiationComponent);
+      component = fixture.componentInstance;
       fixture.detectChanges();
       component.ngOnInit();
-      expect(component.org).toBe("families");
-      expect(component.plan).toBe(PlanType.FamiliesAnnually);
+      expect(component.layout).toBe("default");
+      expect(component.accountCreateOnly).toBe(true);
     }));
   });
 
