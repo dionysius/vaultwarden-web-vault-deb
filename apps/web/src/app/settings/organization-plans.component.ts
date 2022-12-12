@@ -121,7 +121,7 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
     }
 
     if (this.createOrganization) {
-      this.formGroup.controls.name.addValidators(Validators.required);
+      this.formGroup.controls.name.addValidators([Validators.required, Validators.maxLength(50)]);
       this.formGroup.controls.billingEmail.addValidators(Validators.required);
     }
 

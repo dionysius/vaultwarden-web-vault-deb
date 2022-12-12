@@ -62,7 +62,7 @@
               <button
                 bitButton
                 buttonType="primary"
-                [disabled]="orgInfoFormGroup.get('name').hasError('required')"
+                [disabled]="orgInfoFormGroup.get('name').invalid"
                 cdkStepperNext
               >
                 Next
