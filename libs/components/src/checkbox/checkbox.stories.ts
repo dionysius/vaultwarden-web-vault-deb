@@ -43,7 +43,6 @@ class ExampleComponent {
 
 export default {
   title: "Component Library/Form/Checkbox",
-  component: ExampleComponent,
   decorators: [
     moduleMetadata({
       declarations: [ExampleComponent],
@@ -68,10 +67,6 @@ export default {
       url: "https://www.figma.com/file/Zt3YSeb6E6lebAffrNLa0h/Tailwind-Component-Library?node-id=3930%3A16850&t=xXPx6GJYsJfuMQPE-4",
     },
   },
-  args: {
-    checked: false,
-    disabled: false,
-  },
 } as Meta;
 
 const DefaultTemplate: Story<ExampleComponent> = (args: ExampleComponent) => ({
@@ -80,6 +75,17 @@ const DefaultTemplate: Story<ExampleComponent> = (args: ExampleComponent) => ({
 });
 
 export const Default = DefaultTemplate.bind({});
+Default.parameters = {
+  docs: {
+    source: {
+      code: template,
+    },
+  },
+};
+Default.args = {
+  checked: false,
+  disabled: false,
+};
 
 const CustomTemplate: Story = (args) => ({
   props: args,
@@ -100,5 +106,6 @@ const CustomTemplate: Story = (args) => ({
     </div>
   `,
 });
+CustomTemplate.args = {};
 
 export const Custom = CustomTemplate.bind({});
