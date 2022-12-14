@@ -14,10 +14,13 @@ Adding async actions to standalone buttons requires the following 2 steps
 ### 1. Add a handler to your `Component`
 
 A handler is a function that returns a promise or an observable. Functions that return `void` are also supported which is
-useful for aborting an action.
+useful because `return;` can be used to abort an action.
 
 **NOTE:** Defining the handlers as arrow-functions assigned to variables is mandatory if the handler needs access to the parent
 component using the variable `this`.
+
+**NOTE:** Handlers do not need to check if any previous requests have finished because the directives have built in protection against
+users attempting to trigger new actions before the previous ones have finished.
 
 #### Example using promises
 
@@ -25,10 +28,6 @@ component using the variable `this`.
 @Component({...})
 class PromiseExampleComponent {
   handler = async () => {
-    if (/* perform guard check */) {
-      return;
-    }
-
     await this.apiService.post(/* ... */);
   };
 }
@@ -40,10 +39,6 @@ class PromiseExampleComponent {
 @Component({...})
 class Component {
   handler = () => {
-    if (/* perform guard check */) {
-      return;
-    }
-
     return this.apiService.post$(/* ... */);
   };
 }
@@ -55,6 +50,8 @@ Add the `bitAction` directive and supply the handler defined in step 1.
 
 **NOTE:** The `directive` is defined using the input syntax: `[input]="handler"`.
 This is different from how click handlers are usually defined with the output syntax `(click)="handler()"`.
+
+**NOTE:** `[bitAction]` is used instead of `(click)`. Using both is not supported.
 
 ```html
 <button bitButton [bitAction]="handler">Do action</button>

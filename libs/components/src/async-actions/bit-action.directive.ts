@@ -18,6 +18,8 @@ export class BitActionDirective implements OnDestroy {
   private destroy$ = new Subject<void>();
   private _loading$ = new BehaviorSubject<boolean>(false);
 
+  disabled = false;
+
   @Input("bitAction") protected handler: FunctionReturningAwaitable;
 
   readonly loading$ = this._loading$.asObservable();
@@ -39,7 +41,7 @@ export class BitActionDirective implements OnDestroy {
 
   @HostListener("click")
   protected async onClick() {
-    if (!this.handler) {
+    if (!this.handler || this.loading || this.disabled || this.buttonComponent.disabled) {
       return;
     }
 
