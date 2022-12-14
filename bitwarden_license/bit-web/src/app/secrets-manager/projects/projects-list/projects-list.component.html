@@ -9,10 +9,6 @@
     <i class="bwi bwi-plus" aria-hidden="true"></i>
     {{ "newProject" | i18n }}
   </button>
-  <button bitButton buttonType="secondary" (click)="importSecretsEvent.emit()">
-    <i class="bwi bwi-save tw-rotate-180" aria-hidden="true"></i>
-    {{ "importSecrets" | i18n }}
-  </button>
 </sm-no-items>
 
 <bit-table *ngIf="projects?.length >= 1">

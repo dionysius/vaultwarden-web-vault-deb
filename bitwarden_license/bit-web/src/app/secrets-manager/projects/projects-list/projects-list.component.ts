@@ -24,7 +24,6 @@ export class ProjectsListComponent implements OnDestroy {
   @Output() deleteProjectEvent = new EventEmitter<ProjectListView[]>();
   @Output() onProjectCheckedEvent = new EventEmitter<string[]>();
   @Output() newProjectEvent = new EventEmitter();
-  @Output() importSecretsEvent = new EventEmitter();
 
   private destroy$: Subject<void> = new Subject<void>();
 

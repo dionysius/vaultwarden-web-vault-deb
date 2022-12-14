@@ -26,7 +26,6 @@ export class SecretsListComponent implements OnDestroy {
   @Output() onSecretCheckedEvent = new EventEmitter<string[]>();
   @Output() deleteSecretsEvent = new EventEmitter<string[]>();
   @Output() newSecretEvent = new EventEmitter();
-  @Output() importSecretsEvent = new EventEmitter();
 
   private destroy$: Subject<void> = new Subject<void>();
 
