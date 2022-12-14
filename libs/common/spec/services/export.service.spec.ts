@@ -1,6 +1,5 @@
 // eslint-disable-next-line no-restricted-imports
 import { Arg, Substitute, SubstituteOf } from "@fluffy-spoon/substitute";
-import { BehaviorSubject } from "rxjs";
 
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { CipherService } from "@bitwarden/common/abstractions/cipher.service";
@@ -12,9 +11,11 @@ import { KdfType } from "@bitwarden/common/enums/kdfType";
 import { Utils } from "@bitwarden/common/misc/utils";
 import { Cipher } from "@bitwarden/common/models/domain/cipher";
 import { EncString } from "@bitwarden/common/models/domain/enc-string";
+import { Folder } from "@bitwarden/common/models/domain/folder";
 import { Login } from "@bitwarden/common/models/domain/login";
 import { CipherWithIdExport as CipherExport } from "@bitwarden/common/models/export/cipher-with-ids.export";
 import { CipherView } from "@bitwarden/common/models/view/cipher.view";
+import { FolderView } from "@bitwarden/common/models/view/folder.view";
 import { LoginView } from "@bitwarden/common/models/view/login.view";
 import { ExportService } from "@bitwarden/common/services/export.service";
 
@@ -31,6 +32,10 @@ const UserCipherDomains = [
   generateCipherDomain(false),
   generateCipherDomain(true),
 ];
+
+const UserFolderViews = [generateFolderView(), generateFolderView()];
+
+const UserFolders = [generateFolder(), generateFolder()];
 
 function generateCipherView(deleted: boolean) {
   return BuildTestObject(
@@ -72,6 +77,26 @@ function generateCipherDomain(deleted: boolean) {
   );
 }
 
+function generateFolderView() {
+  return BuildTestObject(
+    {
+      id: GetUniqueString("id"),
+      name: GetUniqueString("name"),
+      revisionDate: new Date(),
+    },
+    FolderView
+  );
+}
+
+function generateFolder() {
+  const actual = Folder.fromJSON({
+    revisionDate: new Date("2022-08-04T01:06:40.441Z").toISOString(),
+    name: "name",
+    id: "id",
+  });
+  return actual;
+}
+
 function expectEqualCiphers(ciphers: CipherView[] | Cipher[], jsonResult: string) {
   const actual = JSON.stringify(JSON.parse(jsonResult).items);
   const items: CipherExport[] = [];
@@ -81,6 +106,34 @@ function expectEqualCiphers(ciphers: CipherView[] | Cipher[], jsonResult: string
     items.push(item);
   });
 
+  expect(actual).toEqual(JSON.stringify(items));
+}
+
+function expectEqualFolderViews(folderviews: FolderView[] | Folder[], jsonResult: string) {
+  const actual = JSON.stringify(JSON.parse(jsonResult).folders);
+  const folders: FolderResponse[] = [];
+  folderviews.forEach((c) => {
+    const folder = new FolderResponse();
+    folder.id = c.id;
+    folder.name = c.name.toString();
+    folders.push(folder);
+  });
+
+  expect(actual.length).toBeGreaterThan(0);
+  expect(actual).toEqual(JSON.stringify(folders));
+}
+
+function expectEqualFolders(folders: Folder[], jsonResult: string) {
+  const actual = JSON.stringify(JSON.parse(jsonResult).folders);
+  const items: Folder[] = [];
+  folders.forEach((c) => {
+    const item = new Folder();
+    item.id = c.id;
+    item.name = c.name;
+    items.push(item);
+  });
+
+  expect(actual.length).toBeGreaterThan(0);
   expect(actual).toEqual(JSON.stringify(items));
 }
 
@@ -99,8 +152,8 @@ describe("ExportService", () => {
     folderService = Substitute.for<FolderService>();
     cryptoService = Substitute.for<CryptoService>();
 
-    folderService.folderViews$.returns(new BehaviorSubject([]));
-    folderService.folders$.returns(new BehaviorSubject([]));
+    folderService.getAllDecryptedFromState().resolves(UserFolderViews);
+    folderService.getAllFromState().resolves(UserFolders);
 
     exportService = new ExportService(
       folderService,
@@ -208,4 +261,25 @@ describe("ExportService", () => {
       });
     });
   });
+
+  it("exported unencrypted object contains folders", async () => {
+    cipherService.getAllDecrypted().resolves(UserCipherViews.slice(0, 1));
+    await folderService.getAllDecryptedFromState();
+    const actual = await exportService.getExport("json");
+
+    expectEqualFolderViews(UserFolderViews, actual);
+  });
+
+  it("exported encrypted json contains folders", async () => {
+    cipherService.getAll().resolves(UserCipherDomains.slice(0, 1));
+    await folderService.getAllFromState();
+    const actual = await exportService.getExport("encrypted_json");
+
+    expectEqualFolders(UserFolders, actual);
+  });
 });
+
+export class FolderResponse {
+  id: string = null;
+  name: string = null;
+}
