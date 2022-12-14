@@ -12,6 +12,7 @@ import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUti
   templateUrl: "folder-add-edit.component.html",
 })
 export class FolderAddEditComponent extends BaseFolderAddEditComponent {
+  protected override componentName = "app-folder-add-edit";
   constructor(
     folderService: FolderService,
     folderApiService: FolderApiServiceAbstraction,

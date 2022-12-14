@@ -140,7 +140,8 @@ export class WebPlatformUtilsService implements PlatformUtilsService {
     confirmText?: string,
     cancelText?: string,
     type?: string,
-    bodyIsHtml = false
+    bodyIsHtml = false,
+    target?: string
   ) {
     let iconClasses: string = null;
     if (type != null) {
@@ -182,6 +183,7 @@ export class WebPlatformUtilsService implements PlatformUtilsService {
       cancelButtonText: cancelText,
       showConfirmButton: true,
       confirmButtonText: confirmText == null ? this.i18nService.t("ok") : confirmText,
+      target: target != null ? target : "body",
     });
 
     if (bootstrapModal != null) {

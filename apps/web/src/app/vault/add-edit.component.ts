@@ -37,6 +37,7 @@ export class AddEditComponent extends BaseAddEditComponent implements OnInit, On
   viewOnly = false;
 
   protected totpInterval: number;
+  protected override componentName = "app-vault-add-edit";
 
   constructor(
     cipherService: CipherService,

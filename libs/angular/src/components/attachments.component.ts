@@ -29,6 +29,7 @@ export class AttachmentsComponent implements OnInit {
   deletePromises: { [id: string]: Promise<any> } = {};
   reuploadPromises: { [id: string]: Promise<any> } = {};
   emergencyAccessId?: string = null;
+  protected componentName = "";
 
   constructor(
     protected cipherService: CipherService,
@@ -104,7 +105,9 @@ export class AttachmentsComponent implements OnInit {
       this.i18nService.t("deleteAttachment"),
       this.i18nService.t("yes"),
       this.i18nService.t("no"),
-      "warning"
+      "warning",
+      false,
+      this.componentName != "" ? this.componentName + " .modal-content" : null
     );
     if (!confirmed) {
       return;

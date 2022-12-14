@@ -45,6 +45,7 @@ export class AddEditComponent implements OnInit, OnDestroy {
   alertShown = false;
   showOptions = false;
 
+  protected componentName = "";
   private sendLinkBaseUrl: string;
   private destroy$ = new Subject<void>();
 
@@ -242,7 +243,9 @@ export class AddEditComponent implements OnInit, OnDestroy {
       this.i18nService.t("deleteSend"),
       this.i18nService.t("yes"),
       this.i18nService.t("no"),
-      "warning"
+      "warning",
+      false,
+      this.componentName != "" ? this.componentName + " .modal-content" : null
     );
     if (!confirmed) {
       return false;

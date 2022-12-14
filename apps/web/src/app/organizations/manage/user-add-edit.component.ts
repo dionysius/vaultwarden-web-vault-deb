@@ -215,7 +215,9 @@ export class UserAddEditComponent implements OnInit {
       this.i18nService.t("removeUserIdAccess", this.name),
       this.i18nService.t("yes"),
       this.i18nService.t("no"),
-      "warning"
+      "warning",
+      false,
+      "app-user-add-edit .modal-content"
     );
     if (!confirmed) {
       return false;
@@ -248,7 +250,9 @@ export class UserAddEditComponent implements OnInit {
       this.i18nService.t("revokeUserId", this.name),
       this.i18nService.t("revokeAccess"),
       this.i18nService.t("cancel"),
-      "warning"
+      "warning",
+      false,
+      "app-user-add-edit .modal-content"
     );
     if (!confirmed) {
       return false;

@@ -17,6 +17,7 @@ import { AttachmentView } from "@bitwarden/common/models/view/attachment.view";
 })
 export class AttachmentsComponent extends BaseAttachmentsComponent {
   viewOnly = false;
+  protected override componentName = "app-vault-attachments";
 
   constructor(
     cipherService: CipherService,

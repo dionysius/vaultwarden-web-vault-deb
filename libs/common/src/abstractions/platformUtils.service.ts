@@ -34,7 +34,8 @@ export abstract class PlatformUtilsService {
     confirmText?: string,
     cancelText?: string,
     type?: string,
-    bodyIsHtml?: boolean
+    bodyIsHtml?: boolean,
+    target?: string
   ) => Promise<boolean>;
   isDev: () => boolean;
   isSelfHost: () => boolean;

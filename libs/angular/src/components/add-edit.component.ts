@@ -77,6 +77,7 @@ export class AddEditComponent implements OnInit, OnDestroy {
   canUseReprompt = true;
   organization: Organization;
 
+  protected componentName = "";
   protected destroy$ = new Subject<void>();
   protected writeableCollections: CollectionView[];
   private personalOwnershipPolicyAppliesToActiveUser: boolean;
@@ -397,7 +398,9 @@ export class AddEditComponent implements OnInit, OnDestroy {
       this.i18nService.t("deleteItem"),
       this.i18nService.t("yes"),
       this.i18nService.t("no"),
-      "warning"
+      "warning",
+      false,
+      this.componentName != "" ? this.componentName + " .modal-content" : null
     );
     if (!confirmed) {
       return false;

@@ -130,7 +130,9 @@ export class GroupAddEditComponent implements OnInit {
       this.name,
       this.i18nService.t("yes"),
       this.i18nService.t("no"),
-      "warning"
+      "warning",
+      false,
+      "app-group-add-edit .modal-content"
     );
     if (!confirmed) {
       return false;

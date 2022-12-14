@@ -16,6 +16,8 @@ import { StateService } from "@bitwarden/common/abstractions/state.service";
   templateUrl: "add-edit.component.html",
 })
 export class AddEditComponent extends BaseAddEditComponent {
+  override componentName = "app-send-add-edit";
+
   constructor(
     i18nService: I18nService,
     platformUtilsService: PlatformUtilsService,
