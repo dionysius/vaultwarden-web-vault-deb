@@ -1,4 +1,11 @@
-import { BehaviorSubject, concatMap, ReplaySubject, Subject, Subscription } from "rxjs";
+import {
+  BehaviorSubject,
+  concatMap,
+  ReplaySubject,
+  Subject,
+  Subscription,
+  debounceTime,
+} from "rxjs";
 
 import { Utils } from "@bitwarden/common/misc/utils";
 
@@ -13,6 +20,9 @@ export class SessionSyncer {
 
   // ignore initial values
   private ignoreNUpdates = 0;
+  private get debounceMs() {
+    return 500;
+  }
 
   constructor(
     private subject: Subject<any>,
@@ -30,10 +40,8 @@ export class SessionSyncer {
 
   init() {
     switch (this.subject.constructor) {
-      case ReplaySubject:
-        // ignore all updates currently in the buffer
-        this.ignoreNUpdates = (this.subject as any)._buffer.length;
-        break;
+      // ignore all updates currently in the buffer
+      case ReplaySubject: // N = 1 due to debounce
       case BehaviorSubject:
         this.ignoreNUpdates = 1;
         break;
@@ -58,6 +66,7 @@ export class SessionSyncer {
     // contexts. If so, this is handled by destruction of the context.
     this.subscription = this.subject
       .pipe(
+        debounceTime(this.debounceMs),
         concatMap(async (next) => {
           if (this.ignoreNUpdates > 0) {
             this.ignoreNUpdates -= 1;
@@ -92,8 +101,15 @@ export class SessionSyncer {
   }
 
   private async updateSession(value: any) {
-    await this.stateService.setInSessionMemory(this.metaData.sessionKey, value);
-    await BrowserApi.sendMessage(this.updateMessageCommand, { id: this.id });
+    try {
+      await this.stateService.setInSessionMemory(this.metaData.sessionKey, value);
+      await BrowserApi.sendMessage(this.updateMessageCommand, { id: this.id });
+    } catch (e) {
+      if (e.message === "Could not establish connection. Receiving end does not exist.") {
+        return;
+      }
+      throw e;
+    }
   }
 
   private get updateMessageCommand() {
