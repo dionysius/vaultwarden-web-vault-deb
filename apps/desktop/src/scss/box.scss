@@ -58,7 +58,7 @@
     .icon {
       display: flex;
       align-items: flex-end;
-      margin-left: 5px;
+      margin-right: 5px;
 
       @include themify($themes) {
         color: themed("headingColor");

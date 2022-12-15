@@ -39,8 +39,8 @@ const ButtonTemplate: Story<ButtonLinkDirective> = (args: ButtonLinkDirective) =
     </div>
     <div class="tw-block tw-p-2">
       <button bitLink [linkType]="linkType">
+        <i class="bwi bwi-fw bwi-sm bwi-angle-right" aria-hidden="true"></i>
         Chevron Icon Button
-        <i class="bwi bwi-fw bwi-sm bwi-angle-down" aria-hidden="true"></i>
       </button>
     </div>
     <div class="tw-block tw-p-2">
@@ -65,8 +65,8 @@ const AnchorTemplate: Story<AnchorLinkDirective> = (args: AnchorLinkDirective) =
     </div>
     <div class="tw-block tw-p-2">
       <a bitLink [linkType]="linkType" href="#">
+        <i class="bwi bwi-fw bwi-sm bwi-angle-right" aria-hidden="true"></i>
         Chevron Icon Anchor
-        <i class="bwi bwi-fw bwi-sm bwi-angle-down" aria-hidden="true"></i>
       </a>
     </div>
     <div class="tw-block tw-p-2">

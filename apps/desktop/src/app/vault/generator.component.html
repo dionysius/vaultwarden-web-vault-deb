@@ -99,14 +99,12 @@
         <ng-container *ngIf="type === 'password'">
           <div class="box">
             <h2 class="box-header">
-              <button
-                type="button"
-                (click)="toggleOptions()"
-                appA11yTitle="{{ 'toggleVisibility' | i18n }}"
-                [attr.aria-expanded]="showOptions"
-              >
-                <i class="bwi bwi-plus-square" aria-hidden="true" [hidden]="showOptions"></i>
-                <i class="bwi bwi-minus-square" aria-hidden="true" [hidden]="!showOptions"></i>
+              <button type="button" (click)="toggleOptions()" [attr.aria-expanded]="showOptions">
+                <i
+                  class="bwi bwi-lg"
+                  aria-hidden="true"
+                  [ngClass]="{ 'bwi-angle-right': !showOptions, 'bwi-angle-down': showOptions }"
+                ></i>
                 {{ "options" | i18n }}
               </button>
             </h2>
@@ -299,14 +297,12 @@
         <ng-container *ngIf="type === 'username'">
           <div class="box">
             <h2 class="box-header">
-              <button
-                type="button"
-                (click)="toggleOptions()"
-                appA11yTitle="{{ 'toggleVisibility' | i18n }}"
-                [attr.aria-expanded]="showOptions"
-              >
-                <i class="bwi bwi-plus-square" aria-hidden="true" [hidden]="showOptions"></i>
-                <i class="bwi bwi-minus-square" aria-hidden="true" [hidden]="!showOptions"></i>
+              <button type="button" (click)="toggleOptions()" [attr.aria-expanded]="showOptions">
+                <i
+                  class="bwi bwi-lg"
+                  aria-hidden="true"
+                  [ngClass]="{ 'bwi-angle-right': !showOptions, 'bwi-angle-down': showOptions }"
+                ></i>
                 {{ "options" | i18n }}
               </button>
             </h2>

@@ -16,17 +16,17 @@
                 [attr.aria-expanded]="showSecurity"
                 appAutofocus
               >
-                {{ "security" | i18n }}
                 <i
                   *ngIf="!showSecurity"
-                  class="bwi bwi-angle-down bwi-sm icon"
+                  class="bwi bwi-angle-right bwi-sm icon"
                   aria-hidden="true"
                 ></i>
                 <i
                   *ngIf="showSecurity"
-                  class="bwi bwi-chevron-up bwi-sm icon"
+                  class="bwi bwi-angle-down bwi-sm icon"
                   aria-hidden="true"
                 ></i>
+                {{ "security" | i18n }}
               </button>
             </h2>
             <ng-container *ngIf="showSecurity">
@@ -120,17 +120,17 @@
                 (click)="showAccountPreferences = !showAccountPreferences"
                 [attr.aria-expanded]="showAccountPreferences"
               >
-                {{ "accountPreferences" | i18n }}
                 <i
                   *ngIf="!showAccountPreferences"
-                  class="bwi bwi-angle-down bwi-sm icon"
+                  class="bwi bwi-angle-right bwi-sm icon"
                   aria-hidden="true"
                 ></i>
                 <i
                   *ngIf="showAccountPreferences"
-                  class="bwi bwi-chevron-up bwi-sm icon"
+                  class="bwi bwi-angle-down bwi-sm icon"
                   aria-hidden="true"
                 ></i>
+                {{ "accountPreferences" | i18n }}
               </button>
             </h2>
             <ng-container *ngIf="showAccountPreferences">
@@ -190,17 +190,17 @@
                 (click)="showAppPreferences = !showAppPreferences"
                 [attr.aria-expanded]="showAppPreferences"
               >
-                {{ "appPreferences" | i18n }}
                 <i
                   *ngIf="!showAppPreferences"
-                  class="bwi bwi-angle-down bwi-sm icon"
+                  class="bwi bwi-angle-right bwi-sm icon"
                   aria-hidden="true"
                 ></i>
                 <i
                   *ngIf="showAppPreferences"
-                  class="bwi bwi-chevron-up bwi-sm icon"
+                  class="bwi bwi-angle-down bwi-sm icon"
                   aria-hidden="true"
                 ></i>
+                {{ "appPreferences" | i18n }}
               </button>
             </h2>
             <ng-container *ngIf="showAppPreferences">

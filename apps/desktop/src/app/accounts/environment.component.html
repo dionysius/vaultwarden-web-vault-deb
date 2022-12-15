@@ -26,8 +26,11 @@
         <div class="box">
           <h2 class="box-header">
             <button type="button" (click)="toggleCustom()" [attr.aria-expanded]="showCustom">
-              <i class="bwi bwi-plus-square" [hidden]="showCustom" aria-hidden="true"></i>
-              <i class="bwi bwi-minus-square" [hidden]="!showCustom" aria-hidden="true"></i>
+              <i
+                class="bwi bwi-lg"
+                aria-hidden="true"
+                [ngClass]="{ 'bwi-angle-right': !showCustom, 'bwi-angle-down': showCustom }"
+              ></i>
               {{ "customEnvironment" | i18n }}
             </button>
           </h2>
