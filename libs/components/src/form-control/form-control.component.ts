@@ -12,11 +12,11 @@ import { BitFormControlAbstraction } from "./form-control.abstraction";
 export class FormControlComponent {
   @Input() label: string;
 
-  private _inline: boolean;
+  private _inline = false;
   @Input() get inline() {
     return this._inline;
   }
-  set inline(value: boolean | string | null) {
+  set inline(value: boolean | "") {
     this._inline = coerceBooleanProperty(value);
   }
 
