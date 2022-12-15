@@ -5,6 +5,7 @@ import { app, BrowserWindow, screen } from "electron";
 
 import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
+import { WindowState } from "@bitwarden/common/models/domain/window-state";
 
 import { cleanUserAgent, isDev, isMacAppStore, isSnapStore } from "../utils";
 
@@ -13,9 +14,10 @@ const WindowEventHandlingDelay = 100;
 export class WindowMain {
   win: BrowserWindow;
   isQuitting = false;
+  isClosing = false;
 
   private windowStateChangeTimer: NodeJS.Timer;
-  private windowStates: { [key: string]: any } = {};
+  private windowStates: { [key: string]: WindowState } = {};
   private enableAlwaysOnTop = false;
 
   constructor(
@@ -128,6 +130,10 @@ export class WindowMain {
       },
     });
 
+    this.win.webContents.on("dom-ready", () => {
+      this.win.webContents.zoomFactor = this.windowStates[mainWindowSizeKey].zoomFactor ?? 1.0;
+    });
+
     if (this.windowStates[mainWindowSizeKey].isMaximized) {
       this.win.maximize();
     }
@@ -154,6 +160,7 @@ export class WindowMain {
 
     // Emitted when the window is closed.
     this.win.on("closed", async () => {
+      this.isClosing = false;
       await this.updateWindowState(mainWindowSizeKey, this.win);
 
       // Dereference the window object, usually you would store window
@@ -163,6 +170,7 @@ export class WindowMain {
     });
 
     this.win.on("close", async () => {
+      this.isClosing = true;
       await this.updateWindowState(mainWindowSizeKey, this.win);
     });
 
@@ -217,7 +225,7 @@ export class WindowMain {
       if (this.windowStates[configKey] == null) {
         this.windowStates[configKey] = await this.stateService.getWindow();
         if (this.windowStates[configKey] == null) {
-          this.windowStates[configKey] = {};
+          this.windowStates[configKey] = <WindowState>{};
         }
       }
 
@@ -229,6 +237,10 @@ export class WindowMain {
         this.windowStates[configKey].y = bounds.y;
         this.windowStates[configKey].width = bounds.width;
         this.windowStates[configKey].height = bounds.height;
+      }
+
+      if (this.isClosing) {
+        this.windowStates[configKey].zoomFactor = win.webContents.zoomFactor;
       }
 
       await this.stateService.setWindow(this.windowStates[configKey]);
