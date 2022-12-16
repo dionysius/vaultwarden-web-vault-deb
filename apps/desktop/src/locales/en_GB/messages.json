@@ -178,7 +178,7 @@
     "message": "Premium required"
   },
   "premiumRequiredDesc": {
-    "message": "A premium membership is required to use this feature."
+    "message": "A Premium membership is required to use this feature."
   },
   "errorOccurred": {
     "message": "An error has occurred."
@@ -269,7 +269,7 @@
     "message": "Last name"
   },
   "fullName": {
-    "message": "Full Name"
+    "message": "Full name"
   },
   "address1": {
     "message": "Address 1"
@@ -346,10 +346,10 @@
     "message": "Name is required."
   },
   "addedItem": {
-    "message": "Added item"
+    "message": "Item added"
   },
   "editedItem": {
-    "message": "Edited item"
+    "message": "Item saved"
   },
   "deleteItem": {
     "message": "Delete item"
@@ -370,7 +370,7 @@
     "message": "Are you sure you want to overwrite the current password?"
   },
   "overwriteUsername": {
-    "message": "Overwrite Username"
+    "message": "Overwrite username"
   },
   "overwriteUsernameConfirmation": {
     "message": "Are you sure you want to overwrite the current username?"
@@ -395,7 +395,7 @@
     "message": "Copy URI"
   },
   "copyVerificationCodeTotp": {
-    "message": "Copy Verification Code (TOTP)"
+    "message": "Copy verification code (TOTP)"
   },
   "length": {
     "message": "Length"
@@ -410,7 +410,7 @@
     "message": "Numbers (0-9)"
   },
   "specialCharacters": {
-    "message": "Special Characters (!@#$%^&*)"
+    "message": "Special characters (!@#$%^&*)"
   },
   "numWords": {
     "message": "Number of words"
@@ -455,19 +455,19 @@
     "message": "Add new attachment"
   },
   "deletedAttachment": {
-    "message": "Deleted attachment"
+    "message": "Attachment deleted"
   },
   "deleteAttachmentConfirmation": {
     "message": "Are you sure you want to delete this attachment?"
   },
   "attachmentSaved": {
-    "message": "The attachment has been saved."
+    "message": "Attachment saved"
   },
   "file": {
     "message": "File"
   },
   "selectFile": {
-    "message": "Select a file."
+    "message": "Select a file"
   },
   "maxFileSize": {
     "message": "Maximum file size is 500 MB."
@@ -476,16 +476,16 @@
     "message": "You cannot use this feature until you update your encryption key."
   },
   "editedFolder": {
-    "message": "Edited folder"
+    "message": "Folder saved"
   },
   "addedFolder": {
-    "message": "Added folder"
+    "message": "Folder added"
   },
   "deleteFolderConfirmation": {
     "message": "Are you sure you want to delete this folder?"
   },
   "deletedFolder": {
-    "message": "Deleted folder"
+    "message": "Folder deleted"
   },
   "loginOrCreateNewAccount": {
     "message": "Log in or create a new account to access your secure vault."
@@ -563,10 +563,10 @@
     "message": "Send a verification code to your email"
   },
   "sendCode": {
-    "message": "Send Code"
+    "message": "Send code"
   },
   "codeSent": {
-    "message": "Code Sent"
+    "message": "Code sent"
   },
   "verificationCode": {
     "message": "Verification code"
@@ -620,7 +620,7 @@
     "message": "Insert your security key into your computer's USB port. If it has a button, touch it."
   },
   "recoveryCodeDesc": {
-    "message": "Lost access to all of your two-factor providers? Use your recovery code to disable all two-factor providers from your account."
+    "message": "Lost access to all of your two-factor providers? Use your recovery code to turn off all two-factor providers on your account."
   },
   "recoveryCodeTitle": {
     "message": "Recovery code"
@@ -650,7 +650,7 @@
     "message": "FIDO2 WebAuthn"
   },
   "webAuthnDesc": {
-    "message": "Use any WebAuthn enabled security key to access your account."
+    "message": "Use any WebAuthn compatible security key to access your account."
   },
   "emailTitle": {
     "message": "Email"
@@ -662,7 +662,7 @@
     "message": "Login unavailable"
   },
   "noTwoStepProviders": {
-    "message": "This account has two-step login enabled. However, none of the configured two-step providers are supported by this device."
+    "message": "This account has two-step login set up, however, none of the configured two-step providers are supported by this device."
   },
   "noTwoStepProviders2": {
     "message": "Please add additional providers that are better supported across devices (such as an authenticator app)."
@@ -701,7 +701,7 @@
     "message": "Icons server URL"
   },
   "environmentSaved": {
-    "message": "The environment URLs have been saved."
+    "message": "Environment URLs saved"
   },
   "ok": {
     "message": "OK"
@@ -734,13 +734,13 @@
     "message": "Log out"
   },
   "addNewLogin": {
-    "message": "Add new login"
+    "message": "New login"
   },
   "addNewItem": {
-    "message": "Add new item"
+    "message": "New item"
   },
   "addNewFolder": {
-    "message": "Add new folder"
+    "message": "New folder"
   },
   "view": {
     "message": "View"
@@ -752,16 +752,16 @@
     "message": "Loading..."
   },
   "lockVault": {
-    "message": "Lock Vault"
+    "message": "Lock vault"
   },
   "passwordGenerator": {
     "message": "Password generator"
   },
   "contactUs": {
-    "message": "Contact Us"
+    "message": "Contact us"
   },
   "getHelp": {
-    "message": "Get Help"
+    "message": "Get help"
   },
   "fileBugReport": {
     "message": "File a bug report"
@@ -790,7 +790,7 @@
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "goToWebVault": {
-    "message": "Go to Web Vault"
+    "message": "Go to web vault"
   },
   "getMobileApp": {
     "message": "Get mobile app"
@@ -827,7 +827,7 @@
     "message": "Invalid master password"
   },
   "twoStepLoginConfirmation": {
-    "message": "Two-step login makes your account more secure by requiring you to verify your login with another device such as a security key, authenticator app, SMS, phone call, or email. Two-step login can be enabled on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "Two-step login makes your account more secure by requiring you to verify your login with another device such as a security key, authenticator app, SMS, phone call, or email. Two-step login can be set up on the bitwarden.com web vault. Do you want to visit the website now?"
   },
   "twoStepLogin": {
     "message": "Two-step login"
@@ -928,7 +928,7 @@
     "message": "When closing the window, show an icon in the menu bar instead."
   },
   "enableTray": {
-    "message": "Enable tray icon"
+    "message": "Show tray icon"
   },
   "enableTrayDesc": {
     "message": "Always show an icon in the system tray."
@@ -958,10 +958,10 @@
     "message": "Show the Bitwarden icon in the Dock even when minimised to the menu bar."
   },
   "confirmTrayTitle": {
-    "message": "Confirm disable tray"
+    "message": "Confirm hiding tray"
   },
   "confirmTrayDesc": {
-    "message": "Disabling this setting will also disable all other tray related settings."
+    "message": "Turning off this setting will also turn off all other tray related settings."
   },
   "language": {
     "message": "Language"
@@ -988,7 +988,7 @@
     "description": "Copy to clipboard"
   },
   "checkForUpdates": {
-    "message": "Check for Updates…"
+    "message": "Check for updates…"
   },
   "version": {
     "message": "Version $VERSION_NUM$",
@@ -1000,7 +1000,7 @@
     }
   },
   "restartToUpdate": {
-    "message": "Restart to Update"
+    "message": "Restart to update"
   },
   "restartToUpdateDesc": {
     "message": "Version $VERSION_NUM$ is ready to install. You must restart the application to complete the installation. Do you want to restart and update now?",
@@ -1056,10 +1056,10 @@
     "message": "Refresh membership"
   },
   "premiumNotCurrentMember": {
-    "message": "You are not currently a premium member."
+    "message": "You are not currently a Premium member."
   },
   "premiumSignUpAndGet": {
-    "message": "Sign up for a premium membership and get:"
+    "message": "Sign up for a Premium membership and get:"
   },
   "premiumSignUpStorage": {
     "message": "1 GB encrypted storage for file attachments."
@@ -1213,7 +1213,7 @@
     "description": "Domain name. Ex. website.com"
   },
   "domainName": {
-    "message": "Domain Name",
+    "message": "Domain name",
     "description": "Domain name. Ex. website.com"
   },
   "host": {
@@ -1285,7 +1285,7 @@
     "description": "hCaptcha is the name of a website, should not be translated"
   },
   "loadAccessibilityCookie": {
-    "message": "Load Accessibility Cookie"
+    "message": "Load accessibility cookie"
   },
   "registerAccessibilityUser": {
     "message": "Register as an accessibility user at",
@@ -1319,7 +1319,7 @@
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "confirmVaultExport": {
-    "message": "Confirm Vault Export"
+    "message": "Confirm vault export"
   },
   "exportWarningDesc": {
     "message": "This export contains your vault data in an unencrypted format. You should not store or send the exported file over insecure channels (such as email). Delete it immediately after you are done using it."
@@ -1428,7 +1428,7 @@
     "message": "You must select at least one collection."
   },
   "premiumUpdated": {
-    "message": "You've upgraded to premium."
+    "message": "You've upgraded to Premium."
   },
   "restore": {
     "message": "Restore"
@@ -1476,7 +1476,7 @@
     "description": "Noun: a special folder to hold deleted items"
   },
   "searchTrash": {
-    "message": "Search Bin"
+    "message": "Search bin"
   },
   "permanentlyDeleteItem": {
     "message": "Permanently delete item"
@@ -1485,7 +1485,7 @@
     "message": "Are you sure you want to permanently delete this item?"
   },
   "permanentlyDeletedItem": {
-    "message": "Permanently deleted item"
+    "message": "Item permanently deleted"
   },
   "restoreItem": {
     "message": "Restore item"
@@ -1494,7 +1494,7 @@
     "message": "Are you sure you want to restore this item?"
   },
   "restoredItem": {
-    "message": "Restored item"
+    "message": "Item restored"
   },
   "permanentlyDelete": {
     "message": "Permanently delete"
@@ -1626,10 +1626,10 @@
     "message": "Biometrics not enabled"
   },
   "biometricsNotEnabledDesc": {
-    "message": "Browser biometrics requires desktop biometrics to be enabled in the settings first."
+    "message": "Browser biometrics requires desktop biometrics to be set up in the settings first."
   },
   "personalOwnershipSubmitError": {
-    "message": "Due to an Enterprise Policy, you are restricted from saving items to your personal vault. Change the Ownership option to an organisation and choose from available Collections."
+    "message": "Due to an enterprise policy, you are restricted from saving items to your individual vault. Change the ownership option to an organisation and choose from available collections."
   },
   "hintEqualsPassword": {
     "message": "Your password hint cannot be the same as your password."
@@ -1656,27 +1656,27 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "myVault": {
-    "message": "My Vault"
+    "message": "My vault"
   },
   "text": {
     "message": "Text"
   },
   "deletionDate": {
-    "message": "Deletion Date"
+    "message": "Deletion date"
   },
   "deletionDateDesc": {
     "message": "The Send will be permanently deleted on the specified date and time.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "expirationDate": {
-    "message": "Expiration Date"
+    "message": "Expiration date"
   },
   "expirationDateDesc": {
     "message": "If set, access to this Send will expire on the specified date and time.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "maxAccessCount": {
-    "message": "Maximum Access Count",
+    "message": "Maximum access count",
     "description": "This text will be displayed after a Send has been accessed the maximum amount of times."
   },
   "maxAccessCountDesc": {
@@ -1684,10 +1684,10 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "currentAccessCount": {
-    "message": "Current Access Count"
+    "message": "Current access count"
   },
   "disableSend": {
-    "message": "Disable this Send so that no one can access it.",
+    "message": "Deactivate this Send so that no one can access it.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendPasswordDesc": {
@@ -1703,7 +1703,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLinkLabel": {
-    "message": "Send Link",
+    "message": "Send link",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "textHiddenByDefault": {
@@ -1711,26 +1711,26 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createdSend": {
-    "message": "Created Send",
+    "message": "Send added",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editedSend": {
-    "message": "Edited Send",
+    "message": "Send saved",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "deletedSend": {
-    "message": "Deleted Send",
+    "message": "Send deleted",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "newPassword": {
-    "message": "New Password"
+    "message": "New password"
   },
   "whatTypeOfSend": {
     "message": "What type of Send is this?",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createSend": {
-    "message": "Create Send",
+    "message": "New Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendTextDesc": {
@@ -1766,7 +1766,7 @@
     "message": "Copy the link to share this Send to my clipboard upon save."
   },
   "sendDisabled": {
-    "message": "Send disabled",
+    "message": "Send removed",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendDisabledWarning": {
@@ -1807,7 +1807,7 @@
     "message": "One or more organisation policies are affecting your Send options."
   },
   "emailVerificationRequired": {
-    "message": "Email Verification Required"
+    "message": "Email verification required"
   },
   "emailVerificationRequiredDesc": {
     "message": "You must verify your email to use this feature."
@@ -1822,13 +1822,13 @@
     "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
   },
   "updatedMasterPassword": {
-    "message": "Updated Master Password"
+    "message": "Updated master password"
   },
   "updateMasterPassword": {
-    "message": "Update Master Password"
+    "message": "Update master password"
   },
   "updateMasterPasswordWarning": {
-    "message": "Your Master Password was recently changed by an administrator in your organisation. In order to access the vault, you must update it now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
+    "message": "Your master password was recently changed by an administrator in your organisation. In order to access the vault, you must update it now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
   },
   "hours": {
     "message": "Hours"
@@ -1837,7 +1837,7 @@
     "message": "Minutes"
   },
   "vaultTimeoutPolicyInEffect": {
-    "message": "Your organisation policies are affecting your vault timeout. Maximum allowed Vault Timeout is $HOURS$ hour(s) and $MINUTES$ minute(s)",
+    "message": "Your organisation policies are affecting your vault timeout. Maximum allowed vault timeout is $HOURS$ hour(s) and $MINUTES$ minute(s)",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -1853,25 +1853,25 @@
     "message": "Your vault timeout exceeds the restrictions set by your organisation."
   },
   "resetPasswordPolicyAutoEnroll": {
-    "message": "Automatic Enrollment"
+    "message": "Automatic enrollment"
   },
   "resetPasswordAutoEnrollInviteWarning": {
     "message": "This organisation has an enterprise policy that will automatically enroll you in password reset. Enrollment will allow organisation administrators to change your master password."
   },
   "vaultExportDisabled": {
-    "message": "Vault Export Disabled"
+    "message": "Vault export removed"
   },
   "personalVaultExportPolicyInEffect": {
     "message": "One or more organisation policies prevents you from exporting your personal vault."
   },
   "addAccount": {
-    "message": "Add Account"
+    "message": "Add account"
   },
   "removeMasterPassword": {
-    "message": "Remove Master Password"
+    "message": "Remove master password"
   },
   "removedMasterPassword": {
-    "message": "Master password removed."
+    "message": "Master password removed"
   },
   "convertOrganizationEncryptionDesc": {
     "message": "$ORGANIZATION$ is using SSO with a self-hosted key server. A master password is no longer required to log in for members of this organisation.",
@@ -1883,7 +1883,7 @@
     }
   },
   "leaveOrganization": {
-    "message": "Leave Organisation"
+    "message": "Leave organisation"
   },
   "leaveOrganizationConfirmation": {
     "message": "Are you sure you want to leave this organisation?"
@@ -1892,10 +1892,10 @@
     "message": "You have left the organisation."
   },
   "ssoKeyConnectorError": {
-    "message": "Key Connector error: make sure Key Connector is available and working correctly."
+    "message": "Key connector error: make sure key connector is available and working correctly."
   },
   "lockAllVaults": {
-    "message": "Lock All Vaults"
+    "message": "Lock all vaults"
   },
   "accountLimitReached": {
     "message": "No more than 5 accounts may be logged in at the same time."
@@ -1904,7 +1904,7 @@
     "message": "Preferences"
   },
   "appPreferences": {
-    "message": "App Settings (All Accounts)"
+    "message": "App settings (all accounts)"
   },
   "accountSwitcherLimitReached": {
     "message": "Account limit reached. Log out of an account to add another."
@@ -1919,7 +1919,7 @@
     }
   },
   "switchAccount": {
-    "message": "Switch Account"
+    "message": "Switch account"
   },
   "options": {
     "message": "Options"
@@ -1928,10 +1928,10 @@
     "message": "Your session has timed out. Please go back and try logging in again."
   },
   "exportingPersonalVaultTitle": {
-    "message": "Exporting Personal Vault"
+    "message": "Exporting individual vault"
   },
   "exportingPersonalVaultDescription": {
-    "message": "Only the personal vault items associated with $EMAIL$ will be exported. Organisation vault items will not be included.",
+    "message": "Only the individual vault items associated with $EMAIL$ will be exported. Organisation vault items will not be included.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -1952,26 +1952,26 @@
     "message": "What would you like to generate?"
   },
   "passwordType": {
-    "message": "Password Type"
+    "message": "Password type"
   },
   "regenerateUsername": {
-    "message": "Regenerate Username"
+    "message": "Regenerate username"
   },
   "generateUsername": {
-    "message": "Generate Username"
+    "message": "Generate username"
   },
   "usernameType": {
-    "message": "Username Type"
+    "message": "Username type"
   },
   "plusAddressedEmail": {
-    "message": "Plus Addressed Email",
+    "message": "Plus addressed email",
     "description": "Username generator option that appends a random sub-address to the username. For example: address+subaddress@email.com"
   },
   "plusAddressedEmailDesc": {
     "message": "Use your email provider's sub-addressing capabilities."
   },
   "catchallEmail": {
-    "message": "Catch-all Email"
+    "message": "Catch-all email"
   },
   "catchallEmailDesc": {
     "message": "Use your domain's configured catch-all inbox."
@@ -1980,25 +1980,25 @@
     "message": "Random"
   },
   "randomWord": {
-    "message": "Random Word"
+    "message": "Random word"
   },
   "websiteName": {
-    "message": "Website Name"
+    "message": "Website name"
   },
   "service": {
     "message": "Service"
   },
   "allVaults": {
-    "message": "All Vaults"
+    "message": "All vaults"
   },
   "searchOrganization": {
-    "message": "Search Organisation"
+    "message": "Search organisation"
   },
   "searchMyVault": {
-    "message": "Search My Vault"
+    "message": "Search my vault"
   },
   "forwardedEmail": {
-    "message": "Forwarded Email Alias"
+    "message": "Forwarded email alias"
   },
   "forwardedEmailDesc": {
     "message": "Generate an email alias with an external forwarding service."
@@ -2011,16 +2011,16 @@
     "message": "API Access Token"
   },
   "apiKey": {
-    "message": "API Key"
+    "message": "API key"
   },
   "premiumSubcriptionRequired": {
     "message": "Premium subscription required"
   },
   "organizationIsDisabled": {
-    "message": "Organisation is disabled."
+    "message": "Organisation suspended"
   },
   "disabledOrganizationFilterError": {
-    "message": "Items in disabled Organisations cannot be accessed. Contact your Organisation owner for assistance."
+    "message": "Items in suspended organisations cannot be accessed. Contact your organisation owner for assistance."
   },
   "neverLockWarning": {
     "message": "Are you sure you want to use the \"Never\" option? Setting your lock options to \"Never\" stores your vault's encryption key on your device. If you use this option you should ensure that you keep your device properly protected."
