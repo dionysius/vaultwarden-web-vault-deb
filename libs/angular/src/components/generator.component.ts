@@ -244,7 +244,10 @@ export class GeneratorComponent implements OnInit {
     ];
 
     this.usernameOptions = await this.usernameGenerationService.getOptions();
-    if (this.usernameOptions.forwardedService == null) {
+    if (
+      this.usernameOptions.forwardedService == null ||
+      this.usernameOptions.forwardedService === ""
+    ) {
       this.forwardOptions.push({ name: "", value: null });
     }
 
