@@ -10,7 +10,10 @@ import type { Organization } from "@bitwarden/common/models/domain/organization"
   templateUrl: "org-switcher.component.html",
 })
 export class OrgSwitcherComponent {
-  protected organizations$: Observable<Organization[]> = this.organizationService.organizations$;
+  protected organizations$: Observable<Organization[]> =
+    this.organizationService.organizations$.pipe(
+      map((orgs) => orgs.sort((a, b) => a.name.localeCompare(b.name)))
+    );
   protected activeOrganization$: Observable<Organization> = combineLatest([
     this.route.paramMap,
     this.organizationService.organizations$,
