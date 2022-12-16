@@ -131,7 +131,7 @@
     "message": "Skicka en verifieringskod till din e-postadress"
   },
   "sendCode": {
-    "message": "Send-kod"
+    "message": "Skicka kod"
   },
   "codeSent": {
     "message": "Kod har skickats"
@@ -318,7 +318,7 @@
     "message": "Öppna"
   },
   "website": {
-    "message": "Webbsida"
+    "message": "Webbplats"
   },
   "toggleVisibility": {
     "message": "Växla synlighet"
@@ -436,7 +436,7 @@
     "message": "Bekräftelsen för huvudlösenordet stämde ej."
   },
   "newAccountCreated": {
-    "message": "Ditt nya konto har blivit skapat! Du kan nu logga in."
+    "message": "Ditt nya konto har skapats! Du kan logga in nu."
   },
   "masterPassSent": {
     "message": "Vi har skickat ett e-postmeddelande till dig med din huvudlösenordsledtråd."
@@ -448,7 +448,7 @@
     "message": "Ogiltig verifieringskod"
   },
   "valueCopied": {
-    "message": "$VALUE$ kopierat",
+    "message": "$VALUE$ har kopierats",
     "description": "Value has been copied to the clipboard.",
     "placeholders": {
       "value": {
@@ -461,10 +461,10 @@
     "message": "Kunde inte automatiskt fylla i det valda objektet på den här webbsidan. Klipp/klistra informationen istället."
   },
   "loggedOut": {
-    "message": "Loggade ut"
+    "message": "Utloggad"
   },
   "loginExpired": {
-    "message": "Din inloggningssession har utgått."
+    "message": "Din inloggningssession har upphört."
   },
   "logOutConfirmation": {
     "message": "Är du säker på att du vill logga ut?"
@@ -497,7 +497,7 @@
     "message": "Mapp sparad"
   },
   "deleteFolderConfirmation": {
-    "message": "Är du säker på att du vill ta bort den här mappen?"
+    "message": "Är du säker på att du vill radera denna mapp?"
   },
   "deletedFolder": {
     "message": "Mapp raderad"
@@ -717,10 +717,10 @@
     "message": "Bifogade filer"
   },
   "deleteAttachment": {
-    "message": "Ta bort bilaga"
+    "message": "Radera bilaga"
   },
   "deleteAttachmentConfirmation": {
-    "message": "Är du säker på att du vill ta bort bilagan?"
+    "message": "Är du säker på att du vill radera denna bilaga?"
   },
   "deletedAttachment": {
     "message": "Raderade bilaga"
@@ -1400,7 +1400,7 @@
     "description": "Verb form: to make secure or inaccesible by"
   },
   "trash": {
-    "message": "Papperskorgen",
+    "message": "Papperskorg",
     "description": "Noun: a special folder to hold deleted items"
   },
   "searchTrash": {
@@ -1731,7 +1731,7 @@
     "message": "Nuvarande antal åtkomster"
   },
   "createSend": {
-    "message": "Skapa ny Send",
+    "message": "Ny Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "newPassword": {

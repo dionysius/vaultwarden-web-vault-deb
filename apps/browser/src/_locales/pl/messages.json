@@ -98,7 +98,7 @@
     "message": "Kopiuj nazwę pola niestandardowego"
   },
   "noMatchingLogins": {
-    "message": "Brak pasujących danych logowania."
+    "message": "Brak pasujących danych logowania"
   },
   "unlockVaultMenu": {
     "message": "Odblokuj sejf"
@@ -936,7 +936,7 @@
     "message": "Adres URL serwera"
   },
   "apiUrl": {
-    "message": "Adres URL serwera interfejsu API"
+    "message": "Adres URL serwera API"
   },
   "webVaultUrl": {
     "message": "Adres URL serwera sejfu internetowego"
@@ -1040,7 +1040,7 @@
     "message": "Pokaż ikony witryn"
   },
   "faviconDesc": {
-    "message": "Pokaż rozpoznawalny obraz obok każdych danych logowania."
+    "message": "Pokaż rozpoznawalny obraz obok danych logowania."
   },
   "enableBadgeCounter": {
     "message": "Pokaż licznik na ikonie"
@@ -1316,7 +1316,7 @@
     "description": "ex. Date this item was created"
   },
   "datePasswordUpdated": {
-    "message": "Aktualizacja hasła",
+    "message": "Hasło zostało zaktualizowane",
     "description": "ex. Date this password was updated"
   },
   "neverLockWarning": {
@@ -1488,7 +1488,7 @@
     "message": "Zaznaczając tę opcję, akceptujesz:"
   },
   "acceptPoliciesRequired": {
-    "message": "Warunki użytkowania i polityka prywatności nie zostały zaakceptowane."
+    "message": "Regulamin i polityka prywatności nie zostały zaakceptowane."
   },
   "termsOfService": {
     "message": "Regulamin"
@@ -1820,7 +1820,7 @@
     "message": "Zaktualizuj hasło główne"
   },
   "updateMasterPasswordWarning": {
-    "message": "Twoje hasło główne zostało ostatnio zmienione przez administratora Twojej organizacji. Musisz je teraz zaktualizować, aby uzyskać dostęp do sejfu. W przypadku kontynuacji nastąpi wylogowanie z bieżącej sesji, przez co konieczne będzie ponowne zalogowanie się. Aktywne sesje na innych urządzeniach mogą pozostać aktywne przez maksymalnie jedną godzinę."
+    "message": "Hasło główne zostało zmienione przez administratora Twojej organizacji. Musisz je zaktualizować, aby uzyskać dostęp do sejfu. Ta czynność spowoduje wylogowanie z bieżącej sesji, przez co konieczne będzie ponowne zalogowanie się. Aktywne sesje na innych urządzeniach mogą pozostać aktywne przez maksymalnie godzinę."
   },
   "resetPasswordPolicyAutoEnroll": {
     "message": "Automatyczne rejestrowanie użytkowników"
@@ -1857,10 +1857,10 @@
     "message": "Czas blokowania sejfu przekracza limit określony przez organizację."
   },
   "vaultExportDisabled": {
-    "message": "Eksport sejfu wyłączony"
+    "message": "Eksportowanie sejfu jest niedostępne"
   },
   "personalVaultExportPolicyInEffect": {
-    "message": "Co najmniej jedna zasada organizacji uniemożliwia wyeksportowanie Twojego sejfu."
+    "message": "Co najmniej jedna zasada organizacji uniemożliwia wyeksportowanie osobistego sejfu."
   },
   "copyCustomFieldNameInvalidElement": {
     "message": "Nie można zidentyfikować poprawnego elementu formularza. Spróbuj sprawdzić kod HTML."
@@ -1942,7 +1942,7 @@
     "message": "Losowe słowo"
   },
   "websiteName": {
-    "message": "Nazwa witryny"
+    "message": "Nazwa strony"
   },
   "whatWouldYouLikeToGenerate": {
     "message": "Co chcesz wygenerować?"
@@ -1954,7 +1954,7 @@
     "message": "Usługa"
   },
   "forwardedEmail": {
-    "message": "Alias przekazywanego e-maila"
+    "message": "Alias przekazywanego adresu"
   },
   "forwardedEmailDesc": {
     "message": "Wygeneruj alias adresu e-mail z zewnętrznej usługi przekazywania."
@@ -1967,7 +1967,7 @@
     "message": "Token dostępu API"
   },
   "apiKey": {
-    "message": "Klucz interfejsu API"
+    "message": "Klucz API"
   },
   "ssoKeyConnectorError": {
     "message": "Błąd serwera Key Connector: upewnij się, że serwer Key Connector jest dostępny i działa poprawnie."
@@ -1976,10 +1976,10 @@
     "message": "Wymagana jest subskrypcja Premium"
   },
   "organizationIsDisabled": {
-    "message": "Organizacja jest wyłączona."
+    "message": "Organizacja została zawieszona."
   },
   "disabledOrganizationFilterError": {
-    "message": "Nie można uzyskać dostępu do elementów w wyłączonych organizacjach. Skontaktuj się z właścicielem organizacji, aby uzyskać pomoc."
+    "message": "Nie można uzyskać dostępu do elementów w zawieszonych organizacjach. Skontaktuj się z właścicielem organizacji, aby uzyskać pomoc."
   },
   "cardBrandMir": {
     "message": "Mir"
@@ -1994,7 +1994,7 @@
     }
   },
   "settingsEdited": {
-    "message": "Ustawienia zostały edytowane"
+    "message": "Ustawienia zostały zmienione"
   },
   "environmentEditedClick": {
     "message": "Kliknij tutaj"
@@ -2009,7 +2009,7 @@
     "message": "Samodzielnie hostowany"
   },
   "thirdParty": {
-    "message": "Innego dostawcy"
+    "message": "Inny dostawca"
   },
   "thirdPartyServerMessage": {
     "message": "Połączono z implementacją serwera innego dostawcy, $SERVERNAME$. Zweryfikuj błędy za pomocą oficjalnego serwera lub zgłoś je serwerowi innego dostawcy.",
@@ -2021,7 +2021,7 @@
     }
   },
   "lastSeenOn": {
-    "message": "ostatnio widziano $DATE$",
+    "message": "ostatnio widziany $DATE$",
     "placeholders": {
       "date": {
         "content": "$1",
@@ -2039,7 +2039,7 @@
     "message": "To nie Ty?"
   },
   "newAroundHere": {
-    "message": "Jesteś tu nowy(a)?"
+    "message": "Nowy użytkownik?"
   },
   "rememberEmail": {
     "message": "Zapamiętaj adres e-mail"
