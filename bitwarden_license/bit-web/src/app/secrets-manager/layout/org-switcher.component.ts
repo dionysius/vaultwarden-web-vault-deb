@@ -29,5 +29,6 @@ export class OrgSwitcherComponent {
   protected toggle(event?: MouseEvent) {
     event?.stopPropagation();
     this.open = !this.open;
+    this.openChange.emit(this.open);
   }
 }

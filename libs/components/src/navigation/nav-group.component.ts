@@ -42,6 +42,7 @@ export class NavGroupComponent extends NavBaseComponent implements AfterContentI
   protected toggle(event?: MouseEvent) {
     event?.stopPropagation();
     this.open = !this.open;
+    this.openChange.emit(this.open);
   }
 
   /**
