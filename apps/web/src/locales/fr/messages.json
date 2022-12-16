@@ -5487,6 +5487,255 @@
   "multiSelectClearAll": {
     "message": "Effacer tout"
   },
+  "projects": {
+    "message": "Projets"
+  },
+  "lastEdited": {
+    "message": "Dernière Modification"
+  },
+  "editSecret": {
+    "message": "Modifier le Secret"
+  },
+  "addSecret": {
+    "message": "Ajouter un Secret"
+  },
+  "copySecretName": {
+    "message": "Copier le Nom du Secret"
+  },
+  "copySecretValue": {
+    "message": "Copier la Valeur Secrète"
+  },
+  "deleteSecret": {
+    "message": "Supprimer le Secret"
+  },
+  "deleteSecrets": {
+    "message": "Supprimer les Secrets"
+  },
+  "project": {
+    "message": "Projet"
+  },
+  "editProject": {
+    "message": "Modifier le Projet"
+  },
+  "viewProject": {
+    "message": "Afficher le Projet"
+  },
+  "deleteProject": {
+    "message": "Supprimer le Projet"
+  },
+  "deleteProjects": {
+    "message": "Supprimer les Projets"
+  },
+  "secret": {
+    "message": "Secret"
+  },
+  "serviceAccount": {
+    "message": "Compte de Service"
+  },
+  "serviceAccounts": {
+    "message": "Comptes de Service"
+  },
+  "new": {
+    "message": "Nouveau"
+  },
+  "secrets": {
+    "message": "Secrets"
+  },
+  "nameValuePair": {
+    "message": "Nom/Paire de Valeur"
+  },
+  "secretEdited": {
+    "message": "Secret Modifié"
+  },
+  "secretCreated": {
+    "message": "Secret Créé"
+  },
+  "newSecret": {
+    "message": "Nouveau Secret"
+  },
+  "newServiceAccount": {
+    "message": "Nouveau Compte de Service"
+  },
+  "secretsNoItemsTitle": {
+    "message": "Aucun Secret à Afficher"
+  },
+  "secretsNoItemsMessage": {
+    "message": "Pour commencer, ajoutez un nouveau secret ou importez des secrets."
+  },
+  "serviceAccountsNoItemsTitle": {
+    "message": "Rien à afficher pour l'instant"
+  },
+  "serviceAccountsNoItemsMessage": {
+    "message": "Créez un nouveau Compte de Service pour commencer à automatiser l'accès secret."
+  },
+  "searchSecrets": {
+    "message": "Rechercher des Secrets"
+  },
+  "deleteServiceAccounts": {
+    "message": "Supprimer des Comptes de Service"
+  },
+  "deleteServiceAccount": {
+    "message": "Supprimer le Compte de Service"
+  },
+  "viewServiceAccount": {
+    "message": "Afficher le Compte de Service"
+  },
+  "searchServiceAccounts": {
+    "message": "Rechercher des Comptes de Service"
+  },
+  "addProject": {
+    "message": "Ajouter un Projet"
+  },
+  "projectEdited": {
+    "message": "Projet modifié"
+  },
+  "projectSaved": {
+    "message": "Projet sauvegardé"
+  },
+  "projectCreated": {
+    "message": "Projet créé"
+  },
+  "projectName": {
+    "message": "Nom du Projet"
+  },
+  "newProject": {
+    "message": "Nouveau Projet"
+  },
+  "softDeleteSecretWarning": {
+    "message": "La suppression de secrets peut affecter les intégrations existantes."
+  },
+  "softDeletesSuccessToast": {
+    "message": "Secrets envoyés à la corbeille"
+  },
+  "serviceAccountCreated": {
+    "message": "Compte de Service créé"
+  },
+  "smAccess": {
+    "message": "Accès"
+  },
+  "projectCommaSecret": {
+    "message": "Projet, Secret"
+  },
+  "serviceAccountName": {
+    "message": "Nom du Compte de Service"
+  },
+  "newSaSelectAccess": {
+    "message": "Tapez ou Sélectionnez des Projets ou des Secrets"
+  },
+  "newSaTypeToFilter": {
+    "message": "Tapez pour Filtrer"
+  },
+  "deleteProjectsToast": {
+    "message": "Projets supprimés"
+  },
+  "deleteProjectToast": {
+    "message": "Le projet et tous les secrets associés ont été supprimés"
+  },
+  "deleteProjectDialogMessage": {
+    "message": "La suppression du projet $PROJECT$ est permanente et irréversible.",
+    "placeholders": {
+      "project": {
+        "content": "$1",
+        "example": "project name"
+      }
+    }
+  },
+  "deleteProjectInputLabel": {
+    "message": "Tapez \"$CONFIRM$\" pour continuer",
+    "placeholders": {
+      "confirm": {
+        "content": "$1",
+        "example": "Delete 3 Projects"
+      }
+    }
+  },
+  "deleteProjectConfirmMessage": {
+    "message": "Supprimer $PROJECT$",
+    "placeholders": {
+      "project": {
+        "content": "$1",
+        "example": "project name"
+      }
+    }
+  },
+  "deleteProjectsConfirmMessage": {
+    "message": "Supprimer $COUNT$ projets",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "deleteProjectsDialogMessage": {
+    "message": "La suppression de projets est permanente et irréversible."
+  },
+  "projectsNoItemsTitle": {
+    "message": "Aucun projet à afficher"
+  },
+  "projectsNoItemsMessage": {
+    "message": "Ajouter un nouveau projet pour commencer à organiser des secrets."
+  },
+  "smConfirmationRequired": {
+    "message": "Confirmation requise"
+  },
+  "bulkDeleteProjectsErrorMessage": {
+    "message": "Les projets suivants n'ont pu être supprimés :"
+  },
+  "softDeleteSuccessToast": {
+    "message": "Secret envoyé à la corbeille"
+  },
+  "searchProjects": {
+    "message": "Rechercher des Projets"
+  },
+  "accessTokens": {
+    "message": "Jetons d'accès"
+  },
+  "createAccessToken": {
+    "message": "Créer un jeton d'accès"
+  },
+  "expires": {
+    "message": "Expire"
+  },
+  "canRead": {
+    "message": "Peut Lire"
+  },
+  "accessTokensNoItemsTitle": {
+    "message": "Aucun jeton d'accès à afficher"
+  },
+  "accessTokensNoItemsDesc": {
+    "message": "Pour commencer, créez un jeton d'accès"
+  },
+  "downloadAccessToken": {
+    "message": "Télécharger ou copier avant de fermer."
+  },
+  "expiresOnAccessToken": {
+    "message": "Expire le:"
+  },
+  "accessTokenCallOutTitle": {
+    "message": "Les jetons d'accès ne sont pas stockés et ne peuvent pas être récupérés"
+  },
+  "copyToken": {
+    "message": "Copier le jeton"
+  },
+  "accessToken": {
+    "message": "Jeton d'accès"
+  },
+  "accessTokenExpirationRequired": {
+    "message": "Date d'expiration requise"
+  },
+  "accessTokenCreatedAndCopied": {
+    "message": "Jeton d'accès créé et copié dans le presse-papiers"
+  },
+  "accessTokenPermissionsBetaNotification": {
+    "message": "La gestion des permissions n'est pas disponible pour la version bêta."
+  },
+  "revokeAccessToken": {
+    "message": "Révoquer le jeton d'accès"
+  },
+  "submenu": {
+    "message": "Sous-menu"
+  },
   "from": {
     "message": "De"
   },

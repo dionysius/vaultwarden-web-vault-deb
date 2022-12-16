@@ -4120,19 +4120,19 @@
     "message": "Ezarpen aurreratuetarako erabiltzaile baimenen kontrol aurreratuagoa ahalbidetzen du."
   },
   "customDescNonEnterpriseStart": {
-    "message": "Custom roles is an ",
+    "message": "Rol pertsonalizatuak dira ",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Custom roles is an enterprise feature. Contact our support team to upgrade your subscription'"
   },
   "customDescNonEnterpriseLink": {
-    "message": "enterprise feature",
+    "message": "enpresaren ezaugarriak",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Custom roles is an enterprise feature. Contact our support team to upgrade your subscription'"
   },
   "customDescNonEnterpriseEnd": {
-    "message": ". Contact our support team to upgrade your subscription",
+    "message": ". Jarri harremanetan gure laguntza-taldearekin zure harpidetza eguneratzeko",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Custom roles is an enterprise feature. Contact our support team to upgrade your subscription'"
   },
   "customNonEnterpriseError": {
-    "message": "To enable custom permissions the organization must be on an Enterprise 2020 plan."
+    "message": "Baimen pertsonalizatuak gaitzeko, erakundeak Enterprise 2020 plan batean egon behar du."
   },
   "permissions": {
     "message": "Baimenak"
@@ -5486,6 +5486,255 @@
   },
   "multiSelectClearAll": {
     "message": "Ezabatu dena"
+  },
+  "projects": {
+    "message": "Proiektuak"
+  },
+  "lastEdited": {
+    "message": "Azken edizioa"
+  },
+  "editSecret": {
+    "message": "Editatu sekretua"
+  },
+  "addSecret": {
+    "message": "Gehitu sekretua"
+  },
+  "copySecretName": {
+    "message": "Kopiatu sekretuaren izena"
+  },
+  "copySecretValue": {
+    "message": "Kopiatu sekretuaren balioa"
+  },
+  "deleteSecret": {
+    "message": "Ezabatu sekretua"
+  },
+  "deleteSecrets": {
+    "message": "Ezabatu sekretuak"
+  },
+  "project": {
+    "message": "Project"
+  },
+  "editProject": {
+    "message": "Edit Project"
+  },
+  "viewProject": {
+    "message": "View Project"
+  },
+  "deleteProject": {
+    "message": "Delete Project"
+  },
+  "deleteProjects": {
+    "message": "Delete Projects"
+  },
+  "secret": {
+    "message": "Sekretua"
+  },
+  "serviceAccount": {
+    "message": "Service Account"
+  },
+  "serviceAccounts": {
+    "message": "Service Accounts"
+  },
+  "new": {
+    "message": "New"
+  },
+  "secrets": {
+    "message": "Sekretuak"
+  },
+  "nameValuePair": {
+    "message": "Name/Value Pair"
+  },
+  "secretEdited": {
+    "message": "Sekretua editatua"
+  },
+  "secretCreated": {
+    "message": "Sekretua sortua"
+  },
+  "newSecret": {
+    "message": "Sekretu berria"
+  },
+  "newServiceAccount": {
+    "message": "New Service Account"
+  },
+  "secretsNoItemsTitle": {
+    "message": "Ez dago erakusteko sekreturik"
+  },
+  "secretsNoItemsMessage": {
+    "message": "Hasteko, sortu edo inportatu sekretu berri bat."
+  },
+  "serviceAccountsNoItemsTitle": {
+    "message": "Nothing to show yet"
+  },
+  "serviceAccountsNoItemsMessage": {
+    "message": "Zerbitzu-kontu berri bat sortu, sarbide sekretua automatizatzen hasteko."
+  },
+  "searchSecrets": {
+    "message": "Bilatu sekretuak"
+  },
+  "deleteServiceAccounts": {
+    "message": "Delete Service Accounts"
+  },
+  "deleteServiceAccount": {
+    "message": "Delete Service Account"
+  },
+  "viewServiceAccount": {
+    "message": "View Service Account"
+  },
+  "searchServiceAccounts": {
+    "message": "Search Service Accounts"
+  },
+  "addProject": {
+    "message": "Add Project"
+  },
+  "projectEdited": {
+    "message": "Project edited"
+  },
+  "projectSaved": {
+    "message": "Project saved"
+  },
+  "projectCreated": {
+    "message": "Project created"
+  },
+  "projectName": {
+    "message": "Project Name"
+  },
+  "newProject": {
+    "message": "New Project"
+  },
+  "softDeleteSecretWarning": {
+    "message": "Sekretuak ezabatzeak uneko integrazioei eragin ahal die."
+  },
+  "softDeletesSuccessToast": {
+    "message": "Sekretua zakarrontzira bidalita"
+  },
+  "serviceAccountCreated": {
+    "message": "Service Account Created"
+  },
+  "smAccess": {
+    "message": "Access"
+  },
+  "projectCommaSecret": {
+    "message": "Proiektua, sekretua"
+  },
+  "serviceAccountName": {
+    "message": "Service account name"
+  },
+  "newSaSelectAccess": {
+    "message": "Idatzi edo aukeratu proiektu edo sekretuak"
+  },
+  "newSaTypeToFilter": {
+    "message": "Type to Filter"
+  },
+  "deleteProjectsToast": {
+    "message": "Projects deleted"
+  },
+  "deleteProjectToast": {
+    "message": "Proiektua eta honi lotutako sekretu guztiak ezabatu dira"
+  },
+  "deleteProjectDialogMessage": {
+    "message": "Deleting project $PROJECT$ is permanent and irreversible.",
+    "placeholders": {
+      "project": {
+        "content": "$1",
+        "example": "project name"
+      }
+    }
+  },
+  "deleteProjectInputLabel": {
+    "message": "Type \"$CONFIRM$\" to continue",
+    "placeholders": {
+      "confirm": {
+        "content": "$1",
+        "example": "Delete 3 Projects"
+      }
+    }
+  },
+  "deleteProjectConfirmMessage": {
+    "message": "Delete $PROJECT$",
+    "placeholders": {
+      "project": {
+        "content": "$1",
+        "example": "project name"
+      }
+    }
+  },
+  "deleteProjectsConfirmMessage": {
+    "message": "Delete $COUNT$ Projects",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "deleteProjectsDialogMessage": {
+    "message": "Deleting projects is permanent and irreversible."
+  },
+  "projectsNoItemsTitle": {
+    "message": "No projects to display"
+  },
+  "projectsNoItemsMessage": {
+    "message": "Gehitu proiektu berria sekretuak antolatzen hasteko."
+  },
+  "smConfirmationRequired": {
+    "message": "Confirmation required"
+  },
+  "bulkDeleteProjectsErrorMessage": {
+    "message": "The following projects could not be deleted:"
+  },
+  "softDeleteSuccessToast": {
+    "message": "Sekretua zakarrontzira bidalia"
+  },
+  "searchProjects": {
+    "message": "Search Projects"
+  },
+  "accessTokens": {
+    "message": "Access tokens"
+  },
+  "createAccessToken": {
+    "message": "Create access token"
+  },
+  "expires": {
+    "message": "Expires"
+  },
+  "canRead": {
+    "message": "Can Read"
+  },
+  "accessTokensNoItemsTitle": {
+    "message": "No access tokens to show"
+  },
+  "accessTokensNoItemsDesc": {
+    "message": "To get started, create an access token"
+  },
+  "downloadAccessToken": {
+    "message": "Download or copy before closing."
+  },
+  "expiresOnAccessToken": {
+    "message": "Expires on:"
+  },
+  "accessTokenCallOutTitle": {
+    "message": "Access tokens are not stored and cannot be retrieved"
+  },
+  "copyToken": {
+    "message": "Copy token"
+  },
+  "accessToken": {
+    "message": "Access token"
+  },
+  "accessTokenExpirationRequired": {
+    "message": "Expiration date required"
+  },
+  "accessTokenCreatedAndCopied": {
+    "message": "Access token created and copied to clipboard"
+  },
+  "accessTokenPermissionsBetaNotification": {
+    "message": "Permissions management is unavailable for beta."
+  },
+  "revokeAccessToken": {
+    "message": "Revoke Access Token"
+  },
+  "submenu": {
+    "message": "Submenu"
   },
   "from": {
     "message": "Igorlea"

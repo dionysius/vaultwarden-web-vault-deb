@@ -4120,19 +4120,19 @@
     "message": "Gelişmiş yapılandırma için kullanıcı izinleri üzerinde daha detaylı kontrol sağlar."
   },
   "customDescNonEnterpriseStart": {
-    "message": "Custom roles is an ",
+    "message": "Özel roller kurumsal planın bir özelliğidir.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Custom roles is an enterprise feature. Contact our support team to upgrade your subscription'"
   },
   "customDescNonEnterpriseLink": {
-    "message": "enterprise feature",
+    "message": "Kurumsal Özellik",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Custom roles is an enterprise feature. Contact our support team to upgrade your subscription'"
   },
   "customDescNonEnterpriseEnd": {
-    "message": ". Contact our support team to upgrade your subscription",
+    "message": "Aboneliğinizi yükseltmek için destek ekibimizle iletişime geçin",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Custom roles is an enterprise feature. Contact our support team to upgrade your subscription'"
   },
   "customNonEnterpriseError": {
-    "message": "To enable custom permissions the organization must be on an Enterprise 2020 plan."
+    "message": "Özel izinleri etkinleştirmek için kuruluşun Enterprise 2020 planında olması gerekir."
   },
   "permissions": {
     "message": "İzinler"
@@ -5486,6 +5486,255 @@
   },
   "multiSelectClearAll": {
     "message": "Tümünü temizle"
+  },
+  "projects": {
+    "message": "Projeler"
+  },
+  "lastEdited": {
+    "message": "Son Düzenlenen"
+  },
+  "editSecret": {
+    "message": "Gizli Düzenle"
+  },
+  "addSecret": {
+    "message": "Sır Ekle"
+  },
+  "copySecretName": {
+    "message": "Gizli Adı Kopyala"
+  },
+  "copySecretValue": {
+    "message": "Gizli Değeri Kopyala"
+  },
+  "deleteSecret": {
+    "message": "Sırrı Sil"
+  },
+  "deleteSecrets": {
+    "message": "Sırları Sil"
+  },
+  "project": {
+    "message": "Proje"
+  },
+  "editProject": {
+    "message": "Proje Düzenleme"
+  },
+  "viewProject": {
+    "message": "Proje Görüntüle"
+  },
+  "deleteProject": {
+    "message": "Proje Silme"
+  },
+  "deleteProjects": {
+    "message": "Projeleri Sil"
+  },
+  "secret": {
+    "message": "Gizli"
+  },
+  "serviceAccount": {
+    "message": "Hizmet Hesabı"
+  },
+  "serviceAccounts": {
+    "message": "Hizmet Hesapları"
+  },
+  "new": {
+    "message": "Yeni"
+  },
+  "secrets": {
+    "message": "Sırlar"
+  },
+  "nameValuePair": {
+    "message": "İsim/Değer Çifti"
+  },
+  "secretEdited": {
+    "message": "Sır düzenlendi"
+  },
+  "secretCreated": {
+    "message": "Sır yaratıldı"
+  },
+  "newSecret": {
+    "message": "Yeni Sır"
+  },
+  "newServiceAccount": {
+    "message": "Yeni Hizmet Hesabı"
+  },
+  "secretsNoItemsTitle": {
+    "message": "Gösterecek sır yok"
+  },
+  "secretsNoItemsMessage": {
+    "message": "Başlamak için yeni bir gizli dizin ekleyin veya gizli dizinleri içe aktarın."
+  },
+  "serviceAccountsNoItemsTitle": {
+    "message": "Henüz gösterecek bir şey yok"
+  },
+  "serviceAccountsNoItemsMessage": {
+    "message": "Gizli erişimi otomatikleştirmeye başlamak için yeni bir Hizmet Hesabı oluşturun."
+  },
+  "searchSecrets": {
+    "message": "Arama Sırları"
+  },
+  "deleteServiceAccounts": {
+    "message": "Hizmet Hesaplarını Sil"
+  },
+  "deleteServiceAccount": {
+    "message": "Hizmet Hesabını Sil"
+  },
+  "viewServiceAccount": {
+    "message": "Hizmet Hesabını Görüntüle"
+  },
+  "searchServiceAccounts": {
+    "message": "Hizmet Hesaplarını Ara"
+  },
+  "addProject": {
+    "message": "Proje Ekle"
+  },
+  "projectEdited": {
+    "message": "Proje düzenlendi"
+  },
+  "projectSaved": {
+    "message": "Proje kaydedildi"
+  },
+  "projectCreated": {
+    "message": "Proje oluşturuldu"
+  },
+  "projectName": {
+    "message": "Proje Adı"
+  },
+  "newProject": {
+    "message": "Yeni Proje"
+  },
+  "softDeleteSecretWarning": {
+    "message": "Sırların silinmesi mevcut entegrasyonları etkileyebilir."
+  },
+  "softDeletesSuccessToast": {
+    "message": "Çöpe atılan sırlar"
+  },
+  "serviceAccountCreated": {
+    "message": "Hizmet Hesabı Oluşturuldu"
+  },
+  "smAccess": {
+    "message": "Erişim"
+  },
+  "projectCommaSecret": {
+    "message": "Proje, Gizli"
+  },
+  "serviceAccountName": {
+    "message": "Hizmet hesabı adı"
+  },
+  "newSaSelectAccess": {
+    "message": "Projeleri veya Sırları Yazın veya Seçin"
+  },
+  "newSaTypeToFilter": {
+    "message": "Filtrelemek için yaz"
+  },
+  "deleteProjectsToast": {
+    "message": "Silinen projeler"
+  },
+  "deleteProjectToast": {
+    "message": "Proje ve ilişkili tüm sırlar silindi"
+  },
+  "deleteProjectDialogMessage": {
+    "message": "$PROJECT$ projesinin silinmesi kalıcıdır ve geri döndürülemez.",
+    "placeholders": {
+      "project": {
+        "content": "$1",
+        "example": "project name"
+      }
+    }
+  },
+  "deleteProjectInputLabel": {
+    "message": "Devam etmek için \"$CONFIRM$\" yazın",
+    "placeholders": {
+      "confirm": {
+        "content": "$1",
+        "example": "Delete 3 Projects"
+      }
+    }
+  },
+  "deleteProjectConfirmMessage": {
+    "message": "Projeyi sil",
+    "placeholders": {
+      "project": {
+        "content": "$1",
+        "example": "project name"
+      }
+    }
+  },
+  "deleteProjectsConfirmMessage": {
+    "message": "$COUNT$ Projelerini Sil",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "deleteProjectsDialogMessage": {
+    "message": "Projelerin silinmesi kalıcıdır ve geri döndürülemez."
+  },
+  "projectsNoItemsTitle": {
+    "message": "Sergilenecek proje yok"
+  },
+  "projectsNoItemsMessage": {
+    "message": "Sırları düzenlemeye başlamak için yeni bir proje ekleyin."
+  },
+  "smConfirmationRequired": {
+    "message": "Onaylama gerekli"
+  },
+  "bulkDeleteProjectsErrorMessage": {
+    "message": "Aşağıdaki projeler silinememiştir:"
+  },
+  "softDeleteSuccessToast": {
+    "message": "Çöpe atılan sır"
+  },
+  "searchProjects": {
+    "message": "Projeleri ara"
+  },
+  "accessTokens": {
+    "message": "Erişim anahtarları"
+  },
+  "createAccessToken": {
+    "message": "Erişim anahtarı oluşturma"
+  },
+  "expires": {
+    "message": "Bitiş tarihi"
+  },
+  "canRead": {
+    "message": "Okuyabilir"
+  },
+  "accessTokensNoItemsTitle": {
+    "message": "Gösterilecek erişim anahtarları yok"
+  },
+  "accessTokensNoItemsDesc": {
+    "message": "Başlamak için bir erişim anahtarı oluşturun"
+  },
+  "downloadAccessToken": {
+    "message": "Kapatmadan önce indirin veya kopyalayın."
+  },
+  "expiresOnAccessToken": {
+    "message": "Bitiş tarihi:"
+  },
+  "accessTokenCallOutTitle": {
+    "message": "Erişim anahtarları saklanmaz ve geri alınamaz"
+  },
+  "copyToken": {
+    "message": "Erişim anahtarını kopyala"
+  },
+  "accessToken": {
+    "message": "Erişim anahtarı"
+  },
+  "accessTokenExpirationRequired": {
+    "message": "Son kullanma tarihi gerekli"
+  },
+  "accessTokenCreatedAndCopied": {
+    "message": "Erişim anahtarı oluşturuldu ve panoya kopyalandı"
+  },
+  "accessTokenPermissionsBetaNotification": {
+    "message": "İzin yönetimi beta sürümünde kullanılamıyor."
+  },
+  "revokeAccessToken": {
+    "message": "Erişim anahtarını İptal Et"
+  },
+  "submenu": {
+    "message": "Alt menü"
   },
   "from": {
     "message": "Kimden"

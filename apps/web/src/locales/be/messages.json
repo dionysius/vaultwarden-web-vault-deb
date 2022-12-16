@@ -5487,6 +5487,255 @@
   "multiSelectClearAll": {
     "message": "Ачысціць усё"
   },
+  "projects": {
+    "message": "Праекты"
+  },
+  "lastEdited": {
+    "message": "Апошні рэдагаваны"
+  },
+  "editSecret": {
+    "message": "Рэдагаваць сакрэт"
+  },
+  "addSecret": {
+    "message": "Дадаць сакрэт"
+  },
+  "copySecretName": {
+    "message": "Капіяваць назву сакрэта"
+  },
+  "copySecretValue": {
+    "message": "Капіяваць значэнне сакрэту"
+  },
+  "deleteSecret": {
+    "message": "Выдаліць сакрэт"
+  },
+  "deleteSecrets": {
+    "message": "Выдаліць сакрэты"
+  },
+  "project": {
+    "message": "Праект"
+  },
+  "editProject": {
+    "message": "Рэдагаваць праект"
+  },
+  "viewProject": {
+    "message": "Прагледзець праект"
+  },
+  "deleteProject": {
+    "message": "Выдаліць праект"
+  },
+  "deleteProjects": {
+    "message": "Выдаліць праекты"
+  },
+  "secret": {
+    "message": "Сакрэт"
+  },
+  "serviceAccount": {
+    "message": "Сэрвісны ўліковы запіс"
+  },
+  "serviceAccounts": {
+    "message": "Сэрвісныя ўліковыя запісы"
+  },
+  "new": {
+    "message": "Новы"
+  },
+  "secrets": {
+    "message": "Сакрэты"
+  },
+  "nameValuePair": {
+    "message": "Парная назва/значэнне"
+  },
+  "secretEdited": {
+    "message": "Сакрэт адрэдагаваны"
+  },
+  "secretCreated": {
+    "message": "Сакрэт створаны"
+  },
+  "newSecret": {
+    "message": "Новы сакрэт"
+  },
+  "newServiceAccount": {
+    "message": "Новы сэрвісны ўліковы запіс"
+  },
+  "secretsNoItemsTitle": {
+    "message": "Няма сакрэтаў для паказу"
+  },
+  "secretsNoItemsMessage": {
+    "message": "Каб пачаць, дадайце новы сакрэт або імпартуйце сакрэты."
+  },
+  "serviceAccountsNoItemsTitle": {
+    "message": "Адсутнічаюць элементы для паказу"
+  },
+  "serviceAccountsNoItemsMessage": {
+    "message": "Стварыць новы сэрвісны ўліковы запіс, каб пачаць аўтаматызацыю доступу да сакрэту."
+  },
+  "searchSecrets": {
+    "message": "Пошук сакрэтаў"
+  },
+  "deleteServiceAccounts": {
+    "message": "Выдаліць сэрвісныя ўліковыя запісы"
+  },
+  "deleteServiceAccount": {
+    "message": "Выдаліць сэрвісны ўліковы запіс"
+  },
+  "viewServiceAccount": {
+    "message": "Паглядзець сэрвісны ўліковы запіс"
+  },
+  "searchServiceAccounts": {
+    "message": "Пошук сэрвісных уліковых запісаў"
+  },
+  "addProject": {
+    "message": "Дадаць праект"
+  },
+  "projectEdited": {
+    "message": "Праект адрэдагаваны"
+  },
+  "projectSaved": {
+    "message": "Праект захаваны"
+  },
+  "projectCreated": {
+    "message": "Праект створаны"
+  },
+  "projectName": {
+    "message": "Назва праекта"
+  },
+  "newProject": {
+    "message": "Новы праект"
+  },
+  "softDeleteSecretWarning": {
+    "message": "Выдаленне сакрэтаў можа паўплываць на існуючыя інтэграцыі."
+  },
+  "softDeletesSuccessToast": {
+    "message": "Сакрэты адпраўлены ў сметніцу"
+  },
+  "serviceAccountCreated": {
+    "message": "Сэрвісныя ўліковыя запісы створаны"
+  },
+  "smAccess": {
+    "message": "Доступ"
+  },
+  "projectCommaSecret": {
+    "message": "Праект, сакрэт"
+  },
+  "serviceAccountName": {
+    "message": "Назва сэрвіснага ўліковага запісу"
+  },
+  "newSaSelectAccess": {
+    "message": "Увядзіце або выберыце праекты (сакрэты)"
+  },
+  "newSaTypeToFilter": {
+    "message": "Увядзіце, каб адфільтраваць"
+  },
+  "deleteProjectsToast": {
+    "message": "Праекты выдалены"
+  },
+  "deleteProjectToast": {
+    "message": "Праект і ўсе звязаныя сакрэты былі выдалены"
+  },
+  "deleteProjectDialogMessage": {
+    "message": "Выдаленне праекта $PROJECT$ з'яўляецца незваротным дзеяннем і яго нельга будзе адрабіць.",
+    "placeholders": {
+      "project": {
+        "content": "$1",
+        "example": "project name"
+      }
+    }
+  },
+  "deleteProjectInputLabel": {
+    "message": "Увядзіце \"$CONFIRM$\", каб працягнуць",
+    "placeholders": {
+      "confirm": {
+        "content": "$1",
+        "example": "Delete 3 Projects"
+      }
+    }
+  },
+  "deleteProjectConfirmMessage": {
+    "message": "Выдаліць $PROJECT$",
+    "placeholders": {
+      "project": {
+        "content": "$1",
+        "example": "project name"
+      }
+    }
+  },
+  "deleteProjectsConfirmMessage": {
+    "message": "Выдаліць $COUNT$ праекты(-аў)",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "deleteProjectsDialogMessage": {
+    "message": "Выдаленне праектаў з'яўляецца незваротным дзеяннем і яго нельга будзе адрабіць."
+  },
+  "projectsNoItemsTitle": {
+    "message": "Няма праектаў для адлюстравання"
+  },
+  "projectsNoItemsMessage": {
+    "message": "Дадаць новы праект, каб пачаць арганізоўваць сакрэты."
+  },
+  "smConfirmationRequired": {
+    "message": "Патрабуецца пацверджанне"
+  },
+  "bulkDeleteProjectsErrorMessage": {
+    "message": "Немагчыма выдаліць наступныя праекты:"
+  },
+  "softDeleteSuccessToast": {
+    "message": "Сакрэт адпраўлены ў сметніцу"
+  },
+  "searchProjects": {
+    "message": "Шукаць праекты"
+  },
+  "accessTokens": {
+    "message": "Токены доступу"
+  },
+  "createAccessToken": {
+    "message": "Стварыць токены доступу"
+  },
+  "expires": {
+    "message": "Заканчваецца"
+  },
+  "canRead": {
+    "message": "Можна прачытаць"
+  },
+  "accessTokensNoItemsTitle": {
+    "message": "Няма токенаў доступу для паказу"
+  },
+  "accessTokensNoItemsDesc": {
+    "message": "Каб пачаць, стварыце токен доступу"
+  },
+  "downloadAccessToken": {
+    "message": "Спампуйце або скапіюйце перад закрыццём."
+  },
+  "expiresOnAccessToken": {
+    "message": "Заканчваецца:"
+  },
+  "accessTokenCallOutTitle": {
+    "message": "Токены доступу не захоўваюцца і не могуць быць атрыманы"
+  },
+  "copyToken": {
+    "message": "Капіяваць токен"
+  },
+  "accessToken": {
+    "message": "Доступ да токена"
+  },
+  "accessTokenExpirationRequired": {
+    "message": "Патрабуецца дата заканчэння"
+  },
+  "accessTokenCreatedAndCopied": {
+    "message": "Доступ да токена створаны і скапіяваны ў буфер абмену"
+  },
+  "accessTokenPermissionsBetaNotification": {
+    "message": "Кіраванне дазволамі недаступна для бэта-версіі."
+  },
+  "revokeAccessToken": {
+    "message": "Адклікаць токен доступу"
+  },
+  "submenu": {
+    "message": "Падменю"
+  },
   "from": {
     "message": "Ад"
   },

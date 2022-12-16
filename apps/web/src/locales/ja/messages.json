@@ -5487,6 +5487,255 @@
   "multiSelectClearAll": {
     "message": "すべてクリア"
   },
+  "projects": {
+    "message": "プロジェクト"
+  },
+  "lastEdited": {
+    "message": "最終編集日"
+  },
+  "editSecret": {
+    "message": "シークレットを編集"
+  },
+  "addSecret": {
+    "message": "シークレットを追加"
+  },
+  "copySecretName": {
+    "message": "シークレット名をコピー"
+  },
+  "copySecretValue": {
+    "message": "シークレット値をコピー"
+  },
+  "deleteSecret": {
+    "message": "シークレットを削除"
+  },
+  "deleteSecrets": {
+    "message": "シークレットを削除"
+  },
+  "project": {
+    "message": "プロジェクト"
+  },
+  "editProject": {
+    "message": "プロジェクトを編集"
+  },
+  "viewProject": {
+    "message": "プロジェクトを表示"
+  },
+  "deleteProject": {
+    "message": "プロジェクトを削除"
+  },
+  "deleteProjects": {
+    "message": "プロジェクトを削除"
+  },
+  "secret": {
+    "message": "シークレット"
+  },
+  "serviceAccount": {
+    "message": "サービスアカウント"
+  },
+  "serviceAccounts": {
+    "message": "サービスアカウント"
+  },
+  "new": {
+    "message": "新規作成"
+  },
+  "secrets": {
+    "message": "シークレット"
+  },
+  "nameValuePair": {
+    "message": "名前と値のペア"
+  },
+  "secretEdited": {
+    "message": "シークレットを編集しました"
+  },
+  "secretCreated": {
+    "message": "シークレットを作成しました"
+  },
+  "newSecret": {
+    "message": "新しいシークレット"
+  },
+  "newServiceAccount": {
+    "message": "新しいサービスアカウント"
+  },
+  "secretsNoItemsTitle": {
+    "message": "表示するシークレットはありません"
+  },
+  "secretsNoItemsMessage": {
+    "message": "まずは新しいシークレットの追加またはインポートをしてください。"
+  },
+  "serviceAccountsNoItemsTitle": {
+    "message": "まだ表示するものはありません"
+  },
+  "serviceAccountsNoItemsMessage": {
+    "message": "シークレットアクセスを自動化するためには、新しいサービスアカウントを作成してください。"
+  },
+  "searchSecrets": {
+    "message": "シークレットを検索"
+  },
+  "deleteServiceAccounts": {
+    "message": "サービスアカウントを削除"
+  },
+  "deleteServiceAccount": {
+    "message": "サービスアカウントを削除"
+  },
+  "viewServiceAccount": {
+    "message": "サービスアカウントを表示"
+  },
+  "searchServiceAccounts": {
+    "message": "サービスアカウントを検索"
+  },
+  "addProject": {
+    "message": "プロジェクトを追加"
+  },
+  "projectEdited": {
+    "message": "プロジェクトを編集しました"
+  },
+  "projectSaved": {
+    "message": "プロジェクトを保存しました"
+  },
+  "projectCreated": {
+    "message": "プロジェクトを作成しました"
+  },
+  "projectName": {
+    "message": "プロジェクト名"
+  },
+  "newProject": {
+    "message": "新しいプロジェクト"
+  },
+  "softDeleteSecretWarning": {
+    "message": "シークレットを削除すると、既存の連携に影響する可能性があります。"
+  },
+  "softDeletesSuccessToast": {
+    "message": "シークレットをゴミ箱に送る"
+  },
+  "serviceAccountCreated": {
+    "message": "サービスアカウントを作成しました"
+  },
+  "smAccess": {
+    "message": "アクセス"
+  },
+  "projectCommaSecret": {
+    "message": "プロジェクト、シークレット"
+  },
+  "serviceAccountName": {
+    "message": "サービスアカウント名"
+  },
+  "newSaSelectAccess": {
+    "message": "プロジェクトまたはシークレットを入力・選択"
+  },
+  "newSaTypeToFilter": {
+    "message": "入力して絞り込む"
+  },
+  "deleteProjectsToast": {
+    "message": "プロジェクトを削除しました"
+  },
+  "deleteProjectToast": {
+    "message": "プロジェクトと関連するすべてのシークレットを削除しました"
+  },
+  "deleteProjectDialogMessage": {
+    "message": "プロジェクト $PROJECT$ を削除すると元に戻せません。",
+    "placeholders": {
+      "project": {
+        "content": "$1",
+        "example": "project name"
+      }
+    }
+  },
+  "deleteProjectInputLabel": {
+    "message": "Type \"$CONFIRM$\" to continue",
+    "placeholders": {
+      "confirm": {
+        "content": "$1",
+        "example": "Delete 3 Projects"
+      }
+    }
+  },
+  "deleteProjectConfirmMessage": {
+    "message": "Delete $PROJECT$",
+    "placeholders": {
+      "project": {
+        "content": "$1",
+        "example": "project name"
+      }
+    }
+  },
+  "deleteProjectsConfirmMessage": {
+    "message": "Delete $COUNT$ Projects",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "deleteProjectsDialogMessage": {
+    "message": "Deleting projects is permanent and irreversible."
+  },
+  "projectsNoItemsTitle": {
+    "message": "No projects to display"
+  },
+  "projectsNoItemsMessage": {
+    "message": "Add a new project to get started organizing secrets."
+  },
+  "smConfirmationRequired": {
+    "message": "Confirmation required"
+  },
+  "bulkDeleteProjectsErrorMessage": {
+    "message": "The following projects could not be deleted:"
+  },
+  "softDeleteSuccessToast": {
+    "message": "Secret sent to trash"
+  },
+  "searchProjects": {
+    "message": "Search Projects"
+  },
+  "accessTokens": {
+    "message": "Access tokens"
+  },
+  "createAccessToken": {
+    "message": "Create access token"
+  },
+  "expires": {
+    "message": "Expires"
+  },
+  "canRead": {
+    "message": "Can Read"
+  },
+  "accessTokensNoItemsTitle": {
+    "message": "No access tokens to show"
+  },
+  "accessTokensNoItemsDesc": {
+    "message": "To get started, create an access token"
+  },
+  "downloadAccessToken": {
+    "message": "Download or copy before closing."
+  },
+  "expiresOnAccessToken": {
+    "message": "Expires on:"
+  },
+  "accessTokenCallOutTitle": {
+    "message": "Access tokens are not stored and cannot be retrieved"
+  },
+  "copyToken": {
+    "message": "Copy token"
+  },
+  "accessToken": {
+    "message": "Access token"
+  },
+  "accessTokenExpirationRequired": {
+    "message": "Expiration date required"
+  },
+  "accessTokenCreatedAndCopied": {
+    "message": "Access token created and copied to clipboard"
+  },
+  "accessTokenPermissionsBetaNotification": {
+    "message": "Permissions management is unavailable for beta."
+  },
+  "revokeAccessToken": {
+    "message": "Revoke Access Token"
+  },
+  "submenu": {
+    "message": "Submenu"
+  },
   "from": {
     "message": "From"
   },

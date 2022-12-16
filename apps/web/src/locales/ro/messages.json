@@ -5487,6 +5487,255 @@
   "multiSelectClearAll": {
     "message": "Ștergeți tot"
   },
+  "projects": {
+    "message": "Projects"
+  },
+  "lastEdited": {
+    "message": "Last Edited"
+  },
+  "editSecret": {
+    "message": "Edit Secret"
+  },
+  "addSecret": {
+    "message": "Add Secret"
+  },
+  "copySecretName": {
+    "message": "Copy Secret Name"
+  },
+  "copySecretValue": {
+    "message": "Copy Secret Value"
+  },
+  "deleteSecret": {
+    "message": "Delete Secret"
+  },
+  "deleteSecrets": {
+    "message": "Delete Secrets"
+  },
+  "project": {
+    "message": "Project"
+  },
+  "editProject": {
+    "message": "Edit Project"
+  },
+  "viewProject": {
+    "message": "View Project"
+  },
+  "deleteProject": {
+    "message": "Delete Project"
+  },
+  "deleteProjects": {
+    "message": "Delete Projects"
+  },
+  "secret": {
+    "message": "Secret"
+  },
+  "serviceAccount": {
+    "message": "Service Account"
+  },
+  "serviceAccounts": {
+    "message": "Service Accounts"
+  },
+  "new": {
+    "message": "New"
+  },
+  "secrets": {
+    "message": "Secrets"
+  },
+  "nameValuePair": {
+    "message": "Name/Value Pair"
+  },
+  "secretEdited": {
+    "message": "Secret edited"
+  },
+  "secretCreated": {
+    "message": "Secret created"
+  },
+  "newSecret": {
+    "message": "New Secret"
+  },
+  "newServiceAccount": {
+    "message": "New Service Account"
+  },
+  "secretsNoItemsTitle": {
+    "message": "No secrets to show"
+  },
+  "secretsNoItemsMessage": {
+    "message": "To get started, add a new secret or import secrets."
+  },
+  "serviceAccountsNoItemsTitle": {
+    "message": "Nothing to show yet"
+  },
+  "serviceAccountsNoItemsMessage": {
+    "message": "Create a new Service Account to get started automating secret access."
+  },
+  "searchSecrets": {
+    "message": "Search Secrets"
+  },
+  "deleteServiceAccounts": {
+    "message": "Delete Service Accounts"
+  },
+  "deleteServiceAccount": {
+    "message": "Delete Service Account"
+  },
+  "viewServiceAccount": {
+    "message": "View Service Account"
+  },
+  "searchServiceAccounts": {
+    "message": "Search Service Accounts"
+  },
+  "addProject": {
+    "message": "Add Project"
+  },
+  "projectEdited": {
+    "message": "Project edited"
+  },
+  "projectSaved": {
+    "message": "Project saved"
+  },
+  "projectCreated": {
+    "message": "Project created"
+  },
+  "projectName": {
+    "message": "Project Name"
+  },
+  "newProject": {
+    "message": "New Project"
+  },
+  "softDeleteSecretWarning": {
+    "message": "Deleting secrets can affect existing integrations."
+  },
+  "softDeletesSuccessToast": {
+    "message": "Secrets sent to trash"
+  },
+  "serviceAccountCreated": {
+    "message": "Service Account Created"
+  },
+  "smAccess": {
+    "message": "Access"
+  },
+  "projectCommaSecret": {
+    "message": "Project, Secret"
+  },
+  "serviceAccountName": {
+    "message": "Service account name"
+  },
+  "newSaSelectAccess": {
+    "message": "Type or Select Projects or Secrets"
+  },
+  "newSaTypeToFilter": {
+    "message": "Type to Filter"
+  },
+  "deleteProjectsToast": {
+    "message": "Projects deleted"
+  },
+  "deleteProjectToast": {
+    "message": "The project and all associated secrets have been deleted"
+  },
+  "deleteProjectDialogMessage": {
+    "message": "Deleting project $PROJECT$ is permanent and irreversible.",
+    "placeholders": {
+      "project": {
+        "content": "$1",
+        "example": "project name"
+      }
+    }
+  },
+  "deleteProjectInputLabel": {
+    "message": "Type \"$CONFIRM$\" to continue",
+    "placeholders": {
+      "confirm": {
+        "content": "$1",
+        "example": "Delete 3 Projects"
+      }
+    }
+  },
+  "deleteProjectConfirmMessage": {
+    "message": "Delete $PROJECT$",
+    "placeholders": {
+      "project": {
+        "content": "$1",
+        "example": "project name"
+      }
+    }
+  },
+  "deleteProjectsConfirmMessage": {
+    "message": "Delete $COUNT$ Projects",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "deleteProjectsDialogMessage": {
+    "message": "Deleting projects is permanent and irreversible."
+  },
+  "projectsNoItemsTitle": {
+    "message": "No projects to display"
+  },
+  "projectsNoItemsMessage": {
+    "message": "Add a new project to get started organizing secrets."
+  },
+  "smConfirmationRequired": {
+    "message": "Confirmation required"
+  },
+  "bulkDeleteProjectsErrorMessage": {
+    "message": "The following projects could not be deleted:"
+  },
+  "softDeleteSuccessToast": {
+    "message": "Secret sent to trash"
+  },
+  "searchProjects": {
+    "message": "Search Projects"
+  },
+  "accessTokens": {
+    "message": "Access tokens"
+  },
+  "createAccessToken": {
+    "message": "Create access token"
+  },
+  "expires": {
+    "message": "Expires"
+  },
+  "canRead": {
+    "message": "Can Read"
+  },
+  "accessTokensNoItemsTitle": {
+    "message": "No access tokens to show"
+  },
+  "accessTokensNoItemsDesc": {
+    "message": "To get started, create an access token"
+  },
+  "downloadAccessToken": {
+    "message": "Download or copy before closing."
+  },
+  "expiresOnAccessToken": {
+    "message": "Expires on:"
+  },
+  "accessTokenCallOutTitle": {
+    "message": "Access tokens are not stored and cannot be retrieved"
+  },
+  "copyToken": {
+    "message": "Copy token"
+  },
+  "accessToken": {
+    "message": "Access token"
+  },
+  "accessTokenExpirationRequired": {
+    "message": "Expiration date required"
+  },
+  "accessTokenCreatedAndCopied": {
+    "message": "Access token created and copied to clipboard"
+  },
+  "accessTokenPermissionsBetaNotification": {
+    "message": "Permissions management is unavailable for beta."
+  },
+  "revokeAccessToken": {
+    "message": "Revoke Access Token"
+  },
+  "submenu": {
+    "message": "Submenu"
+  },
   "from": {
     "message": "From"
   },

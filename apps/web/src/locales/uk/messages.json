@@ -5487,6 +5487,255 @@
   "multiSelectClearAll": {
     "message": "Очистити все"
   },
+  "projects": {
+    "message": "Проєкти"
+  },
+  "lastEdited": {
+    "message": "Востаннє редаговано"
+  },
+  "editSecret": {
+    "message": "Редагувати секрет"
+  },
+  "addSecret": {
+    "message": "Додати секрет"
+  },
+  "copySecretName": {
+    "message": "Копіювати назву секрету"
+  },
+  "copySecretValue": {
+    "message": "Копіювати значення секрету"
+  },
+  "deleteSecret": {
+    "message": "Видалити секрет"
+  },
+  "deleteSecrets": {
+    "message": "Видалити секрети"
+  },
+  "project": {
+    "message": "Проєкт"
+  },
+  "editProject": {
+    "message": "Редагувати проєкт"
+  },
+  "viewProject": {
+    "message": "Переглянути проєкт"
+  },
+  "deleteProject": {
+    "message": "Видалити проєкт"
+  },
+  "deleteProjects": {
+    "message": "Видалити проєкти"
+  },
+  "secret": {
+    "message": "Секрет"
+  },
+  "serviceAccount": {
+    "message": "Службовий обліковий запис"
+  },
+  "serviceAccounts": {
+    "message": "Службові облікові записи"
+  },
+  "new": {
+    "message": "Новий"
+  },
+  "secrets": {
+    "message": "Секрети"
+  },
+  "nameValuePair": {
+    "message": "Пара – Назва/Значення"
+  },
+  "secretEdited": {
+    "message": "Секрет відредаговано"
+  },
+  "secretCreated": {
+    "message": "Секрет створено"
+  },
+  "newSecret": {
+    "message": "Новий секрет"
+  },
+  "newServiceAccount": {
+    "message": "Новий службовий обліковий запис"
+  },
+  "secretsNoItemsTitle": {
+    "message": "Немає секретів для показу"
+  },
+  "secretsNoItemsMessage": {
+    "message": "Для початку додайте або імпортуйте секрети."
+  },
+  "serviceAccountsNoItemsTitle": {
+    "message": "Наразі немає даних для показу"
+  },
+  "serviceAccountsNoItemsMessage": {
+    "message": "Створіть новий службовий обліковий запис, щоб почати автоматизацію доступу до секретів."
+  },
+  "searchSecrets": {
+    "message": "Шукати секрети"
+  },
+  "deleteServiceAccounts": {
+    "message": "Видалити службові облікові записи"
+  },
+  "deleteServiceAccount": {
+    "message": "Видалити службовий обліковий запис"
+  },
+  "viewServiceAccount": {
+    "message": "Переглянути службовий обліковий запис"
+  },
+  "searchServiceAccounts": {
+    "message": "Пошук службових облікових записів"
+  },
+  "addProject": {
+    "message": "Додати проєкт"
+  },
+  "projectEdited": {
+    "message": "Проєкт відредаговано"
+  },
+  "projectSaved": {
+    "message": "Проєкт збережено"
+  },
+  "projectCreated": {
+    "message": "Проєкт створено"
+  },
+  "projectName": {
+    "message": "Назва проєкту"
+  },
+  "newProject": {
+    "message": "Новий проєкт"
+  },
+  "softDeleteSecretWarning": {
+    "message": "Видалення секретів може вплинути на наявні інтеграції."
+  },
+  "softDeletesSuccessToast": {
+    "message": "Секрети переміщено до смітника"
+  },
+  "serviceAccountCreated": {
+    "message": "Службовий обліковий запис створено"
+  },
+  "smAccess": {
+    "message": "Доступ"
+  },
+  "projectCommaSecret": {
+    "message": "Проєкт, секрет"
+  },
+  "serviceAccountName": {
+    "message": "Назва сервісного облікового запису"
+  },
+  "newSaSelectAccess": {
+    "message": "Введіть або виберіть проєкти чи секрети"
+  },
+  "newSaTypeToFilter": {
+    "message": "Введіть, щоб фільтрувати"
+  },
+  "deleteProjectsToast": {
+    "message": "Проєкти видалено"
+  },
+  "deleteProjectToast": {
+    "message": "Проєкт і всі пов'язані секрети було видалено"
+  },
+  "deleteProjectDialogMessage": {
+    "message": "Видалення проєкту $PROJECT$ – незворотна дія.",
+    "placeholders": {
+      "project": {
+        "content": "$1",
+        "example": "project name"
+      }
+    }
+  },
+  "deleteProjectInputLabel": {
+    "message": "Введіть \"$CONFIRM$\" для продовження",
+    "placeholders": {
+      "confirm": {
+        "content": "$1",
+        "example": "Delete 3 Projects"
+      }
+    }
+  },
+  "deleteProjectConfirmMessage": {
+    "message": "Видалити $PROJECT$",
+    "placeholders": {
+      "project": {
+        "content": "$1",
+        "example": "project name"
+      }
+    }
+  },
+  "deleteProjectsConfirmMessage": {
+    "message": "Видалити $COUNT$ проєктів",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "deleteProjectsDialogMessage": {
+    "message": "Видалення проєктів – це незворотна дія."
+  },
+  "projectsNoItemsTitle": {
+    "message": "Немає проєктів для показу"
+  },
+  "projectsNoItemsMessage": {
+    "message": "Додайте новий проєкт, щоб почати організовувати секрети."
+  },
+  "smConfirmationRequired": {
+    "message": "Потрібне підтвердження"
+  },
+  "bulkDeleteProjectsErrorMessage": {
+    "message": "Зазначені проєкти неможливо видалити:"
+  },
+  "softDeleteSuccessToast": {
+    "message": "Секрет переміщено до смітника"
+  },
+  "searchProjects": {
+    "message": "Шукати проєкти"
+  },
+  "accessTokens": {
+    "message": "Токени доступу"
+  },
+  "createAccessToken": {
+    "message": "Створити токен доступу"
+  },
+  "expires": {
+    "message": "Завершується"
+  },
+  "canRead": {
+    "message": "Може читати"
+  },
+  "accessTokensNoItemsTitle": {
+    "message": "Немає токенів доступу"
+  },
+  "accessTokensNoItemsDesc": {
+    "message": "Щоб розпочати, створіть токен доступу"
+  },
+  "downloadAccessToken": {
+    "message": "Завантажте чи скопіюйте перед закриттям."
+  },
+  "expiresOnAccessToken": {
+    "message": "Завершується:"
+  },
+  "accessTokenCallOutTitle": {
+    "message": "Токени доступу не зберігаються і не можуть бути завантажені"
+  },
+  "copyToken": {
+    "message": "Копіювати токен"
+  },
+  "accessToken": {
+    "message": "Токен доступу"
+  },
+  "accessTokenExpirationRequired": {
+    "message": "Дата завершення обов'язкова"
+  },
+  "accessTokenCreatedAndCopied": {
+    "message": "Токен доступу створено і скопійовано до буфера обміну"
+  },
+  "accessTokenPermissionsBetaNotification": {
+    "message": "Керування дозволами недоступне у бета-версії."
+  },
+  "revokeAccessToken": {
+    "message": "Відкликати токен доступу"
+  },
+  "submenu": {
+    "message": "Підменю"
+  },
   "from": {
     "message": "Від"
   },

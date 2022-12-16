@@ -2915,7 +2915,7 @@
     "message": "Bekræft bruger"
   },
   "hasBeenConfirmed": {
-    "message": "$USER$ er blevet bekræftet.",
+    "message": "$USER$ bekræftet.",
     "placeholders": {
       "user": {
         "content": "$1",
@@ -2936,7 +2936,7 @@
     "message": "Slutdato"
   },
   "verifyEmail": {
-    "message": "Bekræft email"
+    "message": "Bekræft e-mail"
   },
   "verifyEmailDesc": {
     "message": "Bekræft din e-mailadresse for at låse op for adgangen til alle funktioner."
@@ -2948,7 +2948,7 @@
     "message": "Tjek din e-mail indbakke for et bekræftelseslink."
   },
   "emailVerified": {
-    "message": "Din email er blevet bekræftet."
+    "message": "Kontoe-mail bekræftet"
   },
   "emailVerifiedFailed": {
     "message": "Kan ikke bekræfte din e-mail. Prøv at sende en ny verifikations-email."
@@ -3137,7 +3137,7 @@
     "message": "Indtast dit installations-id"
   },
   "limitSubscriptionDesc": {
-    "message": "Indstil en pladsgrænse for dit abonnement. Når denne grænse er nået, vil du ikke kunne invitere nye brugere."
+    "message": "Opsæt pladskvote for abonnementet. Når kvoten er opbrugt, vil du ikke kunne invitere nye brugere."
   },
   "maxSeatLimit": {
     "message": "Pladskvote (valgfrit)",
@@ -3182,10 +3182,10 @@
     "message": "For yderligere hjælp til håndtering af dit abonnement, kontakt venligst kundesupport."
   },
   "subscriptionUserSeatsUnlimitedAutoscale": {
-    "message": "Justeringer af dit abonnement vil resultere i forholdsmæssige ændringer af dine faktureringstotaler. Hvis nyligt inviterede brugere overstiger dine abonnementspladser, vil du straks modtage en forholdsmæssig opkrævning for de ekstra brugere."
+    "message": "Abonnementsjusteringer vil resultere i forholdsmæssige ændringer af dine faktureringstotaler. Overstiger antal nyligt inviterede brugere abonnementskvoten, modtager du straks en forholdsmæssig opkrævning for de ekstra brugere."
   },
   "subscriptionUserSeatsLimitedAutoscale": {
-    "message": "Justeringer af dit abonnement vil resultere i forholdsmæssige ændringer af dine faktureringstotaler. Hvis nyligt inviterede brugere overskrider dine abonnementspladser, vil du straks modtage en forholdsmæssig opkrævning for de ekstra brugere, indtil din pladsgrænse på $MAX$ er nået.",
+    "message": "Abonnementsjusteringer vil resultere i forholdsmæssige ændringer af dine faktureringstotaler. Overstiger antal nyligt inviterede brugere abonnementskvoten, modtager du straks en forholdsmæssig opkrævning for de ekstra brugere, indtil pladskvoten på $MAX$ er nået.",
     "placeholders": {
       "max": {
         "content": "$1",
@@ -3194,7 +3194,7 @@
     }
   },
   "subscriptionFreePlan": {
-    "message": "Du kan ikke invitere mere end $COUNT$ brugere uden at opgradere dit abonnement.",
+    "message": "Der kan ikke inviteres flere end $COUNT$ brugere uden en abonnementsopgradering.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -3203,7 +3203,7 @@
     }
   },
   "subscriptionFamiliesPlan": {
-    "message": "Du kan ikke invitere mere end $COUNT$ brugere uden at opgradere dit abonnement. Kontakt venligst kundesupport for at opgradere.",
+    "message": "Der kan ikke inviteres flere end $COUNT$ brugere uden en abonnementsopgradering. Kontakt Kundesupport vedr. opgradering.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -3212,7 +3212,7 @@
     }
   },
   "subscriptionSponsoredFamiliesPlan": {
-    "message": "Dit abonnement muliggør i alt $COUNT$ brugere. Abonnement er sponsoreret og faktureres til en ekstern organisation.",
+    "message": "Dit abonnement muliggør i alt $COUNT$ brugere. Abonnement er sponseret og faktureres til en ekstern organisation.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -3221,7 +3221,7 @@
     }
   },
   "subscriptionMaxReached": {
-    "message": "Justeringer af dit abonnement vil resultere i forholdsmæssige ændringer af dine faktureringstotaler. Du kan ikke invitere flere end $COUNT$ brugere uden at øge dine abonnementspladser.",
+    "message": "Abonnementsjusteringer vil resultere i forholdsmæssige ændringer af dine faktureringstotaler. Der kan ikke inviteres flere end $COUNT$ brugere uden at øge antallet af abonnementspladser.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -4117,7 +4117,7 @@
     "message": "Tilpasset"
   },
   "customDesc": {
-    "message": "Tillader mere granulær kontrol af brugertilladelser for avancerede opsætninger."
+    "message": "Tildel tilpassede tilladelser til medlemmer"
   },
   "customDescNonEnterpriseStart": {
     "message": "Tilpassede roller er en ",
@@ -5486,6 +5486,255 @@
   },
   "multiSelectClearAll": {
     "message": "Ryd alt"
+  },
+  "projects": {
+    "message": "Projekter"
+  },
+  "lastEdited": {
+    "message": "Senest redigeret"
+  },
+  "editSecret": {
+    "message": "Redigér hemmelighed"
+  },
+  "addSecret": {
+    "message": "Tilføj hemmelighed"
+  },
+  "copySecretName": {
+    "message": "Kopiér hemmeligheds navn"
+  },
+  "copySecretValue": {
+    "message": "Kopér hemmeligheds værdi"
+  },
+  "deleteSecret": {
+    "message": "Slet hemmelighed"
+  },
+  "deleteSecrets": {
+    "message": "Slet hemmeligheder"
+  },
+  "project": {
+    "message": "Projekt"
+  },
+  "editProject": {
+    "message": "Redigér projekt"
+  },
+  "viewProject": {
+    "message": "Vis projekt"
+  },
+  "deleteProject": {
+    "message": "Slet projekt"
+  },
+  "deleteProjects": {
+    "message": "Slet projekter"
+  },
+  "secret": {
+    "message": "Hemmelighed"
+  },
+  "serviceAccount": {
+    "message": "Tjenestekonto"
+  },
+  "serviceAccounts": {
+    "message": "Tjenestekonti"
+  },
+  "new": {
+    "message": "New"
+  },
+  "secrets": {
+    "message": "Hemmelighed"
+  },
+  "nameValuePair": {
+    "message": "Navn/værdipar"
+  },
+  "secretEdited": {
+    "message": "Hemmelighed redigeret"
+  },
+  "secretCreated": {
+    "message": "Hemmelighed oprettet"
+  },
+  "newSecret": {
+    "message": "Ny hemmelighed"
+  },
+  "newServiceAccount": {
+    "message": "Ny tjenestekonto"
+  },
+  "secretsNoItemsTitle": {
+    "message": "Ingen hemmeligheder at vise"
+  },
+  "secretsNoItemsMessage": {
+    "message": "Tilføj en ny hemmelighed eller importér hemmeligheder for at komme i gang."
+  },
+  "serviceAccountsNoItemsTitle": {
+    "message": "Intet at vise endnu"
+  },
+  "serviceAccountsNoItemsMessage": {
+    "message": "Create a new Service Account to get started automating secret access."
+  },
+  "searchSecrets": {
+    "message": "Søg i hemmeligheder"
+  },
+  "deleteServiceAccounts": {
+    "message": "Slet tjenestekonti"
+  },
+  "deleteServiceAccount": {
+    "message": "Slet tjenestekonto"
+  },
+  "viewServiceAccount": {
+    "message": "Vis tjenestekonto"
+  },
+  "searchServiceAccounts": {
+    "message": "Søg efter tjenestekonti"
+  },
+  "addProject": {
+    "message": "Tilføj projekt"
+  },
+  "projectEdited": {
+    "message": "Projekt redigeret"
+  },
+  "projectSaved": {
+    "message": "Projekt gemt"
+  },
+  "projectCreated": {
+    "message": "Projekt oprettet"
+  },
+  "projectName": {
+    "message": "Projektnavn"
+  },
+  "newProject": {
+    "message": "Nyt projekt"
+  },
+  "softDeleteSecretWarning": {
+    "message": "Sletning af hemmeligheder kan påvirke eksisterende integrationer."
+  },
+  "softDeletesSuccessToast": {
+    "message": "Hemmelighed sendt til papirkurv"
+  },
+  "serviceAccountCreated": {
+    "message": "Tjenestekonto oprettet"
+  },
+  "smAccess": {
+    "message": "Tilgå"
+  },
+  "projectCommaSecret": {
+    "message": "Projekt, Hemmelighed"
+  },
+  "serviceAccountName": {
+    "message": "Tjenestekontonavn"
+  },
+  "newSaSelectAccess": {
+    "message": "Angiv/vælg projekter eller hemmeligheder"
+  },
+  "newSaTypeToFilter": {
+    "message": "Angiv for at filtrere"
+  },
+  "deleteProjectsToast": {
+    "message": "Projekter slettet"
+  },
+  "deleteProjectToast": {
+    "message": "Projektet og alle tilknyttede hemmeligheder er slettet"
+  },
+  "deleteProjectDialogMessage": {
+    "message": "Sletning af projektet $PROJECT$ er permanent og irreversibelt.",
+    "placeholders": {
+      "project": {
+        "content": "$1",
+        "example": "project name"
+      }
+    }
+  },
+  "deleteProjectInputLabel": {
+    "message": "Angiv \"$CONFIRM$\" for at fortsætte",
+    "placeholders": {
+      "confirm": {
+        "content": "$1",
+        "example": "Delete 3 Projects"
+      }
+    }
+  },
+  "deleteProjectConfirmMessage": {
+    "message": "Slet $PROJECT$",
+    "placeholders": {
+      "project": {
+        "content": "$1",
+        "example": "project name"
+      }
+    }
+  },
+  "deleteProjectsConfirmMessage": {
+    "message": "Slet $COUNT$ projekter",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "deleteProjectsDialogMessage": {
+    "message": "Sletning af projekter er permanent og irreversibelt."
+  },
+  "projectsNoItemsTitle": {
+    "message": "Ingen projekter at vise"
+  },
+  "projectsNoItemsMessage": {
+    "message": "Tilføj et nyt projekt for at komme i gang med at organisere hemmeligheder."
+  },
+  "smConfirmationRequired": {
+    "message": "Bekræftelse kræves"
+  },
+  "bulkDeleteProjectsErrorMessage": {
+    "message": "Flg. projekter kunne ikke slettes:"
+  },
+  "softDeleteSuccessToast": {
+    "message": "Hemmelighed sendt til papirkurv"
+  },
+  "searchProjects": {
+    "message": "Søg i projekter"
+  },
+  "accessTokens": {
+    "message": "Adgangstokener"
+  },
+  "createAccessToken": {
+    "message": "Opret adgangstoken"
+  },
+  "expires": {
+    "message": "Udløber"
+  },
+  "canRead": {
+    "message": "Kan læse"
+  },
+  "accessTokensNoItemsTitle": {
+    "message": "Ingen adgangstokener at vise"
+  },
+  "accessTokensNoItemsDesc": {
+    "message": "Opret et adgangstoken for at komme i gang"
+  },
+  "downloadAccessToken": {
+    "message": "Download eller kopiér før lukning."
+  },
+  "expiresOnAccessToken": {
+    "message": "Udløber:"
+  },
+  "accessTokenCallOutTitle": {
+    "message": "Adgangstokener er ikke gemt og kan ikke hentes"
+  },
+  "copyToken": {
+    "message": "Kopiér token"
+  },
+  "accessToken": {
+    "message": "Adgangstoken"
+  },
+  "accessTokenExpirationRequired": {
+    "message": "Udløbsdato er obligatorisk"
+  },
+  "accessTokenCreatedAndCopied": {
+    "message": "Adgangstoken oprettet og kopieret til udklipsholder"
+  },
+  "accessTokenPermissionsBetaNotification": {
+    "message": "Tilladelseshåndtering er utilgængelig i beta."
+  },
+  "revokeAccessToken": {
+    "message": "Ophæv adgangstoken"
+  },
+  "submenu": {
+    "message": "Undermenu"
   },
   "from": {
     "message": "Fra"

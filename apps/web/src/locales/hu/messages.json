@@ -5487,6 +5487,255 @@
   "multiSelectClearAll": {
     "message": "Összes törlése"
   },
+  "projects": {
+    "message": "Projektek"
+  },
+  "lastEdited": {
+    "message": "Utolsó szerkesztés"
+  },
+  "editSecret": {
+    "message": "Titkos kód szerkesztés"
+  },
+  "addSecret": {
+    "message": "Titkos kód hozzáadás"
+  },
+  "copySecretName": {
+    "message": "Titkos kódnév másolás"
+  },
+  "copySecretValue": {
+    "message": "Titkos kódérték másolás"
+  },
+  "deleteSecret": {
+    "message": "Titkos kód törlés"
+  },
+  "deleteSecrets": {
+    "message": "Titkos kódok törlése"
+  },
+  "project": {
+    "message": "Projekt"
+  },
+  "editProject": {
+    "message": "Projekt szerkesztése"
+  },
+  "viewProject": {
+    "message": "Projekt megtekintése"
+  },
+  "deleteProject": {
+    "message": "Projekt törlése"
+  },
+  "deleteProjects": {
+    "message": "Projektek törlése"
+  },
+  "secret": {
+    "message": "Titkos kód"
+  },
+  "serviceAccount": {
+    "message": "Szolgáltatás fiók"
+  },
+  "serviceAccounts": {
+    "message": "Szolgáltatás fiókok"
+  },
+  "new": {
+    "message": "Új"
+  },
+  "secrets": {
+    "message": "Titkos kódok"
+  },
+  "nameValuePair": {
+    "message": "Név/érték pár"
+  },
+  "secretEdited": {
+    "message": "A titkos kód szerkesztésre került."
+  },
+  "secretCreated": {
+    "message": "A titkos kód létrejött."
+  },
+  "newSecret": {
+    "message": "Új titkos kód"
+  },
+  "newServiceAccount": {
+    "message": "Új szolgáltatás fiók"
+  },
+  "secretsNoItemsTitle": {
+    "message": "Nincs megjeleníthető titkos kód."
+  },
+  "secretsNoItemsMessage": {
+    "message": "Az induláshoz adjunk hozzá egy új titkos kódot vagy importáljunk ilyeneket."
+  },
+  "serviceAccountsNoItemsTitle": {
+    "message": "Nincs megjeleníthető tartalom."
+  },
+  "serviceAccountsNoItemsMessage": {
+    "message": "Új szolgáltatás fiók létrehozása a titkos kód automatikus hozzáféréséhez."
+  },
+  "searchSecrets": {
+    "message": "Titkos kódok keresése"
+  },
+  "deleteServiceAccounts": {
+    "message": "Szolgáltatás fiókok törlése"
+  },
+  "deleteServiceAccount": {
+    "message": "Szolgáltatás fiók törlése"
+  },
+  "viewServiceAccount": {
+    "message": "Szolgáltatás fiók megtekintése"
+  },
+  "searchServiceAccounts": {
+    "message": "Szolgáltatás fiókok keresése"
+  },
+  "addProject": {
+    "message": "Projekt hozzáadása"
+  },
+  "projectEdited": {
+    "message": "A projekt szerkesztésre került."
+  },
+  "projectSaved": {
+    "message": "A projekt mentésre került."
+  },
+  "projectCreated": {
+    "message": "A projekt létrejött."
+  },
+  "projectName": {
+    "message": "Projektnév"
+  },
+  "newProject": {
+    "message": "Új projekt"
+  },
+  "softDeleteSecretWarning": {
+    "message": "A titkos kódok törlése érintheti a létező integrációkat."
+  },
+  "softDeletesSuccessToast": {
+    "message": "A titkos kód a lomtárba került."
+  },
+  "serviceAccountCreated": {
+    "message": "A szolgáltatás fiók létrejött."
+  },
+  "smAccess": {
+    "message": "Hozzáférés"
+  },
+  "projectCommaSecret": {
+    "message": "Projekt titkos kód"
+  },
+  "serviceAccountName": {
+    "message": "Szolgáltatás fiók név"
+  },
+  "newSaSelectAccess": {
+    "message": "Gépeljük be vagy válasszunk projekteket vagy titkos kódokat"
+  },
+  "newSaTypeToFilter": {
+    "message": "Gépelés a szűréshez"
+  },
+  "deleteProjectsToast": {
+    "message": "A projekt törésre került."
+  },
+  "deleteProjectToast": {
+    "message": "A projekt és az összes társított titkos kód törlésre került."
+  },
+  "deleteProjectDialogMessage": {
+    "message": "$PROJECT$ projekt törlése végleges és visszafordíthatatlan.",
+    "placeholders": {
+      "project": {
+        "content": "$1",
+        "example": "project name"
+      }
+    }
+  },
+  "deleteProjectInputLabel": {
+    "message": "\"$CONFIRM$\" begépelése a folytatáshoz",
+    "placeholders": {
+      "confirm": {
+        "content": "$1",
+        "example": "Delete 3 Projects"
+      }
+    }
+  },
+  "deleteProjectConfirmMessage": {
+    "message": "$PROJECT$ törlése",
+    "placeholders": {
+      "project": {
+        "content": "$1",
+        "example": "project name"
+      }
+    }
+  },
+  "deleteProjectsConfirmMessage": {
+    "message": "$COUNT$ projekt törlése",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "deleteProjectsDialogMessage": {
+    "message": "A projektek törlése végleges és visszavonhatatlan."
+  },
+  "projectsNoItemsTitle": {
+    "message": "Nincs megjelenítendő projekt."
+  },
+  "projectsNoItemsMessage": {
+    "message": "Új projekt hozzáadása a titkos kódok szervezésének elkezdéséhez."
+  },
+  "smConfirmationRequired": {
+    "message": "Megerősítés szükséges"
+  },
+  "bulkDeleteProjectsErrorMessage": {
+    "message": "A következő projekteket nem lehet törölni:"
+  },
+  "softDeleteSuccessToast": {
+    "message": "A titkos kód a lomtárba került."
+  },
+  "searchProjects": {
+    "message": "Projektek keresése"
+  },
+  "accessTokens": {
+    "message": "Vezérjelek elérése"
+  },
+  "createAccessToken": {
+    "message": "Elérési vezérjel létrehozása"
+  },
+  "expires": {
+    "message": "Lejárat"
+  },
+  "canRead": {
+    "message": "Olvashat"
+  },
+  "accessTokensNoItemsTitle": {
+    "message": "Nincs megjelenítendő elérési vezérjel."
+  },
+  "accessTokensNoItemsDesc": {
+    "message": "Az induláshoz hozzunk létre egy elérési vezérjelet."
+  },
+  "downloadAccessToken": {
+    "message": "Letöltés vagy másolás a bezárás eőtt."
+  },
+  "expiresOnAccessToken": {
+    "message": "Lejárat:"
+  },
+  "accessTokenCallOutTitle": {
+    "message": "Az elérési vezérjelek nincsnek tárolva és nem olvashatók vissza."
+  },
+  "copyToken": {
+    "message": "Vezérjel másolása"
+  },
+  "accessToken": {
+    "message": "Elérési vezérjel"
+  },
+  "accessTokenExpirationRequired": {
+    "message": "A lejárati dátum megadása kötelező."
+  },
+  "accessTokenCreatedAndCopied": {
+    "message": "Az elérési vezérjel létrejött és a vágólapra került."
+  },
+  "accessTokenPermissionsBetaNotification": {
+    "message": "A jofgosultság kezelő bétaként érhető el."
+  },
+  "revokeAccessToken": {
+    "message": "Elérési vezérjel visszavonása"
+  },
+  "submenu": {
+    "message": "Almenü"
+  },
   "from": {
     "message": "Feladó"
   },

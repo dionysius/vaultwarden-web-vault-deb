@@ -2459,7 +2459,7 @@
     "message": "用户"
   },
   "userDesc": {
-    "message": "访问并将项目添加到已分配的集合"
+    "message": "访问项目和将项目添加到已分配的集合"
   },
   "manager": {
     "message": "经理"
@@ -4744,7 +4744,7 @@
     "message": "客户 ID"
   },
   "clientSecret": {
-    "message": "客户密钥"
+    "message": "客户机密"
   },
   "metadataAddress": {
     "message": "元数据地址"
@@ -4846,7 +4846,7 @@
     "message": "最多 6 个用户的高级访问权限"
   },
   "sponsoredFamiliesSharedCollections": {
-    "message": "用于家庭账号密码共享的集合"
+    "message": "用于家庭机密的共享集合"
   },
   "badToken": {
     "message": "链接已失效。请让赞助方重新发送邀请。"
@@ -5486,6 +5486,255 @@
   },
   "multiSelectClearAll": {
     "message": "清除全部"
+  },
+  "projects": {
+    "message": "Projects"
+  },
+  "lastEdited": {
+    "message": "上次编辑时间"
+  },
+  "editSecret": {
+    "message": "Edit Secret"
+  },
+  "addSecret": {
+    "message": "Add Secret"
+  },
+  "copySecretName": {
+    "message": "Copy Secret Name"
+  },
+  "copySecretValue": {
+    "message": "Copy Secret Value"
+  },
+  "deleteSecret": {
+    "message": "Delete Secret"
+  },
+  "deleteSecrets": {
+    "message": "Delete Secrets"
+  },
+  "project": {
+    "message": "Project"
+  },
+  "editProject": {
+    "message": "Edit Project"
+  },
+  "viewProject": {
+    "message": "View Project"
+  },
+  "deleteProject": {
+    "message": "Delete Project"
+  },
+  "deleteProjects": {
+    "message": "Delete Projects"
+  },
+  "secret": {
+    "message": "Secret"
+  },
+  "serviceAccount": {
+    "message": "服务账户"
+  },
+  "serviceAccounts": {
+    "message": "服务帐户"
+  },
+  "new": {
+    "message": "New"
+  },
+  "secrets": {
+    "message": "Secrets"
+  },
+  "nameValuePair": {
+    "message": "名称/值对"
+  },
+  "secretEdited": {
+    "message": "Secret edited"
+  },
+  "secretCreated": {
+    "message": "Secret created"
+  },
+  "newSecret": {
+    "message": "New Secret"
+  },
+  "newServiceAccount": {
+    "message": "New Service Account"
+  },
+  "secretsNoItemsTitle": {
+    "message": "No secrets to show"
+  },
+  "secretsNoItemsMessage": {
+    "message": "To get started, add a new secret or import secrets."
+  },
+  "serviceAccountsNoItemsTitle": {
+    "message": "还没有要显示的内容"
+  },
+  "serviceAccountsNoItemsMessage": {
+    "message": "Create a new Service Account to get started automating secret access."
+  },
+  "searchSecrets": {
+    "message": "Search Secrets"
+  },
+  "deleteServiceAccounts": {
+    "message": "删除服务账户"
+  },
+  "deleteServiceAccount": {
+    "message": "删除服务帐户"
+  },
+  "viewServiceAccount": {
+    "message": "查看服务账户"
+  },
+  "searchServiceAccounts": {
+    "message": "搜索服务账户"
+  },
+  "addProject": {
+    "message": "Add Project"
+  },
+  "projectEdited": {
+    "message": "Project edited"
+  },
+  "projectSaved": {
+    "message": "Project saved"
+  },
+  "projectCreated": {
+    "message": "Project created"
+  },
+  "projectName": {
+    "message": "Project Name"
+  },
+  "newProject": {
+    "message": "New Project"
+  },
+  "softDeleteSecretWarning": {
+    "message": "Deleting secrets can affect existing integrations."
+  },
+  "softDeletesSuccessToast": {
+    "message": "Secrets sent to trash"
+  },
+  "serviceAccountCreated": {
+    "message": "服务帐户已创建"
+  },
+  "smAccess": {
+    "message": "Access"
+  },
+  "projectCommaSecret": {
+    "message": "Project, Secret"
+  },
+  "serviceAccountName": {
+    "message": "服务账户名称"
+  },
+  "newSaSelectAccess": {
+    "message": "Type or Select Projects or Secrets"
+  },
+  "newSaTypeToFilter": {
+    "message": "键入以筛选"
+  },
+  "deleteProjectsToast": {
+    "message": "Projects deleted"
+  },
+  "deleteProjectToast": {
+    "message": "The project and all associated secrets have been deleted"
+  },
+  "deleteProjectDialogMessage": {
+    "message": "Deleting project $PROJECT$ is permanent and irreversible.",
+    "placeholders": {
+      "project": {
+        "content": "$1",
+        "example": "project name"
+      }
+    }
+  },
+  "deleteProjectInputLabel": {
+    "message": "输入「$CONFIRM$」以继续",
+    "placeholders": {
+      "confirm": {
+        "content": "$1",
+        "example": "Delete 3 Projects"
+      }
+    }
+  },
+  "deleteProjectConfirmMessage": {
+    "message": "删除 $PROJECT$",
+    "placeholders": {
+      "project": {
+        "content": "$1",
+        "example": "project name"
+      }
+    }
+  },
+  "deleteProjectsConfirmMessage": {
+    "message": "Delete $COUNT$ Projects",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "deleteProjectsDialogMessage": {
+    "message": "Deleting projects is permanent and irreversible."
+  },
+  "projectsNoItemsTitle": {
+    "message": "No projects to display"
+  },
+  "projectsNoItemsMessage": {
+    "message": "Add a new project to get started organizing secrets."
+  },
+  "smConfirmationRequired": {
+    "message": "需要确认"
+  },
+  "bulkDeleteProjectsErrorMessage": {
+    "message": "The following projects could not be deleted:"
+  },
+  "softDeleteSuccessToast": {
+    "message": "Secret sent to trash"
+  },
+  "searchProjects": {
+    "message": "Search Projects"
+  },
+  "accessTokens": {
+    "message": "访问令牌"
+  },
+  "createAccessToken": {
+    "message": "创建访问令牌"
+  },
+  "expires": {
+    "message": "到期"
+  },
+  "canRead": {
+    "message": "Can Read"
+  },
+  "accessTokensNoItemsTitle": {
+    "message": "没有可显示的访问令牌"
+  },
+  "accessTokensNoItemsDesc": {
+    "message": "要开始，请创建一个访问令牌"
+  },
+  "downloadAccessToken": {
+    "message": "关闭前下载或复制。"
+  },
+  "expiresOnAccessToken": {
+    "message": "有效期至："
+  },
+  "accessTokenCallOutTitle": {
+    "message": "访问令牌未存储，无法获取"
+  },
+  "copyToken": {
+    "message": "复制令牌"
+  },
+  "accessToken": {
+    "message": "访问令牌"
+  },
+  "accessTokenExpirationRequired": {
+    "message": "到期日期是必需的。"
+  },
+  "accessTokenCreatedAndCopied": {
+    "message": "访问令牌已创建且已复制到剪贴板"
+  },
+  "accessTokenPermissionsBetaNotification": {
+    "message": "Beta 版中的权限管理不可用。"
+  },
+  "revokeAccessToken": {
+    "message": "撤销访问令牌"
+  },
+  "submenu": {
+    "message": "子菜单"
   },
   "from": {
     "message": "从"

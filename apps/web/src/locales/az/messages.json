@@ -5487,6 +5487,255 @@
   "multiSelectClearAll": {
     "message": "Hamısını təmizlə"
   },
+  "projects": {
+    "message": "Layihələr"
+  },
+  "lastEdited": {
+    "message": "Son düzəliş"
+  },
+  "editSecret": {
+    "message": "\"Sirr\"ə düzəliş et"
+  },
+  "addSecret": {
+    "message": "Sirr əlavə et"
+  },
+  "copySecretName": {
+    "message": "Sirr adını kopyala"
+  },
+  "copySecretValue": {
+    "message": "Sirr dəyərini kopyala"
+  },
+  "deleteSecret": {
+    "message": "Sirri sil"
+  },
+  "deleteSecrets": {
+    "message": "\"Sirr\"ləri sil"
+  },
+  "project": {
+    "message": "Layihə"
+  },
+  "editProject": {
+    "message": "Layihəyə düzəliş et"
+  },
+  "viewProject": {
+    "message": "Layihəyə bax"
+  },
+  "deleteProject": {
+    "message": "Layihəni sil"
+  },
+  "deleteProjects": {
+    "message": "Layihələri sil"
+  },
+  "secret": {
+    "message": "Sirr"
+  },
+  "serviceAccount": {
+    "message": "Servis hesabı"
+  },
+  "serviceAccounts": {
+    "message": "Servis hesabları"
+  },
+  "new": {
+    "message": "Yeni"
+  },
+  "secrets": {
+    "message": "\"Sirr\"lər"
+  },
+  "nameValuePair": {
+    "message": "Ad/Dəyər cütü"
+  },
+  "secretEdited": {
+    "message": "\"Sirr\"ə düzəliş edildi"
+  },
+  "secretCreated": {
+    "message": "Sirr yaradıldı"
+  },
+  "newSecret": {
+    "message": "Yeni Sirr"
+  },
+  "newServiceAccount": {
+    "message": "Yeni Servis hesabı"
+  },
+  "secretsNoItemsTitle": {
+    "message": "Göstəriləcək sirr yoxdur"
+  },
+  "secretsNoItemsMessage": {
+    "message": "Başlamaq üçün yeni bir sirr əlavə edin və ya daxilə köçürün."
+  },
+  "serviceAccountsNoItemsTitle": {
+    "message": "Göstəriləcək heç nə yoxdur"
+  },
+  "serviceAccountsNoItemsMessage": {
+    "message": "\"Sirr\" müraciətini avtomatlaşdırmağa başlamaq üçün yeni bir Servis hesabı yaradın."
+  },
+  "searchSecrets": {
+    "message": "\"Sirr\"ləri axtar"
+  },
+  "deleteServiceAccounts": {
+    "message": "Servis hesablarını sil"
+  },
+  "deleteServiceAccount": {
+    "message": "Servis hesabını sil"
+  },
+  "viewServiceAccount": {
+    "message": "Servis hesabına bax"
+  },
+  "searchServiceAccounts": {
+    "message": "Servis hesablarına bax"
+  },
+  "addProject": {
+    "message": "Layihə əlavə et"
+  },
+  "projectEdited": {
+    "message": "Layihəyə düzəliş edildi"
+  },
+  "projectSaved": {
+    "message": "Layihə saxlanıldı"
+  },
+  "projectCreated": {
+    "message": "Layihə yaradıldı"
+  },
+  "projectName": {
+    "message": "Layihə adı"
+  },
+  "newProject": {
+    "message": "Yeni layihə"
+  },
+  "softDeleteSecretWarning": {
+    "message": "\"Sirr\"ləri silmək, mövcud inteqrasiyalara təsir edə bilər."
+  },
+  "softDeletesSuccessToast": {
+    "message": "\"Sirr\"lər tullantı qutusuna göndərildi"
+  },
+  "serviceAccountCreated": {
+    "message": "Servis hesabı yaradıldı"
+  },
+  "smAccess": {
+    "message": "Müraciət"
+  },
+  "projectCommaSecret": {
+    "message": "Layihə, Sirr"
+  },
+  "serviceAccountName": {
+    "message": "Servis hesab adı"
+  },
+  "newSaSelectAccess": {
+    "message": "Layihələri və ya \"Sirr\"ləri yazın və ya seçin"
+  },
+  "newSaTypeToFilter": {
+    "message": "Filtrləmək üçün yazın"
+  },
+  "deleteProjectsToast": {
+    "message": "Layihələr silindi"
+  },
+  "deleteProjectToast": {
+    "message": "Layihə və əlaqələndirilmiş bütün \"sirr\"ləri silindi"
+  },
+  "deleteProjectDialogMessage": {
+    "message": "$PROJECT$ layihəsinin silinməsi daimi və geri qaytarıla bilməyən prosesdir.",
+    "placeholders": {
+      "project": {
+        "content": "$1",
+        "example": "project name"
+      }
+    }
+  },
+  "deleteProjectInputLabel": {
+    "message": "Davam etmək üçün \"$CONFIRM$\" yazın",
+    "placeholders": {
+      "confirm": {
+        "content": "$1",
+        "example": "Delete 3 Projects"
+      }
+    }
+  },
+  "deleteProjectConfirmMessage": {
+    "message": "$PROJECT$ sil",
+    "placeholders": {
+      "project": {
+        "content": "$1",
+        "example": "project name"
+      }
+    }
+  },
+  "deleteProjectsConfirmMessage": {
+    "message": "$COUNT$ layihəni sil",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "deleteProjectsDialogMessage": {
+    "message": "Layihələrin silinməsi daimi və geri qaytarıla bilməyən prosesdir."
+  },
+  "projectsNoItemsTitle": {
+    "message": "Görüntülənəcək heç bir layihə yoxdur"
+  },
+  "projectsNoItemsMessage": {
+    "message": "\"Sirr\"ləri təşkil etməyə başlamaq üçün yeni bir layihə əlavə edin."
+  },
+  "smConfirmationRequired": {
+    "message": "Təsdiq tələb olunur"
+  },
+  "bulkDeleteProjectsErrorMessage": {
+    "message": "Aşağıdakı layihələr silinə bilmədi:"
+  },
+  "softDeleteSuccessToast": {
+    "message": "Sirr tullantı qutusuna göndərildi"
+  },
+  "searchProjects": {
+    "message": "Layihə axtar"
+  },
+  "accessTokens": {
+    "message": "Müraciət tokenləri"
+  },
+  "createAccessToken": {
+    "message": "Müraciət tokeni yarat"
+  },
+  "expires": {
+    "message": "Müddəti bitir"
+  },
+  "canRead": {
+    "message": "Oxuna bilər"
+  },
+  "accessTokensNoItemsTitle": {
+    "message": "Göstəriləcək heç bir müraciət tokeni yoxdur"
+  },
+  "accessTokensNoItemsDesc": {
+    "message": "Başlamaq üçün bir müraciət tokeni yarat"
+  },
+  "downloadAccessToken": {
+    "message": "Bağlamazdan əvvəl endir və ya kopyala."
+  },
+  "expiresOnAccessToken": {
+    "message": "Bitmə vaxtı:"
+  },
+  "accessTokenCallOutTitle": {
+    "message": "Müraciət tokenləri saxlanılmadı və alına bilmir"
+  },
+  "copyToken": {
+    "message": "Tokeni kopyala"
+  },
+  "accessToken": {
+    "message": "Müraciət tokeni"
+  },
+  "accessTokenExpirationRequired": {
+    "message": "Bitmə vaxtı tələb olunur"
+  },
+  "accessTokenCreatedAndCopied": {
+    "message": "Müraciət tokeni yaradıldı və lövhəyə kopyalandı"
+  },
+  "accessTokenPermissionsBetaNotification": {
+    "message": "Beta üçün icazələrin idarə edilməsi əlçatmazdır."
+  },
+  "revokeAccessToken": {
+    "message": "Müraciət tokenini ləğv et"
+  },
+  "submenu": {
+    "message": "Alt menyu"
+  },
   "from": {
     "message": "Kimdən"
   },

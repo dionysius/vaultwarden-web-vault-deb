@@ -5487,6 +5487,255 @@
   "multiSelectClearAll": {
     "message": "Tyhjennä kaikki"
   },
+  "projects": {
+    "message": "Projektit"
+  },
+  "lastEdited": {
+    "message": "Viimeksi muokattu"
+  },
+  "editSecret": {
+    "message": "Muokkaa salaisuutta"
+  },
+  "addSecret": {
+    "message": "Lisää salaisuus"
+  },
+  "copySecretName": {
+    "message": "Kopioi salaisuuden nimi"
+  },
+  "copySecretValue": {
+    "message": "Kopioi salaisuuden arvo"
+  },
+  "deleteSecret": {
+    "message": "Poista salaisuus"
+  },
+  "deleteSecrets": {
+    "message": "Poista salaisuudet"
+  },
+  "project": {
+    "message": "Projekti"
+  },
+  "editProject": {
+    "message": "Muokkaa projektia"
+  },
+  "viewProject": {
+    "message": "Näytä projekti"
+  },
+  "deleteProject": {
+    "message": "Poista projekti"
+  },
+  "deleteProjects": {
+    "message": "Poista projektit"
+  },
+  "secret": {
+    "message": "Salaisuus"
+  },
+  "serviceAccount": {
+    "message": "Palvelutili"
+  },
+  "serviceAccounts": {
+    "message": "Palvelutilit"
+  },
+  "new": {
+    "message": "Uusi"
+  },
+  "secrets": {
+    "message": "Salaisuus"
+  },
+  "nameValuePair": {
+    "message": "Nimi-/arvopari"
+  },
+  "secretEdited": {
+    "message": "Salaisuutta muokattiin"
+  },
+  "secretCreated": {
+    "message": "Salaisuus luotiin"
+  },
+  "newSecret": {
+    "message": "Uusi salaisuus"
+  },
+  "newServiceAccount": {
+    "message": "Uusi palvelutili"
+  },
+  "secretsNoItemsTitle": {
+    "message": "Näytettäviä salaisuuksia ei ole"
+  },
+  "secretsNoItemsMessage": {
+    "message": "Aloita lisäämällä uusi salaisuus tai tuomalla salaisuudet."
+  },
+  "serviceAccountsNoItemsTitle": {
+    "message": "Mitään näytettävää ei vielä ole"
+  },
+  "serviceAccountsNoItemsMessage": {
+    "message": "Aloita salaisen käytön automatisointi luomalla uusi palvelutili."
+  },
+  "searchSecrets": {
+    "message": "Hae salaisuuksista"
+  },
+  "deleteServiceAccounts": {
+    "message": "Poista palvelutilit"
+  },
+  "deleteServiceAccount": {
+    "message": "Poista palvelutili"
+  },
+  "viewServiceAccount": {
+    "message": "Näytä palvelutili"
+  },
+  "searchServiceAccounts": {
+    "message": "Hae palvelutileistä"
+  },
+  "addProject": {
+    "message": "Lisää projekti"
+  },
+  "projectEdited": {
+    "message": "Projektia muokattiin"
+  },
+  "projectSaved": {
+    "message": "Projekti tallennettiin"
+  },
+  "projectCreated": {
+    "message": "Projekti luotiin"
+  },
+  "projectName": {
+    "message": "Projektin nimi"
+  },
+  "newProject": {
+    "message": "Uusi projekti"
+  },
+  "softDeleteSecretWarning": {
+    "message": "Salaisuuksien poisto voi vaikuttaa olemassa oleviin integroteihin."
+  },
+  "softDeletesSuccessToast": {
+    "message": "Salaisuudet siirrettiin roskakoriin"
+  },
+  "serviceAccountCreated": {
+    "message": "Palvelutili luotiin"
+  },
+  "smAccess": {
+    "message": "Oikeudet"
+  },
+  "projectCommaSecret": {
+    "message": "Projekti, salaisuus"
+  },
+  "serviceAccountName": {
+    "message": "Palvelutilin nimi"
+  },
+  "newSaSelectAccess": {
+    "message": "Kirjoita tai valitse projektit tai salaisuudet"
+  },
+  "newSaTypeToFilter": {
+    "message": "Suodata kirjoittamalla"
+  },
+  "deleteProjectsToast": {
+    "message": "Projektit poistettiin"
+  },
+  "deleteProjectToast": {
+    "message": "Projekti ja kaikki siihen liittyvät salaisuudet poistettiin"
+  },
+  "deleteProjectDialogMessage": {
+    "message": "Projektin $PROJECT$ poisto on pysyvää, eikä sitä ole mahdollista perua.",
+    "placeholders": {
+      "project": {
+        "content": "$1",
+        "example": "project name"
+      }
+    }
+  },
+  "deleteProjectInputLabel": {
+    "message": "Jatka kirjoittamalla \"$CONFIRM$\"",
+    "placeholders": {
+      "confirm": {
+        "content": "$1",
+        "example": "Delete 3 Projects"
+      }
+    }
+  },
+  "deleteProjectConfirmMessage": {
+    "message": "Poista $PROJECT$",
+    "placeholders": {
+      "project": {
+        "content": "$1",
+        "example": "project name"
+      }
+    }
+  },
+  "deleteProjectsConfirmMessage": {
+    "message": "Poista $COUNT$ projektia",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "deleteProjectsDialogMessage": {
+    "message": "Projektien poisto on pysyvää, eikä sitä ole mahdollista perua."
+  },
+  "projectsNoItemsTitle": {
+    "message": "Näytettäviä projekteja ei ole"
+  },
+  "projectsNoItemsMessage": {
+    "message": "Aloita salaisuuksien järjestely luomalla uusi projekti."
+  },
+  "smConfirmationRequired": {
+    "message": "Vahvistus vaaditaan"
+  },
+  "bulkDeleteProjectsErrorMessage": {
+    "message": "Seuraavia projekteja ei voitu poistaa:"
+  },
+  "softDeleteSuccessToast": {
+    "message": "Salaisuus siirrettiin roskakoriin"
+  },
+  "searchProjects": {
+    "message": "Hae projekteista"
+  },
+  "accessTokens": {
+    "message": "Hae käyttötunnisteista"
+  },
+  "createAccessToken": {
+    "message": "Luo käyttötunniste"
+  },
+  "expires": {
+    "message": "Erääntyy"
+  },
+  "canRead": {
+    "message": "Voi lukea"
+  },
+  "accessTokensNoItemsTitle": {
+    "message": "Näytettäviä käyttötunnisteita ei ole"
+  },
+  "accessTokensNoItemsDesc": {
+    "message": "Aloita luomalla käyttötunniste"
+  },
+  "downloadAccessToken": {
+    "message": "Lataa tai kopioi ennen sulkua."
+  },
+  "expiresOnAccessToken": {
+    "message": "Erääntyy:"
+  },
+  "accessTokenCallOutTitle": {
+    "message": "Käyttötunnisteita ei säilytetä, eikä niiden palautus ole mahdollista"
+  },
+  "copyToken": {
+    "message": "Kopioi tunniste"
+  },
+  "accessToken": {
+    "message": "Käyttötunniste"
+  },
+  "accessTokenExpirationRequired": {
+    "message": "Erääntymispäivä vaaditaan"
+  },
+  "accessTokenCreatedAndCopied": {
+    "message": "Käyttötunniste luotiin ja kopioitiin leikepöydälle"
+  },
+  "accessTokenPermissionsBetaNotification": {
+    "message": "Käyttöoikeuksien hallinta ei ole beta-vaiheessa käytettävissä."
+  },
+  "revokeAccessToken": {
+    "message": "Peru käyttötunniste"
+  },
+  "submenu": {
+    "message": "Alavalikko"
+  },
   "from": {
     "message": "From"
   },

@@ -597,7 +597,7 @@
     "message": "Skicka"
   },
   "emailAddressDesc": {
-    "message": "Din e-postadress används för att logga in."
+    "message": "Du använder din e-postadress för att logga in."
   },
   "yourName": {
     "message": "Ditt namn"
@@ -621,7 +621,7 @@
     "message": "Ange huvudlösenordet igen"
   },
   "masterPassHint": {
-    "message": "Huvudlösenordsledtråd (valfri)"
+    "message": "Huvudlösenordsledtråd (valfritt)"
   },
   "masterPassHintLabel": {
     "message": "Huvudlösenordsledtråd"
@@ -3299,7 +3299,7 @@
     "message": "Du har inte markerat något."
   },
   "acceptPolicies": {
-    "message": "Genom att markera denna ruta godkänner du följande:"
+    "message": "Genom att kryssa i denna ruta godkänner du följande:"
   },
   "acceptPoliciesRequired": {
     "message": "Terms of Service and Privacy Policy have not been acknowledged."
@@ -3767,7 +3767,7 @@
     "message": "Text"
   },
   "createSend": {
-    "message": "Skapa ny Send",
+    "message": "Ny Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editSend": {
@@ -3775,15 +3775,15 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createdSend": {
-    "message": "Skapade Send",
+    "message": "Send saved",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editedSend": {
-    "message": "Redigerad Send",
+    "message": "Send saved",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "deletedSend": {
-    "message": "Raderad Send",
+    "message": "Send deleted",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "deleteSend": {
@@ -3837,11 +3837,11 @@
     "message": "Revoked"
   },
   "sendLink": {
-    "message": "Länk till Send",
+    "message": "Send link",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "copySendLink": {
-    "message": "Kopiera länk till Send",
+    "message": "Copy Send link",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "removePassword": {
@@ -4059,7 +4059,7 @@
     "message": "På grund av en av företagets policyer är du begränsad från att spara objekt till ditt personliga valv. Ändra ägarskap till en organisation och välj från tillgängliga samlingar."
   },
   "disableSend": {
-    "message": "Inaktivera Send"
+    "message": "Remove Send"
   },
   "disableSendPolicyDesc": {
     "message": "Do not allow members to create or edit Sends.",
@@ -4217,7 +4217,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendNameDesc": {
-    "message": "Ett eget namn för att beskriva denna Send.",
+    "message": "A friendly name to describe this Send.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendTextDesc": {
@@ -5164,7 +5164,7 @@
     }
   },
   "required": {
-    "message": "required"
+    "message": "obligatoriskt"
   },
   "idpSingleSignOnServiceUrlRequired": {
     "message": "Required if Entity ID is not a URL."
@@ -5212,7 +5212,7 @@
     "message": "Master password"
   },
   "security": {
-    "message": "Security"
+    "message": "Säkerhet"
   },
   "keys": {
     "message": "Keys"
@@ -5231,7 +5231,7 @@
     "description": "This is used by screen readers to indicate the organization that is currently being shown to the user."
   },
   "accountSettings": {
-    "message": "Account settings"
+    "message": "Kontoinställningar"
   },
   "generator": {
     "message": "Generator"
@@ -5470,7 +5470,7 @@
     "message": "Antal användare"
   },
   "loggingInAs": {
-    "message": "Logging in as"
+    "message": "Logga in som"
   },
   "notYou": {
     "message": "Not you?"
@@ -5486,6 +5486,255 @@
   },
   "multiSelectClearAll": {
     "message": "Clear all"
+  },
+  "projects": {
+    "message": "Projekt"
+  },
+  "lastEdited": {
+    "message": "Senast redigerad"
+  },
+  "editSecret": {
+    "message": "Edit Secret"
+  },
+  "addSecret": {
+    "message": "Add Secret"
+  },
+  "copySecretName": {
+    "message": "Copy Secret Name"
+  },
+  "copySecretValue": {
+    "message": "Copy Secret Value"
+  },
+  "deleteSecret": {
+    "message": "Delete Secret"
+  },
+  "deleteSecrets": {
+    "message": "Delete Secrets"
+  },
+  "project": {
+    "message": "Projekt"
+  },
+  "editProject": {
+    "message": "Redigera projekt"
+  },
+  "viewProject": {
+    "message": "Visa projekt"
+  },
+  "deleteProject": {
+    "message": "Radera projekt"
+  },
+  "deleteProjects": {
+    "message": "Radera projekt"
+  },
+  "secret": {
+    "message": "Secret"
+  },
+  "serviceAccount": {
+    "message": "Service Account"
+  },
+  "serviceAccounts": {
+    "message": "Service Accounts"
+  },
+  "new": {
+    "message": "New"
+  },
+  "secrets": {
+    "message": "Secrets"
+  },
+  "nameValuePair": {
+    "message": "Name/Value Pair"
+  },
+  "secretEdited": {
+    "message": "Secret edited"
+  },
+  "secretCreated": {
+    "message": "Secret created"
+  },
+  "newSecret": {
+    "message": "New Secret"
+  },
+  "newServiceAccount": {
+    "message": "New Service Account"
+  },
+  "secretsNoItemsTitle": {
+    "message": "No secrets to show"
+  },
+  "secretsNoItemsMessage": {
+    "message": "To get started, add a new secret or import secrets."
+  },
+  "serviceAccountsNoItemsTitle": {
+    "message": "Nothing to show yet"
+  },
+  "serviceAccountsNoItemsMessage": {
+    "message": "Create a new Service Account to get started automating secret access."
+  },
+  "searchSecrets": {
+    "message": "Search Secrets"
+  },
+  "deleteServiceAccounts": {
+    "message": "Delete Service Accounts"
+  },
+  "deleteServiceAccount": {
+    "message": "Delete Service Account"
+  },
+  "viewServiceAccount": {
+    "message": "View Service Account"
+  },
+  "searchServiceAccounts": {
+    "message": "Search Service Accounts"
+  },
+  "addProject": {
+    "message": "Lägg till projekt"
+  },
+  "projectEdited": {
+    "message": "Project edited"
+  },
+  "projectSaved": {
+    "message": "Project saved"
+  },
+  "projectCreated": {
+    "message": "Project created"
+  },
+  "projectName": {
+    "message": "Projektnamn"
+  },
+  "newProject": {
+    "message": "Nytt projekt"
+  },
+  "softDeleteSecretWarning": {
+    "message": "Deleting secrets can affect existing integrations."
+  },
+  "softDeletesSuccessToast": {
+    "message": "Secrets sent to trash"
+  },
+  "serviceAccountCreated": {
+    "message": "Service Account Created"
+  },
+  "smAccess": {
+    "message": "Access"
+  },
+  "projectCommaSecret": {
+    "message": "Project, Secret"
+  },
+  "serviceAccountName": {
+    "message": "Service account name"
+  },
+  "newSaSelectAccess": {
+    "message": "Type or Select Projects or Secrets"
+  },
+  "newSaTypeToFilter": {
+    "message": "Type to Filter"
+  },
+  "deleteProjectsToast": {
+    "message": "Projects deleted"
+  },
+  "deleteProjectToast": {
+    "message": "The project and all associated secrets have been deleted"
+  },
+  "deleteProjectDialogMessage": {
+    "message": "Deleting project $PROJECT$ is permanent and irreversible.",
+    "placeholders": {
+      "project": {
+        "content": "$1",
+        "example": "project name"
+      }
+    }
+  },
+  "deleteProjectInputLabel": {
+    "message": "Ange \"$CONFIRM$\" för att fortsätta",
+    "placeholders": {
+      "confirm": {
+        "content": "$1",
+        "example": "Delete 3 Projects"
+      }
+    }
+  },
+  "deleteProjectConfirmMessage": {
+    "message": "Radera $PROJECT$",
+    "placeholders": {
+      "project": {
+        "content": "$1",
+        "example": "project name"
+      }
+    }
+  },
+  "deleteProjectsConfirmMessage": {
+    "message": "Radera $COUNT$ projekt",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "deleteProjectsDialogMessage": {
+    "message": "Deleting projects is permanent and irreversible."
+  },
+  "projectsNoItemsTitle": {
+    "message": "No projects to display"
+  },
+  "projectsNoItemsMessage": {
+    "message": "Add a new project to get started organizing secrets."
+  },
+  "smConfirmationRequired": {
+    "message": "Confirmation required"
+  },
+  "bulkDeleteProjectsErrorMessage": {
+    "message": "Följande projekt kunde inte raderas:"
+  },
+  "softDeleteSuccessToast": {
+    "message": "Secret sent to trash"
+  },
+  "searchProjects": {
+    "message": "Search Projects"
+  },
+  "accessTokens": {
+    "message": "Access tokens"
+  },
+  "createAccessToken": {
+    "message": "Create access token"
+  },
+  "expires": {
+    "message": "Upphör"
+  },
+  "canRead": {
+    "message": "Can Read"
+  },
+  "accessTokensNoItemsTitle": {
+    "message": "No access tokens to show"
+  },
+  "accessTokensNoItemsDesc": {
+    "message": "To get started, create an access token"
+  },
+  "downloadAccessToken": {
+    "message": "Download or copy before closing."
+  },
+  "expiresOnAccessToken": {
+    "message": "Expires on:"
+  },
+  "accessTokenCallOutTitle": {
+    "message": "Access tokens are not stored and cannot be retrieved"
+  },
+  "copyToken": {
+    "message": "Kopiera token"
+  },
+  "accessToken": {
+    "message": "Access token"
+  },
+  "accessTokenExpirationRequired": {
+    "message": "Expiration date required"
+  },
+  "accessTokenCreatedAndCopied": {
+    "message": "Access token created and copied to clipboard"
+  },
+  "accessTokenPermissionsBetaNotification": {
+    "message": "Permissions management is unavailable for beta."
+  },
+  "revokeAccessToken": {
+    "message": "Revoke Access Token"
+  },
+  "submenu": {
+    "message": "Submenu"
   },
   "from": {
     "message": "Från"

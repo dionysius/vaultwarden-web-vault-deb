@@ -522,10 +522,10 @@
     "message": "Вы действительно хотите отправить в корзину?"
   },
   "deletedItem": {
-    "message": "Элемент удален"
+    "message": "Элемент отправлен в корзину"
   },
   "deletedItems": {
-    "message": "Элементы удалены"
+    "message": "Элементы отправлены в корзину"
   },
   "movedItems": {
     "message": "Элементы перемещены"
@@ -2549,7 +2549,7 @@
     }
   },
   "deletedItemId": {
-    "message": "Удален элемент $ID$.",
+    "message": "Элемент $ID$ отправлен в корзину.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -5486,6 +5486,255 @@
   },
   "multiSelectClearAll": {
     "message": "Очистить все"
+  },
+  "projects": {
+    "message": "Проекты"
+  },
+  "lastEdited": {
+    "message": "Последнее изменение"
+  },
+  "editSecret": {
+    "message": "Изменить секрет"
+  },
+  "addSecret": {
+    "message": "Добавить секрет"
+  },
+  "copySecretName": {
+    "message": "Скопировать имя секрета"
+  },
+  "copySecretValue": {
+    "message": "Скопировать значение секрета"
+  },
+  "deleteSecret": {
+    "message": "Удалить секрет"
+  },
+  "deleteSecrets": {
+    "message": "Удалить секреты"
+  },
+  "project": {
+    "message": "Проект"
+  },
+  "editProject": {
+    "message": "Изменить проект"
+  },
+  "viewProject": {
+    "message": "Посмотреть проект"
+  },
+  "deleteProject": {
+    "message": "Удалить проект"
+  },
+  "deleteProjects": {
+    "message": "Удалить проекты"
+  },
+  "secret": {
+    "message": "Секрет"
+  },
+  "serviceAccount": {
+    "message": "Сервисный аккаунт"
+  },
+  "serviceAccounts": {
+    "message": "Сервисные аккаунты"
+  },
+  "new": {
+    "message": "Новый"
+  },
+  "secrets": {
+    "message": "Секреты"
+  },
+  "nameValuePair": {
+    "message": "Пара имя/значение"
+  },
+  "secretEdited": {
+    "message": "Секрет изменен"
+  },
+  "secretCreated": {
+    "message": "Секрет создан"
+  },
+  "newSecret": {
+    "message": "Новый секрет"
+  },
+  "newServiceAccount": {
+    "message": "Новый сервисный аккаунт"
+  },
+  "secretsNoItemsTitle": {
+    "message": "Нет секретов для отображения"
+  },
+  "secretsNoItemsMessage": {
+    "message": "Чтобы начать, добавьте новый секрет или импортируйте их."
+  },
+  "serviceAccountsNoItemsTitle": {
+    "message": "Пока нечего показать"
+  },
+  "serviceAccountsNoItemsMessage": {
+    "message": "Чтобы приступить к автоматизации секретного доступа, создайте новый сервисный аккаунт."
+  },
+  "searchSecrets": {
+    "message": "Поиск секретов"
+  },
+  "deleteServiceAccounts": {
+    "message": "Удалить сервисные аккаунты"
+  },
+  "deleteServiceAccount": {
+    "message": "Удалить сервисный аккаунт"
+  },
+  "viewServiceAccount": {
+    "message": "Просмотреть сервисный аккаунт"
+  },
+  "searchServiceAccounts": {
+    "message": "Искать сервисные аккаунты"
+  },
+  "addProject": {
+    "message": "Добавить проект"
+  },
+  "projectEdited": {
+    "message": "Проект изменен"
+  },
+  "projectSaved": {
+    "message": "Проект сохранен"
+  },
+  "projectCreated": {
+    "message": "Проект создан"
+  },
+  "projectName": {
+    "message": "Название проекта"
+  },
+  "newProject": {
+    "message": "Новый проект"
+  },
+  "softDeleteSecretWarning": {
+    "message": "Удаление секретов может повлиять на существующие интеграции."
+  },
+  "softDeletesSuccessToast": {
+    "message": "Секреты отправлены в корзину"
+  },
+  "serviceAccountCreated": {
+    "message": "Сервисный аккаунт создан"
+  },
+  "smAccess": {
+    "message": "Доступ"
+  },
+  "projectCommaSecret": {
+    "message": "Проект, секрет"
+  },
+  "serviceAccountName": {
+    "message": "Название сервисного аккаунта"
+  },
+  "newSaSelectAccess": {
+    "message": "Введите или выберите проекты или секреты"
+  },
+  "newSaTypeToFilter": {
+    "message": "Введите для фильтрации"
+  },
+  "deleteProjectsToast": {
+    "message": "Проект удален"
+  },
+  "deleteProjectToast": {
+    "message": "Проект и все связанные с ним секреты были удалены"
+  },
+  "deleteProjectDialogMessage": {
+    "message": "Удаление проекта $PROJECT$ окончательно и необратимо.",
+    "placeholders": {
+      "project": {
+        "content": "$1",
+        "example": "project name"
+      }
+    }
+  },
+  "deleteProjectInputLabel": {
+    "message": "Наберите \"$CONFIRM$\", чтобы продолжить",
+    "placeholders": {
+      "confirm": {
+        "content": "$1",
+        "example": "Delete 3 Projects"
+      }
+    }
+  },
+  "deleteProjectConfirmMessage": {
+    "message": "Удалить $PROJECT$",
+    "placeholders": {
+      "project": {
+        "content": "$1",
+        "example": "project name"
+      }
+    }
+  },
+  "deleteProjectsConfirmMessage": {
+    "message": "Удалить проектов: $COUNT$",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "deleteProjectsDialogMessage": {
+    "message": "Удаление проектов окончательно и необратимо."
+  },
+  "projectsNoItemsTitle": {
+    "message": "Нет проектов для отображения"
+  },
+  "projectsNoItemsMessage": {
+    "message": "Добавить новый проект, чтобы приступить к организации секретов."
+  },
+  "smConfirmationRequired": {
+    "message": "Требуется подтверждение"
+  },
+  "bulkDeleteProjectsErrorMessage": {
+    "message": "Следующие проекты не могут быть удалены:"
+  },
+  "softDeleteSuccessToast": {
+    "message": "Секрет отправлен в корзину"
+  },
+  "searchProjects": {
+    "message": "Поиск проектов"
+  },
+  "accessTokens": {
+    "message": "Токены доступа"
+  },
+  "createAccessToken": {
+    "message": "Создать токен доступа"
+  },
+  "expires": {
+    "message": "Истекает"
+  },
+  "canRead": {
+    "message": "Может читать"
+  },
+  "accessTokensNoItemsTitle": {
+    "message": "Нет токенов доступа для отображения"
+  },
+  "accessTokensNoItemsDesc": {
+    "message": "Чтобы начать работу, создайте токен доступа"
+  },
+  "downloadAccessToken": {
+    "message": "Скачайте или скопируйте перед закрытием."
+  },
+  "expiresOnAccessToken": {
+    "message": "Истекает:"
+  },
+  "accessTokenCallOutTitle": {
+    "message": "Токены доступа не сохраняются и не могут быть получены"
+  },
+  "copyToken": {
+    "message": "Скопировать токен"
+  },
+  "accessToken": {
+    "message": "Токен доступа"
+  },
+  "accessTokenExpirationRequired": {
+    "message": "Срок действия обязателен"
+  },
+  "accessTokenCreatedAndCopied": {
+    "message": "Токен доступа создан и скопирован в буфер обмена"
+  },
+  "accessTokenPermissionsBetaNotification": {
+    "message": "Управление разрешениями недоступно в бета-версии."
+  },
+  "revokeAccessToken": {
+    "message": "Отозвать токен доступа"
+  },
+  "submenu": {
+    "message": "Подменю"
   },
   "from": {
     "message": "От"

@@ -582,7 +582,7 @@
     "message": "Utwórz konto"
   },
   "newAroundHere": {
-    "message": "Jesteś tu nowy(a)?"
+    "message": "Nowy użytkownik?"
   },
   "startTrial": {
     "message": "Rozpocznij okres próbny"
@@ -1151,7 +1151,7 @@
     "message": "Konto zostało usunięte"
   },
   "accountDeletedDesc": {
-    "message": "Twoje konto zostało zamknięte i wszystkie powiązane z nim dane zostały skasowane."
+    "message": "Konto zostało zamknięte i wszystkie powiązane z nim dane zostały usunięte."
   },
   "myAccount": {
     "message": "Moje konto"
@@ -1477,7 +1477,7 @@
     "message": "Tajny klucz"
   },
   "twoFactorDuoApiHostname": {
-    "message": "Nazwa domeny interfejsu API"
+    "message": "Nazwa domeny API"
   },
   "twoFactorEmailDesc": {
     "message": "Wykonaj poniższe kroki, aby aktywować logowanie dwustopniowe przez adres e-mail:"
@@ -2507,10 +2507,10 @@
     "message": "Hasło do konta zostało zmienione."
   },
   "enabledUpdated2fa": {
-    "message": "Logowanie dwustopniowe zostało zaktualizowane."
+    "message": "Logowanie dwustopniowe zostało zapisane"
   },
   "disabled2fa": {
-    "message": "Logowanie dwustopniowe zostało wyłączone."
+    "message": "Logowanie dwustopniowe zostało wyłączone"
   },
   "recovered2fa": {
     "message": "Logowanie dwustopniowe zostało wyłączone."
@@ -2525,10 +2525,10 @@
     "message": "Sejf został wyeksportowany"
   },
   "exportedOrganizationVault": {
-    "message": "Sejf organizacji został wyeksportowany"
+    "message": "Sejf organizacji został wyeksportowany."
   },
   "editedOrgSettings": {
-    "message": "Ustawienia organizacji zostały zapisane"
+    "message": "Ustawienia organizacji zostały zmienione."
   },
   "createdItemId": {
     "message": "Element $ID$ został utworzony.",
@@ -3017,7 +3017,7 @@
     "message": "Moja organizacja"
   },
   "organizationInfo": {
-    "message": "Organizacja"
+    "message": "Informacje organizacji"
   },
   "deleteOrganization": {
     "message": "Usuń organizację"
@@ -3096,10 +3096,10 @@
     "message": "Płatność z pomocą konta bankowego jest dostępna wyłącznie dla klientów w Stanach Zjednoczonych. Konieczne będzie zweryfikowanie konta bankowego. Wykonamy dwa mikro przelewy w ciągu następnych 1-2 dni roboczych. Wpisz te kwoty na stronie rozliczeń organizacji, aby zweryfikować konto bankowe."
   },
   "verifyBankAccountFailureWarning": {
-    "message": "Brak weryfikacji konta bankowego spowoduje brak dokonania płatności i Twoja subskrypcja zostanie wyłączona."
+    "message": "Brak weryfikacji konta bankowego spowoduje brak dokonania płatności i Twoja subskrypcja zostanie zawieszona."
   },
   "verifiedBankAccount": {
-    "message": "Konto bankowe zostało zweryfikowane."
+    "message": "Konto bankowe zostało zweryfikowane"
   },
   "bankAccount": {
     "message": "Konto bankowe"
@@ -3302,7 +3302,7 @@
     "message": "Zaznaczając tę opcję, akceptujesz:"
   },
   "acceptPoliciesRequired": {
-    "message": "Warunki użytkowania i polityka prywatności nie zostały zaakceptowane."
+    "message": "Regulamin i polityka prywatności nie zostały zaakceptowane."
   },
   "termsOfService": {
     "message": "Regulamin"
@@ -3353,10 +3353,10 @@
     "description": "ex. Date this password was updated"
   },
   "organizationIsDisabled": {
-    "message": "Organizacja jest wyłączona."
+    "message": "Organizacja została zawieszona"
   },
   "disabledOrganizationFilterError": {
-    "message": "Nie można uzyskać dostępu do elementów w wyłączonych organizacjach. Skontaktuj się z właścicielem organizacji, aby uzyskać pomoc."
+    "message": "Nie można uzyskać dostępu do elementów w zawieszonych organizacjach. Skontaktuj się z właścicielem organizacji, aby uzyskać pomoc."
   },
   "licenseIsExpired": {
     "message": "Licencja wygasła."
@@ -3440,7 +3440,7 @@
     "description": "Free, as in 'Free beer'"
   },
   "apiKey": {
-    "message": "Klucz interfejsu API"
+    "message": "Klucz API"
   },
   "apiKeyDesc": {
     "message": "Twój klucz interfejsu API może zostać użyty do uwierzytelniania dostępu do publicznego interfejsu API Bitwarden."
@@ -3462,10 +3462,10 @@
     "description": "'OAuth 2.0' is a programming protocol. It should probably not be translated."
   },
   "viewApiKey": {
-    "message": "Wyświetl klucz interfejsu API"
+    "message": "Wyświetl klucz API"
   },
   "rotateApiKey": {
-    "message": "Zmień klucz interfejsu API"
+    "message": "Zmień klucz API"
   },
   "selectOneCollection": {
     "message": "Musisz wybrać co najmniej jedną kolekcję."
@@ -3567,7 +3567,7 @@
     "message": "Sposób blokowania sejfu"
   },
   "vaultTimeoutActionLockDesc": {
-    "message": "Po zablokowaniu sejfu, musisz ponownie wpisać hasło główne, aby uzyskać do niego dostęp."
+    "message": "Aby uzyskać dostęp do sejfu, musisz wpisać hasło główne lub odblokować go inną metodą."
   },
   "vaultTimeoutActionLogOutDesc": {
     "message": "Po wylogowaniu się z sejfu, musisz ponownie zalogować się, aby uzyskać do niego dostęp."
@@ -4495,7 +4495,7 @@
     "message": "Potwierdzono"
   },
   "bulkReinviteMessage": {
-    "message": "Zaproszony ponownie."
+    "message": "Zaproszony ponownie"
   },
   "bulkRemovedMessage": {
     "message": "Usunięto"
@@ -4620,7 +4620,7 @@
     }
   },
   "providerIsDisabled": {
-    "message": "Dostawca jest wyłączony."
+    "message": "Dostawca został zawieszony"
   },
   "providerUpdated": {
     "message": "Dostawca został zapisany"
@@ -4714,7 +4714,7 @@
     "message": "Eksportowanie sejfu zostało wyłączone"
   },
   "personalVaultExportPolicyInEffect": {
-    "message": "Co najmniej jedna zasada organizacji uniemożliwia wyeksportowanie Twojego sejfu."
+    "message": "Co najmniej jedna zasada organizacji uniemożliwia wyeksportowanie osobistego sejfu."
   },
   "selectType": {
     "message": "Wybierz rodzaj logowania jednokrotnego SSO"
@@ -4756,10 +4756,10 @@
     "message": "Uzyskaj elementy Claim od punktu końcowego informacji o użytkowniku"
   },
   "additionalScopes": {
-    "message": "Dodatkowe / niestandardowe zakresy (oddzielone przecinkami)"
+    "message": "Niestandardowe zakresy"
   },
   "additionalUserIdClaimTypes": {
-    "message": "Dodatkowe / niestandardowe elementy Claim identyfikatora użytkownika"
+    "message": "Niestandardowe elementy Claim identyfikatora użytkownika"
   },
   "additionalEmailClaimTypes": {
     "message": "Elementy Claim adresu e-mail"
@@ -4828,7 +4828,7 @@
     "message": "Podpisz żądania uwierzytelniania"
   },
   "ssoSettingsSaved": {
-    "message": "Konfiguracja logowania jednokrotnego została zapisana."
+    "message": "Konfiguracja logowania jednokrotnego została zapisana"
   },
   "sponsoredFamilies": {
     "message": "Darmowy plan rodzinny"
@@ -5104,7 +5104,7 @@
     "message": "Wymiana tokenu synchronizacji płatności spowoduje unieważnienie poprzedniego tokenu."
   },
   "selfHostingTitle": {
-    "message": "Własny hosting"
+    "message": "Samodzielnie hostowany"
   },
   "selfHostingEnterpriseOrganizationSectionCopy": {
     "message": "Aby skonfigurować swoją organizację na własnym serwerze, musisz przesłać plik licencyjny. Aby wesprzeć darmowe plany rodzinne i zaawansowane możliwości rozliczeniowe dla własnej organizacji, musisz skonfigurować synchronizację płatności."
@@ -5328,7 +5328,7 @@
     "description": "This text is displayed if an organization's billing is managed by a Provider. It tells the user to contact the Provider for assistance."
   },
   "forwardedEmail": {
-    "message": "Alias przekazywanego e-maila"
+    "message": "Alias przekazywanego adresu"
   },
   "forwardedEmailDesc": {
     "message": "Wygeneruj alias adresu e-mail z zewnętrznej usługi przekazywania."
@@ -5384,7 +5384,7 @@
     "message": "Ten klucz API ma dostęp do zarządzania użytkownikami w Twojej organizacji. Powinien być zachowany w tajemnicy."
   },
   "copyScimKey": {
-    "message": "Skopiuj klucz API SCIM do schowka",
+    "message": "Kopiuj klucz API SCIM do schowka",
     "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
   },
   "rotateScimKey": {
@@ -5392,7 +5392,7 @@
     "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
   },
   "rotateScimKeyWarning": {
-    "message": "Czy na pewno chcesz zmienić klucz API SCIM? Bieżący klucz nie będzie już działał dla żadnych istniejących integracji.",
+    "message": "Czy na pewno chcesz zmienić klucz interfejsu API SCIM? Obecny klucz nie będzie już działał dla żadnych istniejących integracji.",
     "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
   },
   "rotateKey": {
@@ -5411,11 +5411,11 @@
     "description": "the text, 'SCIM' and 'URL', are acronymns and should not be translated."
   },
   "scimApiKeyRotated": {
-    "message": "Klucz API SCIM został pomyślnie zmieniony",
+    "message": "Klucz API SCIM został zmieniony",
     "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
   },
   "scimSettingsSaved": {
-    "message": "Ustawienia SCIM zostały pomyślnie zapisane",
+    "message": "Ustawienia SCIM zostały zapisane",
     "description": "the text, 'SCIM', is an acronymn and should not be translated."
   },
   "inputRequired": {
@@ -5487,6 +5487,255 @@
   "multiSelectClearAll": {
     "message": "Wyczyść wszystko"
   },
+  "projects": {
+    "message": "Projekty"
+  },
+  "lastEdited": {
+    "message": "Ostatnio edytowane"
+  },
+  "editSecret": {
+    "message": "Edytuj sekret"
+  },
+  "addSecret": {
+    "message": "Dodaj sekret"
+  },
+  "copySecretName": {
+    "message": "Kopiuj nazwę sekretu"
+  },
+  "copySecretValue": {
+    "message": "Kopiuj wartość sekretu"
+  },
+  "deleteSecret": {
+    "message": "Usuń sekret"
+  },
+  "deleteSecrets": {
+    "message": "Usuń sekrety"
+  },
+  "project": {
+    "message": "Projekt"
+  },
+  "editProject": {
+    "message": "Edytuj projekt"
+  },
+  "viewProject": {
+    "message": "Wyświetl projekt"
+  },
+  "deleteProject": {
+    "message": "Usuń projekt"
+  },
+  "deleteProjects": {
+    "message": "Usuń projekty"
+  },
+  "secret": {
+    "message": "Sekret"
+  },
+  "serviceAccount": {
+    "message": "Konto usługi"
+  },
+  "serviceAccounts": {
+    "message": "Konta usług"
+  },
+  "new": {
+    "message": "Nowy"
+  },
+  "secrets": {
+    "message": "Sekrety"
+  },
+  "nameValuePair": {
+    "message": "Para nazwa/wartość"
+  },
+  "secretEdited": {
+    "message": "Sekret został edytowany"
+  },
+  "secretCreated": {
+    "message": "Sekret został utworzony"
+  },
+  "newSecret": {
+    "message": "Nowy sekret"
+  },
+  "newServiceAccount": {
+    "message": "Nowe konto usługi"
+  },
+  "secretsNoItemsTitle": {
+    "message": "Brak sekretów do wyświetlenia"
+  },
+  "secretsNoItemsMessage": {
+    "message": "Aby rozpocząć, dodaj nowy sekret lub zaimportuj sekrety."
+  },
+  "serviceAccountsNoItemsTitle": {
+    "message": "Nie ma nic do pokazania"
+  },
+  "serviceAccountsNoItemsMessage": {
+    "message": "Utwórz nowe konto usługi, aby rozpocząć automatyzację dostępu do sekretu."
+  },
+  "searchSecrets": {
+    "message": "Szukaj w sekretach"
+  },
+  "deleteServiceAccounts": {
+    "message": "Usuń konta usług"
+  },
+  "deleteServiceAccount": {
+    "message": "Usuń konto usługi"
+  },
+  "viewServiceAccount": {
+    "message": "Wyświetl konto usługi"
+  },
+  "searchServiceAccounts": {
+    "message": "Szukaj w kontach usług"
+  },
+  "addProject": {
+    "message": "Dodaj projekt"
+  },
+  "projectEdited": {
+    "message": "Projekt został edytowany"
+  },
+  "projectSaved": {
+    "message": "Projekt został zapisany"
+  },
+  "projectCreated": {
+    "message": "Projekt został utworzony"
+  },
+  "projectName": {
+    "message": "Nazwa projektu"
+  },
+  "newProject": {
+    "message": "Nowy projekt"
+  },
+  "softDeleteSecretWarning": {
+    "message": "Usuwanie sekretów może mieć wpływ na istniejące integracje."
+  },
+  "softDeletesSuccessToast": {
+    "message": "Sekrety zostały przeniesione do kosza"
+  },
+  "serviceAccountCreated": {
+    "message": "Konto usługi zostało utworzone"
+  },
+  "smAccess": {
+    "message": "Dostęp"
+  },
+  "projectCommaSecret": {
+    "message": "Projekt, sekret"
+  },
+  "serviceAccountName": {
+    "message": "Nazwa konta usługi"
+  },
+  "newSaSelectAccess": {
+    "message": "Wpisz lub wybierz projekty lub sekrety"
+  },
+  "newSaTypeToFilter": {
+    "message": "Wpisz, aby filtrować"
+  },
+  "deleteProjectsToast": {
+    "message": "Projekty zostały usunięte"
+  },
+  "deleteProjectToast": {
+    "message": "Projekt i wszystkie powiązane sekrety zostały usunięte"
+  },
+  "deleteProjectDialogMessage": {
+    "message": "Usuwanie projektu $PROJECT$ jest trwałe i nieodwracalne.",
+    "placeholders": {
+      "project": {
+        "content": "$1",
+        "example": "project name"
+      }
+    }
+  },
+  "deleteProjectInputLabel": {
+    "message": "Wpisz \"$CONFIRM$\", aby kontynuować",
+    "placeholders": {
+      "confirm": {
+        "content": "$1",
+        "example": "Delete 3 Projects"
+      }
+    }
+  },
+  "deleteProjectConfirmMessage": {
+    "message": "Usuń $PROJECT$",
+    "placeholders": {
+      "project": {
+        "content": "$1",
+        "example": "project name"
+      }
+    }
+  },
+  "deleteProjectsConfirmMessage": {
+    "message": "Usuń $COUNT$ projektów",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "deleteProjectsDialogMessage": {
+    "message": "Usuwanie projektów jest trwałe i nieodwracalne."
+  },
+  "projectsNoItemsTitle": {
+    "message": "Brak projektów do wyświetlenia"
+  },
+  "projectsNoItemsMessage": {
+    "message": "Dodaj nowy projekt, aby rozpocząć organizowanie sekretów."
+  },
+  "smConfirmationRequired": {
+    "message": "Wymagane potwierdzenie"
+  },
+  "bulkDeleteProjectsErrorMessage": {
+    "message": "Następujące projekty nie mogą być usunięte:"
+  },
+  "softDeleteSuccessToast": {
+    "message": "Sekret został przeniesiony do kosza"
+  },
+  "searchProjects": {
+    "message": "Wyszukaj w projektach"
+  },
+  "accessTokens": {
+    "message": "Tokeny dostępu"
+  },
+  "createAccessToken": {
+    "message": "Utwórz token dostępu"
+  },
+  "expires": {
+    "message": "Wygasa"
+  },
+  "canRead": {
+    "message": "Można przeczytać"
+  },
+  "accessTokensNoItemsTitle": {
+    "message": "Brak tokenów dostępu"
+  },
+  "accessTokensNoItemsDesc": {
+    "message": "Aby rozpocząć, utwórz token dostępu"
+  },
+  "downloadAccessToken": {
+    "message": "Pobierz lub skopiuj przed zamknięciem."
+  },
+  "expiresOnAccessToken": {
+    "message": "Wygasa dnia:"
+  },
+  "accessTokenCallOutTitle": {
+    "message": "Tokeny dostępu nie są przechowywane i nie można ich pobrać"
+  },
+  "copyToken": {
+    "message": "Kopiuj token"
+  },
+  "accessToken": {
+    "message": "Token dostępu"
+  },
+  "accessTokenExpirationRequired": {
+    "message": "Wymagana data ważności"
+  },
+  "accessTokenCreatedAndCopied": {
+    "message": "Token dostępu został utworzony i skopiowany do schowka"
+  },
+  "accessTokenPermissionsBetaNotification": {
+    "message": "Zarządzanie uprawnieniami jest niedostępne w wersji beta."
+  },
+  "revokeAccessToken": {
+    "message": "Unieważnij token dostępu"
+  },
+  "submenu": {
+    "message": "Podmenu"
+  },
   "from": {
     "message": "Od"
   },
@@ -5518,9 +5767,9 @@
     "message": "Grupa"
   },
   "groupAccessAll": {
-    "message": "Ta grupa może otwierać i modyfikować wszystkie elementy."
+    "message": "Ta grupa może wyświetlać i modyfikować wszystkie elementy."
   },
   "memberAccessAll": {
-    "message": "Ten użytkownik może otwierać i modyfikować wszystkie elementy."
+    "message": "Ten użytkownik może wyświetlać i modyfikować wszystkie elementy."
   }
 }
