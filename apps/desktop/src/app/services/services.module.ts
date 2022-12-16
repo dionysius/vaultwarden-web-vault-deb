@@ -180,6 +180,7 @@ const RELOAD_CALLBACK = new InjectionToken<() => any>("RELOAD_CALLBACK");
     {
       provide: LoginServiceAbstraction,
       useClass: LoginService,
+      deps: [StateServiceAbstraction],
     },
   ],
 })

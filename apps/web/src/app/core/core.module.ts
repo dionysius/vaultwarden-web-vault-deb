@@ -103,6 +103,7 @@ import { WebPlatformUtilsService } from "./web-platform-utils.service";
     {
       provide: LoginServiceAbstraction,
       useClass: LoginService,
+      deps: [StateService],
     },
   ],
 })

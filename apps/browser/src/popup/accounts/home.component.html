@@ -9,9 +9,18 @@
             <label for="email">{{ "emailAddress" | i18n }}</label>
             <input id="email" type="email" formControlName="email" appInputVerbatim="false" />
           </div>
-        </div>
-        <div class="box-footer no-margin" *ngIf="selfHostedDomain">
-          {{ "loggingInTo" | i18n: selfHostedDomain }}
+          <div class="box-footer no-margin" *ngIf="selfHostedDomain">
+            {{ "loggingInTo" | i18n: selfHostedDomain }}
+          </div>
+          <div class="remember-email-check">
+            <input
+              id="rememberEmail"
+              type="checkbox"
+              name="rememberEmail"
+              formControlName="rememberEmail"
+            />
+            <label for="rememberEmail">{{ "rememberEmail" | i18n }}</label>
+          </div>
         </div>
       </div>
       <div class="box">
@@ -22,10 +31,10 @@
     </form>
     <p class="createAccountLink">
       {{ "newAroundHere" | i18n }}
-      <a routerLink="/register">{{ "createAccount" | i18n }}</a>
+      <a routerLink="/register" (click)="setFormValues()">{{ "createAccount" | i18n }}</a>
     </p>
   </div>
 </div>
-<button type="button" routerLink="/environment" class="settings-icon">
+<button type="button" routerLink="/environment" class="settings-icon" (click)="setFormValues()">
   <i class="bwi bwi-cog-f bwi-lg" aria-hidden="true"></i><span>&nbsp;{{ "settings" | i18n }}</span>
 </button>

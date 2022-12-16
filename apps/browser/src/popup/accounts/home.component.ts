@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from "@angular/router";
 
 import { EnvironmentService } from "@bitwarden/common/abstractions/environment.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
+import { LoginService } from "@bitwarden/common/abstractions/login.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 
@@ -16,6 +17,7 @@ export class HomeComponent implements OnInit {
 
   formGroup = this.formBuilder.group({
     email: ["", [Validators.required, Validators.email]],
+    rememberEmail: [false],
   });
 
   constructor(
@@ -25,12 +27,26 @@ export class HomeComponent implements OnInit {
     private router: Router,
     private i18nService: I18nService,
     private environmentService: EnvironmentService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private loginService: LoginService
   ) {}
   async ngOnInit(): Promise<void> {
-    const rememberedEmail = await this.stateService.getRememberedEmail();
-    if (rememberedEmail != null) {
-      this.formGroup.patchValue({ email: await this.stateService.getRememberedEmail() });
+    let savedEmail = this.loginService.getEmail();
+    const rememberEmail = this.loginService.getRememberEmail();
+
+    if (savedEmail != null) {
+      this.formGroup.patchValue({
+        email: savedEmail,
+        rememberEmail: rememberEmail,
+      });
+    } else {
+      savedEmail = await this.stateService.getRememberedEmail();
+      if (savedEmail != null) {
+        this.formGroup.patchValue({
+          email: savedEmail,
+          rememberEmail: true,
+        });
+      }
     }
   }
 
@@ -45,12 +61,17 @@ export class HomeComponent implements OnInit {
       return;
     }
 
-    this.stateService.setRememberedEmail(this.formGroup.value.email);
-
+    this.loginService.setEmail(this.formGroup.value.email);
+    this.loginService.setRememberEmail(this.formGroup.value.rememberEmail);
     this.router.navigate(["login"], { queryParams: { email: this.formGroup.value.email } });
   }
 
   get selfHostedDomain() {
     return this.environmentService.hasBaseUrl() ? this.environmentService.getWebVaultUrl() : null;
+  }
+
+  setFormValues() {
+    this.loginService.setEmail(this.formGroup.value.email);
+    this.loginService.setRememberEmail(this.formGroup.value.rememberEmail);
   }
 }

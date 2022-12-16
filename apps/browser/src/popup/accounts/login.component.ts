@@ -23,8 +23,6 @@ import { Utils } from "@bitwarden/common/misc/utils";
   templateUrl: "login.component.html",
 })
 export class LoginComponent extends BaseLoginComponent {
-  protected skipRememberEmail = true;
-
   constructor(
     apiService: ApiService,
     appIdService: AppIdService,
@@ -73,6 +71,7 @@ export class LoginComponent extends BaseLoginComponent {
   }
 
   async launchSsoBrowser() {
+    await this.loginService.saveEmailSettings();
     // Generate necessary sso params
     const passwordOptions: any = {
       type: "password",

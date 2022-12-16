@@ -4,4 +4,5 @@ export abstract class LoginService {
   setEmail: (value: string) => void;
   setRememberEmail: (value: boolean) => void;
   clearValues: () => void;
+  saveEmailSettings: () => Promise<void>;
 }

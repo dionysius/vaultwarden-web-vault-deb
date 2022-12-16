@@ -48,23 +48,6 @@ export class StateService extends BaseStateService<GlobalState, Account> {
     await super.addAccount(account);
   }
 
-  async getRememberEmail(options?: StorageOptions) {
-    return (
-      await this.getGlobals(this.reconcileOptions(options, await this.defaultOnDiskLocalOptions()))
-    )?.rememberEmail;
-  }
-
-  async setRememberEmail(value: boolean, options?: StorageOptions): Promise<void> {
-    const globals = await this.getGlobals(
-      this.reconcileOptions(options, await this.defaultOnDiskLocalOptions())
-    );
-    globals.rememberEmail = value;
-    await this.saveGlobals(
-      globals,
-      this.reconcileOptions(options, await this.defaultOnDiskLocalOptions())
-    );
-  }
-
   async getEncryptedCiphers(options?: StorageOptions): Promise<{ [id: string]: CipherData }> {
     options = this.reconcileOptions(options, await this.defaultInMemoryOptions());
     return await super.getEncryptedCiphers(options);
