@@ -268,7 +268,6 @@ export class PolicyService implements InternalPolicyServiceAbstraction {
 
     return organizations.some(
       (o) =>
-        o.enabled &&
         o.status >= OrganizationUserStatusType.Accepted &&
         o.usePolicies &&
         policySet.has(o.id) &&

@@ -536,10 +536,23 @@ main {
     }
     border-radius: $border-radius;
     padding: 6px 10px;
-    width: 160px;
+    width: auto;
+    max-width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    .org-filter-text-container {
+      // src: https://css-tricks.com/snippets/css/truncate-string-with-ellipsis/
+      display: flex;
+      flex: 1;
+      min-width: 0;
+
+      .org-filter-text-name {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
   }
 }
 .vault-select {
@@ -550,9 +563,8 @@ main {
   @include themify($themes) {
     background-color: themed("boxBackgroundColor");
   }
-  margin-right: 5px;
+  margin-right: 18px;
   margin-top: 1px;
-  width: 160px;
   @include themify($themes) {
     border: 1px solid themed("borderColor");
   }
@@ -560,7 +572,9 @@ main {
   button {
     border: none;
     background: transparent;
-    width: 100%;
+    width: auto;
+    max-width: 100%;
+
     padding: 5px 10px;
     text-align: start;
     @include themify($themes) {
@@ -576,6 +590,25 @@ main {
     &:hover {
       @include themify($themes) {
         background-color: themed("boxBackgroundHoverColor");
+      }
+    }
+
+    i.vault-select-prefix-icon {
+      margin-right: 5px;
+    }
+    i.vault-select-suffix-icon {
+      margin-left: 5px;
+    }
+
+    .vault-select-org-text-container {
+      display: flex;
+      flex: 1;
+      min-width: 0;
+      align-items: center;
+      .vault-select-org-name {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
     }
   }

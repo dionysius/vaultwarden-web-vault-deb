@@ -60,6 +60,7 @@
           <span class="filter-buttons">
             <button
               class="filter-button"
+              [ngClass]="{ 'disabled-organization': !organization.enabled }"
               (click)="applyOrganizationFilter(organization)"
               [attr.aria-pressed]="activeFilter.selectedOrganizationId === organization.id"
               appA11yTitle="{{ 'vault' | i18n }}: {{ organization.name }}"
@@ -67,14 +68,20 @@
               <i class="bwi bwi-fw bwi-business" aria-hidden="true"></i>
               {{ organization.name }}
             </button>
-            <ng-container *ngIf="organization.id === activeFilter.selectedOrganizationId">
-              <button [bitMenuTriggerFor]="orgMenu" class="org-options ml-auto">
+            <span class="ml-auto">
+              <i
+                *ngIf="!organization.enabled"
+                class="org-options bwi bwi-fw bwi-exclamation-triangle text-danger"
+                attr.aria-label="{{ 'organizationIsDisabled' | i18n }}"
+                appA11yTitle="{{ 'organizationIsDisabled' | i18n }}"
+              ></i
+              ><button [bitMenuTriggerFor]="orgMenu" class="org-options">
                 <i class="bwi bwi-ellipsis-v" aria-hidden="true"></i>
               </button>
               <bit-menu class="filter-organization-options" #orgMenu>
                 <app-organization-options [organization]="organization"></app-organization-options>
               </bit-menu>
-            </ng-container>
+            </span>
           </span>
         </li>
         <li class="filter-option">

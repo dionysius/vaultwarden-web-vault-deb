@@ -46,6 +46,13 @@
               <i class="bwi bwi-fw bwi-business" aria-hidden="true"></i>
               &nbsp;{{ organization.name }}
             </button>
+            <span *ngIf="!organization.enabled" class="ml-auto">
+              <i
+                class="bwi bwi-fw bwi-exclamation-triangle text-danger mr-auto"
+                attr.aria-label="{{ 'organizationIsDisabled' | i18n }}"
+                appA11yTitle="{{ 'organizationIsDisabled' | i18n }}"
+              ></i>
+            </span>
           </span>
         </li>
       </ul>
@@ -113,7 +120,8 @@
             <span *ngIf="!organization.enabled" class="ml-auto">
               <i
                 class="bwi bwi-fw bwi-exclamation-triangle text-danger mr-auto"
-                aria-hidden="true"
+                attr.aria-label="{{ 'organizationIsDisabled' | i18n }}"
+                appA11yTitle="{{ 'organizationIsDisabled' | i18n }}"
               ></i>
             </span>
           </span>
