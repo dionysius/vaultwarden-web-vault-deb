@@ -221,7 +221,7 @@
                   href="#"
                   appStopClick
                   (click)="groups(u)"
-                  *ngIf="accessGroups"
+                  *ngIf="organization.useGroups"
                 >
                   <i class="bwi bwi-fw bwi-sitemap" aria-hidden="true"></i>
                   {{ "groups" | i18n }}
@@ -231,7 +231,7 @@
                   href="#"
                   appStopClick
                   (click)="events(u)"
-                  *ngIf="accessEvents && u.status === userStatusType.Confirmed"
+                  *ngIf="organization.useEvents && u.status === userStatusType.Confirmed"
                 >
                   <i class="bwi bwi-fw bwi-file-text" aria-hidden="true"></i>
                   {{ "eventLogs" | i18n }}

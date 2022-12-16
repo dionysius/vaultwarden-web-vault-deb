@@ -8,7 +8,7 @@ import { DialogService } from "./dialog.service";
 import { DialogComponent } from "./dialog/dialog.component";
 import { DialogCloseDirective } from "./directives/dialog-close.directive";
 import { DialogTitleContainerDirective } from "./directives/dialog-title-container.directive";
-import { SimpleDialogComponent } from "./simple-dialog/simple-dialog.component";
+import { IconDirective, SimpleDialogComponent } from "./simple-dialog/simple-dialog.component";
 
 @NgModule({
   imports: [SharedModule, IconButtonModule, CdkDialogModule],
@@ -17,8 +17,15 @@ import { SimpleDialogComponent } from "./simple-dialog/simple-dialog.component";
     DialogTitleContainerDirective,
     DialogComponent,
     SimpleDialogComponent,
+    IconDirective,
   ],
-  exports: [CdkDialogModule, DialogComponent, SimpleDialogComponent, DialogCloseDirective],
+  exports: [
+    CdkDialogModule,
+    DialogComponent,
+    SimpleDialogComponent,
+    DialogCloseDirective,
+    IconDirective,
+  ],
   providers: [DialogService],
 })
 export class DialogModule {}

@@ -75,6 +75,10 @@ export class OrganizationSubscriptionComponent implements OnInit, OnDestroy {
   }
 
   async ngOnInit() {
+    if (this.route.snapshot.queryParamMap.get("upgrade")) {
+      this.changePlan();
+    }
+
     this.route.params
       .pipe(
         concatMap(async (params) => {
