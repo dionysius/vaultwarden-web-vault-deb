@@ -288,6 +288,10 @@
       From the Yoti browser extension, click on "Settings", then "Export Saved Logins" and save the
       CSV file.
     </ng-container>
+    <ng-container *ngIf="format === 'passkyjson'">
+      Log in to "https://vault.passky.org" &rarr; "Import & Export" &rarr; "Export" in the Passky
+      section. ("Backup" is unsupported as it is encrypted).
+    </ng-container>
   </app-callout>
   <div class="row">
     <div class="col-6">

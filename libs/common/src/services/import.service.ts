@@ -51,6 +51,7 @@ import { OnePasswordMacCsvImporter } from "../importers/onepassword/onepassword-
 import { OnePasswordWinCsvImporter } from "../importers/onepassword/onepassword-win-csv-importer";
 import { PadlockCsvImporter } from "../importers/padlock-csv-importer";
 import { PassKeepCsvImporter } from "../importers/passkeep-csv-importer";
+import { PasskyJsonImporter } from "../importers/passky/passky-json-importer";
 import { PassmanJsonImporter } from "../importers/passman-json-importer";
 import { PasspackCsvImporter } from "../importers/passpack-csv-importer";
 import { PasswordAgentCsvImporter } from "../importers/passwordagent-csv-importer";
@@ -279,6 +280,8 @@ export class ImportService implements ImportServiceAbstraction {
         return new YotiCsvImporter();
       case "nordpasscsv":
         return new NordPassCsvImporter();
+      case "passkyjson":
+        return new PasskyJsonImporter();
       default:
         return null;
     }
