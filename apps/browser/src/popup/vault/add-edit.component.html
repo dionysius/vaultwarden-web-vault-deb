@@ -549,7 +549,7 @@
           type="button"
           appStopClick
           (click)="addUri()"
-          class="box-content-row box-content-row-newmulti"
+          class="box-content-row box-content-row-newmulti single-line"
           *ngIf="!(!cipher.edit && editMode)"
         >
           <i class="bwi bwi-plus-circle bwi-fw bwi-lg" aria-hidden="true"></i> {{ "newUri" | i18n }}
@@ -607,7 +607,7 @@
         </div>
         <button
           type="button"
-          class="box-content-row box-content-row-flex text-default"
+          class="box-content-row box-content-row-flex text-default single-line"
           appStopClick
           (click)="attachments()"
           *ngIf="editMode && showAttachments && !cloneMode"

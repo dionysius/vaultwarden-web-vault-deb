@@ -19,11 +19,11 @@
   }
 
   .box-header-expandable {
-    padding: 10px;
-    margin: 0 10px;
+    padding: 10px 5px;
+    margin: 0 5px;
     text-transform: uppercase;
     display: flex;
-    width: calc(100% - 20px);
+    width: calc(100% - 10px);
     box-sizing: border-box;
     align-items: center;
     border-radius: $border-radius;
@@ -76,11 +76,18 @@
         }
       }
     }
+
+    &.single-line .box-content-row,
+    .box-content-row.single-line {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      margin: 5px;
+    }
   }
 
   .box-footer {
-    margin: 0 10px 10px 10px;
-    padding: 0 15px 10px 15px;
+    margin: 0 5px 5px 5px;
+    padding: 0 10px 5px 10px;
     font-size: $font-size-small;
 
     button.btn {
@@ -109,10 +116,10 @@
     margin: 10px 0 20px 0;
     .box-content {
       .box-content-row {
-        padding: 10px;
+        padding: 5px 10px;
         text-decoration: none;
         border-radius: $border-radius;
-        margin: 10px;
+        margin: 5px;
         // background-color: $background-color;
 
         @include themify($themes) {
@@ -180,7 +187,7 @@
           display: flex;
           padding-top: 10px;
           padding-bottom: 10px;
-          margin: 10px;
+          margin: 5px;
           border-radius: $border-radius;
         }
       }
@@ -219,11 +226,11 @@
 
 .box-content-row {
   display: block;
-  padding: 10px 15px;
+  padding: 5px 10px;
   position: relative;
   z-index: 1;
   border-radius: $border-radius;
-  margin: 10px;
+  margin: 8px 5px;
 
   @include themify($themes) {
     background-color: themed("boxBackgroundColor");
@@ -353,8 +360,6 @@
   }
 
   &.box-content-row-multi {
-    width: calc(100% - 20px);
-
     input:not([type="checkbox"]) {
       width: 100%;
     }
@@ -388,6 +393,10 @@
   &.box-content-row-checkbox,
   &.box-content-row-input,
   &.box-content-row-slider {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin: 5px;
+
     label,
     .row-label {
       font-size: $font-size-base;

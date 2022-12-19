@@ -21,7 +21,7 @@
   </header>
   <main tabindex="-1">
     <div class="box" *ngIf="cipher && cipher.hasAttachments">
-      <div class="box-content no-hover">
+      <div class="box-content no-hover single-line">
         <div class="box-content-row box-content-row-flex" *ngFor="let a of cipher.attachments">
           <div class="row-main">
             {{ a.fileName }}

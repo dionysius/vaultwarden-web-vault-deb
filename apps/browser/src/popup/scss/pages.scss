@@ -11,8 +11,8 @@ app-sync {
 app-generator .generated-block {
   font-size: $font-size-large;
   font-family: $font-family-monospace;
-  margin: 10px;
-  padding: 10px 10px 10px 0;
+  margin: 8px;
+  padding: 8px 10px 8px 0;
   display: flex;
   border-radius: $border-radius;
   border: 1px solid;
@@ -165,7 +165,8 @@ app-options {
 
 app-vault-view,
 app-vault-add-edit,
-app-generator {
+app-generator,
+app-vault-attachments {
   .box {
     margin: 15px 0 25px 0;
 
