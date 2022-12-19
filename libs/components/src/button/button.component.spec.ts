@@ -41,6 +41,19 @@ describe("Button", () => {
     expect(buttonDebugElement.nativeElement.classList.contains("tw-border-danger-500")).toBe(true);
     expect(linkDebugElement.nativeElement.classList.contains("tw-border-danger-500")).toBe(true);
 
+    testAppComponent.buttonType = "unstyled";
+    fixture.detectChanges();
+    expect(
+      Array.from(buttonDebugElement.nativeElement.classList).some((klass: string) =>
+        klass.startsWith("tw-bg")
+      )
+    ).toBe(false);
+    expect(
+      Array.from(linkDebugElement.nativeElement.classList).some((klass: string) =>
+        klass.startsWith("tw-bg")
+      )
+    ).toBe(false);
+
     testAppComponent.buttonType = null;
     fixture.detectChanges();
     expect(buttonDebugElement.nativeElement.classList.contains("tw-border-text-muted")).toBe(true);

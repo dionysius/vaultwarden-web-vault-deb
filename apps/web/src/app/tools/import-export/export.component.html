@@ -84,73 +84,41 @@
         <br />
 
         <ng-container *ngIf="fileEncryptionType == encryptedExportType.FileEncrypted">
-          <div class="input-group">
-            <bit-form-field class="tw-w-full">
-              <bit-label>{{ "filePassword" | i18n }}</bit-label>
-              <input
-                bitInput
-                [type]="showFilePassword ? 'text' : 'password'"
-                id="filePassword"
-                formControlName="filePassword"
-                name="password"
-              />
-
-              <div class="input-group-append">
-                <button
-                  bitSuffix
-                  bitButton
-                  buttonType="secondary"
-                  appStopClick
-                  appA11yTitle="{{ 'toggleVisibility' | i18n }}"
-                  [attr.aria-pressed]="showFilePassword"
-                  (click)="toggleFilePassword()"
-                  type="button"
-                >
-                  <i
-                    class="bwi bwi-lg"
-                    aria-hidden="true"
-                    [ngClass]="{ 'bwi-eye': !showFilePassword, 'bwi-eye-slash': showFilePassword }"
-                  ></i>
-                </button>
-              </div>
-            </bit-form-field>
-            <div class="small text-muted">
-              {{ "exportPasswordDescription" | i18n }}
-            </div>
-          </div>
-          <div class="input-group tw-mt-4">
-            <bit-form-field class="tw-w-full">
-              <bit-label>{{ "confirmFilePassword" | i18n }}</bit-label>
-              <input
-                bitInput
-                [type]="showConfirmFilePassword ? 'text' : 'password'"
-                id="confirmFilePassword"
-                formControlName="confirmFilePassword"
-                name="confirmFilePassword"
-              />
-              <div class="input-group-append">
-                <button
-                  bitSuffix
-                  bitButton
-                  buttonType="secondary"
-                  appStopClick
-                  appA11yTitle="{{ 'toggleVisibility' | i18n }}"
-                  [attr.aria-pressed]="showConfirmFilePassword"
-                  (click)="toggleConfirmFilePassword()"
-                  type="button"
-                >
-                  <i
-                    class="bwi bwi-lg"
-                    aria-hidden="true"
-                    [ngClass]="{
-                      'bwi-eye': !showConfirmFilePassword,
-                      'bwi-eye-slash': showConfirmFilePassword
-                    }"
-                  ></i>
-                </button>
-              </div>
-            </bit-form-field>
-          </div>
+          <bit-form-field>
+            <bit-label>{{ "filePassword" | i18n }}</bit-label>
+            <input
+              bitInput
+              type="password"
+              id="filePassword"
+              formControlName="filePassword"
+              name="password"
+            />
+            <button
+              type="button"
+              bitSuffix
+              bitIconButton
+              bitPasswordInputToggle
+              [(toggled)]="showFilePassword"
+            ></button>
+            <bit-hint>{{ "exportPasswordDescription" | i18n }}</bit-hint>
+          </bit-form-field>
+          <bit-form-field>
+            <bit-label>{{ "confirmFilePassword" | i18n }}</bit-label>
+            <input
+              bitInput
+              type="password"
+              id="confirmFilePassword"
+              formControlName="confirmFilePassword"
+              name="confirmFilePassword"
+            />
+            <button
+              type="button"
+              bitSuffix
+              bitIconButton
+              bitPasswordInputToggle
+              [(toggled)]="showFilePassword"
+            ></button>
+          </bit-form-field>
         </ng-container>
       </ng-container>
 

@@ -3,13 +3,16 @@ import {
   Directive,
   EventEmitter,
   Host,
+  HostBinding,
   HostListener,
   Input,
   OnChanges,
   Output,
 } from "@angular/core";
 
-import { ButtonComponent } from "../button";
+import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
+
+import { BitIconButtonComponent } from "../icon-button/icon-button.component";
 
 import { BitFormFieldComponent } from "./form-field.component";
 
@@ -17,9 +20,18 @@ import { BitFormFieldComponent } from "./form-field.component";
   selector: "[bitPasswordInputToggle]",
 })
 export class BitPasswordInputToggleDirective implements AfterContentInit, OnChanges {
-  @Input() toggled = false;
+  /**
+   * Whether the input is toggled to show the password.
+   */
+  @HostBinding("attr.aria-pressed") @Input() toggled = false;
   @Output() toggledChange = new EventEmitter<boolean>();
 
+  @HostBinding("attr.title") title = this.i18nService.t("toggleVisibility");
+  @HostBinding("attr.aria-label") label = this.i18nService.t("toggleVisibility");
+
+  /**
+   * Click handler to toggle the state of the input type.
+   */
   @HostListener("click") onClick() {
     this.toggled = !this.toggled;
     this.toggledChange.emit(this.toggled);
@@ -29,7 +41,11 @@ export class BitPasswordInputToggleDirective implements AfterContentInit, OnChan
     this.formField.input?.focus();
   }
 
-  constructor(@Host() private button: ButtonComponent, private formField: BitFormFieldComponent) {}
+  constructor(
+    @Host() private button: BitIconButtonComponent,
+    private formField: BitFormFieldComponent,
+    private i18nService: I18nService
+  ) {}
 
   get icon() {
     return this.toggled ? "bwi-eye-slash" : "bwi-eye";

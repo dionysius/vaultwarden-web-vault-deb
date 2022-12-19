@@ -21,8 +21,6 @@ export class ExportComponent implements OnInit, OnDestroy {
 
   formPromise: Promise<string>;
   disabledByPolicy = false;
-  showFilePassword: boolean;
-  showConfirmFilePassword: boolean;
 
   exportForm = this.formBuilder.group({
     format: ["json"],
@@ -197,16 +195,6 @@ export class ExportComponent implements OnInit, OnDestroy {
 
   get fileEncryptionType() {
     return this.exportForm.get("fileEncryptionType").value;
-  }
-
-  toggleFilePassword() {
-    this.showFilePassword = !this.showFilePassword;
-    document.getElementById("filePassword").focus();
-  }
-
-  toggleConfirmFilePassword() {
-    this.showConfirmFilePassword = !this.showConfirmFilePassword;
-    document.getElementById("confirmFilePassword").focus();
   }
 
   adjustValidators() {

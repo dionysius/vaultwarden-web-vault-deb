@@ -27,6 +27,7 @@ const template = `
     <bit-form-field>
       <bit-label>Email</bit-label>
       <input bitInput formControlName="email" />
+      <button type="button" bitSuffix bitIconButton="bwi-refresh" bitFormButton [bitAction]="refresh"></button>
     </bit-form-field>
 
     <button class="tw-mr-2" type="submit" buttonType="primary" bitButton bitFormButton>Submit</button>
@@ -46,6 +47,12 @@ class PromiseExampleComponent {
   });
 
   constructor(private formBuilder: FormBuilder) {}
+
+  refresh = async () => {
+    await new Promise<void>((resolve, reject) => {
+      setTimeout(resolve, 2000);
+    });
+  };
 
   submit = async () => {
     this.formObj.markAllAsTouched();
@@ -77,6 +84,10 @@ class ObservableExampleComponent {
   });
 
   constructor(private formBuilder: FormBuilder) {}
+
+  refresh = () => {
+    return of("fake observable").pipe(delay(2000));
+  };
 
   submit = () => {
     this.formObj.markAllAsTouched();

@@ -77,18 +77,12 @@
       <bit-label>{{ "masterPass" | i18n }}</bit-label>
       <input
         id="login_input_master-password"
+        type="password"
         bitInput
-        [type]="showPassword ? 'text' : 'password'"
         formControlName="masterPassword"
         appAutofocus
       />
-      <button type="button" bitSuffix bitButton (click)="togglePassword()">
-        <i
-          aria-hidden="true"
-          class="bwi bwi-lg bwi-eye"
-          [ngClass]="{ 'bwi-eye': !showPassword, 'bwi-eye-slash': showPassword }"
-        ></i>
-      </button>
+      <button type="button" bitSuffix bitIconButton bitPasswordInputToggle></button>
     </bit-form-field>
     <a class="-tw-mt-2" routerLink="/hint" (mousedown)="goToHint()" (click)="setFormValues()">{{
       "getMasterPasswordHint" | i18n

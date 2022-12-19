@@ -23,6 +23,7 @@ import { UserVerificationPromptComponent } from "../../components/user-verificat
 export class ExportComponent extends BaseExportComponent {
   organizationId: string;
   encryptedExportType = EncryptedExportType;
+  protected showFilePassword: boolean;
 
   constructor(
     cryptoService: CryptoService,

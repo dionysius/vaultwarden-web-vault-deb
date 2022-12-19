@@ -31,6 +31,7 @@ export class BitInputDirective implements BitFormFieldControl {
       "focus:tw-outline-none",
       "focus:tw-border-primary-700",
       "focus:tw-ring-1",
+      "focus:tw-ring-inset",
       "focus:tw-ring-primary-700",
       "focus:tw-z-10",
       "disabled:tw-bg-secondary-100",

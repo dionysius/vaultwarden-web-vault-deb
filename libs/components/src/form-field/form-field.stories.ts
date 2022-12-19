@@ -11,8 +11,10 @@ import { Meta, moduleMetadata, Story } from "@storybook/angular";
 
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 
+import { AsyncActionsModule } from "../async-actions";
 import { ButtonModule } from "../button";
 import { CheckboxModule } from "../checkbox";
+import { IconButtonModule } from "../icon-button";
 import { InputModule } from "../input/input.module";
 import { RadioButtonModule } from "../radio-button";
 import { I18nMockService } from "../utils/i18n-mock.service";
@@ -31,6 +33,8 @@ export default {
         FormFieldModule,
         InputModule,
         ButtonModule,
+        IconButtonModule,
+        AsyncActionsModule,
         CheckboxModule,
         RadioButtonModule,
       ],
@@ -177,10 +181,13 @@ const ButtonGroupTemplate: Story<BitFormFieldComponent> = (args: BitFormFieldCom
   props: args,
   template: `
     <bit-form-field>
-      <bit-label>Label</bit-label>
-      <input bitInput placeholder="Placeholder" type="password" />
-      <button bitSuffix bitButton bitIconButton="bwi-eye"></button>
-      <button bitSuffix bitButton bitIconButton="bwi-clone"></button>
+      <button bitPrefix bitIconButton="bwi-star"></button>
+      <input bitInput placeholder="Placeholder" />
+      <button bitSuffix bitIconButton="bwi-eye"></button>
+      <button bitSuffix bitIconButton="bwi-clone"></button>
+      <button bitSuffix bitButton>
+        Apply
+      </button>
     </bit-form-field>
   `,
 });
@@ -195,9 +202,13 @@ const DisabledButtonInputGroupTemplate: Story<BitFormFieldComponent> = (
   template: `
     <bit-form-field>
       <bit-label>Label</bit-label>
+      <button bitPrefix bitIconButton="bwi-star" disabled></button>
       <input bitInput placeholder="Placeholder" disabled />
-      <button bitSuffix bitButton bitIconButton="bwi-eye" disabled></button>
-      <button bitSuffix bitButton bitIconButton="bwi-clone"></button>
+      <button bitSuffix bitIconButton="bwi-eye" disabled></button>
+      <button bitSuffix bitIconButton="bwi-clone" disabled></button>
+      <button bitSuffix bitButton disabled>
+        Apply
+      </button>
     </bit-form-field>
   `,
 });

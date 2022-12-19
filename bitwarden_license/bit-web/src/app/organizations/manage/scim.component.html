@@ -42,12 +42,10 @@
     <button
       type="button"
       bitSuffix
-      bitButton
+      bitIconButton="bwi-clone"
       (click)="copyScimUrl()"
       [appA11yTitle]="'copyScimUrl' | i18n"
-    >
-      <i aria-hidden="true" class="bwi bwi-lg bwi-clone"></i>
-    </button>
+    ></button>
   </bit-form-field>
 
   <bit-form-field *ngIf="showScimSettings">
@@ -59,40 +57,33 @@
       id="clientSecret"
     />
     <ng-container>
-      <button type="button" bitSuffix bitButton (click)="toggleScimKey()">
-        <i
-          aria-hidden="true"
-          class="bwi bwi-lg bwi-eye"
-          [ngClass]="{ 'bwi-eye': !showScimKey, 'bwi-eye-slash': showScimKey }"
-          [appA11yTitle]="'toggleVisibility' | i18n"
-        ></i>
-      </button>
-    </ng-container>
-    <ng-container #rotateButton [appApiAction]="rotatePromise">
       <button
-        [disabled]="$any(rotateButton).loading"
         type="button"
         bitSuffix
-        bitButton
+        [disabled]="$any(rotateButton).loading"
+        [bitIconButton]="showScimKey ? 'bwi-eye-slash' : 'bwi-eye'"
+        (click)="toggleScimKey()"
+        [appA11yTitle]="'toggleVisibility' | i18n"
+      ></button>
+    </ng-container>
+    <ng-container #rotateButton [appApiAction]="rotatePromise">
+      <!-- TODO: Convert to async actions -->
+      <button
+        [loading]="$any(rotateButton).loading"
+        type="button"
+        bitSuffix
+        bitIconButton="bwi-generate"
         (click)="rotateScimKey()"
         [appA11yTitle]="'rotateScimKey' | i18n"
-      >
-        <i
-          aria-hidden="true"
-          class="bwi bwi-lg bwi-generate"
-          [ngClass]="{ 'bwi-spin': $any(rotateButton).loading }"
-        ></i>
-      </button>
+      ></button>
     </ng-container>
     <button
       type="button"
       bitSuffix
-      bitButton
+      bitIconButton="bwi-clone"
       (click)="copyScimKey()"
       [appA11yTitle]="'copyScimKey' | i18n"
-    >
-      <i aria-hidden="true" class="bwi bwi-lg bwi-clone"></i>
-    </button>
+    ></button>
     <bit-hint>{{ "scimApiKeyHelperText" | i18n }}</bit-hint>
   </bit-form-field>
 

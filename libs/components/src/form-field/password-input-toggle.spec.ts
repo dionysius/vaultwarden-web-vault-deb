@@ -2,8 +2,12 @@ import { Component, DebugElement } from "@angular/core";
 import { ComponentFixture, TestBed } from "@angular/core/testing";
 import { By } from "@angular/platform-browser";
 
-import { ButtonComponent, ButtonModule } from "../button";
+import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
+
+import { IconButtonModule } from "../icon-button";
+import { BitIconButtonComponent } from "../icon-button/icon-button.component";
 import { InputModule } from "../input/input.module";
+import { I18nMockService } from "../utils/i18n-mock.service";
 
 import { BitFormFieldControl } from "./form-field-control";
 import { BitFormFieldComponent } from "./form-field.component";
@@ -17,7 +21,7 @@ import { BitPasswordInputToggleDirective } from "./password-input-toggle.directi
       <bit-form-field>
         <bit-label>Password</bit-label>
         <input bitInput type="password" />
-        <button type="button" bitButton bitSuffix bitPasswordInputToggle></button>
+        <button type="button" bitIconButton bitSuffix bitPasswordInputToggle></button>
       </bit-form-field>
     </form>
   `,
@@ -26,21 +30,22 @@ class TestFormFieldComponent {}
 
 describe("PasswordInputToggle", () => {
   let fixture: ComponentFixture<TestFormFieldComponent>;
-  let button: ButtonComponent;
+  let button: BitIconButtonComponent;
   let input: BitFormFieldControl;
   let toggle: DebugElement;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [FormFieldModule, ButtonModule, InputModule],
+      imports: [FormFieldModule, IconButtonModule, InputModule],
       declarations: [TestFormFieldComponent],
+      providers: [{ provide: I18nService, useValue: new I18nMockService({}) }],
     }).compileComponents();
 
     fixture = TestBed.createComponent(TestFormFieldComponent);
     fixture.detectChanges();
 
     toggle = fixture.debugElement.query(By.directive(BitPasswordInputToggleDirective));
-    const buttonEl = fixture.debugElement.query(By.directive(ButtonComponent));
+    const buttonEl = fixture.debugElement.query(By.directive(BitIconButtonComponent));
     button = buttonEl.componentInstance;
     const formFieldEl = fixture.debugElement.query(By.directive(BitFormFieldComponent));
     const formField: BitFormFieldComponent = formFieldEl.componentInstance;

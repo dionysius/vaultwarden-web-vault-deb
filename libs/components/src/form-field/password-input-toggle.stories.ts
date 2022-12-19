@@ -1,8 +1,11 @@
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { Meta, moduleMetadata, Story } from "@storybook/angular";
 
-import { ButtonModule } from "../button";
+import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
+
+import { IconButtonModule } from "../icon-button";
 import { InputModule } from "../input/input.module";
+import { I18nMockService } from "../utils/i18n-mock.service";
 
 import { FormFieldModule } from "./form-field.module";
 import { BitPasswordInputToggleDirective } from "./password-input-toggle.directive";
@@ -12,7 +15,13 @@ export default {
   component: BitPasswordInputToggleDirective,
   decorators: [
     moduleMetadata({
-      imports: [FormsModule, ReactiveFormsModule, FormFieldModule, InputModule, ButtonModule],
+      imports: [FormsModule, ReactiveFormsModule, FormFieldModule, InputModule, IconButtonModule],
+      providers: [
+        {
+          provide: I18nService,
+          useValue: new I18nMockService({ toggleVisibility: "Toggle visibility" }),
+        },
+      ],
     }),
   ],
   parameters: {
@@ -40,7 +49,7 @@ const Template: Story<BitPasswordInputToggleDirective> = (
       <bit-form-field>
         <bit-label>Password</bit-label>
         <input bitInput type="password" />
-        <button type="button" bitButton bitSuffix bitPasswordInputToggle></button>
+        <button type="button" bitIconButton bitSuffix bitPasswordInputToggle></button>
       </bit-form-field>
     </form>
   `,
@@ -60,7 +69,7 @@ const TemplateBinding: Story<BitPasswordInputToggleDirective> = (
       <bit-form-field>
         <bit-label>Password</bit-label>
         <input bitInput type="password" />
-        <button type="button" bitButton bitSuffix bitPasswordInputToggle [(toggled)]="toggled"></button>
+        <button type="button" bitIconButton bitSuffix bitPasswordInputToggle [(toggled)]="toggled"></button>
       </bit-form-field>
 
       <label class="tw-text-main">
