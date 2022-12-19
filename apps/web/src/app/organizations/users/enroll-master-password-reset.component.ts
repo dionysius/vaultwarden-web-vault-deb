@@ -2,17 +2,17 @@ import { Component } from "@angular/core";
 
 import { ModalRef } from "@bitwarden/angular/components/modal/modal.ref";
 import { ModalConfig } from "@bitwarden/angular/services/modal.service";
-import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
+import { OrganizationUserService } from "@bitwarden/common/abstractions/organization-user/organization-user.service";
+import { OrganizationUserResetPasswordEnrollmentRequest } from "@bitwarden/common/abstractions/organization-user/requests";
 import { OrganizationApiServiceAbstraction } from "@bitwarden/common/abstractions/organization/organization-api.service.abstraction";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { SyncService } from "@bitwarden/common/abstractions/sync/sync.service.abstraction";
 import { UserVerificationService } from "@bitwarden/common/abstractions/userVerification/userVerification.service.abstraction";
 import { Utils } from "@bitwarden/common/misc/utils";
 import { Organization } from "@bitwarden/common/models/domain/organization";
-import { OrganizationUserResetPasswordEnrollmentRequest } from "@bitwarden/common/models/request/organization-user-reset-password-enrollment.request";
 import { Verification } from "@bitwarden/common/types/verification";
 
 @Component({
@@ -27,7 +27,6 @@ export class EnrollMasterPasswordReset {
 
   constructor(
     private userVerificationService: UserVerificationService,
-    private apiService: ApiService,
     private platformUtilsService: PlatformUtilsService,
     private i18nService: I18nService,
     private cryptoService: CryptoService,
@@ -35,7 +34,8 @@ export class EnrollMasterPasswordReset {
     private logService: LogService,
     private modalRef: ModalRef,
     config: ModalConfig,
-    private organizationApiService: OrganizationApiServiceAbstraction
+    private organizationApiService: OrganizationApiServiceAbstraction,
+    private organizationUserService: OrganizationUserService
   ) {
     this.organization = config.data.organization;
   }
@@ -65,7 +65,7 @@ export class EnrollMasterPasswordReset {
 
         // Create request and execute enrollment
         request.resetPasswordKey = keyString;
-        await this.apiService.putOrganizationUserResetPasswordEnrollment(
+        await this.organizationUserService.putOrganizationUserResetPasswordEnrollment(
           this.organization.id,
           this.organization.userId,
           request

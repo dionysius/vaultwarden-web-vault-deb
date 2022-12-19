@@ -8,6 +8,7 @@ import { ExportService } from "@bitwarden/common/abstractions/export.service";
 import { FileDownloadService } from "@bitwarden/common/abstractions/fileDownload/fileDownload.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
+import { OrganizationUserService } from "@bitwarden/common/abstractions/organization-user/organization-user.service";
 import { OrganizationService } from "@bitwarden/common/abstractions/organization/organization.service.abstraction";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { ProviderService } from "@bitwarden/common/abstractions/provider.service";
@@ -41,6 +42,7 @@ export class EventsComponent extends BaseEventsComponent implements OnInit, OnDe
     logService: LogService,
     private userNamePipe: UserNamePipe,
     private organizationService: OrganizationService,
+    private organizationUserService: OrganizationUserService,
     private providerService: ProviderService,
     fileDownloadService: FileDownloadService
   ) {
@@ -72,7 +74,7 @@ export class EventsComponent extends BaseEventsComponent implements OnInit, OnDe
   }
 
   async load() {
-    const response = await this.apiService.getOrganizationUsers(this.organizationId);
+    const response = await this.organizationUserService.getAllUsers(this.organizationId);
     response.data.forEach((u) => {
       const name = this.userNamePipe.transform(u);
       this.orgUsersUserIdMap.set(u.userId, { name: name, email: u.email });

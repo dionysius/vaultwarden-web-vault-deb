@@ -1,10 +1,9 @@
-import { KdfType } from "../../enums/kdfType";
-import { OrganizationUserStatusType } from "../../enums/organizationUserStatusType";
-import { OrganizationUserType } from "../../enums/organizationUserType";
-import { PermissionsApi } from "../api/permissions.api";
-
-import { BaseResponse } from "./base.response";
-import { SelectionReadOnlyResponse } from "./selection-read-only.response";
+import { KdfType } from "../../../enums/kdfType";
+import { OrganizationUserStatusType } from "../../../enums/organizationUserStatusType";
+import { OrganizationUserType } from "../../../enums/organizationUserType";
+import { PermissionsApi } from "../../../models/api/permissions.api";
+import { BaseResponse } from "../../../models/response/base.response";
+import { SelectionReadOnlyResponse } from "../../../models/response/selection-read-only.response";
 
 export class OrganizationUserResponse extends BaseResponse {
   id: string;

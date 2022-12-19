@@ -4,12 +4,13 @@ import { SearchPipe } from "@bitwarden/angular/pipes/search.pipe";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
+import { OrganizationUserService } from "@bitwarden/common/abstractions/organization-user/organization-user.service";
+import { OrganizationUserUserDetailsResponse } from "@bitwarden/common/abstractions/organization-user/responses";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { OrganizationUserStatusType } from "@bitwarden/common/enums/organizationUserStatusType";
 import { OrganizationUserType } from "@bitwarden/common/enums/organizationUserType";
 import { Utils } from "@bitwarden/common/misc/utils";
 import { SelectionReadOnlyRequest } from "@bitwarden/common/models/request/selection-read-only.request";
-import { OrganizationUserUserDetailsResponse } from "@bitwarden/common/models/response/organization-user.response";
 
 @Component({
   selector: "app-entity-users",
@@ -39,6 +40,7 @@ export class EntityUsersComponent implements OnInit {
     private apiService: ApiService,
     private i18nService: I18nService,
     private platformUtilsService: PlatformUtilsService,
+    private organizationUserService: OrganizationUserService,
     private logService: LogService
   ) {}
 
@@ -64,7 +66,7 @@ export class EntityUsersComponent implements OnInit {
   }
 
   async loadUsers() {
-    const users = await this.apiService.getOrganizationUsers(this.organizationId);
+    const users = await this.organizationUserService.getAllUsers(this.organizationId);
     this.allUsers = users.data.map((r) => r).sort(Utils.getSortFunction(this.i18nService, "email"));
     if (this.entity === "group") {
       const response = await this.apiService.getGroupUsers(this.organizationId, this.entityId);

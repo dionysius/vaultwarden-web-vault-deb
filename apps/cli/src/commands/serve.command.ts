@@ -73,6 +73,7 @@ export class ServeCommand {
       this.main.collectionService,
       this.main.organizationService,
       this.main.searchService,
+      this.main.organizationUserService,
       this.main.apiService
     );
     this.createCommand = new CreateCommand(
@@ -108,7 +109,11 @@ export class ServeCommand {
       this.main.apiService,
       this.main.folderApiService
     );
-    this.confirmCommand = new ConfirmCommand(this.main.apiService, this.main.cryptoService);
+    this.confirmCommand = new ConfirmCommand(
+      this.main.apiService,
+      this.main.cryptoService,
+      this.main.organizationUserService
+    );
     this.restoreCommand = new RestoreCommand(this.main.cipherService);
     this.shareCommand = new ShareCommand(this.main.cipherService);
     this.lockCommand = new LockCommand(this.main.vaultTimeoutService);

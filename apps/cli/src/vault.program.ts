@@ -115,6 +115,7 @@ export class VaultProgram extends Program {
           this.main.collectionService,
           this.main.organizationService,
           this.main.searchService,
+          this.main.organizationUserService,
           this.main.apiService
         );
         const response = await command.run(object, cmd);
@@ -410,7 +411,11 @@ export class VaultProgram extends Program {
         }
 
         await this.exitIfLocked();
-        const command = new ConfirmCommand(this.main.apiService, this.main.cryptoService);
+        const command = new ConfirmCommand(
+          this.main.apiService,
+          this.main.cryptoService,
+          this.main.organizationUserService
+        );
         const response = await command.run(object, id, cmd);
         this.processResponse(response);
       });

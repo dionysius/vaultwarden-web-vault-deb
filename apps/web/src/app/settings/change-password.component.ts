@@ -10,6 +10,8 @@ import { FolderService } from "@bitwarden/common/abstractions/folder/folder.serv
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { KeyConnectorService } from "@bitwarden/common/abstractions/keyConnector.service";
 import { MessagingService } from "@bitwarden/common/abstractions/messaging.service";
+import { OrganizationUserService } from "@bitwarden/common/abstractions/organization-user/organization-user.service";
+import { OrganizationUserResetPasswordEnrollmentRequest } from "@bitwarden/common/abstractions/organization-user/requests";
 import { OrganizationApiServiceAbstraction } from "@bitwarden/common/abstractions/organization/organization-api.service.abstraction";
 import { OrganizationService } from "@bitwarden/common/abstractions/organization/organization.service.abstraction";
 import { PasswordGenerationService } from "@bitwarden/common/abstractions/passwordGeneration.service";
@@ -25,7 +27,6 @@ import { SymmetricCryptoKey } from "@bitwarden/common/models/domain/symmetric-cr
 import { CipherWithIdRequest } from "@bitwarden/common/models/request/cipher-with-id.request";
 import { EmergencyAccessUpdateRequest } from "@bitwarden/common/models/request/emergency-access-update.request";
 import { FolderWithIdRequest } from "@bitwarden/common/models/request/folder-with-id.request";
-import { OrganizationUserResetPasswordEnrollmentRequest } from "@bitwarden/common/models/request/organization-user-reset-password-enrollment.request";
 import { PasswordRequest } from "@bitwarden/common/models/request/password.request";
 import { SendWithIdRequest } from "@bitwarden/common/models/request/send-with-id.request";
 import { UpdateKeyRequest } from "@bitwarden/common/models/request/update-key.request";
@@ -55,7 +56,8 @@ export class ChangePasswordComponent extends BaseChangePasswordComponent {
     private organizationService: OrganizationService,
     private keyConnectorService: KeyConnectorService,
     private router: Router,
-    private organizationApiService: OrganizationApiServiceAbstraction
+    private organizationApiService: OrganizationApiServiceAbstraction,
+    private organizationUserService: OrganizationUserService
   ) {
     super(
       i18nService,
@@ -280,7 +282,11 @@ export class ChangePasswordComponent extends BaseChangePasswordComponent {
       request.masterPasswordHash = masterPasswordHash;
       request.resetPasswordKey = encryptedKey.encryptedString;
 
-      await this.apiService.putOrganizationUserResetPasswordEnrollment(org.id, org.userId, request);
+      await this.organizationUserService.putOrganizationUserResetPasswordEnrollment(
+        org.id,
+        org.userId,
+        request
+      );
     }
   }
 }

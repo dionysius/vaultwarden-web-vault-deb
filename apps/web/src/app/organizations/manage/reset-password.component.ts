@@ -11,17 +11,17 @@ import { Subject, takeUntil } from "rxjs";
 import zxcvbn from "zxcvbn";
 
 import { PasswordStrengthComponent } from "@bitwarden/angular/shared/components/password-strength/password-strength.component";
-import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
+import { OrganizationUserService } from "@bitwarden/common/abstractions/organization-user/organization-user.service";
+import { OrganizationUserResetPasswordRequest } from "@bitwarden/common/abstractions/organization-user/requests";
 import { PasswordGenerationService } from "@bitwarden/common/abstractions/passwordGeneration.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { PolicyService } from "@bitwarden/common/abstractions/policy/policy.service.abstraction";
 import { EncString } from "@bitwarden/common/models/domain/enc-string";
 import { MasterPasswordPolicyOptions } from "@bitwarden/common/models/domain/master-password-policy-options";
 import { SymmetricCryptoKey } from "@bitwarden/common/models/domain/symmetric-crypto-key";
-import { OrganizationUserResetPasswordRequest } from "@bitwarden/common/models/request/organization-user-reset-password.request";
 
 @Component({
   selector: "app-reset-password",
@@ -44,13 +44,13 @@ export class ResetPasswordComponent implements OnInit, OnDestroy {
   private destroy$ = new Subject<void>();
 
   constructor(
-    private apiService: ApiService,
     private i18nService: I18nService,
     private platformUtilsService: PlatformUtilsService,
     private passwordGenerationService: PasswordGenerationService,
     private policyService: PolicyService,
     private cryptoService: CryptoService,
-    private logService: LogService
+    private logService: LogService,
+    private organizationUserService: OrganizationUserService
   ) {}
 
   async ngOnInit() {
@@ -147,7 +147,7 @@ export class ResetPasswordComponent implements OnInit, OnDestroy {
 
     // Get user Information (kdf type, kdf iterations, resetPasswordKey, private key) and change password
     try {
-      this.formPromise = this.apiService
+      this.formPromise = this.organizationUserService
         .getOrganizationUserResetPasswordDetails(this.organizationId, this.id)
         .then(async (response) => {
           if (response == null) {
@@ -188,7 +188,7 @@ export class ResetPasswordComponent implements OnInit, OnDestroy {
           request.newMasterPasswordHash = newPasswordHash;
 
           // Change user's password
-          return this.apiService.putOrganizationUserResetPassword(
+          return this.organizationUserService.putOrganizationUserResetPassword(
             this.organizationId,
             this.id,
             request

@@ -5,6 +5,8 @@ import { ModalService } from "@bitwarden/angular/services/modal.service";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
+import { OrganizationUserService } from "@bitwarden/common/abstractions/organization-user/organization-user.service";
+import { OrganizationUserResetPasswordEnrollmentRequest } from "@bitwarden/common/abstractions/organization-user/requests";
 import { OrganizationApiServiceAbstraction } from "@bitwarden/common/abstractions/organization/organization-api.service.abstraction";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { PolicyService } from "@bitwarden/common/abstractions/policy/policy.service.abstraction";
@@ -12,7 +14,6 @@ import { SyncService } from "@bitwarden/common/abstractions/sync/sync.service.ab
 import { PolicyType } from "@bitwarden/common/enums/policyType";
 import { Organization } from "@bitwarden/common/models/domain/organization";
 import { Policy } from "@bitwarden/common/models/domain/policy";
-import { OrganizationUserResetPasswordEnrollmentRequest } from "@bitwarden/common/models/request/organization-user-reset-password-enrollment.request";
 
 import { EnrollMasterPasswordReset } from "../../../organizations/users/enroll-master-password-reset.component";
 
@@ -37,7 +38,8 @@ export class OrganizationOptionsComponent implements OnInit, OnDestroy {
     private policyService: PolicyService,
     private modalService: ModalService,
     private logService: LogService,
-    private organizationApiService: OrganizationApiServiceAbstraction
+    private organizationApiService: OrganizationApiServiceAbstraction,
+    private organizationUserService: OrganizationUserService
   ) {}
 
   async ngOnInit() {
@@ -133,7 +135,7 @@ export class OrganizationOptionsComponent implements OnInit, OnDestroy {
       const request = new OrganizationUserResetPasswordEnrollmentRequest();
       request.masterPasswordHash = "ignored";
       request.resetPasswordKey = null;
-      this.actionPromise = this.apiService.putOrganizationUserResetPasswordEnrollment(
+      this.actionPromise = this.organizationUserService.putOrganizationUserResetPasswordEnrollment(
         this.organization.id,
         this.organization.userId,
         request

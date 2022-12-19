@@ -3,10 +3,10 @@ import { Component, Input, OnInit } from "@angular/core";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
+import { OrganizationUserService } from "@bitwarden/common/abstractions/organization-user/organization-user.service";
+import { OrganizationUserBulkConfirmRequest } from "@bitwarden/common/abstractions/organization-user/requests";
 import { OrganizationUserStatusType } from "@bitwarden/common/enums/organizationUserStatusType";
 import { Utils } from "@bitwarden/common/misc/utils";
-import { OrganizationUserBulkConfirmRequest } from "@bitwarden/common/models/request/organization-user-bulk-confirm.request";
-import { OrganizationUserBulkRequest } from "@bitwarden/common/models/request/organization-user-bulk.request";
 
 import { BulkUserDetails } from "./bulk-status.component";
 
@@ -31,6 +31,7 @@ export class BulkConfirmComponent implements OnInit {
   constructor(
     protected cryptoService: CryptoService,
     protected apiService: ApiService,
+    private organizationUserService: OrganizationUserService,
     private i18nService: I18nService
   ) {}
 
@@ -91,8 +92,10 @@ export class BulkConfirmComponent implements OnInit {
   }
 
   protected async getPublicKeys() {
-    const request = new OrganizationUserBulkRequest(this.filteredUsers.map((user) => user.id));
-    return await this.apiService.postOrganizationUsersPublicKey(this.organizationId, request);
+    return await this.organizationUserService.postOrganizationUsersPublicKey(
+      this.organizationId,
+      this.filteredUsers.map((user) => user.id)
+    );
   }
 
   protected getCryptoKey() {
@@ -101,6 +104,9 @@ export class BulkConfirmComponent implements OnInit {
 
   protected async postConfirmRequest(userIdsWithKeys: any[]) {
     const request = new OrganizationUserBulkConfirmRequest(userIdsWithKeys);
-    return await this.apiService.postOrganizationUserBulkConfirm(this.organizationId, request);
+    return await this.organizationUserService.postOrganizationUserBulkConfirm(
+      this.organizationId,
+      request
+    );
   }
 }

@@ -4,6 +4,11 @@ import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { CollectionService } from "@bitwarden/common/abstractions/collection.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
+import { OrganizationUserService } from "@bitwarden/common/abstractions/organization-user/organization-user.service";
+import {
+  OrganizationUserInviteRequest,
+  OrganizationUserUpdateRequest,
+} from "@bitwarden/common/abstractions/organization-user/requests";
 import { OrganizationService } from "@bitwarden/common/abstractions/organization/organization.service.abstraction";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { OrganizationUserStatusType } from "@bitwarden/common/enums/organizationUserStatusType";
@@ -11,8 +16,6 @@ import { OrganizationUserType } from "@bitwarden/common/enums/organizationUserTy
 import { PermissionsApi } from "@bitwarden/common/models/api/permissions.api";
 import { CollectionData } from "@bitwarden/common/models/data/collection.data";
 import { Collection } from "@bitwarden/common/models/domain/collection";
-import { OrganizationUserInviteRequest } from "@bitwarden/common/models/request/organization-user-invite.request";
-import { OrganizationUserUpdateRequest } from "@bitwarden/common/models/request/organization-user-update.request";
 import { SelectionReadOnlyRequest } from "@bitwarden/common/models/request/selection-read-only.request";
 import { CollectionDetailsResponse } from "@bitwarden/common/models/response/collection.response";
 import { CollectionView } from "@bitwarden/common/models/view/collection.view";
@@ -87,7 +90,8 @@ export class UserAddEditComponent implements OnInit {
     private collectionService: CollectionService,
     private platformUtilsService: PlatformUtilsService,
     private organizationService: OrganizationService,
-    private logService: LogService
+    private logService: LogService,
+    private organizationUserService: OrganizationUserService
   ) {}
 
   async ngOnInit() {
@@ -100,7 +104,7 @@ export class UserAddEditComponent implements OnInit {
       this.editMode = true;
       this.title = this.i18nService.t("editUser");
       try {
-        const user = await this.apiService.getOrganizationUser(
+        const user = await this.organizationUserService.getOrganizationUser(
           this.organizationId,
           this.organizationUserId
         );
@@ -224,7 +228,7 @@ export class UserAddEditComponent implements OnInit {
     }
 
     try {
-      this.deletePromise = this.apiService.deleteOrganizationUser(
+      this.deletePromise = this.organizationUserService.deleteOrganizationUser(
         this.organizationId,
         this.organizationUserId
       );
@@ -259,7 +263,7 @@ export class UserAddEditComponent implements OnInit {
     }
 
     try {
-      this.formPromise = this.apiService.revokeOrganizationUser(
+      this.formPromise = this.organizationUserService.revokeOrganizationUser(
         this.organizationId,
         this.organizationUserId
       );
@@ -282,7 +286,7 @@ export class UserAddEditComponent implements OnInit {
     }
 
     try {
-      this.formPromise = this.apiService.restoreOrganizationUser(
+      this.formPromise = this.organizationUserService.restoreOrganizationUser(
         this.organizationId,
         this.organizationUserId
       );
@@ -308,7 +312,7 @@ export class UserAddEditComponent implements OnInit {
       request.permissions ?? new PermissionsApi(),
       request.type !== OrganizationUserType.Custom
     );
-    this.formPromise = this.apiService.putOrganizationUser(
+    this.formPromise = this.organizationUserService.putOrganizationUser(
       this.organizationId,
       this.organizationUserId,
       request
@@ -325,6 +329,9 @@ export class UserAddEditComponent implements OnInit {
       request.type !== OrganizationUserType.Custom
     );
     request.collections = collections;
-    this.formPromise = this.apiService.postOrganizationUserInvite(this.organizationId, request);
+    this.formPromise = this.organizationUserService.postOrganizationUserInvite(
+      this.organizationId,
+      request
+    );
   }
 }

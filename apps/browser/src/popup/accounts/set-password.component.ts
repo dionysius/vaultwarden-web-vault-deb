@@ -6,6 +6,7 @@ import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { MessagingService } from "@bitwarden/common/abstractions/messaging.service";
+import { OrganizationUserService } from "@bitwarden/common/abstractions/organization-user/organization-user.service";
 import { OrganizationApiServiceAbstraction } from "@bitwarden/common/abstractions/organization/organization-api.service.abstraction";
 import { PasswordGenerationService } from "@bitwarden/common/abstractions/passwordGeneration.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
@@ -32,7 +33,8 @@ export class SetPasswordComponent extends BaseSetPasswordComponent {
     router: Router,
     syncService: SyncService,
     route: ActivatedRoute,
-    organizationApiService: OrganizationApiServiceAbstraction
+    organizationApiService: OrganizationApiServiceAbstraction,
+    organizationUserService: OrganizationUserService
   ) {
     super(
       i18nService,
@@ -47,7 +49,8 @@ export class SetPasswordComponent extends BaseSetPasswordComponent {
       syncService,
       route,
       stateService,
-      organizationApiService
+      organizationApiService,
+      organizationUserService
     );
   }
 }

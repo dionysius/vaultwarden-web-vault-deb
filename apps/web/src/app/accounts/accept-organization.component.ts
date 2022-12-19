@@ -5,6 +5,8 @@ import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
+import { OrganizationUserService } from "@bitwarden/common/abstractions/organization-user/organization-user.service";
+import { OrganizationUserAcceptRequest } from "@bitwarden/common/abstractions/organization-user/requests";
 import { OrganizationApiServiceAbstraction } from "@bitwarden/common/abstractions/organization/organization-api.service.abstraction";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { PolicyApiServiceAbstraction } from "@bitwarden/common/abstractions/policy/policy-api.service.abstraction";
@@ -12,7 +14,6 @@ import { PolicyService } from "@bitwarden/common/abstractions/policy/policy.serv
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { Utils } from "@bitwarden/common/misc/utils";
 import { Policy } from "@bitwarden/common/models/domain/policy";
-import { OrganizationUserAcceptRequest } from "@bitwarden/common/models/request/organization-user-accept.request";
 
 import { BaseAcceptComponent } from "../common/base.accept.component";
 
@@ -36,14 +37,15 @@ export class AcceptOrganizationComponent extends BaseAcceptComponent {
     private policyApiService: PolicyApiServiceAbstraction,
     private policyService: PolicyService,
     private logService: LogService,
-    private organizationApiService: OrganizationApiServiceAbstraction
+    private organizationApiService: OrganizationApiServiceAbstraction,
+    private organizationUserService: OrganizationUserService
   ) {
     super(router, platformUtilsService, i18nService, route, stateService);
   }
 
   async authedHandler(qParams: Params): Promise<void> {
     this.actionPromise = this.prepareAcceptRequest(qParams).then(async (request) => {
-      await this.apiService.postOrganizationUserAccept(
+      await this.organizationUserService.postOrganizationUserAccept(
         qParams.organizationId,
         qParams.organizationUserId,
         request
