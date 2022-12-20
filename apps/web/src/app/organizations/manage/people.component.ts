@@ -250,7 +250,7 @@ export class PeopleComponent
     if (
       !user &&
       this.organization.planProductType === ProductType.Free &&
-      this.users.length === this.organization.seats
+      this.allUsers.length === this.organization.seats
     ) {
       // Show org upgrade modal
 
