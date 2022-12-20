@@ -64,6 +64,8 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 import { BitwardenToastModule } from "@bitwarden/angular/components/toastr.component";
 import { JslibModule } from "@bitwarden/angular/jslib.module";
+import { ColorPasswordCountPipe } from "@bitwarden/angular/pipes/color-password-count.pipe";
+import { ColorPasswordPipe } from "@bitwarden/angular/pipes/color-password.pipe";
 
 import { EnvironmentComponent } from "./accounts/environment.component";
 import { HintComponent } from "./accounts/hint.component";
@@ -202,6 +204,8 @@ registerLocaleData(localeZhTw, "zh-TW");
     CipherRowComponent,
     VaultItemsComponent,
     CollectionsComponent,
+    ColorPasswordPipe,
+    ColorPasswordCountPipe,
     CurrentTabComponent,
     EnvironmentComponent,
     ExcludedDomainsComponent,

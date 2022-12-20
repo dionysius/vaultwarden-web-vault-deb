@@ -1,31 +1,3 @@
-.generated-wrapper {
-  min-width: 0;
-  white-space: pre-wrap;
-  word-break: break-all;
-}
-
-.password-row {
-  min-width: 0;
-}
-
-.password-letter {
-  @include themify($themes) {
-    color: themed("pwLetter");
-  }
-}
-
-.password-number {
-  @include themify($themes) {
-    color: themed("pwNumber");
-  }
-}
-
-.password-special {
-  @include themify($themes) {
-    color: themed("pwSpecial");
-  }
-}
-
 app-generator {
   #lengthRange {
     width: 100%;

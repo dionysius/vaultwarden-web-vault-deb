@@ -58,6 +58,9 @@ import localeZhCn from "@angular/common/locales/zh-Hans";
 import localeZhTw from "@angular/common/locales/zh-Hant";
 import { NgModule } from "@angular/core";
 
+import { ColorPasswordCountPipe } from "@bitwarden/angular/pipes/color-password-count.pipe";
+import { ColorPasswordPipe } from "@bitwarden/angular/pipes/color-password.pipe";
+
 import { AccessibilityCookieComponent } from "./accounts/accessibility-cookie.component";
 import { DeleteAccountComponent } from "./accounts/delete-account.component";
 import { EnvironmentComponent } from "./accounts/environment.component";
@@ -170,6 +173,8 @@ registerLocaleData(localeZhTw, "zh-TW");
     AttachmentsComponent,
     VaultItemsComponent,
     CollectionsComponent,
+    ColorPasswordPipe,
+    ColorPasswordCountPipe,
     DeleteAccountComponent,
     EnvironmentComponent,
     ExportComponent,

@@ -21,8 +21,6 @@ import { SelectCopyDirective } from "./directives/select-copy.directive";
 import { StopClickDirective } from "./directives/stop-click.directive";
 import { StopPropDirective } from "./directives/stop-prop.directive";
 import { TrueFalseValueDirective } from "./directives/true-false-value.directive";
-import { ColorPasswordCountPipe } from "./pipes/color-password-count.pipe";
-import { ColorPasswordPipe } from "./pipes/color-password.pipe";
 import { CreditCardNumberPipe } from "./pipes/credit-card-number.pipe";
 import { EllipsisPipe } from "./pipes/ellipsis.pipe";
 import { I18nPipe } from "./pipes/i18n.pipe";
@@ -49,8 +47,6 @@ import { PasswordStrengthComponent } from "./shared/components/password-strength
     AutofocusDirective,
     BoxRowDirective,
     CalloutComponent,
-    ColorPasswordCountPipe,
-    ColorPasswordPipe,
     CreditCardNumberPipe,
     EllipsisPipe,
     ExportScopeCalloutComponent,
@@ -79,8 +75,6 @@ import { PasswordStrengthComponent } from "./shared/components/password-strength
     BitwardenToastModule,
     BoxRowDirective,
     CalloutComponent,
-    ColorPasswordCountPipe,
-    ColorPasswordPipe,
     CreditCardNumberPipe,
     EllipsisPipe,
     ExportScopeCalloutComponent,

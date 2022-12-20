@@ -17,12 +17,16 @@
           {{ field.value || "&nbsp;" }}
         </div>
         <div *ngIf="field.type === fieldType.Hidden">
+          <span *ngIf="!field.showValue" class="monospaced">{{ field.maskedValue }}</span>
           <span
-            *ngIf="field.showValue"
+            *ngIf="field.showValue && !field.showCount"
             class="monospaced show-whitespace"
             [innerHTML]="field.value | colorPassword"
           ></span>
-          <span *ngIf="!field.showValue" class="monospaced">{{ field.maskedValue }}</span>
+          <span
+            *ngIf="field.showValue && field.showCount"
+            [innerHTML]="field.value | colorPasswordCount"
+          ></span>
         </div>
         <div *ngIf="field.type === fieldType.Boolean">
           <i class="bwi bwi-check-square" *ngIf="field.value === 'true'" aria-hidden="true"></i>
@@ -41,7 +45,18 @@
           <span>{{ cipher.linkedFieldI18nKey(field.linkedId) | i18n }}</span>
         </div>
       </div>
-      <div class="action-buttons">
+      <div class="action-buttons action-buttons-fixed">
+        <button
+          type="button"
+          class="row-btn"
+          appStopClick
+          appA11yTitle="{{ 'toggleCharacterCount' | i18n }}"
+          *ngIf="field.type === fieldType.Hidden && cipher.viewPassword && field.showValue"
+          (click)="toggleFieldCount(field)"
+          [attr.aria-pressed]="field.showCount"
+        >
+          <i class="bwi bwi-lg bwi-numbered-list" aria-hidden="true"></i>
+        </button>
         <button
           type="button"
           class="row-btn"

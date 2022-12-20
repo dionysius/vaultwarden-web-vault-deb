@@ -128,6 +128,15 @@
                       title="{{ 'loading' | i18n }}"
                     ></i>
                   </a>
+                  <a
+                    href="#"
+                    class="d-block bwi-icon-above-input"
+                    appStopClick
+                    [appA11yTitle]="'toggleCharacterCount' | i18n"
+                    (click)="togglePasswordCount()"
+                  >
+                    <i class="bwi bwi-lg bwi-fw bwi-numbered-list" aria-hidden="true"></i>
+                  </a>
                 </div>
               </div>
               <div class="input-group">
@@ -167,6 +176,18 @@
                   </button>
                 </div>
               </div>
+            </div>
+          </div>
+          <div *ngIf="showPasswordCount" class="tw-mb-4">
+            <label>{{ "passwordCharacterCount" | i18n }}</label>
+            <div class="tw-flex tw-justify-between">
+              <bit-color-password
+                [password]="cipher.login.password"
+                [showCount]="true"
+              ></bit-color-password>
+              <button type="button" bitLink (click)="togglePasswordCount()">
+                {{ "hide" | i18n }}
+              </button>
             </div>
           </div>
           <div class="tw-flex tw-flex-row">
@@ -870,7 +891,7 @@
             <div class="ml-3" *ngIf="viewingPasswordHistory">
               <div *ngFor="let ph of cipher.passwordHistory">
                 {{ ph.lastUsedDate | date: "short" }} -
-                <span class="generated-wrapper text-monospace ml-2">{{ ph.password }}</span>
+                <bit-color-password [password]="ph.password"></bit-color-password>
               </div>
             </div>
           </div>

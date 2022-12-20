@@ -193,7 +193,7 @@ p.lead {
   font-size: 8px;
 
   @include themify($themes) {
-    color: themed("mutedColor") !important;
+    color: themed("passwordCountText") !important;
   }
 }
 

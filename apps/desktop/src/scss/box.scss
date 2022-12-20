@@ -366,6 +366,11 @@
     display: flex;
     margin-left: 5px;
 
+    &.action-buttons-fixed {
+      align-self: start;
+      margin-top: 2px;
+    }
+
     .row-btn {
       @extend .icon-btn;
     }

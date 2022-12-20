@@ -215,8 +215,8 @@ p.lead {
   }
 }
 
-.generated-wrapper {
-  word-break: break-all;
+.password-wrapper {
+  overflow-wrap: break-word;
   white-space: pre-wrap;
   min-width: 0;
 }
@@ -230,6 +230,30 @@ p.lead {
 .password-special {
   @include themify($themes) {
     color: themed("passwordSpecialColor");
+  }
+}
+
+.password-character {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30px;
+  height: 36px;
+  font-weight: 600;
+
+  &:nth-child(odd) {
+    @include themify($themes) {
+      background-color: themed("backgroundColorAlt2");
+    }
+  }
+}
+
+.password-count {
+  white-space: nowrap;
+  font-size: 8px;
+
+  @include themify($themes) {
+    color: themed("passwordCountText") !important;
   }
 }
 

@@ -35,6 +35,7 @@ export class AddEditComponent extends BaseAddEditComponent implements OnInit, On
   hasPasswordHistory = false;
   viewingPasswordHistory = false;
   viewOnly = false;
+  showPasswordCount = false;
 
   protected totpInterval: number;
   protected override componentName = "app-vault-add-edit";
@@ -102,6 +103,26 @@ export class AddEditComponent extends BaseAddEditComponent implements OnInit, On
 
   toggleFavorite() {
     this.cipher.favorite = !this.cipher.favorite;
+  }
+
+  togglePassword() {
+    super.togglePassword();
+
+    // Hide password count when password is hidden to be safe
+    if (!this.showPassword && this.showPasswordCount) {
+      this.togglePasswordCount();
+    }
+  }
+
+  togglePasswordCount() {
+    this.showPasswordCount = !this.showPasswordCount;
+
+    if (this.editMode && this.showPasswordCount) {
+      this.eventCollectionService.collect(
+        EventType.Cipher_ClientToggledPasswordVisible,
+        this.cipherId
+      );
+    }
   }
 
   launch(uri: LoginUriView) {

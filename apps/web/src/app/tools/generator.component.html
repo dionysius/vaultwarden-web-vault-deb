@@ -6,18 +6,10 @@
 </app-callout>
 <div class="card card-generated bg-light my-4">
   <div class="card-body">
-    <div
-      *ngIf="type === 'password'"
-      class="generated-wrapper"
-      [innerHTML]="password | colorPassword"
+    <bit-color-password
+      [password]="type === 'password' ? password : username"
       appSelectCopy
-    ></div>
-    <div
-      *ngIf="type === 'username'"
-      class="generated-wrapper"
-      [innerHTML]="username | colorPassword"
-      appSelectCopy
-    ></div>
+    ></bit-color-password>
   </div>
 </div>
 <div class="form-group" role="radiogroup" aria-labelledby="typeHeading">

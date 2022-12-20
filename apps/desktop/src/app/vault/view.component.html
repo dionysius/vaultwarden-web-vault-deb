@@ -50,10 +50,14 @@
                 {{ cipher.login.maskedPassword }}
               </div>
               <div
-                *ngIf="showPassword"
-                class="monospaced generated-wrapper"
+                *ngIf="showPassword && !showPasswordCount"
+                class="monospaced password-wrapper"
                 appSelectCopy
                 [innerHTML]="cipher.login.password | colorPassword"
+              ></div>
+              <div
+                *ngIf="showPassword && showPasswordCount"
+                [innerHTML]="cipher.login.password | colorPasswordCount"
               ></div>
             </div>
             <div class="action-buttons" *ngIf="cipher.viewPassword">
@@ -76,6 +80,18 @@
                   [hidden]="!$any(checkPasswordBtn).loading"
                   aria-hidden="true"
                 ></i>
+              </button>
+              <button
+                type="button"
+                class="row-btn"
+                appStopClick
+                attr.aria-label="{{ 'toggleCharacterCount' | i18n }} {{ 'password' | i18n }}"
+                appA11yTitle="{{ 'toggleCharacterCount' | i18n }}"
+                (click)="togglePasswordCount()"
+                *ngIf="showPassword"
+                [attr.aria-pressed]="showPasswordCount"
+              >
+                <i class="bwi bwi-lg bwi-numbered-list" aria-hidden="true"></i>
               </button>
               <button
                 type="button"
