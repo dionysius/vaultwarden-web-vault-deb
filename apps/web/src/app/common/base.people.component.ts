@@ -401,6 +401,12 @@ export abstract class BasePeopleComponent<
       this.users.splice(index, 1);
       this.resetPaging();
     }
+
+    index = this.allUsers.indexOf(user);
+    if (index > -1) {
+      this.allUsers.splice(index, 1);
+    }
+
     if (this.statusMap.has(user.status)) {
       index = this.statusMap.get(user.status).indexOf(user);
       if (index > -1) {
