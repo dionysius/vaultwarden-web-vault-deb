@@ -9,6 +9,7 @@ import {
   AvatarModule,
   BadgeModule,
   ButtonModule,
+  DialogModule,
   FormFieldModule,
   IconButtonModule,
   TableModule,
@@ -27,6 +28,7 @@ export default {
     moduleMetadata({
       declarations: [AccessSelectorComponent, UserTypePipe],
       imports: [
+        DialogModule,
         ButtonModule,
         FormFieldModule,
         AvatarModule,
@@ -118,6 +120,50 @@ const StandaloneAccessSelectorTemplate: Story<AccessSelectorComponent> = (
 `,
 });
 
+const DialogAccessSelectorTemplate: Story<AccessSelectorComponent> = (
+  args: AccessSelectorComponent
+) => ({
+  props: {
+    items: [],
+    valueChanged: actionsData.onValueChanged,
+    initialValue: [],
+    ...args,
+  },
+  template: `
+    <bit-dialog [dialogSize]="dialogSize" [disablePadding]="disablePadding">
+      <span bitDialogTitle>Access selector</span>
+      <span bitDialogContent>
+        <bit-access-selector
+          (ngModelChange)="valueChanged($event)"
+          [ngModel]="initialValue"
+          [items]="items"
+          [disabled]="disabled"
+          [columnHeader]="columnHeader"
+          [showGroupColumn]="showGroupColumn"
+          [selectorLabelText]="selectorLabelText"
+          [selectorHelpText]="selectorHelpText"
+          [emptySelectionText]="emptySelectionText"
+          [permissionMode]="permissionMode"
+          [showMemberRoles]="showMemberRoles"
+        ></bit-access-selector>
+      </span>
+      <div bitDialogFooter class="tw-flex tw-items-center tw-flex-row tw-gap-2">
+        <button bitButton buttonType="primary">Save</button>
+        <button bitButton buttonType="secondary">Cancel</button>
+        <button
+          class="tw-ml-auto"
+          bitIconButton="bwi-trash"
+          buttonType="danger"
+          size="default"
+          title="Delete"
+          aria-label="Delete"></button>
+      </div>
+    </bit-dialog>
+`,
+});
+
+const dialogAccessItems = itemsFactory(10, AccessItemType.Collection);
+
 const memberCollectionAccessItems = itemsFactory(3, AccessItemType.Collection).concat([
   {
     id: "c1-group1",
@@ -138,6 +184,29 @@ const memberCollectionAccessItems = itemsFactory(3, AccessItemType.Collection).c
     readonly: true,
   },
 ]);
+
+export const Dialog = DialogAccessSelectorTemplate.bind({});
+Dialog.args = {
+  permissionMode: "edit",
+  showMemberRoles: false,
+  showGroupColumn: true,
+  columnHeader: "Collection",
+  selectorLabelText: "Select Collections",
+  selectorHelpText: "Some helper text describing what this does",
+  emptySelectionText: "No collections added",
+  disabled: false,
+  initialValue: [],
+  items: dialogAccessItems,
+};
+Dialog.story = {
+  parameters: {
+    docs: {
+      storyDescription: `
+        Example of an access selector for modifying the collections a member has access to inside of a dialog.
+      `,
+    },
+  },
+};
 
 export const MemberCollectionAccess = StandaloneAccessSelectorTemplate.bind({});
 MemberCollectionAccess.args = {
