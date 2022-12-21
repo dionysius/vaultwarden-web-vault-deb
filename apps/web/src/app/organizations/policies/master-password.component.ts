@@ -8,8 +8,8 @@ import { PolicyType } from "@bitwarden/common/enums/policyType";
 import { BasePolicy, BasePolicyComponent } from "./base-policy.component";
 
 export class MasterPasswordPolicy extends BasePolicy {
-  name = "masterPassPolicyTitle";
-  description = "masterPassPolicyDesc";
+  readonly name = "masterPassPolicyTitle";
+  readonly description = "masterPassPolicyDesc";
   type = PolicyType.MasterPassword;
   component = MasterPasswordPolicyComponent;
 }

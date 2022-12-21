@@ -1,11 +1,13 @@
 import { DialogRef, DIALOG_DATA } from "@angular/cdk/dialog";
 import { Component, Inject, OnInit } from "@angular/core";
 
+import { WebI18nKey } from "@bitwarden/web-vault/app/core/web-i18n.service.implementation";
+
 export interface BulkStatusDetails {
-  title: string;
-  subTitle: string;
-  columnTitle: string;
-  message: string;
+  title: WebI18nKey;
+  subTitle: WebI18nKey;
+  columnTitle: WebI18nKey;
+  message: WebI18nKey;
   details: BulkOperationStatus[];
 }
 

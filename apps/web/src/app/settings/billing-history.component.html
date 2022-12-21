@@ -53,10 +53,7 @@
         ></i>
         {{ t.details }}
       </td>
-      <td
-        [ngClass]="{ 'text-strike': t.refunded }"
-        title="{{ (t.refunded ? 'refunded' : '') | i18n }}"
-      >
+      <td [ngClass]="{ 'text-strike': t.refunded }" [title]="t.refunded ? ('refunded' | i18n) : ''">
         {{ t.amount | currency: "$" }}
       </td>
     </tr>

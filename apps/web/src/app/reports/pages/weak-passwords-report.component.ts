@@ -10,6 +10,8 @@ import { CipherType } from "@bitwarden/common/enums/cipherType";
 import { CipherView } from "@bitwarden/common/models/view/cipher.view";
 import { BadgeTypes } from "@bitwarden/components";
 
+import { WebI18nKey } from "../../core/web-i18n.service.implementation";
+
 import { CipherReportComponent } from "./cipher-report.component";
 
 @Component({
@@ -17,7 +19,7 @@ import { CipherReportComponent } from "./cipher-report.component";
   templateUrl: "weak-passwords-report.component.html",
 })
 export class WeakPasswordsReportComponent extends CipherReportComponent implements OnInit {
-  passwordStrengthMap = new Map<string, [string, BadgeTypes]>();
+  passwordStrengthMap = new Map<string, [WebI18nKey, BadgeTypes]>();
 
   private passwordStrengthCache = new Map<string, number>();
 
@@ -111,7 +113,7 @@ export class WeakPasswordsReportComponent extends CipherReportComponent implemen
     return true;
   }
 
-  private scoreKey(score: number): [string, BadgeTypes] {
+  private scoreKey(score: number): [WebI18nKey, BadgeTypes] {
     switch (score) {
       case 4:
         return ["strong", "success"];

@@ -14,6 +14,8 @@ import {
 } from "@bitwarden/common/abstractions/organization/organization.service.abstraction";
 import { Organization } from "@bitwarden/common/models/domain/organization";
 
+import { WebI18nKey } from "../../core/web-i18n.service.implementation";
+
 @Component({
   selector: "app-organization-layout",
   templateUrl: "organization-layout.component.html",
@@ -69,7 +71,7 @@ export class OrganizationLayoutComponent implements OnInit, OnDestroy {
     return canAccessBillingTab(organization);
   }
 
-  getReportTabLabel(organization: Organization): string {
+  getReportTabLabel(organization: Organization): WebI18nKey {
     return organization.useEvents ? "reporting" : "reports";
   }
 }

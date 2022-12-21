@@ -5,8 +5,8 @@ import { PolicyType } from "@bitwarden/common/enums/policyType";
 import { BasePolicy, BasePolicyComponent } from "./base-policy.component";
 
 export class TwoFactorAuthenticationPolicy extends BasePolicy {
-  name = "twoStepLoginPolicyTitle";
-  description = "twoStepLoginPolicyDesc";
+  readonly name = "twoStepLoginPolicyTitle";
+  readonly description = "twoStepLoginPolicyDesc";
   type = PolicyType.TwoFactorAuthentication;
   component = TwoFactorAuthenticationPolicyComponent;
 }

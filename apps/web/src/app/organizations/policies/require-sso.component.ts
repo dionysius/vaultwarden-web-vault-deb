@@ -8,8 +8,8 @@ import { PolicyRequest } from "@bitwarden/common/models/request/policy.request";
 import { BasePolicy, BasePolicyComponent } from "./base-policy.component";
 
 export class RequireSsoPolicy extends BasePolicy {
-  name = "requireSso";
-  description = "requireSsoPolicyDesc";
+  readonly name = "requireSso";
+  readonly description = "requireSsoPolicyDesc";
   type = PolicyType.RequireSso;
   component = RequireSsoPolicyComponent;
 

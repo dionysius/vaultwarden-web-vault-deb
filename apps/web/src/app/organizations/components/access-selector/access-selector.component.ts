@@ -6,6 +6,8 @@ import { FormSelectionList } from "@bitwarden/angular/utils/form-selection-list"
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { SelectItemView } from "@bitwarden/components/src/multi-select/models/select-item-view";
 
+import { WebI18nKey } from "../../../core/web-i18n.service.implementation";
+
 import {
   AccessItemType,
   AccessItemValue,
@@ -83,7 +85,7 @@ export class AccessSelectorComponent implements ControlValueAccessor, OnInit, On
   });
 
   protected itemType = AccessItemType;
-  protected permissionList = [
+  protected permissionList: { perm: CollectionPermission; labelId: WebI18nKey }[] = [
     { perm: CollectionPermission.View, labelId: "canView" },
     { perm: CollectionPermission.ViewExceptPass, labelId: "canViewExceptPass" },
     { perm: CollectionPermission.Edit, labelId: "canEdit" },

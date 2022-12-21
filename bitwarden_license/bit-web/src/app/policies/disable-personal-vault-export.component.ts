@@ -7,8 +7,8 @@ import {
 } from "@bitwarden/web-vault/app/organizations/policies/base-policy.component";
 
 export class DisablePersonalVaultExportPolicy extends BasePolicy {
-  name = "disablePersonalVaultExport";
-  description = "disablePersonalVaultExportDesc";
+  readonly name = "disablePersonalVaultExport";
+  readonly description = "disablePersonalVaultExportDesc";
   type = PolicyType.DisablePersonalVaultExport;
   component = DisablePersonalVaultExportPolicyComponent;
 }

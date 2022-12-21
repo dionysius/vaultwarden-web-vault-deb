@@ -10,8 +10,8 @@ import {
 } from "@bitwarden/web-vault/app/organizations/policies/base-policy.component";
 
 export class MaximumVaultTimeoutPolicy extends BasePolicy {
-  name = "maximumVaultTimeout";
-  description = "maximumVaultTimeoutDesc";
+  readonly name = "maximumVaultTimeout";
+  readonly description = "maximumVaultTimeoutDesc";
   type = PolicyType.MaximumVaultTimeout;
   component = MaximumVaultTimeoutPolicyComponent;
 }

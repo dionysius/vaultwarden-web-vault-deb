@@ -15,7 +15,7 @@ export class AdjustSubscription {
   @Input() maxAutoscaleSeats: number;
   @Input() currentSeatCount: number;
   @Input() seatPrice = 0;
-  @Input() interval = "year";
+  @Input() interval: "month" | "year" = "year";
   @Output() onAdjusted = new EventEmitter();
 
   formPromise: Promise<void>;

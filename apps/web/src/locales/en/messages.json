@@ -5783,6 +5783,18 @@
   "memberAccessAll": {
     "message": "This member can access and modify all items."
   },
+  "searchMyVault": {
+    "message": "Search My Vault"
+  },
+  "searchOrganization": {
+    "message": "Search organization"
+  },
+  "noClientsInList": {
+    "message": "No clients in list"
+  },
+  "copy": {
+    "messages": "Copy"
+  },
   "freeOrgInvLimitReachedManageBilling": {
     "message": "Free organizations may have up to $SEATCOUNT$ members. Upgrade to a paid plan to invite more members.",
     "placeholders": {

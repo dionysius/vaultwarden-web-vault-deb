@@ -2,13 +2,15 @@ import { Component, EventEmitter, Input, Output } from "@angular/core";
 
 import { Utils } from "@bitwarden/common/misc/utils";
 
+import { WebI18nKey } from "../core/web-i18n.service.implementation";
+
 @Component({
   selector: "app-nested-checkbox",
   templateUrl: "nested-checkbox.component.html",
 })
 export class NestedCheckboxComponent {
-  @Input() parentId: string;
-  @Input() checkboxes: { id: string; get: () => boolean; set: (v: boolean) => void }[];
+  @Input() parentId: WebI18nKey;
+  @Input() checkboxes: { id: WebI18nKey; get: () => boolean; set: (v: boolean) => void }[];
   @Output() onSavedUser = new EventEmitter();
   @Output() onDeletedUser = new EventEmitter();
 

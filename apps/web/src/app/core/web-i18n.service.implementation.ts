@@ -1,18 +1,24 @@
-import * as fs from "fs";
-import * as path from "path";
+import { Injectable } from "@angular/core";
 
-import { I18nService as BaseI18nService } from "@bitwarden/common/services/i18n.service";
+import { I18nServiceImplementation } from "@bitwarden/common/services/i18n.service.implementation";
 
-export class I18nService extends BaseI18nService {
+import type eng from "../../locales/en/messages.json";
+
+export type WebI18nKey = keyof typeof eng;
+
+@Injectable()
+export class WebI18nServiceImplementation extends I18nServiceImplementation<WebI18nKey> {
   constructor(systemLanguage: string, localesDirectory: string) {
-    super(systemLanguage, localesDirectory, (formattedLocale: string) => {
-      const filePath = path.join(
-        __dirname,
-        this.localesDirectory + "/" + formattedLocale + "/messages.json"
-      );
-      const localesJson = fs.readFileSync(filePath, "utf8");
-      const locales = JSON.parse(localesJson.replace(/^\uFEFF/, "")); // strip the BOM
-      return Promise.resolve(locales);
+    super(systemLanguage || "en-US", localesDirectory, async (formattedLocale: string) => {
+      const filePath =
+        this.localesDirectory +
+        "/" +
+        formattedLocale +
+        "/messages.json?cache=" +
+        process.env.CACHE_TAG;
+      const localesResult = await fetch(filePath);
+      const locales = await localesResult.json();
+      return locales;
     });
 
     // Please leave 'en' where it is, as it's our fallback language in case no translation can be found
@@ -36,7 +42,6 @@ export class I18nService extends BaseI18nService {
       "es",
       "et",
       "eu",
-      "fa",
       "fi",
       "fil",
       "fr",
@@ -52,14 +57,13 @@ export class I18nService extends BaseI18nService {
       "kn",
       "ko",
       "lv",
-      "me",
       "ml",
       "nb",
       "nl",
       "nn",
       "pl",
-      "pt-BR",
       "pt-PT",
+      "pt-BR",
       "ro",
       "ru",
       "si",
@@ -67,7 +71,6 @@ export class I18nService extends BaseI18nService {
       "sl",
       "sr",
       "sv",
-      "th",
       "tr",
       "uk",
       "vi",

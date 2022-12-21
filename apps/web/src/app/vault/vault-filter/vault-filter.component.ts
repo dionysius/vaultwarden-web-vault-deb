@@ -2,6 +2,8 @@ import { Component, EventEmitter, Output } from "@angular/core";
 
 import { VaultFilterComponent as BaseVaultFilterComponent } from "@bitwarden/angular/vault/vault-filter/components/vault-filter.component";
 
+import { WebI18nKey } from "../../core/web-i18n.service.implementation";
+
 import { VaultFilterService } from "./shared/vault-filter.service";
 
 @Component({
@@ -12,7 +14,7 @@ import { VaultFilterService } from "./shared/vault-filter.service";
 export class VaultFilterComponent extends BaseVaultFilterComponent {
   @Output() onSearchTextChanged = new EventEmitter<string>();
 
-  searchPlaceholder: string;
+  searchPlaceholder: WebI18nKey;
   searchText = "";
 
   constructor(protected vaultFilterService: VaultFilterService) {

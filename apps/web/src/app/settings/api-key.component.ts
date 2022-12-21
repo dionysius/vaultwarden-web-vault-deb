@@ -6,6 +6,8 @@ import { SecretVerificationRequest } from "@bitwarden/common/models/request/secr
 import { ApiKeyResponse } from "@bitwarden/common/models/response/api-key.response";
 import { Verification } from "@bitwarden/common/types/verification";
 
+import { WebI18nKey } from "../core/web-i18n.service.implementation";
+
 @Component({
   selector: "app-api-key",
   templateUrl: "api-key.component.html",
@@ -17,9 +19,9 @@ export class ApiKeyComponent {
   entityId: string;
   scope: string;
   grantType: string;
-  apiKeyTitle: string;
-  apiKeyWarning: string;
-  apiKeyDescription: string;
+  apiKeyTitle: WebI18nKey;
+  apiKeyWarning: WebI18nKey;
+  apiKeyDescription: WebI18nKey;
 
   masterPassword: Verification;
   formPromise: Promise<ApiKeyResponse>;

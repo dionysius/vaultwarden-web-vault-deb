@@ -41,6 +41,7 @@ import { MemoryStorageService } from "@bitwarden/common/services/memoryStorage.s
 import { SystemService } from "@bitwarden/common/services/system.service";
 
 import { Account } from "../../models/account";
+import { DesktopI18nServiceImplementation } from "../../services/desktop-i18n.service.implementation";
 import { ElectronCryptoService } from "../../services/electron-crypto.service";
 import { ElectronLogService } from "../../services/electron-log.service";
 import { ElectronPlatformUtilsService } from "../../services/electron-platform-utils.service";
@@ -48,7 +49,6 @@ import { ElectronRendererMessagingService } from "../../services/electron-render
 import { ElectronRendererSecureStorageService } from "../../services/electron-renderer-secure-storage.service";
 import { ElectronRendererStorageService } from "../../services/electron-renderer-storage.service";
 import { EncryptedMessageHandlerService } from "../../services/encrypted-message-handler.service";
-import { I18nService } from "../../services/i18n.service";
 import { NativeMessageHandlerService } from "../../services/native-message-handler.service";
 import { NativeMessagingService } from "../../services/native-messaging.service";
 import { PasswordRepromptService } from "../../services/password-reprompt.service";
@@ -101,7 +101,7 @@ const RELOAD_CALLBACK = new InjectionToken<() => any>("RELOAD_CALLBACK");
     },
     {
       provide: I18nServiceAbstraction,
-      useClass: I18nService,
+      useClass: DesktopI18nServiceImplementation,
       deps: [SYSTEM_LANGUAGE, LOCALES_DIRECTORY],
     },
     {

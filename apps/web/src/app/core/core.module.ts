@@ -12,7 +12,7 @@ import {
 import { JslibServicesModule } from "@bitwarden/angular/services/jslib-services.module";
 import { ModalService as ModalServiceAbstraction } from "@bitwarden/angular/services/modal.service";
 import { FileDownloadService } from "@bitwarden/common/abstractions/fileDownload/fileDownload.service";
-import { I18nService as I18nServiceAbstraction } from "@bitwarden/common/abstractions/i18n.service";
+import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LoginService as LoginServiceAbstraction } from "@bitwarden/common/abstractions/login.service";
 import { MessagingService as MessagingServiceAbstraction } from "@bitwarden/common/abstractions/messaging.service";
 import { PasswordRepromptService as PasswordRepromptServiceAbstraction } from "@bitwarden/common/abstractions/passwordReprompt.service";
@@ -27,7 +27,6 @@ import { MemoryStorageService } from "@bitwarden/common/services/memoryStorage.s
 import { BroadcasterMessagingService } from "./broadcaster-messaging.service";
 import { EventService } from "./event.service";
 import { HtmlStorageService } from "./html-storage.service";
-import { I18nService } from "./i18n.service";
 import { InitService } from "./init.service";
 import { ModalService } from "./modal.service";
 import { PasswordRepromptService } from "./password-reprompt.service";
@@ -36,6 +35,7 @@ import { RouterService } from "./router.service";
 import { Account, GlobalState, StateService } from "./state";
 import { StateMigrationService } from "./state-migration.service";
 import { WebFileDownloadService } from "./web-file-download.service";
+import { WebI18nServiceImplementation } from "./web-i18n.service.implementation";
 import { WebPlatformUtilsService } from "./web-platform-utils.service";
 
 @NgModule({
@@ -46,6 +46,7 @@ import { WebPlatformUtilsService } from "./web-platform-utils.service";
     RouterService,
     EventService,
     PolicyListService,
+    WebI18nServiceImplementation,
     {
       provide: APP_INITIALIZER,
       useFactory: (initService: InitService) => initService.init(),
@@ -61,8 +62,8 @@ import { WebPlatformUtilsService } from "./web-platform-utils.service";
       useValue: false,
     },
     {
-      provide: I18nServiceAbstraction,
-      useClass: I18nService,
+      provide: I18nService,
+      useClass: WebI18nServiceImplementation,
       deps: [SYSTEM_LANGUAGE, LOCALES_DIRECTORY],
     },
     { provide: AbstractStorageService, useClass: HtmlStorageService },

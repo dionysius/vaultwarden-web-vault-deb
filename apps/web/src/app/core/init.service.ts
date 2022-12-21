@@ -9,7 +9,7 @@ import {
   Urls,
 } from "@bitwarden/common/abstractions/environment.service";
 import { EventUploadService as EventUploadServiceAbstraction } from "@bitwarden/common/abstractions/event/event-upload.service";
-import { I18nService as I18nServiceAbstraction } from "@bitwarden/common/abstractions/i18n.service";
+import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { NotificationsService as NotificationsServiceAbstraction } from "@bitwarden/common/abstractions/notifications.service";
 import { StateService as StateServiceAbstraction } from "@bitwarden/common/abstractions/state.service";
 import { TwoFactorService as TwoFactorServiceAbstraction } from "@bitwarden/common/abstractions/twoFactor.service";
@@ -18,7 +18,7 @@ import { ContainerService } from "@bitwarden/common/services/container.service";
 import { EventUploadService } from "@bitwarden/common/services/event/event-upload.service";
 import { VaultTimeoutService as VaultTimeoutService } from "@bitwarden/common/services/vaultTimeout/vaultTimeout.service";
 
-import { I18nService } from "./i18n.service";
+import { WebI18nServiceImplementation } from "./web-i18n.service.implementation";
 
 @Injectable()
 export class InitService {
@@ -27,7 +27,7 @@ export class InitService {
     private environmentService: EnvironmentServiceAbstraction,
     private notificationsService: NotificationsServiceAbstraction,
     private vaultTimeoutService: VaultTimeoutServiceAbstraction,
-    private i18nService: I18nServiceAbstraction,
+    private i18nService: I18nService,
     private eventUploadService: EventUploadServiceAbstraction,
     private twoFactorService: TwoFactorServiceAbstraction,
     private stateService: StateServiceAbstraction,
@@ -47,7 +47,7 @@ export class InitService {
       setTimeout(() => this.notificationsService.init(), 3000);
       (this.vaultTimeoutService as VaultTimeoutService).init(true);
       const locale = await this.stateService.getLocale();
-      await (this.i18nService as I18nService).init(locale);
+      await (this.i18nService as WebI18nServiceImplementation).init(locale);
       (this.eventUploadService as EventUploadService).init(true);
       this.twoFactorService.init();
       const htmlEl = this.win.document.documentElement;

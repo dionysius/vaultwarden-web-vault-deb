@@ -5,8 +5,8 @@ import { PolicyType } from "@bitwarden/common/enums/policyType";
 import { BasePolicy, BasePolicyComponent } from "./base-policy.component";
 
 export class PersonalOwnershipPolicy extends BasePolicy {
-  name = "personalOwnership";
-  description = "personalOwnershipPolicyDesc";
+  readonly name = "personalOwnership";
+  readonly description = "personalOwnershipPolicyDesc";
   type = PolicyType.PersonalOwnership;
   component = PersonalOwnershipPolicyComponent;
 }

@@ -6,8 +6,8 @@ import { PolicyType } from "@bitwarden/common/enums/policyType";
 import { BasePolicy, BasePolicyComponent } from "./base-policy.component";
 
 export class SendOptionsPolicy extends BasePolicy {
-  name = "sendOptions";
-  description = "sendOptionsPolicyDesc";
+  readonly name = "sendOptions";
+  readonly description = "sendOptionsPolicyDesc";
   type = PolicyType.SendOptions;
   component = SendOptionsPolicyComponent;
 }
