@@ -6,12 +6,13 @@
         <select
           id="deletionDate"
           name="DeletionDateSelect"
+          aria-describedby="deletionDateHelp"
           formControlName="selectedDeletionDatePreset"
           required
         >
           <option *ngFor="let o of deletionDatePresets" [ngValue]="o.value">{{ o.name }}</option>
         </select>
-        <small class="help-block">{{ "deletionDateDesc" | i18n }}</small>
+        <small id="deletionDateHelp" class="help-block">{{ "deletionDateDesc" | i18n }}</small>
       </div>
       <div class="box-content-row" *ngIf="selectedDeletionDatePreset.value === 0 || editMode">
         <label *ngIf="editMode" for="deletionDateCustom">{{ "deletionDate" | i18n }}</label>
@@ -19,23 +20,27 @@
           id="deletionDateCustom"
           type="datetime-local"
           name="deletionDate"
+          aria-describedby="deletionDateCustomHelp"
           formControlName="defaultDeletionDateTime"
           required
           placeholder="MM/DD/YYYY HH:MM AM/PM"
         />
-        <small class="help-block" *ngIf="editMode">{{ "deletionDateDesc" | i18n }}</small>
+        <small id="deletionDateCustomHelp" class="help-block" *ngIf="editMode">{{
+          "deletionDateDesc" | i18n
+        }}</small>
       </div>
       <div class="box-content-row" appBoxRow *ngIf="!editMode">
         <label for="expirationDate">{{ "expirationDate" | i18n }}</label>
         <select
           id="expirationDate"
           name="expirationDateSelect"
+          aria-describedby="expirationDateHelp"
           formControlName="selectedExpirationDatePreset"
           required
         >
           <option *ngFor="let o of expirationDatePresets" [ngValue]="o.value">{{ o.name }}</option>
         </select>
-        <small class="help-block">{{ "expirationDateDesc" | i18n }}</small>
+        <small id="expirationDateHelp" class="help-block">{{ "expirationDateDesc" | i18n }}</small>
       </div>
       <div class="box-content-row" *ngIf="selectedExpirationDatePreset.value === 0 || editMode">
         <label *ngIf="editMode" for="expirationDateCustom">{{ "expirationDate" | i18n }}</label>
@@ -43,11 +48,14 @@
           id="expirationDateCustom"
           type="datetime-local"
           name="expirationDate"
+          aria-describedby="expirationDateCustomHelp"
           formControlName="defaultExpirationDateTime"
           required
           placeholder="MM/DD/YYYY HH:MM AM/PM"
         />
-        <small *ngIf="editMode" class="help-block">{{ "expirationDateDesc" | i18n }}</small>
+        <small *ngIf="editMode" id="expirationDateCustomHelp" class="help-block">{{
+          "expirationDateDesc" | i18n
+        }}</small>
       </div>
     </div>
   </div>

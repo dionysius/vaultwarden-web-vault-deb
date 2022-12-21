@@ -43,12 +43,13 @@
             id="name"
             type="text"
             name="Name"
+            aria-describedby="nameHelp"
             [(ngModel)]="send.name"
             [readonly]="disableSend"
           />
         </div>
       </div>
-      <div class="box-footer">
+      <div id="nameHelp" class="box-footer">
         {{ "sendNameDesc" | i18n }}
       </div>
     </div>
@@ -89,10 +90,17 @@
         </div>
         <div class="box-content-row" *ngIf="showFileSelector">
           <label for="file">{{ "file" | i18n }}</label>
-          <input type="file" id="file" name="file" required [readonly]="disableSend" />
+          <input
+            type="file"
+            id="file"
+            name="file"
+            aria-describedby="fileHelp"
+            required
+            [readonly]="disableSend"
+          />
         </div>
       </div>
-      <div class="box-footer" *ngIf="showFileSelector">
+      <div id="fileHelp" class="box-footer" *ngIf="showFileSelector">
         {{ "sendFileDesc" | i18n }} {{ "maxFileSize" | i18n }}
       </div>
     </div>
@@ -104,13 +112,14 @@
           <textarea
             id="text"
             name="Text"
+            aria-describedby="textHelp"
             rows="6"
             [(ngModel)]="send.text.text"
             [readonly]="disableSend"
           ></textarea>
         </div>
       </div>
-      <div class="box-footer">
+      <div id="textHelp" class="box-footer">
         {{ "sendTextDesc" | i18n }}
       </div>
       <div class="box-content">
@@ -180,12 +189,13 @@
               min="1"
               type="number"
               name="MaximumAccessCount"
+              aria-describedby="maximumAccessCountHelp"
               [(ngModel)]="send.maxAccessCount"
               [readonly]="disableSend"
             />
           </div>
         </div>
-        <div class="box-footer">
+        <div id="maximumAccessCountHelp" class="box-footer">
           {{ "maximumAccessCountDesc" | i18n }}
         </div>
       </div>
@@ -215,6 +225,7 @@
                 id="password"
                 type="{{ showPassword ? 'text' : 'password' }}"
                 name="Password"
+                aria-describedby="passwordHelp"
                 class="monospaced"
                 [(ngModel)]="password"
                 appInputVerbatim
@@ -239,7 +250,7 @@
             </div>
           </div>
         </div>
-        <div class="box-footer">
+        <div id="passwordHelp" class="box-footer">
           {{ "sendPasswordDesc" | i18n }}
         </div>
       </div>
@@ -251,13 +262,14 @@
             <textarea
               id="notes"
               name="Notes"
+              aria-describedby="notesHelp"
               rows="6"
               [(ngModel)]="send.notes"
               [readonly]="disableSend"
             ></textarea>
           </div>
         </div>
-        <div class="box-footer">
+        <div id="notesHelp" class="box-footer">
           {{ "sendNotesDesc" | i18n }}
         </div>
       </div>

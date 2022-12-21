@@ -13,13 +13,14 @@
                 id="baseUrl"
                 type="text"
                 name="BaseUrl"
+                aria-describedby="baseUrlHelp"
                 [(ngModel)]="baseUrl"
                 placeholder="{{ 'ex' | i18n }} https://bitwarden.company.com"
                 appInputVerbatim
               />
             </div>
           </div>
-          <div class="box-footer">
+          <div id="baseUrlHelp" class="box-footer">
             {{ "selfHostedEnvironmentFooter" | i18n }}
           </div>
         </div>
@@ -34,7 +35,13 @@
               {{ "customEnvironment" | i18n }}
             </button>
           </h2>
-          <div class="box-content" [hidden]="!showCustom">
+          <div
+            role="group"
+            attr.aria-label="{{ 'customEnvironment' | i18n }}"
+            aria-describedby="customEnvironmentHelp"
+            class="box-content"
+            [hidden]="!showCustom"
+          >
             <div class="box-content-row" appBoxRow>
               <label for="webVaultUrl">{{ "webVaultUrl" | i18n }}</label>
               <input
@@ -80,7 +87,7 @@
               />
             </div>
           </div>
-          <div class="box-footer" [hidden]="!showCustom">
+          <div id="customEnvironmentHelp" class="box-footer" [hidden]="!showCustom">
             {{ "customEnvironmentFooter" | i18n }}
           </div>
         </div>

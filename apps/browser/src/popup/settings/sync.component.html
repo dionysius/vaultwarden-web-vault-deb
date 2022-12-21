@@ -15,6 +15,7 @@
     <button
       type="button"
       class="btn block primary"
+      aria-describedby="lastSyncHint"
       (click)="sync()"
       #syncBtn
       [disabled]="$any(syncBtn).loading"
@@ -27,6 +28,8 @@
         aria-hidden="true"
       ></i>
     </button>
-    <p class="text-center text-muted small">{{ "lastSync" | i18n }} {{ lastSync }}</p>
+    <p id="lastSyncHint" class="text-center text-muted small">
+      {{ "lastSync" | i18n }} {{ lastSync }}
+    </p>
   </div>
 </main>

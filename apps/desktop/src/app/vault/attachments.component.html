@@ -45,10 +45,10 @@
           <div class="box-content no-hover">
             <div class="box-content-row">
               <label for="file">{{ "file" | i18n }}</label>
-              <input type="file" id="file" name="file" required />
+              <input type="file" id="file" name="file" aria-describedby="fileHelp" required />
             </div>
           </div>
-          <div class="box-footer">
+          <div id="fileHelp" class="box-footer">
             {{ "maxFileSize" | i18n }}
           </div>
         </div>

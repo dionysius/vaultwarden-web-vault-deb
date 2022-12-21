@@ -221,6 +221,7 @@
       </button>
       <button
         type="button"
+        aria-describedby="rateExtensionHelp"
         class="box-content-row box-content-row-flex text-default"
         appStopClick
         (click)="rate()"
@@ -229,6 +230,6 @@
         <i class="bwi bwi-angle-right bwi-lg row-sub-icon" aria-hidden="true"></i>
       </button>
     </div>
-    <div class="box-footer">{{ "rateExtensionDesc" | i18n }}</div>
+    <div id="rateExtensionHelp" class="box-footer">{{ "rateExtensionDesc" | i18n }}</div>
   </div>
 </main>

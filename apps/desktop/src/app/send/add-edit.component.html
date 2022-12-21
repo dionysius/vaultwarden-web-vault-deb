@@ -51,6 +51,7 @@
               id="file"
               class="form-control-file"
               name="file"
+              aria-describedby="fileHelp"
               required
               [disabled]="disableSend"
             />
@@ -64,16 +65,17 @@
             <textarea
               id="text"
               name="text"
+              aria-describedby="textHelp"
               [(ngModel)]="send.text.text"
               rows="6"
               [readOnly]="disableSend"
             ></textarea>
           </div>
         </div>
-        <div class="box-footer" *ngIf="!editMode && send.type === sendType.File">
+        <div id="fileHelp" class="box-footer" *ngIf="!editMode && send.type === sendType.File">
           {{ "sendFileDesc" | i18n }} {{ "maxFileSize" | i18n }}
         </div>
-        <div class="box-footer" *ngIf="send.type === sendType.Text">
+        <div id="textHelp" class="box-footer" *ngIf="send.type === sendType.Text">
           {{ "sendTextDesc" | i18n }}
         </div>
       </div>
@@ -126,15 +128,16 @@
                 id="maxAccessCount"
                 type="number"
                 name="maxAccessCount"
+                aria-describedby="maxAccessCountHelp"
                 [(ngModel)]="send.maxAccessCount"
                 [readOnly]="disableSend"
               />
             </div>
           </div>
-          <div class="box-footer" *ngIf="!editMode">
+          <div id="maxAccessCountHelp" class="box-footer" *ngIf="!editMode">
             {{ "maxAccessCountDesc" | i18n }}
           </div>
-          <div class="box-footer" *ngIf="editMode">
+          <div id="maxAccessCountHelp" class="box-footer" *ngIf="editMode">
             <p>{{ "maxAccessCountDesc" | i18n }}</p>
             {{ "currentAccessCount" | i18n }}: <strong>{{ send.accessCount }}</strong>
           </div>
@@ -149,6 +152,7 @@
                 <input
                   id="password"
                   name="password"
+                  aria-describedby="passwordHelp"
                   type="{{ showPassword ? 'text' : 'password' }}"
                   [(ngModel)]="password"
                   [readOnly]="disableSend"
@@ -174,26 +178,27 @@
               </div>
             </div>
           </div>
-          <div class="box-footer">
+          <div id="passwordHelp" class="box-footer">
             {{ "sendPasswordDesc" | i18n }}
           </div>
         </div>
         <div class="box">
           <h2 class="box-header">
-            {{ "notes" | i18n }}
+            <label for="notes">{{ "notes" | i18n }}</label>
           </h2>
           <div class="box-content">
             <div class="box-content-row" appBoxRow>
               <textarea
                 id="notes"
                 name="notes"
+                aria-describedby="notesHelp"
                 [(ngModel)]="send.notes"
                 rows="6"
                 [readOnly]="disableSend"
               ></textarea>
             </div>
           </div>
-          <div class="box-footer">
+          <div id="notesHelp" class="box-footer">
             {{ "sendNotesDesc" | i18n }}
           </div>
         </div>

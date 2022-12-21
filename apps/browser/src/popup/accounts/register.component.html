@@ -32,6 +32,7 @@
               <input
                 id="masterPassword"
                 type="{{ showPassword ? 'text' : 'password' }}"
+                aria-describedby="masterPasswordHelp"
                 class="monospaced"
                 formControlName="masterPassword"
                 appInputVerbatim
@@ -64,7 +65,7 @@
           </app-password-strength>
         </div>
       </div>
-      <div class="box-footer">
+      <div id="masterPasswordHelp" class="box-footer">
         {{ "masterPassDesc" | i18n }}
       </div>
     </div>
@@ -100,10 +101,10 @@
         </div>
         <div class="box-content-row" appBoxRow>
           <label for="hint">{{ "masterPassHint" | i18n }}</label>
-          <input id="hint" type="text" formControlName="hint" />
+          <input id="hint" type="text" aria-describedby="hintHelp" formControlName="hint" />
         </div>
       </div>
-      <div class="box-footer">
+      <div id="hintHelp" class="box-footer">
         {{ "masterPassHintDesc" | i18n }}
       </div>
     </div>

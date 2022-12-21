@@ -18,6 +18,7 @@
                 <select
                   id="organization"
                   name="OrganizationId"
+                  aria-describedby="organizationHelp"
                   [(ngModel)]="organizationId"
                   (change)="filterCollections()"
                 >
@@ -25,7 +26,7 @@
                 </select>
               </div>
             </div>
-            <div class="box-footer">
+            <div id="organizationHelp" class="box-footer">
               {{ "moveToOrgDesc" | i18n }}
             </div>
           </div>

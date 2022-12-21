@@ -44,13 +44,16 @@
                       name="VaultTimeoutAction"
                       id="vaultTimeoutActionLock"
                       value="lock"
+                      aria-describedby="vaultTimeoutActionLockHelp"
                       [(ngModel)]="vaultTimeoutAction"
                       (change)="saveVaultTimeoutOptions()"
                     />
                     {{ "lock" | i18n }}
                   </label>
                 </div>
-                <small class="help-block">{{ "vaultTimeoutActionLockDesc" | i18n }}</small>
+                <small id="vaultTimeoutActionLockHelp" class="help-block">{{
+                  "vaultTimeoutActionLockDesc" | i18n
+                }}</small>
                 <div class="radio">
                   <label for="vaultTimeoutActionLogOut">
                     <input
@@ -58,13 +61,16 @@
                       name="VaultTimeoutAction"
                       id="vaultTimeoutActionLogOut"
                       value="logOut"
+                      aria-describedby="vaultTimeoutActionLogOutHelp"
                       [(ngModel)]="vaultTimeoutAction"
                       (change)="saveVaultTimeoutOptions()"
                     />
                     {{ "logOut" | i18n }}
                   </label>
                 </div>
-                <small class="help-block">{{ "vaultTimeoutActionLogOutDesc" | i18n }}</small>
+                <small id="vaultTimeoutActionLogOutHelp" class="help-block">{{
+                  "vaultTimeoutActionLogOutDesc" | i18n
+                }}</small>
               </div>
               <div class="form-group">
                 <div class="checkbox">
@@ -139,6 +145,7 @@
                 <select
                   id="clearClipboard"
                   name="ClearClipboard"
+                  aria-describedby="clearClipboardHelp"
                   [(ngModel)]="clearClipboard"
                   (change)="saveClearClipboard()"
                 >
@@ -146,7 +153,9 @@
                     {{ o.name }}
                   </option>
                 </select>
-                <small class="help-block">{{ "clearClipboardDesc" | i18n }}</small>
+                <small id="clearClipboardHelp" class="help-block">{{
+                  "clearClipboardDesc" | i18n
+                }}</small>
               </div>
               <div class="form-group">
                 <div class="checkbox">
@@ -155,13 +164,16 @@
                       id="minimizeOnCopyToClipboard"
                       type="checkbox"
                       name="MinimizeOnCopyToClipboard"
+                      aria-describedby="minimizeOnCopyToClipboardHelp"
                       [(ngModel)]="minimizeOnCopyToClipboard"
                       (change)="saveMinOnCopyToClipboard()"
                     />
                     {{ "minimizeOnCopyToClipboard" | i18n }}
                   </label>
                 </div>
-                <small class="help-block">{{ "minimizeOnCopyToClipboardDesc" | i18n }}</small>
+                <small id="minimizeOnCopyToClipboardHelp" class="help-block">{{
+                  "minimizeOnCopyToClipboardDesc" | i18n
+                }}</small>
               </div>
               <div class="form-group">
                 <div class="checkbox">
@@ -170,13 +182,14 @@
                       id="enableFavicons"
                       type="checkbox"
                       name="enableFavicons"
+                      aria-describedby="enableFaviconsHelp"
                       [(ngModel)]="enableFavicons"
                       (change)="saveFavicons()"
                     />
                     {{ "enableFavicon" | i18n }}
                   </label>
                 </div>
-                <small class="help-block">{{ "faviconDesc" | i18n }}</small>
+                <small id="enableFaviconsHelp" class="help-block">{{ "faviconDesc" | i18n }}</small>
               </div>
             </ng-container>
           </div>
@@ -211,13 +224,14 @@
                       id="enableTray"
                       type="checkbox"
                       name="EnableTray"
+                      aria-describedby="enableTrayHelp"
                       [(ngModel)]="enableTray"
                       (change)="saveTray()"
                     />
                     {{ enableTrayText }}
                   </label>
                 </div>
-                <small class="help-block">{{ enableTrayDescText }}</small>
+                <small id="enableTrayHelp" class="help-block">{{ enableTrayDescText }}</small>
               </div>
               <div class="form-group" *ngIf="showMinToTray">
                 <div class="checkbox">
@@ -226,13 +240,16 @@
                       id="enableMinToTray"
                       type="checkbox"
                       name="EnableMinToTray"
+                      aria-describedby="enableMinToTrayHelp"
                       [(ngModel)]="enableMinToTray"
                       (change)="saveMinToTray()"
                     />
                     {{ enableMinToTrayText }}
                   </label>
                 </div>
-                <small class="help-block">{{ enableMinToTrayDescText }}</small>
+                <small id="enableMinToTrayHelp" class="help-block">{{
+                  enableMinToTrayDescText
+                }}</small>
               </div>
               <div class="form-group">
                 <div class="checkbox">
@@ -241,13 +258,16 @@
                       id="enableCloseToTray"
                       type="checkbox"
                       name="EnableCloseToTray"
+                      aria-describedby="enableCloseToTrayHelp"
                       [(ngModel)]="enableCloseToTray"
                       (change)="saveCloseToTray()"
                     />
                     {{ enableCloseToTrayText }}
                   </label>
                 </div>
-                <small class="help-block">{{ enableCloseToTrayDescText }}</small>
+                <small id="enableCloseToTrayHelp" class="help-block">{{
+                  enableCloseToTrayDescText
+                }}</small>
               </div>
               <div class="form-group">
                 <div class="checkbox">
@@ -256,13 +276,14 @@
                       id="startToTray"
                       type="checkbox"
                       name="StartToTray"
+                      aria-describedby="startToTrayHelp"
                       [(ngModel)]="startToTray"
                       (change)="saveStartToTray()"
                     />
                     {{ startToTrayText }}
                   </label>
                 </div>
-                <small class="help-block">{{ startToTrayDescText }}</small>
+                <small id="startToTrayHelp" class="help-block">{{ startToTrayDescText }}</small>
               </div>
               <div class="form-group">
                 <div class="checkbox">
@@ -271,13 +292,16 @@
                       id="openAtLogin"
                       type="checkbox"
                       name="OpenAtLogin"
+                      aria-describedby="openAtLoginHelp"
                       [(ngModel)]="openAtLogin"
                       (change)="saveOpenAtLogin()"
                     />
                     {{ "openAtLogin" | i18n }}
                   </label>
                 </div>
-                <small class="help-block">{{ "openAtLoginDesc" | i18n }}</small>
+                <small id="openAtLoginHelp" class="help-block">{{
+                  "openAtLoginDesc" | i18n
+                }}</small>
               </div>
               <div class="form-group" *ngIf="showAlwaysShowDock">
                 <div class="checkbox">
@@ -286,13 +310,16 @@
                       id="alwaysShowDock"
                       type="checkbox"
                       name="AlwaysShowDock"
+                      aria-describedby="alwaysShowDockHelp"
                       [(ngModel)]="alwaysShowDock"
                       (change)="saveAlwaysShowDock()"
                     />
                     {{ "alwaysShowDock" | i18n }}
                   </label>
                 </div>
-                <small class="help-block">{{ "alwaysShowDockDesc" | i18n }}</small>
+                <small id="alwaysShowDockHelp" class="help-block">{{
+                  "alwaysShowDockDesc" | i18n
+                }}</small>
               </div>
               <div class="form-group">
                 <div class="checkbox">
@@ -301,13 +328,16 @@
                       id="enableBrowserIntegration"
                       type="checkbox"
                       name="EnableBrowserIntegration"
+                      aria-describedby="enableBrowserIntegrationHelp"
                       [(ngModel)]="enableBrowserIntegration"
                       (change)="saveBrowserIntegration()"
                     />
                     {{ "enableBrowserIntegration" | i18n }}
                   </label>
                 </div>
-                <small class="help-block">{{ "enableBrowserIntegrationDesc" | i18n }}</small>
+                <small id="enableBrowserIntegrationHelp" class="help-block">{{
+                  "enableBrowserIntegrationDesc" | i18n
+                }}</small>
               </div>
               <div class="form-group">
                 <div class="checkbox">
@@ -316,6 +346,7 @@
                       id="enableBrowserIntegrationFingerprint"
                       type="checkbox"
                       name="EnableBrowserIntegrationFingerprint"
+                      aria-describedby="enableBrowserIntegrationFingerprintHelp"
                       [(ngModel)]="enableBrowserIntegrationFingerprint"
                       (change)="saveBrowserIntegrationFingerprint()"
                       [disabled]="!enableBrowserIntegration"
@@ -323,7 +354,7 @@
                     {{ "enableBrowserIntegrationFingerprint" | i18n }}
                   </label>
                 </div>
-                <small class="help-block">{{
+                <small id="enableBrowserIntegrationFingerprintHelp" class="help-block">{{
                   "enableBrowserIntegrationFingerprintDesc" | i18n
                 }}</small>
               </div>
@@ -346,17 +377,29 @@
               </div>
               <div class="form-group">
                 <label for="theme">{{ "theme" | i18n }}</label>
-                <select id="theme" name="Theme" [(ngModel)]="theme" (change)="saveTheme()">
+                <select
+                  id="theme"
+                  name="Theme"
+                  aria-describedby="themeHelp"
+                  [(ngModel)]="theme"
+                  (change)="saveTheme()"
+                >
                   <option *ngFor="let o of themeOptions" [ngValue]="o.value">{{ o.name }}</option>
                 </select>
-                <small class="help-block">{{ "themeDesc" | i18n }}</small>
+                <small id="themeHelp" class="help-block">{{ "themeDesc" | i18n }}</small>
               </div>
               <div class="form-group">
                 <label for="locale">{{ "language" | i18n }}</label>
-                <select id="locale" name="Locale" [(ngModel)]="locale" (change)="saveLocale()">
+                <select
+                  id="locale"
+                  name="Locale"
+                  aria-describedby="localeHelp"
+                  [(ngModel)]="locale"
+                  (change)="saveLocale()"
+                >
                   <option *ngFor="let o of localeOptions" [ngValue]="o.value">{{ o.name }}</option>
                 </select>
-                <small class="help-block">{{ "languageDesc" | i18n }}</small>
+                <small id="localeHelp" class="help-block">{{ "languageDesc" | i18n }}</small>
               </div>
             </ng-container>
           </div>

@@ -30,6 +30,7 @@
               id="masterPassword"
               type="{{ showPassword ? 'text' : 'password' }}"
               name="MasterPassword"
+              aria-describedby="masterPasswordHelp"
               class="monospaced"
               [(ngModel)]="masterPassword"
               required
@@ -54,7 +55,7 @@
           </div>
         </div>
       </div>
-      <div class="box-footer">
+      <div id="masterPasswordHelp" class="box-footer">
         <p>{{ "yourVaultIsLocked" | i18n }}</p>
         {{ "loggedInAsOn" | i18n: email:webVaultHostname }}
       </div>

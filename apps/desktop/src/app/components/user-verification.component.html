@@ -5,6 +5,7 @@
       id="masterPassword"
       type="password"
       name="MasterPasswordHash"
+      aria-describedby="confirmIdentityHelp"
       class="form-control"
       [formControl]="secret"
       required
@@ -36,6 +37,7 @@
       id="verificationCode"
       type="input"
       name="verificationCode"
+      aria-describedby="confirmIdentityHelp"
       class="form-control"
       [formControl]="secret"
       required
