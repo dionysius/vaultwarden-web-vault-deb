@@ -4,7 +4,7 @@
     <input bitInput class="search tw-w-full" placeholder="{{ routeData.searchTitle | i18n }}" />
   </div>
   <sm-new-menu></sm-new-menu>
-  <sm-filter></sm-filter>
+  <product-switcher></product-switcher>
   <ng-container *ngIf="account$ | async as account">
     <button [bitMenuTriggerFor]="accountMenu" class="tw-border-0 tw-bg-transparent tw-p-0">
       <bit-avatar [id]="account.userId" [text]="account.name || account.email"></bit-avatar>

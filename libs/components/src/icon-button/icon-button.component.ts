@@ -2,7 +2,7 @@ import { Component, HostBinding, Input } from "@angular/core";
 
 import { ButtonLikeAbstraction, ButtonType } from "../shared/button-like.abstraction";
 
-export type IconButtonType = ButtonType | "contrast" | "main" | "muted";
+export type IconButtonType = ButtonType | "contrast" | "main" | "muted" | "light";
 
 const focusRing = [
   // Workaround for box-shadow with transparent offset issue:
@@ -97,6 +97,17 @@ const styles: Record<IconButtonType, string[]> = {
     "disabled:hover:tw-bg-transparent",
     "disabled:hover:!tw-text-danger",
     "disabled:hover:tw-border-danger-500",
+    ...focusRing,
+  ],
+  light: [
+    "tw-bg-transparent",
+    "!tw-text-alt2",
+    "tw-border-transparent",
+    "hover:tw-bg-transparent-hover",
+    "hover:tw-border-text-alt2",
+    "focus-visible:before:tw-ring-text-alt2",
+    "disabled:hover:tw-border-transparent",
+    "disabled:hover:tw-bg-transparent",
     ...focusRing,
   ],
   unstyled: [],

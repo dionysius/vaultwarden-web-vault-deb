@@ -20,6 +20,12 @@ module.exports = {
     builder: "webpack5",
     disableTelemetry: true,
   },
+  env: (config) => ({
+    ...config,
+    FLAGS: JSON.stringify({
+      secretsManager: true,
+    }),
+  }),
   webpackFinal: async (config, { configType }) => {
     config.resolve.plugins = [new TsconfigPathsPlugin()];
     return config;
