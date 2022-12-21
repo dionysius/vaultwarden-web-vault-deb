@@ -12,17 +12,15 @@ import { Utils } from "@bitwarden/common/misc/utils";
 import { CipherView } from "@bitwarden/common/models/view/cipher.view";
 import { Verification } from "@bitwarden/common/types/verification";
 
-import { WebI18nKey } from "../../core/web-i18n.service.implementation";
-
 class CountBasedLocalizationKey {
-  singular: WebI18nKey;
-  plural: WebI18nKey;
+  singular: string;
+  plural: string;
 
   getKey(count: number) {
     return count == 1 ? this.singular : this.plural;
   }
 
-  constructor(singular: WebI18nKey, plural: WebI18nKey) {
+  constructor(singular: string, plural: string) {
     this.singular = singular;
     this.plural = plural;
   }
@@ -30,7 +28,7 @@ class CountBasedLocalizationKey {
 
 class OrganizationContentSummaryItem {
   count: number;
-  get localizationKey() {
+  get localizationKey(): string {
     return this.localizationKeyOptions.getKey(this.count);
   }
   private localizationKeyOptions: CountBasedLocalizationKey;
@@ -128,9 +126,6 @@ export class DeleteOrganizationComponent implements OnInit {
   }
 
   private getOrganizationItemLocalizationKeysByType(type: string): CountBasedLocalizationKey {
-    return new CountBasedLocalizationKey(
-      `type${type}` as WebI18nKey,
-      `type${type}Plural` as WebI18nKey
-    );
+    return new CountBasedLocalizationKey(`type${type}`, `type${type}Plural`);
   }
 }

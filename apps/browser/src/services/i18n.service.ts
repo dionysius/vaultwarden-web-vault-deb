@@ -1,6 +1,6 @@
-import { I18nServiceImplementation } from "@bitwarden/common/services/i18n.service.implementation";
+import { I18nService as BaseI18nService } from "@bitwarden/common/services/i18n.service";
 
-export default class BrowserI18nServiceImplementation extends I18nServiceImplementation {
+export default class I18nService extends BaseI18nService {
   constructor(systemLanguage: string) {
     super(systemLanguage, null, async (formattedLocale: string) => {
       // Deprecated

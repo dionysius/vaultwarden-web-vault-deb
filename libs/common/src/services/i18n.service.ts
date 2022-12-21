@@ -1,8 +1,8 @@
 import { Observable, ReplaySubject } from "rxjs";
 
-import { I18nService } from "../abstractions/i18n.service";
+import { I18nService as I18nServiceAbstraction } from "../abstractions/i18n.service";
 
-export class I18nServiceImplementation<TKey = string> implements I18nService<TKey> {
+export class I18nService implements I18nServiceAbstraction {
   private _locale = new ReplaySubject<string>(1);
   locale$: Observable<string> = this._locale.asObservable();
   // First locale is the default (English)
@@ -118,11 +118,11 @@ export class I18nServiceImplementation<TKey = string> implements I18nService<TKe
     }
   }
 
-  t(id: TKey, p1?: string, p2?: string, p3?: string): string {
+  t(id: string, p1?: string, p2?: string, p3?: string): string {
     return this.translate(id, p1, p2, p3);
   }
 
-  translate(id: TKey, p1?: string | number, p2?: string | number, p3?: string | number): string {
+  translate(id: string, p1?: string | number, p2?: string | number, p3?: string | number): string {
     let result: string;
     // eslint-disable-next-line
     if (this.localeMessages.hasOwnProperty(id) && this.localeMessages[id]) {

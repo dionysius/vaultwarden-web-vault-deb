@@ -8,12 +8,8 @@ export class PlanResponse extends BaseResponse {
   product: ProductType;
   name: string;
   isAnnual: boolean;
-  nameLocalizationKey: "planNameFree" | "planNameFamilies" | "planNameTeams" | "planNameEnterprise";
-  descriptionLocalizationKey:
-    | "planDescFree"
-    | "planDescFamilies"
-    | "planDescTeams"
-    | "planDescEnterprise";
+  nameLocalizationKey: string;
+  descriptionLocalizationKey: string;
   canBeUsedByBusiness: boolean;
   baseSeats: number;
   baseStorageGb: number;

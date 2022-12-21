@@ -7,8 +7,8 @@ import { PolicyType } from "@bitwarden/common/enums/policyType";
 import { BasePolicy, BasePolicyComponent } from "./base-policy.component";
 
 export class PasswordGeneratorPolicy extends BasePolicy {
-  readonly name = "passwordGenerator";
-  readonly description = "passwordGeneratorPolicyDesc";
+  name = "passwordGenerator";
+  description = "passwordGeneratorPolicyDesc";
   type = PolicyType.PasswordGenerator;
   component = PasswordGeneratorPolicyComponent;
 }

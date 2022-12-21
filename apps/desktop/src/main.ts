@@ -17,14 +17,14 @@ import { TrayMain } from "./main/tray.main";
 import { UpdaterMain } from "./main/updater.main";
 import { WindowMain } from "./main/window.main";
 import { Account } from "./models/account";
-import { DesktopI18nServiceImplementation } from "./services/desktop-i18n.service.implementation";
 import { ElectronLogService } from "./services/electron-log.service";
 import { ElectronMainMessagingService } from "./services/electron-main-messaging.service";
 import { ElectronStorageService } from "./services/electron-storage.service";
+import { I18nService } from "./services/i18n.service";
 
 export class Main {
   logService: ElectronLogService;
-  i18nService: DesktopI18nServiceImplementation;
+  i18nService: I18nService;
   storageService: ElectronStorageService;
   memoryStorageService: MemoryStorageService;
   messagingService: ElectronMainMessagingService;
@@ -73,7 +73,7 @@ export class Main {
     }
 
     this.logService = new ElectronLogService(null, app.getPath("userData"));
-    this.i18nService = new DesktopI18nServiceImplementation("en", "./locales/");
+    this.i18nService = new I18nService("en", "./locales/");
 
     const storageDefaults: any = {};
     // Default vault timeout to "on restart", and action to "lock"

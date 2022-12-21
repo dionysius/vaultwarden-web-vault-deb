@@ -60,7 +60,7 @@ export class BillingSubscriptionItemResponse extends BaseResponse {
   name: string;
   amount: number;
   quantity: number;
-  interval: "month" | "year";
+  interval: string;
   sponsoredSubscriptionItem: boolean;
 
   constructor(response: any) {

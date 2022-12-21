@@ -7,8 +7,8 @@ import { PolicyRequest } from "@bitwarden/common/models/request/policy.request";
 import { BasePolicy, BasePolicyComponent } from "./base-policy.component";
 
 export class SingleOrgPolicy extends BasePolicy {
-  readonly name = "singleOrg";
-  readonly description = "singleOrgDesc";
+  name = "singleOrg";
+  description = "singleOrgDesc";
   type = PolicyType.SingleOrg;
   component = SingleOrgPolicyComponent;
 }

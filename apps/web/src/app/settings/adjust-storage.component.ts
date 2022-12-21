@@ -19,7 +19,7 @@ export class AdjustStorageComponent {
   @Input() storageGbPrice = 0;
   @Input() add = true;
   @Input() organizationId: string;
-  @Input() interval: "month" | "year" = "year";
+  @Input() interval = "year";
   @Output() onAdjusted = new EventEmitter<number>();
   @Output() onCanceled = new EventEmitter();
 

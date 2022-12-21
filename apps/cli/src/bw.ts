@@ -55,9 +55,9 @@ import { NodeCryptoFunctionService } from "@bitwarden/node/services/node-crypto-
 
 import { Program } from "./program";
 import { SendProgram } from "./send.program";
-import { CliI18nServiceImplementation } from "./services/cli-i18n.service.implementation";
 import { CliPlatformUtilsService } from "./services/cli-platform-utils.service";
 import { ConsoleLogService } from "./services/console-log.service";
+import { I18nService } from "./services/i18n.service";
 import { LowdbStorageService } from "./services/lowdb-storage.service";
 import { NodeApiService } from "./services/node-api.service";
 import { NodeEnvSecureStorageService } from "./services/node-env-secure-storage.service";
@@ -74,7 +74,7 @@ export class Main {
   storageService: LowdbStorageService;
   secureStorageService: NodeEnvSecureStorageService;
   memoryStorageService: MemoryStorageService;
-  i18nService: CliI18nServiceImplementation;
+  i18nService: I18nService;
   platformUtilsService: CliPlatformUtilsService;
   cryptoService: CryptoService;
   tokenService: TokenService;
@@ -136,7 +136,7 @@ export class Main {
       p = path.join(process.env.HOME, ".config/Bitwarden CLI");
     }
 
-    this.i18nService = new CliI18nServiceImplementation("en", "./locales");
+    this.i18nService = new I18nService("en", "./locales");
     this.platformUtilsService = new CliPlatformUtilsService(ClientType.Cli, packageJson);
     this.logService = new ConsoleLogService(
       this.platformUtilsService.isDev(),
