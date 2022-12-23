@@ -175,6 +175,7 @@
   }
 
   &:disabled:not(.manual),
+  &[aria-disabled="true"]:not(.manual),
   &.loading {
     .bwi-spinner {
       display: flex;

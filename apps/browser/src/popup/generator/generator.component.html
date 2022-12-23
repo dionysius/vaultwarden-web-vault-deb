@@ -56,8 +56,8 @@
         type="button"
         appStopClick
         appA11yTitle="{{ 'regenerateUsername' | i18n }}"
-        (click)="regenerate()"
-        [disabled]="$any(form).loading"
+        (click)="$any(form).loading ? false : regenerate()"
+        [attr.aria-disabled]="$any(form).loading ? 'true' : null"
       >
         <i
           class="bwi bwi-lg bwi-generate"

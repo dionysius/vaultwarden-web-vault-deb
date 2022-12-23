@@ -399,8 +399,8 @@
     <button
       type="button"
       class="btn btn-submit btn-primary"
-      (click)="regenerate()"
-      [disabled]="$any(form).loading"
+      (click)="$any(form).loading ? false : regenerate()"
+      [attr.aria-disabled]="$any(form).loading ? 'true' : null"
     >
       <i class="bwi bwi-spinner bwi-spin" title="{{ 'loading' | i18n }}" aria-hidden="true"></i>
       <span>{{ "regenerateUsername" | i18n }}</span>
