@@ -2057,5 +2057,9 @@
   },
   "logInWithAnotherDevice": {
     "message": "Увійти з іншого пристрою"
+  },
+  "toggleCharacterCount": {
+    "message": "Перемкнути лічильник символів",
+    "description": "'Character count' describes a feature that displays a number next to each character of the password."
   }
 }

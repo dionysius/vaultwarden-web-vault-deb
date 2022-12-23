@@ -2057,5 +2057,9 @@
   },
   "logInWithAnotherDevice": {
     "message": "使用其他设备登录"
+  },
+  "toggleCharacterCount": {
+    "message": "字符计数开关",
+    "description": "'Character count' describes a feature that displays a number next to each character of the password."
   }
 }

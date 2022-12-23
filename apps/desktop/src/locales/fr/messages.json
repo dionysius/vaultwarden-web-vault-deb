@@ -269,7 +269,7 @@
     "message": "Nom"
   },
   "fullName": {
-    "message": "Nom et prénom"
+    "message": "Nom complet"
   },
   "address1": {
     "message": "Adresse 1"
@@ -2057,5 +2057,9 @@
   },
   "logInWithAnotherDevice": {
     "message": "Connectez-vous avec un autre appareil"
+  },
+  "toggleCharacterCount": {
+    "message": "Activer/Désactiver le compte de caractères",
+    "description": "'Character count' describes a feature that displays a number next to each character of the password."
   }
 }

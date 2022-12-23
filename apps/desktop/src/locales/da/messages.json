@@ -2057,5 +2057,9 @@
   },
   "logInWithAnotherDevice": {
     "message": "Log ind med en anden enhed"
+  },
+  "toggleCharacterCount": {
+    "message": "Vis/skjul tegnantal",
+    "description": "'Character count' describes a feature that displays a number next to each character of the password."
   }
 }
