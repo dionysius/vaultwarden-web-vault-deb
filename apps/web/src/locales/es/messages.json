@@ -5487,6 +5487,17 @@
   "multiSelectClearAll": {
     "message": "Borrar todo"
   },
+  "toggleCharacterCount": {
+    "message": "Alternar recuento de caracteres",
+    "description": "'Character count' describes a feature that displays a number next to each character of the password."
+  },
+  "passwordCharacterCount": {
+    "message": "Número de caracteres de contraseña",
+    "description": "'Character count' describes a feature that displays a number next to each character of the password."
+  },
+  "hide": {
+    "message": "Ocultar"
+  },
   "projects": {
     "message": "Proyectos"
   },
@@ -5771,5 +5782,47 @@
   },
   "memberAccessAll": {
     "message": "Este miembro puede acceder y modificar todos los elementos."
+  },
+  "moreFromBitwarden": {
+    "message": "Más de Bitwarden"
+  },
+  "switchProducts": {
+    "message": "Cambiar productos"
+  },
+  "freeOrgInvLimitReachedManageBilling": {
+    "message": "Las organizaciones gratuitas pueden tener hasta $SEATCOUNT$ miembros. Actualiza a un plan de pago para invitar más miembros.",
+    "placeholders": {
+      "seatcount": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "freeOrgInvLimitReachedNoManageBilling": {
+    "message": "Las organizaciones gratuitas pueden tener hasta $SEATCOUNT$ miembros. Póngase en contacto con el propietario de su organización para actualizar.",
+    "placeholders": {
+      "seatcount": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "freeOrgMaxCollectionReachedManageBilling": {
+    "message": "Las organizaciones gratuitas pueden tener hasta $COLLECTIONCOUNT$ distribuciones. Actualiza a un plan de pago para añadir más distribuciones.",
+    "placeholders": {
+      "COLLECTIONCOUNT": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "freeOrgMaxCollectionReachedNoManageBilling": {
+    "message": "Las organizaciones gratuitas pueden tener hasta $COLLECTIONCOUNT$ colecciones. Póngase en contacto con el propietario de su organización para actualizar.",
+    "placeholders": {
+      "COLLECTIONCOUNT": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
   }
 }

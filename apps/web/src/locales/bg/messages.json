@@ -5487,6 +5487,17 @@
   "multiSelectClearAll": {
     "message": "Изчистване на всичко"
   },
+  "toggleCharacterCount": {
+    "message": "Превключване на броя знаци",
+    "description": "'Character count' describes a feature that displays a number next to each character of the password."
+  },
+  "passwordCharacterCount": {
+    "message": "Брой знаци в паролата",
+    "description": "'Character count' describes a feature that displays a number next to each character of the password."
+  },
+  "hide": {
+    "message": "Скриване"
+  },
   "projects": {
     "message": "Проекти"
   },
@@ -5771,5 +5782,47 @@
   },
   "memberAccessAll": {
     "message": "Този член има достъп до всички записи и може да ги редактира."
+  },
+  "moreFromBitwarden": {
+    "message": "Още от Битуорден"
+  },
+  "switchProducts": {
+    "message": "Превключване на продуктите"
+  },
+  "freeOrgInvLimitReachedManageBilling": {
+    "message": "Безплатните организации могат да имат не повече от $SEATCOUNT$ членове. Надградете до платен план, ако искате да имате повече членове.",
+    "placeholders": {
+      "seatcount": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "freeOrgInvLimitReachedNoManageBilling": {
+    "message": "Безплатните организации могат да имат не повече от $SEATCOUNT$ членове. Свържете се със собственика на организацията си, ако смятате, че планът трябва да бъде надграден.",
+    "placeholders": {
+      "seatcount": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "freeOrgMaxCollectionReachedManageBilling": {
+    "message": "Безплатните организации могат да имат не повече от $COLLECTIONCOUNT$ колекции. Надградете до платен план, ако искате да имате повече колекции.",
+    "placeholders": {
+      "COLLECTIONCOUNT": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "freeOrgMaxCollectionReachedNoManageBilling": {
+    "message": "Безплатните организации могат да имат не повече от $COLLECTIONCOUNT$ колекции. Свържете се със собственика на организацията си, ако смятате, че планът трябва да бъде надграден.",
+    "placeholders": {
+      "COLLECTIONCOUNT": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
   }
 }

@@ -5487,6 +5487,17 @@
   "multiSelectClearAll": {
     "message": "Tyhjennä kaikki"
   },
+  "toggleCharacterCount": {
+    "message": "Kytke merkkimäärä",
+    "description": "'Character count' describes a feature that displays a number next to each character of the password."
+  },
+  "passwordCharacterCount": {
+    "message": "Salasanan merkkimäärä",
+    "description": "'Character count' describes a feature that displays a number next to each character of the password."
+  },
+  "hide": {
+    "message": "Piilota"
+  },
   "projects": {
     "message": "Projektit"
   },
@@ -5539,7 +5550,7 @@
     "message": "Uusi"
   },
   "secrets": {
-    "message": "Salaisuus"
+    "message": "Salaisuudet"
   },
   "nameValuePair": {
     "message": "Nimi-/arvopari"
@@ -5602,7 +5613,7 @@
     "message": "Uusi projekti"
   },
   "softDeleteSecretWarning": {
-    "message": "Salaisuuksien poisto voi vaikuttaa olemassa oleviin integroteihin."
+    "message": "Salaisuuksien poisto voi vaikuttaa olemassa oleviin integrointeihin."
   },
   "softDeletesSuccessToast": {
     "message": "Salaisuudet siirrettiin roskakoriin"
@@ -5722,7 +5733,7 @@
     "message": "Käyttötunniste"
   },
   "accessTokenExpirationRequired": {
-    "message": "Erääntymispäivä vaaditaan"
+    "message": "Erääntymisajankohta vaaditaan"
   },
   "accessTokenCreatedAndCopied": {
     "message": "Käyttötunniste luotiin ja kopioitiin leikepöydälle"
@@ -5771,5 +5782,47 @@
   },
   "memberAccessAll": {
     "message": "Tämä jäsen voi tarkastella ja muokata kaikkia kohteita."
+  },
+  "moreFromBitwarden": {
+    "message": "Lisää Bitwardenilta"
+  },
+  "switchProducts": {
+    "message": "Vaihda tuotteita"
+  },
+  "freeOrgInvLimitReachedManageBilling": {
+    "message": "Ilmaisilla organisaatioilla voi olla enintään $SEATCOUNT$ jäsentä. Päivitä maksulliseen tilaukseen kutsuaksesi lisää jäseniä.",
+    "placeholders": {
+      "seatcount": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "freeOrgInvLimitReachedNoManageBilling": {
+    "message": "Ilmaisilla organisaatioilla voi olla enintään $SEATCOUNT$ jäsentä. Ole päivityksestä yhteydessä organisaatiosi omistajaan.",
+    "placeholders": {
+      "seatcount": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "freeOrgMaxCollectionReachedManageBilling": {
+    "message": "Ilmaisilla organisaatioilla voi olla enintään $COLLECTIONCOUNT$ kokoelmaa. Päivitä maksulliseen tilaukseen lisätäksesi kokoelmia.",
+    "placeholders": {
+      "COLLECTIONCOUNT": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "freeOrgMaxCollectionReachedNoManageBilling": {
+    "message": "Ilmaisilla organisaatioilla voi olla enintään $COLLECTIONCOUNT$ kokoelmaa. Ole päivityksestä yhteydessä organisaatiosi omistajaan.",
+    "placeholders": {
+      "COLLECTIONCOUNT": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
   }
 }

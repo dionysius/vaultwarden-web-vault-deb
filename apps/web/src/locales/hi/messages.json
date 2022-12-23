@@ -65,7 +65,7 @@
     "message": "सिक्योरिटी कोड (सीवीवी)"
   },
   "identityName": {
-    "message": "Identity name"
+    "message": "पहचान का नाम"
   },
   "company": {
     "message": "कंपनी"
@@ -137,10 +137,10 @@
     "message": "डॉ"
   },
   "expirationMonth": {
-    "message": "Expiration month"
+    "message": "समाप्ति माह"
   },
   "expirationYear": {
-    "message": "Expiration year"
+    "message": "समाप्ति वर्ष"
   },
   "authenticatorKeyTotp": {
     "message": "Authenticator key (TOTP)"
@@ -164,14 +164,14 @@
     "message": "छुपा हुआ"
   },
   "cfTypeBoolean": {
-    "message": "Boolean"
+    "message": "बूलियन"
   },
   "cfTypeLinked": {
     "message": "Linked",
     "description": "This describes a field that is 'linked' (related) to another field."
   },
   "remove": {
-    "message": "Remove"
+    "message": "हटाएं"
   },
   "unassigned": {
     "message": "Unassigned"
@@ -217,7 +217,7 @@
     "description": "Default URI match detection for auto-fill."
   },
   "never": {
-    "message": "Never"
+    "message": "कभी नहीं"
   },
   "toggleVisibility": {
     "message": "Toggle visibility"
@@ -245,77 +245,77 @@
     "message": "This password was not found in any known data breaches. It should be safe to use."
   },
   "save": {
-    "message": "Save"
+    "message": "सेव"
   },
   "cancel": {
-    "message": "Cancel"
+    "message": "रद्द करें"
   },
   "canceled": {
-    "message": "Canceled"
+    "message": "रद्द की गई"
   },
   "close": {
-    "message": "Close"
+    "message": "बंद करें"
   },
   "delete": {
-    "message": "Delete"
+    "message": "मिटाए"
   },
   "favorite": {
-    "message": "Favorite"
+    "message": "पसंदीदा"
   },
   "unfavorite": {
-    "message": "Unfavorite"
+    "message": "पसंदीदा से हटाएं"
   },
   "edit": {
-    "message": "Edit"
+    "message": "संपादन करें"
   },
   "searchCollection": {
-    "message": "Search collection"
+    "message": "श्रेणी खोजें"
   },
   "searchFolder": {
-    "message": "Search folder"
+    "message": "फोल्डर में खोजें"
   },
   "searchFavorites": {
-    "message": "Search favorites"
+    "message": "पसंदीदा में खोजें"
   },
   "searchType": {
     "message": "Search type",
     "description": "Search item type"
   },
   "searchVault": {
-    "message": "Search vault"
+    "message": "वॉल्ट खोजे"
   },
   "allItems": {
-    "message": "All items"
+    "message": "सभी सामग्री"
   },
   "favorites": {
-    "message": "Favorites"
+    "message": "पसंदीदा"
   },
   "types": {
-    "message": "Types"
+    "message": "प्रकार"
   },
   "typeLogin": {
-    "message": "Login"
+    "message": "लॉग इन"
   },
   "typeCard": {
-    "message": "Card"
+    "message": "कार्ड"
   },
   "typeIdentity": {
-    "message": "Identity"
+    "message": "पहचान"
   },
   "typeSecureNote": {
-    "message": "Secure note"
+    "message": "सुरक्षित नोट"
   },
   "typeLoginPlural": {
-    "message": "Logins"
+    "message": "लॉग इन"
   },
   "typeCardPlural": {
-    "message": "Cards"
+    "message": "कार्ड्स"
   },
   "typeIdentityPlural": {
-    "message": "Identities"
+    "message": "पहचान"
   },
   "typeSecureNotePlural": {
-    "message": "Secure notes"
+    "message": "सुरक्षित नोट"
   },
   "folders": {
     "message": "Folders"
@@ -418,14 +418,14 @@
     "description": "Copy credit card security code (CVV)"
   },
   "copyUri": {
-    "message": "Copy URI",
+    "message": "URI को कॉपी करें",
     "description": "Copy URI to clipboard"
   },
   "me": {
-    "message": "Me"
+    "message": "मैं"
   },
   "myVault": {
-    "message": "My vault"
+    "message": "मेरी तिजोरी"
   },
   "allVaults": {
     "message": "All vaults"
@@ -443,40 +443,40 @@
     "message": "Move selected to organization"
   },
   "deleteSelected": {
-    "message": "Delete selected"
+    "message": "चयनित मिटाएं"
   },
   "moveSelected": {
     "message": "Move selected"
   },
   "selectAll": {
-    "message": "Select all"
+    "message": "सभी का चयन करें"
   },
   "unselectAll": {
-    "message": "Unselect all"
+    "message": "सभी का चयन रद्द करें"
   },
   "launch": {
-    "message": "Launch"
+    "message": "खोलें"
   },
   "newAttachment": {
-    "message": "Add new attachment"
+    "message": "अटैचमैंट जोड़ें"
   },
   "deletedAttachment": {
-    "message": "Deleted attachment"
+    "message": "अटैचमेंट हटाएं"
   },
   "deleteAttachmentConfirmation": {
-    "message": "Are you sure you want to delete this attachment?"
+    "message": "क्या आप वाकई इस अटैचमेंट को हटाना चाहते हैं?"
   },
   "attachmentSaved": {
     "message": "Attachment saved"
   },
   "file": {
-    "message": "File"
+    "message": "फ़ाइल"
   },
   "selectFile": {
-    "message": "Select a file."
+    "message": "फ़ाइल का चयन करें।"
   },
   "maxFileSize": {
-    "message": "Maximum file size is 500 MB."
+    "message": "अधिकतम फाइल आकार 500 MB है।"
   },
   "updateKey": {
     "message": "You cannot use this feature until you update your encryption key."
@@ -558,16 +558,16 @@
     "message": "Log out"
   },
   "ok": {
-    "message": "Ok"
+    "message": "ठीक"
   },
   "yes": {
-    "message": "Yes"
+    "message": "हाँ"
   },
   "no": {
-    "message": "No"
+    "message": "नहीं"
   },
   "loginOrCreateNewAccount": {
-    "message": "Log in or create a new account to access your secure vault."
+    "message": "सुरक्षित तिजोरी में प्रवेश करने के लिए नया खाता बनाएं या लॉग इन करें।"
   },
   "loginWithDevice": {
     "message": "Log in with device"
@@ -579,7 +579,7 @@
     "message": "Log in with master password"
   },
   "createAccount": {
-    "message": "Create account"
+    "message": "खाता बनाएँ"
   },
   "newAroundHere": {
     "message": "New around here?"
@@ -639,25 +639,25 @@
     "message": "Get master password hint"
   },
   "emailRequired": {
-    "message": "Email address is required."
+    "message": "ई-मेल पते की आवश्यकता है।"
   },
   "invalidEmail": {
-    "message": "Invalid email address."
+    "message": "अमान्य ई-मेल |"
   },
   "masterPasswordRequired": {
-    "message": "Master password is required."
+    "message": "मास्टर पासवर्ड की आवश्यकता है।"
   },
   "confirmMasterPasswordRequired": {
     "message": "Master password retype is required."
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least 8 characters long."
+    "message": "मास्टर पासवर्ड में कम से कम 8 अक्षर होने चाहिएं।"
   },
   "masterPassDoesntMatch": {
-    "message": "Master password confirmation does not match."
+    "message": "मास्टर पासवर्ड पुष्टिकरण मेल नहीं खाता।"
   },
   "newAccountCreated": {
-    "message": "Your new account has been created! You may now log in."
+    "message": "आपका नया खाता बनाया गया है! अब आप लॉग इन कर सकते हैं।"
   },
   "trialAccountCreated": {
     "message": "Account created successfully."
@@ -754,10 +754,10 @@
     }
   },
   "rememberMe": {
-    "message": "Remember me"
+    "message": "मुझे याद रखें"
   },
   "sendVerificationCodeEmailAgain": {
-    "message": "Send verification code email again"
+    "message": "फिर से सत्यापन कोड ईमेल भेजें"
   },
   "useAnotherTwoStepMethod": {
     "message": "Use another two-step login method"
@@ -5487,6 +5487,17 @@
   "multiSelectClearAll": {
     "message": "Clear all"
   },
+  "toggleCharacterCount": {
+    "message": "Toggle character count",
+    "description": "'Character count' describes a feature that displays a number next to each character of the password."
+  },
+  "passwordCharacterCount": {
+    "message": "Password character count",
+    "description": "'Character count' describes a feature that displays a number next to each character of the password."
+  },
+  "hide": {
+    "message": "Hide"
+  },
   "projects": {
     "message": "Projects"
   },
@@ -5771,5 +5782,47 @@
   },
   "memberAccessAll": {
     "message": "This member can access and modify all items."
+  },
+  "moreFromBitwarden": {
+    "message": "More from Bitwarden"
+  },
+  "switchProducts": {
+    "message": "Switch Products"
+  },
+  "freeOrgInvLimitReachedManageBilling": {
+    "message": "Free organizations may have up to $SEATCOUNT$ members. Upgrade to a paid plan to invite more members.",
+    "placeholders": {
+      "seatcount": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "freeOrgInvLimitReachedNoManageBilling": {
+    "message": "Free organizations may have up to $SEATCOUNT$ members. Contact your organization owner to upgrade.",
+    "placeholders": {
+      "seatcount": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "freeOrgMaxCollectionReachedManageBilling": {
+    "message": "Free organizations may have up to $COLLECTIONCOUNT$ collections. Upgrade to a paid plan to add more collections.",
+    "placeholders": {
+      "COLLECTIONCOUNT": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "freeOrgMaxCollectionReachedNoManageBilling": {
+    "message": "Free organizations may have up to $COLLECTIONCOUNT$ collections. Contact your organization owner to upgrade.",
+    "placeholders": {
+      "COLLECTIONCOUNT": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
   }
 }

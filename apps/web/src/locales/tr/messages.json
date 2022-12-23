@@ -2282,7 +2282,7 @@
     }
   },
   "trialConfirmationEmail": {
-    "message": "Ekibinizin şu adresteki faturalandırma e-postasına bir onay e-postası gönderdik "
+    "message": "Ekibinizin fatura e-postasına bir onay e-postası gönderdik: "
   },
   "monthly": {
     "message": "Aylık"
@@ -2360,13 +2360,13 @@
     "message": "Bu kullanıcıyı silmek istediğinizden emin misiniz?"
   },
   "removeOrgUserConfirmation": {
-    "message": "Bir üye kaldırıldığında, artık kuruluş verilerine erişimi olmaz ve bu işlem geri alınamaz. Üyeyi kuruluşa geri eklemek için davet edilmeleri ve tekrar katılmaları gerekir."
+    "message": "Bir üye kaldırıldıktan sonra kuruluş verilerine erişemez ve bu işlem geri alınamaz. Üyeyi kuruluşa geri eklemek için yeniden davet etmeniz ve kişinin daveti kabul etmesi gerekir."
   },
   "revokeUserConfirmation": {
     "message": "Bir üye feshedildiğinde, artık kuruluş verilerine erişimi olmaz. Üye erişimini hızlı bir şekilde geri yüklemek için İptal Edildi sekmesine gidin."
   },
   "removeUserConfirmationKeyConnector": {
-    "message": "Uyarı! Bu kullanıcı, şifrelemelerini yönetmek için Key Connector'a ihtiyaç duyuyor. Bu kullanıcıyı kuruluşunuzdan çıkarırsanız hesabı kalıcı olarak devre dışı kalacaktır. Bu işlem geri alınamaz. Devam etmek istiyor musunuz?"
+    "message": "Uyarı! Bu kullanıcı, şifrelemesini yönetmek için Key Connector'a ihtiyaç duyuyor. Bu kullanıcıyı kuruluşunuzdan çıkarırsanız hesabı kalıcı olarak devre dışı kalacaktır. Bu işlem geri alınamaz. Devam etmek istiyor musunuz?"
   },
   "externalId": {
     "message": "Harici kimlik"
@@ -3317,7 +3317,7 @@
     "message": "Kasa zaman aşımı"
   },
   "vaultTimeoutDesc": {
-    "message": "Kasanızın zaman aşımına uğrayıp seçilen eylemi uygulayacağı zamanı seçin."
+    "message": "Kasa zaman aşımı eyleminin ne zaman gerçekleştirileceğini seçin."
   },
   "oneMinute": {
     "message": "1 dakika"
@@ -3338,7 +3338,7 @@
     "message": "4 saat"
   },
   "onRefresh": {
-    "message": "Tarayıcıda yenileme"
+    "message": "Tarayıcı yenilendiğinde"
   },
   "dateUpdated": {
     "message": "Güncelleme",
@@ -3349,7 +3349,7 @@
     "description": "ex. Date this item was created"
   },
   "datePasswordUpdated": {
-    "message": "Parola güncelleme",
+    "message": "Parola güncellendi",
     "description": "ex. Date this password was updated"
   },
   "organizationIsDisabled": {
@@ -3498,7 +3498,7 @@
     "message": "İki adımlı girişi zorunlu tut"
   },
   "twoStepLoginPolicyDesc": {
-    "message": "Kullanıcıların hesaplarında iki aşamalı giriş kullanmalarını zorunlu tutun."
+    "message": "Üyelerin iki aşamalı girişi ayarlamalarını zorunlu tut."
   },
   "twoStepLoginPolicyWarning": {
     "message": "Sahip veya Yönetici olmayan ve hesapları için iki adımlı oturum açma özelliğini açmamış kuruluş üyeleri kuruluştan çıkarılır ve kendilerine değişiklik hakkında bilgi veren bir e-posta gönderilir."
@@ -3507,7 +3507,7 @@
     "message": "İki aşamalı girişin etkinleştirilmesi gereken bir kuruluşa üyesisiniz. İki aşamalı giriş sağlayıcılarının tümünü devre dışı bırakırsanız bu kuruluşlardan otomatik olarak kaldırılırsınız."
   },
   "passwordGeneratorPolicyDesc": {
-    "message": "Parola üreticisi ayarları için minimum gereksinimleri ayarlayın."
+    "message": "Parola üreticisi gereksinimleri ayarlayın."
   },
   "passwordGeneratorPolicyInEffect": {
     "message": "Bir ya da daha fazla kuruluş ilkesi, oluşturucu ayarlarınızı etkiliyor."
@@ -5487,6 +5487,17 @@
   "multiSelectClearAll": {
     "message": "Tümünü temizle"
   },
+  "toggleCharacterCount": {
+    "message": "Karakter sayısını değiştir",
+    "description": "'Character count' describes a feature that displays a number next to each character of the password."
+  },
+  "passwordCharacterCount": {
+    "message": "Parola karakter sayısı",
+    "description": "'Character count' describes a feature that displays a number next to each character of the password."
+  },
+  "hide": {
+    "message": "Gizle"
+  },
   "projects": {
     "message": "Projeler"
   },
@@ -5771,5 +5782,47 @@
   },
   "memberAccessAll": {
     "message": "Bu kullanıcı tüm kayıtlara erişebilir ve kayıtları değiştirebilir."
+  },
+  "moreFromBitwarden": {
+    "message": "Diğer Bitwarden ürünleri"
+  },
+  "switchProducts": {
+    "message": "Ürün değiştir"
+  },
+  "freeOrgInvLimitReachedManageBilling": {
+    "message": "Ücretsiz kuruluşların en fazla $SEATCOUNT$ üyesi olabilir. Daha fazla üye davet etmek için ücretli bir plana geçin.",
+    "placeholders": {
+      "seatcount": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "freeOrgInvLimitReachedNoManageBilling": {
+    "message": "Ücretsiz kuruluşların en fazla $SEATCOUNT$ üyesi olabilir. Yükseltmek için kuruluşunuzun sahibiyle iletişime geçin.",
+    "placeholders": {
+      "seatcount": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "freeOrgMaxCollectionReachedManageBilling": {
+    "message": "Ücretsiz kuruluşların en fazla $COLLECTIONCOUNT$ koleksiyonu olabilir. Daha fazla koleksiyon eklemek için ücretli bir plana geçin.",
+    "placeholders": {
+      "COLLECTIONCOUNT": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "freeOrgMaxCollectionReachedNoManageBilling": {
+    "message": "Ücretsiz kuruluşların en fazla $COLLECTIONCOUNT$ koleksiyonu olabilir. Yükseltmek için kuruluşunuzun sahibiyle iletişime geçin.",
+    "placeholders": {
+      "COLLECTIONCOUNT": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
   }
 }

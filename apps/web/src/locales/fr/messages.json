@@ -428,7 +428,7 @@
     "message": "Mon coffre"
   },
   "allVaults": {
-    "message": "Tous les Coffres"
+    "message": "Tous les Coffres-forts"
   },
   "vault": {
     "message": "Coffre"
@@ -3498,7 +3498,7 @@
     "message": "Nécessite une connexion en deux étapes"
   },
   "twoStepLoginPolicyDesc": {
-    "message": "Exiger que les utilisateurs définissent une connexion en deux étapes sur leurs comptes personnels."
+    "message": "Imposer aux membres l'usage de la double authentification."
   },
   "twoStepLoginPolicyWarning": {
     "message": "Les membres de l'organisation (hors propriétaires et administrateurs) qui n'ont pas activé la connexion en deux étapes sur leur compte personnel seront supprimés de l'organisation et recevront un courriel les informant du changement."
@@ -5487,6 +5487,17 @@
   "multiSelectClearAll": {
     "message": "Effacer tout"
   },
+  "toggleCharacterCount": {
+    "message": "Afficher/masquer la longueur",
+    "description": "'Character count' describes a feature that displays a number next to each character of the password."
+  },
+  "passwordCharacterCount": {
+    "message": "Longueur du mot de passe",
+    "description": "'Character count' describes a feature that displays a number next to each character of the password."
+  },
+  "hide": {
+    "message": "Masquer"
+  },
   "projects": {
     "message": "Projets"
   },
@@ -5771,5 +5782,47 @@
   },
   "memberAccessAll": {
     "message": "Ce groupe peut voir et modifier tous les éléments."
+  },
+  "moreFromBitwarden": {
+    "message": "Plus de Bitwarden"
+  },
+  "switchProducts": {
+    "message": "Changer de Produits"
+  },
+  "freeOrgInvLimitReachedManageBilling": {
+    "message": "Les organisations gratuites peuvent avoir jusqu'à $SEATCOUNT$ membres. Passez à une offre payante pour inviter plus de membres.",
+    "placeholders": {
+      "seatcount": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "freeOrgInvLimitReachedNoManageBilling": {
+    "message": "Les organisations gratuites peuvent avoir jusqu'à $SEATCOUNT$ membres. Contactez le propriétaire de votre organisation pour mettre à niveau.",
+    "placeholders": {
+      "seatcount": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "freeOrgMaxCollectionReachedManageBilling": {
+    "message": "Les organisations gratuites peuvent avoir jusqu'à $COLLECTIONCOUNT$ collections. Passez à une offre payante pour inviter plus de collections.",
+    "placeholders": {
+      "COLLECTIONCOUNT": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "freeOrgMaxCollectionReachedNoManageBilling": {
+    "message": "Les organisations gratuites peuvent avoir jusqu'à $COLLECTIONCOUNT$ collections. Contactez le propriétaire de votre organisation pour mettre à niveau.",
+    "placeholders": {
+      "COLLECTIONCOUNT": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
   }
 }

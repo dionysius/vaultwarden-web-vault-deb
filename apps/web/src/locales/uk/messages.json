@@ -5487,6 +5487,17 @@
   "multiSelectClearAll": {
     "message": "Очистити все"
   },
+  "toggleCharacterCount": {
+    "message": "Перемкнути лічильник символів",
+    "description": "'Character count' describes a feature that displays a number next to each character of the password."
+  },
+  "passwordCharacterCount": {
+    "message": "Кількість символів пароля",
+    "description": "'Character count' describes a feature that displays a number next to each character of the password."
+  },
+  "hide": {
+    "message": "Приховати"
+  },
   "projects": {
     "message": "Проєкти"
   },
@@ -5771,5 +5782,47 @@
   },
   "memberAccessAll": {
     "message": "Цей учасник має доступ і може редагувати всі елементи."
+  },
+  "moreFromBitwarden": {
+    "message": "Більше від Bitwarden"
+  },
+  "switchProducts": {
+    "message": "Змінити продукти"
+  },
+  "freeOrgInvLimitReachedManageBilling": {
+    "message": "Безплатні організації можуть мати до $SEATCOUNT$ учасників. Передплатіть тарифний план, щоб запросити більше учасників.",
+    "placeholders": {
+      "seatcount": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "freeOrgInvLimitReachedNoManageBilling": {
+    "message": "Безплатні організації можуть мати до $SEATCOUNT$ учасників. Зверніться до власника вашої організації для підвищення тарифного плану.",
+    "placeholders": {
+      "seatcount": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "freeOrgMaxCollectionReachedManageBilling": {
+    "message": "Безплатні організації можуть мати до $COLLECTIONCOUNT$ збірок. Передплатіть тарифний план, щоб додати більше збірок.",
+    "placeholders": {
+      "COLLECTIONCOUNT": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "freeOrgMaxCollectionReachedNoManageBilling": {
+    "message": "Безплатні організації можуть мати до $COLLECTIONCOUNT$ збірок. Зверніться до власника вашої організації для підвищення тарифного плану.",
+    "placeholders": {
+      "COLLECTIONCOUNT": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
   }
 }

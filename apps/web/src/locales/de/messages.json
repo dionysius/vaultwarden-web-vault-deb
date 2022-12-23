@@ -5487,6 +5487,17 @@
   "multiSelectClearAll": {
     "message": "Alles löschen"
   },
+  "toggleCharacterCount": {
+    "message": "Zeichenzählung ein-/ausschalten",
+    "description": "'Character count' describes a feature that displays a number next to each character of the password."
+  },
+  "passwordCharacterCount": {
+    "message": "Passwort Zeichenzählung",
+    "description": "'Character count' describes a feature that displays a number next to each character of the password."
+  },
+  "hide": {
+    "message": "Ausblenden"
+  },
   "projects": {
     "message": "Projekte"
   },
@@ -5771,5 +5782,47 @@
   },
   "memberAccessAll": {
     "message": "Dieses Mitglied darf auf alle Elemente zugreifen und diese ändern."
+  },
+  "moreFromBitwarden": {
+    "message": "Mehr von Bitwarden"
+  },
+  "switchProducts": {
+    "message": "Produkte wechseln"
+  },
+  "freeOrgInvLimitReachedManageBilling": {
+    "message": "Kostenlose Organisationen können bis zu $SEATCOUNT$ Mitglieder haben. Wechsle auf ein kostenpflichtiges Abo, um mehr Mitglieder einzuladen.",
+    "placeholders": {
+      "seatcount": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "freeOrgInvLimitReachedNoManageBilling": {
+    "message": "Kostenlose Organisationen können bis zu $SEATCOUNT$ Mitglieder haben. Kontaktiere deinen Organisationseigentümer zum Hochstufen.",
+    "placeholders": {
+      "seatcount": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "freeOrgMaxCollectionReachedManageBilling": {
+    "message": "Kostenlose Organisationen können bis zu $COLLECTIONCOUNT$ Sammlungen haben. Wechsle auf ein kostenpflichtiges Abo, um mehr Sammlungen hinzuzufügen.",
+    "placeholders": {
+      "COLLECTIONCOUNT": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "freeOrgMaxCollectionReachedNoManageBilling": {
+    "message": "Kostenlose Organisationen können bis zu $COLLECTIONCOUNT$ Sammlungen haben. Kontaktiere deinen Organisationseigentümer zum Hochstufen.",
+    "placeholders": {
+      "COLLECTIONCOUNT": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
   }
 }

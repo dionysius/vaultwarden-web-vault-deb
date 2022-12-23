@@ -5487,6 +5487,17 @@
   "multiSelectClearAll": {
     "message": "すべてクリア"
   },
+  "toggleCharacterCount": {
+    "message": "文字カウントを切り替える",
+    "description": "'Character count' describes a feature that displays a number next to each character of the password."
+  },
+  "passwordCharacterCount": {
+    "message": "パスワード文字数",
+    "description": "'Character count' describes a feature that displays a number next to each character of the password."
+  },
+  "hide": {
+    "message": "隠す"
+  },
   "projects": {
     "message": "プロジェクト"
   },
@@ -5771,5 +5782,47 @@
   },
   "memberAccessAll": {
     "message": "このメンバーはすべてのアイテムにアクセスして変更できます。"
+  },
+  "moreFromBitwarden": {
+    "message": "Bitwarden の詳細"
+  },
+  "switchProducts": {
+    "message": "プロダクトの切り替え"
+  },
+  "freeOrgInvLimitReachedManageBilling": {
+    "message": "無料の組織では最大 $SEATCOUNT$ 人のメンバーまでです。より多くのメンバーを招待するには有料プランにアップグレードしてください。",
+    "placeholders": {
+      "seatcount": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "freeOrgInvLimitReachedNoManageBilling": {
+    "message": "無料の組織では最大 $SEATCOUNT$ 人のメンバーまでです。アップグレードするには組織の所有者に連絡してください。",
+    "placeholders": {
+      "seatcount": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "freeOrgMaxCollectionReachedManageBilling": {
+    "message": "無料の組織では最大 $COLLECTIONCOUNT$ コレクションまでです。さらにコレクションを追加するには有料プランにアップグレードしてください。",
+    "placeholders": {
+      "COLLECTIONCOUNT": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "freeOrgMaxCollectionReachedNoManageBilling": {
+    "message": "無料の組織では最大 $COLLECTIONCOUNT$ コレクションまでです。アップグレードするには組織の所有者に連絡してください。",
+    "placeholders": {
+      "COLLECTIONCOUNT": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
   }
 }

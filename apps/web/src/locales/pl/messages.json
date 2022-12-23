@@ -5487,6 +5487,17 @@
   "multiSelectClearAll": {
     "message": "Wyczyść wszystko"
   },
+  "toggleCharacterCount": {
+    "message": "Pokaż / Ukryj licznik znaków",
+    "description": "'Character count' describes a feature that displays a number next to each character of the password."
+  },
+  "passwordCharacterCount": {
+    "message": "Liczba znaków hasła",
+    "description": "'Character count' describes a feature that displays a number next to each character of the password."
+  },
+  "hide": {
+    "message": "Ukryj"
+  },
   "projects": {
     "message": "Projekty"
   },
@@ -5771,5 +5782,47 @@
   },
   "memberAccessAll": {
     "message": "Ten użytkownik może wyświetlać i modyfikować wszystkie elementy."
+  },
+  "moreFromBitwarden": {
+    "message": "Więcej od Bitwarden"
+  },
+  "switchProducts": {
+    "message": "Przełącz produkty"
+  },
+  "freeOrgInvLimitReachedManageBilling": {
+    "message": "Darmowe organizacje mogą mieć maksymalnie $SEATCOUNT$ członków. Przejdź na płatny plan, aby zaprosić więcej członków.",
+    "placeholders": {
+      "seatcount": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "freeOrgInvLimitReachedNoManageBilling": {
+    "message": "Darmowe organizacje mogą mieć maksymalnie $SEATCOUNT$ członków. Skontaktuj się z właścicielem organizacji, aby przejść na płatny plan.",
+    "placeholders": {
+      "seatcount": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "freeOrgMaxCollectionReachedManageBilling": {
+    "message": "Darmowe organizacje mogą mieć maksymalnie $COLLECTIONCOUNT$ kolekcji. Przejdź na płatny plan, aby dodać więcej kolekcji.",
+    "placeholders": {
+      "COLLECTIONCOUNT": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "freeOrgMaxCollectionReachedNoManageBilling": {
+    "message": "Darmowe organizacje mogą mieć maksymalnie $COLLECTIONCOUNT$ kolekcji. Skontaktuj się z właścicielem organizacji, aby przejść na płatny plan.",
+    "placeholders": {
+      "COLLECTIONCOUNT": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
   }
 }

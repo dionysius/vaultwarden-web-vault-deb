@@ -5487,6 +5487,17 @@
   "multiSelectClearAll": {
     "message": "Очистить все"
   },
+  "toggleCharacterCount": {
+    "message": "Показать количество символов",
+    "description": "'Character count' describes a feature that displays a number next to each character of the password."
+  },
+  "passwordCharacterCount": {
+    "message": "Количество символов в пароле",
+    "description": "'Character count' describes a feature that displays a number next to each character of the password."
+  },
+  "hide": {
+    "message": "Скрыть"
+  },
   "projects": {
     "message": "Проекты"
   },
@@ -5771,5 +5782,47 @@
   },
   "memberAccessAll": {
     "message": "Эта пользователь может иметь доступ и изменять все элементы."
+  },
+  "moreFromBitwarden": {
+    "message": "Дополнительная информация о Bitwarden"
+  },
+  "switchProducts": {
+    "message": "Изменить продукты"
+  },
+  "freeOrgInvLimitReachedManageBilling": {
+    "message": "В бесплатных организациях может быть до $SEATCOUNT$ участников. Перейдите на платный план, чтобы пригласить больше участников.",
+    "placeholders": {
+      "seatcount": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "freeOrgInvLimitReachedNoManageBilling": {
+    "message": "В бесплатных организациях может быть до $SEATCOUNT$ участников. Свяжитесь с владельцем вашей организации для обновления.",
+    "placeholders": {
+      "seatcount": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "freeOrgMaxCollectionReachedManageBilling": {
+    "message": "В бесплатных организациях может быть до $COLLECTIONCOUNT$ коллекций. Перейдите на платный план, чтобы добавить больше коллекций.",
+    "placeholders": {
+      "COLLECTIONCOUNT": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "freeOrgMaxCollectionReachedNoManageBilling": {
+    "message": "В бесплатных организациях может быть до $COLLECTIONCOUNT$ коллекций. Свяжитесь с владельцем вашей организации для обновления.",
+    "placeholders": {
+      "COLLECTIONCOUNT": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
   }
 }

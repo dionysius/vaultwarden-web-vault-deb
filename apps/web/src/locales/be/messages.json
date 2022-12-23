@@ -5487,6 +5487,17 @@
   "multiSelectClearAll": {
     "message": "Ачысціць усё"
   },
+  "toggleCharacterCount": {
+    "message": "Toggle character count",
+    "description": "'Character count' describes a feature that displays a number next to each character of the password."
+  },
+  "passwordCharacterCount": {
+    "message": "Password character count",
+    "description": "'Character count' describes a feature that displays a number next to each character of the password."
+  },
+  "hide": {
+    "message": "Hide"
+  },
   "projects": {
     "message": "Праекты"
   },
@@ -5771,5 +5782,47 @@
   },
   "memberAccessAll": {
     "message": "Гэты ўдзельнік можа атрымліваць доступ і змяняць усе элементы."
+  },
+  "moreFromBitwarden": {
+    "message": "More from Bitwarden"
+  },
+  "switchProducts": {
+    "message": "Switch Products"
+  },
+  "freeOrgInvLimitReachedManageBilling": {
+    "message": "Колькасць бясплатных удзельнікаў у бясплатных арганізацыях можа дасягаць: $SEATCOUNT$. Перайдзіце на платны тарыфны план, каб запрасіць больш удзельнікаў.",
+    "placeholders": {
+      "seatcount": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "freeOrgInvLimitReachedNoManageBilling": {
+    "message": "Колькасць бясплатных удзельнікаў у бясплатных арганізацыях можа дасягаць: $SEATCOUNT$. Завяжыцеся з уладальнікам арганізацыі, каб палепшыць гэты параметр.",
+    "placeholders": {
+      "seatcount": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "freeOrgMaxCollectionReachedManageBilling": {
+    "message": "Колькасць бясплатных удзельнікаў у бясплатных арганізацыях можа дасягаць: $COLLECTIONCOUNT$. Перайдзіце на платны тарыфны план, каб больш калекцый.",
+    "placeholders": {
+      "COLLECTIONCOUNT": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "freeOrgMaxCollectionReachedNoManageBilling": {
+    "message": "Колькасць бясплатных калекцый у бясплатных арганізацыях можа дасягаць: $COLLECTIONCOUNT$. Завяжыцеся з уладальнікам арганізацыі, каб палепшыць гэты параметр.",
+    "placeholders": {
+      "COLLECTIONCOUNT": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
   }
 }
