@@ -199,7 +199,7 @@
     "message": "Synchronisierung"
   },
   "syncVaultNow": {
-    "message": "Datenspeicher jetzt synchronisieren"
+    "message": "Tresor jetzt synchronisieren"
   },
   "lastSync": {
     "message": "Zuletzt synchronisiert:"
@@ -491,7 +491,7 @@
     "message": "Du kannst dein Master-Passwort im Bitwarden.com Web-Tresor ändern. Möchtest du die Seite jetzt öffnen?"
   },
   "twoStepLoginConfirmation": {
-    "message": "Mit der Zwei-Faktor-Authentifizierung wird Ihr Account zusätzlich abgesichert, da jede Anmeldung durch einen Sicherheitscode, eine Authentifizierungs-App, eine SMS, einen Anruf oder eine E-Mail verifiziert werden muss. Die Zwei-Faktor-Authentifizierung kann im bitwarden.com Web-Tresor aktiviert werden. Möchten Sie die Seite jetzt öffnen?"
+    "message": "Mit der Zwei-Faktor-Authentifizierung wird dein Account zusätzlich abgesichert, da jede Anmeldung durch einen Sicherheitscode, eine Authentifizierungs-App, eine SMS, einen Anruf oder eine E-Mail verifiziert werden muss. Die Zwei-Faktor-Authentifizierung kann im bitwarden.com Web-Tresor aktiviert werden. Möchtest du die Seite jetzt öffnen?"
   },
   "editedFolder": {
     "message": "Ordner bearbeitet"
@@ -574,7 +574,7 @@
     "message": "Danach fragen Zugangsdaten hinzuzufügen"
   },
   "addLoginNotificationDesc": {
-    "message": "Die \"Login hinzufügen\" Benachrichtigung fragt Sie automatisch, ob Sie neue Zugangsdaten in Ihrem Tresor speichern möchten, wenn Sie sich zum ersten Mal mit ihnen anmelden."
+    "message": "Die \"Login hinzufügen\" Benachrichtigung fragt dich automatisch, ob du neue Zugangsdaten im Tresor speichern möchtest, wenn du dich zum ersten Mal mit ihnen anmeldest."
   },
   "showCardsCurrentTab": {
     "message": "Karten auf Tab Seite anzeigen"
@@ -792,7 +792,7 @@
     "message": "Du kannst deine Premium-Mitgliedschaft im Bitwarden.com Web-Tresor kaufen. Möchtest du die Webseite jetzt besuchen?"
   },
   "premiumCurrentMember": {
-    "message": "Sie sind jetzt Premium-Mitglied!"
+    "message": "Du bist jetzt Premium-Mitglied!"
   },
   "premiumCurrentMemberThanks": {
     "message": "Vielen Dank, dass du Bitwarden unterstützt."

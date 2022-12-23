@@ -254,7 +254,7 @@
     "message": "Word separator"
   },
   "capitalize": {
-    "message": "Capitalise",
+    "message": "Capitalize",
     "description": "Make the first letter of a work uppercase."
   },
   "includeNumber": {
@@ -294,7 +294,7 @@
     "message": "Passphrase"
   },
   "favorite": {
-    "message": "Favourite"
+    "message": "Favorite"
   },
   "notes": {
     "message": "Notes"
@@ -540,10 +540,10 @@
     "message": "Item saved"
   },
   "deleteItemConfirmation": {
-    "message": "Do you really want to send to the bin?"
+    "message": "Do you really want to send to the trash?"
   },
   "deletedItem": {
-    "message": "Item sent to bin"
+    "message": "Item sent to trash"
   },
   "overwritePassword": {
     "message": "Overwrite password"
@@ -631,7 +631,7 @@
     "message": "Theme"
   },
   "themeDesc": {
-    "message": "Change the application's colour theme."
+    "message": "Change the application's color theme."
   },
   "dark": {
     "message": "Dark",
@@ -659,7 +659,7 @@
     "message": "Confirm vault export"
   },
   "exportWarningDesc": {
-    "message": "This export contains your vault data in an unencrypted format. You should not store or send the exported file over insecure channels (such as email). Delete it immediately after you are done using it."
+    "message": "This export contains your vault data in an unencrypted format. You should not store or send the exported file over unsecure channels (such as email). Delete it immediately after you are done using it."
   },
   "encExportKeyWarningDesc": {
     "message": "This export encrypts your data using your account's encryption key. If you ever rotate your account's encryption key you should export again since you will not be able to decrypt this export file."
@@ -674,13 +674,13 @@
     "message": "Shared"
   },
   "learnOrg": {
-    "message": "Learn about organisations"
+    "message": "Learn about organizations"
   },
   "learnOrgConfirmation": {
-    "message": "Bitwarden allows you to share your vault items with others by using an organisation. Would you like to visit the bitwarden.com website to learn more?"
+    "message": "Bitwarden allows you to share your vault items with others by using an organization. Would you like to visit the bitwarden.com website to learn more?"
   },
   "moveToOrganization": {
-    "message": "Move to organisation"
+    "message": "Move to organization"
   },
   "share": {
     "message": "Share"
@@ -699,7 +699,7 @@
     }
   },
   "moveToOrgDesc": {
-    "message": "Choose an organisation that you wish to move this item to. Moving to an organisation transfers ownership of the item to that organisation. You will no longer be the direct owner of this item once it has been moved."
+    "message": "Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved."
   },
   "learnMore": {
     "message": "Learn more"
@@ -786,7 +786,7 @@
     "message": "All future Premium features. More coming soon!"
   },
   "premiumPurchase": {
-    "message": "Purchase premium"
+    "message": "Purchase Premium"
   },
   "premiumPurchaseAlert": {
     "message": "You can purchase Premium membership on the bitwarden.com web vault. Do you want to visit the website now?"
@@ -873,7 +873,7 @@
     "message": "Login unavailable"
   },
   "noTwoStepProviders": {
-    "message": "This account has two-step login set up; however, none of the configured two-step providers are supported by this web browser."
+    "message": "This account has two-step login set up, however, none of the configured two-step providers are supported by this web browser."
   },
   "noTwoStepProviders2": {
     "message": "Please use a supported web browser (such as Chrome) and/or add additional providers that are better supported across web browsers (such as an authenticator app)."
@@ -895,7 +895,7 @@
     "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
   },
   "yubiKeyTitle": {
-    "message": "YubiKey OTP security key"
+    "message": "YubiKey OTP Security Key"
   },
   "yubiKeyDesc": {
     "message": "Use a YubiKey to access your account. Works with YubiKey 4, 4 Nano, 4C, and NEO devices."
@@ -905,7 +905,7 @@
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "duoOrganizationDesc": {
-    "message": "Verify with Duo Security for your organisation using the Duo Mobile app, SMS, phone call, or U2F security key.",
+    "message": "Verify with Duo Security for your organization using the Duo Mobile app, SMS, phone call, or U2F security key.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "webAuthnTitle": {
@@ -924,7 +924,7 @@
     "message": "Self-hosted environment"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "Specify the base URL of your on-premise hosted Bitwarden installation."
+    "message": "Specify the base URL of your on-premises hosted Bitwarden installation."
   },
   "customEnvironment": {
     "message": "Custom environment"
@@ -936,7 +936,7 @@
     "message": "Server URL"
   },
   "apiUrl": {
-    "message": "API server URL"
+    "message": "API Server URL"
   },
   "webVaultUrl": {
     "message": "Web vault server URL"
@@ -987,10 +987,10 @@
     "message": "Open vault in sidebar"
   },
   "commandAutofillDesc": {
-    "message": "Auto-fill the last used login for the current website."
+    "message": "Auto-fill the last used login for the current website"
   },
   "commandGeneratePasswordDesc": {
-    "message": "Generate and copy a new random password to the clipboard."
+    "message": "Generate and copy a new random password to the clipboard"
   },
   "commandLockVaultDesc": {
     "message": "Lock the vault"
@@ -1034,13 +1034,13 @@
     "message": "Clicking outside the popup window to check your email for your verification code will cause this popup to close. Do you want to open this popup in a new window so that it does not close?"
   },
   "popupU2fCloseMessage": {
-    "message": "This browser cannot process U2F requests in this pop-up window. Do you want to open this pop-up in a new window so that you can log in using U2F?"
+    "message": "This browser cannot process U2F requests in this popup window. Do you want to open this popup in a new window so that you can log in using U2F?"
   },
   "enableFavicon": {
     "message": "Show website icons"
   },
   "faviconDesc": {
-    "message": "Show a recognisable image next to each login."
+    "message": "Show a recognizable image next to each login."
   },
   "enableBadgeCounter": {
     "message": "Show badge counter"
@@ -1106,7 +1106,7 @@
     "message": "Security code"
   },
   "ex": {
-    "message": "e.g."
+    "message": "ex."
   },
   "title": {
     "message": "Title"
@@ -1142,13 +1142,13 @@
     "message": "Company"
   },
   "ssn": {
-    "message": "National Insurance number"
+    "message": "Social Security number"
   },
   "passportNumber": {
     "message": "Passport number"
   },
   "licenseNumber": {
-    "message": "Licence number"
+    "message": "License number"
   },
   "email": {
     "message": "Email"
@@ -1169,13 +1169,13 @@
     "message": "Address 3"
   },
   "cityTown": {
-    "message": "City / town"
+    "message": "City / Town"
   },
   "stateProvince": {
-    "message": "County"
+    "message": "State / Province"
   },
   "zipPostalCode": {
-    "message": "Postcode"
+    "message": "Zip / Postal code"
   },
   "country": {
     "message": "Country"
@@ -1208,7 +1208,7 @@
     "message": "Collections"
   },
   "favorites": {
-    "message": "Favourites"
+    "message": "Favorites"
   },
   "popOutNewWindow": {
     "message": "Pop out to a new window"
@@ -1289,7 +1289,7 @@
     "description": "The URI of one of the current open tabs in the browser."
   },
   "organization": {
-    "message": "Organisation",
+    "message": "Organization",
     "description": "An entity of multiple related people (ex. a team or business organization)."
   },
   "types": {
@@ -1323,7 +1323,7 @@
     "message": "Are you sure you want to use the \"Never\" option? Setting your lock options to \"Never\" stores your vault's encryption key on your device. If you use this option you should ensure that you keep your device properly protected."
   },
   "noOrganizationsList": {
-    "message": "You do not belong to any organisations. Organisations allow you to securely share items with other users."
+    "message": "You do not belong to any organizations. Organizations allow you to securely share items with other users."
   },
   "noCollectionsInList": {
     "message": "There are no collections to list."
@@ -1390,7 +1390,7 @@
     "message": "Clone"
   },
   "passwordGeneratorPolicyInEffect": {
-    "message": "One or more organisation policies are affecting your generator settings."
+    "message": "One or more organization policies are affecting your generator settings."
   },
   "vaultTimeoutAction": {
     "message": "Vault timeout action"
@@ -1400,11 +1400,11 @@
     "description": "Verb form: to make secure or inaccesible by"
   },
   "trash": {
-    "message": "Bin",
+    "message": "Trash",
     "description": "Noun: a special folder to hold deleted items"
   },
   "searchTrash": {
-    "message": "Search bin"
+    "message": "Search trash"
   },
   "permanentlyDeleteItem": {
     "message": "Permanently delete item"
@@ -1443,7 +1443,7 @@
     "message": "Set master password"
   },
   "masterPasswordPolicyInEffect": {
-    "message": "One or more organisation policies require your master password to meet the following requirements:"
+    "message": "One or more organization policies require your master password to meet the following requirements:"
   },
   "policyInEffectMinComplexity": {
     "message": "Minimum complexity score of $SCORE$",
@@ -1491,16 +1491,16 @@
     "message": "Terms of Service and Privacy Policy have not been acknowledged."
   },
   "termsOfService": {
-    "message": "Terms of service"
+    "message": "Terms of Service"
   },
   "privacyPolicy": {
-    "message": "Privacy policy"
+    "message": "Privacy Policy"
   },
   "hintEqualsPassword": {
     "message": "Your password hint cannot be the same as your password."
   },
   "ok": {
-    "message": "OK"
+    "message": "Ok"
   },
   "desktopSyncVerificationTitle": {
     "message": "Desktop sync verification"
@@ -1524,7 +1524,7 @@
     "message": "Unable to set up biometrics"
   },
   "errorEnableBiometricDesc": {
-    "message": "Action was cancelled by the desktop application"
+    "message": "Action was canceled by the desktop application"
   },
   "nativeMessagingInvalidEncryptionDesc": {
     "message": "Desktop application invalidated the secure communication channel. Please retry this operation"
@@ -1536,7 +1536,7 @@
     "message": "The desktop application is logged into a different account. Please ensure both applications are logged into the same account."
   },
   "nativeMessagingWrongUserTitle": {
-    "message": "Account mismatch"
+    "message": "Account missmatch"
   },
   "biometricsNotEnabledTitle": {
     "message": "Biometrics not set up"
@@ -1563,10 +1563,10 @@
     "message": "This action cannot be done in the sidebar, please retry the action in the popup or popout."
   },
   "personalOwnershipSubmitError": {
-    "message": "Due to an Enterprise Policy, you are restricted from saving items to your personal vault. Change the Ownership option to an organisation and choose from available collections."
+    "message": "Due to an Enterprise Policy, you are restricted from saving items to your personal vault. Change the Ownership option to an organization and choose from available collections."
   },
   "personalOwnershipPolicyInEffect": {
-    "message": "An organisation policy is affecting your ownership options."
+    "message": "An organization policy is affecting your ownership options."
   },
   "excludedDomains": {
     "message": "Excluded domains"
@@ -1796,7 +1796,7 @@
     "message": "Hide my email address from recipients."
   },
   "sendOptionsPolicyInEffect": {
-    "message": "One or more organisation policies are affecting your Send options."
+    "message": "One or more organization policies are affecting your Send options."
   },
   "passwordPrompt": {
     "message": "Master password re-prompt"
@@ -1820,13 +1820,13 @@
     "message": "Update master password"
   },
   "updateMasterPasswordWarning": {
-    "message": "Your master password was recently changed by an administrator in your organisation. In order to access the vault, you must update it now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
+    "message": "Your master password was recently changed by an administrator in your organization. In order to access the vault, you must update it now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
   },
   "resetPasswordPolicyAutoEnroll": {
-    "message": "Automatic enrolment"
+    "message": "Automatic enrollment"
   },
   "resetPasswordAutoEnrollInviteWarning": {
-    "message": "This organisation has an enterprise policy that will automatically enrol you in password reset. Enrolment will allow organisation administrators to change your master password."
+    "message": "This organization has an enterprise policy that will automatically enroll you in password reset. Enrollment will allow organization administrators to change your master password."
   },
   "selectFolder": {
     "message": "Select folder..."
@@ -1841,7 +1841,7 @@
     "message": "Minutes"
   },
   "vaultTimeoutPolicyInEffect": {
-    "message": "Your organisation policies are affecting your vault timeout. Maximum allowed Vault Timeout is $HOURS$ hour(s) and $MINUTES$ minute(s)",
+    "message": "Your organization policies are affecting your vault timeout. Maximum allowed Vault Timeout is $HOURS$ hour(s) and $MINUTES$ minute(s)",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -1854,13 +1854,13 @@
     }
   },
   "vaultTimeoutTooLarge": {
-    "message": "Your vault timeout exceeds the restrictions set by your organisation."
+    "message": "Your vault timeout exceeds the restrictions set by your organization."
   },
   "vaultExportDisabled": {
     "message": "Vault export unavailable"
   },
   "personalVaultExportPolicyInEffect": {
-    "message": "One or more organisation policies prevents you from exporting your individual vault."
+    "message": "One or more organization policies prevents you from exporting your individual vault."
   },
   "copyCustomFieldNameInvalidElement": {
     "message": "Unable to identify a valid form element. Try inspecting the HTML instead."
@@ -1869,7 +1869,7 @@
     "message": "No unique identifier found."
   },
   "convertOrganizationEncryptionDesc": {
-    "message": "$ORGANIZATION$ is using SSO with a self-hosted key server. A master password is no longer required to log in for members of this organisation.",
+    "message": "$ORGANIZATION$ is using SSO with a self-hosted key server. A master password is no longer required to log in for members of this organization.",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -1878,7 +1878,7 @@
     }
   },
   "leaveOrganization": {
-    "message": "Leave organisation"
+    "message": "Leave organization"
   },
   "removeMasterPassword": {
     "message": "Remove master password"
@@ -1887,10 +1887,10 @@
     "message": "Master password removed"
   },
   "leaveOrganizationConfirmation": {
-    "message": "Are you sure you want to leave this organisation?"
+    "message": "Are you sure you want to leave this organization?"
   },
   "leftOrganization": {
-    "message": "You have left the organisation."
+    "message": "You have left the organization."
   },
   "toggleCharacterCount": {
     "message": "Toggle character count"
@@ -1902,7 +1902,7 @@
     "message": "Exporting individual vault"
   },
   "exportingPersonalVaultDescription": {
-    "message": "Only the individual vault items associated with $EMAIL$ will be exported. Organisation vault items will not be included.",
+    "message": "Only the individual vault items associated with $EMAIL$ will be exported. Organization vault items will not be included.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -1976,10 +1976,10 @@
     "message": "Premium subscription required"
   },
   "organizationIsDisabled": {
-    "message": "Organisation suspended."
+    "message": "Organization suspended."
   },
   "disabledOrganizationFilterError": {
-    "message": "Items in suspended Organisations cannot be accessed. Contact your Organisation owner for assistance."
+    "message": "Items in suspended Organizations cannot be accessed. Contact your Organization owner for assistance."
   },
   "cardBrandMir": {
     "message": "Mir"
