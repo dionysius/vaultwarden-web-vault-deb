@@ -30,9 +30,9 @@
   <div class="row">
     <div class="form-group col-6">
       <ng-container *ngIf="format === 'encrypted_json'">
-        <div role="radiogroup" aria-labelledby="fileTypeHeading">
-          <label id="fileTypeHeading" class="tw-semi-bold tw-text-lg">
-            {{ "fileTypeHeading" | i18n }}
+        <div role="radiogroup" aria-labelledby="exportTypeHeading">
+          <label id="exportTypeHeading" class="tw-semi-bold tw-text-lg">
+            {{ "exportTypeHeading" | i18n }}
           </label>
 
           <div appBoxRow name="FileTypeOptions" class="tw-flex tw-items-center">
@@ -49,13 +49,13 @@
             </div>
             <div>
               <label class="tw-semi-bold tw-text-md tw-ml-1 tw-mt-1 tw-mb-1" for="AccountEncrypted">
-                {{ "accountBackup" | i18n }}
+                {{ "accountRestricted" | i18n }}
               </label>
             </div>
           </div>
 
           <div class="tw-regular ml-3 pb-2 tw-text-sm">
-            {{ "accountBackupOptionDescription" | i18n }}
+            {{ "accountRestrictedOptionDescription" | i18n }}
           </div>
 
           <div class="tw-flex tw-items-center">
