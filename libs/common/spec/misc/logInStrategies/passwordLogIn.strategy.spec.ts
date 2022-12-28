@@ -1,5 +1,4 @@
-// eslint-disable-next-line no-restricted-imports
-import { Arg, Substitute, SubstituteOf } from "@fluffy-spoon/substitute";
+import { mock, MockProxy } from "jest-mock-extended";
 
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { AppIdService } from "@bitwarden/common/abstractions/appId.service";
@@ -31,41 +30,43 @@ const preloginKey = new SymmetricCryptoKey(
 const deviceId = Utils.newGuid();
 
 describe("PasswordLogInStrategy", () => {
-  let cryptoService: SubstituteOf<CryptoService>;
-  let apiService: SubstituteOf<ApiService>;
-  let tokenService: SubstituteOf<TokenService>;
-  let appIdService: SubstituteOf<AppIdService>;
-  let platformUtilsService: SubstituteOf<PlatformUtilsService>;
-  let messagingService: SubstituteOf<MessagingService>;
-  let logService: SubstituteOf<LogService>;
-  let stateService: SubstituteOf<StateService>;
-  let twoFactorService: SubstituteOf<TwoFactorService>;
-  let authService: SubstituteOf<AuthService>;
+  let cryptoService: MockProxy<CryptoService>;
+  let apiService: MockProxy<ApiService>;
+  let tokenService: MockProxy<TokenService>;
+  let appIdService: MockProxy<AppIdService>;
+  let platformUtilsService: MockProxy<PlatformUtilsService>;
+  let messagingService: MockProxy<MessagingService>;
+  let logService: MockProxy<LogService>;
+  let stateService: MockProxy<StateService>;
+  let twoFactorService: MockProxy<TwoFactorService>;
+  let authService: MockProxy<AuthService>;
 
   let passwordLogInStrategy: PasswordLogInStrategy;
   let credentials: PasswordLogInCredentials;
 
   beforeEach(async () => {
-    cryptoService = Substitute.for<CryptoService>();
-    apiService = Substitute.for<ApiService>();
-    tokenService = Substitute.for<TokenService>();
-    appIdService = Substitute.for<AppIdService>();
-    platformUtilsService = Substitute.for<PlatformUtilsService>();
-    messagingService = Substitute.for<MessagingService>();
-    logService = Substitute.for<LogService>();
-    stateService = Substitute.for<StateService>();
-    twoFactorService = Substitute.for<TwoFactorService>();
-    authService = Substitute.for<AuthService>();
+    cryptoService = mock<CryptoService>();
+    apiService = mock<ApiService>();
+    tokenService = mock<TokenService>();
+    appIdService = mock<AppIdService>();
+    platformUtilsService = mock<PlatformUtilsService>();
+    messagingService = mock<MessagingService>();
+    logService = mock<LogService>();
+    stateService = mock<StateService>();
+    twoFactorService = mock<TwoFactorService>();
+    authService = mock<AuthService>();
 
-    appIdService.getAppId().resolves(deviceId);
-    tokenService.getTwoFactorToken().resolves(null);
+    appIdService.getAppId.mockResolvedValue(deviceId);
+    tokenService.decodeToken.mockResolvedValue({});
 
-    authService.makePreloginKey(Arg.any(), Arg.any()).resolves(preloginKey);
+    authService.makePreloginKey.mockResolvedValue(preloginKey);
 
-    cryptoService.hashPassword(masterPassword, Arg.any()).resolves(hashedPassword);
-    cryptoService
-      .hashPassword(masterPassword, Arg.any(), HashPurpose.LocalAuthorization)
-      .resolves(localHashedPassword);
+    cryptoService.hashPassword
+      .calledWith(masterPassword, expect.anything(), undefined)
+      .mockResolvedValue(hashedPassword);
+    cryptoService.hashPassword
+      .calledWith(masterPassword, expect.anything(), HashPurpose.LocalAuthorization)
+      .mockResolvedValue(localHashedPassword);
 
     passwordLogInStrategy = new PasswordLogInStrategy(
       cryptoService,
@@ -81,23 +82,24 @@ describe("PasswordLogInStrategy", () => {
     );
     credentials = new PasswordLogInCredentials(email, masterPassword);
 
-    apiService.postIdentityToken(Arg.any()).resolves(identityTokenResponseFactory());
+    apiService.postIdentityToken.mockResolvedValue(identityTokenResponseFactory());
   });
 
   it("sends master password credentials to the server", async () => {
     await passwordLogInStrategy.logIn(credentials);
 
-    apiService.received(1).postIdentityToken(
-      Arg.is((actual) => {
-        const passwordTokenRequest = actual as any; // Need to access private fields
-        return (
-          passwordTokenRequest.email === email &&
-          passwordTokenRequest.masterPasswordHash === hashedPassword &&
-          passwordTokenRequest.device.identifier === deviceId &&
-          passwordTokenRequest.twoFactor.provider == null &&
-          passwordTokenRequest.twoFactor.token == null &&
-          passwordTokenRequest.captchaResponse == null
-        );
+    expect(apiService.postIdentityToken).toHaveBeenCalledWith(
+      expect.objectContaining({
+        email: email,
+        masterPasswordHash: hashedPassword,
+        device: expect.objectContaining({
+          identifier: deviceId,
+        }),
+        twoFactor: expect.objectContaining({
+          provider: null,
+          token: null,
+        }),
+        captchaResponse: undefined,
       })
     );
   });
@@ -105,7 +107,7 @@ describe("PasswordLogInStrategy", () => {
   it("sets the local environment after a successful login", async () => {
     await passwordLogInStrategy.logIn(credentials);
 
-    cryptoService.received(1).setKey(preloginKey);
-    cryptoService.received(1).setKeyHash(localHashedPassword);
+    expect(cryptoService.setKey).toHaveBeenCalledWith(preloginKey);
+    expect(cryptoService.setKeyHash).toHaveBeenCalledWith(localHashedPassword);
   });
 });

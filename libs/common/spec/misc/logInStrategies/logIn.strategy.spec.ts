@@ -1,5 +1,4 @@
-// eslint-disable-next-line no-restricted-imports
-import { Arg, Substitute, SubstituteOf } from "@fluffy-spoon/substitute";
+import { mock, MockProxy } from "jest-mock-extended";
 
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { AppIdService } from "@bitwarden/common/abstractions/appId.service";
@@ -67,33 +66,34 @@ export function identityTokenResponseFactory() {
 }
 
 describe("LogInStrategy", () => {
-  let cryptoService: SubstituteOf<CryptoService>;
-  let apiService: SubstituteOf<ApiService>;
-  let tokenService: SubstituteOf<TokenService>;
-  let appIdService: SubstituteOf<AppIdService>;
-  let platformUtilsService: SubstituteOf<PlatformUtilsService>;
-  let messagingService: SubstituteOf<MessagingService>;
-  let logService: SubstituteOf<LogService>;
-  let stateService: SubstituteOf<StateService>;
-  let twoFactorService: SubstituteOf<TwoFactorService>;
-  let authService: SubstituteOf<AuthService>;
+  let cryptoService: MockProxy<CryptoService>;
+  let apiService: MockProxy<ApiService>;
+  let tokenService: MockProxy<TokenService>;
+  let appIdService: MockProxy<AppIdService>;
+  let platformUtilsService: MockProxy<PlatformUtilsService>;
+  let messagingService: MockProxy<MessagingService>;
+  let logService: MockProxy<LogService>;
+  let stateService: MockProxy<StateService>;
+  let twoFactorService: MockProxy<TwoFactorService>;
+  let authService: MockProxy<AuthService>;
 
   let passwordLogInStrategy: PasswordLogInStrategy;
   let credentials: PasswordLogInCredentials;
 
   beforeEach(async () => {
-    cryptoService = Substitute.for<CryptoService>();
-    apiService = Substitute.for<ApiService>();
-    tokenService = Substitute.for<TokenService>();
-    appIdService = Substitute.for<AppIdService>();
-    platformUtilsService = Substitute.for<PlatformUtilsService>();
-    messagingService = Substitute.for<MessagingService>();
-    logService = Substitute.for<LogService>();
-    stateService = Substitute.for<StateService>();
-    twoFactorService = Substitute.for<TwoFactorService>();
-    authService = Substitute.for<AuthService>();
+    cryptoService = mock<CryptoService>();
+    apiService = mock<ApiService>();
+    tokenService = mock<TokenService>();
+    appIdService = mock<AppIdService>();
+    platformUtilsService = mock<PlatformUtilsService>();
+    messagingService = mock<MessagingService>();
+    logService = mock<LogService>();
+    stateService = mock<StateService>();
+    twoFactorService = mock<TwoFactorService>();
+    authService = mock<AuthService>();
 
-    appIdService.getAppId().resolves(deviceId);
+    appIdService.getAppId.mockResolvedValue(deviceId);
+    tokenService.decodeToken.calledWith(accessToken).mockResolvedValue(decodedToken);
 
     // The base class is abstract so we test it via PasswordLogInStrategy
     passwordLogInStrategy = new PasswordLogInStrategy(
@@ -113,12 +113,11 @@ describe("LogInStrategy", () => {
 
   describe("base class", () => {
     it("sets the local environment after a successful login", async () => {
-      apiService.postIdentityToken(Arg.any()).resolves(identityTokenResponseFactory());
-      tokenService.decodeToken(accessToken).resolves(decodedToken);
+      apiService.postIdentityToken.mockResolvedValue(identityTokenResponseFactory());
 
       await passwordLogInStrategy.logIn(credentials);
 
-      stateService.received(1).addAccount(
+      expect(stateService.addAccount).toHaveBeenCalledWith(
         new Account({
           profile: {
             ...new AccountProfile(),
@@ -140,10 +139,9 @@ describe("LogInStrategy", () => {
           },
         })
       );
-      cryptoService.received(1).setEncKey(encKey);
-      cryptoService.received(1).setEncPrivateKey(privateKey);
-
-      messagingService.received(1).send("loggedIn");
+      expect(cryptoService.setEncKey).toHaveBeenCalledWith(encKey);
+      expect(cryptoService.setEncPrivateKey).toHaveBeenCalledWith(privateKey);
+      expect(messagingService.send).toHaveBeenCalledWith("loggedIn");
     });
 
     it("builds AuthResult", async () => {
@@ -151,16 +149,16 @@ describe("LogInStrategy", () => {
       tokenResponse.forcePasswordReset = true;
       tokenResponse.resetMasterPassword = true;
 
-      apiService.postIdentityToken(Arg.any()).resolves(tokenResponse);
+      apiService.postIdentityToken.mockResolvedValue(tokenResponse);
 
       const result = await passwordLogInStrategy.logIn(credentials);
 
-      const expected = new AuthResult();
-      expected.forcePasswordReset = true;
-      expected.resetMasterPassword = true;
-      expected.twoFactorProviders = null;
-      expected.captchaSiteKey = "";
-      expect(result).toEqual(expected);
+      expect(result).toEqual({
+        forcePasswordReset: true,
+        resetMasterPassword: true,
+        twoFactorProviders: null,
+        captchaSiteKey: "",
+      } as AuthResult);
     });
 
     it("rejects login if CAPTCHA is required", async () => {
@@ -171,12 +169,12 @@ describe("LogInStrategy", () => {
         HCaptcha_SiteKey: captchaSiteKey,
       });
 
-      apiService.postIdentityToken(Arg.any()).resolves(tokenResponse);
+      apiService.postIdentityToken.mockResolvedValue(tokenResponse);
 
       const result = await passwordLogInStrategy.logIn(credentials);
 
-      stateService.didNotReceive().addAccount(Arg.any());
-      messagingService.didNotReceive().send(Arg.any());
+      expect(stateService.addAccount).not.toHaveBeenCalled();
+      expect(messagingService.send).not.toHaveBeenCalled();
 
       const expected = new AuthResult();
       expected.captchaSiteKey = captchaSiteKey;
@@ -186,13 +184,20 @@ describe("LogInStrategy", () => {
     it("makes a new public and private key for an old account", async () => {
       const tokenResponse = identityTokenResponseFactory();
       tokenResponse.privateKey = null;
-      cryptoService.makeKeyPair(Arg.any()).resolves(["PUBLIC_KEY", new EncString("PRIVATE_KEY")]);
+      cryptoService.makeKeyPair.mockResolvedValue(["PUBLIC_KEY", new EncString("PRIVATE_KEY")]);
 
-      apiService.postIdentityToken(Arg.any()).resolves(tokenResponse);
+      apiService.postIdentityToken.mockResolvedValue(tokenResponse);
 
       await passwordLogInStrategy.logIn(credentials);
 
-      apiService.received(1).postAccountKeys(Arg.any());
+      // User key must be set before the new RSA keypair is generated, otherwise we can't decrypt the EncKey
+      expect(cryptoService.setKey).toHaveBeenCalled();
+      expect(cryptoService.makeKeyPair).toHaveBeenCalled();
+      expect(cryptoService.setKey.mock.invocationCallOrder[0]).toBeLessThan(
+        cryptoService.makeKeyPair.mock.invocationCallOrder[0]
+      );
+
+      expect(apiService.postAccountKeys).toHaveBeenCalled();
     });
   });
 
@@ -206,12 +211,12 @@ describe("LogInStrategy", () => {
         error_description: "Two factor required.",
       });
 
-      apiService.postIdentityToken(Arg.any()).resolves(tokenResponse);
+      apiService.postIdentityToken.mockResolvedValue(tokenResponse);
 
       const result = await passwordLogInStrategy.logIn(credentials);
 
-      stateService.didNotReceive().addAccount(Arg.any());
-      messagingService.didNotReceive().send(Arg.any());
+      expect(stateService.addAccount).not.toHaveBeenCalled();
+      expect(messagingService.send).not.toHaveBeenCalled();
 
       const expected = new AuthResult();
       expected.twoFactorProviders = new Map<TwoFactorProviderType, { [key: string]: string }>();
@@ -220,26 +225,25 @@ describe("LogInStrategy", () => {
     });
 
     it("sends stored 2FA token to server", async () => {
-      tokenService.getTwoFactorToken().resolves(twoFactorToken);
-      apiService.postIdentityToken(Arg.any()).resolves(identityTokenResponseFactory());
+      tokenService.getTwoFactorToken.mockResolvedValue(twoFactorToken);
+      apiService.postIdentityToken.mockResolvedValue(identityTokenResponseFactory());
 
       await passwordLogInStrategy.logIn(credentials);
 
-      apiService.received(1).postIdentityToken(
-        Arg.is((actual) => {
-          const passwordTokenRequest = actual as any;
-          return (
-            passwordTokenRequest.twoFactor.provider === TwoFactorProviderType.Remember &&
-            passwordTokenRequest.twoFactor.token === twoFactorToken &&
-            passwordTokenRequest.twoFactor.remember === false
-          );
+      expect(apiService.postIdentityToken).toHaveBeenCalledWith(
+        expect.objectContaining({
+          twoFactor: {
+            provider: TwoFactorProviderType.Remember,
+            token: twoFactorToken,
+            remember: false,
+          } as TokenTwoFactorRequest,
         })
       );
     });
 
     it("sends 2FA token provided by user to server (single step)", async () => {
       // This occurs if the user enters the 2FA code as an argument in the CLI
-      apiService.postIdentityToken(Arg.any()).resolves(identityTokenResponseFactory());
+      apiService.postIdentityToken.mockResolvedValue(identityTokenResponseFactory());
       credentials.twoFactor = new TokenTwoFactorRequest(
         twoFactorProviderType,
         twoFactorToken,
@@ -248,14 +252,13 @@ describe("LogInStrategy", () => {
 
       await passwordLogInStrategy.logIn(credentials);
 
-      apiService.received(1).postIdentityToken(
-        Arg.is((actual) => {
-          const passwordTokenRequest = actual as any;
-          return (
-            passwordTokenRequest.twoFactor.provider === twoFactorProviderType &&
-            passwordTokenRequest.twoFactor.token === twoFactorToken &&
-            passwordTokenRequest.twoFactor.remember === twoFactorRemember
-          );
+      expect(apiService.postIdentityToken).toHaveBeenCalledWith(
+        expect.objectContaining({
+          twoFactor: {
+            provider: twoFactorProviderType,
+            token: twoFactorToken,
+            remember: twoFactorRemember,
+          } as TokenTwoFactorRequest,
         })
       );
     });
@@ -269,21 +272,20 @@ describe("LogInStrategy", () => {
         null
       );
 
-      apiService.postIdentityToken(Arg.any()).resolves(identityTokenResponseFactory());
+      apiService.postIdentityToken.mockResolvedValue(identityTokenResponseFactory());
 
       await passwordLogInStrategy.logInTwoFactor(
         new TokenTwoFactorRequest(twoFactorProviderType, twoFactorToken, twoFactorRemember),
         null
       );
 
-      apiService.received(1).postIdentityToken(
-        Arg.is((actual) => {
-          const passwordTokenRequest = actual as any;
-          return (
-            passwordTokenRequest.twoFactor.provider === twoFactorProviderType &&
-            passwordTokenRequest.twoFactor.token === twoFactorToken &&
-            passwordTokenRequest.twoFactor.remember === twoFactorRemember
-          );
+      expect(apiService.postIdentityToken).toHaveBeenCalledWith(
+        expect.objectContaining({
+          twoFactor: {
+            provider: twoFactorProviderType,
+            token: twoFactorToken,
+            remember: twoFactorRemember,
+          } as TokenTwoFactorRequest,
         })
       );
     });

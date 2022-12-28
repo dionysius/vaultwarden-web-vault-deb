@@ -1,5 +1,4 @@
-// eslint-disable-next-line no-restricted-imports
-import { Arg, Substitute, SubstituteOf } from "@fluffy-spoon/substitute";
+import { mock, MockProxy } from "jest-mock-extended";
 
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { AppIdService } from "@bitwarden/common/abstractions/appId.service";
@@ -19,17 +18,17 @@ import { UserApiLogInCredentials } from "@bitwarden/common/models/domain/log-in-
 import { identityTokenResponseFactory } from "./logIn.strategy.spec";
 
 describe("UserApiLogInStrategy", () => {
-  let cryptoService: SubstituteOf<CryptoService>;
-  let apiService: SubstituteOf<ApiService>;
-  let tokenService: SubstituteOf<TokenService>;
-  let appIdService: SubstituteOf<AppIdService>;
-  let platformUtilsService: SubstituteOf<PlatformUtilsService>;
-  let messagingService: SubstituteOf<MessagingService>;
-  let logService: SubstituteOf<LogService>;
-  let environmentService: SubstituteOf<EnvironmentService>;
-  let keyConnectorService: SubstituteOf<KeyConnectorService>;
-  let stateService: SubstituteOf<StateService>;
-  let twoFactorService: SubstituteOf<TwoFactorService>;
+  let cryptoService: MockProxy<CryptoService>;
+  let apiService: MockProxy<ApiService>;
+  let tokenService: MockProxy<TokenService>;
+  let appIdService: MockProxy<AppIdService>;
+  let platformUtilsService: MockProxy<PlatformUtilsService>;
+  let messagingService: MockProxy<MessagingService>;
+  let logService: MockProxy<LogService>;
+  let stateService: MockProxy<StateService>;
+  let twoFactorService: MockProxy<TwoFactorService>;
+  let keyConnectorService: MockProxy<KeyConnectorService>;
+  let environmentService: MockProxy<EnvironmentService>;
 
   let apiLogInStrategy: UserApiLogInStrategy;
   let credentials: UserApiLogInCredentials;
@@ -40,20 +39,21 @@ describe("UserApiLogInStrategy", () => {
   const apiClientSecret = "API_CLIENT_SECRET";
 
   beforeEach(async () => {
-    cryptoService = Substitute.for<CryptoService>();
-    apiService = Substitute.for<ApiService>();
-    tokenService = Substitute.for<TokenService>();
-    appIdService = Substitute.for<AppIdService>();
-    platformUtilsService = Substitute.for<PlatformUtilsService>();
-    messagingService = Substitute.for<MessagingService>();
-    logService = Substitute.for<LogService>();
-    environmentService = Substitute.for<EnvironmentService>();
-    stateService = Substitute.for<StateService>();
-    keyConnectorService = Substitute.for<KeyConnectorService>();
-    twoFactorService = Substitute.for<TwoFactorService>();
+    cryptoService = mock<CryptoService>();
+    apiService = mock<ApiService>();
+    tokenService = mock<TokenService>();
+    appIdService = mock<AppIdService>();
+    platformUtilsService = mock<PlatformUtilsService>();
+    messagingService = mock<MessagingService>();
+    logService = mock<LogService>();
+    stateService = mock<StateService>();
+    twoFactorService = mock<TwoFactorService>();
+    keyConnectorService = mock<KeyConnectorService>();
+    environmentService = mock<EnvironmentService>();
 
-    appIdService.getAppId().resolves(deviceId);
-    tokenService.getTwoFactorToken().resolves(null);
+    appIdService.getAppId.mockResolvedValue(deviceId);
+    tokenService.getTwoFactorToken.mockResolvedValue(null);
+    tokenService.decodeToken.mockResolvedValue({});
 
     apiLogInStrategy = new UserApiLogInStrategy(
       cryptoService,
@@ -73,43 +73,43 @@ describe("UserApiLogInStrategy", () => {
   });
 
   it("sends api key credentials to the server", async () => {
-    apiService.postIdentityToken(Arg.any()).resolves(identityTokenResponseFactory());
+    apiService.postIdentityToken.mockResolvedValue(identityTokenResponseFactory());
     await apiLogInStrategy.logIn(credentials);
 
-    apiService.received(1).postIdentityToken(
-      Arg.is((actual) => {
-        const apiTokenRequest = actual as any;
-        return (
-          apiTokenRequest.clientId === apiClientId &&
-          apiTokenRequest.clientSecret === apiClientSecret &&
-          apiTokenRequest.device.identifier === deviceId &&
-          apiTokenRequest.twoFactor.provider == null &&
-          apiTokenRequest.twoFactor.token == null &&
-          apiTokenRequest.captchaResponse == null
-        );
+    expect(apiService.postIdentityToken).toHaveBeenCalledWith(
+      expect.objectContaining({
+        clientId: apiClientId,
+        clientSecret: apiClientSecret,
+        device: expect.objectContaining({
+          identifier: deviceId,
+        }),
+        twoFactor: expect.objectContaining({
+          provider: null,
+          token: null,
+        }),
       })
     );
   });
 
   it("sets the local environment after a successful login", async () => {
-    apiService.postIdentityToken(Arg.any()).resolves(identityTokenResponseFactory());
+    apiService.postIdentityToken.mockResolvedValue(identityTokenResponseFactory());
 
     await apiLogInStrategy.logIn(credentials);
 
-    stateService.received(1).setApiKeyClientId(apiClientId);
-    stateService.received(1).setApiKeyClientSecret(apiClientSecret);
-    stateService.received(1).addAccount(Arg.any());
+    expect(stateService.setApiKeyClientId).toHaveBeenCalledWith(apiClientId);
+    expect(stateService.setApiKeyClientSecret).toHaveBeenCalledWith(apiClientSecret);
+    expect(stateService.addAccount).toHaveBeenCalled();
   });
 
   it("gets and sets the Key Connector key from environmentUrl", async () => {
     const tokenResponse = identityTokenResponseFactory();
     tokenResponse.apiUseKeyConnector = true;
 
-    apiService.postIdentityToken(Arg.any()).resolves(tokenResponse);
-    environmentService.getKeyConnectorUrl().returns(keyConnectorUrl);
+    apiService.postIdentityToken.mockResolvedValue(tokenResponse);
+    environmentService.getKeyConnectorUrl.mockReturnValue(keyConnectorUrl);
 
     await apiLogInStrategy.logIn(credentials);
 
-    keyConnectorService.received(1).getAndSetKey(keyConnectorUrl);
+    expect(keyConnectorService.getAndSetKey).toHaveBeenCalledWith(keyConnectorUrl);
   });
 });
