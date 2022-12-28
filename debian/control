@@ -1,0 +1,22 @@
+Source: vaultwarden-web-vault
+Section: web
+Priority: optional
+Build-Depends: debhelper-compat (= 13), dh-apache2
+Maintainer: dionysius <dragon.dionysius@gmail.com>
+Standards-Version: 4.6.1
+Vcs-Git: https://github.com/dionysius/vaultwarden-web-vault-deb.git
+Vcs-Browser: https://github.com/dionysius/vaultwarden-web-vault-deb
+Homepage: https://github.com/bitwarden/clients
+Rules-Requires-Root: no
+
+Package: vaultwarden-web-vault
+Architecture: all
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${misc:Depends}
+Recommends: ${misc:Recommends}
+Built-Using: ${misc:Built-Using}
+Description: Vaultwarden Web Vault
+ The vaultwarden web vault based on the bitwarden web UI with patches to make
+ it work with vaultwarden.
+ .
+ This package contains the vaultwarden web UI

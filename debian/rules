@@ -1,0 +1,29 @@
+#!/usr/bin/make -f
+
+export DH_VERBOSE = 1
+MAKEFLAGS += --no-print-directory
+
+# use node provided by nvm if available
+NVM_BIN = $(shell bash -c ". $(HOME)/.nvm/nvm.sh; printenv NVM_BIN")
+ifneq ($(NVM_BIN), "")
+export PATH := $(NVM_BIN):$(PATH)
+endif
+
+%:
+	dh $@ --with apache2
+
+override_dh_auto_configure:
+# copy images
+	cp -rf debian/patches/resources/* apps/web/
+
+override_dh_auto_build:
+# install dependencies
+	npm ci
+
+# Build the web-vault
+	cd apps/web; npm run dist:oss:selfhost
+
+	dh_auto_build
+
+override_dh_auto_install:
+	dh_auto_install -- --no-source
