@@ -16,7 +16,10 @@ import {
 import { BehaviorSubject, concatMap, map, merge, Observable, Subject, takeUntil } from "rxjs";
 
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
-import { OrganizationService } from "@bitwarden/common/abstractions/organization/organization.service.abstraction";
+import {
+  isNotProviderUser,
+  OrganizationService,
+} from "@bitwarden/common/abstractions/organization/organization.service.abstraction";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { Organization } from "@bitwarden/common/models/domain/organization";
 
@@ -100,7 +103,9 @@ export class VaultSelectComponent implements OnInit, OnDestroy {
   async ngOnInit() {
     this.organizations$ = this.organizationService.organizations$
       .pipe(takeUntil(this._destroy))
-      .pipe(map((orgs) => orgs.sort((a, b) => a.name.localeCompare(b.name))));
+      .pipe(
+        map((orgs) => orgs.filter(isNotProviderUser).sort((a, b) => a.name.localeCompare(b.name)))
+      );
 
     this.organizations$
       .pipe(
