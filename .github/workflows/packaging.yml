@@ -20,17 +20,17 @@ jobs:
         with:
           fetch-depth: 0
           path: source
+      - name: setup node
+        # node is first installed so it is not downloaded twice. their package `provides:` npm and control file only requests npm
+        run: |
+          curl -sL https://deb.nodesource.com/setup_16.x | sudo bash -
+          sudo apt-get install -y nodejs
       - name: install packages
         run: |
           sudo apt-get update
           sudo apt-get install -y debhelper-compat git-buildpackage equivs
           sudo mk-build-deps -i -r source/debian/control -t "apt-get -y -o Debug::pkgProblemResolver=yes --no-install-recommends --yes"
-          rm -f *.deb *.buildinfo *.changes
-      - name: install node with nvm
-        run: |
-          curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
-          nvm install lts/gallium
-          nvm use lts/gallium
+          sudo rm -f *.deb *.buildinfo *.changes
       - name: dist specific version
         run: |
           pushd source

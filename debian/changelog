@@ -1,3 +1,125 @@
+vaultwarden-web-vault (2022.12.0-0alpha21) unstable; urgency=medium
+
+  * accidentally deleted invocation to dh_
+
+ -- dionysius <dragon.dionysius@gmail.com>  Fri, 30 Dec 2022 04:29:23 +0100
+
+vaultwarden-web-vault (2022.12.0-0alpha20) unstable; urgency=medium
+
+  * sudo installer
+
+ -- dionysius <dragon.dionysius@gmail.com>  Fri, 30 Dec 2022 04:25:43 +0100
+
+vaultwarden-web-vault (2022.12.0-0alpha19) unstable; urgency=medium
+
+  * install nodejs from nodesource first
+
+ -- dionysius <dragon.dionysius@gmail.com>  Fri, 30 Dec 2022 04:23:43 +0100
+
+vaultwarden-web-vault (2022.12.0-0alpha18) unstable; urgency=medium
+
+  * install nodejs from nodesource
+
+ -- dionysius <dragon.dionysius@gmail.com>  Fri, 30 Dec 2022 04:18:20 +0100
+
+vaultwarden-web-vault (2022.12.0-0alpha17) unstable; urgency=medium
+
+  * typo in debug inside rules
+
+ -- dionysius <dragon.dionysius@gmail.com>  Thu, 29 Dec 2022 19:27:18 +0100
+
+vaultwarden-web-vault (2022.12.0-0alpha16) unstable; urgency=medium
+
+  * debug nvm source from inside rules
+
+ -- dionysius <dragon.dionysius@gmail.com>  Thu, 29 Dec 2022 19:19:28 +0100
+
+vaultwarden-web-vault (2022.12.0-0alpha15) unstable; urgency=medium
+
+  * install nvm right before packaging then
+
+ -- dionysius <dragon.dionysius@gmail.com>  Thu, 29 Dec 2022 19:08:44 +0100
+
+vaultwarden-web-vault (2022.12.0-0alpha14) unstable; urgency=medium
+
+  * debug nvm use
+
+ -- dionysius <dragon.dionysius@gmail.com>  Thu, 29 Dec 2022 18:59:19 +0100
+
+vaultwarden-web-vault (2022.12.0-0alpha13) unstable; urgency=medium
+
+  * show PATH and NVM_BIN
+
+ -- dionysius <dragon.dionysius@gmail.com>  Thu, 29 Dec 2022 18:48:58 +0100
+
+vaultwarden-web-vault (2022.12.0-0alpha12) unstable; urgency=medium
+
+  * nvm is already installed
+
+ -- dionysius <dragon.dionysius@gmail.com>  Thu, 29 Dec 2022 18:44:01 +0100
+
+vaultwarden-web-vault (2022.12.0-0alpha11) unstable; urgency=medium
+
+  * switch back to manually installing nvm
+
+ -- dionysius <dragon.dionysius@gmail.com>  Thu, 29 Dec 2022 18:38:53 +0100
+
+vaultwarden-web-vault (2022.12.0-0alpha10) unstable; urgency=medium
+
+  * really use nvm in github actions
+
+ -- dionysius <dragon.dionysius@gmail.com>  Thu, 29 Dec 2022 17:59:57 +0100
+
+vaultwarden-web-vault (2022.12.0-0alpha9) unstable; urgency=medium
+
+  * provide full list of included binaries
+
+ -- dionysius <dragon.dionysius@gmail.com>  Thu, 29 Dec 2022 17:50:54 +0100
+
+vaultwarden-web-vault (2022.12.0-0alpha8) unstable; urgency=medium
+
+  * dpkg-source comply representable changes
+
+ -- dionysius <dragon.dionysius@gmail.com>  Thu, 29 Dec 2022 17:45:39 +0100
+
+vaultwarden-web-vault (2022.12.0-0alpha7) unstable; urgency=medium
+
+  [ dionysius ]
+  * fix resources location
+
+ -- Denis Manente <denis.manente@automatic-server.com>  Thu, 29 Dec 2022 17:26:33 +0100
+
+vaultwarden-web-vault (2022.12.0-0alpha6) unstable; urgency=medium
+
+  * tell dpkg-source we really want to have those images
+
+ -- dionysius <dragon.dionysius@gmail.com>  Thu, 29 Dec 2022 08:44:26 +0100
+
+vaultwarden-web-vault (2022.12.0-0alpha5) unstable; urgency=medium
+
+  * jammy doesn't like resouces within the patch folder
+
+ -- dionysius <dragon.dionysius@gmail.com>  Thu, 29 Dec 2022 08:35:09 +0100
+
+vaultwarden-web-vault (2022.12.0-0alpha4) unstable; urgency=medium
+
+  * use an action to setup node
+
+ -- dionysius <dragon.dionysius@gmail.com>  Thu, 29 Dec 2022 08:27:43 +0100
+
+vaultwarden-web-vault (2022.12.0-0alpha3) unstable; urgency=medium
+
+  [ dionysius ]
+  * nvm seems to already come with ubuntu images
+
+ -- dionysius <dragon.dionysius@gmail.com>  Thu, 29 Dec 2022 08:18:18 +0100
+
+vaultwarden-web-vault (2022.12.0-0alpha2) unstable; urgency=medium
+
+  * add github actions packaging
+
+ -- dionysius <dragon.dionysius@gmail.com>  Thu, 29 Dec 2022 07:58:26 +0100
+
 vaultwarden-web-vault (2022.12.0-0alpha1) unstable; urgency=medium
 
   [ dionysius ]

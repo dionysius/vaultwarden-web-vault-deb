@@ -4,7 +4,7 @@ export DH_VERBOSE = 1
 MAKEFLAGS += --no-print-directory
 
 # use node provided by nvm if available
-NVM_BIN = $(shell bash -c ". $(HOME)/.nvm/nvm.sh; printenv NVM_BIN")
+NVM_BIN = $(shell bash -c ". $(HOME)/.nvm/nvm.sh; printenv NVM_BIN" 2>/dev/null)
 ifneq ($(NVM_BIN), "")
 export PATH := $(NVM_BIN):$(PATH)
 endif
