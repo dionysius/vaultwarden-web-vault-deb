@@ -112,7 +112,7 @@ export class AppComponent implements OnDestroy, OnInit {
             this.router.navigate(["/"]);
             break;
           case "logout":
-            this.logOut(!!message.expired);
+            this.logOut(!!message.expired, message.redirect);
             break;
           case "lockVault":
             await this.vaultTimeoutService.lock();
@@ -220,7 +220,7 @@ export class AppComponent implements OnDestroy, OnInit {
     this.destroy$.complete();
   }
 
-  private async logOut(expired: boolean) {
+  private async logOut(expired: boolean, redirect = true) {
     await this.eventUploadService.uploadEvents();
     const userId = await this.stateService.getUserId();
     await Promise.all([
@@ -247,7 +247,9 @@ export class AppComponent implements OnDestroy, OnInit {
 
       await this.stateService.clean({ userId: userId });
       Swal.close();
-      this.router.navigate(["/"]);
+      if (redirect) {
+        this.router.navigate(["/"]);
+      }
     });
   }
 

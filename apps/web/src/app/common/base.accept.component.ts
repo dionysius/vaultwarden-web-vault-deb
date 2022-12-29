@@ -35,6 +35,7 @@ export abstract class BaseAcceptComponent implements OnInit {
       let errorMessage: string = null;
       if (!error) {
         this.authed = await this.stateService.getIsAuthenticated();
+        this.email = qParams.email;
 
         if (this.authed) {
           try {
@@ -44,7 +45,6 @@ export abstract class BaseAcceptComponent implements OnInit {
             errorMessage = e.message;
           }
         } else {
-          this.email = qParams.email;
           await this.unauthedHandler(qParams);
         }
       }
