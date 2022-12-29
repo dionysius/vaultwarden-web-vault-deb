@@ -1,0 +1,77 @@
+name: deb packaging
+
+on:
+  push:
+    tags:
+      - 'debian/*.*.*-*'
+
+env:
+  DEBFULLNAME: Github Actions
+  DEBEMAIL: "github-actions@example.com"
+
+jobs:
+
+  packaging:
+    runs-on: [ubuntu-22.04]
+
+    steps:
+      - name: check out
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          path: source
+      - name: install packages
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y debhelper-compat git-buildpackage equivs
+          sudo mk-build-deps -i -r source/debian/control -t "apt-get -y -o Debug::pkgProblemResolver=yes --no-install-recommends --yes"
+          rm -f *.deb *.buildinfo *.changes
+      - name: install node with nvm
+        run: |
+          curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+          nvm install lts/gallium
+          nvm use lts/gallium
+      - name: dist specific version
+        run: |
+          pushd source
+          git config user.name "${DEBFULLNAME}"
+          git config user.email "${DEBEMAIL}"
+          DISTCODENAME=$(lsb_release -c -s)
+          PARENTVERSION=$(dpkg-parsechangelog --show-field Version)
+          dch -b -D "${DISTCODENAME}" -v "${PARENTVERSION}~${DISTCODENAME}" "Release for ${DISTCODENAME}"
+          git add .
+          git commit -m "Update changelog for $(dpkg-parsechangelog --show-field Version) release"
+          popd
+      - name: build deb
+        run: |
+          pushd source
+          gbp buildpackage -F -us -uc --git-export-dir=.. --git-ignore-branch
+          popd
+      - name: upload artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: results
+          retention-days: 1
+          path: |
+            *.buildinfo
+            *.changes
+            *.ddeb
+            *.deb
+            *.dsc
+            *.tar*
+
+  release:
+    needs: packaging
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: download artifacts
+        uses: actions/download-artifact@v3
+      - name: release
+        uses: marvinpinto/action-automatic-releases@latest
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          prerelease: false
+          automatic_release_tag: "${{ github.ref_name }}"
+          files: |
+            **/*
