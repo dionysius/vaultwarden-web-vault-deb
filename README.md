@@ -4,7 +4,7 @@ This debian source package builds `vaultwarden-web-vault` natively on your build
 
 ## Download prebuilt packages
 
-Prebuild deb packages are available in the [releases section](https://github.com/dionysius/vaultwarden-deb/releases) for latest Ubuntu LTS. I'd liked to include also debian stable, but [there are no debian images available in github actions](https://github.com/actions/runner-images).
+Prebuild deb packages are available in the [releases section](https://github.com/dionysius/vaultwarden-web-vault-deb/releases) for latest Ubuntu LTS. I'd liked to include also debian stable, but [there are no debian images available in github actions](https://github.com/actions/runner-images).
 
 ## Requirements
 
