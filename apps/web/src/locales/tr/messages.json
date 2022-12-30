@@ -929,17 +929,17 @@
   "confirmFilePassword": {
     "message": "Dosya parolasını onaylayın"
   },
-  "accountBackupOptionDescription": {
-    "message": "Dışa aktarmayı şifrelemek ve içe aktarmayı yalnızca geçerli Bitwarden hesabıyla sınırlandırmak için hesap şifreleme anahtarınızı kullanın."
+  "accountRestrictedOptionDescription": {
+    "message": "Dışa aktarmayı şifrelemek ve içe aktarmayı yalnızca mevcut Bitwarden hesabıyla kısıtlamak için, hesabınızın kullanıcı adı ve Ana Parolasından türetilen hesap şifreleme anahtarınızı kullanın."
   },
   "passwordProtectedOptionDescription": {
     "message": "Dışa aktardığınız dosyayı şifrelemek ve bir Bitwarden hesabına içe aktarmak için kullanacağınız parolayı belirleyin."
   },
-  "fileTypeHeading": {
-    "message": "Dosya türü"
+  "exportTypeHeading": {
+    "message": "Dışa aktarma türü"
   },
-  "accountBackup": {
-    "message": "Hesap yedeği"
+  "accountRestricted": {
+    "message": "Hesap kısıtlı"
   },
   "passwordProtected": {
     "message": "Parola korumalı"
@@ -3353,10 +3353,10 @@
     "description": "ex. Date this password was updated"
   },
   "organizationIsDisabled": {
-    "message": "Kuruluş devre dışı."
+    "message": "Kuruluş askıya alındı"
   },
   "disabledOrganizationFilterError": {
-    "message": "Devre dışı kuruluşlardaki kayıtlara erişilemez. Destek almak için kuruluş sahibinizle iletişime geçin."
+    "message": "Askıya alınmış kuruluşlardaki kayıtlara erişilemez. Destek almak için kuruluş sahibinizle iletişime geçin."
   },
   "licenseIsExpired": {
     "message": "Lisans süresi doldu."
@@ -3426,13 +3426,13 @@
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "fingerprintMatchInfo": {
-    "message": "Lütfen kasanızın kilidinin açık olduğundan ve Parmak İzi ifadesinin diğer cihazla eşleştiğinden emin olun."
+    "message": "Lütfen kasanızın kilidinin açık olduğundan ve parmak izi ifadesinin diğer cihazla eşleştiğinden emin olun."
   },
   "fingerprintPhraseHeader": {
     "message": "Parmak izi ifadesi"
   },
   "dontAskFingerprintAgain": {
-    "message": "Parmak izi ifadesini doğrulamamı bir daha isteme",
+    "message": "Davet edilen kullanıcıların parmak izi ifedelerini doğrulamalarını isteme (önerilmez)",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "free": {
@@ -3504,7 +3504,7 @@
     "message": "Sahip veya Yönetici olmayan ve hesapları için iki adımlı oturum açma özelliğini açmamış kuruluş üyeleri kuruluştan çıkarılır ve kendilerine değişiklik hakkında bilgi veren bir e-posta gönderilir."
   },
   "twoStepLoginPolicyUserWarning": {
-    "message": "İki aşamalı girişin etkinleştirilmesi gereken bir kuruluşa üyesisiniz. İki aşamalı giriş sağlayıcılarının tümünü devre dışı bırakırsanız bu kuruluşlardan otomatik olarak kaldırılırsınız."
+    "message": "İki aşamalı girişin ayarlanması gereken bir kuruluşa üyesisiniz. İki aşamalı giriş sağlayıcılarının tümünü kapatırsanız bu kuruluşlardan otomatik olarak kaldırılırsınız."
   },
   "passwordGeneratorPolicyDesc": {
     "message": "Parola üreticisi gereksinimleri ayarlayın."
@@ -3567,10 +3567,10 @@
     "message": "Kasa zaman aşımı eylemi"
   },
   "vaultTimeoutActionLockDesc": {
-    "message": "Kilitli bir kasaya tekrar erişebilmek için ana parolanızı tekrar girmeniz gerekir."
+    "message": "Kasaya tekrar erişmek için ana parolayı veya başka bir kilit açma yöntemini kullanmanız gerekir."
   },
   "vaultTimeoutActionLogOutDesc": {
-    "message": "Çıkış yapılmış bir kasaya yeniden erişmek için kimliğinizi doğrulamanız gerekir."
+    "message": "Kasanıza yeniden erişmek için kimliğinizi doğrulamanız gerekiyor."
   },
   "lock": {
     "message": "Kilitle",
@@ -3719,13 +3719,13 @@
     "message": "SSO tanımlayıcı"
   },
   "ssoIdentifierHint": {
-    "message": "SSO ile giriş yapan üyelere bu kimliği sağlayın."
+    "message": "SSO ile giriş yapan üyelere bu kimliği bildirin."
   },
   "unlinkSso": {
     "message": "SSO bağlantısını kes"
   },
   "unlinkSsoConfirmation": {
-    "message": "Bu kuruluş için TOA bağlantısını kaldırmak istediğinizden emin misiniz?"
+    "message": "Bu kuruluşun SSO bağlantısını kaldırmak istediğinizden emin misiniz?"
   },
   "linkSso": {
     "message": "SSO bağla"
@@ -3743,10 +3743,10 @@
     "message": "Sahip veya yönetici olmayan ve zaten başka bir kuruluşun üyesi olan kuruluş üyeleri kuruluşunuzdan kaldırılır."
   },
   "requireSso": {
-    "message": "Tek oturum açma kimlik doğrulaması"
+    "message": "Tek oturum açma kimlik doğrulamasını zorunlu tut"
   },
   "requireSsoPolicyDesc": {
-    "message": "Kullanıcıların kurumsal tek oturum açma (SSO) yöntemiyle oturum açmasını zorunlu kılın."
+    "message": "Üyelerin kurumsal tek oturum açma (SSO) yöntemiyle oturum açmasını zorunlu kılın."
   },
   "prerequisite": {
     "message": "Önkoşul"
@@ -3755,7 +3755,7 @@
     "message": "Bu ilkeyi etkinleştirmeden önce tek kuruluş kurumsal ilkesi etkinleştirilmelidir."
   },
   "requireSsoPolicyReqError": {
-    "message": "Tek kuruluş ilkesi etkin değil."
+    "message": "Tek kuruluş ilkesi ayarlanmamış."
   },
   "requireSsoExemption": {
     "message": "Kuruluş sahipleri ve yöneticileri bu ilkenin uygulanmasından muaf tutulur."

@@ -929,17 +929,17 @@
   "confirmFilePassword": {
     "message": "Confirma la contrasenya del fitxer"
   },
-  "accountBackupOptionDescription": {
-    "message": "Utilitzeu la clau de xifratge del vostre compte per xifrar l'exportació i restringir la importació només al compte de Bitwarden actual."
+  "accountRestrictedOptionDescription": {
+    "message": "Utilitzeu la clau de xifratge del vostre compte, derivada del nom d'usuari i la contrasenya mestra, per xifrar l'exportació i restringir la importació només al compte de Bitwarden actual."
   },
   "passwordProtectedOptionDescription": {
     "message": "Establiu una contrasenya per xifrar l'exportació i importeu-la a qualsevol compte de Bitwarden mitjançant aquesta contrasenya."
   },
-  "fileTypeHeading": {
-    "message": "Tipus de fitxer"
+  "exportTypeHeading": {
+    "message": "Tipus d'exportació"
   },
-  "accountBackup": {
-    "message": "Còpia de seguretat del compte"
+  "accountRestricted": {
+    "message": "Hi ha una restricció de compte"
   },
   "passwordProtected": {
     "message": "Protegit amb contrasenya"
@@ -5488,15 +5488,15 @@
     "message": "Esborra-ho tot"
   },
   "toggleCharacterCount": {
-    "message": "Toggle character count",
+    "message": "Commuta el recompte de caràcters",
     "description": "'Character count' describes a feature that displays a number next to each character of the password."
   },
   "passwordCharacterCount": {
-    "message": "Password character count",
+    "message": "Recompte de caràcters de la contrasenya",
     "description": "'Character count' describes a feature that displays a number next to each character of the password."
   },
   "hide": {
-    "message": "Hide"
+    "message": "Amaga"
   },
   "projects": {
     "message": "Projectes"
@@ -5511,16 +5511,16 @@
     "message": "Afig secret"
   },
   "copySecretName": {
-    "message": "Copia el nom secret"
+    "message": "Copia el nom del secret"
   },
   "copySecretValue": {
-    "message": "Copia el valor secret"
+    "message": "Copia el valor del secret"
   },
   "deleteSecret": {
-    "message": "Suprimeix secret"
+    "message": "Suprimeix el secret"
   },
   "deleteSecrets": {
-    "message": "Suprimeix secrets"
+    "message": "Suprimeix els secrets"
   },
   "project": {
     "message": "Projecte"
@@ -5568,7 +5568,7 @@
     "message": "Compte nou del servei"
   },
   "secretsNoItemsTitle": {
-    "message": "Cap secret per mostrar"
+    "message": "No hi ha cap secret per mostrar"
   },
   "secretsNoItemsMessage": {
     "message": "Per començar, afig un secret nou o importa secrets."
@@ -5577,7 +5577,7 @@
     "message": "Encara no hi ha res a mostrar"
   },
   "serviceAccountsNoItemsMessage": {
-    "message": "Creeu un compte de servei nou per començar a automatitzar l'accés secret."
+    "message": "Crea un compte de servei nou per començar a automatitzar l'accés secret."
   },
   "searchSecrets": {
     "message": "Cerca secrets"
@@ -5595,7 +5595,7 @@
     "message": "Cerca els comptes de servei"
   },
   "addProject": {
-    "message": "Afegeix un projecte"
+    "message": "Afig un projecte"
   },
   "projectEdited": {
     "message": "Projecte editat"
@@ -5628,22 +5628,22 @@
     "message": "Projecte, secret"
   },
   "serviceAccountName": {
-    "message": "Service account name"
+    "message": "Nom del compte de servei"
   },
   "newSaSelectAccess": {
-    "message": "Type or Select Projects or Secrets"
+    "message": "Escriu o selecciona projectes o secrets"
   },
   "newSaTypeToFilter": {
-    "message": "Type to Filter"
+    "message": "Escriu per a filtrar"
   },
   "deleteProjectsToast": {
-    "message": "Projects deleted"
+    "message": "Projectes suprimits"
   },
   "deleteProjectToast": {
-    "message": "The project and all associated secrets have been deleted"
+    "message": "El projecte i tots els secrets associats s'han suprimit"
   },
   "deleteProjectDialogMessage": {
-    "message": "Deleting project $PROJECT$ is permanent and irreversible.",
+    "message": "La supressió de $PROJECT$ és permanent i irreversible.",
     "placeholders": {
       "project": {
         "content": "$1",
@@ -5652,7 +5652,7 @@
     }
   },
   "deleteProjectInputLabel": {
-    "message": "Type \"$CONFIRM$\" to continue",
+    "message": "Escriu \"$CONFIRM$\" per continuar",
     "placeholders": {
       "confirm": {
         "content": "$1",
@@ -5661,7 +5661,7 @@
     }
   },
   "deleteProjectConfirmMessage": {
-    "message": "Delete $PROJECT$",
+    "message": "Suprimeix $PROJECT$",
     "placeholders": {
       "project": {
         "content": "$1",
@@ -5670,7 +5670,7 @@
     }
   },
   "deleteProjectsConfirmMessage": {
-    "message": "Delete $COUNT$ Projects",
+    "message": "Suprimeix $COUNT$ projectes",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -5679,73 +5679,73 @@
     }
   },
   "deleteProjectsDialogMessage": {
-    "message": "Deleting projects is permanent and irreversible."
+    "message": "La supressió de projectes és permanent i irreversible."
   },
   "projectsNoItemsTitle": {
-    "message": "No projects to display"
+    "message": "No hi ha cap projecte per mostrar"
   },
   "projectsNoItemsMessage": {
-    "message": "Add a new project to get started organizing secrets."
+    "message": "Afig un projecte nou per començar a organitzar secrets."
   },
   "smConfirmationRequired": {
-    "message": "Confirmation required"
+    "message": "Cal confirmació"
   },
   "bulkDeleteProjectsErrorMessage": {
-    "message": "The following projects could not be deleted:"
+    "message": "Els següents projectes no es poden eliminar:"
   },
   "softDeleteSuccessToast": {
-    "message": "Secret sent to trash"
+    "message": "S'ha enviat el secret a la paperera"
   },
   "searchProjects": {
-    "message": "Search Projects"
+    "message": "Cerca projectes"
   },
   "accessTokens": {
-    "message": "Access tokens"
+    "message": "Tokens d'accès"
   },
   "createAccessToken": {
-    "message": "Create access token"
+    "message": "Crea un token d'accés"
   },
   "expires": {
-    "message": "Expires"
+    "message": "Caduca"
   },
   "canRead": {
-    "message": "Can Read"
+    "message": "Pot llegir"
   },
   "accessTokensNoItemsTitle": {
-    "message": "No access tokens to show"
+    "message": "No hi ha tokens d'accés per mostrar"
   },
   "accessTokensNoItemsDesc": {
-    "message": "To get started, create an access token"
+    "message": "Per començar, crea un token d'accés"
   },
   "downloadAccessToken": {
-    "message": "Download or copy before closing."
+    "message": "Baixa o copia abans de tancar."
   },
   "expiresOnAccessToken": {
-    "message": "Expires on:"
+    "message": "Caduca el:"
   },
   "accessTokenCallOutTitle": {
-    "message": "Access tokens are not stored and cannot be retrieved"
+    "message": "Els tokens d'accés no s'emmagatzemen i no es poden recuperar"
   },
   "copyToken": {
-    "message": "Copy token"
+    "message": "Copia el token"
   },
   "accessToken": {
-    "message": "Access token"
+    "message": "Token d'accés"
   },
   "accessTokenExpirationRequired": {
-    "message": "Expiration date required"
+    "message": "La data de caducitat és obligatòria"
   },
   "accessTokenCreatedAndCopied": {
-    "message": "Access token created and copied to clipboard"
+    "message": "Token d'accés creat i copiat al porta-retalls"
   },
   "accessTokenPermissionsBetaNotification": {
-    "message": "Permissions management is unavailable for beta."
+    "message": "La gestió de permisos no està disponible per a la versió beta."
   },
   "revokeAccessToken": {
-    "message": "Revoke Access Token"
+    "message": "Revoca el token d'accés"
   },
   "submenu": {
-    "message": "Submenu"
+    "message": "Submenú"
   },
   "from": {
     "message": "De"
@@ -5784,13 +5784,13 @@
     "message": "Aquest usuari pot accedir i modificar tots els elements."
   },
   "moreFromBitwarden": {
-    "message": "More from Bitwarden"
+    "message": "Més de Bitwarden"
   },
   "switchProducts": {
-    "message": "Switch Products"
+    "message": "Canvi de productes"
   },
   "freeOrgInvLimitReachedManageBilling": {
-    "message": "Free organizations may have up to $SEATCOUNT$ members. Upgrade to a paid plan to invite more members.",
+    "message": "Les organitzacions gratuïtes poden tindre fins a $SEATCOUNT$ membres. Actualitza a un pla de pagament per convidar més membres.",
     "placeholders": {
       "seatcount": {
         "content": "$1",
@@ -5799,7 +5799,7 @@
     }
   },
   "freeOrgInvLimitReachedNoManageBilling": {
-    "message": "Free organizations may have up to $SEATCOUNT$ members. Contact your organization owner to upgrade.",
+    "message": "Les organitzacions gratuïtes poden tindre fins a $SEATCOUNT$ membres. Poseu-vos en contacte amb el propietari de la vostra organització per actualitzar-ho.",
     "placeholders": {
       "seatcount": {
         "content": "$1",
@@ -5808,7 +5808,7 @@
     }
   },
   "freeOrgMaxCollectionReachedManageBilling": {
-    "message": "Free organizations may have up to $COLLECTIONCOUNT$ collections. Upgrade to a paid plan to add more collections.",
+    "message": "Les organitzacions gratuïtes poden tindre fins a $COLLECTIONCOUNT$ col·leccions. Actualitza a un pla de pagament per afegir més col·leccions.",
     "placeholders": {
       "COLLECTIONCOUNT": {
         "content": "$1",
@@ -5817,7 +5817,7 @@
     }
   },
   "freeOrgMaxCollectionReachedNoManageBilling": {
-    "message": "Free organizations may have up to $COLLECTIONCOUNT$ collections. Contact your organization owner to upgrade.",
+    "message": "Les organitzacions gratuïtes poden tindre fins a $COLLECTIONCOUNT$ col·leccions. Poseu-vos en contacte amb el propietari de la vostra organització per actualitzar-ho.",
     "placeholders": {
       "COLLECTIONCOUNT": {
         "content": "$1",

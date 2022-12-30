@@ -929,17 +929,17 @@
   "confirmFilePassword": {
     "message": "Potvrzení hesla souboru"
   },
-  "accountBackupOptionDescription": {
-    "message": "Použijte šifrovací klíč vašeho účtu pro šifrování exportu a omezte import pouze na aktuální účet Bitwarden."
+  "accountRestrictedOptionDescription": {
+    "message": "Use your account encryption key, derived from your account's username and Master Password, to encrypt the export and restrict import to only the current Bitwarden account."
   },
   "passwordProtectedOptionDescription": {
     "message": "Nastavte heslo pro šifrování exportu a importujte ho do libovolného účtu Bitwarden pomocí hesla pro dešifrování."
   },
-  "fileTypeHeading": {
-    "message": "Typ souboru"
+  "exportTypeHeading": {
+    "message": "Export type"
   },
-  "accountBackup": {
-    "message": "Zálohování účtu"
+  "accountRestricted": {
+    "message": "Account restricted"
   },
   "passwordProtected": {
     "message": "Chráněno heslem"
@@ -5188,7 +5188,7 @@
     "message": "Exporting organization vault"
   },
   "exportingPersonalVaultDescription": {
-    "message": "Only the individual vault items associated with $EMAIL$ will be exported. Organization vault items will not be included.",
+    "message": "Only the individual vault items associated with $EMAIL$ will be exported. Organization vault items will not be included. Only vault item information will be exported and will not include associated password history or attachments.",
     "placeholders": {
       "email": {
         "content": "$1",

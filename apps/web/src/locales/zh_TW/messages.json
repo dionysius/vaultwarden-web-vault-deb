@@ -929,17 +929,17 @@
   "confirmFilePassword": {
     "message": "確認檔案密碼"
   },
-  "accountBackupOptionDescription": {
-    "message": "使用您的帳戶加密金鑰來加密匯出的資料，並限制它只能匯入至目前的 Bitwarden 帳戶。"
+  "accountRestrictedOptionDescription": {
+    "message": "Use your account encryption key, derived from your account's username and Master Password, to encrypt the export and restrict import to only the current Bitwarden account."
   },
   "passwordProtectedOptionDescription": {
     "message": "設定一組密碼來加密匯出的資料，並使用此密碼解密以匯入至任意 Bitwarden 帳戶。"
   },
-  "fileTypeHeading": {
-    "message": "檔案類型"
+  "exportTypeHeading": {
+    "message": "Export type"
   },
-  "accountBackup": {
-    "message": "帳戶備份"
+  "accountRestricted": {
+    "message": "Account restricted"
   },
   "passwordProtected": {
     "message": "密碼保護"
@@ -5496,7 +5496,7 @@
     "description": "'Character count' describes a feature that displays a number next to each character of the password."
   },
   "hide": {
-    "message": "Hide"
+    "message": "隱藏"
   },
   "projects": {
     "message": "Projects"
@@ -5541,10 +5541,10 @@
     "message": "Secret"
   },
   "serviceAccount": {
-    "message": "Service Account"
+    "message": "服務帳號"
   },
   "serviceAccounts": {
-    "message": "Service Accounts"
+    "message": "服務帳號"
   },
   "new": {
     "message": "New"
@@ -5628,7 +5628,7 @@
     "message": "Project, Secret"
   },
   "serviceAccountName": {
-    "message": "Service account name"
+    "message": "服務帳號名稱"
   },
   "newSaSelectAccess": {
     "message": "Type or Select Projects or Secrets"
@@ -5661,7 +5661,7 @@
     }
   },
   "deleteProjectConfirmMessage": {
-    "message": "Delete $PROJECT$",
+    "message": "刪除 $PROJECT$",
     "placeholders": {
       "project": {
         "content": "$1",
@@ -5688,7 +5688,7 @@
     "message": "Add a new project to get started organizing secrets."
   },
   "smConfirmationRequired": {
-    "message": "Confirmation required"
+    "message": "需要確認"
   },
   "bulkDeleteProjectsErrorMessage": {
     "message": "The following projects could not be deleted:"
@@ -5700,10 +5700,10 @@
     "message": "Search Projects"
   },
   "accessTokens": {
-    "message": "Access tokens"
+    "message": "存取權杖"
   },
   "createAccessToken": {
-    "message": "Create access token"
+    "message": "建立存取權杖"
   },
   "expires": {
     "message": "Expires"
@@ -5727,10 +5727,10 @@
     "message": "Access tokens are not stored and cannot be retrieved"
   },
   "copyToken": {
-    "message": "Copy token"
+    "message": "複製權杖"
   },
   "accessToken": {
-    "message": "Access token"
+    "message": "存取權杖"
   },
   "accessTokenExpirationRequired": {
     "message": "Expiration date required"
@@ -5787,7 +5787,7 @@
     "message": "More from Bitwarden"
   },
   "switchProducts": {
-    "message": "Switch Products"
+    "message": "切換產品"
   },
   "freeOrgInvLimitReachedManageBilling": {
     "message": "Free organizations may have up to $SEATCOUNT$ members. Upgrade to a paid plan to invite more members.",

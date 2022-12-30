@@ -929,17 +929,17 @@
   "confirmFilePassword": {
     "message": "确认文件密码"
   },
-  "accountBackupOptionDescription": {
-    "message": "使用您的账户加密密钥来加密导出的数据，并且限制只能导入到当前的 Bitwarden 账户。"
+  "accountRestrictedOptionDescription": {
+    "message": "Use your account encryption key, derived from your account's username and Master Password, to encrypt the export and restrict import to only the current Bitwarden account."
   },
   "passwordProtectedOptionDescription": {
     "message": "设置一个密码用来加密导出的数据，并使用此密码解密以导入到任意 Bitwarden 账户。"
   },
-  "fileTypeHeading": {
-    "message": "文件类型"
+  "exportTypeHeading": {
+    "message": "导出类型"
   },
-  "accountBackup": {
-    "message": "账户备份"
+  "accountRestricted": {
+    "message": "Account restricted"
   },
   "passwordProtected": {
     "message": "密码保护"

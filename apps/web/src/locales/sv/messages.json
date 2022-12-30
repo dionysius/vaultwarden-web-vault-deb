@@ -929,17 +929,17 @@
   "confirmFilePassword": {
     "message": "Bekräfta fillösenord"
   },
-  "accountBackupOptionDescription": {
-    "message": "Kryptera exportfilen med ditt kontos krypteringsnyckel så att filen endast kan importeras till ditt Bitwarden-konto."
+  "accountRestrictedOptionDescription": {
+    "message": "Use your account encryption key, derived from your account's username and Master Password, to encrypt the export and restrict import to only the current Bitwarden account."
   },
   "passwordProtectedOptionDescription": {
     "message": "Välj ett fillösenord för att kryptera exportfilen. Filen kan sedan importeras till valfritt Bitwarden-konto med hjälp av fillösenordet."
   },
-  "fileTypeHeading": {
-    "message": "Filtyp"
+  "exportTypeHeading": {
+    "message": "Export type"
   },
-  "accountBackup": {
-    "message": "Kontobackup"
+  "accountRestricted": {
+    "message": "Account restricted"
   },
   "passwordProtected": {
     "message": "Lösenordsskyddad"
@@ -2501,16 +2501,16 @@
     "message": "Webbvalv"
   },
   "loggedIn": {
-    "message": "Inloggad."
+    "message": "Loggade in"
   },
   "changedPassword": {
-    "message": "Ändrade kontolösenord."
+    "message": "Ändrade kontolösenord"
   },
   "enabledUpdated2fa": {
     "message": "Aktiverade/uppdaterade tvåstegsverifiering."
   },
   "disabled2fa": {
-    "message": "Inaktiverade tvåstegsverifiering."
+    "message": "Inaktiverade tvåstegsverifiering"
   },
   "recovered2fa": {
     "message": "Återställde kontot från tvåstegsverifiering."
@@ -2522,7 +2522,7 @@
     "message": "Inloggningsförsöket misslyckades med felaktig tvåstegsverifiering."
   },
   "exportedVault": {
-    "message": "Exporterade valv."
+    "message": "Exporterade valv"
   },
   "exportedOrganizationVault": {
     "message": "Exporterade organisationsvalv."
@@ -2891,7 +2891,7 @@
     "message": "Redigera vilka grupper den här användaren tillhör."
   },
   "invitedUsers": {
-    "message": "Bjöd in användare."
+    "message": "Bjöd in användare"
   },
   "resendInvitation": {
     "message": "Skicka inbjudan igen"
@@ -2900,7 +2900,7 @@
     "message": "Skicka e-postmeddelande igen"
   },
   "hasBeenReinvited": {
-    "message": "$USER$ har bjudits in igen.",
+    "message": "$USER$ har bjudits in igen",
     "placeholders": {
       "user": {
         "content": "$1",
@@ -2936,7 +2936,7 @@
     "message": "Slutdatum"
   },
   "verifyEmail": {
-    "message": "Verifiera e-postadress"
+    "message": "Verifiera e-postadressen"
   },
   "verifyEmailDesc": {
     "message": "Verifiera din e-postadress för att få tillgång till alla funktioner."
@@ -2948,7 +2948,7 @@
     "message": "Kolla din inkorg för en verifieringslänk."
   },
   "emailVerified": {
-    "message": "Din e-postadress har verifierats."
+    "message": "E-postadressen har verifierats"
   },
   "emailVerifiedFailed": {
     "message": "Det gick inte att verifiera din e-postadress. Prova att skicka ett nytt verifieringsmeddelande."
@@ -3194,7 +3194,7 @@
     }
   },
   "subscriptionFreePlan": {
-    "message": "Du kan inte bjuda in fler än $COUNT$ användare utan att uppgradera din plan.",
+    "message": "Du kan inte bjuda in fler än $COUNT$ användare utan att uppgradera ditt abonnemang.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -3567,7 +3567,7 @@
     "message": "Åtgärd när valvets tidsgräns överskrids"
   },
   "vaultTimeoutActionLockDesc": {
-    "message": "Ett låst valv kräver att du anger ditt huvudlösenord för att komma åt det igen."
+    "message": "Huvudlösenord eller annan upplåsningsmetod krävs för att komma åt ditt valv igen."
   },
   "vaultTimeoutActionLogOutDesc": {
     "message": "Ett utloggat valv kräver att du autentiserar för att komma åt det igen."
@@ -3650,7 +3650,7 @@
     }
   },
   "restoredItemId": {
-    "message": "Återställde objektet $ID$.",
+    "message": "Återställde objektet $ID$",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -3716,7 +3716,7 @@
     "message": "Organisationens identifierare krävs."
   },
   "ssoIdentifier": {
-    "message": "SSO identifier"
+    "message": "SSO-identifierare"
   },
   "ssoIdentifierHint": {
     "message": "Provide this ID to your members to login with SSO."
@@ -4492,10 +4492,10 @@
     "message": "Status för massåtgärd"
   },
   "bulkConfirmMessage": {
-    "message": "Bekräftade."
+    "message": "Bekräftade"
   },
   "bulkReinviteMessage": {
-    "message": "Bjöd in igen."
+    "message": "Bjöd in igen"
   },
   "bulkRemovedMessage": {
     "message": "Tog bort"
@@ -4507,7 +4507,7 @@
     "message": "Restored organization access successfully"
   },
   "bulkFilteredMessage": {
-    "message": "Exkluderad, inte tillämplig för denna åtgärd."
+    "message": "Exkluderad, inte tillämplig för denna åtgärd"
   },
   "fingerprint": {
     "message": "Fingeravtryck"
@@ -4984,10 +4984,10 @@
     "message": "Lämna organisation"
   },
   "removeMasterPassword": {
-    "message": "Remove master password"
+    "message": "Ta bort huvudlösenord"
   },
   "removedMasterPassword": {
-    "message": "Master password removed"
+    "message": "Huvudlösenord togs bort"
   },
   "allowSso": {
     "message": "Allow SSO authentication"
@@ -5026,10 +5026,10 @@
     "message": "\"Login with SSO and Key Connector Decryption\" is activated. This policy will only apply to owners and admins."
   },
   "enabledSso": {
-    "message": "SSO turned on"
+    "message": "SSO aktiverad"
   },
   "disabledSso": {
-    "message": "SSO turned on"
+    "message": "SSO inaktiverad"
   },
   "enabledKeyConnector": {
     "message": "Key Connector activated"
@@ -5188,7 +5188,7 @@
     "message": "Exporting organization vault"
   },
   "exportingPersonalVaultDescription": {
-    "message": "Only the individual vault items associated with $EMAIL$ will be exported. Organization vault items will not be included.",
+    "message": "Only the individual vault items associated with $EMAIL$ will be exported. Organization vault items will not be included. Only vault item information will be exported and will not include associated password history or attachments.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -5221,7 +5221,7 @@
     "message": "Billing history"
   },
   "backToReports": {
-    "message": "Tillbaka till Rapporter"
+    "message": "Tillbaka till rapporter"
   },
   "organizationPicker": {
     "message": "Organization picker"
@@ -5496,7 +5496,7 @@
     "description": "'Character count' describes a feature that displays a number next to each character of the password."
   },
   "hide": {
-    "message": "Hide"
+    "message": "Dölj"
   },
   "projects": {
     "message": "Projekt"
@@ -5784,7 +5784,7 @@
     "message": "This member can access and modify all items."
   },
   "moreFromBitwarden": {
-    "message": "More from Bitwarden"
+    "message": "Mer från Bitwarden"
   },
   "switchProducts": {
     "message": "Switch Products"

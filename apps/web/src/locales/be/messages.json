@@ -929,17 +929,17 @@
   "confirmFilePassword": {
     "message": "Пацвердзіць пароль файла"
   },
-  "accountBackupOptionDescription": {
-    "message": "Выкарыстоўвайце ключ шыфравання вашага ўліковага запісу, каб зашыфраваць экспартаванне і абмежаваць імпартаванне толькі бягучага ўліковага запісу Bitwarden."
+  "accountRestrictedOptionDescription": {
+    "message": "Выкарыстоўвайце свой ключ шыфравання, які атрыманы з імя карыстальніка і асноўнага пароля, каб зашыфраваць экспартаванне і абмежаваць імпартаванне толькі бягучага ўліковага запісу Bitwarden."
   },
   "passwordProtectedOptionDescription": {
     "message": "Прызначце пароль, каб зашыфраваць экспартаванне і імпартуйце яго ў любы ўліковы запіс Bitwarden з выкарыстаннем пароля для расшыфроўкі."
   },
-  "fileTypeHeading": {
-    "message": "Тып файла"
+  "exportTypeHeading": {
+    "message": "Тып экспартавання"
   },
-  "accountBackup": {
-    "message": "Рэзервовая копія ўліковага запісу"
+  "accountRestricted": {
+    "message": "Абмежавана ўліковым запісам"
   },
   "passwordProtected": {
     "message": "Абаронена паролем"
@@ -5488,15 +5488,15 @@
     "message": "Ачысціць усё"
   },
   "toggleCharacterCount": {
-    "message": "Toggle character count",
+    "message": "Пераключыць лічыльнік сімвалаў",
     "description": "'Character count' describes a feature that displays a number next to each character of the password."
   },
   "passwordCharacterCount": {
-    "message": "Password character count",
+    "message": "Колькасць сімвалаў пароля",
     "description": "'Character count' describes a feature that displays a number next to each character of the password."
   },
   "hide": {
-    "message": "Hide"
+    "message": "Схаваць"
   },
   "projects": {
     "message": "Праекты"
@@ -5784,10 +5784,10 @@
     "message": "Гэты ўдзельнік можа атрымліваць доступ і змяняць усе элементы."
   },
   "moreFromBitwarden": {
-    "message": "More from Bitwarden"
+    "message": "Больш ад Bitwarden"
   },
   "switchProducts": {
-    "message": "Switch Products"
+    "message": "Змяніць прадукты"
   },
   "freeOrgInvLimitReachedManageBilling": {
     "message": "Колькасць бясплатных удзельнікаў у бясплатных арганізацыях можа дасягаць: $SEATCOUNT$. Перайдзіце на платны тарыфны план, каб запрасіць больш удзельнікаў.",

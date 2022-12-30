@@ -929,17 +929,17 @@
   "confirmFilePassword": {
     "message": "Confirmar contraseña del archivo"
   },
-  "accountBackupOptionDescription": {
-    "message": "Aproveche el cifrado de su cuenta de Bitwarden, no la contraseña maestra, para proteger la exportación. Esta exportación sólo puede importarse a la cuenta actual. Utilice esto para crear una copia de seguridad que no se puede utilizar en otro lugar."
+  "accountRestrictedOptionDescription": {
+    "message": "Utilice la clave de cifrado de su cuenta, derivada del nombre de usuario y contraseña maestra de su cuenta, para cifrar la exportación y restringir la importación sólo a la cuenta actual de Bitwarden."
   },
   "passwordProtectedOptionDescription": {
     "message": "Crear una contraseña generada por el usuario para proteger la exportación. Utilice esto para crear una exportación que pueda ser usada en otras cuentas."
   },
-  "fileTypeHeading": {
-    "message": "Tipo de archivo"
+  "exportTypeHeading": {
+    "message": "Tipo de exportación"
   },
-  "accountBackup": {
-    "message": "Copia de seguridad de la cuenta"
+  "accountRestricted": {
+    "message": "Cuenta restringida"
   },
   "passwordProtected": {
     "message": "Protegida con contraseña"
@@ -5529,7 +5529,7 @@
     "message": "Editar proyecto"
   },
   "viewProject": {
-    "message": "Ver Project"
+    "message": "Ver proyecto"
   },
   "deleteProject": {
     "message": "Eliminar proyecto"
@@ -5553,7 +5553,7 @@
     "message": "Secretos"
   },
   "nameValuePair": {
-    "message": "Nombre/Valor par"
+    "message": "Par de Nombre/Valor"
   },
   "secretEdited": {
     "message": "Secreto editado"

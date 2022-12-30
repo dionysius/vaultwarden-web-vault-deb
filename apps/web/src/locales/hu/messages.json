@@ -929,17 +929,17 @@
   "confirmFilePassword": {
     "message": "Fájl jelszó megerősítés"
   },
-  "accountBackupOptionDescription": {
-    "message": "Az exportálás védelme érdekében a Bitwarden fiók titkosítását használjuk, nem a mesterjelszót. Ez az exportálás csak az aktuális fiókba importálható. Ezzel máshol nem használható biztonsági másolatot hozhatunk létre."
+  "accountRestrictedOptionDescription": {
+    "message": "Használjuk a fiókjfelhasználónevéből és a fő jelszóból származó titkosítási kulcsot az exportálás titkosításához és az importálás korlátozásához csak az aktuális Bitwarden fiókra."
   },
   "passwordProtectedOptionDescription": {
     "message": "Hozzunk létre egy felhasználó által generált jelszót az exportálás védelme érdekében. Ezzel más fiókokban is használható exportálást hozhatunk létre."
   },
-  "fileTypeHeading": {
-    "message": "Fájltípus"
+  "exportTypeHeading": {
+    "message": "Exportálási típus"
   },
-  "accountBackup": {
-    "message": "Fiók biztonsági másolat"
+  "accountRestricted": {
+    "message": "Fiók korlátozás"
   },
   "passwordProtected": {
     "message": "Jelszóval védett"

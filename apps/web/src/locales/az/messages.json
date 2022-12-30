@@ -929,17 +929,17 @@
   "confirmFilePassword": {
     "message": "Fayl parolunu təsdiqlə"
   },
-  "accountBackupOptionDescription": {
-    "message": "Xaricə köçürməni qorumaq üçün ana parolu yox, Bitwarden hesab şifrələməsini istifadə edir. Bu xaricə köçürmə, yalnız hazırkı hesaba köçürülə bilər. Başqa yerdə istifadə edilə bilməyəcək bir nüsxə yaratmaq üçün bunu istifadə edin."
+  "accountRestrictedOptionDescription": {
+    "message": "Xaricə köçürməni şifrələmək və daxilə köçürməni yalnız mövcud Bitwarden hesabı ilə məhdudlaşdırmaq üçün hesabınızın istifadəçi adı və Ana Parolundan əldə edilən hesab şifrələmə açarınızı istifadə edin."
   },
   "passwordProtectedOptionDescription": {
     "message": "Xaricə köçürməni qorumaq üçün istifadəçi tərəfindən yaradılan bir parol yaradın. Digər hesablarda istifadə ediləcək bir xaricə köçürmə yaratmaq üçün bunu istifadə edin."
   },
-  "fileTypeHeading": {
-    "message": "Fayl növü"
+  "exportTypeHeading": {
+    "message": "Xaricə köçürmə növü"
   },
-  "accountBackup": {
-    "message": "Hesab nüsxələmə"
+  "accountRestricted": {
+    "message": "Hesab məhdudlaşdırıldı"
   },
   "passwordProtected": {
     "message": "Parolla qorunur"

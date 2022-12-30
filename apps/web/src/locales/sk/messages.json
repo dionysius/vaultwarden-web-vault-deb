@@ -929,17 +929,17 @@
   "confirmFilePassword": {
     "message": "Potvrdiť heslo súboru"
   },
-  "accountBackupOptionDescription": {
-    "message": "Na ochranu exportu využíva šifrovanie vášho účtu Bitwarden, nie hlavné heslo. Tento export je možné importovať len do aktuálneho účtu. Použite ho na vytvorenie zálohy, ktorú nie je možné použiť inde."
+  "accountRestrictedOptionDescription": {
+    "message": "Na zašifrovanie exportu a obmedzenie importu len na aktuálny účet Bitwarden použite šifrovací kľúč účtu odvodený z používateľského mena a hlavného hesla účtu."
   },
   "passwordProtectedOptionDescription": {
     "message": "Na ochranu exportu vytvorte heslo vygenerované používateľom. Použite ho na vytvorenie exportu, ktorý možno použiť v iných účtoch."
   },
-  "fileTypeHeading": {
-    "message": "Typ súboru"
+  "exportTypeHeading": {
+    "message": "Typ exportu"
   },
-  "accountBackup": {
-    "message": "Zálohovanie účtu"
+  "accountRestricted": {
+    "message": "Obmedzený účet"
   },
   "passwordProtected": {
     "message": "Chránené heslom"

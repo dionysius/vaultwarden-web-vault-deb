@@ -929,17 +929,17 @@
   "confirmFilePassword": {
     "message": "Confirmer le Mot de Passe du Fichier"
   },
-  "accountBackupOptionDescription": {
-    "message": "Utilise le chiffrement de votre compte Bitwarden pour protéger l'exportation, pas celui du mot de passe maître. Cette exportation ne peut être importée que dans le compte actuel. Utilisez ceci pour créer une sauvegarde qui ne peut pas être utilisée ailleurs."
+  "accountRestrictedOptionDescription": {
+    "message": "Chiffrez le fichier avec la clé de chiffrement de votre compte, dérivée de vos nom d'utilisateur et mot de passe maître. L'importation ne sera possible que sur ce compte Bitwarden."
   },
   "passwordProtectedOptionDescription": {
     "message": "Créez un mot de passe généré par l'utilisateur pour protéger l'exportation. Utilisez ceci pour créer une exportation qui peut être utilisée dans d'autres comptes."
   },
-  "fileTypeHeading": {
-    "message": "Types de Fichier"
+  "exportTypeHeading": {
+    "message": "Type d'exportation"
   },
-  "accountBackup": {
-    "message": "Sauvegarde du Compte"
+  "accountRestricted": {
+    "message": "Restreint à ce compte"
   },
   "passwordProtected": {
     "message": "Protégé par Mot de Passe"
