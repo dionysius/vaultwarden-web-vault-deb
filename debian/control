@@ -12,8 +12,8 @@ Rules-Requires-Root: no
 Package: vaultwarden-web-vault
 Architecture: all
 Pre-Depends: ${misc:Pre-Depends}
-Depends: apache2-bin, ${misc:Depends}
-Recommends: apache2, ${misc:Recommends}
+Depends: ${misc:Depends}
+Recommends: apache2 | lighttpd | httpd, ${misc:Recommends}
 Built-Using: ${misc:Built-Using}
 Description: Web vault for vaultwarden server
  The vaultwarden web vault based on the bitwarden web vault with patches to make
