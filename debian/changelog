@@ -1,3 +1,11 @@
+vaultwarden-web-vault (2022.12.0-0alpha2) unstable; urgency=medium
+
+  [ dionysius ]
+  * fix link to releases page
+  * depend and recommend apache2
+
+ -- Denis Manente <denis.manente@automatic-server.com>  Fri, 30 Dec 2022 08:22:56 +0100
+
 vaultwarden-web-vault (2022.12.0-0alpha1) unstable; urgency=medium
 
   * squash github actions bughunt
