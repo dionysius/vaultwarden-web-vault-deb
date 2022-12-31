@@ -23,8 +23,3 @@ Prebuild deb packages are available in the [releases section](https://github.com
 - Build with help of git-buildpacke: `gbp buildpackage`
   - There are many arguments to fine tune how it is built (see `gbp buildpackage --help` and `dpkg-buildpackage --help`)
   - Mine are usually: `-b` (binary-only, no source files), `-us` (unsigned source package), `-uc` (unsigned .buildinfo and .changes file), `--git-export-dir=<somedir>` (before building the package export the source there)
-
-## Flaws
-
-- For my use case I had to make a compatibility to allow `npm` to be provided with help of `nvm` since my distro didn't provide a recent enough version. Only using official apt sources would be cleaner.
-- This is the first iteration of the package, thus the packaging is in alpha. Contributions are well appreciated.
