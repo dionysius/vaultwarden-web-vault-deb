@@ -1,3 +1,11 @@
+vaultwarden-web-vault (2022.12.0-0alpha4) unstable; urgency=medium
+
+  [ dionysius ]
+  * no need for a webserver
+  * better changelog on release
+
+ -- dionysius <dragon.dionysius@gmail.com>  Sat, 31 Dec 2022 03:43:18 +0100
+
 vaultwarden-web-vault (2022.12.0-0alpha3) unstable; urgency=medium
 
   * lintian fixes
