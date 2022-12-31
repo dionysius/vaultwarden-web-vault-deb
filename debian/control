@@ -1,22 +1,23 @@
 Source: vaultwarden-web-vault
 Section: web
 Priority: optional
-Build-Depends: debhelper-compat (= 13), dh-apache2, npm
+Build-Depends: debhelper-compat (= 13), npm
 Maintainer: dionysius <dragon.dionysius@gmail.com>
 Standards-Version: 4.6.1
 Vcs-Git: https://github.com/dionysius/vaultwarden-web-vault-deb.git
 Vcs-Browser: https://github.com/dionysius/vaultwarden-web-vault-deb
 Homepage: https://github.com/bitwarden/clients
+XBS-Patches-From: https://github.com/dani-garcia/bw_web_builds
 Rules-Requires-Root: no
 
 Package: vaultwarden-web-vault
 Architecture: all
 Pre-Depends: ${misc:Pre-Depends}
 Depends: ${misc:Depends}
-Recommends: apache2 | lighttpd | httpd, ${misc:Recommends}
+Recommends: ${misc:Recommends}
 Built-Using: ${misc:Built-Using}
-Description: Web vault for vaultwarden server
+Description: Web vault frontend for vaultwarden server
  The vaultwarden web vault based on the bitwarden web vault with patches to make
  it work with vaultwarden.
  .
- This package contains the vaultwarden web vault
+ This package contains the vaultwarden web vault frontend data
