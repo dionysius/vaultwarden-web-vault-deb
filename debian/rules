@@ -23,7 +23,7 @@ override_dh_auto_build:
 
 # Build the web-vault
 	cd apps/web; npm run dist:oss:selfhost
-	dpkg-parsechangelog -S Version | xargs printf '{"version":"%s"}' > /apps/web/build/vw-version.json
+	dpkg-parsechangelog -S Version | xargs printf '{"version":"%s"}' > apps/web/build/vw-version.json
 
 	dh_auto_build
 
