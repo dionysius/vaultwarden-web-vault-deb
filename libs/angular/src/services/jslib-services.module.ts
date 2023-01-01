@@ -5,6 +5,7 @@ import {
   AccountService as AccountServiceAbstraction,
   InternalAccountService,
 } from "@bitwarden/common/abstractions/account/account.service";
+import { AvatarUpdateService as AccountUpdateServiceAbstraction } from "@bitwarden/common/abstractions/account/avatar-update.service";
 import { AnonymousHubService as AnonymousHubServiceAbstraction } from "@bitwarden/common/abstractions/anonymousHub.service";
 import { ApiService as ApiServiceAbstraction } from "@bitwarden/common/abstractions/api.service";
 import { AppIdService as AppIdServiceAbstraction } from "@bitwarden/common/abstractions/appId.service";
@@ -73,6 +74,7 @@ import { Account } from "@bitwarden/common/models/domain/account";
 import { GlobalState } from "@bitwarden/common/models/domain/global-state";
 import { AccountApiServiceImplementation } from "@bitwarden/common/services/account/account-api.service";
 import { AccountServiceImplementation } from "@bitwarden/common/services/account/account.service";
+import { AvatarUpdateService } from "@bitwarden/common/services/account/avatar-update.service";
 import { AnonymousHubService } from "@bitwarden/common/services/anonymousHub.service";
 import { ApiService } from "@bitwarden/common/services/api.service";
 import { AppIdService } from "@bitwarden/common/services/appId.service";
@@ -290,6 +292,11 @@ import { AbstractThemingService } from "./theming/theming.service.abstraction";
     {
       provide: InternalAccountService,
       useExisting: AccountServiceAbstraction,
+    },
+    {
+      provide: AccountUpdateServiceAbstraction,
+      useClass: AvatarUpdateService,
+      deps: [ApiServiceAbstraction, StateServiceAbstraction],
     },
     { provide: LogService, useFactory: () => new ConsoleLogService(false) },
     {

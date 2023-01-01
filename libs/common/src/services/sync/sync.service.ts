@@ -304,6 +304,7 @@ export class SyncService implements SyncServiceAbstraction {
     await this.cryptoService.setEncPrivateKey(response.privateKey);
     await this.cryptoService.setProviderKeys(response.providers);
     await this.cryptoService.setOrgKeys(response.organizations, response.providerOrganizations);
+    await this.stateService.setAvatarColor(response.avatarColor);
     await this.stateService.setSecurityStamp(response.securityStamp);
     await this.stateService.setEmailVerified(response.emailVerified);
     await this.stateService.setHasPremiumPersonally(response.premiumPersonally);

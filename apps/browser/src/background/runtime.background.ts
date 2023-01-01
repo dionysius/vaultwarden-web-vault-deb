@@ -97,6 +97,7 @@ export default class RuntimeBackground {
             await this.main.refreshBadge();
             await this.main.refreshMenu();
           }, 2000);
+          this.main.avatarUpdateService.loadColorFromState();
         }
         break;
       case "openPopup":

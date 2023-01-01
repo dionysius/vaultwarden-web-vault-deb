@@ -349,4 +349,7 @@ export abstract class StateService<T extends Account = Account> {
    * @deprecated Do not call this directly, use ConfigService
    */
   setServerConfig: (value: ServerConfigData, options?: StorageOptions) => Promise<void>;
+
+  getAvatarColor: (options?: StorageOptions) => Promise<string | null | undefined>;
+  setAvatarColor: (value: string, options?: StorageOptions) => Promise<void>;
 }

@@ -3,23 +3,26 @@ import { DomSanitizer, SafeResourceUrl } from "@angular/platform-browser";
 
 import { Utils } from "@bitwarden/common/misc/utils";
 
-type SizeTypes = "large" | "default" | "small";
+type SizeTypes = "xlarge" | "large" | "default" | "small" | "xsmall";
 
 const SizeClasses: Record<SizeTypes, string[]> = {
+  xlarge: ["tw-h-24", "tw-w-24"],
   large: ["tw-h-16", "tw-w-16"],
   default: ["tw-h-10", "tw-w-10"],
   small: ["tw-h-7", "tw-w-7"],
+  xsmall: ["tw-h-6", "tw-w-6"],
 };
 
 @Component({
   selector: "bit-avatar",
-  template: `<img *ngIf="src" [src]="src" title="{{ text }}" [ngClass]="classList" />`,
+  template: `<img *ngIf="src" [src]="src" title="{{ title || text }}" [ngClass]="classList" />`,
 })
 export class AvatarComponent implements OnChanges {
   @Input() border = false;
   @Input() color?: string;
   @Input() id?: string;
   @Input() text?: string;
+  @Input() title: string;
   @Input() size: SizeTypes = "default";
 
   private svgCharCount = 2;

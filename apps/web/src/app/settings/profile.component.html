@@ -33,7 +33,17 @@
     </div>
     <div class="col-6">
       <div class="mb-3">
-        <bit-avatar [text]="profile | userName" [id]="profile.id" size="large"></bit-avatar>
+        <dynamic-avatar text="{{ profile | userName }}" [size]="'large'"> </dynamic-avatar>
+        <button
+          type="button"
+          class="btn btn-outline-secondary tw-ml-3.5"
+          appStopClick
+          appStopProp
+          (click)="openChangeAvatar()"
+        >
+          <i class="bwi bwi-lg bwi-pencil-square" aria-hidden="true"></i>
+          Customize
+        </button>
       </div>
       <hr />
       <p *ngIf="fingerprint">
@@ -55,3 +65,4 @@
     <span>{{ "save" | i18n }}</span>
   </button>
 </form>
+<ng-template #avatarModalTemplate></ng-template>
