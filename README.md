@@ -1,10 +1,12 @@
 # deb packaging for vaultwarden web vault
 
-This debian source package builds `vaultwarden-web-vault` natively on your build environment from the [official upstream](https://github.com/bitwarden/clients) enriched with the vaultwarden patch. No annoying docker! This debian source is managed with [git-buildpackage](https://wiki.debian.org/PackagingWithGit) and is aimed to provide a pretty good quality debian source package (where possible so far). You can find the maintaining command summary in [debian/gbp.conf](debian/gbp.conf).
+This debian source package builds `vaultwarden-web-vault` natively on your build environment from the [official upstream](https://github.com/bitwarden/clients) enriched with the [vaultwarden patches](https://github.com/dani-garcia/bw_web_builds). No annoying docker! This debian source is managed with [git-buildpackage](https://wiki.debian.org/PackagingWithGit) and is aimed to provide a pretty good quality debian source package (where possible so far). You can find the maintaining command summary in [debian/gbp.conf](debian/gbp.conf).
 
 ## Download prebuilt packages
 
-Prebuild deb packages are available in the [releases section](https://github.com/dionysius/vaultwarden-web-vault-deb/releases) for latest Ubuntu LTS. I'd liked to include also debian stable, but [there are no debian images available in github actions](https://github.com/actions/runner-images).
+Prebuilt deb packages are available in the [releases section](https://github.com/dionysius/vaultwarden-web-vault-deb/releases) for latest Ubuntu LTS. I'd liked to include also debian stable, but [there are no debian images available in github actions](https://github.com/actions/runner-images).
+
+They are built in [Github Actions](https://github.com/dionysius/vaultwarden-web-vault-deb/actions) and automatically created on a debian tag push and released on a successful build.
 
 ## Requirements
 
@@ -23,3 +25,8 @@ Prebuild deb packages are available in the [releases section](https://github.com
 - Build with help of git-buildpacke: `gbp buildpackage`
   - There are many arguments to fine tune how it is built (see `gbp buildpackage --help` and `dpkg-buildpackage --help`)
   - Mine are usually: `-b` (binary-only, no source files), `-us` (unsigned source package), `-uc` (unsigned .buildinfo and .changes file), `--git-export-dir=<somedir>` (before building the package export the source there)
+
+## TODOs
+
+- Phase 1: Automatic notification on new upstream version. Phase 2: Automatic PR with updates from upstream
+- Sign the packages
