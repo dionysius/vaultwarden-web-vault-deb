@@ -214,25 +214,9 @@ export default class MainBackground {
     const logoutCallback = async (expired: boolean, userId?: string) =>
       await this.logout(expired, userId);
 
-    const messagingServices: MessagingServiceAbstraction[] = [];
-    if (!isPrivateMode) {
-      // Sent to detached background
-      messagingServices.push(new BrowserMessagingService());
-    }
-
-    if (this.popupOnlyContext) {
-      // Sent to popup
-      messagingServices.push(new BrowserMessagingPrivateModeBackgroundService());
-    }
-
-    this.messagingService = new (class extends MessagingServiceAbstraction {
-      // AuthService should send the messages to the background not popup.
-      send = (subscriber: string, arg: any = {}) => {
-        for (const messagingService of messagingServices) {
-          messagingService.send(subscriber, arg);
-        }
-      };
-    })();
+    this.messagingService = this.popupOnlyContext
+      ? new BrowserMessagingPrivateModeBackgroundService()
+      : new BrowserMessagingService();
     this.logService = new ConsoleLogService(false);
     this.cryptoFunctionService = new WebCryptoFunctionService(window);
     this.storageService = new BrowserLocalStorageService();
@@ -368,13 +352,22 @@ export default class MainBackground {
 
     this.twoFactorService = new TwoFactorService(this.i18nService, this.platformUtilsService);
 
+    // eslint-disable-next-line
+    const that = this;
+    const backgroundMessagingService = new (class extends MessagingServiceAbstraction {
+      // AuthService should send the messages to the background not popup.
+      send = (subscriber: string, arg: any = {}) => {
+        const message = Object.assign({}, { command: subscriber }, arg);
+        that.runtimeBackground.processMessage(message, that, null);
+      };
+    })();
     this.authService = new AuthService(
       this.cryptoService,
       this.apiService,
       this.tokenService,
       this.appIdService,
       this.platformUtilsService,
-      this.messagingService,
+      backgroundMessagingService,
       this.logService,
       this.keyConnectorService,
       this.environmentService,
