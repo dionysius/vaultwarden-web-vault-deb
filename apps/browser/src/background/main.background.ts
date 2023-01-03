@@ -608,7 +608,9 @@ export default class MainBackground {
     return new Promise<void>((resolve) => {
       setTimeout(async () => {
         await this.environmentService.setUrlsFromStorage();
-        await this.refreshBadge();
+        if (!this.isPrivateMode) {
+          await this.refreshBadge();
+        }
         this.fullSync(true);
         setTimeout(() => this.notificationsService.init(), 2500);
         resolve();
