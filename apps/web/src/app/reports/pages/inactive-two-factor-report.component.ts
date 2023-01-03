@@ -86,7 +86,7 @@ export class InactiveTwoFactorReportComponent extends CipherReportComponent impl
     if (this.services.size > 0) {
       return;
     }
-    const response = await fetch(new Request("https://2fa.directory/api/v3/totp.json"));
+    const response = await fetch(new Request("https://api.2fa.directory/v3/totp.json"));
     if (response.status !== 200) {
       throw new Error();
     }
