@@ -1,5 +1,7 @@
 import { BaseResponse } from "@bitwarden/common/models/response/base.response";
 
+import { SecretProjectResponse } from "./secret-project.response";
+
 export class SecretResponse extends BaseResponse {
   id: string;
   organizationId: string;
@@ -8,6 +10,7 @@ export class SecretResponse extends BaseResponse {
   note: string;
   creationDate: string;
   revisionDate: string;
+  projects: SecretProjectResponse[];
 
   constructor(response: any) {
     super(response);
@@ -18,5 +21,9 @@ export class SecretResponse extends BaseResponse {
     this.note = this.getResponseProperty("Note");
     this.creationDate = this.getResponseProperty("CreationDate");
     this.revisionDate = this.getResponseProperty("RevisionDate");
+
+    const projects = this.getResponseProperty("Projects");
+    this.projects =
+      projects == null ? null : projects.map((k: any) => new SecretProjectResponse(k));
   }
 }

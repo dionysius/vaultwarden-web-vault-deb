@@ -1,5 +1,7 @@
 import { View } from "@bitwarden/common/models/view/view";
 
+import { SecretProjectView } from "./secret-project.view";
+
 export class SecretView implements View {
   id: string;
   organizationId: string;
@@ -8,4 +10,5 @@ export class SecretView implements View {
   note: string;
   creationDate: string;
   revisionDate: string;
+  projects: SecretProjectView[];
 }
