@@ -32,7 +32,6 @@ describe("session syncer", () => {
     stateService = mock<BrowserStateService>();
     stateService.hasInSessionMemory.mockResolvedValue(false);
     sut = new SessionSyncer(behaviorSubject, stateService, metaData);
-    jest.spyOn(sut as any, "debounceMs", "get").mockReturnValue(0);
   });
 
   afterEach(() => {
@@ -89,7 +88,7 @@ describe("session syncer", () => {
 
       sut.init();
 
-      expect(sut["ignoreNUpdates"]).toBe(1);
+      expect(sut["ignoreNUpdates"]).toBe(3);
     });
 
     it("should ignore BehaviorSubject's initial value", () => {
@@ -129,40 +128,27 @@ describe("session syncer", () => {
   describe("a value is emitted on the observable", () => {
     let sendMessageSpy: jest.SpyInstance;
 
-    beforeEach(async () => {
+    beforeEach(() => {
       sendMessageSpy = jest.spyOn(BrowserApi, "sendMessage");
 
       sut.init();
 
-      // allow initial value to be set
-      await awaitAsync();
       behaviorSubject.next("test");
     });
 
     it("should update the session memory", async () => {
       // await finishing of fire-and-forget operation
-      await awaitAsync();
+      await new Promise((resolve) => setTimeout(resolve, 100));
       expect(stateService.setInSessionMemory).toHaveBeenCalledTimes(1);
       expect(stateService.setInSessionMemory).toHaveBeenCalledWith(sessionKey, "test");
     });
 
     it("should update sessionSyncers in other contexts", async () => {
       // await finishing of fire-and-forget operation
-      await awaitAsync();
+      await new Promise((resolve) => setTimeout(resolve, 100));
 
       expect(sendMessageSpy).toHaveBeenCalledTimes(1);
       expect(sendMessageSpy).toHaveBeenCalledWith(`${sessionKey}_update`, { id: sut.id });
-    });
-
-    it("should debounce subject updates", async () => {
-      behaviorSubject.next("test2");
-      behaviorSubject.next("test3");
-
-      // await finishing of fire-and-forget operation
-      await awaitAsync();
-
-      expect(stateService.setInSessionMemory).toHaveBeenCalledTimes(1);
-      expect(stateService.setInSessionMemory).toHaveBeenCalledWith(sessionKey, "test3");
     });
   });
 
