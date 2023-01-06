@@ -24,6 +24,7 @@ export class PremiumComponent implements OnInit {
   canAccessPremium = false;
   selfHosted = false;
   premiumPrice = 10;
+  familyPlanMaxUserCount = 6;
   storageGbPrice = 4;
   additionalStorage = 0;
 
