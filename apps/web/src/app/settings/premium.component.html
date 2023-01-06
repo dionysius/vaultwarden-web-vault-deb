@@ -45,7 +45,10 @@
     </li>
   </ul>
   <p class="text-lg" [ngClass]="{ 'mb-0': !selfHosted }">
-    {{ "premiumPrice" | i18n: (premiumPrice | currency: "$") }}
+    {{ "premiumPriceWithFamilyPlan" | i18n: (premiumPrice | currency: "$"):familyPlanMaxUserCount }}
+    <a routerLink="/create-organization" [queryParams]="{ plan: 'families' }">{{
+      "bitwardenFamiliesPlan" | i18n
+    }}</a>
   </p>
   <a
     bitButton
