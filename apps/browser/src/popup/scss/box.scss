@@ -115,11 +115,14 @@
   &.list {
     margin: 10px 0 20px 0;
     .box-content {
+      .virtual-scroll-item {
+        display: inline-block;
+        width: 100%;
+      }
+
       .box-content-row {
-        padding: 5px 10px;
         text-decoration: none;
         border-radius: $border-radius;
-        margin: 5px;
         // background-color: $background-color;
 
         @include themify($themes) {
@@ -230,7 +233,7 @@
   position: relative;
   z-index: 1;
   border-radius: $border-radius;
-  margin: 8px 5px;
+  margin: 3px 5px;
 
   @include themify($themes) {
     background-color: themed("boxBackgroundColor");
