@@ -1462,10 +1462,10 @@
     "message": "Sposób blokowania sejfu"
   },
   "vaultTimeoutActionLockDesc": {
-    "message": "Aby uzyskać dostęp do sejfu, musisz wpisać hasło główne lub odblokować go inną metodą."
+    "message": "Wpisz hasło główne lub odblokuj sejf inną metodą, aby uzyskać do niego dostęp."
   },
   "vaultTimeoutActionLogOutDesc": {
-    "message": "Po wylogowaniu się z sejfu, musisz ponownie zalogować się, aby uzyskać do niego dostęp."
+    "message": "Zaloguj się ponownie, aby uzyskać dostęp do sejfu."
   },
   "lock": {
     "message": "Zablokuj",
@@ -1596,7 +1596,7 @@
     "message": "Wymagaj weryfikacji połączenia z przeglądarką"
   },
   "enableBrowserIntegrationFingerprintDesc": {
-    "message": "Wymagaj sprawdzenia identyfikatora podczas tworzenia połączenia między aplikacją a przeglądarką. Po włączeniu tej funkcji, musisz zweryfikować każde nawiązywane połączenie."
+    "message": "Dodaj dodatkową warstwę zabezpieczeń, weryfikując unikalny identyfikator konta podczas tworzenia linku między aplikacją a przeglądarką. Funkcja ta wymaga weryfikacji identyfikatora przy każdym nawiązaniu połączenia."
   },
   "approve": {
     "message": "Zatwierdź"

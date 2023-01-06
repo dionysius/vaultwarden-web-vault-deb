@@ -752,7 +752,7 @@
     "message": "Đang tải..."
   },
   "lockVault": {
-    "message": "Lock vault"
+    "message": "Khóa kho"
   },
   "passwordGenerator": {
     "message": "Tạo mật khẩu"
@@ -901,7 +901,7 @@
     "message": "Hiện biểu tượng trang web"
   },
   "faviconDesc": {
-    "message": "Show a recognizable image next to each login."
+    "message": "Hiện một ảnh nhận dạng bên cạnh mỗi lần đăng nhập."
   },
   "enableMinToTray": {
     "message": "Minimize to Tray Icon"
@@ -946,7 +946,7 @@
     "message": "When the application is first started, only show an icon in the menu bar."
   },
   "openAtLogin": {
-    "message": "Start automatically on login"
+    "message": "Tự động bắt đầu khi đăng nhập"
   },
   "openAtLoginDesc": {
     "message": "Start the Bitwarden desktop application automatically on login."
@@ -958,7 +958,7 @@
     "message": "Show the Bitwarden icon in the Dock even when minimized to the menu bar."
   },
   "confirmTrayTitle": {
-    "message": "Confirm hiding tray"
+    "message": "Xác nhận ẩn khay"
   },
   "confirmTrayDesc": {
     "message": "Turning off this setting will also turn off all other tray related settings."
@@ -1312,7 +1312,7 @@
     "message": "Accessibility cookie saved!"
   },
   "noAccessibilityCookieSaved": {
-    "message": "No accessibility cookie saved"
+    "message": "Không có cookie hỗ trợ tương tác nào được lưu"
   },
   "warning": {
     "message": "CẢNH BÁO",
@@ -1325,7 +1325,7 @@
     "message": "This export contains your vault data in an unencrypted format. You should not store or send the exported file over unsecure channels (such as email). Delete it immediately after you are done using it."
   },
   "encExportKeyWarningDesc": {
-    "message": "This export encrypts your data using your account's encryption key. If you ever rotate your account's encryption key you should export again since you will not be able to decrypt this export file."
+    "message": "File xuất mã hóa dữ liệu xủa bạn bằng khóa giải mã. Nếu bạn thay đổi khóa giải mã, bạn nên xuất file lại vì bạn sẽ không thể giải mã file này."
   },
   "encExportAccountWarningDesc": {
     "message": "Account encryption keys are unique to each Bitwarden user account, so you can't import an encrypted export into a different account."
@@ -1569,31 +1569,31 @@
     "message": "Điều khoản sử dụng và chính sách quyền riêng tư chưa được đồng ý."
   },
   "enableBrowserIntegration": {
-    "message": "Allow browser integration"
+    "message": "Cho phép tích hợp với trình duyệt"
   },
   "enableBrowserIntegrationDesc": {
     "message": "Used for biometrics in browser."
   },
   "enableDuckDuckGoBrowserIntegration": {
-    "message": "Allow DuckDuckGo browser integration"
+    "message": "Cho phép tích hợp trình duyệt DuckDuckGo"
   },
   "enableDuckDuckGoBrowserIntegrationDesc": {
-    "message": "Use your Bitwarden vault when browsing with DuckDuckGo."
+    "message": "Sử dụng kho Bitwarden của bạn khi tìm kiếm bằng DuckDuckGo."
   },
   "browserIntegrationUnsupportedTitle": {
-    "message": "Browser integration not supported"
+    "message": "Không hỗ trợ tích hợp trình duyệt"
   },
   "browserIntegrationMasOnlyDesc": {
-    "message": "Unfortunately browser integration is only supported in the Mac App Store version for now."
+    "message": "Rất tiếc, tính năng tích hợp trình duyệt hiện chỉ được hỗ trợ trong phiên bản App Store trên Mac."
   },
   "browserIntegrationWindowsStoreDesc": {
-    "message": "Unfortunately browser integration is currently not supported in the Microsoft Store version."
+    "message": "Rất tiếc, tính năng tích hợp trình duyệt hiện không được hỗ trợ trong phiên bản Microsoft Store."
   },
   "browserIntegrationLinuxDesc": {
-    "message": "Unfortunately browser integration is currently not supported in the linux version."
+    "message": "Rất tiếc, tính năng tích hợp trình duyệt hiện không được hỗ trợ trong phiên bản linux."
   },
   "enableBrowserIntegrationFingerprint": {
-    "message": "Require verification for browser integration"
+    "message": "Yêu cầu xác minh để tích hợp trình duyệt"
   },
   "enableBrowserIntegrationFingerprintDesc": {
     "message": "Add an additional layer of security by requiring fingerprint phrase confirmation when establishing a link between your desktop and browser. This requires user action and verification each time a connection is created."
@@ -1602,7 +1602,7 @@
     "message": "Chấp nhận"
   },
   "verifyBrowserTitle": {
-    "message": "Verify browser connection"
+    "message": "Xác minh kết nối trình duyệt"
   },
   "verifyBrowserDesc": {
     "message": "Please ensure the shown fingerprint is identical to the fingerprint showed in the browser extension."
@@ -1617,13 +1617,13 @@
     }
   },
   "verifyNativeMessagingConnectionDesc": {
-    "message": "Would you like to approve this request?"
+    "message": "Bạn có muốn chấp thuận yêu cầu này không?"
   },
   "verifyNativeMessagingConnectionWarning": {
-    "message": "If you did not initiate this request, do not approve it."
+    "message": "Nếu bạn không gửi yêu cầu này, đừng chấp thuận."
   },
   "biometricsNotEnabledTitle": {
-    "message": "Biometrics not set up"
+    "message": "Sinh trắc học chưa được thiết lập"
   },
   "biometricsNotEnabledDesc": {
     "message": "Browser biometrics requires desktop biometrics to be set up in the settings first."
@@ -1632,7 +1632,7 @@
     "message": "Due to an enterprise policy, you are restricted from saving items to your individual vault. Change the ownership option to an organization and choose from available collections."
   },
   "hintEqualsPassword": {
-    "message": "Your password hint cannot be the same as your password."
+    "message": "Gợi ý mật khẩu không được trùng với mật khẩu của bạn."
   },
   "personalOwnershipPolicyInEffect": {
     "message": "An organization policy is affecting your ownership options."
