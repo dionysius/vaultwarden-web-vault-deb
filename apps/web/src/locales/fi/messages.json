@@ -930,7 +930,7 @@
     "message": "Vahvista tiedoston salasana"
   },
   "accountRestrictedOptionDescription": {
-    "message": "Salaa vienti ja rajoita tuonti vain nykyiselle Bitwarden-tilille käyttämällä tilisi käyttäjätunnuksesta ja pääsalasanasta johdettua tilisi salausavainta."
+    "message": "Salaa vienti ja rajoita tuonti vain nykyiselle Bitwarden-tilille tilisi salausavaimella, joka pohjautuu tilisi käyttäjätunnukseen ja pääsalasanaan."
   },
   "passwordProtectedOptionDescription": {
     "message": "Salaa vientitiedosto salasanalla, joka mahdollistaa sen tuonnin mille tahansa Bitwarden-tilille."
@@ -5475,6 +5475,45 @@
   "notYou": {
     "message": "Etkö se ollut sinä?"
   },
+  "pickAnAvatarColor": {
+    "message": "Valitse hahmon väri"
+  },
+  "customizeAvatar": {
+    "message": "Mukauta hahmoa"
+  },
+  "avatarUpdated": {
+    "message": "Hahmo päivitettiin"
+  },
+  "brightBlue": {
+    "message": "Kirkas sininen"
+  },
+  "green": {
+    "message": "Vihreä"
+  },
+  "orange": {
+    "message": "Oranssi"
+  },
+  "lavender": {
+    "message": "Laventeli"
+  },
+  "yellow": {
+    "message": "Keltainen"
+  },
+  "indigo": {
+    "message": "Syvän sininen"
+  },
+  "teal": {
+    "message": "Sinivihreä"
+  },
+  "salmon": {
+    "message": "Lohenpunainen"
+  },
+  "pink": {
+    "message": "Pinkki"
+  },
+  "customColor": {
+    "message": "Oma väri"
+  },
   "multiSelectPlaceholder": {
     "message": "-- Suodatettava tyyppi --"
   },
@@ -5521,6 +5560,15 @@
   },
   "deleteSecrets": {
     "message": "Poista salaisuudet"
+  },
+  "secretProjectAssociationDescription": {
+    "message": "Select projects that the secret will be associated with. Only organization users with access to these projects will be able to see the secret."
+  },
+  "typeOrSelectProjects": {
+    "message": "Kirjoita tai valitse projektit"
+  },
+  "typeOrSelectProject": {
+    "message": "Kirjoita tai valitse projekti"
   },
   "project": {
     "message": "Projekti"

@@ -5475,6 +5475,45 @@
   "notYou": {
     "message": "No sou vosaltres?"
   },
+  "pickAnAvatarColor": {
+    "message": "Tria un color d'avatar"
+  },
+  "customizeAvatar": {
+    "message": "Personalitza avatar"
+  },
+  "avatarUpdated": {
+    "message": "S'ha actualitzat l'avatar"
+  },
+  "brightBlue": {
+    "message": "Blau brillant"
+  },
+  "green": {
+    "message": "Verd"
+  },
+  "orange": {
+    "message": "Taronja"
+  },
+  "lavender": {
+    "message": "Lavanda"
+  },
+  "yellow": {
+    "message": "Groc"
+  },
+  "indigo": {
+    "message": "Anyil"
+  },
+  "teal": {
+    "message": "Verd blavós"
+  },
+  "salmon": {
+    "message": "Salmó"
+  },
+  "pink": {
+    "message": "Rosa"
+  },
+  "customColor": {
+    "message": "Color personalitzat"
+  },
   "multiSelectPlaceholder": {
     "message": "-- Escriviu per filtrar --"
   },
@@ -5521,6 +5560,15 @@
   },
   "deleteSecrets": {
     "message": "Suprimeix els secrets"
+  },
+  "secretProjectAssociationDescription": {
+    "message": "Select projects that the secret will be associated with. Only organization users with access to these projects will be able to see the secret."
+  },
+  "typeOrSelectProjects": {
+    "message": "Type or select Projects"
+  },
+  "typeOrSelectProject": {
+    "message": "Type or select Project"
   },
   "project": {
     "message": "Projecte"

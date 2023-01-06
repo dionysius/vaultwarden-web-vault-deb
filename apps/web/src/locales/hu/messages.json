@@ -5475,6 +5475,45 @@
   "notYou": {
     "message": "Ez tévedés?"
   },
+  "pickAnAvatarColor": {
+    "message": "Avatar szín választás"
+  },
+  "customizeAvatar": {
+    "message": "Avatar testre szabása"
+  },
+  "avatarUpdated": {
+    "message": "Az avatar frissítésre került."
+  },
+  "brightBlue": {
+    "message": "Élénk kék"
+  },
+  "green": {
+    "message": "Zöld"
+  },
+  "orange": {
+    "message": "Narancssárga"
+  },
+  "lavender": {
+    "message": "Levendula"
+  },
+  "yellow": {
+    "message": "Sárga"
+  },
+  "indigo": {
+    "message": "Indigókék"
+  },
+  "teal": {
+    "message": "Pávakék"
+  },
+  "salmon": {
+    "message": "Lazac"
+  },
+  "pink": {
+    "message": "Rózsaszín"
+  },
+  "customColor": {
+    "message": "Egyedi szín"
+  },
   "multiSelectPlaceholder": {
     "message": "-- Szűrendő típus --"
   },
@@ -5521,6 +5560,15 @@
   },
   "deleteSecrets": {
     "message": "Titkos kódok törlése"
+  },
+  "secretProjectAssociationDescription": {
+    "message": "Select projects that the secret will be associated with. Only organization users with access to these projects will be able to see the secret."
+  },
+  "typeOrSelectProjects": {
+    "message": "Type or select Projects"
+  },
+  "typeOrSelectProject": {
+    "message": "Type or select Project"
   },
   "project": {
     "message": "Projekt"

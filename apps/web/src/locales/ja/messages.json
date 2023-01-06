@@ -5475,6 +5475,45 @@
   "notYou": {
     "message": "あなたではないですか？"
   },
+  "pickAnAvatarColor": {
+    "message": "アバターの色を選択"
+  },
+  "customizeAvatar": {
+    "message": "アバターをカスタマイズ"
+  },
+  "avatarUpdated": {
+    "message": "アバターを更新しました"
+  },
+  "brightBlue": {
+    "message": "ブライトブルー"
+  },
+  "green": {
+    "message": "グリーン"
+  },
+  "orange": {
+    "message": "オレンジ"
+  },
+  "lavender": {
+    "message": "ラベンダー"
+  },
+  "yellow": {
+    "message": "イエロー"
+  },
+  "indigo": {
+    "message": "インディゴ"
+  },
+  "teal": {
+    "message": "ティール"
+  },
+  "salmon": {
+    "message": "サーモン"
+  },
+  "pink": {
+    "message": "ピンク"
+  },
+  "customColor": {
+    "message": "カスタム色"
+  },
   "multiSelectPlaceholder": {
     "message": "-- 入力して絞り込み --"
   },
@@ -5521,6 +5560,15 @@
   },
   "deleteSecrets": {
     "message": "シークレットを削除"
+  },
+  "secretProjectAssociationDescription": {
+    "message": "Select projects that the secret will be associated with. Only organization users with access to these projects will be able to see the secret."
+  },
+  "typeOrSelectProjects": {
+    "message": "Type or select Projects"
+  },
+  "typeOrSelectProject": {
+    "message": "Type or select Project"
   },
   "project": {
     "message": "プロジェクト"

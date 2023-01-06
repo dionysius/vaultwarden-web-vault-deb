@@ -5475,6 +5475,45 @@
   "notYou": {
     "message": "¿No eres tú?"
   },
+  "pickAnAvatarColor": {
+    "message": "Elige un color de avatar"
+  },
+  "customizeAvatar": {
+    "message": "Avatar personalizado"
+  },
+  "avatarUpdated": {
+    "message": "Avatar actualizado"
+  },
+  "brightBlue": {
+    "message": "Azul brillante"
+  },
+  "green": {
+    "message": "Verde"
+  },
+  "orange": {
+    "message": "Naranja"
+  },
+  "lavender": {
+    "message": "Lavender"
+  },
+  "yellow": {
+    "message": "Yellow"
+  },
+  "indigo": {
+    "message": "Indigo"
+  },
+  "teal": {
+    "message": "Teal"
+  },
+  "salmon": {
+    "message": "Salmon"
+  },
+  "pink": {
+    "message": "Pink"
+  },
+  "customColor": {
+    "message": "Custom Color"
+  },
   "multiSelectPlaceholder": {
     "message": "-- Escriba para filtrar --"
   },
@@ -5521,6 +5560,15 @@
   },
   "deleteSecrets": {
     "message": "Eliminar secretos"
+  },
+  "secretProjectAssociationDescription": {
+    "message": "Seleccione los proyectos con los que se asociará el secreto. Sólo los usuarios de la organización con acceso a estos proyectos podrán ver el secreto."
+  },
+  "typeOrSelectProjects": {
+    "message": "Escriba o seleccione proyectos"
+  },
+  "typeOrSelectProject": {
+    "message": "Escriba o seleccione un proyecto"
   },
   "project": {
     "message": "Proyecto"

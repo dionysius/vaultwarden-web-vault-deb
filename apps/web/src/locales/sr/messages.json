@@ -930,16 +930,16 @@
     "message": "Потврдити лозинку датотеке"
   },
   "accountRestrictedOptionDescription": {
-    "message": "Use your account encryption key, derived from your account's username and Master Password, to encrypt the export and restrict import to only the current Bitwarden account."
+    "message": "Користите кључ за шифровање вашег налога, изведен из корисничког имена и главне лозинке, да шифрујете извоз и ограничите увоз само на тренутни Bitwarden налог."
   },
   "passwordProtectedOptionDescription": {
     "message": "Подесите лозинку за шифровање извоза и увоз у било који Bitwarden налог користећи лозинку за дешифровање."
   },
   "exportTypeHeading": {
-    "message": "Export type"
+    "message": "Тип извоза"
   },
   "accountRestricted": {
-    "message": "Account restricted"
+    "message": "Налог је ограничен"
   },
   "passwordProtected": {
     "message": "Заштићено лозинком"
@@ -5475,6 +5475,45 @@
   "notYou": {
     "message": "Нисте Ви?"
   },
+  "pickAnAvatarColor": {
+    "message": "Изабрати боју аватара"
+  },
+  "customizeAvatar": {
+    "message": "Прилагодити аватар"
+  },
+  "avatarUpdated": {
+    "message": "Аватар ажуриран"
+  },
+  "brightBlue": {
+    "message": "Јаркоплава"
+  },
+  "green": {
+    "message": "Зелена"
+  },
+  "orange": {
+    "message": "Наранџаста"
+  },
+  "lavender": {
+    "message": "Лаванда"
+  },
+  "yellow": {
+    "message": "Жута"
+  },
+  "indigo": {
+    "message": "Индиго"
+  },
+  "teal": {
+    "message": "Плавозелена"
+  },
+  "salmon": {
+    "message": "Лосос"
+  },
+  "pink": {
+    "message": "Розе"
+  },
+  "customColor": {
+    "message": "Сопствена боја"
+  },
   "multiSelectPlaceholder": {
     "message": "-- Тип за филтрирање --"
   },
@@ -5521,6 +5560,15 @@
   },
   "deleteSecrets": {
     "message": "Обрисати тајне"
+  },
+  "secretProjectAssociationDescription": {
+    "message": "Select projects that the secret will be associated with. Only organization users with access to these projects will be able to see the secret."
+  },
+  "typeOrSelectProjects": {
+    "message": "Type or select Projects"
+  },
+  "typeOrSelectProject": {
+    "message": "Type or select Project"
   },
   "project": {
     "message": "Пројекат"
@@ -5784,10 +5832,10 @@
     "message": "Овај члан може приступити и изменити све ставке."
   },
   "moreFromBitwarden": {
-    "message": "More from Bitwarden"
+    "message": "Више од Bitwarden"
   },
   "switchProducts": {
-    "message": "Switch Products"
+    "message": "Пребацити призвод"
   },
   "freeOrgInvLimitReachedManageBilling": {
     "message": "Free organizations may have up to $SEATCOUNT$ members. Upgrade to a paid plan to invite more members.",

@@ -5475,6 +5475,45 @@
   "notYou": {
     "message": "Siz deyilsiniz?"
   },
+  "pickAnAvatarColor": {
+    "message": "Bir avatar rəngi götürün"
+  },
+  "customizeAvatar": {
+    "message": "Avatarı özəlləşdir"
+  },
+  "avatarUpdated": {
+    "message": "Avatar güncəlləndi"
+  },
+  "brightBlue": {
+    "message": "Parlaq mavi"
+  },
+  "green": {
+    "message": "Yaşıl"
+  },
+  "orange": {
+    "message": "Narıncı"
+  },
+  "lavender": {
+    "message": "Lavanda"
+  },
+  "yellow": {
+    "message": "Sarı"
+  },
+  "indigo": {
+    "message": "Tünd mavi"
+  },
+  "teal": {
+    "message": "Dəniz mavisi"
+  },
+  "salmon": {
+    "message": "Salmon"
+  },
+  "pink": {
+    "message": "Çəhrayı"
+  },
+  "customColor": {
+    "message": "Özəl rəng"
+  },
   "multiSelectPlaceholder": {
     "message": "-- Filtrləmək üçün yazın --"
   },
@@ -5521,6 +5560,15 @@
   },
   "deleteSecrets": {
     "message": "\"Sirr\"ləri sil"
+  },
+  "secretProjectAssociationDescription": {
+    "message": "Select projects that the secret will be associated with. Only organization users with access to these projects will be able to see the secret."
+  },
+  "typeOrSelectProjects": {
+    "message": "Type or select Projects"
+  },
+  "typeOrSelectProject": {
+    "message": "Type or select Project"
   },
   "project": {
     "message": "Layihə"

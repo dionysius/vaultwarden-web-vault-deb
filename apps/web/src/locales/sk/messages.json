@@ -5475,6 +5475,45 @@
   "notYou": {
     "message": "Nie ste to vy?"
   },
+  "pickAnAvatarColor": {
+    "message": "Výber farby avatara"
+  },
+  "customizeAvatar": {
+    "message": "Prispôsobenie avatara"
+  },
+  "avatarUpdated": {
+    "message": "Avatar bol aktualizovaný"
+  },
+  "brightBlue": {
+    "message": "Svetlomodrá"
+  },
+  "green": {
+    "message": "Zelená"
+  },
+  "orange": {
+    "message": "Oranžová"
+  },
+  "lavender": {
+    "message": "Levanduľová"
+  },
+  "yellow": {
+    "message": "Žltá"
+  },
+  "indigo": {
+    "message": "Indigová"
+  },
+  "teal": {
+    "message": "Modrozelená"
+  },
+  "salmon": {
+    "message": "Lososová"
+  },
+  "pink": {
+    "message": "Ružová"
+  },
+  "customColor": {
+    "message": "Vlastná farba"
+  },
   "multiSelectPlaceholder": {
     "message": "-- Začnite písať pre filtrovanie --"
   },
@@ -5521,6 +5560,15 @@
   },
   "deleteSecrets": {
     "message": "Delete Secrets"
+  },
+  "secretProjectAssociationDescription": {
+    "message": "Select projects that the secret will be associated with. Only organization users with access to these projects will be able to see the secret."
+  },
+  "typeOrSelectProjects": {
+    "message": "Type or select Projects"
+  },
+  "typeOrSelectProject": {
+    "message": "Type or select Project"
   },
   "project": {
     "message": "Project"

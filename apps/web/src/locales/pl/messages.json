@@ -3567,10 +3567,10 @@
     "message": "Sposób blokowania sejfu"
   },
   "vaultTimeoutActionLockDesc": {
-    "message": "Aby uzyskać dostęp do sejfu, musisz wpisać hasło główne lub odblokować go inną metodą."
+    "message": "Wpisz hasło główne lub odblokuj sejf inną metodą, aby uzyskać do niego dostęp."
   },
   "vaultTimeoutActionLogOutDesc": {
-    "message": "Po wylogowaniu się z sejfu, musisz ponownie zalogować się, aby uzyskać do niego dostęp."
+    "message": "Zaloguj się ponownie, aby uzyskać dostęp do sejfu."
   },
   "lock": {
     "message": "Zablokuj",
@@ -5475,6 +5475,45 @@
   "notYou": {
     "message": "To nie Ty?"
   },
+  "pickAnAvatarColor": {
+    "message": "Wybierz kolor awatara"
+  },
+  "customizeAvatar": {
+    "message": "Dostosuj awatara"
+  },
+  "avatarUpdated": {
+    "message": "Zaktualizowano awatar"
+  },
+  "brightBlue": {
+    "message": "Jasnoniebieski"
+  },
+  "green": {
+    "message": "Zielony"
+  },
+  "orange": {
+    "message": "Pomarańczowy"
+  },
+  "lavender": {
+    "message": "Lawendowy"
+  },
+  "yellow": {
+    "message": "Żółty"
+  },
+  "indigo": {
+    "message": "Indygo"
+  },
+  "teal": {
+    "message": "Morski"
+  },
+  "salmon": {
+    "message": "Łososiowy"
+  },
+  "pink": {
+    "message": "Różowy"
+  },
+  "customColor": {
+    "message": "Kolor użytkownika"
+  },
   "multiSelectPlaceholder": {
     "message": "-- Pisz, aby filtrować --"
   },
@@ -5521,6 +5560,15 @@
   },
   "deleteSecrets": {
     "message": "Usuń sekrety"
+  },
+  "secretProjectAssociationDescription": {
+    "message": "Wybierz projekty, z którymi będzie skojarzony sekret. Tylko użytkownicy organizacji z dostępem do tych projektów będą mogli zobaczyć sekret."
+  },
+  "typeOrSelectProjects": {
+    "message": "Wpisz lub wybierz projekty"
+  },
+  "typeOrSelectProject": {
+    "message": "Wpisz lub wybierz projekt"
   },
   "project": {
     "message": "Projekt"

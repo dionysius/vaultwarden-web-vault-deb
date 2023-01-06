@@ -5475,6 +5475,45 @@
   "notYou": {
     "message": "不是你？"
   },
+  "pickAnAvatarColor": {
+    "message": "选择头像颜色"
+  },
+  "customizeAvatar": {
+    "message": "自定义头像"
+  },
+  "avatarUpdated": {
+    "message": "头像已更新"
+  },
+  "brightBlue": {
+    "message": "亮蓝色"
+  },
+  "green": {
+    "message": "绿色"
+  },
+  "orange": {
+    "message": "橙色"
+  },
+  "lavender": {
+    "message": "熏衣草紫"
+  },
+  "yellow": {
+    "message": "黄色"
+  },
+  "indigo": {
+    "message": "靛青色"
+  },
+  "teal": {
+    "message": "蓝绿色"
+  },
+  "salmon": {
+    "message": "鲑红"
+  },
+  "pink": {
+    "message": "粉红色"
+  },
+  "customColor": {
+    "message": "自定义颜色"
+  },
   "multiSelectPlaceholder": {
     "message": "-- 键入以筛选 --"
   },
@@ -5521,6 +5560,15 @@
   },
   "deleteSecrets": {
     "message": "删除机密"
+  },
+  "secretProjectAssociationDescription": {
+    "message": "Select projects that the secret will be associated with. Only organization users with access to these projects will be able to see the secret."
+  },
+  "typeOrSelectProjects": {
+    "message": "Type or select Projects"
+  },
+  "typeOrSelectProject": {
+    "message": "Type or select Project"
   },
   "project": {
     "message": "项目"

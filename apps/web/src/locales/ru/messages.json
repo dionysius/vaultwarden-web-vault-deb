@@ -5475,6 +5475,45 @@
   "notYou": {
     "message": "Не вы?"
   },
+  "pickAnAvatarColor": {
+    "message": "Выбрать цвет аватара"
+  },
+  "customizeAvatar": {
+    "message": "Настроить аватар"
+  },
+  "avatarUpdated": {
+    "message": "Аватар обновлен"
+  },
+  "brightBlue": {
+    "message": "Ярко-голубой"
+  },
+  "green": {
+    "message": "Зеленый"
+  },
+  "orange": {
+    "message": "Оранжевый"
+  },
+  "lavender": {
+    "message": "Лавандовый"
+  },
+  "yellow": {
+    "message": "Желтый"
+  },
+  "indigo": {
+    "message": "Фиолетовый"
+  },
+  "teal": {
+    "message": "Бирюзовый"
+  },
+  "salmon": {
+    "message": "Лососевый"
+  },
+  "pink": {
+    "message": "Розовый"
+  },
+  "customColor": {
+    "message": "Пользовательский цвет"
+  },
   "multiSelectPlaceholder": {
     "message": "-- Тип фильтра --"
   },
@@ -5521,6 +5560,15 @@
   },
   "deleteSecrets": {
     "message": "Удалить секреты"
+  },
+  "secretProjectAssociationDescription": {
+    "message": "Select projects that the secret will be associated with. Only organization users with access to these projects will be able to see the secret."
+  },
+  "typeOrSelectProjects": {
+    "message": "Type or select Projects"
+  },
+  "typeOrSelectProject": {
+    "message": "Type or select Project"
   },
   "project": {
     "message": "Проект"

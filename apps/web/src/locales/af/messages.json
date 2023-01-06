@@ -174,7 +174,7 @@
     "message": "Verwyder"
   },
   "unassigned": {
-    "message": "Unassigned"
+    "message": "Nie-toegewys"
   },
   "noneFolder": {
     "message": "Geen vouer",
@@ -263,7 +263,7 @@
     "message": "Gunsteling"
   },
   "unfavorite": {
-    "message": "Unfavorite"
+    "message": "Nie-gunsteling"
   },
   "edit": {
     "message": "Wysig"
@@ -452,7 +452,7 @@
     "message": "Kies alles"
   },
   "unselectAll": {
-    "message": "Unselect all"
+    "message": "Onkies alles"
   },
   "launch": {
     "message": "Lanseer"
@@ -5475,6 +5475,45 @@
   "notYou": {
     "message": "Not you?"
   },
+  "pickAnAvatarColor": {
+    "message": "Kies 'n avatar kleur"
+  },
+  "customizeAvatar": {
+    "message": "Pas avatar aan"
+  },
+  "avatarUpdated": {
+    "message": "Avatar opgedateer"
+  },
+  "brightBlue": {
+    "message": "Bright Blue"
+  },
+  "green": {
+    "message": "Green"
+  },
+  "orange": {
+    "message": "Orange"
+  },
+  "lavender": {
+    "message": "Lavender"
+  },
+  "yellow": {
+    "message": "Yellow"
+  },
+  "indigo": {
+    "message": "Indigo"
+  },
+  "teal": {
+    "message": "Teal"
+  },
+  "salmon": {
+    "message": "Salmon"
+  },
+  "pink": {
+    "message": "Pink"
+  },
+  "customColor": {
+    "message": "Custom Color"
+  },
   "multiSelectPlaceholder": {
     "message": "-- Type to Filter --"
   },
@@ -5521,6 +5560,15 @@
   },
   "deleteSecrets": {
     "message": "Delete Secrets"
+  },
+  "secretProjectAssociationDescription": {
+    "message": "Select projects that the secret will be associated with. Only organization users with access to these projects will be able to see the secret."
+  },
+  "typeOrSelectProjects": {
+    "message": "Type or select Projects"
+  },
+  "typeOrSelectProject": {
+    "message": "Type or select Project"
   },
   "project": {
     "message": "Project"

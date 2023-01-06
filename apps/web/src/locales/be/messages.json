@@ -5475,6 +5475,45 @@
   "notYou": {
     "message": "Не вы?"
   },
+  "pickAnAvatarColor": {
+    "message": "Выберыце колер аватара"
+  },
+  "customizeAvatar": {
+    "message": "Дапасаваць аватар"
+  },
+  "avatarUpdated": {
+    "message": "Аватар абноўлены"
+  },
+  "brightBlue": {
+    "message": "Ярка-блакітны"
+  },
+  "green": {
+    "message": "Зялёны"
+  },
+  "orange": {
+    "message": "Аранжавы"
+  },
+  "lavender": {
+    "message": "Пурпурны"
+  },
+  "yellow": {
+    "message": "Жоўты"
+  },
+  "indigo": {
+    "message": "Індыга"
+  },
+  "teal": {
+    "message": "Сіне-зялёны"
+  },
+  "salmon": {
+    "message": "Ласосевы"
+  },
+  "pink": {
+    "message": "Ружовы"
+  },
+  "customColor": {
+    "message": "Карыстальніцкі колер"
+  },
   "multiSelectPlaceholder": {
     "message": "- Увядзіце для фільтрацыі -"
   },
@@ -5521,6 +5560,15 @@
   },
   "deleteSecrets": {
     "message": "Выдаліць сакрэты"
+  },
+  "secretProjectAssociationDescription": {
+    "message": "Select projects that the secret will be associated with. Only organization users with access to these projects will be able to see the secret."
+  },
+  "typeOrSelectProjects": {
+    "message": "Type or select Projects"
+  },
+  "typeOrSelectProject": {
+    "message": "Type or select Project"
   },
   "project": {
     "message": "Праект"

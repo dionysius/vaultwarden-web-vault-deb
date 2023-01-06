@@ -5475,6 +5475,45 @@
   "notYou": {
     "message": "Това не сте Вие?"
   },
+  "pickAnAvatarColor": {
+    "message": "Изберете цвят за аватара"
+  },
+  "customizeAvatar": {
+    "message": "Персонализиране на аватара"
+  },
+  "avatarUpdated": {
+    "message": "Аватарът е обновен"
+  },
+  "brightBlue": {
+    "message": "Ярко синьо"
+  },
+  "green": {
+    "message": "Зелено"
+  },
+  "orange": {
+    "message": "Оранжево"
+  },
+  "lavender": {
+    "message": "Лавандула"
+  },
+  "yellow": {
+    "message": "Жълто"
+  },
+  "indigo": {
+    "message": "Индиго"
+  },
+  "teal": {
+    "message": "Синьозелено"
+  },
+  "salmon": {
+    "message": "Сьомга"
+  },
+  "pink": {
+    "message": "Розово"
+  },
+  "customColor": {
+    "message": "Персонализиран цвят"
+  },
   "multiSelectPlaceholder": {
     "message": "-- Пишете тук за филтриране --"
   },
@@ -5521,6 +5560,15 @@
   },
   "deleteSecrets": {
     "message": "Изтриване на тайните"
+  },
+  "secretProjectAssociationDescription": {
+    "message": "Select projects that the secret will be associated with. Only organization users with access to these projects will be able to see the secret."
+  },
+  "typeOrSelectProjects": {
+    "message": "Type or select Projects"
+  },
+  "typeOrSelectProject": {
+    "message": "Type or select Project"
   },
   "project": {
     "message": "Проект"

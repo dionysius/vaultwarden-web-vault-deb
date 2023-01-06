@@ -5475,6 +5475,45 @@
   "notYou": {
     "message": "Nicht du?"
   },
+  "pickAnAvatarColor": {
+    "message": "Wähle eine Avatar-Farbe"
+  },
+  "customizeAvatar": {
+    "message": "Avatar anpassen"
+  },
+  "avatarUpdated": {
+    "message": "Avatar aktualisiert"
+  },
+  "brightBlue": {
+    "message": "Leuchtendes Blau"
+  },
+  "green": {
+    "message": "Grün"
+  },
+  "orange": {
+    "message": "Orange"
+  },
+  "lavender": {
+    "message": "Lavendel"
+  },
+  "yellow": {
+    "message": "Gelb"
+  },
+  "indigo": {
+    "message": "Indigoblau"
+  },
+  "teal": {
+    "message": "Türkis"
+  },
+  "salmon": {
+    "message": "Lachsrosa"
+  },
+  "pink": {
+    "message": "Rosa"
+  },
+  "customColor": {
+    "message": "Eigene Farbe"
+  },
   "multiSelectPlaceholder": {
     "message": "-- Typ zum Filtern --"
   },
@@ -5521,6 +5560,15 @@
   },
   "deleteSecrets": {
     "message": "Geheimnisse löschen"
+  },
+  "secretProjectAssociationDescription": {
+    "message": "Wähle Projekte aus, denen das Geheimnis zugeordnet werden soll. Nur Organisationsbenutzer mit Zugriff auf diese Projekte können das Geheimnis sehen."
+  },
+  "typeOrSelectProjects": {
+    "message": "Projektnamen eingeben oder auswählen"
+  },
+  "typeOrSelectProject": {
+    "message": "Projektname eingeben oder auswählen"
   },
   "project": {
     "message": "Projekt"
@@ -5631,7 +5679,7 @@
     "message": "Name des Dienstkontos"
   },
   "newSaSelectAccess": {
-    "message": "Projekte oder Geheimnisse eingeben oder auswählen"
+    "message": "Projektnamen oder Geheimnisse eingeben oder auswählen"
   },
   "newSaTypeToFilter": {
     "message": "Schreiben, um zu filtern"
