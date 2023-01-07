@@ -66,8 +66,8 @@ export abstract class CipherService {
   deleteManyWithServer: (ids: string[]) => Promise<any>;
   deleteAttachment: (id: string, attachmentId: string) => Promise<void>;
   deleteAttachmentWithServer: (id: string, attachmentId: string) => Promise<void>;
-  sortCiphersByLastUsed: (a: any, b: any) => number;
-  sortCiphersByLastUsedThenName: (a: any, b: any) => number;
+  sortCiphersByLastUsed: (a: CipherView, b: CipherView) => number;
+  sortCiphersByLastUsedThenName: (a: CipherView, b: CipherView) => number;
   getLocaleSortingFunction: () => (a: CipherView, b: CipherView) => number;
   softDelete: (id: string | string[]) => Promise<any>;
   softDeleteWithServer: (id: string) => Promise<any>;

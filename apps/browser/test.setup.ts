@@ -25,8 +25,14 @@ const runtime = {
   getManifest: jest.fn(),
 };
 
+const contextMenus = {
+  create: jest.fn(),
+  removeAll: jest.fn(),
+};
+
 // set chrome
 global.chrome = {
   storage,
   runtime,
+  contextMenus,
 } as any;

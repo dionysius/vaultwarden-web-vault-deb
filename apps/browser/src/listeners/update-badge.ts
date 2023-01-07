@@ -43,31 +43,47 @@ export class UpdateBadge {
     "deletedCipher",
   ];
 
-  static async tabsOnActivatedListener(activeInfo: chrome.tabs.TabActiveInfo) {
-    await new UpdateBadge(self).run({ tabId: activeInfo.tabId, windowId: activeInfo.windowId });
+  static async tabsOnActivatedListener(
+    activeInfo: chrome.tabs.TabActiveInfo,
+    serviceCache: Record<string, unknown>
+  ) {
+    await new UpdateBadge(self).run({
+      tabId: activeInfo.tabId,
+      existingServices: serviceCache,
+      windowId: activeInfo.windowId,
+    });
   }
 
-  static async tabsOnReplacedListener(addedTabId: number, removedTabId: number) {
-    await new UpdateBadge(self).run({ tabId: addedTabId });
+  static async tabsOnReplacedListener(
+    addedTabId: number,
+    removedTabId: number,
+    serviceCache: Record<string, unknown>
+  ) {
+    await new UpdateBadge(self).run({ tabId: addedTabId, existingServices: serviceCache });
   }
 
   static async tabsOnUpdatedListener(
     tabId: number,
     changeInfo: chrome.tabs.TabChangeInfo,
-    tab: chrome.tabs.Tab
+    tab: chrome.tabs.Tab,
+    serviceCache: Record<string, unknown>
   ) {
-    await new UpdateBadge(self).run({ tabId, windowId: tab.windowId });
+    await new UpdateBadge(self).run({
+      tabId,
+      existingServices: serviceCache,
+      windowId: tab.windowId,
+    });
   }
 
   static async messageListener(
-    serviceCache: Record<string, unknown>,
-    message: { command: string; tabId: number }
+    message: { command: string; tabId: number },
+    serviceCache: Record<string, unknown>
   ) {
     if (!UpdateBadge.listenedToCommands.includes(message.command)) {
       return;
     }
 
-    await new UpdateBadge(self).run();
+    await new UpdateBadge(self).run({ existingServices: serviceCache });
   }
 
   constructor(win: Window & typeof globalThis) {

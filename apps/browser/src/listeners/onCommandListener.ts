@@ -14,7 +14,7 @@ import {
 import { stateServiceFactory } from "../background/service_factories/state-service.factory";
 import { BrowserApi } from "../browser/browserApi";
 import { GeneratePasswordToClipboardCommand } from "../clipboard";
-import { AutoFillActiveTabCommand } from "../commands/autoFillActiveTabCommand";
+import { AutofillTabCommand } from "../commands/autofill-tab-command";
 import { Account } from "../models/account";
 
 export const onCommandListener = async (command: string, tab: chrome.tabs.Tab) => {
@@ -75,8 +75,8 @@ const doAutoFillLogin = async (tab: chrome.tabs.Tab): Promise<void> => {
     return;
   }
 
-  const command = new AutoFillActiveTabCommand(autofillService);
-  await command.doAutoFillActiveTabCommand(tab);
+  const command = new AutofillTabCommand(autofillService);
+  await command.doAutofillTabCommand(tab);
 };
 
 const doGeneratePasswordToClipboard = async (tab: chrome.tabs.Tab): Promise<void> => {

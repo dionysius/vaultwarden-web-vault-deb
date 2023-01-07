@@ -1,10 +1,12 @@
+import { CipherView } from "@bitwarden/common/models/view/cipher.view";
+
 import AutofillPageDetails from "../models/autofillPageDetails";
 import { AutofillService } from "../services/abstractions/autofill.service";
 
-export class AutoFillActiveTabCommand {
+export class AutofillTabCommand {
   constructor(private autofillService: AutofillService) {}
 
-  async doAutoFillActiveTabCommand(tab: chrome.tabs.Tab) {
+  async doAutofillTabCommand(tab: chrome.tabs.Tab) {
     if (!tab.id) {
       throw new Error("Tab does not have an id, cannot complete autofill.");
     }
@@ -21,6 +23,30 @@ export class AutoFillActiveTabCommand {
       tab,
       true
     );
+  }
+
+  async doAutofillTabWithCipherCommand(tab: chrome.tabs.Tab, cipher: CipherView) {
+    if (!tab.id) {
+      throw new Error("Tab does not have an id, cannot complete autofill.");
+    }
+
+    const details = await this.collectPageDetails(tab.id);
+    await this.autofillService.doAutoFill({
+      tab: tab,
+      cipher: cipher,
+      pageDetails: [
+        {
+          frameId: 0,
+          tab: tab,
+          details: details,
+        },
+      ],
+      skipLastUsed: false,
+      skipUsernameOnlyFill: false,
+      onlyEmptyFields: false,
+      onlyVisibleFields: false,
+      fillNewPassword: true,
+    });
   }
 
   private async collectPageDetails(tabId: number): Promise<AutofillPageDetails> {

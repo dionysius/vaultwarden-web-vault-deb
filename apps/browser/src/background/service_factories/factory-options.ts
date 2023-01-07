@@ -1,4 +1,4 @@
-export type CachedServices = Record<string, any>;
+export type CachedServices = Record<string, unknown>;
 
 export type FactoryOptions = {
   alwaysInitializeNewService?: boolean;

@@ -207,7 +207,6 @@
 ./apps/browser/src/safari/safari/SafariWebExtensionHandler.swift
 ./apps/browser/src/safari/safari/Info.plist
 ./apps/browser/src/safari/desktop.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
-./apps/browser/src/commands/autoFillActiveTabCommand.ts
 ./apps/browser/src/listeners/onCommandListener.ts
 ./apps/browser/src/listeners/onInstallListener.ts
 ./apps/browser/src/services/browserFileDownloadService.ts

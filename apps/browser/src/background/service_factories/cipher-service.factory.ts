@@ -47,7 +47,7 @@ export function cipherServiceFactory(
         await fileUploadServiceFactory(cache, opts),
         await i18nServiceFactory(cache, opts),
         opts.cipherServiceOptions?.searchServiceFactory === undefined
-          ? () => cache.searchService
+          ? () => cache.searchService as SearchService
           : opts.cipherServiceOptions.searchServiceFactory,
         await logServiceFactory(cache, opts),
         await stateServiceFactory(cache, opts),

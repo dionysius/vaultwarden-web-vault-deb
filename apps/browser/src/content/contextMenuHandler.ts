@@ -54,9 +54,12 @@ document.addEventListener("contextmenu", (event) => {
 });
 
 // Runs when the 'Copy Custom Field Name' context menu item is actually clicked.
-chrome.runtime.onMessage.addListener((event) => {
+chrome.runtime.onMessage.addListener((event, _sender, sendResponse) => {
   if (event.command === "getClickedElement") {
     const identifier = getClickedElementIdentifier();
+    if (sendResponse) {
+      sendResponse(identifier);
+    }
     chrome.runtime.sendMessage({
       command: "getClickedElementResponse",
       sender: "contextMenuHandler",

@@ -44,7 +44,7 @@ export class BrowserApi {
 
   static async tabsQuery(options: chrome.tabs.QueryInfo): Promise<chrome.tabs.Tab[]> {
     return new Promise((resolve) => {
-      chrome.tabs.query(options, (tabs: any[]) => {
+      chrome.tabs.query(options, (tabs) => {
         resolve(tabs);
       });
     });
@@ -63,7 +63,7 @@ export class BrowserApi {
     tab: chrome.tabs.Tab,
     command: string,
     data: any = null
-  ): Promise<any[]> {
+  ): Promise<void> {
     const obj: any = {
       command: command,
     };
@@ -75,11 +75,11 @@ export class BrowserApi {
     return BrowserApi.tabSendMessage(tab, obj);
   }
 
-  static async tabSendMessage(
+  static async tabSendMessage<T>(
     tab: chrome.tabs.Tab,
-    obj: any,
+    obj: T,
     options: chrome.tabs.MessageSendOptions = null
-  ): Promise<any> {
+  ): Promise<void> {
     if (!tab || !tab.id) {
       return;
     }
@@ -94,12 +94,13 @@ export class BrowserApi {
     });
   }
 
-  static sendTabsMessage<T = never>(
+  static sendTabsMessage<T>(
     tabId: number,
     message: TabMessage,
+    options?: chrome.tabs.MessageSendOptions,
     responseCallback?: (response: T) => void
   ) {
-    chrome.tabs.sendMessage<TabMessage, T>(tabId, message, responseCallback);
+    chrome.tabs.sendMessage<TabMessage, T>(tabId, message, options, responseCallback);
   }
 
   static async getPrivateModeWindows(): Promise<browser.windows.Window[]> {

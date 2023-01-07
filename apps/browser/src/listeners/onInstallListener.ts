@@ -1,13 +1,16 @@
 import { StateFactory } from "@bitwarden/common/factories/stateFactory";
 import { GlobalState } from "@bitwarden/common/models/domain/global-state";
 
-import { environmentServiceFactory } from "../background/service_factories/environment-service.factory";
+import {
+  environmentServiceFactory,
+  EnvironmentServiceInitOptions,
+} from "../background/service_factories/environment-service.factory";
 import { BrowserApi } from "../browser/browserApi";
 import { Account } from "../models/account";
 
 export async function onInstallListener(details: chrome.runtime.InstalledDetails) {
   const cache = {};
-  const opts = {
+  const opts: EnvironmentServiceInitOptions = {
     encryptServiceOptions: {
       logMacFailures: false,
     },
@@ -27,7 +30,7 @@ export async function onInstallListener(details: chrome.runtime.InstalledDetails
   const environmentService = await environmentServiceFactory(cache, opts);
 
   setTimeout(async () => {
-    if (details.reason != null && details.reason === "install") {
+    if (details.reason != null && details.reason === chrome.runtime.OnInstalledReason.INSTALL) {
       BrowserApi.createNewTab("https://bitwarden.com/browser-start/");
 
       if (await environmentService.hasManagedEnvironment()) {
