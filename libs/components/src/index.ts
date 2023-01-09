@@ -3,6 +3,7 @@ export * from "./avatar";
 export * from "./badge";
 export * from "./banner";
 export * from "./button";
+export * from "./breadcrumbs";
 export * from "./callout";
 export * from "./checkbox";
 export * from "./color-password";
