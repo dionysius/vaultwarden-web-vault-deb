@@ -39,17 +39,7 @@ export class VerifyEmailComponent {
     );
   }
 
-  async send() {
-    if (this.actionPromise != null) {
-      return;
-    }
-
-    try {
-      this.actionPromise = this.verifyEmail();
-      await this.actionPromise;
-    } catch (e) {
-      this.logService.error(e);
-    }
-    this.actionPromise = null;
-  }
+  send = async () => {
+    await this.verifyEmail();
+  };
 }

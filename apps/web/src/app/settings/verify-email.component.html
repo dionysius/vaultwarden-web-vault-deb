@@ -1,21 +1,11 @@
-<div class="card border-warning">
-  <div class="card-header bg-warning text-white">
+<div class="tw-rounded tw-border tw-border-solid tw-border-warning-500 tw-bg-background">
+  <div class="tw-bg-warning-500 tw-px-5 tw-py-2.5 tw-font-bold tw-uppercase tw-text-contrast">
     <i class="bwi bwi-envelope bwi-fw" aria-hidden="true"></i> {{ "verifyEmail" | i18n }}
   </div>
-  <div class="card-body">
+  <div class="tw-p-5">
     <p>{{ "verifyEmailDesc" | i18n }}</p>
-    <button
-      type="button"
-      class="btn btn-block btn-outline-secondary btn-submit"
-      #sendBtn
-      [appApiAction]="actionPromise"
-      [disabled]="$any(sendBtn).loading"
-      (click)="send()"
-    >
-      <i class="bwi bwi-spin bwi-spinner" title="{{ 'loading' | i18n }}" aria-hidden="true"></i>
-      <span>
-        {{ "sendEmail" | i18n }}
-      </span>
+    <button id="sendBtn" bitButton type="button" block [bitAction]="send">
+      {{ "sendEmail" | i18n }}
     </button>
   </div>
 </div>
