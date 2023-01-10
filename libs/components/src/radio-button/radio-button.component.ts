@@ -11,6 +11,7 @@ let nextId = 0;
 export class RadioButtonComponent {
   @HostBinding("attr.id") @Input() id = `bit-radio-button-${nextId++}`;
   @Input() value: unknown;
+  @Input() disabled = false;
 
   constructor(private groupComponent: RadioGroupComponent) {}
 
@@ -26,7 +27,7 @@ export class RadioButtonComponent {
     return this.groupComponent.selected === this.value;
   }
 
-  get disabled() {
+  get groupDisabled() {
     return this.groupComponent.disabled;
   }
 

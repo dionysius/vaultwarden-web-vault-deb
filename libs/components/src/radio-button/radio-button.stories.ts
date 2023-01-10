@@ -14,7 +14,7 @@ const template = `
       <bit-label *ngIf="label">Group of radio buttons</bit-label>
       <bit-radio-button [value]="TestValue.First" id="radio-first">First</bit-radio-button>
       <bit-radio-button [value]="TestValue.Second" id="radio-second">Second</bit-radio-button>
-      <bit-radio-button [value]="TestValue.Third" id="radio-third">Third</bit-radio-button>
+      <bit-radio-button [value]="TestValue.Third" [disabled]="optionDisabled" id="radio-third">Third</bit-radio-button>
     </bit-radio-group>
   </form>`;
 
@@ -41,13 +41,15 @@ class ExampleComponent {
     this.formObj.patchValue({ radio: value });
   }
 
-  @Input() set disabled(disable: boolean) {
+  @Input() set groupDisabled(disable: boolean) {
     if (disable) {
       this.formObj.disable();
     } else {
       this.formObj.enable();
     }
   }
+
+  @Input() optionDisabled = false;
 
   constructor(private formBuilder: FormBuilder) {}
 }
@@ -81,7 +83,8 @@ export default {
   },
   args: {
     selected: TestValue.First,
-    disabled: false,
+    groupDisabled: false,
+    optionDisabled: false,
     label: true,
   },
   argTypes: {
@@ -101,7 +104,7 @@ export default {
 
 const DefaultTemplate: Story<ExampleComponent> = (args: ExampleComponent) => ({
   props: args,
-  template: `<app-example [selected]="selected" [disabled]="disabled" [label]="label"></app-example>`,
+  template: `<app-example [selected]="selected" [groupDisabled]="groupDisabled" [optionDisabled]="optionDisabled" [label]="label"></app-example>`,
 });
 
 export const Default = DefaultTemplate.bind({});
