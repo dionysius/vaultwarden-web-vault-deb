@@ -53,8 +53,16 @@ jobs:
           done
 
       - name: Run tests
-        run: |
-          npm run test
+        run: npm run test
+
+      - name: Report test results
+        uses: dorny/test-reporter@c9b3d0e2bd2a4e96aaf424dbaa31c46b42318226
+        if: always()
+        with:
+          name: Test Results
+          path: "junit.xml"
+          reporter: jest-junit
+          fail-on-error: true
 
   rust:
     name: rust - ${{ matrix.os }}
@@ -102,6 +110,4 @@ jobs:
       - name: Test Windows / macOS
         if: ${{ matrix.os!='ubuntu-latest' }}
         working-directory: ./apps/desktop/desktop_native
-        run: |
-          cargo test -- --test-threads=1
-
+        run: cargo test -- --test-threads=1

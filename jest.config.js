@@ -3,6 +3,8 @@ const { pathsToModuleNameMapper } = require("ts-jest");
 const { compilerOptions } = require("./tsconfig");
 
 module.exports = {
+  reporters: ["default", "jest-junit"],
+
   collectCoverage: true,
   coverageReporters: ["html", "lcov"],
   coverageDirectory: "coverage",
