@@ -3,7 +3,6 @@ import { Directive, ViewChild, ViewContainerRef } from "@angular/core";
 import { ModalService } from "@bitwarden/angular/services/modal.service";
 import { MessagingService } from "@bitwarden/common/abstractions/messaging.service";
 import { PasswordRepromptService } from "@bitwarden/common/abstractions/passwordReprompt.service";
-import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { CipherRepromptType } from "@bitwarden/common/enums/cipherRepromptType";
 import { Organization } from "@bitwarden/common/models/domain/organization";
 import { CipherView } from "@bitwarden/common/models/view/cipher.view";
@@ -25,7 +24,6 @@ export class CipherReportComponent {
     private modalService: ModalService,
     protected messagingService: MessagingService,
     public requiresPaid: boolean,
-    private stateService: StateService,
     protected passwordRepromptService: PasswordRepromptService
   ) {}
 

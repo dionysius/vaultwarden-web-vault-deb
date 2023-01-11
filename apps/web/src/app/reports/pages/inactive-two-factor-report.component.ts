@@ -5,7 +5,6 @@ import { CipherService } from "@bitwarden/common/abstractions/cipher.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { MessagingService } from "@bitwarden/common/abstractions/messaging.service";
 import { PasswordRepromptService } from "@bitwarden/common/abstractions/passwordReprompt.service";
-import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { CipherType } from "@bitwarden/common/enums/cipherType";
 import { Utils } from "@bitwarden/common/misc/utils";
 import { CipherView } from "@bitwarden/common/models/view/cipher.view";
@@ -24,11 +23,10 @@ export class InactiveTwoFactorReportComponent extends CipherReportComponent impl
     protected cipherService: CipherService,
     modalService: ModalService,
     messagingService: MessagingService,
-    stateService: StateService,
     private logService: LogService,
     passwordRepromptService: PasswordRepromptService
   ) {
-    super(modalService, messagingService, true, stateService, passwordRepromptService);
+    super(modalService, messagingService, true, passwordRepromptService);
   }
 
   async ngOnInit() {

@@ -7,7 +7,6 @@ import { MessagingService } from "@bitwarden/common/abstractions/messaging.servi
 import { OrganizationService } from "@bitwarden/common/abstractions/organization/organization.service.abstraction";
 import { PasswordGenerationService } from "@bitwarden/common/abstractions/passwordGeneration.service";
 import { PasswordRepromptService } from "@bitwarden/common/abstractions/passwordReprompt.service";
-import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { Cipher } from "@bitwarden/common/models/domain/cipher";
 import { CipherView } from "@bitwarden/common/models/view/cipher.view";
 
@@ -27,7 +26,6 @@ export class WeakPasswordsReportComponent extends BaseWeakPasswordsReportCompone
     passwordGenerationService: PasswordGenerationService,
     modalService: ModalService,
     messagingService: MessagingService,
-    stateService: StateService,
     private route: ActivatedRoute,
     private organizationService: OrganizationService,
     passwordRepromptService: PasswordRepromptService
@@ -37,7 +35,6 @@ export class WeakPasswordsReportComponent extends BaseWeakPasswordsReportCompone
       passwordGenerationService,
       modalService,
       messagingService,
-      stateService,
       passwordRepromptService
     );
   }

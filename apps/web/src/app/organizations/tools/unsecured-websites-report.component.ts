@@ -6,7 +6,6 @@ import { CipherService } from "@bitwarden/common/abstractions/cipher.service";
 import { MessagingService } from "@bitwarden/common/abstractions/messaging.service";
 import { OrganizationService } from "@bitwarden/common/abstractions/organization/organization.service.abstraction";
 import { PasswordRepromptService } from "@bitwarden/common/abstractions/passwordReprompt.service";
-import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { CipherView } from "@bitwarden/common/models/view/cipher.view";
 
 // eslint-disable-next-line no-restricted-imports
@@ -22,12 +21,11 @@ export class UnsecuredWebsitesReportComponent extends BaseUnsecuredWebsitesRepor
     cipherService: CipherService,
     modalService: ModalService,
     messagingService: MessagingService,
-    stateService: StateService,
     private route: ActivatedRoute,
     private organizationService: OrganizationService,
     passwordRepromptService: PasswordRepromptService
   ) {
-    super(cipherService, modalService, messagingService, stateService, passwordRepromptService);
+    super(cipherService, modalService, messagingService, passwordRepromptService);
   }
 
   async ngOnInit() {

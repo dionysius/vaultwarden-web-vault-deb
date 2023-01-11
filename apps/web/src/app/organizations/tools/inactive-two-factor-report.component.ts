@@ -7,7 +7,6 @@ import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { MessagingService } from "@bitwarden/common/abstractions/messaging.service";
 import { OrganizationService } from "@bitwarden/common/abstractions/organization/organization.service.abstraction";
 import { PasswordRepromptService } from "@bitwarden/common/abstractions/passwordReprompt.service";
-import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { CipherView } from "@bitwarden/common/models/view/cipher.view";
 
 // eslint-disable-next-line no-restricted-imports
@@ -23,20 +22,12 @@ export class InactiveTwoFactorReportComponent extends BaseInactiveTwoFactorRepor
     cipherService: CipherService,
     modalService: ModalService,
     messagingService: MessagingService,
-    stateService: StateService,
     private route: ActivatedRoute,
     logService: LogService,
     passwordRepromptService: PasswordRepromptService,
     private organizationService: OrganizationService
   ) {
-    super(
-      cipherService,
-      modalService,
-      messagingService,
-      stateService,
-      logService,
-      passwordRepromptService
-    );
+    super(cipherService, modalService, messagingService, logService, passwordRepromptService);
   }
 
   async ngOnInit() {

@@ -24,7 +24,7 @@ export class ReusedPasswordsReportComponent extends CipherReportComponent implem
     stateService: StateService,
     passwordRepromptService: PasswordRepromptService
   ) {
-    super(modalService, messagingService, true, stateService, passwordRepromptService);
+    super(modalService, messagingService, true, passwordRepromptService);
   }
 
   async ngOnInit() {
