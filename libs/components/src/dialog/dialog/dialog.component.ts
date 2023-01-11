@@ -1,9 +1,12 @@
 import { coerceBooleanProperty } from "@angular/cdk/coercion";
 import { Component, Input } from "@angular/core";
 
+import { fadeIn } from "../animations";
+
 @Component({
   selector: "bit-dialog",
   templateUrl: "./dialog.component.html",
+  animations: [fadeIn],
 })
 export class DialogComponent {
   @Input() dialogSize: "small" | "default" | "large" = "default";
