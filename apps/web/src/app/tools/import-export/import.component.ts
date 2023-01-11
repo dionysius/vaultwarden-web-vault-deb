@@ -10,6 +10,7 @@ import { ImportService } from "@bitwarden/common/abstractions/import.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { PolicyService } from "@bitwarden/common/abstractions/policy/policy.service.abstraction";
+import { SyncService } from "@bitwarden/common/abstractions/sync/sync.service.abstraction";
 import { ImportOption, ImportType } from "@bitwarden/common/enums/importOptions";
 import { PolicyType } from "@bitwarden/common/enums/policyType";
 import { ImportError } from "@bitwarden/common/importers/import-error";
@@ -40,7 +41,8 @@ export class ImportComponent implements OnInit {
     protected platformUtilsService: PlatformUtilsService,
     protected policyService: PolicyService,
     private logService: LogService,
-    protected modalService: ModalService
+    protected modalService: ModalService,
+    protected syncService: SyncService
   ) {}
 
   async ngOnInit() {
@@ -133,6 +135,7 @@ export class ImportComponent implements OnInit {
 
       //No errors, display success message
       this.platformUtilsService.showToast("success", null, this.i18nService.t("importSuccess"));
+      this.syncService.fullSync(true);
       this.router.navigate(this.successNavigate);
     } catch (e) {
       this.logService.error(e);
