@@ -328,8 +328,7 @@ export default class MainBackground {
     this.policyApiService = new PolicyApiService(
       this.policyService,
       this.apiService,
-      this.stateService,
-      this.organizationService
+      this.stateService
     );
     this.keyConnectorService = new KeyConnectorService(
       this.stateService,

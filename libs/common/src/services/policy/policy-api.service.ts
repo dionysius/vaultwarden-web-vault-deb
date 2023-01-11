@@ -1,7 +1,6 @@
 import { firstValueFrom } from "rxjs";
 
 import { ApiService } from "../../abstractions/api.service";
-import { OrganizationService } from "../../abstractions/organization/organization.service.abstraction";
 import { PolicyApiServiceAbstraction } from "../../abstractions/policy/policy-api.service.abstraction";
 import { InternalPolicyService } from "../../abstractions/policy/policy.service.abstraction";
 import { StateService } from "../../abstractions/state.service";
@@ -16,8 +15,7 @@ export class PolicyApiService implements PolicyApiServiceAbstraction {
   constructor(
     private policyService: InternalPolicyService,
     private apiService: ApiService,
-    private stateService: StateService,
-    private organizationService: OrganizationService
+    private stateService: StateService
   ) {}
 
   async getPolicy(organizationId: string, type: PolicyType): Promise<PolicyResponse> {
