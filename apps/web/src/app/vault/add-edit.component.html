@@ -134,6 +134,7 @@
                     appStopClick
                     [appA11yTitle]="'toggleCharacterCount' | i18n"
                     (click)="togglePasswordCount()"
+                    *ngIf="cipher.viewPassword"
                   >
                     <i class="bwi bwi-lg bwi-fw bwi-numbered-list" aria-hidden="true"></i>
                   </a>
