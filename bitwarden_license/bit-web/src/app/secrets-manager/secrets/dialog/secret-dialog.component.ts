@@ -64,6 +64,10 @@ export class SecretDialogComponent implements OnInit {
       .get("project")
       .valueChanges.pipe(takeUntil(this.destroy$))
       .subscribe(() => this.updateProjectList());
+
+    if (this.data.projectId) {
+      this.formGroup.get("project").setValue(this.data.projectId);
+    }
   }
 
   async loadData() {
