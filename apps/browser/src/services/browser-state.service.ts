@@ -1,7 +1,5 @@
 import { BehaviorSubject } from "rxjs";
-import { Jsonify } from "type-fest";
 
-import { AbstractCachedStorageService } from "@bitwarden/common/abstractions/storage.service";
 import { GlobalState } from "@bitwarden/common/models/domain/global-state";
 import { StorageOptions } from "@bitwarden/common/models/domain/storage-options";
 import { StateService as BaseStateService } from "@bitwarden/common/services/state.service";
@@ -35,20 +33,6 @@ export class BrowserStateService
   protected accountDiskCache: BehaviorSubject<Record<string, Account>>;
 
   protected accountDeserializer = Account.fromJSON;
-
-  async hasInSessionMemory(key: string): Promise<boolean> {
-    return await this.memoryStorageService.has(key);
-  }
-
-  async getFromSessionMemory<T>(key: string, deserializer?: (obj: Jsonify<T>) => T): Promise<T> {
-    return this.memoryStorageService instanceof AbstractCachedStorageService
-      ? await this.memoryStorageService.getBypassCache<T>(key, { deserializer: deserializer })
-      : await this.memoryStorageService.get<T>(key);
-  }
-
-  async setInSessionMemory(key: string, value: any): Promise<void> {
-    await this.memoryStorageService.save(key, value);
-  }
 
   async addAccount(account: Account) {
     // Apply browser overrides to default account values

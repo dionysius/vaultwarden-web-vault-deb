@@ -40,7 +40,10 @@ import { SendService } from "@bitwarden/common/abstractions/send.service";
 import { SettingsService } from "@bitwarden/common/abstractions/settings.service";
 import { StateService as BaseStateServiceAbstraction } from "@bitwarden/common/abstractions/state.service";
 import { StateMigrationService } from "@bitwarden/common/abstractions/stateMigration.service";
-import { AbstractStorageService } from "@bitwarden/common/abstractions/storage.service";
+import {
+  AbstractMemoryStorageService,
+  AbstractStorageService,
+} from "@bitwarden/common/abstractions/storage.service";
 import { SyncService } from "@bitwarden/common/abstractions/sync/sync.service.abstraction";
 import { TokenService } from "@bitwarden/common/abstractions/token.service";
 import { TotpService } from "@bitwarden/common/abstractions/totp.service";
@@ -329,7 +332,7 @@ function getBgService<T>(service: keyof MainBackground) {
       useFactory: (
         storageService: AbstractStorageService,
         secureStorageService: AbstractStorageService,
-        memoryStorageService: AbstractStorageService,
+        memoryStorageService: AbstractMemoryStorageService,
         logService: LogServiceAbstraction,
         stateMigrationService: StateMigrationService
       ) => {

@@ -1,9 +1,9 @@
 import { BehaviorSubject, concatMap, ReplaySubject, Subject, Subscription } from "rxjs";
 
+import { AbstractMemoryStorageService } from "@bitwarden/common/abstractions/storage.service";
 import { Utils } from "@bitwarden/common/misc/utils";
 
 import { BrowserApi } from "../../browser/browserApi";
-import { BrowserStateService } from "../../services/abstractions/browser-state.service";
 
 import { SyncedItemMetadata } from "./sync-item-metadata";
 
@@ -16,7 +16,7 @@ export class SessionSyncer {
 
   constructor(
     private subject: Subject<any>,
-    private stateService: BrowserStateService,
+    private memoryStorageService: AbstractMemoryStorageService,
     private metaData: SyncedItemMetadata
   ) {
     if (!(subject instanceof Subject)) {
@@ -43,7 +43,7 @@ export class SessionSyncer {
 
     this.observe();
     // must be synchronous
-    this.stateService.hasInSessionMemory(this.metaData.sessionKey).then((hasInSessionMemory) => {
+    this.memoryStorageService.has(this.metaData.sessionKey).then((hasInSessionMemory) => {
       if (hasInSessionMemory) {
         this.update();
       }
@@ -86,13 +86,15 @@ export class SessionSyncer {
 
   async update() {
     const builder = SyncedItemMetadata.builder(this.metaData);
-    const value = await this.stateService.getFromSessionMemory(this.metaData.sessionKey, builder);
+    const value = await this.memoryStorageService.getBypassCache(this.metaData.sessionKey, {
+      deserializer: builder,
+    });
     this.ignoreNUpdates = 1;
     this.subject.next(value);
   }
 
   private async updateSession(value: any) {
-    await this.stateService.setInSessionMemory(this.metaData.sessionKey, value);
+    await this.memoryStorageService.save(this.metaData.sessionKey, value);
     await BrowserApi.sendMessage(this.updateMessageCommand, { id: this.id });
   }
 

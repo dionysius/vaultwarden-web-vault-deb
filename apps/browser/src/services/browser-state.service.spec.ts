@@ -1,9 +1,8 @@
 import { mock, MockProxy } from "jest-mock-extended";
 
-import { EncryptService } from "@bitwarden/common/abstractions/encrypt.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
 import {
-  MemoryStorageServiceInterface,
+  AbstractMemoryStorageService,
   AbstractStorageService,
 } from "@bitwarden/common/abstractions/storage.service";
 import { SendType } from "@bitwarden/common/enums/sendType";
@@ -18,9 +17,10 @@ import { BrowserComponentState } from "../models/browserComponentState";
 import { BrowserGroupingsComponentState } from "../models/browserGroupingsComponentState";
 import { BrowserSendComponentState } from "../models/browserSendComponentState";
 
-import { AbstractKeyGenerationService } from "./abstractions/abstractKeyGeneration.service";
 import { BrowserStateService } from "./browser-state.service";
-import { LocalBackedSessionStorageService } from "./localBackedSessionStorage.service";
+
+// disable session syncing to just test class
+jest.mock("../decorators/session-sync-observable/");
 
 describe("Browser State Service", () => {
   let secureStorageService: MockProxy<AbstractStorageService>;
@@ -50,41 +50,8 @@ describe("Browser State Service", () => {
     state.activeUserId = userId;
   });
 
-  describe("direct memory storage access", () => {
-    let memoryStorageService: LocalBackedSessionStorageService;
-
-    beforeEach(() => {
-      // We need `AbstractCachedStorageService` in the prototype chain to correctly test cache bypass.
-      memoryStorageService = new LocalBackedSessionStorageService(
-        mock<EncryptService>(),
-        mock<AbstractKeyGenerationService>()
-      );
-
-      sut = new BrowserStateService(
-        diskStorageService,
-        secureStorageService,
-        memoryStorageService,
-        logService,
-        stateMigrationService,
-        stateFactory,
-        useAccountCache
-      );
-    });
-
-    it("should bypass cache if possible", async () => {
-      const spyBypass = jest
-        .spyOn(memoryStorageService, "getBypassCache")
-        .mockResolvedValue("value");
-      const spyGet = jest.spyOn(memoryStorageService, "get");
-      const result = await sut.getFromSessionMemory("key");
-      expect(spyBypass).toHaveBeenCalled();
-      expect(spyGet).not.toHaveBeenCalled();
-      expect(result).toBe("value");
-    });
-  });
-
   describe("state methods", () => {
-    let memoryStorageService: MockProxy<AbstractStorageService & MemoryStorageServiceInterface>;
+    let memoryStorageService: MockProxy<AbstractMemoryStorageService>;
 
     beforeEach(() => {
       memoryStorageService = mock();

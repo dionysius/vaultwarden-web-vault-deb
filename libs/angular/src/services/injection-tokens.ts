@@ -1,10 +1,13 @@
 import { InjectionToken } from "@angular/core";
 
-import { AbstractStorageService } from "@bitwarden/common/abstractions/storage.service";
+import {
+  AbstractMemoryStorageService,
+  AbstractStorageService,
+} from "@bitwarden/common/abstractions/storage.service";
 import { StateFactory } from "@bitwarden/common/factories/stateFactory";
 
 export const WINDOW = new InjectionToken<Window>("WINDOW");
-export const MEMORY_STORAGE = new InjectionToken<AbstractStorageService>("MEMORY_STORAGE");
+export const MEMORY_STORAGE = new InjectionToken<AbstractMemoryStorageService>("MEMORY_STORAGE");
 export const SECURE_STORAGE = new InjectionToken<AbstractStorageService>("SECURE_STORAGE");
 export const STATE_FACTORY = new InjectionToken<StateFactory>("STATE_FACTORY");
 export const STATE_SERVICE_USE_CACHE = new InjectionToken<boolean>("STATE_SERVICE_USE_CACHE");

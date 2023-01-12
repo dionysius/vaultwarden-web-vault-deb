@@ -1,10 +1,7 @@
 import { Jsonify } from "type-fest";
 
 import { EncryptService } from "@bitwarden/common/abstractions/encrypt.service";
-import {
-  AbstractCachedStorageService,
-  MemoryStorageServiceInterface,
-} from "@bitwarden/common/abstractions/storage.service";
+import { AbstractMemoryStorageService } from "@bitwarden/common/abstractions/storage.service";
 import { EncString } from "@bitwarden/common/models/domain/enc-string";
 import { MemoryStorageOptions } from "@bitwarden/common/models/domain/storage-options";
 import { SymmetricCryptoKey } from "@bitwarden/common/models/domain/symmetric-crypto-key";
@@ -21,10 +18,7 @@ const keys = {
   sessionKey: "session",
 };
 
-export class LocalBackedSessionStorageService
-  extends AbstractCachedStorageService
-  implements MemoryStorageServiceInterface
-{
+export class LocalBackedSessionStorageService extends AbstractMemoryStorageService {
   private cache = new Map<string, unknown>();
   private localStorage = new BrowserLocalStorageService();
   private sessionStorage = new BrowserMemoryStorageService();

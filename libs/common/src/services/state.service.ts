@@ -5,7 +5,7 @@ import { LogService } from "../abstractions/log.service";
 import { StateService as StateServiceAbstraction } from "../abstractions/state.service";
 import { StateMigrationService } from "../abstractions/stateMigration.service";
 import {
-  MemoryStorageServiceInterface,
+  AbstractMemoryStorageService,
   AbstractStorageService,
 } from "../abstractions/storage.service";
 import { HtmlStorageLocation } from "../enums/htmlStorageLocation";
@@ -87,7 +87,7 @@ export class StateService<
   constructor(
     protected storageService: AbstractStorageService,
     protected secureStorageService: AbstractStorageService,
-    protected memoryStorageService: AbstractStorageService & MemoryStorageServiceInterface,
+    protected memoryStorageService: AbstractMemoryStorageService,
     protected logService: LogService,
     protected stateMigrationService: StateMigrationService,
     protected stateFactory: StateFactory<TGlobalState, TAccount>,

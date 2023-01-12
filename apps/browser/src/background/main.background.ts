@@ -28,7 +28,10 @@ import { ProviderService as ProviderServiceAbstraction } from "@bitwarden/common
 import { SearchService as SearchServiceAbstraction } from "@bitwarden/common/abstractions/search.service";
 import { SendService as SendServiceAbstraction } from "@bitwarden/common/abstractions/send.service";
 import { SettingsService as SettingsServiceAbstraction } from "@bitwarden/common/abstractions/settings.service";
-import { AbstractStorageService } from "@bitwarden/common/abstractions/storage.service";
+import {
+  AbstractMemoryStorageService,
+  AbstractStorageService,
+} from "@bitwarden/common/abstractions/storage.service";
 import { SyncService as SyncServiceAbstraction } from "@bitwarden/common/abstractions/sync/sync.service.abstraction";
 import { SyncNotifierService as SyncNotifierServiceAbstraction } from "@bitwarden/common/abstractions/sync/syncNotifier.service.abstraction";
 import { SystemService as SystemServiceAbstraction } from "@bitwarden/common/abstractions/system.service";
@@ -123,7 +126,7 @@ export default class MainBackground {
   messagingService: MessagingServiceAbstraction;
   storageService: AbstractStorageService;
   secureStorageService: AbstractStorageService;
-  memoryStorageService: AbstractStorageService;
+  memoryStorageService: AbstractMemoryStorageService;
   i18nService: I18nServiceAbstraction;
   platformUtilsService: PlatformUtilsServiceAbstraction;
   logService: LogServiceAbstraction;

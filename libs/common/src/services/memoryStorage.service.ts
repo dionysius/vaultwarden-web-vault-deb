@@ -1,12 +1,6 @@
-import {
-  AbstractStorageService,
-  MemoryStorageServiceInterface,
-} from "../abstractions/storage.service";
+import { AbstractMemoryStorageService } from "../abstractions/storage.service";
 
-export class MemoryStorageService
-  extends AbstractStorageService
-  implements MemoryStorageServiceInterface
-{
+export class MemoryStorageService extends AbstractMemoryStorageService {
   private store = new Map<string, any>();
 
   get<T>(key: string): Promise<T> {
@@ -32,5 +26,9 @@ export class MemoryStorageService
   remove(key: string): Promise<any> {
     this.store.delete(key);
     return Promise.resolve();
+  }
+
+  getBypassCache<T>(key: string): Promise<T> {
+    return this.get<T>(key);
   }
 }

@@ -7,10 +7,11 @@ export abstract class AbstractStorageService {
   abstract remove(key: string, options?: StorageOptions): Promise<void>;
 }
 
-export abstract class AbstractCachedStorageService extends AbstractStorageService {
-  abstract getBypassCache<T>(key: string, options?: MemoryStorageOptions<T>): Promise<T>;
-}
+export abstract class AbstractMemoryStorageService extends AbstractStorageService {
+  // Used to identify the service in the session sync decorator framework
+  static readonly TYPE = "MemoryStorageService";
+  readonly type = AbstractMemoryStorageService.TYPE;
 
-export interface MemoryStorageServiceInterface {
-  get<T>(key: string, options?: MemoryStorageOptions<T>): Promise<T>;
+  abstract get<T>(key: string, options?: MemoryStorageOptions<T>): Promise<T>;
+  abstract getBypassCache<T>(key: string, options?: MemoryStorageOptions<T>): Promise<T>;
 }
