@@ -19,6 +19,9 @@ module.exports = {
       // Makes tests run faster and reduces size/rate of leak, but loses typechecking on test code
       // See https://bitwarden.atlassian.net/browse/EC-497 for more info
       isolatedModules: true,
+      astTransformers: {
+        before: ["<rootDir>/../../libs/shared/es2020-transformer.ts"],
+      },
     },
   },
 };
