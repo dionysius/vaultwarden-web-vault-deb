@@ -11,7 +11,7 @@
   </button>
 </sm-no-items>
 
-<bit-table *ngIf="projects?.length >= 1">
+<bit-table *ngIf="projects?.length >= 1" [dataSource]="dataSource">
   <ng-container header>
     <tr>
       <th bitCell class="tw-w-0">
@@ -25,8 +25,8 @@
           {{ "all" | i18n }}
         </label>
       </th>
-      <th bitCell colspan="2">{{ "name" | i18n }}</th>
-      <th bitCell>{{ "lastEdited" | i18n }}</th>
+      <th bitCell colspan="2" bitSortable="name" default>{{ "name" | i18n }}</th>
+      <th bitCell bitSortable="revisionDate">{{ "lastEdited" | i18n }}</th>
       <th bitCell class="tw-w-0">
         <button
           bitIconButton="bwi-ellipsis-v"
@@ -38,8 +38,8 @@
       </th>
     </tr>
   </ng-container>
-  <ng-container body>
-    <tr bitRow *ngFor="let project of projects; index as i">
+  <ng-template body let-rows$>
+    <tr bitRow *ngFor="let project of rows$ | async">
       <td bitCell>
         <input
           type="checkbox"
@@ -78,7 +78,7 @@
         </button>
       </bit-menu>
     </tr>
-  </ng-container>
+  </ng-template>
 </bit-table>
 
 <bit-menu #tableMenu>

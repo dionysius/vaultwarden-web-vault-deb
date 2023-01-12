@@ -75,7 +75,7 @@
         <th bitCell>{{ "event" | i18n }}</th>
       </tr>
     </ng-container>
-    <ng-container body>
+    <ng-template body>
       <tr bitRow *ngFor="let e of events" alignContent="top">
         <td bitCell class="tw-whitespace-nowrap">{{ e.date | date: "medium" }}</td>
         <td bitCell>
@@ -86,7 +86,7 @@
         </td>
         <td bitCell [innerHTML]="e.message"></td>
       </tr>
-    </ng-container>
+    </ng-template>
   </bit-table>
   <button
     #moreBtn

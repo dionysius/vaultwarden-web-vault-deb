@@ -40,7 +40,7 @@
       <th bitCell style="width: 50px"></th>
     </tr>
   </ng-container>
-  <ng-container body formArrayName="items">
+  <ng-template body formArrayName="items">
     <tr
       bitRow
       *ngFor="let item of selectionList.selectedItems; let i = index"
@@ -134,5 +134,5 @@
     <tr *ngIf="selectionList.selectedItems.length == 0">
       <td bitCell>{{ emptySelectionText }}</td>
     </tr>
-  </ng-container>
+  </ng-template>
 </bit-table>

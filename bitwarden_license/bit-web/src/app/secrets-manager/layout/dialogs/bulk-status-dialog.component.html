@@ -16,12 +16,12 @@
           <th bitCell>{{ "error" | i18n }}</th>
         </tr>
       </ng-container>
-      <ng-container body>
+      <ng-template body>
         <tr bitRow *ngFor="let detail of data.details">
           <td bitCell>{{ detail.name }}</td>
           <td bitCell>{{ detail.errorMessage }}</td>
         </tr>
-      </ng-container>
+      </ng-template>
     </bit-table>
   </div>
 

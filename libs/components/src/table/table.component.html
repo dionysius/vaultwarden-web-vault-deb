@@ -5,6 +5,8 @@
     <ng-content select="[header]"></ng-content>
   </thead>
   <tbody>
-    <ng-content select="[body]"></ng-content>
+    <ng-container
+      *ngTemplateOutlet="templateVariable.template; context: { $implicit: rows }"
+    ></ng-container>
   </tbody>
 </table>

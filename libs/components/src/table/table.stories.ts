@@ -1,12 +1,14 @@
+import { ScrollingModule } from "@angular/cdk/scrolling";
 import { Meta, moduleMetadata, Story } from "@storybook/angular";
 
+import { TableDataSource } from "./table-data-source";
 import { TableModule } from "./table.module";
 
 export default {
   title: "Component Library/Table",
   decorators: [
     moduleMetadata({
-      imports: [TableModule],
+      imports: [TableModule, ScrollingModule],
     }),
   ],
   argTypes: {
@@ -34,7 +36,7 @@ const Template: Story = (args) => ({
           <th bitCell>Header 3</th>
         </tr>
       </ng-container>
-      <ng-container body>
+      <ng-template body>
         <tr bitRow [alignContent]="alignRowContent">
           <td bitCell>Cell 1</td>
           <td bitCell>Cell 2 <br> Multiline Cell</td>
@@ -50,9 +52,8 @@ const Template: Story = (args) => ({
           <td bitCell>Cell 8</td>
           <td bitCell>Cell 9</td>
         </tr>
-      </ng-container>
+      </ng-template>
     </bit-table>
-
     `,
 });
 
@@ -60,3 +61,75 @@ export const Default = Template.bind({});
 Default.args = {
   alignRowContent: "baseline",
 };
+
+const data = new TableDataSource<{ id: number; name: string; other: string }>();
+
+data.data = [...Array(5).keys()].map((i) => ({
+  id: i,
+  name: `name-${i}`,
+  other: `other-${i}`,
+}));
+
+const DataSourceTemplate: Story = (args) => ({
+  props: {
+    dataSource: data,
+    sortFn: (a: any, b: any) => a.id - b.id,
+  },
+  template: `
+    <bit-table [dataSource]="dataSource">
+      <ng-container header>
+        <tr>
+          <th bitCell bitSortable="id" default>Id</th>
+          <th bitCell bitSortable="name">Name</th>
+          <th bitCell bitSortable="other" [fn]="sortFn">Other</th>
+        </tr>
+      </ng-container>
+      <ng-template body let-rows$>
+        <tr bitRow *ngFor="let r of rows$ | async">
+          <td bitCell>{{ r.id }}</td>
+          <td bitCell>{{ r.name }}</td>
+          <td bitCell>{{ r.other }}</td>
+        </tr>
+      </ng-template>
+    </bit-table>
+    `,
+});
+
+export const DataSource = DataSourceTemplate.bind({});
+
+const data2 = new TableDataSource<{ id: number; name: string; other: string }>();
+
+data2.data = [...Array(100).keys()].map((i) => ({
+  id: i,
+  name: `name-${i}`,
+  other: `other-${i}`,
+}));
+
+const ScrollableTemplate: Story = (args) => ({
+  props: {
+    dataSource: data2,
+    sortFn: (a: any, b: any) => a.id - b.id,
+  },
+  template: `
+    <cdk-virtual-scroll-viewport scrollWindow itemSize="47">
+      <bit-table [dataSource]="dataSource">
+        <ng-container header>
+          <tr>
+            <th bitCell bitSortable="id" default>Id</th>
+            <th bitCell bitSortable="name">Name</th>
+            <th bitCell bitSortable="other" [fn]="sortFn">Other</th>
+          </tr>
+        </ng-container>
+        <ng-template body let-rows$>
+          <tr bitRow *cdkVirtualFor="let r of rows$">
+            <td bitCell>{{ r.id }}</td>
+            <td bitCell>{{ r.name }}</td>
+            <td bitCell>{{ r.other }}</td>
+          </tr>
+        </ng-template>
+      </bit-table>
+    </cdk-virtual-scroll-viewport>
+    `,
+});
+
+export const Scrollable = ScrollableTemplate.bind({});
