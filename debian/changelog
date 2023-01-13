@@ -1,3 +1,9 @@
+vaultwarden-web-vault (2023.1.0-4) unstable; urgency=medium
+
+  * ci: set apt retry with sudo
+
+ -- dionysius <dragon.dionysius@gmail.com>  Fri, 13 Jan 2023 12:33:11 +0100
+
 vaultwarden-web-vault (2023.1.0-3) unstable; urgency=medium
 
   * ci: set apt retry with sudo
