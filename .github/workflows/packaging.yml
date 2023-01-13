@@ -20,6 +20,9 @@ jobs:
         with:
           fetch-depth: 0
           path: source
+      - name: configure apt to retry
+        run: |
+          echo 'Acquire::Retries "3";' > /etc/apt/apt.conf.d/99ci
       - name: setup node
         # node is first installed so it is not downloaded twice. their package `provides:` npm and control file only requests npm
         run: |
@@ -72,6 +75,9 @@ jobs:
           path: source
       - name: download artifacts
         uses: actions/download-artifact@v3
+      - name: configure apt to retry
+        run: |
+          echo 'Acquire::Retries "3";' > /etc/apt/apt.conf.d/99ci
       - name: prepare changelog
         run: |
           sudo apt-get update
