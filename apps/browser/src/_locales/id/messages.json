@@ -47,19 +47,19 @@
     "message": "Ketik ulang Kata Sandi Utama"
   },
   "masterPassHint": {
-    "message": "Petunjuk Kata Sandi Utama (pilihan)"
+    "message": "Petunjuk Kata Sandi Utama (opsional)"
   },
   "tab": {
     "message": "Tab"
   },
   "vault": {
-    "message": "Vault"
+    "message": "Brankas"
   },
   "myVault": {
     "message": "Brankas Saya"
   },
   "allVaults": {
-    "message": "All vaults"
+    "message": "Semua brankas"
   },
   "tools": {
     "message": "Alat"
@@ -134,7 +134,7 @@
     "message": "Kirim Kode"
   },
   "codeSent": {
-    "message": "Kode Terkirim!"
+    "message": "Kode sudah dikirim"
   },
   "verificationCode": {
     "message": "Kode Verifikasi"
@@ -424,13 +424,13 @@
     "message": "Alamat email tidak valid."
   },
   "masterPasswordRequired": {
-    "message": "Master password is required."
+    "message": "Kata sandi utama diperlukan."
   },
   "confirmMasterPasswordRequired": {
     "message": "Master password retype is required."
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least 8 characters long."
+    "message": "Kata sandi utama harus memiliki panjang setidaknya 8 karakter."
   },
   "masterPassDoesntMatch": {
     "message": "Konfirmasi sandi utama tidak cocok."
@@ -810,7 +810,7 @@
     "message": "Penyegaran selesai"
   },
   "enableAutoTotpCopy": {
-    "message": "Copy TOTP automatically"
+    "message": "Salin TOTP secara otomatis"
   },
   "disableAutoTotpCopyDesc": {
     "message": "Jika info masuk Anda memiliki kunci autentikasi yang menyertainya, kode verifikasi TOTP akan disalin secara otomatis ke clipboard Anda setiap kali Anda mengisi info masuk secara otomatis."
@@ -1312,7 +1312,7 @@
     "description": "ex. Date this item was updated"
   },
   "dateCreated": {
-    "message": "Created",
+    "message": "Dibuat",
     "description": "ex. Date this item was created"
   },
   "datePasswordUpdated": {
@@ -1488,7 +1488,7 @@
     "message": "Dengan mencentang kotak ini, Anda menyetujui yang berikut:"
   },
   "acceptPoliciesRequired": {
-    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+    "message": "Persyaratan Layanan dan Kebijakan Privasi belum disetujui."
   },
   "termsOfService": {
     "message": "Persyaratan Layanan"
@@ -1911,16 +1911,16 @@
     }
   },
   "error": {
-    "message": "Error"
+    "message": "Galat"
   },
   "regenerateUsername": {
-    "message": "Regenerate username"
+    "message": "Buat nama pengguna baru"
   },
   "generateUsername": {
-    "message": "Generate username"
+    "message": "Buat nama pengguna baru"
   },
   "usernameType": {
-    "message": "Username type"
+    "message": "Jenis nama pengguna"
   },
   "plusAddressedEmail": {
     "message": "Plus addressed email",
@@ -1936,19 +1936,19 @@
     "message": "Use your domain's configured catch-all inbox."
   },
   "random": {
-    "message": "Random"
+    "message": "Acak"
   },
   "randomWord": {
-    "message": "Random word"
+    "message": "Kata acak"
   },
   "websiteName": {
-    "message": "Website name"
+    "message": "Nama situs web"
   },
   "whatWouldYouLikeToGenerate": {
-    "message": "What would you like to generate?"
+    "message": "Apa yang ingin Anda buat?"
   },
   "passwordType": {
-    "message": "Password type"
+    "message": "Jenis kata sandi"
   },
   "service": {
     "message": "Service"
@@ -2042,6 +2042,6 @@
     "message": "New around here?"
   },
   "rememberEmail": {
-    "message": "Remember email"
+    "message": "Ingat email"
   }
 }

@@ -86,7 +86,7 @@
     "message": "Копиране на номера"
   },
   "copySecurityCode": {
-    "message": "Копиране на кода да сигурност"
+    "message": "Копиране на кода за сигурност"
   },
   "autoFill": {
     "message": "Автоматично дописване"
@@ -291,7 +291,7 @@
     "message": "Парола"
   },
   "passphrase": {
-    "message": "Парола за преминаване"
+    "message": "Парола-фраза"
   },
   "favorite": {
     "message": "Любими"
@@ -1923,17 +1923,17 @@
     "message": "Тип потребителско име"
   },
   "plusAddressedEmail": {
-    "message": "Plus addressed email",
+    "message": "Адрес на е-поща с плюс",
     "description": "Username generator option that appends a random sub-address to the username. For example: address+subaddress@email.com"
   },
   "plusAddressedEmailDesc": {
     "message": "Използвайте възможностите за под-адресиране на е-поща на своя доставчик."
   },
   "catchallEmail": {
-    "message": "Catch-all email"
+    "message": "Хващаща всичко е-поща"
   },
   "catchallEmailDesc": {
-    "message": "Use your domain's configured catch-all inbox."
+    "message": "Използвайте конфигурираната входяща кутия за събиране на всичко."
   },
   "random": {
     "message": "Произволно"
@@ -1954,10 +1954,10 @@
     "message": "Услуга"
   },
   "forwardedEmail": {
-    "message": "Forwarded email alias"
+    "message": "Псевдоним на препратена е-поща"
   },
   "forwardedEmailDesc": {
-    "message": "Generate an email alias with an external forwarding service."
+    "message": "Създайте псевдоним на е-поща с външна услуга за препращане."
   },
   "hostname": {
     "message": "Име на сървъра",

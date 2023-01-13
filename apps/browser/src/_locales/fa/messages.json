@@ -7,7 +7,7 @@
     "description": "Extension name, MUST be less than 40 characters (Safari restriction)"
   },
   "extDesc": {
-    "message": "یک مدیریت کننده کلمه عبور رایگان برای تمامی دستگاههایتان.",
+    "message": "یک مدیریت کننده کلمه عبور رایگان برای تمامی دستگاه‌هایتان.",
     "description": "Extension description"
   },
   "loginOrCreateNewAccount": {
@@ -32,22 +32,22 @@
     "message": "ثبت"
   },
   "emailAddress": {
-    "message": "آدرس ایمیل"
+    "message": "نشانی ایمیل"
   },
   "masterPass": {
     "message": "کلمه عبور اصلی"
   },
   "masterPassDesc": {
-    "message": "کلمه عبور اصلی کلمه عبوری است که شما برای دسترسی به گاوصندوق خود استفاده میکنید. بیاد داشتن کلمه عبور اصلی بسیار اهمیت دارد. اگر فراموشش کنید هیچ راهی برای بازگردانی آن وجود ندارد."
+    "message": "کلمه عبور اصلی، کلمه عبوری است که شما برای دسترسی به گاوصندوق خود استفاده می‌کنید. به یاد داشتن کلمه عبور اصلی بسیار اهمیت دارد. اگر فراموشش کنید هیچ راهی برای بازگردانی آن وجود ندارد."
   },
   "masterPassHintDesc": {
-    "message": "راهنمای کلمه عبور اصلی می تواند در صورت فراموشی آن را بیاد بیارید."
+    "message": "یادآور کلمه عبور اصلی کمک می‌کند در صورت فراموشی آن را به یاد بیارید."
   },
   "reTypeMasterPass": {
-    "message": "تایپ دوباره کلمه عبور اصلی"
+    "message": "نوشتن دوباره کلمه عبور اصلی"
   },
   "masterPassHint": {
-    "message": "راهنمای کلمه عبور اصلی (اختیاری)"
+    "message": "یادآور کلمه عبور اصلی (اختیاری)"
   },
   "tab": {
     "message": "زبانه"
@@ -71,13 +71,13 @@
     "message": "زبانه فعلی"
   },
   "copyPassword": {
-    "message": "کپی رمز عبور"
+    "message": "کپی کلمه عبور"
   },
   "copyNote": {
     "message": "کپی یادداشت"
   },
   "copyUri": {
-    "message": "کپی آدرس اینترنتی"
+    "message": "کپی نشانی اینترنتی"
   },
   "copyUsername": {
     "message": "کپی نام کاربری"
@@ -95,40 +95,40 @@
     "message": "ساخت کلمه عبور (کپی شد)"
   },
   "copyElementIdentifier": {
-    "message": "رونوشت نام فیلد سفارشی"
+    "message": "کپی نام فیلد سفارشی"
   },
   "noMatchingLogins": {
-    "message": "ورودیها منتطبق نیست."
+    "message": "ورودی‌ها منتطبق نیست"
   },
   "unlockVaultMenu": {
-    "message": "بازکردن گاو‌صندوقتان"
+    "message": "قفل گاوصندوق خود را باز کنید"
   },
   "loginToVaultMenu": {
     "message": "وارد شدن به گاو‌صندوقتان"
   },
   "autoFillInfo": {
-    "message": "پرکردن خودکار برای برگه فعلی مرورگر در دسترس نیست."
+    "message": "پر کردن خودکار برای برگه فعلی مرورگر در دسترس نیست."
   },
   "addLogin": {
-    "message": "افزودن ورود جدید"
+    "message": "افزودن یک ورود"
   },
   "addItem": {
     "message": "افزودن مورد"
   },
   "passwordHint": {
-    "message": "راهنمای کلمه عبور"
+    "message": "یادآور کلمه عبور"
   },
   "enterEmailToGetHint": {
-    "message": "برای دریافت راهنمایی کلمه عبور اصلی خود آدرس ایملیتان را وارد کنید."
+    "message": "برای دریافت یادآور کلمه عبور اصلی خود نشانی ایمیل‌تان را وارد کنید."
   },
   "getMasterPasswordHint": {
-    "message": "دریافت راهنمای کلمه عبور اصلی"
+    "message": "دریافت یادآور کلمه عبور اصلی"
   },
   "continue": {
     "message": "ادامه"
   },
   "sendVerificationCode": {
-    "message": "ارسال یک کد تأیید به ایمیل شما"
+    "message": "یک کد تأیید به ایمیل خود ارسال کنید"
   },
   "sendCode": {
     "message": "ارسال کد"
@@ -137,10 +137,10 @@
     "message": "کد ارسال شد"
   },
   "verificationCode": {
-    "message": "کد تایید"
+    "message": "کد تأیید"
   },
   "confirmIdentity": {
-    "message": "برای ادامه هویت خود را تأیید کنید."
+    "message": "برای ادامه، هویت خود را تأیید کنید."
   },
   "account": {
     "message": "حساب"
@@ -163,7 +163,7 @@
     "message": "خروج"
   },
   "about": {
-    "message": "درباره ما"
+    "message": "درباره"
   },
   "version": {
     "message": "نسخه"
@@ -187,38 +187,38 @@
     "message": "حذف پوشه"
   },
   "folders": {
-    "message": "پوشه ها"
+    "message": "پوشه‌ها"
   },
   "noFolders": {
-    "message": "هیچ موردی برای نمایش وجود ندارد."
+    "message": "هیچ پوشه‌ای برای نمایش وجود ندارد."
   },
   "helpFeedback": {
     "message": "کمک و بازخورد"
   },
   "sync": {
-    "message": "همگام سازی"
+    "message": "همگام‌سازی"
   },
   "syncVaultNow": {
-    "message": "همگام سازی گاوصندوق"
+    "message": "همگام‌سازی گاوصندوق"
   },
   "lastSync": {
-    "message": "آخرین همگام سازی:"
+    "message": "آخرین همگام‌سازی:"
   },
   "passGen": {
-    "message": "تولید کلمه عبور"
+    "message": "تولید کننده کلمه عبور"
   },
   "generator": {
     "message": "تولید کننده",
     "description": "Short for 'Password Generator'."
   },
   "passGenInfo": {
-    "message": "به طور خودکار کلمه های عبور قوی و منحصر به فرد برای ورود به سیستم خود ایجاد کنید."
+    "message": "به طور خودکار کلمه‌های عبور قوی و منحصر به فرد برای ورود به سیستم خود ایجاد کنید."
   },
   "bitWebVault": {
     "message": "گاوصندوق وب Bitwarden"
   },
   "importItems": {
-    "message": "واردن کردن موارد"
+    "message": "درون ریزی موارد"
   },
   "select": {
     "message": "انتخاب"
@@ -230,7 +230,7 @@
     "message": "تولید مجدد کلمه عبور"
   },
   "options": {
-    "message": "گزینه ها"
+    "message": "گزینه‌ها"
   },
   "length": {
     "message": "طول"
@@ -251,7 +251,7 @@
     "message": "تعداد کلمات"
   },
   "wordSeparator": {
-    "message": "کلمه جداکننده"
+    "message": "جداکننده کلمات"
   },
   "capitalize": {
     "message": "بزرگ کردن",
@@ -267,7 +267,7 @@
     "message": "حداقل حرف خاص"
   },
   "avoidAmbChar": {
-    "message": "از کاراکترهای مبهم اجتناب شود"
+    "message": "از کاراکترهای مبهم اجتناب کن"
   },
   "searchVault": {
     "message": "جستجوی گاوصندوق"
@@ -291,13 +291,13 @@
     "message": "کلمه عبور"
   },
   "passphrase": {
-    "message": "کلمه عبور"
+    "message": "عبارت عبور"
   },
   "favorite": {
     "message": "مورد علاقه"
   },
   "notes": {
-    "message": "یادداشت ها"
+    "message": "یادداشت‌ها"
   },
   "note": {
     "message": "یادداشت"
@@ -318,10 +318,10 @@
     "message": "راه اندازی"
   },
   "website": {
-    "message": "وب سایت"
+    "message": "وب‌سایت"
   },
   "toggleVisibility": {
-    "message": "تغییر قابلیت نمایش"
+    "message": "قابلیت مشاهده را تغییر دهید"
   },
   "manage": {
     "message": "مدیریت"
@@ -336,16 +336,16 @@
     "message": "لطفاً با یک بررسی خوب به ما کمک کنید!"
   },
   "browserNotSupportClipboard": {
-    "message": "مرورگر شما از کپی کلیپ بورد آسان پشتیبانی نمی کند. به جای آن به صورت دستی کپی کنید."
+    "message": "مرورگر شما از کپی کلیپ بورد آسان پشتیبانی نمی‌کند. به جای آن به صورت دستی کپی کنید."
   },
   "verifyIdentity": {
     "message": "تأیید هویت"
   },
   "yourVaultIsLocked": {
-    "message": "گاوصندوق شما قفل است. برای ادامه کلمه عبور اصلی خود را وارد کنید."
+    "message": "گاوصندوق شما قفل شده است. برای ادامه هویت خود را تأیید کنید."
   },
   "unlock": {
-    "message": "بازکردن"
+    "message": "باز کردن قفل"
   },
   "loggedInAsOn": {
     "message": "وارد شده با $EMAIL$ در $HOSTNAME$.",
@@ -403,7 +403,7 @@
     "message": "4 ساعت"
   },
   "onLocked": {
-    "message": "هنگام قفل سیستم"
+    "message": "در قفل سیستم"
   },
   "onRestart": {
     "message": "هنگام راه اندازی مجدد"
@@ -418,34 +418,34 @@
     "message": "خطایی رخ داده است"
   },
   "emailRequired": {
-    "message": "آدرس ایمیل ضروری است."
+    "message": "نشانی ایمیل ضروری است."
   },
   "invalidEmail": {
-    "message": "آدرس ایمیل نامعتبر است."
+    "message": "نشانی ایمیل نامعتبر است."
   },
   "masterPasswordRequired": {
-    "message": "گذرواژه اصلی ضروری است."
+    "message": "کلمه عبور اصلی ضروری است."
   },
   "confirmMasterPasswordRequired": {
-    "message": "تایپ مجدد گذرواژه اصلی نیاز است."
+    "message": "نوشتن مجدد کلمه عبور اصلی ضروری است."
   },
   "masterPasswordMinlength": {
     "message": "طول کلمه عبور اصلی باید حداقل ۸ کاراکتر باشد."
   },
   "masterPassDoesntMatch": {
-    "message": "کلمه عبور اصلی با تکرار کلمه عبور اصلی مطابقت ندارد."
+    "message": "کلمه عبور اصلی با تکرار آن مطابقت ندارد."
   },
   "newAccountCreated": {
-    "message": "حساب شما ساختته شد! حالا میتوانید وارد شوید."
+    "message": "حساب کاربری جدید شما ساخته شد! حالا می‌توانید وارد شوید."
   },
   "masterPassSent": {
     "message": "ما یک ایمیل همراه با راهنمای کلمه عبور اصلی برایتان ارسال کردیم."
   },
   "verificationCodeRequired": {
-    "message": "کد تایید مورد نیاز است."
+    "message": "کد تأیید مورد نیاز است."
   },
   "invalidVerificationCode": {
-    "message": "کد تایید نامعتبر"
+    "message": "کد تأیید نامعتبر است"
   },
   "valueCopied": {
     "message": " کپی شده",
@@ -458,13 +458,13 @@
     }
   },
   "autofillError": {
-    "message": "ناتوان در پرکردن خودکار آیتم انتخاب شده در این صفحه. اطلاعات را کپی و جایگذاری کنید."
+    "message": "ناتوان در پر کردن خودکار مورد انتخاب شده در این صفحه. اطلاعات را کپی و جای‌گذاری کنید."
   },
   "loggedOut": {
-    "message": "خارج شده"
+    "message": "خارج شد"
   },
   "loginExpired": {
-    "message": "جلسه ورود شما منقضی شده است."
+    "message": "نشست ورود شما منقضی شده است."
   },
   "logOutConfirmation": {
     "message": "آیا مطمئنید که می‌خواهید خارج شوید؟"
@@ -482,7 +482,7 @@
     "message": "نام ضروری است."
   },
   "addedFolder": {
-    "message": "پوشه اضافه شده"
+    "message": "پوشه اضافه شد"
   },
   "changeMasterPass": {
     "message": "تغییر کلمه عبور اصلی"
@@ -491,16 +491,16 @@
     "message": "شما می‌توانید کلمه عبور اصلی خود را در bitwarden.com تغییر دهید. آیا می‌خواهید از سایت بازدید کنید؟"
   },
   "twoStepLoginConfirmation": {
-    "message": "ورودی دو مرحله ای باعث می شود که حساب کاربری شما با استفاده از یک دستگاه دیگر مانند کلید امنیتی، برنامه تأیید هویت، پیامک، تماس تلفنی و یا ایمیل، اعتبار خود را با ایمنی بیشتر ثابت کند. ورودی دو مرحله ای می تواند در bitwarden.com فعال شود. آیا می خواهید از سایت بازدید کنید؟"
+    "message": "ورود دو مرحله ای باعث می‌شود که حساب کاربری شما با استفاده از یک دستگاه دیگر مانند کلید امنیتی، برنامه احراز هویت، پیامک، تماس تلفنی و یا ایمیل، اعتبار خود را با ایمنی بیشتر اثبات کند. ورود دو مرحله ای می تواند در bitwarden.com فعال شود. آیا می‌خواهید از سایت بازدید کنید؟"
   },
   "editedFolder": {
-    "message": "پوشه ویرایش شده"
+    "message": "پوشه ذخیره شد"
   },
   "deleteFolderConfirmation": {
     "message": "آیا از حذف این پوشه اطمینان دارید؟"
   },
   "deletedFolder": {
-    "message": "پوشه حذف شده"
+    "message": "پوشه حذف شد"
   },
   "gettingStartedTutorial": {
     "message": "آغاز نمودن آموزش"
@@ -509,10 +509,10 @@
     "message": "برای یادگیری بیشتر نحوه استفاده از افزونه مرورگر آموزش شروع به کار را تماشا کنید."
   },
   "syncingComplete": {
-    "message": "همگام سازی کامل شد"
+    "message": "همگام‌سازی کامل شد"
   },
   "syncingFailed": {
-    "message": "همگام سازی شکست خورد"
+    "message": "همگام‌سازی شکست خورد"
   },
   "passwordCopied": {
     "message": "کلمه عبور کپی شد"
@@ -521,7 +521,7 @@
     "message": "نشانی اینترنتی"
   },
   "uriPosition": {
-    "message": "آدرس اینترنتی $POSITION$",
+    "message": "نشانی اینترنتی $POSITION$",
     "description": "A listing of URIs. Ex: URI 1, URI 2, URI 3, etc.",
     "placeholders": {
       "position": {
@@ -531,19 +531,19 @@
     }
   },
   "newUri": {
-    "message": "آدرس اینترنتی جدید"
+    "message": "نشانی اینترنتی جدید"
   },
   "addedItem": {
-    "message": "مورد افزوده شده"
+    "message": "مورد اضافه شد"
   },
   "editedItem": {
-    "message": "مورد ویرایش شده"
+    "message": "مورد ذخیره شد"
   },
   "deleteItemConfirmation": {
-    "message": "آیا مطمئن هستید می خواهید این مورد را حذف کنید؟"
+    "message": "واقعاً می‌خواهید این آیتم را به سطل زباله ارسال کنید؟"
   },
   "deletedItem": {
-    "message": "مورد حذف شده"
+    "message": "مورد به زباله‌ها فرستاده شد"
   },
   "overwritePassword": {
     "message": "بازنویسی کلمه عبور"
@@ -571,10 +571,10 @@
     "description": "This is the folder for uncategorized items"
   },
   "enableAddLoginNotification": {
-    "message": "درخواست اضافه کردن ورود به سیستم"
+    "message": "درخواست افزودن ورود به سیستم"
   },
   "addLoginNotificationDesc": {
-    "message": "\"افزودن اعلانیه ورود\" به صورت خودکار از شما می خواهد هر بار که برای اولین بار وارد سیستم میشوید ورودی های جدید را در گاوصندوق خود ذخیره کنید."
+    "message": "در صورتی که موردی در گاوصندوق شما یافت نشد، درخواست افزودن کنید."
   },
   "showCardsCurrentTab": {
     "message": "نمایش کارت‌ها در صفحه برگه"
@@ -589,43 +589,43 @@
     "message": "موارد هویتی را در صفحه برگه برای پر کردن خودکار آسان فهرست کن."
   },
   "clearClipboard": {
-    "message": "پاک‌سازی کلیپ‌ برد",
+    "message": "پاکسازی کلیپ بورد",
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "clearClipboardDesc": {
-    "message": "مقدار های کپی شده را به صورت خودکار از کلیپ برد خود پاک کنید.",
+    "message": "به صورت خودکار، مقادیر کپی شده را از کلیپ بورد پاک کن.",
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "notificationAddDesc": {
     "message": "آیا Bitwarden باید این کلمه عبور را برایتان بخاطر بسپارد؟"
   },
   "notificationAddSave": {
-    "message": "بله، ذخیره کن"
+    "message": "ذخیره"
   },
   "enableChangedPasswordNotification": {
-    "message": "درخواست برای بروزرسانی ورود به سیستم موجود"
+    "message": "درخواست برای به‌روزرسانی ورود به سیستم موجود"
   },
   "changedPasswordNotificationDesc": {
     "message": "هنگامی که تغییری در یک وب‌سایت شناسایی شد، درخواست به‌روزرسانی کلمه عبور ورود کن."
   },
   "notificationChangeDesc": {
-    "message": "آیا مایل به بروزرسانی این پسورد در Bitwarden هستید؟"
+    "message": "آیا مایل به به‌روزرسانی این کلمه عبور در Bitwarden هستید؟"
   },
   "notificationChangeSave": {
-    "message": "بله، بروزرسانی کن"
+    "message": "به‌روزرسانی"
   },
   "enableContextMenuItem": {
-    "message": "نمایش گزینه های منوی زمینه"
+    "message": "نمایش گزینه‌های منوی زمینه"
   },
   "contextMenuItemDesc": {
     "message": "از یک کلیک ثانویه برای دسترسی به تولید کلمه عبور و ورودهای منطبق برای وب سایت استفاده کن."
   },
   "defaultUriMatchDetection": {
-    "message": "بازرسی تطابق URL پیشفرض",
+    "message": "بررسی مطابقت نشانی اینترنتی پیش‌فرض",
     "description": "Default URI match detection for auto-fill."
   },
   "defaultUriMatchDetectionDesc": {
-    "message": "روش پیش فرض اعمال بازرسی تطابق ‌‌URL را هنگامی که عملی را مثل پر کردن خودکار انتخاب کنید."
+    "message": "هنگام انجام دادن کارهایی مانند پر کردن خودکار، روش پیش‌فرضی را که برای شناسایی ورود نشانی اینترنتی انجام می‌شود انتخاب کنید."
   },
   "theme": {
     "message": "پوسته"
@@ -646,38 +646,38 @@
     "description": "'Solarized' is a noun and the name of a color scheme. It should not be translated."
   },
   "exportVault": {
-    "message": "صادر کردن گاوصندوق"
+    "message": "برون ریزی گاوصندوق"
   },
   "fileFormat": {
-    "message": "File Format"
+    "message": "فرمت پرونده"
   },
   "warning": {
     "message": "اخطار",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "confirmVaultExport": {
-    "message": "صادرات گاوصندوق را تأیید کنید"
+    "message": "برون ریزی گاوصندوق را تأیید کنید"
   },
   "exportWarningDesc": {
-    "message": "This export contains your vault data in an unencrypted format. You should not store or send the exported file over unsecure channels (such as email). Delete it immediately after you are done using it."
+    "message": "این برون ریزی شامل داده‌های گاوصندوق در یک قالب رمزنگاری نشده است. شما نباید آن را از طریق یک راه ارتباطی نا امن (مثل ایمیل) ذخیره یا ارسال کنید. به محض اینکه کارتان با آن تمام شد، آن را حذف کنید."
   },
   "encExportKeyWarningDesc": {
-    "message": "این صادرات با استفاده از کلید رمزگذاری حساب شما ، اطلاعات شما را رمزگذاری می کند. اگر حتی کلید رمزگذاری حساب خود را بچرخانید ، باید دوباره صادر کنید چون قادر به رمزگشایی این پرونده صادراتی نخواهید بود."
+    "message": "این برون ریزی با استفاده از کلید رمزگذاری حساب شما، اطلاعاتتان را رمزگذاری می کند. اگر زمانی کلید رمزگذاری حساب خود را بچرخانید، باید دوباره خروجی بگیرید، چون قادر به رمزگشایی این پرونده برون ریزی نخواهید بود."
   },
   "encExportAccountWarningDesc": {
-    "message": "کلیدهای رمزگذاری حساب برای هر حساب کاربری Bitwarden منحصر به فرد است ، بنابراین نمی توانید صادرات رمزگذاری شده را به حساب دیگری وارد کنید."
+    "message": "کلیدهای رمزگذاری حساب برای هر حساب کاربری Bitwarden منحصر به فرد است، بنابراین نمی‌توانید برون ریزی رمزگذاری شده را به حساب دیگری وارد کنید."
   },
   "exportMasterPassword": {
-    "message": "کلمه عبور اصلی خود را برای صادرات داده ها از گاوصندوقتان وارد کنید."
+    "message": "کلمه عبور اصلی خود را برای برون ریزی داده‌های گاوصندوقتان وارد کنید."
   },
   "shared": {
     "message": "اشتراک گذاری شد"
   },
   "learnOrg": {
-    "message": "درباره سازمانها اطلاعات کسب کنید"
+    "message": "درباره سازمان‌ها اطلاعات کسب کنید"
   },
   "learnOrgConfirmation": {
-    "message": "Bitwarden به شما اجازه می دهد با استفاده از یک سازمان، موارد گاوصندوق خود را با دیگران به اشتراک بگذارید. آیا مایل به بازدید از وب سایت bitwarden.com برای کسب اطلاعات بیشتر هستید؟"
+    "message": "Bitwarden به شما اجازه می‌دهد با استفاده از سازماندهی، موارد گاوصندوق خود را با دیگران به اشتراک بگذارید. آیا مایل به بازدید از وب سایت bitwarden.com برای کسب اطلاعات بیشتر هستید؟"
   },
   "moveToOrganization": {
     "message": "انتقال به سازمان"
@@ -699,13 +699,13 @@
     }
   },
   "moveToOrgDesc": {
-    "message": "سازمانی را انتخاب کنید که می خواهید این مورد را به آن منتقل کنید. انتقال به یک سازمان، مالکیت مورد را به آن سازمان منتقل می کند. پس از انتقال این مورد، دیگر مالک مستقیم آن نخواهید بود."
+    "message": "سازمانی را انتخاب کنید که می‌خواهید این مورد را به آن منتقل کنید. انتقال به یک سازمان، مالکیت مورد را به آن سازمان منتقل می‌کند. پس از انتقال این مورد، دیگر مالک مستقیم آن نخواهید بود."
   },
   "learnMore": {
     "message": "بیشتر بدانید"
   },
   "authenticatorKeyTotp": {
-    "message": "کلید تأیید کننده (TOTP)"
+    "message": "کلید احراز هویت (TOTP)"
   },
   "verificationCodeTotp": {
     "message": "کد تأیید (TOTP)"
@@ -723,7 +723,7 @@
     "message": "آیا از پاک کردن این پیوست مطمئن هستید؟"
   },
   "deletedAttachment": {
-    "message": "حذف پیوست"
+    "message": "پیوست حذف شد"
   },
   "newAttachment": {
     "message": "افزودن پیوست جدید"
@@ -732,22 +732,22 @@
     "message": "بدون پیوست."
   },
   "attachmentSaved": {
-    "message": "پیوست ذخیره شد."
+    "message": "پیوست ذخیره شد"
   },
   "file": {
-    "message": "فایل"
+    "message": "پرونده"
   },
   "selectFile": {
-    "message": "انتخاب یک فایل."
+    "message": "ﺍﻧﺘﺨﺎﺏ یک ﭘﺮﻭﻧﺪﻩ"
   },
   "maxFileSize": {
-    "message": "بیشترین حجم فایل 500 مگابایت است."
+    "message": "بیشترین حجم پرونده ۵۰۰ مگابایت است."
   },
   "featureUnavailable": {
     "message": "ویژگی موجود نیست"
   },
   "updateKey": {
-    "message": "تا زمانی که کد رمزنگاری را بروز نکنید نمیتوانید از این قابلیت استفاده کنید."
+    "message": "تا زمانی که کد رمزنگاری را به‌روز نکنید نمی‌توانید از این قابلیت استفاده کنید."
   },
   "premiumMembership": {
     "message": "عضویت پرمیوم"
@@ -756,7 +756,7 @@
     "message": "مدیریت عضویت"
   },
   "premiumManageAlert": {
-    "message": "شما میتوانید عضویت خود را در نسخه وب گاوصندوق در bitwarden.com مدیریت کنید. آیا مایل به دیدن وبسایت هستید؟"
+    "message": "شما می‌توانید عضویت خود را در نسخه وب گاوصندوق در bitwarden.com مدیریت کنید. آیا مایل به دیدن وب‌سایت هستید؟"
   },
   "premiumRefresh": {
     "message": "نوسازی عضویت"
@@ -765,31 +765,31 @@
     "message": "شما در حال حاظر کاربر پرمیوم نیستید."
   },
   "premiumSignUpAndGet": {
-    "message": "ثبت نام برای عضویت پرمیوم و گرفتن:"
+    "message": "برای عضویت پرمیوم ثبت نام کنید و دریافت کنید:"
   },
   "ppremiumSignUpStorage": {
-    "message": "۱ گیگابایت فضای ذخیره سازی رمزنگاری شده."
+    "message": "۱ گیگابایت فضای ذخیره سازی رمزگذاری شده برای پیوست های پرونده."
   },
   "ppremiumSignUpTwoStep": {
-    "message": "گزینه های ورود اضافی دو مرحله ای مانند YubiKey, FIDO U2F و Duo."
+    "message": "گزینه‌های ورود دو مرحله‌ای اضافی مانند YubiKey, FIDO U2F و Duo."
   },
   "ppremiumSignUpReports": {
-    "message": "بهداشت کلمه عبور، سلامت اکانت و گزارش های نقض اطلاعات تا صندوق شما امن نگه داشته شود."
+    "message": "گزارش‌های بهداشت رمز عبور، سلامت حساب و نقض داده‌ها برای ایمن نگهداشتن گاوصندوق شما."
   },
   "ppremiumSignUpTotp": {
-    "message": "تولید کننده کد تایید (2FA) از نوع TOTP برای ورود به گاوصندوقتان."
+    "message": "تولید کننده کد تأیید (2FA) از نوع TOTP برای ورودهای در گاوصندوقتان."
   },
   "ppremiumSignUpSupport": {
     "message": "اولویت پشتیبانی از مشتری."
   },
   "ppremiumSignUpFuture": {
-    "message": "تمام ویژگی های پرمیوم آینده. به زودی بیشتر!"
+    "message": "تمام ویژگی‌های پرمیوم آینده. به زودی بیشتر!"
   },
   "premiumPurchase": {
     "message": "خرید پرمیوم"
   },
   "premiumPurchaseAlert": {
-    "message": "شما میوانید عضویت پرمیوم را از وب گاوصندوق bitwarden.com خریداری کنید. مایلید اکنون از وبسایت بازید کنید؟"
+    "message": "شما می‌توانید عضویت پرمیوم را از گاوصندوق وب bitwarden.com خریداری کنید. مایلید اکنون از وب‌سایت بازید کنید؟"
   },
   "premiumCurrentMember": {
     "message": "شما یک عضو پرمیوم هستید!"
@@ -813,22 +813,22 @@
     "message": "TOTP را به صورت خودکار کپی کن"
   },
   "disableAutoTotpCopyDesc": {
-    "message": "اگر ورود شما دارای یک کلید تأیید کننده است که به آن متصل شده است، هر زمان که بصورت خودکار وارد سایت شوید کد تأیید TOTP به صورت خودکار به کلیپ بورد شما کپی می شود."
+    "message": "اگر یک ورود دارای یک کلید احراز هویت باشد، هنگام پر کردن خودکار ورود، کد تأیید TOTP را در کلیپ بورد خود کپی کن."
   },
   "enableAutoBiometricsPrompt": {
     "message": "درخواست بیومتریک هنگام راه اندازی"
   },
   "premiumRequired": {
-    "message": "در نسخه پرمیوم کار میکند"
+    "message": "در نسخه پرمیوم کار می‌کند"
   },
   "premiumRequiredDesc": {
     "message": "برای استفاده از این ویژگی عضویت پرمیوم لازم است."
   },
   "enterVerificationCodeApp": {
-    "message": "کد ۶ رقمی تایید را از برنامه تایید کننده وارد کنید."
+    "message": "کد ۶ رقمی تأیید را از برنامه احراز هویت وارد کنید."
   },
   "enterVerificationCodeEmail": {
-    "message": "Enter the 6 digit verification code that was emailed to",
+    "message": "کد ۶ رقمی تأیید را که به $EMAIL$ ایمیل شده را وارد کنید.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -837,7 +837,7 @@
     }
   },
   "verificationCodeEmailSent": {
-    "message": "ایمیل تایید به $EMAIL$ ارسال شد.",
+    "message": "ایمیل تأیید به $EMAIL$ ارسال شد.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -849,10 +849,10 @@
     "message": "مرا به خاطر بسپار"
   },
   "sendVerificationCodeEmailAgain": {
-    "message": "ارسال دوباره ایمیل کد تایید"
+    "message": "ارسال دوباره ایمیل کد تأیید"
   },
   "useAnotherTwoStepMethod": {
-    "message": "استفاده از روش ورود دو مرحله ای دیگر"
+    "message": "استفاده از روش ورود دو مرحله‌ای دیگر"
   },
   "insertYubiKey": {
     "message": "YubiKey خود را وارد پورت USB رایانه کنید، بعد دکمه آن را بفشارید."
@@ -870,42 +870,42 @@
     "message": "تأیید اعتبار در WebAuthn"
   },
   "loginUnavailable": {
-    "message": "ورود به سیستم موجود نیست"
+    "message": "ورود به سیستم در دسترس نیست"
   },
   "noTwoStepProviders": {
-    "message": "این حساب با سیستم دو مرحله ورود فعال است، با این حال، هیچ یک از ارائه دهندگان دو مرحله ای پیکربندی شده توسط این مرورگر وب پشتیبانی نمی شوند."
+    "message": "ورود دو مرحله‌ای برای این حساب فعال است، با این حال، هیچ یک از ارائه‌دهندگان دو مرحله‌ای پیکربندی شده توسط این مرورگر وب پشتیبانی نمی‌شوند."
   },
   "noTwoStepProviders2": {
-    "message": "لطفا از یک مرورگر وب پشتیبانی شده (مانند کروم) استفاده کنید و / یا ارائه دهندگان اضافی را که در مرورگر وب بهتر پشتیانی میکنند را اضافه کنید (مانند یک برنامه تأیید کننده هویت)."
+    "message": "لطفاً از یک مرورگر وب پشتیبانی شده (مانند کروم) استفاده کنید و یا ارائه دهندگان اضافی را که از مرورگر وب بهتر پشتیانی می‌کنند را اضافه کنید (مانند یک برنامه احراز هویت)."
   },
   "twoStepOptions": {
-    "message": "گزینه های ورود دو مرحله ای"
+    "message": "گزینه‌های ورود دو مرحله‌ای"
   },
   "recoveryCodeDesc": {
-    "message": "دسترسی به تمامی ارائه دهندگان دو مرحله ای را از دست داده اید؟ از کد بازیابی خود برای غیرفعال سازی ارائه دهندگان دو مرحله ای از حسابتان استفاده کنید."
+    "message": "دسترسی به تمامی ارائه‌دهندگان دو مرحله‌ای را از دست داده‌اید؟ از کد بازیابی خود برای غیرفعال‌سازی ارائه‌دهندگان دو مرحله‌ای از حسابتان استفاده کنید."
   },
   "recoveryCodeTitle": {
     "message": "کد بازیابی"
   },
   "authenticatorAppTitle": {
-    "message": "برنامه تأیید کننده"
+    "message": "برنامه احراز هویت"
   },
   "authenticatorAppDesc": {
-    "message": "از یک اپ تایید کننده (همانند Authy یا Google Authenticator) استفاده کنید تا کدهای تایید بر پایه زمان تولید کنید.",
+    "message": "از یک برنامه احراز هویت (مانند Authy یا Google Authenticator) استفاده کنید تا کدهای تأیید بر پایه زمان تولید کنید.",
     "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
   },
   "yubiKeyTitle": {
-    "message": "کلید امنیت YubiKey OTP"
+    "message": "کلید امنیتی YubiKey OTP"
   },
   "yubiKeyDesc": {
-    "message": "از یک YubiKey برای دسترسی به حسابتان استفاده کنید. همراه با دستگاه های YubiKey 4،4 Nano، NEO کار میکند."
+    "message": "از یک YubiKey برای دسترسی به حسابتان استفاده کنید. همراه با دستگاه‌های YubiKey 4 ،4 Nano ،NEO کار می‌کند."
   },
   "duoDesc": {
-    "message": "تایید کنید همراه با Duo Security از اپ موبایل Dou استفاده کنید، پیامک،تماس تلفنی، یا کلید امنیتی U2F.",
+    "message": "با Duo Security با استفاده از برنامه تلفن همراه، پیامک، تماس تلفنی، یا کلید امنیتی U2F تأیید کنید.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "duoOrganizationDesc": {
-    "message": "Duo Security را برای سازماندهی خود با استفاده از برنامه Duo Mobile، SMS، تماس تلفنی یا کلید امنیتی U2F تأیید کنید.",
+    "message": "از Duo Security با استفاده از برنامه تلفن همراه، پیامک، تماس تلفنی یا کلید امنیتی U2F برای تأیید سازمان خود استفاده کنید.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "webAuthnTitle": {
@@ -918,79 +918,79 @@
     "message": "ایمیل"
   },
   "emailDesc": {
-    "message": "کد تایید برایتان فرستاده می شود."
+    "message": "کد تأیید برایتان ارسال می‌شود."
   },
   "selfHostedEnvironment": {
     "message": "محیط خود میزبان"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "آدرس اینترنتی پایه فرضی نصب Bitwarden میزبانی شده را مشخص کنید."
+    "message": "نشانی اینترنتی پایه فرضی نصب Bitwarden میزبانی شده را مشخص کنید."
   },
   "customEnvironment": {
-    "message": "محیط های سفارشی"
+    "message": "محیط سفارشی"
   },
   "customEnvironmentFooter": {
-    "message": "برای کاربران پیشرفته. شما می توانید آدرس پایه هر سرویس را مستقل تعیین کنید."
+    "message": "برای کاربران پیشرفته. شما می‌توانید نشانی پایه هر سرویس را مستقلاً تعیین کنید."
   },
   "baseUrl": {
-    "message": "آدرس سرور"
+    "message": "نشانی اینترنتی سرور"
   },
   "apiUrl": {
-    "message": "آدرس سرور API"
+    "message": "نشانی API سرور"
   },
   "webVaultUrl": {
-    "message": "آدرس سرور گاوصندوق وب"
+    "message": "نشانی اینترنتی سرور گاوصندوق وب"
   },
   "identityUrl": {
-    "message": "آدرس سرور شناسایی"
+    "message": "نشانی سرور شناسایی"
   },
   "notificationsUrl": {
-    "message": "اعلانهای آدرس سرور"
+    "message": "نشانی سرور اعلان‌ها"
   },
   "iconsUrl": {
-    "message": "آدرس سرور آیکون ها"
+    "message": "نشانی سرور آیکون ها"
   },
   "environmentSaved": {
-    "message": "آدرس های اینترنتی محیط ذخیره شد."
+    "message": "نشانی‌های اینترنتی محیط ذخیره شد"
   },
   "enableAutoFillOnPageLoad": {
-    "message": "فعال کردن پرکردن خودکار هنگام بارگذاری صفحه"
+    "message": "پر کردن خودکار هنگام بارگذاری صفحه"
   },
   "enableAutoFillOnPageLoadDesc": {
-    "message": "اگر یک فرم ورودی شناسایی شود، وقتی صفحه وب بارگذاری می شود، به صورت اتوماتیک انجام می شود."
+    "message": "اگر یک فرم ورودی شناسایی شد، وقتی صفحه وب بارگذاری شد، به صورت خودکار پر شود."
   },
   "experimentalFeature": {
     "message": "در حال حاضر این یک ویژگی آزمایشی است. با مسئولیت خود استفاده کنید."
   },
   "defaultAutoFillOnPageLoad": {
-    "message": "تنظیم خودکار پیش فرض برای موارد ورود به سیستم"
+    "message": "تنظیم تکمیل خودکار پیش‌فرض برای موارد ورود به سیستم"
   },
   "defaultAutoFillOnPageLoadDesc": {
-    "message": "پس از فعال کردن پرکردن خودکار بارگذاری صفحه، می توانید این ویژگی را برای موارد ورود به سیستم جداگانه فعال یا غیرفعال کنید. این تنظیمات پیش فرض برای موارد ورود به سیستم است که به طور جداگانه پیکربندی نشده اند."
+    "message": "می‌توانید پر کردن خودکار هنگام بارگیری صفحه را برای موارد ورود به سیستم از نمای ویرایش مورد خاموش کنید."
   },
   "itemAutoFillOnPageLoad": {
     "message": "پر کردن خودکار بارگذاری صفحه (درصورت فعال بودن در گزینه ها)"
   },
   "autoFillOnPageLoadUseDefault": {
-    "message": "استفاده از تنظيمات پيشفرض"
+    "message": "استفاده از تنظیمات پیش‌فرض"
   },
   "autoFillOnPageLoadYes": {
-    "message": "بارگذاری صفحه را به طور خودکار پر کن"
+    "message": "پر کردن خودکار هنگام بارگذاری صفحه"
   },
   "autoFillOnPageLoadNo": {
-    "message": "بارگذاری صفحه را به طور خودکار پر نکن"
+    "message": "هنگام بارگذاری صفحه پر کردن خودکار انجام نده"
   },
   "commandOpenPopup": {
-    "message": "بازکردن پنجره گاوصندوق"
+    "message": "باز کردن پنجره گاوصندوق"
   },
   "commandOpenSidebar": {
-    "message": "بازکردن گاوصندوق در نوار کناری"
+    "message": "باز کردن گاوصندوق در نوار کناری"
   },
   "commandAutofillDesc": {
-    "message": "آخرین ورودی مورد استفاده برای وب سایت فعلی را به صورت خودکار پر کنید."
+    "message": "آخرین ورودی مورد استفاده برای وب سایت فعلی را به صورت خودکار پر کنید"
   },
   "commandGeneratePasswordDesc": {
-    "message": "یک کلمه عبور تصادفی جدید ایجاد کنید و آن را در کلیپ بورد کپی کنید."
+    "message": "یک کلمه عبور تصادفی جدید ایجاد کنید و آن را در کلیپ بورد کپی کنید"
   },
   "commandLockVaultDesc": {
     "message": "قفل گاوصندوق"
@@ -1011,7 +1011,7 @@
     "message": "فیلد سفارشی جدید"
   },
   "dragToSort": {
-    "message": "برای مرتب سازی بکشید"
+    "message": "برای مرتب‌سازی بکشید"
   },
   "cfTypeText": {
     "message": "متن"
@@ -1020,24 +1020,24 @@
     "message": "مخفی"
   },
   "cfTypeBoolean": {
-    "message": "بولین"
+    "message": "منطقی"
   },
   "cfTypeLinked": {
-    "message": "لینک شده",
+    "message": "پیوند شده",
     "description": "This describes a field that is 'linked' (tied) to another field."
   },
   "linkedValue": {
-    "message": "ارزش لینک شده",
+    "message": "مقدار پیوند شده",
     "description": "This describes a value that is 'linked' (tied) to another value."
   },
   "popup2faCloseMessage": {
-    "message": "در خارج از پنجره پاپ آپ کلیک کنید که ایملیتان بررسی شود برای کد تأییدیه که باعث میشود این پنجره بسته شود. آیا می خواهید این پاپ آپ را در یک پنجره جدید باز کنید تا آن را نبندید؟"
+    "message": "در خارج از پنجره پاپ آپ کلیک کنید که ایمیل‌تان بررسی شود برای کد تأییدیه که باعث می‌شود این پنجره بسته شود. آیا می‌خواهید این پاپ آپ را در یک پنجره جدید باز کنید تا آن را نبندید؟"
   },
   "popupU2fCloseMessage": {
-    "message": "این مرورگر نمیتواند درخواستهای U2F را در این پنجره پاپ آپ پردازش کند. آیا می خواهید این پنجره را در یک پنجره جدید باز کنید تا بتوانید با استفاده از U2F وارد شوید؟"
+    "message": "این مرورگر نمی‌تواند درخواستهای U2F را در این پنجره پاپ آپ پردازش کند. آیا می‌خواهید این پنجره را در یک پنجره جدید باز کنید تا بتوانید با استفاده از U2F وارد شوید؟"
   },
   "enableFavicon": {
-    "message": "نمایش نمادهای وب سایت"
+    "message": "نمایش نمادهای وب‌سایت"
   },
   "faviconDesc": {
     "message": "یک تصویر قابل تشخیص در کنار هر ورود نشان دهید."
@@ -1106,7 +1106,7 @@
     "message": "کد امنیتی"
   },
   "ex": {
-    "message": "سابق."
+    "message": "مثال."
   },
   "title": {
     "message": "عنوان"
@@ -1118,7 +1118,7 @@
     "message": "خانم"
   },
   "ms": {
-    "message": "خانم"
+    "message": "بانو"
   },
   "dr": {
     "message": "دکتر"
@@ -1136,19 +1136,19 @@
     "message": "نام کامل"
   },
   "identityName": {
-    "message": "نام شناسایی"
+    "message": "نام هویت"
   },
   "company": {
     "message": "شرکت"
   },
   "ssn": {
-    "message": "شماره امنیتی اجتماعی"
+    "message": "کد ملی"
   },
   "passportNumber": {
-    "message": "شماره پاسپورت"
+    "message": "شماره گذرنامه"
   },
   "licenseNumber": {
-    "message": "شماره مجوز"
+    "message": "شماره گواهی‌نامه"
   },
   "email": {
     "message": "ایمیل"
@@ -1157,7 +1157,7 @@
     "message": "تلفن"
   },
   "address": {
-    "message": "آدرس"
+    "message": "نشانی"
   },
   "address1": {
     "message": "نشانی ۱"
@@ -1187,7 +1187,7 @@
     "message": "ورود"
   },
   "typeLogins": {
-    "message": "ورود"
+    "message": "ورودها"
   },
   "typeSecureNote": {
     "message": "یادداشت امن"
@@ -1196,7 +1196,7 @@
     "message": "کارت"
   },
   "typeIdentity": {
-    "message": "مشخصات"
+    "message": "هویت"
   },
   "passwordHistory": {
     "message": "تاریخچه کلمه عبور"
@@ -1205,38 +1205,38 @@
     "message": "بازگشت"
   },
   "collections": {
-    "message": "مجموعه ها"
+    "message": "مجموعه‌ها"
   },
   "favorites": {
-    "message": "مورد علاقه"
+    "message": "مورد علاقه‌ها"
   },
   "popOutNewWindow": {
-    "message": "به یک پنجره جدید پاپ بزنید"
+    "message": "به یک پنجره جدید پاپ بزن"
   },
   "refresh": {
     "message": "تازه کردن"
   },
   "cards": {
-    "message": "کارتها"
+    "message": "کارت‌ها"
   },
   "identities": {
-    "message": "مشخصات"
+    "message": "هویت‌ها"
   },
   "logins": {
-    "message": "ورود"
+    "message": "ورودها"
   },
   "secureNotes": {
-    "message": "یادداشت های امن"
+    "message": "یادداشت‌های امن"
   },
   "clear": {
     "message": "پاک کردن",
     "description": "To clear something out. example: To clear browser history."
   },
   "checkPassword": {
-    "message": "بررسی اینکه که آیا کلمه عبور افشا شده است."
+    "message": "بررسی کنید که آیا کلمه عبور افشا شده است."
   },
   "passwordExposed": {
-    "message": "This password has been exposed in data breaches. You should change it.",
+    "message": "این کلمه عبور $VALUE$ بار در رخنه داده‌ها افشا شده است. باید آن را تغییر دهید.",
     "placeholders": {
       "value": {
         "content": "$1",
@@ -1245,7 +1245,7 @@
     }
   },
   "passwordSafe": {
-    "message": "این کلمه عبور در هیچ رخنه داده ای شناخته نشده است. باید برای امنیت از آن استفاده کنید."
+    "message": "این کلمه عبور در هیچ رخنه داده ای شناخته نشده است. استفاده از آن باید ایمن باشد."
   },
   "baseDomain": {
     "message": "دامنه پایه",
@@ -1263,18 +1263,18 @@
     "message": "دقیق"
   },
   "startsWith": {
-    "message": "شروع می شود با"
+    "message": "شروع می‌شود با"
   },
   "regEx": {
     "message": "عبارت منظم",
     "description": "A programming term, also known as 'RegEx'."
   },
   "matchDetection": {
-    "message": "بازرسی تطابق",
+    "message": "تشخیص مطابقت",
     "description": "URI match detection for auto-fill."
   },
   "defaultMatchDetection": {
-    "message": "بازرسی تطابق پیشفرض",
+    "message": "بررسی مطابقت پیش‌فرض",
     "description": "Default URI match detection for auto-fill."
   },
   "toggleOptions": {
@@ -1289,7 +1289,7 @@
     "description": "The URI of one of the current open tabs in the browser."
   },
   "organization": {
-    "message": "سازماندهی",
+    "message": "سازمان",
     "description": "An entity of multiple related people (ex. a team or business organization)."
   },
   "types": {
@@ -1299,31 +1299,31 @@
     "message": "تمام موارد"
   },
   "noPasswordsInList": {
-    "message": "هیچ کلمه عبوری در لیست وجود ندارد."
+    "message": "هیچ کلمه عبوری برای فهرست کردن وجود ندارد."
   },
   "remove": {
     "message": "حذف"
   },
   "default": {
-    "message": "پیش فرض"
+    "message": "پیش‌فرض"
   },
   "dateUpdated": {
-    "message": "بروزرسانی شد",
+    "message": "به‌روزرسانی شد",
     "description": "ex. Date this item was updated"
   },
   "dateCreated": {
-    "message": "ایجاد شده",
+    "message": "ایجاد شد",
     "description": "ex. Date this item was created"
   },
   "datePasswordUpdated": {
-    "message": "کلمه عبور بروزرسانی شد",
+    "message": "کلمه عبور به‌روزرسانی شد",
     "description": "ex. Date this password was updated"
   },
   "neverLockWarning": {
-    "message": "آیا جدا میخواهید از گزینه \"هرگز\" استفاده کنید؟ تنظیم کردن کردن گزینه قفل به \"هرگز\" کلیدهای رمزنگاری گاوصندوقتان را بر روی دستگاه شما ذخیره خواهد کرد. اگر از این گزینه استفاده میکنید باید اطمینان داشته باشید که دستگاه شما کاملا محافظت شده است."
+    "message": "آیا جداً می‌خواهید از گزینه \"هرگز\" استفاده کنید؟ تنظیم کردن گزینه قفل به \"هرگز\" کلیدهای رمزنگاری گاوصندوقتان را بر روی دستگاه شما ذخیره خواهد کرد. اگر از این گزینه استفاده می‌کنید باید اطمینان داشته باشید که دستگاه شما کاملا محافظت شده است."
   },
   "noOrganizationsList": {
-    "message": "You do not belong to any organizations. Organizations allow you to securely share items with other users."
+    "message": "شما به هیچ سازمانی تعلق ندارید. سازمان‌ها به شما اجازه می‌دهند تا داده‌های خود را با کاربران دیگر به صورت امن به اشتراک بگذارید."
   },
   "noCollectionsInList": {
     "message": "هیچ مجموعه ای برای لیست کردن وجود ندارد."
@@ -1357,16 +1357,16 @@
     "description": "PIN code. Ex. The short code (often numeric) that you use to unlock a device."
   },
   "unlockWithPin": {
-    "message": "بازکردن با پین"
+    "message": "باز کردن با پین"
   },
   "setYourPinCode": {
-    "message": "پین کد خود را برای باز کردن بیت واردن خود استفاده کنید. اگر به صورت کامل از حساب خود خارج شوید تنظیمات پین شما ریست می شود."
+    "message": "کد پین خود را برای باز کردن Bitwarden تنظیم کنید. اگر به طور کامل از برنامه خارج شوید، تنظیمات پین شما از بین می‌رود."
   },
   "pinRequired": {
     "message": "کد پین الزامیست."
   },
   "invalidPin": {
-    "message": "کد پین معتبر نیست. "
+    "message": "کد پین معتبر نیست."
   },
   "unlockWithBiometrics": {
     "message": "با استفاده از بیومتریک باز کنید"
@@ -1378,7 +1378,7 @@
     "message": "لطفاً استفاده از بیومتریک را در برنامه دسکتاپ Bitwarden تأیید کنید تا بیومتریک را برای مرورگر فعال کنید."
   },
   "lockWithMasterPassOnRestart": {
-    "message": "در زمان شروع مجدد مرورگر، با رمز اصلی قفل کن"
+    "message": "در زمان شروع مجدد، با کلمه عبور اصلی قفل کن"
   },
   "selectOneCollection": {
     "message": "شما باید حداقل یک مجموعه را انتخاب کنید."
@@ -1390,7 +1390,7 @@
     "message": "شبیه سازی"
   },
   "passwordGeneratorPolicyInEffect": {
-    "message": "یک یا چند خط مشی سازمان بر تنظیمات تولیدکننده شما تأثیر می گذارد."
+    "message": "یک یا چند سیاست سازمان بر تنظیمات تولید کننده شما تأثیر می‌گذارد."
   },
   "vaultTimeoutAction": {
     "message": "عمل متوقف شدن گاو‌صندوق"
@@ -1410,7 +1410,7 @@
     "message": "حذف دائمی مورد"
   },
   "permanentlyDeleteItemConfirmation": {
-    "message": "آیا مطمئن هستید که می خواهید این مورد را برای همیشه حذف کنید؟"
+    "message": "مطمئن هستید که می‌خواهید این مورد را برای همیشه پاک کنید؟"
   },
   "permanentlyDeletedItem": {
     "message": "مورد برای همیشه حذف شد"
@@ -1419,22 +1419,22 @@
     "message": "بازیابی مورد"
   },
   "restoreItemConfirmation": {
-    "message": "آیا مطمئن هستید می خواهید این مورد را بازیابی کنید؟"
+    "message": "آیا مطمئن هستید که می‌خواهید این مورد را بازیابی کنید؟"
   },
   "restoredItem": {
     "message": "مورد بازیابی شد"
   },
   "vaultTimeoutLogOutConfirmation": {
-    "message": "خروج از سیستم تمام دسترسی ها به گاو‌صندوق شما را از بین می برد و نیاز به احراز هویت آنلاین پس از مدت زمان توقف دارد. آیا مطمئن هستید که می خواهید از این تنظیمات استفاده کنید؟"
+    "message": "خروج از سیستم، تمام دسترسی ها به گاو‌صندوق شما را از بین می‌برد و نیاز به احراز هویت آنلاین پس از مدت زمان توقف دارد. آیا مطمئن هستید که می‌خواهید از این تنظیمات استفاده کنید؟"
   },
   "vaultTimeoutLogOutConfirmationTitle": {
-    "message": "تایید عمل توقف"
+    "message": "تأیید عمل توقف"
   },
   "autoFillAndSave": {
-    "message": "پرکردن خودکار و ذخیره"
+    "message": "پر کردن خودکار و ذخیره"
   },
   "autoFillSuccessAndSavedUri": {
-    "message": "مورد خودکار پر شد و آدرس اینترنتی ذخیره شد"
+    "message": "مورد خودکار پر شد و نشانی اینترنتی ذخیره شد"
   },
   "autoFillSuccess": {
     "message": "مورد خودکار پر شد"
@@ -1482,10 +1482,10 @@
     }
   },
   "masterPasswordPolicyRequirementsNotMet": {
-    "message": "کلمه عبور اصلی جدید شما از شرایط سیاست پپیروی نمی کند."
+    "message": "کلمه عبور اصلی جدید شما از شرایط سیاست پیروی نمی‌کند."
   },
   "acceptPolicies": {
-    "message": "با علامت زدن این کادر با موارد زیر موافقت می کنید:"
+    "message": "با علامت زدن این کادر با موارد زیر موافقت می‌کنید:"
   },
   "acceptPoliciesRequired": {
     "message": "شرایط خدمات و سیاست حفظ حریم خصوصی تأیید نشده است."
@@ -1497,16 +1497,16 @@
     "message": "سیاست حفظ حریم خصوصی"
   },
   "hintEqualsPassword": {
-    "message": "نکته کلمه عبور شما نمی تواند همان کلمه عبور شما باشد."
+    "message": "اشاره به کلمه عبور شما نمی‌تواند همان کلمه عبور شما باشد."
   },
   "ok": {
-    "message": "تایید"
+    "message": "تأیید"
   },
   "desktopSyncVerificationTitle": {
-    "message": "تأیید همگام سازی دسکتاپ"
+    "message": "تأیید همگام‌سازی دسکتاپ"
   },
   "desktopIntegrationVerificationText": {
-    "message": "لطفاً تأیید کنید که برنامه دسکتاپ این اثر انگشت را نشان می دهد:"
+    "message": "لطفاً تأیید کنید که برنامه دسکتاپ این اثر انگشت را نشان می‌دهد:"
   },
   "desktopIntegrationDisabledTitle": {
     "message": "ادغام مرورگر فعال نیست"
@@ -1536,37 +1536,37 @@
     "message": "برنامه دسکتاپ به یک حساب دیگر وارد شده است. لطفاً اطمینان حاصل کنید که هر دو برنامه به یک حساب وارد شده اند."
   },
   "nativeMessagingWrongUserTitle": {
-    "message": "عدم تطابق حساب"
+    "message": "عدم مطابقت حساب کاربری"
   },
   "biometricsNotEnabledTitle": {
-    "message": "بیومتریک فعال نیست"
+    "message": "بیومتریک برپا نشده"
   },
   "biometricsNotEnabledDesc": {
     "message": "بیومتریک مرورگر ابتدا نیاز به فعالسازی بیومتریک دسکتاپ در تنظیمات دارد."
   },
   "biometricsNotSupportedTitle": {
-    "message": "بیومتریک پشتیبانی نمی شود"
+    "message": "بیومتریک پشتیبانی نمی‌شود"
   },
   "biometricsNotSupportedDesc": {
-    "message": "بیومتریک مرورگر در این دستگاه پشتیبانی نمی شود."
+    "message": "بیومتریک مرورگر در این دستگاه پشتیبانی نمی‌شود."
   },
   "nativeMessaginPermissionErrorTitle": {
     "message": "مجوز ارائه نشده است"
   },
   "nativeMessaginPermissionErrorDesc": {
-    "message": "بدون اجازه ارتباط با برنامه دسکتاپ Bitwarden ، نمی توانیم بیومتریک را در افزونه مرورگر ارائه دهیم. لطفا دوباره تلاش کنید."
+    "message": "بدون اجازه برای ارتباط با برنامه دسکتاپ Bitwarden، نمی‌توانیم بیومتریک را در افزونه مرورگر ارائه دهیم. لطفاً دوباره تلاش کنید."
   },
   "nativeMessaginPermissionSidebarTitle": {
     "message": "خطای درخواست مجوز"
   },
   "nativeMessaginPermissionSidebarDesc": {
-    "message": "این عمل را نمی توان در نوار کناری انجام داد، لطفاً اقدام را در پنجره بازشو یا پنجره بازخوانی کنید."
+    "message": "این عمل را نمی‌توان در نوار کناری انجام داد، لطفاً اقدام را در پنجره بازشو بازخوانی کنید."
   },
   "personalOwnershipSubmitError": {
-    "message": "به دلیل خط مشی Enterprise ، برای ذخیره موارد در گاوصندوق شخصی خود محدود شده اید. گزینه مالکیت را به یک سازمان تغییر دهید و مجموعه های موجود را انتخاب کنید."
+    "message": "به دلیل سیاست پرمیوم، برای ذخیره موارد در گاوصندوق شخصی خود محدود شده اید. گزینه مالکیت را به یک سازمان تغییر دهید و مجموعه های موجود را انتخاب کنید."
   },
   "personalOwnershipPolicyInEffect": {
-    "message": "خط مشی سازمانی بر تنظیمات مالکیت شما تأثیر می گذارد."
+    "message": "سیاست سازمانی بر تنظیمات مالکیت شما تأثیر می‌گذارد."
   },
   "excludedDomains": {
     "message": "دامنه های مستثنی"
@@ -1588,7 +1588,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "searchSends": {
-    "message": "ارسال ها را جستجو کن",
+    "message": "جستجوی ارسال‌ها",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "addSend": {
@@ -1599,7 +1599,7 @@
     "message": "متن"
   },
   "sendTypeFile": {
-    "message": "فایل"
+    "message": "پرونده"
   },
   "allSends": {
     "message": "همه ارسال ها",
@@ -1632,7 +1632,7 @@
     "message": "کلمه عبور حذف شد"
   },
   "deletedSend": {
-    "message": "ارسال پاک شد",
+    "message": "ارسال حذف شد",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLink": {
@@ -1643,14 +1643,14 @@
     "message": "غیرفعال شد"
   },
   "removePasswordConfirmation": {
-    "message": "مطمئنید می‌خواهید این کلمه عبور حذف شود؟"
+    "message": "مطمئنید که می‌خواهید کلمه عبور حذف شود؟"
   },
   "deleteSend": {
-    "message": "ارسال پاک شد",
+    "message": "ارسال حذف شد",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "deleteSendConfirmation": {
-    "message": "آیا مطمئن هستید می خواهید این ارسال را حذف کنید؟",
+    "message": "آیا مطمئن هستید که می‌خواهید این ارسال را حذف کنید؟",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editSend": {
@@ -1666,7 +1666,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendFileDesc": {
-    "message": "فایلی که می خواهید ارسال کنید."
+    "message": "پرونده ای که می‌خواهید ارسال کنید."
   },
   "deletionDate": {
     "message": "تاریخ حذف"
@@ -1679,7 +1679,7 @@
     "message": "تاريخ انقضاء"
   },
   "expirationDateDesc": {
-    "message": "در صورت تنظیم، دسترسی به این ارسال در تاریخ و ساعت مشخص شده منقضی می شود.",
+    "message": "در صورت تنظیم، دسترسی به این ارسال در تاریخ و ساعت مشخص شده منقضی می‌شود.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "oneDay": {
@@ -1701,7 +1701,7 @@
     "message": "تعداد دسترسی حداکثر"
   },
   "maximumAccessCountDesc": {
-    "message": "در صورت تنظیم، با رسیدن به حداکثر تعداد دسترسی، کاربران دیگر نمی توانند به این ارسال دسترسی پیدا کنند.",
+    "message": "در صورت تنظیم، با رسیدن به حداکثر تعداد دسترسی، کاربران دیگر نمی‌توانند به این ارسال دسترسی پیدا کنند.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendPasswordDesc": {
@@ -1721,7 +1721,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendTextDesc": {
-    "message": "متنی که می خواهید ارسال کنید."
+    "message": "متنی که می‌خواهید ارسال کنید."
   },
   "sendHideText": {
     "message": "متن این ارسال را به طور پیش فرض پنهان کن.",
@@ -1731,36 +1731,36 @@
     "message": "تعداد دسترسی فعلی"
   },
   "createSend": {
-    "message": "ساختن ارسال جدید",
+    "message": "ارسال جدید",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "newPassword": {
     "message": "کلمه عبور جدید"
   },
   "sendDisabled": {
-    "message": "ارسال غیرفعال شد",
+    "message": "ارسال حذف شد",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendDisabledWarning": {
-    "message": "به دلیل خط مشی سازمانی، شما فقط می توانید ارسال موجود را حذف کنید.",
+    "message": "به دلیل سیاست سازمانی، شما فقط می‌توانید ارسال موجود را حذف کنید.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createdSend": {
-    "message": "ارسال جدید ساخته شد",
+    "message": "ارسال ساخته شد",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editedSend": {
-    "message": "ارسال جدید ویرایش شد",
+    "message": "ارسال ذخیره شد",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLinuxChromiumFileWarning": {
-    "message": "برای انتخاب پرونده، پسوند را در نوار کناری باز کنید (در صورت امکان) یا با کلیک بر روی این آگهی به پنجره جدیدی باز شوید."
+    "message": "برای انتخاب پرونده، پسوند را در نوار کناری باز کنید (در صورت امکان) یا با کلیک بر روی این بنر پنجره جدیدی باز کنید."
   },
   "sendFirefoxFileWarning": {
-    "message": "برای انتخاب یک فایل با استفاده از Firefox، افزونه را در نوار کناری باز کنید یا با کلیک بر روی این بنر به پنجره جدید باز شوید."
+    "message": "برای انتخاب یک پرونده با استفاده از Firefox، افزونه را در نوار کناری باز کنید یا با کلیک بر روی این بنر پنجره جدیدی باز کنید."
   },
   "sendSafariFileWarning": {
-    "message": "برای انتخاب فایلی با استفاده از Safari، با کلیک روی این بنر به پنجره جدیدی باز شوید."
+    "message": "برای انتخاب پرونده ای با استفاده از Safari، با کلیک روی این بنر پنجره جدیدی باز کنید."
   },
   "sendFileCalloutHeader": {
     "message": "قبل از اینکه شروع کنی"
@@ -1778,61 +1778,61 @@
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To use a calendar style date picker click here **to pop out your window.**'"
   },
   "expirationDateIsInvalid": {
-    "message": "تاریخ انقضا ارائه شده معتبر نیست."
+    "message": "تاریخ انقضاء ارائه شده معتبر نیست."
   },
   "deletionDateIsInvalid": {
     "message": "تاریخ حذف ارائه شده معتبر نیست."
   },
   "expirationDateAndTimeRequired": {
-    "message": "تاریخ انقضا و زمان لازم است."
+    "message": "تاریخ انقضاء و زمان لازم است."
   },
   "deletionDateAndTimeRequired": {
     "message": "تاریخ و زمان حذف لازم است."
   },
   "dateParsingError": {
-    "message": "هنگام ذخیره حذف و تاریخ انقضا شما خطایی روی داد."
+    "message": "هنگام ذخیره حذف و تاریخ انقضاء شما خطایی روی داد."
   },
   "hideEmail": {
-    "message": "آدرس ایمیلم را از گیرندگان مخفی کن."
+    "message": "نشانی ایمیلم را از گیرندگان مخفی کن."
   },
   "sendOptionsPolicyInEffect": {
-    "message": "یک یا چند سیاست سازمان بر گزینه های ارسال شما تأثیر می گذارد."
+    "message": "یک یا چند سیاست سازمان بر گزینه های ارسال شما تأثیر می‌گذارد."
   },
   "passwordPrompt": {
-    "message": "کلمه عبور اصلی دوباره تولید می شود"
+    "message": "درخواست مجدد کلمه عبور اصلی"
   },
   "passwordConfirmation": {
     "message": "تأیید کلمه عبور اصلی"
   },
   "passwordConfirmationDesc": {
-    "message": "این عمل محافظت می شود. برای ادامه، لطفاً کلمه ورود اصلی خود را دوباره وارد کنید تا هویتان را تأیید کنید."
+    "message": "این عمل محافظت می‌شود. برای ادامه، لطفاً کلمه عبور اصلی خود را دوباره وارد کنید تا هویت‌تان را تأیید کنید."
   },
   "emailVerificationRequired": {
-    "message": "تایید ایمیل لازم است"
+    "message": "تأیید ایمیل لازم است"
   },
   "emailVerificationRequiredDesc": {
-    "message": "برای استفاده از این ویژگی باید ایمیل خود را تأیید کنید. می توانید ایمیل خود را در گاوصندوق وب تأیید کنید."
+    "message": "برای استفاده از این ویژگی باید ایمیل خود را تأیید کنید. می‌توانید ایمیل خود را در گاوصندوق وب تأیید کنید."
   },
   "updatedMasterPassword": {
-    "message": "کلمه عبور اصلی بروز شد"
+    "message": "کلمه عبور اصلی به‌روز شد"
   },
   "updateMasterPassword": {
-    "message": "بروزرسانی کلمه عبور اصلی"
+    "message": "به‌روزرسانی کلمه عبور اصلی"
   },
   "updateMasterPasswordWarning": {
-    "message": "کلمه عبور اصلی شما اخیراً توسط سرپرست سازمانتان تغییر کرده است. برای دسترسی به گاوصندوق، باید همین حالا کلمه عبور اصلی خود را به روز کنید. در صورت ادامه، شما از نشست فعلی خود خارج می شوید و باید دوباره وارد سیستم شوید. نشست فعال در دستگاه های دیگر ممکن است تا یک ساعت همچنان فعال باقی بمانند."
+    "message": "کلمه عبور اصلی شما اخیراً توسط سرپرست سازمان‌تان تغییر کرده است. برای دسترسی به گاوصندوق، باید همین حالا کلمه عبور اصلی خود را به‌روز کنید. در صورت ادامه، شما از نشست فعلی خود خارج می‌شوید و باید دوباره وارد سیستم شوید. نشست فعال در دستگاه های دیگر ممکن است تا یک ساعت همچنان فعال باقی بمانند."
   },
   "resetPasswordPolicyAutoEnroll": {
     "message": "ثبت نام خودکار"
   },
   "resetPasswordAutoEnrollInviteWarning": {
-    "message": "این سازمان دارای خط مشی سازمانی ای است که به طور خودکار شما را در بازنشانی کلمه عبور ثبت نام می کند. این ثبت نام به مدیران سازمان اجازه می دهد تا کلمه عبور اصلی شما را تغییر دهند."
+    "message": "این سازمان دارای سیاست سازمانی ای است که به طور خودکار شما را در بازنشانی کلمه عبور ثبت نام می‌کند. این ثبت نام به مدیران سازمان اجازه می‌دهد تا کلمه عبور اصلی شما را تغییر دهند."
   },
   "selectFolder": {
     "message": "پوشه را انتخاب کنید..."
   },
   "ssoCompleteRegistration": {
-    "message": "برای تکمیل ورود به سیستم با SSO ، لطفاً یک کلمه عبور اصلی برای دسترسی و محافظت از گاوصندوق خود تنظیم کنید."
+    "message": "برای پر کردن ورود به سیستم با SSO، لطفاً یک کلمه عبور اصلی برای دسترسی و محافظت از گاوصندوق خود تنظیم کنید."
   },
   "hours": {
     "message": "ساعت"
@@ -1841,7 +1841,7 @@
     "message": "دقیقه"
   },
   "vaultTimeoutPolicyInEffect": {
-    "message": "خط مشی های سازمانتان بر مهلت زمانی گاوصندوق شما تأثیر می گذارد. حداکثر زمان مجاز گاوصندوق $HOURS$ ساعت و $MINUTES$ دقیقه است",
+    "message": "سیاست‌های سازمانتان بر مهلت زمانی گاوصندوق شما تأثیر می‌گذارد. حداکثر زمان مجاز گاوصندوق $HOURS$ ساعت و $MINUTES$ دقیقه است",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -1857,10 +1857,10 @@
     "message": "مهلت زمانی شما بیش از محدودیت های تعیین شده توسط سازمانتان است."
   },
   "vaultExportDisabled": {
-    "message": "صادرات گاوصندوق غیرفعال شده است"
+    "message": "برون ریزی گاوصندوق غیرفعال شده است"
   },
   "personalVaultExportPolicyInEffect": {
-    "message": "یک یا چند خط مشی سازمان از صادرات گاوصندوق شخصی شما جلوگیری می کند."
+    "message": "یک یا چند سیاست سازمان از برون ریزی گاوصندوق شخصی شما جلوگیری می‌کند."
   },
   "copyCustomFieldNameInvalidElement": {
     "message": "شناسایی عنصر فرم معتبر امکان پذیر نیست. به جای آن سعی کنید HTML را بررسی کنید."
@@ -1881,16 +1881,16 @@
     "message": "ترک سازمان"
   },
   "removeMasterPassword": {
-    "message": "پاک کردن کلمه عبور اصلی"
+    "message": "حذف کلمه عبور اصلی"
   },
   "removedMasterPassword": {
-    "message": "کلمه عبور اصلی پاک شد."
+    "message": "کلمه عبور اصلی حذف شد"
   },
   "leaveOrganizationConfirmation": {
     "message": "آيا مطمئن هستيد که می خواهيد سازمان های انتخاب شده را ترک کنيد؟"
   },
   "leftOrganization": {
-    "message": "شما از سازمان ها خارج شده اید."
+    "message": "شما از سازمان خارج شده اید."
   },
   "toggleCharacterCount": {
     "message": "تغییر تعداد کاراکترها"
@@ -1899,10 +1899,10 @@
     "message": "زمان نشست شما به پایان رسید. لطفاً برگردید و دوباره وارد سیستم شوید."
   },
   "exportingPersonalVaultTitle": {
-    "message": "صادرات گاو‌صندوق شخصی"
+    "message": "برون ریزی گاو‌صندوق شخصی"
   },
   "exportingPersonalVaultDescription": {
-    "message": "فقط موارد گاو‌صندوق شخصی مرتبط با $EMAIL$ صادر خواهد شد. موارد گاو‌صندوق سازمان شامل نخواهد شد.",
+    "message": "فقط موارد گاو‌صندوق شخصی مرتبط با $EMAIL$ برون ریزی خواهد شد. موارد گاو‌صندوق سازمان شامل نخواهد شد.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -1923,14 +1923,14 @@
     "message": "نوع نام کاربری"
   },
   "plusAddressedEmail": {
-    "message": "به علاوه ایمیل آدرس داده شده",
+    "message": "به علاوه نشانی ایمیل داده شده",
     "description": "Username generator option that appends a random sub-address to the username. For example: address+subaddress@email.com"
   },
   "plusAddressedEmailDesc": {
     "message": "از قابلیت های آدرس دهی فرعی ارائه دهنده ایمیل خود استفاده کنید."
   },
   "catchallEmail": {
-    "message": "رایانامه همه‌گیر"
+    "message": "دریافت همه ایمیل‌ها"
   },
   "catchallEmailDesc": {
     "message": "از صندوق ورودی پیکربندی شده دامنه خود استفاده کنید."
@@ -1942,22 +1942,22 @@
     "message": "کلمه تصادفی"
   },
   "websiteName": {
-    "message": "نام وب سایت"
+    "message": "نام وب‌سایت"
   },
   "whatWouldYouLikeToGenerate": {
     "message": "چه چیزی دوست دارید تولید کنید؟"
   },
   "passwordType": {
-    "message": "نوع گذرواژه"
+    "message": "نوع کلمه عبور"
   },
   "service": {
-    "message": "خدمت"
+    "message": "سرویس"
   },
   "forwardedEmail": {
     "message": "نام مستعار ایمیل فوروارد شده"
   },
   "forwardedEmailDesc": {
-    "message": "یک نام مستعار ایمیل با یک سرویس فروارد خارجی ایجاد کنید."
+    "message": "یک نام مستعار ایمیل با یک سرویس ارسال خارجی ایجاد کنید."
   },
   "hostname": {
     "message": "نام میزبان",
@@ -1970,7 +1970,7 @@
     "message": "کلید API"
   },
   "ssoKeyConnectorError": {
-    "message": "خطای Key Connector: مطمئن شوید که Key Connector در دسترس است و به درستی کار می کند."
+    "message": "خطای رابط کلید: مطمئن شوید که رابط کلید در دسترس است و به درستی کار می‌کند."
   },
   "premiumSubcriptionRequired": {
     "message": "اشتراک پرمیوم نیاز است"
@@ -2006,7 +2006,7 @@
     "message": "نسخه سرور"
   },
   "selfHosted": {
-    "message": "میزبانی خود"
+    "message": "خود میزبان"
   },
   "thirdParty": {
     "message": "شخص ثالث"
