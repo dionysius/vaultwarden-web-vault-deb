@@ -29,16 +29,12 @@ export class BrowserFileDownloadService implements FileDownloadService {
         true
       );
     } else {
-      if ((navigator as any).msSaveOrOpenBlob) {
-        (navigator as any).msSaveBlob(builder.blob, request.fileName);
-      } else {
-        const a = window.document.createElement("a");
-        a.href = URL.createObjectURL(builder.blob);
-        a.download = request.fileName;
-        window.document.body.appendChild(a);
-        a.click();
-        window.document.body.removeChild(a);
-      }
+      const a = window.document.createElement("a");
+      a.href = URL.createObjectURL(builder.blob);
+      a.download = request.fileName;
+      window.document.body.appendChild(a);
+      a.click();
+      window.document.body.removeChild(a);
     }
   }
 }
