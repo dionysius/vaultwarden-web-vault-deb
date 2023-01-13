@@ -175,10 +175,10 @@
     "message": "Adresse"
   },
   "premiumRequired": {
-    "message": "Version Premium requise"
+    "message": "Premium requis"
   },
   "premiumRequiredDesc": {
-    "message": "Une adhésion premium est requise pour utiliser cette fonctionnalité."
+    "message": "Une adhésion Premium est requise pour utiliser cette fonctionnalité."
   },
   "errorOccurred": {
     "message": "Une erreur est survenue."
@@ -500,19 +500,19 @@
     "message": "Soumettre"
   },
   "masterPass": {
-    "message": "Mot de passe maître"
+    "message": "Mot de passe principal"
   },
   "masterPassDesc": {
-    "message": "Le mot de passe maître est le mot de passe que vous utilisez pour accéder à votre coffre. Il est très important de ne pas l'oublier. Il n'existe aucun moyen de le récupérer si vous le perdez."
+    "message": "Le mot de passe principal est le mot de passe que vous utilisez pour accéder à votre coffre. Il est très important de ne pas oublier votre mot de passe principal. Il n'existe aucun moyen de récupérer le mot de passe si vous l'oubliez."
   },
   "masterPassHintDesc": {
-    "message": "Un indice de mot de passe maître peut vous aider à vous rappeler de votre mot de passe en cas d'oubli."
+    "message": "Un indice de mot de passe principal peut vous aider à vous souvenir de votre mot de passe si vous l'oubliez."
   },
   "reTypeMasterPass": {
-    "message": "Saisir à nouveau le mot de passe maître"
+    "message": "Ressaisir le mot de passe principal"
   },
   "masterPassHint": {
-    "message": "Indice du mot de passe maître (facultatif)"
+    "message": "Indice du mot de passe principal (facultatif)"
   },
   "settings": {
     "message": "Paramètres"
@@ -521,10 +521,10 @@
     "message": "Indice mot de passe"
   },
   "enterEmailToGetHint": {
-    "message": "Saisissez l'adresse e-mail de votre compte pour recevoir l'indice de votre mot de passe maître."
+    "message": "Saisissez l'adresse électronique de votre compte pour recevoir l'indice de votre mot de passe principal."
   },
   "getMasterPasswordHint": {
-    "message": "Obtenir l'indice du mot de passe maître"
+    "message": "Obtenir l'indice du mot de passe principal"
   },
   "emailRequired": {
     "message": "L'adresse e-mail est requise."
@@ -533,22 +533,22 @@
     "message": "Adresse e-mail invalide."
   },
   "masterPasswordRequired": {
-    "message": "Le mot de passe maître est requis."
+    "message": "Le mot de passe principal est requis."
   },
   "confirmMasterPasswordRequired": {
-    "message": "Le mot de passe maître doit être entré de nouveau."
+    "message": "Une nouvelle saisie du mot de passe principal est nécessaire."
   },
   "masterPasswordMinlength": {
-    "message": "Le mot de passe maître doit comporter au moins 8 caractères."
+    "message": "Le mot de passe principal doit comporter au moins 8 caractères."
   },
   "masterPassDoesntMatch": {
-    "message": "La confirmation du mot de passe maître ne correspond pas."
+    "message": "La confirmation du mot de passe principal ne correspond pas."
   },
   "newAccountCreated": {
     "message": "Votre nouveau compte a été créé ! Vous pouvez maintenant vous authentifier."
   },
   "masterPassSent": {
-    "message": "Nous vous avons envoyé un e-mail contenant votre indice de mot de passe maître."
+    "message": "Nous vous avons envoyé un courriel avec votre indice de mot de passe principal."
   },
   "unexpectedError": {
     "message": "Une erreur inattendue est survenue."
@@ -662,13 +662,13 @@
     "message": "Identifiant non disponible"
   },
   "noTwoStepProviders": {
-    "message": "Ce compte dispose d'une authentification à deux étapes, cependant, aucun service d'authentification à deux étapes n'est supporté par ce navigateur web."
+    "message": "Ce compte a une authentification à deux facteurs configurée, mais aucun des fournisseurs d'authentification à deux facteurs configurés ne sont pris en charge par cet appareil."
   },
   "noTwoStepProviders2": {
     "message": "Veuillez ajouter des services additionnels qui supportent une utilisation sur plusieurs appareils (comme une application d'authentification)."
   },
   "twoStepOptions": {
-    "message": "Options d'identification à deux étapes"
+    "message": "Options d'authentification à deux facteurs"
   },
   "selfHostedEnvironment": {
     "message": "Environnement auto-hébergé"
@@ -731,7 +731,7 @@
     "message": "Êtes-vous sûr de vouloir vous déconnecter ?"
   },
   "logOut": {
-    "message": "Déconnexion"
+    "message": "Se déconnecter"
   },
   "addNewLogin": {
     "message": "Ajouter un site"
@@ -776,10 +776,10 @@
     "message": "Synchroniser le coffre maintenant"
   },
   "changeMasterPass": {
-    "message": "Modifier le mot de passe maître"
+    "message": "Changer le mot de passe principal"
   },
   "changeMasterPasswordConfirmation": {
-    "message": "Vous pouvez modifier votre mot de passe maître depuis le coffre web sur bitwarden.com. Souhaitez-vous visiter le site maintenant ?"
+    "message": "Vous pouvez changer votre mot de passe principal depuis le coffre web de bitwarden.com. Voulez-vous visiter le site web maintenant ?"
   },
   "fingerprintPhrase": {
     "message": "Phrase d'empreinte",
@@ -824,13 +824,13 @@
     }
   },
   "invalidMasterPassword": {
-    "message": "Mot de passe maître invalide"
+    "message": "Mot de passe principal invalide"
   },
   "twoStepLoginConfirmation": {
-    "message": "L'identification en deux étapes sécurise plus encore votre compte en vous demandant à chaque identification la saisie d'un code de sécurité obtenu depuis un autre appareil, comme une clef de sécurité, une application d'authentification, un SMS, un appel téléphonique ou encore un courriel. L'identification en deux étapes peut être activée dans le coffre web sur bitwarden.com. Voulez-vous vous rendre sur le site web maintenant ?"
+    "message": "L'authentification à deux facteurs rend votre compte plus sûr en vous demandant de vérifier votre connexion avec un autre dispositif tel qu'une clé de sécurité, une application d'authentification, un SMS, un appel téléphonique ou un courriel. L'authentification à deux facteurs peut être configurée sur le coffre web de bitwarden.com. Voulez-vous visiter le site web maintenant ?"
   },
   "twoStepLogin": {
-    "message": "Identification à deux facteurs"
+    "message": "Authentification à deux facteurs"
   },
   "vaultTimeout": {
     "message": "Délai d'expiration du coffre"
@@ -1050,49 +1050,49 @@
     "message": "Gérer l'adhésion"
   },
   "premiumManageAlert": {
-    "message": "Vous pouvez gérer votre adhésion depuis le coffre web sur bitwarden.com. Souhaitez-vous visiter le site web maintenant ?"
+    "message": "Vous pouvez gérer votre adhésion sur le coffre web de bitwarden.com. Voulez-vous visiter le site web maintenant ?"
   },
   "premiumRefresh": {
     "message": "Actualiser l'adhésion"
   },
   "premiumNotCurrentMember": {
-    "message": "Vous n'êtes actuellement pas un membre premium."
+    "message": "Vous n'êtes pas actuellement un membre Premium."
   },
   "premiumSignUpAndGet": {
-    "message": "Devenez un membre premium et obtenez :"
+    "message": "Inscrivez-vous pour une adhésion Premium et obtenez :"
   },
   "premiumSignUpStorage": {
-    "message": "1 Go de stockage de fichiers chiffrés."
+    "message": "1 Go de stockage chiffré pour les fichiers joints."
   },
   "premiumSignUpTwoStep": {
-    "message": "Options d'identification en deux étapes additionnelles comme YubiKey, FIDO U2F et Duo."
+    "message": "Options additionnelles d'identification à deux étapes telles que YubiKey, FIDO U2F et Duo."
   },
   "premiumSignUpReports": {
-    "message": "Rapports sur l'hygiène des mots de passe, la santé des comptes et les fuites de données pour assurer la sécurité de votre coffre."
+    "message": "Hygiène du mot de passe, santé du compte et rapports sur les brèches de données pour assurer la sécurité de votre coffre."
   },
   "premiumSignUpTotp": {
-    "message": "Génération d'un code de vérification TOTP (2FA) pour les identifiants de votre coffre."
+    "message": "Générateur de code de vérification TOTP (2FA) pour les identifiants dans votre coffre."
   },
   "premiumSignUpSupport": {
-    "message": "Support client prioritaire."
+    "message": "Assistance client prioritaire."
   },
   "premiumSignUpFuture": {
-    "message": "Toutes les futures options premium. D'autres suivront prochainement !"
+    "message": "Toutes les futures fonctionnalités Premium. Plus à venir prochainement !"
   },
   "premiumPurchase": {
     "message": "Acheter Premium"
   },
   "premiumPurchaseAlert": {
-    "message": "Vous pouvez opter pour une adhésion premium depuis le coffre web sur bitwarden.com. Souhaitez-vous visiter le site web maintenant ?"
+    "message": "Vous pouvez acheter une adhésion Premium sur le coffre web de bitwarden.com. Voulez-vous visiter le site web maintenant ?"
   },
   "premiumCurrentMember": {
-    "message": "Vous êtes un adhérent premium !"
+    "message": "Vous êtes un membre Premium !"
   },
   "premiumCurrentMemberThanks": {
-    "message": "Merci de supporter Bitwarden."
+    "message": "Merci de soutenir Bitwarden."
   },
   "premiumPrice": {
-    "message": "Tout pour seulement $PRICE$ /an !",
+    "message": "Tout pour seulement $PRICE$/an !",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -1355,10 +1355,10 @@
     "description": "ex. A weak password. Scale: Weak -> Good -> Strong"
   },
   "weakMasterPassword": {
-    "message": "Mot de passe maître faible"
+    "message": "Mot de passe principal faible"
   },
   "weakMasterPasswordDesc": {
-    "message": "Le mot de passe maître que vous avez choisi est faible. Vous devriez utiliser un mot de passe (ou une phrase secrète) fort(e) pour protéger correctement votre compte Bitwarden. Êtes-vous sûr de vouloir utiliser ce mot de passe maître ?"
+    "message": "Le mot de passe principal que vous avez choisi est faible. Vous devriez utiliser un mot de passe principal fort (ou une phrase de passe) pour protéger correctement votre compte Bitwarden. Êtes-vous sûr de vouloir utiliser ce mot de passe principal ?"
   },
   "pin": {
     "message": "Code PIN",
@@ -1395,7 +1395,7 @@
     "message": "Demander à Touch ID au démarrage"
   },
   "lockWithMasterPassOnRestart": {
-    "message": "Verrouiller avec le mot de passe maître lors du redémarrage"
+    "message": "Verrouiller avec le mot de passe principal au redémarrage"
   },
   "deleteAccount": {
     "message": "Supprimer le compte"
@@ -1428,7 +1428,7 @@
     "message": "Vous devez sélectionner au moins une collection."
   },
   "premiumUpdated": {
-    "message": "Vous venez de passer à un compte Premium."
+    "message": "Vous avez mis à niveau vers Premium."
   },
   "restore": {
     "message": "Restaurer"
@@ -1462,7 +1462,7 @@
     "message": "Action lors de l'expiration du délai du coffre"
   },
   "vaultTimeoutActionLockDesc": {
-    "message": "Votre mot de passe maître ou une autre méthode de déverrouillage est nécessaire pour accéder de nouveau à votre coffre."
+    "message": "Un mot de passe principal ou une autre méthode de déverrouillage est nécessaire pour accéder à nouveau à votre coffre."
   },
   "vaultTimeoutActionLogOutDesc": {
     "message": "Un coffre déconnecté nécessite que vous vous ré-authentifiez pour y accéder de nouveau."
@@ -1500,7 +1500,7 @@
     "message": "Supprimer définitivement"
   },
   "vaultTimeoutLogOutConfirmation": {
-    "message": "La déconnexion supprimera tous les accès à votre coffre et nécessite une authentification en ligne après la période d'expiration. Êtes-vous sûr de vouloir utiliser ce paramètre?"
+    "message": "La déconnexion supprimera tout accès à votre coffre et nécessitera une authentification en ligne après la période d'expiration. Êtes-vous sûr de vouloir utiliser ce paramètre ?"
   },
   "vaultTimeoutLogOutConfirmationTitle": {
     "message": "Confirmation de l'action lors de l'expiration du délai"
@@ -1509,19 +1509,19 @@
     "message": "Portail de connexion unique d'entreprise"
   },
   "setMasterPassword": {
-    "message": "Définir le mot de passe maître"
+    "message": "Définir le mot de passe principal"
   },
   "ssoCompleteRegistration": {
-    "message": "Afin de terminer la connexion avec SSO, veuillez définir un mot de passe maître pour accéder à votre coffre et le protéger."
+    "message": "Afin de finaliser la connexion avec SSO, veuillez définir un mot de passe principal pour accéder et protéger votre coffre."
   },
   "newMasterPass": {
-    "message": "Nouveau mot de passe maître"
+    "message": "Nouveau mot de passe principal"
   },
   "confirmNewMasterPass": {
-    "message": "Confirmer le nouveau mot de passe maître"
+    "message": "Confirmer le nouveau mot de passe principal"
   },
   "masterPasswordPolicyInEffect": {
-    "message": "Une ou plusieurs politiques de l'organisation exigent que votre mot de passe maître réponde aux exigences suivantes :"
+    "message": "Une ou plusieurs politiques de l'organisation exigent que votre mot de passe principal réponde aux exigences suivantes :"
   },
   "policyInEffectMinComplexity": {
     "message": "Score de complexité minimum de $SCORE$",
@@ -1560,7 +1560,7 @@
     }
   },
   "masterPasswordPolicyRequirementsNotMet": {
-    "message": "Votre nouveau mot de passe maître ne répond pas aux exigences de la politique."
+    "message": "Votre nouveau mot de passe principal ne répond pas aux exigences en matière de politique de sécurité."
   },
   "acceptPolicies": {
     "message": "En cochant cette case, vous acceptez les éléments suivants :"
@@ -1813,22 +1813,22 @@
     "message": "Vous devez vérifier votre adresse e-mail pour utiliser cette fonctionnalité."
   },
   "passwordPrompt": {
-    "message": "Ressaisie du mot de passe maître"
+    "message": "Ressaisir le mot de passe principal"
   },
   "passwordConfirmation": {
-    "message": "Confirmation du mot de passe maître"
+    "message": "Confirmation du mot de passe principal"
   },
   "passwordConfirmationDesc": {
-    "message": "Cette action est protégée. Pour continuer, veuillez ressaisir votre mot de passe maître pour vérifier votre identité."
+    "message": "Cette action est protégée. Pour continuer, veuillez saisir à nouveau votre mot de passe principal pour vérifier votre identité."
   },
   "updatedMasterPassword": {
-    "message": "Mot de passe maître mis à jour"
+    "message": "Mot de passe principal mis à jour"
   },
   "updateMasterPassword": {
-    "message": "Mettre à jour le mot de passe maître"
+    "message": "Mettre à jour le mot de passe principal"
   },
   "updateMasterPasswordWarning": {
-    "message": "Votre mot de passe maître a récemment été modifié par un administrateur de votre organisation. Pour pouvoir accéder au coffre, vous devez mettre à jour votre mot de passe maître maintenant. Poursuivre vous déconnectera de votre session actuelle, vous obligeant à vous reconnecter. Les sessions actives sur d'autres appareils peuvent rester actives jusqu'à une heure."
+    "message": "Votre mot de passe principal a été récemment changé par un administrateur de votre organisation. Pour pouvoir accéder au coffre, vous devez le mettre à jour maintenant. En poursuivant, vous serez déconnecté de votre session actuelle et vous devrez vous reconnecter. Les sessions actives sur d'autres appareils peuvent rester actives pendant encore une heure."
   },
   "hours": {
     "message": "Heures"
@@ -1856,7 +1856,7 @@
     "message": "Inscription automatique"
   },
   "resetPasswordAutoEnrollInviteWarning": {
-    "message": "Cette organisation a une politique d'entreprise qui vous inscrira automatiquement à la réinitialisation du mot de passe. L'inscription permettra aux administrateurs de l'organisation de changer votre mot de passe maître."
+    "message": "Cette organisation dispose d'une politique d'entreprise qui vous inscrira automatiquement à la réinitialisation du mot de passe. L'inscription permettra aux administrateurs de l'organisation de changer votre mot de passe principal."
   },
   "vaultExportDisabled": {
     "message": "Export du coffre désactivé"
@@ -1868,13 +1868,13 @@
     "message": "Ajouter un compte"
   },
   "removeMasterPassword": {
-    "message": "Supprimer le mot de passe maître"
+    "message": "Supprimer le mot de passe principal"
   },
   "removedMasterPassword": {
-    "message": "Mot de passe maître supprimé."
+    "message": "Mot de passe principal supprimé"
   },
   "convertOrganizationEncryptionDesc": {
-    "message": "$ORGANIZATION$ utilise SSO avec un serveur de clés auto-hébergé. Un mot de passe maître n'est plus nécessaire aux membres de cette organisation pour se connecter.",
+    "message": "$ORGANIZATION$ utilise SSO avec un serveur de clés auto-hébergé. Un mot de passe principal n'est plus nécessaire aux membres de cette organisation pour se connecter.",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -2032,7 +2032,7 @@
     "message": "Coffre"
   },
   "loginWithMasterPassword": {
-    "message": "Connectez-vous avec le mot de passe maître"
+    "message": "Se connecter avec le mot de passe principal"
   },
   "loggingInAs": {
     "message": "Connexion en tant que"

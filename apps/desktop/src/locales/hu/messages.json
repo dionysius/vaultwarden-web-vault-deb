@@ -104,7 +104,7 @@
     "message": "Email cím"
   },
   "verificationCodeTotp": {
-    "message": "Ellenőrző kód (egyszeri-idő alapú)"
+    "message": "Ellenőrző kód (TOTP)"
   },
   "website": {
     "message": "Webhely"
@@ -126,7 +126,7 @@
     "message": "Minimalizálás vágólapra másoláskor"
   },
   "minimizeOnCopyToClipboardDesc": {
-    "message": "Minimalizálás egy elem adatainak vágólapra való másolásakor."
+    "message": "Minimalizálás asz összes elemadat vágólapra másolásakor."
   },
   "toggleVisibility": {
     "message": "Láthatóság váltása"
@@ -467,7 +467,7 @@
     "message": "Fájl"
   },
   "selectFile": {
-    "message": "Válassz ki egy fájlt."
+    "message": "Válasszunk egy fájlt."
   },
   "maxFileSize": {
     "message": "Maximális fájl méret 500 MB."
@@ -476,7 +476,7 @@
     "message": "Ez a funkció nem használható a titkosítási kulcs frissítéséig."
   },
   "editedFolder": {
-    "message": "A mappa szerkesztésre került."
+    "message": "A mappa mentésre került."
   },
   "addedFolder": {
     "message": "A mappa hozzáadásra került."
@@ -734,13 +734,13 @@
     "message": "Kijelentkezés"
   },
   "addNewLogin": {
-    "message": "Új fiók hozzáadása"
+    "message": "Új bejelentkezés"
   },
   "addNewItem": {
-    "message": "Új elem hozzáadása"
+    "message": "Új elem"
   },
   "addNewFolder": {
-    "message": "Új mappa hozzáadása"
+    "message": "Új mappa"
   },
   "view": {
     "message": "Megtekintés"
@@ -770,7 +770,7 @@
     "message": "Blog"
   },
   "followUs": {
-    "message": "Kövess minket"
+    "message": "Követés"
   },
   "syncVault": {
     "message": "Széf szinkronizálása"
@@ -793,7 +793,7 @@
     "message": "Ugrás a webes széfhez"
   },
   "getMobileApp": {
-    "message": "Mobil app letöltése"
+    "message": "Mobil alkalmazás beszerzése"
   },
   "getBrowserExtension": {
     "message": "Böngésző bővítmény beszerzése"
@@ -833,10 +833,10 @@
     "message": "Kétlépcsős bejelentkezés"
   },
   "vaultTimeout": {
-    "message": "Széf időkorlát"
+    "message": "Széf időkifutás"
   },
   "vaultTimeoutDesc": {
-    "message": "Állítsd be a széfedhez egy időkorlátot és egy végrehajtandó műveletet."
+    "message": "Válasszuk ki, hogy a széfnél mikor legyen időkifutás és a kiválasztott művelet végrehajtása."
   },
   "immediately": {
     "message": "Azonnal"
@@ -872,13 +872,13 @@
     "message": "4 óra"
   },
   "onIdle": {
-    "message": "Tétlenség esetén"
+    "message": "Rendszer üresjárat esetén"
   },
   "onSleep": {
-    "message": "Alvó módba lépéskor"
+    "message": "Rendszer alvó mód esetén"
   },
   "onLocked": {
-    "message": "A rendszer zárolásakor"
+    "message": "Rendszer zárolás esetén"
   },
   "onRestart": {
     "message": "Újraindításkor"
@@ -904,7 +904,7 @@
     "message": "Felismerhető kép megjelenítése minden bejelentkezés mellett."
   },
   "enableMinToTray": {
-    "message": "Kicsinyítés tálcára"
+    "message": "Kicsinyítés tálcaikonná"
   },
   "enableMinToTrayDesc": {
     "message": "Az ablak minimalizálásakor helyette egy ikon jelenik meg a rendszertálcán."
@@ -1056,10 +1056,10 @@
     "message": "Előfizetés ellenőrzése"
   },
   "premiumNotCurrentMember": {
-    "message": "Jelenleg nem vagy prémium tag."
+    "message": "Jelenleg nincs prémium tagság."
   },
   "premiumSignUpAndGet": {
-    "message": "Fizess elő prémiumra, hogy különféle előnyöket élvezhess:"
+    "message": "Regisztráció a prémium tagságra az alábbi funkciókért:"
   },
   "premiumSignUpStorage": {
     "message": "1 GB titkosított fájlmelléklet tárhely."
@@ -1231,7 +1231,7 @@
     "description": "A programming term, also known as 'RegEx'."
   },
   "matchDetection": {
-    "message": "Találatfelismerés",
+    "message": "Találat érzékelés",
     "description": "URI match detection for auto-fill."
   },
   "defaultMatchDetection": {
@@ -1503,7 +1503,7 @@
     "message": "Kijelentkezve az összes széf elérés eltávolításra kerül és webes hitelesítésre van szükség az időkifutás után. Biztosan szeretnénk használni ezt a beállítást?"
   },
   "vaultTimeoutLogOutConfirmationTitle": {
-    "message": "Időkifutáskori művelet megerősítése"
+    "message": "Időkifutás művelet megerősítés"
   },
   "enterpriseSingleSignOn": {
     "message": "Vállalati önálló bejelentkezés"
@@ -1587,7 +1587,7 @@
     "message": "Sajnos a böngésző integrációt egyelőre csak a Mac App Store verzió támogatja."
   },
   "browserIntegrationWindowsStoreDesc": {
-    "message": "A böngésző integrációt egyelőre csak a Microsoft Store verzió támogatja."
+    "message": "A böngésző integrációt egyelőre csak a Windows Store verzió támogatja."
   },
   "browserIntegrationLinuxDesc": {
     "message": "Sajnos a böngésző integrációját a linux verzió jelenleg nem támogatja."
@@ -1703,7 +1703,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLinkLabel": {
-    "message": "Hivatkozás küldése",
+    "message": "Send küldése",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "textHiddenByDefault": {
@@ -1711,15 +1711,15 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createdSend": {
-    "message": "A küldés létrejött",
+    "message": "A Send létrejött.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editedSend": {
-    "message": "A küldés szerkesztésre került",
+    "message": "A Send mentésre került.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "deletedSend": {
-    "message": "A küldés törlésre került",
+    "message": "A Send törlésre került.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "newPassword": {
@@ -1730,7 +1730,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createSend": {
-    "message": "A küldés létrejött.",
+    "message": "Új Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendTextDesc": {
@@ -1766,7 +1766,7 @@
     "message": "A hivatkozás másolása a Küldés megosztásához a vágólapra mentéskor."
   },
   "sendDisabled": {
-    "message": "A küldés kikapcsolásra került",
+    "message": "A Send eltávolításra került.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendDisabledWarning": {
@@ -1807,7 +1807,7 @@
     "message": "Egy vagy több szervezeti szabály érinti a Send opciókat."
   },
   "emailVerificationRequired": {
-    "message": "E-mail hitelesítés szükséges"
+    "message": "Email hitelesítés szükséges"
   },
   "emailVerificationRequiredDesc": {
     "message": "A funkció használatához ellenőrizni kell az email címet."
