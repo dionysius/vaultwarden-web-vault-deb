@@ -22,7 +22,7 @@ jobs:
           path: source
       - name: configure apt to retry
         run: |
-          echo 'Acquire::Retries "3";' > /etc/apt/apt.conf.d/99ci
+          echo 'Acquire::Retries "3";' | sudo tee /etc/apt/apt.conf.d/99ci
       - name: setup node
         # node is first installed so it is not downloaded twice. their package `provides:` npm and control file only requests npm
         run: |
