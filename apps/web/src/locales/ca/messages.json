@@ -1221,7 +1221,7 @@
     "message": "Preferències"
   },
   "preferencesDesc": {
-    "message": "Personalitzeu la vostra experiència de caixa forta web."
+    "message": "Personalitzeu l'experiència de la caixa forta web."
   },
   "preferencesUpdated": {
     "message": "Preferències guardades"
@@ -1821,6 +1821,22 @@
         "example": "$10"
       }
     }
+  },
+  "premiumPriceWithFamilyPlan": {
+    "message": "Hazte Premium por sólo $PRICE$ /año, u obtén cuentas Premium para usuarios $FAMILYPLANUSERCOUNT$ y uso compartido familiar ilimitado con un ",
+    "placeholders": {
+      "price": {
+        "content": "$1",
+        "example": "$10"
+      },
+      "familyplanusercount": {
+        "content": "$2",
+        "example": "6"
+      }
+    }
+  },
+  "bitwardenFamiliesPlan": {
+    "message": "Plan Familias Bitwarden."
   },
   "addons": {
     "message": "Complements"
@@ -3564,7 +3580,7 @@
     "message": "Preferència d'usuari"
   },
   "vaultTimeoutAction": {
-    "message": "Acció del temps d'espera de la caixa forta"
+    "message": "Acció quan acabe el temps d'espera de la caixa forta"
   },
   "vaultTimeoutActionLockDesc": {
     "message": "Una caixa forta bloquejada requereix que torne a introduir la contrasenya principal per accedir-ne de nou."
@@ -5562,13 +5578,13 @@
     "message": "Suprimeix els secrets"
   },
   "secretProjectAssociationDescription": {
-    "message": "Select projects that the secret will be associated with. Only organization users with access to these projects will be able to see the secret."
+    "message": "Selecciona los proyectos a los que se asociará el secreto. Sólo los usuarios de la organización con acceso a estos proyectos podrán verlo."
   },
   "typeOrSelectProjects": {
-    "message": "Type or select Projects"
+    "message": "Teclea o selecciona proyectos"
   },
   "typeOrSelectProject": {
-    "message": "Type or select Project"
+    "message": "Teclea o selecciona proyecto"
   },
   "project": {
     "message": "Projecte"

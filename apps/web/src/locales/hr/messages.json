@@ -1609,7 +1609,7 @@
     "message": "Izvještaj o izloženim lozinkama"
   },
   "exposedPasswordsReportDesc": {
-    "message": "Izložene lozinke su su one otkrivene prilikom znanih krađa podataka pri čemu su javno objavljene ili su ih hakeri prodavali na dark webu."
+    "message": "Passwords exposed in a data breach are easy targets for attackers. Change these passwords to prevent potential break-ins."
   },
   "exposedPasswordsFound": {
     "message": "Pronađene izložene lozinke"
@@ -1821,6 +1821,22 @@
         "example": "$10"
       }
     }
+  },
+  "premiumPriceWithFamilyPlan": {
+    "message": "Go premium for just $PRICE$ /year, or get premium accounts for $FAMILYPLANUSERCOUNT$ users and unlimited family sharing with a ",
+    "placeholders": {
+      "price": {
+        "content": "$1",
+        "example": "$10"
+      },
+      "familyplanusercount": {
+        "content": "$2",
+        "example": "6"
+      }
+    }
+  },
+  "bitwardenFamiliesPlan": {
+    "message": "Bitwarden Families plan."
   },
   "addons": {
     "message": "Dodaci"

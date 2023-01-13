@@ -609,19 +609,19 @@
     "message": "Mật khẩu chính"
   },
   "masterPassDesc": {
-    "message": "Mật khẩu chính là mật khẩu cho kho mật khẩu của bạn. Mật khẩu này rất quan trọng và bạn không nên quên nó của mình. Bạn sẽ không thể khôi phục lại mật khẩu chính của bạn nếu bạn quên nó."
+    "message": "Mật khẩu chính là mật khẩu bạn dùng để truy cập vào kho lưu trữ của bạn. Mật khẩu này rất quan trọng và bạn đừng nên quên mật khẩu chính này. Bạn sẽ không thể khôi phục mật khẩu chính trong trường hợp bạn quên nó."
   },
   "masterPassImportant": {
     "message": "Master passwords cannot be recovered if you forget it!"
   },
   "masterPassHintDesc": {
-    "message": "Gợi ý mật khẩu có thể giúp bạn nhớ lại mật khẩu chính của mình nếu bạn quên nó."
+    "message": "Gợi ý mật khẩu chính có thể giúp bạn nhớ lại mật khẩu của mình nếu bạn quên nó."
   },
   "reTypeMasterPass": {
-    "message": "Vui lòng nhập lại mật khẩu chính"
+    "message": "Nhập lại mật khẩu chính"
   },
   "masterPassHint": {
-    "message": "Gợi ý mật khẩu chính (không bắt buộc)"
+    "message": "Gợi ý mật khẩu chính (tùy chọn)"
   },
   "masterPassHintLabel": {
     "message": "Gợi ý mật khẩu chính"
@@ -924,10 +924,10 @@
     "message": "Confirm format"
   },
   "filePassword": {
-    "message": "File password"
+    "message": "Mật khẩu tập tin"
   },
   "confirmFilePassword": {
-    "message": "Confirm file password"
+    "message": "Xác nhận mật khẩu tập tin"
   },
   "accountRestrictedOptionDescription": {
     "message": "Use your account encryption key, derived from your account's username and Master Password, to encrypt the export and restrict import to only the current Bitwarden account."
@@ -1055,7 +1055,7 @@
     "message": "Thay đổi mật khẩu chính"
   },
   "masterPasswordChanged": {
-    "message": "Đã thay đổi mật khẩu chính"
+    "message": "Đã lưu mật khẩu chính"
   },
   "currentMasterPass": {
     "message": "Mật khẩu chính hiện tại"
@@ -1163,7 +1163,7 @@
     "message": "Nhập dữ liệu"
   },
   "importError": {
-    "message": "Import error"
+    "message": "Lỗi nhập"
   },
   "importErrorDesc": {
     "message": "There was a problem with the data you tried to import. Please resolve the errors listed below in your source file and try again."
@@ -1196,10 +1196,10 @@
     "message": "Chọn tập tin nhập"
   },
   "chooseFile": {
-    "message": "Choose File"
+    "message": "Chọn tập tin"
   },
   "noFileChosen": {
-    "message": "No file chosen"
+    "message": "Không có tệp nào được chọn"
   },
   "orCopyPasteFileContents": {
     "message": "hoặc sao chép/dán để nhập nội dung file"
@@ -1233,7 +1233,7 @@
     "message": "Thay đổi ngôn ngữ của kho mạng."
   },
   "enableFavicon": {
-    "message": "Show website icons"
+    "message": "Hiện biểu tượng trang web"
   },
   "faviconDesc": {
     "message": "Show a recognizable image next to each login."
@@ -1609,7 +1609,7 @@
     "message": "Báo cáo mật khẩu bị rò rỉ"
   },
   "exposedPasswordsReportDesc": {
-    "message": "Mật khẩu bị rò rĩ là mật khẩu đã bị hacker hack được trong các vụ rò rĩ dữ liệu được thông báo công khai hoặc được bán trên web đen( dark web) bởi hacker"
+    "message": "Passwords exposed in a data breach are easy targets for attackers. Change these passwords to prevent potential break-ins."
   },
   "exposedPasswordsFound": {
     "message": "Phát hiện mật khẩu bị rò rĩ"
@@ -1821,6 +1821,22 @@
         "example": "$10"
       }
     }
+  },
+  "premiumPriceWithFamilyPlan": {
+    "message": "Go premium for just $PRICE$ /year, or get premium accounts for $FAMILYPLANUSERCOUNT$ users and unlimited family sharing with a ",
+    "placeholders": {
+      "price": {
+        "content": "$1",
+        "example": "$10"
+      },
+      "familyplanusercount": {
+        "content": "$2",
+        "example": "6"
+      }
+    }
+  },
+  "bitwardenFamiliesPlan": {
+    "message": "Bitwarden Families plan."
   },
   "addons": {
     "message": "Addons"
@@ -3680,7 +3696,7 @@
     "message": "Tax information updated."
   },
   "setMasterPassword": {
-    "message": "Thiết lập mật khẩu chính"
+    "message": "Đặt mật khẩu chính"
   },
   "ssoCompleteRegistration": {
     "message": "In order to complete logging in with SSO, please set a master password to access and protect your vault."

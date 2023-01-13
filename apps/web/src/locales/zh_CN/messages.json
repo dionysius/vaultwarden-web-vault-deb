@@ -1822,6 +1822,22 @@
       }
     }
   },
+  "premiumPriceWithFamilyPlan": {
+    "message": "Go premium for just $PRICE$ /year, or get premium accounts for $FAMILYPLANUSERCOUNT$ users and unlimited family sharing with a ",
+    "placeholders": {
+      "price": {
+        "content": "$1",
+        "example": "$10"
+      },
+      "familyplanusercount": {
+        "content": "$2",
+        "example": "6"
+      }
+    }
+  },
+  "bitwardenFamiliesPlan": {
+    "message": "Bitwarden 家庭计划。"
+  },
   "addons": {
     "message": "附加项目"
   },
@@ -5562,13 +5578,13 @@
     "message": "删除机密"
   },
   "secretProjectAssociationDescription": {
-    "message": "Select projects that the secret will be associated with. Only organization users with access to these projects will be able to see the secret."
+    "message": "选择与机密相关联的项目。仅有权访问该项目的组织用户能查看该机密。"
   },
   "typeOrSelectProjects": {
-    "message": "Type or select Projects"
+    "message": "输入或选择项目"
   },
   "typeOrSelectProject": {
-    "message": "Type or select Project"
+    "message": "输入或选择项目"
   },
   "project": {
     "message": "项目"

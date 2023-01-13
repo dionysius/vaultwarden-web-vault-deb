@@ -1822,6 +1822,22 @@
       }
     }
   },
+  "premiumPriceWithFamilyPlan": {
+    "message": "Køb Premium for kun $PRICE$ /år, eller køb Premium-konti til $FAMILYPLANUSERCOUNT$ brugere og ubegrænset familiedeling med et ",
+    "placeholders": {
+      "price": {
+        "content": "$1",
+        "example": "$10"
+      },
+      "familyplanusercount": {
+        "content": "$2",
+        "example": "6"
+      }
+    }
+  },
+  "bitwardenFamiliesPlan": {
+    "message": "Bitwarden Families-abonnement."
+  },
   "addons": {
     "message": "Tilføjelser"
   },
@@ -5562,13 +5578,13 @@
     "message": "Slet hemmeligheder"
   },
   "secretProjectAssociationDescription": {
-    "message": "Select projects that the secret will be associated with. Only organization users with access to these projects will be able to see the secret."
+    "message": "Vælg projekter, som hemmeligheden vil blive tilknyttet. Den vil kun kunne ses af organisationsbrugere med adgang til disse projekter."
   },
   "typeOrSelectProjects": {
-    "message": "Type or select Projects"
+    "message": "Angiv eller vælg Projekter"
   },
   "typeOrSelectProject": {
-    "message": "Type or select Project"
+    "message": "Angiv eller vælg Projekt"
   },
   "project": {
     "message": "Projekt"

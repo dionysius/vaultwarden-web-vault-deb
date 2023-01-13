@@ -930,7 +930,7 @@
     "message": "Vahvista tiedoston salasana"
   },
   "accountRestrictedOptionDescription": {
-    "message": "Salaa vienti ja rajoita tuonti vain nykyiselle Bitwarden-tilille tilisi salausavaimella, joka pohjautuu tilisi käyttäjätunnukseen ja pääsalasanaan."
+    "message": "Salaa vienti ja rajoita tuonti vain nykyiselle Bitwarden-tilille tilisi käyttäjätunnukseen ja pääsalasanaan pohjautuvalla salausavaimella."
   },
   "passwordProtectedOptionDescription": {
     "message": "Salaa vientitiedosto salasanalla, joka mahdollistaa sen tuonnin mille tahansa Bitwarden-tilille."
@@ -939,7 +939,7 @@
     "message": "Viennin tyyppi"
   },
   "accountRestricted": {
-    "message": "Tiliä rajoitettu"
+    "message": "Tiliä on rajoitettu"
   },
   "passwordProtected": {
     "message": "Salasanasuojattu"
@@ -1821,6 +1821,22 @@
         "example": "$10"
       }
     }
+  },
+  "premiumPriceWithFamilyPlan": {
+    "message": "Hanki Premium vain $PRICE$ vuosihintaan tai vaihtoehtoisesti premium-tilit $FAMILYPLANUSERCOUNT$ käyttäjälle ja rajoittamattomalla perhejaolla ",
+    "placeholders": {
+      "price": {
+        "content": "$1",
+        "example": "$10"
+      },
+      "familyplanusercount": {
+        "content": "$2",
+        "example": "6"
+      }
+    }
+  },
+  "bitwardenFamiliesPlan": {
+    "message": "Bitwarden Perheille -tilauksella."
   },
   "addons": {
     "message": "Laajennukset"
@@ -5562,13 +5578,13 @@
     "message": "Poista salaisuudet"
   },
   "secretProjectAssociationDescription": {
-    "message": "Select projects that the secret will be associated with. Only organization users with access to these projects will be able to see the secret."
+    "message": "Valitse projektit, joihin salaisuus liitetään. Salaisuuden voivat nähdä vain ne organisaation käyttäjät, joilla on näiden projektien käyttöoikeus."
   },
   "typeOrSelectProjects": {
-    "message": "Kirjoita tai valitse projektit"
+    "message": "Syötä tai valitse projektit"
   },
   "typeOrSelectProject": {
-    "message": "Kirjoita tai valitse projekti"
+    "message": "Syötä tai valitse projekti"
   },
   "project": {
     "message": "Projekti"
@@ -5619,7 +5635,7 @@
     "message": "Näytettäviä salaisuuksia ei ole"
   },
   "secretsNoItemsMessage": {
-    "message": "Aloita lisäämällä uusi salaisuus tai tuomalla salaisuudet."
+    "message": "Aloita lisäämällä uusi salaisuus tai tuomalla niitä."
   },
   "serviceAccountsNoItemsTitle": {
     "message": "Mitään näytettävää ei vielä ole"
@@ -5679,13 +5695,13 @@
     "message": "Palvelutilin nimi"
   },
   "newSaSelectAccess": {
-    "message": "Kirjoita tai valitse projektit tai salaisuudet"
+    "message": "Syötä tai valitse projektit tai salaisuudet"
   },
   "newSaTypeToFilter": {
     "message": "Suodata kirjoittamalla"
   },
   "deleteProjectsToast": {
-    "message": "Projektit poistettiin"
+    "message": "Projekteja poistettiin"
   },
   "deleteProjectToast": {
     "message": "Projekti ja kaikki siihen liittyvät salaisuudet poistettiin"
@@ -5700,7 +5716,7 @@
     }
   },
   "deleteProjectInputLabel": {
-    "message": "Jatka kirjoittamalla \"$CONFIRM$\"",
+    "message": "Jatka syöttämällä \"$CONFIRM$\"",
     "placeholders": {
       "confirm": {
         "content": "$1",
@@ -5748,7 +5764,7 @@
     "message": "Hae projekteista"
   },
   "accessTokens": {
-    "message": "Hae käyttötunnisteista"
+    "message": "Käyttötunnisteet"
   },
   "createAccessToken": {
     "message": "Luo käyttötunniste"

@@ -1609,7 +1609,7 @@
     "message": "Relatório de Senhas Expostas"
   },
   "exposedPasswordsReportDesc": {
-    "message": "Senhas expostas são senhas que foram descobertas em violações de dados conhecidas que foram divulgadas publicamente ou vendidas na \"dark web\" por hackers."
+    "message": "Passwords exposed in a data breach are easy targets for attackers. Change these passwords to prevent potential break-ins."
   },
   "exposedPasswordsFound": {
     "message": "Senhas Expostas Encontradas"
@@ -1821,6 +1821,22 @@
         "example": "$10"
       }
     }
+  },
+  "premiumPriceWithFamilyPlan": {
+    "message": "Go premium for just $PRICE$ /year, or get premium accounts for $FAMILYPLANUSERCOUNT$ users and unlimited family sharing with a ",
+    "placeholders": {
+      "price": {
+        "content": "$1",
+        "example": "$10"
+      },
+      "familyplanusercount": {
+        "content": "$2",
+        "example": "6"
+      }
+    }
+  },
+  "bitwardenFamiliesPlan": {
+    "message": "Bitwarden Families plan."
   },
   "addons": {
     "message": "Complementos"

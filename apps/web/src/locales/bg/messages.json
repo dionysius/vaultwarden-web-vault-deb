@@ -1822,6 +1822,22 @@
       }
     }
   },
+  "premiumPriceWithFamilyPlan": {
+    "message": "Преминете към платен план само за $PRICE$ /година, или към групов план за $FAMILYPLANUSERCOUNT$ потребители и неограничено семейно споделяне със ",
+    "placeholders": {
+      "price": {
+        "content": "$1",
+        "example": "$10"
+      },
+      "familyplanusercount": {
+        "content": "$2",
+        "example": "6"
+      }
+    }
+  },
+  "bitwardenFamiliesPlan": {
+    "message": "Семейния план на Битуорден."
+  },
   "addons": {
     "message": "Добавки"
   },
@@ -5562,13 +5578,13 @@
     "message": "Изтриване на тайните"
   },
   "secretProjectAssociationDescription": {
-    "message": "Select projects that the secret will be associated with. Only organization users with access to these projects will be able to see the secret."
+    "message": "Изберете проектите, с които ще бъде свързана тази тайна. Само потребителите в организацията, които имат достъп до тези проекти, ще могат да виждат тайната."
   },
   "typeOrSelectProjects": {
-    "message": "Type or select Projects"
+    "message": "Пишете тук или изберете проекти"
   },
   "typeOrSelectProject": {
-    "message": "Type or select Project"
+    "message": "Пишете тук или изберете проект"
   },
   "project": {
     "message": "Проект"

@@ -1822,6 +1822,22 @@
       }
     }
   },
+  "premiumPriceWithFamilyPlan": {
+    "message": "Przejdź na konto Premium za jedyne $PRICE$ rocznie lub kup konta Premium dla $FAMILYPLANUSERCOUNT$ użytkowników i nieograniczone udostępnianie rodzinne dzięki ",
+    "placeholders": {
+      "price": {
+        "content": "$1",
+        "example": "$10"
+      },
+      "familyplanusercount": {
+        "content": "$2",
+        "example": "6"
+      }
+    }
+  },
+  "bitwardenFamiliesPlan": {
+    "message": "planowi rodzinnemu Bitwarden."
+  },
   "addons": {
     "message": "Dodatki"
   },

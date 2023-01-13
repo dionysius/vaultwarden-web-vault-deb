@@ -428,13 +428,13 @@
     "message": "Mon coffre"
   },
   "allVaults": {
-    "message": "Tous les Coffres-forts"
+    "message": "Tous les coffres"
   },
   "vault": {
     "message": "Coffre"
   },
   "vaults": {
-    "message": "Coffres-forts"
+    "message": "Coffres"
   },
   "vaultItems": {
     "message": "Objets du Coffre"
@@ -555,7 +555,7 @@
     "message": "Êtes-vous sûr de vouloir vous déconnecter ?"
   },
   "logOut": {
-    "message": "Déconnexion"
+    "message": "Se déconnecter"
   },
   "ok": {
     "message": "Ok"
@@ -576,7 +576,7 @@
     "message": "La connexion avec l'appareil doit être activée dans les paramètres de l'application mobile Bitwarden. Avez-vous besoin d'une autre option?"
   },
   "loginWithMasterPassword": {
-    "message": "Se connecter avec le mot de passe maître"
+    "message": "Se connecter avec le mot de passe principal"
   },
   "createAccount": {
     "message": "Créer un compte"
@@ -606,25 +606,25 @@
     "message": "Comment doit-on vous appeler ?"
   },
   "masterPass": {
-    "message": "Mot de passe maître"
+    "message": "Mot de passe principal"
   },
   "masterPassDesc": {
-    "message": "Le mot de passe maître est le mot de passe que vous utilisez pour accéder à votre coffre. Il est très important de ne pas l'oublier. Il n'existe aucun moyen de le récupérer si vous le perdez."
+    "message": "Le mot de passe principal est le mot de passe que vous utilisez pour accéder à votre coffre. Il est très important de ne pas oublier votre mot de passe principal. Il n'existe aucun moyen de récupérer le mot de passe si vous l'oubliez."
   },
   "masterPassImportant": {
-    "message": "Le mot de passe maître ne peut pas être récupérés si vous l'oubliez!"
+    "message": "Le mot de passe principal ne peut pas être récupéré si vous l'oubliez !"
   },
   "masterPassHintDesc": {
-    "message": "Un indice de mot de passe maître peut vous aider à vous rappeler de votre mot de passe en cas d'oubli."
+    "message": "Un indice de mot de passe principal peut vous aider à vous souvenir de votre mot de passe si vous l'oubliez."
   },
   "reTypeMasterPass": {
-    "message": "Saisir à nouveau le mot de passe maître"
+    "message": "Ressaisir le mot de passe principal"
   },
   "masterPassHint": {
-    "message": "Indice du mot de passe maître (facultatif)"
+    "message": "Indice du mot de passe principal (facultatif)"
   },
   "masterPassHintLabel": {
-    "message": "Indice du mot de passe maître"
+    "message": "Indice du mot de passe principal"
   },
   "settings": {
     "message": "Paramètres"
@@ -633,10 +633,10 @@
     "message": "Indice du mot de passe"
   },
   "enterEmailToGetHint": {
-    "message": "Saisissez l'adresse e-mail de votre compte pour recevoir l'indice de votre mot de passe maître."
+    "message": "Saisissez l'adresse électronique de votre compte pour recevoir l'indice de votre mot de passe principal."
   },
   "getMasterPasswordHint": {
-    "message": "Obtenir l'indice du mot de passe maître"
+    "message": "Obtenir l'indice du mot de passe principal"
   },
   "emailRequired": {
     "message": "L'adresse e-mail est requise."
@@ -645,16 +645,16 @@
     "message": "Adresse e-mail invalide."
   },
   "masterPasswordRequired": {
-    "message": "Le mot de passe maître est requis."
+    "message": "Le mot de passe principal est requis."
   },
   "confirmMasterPasswordRequired": {
-    "message": "Le mot de passe maître doit être entré de nouveau."
+    "message": "Une nouvelle saisie du mot de passe principal est nécessaire."
   },
   "masterPasswordMinlength": {
-    "message": "Le mot de passe maître doit comporter au moins 8 caractères."
+    "message": "Le mot de passe principal doit comporter au moins 8 caractères."
   },
   "masterPassDoesntMatch": {
-    "message": "La confirmation du mot de passe maître ne correspond pas."
+    "message": "La confirmation du mot de passe principal ne correspond pas."
   },
   "newAccountCreated": {
     "message": "Votre nouveau compte a été créé ! Vous pouvez maintenant vous authentifier."
@@ -663,7 +663,7 @@
     "message": "Compte créé avec succès."
   },
   "masterPassSent": {
-    "message": "Nous vous avons envoyé un e-mail contenant votre indice de mot de passe maître."
+    "message": "Nous vous avons envoyé un courriel avec votre indice de mot de passe principal."
   },
   "unexpectedError": {
     "message": "Une erreur inattendue est survenue."
@@ -672,7 +672,7 @@
     "message": "Adresse e-mail"
   },
   "yourVaultIsLocked": {
-    "message": "Votre coffre est verrouillé. Saisissez votre mot de passe maître pour continuer."
+    "message": "Votre coffre est verrouillé. Vérifiez votre mot de passe principal pour continuer."
   },
   "unlock": {
     "message": "Déverrouiller"
@@ -691,7 +691,7 @@
     }
   },
   "invalidMasterPassword": {
-    "message": "Mot de passe maître invalide"
+    "message": "Mot de passe principal invalide"
   },
   "invalidFilePassword": {
     "message": "Mot de passe de fichier invalide, veuillez utiliser le mot de passe que vous avez entré lorsque vous avez créé le fichier d'exportation."
@@ -760,7 +760,7 @@
     "message": "Envoyer à nouveau l'e-mail du code de vérification"
   },
   "useAnotherTwoStepMethod": {
-    "message": "Utiliser une autre méthode d'identification en deux étapes"
+    "message": "Utiliser une autre méthode d'authentification à deux facteurs"
   },
   "insertYubiKey": {
     "message": "Insérez votre YubiKey dans le port USB de votre ordinateur puis appuyez sur son bouton."
@@ -772,16 +772,16 @@
     "message": "Identifiant non disponible"
   },
   "noTwoStepProviders": {
-    "message": "Ce compte dispose d'une authentification en deux étapes, cependant aucun de vos services d'authentification en deux étapes n'est supporté par ce navigateur web."
+    "message": "Ce compte dispose d'une authentification à deux facteurs mise en place, cependant, aucun des fournisseurs à deux facteurs configurés n'est pris en charge par ce navigateur web."
   },
   "noTwoStepProviders2": {
     "message": "Merci d'utiliser un navigateur web compatible (comme Chrome) et/ou d'ajouter des services additionnels d'identification en deux étapes qui sont mieux supportés par les navigateurs web (comme par exemple une application d'authentification)."
   },
   "twoStepOptions": {
-    "message": "Options d'identification en deux étapes"
+    "message": "Options d'authentification à deux facteurs"
   },
   "recoveryCodeDesc": {
-    "message": "Vous avez perdu l'accès à tous vos services d'authentification à deux facteurs ? Utilisez votre code de récupération pour désactiver tous les services d'authentification à deux facteurs sur votre compte."
+    "message": "Vous avez perdu l'accès à tous vos fournisseurs d'authentification à deux facteurs ? Utilisez votre code de récupération pour désactiver tous les fournisseurs d'authentification à deux facteurs de votre compte."
   },
   "recoveryCodeTitle": {
     "message": "Code de récupération"
@@ -794,7 +794,7 @@
     "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
   },
   "yubiKeyTitle": {
-    "message": "Clé de sécurité YubiKey OTP"
+    "message": "Clé de sécurité OTP YubiKey"
   },
   "yubiKeyDesc": {
     "message": "Utilisez une YubiKey pour accéder à votre compte. Fonctionne avec les YubiKey série 4, série 5 et NEO."
@@ -918,7 +918,7 @@
     "message": "Ce mot de passe sera utilisé pour exporter et importer ce fichier"
   },
   "confirmMasterPassword": {
-    "message": "Confirmer le Mot de Passe Maître"
+    "message": "Confirmer le mot de passe principal"
   },
   "confirmFormat": {
     "message": "Confirmer le Format"
@@ -930,7 +930,7 @@
     "message": "Confirmer le Mot de Passe du Fichier"
   },
   "accountRestrictedOptionDescription": {
-    "message": "Chiffrez le fichier avec la clé de chiffrement de votre compte, dérivée de vos nom d'utilisateur et mot de passe maître. L'importation ne sera possible que sur ce compte Bitwarden."
+    "message": "Utilisez la clé de chiffrement de votre compte, dérivée du nom d'utilisateur et du mot de passe principal de votre compte, pour chiffrer l'export et restreindre l'import au seul compte Bitwarden actuel."
   },
   "passwordProtectedOptionDescription": {
     "message": "Créez un mot de passe généré par l'utilisateur pour protéger l'exportation. Utilisez ceci pour créer une exportation qui peut être utilisée dans d'autres comptes."
@@ -963,10 +963,10 @@
     "message": "Score de complexité minimum"
   },
   "minNumbers": {
-    "message": "Nombre minimum de chiffres"
+    "message": "Minimum de chiffres"
   },
   "minSpecial": {
-    "message": "Nombre minimum de caractères spéciaux",
+    "message": "Minimum de caractères spéciaux",
     "description": "Minimum special characters"
   },
   "ambiguous": {
@@ -1022,7 +1022,7 @@
     "message": "Changer l'e-mail"
   },
   "changeEmailTwoFactorWarning": {
-    "message": "En continuant, vous changerez l'adresse e-mail de votre compte. Cela ne changera pas l'adresse e-mail utilisée pour l'authentification à deux facteurs. Vous pouvez modifier cette adresse e-mail dans les paramètres d'identification en deux étapes."
+    "message": "En poursuivant, l'adresse électronique de votre compte sera changée. L'adresse électronique utilisée pour l'authentification à deux facteurs ne sera pas changée. Vous pouvez changer cette adresse électronique dans les paramètres d'authentification à deux facteurs."
   },
   "newEmail": {
     "message": "Nouvel e-mail"
@@ -1040,7 +1040,7 @@
     }
   },
   "loggedOutWarning": {
-    "message": "En continuant, vous serez déconnecté de votre session actuelle et vous devrez vous reconnecter. Les sessions actives sur d'autres appareils peuvent rester actives pendant encore une heure."
+    "message": "En poursuivant, vous serez déconnecté de votre session en cours, ce qui vous obligera à vous reconnecter. Les sessions actives sur d'autres appareils peuvent rester actives pendant encore une heure."
   },
   "emailChanged": {
     "message": "Adresse e-mail modifiée"
@@ -1052,19 +1052,19 @@
     "message": "Veuillez vous reconnecter. Si vous utilisez d'autres applications Bitwarden, déconnectez-vous puis reconnectez-vous dans ces applications également."
   },
   "changeMasterPassword": {
-    "message": "Modifier le mot de passe maître"
+    "message": "Changer le mot de passe principal"
   },
   "masterPasswordChanged": {
-    "message": "Mot de passe maître modifié"
+    "message": "Mot de passe principal enregistré"
   },
   "currentMasterPass": {
-    "message": "Mot de passe maître actuel"
+    "message": "Mot de passe principal actuel"
   },
   "newMasterPass": {
-    "message": "Nouveau mot de passe maître"
+    "message": "Nouveau mot de passe principal"
   },
   "confirmNewMasterPass": {
-    "message": "Confirmer le nouveau mot de passe maître"
+    "message": "Confirmer le nouveau mot de passe principal"
   },
   "encKeySettings": {
     "message": "Paramètres de la clé de chiffrement"
@@ -1076,7 +1076,7 @@
     "message": "Nombre d'itérations de KDF"
   },
   "kdfIterationsDesc": {
-    "message": "Un nombre plus élevé d'itérations de KDF peut aider à protéger votre mot de passe maître contre une attaque par force brute. Nous recommandons une valeur de $VALUE$ ou plus.",
+    "message": "Des itérations KDF plus élevées peuvent aider à protéger votre mot de passe principal contre une attaque par force brute. Nous recommandons une valeur de $VALUE$ ou plus.",
     "placeholders": {
       "value": {
         "content": "$1",
@@ -1109,10 +1109,10 @@
     "message": "Révoquer les sessions"
   },
   "deauthorizeSessionsDesc": {
-    "message": "Vous craignez que votre compte soit connecté sur un autre appareil ? Poursuivez ci-dessous pour révoquer tous les ordinateurs ou appareils que vous avez déjà utilisés. Cette étape de sécurité est recommandée si vous avez précédemment utilisé un ordinateur public ou enregistré accidentellement votre mot de passe sur un appareil qui n'est pas le vôtre. Cette étape effacera également toutes les sessions de connexion en deux étapes précédemment mémorisées."
+    "message": "Vous craignez que votre compte soit connecté sur un autre appareil ? Poursuivez ci-dessous pour annuler l'autorisation de tous les ordinateurs ou appareils que vous avez précédemment utilisés. Cette étape de sécurité est recommandée si vous avez utilisé un ordinateur public ou si vous avez accidentellement enregistré votre mot de passe sur un appareil qui n'est pas le vôtre. Cette étape effacera également toutes les sessions d'authentification à deux facteurs précédemment mémorisées."
   },
   "deauthorizeSessionsWarning": {
-    "message": "Si vous continuez, vous serez également déconnecté de votre session en cours, ce qui vous nécessitera de vous reconnecter. Votre second facteur d'authentification vous sera également demandé, si cette option est activée. Les sessions actives sur d'autres appareils peuvent rester actives jusqu'à une heure."
+    "message": "En poursuivant, vous serez également déconnecté de votre session en cours, ce qui vous obligera à vous reconnecter. Vous serez également invité à vous reconnecter via l'authentification à deux facteurs, si elle est configurée. Les sessions actives sur d'autres appareils peuvent rester actives pendant encore une heure."
   },
   "sessionsDeauthorized": {
     "message": "Toutes les sessions ont été révoquées"
@@ -1288,29 +1288,29 @@
     "message": "Nom de domaine mis à jour"
   },
   "twoStepLogin": {
-    "message": "Identification en deux étapes"
+    "message": "Authentification à deux facteurs"
   },
   "twoStepLoginEnforcement": {
-    "message": "Imposition de la Connexion en Deux Étapes"
+    "message": "Mise en application de l'authentification à deux facteurs"
   },
   "twoStepLoginDesc": {
     "message": "Sécuriser votre compte en exigeant une étape supplémentaire lors de la connexion."
   },
   "twoStepLoginOrganizationDescStart": {
-    "message": "Imposer les options de la Connexion en 2 Étapes aux membres en utilisant le ",
+    "message": "Imposer les options d'authentification à deux facteurs de Bitwarden pour les membres en utilisant le ",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enforce Bitwarden Two-step Login options for members by using the Two-step Login Policy.'"
   },
   "twoStepLoginPolicy": {
-    "message": "Politique de Connexion en 2 Étapes"
+    "message": "Politique d'authentification à deux facteurs"
   },
   "twoStepLoginOrganizationDuoDesc": {
-    "message": "Pour imposer la Connexion en 2 Étapes via Duo, utilisez les options ci-dessous."
+    "message": "Pour imposer l'authentification à deux facteurs via Duo, utilisez les options ci-dessous."
   },
   "twoStepLoginOrganizationSsoDesc": {
-    "message": "Si vous avez configuré SSO ou planifié le faire, la Connexion en 2 Étapes peut déjà être imposée via votre Fournisseur d'Identité."
+    "message": "Si vous avez configuré SSO ou si vous prévoyez de le faire, l'authentification à deux facteurs peut déjà être imposée via votre fournisseur d'identité."
   },
   "twoStepLoginRecoveryWarning": {
-    "message": "Activer la connexion en deux étapes peut vous empêcher définitivement d'accéder à votre compte Bitwarden. Un code de récupération vous permet d'accéder à votre compte dans le cas où vous ne pouvez plus utiliser votre service de connexion en deux étapes habituel (ex. vous perdez votre appareil). Le support Bitwarden ne pourra pas vous aider si vous perdez l'accès à votre compte. Nous vous recommandons d'écrire ou d'imprimer le code de récupération et de le conserver en lieu sûr."
+    "message": "La mise en place d'un système d'authentification à deux étapes peut vous bloquer définitivement l'accès à votre compte Bitwarden. Un code de récupération vous permet d'accéder à votre compte dans le cas où vous ne pouvez plus utiliser votre fournisseur normal d'authentification à deux facteurs (exemple : vous perdez votre appareil). L'assistance de Bitwarden ne pourra pas vous aider si vous perdez l'accès à votre compte. Nous vous recommandons de noter ou d'imprimer le code de récupération et de le conserver dans un lieu sûr."
   },
   "viewRecoveryCode": {
     "message": "Voir le code de récupération"
@@ -1336,16 +1336,16 @@
     "message": "Adhésion Premium"
   },
   "premiumRequired": {
-    "message": "Version Premium requise"
+    "message": "Premium requis"
   },
   "premiumRequiredDesc": {
-    "message": "Une adhésion premium est requise pour utiliser cette fonctionnalité."
+    "message": "Une adhésion Premium est requise pour utiliser cette fonctionnalité."
   },
   "youHavePremiumAccess": {
-    "message": "Vous avez un accès premium"
+    "message": "Vous avez un accès Premium"
   },
   "alreadyPremiumFromOrg": {
-    "message": "Vous avez déjà accès aux fonctionnalités premium grâce à une organisation dont vous êtes membre."
+    "message": "Vous avez déjà accès aux fonctionnalités Premium grâce à une organisation dont vous êtes membre."
   },
   "manage": {
     "message": "Gérer"
@@ -1357,19 +1357,19 @@
     "message": "Révoquer l'Accès"
   },
   "twoStepLoginProviderEnabled": {
-    "message": "Ce fournisseur de connexion en deux étapes est activé sur votre compte."
+    "message": "Ce fournisseur d'authentification à deux facteurs est actif sur votre compte."
   },
   "twoStepLoginAuthDesc": {
-    "message": "Entrez votre mot de passe principal pour modifier les paramètres de connexion en deux étapes."
+    "message": "Saisissez votre mot de passe principal pour modifier les paramètres d'authentification à deux facteurs."
   },
   "twoStepAuthenticatorDesc": {
-    "message": "Suivez ces étapes pour configurer la connexion en deux étapes avec une application d'authentification :"
+    "message": "Suivre ces étapes pour mettre en place l''authentification à deux facteurs avec une application d'authentification :"
   },
   "twoStepAuthenticatorDownloadApp": {
-    "message": "Télécharger une application d'authentification en deux étapes"
+    "message": "Télécharger une application d'authentification à deux facteurs"
   },
   "twoStepAuthenticatorNeedApp": {
-    "message": "Besoin d'une application d'authentification en deux étapes ? Téléchargez l'une des applications suivantes"
+    "message": "Besoin d'une application d'authentification à deux facteurs ? Téléchargez en une parmi les suivantes"
   },
   "iosDevices": {
     "message": "Appareils iOS"
@@ -1396,10 +1396,10 @@
     "message": "Dans le cas où vous devez l’ajouter à un autre appareil, voici le code QR (ou clé) requis par votre application d'authentification."
   },
   "twoStepDisableDesc": {
-    "message": "Êtes-vous sûr de que vouloir désactiver ce fournisseur de connexion en deux étapes ?"
+    "message": "Êtes-vous sûr de vouloir désactiver ce fournisseur d'authentification à deux facteurs ?"
   },
   "twoStepDisabled": {
-    "message": "Fournisseur de connexion en deux étapes désactivé."
+    "message": "Fournisseur d'authentification à deux facteurs désactivé."
   },
   "twoFactorYubikeyAdd": {
     "message": "Ajouter une nouvelle YubiKey à votre compte"
@@ -1417,7 +1417,7 @@
     "message": "Sauvegarder le contenu du formulaire."
   },
   "twoFactorYubikeyWarning": {
-    "message": "En raison de limitations de plateforme, les YubiKeys ne sont pas utilisables sur toutes les applications Bitwarden. Vous devriez activer un autre fournisseur de connexion en deux étapes afin de pouvoir accéder à votre compte lorsque vous ne pouvez pas utiliser les YubiKeys. Plateformes prises en charge :"
+    "message": "En raison des limitations de la plateforme, les YubiKey ne peuvent pas être utilisées sur toutes les applications Bitwarden. Vous devriez mettre en place un autre fournisseur d'authentification à deux facteurs pouvoir accéder à votre compte lorsque les YubiKeys ne peuvent pas être utilisées. Plateformes prises en charge :"
   },
   "twoFactorYubikeySupportUsb": {
     "message": "Coffre web, application de bureau, interface ligne de commande (CLI) et toutes les extensions de navigateur sur un appareil doté d'un port USB pouvant accepter votre YubiKey."
@@ -1480,7 +1480,7 @@
     "message": "Nom d'hôte de l'API"
   },
   "twoFactorEmailDesc": {
-    "message": "Suivez ces étapes pour mettre en place la connexion en deux étapes avec e-mail :"
+    "message": "Suivre ces étapes pour mettre en place l'authentification à deux facteurs avec courriel :"
   },
   "twoFactorEmailEnterEmail": {
     "message": "Entrez l'e-mail où vous souhaitez recevoir les codes de vérification"
@@ -1519,7 +1519,7 @@
     "message": "Sauvegarder le contenu du formulaire."
   },
   "twoFactorU2fWarning": {
-    "message": "En raison de limitations de plateforme, FIDO U2F n'est pas utilisable sur toutes les applications Bitwarden. Vous devriez activer un autre fournisseur de connexion en deux étapes afin de pouvoir accéder à votre compte lorsque vous ne pouvez pas utiliser FIDO U2F. Plateformes prises en charge :"
+    "message": "En raison des limitations de la plateforme, FIDO U2F ne peut pas être utilisé sur toutes les applications Bitwarden. Vous devriez mettre en place un autre fournisseur d'authentification à deux facteurs pouvoir accéder à votre compte lorsque FIDO U2F ne peut pas être utilisé. Plateformes prises en charge :"
   },
   "twoFactorU2fSupportWeb": {
     "message": "Coffre web et extensions sur un ordinateur fixe/portable avec un navigateur compatible U2F (Chrome, Opera, Vivaldi ou Firefox avec FIDO U2F activé)."
@@ -1528,22 +1528,22 @@
     "message": "Attente de l'appui sur le bouton de votre clé de sécurité"
   },
   "twoFactorU2fClickSave": {
-    "message": "Cliquez sur le bouton « Sauvegarder » ci-dessous pour activer cette clé de sécurité pour une connexion en deux étapes."
+    "message": "Utilisez le bouton \"Sauvegarde\" ci-dessous pour activer cette clé de sécurité pour l'authentification à deux facteurs."
   },
   "twoFactorU2fProblemReadingTryAgain": {
     "message": "Un problème est survenu lors de la lecture de la clé de sécurité. Veuillez réessayer."
   },
   "twoFactorWebAuthnWarning": {
-    "message": "En raison de limitations de plateforme, WebAuthn n'est pas utilisable sur toutes les applications Bitwarden. Vous devriez activer un autre fournisseur de connexion en deux étapes afin de pouvoir accéder à votre compte lorsque vous ne pouvez pas utiliser WebAuthn. Plateformes prises en charge :"
+    "message": "En raison des limitations de la plate-forme, WebAuthn ne peut pas être utilisé sur toutes les applications Bitwarden. Vous devriez mettre en place un autre fournisseur d'authentification à deux facteurs afin de pouvoir accéder à votre compte lorsque WebAuthn ne peut pas être utilisé. Plateformes supportées :"
   },
   "twoFactorWebAuthnSupportWeb": {
     "message": "Coffre web et extensions sur un ordinateur fixe/portable avec un navigateur compatible WebAuthn (Chrome, Opera, Vivaldi ou Firefox avec FIDO U2F activé)."
   },
   "twoFactorRecoveryYourCode": {
-    "message": "Votre code de récupération de connexion en deux étapes Bitwarden"
+    "message": "Votre code de récupération de d'authentification à deux facteurs Bitwarden"
   },
   "twoFactorRecoveryNoCode": {
-    "message": "Vous n'avez pas encore activé de fournisseur de connexion en deux étapes. Après avoir activé un fournisseur de connexion en deux étapes, vous pouvez consulter ici votre code de récupération."
+    "message": "Vous n'avez pas encore mis en place de fournisseurs d'authentification à deux facteurs. Une fois que vous aurez mis en place un fournisseur d'authentification à deux facteurs, vous pourrez revenir ici pour obtenir votre code de récupération."
   },
   "printCode": {
     "message": "Imprimer le code",
@@ -1582,16 +1582,16 @@
     "message": "Aucun élément dans votre coffre n'a d'URI non sécurisés."
   },
   "inactive2faReport": {
-    "message": "Rapport 2FA inactif"
+    "message": "Authentification à deux facteurs inactive"
   },
   "inactive2faReportDesc": {
-    "message": "L'authentification à deux facteurs (2FA) est un paramètre de sécurité important qui permet de sécuriser vos comptes. Si le site Web le propose, vous devriez toujours activer l'authentification à deux facteurs."
+    "message": "L'authentification à deux facteurs ajoute une couche de protection à vos comptes. Mettez en place l'authentification à deux facteurs en utilisant Bitwarden authenticator pour ces comptes ou utilisez une méthode alternative."
   },
   "inactive2faFound": {
-    "message": "Identifiants sans 2FA trouvés"
+    "message": "Identifiants sans authentification à deux facteurs trouvés"
   },
   "inactive2faFoundDesc": {
-    "message": "Nous avons trouvé $COUNT$ site(s) web dans votre coffre qui peuvent ne pas être configurés avec une connexion en deux étapes (selon 2fa. Pour protéger davantage ces comptes, vous devez configurer une connexion en deux étapes.",
+    "message": "Nous avons trouvé $COUNT$ site(s) web dans votre coffre peut-être non configuré(s) avec l'authentification à deux facteurs (selon 2fa.directory). Pour protéger davantage ces comptes, vous devriez mettre en place l'authentification à deux facteurs.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -1600,7 +1600,7 @@
     }
   },
   "noInactive2fa": {
-    "message": "Aucun site web n'a été trouvé dans votre coffre-fort avec une configuration d'authentification à deux facteurs manquante."
+    "message": "Aucun site web n'a été trouvé dans votre coffre avec une configuration d'authentification à deux facteurs manquante."
   },
   "instructions": {
     "message": "Instructions"
@@ -1609,7 +1609,7 @@
     "message": "Rapport sur les mots de passe exposés"
   },
   "exposedPasswordsReportDesc": {
-    "message": "Exposed passwords are passwords have been uncovered in known data breaches that were released publicly or sold on the dark web by hackers."
+    "message": "Les mots de passe exposés lors d'une brèche de données sont des cibles faciles pour les attaquants. Changez ces mots de passe pour éviter des intrusions potentielles."
   },
   "exposedPasswordsFound": {
     "message": "Mots de passe exposés trouvés"
@@ -1783,38 +1783,38 @@
     "message": "Le crédit de votre compte peut être utilisé pour régler vos achats. Tout crédit disponible sera automatiquement appliqué aux factures générées pour ce compte."
   },
   "goPremium": {
-    "message": "Devenir Premium",
+    "message": "Passez Premium",
     "description": "Another way of saying \"Get a Premium membership\""
   },
   "premiumUpdated": {
-    "message": "Vous venez de passer à un compte Premium."
+    "message": "Vous avez mis à niveau vers Premium."
   },
   "premiumUpgradeUnlockFeatures": {
-    "message": "Mettre à niveau votre compte vers un abonnement premium et débloquez d'incroyables fonctionnalités supplémentaires."
+    "message": "Mettez votre compte à niveau vers une adhésion Premium et débloquez de superbes fonctionnalités supplémentaires."
   },
   "premiumSignUpStorage": {
-    "message": "1 Go de stockage de fichiers chiffrés."
+    "message": "1 Go de stockage chiffré pour les fichiers joints."
   },
   "premiumSignUpTwoStep": {
-    "message": "Options d'identification en deux étapes additionnelles comme YubiKey, FIDO U2F et Duo."
+    "message": "Options additionnelles d'authentification à deux facteurs telles que YubiKey, FIDO U2F et Duo."
   },
   "premiumSignUpEmergency": {
     "message": "Accès d'urgence"
   },
   "premiumSignUpReports": {
-    "message": "Rapports sur l'hygiène des mots de passe, la santé des comptes et les fuites de données pour assurer la sécurité de votre coffre."
+    "message": "Hygiène du mot de passe, santé du compte et rapports sur les brèches de données pour assurer la sécurité de votre coffre."
   },
   "premiumSignUpTotp": {
-    "message": "Génération d'un code de vérification TOTP (2FA) pour les identifiants de votre coffre."
+    "message": "Générateur de code de vérification TOTP (2FA) pour les identifiants dans votre coffre."
   },
   "premiumSignUpSupport": {
-    "message": "Support client prioritaire."
+    "message": "Assistance client prioritaire."
   },
   "premiumSignUpFuture": {
-    "message": "Toutes les futures options premium. D'autres suivront prochainement !"
+    "message": "Toutes les futures fonctionnalités Premium. Plus à venir prochainement !"
   },
   "premiumPrice": {
-    "message": "Tout pour seulement $PRICE$ /an !",
+    "message": "Tout pour seulement $PRICE$/an !",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -1822,14 +1822,30 @@
       }
     }
   },
+  "premiumPriceWithFamilyPlan": {
+    "message": "Passez Premium pour seulement $PRICE$/an, ou obtenez des comptes Premium pour $FAMILYPLANUSERCOUNT$ utilisateurs et un partage familial illimité avec un ",
+    "placeholders": {
+      "price": {
+        "content": "$1",
+        "example": "$10"
+      },
+      "familyplanusercount": {
+        "content": "$2",
+        "example": "6"
+      }
+    }
+  },
+  "bitwardenFamiliesPlan": {
+    "message": "Plan Bitwarden Familles."
+  },
   "addons": {
     "message": "Add-ons"
   },
   "premiumAccess": {
-    "message": "Accès premium"
+    "message": "Accès Premium"
   },
   "premiumAccessDesc": {
-    "message": "Vous pouvez ajouter un accès premium à tous les membres de votre organisation pour $PRICE$/$INTERVAL$.",
+    "message": "Vous pouvez ajouter l'accès Premium à tous les membres de votre organisation pour $PRICE$/$INTERVAL$.",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -1926,7 +1942,7 @@
     "message": "L’abonnement a été marqué pour être annulé à la fin de la période de facturation actuelle."
   },
   "reinstateSubscription": {
-    "message": "Rétablir l’abonnement"
+    "message": "Rétablir l'abonnement"
   },
   "reinstateConfirmation": {
     "message": "Êtes-vous sûr de vouloir retirer la demande d’annulation en attente et rétablir votre abonnement ?"
@@ -1938,7 +1954,7 @@
     "message": "Êtes-vous sûr de vouloir annuler ? Vous perdrez l’accès à toutes les fonctionnalités de l’abonnement à la fin de ce cycle de facturation."
   },
   "canceledSubscription": {
-    "message": "L'abonnement a été annulé."
+    "message": "Abonnement annulé"
   },
   "neverExpires": {
     "message": "N'expire jamais"
@@ -2070,7 +2086,7 @@
     "message": "Fichier de licence"
   },
   "licenseFileDesc": {
-    "message": "Votre fichier de licence aura un nom similaire à $FILE_NAME$",
+    "message": "Votre fichier de licence sera nommé comme quelque chose comme $FILE_NAME$",
     "placeholders": {
       "file_name": {
         "content": "$1",
@@ -2079,7 +2095,7 @@
     }
   },
   "uploadLicenseFilePremium": {
-    "message": "Pour mettre à niveau votre compte vers un abonnement premium, vous devez fournir un fichier de licence valide."
+    "message": "Pour mettre à niveau votre compte vers une adhésion Premium, vous devez charger un fichier de licence valide."
   },
   "uploadLicenseFileOrg": {
     "message": "Pour créer une organisation sur une instance auto-hébergée vous devez fournir un fichier de licence valide."
@@ -2237,7 +2253,7 @@
     "message": "Hébergement local (optionnel)"
   },
   "usersGetPremium": {
-    "message": "Les utilisateurs auront accès aux fonctionnalités premium"
+    "message": "Les utilisateurs ont accès aux fonctionnalités Premium"
   },
   "controlAccessWithGroups": {
     "message": "Contrôlez l'accès des utilisateurs avec des groupes"
@@ -2249,7 +2265,7 @@
     "message": "Suivez les actions des utilisateurs avec les journaux d'audit"
   },
   "enforce2faDuo": {
-    "message": "Forcez l'authentification à deux facteurs (2FA) avec Duo"
+    "message": "Imposer 2FA avec Duo"
   },
   "priorityCustomerSupport": {
     "message": "Support client prioritaire"
@@ -2417,7 +2433,7 @@
     }
   },
   "userUsingTwoStep": {
-    "message": "Cet utilisateur utilise l'identification en deux étapes pour protéger son compte."
+    "message": "Cet utilisateur utilise l'authentification à deux facteurs pour protéger son compte."
   },
   "userAccessAllItems": {
     "message": "Cet utilisateur peut voir et modifier tous les éléments."
@@ -2507,19 +2523,19 @@
     "message": "Mot de passe changé."
   },
   "enabledUpdated2fa": {
-    "message": "Connexion en deux étapes activée/mise à jour."
+    "message": "Authentification à deux facteurs sauvegardée"
   },
   "disabled2fa": {
-    "message": "Connexion en deux étapes désactivée."
+    "message": "Authentification à deux facteurs désactivée"
   },
   "recovered2fa": {
-    "message": "Compte récupéré depuis une connexion en deux étapes."
+    "message": "Compte récupéré à partir de l'authentification à deux facteurs."
   },
   "failedLogin": {
     "message": "Tentative de connexion avec mot de passe incorrect."
   },
   "failedLogin2fa": {
-    "message": "Tentative de connexion échouée avec deuxième facteur incorrect."
+    "message": "Tentative de connexion échouée avec une authentification à deux facteurs incorrecte."
   },
   "exportedVault": {
     "message": "Le coffre a été exporté."
@@ -2993,13 +3009,13 @@
     "message": "Se souvenir de l'e-mail"
   },
   "recoverAccountTwoStepDesc": {
-    "message": "Si vous ne pouvez pas accéder à votre compte grâce à vos méthodes de connexion en deux étapes habituelles, vous pouvez utiliser votre code de récupération de connexion en deux étapes pour désactiver tous les fournisseurs en deux étapes sur votre compte."
+    "message": "Si vous ne pouvez pas accéder à votre compte par les méthodes normales d'authentification à deux facteurs, vous pouvez utiliser votre code de récupération d'authentification à deux facteurs pour désactiver tous les fournisseurs à deux facteurs sur votre compte."
   },
   "recoverAccountTwoStep": {
-    "message": "Récupérer votre compte d'authentification à deux étapes"
+    "message": "Récupérer l'authentification à deux facteurs"
   },
   "twoStepRecoverDisabled": {
-    "message": "Ce fournisseur de connexion en deux étapes a été désactivé sur votre compte."
+    "message": "Authentification à deux facteurs désactivée sur votre compte."
   },
   "learnMore": {
     "message": "En savoir plus"
@@ -3023,7 +3039,7 @@
     "message": "Supprimer l'organisation"
   },
   "deletingOrganizationContentWarning": {
-    "message": "Entrez le mot de passe maître pour confirmer la suppression de $ORGANIZATION$ et de toutes les données associées. Les données du coffre dans $ORGANIZATION$ inclut:",
+    "message": "Saisir le mot de passe principal pour confirmer la suppression de $ORGANIZATION$ et de toutes les données associées. Les données du coffre de $ORGANIZATION$ comprennent :",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -3137,7 +3153,7 @@
     "message": "Saisissez l'identifiant de votre installation"
   },
   "limitSubscriptionDesc": {
-    "message": "Définissez un nombre de licences limite pour votre abonnement. Une fois cette limite atteinte, vous ne pourrez plus inviter de nouveaux utilisateurs."
+    "message": "Définissez une limite de licences pour votre abonnement. Une fois cette limite atteinte, vous ne pourrez plus inviter de nouveaux membres."
   },
   "maxSeatLimit": {
     "message": "Nombre de licences maximum (optionnel)",
@@ -3158,7 +3174,7 @@
     "message": "Les ajustements apportés à votre abonnement entraîneront des modifications au prorata de vos totaux de facturation. Si les utilisateurs nouvellement invités dépassent votre nombre de licences, vous recevrez immédiatement des frais au prorata pour les utilisateurs supplémentaires."
   },
   "subscriptionUserSeats": {
-    "message": "Votre abonnement permet un total de $COUNT$ utilisateurs.",
+    "message": "Votre abonnement permet un total de $COUNT$ membres.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -3167,7 +3183,7 @@
     }
   },
   "limitSubscription": {
-    "message": "Limiter le nombre de licences (optionnel)"
+    "message": "Limiter l'abonnement (facultatif)"
   },
   "subscriptionSeats": {
     "message": "Licences"
@@ -3263,7 +3279,7 @@
     "message": "Vous utilisez actuellement un moyen de chiffrement obsolète."
   },
   "updateEncryptionKeyDesc": {
-    "message": "Nous sommes passés à des clés de chiffrement plus longues qui fournissent une meilleure sécurité et permettent l'accès à de nouvelles fonctionnalités. La mise à jour de votre clé de chiffrement est rapide et facile. Tapez simplement votre mot de passe maître ci-dessous. Cette mise à jour deviendra peut-être obligatoire."
+    "message": "Nous sommes passés à des clés de chiffrement plus grandes qui offrent une meilleure sécurité et un accès à des fonctionnalités plus récentes. La mise à jour de votre clé de chiffrement est rapide et facile. Il suffit de saisir votre mot de passe principal ci-dessous. Cette mise à jour deviendra éventuellement obligatoire."
   },
   "updateEncryptionKeyWarning": {
     "message": "Après avoir mis à jour votre clé de chiffrement, vous devrez vous reconnecter sur toutes les applications Bitwarden que vous utilisez actuellement (comme par exemple l'application mobile ou les extensions de navigateur). Le fait de ne pas vous déconnecter et de vous reconnecter (ce qui télécharge votre nouvelle clé de chiffrement) pourrait entraîner une corruption des données. Nous allons essayer de vous déconnecter automatiquement, mais cela demande un peu de temps."
@@ -3390,10 +3406,10 @@
     "description": "ex. A very weak password. Scale: Very Weak -> Weak -> Good -> Strong"
   },
   "weakMasterPassword": {
-    "message": "Mot de passe maître faible"
+    "message": "Mot de passe principal faible"
   },
   "weakMasterPasswordDesc": {
-    "message": "Le mot de passe maître que vous avez choisi est faible. Vous devriez utiliser un mot de passe (ou une phrase de passe) fort(e) pour protéger correctement votre compte Bitwarden. Êtes-vous sûr de vouloir utiliser ce mot de passe maître ?"
+    "message": "Le mot de passe principal que vous avez choisi est faible. Vous devriez utiliser un mot de passe principal fort (ou une phrase de passe) pour protéger correctement votre compte Bitwarden. Êtes-vous sûr de vouloir utiliser ce mot de passe principal ?"
   },
   "rotateAccountEncKey": {
     "message": "Révoquer également la clé de chiffrement de mon compte"
@@ -3489,31 +3505,31 @@
     "message": "Cloner"
   },
   "masterPassPolicyTitle": {
-    "message": "Exigences pour le mot de passe maître"
+    "message": "Exigences du mot de passe principal"
   },
   "masterPassPolicyDesc": {
-    "message": "Définir les exigences minimales pour la force du mot de passe maître."
+    "message": "Définir les exigences de robustesse du mot de passe principal."
   },
   "twoStepLoginPolicyTitle": {
-    "message": "Nécessite une connexion en deux étapes"
+    "message": "Exiger une authentification à deux facteurs"
   },
   "twoStepLoginPolicyDesc": {
-    "message": "Imposer aux membres l'usage de la double authentification."
+    "message": "Exiger des membres qu'ils mettent en place une authentification à deux facteurs."
   },
   "twoStepLoginPolicyWarning": {
-    "message": "Les membres de l'organisation (hors propriétaires et administrateurs) qui n'ont pas activé la connexion en deux étapes sur leur compte personnel seront supprimés de l'organisation et recevront un courriel les informant du changement."
+    "message": "Les membres de l'organisation qui ne sont pas propriétaires ou administrateurs et qui n'ont pas configuré l'authentification à deux facteurs pour leur compte seront supprimés de l'organisation et recevront un courriel les informant de ce changement."
   },
   "twoStepLoginPolicyUserWarning": {
-    "message": "Vous êtes membre d'une organisation qui nécessite que la connexion en deux étapes soit activée sur votre compte utilisateur. Si vous désactivez tous les fournisseurs de connexion en deux étapes, vous serez automatiquement retiré de ces organisations."
+    "message": "Vous êtes un membre d'une organisation qui exige que l'authentification à deux facteurs soit configurée sur votre compte utilisateur. Si vous désactivez tous les fournisseurs d'authentification à deux facteurs, vous serez automatiquement retiré de ces organisations."
   },
   "passwordGeneratorPolicyDesc": {
-    "message": "Définir les exigences minimales pour la configuration du générateur de mot de passe."
+    "message": "Définir les exigences pour le générateur de mot de passe."
   },
   "passwordGeneratorPolicyInEffect": {
     "message": "Une ou plusieurs politiques d'organisation affectent les paramètres de votre générateur."
   },
   "masterPasswordPolicyInEffect": {
-    "message": "Une ou plusieurs politiques de l'organisation exigent que votre mot de passe maître réponde aux exigences suivantes :"
+    "message": "Une ou plusieurs politiques de l'organisation exigent que votre mot de passe principal réponde aux exigences suivantes :"
   },
   "policyInEffectMinComplexity": {
     "message": "Score de complexité minimum de $SCORE$",
@@ -3552,7 +3568,7 @@
     }
   },
   "masterPasswordPolicyRequirementsNotMet": {
-    "message": "Votre nouveau mot de passe maître ne répond pas aux exigences de la politique."
+    "message": "Votre nouveau mot de passe principal ne répond pas aux exigences en matière de politique de sécurité."
   },
   "minimumNumberOfWords": {
     "message": "Nombre minimum de mots"
@@ -3567,7 +3583,7 @@
     "message": "Action lors de l'expiration du délai du coffre"
   },
   "vaultTimeoutActionLockDesc": {
-    "message": "Un coffre verrouillé requiert la saisie de votre mot de passe maître pour y avoir à nouveau accès."
+    "message": "Un mot de passe principal ou une autre méthode de déverrouillage est nécessaire pour accéder à nouveau à votre coffre."
   },
   "vaultTimeoutActionLogOutDesc": {
     "message": "Un coffre déconnecté nécessite que vous vous ré-authentifiez pour y accéder de nouveau."
@@ -3659,7 +3675,7 @@
     }
   },
   "vaultTimeoutLogOutConfirmation": {
-    "message": "La déconnexion supprimera tous les accès à votre coffre et nécessite une authentification en ligne après la période d'expiration. Êtes-vous sûr de vouloir utiliser ce paramètre?"
+    "message": "La déconnexion supprimera tout accès à votre coffre et nécessitera une authentification en ligne après la période d'expiration. Êtes-vous sûr de vouloir utiliser ce paramètre ?"
   },
   "vaultTimeoutLogOutConfirmationTitle": {
     "message": "Confirmation de l'action lors de l'expiration du délai"
@@ -3680,10 +3696,10 @@
     "message": "Informations sur les taxes mises à jour."
   },
   "setMasterPassword": {
-    "message": "Définir le mot de passe maître"
+    "message": "Définir le mot de passe principal"
   },
   "ssoCompleteRegistration": {
-    "message": "Afin de terminer la connexion avec SSO, veuillez définir un mot de passe maître pour accéder à votre coffre et le protéger."
+    "message": "Afin de finaliser la connexion avec SSO, veuillez définir un mot de passe principal pour accéder et protéger votre coffre."
   },
   "identifier": {
     "message": "Identifiant"
@@ -3950,7 +3966,7 @@
     "message": "Prise de contrôle"
   },
   "takeoverDesc": {
-    "message": "Peut réinitialiser votre compte avec un nouveau mot de passe maître."
+    "message": "Peut réinitialiser votre compte avec un nouveau mot de passe principal."
   },
   "waitTime": {
     "message": "Période d'attente"
@@ -4387,7 +4403,7 @@
     "message": "Réinitialiser le mot de passe"
   },
   "resetPasswordLoggedOutWarning": {
-    "message": "En continuant, $NAME$ sera déconnecté de sa session actuelle, ce qui lui demandera de se reconnecter. Les sessions actives sur d'autres appareils peuvent rester actives jusqu'à une heure.",
+    "message": "En poursuivant, $NAME$ sera déconnecté de sa session actuelle, ce qui l'obligera à se reconnecter. Les sessions actives sur d'autres appareils peuvent rester actives pendant encore une heure.",
     "placeholders": {
       "name": {
         "content": "$1",
@@ -4399,22 +4415,22 @@
     "message": "cet utilisateur"
   },
   "resetPasswordMasterPasswordPolicyInEffect": {
-    "message": "Une ou plusieurs politiques de l'organisation exigent que le mot de passe maître réponde aux exigences suivantes :"
+    "message": "Une ou plusieurs politiques de l'organisation exigent que le mot de passe principal réponde aux exigences suivantes :"
   },
   "resetPasswordSuccess": {
     "message": "Mot de passe réinitialisé avec succès !"
   },
   "resetPasswordEnrollmentWarning": {
-    "message": "L'inscription permettra aux administrateurs de l'organisation de changer votre mot de passe maître. Êtes-vous sûr de vouloir vous inscrire ?"
+    "message": "L'inscription permettra aux administrateurs de l'organisation de changer votre mot de passe principal"
   },
   "resetPasswordPolicy": {
-    "message": "Réinitialisation du mot de passe maître"
+    "message": "Réinitialisation du mot de passe principal"
   },
   "resetPasswordPolicyDescription": {
-    "message": "Permettre aux administrateurs de l'organisation de réinitialiser le mot de passe maître des utilisateurs de l'organisation."
+    "message": "Autoriser les administrateurs à réinitialiser les mots de passe principaux pour les membres."
   },
   "resetPasswordPolicyWarning": {
-    "message": "Les utilisateurs de l'organisation devront s'inscrire personnellement ou être inscrits automatiquement avant que les administrateurs puissent réinitialiser leur mot de passe maître."
+    "message": "Les membres de l'organisation devront s'inscrire eux-mêmes ou être inscrits automatiquement avant que les administrateurs puissent réinitialiser leur mot de passe principal."
   },
   "resetPasswordPolicyAutoEnroll": {
     "message": "Inscription automatique"
@@ -4423,13 +4439,13 @@
     "message": "Tous les utilisateurs seront automatiquement inscrits à la réinitialisation du mot de passe une fois leur invitation acceptée et n'auront pas la possibilité de refuser."
   },
   "resetPasswordPolicyAutoEnrollWarning": {
-    "message": "Les utilisateurs déjà dans l'organisation ne seront pas inscrits rétroactivement à la réinitialisation du mot de passe. Ils devront s'inscrire personnellement avant que les administrateurs puissent réinitialiser leur mot de passe maître."
+    "message": "Les membres qui font déjà partie de l'organisation ne seront pas inscrits rétroactivement à la réinitialisation du mot de passe. Ils devront s'inscrire eux-mêmes avant que les administrateurs puissent réinitialiser leur mot de passe principal."
   },
   "resetPasswordPolicyAutoEnrollCheckbox": {
     "message": "Exiger que les nouveaux utilisateurs soient inscrits automatiquement"
   },
   "resetPasswordAutoEnrollInviteWarning": {
-    "message": "Cette organisation a une politique d'entreprise qui vous inscrira automatiquement à la réinitialisation du mot de passe. L'inscription permettra aux administrateurs de l'organisation de changer votre mot de passe maître."
+    "message": "Cette organisation dispose d'une politique d'entreprise qui vous inscrira automatiquement à la réinitialisation du mot de passe. L'inscription permettra aux administrateurs de l'organisation de changer votre mot de passe principal."
   },
   "resetPasswordOrgKeysError": {
     "message": "Erreur lors du traitement de votre demande : \"Organization Keys response is null\""
@@ -4444,13 +4460,13 @@
     "message": "Les éléments présents dans la corbeille depuis un moment seront automatiquement supprimés."
   },
   "passwordPrompt": {
-    "message": "Ressaisie du mot de passe maître"
+    "message": "Ressaisir le mot de passe principal"
   },
   "passwordConfirmation": {
-    "message": "Confirmation du mot de passe maître"
+    "message": "Confirmation du mot de passe principal"
   },
   "passwordConfirmationDesc": {
-    "message": "Cette action est protégée. Pour continuer, veuillez ressaisir votre mot de passe maître pour vérifier votre identité."
+    "message": "Cette action est protégée. Pour continuer, veuillez saisir à nouveau votre mot de passe principal pour vérifier votre identité."
   },
   "reinviteSelected": {
     "message": "Renvoyer les invitations"
@@ -4650,16 +4666,16 @@
     "message": "Ajouter"
   },
   "updatedMasterPassword": {
-    "message": "Mot de passe maître mis à jour"
+    "message": "Mot de passe principal enregistré"
   },
   "updateMasterPassword": {
-    "message": "Mettre à jour le mot de passe maître"
+    "message": "Mettre à jour le mot de passe principal"
   },
   "updateMasterPasswordWarning": {
-    "message": "Votre mot de passe maître a récemment été modifié par un administrateur de votre organisation. Pour accéder au coffre, vous devez mettre à jour votre mot de passe maître dès maintenant. Cette action va vous déconnecter et vous obligera à vous reconnecter. Les sessions actives sur d'autres appareils peuvent rester actives jusqu'à une heure."
+    "message": "Votre mot de passe principal a été récemment changé par un administrateur de votre organisation. Pour pouvoir accéder au coffre, vous devez mettre à jour votre mot de passe principal maintenant. En poursuivant, vous serez déconnecté de votre session actuelle et vous devrez vous reconnecter. Les sessions actives sur d'autres appareils peuvent rester actives pendant encore une heure."
   },
   "masterPasswordInvalidWarning": {
-    "message": "Votre mot de passe maître ne répond pas aux exigences des politiques de cette organisation. Afin de rejoindre l'organisation, vous devez mettre à jour votre mot de passe maître maintenant. En continuant, vous serez déconnecté de votre session actuelle et vous devrez vous reconnecter. Les sessions actives sur d'autres appareils peuvent rester actives pendant encore une heure."
+    "message": "Votre mot de passe principal ne répond pas aux exigences de politique de sécurité de cette organisation. Afin de rejoindre l'organisation, vous devez mettre à jour votre mot de passe principal dès maintenant. En poursuivant, vous serez déconnecté de votre session actuelle et vous devrez vous reconnecter. Les sessions actives sur d'autres appareils peuvent rester actives pendant encore une heure."
   },
   "maximumVaultTimeout": {
     "message": "Délai d'expiration du coffre"
@@ -4699,7 +4715,7 @@
     "message": "Le délai d'expiration de votre coffre-fort dépasse les restrictions définies par votre organisation."
   },
   "vaultCustomTimeoutMinimum": {
-    "message": "Le délai minimum de mise en veille personnalisée est 1 minute."
+    "message": "Le délai d'expiration personnalisé minimum est de 1 minute."
   },
   "vaultTimeoutRangeError": {
     "message": "Le délai de mise en veille du coffre n'est pas dans l'intervalle de temps autorisé."
@@ -4735,7 +4751,7 @@
     "message": "URL de callback"
   },
   "signedOutCallbackPath": {
-    "message": "URL de callback pour la déconnexion"
+    "message": "Chemin de \"callback\" lorsque déconnecté"
   },
   "authority": {
     "message": "Autorité"
@@ -4810,7 +4826,7 @@
     "message": "URL du service de connexion unique (SSO)"
   },
   "idpSingleLogoutServiceUrl": {
-    "message": "URL du service de déconnexion unique (SLO)"
+    "message": "URL du service de déconnexion unique"
   },
   "idpX509PublicCert": {
     "message": "Certificat public X.509"
@@ -4843,7 +4859,7 @@
     "message": "L'abonnement Bitwarden Familles inclut"
   },
   "sponsoredFamiliesPremiumAccess": {
-    "message": "Accès premium pour un maximum de 6 utilisateurs"
+    "message": "Accès Premium jusqu'à 6 utilisateurs"
   },
   "sponsoredFamiliesSharedCollections": {
     "message": "Collections partagées pour les secrets de la famille"
@@ -4984,10 +5000,10 @@
     "message": "Quitter l'organisation"
   },
   "removeMasterPassword": {
-    "message": "Supprimer le mot de passe maître"
+    "message": "Supprimer le mot de passe principal"
   },
   "removedMasterPassword": {
-    "message": "Mot de passe maître supprimé."
+    "message": "Mot de passe principal supprimé"
   },
   "allowSso": {
     "message": "Autoriser l'authentification SSO"
@@ -5014,13 +5030,13 @@
     "message": "Options de déchiffrement des membres"
   },
   "memberDecryptionPassDesc": {
-    "message": "Une fois authentifiés, les membres déchiffreront les données du coffre en utilisant leur mot de passe maître."
+    "message": "Une fois authentifiés, les membres déchiffreront les données du coffre à l'aide de leur mot de passe principal."
   },
   "keyConnector": {
     "message": "Key Connector"
   },
   "memberDecryptionKeyConnectorDesc": {
-    "message": "Connectez l'authentification SSO à votre serveur de clés de déchiffrement auto-hébergé. En utilisant cette option, les membres n'auront pas besoin d'utiliser leur mot de passe maître pour déchiffrer les données du coffre. Contactez le support Bitwarden pour une assistance à la configuration."
+    "message": "Connectez l'authentification par SSO à votre serveur de clés de déchiffrement auto-hébergé. En utilisant cette option, les membres n'auront pas besoin d'utiliser leurs mots de passe principaux pour déchiffrer les données du coffre. Contactez le support Bitwarden pour une assistance à la mise en place."
   },
   "keyConnectorPolicyRestriction": {
     "message": "\"Connexion avec SSO et déchiffrement avec Key Connector\" est activé. Cette politique ne s'appliquera qu'aux propriétaires et aux administrateurs."
@@ -5038,7 +5054,7 @@
     "message": "Key Connector désactivé"
   },
   "keyConnectorWarning": {
-    "message": "Dès que les membres de votre organisation commencent à utiliser Key Connector, votre organisation ne peut pas revenir au déchiffrement avec mot de passe maître. Ne continuez que si vous êtes à l'aise avec le déploiement et la maintenance d'un serveur de clés."
+    "message": "Une fois que les membres commencent à utiliser Key Connector, votre organisation ne peut plus revenir au déchiffrement par mot de passe principal. Ne procédez que si vous êtes à l'aise avec le déploiement et la gestion d'un serveur de clés."
   },
   "migratedKeyConnector": {
     "message": "Migré vers Key Connector"
@@ -5209,7 +5225,7 @@
     "message": "Accès Refusé. Vous n'avez pas la permission de voir cette page."
   },
   "masterPassword": {
-    "message": "Mot de Passe Maître"
+    "message": "Mot de passe principal"
   },
   "security": {
     "message": "Sécurité"
@@ -5565,10 +5581,10 @@
     "message": "Sélectionnez les projets auxquels le secret sera associé. Seuls les utilisateurs de l'organisation ayant accès à ces projets pourront voir le secret."
   },
   "typeOrSelectProjects": {
-    "message": "Écrivez ou sélectionnez des projets"
+    "message": "Écrivez ou sélectionnez des Projets"
   },
   "typeOrSelectProject": {
-    "message": "Écrivez ou sélectionnez un projet"
+    "message": "Écrivez ou sélectionnez un Projet"
   },
   "project": {
     "message": "Projet"

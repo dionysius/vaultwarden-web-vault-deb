@@ -1822,6 +1822,22 @@
       }
     }
   },
+  "premiumPriceWithFamilyPlan": {
+    "message": "Перайдзіце на прэміяльны тарыфны план усяго за $PRICE$/год або атрымайце прэміяльныя ўліковыя запісы для $FAMILYPLANUSERCOUNT$ карыстальнікаў і неабмежаванае сямейнае абагуленне з ",
+    "placeholders": {
+      "price": {
+        "content": "$1",
+        "example": "$10"
+      },
+      "familyplanusercount": {
+        "content": "$2",
+        "example": "6"
+      }
+    }
+  },
+  "bitwardenFamiliesPlan": {
+    "message": "Тарыфны план Bitwarden Families."
+  },
   "addons": {
     "message": "Дадаткі"
   },
@@ -5562,13 +5578,13 @@
     "message": "Выдаліць сакрэты"
   },
   "secretProjectAssociationDescription": {
-    "message": "Select projects that the secret will be associated with. Only organization users with access to these projects will be able to see the secret."
+    "message": "Выберыце праекты з якімі будзе звязаны сакрэт. Толькі карыстальнікі арганізацыі з доступам да гэтых праектаў змогуць бачыць сакрэт."
   },
   "typeOrSelectProjects": {
-    "message": "Type or select Projects"
+    "message": "Увядзіце або выберыце праекты"
   },
   "typeOrSelectProject": {
-    "message": "Type or select Project"
+    "message": "Увядзіце або выберыце праект"
   },
   "project": {
     "message": "Праект"

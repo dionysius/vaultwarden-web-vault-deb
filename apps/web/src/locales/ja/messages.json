@@ -1609,7 +1609,7 @@
     "message": "流出パスワード調査"
   },
   "exposedPasswordsReportDesc": {
-    "message": "Exposed passwords are passwords have been uncovered in known data breaches that were released publicly or sold on the dark web by hackers."
+    "message": "Passwords exposed in a data breach are easy targets for attackers. Change these passwords to prevent potential break-ins."
   },
   "exposedPasswordsFound": {
     "message": "流出したパスワードが見つかりました"
@@ -1821,6 +1821,22 @@
         "example": "$10"
       }
     }
+  },
+  "premiumPriceWithFamilyPlan": {
+    "message": "$PRICE$ /年でプレミアム会員になるか、下記のプランなら $FAMILYPLANUSERCOUNT$ 人分のプレミアムアカウントを取得して家族での共有を無制限にできるようになります：",
+    "placeholders": {
+      "price": {
+        "content": "$1",
+        "example": "$10"
+      },
+      "familyplanusercount": {
+        "content": "$2",
+        "example": "6"
+      }
+    }
+  },
+  "bitwardenFamiliesPlan": {
+    "message": "Bitwarden ファミリープラン"
   },
   "addons": {
     "message": "アドオン"
@@ -4783,7 +4799,7 @@
     "message": "Assertion consumer service (ACS) URL"
   },
   "spNameIdFormat": {
-    "message": "Name ID format"
+    "message": "名前IDの形式"
   },
   "spOutboundSigningAlgorithm": {
     "message": "Outbound signing algorithm"
@@ -5562,13 +5578,13 @@
     "message": "シークレットを削除"
   },
   "secretProjectAssociationDescription": {
-    "message": "Select projects that the secret will be associated with. Only organization users with access to these projects will be able to see the secret."
+    "message": "シークレットを関連付けるプロジェクトを選択します。これらのプロジェクトにアクセスできる組織ユーザーのみがシークレットを表示できます。"
   },
   "typeOrSelectProjects": {
-    "message": "Type or select Projects"
+    "message": "プロジェクトを入力または選択"
   },
   "typeOrSelectProject": {
-    "message": "Type or select Project"
+    "message": "プロジェクトを入力または選択"
   },
   "project": {
     "message": "プロジェクト"
@@ -5700,7 +5716,7 @@
     }
   },
   "deleteProjectInputLabel": {
-    "message": "Type \"$CONFIRM$\" to continue",
+    "message": "「$CONFIRM$」と入力して続行",
     "placeholders": {
       "confirm": {
         "content": "$1",
@@ -5709,7 +5725,7 @@
     }
   },
   "deleteProjectConfirmMessage": {
-    "message": "Delete $PROJECT$",
+    "message": "$PROJECT$ を削除",
     "placeholders": {
       "project": {
         "content": "$1",
@@ -5718,7 +5734,7 @@
     }
   },
   "deleteProjectsConfirmMessage": {
-    "message": "Delete $COUNT$ Projects",
+    "message": "$COUNT$ 個のプロジェクトを削除",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -5727,13 +5743,13 @@
     }
   },
   "deleteProjectsDialogMessage": {
-    "message": "Deleting projects is permanent and irreversible."
+    "message": "プロジェクトを削除すると元に戻せません。"
   },
   "projectsNoItemsTitle": {
-    "message": "No projects to display"
+    "message": "表示するプロジェクトがありません"
   },
   "projectsNoItemsMessage": {
-    "message": "Add a new project to get started organizing secrets."
+    "message": "秘密を始めるために新しいプロジェクトを追加する。"
   },
   "smConfirmationRequired": {
     "message": "Confirmation required"
@@ -5745,13 +5761,13 @@
     "message": "Secret sent to trash"
   },
   "searchProjects": {
-    "message": "Search Projects"
+    "message": "プロジェクトを検索"
   },
   "accessTokens": {
-    "message": "Access tokens"
+    "message": "アクセストークン"
   },
   "createAccessToken": {
-    "message": "Create access token"
+    "message": "アクセストークンを作成"
   },
   "expires": {
     "message": "Expires"
@@ -5760,13 +5776,13 @@
     "message": "Can Read"
   },
   "accessTokensNoItemsTitle": {
-    "message": "No access tokens to show"
+    "message": "表示するアクセス トークンはありません"
   },
   "accessTokensNoItemsDesc": {
     "message": "To get started, create an access token"
   },
   "downloadAccessToken": {
-    "message": "Download or copy before closing."
+    "message": "閉じる前にダウンロードまたはコピーする。"
   },
   "expiresOnAccessToken": {
     "message": "Expires on:"
@@ -5775,10 +5791,10 @@
     "message": "Access tokens are not stored and cannot be retrieved"
   },
   "copyToken": {
-    "message": "Copy token"
+    "message": "トークンをコピー"
   },
   "accessToken": {
-    "message": "Access token"
+    "message": "アクセストークン"
   },
   "accessTokenExpirationRequired": {
     "message": "Expiration date required"
@@ -5790,10 +5806,10 @@
     "message": "Permissions management is unavailable for beta."
   },
   "revokeAccessToken": {
-    "message": "Revoke Access Token"
+    "message": "アクセストークンの取り消し"
   },
   "submenu": {
-    "message": "Submenu"
+    "message": "サブメニュー"
   },
   "from": {
     "message": "From"

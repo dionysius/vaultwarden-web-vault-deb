@@ -1609,7 +1609,7 @@
     "message": "Exposed Passwords Report"
   },
   "exposedPasswordsReportDesc": {
-    "message": "Exposed passwords are passwords that have been uncovered in known data breaches that were released publicly or sold on the dark web by hackers."
+    "message": "Passwords exposed in a data breach are easy targets for attackers. Change these passwords to prevent potential break-ins."
   },
   "exposedPasswordsFound": {
     "message": "Exposed Passwords Found"
@@ -1821,6 +1821,22 @@
         "example": "$10"
       }
     }
+  },
+  "premiumPriceWithFamilyPlan": {
+    "message": "Go premium for just $PRICE$ /year, or get premium accounts for $FAMILYPLANUSERCOUNT$ users and unlimited family sharing with a ",
+    "placeholders": {
+      "price": {
+        "content": "$1",
+        "example": "$10"
+      },
+      "familyplanusercount": {
+        "content": "$2",
+        "example": "6"
+      }
+    }
+  },
+  "bitwardenFamiliesPlan": {
+    "message": "Bitwarden Families plan."
   },
   "addons": {
     "message": "Addons"

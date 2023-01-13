@@ -1822,6 +1822,22 @@
       }
     }
   },
+  "premiumPriceWithFamilyPlan": {
+    "message": "Yalnızca $PRICE$/yıl karşılığında premium'a geçin veya $FAMILYPLANUSERCOUNT$ kullanıcıları için premium hesaplar ve bir kullanıcıyla sınırsız aile paylaşımı elde edin ",
+    "placeholders": {
+      "price": {
+        "content": "$1",
+        "example": "$10"
+      },
+      "familyplanusercount": {
+        "content": "$2",
+        "example": "6"
+      }
+    }
+  },
+  "bitwardenFamiliesPlan": {
+    "message": "Bitwarden Aileleri planı."
+  },
   "addons": {
     "message": "Eklentiler"
   },
@@ -5562,13 +5578,13 @@
     "message": "Sırları Sil"
   },
   "secretProjectAssociationDescription": {
-    "message": "Şifrenin ilişkilendirileceği projeleri seçin. Sadece erişimi olan organizasyon kullanıcıları bu projelere erişebilir ve şifreyi görebilir."
+    "message": "Sırrın ilişkilendirileceği projeleri seçin. Yalnızca bu projelere erişimi olan kuruluş kullanıcıları sırrı görebilir."
   },
   "typeOrSelectProjects": {
-    "message": "Projelerinizi yazın ya da seçin"
+    "message": "Projeleri yazın veya seçin"
   },
   "typeOrSelectProject": {
-    "message": "Projenizi yazın ya da seçin"
+    "message": "Projeyi yazın veya seçin"
   },
   "project": {
     "message": "Proje"

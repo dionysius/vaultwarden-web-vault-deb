@@ -1822,6 +1822,22 @@
       }
     }
   },
+  "premiumPriceWithFamilyPlan": {
+    "message": "Prejdite na prémium len za $PRICE$ /rok alebo získajte prémium kontá pre $FAMILYPLANUSERCOUNT$ používateľov a neobmedzené zdieľanie v rodine s ",
+    "placeholders": {
+      "price": {
+        "content": "$1",
+        "example": "$10"
+      },
+      "familyplanusercount": {
+        "content": "$2",
+        "example": "6"
+      }
+    }
+  },
+  "bitwardenFamiliesPlan": {
+    "message": "Bitwarden plán pre Rodiny."
+  },
   "addons": {
     "message": "Doplnky"
   },
@@ -5562,13 +5578,13 @@
     "message": "Delete Secrets"
   },
   "secretProjectAssociationDescription": {
-    "message": "Select projects that the secret will be associated with. Only organization users with access to these projects will be able to see the secret."
+    "message": "Vyberte projekty ku ktorým bude heslo patriť. Iba tí používatelia organizácie, ktorí majú prístup k zvoleným projektom budú môcť vidieť heslo."
   },
   "typeOrSelectProjects": {
-    "message": "Type or select Projects"
+    "message": "Zadajte alebo vyberte Projekty"
   },
   "typeOrSelectProject": {
-    "message": "Type or select Project"
+    "message": "Zadajte alebo vyberte Projekt"
   },
   "project": {
     "message": "Project"

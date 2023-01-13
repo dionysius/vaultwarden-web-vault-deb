@@ -29,7 +29,7 @@
     }
   },
   "newUri": {
-    "message": "URl Baru"
+    "message": "URI Baru"
   },
   "username": {
     "message": "Nama Pengguna"
@@ -50,7 +50,7 @@
     "message": "Kolom Ubahsuai"
   },
   "cardholderName": {
-    "message": "Nama Pemilik Kartu"
+    "message": "Nama Pemegang Kartu"
   },
   "number": {
     "message": "Nomor"
@@ -125,13 +125,13 @@
     "message": "Panggilan"
   },
   "mr": {
-    "message": "Tuan"
+    "message": "Tn"
   },
   "mrs": {
-    "message": "Nyonya"
+    "message": "Ny"
   },
   "ms": {
-    "message": "Nona"
+    "message": "Nn"
   },
   "dr": {
     "message": "Dr"
@@ -146,7 +146,7 @@
     "message": "Kunci Autentikasi (TOTP)"
   },
   "folder": {
-    "message": "Folder"
+    "message": "Direktori"
   },
   "newCustomField": {
     "message": "Kolom Ubahsuai Baru"
@@ -187,7 +187,7 @@
     "message": "Edit Folder"
   },
   "baseDomain": {
-    "message": "Domain basis",
+    "message": "Domain dasar",
     "description": "Domain name. Example: website.com"
   },
   "domainName": {
@@ -199,10 +199,10 @@
     "description": "A URL's host value. For example, the host of https://sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
-    "message": "Tepat"
+    "message": "Persis"
   },
   "startsWith": {
-    "message": "Mulai dengan"
+    "message": "Dimulai dengan"
   },
   "regEx": {
     "message": "Ekspresi umum",
@@ -233,7 +233,7 @@
     "message": "Periksa apakah kata sandi telah terekspos."
   },
   "passwordExposed": {
-    "message": "Sandi ini telah dibuka $VALUE$ kali karena pelanggaran data. Anda harus mengubahnya.",
+    "message": "Sandi ini telah terekspos $VALUE$ kali dalam kebocoran data. Sebaiknya, anda mengubahnya.",
     "placeholders": {
       "value": {
         "content": "$1",
@@ -242,13 +242,13 @@
     }
   },
   "passwordSafe": {
-    "message": "Kata sandi ini tidak ditemukan dalam data pelanggaran yang dikenal. Kata sandi tersebut harusnya aman untuk digunakan."
+    "message": "Kata sandi ini tidak ditemukan dalam kebocoran data yang diketahui. Kata sandi tersebut seharusnya aman untuk digunakan."
   },
   "save": {
     "message": "Simpan"
   },
   "cancel": {
-    "message": "Batal"
+    "message": "Batalkan"
   },
   "canceled": {
     "message": "Dibatalkan"
@@ -266,7 +266,7 @@
     "message": "Batalkan favorit"
   },
   "edit": {
-    "message": "Ubah"
+    "message": "Sunting"
   },
   "searchCollection": {
     "message": "Cari koleksi"
@@ -375,7 +375,7 @@
     "message": "Lihat Item"
   },
   "ex": {
-    "message": "contoh",
+    "message": "cth.",
     "description": "Short abbreviation for 'example'."
   },
   "other": {
@@ -651,7 +651,7 @@
     "message": "Diperlukan pengetikan ulang kata sandi utama."
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least 8 characters long."
+    "message": "Kata sandi utama harus memiliki sekurang-kurangnya 8 karakter."
   },
   "masterPassDoesntMatch": {
     "message": "Konfirmasi sandi utama tidak cocok."
@@ -694,7 +694,7 @@
     "message": "Sandi utama tidak valid"
   },
   "invalidFilePassword": {
-    "message": "Invalid file password, please use the password you entered when you created the export file."
+    "message": "Kata sandi berkas tidak valid, harap menggunakan kata sandi yang anda masukkan saat anda membuat berkas ekspor."
   },
   "lockNow": {
     "message": "Kunci Sekarang"
@@ -915,7 +915,7 @@
     "message": "This file export will be password protected and require the file password to decrypt."
   },
   "exportPasswordDescription": {
-    "message": "This password will be used to export and import this file"
+    "message": "Kata sandi ini akan digunakan untuk mengekspor dan mengimpor berkas ini"
   },
   "confirmMasterPassword": {
     "message": "Konfirmasi kata sandi utama"
@@ -936,10 +936,10 @@
     "message": "Set a file password to encrypt the export and import it to any Bitwarden account using the password for decryption."
   },
   "exportTypeHeading": {
-    "message": "Export type"
+    "message": "Jenis ekspor"
   },
   "accountRestricted": {
-    "message": "Account restricted"
+    "message": "Akun dibatasi"
   },
   "passwordProtected": {
     "message": "Dilindungi kata sandi"
@@ -1822,6 +1822,22 @@
       }
     }
   },
+  "premiumPriceWithFamilyPlan": {
+    "message": "Go premium for just $PRICE$ /year, or get premium accounts for $FAMILYPLANUSERCOUNT$ users and unlimited family sharing with a ",
+    "placeholders": {
+      "price": {
+        "content": "$1",
+        "example": "$10"
+      },
+      "familyplanusercount": {
+        "content": "$2",
+        "example": "6"
+      }
+    }
+  },
+  "bitwardenFamiliesPlan": {
+    "message": "Bitwarden Families plan."
+  },
   "addons": {
     "message": "Pengaya"
   },
@@ -1880,7 +1896,7 @@
     "message": "bulan"
   },
   "monthAbbr": {
-    "message": "mo.",
+    "message": "bln.",
     "description": "Short abbreviation for 'month'"
   },
   "paymentChargedAnnually": {
@@ -2597,7 +2613,7 @@
     }
   },
   "viewedCardNumberItemId": {
-    "message": "Viewed Card Number for item $ID$.",
+    "message": "Melihat nomor kartu untuk item $ID$.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -3017,7 +3033,7 @@
     "message": "Organisasi Saya"
   },
   "organizationInfo": {
-    "message": "Organization info"
+    "message": "Info organisasi"
   },
   "deleteOrganization": {
     "message": "Hapus Organisasi"
@@ -3713,7 +3729,7 @@
     "message": "Validasi SSO Gagal"
   },
   "ssoIdentifierRequired": {
-    "message": "Pengenal Organisasi wajib diisi."
+    "message": "Pengenal SSO Organisasi wajib diisi."
   },
   "ssoIdentifier": {
     "message": "SSO identifier"
@@ -4138,7 +4154,7 @@
     "message": "Izin"
   },
   "permission": {
-    "message": "Permission"
+    "message": "Izin"
   },
   "managerPermissions": {
     "message": "Pengelola Izin"
@@ -4450,7 +4466,7 @@
     "message": "Konfirmasi sandi utama"
   },
   "passwordConfirmationDesc": {
-    "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
+    "message": "Tindakan ini dilindungi. Untuk melanjutkan, harap masukkan ulang sandi utama Anda untuk memverifikasi identitas Anda."
   },
   "reinviteSelected": {
     "message": "Kirim Ulang Undangan"
@@ -4723,13 +4739,13 @@
     "message": "Tipe"
   },
   "openIdConnectConfig": {
-    "message": "OpenID connect configuration"
+    "message": "Konfigurasi OpenID Connect"
   },
   "samlSpConfig": {
-    "message": "SAML service provider configuration"
+    "message": "Konfigurasi penyedia layanan SAML"
   },
   "samlIdpConfig": {
-    "message": "SAML identity provider configuration"
+    "message": "Konfigurasi penyedia identitas SAML"
   },
   "callbackPath": {
     "message": "Callback path"
@@ -4828,10 +4844,10 @@
     "message": "Sign authentication requests"
   },
   "ssoSettingsSaved": {
-    "message": "Single sign-on configuration saved"
+    "message": "Konfigurasi single sign-on tersimpan"
   },
   "sponsoredFamilies": {
-    "message": "Free Bitwarden Families"
+    "message": "Bitwarden Families Gratis"
   },
   "sponsoredFamiliesEligible": {
     "message": "You and your family are eligible for Free Bitwarden Families. Redeem with your personal email to keep your data secure even when you are not at work."
@@ -4855,7 +4871,7 @@
     "message": "Reclaimed free plan"
   },
   "redeem": {
-    "message": "Redeem"
+    "message": "Tukarkan"
   },
   "sponsoredFamiliesSelectOffer": {
     "message": "Select the organization you would like sponsored"
@@ -4894,7 +4910,7 @@
     "message": "Free Bitwarden Families offer successfully redeemed"
   },
   "redeemed": {
-    "message": "Redeemed"
+    "message": "Sudah ditukar"
   },
   "redeemedAccount": {
     "message": "Account redeemed"
@@ -5026,10 +5042,10 @@
     "message": "\"Login with SSO and Key Connector Decryption\" is activated. This policy will only apply to owners and admins."
   },
   "enabledSso": {
-    "message": "Aktifkan SSO"
+    "message": "SSO aktif"
   },
   "disabledSso": {
-    "message": "Matikan SSO"
+    "message": "SSO tidak aktif"
   },
   "enabledKeyConnector": {
     "message": "Konektor Kunci diaktifkan"
@@ -5053,7 +5069,7 @@
     "message": "New Families organization"
   },
   "acceptOffer": {
-    "message": "Accept offer"
+    "message": "Terima penawaran"
   },
   "sponsoringOrg": {
     "message": "Sponsoring organization"
@@ -5128,13 +5144,13 @@
     "message": "Aktif"
   },
   "inactive": {
-    "message": "Inactive"
+    "message": "Tidak aktif"
   },
   "sentAwaitingSync": {
-    "message": "Sent (awaiting sync)"
+    "message": "Terkirim (menunggu penyinkronan)"
   },
   "sent": {
-    "message": "Sent"
+    "message": "Terkirim"
   },
   "requestRemoved": {
     "message": "Removed (awaiting sync)"
@@ -5143,7 +5159,7 @@
     "message": "Requested"
   },
   "formErrorSummaryPlural": {
-    "message": "$COUNT$ fields above need your attention.",
+    "message": "$COUNT$ isian diatas membutuhkan perhatian Anda.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -5152,7 +5168,7 @@
     }
   },
   "formErrorSummarySingle": {
-    "message": "1 field above needs your attention."
+    "message": "Satu isian di atas membutuhkan perhatian Anda."
   },
   "fieldRequiredError": {
     "message": "$FIELDNAME$ diperlukan.",
@@ -5167,7 +5183,7 @@
     "message": "diperlukan"
   },
   "idpSingleSignOnServiceUrlRequired": {
-    "message": "Required if Entity ID is not a URL."
+    "message": "Diperlukan jika Entity ID bukan sebuah URL."
   },
   "openIdOptionalCustomizations": {
     "message": "Kustomisasi Opsional"
@@ -5176,7 +5192,7 @@
     "message": "Required if Authority is not valid."
   },
   "separateMultipleWithComma": {
-    "message": "Separate multiple with a comma."
+    "message": "Pisahkan beberapa nilai dengan tanda koma."
   },
   "sessionTimeout": {
     "message": "Your session has timed out. Please go back and try logging in again."
@@ -5206,7 +5222,7 @@
     }
   },
   "accessDenied": {
-    "message": "Access denied. You do not have permission to view this page."
+    "message": "Akses ditolak. Anda tidak mempunyai izin untuk melihat halaman ini."
   },
   "masterPassword": {
     "message": "Kata Sandi Utama"
@@ -5240,7 +5256,7 @@
     "message": "What would you like to generate?"
   },
   "passwordType": {
-    "message": "Password type"
+    "message": "Jenis kata sandi"
   },
   "regenerateUsername": {
     "message": "Regenerate username"
@@ -5249,7 +5265,7 @@
     "message": "Generate username"
   },
   "usernameType": {
-    "message": "Username type"
+    "message": "Jenis nama pengguna"
   },
   "plusAddressedEmail": {
     "message": "Plus addressed email",
@@ -5265,11 +5281,11 @@
     "message": "Use your domain's configured catch-all inbox."
   },
   "random": {
-    "message": "Random",
+    "message": "Acak",
     "description": "Generates domain-based username using random letters"
   },
   "randomWord": {
-    "message": "Random word"
+    "message": "Kata acak"
   },
   "service": {
     "message": "Service"
@@ -5315,7 +5331,7 @@
     "message": "Self-hosted sponsorships synced."
   },
   "billingManagedByProvider": {
-    "message": "Managed by $PROVIDER$",
+    "message": "Dikelola oleh $PROVIDER$",
     "placeholders": {
       "provider": {
         "content": "$1",
@@ -5434,7 +5450,7 @@
     }
   },
   "inputMaxLength": {
-    "message": "Input must not exceed $COUNT$ characters in length.",
+    "message": "Panjang input tidak boleh melebihi $COUNT$ karakter.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -5458,7 +5474,7 @@
     "message": "On"
   },
   "members": {
-    "message": "Members"
+    "message": "Anggota"
   },
   "reporting": {
     "message": "Reporting"
@@ -5473,7 +5489,7 @@
     "message": "Logging in as"
   },
   "notYou": {
-    "message": "Not you?"
+    "message": "Bukan Anda?"
   },
   "pickAnAvatarColor": {
     "message": "Pick an avatar color"
@@ -5488,16 +5504,16 @@
     "message": "Bright Blue"
   },
   "green": {
-    "message": "Green"
+    "message": "Hijau"
   },
   "orange": {
-    "message": "Orange"
+    "message": "Oranye"
   },
   "lavender": {
     "message": "Lavender"
   },
   "yellow": {
-    "message": "Yellow"
+    "message": "Kuning"
   },
   "indigo": {
     "message": "Indigo"
@@ -5509,13 +5525,13 @@
     "message": "Salmon"
   },
   "pink": {
-    "message": "Pink"
+    "message": "Merah Muda"
   },
   "customColor": {
     "message": "Custom Color"
   },
   "multiSelectPlaceholder": {
-    "message": "-- Type to Filter --"
+    "message": "-- Ketik untuk menyaring --"
   },
   "multiSelectLoading": {
     "message": "Retrieving options..."

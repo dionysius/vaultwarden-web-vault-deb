@@ -1609,7 +1609,7 @@
     "message": "Bericht über kompromittierte Passwörter"
   },
   "exposedPasswordsReportDesc": {
-    "message": "Kompromittierte Passwörter sind Passwörter, die in bekannten Datendiebstählen entdeckt und veröffentlicht wurden oder von Hackern im Dark Web verkauft wurden."
+    "message": "Durch Datendiebstahl aufgedeckte Passwörter sind einfache Ziele für Angreifer. Ändere diese Passwörter, um mögliche Einbrüche zu verhindern."
   },
   "exposedPasswordsFound": {
     "message": "Es wurden kompromittierte Passwörter gefunden"
@@ -1821,6 +1821,22 @@
         "example": "$10"
       }
     }
+  },
+  "premiumPriceWithFamilyPlan": {
+    "message": "Wechsle zu Premium für nur $PRICE$ /Jahr oder erhalte Premium-Konten für $FAMILYPLANUSERCOUNT$ Benutzer und eine unbegrenzte Familienfreigabe mit einem ",
+    "placeholders": {
+      "price": {
+        "content": "$1",
+        "example": "$10"
+      },
+      "familyplanusercount": {
+        "content": "$2",
+        "example": "6"
+      }
+    }
+  },
+  "bitwardenFamiliesPlan": {
+    "message": "Bitwarden Familien-Abo."
   },
   "addons": {
     "message": "Erweiterungen"

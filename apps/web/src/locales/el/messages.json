@@ -1609,7 +1609,7 @@
     "message": "Αναφορά Κωδικών που έχουν Εκτεθεί"
   },
   "exposedPasswordsReportDesc": {
-    "message": "Οι εκτεθειμένοι κωδικοί, είναι κωδικοί που έχουν εμφανιστεί σε γνωστές διαρροές δεδομένων, και που κυκλοφόρησαν δημόσια ή πουλήθηκαν στο dark web από χάκερς."
+    "message": "Passwords exposed in a data breach are easy targets for attackers. Change these passwords to prevent potential break-ins."
   },
   "exposedPasswordsFound": {
     "message": "Βρέθηκαν Εκτεθειμένοι Κωδικοί"
@@ -1821,6 +1821,22 @@
         "example": "$10"
       }
     }
+  },
+  "premiumPriceWithFamilyPlan": {
+    "message": "Go premium for just $PRICE$ /year, or get premium accounts for $FAMILYPLANUSERCOUNT$ users and unlimited family sharing with a ",
+    "placeholders": {
+      "price": {
+        "content": "$1",
+        "example": "$10"
+      },
+      "familyplanusercount": {
+        "content": "$2",
+        "example": "6"
+      }
+    }
+  },
+  "bitwardenFamiliesPlan": {
+    "message": "Bitwarden Families plan."
   },
   "addons": {
     "message": "Πρόσθετα"

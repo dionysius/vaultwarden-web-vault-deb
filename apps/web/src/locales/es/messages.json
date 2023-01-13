@@ -1609,7 +1609,7 @@
     "message": "Infome de contraseñas expuestas"
   },
   "exposedPasswordsReportDesc": {
-    "message": "Exposed passwords are passwords have been uncovered in known data breaches that were released publicly or sold on the dark web by hackers."
+    "message": "Las contraseñas expuestas en una brecha de datos son blancos fáciles para los atacantes. Cambia estas contraseñas para evitar futuras brechas."
   },
   "exposedPasswordsFound": {
     "message": "Contraseñas expuestas encontradas"
@@ -1821,6 +1821,22 @@
         "example": "$10"
       }
     }
+  },
+  "premiumPriceWithFamilyPlan": {
+    "message": "Pasate a premium por solo $PRICE$ /año, o consigue cuentas premium para $FAMILYPLANUSERCOUNT$ usuarios y una familia ilimitada compartiendo con un ",
+    "placeholders": {
+      "price": {
+        "content": "$1",
+        "example": "$10"
+      },
+      "familyplanusercount": {
+        "content": "$2",
+        "example": "6"
+      }
+    }
+  },
+  "bitwardenFamiliesPlan": {
+    "message": "Plan familiar Bitwarden."
   },
   "addons": {
     "message": "Complementos"
@@ -3462,7 +3478,7 @@
     "description": "'OAuth 2.0' is a programming protocol. It should probably not be translated."
   },
   "viewApiKey": {
-    "message": "Ver Clave API"
+    "message": "Ver clave API"
   },
   "rotateApiKey": {
     "message": "Regenerar clave API"
@@ -5494,25 +5510,25 @@
     "message": "Naranja"
   },
   "lavender": {
-    "message": "Lavender"
+    "message": "Lavanda"
   },
   "yellow": {
-    "message": "Yellow"
+    "message": "Amarillo"
   },
   "indigo": {
     "message": "Indigo"
   },
   "teal": {
-    "message": "Teal"
+    "message": "Verde azulado"
   },
   "salmon": {
-    "message": "Salmon"
+    "message": "Salmón"
   },
   "pink": {
-    "message": "Pink"
+    "message": "Rosa"
   },
   "customColor": {
-    "message": "Custom Color"
+    "message": "Color personalizado"
   },
   "multiSelectPlaceholder": {
     "message": "-- Escriba para filtrar --"
