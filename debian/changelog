@@ -1,3 +1,9 @@
+vaultwarden-web-vault (2023.1.0-5) unstable; urgency=medium
+
+  * use reusable github actions workflow
+
+ -- dionysius <dragon.dionysius@gmail.com>  Sun, 15 Jan 2023 12:17:09 +0100
+
 vaultwarden-web-vault (2023.1.0-4) unstable; urgency=medium
 
   * ci: set apt retry with sudo
