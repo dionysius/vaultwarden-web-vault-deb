@@ -32,18 +32,10 @@
           </div>
 
           <div class="tw-mb-3 tw-flex tw-items-start">
-            <div class="tw-flex tw-h-6 tw-items-center">
-              <input
-                id="login_input_remember-email"
-                class="tw-w-4 tw-rounded tw-border"
-                bitInput
-                type="checkbox"
-                formControlName="rememberEmail"
-              />
-            </div>
-            <bit-label class="ml-2">
-              {{ "rememberEmail" | i18n }}
-            </bit-label>
+            <bit-form-control class="tw-mb-0">
+              <input type="checkbox" bitCheckbox formControlName="rememberEmail" />
+              <bit-label>{{ "rememberEmail" | i18n }}</bit-label>
+            </bit-form-control>
           </div>
 
           <div class="tw-mb-3">
