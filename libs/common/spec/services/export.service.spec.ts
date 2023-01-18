@@ -7,7 +7,7 @@ import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
 import { CryptoFunctionService } from "@bitwarden/common/abstractions/cryptoFunction.service";
 import { FolderService } from "@bitwarden/common/abstractions/folder/folder.service.abstraction";
 import { CipherType } from "@bitwarden/common/enums/cipherType";
-import { KdfType } from "@bitwarden/common/enums/kdfType";
+import { KdfType, DEFAULT_KDF_ITERATIONS } from "@bitwarden/common/enums/kdfType";
 import { Utils } from "@bitwarden/common/misc/utils";
 import { Cipher } from "@bitwarden/common/models/domain/cipher";
 import { EncString } from "@bitwarden/common/models/domain/enc-string";
@@ -232,7 +232,7 @@ describe("ExportService", () => {
       });
 
       it("specifies kdfIterations", () => {
-        expect(exportObject.kdfIterations).toEqual(100000);
+        expect(exportObject.kdfIterations).toEqual(DEFAULT_KDF_ITERATIONS);
       });
 
       it("has kdfType", () => {
