@@ -255,7 +255,7 @@ export class CreditCardAutoFillConstants {
 
   // Each index represents a language. These three arrays should all be the same length.
   // 0: English, 1: Danish, 2: German/Dutch, 3: French/Spanish/Italian, 4: Russian, 5: Portuguese
-  static readonly MonthAbbr = ["mm", "mm", "mm", "mm", "mm", "mm"];
+  static readonly MonthAbbr = ["mm", "mm", "mm", "mm", "мм", "mm"];
   static readonly YearAbbrShort = ["yy", "åå", "jj", "aa", "гг", "rr"];
   static readonly YearAbbrLong = ["yyyy", "åååå", "jjjj", "aa", "гггг", "rrrr"];
 }
