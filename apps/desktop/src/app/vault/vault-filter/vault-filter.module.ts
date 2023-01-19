@@ -1,6 +1,7 @@
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 
+import { DeprecatedVaultFilterService as DeprecatedVaultFilterServiceAbstraction } from "@bitwarden/angular/abstractions/deprecated-vault-filter.service";
 import { JslibModule } from "@bitwarden/angular/jslib.module";
 import { VaultFilterService } from "@bitwarden/angular/vault/vault-filter/services/vault-filter.service";
 
@@ -22,6 +23,11 @@ import { VaultFilterComponent } from "./vault-filter.component";
     TypeFilterComponent,
   ],
   exports: [VaultFilterComponent],
-  providers: [VaultFilterService],
+  providers: [
+    {
+      provide: DeprecatedVaultFilterServiceAbstraction,
+      useClass: VaultFilterService,
+    },
+  ],
 })
 export class VaultFilterModule {}

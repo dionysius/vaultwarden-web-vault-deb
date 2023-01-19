@@ -17,6 +17,7 @@ import { CipherCreateRequest } from "../models/request/cipher-create.request";
 import { CipherPartialRequest } from "../models/request/cipher-partial.request";
 import { CipherShareRequest } from "../models/request/cipher-share.request";
 import { CipherRequest } from "../models/request/cipher.request";
+import { CollectionBulkDeleteRequest } from "../models/request/collection-bulk-delete.request";
 import { CollectionRequest } from "../models/request/collection.request";
 import { DeleteRecoverRequest } from "../models/request/delete-recover.request";
 import { DeviceVerificationRequest } from "../models/request/device-verification.request";
@@ -29,7 +30,6 @@ import { EmergencyAccessInviteRequest } from "../models/request/emergency-access
 import { EmergencyAccessPasswordRequest } from "../models/request/emergency-access-password.request";
 import { EmergencyAccessUpdateRequest } from "../models/request/emergency-access-update.request";
 import { EventRequest } from "../models/request/event.request";
-import { GroupRequest } from "../models/request/group.request";
 import { IapCheckRequest } from "../models/request/iap-check.request";
 import { PasswordTokenRequest } from "../models/request/identity-token/password-token.request";
 import { SsoTokenRequest } from "../models/request/identity-token/sso-token.request";
@@ -93,7 +93,7 @@ import { BillingPaymentResponse } from "../models/response/billing-payment.respo
 import { BreachAccountResponse } from "../models/response/breach-account.response";
 import { CipherResponse } from "../models/response/cipher.response";
 import {
-  CollectionGroupDetailsResponse,
+  CollectionAccessDetailsResponse,
   CollectionResponse,
 } from "../models/response/collection.response";
 import { DeviceVerificationResponse } from "../models/response/device-verification.response";
@@ -106,7 +106,6 @@ import {
 } from "../models/response/emergency-access.response";
 import { ErrorResponse } from "../models/response/error.response";
 import { EventResponse } from "../models/response/event.response";
-import { GroupDetailsResponse, GroupResponse } from "../models/response/group.response";
 import { IdentityCaptchaResponse } from "../models/response/identity-captcha.response";
 import { IdentityTokenResponse } from "../models/response/identity-token.response";
 import { IdentityTwoFactorResponse } from "../models/response/identity-two-factor.response";
@@ -804,10 +803,10 @@ export class ApiService implements ApiServiceAbstraction {
 
   // Collections APIs
 
-  async getCollectionDetails(
+  async getCollectionAccessDetails(
     organizationId: string,
     id: string
-  ): Promise<CollectionGroupDetailsResponse> {
+  ): Promise<CollectionAccessDetailsResponse> {
     const r = await this.send(
       "GET",
       "/organizations/" + organizationId + "/collections/" + id + "/details",
@@ -815,7 +814,7 @@ export class ApiService implements ApiServiceAbstraction {
       true,
       true
     );
-    return new CollectionGroupDetailsResponse(r);
+    return new CollectionAccessDetailsResponse(r);
   }
 
   async getUserCollections(): Promise<ListResponse<CollectionResponse>> {
@@ -832,6 +831,19 @@ export class ApiService implements ApiServiceAbstraction {
       true
     );
     return new ListResponse(r, CollectionResponse);
+  }
+
+  async getManyCollectionsWithAccessDetails(
+    organizationId: string
+  ): Promise<ListResponse<CollectionAccessDetailsResponse>> {
+    const r = await this.send(
+      "GET",
+      "/organizations/" + organizationId + "/collections/details",
+      null,
+      true,
+      true
+    );
+    return new ListResponse(r, CollectionAccessDetailsResponse);
   }
 
   async getCollectionUsers(
@@ -901,6 +913,16 @@ export class ApiService implements ApiServiceAbstraction {
     );
   }
 
+  deleteManyCollections(request: CollectionBulkDeleteRequest): Promise<any> {
+    return this.send(
+      "DELETE",
+      "/organizations/" + request.organizationId + "/collections",
+      request,
+      true,
+      false
+    );
+  }
+
   deleteCollectionUser(
     organizationId: string,
     id: string,
@@ -917,28 +939,6 @@ export class ApiService implements ApiServiceAbstraction {
 
   // Groups APIs
 
-  async getGroupDetails(organizationId: string, id: string): Promise<GroupDetailsResponse> {
-    const r = await this.send(
-      "GET",
-      "/organizations/" + organizationId + "/groups/" + id + "/details",
-      null,
-      true,
-      true
-    );
-    return new GroupDetailsResponse(r);
-  }
-
-  async getGroups(organizationId: string): Promise<ListResponse<GroupResponse>> {
-    const r = await this.send(
-      "GET",
-      "/organizations/" + organizationId + "/groups",
-      null,
-      true,
-      true
-    );
-    return new ListResponse(r, GroupResponse);
-  }
-
   async getGroupUsers(organizationId: string, id: string): Promise<string[]> {
     const r = await this.send(
       "GET",
@@ -950,47 +950,11 @@ export class ApiService implements ApiServiceAbstraction {
     return r;
   }
 
-  async postGroup(organizationId: string, request: GroupRequest): Promise<GroupResponse> {
-    const r = await this.send(
-      "POST",
-      "/organizations/" + organizationId + "/groups",
-      request,
-      true,
-      true
-    );
-    return new GroupResponse(r);
-  }
-
-  async putGroup(
-    organizationId: string,
-    id: string,
-    request: GroupRequest
-  ): Promise<GroupResponse> {
-    const r = await this.send(
-      "PUT",
-      "/organizations/" + organizationId + "/groups/" + id,
-      request,
-      true,
-      true
-    );
-    return new GroupResponse(r);
-  }
-
   async putGroupUsers(organizationId: string, id: string, request: string[]): Promise<any> {
     await this.send(
       "PUT",
       "/organizations/" + organizationId + "/groups/" + id + "/users",
       request,
-      true,
-      false
-    );
-  }
-
-  deleteGroup(organizationId: string, id: string): Promise<any> {
-    return this.send(
-      "DELETE",
-      "/organizations/" + organizationId + "/groups/" + id,
-      null,
       true,
       false
     );

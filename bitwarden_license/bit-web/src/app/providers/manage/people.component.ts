@@ -22,8 +22,8 @@ import { ListResponse } from "@bitwarden/common/models/response/list.response";
 import { ProviderUserBulkResponse } from "@bitwarden/common/models/response/provider/provider-user-bulk.response";
 import { ProviderUserUserDetailsResponse } from "@bitwarden/common/models/response/provider/provider-user.response";
 import { BasePeopleComponent } from "@bitwarden/web-vault/app/common/base.people.component";
-import { BulkStatusComponent } from "@bitwarden/web-vault/app/organizations/manage/bulk/bulk-status.component";
 import { EntityEventsComponent } from "@bitwarden/web-vault/app/organizations/manage/entity-events.component";
+import { BulkStatusComponent } from "@bitwarden/web-vault/app/organizations/members/components/bulk/bulk-status.component";
 
 import { BulkConfirmComponent } from "./bulk/bulk-confirm.component";
 import { BulkRemoveComponent } from "./bulk/bulk-remove.component";

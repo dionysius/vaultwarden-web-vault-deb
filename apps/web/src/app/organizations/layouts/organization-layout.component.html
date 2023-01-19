@@ -7,10 +7,15 @@
         [activeOrganization]="organization"
       ></app-organization-switcher>
       <bit-tab-nav-bar class="-tw-mb-px">
-        <bit-tab-link route="vault">{{ "vault" | i18n }}</bit-tab-link>
-        <bit-tab-link *ngIf="canShowManageTab(organization)" route="manage">
-          {{ "manage" | i18n }}
-        </bit-tab-link>
+        <bit-tab-link *ngIf="canShowVaultTab(organization)" route="vault">{{
+          "vault" | i18n
+        }}</bit-tab-link>
+        <bit-tab-link *ngIf="canShowMembersTab(organization)" route="members">{{
+          "members" | i18n
+        }}</bit-tab-link>
+        <bit-tab-link *ngIf="canShowGroupsTab(organization)" route="groups">{{
+          "groups" | i18n
+        }}</bit-tab-link>
         <bit-tab-link *ngIf="canShowReportsTab(organization)" route="reporting">
           {{ getReportTabLabel(organization) | i18n }}
         </bit-tab-link>

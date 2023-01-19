@@ -106,9 +106,13 @@ export class CollectionService implements CollectionServiceAbstraction {
     return nodes;
   }
 
+  /**
+   * @deprecated August 30 2022: Moved to new Vault Filter Service
+   * Remove when Desktop and Browser are updated
+   */
   async getNested(id: string): Promise<TreeNode<CollectionView>> {
     const collections = await this.getAllNested();
-    return ServiceUtils.getTreeNodeObject(collections, id) as TreeNode<CollectionView>;
+    return ServiceUtils.getTreeNodeObjectFromList(collections, id) as TreeNode<CollectionView>;
   }
 
   async upsert(collection: CollectionData | CollectionData[]): Promise<any> {

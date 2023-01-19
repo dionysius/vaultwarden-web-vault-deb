@@ -26,11 +26,20 @@ export class OrganizationUserServiceImplementation implements OrganizationUserSe
 
   async getOrganizationUser(
     organizationId: string,
-    id: string
+    id: string,
+    options?: {
+      includeGroups?: boolean;
+    }
   ): Promise<OrganizationUserDetailsResponse> {
+    const params = new URLSearchParams();
+
+    if (options?.includeGroups) {
+      params.set("includeGroups", "true");
+    }
+
     const r = await this.apiService.send(
       "GET",
-      "/organizations/" + organizationId + "/users/" + id,
+      `/organizations/${organizationId}/users/${id}?${params.toString()}`,
       null,
       true,
       true
@@ -50,11 +59,24 @@ export class OrganizationUserServiceImplementation implements OrganizationUserSe
   }
 
   async getAllUsers(
-    organizationId: string
+    organizationId: string,
+    options?: {
+      includeCollections?: boolean;
+      includeGroups?: boolean;
+    }
   ): Promise<ListResponse<OrganizationUserUserDetailsResponse>> {
+    const params = new URLSearchParams();
+
+    if (options?.includeCollections) {
+      params.set("includeCollections", "true");
+    }
+    if (options?.includeGroups) {
+      params.set("includeGroups", "true");
+    }
+
     const r = await this.apiService.send(
       "GET",
-      "/organizations/" + organizationId + "/users",
+      `/organizations/${organizationId}/users?${params.toString()}`,
       null,
       true,
       true

@@ -26,10 +26,14 @@ export abstract class OrganizationUserService {
    * Retrieve a single organization user by Id
    * @param organizationId - Identifier for the user's organization
    * @param id - Organization user identifier
+   * @param options - Options for the request
    */
   abstract getOrganizationUser(
     organizationId: string,
-    id: string
+    id: string,
+    options?: {
+      includeGroups?: boolean;
+    }
   ): Promise<OrganizationUserDetailsResponse>;
 
   /**
@@ -42,9 +46,14 @@ export abstract class OrganizationUserService {
   /**
    * Retrieve a list of all users that belong to the specified organization
    * @param organizationId - Identifier for the organization
+   * @param options - Options for the request
    */
   abstract getAllUsers(
-    organizationId: string
+    organizationId: string,
+    options?: {
+      includeCollections?: boolean;
+      includeGroups?: boolean;
+    }
   ): Promise<ListResponse<OrganizationUserUserDetailsResponse>>;
 
   /**

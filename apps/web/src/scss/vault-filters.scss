@@ -4,7 +4,6 @@
 
 .filter-heading {
   display: flex;
-  text-transform: uppercase;
   align-items: center;
 
   * {
@@ -26,20 +25,24 @@
     }
   }
 
-  button.filter-button {
-    &:hover,
-    &:focus,
-    &.active {
-      @include themify($themes) {
-        color: themed("linkColor") !important;
+  .filter-button {
+    h3,
+    button {
+      &:hover,
+      &:focus,
+      &.active {
+        @include themify($themes) {
+          color: themed("linkColor") !important;
+        }
       }
-    }
-    &.active {
-      font-weight: bold;
+      &.active {
+        font-weight: bold;
+      }
     }
   }
 
-  button.toggle-button {
+  button.toggle-button,
+  button.add-button {
     &:hover,
     &:focus {
       @include themify($themes) {
@@ -137,7 +140,7 @@
     }
   }
 
-  .org-options {
+  .filter-options-icon {
     padding: 0 2px;
   }
 }
@@ -161,7 +164,6 @@
 
     h3 {
       font-weight: normal;
-      text-transform: uppercase;
       @include themify($themes) {
         color: themed("textMuted");
       }
@@ -175,11 +177,6 @@
       @include themify($themes) {
         color: themed("textHeadingColor");
         font-weight: themed("linkWeight");
-      }
-
-      &:hover {
-        &.text-muted {
-        }
       }
     }
     .show-active {

@@ -6,7 +6,7 @@ import { Organization } from "../../models/domain/organization";
 import { I18nService } from "../i18n.service";
 
 export function canAccessVaultTab(org: Organization): boolean {
-  return org.isManager;
+  return org.canViewAssignedCollections || org.canViewAllCollections || org.canManageGroups;
 }
 
 export function canAccessSettingsTab(org: Organization): boolean {
@@ -35,19 +35,6 @@ export function canAccessBillingTab(org: Organization): boolean {
   return org.canManageBilling;
 }
 
-export function canManageCollections(org: Organization): boolean {
-  return (
-    org.canCreateNewCollections ||
-    org.canEditAnyCollection ||
-    org.canDeleteAnyCollection ||
-    org.canViewAssignedCollections
-  );
-}
-
-export function canAccessManageTab(org: Organization): boolean {
-  return canAccessMembersTab(org) || canAccessGroupsTab(org) || canManageCollections(org);
-}
-
 export function canAccessOrgAdmin(org: Organization): boolean {
   return (
     canAccessMembersTab(org) ||
@@ -55,8 +42,7 @@ export function canAccessOrgAdmin(org: Organization): boolean {
     canAccessReportingTab(org) ||
     canAccessBillingTab(org) ||
     canAccessSettingsTab(org) ||
-    canAccessVaultTab(org) ||
-    canAccessManageTab(org)
+    canAccessVaultTab(org)
   );
 }
 

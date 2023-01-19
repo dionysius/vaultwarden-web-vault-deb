@@ -1,6 +1,8 @@
 import { Component, EventEmitter, Input, OnDestroy, Output } from "@angular/core";
+import { lastValueFrom } from "rxjs";
 
 import { VaultItemsComponent as BaseVaultItemsComponent } from "@bitwarden/angular/components/vault-items.component";
+import { SearchPipe } from "@bitwarden/angular/pipes/search.pipe";
 import { CipherService } from "@bitwarden/common/abstractions/cipher.service";
 import { EventCollectionService } from "@bitwarden/common/abstractions/event/event-collection.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
@@ -16,10 +18,36 @@ import { CipherRepromptType } from "@bitwarden/common/enums/cipherRepromptType";
 import { CipherType } from "@bitwarden/common/enums/cipherType";
 import { EventType } from "@bitwarden/common/enums/eventType";
 import { Organization } from "@bitwarden/common/models/domain/organization";
+import { TreeNode } from "@bitwarden/common/models/domain/tree-node";
 import { CipherView } from "@bitwarden/common/models/view/cipher.view";
-import { Icons } from "@bitwarden/components";
+import { CollectionView } from "@bitwarden/common/models/view/collection.view";
+import { DialogService, Icons } from "@bitwarden/components";
+
+import { CollectionAdminView, GroupView } from "../organizations/core";
+
+import {
+  BulkDeleteDialogResult,
+  openBulkDeleteDialog,
+} from "./bulk-action-dialogs/bulk-delete-dialog/bulk-delete-dialog.component";
+import {
+  BulkMoveDialogResult,
+  openBulkMoveDialog,
+} from "./bulk-action-dialogs/bulk-move-dialog/bulk-move-dialog.component";
+import {
+  BulkRestoreDialogResult,
+  openBulkRestoreDialog,
+} from "./bulk-action-dialogs/bulk-restore-dialog/bulk-restore-dialog.component";
+import {
+  BulkShareDialogResult,
+  openBulkShareDialog,
+} from "./bulk-action-dialogs/bulk-share-dialog/bulk-share-dialog.component";
+import { VaultFilterService } from "./vault-filter/services/abstractions/vault-filter.service";
+import { VaultFilter } from "./vault-filter/shared/models/vault-filter.model";
+import { CollectionFilter } from "./vault-filter/shared/models/vault-filter.type";
 
 const MaxCheckedCount = 500;
+
+export type VaultItemRow = (CipherView | TreeNode<CollectionFilter>) & { checked?: boolean };
 
 @Component({
   selector: "app-vault-items",
@@ -27,35 +55,66 @@ const MaxCheckedCount = 500;
 })
 export class VaultItemsComponent extends BaseVaultItemsComponent implements OnDestroy {
   @Input() showAddNew = true;
+  @Input() activeFilter: VaultFilter;
+  @Output() activeFilterChanged = new EventEmitter<VaultFilter>();
   @Output() onAttachmentsClicked = new EventEmitter<CipherView>();
   @Output() onShareClicked = new EventEmitter<CipherView>();
-  @Output() onCollectionsClicked = new EventEmitter<CipherView>();
+  @Output() onEditCipherCollectionsClicked = new EventEmitter<CipherView>();
   @Output() onCloneClicked = new EventEmitter<CipherView>();
   @Output() onOrganzationBadgeClicked = new EventEmitter<string>();
 
-  pagedCiphers: CipherView[] = [];
-  pageSize = 200;
   cipherType = CipherType;
   actionPromise: Promise<any>;
   userHasPremiumAccess = false;
   organizations: Organization[] = [];
   profileName: string;
   noItemIcon = Icons.Search;
+  groups: GroupView[] = [];
 
-  private didScroll = false;
-  private pagedCiphersCount = 0;
-  private refreshing = false;
+  protected pageSizeLimit = 200;
+  protected isAllChecked = false;
+  protected didScroll = false;
+  protected currentPagedCiphersCount = 0;
+  protected currentPagedCollectionsCount = 0;
+  protected refreshing = false;
+
+  protected pagedCiphers: CipherView[] = [];
+  protected pagedCollections: TreeNode<CollectionFilter>[] = [];
+  protected searchedCollections: TreeNode<CollectionFilter>[] = [];
+
+  get collections(): TreeNode<CollectionFilter>[] {
+    return this.activeFilter?.selectedCollectionNode?.children ?? [];
+  }
+
+  get filteredCollections(): TreeNode<CollectionFilter>[] {
+    if (this.isPaging()) {
+      return this.pagedCollections;
+    }
+
+    if (this.searchService.isSearchable(this.searchText)) {
+      return this.searchedCollections;
+    }
+
+    return this.collections;
+  }
+
+  get filteredCiphers(): CipherView[] {
+    return this.isPaging() ? this.pagedCiphers : this.ciphers;
+  }
 
   constructor(
     searchService: SearchService,
     protected i18nService: I18nService,
     protected platformUtilsService: PlatformUtilsService,
+    protected vaultFilterService: VaultFilterService,
     protected cipherService: CipherService,
     protected eventCollectionService: EventCollectionService,
     protected totpService: TotpService,
     protected stateService: StateService,
     protected passwordRepromptService: PasswordRepromptService,
-    private logService: LogService,
+    protected dialogService: DialogService,
+    protected logService: LogService,
+    private searchPipe: SearchPipe,
     private organizationService: OrganizationService,
     private tokenService: TokenService
   ) {
@@ -63,34 +122,28 @@ export class VaultItemsComponent extends BaseVaultItemsComponent implements OnDe
   }
 
   ngOnDestroy() {
-    this.selectAll(false);
+    this.checkAll(false);
+  }
+
+  async applyFilter(filter: (cipher: CipherView) => boolean = null) {
+    this.checkAll(false);
+    this.isAllChecked = false;
+    this.pagedCollections = [];
+    if (!this.refreshing && this.isPaging()) {
+      this.currentPagedCollectionsCount = 0;
+      this.currentPagedCiphersCount = 0;
+    }
+    await super.applyFilter(filter);
   }
 
   // load() is called after the page loads and the first sync has completed.
   // Do not use ngOnInit() for anything that requires sync data.
   async load(filter: (cipher: CipherView) => boolean = null, deleted = false) {
     await super.load(filter, deleted);
+    this.updateSearchedCollections(this.collections);
     this.profileName = await this.tokenService.getName();
     this.organizations = await this.organizationService.getAll();
     this.userHasPremiumAccess = await this.stateService.getCanAccessPremium();
-  }
-
-  loadMore() {
-    if (this.ciphers.length <= this.pageSize) {
-      return;
-    }
-    const pagedLength = this.pagedCiphers.length;
-    let pagedSize = this.pageSize;
-    if (this.refreshing && pagedLength === 0 && this.pagedCiphersCount > this.pageSize) {
-      pagedSize = this.pagedCiphersCount;
-    }
-    if (this.ciphers.length > pagedLength) {
-      this.pagedCiphers = this.pagedCiphers.concat(
-        this.ciphers.slice(pagedLength, pagedLength + pagedSize)
-      );
-    }
-    this.pagedCiphersCount = this.pagedCiphers.length;
-    this.didScroll = this.pagedCiphers.length > this.pageSize;
   }
 
   async refresh() {
@@ -102,15 +155,58 @@ export class VaultItemsComponent extends BaseVaultItemsComponent implements OnDe
     }
   }
 
+  loadMore() {
+    // If we have less rows than the page size, we don't need to page anything
+    if (this.ciphers.length + (this.collections?.length || 0) <= this.pageSizeLimit) {
+      return;
+    }
+
+    let pageSpaceLeft = this.pageSizeLimit;
+    if (
+      this.refreshing &&
+      this.pagedCiphers.length + this.pagedCollections.length === 0 &&
+      this.currentPagedCiphersCount + this.currentPagedCollectionsCount > this.pageSizeLimit
+    ) {
+      // When we refresh, we want to load the previous amount of items, not restart the paging
+      pageSpaceLeft = this.currentPagedCiphersCount + this.currentPagedCollectionsCount;
+    }
+    // if there are still collections to show
+    if (this.collections?.length > this.pagedCollections.length) {
+      const collectionsToAdd = this.collections.slice(
+        this.pagedCollections.length,
+        this.currentPagedCollectionsCount + pageSpaceLeft
+      );
+      this.pagedCollections = this.pagedCollections.concat(collectionsToAdd);
+      // set the current count to the new count of paged collections
+      this.currentPagedCollectionsCount = this.pagedCollections.length;
+      // subtract the available page size by the amount of collections we just added, default to 0 if negative
+      pageSpaceLeft =
+        collectionsToAdd.length > pageSpaceLeft ? 0 : pageSpaceLeft - collectionsToAdd.length;
+    }
+    // if we have room left to show ciphers and we have ciphers to show
+    if (pageSpaceLeft > 0 && this.ciphers.length > this.pagedCiphers.length) {
+      this.pagedCiphers = this.pagedCiphers.concat(
+        this.ciphers.slice(this.pagedCiphers.length, this.currentPagedCiphersCount + pageSpaceLeft)
+      );
+      // set the current count to the new count of paged ciphers
+      this.currentPagedCiphersCount = this.pagedCiphers.length;
+    }
+    // set a flag if we actually loaded the second page while paging
+    this.didScroll = this.pagedCiphers.length + this.pagedCollections.length > this.pageSizeLimit;
+  }
+
   isPaging() {
     const searching = this.isSearching();
     if (searching && this.didScroll) {
       this.resetPaging();
     }
-    return !searching && this.ciphers.length > this.pageSize;
+    const totalRows =
+      this.ciphers.length + (this.activeFilter?.selectedCollectionNode?.children.length || 0);
+    return !searching && totalRows > this.pageSizeLimit;
   }
 
   async resetPaging() {
+    this.pagedCollections = [];
     this.pagedCiphers = [];
     this.loadMore();
   }
@@ -121,6 +217,7 @@ export class VaultItemsComponent extends BaseVaultItemsComponent implements OnDe
       [this.filter, this.deletedFilter],
       indexedCiphers
     );
+    this.updateSearchedCollections(this.collections);
     this.resetPaging();
   }
 
@@ -142,8 +239,8 @@ export class VaultItemsComponent extends BaseVaultItemsComponent implements OnDe
     this.onShareClicked.emit(c);
   }
 
-  collections(c: CipherView) {
-    this.onCollectionsClicked.emit(c);
+  editCipherCollections(c: CipherView) {
+    this.onEditCipherCollectionsClicked.emit(c);
   }
 
   async clone(c: CipherView) {
@@ -153,7 +250,7 @@ export class VaultItemsComponent extends BaseVaultItemsComponent implements OnDe
     this.onCloneClicked.emit(c);
   }
 
-  async delete(c: CipherView): Promise<boolean> {
+  async deleteCipher(c: CipherView): Promise<boolean> {
     if (!(await this.repromptCipher(c))) {
       return;
     }
@@ -175,7 +272,7 @@ export class VaultItemsComponent extends BaseVaultItemsComponent implements OnDe
     }
 
     try {
-      this.actionPromise = this.deleteCipher(c.id, permanent);
+      this.actionPromise = this.deleteCipherWithServer(c.id, permanent);
       await this.actionPromise;
       this.platformUtilsService.showToast(
         "success",
@@ -187,6 +284,33 @@ export class VaultItemsComponent extends BaseVaultItemsComponent implements OnDe
       this.logService.error(e);
     }
     this.actionPromise = null;
+  }
+
+  async bulkDelete() {
+    if (!(await this.repromptCipher())) {
+      return;
+    }
+
+    const selectedIds = this.selectedCipherIds;
+    if (selectedIds.length === 0) {
+      this.platformUtilsService.showToast(
+        "error",
+        this.i18nService.t("errorOccurred"),
+        this.i18nService.t("nothingSelected")
+      );
+      return;
+    }
+
+    const dialog = openBulkDeleteDialog(this.dialogService, {
+      data: { permanent: this.deleted, cipherIds: selectedIds },
+    });
+
+    const result = await lastValueFrom(dialog.closed);
+    if (result === BulkDeleteDialogResult.Deleted) {
+      this.actionPromise = this.refresh();
+      await this.actionPromise;
+      this.actionPromise = null;
+    }
   }
 
   async restore(c: CipherView): Promise<boolean> {
@@ -213,6 +337,85 @@ export class VaultItemsComponent extends BaseVaultItemsComponent implements OnDe
       this.logService.error(e);
     }
     this.actionPromise = null;
+  }
+
+  async bulkRestore() {
+    if (!(await this.repromptCipher())) {
+      return;
+    }
+
+    const selectedCipherIds = this.selectedCipherIds;
+    if (selectedCipherIds.length === 0) {
+      this.platformUtilsService.showToast(
+        "error",
+        this.i18nService.t("errorOccurred"),
+        this.i18nService.t("nothingSelected")
+      );
+      return;
+    }
+
+    const dialog = openBulkRestoreDialog(this.dialogService, {
+      data: { cipherIds: selectedCipherIds },
+    });
+
+    const result = await lastValueFrom(dialog.closed);
+    if (result === BulkRestoreDialogResult.Restored) {
+      this.actionPromise = this.refresh();
+      await this.actionPromise;
+      this.actionPromise = null;
+    }
+  }
+
+  async bulkShare() {
+    if (!(await this.repromptCipher())) {
+      return;
+    }
+
+    const selectedCiphers = this.selectedCiphers;
+    if (selectedCiphers.length === 0) {
+      this.platformUtilsService.showToast(
+        "error",
+        this.i18nService.t("errorOccurred"),
+        this.i18nService.t("nothingSelected")
+      );
+      return;
+    }
+
+    const dialog = openBulkShareDialog(this.dialogService, { data: { ciphers: selectedCiphers } });
+
+    const result = await lastValueFrom(dialog.closed);
+    if (result === BulkShareDialogResult.Shared) {
+      this.actionPromise = this.refresh();
+      await this.actionPromise;
+      this.actionPromise = null;
+    }
+  }
+
+  async bulkMove() {
+    if (!(await this.repromptCipher())) {
+      return;
+    }
+
+    const selectedCipherIds = this.selectedCipherIds;
+    if (selectedCipherIds.length === 0) {
+      this.platformUtilsService.showToast(
+        "error",
+        this.i18nService.t("errorOccurred"),
+        this.i18nService.t("nothingSelected")
+      );
+      return;
+    }
+
+    const dialog = openBulkMoveDialog(this.dialogService, {
+      data: { cipherIds: selectedCipherIds },
+    });
+
+    const result = await lastValueFrom(dialog.closed);
+    if (result === BulkMoveDialogResult.Moved) {
+      this.actionPromise = this.refresh();
+      await this.actionPromise;
+      this.actionPromise = null;
+    }
   }
 
   async copy(cipher: CipherView, value: string, typeI18nKey: string, aType: string) {
@@ -250,30 +453,52 @@ export class VaultItemsComponent extends BaseVaultItemsComponent implements OnDe
     }
   }
 
-  selectAll(select: boolean) {
+  selectRow(item: VaultItemRow) {
+    if (item instanceof CipherView) {
+      this.checkRow(item);
+    } else if (item instanceof TreeNode) {
+      this.navigateCollection(item);
+    }
+  }
+
+  navigateCollection(node: TreeNode<CollectionFilter>) {
+    const filter = this.activeFilter;
+    filter.selectedCollectionNode = node;
+    this.activeFilterChanged.emit(filter);
+  }
+
+  checkAll(select: boolean) {
     if (select) {
-      this.selectAll(false);
+      this.checkAll(false);
     }
-    const selectCount =
-      select && this.ciphers.length > MaxCheckedCount ? MaxCheckedCount : this.ciphers.length;
+    const items: VaultItemRow[] = this.ciphers;
+    if (!items) {
+      return;
+    }
+
+    const selectCount = select && items.length > MaxCheckedCount ? MaxCheckedCount : items.length;
     for (let i = 0; i < selectCount; i++) {
-      this.checkCipher(this.ciphers[i], select);
+      this.checkRow(items[i], select);
     }
   }
 
-  checkCipher(c: CipherView, select?: boolean) {
-    (c as any).checked = select == null ? !(c as any).checked : select;
+  checkRow(item: VaultItemRow, select?: boolean) {
+    // Collections can't be managed in end user vault
+    if (!(item instanceof CipherView)) {
+      return;
+    }
+    item.checked = select ?? !item.checked;
   }
 
-  getSelected(): CipherView[] {
-    if (this.ciphers == null) {
+  get selectedCiphers(): CipherView[] {
+    if (!this.ciphers) {
       return [];
     }
-    return this.ciphers.filter((c) => !!(c as any).checked);
+    return this.ciphers.filter((c) => !!(c as VaultItemRow).checked);
   }
 
-  getSelectedIds(): string[] {
-    return this.getSelected().map((c) => c.id);
+  get selectedCipherIds(): string[] {
+    return this.selectedCiphers.map((c) => c.id);
   }
 
   displayTotpCopyButton(cipher: CipherView) {
@@ -296,7 +521,41 @@ export class VaultItemsComponent extends BaseVaultItemsComponent implements OnDe
     // TODO: This should be removed but is needed since we reuse the same template
   }
 
-  protected deleteCipher(id: string, permanent: boolean) {
+  canDeleteCollection(c: CollectionAdminView): boolean {
+    // TODO: This should be removed but is needed since we reuse the same template
+    return false; // Always return false for non org vault
+  }
+
+  async deleteCollection(collection: CollectionView): Promise<void> {
+    // TODO: This should be removed but is needed since we reuse the same template
+  }
+
+  canEditCollection(c: CollectionAdminView): boolean {
+    // TODO: This should be removed but is needed since we reuse the same template
+    return false; // Always return false for non org vault
+  }
+
+  async editCollection(c: CollectionView, tab: "info" | "access"): Promise<void> {
+    // TODO: This should be removed but is needed since we reuse the same template
+  }
+
+  get showMissingCollectionPermissionMessage(): boolean {
+    // TODO: This should be removed but is needed since we reuse the same template
+    return false; // Always return false for non org vault
+  }
+
+  protected updateSearchedCollections(collections: TreeNode<CollectionFilter>[]) {
+    if (this.searchService.isSearchable(this.searchText)) {
+      this.searchedCollections = this.searchPipe.transform(
+        collections,
+        this.searchText,
+        (collection) => collection.node.name,
+        (collection) => collection.node.id
+      );
+    }
+  }
+
+  protected deleteCipherWithServer(id: string, permanent: boolean) {
     return permanent
       ? this.cipherService.deleteWithServer(id)
       : this.cipherService.softDeleteWithServer(id);
@@ -306,10 +565,19 @@ export class VaultItemsComponent extends BaseVaultItemsComponent implements OnDe
     return c.hasOldAttachments && c.organizationId == null;
   }
 
-  protected async repromptCipher(c: CipherView) {
-    return (
-      c.reprompt === CipherRepromptType.None ||
-      (await this.passwordRepromptService.showPasswordPrompt())
-    );
+  protected async repromptCipher(c?: CipherView) {
+    if (c) {
+      return (
+        c.reprompt === CipherRepromptType.None ||
+        (await this.passwordRepromptService.showPasswordPrompt())
+      );
+    } else {
+      const selectedCiphers = this.selectedCiphers;
+      const notProtected = !selectedCiphers.find(
+        (cipher) => cipher.reprompt !== CipherRepromptType.None
+      );
+
+      return notProtected || (await this.passwordRepromptService.showPasswordPrompt());
+    }
   }
 }

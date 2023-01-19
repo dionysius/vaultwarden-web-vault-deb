@@ -4,7 +4,7 @@ import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 
 import { I18nMockService } from "../utils/i18n-mock.service";
 
-import { CalloutComponent } from ".";
+import { CalloutComponent } from "./callout.component";
 
 describe("Callout", () => {
   let component: CalloutComponent;

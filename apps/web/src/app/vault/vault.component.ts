@@ -8,10 +8,10 @@ import {
   ViewContainerRef,
 } from "@angular/core";
 import { ActivatedRoute, Params, Router } from "@angular/router";
-import { first } from "rxjs/operators";
+import { firstValueFrom, Subject } from "rxjs";
+import { first, switchMap, takeUntil } from "rxjs/operators";
 
 import { ModalService } from "@bitwarden/angular/services/modal.service";
-import { VaultFilter } from "@bitwarden/angular/vault/vault-filter/models/vault-filter.model";
 import { BroadcasterService } from "@bitwarden/common/abstractions/broadcaster.service";
 import { CipherService } from "@bitwarden/common/abstractions/cipher.service";
 import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
@@ -23,6 +23,8 @@ import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUti
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { SyncService } from "@bitwarden/common/abstractions/sync/sync.service.abstraction";
 import { TokenService } from "@bitwarden/common/abstractions/token.service";
+import { ServiceUtils } from "@bitwarden/common/misc/serviceUtils";
+import { TreeNode } from "@bitwarden/common/models/domain/tree-node";
 import { CipherView } from "@bitwarden/common/models/view/cipher.view";
 
 import { UpdateKeyComponent } from "../settings/update-key.component";
@@ -32,9 +34,14 @@ import { AttachmentsComponent } from "./attachments.component";
 import { CollectionsComponent } from "./collections.component";
 import { FolderAddEditComponent } from "./folder-add-edit.component";
 import { ShareComponent } from "./share.component";
-import { VaultService } from "./shared/vault.service";
-import { VaultFilterService } from "./vault-filter/shared/vault-filter.service";
-import { VaultFilterComponent } from "./vault-filter/vault-filter.component";
+import { VaultFilterComponent } from "./vault-filter/components/vault-filter.component";
+import { VaultFilterService } from "./vault-filter/services/abstractions/vault-filter.service";
+import { VaultFilter } from "./vault-filter/shared/models/vault-filter.model";
+import {
+  CollectionFilter,
+  FolderFilter,
+  OrganizationFilter,
+} from "./vault-filter/shared/models/vault-filter.type";
 import { VaultItemsComponent } from "./vault-items.component";
 
 const BroadcasterSubscriptionId = "VaultComponent";
@@ -58,14 +65,13 @@ export class VaultComponent implements OnInit, OnDestroy {
   @ViewChild("updateKeyTemplate", { read: ViewContainerRef, static: true })
   updateKeyModalRef: ViewContainerRef;
 
-  folderId: string = null;
-  myVaultOnly = false;
   showVerifyEmail = false;
   showBrowserOutdated = false;
   showUpdateKey = false;
   showPremiumCallout = false;
   trashCleanupWarning: string = null;
   activeFilter: VaultFilter = new VaultFilter();
+  private destroy$ = new Subject<void>();
 
   constructor(
     private syncService: SyncService,
@@ -82,10 +88,9 @@ export class VaultComponent implements OnInit, OnDestroy {
     private ngZone: NgZone,
     private stateService: StateService,
     private organizationService: OrganizationService,
-    private vaultService: VaultService,
+    private vaultFilterService: VaultFilterService,
     private cipherService: CipherService,
-    private passwordRepromptService: PasswordRepromptService,
-    private vaultFilterService: VaultFilterService
+    private passwordRepromptService: PasswordRepromptService
   ) {}
 
   async ngOnInit() {
@@ -97,65 +102,72 @@ export class VaultComponent implements OnInit, OnDestroy {
         : "trashCleanupWarning"
     );
 
-    // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
-    this.route.queryParams.pipe(first()).subscribe(async (params) => {
-      await this.syncService.fullSync(false);
-      const canAccessPremium = await this.stateService.getCanAccessPremium();
-      this.showPremiumCallout =
-        !this.showVerifyEmail && !canAccessPremium && !this.platformUtilsService.isSelfHost();
+    this.route.queryParams
+      .pipe(
+        first(),
+        switchMap(async (params: Params) => {
+          await this.syncService.fullSync(false);
+          await this.vaultFilterService.reloadCollections();
+          await this.vaultItemsComponent.reload();
 
-      this.filterComponent.reloadCollectionsAndFolders(this.activeFilter);
-      this.filterComponent.reloadOrganizations();
-      this.showUpdateKey = !(await this.cryptoService.hasEncKey());
+          const canAccessPremium = await this.stateService.getCanAccessPremium();
+          this.showPremiumCallout =
+            !this.showVerifyEmail && !canAccessPremium && !this.platformUtilsService.isSelfHost();
+          this.showUpdateKey = !(await this.cryptoService.hasEncKey());
 
-      const cipherId = getCipherIdFromParams(params);
-
-      if (cipherId) {
-        const cipherView = new CipherView();
-        cipherView.id = cipherId;
-        if (params.action === "clone") {
-          await this.cloneCipher(cipherView);
-        } else if (params.action === "edit") {
-          await this.editCipher(cipherView);
-        }
-      }
-      await this.vaultItemsComponent.reload();
-
-      /* eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe, rxjs/no-nested-subscribe */
-      this.route.queryParams.subscribe(async (params) => {
-        const cipherId = getCipherIdFromParams(params);
-        if (cipherId) {
-          if ((await this.cipherService.get(cipherId)) != null) {
-            this.editCipherId(cipherId);
-          } else {
-            this.platformUtilsService.showToast(
-              "error",
-              this.i18nService.t("errorOccurred"),
-              this.i18nService.t("unknownCipher")
-            );
-            this.router.navigate([], {
-              queryParams: { itemId: null, cipherId: null },
-              queryParamsHandling: "merge",
-            });
+          const cipherId = getCipherIdFromParams(params);
+          if (!cipherId) {
+            return;
           }
-        }
-      });
-
-      this.broadcasterService.subscribe(BroadcasterSubscriptionId, (message: any) => {
-        this.ngZone.run(async () => {
-          switch (message.command) {
-            case "syncCompleted":
-              if (message.successfully) {
-                await Promise.all([
-                  this.filterComponent.reloadCollectionsAndFolders(this.activeFilter),
-                  this.filterComponent.reloadOrganizations(),
-                  this.vaultItemsComponent.load(this.vaultItemsComponent.filter),
-                ]);
-                this.changeDetectorRef.detectChanges();
-              }
-              break;
+          const cipherView = new CipherView();
+          cipherView.id = cipherId;
+          if (params.action === "clone") {
+            await this.cloneCipher(cipherView);
+          } else if (params.action === "edit") {
+            await this.editCipher(cipherView);
           }
-        });
+        }),
+        takeUntil(this.destroy$)
+      )
+      .subscribe();
+
+    this.route.queryParams
+      .pipe(
+        switchMap(async (params) => {
+          const cipherId = getCipherIdFromParams(params);
+          if (cipherId) {
+            if ((await this.cipherService.get(cipherId)) != null) {
+              this.editCipherId(cipherId);
+            } else {
+              this.platformUtilsService.showToast(
+                "error",
+                this.i18nService.t("errorOccurred"),
+                this.i18nService.t("unknownCipher")
+              );
+              this.router.navigate([], {
+                queryParams: { itemId: null, cipherId: null },
+                queryParamsHandling: "merge",
+              });
+            }
+          }
+        }),
+        takeUntil(this.destroy$)
+      )
+      .subscribe();
+
+    this.broadcasterService.subscribe(BroadcasterSubscriptionId, (message: any) => {
+      this.ngZone.run(async () => {
+        switch (message.command) {
+          case "syncCompleted":
+            if (message.successfully) {
+              await Promise.all([
+                this.vaultFilterService.reloadCollections(),
+                this.vaultItemsComponent.load(this.vaultItemsComponent.filter),
+              ]);
+              this.changeDetectorRef.detectChanges();
+            }
+            break;
+        }
       });
     });
   }
@@ -175,31 +187,60 @@ export class VaultComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.broadcasterService.unsubscribe(BroadcasterSubscriptionId);
+    this.destroy$.next();
+    this.destroy$.complete();
   }
 
-  async applyVaultFilter(vaultFilter: VaultFilter) {
-    this.vaultItemsComponent.showAddNew = vaultFilter.status !== "trash";
-    this.activeFilter = vaultFilter;
+  async applyVaultFilter(filter: VaultFilter) {
+    this.activeFilter = filter;
+    this.vaultItemsComponent.showAddNew = !this.activeFilter.isDeleted;
     await this.vaultItemsComponent.reload(
       this.activeFilter.buildFilter(),
-      vaultFilter.status === "trash"
-    );
-    this.filterComponent.searchPlaceholder = this.vaultService.calculateSearchBarLocalizationString(
-      this.activeFilter
+      this.activeFilter.isDeleted
     );
     this.go();
   }
 
   async applyOrganizationFilter(orgId: string) {
     if (orgId == null) {
-      this.activeFilter.resetOrganization();
-      this.activeFilter.myVaultOnly = true;
-    } else {
-      this.activeFilter.selectedOrganizationId = orgId;
+      orgId = "MyVault";
     }
-    await this.vaultFilterService.ensureVaultFiltersAreExpanded();
-    await this.applyVaultFilter(this.activeFilter);
+    const orgs = await firstValueFrom(this.filterComponent.filters.organizationFilter.data$);
+    const orgNode = ServiceUtils.getTreeNodeObject(orgs, orgId) as TreeNode<OrganizationFilter>;
+    this.filterComponent.filters?.organizationFilter?.action(orgNode);
   }
+
+  addFolder = async (): Promise<void> => {
+    const [modal] = await this.modalService.openViewRef(
+      FolderAddEditComponent,
+      this.folderAddEditModalRef,
+      (comp) => {
+        comp.folderId = null;
+        // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
+        comp.onSavedFolder.subscribe(async () => {
+          modal.close();
+        });
+      }
+    );
+  };
+
+  editFolder = async (folder: FolderFilter): Promise<void> => {
+    const [modal] = await this.modalService.openViewRef(
+      FolderAddEditComponent,
+      this.folderAddEditModalRef,
+      (comp) => {
+        comp.folderId = folder.id;
+        // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
+        comp.onSavedFolder.subscribe(async () => {
+          modal.close();
+        });
+        // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
+        comp.onDeletedFolder.subscribe(async () => {
+          modal.close();
+        });
+      }
+    );
+  };
 
   filterSearchText(searchText: string) {
     this.vaultItemsComponent.searchText = searchText;
@@ -212,7 +253,7 @@ export class VaultComponent implements OnInit, OnDestroy {
       this.messagingService.send("premiumRequired");
       return;
     } else if (cipher.organizationId != null) {
-      const org = await this.organizationService.get(cipher.organizationId);
+      const org = this.organizationService.get(cipher.organizationId);
       if (org != null && (org.maxStorageGb == null || org.maxStorageGb === 0)) {
         this.messagingService.send("upgradeOrganization", {
           organizationId: cipher.organizationId,
@@ -275,60 +316,20 @@ export class VaultComponent implements OnInit, OnDestroy {
     );
   }
 
-  async addFolder() {
-    const [modal] = await this.modalService.openViewRef(
-      FolderAddEditComponent,
-      this.folderAddEditModalRef,
-      (comp) => {
-        comp.folderId = null;
-        // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
-        comp.onSavedFolder.subscribe(async () => {
-          modal.close();
-          await this.filterComponent.reloadCollectionsAndFolders(this.activeFilter);
-        });
-      }
-    );
-  }
-
-  async editFolder(folderId: string) {
-    const [modal] = await this.modalService.openViewRef(
-      FolderAddEditComponent,
-      this.folderAddEditModalRef,
-      (comp) => {
-        comp.folderId = folderId;
-        // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
-        comp.onSavedFolder.subscribe(async () => {
-          modal.close();
-          await this.filterComponent.reloadCollectionsAndFolders(this.activeFilter);
-        });
-        // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
-        comp.onDeletedFolder.subscribe(async () => {
-          modal.close();
-          await this.filterComponent.reloadCollectionsAndFolders(this.activeFilter);
-        });
-      }
-    );
-  }
-
   async addCipher() {
     const component = await this.editCipher(null);
     component.type = this.activeFilter.cipherType;
-    component.folderId = this.folderId === "none" ? null : this.folderId;
-    if (this.activeFilter.selectedCollectionId != null) {
-      const collection = this.filterComponent.collections.fullList.filter(
-        (c) => c.id === this.activeFilter.selectedCollectionId
-      );
-      if (collection.length > 0) {
-        component.organizationId = collection[0].organizationId;
-        component.collectionIds = [this.activeFilter.selectedCollectionId];
-      }
+    if (this.activeFilter.organizationId !== "MyVault") {
+      component.organizationId = this.activeFilter.organizationId;
+      component.collections = (
+        await firstValueFrom(this.vaultFilterService.filteredCollections$)
+      ).filter((c) => !c.readOnly && c.id != null);
     }
-    if (this.activeFilter.selectedFolderId && this.activeFilter.selectedFolder) {
-      component.folderId = this.activeFilter.selectedFolderId;
+    const selectedColId = this.activeFilter.collectionId;
+    if (selectedColId !== "AllCollections") {
+      component.collectionIds = [selectedColId];
     }
-    if (this.activeFilter.selectedOrganizationId) {
-      component.organizationId = this.activeFilter.selectedOrganizationId;
-    }
+    component.folderId = this.activeFilter.folderId;
   }
 
   async editCipher(cipher: CipherView) {
@@ -383,14 +384,34 @@ export class VaultComponent implements OnInit, OnDestroy {
     await this.modalService.openViewRef(UpdateKeyComponent, this.updateKeyModalRef);
   }
 
+  get breadcrumbs(): TreeNode<CollectionFilter>[] {
+    if (!this.activeFilter.selectedCollectionNode) {
+      return [];
+    }
+
+    const collections = [this.activeFilter.selectedCollectionNode];
+    while (collections[collections.length - 1].parent != undefined) {
+      collections.push(collections[collections.length - 1].parent);
+    }
+
+    return collections.map((c) => c).reverse();
+  }
+
+  protected applyCollectionFilter(collection: TreeNode<CollectionFilter>) {
+    const filter = this.activeFilter;
+    filter.resetFilter();
+    filter.selectedCollectionNode = collection;
+    this.applyVaultFilter(filter);
+  }
+
   private go(queryParams: any = null) {
     if (queryParams == null) {
       queryParams = {
-        favorites: this.activeFilter.status === "favorites" ? true : null,
+        favorites: this.activeFilter.isFavorites || null,
         type: this.activeFilter.cipherType,
-        folderId: this.activeFilter.selectedFolderId,
-        collectionId: this.activeFilter.selectedCollectionId,
-        deleted: this.activeFilter.status === "trash" ? true : null,
+        folderId: this.activeFilter.folderId,
+        collectionId: this.activeFilter.collectionId,
+        deleted: this.activeFilter.isDeleted || null,
       };
     }
 

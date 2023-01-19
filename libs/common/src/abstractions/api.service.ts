@@ -11,6 +11,7 @@ import { CipherCreateRequest } from "../models/request/cipher-create.request";
 import { CipherPartialRequest } from "../models/request/cipher-partial.request";
 import { CipherShareRequest } from "../models/request/cipher-share.request";
 import { CipherRequest } from "../models/request/cipher.request";
+import { CollectionBulkDeleteRequest } from "../models/request/collection-bulk-delete.request";
 import { CollectionRequest } from "../models/request/collection.request";
 import { DeleteRecoverRequest } from "../models/request/delete-recover.request";
 import { DeviceVerificationRequest } from "../models/request/device-verification.request";
@@ -22,7 +23,6 @@ import { EmergencyAccessInviteRequest } from "../models/request/emergency-access
 import { EmergencyAccessPasswordRequest } from "../models/request/emergency-access-password.request";
 import { EmergencyAccessUpdateRequest } from "../models/request/emergency-access-update.request";
 import { EventRequest } from "../models/request/event.request";
-import { GroupRequest } from "../models/request/group.request";
 import { IapCheckRequest } from "../models/request/iap-check.request";
 import { PasswordTokenRequest } from "../models/request/identity-token/password-token.request";
 import { SsoTokenRequest } from "../models/request/identity-token/sso-token.request";
@@ -85,7 +85,7 @@ import { BillingPaymentResponse } from "../models/response/billing-payment.respo
 import { BreachAccountResponse } from "../models/response/breach-account.response";
 import { CipherResponse } from "../models/response/cipher.response";
 import {
-  CollectionGroupDetailsResponse,
+  CollectionAccessDetailsResponse,
   CollectionResponse,
 } from "../models/response/collection.response";
 import { DeviceVerificationResponse } from "../models/response/device-verification.response";
@@ -97,7 +97,6 @@ import {
   EmergencyAccessViewResponse,
 } from "../models/response/emergency-access.response";
 import { EventResponse } from "../models/response/event.response";
-import { GroupDetailsResponse, GroupResponse } from "../models/response/group.response";
 import { IdentityCaptchaResponse } from "../models/response/identity-captcha.response";
 import { IdentityTokenResponse } from "../models/response/identity-token.response";
 import { IdentityTwoFactorResponse } from "../models/response/identity-two-factor.response";
@@ -304,13 +303,16 @@ export abstract class ApiService {
   ) => Promise<AttachmentUploadDataResponse>;
   postAttachmentFile: (id: string, attachmentId: string, data: FormData) => Promise<any>;
 
-  getCollectionDetails: (
-    organizationId: string,
-    id: string
-  ) => Promise<CollectionGroupDetailsResponse>;
   getUserCollections: () => Promise<ListResponse<CollectionResponse>>;
   getCollections: (organizationId: string) => Promise<ListResponse<CollectionResponse>>;
   getCollectionUsers: (organizationId: string, id: string) => Promise<SelectionReadOnlyResponse[]>;
+  getCollectionAccessDetails: (
+    organizationId: string,
+    id: string
+  ) => Promise<CollectionAccessDetailsResponse>;
+  getManyCollectionsWithAccessDetails: (
+    orgId: string
+  ) => Promise<ListResponse<CollectionAccessDetailsResponse>>;
   postCollection: (
     organizationId: string,
     request: CollectionRequest
@@ -326,19 +328,15 @@ export abstract class ApiService {
     request: CollectionRequest
   ) => Promise<CollectionResponse>;
   deleteCollection: (organizationId: string, id: string) => Promise<any>;
+  deleteManyCollections: (request: CollectionBulkDeleteRequest) => Promise<any>;
   deleteCollectionUser: (
     organizationId: string,
     id: string,
     organizationUserId: string
   ) => Promise<any>;
 
-  getGroupDetails: (organizationId: string, id: string) => Promise<GroupDetailsResponse>;
-  getGroups: (organizationId: string) => Promise<ListResponse<GroupResponse>>;
   getGroupUsers: (organizationId: string, id: string) => Promise<string[]>;
-  postGroup: (organizationId: string, request: GroupRequest) => Promise<GroupResponse>;
-  putGroup: (organizationId: string, id: string, request: GroupRequest) => Promise<GroupResponse>;
   putGroupUsers: (organizationId: string, id: string, request: string[]) => Promise<any>;
-  deleteGroup: (organizationId: string, id: string) => Promise<any>;
   deleteGroupUser: (organizationId: string, id: string, organizationUserId: string) => Promise<any>;
 
   getSync: () => Promise<SyncResponse>;

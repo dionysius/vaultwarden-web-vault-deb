@@ -3,11 +3,12 @@ import { RouterModule, Routes } from "@angular/router";
 
 import { AuthGuard } from "@bitwarden/angular/guards/auth.guard";
 import {
-  canAccessGroupsTab,
-  canAccessManageTab,
-  canAccessMembersTab,
   canAccessOrgAdmin,
-  canManageCollections,
+  canAccessGroupsTab,
+  canAccessMembersTab,
+  canAccessVaultTab,
+  canAccessReportingTab,
+  canAccessSettingsTab,
 } from "@bitwarden/common/abstractions/organization/organization.service.abstraction";
 import { Organization } from "@bitwarden/common/models/domain/organization";
 
@@ -17,7 +18,6 @@ import { OrganizationLayoutComponent } from "./layouts/organization-layout.compo
 import { CollectionsComponent } from "./manage/collections.component";
 import { GroupsComponent } from "./manage/groups.component";
 import { ManageComponent } from "./manage/manage.component";
-import { PeopleComponent } from "./manage/people.component";
 import { VaultModule } from "./vault/vault.module";
 
 const routes: Routes = [
@@ -29,7 +29,15 @@ const routes: Routes = [
       organizationPermissions: canAccessOrgAdmin,
     },
     children: [
-      { path: "", pathMatch: "full", redirectTo: "vault" },
+      {
+        path: "",
+        pathMatch: "full",
+        canActivate: [OrganizationRedirectGuard],
+        data: {
+          autoRedirectCallback: getOrganizationRoute,
+        },
+        children: [], // This is required to make the auto redirect work, },
+      },
       {
         path: "vault",
         loadChildren: () => VaultModule,
@@ -39,47 +47,27 @@ const routes: Routes = [
         loadChildren: () => import("./settings").then((m) => m.OrganizationSettingsModule),
       },
       {
-        path: "manage",
-        component: ManageComponent,
+        path: "members",
+        loadChildren: () => import("./members").then((m) => m.MembersModule),
+      },
+      {
+        path: "groups",
+        component: GroupsComponent,
         canActivate: [OrganizationPermissionsGuard],
         data: {
-          organizationPermissions: canAccessManageTab,
+          titleId: "groups",
+          organizationPermissions: canAccessGroupsTab,
         },
+      },
+      {
+        path: "manage",
+        component: ManageComponent,
         children: [
-          {
-            path: "",
-            pathMatch: "full",
-            canActivate: [OrganizationRedirectGuard],
-            data: {
-              autoRedirectCallback: getManageRoute,
-            },
-            children: [], // This is required to make the auto redirect work
-          },
           {
             path: "collections",
             component: CollectionsComponent,
-            canActivate: [OrganizationPermissionsGuard],
             data: {
               titleId: "collections",
-              organizationPermissions: canManageCollections,
-            },
-          },
-          {
-            path: "groups",
-            component: GroupsComponent,
-            canActivate: [OrganizationPermissionsGuard],
-            data: {
-              titleId: "groups",
-              organizationPermissions: canAccessGroupsTab,
-            },
-          },
-          {
-            path: "members",
-            component: PeopleComponent,
-            canActivate: [OrganizationPermissionsGuard],
-            data: {
-              titleId: "members",
-              organizationPermissions: canAccessMembersTab,
             },
           },
         ],
@@ -100,15 +88,21 @@ const routes: Routes = [
   },
 ];
 
-function getManageRoute(organization: Organization): string {
-  if (organization.canManageUsers) {
+function getOrganizationRoute(organization: Organization): string {
+  if (canAccessVaultTab(organization)) {
+    return "vault";
+  }
+  if (canAccessMembersTab(organization)) {
     return "members";
   }
-  if (organization.canViewAssignedCollections || organization.canViewAllCollections) {
-    return "collections";
-  }
-  if (organization.canManageGroups) {
+  if (canAccessGroupsTab(organization)) {
     return "groups";
+  }
+  if (canAccessReportingTab(organization)) {
+    return "reporting";
+  }
+  if (canAccessSettingsTab(organization)) {
+    return "settings";
   }
   return undefined;
 }

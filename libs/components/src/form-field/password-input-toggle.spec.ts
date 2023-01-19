@@ -38,7 +38,14 @@ describe("PasswordInputToggle", () => {
     await TestBed.configureTestingModule({
       imports: [FormFieldModule, IconButtonModule, InputModule],
       declarations: [TestFormFieldComponent],
-      providers: [{ provide: I18nService, useValue: new I18nMockService({}) }],
+      providers: [
+        {
+          provide: I18nService,
+          useValue: new I18nMockService({
+            toggleVisibility: "Toggle visibility",
+          }),
+        },
+      ],
     }).compileComponents();
 
     fixture = TestBed.createComponent(TestFormFieldComponent);

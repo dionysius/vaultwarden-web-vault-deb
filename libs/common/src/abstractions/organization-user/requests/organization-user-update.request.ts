@@ -6,5 +6,6 @@ export class OrganizationUserUpdateRequest {
   type: OrganizationUserType;
   accessAll: boolean;
   collections: SelectionReadOnlyRequest[] = [];
+  groups: string[] = [];
   permissions: PermissionsApi;
 }

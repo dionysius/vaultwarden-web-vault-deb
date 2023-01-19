@@ -7,17 +7,17 @@ let nextId = 0;
   templateUrl: "./toggle-group.component.html",
   preserveWhitespaces: false,
 })
-export class ToggleGroupComponent {
+export class ToggleGroupComponent<TValue = unknown> {
   private id = nextId++;
   name = `bit-toggle-group-${this.id}`;
 
-  @Input() selected?: unknown;
-  @Output() selectedChange = new EventEmitter<unknown>();
+  @Input() selected?: TValue;
+  @Output() selectedChange = new EventEmitter<TValue>();
 
   @HostBinding("attr.role") role = "radiogroup";
   @HostBinding("class") classList = ["tw-flex"];
 
-  onInputInteraction(value: unknown) {
+  onInputInteraction(value: TValue) {
     this.selected = value;
     this.selectedChange.emit(value);
   }

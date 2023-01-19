@@ -121,7 +121,7 @@
       <tbody>
         <tr *ngFor="let u of searchedUsers">
           <td (click)="checkUser(u)" class="table-list-checkbox">
-            <input type="checkbox" [(ngModel)]="u.checked" appStopProp />
+            <input type="checkbox" [(ngModel)]="$any(u).checked" appStopProp />
           </td>
           <td width="30">
             <bit-avatar [text]="u | userName" [id]="u.userId" size="small"></bit-avatar>
@@ -137,7 +137,7 @@
             <small class="text-muted d-block" *ngIf="u.name">{{ u.name }}</small>
           </td>
           <td>
-            <ng-container *ngIf="u.twoFactorEnabled">
+            <ng-container *ngIf="$any(u).twoFactorEnabled">
               <i
                 class="bwi bwi-lock"
                 title="{{ 'userUsingTwoStep' | i18n }}"

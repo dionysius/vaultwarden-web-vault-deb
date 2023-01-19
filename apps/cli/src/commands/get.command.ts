@@ -416,7 +416,7 @@ export class GetCommand extends DownloadCommand {
         throw new Error("No encryption key for this organization.");
       }
 
-      const response = await this.apiService.getCollectionDetails(options.organizationId, id);
+      const response = await this.apiService.getCollectionAccessDetails(options.organizationId, id);
       const decCollection = new CollectionView(response);
       decCollection.name = await this.cryptoService.decryptToUtf8(
         new EncString(response.name),

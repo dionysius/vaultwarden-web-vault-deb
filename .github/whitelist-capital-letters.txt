@@ -60,6 +60,7 @@
 ./libs/common/src/misc/nodeUtils.ts
 ./libs/common/src/misc/linkedFieldOption.decorator.ts
 ./libs/common/src/misc/serviceUtils.ts
+./libs/common/src/misc/serviceUtils.spec.ts
 ./libs/common/src/types/twoFactorResponse.ts
 ./libs/common/src/types/authResponse.ts
 ./libs/common/src/types/syncEventArgs.ts

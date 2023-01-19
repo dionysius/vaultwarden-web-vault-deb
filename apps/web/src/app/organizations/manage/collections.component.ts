@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild, ViewContainerRef } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
+import { lastValueFrom } from "rxjs";
 import { first } from "rxjs/operators";
 
 import { ModalService } from "@bitwarden/angular/services/modal.service";
@@ -22,7 +23,8 @@ import { ListResponse } from "@bitwarden/common/models/response/list.response";
 import { CollectionView } from "@bitwarden/common/models/view/collection.view";
 import { DialogService } from "@bitwarden/components";
 
-import { CollectionAddEditComponent } from "./collection-add-edit.component";
+import { CollectionDialogResult, openCollectionDialog } from "../shared";
+
 import { EntityUsersComponent } from "./entity-users.component";
 import { OrgUpgradeDialogComponent } from "./org-upgrade-dialog/org-upgrade-dialog.component";
 
@@ -120,10 +122,10 @@ export class CollectionsComponent implements OnInit {
     this.didScroll = this.pagedCollections.length > this.pageSize;
   }
 
-  async edit(collection: CollectionView) {
-    const canCreate = collection == null && this.canCreate;
-    const canEdit = collection != null && this.canEdit(collection);
-    const canDelete = collection != null && this.canDelete(collection);
+  async edit(collection?: CollectionView) {
+    const canCreate = collection == undefined && this.canCreate;
+    const canEdit = collection != undefined && this.canEdit(collection);
+    const canDelete = collection != undefined && this.canDelete(collection);
 
     if (!(canCreate || canEdit || canDelete)) {
       this.platformUtilsService.showToast("error", null, this.i18nService.t("missingPermissions"));
@@ -156,26 +158,14 @@ export class CollectionsComponent implements OnInit {
       return;
     }
 
-    const [modal] = await this.modalService.openViewRef(
-      CollectionAddEditComponent,
-      this.addEditModalRef,
-      (comp) => {
-        comp.organizationId = this.organizationId;
-        comp.collectionId = collection != null ? collection.id : null;
-        comp.canSave = canCreate || canEdit;
-        comp.canDelete = canDelete;
-        // eslint-disable-next-line rxjs-angular/prefer-takeuntil
-        comp.onSavedCollection.subscribe(() => {
-          modal.close();
-          this.load();
-        });
-        // eslint-disable-next-line rxjs-angular/prefer-takeuntil
-        comp.onDeletedCollection.subscribe(() => {
-          modal.close();
-          this.removeCollection(collection);
-        });
-      }
-    );
+    const dialog = openCollectionDialog(this.dialogService, {
+      data: { collectionId: collection?.id, organizationId: this.organizationId },
+    });
+
+    const result = await lastValueFrom(dialog.closed);
+    if (result === CollectionDialogResult.Saved || result === CollectionDialogResult.Deleted) {
+      this.load();
+    }
   }
 
   add() {

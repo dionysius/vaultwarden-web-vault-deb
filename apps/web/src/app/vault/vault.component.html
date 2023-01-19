@@ -7,17 +7,28 @@
             <app-vault-filter
               #vaultFilter
               [activeFilter]="activeFilter"
-              (onFilterChange)="applyVaultFilter($event)"
-              (onAddFolder)="addFolder()"
-              (onEditFolder)="editFolder($event.id)"
+              (activeFilterChanged)="applyVaultFilter($event)"
               (onSearchTextChanged)="filterSearchText($event)"
+              (onAddFolder)="addFolder()"
+              (onEditFolder)="editFolder($event)"
             ></app-vault-filter>
           </div>
         </div>
       </div>
     </div>
     <div [ngClass]="{ 'col-6': isShowingCards, 'col-9': !isShowingCards }">
-      <div class="page-header d-flex">
+      <bit-breadcrumbs *ngIf="breadcrumbs.length > 0">
+        <bit-breadcrumb
+          *ngFor="let collection of breadcrumbs; let first = first"
+          [icon]="first ? undefined : 'bwi-collection'"
+          (click)="applyCollectionFilter(collection)"
+        >
+          <!-- First node in the tree contains a translation key. The rest come from user input. -->
+          <ng-container *ngIf="first">{{ collection.node.name | i18n }}</ng-container>
+          <ng-container *ngIf="!first">{{ collection.node.name }}</ng-container>
+        </bit-breadcrumb>
+      </bit-breadcrumbs>
+      <div class="tw-mb-4 tw-flex">
         <h1>
           {{ "vaultItems" | i18n }}
           <small #actionSpinner [appApiAction]="vaultItemsComponent.actionPromise">
@@ -32,34 +43,28 @@
           </small>
         </h1>
         <div class="ml-auto d-flex">
-          <app-vault-bulk-actions
-            [vaultItemsComponent]="vaultItemsComponent"
-            [deleted]="activeFilter.status === 'trash'"
-          >
-          </app-vault-bulk-actions>
           <button
             type="button"
-            class="btn btn-outline-primary btn-sm"
+            bitButton
+            buttonType="primary"
             (click)="addCipher()"
-            *ngIf="activeFilter.status !== 'trash'"
+            *ngIf="!activeFilter.isDeleted"
           >
-            <i class="bwi bwi-plus bwi-fw" aria-hidden="true"></i>{{ "addItem" | i18n }}
+            <i class="bwi bwi-plus bwi-fw" aria-hidden="true"></i>{{ "newItem" | i18n }}
           </button>
         </div>
       </div>
-      <app-callout
-        type="warning"
-        *ngIf="activeFilter.status === 'trash'"
-        icon="bwi-exclamation-triangle"
-      >
+      <app-callout type="warning" *ngIf="activeFilter.isDeleted" icon="bwi-exclamation-triangle">
         {{ trashCleanupWarning }}
       </app-callout>
       <app-vault-items
+        [activeFilter]="activeFilter"
+        (activeFilterChanged)="applyVaultFilter($event)"
         (onCipherClicked)="editCipher($event)"
         (onAttachmentsClicked)="editCipherAttachments($event)"
         (onAddCipher)="addCipher()"
         (onShareClicked)="shareCipher($event)"
-        (onCollectionsClicked)="editCipherCollections($event)"
+        (onEditCipherCollectionsClicked)="editCipherCollections($event)"
         (onCloneClicked)="cloneCipher($event)"
         (onOrganzationBadgeClicked)="applyOrganizationFilter($event)"
       >

@@ -7,5 +7,6 @@ export class OrganizationUserInviteRequest {
   type: OrganizationUserType;
   accessAll: boolean;
   collections: SelectionReadOnlyRequest[] = [];
+  groups: string[];
   permissions: PermissionsApi;
 }

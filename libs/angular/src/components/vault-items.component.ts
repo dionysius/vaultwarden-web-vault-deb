@@ -14,7 +14,6 @@ export class VaultItemsComponent {
 
   loaded = false;
   ciphers: CipherView[] = [];
-  searchText: string;
   searchPlaceholder: string = null;
   filter: (cipher: CipherView) => boolean = null;
   deleted = false;
@@ -24,11 +23,18 @@ export class VaultItemsComponent {
   protected searchPending = false;
 
   private searchTimeout: any = null;
+  private _searchText: string = null;
+  get searchText() {
+    return this._searchText;
+  }
+  set searchText(value: string) {
+    this._searchText = value;
+  }
 
   constructor(protected searchService: SearchService) {}
 
   async load(filter: (cipher: CipherView) => boolean = null, deleted = false) {
-    this.deleted = deleted || false;
+    this.deleted = deleted ?? false;
     await this.applyFilter(filter);
     this.loaded = true;
   }

@@ -35,7 +35,7 @@ export class BadgeDirective {
       "tw-rounded",
       "tw-border-none",
       "tw-box-border",
-      "tw-whitespace-no-wrap",
+      "tw-whitespace-nowrap",
       "tw-text-xs",
       "hover:tw-no-underline",
       "focus:tw-outline-none",

@@ -1,10 +1,17 @@
-import { Meta, Story } from "@storybook/angular";
+import { CommonModule } from "@angular/common";
+import { Meta, moduleMetadata, Story } from "@storybook/angular";
 
 import { BadgeDirective } from "./badge.directive";
 
 export default {
   title: "Component Library/Badge",
   component: BadgeDirective,
+  decorators: [
+    moduleMetadata({
+      imports: [CommonModule],
+      declarations: [BadgeDirective],
+    }),
+  ],
   args: {
     badgeType: "primary",
   },
