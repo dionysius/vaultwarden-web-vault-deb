@@ -269,7 +269,7 @@
     "message": "Nama Belakang"
   },
   "fullName": {
-    "message": "Full name"
+    "message": "Nama lengkap"
   },
   "address1": {
     "message": "Alamat 1"
@@ -332,11 +332,11 @@
     "message": "Boolean"
   },
   "cfTypeLinked": {
-    "message": "Linked",
+    "message": "Terhubung",
     "description": "This describes a field that is 'linked' (related) to another field."
   },
   "linkedValue": {
-    "message": "Linked value",
+    "message": "Nilai terkait",
     "description": "This describes a value that is 'linked' (related) to another value."
   },
   "remove": {
@@ -370,10 +370,10 @@
     "message": "Anda yakin ingin menimpa sandi saat ini?"
   },
   "overwriteUsername": {
-    "message": "Overwrite username"
+    "message": "Timpa username"
   },
   "overwriteUsernameConfirmation": {
-    "message": "Are you sure you want to overwrite the current username?"
+    "message": "Anda yakin ingin menimpa nama pengguna saat ini?"
   },
   "noneFolder": {
     "message": "Tidak Ada Folder",
@@ -401,16 +401,16 @@
     "message": "Panjang"
   },
   "uppercase": {
-    "message": "Uppercase (A-Z)"
+    "message": "Huruf Kapital (A-Z)"
   },
   "lowercase": {
-    "message": "Lowercase (a-z)"
+    "message": "Huruf Kecil (a-z)"
   },
   "numbers": {
-    "message": "Numbers (0-9)"
+    "message": "Angka (0-9)"
   },
   "specialCharacters": {
-    "message": "Special characters (!@#$%^&*)"
+    "message": "Karakter khusus (!@#$%^&*)"
   },
   "numWords": {
     "message": "Jumlah kata"
@@ -533,13 +533,13 @@
     "message": "Alamat email tidak valid."
   },
   "masterPasswordRequired": {
-    "message": "Master password is required."
+    "message": "Kata sandi utama diperlukan."
   },
   "confirmMasterPasswordRequired": {
-    "message": "Master password retype is required."
+    "message": "Diperlukan pengetikan ulang kata sandi utama."
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least 8 characters long."
+    "message": "Kata sandi utama harus memiliki panjang setidaknya 8 karakter."
   },
   "masterPassDoesntMatch": {
     "message": "Konfirmasi sandi utama tidak cocok."
@@ -560,25 +560,25 @@
     "message": "Tidak ada item yang dapat dicantumkan."
   },
   "sendVerificationCode": {
-    "message": "Send a verification code to your email"
+    "message": "Kirim kode verifikasi ke email Anda"
   },
   "sendCode": {
-    "message": "Send code"
+    "message": "Kirim kode"
   },
   "codeSent": {
-    "message": "Code sent"
+    "message": "Kode terkirim"
   },
   "verificationCode": {
     "message": "Kode Verifikasi"
   },
   "confirmIdentity": {
-    "message": "Confirm your identity to continue."
+    "message": "Konfirmasi identitas Anda untuk melanjutkan."
   },
   "verificationCodeRequired": {
     "message": "Kode verifikasi diperlukan."
   },
   "invalidVerificationCode": {
-    "message": "Invalid verification code"
+    "message": "Kode verifikasi tidak valid"
   },
   "continue": {
     "message": "Lanjutkan"
@@ -752,16 +752,16 @@
     "message": "Memuat..."
   },
   "lockVault": {
-    "message": "Lock vault"
+    "message": "Kunci brankas"
   },
   "passwordGenerator": {
     "message": "Pembuat Kata Sandi"
   },
   "contactUs": {
-    "message": "Contact us"
+    "message": "Hubungi kami"
   },
   "getHelp": {
-    "message": "Get help"
+    "message": "Dapatkan bantuan"
   },
   "fileBugReport": {
     "message": "Buat Laporan Masalah"
@@ -898,10 +898,10 @@
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "enableFavicon": {
-    "message": "Show website icons"
+    "message": "Tampilkan ikon website"
   },
   "faviconDesc": {
-    "message": "Show a recognizable image next to each login."
+    "message": "Tampilkan gambar pengenal di samping setiap login."
   },
   "enableMinToTray": {
     "message": "Kecilkan ke Ikon Baki"
@@ -1213,7 +1213,7 @@
     "description": "Domain name. Ex. website.com"
   },
   "domainName": {
-    "message": "Domain name",
+    "message": "Nama Domain",
     "description": "Domain name. Ex. website.com"
   },
   "host": {
@@ -1267,7 +1267,7 @@
     "description": "ex. Date this item was updated"
   },
   "dateCreated": {
-    "message": "Created",
+    "message": "Dibuat",
     "description": "ex. Date this item was created"
   },
   "datePasswordUpdated": {
@@ -1285,34 +1285,34 @@
     "description": "hCaptcha is the name of a website, should not be translated"
   },
   "loadAccessibilityCookie": {
-    "message": "Load accessibility cookie"
+    "message": "Muat cookie aksesibilitas"
   },
   "registerAccessibilityUser": {
-    "message": "Register as an accessibility user at",
+    "message": "Daftar sebagai pengguna aksesibilitas di",
     "description": "ex. Register as an accessibility user at hcaptcha.com"
   },
   "copyPasteLink": {
-    "message": "Copy and paste the link sent to your email below"
+    "message": "Salin dan tempel tautan yang dikirimkan ke email Anda di bawah"
   },
   "enterhCaptchaUrl": {
-    "message": "Enter URL to load accessibility cookie for hCaptcha",
+    "message": "Masukkan URL untuk memuat cookie aksesibilitas untuk hCaptcha",
     "description": "hCaptcha is the name of a website, should not be translated"
   },
   "hCaptchaUrlRequired": {
-    "message": "hCaptcha Url is required",
+    "message": "url hCaptcha diperlukan",
     "description": "hCaptcha is the name of a website, should not be translated"
   },
   "invalidUrl": {
-    "message": "Invalid Url"
+    "message": "Url tidak valid"
   },
   "done": {
-    "message": "Done"
+    "message": "Selesai"
   },
   "accessibilityCookieSaved": {
-    "message": "Accessibility cookie saved!"
+    "message": "Cookie aksesibilitas disimpan!"
   },
   "noAccessibilityCookieSaved": {
-    "message": "No accessibility cookie saved"
+    "message": "Tidak ada cookie aksesibilitas yang disimpan"
   },
   "warning": {
     "message": "PERINGATAN",
@@ -1389,28 +1389,28 @@
     "message": "Verifikasi untuk Bitwarden."
   },
   "autoPromptWindowsHello": {
-    "message": "Ask for Windows Hello on launch"
+    "message": "Minta Windows Hello saat diluncurkan"
   },
   "autoPromptTouchId": {
-    "message": "Ask for Touch ID on launch"
+    "message": "Minta Touch ID saat diluncurkan"
   },
   "lockWithMasterPassOnRestart": {
     "message": "Kunci dengan kata sandi utama saat komputer dihidupkan ulang"
   },
   "deleteAccount": {
-    "message": "Delete account"
+    "message": "Hapus akun"
   },
   "deleteAccountDesc": {
-    "message": "Proceed below to delete your account and all vault data."
+    "message": "Lanjutkan di bawah untuk menghapus akun Anda dan semua data brankas."
   },
   "deleteAccountWarning": {
-    "message": "Deleting your account is permanent. It cannot be undone."
+    "message": "Menghapus akun Anda bersifat permanen. Tindakan ini tidak dapat dibatalkan."
   },
   "accountDeleted": {
-    "message": "Account deleted"
+    "message": "Akun Dihapus"
   },
   "accountDeletedDesc": {
-    "message": "Your account has been closed and all associated data has been deleted."
+    "message": "Akun Anda telah ditutup dan semua data terkait telah dihapus."
   },
   "preferences": {
     "message": "Preferensi"
@@ -1566,7 +1566,7 @@
     "message": "Dengan mencentang kotak ini, anda menyetujui yang berikut:"
   },
   "acceptPoliciesRequired": {
-    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+    "message": "Persyaratan Layanan dan Kebijakan Privasi belum disetujui."
   },
   "enableBrowserIntegration": {
     "message": "Aktifkan integrasi browser"
@@ -1575,13 +1575,13 @@
     "message": "Integrasi browser digunakan untuk biometrik di browser."
   },
   "enableDuckDuckGoBrowserIntegration": {
-    "message": "Allow DuckDuckGo browser integration"
+    "message": "Izinkan integrasi browser DuckDuckGo"
   },
   "enableDuckDuckGoBrowserIntegrationDesc": {
-    "message": "Use your Bitwarden vault when browsing with DuckDuckGo."
+    "message": "Gunakan brankas Bitwarden Anda saat menjelajah dengan DuckDuckGo."
   },
   "browserIntegrationUnsupportedTitle": {
-    "message": "Browser integration not supported"
+    "message": "Integrasi browser tidak didukung"
   },
   "browserIntegrationMasOnlyDesc": {
     "message": "Sayangnya integrasi browser hanya didukung di versi Mac App Store untuk saat ini."
@@ -1590,7 +1590,7 @@
     "message": "Sayangnya integrasi browser saat ini tidak didukung di versi Windows Store."
   },
   "browserIntegrationLinuxDesc": {
-    "message": "Unfortunately browser integration is currently not supported in the linux version."
+    "message": "Sayangnya, integrasi browser saat ini tidak didukung di versi linux."
   },
   "enableBrowserIntegrationFingerprint": {
     "message": "Mewajibkan verifikasi untuk integrasi browser"
@@ -1608,7 +1608,7 @@
     "message": "Harap pastikan sidik jari yang ditampilkan identik dengan sidik jari yang ditunjukkan di ekstensi browser."
   },
   "verifyNativeMessagingConnectionTitle": {
-    "message": "$APPID$ wants to connect to Bitwarden",
+    "message": "$APPID$ ingin menyambungkan ke Bitwarden",
     "placeholders": {
       "appid": {
         "content": "$1",
@@ -1617,10 +1617,10 @@
     }
   },
   "verifyNativeMessagingConnectionDesc": {
-    "message": "Would you like to approve this request?"
+    "message": "Apakah Anda ingin menyetujui permintaan ini?"
   },
   "verifyNativeMessagingConnectionWarning": {
-    "message": "If you did not initiate this request, do not approve it."
+    "message": "Jika Anda bukan yang memulai permintaan ini, jangan setujui."
   },
   "biometricsNotEnabledTitle": {
     "message": "Biometrik tidak diaktifkan"
@@ -1780,13 +1780,13 @@
     "message": "Dinonaktifkan"
   },
   "removePassword": {
-    "message": "Remove password"
+    "message": "Hapus kata sandi"
   },
   "removedPassword": {
-    "message": "Password removed"
+    "message": "Kata sandi dihapus"
   },
   "removePasswordConfirmation": {
-    "message": "Are you sure you want to remove the password?"
+    "message": "Anda yakin ingin menghapus kata sandi?"
   },
   "maxAccessCountReached": {
     "message": "Jumlah akses maksimum tercapai"
@@ -1822,22 +1822,22 @@
     "message": "Aksi ini terproteksi. Untuk melanjutkan, masukkan kembali sandi utama Anda untuk verifikasi identitas."
   },
   "updatedMasterPassword": {
-    "message": "Updated master password"
+    "message": "Kata sandi utama diperbarui"
   },
   "updateMasterPassword": {
-    "message": "Update master password"
+    "message": "Perbarui kata sandi utama"
   },
   "updateMasterPasswordWarning": {
-    "message": "Your master password was recently changed by an administrator in your organization. In order to access the vault, you must update it now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
+    "message": "Kata sandi utama Anda baru-baru ini diubah oleh administrator di organisasi Anda. Untuk mengakses brankas, Anda harus memperbaruinya sekarang. Melanjutkan akan mengeluarkan Anda dari sesi Anda saat ini, mengharuskan Anda untuk masuk kembali. Sesi aktif di perangkat lain dapat terus aktif hingga satu jam."
   },
   "hours": {
-    "message": "Hours"
+    "message": "Jam"
   },
   "minutes": {
-    "message": "Minutes"
+    "message": "Menit"
   },
   "vaultTimeoutPolicyInEffect": {
-    "message": "Your organization policies are affecting your vault timeout. Maximum allowed vault timeout is $HOURS$ hour(s) and $MINUTES$ minute(s)",
+    "message": "Kebijakan organisasi Anda memengaruhi waktu tunggu brankas. Waktu tunggu brankas maksimum yang diizinkan adalah $HOURS$ jam dan $MINUTES$ menit",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -1850,31 +1850,31 @@
     }
   },
   "vaultTimeoutTooLarge": {
-    "message": "Your vault timeout exceeds the restrictions set by your organization."
+    "message": "Waktu tunggu brankas Anda melebihi batasan yang diatur organisasi Anda."
   },
   "resetPasswordPolicyAutoEnroll": {
-    "message": "Automatic enrollment"
+    "message": "Pendaftaran otomatis"
   },
   "resetPasswordAutoEnrollInviteWarning": {
-    "message": "This organization has an enterprise policy that will automatically enroll you in password reset. Enrollment will allow organization administrators to change your master password."
+    "message": "Organisasi ini memiliki kebijakan perusahaan yang secara otomatis mendaftarkan Anda dalam pengaturan ulang kata sandi. Dengan mendaftar, akan memungkinkan administrator organisasi untuk mengubah kata sandi utama Anda."
   },
   "vaultExportDisabled": {
-    "message": "Vault export removed"
+    "message": "Ekspor brankas dihapus"
   },
   "personalVaultExportPolicyInEffect": {
-    "message": "One or more organization policies prevents you from exporting your personal vault."
+    "message": "Satu atau beberapa kebijakan organisasi mencegah Anda mengekspor brankas pribadi Anda."
   },
   "addAccount": {
-    "message": "Add account"
+    "message": "Tambahkan akun"
   },
   "removeMasterPassword": {
-    "message": "Remove master password"
+    "message": "Hapus Kata Sandi Utama"
   },
   "removedMasterPassword": {
-    "message": "Master password removed"
+    "message": "Sandi utama dihapus"
   },
   "convertOrganizationEncryptionDesc": {
-    "message": "$ORGANIZATION$ is using SSO with a self-hosted key server. A master password is no longer required to log in for members of this organization.",
+    "message": "$ORGANIZATION$ menggunakan SSO dengan server kunci yang dihosting sendiri. Kata sandi utama tidak lagi diperlukan untuk masuk untuk anggota organisasi ini.",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -1883,31 +1883,31 @@
     }
   },
   "leaveOrganization": {
-    "message": "Leave organization"
+    "message": "Tinggalkan organisasi"
   },
   "leaveOrganizationConfirmation": {
-    "message": "Are you sure you want to leave this organization?"
+    "message": "Apakah Anda yakin ingin meninggalkan organisasi ini?"
   },
   "leftOrganization": {
-    "message": "You have left the organization."
+    "message": "Anda telah keluar dari organisasi."
   },
   "ssoKeyConnectorError": {
-    "message": "Key connector error: make sure key connector is available and working correctly."
+    "message": "Kesalahan konektor kunci: pastikan konektor kunci tersedia dan berfungsi dengan benar."
   },
   "lockAllVaults": {
-    "message": "Lock all vaults"
+    "message": "Kunci semua brankas"
   },
   "accountLimitReached": {
-    "message": "No more than 5 accounts may be logged in at the same time."
+    "message": "Tidak lebih dari 5 akun dapat masuk pada saat yang bersamaan."
   },
   "accountPreferences": {
-    "message": "Preferences"
+    "message": "Preferensi"
   },
   "appPreferences": {
-    "message": "App settings (all accounts)"
+    "message": "Setelan aplikasi (semua akun)"
   },
   "accountSwitcherLimitReached": {
-    "message": "Account limit reached. Log out of an account to add another."
+    "message": "Batas akun tercapai. Keluar dari akun untuk menambahkan akun lain."
   },
   "settingsTitle": {
     "message": "App settings for $EMAIL$",
@@ -1922,7 +1922,7 @@
     "message": "Switch account"
   },
   "options": {
-    "message": "Options"
+    "message": "Pilihan"
   },
   "sessionTimeout": {
     "message": "Your session has timed out. Please go back and try logging in again."
@@ -1940,10 +1940,10 @@
     }
   },
   "locked": {
-    "message": "Locked"
+    "message": "Terkunci"
   },
   "unlocked": {
-    "message": "Unlocked"
+    "message": "Tidak terkunci"
   },
   "generator": {
     "message": "Generator"
@@ -1977,19 +1977,19 @@
     "message": "Use your domain's configured catch-all inbox."
   },
   "random": {
-    "message": "Random"
+    "message": "Acak"
   },
   "randomWord": {
-    "message": "Random word"
+    "message": "Kata acak"
   },
   "websiteName": {
-    "message": "Website name"
+    "message": "Nama situs"
   },
   "service": {
-    "message": "Service"
+    "message": "Layanan"
   },
   "allVaults": {
-    "message": "All vaults"
+    "message": "Semua brankas"
   },
   "searchOrganization": {
     "message": "Search organization"
@@ -2029,7 +2029,7 @@
     "message": "Mir"
   },
   "vault": {
-    "message": "Vault"
+    "message": "Brankas"
   },
   "loginWithMasterPassword": {
     "message": "Log in with master password"
@@ -2041,10 +2041,10 @@
     "message": "Remember email"
   },
   "notYou": {
-    "message": "Not you?"
+    "message": "Bukan Anda?"
   },
   "newAroundHere": {
-    "message": "New around here?"
+    "message": "Pengguna baru?"
   },
   "loggingInTo": {
     "message": "Logging in to $DOMAIN$",

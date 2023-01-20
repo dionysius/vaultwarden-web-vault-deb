@@ -1608,7 +1608,7 @@
     "message": "Veuillez vous assurer que la phrase d'empreinte affichée est identique à celle affichée dans l'extension de navigateur."
   },
   "verifyNativeMessagingConnectionTitle": {
-    "message": "$APPID$ souhaite se connecter à Bitwarden",
+    "message": "$APPID$ veut se connecter à Bitwarden",
     "placeholders": {
       "appid": {
         "content": "$1",
@@ -1766,7 +1766,7 @@
     "message": "Copier le lien de ce Send dans mon presse-papiers lors de l'enregistrement."
   },
   "sendDisabled": {
-    "message": "Send désactivé",
+    "message": "Send supprimé",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendDisabledWarning": {
@@ -1786,7 +1786,7 @@
     "message": "Mot de passe supprimé"
   },
   "removePasswordConfirmation": {
-    "message": "Êtes-vous sûr(e) de vouloir supprimer le mot de passe ?"
+    "message": "Êtes-vous sûr de vouloir supprimer le mot de passe ?"
   },
   "maxAccessCountReached": {
     "message": "Nombre maximum d'accès atteint"
@@ -1859,7 +1859,7 @@
     "message": "Cette organisation dispose d'une politique d'entreprise qui vous inscrira automatiquement à la réinitialisation du mot de passe. L'inscription permettra aux administrateurs de l'organisation de changer votre mot de passe principal."
   },
   "vaultExportDisabled": {
-    "message": "Export du coffre désactivé"
+    "message": "Export du coffre supprimé"
   },
   "personalVaultExportPolicyInEffect": {
     "message": "Une ou plusieurs politiques d'organisation vous empêchent d'exporter votre coffre personnel."
@@ -1874,7 +1874,7 @@
     "message": "Mot de passe principal supprimé"
   },
   "convertOrganizationEncryptionDesc": {
-    "message": "$ORGANIZATION$ utilise SSO avec un serveur de clés auto-hébergé. Un mot de passe principal n'est plus nécessaire aux membres de cette organisation pour se connecter.",
+    "message": "$ORGANIZATION$ utilise le SSO avec un serveur de clés auto-hébergé. Un mot de passe principal n'est plus nécessaire aux membres de cette organisation pour se connecter.",
     "placeholders": {
       "organization": {
         "content": "$1",

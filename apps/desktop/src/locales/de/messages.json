@@ -611,7 +611,7 @@
     "message": "E-Mail mit Bestätigungscode erneut versenden"
   },
   "useAnotherTwoStepMethod": {
-    "message": "Eine andere Zwei-Faktor-Login-Methode verwenden"
+    "message": "Eine andere Zwei-Faktor-Anmeldemethode verwenden"
   },
   "insertYubiKey": {
     "message": "Stecke deinen YubiKey in einen USB-Anschluss deines Computers, dann berühre den Button."
@@ -805,7 +805,7 @@
     "message": "Synchronisierung fehlgeschlagen"
   },
   "yourVaultIsLocked": {
-    "message": "Ihr Tresor ist gesperrt. Überprüfen Sie Ihr Master-Passwort, um fortzufahren."
+    "message": "Dein Tresor ist gesperrt. Überprüfe deine Identität, um fortzufahren."
   },
   "unlock": {
     "message": "Entsperren"
@@ -1033,7 +1033,7 @@
     "message": "Unbekannt"
   },
   "copyUsername": {
-    "message": "Nutzernamen kopieren"
+    "message": "Benutzerrname kopieren"
   },
   "copyNumber": {
     "message": "Nummer kopieren",
@@ -1949,7 +1949,7 @@
     "message": "Generator"
   },
   "whatWouldYouLikeToGenerate": {
-    "message": "Was möchtest du generieren?"
+    "message": "Was möchtest du erzeugen?"
   },
   "passwordType": {
     "message": "Passworttyp"
@@ -1958,7 +1958,7 @@
     "message": "Benutzername neu generieren"
   },
   "generateUsername": {
-    "message": "Benutzernamen generieren"
+    "message": "Benutzernamen erzeugen"
   },
   "usernameType": {
     "message": "Benutzernamentyp"
@@ -1971,7 +1971,7 @@
     "message": "Verwende die Unteradressierungsmöglichkeiten deines E-Mail-Providers."
   },
   "catchallEmail": {
-    "message": "Catch-All E-Mail-Adresse"
+    "message": "Catch-All E-Mail Adresse"
   },
   "catchallEmailDesc": {
     "message": "Verwende den konfigurierten Catch-All-Posteingang deiner Domain."
@@ -2001,7 +2001,7 @@
     "message": "Weitergeleitetes E-Mail-Alias"
   },
   "forwardedEmailDesc": {
-    "message": "Generiere ein E-Mail-Alias mit einem externen Weiterleitungsdienst."
+    "message": "Erzeuge ein E-Mail-Alias mit einem externen Weiterleitungsdienst."
   },
   "hostname": {
     "message": "Hostname",
@@ -2017,7 +2017,7 @@
     "message": "Premium-Abonnement erforderlich"
   },
   "organizationIsDisabled": {
-    "message": "Organisation ist deaktiviert."
+    "message": "Organisation ist deaktiviert"
   },
   "disabledOrganizationFilterError": {
     "message": "Auf Einträge in deaktivierten Organisationen kann nicht zugegriffen werden. Kontaktiere deinen Organisationseigentümer für Unterstützung."
