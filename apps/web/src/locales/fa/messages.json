@@ -277,12 +277,33 @@
   "searchFavorites": {
     "message": "جستجوی مورد علاقه‌ها"
   },
-  "searchType": {
-    "message": "جستجوی نوع",
-    "description": "Search item type"
+  "searchLogin": {
+    "message": "جستجوی ورودها",
+    "description": "Search Login type"
+  },
+  "searchCard": {
+    "message": "جستجوی کارت‌ها",
+    "description": "Search Card type"
+  },
+  "searchIdentity": {
+    "message": "جستجوی هویت‌ها",
+    "description": "Search Identity type"
+  },
+  "searchSecureNote": {
+    "message": "جستجوی یادداشت‌های امن",
+    "description": "Search Secure Note type"
   },
   "searchVault": {
     "message": "جستجوی گاوصندوق"
+  },
+  "searchMyVault": {
+    "message": "جستجوی گاوصندوق من"
+  },
+  "searchOrganization": {
+    "message": "جستجوی سازمان"
+  },
+  "searchMembers": {
+    "message": "جستجوی اعضا"
   },
   "allItems": {
     "message": "تمام موارد"
@@ -365,6 +386,9 @@
   "select": {
     "message": "انتخاب"
   },
+  "newItem": {
+    "message": "مورد جدید"
+  },
   "addItem": {
     "message": "افزودن مورد"
   },
@@ -373,6 +397,12 @@
   },
   "viewItem": {
     "message": "مشاهده مورد"
+  },
+  "new": {
+    "message": "جدید"
+  },
+  "item": {
+    "message": "مورد"
   },
   "ex": {
     "message": "مثال.",
@@ -438,6 +468,9 @@
   },
   "vaultItems": {
     "message": "موارد گاوصندوق"
+  },
+  "filter": {
+    "message": "فیلتر"
   },
   "moveSelectedToOrg": {
     "message": "انتقال مورد انتخاب شده به سازمان"
@@ -544,6 +577,12 @@
   },
   "deletedFolder": {
     "message": "پوشه حذف شد"
+  },
+  "editInfo": {
+    "message": "ویرایش اطلاعات"
+  },
+  "access": {
+    "message": "دسترسی"
   },
   "loggedOut": {
     "message": "خارج شد"
@@ -702,6 +741,9 @@
   "noItemsInList": {
     "message": "هیچ موردی برای نمایش وجود ندارد."
   },
+  "noPermissionToViewAllCollectionItems": {
+    "message": "شما اجازه مشاهده همه موارد در این مجموعه را ندارید."
+  },
   "noCollectionsInList": {
     "message": "هیچ مجموعه ای برای لیست کردن وجود ندارد."
   },
@@ -710,6 +752,9 @@
   },
   "noUsersInList": {
     "message": "هیچ کاربری برای نمایش وجود ندارد."
+  },
+  "noMembersInList": {
+    "message": "هیچ عضوی برای نمایش وجود ندارد."
   },
   "noEventsInList": {
     "message": "هیچ مناسبتی برای نمایش وجود ندارد."
@@ -854,6 +899,18 @@
         "example": "150"
       }
     }
+  },
+  "deleteSelectedCollectionsDesc": {
+    "message": "$COUNT$ مجموعه(ها) برای همیشه حذف خواهد شد.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "150"
+      }
+    }
+  },
+  "deleteSelectedConfirmation": {
+    "message": "آیا اطمینان دارید که می‌خواهید ادامه دهید؟"
   },
   "moveSelectedItemsDesc": {
     "message": "پوشه ای را انتخاب کنید که می‌خواهید $COUNT$ مورد انتخاب شده را به آن منتقل کنید.",
@@ -1558,7 +1615,7 @@
   },
   "orgsReportsDesc": {
     "message": "با کلیک بر روی گزارش‌های زیر، شکاف‌های امنیتی را در حساب‌های سازمان خود شناسایی و ببندید.",
-    "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization Vault."
+    "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization vault."
   },
   "unsecuredWebsitesReport": {
     "message": "وب‌سایت های نا امن"
@@ -2372,6 +2429,15 @@
   "deleteGroupConfirmation": {
     "message": "مطمئن هستید که می خواهید این گروه را حذف کنید؟"
   },
+  "deleteMultipleGroupsConfirmation": {
+    "message": "آیا مطمئنید که می‌خواهید گروه(های) $QUANTITY$ زیر را حذف کنید؟",
+    "placeholders": {
+      "quantity": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
   "removeUserConfirmation": {
     "message": "آیا مطمئن به حذف این کاربر هستید؟"
   },
@@ -2389,6 +2455,9 @@
   },
   "externalIdDesc": {
     "message": "شناسه خارجی می‌تواند به عنوان یک مرجع یا برای پیوند دادن این منبع به یک سیستم خارجی مانند فهرست کاربری استفاده شود."
+  },
+  "nestCollectionUnder": {
+    "message": "مجموعه لانه زیر"
   },
   "accessControl": {
     "message": "کنترل دسترسی"
@@ -2411,14 +2480,14 @@
   "editCollection": {
     "message": "ویرایش مجموعه"
   },
+  "collectionInfo": {
+    "message": "اطلاعات مجموعه"
+  },
   "deleteCollectionConfirmation": {
     "message": "آیا مطمئنید که می‌خواهید این مجموعه را حذف کنید؟"
   },
-  "editUser": {
-    "message": "ویرایش کاربر"
-  },
-  "inviteUser": {
-    "message": "دعوت از کاربر"
+  "editMember": {
+    "message": "ویرایش عضو"
   },
   "inviteUserDesc": {
     "message": "با وارد کردن نشانی ایمیل حساب Bitwarden در زیر، یک کاربر جدید را به سازمان خود دعوت کنید. اگر آنها قبلاً یک حساب Bitwarden نداشته باشند، از آنها خواسته می‌شود یک حساب جدید ایجاد کنند."
@@ -2684,6 +2753,9 @@
       }
     }
   },
+  "deletedCollections": {
+    "message": "حذف مجموعه‌ها"
+  },
   "deletedCollectionId": {
     "message": "مجموعه $ID$ حذف شد.",
     "placeholders": {
@@ -2726,6 +2798,15 @@
       "id": {
         "content": "$1",
         "example": "Developers"
+      }
+    }
+  },
+  "deletedManyGroups": {
+    "message": "گروه(های) $QUANTITY$ حذف شد.",
+    "placeholders": {
+      "quantity": {
+        "content": "$1",
+        "example": "3"
       }
     }
   },
@@ -5458,6 +5539,15 @@
       }
     }
   },
+  "inputForbiddenCharacters": {
+    "message": "کاراکترهای زیر مجاز نیستند: $CHARACTERS$",
+    "placeholders": {
+      "characters": {
+        "content": "$1",
+        "example": "@, #, $, %"
+      }
+    }
+  },
   "fieldsNeedAttention": {
     "message": "فیلد $COUNT$ در بالا به توجه شما نیاز دارد.",
     "placeholders": {
@@ -5609,9 +5699,6 @@
   },
   "serviceAccounts": {
     "message": "حساب‌های خدمات"
-  },
-  "new": {
-    "message": "جدید"
   },
   "secrets": {
     "message": "رازها"
@@ -5823,8 +5910,44 @@
   "update": {
     "message": "به‌روزرسانی"
   },
+  "plusNMore": {
+    "message": "+ $QUANTITY$ بیشتر",
+    "placeholders": {
+      "quantity": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
+  "groupInfo": {
+    "message": "اطلاعات گروه"
+  },
+  "editGroupMembersDesc": {
+    "message": "به اعضا اجازه دسترسی به مجموعه‌های اختصاص داده شده گروه را بدهید."
+  },
+  "editGroupCollectionsDesc": {
+    "message": "با افزودن مجموعه‌ها به این گروه، اجازه دسترسی به مجموعه‌ها را بدهید."
+  },
+  "accessAllCollectionsDesc": {
+    "message": "اجازه دسترسی به تمام مجموعه‌های فعلی و آینده."
+  },
+  "accessAllCollectionsHelp": {
+    "message": "اگر علامت زده شود، این گزینه جایگزین سایر مجوزهای مجموعه می‌شود."
+  },
+  "selectMembers": {
+    "message": "انتخاب اعضا"
+  },
+  "selectCollections": {
+    "message": "انتخاب مجموعه‌ها"
+  },
   "role": {
     "message": "نقش"
+  },
+  "removeMember": {
+    "message": "حذف عضو"
+  },
+  "collection": {
+    "message": "مجموعه"
   },
   "canView": {
     "message": "می‌تواند مشاهده کند"
@@ -5838,6 +5961,15 @@
   "canEditExceptPass": {
     "message": "قابل ویرایش، به غیر از کلمه‌های عبور"
   },
+  "noCollectionsAdded": {
+    "message": "مجموعه ای اضافه نشد"
+  },
+  "noMembersAdded": {
+    "message": "عضوی اضافه نشد"
+  },
+  "noGroupsAdded": {
+    "message": "گروهی اضافه نشد"
+  },
   "group": {
     "message": "گروه"
   },
@@ -5846,6 +5978,39 @@
   },
   "memberAccessAll": {
     "message": "این عضو می‌تواند به همه موارد دسترسی داشته باشد و آن‌ها را تغییر دهد."
+  },
+  "membersColumnHeader": {
+    "message": "عضو/گروه"
+  },
+  "groupAndMemberColumnHeader": {
+    "message": "عضو"
+  },
+  "selectGroupsAndMembers": {
+    "message": "گروه‌ها و اعضا را انتخاب کنید"
+  },
+  "selectGroups": {
+    "message": "انتخاب گروه‌ها"
+  },
+  "userPermissionOverrideHelper": {
+    "message": "مجوزهای تنظیم شده برای یک عضو، جایگزین مجوزهای تعیین شده توسط گروه آن عضو می‌شود"
+  },
+  "noMembersOrGroupsAdded": {
+    "message": "عضو یا گروهی اضافه نشد"
+  },
+  "deleted": {
+    "message": "حذف شده"
+  },
+  "memberStatusFilter": {
+    "message": "فیلتر وضعیت عضو"
+  },
+  "inviteMember": {
+    "message": "دعوت از عضو"
+  },
+  "needsConfirmation": {
+    "message": "نیاز به تأیید دارد"
+  },
+  "memberRole": {
+    "message": "نقش عضو"
   },
   "moreFromBitwarden": {
     "message": "از Bitwarden بیشتر بدانید"

@@ -277,12 +277,33 @@
   "searchFavorites": {
     "message": "Kedvencek keresése"
   },
-  "searchType": {
-    "message": "Típus keresése",
-    "description": "Search item type"
+  "searchLogin": {
+    "message": "Bejelentkezések keresése",
+    "description": "Search Login type"
+  },
+  "searchCard": {
+    "message": "Kártyák keresése",
+    "description": "Search Card type"
+  },
+  "searchIdentity": {
+    "message": "Azonosítások keresése",
+    "description": "Search Identity type"
+  },
+  "searchSecureNote": {
+    "message": "Biztonságos jegyzetek keresése",
+    "description": "Search Secure Note type"
   },
   "searchVault": {
     "message": "Keresés a széfben"
+  },
+  "searchMyVault": {
+    "message": "Keresés a saját széfben"
+  },
+  "searchOrganization": {
+    "message": "Szervezet keresése"
+  },
+  "searchMembers": {
+    "message": "Tagok keresése"
   },
   "allItems": {
     "message": "Összes elem"
@@ -365,6 +386,9 @@
   "select": {
     "message": "Kijelölés"
   },
+  "newItem": {
+    "message": "Új elem"
+  },
   "addItem": {
     "message": "Elem hozzáadása"
   },
@@ -373,6 +397,12 @@
   },
   "viewItem": {
     "message": "Elem megtekintése"
+  },
+  "new": {
+    "message": "Új"
+  },
+  "item": {
+    "message": "Elem"
   },
   "ex": {
     "message": "Példa:",
@@ -438,6 +468,9 @@
   },
   "vaultItems": {
     "message": "Széfelemek"
+  },
+  "filter": {
+    "message": "Szűrő"
   },
   "moveSelectedToOrg": {
     "message": "A kiválasztott áthelyezése szervezetbe"
@@ -544,6 +577,12 @@
   },
   "deletedFolder": {
     "message": "A mappa törlésre került."
+  },
+  "editInfo": {
+    "message": "Adatok szerkesztése"
+  },
+  "access": {
+    "message": "Hozzáférés"
   },
   "loggedOut": {
     "message": "Megtörtént a kijelentkezés."
@@ -702,6 +741,9 @@
   "noItemsInList": {
     "message": "Nincsenek megjeleníthető elemek."
   },
+  "noPermissionToViewAllCollectionItems": {
+    "message": "Nincs jogosultság a gyűjtemény összes elemének megtekintésére."
+  },
   "noCollectionsInList": {
     "message": "Nincsenek megjeleníthető gyűjtemények."
   },
@@ -710,6 +752,9 @@
   },
   "noUsersInList": {
     "message": "Nincsenek megjeleníthető felhasználók."
+  },
+  "noMembersInList": {
+    "message": "Nincsenek megjeleníthető tagok."
   },
   "noEventsInList": {
     "message": "Nincsenek megjeleníthető események."
@@ -854,6 +899,18 @@
         "example": "150"
       }
     }
+  },
+  "deleteSelectedCollectionsDesc": {
+    "message": "$COUNT$ gyűjtemény véglegesen törlésre kerül.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "150"
+      }
+    }
+  },
+  "deleteSelectedConfirmation": {
+    "message": "Biztos folytatni szeretnénk?"
   },
   "moveSelectedItemsDesc": {
     "message": "Célmappa kiválasztás $COUNT$ kijelölt elem áthelyezéséhez.",
@@ -1558,7 +1615,7 @@
   },
   "orgsReportsDesc": {
     "message": "Az alábbi jelentésekre kattintva azonosíthatjuk és megszüntethetjük a szervezet fiókjaiban lévő biztonsági hiányosságokat.",
-    "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization Vault."
+    "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization vault."
   },
   "unsecuredWebsitesReport": {
     "message": "Nem-biztonságos webhelyek jelentés"
@@ -2372,6 +2429,15 @@
   "deleteGroupConfirmation": {
     "message": "Biztosan törlésre kerüljön ez a csoport?"
   },
+  "deleteMultipleGroupsConfirmation": {
+    "message": "Biztosan törölni szeretnénk a következő $QUANTITY$ csoportot?",
+    "placeholders": {
+      "quantity": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
   "removeUserConfirmation": {
     "message": "Biztosan eltávolításra kerüljön ez a felhasználó?"
   },
@@ -2389,6 +2455,9 @@
   },
   "externalIdDesc": {
     "message": "A külső azonosító hivatkozásként használható, vagy ahhoz, hogy ezt az erőforrást egy külső rendszerhez, például felhasználói könyvtárhoz kapcsoljuk."
+  },
+  "nestCollectionUnder": {
+    "message": "Gyűjtemény beágyazása:"
   },
   "accessControl": {
     "message": "Hozzáférés vezérlés"
@@ -2411,14 +2480,14 @@
   "editCollection": {
     "message": "Gyűjtemény szerkesztése"
   },
+  "collectionInfo": {
+    "message": "Gyűjtemény adatok"
+  },
   "deleteCollectionConfirmation": {
     "message": "Biztosan törlésre kerüljön ez a gyűjtemény?"
   },
-  "editUser": {
-    "message": "Felhasználó szerkesztése"
-  },
-  "inviteUser": {
-    "message": "Felhasználó meghívása"
+  "editMember": {
+    "message": "Tag szerkesztése"
   },
   "inviteUserDesc": {
     "message": "Új felhasználó meghívása a szervezetéhez a Bitwarden fiók e-mail címének megadásával. Ha még nem rendelkezik Bitwarden-fiókkal, felkérjük új fiók létrehozására.\n"
@@ -2684,6 +2753,9 @@
       }
     }
   },
+  "deletedCollections": {
+    "message": "Törölt gyűjtemények"
+  },
   "deletedCollectionId": {
     "message": "$ID$ azonosítójú gyűjtemény törlésre került.",
     "placeholders": {
@@ -2726,6 +2798,15 @@
       "id": {
         "content": "$1",
         "example": "Developers"
+      }
+    }
+  },
+  "deletedManyGroups": {
+    "message": "$QUANTITY$ csoport törlésre került.",
+    "placeholders": {
+      "quantity": {
+        "content": "$1",
+        "example": "3"
       }
     }
   },
@@ -5458,6 +5539,15 @@
       }
     }
   },
+  "inputForbiddenCharacters": {
+    "message": "A következő karakterek nem engedélyezettek: $CHARACTERS$",
+    "placeholders": {
+      "characters": {
+        "content": "$1",
+        "example": "@, #, $, %"
+      }
+    }
+  },
   "fieldsNeedAttention": {
     "message": "$COUNT$ mező fentebb figyelmet érdemel.",
     "placeholders": {
@@ -5609,9 +5699,6 @@
   },
   "serviceAccounts": {
     "message": "Szolgáltatás fiókok"
-  },
-  "new": {
-    "message": "Új"
   },
   "secrets": {
     "message": "Titkos kódok"
@@ -5823,8 +5910,44 @@
   "update": {
     "message": "Frissítés"
   },
+  "plusNMore": {
+    "message": "+ $QUANTITY$ további",
+    "placeholders": {
+      "quantity": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
+  "groupInfo": {
+    "message": "Csoport információ"
+  },
+  "editGroupMembersDesc": {
+    "message": "A csoporthoz társított gyűjtmények elérésének kiosztása a tagoknak."
+  },
+  "editGroupCollectionsDesc": {
+    "message": "Hozzáférés kiosztása gyűjteményekhez csoporthoz adásukkal."
+  },
+  "accessAllCollectionsDesc": {
+    "message": "Hozzáférés kiosztása az összes jelenlegi és jövőbeli gyűjteményhez."
+  },
+  "accessAllCollectionsHelp": {
+    "message": "Bejelöllve lecseréli az összes gyűjtemény jogosultságot."
+  },
+  "selectMembers": {
+    "message": "Tagok kválasztása"
+  },
+  "selectCollections": {
+    "message": "Gyűjtemények kiválasztása"
+  },
   "role": {
     "message": "Szerepkör"
+  },
+  "removeMember": {
+    "message": "Tag eltávolítása"
+  },
+  "collection": {
+    "message": "Gyűjtemény"
   },
   "canView": {
     "message": "Megtekintheti"
@@ -5838,6 +5961,15 @@
   "canEditExceptPass": {
     "message": "Szerkesztheti, kivéve a jelszavakat"
   },
+  "noCollectionsAdded": {
+    "message": "Nem lett gyűjtemény hozzáadva."
+  },
+  "noMembersAdded": {
+    "message": "Nem lett tag hozzáadva."
+  },
+  "noGroupsAdded": {
+    "message": "Nem lett csoport hozzáadva."
+  },
   "group": {
     "message": "Csoport"
   },
@@ -5846,6 +5978,39 @@
   },
   "memberAccessAll": {
     "message": "Ez a felhasználó minden elemhez hozzáférhet és módosíthatja az összes elemet."
+  },
+  "membersColumnHeader": {
+    "message": "Tag/Csoport"
+  },
+  "groupAndMemberColumnHeader": {
+    "message": "Tag"
+  },
+  "selectGroupsAndMembers": {
+    "message": "Csoportok és tagok kiválasztása"
+  },
+  "selectGroups": {
+    "message": "Csoportok kiválasztása"
+  },
+  "userPermissionOverrideHelper": {
+    "message": "A tagok számára beállított jogosultságok felváltják az adott tag csoportja által beállított jogosultságokat."
+  },
+  "noMembersOrGroupsAdded": {
+    "message": "Nem lett tag vagy csoport hozzáadva."
+  },
+  "deleted": {
+    "message": "Törölve"
+  },
+  "memberStatusFilter": {
+    "message": "Tagi állapot szűrő"
+  },
+  "inviteMember": {
+    "message": "Tag meghívása"
+  },
+  "needsConfirmation": {
+    "message": "Jóváhagyás szükséges"
+  },
+  "memberRole": {
+    "message": "Tagi szerep"
   },
   "moreFromBitwarden": {
     "message": "További infó a Bitwardenről"

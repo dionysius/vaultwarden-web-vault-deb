@@ -277,12 +277,33 @@
   "searchFavorites": {
     "message": "Serĉi Favoratojn"
   },
-  "searchType": {
-    "message": "Serĉo en tipo",
-    "description": "Search item type"
+  "searchLogin": {
+    "message": "Search logins",
+    "description": "Search Login type"
+  },
+  "searchCard": {
+    "message": "Search cards",
+    "description": "Search Card type"
+  },
+  "searchIdentity": {
+    "message": "Search identities",
+    "description": "Search Identity type"
+  },
+  "searchSecureNote": {
+    "message": "Search secure notes",
+    "description": "Search Secure Note type"
   },
   "searchVault": {
     "message": "Traserĉu Trezorejon"
+  },
+  "searchMyVault": {
+    "message": "Search my vault"
+  },
+  "searchOrganization": {
+    "message": "Search organization"
+  },
+  "searchMembers": {
+    "message": "Search members"
   },
   "allItems": {
     "message": "Ĉiuj Eroj"
@@ -365,6 +386,9 @@
   "select": {
     "message": "Elektu"
   },
+  "newItem": {
+    "message": "New item"
+  },
   "addItem": {
     "message": "Aldoni Artikolon"
   },
@@ -373,6 +397,12 @@
   },
   "viewItem": {
     "message": "Vidigi Artikolon"
+  },
+  "new": {
+    "message": "New"
+  },
+  "item": {
+    "message": "Item"
   },
   "ex": {
     "message": "ekz.",
@@ -438,6 +468,9 @@
   },
   "vaultItems": {
     "message": "Trezorejaj Eroj"
+  },
+  "filter": {
+    "message": "Filter"
   },
   "moveSelectedToOrg": {
     "message": "Movu Elektitaĵojn al Organizo"
@@ -544,6 +577,12 @@
   },
   "deletedFolder": {
     "message": "Forigita dosierujo"
+  },
+  "editInfo": {
+    "message": "Edit info"
+  },
+  "access": {
+    "message": "Access"
   },
   "loggedOut": {
     "message": "Adiaŭita"
@@ -702,6 +741,9 @@
   "noItemsInList": {
     "message": "Ne estas listigendaj eroj."
   },
+  "noPermissionToViewAllCollectionItems": {
+    "message": "You do not have permission to view all items in this collection."
+  },
   "noCollectionsInList": {
     "message": "Estas neniuj kolektoj listigeblaj."
   },
@@ -710,6 +752,9 @@
   },
   "noUsersInList": {
     "message": "Estas neniuj uzantoj listigeblaj."
+  },
+  "noMembersInList": {
+    "message": "There are no members to list."
   },
   "noEventsInList": {
     "message": "Ne estas eventoj listigeblaj."
@@ -847,13 +892,25 @@
     "message": "Redaktu la kolektojn kun kiuj ĉi tiu ero estas dividita. Nur organizaj uzantoj kun aliro al ĉi tiuj kolektoj povos vidi ĉi tiun eron."
   },
   "deleteSelectedItemsDesc": {
-    "message": "Vi elektis $COUNT $eron (j) por forigi. Ĉu vi certe volas forigi ĉiujn ĉi tiujn erojn?",
+    "message": "$COUNT$ item(s) will be sent to trash.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "150"
       }
     }
+  },
+  "deleteSelectedCollectionsDesc": {
+    "message": "$COUNT$ collection(s) will be permanently deleted.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "150"
+      }
+    }
+  },
+  "deleteSelectedConfirmation": {
+    "message": "Are you sure you want to continue?"
   },
   "moveSelectedItemsDesc": {
     "message": "Elektu dosierujon al kiu vi ŝatus movi la elektitajn erojn $COUNT$.",
@@ -1558,7 +1615,7 @@
   },
   "orgsReportsDesc": {
     "message": "Identify and close security gaps in your organization's accounts by clicking the reports below.",
-    "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization Vault."
+    "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization vault."
   },
   "unsecuredWebsitesReport": {
     "message": "Raporto pri Nesekurigitaj Retejoj"
@@ -2187,7 +2244,7 @@
     "message": "Senpaga Eterne"
   },
   "includesXUsers": {
-    "message": "inkluzivas $COUN$ uzantojn",
+    "message": "includes $COUNT$ users",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -2372,6 +2429,15 @@
   "deleteGroupConfirmation": {
     "message": "Ĉu vi certe volas forigi ĉi tiun grupon?"
   },
+  "deleteMultipleGroupsConfirmation": {
+    "message": "Are you sure you want to delete the following $QUANTITY$ group(s)?",
+    "placeholders": {
+      "quantity": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
   "removeUserConfirmation": {
     "message": "Ĉu vi certe volas forigi ĉi tiun uzanton?"
   },
@@ -2389,6 +2455,9 @@
   },
   "externalIdDesc": {
     "message": "La ekstera identigilo povas esti uzata kiel referenco aŭ por ligi ĉi tiun rimedon al ekstera sistemo kiel uzantdosierujo."
+  },
+  "nestCollectionUnder": {
+    "message": "Nest collection under"
   },
   "accessControl": {
     "message": "Alirkontrolo"
@@ -2411,14 +2480,14 @@
   "editCollection": {
     "message": "Redakti Kolekton"
   },
+  "collectionInfo": {
+    "message": "Collection info"
+  },
   "deleteCollectionConfirmation": {
     "message": "Ĉu vi certe volas forigi ĉi tiun kolekton?"
   },
-  "editUser": {
-    "message": "Redakti uzanton"
-  },
-  "inviteUser": {
-    "message": "Inviti uzanton"
+  "editMember": {
+    "message": "Edit member"
   },
   "inviteUserDesc": {
     "message": "Invitu novan uzanton al via organizo enigante ĉi-sube sian retpoŝtan adreson Bitwarden. Se ili ne havas Bitwarden-konton jam, ili estos petataj krei novan konton."
@@ -2565,7 +2634,7 @@
     }
   },
   "deletedItemId": {
-    "message": "Sendita ero $ID $al rubujo.",
+    "message": "Sent item $ID$ to trash.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2658,7 +2727,7 @@
     }
   },
   "autofilledItemId": {
-    "message": "Aŭtomate plenigita ero $ID $.",
+    "message": "Auto-filled item $ID$.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2667,7 +2736,7 @@
     }
   },
   "createdCollectionId": {
-    "message": "Kreita kolekto $ID $.",
+    "message": "Created collection $ID$.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2676,7 +2745,7 @@
     }
   },
   "editedCollectionId": {
-    "message": "Redaktita kolekto $ID $.",
+    "message": "Edited collection $ID$.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2684,8 +2753,11 @@
       }
     }
   },
+  "deletedCollections": {
+    "message": "Deleted collections"
+  },
   "deletedCollectionId": {
-    "message": "Forigita kolekto $ID $.",
+    "message": "Deleted collection $ID$.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2694,7 +2766,7 @@
     }
   },
   "editedPolicyId": {
-    "message": "Redaktita politiko $ID $.",
+    "message": "Edited policy $ID$.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2703,7 +2775,7 @@
     }
   },
   "createdGroupId": {
-    "message": "Kreita grupo $ID $.",
+    "message": "Created group $ID$.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2712,7 +2784,7 @@
     }
   },
   "editedGroupId": {
-    "message": "Redaktita grupo $ID $.",
+    "message": "Edited group $ID$.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2721,7 +2793,7 @@
     }
   },
   "deletedGroupId": {
-    "message": "Forigita grupo $ID $.",
+    "message": "Deleted group $ID$.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2729,8 +2801,17 @@
       }
     }
   },
+  "deletedManyGroups": {
+    "message": "Deleted $QUANTITY$ group(s).",
+    "placeholders": {
+      "quantity": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
   "removedUserId": {
-    "message": "Forigita uzanto $ID $.",
+    "message": "Removed user $ID$.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2775,7 +2856,7 @@
     }
   },
   "createdAttachmentForItem": {
-    "message": "Kreita aldonaĵo por ero $ID $.",
+    "message": "Created attachment for item $ID$.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2784,7 +2865,7 @@
     }
   },
   "deletedAttachmentForItem": {
-    "message": "Forigita aldonaĵo por ero $ID $.",
+    "message": "Deleted attachment for item $ID$.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2793,7 +2874,7 @@
     }
   },
   "editedCollectionsForItem": {
-    "message": "Redaktitaj kolektoj por ero $ID $.",
+    "message": "Edited collections for item $ID$.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2802,7 +2883,7 @@
     }
   },
   "invitedUserId": {
-    "message": "Invitita uzanto $ID $.",
+    "message": "Invited user $ID$.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2811,7 +2892,7 @@
     }
   },
   "confirmedUserId": {
-    "message": "Konfirmita uzanto $ID $.",
+    "message": "Confirmed user $ID$.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2829,7 +2910,7 @@
     }
   },
   "editedGroupsForUser": {
-    "message": "Redaktitaj grupoj por uzanto $ID $.",
+    "message": "Edited groups for user $ID$.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2838,7 +2919,7 @@
     }
   },
   "unlinkedSsoUser": {
-    "message": "Senligita SSO por uzanto $ID $.",
+    "message": "Unlinked SSO for user $ID$.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2997,7 +3078,7 @@
     "message": "Ne eblas akcepti inviton. Petu administranton de organizo sendi novan inviton."
   },
   "inviteAcceptFailedShort": {
-    "message": "Ne eblas akcepti inviton. $DESCRIPTION $",
+    "message": "Unable to accept invitation. $DESCRIPTION$",
     "placeholders": {
       "description": {
         "content": "$1",
@@ -3627,7 +3708,7 @@
     }
   },
   "permanentlyDeletedItemId": {
-    "message": "Konstante Forigita ero $ID $.",
+    "message": "Item $ID$ permanently deleted",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -3978,7 +4059,7 @@
     "message": "1 tago"
   },
   "days": {
-    "message": "$TAGOJ$ tagoj",
+    "message": "$DAYS$ days",
     "placeholders": {
       "days": {
         "content": "$1",
@@ -3996,7 +4077,7 @@
     "message": "Ne eblas akcepti inviton. Petu la uzanton sendi novan inviton."
   },
   "emergencyInviteAcceptFailedShort": {
-    "message": "Ne eblas akcepti inviton. $DESCRIPTION $",
+    "message": "Unable to accept invitation. $DESCRIPTION$",
     "placeholders": {
       "description": {
         "content": "$1",
@@ -4020,7 +4101,7 @@
     }
   },
   "requestSent": {
-    "message": "Kriza aliro petita por $USER $. Ni sciigos vin per retpoŝto kiam eblas daŭrigi.",
+    "message": "Emergency access requested for $USER$. We'll notify you by email when it's possible to continue.",
     "placeholders": {
       "user": {
         "content": "$1",
@@ -4115,7 +4196,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "modifiedPolicyId": {
-    "message": "Modifita politiko $ID $.",
+    "message": "Modified policy $ID$.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -5458,6 +5539,15 @@
       }
     }
   },
+  "inputForbiddenCharacters": {
+    "message": "The following characters are not allowed: $CHARACTERS$",
+    "placeholders": {
+      "characters": {
+        "content": "$1",
+        "example": "@, #, $, %"
+      }
+    }
+  },
   "fieldsNeedAttention": {
     "message": "$COUNT$ field(s) above need your attention.",
     "placeholders": {
@@ -5531,7 +5621,7 @@
     "message": "Custom Color"
   },
   "multiSelectPlaceholder": {
-    "message": "-- Type to Filter --"
+    "message": "-- Type to filter --"
   },
   "multiSelectLoading": {
     "message": "Retrieving options..."
@@ -5609,9 +5699,6 @@
   },
   "serviceAccounts": {
     "message": "Service Accounts"
-  },
-  "new": {
-    "message": "New"
   },
   "secrets": {
     "message": "Secrets"
@@ -5823,8 +5910,44 @@
   "update": {
     "message": "Update"
   },
+  "plusNMore": {
+    "message": "+ $QUANTITY$ more",
+    "placeholders": {
+      "quantity": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
+  "groupInfo": {
+    "message": "Group info"
+  },
+  "editGroupMembersDesc": {
+    "message": "Grant members access to the group's assigned collections."
+  },
+  "editGroupCollectionsDesc": {
+    "message": "Grant access to collections by adding them to this group."
+  },
+  "accessAllCollectionsDesc": {
+    "message": "Grant access to all current and future collections."
+  },
+  "accessAllCollectionsHelp": {
+    "message": "If checked, this will replace all other collection permissions."
+  },
+  "selectMembers": {
+    "message": "Select members"
+  },
+  "selectCollections": {
+    "message": "Select collections"
+  },
   "role": {
     "message": "Role"
+  },
+  "removeMember": {
+    "message": "Remove member"
+  },
+  "collection": {
+    "message": "Collection"
   },
   "canView": {
     "message": "Can view"
@@ -5838,6 +5961,15 @@
   "canEditExceptPass": {
     "message": "Can edit, except passwords"
   },
+  "noCollectionsAdded": {
+    "message": "No collections added"
+  },
+  "noMembersAdded": {
+    "message": "No members added"
+  },
+  "noGroupsAdded": {
+    "message": "No groups added"
+  },
   "group": {
     "message": "Group"
   },
@@ -5846,6 +5978,39 @@
   },
   "memberAccessAll": {
     "message": "This member can access and modify all items."
+  },
+  "membersColumnHeader": {
+    "message": "Member/Group"
+  },
+  "groupAndMemberColumnHeader": {
+    "message": "Member"
+  },
+  "selectGroupsAndMembers": {
+    "message": "Select groups and members"
+  },
+  "selectGroups": {
+    "message": "Select groups"
+  },
+  "userPermissionOverrideHelper": {
+    "message": "Permissions set for a member will replace permissions set by that member's group"
+  },
+  "noMembersOrGroupsAdded": {
+    "message": "No members or groups added"
+  },
+  "deleted": {
+    "message": "Deleted"
+  },
+  "memberStatusFilter": {
+    "message": "Member status filter"
+  },
+  "inviteMember": {
+    "message": "Invite member"
+  },
+  "needsConfirmation": {
+    "message": "Needs confirmation"
+  },
+  "memberRole": {
+    "message": "Member role"
   },
   "moreFromBitwarden": {
     "message": "More from Bitwarden"

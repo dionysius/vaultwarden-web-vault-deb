@@ -277,12 +277,33 @@
   "searchFavorites": {
     "message": "ಮೆಚ್ಚುಗೆಗಳಲ್ಲಿ ಶೋಧ"
   },
-  "searchType": {
-    "message": "ಹುಡುಕಾಟ ಪ್ರಕಾರ",
-    "description": "Search item type"
+  "searchLogin": {
+    "message": "Search logins",
+    "description": "Search Login type"
+  },
+  "searchCard": {
+    "message": "Search cards",
+    "description": "Search Card type"
+  },
+  "searchIdentity": {
+    "message": "Search identities",
+    "description": "Search Identity type"
+  },
+  "searchSecureNote": {
+    "message": "Search secure notes",
+    "description": "Search Secure Note type"
   },
   "searchVault": {
     "message": "ವಾಲ್ಟ್ ಹುಡುಕಿ"
+  },
+  "searchMyVault": {
+    "message": "Search my vault"
+  },
+  "searchOrganization": {
+    "message": "Search organization"
+  },
+  "searchMembers": {
+    "message": "Search members"
   },
   "allItems": {
     "message": "ಎಲ್ಲಾ ವಸ್ತುಗಳು"
@@ -365,6 +386,9 @@
   "select": {
     "message": "ಆಯ್ಕೆಮಾಡಿ"
   },
+  "newItem": {
+    "message": "New item"
+  },
   "addItem": {
     "message": "ಐಟಂ ಸೇರಿಸಿ"
   },
@@ -373,6 +397,12 @@
   },
   "viewItem": {
     "message": "ಐಟಂ ವೀಕ್ಷಿಸಿ"
+  },
+  "new": {
+    "message": "New"
+  },
+  "item": {
+    "message": "Item"
   },
   "ex": {
     "message": "ಉದಾಹರಣೆ.",
@@ -438,6 +468,9 @@
   },
   "vaultItems": {
     "message": "Vault items"
+  },
+  "filter": {
+    "message": "Filter"
   },
   "moveSelectedToOrg": {
     "message": "ಆಯ್ದ ಸಂಸ್ಥೆಗೆ ಸರಿಸಿ"
@@ -544,6 +577,12 @@
   },
   "deletedFolder": {
     "message": "ಫೋಲ್ಡರ್ ಅಳಿಸಿ"
+  },
+  "editInfo": {
+    "message": "Edit info"
+  },
+  "access": {
+    "message": "Access"
   },
   "loggedOut": {
     "message": "ಲಾಗ್ ಔಟ್"
@@ -702,6 +741,9 @@
   "noItemsInList": {
     "message": "ಪಟ್ಟಿ ಮಾಡಲು ಯಾವುದೇ ಐಟಂಗಳಿಲ್ಲ."
   },
+  "noPermissionToViewAllCollectionItems": {
+    "message": "You do not have permission to view all items in this collection."
+  },
   "noCollectionsInList": {
     "message": "ಪಟ್ಟಿ ಮಾಡಲು ಯಾವುದೇ ಸಂಗ್ರಹಗಳಿಲ್ಲ."
   },
@@ -710,6 +752,9 @@
   },
   "noUsersInList": {
     "message": "ಪಟ್ಟಿ ಮಾಡಲು ಬಳಕೆದಾರರಿಲ್ಲ."
+  },
+  "noMembersInList": {
+    "message": "There are no members to list."
   },
   "noEventsInList": {
     "message": "ಪಟ್ಟಿ ಮಾಡಲು ಯಾವುದೇ ಘಟನೆಗಳಿಲ್ಲ."
@@ -854,6 +899,18 @@
         "example": "150"
       }
     }
+  },
+  "deleteSelectedCollectionsDesc": {
+    "message": "$COUNT$ collection(s) will be permanently deleted.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "150"
+      }
+    }
+  },
+  "deleteSelectedConfirmation": {
+    "message": "Are you sure you want to continue?"
   },
   "moveSelectedItemsDesc": {
     "message": "ನೀವು $COUNT$ ಆಯ್ದ ಐಟಂ (ಗಳನ್ನು) ಗೆ ಸರಿಸಲು ಬಯಸುವ ಫೋಲ್ಡರ್ ಆಯ್ಕೆಮಾಡಿ.",
@@ -1558,7 +1615,7 @@
   },
   "orgsReportsDesc": {
     "message": "Identify and close security gaps in your organization's accounts by clicking the reports below.",
-    "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization Vault."
+    "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization vault."
   },
   "unsecuredWebsitesReport": {
     "message": "ಅಸುರಕ್ಷಿತ ವೆಬ್‌ಸೈಟ್‌ಗಳ ವರದಿ"
@@ -2372,6 +2429,15 @@
   "deleteGroupConfirmation": {
     "message": "ಈ ಗುಂಪನ್ನು ಅಳಿಸಲು ನೀವು ಖಚಿತವಾಗಿ ಬಯಸುವಿರಾ?"
   },
+  "deleteMultipleGroupsConfirmation": {
+    "message": "Are you sure you want to delete the following $QUANTITY$ group(s)?",
+    "placeholders": {
+      "quantity": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
   "removeUserConfirmation": {
     "message": "ಈ ಬಳಕೆದಾರರನ್ನು ತೆಗೆದುಹಾಕಲು ನೀವು ಖಚಿತವಾಗಿ ಬಯಸುವಿರಾ?"
   },
@@ -2389,6 +2455,9 @@
   },
   "externalIdDesc": {
     "message": "ಬಾಹ್ಯ ಐಡಿಯನ್ನು ಉಲ್ಲೇಖವಾಗಿ ಬಳಸಬಹುದು ಅಥವಾ ಈ ಸಂಪನ್ಮೂಲವನ್ನು ಬಳಕೆದಾರರ ಡೈರೆಕ್ಟರಿಯಂತಹ ಬಾಹ್ಯ ವ್ಯವಸ್ಥೆಗೆ ಲಿಂಕ್ ಮಾಡಬಹುದು."
+  },
+  "nestCollectionUnder": {
+    "message": "Nest collection under"
   },
   "accessControl": {
     "message": "ಪ್ರವೇಶ ನಿಯಂತ್ರಣ"
@@ -2411,14 +2480,14 @@
   "editCollection": {
     "message": "ಸಂಗ್ರಹವನ್ನು ತಿದ್ದು"
   },
+  "collectionInfo": {
+    "message": "Collection info"
+  },
   "deleteCollectionConfirmation": {
     "message": "ಈ ಸಂಗ್ರಹವನ್ನು ಅಳಿಸಲು ನೀವು ಖಚಿತವಾಗಿ ಬಯಸುವಿರಾ?"
   },
-  "editUser": {
-    "message": "ಬಳಕೆದಾರರನ್ನು ತಿದ್ದು"
-  },
-  "inviteUser": {
-    "message": "ಬಳಕೆದಾರರನ್ನು ಆಹ್ವಾನಿಸಿ"
+  "editMember": {
+    "message": "Edit member"
   },
   "inviteUserDesc": {
     "message": "ನಿಮ್ಮ ಬಳಕೆದಾರರಿಗೆ ಅವರ ಬಿಟ್‌ವಾರ್ಡನ್ ಖಾತೆ ಇಮೇಲ್ ವಿಳಾಸವನ್ನು ಕೆಳಗೆ ನಮೂದಿಸುವ ಮೂಲಕ ಹೊಸ ಬಳಕೆದಾರರನ್ನು ಆಹ್ವಾನಿಸಿ. ಅವರು ಈಗಾಗಲೇ ಬಿಟ್‌ವಾರ್ಡೆನ್ ಖಾತೆಯನ್ನು ಹೊಂದಿಲ್ಲದಿದ್ದರೆ, ಹೊಸ ಖಾತೆಯನ್ನು ರಚಿಸಲು ಅವರನ್ನು ಕೇಳಲಾಗುತ್ತದೆ."
@@ -2684,6 +2753,9 @@
       }
     }
   },
+  "deletedCollections": {
+    "message": "Deleted collections"
+  },
   "deletedCollectionId": {
     "message": "ಸಂಗ್ರಹವನ್ನು ಅಳಿಸಲಾಗಿದೆ $ID$.",
     "placeholders": {
@@ -2726,6 +2798,15 @@
       "id": {
         "content": "$1",
         "example": "Developers"
+      }
+    }
+  },
+  "deletedManyGroups": {
+    "message": "Deleted $QUANTITY$ group(s).",
+    "placeholders": {
+      "quantity": {
+        "content": "$1",
+        "example": "3"
       }
     }
   },
@@ -5458,6 +5539,15 @@
       }
     }
   },
+  "inputForbiddenCharacters": {
+    "message": "The following characters are not allowed: $CHARACTERS$",
+    "placeholders": {
+      "characters": {
+        "content": "$1",
+        "example": "@, #, $, %"
+      }
+    }
+  },
   "fieldsNeedAttention": {
     "message": "$COUNT$ field(s) above need your attention.",
     "placeholders": {
@@ -5531,7 +5621,7 @@
     "message": "Custom Color"
   },
   "multiSelectPlaceholder": {
-    "message": "-- Type to Filter --"
+    "message": "-- Type to filter --"
   },
   "multiSelectLoading": {
     "message": "Retrieving options..."
@@ -5609,9 +5699,6 @@
   },
   "serviceAccounts": {
     "message": "Service Accounts"
-  },
-  "new": {
-    "message": "New"
   },
   "secrets": {
     "message": "Secrets"
@@ -5823,8 +5910,44 @@
   "update": {
     "message": "Update"
   },
+  "plusNMore": {
+    "message": "+ $QUANTITY$ more",
+    "placeholders": {
+      "quantity": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
+  "groupInfo": {
+    "message": "Group info"
+  },
+  "editGroupMembersDesc": {
+    "message": "Grant members access to the group's assigned collections."
+  },
+  "editGroupCollectionsDesc": {
+    "message": "Grant access to collections by adding them to this group."
+  },
+  "accessAllCollectionsDesc": {
+    "message": "Grant access to all current and future collections."
+  },
+  "accessAllCollectionsHelp": {
+    "message": "If checked, this will replace all other collection permissions."
+  },
+  "selectMembers": {
+    "message": "Select members"
+  },
+  "selectCollections": {
+    "message": "Select collections"
+  },
   "role": {
     "message": "Role"
+  },
+  "removeMember": {
+    "message": "Remove member"
+  },
+  "collection": {
+    "message": "Collection"
   },
   "canView": {
     "message": "Can view"
@@ -5838,6 +5961,15 @@
   "canEditExceptPass": {
     "message": "Can edit, except passwords"
   },
+  "noCollectionsAdded": {
+    "message": "No collections added"
+  },
+  "noMembersAdded": {
+    "message": "No members added"
+  },
+  "noGroupsAdded": {
+    "message": "No groups added"
+  },
   "group": {
     "message": "Group"
   },
@@ -5846,6 +5978,39 @@
   },
   "memberAccessAll": {
     "message": "This member can access and modify all items."
+  },
+  "membersColumnHeader": {
+    "message": "Member/Group"
+  },
+  "groupAndMemberColumnHeader": {
+    "message": "Member"
+  },
+  "selectGroupsAndMembers": {
+    "message": "Select groups and members"
+  },
+  "selectGroups": {
+    "message": "Select groups"
+  },
+  "userPermissionOverrideHelper": {
+    "message": "Permissions set for a member will replace permissions set by that member's group"
+  },
+  "noMembersOrGroupsAdded": {
+    "message": "No members or groups added"
+  },
+  "deleted": {
+    "message": "Deleted"
+  },
+  "memberStatusFilter": {
+    "message": "Member status filter"
+  },
+  "inviteMember": {
+    "message": "Invite member"
+  },
+  "needsConfirmation": {
+    "message": "Needs confirmation"
+  },
+  "memberRole": {
+    "message": "Member role"
   },
   "moreFromBitwarden": {
     "message": "More from Bitwarden"

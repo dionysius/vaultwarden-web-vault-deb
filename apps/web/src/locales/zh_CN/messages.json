@@ -277,12 +277,33 @@
   "searchFavorites": {
     "message": "搜索收藏"
   },
-  "searchType": {
-    "message": "搜索类型",
-    "description": "Search item type"
+  "searchLogin": {
+    "message": "搜索登录",
+    "description": "Search Login type"
+  },
+  "searchCard": {
+    "message": "搜索卡片",
+    "description": "Search Card type"
+  },
+  "searchIdentity": {
+    "message": "搜索身份",
+    "description": "Search Identity type"
+  },
+  "searchSecureNote": {
+    "message": "搜索安全备注",
+    "description": "Search Secure Note type"
   },
   "searchVault": {
     "message": "搜索密码库"
+  },
+  "searchMyVault": {
+    "message": "搜索我的密码库"
+  },
+  "searchOrganization": {
+    "message": "搜索组织"
+  },
+  "searchMembers": {
+    "message": "搜索成员"
   },
   "allItems": {
     "message": "所有项目"
@@ -365,6 +386,9 @@
   "select": {
     "message": "选择"
   },
+  "newItem": {
+    "message": "新项目"
+  },
   "addItem": {
     "message": "添加项目"
   },
@@ -373,6 +397,12 @@
   },
   "viewItem": {
     "message": "查看项目"
+  },
+  "new": {
+    "message": "新建"
+  },
+  "item": {
+    "message": "项目"
   },
   "ex": {
     "message": "例如",
@@ -438,6 +468,9 @@
   },
   "vaultItems": {
     "message": "密码库项目"
+  },
+  "filter": {
+    "message": "筛选"
   },
   "moveSelectedToOrg": {
     "message": "移动所选项目到组织"
@@ -544,6 +577,12 @@
   },
   "deletedFolder": {
     "message": "文件夹已删除"
+  },
+  "editInfo": {
+    "message": "编辑信息"
+  },
+  "access": {
+    "message": "Access"
   },
   "loggedOut": {
     "message": "已登出"
@@ -702,6 +741,9 @@
   "noItemsInList": {
     "message": "没有可列出的项目。"
   },
+  "noPermissionToViewAllCollectionItems": {
+    "message": "您没有查看此集合中的所有项目的权限。"
+  },
   "noCollectionsInList": {
     "message": "没有可列出的集合。"
   },
@@ -710,6 +752,9 @@
   },
   "noUsersInList": {
     "message": "没有可列出的用户。"
+  },
+  "noMembersInList": {
+    "message": "没有可列出的成员。"
   },
   "noEventsInList": {
     "message": "没有可列出的事件。"
@@ -854,6 +899,18 @@
         "example": "150"
       }
     }
+  },
+  "deleteSelectedCollectionsDesc": {
+    "message": "$COUNT$ 个集合将被永久删除。",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "150"
+      }
+    }
+  },
+  "deleteSelectedConfirmation": {
+    "message": "您确定要继续吗？"
   },
   "moveSelectedItemsDesc": {
     "message": "选择要将这 $COUNT$ 个项目移动到的文件夹。",
@@ -1558,7 +1615,7 @@
   },
   "orgsReportsDesc": {
     "message": "点击下面的报告来验证和消除您组织帐户中的安全漏洞。",
-    "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization Vault."
+    "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization vault."
   },
   "unsecuredWebsitesReport": {
     "message": "不安全的网站"
@@ -2372,6 +2429,15 @@
   "deleteGroupConfirmation": {
     "message": "您确定要删除此群组吗？"
   },
+  "deleteMultipleGroupsConfirmation": {
+    "message": "Are you sure you want to delete the following $QUANTITY$ group(s)?",
+    "placeholders": {
+      "quantity": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
   "removeUserConfirmation": {
     "message": "您确实要移除此用户吗？"
   },
@@ -2389,6 +2455,9 @@
   },
   "externalIdDesc": {
     "message": "外部 ID 可用作参考，或将此资源与用户目录等外部系统联系起来。"
+  },
+  "nestCollectionUnder": {
+    "message": "Nest collection under"
   },
   "accessControl": {
     "message": "访问控制"
@@ -2411,14 +2480,14 @@
   "editCollection": {
     "message": "编辑集合"
   },
+  "collectionInfo": {
+    "message": "Collection info"
+  },
   "deleteCollectionConfirmation": {
     "message": "你确定要删除此集合吗？"
   },
-  "editUser": {
-    "message": "编辑用户"
-  },
-  "inviteUser": {
-    "message": "邀请用户"
+  "editMember": {
+    "message": "编辑成员"
   },
   "inviteUserDesc": {
     "message": "在下面输入 Bitwarden 账户的电子邮件地址，以邀请新用户加入您的组织。如果他们没有 Bitwarden 账户，将会提示他们创建一个。"
@@ -2684,6 +2753,9 @@
       }
     }
   },
+  "deletedCollections": {
+    "message": "Deleted collections"
+  },
   "deletedCollectionId": {
     "message": "删除了集合 $ID$。",
     "placeholders": {
@@ -2726,6 +2798,15 @@
       "id": {
         "content": "$1",
         "example": "Developers"
+      }
+    }
+  },
+  "deletedManyGroups": {
+    "message": "Deleted $QUANTITY$ group(s).",
+    "placeholders": {
+      "quantity": {
+        "content": "$1",
+        "example": "3"
       }
     }
   },
@@ -5458,6 +5539,15 @@
       }
     }
   },
+  "inputForbiddenCharacters": {
+    "message": "The following characters are not allowed: $CHARACTERS$",
+    "placeholders": {
+      "characters": {
+        "content": "$1",
+        "example": "@, #, $, %"
+      }
+    }
+  },
   "fieldsNeedAttention": {
     "message": "上面的 $COUNT$ 个字段需要您注意。",
     "placeholders": {
@@ -5609,9 +5699,6 @@
   },
   "serviceAccounts": {
     "message": "服务帐户"
-  },
-  "new": {
-    "message": "新建"
   },
   "secrets": {
     "message": "机密"
@@ -5823,8 +5910,44 @@
   "update": {
     "message": "更新"
   },
+  "plusNMore": {
+    "message": "+ $QUANTITY$ more",
+    "placeholders": {
+      "quantity": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
+  "groupInfo": {
+    "message": "Group info"
+  },
+  "editGroupMembersDesc": {
+    "message": "Grant members access to the group's assigned collections."
+  },
+  "editGroupCollectionsDesc": {
+    "message": "Grant access to collections by adding them to this group."
+  },
+  "accessAllCollectionsDesc": {
+    "message": "Grant access to all current and future collections."
+  },
+  "accessAllCollectionsHelp": {
+    "message": "If checked, this will replace all other collection permissions."
+  },
+  "selectMembers": {
+    "message": "Select members"
+  },
+  "selectCollections": {
+    "message": "Select collections"
+  },
   "role": {
     "message": "角色"
+  },
+  "removeMember": {
+    "message": "Remove member"
+  },
+  "collection": {
+    "message": "Collection"
   },
   "canView": {
     "message": "可以查看"
@@ -5838,6 +5961,15 @@
   "canEditExceptPass": {
     "message": "除密码外，可以编辑"
   },
+  "noCollectionsAdded": {
+    "message": "No collections added"
+  },
+  "noMembersAdded": {
+    "message": "No members added"
+  },
+  "noGroupsAdded": {
+    "message": "No groups added"
+  },
   "group": {
     "message": "群组"
   },
@@ -5846,6 +5978,39 @@
   },
   "memberAccessAll": {
     "message": "此成员可以访问和修改所有项目。"
+  },
+  "membersColumnHeader": {
+    "message": "Member/Group"
+  },
+  "groupAndMemberColumnHeader": {
+    "message": "成员"
+  },
+  "selectGroupsAndMembers": {
+    "message": "Select groups and members"
+  },
+  "selectGroups": {
+    "message": "Select groups"
+  },
+  "userPermissionOverrideHelper": {
+    "message": "Permissions set for a member will replace permissions set by that member's group"
+  },
+  "noMembersOrGroupsAdded": {
+    "message": "No members or groups added"
+  },
+  "deleted": {
+    "message": "已删除"
+  },
+  "memberStatusFilter": {
+    "message": "Member status filter"
+  },
+  "inviteMember": {
+    "message": "Invite member"
+  },
+  "needsConfirmation": {
+    "message": "Needs confirmation"
+  },
+  "memberRole": {
+    "message": "Member role"
   },
   "moreFromBitwarden": {
     "message": "来自 Bitwarden 的更多产品"

@@ -277,12 +277,33 @@
   "searchFavorites": {
     "message": "お気に入りの検索"
   },
-  "searchType": {
-    "message": "タイプの検索",
-    "description": "Search item type"
+  "searchLogin": {
+    "message": "ログイン情報を検索",
+    "description": "Search Login type"
+  },
+  "searchCard": {
+    "message": "カードを検索",
+    "description": "Search Card type"
+  },
+  "searchIdentity": {
+    "message": "ID を検索",
+    "description": "Search Identity type"
+  },
+  "searchSecureNote": {
+    "message": "セキュアメモを検索",
+    "description": "Search Secure Note type"
   },
   "searchVault": {
     "message": "保管庫を検索"
+  },
+  "searchMyVault": {
+    "message": "保管庫を検索"
+  },
+  "searchOrganization": {
+    "message": "組織を検索"
+  },
+  "searchMembers": {
+    "message": "メンバーを検索"
   },
   "allItems": {
     "message": "全てのアイテム"
@@ -365,6 +386,9 @@
   "select": {
     "message": "選択"
   },
+  "newItem": {
+    "message": "新しいアイテム"
+  },
   "addItem": {
     "message": "アイテムの追加"
   },
@@ -373,6 +397,12 @@
   },
   "viewItem": {
     "message": "アイテムの表示"
+  },
+  "new": {
+    "message": "新規作成"
+  },
+  "item": {
+    "message": "アイテム"
   },
   "ex": {
     "message": "例:",
@@ -438,6 +468,9 @@
   },
   "vaultItems": {
     "message": "保管庫のアイテム"
+  },
+  "filter": {
+    "message": "フィルター"
   },
   "moveSelectedToOrg": {
     "message": "選択したものを組織に移動"
@@ -544,6 +577,12 @@
   },
   "deletedFolder": {
     "message": "フォルダーを削除しました"
+  },
+  "editInfo": {
+    "message": "情報の編集"
+  },
+  "access": {
+    "message": "アクセス"
   },
   "loggedOut": {
     "message": "ログアウトしました"
@@ -702,6 +741,9 @@
   "noItemsInList": {
     "message": "表示するアイテムがありません"
   },
+  "noPermissionToViewAllCollectionItems": {
+    "message": "このコレクション内のアイテムをすべて表示する権限がありません。"
+  },
   "noCollectionsInList": {
     "message": "表示するコレクションがありません"
   },
@@ -710,6 +752,9 @@
   },
   "noUsersInList": {
     "message": "表示するユーザーがありません"
+  },
+  "noMembersInList": {
+    "message": "表示できるメンバーがいません。"
   },
   "noEventsInList": {
     "message": "表示するイベントがありません"
@@ -854,6 +899,18 @@
         "example": "150"
       }
     }
+  },
+  "deleteSelectedCollectionsDesc": {
+    "message": "$COUNT$ 個のコレクションを完全に削除します。",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "150"
+      }
+    }
+  },
+  "deleteSelectedConfirmation": {
+    "message": "本当に続行しますか？"
   },
   "moveSelectedItemsDesc": {
     "message": "$COUNT$個のアイテムを移動したいフォルダーを選択してください。",
@@ -1558,7 +1615,7 @@
   },
   "orgsReportsDesc": {
     "message": "以下のレポートをクリックして、組織アカウントのセキュリティギャップを特定して修正してください。",
-    "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization Vault."
+    "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization vault."
   },
   "unsecuredWebsitesReport": {
     "message": "非セキュアウェブサイト調査"
@@ -2372,6 +2429,15 @@
   "deleteGroupConfirmation": {
     "message": "本当にこのグループを削除してもよろしいですか？"
   },
+  "deleteMultipleGroupsConfirmation": {
+    "message": "次の $QUANTITY$ 個のグループを削除してもよろしいですか？",
+    "placeholders": {
+      "quantity": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
   "removeUserConfirmation": {
     "message": "本当にこのユーザーを削除してもよろしいですか？"
   },
@@ -2389,6 +2455,9 @@
   },
   "externalIdDesc": {
     "message": "外部 ID は参照用や、ユーザーディレクトリーなどの外部システムへリソースをリンクするために使用できます。"
+  },
+  "nestCollectionUnder": {
+    "message": "コレクションを入れ子にする"
   },
   "accessControl": {
     "message": "アクセスコントロール"
@@ -2411,14 +2480,14 @@
   "editCollection": {
     "message": "コレクションの編集"
   },
+  "collectionInfo": {
+    "message": "コレクション情報"
+  },
   "deleteCollectionConfirmation": {
     "message": "本当にこのコレクションを削除しますか？"
   },
-  "editUser": {
-    "message": "ユーザーの編集"
-  },
-  "inviteUser": {
-    "message": "ユーザーの招待"
+  "editMember": {
+    "message": "メンバーを編集"
   },
   "inviteUserDesc": {
     "message": "組織に新しいユーザーを招待するには、そのユーザーの Bitwarden アカウントのメールアドレスを入力して下さい。Bitwarden アカウントを持っていない場合、そのユーザーはアカウントの作成を求められます。"
@@ -2684,6 +2753,9 @@
       }
     }
   },
+  "deletedCollections": {
+    "message": "コレクションを削除"
+  },
   "deletedCollectionId": {
     "message": "コレクション「$ID$」の削除",
     "placeholders": {
@@ -2726,6 +2798,15 @@
       "id": {
         "content": "$1",
         "example": "Developers"
+      }
+    }
+  },
+  "deletedManyGroups": {
+    "message": "$QUANTITY$ 個のグループを削除しました。",
+    "placeholders": {
+      "quantity": {
+        "content": "$1",
+        "example": "3"
       }
     }
   },
@@ -2847,7 +2928,7 @@
     }
   },
   "createdOrganizationId": {
-    "message": "作成した組織ID$。",
+    "message": "Created organization $ID$.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -5458,6 +5539,15 @@
       }
     }
   },
+  "inputForbiddenCharacters": {
+    "message": "次の文字は許可されていません: $CHARACTERS$",
+    "placeholders": {
+      "characters": {
+        "content": "$1",
+        "example": "@, #, $, %"
+      }
+    }
+  },
   "fieldsNeedAttention": {
     "message": "上記の $COUNT$ フィールドを確認してください。",
     "placeholders": {
@@ -5609,9 +5699,6 @@
   },
   "serviceAccounts": {
     "message": "サービスアカウント"
-  },
-  "new": {
-    "message": "新規作成"
   },
   "secrets": {
     "message": "シークレット"
@@ -5779,7 +5866,7 @@
     "message": "表示するアクセス トークンはありません"
   },
   "accessTokensNoItemsDesc": {
-    "message": "To get started, create an access token"
+    "message": "始めるにはアクセストークンを作成してください"
   },
   "downloadAccessToken": {
     "message": "閉じる前にダウンロードまたはコピーする。"
@@ -5823,8 +5910,44 @@
   "update": {
     "message": "更新"
   },
+  "plusNMore": {
+    "message": "+ $QUANTITY$ 個以上",
+    "placeholders": {
+      "quantity": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
+  "groupInfo": {
+    "message": "グループ情報"
+  },
+  "editGroupMembersDesc": {
+    "message": "メンバーがグループに割り当てられたコレクションへのアクセスを許可します。"
+  },
+  "editGroupCollectionsDesc": {
+    "message": "このグループに追加してコレクションへのアクセスを許可します。"
+  },
+  "accessAllCollectionsDesc": {
+    "message": "現在および将来のすべてのコレクションへのアクセスを許可します。"
+  },
+  "accessAllCollectionsHelp": {
+    "message": "チェックされている場合、他のすべてのコレクション権限が置き換えられます。"
+  },
+  "selectMembers": {
+    "message": "メンバーを選択"
+  },
+  "selectCollections": {
+    "message": "コレクションを選択"
+  },
   "role": {
     "message": "役割"
+  },
+  "removeMember": {
+    "message": "メンバーを削除"
+  },
+  "collection": {
+    "message": "コレクション"
   },
   "canView": {
     "message": "閲覧可能"
@@ -5838,6 +5961,15 @@
   "canEditExceptPass": {
     "message": "パスワード以外は編集可能"
   },
+  "noCollectionsAdded": {
+    "message": "コレクションが追加されていません"
+  },
+  "noMembersAdded": {
+    "message": "メンバーが追加されていません"
+  },
+  "noGroupsAdded": {
+    "message": "グループが追加されていません"
+  },
   "group": {
     "message": "グループ"
   },
@@ -5846,6 +5978,39 @@
   },
   "memberAccessAll": {
     "message": "このメンバーはすべてのアイテムにアクセスして変更できます。"
+  },
+  "membersColumnHeader": {
+    "message": "メンバー/グループ"
+  },
+  "groupAndMemberColumnHeader": {
+    "message": "メンバー"
+  },
+  "selectGroupsAndMembers": {
+    "message": "グループとメンバーを選択"
+  },
+  "selectGroups": {
+    "message": "グループを選択"
+  },
+  "userPermissionOverrideHelper": {
+    "message": "メンバーの権限設定は、そのメンバーのグループによって設定された権限に置き換えられます"
+  },
+  "noMembersOrGroupsAdded": {
+    "message": "メンバーまたはグループが追加されていません"
+  },
+  "deleted": {
+    "message": "削除しました"
+  },
+  "memberStatusFilter": {
+    "message": "メンバーステータスのフィルター"
+  },
+  "inviteMember": {
+    "message": "メンバーを招待する"
+  },
+  "needsConfirmation": {
+    "message": "確認が必要"
+  },
+  "memberRole": {
+    "message": "メンバーロール"
   },
   "moreFromBitwarden": {
     "message": "Bitwarden の詳細"

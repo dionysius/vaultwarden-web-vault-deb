@@ -277,12 +277,33 @@
   "searchFavorites": {
     "message": "Meklēt izlasē"
   },
-  "searchType": {
-    "message": "Meklēt veidu",
-    "description": "Search item type"
+  "searchLogin": {
+    "message": "Meklēt pieteikšanās vārdus",
+    "description": "Search Login type"
+  },
+  "searchCard": {
+    "message": "Meklēt kartes",
+    "description": "Search Card type"
+  },
+  "searchIdentity": {
+    "message": "Meklēt identitātes",
+    "description": "Search Identity type"
+  },
+  "searchSecureNote": {
+    "message": "Meklēt drošās piezīmes",
+    "description": "Search Secure Note type"
   },
   "searchVault": {
     "message": "Meklēt glabātavā"
+  },
+  "searchMyVault": {
+    "message": "Meklēt manā glabātavā"
+  },
+  "searchOrganization": {
+    "message": "Meklēt organizāciju"
+  },
+  "searchMembers": {
+    "message": "Meklēt dalībniekus"
   },
   "allItems": {
     "message": "Visi vienumi"
@@ -365,6 +386,9 @@
   "select": {
     "message": "Atlasīt"
   },
+  "newItem": {
+    "message": "Jauns vienums"
+  },
   "addItem": {
     "message": "Pievienot vienumu"
   },
@@ -373,6 +397,12 @@
   },
   "viewItem": {
     "message": "Skatīt vienumu"
+  },
+  "new": {
+    "message": "Jauns"
+  },
+  "item": {
+    "message": "Vienums"
   },
   "ex": {
     "message": "piem.",
@@ -438,6 +468,9 @@
   },
   "vaultItems": {
     "message": "Glabātavas vienumi"
+  },
+  "filter": {
+    "message": "Atlase"
   },
   "moveSelectedToOrg": {
     "message": "Pārvietot atzīmēto uz apvienību"
@@ -544,6 +577,12 @@
   },
   "deletedFolder": {
     "message": "Mape izdzēsta"
+  },
+  "editInfo": {
+    "message": "Rediģēt informāciju"
+  },
+  "access": {
+    "message": "Piekļuve"
   },
   "loggedOut": {
     "message": "Izrakstījies"
@@ -702,6 +741,9 @@
   "noItemsInList": {
     "message": "Nav vienumu, ko parādīt."
   },
+  "noPermissionToViewAllCollectionItems": {
+    "message": "Jums nav atļaujas skatīt visus šī krājuma vienumus."
+  },
   "noCollectionsInList": {
     "message": "Nav krājumu, ko parādīt."
   },
@@ -710,6 +752,9 @@
   },
   "noUsersInList": {
     "message": "Nav lietotāju, ko parādīt."
+  },
+  "noMembersInList": {
+    "message": "Nav dalībnieku, ko uzskaitīt."
   },
   "noEventsInList": {
     "message": "Nav notikumu, ko parādīt."
@@ -854,6 +899,18 @@
         "example": "150"
       }
     }
+  },
+  "deleteSelectedCollectionsDesc": {
+    "message": "$COUNT$ krājums(i) tiks neatgriezeniski izdzēsts(i).",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "150"
+      }
+    }
+  },
+  "deleteSelectedConfirmation": {
+    "message": "Vai tiešām vēlaties turpināt?"
   },
   "moveSelectedItemsDesc": {
     "message": "Izvēlēties mapi, uz kuru pārvietot atlasīto(s) $COUNT$ vienumu(s).",
@@ -1558,7 +1615,7 @@
   },
   "orgsReportsDesc": {
     "message": "Noteikt un novērst drošības nepilnības apvienības kontos klikšķinot uz zemāk esošajām atskaitēm.",
-    "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization Vault."
+    "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization vault."
   },
   "unsecuredWebsitesReport": {
     "message": "Nedrošu tīmekļa vietņu pārskats"
@@ -1823,7 +1880,7 @@
     }
   },
   "premiumPriceWithFamilyPlan": {
-    "message": "Iegūsti premium tikai par $PRICE$ gadā vai iegūsti premium kontus lietotājiem $FAMILYPLANUSERCOUNT$ un neierobežotu ģimenes koplietošanu ar ",
+    "message": "Iegūt Premium tikai par $PRICE$ gadā vai Premium kontus $FAMILYPLANUSERCOUNT$ lietotājiem un neierobežotu ģimenes koplietošanu ar ",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -1836,7 +1893,7 @@
     }
   },
   "bitwardenFamiliesPlan": {
-    "message": "Bitwarden Families plāns."
+    "message": "Bitwarden ģimenēm."
   },
   "addons": {
     "message": "Papildinājumi"
@@ -2372,6 +2429,15 @@
   "deleteGroupConfirmation": {
     "message": "Vai tiešām vēlaties dzēst šo kopu?"
   },
+  "deleteMultipleGroupsConfirmation": {
+    "message": "Vai tiešām vēlaties dzēst šādu $QUANTITY$ grupu(-as)?",
+    "placeholders": {
+      "quantity": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
   "removeUserConfirmation": {
     "message": "Vai tiešām noņemt šo lietotāju?"
   },
@@ -2389,6 +2455,9 @@
   },
   "externalIdDesc": {
     "message": "Ārējo ID var izmanto kā atsauci vai kā saikni starp šo līdzekli un ārēju sistēmu, piemēram, lietotāju direktoriju."
+  },
+  "nestCollectionUnder": {
+    "message": "Ievietot krājumu zem"
   },
   "accessControl": {
     "message": "Piekļuves pārraudzība"
@@ -2411,14 +2480,14 @@
   "editCollection": {
     "message": "Labot krājumu"
   },
+  "collectionInfo": {
+    "message": "Krājuma informācija"
+  },
   "deleteCollectionConfirmation": {
     "message": "Vai tiešām izdzēst šo krājumu?"
   },
-  "editUser": {
-    "message": "Labot lietotāju"
-  },
-  "inviteUser": {
-    "message": "Uzaicināt lietotāju"
+  "editMember": {
+    "message": "Rediģēt dalībnieku"
   },
   "inviteUserDesc": {
     "message": "Uziacināt apvienībā jaunu lietotāju, zemāk esošajā laukā ievadot viņa Bitwarden konta e-pasta adresi. Ja viņam vēl nav Bitwarden konta, tiks vaicāts izveidot jaunu."
@@ -2684,6 +2753,9 @@
       }
     }
   },
+  "deletedCollections": {
+    "message": "Izdzēstie krājumi"
+  },
   "deletedCollectionId": {
     "message": "Izdzēsts krājums $ID$.",
     "placeholders": {
@@ -2726,6 +2798,15 @@
       "id": {
         "content": "$1",
         "example": "Developers"
+      }
+    }
+  },
+  "deletedManyGroups": {
+    "message": "Izdzēsta(-as) $QUANTITY$ grupa(-as).",
+    "placeholders": {
+      "quantity": {
+        "content": "$1",
+        "example": "3"
       }
     }
   },
@@ -5458,6 +5539,15 @@
       }
     }
   },
+  "inputForbiddenCharacters": {
+    "message": "Šādas rakstzīmes nav atļautas: $CHARACTERS$",
+    "placeholders": {
+      "characters": {
+        "content": "$1",
+        "example": "@, #, $, %"
+      }
+    }
+  },
   "fieldsNeedAttention": {
     "message": "$COUNT$ augstāk esošajiem laukam(iem) ir jāpievērš uzmanība.",
     "placeholders": {
@@ -5492,16 +5582,16 @@
     "message": "Tas neesi Tu?"
   },
   "pickAnAvatarColor": {
-    "message": "Izvēlies avatāra krāsu"
+    "message": "Izvēlēties iemiesojuma krāsu"
   },
   "customizeAvatar": {
-    "message": "Pielāgot avatāru"
+    "message": "Pielāgot iemiesojumu"
   },
   "avatarUpdated": {
-    "message": "Avatārs atjaunināts"
+    "message": "Iemiesojums atjaunots"
   },
   "brightBlue": {
-    "message": "Spilgti Zils"
+    "message": "Spilgti zils"
   },
   "green": {
     "message": "Zaļš"
@@ -5510,7 +5600,7 @@
     "message": "Oranžs"
   },
   "lavender": {
-    "message": "Lavanda"
+    "message": "Lavandas"
   },
   "yellow": {
     "message": "Dzeltens"
@@ -5522,13 +5612,13 @@
     "message": "Zilganzaļa"
   },
   "salmon": {
-    "message": "Lasis"
+    "message": "Laša"
   },
   "pink": {
     "message": "Rozā"
   },
   "customColor": {
-    "message": "Pielāgota Krāsa"
+    "message": "Pielāgota krāsa"
   },
   "multiSelectPlaceholder": {
     "message": "-- Rakstīt, lai atlasītu --"
@@ -5578,13 +5668,13 @@
     "message": "Izdzēst noslēpumus"
   },
   "secretProjectAssociationDescription": {
-    "message": "Atlasi projektus, ar kuriem noslēpums tiks saistīts. Noslēpumu varēs redzēt tikai tie organizācijas lietotāji, kuriem ir piekļuve šiem projektiem."
+    "message": "Atlasīt projektus, ar kuriem tiks saistīts noslēpums. Tikai apvienību lietotāji ar piekļuvi šiem projektiem varēs redzēt noslēpumu."
   },
   "typeOrSelectProjects": {
-    "message": "Ieraksti vai atlasi Projekti"
+    "message": "Ierakstīt vai atlasīt projektus"
   },
   "typeOrSelectProject": {
-    "message": "Ieraksti vai atlasi Projekts"
+    "message": "Ierakstīt vai atlasīt projektu"
   },
   "project": {
     "message": "Projekts"
@@ -5609,9 +5699,6 @@
   },
   "serviceAccounts": {
     "message": "Pakalpojumu konti"
-  },
-  "new": {
-    "message": "Jauns"
   },
   "secrets": {
     "message": "Noslēpumi"
@@ -5823,8 +5910,44 @@
   "update": {
     "message": "Atjaunināt"
   },
+  "plusNMore": {
+    "message": "+ vēl $QUANTITY$",
+    "placeholders": {
+      "quantity": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
+  "groupInfo": {
+    "message": "Grupas informācija"
+  },
+  "editGroupMembersDesc": {
+    "message": "Nodrošināt dalībniekiem piekļuvi grupai piešķirtajiem krājumiem."
+  },
+  "editGroupCollectionsDesc": {
+    "message": "Piešķirt piekļuvi krājumiem, pievienojot tos šai grupai."
+  },
+  "accessAllCollectionsDesc": {
+    "message": "Piešķirt piekļuvi visiem pašreizējiem un turpmākajiem krājumiem."
+  },
+  "accessAllCollectionsHelp": {
+    "message": "Ja atzīmēts, tiks aizstātas visas citas krājumu atļaujas."
+  },
+  "selectMembers": {
+    "message": "Atlasīt dalībniekus"
+  },
+  "selectCollections": {
+    "message": "Atlasīt krājumus"
+  },
   "role": {
     "message": "Loma"
+  },
+  "removeMember": {
+    "message": "Noņemt dalībnieku"
+  },
+  "collection": {
+    "message": "Krājums"
   },
   "canView": {
     "message": "Var skatīt"
@@ -5838,6 +5961,15 @@
   "canEditExceptPass": {
     "message": "Var labot, izņemot paroles"
   },
+  "noCollectionsAdded": {
+    "message": "Nav pievienotu krājumu"
+  },
+  "noMembersAdded": {
+    "message": "Nav pievienotu dalībnieku"
+  },
+  "noGroupsAdded": {
+    "message": "Nav pievienotu grupu"
+  },
   "group": {
     "message": "Kopa"
   },
@@ -5846,6 +5978,39 @@
   },
   "memberAccessAll": {
     "message": "Šis dalībnieks var piekļūt visiem vienumiem un mainīt tos."
+  },
+  "membersColumnHeader": {
+    "message": "Dalībnieks/Grupa"
+  },
+  "groupAndMemberColumnHeader": {
+    "message": "Dalībnieks"
+  },
+  "selectGroupsAndMembers": {
+    "message": "Atlasīt grupas un dalībniekus"
+  },
+  "selectGroups": {
+    "message": "Atlasīt grupas"
+  },
+  "userPermissionOverrideHelper": {
+    "message": "Dalībniekam iestatītās atļaujas aizstās šī dalībnieka grupas noteiktās atļaujas"
+  },
+  "noMembersOrGroupsAdded": {
+    "message": "Nav pievienotu dalībnieku vai grupu"
+  },
+  "deleted": {
+    "message": "Izdzēsts"
+  },
+  "memberStatusFilter": {
+    "message": "Dalībnieka statusa filtrs"
+  },
+  "inviteMember": {
+    "message": "Uzaicināt dalībnieku"
+  },
+  "needsConfirmation": {
+    "message": "Nepieciešams apstiprinājums"
+  },
+  "memberRole": {
+    "message": "Dalībnieka loma"
   },
   "moreFromBitwarden": {
     "message": "Vairāk no Bitwarden"

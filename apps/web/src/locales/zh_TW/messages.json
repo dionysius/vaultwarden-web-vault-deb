@@ -277,12 +277,33 @@
   "searchFavorites": {
     "message": "搜尋我的最愛"
   },
-  "searchType": {
-    "message": "搜尋類型",
-    "description": "Search item type"
+  "searchLogin": {
+    "message": "Search logins",
+    "description": "Search Login type"
+  },
+  "searchCard": {
+    "message": "Search cards",
+    "description": "Search Card type"
+  },
+  "searchIdentity": {
+    "message": "Search identities",
+    "description": "Search Identity type"
+  },
+  "searchSecureNote": {
+    "message": "Search secure notes",
+    "description": "Search Secure Note type"
   },
   "searchVault": {
     "message": "搜尋密碼庫"
+  },
+  "searchMyVault": {
+    "message": "Search my vault"
+  },
+  "searchOrganization": {
+    "message": "Search organization"
+  },
+  "searchMembers": {
+    "message": "Search members"
   },
   "allItems": {
     "message": "所有項目"
@@ -365,6 +386,9 @@
   "select": {
     "message": "選擇"
   },
+  "newItem": {
+    "message": "New item"
+  },
   "addItem": {
     "message": "新增項目"
   },
@@ -373,6 +397,12 @@
   },
   "viewItem": {
     "message": "檢視項目"
+  },
+  "new": {
+    "message": "新增"
+  },
+  "item": {
+    "message": "Item"
   },
   "ex": {
     "message": "例如",
@@ -438,6 +468,9 @@
   },
   "vaultItems": {
     "message": "密碼庫項目"
+  },
+  "filter": {
+    "message": "Filter"
   },
   "moveSelectedToOrg": {
     "message": "移動所選至組織"
@@ -544,6 +577,12 @@
   },
   "deletedFolder": {
     "message": "資料夾已刪除"
+  },
+  "editInfo": {
+    "message": "Edit info"
+  },
+  "access": {
+    "message": "Access"
   },
   "loggedOut": {
     "message": "已登出"
@@ -702,6 +741,9 @@
   "noItemsInList": {
     "message": "沒有可列出的項目。"
   },
+  "noPermissionToViewAllCollectionItems": {
+    "message": "You do not have permission to view all items in this collection."
+  },
   "noCollectionsInList": {
     "message": "沒有可列出的集合。"
   },
@@ -710,6 +752,9 @@
   },
   "noUsersInList": {
     "message": "沒有可列出的使用者。"
+  },
+  "noMembersInList": {
+    "message": "There are no members to list."
   },
   "noEventsInList": {
     "message": "沒有可列出的事件。"
@@ -847,13 +892,25 @@
     "message": "編輯與此項目共享的集合。只有具有這些集合存取權限的組織使用者才能夠看到此項目。"
   },
   "deleteSelectedItemsDesc": {
-    "message": "您已經選取了 $COUNT$ 個項目要刪除。確定要刪除這些項目嗎 ?",
+    "message": "您已經選取了 $COUNT$ 個項目。確定要刪除這些項目嗎 ?",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "150"
       }
     }
+  },
+  "deleteSelectedCollectionsDesc": {
+    "message": "$COUNT$ collection(s) will be permanently deleted.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "150"
+      }
+    }
+  },
+  "deleteSelectedConfirmation": {
+    "message": "Are you sure you want to continue?"
   },
   "moveSelectedItemsDesc": {
     "message": "選擇要將這 $COUNT$ 個項目移動至哪個資料夾。",
@@ -936,10 +993,10 @@
     "message": "設定一組密碼來加密匯出的資料，並使用此密碼解密以匯入至任意 Bitwarden 帳戶。"
   },
   "exportTypeHeading": {
-    "message": "Export type"
+    "message": "匯出類型"
   },
   "accountRestricted": {
-    "message": "Account restricted"
+    "message": "帳號已限制"
   },
   "passwordProtected": {
     "message": "密碼保護"
@@ -1558,7 +1615,7 @@
   },
   "orgsReportsDesc": {
     "message": "點選下方的報告，識別並消除組織帳號的安全漏洞。",
-    "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization Vault."
+    "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization vault."
   },
   "unsecuredWebsitesReport": {
     "message": "不安全的網站"
@@ -1836,7 +1893,7 @@
     }
   },
   "bitwardenFamiliesPlan": {
-    "message": "Bitwarden Families plan."
+    "message": "Bitwarden 家庭計劃。"
   },
   "addons": {
     "message": "附加項目"
@@ -2372,6 +2429,15 @@
   "deleteGroupConfirmation": {
     "message": "您確定要刪除這個群組？"
   },
+  "deleteMultipleGroupsConfirmation": {
+    "message": "Are you sure you want to delete the following $QUANTITY$ group(s)?",
+    "placeholders": {
+      "quantity": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
   "removeUserConfirmation": {
     "message": "您確定要移除此使用者？"
   },
@@ -2389,6 +2455,9 @@
   },
   "externalIdDesc": {
     "message": "外部 ID 可用於參考，或將此資源與使用者目錄等外部系統連結起來。"
+  },
+  "nestCollectionUnder": {
+    "message": "Nest collection under"
   },
   "accessControl": {
     "message": "存取控制"
@@ -2411,14 +2480,14 @@
   "editCollection": {
     "message": "編輯集合"
   },
+  "collectionInfo": {
+    "message": "Collection info"
+  },
   "deleteCollectionConfirmation": {
     "message": "確定要刪除此集合嗎？"
   },
-  "editUser": {
-    "message": "編輯使用者"
-  },
-  "inviteUser": {
-    "message": "邀請使用者"
+  "editMember": {
+    "message": "Edit member"
   },
   "inviteUserDesc": {
     "message": "在下方輸入 Bitwarden 帳戶的電子郵件位址，以邀請新使用者加入您的組織。若他們沒有 Bitwarden 帳戶，系統將提示他們建立新帳戶。"
@@ -2684,6 +2753,9 @@
       }
     }
   },
+  "deletedCollections": {
+    "message": "Deleted collections"
+  },
   "deletedCollectionId": {
     "message": "已刪除集合 $ID$。",
     "placeholders": {
@@ -2726,6 +2798,15 @@
       "id": {
         "content": "$1",
         "example": "Developers"
+      }
+    }
+  },
+  "deletedManyGroups": {
+    "message": "Deleted $QUANTITY$ group(s).",
+    "placeholders": {
+      "quantity": {
+        "content": "$1",
+        "example": "3"
       }
     }
   },
@@ -4136,19 +4217,19 @@
     "message": "進階設定允許更精細地控制使用者權限。"
   },
   "customDescNonEnterpriseStart": {
-    "message": "Custom roles is an ",
+    "message": "自訂角色是 ",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Custom roles is an enterprise feature. Contact our support team to upgrade your subscription'"
   },
   "customDescNonEnterpriseLink": {
-    "message": "enterprise feature",
+    "message": "企業功能",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Custom roles is an enterprise feature. Contact our support team to upgrade your subscription'"
   },
   "customDescNonEnterpriseEnd": {
-    "message": ". Contact our support team to upgrade your subscription",
+    "message": "。請聯絡我們的支援團隊升級您的訂閱",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Custom roles is an enterprise feature. Contact our support team to upgrade your subscription'"
   },
   "customNonEnterpriseError": {
-    "message": "To enable custom permissions the organization must be on an Enterprise 2020 plan."
+    "message": "要啟用自訂權限，該組織必須處於 2020 企業計劃中。"
   },
   "permissions": {
     "message": "權限"
@@ -5458,6 +5539,15 @@
       }
     }
   },
+  "inputForbiddenCharacters": {
+    "message": "The following characters are not allowed: $CHARACTERS$",
+    "placeholders": {
+      "characters": {
+        "content": "$1",
+        "example": "@, #, $, %"
+      }
+    }
+  },
   "fieldsNeedAttention": {
     "message": "您需注意上方的 $COUNT$ 個欄位。",
     "placeholders": {
@@ -5492,43 +5582,43 @@
     "message": "不是您嗎？"
   },
   "pickAnAvatarColor": {
-    "message": "Pick an avatar color"
+    "message": "選擇頭像顏色"
   },
   "customizeAvatar": {
-    "message": "Customize avatar"
+    "message": "自訂頭像"
   },
   "avatarUpdated": {
-    "message": "Avatar updated"
+    "message": "頭像已更新"
   },
   "brightBlue": {
-    "message": "Bright Blue"
+    "message": "亮藍色"
   },
   "green": {
-    "message": "Green"
+    "message": "綠色"
   },
   "orange": {
-    "message": "Orange"
+    "message": "橙色"
   },
   "lavender": {
-    "message": "Lavender"
+    "message": "淡紫色"
   },
   "yellow": {
-    "message": "Yellow"
+    "message": "黃色"
   },
   "indigo": {
-    "message": "Indigo"
+    "message": "靛藍色"
   },
   "teal": {
-    "message": "Teal"
+    "message": "藍綠色"
   },
   "salmon": {
-    "message": "Salmon"
+    "message": "淡橙紅色"
   },
   "pink": {
-    "message": "Pink"
+    "message": "粉紅色"
   },
   "customColor": {
-    "message": "Custom Color"
+    "message": "自訂顏色"
   },
   "multiSelectPlaceholder": {
     "message": "-- 輸入以進行篩選 --"
@@ -5543,66 +5633,66 @@
     "message": "全部清除"
   },
   "toggleCharacterCount": {
-    "message": "Toggle character count",
+    "message": "切換字元計數",
     "description": "'Character count' describes a feature that displays a number next to each character of the password."
   },
   "passwordCharacterCount": {
-    "message": "Password character count",
+    "message": "密碼字元計數",
     "description": "'Character count' describes a feature that displays a number next to each character of the password."
   },
   "hide": {
     "message": "隱藏"
   },
   "projects": {
-    "message": "Projects"
+    "message": "項目"
   },
   "lastEdited": {
-    "message": "Last Edited"
+    "message": "最後編輯紀錄"
   },
   "editSecret": {
-    "message": "Edit Secret"
+    "message": "編輯機密"
   },
   "addSecret": {
-    "message": "Add Secret"
+    "message": "加入機密"
   },
   "copySecretName": {
-    "message": "Copy Secret Name"
+    "message": "複製機密名稱"
   },
   "copySecretValue": {
-    "message": "Copy Secret Value"
+    "message": "複製機密值"
   },
   "deleteSecret": {
-    "message": "Delete Secret"
+    "message": "刪除機密"
   },
   "deleteSecrets": {
-    "message": "Delete Secrets"
+    "message": "刪除機密"
   },
   "secretProjectAssociationDescription": {
-    "message": "Select projects that the secret will be associated with. Only organization users with access to these projects will be able to see the secret."
+    "message": "選擇與機密相關聯的項目。僅有權存取該項目的組織使用者能檢視該機密。"
   },
   "typeOrSelectProjects": {
-    "message": "Type or select Projects"
+    "message": "輸入或選擇項目"
   },
   "typeOrSelectProject": {
-    "message": "Type or select Project"
+    "message": "輸入或選擇項目"
   },
   "project": {
-    "message": "Project"
+    "message": "項目"
   },
   "editProject": {
-    "message": "Edit Project"
+    "message": "編輯項目"
   },
   "viewProject": {
-    "message": "View Project"
+    "message": "檢視項目"
   },
   "deleteProject": {
-    "message": "Delete Project"
+    "message": "刪除項目"
   },
   "deleteProjects": {
-    "message": "Delete Projects"
+    "message": "刪除項目"
   },
   "secret": {
-    "message": "Secret"
+    "message": "機密"
   },
   "serviceAccount": {
     "message": "服務帳號"
@@ -5610,104 +5700,101 @@
   "serviceAccounts": {
     "message": "服務帳號"
   },
-  "new": {
-    "message": "New"
-  },
   "secrets": {
-    "message": "Secrets"
+    "message": "機密"
   },
   "nameValuePair": {
-    "message": "Name/Value Pair"
+    "message": "名稱/值對"
   },
   "secretEdited": {
-    "message": "Secret edited"
+    "message": "機密已編輯"
   },
   "secretCreated": {
-    "message": "Secret created"
+    "message": "機密已建立"
   },
   "newSecret": {
-    "message": "New Secret"
+    "message": "新增機密"
   },
   "newServiceAccount": {
-    "message": "New Service Account"
+    "message": "新增服務帳號"
   },
   "secretsNoItemsTitle": {
-    "message": "No secrets to show"
+    "message": "沒有可顯示的機密"
   },
   "secretsNoItemsMessage": {
-    "message": "To get started, add a new secret or import secrets."
+    "message": "要開始，請加入一個新的機密或匯入機密。"
   },
   "serviceAccountsNoItemsTitle": {
-    "message": "Nothing to show yet"
+    "message": "還沒有要顯示的內容"
   },
   "serviceAccountsNoItemsMessage": {
     "message": "Create a new Service Account to get started automating secret access."
   },
   "searchSecrets": {
-    "message": "Search Secrets"
+    "message": "搜尋機密"
   },
   "deleteServiceAccounts": {
-    "message": "Delete Service Accounts"
+    "message": "刪除服務帳號"
   },
   "deleteServiceAccount": {
-    "message": "Delete Service Account"
+    "message": "刪除服務帳號"
   },
   "viewServiceAccount": {
-    "message": "View Service Account"
+    "message": "檢視服務帳號"
   },
   "searchServiceAccounts": {
-    "message": "Search Service Accounts"
+    "message": "搜尋服務帳號"
   },
   "addProject": {
-    "message": "Add Project"
+    "message": "加入項目"
   },
   "projectEdited": {
-    "message": "Project edited"
+    "message": "項目已編輯"
   },
   "projectSaved": {
-    "message": "Project saved"
+    "message": "項目已儲存"
   },
   "projectCreated": {
-    "message": "Project created"
+    "message": "項目已建立"
   },
   "projectName": {
-    "message": "Project Name"
+    "message": "項目名稱"
   },
   "newProject": {
-    "message": "New Project"
+    "message": "新增項目"
   },
   "softDeleteSecretWarning": {
-    "message": "Deleting secrets can affect existing integrations."
+    "message": "刪除機密可能會影響現有的整合。"
   },
   "softDeletesSuccessToast": {
-    "message": "Secrets sent to trash"
+    "message": "機密已移至垃圾桶"
   },
   "serviceAccountCreated": {
-    "message": "Service Account Created"
+    "message": "服務帳號已建立"
   },
   "smAccess": {
-    "message": "Access"
+    "message": "存取"
   },
   "projectCommaSecret": {
-    "message": "Project, Secret"
+    "message": "項目，機密"
   },
   "serviceAccountName": {
     "message": "服務帳號名稱"
   },
   "newSaSelectAccess": {
-    "message": "Type or Select Projects or Secrets"
+    "message": "輸入或選擇項目或機密"
   },
   "newSaTypeToFilter": {
-    "message": "Type to Filter"
+    "message": "輸入以進行篩選"
   },
   "deleteProjectsToast": {
-    "message": "Projects deleted"
+    "message": "項目已刪除"
   },
   "deleteProjectToast": {
-    "message": "The project and all associated secrets have been deleted"
+    "message": "項目和所有相關的機密已被刪除"
   },
   "deleteProjectDialogMessage": {
-    "message": "Deleting project $PROJECT$ is permanent and irreversible.",
+    "message": "刪除項目 $PROJECT$ 為永久性動作，並且無法恢復。",
     "placeholders": {
       "project": {
         "content": "$1",
@@ -5716,7 +5803,7 @@
     }
   },
   "deleteProjectInputLabel": {
-    "message": "Type \"$CONFIRM$\" to continue",
+    "message": "輸入「$CONFIRM$」以繼續",
     "placeholders": {
       "confirm": {
         "content": "$1",
@@ -5734,7 +5821,7 @@
     }
   },
   "deleteProjectsConfirmMessage": {
-    "message": "Delete $COUNT$ Projects",
+    "message": "刪除 $COUNT$ 個項目",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -5743,10 +5830,10 @@
     }
   },
   "deleteProjectsDialogMessage": {
-    "message": "Deleting projects is permanent and irreversible."
+    "message": "刪除項目為永久性動作，並且無法恢復。"
   },
   "projectsNoItemsTitle": {
-    "message": "No projects to display"
+    "message": "沒有可顯示的項目"
   },
   "projectsNoItemsMessage": {
     "message": "Add a new project to get started organizing secrets."
@@ -5755,13 +5842,13 @@
     "message": "需要確認"
   },
   "bulkDeleteProjectsErrorMessage": {
-    "message": "The following projects could not be deleted:"
+    "message": "以下項目無法刪除："
   },
   "softDeleteSuccessToast": {
-    "message": "Secret sent to trash"
+    "message": "機密已移至垃圾桶"
   },
   "searchProjects": {
-    "message": "Search Projects"
+    "message": "搜尋項目"
   },
   "accessTokens": {
     "message": "存取權杖"
@@ -5770,25 +5857,25 @@
     "message": "建立存取權杖"
   },
   "expires": {
-    "message": "Expires"
+    "message": "逾期"
   },
   "canRead": {
-    "message": "Can Read"
+    "message": "可以讀取"
   },
   "accessTokensNoItemsTitle": {
-    "message": "No access tokens to show"
+    "message": "沒有可顯示的存取權杖"
   },
   "accessTokensNoItemsDesc": {
-    "message": "To get started, create an access token"
+    "message": "要開始，請建立一個存取權杖"
   },
   "downloadAccessToken": {
-    "message": "Download or copy before closing."
+    "message": "關閉前下載或複製。"
   },
   "expiresOnAccessToken": {
-    "message": "Expires on:"
+    "message": "到期日："
   },
   "accessTokenCallOutTitle": {
-    "message": "Access tokens are not stored and cannot be retrieved"
+    "message": "存取權杖未儲存，無法取得"
   },
   "copyToken": {
     "message": "複製權杖"
@@ -5797,19 +5884,19 @@
     "message": "存取權杖"
   },
   "accessTokenExpirationRequired": {
-    "message": "Expiration date required"
+    "message": "到期日期是必需的。"
   },
   "accessTokenCreatedAndCopied": {
-    "message": "Access token created and copied to clipboard"
+    "message": "存取權杖已建立且已複製到剪貼簿"
   },
   "accessTokenPermissionsBetaNotification": {
-    "message": "Permissions management is unavailable for beta."
+    "message": "Beta 版中的權限管理不可用。"
   },
   "revokeAccessToken": {
-    "message": "Revoke Access Token"
+    "message": "撤銷存取權杖"
   },
   "submenu": {
-    "message": "Submenu"
+    "message": "子選單"
   },
   "from": {
     "message": "從"
@@ -5823,8 +5910,44 @@
   "update": {
     "message": "更新"
   },
+  "plusNMore": {
+    "message": "+ $QUANTITY$ more",
+    "placeholders": {
+      "quantity": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
+  "groupInfo": {
+    "message": "Group info"
+  },
+  "editGroupMembersDesc": {
+    "message": "Grant members access to the group's assigned collections."
+  },
+  "editGroupCollectionsDesc": {
+    "message": "Grant access to collections by adding them to this group."
+  },
+  "accessAllCollectionsDesc": {
+    "message": "Grant access to all current and future collections."
+  },
+  "accessAllCollectionsHelp": {
+    "message": "If checked, this will replace all other collection permissions."
+  },
+  "selectMembers": {
+    "message": "Select members"
+  },
+  "selectCollections": {
+    "message": "Select collections"
+  },
   "role": {
     "message": "角色"
+  },
+  "removeMember": {
+    "message": "Remove member"
+  },
+  "collection": {
+    "message": "Collection"
   },
   "canView": {
     "message": "可以檢視"
@@ -5838,6 +5961,15 @@
   "canEditExceptPass": {
     "message": "可以編輯（除了密碼）"
   },
+  "noCollectionsAdded": {
+    "message": "No collections added"
+  },
+  "noMembersAdded": {
+    "message": "No members added"
+  },
+  "noGroupsAdded": {
+    "message": "No groups added"
+  },
   "group": {
     "message": "群組"
   },
@@ -5847,14 +5979,47 @@
   "memberAccessAll": {
     "message": "此成員可存取及變更所有項目。"
   },
+  "membersColumnHeader": {
+    "message": "Member/Group"
+  },
+  "groupAndMemberColumnHeader": {
+    "message": "Member"
+  },
+  "selectGroupsAndMembers": {
+    "message": "Select groups and members"
+  },
+  "selectGroups": {
+    "message": "Select groups"
+  },
+  "userPermissionOverrideHelper": {
+    "message": "Permissions set for a member will replace permissions set by that member's group"
+  },
+  "noMembersOrGroupsAdded": {
+    "message": "No members or groups added"
+  },
+  "deleted": {
+    "message": "Deleted"
+  },
+  "memberStatusFilter": {
+    "message": "Member status filter"
+  },
+  "inviteMember": {
+    "message": "Invite member"
+  },
+  "needsConfirmation": {
+    "message": "Needs confirmation"
+  },
+  "memberRole": {
+    "message": "Member role"
+  },
   "moreFromBitwarden": {
-    "message": "More from Bitwarden"
+    "message": "來自 Bitwarden 的更多產品"
   },
   "switchProducts": {
     "message": "切換產品"
   },
   "freeOrgInvLimitReachedManageBilling": {
-    "message": "Free organizations may have up to $SEATCOUNT$ members. Upgrade to a paid plan to invite more members.",
+    "message": "免費組織最多擁有 $SEATCOUNT$ 個成員。升級到付費計劃以邀請更多成員。",
     "placeholders": {
       "seatcount": {
         "content": "$1",
@@ -5863,7 +6028,7 @@
     }
   },
   "freeOrgInvLimitReachedNoManageBilling": {
-    "message": "Free organizations may have up to $SEATCOUNT$ members. Contact your organization owner to upgrade.",
+    "message": "免費組織最多擁有 $SEATCOUNT$ 個成員。請聯絡您的組織所有者升級。",
     "placeholders": {
       "seatcount": {
         "content": "$1",
@@ -5872,7 +6037,7 @@
     }
   },
   "freeOrgMaxCollectionReachedManageBilling": {
-    "message": "Free organizations may have up to $COLLECTIONCOUNT$ collections. Upgrade to a paid plan to add more collections.",
+    "message": "免費組織最多擁有 $COLLECTIONCOUNT$ 個成員。升級到付費計劃以邀請更多成員。",
     "placeholders": {
       "COLLECTIONCOUNT": {
         "content": "$1",
@@ -5881,7 +6046,7 @@
     }
   },
   "freeOrgMaxCollectionReachedNoManageBilling": {
-    "message": "Free organizations may have up to $COLLECTIONCOUNT$ collections. Contact your organization owner to upgrade.",
+    "message": "免費組織最多擁有 $COLLECTIONCOUNT$ 個成員。請聯絡您的組織所有者升級。",
     "placeholders": {
       "COLLECTIONCOUNT": {
         "content": "$1",

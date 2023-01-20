@@ -171,7 +171,7 @@
     "description": "This describes a field that is 'linked' (related) to another field."
   },
   "remove": {
-    "message": "Retirer"
+    "message": "Supprimer"
   },
   "unassigned": {
     "message": "Non attribué"
@@ -277,12 +277,33 @@
   "searchFavorites": {
     "message": "Rechercher dans les favoris"
   },
-  "searchType": {
-    "message": "Rechercher dans le type",
-    "description": "Search item type"
+  "searchLogin": {
+    "message": "Rechercher dans les identifiants",
+    "description": "Search Login type"
+  },
+  "searchCard": {
+    "message": "Rechercher dans les cartes",
+    "description": "Search Card type"
+  },
+  "searchIdentity": {
+    "message": "Rechercher dans les identités",
+    "description": "Search Identity type"
+  },
+  "searchSecureNote": {
+    "message": "Rechercher dans les notes sécurisées",
+    "description": "Search Secure Note type"
   },
   "searchVault": {
     "message": "Rechercher dans le coffre"
+  },
+  "searchMyVault": {
+    "message": "Rechercher dans mon coffre"
+  },
+  "searchOrganization": {
+    "message": "Recherche dans les organisations"
+  },
+  "searchMembers": {
+    "message": "Rechercher dans les membres"
   },
   "allItems": {
     "message": "Tous les éléments"
@@ -365,6 +386,9 @@
   "select": {
     "message": "Sélectionner"
   },
+  "newItem": {
+    "message": "Nouvel élément"
+  },
   "addItem": {
     "message": "Ajouter un élément"
   },
@@ -373,6 +397,12 @@
   },
   "viewItem": {
     "message": "Afficher l'élément"
+  },
+  "new": {
+    "message": "Nouveau"
+  },
+  "item": {
+    "message": "Élément"
   },
   "ex": {
     "message": "ex.",
@@ -438,6 +468,9 @@
   },
   "vaultItems": {
     "message": "Objets du Coffre"
+  },
+  "filter": {
+    "message": "Filtre"
   },
   "moveSelectedToOrg": {
     "message": "Déplacer la sélection vers l'organisation"
@@ -545,6 +578,12 @@
   "deletedFolder": {
     "message": "Dossier supprimé"
   },
+  "editInfo": {
+    "message": "Éditer les informations"
+  },
+  "access": {
+    "message": "Accès"
+  },
   "loggedOut": {
     "message": "Déconnecté"
   },
@@ -597,7 +636,7 @@
     "message": "Soumettre"
   },
   "emailAddressDesc": {
-    "message": "Vous utiliserez votre adresse e-mail pour vous connecter."
+    "message": "Vous utiliserez votre adresse électronique pour vous connecter."
   },
   "yourName": {
     "message": "Votre nom"
@@ -702,6 +741,9 @@
   "noItemsInList": {
     "message": "Aucun élément à afficher."
   },
+  "noPermissionToViewAllCollectionItems": {
+    "message": "Vous n'avez pas la permission de voir tous les éléments de cette collection."
+  },
   "noCollectionsInList": {
     "message": "Aucune collection à afficher."
   },
@@ -710,6 +752,9 @@
   },
   "noUsersInList": {
     "message": "Aucun utilisateur à afficher."
+  },
+  "noMembersInList": {
+    "message": "Il n'y a pas de membres à répertorier."
   },
   "noEventsInList": {
     "message": "Aucun événement à afficher."
@@ -854,6 +899,18 @@
         "example": "150"
       }
     }
+  },
+  "deleteSelectedCollectionsDesc": {
+    "message": "$COUNT$ collection(s) sera(seront) supprimée(s) définitivement.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "150"
+      }
+    }
+  },
+  "deleteSelectedConfirmation": {
+    "message": "Êtes-vous sûr(e) de vouloir continuer ?"
   },
   "moveSelectedItemsDesc": {
     "message": "Choisissez le dossier vers lequel vous souhaitez déplacer les $COUNT$ élément(s) sélectionné(s).",
@@ -1049,7 +1106,7 @@
     "message": "Veuillez vous reconnecter."
   },
   "logBackInOthersToo": {
-    "message": "Veuillez vous reconnecter. Si vous utilisez d'autres applications Bitwarden, déconnectez-vous puis reconnectez-vous dans ces applications également."
+    "message": "Veuillez vous reconnecter. Si vous utilisez d'autres applications Bitwarden, déconnectez-vous et reconnectez-vous également de celles-ci."
   },
   "changeMasterPassword": {
     "message": "Changer le mot de passe principal"
@@ -1414,7 +1471,7 @@
     "message": "Appuyez sur le bouton de la YubiKey."
   },
   "twoFactorYubikeySaveForm": {
-    "message": "Sauvegarder le contenu du formulaire."
+    "message": "Sauvegarder le formulaire."
   },
   "twoFactorYubikeyWarning": {
     "message": "En raison des limitations de la plateforme, les YubiKey ne peuvent pas être utilisées sur toutes les applications Bitwarden. Vous devriez mettre en place un autre fournisseur d'authentification à deux facteurs pouvoir accéder à votre compte lorsque les YubiKeys ne peuvent pas être utilisées. Plateformes prises en charge :"
@@ -1516,7 +1573,7 @@
     "message": "Si la clé de sécurité a un bouton, touchez-le."
   },
   "twoFactorU2fSaveForm": {
-    "message": "Sauvegarder le contenu du formulaire."
+    "message": "Sauvegarder le formulaire."
   },
   "twoFactorU2fWarning": {
     "message": "En raison des limitations de la plateforme, FIDO U2F ne peut pas être utilisé sur toutes les applications Bitwarden. Vous devriez mettre en place un autre fournisseur d'authentification à deux facteurs pouvoir accéder à votre compte lorsque FIDO U2F ne peut pas être utilisé. Plateformes prises en charge :"
@@ -1558,7 +1615,7 @@
   },
   "orgsReportsDesc": {
     "message": "Identifiez et fermez les trous de sécurité dans les comptes de votre organisation en cliquant sur les rapports ci-dessous.",
-    "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization Vault."
+    "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization vault."
   },
   "unsecuredWebsitesReport": {
     "message": "Rapport sur les sites web non sécurisés"
@@ -1927,7 +1984,7 @@
     "message": "Carte de crédit"
   },
   "paypalClickSubmit": {
-    "message": "Cliquez sur le bouton PayPal pour vous connecter sur votre compte PayPal, puis cliquez sur le bouton Soumettre ci-dessous pour continuer."
+    "message": "Sélectionnez le bouton PayPal pour vous connecter à votre compte PayPal, puis cliquez sur le bouton Soumettre ci-dessous pour continuer."
   },
   "cancelSubscription": {
     "message": "Annuler l'abonnement"
@@ -1945,7 +2002,7 @@
     "message": "Rétablir l'abonnement"
   },
   "reinstateConfirmation": {
-    "message": "Êtes-vous sûr de vouloir retirer la demande d’annulation en attente et rétablir votre abonnement ?"
+    "message": "Êtes-vous sûr de vouloir supprimer la demande d'annulation en attente et rétablir votre abonnement ?"
   },
   "reinstated": {
     "message": "Votre abonnement a été rétabli."
@@ -2056,13 +2113,13 @@
     "message": "Go de stockage à ajouter"
   },
   "gbStorageRemove": {
-    "message": "Go de stockage à retirer"
+    "message": "Go de stockage à supprimer"
   },
   "storageAddNote": {
     "message": "L'ajout d'espace de stockage entraînera des ajustements sur vos totaux de facturation et facturera immédiatement le moyen de paiement enregistré. La première facturation sera calculée au prorata du reste du cycle de facturation en cours."
   },
   "storageRemoveNote": {
-    "message": "La suppression d'espace de stockage entraînera des ajustements sur vos totaux de facturation qui seront calculés au prorata et portés au crédit de votre prochaine facturation."
+    "message": "La suppression du stockage entraînera des ajustements de vos totaux de facturation qui seront calculés au prorata sous forme de crédits pour votre prochaine facturation."
   },
   "adjustedStorage": {
     "message": "$AMOUNT$ Go de stockage mis à jour.",
@@ -2372,23 +2429,35 @@
   "deleteGroupConfirmation": {
     "message": "Êtes-vous sûr de vouloir supprimer ce groupe?"
   },
+  "deleteMultipleGroupsConfirmation": {
+    "message": "Êtes-vous sûr de vouloir supprimer le(s) $QUANTITY$ groupe(s) suivant(s) ?",
+    "placeholders": {
+      "quantity": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
   "removeUserConfirmation": {
-    "message": "Êtes-vous sûr de vouloir retirer cet utilisateur ?"
+    "message": "Êtes-vous sûr de vouloir supprimer cet utilisateur ?"
   },
   "removeOrgUserConfirmation": {
-    "message": "Lorsqu'un membre est supprimé, il n'a plus accès aux données de l'organisation et cette action est irréversible. Pour ajouter de nouveau le membre à l'organisation, il doit être invité et inscrit à nouveau."
+    "message": "Lorsqu'un membre est supprimé, il n'a plus accès aux données de l'organisation et cette action est irréversible. Pour réintégrer le membre dans l'organisation, il faut l'inviter et l'intégrer à nouveau."
   },
   "revokeUserConfirmation": {
     "message": "Lorsqu'un membre est révoqué, il n'a plus accès aux données de l'organisation. Pour restaurer rapidement l'accès des membres, allez dans l'onglet Révoqué."
   },
   "removeUserConfirmationKeyConnector": {
-    "message": "Attention ! Cet utilisateur a besoin de Key Connector pour gérer son chiffrement. Supprimer cet utilisateur de votre organisation désactivera définitivement son compte. Cette action ne peut pas être annulée. Voulez-vous continuer?"
+    "message": "Attention ! Cet utilisateur a besoin de Key Connector pour gérer son chiffrement. Si vous supprimez cet utilisateur de votre organisation, son compte sera définitivement désactivé. Cette action ne peut être annulée. Voulez-vous poursuivre ?"
   },
   "externalId": {
     "message": "Identifiant externe"
   },
   "externalIdDesc": {
     "message": "L’identifiant externe peut être utilisé comme référence ou pour lier cette ressource à un système externe tel qu’un répertoire utilisateur."
+  },
+  "nestCollectionUnder": {
+    "message": "Collection imbriquée dessous"
   },
   "accessControl": {
     "message": "Contrôle d’accès"
@@ -2411,14 +2480,14 @@
   "editCollection": {
     "message": "Modifier la collection"
   },
+  "collectionInfo": {
+    "message": "Informations de la collection"
+  },
   "deleteCollectionConfirmation": {
     "message": "Êtes-vous sûr de vouloir supprimer cette collection?"
   },
-  "editUser": {
-    "message": "Modifier un utilisateur"
-  },
-  "inviteUser": {
-    "message": "Inviter un utilisateur"
+  "editMember": {
+    "message": "Éditer le membre"
   },
   "inviteUserDesc": {
     "message": "Invitez de nouveaux utilisateurs à votre organisation en entrant l'adresse e-mail de leur compte Bitwarden ci-dessous. S'ils n’ont pas déjà un compte Bitwarden, il leur sera demandé d'en créer un nouveau."
@@ -2684,6 +2753,9 @@
       }
     }
   },
+  "deletedCollections": {
+    "message": "Collections supprimées"
+  },
   "deletedCollectionId": {
     "message": "Collection $ID$ supprimée.",
     "placeholders": {
@@ -2729,8 +2801,17 @@
       }
     }
   },
+  "deletedManyGroups": {
+    "message": "$QUANTITY$ groupe(s) supprimé(s).",
+    "placeholders": {
+      "quantity": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
   "removedUserId": {
-    "message": "Utilisateur $ID$ retiré.",
+    "message": "Utilisateur $ID$ supprimé.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2739,7 +2820,7 @@
     }
   },
   "removeUserIdAccess": {
-    "message": "Retirer l'accès à $ID$",
+    "message": "Supprimer l'accès à $ID$",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -3167,7 +3248,7 @@
     "description": "Seat = User Seat"
   },
   "removeSeats": {
-    "message": "Retirer les sièges",
+    "message": "Supprimer des licences",
     "description": "Seat = User Seat"
   },
   "subscriptionDesc": {
@@ -3249,13 +3330,13 @@
     "message": "Sièges à ajouter"
   },
   "seatsToRemove": {
-    "message": "Sièges à enlever"
+    "message": "Licences à supprimer"
   },
   "seatsAddNote": {
     "message": "L'ajout de licences utilisateur entraînera des ajustements sur vos totaux de facturation et facturera immédiatement le moyen de paiement enregistré. La première facturation sera calculée au prorata du reste du cycle de facturation en cours."
   },
   "seatsRemoveNote": {
-    "message": "La suppression de licences utilisateur entraînera des ajustements sur vos totaux de facturation qui seront calculés au prorata et portés au crédit de votre prochaine facturation."
+    "message": "La suppression de licences utilisateur entraînera des ajustements de vos totaux de facturation qui seront répartis au prorata sous forme de crédits sur votre prochaine facturation."
   },
   "adjustedSeats": {
     "message": "$AMOUNT$ licences utilisateurs mis à jour.",
@@ -3282,7 +3363,7 @@
     "message": "Nous sommes passés à des clés de chiffrement plus grandes qui offrent une meilleure sécurité et un accès à des fonctionnalités plus récentes. La mise à jour de votre clé de chiffrement est rapide et facile. Il suffit de saisir votre mot de passe principal ci-dessous. Cette mise à jour deviendra éventuellement obligatoire."
   },
   "updateEncryptionKeyWarning": {
-    "message": "Après avoir mis à jour votre clé de chiffrement, vous devrez vous reconnecter sur toutes les applications Bitwarden que vous utilisez actuellement (comme par exemple l'application mobile ou les extensions de navigateur). Le fait de ne pas vous déconnecter et de vous reconnecter (ce qui télécharge votre nouvelle clé de chiffrement) pourrait entraîner une corruption des données. Nous allons essayer de vous déconnecter automatiquement, mais cela demande un peu de temps."
+    "message": "Après avoir mis à jour votre clé de chiffrement, vous devez vous déconnecter et vous reconnecter à toutes les applications Bitwarden que vous utilisez actuellement (comme l'application mobile ou les extensions de navigateur). Si vous ne vous déconnectez pas et ne vous reconnectez pas (ce qui télécharge votre nouvelle clé de chiffrement), cela peut entraîner une corruption des données. Nous tenterons de vous déconnecter automatiquement, mais cela peut être retardé."
   },
   "updateEncryptionKeyExportWarning": {
     "message": "Tous les exports chiffrés que vous avez enregistrés deviendront également invalides."
@@ -3735,7 +3816,7 @@
     "message": "Identifiant SSO"
   },
   "ssoIdentifierHint": {
-    "message": "Fournissez cet ID à vos membres pour se connecter avec SSO."
+    "message": "Fournissez cet ID à vos membres pour se connecter avec le SSO."
   },
   "unlinkSso": {
     "message": "Délier SSO"
@@ -3756,7 +3837,7 @@
     "message": "Votre organisation actuelle a une politique qui ne vous permet pas de rejoindre plus d'une organisation. Veuillez contacter les administrateurs de votre organisation ou vous inscrire à partir d'un compte Bitwarden différent."
   },
   "singleOrgPolicyWarning": {
-    "message": "Les membres de l'organisation qui ne sont ni propriétaires ni administrateurs et qui sont déjà membres d'une autre organisation seront retirés de votre organisation."
+    "message": "Les membres de l'organisation qui ne sont pas propriétaires ou administrateurs et qui sont déjà membres d'une autre organisation seront supprimés de votre organisation."
   },
   "requireSso": {
     "message": "Authentification par Connexion Unique (Single Sign-On)"
@@ -3990,7 +4071,7 @@
     "message": "Utilisateur invité."
   },
   "acceptEmergencyAccess": {
-    "message": "Vous avez été invité à devenir un contact d'urgence pour l'utilisateur indiqué ci-dessus. Pour accepter l'invitation, vous devez vous connecter ou créer un nouveau compte Bitwarden."
+    "message": "Vous avez été invité à devenir un contact d'urgence pour l'utilisateur mentionné ci-dessus. Pour accepter l'invitation, vous devez vous connecter ou créer un nouveau compte Bitwarden."
   },
   "emergencyInviteAcceptFailed": {
     "message": "Impossible d'accepter l'invitation. Demandez à l'utilisateur d'envoyer une nouvelle invitation."
@@ -4054,7 +4135,7 @@
     "message": "Accès d'urgence refusé."
   },
   "passwordResetFor": {
-    "message": "Réinitialisation du mot de passe pour $USER$. Vous pouvez maintenant vous connecter en utilisant le nouveau mot de passe.",
+    "message": "Mot de passe réinitialisé pour $USER$. Vous pouvez maintenant vous connecter en utilisant le nouveau mot de passe.",
     "placeholders": {
       "user": {
         "content": "$1",
@@ -4063,7 +4144,7 @@
     }
   },
   "personalOwnership": {
-    "message": "Propriété individuelle"
+    "message": "Supprimer le coffre individuel"
   },
   "personalOwnershipPolicyDesc": {
     "message": "Exiger que les utilisateurs enregistrent des éléments du coffre dans une organisation en retirant l'option de propriété individuelle."
@@ -4075,7 +4156,7 @@
     "message": "En raison d'une politique d'entreprise, il vous est interdit d'enregistrer des éléments dans votre coffre personnel. Sélectionnez une organisation dans l'option Propriété et choisissez parmi les collections disponibles."
   },
   "disableSend": {
-    "message": "Désactiver le Send"
+    "message": "Supprimer le Send"
   },
   "disableSendPolicyDesc": {
     "message": "Ne pas autoriser les utilisateurs à créer ou modifier un Send Bitwarden. La suppression d'un envoi existant est toujours autorisée.",
@@ -4085,7 +4166,7 @@
     "message": "Les utilisateurs de l'organisation qui peuvent gérer les politiques de l'organisation sont exonérés de l'application de cette politique."
   },
   "sendDisabled": {
-    "message": "Send désactivé",
+    "message": "Send supprimé",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendDisabledWarning": {
@@ -4226,7 +4307,7 @@
     "message": "Une politique d'organisation a désactivé l'import d'éléments dans votre coffre personnel."
   },
   "personalOwnershipCheckboxDesc": {
-    "message": "Désactiver la propriété individuelle des utilisateurs de l'organisation"
+    "message": "Supprimer la propriété individuelle des utilisateurs de l'organisation"
   },
   "textHiddenByDefault": {
     "message": "Lors de l'accès à ce Send, masquer le texte par défaut",
@@ -4478,10 +4559,10 @@
     "message": "Cette action n'est applicable à aucun des utilisateurs sélectionnés."
   },
   "removeUsersWarning": {
-    "message": "Êtes-vous sûr de vouloir supprimer les utilisateurs suivants ? Le processus peut prendre quelques secondes et ne peut être interrompu ou annulé."
+    "message": "Êtes-vous sûr de vouloir supprimer les utilisateurs suivants ? Le processus peut prendre quelques secondes pour s'achever et ne peut être interrompu ou annulé."
   },
   "removeOrgUsersConfirmation": {
-    "message": "Lorsque les membres sont supprimés, ils n'ont plus accès aux données de l'organisation et cette action est irréversible. Pour ajouter de nouveau ces membres à l'organisation, ils doivent être invités et inscrit à nouveau. Le processus peut prendre quelques secondes et ne peut pas être interrompu ou annulé."
+    "message": "Lorsque les membres sont supprimés, ils n'ont plus accès aux données de l'organisation et cette action est irréversible. Pour réintégrer le membre dans l'organisation, il faut l'inviter et l'intégrer à nouveau. Le processus peut prendre quelques secondes pour s'achever et ne peut pas être interrompu ou annulé."
   },
   "revokeUsersWarning": {
     "message": "Lorsque les membres sont révoqués, ils n'ont plus accès aux données de l'organisation. Pour restaurer rapidement l'accès des membres, allez dans l'onglet Révoqué. Le processus peut prendre quelques secondes et ne peut pas être interrompu ou annulé."
@@ -4584,7 +4665,7 @@
     "message": "Rejoindre le fournisseur"
   },
   "joinProviderDesc": {
-    "message": "Vous avez été invité à rejoindre le fournisseur ci-dessus. Pour accepter l'invitation, vous devez vous connecter ou créer un nouveau compte Bitwarden."
+    "message": "Vous avez été invité à rejoindre le fournisseur listé ci-dessus. Pour accepter l'invitation, vous devez vous connecter ou créer un nouveau compte Bitwarden."
   },
   "providerInviteAcceptFailed": {
     "message": "Impossible d'accepter l'invitation. Demandez à un administrateur du fournisseur d'envoyer une nouvelle invitation."
@@ -4721,13 +4802,13 @@
     "message": "Le délai de mise en veille du coffre n'est pas dans l'intervalle de temps autorisé."
   },
   "disablePersonalVaultExport": {
-    "message": "Désactiver l'export du coffre personnel"
+    "message": "Supprimer l'exportation individuelle du coffre"
   },
   "disablePersonalVaultExportDesc": {
     "message": "Empêche les utilisateurs d'exporter les données de leur coffre privé."
   },
   "vaultExportDisabled": {
-    "message": "Export du coffre désactivé"
+    "message": "Export du coffre supprimé"
   },
   "personalVaultExportPolicyInEffect": {
     "message": "Une ou plusieurs politiques d'organisation vous empêchent d'exporter votre coffre personnel."
@@ -4883,13 +4964,13 @@
     "message": "Entrez votre adresse e-mail personnelle pour obtenir Bitwarden Familles"
   },
   "sponsoredFamiliesLeaveCopy": {
-    "message": "Si vous quittez ou que vous êtes retiré de l'organisation marraine, votre forfait Familles expirera à la fin de la période de facturation."
+    "message": "Si vous supprimez une offre ou si vous n'êtes plus membre de l'organisation de parrainage, votre parrainage Familles expirera à la prochaine date de renouvellement."
   },
   "acceptBitwardenFamiliesHelp": {
     "message": "Acceptez l'offre pour une organisation existante ou créer une nouvelle organisation Familles."
   },
   "setupSponsoredFamiliesLoginDesc": {
-    "message": "Vous avez reçu un abonnement gratuit pour une organisation Bitwarden Familles. Pour continuer, vous devez vous connecter au compte qui a reçu l'offre."
+    "message": "Il vous a été offert un plan organisation Bitwarden \"Families\" gratuit. Pour continuer, vous devez vous connecter au compte qui a reçu l'offre."
   },
   "sponsoredFamiliesAcceptFailed": {
     "message": "Impossible d'accepter l'offre. Veuillez renvoyer l'e-mail de l'offre depuis votre compte professionnel et réessayer."
@@ -4946,7 +5027,7 @@
     "message": "Supprimer le parrainage"
   },
   "removeSponsorshipConfirmation": {
-    "message": "Après avoir supprimé un parrainage, vous serez responsable de cet abonnement et des factures associées. Êtes-vous sûr de vouloir continuer ?"
+    "message": "Après avoir supprimé un parrainage, vous serez responsable de cet abonnement et des factures afférentes. Êtes-vous sûr de vouloir continuer ?"
   },
   "sponsorshipCreated": {
     "message": "Parrainage créé"
@@ -4988,7 +5069,7 @@
     "message": "Code de vérification invalide"
   },
   "convertOrganizationEncryptionDesc": {
-    "message": "$ORGANIZATION$ utilise SSO avec un serveur de clés auto-hébergé. Un mot de passe maître n'est plus nécessaire aux membres de cette organisation pour se connecter.",
+    "message": "$ORGANIZATION$ utilise le SSO avec un serveur de clés auto-hébergé. Un mot de passe principal n'est plus nécessaire aux membres de cette organisation pour se connecter.",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -5012,15 +5093,15 @@
     "message": "Une fois configuré, votre configuration sera enregistrée et les membres seront en mesure de s'authentifier en utilisant leurs identifiants de l'Identity Provider."
   },
   "ssoPolicyHelpStart": {
-    "message": "Activer la",
+    "message": "Utiliser la",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Use the require single-sign-on authentication policy to require all members to log in with SSO.'"
   },
   "ssoPolicyHelpLink": {
-    "message": "politique de connexion SSO",
+    "message": "politique d'authentification unique",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Use the require single-sign-on authentication policy to require all members to log in with SSO.'"
   },
   "ssoPolicyHelpEnd": {
-    "message": "pour obliger tous les membres à se connecter avec SSO.",
+    "message": "pour exiger que tous les membres se connectent avec le SSO.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Use the require single-sign-on authentication policy to require all members to log in with SSO.'"
   },
   "ssoPolicyHelpKeyConnector": {
@@ -5135,7 +5216,7 @@
     "message": "La Synchronisation de Facturation fournit des forfaits Familles Gratuits pour les membres et des capacités de facturation avancées en liant votre Bitwarden auto-hébergé au serveur cloud Bitwarden."
   },
   "billingSyncKeyDesc": {
-    "message": "Un Jeton de Synchronisation de Facturation à partir des paramètres d'abonnement de votre organisation dans le cloud est nécessaire pour remplir ce formulaire."
+    "message": "Un jeton de synchronisation de facturation provenant des paramètres d'abonnement de votre organisation dans le cloud est nécessaire pour remplir ce formulaire."
   },
   "billingSyncKey": {
     "message": "Jeton de Synchronisation de Facturation"
@@ -5153,7 +5234,7 @@
     "message": "Envoyé"
   },
   "requestRemoved": {
-    "message": "Supprimé (en Attente de Synchronisation)"
+    "message": "Supprimé (en attente de synchronisation)"
   },
   "requested": {
     "message": "Demandé"
@@ -5458,6 +5539,15 @@
       }
     }
   },
+  "inputForbiddenCharacters": {
+    "message": "Les caractères suivants ne sont pas autorisés : $CHARACTERS$",
+    "placeholders": {
+      "characters": {
+        "content": "$1",
+        "example": "@, #, $, %"
+      }
+    }
+  },
   "fieldsNeedAttention": {
     "message": "$COUNT$ champ(s) ci-dessus nécessitent votre attention.",
     "placeholders": {
@@ -5609,9 +5699,6 @@
   },
   "serviceAccounts": {
     "message": "Comptes de Service"
-  },
-  "new": {
-    "message": "Nouveau"
   },
   "secrets": {
     "message": "Secrets"
@@ -5823,8 +5910,44 @@
   "update": {
     "message": "Mis à jour"
   },
+  "plusNMore": {
+    "message": "+ $QUANTITY$ de plus",
+    "placeholders": {
+      "quantity": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
+  "groupInfo": {
+    "message": "Informations du groupe"
+  },
+  "editGroupMembersDesc": {
+    "message": "Accorder aux membres l'accès aux collections assignées au groupe."
+  },
+  "editGroupCollectionsDesc": {
+    "message": "Accorder l'accès aux collections en les ajoutant à ce groupe."
+  },
+  "accessAllCollectionsDesc": {
+    "message": "Accorder l'accès à toutes les collections actuelles et futures."
+  },
+  "accessAllCollectionsHelp": {
+    "message": "Si coché, cela remplacera toutes les autres autorisations de collection."
+  },
+  "selectMembers": {
+    "message": "Sélectionner les membres"
+  },
+  "selectCollections": {
+    "message": "Sélectionner les collections"
+  },
   "role": {
     "message": "Rôle"
+  },
+  "removeMember": {
+    "message": "Supprimer le membre"
+  },
+  "collection": {
+    "message": "Collection"
   },
   "canView": {
     "message": "Peut voir"
@@ -5838,6 +5961,15 @@
   "canEditExceptPass": {
     "message": "Peut modifier, sauf les mots de passe"
   },
+  "noCollectionsAdded": {
+    "message": "Pas de collections ajoutées"
+  },
+  "noMembersAdded": {
+    "message": "Pas de membres ajoutés"
+  },
+  "noGroupsAdded": {
+    "message": "Pas de groupes ajoutés"
+  },
   "group": {
     "message": "Groupe"
   },
@@ -5846,6 +5978,39 @@
   },
   "memberAccessAll": {
     "message": "Ce groupe peut voir et modifier tous les éléments."
+  },
+  "membersColumnHeader": {
+    "message": "Membre/Groupe"
+  },
+  "groupAndMemberColumnHeader": {
+    "message": "Membre"
+  },
+  "selectGroupsAndMembers": {
+    "message": "Sélectionner les groupes et les membres"
+  },
+  "selectGroups": {
+    "message": "Sélectionner les groupes"
+  },
+  "userPermissionOverrideHelper": {
+    "message": "Les permissions définies pour un membre remplaceront les permissions définies par le groupe de ce membre"
+  },
+  "noMembersOrGroupsAdded": {
+    "message": "Aucun membre ou groupe ajouté"
+  },
+  "deleted": {
+    "message": "Supprimé"
+  },
+  "memberStatusFilter": {
+    "message": "Filtre de statut de membre"
+  },
+  "inviteMember": {
+    "message": "Inviter un membre"
+  },
+  "needsConfirmation": {
+    "message": "Confirmation nécessaire"
+  },
+  "memberRole": {
+    "message": "Rôle du membre"
   },
   "moreFromBitwarden": {
     "message": "Plus de Bitwarden"

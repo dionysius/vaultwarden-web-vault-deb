@@ -277,12 +277,33 @@
   "searchFavorites": {
     "message": "Шукати в обраному"
   },
-  "searchType": {
-    "message": "Шукати за типом",
-    "description": "Search item type"
+  "searchLogin": {
+    "message": "Шукати записи входу",
+    "description": "Search Login type"
+  },
+  "searchCard": {
+    "message": "Шукати картки",
+    "description": "Search Card type"
+  },
+  "searchIdentity": {
+    "message": "Шукати особисті дані",
+    "description": "Search Identity type"
+  },
+  "searchSecureNote": {
+    "message": "Шукати захищені нотатки",
+    "description": "Search Secure Note type"
   },
   "searchVault": {
     "message": "Шукати у сховищі"
+  },
+  "searchMyVault": {
+    "message": "Шукати у сховищі"
+  },
+  "searchOrganization": {
+    "message": "Шукати в організації"
+  },
+  "searchMembers": {
+    "message": "Шукати учасників"
   },
   "allItems": {
     "message": "Всі елементи"
@@ -365,6 +386,9 @@
   "select": {
     "message": "Обрати"
   },
+  "newItem": {
+    "message": "Новий запис"
+  },
   "addItem": {
     "message": "Додати запис"
   },
@@ -373,6 +397,12 @@
   },
   "viewItem": {
     "message": "Перегляд запису"
+  },
+  "new": {
+    "message": "Новий"
+  },
+  "item": {
+    "message": "Запис"
   },
   "ex": {
     "message": "зразок",
@@ -438,6 +468,9 @@
   },
   "vaultItems": {
     "message": "Елементи сховища"
+  },
+  "filter": {
+    "message": "Фільтр"
   },
   "moveSelectedToOrg": {
     "message": "Перемістити вибране до організації"
@@ -544,6 +577,12 @@
   },
   "deletedFolder": {
     "message": "Теку видалено"
+  },
+  "editInfo": {
+    "message": "Редагувати інформацію"
+  },
+  "access": {
+    "message": "Доступ"
   },
   "loggedOut": {
     "message": "Ви вийшли"
@@ -702,6 +741,9 @@
   "noItemsInList": {
     "message": "Немає записів."
   },
+  "noPermissionToViewAllCollectionItems": {
+    "message": "У вас немає повноважень на перегляд усіх записів у цій збірці."
+  },
   "noCollectionsInList": {
     "message": "Немає збірок."
   },
@@ -710,6 +752,9 @@
   },
   "noUsersInList": {
     "message": "Немає користувачів."
+  },
+  "noMembersInList": {
+    "message": "Список не містить учасників."
   },
   "noEventsInList": {
     "message": "Немає подій."
@@ -854,6 +899,18 @@
         "example": "150"
       }
     }
+  },
+  "deleteSelectedCollectionsDesc": {
+    "message": "Зазначені збірки ($COUNT$) будуть остаточно видалені.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "150"
+      }
+    }
+  },
+  "deleteSelectedConfirmation": {
+    "message": "Ви дійсно хочете продовжити?"
   },
   "moveSelectedItemsDesc": {
     "message": "Оберіть теку, в яку ви бажаєте перемістити $COUNT$ вибраних записів.",
@@ -1558,7 +1615,7 @@
   },
   "orgsReportsDesc": {
     "message": "Визначте і закрийте прогалини в безпеці облікових записів вашої організації, натиснувши на звіти нижче.",
-    "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization Vault."
+    "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization vault."
   },
   "unsecuredWebsitesReport": {
     "message": "Незахищені вебсайти"
@@ -1823,7 +1880,7 @@
     }
   },
   "premiumPriceWithFamilyPlan": {
-    "message": "Go premium for just $PRICE$ /year, or get premium accounts for $FAMILYPLANUSERCOUNT$ users and unlimited family sharing with a ",
+    "message": "Отримайте преміум – лише $PRICE$ /рік. Або отримайте преміум обліковий запис для користувачів $FAMILYPLANUSERCOUNT$ та необмежений спільний доступ з ",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -1836,7 +1893,7 @@
     }
   },
   "bitwardenFamiliesPlan": {
-    "message": "Bitwarden Families plan."
+    "message": "тарифним планом Bitwarden Families."
   },
   "addons": {
     "message": "Додатки"
@@ -2372,6 +2429,15 @@
   "deleteGroupConfirmation": {
     "message": "Ви справді хочете видалити цю групу?"
   },
+  "deleteMultipleGroupsConfirmation": {
+    "message": "Ви дійсно хочете видалити зазначені групи ($QUANTITY$)?",
+    "placeholders": {
+      "quantity": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
   "removeUserConfirmation": {
     "message": "Ви справді хочете вилучити цього користувача?"
   },
@@ -2389,6 +2455,9 @@
   },
   "externalIdDesc": {
     "message": "Зовнішній ID може використовуватись в якості посилання або для зв'язку цього ресурсу із зовнішньою системою, такою як каталок користувача."
+  },
+  "nestCollectionUnder": {
+    "message": "Розмістити збірку під"
   },
   "accessControl": {
     "message": "Контроль доступу"
@@ -2411,14 +2480,14 @@
   "editCollection": {
     "message": "Редагувати збірку"
   },
+  "collectionInfo": {
+    "message": "Інформація про збірку"
+  },
   "deleteCollectionConfirmation": {
     "message": "Ви справді хочете видалити цю збірку?"
   },
-  "editUser": {
-    "message": "Редагувати користувача"
-  },
-  "inviteUser": {
-    "message": "Запросити користувача"
+  "editMember": {
+    "message": "Редагувати учасника"
   },
   "inviteUserDesc": {
     "message": "Запросіть нового користувача до вашої організації, ввівши адресу е-пошти його облікового запису Bitwarden. Якщо він ще не має облікового запису, він отримає запит на його створення."
@@ -2684,6 +2753,9 @@
       }
     }
   },
+  "deletedCollections": {
+    "message": "Збірки видалено"
+  },
   "deletedCollectionId": {
     "message": "Видалена збірка $ID$.",
     "placeholders": {
@@ -2726,6 +2798,15 @@
       "id": {
         "content": "$1",
         "example": "Developers"
+      }
+    }
+  },
+  "deletedManyGroups": {
+    "message": "Групи видалено ($QUANTITY$).",
+    "placeholders": {
+      "quantity": {
+        "content": "$1",
+        "example": "3"
       }
     }
   },
@@ -5458,6 +5539,15 @@
       }
     }
   },
+  "inputForbiddenCharacters": {
+    "message": "Вказані символи заборонені: $CHARACTERS$",
+    "placeholders": {
+      "characters": {
+        "content": "$1",
+        "example": "@, #, $, %"
+      }
+    }
+  },
   "fieldsNeedAttention": {
     "message": "$COUNT$ поле (поля) вище потребують вашої уваги.",
     "placeholders": {
@@ -5578,13 +5668,13 @@
     "message": "Видалити секрети"
   },
   "secretProjectAssociationDescription": {
-    "message": "Select projects that the secret will be associated with. Only organization users with access to these projects will be able to see the secret."
+    "message": "Оберіть проєкти, з якими буде пов'язано секретний ключ."
   },
   "typeOrSelectProjects": {
-    "message": "Type or select Projects"
+    "message": "Введіть або виберіть проєкти"
   },
   "typeOrSelectProject": {
-    "message": "Type or select Project"
+    "message": "Введіть або виберіть проєкт"
   },
   "project": {
     "message": "Проєкт"
@@ -5609,9 +5699,6 @@
   },
   "serviceAccounts": {
     "message": "Службові облікові записи"
-  },
-  "new": {
-    "message": "Новий"
   },
   "secrets": {
     "message": "Секрети"
@@ -5823,8 +5910,44 @@
   "update": {
     "message": "Оновити"
   },
+  "plusNMore": {
+    "message": "+ ще $QUANTITY$",
+    "placeholders": {
+      "quantity": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
+  "groupInfo": {
+    "message": "Інформація про групу"
+  },
+  "editGroupMembersDesc": {
+    "message": "Надати учасникам доступ до збірок, призначених групам."
+  },
+  "editGroupCollectionsDesc": {
+    "message": "Надати доступ до збірок, додавши їх до цієї групи."
+  },
+  "accessAllCollectionsDesc": {
+    "message": "Надати доступ до всіх наявних і майбутніх збірок."
+  },
+  "accessAllCollectionsHelp": {
+    "message": "Ця опція вилучить усі інші дозволи для збірок."
+  },
+  "selectMembers": {
+    "message": "Вибрати учасників"
+  },
+  "selectCollections": {
+    "message": "Вибрати збірки"
+  },
   "role": {
     "message": "Роль"
+  },
+  "removeMember": {
+    "message": "Вилучити учасника"
+  },
+  "collection": {
+    "message": "Збірка"
   },
   "canView": {
     "message": "Може переглядати"
@@ -5838,6 +5961,15 @@
   "canEditExceptPass": {
     "message": "Може редагувати, крім паролів"
   },
+  "noCollectionsAdded": {
+    "message": "Не додано жодної збірки"
+  },
+  "noMembersAdded": {
+    "message": "Не додано жодного учасника"
+  },
+  "noGroupsAdded": {
+    "message": "Не додано жодної групи"
+  },
   "group": {
     "message": "Група"
   },
@@ -5846,6 +5978,39 @@
   },
   "memberAccessAll": {
     "message": "Цей учасник має доступ і може редагувати всі елементи."
+  },
+  "membersColumnHeader": {
+    "message": "Учасник/Група"
+  },
+  "groupAndMemberColumnHeader": {
+    "message": "Учасник"
+  },
+  "selectGroupsAndMembers": {
+    "message": "Виберіть групи та учасників"
+  },
+  "selectGroups": {
+    "message": "Вибрати групи"
+  },
+  "userPermissionOverrideHelper": {
+    "message": "Дозволи, встановлені для учасника, вилучать дозволи, встановлені групою учасника"
+  },
+  "noMembersOrGroupsAdded": {
+    "message": "Не додано жодного учасника чи групи"
+  },
+  "deleted": {
+    "message": "Видалено"
+  },
+  "memberStatusFilter": {
+    "message": "Фільтр стану учасників"
+  },
+  "inviteMember": {
+    "message": "Запросити учасника"
+  },
+  "needsConfirmation": {
+    "message": "Потребує підтвердження"
+  },
+  "memberRole": {
+    "message": "Роль учасника"
   },
   "moreFromBitwarden": {
     "message": "Більше від Bitwarden"
