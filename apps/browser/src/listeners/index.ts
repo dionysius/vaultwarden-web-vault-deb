@@ -23,7 +23,10 @@ const tabsOnUpdatedListener = combine([
 
 const contextMenusClickedListener = ContextMenuClickedHandler.onClickedListener;
 
-const runtimeMessageListener = combine([
+// TODO: All message listeners should be RuntimeMessage in Notifications follow up then this type annotation can be inferred
+const runtimeMessageListener = combine<
+  [message: { command: string }, sender: chrome.runtime.MessageSender]
+>([
   UpdateBadge.messageListener,
   CipherContextMenuHandler.messageListener,
   ContextMenuClickedHandler.messageListener,

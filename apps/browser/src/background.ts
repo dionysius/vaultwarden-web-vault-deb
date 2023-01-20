@@ -21,7 +21,12 @@ if (BrowserApi.manifestVersion === 3) {
   chrome.tabs.onReplaced.addListener(tabsOnReplacedListener);
   chrome.tabs.onUpdated.addListener(tabsOnUpdatedListener);
   chrome.contextMenus.onClicked.addListener(contextMenusClickedListener);
-  BrowserApi.messageListener("runtime.background", runtimeMessageListener);
+  BrowserApi.messageListener(
+    "runtime.background",
+    (message: { command: string }, sender, sendResponse) => {
+      runtimeMessageListener(message, sender);
+    }
+  );
 } else {
   const bitwardenMain = ((window as any).bitwardenMain = new MainBackground());
   bitwardenMain.bootstrap().then(() => {

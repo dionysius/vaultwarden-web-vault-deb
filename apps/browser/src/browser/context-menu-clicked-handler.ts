@@ -126,6 +126,7 @@ export class ContextMenuClickedHandler {
 
   static async messageListener(
     message: { command: string; data: LockedVaultPendingNotificationsItem },
+    sender: chrome.runtime.MessageSender,
     cachedServices: CachedServices
   ) {
     if (

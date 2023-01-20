@@ -1,15 +1,15 @@
 import { CachedServices } from "../background/service_factories/factory-options";
 
-type Listener<T extends unknown[]> = (...args: [...T, CachedServices]) => void;
+type Listener<T extends unknown[]> = (...args: [...T, CachedServices]) => Promise<void>;
 
 export const combine = <T extends unknown[]>(
   listeners: Listener<T>[],
   startingServices: CachedServices = {}
 ) => {
-  return (...args: T) => {
+  return async (...args: T) => {
     const cachedServices = { ...startingServices };
     for (const listener of listeners) {
-      listener(...[...args, cachedServices]);
+      await listener(...[...args, cachedServices]);
     }
   };
 };

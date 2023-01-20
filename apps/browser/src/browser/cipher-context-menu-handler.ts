@@ -120,13 +120,24 @@ export class CipherContextMenuHandler {
     await cipherContextMenuHandler.update(tab.url);
   }
 
-  static async messageListener(message: { command: string }, cachedServices: CachedServices) {
+  static async messageListener(
+    message: { command: string },
+    sender: chrome.runtime.MessageSender,
+    cachedServices: CachedServices
+  ) {
+    if (!CipherContextMenuHandler.shouldListen(message)) {
+      return;
+    }
     const cipherContextMenuHandler = await CipherContextMenuHandler.create(cachedServices);
     await cipherContextMenuHandler.messageListener(message);
   }
 
-  async messageListener(message: { command: string }) {
-    if (!LISTENED_TO_COMMANDS.includes(message.command)) {
+  private static shouldListen(message: { command: string }) {
+    return LISTENED_TO_COMMANDS.includes(message.command);
+  }
+
+  async messageListener(message: { command: string }, sender?: chrome.runtime.MessageSender) {
+    if (!CipherContextMenuHandler.shouldListen(message)) {
       return;
     }
 
