@@ -107,7 +107,7 @@
     "message": "Connectez-vous à votre coffre"
   },
   "autoFillInfo": {
-    "message": "Il n'y a pas d'identifiants disponibles pour la saisie automatique de l'onglet actuel du navigateur."
+    "message": "Il n'y a pas d'identifiants disponibles à saisir automatiquement pour l'onglet actuel du navigateur."
   },
   "addLogin": {
     "message": "Ajouter un site"
@@ -1034,7 +1034,7 @@
     "message": "Le fait de cliquer à l'extérieur de la fenêtre pop-up pour vérifier votre e-mail avec votre code de vérification fermera cette pop-up. Voulez-vous ouvrir cette pop-up dans une nouvelle fenêtre pour qu'elle ne soit pas fermée ?"
   },
   "popupU2fCloseMessage": {
-    "message": "Ce navigateur ne peut pas traiter les requêtes U2F dans cette popup. Voulez-vous ouvrir cette popup dans une nouvelle fenêtre pour que vous puissiez vous connecter en utilisant U2F ?"
+    "message": "Ce navigateur ne peut pas traiter les demandes U2F dans cette fenêtre popup. Voulez-vous ouvrir cette popup dans une nouvelle fenêtre afin de pouvoir vous connecter à l'aide de l'U2F ?"
   },
   "enableFavicon": {
     "message": "Afficher les icônes du site web"
@@ -1738,7 +1738,7 @@
     "message": "Nouveau mot de passe"
   },
   "sendDisabled": {
-    "message": "Send désactivé",
+    "message": "Send supprimé",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendDisabledWarning": {
@@ -1869,7 +1869,7 @@
     "message": "Aucun identifiant unique trouvé."
   },
   "convertOrganizationEncryptionDesc": {
-    "message": "$ORGANIZATION$ utilise SSO avec un serveur de clés auto-hébergé. Un mot de passe principal n'est plus nécessaire aux membres de cette organisation pour se connecter.",
+    "message": "$ORGANIZATION$ utilise le SSO avec un serveur de clés auto-hébergé. Un mot de passe principal n'est plus nécessaire aux membres de cette organisation pour se connecter.",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -1939,10 +1939,10 @@
     "message": "Aléatoire"
   },
   "randomWord": {
-    "message": "Mots aléatoire"
+    "message": "Mot aléatoire"
   },
   "websiteName": {
-    "message": "Nom du site Web"
+    "message": "Nom du site web"
   },
   "whatWouldYouLikeToGenerate": {
     "message": "Que souhaitez-vous générer ?"

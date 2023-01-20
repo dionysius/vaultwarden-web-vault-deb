@@ -3,7 +3,7 @@
     "message": "Bitwarden"
   },
   "extName": {
-    "message": "Bitwarden - Free Password Manager",
+    "message": "Bitwarden - Quản lý mật khẩu miễn phí",
     "description": "Extension name, MUST be less than 40 characters (Safari restriction)"
   },
   "extDesc": {
@@ -68,7 +68,7 @@
     "message": "Cài đặt"
   },
   "currentTab": {
-    "message": "Thẻ hiện tại"
+    "message": "Tab hiện tại"
   },
   "copyPassword": {
     "message": "Sao chép mật khẩu"
@@ -83,10 +83,10 @@
     "message": "Sao chép tên người dùng"
   },
   "copyNumber": {
-    "message": "Sao chép Số"
+    "message": "Sao chép số"
   },
   "copySecurityCode": {
-    "message": "Sao chép Mã bảo mật"
+    "message": "Sao chép mã bảo mật"
   },
   "autoFill": {
     "message": "Tự động điền"
@@ -110,10 +110,10 @@
     "message": "Không có thông tin đăng nhập nào sẵn có để tự động điền vào tab hiện tại."
   },
   "addLogin": {
-    "message": "Thêm một Đăng nhập"
+    "message": "Thêm một đăng nhập"
   },
   "addItem": {
-    "message": "Thêm Mục"
+    "message": "Thêm mục"
   },
   "passwordHint": {
     "message": "Gợi ý mật khẩu"
@@ -546,7 +546,7 @@
     "message": "Đã xóa mục"
   },
   "overwritePassword": {
-    "message": "Ghi đè lên mật khẩu"
+    "message": "Ghi đè mật khẩu"
   },
   "overwritePasswordConfirmation": {
     "message": "Bạn có chắc chắn muốn ghi đè mật khẩu hiện tại không?"
@@ -600,7 +600,7 @@
     "message": "Bạn có cần Bitwarden nhớ giúp bạn mật khẩu này không?"
   },
   "notificationAddSave": {
-    "message": "Vâng, Lưu Ngay"
+    "message": "Lưu"
   },
   "enableChangedPasswordNotification": {
     "message": "Hỏi để cập nhật đăng nhập hiện có"
@@ -615,7 +615,7 @@
     "message": "Cập nhật"
   },
   "enableContextMenuItem": {
-    "message": "Show context menu options"
+    "message": "Hiển thị tuỳ chọn menu ngữ cảnh"
   },
   "contextMenuItemDesc": {
     "message": "Use a secondary click to access password generation and matching logins for the website. "
@@ -816,7 +816,7 @@
     "message": "Nếu đăng nhập của bạn có một khóa xác thực gắn liền với nó, mã xác nhận TOTP sẽ được tự động sao chép vào bộ nhớ tạm của bạn bất cứ khi nào bạn tự động điền thông tin đăng nhập."
   },
   "enableAutoBiometricsPrompt": {
-    "message": "Ask for biometrics on launch"
+    "message": "Yêu cầu sinh trắc học khi khởi chạy"
   },
   "premiumRequired": {
     "message": "Cần có tài khoản cao cấp"
@@ -870,7 +870,7 @@
     "message": "Xác thực WebAuthn"
   },
   "loginUnavailable": {
-    "message": "Đăng nhập không sẵn có"
+    "message": "Đăng nhập không có sẵn"
   },
   "noTwoStepProviders": {
     "message": "Tài khoản này đã kích hoạt xác thực hai lớp, tuy nhiên, trình duyệt này không hỗ trợ cấu hình dịch vụ xác thực hai lớp đang sử dụng."
@@ -921,7 +921,7 @@
     "message": "Mã xác thực sẽ được gửi qua email cho bạn."
   },
   "selfHostedEnvironment": {
-    "message": "Môi trường độc lập"
+    "message": "Môi trường tự lưu trữ"
   },
   "selfHostedEnvironmentFooter": {
     "message": "Chỉ định liên kết cơ bản của cài đặt bitwarden tại chỗ của bạn."
@@ -963,7 +963,7 @@
     "message": "Đây là một tính năng thử nghiệm. Sử dụng nó có thể gây ra rủi ro cho bạn."
   },
   "defaultAutoFillOnPageLoad": {
-    "message": "Default autofill setting for login items"
+    "message": "Cài đặt tự động điền mặc định cho mục đăng nhập"
   },
   "defaultAutoFillOnPageLoadDesc": {
     "message": "Bạn có thể tắt tự động điền khi tải trang cho mục đăng nhập riêng lẻ từ chế độ xem Chỉnh sửa mục."
@@ -1040,7 +1040,7 @@
     "message": "Hiển thị biểu tượng trang web"
   },
   "faviconDesc": {
-    "message": "Show a recognizable image next to each login."
+    "message": "Hiển thị một ảnh nhận dạng bên cạnh mỗi lần đăng nhập."
   },
   "enableBadgeCounter": {
     "message": "Hiển thị biểu tượng bộ đếm"
@@ -1446,7 +1446,7 @@
     "message": "Tổ chức của bạn yêu cầu mật khẩu chính của bạn phải đáp ứng các yêu cầu sau:"
   },
   "policyInEffectMinComplexity": {
-    "message": "Điểm số phức tạp là",
+    "message": "Minimum complexity score of $SCORE$",
     "placeholders": {
       "score": {
         "content": "$1",
@@ -1539,10 +1539,10 @@
     "message": "Tài khoản không đúng"
   },
   "biometricsNotEnabledTitle": {
-    "message": "Nhận dạng sinh trắc học chưa được bật"
+    "message": "Sinh trắc học chưa được cài đặt"
   },
   "biometricsNotEnabledDesc": {
-    "message": "Browser biometrics requires desktop biometric to be set up in the settings first."
+    "message": "Sinh trắc học trên trình duyệt yêu cầu sinh trắc học trên máy tính phải được cài đặt trước."
   },
   "biometricsNotSupportedTitle": {
     "message": "Nhận dạng sinh trắc học không được hỗ trợ"
@@ -1569,7 +1569,7 @@
     "message": "An organization policy is affecting your ownership options."
   },
   "excludedDomains": {
-    "message": "Excluded domains"
+    "message": "Tên miền đã loại trừ"
   },
   "excludedDomainsDesc": {
     "message": "Bitwarden will not ask to save login details for these domains. You must refresh the page for changes to take effect."
@@ -1709,7 +1709,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendNotesDesc": {
-    "message": "Private notes about this Send.",
+    "message": "Ghi chú riêng tư về Send này.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendDisableDesc": {
@@ -1728,7 +1728,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "currentAccessCount": {
-    "message": "Current access count"
+    "message": "Số lượng truy cập hiện tại"
   },
   "createSend": {
     "message": "Send mới",
@@ -1869,7 +1869,7 @@
     "message": "No unique identifier found."
   },
   "convertOrganizationEncryptionDesc": {
-    "message": "$ORGANIZATION$ is using SSO with a self-hosted key server. A master password is no longer required to log in for members of this organization.",
+    "message": "$ORGANIZATION$ hiện đang dùng SSO với khoá máy chủ tự lưu trữ. Từ giờ không cần mật khẩu chính để đăng nhập vào tổ chức này nữa.",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -1887,13 +1887,13 @@
     "message": "Đã xóa mật khẩu chính"
   },
   "leaveOrganizationConfirmation": {
-    "message": "Are you sure you want to leave this organization?"
+    "message": "Bạn có chắc chắn muốn rời tổ chức này không?"
   },
   "leftOrganization": {
     "message": "Bạn đã rời khỏi tổ chức."
   },
   "toggleCharacterCount": {
-    "message": "Toggle character count"
+    "message": "Bật tắt đếm kí tự"
   },
   "sessionTimeout": {
     "message": "Your session has timed out. Please go back and try logging in again."
@@ -1960,7 +1960,7 @@
     "message": "Generate an email alias with an external forwarding service."
   },
   "hostname": {
-    "message": "Hostname",
+    "message": "Tên máy chủ",
     "description": "Part of a URL."
   },
   "apiAccessToken": {

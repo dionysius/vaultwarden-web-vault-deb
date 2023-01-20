@@ -3,7 +3,7 @@
     "message": "Bitwarden"
   },
   "extName": {
-    "message": "Bitwarden - Free Password Manager",
+    "message": "Bitwarden - Libreng Password Manager",
     "description": "Extension name, MUST be less than 40 characters (Safari restriction)"
   },
   "extDesc": {
@@ -20,7 +20,7 @@
     "message": "Mag-login"
   },
   "enterpriseSingleSignOn": {
-    "message": "Enterprise single sign-on"
+    "message": "Enterprise Single Sign-On sa Filipino ay Isang Sign-On na Enterprise"
   },
   "cancel": {
     "message": "Kanselahin"
@@ -47,19 +47,19 @@
     "message": "Muling i-type ang Master Password"
   },
   "masterPassHint": {
-    "message": "Master password hint (optional)"
+    "message": "Mungkahi sa Master Password (opsyonal)"
   },
   "tab": {
     "message": "Tab"
   },
   "vault": {
-    "message": "Vault"
+    "message": "Ayos"
   },
   "myVault": {
     "message": "Aking Kahadeyero"
   },
   "allVaults": {
-    "message": "All vaults"
+    "message": "Lahat ng Vault"
   },
   "tools": {
     "message": "Mga Kagamitan"
@@ -80,34 +80,34 @@
     "message": "Kopyahin ang URI"
   },
   "copyUsername": {
-    "message": "Copy username"
+    "message": "Kopyahin ang pangalan ng gumagamit"
   },
   "copyNumber": {
-    "message": "Copy number"
+    "message": "Pamamagitan ng Kopya ng Bilang"
   },
   "copySecurityCode": {
-    "message": "Copy security code"
+    "message": "Kopyahin ang code ng seguridad"
   },
   "autoFill": {
-    "message": "Auto-fill"
+    "message": "Auto-fill sa Filipino ay Awtomatikong Pagpuno"
   },
   "generatePasswordCopied": {
-    "message": "Generate password (copied)"
+    "message": "Maglagay ng Password"
   },
   "copyElementIdentifier": {
-    "message": "Copy custom field name"
+    "message": "Salin ang Pangalan ng Pasadyang Field"
   },
   "noMatchingLogins": {
-    "message": "No matching logins"
+    "message": "Walang tumutugmang mga login"
   },
   "unlockVaultMenu": {
     "message": "Buksan ang iyong kahadeyero"
   },
   "loginToVaultMenu": {
-    "message": "Log in to your vault"
+    "message": "Ag-log in sa iyong bangko"
   },
   "autoFillInfo": {
-    "message": "There are no logins available to auto-fill for the current browser tab."
+    "message": "Walang mga login na magagamit para i-auto-fill para sa kasalukuyang tab ng browser."
   },
   "addLogin": {
     "message": "Magdagdag ng Login"
@@ -116,28 +116,28 @@
     "message": "Magdagdag ng Item"
   },
   "passwordHint": {
-    "message": "Password hint"
+    "message": "Mungkahi sa Password"
   },
   "enterEmailToGetHint": {
-    "message": "Enter your account email address to receive your master password hint."
+    "message": "Ipasok ang iyong email address ng account para makatanggap ng hint ng iyong master password."
   },
   "getMasterPasswordHint": {
-    "message": "Get master password hint"
+    "message": "Makuha ang Punong Password na Hint"
   },
   "continue": {
     "message": "Magpatuloy"
   },
   "sendVerificationCode": {
-    "message": "Send a verification code to your email"
+    "message": "Magpadala ng isang verification code sa iyong email"
   },
   "sendCode": {
-    "message": "Send code"
+    "message": "Magpadala ng Code"
   },
   "codeSent": {
     "message": "Ipinadala ang Code"
   },
   "verificationCode": {
-    "message": "Verification code"
+    "message": "VerificationCode sa Filipino ay Pagsasagot sa Tanong"
   },
   "confirmIdentity": {
     "message": "Kumpirmahin ang iyong identididad upang magpatuloy."
@@ -146,112 +146,112 @@
     "message": "Account"
   },
   "changeMasterPassword": {
-    "message": "Change master password"
+    "message": "Baguhin ang Master Password"
   },
   "fingerprintPhrase": {
-    "message": "Fingerprint phrase",
+    "message": "Hulmabig ng Hilik ng Dako",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "yourAccountsFingerprint": {
-    "message": "Your account's fingerprint phrase",
+    "message": "Ang fingerprint pala ng iyong account",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "twoStepLogin": {
-    "message": "Two-step login"
+    "message": "Dalawahang-hakbang na Pag-login"
   },
   "logOut": {
-    "message": "Log out"
+    "message": "Mag-Log Out"
   },
   "about": {
-    "message": "About"
+    "message": "Tungkol"
   },
   "version": {
-    "message": "Version"
+    "message": "Bersyon"
   },
   "save": {
-    "message": "Save"
+    "message": "I-save"
   },
   "move": {
-    "message": "Move"
+    "message": "Lumipat"
   },
   "addFolder": {
-    "message": "Add folder"
+    "message": "Magdagdag ng folder"
   },
   "name": {
-    "message": "Name"
+    "message": "Pangalan"
   },
   "editFolder": {
-    "message": "Edit folder"
+    "message": "I-edit ang folder"
   },
   "deleteFolder": {
-    "message": "Delete folder"
+    "message": "Burahin ang folder"
   },
   "folders": {
-    "message": "Folders"
+    "message": "Mga Folder"
   },
   "noFolders": {
-    "message": "There are no folders to list."
+    "message": "Walang mga folder na listahan."
   },
   "helpFeedback": {
-    "message": "Help & feedback"
+    "message": "Tulong at Mga Feedback"
   },
   "sync": {
-    "message": "Sync"
+    "message": "Ikintal"
   },
   "syncVaultNow": {
-    "message": "Sync vault now"
+    "message": "Isingit ang Vault ngayon"
   },
   "lastSync": {
-    "message": "Last sync:"
+    "message": "Huling sinkronisasyon:"
   },
   "passGen": {
-    "message": "Password generator"
+    "message": "Tagapaglikha ng Password"
   },
   "generator": {
-    "message": "Generator",
+    "message": "Magmamana",
     "description": "Short for 'Password Generator'."
   },
   "passGenInfo": {
-    "message": "Automatically generate strong, unique passwords for your logins."
+    "message": "Automatiko na gumawa ng mga malakas at natatanging mga password para sa iyong mga logins."
   },
   "bitWebVault": {
     "message": "Bitwarden web vault"
   },
   "importItems": {
-    "message": "Import items"
+    "message": "Isingit ang Vault ngayon"
   },
   "select": {
-    "message": "Select"
+    "message": "Piliin"
   },
   "generatePassword": {
-    "message": "Generate password"
+    "message": "Magtatag ng Password"
   },
   "regeneratePassword": {
-    "message": "Regenerate password"
+    "message": "Muling I-generate ang Password"
   },
   "options": {
-    "message": "Options"
+    "message": "Mga Pagpipilian"
   },
   "length": {
-    "message": "Length"
+    "message": "Kahabaan"
   },
   "uppercase": {
-    "message": "Uppercase (A-Z)"
+    "message": "2. Mga letra na malalaki (A-Z)"
   },
   "lowercase": {
-    "message": "Lowercase (a-z)"
+    "message": "Lowercase (a-t) sa Filipino ay mababang-letra (a-t)"
   },
   "numbers": {
     "message": "Numbers (0-9)"
   },
   "specialCharacters": {
-    "message": "Special characters (!@#$%^&*)"
+    "message": "Mga espesyal na character (!@#$%^&*) sa Filipino ay tinatawag na mga simbolong pambihira"
   },
   "numWords": {
-    "message": "Number of words"
+    "message": "Ang bilang ng mga salita\n\nNumero ng mga salita"
   },
   "wordSeparator": {
-    "message": "Word separator"
+    "message": "Separador ng salita"
   },
   "capitalize": {
     "message": "Capitalize",
@@ -267,16 +267,16 @@
     "message": "Minimum special"
   },
   "avoidAmbChar": {
-    "message": "Avoid ambiguous characters"
+    "message": "Iwasan ang mga hindi malinaw na character"
   },
   "searchVault": {
     "message": "Search vault"
   },
   "edit": {
-    "message": "Edit"
+    "message": "I-edit"
   },
   "view": {
-    "message": "View"
+    "message": "Tanaw"
   },
   "noItemsInList": {
     "message": "There are no items to list."
@@ -285,16 +285,16 @@
     "message": "Item information"
   },
   "username": {
-    "message": "Username"
+    "message": "Ang pangalan ng tagagamit"
   },
   "password": {
-    "message": "Password"
+    "message": "Ang Password"
   },
   "passphrase": {
-    "message": "Passphrase"
+    "message": "Pasa salita"
   },
   "favorite": {
-    "message": "Favorite"
+    "message": "Ang Paborito"
   },
   "notes": {
     "message": "Notes"
@@ -303,19 +303,19 @@
     "message": "Note"
   },
   "editItem": {
-    "message": "Edit item"
+    "message": "Baguhin ang Item"
   },
   "folder": {
-    "message": "Folder"
+    "message": "Folder/Direktoryo"
   },
   "deleteItem": {
-    "message": "Delete item"
+    "message": "Tanggalin ang Item"
   },
   "viewItem": {
-    "message": "View item"
+    "message": "Tingnan ang Item"
   },
   "launch": {
-    "message": "Launch"
+    "message": "Paglulunsad"
   },
   "website": {
     "message": "Website"
@@ -339,13 +339,13 @@
     "message": "Your web browser does not support easy clipboard copying. Copy it manually instead."
   },
   "verifyIdentity": {
-    "message": "Verify identity"
+    "message": "I-verify ang pagkakakilanlan"
   },
   "yourVaultIsLocked": {
     "message": "Your vault is locked. Verify your identity to continue."
   },
   "unlock": {
-    "message": "Unlock"
+    "message": "Buksan"
   },
   "loggedInAsOn": {
     "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
@@ -367,7 +367,7 @@
     "message": "Vault timeout"
   },
   "lockNow": {
-    "message": "Lock now"
+    "message": "Mag-kandado Na"
   },
   "immediately": {
     "message": "Immediately"
@@ -467,7 +467,7 @@
     "message": "Your login session has expired."
   },
   "logOutConfirmation": {
-    "message": "Are you sure you want to log out?"
+    "message": "Sigurado ka bang gusto mong mag-log out?"
   },
   "yes": {
     "message": "Yes"
