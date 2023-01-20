@@ -175,15 +175,20 @@ export class MemberDialogComponent implements OnInit, OnDestroy {
           }
           this.isRevoked = userDetails.status === OrganizationUserStatusType.Revoked;
           const assignedCollectionsPermissions = {
-            manageAssignedCollections: userDetails.permissions.manageAssignedCollections,
             editAssignedCollections: userDetails.permissions.editAssignedCollections,
             deleteAssignedCollections: userDetails.permissions.deleteAssignedCollections,
+            manageAssignedCollections:
+              userDetails.permissions.editAssignedCollections &&
+              userDetails.permissions.deleteAssignedCollections,
           };
           const allCollectionsPermissions = {
-            manageAllCollections: userDetails.permissions.manageAllCollections,
             createNewCollections: userDetails.permissions.createNewCollections,
             editAnyCollection: userDetails.permissions.editAnyCollection,
             deleteAnyCollection: userDetails.permissions.deleteAnyCollection,
+            manageAllCollections:
+              userDetails.permissions.createNewCollections &&
+              userDetails.permissions.editAnyCollection &&
+              userDetails.permissions.deleteAnyCollection,
           };
           if (userDetails.type === OrganizationUserType.Custom) {
             this.permissionsGroup.patchValue({
@@ -255,15 +260,11 @@ export class MemberDialogComponent implements OnInit, OnDestroy {
       managePolicies: this.permissionsGroup.value.managePolicies,
       manageUsers: this.permissionsGroup.value.manageUsers,
       manageResetPassword: this.permissionsGroup.value.manageResetPassword,
-      manageAllCollections:
-        this.permissionsGroup.value.manageAllCollectionsGroup.manageAllCollections,
       createNewCollections:
         this.permissionsGroup.value.manageAllCollectionsGroup.createNewCollections,
       editAnyCollection: this.permissionsGroup.value.manageAllCollectionsGroup.editAnyCollection,
       deleteAnyCollection:
         this.permissionsGroup.value.manageAllCollectionsGroup.deleteAnyCollection,
-      manageAssignedCollections:
-        this.permissionsGroup.value.manageAssignedCollectionsGroup.manageAssignedCollections,
       editAssignedCollections:
         this.permissionsGroup.value.manageAssignedCollectionsGroup.editAssignedCollections,
       deleteAssignedCollections:

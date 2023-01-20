@@ -131,16 +131,11 @@ export class Organization {
   }
 
   get canCreateNewCollections() {
-    return (
-      this.isManager ||
-      (this.permissions.createNewCollections ?? this.permissions.manageAllCollections)
-    );
+    return this.isManager || this.permissions.createNewCollections;
   }
 
   get canEditAnyCollection() {
-    return (
-      this.isAdmin || (this.permissions.editAnyCollection ?? this.permissions.manageAllCollections)
-    );
+    return this.isAdmin || this.permissions.editAnyCollection;
   }
 
   get canUseAdminCollections() {
@@ -148,10 +143,7 @@ export class Organization {
   }
 
   get canDeleteAnyCollection() {
-    return (
-      this.isAdmin ||
-      (this.permissions.deleteAnyCollection ?? this.permissions.manageAllCollections)
-    );
+    return this.isAdmin || this.permissions.deleteAnyCollection;
   }
 
   get canViewAllCollections() {
@@ -159,17 +151,11 @@ export class Organization {
   }
 
   get canEditAssignedCollections() {
-    return (
-      this.isManager ||
-      (this.permissions.editAssignedCollections ?? this.permissions.manageAssignedCollections)
-    );
+    return this.isManager || this.permissions.editAssignedCollections;
   }
 
   get canDeleteAssignedCollections() {
-    return (
-      this.isManager ||
-      (this.permissions.deleteAssignedCollections ?? this.permissions.manageAssignedCollections)
-    );
+    return this.isManager || this.permissions.deleteAssignedCollections;
   }
 
   get canViewAssignedCollections() {
