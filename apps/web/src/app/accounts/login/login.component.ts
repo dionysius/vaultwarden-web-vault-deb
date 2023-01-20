@@ -189,6 +189,17 @@ export class LoginComponent extends BaseLoginComponent implements OnInit, OnDest
     this.router.navigateByUrl("/hint");
   }
 
+  goToRegister() {
+    const email = this.formGroup.value.email;
+
+    if (email) {
+      this.router.navigate(["/register"], { queryParams: { email: email } });
+      return;
+    }
+
+    this.router.navigate(["/register"]);
+  }
+
   async submit() {
     const rememberEmail = this.formGroup.value.rememberEmail;
 
