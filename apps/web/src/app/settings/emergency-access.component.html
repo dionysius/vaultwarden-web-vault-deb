@@ -34,7 +34,12 @@
   <tbody>
     <tr *ngFor="let c of trustedContacts; let i = index">
       <td width="30">
-        <bit-avatar [text]="c | userName" [id]="c.granteeId" size="small"></bit-avatar>
+        <bit-avatar
+          [text]="c | userName"
+          [id]="c.granteeId"
+          [color]="c.avatarColor"
+          size="small"
+        ></bit-avatar>
       </td>
       <td>
         <a href="#" appStopClick (click)="edit(c)">{{ c.email }}</a>
@@ -142,7 +147,12 @@
   <tbody>
     <tr *ngFor="let c of grantedContacts; let i = index">
       <td width="30">
-        <bit-avatar [text]="c | userName" [id]="c.grantorId" size="small"></bit-avatar>
+        <bit-avatar
+          [text]="c | userName"
+          [id]="c.grantorId"
+          [color]="c.avatarColor"
+          size="small"
+        ></bit-avatar>
       </td>
       <td>
         <span>{{ c.email }}</span>

@@ -14,6 +14,7 @@ export class EmergencyAccessGranteeDetailsResponse extends BaseResponse {
   status: EmergencyAccessStatusType;
   waitTimeDays: number;
   creationDate: string;
+  avatarColor: string;
 
   constructor(response: any) {
     super(response);
@@ -25,6 +26,7 @@ export class EmergencyAccessGranteeDetailsResponse extends BaseResponse {
     this.status = this.getResponseProperty("Status");
     this.waitTimeDays = this.getResponseProperty("WaitTimeDays");
     this.creationDate = this.getResponseProperty("CreationDate");
+    this.avatarColor = this.getResponseProperty("AvatarColor");
   }
 }
 
@@ -37,6 +39,7 @@ export class EmergencyAccessGrantorDetailsResponse extends BaseResponse {
   status: EmergencyAccessStatusType;
   waitTimeDays: number;
   creationDate: string;
+  avatarColor: string;
 
   constructor(response: any) {
     super(response);
@@ -48,6 +51,7 @@ export class EmergencyAccessGrantorDetailsResponse extends BaseResponse {
     this.status = this.getResponseProperty("Status");
     this.waitTimeDays = this.getResponseProperty("WaitTimeDays");
     this.creationDate = this.getResponseProperty("CreationDate");
+    this.avatarColor = this.getResponseProperty("AvatarColor");
   }
 }
 
