@@ -137,8 +137,7 @@ export class DashlaneCsvImporter extends BaseImporter implements Importer {
         cipher.card.number = row.cc_number;
         cipher.card.brand = this.getCardBrand(cipher.card.number);
         cipher.card.code = row.code;
-        cipher.card.expMonth = row.expiration_month;
-        cipher.card.expYear = row.expiration_year.substring(2, 4);
+        this.setCardExpiration(cipher, `${row.expiration_month}/${row.expiration_year}`);
 
         // If you add more mapped fields please extend this
         mappedValues = [

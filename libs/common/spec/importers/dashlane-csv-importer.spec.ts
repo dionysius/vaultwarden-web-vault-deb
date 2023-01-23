@@ -79,8 +79,8 @@ describe("Dashlane CSV Importer", () => {
     expect(cipher2.card.cardholderName).toBe("John Doe");
     expect(cipher2.card.number).toBe("41111111111111111");
     expect(cipher2.card.code).toBe("123");
-    expect(cipher2.card.expMonth).toBe("01");
-    expect(cipher2.card.expYear).toBe("23");
+    expect(cipher2.card.expMonth).toBe("1");
+    expect(cipher2.card.expYear).toBe("2023");
 
     expect(cipher2.fields.length).toBe(2);
 
