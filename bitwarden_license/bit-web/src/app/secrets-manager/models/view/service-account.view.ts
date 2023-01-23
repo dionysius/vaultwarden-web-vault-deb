@@ -1,6 +1,4 @@
-import { View } from "@bitwarden/common/models/view/view";
-
-export class ServiceAccountView implements View {
+export class ServiceAccountView {
   id: string;
   organizationId: string;
   name: string;

@@ -1,6 +1,4 @@
-import { View } from "@bitwarden/common/models/view/view";
-
-export class AccessTokenView implements View {
+export class AccessTokenView {
   id: string;
   name: string;
   scopes: string[];
