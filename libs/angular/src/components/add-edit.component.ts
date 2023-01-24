@@ -141,6 +141,7 @@ export class AddEditComponent implements OnInit, OnDestroy {
       { name: i18nService.t("mr"), value: i18nService.t("mr") },
       { name: i18nService.t("mrs"), value: i18nService.t("mrs") },
       { name: i18nService.t("ms"), value: i18nService.t("ms") },
+      { name: i18nService.t("mx"), value: i18nService.t("mx") },
       { name: i18nService.t("dr"), value: i18nService.t("dr") },
     ];
     this.uriMatchOptions = [
