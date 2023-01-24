@@ -66,7 +66,8 @@
         </div>
       </div>
       <div id="masterPasswordHelp" class="box-footer">
-        {{ "masterPassDesc" | i18n }}
+        <b>{{ "important" | i18n }}</b> {{ "masterPasswordHint" | i18n }}
+        {{ characterMinimumMessage }}
       </div>
     </div>
     <div class="box">
@@ -106,6 +107,17 @@
       </div>
       <div id="hintHelp" class="box-footer">
         {{ "masterPassHintDesc" | i18n }}
+      </div>
+      <div class="box-content row-top-padding">
+        <div
+          class="box-content-row box-content-row-checkbox box-content-row-checkbox-left box-content-row-word-break"
+          appBoxRow
+        >
+          <input type="checkbox" id="checkForBreaches" formControlName="checkForBreaches" />
+          <label for="checkForBreaches">
+            {{ "checkForBreaches" | i18n }}
+          </label>
+        </div>
       </div>
     </div>
     <div [hidden]="!showCaptcha()"><iframe id="hcaptcha_iframe" height="80"></iframe></div>

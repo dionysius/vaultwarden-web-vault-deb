@@ -4,6 +4,7 @@ import { Router } from "@angular/router";
 
 import { RegisterComponent as BaseRegisterComponent } from "@bitwarden/angular/components/register.component";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
+import { AuditService } from "@bitwarden/common/abstractions/audit.service";
 import { AuthService } from "@bitwarden/common/abstractions/auth.service";
 import { BroadcasterService } from "@bitwarden/common/abstractions/broadcaster.service";
 import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
@@ -36,7 +37,8 @@ export class RegisterComponent extends BaseRegisterComponent implements OnInit, 
     environmentService: EnvironmentService,
     private broadcasterService: BroadcasterService,
     private ngZone: NgZone,
-    logService: LogService
+    logService: LogService,
+    auditService: AuditService
   ) {
     super(
       formValidationErrorService,
@@ -50,7 +52,8 @@ export class RegisterComponent extends BaseRegisterComponent implements OnInit, 
       platformUtilsService,
       passwordGenerationService,
       environmentService,
-      logService
+      logService,
+      auditService
     );
   }
 
