@@ -20,14 +20,21 @@ import { OrganizationService } from "@bitwarden/common/abstractions/organization
 import { PasswordRepromptService } from "@bitwarden/common/abstractions/passwordReprompt.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { SyncService } from "@bitwarden/common/abstractions/sync/sync.service.abstraction";
+import { ProductType } from "@bitwarden/common/enums/productType";
 import { Organization } from "@bitwarden/common/models/domain/organization";
 import { TreeNode } from "@bitwarden/common/models/domain/tree-node";
 import { CipherView } from "@bitwarden/common/models/view/cipher.view";
-import { DialogService } from "@bitwarden/components";
+import {
+  DialogService,
+  SimpleDialogCloseType,
+  SimpleDialogOptions,
+  SimpleDialogType,
+} from "@bitwarden/components";
 
 import { VaultFilterService } from "../../vault/vault-filter/services/abstractions/vault-filter.service";
 import { VaultFilter } from "../../vault/vault-filter/shared/models/vault-filter.model";
 import { CollectionFilter } from "../../vault/vault-filter/shared/models/vault-filter.type";
+import { CollectionAdminService } from "../core";
 import { EntityEventsComponent } from "../manage/entity-events.component";
 import {
   CollectionDialogResult,
@@ -79,7 +86,8 @@ export class VaultComponent implements OnInit, OnDestroy {
     private ngZone: NgZone,
     private platformUtilsService: PlatformUtilsService,
     private cipherService: CipherService,
-    private passwordRepromptService: PasswordRepromptService
+    private passwordRepromptService: PasswordRepromptService,
+    private collectionAdminService: CollectionAdminService
   ) {}
 
   async ngOnInit() {
@@ -168,7 +176,49 @@ export class VaultComponent implements OnInit, OnDestroy {
     this.vaultItemsComponent.search(200);
   }
 
+  private showFreeOrgUpgradeDialog(): void {
+    const orgUpgradeSimpleDialogOpts: SimpleDialogOptions = {
+      title: this.i18nService.t("upgradeOrganization"),
+      content: this.i18nService.t(
+        this.organization.canManageBilling
+          ? "freeOrgMaxCollectionReachedManageBilling"
+          : "freeOrgMaxCollectionReachedNoManageBilling",
+        this.organization.maxCollections
+      ),
+      type: SimpleDialogType.PRIMARY,
+    };
+
+    if (this.organization.canManageBilling) {
+      orgUpgradeSimpleDialogOpts.acceptButtonText = this.i18nService.t("upgrade");
+    } else {
+      orgUpgradeSimpleDialogOpts.acceptButtonText = this.i18nService.t("ok");
+      orgUpgradeSimpleDialogOpts.cancelButtonText = null; // hide secondary btn
+    }
+
+    const simpleDialog = this.dialogService.openSimpleDialog(orgUpgradeSimpleDialogOpts);
+
+    firstValueFrom(simpleDialog.closed).then((result: SimpleDialogCloseType | undefined) => {
+      if (!result) {
+        return;
+      }
+
+      if (result == SimpleDialogCloseType.ACCEPT && this.organization.canManageBilling) {
+        this.router.navigate(["/organizations", this.organization.id, "billing", "subscription"], {
+          queryParams: { upgrade: true },
+        });
+      }
+    });
+  }
+
   async addCollection() {
+    if (this.organization.planProductType === ProductType.Free) {
+      const collections = await this.collectionAdminService.getAll(this.organization.id);
+      if (collections.length === this.organization.maxCollections) {
+        this.showFreeOrgUpgradeDialog();
+        return;
+      }
+    }
+
     const dialog = openCollectionDialog(this.dialogService, {
       data: {
         organizationId: this.organization?.id,

@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit, ViewChild, ViewContainerRef } from "@angular/core";
-import { ActivatedRoute } from "@angular/router";
-import { combineLatest, concatMap, lastValueFrom, Subject, takeUntil } from "rxjs";
+import { ActivatedRoute, Router } from "@angular/router";
+import { combineLatest, concatMap, firstValueFrom, lastValueFrom, Subject, takeUntil } from "rxjs";
 
 import { SearchPipe } from "@bitwarden/angular/pipes/search.pipe";
 import { UserNamePipe } from "@bitwarden/angular/pipes/user-name.pipe";
@@ -34,13 +34,17 @@ import { Organization } from "@bitwarden/common/models/domain/organization";
 import { OrganizationKeysRequest } from "@bitwarden/common/models/request/organization-keys.request";
 import { CollectionDetailsResponse } from "@bitwarden/common/models/response/collection.response";
 import { ListResponse } from "@bitwarden/common/models/response/list.response";
-import { DialogService } from "@bitwarden/components";
+import {
+  DialogService,
+  SimpleDialogCloseType,
+  SimpleDialogOptions,
+  SimpleDialogType,
+} from "@bitwarden/components";
 
 import { BasePeopleComponent } from "../../common/base.people.component";
 import { GroupService } from "../core";
 import { OrganizationUserView } from "../core/views/organization-user.view";
 import { EntityEventsComponent } from "../manage/entity-events.component";
-import { OrgUpgradeDialogComponent } from "../manage/org-upgrade-dialog/org-upgrade-dialog.component";
 
 import { BulkConfirmComponent } from "./components/bulk/bulk-confirm.component";
 import { BulkRemoveComponent } from "./components/bulk/bulk-remove.component";
@@ -105,6 +109,7 @@ export class PeopleComponent
     private organizationApiService: OrganizationApiServiceAbstraction,
     private organizationUserService: OrganizationUserService,
     private dialogService: DialogService,
+    private router: Router,
     private groupService: GroupService,
     private collectionService: CollectionService
   ) {
@@ -306,6 +311,40 @@ export class PeopleComponent
     );
   }
 
+  private async showFreeOrgUpgradeDialog(): Promise<void> {
+    const orgUpgradeSimpleDialogOpts: SimpleDialogOptions = {
+      title: this.i18nService.t("upgradeOrganization"),
+      content: this.i18nService.t(
+        this.organization.canManageBilling
+          ? "freeOrgInvLimitReachedManageBilling"
+          : "freeOrgInvLimitReachedNoManageBilling",
+        this.organization.seats
+      ),
+      type: SimpleDialogType.PRIMARY,
+    };
+
+    if (this.organization.canManageBilling) {
+      orgUpgradeSimpleDialogOpts.acceptButtonText = this.i18nService.t("upgrade");
+    } else {
+      orgUpgradeSimpleDialogOpts.acceptButtonText = this.i18nService.t("ok");
+      orgUpgradeSimpleDialogOpts.cancelButtonText = null; // hide secondary btn
+    }
+
+    const simpleDialog = this.dialogService.openSimpleDialog(orgUpgradeSimpleDialogOpts);
+
+    firstValueFrom(simpleDialog.closed).then((result: SimpleDialogCloseType | undefined) => {
+      if (!result) {
+        return;
+      }
+
+      if (result == SimpleDialogCloseType.ACCEPT && this.organization.canManageBilling) {
+        this.router.navigate(["/organizations", this.organization.id, "billing", "subscription"], {
+          queryParams: { upgrade: true },
+        });
+      }
+    });
+  }
+
   async edit(user: OrganizationUserView, initialTab: MemberDialogTab = MemberDialogTab.Role) {
     // Invite User: Add Flow
     // Click on user email: Edit Flow
@@ -317,24 +356,7 @@ export class PeopleComponent
       this.allUsers.length === this.organization.seats
     ) {
       // Show org upgrade modal
-
-      const dialogBodyText = this.organization.canManageBilling
-        ? this.i18nService.t(
-            "freeOrgInvLimitReachedManageBilling",
-            this.organization.seats.toString()
-          )
-        : this.i18nService.t(
-            "freeOrgInvLimitReachedNoManageBilling",
-            this.organization.seats.toString()
-          );
-
-      this.dialogService.open(OrgUpgradeDialogComponent, {
-        data: {
-          orgId: this.organization.id,
-          orgCanManageBilling: this.organization.canManageBilling,
-          dialogBodyText: dialogBodyText,
-        },
-      });
+      await this.showFreeOrgUpgradeDialog();
       return;
     }
 
