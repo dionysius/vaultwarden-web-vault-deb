@@ -21,6 +21,7 @@ const buttonStyles: Record<ButtonType, string[]> = {
     "disabled:tw-border-primary-500/60",
     "disabled:!tw-text-contrast/60",
     "disabled:tw-bg-clip-padding",
+    "disabled:tw-cursor-not-allowed",
     ...focusRing,
   ],
   secondary: [
@@ -33,6 +34,7 @@ const buttonStyles: Record<ButtonType, string[]> = {
     "disabled:tw-bg-transparent",
     "disabled:tw-border-text-muted/60",
     "disabled:!tw-text-muted/60",
+    "disabled:tw-cursor-not-allowed",
     ...focusRing,
   ],
   danger: [
@@ -45,6 +47,7 @@ const buttonStyles: Record<ButtonType, string[]> = {
     "disabled:tw-bg-transparent",
     "disabled:tw-border-danger-500/60",
     "disabled:!tw-text-danger/60",
+    "disabled:tw-cursor-not-allowed",
     ...focusRing,
   ],
   unstyled: [],
