@@ -32,6 +32,8 @@ export class BitErrorComponent {
         return this.i18nService.t("inputMaxLength", this.error[1]?.requiredLength);
       case "forbiddenCharacters":
         return this.i18nService.t("inputForbiddenCharacters", this.error[1]?.characters.join(", "));
+      case "multipleEmails":
+        return this.i18nService.t("multipleInputEmails");
       default:
         // Attempt to show a custom error message.
         if (this.error[1]?.message) {

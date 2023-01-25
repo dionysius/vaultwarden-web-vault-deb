@@ -3,8 +3,6 @@ import { Component, Inject, OnDestroy, OnInit } from "@angular/core";
 import { FormBuilder, Validators } from "@angular/forms";
 import { combineLatest, of, shareReplay, Subject, switchMap, takeUntil } from "rxjs";
 
-import { ApiService } from "@bitwarden/common/abstractions/api.service";
-import { CollectionService } from "@bitwarden/common/abstractions/collection.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { OrganizationUserService } from "@bitwarden/common/abstractions/organization-user/organization-user.service";
 import { OrganizationService } from "@bitwarden/common/abstractions/organization/organization.service.abstraction";
@@ -32,6 +30,8 @@ import {
   convertToSelectionView,
   PermissionMode,
 } from "../../../shared/components/access-selector";
+
+import { commaSeparatedEmails } from "./validators/comma-separated-emails.validator";
 
 export enum MemberDialogTab {
   Role = 0,
@@ -75,7 +75,7 @@ export class MemberDialogComponent implements OnInit, OnDestroy {
   protected groupAccessItems: AccessItemView[] = [];
   protected tabIndex: MemberDialogTab;
   protected formGroup = this.formBuilder.group({
-    emails: ["", [Validators.required]],
+    emails: ["", [Validators.required, commaSeparatedEmails]],
     type: OrganizationUserType.User,
     accessAllCollections: false,
     access: [[] as AccessItemValue[]],
@@ -117,9 +117,7 @@ export class MemberDialogComponent implements OnInit, OnDestroy {
   constructor(
     @Inject(DIALOG_DATA) protected params: MemberDialogParams,
     private dialogRef: DialogRef<MemberDialogResult>,
-    private apiService: ApiService,
     private i18nService: I18nService,
-    private collectionService: CollectionService,
     private platformUtilsService: PlatformUtilsService,
     private organizationService: OrganizationService,
     private formBuilder: FormBuilder,
@@ -291,7 +289,16 @@ export class MemberDialogComponent implements OnInit, OnDestroy {
   }
 
   submit = async () => {
+    this.formGroup.markAllAsTouched();
+
     if (this.formGroup.invalid) {
+      if (this.tabIndex !== MemberDialogTab.Role) {
+        this.platformUtilsService.showToast(
+          "error",
+          null,
+          this.i18nService.t("fieldOnTabRequiresAttention", this.i18nService.t("role"))
+        );
+      }
       return;
     }
 
@@ -323,6 +330,12 @@ export class MemberDialogComponent implements OnInit, OnDestroy {
     } else {
       userView.id = this.params.organizationUserId;
       const emails = [...new Set(this.formGroup.value.emails.trim().split(/\s*,\s*/))];
+      if (emails.length > 20) {
+        this.formGroup.controls.emails.setErrors({
+          tooManyEmails: { message: this.i18nService.t("tooManyEmails", 20) },
+        });
+        return;
+      }
       await this.userService.invite(emails, userView);
     }
 

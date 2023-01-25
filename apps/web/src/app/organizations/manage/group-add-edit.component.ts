@@ -227,7 +227,16 @@ export class GroupAddEditComponent implements OnInit, OnDestroy {
   }
 
   submit = async () => {
+    this.groupForm.markAllAsTouched();
+
     if (this.groupForm.invalid) {
+      if (this.tabIndex !== GroupAddEditTabType.Info) {
+        this.platformUtilsService.showToast(
+          "error",
+          null,
+          this.i18nService.t("fieldOnTabRequiresAttention", this.i18nService.t("groupInfo"))
+        );
+      }
       return;
     }
 

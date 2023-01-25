@@ -15,11 +15,11 @@
       <ng-container *ngIf="loading" #spinner>
         <i class="bwi bwi-spinner bwi-lg bwi-spin" aria-hidden="true"></i>
       </ng-container>
-      <bit-tab-group *ngIf="!loading" [selectedIndex]="tabIndex">
+      <bit-tab-group *ngIf="!loading" [(selectedIndex)]="tabIndex">
         <bit-tab label="{{ 'collectionInfo' | i18n }}">
           <bit-form-field>
             <bit-label>{{ "name" | i18n }}</bit-label>
-            <input bitInput formControlName="name" required />
+            <input bitInput formControlName="name" />
           </bit-form-field>
 
           <bit-form-field>

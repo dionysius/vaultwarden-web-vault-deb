@@ -16,7 +16,7 @@
         ></i>
         <span class="sr-only">{{ "loading" | i18n }}</span>
       </ng-container>
-      <bit-tab-group *ngIf="!loading" [selectedIndex]="tabIndex">
+      <bit-tab-group *ngIf="!loading" [(selectedIndex)]="tabIndex">
         <bit-tab [label]="'role' | i18n">
           <ng-container *ngIf="!editMode">
             <p>{{ "inviteUserDesc" | i18n }}</p>

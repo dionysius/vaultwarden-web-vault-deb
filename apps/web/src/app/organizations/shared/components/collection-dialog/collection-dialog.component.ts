@@ -1,6 +1,6 @@
 import { DIALOG_DATA, DialogConfig, DialogRef } from "@angular/cdk/dialog";
 import { Component, Inject, OnDestroy, OnInit } from "@angular/core";
-import { FormBuilder } from "@angular/forms";
+import { FormBuilder, Validators } from "@angular/forms";
 import { combineLatest, of, shareReplay, Subject, switchMap, takeUntil } from "rxjs";
 
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
@@ -60,7 +60,7 @@ export class CollectionDialogComponent implements OnInit, OnDestroy {
   protected accessItems: AccessItemView[] = [];
   protected deletedParentName: string | undefined;
   protected formGroup = this.formBuilder.group({
-    name: ["", BitValidators.forbiddenCharacters(["/"])],
+    name: ["", [Validators.required, BitValidators.forbiddenCharacters(["/"])]],
     externalId: "",
     parent: null as string | null,
     access: [[] as AccessItemValue[]],
@@ -155,7 +155,16 @@ export class CollectionDialogComponent implements OnInit, OnDestroy {
   }
 
   protected submit = async () => {
+    this.formGroup.markAllAsTouched();
+
     if (this.formGroup.invalid) {
+      if (this.tabIndex === CollectionDialogTabType.Access) {
+        this.platformUtilsService.showToast(
+          "error",
+          null,
+          this.i18nService.t("fieldOnTabRequiresAttention", this.i18nService.t("collectionInfo"))
+        );
+      }
       return;
     }
 
