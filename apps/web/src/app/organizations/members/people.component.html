@@ -144,8 +144,10 @@
                   class="tw-mr-3"
                 ></bit-avatar>
                 <div class="tw-flex tw-flex-col">
-                  <div class="tw-font-semibold tw-text-primary-500">
-                    {{ u.name ?? u.email }}
+                  <div>
+                    <button bitLink>
+                      {{ u.name ?? u.email }}
+                    </button>
                     <span
                       bitBadge
                       class="tw-text-xs"
