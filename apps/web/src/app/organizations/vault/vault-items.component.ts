@@ -163,10 +163,6 @@ export class VaultItemsComponent extends BaseVaultItemsComponent implements OnDe
     }
   }
 
-  selectRow(item: VaultItemRow) {
-    this.checkRow(item);
-  }
-
   checkRow(item: VaultItemRow, select?: boolean) {
     if (item instanceof TreeNode && item.node.id == null) {
       return;

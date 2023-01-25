@@ -294,6 +294,10 @@ export class VaultComponent implements OnInit, OnDestroy {
     }
   }
 
+  async navigateToCipher(cipher: CipherView) {
+    this.go({ itemId: cipher?.id });
+  }
+
   async editCipher(cipher: CipherView) {
     return this.editCipherId(cipher?.id);
   }

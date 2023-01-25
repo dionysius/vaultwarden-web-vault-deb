@@ -60,7 +60,7 @@
       <app-vault-items
         [activeFilter]="activeFilter"
         (activeFilterChanged)="applyVaultFilter($event)"
-        (onCipherClicked)="editCipher($event)"
+        (onCipherClicked)="navigateToCipher($event)"
         (onAttachmentsClicked)="editCipherAttachments($event)"
         (onAddCipher)="addCipher()"
         (onShareClicked)="shareCipher($event)"

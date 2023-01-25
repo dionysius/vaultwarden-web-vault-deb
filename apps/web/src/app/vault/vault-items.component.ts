@@ -453,14 +453,6 @@ export class VaultItemsComponent extends BaseVaultItemsComponent implements OnDe
     }
   }
 
-  selectRow(item: VaultItemRow) {
-    if (item instanceof CipherView) {
-      this.checkRow(item);
-    } else if (item instanceof TreeNode) {
-      this.navigateCollection(item);
-    }
-  }
-
   navigateCollection(node: TreeNode<CollectionFilter>) {
     const filter = this.activeFilter;
     filter.selectedCollectionNode = node;
@@ -505,12 +497,6 @@ export class VaultItemsComponent extends BaseVaultItemsComponent implements OnDe
     return (
       (cipher?.login?.hasTotp ?? false) && (cipher.organizationUseTotp || this.userHasPremiumAccess)
     );
-  }
-
-  async selectCipher(cipher: CipherView) {
-    if (await this.repromptCipher(cipher)) {
-      super.selectCipher(cipher);
-    }
   }
 
   onOrganizationClicked(organizationId: string) {
