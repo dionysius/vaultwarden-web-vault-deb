@@ -54,11 +54,11 @@
               {{ "new" | i18n }}<i class="bwi bwi-angle-down tw-ml-2" aria-hidden="true"></i>
             </button>
             <bit-menu #addOptions aria-labelledby="newItemDropdown">
-              <button class="dropdown-item" appStopClick (click)="addCipher()">
+              <button type="button" bitMenuItem (click)="addCipher()">
                 <i class="bwi bwi-fw bwi-globe" aria-hidden="true"></i>
                 {{ "item" | i18n }}
               </button>
-              <button class="dropdown-item" appStopClick (click)="addCollection()">
+              <button type="button" bitMenuItem (click)="addCollection()">
                 <i class="bwi bwi-fw bwi-collection" aria-hidden="true"></i>
                 {{ "collection" | i18n }}
               </button>
