@@ -5,6 +5,7 @@ import { PolicyApiServiceAbstraction } from "../../abstractions/policy/policy-ap
 import { InternalPolicyService } from "../../abstractions/policy/policy.service.abstraction";
 import { StateService } from "../../abstractions/state.service";
 import { PolicyType } from "../../enums/policyType";
+import { Utils } from "../../misc/utils";
 import { PolicyData } from "../../models/data/policy.data";
 import { MasterPasswordPolicyOptions } from "../../models/domain/master-password-policy-options";
 import { PolicyRequest } from "../../models/request/policy.request";
@@ -54,7 +55,7 @@ export class PolicyApiService implements PolicyApiServiceAbstraction {
         "token=" +
         encodeURIComponent(token) +
         "&email=" +
-        encodeURIComponent(email) +
+        Utils.encodeRFC3986URIComponent(email) +
         "&organizationUserId=" +
         organizationUserId,
       null,

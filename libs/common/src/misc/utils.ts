@@ -486,6 +486,18 @@ export class Utils {
     return Object.assign(destination, source) as unknown as Merge<Destination, Source>;
   }
 
+  /**
+   * encodeURIComponent escapes all characters except the following:
+   * alphabetic, decimal digits, - _ . ! ~ * ' ( )
+   * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent#encoding_for_rfc3986
+   */
+  static encodeRFC3986URIComponent(str: string): string {
+    return encodeURIComponent(str).replace(
+      /[!'()*]/g,
+      (c) => `%${c.charCodeAt(0).toString(16).toUpperCase()}`
+    );
+  }
+
   private static isMobile(win: Window) {
     let mobile = false;
     ((a) => {
