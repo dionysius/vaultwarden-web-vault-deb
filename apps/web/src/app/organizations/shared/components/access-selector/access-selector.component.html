@@ -1,5 +1,5 @@
 <div class="tw-flex">
-  <bit-form-field *ngIf="permissionMode == 'edit'">
+  <bit-form-field *ngIf="permissionMode == 'edit'" class="tw-mr-3">
     <bit-label>{{ "permission" | i18n }}</bit-label>
     <!--
       Built-in select height differs between browsers, this fix makes sure we match bit-multi-select height.
@@ -20,7 +20,7 @@
     </select>
   </bit-form-field>
 
-  <bit-form-field class="tw-ml-3 tw-flex-grow">
+  <bit-form-field class="tw-flex-grow">
     <bit-label>{{ selectorLabelText }}</bit-label>
     <bit-multi-select
       class="tw-w-full"
