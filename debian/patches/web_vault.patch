@@ -424,3 +424,16 @@ index 029639e7e..6c3606341 100644
      let email = this.formGroup.value.email;
      email = email.trim().toLowerCase();
      let name = this.formGroup.value.name;
+diff --git a/libs/components/src/menu/menu.component.html b/libs/components/src/menu/menu.component.html
+index 15f78351a..6d3421ffc 100644
+--- a/libs/components/src/menu/menu.component.html
++++ b/libs/components/src/menu/menu.component.html
+@@ -1,7 +1,7 @@
+ <ng-template>
+   <div
+     (click)="closed.emit()"
+-    class="tw-flex tw-shrink-0 tw-flex-col tw-rounded tw-border tw-border-solid tw-border-secondary-500 tw-bg-background tw-bg-clip-padding tw-py-2"
++    class="tw-flex tw-shrink-0 tw-flex-col tw-rounded tw-border tw-border-solid tw-border-secondary-500 tw-bg-background tw-bg-clip-padding tw-py-2 tw-overflow-x-auto"
+     [attr.role]="ariaRole"
+     [attr.aria-label]="ariaLabel"
+     cdkTrapFocus
