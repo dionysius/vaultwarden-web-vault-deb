@@ -266,7 +266,7 @@ jobs:
         uses: bitwarden/gh-actions/get-keyvault-secrets@c3b3285993151c5af47cefcb3b9134c28ab479af
         with:
           keyvault: "bitwarden-prod-kv"
-          secrets: "cli-npm-api-key"
+          secrets: "npm-api-key"
 
       - name: Download artifacts
         if: ${{ github.event.inputs.release_type != 'Dry Run' }}
@@ -293,7 +293,7 @@ jobs:
           echo 'registry="https://registry.npmjs.org/"' > ./.npmrc
           echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ./.npmrc
         env:
-          NPM_TOKEN: ${{ steps.retrieve-secrets.outputs.cli-npm-api-key }}
+          NPM_TOKEN: ${{ steps.retrieve-secrets.outputs.npm-api-key }}
 
       - name: Install Husky
         run: npm install -g husky
