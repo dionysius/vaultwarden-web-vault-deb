@@ -80,6 +80,8 @@ jobs:
             npm_command: "dist:bit:selfhost"
           - name: "cloud-QA"
             npm_command: "build:bit:qa"
+          - name: "cloud-POC"
+            npm_command: "build:bit:poc"
           - name: "ee"
             npm_command: "build:bit:ee"
 
