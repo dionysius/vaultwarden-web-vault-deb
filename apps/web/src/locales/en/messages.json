@@ -6082,5 +6082,14 @@
         "example": "2"
       }
     }
+  },
+  "lowKdfIterations": {
+    "message": "Low KDF Iterations"
+  },
+  "lowKdfIterationsDesc": {
+    "message": "Increase your KDF encryption settings to improve the security of your account."
+  },
+  "changeKdfSettings": {
+    "message": "Change KDF settings"
   }
 }

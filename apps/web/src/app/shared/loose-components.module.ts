@@ -74,6 +74,7 @@ import { EmergencyAccessTakeoverComponent } from "../settings/emergency-access-t
 import { EmergencyAccessViewComponent } from "../settings/emergency-access-view.component";
 import { EmergencyAccessComponent } from "../settings/emergency-access.component";
 import { EmergencyAddEditComponent } from "../settings/emergency-add-edit.component";
+import { LowKdfComponent } from "../settings/low-kdf.component";
 import { OrganizationPlansComponent } from "../settings/organization-plans.component";
 import { PaymentMethodComponent } from "../settings/payment-method.component";
 import { PaymentComponent } from "../settings/payment.component";
@@ -227,6 +228,7 @@ import { SharedModule } from "./shared.module";
     VerifyEmailComponent,
     VerifyEmailTokenComponent,
     VerifyRecoverDeleteComponent,
+    LowKdfComponent,
   ],
   exports: [
     PremiumBadgeComponent,
@@ -335,6 +337,7 @@ import { SharedModule } from "./shared.module";
     VerifyEmailComponent,
     VerifyEmailTokenComponent,
     VerifyRecoverDeleteComponent,
+    LowKdfComponent,
   ],
 })
 export class LooseComponentsModule {}
