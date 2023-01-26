@@ -66,6 +66,11 @@ const moduleRules = [
     test: /\.[jt]sx?$/,
     loader: "@ngtools/webpack",
   },
+  {
+    test: /\.wasm$/,
+    loader: "base64-loader",
+    type: "javascript/auto",
+  },
 ];
 
 const requiredPlugins = [
@@ -203,13 +208,18 @@ const mainConfig = {
       buffer: require.resolve("buffer/"),
       util: require.resolve("util/"),
       url: require.resolve("url/"),
+      fs: false,
+      path: false,
     },
   },
   output: {
     filename: "[name].js",
     path: path.resolve(__dirname, "build"),
   },
-  module: { rules: moduleRules },
+  module: {
+    noParse: /\.wasm$/,
+    rules: moduleRules,
+  },
   plugins: plugins,
 };
 
@@ -265,13 +275,23 @@ if (manifestVersion == 2) {
           test: /\.tsx?$/,
           loader: "ts-loader",
         },
+        {
+          test: /\.wasm$/,
+          loader: "base64-loader",
+          type: "javascript/auto",
+        },
       ],
+      noParse: /\.wasm$/,
     },
     resolve: {
       extensions: [".ts", ".js"],
       symlinks: false,
       modules: [path.resolve("../../node_modules")],
       plugins: [new TsconfigPathsPlugin()],
+      fallback: {
+        fs: false,
+        path: false,
+      },
     },
     dependencies: ["main"],
     plugins: [...requiredPlugins],

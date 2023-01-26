@@ -16,7 +16,7 @@ import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { PasswordGenerationService } from "@bitwarden/common/abstractions/passwordGeneration.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
-import { DEFAULT_KDF_ITERATIONS, DEFAULT_KDF_TYPE } from "@bitwarden/common/enums/kdfType";
+import { DEFAULT_KDF_TYPE, DEFAULT_PBKDF2_ITERATIONS } from "@bitwarden/common/enums/kdfType";
 import { PasswordLogInCredentials } from "@bitwarden/common/models/domain/log-in-credentials";
 import { KeysRequest } from "@bitwarden/common/models/request/keys.request";
 import { ReferenceEventRequest } from "@bitwarden/common/models/request/reference-event.request";
@@ -269,7 +269,7 @@ export class RegisterComponent extends CaptchaProtectedComponent implements OnIn
   ): Promise<RegisterRequest> {
     const hint = this.formGroup.value.hint;
     const kdf = DEFAULT_KDF_TYPE;
-    const kdfIterations = DEFAULT_KDF_ITERATIONS;
+    const kdfIterations = DEFAULT_PBKDF2_ITERATIONS;
     const key = await this.cryptoService.makeKey(masterPassword, email, kdf, kdfIterations);
     const encKey = await this.cryptoService.makeEncKey(key);
     const hashedPassword = await this.cryptoService.hashPassword(masterPassword, key);

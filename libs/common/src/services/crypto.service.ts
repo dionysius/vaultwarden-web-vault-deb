@@ -8,7 +8,7 @@ import { PlatformUtilsService } from "../abstractions/platformUtils.service";
 import { StateService } from "../abstractions/state.service";
 import { EncryptionType } from "../enums/encryptionType";
 import { HashPurpose } from "../enums/hashPurpose";
-import { KdfType } from "../enums/kdfType";
+import { DEFAULT_ARGON2_ITERATIONS, KdfType } from "../enums/kdfType";
 import { KeySuffixOptions } from "../enums/keySuffixOptions";
 import { sequentialize } from "../misc/sequentialize";
 import { Utils } from "../misc/utils";
@@ -418,6 +418,19 @@ export class CryptoService implements CryptoServiceAbstraction {
         throw new Error("PBKDF2 iteration minimum is 5000.");
       }
       key = await this.cryptoFunctionService.pbkdf2(password, salt, "sha256", kdfIterations);
+    } else if (kdf == KdfType.Argon2id) {
+      if (kdfIterations == null) {
+        kdfIterations = DEFAULT_ARGON2_ITERATIONS;
+      } else if (kdfIterations < 2) {
+        throw new Error("Argon2 iteration minimum is 2.");
+      }
+      key = await this.cryptoFunctionService.argon2(
+        password,
+        salt,
+        kdfIterations,
+        16 * 1024, // convert to KiB from MiB
+        2
+      );
     } else {
       throw new Error("Unknown Kdf.");
     }

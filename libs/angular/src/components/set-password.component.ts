@@ -16,7 +16,7 @@ import { PolicyService } from "@bitwarden/common/abstractions/policy/policy.serv
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { SyncService } from "@bitwarden/common/abstractions/sync/sync.service.abstraction";
 import { HashPurpose } from "@bitwarden/common/enums/hashPurpose";
-import { DEFAULT_KDF_ITERATIONS, DEFAULT_KDF_TYPE } from "@bitwarden/common/enums/kdfType";
+import { DEFAULT_KDF_TYPE, DEFAULT_PBKDF2_ITERATIONS } from "@bitwarden/common/enums/kdfType";
 import { Utils } from "@bitwarden/common/misc/utils";
 import { EncString } from "@bitwarden/common/models/domain/enc-string";
 import { SymmetricCryptoKey } from "@bitwarden/common/models/domain/symmetric-crypto-key";
@@ -93,7 +93,7 @@ export class SetPasswordComponent extends BaseChangePasswordComponent {
 
   async setupSubmitActions() {
     this.kdf = DEFAULT_KDF_TYPE;
-    this.kdfIterations = DEFAULT_KDF_ITERATIONS;
+    this.kdfIterations = DEFAULT_PBKDF2_ITERATIONS;
     return true;
   }
 

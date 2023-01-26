@@ -7,7 +7,7 @@ import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { MessagingService } from "@bitwarden/common/abstractions/messaging.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
-import { DEFAULT_KDF_ITERATIONS, KdfType } from "@bitwarden/common/enums/kdfType";
+import { DEFAULT_PBKDF2_ITERATIONS, KdfType } from "@bitwarden/common/enums/kdfType";
 import { KdfRequest } from "@bitwarden/common/models/request/kdf.request";
 
 @Component({
@@ -20,7 +20,7 @@ export class ChangeKdfComponent implements OnInit {
   kdf = KdfType.PBKDF2_SHA256;
   kdfOptions: any[] = [];
   formPromise: Promise<any>;
-  recommendedKdfIterations = DEFAULT_KDF_ITERATIONS;
+  recommendedKdfIterations = DEFAULT_PBKDF2_ITERATIONS;
 
   constructor(
     private apiService: ApiService,

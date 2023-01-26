@@ -71,7 +71,7 @@
   "optional_permissions": ["nativeMessaging"],
   "host_permissions": ["http://*/*", "https://*/*"],
   "content_security_policy": {
-    "extension_page": "script-src 'self' ; object-src 'self'"
+    "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self'"
   },
   "commands": {
     "_execute_action": {

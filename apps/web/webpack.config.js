@@ -79,6 +79,11 @@ const moduleRules = [
     test: /\.[jt]sx?$/,
     loader: "@ngtools/webpack",
   },
+  {
+    test: /\.wasm$/,
+    loader: "base64-loader",
+    type: "javascript/auto",
+  },
 ];
 
 const plugins = [
@@ -223,6 +228,7 @@ const devServer =
                 default-src 'self'
                 ;script-src
                   'self'
+                  'wasm-unsafe-eval'
                   'sha256-ryoU+5+IUZTuUyTElqkrQGBJXr1brEv6r2CA62WUw8w='
                   https://js.stripe.com
                   https://js.braintreegateway.com
@@ -349,13 +355,19 @@ const webpackConfig = {
       util: require.resolve("util/"),
       assert: false,
       url: false,
+      path: false,
+      fs: false,
+      process: false,
     },
   },
   output: {
     filename: "[name].[contenthash].js",
     path: path.resolve(__dirname, "build"),
   },
-  module: { rules: moduleRules },
+  module: {
+    noParse: /\.wasm$/,
+    rules: moduleRules,
+  },
   plugins: plugins,
 };
 
