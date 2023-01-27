@@ -1123,6 +1123,9 @@
   "dr": {
     "message": "Dr"
   },
+  "mx": {
+    "message": "Mx"
+  },
   "firstName": {
     "message": "Förnamn"
   },
@@ -2043,5 +2046,35 @@
   },
   "rememberEmail": {
     "message": "Kom ihåg e-postadress"
+  },
+  "exposedMasterPassword": {
+    "message": "Huvudlösenordet har avslöjats"
+  },
+  "exposedMasterPasswordDesc": {
+    "message": "Lösenordet avslöjades vid ett dataintrång. Använd ett unikt lösenord för att skydda ditt konto. Är du säker på att du vill använda ett lösenord som avslöjats?"
+  },
+  "weakAndExposedMasterPassword": {
+    "message": "Huvudlösenordet är svagt och har avslöjats"
+  },
+  "weakAndBreachedMasterPasswordDesc": {
+    "message": "Weak password identified and found in a data breach. Use a strong and unique password to protect your account. Are you sure you want to use this password?"
+  },
+  "checkForBreaches": {
+    "message": "Kontrollera kända dataintrång för detta lösenord"
+  },
+  "important": {
+    "message": "Viktigt:"
+  },
+  "masterPasswordHint": {
+    "message": "Ditt huvudlösenord kan inte återställas om du glömmer det!"
+  },
+  "characterMinimum": {
+    "message": "Minst $LENGTH$ tecken",
+    "placeholders": {
+      "length": {
+        "content": "$1",
+        "example": "14"
+      }
+    }
   }
 }

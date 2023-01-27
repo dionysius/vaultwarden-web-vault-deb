@@ -1123,6 +1123,9 @@
   "dr": {
     "message": "Dr"
   },
+  "mx": {
+    "message": "Mx"
+  },
   "firstName": {
     "message": "Személynév"
   },
@@ -2043,5 +2046,35 @@
   },
   "rememberEmail": {
     "message": "Email megjegyzése"
+  },
+  "exposedMasterPassword": {
+    "message": "Kiszivárgott mesterjelszó"
+  },
+  "exposedMasterPasswordDesc": {
+    "message": "A jelszó megtalálható egy adatvédelmi incidensben. A fiók védelméhez használjunk egyedi jelszót. Biztos, hogy kiszivárgott elszót szeretnénk használni?"
+  },
+  "weakAndExposedMasterPassword": {
+    "message": "Gyenge vagy kitett mesterjelszó"
+  },
+  "weakAndBreachedMasterPasswordDesc": {
+    "message": "Gyenge jelszó lett azonosítva és megtalálva egy adatvédelmi incidens során. A fók védelme érdekében használjunk erős és egyedi jelszót. Biztosan használni szeretnénk ezt a jelszót?"
+  },
+  "checkForBreaches": {
+    "message": "Az ehhez a jelszóhoz tartozó ismert adatvédelmi incidensek ellenőrzése"
+  },
+  "important": {
+    "message": "Fontos:"
+  },
+  "masterPasswordHint": {
+    "message": "Az elfelejtett mesterjelszó nem állítható helyre, ha elfelejtik!"
+  },
+  "characterMinimum": {
+    "message": "Legalább $LENGTH$ karakter",
+    "placeholders": {
+      "length": {
+        "content": "$1",
+        "example": "14"
+      }
+    }
   }
 }

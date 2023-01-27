@@ -1123,6 +1123,9 @@
   "dr": {
     "message": "Доктор"
   },
+  "mx": {
+    "message": "Mx"
+  },
   "firstName": {
     "message": "Ім’я"
   },
@@ -2043,5 +2046,35 @@
   },
   "rememberEmail": {
     "message": "Запам'ятати е-пошту"
+  },
+  "exposedMasterPassword": {
+    "message": "Головний пароль викрито"
+  },
+  "exposedMasterPasswordDesc": {
+    "message": "Пароль знайдено у витоку даних. Використовуйте унікальний пароль для захисту свого облікового запису. Ви дійсно хочете використати викритий пароль?"
+  },
+  "weakAndExposedMasterPassword": {
+    "message": "Слабкий і викритий головний пароль"
+  },
+  "weakAndBreachedMasterPasswordDesc": {
+    "message": "Виявлено слабкий пароль, який знайдено у витоку даних. Використовуйте надійний та унікальний пароль для захисту свого облікового запису. Ви дійсно хочете використати цей пароль?"
+  },
+  "checkForBreaches": {
+    "message": "Перевірити відомі витоки даних для цього пароля"
+  },
+  "important": {
+    "message": "Важливо:"
+  },
+  "masterPasswordHint": {
+    "message": "Головний пароль неможливо відновити, якщо ви його втратите!"
+  },
+  "characterMinimum": {
+    "message": "Мінімум $LENGTH$ символів",
+    "placeholders": {
+      "length": {
+        "content": "$1",
+        "example": "14"
+      }
+    }
   }
 }

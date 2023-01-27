@@ -1123,6 +1123,9 @@
   "dr": {
     "message": "博士"
   },
+  "mx": {
+    "message": "Mx"
+  },
   "firstName": {
     "message": "名"
   },
@@ -2043,5 +2046,35 @@
   },
   "rememberEmail": {
     "message": "记住电子邮件地址"
+  },
+  "exposedMasterPassword": {
+    "message": "暴露的主密码"
+  },
+  "exposedMasterPasswordDesc": {
+    "message": "数据泄露中发现的密码。使用独特的密码来保护您的帐户。您确定要使用已暴露的密码吗？"
+  },
+  "weakAndExposedMasterPassword": {
+    "message": "弱而暴露的主密码"
+  },
+  "weakAndBreachedMasterPasswordDesc": {
+    "message": "已经识别和发现在数据泄露中的弱密码。使用强大且独特的密码来保护您的帐户。您确定要使用此密码吗？"
+  },
+  "checkForBreaches": {
+    "message": "检查已知的数据泄露是否包含此密码。"
+  },
+  "important": {
+    "message": "简体中文：重要"
+  },
+  "masterPasswordHint": {
+    "message": "检查此密码的已知数据泄露"
+  },
+  "characterMinimum": {
+    "message": "重要",
+    "placeholders": {
+      "length": {
+        "content": "$1",
+        "example": "14"
+      }
+    }
   }
 }

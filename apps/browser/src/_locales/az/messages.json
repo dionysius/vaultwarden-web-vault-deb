@@ -1123,6 +1123,9 @@
   "dr": {
     "message": "Dr"
   },
+  "mx": {
+    "message": "Hörmətli"
+  },
   "firstName": {
     "message": "Ad"
   },
@@ -2043,5 +2046,35 @@
   },
   "rememberEmail": {
     "message": "E-poçtu xatırla"
+  },
+  "exposedMasterPassword": {
+    "message": "İfşa olunmuş ana parol"
+  },
+  "exposedMasterPasswordDesc": {
+    "message": "Parol, məlumat pozuntusunda tapıldı. Hesabınızı qorumaq üçün unikal bir parol istifadə edin. İfşa olunmuş bir parol istifadə etmək istədiyinizə əminsiniz?"
+  },
+  "weakAndExposedMasterPassword": {
+    "message": "Zəif və ifşa olunmuş ana parol"
+  },
+  "weakAndBreachedMasterPasswordDesc": {
+    "message": "Zəif parol məlumat pozuntusunda aşkarlandı və tapıldı. Hesabınızı qorumaq üçün güclü və unikal bir parol istifadə edin. Bu parolu istifadə etmək istədiyinizə əminsiniz?"
+  },
+  "checkForBreaches": {
+    "message": "Bu parol üçün bilinən məlumat pozuntularını yoxlayın"
+  },
+  "important": {
+    "message": "Vacib:"
+  },
+  "masterPasswordHint": {
+    "message": "Unutsanız, ana parolunuz bərpa edilə bilməz!"
+  },
+  "characterMinimum": {
+    "message": "Minimum $LENGTH$ simvol",
+    "placeholders": {
+      "length": {
+        "content": "$1",
+        "example": "14"
+      }
+    }
   }
 }

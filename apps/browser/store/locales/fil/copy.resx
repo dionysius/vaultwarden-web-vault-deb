@@ -118,37 +118,13 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Name" xml:space="preserve">
-    <value>Bitwarden – Free Password Manager</value>
+    <value>Bitwarden - Libreng Password Manager</value>
   </data>
   <data name="Summary" xml:space="preserve">
     <value>Isang ligtas at libreng password manager para sa lahat ng iyong mga aparato.</value>
   </data>
   <data name="Description" xml:space="preserve">
-    <value>Bitwarden, Inc. is the parent company of 8bit Solutions LLC.
-
-NAMED BEST PASSWORD MANAGER BY THE VERGE, U.S. NEWS &amp; WORLD REPORT, CNET, AND MORE.
-
-Manage, store, secure, and share unlimited passwords across unlimited devices from anywhere. Bitwarden delivers open source password management solutions to everyone, whether at  home, at work, or on the go.
-
-Generate strong, unique, and random passwords based on security requirements for every website you frequent.
-
-Bitwarden Send quickly transmits encrypted information --- files and plaintext -- directly to anyone.
-
-Bitwarden offers Teams and Enterprise plans for companies so you can securely share passwords with colleagues.
-
-Why Choose Bitwarden:
-
-World-Class Encryption
-Passwords are protected with advanced end-to-end encryption (AES-256 bit, salted hashing, and PBKDF2 SHA-256) so your data stays secure and private.
-
-Built-in Password Generator
-Generate strong, unique, and random passwords based on security requirements for every website you frequent.
-
-Global Translations 
-Bitwarden translations exist in 40 languages and are growing, thanks to our global community.
-
-Cross-Platform Applications 
-Secure and share sensitive data within your Bitwarden Vault from any browser, mobile device, or desktop OS, and more.
+    <value>Si Bitwarden, Inc. ang parent company ng 8bit Solutions LLC. Tinawag na Pinakamahusay na Password Manager ng The Verge, U.S. News &amp; World Report, CNET at iba pa. I-manage, i-store, i-secure at i-share ang walang limitasyong mga password sa walang limitasyong mga device mula sa kahit saan. Bitwarden nagbibigay ng mga open source na solusyon sa password management sa lahat, kahit sa bahay, sa trabaho o habang nasa daan. Lumikha ng mga matatas, natatanging, at mga random na password na naka-base sa mga pangangailangan ng seguridad para sa bawat website na madalas mong bisitahin. Ang Bitwarden Send ay nagpapadala ng maayos na naka-encrypt na impormasyon - mga file at plaintext - diretso sa sinuman. Ang Bitwarden ay nag-aalok ng mga Teams at Enterprise plans para sa m.
 </value>
   </data>
   <data name="AssetTitle" xml:space="preserve">
@@ -158,18 +134,18 @@ Secure and share sensitive data within your Bitwarden Vault from any browser, mo
     <value>I-sync at i-access ang iyong kahadeyero mula sa maraming mga aparato</value>
   </data>
   <data name="ScreenshotVault" xml:space="preserve">
-    <value>Manage all your logins and passwords from a secure vault</value>
+    <value>Pamahalaan ang lahat ng iyong logins at passwords mula sa isang secure vault</value>
   </data>
   <data name="ScreenshotAutofill" xml:space="preserve">
-    <value>Quickly auto-fill your login credentials into any website that you visit</value>
+    <value>Makabilis na auto-fill ang iyong login credentials sa anumang website na bisitahin mo</value>
   </data>
   <data name="ScreenshotMenu" xml:space="preserve">
-    <value>Your vault is also conveniently accessible from the right-click menu</value>
+    <value>Accessible din ang iyong vault mula sa right-click menu</value>
   </data>
   <data name="ScreenshotPassword" xml:space="preserve">
-    <value>Automatically generate strong, random, and secure passwords</value>
+    <value>Awtomatikong gumawa ng mga malakas, random, at ligtas na password</value>
   </data>
   <data name="ScreenshotEdit" xml:space="preserve">
-    <value>Your information is managed securely using AES-256 bit encryption</value>
+    <value>Ang iyong impormasyon ay namamahala nang maayos gamit ang AES-256 bit encryption</value>
   </data>
 </root>

@@ -1123,6 +1123,9 @@
   "dr": {
     "message": "Doktor"
   },
+  "mx": {
+    "message": "Pan(i)"
+  },
   "firstName": {
     "message": "Imię"
   },
@@ -2043,5 +2046,35 @@
   },
   "rememberEmail": {
     "message": "Zapamiętaj adres e-mail"
+  },
+  "exposedMasterPassword": {
+    "message": "Ujawnione hasło główne"
+  },
+  "exposedMasterPasswordDesc": {
+    "message": "Hasło ujawnione w wyniku naruszenia ochrony danych. Użyj unikalnego hasła, aby chronić swoje konto. Czy na pewno chcesz użyć ujawnionego hasła?"
+  },
+  "weakAndExposedMasterPassword": {
+    "message": "Słabe i ujawnione hasło główne"
+  },
+  "weakAndBreachedMasterPasswordDesc": {
+    "message": "Słabe hasło ujawnione w wyniku naruszenia ochrony danych. Użyj silnego i unikalnego hasła, aby chronić swoje konto. Czy na pewno chcesz użyć tego hasła?"
+  },
+  "checkForBreaches": {
+    "message": "Sprawdź znane naruszenia ochrony danych tego hasła"
+  },
+  "important": {
+    "message": "Ważne:"
+  },
+  "masterPasswordHint": {
+    "message": "Twoje hasło główne nie może zostać odzyskane, jeśli je zapomnisz!"
+  },
+  "characterMinimum": {
+    "message": "Minimum znaków: $LENGTH$",
+    "placeholders": {
+      "length": {
+        "content": "$1",
+        "example": "14"
+      }
+    }
   }
 }

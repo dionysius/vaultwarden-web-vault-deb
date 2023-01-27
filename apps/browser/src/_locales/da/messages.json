@@ -1123,6 +1123,9 @@
   "dr": {
     "message": "Dr"
   },
+  "mx": {
+    "message": "Mx"
+  },
   "firstName": {
     "message": "Fornavn"
   },
@@ -2043,5 +2046,35 @@
   },
   "rememberEmail": {
     "message": "Husk e-mail"
+  },
+  "exposedMasterPassword": {
+    "message": "Kompromitteret hovedadgangskode"
+  },
+  "exposedMasterPasswordDesc": {
+    "message": "Adgangskode fundet i datalæk. Brug en unik adgangskode til at beskytte din konto. Sikker på, at du vil bruge en kompromitteret adgangskode?"
+  },
+  "weakAndExposedMasterPassword": {
+    "message": "Svag eller kompromitteret hovedadgangskode"
+  },
+  "weakAndBreachedMasterPasswordDesc": {
+    "message": "Svag adgangskode identificeret og fundet i datalæk. Brug en unik adgangskode til at beskytte din konto. Sikker på, at at denne adgangskode skal bruges?"
+  },
+  "checkForBreaches": {
+    "message": "Tjek kendte datalæk for denne adgangskode"
+  },
+  "important": {
+    "message": "Vigtigt:"
+  },
+  "masterPasswordHint": {
+    "message": "Hovedadgangskoden kan ikke gendannes, hvis den glemmes!"
+  },
+  "characterMinimum": {
+    "message": "Minimum $LENGTH$ tegn",
+    "placeholders": {
+      "length": {
+        "content": "$1",
+        "example": "14"
+      }
+    }
   }
 }

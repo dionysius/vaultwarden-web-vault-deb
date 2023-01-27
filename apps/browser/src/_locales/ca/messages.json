@@ -1123,6 +1123,9 @@
   "dr": {
     "message": "Dr."
   },
+  "mx": {
+    "message": "Mx"
+  },
   "firstName": {
     "message": "Nom"
   },
@@ -2043,5 +2046,35 @@
   },
   "rememberEmail": {
     "message": "Recorda el correu electronic"
+  },
+  "exposedMasterPassword": {
+    "message": "Contrasenya mestra exposada"
+  },
+  "exposedMasterPasswordDesc": {
+    "message": "S'ha trobat la contrasenya en una filtració de dades. Utilitzeu una contrasenya única per protegir el vostre compte. Esteu segur que voleu utilitzar una contrasenya exposada?"
+  },
+  "weakAndExposedMasterPassword": {
+    "message": "Contrasenya mestra exposada i poc segura"
+  },
+  "weakAndBreachedMasterPasswordDesc": {
+    "message": "Contrasenya feble identificada i trobada en una filtració de dades. Utilitzeu una contrasenya única i segura per protegir el vostre compte. Esteu segur que voleu utilitzar aquesta contrasenya?"
+  },
+  "checkForBreaches": {
+    "message": "Comproveu les filtracions de dades conegudes per a aquesta contrasenya"
+  },
+  "important": {
+    "message": "Important:"
+  },
+  "masterPasswordHint": {
+    "message": "La contrasenya mestra no es pot recuperar si la oblideu!"
+  },
+  "characterMinimum": {
+    "message": "$LENGTH$ caràcters mínims",
+    "placeholders": {
+      "length": {
+        "content": "$1",
+        "example": "14"
+      }
+    }
   }
 }

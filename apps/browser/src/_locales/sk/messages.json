@@ -1123,6 +1123,9 @@
   "dr": {
     "message": "Dr"
   },
+  "mx": {
+    "message": "Vážený"
+  },
   "firstName": {
     "message": "Krstné meno"
   },
@@ -2043,5 +2046,35 @@
   },
   "rememberEmail": {
     "message": "Zapamätať si e-mail"
+  },
+  "exposedMasterPassword": {
+    "message": "Odhalené hlavné heslo"
+  },
+  "exposedMasterPasswordDesc": {
+    "message": "Nájdené heslo v uniknuných údajoch. Na ochranu svojho účtu používajte jedinečné heslo. Naozaj chcete používať odhalené heslo?"
+  },
+  "weakAndExposedMasterPassword": {
+    "message": "Slabé a odhalené hlavné heslo"
+  },
+  "weakAndBreachedMasterPasswordDesc": {
+    "message": "Nájdené slabé heslo v uniknuných údajoch. Na ochranu svojho účtu používajte silné a jedinečné heslo. Naozaj chcete používať toto heslo?"
+  },
+  "checkForBreaches": {
+    "message": "Skontrolovať známe úniky údajov pre toto heslo"
+  },
+  "important": {
+    "message": "Dôležité:"
+  },
+  "masterPasswordHint": {
+    "message": "Vaše hlavné heslo sa nebude dať obnoviť, ak ho zabudnete!"
+  },
+  "characterMinimum": {
+    "message": "Minimálny počet znakov $LENGTH$",
+    "placeholders": {
+      "length": {
+        "content": "$1",
+        "example": "14"
+      }
+    }
   }
 }

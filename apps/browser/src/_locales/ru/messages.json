@@ -1123,6 +1123,9 @@
   "dr": {
     "message": "Тов."
   },
+  "mx": {
+    "message": "Mx"
+  },
   "firstName": {
     "message": "Имя"
   },
@@ -2043,5 +2046,35 @@
   },
   "rememberEmail": {
     "message": "Запомнить email"
+  },
+  "exposedMasterPassword": {
+    "message": "Мастер-пароль скомпрометирован"
+  },
+  "exposedMasterPasswordDesc": {
+    "message": "Пароль найден в утечке данных. Используйте уникальный пароль для защиты вашего аккаунта. Вы уверены, что хотите использовать скомпрометированный пароль?"
+  },
+  "weakAndExposedMasterPassword": {
+    "message": "Слабый и скомпрометированный мастер-пароль"
+  },
+  "weakAndBreachedMasterPasswordDesc": {
+    "message": "Обнаружен слабый пароль, найденный в утечке данных. Используйте надежный и уникальный пароль для защиты своего аккаунта. Вы уверены, что хотите использовать этот пароль?"
+  },
+  "checkForBreaches": {
+    "message": "Проверьте известные случаи утечки данных для этого пароля"
+  },
+  "important": {
+    "message": "Важно:"
+  },
+  "masterPasswordHint": {
+    "message": "Ваш мастер-пароль невозможно восстановить, если вы его забудете!"
+  },
+  "characterMinimum": {
+    "message": "Минимум символов: $LENGTH$",
+    "placeholders": {
+      "length": {
+        "content": "$1",
+        "example": "14"
+      }
+    }
   }
 }

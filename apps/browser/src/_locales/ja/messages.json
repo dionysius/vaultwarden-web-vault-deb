@@ -1123,6 +1123,9 @@
   "dr": {
     "message": "Dr"
   },
+  "mx": {
+    "message": "Mx"
+  },
   "firstName": {
     "message": "名"
   },
@@ -2043,5 +2046,35 @@
   },
   "rememberEmail": {
     "message": "メールアドレスを保存"
+  },
+  "exposedMasterPassword": {
+    "message": "流出したマスターパスワード"
+  },
+  "exposedMasterPasswordDesc": {
+    "message": "入力したパスワードはデータ流出結果で見つかりました。アカウントを保護するためには一意のパスワードを使用してください。流出済みのパスワードを本当に使用しますか？"
+  },
+  "weakAndExposedMasterPassword": {
+    "message": "脆弱で流出済みのマスターパスワード"
+  },
+  "weakAndBreachedMasterPasswordDesc": {
+    "message": "入力されたパスワードは脆弱かつすでに流出済みです。アカウントを守るためより強力で一意なパスワードを使用してください。本当にこの脆弱なパスワードを使用しますか？"
+  },
+  "checkForBreaches": {
+    "message": "このパスワードの既知のデータ流出を確認"
+  },
+  "important": {
+    "message": "重要"
+  },
+  "masterPasswordHint": {
+    "message": "マスターパスワードを忘れた場合は復元できません！"
+  },
+  "characterMinimum": {
+    "message": "$LENGTH$ 文字以上",
+    "placeholders": {
+      "length": {
+        "content": "$1",
+        "example": "14"
+      }
+    }
   }
 }

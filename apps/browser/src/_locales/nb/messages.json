@@ -1123,6 +1123,9 @@
   "dr": {
     "message": "Dr."
   },
+  "mx": {
+    "message": "Mx"
+  },
   "firstName": {
     "message": "Fornavn"
   },
@@ -1278,7 +1281,7 @@
     "description": "Default URI match detection for auto-fill."
   },
   "toggleOptions": {
-    "message": "Skru av/på innstillinger"
+    "message": "Skru innstillinger av/på"
   },
   "toggleCurrentUris": {
     "message": "Veksle nåværende URI-er",
@@ -1312,7 +1315,7 @@
     "description": "ex. Date this item was updated"
   },
   "dateCreated": {
-    "message": "Created",
+    "message": "Opprettet",
     "description": "ex. Date this item was created"
   },
   "datePasswordUpdated": {
@@ -2030,18 +2033,48 @@
     }
   },
   "loginWithMasterPassword": {
-    "message": "Log in with master password"
+    "message": "Logg på med hovedpassord"
   },
   "loggingInAs": {
-    "message": "Logging in as"
+    "message": "Logger på som"
   },
   "notYou": {
-    "message": "Not you?"
+    "message": "Ikke deg?"
   },
   "newAroundHere": {
-    "message": "New around here?"
+    "message": "Er du ny her?"
   },
   "rememberEmail": {
-    "message": "Remember email"
+    "message": "Husk e-post"
+  },
+  "exposedMasterPassword": {
+    "message": "Eksponert hovedpassord"
+  },
+  "exposedMasterPasswordDesc": {
+    "message": "Passord funnet i et databrudd. Bruk et unikt passord for å beskytte kontoen din. Er du sikker på at du vil bruke et utsatt passord?"
+  },
+  "weakAndExposedMasterPassword": {
+    "message": "Svakt og eksponert hovedpassord"
+  },
+  "weakAndBreachedMasterPasswordDesc": {
+    "message": "Svakt passord identifisert og funnet i et databrudd. Bruk et sterkt og unikt passord for å beskytte kontoen din. Er du sikker på at du vil bruke dette passordet?"
+  },
+  "checkForBreaches": {
+    "message": "Sjekk kjente databrudd for dette passordet"
+  },
+  "important": {
+    "message": "Viktig:"
+  },
+  "masterPasswordHint": {
+    "message": "Hovedpassordet ditt kan ikke gjenopprettes hvis du glemmer det!"
+  },
+  "characterMinimum": {
+    "message": "Minst $LENGTH$ tegn",
+    "placeholders": {
+      "length": {
+        "content": "$1",
+        "example": "14"
+      }
+    }
   }
 }

@@ -1123,6 +1123,9 @@
   "dr": {
     "message": "Dr."
   },
+  "mx": {
+    "message": "Mx"
+  },
   "firstName": {
     "message": "Voornaam"
   },
@@ -2043,5 +2046,35 @@
   },
   "rememberEmail": {
     "message": "E-mailadres onthouden"
+  },
+  "exposedMasterPassword": {
+    "message": "Gelekt hoofdwachtwoord"
+  },
+  "exposedMasterPasswordDesc": {
+    "message": "Wachtwoord gevonden in een datalek. Gebruik een uniek wachtwoord om je account te beschermen. Weet je zeker dat je een gelekt wachtwoord wilt gebruiken?"
+  },
+  "weakAndExposedMasterPassword": {
+    "message": "Zwak en gelekt hoofdwachtwoord"
+  },
+  "weakAndBreachedMasterPasswordDesc": {
+    "message": "Zwak wachtwoord geïdentificeerd en gevonden in een datalek. Gebruik een sterk en uniek wachtwoord om je account te beschermen. Weet je zeker dat je dit wachtwoord wilt gebruiken?"
+  },
+  "checkForBreaches": {
+    "message": "Bekende datalekken voor dit wachtwoord controleren"
+  },
+  "important": {
+    "message": "Belangrijk:"
+  },
+  "masterPasswordHint": {
+    "message": "Je kunt je hoofdwachtwoord niet herstellen als je het vergeet!"
+  },
+  "characterMinimum": {
+    "message": "$LENGTH$ tekens minimaal",
+    "placeholders": {
+      "length": {
+        "content": "$1",
+        "example": "14"
+      }
+    }
   }
 }

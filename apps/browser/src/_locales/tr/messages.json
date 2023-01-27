@@ -1123,6 +1123,9 @@
   "dr": {
     "message": "Dr"
   },
+  "mx": {
+    "message": "Mx"
+  },
   "firstName": {
     "message": "Ad"
   },
@@ -2043,5 +2046,35 @@
   },
   "rememberEmail": {
     "message": "E-postayı hatırla"
+  },
+  "exposedMasterPassword": {
+    "message": "Açığa Çıkmış Ana Parola"
+  },
+  "exposedMasterPasswordDesc": {
+    "message": "Bu parola bir veri ihlalinde tespit edildi. Hesabınızı korumak için aynı parolayı farklı yerlerde kullanmayın. Bu parolayı kullanmak istediğinizden emin misiniz?"
+  },
+  "weakAndExposedMasterPassword": {
+    "message": "Zayıf ve Açığa Çıkmış Ana Parola"
+  },
+  "weakAndBreachedMasterPasswordDesc": {
+    "message": "Hem zayıf hem de veri ihlalinde yer alan bir tespit edildi. Hesabınızı korumak için güçlü bir parola seçin ve o parolayı başka yerlerde kullanmayın. Bu parolayı kullanmak istediğinizden emin misiniz?"
+  },
+  "checkForBreaches": {
+    "message": "Bilinen veri ihlallerinde bu parolayı kontrol et"
+  },
+  "important": {
+    "message": "Önemli:"
+  },
+  "masterPasswordHint": {
+    "message": "Ana parolanızı unutursanız kurtaramazsınız!"
+  },
+  "characterMinimum": {
+    "message": "En az $LENGTH$ karakter",
+    "placeholders": {
+      "length": {
+        "content": "$1",
+        "example": "14"
+      }
+    }
   }
 }

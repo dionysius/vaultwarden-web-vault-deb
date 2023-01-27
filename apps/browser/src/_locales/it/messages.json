@@ -1123,6 +1123,9 @@
   "dr": {
     "message": "Dottore"
   },
+  "mx": {
+    "message": "Mx"
+  },
   "firstName": {
     "message": "Nome"
   },
@@ -2043,5 +2046,35 @@
   },
   "rememberEmail": {
     "message": "Ricorda email"
+  },
+  "exposedMasterPassword": {
+    "message": "Password principale violata"
+  },
+  "exposedMasterPasswordDesc": {
+    "message": "Password trovata in un database di data breach noto. Usa una password esclusiva per proteggere il tuo account. Sei sicuro di voler usare una password violata?"
+  },
+  "weakAndExposedMasterPassword": {
+    "message": "Password principale debole e violata"
+  },
+  "weakAndBreachedMasterPasswordDesc": {
+    "message": "Password debole trovata in un database di data breach noto. Usa una password forte ed esclusiva per proteggere il tuo account. Sei sicuro di voler utilizzare questa password?"
+  },
+  "checkForBreaches": {
+    "message": "Controlla se la tua password è presente nei database dei data breach noti"
+  },
+  "important": {
+    "message": "Importante:"
+  },
+  "masterPasswordHint": {
+    "message": "La tua password principale non può essere recuperata se la dimentichi!"
+  },
+  "characterMinimum": {
+    "message": "Minimo $LENGTH$ caratteri",
+    "placeholders": {
+      "length": {
+        "content": "$1",
+        "example": "14"
+      }
+    }
   }
 }

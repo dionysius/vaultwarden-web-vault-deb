@@ -199,7 +199,7 @@
     "message": "Sincronizar"
   },
   "syncVaultNow": {
-    "message": "Sincronizar caja fuerte ahora"
+    "message": "Sincronizar caja fuerte"
   },
   "lastSync": {
     "message": "Última sincronización:"
@@ -1123,6 +1123,9 @@
   "dr": {
     "message": "Dr"
   },
+  "mx": {
+    "message": "\"Mx\" = \"Sr./Sra"
+  },
   "firstName": {
     "message": "Nombre"
   },
@@ -1563,7 +1566,7 @@
     "message": "Esta acción no se puede realizar en la barra lateral, por favor, vuelve a intentar la acción en la ventana emergente o popout."
   },
   "personalOwnershipSubmitError": {
-    "message": "Debido a una política de organización, tiene restringido el guardar elementos a su bóveda personal. Cambie la configuración de propietario a organización y elija entre las colecciones disponibles."
+    "message": "Debido a una política de organización, tiene restringido el guardar elementos a su caja fuerte personal. Cambie la configuración de propietario a organización y elija entre las colecciones disponibles."
   },
   "personalOwnershipPolicyInEffect": {
     "message": "Una política de organización está afectando a sus opciones de propiedad."
@@ -1811,7 +1814,7 @@
     "message": "Verificación de correo electrónico requerida"
   },
   "emailVerificationRequiredDesc": {
-    "message": "Debes verificar tu correo electrónico para usar esta función. Puedes verificar tu correo electrónico en la bóveda web."
+    "message": "Debes verificar tu correo electrónico para usar esta función. Puedes verificar tu correo electrónico en la caja fuerte web."
   },
   "updatedMasterPassword": {
     "message": "Contraseña maestra actualizada"
@@ -2043,5 +2046,35 @@
   },
   "rememberEmail": {
     "message": "Recordar email"
+  },
+  "exposedMasterPassword": {
+    "message": "Contraseña maestra comprometida"
+  },
+  "exposedMasterPasswordDesc": {
+    "message": "Contraseña encontrada en una violación de datos. Utilice una contraseña única para proteger su cuenta. ¿Está seguro de que desea utilizar una contraseña comprometida?"
+  },
+  "weakAndExposedMasterPassword": {
+    "message": "Contraseña maestra débil y comprometida"
+  },
+  "weakAndBreachedMasterPasswordDesc": {
+    "message": "Contraseña débil encontrada en una violación de datos. Utilice una contraseña única para proteger su cuenta. ¿Está seguro de que desea utilizar una contraseña comprometida?"
+  },
+  "checkForBreaches": {
+    "message": "Comprobar filtración de datos conocidos para esta contraseña"
+  },
+  "important": {
+    "message": "Importante:"
+  },
+  "masterPasswordHint": {
+    "message": "Tu contraseña maestra no se puede recuperar si la olvidas"
+  },
+  "characterMinimum": {
+    "message": "$LENGTH$ caracteres mínimo",
+    "placeholders": {
+      "length": {
+        "content": "$1",
+        "example": "14"
+      }
+    }
   }
 }

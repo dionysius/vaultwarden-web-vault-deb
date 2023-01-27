@@ -1123,6 +1123,9 @@
   "dr": {
     "message": "Tri"
   },
+  "mx": {
+    "message": "Neutraali"
+  },
   "firstName": {
     "message": "Etunimi"
   },
@@ -2043,5 +2046,35 @@
   },
   "rememberEmail": {
     "message": "Muista sähköpostiosoite"
+  },
+  "exposedMasterPassword": {
+    "message": "Paljastunut pääsalasana"
+  },
+  "exposedMasterPasswordDesc": {
+    "message": "Salasana löytyi tietovuodosta. Sinun tulisi suojata tilisi ainutlaatuisella salasanalla. Haluatko varmasti käyttää paljastunutta salasanaa?"
+  },
+  "weakAndExposedMasterPassword": {
+    "message": "Heikko ja paljastunut pääsalasana"
+  },
+  "weakAndBreachedMasterPasswordDesc": {
+    "message": "Havaittiin heikko ja tietovuodosta löytynyt salasana. Sinun tulisi suojata tilisi vahvalla ja ainutlaatuisella salasanalla. Haluatko varmasti käyttää tätä salasanaa?"
+  },
+  "checkForBreaches": {
+    "message": "Tarkasta esiintyykö salasanaa tunnetuissa tietovuodoissa"
+  },
+  "important": {
+    "message": "Tärkeää:"
+  },
+  "masterPasswordHint": {
+    "message": "Pääsalasanan palautus ei ole mahdollista, jos unohdat sen!"
+  },
+  "characterMinimum": {
+    "message": "Vähintään $LENGTH$ merkkiä",
+    "placeholders": {
+      "length": {
+        "content": "$1",
+        "example": "14"
+      }
+    }
   }
 }

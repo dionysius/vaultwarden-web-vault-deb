@@ -1123,6 +1123,9 @@
   "dr": {
     "message": "Dr."
   },
+  "mx": {
+    "message": "Divers"
+  },
   "firstName": {
     "message": "Vorname"
   },
@@ -2043,5 +2046,35 @@
   },
   "rememberEmail": {
     "message": "E-Mail-Adresse merken"
+  },
+  "exposedMasterPassword": {
+    "message": "Kompromittiertes Master-Passwort"
+  },
+  "exposedMasterPasswordDesc": {
+    "message": "Passwort in einem Datendiebstahl gefunden. Verwende ein einzigartiges Passwort, um dein Konto zu schützen. Bist du sicher, dass du ein kompromittiertes Passwort verwenden möchtest?"
+  },
+  "weakAndExposedMasterPassword": {
+    "message": "Schwaches und kompromittiertes Master-Passwort"
+  },
+  "weakAndBreachedMasterPasswordDesc": {
+    "message": "Schwaches Passwort erkannt und in einem Datendiebstahl gefunden. Verwende ein starkes und einzigartiges Passwort, um dein Konto zu schützen. Bist du sicher, dass du dieses Passwort verwenden möchtest?"
+  },
+  "checkForBreaches": {
+    "message": "Bekannte Datendiebstähle auf dieses Passwort überprüfen"
+  },
+  "important": {
+    "message": "Wichtig:"
+  },
+  "masterPasswordHint": {
+    "message": "Dein Master-Passwort kann nicht wiederhergestellt werden, wenn du es vergisst!"
+  },
+  "characterMinimum": {
+    "message": "Mindestens $LENGTH$ Zeichen",
+    "placeholders": {
+      "length": {
+        "content": "$1",
+        "example": "14"
+      }
+    }
   }
 }

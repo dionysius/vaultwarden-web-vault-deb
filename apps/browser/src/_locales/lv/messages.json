@@ -1123,6 +1123,9 @@
   "dr": {
     "message": "Dr."
   },
+  "mx": {
+    "message": "Mx"
+  },
   "firstName": {
     "message": "Vārds"
   },
@@ -2043,5 +2046,35 @@
   },
   "rememberEmail": {
     "message": "Atcerēties e-pasta adresi"
+  },
+  "exposedMasterPassword": {
+    "message": "Noplūdusi galvenā parole"
+  },
+  "exposedMasterPasswordDesc": {
+    "message": "Parole ir atrasta datu noplūdē. Jāizmanto spēcīga parole, lai aizsargātu savu kontu. Vai tiešām izmantot noplūdušu paroli?"
+  },
+  "weakAndExposedMasterPassword": {
+    "message": "Vāja un noplūdusi galvenā parole"
+  },
+  "weakAndBreachedMasterPasswordDesc": {
+    "message": "Noteikta vāja parole, un tā ir atrasta datu noplūdē. Jāizmanto spēcīga parole, lai aizsargātu savu kontu. Vai tiešām izmantot šo paroli?"
+  },
+  "checkForBreaches": {
+    "message": "Pārbaudīt šo paroli pret zināmām datu noplūdēm"
+  },
+  "important": {
+    "message": "Svarīgi:"
+  },
+  "masterPasswordHint": {
+    "message": "Galvenā parole nevar tikt atgūta, ja tā ir aizmirsta!"
+  },
+  "characterMinimum": {
+    "message": "Vismaz $LENGTH$ rakstzīmes",
+    "placeholders": {
+      "length": {
+        "content": "$1",
+        "example": "14"
+      }
+    }
   }
 }

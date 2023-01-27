@@ -1123,6 +1123,9 @@
   "dr": {
     "message": "Д-р"
   },
+  "mx": {
+    "message": "Mx"
+  },
   "firstName": {
     "message": "Собствено име"
   },
@@ -2043,5 +2046,35 @@
   },
   "rememberEmail": {
     "message": "Запомняне на е-пощата"
+  },
+  "exposedMasterPassword": {
+    "message": "Exposed Master Password"
+  },
+  "exposedMasterPasswordDesc": {
+    "message": "Password found in a data breach. Use a unique password to protect your account. Are you sure you want to use an exposed password?"
+  },
+  "weakAndExposedMasterPassword": {
+    "message": "Weak and Exposed Master Password"
+  },
+  "weakAndBreachedMasterPasswordDesc": {
+    "message": "Weak password identified and found in a data breach. Use a strong and unique password to protect your account. Are you sure you want to use this password?"
+  },
+  "checkForBreaches": {
+    "message": "Проверяване в известните случаи на изтекли данни за тази парола"
+  },
+  "important": {
+    "message": "Важно:"
+  },
+  "masterPasswordHint": {
+    "message": "Главната парола не може да бъде възстановена, ако я забравите!"
+  },
+  "characterMinimum": {
+    "message": "Минимум $LENGTH$ знака",
+    "placeholders": {
+      "length": {
+        "content": "$1",
+        "example": "14"
+      }
+    }
   }
 }
