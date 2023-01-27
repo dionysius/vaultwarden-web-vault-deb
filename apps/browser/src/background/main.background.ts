@@ -678,6 +678,9 @@ export default class MainBackground {
       this.vaultFilterService.clear(),
     ]);
 
+    //Needs to be checked before state is cleaned
+    const needStorageReseed = await this.needsStorageReseed();
+
     await this.stateService.clean({ userId: userId });
 
     if (userId == null || userId === (await this.stateService.getUserId())) {
@@ -685,15 +688,23 @@ export default class MainBackground {
       this.messagingService.send("doneLoggingOut", { expired: expired, userId: userId });
     }
 
+    if (needStorageReseed) {
+      await this.reseedStorage();
+    }
+
     if (BrowserApi.manifestVersion === 3) {
       BrowserApi.sendMessage("updateBadge");
     }
     await this.refreshBadge();
     await this.mainContextMenuHandler.noAccess();
-    await this.reseedStorage();
     this.notificationsService.updateConnection(false);
     await this.systemService.clearPendingClipboard();
     await this.systemService.startProcessReload(this.authService);
+  }
+
+  private async needsStorageReseed(): Promise<boolean> {
+    const currentVaultTimeout = await this.stateService.getVaultTimeout();
+    return currentVaultTimeout == null ? false : true;
   }
 
   async collectPageDetailsForContentScript(tab: any, sender: string, frameId: number = null) {
@@ -733,11 +744,6 @@ export default class MainBackground {
       !this.platformUtilsService.isVivaldi() &&
       !this.platformUtilsService.isOpera()
     ) {
-      return;
-    }
-
-    const currentVaultTimeout = await this.stateService.getVaultTimeout();
-    if (currentVaultTimeout == null) {
       return;
     }
 
