@@ -238,6 +238,9 @@
   "ms": {
     "message": "Κα"
   },
+  "mx": {
+    "message": "Mx"
+  },
   "dr": {
     "message": "Dr"
   },
@@ -1780,13 +1783,13 @@
     "message": "Απενεργοποιημένο"
   },
   "removePassword": {
-    "message": "Remove password"
+    "message": "Κατάργηση κωδικού πρόσβασης"
   },
   "removedPassword": {
-    "message": "Password removed"
+    "message": "Ο κωδικός πρόσβασης καταργήθηκε"
   },
   "removePasswordConfirmation": {
-    "message": "Are you sure you want to remove the password?"
+    "message": "Είστε σίγουροι ότι θέλετε να καταργήσετε τον κωδικό πρόσβασης;"
   },
   "maxAccessCountReached": {
     "message": "Φτάσατε στον μέγιστο αριθμό πρόσβασης"
@@ -2059,7 +2062,7 @@
     "message": "Συνδεθείτε με άλλη συσκευή"
   },
   "toggleCharacterCount": {
-    "message": "Toggle character count",
+    "message": "Εναλλαγή μετρήσεων χαρακτήρων",
     "description": "'Character count' describes a feature that displays a number next to each character of the password."
   }
 }

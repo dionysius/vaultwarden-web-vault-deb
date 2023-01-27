@@ -67,7 +67,7 @@
     "message": "Pièces jointes"
   },
   "viewItem": {
-    "message": "Afficher l'élément"
+    "message": "Voir l'élément"
   },
   "name": {
     "message": "Nom"
@@ -101,7 +101,7 @@
     "message": "Modifier l'élément"
   },
   "emailAddress": {
-    "message": "Adresse e-mail"
+    "message": "Adresse électronique"
   },
   "verificationCodeTotp": {
     "message": "Code de vérification (TOTP)"
@@ -166,7 +166,7 @@
     "message": "Numéro de permis"
   },
   "email": {
-    "message": "E-mail"
+    "message": "Courriel"
   },
   "phone": {
     "message": "Téléphone"
@@ -237,6 +237,9 @@
   },
   "ms": {
     "message": "Mlle"
+  },
+  "mx": {
+    "message": "Mx"
   },
   "dr": {
     "message": "Dr"
@@ -527,10 +530,10 @@
     "message": "Obtenir l'indice du mot de passe principal"
   },
   "emailRequired": {
-    "message": "L'adresse e-mail est requise."
+    "message": "L'adresse électronique est requise."
   },
   "invalidEmail": {
-    "message": "Adresse e-mail invalide."
+    "message": "Adresse électronique invalide."
   },
   "masterPasswordRequired": {
     "message": "Le mot de passe principal est requis."
@@ -587,7 +590,7 @@
     "message": "Saisissez le code de vérification à 6 chiffres depuis votre application d'authentification."
   },
   "enterVerificationCodeEmail": {
-    "message": "Saisissez le code de vérification à 6 chiffres qui vous a été envoyé par e-mail à $EMAIL$.",
+    "message": "Saisissez le code de vérification à 6 chiffres qui a été envoyé par courriel à $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -596,7 +599,7 @@
     }
   },
   "verificationCodeEmailSent": {
-    "message": "E-mail de vérification envoyé à $EMAIL$.",
+    "message": "Courriel de vérification envoyé à $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -608,7 +611,7 @@
     "message": "Rester connecté"
   },
   "sendVerificationCodeEmailAgain": {
-    "message": "Envoyer à nouveau l'e-mail du code de vérification"
+    "message": "Envoyer à nouveau le courriel de code de vérification"
   },
   "useAnotherTwoStepMethod": {
     "message": "Utiliser une autre méthode de connexion en deux étapes"
@@ -653,10 +656,10 @@
     "message": "Utilisez n'importe quelle clé de sécurité compatible WebAuthn pour accéder à votre compte."
   },
   "emailTitle": {
-    "message": "E-mail"
+    "message": "Courriel"
   },
   "emailDesc": {
-    "message": "Les codes de vérification vont vous être envoyés par e-mail."
+    "message": "Les codes de vérification vous seront envoyés par courriel."
   },
   "loginUnavailable": {
     "message": "Identifiant non disponible"
@@ -1322,7 +1325,7 @@
     "message": "Confirmer l'export du coffre"
   },
   "exportWarningDesc": {
-    "message": "Cet export contient les données de votre coffre dans un format non chiffré. Vous ne devriez ni le stocker ni l'envoyer via des canaux non sécurisés (tel que par e-mail). Supprimez-le immédiatement après l'avoir utilisé."
+    "message": "Cet export contient vos données de coffre dans un format non chiffré. Vous ne devriez pas stocker ou envoyer le fichier exporté par des canaux non sécurisés (comme le courriel). Supprimez-le immédiatement dès que vous avez fini de l'utiliser."
   },
   "encExportKeyWarningDesc": {
     "message": "Cet export chiffre vos données en utilisant la clé de chiffrement de votre compte. Si jamais vous modifiez la clé de chiffrement de votre compte, vous devriez exporter à nouveau car vous ne pourrez pas déchiffrer ce fichier."
@@ -1801,16 +1804,16 @@
     "message": "Authentifier WebAuthn"
   },
   "hideEmail": {
-    "message": "Cacher mon adresse e-mail aux destinataires."
+    "message": "Masquer mon adresse électronique aux destinataires."
   },
   "sendOptionsPolicyInEffect": {
     "message": "Une ou plusieurs politiques d'organisation affectent vos options Send."
   },
   "emailVerificationRequired": {
-    "message": "Vérification de l'adresse e-mail nécessaire"
+    "message": "Vérification de courriel requise"
   },
   "emailVerificationRequiredDesc": {
-    "message": "Vous devez vérifier votre adresse e-mail pour utiliser cette fonctionnalité."
+    "message": "Vous devez vérifier votre courriel pour utiliser cette fonctionnalité."
   },
   "passwordPrompt": {
     "message": "Ressaisir le mot de passe principal"
@@ -1931,7 +1934,7 @@
     "message": "Export du coffre personnel"
   },
   "exportingPersonalVaultDescription": {
-    "message": "Seuls les éléments du coffre personnel associé à l'adresse e-mail $EMAIL$ seront exportés. Les éléments du coffre de l'organisation ne seront pas inclus.",
+    "message": "Seuls les éléments individuels du coffre associés à $EMAIL$ seront exportés. Les éléments du coffre de l'organisation ne seront pas inclus.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -1964,7 +1967,7 @@
     "message": "Type de nom d'utilisateur"
   },
   "plusAddressedEmail": {
-    "message": "E-mail sous-adressé",
+    "message": "Courriel sous-adressé",
     "description": "Username generator option that appends a random sub-address to the username. For example: address+subaddress@email.com"
   },
   "plusAddressedEmailDesc": {
@@ -2038,7 +2041,7 @@
     "message": "Connexion en tant que"
   },
   "rememberEmail": {
-    "message": "Se souvenir de l'e-mail"
+    "message": "Se souvenir du courriel"
   },
   "notYou": {
     "message": "Ce n'est pas vous ?"

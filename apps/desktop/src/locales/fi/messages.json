@@ -238,6 +238,9 @@
   "ms": {
     "message": "Nti"
   },
+  "mx": {
+    "message": "Neutraali"
+  },
   "dr": {
     "message": "Tri"
   },
@@ -2059,7 +2062,7 @@
     "message": "Kirjaudu toisella laitteella"
   },
   "toggleCharacterCount": {
-    "message": "Näytä merkkikohtainen numerointi",
+    "message": "Näytä/piilota merkkikohtainen numerointi",
     "description": "'Character count' describes a feature that displays a number next to each character of the password."
   }
 }

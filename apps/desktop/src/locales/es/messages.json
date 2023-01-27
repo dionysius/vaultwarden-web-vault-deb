@@ -238,6 +238,9 @@
   "ms": {
     "message": "Srta"
   },
+  "mx": {
+    "message": "Mx"
+  },
   "dr": {
     "message": "Dr"
   },
@@ -833,7 +836,7 @@
     "message": "Autenticación en dos pasos"
   },
   "vaultTimeout": {
-    "message": "Tiempo de espera de la caja fuerte"
+    "message": "Tiempo de espera de la caja fuerte excedido"
   },
   "vaultTimeoutDesc": {
     "message": "Elije cuando se agotará el tiempo de espera de tu caja fuerte y se ejecutará la acción seleccionada."
@@ -1319,7 +1322,7 @@
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "confirmVaultExport": {
-    "message": "Confirmar la exportación de la bóveda"
+    "message": "Confirmar la exportación de la caja fuerte"
   },
   "exportWarningDesc": {
     "message": "Esta exportación contiene tus datos de la caja fuerte en un formato no cifrado. No deberías almacenar o enviar el archivo exportado por canales no seguros (como el correo electrónico). Elimínalo inmediatamente cuando termines de utilizarlo."
@@ -1578,7 +1581,7 @@
     "message": "Permitir integración con el navegador DuckDuckGo"
   },
   "enableDuckDuckGoBrowserIntegrationDesc": {
-    "message": "Usa tu bóveda de Bitwarden cuando navegas con DuckDuckGo."
+    "message": "Usa tu caja fuerte de Bitwarden cuando navegas con DuckDuckGo."
   },
   "browserIntegrationUnsupportedTitle": {
     "message": "La integración con el navegador no está soportada"
@@ -1629,7 +1632,7 @@
     "message": "La biometría del navegador requiere habilitar primero la biometría de escritorio en los ajustes."
   },
   "personalOwnershipSubmitError": {
-    "message": "Debido a una política de organización, tiene restringido el guardar elementos a su bóveda personal. Cambie la configuración de propietario a organización y elija entre las colecciones disponibles."
+    "message": "Debido a una política de organización, tiene restringido el guardar elementos a su caja fuerte personal. Cambie la configuración de propietario a organización y elija entre las colecciones disponibles."
   },
   "hintEqualsPassword": {
     "message": "La pista para la contraseña no puede ser igual que la contraseña."
@@ -1656,7 +1659,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "myVault": {
-    "message": "Mi bóveda"
+    "message": "Mi caja fuerte"
   },
   "text": {
     "message": "Texto"
@@ -1928,10 +1931,10 @@
     "message": "Su sesión ha expirado. Por favor, vuelva e intente iniciar sesión de nuevo."
   },
   "exportingPersonalVaultTitle": {
-    "message": "Exportando bóveda personal"
+    "message": "Exportando caja fuerte personal"
   },
   "exportingPersonalVaultDescription": {
-    "message": "Solo se exportarán los elementos de la bóveda personal asociados con $EMAIL$. Los elementos de la bóveda de la organización no se incluirán.",
+    "message": "Solo se exportarán los elementos de la caja fuerte personal asociados con $EMAIL$. Los elementos de la bóveda de la organización no se incluirán.",
     "placeholders": {
       "email": {
         "content": "$1",
