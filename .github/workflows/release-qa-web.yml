@@ -30,7 +30,7 @@ jobs:
           workflow_conclusion: success
           branch: ${{ github.ref_name }}
           artifacts: web-*-cloud-QA.zip
-          
+
       - name: Unzip cloud asset
         working-directory: apps/web
         run: unzip web-*-cloud-QA.zip
