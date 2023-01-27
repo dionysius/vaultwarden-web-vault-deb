@@ -133,6 +133,9 @@
   "ms": {
     "message": "Kisasszony"
   },
+  "mx": {
+    "message": "Mx"
+  },
   "dr": {
     "message": "Dr."
   },
@@ -305,6 +308,9 @@
   "searchMembers": {
     "message": "Tagok keresése"
   },
+  "searchGroups": {
+    "message": "Csoportok keresése"
+  },
   "allItems": {
     "message": "Összes elem"
   },
@@ -399,7 +405,8 @@
     "message": "Elem megtekintése"
   },
   "new": {
-    "message": "Új"
+    "message": "Új",
+    "description": "for adding new items"
   },
   "item": {
     "message": "Elem"
@@ -2488,6 +2495,15 @@
   },
   "editMember": {
     "message": "Tag szerkesztése"
+  },
+  "fieldOnTabRequiresAttention": {
+    "message": "A '$TAB$' fülön lévő mező figyelmet követel.",
+    "placeholders": {
+      "tab": {
+        "content": "$1",
+        "example": "Collection info"
+      }
+    }
   },
   "inviteUserDesc": {
     "message": "Új felhasználó meghívása a szervezetéhez a Bitwarden fiók e-mail címének megadásával. Ha még nem rendelkezik Bitwarden-fiókkal, felkérjük új fiók létrehozására.\n"
@@ -5548,6 +5564,18 @@
       }
     }
   },
+  "multipleInputEmails": {
+    "message": "1 vagy több email cím érvénytelen."
+  },
+  "tooManyEmails": {
+    "message": "Egyszerre legfeljebb $COUNT$ email küldhető be.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "20"
+      }
+    }
+  },
   "fieldsNeedAttention": {
     "message": "$COUNT$ mező fentebb figyelmet érdemel.",
     "placeholders": {
@@ -5807,7 +5835,7 @@
     "placeholders": {
       "confirm": {
         "content": "$1",
-        "example": "Delete 3 Projects"
+        "example": "Delete 3 projects"
       }
     }
   },
@@ -6053,5 +6081,14 @@
         "example": "2"
       }
     }
+  },
+  "lowKdfIterations": {
+    "message": "Alacsony KDF iterációk"
+  },
+  "lowKdfIterationsDesc": {
+    "message": "Növeljük meg a KDF titkosítási beállításait a fiók biztonságának javítása érdekében."
+  },
+  "changeKdfSettings": {
+    "message": "KDF beállítások megváltoztatása"
   }
 }

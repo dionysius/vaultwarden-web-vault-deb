@@ -133,6 +133,9 @@
   "ms": {
     "message": "Frøken"
   },
+  "mx": {
+    "message": "Mx"
+  },
   "dr": {
     "message": "Dr․"
   },
@@ -278,32 +281,35 @@
     "message": "Søk i favoritter"
   },
   "searchLogin": {
-    "message": "Search logins",
+    "message": "Søk i innlogginger",
     "description": "Search Login type"
   },
   "searchCard": {
-    "message": "Search cards",
+    "message": "Søk i kort",
     "description": "Search Card type"
   },
   "searchIdentity": {
-    "message": "Search identities",
+    "message": "Søk i identiteter",
     "description": "Search Identity type"
   },
   "searchSecureNote": {
-    "message": "Search secure notes",
+    "message": "Søk i sikre notater",
     "description": "Search Secure Note type"
   },
   "searchVault": {
     "message": "Søk i hvelvet"
   },
   "searchMyVault": {
-    "message": "Search my vault"
+    "message": "Søk i hvelvet mitt"
   },
   "searchOrganization": {
-    "message": "Search organization"
+    "message": "Søk i organisasjoner"
   },
   "searchMembers": {
-    "message": "Search members"
+    "message": "Søk i medlemmer"
+  },
+  "searchGroups": {
+    "message": "Søk i grupper"
   },
   "allItems": {
     "message": "Alle elementer"
@@ -387,7 +393,7 @@
     "message": "Velg"
   },
   "newItem": {
-    "message": "New item"
+    "message": "Nytt element"
   },
   "addItem": {
     "message": "Legg til element"
@@ -399,10 +405,11 @@
     "message": "Vis elementet"
   },
   "new": {
-    "message": "New"
+    "message": "Ny",
+    "description": "for adding new items"
   },
   "item": {
-    "message": "Item"
+    "message": "Element"
   },
   "ex": {
     "message": "f.eks.",
@@ -579,10 +586,10 @@
     "message": "Slettet mappen"
   },
   "editInfo": {
-    "message": "Edit info"
+    "message": "Rediger info"
   },
   "access": {
-    "message": "Access"
+    "message": "Tilgang"
   },
   "loggedOut": {
     "message": "Logget av"
@@ -612,7 +619,7 @@
     "message": "Logg på med enhet"
   },
   "loginWithDeviceEnabledInfo": {
-    "message": "Log in with device must be set up in the settings of the Bitwarden mobile app. Need another option?"
+    "message": "Logg på med enhet må settes opp i innstillingene i Bitwarden appen. Trenger du et annet valg?"
   },
   "loginWithMasterPassword": {
     "message": "Logg på med hovedpassord"
@@ -733,7 +740,7 @@
     "message": "Ugyldig hovedpassord"
   },
   "invalidFilePassword": {
-    "message": "Invalid file password, please use the password you entered when you created the export file."
+    "message": "Ugyldig filpassord, bruk passordet du skrev inn da du opprettet eksportfilen."
   },
   "lockNow": {
     "message": "Lås nå"
@@ -742,7 +749,7 @@
     "message": "Det er ingen elementer å vise."
   },
   "noPermissionToViewAllCollectionItems": {
-    "message": "You do not have permission to view all items in this collection."
+    "message": "Du har ikke tillatelse til å se alle elementer i denne samlingen."
   },
   "noCollectionsInList": {
     "message": "Det er ingen samlinger å liste opp."
@@ -754,7 +761,7 @@
     "message": "Det er ingen brukere å liste opp."
   },
   "noMembersInList": {
-    "message": "There are no members to list."
+    "message": "Det er ingen medlemmer å vise."
   },
   "noEventsInList": {
     "message": "Det er ingen hendelser å liste opp."
@@ -901,7 +908,7 @@
     }
   },
   "deleteSelectedCollectionsDesc": {
-    "message": "$COUNT$ collection(s) will be permanently deleted.",
+    "message": "$COUNT$ samling(er) slettes permanent.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -910,7 +917,7 @@
     }
   },
   "deleteSelectedConfirmation": {
-    "message": "Are you sure you want to continue?"
+    "message": "Er du sikker på at du vil fortsette?"
   },
   "moveSelectedItemsDesc": {
     "message": "Velg en mappe som du ønsker å flytte $COUNT$ valgt(e) gjenstand(er) til.",
@@ -969,10 +976,10 @@
     "message": "Filformat"
   },
   "fileEncryptedExportWarningDesc": {
-    "message": "This file export will be password protected and require the file password to decrypt."
+    "message": "Denne fileksporten vil bli passordbeskyttet og vil kreve filpassordet ved dekryptering."
   },
   "exportPasswordDescription": {
-    "message": "This password will be used to export and import this file"
+    "message": "Dette passordet brukes for eksport og import av denne filen"
   },
   "confirmMasterPassword": {
     "message": "Bekreft hovedpassord"
@@ -987,28 +994,28 @@
     "message": "Bekreft filpassord"
   },
   "accountRestrictedOptionDescription": {
-    "message": "Use your account encryption key, derived from your account's username and Master Password, to encrypt the export and restrict import to only the current Bitwarden account."
+    "message": "Bruk kontokrypteringsnøkkelen, avledet fra ditt kontobrukernavn og hovedpassord, for å kryptere eksporten og hindre import til andre kontoer enn den aktuelle Bitwarden-kontoen."
   },
   "passwordProtectedOptionDescription": {
-    "message": "Set a file password to encrypt the export and import it to any Bitwarden account using the password for decryption."
+    "message": "Sett et filpassord for kryptering av eksporten. Bruk passordet for å dekryptere og importere til en hvilken som helst Bitwarden-konto."
   },
   "exportTypeHeading": {
-    "message": "Export type"
+    "message": "Eksport-type"
   },
   "accountRestricted": {
-    "message": "Account restricted"
+    "message": "Kontoen begrenset"
   },
   "passwordProtected": {
     "message": "Passord beskyttet"
   },
   "filePasswordAndConfirmFilePasswordDoNotMatch": {
-    "message": "“File password”  and “Confirm file password“ do not match."
+    "message": "\"Filpassord\" og \"bekreft filpassord\" stemmer ikke overens."
   },
   "confirmVaultImport": {
     "message": "Bekreft hvelvimportering"
   },
   "confirmVaultImportDesc": {
-    "message": "This file is password-protected. Please enter the file password to import data."
+    "message": "Denne filen er passordbeskyttet. Skriv inn filpassordet for å importere data."
   },
   "exportSuccess": {
     "message": "Ditt hvelvs data har blitt eksportert."
@@ -1348,23 +1355,23 @@
     "message": "2-trinnsinnlogging"
   },
   "twoStepLoginEnforcement": {
-    "message": "Two-step Login Enforcement"
+    "message": "Tofaktor-innlogging kreves"
   },
   "twoStepLoginDesc": {
     "message": "Sikre kontoen din ved å kreve et ekstra trinn når du logger på."
   },
   "twoStepLoginOrganizationDescStart": {
-    "message": "Enforce Bitwarden Two-step Login options for members by using the ",
+    "message": "Håndhev Bitwarden tofaktor-innloggingsalternativer for medlemmer ved å bruke ",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enforce Bitwarden Two-step Login options for members by using the Two-step Login Policy.'"
   },
   "twoStepLoginPolicy": {
-    "message": "Two-step Login Policy"
+    "message": "Tofaktor-innloggingsregler"
   },
   "twoStepLoginOrganizationDuoDesc": {
-    "message": "To enforce Two-step Login through Duo, use the options below."
+    "message": "For å kreve tofaktor-innlogging via Duo, bruk valgene under."
   },
   "twoStepLoginOrganizationSsoDesc": {
-    "message": "If you have setup SSO or plan to, Two-step Login may already be enforced through your Identity Provider."
+    "message": "Dersom du har satt opp SSO eller planlegger det, så kan det være tofaktor-innlogging allerede kreves via din identitetstjeneste."
   },
   "twoStepLoginRecoveryWarning": {
     "message": "Å skru på 2-trinnsinnlogging kan låse deg permanent ut av din Bitwarden-konto. En gjenopprettingskode gir deg tilgang til kontoen din i det tilfellet at du ikke lenger kan bruke din vanlige 2-trinnsinnloggingsleverandør (f.eks. at du mister enheten din). Bitwarden-kundestøtten vil ikke kunne hjelpe deg dersom du mister tilgang til kontoen din. Vi anbefaler at du skriver ned eller skriver ut gjenopprettingskoden og legger den på en trygg plass."
@@ -1614,7 +1621,7 @@
     "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization vault."
   },
   "orgsReportsDesc": {
-    "message": "Identify and close security gaps in your organization's accounts by clicking the reports below.",
+    "message": "Identifiser og steng sikkerhetshull i din organisasjons kontoer ved å klikke på rapportene nedenfor.",
     "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization vault."
   },
   "unsecuredWebsitesReport": {
@@ -1880,7 +1887,7 @@
     }
   },
   "premiumPriceWithFamilyPlan": {
-    "message": "Go premium for just $PRICE$ /year, or get premium accounts for $FAMILYPLANUSERCOUNT$ users and unlimited family sharing with a ",
+    "message": "Kjøp premium for kun $PRICE$/år, eller kjøp premiumkontoer for $FAMILYPLANUSERCOUNT$ brukere og ubegrenset familiedeling med et ",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -1893,7 +1900,7 @@
     }
   },
   "bitwardenFamiliesPlan": {
-    "message": "Bitwarden Families plan."
+    "message": "Bitwarden Familie-plan."
   },
   "addons": {
     "message": "Utvidelser"
@@ -2430,7 +2437,7 @@
     "message": "Er du sikker på at du vil slette denne gruppen?"
   },
   "deleteMultipleGroupsConfirmation": {
-    "message": "Are you sure you want to delete the following $QUANTITY$ group(s)?",
+    "message": "Er du sikker på at du vil slette følgende $QUANTITY$ grupp(er)?",
     "placeholders": {
       "quantity": {
         "content": "$1",
@@ -2457,7 +2464,7 @@
     "message": "Den eksterne Id-en kan brukes som referanse eller for å koble denne ressursen til et eksternt system, for eksempel en brukerkatalog."
   },
   "nestCollectionUnder": {
-    "message": "Nest collection under"
+    "message": "Plasser samling under"
   },
   "accessControl": {
     "message": "Tilgangsstyring"
@@ -2481,13 +2488,22 @@
     "message": "Rediger samling"
   },
   "collectionInfo": {
-    "message": "Collection info"
+    "message": "Informasjon om samlingen"
   },
   "deleteCollectionConfirmation": {
     "message": "Er du sikker på at du vil slette denne samlingen?"
   },
   "editMember": {
-    "message": "Edit member"
+    "message": "Rediger medlem"
+  },
+  "fieldOnTabRequiresAttention": {
+    "message": "Et felt på '$TAB$' fanen behøver din oppmerksomhet.",
+    "placeholders": {
+      "tab": {
+        "content": "$1",
+        "example": "Collection info"
+      }
+    }
   },
   "inviteUserDesc": {
     "message": "Inviter en ny bruker til din organisasjon ved å skrive inn E-postadressen til Bitwarden-kontoen deres nedenfor. Hvis de ikke allerede har en Bitwarden-konto, vil de bli forespurt om å lage en ny konto."
@@ -2682,7 +2698,7 @@
     }
   },
   "viewedCardNumberItemId": {
-    "message": "Viewed Card Number for item $ID$.",
+    "message": "Kortnummer for element $ID$ ble vist.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2754,7 +2770,7 @@
     }
   },
   "deletedCollections": {
-    "message": "Deleted collections"
+    "message": "Samlinger slettet"
   },
   "deletedCollectionId": {
     "message": "Slettet $ID$-samlingen.",
@@ -2802,7 +2818,7 @@
     }
   },
   "deletedManyGroups": {
-    "message": "Deleted $QUANTITY$ group(s).",
+    "message": "Slettet $QUANTITY$ gruppe(r).",
     "placeholders": {
       "quantity": {
         "content": "$1",
@@ -3523,7 +3539,7 @@
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "fingerprintMatchInfo": {
-    "message": "Please make sure your vault is unlocked and Fingerprint phrase matches the other device."
+    "message": "Kontroller om hvelvet ditt er låst opp og at fingeravtrykkfrasen stemmer overens med den andre enheten."
   },
   "fingerprintPhraseHeader": {
     "message": "Fingeravtrykksfrase"
@@ -3816,7 +3832,7 @@
     "message": "SSO-identifikator"
   },
   "ssoIdentifierHint": {
-    "message": "Provide this ID to your members to login with SSO."
+    "message": "Oppgi denne IDen til dine medlemmer for å logge inn med SSO."
   },
   "unlinkSso": {
     "message": "Koble fra SSO"
@@ -4217,19 +4233,19 @@
     "message": "Tillater mer granatær kontroll med brukertillatelser for avanserte konfigurasjoner."
   },
   "customDescNonEnterpriseStart": {
-    "message": "Custom roles is an ",
+    "message": "Tilpassede roller er en ",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Custom roles is an enterprise feature. Contact our support team to upgrade your subscription'"
   },
   "customDescNonEnterpriseLink": {
-    "message": "enterprise feature",
+    "message": "enterprise-funksjon",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Custom roles is an enterprise feature. Contact our support team to upgrade your subscription'"
   },
   "customDescNonEnterpriseEnd": {
-    "message": ". Contact our support team to upgrade your subscription",
+    "message": ". Kontakt vårt supportteam for å oppgradere abonnementet ditt",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Custom roles is an enterprise feature. Contact our support team to upgrade your subscription'"
   },
   "customNonEnterpriseError": {
-    "message": "To enable custom permissions the organization must be on an Enterprise 2020 plan."
+    "message": "Aktivering av tilpassede rettigheter krever at organisasjonen er på et Enterprise 2020 abonnement."
   },
   "permissions": {
     "message": "Rettigheter"
@@ -4238,7 +4254,7 @@
     "message": "Tillatelse"
   },
   "managerPermissions": {
-    "message": "Manager Permissions"
+    "message": "Ledertillatelser"
   },
   "adminPermissions": {
     "message": "Admin-tillatelser"
@@ -4613,10 +4629,10 @@
     "message": "Fjern brukere"
   },
   "revokeUsers": {
-    "message": "Revoke users"
+    "message": "Fjern brukere"
   },
   "restoreUsers": {
-    "message": "Restore users"
+    "message": "Gjenopprett brukere"
   },
   "error": {
     "message": "Feil"
@@ -4796,10 +4812,10 @@
     "message": "Tidsavbrudd i hvelvet ditt overskrider begrensningen fastsatt av organisasjonen din."
   },
   "vaultCustomTimeoutMinimum": {
-    "message": "Minimum custom timeout is 1 minute."
+    "message": "Tilpasset timeout må minst være 1 minutt."
   },
   "vaultTimeoutRangeError": {
-    "message": "Vault timeout is not within allowed range."
+    "message": "Hvelv-timeout er utenfor gyldig intervall."
   },
   "disablePersonalVaultExport": {
     "message": "Deaktivere personlig hvelv eksport"
@@ -4826,7 +4842,7 @@
     "message": "SAML tjenesteleverandør konfigurasjon"
   },
   "samlIdpConfig": {
-    "message": "SAML ID-leverandør konfigurasjon"
+    "message": "Konfigurasjon av SAML identitetstjeneste"
   },
   "callbackPath": {
     "message": "Sti for tilbakeringing"
@@ -5090,7 +5106,7 @@
     "message": "Tillat SSO-autentisering"
   },
   "allowSsoDesc": {
-    "message": "Når du er konfigurert, vil konfigurasjonen din bli lagret, og medlemmer vil kunne godkjenne med deres legitimasjon fra leverandøren."
+    "message": "Når dette er satt opp vil konfigurasjonen din lagres og medlemmer vil kunne autentiseres ved å bruke legitimasjon fra deres identitetstilbyder."
   },
   "ssoPolicyHelpStart": {
     "message": "Skru på",
@@ -5425,10 +5441,10 @@
     "description": "This text is displayed if an organization's billing is managed by a Provider. It tells the user to contact the Provider for assistance."
   },
   "forwardedEmail": {
-    "message": "Forwarded email alias"
+    "message": "Videresendt e-post alias"
   },
   "forwardedEmailDesc": {
-    "message": "Generate an email alias with an external forwarding service."
+    "message": "Generer et e-postalias med en ekstern videresendingstjeneste."
   },
   "hostname": {
     "message": "Vertsnavn",
@@ -5444,13 +5460,13 @@
     "message": "Skru på enhetsverifisering"
   },
   "deviceVerificationDesc": {
-    "message": "Verification codes are sent to your email address when logging in from an unrecognized device"
+    "message": "Verifiseringskoder sendes til e-postadressen din når du logger inn fra en ukjent enhet"
   },
   "updatedDeviceVerification": {
     "message": "Oppdaterte enhetsverifiseringen"
   },
   "areYouSureYouWantToEnableDeviceVerificationTheVerificationCodeEmailsWillArriveAtX": {
-    "message": "Are you sure you want to turn on device verification? The verification code emails will arrive at: $EMAIL$",
+    "message": "Er du sikker på at du vil skru på enhetsverifisering? E-postene med verifiseringskode blir sendt til: $EMAIL$",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -5462,11 +5478,11 @@
     "message": "Krever Premium-abonnement"
   },
   "scim": {
-    "message": "SCIM provisioning",
+    "message": "SCIM klargjøring",
     "description": "The text, 'SCIM', is an acronymn and should not be translated."
   },
   "scimDescription": {
-    "message": "Automatically provision users and groups with your preferred identity provider via SCIM provisioning",
+    "message": "Genererer brukere og grupper automatisk med den foretrukne identitetstjenesten din via SCIM-klargjøring",
     "description": "the text, 'SCIM', is an acronymn and should not be translated."
   },
   "scimEnabledCheckboxDesc": {
@@ -5474,33 +5490,33 @@
     "description": "the text, 'SCIM', is an acronymn and should not be translated."
   },
   "scimEnabledCheckboxDescHelpText": {
-    "message": "Set up your preferred identity provider by configuring the URL and SCIM API Key",
+    "message": "Sett opp din foretrukne identitetstjeneste ved å konfigurere URL og SCIM API nøkkel",
     "description": "the text, 'SCIM', is an acronymn and should not be translated."
   },
   "scimApiKeyHelperText": {
-    "message": "This API key has access to manage users within your organization. It should be kept secret."
+    "message": "Denne API nøkkelen har tilgang til å administrere brukere i din organisasjon. Den bør holdes hemmelig."
   },
   "copyScimKey": {
-    "message": "Copy the SCIM API key to your clipboard",
+    "message": "Kopier SCIM API nøkkelen til utklippstavlen",
     "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
   },
   "rotateScimKey": {
-    "message": "Rotate the SCIM API key",
+    "message": "Skift SCIM API nøkkelen",
     "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
   },
   "rotateScimKeyWarning": {
-    "message": "Are you sure you want to rotate the SCIM API Key? The current key will no longer work for any existing integrations.",
+    "message": "Er du sikker du vil skifte SCIM API nøkkelen? Den nåværende nøkkelen vil ikke lenger fungere for eksisterende integrasjoner.",
     "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
   },
   "rotateKey": {
-    "message": "Rotate key"
+    "message": "Skift nøkkel"
   },
   "scimApiKey": {
-    "message": "SCIM API key",
+    "message": "SCIM API-nøkkel",
     "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
   },
   "copyScimUrl": {
-    "message": "Copy the SCIM endpoint URL to your clipboard",
+    "message": "Kopier SCIM-endepunkt URL til utklippstavlen",
     "description": "the text, 'SCIM' and 'URL', are acronymns and should not be translated."
   },
   "scimUrl": {
@@ -5508,11 +5524,11 @@
     "description": "the text, 'SCIM' and 'URL', are acronymns and should not be translated."
   },
   "scimApiKeyRotated": {
-    "message": "SCIM API key successfully rotated",
+    "message": "SCIM API-nøkkel ble skiftet ut",
     "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
   },
   "scimSettingsSaved": {
-    "message": "SCIM settings saved",
+    "message": "SCIM innstillinger lagret",
     "description": "the text, 'SCIM', is an acronymn and should not be translated."
   },
   "inputRequired": {
@@ -5540,7 +5556,7 @@
     }
   },
   "inputForbiddenCharacters": {
-    "message": "The following characters are not allowed: $CHARACTERS$",
+    "message": "Følgende tegn er ikke tillatt: $CHARACTERS$",
     "placeholders": {
       "characters": {
         "content": "$1",
@@ -5548,8 +5564,20 @@
       }
     }
   },
+  "multipleInputEmails": {
+    "message": "1 eller flere e-postadresser er ugyldige"
+  },
+  "tooManyEmails": {
+    "message": "Du kan kun sende inn opptil $COUNT$ e-poster om gangen",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "20"
+      }
+    }
+  },
   "fieldsNeedAttention": {
-    "message": "$COUNT$ field(s) above need your attention.",
+    "message": "$COUNT$ felt(er) over trenger din oppmerksomhet.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -5582,49 +5610,49 @@
     "message": "Ikke deg?"
   },
   "pickAnAvatarColor": {
-    "message": "Pick an avatar color"
+    "message": "Velg en avatarfarge"
   },
   "customizeAvatar": {
-    "message": "Customize avatar"
+    "message": "Tilpass avatar"
   },
   "avatarUpdated": {
-    "message": "Avatar updated"
+    "message": "Avatar oppdatert"
   },
   "brightBlue": {
-    "message": "Bright Blue"
+    "message": "Lys blå"
   },
   "green": {
-    "message": "Green"
+    "message": "Grønn"
   },
   "orange": {
-    "message": "Orange"
+    "message": "Oransje"
   },
   "lavender": {
-    "message": "Lavender"
+    "message": "Lavendel"
   },
   "yellow": {
-    "message": "Yellow"
+    "message": "Gul"
   },
   "indigo": {
     "message": "Indigo"
   },
   "teal": {
-    "message": "Teal"
+    "message": "Blågrønn"
   },
   "salmon": {
-    "message": "Salmon"
+    "message": "Laksefarge"
   },
   "pink": {
-    "message": "Pink"
+    "message": "Rosa"
   },
   "customColor": {
-    "message": "Custom Color"
+    "message": "Egendefinert farge"
   },
   "multiSelectPlaceholder": {
     "message": "-- Skriv for å filtrere --"
   },
   "multiSelectLoading": {
-    "message": "Retrieving options..."
+    "message": "Henter innstillinger..."
   },
   "multiSelectNotFound": {
     "message": "Ingen oppføringer funnet"
@@ -5633,39 +5661,39 @@
     "message": "Tøm alle"
   },
   "toggleCharacterCount": {
-    "message": "Toggle character count",
+    "message": "Vis/skjul antall tegn",
     "description": "'Character count' describes a feature that displays a number next to each character of the password."
   },
   "passwordCharacterCount": {
-    "message": "Password character count",
+    "message": "Antall tegn i passord",
     "description": "'Character count' describes a feature that displays a number next to each character of the password."
   },
   "hide": {
-    "message": "Hide"
+    "message": "Skjul"
   },
   "projects": {
     "message": "Projects"
   },
   "lastEdited": {
-    "message": "Last Edited"
+    "message": "Last edited"
   },
   "editSecret": {
-    "message": "Edit Secret"
+    "message": "Edit secret"
   },
   "addSecret": {
-    "message": "Add Secret"
+    "message": "Add secret"
   },
   "copySecretName": {
-    "message": "Copy Secret Name"
+    "message": "Copy secret name"
   },
   "copySecretValue": {
-    "message": "Copy Secret Value"
+    "message": "Copy secret value"
   },
   "deleteSecret": {
-    "message": "Delete Secret"
+    "message": "Delete secret"
   },
   "deleteSecrets": {
-    "message": "Delete Secrets"
+    "message": "Delete secrets"
   },
   "secretProjectAssociationDescription": {
     "message": "Select projects that the secret will be associated with. Only organization users with access to these projects will be able to see the secret."
@@ -5680,31 +5708,31 @@
     "message": "Project"
   },
   "editProject": {
-    "message": "Edit Project"
+    "message": "Edit project"
   },
   "viewProject": {
-    "message": "View Project"
+    "message": "View project"
   },
   "deleteProject": {
-    "message": "Delete Project"
+    "message": "Delete project"
   },
   "deleteProjects": {
-    "message": "Delete Projects"
+    "message": "Delete projects"
   },
   "secret": {
     "message": "Secret"
   },
   "serviceAccount": {
-    "message": "Service Account"
+    "message": "Service account"
   },
   "serviceAccounts": {
-    "message": "Service Accounts"
+    "message": "Service accounts"
   },
   "secrets": {
     "message": "Secrets"
   },
   "nameValuePair": {
-    "message": "Name/Value Pair"
+    "message": "Name/Value pair"
   },
   "secretEdited": {
     "message": "Secret edited"
@@ -5713,10 +5741,10 @@
     "message": "Secret created"
   },
   "newSecret": {
-    "message": "New Secret"
+    "message": "New secret"
   },
   "newServiceAccount": {
-    "message": "New Service Account"
+    "message": "New service account"
   },
   "secretsNoItemsTitle": {
     "message": "No secrets to show"
@@ -5728,25 +5756,25 @@
     "message": "Nothing to show yet"
   },
   "serviceAccountsNoItemsMessage": {
-    "message": "Create a new Service Account to get started automating secret access."
+    "message": "Create a new service account to get started automating secret access."
   },
   "searchSecrets": {
-    "message": "Search Secrets"
+    "message": "Search secrets"
   },
   "deleteServiceAccounts": {
-    "message": "Delete Service Accounts"
+    "message": "Delete service accounts"
   },
   "deleteServiceAccount": {
-    "message": "Delete Service Account"
+    "message": "Delete service account"
   },
   "viewServiceAccount": {
-    "message": "View Service Account"
+    "message": "View service account"
   },
   "searchServiceAccounts": {
-    "message": "Search Service Accounts"
+    "message": "Search service accounts"
   },
   "addProject": {
-    "message": "Add Project"
+    "message": "Add project"
   },
   "projectEdited": {
     "message": "Project edited"
@@ -5758,10 +5786,10 @@
     "message": "Project created"
   },
   "projectName": {
-    "message": "Project Name"
+    "message": "Project name"
   },
   "newProject": {
-    "message": "New Project"
+    "message": "New project"
   },
   "softDeleteSecretWarning": {
     "message": "Deleting secrets can affect existing integrations."
@@ -5770,7 +5798,7 @@
     "message": "Secrets sent to trash"
   },
   "serviceAccountCreated": {
-    "message": "Service Account Created"
+    "message": "Service account created"
   },
   "smAccess": {
     "message": "Access"
@@ -5779,22 +5807,22 @@
     "message": "Project, Secret"
   },
   "serviceAccountName": {
-    "message": "Service account name"
+    "message": "Tjenestekontonavn"
   },
   "newSaSelectAccess": {
-    "message": "Type or Select Projects or Secrets"
+    "message": "Skriv inn eller velg prosjekter eller hemmeligheter"
   },
   "newSaTypeToFilter": {
-    "message": "Type to Filter"
+    "message": "Skriv for å filtrere"
   },
   "deleteProjectsToast": {
-    "message": "Projects deleted"
+    "message": "Prosjekter slettet"
   },
   "deleteProjectToast": {
-    "message": "The project and all associated secrets have been deleted"
+    "message": "Prosjektet og alle tilknyttede hemmeligheter er slettet"
   },
   "deleteProjectDialogMessage": {
-    "message": "Deleting project $PROJECT$ is permanent and irreversible.",
+    "message": "Sletting av prosjekt $PROJECT$ er permanent og kan ikke angres.",
     "placeholders": {
       "project": {
         "content": "$1",
@@ -5803,16 +5831,16 @@
     }
   },
   "deleteProjectInputLabel": {
-    "message": "Type \"$CONFIRM$\" to continue",
+    "message": "Skriv inn \"$CONFIRM$\" for å fortsette",
     "placeholders": {
       "confirm": {
         "content": "$1",
-        "example": "Delete 3 Projects"
+        "example": "Delete 3 projects"
       }
     }
   },
   "deleteProjectConfirmMessage": {
-    "message": "Delete $PROJECT$",
+    "message": "Slett $PROJECT$",
     "placeholders": {
       "project": {
         "content": "$1",
@@ -5821,7 +5849,7 @@
     }
   },
   "deleteProjectsConfirmMessage": {
-    "message": "Delete $COUNT$ Projects",
+    "message": "Slett $COUNT$ prosjekter",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -5830,73 +5858,73 @@
     }
   },
   "deleteProjectsDialogMessage": {
-    "message": "Deleting projects is permanent and irreversible."
+    "message": "Sletting av prosjekter er permanent og kan ikke angres."
   },
   "projectsNoItemsTitle": {
-    "message": "No projects to display"
+    "message": "Ingen prosjekter å vise"
   },
   "projectsNoItemsMessage": {
-    "message": "Add a new project to get started organizing secrets."
+    "message": "Legg til et nytt prosjekt for å komme i gang med å organisere hemmeligheter."
   },
   "smConfirmationRequired": {
-    "message": "Confirmation required"
+    "message": "Bekreftelse kreves"
   },
   "bulkDeleteProjectsErrorMessage": {
-    "message": "The following projects could not be deleted:"
+    "message": "Følgende prosjekter kunne ikke slettes:"
   },
   "softDeleteSuccessToast": {
-    "message": "Secret sent to trash"
+    "message": "Hemmelighet sendt til papirkurven"
   },
   "searchProjects": {
-    "message": "Search Projects"
+    "message": "Søk i prosjekter"
   },
   "accessTokens": {
-    "message": "Access tokens"
+    "message": "Tilgangstoken"
   },
   "createAccessToken": {
-    "message": "Create access token"
+    "message": "Opprett tilgangstoken"
   },
   "expires": {
-    "message": "Expires"
+    "message": "Utløper"
   },
   "canRead": {
-    "message": "Can Read"
+    "message": "Kan lese"
   },
   "accessTokensNoItemsTitle": {
-    "message": "No access tokens to show"
+    "message": "Ingen tilgangstokens å vise"
   },
   "accessTokensNoItemsDesc": {
-    "message": "To get started, create an access token"
+    "message": "Opprett et tilgangstoken for å komme i gang"
   },
   "downloadAccessToken": {
-    "message": "Download or copy before closing."
+    "message": "Last ned eller kopier før lukking."
   },
   "expiresOnAccessToken": {
-    "message": "Expires on:"
+    "message": "Utløper den:"
   },
   "accessTokenCallOutTitle": {
-    "message": "Access tokens are not stored and cannot be retrieved"
+    "message": "Tilgangstokens er ikke lagret og kan ikke hentes"
   },
   "copyToken": {
-    "message": "Copy token"
+    "message": "Kopier token"
   },
   "accessToken": {
-    "message": "Access token"
+    "message": "Tilgangstoken"
   },
   "accessTokenExpirationRequired": {
-    "message": "Expiration date required"
+    "message": "Utløpsdato kreves"
   },
   "accessTokenCreatedAndCopied": {
-    "message": "Access token created and copied to clipboard"
+    "message": "Tilgangstoken er opprettet og kopiert til utklippstavlen"
   },
   "accessTokenPermissionsBetaNotification": {
-    "message": "Permissions management is unavailable for beta."
+    "message": "Administrasjon av tilganger er ikke tilgjengelig i beta."
   },
   "revokeAccessToken": {
-    "message": "Revoke Access Token"
+    "message": "Opphev tilgangstoken"
   },
   "submenu": {
-    "message": "Submenu"
+    "message": "Undermeny"
   },
   "from": {
     "message": "Fra"
@@ -5911,7 +5939,7 @@
     "message": "Oppdater"
   },
   "plusNMore": {
-    "message": "+ $QUANTITY$ more",
+    "message": "+ $QUANTITY$ til",
     "placeholders": {
       "quantity": {
         "content": "$1",
@@ -5920,34 +5948,34 @@
     }
   },
   "groupInfo": {
-    "message": "Group info"
+    "message": "Gruppeinfo"
   },
   "editGroupMembersDesc": {
-    "message": "Grant members access to the group's assigned collections."
+    "message": "Gi medlemmer tilgang til gruppens tildelte samlinger."
   },
   "editGroupCollectionsDesc": {
-    "message": "Grant access to collections by adding them to this group."
+    "message": "Gi tilgang til samlinger ved å legge dem til i denne gruppen."
   },
   "accessAllCollectionsDesc": {
-    "message": "Grant access to all current and future collections."
+    "message": "Gi tilgang til alle nåværende og fremtidige samlinger."
   },
   "accessAllCollectionsHelp": {
-    "message": "If checked, this will replace all other collection permissions."
+    "message": "Hvis merket av, vil dette erstatte alle andre samlingstillatelser."
   },
   "selectMembers": {
-    "message": "Select members"
+    "message": "Velg medlemmer"
   },
   "selectCollections": {
-    "message": "Select collections"
+    "message": "Velg samlinger"
   },
   "role": {
     "message": "Rolle"
   },
   "removeMember": {
-    "message": "Remove member"
+    "message": "Fjern medlem"
   },
   "collection": {
-    "message": "Collection"
+    "message": "Samling"
   },
   "canView": {
     "message": "Kan vise"
@@ -5962,43 +5990,43 @@
     "message": "Kan redigere, bortsett fra passord"
   },
   "noCollectionsAdded": {
-    "message": "No collections added"
+    "message": "Ingen samlinger lagt til"
   },
   "noMembersAdded": {
-    "message": "No members added"
+    "message": "Ingen medlemmer lagt til"
   },
   "noGroupsAdded": {
-    "message": "No groups added"
+    "message": "Ingen grupper er lagt til"
   },
   "group": {
     "message": "Gruppe"
   },
   "groupAccessAll": {
-    "message": "This group can access and modify all items."
+    "message": "Denne gruppen har tilgang til og kan endre alle elementer."
   },
   "memberAccessAll": {
-    "message": "This member can access and modify all items."
+    "message": "Dette medlemmet har tilgang til og kan endre alle elementer."
   },
   "membersColumnHeader": {
-    "message": "Member/Group"
+    "message": "Medlem/gruppe"
   },
   "groupAndMemberColumnHeader": {
-    "message": "Member"
+    "message": "Medlem"
   },
   "selectGroupsAndMembers": {
-    "message": "Select groups and members"
+    "message": "Velg grupper og medlemmer"
   },
   "selectGroups": {
-    "message": "Select groups"
+    "message": "Velg grupper"
   },
   "userPermissionOverrideHelper": {
-    "message": "Permissions set for a member will replace permissions set by that member's group"
+    "message": "Tilganger satt for et medlem vil erstatte tilganger satt av medlemmets gruppe"
   },
   "noMembersOrGroupsAdded": {
-    "message": "No members or groups added"
+    "message": "Ingen medlemmer eller grupper er lagt til"
   },
   "deleted": {
-    "message": "Deleted"
+    "message": "Slettet"
   },
   "memberStatusFilter": {
     "message": "Member status filter"
@@ -6053,5 +6081,14 @@
         "example": "2"
       }
     }
+  },
+  "lowKdfIterations": {
+    "message": "Low KDF Iterations"
+  },
+  "lowKdfIterationsDesc": {
+    "message": "Increase your KDF encryption settings to improve the security of your account."
+  },
+  "changeKdfSettings": {
+    "message": "Change KDF settings"
   }
 }

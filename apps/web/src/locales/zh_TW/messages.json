@@ -133,6 +133,9 @@
   "ms": {
     "message": "Ms"
   },
+  "mx": {
+    "message": "Mx"
+  },
   "dr": {
     "message": "Dr"
   },
@@ -305,6 +308,9 @@
   "searchMembers": {
     "message": "Search members"
   },
+  "searchGroups": {
+    "message": "Search groups"
+  },
   "allItems": {
     "message": "所有項目"
   },
@@ -399,7 +405,8 @@
     "message": "檢視項目"
   },
   "new": {
-    "message": "新增"
+    "message": "新增",
+    "description": "for adding new items"
   },
   "item": {
     "message": "Item"
@@ -2488,6 +2495,15 @@
   },
   "editMember": {
     "message": "Edit member"
+  },
+  "fieldOnTabRequiresAttention": {
+    "message": "A field on the '$TAB$' tab requires your attention.",
+    "placeholders": {
+      "tab": {
+        "content": "$1",
+        "example": "Collection info"
+      }
+    }
   },
   "inviteUserDesc": {
     "message": "在下方輸入 Bitwarden 帳戶的電子郵件位址，以邀請新使用者加入您的組織。若他們沒有 Bitwarden 帳戶，系統將提示他們建立新帳戶。"
@@ -5548,6 +5564,18 @@
       }
     }
   },
+  "multipleInputEmails": {
+    "message": "1 or more emails are invalid"
+  },
+  "tooManyEmails": {
+    "message": "You can only submit up to $COUNT$ emails at a time",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "20"
+      }
+    }
+  },
   "fieldsNeedAttention": {
     "message": "您需注意上方的 $COUNT$ 個欄位。",
     "placeholders": {
@@ -5728,7 +5756,7 @@
     "message": "還沒有要顯示的內容"
   },
   "serviceAccountsNoItemsMessage": {
-    "message": "Create a new Service Account to get started automating secret access."
+    "message": "Create a new service account to get started automating secret access."
   },
   "searchSecrets": {
     "message": "搜尋機密"
@@ -5807,7 +5835,7 @@
     "placeholders": {
       "confirm": {
         "content": "$1",
-        "example": "Delete 3 Projects"
+        "example": "Delete 3 projects"
       }
     }
   },
@@ -6053,5 +6081,14 @@
         "example": "2"
       }
     }
+  },
+  "lowKdfIterations": {
+    "message": "Low KDF Iterations"
+  },
+  "lowKdfIterationsDesc": {
+    "message": "Increase your KDF encryption settings to improve the security of your account."
+  },
+  "changeKdfSettings": {
+    "message": "Change KDF settings"
   }
 }

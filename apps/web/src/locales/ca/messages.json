@@ -133,6 +133,9 @@
   "ms": {
     "message": "Srta."
   },
+  "mx": {
+    "message": "Mx"
+  },
   "dr": {
     "message": "Dr."
   },
@@ -305,6 +308,9 @@
   "searchMembers": {
     "message": "Cerca membres"
   },
+  "searchGroups": {
+    "message": "Cerca grups"
+  },
   "allItems": {
     "message": "Tots els elements"
   },
@@ -399,7 +405,8 @@
     "message": "Visualitza l'element"
   },
   "new": {
-    "message": "Nou"
+    "message": "Nou",
+    "description": "for adding new items"
   },
   "item": {
     "message": "Element"
@@ -892,7 +899,7 @@
     "message": "Editeu les col·leccions amb les què es comparteix aquest element. Només els usuaris de l'organització que tinguen accés a aquestes col·leccions podran veure'l."
   },
   "deleteSelectedItemsDesc": {
-    "message": "Heu seleccionat $COUNT$ elements per suprimir. Esteu segur que voleu suprimir tots aquests elements?",
+    "message": "S'enviaran $COUNT$ elements a la paperera.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -901,7 +908,7 @@
     }
   },
   "deleteSelectedCollectionsDesc": {
-    "message": "$COUNT$ coleccions se suprimiran permanentment.",
+    "message": "Se suprimiran $COUNT$ coleccions permanentment.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -910,7 +917,7 @@
     }
   },
   "deleteSelectedConfirmation": {
-    "message": "Esteu segurs que voleu continuar?"
+    "message": "Esteu segur que voleu continuar?"
   },
   "moveSelectedItemsDesc": {
     "message": "Trieu una carpeta a la que vulgueu desplaçar els $COUNT$ elements seleccionats.",
@@ -2489,6 +2496,15 @@
   "editMember": {
     "message": "Edita el membre"
   },
+  "fieldOnTabRequiresAttention": {
+    "message": "Un camp de la pestanya '$TAB$' requereix la vostra atenció.",
+    "placeholders": {
+      "tab": {
+        "content": "$1",
+        "example": "Collection info"
+      }
+    }
+  },
   "inviteUserDesc": {
     "message": "Convida un nou usuari a la vostra organització introduint l'adreça electrònica del compte de Bitwarden a continuació. Si encara no tenen un compte de Bitwarden, se us demanarà que creeu un compte nou."
   },
@@ -2985,7 +3001,7 @@
     "message": "Accés de grup"
   },
   "groupAccessUserDesc": {
-    "message": "Editeu els grups als quals pertany aquest usuari."
+    "message": "Doneu accés als membres a les col·leccions afegint-los a 1 o més grups."
   },
   "invitedUsers": {
     "message": "Usuaris convidats."
@@ -3021,7 +3037,7 @@
     }
   },
   "confirmUsers": {
-    "message": "Confirma usuaris"
+    "message": "Confirma membres"
   },
   "usersNeedConfirmed": {
     "message": "Teniu usuaris que han acceptat la seua invitació, però encara cal confirmar-la. Els usuaris no tindran accés a l'organització fins que estiguen confirmats."
@@ -5548,6 +5564,18 @@
       }
     }
   },
+  "multipleInputEmails": {
+    "message": "Un o més correus electrònics no són vàlids"
+  },
+  "tooManyEmails": {
+    "message": "Només podeu enviar fins a $COUNT$ correus electrònics alhora",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "20"
+      }
+    }
+  },
   "fieldsNeedAttention": {
     "message": "$COUNT$ camps de dalt necessiten la vostra atenció.",
     "placeholders": {
@@ -5807,7 +5835,7 @@
     "placeholders": {
       "confirm": {
         "content": "$1",
-        "example": "Delete 3 Projects"
+        "example": "Delete 3 projects"
       }
     }
   },
@@ -5986,31 +6014,31 @@
     "message": "Membre"
   },
   "selectGroupsAndMembers": {
-    "message": "Select groups and members"
+    "message": "Seleccioneu grups i membres"
   },
   "selectGroups": {
-    "message": "Select groups"
+    "message": "Selecciona grups"
   },
   "userPermissionOverrideHelper": {
-    "message": "Permissions set for a member will replace permissions set by that member's group"
+    "message": "Els permisos establerts per a un membre substituiran els permisos establerts pel grup d'aquest membre"
   },
   "noMembersOrGroupsAdded": {
-    "message": "No members or groups added"
+    "message": "No s'han afegit membres ni grups"
   },
   "deleted": {
-    "message": "Deleted"
+    "message": "Suprimit"
   },
   "memberStatusFilter": {
-    "message": "Member status filter"
+    "message": "Filtre d'estat del membre"
   },
   "inviteMember": {
-    "message": "Invite member"
+    "message": "Convida membre"
   },
   "needsConfirmation": {
-    "message": "Needs confirmation"
+    "message": "Necessita confirmació"
   },
   "memberRole": {
-    "message": "Member role"
+    "message": "Rol de membre"
   },
   "moreFromBitwarden": {
     "message": "Més de Bitwarden"
@@ -6053,5 +6081,14 @@
         "example": "2"
       }
     }
+  },
+  "lowKdfIterations": {
+    "message": "Iteracions de KDF baixes"
+  },
+  "lowKdfIterationsDesc": {
+    "message": "Augmenteu la configuració de xifratge KDF per millorar la seguretat del compte."
+  },
+  "changeKdfSettings": {
+    "message": "Canvia la configuració de KDF"
   }
 }

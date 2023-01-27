@@ -133,6 +133,9 @@
   "ms": {
     "message": "Slečna"
   },
+  "mx": {
+    "message": "Mx"
+  },
   "dr": {
     "message": "MUDr"
   },
@@ -278,11 +281,11 @@
     "message": "Vyhledat v oblíbených"
   },
   "searchLogin": {
-    "message": "Search logins",
+    "message": "Hledat přihlášení",
     "description": "Search Login type"
   },
   "searchCard": {
-    "message": "Search cards",
+    "message": "Hledat typ karty",
     "description": "Search Card type"
   },
   "searchIdentity": {
@@ -297,13 +300,16 @@
     "message": "Vyhledat v trezoru"
   },
   "searchMyVault": {
-    "message": "Search my vault"
+    "message": "Hledat v mém trezoru"
   },
   "searchOrganization": {
-    "message": "Search organization"
+    "message": "Vyhledat organizaci"
   },
   "searchMembers": {
-    "message": "Search members"
+    "message": "Vyhledat členy"
+  },
+  "searchGroups": {
+    "message": "Vyhledat skupiny"
   },
   "allItems": {
     "message": "Všechny položky"
@@ -387,7 +393,7 @@
     "message": "Vybrat"
   },
   "newItem": {
-    "message": "New item"
+    "message": "Nová položka"
   },
   "addItem": {
     "message": "Přidat položku"
@@ -399,10 +405,11 @@
     "message": "Zobrazit položku"
   },
   "new": {
-    "message": "New"
+    "message": "Nový",
+    "description": "for adding new items"
   },
   "item": {
-    "message": "Item"
+    "message": "Položka"
   },
   "ex": {
     "message": "např.",
@@ -470,7 +477,7 @@
     "message": "Položky trezoru"
   },
   "filter": {
-    "message": "Filter"
+    "message": "Filtr"
   },
   "moveSelectedToOrg": {
     "message": "Přesunout vybrané do organizace"
@@ -579,10 +586,10 @@
     "message": "Složka byla smazána"
   },
   "editInfo": {
-    "message": "Edit info"
+    "message": "Upravit informace"
   },
   "access": {
-    "message": "Access"
+    "message": "Přístup"
   },
   "loggedOut": {
     "message": "Odhlášení"
@@ -742,7 +749,7 @@
     "message": "Žádné položky k zobrazení."
   },
   "noPermissionToViewAllCollectionItems": {
-    "message": "You do not have permission to view all items in this collection."
+    "message": "Nemáte oprávnění k zobrazení všech položek v této kolekci."
   },
   "noCollectionsInList": {
     "message": "Žádné kolekce k zobrazení."
@@ -754,7 +761,7 @@
     "message": "Žádní uživatelé k zobrazení."
   },
   "noMembersInList": {
-    "message": "There are no members to list."
+    "message": "V seznamu nejsou žádní členové."
   },
   "noEventsInList": {
     "message": "Žádné události k zobrazení."
@@ -910,7 +917,7 @@
     }
   },
   "deleteSelectedConfirmation": {
-    "message": "Are you sure you want to continue?"
+    "message": "Opravdu chcete pokračovat?"
   },
   "moveSelectedItemsDesc": {
     "message": "Vyberte složku, do které chcete přesunout $COUNT$ vybraných položek.",
@@ -993,10 +1000,10 @@
     "message": "Nastavte heslo pro šifrování exportu a importujte ho do libovolného účtu Bitwarden pomocí hesla pro dešifrování."
   },
   "exportTypeHeading": {
-    "message": "Export type"
+    "message": "Typ exportu"
   },
   "accountRestricted": {
-    "message": "Account restricted"
+    "message": "Účet je omezený"
   },
   "passwordProtected": {
     "message": "Chráněno heslem"
@@ -1358,7 +1365,7 @@
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enforce Bitwarden Two-step Login options for members by using the Two-step Login Policy.'"
   },
   "twoStepLoginPolicy": {
-    "message": "Two-step Login Policy"
+    "message": "Zásady dvoufázového přihlášení"
   },
   "twoStepLoginOrganizationDuoDesc": {
     "message": "To enforce Two-step Login through Duo, use the options below."
@@ -1383,7 +1390,7 @@
     "message": "Povoleno"
   },
   "restoreAccess": {
-    "message": "Restore access"
+    "message": "Obnovit přístup"
   },
   "premium": {
     "message": "Prémium",
@@ -1411,7 +1418,7 @@
     "message": "Zakázat"
   },
   "revokeAccess": {
-    "message": "Revoke access"
+    "message": "Zrušit přístup"
   },
   "twoStepLoginProviderEnabled": {
     "message": "Tento poskytovatel dvoufázového přihlášení byl povolen."
@@ -1809,10 +1816,10 @@
     "message": "Fakturace"
   },
   "billingPlanLabel": {
-    "message": "Billing plan"
+    "message": "Fakturační plán"
   },
   "paymentType": {
-    "message": "Payment type"
+    "message": "Způsob platby"
   },
   "accountCredit": {
     "message": "Kredit na účtu",
@@ -1893,7 +1900,7 @@
     }
   },
   "bitwardenFamiliesPlan": {
-    "message": "Bitwarden Families plan."
+    "message": "Rodinný Bitwarden plán."
   },
   "addons": {
     "message": "Doplňky"
@@ -1978,7 +1985,7 @@
     "message": "Fakturační údaje"
   },
   "billingTrialSubLabel": {
-    "message": "Your payment method will not be charged during the 7 day free trial."
+    "message": "Nebude Vám nic účtováno během zkušební verze."
   },
   "creditCard": {
     "message": "Kreditní karta"
@@ -2481,13 +2488,22 @@
     "message": "Upravit kolekci"
   },
   "collectionInfo": {
-    "message": "Collection info"
+    "message": "Informace o sbírce"
   },
   "deleteCollectionConfirmation": {
     "message": "Opravdu chcete tuto kolekci smazat?"
   },
   "editMember": {
-    "message": "Edit member"
+    "message": "Upravit člena"
+  },
+  "fieldOnTabRequiresAttention": {
+    "message": "A field on the '$TAB$' tab requires your attention.",
+    "placeholders": {
+      "tab": {
+        "content": "$1",
+        "example": "Collection info"
+      }
+    }
   },
   "inviteUserDesc": {
     "message": "Pozvěte nového uživatele do vaší organizace zadáním e-mailové adresy jejich Bitwarden účtu. Pokud ještě nemají Bitwarden účet, budou vyzváni k vytvoření nového účtu."
@@ -2523,7 +2539,7 @@
     "message": "Potvrzeno"
   },
   "clientOwnerEmail": {
-    "message": "Client owner email"
+    "message": "E-mail majitele klienta"
   },
   "owner": {
     "message": "Vlastník"
@@ -2754,7 +2770,7 @@
     }
   },
   "deletedCollections": {
-    "message": "Deleted collections"
+    "message": "Smazané kolekce"
   },
   "deletedCollectionId": {
     "message": "Kolekce $ID$ byla smazána.",
@@ -5548,6 +5564,18 @@
       }
     }
   },
+  "multipleInputEmails": {
+    "message": "1 or more emails are invalid"
+  },
+  "tooManyEmails": {
+    "message": "You can only submit up to $COUNT$ emails at a time",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "20"
+      }
+    }
+  },
   "fieldsNeedAttention": {
     "message": "$COUNT$ výše uvedených polí vyžaduje vaši pozornost.",
     "placeholders": {
@@ -5647,25 +5675,25 @@
     "message": "Projects"
   },
   "lastEdited": {
-    "message": "Last Edited"
+    "message": "Last edited"
   },
   "editSecret": {
-    "message": "Edit Secret"
+    "message": "Edit secret"
   },
   "addSecret": {
-    "message": "Add Secret"
+    "message": "Add secret"
   },
   "copySecretName": {
-    "message": "Copy Secret Name"
+    "message": "Copy secret name"
   },
   "copySecretValue": {
-    "message": "Copy Secret Value"
+    "message": "Copy secret value"
   },
   "deleteSecret": {
-    "message": "Delete Secret"
+    "message": "Delete secret"
   },
   "deleteSecrets": {
-    "message": "Delete Secrets"
+    "message": "Delete secrets"
   },
   "secretProjectAssociationDescription": {
     "message": "Select projects that the secret will be associated with. Only organization users with access to these projects will be able to see the secret."
@@ -5680,31 +5708,31 @@
     "message": "Project"
   },
   "editProject": {
-    "message": "Edit Project"
+    "message": "Edit project"
   },
   "viewProject": {
-    "message": "View Project"
+    "message": "View project"
   },
   "deleteProject": {
-    "message": "Delete Project"
+    "message": "Delete project"
   },
   "deleteProjects": {
-    "message": "Delete Projects"
+    "message": "Delete projects"
   },
   "secret": {
     "message": "Secret"
   },
   "serviceAccount": {
-    "message": "Service Account"
+    "message": "Service account"
   },
   "serviceAccounts": {
-    "message": "Service Accounts"
+    "message": "Service accounts"
   },
   "secrets": {
     "message": "Secrets"
   },
   "nameValuePair": {
-    "message": "Name/Value Pair"
+    "message": "Name/Value pair"
   },
   "secretEdited": {
     "message": "Secret edited"
@@ -5713,10 +5741,10 @@
     "message": "Secret created"
   },
   "newSecret": {
-    "message": "New Secret"
+    "message": "New secret"
   },
   "newServiceAccount": {
-    "message": "New Service Account"
+    "message": "New service account"
   },
   "secretsNoItemsTitle": {
     "message": "No secrets to show"
@@ -5728,25 +5756,25 @@
     "message": "Nothing to show yet"
   },
   "serviceAccountsNoItemsMessage": {
-    "message": "Create a new Service Account to get started automating secret access."
+    "message": "Create a new service account to get started automating secret access."
   },
   "searchSecrets": {
-    "message": "Search Secrets"
+    "message": "Search secrets"
   },
   "deleteServiceAccounts": {
-    "message": "Delete Service Accounts"
+    "message": "Delete service accounts"
   },
   "deleteServiceAccount": {
-    "message": "Delete Service Account"
+    "message": "Delete service account"
   },
   "viewServiceAccount": {
-    "message": "View Service Account"
+    "message": "View service account"
   },
   "searchServiceAccounts": {
-    "message": "Search Service Accounts"
+    "message": "Search service accounts"
   },
   "addProject": {
-    "message": "Add Project"
+    "message": "Add project"
   },
   "projectEdited": {
     "message": "Project edited"
@@ -5758,10 +5786,10 @@
     "message": "Project created"
   },
   "projectName": {
-    "message": "Project Name"
+    "message": "Project name"
   },
   "newProject": {
-    "message": "New Project"
+    "message": "New project"
   },
   "softDeleteSecretWarning": {
     "message": "Deleting secrets can affect existing integrations."
@@ -5770,7 +5798,7 @@
     "message": "Secrets sent to trash"
   },
   "serviceAccountCreated": {
-    "message": "Service Account Created"
+    "message": "Service account created"
   },
   "smAccess": {
     "message": "Access"
@@ -5782,10 +5810,10 @@
     "message": "Service account name"
   },
   "newSaSelectAccess": {
-    "message": "Type or Select Projects or Secrets"
+    "message": "Type or select projects or secrets"
   },
   "newSaTypeToFilter": {
-    "message": "Type to Filter"
+    "message": "Type to filter"
   },
   "deleteProjectsToast": {
     "message": "Projects deleted"
@@ -5807,7 +5835,7 @@
     "placeholders": {
       "confirm": {
         "content": "$1",
-        "example": "Delete 3 Projects"
+        "example": "Delete 3 projects"
       }
     }
   },
@@ -5848,7 +5876,7 @@
     "message": "Secret sent to trash"
   },
   "searchProjects": {
-    "message": "Search Projects"
+    "message": "Search projects"
   },
   "accessTokens": {
     "message": "Access tokens"
@@ -5893,7 +5921,7 @@
     "message": "Permissions management is unavailable for beta."
   },
   "revokeAccessToken": {
-    "message": "Revoke Access Token"
+    "message": "Revoke access token"
   },
   "submenu": {
     "message": "Submenu"
@@ -6016,7 +6044,7 @@
     "message": "More from Bitwarden"
   },
   "switchProducts": {
-    "message": "Switch Products"
+    "message": "Switch products"
   },
   "freeOrgInvLimitReachedManageBilling": {
     "message": "Free organizations may have up to $SEATCOUNT$ members. Upgrade to a paid plan to invite more members.",
@@ -6053,5 +6081,14 @@
         "example": "2"
       }
     }
+  },
+  "lowKdfIterations": {
+    "message": "Low KDF Iterations"
+  },
+  "lowKdfIterationsDesc": {
+    "message": "Increase your KDF encryption settings to improve the security of your account."
+  },
+  "changeKdfSettings": {
+    "message": "Change KDF settings"
   }
 }

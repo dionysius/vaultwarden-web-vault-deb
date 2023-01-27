@@ -133,6 +133,9 @@
   "ms": {
     "message": "بانو"
   },
+  "mx": {
+    "message": "عنوان"
+  },
   "dr": {
     "message": "دکتر"
   },
@@ -305,6 +308,9 @@
   "searchMembers": {
     "message": "جستجوی اعضا"
   },
+  "searchGroups": {
+    "message": "جستجوی گروه‌ها"
+  },
   "allItems": {
     "message": "تمام موارد"
   },
@@ -399,7 +405,8 @@
     "message": "مشاهده مورد"
   },
   "new": {
-    "message": "جدید"
+    "message": "جدید",
+    "description": "for adding new items"
   },
   "item": {
     "message": "مورد"
@@ -2488,6 +2495,15 @@
   },
   "editMember": {
     "message": "ویرایش عضو"
+  },
+  "fieldOnTabRequiresAttention": {
+    "message": "فیلدی در برگه '$TAB$' توجه شما را می‌طلبد.",
+    "placeholders": {
+      "tab": {
+        "content": "$1",
+        "example": "Collection info"
+      }
+    }
   },
   "inviteUserDesc": {
     "message": "با وارد کردن نشانی ایمیل حساب Bitwarden در زیر، یک کاربر جدید را به سازمان خود دعوت کنید. اگر آنها قبلاً یک حساب Bitwarden نداشته باشند، از آنها خواسته می‌شود یک حساب جدید ایجاد کنند."
@@ -5548,6 +5564,18 @@
       }
     }
   },
+  "multipleInputEmails": {
+    "message": "یک یا چند ایمیل نامعتبر است"
+  },
+  "tooManyEmails": {
+    "message": "هر بار فقط می‌توانید حداکثر $COUNT$ ایمیل ارسال کنید",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "20"
+      }
+    }
+  },
   "fieldsNeedAttention": {
     "message": "فیلد $COUNT$ در بالا به توجه شما نیاز دارد.",
     "placeholders": {
@@ -5807,7 +5835,7 @@
     "placeholders": {
       "confirm": {
         "content": "$1",
-        "example": "Delete 3 Projects"
+        "example": "Delete 3 projects"
       }
     }
   },
@@ -6053,5 +6081,14 @@
         "example": "2"
       }
     }
+  },
+  "lowKdfIterations": {
+    "message": "Low KDF Iterations"
+  },
+  "lowKdfIterationsDesc": {
+    "message": "Increase your KDF encryption settings to improve the security of your account."
+  },
+  "changeKdfSettings": {
+    "message": "Change KDF settings"
   }
 }

@@ -29,55 +29,55 @@
     }
   },
   "newUri": {
-    "message": "New URI"
+    "message": "Bagong URI"
   },
   "username": {
-    "message": "Username"
+    "message": "Ang pangalan ng tagagamit"
   },
   "password": {
-    "message": "Password"
+    "message": "Ang Password"
   },
   "newPassword": {
-    "message": "Bagong Password"
+    "message": "Bagong password"
   },
   "passphrase": {
-    "message": "Passphrase"
+    "message": "Pasa salita"
   },
   "notes": {
-    "message": "Notes"
+    "message": "Mga nota"
   },
   "customFields": {
     "message": "Custom fields"
   },
   "cardholderName": {
-    "message": "Cardholder name"
+    "message": "Pangalan ng cardholder"
   },
   "number": {
-    "message": "Number"
+    "message": "Numero"
   },
   "brand": {
     "message": "Brand"
   },
   "expiration": {
-    "message": "Expiration"
+    "message": "Pag-expire"
   },
   "securityCode": {
-    "message": "Security code (CVV)"
+    "message": "Kodigo ng Seguridad"
   },
   "identityName": {
-    "message": "Identity name"
+    "message": "Pangalan ng Identidad"
   },
   "company": {
     "message": "Kumpanya"
   },
   "ssn": {
-    "message": "Social Security number"
+    "message": "Social Security Number - Numero ng Seguridad Sosyal"
   },
   "passportNumber": {
-    "message": "Passport number"
+    "message": "Numero ng Pasaporte"
   },
   "licenseNumber": {
-    "message": "License number"
+    "message": "License Number - Numero ng Lisensya"
   },
   "email": {
     "message": "Email"
@@ -133,29 +133,32 @@
   "ms": {
     "message": "Ms"
   },
+  "mx": {
+    "message": "Mx"
+  },
   "dr": {
     "message": "Dr"
   },
   "expirationMonth": {
-    "message": "Expiration month"
+    "message": "Buwan ng Pagpaso"
   },
   "expirationYear": {
-    "message": "Expiration year"
+    "message": "Taon ng Pag-expire"
   },
   "authenticatorKeyTotp": {
-    "message": "Authenticator key (TOTP)"
+    "message": "Susi ng Authenticator (TOTP)"
   },
   "folder": {
-    "message": "Folder"
+    "message": "Folder/Direktoryo"
   },
   "newCustomField": {
-    "message": "New custom field"
+    "message": "Bagong custom field"
   },
   "value": {
-    "message": "Value"
+    "message": "Halaga"
   },
   "dragToSort": {
-    "message": "Drag to sort"
+    "message": "I-drag upang i-sort"
   },
   "cfTypeText": {
     "message": "Teksto"
@@ -167,7 +170,7 @@
     "message": "Boolean"
   },
   "cfTypeLinked": {
-    "message": "Linked",
+    "message": "Nilikha",
     "description": "This describes a field that is 'linked' (related) to another field."
   },
   "remove": {
@@ -177,21 +180,21 @@
     "message": "Unassigned"
   },
   "noneFolder": {
-    "message": "No folder",
+    "message": "Walang folder",
     "description": "This is the folder for uncategorized items"
   },
   "addFolder": {
-    "message": "Add folder"
+    "message": "Magdagdag ng folder"
   },
   "editFolder": {
-    "message": "Edit folder"
+    "message": "I-edit ang folder"
   },
   "baseDomain": {
     "message": "Base domain",
     "description": "Domain name. Example: website.com"
   },
   "domainName": {
-    "message": "Domain name",
+    "message": "Domain Name - Pangalan ng Domain",
     "description": "Domain name. Example: website.com"
   },
   "host": {
@@ -202,38 +205,38 @@
     "message": "Eksakto"
   },
   "startsWith": {
-    "message": "Starts with"
+    "message": "Naguumpisa sa"
   },
   "regEx": {
-    "message": "Regular expression",
+    "message": "Regular Expression - Regular na Pagpapahayag",
     "description": "A programming term, also known as 'RegEx'."
   },
   "matchDetection": {
-    "message": "Match detection",
+    "message": "Match Detection - Pagtuklas ng Pares",
     "description": "URI match detection for auto-fill."
   },
   "defaultMatchDetection": {
-    "message": "Default match detection",
+    "message": "Kamalian ng Default",
     "description": "Default URI match detection for auto-fill."
   },
   "never": {
-    "message": "Never"
+    "message": "Hindi kailanman"
   },
   "toggleVisibility": {
-    "message": "Toggle visibility"
+    "message": "I-toggle ang kakayahang makita"
   },
   "toggleCollapse": {
     "message": "Toggle collapse",
     "description": "Toggling an expand/collapse state."
   },
   "generatePassword": {
-    "message": "Generate password"
+    "message": "Magtatag ng Password"
   },
   "checkPassword": {
-    "message": "Check if password has been exposed."
+    "message": "Suriin kung ang password ay na-expose."
   },
   "passwordExposed": {
-    "message": "This password has been exposed $VALUE$ time(s) in data breaches. You should change it.",
+    "message": "Ang password na ito ay na-expose na $VALUE$ beses sa mga data breach. Dapat mong baguhin ito.",
     "placeholders": {
       "value": {
         "content": "$1",
@@ -242,7 +245,7 @@
     }
   },
   "passwordSafe": {
-    "message": "This password was not found in any known data breaches. It should be safe to use."
+    "message": "Ang password na ito ay hindi natagpuan sa alinman sa mga alam na data breach. Maaari itong gamitin nang ligtas."
   },
   "save": {
     "message": "I-save"
@@ -260,19 +263,19 @@
     "message": "Alisin"
   },
   "favorite": {
-    "message": "Paborito"
+    "message": "Ang Paborito"
   },
   "unfavorite": {
     "message": "Unfavorite"
   },
   "edit": {
-    "message": "Edit"
+    "message": "I-edit"
   },
   "searchCollection": {
-    "message": "Search collection"
+    "message": "Maghanap ng koleksyon"
   },
   "searchFolder": {
-    "message": "Search folder"
+    "message": "Maghanap ng folder"
   },
   "searchFavorites": {
     "message": "Search favorites"
@@ -294,7 +297,7 @@
     "description": "Search Secure Note type"
   },
   "searchVault": {
-    "message": "Search vault"
+    "message": "Hanapin ang vault"
   },
   "searchMyVault": {
     "message": "Search my vault"
@@ -305,11 +308,14 @@
   "searchMembers": {
     "message": "Search members"
   },
+  "searchGroups": {
+    "message": "Search groups"
+  },
   "allItems": {
-    "message": "All items"
+    "message": "Lahat ng mga item"
   },
   "favorites": {
-    "message": "Favorites"
+    "message": "Mga Paborito"
   },
   "types": {
     "message": "Mga uri"
@@ -318,13 +324,13 @@
     "message": "Login"
   },
   "typeCard": {
-    "message": "Card"
+    "message": "Card - Karta"
   },
   "typeIdentity": {
-    "message": "Identity"
+    "message": "Identity - Pagkakakilanlan"
   },
   "typeSecureNote": {
-    "message": "Secure note"
+    "message": "Secure note - Segurong Nota"
   },
   "typeLoginPlural": {
     "message": "Logins"
@@ -339,22 +345,22 @@
     "message": "Secure notes"
   },
   "folders": {
-    "message": "Mga folder"
+    "message": "Mga Folder"
   },
   "collections": {
-    "message": "Collections"
+    "message": "Koleksyon"
   },
   "firstName": {
-    "message": "Pangalan"
+    "message": "Unang Pangalan"
   },
   "middleName": {
-    "message": "Gitnang pangalan"
+    "message": "Gitnang Pangalan"
   },
   "lastName": {
-    "message": "Apelyido"
+    "message": "Huling pangalan"
   },
   "fullName": {
-    "message": "Buong pangalan"
+    "message": "Buong Pangalan"
   },
   "address1": {
     "message": "Address 1"
@@ -372,34 +378,35 @@
     "message": "Estado/Probinsya"
   },
   "zipPostalCode": {
-    "message": "Zip / Postal code"
+    "message": "Zip / Postal code - Zip Code"
   },
   "country": {
-    "message": "Bansa"
+    "message": "Bayan"
   },
   "shared": {
-    "message": "Shared"
+    "message": "Iniimbak"
   },
   "attachments": {
-    "message": "Attachments"
+    "message": "Mga Attachment"
   },
   "select": {
-    "message": "Select"
+    "message": "Piliin"
   },
   "newItem": {
     "message": "New item"
   },
   "addItem": {
-    "message": "Add item"
+    "message": "Magdagdag ng Item"
   },
   "editItem": {
-    "message": "Edit item"
+    "message": "Baguhin ang Item"
   },
   "viewItem": {
-    "message": "View item"
+    "message": "Tingnan ang Item"
   },
   "new": {
-    "message": "New"
+    "message": "New",
+    "description": "for adding new items"
   },
   "item": {
     "message": "Item"
@@ -412,13 +419,13 @@
     "message": "Iba pa"
   },
   "share": {
-    "message": "Share"
+    "message": "I-share"
   },
   "moveToOrganization": {
-    "message": "Move to organization"
+    "message": "Lumipat sa organisasyon"
   },
   "valueCopied": {
-    "message": "$VALUE$ copied",
+    "message": "Kinopya ang $VALUE$",
     "description": "Value has been copied to the clipboard.",
     "placeholders": {
       "value": {
@@ -428,40 +435,40 @@
     }
   },
   "copyValue": {
-    "message": "Copy value",
+    "message": "Kopyahin ang halaga",
     "description": "Copy value to clipboard"
   },
   "copyPassword": {
-    "message": "Kopyahin ang password",
+    "message": "Kopyahin ang Password",
     "description": "Copy password to clipboard"
   },
   "copyUsername": {
-    "message": "Kopyahin ang pangalan",
+    "message": "Kopyahin ang pangalan ng gumagamit",
     "description": "Copy username to clipboard"
   },
   "copyNumber": {
-    "message": "Copy number",
+    "message": "Pamamagitan ng Kopya ng Bilang",
     "description": "Copy credit card number"
   },
   "copySecurityCode": {
-    "message": "Copy security code",
+    "message": "Kopyahin ang code ng seguridad",
     "description": "Copy credit card security code (CVV)"
   },
   "copyUri": {
-    "message": "Copy URI",
+    "message": "Kopyahin ang URI",
     "description": "Copy URI to clipboard"
   },
   "me": {
     "message": "Me"
   },
   "myVault": {
-    "message": "My vault"
+    "message": "Aking Kahadeyero"
   },
   "allVaults": {
-    "message": "All vaults"
+    "message": "Lahat ng Vault"
   },
   "vault": {
-    "message": "Vault"
+    "message": "Ayos"
   },
   "vaults": {
     "message": "Vaults"
@@ -488,40 +495,40 @@
     "message": "Unselect all"
   },
   "launch": {
-    "message": "Launch"
+    "message": "Paglulunsad"
   },
   "newAttachment": {
-    "message": "Add new attachment"
+    "message": "Magdagdag ng bagong attachment"
   },
   "deletedAttachment": {
-    "message": "Deleted attachment"
+    "message": "Attachment na natanggal"
   },
   "deleteAttachmentConfirmation": {
-    "message": "Are you sure you want to delete this attachment?"
+    "message": "Sigurado ka bang gusto mong tanggalin ang attachment na ito?"
   },
   "attachmentSaved": {
-    "message": "Attachment saved"
+    "message": "Attachment na nai-save"
   },
   "file": {
     "message": "File"
   },
   "selectFile": {
-    "message": "Select a file."
+    "message": "Pumili ng File"
   },
   "maxFileSize": {
-    "message": "Maximum file size is 500 MB."
+    "message": "Maximum file size is 500 MB. - Ang pinakamataas na laki ng file ay 500 MB."
   },
   "updateKey": {
-    "message": "You cannot use this feature until you update your encryption key."
+    "message": "You cannot use this feature until you update your encryption key. - Hindi mo maari gamitin ang tampok na ito hanggang hindi mo iupdate ang iyong encryption key."
   },
   "addedItem": {
-    "message": "Item added"
+    "message": "Ang item ay idinagdag"
   },
   "editedItem": {
-    "message": "Item saved"
+    "message": "Ang item ay nai-save"
   },
   "movedItemToOrg": {
-    "message": "$ITEMNAME$ moved to $ORGNAME$",
+    "message": "$ITEMNAME$ lumipat sa $ORGNAME$",
     "placeholders": {
       "itemname": {
         "content": "$1",
@@ -543,19 +550,19 @@
     }
   },
   "deleteItem": {
-    "message": "Delete item"
+    "message": "Tanggalin ang Item"
   },
   "deleteFolder": {
-    "message": "Delete folder"
+    "message": "Burahin ang folder"
   },
   "deleteAttachment": {
-    "message": "Delete attachment"
+    "message": "Tanggalin ang attachment"
   },
   "deleteItemConfirmation": {
-    "message": "Do you really want to send to the trash?"
+    "message": "Gusto mo bang talagang ipadala sa basura?"
   },
   "deletedItem": {
-    "message": "Item sent to trash"
+    "message": "Pinadala ang Item sa basurahan"
   },
   "deletedItems": {
     "message": "Items sent to trash"
@@ -564,19 +571,19 @@
     "message": "Items moved"
   },
   "overwritePasswordConfirmation": {
-    "message": "Are you sure you want to overwrite the current password?"
+    "message": "Sigurado ka bang gusto mong palitan ang kasalukuyang password?"
   },
   "editedFolder": {
-    "message": "Folder saved"
+    "message": "Nai-save na folder"
   },
   "addedFolder": {
-    "message": "Folder added"
+    "message": "Idinagdag na folder"
   },
   "deleteFolderConfirmation": {
-    "message": "Are you sure you want to delete this folder?"
+    "message": "Sigurado ka bang gusto mong tanggalin ang folder na ito?"
   },
   "deletedFolder": {
-    "message": "Folder deleted"
+    "message": "Tinanggal na folder"
   },
   "editInfo": {
     "message": "Edit info"
@@ -585,28 +592,28 @@
     "message": "Access"
   },
   "loggedOut": {
-    "message": "Logged out"
+    "message": "Umalis na"
   },
   "loginExpired": {
-    "message": "Your login session has expired."
+    "message": "Nag-expire na ang iyong session sa login."
   },
   "logOutConfirmation": {
-    "message": "Are you sure you want to log out?"
+    "message": "Sigurado ka bang gusto mong mag-log out?"
   },
   "logOut": {
-    "message": "Log out"
+    "message": "Mag-Log Out"
   },
   "ok": {
     "message": "Ok"
   },
   "yes": {
-    "message": "Yes"
+    "message": "Oo"
   },
   "no": {
-    "message": "No"
+    "message": "Hindi"
   },
   "loginOrCreateNewAccount": {
-    "message": "Log in or create a new account to access your secure vault."
+    "message": "Maglog-in o gumawa ng bagong account para ma-access ang iyong ligtas na kahadeyero."
   },
   "loginWithDevice": {
     "message": "Log in with device"
@@ -615,13 +622,13 @@
     "message": "Log in with device must be set up in the settings of the Bitwarden mobile app. Need another option?"
   },
   "loginWithMasterPassword": {
-    "message": "Log in with master password"
+    "message": "Mag-login gamit ang pangunahing password"
   },
   "createAccount": {
-    "message": "Create account"
+    "message": "Gumawa ng Account"
   },
   "newAroundHere": {
-    "message": "New around here?"
+    "message": "Mag-login gamit ang pangunahing password?"
   },
   "startTrial": {
     "message": "Start trial"
@@ -633,7 +640,7 @@
     "message": "Log in initiated"
   },
   "submit": {
-    "message": "Submit"
+    "message": "Isumite"
   },
   "emailAddressDesc": {
     "message": "You'll use your email address to log in."
@@ -645,76 +652,76 @@
     "message": "What should we call you?"
   },
   "masterPass": {
-    "message": "Master password"
+    "message": "Master Password"
   },
   "masterPassDesc": {
-    "message": "The master password is the password you use to access your vault. It is very important that you do not forget your master password. There is no way to recover the password in the event that you forget it."
+    "message": "Ang master password ay ang password na gagamitin mo upang ma-access ang iyong kahadeyero. Napakaimportante na hindi mo makalimutan ang iyong master password. Walang paraan upang ma-recover ang password kapag nakalimutan mo ito."
   },
   "masterPassImportant": {
     "message": "Master passwords cannot be recovered if you forget it!"
   },
   "masterPassHintDesc": {
-    "message": "A master password hint can help you remember your password if you forget it."
+    "message": "May isang pahiwatig para sa master password na makakatulong na maalala mo ang iyong password kapag nakalimutan mo ito."
   },
   "reTypeMasterPass": {
-    "message": "Re-type master password"
+    "message": "Muling i-type ang Master Password"
   },
   "masterPassHint": {
-    "message": "Master password hint (optional)"
+    "message": "Mungkahi sa Master Password (opsyonal)"
   },
   "masterPassHintLabel": {
     "message": "Master password hint"
   },
   "settings": {
-    "message": "Settings"
+    "message": "Mga Preperensya"
   },
   "passwordHint": {
-    "message": "Password hint"
+    "message": "Mungkahi sa Password"
   },
   "enterEmailToGetHint": {
-    "message": "Enter your account email address to receive your master password hint."
+    "message": "Ipasok ang iyong email address ng account para makatanggap ng hint ng iyong master password."
   },
   "getMasterPasswordHint": {
-    "message": "Get master password hint"
+    "message": "Makuha ang Punong Password na Hint"
   },
   "emailRequired": {
-    "message": "Email address is required."
+    "message": "Kinakailangan ang email address."
   },
   "invalidEmail": {
-    "message": "Invalid email address."
+    "message": "Di-wasto na email address."
   },
   "masterPasswordRequired": {
-    "message": "Master password is required."
+    "message": "Maling address ng email."
   },
   "confirmMasterPasswordRequired": {
-    "message": "Master password retype is required."
+    "message": "Kinakailangan ang ulitin ang master password."
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least 8 characters long."
+    "message": "Ang master password ay dapat hindi bababa sa 8 na mga character."
   },
   "masterPassDoesntMatch": {
-    "message": "Master password confirmation does not match."
+    "message": "Hindi tumutugma ang kumpirmasyon ng master password."
   },
   "newAccountCreated": {
-    "message": "Your new account has been created! You may now log in."
+    "message": "Nalikha na ang iyong bagong account! Maaari ka nang mag-log in."
   },
   "trialAccountCreated": {
     "message": "Account created successfully."
   },
   "masterPassSent": {
-    "message": "We've sent you an email with your master password hint."
+    "message": "Pinadala na namin sa iyo ang email na may hint ng master password mo."
   },
   "unexpectedError": {
-    "message": "An unexpected error has occurred."
+    "message": "Namana ang isang hindi inaasahang error."
   },
   "emailAddress": {
-    "message": "Email address"
+    "message": "Email Address"
   },
   "yourVaultIsLocked": {
-    "message": "Your vault is locked. Verify your master password to continue."
+    "message": "Naka-lock ang iyong vault. Patunayan ang iyong pagkakakilanlan upang magpatuloy."
   },
   "unlock": {
-    "message": "Unlock"
+    "message": "Buksan"
   },
   "loggedInAsEmailOn": {
     "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
@@ -730,22 +737,22 @@
     }
   },
   "invalidMasterPassword": {
-    "message": "Invalid master password"
+    "message": "Hindi wasto ang master password"
   },
   "invalidFilePassword": {
     "message": "Invalid file password, please use the password you entered when you created the export file."
   },
   "lockNow": {
-    "message": "Lock now"
+    "message": "Mag-kandado Na"
   },
   "noItemsInList": {
-    "message": "There are no items to list."
+    "message": "Walang mga bagay na maipapakita."
   },
   "noPermissionToViewAllCollectionItems": {
     "message": "You do not have permission to view all items in this collection."
   },
   "noCollectionsInList": {
-    "message": "There are no collections to list."
+    "message": "Walang mga koleksyon na maipapakita."
   },
   "noGroupsInList": {
     "message": "There are no groups to list."
@@ -763,7 +770,7 @@
     "message": "New organization"
   },
   "noOrganizationsList": {
-    "message": "You do not belong to any organizations. Organizations allow you to securely share items with other users."
+    "message": "You do not belong to any organizations. Organizations allow you to securely share items with other users. - Wala kang pag-aari sa alinmang organisasyon. Ang mga organisasyon ay nagbibigay sa iyo ng pagkakataon na maayos na i-share ang mga item sa ibang mga user."
   },
   "notificationSentDevice": {
     "message": "A notification has been sent to your device."
@@ -778,10 +785,10 @@
     }
   },
   "enterVerificationCodeApp": {
-    "message": "Enter the 6 digit verification code from your authenticator app."
+    "message": "Ipasok ang 6 na digit na code ng pagpapatunay mula sa iyong authenticator app."
   },
   "enterVerificationCodeEmail": {
-    "message": "Enter the 6 digit verification code that was emailed to $EMAIL$.",
+    "message": "Ipasok ang 6 na digit na code na na-email sa $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -790,7 +797,7 @@
     }
   },
   "verificationCodeEmailSent": {
-    "message": "Verification email sent to $EMAIL$.",
+    "message": "Veripikasyon na email na ipinadala sa $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -799,34 +806,34 @@
     }
   },
   "rememberMe": {
-    "message": "Remember me"
+    "message": "Tandaan mo ako"
   },
   "sendVerificationCodeEmailAgain": {
-    "message": "Send verification code email again"
+    "message": "Ipadala muli ang email ng verification code"
   },
   "useAnotherTwoStepMethod": {
-    "message": "Use another two-step login method"
+    "message": "Gamitin ang isa pang two-step na paraan ng pag-login"
   },
   "insertYubiKey": {
-    "message": "Insert your YubiKey into your computer's USB port, then touch its button."
+    "message": "I-insert ang iyong YubiKey sa USB port ng iyong computer, pagkatapos ay tindigin ang buton nito."
   },
   "insertU2f": {
-    "message": "Insert your security key into your computer's USB port. If it has a button, touch it."
+    "message": "I-insert ang iyong security key sa USB port ng iyong computer. Kung mayroon itong buton, tindigin ito."
   },
   "loginUnavailable": {
-    "message": "Login unavailable"
+    "message": "Hindi magagamit ang pag-login"
   },
   "noTwoStepProviders": {
-    "message": "This account has two-step login set up, however, none of the configured two-step providers are supported by this web browser."
+    "message": "Mayroong naka-set up na two-step login ang account na ito, ngunit walang sinusuportahang two-step provider ng web browser na ito."
   },
   "noTwoStepProviders2": {
-    "message": "Please use a supported web browser (such as Chrome) and/or add additional providers that are better supported across web browsers (such as an authenticator app)."
+    "message": "Mangyaring gamitin ang isang suportadong web browser (tulad ng Chrome) at/o magdagdag ng karagdagang mga provider na mas suportado sa ibat ibang web browsers (tulad ng isang authenticator app)."
   },
   "twoStepOptions": {
-    "message": "Two-step login options"
+    "message": "Mga pagpipilian para sa two-step login"
   },
   "recoveryCodeDesc": {
-    "message": "Lost access to all of your two-step login providers? Use your recovery code to turn off all two-step login providers from your account."
+    "message": "Nawalan ka ng access sa lahat ng iyong mga two-factor provider? Gamitin ang iyong recovery code para i-off ang lahat ng two-factor providers mula sa iyong account."
   },
   "recoveryCodeTitle": {
     "message": "Recovery code"
@@ -835,21 +842,21 @@
     "message": "Authenticator app"
   },
   "authenticatorAppDesc": {
-    "message": "Use an authenticator app (such as Authy or Google Authenticator) to generate time-based verification codes.",
+    "message": "Gamitin ang isang authenticator app (tulad ng Authy o Google Authenticator) upang lumikha ng time-based verification codes.",
     "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
   },
   "yubiKeyTitle": {
-    "message": "YubiKey OTP security key"
+    "message": "YubiKey OTP Security Key"
   },
   "yubiKeyDesc": {
-    "message": "Use a YubiKey to access your account. Works with YubiKey 4 series, 5 series, and NEO devices."
+    "message": "Gamitin ang YubiKey upang ma-access ang iyong account. Gumagana sa mga YubiKey 4, 4 Nano, 4C, at NEO devices."
   },
   "duoDesc": {
-    "message": "Verify with Duo Security using the Duo Mobile app, SMS, phone call, or U2F security key.",
+    "message": "Patunayan sa pamamagitan ng Duo Security gamit ang Duo Mobile app, SMS, tawag sa telepono, o key ng seguridad ng U2F.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "duoOrganizationDesc": {
-    "message": "Verify with Duo Security for your organization using the Duo Mobile app, SMS, phone call, or U2F security key.",
+    "message": "Patunayan sa Duo Security para sa iyong samahan gamit ang Duo Mobile app, SMS, tawag sa telepono, o key ng seguridad ng U2F.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc": {
@@ -862,7 +869,7 @@
     "message": "FIDO2 WebAuthn"
   },
   "webAuthnDesc": {
-    "message": "Use any WebAuthn compatible security key to access your account."
+    "message": "Gamitin ang anumang WebAuthn compatible security key upang ma-access ang iyong account."
   },
   "webAuthnMigrated": {
     "message": "(Migrated from FIDO)"
@@ -871,19 +878,19 @@
     "message": "Email"
   },
   "emailDesc": {
-    "message": "Verification codes will be emailed to you."
+    "message": "Mga kodigong pang-pagpapatunay ang ipapadala sa iyo sa pamamagitan ng email."
   },
   "continue": {
-    "message": "Continue"
+    "message": "Magpatuloy"
   },
   "organization": {
-    "message": "Organization"
+    "message": "Organisasyon"
   },
   "organizations": {
     "message": "Organizations"
   },
   "moveToOrgDesc": {
-    "message": "Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved."
+    "message": "Pumili ng isang organisasyon kung saan mo nais na ipalipat ang item na ito. Ang paglipat sa isang organisasyon ay nagpapalipat ng pagmamay-ari ng item sa organisasyon na iyon. Hindi ka na magiging direktang may-ari ng item na ito kapag naipadala na ito."
   },
   "moveManyToOrgDesc": {
     "message": "Choose an organization that you wish to move these items to. Moving to an organization transfers ownership of the items to that organization. You will no longer be the direct owner of these items once they have been moved."
@@ -939,34 +946,34 @@
     }
   },
   "verificationCodeTotp": {
-    "message": "Verification code (TOTP)"
+    "message": "Code ng Pag-verify (TOTP)"
   },
   "copyVerificationCode": {
-    "message": "Copy verification code"
+    "message": "Paghahawak ng kodigo ng pagpapatunay"
   },
   "warning": {
-    "message": "Warning"
+    "message": "BABALA"
   },
   "confirmVaultExport": {
-    "message": "Confirm vault export"
+    "message": "Tanggapin ang pag-export ng vault"
   },
   "exportWarningDesc": {
-    "message": "This export contains your vault data in an unencrypted format. You should not store or send the exported file over unsecure channels (such as email). Delete it immediately after you are done using it."
+    "message": "Ang export na ito ay naglalaman ng iyong data sa vault sa isang hindi naka-encrypt na format. Hindi mo dapat i-store o ipadala ang naka-export na file sa pamamagitan ng mga hindi secure na channel (gaya ng email). Tanggalin agad ito pagkatapos mong gamitin."
   },
   "encExportKeyWarningDesc": {
-    "message": "This export encrypts your data using your account's encryption key. If you ever rotate your account's encryption key you should export again since you will not be able to decrypt this export file."
+    "message": "Ang export na ito ay naka-encrypt ng iyong data gamit ang encryption key ng iyong account. Kung kailanman mo i-rotate ang encryption key ng iyong account, dapat mong i-export muli dahil hindi mo na mababawasan ang export file na ito."
   },
   "encExportAccountWarningDesc": {
-    "message": "Account encryption keys are unique to each Bitwarden user account, so you can't import an encrypted export into a different account."
+    "message": "Ang encryption keys ng account ay isa-isa lamang sa bawat user account ng Bitwarden, kaya hindi mo ma-import ang naka-encrypt na export sa ibang account."
   },
   "export": {
     "message": "Export"
   },
   "exportVault": {
-    "message": "Export vault"
+    "message": "I-export vault"
   },
   "fileFormat": {
-    "message": "File format"
+    "message": "Format ng file"
   },
   "fileEncryptedExportWarningDesc": {
     "message": "This file export will be password protected and require the file password to decrypt."
@@ -999,7 +1006,7 @@
     "message": "Account restricted"
   },
   "passwordProtected": {
-    "message": "Password protected"
+    "message": "Protektado ng Password"
   },
   "filePasswordAndConfirmFilePasswordDoNotMatch": {
     "message": "“File password”  and “Confirm file password“ do not match."
@@ -1020,56 +1027,56 @@
     "message": "Minimum complexity score"
   },
   "minNumbers": {
-    "message": "Minimum numbers"
+    "message": "Pinakamababang mga numero"
   },
   "minSpecial": {
-    "message": "Minimum special",
+    "message": "Inakamababang espesyal",
     "description": "Minimum special characters"
   },
   "ambiguous": {
     "message": "Avoid ambiguous characters"
   },
   "regeneratePassword": {
-    "message": "Regenerate password"
+    "message": "Muling I-generate ang Password"
   },
   "length": {
-    "message": "Length"
+    "message": "Kahabaan"
   },
   "uppercase": {
-    "message": "Uppercase (A-Z)",
+    "message": "2. Mga letra na malalaki (A-Z)",
     "description": "Include uppercase letters in the password generator."
   },
   "lowercase": {
-    "message": "Lowercase (a-z)",
+    "message": "Lowercase (a-t) sa Filipino ay mababang-letra (a-t)",
     "description": "Include lowercase letters in the password generator."
   },
   "numbers": {
     "message": "Numbers (0-9)"
   },
   "specialCharacters": {
-    "message": "Special characters (!@#$%^&*)"
+    "message": "Mga espesyal na character (!@#$%^&*) sa Filipino ay tinatawag na mga simbolong pambihira"
   },
   "numWords": {
-    "message": "Number of words"
+    "message": "Ang bilang ng mga salita\n\nNumero ng mga salita"
   },
   "wordSeparator": {
-    "message": "Word separator"
+    "message": "Separador ng salita"
   },
   "capitalize": {
-    "message": "Capitalize",
+    "message": "Pagkapital",
     "description": "Make the first letter of a word uppercase."
   },
   "includeNumber": {
-    "message": "Include number"
+    "message": "Isama ang numero"
   },
   "passwordHistory": {
-    "message": "Password history"
+    "message": "Password history - Kasaysayan ng Password"
   },
   "noPasswordsInList": {
-    "message": "There are no passwords to list."
+    "message": "Walang mga password na i-list."
   },
   "clear": {
-    "message": "Clear",
+    "message": "Hilahin",
     "description": "To clear something out. Example: To clear browser history."
   },
   "accountUpdated": {
@@ -1109,7 +1116,7 @@
     "message": "Please log back in. If you are using other Bitwarden applications log out and back in to those as well."
   },
   "changeMasterPassword": {
-    "message": "Change master password"
+    "message": "Baguhin ang Master Password"
   },
   "masterPasswordChanged": {
     "message": "Master password saved"
@@ -1214,7 +1221,7 @@
     "message": "My account"
   },
   "tools": {
-    "message": "Tools"
+    "message": "Mga Kagamitan"
   },
   "importData": {
     "message": "Import data"
@@ -1272,7 +1279,7 @@
     }
   },
   "options": {
-    "message": "Options"
+    "message": "Mga Pagpipilian"
   },
   "preferences": {
     "message": "Preferences"
@@ -1290,10 +1297,10 @@
     "message": "Change the language used by the web vault."
   },
   "enableFavicon": {
-    "message": "Show website icons"
+    "message": "Ipakita ang mga icon ng website"
   },
   "faviconDesc": {
-    "message": "Show a recognizable image next to each login."
+    "message": "Ipakita ang isang kilalang larawan sa tabi ng bawat login."
   },
   "enableFullWidth": {
     "message": "Display full width layout",
@@ -1345,7 +1352,7 @@
     "message": "Domains saved"
   },
   "twoStepLogin": {
-    "message": "Two-step login"
+    "message": "Dalawahang-hakbang na Pag-login"
   },
   "twoStepLoginEnforcement": {
     "message": "Two-step Login Enforcement"
@@ -1393,10 +1400,10 @@
     "message": "Premium membership"
   },
   "premiumRequired": {
-    "message": "Premium required"
+    "message": "Premium na kinakailangan"
   },
   "premiumRequiredDesc": {
-    "message": "A Premium membership is required to use this feature."
+    "message": "Ang Premium na membership ay kinakailangan upang gamitin ang tampok na ito."
   },
   "youHavePremiumAccess": {
     "message": "You have Premium access"
@@ -1405,7 +1412,7 @@
     "message": "You already have access to Premium features because of an organization you are a member of."
   },
   "manage": {
-    "message": "Manage"
+    "message": "Mensahe"
   },
   "disable": {
     "message": "Turn off"
@@ -1871,7 +1878,7 @@
     "message": "All future Premium features. More coming soon!"
   },
   "premiumPrice": {
-    "message": "All for just $PRICE$ /year!",
+    "message": "Lahat para lamang sa $PRICE$ /taon!",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -2382,10 +2389,10 @@
     "message": "Leave"
   },
   "leaveOrganizationConfirmation": {
-    "message": "Are you sure you want to leave this organization?"
+    "message": "Sigurado ka bang gusto mong umalis sa organisasyon na ito?"
   },
   "leftOrganization": {
-    "message": "You left the organization"
+    "message": "Umalis ka na sa organisasyon."
   },
   "defaultCollection": {
     "message": "Default collection"
@@ -2489,11 +2496,20 @@
   "editMember": {
     "message": "Edit member"
   },
+  "fieldOnTabRequiresAttention": {
+    "message": "A field on the '$TAB$' tab requires your attention.",
+    "placeholders": {
+      "tab": {
+        "content": "$1",
+        "example": "Collection info"
+      }
+    }
+  },
   "inviteUserDesc": {
     "message": "Invite a new user to your organization by entering their Bitwarden account email address below. If they do not have a Bitwarden account already, they will be prompted to create a new account."
   },
   "inviteMultipleEmailDesc": {
-    "message": "You can invite up to $COUNT$ users at a time by comma separating a list of email addresses.",
+    "message": "Enter up to $COUNT$ emails by separating with a comma.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -2556,7 +2572,7 @@
     "message": "All"
   },
   "refresh": {
-    "message": "Refresh"
+    "message": "I-refresh"
   },
   "timestamp": {
     "message": "Timestamp"
@@ -2967,13 +2983,13 @@
     "message": "Device"
   },
   "view": {
-    "message": "View"
+    "message": "Tanaw"
   },
   "invalidDateRange": {
     "message": "Invalid date range."
   },
   "errorOccurred": {
-    "message": "An error has occurred."
+    "message": "Nagkaroon ng error"
   },
   "userAccess": {
     "message": "User access"
@@ -3054,7 +3070,7 @@
     "message": "Email verification required"
   },
   "emailVerificationRequiredDesc": {
-    "message": "You must verify your email to use this feature."
+    "message": "Kailangan mong i-verify ang iyong email upang gamitin ang tampok na ito. Maaari mong i-verify ang iyong email sa web vault."
   },
   "updateBrowser": {
     "message": "Update browser"
@@ -3087,7 +3103,7 @@
     }
   },
   "rememberEmail": {
-    "message": "Remember email"
+    "message": "Tandaan ang email"
   },
   "recoverAccountTwoStepDesc": {
     "message": "If you cannot access your account through your normal two-step login methods, you can use your two-step login recovery code to turn off all two-step providers on your account."
@@ -3099,7 +3115,7 @@
     "message": "Two-step login turned off on your account."
   },
   "learnMore": {
-    "message": "Learn more"
+    "message": "Matuto nang higit pa"
   },
   "deleteRecoverDesc": {
     "message": "Enter your email address below to recover and delete your account."
@@ -3396,16 +3412,16 @@
     "message": "You have not selected anything."
   },
   "acceptPolicies": {
-    "message": "By checking this box you agree to the following:"
+    "message": "Sa pamamagitan ng pag-tsek sa kahon na ito ay sumasang-ayon ka sa sumusunod:"
   },
   "acceptPoliciesRequired": {
-    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+    "message": "Ang mga Tuntunin ng Serbisyo at Patakaran sa Privacy ay hindi naiulat."
   },
   "termsOfService": {
-    "message": "Terms of Service"
+    "message": "Mga Tuntunin ng Serbisyo"
   },
   "privacyPolicy": {
-    "message": "Privacy Policy"
+    "message": "Patakaran sa Privacy"
   },
   "filters": {
     "message": "Filters"
@@ -3417,43 +3433,43 @@
     "message": "Choose when your vault will take the vault timeout action."
   },
   "oneMinute": {
-    "message": "1 minute"
+    "message": "1 minuto"
   },
   "fiveMinutes": {
-    "message": "5 minutes"
+    "message": "5 mga minuto"
   },
   "fifteenMinutes": {
-    "message": "15 minutes"
+    "message": "15 mga minuto"
   },
   "thirtyMinutes": {
-    "message": "30 minutes"
+    "message": "30 minuto"
   },
   "oneHour": {
-    "message": "1 hour"
+    "message": "1 oras"
   },
   "fourHours": {
-    "message": "4 hours"
+    "message": "4 oras"
   },
   "onRefresh": {
     "message": "On browser refresh"
   },
   "dateUpdated": {
-    "message": "Updated",
+    "message": "Updated - Na-update",
     "description": "ex. Date this item was updated"
   },
   "dateCreated": {
-    "message": "Created",
+    "message": "Created - Na-create",
     "description": "ex. Date this item was created"
   },
   "datePasswordUpdated": {
-    "message": "Password updated",
+    "message": "Password updated - Na-update ang password",
     "description": "ex. Date this password was updated"
   },
   "organizationIsDisabled": {
-    "message": "Organization suspended"
+    "message": "Organisasyon ay suspindido."
   },
   "disabledOrganizationFilterError": {
-    "message": "Items in suspended organizations cannot be accessed. Contact your organization owner for assistance."
+    "message": "Mga item sa mga naka-suspindong Organisasyon ay hindi ma-access. Mangyaring makipag-ugnayan sa may-ari ng iyong Organisasyon para sa tulong."
   },
   "licenseIsExpired": {
     "message": "License is expired."
@@ -3465,21 +3481,21 @@
     "message": "Selected"
   },
   "ownership": {
-    "message": "Ownership"
+    "message": "Pag-aari"
   },
   "whoOwnsThisItem": {
-    "message": "Who owns this item?"
+    "message": "Sino ang may-ari ng item na ito?"
   },
   "strong": {
-    "message": "Strong",
+    "message": "Makapangyarihan",
     "description": "ex. A strong password. Scale: Very Weak -> Weak -> Good -> Strong"
   },
   "good": {
-    "message": "Good",
+    "message": "Mabuti",
     "description": "ex. A good password. Scale: Very Weak -> Weak -> Good -> Strong"
   },
   "weak": {
-    "message": "Weak",
+    "message": "Mahina",
     "description": "ex. A weak password. Scale: Very Weak -> Weak -> Good -> Strong"
   },
   "veryWeak": {
@@ -3487,10 +3503,10 @@
     "description": "ex. A very weak password. Scale: Very Weak -> Weak -> Good -> Strong"
   },
   "weakMasterPassword": {
-    "message": "Weak master password"
+    "message": "Mahinang master password"
   },
   "weakMasterPasswordDesc": {
-    "message": "The master password you have chosen is weak. You should use a strong master password (or a passphrase) to properly protect your Bitwarden account. Are you sure you want to use this master password?"
+    "message": "Ang master password na pinili mo ay mahina. Dapat gamitin mo ang isang makapangyarihang master password (o passphrase) para maayos na protektahan ang iyong account sa Bitwarden. Sigurado ka bang nais mong gamitin ang master password na ito?"
   },
   "rotateAccountEncKey": {
     "message": "Also rotate my account's encryption key"
@@ -3515,7 +3531,7 @@
     "message": "There are old file attachments in your vault that need to be fixed before you can rotate your account's encryption key."
   },
   "yourAccountsFingerprint": {
-    "message": "Your account's fingerprint phrase",
+    "message": "Ang fingerprint pala ng iyong account",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "fingerprintEnsureIntegrityVerify": {
@@ -3537,7 +3553,7 @@
     "description": "Free, as in 'Free beer'"
   },
   "apiKey": {
-    "message": "API Key"
+    "message": "Susi ng API"
   },
   "apiKeyDesc": {
     "message": "Your API key can be used to authenticate to the Bitwarden public API."
@@ -3565,7 +3581,7 @@
     "message": "Rotate API key"
   },
   "selectOneCollection": {
-    "message": "You must select at least one collection."
+    "message": "Kailangan mong piliin ang hindi bababa sa isang koleksyon."
   },
   "couldNotChargeCardPayInvoice": {
     "message": "We were not able to charge your card. Please view and pay the unpaid invoice listed below."
@@ -3583,7 +3599,7 @@
     "message": "Minimum length"
   },
   "clone": {
-    "message": "Clone"
+    "message": "Kopyahin ang item"
   },
   "masterPassPolicyTitle": {
     "message": "Master password requirements"
@@ -3607,13 +3623,13 @@
     "message": "Set requirements for password generator."
   },
   "passwordGeneratorPolicyInEffect": {
-    "message": "One or more organization policies are affecting your generator settings."
+    "message": "Isang o higit pang patakaran ng organisasyon ay nakakaapekto sa iyong mga setting ng generator."
   },
   "masterPasswordPolicyInEffect": {
-    "message": "One or more organization policies require your master password to meet the following requirements:"
+    "message": "Isang o higit pang mga patakaran ng organisasyon ay nangangailangan ng iyong master password upang matugunan ang sumusunod na kinakailangan:"
   },
   "policyInEffectMinComplexity": {
-    "message": "Minimum complexity score of $SCORE$",
+    "message": "Minimum complexity score ng $SCORE$",
     "placeholders": {
       "score": {
         "content": "$1",
@@ -3622,7 +3638,7 @@
     }
   },
   "policyInEffectMinLength": {
-    "message": "Minimum length of $LENGTH$",
+    "message": "Minimum na haba ng $LENGTH$",
     "placeholders": {
       "length": {
         "content": "$1",
@@ -3631,16 +3647,16 @@
     }
   },
   "policyInEffectUppercase": {
-    "message": "Contain one or more uppercase characters"
+    "message": "Naglalaman ng isa o higit pang mga uppercase character"
   },
   "policyInEffectLowercase": {
-    "message": "Contain one or more lowercase characters"
+    "message": "Naglalaman ng isa o higit pang mga lowercase character"
   },
   "policyInEffectNumbers": {
-    "message": "Contain one or more numbers"
+    "message": "Naglalaman ng isa o higit pang mga numero"
   },
   "policyInEffectSpecial": {
-    "message": "Contain one or more of the following special characters $CHARS$",
+    "message": "Naglalaman ng isa o higit pang mga sumusunod na espesyal na character $CHARS$",
     "placeholders": {
       "chars": {
         "content": "$1",
@@ -3649,7 +3665,7 @@
     }
   },
   "masterPasswordPolicyRequirementsNotMet": {
-    "message": "Your new master password does not meet the policy requirements."
+    "message": "Hindi matugunan ng iyong bagong pangunahing password ang mga kinakailangan ng patakaran."
   },
   "minimumNumberOfWords": {
     "message": "Minimum number of words"
@@ -3661,7 +3677,7 @@
     "message": "User preference"
   },
   "vaultTimeoutAction": {
-    "message": "Vault timeout action"
+    "message": "Vault timeout action - Aksyon sa Vault timeout"
   },
   "vaultTimeoutActionLockDesc": {
     "message": "Master password or other unlock method is required to access your vault again."
@@ -3670,15 +3686,15 @@
     "message": "Re-authentication is required to access your vault again."
   },
   "lock": {
-    "message": "Lock",
+    "message": "I-lock",
     "description": "Verb form: to make secure or inaccesible by"
   },
   "trash": {
-    "message": "Trash",
+    "message": "Trash - Basurahan",
     "description": "Noun: A special folder for holding deleted items that have not yet been permanently deleted"
   },
   "searchTrash": {
-    "message": "Search trash"
+    "message": "Search trash - Maghanap ng basurahan"
   },
   "permanentlyDelete": {
     "message": "Permanently delete"
@@ -3687,13 +3703,13 @@
     "message": "Permanently delete selected"
   },
   "permanentlyDeleteItem": {
-    "message": "Permanently delete item"
+    "message": "Permanently delete item - Pansamantalang burahin ang item"
   },
   "permanentlyDeleteItemConfirmation": {
-    "message": "Are you sure you want to permanently delete this item?"
+    "message": "Are you sure you want to permanently delete this item? - Sigurado ka bang gusto mong pansamantalang burahin ang item na ito?"
   },
   "permanentlyDeletedItem": {
-    "message": "Item permanently deleted"
+    "message": "Item permanently deleted - Pansamantalang binura ang item"
   },
   "permanentlyDeletedItems": {
     "message": "Items permanently deleted"
@@ -3723,16 +3739,16 @@
     "message": "Restore selected"
   },
   "restoreItem": {
-    "message": "Restore item"
+    "message": "Restore item - Ibalik ang item"
   },
   "restoredItem": {
-    "message": "Item restored"
+    "message": "Item na nai-restore"
   },
   "restoredItems": {
     "message": "Items restored"
   },
   "restoreItemConfirmation": {
-    "message": "Are you sure you want to restore this item?"
+    "message": "Sigurado ka bang nais mong ibalik ang item na ito?"
   },
   "restoreItems": {
     "message": "Restore items"
@@ -3756,7 +3772,7 @@
     }
   },
   "vaultTimeoutLogOutConfirmation": {
-    "message": "Logging out will remove all access to your vault and requires online authentication after the timeout period. Are you sure you want to use this setting?"
+    "message": "Sigurado ka bang gusto mong gamitin ang setting na ito? Pagsasara ay magtatanggal ng lahat ng access sa iyong vault at nangangailangan ng online authentication pagkatapos ng timeout period?"
   },
   "vaultTimeoutLogOutConfirmationTitle": {
     "message": "Timeout action confirmation"
@@ -3777,10 +3793,10 @@
     "message": "Tax information updated."
   },
   "setMasterPassword": {
-    "message": "Set master password"
+    "message": "Itakda ang master password"
   },
   "ssoCompleteRegistration": {
-    "message": "In order to complete logging in with SSO, please set a master password to access and protect your vault."
+    "message": "Upang matapos ang pag-log in sa SSO, mangyaring magtakda ng master password upang ma-access at maprotektahan ang iyong vault."
   },
   "identifier": {
     "message": "Identifier"
@@ -3792,7 +3808,7 @@
     "message": "Log in using your organization's single sign-on portal. Please enter your organization's SSO identifier to begin."
   },
   "enterpriseSingleSignOn": {
-    "message": "Enterprise single sign-on"
+    "message": "Enterprise Single Sign-On sa Filipino ay Isang Sign-On na Enterprise"
   },
   "ssoHandOff": {
     "message": "You may now close this tab and continue in the extension."
@@ -3861,22 +3877,22 @@
     "message": "File"
   },
   "sendTypeText": {
-    "message": "Text"
+    "message": "Teksto"
   },
   "createSend": {
-    "message": "New Send",
+    "message": "Bagong Ipadala",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editSend": {
-    "message": "Edit Send",
+    "message": "I-edit ang Ipadala",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createdSend": {
-    "message": "Send saved",
+    "message": "Ipadala na nilikha",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editedSend": {
-    "message": "Send saved",
+    "message": "Ipadala na nai-save",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "deletedSend": {
@@ -3884,11 +3900,11 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "deleteSend": {
-    "message": "Delete Send",
+    "message": "I-delete ang Ipadala",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "deleteSendConfirmation": {
-    "message": "Are you sure you want to delete this Send?",
+    "message": "Sigurado ka bang gusto mo na i-delete ang Ipadala na ito?",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "whatTypeOfSend": {
@@ -3896,17 +3912,17 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "deletionDate": {
-    "message": "Deletion date"
+    "message": "Petsa ng Pagtanggal"
   },
   "deletionDateDesc": {
-    "message": "The Send will be permanently deleted on the specified date and time.",
+    "message": "Ang Ipadala ay tatanggalin nang permanente sa tinukoy na petsa at oras.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "expirationDate": {
-    "message": "Expiration date"
+    "message": "Petsa ng pag-expire"
   },
   "expirationDateDesc": {
-    "message": "If set, access to this Send will expire on the specified date and time.",
+    "message": "Kung nakatakda, ang access sa Send na ito ay mag-expire sa tinukoy na petsa at oras.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "maxAccessCount": {
@@ -3917,61 +3933,61 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "currentAccessCount": {
-    "message": "Current access count"
+    "message": "Kasalukuyang access count"
   },
   "sendPasswordDesc": {
-    "message": "Optionally require a password for users to access this Send.",
+    "message": "Maipapayo na mag-require ng password para sa mga user na ma-access ang Send na ito.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendNotesDesc": {
-    "message": "Private notes about this Send.",
+    "message": "Pribadong mga tala tungkol sa Send na ito.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "disabled": {
-    "message": "Disabled"
+    "message": "Ipadala nai-delete"
   },
   "revoked": {
     "message": "Revoked"
   },
   "sendLink": {
-    "message": "Send link",
+    "message": "Ipadala ang link",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "copySendLink": {
-    "message": "Copy Send link",
+    "message": "Kopyahin ang Link ng Padala",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "removePassword": {
-    "message": "Remove password"
+    "message": "Alisin ang Password"
   },
   "removedPassword": {
-    "message": "Password removed"
+    "message": "Password binura"
   },
   "removePasswordConfirmation": {
-    "message": "Are you sure you want to remove the password?"
+    "message": "Sigurado ka bang gusto mo na tanggalin ang password?"
   },
   "hideEmail": {
-    "message": "Hide my email address from recipients."
+    "message": "Itago ang aking email address mula sa mga tatanggap."
   },
   "disableThisSend": {
     "message": "Deactivate this Send so that no one can access it.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "allSends": {
-    "message": "All Sends"
+    "message": "Lahat ng Mga Padala"
   },
   "maxAccessCountReached": {
-    "message": "Max access count reached",
+    "message": "Ang pinaka-access count ay nakaabot na",
     "description": "This text will be displayed after a Send has been accessed the maximum amount of times."
   },
   "pendingDeletion": {
-    "message": "Pending deletion"
+    "message": "Nakabinbing pagbura"
   },
   "expired": {
-    "message": "Expired"
+    "message": "Paso na"
   },
   "searchSends": {
-    "message": "Search Sends",
+    "message": "Maghanap ng Mga Padala",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendProtectedPassword": {
@@ -4056,10 +4072,10 @@
     "message": "Time required before automatically granting access."
   },
   "oneDay": {
-    "message": "1 day"
+    "message": "1 araw"
   },
   "days": {
-    "message": "$DAYS$ days",
+    "message": "$DAYS$ araw",
     "placeholders": {
       "days": {
         "content": "$1",
@@ -4153,7 +4169,7 @@
     "message": "Organization owners and administrators are exempt from this policy's enforcement."
   },
   "personalOwnershipSubmitError": {
-    "message": "Due to an Enterprise policy, you are restricted from saving items to your individual vault. Change the ownership option to an organization and choose from available collections."
+    "message": "Dahil sa Enterprise Policy, ikaw ay hindi pinapayagan na mag-save ng mga item sa iyong personal vault. Baguhin ang Ownership option sa isang organisasyon at pumili mula sa mga available na collections."
   },
   "disableSend": {
     "message": "Remove Send"
@@ -4166,11 +4182,11 @@
     "message": "Organization members that can manage the organization's policies are exempt from this policy's enforcement."
   },
   "sendDisabled": {
-    "message": "Send removed",
+    "message": "Ipadala inalis",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendDisabledWarning": {
-    "message": "Due to an Enterprise policy, you are only able to delete an existing Send.",
+    "message": "Dahil sa isang enterprise policy, ikaw ay magagawang lamang na tanggalin ang umiiral na Ipadala.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendOptions": {
@@ -4189,7 +4205,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendOptionsPolicyInEffect": {
-    "message": "The following organization policies are currently in effect:"
+    "message": "Isang o higit pang mga patakaran ng organisasyon ay nakaapekto sa iyong mga pagpipilian sa Pagpadala."
   },
   "sendDisableHideEmailInEffect": {
     "message": "Users are not allowed to hide their email address from recipients when creating or editing a Send.",
@@ -4211,7 +4227,7 @@
     "message": "Estimated tax"
   },
   "custom": {
-    "message": "Custom"
+    "message": "Pasadyang"
   },
   "customDesc": {
     "message": "Grant customized permissions to members"
@@ -4301,7 +4317,7 @@
     }
   },
   "personalOwnershipPolicyInEffect": {
-    "message": "An organization policy is affecting your ownership options."
+    "message": "Isang organisasyon policy ang nakakaapekto sa iyong mga pagpipilian sa ownership."
   },
   "personalOwnershipPolicyInEffectImports": {
     "message": "An organization policy has blocked importing items into your individual vault."
@@ -4314,14 +4330,14 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendNameDesc": {
-    "message": "A friendly name to describe this Send.",
+    "message": "Isang friendly name upang ilarawan ang Ipadala na ito.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendTextDesc": {
-    "message": "The text you want to Send."
+    "message": "Ang teksto na nais mong ipadala."
   },
   "sendFileDesc": {
-    "message": "The file you want to Send."
+    "message": "Ang file na gusto mong ipadala."
   },
   "copySendLinkOnSave": {
     "message": "Copy the link to share this Send to my clipboard upon save."
@@ -4331,7 +4347,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "send": {
-    "message": "Send",
+    "message": "Ipadala",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendAccessTaglineProductDesc": {
@@ -4391,25 +4407,25 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "expirationDateIsInvalid": {
-    "message": "The expiration date provided is not valid."
+    "message": "Ang ibinigay na petsa ng pagpaso ay hindi wasto."
   },
   "deletionDateIsInvalid": {
-    "message": "The deletion date provided is not valid."
+    "message": "Ang petsa ng pagbura ibinigay ay hindi wasto."
   },
   "expirationDateAndTimeRequired": {
-    "message": "An expiration date and time are required."
+    "message": "Kailangan ng petsa at oras ng pagpaso."
   },
   "deletionDateAndTimeRequired": {
-    "message": "A deletion date and time are required."
+    "message": "Kailangan ng petsa at oras ng pagbura."
   },
   "dateParsingError": {
-    "message": "There was an error saving your deletion and expiration dates."
+    "message": "Nagkaroon ng error sa pag-save ng iyong mga petsa ng pagbura at pagpaso."
   },
   "webAuthnFallbackMsg": {
     "message": "To verify your 2FA please click the button below."
   },
   "webAuthnAuthenticate": {
-    "message": "Authenticate WebAuthn"
+    "message": "I-authenticate ang WebAuthn"
   },
   "webAuthnNotSupported": {
     "message": "WebAuthn is not supported in this browser."
@@ -4418,7 +4434,7 @@
     "message": "WebAuthn verified successfully! You may close this tab."
   },
   "hintEqualsPassword": {
-    "message": "Your password hint cannot be the same as your password."
+    "message": "Hindi pwedeng maging pareho ang password hint at password mo."
   },
   "enrollPasswordReset": {
     "message": "Enroll in password reset"
@@ -4514,7 +4530,7 @@
     "message": "Members in the organization will need to self-enroll or be auto-enrolled before administrators can reset their master password."
   },
   "resetPasswordPolicyAutoEnroll": {
-    "message": "Automatic enrollment"
+    "message": "Automatic enrollment - Awtomatikong pagpaparehistro"
   },
   "resetPasswordPolicyAutoEnrollDescription": {
     "message": "All members will be automatically enrolled in password reset once their invite is accepted and will not be allowed to withdraw."
@@ -4526,7 +4542,7 @@
     "message": "Require new members to be enrolled automatically"
   },
   "resetPasswordAutoEnrollInviteWarning": {
-    "message": "This organization has an Enterprise policy that will automatically enroll you in password reset. Enrollment will allow organization administrators to change your master password."
+    "message": "Ang organisasyon na ito ay may enterprise policy na automatikong mag-eenroll sa iyo sa password reset. Ang enrollment ay magbibigay ng mga administrator ng organisasyon upang mabago ang iyong master password."
   },
   "resetPasswordOrgKeysError": {
     "message": "Organization keys response is null"
@@ -4541,13 +4557,13 @@
     "message": "Items that have been in trash for a while will be automatically deleted."
   },
   "passwordPrompt": {
-    "message": "Master password re-prompt"
+    "message": "Muling pagsusuri sa master password"
   },
   "passwordConfirmation": {
-    "message": "Master password confirmation"
+    "message": "Kumpirmasyon ng master password"
   },
   "passwordConfirmationDesc": {
-    "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
+    "message": "Ang aksyon na ito ay naka-protekta. Upang magpatuloy, pakisagutan muli ang iyong master password upang tiyakin ang iyong pagkakakilanlan."
   },
   "reinviteSelected": {
     "message": "Resend invitations"
@@ -4568,10 +4584,10 @@
     "message": "When member(s) are revoked, they no longer have access to organization data. To quickly restore member access, go to the Revoked tab. The process may take a few seconds to complete and cannot be interrupted or canceled."
   },
   "theme": {
-    "message": "Theme"
+    "message": "Tagapagmana"
   },
   "themeDesc": {
-    "message": "Choose a theme for your web vault."
+    "message": "Baguhin ang tema ng kulay ng application."
   },
   "themeSystem": {
     "message": "Use system theme"
@@ -4619,7 +4635,7 @@
     "message": "Restore users"
   },
   "error": {
-    "message": "Error"
+    "message": "Error - Maling pagkakabanggit"
   },
   "resetPasswordManageUsers": {
     "message": "Manage users must also be granted with the manage password reset permission"
@@ -4747,13 +4763,13 @@
     "message": "Add"
   },
   "updatedMasterPassword": {
-    "message": "Master password saved"
+    "message": "Updated master password - I-update ang master password"
   },
   "updateMasterPassword": {
-    "message": "Update master password"
+    "message": "Update master password - I-update ang master password"
   },
   "updateMasterPasswordWarning": {
-    "message": "Your master password was recently changed by an administrator in your organization. In order to access the vault, you must update your master password now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
+    "message": "Your master password was recently changed by an administrator in your organization. In order to access the vault, you must update it now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour. - Ang iyong master password ay kamakailan lamang na binago ng isang administrator sa iyong organisasyon. Upang makapunta sa vault, kailangan mong i-update ito ngayon. Ang pagpapatuloy ay maglilipat ka sa iyong kasalukuyang sesyon, na nangangailangan sa iyo na mag-log in muli. Ang mga aktibong sesyon sa iba pang mga device ay maaaring magpatuloy na aktibo hanggang sa isang oras."
   },
   "masterPasswordInvalidWarning": {
     "message": "Your master password does not meet the policy requirements of this organization. In order to join the organization, you must update your master password now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
@@ -4771,13 +4787,13 @@
     "message": "Invalid maximum vault timeout."
   },
   "hours": {
-    "message": "Hours"
+    "message": "Oras"
   },
   "minutes": {
-    "message": "Minutes"
+    "message": "Minuto"
   },
   "vaultTimeoutPolicyInEffect": {
-    "message": "Your organization policies are affecting your vault timeout. Maximum allowed vault timeout is $HOURS$ hour(s) and $MINUTES$ minute(s)",
+    "message": "Nakakaapekto ang mga patakaran ng iyong organisasyon sa iyong vault timeout. Ang pinakamataas na pinapayagang Vault Timeout ay $HOURS$ oras at $MINUTES$ minuto",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -4808,16 +4824,16 @@
     "message": "Do not allow members to export their individual vault data."
   },
   "vaultExportDisabled": {
-    "message": "Vault export removed"
+    "message": "Hindi magagamit ang pag-export ng Vault"
   },
   "personalVaultExportPolicyInEffect": {
-    "message": "One or more organization policies prevents you from exporting your individual vault."
+    "message": "Ang isa o higit pang mga patakaran ng organisasyon ay nagpipigil sa iyo mula sa pag-export ng iyong indibidwal na vault."
   },
   "selectType": {
     "message": "Select SSO type"
   },
   "type": {
-    "message": "Type"
+    "message": "Type - Uri"
   },
   "openIdConnectConfig": {
     "message": "OpenID connect configuration"
@@ -5042,34 +5058,34 @@
     "message": "Sponsorship removed"
   },
   "ssoKeyConnectorError": {
-    "message": "Key Connector error: make sure Key Connector is available and working correctly."
+    "message": "Mali sa koneksiyon ng key: Siguraduhin na magagamit at gumagana nang maayos ang key connector."
   },
   "keyConnectorUrl": {
     "message": "Key Connector URL"
   },
   "sendVerificationCode": {
-    "message": "Send a verification code to your email"
+    "message": "Magpadala ng isang verification code sa iyong email"
   },
   "sendCode": {
-    "message": "Send code"
+    "message": "Magpadala ng Code"
   },
   "codeSent": {
-    "message": "Code sent"
+    "message": "Ipinadala ang Code"
   },
   "verificationCode": {
-    "message": "Verification code"
+    "message": "VerificationCode sa Filipino ay Pagsasagot sa Tanong"
   },
   "confirmIdentity": {
-    "message": "Confirm your identity to continue."
+    "message": "Kumpirmahin ang iyong identididad upang magpatuloy."
   },
   "verificationCodeRequired": {
-    "message": "Verification code is required."
+    "message": "Kinakailangan ang verification code."
   },
   "invalidVerificationCode": {
-    "message": "Invalid verification code"
+    "message": "Maling verification code"
   },
   "convertOrganizationEncryptionDesc": {
-    "message": "$ORGANIZATION$ is using SSO with a self-hosted key server. A master password is no longer required to log in for members of this organization.",
+    "message": "$ORGANIZATION$ ay gumagamit ng SSO na may sariling-hosted na key server. Walang kinakailangang master password para mag-log in para sa mga miyembro ng organisasyon na ito.",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -5078,13 +5094,13 @@
     }
   },
   "leaveOrganization": {
-    "message": "Leave organization"
+    "message": "Umalis sa organisasyon"
   },
   "removeMasterPassword": {
-    "message": "Remove master password"
+    "message": "Tanggalin ang master password"
   },
   "removedMasterPassword": {
-    "message": "Master password removed"
+    "message": "Tinanggal ang master password"
   },
   "allowSso": {
     "message": "Allow SSO authentication"
@@ -5276,16 +5292,16 @@
     "message": "Separate multiple with a comma."
   },
   "sessionTimeout": {
-    "message": "Your session has timed out. Please go back and try logging in again."
+    "message": "Nawalan na ng bisa ang iyong sesyon. Mangyaring bumalik at subukan na mag-log in muli."
   },
   "exportingPersonalVaultTitle": {
-    "message": "Exporting individual vault"
+    "message": "Nag-export ng indibidwal na vault"
   },
   "exportingOrganizationVaultTitle": {
     "message": "Exporting organization vault"
   },
   "exportingPersonalVaultDescription": {
-    "message": "Only the individual vault items associated with $EMAIL$ will be exported. Organization vault items will not be included. Only vault item information will be exported and will not include associated password history or attachments.",
+    "message": "Lamang ang mga item ng indibidwal na vault na nauugnay sa $EMAIL$ ang maie-export. Hindi kasama ang mga item ng vault ng organisasyon.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -5309,7 +5325,7 @@
     "message": "Master password"
   },
   "security": {
-    "message": "Security"
+    "message": "Kaligtasan"
   },
   "keys": {
     "message": "Keys"
@@ -5331,45 +5347,45 @@
     "message": "Account settings"
   },
   "generator": {
-    "message": "Generator"
+    "message": "Magmamana"
   },
   "whatWouldYouLikeToGenerate": {
-    "message": "What would you like to generate?"
+    "message": "Ano ang nais mong bumuo?"
   },
   "passwordType": {
-    "message": "Password type"
+    "message": "Uri ng Password"
   },
   "regenerateUsername": {
-    "message": "Regenerate username"
+    "message": "Regenerate username - Palitan ang username"
   },
   "generateUsername": {
-    "message": "Generate username"
+    "message": "Generate username - Lumikha ng username"
   },
   "usernameType": {
-    "message": "Username type"
+    "message": "Username type - Uri ng username"
   },
   "plusAddressedEmail": {
-    "message": "Plus addressed email",
+    "message": "Plus addressed email - Email na may dagdag na address",
     "description": "Username generator option that appends a random sub-address to the username. For example: address+subaddress@email.com"
   },
   "plusAddressedEmailDesc": {
-    "message": "Use your email provider's sub-addressing capabilities."
+    "message": "Use your email provider's sub-addressing capabilities. - Gamitin ang kakayahang magdagdag ng sub-address ng iyong email provider."
   },
   "catchallEmail": {
-    "message": "Catch-all email"
+    "message": "Catch-all email - Catch-all email"
   },
   "catchallEmailDesc": {
-    "message": "Use your domain's configured catch-all inbox."
+    "message": "Use your domain's configured catch-all inbox. - Gamitin ang naka-configure na catch-all inbox ng iyong domain."
   },
   "random": {
-    "message": "Random",
+    "message": "Random - Walang pinipili",
     "description": "Generates domain-based username using random letters"
   },
   "randomWord": {
     "message": "Random word"
   },
   "service": {
-    "message": "Service"
+    "message": "Serbisyo"
   },
   "unknownCipher": {
     "message": "Unknown item, you may need to request permission to access this item."
@@ -5405,7 +5421,7 @@
     }
   },
   "lastSync": {
-    "message": "Last sync",
+    "message": "Huling sinkronisasyon:",
     "Description": "Used as a prefix to indicate the last time a sync occured. Example \"Last sync 1968-11-16 00:00:00\""
   },
   "sponsorshipsSynced": {
@@ -5425,17 +5441,17 @@
     "description": "This text is displayed if an organization's billing is managed by a Provider. It tells the user to contact the Provider for assistance."
   },
   "forwardedEmail": {
-    "message": "Forwarded email alias"
+    "message": "Ipinasa ang alias ng email"
   },
   "forwardedEmailDesc": {
-    "message": "Generate an email alias with an external forwarding service."
+    "message": "Generate an email alias with an external forwarding service. - Lumikha ng alias ng email gamit ang panlabas na serbisyo ng pagpapasa."
   },
   "hostname": {
     "message": "Hostname",
     "description": "Part of a URL."
   },
   "apiAccessToken": {
-    "message": "API access token"
+    "message": "Token ng Access sa API"
   },
   "deviceVerification": {
     "message": "Device verification"
@@ -5459,7 +5475,7 @@
     }
   },
   "premiumSubcriptionRequired": {
-    "message": "Premium subscription required"
+    "message": "Kinakailangan ng subscription ng Premium"
   },
   "scim": {
     "message": "SCIM provisioning",
@@ -5548,6 +5564,18 @@
       }
     }
   },
+  "multipleInputEmails": {
+    "message": "1 or more emails are invalid"
+  },
+  "tooManyEmails": {
+    "message": "You can only submit up to $COUNT$ emails at a time",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "20"
+      }
+    }
+  },
   "fieldsNeedAttention": {
     "message": "$COUNT$ field(s) above need your attention.",
     "placeholders": {
@@ -5576,10 +5604,10 @@
     "message": "Number of users"
   },
   "loggingInAs": {
-    "message": "Logging in as"
+    "message": "Naglolog-in bilang"
   },
   "notYou": {
-    "message": "Not you?"
+    "message": "Hindi ikaw?"
   },
   "pickAnAvatarColor": {
     "message": "Pick an avatar color"
@@ -5633,7 +5661,7 @@
     "message": "Clear all"
   },
   "toggleCharacterCount": {
-    "message": "Toggle character count",
+    "message": "I-toggle ang bilang ng character",
     "description": "'Character count' describes a feature that displays a number next to each character of the password."
   },
   "passwordCharacterCount": {
@@ -5647,25 +5675,25 @@
     "message": "Projects"
   },
   "lastEdited": {
-    "message": "Last Edited"
+    "message": "Last edited"
   },
   "editSecret": {
-    "message": "Edit Secret"
+    "message": "Edit secret"
   },
   "addSecret": {
-    "message": "Add Secret"
+    "message": "Add secret"
   },
   "copySecretName": {
-    "message": "Copy Secret Name"
+    "message": "Copy secret name"
   },
   "copySecretValue": {
-    "message": "Copy Secret Value"
+    "message": "Copy secret value"
   },
   "deleteSecret": {
-    "message": "Delete Secret"
+    "message": "Delete secret"
   },
   "deleteSecrets": {
-    "message": "Delete Secrets"
+    "message": "Delete secrets"
   },
   "secretProjectAssociationDescription": {
     "message": "Select projects that the secret will be associated with. Only organization users with access to these projects will be able to see the secret."
@@ -5680,31 +5708,31 @@
     "message": "Project"
   },
   "editProject": {
-    "message": "Edit Project"
+    "message": "Edit project"
   },
   "viewProject": {
-    "message": "View Project"
+    "message": "View project"
   },
   "deleteProject": {
-    "message": "Delete Project"
+    "message": "Delete project"
   },
   "deleteProjects": {
-    "message": "Delete Projects"
+    "message": "Delete projects"
   },
   "secret": {
     "message": "Secret"
   },
   "serviceAccount": {
-    "message": "Service Account"
+    "message": "Service account"
   },
   "serviceAccounts": {
-    "message": "Service Accounts"
+    "message": "Service accounts"
   },
   "secrets": {
     "message": "Secrets"
   },
   "nameValuePair": {
-    "message": "Name/Value Pair"
+    "message": "Name/Value pair"
   },
   "secretEdited": {
     "message": "Secret edited"
@@ -5713,10 +5741,10 @@
     "message": "Secret created"
   },
   "newSecret": {
-    "message": "New Secret"
+    "message": "New secret"
   },
   "newServiceAccount": {
-    "message": "New Service Account"
+    "message": "New service account"
   },
   "secretsNoItemsTitle": {
     "message": "No secrets to show"
@@ -5728,25 +5756,25 @@
     "message": "Nothing to show yet"
   },
   "serviceAccountsNoItemsMessage": {
-    "message": "Create a new Service Account to get started automating secret access."
+    "message": "Create a new service account to get started automating secret access."
   },
   "searchSecrets": {
-    "message": "Search Secrets"
+    "message": "Search secrets"
   },
   "deleteServiceAccounts": {
-    "message": "Delete Service Accounts"
+    "message": "Delete service accounts"
   },
   "deleteServiceAccount": {
-    "message": "Delete Service Account"
+    "message": "Delete service account"
   },
   "viewServiceAccount": {
-    "message": "View Service Account"
+    "message": "View service account"
   },
   "searchServiceAccounts": {
-    "message": "Search Service Accounts"
+    "message": "Search service accounts"
   },
   "addProject": {
-    "message": "Add Project"
+    "message": "Add project"
   },
   "projectEdited": {
     "message": "Project edited"
@@ -5758,10 +5786,10 @@
     "message": "Project created"
   },
   "projectName": {
-    "message": "Project Name"
+    "message": "Project name"
   },
   "newProject": {
-    "message": "New Project"
+    "message": "New project"
   },
   "softDeleteSecretWarning": {
     "message": "Deleting secrets can affect existing integrations."
@@ -5770,7 +5798,7 @@
     "message": "Secrets sent to trash"
   },
   "serviceAccountCreated": {
-    "message": "Service Account Created"
+    "message": "Service account created"
   },
   "smAccess": {
     "message": "Access"
@@ -5782,10 +5810,10 @@
     "message": "Service account name"
   },
   "newSaSelectAccess": {
-    "message": "Type or Select Projects or Secrets"
+    "message": "Type or select projects or secrets"
   },
   "newSaTypeToFilter": {
-    "message": "Type to Filter"
+    "message": "Type to filter"
   },
   "deleteProjectsToast": {
     "message": "Projects deleted"
@@ -5807,7 +5835,7 @@
     "placeholders": {
       "confirm": {
         "content": "$1",
-        "example": "Delete 3 Projects"
+        "example": "Delete 3 projects"
       }
     }
   },
@@ -5848,7 +5876,7 @@
     "message": "Secret sent to trash"
   },
   "searchProjects": {
-    "message": "Search Projects"
+    "message": "Search projects"
   },
   "accessTokens": {
     "message": "Access tokens"
@@ -5893,7 +5921,7 @@
     "message": "Permissions management is unavailable for beta."
   },
   "revokeAccessToken": {
-    "message": "Revoke Access Token"
+    "message": "Revoke access token"
   },
   "submenu": {
     "message": "Submenu"
@@ -6016,7 +6044,7 @@
     "message": "More from Bitwarden"
   },
   "switchProducts": {
-    "message": "Switch Products"
+    "message": "Switch products"
   },
   "freeOrgInvLimitReachedManageBilling": {
     "message": "Free organizations may have up to $SEATCOUNT$ members. Upgrade to a paid plan to invite more members.",
@@ -6053,5 +6081,14 @@
         "example": "2"
       }
     }
+  },
+  "lowKdfIterations": {
+    "message": "Low KDF Iterations"
+  },
+  "lowKdfIterationsDesc": {
+    "message": "Increase your KDF encryption settings to improve the security of your account."
+  },
+  "changeKdfSettings": {
+    "message": "Change KDF settings"
   }
 }

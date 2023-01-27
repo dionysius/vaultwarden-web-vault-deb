@@ -133,6 +133,9 @@
   "ms": {
     "message": "Srta"
   },
+  "mx": {
+    "message": "Mx"
+  },
   "dr": {
     "message": "Dr"
   },
@@ -278,7 +281,7 @@
     "message": "Buscar en favoritos"
   },
   "searchLogin": {
-    "message": "Buscar inicios de sesión",
+    "message": "Buscar logins",
     "description": "Search Login type"
   },
   "searchCard": {
@@ -304,6 +307,9 @@
   },
   "searchMembers": {
     "message": "Buscar miembros"
+  },
+  "searchGroups": {
+    "message": "Buscar grupos"
   },
   "allItems": {
     "message": "Todos los elementos"
@@ -399,7 +405,8 @@
     "message": "Ver elemento"
   },
   "new": {
-    "message": "Nuevo"
+    "message": "Nuevo",
+    "description": "for adding new items"
   },
   "item": {
     "message": "Elemento"
@@ -1005,7 +1012,7 @@
     "message": "“Contraseña del archivo” y “Confirmar contraseña del archivo” no coinciden."
   },
   "confirmVaultImport": {
-    "message": "Confirmar importación de la bóveda"
+    "message": "Confirmar importación de la caja fuerte"
   },
   "confirmVaultImportDesc": {
     "message": "Este archivo está protegido por contraseña. Introduzca la contraseña del archivo para importar datos."
@@ -1278,7 +1285,7 @@
     "message": "Preferencias"
   },
   "preferencesDesc": {
-    "message": "Personaliza tu experiencia en la bóveda web."
+    "message": "Personaliza tu experiencia en la caja fuerte web."
   },
   "preferencesUpdated": {
     "message": "Preferencias actualizadas"
@@ -1594,7 +1601,7 @@
     "message": "Debido a las limitaciones de la plataforma, WebAuthn no puede ser utilizado en todas las aplicaciones de Bitwarden. Debería habilitar otro proveedor de inicio de sesión en dos-pasos para que pueda acceder a su cuenta cuando WebAuthn no pueda ser usado. Plataformas soportadas:"
   },
   "twoFactorWebAuthnSupportWeb": {
-    "message": "Bóveda web y extensiones de navegador en un escritorio/portátil con un navegador WebAuthn habilitado (Chrome, Opera, Vivaldi o Firefox con FIDO U2F habilitado)."
+    "message": "Caja fuerte web y extensiones de navegador en un escritorio/portátil con un navegador WebAuthn habilitado (Chrome, Opera, Vivaldi o Firefox con FIDO U2F habilitado)."
   },
   "twoFactorRecoveryYourCode": {
     "message": "Tu código de recuperación de inicio de sesión de dos pasos de Bitwarden"
@@ -1666,13 +1673,13 @@
     "message": "Infome de contraseñas expuestas"
   },
   "exposedPasswordsReportDesc": {
-    "message": "Las contraseñas expuestas en una brecha de datos son blancos fáciles para los atacantes. Cambia estas contraseñas para evitar futuras brechas."
+    "message": "Las contraseñas comprometidas en una brecha de datos son blancos fáciles para los atacantes. Cambia estas contraseñas para evitar futuras brechas."
   },
   "exposedPasswordsFound": {
-    "message": "Contraseñas expuestas encontradas"
+    "message": "Contraseñas comprometidas encontradas"
   },
   "exposedPasswordsFoundDesc": {
-    "message": "Hemos encontrado $COUNT$ elementos en su caja fuerte que tienen contraseñas que fueron expuestas en violaciones de datos conocidas. Debe cambiarlos para utilizar una contraseña nueva.",
+    "message": "Hemos encontrado $COUNT$ elementos en su caja fuerte que tienen contraseñas que fueron comprometidas en violaciones de datos conocidas. Debe cambiarlos para utilizar una contraseña nueva.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -1681,13 +1688,13 @@
     }
   },
   "noExposedPasswords": {
-    "message": "No hay elementos en su caja fuerte que tengan contraseñas que hayan sido expuestas en violaciones de datos conocidas."
+    "message": "No hay elementos en su caja fuerte que tengan contraseñas que hayan sido comprometidas en violaciones de datos conocidas."
   },
   "checkExposedPasswords": {
-    "message": "Compruebe las contraseñas expuestas"
+    "message": "Compruebe las contraseñas comprometidas"
   },
   "exposedXTimes": {
-    "message": "Expuestas $COUNT$ vez/veces",
+    "message": "Comprometidas $COUNT$ vez/veces",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -2489,6 +2496,15 @@
   "editMember": {
     "message": "Editar miembro"
   },
+  "fieldOnTabRequiresAttention": {
+    "message": "Un campo en la pestaña '$TAB$' requiere su atención.",
+    "placeholders": {
+      "tab": {
+        "content": "$1",
+        "example": "Collection info"
+      }
+    }
+  },
   "inviteUserDesc": {
     "message": "Invite a un nuevo usuario a su organización introduciendo la dirección de correo electrónico de su cuenta Bitwarden a continuación. Si aún no tienen una cuenta Bitwarden, se les pedirá que creen una nueva cuenta."
   },
@@ -3120,7 +3136,7 @@
     "message": "Eliminar organización"
   },
   "deletingOrganizationContentWarning": {
-    "message": "Introduzca la contraseña maestra para confirmar la eliminación de $ORGANIZATION$ y todos los datos asociados. Los datos de la bóveda de $ORGANIZATION$ incluyen:",
+    "message": "Introduzca la contraseña maestra para confirmar la eliminación de $ORGANIZATION$ y todos los datos asociados. Los datos de la caja fuerte de $ORGANIZATION$ incluyen:",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -3411,7 +3427,7 @@
     "message": "Filtros"
   },
   "vaultTimeout": {
-    "message": "Tiempo de espera de la bóveda"
+    "message": "Tiempo de espera de la caja fuerte excedido"
   },
   "vaultTimeoutDesc": {
     "message": "Elije cuando se agotará el tiempo de espera de tu caja fuerte y se ejecutará la acción seleccionada."
@@ -3523,7 +3539,7 @@
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "fingerprintMatchInfo": {
-    "message": "Por favor, asegúrese de que su bóveda está desbloqueada y la frase de huella dactilar coincide con el otro dispositivo."
+    "message": "Por favor, asegúrese de que su caja fuerte está desbloqueada y la frase de huella dactilar coincide con el otro dispositivo."
   },
   "fingerprintPhraseHeader": {
     "message": "Frase de huella dactilar"
@@ -3664,10 +3680,10 @@
     "message": "Acción de tiempo de espera de la caja fuerte"
   },
   "vaultTimeoutActionLockDesc": {
-    "message": "Una bóveda bloqueada requiere que introduzcas de nuevo tu contraseña maestra para acceder nuevamente."
+    "message": "Una caja fuerte bloqueada requiere que introduzcas de nuevo tu contraseña maestra para acceder nuevamente."
   },
   "vaultTimeoutActionLogOutDesc": {
-    "message": "Cerrar sesión en la bóveda requiere que vuelvas a autenticarte para acceder nuevamente a ella."
+    "message": "Cerrar sesión en la caja fuerte requiere que vuelvas a autenticarte para acceder nuevamente a ella."
   },
   "lock": {
     "message": "Bloquear",
@@ -3756,7 +3772,7 @@
     }
   },
   "vaultTimeoutLogOutConfirmation": {
-    "message": "Cerrar sesión eliminará todo el acceso a su bóveda y requiere autenticación en línea después del período de espera. ¿Estás seguro de que quieres usar esta configuración?"
+    "message": "Cerrar sesión eliminará todo el acceso a su caja fuerte y requiere autenticación en línea después del período de espera. ¿Estás seguro de que quieres usar esta configuración?"
   },
   "vaultTimeoutLogOutConfirmationTitle": {
     "message": "Confirmación de periodo de espera"
@@ -4041,7 +4057,7 @@
     "message": "Acceso de emergencia aprobado"
   },
   "viewDesc": {
-    "message": "Puede ver todos los elementos en su propia bóveda."
+    "message": "Puede ver todos los elementos en su propia caja fuerte."
   },
   "takeover": {
     "message": "Takeover"
@@ -4147,13 +4163,13 @@
     "message": "Propiedad personal"
   },
   "personalOwnershipPolicyDesc": {
-    "message": "Requiere que los usuarios guarden los elementos de la bóveda en una organización por eliminando la opción de propiedad personal."
+    "message": "Requiere que los usuarios guarden los elementos de la caja fuerte en una organización por eliminando la opción de propiedad personal."
   },
   "personalOwnershipExemption": {
     "message": "Los propietarios y administradores de la organización están exentos de esta política."
   },
   "personalOwnershipSubmitError": {
-    "message": "Debido a una política empresarial, usted está restringido a guardar artículos en su bóveda personal. Cambie la opción Propiedad a una organización y elija de entre las colecciones disponibles."
+    "message": "Debido a una política empresarial, usted está restringido a guardar artículos en su caja fuerte personal. Cambie la opción Propiedad a una organización y elija de entre las colecciones disponibles."
   },
   "disableSend": {
     "message": "Desactivar envío"
@@ -4753,22 +4769,22 @@
     "message": "Actualizar contraseña maestra"
   },
   "updateMasterPasswordWarning": {
-    "message": "Su contraseña maestra ha sido cambiada recientemente por un administrador de su organización. Para acceder a la bóveda, debe actualizar su contraseña maestra ahora. Proceder le desconectará de su sesión actual, requiriendo que vuelva a iniciar sesión. Las sesiones activas en otros dispositivos pueden seguir estando activas durante hasta una hora."
+    "message": "Su contraseña maestra ha sido cambiada recientemente por un administrador de su organización. Para acceder a la caja fuerte, debe actualizar su contraseña maestra ahora. Proceder le desconectará de su sesión actual, requiriendo que vuelva a iniciar sesión. Las sesiones activas en otros dispositivos pueden seguir estando activas durante hasta una hora."
   },
   "masterPasswordInvalidWarning": {
     "message": "Su contraseña maestra no cumple con los requisitos de la política de esta organización. Para unirse a la organización, debe actualizar su contraseña maestra ahora. Proceder le desconectará de su sesión actual, requiriendo que vuelva a iniciar sesión. Las sesiones activas en otros dispositivos pueden seguir estando activas durante hasta una hora."
   },
   "maximumVaultTimeout": {
-    "message": "Tiempo de espera de la bóveda"
+    "message": "Tiempo de espera de la caja fuerte excedido"
   },
   "maximumVaultTimeoutDesc": {
-    "message": "Configurar un de tiempo de espera máximo para la bóveda de todos los usuarios."
+    "message": "Configurar un tiempo de espera máximo para la caja fuerte de todos los usuarios."
   },
   "maximumVaultTimeoutLabel": {
-    "message": "Tiempo de espera máximo de la bóveda"
+    "message": "Tiempo de espera máximo de la caja fuerte"
   },
   "invalidMaximumVaultTimeout": {
-    "message": "Tiempo de espera máximo de la bóveda inválido."
+    "message": "Tiempo de espera máximo de la caja fuerte inválido."
   },
   "hours": {
     "message": "Horas"
@@ -4777,7 +4793,7 @@
     "message": "Minutos"
   },
   "vaultTimeoutPolicyInEffect": {
-    "message": "Las políticas de tu organización están afectando el tiempo de espera de tu bóveda. El máximo permitido de espera es de $HOURS$ hora(s) y de $MINUTES$ minuto(s)",
+    "message": "Las políticas de tu organización están afectando al tiempo de espera de tu caja fuerte. El máximo permitido de espera es de $HOURS$ hora(s) y de $MINUTES$ minuto(s)",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -4790,28 +4806,28 @@
     }
   },
   "customVaultTimeout": {
-    "message": "Tiempo de espera personalizado para la bóveda"
+    "message": "Tiempo de espera personalizado para la caja fuerte"
   },
   "vaultTimeoutToLarge": {
-    "message": "El tiempo de espera de tu bóveda excede la restricción establecida por tu organización."
+    "message": "El tiempo de espera de tu caja fuerte excede la restricción establecida por tu organización."
   },
   "vaultCustomTimeoutMinimum": {
     "message": "El tiempo de espera mínimo personalizado es de 1 minuto."
   },
   "vaultTimeoutRangeError": {
-    "message": "El tiempo de espera de la bóveda no está dentro del rango permitido."
+    "message": "El tiempo de espera de la caja fuerte no está dentro del rango permitido."
   },
   "disablePersonalVaultExport": {
-    "message": "Desactivar exportación de bóveda personal"
+    "message": "Desactivar exportación de la caja fuerte personal"
   },
   "disablePersonalVaultExportDesc": {
-    "message": "Prohíbe a los usuarios exportar sus datos privados de bóveda."
+    "message": "Prohíbe a los usuarios exportar sus datos privados de su \ncaja fuerte."
   },
   "vaultExportDisabled": {
-    "message": "Exportación de bóveda desactivada"
+    "message": "Exportación de caja fuerte desactivada"
   },
   "personalVaultExportPolicyInEffect": {
-    "message": "Una o más políticas de tu organización te impiden exportar tu bóveda personal."
+    "message": "Una o más políticas de tu organización te impiden exportar tu caja fuerte personal."
   },
   "selectType": {
     "message": "Seleccionar tipo de SSO"
@@ -5111,13 +5127,13 @@
     "message": "Opciones de descifrado de miembros"
   },
   "memberDecryptionPassDesc": {
-    "message": "Una vez autenticados, los miembros descifrarán los datos de la bóveda usando sus contraseñas maestras."
+    "message": "Una vez autenticados, los miembros descifrarán los datos de la caja fuerte usando sus contraseñas maestras."
   },
   "keyConnector": {
     "message": "Conector de claves"
   },
   "memberDecryptionKeyConnectorDesc": {
-    "message": "Conecte el inicio de sesión con SSO a su servidor de claves de descifrado autoalojado. Usando esta opción, los miembros no necesitarán usar sus contraseñas maestras para descifrar datos de bóveda. Póngase en contacto con el soporte de Bitwarden para asistencia en la configuración."
+    "message": "Conecte el inicio de sesión con SSO a su servidor de claves de descifrado autoalojado. Usando esta opción, los miembros no necesitarán usar sus contraseñas maestras para descifrar datos de la caja fuerte. Póngase en contacto con el soporte de Bitwarden para asistencia en la configuración."
   },
   "keyConnectorPolicyRestriction": {
     "message": "Está habilitado \"Iniciar sesión con SSO y el descifrado del Conectore de claves\" Esta política sólo se aplicará a propietarios y administradores."
@@ -5213,7 +5229,7 @@
     "message": "Facturación sincronizada"
   },
   "billingSyncDesc": {
-    "message": "La sincronización de facturación proveé planes Famliares gratuitos para los miembros y facilidades de facturación avanzada, conectando la bóveda autoalojada de Bitwarden al servidor en la nube de Bitwarden."
+    "message": "La sincronización de facturación ofrece planes familiares gratuitos para los miembros y facilidades de facturación avanzada, conectando la caja fuerte autoalojada de Bitwarden al servidor en la nube de Bitwarden."
   },
   "billingSyncKeyDesc": {
     "message": "Para completar este formulario se requiere un token de sincronización de facturación de la configuración de suscripción de su organización en la nube."
@@ -5279,13 +5295,13 @@
     "message": "Su sesión ha expirado. Por favor, vuelva e intente iniciar sesión de nuevo."
   },
   "exportingPersonalVaultTitle": {
-    "message": "Exportando bóveda personal"
+    "message": "Exportando caja fuerte personal"
   },
   "exportingOrganizationVaultTitle": {
-    "message": "Exportando bóveda de organización"
+    "message": "Exportando caja fuerte de la organización"
   },
   "exportingPersonalVaultDescription": {
-    "message": "Solo se exportarán los elementos de la bóveda personal asociados con $EMAIL$. Los elementos de la bóveda de la organización no se incluirán.",
+    "message": "Solo se exportarán los elementos de la caja fuerte personal asociados con $EMAIL$. Los elementos de la caja fuerte de la organización no se incluirán.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -5294,7 +5310,7 @@
     }
   },
   "exportingOrganizationVaultDescription": {
-    "message": "Solo se exportará la bóveda de la organización asociada con $ORGANIZATION$. No se incluirán objetos y elementos personales de otras organizaciones.",
+    "message": "Solo se exportará la caja fuerte de la organización asociada con $ORGANIZATION$. No se incluirán objetos y elementos personales de otras organizaciones.",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -5545,6 +5561,18 @@
       "characters": {
         "content": "$1",
         "example": "@, #, $, %"
+      }
+    }
+  },
+  "multipleInputEmails": {
+    "message": "Una o más direcciones de correo electrónico no son válidas"
+  },
+  "tooManyEmails": {
+    "message": "Solo puede enviar hasta $COUNT$ correos electrónicos a la vez",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "20"
       }
     }
   },
@@ -5807,7 +5835,7 @@
     "placeholders": {
       "confirm": {
         "content": "$1",
-        "example": "Delete 3 Projects"
+        "example": "Delete 3 projects"
       }
     }
   },
@@ -5926,19 +5954,19 @@
     "message": "Otorgar a los miembros acceso a las colecciones asignadas por el grupo."
   },
   "editGroupCollectionsDesc": {
-    "message": "Grant access to collections by adding them to this group."
+    "message": "Conceder acceso a las colecciones añadiéndolas a este grupo."
   },
   "accessAllCollectionsDesc": {
-    "message": "Grant access to all current and future collections."
+    "message": "Otorgar acceso a todas las colecciones actuales y futuras."
   },
   "accessAllCollectionsHelp": {
-    "message": "If checked, this will replace all other collection permissions."
+    "message": "Si está marcado, esto reemplazará todos los demás permisos de la colección."
   },
   "selectMembers": {
-    "message": "Select members"
+    "message": "Seleccionar miembros"
   },
   "selectCollections": {
-    "message": "Select collections"
+    "message": "Seleccionar colecciones"
   },
   "role": {
     "message": "Rol"
@@ -5962,13 +5990,13 @@
     "message": "Puede editar, excepto contraseñas"
   },
   "noCollectionsAdded": {
-    "message": "No collections added"
+    "message": "No hay colecciones añadidas"
   },
   "noMembersAdded": {
-    "message": "No members added"
+    "message": "Ningún miembro añadido"
   },
   "noGroupsAdded": {
-    "message": "No groups added"
+    "message": "No hay grupos añadidos"
   },
   "group": {
     "message": "Grupo"
@@ -5980,37 +6008,37 @@
     "message": "Este miembro puede acceder y modificar todos los elementos."
   },
   "membersColumnHeader": {
-    "message": "Member/Group"
+    "message": "Miembro/Grupo"
   },
   "groupAndMemberColumnHeader": {
-    "message": "Member"
+    "message": "Miembro"
   },
   "selectGroupsAndMembers": {
-    "message": "Select groups and members"
+    "message": "Seleccionar grupos y miembros"
   },
   "selectGroups": {
-    "message": "Select groups"
+    "message": "Seleccionar grupos"
   },
   "userPermissionOverrideHelper": {
-    "message": "Permissions set for a member will replace permissions set by that member's group"
+    "message": "Los permisos establecidos para un miembro reemplazarán los permisos establecidos por el grupo de ese miembro"
   },
   "noMembersOrGroupsAdded": {
-    "message": "No members or groups added"
+    "message": "Ningún miembro o grupo añadido"
   },
   "deleted": {
-    "message": "Deleted"
+    "message": "Eliminado"
   },
   "memberStatusFilter": {
-    "message": "Member status filter"
+    "message": "Filtro de estado de miembro"
   },
   "inviteMember": {
-    "message": "Invite member"
+    "message": "Invitar miembro"
   },
   "needsConfirmation": {
-    "message": "Needs confirmation"
+    "message": "Necesita confirmación"
   },
   "memberRole": {
-    "message": "Member role"
+    "message": "Rol del miembro"
   },
   "moreFromBitwarden": {
     "message": "Más de Bitwarden"
@@ -6053,5 +6081,14 @@
         "example": "2"
       }
     }
+  },
+  "lowKdfIterations": {
+    "message": "Iteraciones KDF bajas"
+  },
+  "lowKdfIterationsDesc": {
+    "message": "Aumente los ajustes de cifrado de KDF para mejorar la seguridad de su cuenta."
+  },
+  "changeKdfSettings": {
+    "message": "Cambiar ajustes de KDF"
   }
 }

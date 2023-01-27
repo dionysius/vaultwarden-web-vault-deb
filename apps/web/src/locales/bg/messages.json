@@ -133,6 +133,9 @@
   "ms": {
     "message": "Г-жа"
   },
+  "mx": {
+    "message": "Mx"
+  },
   "dr": {
     "message": "Д-р"
   },
@@ -305,6 +308,9 @@
   "searchMembers": {
     "message": "Търсене в членовете"
   },
+  "searchGroups": {
+    "message": "Търсене в групите"
+  },
   "allItems": {
     "message": "Всички елементи"
   },
@@ -399,7 +405,8 @@
     "message": "Преглед на елемента"
   },
   "new": {
-    "message": "Ново"
+    "message": "Ново",
+    "description": "for adding new items"
   },
   "item": {
     "message": "Елемент"
@@ -2488,6 +2495,15 @@
   },
   "editMember": {
     "message": "Редактиране на члена"
+  },
+  "fieldOnTabRequiresAttention": {
+    "message": "Поле в раздела „$TAB$“ има нужда от внимание.",
+    "placeholders": {
+      "tab": {
+        "content": "$1",
+        "example": "Collection info"
+      }
+    }
   },
   "inviteUserDesc": {
     "message": "Може да поканите потребител да стане член на организацията като попълните адреса му за електронна поща, с който е регистриран в Битуорден, по-долу. В случай, че потребителят не е регистриран, той автоматично ще получи покана и да се регистрира."
@@ -5548,6 +5564,18 @@
       }
     }
   },
+  "multipleInputEmails": {
+    "message": "1 или повече е-пощи са неправилни"
+  },
+  "tooManyEmails": {
+    "message": "Може да добавяте по не повече от $COUNT$ е-пощи наведнъж",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "20"
+      }
+    }
+  },
   "fieldsNeedAttention": {
     "message": "$COUNT$ поле(та) по-горе се нуждае/ят от вниманието Ви.",
     "placeholders": {
@@ -5695,10 +5723,10 @@
     "message": "Тайна"
   },
   "serviceAccount": {
-    "message": "Service Account"
+    "message": "Service account"
   },
   "serviceAccounts": {
-    "message": "Service Accounts"
+    "message": "Service accounts"
   },
   "secrets": {
     "message": "Тайни"
@@ -5716,7 +5744,7 @@
     "message": "Нова тайна"
   },
   "newServiceAccount": {
-    "message": "New Service Account"
+    "message": "New service account"
   },
   "secretsNoItemsTitle": {
     "message": "Няма тайни за показване"
@@ -5728,22 +5756,22 @@
     "message": "Все още няма нищо за показване"
   },
   "serviceAccountsNoItemsMessage": {
-    "message": "Create a new Service Account to get started automating secret access."
+    "message": "Create a new service account to get started automating secret access."
   },
   "searchSecrets": {
     "message": "Търсене в тайните"
   },
   "deleteServiceAccounts": {
-    "message": "Delete Service Accounts"
+    "message": "Delete service accounts"
   },
   "deleteServiceAccount": {
-    "message": "Delete Service Account"
+    "message": "Delete service account"
   },
   "viewServiceAccount": {
-    "message": "View Service Account"
+    "message": "View service account"
   },
   "searchServiceAccounts": {
-    "message": "Search Service Accounts"
+    "message": "Search service accounts"
   },
   "addProject": {
     "message": "Добавяне на проект"
@@ -5770,7 +5798,7 @@
     "message": "Тайните са преместени в кошчето"
   },
   "serviceAccountCreated": {
-    "message": "Service Account Created"
+    "message": "Service account created"
   },
   "smAccess": {
     "message": "Достъп"
@@ -5807,7 +5835,7 @@
     "placeholders": {
       "confirm": {
         "content": "$1",
-        "example": "Delete 3 Projects"
+        "example": "Delete 3 projects"
       }
     }
   },
@@ -5848,7 +5876,7 @@
     "message": "Secret sent to trash"
   },
   "searchProjects": {
-    "message": "Search Projects"
+    "message": "Search projects"
   },
   "accessTokens": {
     "message": "Идентификатори за достъп"
@@ -6053,5 +6081,14 @@
         "example": "2"
       }
     }
+  },
+  "lowKdfIterations": {
+    "message": "Малко повторения за KDF"
+  },
+  "lowKdfIterationsDesc": {
+    "message": "Увеличете настройките си за шифроване чрез KDF, за да защитите по-добре регистрацията си."
+  },
+  "changeKdfSettings": {
+    "message": "Промяна на настройките за KDF"
   }
 }

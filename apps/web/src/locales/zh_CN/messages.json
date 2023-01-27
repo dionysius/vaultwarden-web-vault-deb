@@ -133,6 +133,9 @@
   "ms": {
     "message": "女士"
   },
+  "mx": {
+    "message": "Mx"
+  },
   "dr": {
     "message": "博士"
   },
@@ -305,6 +308,9 @@
   "searchMembers": {
     "message": "搜索成员"
   },
+  "searchGroups": {
+    "message": "Search groups"
+  },
   "allItems": {
     "message": "所有项目"
   },
@@ -399,7 +405,8 @@
     "message": "查看项目"
   },
   "new": {
-    "message": "新建"
+    "message": "新建",
+    "description": "for adding new items"
   },
   "item": {
     "message": "项目"
@@ -2488,6 +2495,15 @@
   },
   "editMember": {
     "message": "编辑成员"
+  },
+  "fieldOnTabRequiresAttention": {
+    "message": "A field on the '$TAB$' tab requires your attention.",
+    "placeholders": {
+      "tab": {
+        "content": "$1",
+        "example": "Collection info"
+      }
+    }
   },
   "inviteUserDesc": {
     "message": "在下面输入 Bitwarden 账户的电子邮件地址，以邀请新用户加入您的组织。如果他们没有 Bitwarden 账户，将会提示他们创建一个。"
@@ -5548,6 +5564,18 @@
       }
     }
   },
+  "multipleInputEmails": {
+    "message": "1 or more emails are invalid"
+  },
+  "tooManyEmails": {
+    "message": "You can only submit up to $COUNT$ emails at a time",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "20"
+      }
+    }
+  },
   "fieldsNeedAttention": {
     "message": "上面的 $COUNT$ 个字段需要您注意。",
     "placeholders": {
@@ -5728,7 +5756,7 @@
     "message": "还没有要显示的内容"
   },
   "serviceAccountsNoItemsMessage": {
-    "message": "Create a new Service Account to get started automating secret access."
+    "message": "Create a new service account to get started automating secret access."
   },
   "searchSecrets": {
     "message": "搜索机密"
@@ -5807,7 +5835,7 @@
     "placeholders": {
       "confirm": {
         "content": "$1",
-        "example": "Delete 3 Projects"
+        "example": "Delete 3 projects"
       }
     }
   },
@@ -6053,5 +6081,14 @@
         "example": "2"
       }
     }
+  },
+  "lowKdfIterations": {
+    "message": "Low KDF Iterations"
+  },
+  "lowKdfIterationsDesc": {
+    "message": "Increase your KDF encryption settings to improve the security of your account."
+  },
+  "changeKdfSettings": {
+    "message": "Change KDF settings"
   }
 }

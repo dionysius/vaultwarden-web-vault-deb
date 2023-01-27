@@ -133,6 +133,9 @@
   "ms": {
     "message": "Fröken"
   },
+  "mx": {
+    "message": "Mx"
+  },
   "dr": {
     "message": "Dr"
   },
@@ -305,6 +308,9 @@
   "searchMembers": {
     "message": "Search members"
   },
+  "searchGroups": {
+    "message": "Search groups"
+  },
   "allItems": {
     "message": "Alla objekt"
   },
@@ -399,7 +405,8 @@
     "message": "Visa objekt"
   },
   "new": {
-    "message": "New"
+    "message": "New",
+    "description": "for adding new items"
   },
   "item": {
     "message": "Objekt"
@@ -1990,7 +1997,7 @@
     "message": "Avsluta prenumeration"
   },
   "subscriptionCanceled": {
-    "message": "Abonnemanget har avslutats."
+    "message": "Prenumerationen har avslutats."
   },
   "pendingCancellation": {
     "message": "Väntar på att avslutas"
@@ -2047,7 +2054,7 @@
     "message": "Ta bort lagring"
   },
   "subscriptionStorage": {
-    "message": "Ditt abonnemang har totalt $MAX_STORAGE$ GB krypterad lagring. Du använder för närvarande $USED_STORAGE$.",
+    "message": "Din prenumeration har totalt $MAX_STORAGE$ GB krypterad fillagring. Du använder för närvarande $USED_STORAGE$.",
     "placeholders": {
       "max_storage": {
         "content": "$1",
@@ -2194,7 +2201,7 @@
     "message": "Antal användarplatser"
   },
   "userSeatsAdditionalDesc": {
-    "message": "Ditt abonnemang kommer med $BASE_SEATS$ användarplatser. Du kan lägga till ytterligare användare för $SEAT_PRICE$ per användare/månad.",
+    "message": "Din plan kommer med $BASE_SEATS$ användarplatser. Du kan lägga till ytterligare användare för $SEAT_PRICE$ per användare/månad.",
     "placeholders": {
       "base_seats": {
         "content": "$1",
@@ -2488,6 +2495,15 @@
   },
   "editMember": {
     "message": "Redigera medlem"
+  },
+  "fieldOnTabRequiresAttention": {
+    "message": "A field on the '$TAB$' tab requires your attention.",
+    "placeholders": {
+      "tab": {
+        "content": "$1",
+        "example": "Collection info"
+      }
+    }
   },
   "inviteUserDesc": {
     "message": "Bjud in en ny användare till din organisation genom att ange e-postadressen som tillhör deras Bitwarden-konto nedan. Om de inte redan har ett Bitwarden-konto kommer de uppmanas att skapa ett."
@@ -3156,7 +3172,7 @@
     "message": "För kunder i USA krävs postnummer för att uppfylla momskrav. För kunder i andra länder har du möjlighet att ange momsregistreringsnummer (VAT/GST) och/eller adress som ska synas på dina fakturor."
   },
   "billingPlan": {
-    "message": "Abonnemang",
+    "message": "Plan",
     "description": "A billing plan/package. For example: Families, Teams, Enterprise, etc."
   },
   "changeBillingPlan": {
@@ -3255,7 +3271,7 @@
     "message": "Adjustments to your subscription will result in prorated changes to your billing totals. If newly invited users exceed your subscription seats, you will immediately receive a prorated charge for the additional users."
   },
   "subscriptionUserSeats": {
-    "message": "Ditt abonnemang tillåter totalt $COUNT$ användare.",
+    "message": "Din prenumeration tillåter totalt $COUNT$ medlemmar.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -4205,7 +4221,7 @@
     }
   },
   "planPrice": {
-    "message": "Abonnemangets pris"
+    "message": "Prisplan"
   },
   "estimatedTax": {
     "message": "Uppskattad moms"
@@ -5548,6 +5564,18 @@
       }
     }
   },
+  "multipleInputEmails": {
+    "message": "1 or more emails are invalid"
+  },
+  "tooManyEmails": {
+    "message": "You can only submit up to $COUNT$ emails at a time",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "20"
+      }
+    }
+  },
   "fieldsNeedAttention": {
     "message": "$COUNT$ field(s) above need your attention.",
     "placeholders": {
@@ -5650,22 +5678,22 @@
     "message": "Senast redigerad"
   },
   "editSecret": {
-    "message": "Edit Secret"
+    "message": "Edit secret"
   },
   "addSecret": {
-    "message": "Add Secret"
+    "message": "Add secret"
   },
   "copySecretName": {
-    "message": "Copy Secret Name"
+    "message": "Copy secret name"
   },
   "copySecretValue": {
-    "message": "Copy Secret Value"
+    "message": "Copy secret value"
   },
   "deleteSecret": {
-    "message": "Delete Secret"
+    "message": "Delete secret"
   },
   "deleteSecrets": {
-    "message": "Delete Secrets"
+    "message": "Delete secrets"
   },
   "secretProjectAssociationDescription": {
     "message": "Select projects that the secret will be associated with. Only organization users with access to these projects will be able to see the secret."
@@ -5695,16 +5723,16 @@
     "message": "Secret"
   },
   "serviceAccount": {
-    "message": "Service Account"
+    "message": "Service account"
   },
   "serviceAccounts": {
-    "message": "Service Accounts"
+    "message": "Service accounts"
   },
   "secrets": {
     "message": "Secrets"
   },
   "nameValuePair": {
-    "message": "Name/Value Pair"
+    "message": "Name/Value pair"
   },
   "secretEdited": {
     "message": "Secret edited"
@@ -5713,10 +5741,10 @@
     "message": "Secret created"
   },
   "newSecret": {
-    "message": "New Secret"
+    "message": "New secret"
   },
   "newServiceAccount": {
-    "message": "New Service Account"
+    "message": "New service account"
   },
   "secretsNoItemsTitle": {
     "message": "No secrets to show"
@@ -5728,22 +5756,22 @@
     "message": "Nothing to show yet"
   },
   "serviceAccountsNoItemsMessage": {
-    "message": "Create a new Service Account to get started automating secret access."
+    "message": "Create a new service account to get started automating secret access."
   },
   "searchSecrets": {
-    "message": "Search Secrets"
+    "message": "Search secrets"
   },
   "deleteServiceAccounts": {
-    "message": "Delete Service Accounts"
+    "message": "Delete service accounts"
   },
   "deleteServiceAccount": {
-    "message": "Delete Service Account"
+    "message": "Delete service account"
   },
   "viewServiceAccount": {
-    "message": "View Service Account"
+    "message": "View service account"
   },
   "searchServiceAccounts": {
-    "message": "Search Service Accounts"
+    "message": "Search service accounts"
   },
   "addProject": {
     "message": "Lägg till projekt"
@@ -5770,7 +5798,7 @@
     "message": "Secrets sent to trash"
   },
   "serviceAccountCreated": {
-    "message": "Service Account Created"
+    "message": "Service account created"
   },
   "smAccess": {
     "message": "Access"
@@ -5782,10 +5810,10 @@
     "message": "Service account name"
   },
   "newSaSelectAccess": {
-    "message": "Type or Select Projects or Secrets"
+    "message": "Type or select projects or secrets"
   },
   "newSaTypeToFilter": {
-    "message": "Type to Filter"
+    "message": "Type to filter"
   },
   "deleteProjectsToast": {
     "message": "Projects deleted"
@@ -5807,7 +5835,7 @@
     "placeholders": {
       "confirm": {
         "content": "$1",
-        "example": "Delete 3 Projects"
+        "example": "Delete 3 projects"
       }
     }
   },
@@ -5848,7 +5876,7 @@
     "message": "Secret sent to trash"
   },
   "searchProjects": {
-    "message": "Search Projects"
+    "message": "Search projects"
   },
   "accessTokens": {
     "message": "Access tokens"
@@ -5893,7 +5921,7 @@
     "message": "Permissions management is unavailable for beta."
   },
   "revokeAccessToken": {
-    "message": "Revoke Access Token"
+    "message": "Revoke access token"
   },
   "submenu": {
     "message": "Submenu"
@@ -6016,7 +6044,7 @@
     "message": "Mer från Bitwarden"
   },
   "switchProducts": {
-    "message": "Switch Products"
+    "message": "Switch products"
   },
   "freeOrgInvLimitReachedManageBilling": {
     "message": "Gratis organisationer kan ha upp till $SEATCOUNT$ medlemmar. Uppgradera till en betald plan för att bjuda in fler medlemmar.",
@@ -6053,5 +6081,14 @@
         "example": "2"
       }
     }
+  },
+  "lowKdfIterations": {
+    "message": "Low KDF Iterations"
+  },
+  "lowKdfIterationsDesc": {
+    "message": "Increase your KDF encryption settings to improve the security of your account."
+  },
+  "changeKdfSettings": {
+    "message": "Change KDF settings"
   }
 }

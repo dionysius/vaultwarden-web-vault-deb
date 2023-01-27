@@ -133,6 +133,9 @@
   "ms": {
     "message": "Fr."
   },
+  "mx": {
+    "message": "Divers"
+  },
   "dr": {
     "message": "Dr."
   },
@@ -278,32 +281,35 @@
     "message": "Favoriten durchsuchen"
   },
   "searchLogin": {
-    "message": "Search logins",
+    "message": "Zugangsdaten durchsuchen",
     "description": "Search Login type"
   },
   "searchCard": {
-    "message": "Search cards",
+    "message": "Karten durchsuchen",
     "description": "Search Card type"
   },
   "searchIdentity": {
-    "message": "Search identities",
+    "message": "Identitäten durchsuchen",
     "description": "Search Identity type"
   },
   "searchSecureNote": {
-    "message": "Search secure notes",
+    "message": "Sichere Notizen durchsuchen",
     "description": "Search Secure Note type"
   },
   "searchVault": {
     "message": "Tresor durchsuchen"
   },
   "searchMyVault": {
-    "message": "Search my vault"
+    "message": "Meinen Tresor durchsuchen"
   },
   "searchOrganization": {
-    "message": "Search organization"
+    "message": "Organisation suchen"
   },
   "searchMembers": {
-    "message": "Search members"
+    "message": "Mitglieder suchen"
+  },
+  "searchGroups": {
+    "message": "Search groups"
   },
   "allItems": {
     "message": "Alle Einträge"
@@ -387,7 +393,7 @@
     "message": "Auswählen"
   },
   "newItem": {
-    "message": "New item"
+    "message": "Neuer Eintrag"
   },
   "addItem": {
     "message": "Eintrag hinzufügen"
@@ -399,10 +405,11 @@
     "message": "Eintrag anzeigen"
   },
   "new": {
-    "message": "Neu"
+    "message": "Neu",
+    "description": "for adding new items"
   },
   "item": {
-    "message": "Item"
+    "message": "Eintrag"
   },
   "ex": {
     "message": "Bsp.",
@@ -579,10 +586,10 @@
     "message": "Ordner gelöscht"
   },
   "editInfo": {
-    "message": "Edit info"
+    "message": "Info bearbeiten"
   },
   "access": {
-    "message": "Access"
+    "message": "Zugriff"
   },
   "loggedOut": {
     "message": "Ausgeloggt"
@@ -742,7 +749,7 @@
     "message": "Keine Einträge vorhanden."
   },
   "noPermissionToViewAllCollectionItems": {
-    "message": "You do not have permission to view all items in this collection."
+    "message": "Du hast nicht die Berechtigung, alle Einträge in dieser Sammlung anzuzeigen."
   },
   "noCollectionsInList": {
     "message": "Keine Sammlungen vorhanden."
@@ -754,7 +761,7 @@
     "message": "Keine Benutzer vorhanden."
   },
   "noMembersInList": {
-    "message": "There are no members to list."
+    "message": "Keine Mitglieder zum Anzeigen vorhanden."
   },
   "noEventsInList": {
     "message": "Keine Ereignisse vorhanden."
@@ -901,7 +908,7 @@
     }
   },
   "deleteSelectedCollectionsDesc": {
-    "message": "$COUNT$ collection(s) will be permanently deleted.",
+    "message": "$COUNT$ Sammlung(en) werden dauerhaft gelöscht.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -910,7 +917,7 @@
     }
   },
   "deleteSelectedConfirmation": {
-    "message": "Are you sure you want to continue?"
+    "message": "Bist du sicher, dass du fortfahren möchtest?"
   },
   "moveSelectedItemsDesc": {
     "message": "Wählen Sie einen Ordner aus, in den Sie $COUNT$ ausgewählte(s) Objekt(e) verschieben möchten.",
@@ -2430,7 +2437,7 @@
     "message": "Sind Sie sich sicher, dass Sie diese Gruppe löschen wollen?"
   },
   "deleteMultipleGroupsConfirmation": {
-    "message": "Are you sure you want to delete the following $QUANTITY$ group(s)?",
+    "message": "Bist du sicher, dass du die folgende(n) $QUANTITY$ Gruppe(n) löschen möchtest?",
     "placeholders": {
       "quantity": {
         "content": "$1",
@@ -2457,7 +2464,7 @@
     "message": "Die externe ID kann als Referenz oder zur Verbindung zu einem externen System, wie einem Benutzerverzeichnis, verwendet werden."
   },
   "nestCollectionUnder": {
-    "message": "Nest collection under"
+    "message": "Sammlung verschachteln unter"
   },
   "accessControl": {
     "message": "Zugangskontrolle"
@@ -2481,13 +2488,22 @@
     "message": "Sammlung bearbeiten"
   },
   "collectionInfo": {
-    "message": "Collection info"
+    "message": "Sammlungsinfo"
   },
   "deleteCollectionConfirmation": {
     "message": "Möchten Sie diese Sammlung wirklich löschen?"
   },
   "editMember": {
-    "message": "Edit member"
+    "message": "Mitglied bearbeiten"
+  },
+  "fieldOnTabRequiresAttention": {
+    "message": "A field on the '$TAB$' tab requires your attention.",
+    "placeholders": {
+      "tab": {
+        "content": "$1",
+        "example": "Collection info"
+      }
+    }
   },
   "inviteUserDesc": {
     "message": "Lade einen neuen Benutzer zu deinem Anbieter ein, indem du die E-Mail-Adresse seines Bitwarden-Kontos unten einträgst. Falls dieser noch kein Bitwarden-Konto besitzt, wird er/sie zur Erstellung eines neuen Kontos aufgefordert."
@@ -2754,7 +2770,7 @@
     }
   },
   "deletedCollections": {
-    "message": "Deleted collections"
+    "message": "Gelöschte Sammlungen"
   },
   "deletedCollectionId": {
     "message": "Sammlung $ID$ gelöscht.",
@@ -2802,7 +2818,7 @@
     }
   },
   "deletedManyGroups": {
-    "message": "Deleted $QUANTITY$ group(s).",
+    "message": "$QUANTITY$ Gruppe(n) gelöscht.",
     "placeholders": {
       "quantity": {
         "content": "$1",
@@ -5540,11 +5556,23 @@
     }
   },
   "inputForbiddenCharacters": {
-    "message": "The following characters are not allowed: $CHARACTERS$",
+    "message": "Die folgenden Zeichen sind nicht erlaubt: $CHARACTERS$",
     "placeholders": {
       "characters": {
         "content": "$1",
         "example": "@, #, $, %"
+      }
+    }
+  },
+  "multipleInputEmails": {
+    "message": "1 or more emails are invalid"
+  },
+  "tooManyEmails": {
+    "message": "You can only submit up to $COUNT$ emails at a time",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "20"
       }
     }
   },
@@ -5807,7 +5835,7 @@
     "placeholders": {
       "confirm": {
         "content": "$1",
-        "example": "Delete 3 Projects"
+        "example": "Delete 3 projects"
       }
     }
   },
@@ -5911,7 +5939,7 @@
     "message": "Aktualisierung"
   },
   "plusNMore": {
-    "message": "+ $QUANTITY$ more",
+    "message": "+ $QUANTITY$ mehr",
     "placeholders": {
       "quantity": {
         "content": "$1",
@@ -5920,34 +5948,34 @@
     }
   },
   "groupInfo": {
-    "message": "Group info"
+    "message": "Gruppeninfo"
   },
   "editGroupMembersDesc": {
-    "message": "Grant members access to the group's assigned collections."
+    "message": "Erlaube Mitgliedern Zugriff auf die zugewiesenen Sammlungen der Gruppe."
   },
   "editGroupCollectionsDesc": {
-    "message": "Grant access to collections by adding them to this group."
+    "message": "Gewähre Zugriff auf Sammlungen, indem du diese zu dieser Gruppe hinzufügst."
   },
   "accessAllCollectionsDesc": {
-    "message": "Grant access to all current and future collections."
+    "message": "Gewähre Zugriff auf alle aktuellen und zukünftigen Sammlungen."
   },
   "accessAllCollectionsHelp": {
-    "message": "If checked, this will replace all other collection permissions."
+    "message": "Wenn aktiviert, ersetzt dies alle anderen Sammlungsberechtigungen."
   },
   "selectMembers": {
-    "message": "Select members"
+    "message": "Mitglieder auswählen"
   },
   "selectCollections": {
-    "message": "Select collections"
+    "message": "Sammlungen auswählen"
   },
   "role": {
     "message": "Rolle"
   },
   "removeMember": {
-    "message": "Remove member"
+    "message": "Mitglied entfernen"
   },
   "collection": {
-    "message": "Collection"
+    "message": "Sammlung"
   },
   "canView": {
     "message": "Darf anzeigen"
@@ -5962,13 +5990,13 @@
     "message": "Darf bearbeiten, Passwörter ausgenommen"
   },
   "noCollectionsAdded": {
-    "message": "No collections added"
+    "message": "Keine Sammlungen hinzugefügt"
   },
   "noMembersAdded": {
-    "message": "No members added"
+    "message": "Keine Mitglieder hinzugefügt"
   },
   "noGroupsAdded": {
-    "message": "No groups added"
+    "message": "Keine Gruppen hinzugefügt"
   },
   "group": {
     "message": "Gruppe"
@@ -5980,37 +6008,37 @@
     "message": "Dieses Mitglied darf auf alle Elemente zugreifen und diese ändern."
   },
   "membersColumnHeader": {
-    "message": "Member/Group"
+    "message": "Mitglied/Gruppe"
   },
   "groupAndMemberColumnHeader": {
-    "message": "Member"
+    "message": "Mitglied"
   },
   "selectGroupsAndMembers": {
-    "message": "Select groups and members"
+    "message": "Gruppen und Mitglieder auswählen"
   },
   "selectGroups": {
-    "message": "Select groups"
+    "message": "Gruppen auswählen"
   },
   "userPermissionOverrideHelper": {
-    "message": "Permissions set for a member will replace permissions set by that member's group"
+    "message": "Gesetzte Berechtigungen für ein Mitglied ersetzten dessen gesetzte Mitgliedergruppe-Berechtigungen"
   },
   "noMembersOrGroupsAdded": {
-    "message": "No members or groups added"
+    "message": "Keine Mitglieder oder Gruppen hinzugefügt"
   },
   "deleted": {
-    "message": "Deleted"
+    "message": "Gelöscht"
   },
   "memberStatusFilter": {
-    "message": "Member status filter"
+    "message": "Mitglied-Statusfilter"
   },
   "inviteMember": {
-    "message": "Invite member"
+    "message": "Mitglied einladen"
   },
   "needsConfirmation": {
-    "message": "Needs confirmation"
+    "message": "Benötigt eine Bestätigung"
   },
   "memberRole": {
-    "message": "Member role"
+    "message": "Mitgliedsrolle"
   },
   "moreFromBitwarden": {
     "message": "Mehr von Bitwarden"
@@ -6053,5 +6081,14 @@
         "example": "2"
       }
     }
+  },
+  "lowKdfIterations": {
+    "message": "Geringe KDF-Iterationen"
+  },
+  "lowKdfIterationsDesc": {
+    "message": "Erhöhe deine KDF-Verschlüsselungseinstellungen, um die Sicherheit deines Kontos zu verbessern."
+  },
+  "changeKdfSettings": {
+    "message": "KDF-Einstellungen ändern"
   }
 }

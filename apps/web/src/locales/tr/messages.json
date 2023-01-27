@@ -133,6 +133,9 @@
   "ms": {
     "message": "Ms"
   },
+  "mx": {
+    "message": "Mx"
+  },
   "dr": {
     "message": "Dr"
   },
@@ -305,6 +308,9 @@
   "searchMembers": {
     "message": "Üyelerde ara"
   },
+  "searchGroups": {
+    "message": "Grupları ara"
+  },
   "allItems": {
     "message": "Tüm kayıtlar"
   },
@@ -399,7 +405,8 @@
     "message": "Kaydı göster"
   },
   "new": {
-    "message": "Yeni"
+    "message": "Yeni",
+    "description": "for adding new items"
   },
   "item": {
     "message": "Kayıt"
@@ -1880,7 +1887,7 @@
     }
   },
   "premiumPriceWithFamilyPlan": {
-    "message": "Yalnızca $PRICE$/yıl karşılığında premium'a geçin veya $FAMILYPLANUSERCOUNT$ kullanıcıları için premium hesaplar ve bir kullanıcıyla sınırsız aile paylaşımı elde edin ",
+    "message": "Yalnızca $PRICE$/yıl karşılığında premium'a geçin veya $FAMILYPLANUSERCOUNT$ kullanıcı için premium hesap alıp sınırsız aile paylaşımı elde edin ",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -1893,7 +1900,7 @@
     }
   },
   "bitwardenFamiliesPlan": {
-    "message": "Bitwarden Aileleri planı."
+    "message": "Bitwarden Aile planı."
   },
   "addons": {
     "message": "Eklentiler"
@@ -2445,7 +2452,7 @@
     "message": "Bir üye kaldırıldıktan sonra kuruluş verilerine erişemez ve bu işlem geri alınamaz. Üyeyi kuruluşa geri eklemek için yeniden davet etmeniz ve kişinin daveti kabul etmesi gerekir."
   },
   "revokeUserConfirmation": {
-    "message": "Bir üye fesh edildiğinde, artık kuruluş verilerine erişimi olmaz. Üye erişimini hızlı bir şekilde geri yüklemek için İptal Edildi sekmesine gidin."
+    "message": "Bir üyelikten çıkıldığında, artık kuruluş verilerine erişimi olmaz. Üye erişimini hızlı bir şekilde düzeltmek için İptal Edilenler sekmesine gidin."
   },
   "removeUserConfirmationKeyConnector": {
     "message": "Uyarı! Bu kullanıcı, şifrelemesini yönetmek için Key Connector'a ihtiyaç duyuyor. Bu kullanıcıyı kuruluşunuzdan çıkarırsanız hesabı kalıcı olarak devre dışı kalacaktır. Bu işlem geri alınamaz. Devam etmek istiyor musunuz?"
@@ -2488,6 +2495,15 @@
   },
   "editMember": {
     "message": "Üyeyi düzenle"
+  },
+  "fieldOnTabRequiresAttention": {
+    "message": "'$TAB$' sekmesindeki bir alanla ilgilenmeniz gerekiyor.",
+    "placeholders": {
+      "tab": {
+        "content": "$1",
+        "example": "Collection info"
+      }
+    }
   },
   "inviteUserDesc": {
     "message": "Aşağıya Bitwarden hesabının e-posta adresini girerek kuruluşunuza yeni bir kullanıcı davet edin. Halihazırda bir Bitwarden hesabı yoksa yeni bir hesap oluşturması istenecektir."
@@ -5548,6 +5564,18 @@
       }
     }
   },
+  "multipleInputEmails": {
+    "message": "Bir veya birden fazla e-posta geçersiz"
+  },
+  "tooManyEmails": {
+    "message": "Bir seferde en fazla $COUNT$ e-posta gönderebilirsiniz",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "20"
+      }
+    }
+  },
   "fieldsNeedAttention": {
     "message": "Üstteki $COUNT$ alan(lar) la ilgilenmeniz gerekiyor.",
     "placeholders": {
@@ -5807,7 +5835,7 @@
     "placeholders": {
       "confirm": {
         "content": "$1",
-        "example": "Delete 3 Projects"
+        "example": "Delete 3 projects"
       }
     }
   },
@@ -6053,5 +6081,14 @@
         "example": "2"
       }
     }
+  },
+  "lowKdfIterations": {
+    "message": "Düşük KDF Yinelemeleri"
+  },
+  "lowKdfIterationsDesc": {
+    "message": "Hesabınızın güvenliğini artırmak için KDF şifreleme ayarlarınızı yükseltin."
+  },
+  "changeKdfSettings": {
+    "message": "KDF ayarlarını değiştir"
   }
 }

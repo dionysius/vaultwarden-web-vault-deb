@@ -133,6 +133,9 @@
   "ms": {
     "message": "Slečna"
   },
+  "mx": {
+    "message": "Vážený"
+  },
   "dr": {
     "message": "Dr"
   },
@@ -278,32 +281,35 @@
     "message": "Hľadať v obľúbených"
   },
   "searchLogin": {
-    "message": "Search logins",
+    "message": "Hľadať prihlásenia",
     "description": "Search Login type"
   },
   "searchCard": {
-    "message": "Search cards",
+    "message": "Hľadať karty",
     "description": "Search Card type"
   },
   "searchIdentity": {
-    "message": "Search identities",
+    "message": "Hľadať totožnosti",
     "description": "Search Identity type"
   },
   "searchSecureNote": {
-    "message": "Search secure notes",
+    "message": "Hľadať zabezpečené poznámky",
     "description": "Search Secure Note type"
   },
   "searchVault": {
     "message": "Prehľadávať trezor"
   },
   "searchMyVault": {
-    "message": "Search my vault"
+    "message": "Prehľadávať môj trezor"
   },
   "searchOrganization": {
-    "message": "Search organization"
+    "message": "Vyhľadať organizáciu"
   },
   "searchMembers": {
-    "message": "Search members"
+    "message": "Hľadať členov"
+  },
+  "searchGroups": {
+    "message": "Search groups"
   },
   "allItems": {
     "message": "Všetky položky"
@@ -387,7 +393,7 @@
     "message": "Vybrať"
   },
   "newItem": {
-    "message": "New item"
+    "message": "Nová položka"
   },
   "addItem": {
     "message": "Pridať položku"
@@ -399,10 +405,11 @@
     "message": "Zobraziť položku"
   },
   "new": {
-    "message": "New"
+    "message": "New",
+    "description": "for adding new items"
   },
   "item": {
-    "message": "Item"
+    "message": "Položka"
   },
   "ex": {
     "message": "napr.",
@@ -579,10 +586,10 @@
     "message": "Priečinok odstránený"
   },
   "editInfo": {
-    "message": "Edit info"
+    "message": "Upraviť informácie"
   },
   "access": {
-    "message": "Access"
+    "message": "Prístup"
   },
   "loggedOut": {
     "message": "Odhlásený"
@@ -742,7 +749,7 @@
     "message": "Neexistujú žiadne položky na zobrazenie."
   },
   "noPermissionToViewAllCollectionItems": {
-    "message": "You do not have permission to view all items in this collection."
+    "message": "Nemáte povolenie pre zobrazenie všetkých položiek v tejto zbierke."
   },
   "noCollectionsInList": {
     "message": "Neexistujú žiadne zbierky na zobrazenie."
@@ -754,7 +761,7 @@
     "message": "Neexistujú žiadni používatelia na zobrazenie."
   },
   "noMembersInList": {
-    "message": "There are no members to list."
+    "message": "Neexistujú žiadni členovia na zobrazenie."
   },
   "noEventsInList": {
     "message": "Neexistujú žiadne udalosti na zobrazenie."
@@ -901,7 +908,7 @@
     }
   },
   "deleteSelectedCollectionsDesc": {
-    "message": "$COUNT$ collection(s) will be permanently deleted.",
+    "message": "$COUNT$ zbierok bude natrvalo vymazaných.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -910,7 +917,7 @@
     }
   },
   "deleteSelectedConfirmation": {
-    "message": "Are you sure you want to continue?"
+    "message": "Ste si istí, že chcete pokračovať?"
   },
   "moveSelectedItemsDesc": {
     "message": "Vyberte priečinok do ktorého chcete presunúť $COUNT$ vybraných položiek.",
@@ -2430,7 +2437,7 @@
     "message": "Naozaj chcete odstrániť túto skupinu?"
   },
   "deleteMultipleGroupsConfirmation": {
-    "message": "Are you sure you want to delete the following $QUANTITY$ group(s)?",
+    "message": "Naozaj chcete odstrániť týchto $QUANTITY$ skupín?",
     "placeholders": {
       "quantity": {
         "content": "$1",
@@ -2457,7 +2464,7 @@
     "message": "Externé Id sa môže použiť na previazanie tohto zdroja s externým systémom - napríklad s užívateľským adresárom."
   },
   "nestCollectionUnder": {
-    "message": "Nest collection under"
+    "message": "Zaradiť zbierku pod"
   },
   "accessControl": {
     "message": "Riadenie prístupu"
@@ -2481,13 +2488,22 @@
     "message": "Upraviť zbierku"
   },
   "collectionInfo": {
-    "message": "Collection info"
+    "message": "Informácie o zbierke"
   },
   "deleteCollectionConfirmation": {
     "message": "Naozaj chcete odstrániť túto zbierku?"
   },
   "editMember": {
-    "message": "Edit member"
+    "message": "Upraviť člena"
+  },
+  "fieldOnTabRequiresAttention": {
+    "message": "A field on the '$TAB$' tab requires your attention.",
+    "placeholders": {
+      "tab": {
+        "content": "$1",
+        "example": "Collection info"
+      }
+    }
   },
   "inviteUserDesc": {
     "message": "Pozvite používateľov do vašej organizácie zadaním emailovej adresy ich Bitwarden účtu nižšie. Ak ešte nemajú Bitwarden účet, obdržia požiadavku na jeho vytvorenie."
@@ -2754,7 +2770,7 @@
     }
   },
   "deletedCollections": {
-    "message": "Deleted collections"
+    "message": "Zbierky vymazané"
   },
   "deletedCollectionId": {
     "message": "Zbierka $ID$ odstránená.",
@@ -2802,7 +2818,7 @@
     }
   },
   "deletedManyGroups": {
-    "message": "Deleted $QUANTITY$ group(s).",
+    "message": "$QUANTITY$ skupín vymazaných.",
     "placeholders": {
       "quantity": {
         "content": "$1",
@@ -5540,11 +5556,23 @@
     }
   },
   "inputForbiddenCharacters": {
-    "message": "The following characters are not allowed: $CHARACTERS$",
+    "message": "Tieto znaky nie sú povolené: $CHARACTERS$",
     "placeholders": {
       "characters": {
         "content": "$1",
         "example": "@, #, $, %"
+      }
+    }
+  },
+  "multipleInputEmails": {
+    "message": "1 or more emails are invalid"
+  },
+  "tooManyEmails": {
+    "message": "You can only submit up to $COUNT$ emails at a time",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "20"
       }
     }
   },
@@ -5647,25 +5675,25 @@
     "message": "Projects"
   },
   "lastEdited": {
-    "message": "Last Edited"
+    "message": "Last edited"
   },
   "editSecret": {
-    "message": "Edit Secret"
+    "message": "Edit secret"
   },
   "addSecret": {
-    "message": "Add Secret"
+    "message": "Add secret"
   },
   "copySecretName": {
-    "message": "Copy Secret Name"
+    "message": "Copy secret name"
   },
   "copySecretValue": {
-    "message": "Copy Secret Value"
+    "message": "Copy secret value"
   },
   "deleteSecret": {
-    "message": "Delete Secret"
+    "message": "Delete secret"
   },
   "deleteSecrets": {
-    "message": "Delete Secrets"
+    "message": "Delete secrets"
   },
   "secretProjectAssociationDescription": {
     "message": "Vyberte projekty ku ktorým bude heslo patriť. Iba tí používatelia organizácie, ktorí majú prístup k zvoleným projektom budú môcť vidieť heslo."
@@ -5680,31 +5708,31 @@
     "message": "Project"
   },
   "editProject": {
-    "message": "Edit Project"
+    "message": "Edit project"
   },
   "viewProject": {
-    "message": "View Project"
+    "message": "View project"
   },
   "deleteProject": {
-    "message": "Delete Project"
+    "message": "Delete project"
   },
   "deleteProjects": {
-    "message": "Delete Projects"
+    "message": "Delete projects"
   },
   "secret": {
     "message": "Secret"
   },
   "serviceAccount": {
-    "message": "Service Account"
+    "message": "Service account"
   },
   "serviceAccounts": {
-    "message": "Service Accounts"
+    "message": "Service accounts"
   },
   "secrets": {
     "message": "Secrets"
   },
   "nameValuePair": {
-    "message": "Name/Value Pair"
+    "message": "Name/Value pair"
   },
   "secretEdited": {
     "message": "Secret edited"
@@ -5713,10 +5741,10 @@
     "message": "Secret created"
   },
   "newSecret": {
-    "message": "New Secret"
+    "message": "New secret"
   },
   "newServiceAccount": {
-    "message": "New Service Account"
+    "message": "New service account"
   },
   "secretsNoItemsTitle": {
     "message": "No secrets to show"
@@ -5728,25 +5756,25 @@
     "message": "Nothing to show yet"
   },
   "serviceAccountsNoItemsMessage": {
-    "message": "Create a new Service Account to get started automating secret access."
+    "message": "Create a new service account to get started automating secret access."
   },
   "searchSecrets": {
-    "message": "Search Secrets"
+    "message": "Search secrets"
   },
   "deleteServiceAccounts": {
-    "message": "Delete Service Accounts"
+    "message": "Delete service accounts"
   },
   "deleteServiceAccount": {
-    "message": "Delete Service Account"
+    "message": "Delete service account"
   },
   "viewServiceAccount": {
-    "message": "View Service Account"
+    "message": "View service account"
   },
   "searchServiceAccounts": {
-    "message": "Search Service Accounts"
+    "message": "Search service accounts"
   },
   "addProject": {
-    "message": "Add Project"
+    "message": "Add project"
   },
   "projectEdited": {
     "message": "Project edited"
@@ -5758,10 +5786,10 @@
     "message": "Project created"
   },
   "projectName": {
-    "message": "Project Name"
+    "message": "Project name"
   },
   "newProject": {
-    "message": "New Project"
+    "message": "New project"
   },
   "softDeleteSecretWarning": {
     "message": "Deleting secrets can affect existing integrations."
@@ -5770,7 +5798,7 @@
     "message": "Secrets sent to trash"
   },
   "serviceAccountCreated": {
-    "message": "Service Account Created"
+    "message": "Service account created"
   },
   "smAccess": {
     "message": "Access"
@@ -5782,10 +5810,10 @@
     "message": "Service account name"
   },
   "newSaSelectAccess": {
-    "message": "Type or Select Projects or Secrets"
+    "message": "Type or select projects or secrets"
   },
   "newSaTypeToFilter": {
-    "message": "Type to Filter"
+    "message": "Type to filter"
   },
   "deleteProjectsToast": {
     "message": "Projects deleted"
@@ -5807,7 +5835,7 @@
     "placeholders": {
       "confirm": {
         "content": "$1",
-        "example": "Delete 3 Projects"
+        "example": "Delete 3 projects"
       }
     }
   },
@@ -5848,7 +5876,7 @@
     "message": "Secret sent to trash"
   },
   "searchProjects": {
-    "message": "Search Projects"
+    "message": "Search projects"
   },
   "accessTokens": {
     "message": "Access tokens"
@@ -5893,7 +5921,7 @@
     "message": "Permissions management is unavailable for beta."
   },
   "revokeAccessToken": {
-    "message": "Revoke Access Token"
+    "message": "Revoke access token"
   },
   "submenu": {
     "message": "Submenu"
@@ -5911,7 +5939,7 @@
     "message": "Aktualizovať"
   },
   "plusNMore": {
-    "message": "+ $QUANTITY$ more",
+    "message": "+ $QUANTITY$ ďalších",
     "placeholders": {
       "quantity": {
         "content": "$1",
@@ -5920,34 +5948,34 @@
     }
   },
   "groupInfo": {
-    "message": "Group info"
+    "message": "Info o Skupine"
   },
   "editGroupMembersDesc": {
-    "message": "Grant members access to the group's assigned collections."
+    "message": "Povoliť členom prístup k zbierkam prideleným skupine."
   },
   "editGroupCollectionsDesc": {
-    "message": "Grant access to collections by adding them to this group."
+    "message": "Povoľte prístup k zbierkam ich pridaním do tejto skupiny."
   },
   "accessAllCollectionsDesc": {
-    "message": "Grant access to all current and future collections."
+    "message": "Povoliť prístup k všetkým súčasným a budúcim zbierkam."
   },
   "accessAllCollectionsHelp": {
-    "message": "If checked, this will replace all other collection permissions."
+    "message": "Zaškrtnutím nahradíte všetky ostatné povolenia ku zbierke."
   },
   "selectMembers": {
-    "message": "Select members"
+    "message": "Vybrať členov"
   },
   "selectCollections": {
-    "message": "Select collections"
+    "message": "Vybrať zbierku"
   },
   "role": {
     "message": "Rola"
   },
   "removeMember": {
-    "message": "Remove member"
+    "message": "Odstániť člena"
   },
   "collection": {
-    "message": "Collection"
+    "message": "Zbierka"
   },
   "canView": {
     "message": "Môže zobraziť"
@@ -5962,13 +5990,13 @@
     "message": "Môže upravovať okrem hesiel"
   },
   "noCollectionsAdded": {
-    "message": "No collections added"
+    "message": "Nebolí pridané žiadne zbierky"
   },
   "noMembersAdded": {
-    "message": "No members added"
+    "message": "Žiadni pridaní členovia"
   },
   "noGroupsAdded": {
-    "message": "No groups added"
+    "message": "Žiadne pridané skupiny"
   },
   "group": {
     "message": "Skupina"
@@ -5980,37 +6008,37 @@
     "message": "Tento člen môže upravovať a pristupovať k všetkým položkám."
   },
   "membersColumnHeader": {
-    "message": "Member/Group"
+    "message": "Člen/Skupina"
   },
   "groupAndMemberColumnHeader": {
-    "message": "Member"
+    "message": "Člen"
   },
   "selectGroupsAndMembers": {
-    "message": "Select groups and members"
+    "message": "Vyberte skupiny a členov"
   },
   "selectGroups": {
-    "message": "Select groups"
+    "message": "Vyberte skupiny"
   },
   "userPermissionOverrideHelper": {
-    "message": "Permissions set for a member will replace permissions set by that member's group"
+    "message": "Povolenia nastavené pre člena nahradia povolenia nastavené skupinou, ktorej je členom"
   },
   "noMembersOrGroupsAdded": {
-    "message": "No members or groups added"
+    "message": "Neboli pridaní žiadni členovia alebo skupiny"
   },
   "deleted": {
-    "message": "Deleted"
+    "message": "Odstránené"
   },
   "memberStatusFilter": {
-    "message": "Member status filter"
+    "message": "Filtrovať podľa členstva"
   },
   "inviteMember": {
-    "message": "Invite member"
+    "message": "Pozvať člena"
   },
   "needsConfirmation": {
-    "message": "Needs confirmation"
+    "message": "Potrebné potvrdenie"
   },
   "memberRole": {
-    "message": "Member role"
+    "message": "Rola člena"
   },
   "moreFromBitwarden": {
     "message": "Viac od spoločnosti Bitwarden"
@@ -6053,5 +6081,14 @@
         "example": "2"
       }
     }
+  },
+  "lowKdfIterations": {
+    "message": "Nízky počet iterácií KDF"
+  },
+  "lowKdfIterationsDesc": {
+    "message": "Zvýšte nastavenia šifrovania KDF, aby ste zvýšili bezpečnosť svojho účtu."
+  },
+  "changeKdfSettings": {
+    "message": "Zmeniť nastavenia KDF"
   }
 }

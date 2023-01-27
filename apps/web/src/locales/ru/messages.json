@@ -133,6 +133,9 @@
   "ms": {
     "message": "Проф."
   },
+  "mx": {
+    "message": "Mx"
+  },
   "dr": {
     "message": "Тов."
   },
@@ -305,6 +308,9 @@
   "searchMembers": {
     "message": "Поиск участников"
   },
+  "searchGroups": {
+    "message": "Поиск групп"
+  },
   "allItems": {
     "message": "Все элементы"
   },
@@ -399,7 +405,8 @@
     "message": "Просмотр элемента"
   },
   "new": {
-    "message": "Новый"
+    "message": "Новый",
+    "description": "for adding new items"
   },
   "item": {
     "message": "Элемент"
@@ -892,7 +899,7 @@
     "message": "Отредактируйте коллекции, с которыми совместно используется этот элемент. Данный элемент смогут видеть только пользователи организации, имеющие доступ к этим коллекциям."
   },
   "deleteSelectedItemsDesc": {
-    "message": "Выбрано элементов для удаления: $COUNT$. Вы действительно хотите удалить все эти элементы?",
+    "message": "Элеметов для перемещения в корзину: $COUNT$.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -2454,10 +2461,10 @@
     "message": "Внешний ID"
   },
   "externalIdDesc": {
-    "message": "Внешний идентификатор может быть использован в качестве ссылки или для связи этого ресурса с внешней системой, такой как каталог пользователя."
+    "message": "Внешний ID - это незашифрованная ссылка, используемая Bitwarden Directory Connector и API."
   },
   "nestCollectionUnder": {
-    "message": "Nest collection under"
+    "message": "Разместить коллекцию под:"
   },
   "accessControl": {
     "message": "Контроль доступа"
@@ -2489,11 +2496,20 @@
   "editMember": {
     "message": "Изменить участника"
   },
+  "fieldOnTabRequiresAttention": {
+    "message": "Поле на вкладке '$TAB$' требует вашего внимания.",
+    "placeholders": {
+      "tab": {
+        "content": "$1",
+        "example": "Collection info"
+      }
+    }
+  },
   "inviteUserDesc": {
     "message": "Пригласите нового пользователя в свою организацию, введя ниже адрес email его аккаунта Bitwarden. Если у него пока нет аккаунта Bitwarden, ему будет предложено его создать."
   },
   "inviteMultipleEmailDesc": {
-    "message": "Вы можете пригласить до $COUNT$ пользователей одновременно, разделяя адреса email запятыми.",
+    "message": "Введите до $COUNT$ адресов email, разделяя их запятой.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -2985,7 +3001,7 @@
     "message": "Доступ группы"
   },
   "groupAccessUserDesc": {
-    "message": "Изменить группы, в которые входит этот пользователь."
+    "message": "Предоставьте участникам доступ к коллекциям, добавив их в 1 или несколько групп."
   },
   "invitedUsers": {
     "message": "Пользователь(и) приглашен(ы)"
@@ -3738,7 +3754,7 @@
     "message": "Восстановить элементы"
   },
   "restoreSelectedItemsDesc": {
-    "message": "Выбрано элементов для восстановления: $COUNT$. Вы действительно хотите восстановить все эти элементы?",
+    "message": "Выбрано элементов для восстановления: $COUNT$. Вы действительно хотите восстановить эти элементы?",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -5548,6 +5564,18 @@
       }
     }
   },
+  "multipleInputEmails": {
+    "message": "Один или несколько адресов email недействительны"
+  },
+  "tooManyEmails": {
+    "message": "Одновременно можно отправить не более $COUNT$ писем",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "20"
+      }
+    }
+  },
   "fieldsNeedAttention": {
     "message": "$COUNT$ поля(ей) выше требуют вашего внимания.",
     "placeholders": {
@@ -5621,7 +5649,7 @@
     "message": "Пользовательский цвет"
   },
   "multiSelectPlaceholder": {
-    "message": "-- Тип фильтра --"
+    "message": "-- Введите для фильтрации --"
   },
   "multiSelectLoading": {
     "message": "Получение параметров..."
@@ -5656,7 +5684,7 @@
     "message": "Добавить секрет"
   },
   "copySecretName": {
-    "message": "Скопировать имя секрета"
+    "message": "Скопировать название секрета"
   },
   "copySecretValue": {
     "message": "Скопировать значение секрета"
@@ -5683,7 +5711,7 @@
     "message": "Изменить проект"
   },
   "viewProject": {
-    "message": "Посмотреть проект"
+    "message": "Просмотреть проект"
   },
   "deleteProject": {
     "message": "Удалить проект"
@@ -5704,7 +5732,7 @@
     "message": "Секреты"
   },
   "nameValuePair": {
-    "message": "Пара имя/значение"
+    "message": "Пара название/значение"
   },
   "secretEdited": {
     "message": "Секрет изменен"
@@ -5743,7 +5771,7 @@
     "message": "Просмотреть сервисный аккаунт"
   },
   "searchServiceAccounts": {
-    "message": "Искать сервисные аккаунты"
+    "message": "Поиск сервисных аккаунтов"
   },
   "addProject": {
     "message": "Добавить проект"
@@ -5807,7 +5835,7 @@
     "placeholders": {
       "confirm": {
         "content": "$1",
-        "example": "Delete 3 Projects"
+        "example": "Delete 3 projects"
       }
     }
   },
@@ -6053,5 +6081,14 @@
         "example": "2"
       }
     }
+  },
+  "lowKdfIterations": {
+    "message": "Низкие итерации KDF"
+  },
+  "lowKdfIterationsDesc": {
+    "message": "Увеличьте параметры шифрования KDF, чтобы повысить безопасность аккаунта."
+  },
+  "changeKdfSettings": {
+    "message": "Изменить параметры KDF"
   }
 }

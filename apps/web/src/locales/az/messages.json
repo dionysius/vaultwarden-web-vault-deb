@@ -133,6 +133,9 @@
   "ms": {
     "message": "Hörmətli"
   },
+  "mx": {
+    "message": "Hörmətli"
+  },
   "dr": {
     "message": "Dr"
   },
@@ -278,32 +281,35 @@
     "message": "Sevimliləri axtar"
   },
   "searchLogin": {
-    "message": "Search logins",
+    "message": "Girişlərdə axtar",
     "description": "Search Login type"
   },
   "searchCard": {
-    "message": "Search cards",
+    "message": "Kartlarda axtar",
     "description": "Search Card type"
   },
   "searchIdentity": {
-    "message": "Search identities",
+    "message": "Kimliklərdə axtar",
     "description": "Search Identity type"
   },
   "searchSecureNote": {
-    "message": "Search secure notes",
+    "message": "Güvənli qeydlərdə axtar",
     "description": "Search Secure Note type"
   },
   "searchVault": {
     "message": "Anbarda axtar"
   },
   "searchMyVault": {
-    "message": "Search my vault"
+    "message": "Anbarımda axtar"
   },
   "searchOrganization": {
-    "message": "Search organization"
+    "message": "Təşkilatda axtar"
   },
   "searchMembers": {
-    "message": "Search members"
+    "message": "Üzvlərdə axtar"
+  },
+  "searchGroups": {
+    "message": "Search groups"
   },
   "allItems": {
     "message": "Bütün elementlər"
@@ -387,7 +393,7 @@
     "message": "Seçin"
   },
   "newItem": {
-    "message": "New item"
+    "message": "Yeni element"
   },
   "addItem": {
     "message": "Element əlavə et"
@@ -399,10 +405,11 @@
     "message": "Elementə bax"
   },
   "new": {
-    "message": "Yeni"
+    "message": "Yeni",
+    "description": "for adding new items"
   },
   "item": {
-    "message": "Item"
+    "message": "Element"
   },
   "ex": {
     "message": "məs.",
@@ -470,7 +477,7 @@
     "message": "Anbar elementləri"
   },
   "filter": {
-    "message": "Filter"
+    "message": "Filtr"
   },
   "moveSelectedToOrg": {
     "message": "Seçiləni təşkilata daşı"
@@ -579,10 +586,10 @@
     "message": "Qovluq silindi"
   },
   "editInfo": {
-    "message": "Edit info"
+    "message": "Məlumata düzəliş et"
   },
   "access": {
-    "message": "Access"
+    "message": "Müraciət"
   },
   "loggedOut": {
     "message": "Çıxış edildi"
@@ -742,7 +749,7 @@
     "message": "Siyahılanacaq heç bir element yoxdur."
   },
   "noPermissionToViewAllCollectionItems": {
-    "message": "You do not have permission to view all items in this collection."
+    "message": "Bu kolleksiyadakı bütün elementlərə baxmaq üçün icazəniz yoxdur."
   },
   "noCollectionsInList": {
     "message": "Siyahılanacaq heç bir kolleksiya yoxdur."
@@ -754,7 +761,7 @@
     "message": "Siyahılanacaq heç bir element yoxdur."
   },
   "noMembersInList": {
-    "message": "There are no members to list."
+    "message": "Siyahılanacaq heç bir üzv yoxdur."
   },
   "noEventsInList": {
     "message": "Siyahılanacaq heç bir element yoxdur."
@@ -901,7 +908,7 @@
     }
   },
   "deleteSelectedCollectionsDesc": {
-    "message": "$COUNT$ collection(s) will be permanently deleted.",
+    "message": "$COUNT$ kolleksiya həmişəlik silinəcək.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -910,7 +917,7 @@
     }
   },
   "deleteSelectedConfirmation": {
-    "message": "Are you sure you want to continue?"
+    "message": "Davam etmək istədiyinizə əminsiniz?"
   },
   "moveSelectedItemsDesc": {
     "message": "Seçdiyiniz $COUNT$ elementi daşımaq istədiyiniz qovluğu seçin.",
@@ -2430,7 +2437,7 @@
     "message": "Bu qrupu silmək istədiyinizə əminsiniz?"
   },
   "deleteMultipleGroupsConfirmation": {
-    "message": "Are you sure you want to delete the following $QUANTITY$ group(s)?",
+    "message": "Aşağıdakı $QUANTITY$ qrupu silmək istədiyinizə əminsiniz?",
     "placeholders": {
       "quantity": {
         "content": "$1",
@@ -2481,13 +2488,22 @@
     "message": "Kolleksiyaya düzəliş et"
   },
   "collectionInfo": {
-    "message": "Collection info"
+    "message": "Kolleksiya məlumatı"
   },
   "deleteCollectionConfirmation": {
     "message": "Bu kolleksiyanı silmək istədiyinizə əminsiniz?"
   },
   "editMember": {
-    "message": "Edit member"
+    "message": "Üzvə düzəliş et"
+  },
+  "fieldOnTabRequiresAttention": {
+    "message": "A field on the '$TAB$' tab requires your attention.",
+    "placeholders": {
+      "tab": {
+        "content": "$1",
+        "example": "Collection info"
+      }
+    }
   },
   "inviteUserDesc": {
     "message": "Aşağıda Bitwarden hesabının e-poçt ünvanını daxil edərək təşkilatınıza yeni bir istifadəçi dəvət edə bilərsiniz. Əgər Bitwarden hesabı yoxdursa, yeni bir hesab yaratmaları üçün istək göndəriləcək."
@@ -2754,7 +2770,7 @@
     }
   },
   "deletedCollections": {
-    "message": "Deleted collections"
+    "message": "Silinmiş kolleksiyalar"
   },
   "deletedCollectionId": {
     "message": "$ID$ kolleksiyası silindi.",
@@ -2802,7 +2818,7 @@
     }
   },
   "deletedManyGroups": {
-    "message": "Deleted $QUANTITY$ group(s).",
+    "message": "$QUANTITY$ qrup silindi.",
     "placeholders": {
       "quantity": {
         "content": "$1",
@@ -5540,11 +5556,23 @@
     }
   },
   "inputForbiddenCharacters": {
-    "message": "The following characters are not allowed: $CHARACTERS$",
+    "message": "Aşağıdakı simvollara icazə verilmir: $CHARACTERS$",
     "placeholders": {
       "characters": {
         "content": "$1",
         "example": "@, #, $, %"
+      }
+    }
+  },
+  "multipleInputEmails": {
+    "message": "1 or more emails are invalid"
+  },
+  "tooManyEmails": {
+    "message": "You can only submit up to $COUNT$ emails at a time",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "20"
       }
     }
   },
@@ -5807,7 +5835,7 @@
     "placeholders": {
       "confirm": {
         "content": "$1",
-        "example": "Delete 3 Projects"
+        "example": "Delete 3 projects"
       }
     }
   },
@@ -5911,7 +5939,7 @@
     "message": "Güncəllə"
   },
   "plusNMore": {
-    "message": "+ $QUANTITY$ more",
+    "message": "daha $QUANTITY$ ədəd",
     "placeholders": {
       "quantity": {
         "content": "$1",
@@ -5920,34 +5948,34 @@
     }
   },
   "groupInfo": {
-    "message": "Group info"
+    "message": "Qrup məlumatı"
   },
   "editGroupMembersDesc": {
-    "message": "Grant members access to the group's assigned collections."
+    "message": "Üzvlərə qrupun təyin edilmiş kolleksiyalarına müraciət icazəsi verin."
   },
   "editGroupCollectionsDesc": {
-    "message": "Grant access to collections by adding them to this group."
+    "message": "Bu qrupa əlavə edərək kolleksiyalara müraciət icazəsi verin."
   },
   "accessAllCollectionsDesc": {
-    "message": "Grant access to all current and future collections."
+    "message": "Hazırkı və gələcəkdəki bütün kolleksiyalara müraciət icazəsi verin."
   },
   "accessAllCollectionsHelp": {
-    "message": "If checked, this will replace all other collection permissions."
+    "message": "İşarələnsə bu, digər bütün kolleksiya icazələrini əvəz edəcək."
   },
   "selectMembers": {
-    "message": "Select members"
+    "message": "Üzv seç"
   },
   "selectCollections": {
-    "message": "Select collections"
+    "message": "Kolleksiya seç"
   },
   "role": {
     "message": "Rol"
   },
   "removeMember": {
-    "message": "Remove member"
+    "message": "Üzv sil"
   },
   "collection": {
-    "message": "Collection"
+    "message": "Kolleksiya"
   },
   "canView": {
     "message": "Baxa bilər"
@@ -5962,13 +5990,13 @@
     "message": "Parollar istisna olmaqla düzəliş edə bilər"
   },
   "noCollectionsAdded": {
-    "message": "No collections added"
+    "message": "Heç bir kolleksiya əlavə edilmədi"
   },
   "noMembersAdded": {
-    "message": "No members added"
+    "message": "Heç bir üzv əlavə edilmədi"
   },
   "noGroupsAdded": {
-    "message": "No groups added"
+    "message": "Heç bir qrup əlavə edilmədi"
   },
   "group": {
     "message": "Qrup"
@@ -5980,37 +6008,37 @@
     "message": "Bu üzv, bütün elementlərə müraciət edə və onları dəyişdirə bilər."
   },
   "membersColumnHeader": {
-    "message": "Member/Group"
+    "message": "Üzv/Qrup"
   },
   "groupAndMemberColumnHeader": {
-    "message": "Member"
+    "message": "Üzv"
   },
   "selectGroupsAndMembers": {
-    "message": "Select groups and members"
+    "message": "Qrup və üzv seç"
   },
   "selectGroups": {
-    "message": "Select groups"
+    "message": "Qrupları seç"
   },
   "userPermissionOverrideHelper": {
-    "message": "Permissions set for a member will replace permissions set by that member's group"
+    "message": "Bir üzv üçün tənzimlənən icazələr, həmin üzvün qrupu tərəfindən tənzimlənən icazələri əvəz edəcək"
   },
   "noMembersOrGroupsAdded": {
-    "message": "No members or groups added"
+    "message": "Heç bir üzv və ya qrup əlavə edilmədi"
   },
   "deleted": {
-    "message": "Deleted"
+    "message": "Silindi"
   },
   "memberStatusFilter": {
-    "message": "Member status filter"
+    "message": "Üzv status filtri"
   },
   "inviteMember": {
-    "message": "Invite member"
+    "message": "Üzv dəvət et"
   },
   "needsConfirmation": {
-    "message": "Needs confirmation"
+    "message": "Təsdiqləmə lazımdır"
   },
   "memberRole": {
-    "message": "Member role"
+    "message": "Üzv rolu"
   },
   "moreFromBitwarden": {
     "message": "\"Bitwarden\"dən daha çoxu"
@@ -6053,5 +6081,14 @@
         "example": "2"
       }
     }
+  },
+  "lowKdfIterations": {
+    "message": "Low KDF Iterations"
+  },
+  "lowKdfIterationsDesc": {
+    "message": "Increase your KDF encryption settings to improve the security of your account."
+  },
+  "changeKdfSettings": {
+    "message": "Change KDF settings"
   }
 }
