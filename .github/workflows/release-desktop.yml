@@ -184,6 +184,12 @@ jobs:
           --quiet \
           --endpoint-url https://${CF_ACCOUNT}.r2.cloudflarestorage.com
 
+      - name: Get checksum files
+        uses: bitwarden/gh-actions/get-checksum@8b6a560c8ad3b9dab81659ae6cd1e319d8771a91
+        with:
+          packages_dir: "apps/desktop/artifacts"
+          file_path: "apps/desktop/artifacts/sha256-checksums.txt"
+
       - name: Create Release
         uses: ncipollo/release-action@95215a3cb6e6a1908b3c44e00b4fdb15548b1e09
         if: ${{ steps.release-channel.outputs.channel == 'latest' && github.event.inputs.release_type != 'Dry Run' && github.event.inputs.github_release }}
@@ -214,7 +220,8 @@ jobs:
             apps/desktop/artifacts/Bitwarden-${{ env.PKG_VERSION }}-universal.pkg.archive,
             apps/desktop/artifacts/${{ env.RELEASE_CHANNEL }}.yml,
             apps/desktop/artifacts/${{ env.RELEASE_CHANNEL }}-linux.yml,
-            apps/desktop/artifacts/${{ env.RELEASE_CHANNEL }}-mac.yml"
+            apps/desktop/artifacts/${{ env.RELEASE_CHANNEL }}-mac.yml,
+            apps/desktop/artifacts/sha256-checksums.txt"
           commit: ${{ github.sha }}
           tag: desktop-v${{ env.PKG_VERSION }}
           name: Desktop v${{ env.PKG_VERSION }}
