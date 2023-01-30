@@ -17,6 +17,7 @@ import { CollectionData } from "../models/data/collection.data";
 import { Cipher } from "../models/domain/cipher";
 import { Collection } from "../models/domain/collection";
 import { Folder } from "../models/domain/folder";
+import { KdfConfig } from "../models/domain/kdf-config";
 import { CipherWithIdExport as CipherExport } from "../models/export/cipher-with-ids.export";
 import { CollectionWithIdExport as CollectionExport } from "../models/export/collection-with-id.export";
 import { EventExport } from "../models/export/event.export";
@@ -54,12 +55,12 @@ export class ExportService implements ExportServiceAbstraction {
       : await this.getExport("json");
 
     const salt = Utils.fromBufferToB64(await this.cryptoFunctionService.randomBytes(16));
-    const kdfIterations = DEFAULT_PBKDF2_ITERATIONS;
+    const kdfConfig = new KdfConfig(DEFAULT_PBKDF2_ITERATIONS);
     const key = await this.cryptoService.makePinKey(
       password,
       salt,
       KdfType.PBKDF2_SHA256,
-      kdfIterations
+      kdfConfig
     );
 
     const encKeyValidation = await this.cryptoService.encrypt(Utils.newGuid(), key);
@@ -69,7 +70,7 @@ export class ExportService implements ExportServiceAbstraction {
       encrypted: true,
       passwordProtected: true,
       salt: salt,
-      kdfIterations: kdfIterations,
+      kdfIterations: kdfConfig.iterations,
       kdfType: KdfType.PBKDF2_SHA256,
       encKeyValidation_DO_NOT_EDIT: encKeyValidation.encryptedString,
       data: encText.encryptedString,

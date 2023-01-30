@@ -62,7 +62,7 @@ export class UpdateTempPasswordComponent extends BaseChangePasswordComponent {
   async setupSubmitActions(): Promise<boolean> {
     this.email = await this.stateService.getEmail();
     this.kdf = await this.stateService.getKdfType();
-    this.kdfIterations = await this.stateService.getKdfIterations();
+    this.kdfConfig = await this.stateService.getKdfConfig();
     return true;
   }
 
@@ -82,7 +82,7 @@ export class UpdateTempPasswordComponent extends BaseChangePasswordComponent {
         this.masterPassword,
         this.email.trim().toLowerCase(),
         this.kdf,
-        this.kdfIterations
+        this.kdfConfig
       );
       const newPasswordHash = await this.cryptoService.hashPassword(this.masterPassword, newKey);
 

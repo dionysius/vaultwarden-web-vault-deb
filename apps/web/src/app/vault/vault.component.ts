@@ -23,7 +23,7 @@ import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUti
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { SyncService } from "@bitwarden/common/abstractions/sync/sync.service.abstraction";
 import { TokenService } from "@bitwarden/common/abstractions/token.service";
-import { DEFAULT_PBKDF2_ITERATIONS } from "@bitwarden/common/enums/kdfType";
+import { KdfType, DEFAULT_PBKDF2_ITERATIONS } from "@bitwarden/common/enums/kdfType";
 import { ServiceUtils } from "@bitwarden/common/misc/serviceUtils";
 import { TreeNode } from "@bitwarden/common/models/domain/tree-node";
 import { CipherView } from "@bitwarden/common/models/view/cipher.view";
@@ -393,9 +393,9 @@ export class VaultComponent implements OnInit, OnDestroy {
   }
 
   async isLowKdfIteration() {
-    const kdfIterations = await this.stateService.getKdfIterations();
-
-    return kdfIterations < DEFAULT_PBKDF2_ITERATIONS;
+    const kdfType = await this.stateService.getKdfType();
+    const kdfOptions = await this.stateService.getKdfConfig();
+    return kdfType === KdfType.PBKDF2_SHA256 && kdfOptions.iterations < DEFAULT_PBKDF2_ITERATIONS;
   }
 
   get breadcrumbs(): TreeNode<CollectionFilter>[] {

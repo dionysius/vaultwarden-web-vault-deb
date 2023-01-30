@@ -3,6 +3,7 @@ import { KdfType } from "../enums/kdfType";
 import { KeySuffixOptions } from "../enums/keySuffixOptions";
 import { EncArrayBuffer } from "../models/domain/enc-array-buffer";
 import { EncString } from "../models/domain/enc-string";
+import { KdfConfig } from "../models/domain/kdf-config";
 import { SymmetricCryptoKey } from "../models/domain/symmetric-crypto-key";
 import { ProfileOrganizationResponse } from "../models/response/profile-organization.response";
 import { ProfileProviderOrganizationResponse } from "../models/response/profile-provider-organization.response";
@@ -47,13 +48,13 @@ export abstract class CryptoService {
     password: string,
     salt: string,
     kdf: KdfType,
-    kdfIterations: number
+    kdfConfig: KdfConfig
   ) => Promise<SymmetricCryptoKey>;
   makeKeyFromPin: (
     pin: string,
     salt: string,
     kdf: KdfType,
-    kdfIterations: number,
+    kdfConfig: KdfConfig,
     protectedKeyCs?: EncString
   ) => Promise<SymmetricCryptoKey>;
   makeShareKey: () => Promise<[EncString, SymmetricCryptoKey]>;
@@ -62,7 +63,7 @@ export abstract class CryptoService {
     pin: string,
     salt: string,
     kdf: KdfType,
-    kdfIterations: number
+    kdfConfig: KdfConfig
   ) => Promise<SymmetricCryptoKey>;
   makeSendKey: (keyMaterial: ArrayBuffer) => Promise<SymmetricCryptoKey>;
   hashPassword: (

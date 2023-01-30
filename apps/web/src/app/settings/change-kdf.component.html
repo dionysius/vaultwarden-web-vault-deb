@@ -32,43 +32,94 @@
         >
           <i class="bwi bwi-question-circle" aria-hidden="true"></i>
         </a>
-        <select id="kdf" name="Kdf" [(ngModel)]="kdf" class="form-control" required>
+        <select
+          id="kdf"
+          name="Kdf"
+          [(ngModel)]="kdf"
+          (ngModelChange)="onChangeKdf($event)"
+          class="form-control mb-3"
+          required
+        >
           <option *ngFor="let o of kdfOptions" [ngValue]="o.value">{{ o.name }}</option>
         </select>
+        <ng-container *ngIf="kdf == kdfType.Argon2id">
+          <label for="kdfMemory">{{ "kdfMemory" | i18n }}</label>
+          <input
+            id="kdfMemory"
+            type="number"
+            min="16"
+            max="1024"
+            name="Memory"
+            class="form-control mb-3"
+            [(ngModel)]="kdfConfig.memory"
+            required
+          />
+        </ng-container>
       </div>
     </div>
     <div class="col-6">
       <div class="form-group mb-0">
-        <label for="kdfIterations">{{ "kdfIterations" | i18n }}</label>
-        <a
-          class="ml-auto"
-          href="https://bitwarden.com/help/what-encryption-is-used/#pbkdf2"
-          target="_blank"
-          rel="noopener"
-          appA11yTitle="{{ 'learnMore' | i18n }}"
-        >
-          <i class="bwi bwi-question-circle" aria-hidden="true"></i>
-        </a>
-        <input
-          id="kdfIterations"
-          type="number"
-          min="5000"
-          max="2000000"
-          name="KdfIterations"
-          class="form-control"
-          [(ngModel)]="kdfIterations"
-          required
-        />
+        <ng-container *ngIf="kdf == kdfType.PBKDF2_SHA256">
+          <label for="kdfIterations">{{ "kdfIterations" | i18n }}</label>
+          <a
+            class="ml-auto"
+            href="https://bitwarden.com/help/kdf-algorithms"
+            target="_blank"
+            rel="noopener"
+            appA11yTitle="{{ 'learnMore' | i18n }}"
+          >
+            <i class="bwi bwi-question-circle" aria-hidden="true"></i>
+          </a>
+          <input
+            id="kdfIterations"
+            type="number"
+            min="5000"
+            max="2000000"
+            name="KdfIterations"
+            class="form-control"
+            [(ngModel)]="kdfConfig.iterations"
+            required
+          />
+        </ng-container>
+        <ng-container *ngIf="kdf == kdfType.Argon2id">
+          <label for="kdfIterations">{{ "kdfIterations" | i18n }}</label>
+          <input
+            id="iterations"
+            type="number"
+            min="1"
+            max="1024"
+            name="Iterations"
+            class="form-control mb-3"
+            [(ngModel)]="kdfConfig.iterations"
+            required
+          />
+          <label for="kdfParallelism">{{ "kdfParallelism" | i18n }}</label>
+          <input
+            id="kdfParallelism"
+            type="number"
+            min="1"
+            max="16"
+            name="Parallelism"
+            class="form-control"
+            [(ngModel)]="kdfConfig.parallelism"
+            required
+          />
+        </ng-container>
       </div>
     </div>
     <div class="col-12">
-      <div class="form-group">
-        <div class="small form-text text-muted">
-          <p>{{ "kdfIterationsDesc" | i18n: (recommendedKdfIterations | number) }}</p>
-          <strong>{{ "warning" | i18n }}</strong
-          >: {{ "kdfIterationsWarning" | i18n: (50000 | number) }}
-        </div>
-      </div>
+      <ng-container *ngIf="kdf == kdfType.PBKDF2_SHA256">
+        <p class="small form-text text-muted">
+          {{ "kdfIterationsDesc" | i18n: (recommendedPbkdf2Iterations | number) }}
+        </p>
+        <bit-callout type="warning">
+          {{ "kdfIterationsWarning" | i18n: (100000 | number) }}
+        </bit-callout>
+      </ng-container>
+      <ng-container *ngIf="kdf == kdfType.Argon2id">
+        <p class="small form-text text-muted">{{ "argon2Desc" | i18n }}</p>
+        <bit-callout type="warning"> {{ "argon2Warning" | i18n }}</bit-callout>
+      </ng-container>
     </div>
   </div>
   <button type="submit" buttonType="primary" bitButton [loading]="form.loading">

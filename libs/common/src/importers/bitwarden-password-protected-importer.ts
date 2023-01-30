@@ -3,6 +3,7 @@ import { I18nService } from "../abstractions/i18n.service";
 import { KdfType } from "../enums/kdfType";
 import { EncString } from "../models/domain/enc-string";
 import { ImportResult } from "../models/domain/import-result";
+import { KdfConfig } from "../models/domain/kdf-config";
 import { SymmetricCryptoKey } from "../models/domain/symmetric-crypto-key";
 
 import { BitwardenJsonImporter } from "./bitwarden-json-importer";
@@ -49,7 +50,7 @@ export class BitwardenPasswordProtectedImporter extends BitwardenJsonImporter im
       this.password,
       jdoc.salt,
       KdfType.PBKDF2_SHA256,
-      jdoc.kdfIterations
+      new KdfConfig(jdoc.kdfIterations)
     );
 
     const encKeyValidation = new EncString(jdoc.encKeyValidation_DO_NOT_EDIT);

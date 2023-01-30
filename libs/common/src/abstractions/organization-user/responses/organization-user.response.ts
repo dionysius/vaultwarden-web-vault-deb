@@ -61,6 +61,8 @@ export class OrganizationUserDetailsResponse extends OrganizationUserResponse {
 export class OrganizationUserResetPasswordDetailsReponse extends BaseResponse {
   kdf: KdfType;
   kdfIterations: number;
+  kdfMemory?: number;
+  kdfParallelism?: number;
   resetPasswordKey: string;
   encryptedPrivateKey: string;
 
@@ -68,6 +70,8 @@ export class OrganizationUserResetPasswordDetailsReponse extends BaseResponse {
     super(response);
     this.kdf = this.getResponseProperty("Kdf");
     this.kdfIterations = this.getResponseProperty("KdfIterations");
+    this.kdfMemory = this.getResponseProperty("KdfMemory");
+    this.kdfParallelism = this.getResponseProperty("KdfParallelism");
     this.resetPasswordKey = this.getResponseProperty("ResetPasswordKey");
     this.encryptedPrivateKey = this.getResponseProperty("EncryptedPrivateKey");
   }

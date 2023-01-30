@@ -22,6 +22,7 @@ import { PasswordlessLogInStrategy } from "../misc/logInStrategies/passwordlessL
 import { SsoLogInStrategy } from "../misc/logInStrategies/ssoLogin.strategy";
 import { UserApiLogInStrategy } from "../misc/logInStrategies/user-api-login.strategy";
 import { AuthResult } from "../models/domain/auth-result";
+import { KdfConfig } from "../models/domain/kdf-config";
 import {
   UserApiLogInCredentials,
   PasswordLogInCredentials,
@@ -247,19 +248,23 @@ export class AuthService implements AuthServiceAbstraction {
   async makePreloginKey(masterPassword: string, email: string): Promise<SymmetricCryptoKey> {
     email = email.trim().toLowerCase();
     let kdf: KdfType = null;
-    let kdfIterations: number = null;
+    let kdfConfig: KdfConfig = null;
     try {
       const preloginResponse = await this.apiService.postPrelogin(new PreloginRequest(email));
       if (preloginResponse != null) {
         kdf = preloginResponse.kdf;
-        kdfIterations = preloginResponse.kdfIterations;
+        kdfConfig = new KdfConfig(
+          preloginResponse.kdfIterations,
+          preloginResponse.kdfMemory,
+          preloginResponse.kdfParallelism
+        );
       }
     } catch (e) {
       if (e == null || e.statusCode !== 404) {
         throw e;
       }
     }
-    return this.cryptoService.makeKey(masterPassword, email, kdf, kdfIterations);
+    return this.cryptoService.makeKey(masterPassword, email, kdf, kdfConfig);
   }
 
   async authResponsePushNotifiction(notification: AuthRequestPushNotification): Promise<any> {

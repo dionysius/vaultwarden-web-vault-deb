@@ -86,7 +86,7 @@ export class UpdatePasswordComponent extends BaseChangePasswordComponent {
     }
 
     this.kdf = await this.stateService.getKdfType();
-    this.kdfIterations = await this.stateService.getKdfIterations();
+    this.kdfConfig = await this.stateService.getKdfConfig();
     return true;
   }
 

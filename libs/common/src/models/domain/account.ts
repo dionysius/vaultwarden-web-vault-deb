@@ -189,6 +189,8 @@ export class AccountProfile {
   usesKeyConnector?: boolean;
   keyHash?: string;
   kdfIterations?: number;
+  kdfMemory?: number;
+  kdfParallelism?: number;
   kdfType?: KdfType;
 
   static fromJSON(obj: Jsonify<AccountProfile>): AccountProfile {

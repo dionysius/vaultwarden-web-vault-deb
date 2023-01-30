@@ -16,10 +16,12 @@ export class RegisterRequest implements CaptchaProtectedRequest {
     public masterPasswordHash: string,
     masterPasswordHint: string,
     public key: string,
+    public referenceData: ReferenceEventRequest,
+    public captchaResponse: string,
     public kdf: KdfType,
     public kdfIterations: number,
-    public referenceData: ReferenceEventRequest,
-    public captchaResponse: string
+    public kdfMemory?: number,
+    public kdfParallelism?: number
   ) {
     this.masterPasswordHint = masterPasswordHint ? masterPasswordHint : null;
   }

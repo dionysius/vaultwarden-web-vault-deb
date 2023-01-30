@@ -107,6 +107,8 @@ export abstract class LogInStrategy {
             email: accountInformation.email,
             hasPremiumPersonally: accountInformation.premium,
             kdfIterations: tokenResponse.kdfIterations,
+            kdfMemory: tokenResponse.kdfMemory,
+            kdfParallelism: tokenResponse.kdfParallelism,
             kdfType: tokenResponse.kdf,
           },
         },

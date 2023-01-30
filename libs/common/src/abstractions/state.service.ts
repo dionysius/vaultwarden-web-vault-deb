@@ -18,6 +18,7 @@ import { Account, AccountSettingsSettings } from "../models/domain/account";
 import { EncString } from "../models/domain/enc-string";
 import { EnvironmentUrls } from "../models/domain/environment-urls";
 import { GeneratedPasswordHistory } from "../models/domain/generated-password-history";
+import { KdfConfig } from "../models/domain/kdf-config";
 import { Policy } from "../models/domain/policy";
 import { StorageOptions } from "../models/domain/storage-options";
 import { SymmetricCryptoKey } from "../models/domain/symmetric-crypto-key";
@@ -252,8 +253,8 @@ export abstract class StateService<T extends Account = Account> {
   getInstalledVersion: (options?: StorageOptions) => Promise<string>;
   setInstalledVersion: (value: string, options?: StorageOptions) => Promise<void>;
   getIsAuthenticated: (options?: StorageOptions) => Promise<boolean>;
-  getKdfIterations: (options?: StorageOptions) => Promise<number>;
-  setKdfIterations: (value: number, options?: StorageOptions) => Promise<void>;
+  getKdfConfig: (options?: StorageOptions) => Promise<KdfConfig>;
+  setKdfConfig: (kdfConfig: KdfConfig, options?: StorageOptions) => Promise<void>;
   getKdfType: (options?: StorageOptions) => Promise<KdfType>;
   setKdfType: (value: KdfType, options?: StorageOptions) => Promise<void>;
   getKeyHash: (options?: StorageOptions) => Promise<string>;

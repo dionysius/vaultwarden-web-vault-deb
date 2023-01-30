@@ -136,13 +136,13 @@ export class LockComponent implements OnInit, OnDestroy {
     let failed = true;
     try {
       const kdf = await this.stateService.getKdfType();
-      const kdfIterations = await this.stateService.getKdfIterations();
+      const kdfConfig = await this.stateService.getKdfConfig();
       if (this.pinSet[0]) {
         const key = await this.cryptoService.makeKeyFromPin(
           this.pin,
           this.email,
           kdf,
-          kdfIterations,
+          kdfConfig,
           await this.stateService.getDecryptedPinProtected()
         );
         const encKey = await this.cryptoService.getEncKey(key);
@@ -153,12 +153,7 @@ export class LockComponent implements OnInit, OnDestroy {
           await this.setKeyAndContinue(key);
         }
       } else {
-        const key = await this.cryptoService.makeKeyFromPin(
-          this.pin,
-          this.email,
-          kdf,
-          kdfIterations
-        );
+        const key = await this.cryptoService.makeKeyFromPin(this.pin, this.email, kdf, kdfConfig);
         failed = false;
         await this.setKeyAndContinue(key);
       }
@@ -194,14 +189,9 @@ export class LockComponent implements OnInit, OnDestroy {
 
   private async doUnlockWithMasterPassword() {
     const kdf = await this.stateService.getKdfType();
-    const kdfIterations = await this.stateService.getKdfIterations();
+    const kdfConfig = await this.stateService.getKdfConfig();
 
-    const key = await this.cryptoService.makeKey(
-      this.masterPassword,
-      this.email,
-      kdf,
-      kdfIterations
-    );
+    const key = await this.cryptoService.makeKey(this.masterPassword, this.email, kdf, kdfConfig);
     const storedKeyHash = await this.cryptoService.getKeyHash();
 
     let passwordValid = false;
@@ -244,7 +234,7 @@ export class LockComponent implements OnInit, OnDestroy {
       const protectedPin = await this.stateService.getProtectedPin();
       const encKey = await this.cryptoService.getEncKey(key);
       const decPin = await this.cryptoService.decryptToUtf8(new EncString(protectedPin), encKey);
-      const pinKey = await this.cryptoService.makePinKey(decPin, this.email, kdf, kdfIterations);
+      const pinKey = await this.cryptoService.makePinKey(decPin, this.email, kdf, kdfConfig);
       await this.stateService.setDecryptedPinProtected(
         await this.cryptoService.encrypt(key.key, pinKey)
       );

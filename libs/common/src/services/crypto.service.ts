@@ -8,7 +8,12 @@ import { PlatformUtilsService } from "../abstractions/platformUtils.service";
 import { StateService } from "../abstractions/state.service";
 import { EncryptionType } from "../enums/encryptionType";
 import { HashPurpose } from "../enums/hashPurpose";
-import { DEFAULT_ARGON2_ITERATIONS, KdfType } from "../enums/kdfType";
+import {
+  DEFAULT_ARGON2_ITERATIONS,
+  DEFAULT_ARGON2_MEMORY,
+  DEFAULT_ARGON2_PARALLELISM,
+  KdfType,
+} from "../enums/kdfType";
 import { KeySuffixOptions } from "../enums/keySuffixOptions";
 import { sequentialize } from "../misc/sequentialize";
 import { Utils } from "../misc/utils";
@@ -17,6 +22,7 @@ import { EncryptedOrganizationKeyData } from "../models/data/encrypted-organizat
 import { EncArrayBuffer } from "../models/domain/enc-array-buffer";
 import { EncString } from "../models/domain/enc-string";
 import { BaseEncryptedOrganizationKey } from "../models/domain/encrypted-organization-key";
+import { KdfConfig } from "../models/domain/kdf-config";
 import { SymmetricCryptoKey } from "../models/domain/symmetric-crypto-key";
 import { ProfileOrganizationResponse } from "../models/response/profile-organization.response";
 import { ProfileProviderOrganizationResponse } from "../models/response/profile-provider-organization.response";
@@ -408,28 +414,44 @@ export class CryptoService implements CryptoServiceAbstraction {
     password: string,
     salt: string,
     kdf: KdfType,
-    kdfIterations: number
+    kdfConfig: KdfConfig
   ): Promise<SymmetricCryptoKey> {
     let key: ArrayBuffer = null;
     if (kdf == null || kdf === KdfType.PBKDF2_SHA256) {
-      if (kdfIterations == null) {
-        kdfIterations = 5000;
-      } else if (kdfIterations < 5000) {
+      if (kdfConfig.iterations == null) {
+        kdfConfig.iterations = 5000;
+      } else if (kdfConfig.iterations < 5000) {
         throw new Error("PBKDF2 iteration minimum is 5000.");
       }
-      key = await this.cryptoFunctionService.pbkdf2(password, salt, "sha256", kdfIterations);
+      key = await this.cryptoFunctionService.pbkdf2(password, salt, "sha256", kdfConfig.iterations);
     } else if (kdf == KdfType.Argon2id) {
-      if (kdfIterations == null) {
-        kdfIterations = DEFAULT_ARGON2_ITERATIONS;
-      } else if (kdfIterations < 2) {
+      if (kdfConfig.iterations == null) {
+        kdfConfig.iterations = DEFAULT_ARGON2_ITERATIONS;
+      } else if (kdfConfig.iterations < 2) {
         throw new Error("Argon2 iteration minimum is 2.");
       }
+
+      if (kdfConfig.memory == null) {
+        kdfConfig.memory = DEFAULT_ARGON2_MEMORY;
+      } else if (kdfConfig.memory < 16) {
+        throw new Error("Argon2 memory minimum is 16 MB");
+      } else if (kdfConfig.memory > 1024) {
+        throw new Error("Argon2 memory maximum is 1024 MB");
+      }
+
+      if (kdfConfig.parallelism == null) {
+        kdfConfig.parallelism = DEFAULT_ARGON2_PARALLELISM;
+      } else if (kdfConfig.parallelism < 1) {
+        throw new Error("Argon2 parallelism minimum is 1.");
+      }
+
+      const saltHash = await this.cryptoFunctionService.hash(salt, "sha256");
       key = await this.cryptoFunctionService.argon2(
         password,
-        salt,
-        kdfIterations,
-        16 * 1024, // convert to KiB from MiB
-        2
+        saltHash,
+        kdfConfig.iterations,
+        kdfConfig.memory * 1024, // convert to KiB from MiB
+        kdfConfig.parallelism
       );
     } else {
       throw new Error("Unknown Kdf.");
@@ -441,7 +463,7 @@ export class CryptoService implements CryptoServiceAbstraction {
     pin: string,
     salt: string,
     kdf: KdfType,
-    kdfIterations: number,
+    kdfConfig: KdfConfig,
     protectedKeyCs: EncString = null
   ): Promise<SymmetricCryptoKey> {
     if (protectedKeyCs == null) {
@@ -451,7 +473,7 @@ export class CryptoService implements CryptoServiceAbstraction {
       }
       protectedKeyCs = new EncString(pinProtectedKey);
     }
-    const pinKey = await this.makePinKey(pin, salt, kdf, kdfIterations);
+    const pinKey = await this.makePinKey(pin, salt, kdf, kdfConfig);
     const decKey = await this.decryptToBytes(protectedKeyCs, pinKey);
     return new SymmetricCryptoKey(decKey);
   }
@@ -474,9 +496,9 @@ export class CryptoService implements CryptoServiceAbstraction {
     pin: string,
     salt: string,
     kdf: KdfType,
-    kdfIterations: number
+    kdfConfig: KdfConfig
   ): Promise<SymmetricCryptoKey> {
-    const pinKey = await this.makeKey(pin, salt, kdf, kdfIterations);
+    const pinKey = await this.makeKey(pin, salt, kdf, kdfConfig);
     return await this.stretchKey(pinKey);
   }
 

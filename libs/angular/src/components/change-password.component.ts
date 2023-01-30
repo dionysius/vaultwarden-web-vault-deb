@@ -10,6 +10,7 @@ import { PolicyService } from "@bitwarden/common/abstractions/policy/policy.serv
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { KdfType } from "@bitwarden/common/enums/kdfType";
 import { EncString } from "@bitwarden/common/models/domain/enc-string";
+import { KdfConfig } from "@bitwarden/common/models/domain/kdf-config";
 import { MasterPasswordPolicyOptions } from "@bitwarden/common/models/domain/master-password-policy-options";
 import { SymmetricCryptoKey } from "@bitwarden/common/models/domain/symmetric-crypto-key";
 
@@ -27,7 +28,7 @@ export class ChangePasswordComponent implements OnInit, OnDestroy {
 
   protected email: string;
   protected kdf: KdfType;
-  protected kdfIterations: number;
+  protected kdfConfig: KdfConfig;
 
   protected destroy$ = new Subject<void>();
 
@@ -70,14 +71,14 @@ export class ChangePasswordComponent implements OnInit, OnDestroy {
     if (this.kdf == null) {
       this.kdf = await this.stateService.getKdfType();
     }
-    if (this.kdfIterations == null) {
-      this.kdfIterations = await this.stateService.getKdfIterations();
+    if (this.kdfConfig == null) {
+      this.kdfConfig = await this.stateService.getKdfConfig();
     }
     const key = await this.cryptoService.makeKey(
       this.masterPassword,
       email.trim().toLowerCase(),
       this.kdf,
-      this.kdfIterations
+      this.kdfConfig
     );
     const masterPasswordHash = await this.cryptoService.hashPassword(this.masterPassword, key);
 

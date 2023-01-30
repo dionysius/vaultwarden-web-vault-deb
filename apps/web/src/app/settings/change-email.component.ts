@@ -66,12 +66,12 @@ export class ChangeEmailComponent implements OnInit {
       request.newEmail = this.newEmail;
       request.masterPasswordHash = await this.cryptoService.hashPassword(this.masterPassword, null);
       const kdf = await this.stateService.getKdfType();
-      const kdfIterations = await this.stateService.getKdfIterations();
+      const kdfConfig = await this.stateService.getKdfConfig();
       const newKey = await this.cryptoService.makeKey(
         this.masterPassword,
         this.newEmail,
         kdf,
-        kdfIterations
+        kdfConfig
       );
       request.newMasterPasswordHash = await this.cryptoService.hashPassword(
         this.masterPassword,

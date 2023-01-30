@@ -410,7 +410,7 @@ export class LoginCommand {
       this.policyService.masterPasswordPolicyOptions$()
     );
     const kdf = await this.stateService.getKdfType();
-    const kdfIterations = await this.stateService.getKdfIterations();
+    const kdfConfig = await this.stateService.getKdfConfig();
 
     if (
       enforcedPolicyOptions != null &&
@@ -431,7 +431,7 @@ export class LoginCommand {
         masterPassword,
         this.email.trim().toLowerCase(),
         kdf,
-        kdfIterations
+        kdfConfig
       );
       const newPasswordHash = await this.cryptoService.hashPassword(masterPassword, newKey);
 
