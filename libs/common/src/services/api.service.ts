@@ -35,8 +35,6 @@ import { PasswordTokenRequest } from "../models/request/identity-token/password-
 import { SsoTokenRequest } from "../models/request/identity-token/sso-token.request";
 import { TokenTwoFactorRequest } from "../models/request/identity-token/token-two-factor.request";
 import { UserApiTokenRequest } from "../models/request/identity-token/user-api-token.request";
-import { ImportCiphersRequest } from "../models/request/import-ciphers.request";
-import { ImportOrganizationCiphersRequest } from "../models/request/import-organization-ciphers.request";
 import { KdfRequest } from "../models/request/kdf.request";
 import { KeyConnectorUserKeyRequest } from "../models/request/key-connector-user-key.request";
 import { KeysRequest } from "../models/request/keys.request";
@@ -660,23 +658,6 @@ export class ApiService implements ApiServiceAbstraction {
       path += "?organizationId=" + organizationId;
     }
     return this.send("POST", path, request, true, false);
-  }
-
-  postImportCiphers(request: ImportCiphersRequest): Promise<any> {
-    return this.send("POST", "/ciphers/import", request, true, false);
-  }
-
-  postImportOrganizationCiphers(
-    organizationId: string,
-    request: ImportOrganizationCiphersRequest
-  ): Promise<any> {
-    return this.send(
-      "POST",
-      "/ciphers/import-organization?organizationId=" + organizationId,
-      request,
-      true,
-      false
-    );
   }
 
   putDeleteCipher(id: string): Promise<any> {

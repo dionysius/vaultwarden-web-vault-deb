@@ -5,6 +5,7 @@ import * as program from "commander";
 import * as jsdom from "jsdom";
 
 import { InternalFolderService } from "@bitwarden/common/abstractions/folder/folder.service.abstraction";
+import { ImportApiServiceAbstraction } from "@bitwarden/common/abstractions/import/import-api.service.abstraction";
 import { OrganizationUserService } from "@bitwarden/common/abstractions/organization-user/organization-user.service";
 import { OrganizationApiServiceAbstraction } from "@bitwarden/common/abstractions/organization/organization-api.service.abstraction";
 import { ClientType } from "@bitwarden/common/enums/clientType";
@@ -27,7 +28,8 @@ import { ExportService } from "@bitwarden/common/services/export.service";
 import { FileUploadService } from "@bitwarden/common/services/fileUpload.service";
 import { FolderApiService } from "@bitwarden/common/services/folder/folder-api.service";
 import { FolderService } from "@bitwarden/common/services/folder/folder.service";
-import { ImportService } from "@bitwarden/common/services/import.service";
+import { ImportApiService } from "@bitwarden/common/services/import/import-api.service";
+import { ImportService } from "@bitwarden/common/services/import/import.service";
 import { KeyConnectorService } from "@bitwarden/common/services/keyConnector.service";
 import { MemoryStorageService } from "@bitwarden/common/services/memoryStorage.service";
 import { NoopMessagingService } from "@bitwarden/common/services/noopMessaging.service";
@@ -94,6 +96,7 @@ export class Main {
   containerService: ContainerService;
   auditService: AuditService;
   importService: ImportService;
+  importApiService: ImportApiServiceAbstraction;
   exportService: ExportService;
   searchService: SearchService;
   cryptoFunctionService: NodeCryptoFunctionService;
@@ -339,10 +342,12 @@ export class Main {
 
     this.totpService = new TotpService(this.cryptoFunctionService, this.logService);
 
+    this.importApiService = new ImportApiService(this.apiService);
+
     this.importService = new ImportService(
       this.cipherService,
       this.folderService,
-      this.apiService,
+      this.importApiService,
       this.i18nService,
       this.collectionService,
       this.cryptoService

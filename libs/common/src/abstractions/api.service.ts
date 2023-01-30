@@ -27,8 +27,6 @@ import { IapCheckRequest } from "../models/request/iap-check.request";
 import { PasswordTokenRequest } from "../models/request/identity-token/password-token.request";
 import { SsoTokenRequest } from "../models/request/identity-token/sso-token.request";
 import { UserApiTokenRequest } from "../models/request/identity-token/user-api-token.request";
-import { ImportCiphersRequest } from "../models/request/import-ciphers.request";
-import { ImportOrganizationCiphersRequest } from "../models/request/import-organization-ciphers.request";
 import { KdfRequest } from "../models/request/kdf.request";
 import { KeyConnectorUserKeyRequest } from "../models/request/key-connector-user-key.request";
 import { KeysRequest } from "../models/request/keys.request";
@@ -260,11 +258,6 @@ export abstract class ApiService {
   putCipherCollections: (id: string, request: CipherCollectionsRequest) => Promise<any>;
   putCipherCollectionsAdmin: (id: string, request: CipherCollectionsRequest) => Promise<any>;
   postPurgeCiphers: (request: SecretVerificationRequest, organizationId?: string) => Promise<any>;
-  postImportCiphers: (request: ImportCiphersRequest) => Promise<any>;
-  postImportOrganizationCiphers: (
-    organizationId: string,
-    request: ImportOrganizationCiphersRequest
-  ) => Promise<any>;
   putDeleteCipher: (id: string) => Promise<any>;
   putDeleteCipherAdmin: (id: string) => Promise<any>;
   putDeleteManyCiphers: (request: CipherBulkDeleteRequest) => Promise<any>;

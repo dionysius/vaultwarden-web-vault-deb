@@ -1,22 +1,22 @@
 // eslint-disable-next-line no-restricted-imports
 import { Substitute, SubstituteOf } from "@fluffy-spoon/substitute";
 
-import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { CipherService } from "@bitwarden/common/abstractions/cipher.service";
 import { CollectionService } from "@bitwarden/common/abstractions/collection.service";
 import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
 import { FolderService } from "@bitwarden/common/abstractions/folder/folder.service.abstraction";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
+import { ImportApiServiceAbstraction } from "@bitwarden/common/abstractions/import/import-api.service.abstraction";
 import { BitwardenPasswordProtectedImporter } from "@bitwarden/common/importers/bitwarden-password-protected-importer";
 import { Importer } from "@bitwarden/common/importers/importer";
 import { Utils } from "@bitwarden/common/misc/utils";
-import { ImportService } from "@bitwarden/common/services/import.service";
+import { ImportService } from "@bitwarden/common/services/import/import.service";
 
 describe("ImportService", () => {
   let importService: ImportService;
   let cipherService: SubstituteOf<CipherService>;
   let folderService: SubstituteOf<FolderService>;
-  let apiService: SubstituteOf<ApiService>;
+  let importApiService: SubstituteOf<ImportApiServiceAbstraction>;
   let i18nService: SubstituteOf<I18nService>;
   let collectionService: SubstituteOf<CollectionService>;
   let cryptoService: SubstituteOf<CryptoService>;
@@ -24,7 +24,7 @@ describe("ImportService", () => {
   beforeEach(() => {
     cipherService = Substitute.for<CipherService>();
     folderService = Substitute.for<FolderService>();
-    apiService = Substitute.for<ApiService>();
+    importApiService = Substitute.for<ImportApiServiceAbstraction>();
     i18nService = Substitute.for<I18nService>();
     collectionService = Substitute.for<CollectionService>();
     cryptoService = Substitute.for<CryptoService>();
@@ -32,7 +32,7 @@ describe("ImportService", () => {
     importService = new ImportService(
       cipherService,
       folderService,
-      apiService,
+      importApiService,
       i18nService,
       collectionService,
       cryptoService
