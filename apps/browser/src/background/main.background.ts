@@ -98,6 +98,7 @@ import { BrowserStateService as StateServiceAbstraction } from "../services/abst
 import AutofillService from "../services/autofill.service";
 import { BrowserEnvironmentService } from "../services/browser-environment.service";
 import { BrowserFolderService } from "../services/browser-folder.service";
+import { BrowserI18nService } from "../services/browser-i18n.service";
 import { BrowserOrganizationService } from "../services/browser-organization.service";
 import { BrowserPolicyService } from "../services/browser-policy.service";
 import { BrowserSettingsService } from "../services/browser-settings.service";
@@ -107,7 +108,6 @@ import BrowserLocalStorageService from "../services/browserLocalStorage.service"
 import BrowserMessagingService from "../services/browserMessaging.service";
 import BrowserMessagingPrivateModeBackgroundService from "../services/browserMessagingPrivateModeBackground.service";
 import BrowserPlatformUtilsService from "../services/browserPlatformUtils.service";
-import I18nService from "../services/i18n.service";
 import { KeyGenerationService } from "../services/keyGeneration.service";
 import { LocalBackedSessionStorageService } from "../services/localBackedSessionStorage.service";
 import { VaultFilterService } from "../services/vaultFilter.service";
@@ -266,7 +266,7 @@ export default class MainBackground {
       },
       window
     );
-    this.i18nService = new I18nService(BrowserApi.getUILanguage(window));
+    this.i18nService = new BrowserI18nService(BrowserApi.getUILanguage(window), this.stateService);
     this.encryptService = flagEnabled("multithreadDecryption")
       ? new MultithreadEncryptServiceImplementation(
           this.cryptoFunctionService,
@@ -593,7 +593,7 @@ export default class MainBackground {
     await this.stateService.init();
 
     await (this.vaultTimeoutService as VaultTimeoutService).init(true);
-    await (this.i18nService as I18nService).init();
+    await (this.i18nService as BrowserI18nService).init();
     await (this.eventUploadService as EventUploadService).init(true);
     await this.runtimeBackground.init();
     await this.notificationBackground.init();

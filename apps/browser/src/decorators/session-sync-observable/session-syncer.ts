@@ -1,4 +1,4 @@
-import { BehaviorSubject, concatMap, ReplaySubject, Subject, Subscription } from "rxjs";
+import { BehaviorSubject, concatMap, ReplaySubject, skip, Subject, Subscription } from "rxjs";
 
 import { AbstractMemoryStorageService } from "@bitwarden/common/abstractions/storage.service";
 import { Utils } from "@bitwarden/common/misc/utils";
@@ -28,7 +28,7 @@ export class SessionSyncer {
     }
   }
 
-  init() {
+  async init() {
     switch (this.subject.constructor) {
       case ReplaySubject:
         // ignore all updates currently in the buffer
@@ -41,22 +41,24 @@ export class SessionSyncer {
         break;
     }
 
-    this.observe();
+    await this.observe();
     // must be synchronous
-    this.memoryStorageService.has(this.metaData.sessionKey).then((hasInSessionMemory) => {
-      if (hasInSessionMemory) {
-        this.update();
-      }
-    });
+    const hasInSessionMemory = await this.memoryStorageService.has(this.metaData.sessionKey);
+    if (hasInSessionMemory) {
+      await this.update();
+    }
 
     this.listenForUpdates();
   }
 
-  private observe() {
+  private async observe() {
+    const stream = this.subject.pipe(skip(this.ignoreNUpdates));
+    this.ignoreNUpdates = 0;
+
     // This may be a memory leak.
     // There is no good time to unsubscribe from this observable. Hopefully Manifest V3 clears memory from temporary
     // contexts. If so, this is handled by destruction of the context.
-    this.subscription = this.subject
+    this.subscription = stream
       .pipe(
         concatMap(async (next) => {
           if (this.ignoreNUpdates > 0) {

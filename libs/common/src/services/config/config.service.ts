@@ -7,7 +7,7 @@ import { StateService } from "../../abstractions/state.service";
 import { ServerConfigData } from "../../models/data/server-config.data";
 
 export class ConfigService implements ConfigServiceAbstraction {
-  private _serverConfig = new BehaviorSubject<ServerConfig | null>(null);
+  protected _serverConfig = new BehaviorSubject<ServerConfig | null>(null);
   serverConfig$ = this._serverConfig.asObservable();
 
   constructor(

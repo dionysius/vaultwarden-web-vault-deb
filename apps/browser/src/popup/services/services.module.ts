@@ -12,8 +12,11 @@ import { AuditService } from "@bitwarden/common/abstractions/audit.service";
 import { AuthService as AuthServiceAbstraction } from "@bitwarden/common/abstractions/auth.service";
 import { CipherService } from "@bitwarden/common/abstractions/cipher.service";
 import { CollectionService } from "@bitwarden/common/abstractions/collection.service";
+import { ConfigApiServiceAbstraction } from "@bitwarden/common/abstractions/config/config-api.service.abstraction";
+import { ConfigServiceAbstraction } from "@bitwarden/common/abstractions/config/config.service.abstraction";
 import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
 import { CryptoFunctionService } from "@bitwarden/common/abstractions/cryptoFunction.service";
+import { EncryptService } from "@bitwarden/common/abstractions/encrypt.service";
 import { EnvironmentService } from "@bitwarden/common/abstractions/environment.service";
 import { EventCollectionService } from "@bitwarden/common/abstractions/event/event-collection.service";
 import { EventUploadService } from "@bitwarden/common/abstractions/event/event-upload.service";
@@ -21,8 +24,11 @@ import { ExportService } from "@bitwarden/common/abstractions/export.service";
 import { FileDownloadService } from "@bitwarden/common/abstractions/fileDownload/fileDownload.service";
 import { FileUploadService } from "@bitwarden/common/abstractions/fileUpload.service";
 import { FolderApiServiceAbstraction } from "@bitwarden/common/abstractions/folder/folder-api.service.abstraction";
-import { FolderService } from "@bitwarden/common/abstractions/folder/folder.service.abstraction";
-import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
+import {
+  FolderService,
+  InternalFolderService,
+} from "@bitwarden/common/abstractions/folder/folder.service.abstraction";
+import { I18nService as I18nServiceAbstraction } from "@bitwarden/common/abstractions/i18n.service";
 import { KeyConnectorService } from "@bitwarden/common/abstractions/keyConnector.service";
 import { LogService as LogServiceAbstraction } from "@bitwarden/common/abstractions/log.service";
 import { LoginService as LoginServiceAbstraction } from "@bitwarden/common/abstractions/login.service";
@@ -33,12 +39,18 @@ import { PasswordGenerationService } from "@bitwarden/common/abstractions/passwo
 import { PasswordRepromptService as PasswordRepromptServiceAbstraction } from "@bitwarden/common/abstractions/passwordReprompt.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { PolicyApiServiceAbstraction } from "@bitwarden/common/abstractions/policy/policy-api.service.abstraction";
-import { PolicyService } from "@bitwarden/common/abstractions/policy/policy.service.abstraction";
+import {
+  InternalPolicyService,
+  PolicyService,
+} from "@bitwarden/common/abstractions/policy/policy.service.abstraction";
 import { ProviderService } from "@bitwarden/common/abstractions/provider.service";
 import { SearchService as SearchServiceAbstraction } from "@bitwarden/common/abstractions/search.service";
 import { SendService } from "@bitwarden/common/abstractions/send.service";
 import { SettingsService } from "@bitwarden/common/abstractions/settings.service";
-import { StateService as BaseStateServiceAbstraction } from "@bitwarden/common/abstractions/state.service";
+import {
+  StateService as BaseStateServiceAbstraction,
+  StateService,
+} from "@bitwarden/common/abstractions/state.service";
 import { StateMigrationService } from "@bitwarden/common/abstractions/stateMigration.service";
 import {
   AbstractMemoryStorageService,
@@ -56,7 +68,10 @@ import { StateFactory } from "@bitwarden/common/factories/stateFactory";
 import { GlobalState } from "@bitwarden/common/models/domain/global-state";
 import { AuthService } from "@bitwarden/common/services/auth.service";
 import { ConsoleLogService } from "@bitwarden/common/services/consoleLog.service";
+import { ContainerService } from "@bitwarden/common/services/container.service";
+import { FolderApiService } from "@bitwarden/common/services/folder/folder-api.service";
 import { LoginService } from "@bitwarden/common/services/login.service";
+import { PolicyApiService } from "@bitwarden/common/services/policy/policy-api.service";
 import { SearchService } from "@bitwarden/common/services/search.service";
 
 import MainBackground from "../../background/main.background";
@@ -64,7 +79,10 @@ import { BrowserApi } from "../../browser/browserApi";
 import { Account } from "../../models/account";
 import { AutofillService } from "../../services/abstractions/autofill.service";
 import { BrowserStateService as StateServiceAbstraction } from "../../services/abstractions/browser-state.service";
+import { BrowserConfigService } from "../../services/browser-config.service";
 import { BrowserEnvironmentService } from "../../services/browser-environment.service";
+import { BrowserFolderService } from "../../services/browser-folder.service";
+import { BrowserI18nService } from "../../services/browser-i18n.service";
 import { BrowserOrganizationService } from "../../services/browser-organization.service";
 import { BrowserPolicyService } from "../../services/browser-policy.service";
 import { BrowserSettingsService } from "../../services/browser-settings.service";
@@ -108,7 +126,7 @@ function getBgService<T>(service: keyof MainBackground) {
     DebounceNavigationService,
     {
       provide: LOCALE_ID,
-      useFactory: () => getBgService<I18nService>("i18nService")().translationLocale,
+      useFactory: () => getBgService<I18nServiceAbstraction>("i18nService")().translationLocale,
       deps: [],
     },
     {
@@ -143,7 +161,7 @@ function getBgService<T>(service: keyof MainBackground) {
       useFactory: (
         cipherService: CipherService,
         logService: ConsoleLogService,
-        i18nService: I18nService
+        i18nService: I18nServiceAbstraction
       ) => {
         return new PopupSearchService(
           getBgService<SearchService>("searchService")(),
@@ -152,7 +170,7 @@ function getBgService<T>(service: keyof MainBackground) {
           i18nService
         );
       },
-      deps: [CipherService, LogServiceAbstraction, I18nService],
+      deps: [CipherService, LogServiceAbstraction, I18nServiceAbstraction],
     },
     { provide: AuditService, useFactory: getBgService<AuditService>("auditService"), deps: [] },
     {
@@ -168,13 +186,26 @@ function getBgService<T>(service: keyof MainBackground) {
     },
     {
       provide: FolderService,
-      useFactory: getBgService<FolderService>("folderService"),
-      deps: [],
+      useFactory: (
+        cryptoService: CryptoService,
+        i18nService: I18nServiceAbstraction,
+        cipherService: CipherService,
+        stateService: StateServiceAbstraction
+      ) => {
+        return new BrowserFolderService(cryptoService, i18nService, cipherService, stateService);
+      },
+      deps: [CryptoService, I18nServiceAbstraction, CipherService, StateServiceAbstraction],
+    },
+    {
+      provide: InternalFolderService,
+      useExisting: FolderService,
     },
     {
       provide: FolderApiServiceAbstraction,
-      useFactory: getBgService<FolderApiServiceAbstraction>("folderApiService"),
-      deps: [],
+      useFactory: (folderService: InternalFolderService, apiService: ApiService) => {
+        return new FolderApiService(folderService, apiService);
+      },
+      deps: [InternalFolderService, ApiService],
     },
     {
       provide: CollectionService,
@@ -197,8 +228,22 @@ function getBgService<T>(service: keyof MainBackground) {
     },
     { provide: TotpService, useFactory: getBgService<TotpService>("totpService"), deps: [] },
     { provide: TokenService, useFactory: getBgService<TokenService>("tokenService"), deps: [] },
-    { provide: I18nService, useFactory: getBgService<I18nService>("i18nService"), deps: [] },
-    { provide: CryptoService, useFactory: getBgService<CryptoService>("cryptoService"), deps: [] },
+    {
+      provide: I18nServiceAbstraction,
+      useFactory: (stateService: BrowserStateService) => {
+        return new BrowserI18nService(BrowserApi.getUILanguage(window), stateService);
+      },
+      deps: [StateService],
+    },
+    {
+      provide: CryptoService,
+      useFactory: (encryptService: EncryptService) => {
+        const cryptoService = getBgService<CryptoService>("cryptoService")();
+        new ContainerService(cryptoService, encryptService).attachToGlobal(self);
+        return cryptoService;
+      },
+      deps: [EncryptService],
+    },
     {
       provide: EventUploadService,
       useFactory: getBgService<EventUploadService>("eventUploadService"),
@@ -221,8 +266,14 @@ function getBgService<T>(service: keyof MainBackground) {
     },
     {
       provide: PolicyApiServiceAbstraction,
-      useFactory: getBgService<PolicyApiServiceAbstraction>("policyApiService"),
-      deps: [],
+      useFactory: (
+        policyService: InternalPolicyService,
+        apiService: ApiService,
+        stateService: StateService
+      ) => {
+        return new PolicyApiService(policyService, apiService, stateService);
+      },
+      deps: [InternalPolicyService, ApiService, StateService],
     },
     {
       provide: PlatformUtilsService,
@@ -296,17 +347,22 @@ function getBgService<T>(service: keyof MainBackground) {
     },
     {
       provide: VaultFilterService,
-      useFactory: () => {
+      useFactory: (
+        stateService: StateServiceAbstraction,
+        organizationService: OrganizationService,
+        folderService: FolderService,
+        policyService: PolicyService
+      ) => {
         return new VaultFilterService(
-          getBgService<StateServiceAbstraction>("stateService")(),
-          getBgService<OrganizationService>("organizationService")(),
-          getBgService<FolderService>("folderService")(),
+          stateService,
+          organizationService,
+          folderService,
           getBgService<CipherService>("cipherService")(),
           getBgService<CollectionService>("collectionService")(),
-          getBgService<PolicyService>("policyService")()
+          policyService
         );
       },
-      deps: [],
+      deps: [StateServiceAbstraction, OrganizationService, FolderService, PolicyService],
     },
     {
       provide: ProviderService,
@@ -387,6 +443,11 @@ function getBgService<T>(service: keyof MainBackground) {
         );
       },
       deps: [StateServiceAbstraction, PlatformUtilsService],
+    },
+    {
+      provide: ConfigServiceAbstraction,
+      useClass: BrowserConfigService,
+      deps: [StateServiceAbstraction, ConfigApiServiceAbstraction],
     },
   ],
 })
