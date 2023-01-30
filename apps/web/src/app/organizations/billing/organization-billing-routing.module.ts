@@ -3,12 +3,14 @@ import { RouterModule, Routes } from "@angular/router";
 
 import { canAccessBillingTab } from "@bitwarden/common/abstractions/organization/organization.service.abstraction";
 
+import { WebPlatformUtilsService } from "../../core/web-platform-utils.service";
 import { PaymentMethodComponent } from "../../settings/payment-method.component";
 import { OrganizationPermissionsGuard } from "../guards/org-permissions.guard";
 
 import { OrgBillingHistoryViewComponent } from "./organization-billing-history-view.component";
 import { OrganizationBillingTabComponent } from "./organization-billing-tab.component";
-import { OrganizationSubscriptionComponent } from "./organization-subscription.component";
+import { OrganizationSubscriptionCloudComponent } from "./organization-subscription-cloud.component";
+import { OrganizationSubscriptionSelfhostComponent } from "./organization-subscription-selfhost.component";
 
 const routes: Routes = [
   {
@@ -20,7 +22,9 @@ const routes: Routes = [
       { path: "", pathMatch: "full", redirectTo: "subscription" },
       {
         path: "subscription",
-        component: OrganizationSubscriptionComponent,
+        component: WebPlatformUtilsService.isSelfHost()
+          ? OrganizationSubscriptionSelfhostComponent
+          : OrganizationSubscriptionCloudComponent,
         data: { titleId: "subscription" },
       },
       {

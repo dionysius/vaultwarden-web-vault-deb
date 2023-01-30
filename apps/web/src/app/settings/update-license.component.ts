@@ -12,6 +12,7 @@ import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUti
 })
 export class UpdateLicenseComponent {
   @Input() organizationId: string;
+  @Input() showCancel = true;
   @Output() onUpdated = new EventEmitter();
   @Output() onCanceled = new EventEmitter();
 

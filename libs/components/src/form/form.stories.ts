@@ -98,9 +98,15 @@ const FullExampleTemplate: Story = (args) => ({
 
       <bit-radio-group formControlName="updates">
         <bit-label>Subscribe to updates?</bit-label>
-        <bit-radio-button value="yes">Yes</bit-radio-button>
-        <bit-radio-button value="no">No</bit-radio-button>
-        <bit-radio-button value="later">Decide later</bit-radio-button>
+        <bit-radio-button value="yes">
+          <bit-label>Yes</bit-label>
+        </bit-radio-button>
+        <bit-radio-button value="no">
+          <bit-label>No</bit-label>
+        </bit-radio-button>
+        <bit-radio-button value="later">
+          <bit-label>Decide later</bit-label>
+        </bit-radio-button>
       </bit-radio-group>
 
       <button type="submit" bitButton buttonType="primary">Submit</button>

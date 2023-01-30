@@ -14,7 +14,7 @@
     <i class="bwi bwi-spinner bwi-spin" title="{{ 'loading' | i18n }}" aria-hidden="true"></i>
     <span>{{ "submit" | i18n }}</span>
   </button>
-  <button type="button" class="btn btn-outline-secondary" (click)="cancel()">
+  <button *ngIf="showCancel" type="button" class="btn btn-outline-secondary" (click)="cancel()">
     {{ "cancel" | i18n }}
   </button>
 </form>

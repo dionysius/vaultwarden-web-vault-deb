@@ -2058,6 +2058,9 @@
   "manageSubscription": {
     "message": "Manage subscription"
   },
+  "launchCloudSubscription": {
+    "message": "Launch Cloud Subscription"
+  },
   "storage": {
     "message": "Storage"
   },
@@ -5239,11 +5242,8 @@
   "billingSyncApiKeyRotated": {
     "message": "Token rotated"
   },
-  "billingSync": {
-    "message": "Billing sync"
-  },
   "billingSyncDesc": {
-    "message": "Billing sync provides Free Families plans for members and advanced billing capabilities by linking your self-hosted Bitwarden to the Bitwarden cloud server."
+    "message": "Billing sync unlocks Families sponsorships and automatic license syncing on your server. After making updates in the Bitwarden cloud server, select Sync License to apply changes."
   },
   "billingSyncKeyDesc": {
     "message": "A billing sync token from your cloud organization's subscription settings is required to complete this form."
@@ -6104,6 +6104,36 @@
         "example": "2"
       }
     }
+  },
+  "licenseAndBillingManagement": {
+    "message": "License and billing management"
+  },
+  "automaticSync": {
+    "message": "Automatic sync"
+  },
+  "manualUpload": {
+    "message": "Manual upload"
+  },
+  "manualUploadDesc": {
+    "message": "If you do not want to opt into billing sync, manually upload your license here."
+  },
+  "syncLicense": {
+    "message": "Sync license"
+  },
+  "licenseSyncSuccess": {
+    "message": "Successfully synced license"
+  },
+  "licenseUploadSuccess": {
+    "message": "Successfully uploaded license"
+  },
+  "lastLicenseSync": {
+    "message": "Last license sync"
+  },
+  "billingSyncHelp": {
+    "message": "Billing Sync help"
+  },
+  "uploadLicense": {
+    "message": "Upload license"
   },
   "lowKdfIterations": {
     "message": "Low KDF Iterations"

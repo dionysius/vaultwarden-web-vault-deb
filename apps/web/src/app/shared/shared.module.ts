@@ -25,6 +25,7 @@ import {
   MultiSelectModule,
   TableModule,
   TabsModule,
+  RadioButtonModule,
   ToggleGroupModule,
 } from "@bitwarden/components";
 
@@ -68,6 +69,7 @@ import "./locales";
     MultiSelectModule,
     TableModule,
     TabsModule,
+    RadioButtonModule,
     ToggleGroupModule,
 
     // Web specific
@@ -100,6 +102,7 @@ import "./locales";
     MultiSelectModule,
     TableModule,
     TabsModule,
+    RadioButtonModule,
     ToggleGroupModule,
 
     // Web specific

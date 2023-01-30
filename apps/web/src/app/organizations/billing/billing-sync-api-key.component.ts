@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
 
+import { ModalConfig } from "@bitwarden/angular/services/modal.service";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { OrganizationApiServiceAbstraction } from "@bitwarden/common/abstractions/organization/organization-api.service.abstraction";
@@ -9,6 +10,11 @@ import { OrganizationApiKeyType } from "@bitwarden/common/enums/organizationApiK
 import { OrganizationApiKeyRequest } from "@bitwarden/common/models/request/organization-api-key.request";
 import { ApiKeyResponse } from "@bitwarden/common/models/response/api-key.response";
 import { Verification } from "@bitwarden/common/types/verification";
+
+export interface BillingSyncApiModalData {
+  organizationId: string;
+  hasBillingToken: boolean;
+}
 
 @Component({
   selector: "app-billing-sync-api-key",
@@ -30,8 +36,12 @@ export class BillingSyncApiKeyComponent {
     private apiService: ApiService,
     private platformUtilsService: PlatformUtilsService,
     private i18nService: I18nService,
-    private organizationApiService: OrganizationApiServiceAbstraction
-  ) {}
+    private organizationApiService: OrganizationApiServiceAbstraction,
+    modalConfig: ModalConfig<BillingSyncApiModalData>
+  ) {
+    this.organizationId = modalConfig.data.organizationId;
+    this.hasBillingToken = modalConfig.data.hasBillingToken;
+  }
 
   copy() {
     this.platformUtilsService.copyToClipboard(this.clientSecret);

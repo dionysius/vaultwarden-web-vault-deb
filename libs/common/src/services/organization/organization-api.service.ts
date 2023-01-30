@@ -87,7 +87,13 @@ export class OrganizationApiService implements OrganizationApiServiceAbstraction
   }
 
   async createLicense(data: FormData): Promise<OrganizationResponse> {
-    const r = await this.apiService.send("POST", "/organizations/license", data, true, true);
+    const r = await this.apiService.send(
+      "POST",
+      "/organizations/licenses/self-hosted",
+      data,
+      true,
+      true
+    );
     return new OrganizationResponse(r);
   }
 
@@ -177,7 +183,13 @@ export class OrganizationApiService implements OrganizationApiServiceAbstraction
   }
 
   async updateLicense(id: string, data: FormData): Promise<void> {
-    await this.apiService.send("POST", "/organizations/" + id + "/license", data, true, false);
+    await this.apiService.send(
+      "POST",
+      "/organizations/licenses/self-hosted/" + id,
+      data,
+      true,
+      false
+    );
   }
 
   async importDirectory(organizationId: string, request: ImportDirectoryRequest): Promise<void> {
@@ -269,5 +281,15 @@ export class OrganizationApiService implements OrganizationApiServiceAbstraction
     );
     // Not broadcasting anything because data on this response doesn't correspond to `Organization`
     return new OrganizationSsoResponse(r);
+  }
+
+  async selfHostedSyncLicense(id: string) {
+    await this.apiService.send(
+      "POST",
+      "/organizations/licenses/self-hosted/" + id + "/sync/",
+      null,
+      true,
+      false
+    );
   }
 }

@@ -58,4 +58,5 @@ export class OrganizationApiServiceAbstraction {
   updateKeys: (id: string, request: OrganizationKeysRequest) => Promise<OrganizationKeysResponse>;
   getSso: (id: string) => Promise<OrganizationSsoResponse>;
   updateSso: (id: string, request: OrganizationSsoRequest) => Promise<OrganizationSsoResponse>;
+  selfHostedSyncLicense: (id: string) => Promise<void>;
 }
