@@ -13,6 +13,9 @@ import { TabLinkComponent } from "./tab-link.component";
 @Component({
   selector: "bit-tab-nav-bar",
   templateUrl: "tab-nav-bar.component.html",
+  host: {
+    class: "tw-block",
+  },
 })
 export class TabNavBarComponent implements AfterContentInit {
   @ContentChildren(forwardRef(() => TabLinkComponent)) tabLabels: QueryList<TabLinkComponent>;

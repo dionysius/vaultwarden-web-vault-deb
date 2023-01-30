@@ -10,12 +10,12 @@ import { ProjectService } from "../project.service";
   templateUrl: "./project.component.html",
 })
 export class ProjectComponent implements OnInit {
-  project: Observable<ProjectView>;
+  project$: Observable<ProjectView>;
 
   constructor(private route: ActivatedRoute, private projectService: ProjectService) {}
 
   ngOnInit(): void {
-    this.project = this.route.params.pipe(
+    this.project$ = this.route.params.pipe(
       switchMap((params) => {
         return this.projectService.getByProjectId(params.projectId);
       })

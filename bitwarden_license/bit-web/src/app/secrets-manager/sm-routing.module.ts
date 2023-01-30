@@ -31,24 +31,21 @@ const routes: Routes = [
         path: "secrets",
         loadChildren: () => SecretsModule,
         data: {
-          title: "secrets",
-          searchTitle: "searchSecrets",
+          titleId: "secrets",
         },
       },
       {
         path: "projects",
         loadChildren: () => ProjectsModule,
         data: {
-          title: "projects",
-          searchTitle: "searchProjects",
+          titleId: "projects",
         },
       },
       {
         path: "service-accounts",
         loadChildren: () => ServiceAccountsModule,
         data: {
-          title: "serviceAccounts",
-          searchTitle: "searchServiceAccounts",
+          titleId: "serviceAccounts",
         },
       },
       {

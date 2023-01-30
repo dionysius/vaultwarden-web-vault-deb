@@ -10,18 +10,24 @@ import { AccountProfile } from "@bitwarden/common/models/domain/account";
   templateUrl: "./header.component.html",
 })
 export class HeaderComponent {
+  /**
+   * Custom title that overrides the route data `titleId`
+   */
   @Input() title: string;
-  @Input() searchTitle: string;
 
-  protected routeData$: Observable<{ title: string; searchTitle: string }>;
+  /**
+   * Icon to show before the title
+   */
+  @Input() icon: string;
+
+  protected routeData$: Observable<{ titleId: string }>;
   protected account$: Observable<AccountProfile>;
 
   constructor(private route: ActivatedRoute, private stateService: StateService) {
     this.routeData$ = this.route.data.pipe(
       map((params) => {
         return {
-          title: params.title,
-          searchTitle: params.searchTitle,
+          titleId: params.titleId,
         };
       })
     );
