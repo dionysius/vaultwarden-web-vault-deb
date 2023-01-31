@@ -45,6 +45,7 @@
           <th bitCell class="tw-w-20">
             <input
               type="checkbox"
+              bitCheckbox
               class="tw-mr-2"
               (change)="toggleAllVisible($event)"
               id="selectAll"
@@ -77,7 +78,7 @@
       <ng-template body>
         <tr bitRow *ngFor="let g of visibleGroups">
           <td bitCell (click)="check(g)" class="tw-cursor-pointer">
-            <input type="checkbox" [(ngModel)]="g.checked" />
+            <input type="checkbox" bitCheckbox [(ngModel)]="g.checked" />
           </td>
           <td bitCell class="tw-cursor-pointer tw-font-bold" (click)="edit(g)">
             <button bitLink>
