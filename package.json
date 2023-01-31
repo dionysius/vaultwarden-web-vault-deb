@@ -33,6 +33,9 @@
   ],
   "devDependencies": {
     "@angular-devkit/build-angular": "^14.0.6",
+    "@angular-eslint/eslint-plugin": "^14.1.2",
+    "@angular-eslint/eslint-plugin-template": "^14.1.2",
+    "@angular-eslint/template-parser": "^14.1.2",
     "@angular/cli": "^14.0.6",
     "@angular/compiler-cli": "^14.0.6",
     "@angular/elements": "^14.0.6",
