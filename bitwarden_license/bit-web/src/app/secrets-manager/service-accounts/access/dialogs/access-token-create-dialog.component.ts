@@ -82,4 +82,22 @@ export class AccessTokenCreateDialogComponent implements OnInit {
       },
     });
   }
+
+  static openNewAccessTokenDialog(
+    dialogService: DialogService,
+    serviceAccountId: string,
+    organizationId: string
+  ) {
+    // TODO once service account names are implemented in service account contents page pass in here.
+    const serviceAccountView = new ServiceAccountView();
+    serviceAccountView.id = serviceAccountId;
+    serviceAccountView.name = "placeholder";
+
+    return dialogService.open<unknown, AccessTokenOperation>(AccessTokenCreateDialogComponent, {
+      data: {
+        organizationId: organizationId,
+        serviceAccountView: serviceAccountView,
+      },
+    });
+  }
 }

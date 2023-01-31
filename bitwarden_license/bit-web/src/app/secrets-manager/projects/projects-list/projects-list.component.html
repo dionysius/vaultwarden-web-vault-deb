@@ -3,9 +3,9 @@
 </div>
 
 <sm-no-items *ngIf="projects?.length == 0">
-  <ng-container title>{{ "projectsNoItemsTitle" | i18n }}</ng-container>
-  <ng-container description>{{ "projectsNoItemsMessage" | i18n }}</ng-container>
-  <button bitButton buttonType="secondary" (click)="newProjectEvent.emit()">
+  <ng-container slot="title">{{ "projectsNoItemsTitle" | i18n }}</ng-container>
+  <ng-container slot="description">{{ "projectsNoItemsMessage" | i18n }}</ng-container>
+  <button slot="button" bitButton buttonType="secondary" (click)="newProjectEvent.emit()">
     <i class="bwi bwi-plus" aria-hidden="true"></i>
     {{ "newProject" | i18n }}
   </button>

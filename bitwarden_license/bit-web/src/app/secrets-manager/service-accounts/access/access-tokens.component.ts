@@ -4,14 +4,10 @@ import { combineLatestWith, Observable, startWith, switchMap } from "rxjs";
 
 import { DialogService } from "@bitwarden/components";
 
-import { ServiceAccountView } from "../../models/view/service-account.view";
 import { AccessTokenView } from "../models/view/access-token.view";
 
 import { AccessService } from "./access.service";
-import {
-  AccessTokenOperation,
-  AccessTokenCreateDialogComponent,
-} from "./dialogs/access-token-create-dialog.component";
+import { AccessTokenCreateDialogComponent } from "./dialogs/access-token-create-dialog.component";
 
 @Component({
   selector: "sm-access-tokens",
@@ -45,17 +41,11 @@ export class AccessTokenComponent implements OnInit {
     return await this.accessService.getAccessTokens(this.organizationId, this.serviceAccountId);
   }
 
-  async openNewAccessTokenDialog() {
-    // TODO once service account names are implemented in service account contents page pass in here.
-    const serviceAccountView = new ServiceAccountView();
-    serviceAccountView.id = this.serviceAccountId;
-    serviceAccountView.name = "placeholder";
-
-    this.dialogService.open<unknown, AccessTokenOperation>(AccessTokenCreateDialogComponent, {
-      data: {
-        organizationId: this.organizationId,
-        serviceAccountView: serviceAccountView,
-      },
-    });
+  protected openNewAccessTokenDialog() {
+    AccessTokenCreateDialogComponent.openNewAccessTokenDialog(
+      this.dialogService,
+      this.serviceAccountId,
+      this.organizationId
+    );
   }
 }
