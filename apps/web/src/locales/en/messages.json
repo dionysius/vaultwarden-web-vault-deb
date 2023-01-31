@@ -6146,5 +6146,14 @@
   },
   "changeKdfLoggedOutWarning": {
     "message": "Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour. We recommend exporting your vault before changing your encryption settings to prevent data loss."
+  },
+  "secretsManagerBeta": {
+    "message": "Secrets Manager Beta"
+  },
+  "secretsManagerBetaDesc": {
+    "message": "Enable user access to the Secrets Manager at no charge during the Beta program."
+  },
+  "userAccessSecretsManager": {
+    "message": "This user can access the Secrets Manager Beta"
   }
 }

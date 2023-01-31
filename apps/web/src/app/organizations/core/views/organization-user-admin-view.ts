@@ -16,4 +16,6 @@ export class OrganizationUserAdminView {
 
   collections: CollectionAccessSelectionView[] = [];
   groups: string[] = [];
+
+  accessSecretsManager: boolean;
 }

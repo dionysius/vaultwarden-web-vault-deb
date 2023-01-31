@@ -6,6 +6,7 @@ export class OrganizationUserInviteRequest {
   emails: string[] = [];
   type: OrganizationUserType;
   accessAll: boolean;
+  accessSecretsManager: boolean;
   collections: SelectionReadOnlyRequest[] = [];
   groups: string[];
   permissions: PermissionsApi;

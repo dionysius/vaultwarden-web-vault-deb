@@ -45,6 +45,7 @@ export class OrganizationData {
   familySponsorshipLastSyncDate?: Date;
   familySponsorshipValidUntil?: Date;
   familySponsorshipToDelete?: boolean;
+  accessSecretsManager: boolean;
 
   constructor(response: ProfileOrganizationResponse) {
     this.id = response.id;
@@ -86,5 +87,6 @@ export class OrganizationData {
     this.familySponsorshipLastSyncDate = response.familySponsorshipLastSyncDate;
     this.familySponsorshipValidUntil = response.familySponsorshipValidUntil;
     this.familySponsorshipToDelete = response.familySponsorshipToDelete;
+    this.accessSecretsManager = response.accessSecretsManager;
   }
 }

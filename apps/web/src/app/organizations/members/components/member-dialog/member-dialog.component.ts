@@ -69,6 +69,7 @@ export class MemberDialogComponent implements OnInit, OnDestroy {
   organizationUserType = OrganizationUserType;
   canUseCustomPermissions: boolean;
   PermissionMode = PermissionMode;
+  canUseSecretsManager: boolean;
 
   protected organization: Organization;
   protected collectionAccessItems: AccessItemView[] = [];
@@ -78,6 +79,7 @@ export class MemberDialogComponent implements OnInit, OnDestroy {
     emails: ["", [Validators.required, commaSeparatedEmails]],
     type: OrganizationUserType.User,
     accessAllCollections: false,
+    accessSecretsManager: false,
     access: [[] as AccessItemValue[]],
     groups: [[] as AccessItemValue[]],
   });
@@ -158,6 +160,7 @@ export class MemberDialogComponent implements OnInit, OnDestroy {
       .subscribe(({ organization, collections, userDetails, groups }) => {
         this.organization = organization;
         this.canUseCustomPermissions = organization.useCustomPermissions;
+        this.canUseSecretsManager = organization.useSecretsManager;
 
         this.collectionAccessItems = [].concat(
           collections.map((c) => mapCollectionToAccessItemView(c))
@@ -226,6 +229,7 @@ export class MemberDialogComponent implements OnInit, OnDestroy {
             type: userDetails.type,
             accessAllCollections: userDetails.accessAll,
             access: accessSelections,
+            accessSecretsManager: userDetails.accessSecretsManager,
             groups: groupAccessSelections,
           });
         }
@@ -324,6 +328,7 @@ export class MemberDialogComponent implements OnInit, OnDestroy {
       .filter((v) => v.type === AccessItemType.Collection)
       .map(convertToSelectionView);
     userView.groups = this.formGroup.value.groups.map((m) => m.id);
+    userView.accessSecretsManager = this.formGroup.value.accessSecretsManager;
 
     if (this.editMode) {
       await this.userService.save(userView);
