@@ -1,6 +1,6 @@
-import { CipherType } from "@bitwarden/common/enums/cipherType";
 import { EnpassJsonImporter as Importer } from "@bitwarden/common/importers/enpass/enpass-json-importer";
-import { FieldView } from "@bitwarden/common/models/view/field.view";
+import { CipherType } from "@bitwarden/common/vault/enums/cipher-type";
+import { FieldView } from "@bitwarden/common/vault/models/view/field.view";
 
 import { creditCard } from "./test-data/json/credit-card";
 import { folders } from "./test-data/json/folders";

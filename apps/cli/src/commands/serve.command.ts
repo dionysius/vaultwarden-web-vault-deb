@@ -11,10 +11,11 @@ import { Utils } from "@bitwarden/common/misc/utils";
 import { Main } from "../bw";
 import { Response } from "../models/response";
 import { FileResponse } from "../models/response/file.response";
+import { CreateCommand } from "../vault/create.command";
+import { DeleteCommand } from "../vault/delete.command";
+import { SyncCommand } from "../vault/sync.command";
 
 import { ConfirmCommand } from "./confirm.command";
-import { CreateCommand } from "./create.command";
-import { DeleteCommand } from "./delete.command";
 import { EditCommand } from "./edit.command";
 import { GenerateCommand } from "./generate.command";
 import { GetCommand } from "./get.command";
@@ -29,7 +30,6 @@ import { SendListCommand } from "./send/list.command";
 import { SendRemovePasswordCommand } from "./send/remove-password.command";
 import { ShareCommand } from "./share.command";
 import { StatusCommand } from "./status.command";
-import { SyncCommand } from "./sync.command";
 import { UnlockCommand } from "./unlock.command";
 
 export class ServeCommand {

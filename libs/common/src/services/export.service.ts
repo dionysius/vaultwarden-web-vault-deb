@@ -1,32 +1,32 @@
 import * as papa from "papaparse";
 
 import { ApiService } from "../abstractions/api.service";
-import { CipherService } from "../abstractions/cipher.service";
 import { CryptoService } from "../abstractions/crypto.service";
 import { CryptoFunctionService } from "../abstractions/cryptoFunction.service";
 import {
   ExportFormat,
   ExportService as ExportServiceAbstraction,
 } from "../abstractions/export.service";
-import { FolderService } from "../abstractions/folder/folder.service.abstraction";
-import { CipherType } from "../enums/cipherType";
 import { DEFAULT_PBKDF2_ITERATIONS, KdfType } from "../enums/kdfType";
 import { Utils } from "../misc/utils";
-import { CipherData } from "../models/data/cipher.data";
 import { CollectionData } from "../models/data/collection.data";
-import { Cipher } from "../models/domain/cipher";
 import { Collection } from "../models/domain/collection";
-import { Folder } from "../models/domain/folder";
 import { KdfConfig } from "../models/domain/kdf-config";
 import { CipherWithIdExport as CipherExport } from "../models/export/cipher-with-ids.export";
 import { CollectionWithIdExport as CollectionExport } from "../models/export/collection-with-id.export";
 import { EventExport } from "../models/export/event.export";
 import { FolderWithIdExport as FolderExport } from "../models/export/folder-with-id.export";
 import { CollectionDetailsResponse } from "../models/response/collection.response";
-import { CipherView } from "../models/view/cipher.view";
 import { CollectionView } from "../models/view/collection.view";
 import { EventView } from "../models/view/event.view";
-import { FolderView } from "../models/view/folder.view";
+import { CipherService } from "../vault/abstractions/cipher.service";
+import { FolderService } from "../vault/abstractions/folder/folder.service.abstraction";
+import { CipherType } from "../vault/enums/cipher-type";
+import { CipherData } from "../vault/models/data/cipher.data";
+import { Cipher } from "../vault/models/domain/cipher";
+import { Folder } from "../vault/models/domain/folder";
+import { CipherView } from "../vault/models/view/cipher.view";
+import { FolderView } from "../vault/models/view/folder.view";
 
 export class ExportService implements ExportServiceAbstraction {
   constructor(

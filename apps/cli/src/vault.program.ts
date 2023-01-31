@@ -2,8 +2,6 @@ import * as program from "commander";
 
 import { Main } from "./bw";
 import { ConfirmCommand } from "./commands/confirm.command";
-import { CreateCommand } from "./commands/create.command";
-import { DeleteCommand } from "./commands/delete.command";
 import { EditCommand } from "./commands/edit.command";
 import { ExportCommand } from "./commands/export.command";
 import { GetCommand } from "./commands/get.command";
@@ -14,6 +12,8 @@ import { ShareCommand } from "./commands/share.command";
 import { Response } from "./models/response";
 import { Program } from "./program";
 import { CliUtils } from "./utils";
+import { CreateCommand } from "./vault/create.command";
+import { DeleteCommand } from "./vault/delete.command";
 
 const writeLn = CliUtils.writeLn;
 

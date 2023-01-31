@@ -5,11 +5,11 @@ import { EnvironmentService } from "@bitwarden/common/abstractions/environment.s
 import { KeyConnectorService } from "@bitwarden/common/abstractions/keyConnector.service";
 import { OrganizationApiServiceAbstraction } from "@bitwarden/common/abstractions/organization/organization-api.service.abstraction";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
-import { SyncService } from "@bitwarden/common/abstractions/sync/sync.service.abstraction";
 import { HashPurpose } from "@bitwarden/common/enums/hashPurpose";
 import { Utils } from "@bitwarden/common/misc/utils";
 import { SecretVerificationRequest } from "@bitwarden/common/models/request/secret-verification.request";
 import { ConsoleLogService } from "@bitwarden/common/services/consoleLog.service";
+import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
 
 import { Response } from "../models/response";
 import { MessageResponse } from "../models/response/message.response";

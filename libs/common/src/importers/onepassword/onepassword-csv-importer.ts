@@ -1,7 +1,7 @@
-import { CipherType } from "../../enums/cipherType";
 import { FieldType } from "../../enums/fieldType";
 import { ImportResult } from "../../models/domain/import-result";
-import { CipherView } from "../../models/view/cipher.view";
+import { CipherType } from "../../vault/enums/cipher-type";
+import { CipherView } from "../../vault/models/view/cipher.view";
 import { BaseImporter } from "../base-importer";
 import { Importer } from "../importer";
 

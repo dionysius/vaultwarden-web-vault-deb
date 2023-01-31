@@ -1,5 +1,6 @@
-import { CipherRequest } from "./cipher.request";
-import { FolderRequest } from "./folder.request";
+import { CipherRequest } from "../../vault/models/request/cipher.request";
+import { FolderRequest } from "../../vault/models/request/folder.request";
+
 import { KvpRequest } from "./kvp.request";
 
 export class ImportCiphersRequest {

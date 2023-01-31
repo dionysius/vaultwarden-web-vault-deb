@@ -1,8 +1,8 @@
-import { CipherRepromptType } from "../../enums/cipherRepromptType";
-import { CipherType } from "../../enums/cipherType";
-import { Cipher as CipherDomain } from "../domain/cipher";
+import { CipherRepromptType } from "../../vault/enums/cipher-reprompt-type";
+import { CipherType } from "../../vault/enums/cipher-type";
+import { Cipher as CipherDomain } from "../../vault/models/domain/cipher";
+import { CipherView } from "../../vault/models/view/cipher.view";
 import { EncString } from "../domain/enc-string";
-import { CipherView } from "../view/cipher.view";
 
 import { CardExport } from "./card.export";
 import { FieldExport } from "./field.export";

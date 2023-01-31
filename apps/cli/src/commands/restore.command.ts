@@ -1,4 +1,4 @@
-import { CipherService } from "@bitwarden/common/abstractions/cipher.service";
+import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
 
 import { Response } from "../models/response";
 

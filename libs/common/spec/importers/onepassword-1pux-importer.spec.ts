@@ -1,9 +1,9 @@
-import { CipherType } from "@bitwarden/common/enums/cipherType";
 import { FieldType } from "@bitwarden/common/enums/fieldType";
 import { SecureNoteType } from "@bitwarden/common/enums/secureNoteType";
 import { OnePassword1PuxImporter as Importer } from "@bitwarden/common/importers/onepassword/onepassword-1pux-importer";
 import { Utils } from "@bitwarden/common/misc/utils";
-import { FieldView } from "@bitwarden/common/models/view/field.view";
+import { CipherType } from "@bitwarden/common/vault/enums/cipher-type";
+import { FieldView } from "@bitwarden/common/vault/models/view/field.view";
 
 import { APICredentialsData } from "./test-data/onepassword-1pux/api-credentials";
 import { BankAccountData } from "./test-data/onepassword-1pux/bank-account";

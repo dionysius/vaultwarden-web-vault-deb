@@ -2,8 +2,8 @@ import { Component } from "@angular/core";
 import { Router } from "@angular/router";
 import { map, Observable } from "rxjs";
 
-import { FolderService } from "@bitwarden/common/abstractions/folder/folder.service.abstraction";
-import { FolderView } from "@bitwarden/common/models/view/folder.view";
+import { FolderService } from "@bitwarden/common/vault/abstractions/folder/folder.service.abstraction";
+import { FolderView } from "@bitwarden/common/vault/models/view/folder.view";
 
 @Component({
   selector: "app-folders",

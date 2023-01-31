@@ -1,4 +1,4 @@
-import { CipherType } from "../../enums/cipherType";
+import { CipherType } from "../../vault/enums/cipher-type";
 
 import { FSecureFskImporter as Importer } from "./fsecure-fsk-importer";
 import { CreditCardTestEntry, LoginTestEntry } from "./fsk-test-data";

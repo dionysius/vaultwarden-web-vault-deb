@@ -1,23 +1,23 @@
 import { Component } from "@angular/core";
 
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
-import { CipherService } from "@bitwarden/common/abstractions/cipher.service";
 import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
 import { FileDownloadService } from "@bitwarden/common/abstractions/fileDownload/fileDownload.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
-import { CipherData } from "@bitwarden/common/models/data/cipher.data";
-import { Cipher } from "@bitwarden/common/models/domain/cipher";
 import { Organization } from "@bitwarden/common/models/domain/organization";
-import { AttachmentView } from "@bitwarden/common/models/view/attachment.view";
+import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
+import { CipherData } from "@bitwarden/common/vault/models/data/cipher.data";
+import { Cipher } from "@bitwarden/common/vault/models/domain/cipher";
+import { AttachmentView } from "@bitwarden/common/vault/models/view/attachment.view";
 
-import { AttachmentsComponent as BaseAttachmentsComponent } from "../../vault/attachments.component";
+import { AttachmentsComponent as BaseAttachmentsComponent } from "../../../vault/app/vault/attachments.component";
 
 @Component({
   selector: "app-org-vault-attachments",
-  templateUrl: "../../vault/attachments.component.html",
+  templateUrl: "../../../vault/app/vault/attachments.component.html",
 })
 export class AttachmentsComponent extends BaseAttachmentsComponent {
   viewOnly = false;

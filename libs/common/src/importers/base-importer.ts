@@ -1,19 +1,19 @@
 import * as papa from "papaparse";
 
 import { LogService } from "../abstractions/log.service";
-import { CipherType } from "../enums/cipherType";
 import { FieldType } from "../enums/fieldType";
 import { SecureNoteType } from "../enums/secureNoteType";
 import { Utils } from "../misc/utils";
 import { ImportResult } from "../models/domain/import-result";
-import { CipherView } from "../models/view/cipher.view";
 import { CollectionView } from "../models/view/collection.view";
-import { FieldView } from "../models/view/field.view";
-import { FolderView } from "../models/view/folder.view";
-import { LoginUriView } from "../models/view/login-uri.view";
-import { LoginView } from "../models/view/login.view";
-import { SecureNoteView } from "../models/view/secure-note.view";
 import { ConsoleLogService } from "../services/consoleLog.service";
+import { CipherType } from "../vault/enums/cipher-type";
+import { CipherView } from "../vault/models/view/cipher.view";
+import { FieldView } from "../vault/models/view/field.view";
+import { FolderView } from "../vault/models/view/folder.view";
+import { LoginUriView } from "../vault/models/view/login-uri.view";
+import { LoginView } from "../vault/models/view/login.view";
+import { SecureNoteView } from "../vault/models/view/secure-note.view";
 
 export abstract class BaseImporter {
   organizationId: string = null;

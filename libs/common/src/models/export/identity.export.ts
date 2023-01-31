@@ -1,6 +1,6 @@
+import { Identity as IdentityDomain } from "../../vault/models/domain/identity";
+import { IdentityView } from "../../vault/models/view/identity.view";
 import { EncString } from "../domain/enc-string";
-import { Identity as IdentityDomain } from "../domain/identity";
-import { IdentityView } from "../view/identity.view";
 
 export class IdentityExport {
   static template(): IdentityExport {

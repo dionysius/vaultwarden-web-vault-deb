@@ -1,21 +1,21 @@
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
-import { CipherService } from "@bitwarden/common/abstractions/cipher.service";
 import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
-import { FolderApiServiceAbstraction } from "@bitwarden/common/abstractions/folder/folder-api.service.abstraction";
-import { FolderService } from "@bitwarden/common/abstractions/folder/folder.service.abstraction";
 import { Utils } from "@bitwarden/common/misc/utils";
 import { CipherExport } from "@bitwarden/common/models/export/cipher.export";
 import { CollectionExport } from "@bitwarden/common/models/export/collection.export";
 import { FolderExport } from "@bitwarden/common/models/export/folder.export";
 import { CollectionRequest } from "@bitwarden/common/models/request/collection.request";
 import { SelectionReadOnlyRequest } from "@bitwarden/common/models/request/selection-read-only.request";
+import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
+import { FolderApiServiceAbstraction } from "@bitwarden/common/vault/abstractions/folder/folder-api.service.abstraction";
+import { FolderService } from "@bitwarden/common/vault/abstractions/folder/folder.service.abstraction";
 
 import { OrganizationCollectionRequest } from "../models/request/organization-collection.request";
 import { Response } from "../models/response";
-import { CipherResponse } from "../models/response/cipher.response";
-import { FolderResponse } from "../models/response/folder.response";
 import { OrganizationCollectionResponse } from "../models/response/organization-collection.response";
 import { CliUtils } from "../utils";
+import { CipherResponse } from "../vault/models/cipher.response";
+import { FolderResponse } from "../vault/models/folder.response";
 
 export class EditCommand {
   constructor(

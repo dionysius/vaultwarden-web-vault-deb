@@ -1,7 +1,11 @@
 import { EventCollectionService as AbstractEventCollectionService } from "@bitwarden/common/abstractions/event/event-collection.service";
 import { EventCollectionService } from "@bitwarden/common/services/event/event-collection.service";
 
-import { cipherServiceFactory, CipherServiceInitOptions } from "./cipher-service.factory";
+import {
+  cipherServiceFactory,
+  CipherServiceInitOptions,
+} from "../../vault/background/service_factories/cipher-service.factory";
+
 import {
   eventUploadServiceFactory,
   EventUploadServiceInitOptions,

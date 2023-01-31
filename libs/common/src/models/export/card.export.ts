@@ -1,6 +1,6 @@
-import { Card as CardDomain } from "../domain/card";
+import { Card as CardDomain } from "../../vault/models/domain/card";
+import { CardView } from "../../vault/models/view/card.view";
 import { EncString } from "../domain/enc-string";
-import { CardView } from "../view/card.view";
 
 export class CardExport {
   static template(): CardExport {

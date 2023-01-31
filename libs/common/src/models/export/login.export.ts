@@ -1,6 +1,6 @@
+import { Login as LoginDomain } from "../../vault/models/domain/login";
+import { LoginView } from "../../vault/models/view/login.view";
 import { EncString } from "../domain/enc-string";
-import { Login as LoginDomain } from "../domain/login";
-import { LoginView } from "../view/login.view";
 
 import { LoginUriExport } from "./login-uri.export";
 

@@ -10,10 +10,10 @@ import { ImportService } from "@bitwarden/common/abstractions/import/import.serv
 import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { PolicyService } from "@bitwarden/common/abstractions/policy/policy.service.abstraction";
-import { SyncService } from "@bitwarden/common/abstractions/sync/sync.service.abstraction";
 import { ImportOption, ImportType } from "@bitwarden/common/enums/importOptions";
 import { PolicyType } from "@bitwarden/common/enums/policyType";
 import { ImportError } from "@bitwarden/common/importers/import-error";
+import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
 
 import { FilePasswordPromptComponent } from "./file-password-prompt.component";
 

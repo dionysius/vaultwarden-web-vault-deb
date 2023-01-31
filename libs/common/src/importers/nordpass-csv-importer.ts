@@ -1,8 +1,8 @@
-import { CipherType } from "../enums/cipherType";
 import { SecureNoteType } from "../enums/secureNoteType";
 import { ImportResult } from "../models/domain/import-result";
-import { CipherView } from "../models/view/cipher.view";
-import { LoginView } from "../models/view/login.view";
+import { CipherType } from "../vault/enums/cipher-type";
+import { CipherView } from "../vault/models/view/cipher.view";
+import { LoginView } from "../vault/models/view/login.view";
 
 import { BaseImporter } from "./base-importer";
 import { Importer } from "./importer";

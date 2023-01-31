@@ -3,12 +3,10 @@ import { lastValueFrom } from "rxjs";
 
 import { SearchPipe } from "@bitwarden/angular/pipes/search.pipe";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
-import { CipherService } from "@bitwarden/common/abstractions/cipher.service";
 import { EventCollectionService } from "@bitwarden/common/abstractions/event/event-collection.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { OrganizationService } from "@bitwarden/common/abstractions/organization/organization.service.abstraction";
-import { PasswordRepromptService } from "@bitwarden/common/abstractions/passwordReprompt.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { SearchService } from "@bitwarden/common/abstractions/search.service";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
@@ -16,20 +14,22 @@ import { TokenService } from "@bitwarden/common/abstractions/token.service";
 import { TotpService } from "@bitwarden/common/abstractions/totp.service";
 import { Organization } from "@bitwarden/common/models/domain/organization";
 import { TreeNode } from "@bitwarden/common/models/domain/tree-node";
-import { CipherView } from "@bitwarden/common/models/view/cipher.view";
 import { CollectionView } from "@bitwarden/common/models/view/collection.view";
+import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
+import { PasswordRepromptService } from "@bitwarden/common/vault/abstractions/password-reprompt.service";
+import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 import { DialogService } from "@bitwarden/components";
 
 import {
   BulkDeleteDialogResult,
   openBulkDeleteDialog,
-} from "../../vault/bulk-action-dialogs/bulk-delete-dialog/bulk-delete-dialog.component";
-import { VaultFilterService } from "../../vault/vault-filter/services/abstractions/vault-filter.service";
-import { CollectionFilter } from "../../vault/vault-filter/shared/models/vault-filter.type";
+} from "../../../vault/app/vault/bulk-action-dialogs/bulk-delete-dialog/bulk-delete-dialog.component";
+import { VaultFilterService } from "../../../vault/app/vault/vault-filter/services/abstractions/vault-filter.service";
+import { CollectionFilter } from "../../../vault/app/vault/vault-filter/shared/models/vault-filter.type";
 import {
   VaultItemRow,
   VaultItemsComponent as BaseVaultItemsComponent,
-} from "../../vault/vault-items.component";
+} from "../../../vault/app/vault/vault-items.component";
 import { CollectionAdminView } from "../core";
 import { GroupService } from "../core/services/group/group.service";
 import {
@@ -42,7 +42,7 @@ const MaxCheckedCount = 500;
 
 @Component({
   selector: "app-org-vault-items",
-  templateUrl: "../../vault/vault-items.component.html",
+  templateUrl: "../../../vault/app/vault/vault-items.component.html",
 })
 export class VaultItemsComponent extends BaseVaultItemsComponent implements OnDestroy {
   @Input() set initOrganization(value: Organization) {

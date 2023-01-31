@@ -1,16 +1,16 @@
 import { firstValueFrom } from "rxjs";
 
 import { AuthService } from "@bitwarden/common/abstractions/auth.service";
-import { CipherService } from "@bitwarden/common/abstractions/cipher.service";
 import { MessagingService } from "@bitwarden/common/abstractions/messaging.service";
 import { PasswordGenerationService } from "@bitwarden/common/abstractions/passwordGeneration.service";
 import { PolicyService } from "@bitwarden/common/abstractions/policy/policy.service.abstraction";
 import { AuthenticationStatus } from "@bitwarden/common/enums/authenticationStatus";
-import { CipherType } from "@bitwarden/common/enums/cipherType";
 import { PolicyType } from "@bitwarden/common/enums/policyType";
-import { CipherView } from "@bitwarden/common/models/view/cipher.view";
-import { LoginUriView } from "@bitwarden/common/models/view/login-uri.view";
-import { LoginView } from "@bitwarden/common/models/view/login.view";
+import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
+import { CipherType } from "@bitwarden/common/vault/enums/cipher-type";
+import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
+import { LoginUriView } from "@bitwarden/common/vault/models/view/login-uri.view";
+import { LoginView } from "@bitwarden/common/vault/models/view/login.view";
 
 import { DecryptedCommandData } from "../models/native-messaging/decrypted-command-data";
 import { CredentialCreatePayload } from "../models/native-messaging/encrypted-message-payloads/credential-create-payload";

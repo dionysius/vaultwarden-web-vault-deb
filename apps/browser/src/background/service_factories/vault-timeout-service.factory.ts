@@ -1,16 +1,22 @@
 import { VaultTimeoutService as AbstractVaultTimeoutService } from "@bitwarden/common/abstractions/vaultTimeout/vaultTimeout.service";
 
 import VaultTimeoutService from "../../services/vaultTimeout/vaultTimeout.service";
+import {
+  cipherServiceFactory,
+  CipherServiceInitOptions,
+} from "../../vault/background/service_factories/cipher-service.factory";
+import {
+  folderServiceFactory,
+  FolderServiceInitOptions,
+} from "../../vault/background/service_factories/folder-service.factory";
 
 import { authServiceFactory, AuthServiceInitOptions } from "./auth-service.factory";
-import { cipherServiceFactory, CipherServiceInitOptions } from "./cipher-service.factory";
 import {
   collectionServiceFactory,
   CollectionServiceInitOptions,
 } from "./collection-service.factory";
 import { cryptoServiceFactory, CryptoServiceInitOptions } from "./crypto-service.factory";
 import { CachedServices, factory, FactoryOptions } from "./factory-options";
-import { folderServiceFactory, FolderServiceInitOptions } from "./folder-service.factory";
 import {
   keyConnectorServiceFactory,
   KeyConnectorServiceInitOptions,

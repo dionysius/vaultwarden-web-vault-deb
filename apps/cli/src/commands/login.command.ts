@@ -15,7 +15,6 @@ import { PasswordGenerationService } from "@bitwarden/common/abstractions/passwo
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { PolicyService } from "@bitwarden/common/abstractions/policy/policy.service.abstraction";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
-import { SyncService } from "@bitwarden/common/abstractions/sync/sync.service.abstraction";
 import { TwoFactorService } from "@bitwarden/common/abstractions/twoFactor.service";
 import { TwoFactorProviderType } from "@bitwarden/common/enums/twoFactorProviderType";
 import { NodeUtils } from "@bitwarden/common/misc/nodeUtils";
@@ -30,6 +29,7 @@ import { TokenTwoFactorRequest } from "@bitwarden/common/models/request/identity
 import { TwoFactorEmailRequest } from "@bitwarden/common/models/request/two-factor-email.request";
 import { UpdateTempPasswordRequest } from "@bitwarden/common/models/request/update-temp-password.request";
 import { ErrorResponse } from "@bitwarden/common/models/response/error.response";
+import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
 
 import { Response } from "../models/response";
 import { MessageResponse } from "../models/response/message.response";

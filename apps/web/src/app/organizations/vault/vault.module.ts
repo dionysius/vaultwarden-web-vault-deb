@@ -2,10 +2,10 @@ import { NgModule } from "@angular/core";
 
 import { BreadcrumbsModule } from "@bitwarden/components";
 
+import { OrganizationBadgeModule } from "../../../vault/app/vault/organization-badge/organization-badge.module";
+import { PipesModule } from "../../../vault/app/vault/pipes/pipes.module";
 import { LooseComponentsModule } from "../../shared/loose-components.module";
 import { SharedModule } from "../../shared/shared.module";
-import { OrganizationBadgeModule } from "../../vault/organization-badge/organization-badge.module";
-import { PipesModule } from "../../vault/pipes/pipes.module";
 
 import { CollectionBadgeModule } from "./collection-badge/collection-badge.module";
 import { GroupBadgeModule } from "./group-badge/group-badge.module";

@@ -1,4 +1,5 @@
-import { CipherRequest } from "./cipher.request";
+import { CipherRequest } from "../../vault/models/request/cipher.request";
+
 import { CollectionRequest } from "./collection.request";
 import { KvpRequest } from "./kvp.request";
 

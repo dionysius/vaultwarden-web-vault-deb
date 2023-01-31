@@ -1,9 +1,9 @@
 import { EmergencyAccessStatusType } from "../../enums/emergencyAccessStatusType";
 import { EmergencyAccessType } from "../../enums/emergencyAccessType";
 import { KdfType } from "../../enums/kdfType";
+import { CipherResponse } from "../../vault/models/response/cipher.response";
 
 import { BaseResponse } from "./base.response";
-import { CipherResponse } from "./cipher.response";
 
 export class EmergencyAccessGranteeDetailsResponse extends BaseResponse {
   id: string;

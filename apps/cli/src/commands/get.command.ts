@@ -1,14 +1,11 @@
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { AuditService } from "@bitwarden/common/abstractions/audit.service";
-import { CipherService } from "@bitwarden/common/abstractions/cipher.service";
 import { CollectionService } from "@bitwarden/common/abstractions/collection.service";
 import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
-import { FolderService } from "@bitwarden/common/abstractions/folder/folder.service.abstraction";
 import { OrganizationService } from "@bitwarden/common/abstractions/organization/organization.service.abstraction";
 import { SearchService } from "@bitwarden/common/abstractions/search.service";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { TotpService } from "@bitwarden/common/abstractions/totp.service";
-import { CipherType } from "@bitwarden/common/enums/cipherType";
 import { SendType } from "@bitwarden/common/enums/sendType";
 import { Utils } from "@bitwarden/common/misc/utils";
 import { EncString } from "@bitwarden/common/models/domain/enc-string";
@@ -23,15 +20,16 @@ import { LoginUriExport } from "@bitwarden/common/models/export/login-uri.export
 import { LoginExport } from "@bitwarden/common/models/export/login.export";
 import { SecureNoteExport } from "@bitwarden/common/models/export/secure-note.export";
 import { ErrorResponse } from "@bitwarden/common/models/response/error.response";
-import { CipherView } from "@bitwarden/common/models/view/cipher.view";
 import { CollectionView } from "@bitwarden/common/models/view/collection.view";
-import { FolderView } from "@bitwarden/common/models/view/folder.view";
+import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
+import { FolderService } from "@bitwarden/common/vault/abstractions/folder/folder.service.abstraction";
+import { CipherType } from "@bitwarden/common/vault/enums/cipher-type";
+import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
+import { FolderView } from "@bitwarden/common/vault/models/view/folder.view";
 
 import { OrganizationCollectionRequest } from "../models/request/organization-collection.request";
 import { Response } from "../models/response";
-import { CipherResponse } from "../models/response/cipher.response";
 import { CollectionResponse } from "../models/response/collection.response";
-import { FolderResponse } from "../models/response/folder.response";
 import { OrganizationCollectionResponse } from "../models/response/organization-collection.response";
 import { OrganizationResponse } from "../models/response/organization.response";
 import { SendResponse } from "../models/response/send.response";
@@ -39,6 +37,8 @@ import { StringResponse } from "../models/response/string.response";
 import { TemplateResponse } from "../models/response/template.response";
 import { SelectionReadOnly } from "../models/selection-read-only";
 import { CliUtils } from "../utils";
+import { CipherResponse } from "../vault/models/cipher.response";
+import { FolderResponse } from "../vault/models/folder.response";
 
 import { DownloadCommand } from "./download.command";
 

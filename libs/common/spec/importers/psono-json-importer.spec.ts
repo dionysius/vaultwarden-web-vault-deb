@@ -1,7 +1,7 @@
-import { CipherType } from "@bitwarden/common/enums/cipherType";
 import { FieldType } from "@bitwarden/common/enums/fieldType";
 import { PsonoJsonImporter as Importer } from "@bitwarden/common/importers/psono/psono-json-importer";
-import { FieldView } from "@bitwarden/common/models/view/field.view";
+import { CipherType } from "@bitwarden/common/vault/enums/cipher-type";
+import { FieldView } from "@bitwarden/common/vault/models/view/field.view";
 
 import { ApplicationPasswordsData } from "./test-data/psono-json/application-passwords";
 import { BookmarkData } from "./test-data/psono-json/bookmark.json";

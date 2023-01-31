@@ -1,11 +1,8 @@
-import { CipherService } from "../../abstractions/cipher.service";
 import { CollectionService } from "../../abstractions/collection.service";
 import { CryptoService } from "../../abstractions/crypto.service";
-import { FolderService } from "../../abstractions/folder/folder.service.abstraction";
 import { I18nService } from "../../abstractions/i18n.service";
 import { ImportApiServiceAbstraction } from "../../abstractions/import/import-api.service.abstraction";
 import { ImportService as ImportServiceAbstraction } from "../../abstractions/import/import.service.abstraction";
-import { CipherType } from "../../enums/cipherType";
 import {
   featuredImportOptions,
   ImportOption,
@@ -74,14 +71,17 @@ import { YotiCsvImporter } from "../../importers/yoti-csv-importer";
 import { ZohoVaultCsvImporter } from "../../importers/zohovault-csv-importer";
 import { Utils } from "../../misc/utils";
 import { ImportResult } from "../../models/domain/import-result";
-import { CipherRequest } from "../../models/request/cipher.request";
 import { CollectionRequest } from "../../models/request/collection.request";
-import { FolderRequest } from "../../models/request/folder.request";
 import { ImportCiphersRequest } from "../../models/request/import-ciphers.request";
 import { ImportOrganizationCiphersRequest } from "../../models/request/import-organization-ciphers.request";
 import { KvpRequest } from "../../models/request/kvp.request";
 import { ErrorResponse } from "../../models/response/error.response";
-import { CipherView } from "../../models/view/cipher.view";
+import { CipherService } from "../../vault/abstractions/cipher.service";
+import { FolderService } from "../../vault/abstractions/folder/folder.service.abstraction";
+import { CipherType } from "../../vault/enums/cipher-type";
+import { CipherRequest } from "../../vault/models/request/cipher.request";
+import { FolderRequest } from "../../vault/models/request/folder.request";
+import { CipherView } from "../../vault/models/view/cipher.view";
 
 export class ImportService implements ImportServiceAbstraction {
   featuredImportOptions = featuredImportOptions as readonly ImportOption[];

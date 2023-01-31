@@ -1,13 +1,13 @@
-import { CipherRepromptType } from "../enums/cipherRepromptType";
-import { CipherType } from "../enums/cipherType";
 import { FieldType } from "../enums/fieldType";
 import { SecureNoteType } from "../enums/secureNoteType";
 import { ImportResult } from "../models/domain/import-result";
-import { CipherView } from "../models/view/cipher.view";
 import { CollectionView } from "../models/view/collection.view";
-import { FieldView } from "../models/view/field.view";
-import { LoginView } from "../models/view/login.view";
-import { SecureNoteView } from "../models/view/secure-note.view";
+import { CipherRepromptType } from "../vault/enums/cipher-reprompt-type";
+import { CipherType } from "../vault/enums/cipher-type";
+import { CipherView } from "../vault/models/view/cipher.view";
+import { FieldView } from "../vault/models/view/field.view";
+import { LoginView } from "../vault/models/view/login.view";
+import { SecureNoteView } from "../vault/models/view/secure-note.view";
 
 import { BaseImporter } from "./base-importer";
 import { Importer } from "./importer";

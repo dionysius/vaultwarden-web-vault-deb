@@ -1,6 +1,6 @@
-import { CipherType } from "../enums/cipherType";
 import { SecureNoteType } from "../enums/secureNoteType";
 import { ImportResult } from "../models/domain/import-result";
+import { CipherType } from "../vault/enums/cipher-type";
 
 import { BaseImporter } from "./base-importer";
 import { Importer } from "./importer";

@@ -5,16 +5,16 @@ import { Organization } from "@bitwarden/common/models/domain/organization";
 import { TreeNode } from "@bitwarden/common/models/domain/tree-node";
 import { CollectionView } from "@bitwarden/common/models/view/collection.view";
 
-import { VaultFilterComponent as BaseVaultFilterComponent } from "../../../vault/vault-filter/components/vault-filter.component";
+import { VaultFilterComponent as BaseVaultFilterComponent } from "../../../../vault/app/vault/vault-filter/components/vault-filter.component";
 import {
   VaultFilterList,
   VaultFilterType,
-} from "../../../vault/vault-filter/shared/models/vault-filter-section.type";
-import { CollectionFilter } from "../../../vault/vault-filter/shared/models/vault-filter.type";
+} from "../../../../vault/app/vault/vault-filter/shared/models/vault-filter-section.type";
+import { CollectionFilter } from "../../../../vault/app/vault/vault-filter/shared/models/vault-filter.type";
 
 @Component({
   selector: "app-organization-vault-filter",
-  templateUrl: "../../../vault/vault-filter/components/vault-filter.component.html",
+  templateUrl: "../../../../vault/app/vault/vault-filter/components/vault-filter.component.html",
 })
 export class VaultFilterComponent extends BaseVaultFilterComponent implements OnInit, OnDestroy {
   @Input() set organization(value: Organization) {

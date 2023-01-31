@@ -4,9 +4,9 @@ import { firstValueFrom, Observable } from "rxjs";
 import { Organization } from "@bitwarden/common/models/domain/organization";
 import { ITreeNodeObject } from "@bitwarden/common/models/domain/tree-node";
 import { CollectionView } from "@bitwarden/common/models/view/collection.view";
-import { FolderView } from "@bitwarden/common/models/view/folder.view";
+import { FolderView } from "@bitwarden/common/vault/models/view/folder.view";
 
-import { DeprecatedVaultFilterService } from "../../../abstractions/deprecated-vault-filter.service";
+import { DeprecatedVaultFilterService } from "../../abstractions/deprecated-vault-filter.service";
 import { DynamicTreeNode } from "../models/dynamic-tree-node.model";
 import { VaultFilter } from "../models/vault-filter.model";
 

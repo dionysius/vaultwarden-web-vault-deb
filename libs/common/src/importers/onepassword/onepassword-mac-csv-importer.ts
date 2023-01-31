@@ -1,7 +1,7 @@
-import { CipherType } from "../../enums/cipherType";
-import { CardView } from "../../models/view/card.view";
-import { CipherView } from "../../models/view/cipher.view";
-import { IdentityView } from "../../models/view/identity.view";
+import { CipherType } from "../../vault/enums/cipher-type";
+import { CardView } from "../../vault/models/view/card.view";
+import { CipherView } from "../../vault/models/view/cipher.view";
+import { IdentityView } from "../../vault/models/view/identity.view";
 import { Importer } from "../importer";
 
 import { IgnoredProperties, OnePasswordCsvImporter } from "./onepassword-csv-importer";

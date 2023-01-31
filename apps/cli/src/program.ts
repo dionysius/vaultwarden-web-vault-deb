@@ -14,7 +14,6 @@ import { LoginCommand } from "./commands/login.command";
 import { LogoutCommand } from "./commands/logout.command";
 import { ServeCommand } from "./commands/serve.command";
 import { StatusCommand } from "./commands/status.command";
-import { SyncCommand } from "./commands/sync.command";
 import { UnlockCommand } from "./commands/unlock.command";
 import { UpdateCommand } from "./commands/update.command";
 import { Response } from "./models/response";
@@ -23,6 +22,7 @@ import { MessageResponse } from "./models/response/message.response";
 import { StringResponse } from "./models/response/string.response";
 import { TemplateResponse } from "./models/response/template.response";
 import { CliUtils } from "./utils";
+import { SyncCommand } from "./vault/sync.command";
 
 const writeLn = CliUtils.writeLn;
 

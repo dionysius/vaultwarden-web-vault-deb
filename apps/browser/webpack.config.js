@@ -92,7 +92,7 @@ const plugins = [
     chunks: ["popup/polyfills", "popup/vendor-angular", "popup/vendor", "popup/main"],
   }),
   new HtmlWebpackPlugin({
-    template: "./src/notification/bar.html",
+    template: "./src/autofill/notification/bar.html",
     filename: "notification/bar.html",
     chunks: ["notification/bar"],
   }),
@@ -105,7 +105,7 @@ const plugins = [
       { from: "./src/_locales", to: "_locales" },
       { from: "./src/images", to: "images" },
       { from: "./src/popup/images", to: "popup/images" },
-      { from: "./src/content/autofill.css", to: "content" },
+      { from: "./src/autofill/content/autofill.css", to: "content" },
     ],
   }),
   new MiniCssExtractPlugin({
@@ -141,12 +141,12 @@ const mainConfig = {
   entry: {
     "popup/polyfills": "./src/popup/polyfills.ts",
     "popup/main": "./src/popup/main.ts",
-    "content/autofill": "./src/content/autofill.js",
-    "content/autofiller": "./src/content/autofiller.ts",
-    "content/notificationBar": "./src/content/notificationBar.ts",
-    "content/contextMenuHandler": "./src/content/contextMenuHandler.ts",
-    "content/message_handler": "./src/content/message_handler.ts",
-    "notification/bar": "./src/notification/bar.js",
+    "content/autofill": "./src/autofill/content/autofill.js",
+    "content/autofiller": "./src/autofill/content/autofiller.ts",
+    "content/notificationBar": "./src/autofill/content/notification-bar.ts",
+    "content/contextMenuHandler": "./src/autofill/content/context-menu-handler.ts",
+    "content/message_handler": "./src/autofill/content/message_handler.ts",
+    "notification/bar": "./src/autofill/notification/bar.js",
     "encrypt-worker": "../../libs/common/src/services/cryptography/encrypt.worker.ts",
   },
   optimization: {
@@ -254,7 +254,7 @@ if (manifestVersion == 2) {
 } else {
   // Manifest v3 needs an extra helper for utilities in the content script.
   // The javascript output of this should be added to manifest.v3.json
-  mainConfig.entry["content/misc-utils"] = "./src/content/misc-utils.ts";
+  mainConfig.entry["content/misc-utils"] = "./src/autofill/content/misc-utils.ts";
 
   /**
    * @type {import("webpack").Configuration}

@@ -1,7 +1,7 @@
-import { CipherType } from "../enums/cipherType";
 import { ImportResult } from "../models/domain/import-result";
-import { CardView } from "../models/view/card.view";
-import { FolderView } from "../models/view/folder.view";
+import { CipherType } from "../vault/enums/cipher-type";
+import { CardView } from "../vault/models/view/card.view";
+import { FolderView } from "../vault/models/view/folder.view";
 
 import { BaseImporter } from "./base-importer";
 import { Importer } from "./importer";

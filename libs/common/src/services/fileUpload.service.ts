@@ -4,8 +4,8 @@ import { LogService } from "../abstractions/log.service";
 import { FileUploadType } from "../enums/fileUploadType";
 import { EncArrayBuffer } from "../models/domain/enc-array-buffer";
 import { EncString } from "../models/domain/enc-string";
-import { AttachmentUploadDataResponse } from "../models/response/attachment-upload-data.response";
 import { SendFileUploadDataResponse } from "../models/response/send-file-upload-data.response";
+import { AttachmentUploadDataResponse } from "../vault/models/response/attachment-upload-data.response";
 
 import { AzureFileUploadService } from "./azureFileUpload.service";
 import { BitwardenFileUploadService } from "./bitwardenFileUpload.service";

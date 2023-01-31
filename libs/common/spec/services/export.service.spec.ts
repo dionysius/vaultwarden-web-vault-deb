@@ -2,22 +2,22 @@
 import { Arg, Substitute, SubstituteOf } from "@fluffy-spoon/substitute";
 
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
-import { CipherService } from "@bitwarden/common/abstractions/cipher.service";
 import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
 import { CryptoFunctionService } from "@bitwarden/common/abstractions/cryptoFunction.service";
-import { FolderService } from "@bitwarden/common/abstractions/folder/folder.service.abstraction";
-import { CipherType } from "@bitwarden/common/enums/cipherType";
 import { KdfType, DEFAULT_PBKDF2_ITERATIONS } from "@bitwarden/common/enums/kdfType";
 import { Utils } from "@bitwarden/common/misc/utils";
-import { Cipher } from "@bitwarden/common/models/domain/cipher";
 import { EncString } from "@bitwarden/common/models/domain/enc-string";
-import { Folder } from "@bitwarden/common/models/domain/folder";
-import { Login } from "@bitwarden/common/models/domain/login";
 import { CipherWithIdExport as CipherExport } from "@bitwarden/common/models/export/cipher-with-ids.export";
-import { CipherView } from "@bitwarden/common/models/view/cipher.view";
-import { FolderView } from "@bitwarden/common/models/view/folder.view";
-import { LoginView } from "@bitwarden/common/models/view/login.view";
 import { ExportService } from "@bitwarden/common/services/export.service";
+import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
+import { FolderService } from "@bitwarden/common/vault/abstractions/folder/folder.service.abstraction";
+import { CipherType } from "@bitwarden/common/vault/enums/cipher-type";
+import { Cipher } from "@bitwarden/common/vault/models/domain/cipher";
+import { Folder } from "@bitwarden/common/vault/models/domain/folder";
+import { Login } from "@bitwarden/common/vault/models/domain/login";
+import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
+import { FolderView } from "@bitwarden/common/vault/models/view/folder.view";
+import { LoginView } from "@bitwarden/common/vault/models/view/login.view";
 
 import { BuildTestObject, GetUniqueString } from "../utils";
 
