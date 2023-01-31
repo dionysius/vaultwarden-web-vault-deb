@@ -274,13 +274,15 @@ export class VaultComponent implements OnInit, OnDestroy {
             this.editCipher(cipher);
           }),
       });
-      menu.push({
-        label: this.i18nService.t("clone"),
-        click: () =>
-          this.functionWithChangeDetection(() => {
-            this.cloneCipher(cipher);
-          }),
-      });
+      if (!cipher.organizationId) {
+        menu.push({
+          label: this.i18nService.t("clone"),
+          click: () =>
+            this.functionWithChangeDetection(() => {
+              this.cloneCipher(cipher);
+            }),
+        });
+      }
     }
 
     switch (cipher.type) {
