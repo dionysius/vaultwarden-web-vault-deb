@@ -181,7 +181,8 @@ export class VaultComponent implements OnInit, OnDestroy {
       this.showBrowserOutdated ||
       this.showPremiumCallout ||
       this.showUpdateKey ||
-      this.showVerifyEmail
+      this.showVerifyEmail ||
+      this.showLowKdf
     );
   }
 
