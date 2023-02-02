@@ -32,6 +32,7 @@ import { SendAddEditComponent } from "./send/send-add-edit.component";
 import { SendGroupingsComponent } from "./send/send-groupings.component";
 import { SendTypeComponent } from "./send/send-type.component";
 import { DebounceNavigationService } from "./services/debounceNavigationService";
+import { AutofillComponent } from "./settings/autofill.component";
 import { ExcludedDomainsComponent } from "./settings/excluded-domains.component";
 import { ExportComponent } from "./settings/export.component";
 import { FolderAddEditComponent } from "./settings/folder-add-edit.component";
@@ -186,6 +187,12 @@ const routes: Routes = [
     component: ExportComponent,
     canActivate: [AuthGuard],
     data: { state: "export" },
+  },
+  {
+    path: "autofill",
+    component: AutofillComponent,
+    canActivate: [AuthGuard],
+    data: { state: "autofill" },
   },
   {
     path: "folders",

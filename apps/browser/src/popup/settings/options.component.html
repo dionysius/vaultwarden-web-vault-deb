@@ -26,25 +26,6 @@
     </h2>
   </div>
   <ng-container *ngIf="showGeneral">
-    <div class="box">
-      <div class="box-content">
-        <div class="box-content-row" appBoxRow>
-          <label for="defaultUriMatch">{{ "defaultUriMatchDetection" | i18n }}</label>
-          <select
-            id="defaultUriMatch"
-            name="DefaultUriMatch"
-            aria-describedby="defaultUriMatchHelp"
-            [(ngModel)]="defaultUriMatch"
-            (change)="saveDefaultUriMatch()"
-          >
-            <option *ngFor="let o of uriMatchOptions" [ngValue]="o.value">{{ o.name }}</option>
-          </select>
-        </div>
-      </div>
-      <div id="defaultUriMatchHelp" class="box-footer">
-        {{ "defaultUriMatchDetectionDesc" | i18n }}
-      </div>
-    </div>
     <div class="box" *ngIf="showClearClipboard">
       <div class="box-content">
         <div class="box-content-row" appBoxRow>
@@ -226,63 +207,6 @@
         </div>
       </div>
       <div id="themeHelp" class="box-footer">{{ "themeDesc" | i18n }}</div>
-    </div>
-  </ng-container>
-  <div class="box box-section-divider">
-    <h2>
-      <button
-        type="button"
-        class="box-header-expandable"
-        (click)="showAutofill = !showAutofill"
-        [attr.aria-expanded]="showAutofill"
-      >
-        <i *ngIf="!showAutofill" class="bwi bwi-angle-right bwi-sm icon" aria-hidden="true"></i>
-        <i *ngIf="showAutofill" class="bwi bwi-angle-down bwi-sm icon" aria-hidden="true"></i>
-        Autofill
-      </button>
-    </h2>
-  </div>
-  <ng-container *ngIf="showAutofill">
-    <div class="box">
-      <div class="box-content">
-        <div class="box-content-row box-content-row-checkbox" appBoxRow>
-          <label for="autofill">{{ "enableAutoFillOnPageLoad" | i18n }}</label>
-          <input
-            id="autofill"
-            type="checkbox"
-            aria-describedby="autofillHelp"
-            (change)="updateAutoFillOnPageLoad()"
-            [(ngModel)]="enableAutoFillOnPageLoad"
-          />
-        </div>
-      </div>
-      <div id="autofillHelp" class="box-footer">
-        {{ "enableAutoFillOnPageLoadDesc" | i18n }}
-        <b>{{ "warning" | i18n }}</b
-        >: {{ "experimentalFeature" | i18n }}
-      </div>
-    </div>
-    <div class="box">
-      <div class="box-content">
-        <div class="box-content-row" appBoxRow>
-          <label for="defaultAutofill">{{ "defaultAutoFillOnPageLoad" | i18n }}</label>
-          <select
-            id="defaultAutofill"
-            name="DefaultAutofill"
-            aria-describedby="defaultAutofillHelp"
-            [(ngModel)]="autoFillOnPageLoadDefault"
-            (change)="updateAutoFillOnPageLoadDefault()"
-            [disabled]="!enableAutoFillOnPageLoad"
-          >
-            <option *ngFor="let o of autoFillOnPageLoadOptions" [ngValue]="o.value">
-              {{ o.name }}
-            </option>
-          </select>
-        </div>
-      </div>
-      <div id="defaultAutofillHelp" class="box-footer">
-        {{ "defaultAutoFillOnPageLoadDesc" | i18n }}
-      </div>
     </div>
   </ng-container>
 </main>

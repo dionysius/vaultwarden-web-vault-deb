@@ -62,6 +62,7 @@ import { SendGroupingsComponent } from "./send/send-groupings.component";
 import { SendTypeComponent } from "./send/send-type.component";
 import { ServicesModule } from "./services/services.module";
 import { AboutComponent } from "./settings/about.component";
+import { AutofillComponent } from "./settings/autofill.component";
 import { ExcludedDomainsComponent } from "./settings/excluded-domains.component";
 import { ExportComponent } from "./settings/export.component";
 import { FolderAddEditComponent } from "./settings/folder-add-edit.component";
@@ -147,6 +148,7 @@ import { TabsComponent } from "./tabs.component";
     RemovePasswordComponent,
     VaultSelectComponent,
     AboutComponent,
+    AutofillComponent,
   ],
   providers: [CurrencyPipe, DatePipe],
   bootstrap: [AppComponent],
