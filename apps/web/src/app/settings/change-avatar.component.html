@@ -1,3 +1,5 @@
+<!-- Please remove this disable statement when editing this file! -->
+<!-- eslint-disable tailwindcss/no-custom-classname -->
 <div class="modal fade" role="dialog" aria-modal="true" aria-labelledby="customizeTitle">
   <div class="modal-dialog modal-dialog-scrollable tw-w-[600px] tw-max-w-none" role="document">
     <div class="modal-content">
@@ -21,7 +23,7 @@
           {{ error }}
         </app-callout>
         <p class="tw-text-lg">{{ "pickAnAvatarColor" | i18n }}</p>
-        <div class="tw-flex tw-flex-wrap tw-justify-center tw-gap-8 tw-gap-y-8">
+        <div class="tw-flex tw-flex-wrap tw-justify-center tw-gap-8">
           <ng-container *ngFor="let c of defaultColorPalette">
             <selectable-avatar
               appStopClick
@@ -44,7 +46,7 @@
                 '!tw-outline-[3px] tw-outline-primary-500 hover:tw-outline-[3px] hover:tw-outline-primary-500':
                   customColorSelected
               }"
-              class="tw-outline-solid tw-bg-white tw-relative tw-inline-block tw-flex tw-h-24 tw-w-24 tw-cursor-pointer tw-place-content-center tw-content-center tw-justify-center tw-rounded-full tw-border tw-border-solid tw-border-secondary-500 tw-outline tw-outline-0 tw-outline-offset-1 hover:tw-outline-1 hover:tw-outline-primary-300 focus:tw-outline-2 focus:tw-outline-primary-500"
+              class="tw-outline-solid tw-bg-white tw-relative tw-flex tw-h-24 tw-w-24 tw-cursor-pointer tw-place-content-center tw-content-center tw-justify-center tw-rounded-full tw-border tw-border-solid tw-border-secondary-500 tw-outline tw-outline-0 tw-outline-offset-1 hover:tw-outline-1 hover:tw-outline-primary-300 focus:tw-outline-2 focus:tw-outline-primary-500"
               [style.background-color]="customColor$ | async"
             >
               <i
