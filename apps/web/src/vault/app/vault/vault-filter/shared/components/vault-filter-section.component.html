@@ -17,7 +17,7 @@
     </button>
     <button
       *ngIf="headerInfo.isSelectable"
-      appA11yTitle="{{ isOrganizationFilter ? 'vault' : ('filter' | i18n) }}: {{
+      appA11yTitle="{{ (isOrganizationFilter ? 'vault' : 'filter') | i18n }}: {{
         headerNode.node.name | i18n
       }}"
       class="filter-button"

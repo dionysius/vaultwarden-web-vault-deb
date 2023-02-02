@@ -18,65 +18,14 @@
       </div>
     </div>
     <div class="col-9">
-      <bit-breadcrumbs *ngIf="breadcrumbs.length > 0">
-        <bit-breadcrumb
-          *ngFor="let collection of breadcrumbs; let first = first"
-          [icon]="first ? undefined : 'bwi-collection'"
-          (click)="applyCollectionFilter(collection)"
-        >
-          <!-- First node in the tree contains a translation key. The rest come from user input. -->
-          <ng-container *ngIf="first">{{ collection.node.name | i18n }}</ng-container>
-          <ng-container *ngIf="!first">{{ collection.node.name }}</ng-container>
-        </bit-breadcrumb>
-      </bit-breadcrumbs>
-      <div class="tw-mb-4 tw-flex">
-        <h1>
-          {{ "vaultItems" | i18n }}
-          <small #actionSpinner [appApiAction]="vaultItemsComponent.actionPromise">
-            <ng-container *ngIf="$any(actionSpinner).loading">
-              <i
-                class="bwi bwi-spinner bwi-spin text-muted"
-                title="{{ 'loading' | i18n }}"
-                aria-hidden="true"
-              ></i>
-              <span class="sr-only">{{ "loading" | i18n }}</span>
-            </ng-container>
-          </small>
-        </h1>
-        <div *ngIf="!activeFilter.isDeleted" class="ml-auto d-flex">
-          <div *ngIf="organization.canCreateNewCollections" class="dropdown mr-2" appListDropdown>
-            <button
-              bitButton
-              buttonType="primary"
-              type="button"
-              [bitMenuTriggerFor]="addOptions"
-              id="newItemDropdown"
-              appA11yTitle="{{ 'new' | i18n }}"
-            >
-              {{ "new" | i18n }}<i class="bwi bwi-angle-down tw-ml-2" aria-hidden="true"></i>
-            </button>
-            <bit-menu #addOptions aria-labelledby="newItemDropdown">
-              <button type="button" bitMenuItem (click)="addCipher()">
-                <i class="bwi bwi-fw bwi-globe" aria-hidden="true"></i>
-                {{ "item" | i18n }}
-              </button>
-              <button type="button" bitMenuItem (click)="addCollection()">
-                <i class="bwi bwi-fw bwi-collection" aria-hidden="true"></i>
-                {{ "collection" | i18n }}
-              </button>
-            </bit-menu>
-          </div>
-          <button
-            *ngIf="!organization?.canCreateNewCollections"
-            type="button"
-            bitButton
-            buttonType="primary"
-            (click)="addCipher()"
-          >
-            <i class="bwi bwi-plus bwi-fw" aria-hidden="true"></i>{{ "newItem" | i18n }}
-          </button>
-        </div>
-      </div>
+      <app-org-vault-header
+        [activeFilter]="activeFilter"
+        (activeFilterChanged)="applyVaultFilter($event)"
+        (onCollectionChanged)="refreshItems()"
+        [actionPromise]="vaultItemsComponent.actionPromise"
+        (onAddCipher)="addCipher()"
+        [organization]="organization"
+      ></app-org-vault-header>
       <app-callout
         type="warning"
         *ngIf="activeFilter.isDeleted"

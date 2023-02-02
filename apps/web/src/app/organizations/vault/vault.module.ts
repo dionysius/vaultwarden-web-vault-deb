@@ -10,6 +10,7 @@ import { SharedModule } from "../../shared/shared.module";
 import { CollectionBadgeModule } from "./collection-badge/collection-badge.module";
 import { GroupBadgeModule } from "./group-badge/group-badge.module";
 import { VaultFilterModule } from "./vault-filter/vault-filter.module";
+import { VaultHeaderComponent } from "./vault-header/vault-header.component";
 import { VaultItemsComponent } from "./vault-items.component";
 import { VaultRoutingModule } from "./vault-routing.module";
 import { VaultComponent } from "./vault.component";
@@ -26,7 +27,7 @@ import { VaultComponent } from "./vault.component";
     PipesModule,
     BreadcrumbsModule,
   ],
-  declarations: [VaultComponent, VaultItemsComponent],
+  declarations: [VaultComponent, VaultItemsComponent, VaultHeaderComponent],
   exports: [VaultComponent],
 })
 export class VaultModule {}

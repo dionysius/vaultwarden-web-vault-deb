@@ -20,6 +20,48 @@ export class VaultFilter {
   selectedFolderNode: TreeNode<FolderFilter>;
   selectedCollectionNode: TreeNode<CollectionFilter>;
 
+  /**
+   * A list of collection filters that form a chain from the organization root to currently selected collection.
+   * To be used when rendering a breadcrumb UI for navigating the collection hierarchy.
+   * Begins from the organization root and excludes the currently selected collection.
+   */
+  get collectionBreadcrumbs(): TreeNode<CollectionFilter>[] {
+    if (!this.isCollectionSelected) {
+      return [];
+    }
+
+    const collections = [this.selectedCollectionNode];
+    while (collections[collections.length - 1].parent != undefined) {
+      collections.push(collections[collections.length - 1].parent);
+    }
+
+    return collections.slice(1).reverse();
+  }
+
+  /**
+   * The vault is filtered by a specific collection
+   */
+  get isCollectionSelected(): boolean {
+    return (
+      this.selectedCollectionNode != null &&
+      this.selectedCollectionNode.node.id !== "AllCollections"
+    );
+  }
+
+  /**
+   * The vault is filtered by the "Unassigned" collection
+   */
+  get isUnassignedCollectionSelected(): boolean {
+    return this.selectedCollectionNode != null && this.selectedCollectionNode.node.id === null;
+  }
+
+  /**
+   * The vault is filtered by the users individual vault
+   */
+  get isMyVaultSelected(): boolean {
+    return this.selectedOrganizationNode?.node.id === "MyVault";
+  }
+
   get isFavorites(): boolean {
     return this.selectedCipherTypeNode?.node.type === "favorites";
   }
