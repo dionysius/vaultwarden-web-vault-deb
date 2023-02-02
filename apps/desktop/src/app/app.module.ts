@@ -8,10 +8,6 @@ import { NgModule } from "@angular/core";
 import { ColorPasswordCountPipe } from "@bitwarden/angular/pipes/color-password-count.pipe";
 import { ColorPasswordPipe } from "@bitwarden/angular/pipes/color-password.pipe";
 
-import { CollectionsComponent } from "../app/vault/collections.component";
-import { ExportComponent } from "../app/vault/export.component";
-import { GeneratorComponent } from "../app/vault/generator.component";
-import { PasswordGeneratorHistoryComponent } from "../app/vault/password-generator-history.component";
 import { PremiumComponent } from "../vault/app/accounts/premium.component";
 import { PasswordRepromptComponent } from "../vault/app/components/password-reprompt.component";
 import { AddEditCustomFieldsComponent } from "../vault/app/vault/add-edit-custom-fields.component";
@@ -53,6 +49,10 @@ import { AddEditComponent as SendAddEditComponent } from "./send/add-edit.compon
 import { EffluxDatesComponent as SendEffluxDatesComponent } from "./send/efflux-dates.component";
 import { SendComponent } from "./send/send.component";
 import { SharedModule } from "./shared/shared.module";
+import { CollectionsComponent } from "./vault/collections.component";
+import { ExportComponent } from "./vault/export.component";
+import { GeneratorComponent } from "./vault/generator.component";
+import { PasswordGeneratorHistoryComponent } from "./vault/password-generator-history.component";
 
 @NgModule({
   imports: [SharedModule, AppRoutingModule, VaultFilterModule],

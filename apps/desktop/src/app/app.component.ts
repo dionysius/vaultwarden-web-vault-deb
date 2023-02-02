@@ -40,15 +40,15 @@ import { InternalFolderService } from "@bitwarden/common/vault/abstractions/fold
 import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
 import { CipherType } from "@bitwarden/common/vault/enums/cipher-type";
 
-import { ExportComponent } from "../app/vault/export.component";
-import { GeneratorComponent } from "../app/vault/generator.component";
-import { PasswordGeneratorHistoryComponent } from "../app/vault/password-generator-history.component";
 import { MenuUpdateRequest } from "../main/menu/menu.updater";
 import { PremiumComponent } from "../vault/app/accounts/premium.component";
 import { FolderAddEditComponent } from "../vault/app/vault/folder-add-edit.component";
 
 import { DeleteAccountComponent } from "./accounts/delete-account.component";
 import { SettingsComponent } from "./accounts/settings.component";
+import { ExportComponent } from "./vault/export.component";
+import { GeneratorComponent } from "./vault/generator.component";
+import { PasswordGeneratorHistoryComponent } from "./vault/password-generator-history.component";
 
 const BroadcasterSubscriptionId = "AppComponent";
 const IdleTimeout = 60000 * 10; // 10 minutes
