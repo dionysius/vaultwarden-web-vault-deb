@@ -2048,28 +2048,28 @@
     "message": "Запомніць электронную пошту"
   },
   "exposedMasterPassword": {
-    "message": "Exposed Master Password"
+    "message": "Скампраметаваны асноўны пароль"
   },
   "exposedMasterPasswordDesc": {
-    "message": "Password found in a data breach. Use a unique password to protect your account. Are you sure you want to use an exposed password?"
+    "message": "Пароль знойдзены ва ўцечках даных. Выкарыстоўвайце ўнікальныя паролі для абароны свайго ўліковага запісу. Вы сапраўды хочаце выкарыстоўваць скампраметаваны пароль?"
   },
   "weakAndExposedMasterPassword": {
-    "message": "Weak and Exposed Master Password"
+    "message": "Ненадзейны і скампраметаваны асноўны пароль"
   },
   "weakAndBreachedMasterPasswordDesc": {
-    "message": "Weak password identified and found in a data breach. Use a strong and unique password to protect your account. Are you sure you want to use this password?"
+    "message": "Вызначаны ненадзейны пароль, які знойдзены ва ўцечках даных. Выкарыстоўвайце надзейныя і ўнікальныя паролі для абароны свайго ўліковага запісу. Вы сапраўды хочаце выкарыстоўваць гэты пароль?"
   },
   "checkForBreaches": {
-    "message": "Check known data breaches for this password"
+    "message": "Праверыць у вядомых уцечках даных для гэтага пароля"
   },
   "important": {
-    "message": "Important:"
+    "message": "Важна:"
   },
   "masterPasswordHint": {
-    "message": "Your master password cannot be recovered if you forget it!"
+    "message": "Ваш асноўны пароль немагчыма будзе аднавіць, калі вы яго забудзеце!"
   },
   "characterMinimum": {
-    "message": "$LENGTH$ character minimum",
+    "message": "Мінімальная колькасць сімвалаў: $LENGTH$",
     "placeholders": {
       "length": {
         "content": "$1",

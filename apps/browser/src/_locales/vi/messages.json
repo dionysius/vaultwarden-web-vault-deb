@@ -2063,13 +2063,13 @@
     "message": "Check known data breaches for this password"
   },
   "important": {
-    "message": "Important:"
+    "message": "Quan trọng:"
   },
   "masterPasswordHint": {
     "message": "Your master password cannot be recovered if you forget it!"
   },
   "characterMinimum": {
-    "message": "$LENGTH$ character minimum",
+    "message": "$LENGTH$ ký tự tối thiểu",
     "placeholders": {
       "length": {
         "content": "$1",

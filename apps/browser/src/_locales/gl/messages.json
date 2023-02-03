@@ -11,28 +11,28 @@
     "description": "Extension description"
   },
   "loginOrCreateNewAccount": {
-    "message": "Prijavite se ili napravite novi račun da biste pristupili svom sigurnom trezoru."
+    "message": "Log in or create a new account to access your secure vault."
   },
   "createAccount": {
-    "message": "Napravi račun"
+    "message": "Create account"
   },
   "login": {
-    "message": "Prijavite se"
+    "message": "Log in"
   },
   "enterpriseSingleSignOn": {
     "message": "Enterprise single sign-on"
   },
   "cancel": {
-    "message": "Otkaži"
+    "message": "Cancel"
   },
   "close": {
-    "message": "Zatvori"
+    "message": "Close"
   },
   "submit": {
-    "message": "Potvrdi"
+    "message": "Submit"
   },
   "emailAddress": {
-    "message": "E-Mail adresa"
+    "message": "Email address"
   },
   "masterPass": {
     "message": "Master password"
@@ -53,19 +53,19 @@
     "message": "Tab"
   },
   "vault": {
-    "message": "Trezor"
+    "message": "Vault"
   },
   "myVault": {
-    "message": "Moj trezor"
+    "message": "My vault"
   },
   "allVaults": {
     "message": "All vaults"
   },
   "tools": {
-    "message": "Alati"
+    "message": "Tools"
   },
   "settings": {
-    "message": "Postavke"
+    "message": "Settings"
   },
   "currentTab": {
     "message": "Current tab"
@@ -116,7 +116,7 @@
     "message": "Add item"
   },
   "passwordHint": {
-    "message": "Nagovještaj lozinke"
+    "message": "Password hint"
   },
   "enterEmailToGetHint": {
     "message": "Enter your account email address to receive your master password hint."
@@ -125,7 +125,7 @@
     "message": "Get master password hint"
   },
   "continue": {
-    "message": "Nastavi"
+    "message": "Continue"
   },
   "sendVerificationCode": {
     "message": "Send a verification code to your email"
@@ -1067,40 +1067,40 @@
     "message": "Expiration"
   },
   "january": {
-    "message": "Januar"
+    "message": "January"
   },
   "february": {
-    "message": "Februar"
+    "message": "February"
   },
   "march": {
-    "message": "Mart"
+    "message": "March"
   },
   "april": {
     "message": "April"
   },
   "may": {
-    "message": "Maj"
+    "message": "May"
   },
   "june": {
-    "message": "Juni"
+    "message": "June"
   },
   "july": {
-    "message": "Juli"
+    "message": "July"
   },
   "august": {
-    "message": "Avgust"
+    "message": "August"
   },
   "september": {
-    "message": "Septembar"
+    "message": "September"
   },
   "october": {
-    "message": "Oktobar"
+    "message": "October"
   },
   "november": {
-    "message": "Novembar"
+    "message": "November"
   },
   "december": {
-    "message": "Decembar"
+    "message": "December"
   },
   "securityCode": {
     "message": "Security code"
@@ -1112,13 +1112,13 @@
     "message": "Title"
   },
   "mr": {
-    "message": "Gospodin"
+    "message": "Mr"
   },
   "mrs": {
-    "message": "Gđa"
+    "message": "Mrs"
   },
   "ms": {
-    "message": "G-đica"
+    "message": "Ms"
   },
   "dr": {
     "message": "Dr"
@@ -1127,43 +1127,43 @@
     "message": "Mx"
   },
   "firstName": {
-    "message": "Ime"
+    "message": "First name"
   },
   "middleName": {
-    "message": "Nadimak"
+    "message": "Middle name"
   },
   "lastName": {
-    "message": "Prezime"
+    "message": "Last name"
   },
   "fullName": {
-    "message": "Puno ime"
+    "message": "Full name"
   },
   "identityName": {
-    "message": "Ime identiteta"
+    "message": "Identity name"
   },
   "company": {
-    "message": "Preduzeće"
+    "message": "Company"
   },
   "ssn": {
-    "message": "Broj socijalnog osiguranja / Jmbg"
+    "message": "Social Security number"
   },
   "passportNumber": {
-    "message": "Broj pasoša"
+    "message": "Passport number"
   },
   "licenseNumber": {
-    "message": "Broj vozačke dozvole"
+    "message": "License number"
   },
   "email": {
     "message": "Email"
   },
   "phone": {
-    "message": "Telefon"
+    "message": "Phone"
   },
   "address": {
-    "message": "Adresa"
+    "message": "Address"
   },
   "address1": {
-    "message": "Adresa 1"
+    "message": "Address 1"
   },
   "address2": {
     "message": "Address 2"
@@ -1266,10 +1266,10 @@
     "message": "Exact"
   },
   "startsWith": {
-    "message": "Počinje sa"
+    "message": "Starts with"
   },
   "regEx": {
-    "message": "Regularni izraz",
+    "message": "Regular expression",
     "description": "A programming term, also known as 'RegEx'."
   },
   "matchDetection": {
@@ -1338,15 +1338,15 @@
     "message": "Who owns this item?"
   },
   "strong": {
-    "message": "Sigurno",
+    "message": "Strong",
     "description": "ex. A strong password. Scale: Weak -> Good -> Strong"
   },
   "good": {
-    "message": "Dobro",
+    "message": "Good",
     "description": "ex. A good password. Scale: Weak -> Good -> Strong"
   },
   "weak": {
-    "message": "Slabo",
+    "message": "Weak",
     "description": "ex. A weak password. Scale: Weak -> Good -> Strong"
   },
   "weakMasterPassword": {
@@ -1360,7 +1360,7 @@
     "description": "PIN code. Ex. The short code (often numeric) that you use to unlock a device."
   },
   "unlockWithPin": {
-    "message": "Otključaj PIN-om"
+    "message": "Unlock with PIN"
   },
   "setYourPinCode": {
     "message": "Set your PIN code for unlocking Bitwarden. Your PIN settings will be reset if you ever fully log out of the application."
@@ -1399,11 +1399,11 @@
     "message": "Vault timeout action"
   },
   "lock": {
-    "message": "Zaključaj",
+    "message": "Lock",
     "description": "Verb form: to make secure or inaccesible by"
   },
   "trash": {
-    "message": "Smeće",
+    "message": "Trash",
     "description": "Noun: a special folder to hold deleted items"
   },
   "searchTrash": {
@@ -1599,10 +1599,10 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendTypeText": {
-    "message": "Tekst"
+    "message": "Text"
   },
   "sendTypeFile": {
-    "message": "Fajl"
+    "message": "File"
   },
   "allSends": {
     "message": "All Sends",
@@ -1613,7 +1613,7 @@
     "description": "This text will be displayed after a Send has been accessed the maximum amount of times."
   },
   "expired": {
-    "message": "Isteklo"
+    "message": "Expired"
   },
   "pendingDeletion": {
     "message": "Pending deletion"
@@ -1629,7 +1629,7 @@
     "message": "Remove Password"
   },
   "delete": {
-    "message": "Izbriši"
+    "message": "Delete"
   },
   "removedPassword": {
     "message": "Password removed"
@@ -1686,7 +1686,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "oneDay": {
-    "message": "1 dan"
+    "message": "1 day"
   },
   "days": {
     "message": "$DAYS$ days",
@@ -2045,7 +2045,7 @@
     "message": "New around here?"
   },
   "rememberEmail": {
-    "message": "Zapamti email"
+    "message": "Remember email"
   },
   "exposedMasterPassword": {
     "message": "Exposed Master Password"
@@ -2063,7 +2063,7 @@
     "message": "Check known data breaches for this password"
   },
   "important": {
-    "message": "Važno:"
+    "message": "Important:"
   },
   "masterPasswordHint": {
     "message": "Your master password cannot be recovered if you forget it!"

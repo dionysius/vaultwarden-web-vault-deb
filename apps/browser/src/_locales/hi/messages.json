@@ -53,13 +53,13 @@
     "message": "टैब"
   },
   "vault": {
-    "message": "Vault"
+    "message": "तिजोरी"
   },
   "myVault": {
     "message": "My Vault"
   },
   "allVaults": {
-    "message": "All vaults"
+    "message": "सभी तिजोरियाँ"
   },
   "tools": {
     "message": "उपकरण"
@@ -95,13 +95,13 @@
     "message": "Generate Password (copied)"
   },
   "copyElementIdentifier": {
-    "message": "Copy custom field name"
+    "message": "कस्टम फील्ड नाम कॉपी करें"
   },
   "noMatchingLogins": {
     "message": "कोई मेल-मिला लॉगिन नहीं |"
   },
   "unlockVaultMenu": {
-    "message": "Unlock your vault"
+    "message": "आपकी तिजोरी का ताला खोलें"
   },
   "loginToVaultMenu": {
     "message": "अपने अकाउंट में लॉगिन करें"
@@ -128,7 +128,7 @@
     "message": "जारी रखें"
   },
   "sendVerificationCode": {
-    "message": "Send a verification code to your email"
+    "message": "एक सत्यापन कोड अपने ईमेल पर भेजें"
   },
   "sendCode": {
     "message": "कोड भेजें"
@@ -140,7 +140,7 @@
     "message": "Verification Code"
   },
   "confirmIdentity": {
-    "message": "Confirm your identity to continue."
+    "message": "आगे बढ़ने के लिए अपने पहचान की पुष्टि करें"
   },
   "account": {
     "message": "खाता"
@@ -236,16 +236,16 @@
     "message": "लंबाई"
   },
   "uppercase": {
-    "message": "Uppercase (A-Z)"
+    "message": "बड़े अक्षर (A-Z)"
   },
   "lowercase": {
-    "message": "Lowercase (a-z)"
+    "message": "छोटे अक्षर (a-z)"
   },
   "numbers": {
-    "message": "Numbers (0-9)"
+    "message": "संख्या (0-9)"
   },
   "specialCharacters": {
-    "message": "Special characters (!@#$%^&*)"
+    "message": "विशेष अक्षर (!@#$%^&*)"
   },
   "numWords": {
     "message": "Number of Words"
@@ -424,13 +424,13 @@
     "message": "अमान्य ई-मेल |"
   },
   "masterPasswordRequired": {
-    "message": "Master password is required."
+    "message": "मास्टर पासवर्ड की आवश्यकता है।"
   },
   "confirmMasterPasswordRequired": {
-    "message": "Master password retype is required."
+    "message": "मास्टर पासवर्ड पुनः डालने की आवश्यकता है।"
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least 8 characters long."
+    "message": "मास्टर पासवर्ड कम से कम 8 वर्ण लंबा होना चाहिए।"
   },
   "masterPassDoesntMatch": {
     "message": "मास्टर पासवर्ड पुष्टि मेल नहीं खाती है।"
@@ -445,7 +445,7 @@
     "message": "सत्यापन टोकन आवश्यक है"
   },
   "invalidVerificationCode": {
-    "message": "Invalid verification code"
+    "message": "सत्यापन कोड अवैध है"
   },
   "valueCopied": {
     "message": " copied",
@@ -552,10 +552,10 @@
     "message": "क्या आप सुनिश्चित हैं कि आप वर्तमान पासवर्ड को ओवरराइट करना चाहते हैं?"
   },
   "overwriteUsername": {
-    "message": "Overwrite username"
+    "message": "उपयोगकर्ता नाम अधिलेखित करें"
   },
   "overwriteUsernameConfirmation": {
-    "message": "Are you sure you want to overwrite the current username?"
+    "message": "क्या आप वाकई वर्तमान उपयोगकर्ता नाम को अधिलेखित करना चाहते हैं?"
   },
   "searchFolder": {
     "message": "फोल्डर में खोजें"
@@ -571,22 +571,22 @@
     "description": "This is the folder for uncategorized items"
   },
   "enableAddLoginNotification": {
-    "message": "Ask to add login"
+    "message": "लॉगिन जोड़ने के लिए कहें"
   },
   "addLoginNotificationDesc": {
     "message": "The \"Add Login Notification\" automatically prompts you to save new logins to your vault whenever you log into them for the first time."
   },
   "showCardsCurrentTab": {
-    "message": "Show cards on Tab page"
+    "message": "टैब पेज पर कार्ड दिखाएं"
   },
   "showCardsCurrentTabDesc": {
-    "message": "List card items on the Tab page for easy auto-fill."
+    "message": "आसान ऑटो-फिल के लिए टैब पेज पर कार्ड आइटम सूचीबद्ध करें।"
   },
   "showIdentitiesCurrentTab": {
-    "message": "Show identities on Tab page"
+    "message": "टैब पेज पर पहचान दिखाएं"
   },
   "showIdentitiesCurrentTabDesc": {
-    "message": "List identity items on the Tab page for easy auto-fill."
+    "message": "आसान ऑटो-फिल के लिए टैब पेज पर कार्ड आइटम सूचीबद्ध करें।"
   },
   "clearClipboard": {
     "message": "क्लिपबोर्ड खाली करें",
@@ -603,10 +603,10 @@
     "message": "Yes, Save Now"
   },
   "enableChangedPasswordNotification": {
-    "message": "Ask to update existing login"
+    "message": "मौजूदा लॉगिन को अपडेट करने के लिए कहें"
   },
   "changedPasswordNotificationDesc": {
-    "message": "Ask to update a login's password when a change is detected on a website."
+    "message": "किसी वेबसाइट पर परिवर्तन का पता चलने पर लॉगिन का पासवर्ड अपडेट करने के लिए कहें।"
   },
   "notificationChangeDesc": {
     "message": "क्या आप बिटवर्डन में इस पासवर्ड को अपडेट करना चाहते हैं?"
@@ -615,10 +615,10 @@
     "message": "Yes, Update Now"
   },
   "enableContextMenuItem": {
-    "message": "Show context menu options"
+    "message": "संदर्भ मेनू विकल्प दिखाएं"
   },
   "contextMenuItemDesc": {
-    "message": "Use a secondary click to access password generation and matching logins for the website. "
+    "message": "वेबसाइट के लिए पासवर्ड जेनरेशन और मैचिंग लॉग इन तक पहुंचने के लिए सेकेंडरी क्लिक का उपयोग करें। "
   },
   "defaultUriMatchDetection": {
     "message": "डिफॉल्ट URI मैच डिटेक्शन",
@@ -810,13 +810,13 @@
     "message": "ताज़ा पूरा"
   },
   "enableAutoTotpCopy": {
-    "message": "Copy TOTP automatically"
+    "message": "TOTP को स्वचालित रूप से कॉपी करें"
   },
   "disableAutoTotpCopyDesc": {
     "message": "यदि आपके लॉगिन में एक प्रमाणक कुंजी जुड़ी हुई है, तो जब भी आप लॉगिन को ऑटो-फिल करते हैं तो TOTP सत्यापन कोड स्वचालित रूप से आपके क्लिपबोर्ड पर कॉपी किया जाता है।"
   },
   "enableAutoBiometricsPrompt": {
-    "message": "Ask for biometrics on launch"
+    "message": "लॉन्च पर बायोमेट्रिक्स के लिए पूछें"
   },
   "premiumRequired": {
     "message": "Premium Required"
@@ -996,7 +996,7 @@
     "message": "वॉल्ट लॉक करें"
   },
   "privateModeWarning": {
-    "message": "Private mode support is experimental and some features are limited."
+    "message": "निजी मोड समर्थन प्रायोगिक है और कुछ सुविधाएँ सीमित हैं।"
   },
   "customFields": {
     "message": "Custom Fields"
@@ -1023,11 +1023,11 @@
     "message": "बूलियन"
   },
   "cfTypeLinked": {
-    "message": "Linked",
+    "message": "जुड़ा हुआ",
     "description": "This describes a field that is 'linked' (tied) to another field."
   },
   "linkedValue": {
-    "message": "Linked value",
+    "message": "लिंक्ड मान",
     "description": "This describes a value that is 'linked' (tied) to another value."
   },
   "popup2faCloseMessage": {
@@ -1037,16 +1037,16 @@
     "message": "यह ब्राउज़र इस पॉपअप विंडो में U2F अनुरोधों को संसाधित नहीं कर सकता है।क्या आप इस पॉपअप को एक नई विंडो में खोलना चाहते हैं ताकि आप U2F का उपयोग करके लॉग इन कर सकें?"
   },
   "enableFavicon": {
-    "message": "Show website icons"
+    "message": "वेबसाइट आइकन दिखाएं"
   },
   "faviconDesc": {
-    "message": "Show a recognizable image next to each login."
+    "message": "प्रत्येक लॉगिन के आगे एक पहचानने योग्य छवि दिखाएं।"
   },
   "enableBadgeCounter": {
-    "message": "Show badge counter"
+    "message": "बैज काउंटर दिखाएं"
   },
   "badgeCounterDesc": {
-    "message": "Indicate how many logins you have for the current web page."
+    "message": "इंगित करें कि आपके पास वर्तमान वेब पेज के लिए कितने लॉगिन हैं।"
   },
   "cardholderName": {
     "message": "Cardholder Name"
@@ -1255,7 +1255,7 @@
     "description": "Domain name. Ex. website.com"
   },
   "domainName": {
-    "message": "Domain name",
+    "message": "डोमेन नाम",
     "description": "Domain name. Ex. website.com"
   },
   "host": {
@@ -1315,7 +1315,7 @@
     "description": "ex. Date this item was updated"
   },
   "dateCreated": {
-    "message": "Created",
+    "message": "बनाया था",
     "description": "ex. Date this item was created"
   },
   "datePasswordUpdated": {
@@ -1491,7 +1491,7 @@
     "message": "इस बॉक्स की जांच करके आप निम्नलिखित से सहमत हैं:"
   },
   "acceptPoliciesRequired": {
-    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+    "message": "सेवा की शर्तों और गोपनीयता नीति को स्वीकार नहीं किया गया है।"
   },
   "termsOfService": {
     "message": "सेवा की शर्तें"
@@ -1817,34 +1817,34 @@
     "message": "इस सुविधा का उपयोग करने के लिए आपको अपने ईमेल को सत्यापित करना होगा। आप वेब वॉल्ट में अपने ईमेल को सत्यापित कर सकते हैं।"
   },
   "updatedMasterPassword": {
-    "message": "Updated master password"
+    "message": "अपडेट किया गया मास्टर पासवर्ड"
   },
   "updateMasterPassword": {
-    "message": "Update master password"
+    "message": "मास्टर पासवर्ड अपडेट करें"
   },
   "updateMasterPasswordWarning": {
-    "message": "Your master password was recently changed by an administrator in your organization. In order to access the vault, you must update it now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
+    "message": "आपका मास्टर पासवर्ड हाल ही में आपके संगठन के एक व्यवस्थापक द्वारा बदल दिया गया था। तिजोरी तक पहुँचने के लिए, आपको इसे अभी अपडेट करना होगा। ये कार्यवाही आपको अपने वर्तमान सत्र से लॉग आउट कर देगी, जिसके लिए आपको वापस लॉग इन करने की आवश्यकता होगी। अन्य उपकरणों पर सक्रिय सत्र एक घंटे तक सक्रिय रह सकते हैं।"
   },
   "resetPasswordPolicyAutoEnroll": {
-    "message": "Automatic enrollment"
+    "message": "स्वचालित नामांकन"
   },
   "resetPasswordAutoEnrollInviteWarning": {
-    "message": "This organization has an enterprise policy that will automatically enroll you in password reset. Enrollment will allow organization administrators to change your master password."
+    "message": "इस संगठन की एक उद्यम नीति है जो स्वचालित रूप से आपको पासवर्ड रीसेट में नामांकित करेगी। नामांकन संगठन प्रशासकों को आपका मास्टर पासवर्ड बदलने की अनुमति देगा।"
   },
   "selectFolder": {
-    "message": "Select folder..."
+    "message": "फ़ोल्डर चुनें..."
   },
   "ssoCompleteRegistration": {
-    "message": "In order to complete logging in with SSO, please set a master password to access and protect your vault."
+    "message": "SSO के साथ लॉग-इन पूर्ण करने के लिए, कृपया अपनी तिजोरी तक पहुँचने और सुरक्षित रखने के लिए एक मास्टर पासवर्ड सेट करें।"
   },
   "hours": {
-    "message": "Hours"
+    "message": "घंटे"
   },
   "minutes": {
-    "message": "Minutes"
+    "message": "मिनट"
   },
   "vaultTimeoutPolicyInEffect": {
-    "message": "Your organization policies are affecting your vault timeout. Maximum allowed Vault Timeout is $HOURS$ hour(s) and $MINUTES$ minute(s)",
+    "message": "आपकी संगठन नीतियां आपके तिजोरी टाइमआउट को प्रभावित कर रही हैं। अधिकतम अनुमत तिजोरी टाइमआउट $HOURS$ घंटे और $MINUTES$ मिनट है",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -1857,10 +1857,10 @@
     }
   },
   "vaultTimeoutTooLarge": {
-    "message": "Your vault timeout exceeds the restrictions set by your organization."
+    "message": "आपके तिजोरी टाइमआउट का समय आपके संगठन द्वारा निर्धारित प्रतिबंधों से अधिक है।"
   },
   "vaultExportDisabled": {
-    "message": "Vault export unavailable"
+    "message": "तिजोरी निर्यात अनुपलब्ध"
   },
   "personalVaultExportPolicyInEffect": {
     "message": "One or more organization policies prevents you from exporting your individual vault."
@@ -2063,13 +2063,13 @@
     "message": "Check known data breaches for this password"
   },
   "important": {
-    "message": "Important:"
+    "message": "आवश्यक सूचनाः"
   },
   "masterPasswordHint": {
-    "message": "Your master password cannot be recovered if you forget it!"
+    "message": "यदि आप इसे भूल जाते हैं तो आपका मास्टर पासवर्ड पुनर्प्राप्त नहीं किया जा सकता!"
   },
   "characterMinimum": {
-    "message": "$LENGTH$ character minimum",
+    "message": "$LENGTH$ वर्ण न्यूनतम",
     "placeholders": {
       "length": {
         "content": "$1",

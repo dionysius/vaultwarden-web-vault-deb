@@ -2048,28 +2048,28 @@
     "message": "記住電子郵件地址"
   },
   "exposedMasterPassword": {
-    "message": "Exposed Master Password"
+    "message": "已暴露的主密碼"
   },
   "exposedMasterPasswordDesc": {
     "message": "Password found in a data breach. Use a unique password to protect your account. Are you sure you want to use an exposed password?"
   },
   "weakAndExposedMasterPassword": {
-    "message": "Weak and Exposed Master Password"
+    "message": "強度不足且已暴露的主密碼"
   },
   "weakAndBreachedMasterPasswordDesc": {
     "message": "Weak password identified and found in a data breach. Use a strong and unique password to protect your account. Are you sure you want to use this password?"
   },
   "checkForBreaches": {
-    "message": "Check known data breaches for this password"
+    "message": "檢查外洩密碼資料庫中是否有此密碼"
   },
   "important": {
-    "message": "Important:"
+    "message": "重要事項："
   },
   "masterPasswordHint": {
-    "message": "Your master password cannot be recovered if you forget it!"
+    "message": "如果您忘記主密碼，沒有復原的方法！"
   },
   "characterMinimum": {
-    "message": "$LENGTH$ character minimum",
+    "message": "$LENGTH$ 個字元以上",
     "placeholders": {
       "length": {
         "content": "$1",

@@ -2048,28 +2048,28 @@
     "message": "Lembrar e-mail"
   },
   "exposedMasterPassword": {
-    "message": "Exposed Master Password"
+    "message": "Senha Mestra comprometida"
   },
   "exposedMasterPasswordDesc": {
-    "message": "Password found in a data breach. Use a unique password to protect your account. Are you sure you want to use an exposed password?"
+    "message": "A senha foi encontrada em um vazamento de dados. Use uma senha única para proteger sua conta. Tem certeza de que deseja usar uma senha já exposta?"
   },
   "weakAndExposedMasterPassword": {
-    "message": "Weak and Exposed Master Password"
+    "message": "Senha Mestra fraca e comprometida"
   },
   "weakAndBreachedMasterPasswordDesc": {
-    "message": "Weak password identified and found in a data breach. Use a strong and unique password to protect your account. Are you sure you want to use this password?"
+    "message": "Senha fraca identificada e encontrada em um vazamento de dados. Use uma senha forte e única para proteger a sua conta. Tem certeza de que deseja usar essa senha?"
   },
   "checkForBreaches": {
-    "message": "Check known data breaches for this password"
+    "message": "Verificar vazamento de dados conhecidos para esta senha"
   },
   "important": {
-    "message": "Important:"
+    "message": "Importante:"
   },
   "masterPasswordHint": {
-    "message": "Your master password cannot be recovered if you forget it!"
+    "message": "Sua Senha Mestra não pode ser recuperada se você a esquecer!"
   },
   "characterMinimum": {
-    "message": "$LENGTH$ character minimum",
+    "message": "$LENGTH$ caracteres mínimos",
     "placeholders": {
       "length": {
         "content": "$1",

@@ -3,7 +3,7 @@
     "message": "Bitwarden"
   },
   "extName": {
-    "message": "Bitwarden - Free Password Manager",
+    "message": "Bitwarden - Gestion des mots de passe",
     "description": "Extension name, MUST be less than 40 characters (Safari restriction)"
   },
   "extDesc": {
@@ -227,7 +227,7 @@
     "message": "Générer un mot de passe"
   },
   "regeneratePassword": {
-    "message": "Re-générer un mot de passe"
+    "message": "Régénérer un mot de passe"
   },
   "options": {
     "message": "Options"
@@ -494,7 +494,7 @@
     "message": "L'authentification à deux facteurs rend votre compte plus sûr en vous demandant de vérifier votre connexion avec un autre dispositif tel qu'une clé de sécurité, une application d'authentification, un SMS, un appel téléphonique ou un courriel. L'authentification à deux facteurs peut être configurée sur le coffre web de bitwarden.com. Voulez-vous visiter le site web maintenant ?"
   },
   "editedFolder": {
-    "message": "Dossier modifié"
+    "message": "Dossier sauvegardé"
   },
   "deleteFolderConfirmation": {
     "message": "Êtes-vous sûr de vouloir supprimer ce dossier ?"
