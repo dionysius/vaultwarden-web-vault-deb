@@ -960,7 +960,10 @@
     "message": "ページ読み込み時にログインフォームを検出したとき、ログイン情報を自動入力します。"
   },
   "experimentalFeature": {
-    "message": "これは現在、実験的な機能です。自己責任で使用してください。"
+    "message": "Compromised or untrusted websites can exploit auto-fill on page load."
+  },
+  "learnMoreAboutAutofill": {
+    "message": "自動入力についての詳細"
   },
   "defaultAutoFillOnPageLoad": {
     "message": "ログインアイテムのデフォルトの自動入力設定"

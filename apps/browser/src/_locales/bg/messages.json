@@ -960,7 +960,10 @@
     "message": "При засичане на формуляр за вписване при зареждането на уеб страницата автоматично да се попълват данните на съответстващата регистрация."
   },
   "experimentalFeature": {
-    "message": "Това все още е в експериментална фаза, ползвате го на собствена глава."
+    "message": "Compromised or untrusted websites can exploit auto-fill on page load."
+  },
+  "learnMoreAboutAutofill": {
+    "message": "Научете повече относно автоматичното попълване"
   },
   "defaultAutoFillOnPageLoad": {
     "message": "Стандартна настройка за автоматичното попълване"

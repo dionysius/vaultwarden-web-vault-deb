@@ -960,7 +960,10 @@
     "message": "Saio-hasierako formulario bat detektatzen bada, auto-bete webgunea kargatzen denean."
   },
   "experimentalFeature": {
-    "message": "Hau ezaugarri esperimental bat da. Zure ardurapean erabili."
+    "message": "Compromised or untrusted websites can exploit auto-fill on page load."
+  },
+  "learnMoreAboutAutofill": {
+    "message": "Learn more about auto-fill"
   },
   "defaultAutoFillOnPageLoad": {
     "message": "Saio-hasierako elementuetarako lehenetsitako auto-betetzearen konfigurazioa"

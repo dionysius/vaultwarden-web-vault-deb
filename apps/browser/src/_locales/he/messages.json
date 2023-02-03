@@ -960,7 +960,10 @@
     "message": "אם זוהה טופס כניסה, בצע אוטומטית מילוי-אוטומטי כשהעמוד נטען."
   },
   "experimentalFeature": {
-    "message": "זוהי אופציה נסיונית. השימוש באופציה זו על אחריותך."
+    "message": "Compromised or untrusted websites can exploit auto-fill on page load."
+  },
+  "learnMoreAboutAutofill": {
+    "message": "Learn more about auto-fill"
   },
   "defaultAutoFillOnPageLoad": {
     "message": "הגדרת ברירת מחדל למילוי אוטומטי של פרטי התחברות"

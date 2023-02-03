@@ -960,7 +960,10 @@
     "message": "Si se detecta un formulario, realizar automáticamente un autorellenado cuando la web cargue."
   },
   "experimentalFeature": {
-    "message": "Esta es una característica experimental. Úsala bajo tu propio riesgo."
+    "message": "Compromised or untrusted websites can exploit auto-fill on page load."
+  },
+  "learnMoreAboutAutofill": {
+    "message": "Más información sobre autorelleno"
   },
   "defaultAutoFillOnPageLoad": {
     "message": "Configuración de autorrelleno por defecto para elementos de inicio de sesión"
@@ -1124,7 +1127,7 @@
     "message": "Dr"
   },
   "mx": {
-    "message": "\"Mx\" = \"Sr./Sra"
+    "message": "Mx"
   },
   "firstName": {
     "message": "Nombre"

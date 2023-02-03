@@ -960,7 +960,10 @@
     "message": "ಲಾಗಿನ್ ಫಾರ್ಮ್ ಪತ್ತೆಯಾದಲ್ಲಿ, ವೆಬ್ ಪುಟ ಲೋಡ್ ಆಗುವಾಗ ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಸ್ವಯಂ ಭರ್ತಿ ಮಾಡಿ."
   },
   "experimentalFeature": {
-    "message": "ಇದು ಪ್ರಸ್ತುತ ಪ್ರಾಯೋಗಿಕ ಲಕ್ಷಣವಾಗಿದೆ. ನಿಮ್ಮ ಸ್ವಂತ ಅಪಾಯದಲ್ಲಿ ಬಳಸಿ."
+    "message": "Compromised or untrusted websites can exploit auto-fill on page load."
+  },
+  "learnMoreAboutAutofill": {
+    "message": "Learn more about auto-fill"
   },
   "defaultAutoFillOnPageLoad": {
     "message": "ಲಾಗಿನ್ ಐಟಂಗಳಿಗಾಗಿ ಡೀಫಾಲ್ಟ್ ಆಟೋಫಿಲ್ ಸೆಟ್ಟಿಂಗ್"

@@ -960,7 +960,10 @@
     "message": "যদি কোনও লগইন ফর্ম সনাক্ত হয়, ওয়েব পৃষ্ঠাটি লোড হওয়ার পরে স্বয়ংক্রিয়ভাবে স্বতঃপূরণ করুন।"
   },
   "experimentalFeature": {
-    "message": "এটি বর্তমানে একটি পরীক্ষামূলক বৈশিষ্ট্য। আপনার নিজ ঝুঁকিতে ব্যবহার করুন।"
+    "message": "Compromised or untrusted websites can exploit auto-fill on page load."
+  },
+  "learnMoreAboutAutofill": {
+    "message": "Learn more about auto-fill"
   },
   "defaultAutoFillOnPageLoad": {
     "message": "Default autofill setting for login items"

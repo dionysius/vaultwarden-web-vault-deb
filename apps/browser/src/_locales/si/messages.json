@@ -960,7 +960,10 @@
     "message": "පිවිසුම් පෝරමයක් අනාවරණය කර ඇත්නම්, වෙබ් පිටුව පැටවුම් කරන විට ස්වයංක්රීයව ස්වයංක්රීයව පිරවීම සිදු කරන්න."
   },
   "experimentalFeature": {
-    "message": "මෙය දැනට පර්යේෂණාත්මක ලක්ෂණයකි. ඔබේම අවදානමකින් භාවිතා කරන්න."
+    "message": "Compromised or untrusted websites can exploit auto-fill on page load."
+  },
+  "learnMoreAboutAutofill": {
+    "message": "Learn more about auto-fill"
   },
   "defaultAutoFillOnPageLoad": {
     "message": "පිවිසුම් අයිතම සඳහා පෙරනිමි autofill සැකසුම"

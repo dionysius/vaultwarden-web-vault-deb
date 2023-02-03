@@ -960,7 +960,10 @@
     "message": "Se viene rilevato un modulo di accesso, effettua un auto-completamento quando la pagina web si carica."
   },
   "experimentalFeature": {
-    "message": "Al momento questa funzionalità è sperimentale. Usala a tuo rischio e pericolo."
+    "message": "Compromised or untrusted websites can exploit auto-fill on page load."
+  },
+  "learnMoreAboutAutofill": {
+    "message": "Learn more about auto-fill"
   },
   "defaultAutoFillOnPageLoad": {
     "message": "Impostazioni di completamento automatico predefinito per i login"

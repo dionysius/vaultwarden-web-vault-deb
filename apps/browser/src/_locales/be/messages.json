@@ -960,7 +960,10 @@
     "message": "Калі выяўлена форма ўваходу, то будзе выканана яе аўтазапаўненне падчас загрузкі вэб-старонкі."
   },
   "experimentalFeature": {
-    "message": "У дадзены час гэта функцыя з'яўляецца эксперыментальнай. Рызыку падчас яе выкарыстанні вы прымаеце на сябе."
+    "message": "Compromised or untrusted websites can exploit auto-fill on page load."
+  },
+  "learnMoreAboutAutofill": {
+    "message": "Learn more about auto-fill"
   },
   "defaultAutoFillOnPageLoad": {
     "message": "Прадвызначаная налада аўтазапаўнення для элементаў уваходу"

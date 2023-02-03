@@ -960,7 +960,10 @@
     "message": "Si un formulaire de connexion est détecté, saisir automatiquement lors du chargement de la page web."
   },
   "experimentalFeature": {
-    "message": "Ceci est actuellement une fonctionnalité expérimentale. À utiliser avec prudence."
+    "message": "Compromised or untrusted websites can exploit auto-fill on page load."
+  },
+  "learnMoreAboutAutofill": {
+    "message": "En savoir plus sur la saisie automatique"
   },
   "defaultAutoFillOnPageLoad": {
     "message": "Paramètre de saisie automatique par défaut pour les identifiants"
@@ -1970,7 +1973,7 @@
     "message": "Jeton d'accès API"
   },
   "apiKey": {
-    "message": "Clé d'API"
+    "message": "Clé API"
   },
   "ssoKeyConnectorError": {
     "message": "Erreur Key Connector : vérifiez que Key Connector est disponible et fonctionne correctement."

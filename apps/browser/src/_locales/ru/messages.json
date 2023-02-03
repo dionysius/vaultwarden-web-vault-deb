@@ -960,7 +960,10 @@
     "message": "Если обнаружена форма входа, автозаполнение выполняется при загрузке веб-страницы."
   },
   "experimentalFeature": {
-    "message": "Это экспериментальная функция. Используйте на свой страх и риск."
+    "message": "Compromised or untrusted websites can exploit auto-fill on page load."
+  },
+  "learnMoreAboutAutofill": {
+    "message": "Learn more about auto-fill"
   },
   "defaultAutoFillOnPageLoad": {
     "message": "Настройка автозаполнения по умолчанию для логинов"

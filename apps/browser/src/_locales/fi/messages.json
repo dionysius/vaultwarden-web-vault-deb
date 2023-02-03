@@ -960,13 +960,16 @@
     "message": "Jos havaitaan kirjautumislomake, suorita automaattinen täyttö sivun avautuessa."
   },
   "experimentalFeature": {
-    "message": "Tämä on vielä kokeellinen toiminto. Käytä omalla vastuullasi."
+    "message": "Vaarantuneet tai epäluotettavat sivustot voivat väärinkäyttää sivun avautuessa suoritettavaa automaattista täyttöä."
+  },
+  "learnMoreAboutAutofill": {
+    "message": "Lue lisää automaattisesta täytöstä"
   },
   "defaultAutoFillOnPageLoad": {
     "message": "Automaattisen täytön oletusasetus kirjautumistiedoille"
   },
   "defaultAutoFillOnPageLoadDesc": {
-    "message": "Voit ottaa automaattisen täytön käyttöön tai poistaa sen käytöstä kirjautumistietokohtaisesti muokkaamalla kohdetta."
+    "message": "Voit ottaa automaattisen täytön käyttöön tai poistaa sen käytöstä kirjautumistietokohtaisesti muokkaamalla kirjautumistetoa."
   },
   "itemAutoFillOnPageLoad": {
     "message": "Automaattinen täyttö sivun avautuessa (jos määritetty asetuksista)"

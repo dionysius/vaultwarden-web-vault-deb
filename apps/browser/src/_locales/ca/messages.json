@@ -960,7 +960,10 @@
     "message": "Si es detecta un formulari d'inici de sessió, es realitza automàticament un emplenament automàtic quan es carrega la pàgina web."
   },
   "experimentalFeature": {
-    "message": "Actualment és una característica experimental. Utilitzeu sota el vostre propi risc."
+    "message": "Compromised or untrusted websites can exploit auto-fill on page load."
+  },
+  "learnMoreAboutAutofill": {
+    "message": "Obteniu més informació sobre l'emplenament automàtic"
   },
   "defaultAutoFillOnPageLoad": {
     "message": "Configuració per defecte d'emplenament automàtic per als elements d'inici de sessió"

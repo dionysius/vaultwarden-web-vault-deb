@@ -960,7 +960,10 @@
     "message": "Als een inlogformulier wordt gedetecteerd, dan worden de inloggegevens automatisch ingevuld."
   },
   "experimentalFeature": {
-    "message": "Dit is momenteel een experimentele functie; gebruik hiervan is op eigen risico."
+    "message": "Compromised or untrusted websites can exploit auto-fill on page load."
+  },
+  "learnMoreAboutAutofill": {
+    "message": "Lees meer over automatisch invullen"
   },
   "defaultAutoFillOnPageLoad": {
     "message": "Standaardinstelling voor automatisch invullen login-items"

@@ -236,7 +236,7 @@
     "message": "Kahabaan"
   },
   "uppercase": {
-    "message": "2. Mga letra na malalaki (A-Z)"
+    "message": "Uppercase (A-Z)"
   },
   "lowercase": {
     "message": "Lowercase (a-t) sa Filipino ay mababang-letra (a-t)"
@@ -741,13 +741,13 @@
     "message": "Pumili ng File"
   },
   "maxFileSize": {
-    "message": "Maximum file size is 500 MB. - Ang pinakamataas na laki ng file ay 500 MB."
+    "message": "Maximum file size is 500 MB."
   },
   "featureUnavailable": {
     "message": "Hindi magagamit ang tampok"
   },
   "updateKey": {
-    "message": "You cannot use this feature until you update your encryption key. - Hindi mo maari gamitin ang tampok na ito hanggang hindi mo iupdate ang iyong encryption key."
+    "message": "You cannot use this feature until you update your encryption key."
   },
   "premiumMembership": {
     "message": "Premium membership"
@@ -780,7 +780,7 @@
     "message": "TOTP Verification Code (2FA) Generator para sa mga login sa iyong vault."
   },
   "ppremiumSignUpSupport": {
-    "message": ". Maunang Suporta sa Customer."
+    "message": "Priority customer support."
   },
   "ppremiumSignUpFuture": {
     "message": "Lahat ng mga susunod na Premium na tampok. Marami pang darating!"
@@ -936,34 +936,37 @@
     "message": "URL ng Server"
   },
   "apiUrl": {
-    "message": "API Server URL - URL ng Server ng API"
+    "message": "API Server URL"
   },
   "webVaultUrl": {
-    "message": "Web vault server URL - URL ng Server ng Web vault"
+    "message": "Web vault server URL"
   },
   "identityUrl": {
-    "message": "Identity server URL - URL ng Server ng Identity"
+    "message": "Identity server URL"
   },
   "notificationsUrl": {
-    "message": "Notifications server URL - URL ng Server ng Mga Abiso"
+    "message": "Notifications server URL"
   },
   "iconsUrl": {
-    "message": "Icons server URL - URL ng Server ng Mga Icon"
+    "message": "Icons server URL"
   },
   "environmentSaved": {
-    "message": "Environment URLs saved - Mga URL ng Environment na Nai-save"
+    "message": "Environment URLs saved"
   },
   "enableAutoFillOnPageLoad": {
-    "message": "Auto-fill on page load - Auto-fill sa Paglo-load ng Page"
+    "message": "Auto-fill on page load"
   },
   "enableAutoFillOnPageLoadDesc": {
-    "message": "If a login form is detected, auto-fill when the web page loads. - Kung ang login form ay napansin, auto-fill kapag ang web page ay naglo-load."
+    "message": "If a login form is detected, auto-fill when the web page loads."
   },
   "experimentalFeature": {
-    "message": "This is currently an experimental feature. Use at your own risk. - Ito ay kasalukuyang eksperimental na tampok. Gamitin sa iyong sariling panganib."
+    "message": "Compromised or untrusted websites can exploit auto-fill on page load."
+  },
+  "learnMoreAboutAutofill": {
+    "message": "Learn more about auto-fill"
   },
   "defaultAutoFillOnPageLoad": {
-    "message": "Default autofill setting for login items - Default na setting ng auto-fill para sa mga login item"
+    "message": "Default autofill setting for login items"
   },
   "defaultAutoFillOnPageLoadDesc": {
     "message": "Maaari mong i-off ang auto-fill sa pag-load ng pahina para sa indibidwal na login items mula sa view ng Edit ng item."
@@ -975,13 +978,13 @@
     "message": "Gamitin ang default na setting"
   },
   "autoFillOnPageLoadYes": {
-    "message": "Auto-fill on page load - Auto-fill sa Paglo-load ng Page"
+    "message": "Auto-fill on page load"
   },
   "autoFillOnPageLoadNo": {
-    "message": "Do not auto-fill on page load - Huwag mag-auto-fill sa pag-load ng pahina"
+    "message": "Do not auto-fill on page load"
   },
   "commandOpenPopup": {
-    "message": "Open vault popup - Buksan ang vault popup"
+    "message": "Open vault popup"
   },
   "commandOpenSidebar": {
     "message": "Buksan ang vault sa sidebar"
@@ -1145,13 +1148,13 @@
     "message": "Kumpanya"
   },
   "ssn": {
-    "message": "Social Security Number - Numero ng Seguridad Sosyal"
+    "message": "Social Security number"
   },
   "passportNumber": {
     "message": "Numero ng Pasaporte"
   },
   "licenseNumber": {
-    "message": "License Number - Numero ng Lisensya"
+    "message": "License number"
   },
   "email": {
     "message": "Email"
@@ -1160,7 +1163,7 @@
     "message": "Telepono"
   },
   "address": {
-    "message": "Address - Address"
+    "message": "Address"
   },
   "address1": {
     "message": "Address 1"
@@ -1172,40 +1175,40 @@
     "message": "Address 3"
   },
   "cityTown": {
-    "message": "Bayan/Town"
+    "message": "City / Town"
   },
   "stateProvince": {
     "message": "Estado/Probinsya"
   },
   "zipPostalCode": {
-    "message": "Zip / Postal code - Zip Code"
+    "message": "Zip / Postal code"
   },
   "country": {
     "message": "Bayan"
   },
   "type": {
-    "message": "Type - Uri"
+    "message": "Type"
   },
   "typeLogin": {
     "message": "Login"
   },
   "typeLogins": {
-    "message": "Logins - Mga Logins"
+    "message": "Logins"
   },
   "typeSecureNote": {
-    "message": "Secure note - Segurong Nota"
+    "message": "Secure note"
   },
   "typeCard": {
-    "message": "Card - Karta"
+    "message": "Card"
   },
   "typeIdentity": {
-    "message": "Identity - Pagkakakilanlan"
+    "message": "Identity"
   },
   "passwordHistory": {
-    "message": "Password history - Kasaysayan ng Password"
+    "message": "Password history"
   },
   "back": {
-    "message": "Back - Bumalik"
+    "message": "Bumalik"
   },
   "collections": {
     "message": "Koleksyon"
@@ -1255,7 +1258,7 @@
     "description": "Domain name. Ex. website.com"
   },
   "domainName": {
-    "message": "Domain Name - Pangalan ng Domain",
+    "message": "Domain name",
     "description": "Domain name. Ex. website.com"
   },
   "host": {
@@ -1269,11 +1272,11 @@
     "message": "Naguumpisa sa"
   },
   "regEx": {
-    "message": "Regular Expression - Regular na Pagpapahayag",
+    "message": "Regular expression",
     "description": "A programming term, also known as 'RegEx'."
   },
   "matchDetection": {
-    "message": "Match Detection - Pagtuklas ng Pares",
+    "message": "Match detection",
     "description": "URI match detection for auto-fill."
   },
   "defaultMatchDetection": {
@@ -1281,14 +1284,14 @@
     "description": "Default URI match detection for auto-fill."
   },
   "toggleOptions": {
-    "message": "Toggle Options - I-toggle ang Mga Opsyon"
+    "message": "Toggle options"
   },
   "toggleCurrentUris": {
-    "message": "Toggle Current URIs - I-toggle ang Kasalukuyang mga URI",
+    "message": "Toggle current URIs",
     "description": "Toggle the display of the URIs of the currently open tabs in the browser."
   },
   "currentUri": {
-    "message": "Current URI - Kasalukuyang URI",
+    "message": "Current URI",
     "description": "The URI of one of the current open tabs in the browser."
   },
   "organization": {
@@ -1311,22 +1314,22 @@
     "message": "Default"
   },
   "dateUpdated": {
-    "message": "Updated - Na-update",
+    "message": "Updated",
     "description": "ex. Date this item was updated"
   },
   "dateCreated": {
-    "message": "Created - Na-create",
+    "message": "Created",
     "description": "ex. Date this item was created"
   },
   "datePasswordUpdated": {
-    "message": "Password updated - Na-update ang password",
+    "message": "Password updated",
     "description": "ex. Date this password was updated"
   },
   "neverLockWarning": {
-    "message": "Are you sure you want to use the \"Never\" option? Setting your lock options to \"Never\" stores your vault's encryption key on your device. If you use this option you should ensure that you keep your device properly protected. - Sigurado ka bang gusto mo gamitin ang \"Never\" option? Pag-set ng lock options mo sa \"Never\" nag-i-store ng iyong vault's encryption key sa iyong device. Kung gagamitin mo ang option na ito dapat siguraduhin mo na protektado ang iyong device."
+    "message": "Are you sure you want to use the \"Never\" option? Setting your lock options to \"Never\" stores your vault's encryption key on your device. If you use this option you should ensure that you keep your device properly protected."
   },
   "noOrganizationsList": {
-    "message": "You do not belong to any organizations. Organizations allow you to securely share items with other users. - Wala kang pag-aari sa alinmang organisasyon. Ang mga organisasyon ay nagbibigay sa iyo ng pagkakataon na maayos na i-share ang mga item sa ibang mga user."
+    "message": "You do not belong to any organizations. Organizations allow you to securely share items with other users."
   },
   "noCollectionsInList": {
     "message": "Walang mga koleksyon na maipapakita."
@@ -1396,30 +1399,30 @@
     "message": "Isang o higit pang patakaran ng organisasyon ay nakakaapekto sa iyong mga setting ng generator."
   },
   "vaultTimeoutAction": {
-    "message": "Vault timeout action - Aksyon sa Vault timeout"
+    "message": "Vault timeout action"
   },
   "lock": {
     "message": "I-lock",
     "description": "Verb form: to make secure or inaccesible by"
   },
   "trash": {
-    "message": "Trash - Basurahan",
+    "message": "Trash",
     "description": "Noun: a special folder to hold deleted items"
   },
   "searchTrash": {
-    "message": "Search trash - Maghanap ng basurahan"
+    "message": "Search trash"
   },
   "permanentlyDeleteItem": {
-    "message": "Permanently delete item - Pansamantalang burahin ang item"
+    "message": "Permanently delete item"
   },
   "permanentlyDeleteItemConfirmation": {
-    "message": "Are you sure you want to permanently delete this item? - Sigurado ka bang gusto mong pansamantalang burahin ang item na ito?"
+    "message": "Are you sure you want to permanently delete this item?"
   },
   "permanentlyDeletedItem": {
-    "message": "Item permanently deleted - Pansamantalang binura ang item"
+    "message": "Item permanently deleted"
   },
   "restoreItem": {
-    "message": "Restore item - Ibalik ang item"
+    "message": "Restore item"
   },
   "restoreItemConfirmation": {
     "message": "Sigurado ka bang nais mong ibalik ang item na ito?"
@@ -1817,16 +1820,16 @@
     "message": "Kailangan mong i-verify ang iyong email upang gamitin ang tampok na ito. Maaari mong i-verify ang iyong email sa web vault."
   },
   "updatedMasterPassword": {
-    "message": "Updated master password - I-update ang master password"
+    "message": "Updated master password"
   },
   "updateMasterPassword": {
-    "message": "Update master password - I-update ang master password"
+    "message": "Update master password"
   },
   "updateMasterPasswordWarning": {
-    "message": "Your master password was recently changed by an administrator in your organization. In order to access the vault, you must update it now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour. - Ang iyong master password ay kamakailan lamang na binago ng isang administrator sa iyong organisasyon. Upang makapunta sa vault, kailangan mong i-update ito ngayon. Ang pagpapatuloy ay maglilipat ka sa iyong kasalukuyang sesyon, na nangangailangan sa iyo na mag-log in muli. Ang mga aktibong sesyon sa iba pang mga device ay maaaring magpatuloy na aktibo hanggang sa isang oras."
+    "message": "Your master password was recently changed by an administrator in your organization. In order to access the vault, you must update it now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
   },
   "resetPasswordPolicyAutoEnroll": {
-    "message": "Automatic enrollment - Awtomatikong pagpaparehistro"
+    "message": "Automatic enrollment"
   },
   "resetPasswordAutoEnrollInviteWarning": {
     "message": "Ang organisasyon na ito ay may enterprise policy na automatikong mag-eenroll sa iyo sa password reset. Ang enrollment ay magbibigay ng mga administrator ng organisasyon upang mabago ang iyong master password."
@@ -1914,32 +1917,32 @@
     }
   },
   "error": {
-    "message": "Error - Maling pagkakabanggit"
+    "message": "Error"
   },
   "regenerateUsername": {
-    "message": "Regenerate username - Palitan ang username"
+    "message": "Regenerate username"
   },
   "generateUsername": {
-    "message": "Generate username - Lumikha ng username"
+    "message": "Generate username"
   },
   "usernameType": {
-    "message": "Username type - Uri ng username"
+    "message": "Username type"
   },
   "plusAddressedEmail": {
-    "message": "Plus addressed email - Email na may dagdag na address",
+    "message": "Plus addressed email",
     "description": "Username generator option that appends a random sub-address to the username. For example: address+subaddress@email.com"
   },
   "plusAddressedEmailDesc": {
-    "message": "Use your email provider's sub-addressing capabilities. - Gamitin ang kakayahang magdagdag ng sub-address ng iyong email provider."
+    "message": "Use your email provider's sub-addressing capabilities."
   },
   "catchallEmail": {
-    "message": "Catch-all email - Catch-all email"
+    "message": "Catch-all email"
   },
   "catchallEmailDesc": {
-    "message": "Use your domain's configured catch-all inbox. - Gamitin ang naka-configure na catch-all inbox ng iyong domain."
+    "message": "Use your domain's configured catch-all inbox."
   },
   "random": {
-    "message": "Random - Walang pinipili"
+    "message": "Random"
   },
   "randomWord": {
     "message": "Random word"
@@ -1960,7 +1963,7 @@
     "message": "Ipinasa ang alias ng email"
   },
   "forwardedEmailDesc": {
-    "message": "Generate an email alias with an external forwarding service. - Lumikha ng alias ng email gamit ang panlabas na serbisyo ng pagpapasa."
+    "message": "Generate an email alias with an external forwarding service."
   },
   "hostname": {
     "message": "Hostname",

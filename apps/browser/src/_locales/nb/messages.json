@@ -960,7 +960,10 @@
     "message": "Dersom et innloggingskjema blir oppdaget, utfør automatisk en auto-utfylling når nettstedet lastes inn."
   },
   "experimentalFeature": {
-    "message": "Dette er for øyeblikket en eksperimentell egenskap. Bruk det på din egen risiko."
+    "message": "Compromised or untrusted websites can exploit auto-fill on page load."
+  },
+  "learnMoreAboutAutofill": {
+    "message": "Learn more about auto-fill"
   },
   "defaultAutoFillOnPageLoad": {
     "message": "Standard autofyll innstilling for innloggingselementer"

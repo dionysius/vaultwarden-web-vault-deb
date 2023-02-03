@@ -960,7 +960,10 @@
     "message": "Ak je detekovaný prihlasovací formulár, automaticky vykonať vypĺňanie pri načítaní stránky."
   },
   "experimentalFeature": {
-    "message": "Toto je zatiaľ experimentálna funkcia. Použite na vlastné riziko."
+    "message": "Compromised or untrusted websites can exploit auto-fill on page load."
+  },
+  "learnMoreAboutAutofill": {
+    "message": "Dozvedieť sa viac o automatickom dopĺňaní"
   },
   "defaultAutoFillOnPageLoad": {
     "message": "Predvolené nastavenie automatického vypĺňania pre prihlasovacie položky"

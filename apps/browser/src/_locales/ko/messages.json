@@ -960,7 +960,10 @@
     "message": "로그인 양식을 감지하면 웹 페이지 로드 시 자동 완성을 자동으로 수행합니다."
   },
   "experimentalFeature": {
-    "message": "현재 실험 중인 기능입니다. 위험을 감수하여 사용하세요."
+    "message": "Compromised or untrusted websites can exploit auto-fill on page load."
+  },
+  "learnMoreAboutAutofill": {
+    "message": "Learn more about auto-fill"
   },
   "defaultAutoFillOnPageLoad": {
     "message": "로그인 항목에 대한 기본 자동 완성 설정"

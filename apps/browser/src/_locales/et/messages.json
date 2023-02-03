@@ -960,7 +960,10 @@
     "message": "Sisselogimise vormi tuvastamisel sisestatakse sinna kontoandmed automaatselt."
   },
   "experimentalFeature": {
-    "message": "See funktsioon on katsetusjärgus. Kasuta omal vastutusel."
+    "message": "Compromised or untrusted websites can exploit auto-fill on page load."
+  },
+  "learnMoreAboutAutofill": {
+    "message": "Learn more about auto-fill"
   },
   "defaultAutoFillOnPageLoad": {
     "message": "Vaikevalik kontoandmete täitmiseks"

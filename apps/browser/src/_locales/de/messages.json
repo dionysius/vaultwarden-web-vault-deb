@@ -960,7 +960,10 @@
     "message": "Wenn eine Zugangsmaske erkannt wird, füge automatisch die Zugangsdaten ein während die Webseite lädt."
   },
   "experimentalFeature": {
-    "message": "Dies ist derzeit ein experimentelles Feature. Verwendung auf eigene Gefahr."
+    "message": "Compromised or untrusted websites can exploit auto-fill on page load."
+  },
+  "learnMoreAboutAutofill": {
+    "message": "Erfahre mehr über Auto-Ausfüllen"
   },
   "defaultAutoFillOnPageLoad": {
     "message": "Standard Auto-Ausfüllen Einstellung für Login-Einträge"

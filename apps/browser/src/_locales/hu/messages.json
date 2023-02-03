@@ -960,7 +960,10 @@
     "message": "Ha egy bejelentkezési űrlap észlelésre került, az adatok automatikus kitöltése az oldal betöltésekor."
   },
   "experimentalFeature": {
-    "message": "Ez jelenleg egy kísérleti funkció. Csak saját felelősségedre használd."
+    "message": "Compromised or untrusted websites can exploit auto-fill on page load."
+  },
+  "learnMoreAboutAutofill": {
+    "message": "További információk az automatikus kitöltésről"
   },
   "defaultAutoFillOnPageLoad": {
     "message": "Alapértelmezett beállítások bejelentkezési elemekhez"

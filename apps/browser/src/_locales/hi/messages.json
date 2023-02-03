@@ -960,7 +960,10 @@
     "message": "यदि लॉगिन फॉर्म का पता चलता है, तो वेब पेज लोड होने पर स्वचालित रूप से ऑटो-फिल करें।"
   },
   "experimentalFeature": {
-    "message": "यह वर्तमान में एक प्रयोगात्मक विशेषता है। अपने जोखिम पर उपयोग करें।"
+    "message": "Compromised or untrusted websites can exploit auto-fill on page load."
+  },
+  "learnMoreAboutAutofill": {
+    "message": "Learn more about auto-fill"
   },
   "defaultAutoFillOnPageLoad": {
     "message": "लॉगिन आइटम के लिए डिफ़ॉल्ट ऑटोफिल सेटिंग"
