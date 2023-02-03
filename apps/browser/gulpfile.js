@@ -59,7 +59,6 @@ function dist(browserName, manifest) {
 
 function distFirefox() {
   return dist("firefox", (manifest) => {
-    delete manifest.content_security_policy;
     delete manifest.storage;
     return manifest;
   });
@@ -68,7 +67,6 @@ function distFirefox() {
 function distOpera() {
   return dist("opera", (manifest) => {
     delete manifest.applications;
-    delete manifest.content_security_policy;
     return manifest;
   });
 }
@@ -76,7 +74,6 @@ function distOpera() {
 function distChrome() {
   return dist("chrome", (manifest) => {
     delete manifest.applications;
-    delete manifest.content_security_policy;
     delete manifest.sidebar_action;
     delete manifest.commands._execute_sidebar_action;
     return manifest;
@@ -86,7 +83,6 @@ function distChrome() {
 function distEdge() {
   return dist("edge", (manifest) => {
     delete manifest.applications;
-    delete manifest.content_security_policy;
     delete manifest.sidebar_action;
     delete manifest.commands._execute_sidebar_action;
     return manifest;
