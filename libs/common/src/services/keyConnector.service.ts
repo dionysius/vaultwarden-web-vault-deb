@@ -85,12 +85,13 @@ export class KeyConnectorService implements KeyConnectorServiceAbstraction {
   async convertNewSsoUserToKeyConnector(tokenResponse: IdentityTokenResponse, orgId: string) {
     const { kdf, kdfIterations, kdfMemory, kdfParallelism, keyConnectorUrl } = tokenResponse;
     const password = await this.cryptoFunctionService.randomBytes(64);
+    const kdfConfig = new KdfConfig(kdfIterations, kdfMemory, kdfParallelism);
 
     const k = await this.cryptoService.makeKey(
       Utils.fromBufferToB64(password),
       await this.tokenService.getEmail(),
       kdf,
-      new KdfConfig(kdfIterations, kdfMemory, kdfParallelism)
+      kdfConfig
     );
     const keyConnectorRequest = new KeyConnectorUserKeyRequest(k.encKeyB64);
     await this.cryptoService.setKey(k);
@@ -110,7 +111,7 @@ export class KeyConnectorService implements KeyConnectorServiceAbstraction {
     const setPasswordRequest = new SetKeyConnectorKeyRequest(
       encKey[1].encryptedString,
       kdf,
-      kdfIterations,
+      kdfConfig,
       orgId,
       keys
     );
