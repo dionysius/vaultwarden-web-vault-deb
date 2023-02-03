@@ -59,7 +59,8 @@
         </div>
       </div>
       <div id="masterPasswordHelp" class="box-footer">
-        {{ "masterPassDesc" | i18n }}
+        <b>{{ "important" | i18n }}</b> {{ "masterPasswordHint" | i18n }}
+        {{ characterMinimumMessage }}
       </div>
     </div>
     <div class="box">
@@ -112,8 +113,15 @@
         {{ "masterPassHintDesc" | i18n }}
       </div>
     </div>
-    <div class="box last" *ngIf="showTerms">
+
+    <div class="box last">
       <div class="box-footer checkbox">
+        <input type="checkbox" id="checkForBreaches" formControlName="checkForBreaches" />
+        <label for="checkForBreaches">
+          {{ "checkForBreaches" | i18n }}
+        </label>
+      </div>
+      <div class="box-footer checkbox" *ngIf="showTerms">
         <input type="checkbox" id="acceptPolicies" formControlName="acceptPolicies" />
         <label for="acceptPolicies">
           {{ "acceptPolicies" | i18n }}<br />
