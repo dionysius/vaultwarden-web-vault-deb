@@ -95,7 +95,8 @@ export class VaultComponent implements OnInit, OnDestroy {
   async ngOnInit() {
     this.showVerifyEmail = !(await this.tokenService.getEmailVerified());
     this.showBrowserOutdated = window.navigator.userAgent.indexOf("MSIE") !== -1;
-    this.showLowKdf = await this.isLowKdfIteration();
+    //disable warning for february release -> add await this.isLowKdfIteration(); when ready
+    this.showLowKdf = false;
     this.trashCleanupWarning = this.i18nService.t(
       this.platformUtilsService.isSelfHost()
         ? "trashCleanupWarningSelfHosted"
