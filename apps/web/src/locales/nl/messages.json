@@ -1157,6 +1157,19 @@
       }
     }
   },
+  "kdfMemory": {
+    "message": "KDF geheugen (MB)",
+    "description": "Memory refers to computer memory (RAM). MB is short for megabytes."
+  },
+  "argon2Warning": {
+    "message": "Je KDF-iteraties, geheugen en parallellisatie te hoog instellen kan leiden tot slechte prestaties bij het inloggen (en ontgrendelen) van Bitwarden op langzamere of oudere apparaten. We adviseren je deze waarden individueel in kleine stappen op te hogen en vervolgens al je apparaten te testen."
+  },
+  "kdfParallelism": {
+    "message": "KDF-parallellisatie"
+  },
+  "argon2Desc": {
+    "message": "Hogere instellingen voor KDF-iteraties, geheugen en parallellisatie kunnen je hoofdwachtwoord beschermen tegen brute-foce-aanvallen."
+  },
   "changeKdf": {
     "message": "KDF wijzigen"
   },
@@ -2043,6 +2056,9 @@
   },
   "manageSubscription": {
     "message": "Abonnement beheren"
+  },
+  "launchCloudSubscription": {
+    "message": "Cloudabonnement starten"
   },
   "storage": {
     "message": "Opslagruimte"
@@ -5225,9 +5241,6 @@
   "billingSyncApiKeyRotated": {
     "message": "Token geroteerd."
   },
-  "billingSync": {
-    "message": "Factureringssynchronisatie"
-  },
   "billingSyncDesc": {
     "message": "Factureringssynchronisatie biedt leden gratis Families-plannen en geavanceerde factureringsmogelijkheden door je zelfgehoste Bitwarden te koppelen aan de Bitwarden-cloudserver."
   },
@@ -5278,6 +5291,15 @@
   },
   "required": {
     "message": "vereist"
+  },
+  "characterMaximum": {
+    "message": "Maximaal $MAX$ tekens",
+    "placeholders": {
+      "max": {
+        "content": "$1",
+        "example": "100"
+      }
+    }
   },
   "idpSingleSignOnServiceUrlRequired": {
     "message": "Vereist als Entiteit ID geen URL is."
@@ -6082,6 +6104,36 @@
       }
     }
   },
+  "licenseAndBillingManagement": {
+    "message": "Licentie- en facturatiebeheer"
+  },
+  "automaticSync": {
+    "message": "Automatisch synchroniseren"
+  },
+  "manualUpload": {
+    "message": "Handmatig uploaden"
+  },
+  "manualUploadDesc": {
+    "message": "Als je geen gebruik wilt maken van facturatiesynchronisatie, upload dan hier je licentie."
+  },
+  "syncLicense": {
+    "message": "Licentie synchroniseren"
+  },
+  "licenseSyncSuccess": {
+    "message": "Licentie gesynchroniseerd"
+  },
+  "licenseUploadSuccess": {
+    "message": "Licentie geüpload"
+  },
+  "lastLicenseSync": {
+    "message": "Laatste licentie-synchronisatie"
+  },
+  "billingSyncHelp": {
+    "message": "Hulp bij facturatiesynchronisatie"
+  },
+  "uploadLicense": {
+    "message": "Licentie uploaden"
+  },
   "lowKdfIterations": {
     "message": "Low KDF Iterations"
   },
@@ -6090,5 +6142,17 @@
   },
   "changeKdfSettings": {
     "message": "Change KDF settings"
+  },
+  "changeKdfLoggedOutWarning": {
+    "message": "Als je doorgaat zal je huidige sessie uitloggen, waarna je opnieuw moet inloggen. Actieve sessies op andere apparaten blijven mogelijk nog een uur actief. We raden je aan je kluis te exporteren voordat je je versleutelingsinstellingen wijzigt om gegevensverlies te voorkomen."
+  },
+  "secretsManagerBeta": {
+    "message": "Secrets Manager Bèta"
+  },
+  "secretsManagerBetaDesc": {
+    "message": "Gebruikerstoegang tot de Secrets Manager inschakelen is gratis tijdens het bètaprogramma."
+  },
+  "userAccessSecretsManager": {
+    "message": "Deze gebruiker heeft toegang tot de Secrets Manager Bèta"
   }
 }

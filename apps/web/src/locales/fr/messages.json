@@ -1137,7 +1137,7 @@
     "message": "Algorithme KDF"
   },
   "kdfIterations": {
-    "message": "Nombre d'itérations de KDF"
+    "message": "Itérations KDF"
   },
   "kdfIterationsDesc": {
     "message": "Des itérations KDF plus élevées peuvent aider à protéger votre mot de passe principal contre une attaque par force brute. Nous recommandons une valeur de $VALUE$ ou plus.",
@@ -1149,7 +1149,7 @@
     }
   },
   "kdfIterationsWarning": {
-    "message": "Si vous définissez un nombre d'itérations KDF trop élevé, les performances risquent d'être mauvaises lorsque vous vous connectez (et déverrouillez) Bitwarden sur des périphériques dont les processeurs sont plus lents. Nous vous recommandons d'augmenter la valeur par incréments de $INCREMENT$, puis de tester tous vos appareils.",
+    "message": "Un réglage trop élevé des itérations, de la mémoire et du parallélisme KDF peut entraîner des performances médiocres lors de la connexion (et du déverrouillage) à Bitwarden sur des appareils plus lents ou plus anciens. Nous vous recommandons d'augmenter la valeur par incréments de $INCREMENT$ et de tester ensuite tous vos appareils.",
     "placeholders": {
       "increment": {
         "content": "$1",
@@ -1157,8 +1157,21 @@
       }
     }
   },
+  "kdfMemory": {
+    "message": "Mémoire KDF (Mo)",
+    "description": "Memory refers to computer memory (RAM). MB is short for megabytes."
+  },
+  "argon2Warning": {
+    "message": "Un réglage trop élevé des itérations, de la mémoire et du parallélisme KDF peut entraîner des performances médiocres lors de la connexion (et du déverrouillage) à Bitwarden sur des appareils plus lents ou plus anciens. Nous vous recommandons de les modifier individuellement par petits incréments, puis de tester tous vos appareils."
+  },
+  "kdfParallelism": {
+    "message": "Parallélisme KDF"
+  },
+  "argon2Desc": {
+    "message": "Des itérations KDF, une mémoire et un parallélisme plus élevés peuvent contribuer à protéger votre mot de passe principal contre l'attaque par force brute d'un assaillant."
+  },
   "changeKdf": {
-    "message": "Modifier KDF"
+    "message": "Changer KDF"
   },
   "encKeySettingsChanged": {
     "message": "Paramètres de la clé de chiffrement modifiés"
@@ -2043,6 +2056,9 @@
   },
   "manageSubscription": {
     "message": "Gérer l'abonnement"
+  },
+  "launchCloudSubscription": {
+    "message": "Démarrer l'Abonnement Cloud"
   },
   "storage": {
     "message": "Stockage"
@@ -5225,9 +5241,6 @@
   "billingSyncApiKeyRotated": {
     "message": "Jeton permuté."
   },
-  "billingSync": {
-    "message": "Synchronisation de Facturation"
-  },
   "billingSyncDesc": {
     "message": "La Synchronisation de Facturation fournit des forfaits Familles Gratuits pour les membres et des capacités de facturation avancées en liant votre Bitwarden auto-hébergé au serveur cloud Bitwarden."
   },
@@ -5278,6 +5291,15 @@
   },
   "required": {
     "message": "requis"
+  },
+  "characterMaximum": {
+    "message": "$MAX$ caractères maximum",
+    "placeholders": {
+      "max": {
+        "content": "$1",
+        "example": "100"
+      }
+    }
   },
   "idpSingleSignOnServiceUrlRequired": {
     "message": "Requis si l'ID d'Entité n'est pas une URL."
@@ -5918,7 +5940,7 @@
     "message": "Jeton d'accès créé et copié dans le presse-papiers"
   },
   "accessTokenPermissionsBetaNotification": {
-    "message": "La gestion des permissions n'est pas disponible pour la version bêta."
+    "message": "La gestion des permissions n'est pas disponible pour la bêta."
   },
   "revokeAccessToken": {
     "message": "Révoquer le jeton d'accès"
@@ -6082,13 +6104,55 @@
       }
     }
   },
+  "licenseAndBillingManagement": {
+    "message": "Gestion des licences et de la facturation"
+  },
+  "automaticSync": {
+    "message": "Synchronisation automatique"
+  },
+  "manualUpload": {
+    "message": "Téléversement manuel"
+  },
+  "manualUploadDesc": {
+    "message": "Si vous ne voulez pas opter pour la synchronisation de la facturation, téléchargez manuellement votre licence ici."
+  },
+  "syncLicense": {
+    "message": "Synchroniser la licence"
+  },
+  "licenseSyncSuccess": {
+    "message": "Licence synchronisée avec succès"
+  },
+  "licenseUploadSuccess": {
+    "message": "Licence téléversée avec succès"
+  },
+  "lastLicenseSync": {
+    "message": "Dernière synchronisation de licence"
+  },
+  "billingSyncHelp": {
+    "message": "Aide sur la Synchronisation de la Facturation"
+  },
+  "uploadLicense": {
+    "message": "Téléverser la licence"
+  },
   "lowKdfIterations": {
-    "message": "Nombre d'itérations de KDF bas"
+    "message": "Itérations KDF basses"
   },
   "lowKdfIterationsDesc": {
     "message": "Augmentez vos paramètres de chiffrement KDF pour améliorer la sécurité de votre compte."
   },
   "changeKdfSettings": {
-    "message": "Modifier les paramètres KDF"
+    "message": "Changer les paramètres KDF"
+  },
+  "changeKdfLoggedOutWarning": {
+    "message": "En poursuivant, vous serez déconnecté de votre session actuelle et vous devrez vous reconnecter. Les sessions actives sur d'autres appareils peuvent rester actives pendant encore une heure. Nous vous recommandons d'exporter votre coffre avant de changer vos paramètres de chiffrement afin d'éviter une perte de données."
+  },
+  "secretsManagerBeta": {
+    "message": "Gestionnaire de secrets bêta"
+  },
+  "secretsManagerBetaDesc": {
+    "message": "Permettre à l'utilisateur un accès gratuit au gestionnaire de secrets pendant le programme bêta."
+  },
+  "userAccessSecretsManager": {
+    "message": "Cet utilisateur peut accéder au gestionnaire de secrets bêta"
   }
 }

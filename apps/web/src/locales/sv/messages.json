@@ -281,35 +281,35 @@
     "message": "Sök i favoriter"
   },
   "searchLogin": {
-    "message": "Search logins",
+    "message": "Sök i inloggningar",
     "description": "Search Login type"
   },
   "searchCard": {
-    "message": "Search cards",
+    "message": "Sök i kort",
     "description": "Search Card type"
   },
   "searchIdentity": {
-    "message": "Search identities",
+    "message": "Sök i identiteter",
     "description": "Search Identity type"
   },
   "searchSecureNote": {
-    "message": "Search secure notes",
+    "message": "Sök i säkra anteckningar",
     "description": "Search Secure Note type"
   },
   "searchVault": {
     "message": "Sök i valvet"
   },
   "searchMyVault": {
-    "message": "Search my vault"
+    "message": "Sök i mitt valv"
   },
   "searchOrganization": {
-    "message": "Search organization"
+    "message": "Sök i organisation"
   },
   "searchMembers": {
-    "message": "Search members"
+    "message": "Sök i medlemmar"
   },
   "searchGroups": {
-    "message": "Search groups"
+    "message": "Sök i grupper"
   },
   "allItems": {
     "message": "Alla objekt"
@@ -393,7 +393,7 @@
     "message": "Välj"
   },
   "newItem": {
-    "message": "New item"
+    "message": "Nytt objekt"
   },
   "addItem": {
     "message": "Lägg till objekt"
@@ -405,7 +405,7 @@
     "message": "Visa objekt"
   },
   "new": {
-    "message": "New",
+    "message": "Nytt",
     "description": "for adding new items"
   },
   "item": {
@@ -574,7 +574,7 @@
     "message": "Är du säker på att du vill skriva över det nuvarande lösenordet?"
   },
   "editedFolder": {
-    "message": "Folder saved"
+    "message": "Mapp sparad"
   },
   "addedFolder": {
     "message": "Lade till mapp"
@@ -583,13 +583,13 @@
     "message": "Är du säker på att du vill radera denna mapp?"
   },
   "deletedFolder": {
-    "message": "Folder deleted"
+    "message": "Mapp raderad"
   },
   "editInfo": {
-    "message": "Edit info"
+    "message": "Redigera info"
   },
   "access": {
-    "message": "Access"
+    "message": "Åtkomst"
   },
   "loggedOut": {
     "message": "Utloggad"
@@ -749,7 +749,7 @@
     "message": "Det finns inga objekt att visa."
   },
   "noPermissionToViewAllCollectionItems": {
-    "message": "You do not have permission to view all items in this collection."
+    "message": "Du har inte behörighet att se alla objekt i denna samling."
   },
   "noCollectionsInList": {
     "message": "Det finns inga samlingar att visa."
@@ -761,7 +761,7 @@
     "message": "Det finns inga användare att visa."
   },
   "noMembersInList": {
-    "message": "There are no members to list."
+    "message": "Det finns inga element att visa."
   },
   "noEventsInList": {
     "message": "Det finns inga händelser att visa."
@@ -908,7 +908,7 @@
     }
   },
   "deleteSelectedCollectionsDesc": {
-    "message": "$COUNT$ collection(s) will be permanently deleted.",
+    "message": "$COUNT$ samlingar kommer att tas bort permanent.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -1156,6 +1156,19 @@
         "example": "50,000"
       }
     }
+  },
+  "kdfMemory": {
+    "message": "KDF memory (MB)",
+    "description": "Memory refers to computer memory (RAM). MB is short for megabytes."
+  },
+  "argon2Warning": {
+    "message": "Setting your KDF iterations, memory, and parallelism too high could result in poor performance when logging into (and unlocking) Bitwarden on slower or older devices. We recommend changing these individually in small increments and then test all of your devices."
+  },
+  "kdfParallelism": {
+    "message": "KDF-parallellism"
+  },
+  "argon2Desc": {
+    "message": "Higher KDF iterations, memory, and parallelism can help protect your master password from being brute forced by an attacker."
   },
   "changeKdf": {
     "message": "Ändra KDF"
@@ -1673,7 +1686,7 @@
     "message": "Rapport om avslöjade lösenord"
   },
   "exposedPasswordsReportDesc": {
-    "message": "Passwords exposed in a data breach are easy targets for attackers. Change these passwords to prevent potential break-ins."
+    "message": "Lösenord som exponeras i ett dataintrång är enkla mål för angripare. Ändra dessa lösenord för att förhindra potentiella intrång."
   },
   "exposedPasswordsFound": {
     "message": "Avslöjade lösenord hittades"
@@ -2043,6 +2056,9 @@
   },
   "manageSubscription": {
     "message": "Hantera prenumeration"
+  },
+  "launchCloudSubscription": {
+    "message": "Launch Cloud Subscription"
   },
   "storage": {
     "message": "Lagring"
@@ -5225,11 +5241,8 @@
   "billingSyncApiKeyRotated": {
     "message": "Token rotated"
   },
-  "billingSync": {
-    "message": "Billing sync"
-  },
   "billingSyncDesc": {
-    "message": "Billing sync provides Free Families plans for members and advanced billing capabilities by linking your self-hosted Bitwarden to the Bitwarden cloud server."
+    "message": "Billing sync unlocks Families sponsorships and automatic license syncing on your server. After making updates in the Bitwarden cloud server, select Sync License to apply changes."
   },
   "billingSyncKeyDesc": {
     "message": "A billing sync token from your cloud organization's subscription settings is required to complete this form."
@@ -5278,6 +5291,15 @@
   },
   "required": {
     "message": "obligatoriskt"
+  },
+  "characterMaximum": {
+    "message": "Max $MAX$ tecken",
+    "placeholders": {
+      "max": {
+        "content": "$1",
+        "example": "100"
+      }
+    }
   },
   "idpSingleSignOnServiceUrlRequired": {
     "message": "Required if Entity ID is not a URL."
@@ -6082,6 +6104,36 @@
       }
     }
   },
+  "licenseAndBillingManagement": {
+    "message": "License and billing management"
+  },
+  "automaticSync": {
+    "message": "Automatisk synkronisering"
+  },
+  "manualUpload": {
+    "message": "Manuell uppladdning"
+  },
+  "manualUploadDesc": {
+    "message": "If you do not want to opt into billing sync, manually upload your license here."
+  },
+  "syncLicense": {
+    "message": "Sync license"
+  },
+  "licenseSyncSuccess": {
+    "message": "Successfully synced license"
+  },
+  "licenseUploadSuccess": {
+    "message": "Successfully uploaded license"
+  },
+  "lastLicenseSync": {
+    "message": "Last license sync"
+  },
+  "billingSyncHelp": {
+    "message": "Billing Sync help"
+  },
+  "uploadLicense": {
+    "message": "Upload license"
+  },
   "lowKdfIterations": {
     "message": "Low KDF Iterations"
   },
@@ -6090,5 +6142,17 @@
   },
   "changeKdfSettings": {
     "message": "Change KDF settings"
+  },
+  "changeKdfLoggedOutWarning": {
+    "message": "Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour. We recommend exporting your vault before changing your encryption settings to prevent data loss."
+  },
+  "secretsManagerBeta": {
+    "message": "Secrets Manager Beta"
+  },
+  "secretsManagerBetaDesc": {
+    "message": "Enable user access to the Secrets Manager at no charge during the Beta program."
+  },
+  "userAccessSecretsManager": {
+    "message": "This user can access the Secrets Manager Beta"
   }
 }

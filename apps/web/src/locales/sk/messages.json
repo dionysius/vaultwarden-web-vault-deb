@@ -1157,6 +1157,19 @@
       }
     }
   },
+  "kdfMemory": {
+    "message": "KDF pamäť (MB)",
+    "description": "Memory refers to computer memory (RAM). MB is short for megabytes."
+  },
+  "argon2Warning": {
+    "message": "Nastavenie počtu KDF iterácií, pamäti a paralelizmu príliš vysoko môže viesť k spomalení pri prihlasovaní sa do Bitwarden (a pri odomykaní) v starších a pomalších zariadeniach. Odporúčame meniť tieto hodnoty v malých prírastkoch a potom testovať na všetkých vašich zariadeniach."
+  },
+  "kdfParallelism": {
+    "message": "KDF paralelizmus"
+  },
+  "argon2Desc": {
+    "message": "Zvýšenie počtu KDF iterácií, pamäti a paralelizmu môže pomôcť chrániť vaše hlavné heslo pri brute force útoku."
+  },
   "changeKdf": {
     "message": "Zmeniť KDF"
   },
@@ -2043,6 +2056,9 @@
   },
   "manageSubscription": {
     "message": "Spravovať predplatné"
+  },
+  "launchCloudSubscription": {
+    "message": "Launch Cloud Subscription"
   },
   "storage": {
     "message": "Ukladací priestor"
@@ -5225,11 +5241,8 @@
   "billingSyncApiKeyRotated": {
     "message": "Token rotated"
   },
-  "billingSync": {
-    "message": "Billing sync"
-  },
   "billingSyncDesc": {
-    "message": "Billing sync provides Free Families plans for members and advanced billing capabilities by linking your self-hosted Bitwarden to the Bitwarden cloud server."
+    "message": "Billing sync unlocks Families sponsorships and automatic license syncing on your server. After making updates in the Bitwarden cloud server, select Sync License to apply changes."
   },
   "billingSyncKeyDesc": {
     "message": "A billing sync token from your cloud organization's subscription settings is required to complete this form."
@@ -5278,6 +5291,15 @@
   },
   "required": {
     "message": "povinné"
+  },
+  "characterMaximum": {
+    "message": "maximálne $MAX$ znakov",
+    "placeholders": {
+      "max": {
+        "content": "$1",
+        "example": "100"
+      }
+    }
   },
   "idpSingleSignOnServiceUrlRequired": {
     "message": "Required if Entity ID is not a URL."
@@ -6082,6 +6104,36 @@
       }
     }
   },
+  "licenseAndBillingManagement": {
+    "message": "License and billing management"
+  },
+  "automaticSync": {
+    "message": "Automatic sync"
+  },
+  "manualUpload": {
+    "message": "Manual upload"
+  },
+  "manualUploadDesc": {
+    "message": "If you do not want to opt into billing sync, manually upload your license here."
+  },
+  "syncLicense": {
+    "message": "Sync license"
+  },
+  "licenseSyncSuccess": {
+    "message": "Successfully synced license"
+  },
+  "licenseUploadSuccess": {
+    "message": "Successfully uploaded license"
+  },
+  "lastLicenseSync": {
+    "message": "Last license sync"
+  },
+  "billingSyncHelp": {
+    "message": "Billing Sync help"
+  },
+  "uploadLicense": {
+    "message": "Upload license"
+  },
   "lowKdfIterations": {
     "message": "Nízky počet iterácií KDF"
   },
@@ -6090,5 +6142,17 @@
   },
   "changeKdfSettings": {
     "message": "Zmeniť nastavenia KDF"
+  },
+  "changeKdfLoggedOutWarning": {
+    "message": "Ak budete pokračovať, budete odhlásený z aktuálnej relácie a budete sa musieť opätovne prihlásiť. Aktívne relácie na iných zariadeniach môžu zostať aktívne až hodinu. Pred zmenou nastavení šifrovania odporúčame exportovať váš trezor aby ste predišli strate dát."
+  },
+  "secretsManagerBeta": {
+    "message": "Beta verzia Secrets Manager"
+  },
+  "secretsManagerBetaDesc": {
+    "message": "Počas Beta programu zadarmo povoliť používateľovi prístup k Secrets Manager."
+  },
+  "userAccessSecretsManager": {
+    "message": "Tento používateľ má prístup k beta verzii Secrets Manager"
   }
 }

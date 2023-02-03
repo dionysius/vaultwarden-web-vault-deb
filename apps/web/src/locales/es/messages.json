@@ -1157,6 +1157,19 @@
       }
     }
   },
+  "kdfMemory": {
+    "message": "Memoria KDF (MB)",
+    "description": "Memory refers to computer memory (RAM). MB is short for megabytes."
+  },
+  "argon2Warning": {
+    "message": "Setting your KDF iterations, memory, and parallelism too high could result in poor performance when logging into (and unlocking) Bitwarden on slower or older devices. We recommend changing these individually in small increments and then test all of your devices."
+  },
+  "kdfParallelism": {
+    "message": "Paralelismo KDF"
+  },
+  "argon2Desc": {
+    "message": "Las iteraciones, memorias y paralelismos de KDF más altos pueden ayudar a proteger su contraseña maestra de ser calculada por un atacante."
+  },
   "changeKdf": {
     "message": "Modificar KDF"
   },
@@ -2043,6 +2056,9 @@
   },
   "manageSubscription": {
     "message": "Administrar suscripción"
+  },
+  "launchCloudSubscription": {
+    "message": "Iniciar suscripción en la nube"
   },
   "storage": {
     "message": "Almacenamiento"
@@ -5225,9 +5241,6 @@
   "billingSyncApiKeyRotated": {
     "message": "Token rotado."
   },
-  "billingSync": {
-    "message": "Facturación sincronizada"
-  },
   "billingSyncDesc": {
     "message": "La sincronización de facturación ofrece planes familiares gratuitos para los miembros y facilidades de facturación avanzada, conectando la caja fuerte autoalojada de Bitwarden al servidor en la nube de Bitwarden."
   },
@@ -5278,6 +5291,15 @@
   },
   "required": {
     "message": "requerido"
+  },
+  "characterMaximum": {
+    "message": "$MAX$ caracteres como máximo",
+    "placeholders": {
+      "max": {
+        "content": "$1",
+        "example": "100"
+      }
+    }
   },
   "idpSingleSignOnServiceUrlRequired": {
     "message": "Requerido si el ID de la entidad no es una URL."
@@ -6082,6 +6104,36 @@
       }
     }
   },
+  "licenseAndBillingManagement": {
+    "message": "Gestión de licencias y facturación"
+  },
+  "automaticSync": {
+    "message": "Sincronización automática"
+  },
+  "manualUpload": {
+    "message": "Carga manual"
+  },
+  "manualUploadDesc": {
+    "message": "Si no quieres optar por sincronizar la facturación, sube manualmente tu licencia aquí."
+  },
+  "syncLicense": {
+    "message": "Sincronizar licencia"
+  },
+  "licenseSyncSuccess": {
+    "message": "Licencia sincronizada correctamente"
+  },
+  "licenseUploadSuccess": {
+    "message": "Licencia cargada correctamente"
+  },
+  "lastLicenseSync": {
+    "message": "Última sincronización de la licencia"
+  },
+  "billingSyncHelp": {
+    "message": "Ayuda de sincronización de facturación"
+  },
+  "uploadLicense": {
+    "message": "Subir licencia"
+  },
   "lowKdfIterations": {
     "message": "Iteraciones KDF bajas"
   },
@@ -6090,5 +6142,17 @@
   },
   "changeKdfSettings": {
     "message": "Cambiar ajustes de KDF"
+  },
+  "changeKdfLoggedOutWarning": {
+    "message": "Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour. We recommend exporting your vault before changing your encryption settings to prevent data loss."
+  },
+  "secretsManagerBeta": {
+    "message": "Administrador de secretos Beta"
+  },
+  "secretsManagerBetaDesc": {
+    "message": "Habilitar el acceso de usuario al Administrador de Secretos sin costo alguno durante el programa Beta."
+  },
+  "userAccessSecretsManager": {
+    "message": "Este usuario puede acceder al Administrador Secretos Beta"
   }
 }

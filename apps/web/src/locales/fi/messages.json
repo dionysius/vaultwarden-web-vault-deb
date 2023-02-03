@@ -1149,13 +1149,26 @@
     }
   },
   "kdfIterationsWarning": {
-    "message": "Liian korkea KDF-toistojen määrä saattaa hidastaa kirjautumista ja holvin avautumista heikkotehoisilla laitteilla. Suosittelemme toistomäärän korotusta $INCREMENT$ välein ja muutosten koekäyttöä kaikilla laitteillasi.",
+    "message": "Liian korkea KDF-toistojen määrä saattaa hidastaa Bitwardeniin kirjautumista (ja lukituksen avausta) heikkotehoisilla tai vanhoilla laitteilla. Arvoja kannattaa korottaa $INCREMENT$ välein ja muutoksia kokeilla kaikilla laitteilla.",
     "placeholders": {
       "increment": {
         "content": "$1",
         "example": "50,000"
       }
     }
+  },
+  "kdfMemory": {
+    "message": "KDF-muisti (Mt)",
+    "description": "Memory refers to computer memory (RAM). MB is short for megabytes."
+  },
+  "argon2Warning": {
+    "message": "Liian korkea KDF-toistojen, -muistin ja -rinnakkaisuuksien määrät saattavat hidastaa Bitwardeniin kirjautumista (ja lukituksen avausta) heikkotehoisilla tai vanhoilla laitteilla. Arvoja kannattaa korottaa vain vähän kerrallaan ja muutoksia kokeilla kaikilla laitteilla."
+  },
+  "kdfParallelism": {
+    "message": "KDF-rinnakkaisuus"
+  },
+  "argon2Desc": {
+    "message": "Korkeammat KDF-toistojen, -muistin ja -rinnakkaisuuksien määrät voivat suojata pääsalasanaasi murtautujien väsytyshyökkäyksiltä."
   },
   "changeKdf": {
     "message": "Vaihda KDF-asetuksia"
@@ -2043,6 +2056,9 @@
   },
   "manageSubscription": {
     "message": "Hallitse tilausta"
+  },
+  "launchCloudSubscription": {
+    "message": "Käynnistä pilvitilaus"
   },
   "storage": {
     "message": "Tallennustila"
@@ -5225,9 +5241,6 @@
   "billingSyncApiKeyRotated": {
     "message": "Tunniste uudistettiin"
   },
-  "billingSync": {
-    "message": "Laskutuksen synkronointi"
-  },
   "billingSyncDesc": {
     "message": "Laskutuksen synkronointi mahdollistaa jäsenille ilmaiset Perheille-tilaukset ja edistyneet laskutusominaisuudet liittämällä itse ylläpitämäsi Bitwarden-palvelimen Bitwardenin pilvipalvelimeen."
   },
@@ -5278,6 +5291,15 @@
   },
   "required": {
     "message": "pakollinen"
+  },
+  "characterMaximum": {
+    "message": "Enintään $MAX$ merkkiä",
+    "placeholders": {
+      "max": {
+        "content": "$1",
+        "example": "100"
+      }
+    }
   },
   "idpSingleSignOnServiceUrlRequired": {
     "message": "Vaaditaan, jos Entity ID ei ole kelvollinen URL-osoite."
@@ -5927,10 +5949,10 @@
     "message": "Alavalikko"
   },
   "from": {
-    "message": "From"
+    "message": "Alkaen"
   },
   "to": {
-    "message": "To"
+    "message": "Päättyen"
   },
   "member": {
     "message": "Jäsen"
@@ -6082,13 +6104,55 @@
       }
     }
   },
+  "licenseAndBillingManagement": {
+    "message": "Lisenssien ja laskutuksen hallinta"
+  },
+  "automaticSync": {
+    "message": "Automaattinen synkronointi"
+  },
+  "manualUpload": {
+    "message": "Manuaalinen tallennus"
+  },
+  "manualUploadDesc": {
+    "message": "Jos et halua liittyä laskutuksen synkronointiin, tallenna lisenssisi tänne manuallisesti."
+  },
+  "syncLicense": {
+    "message": "Synkronoi lisenssi"
+  },
+  "licenseSyncSuccess": {
+    "message": "Lisenssin synkronointi onnistui"
+  },
+  "licenseUploadSuccess": {
+    "message": "Lisenssin tallennus onnistui"
+  },
+  "lastLicenseSync": {
+    "message": "Edellinen lisenssin synkronointi"
+  },
+  "billingSyncHelp": {
+    "message": "Laskutuksen synkronoinnin ohje"
+  },
+  "uploadLicense": {
+    "message": "Tallenna lisenssi"
+  },
   "lowKdfIterations": {
-    "message": "Vähän KDF-toistoja"
+    "message": "Alhainen KDF-toistomäärä"
   },
   "lowKdfIterationsDesc": {
-    "message": "Kasvata KDF-salausasetuksiasi tilisi tietoturvan parantamiseksi."
+    "message": "Paranna tilisi suojausta korottamalla KDF-salausasetuksiasi."
   },
   "changeKdfSettings": {
     "message": "Muuta KDF-asetuksia"
+  },
+  "changeKdfLoggedOutWarning": {
+    "message": "Jos jatkat, uloskirjaat nykyisen istunnon ja sinun on kirjauduttava takaisin sisään. Muiden laitteiden aktiiviset istunnot voivat toimia vielä tunnin ajan. Tietojesi säilyvyyden varmistamiseksi suosittelemme, että viet holvisi sisällön ennen kuin muutat salausasetuksiasi."
+  },
+  "secretsManagerBeta": {
+    "message": "Salaisuushallinta Beta"
+  },
+  "secretsManagerBetaDesc": {
+    "message": "Salli käyttäjille Salaisuuksienhallinan käyttöoikeus Beta-ohjelman aikana veloituksetta."
+  },
+  "userAccessSecretsManager": {
+    "message": "Tämä käyttäjä voi käyttää Salaisuuksienhallinnan Betaa"
   }
 }

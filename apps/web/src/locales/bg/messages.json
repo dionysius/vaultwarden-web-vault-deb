@@ -1157,6 +1157,19 @@
       }
     }
   },
+  "kdfMemory": {
+    "message": "Памет за KDF (МБ)",
+    "description": "Memory refers to computer memory (RAM). MB is short for megabytes."
+  },
+  "argon2Warning": {
+    "message": "Ако зададете твърде високи стойности за броя на повторения, паметта или степента на успоредно изпълнение на KDF, това може да влоши производителността при вписване (и отключване) в Битуорден при използване на по-бавно или старо устройство. Препоръчва се промяната на тези стойности да става на малки стъпки, при което да тествате всички свои устройства."
+  },
+  "kdfParallelism": {
+    "message": "Степен на успоредно изпълнение на KDF"
+  },
+  "argon2Desc": {
+    "message": "По-високите стойности за броя на повторения, паметта или степента на успоредно изпълнение на KDF може да защитят главната Ви парола от атаки тип „груба сила“."
+  },
   "changeKdf": {
     "message": "Смяна на KDF"
   },
@@ -2043,6 +2056,9 @@
   },
   "manageSubscription": {
     "message": "Управление на абонамента"
+  },
+  "launchCloudSubscription": {
+    "message": "Launch Cloud Subscription"
   },
   "storage": {
     "message": "Съхранение на данни"
@@ -5225,11 +5241,8 @@
   "billingSyncApiKeyRotated": {
     "message": "Идентификаторът е пресъздаден."
   },
-  "billingSync": {
-    "message": "Синхронизиране на плащанията"
-  },
   "billingSyncDesc": {
-    "message": "Billing sync provides Free Families plans for members and advanced billing capabilities by linking your self-hosted Bitwarden to the Bitwarden cloud server."
+    "message": "Billing sync unlocks Families sponsorships and automatic license syncing on your server. After making updates in the Bitwarden cloud server, select Sync License to apply changes."
   },
   "billingSyncKeyDesc": {
     "message": "За да попълните този формуляр, се нуждаете от идентификатор за синхронизиране на плащанията, който може да намерите или създадете в настройките за абонамента на организацията си в облака."
@@ -5278,6 +5291,15 @@
   },
   "required": {
     "message": "задължително"
+  },
+  "characterMaximum": {
+    "message": "Максимален брой знаци: $MAX$",
+    "placeholders": {
+      "max": {
+        "content": "$1",
+        "example": "100"
+      }
+    }
   },
   "idpSingleSignOnServiceUrlRequired": {
     "message": "Required if Entity ID is not a URL."
@@ -6082,6 +6104,36 @@
       }
     }
   },
+  "licenseAndBillingManagement": {
+    "message": "Управление на лицензи и таксуване"
+  },
+  "automaticSync": {
+    "message": "Автоматично синхронизиране"
+  },
+  "manualUpload": {
+    "message": "Ръчно качване"
+  },
+  "manualUploadDesc": {
+    "message": "Ако не искате да се възползвате от автоматичното синхронизиране на информацията за таксуване, качете ръчно лиценза си тук."
+  },
+  "syncLicense": {
+    "message": "Синхронизиране на лиценза"
+  },
+  "licenseSyncSuccess": {
+    "message": "Успешна синхронизация на лиценза"
+  },
+  "licenseUploadSuccess": {
+    "message": "Успешно качване на лиценза"
+  },
+  "lastLicenseSync": {
+    "message": "Последно синхронизиране на лиценза"
+  },
+  "billingSyncHelp": {
+    "message": "Помощ относно синхронизирането на лицензи"
+  },
+  "uploadLicense": {
+    "message": "Качване на лиценз"
+  },
   "lowKdfIterations": {
     "message": "Малко повторения за KDF"
   },
@@ -6090,5 +6142,17 @@
   },
   "changeKdfSettings": {
     "message": "Промяна на настройките за KDF"
+  },
+  "changeKdfLoggedOutWarning": {
+    "message": "Ако продължите, ще излезете от текущата си сесия и ще трябва да се впишете отново. Активните сесии на други устройства може да продължат да бъдат активни още един час. Препоръчително е да изнесете трезора си преди да променяте настройките за шифроване, за да избегнете загуба на данни."
+  },
+  "secretsManagerBeta": {
+    "message": "Управление на тайни (Бета)"
+  },
+  "secretsManagerBetaDesc": {
+    "message": "Дайте достъп на потребителите до Управлението на тайни безплатно докато все още е в бета-версия."
+  },
+  "userAccessSecretsManager": {
+    "message": "Този потребител има достъп до Управлението на тайни (Бета)"
   }
 }

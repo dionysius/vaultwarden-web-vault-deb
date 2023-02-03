@@ -309,7 +309,7 @@
     "message": "Üzvlərdə axtar"
   },
   "searchGroups": {
-    "message": "Search groups"
+    "message": "Qrupları axtar"
   },
   "allItems": {
     "message": "Bütün elementlər"
@@ -1149,13 +1149,26 @@
     }
   },
   "kdfIterationsWarning": {
-    "message": "KDF iterasiyalarınızı çox yüksək tənzimləmək, zəif prosessora malik cihazlarda \"Bitwarden\"ə giriş edərkən (və ya kilidi açarkən) aşağı performansa səbəb ola bilər. Dəyəri $INCREMENT$ artımları ilə artırmağınızı və daha sonra bütün cihazlarınızda test etməyinizi məsləhət görürük.",
+    "message": "Setting your KDF iterations too high could result in poor performance when logging into (and unlocking) Bitwarden on slower or older devices. We recommend that you increase the value in increments of $INCREMENT$ and then test all of your devices.",
     "placeholders": {
       "increment": {
         "content": "$1",
         "example": "50,000"
       }
     }
+  },
+  "kdfMemory": {
+    "message": "KDF yaddaş (MB)",
+    "description": "Memory refers to computer memory (RAM). MB is short for megabytes."
+  },
+  "argon2Warning": {
+    "message": "KDF iterasiyalarınızı, yaddaşınızı və paralelizminizi çox yüksək tənzimləmək, daha yavaş və ya daha köhnə cihazlarda \"Bitwarden\"ə giriş edərkən (və ya kilidi açarkən) aşağı performansa səbəb ola bilər. Biz bunları fərdi olaraq kiçik artımlarla dəyişməyi, sonra bütün cihazlarınızı sınaqdan keçirməyi tövsiyə edirik."
+  },
+  "kdfParallelism": {
+    "message": "KDF paralelizm"
+  },
+  "argon2Desc": {
+    "message": "Yüksək KDF iterasiyaları, yaddaşı və paralelizmi, ana parolunuzu təcavüzkar tərəfindən \"brute force\" hücumuna qarşı qorumağa kömək edir."
   },
   "changeKdf": {
     "message": "KDF-i dəyişdir"
@@ -2044,6 +2057,9 @@
   "manageSubscription": {
     "message": "Abunəliyi idarə et"
   },
+  "launchCloudSubscription": {
+    "message": "Bulud Abunəliyini Başlat"
+  },
   "storage": {
     "message": "Saxlama"
   },
@@ -2497,7 +2513,7 @@
     "message": "Üzvə düzəliş et"
   },
   "fieldOnTabRequiresAttention": {
-    "message": "A field on the '$TAB$' tab requires your attention.",
+    "message": "\"$TAB$\" vərəqindəki bir sahə diqqətinizi tələb edir.",
     "placeholders": {
       "tab": {
         "content": "$1",
@@ -5225,9 +5241,6 @@
   "billingSyncApiKeyRotated": {
     "message": "Token döndərildi."
   },
-  "billingSync": {
-    "message": "Faktura eyniləşdirmə"
-  },
   "billingSyncDesc": {
     "message": "Faktura eyniləşdirmə, öz-özünə sahiblik edən Bitwarden-inizi Bitwarden bulud serveri ilə əlaqələndirərək ailələr üçün Ödənişsiz Ailələr planını və qabaqcıl faktura özəllilərini təmin edir."
   },
@@ -5278,6 +5291,15 @@
   },
   "required": {
     "message": "tələb olunur"
+  },
+  "characterMaximum": {
+    "message": "maksimum $MAX$ simvol",
+    "placeholders": {
+      "max": {
+        "content": "$1",
+        "example": "100"
+      }
+    }
   },
   "idpSingleSignOnServiceUrlRequired": {
     "message": "Varlıq Kimliyi bir URL deyilsə tələb olunur."
@@ -5565,10 +5587,10 @@
     }
   },
   "multipleInputEmails": {
-    "message": "1 or more emails are invalid"
+    "message": "1 və ya daha çox e-poçt yararsızdır"
   },
   "tooManyEmails": {
-    "message": "You can only submit up to $COUNT$ emails at a time",
+    "message": "Bir dəfəyə ən çox $COUNT$ e-poçt göndərə bilərsiniz",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -6082,13 +6104,55 @@
       }
     }
   },
+  "licenseAndBillingManagement": {
+    "message": "Lisenziya və faktura idarəetməsi"
+  },
+  "automaticSync": {
+    "message": "Avto-sinxronlaşdırma"
+  },
+  "manualUpload": {
+    "message": "Əllə yükləmə"
+  },
+  "manualUploadDesc": {
+    "message": "Faktura sinxronlaşdırmasını fəallaşdırmaq istəmirsinizsə, lisenziyanızı burada əllə yükləyin."
+  },
+  "syncLicense": {
+    "message": "Lisenziyanı sinxronlaşdır"
+  },
+  "licenseSyncSuccess": {
+    "message": "Lisenziya uğurla sinxronlaşdırıldı"
+  },
+  "licenseUploadSuccess": {
+    "message": "Lisenziya uğurla yükləndi"
+  },
+  "lastLicenseSync": {
+    "message": "Son lisenziya sinxronlaşdırması"
+  },
+  "billingSyncHelp": {
+    "message": "Faktura Sinxronlaşdırma köməyi"
+  },
+  "uploadLicense": {
+    "message": "Lisenziyanı yüklə"
+  },
   "lowKdfIterations": {
-    "message": "Low KDF Iterations"
+    "message": "Aşağı KDF iterasiyaları"
   },
   "lowKdfIterationsDesc": {
-    "message": "Increase your KDF encryption settings to improve the security of your account."
+    "message": "Hesabınızın güvənliyini artırmaq üçün KDF şifrələmə tənzimləmələrinizi yüksəldin."
   },
   "changeKdfSettings": {
-    "message": "Change KDF settings"
+    "message": "KDF tənzimləmələrini dəyişdir"
+  },
+  "changeKdfLoggedOutWarning": {
+    "message": "Davam etsəniz hazırkı seansdan çıxış ediləcək, təkrar giriş etməyiniz tələb olunacaq. Digər cihazlardakı aktiv seanslar bir saata qədər aktiv qalmağa davam edə bilər. Məlumat itkisinin qarşısını almaq üçün şifrələmə tənzimləmələrinizi dəyişdirməzdən əvvəl anbarınızı xaricə köçürməyinizi tövsiyə edirik."
+  },
+  "secretsManagerBeta": {
+    "message": "Secrets Manager Beta"
+  },
+  "secretsManagerBetaDesc": {
+    "message": "Beta proqramı əsnasında \"Secrets Manager\"ə istifadəçi müraciətini ödənişsiz fəallaşdırın."
+  },
+  "userAccessSecretsManager": {
+    "message": "Bu istifadəçi \"Secrets Manager Beta\"ya müraciət edə bilər"
   }
 }

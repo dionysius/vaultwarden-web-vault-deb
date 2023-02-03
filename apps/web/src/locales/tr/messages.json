@@ -309,7 +309,7 @@
     "message": "Üyelerde ara"
   },
   "searchGroups": {
-    "message": "Grupları ara"
+    "message": "Gruplarda ara"
   },
   "allItems": {
     "message": "Tüm kayıtlar"
@@ -1156,6 +1156,19 @@
         "example": "50,000"
       }
     }
+  },
+  "kdfMemory": {
+    "message": "KDF belleği (MB)",
+    "description": "Memory refers to computer memory (RAM). MB is short for megabytes."
+  },
+  "argon2Warning": {
+    "message": "KDF yinelemelerinizi, belleğinizi ve paralelliğinizi çok yüksek ayarlamak, daha yavaş veya daha eski cihazlarda Bitwarden'da oturum açarken (ve kilidini açarken) düşük performansa neden olabilir. Bunları tek tek küçük artışlarla değiştirmenizi ve ardından tüm cihazlarınızı test etmenizi öneririz."
+  },
+  "kdfParallelism": {
+    "message": "KDF paralelliği"
+  },
+  "argon2Desc": {
+    "message": "Daha yüksek KDF yinelemeleri, bellek ve paralellik, ana parolanızın bir saldırgan tarafından kaba zorlamaya karşı korunmasına yardımcı olabilir."
   },
   "changeKdf": {
     "message": "KDF'i değiştir"
@@ -2043,6 +2056,9 @@
   },
   "manageSubscription": {
     "message": "Aboneliği yönet"
+  },
+  "launchCloudSubscription": {
+    "message": "Bulut Aboneliğini Başlatın"
   },
   "storage": {
     "message": "Depolama"
@@ -4644,7 +4660,7 @@
     "message": "Sağlayıcı kurulumu"
   },
   "setupProviderLoginDesc": {
-    "message": "Yeni bir sağlayıcı kurmaya davet edildiniz. Devam etmek için oturum açmanız veya yeni bir Bitwarden hesabı oluşturmanız gerekir."
+    "message": "Yeni bir sağlayıcı kurmaya davet edildiniz. Devam etmek için giriş yapmanız veya yeni bir Bitwarden hesabı oluşturmanız gerekli."
   },
   "setupProviderDesc": {
     "message": "Sağlayıcı kurulumunu tamamlamak için lütfen aşağıdaki ayrıntıları girin. Herhangi bir sorunuz varsa Müşteri Desteği ile iletişime geçin."
@@ -4699,7 +4715,7 @@
     "message": "Yeni müşteri kuruluşu"
   },
   "newClientOrganizationDesc": {
-    "message": "Sağlayıcı olarak sizinle ilişkilendirilecek yeni bir müşteri organizasyonu oluşturun. Bu kuruluşa erişebilecek ve yönetebileceksiniz."
+    "message": "Sağlayıcı olarak sizinle ilişkilendirilecek yeni bir müşteri kuruluşu oluşturun. Bu kuruluşa erişebilecek ve onu yönetebileceksiniz."
   },
   "addExistingOrganization": {
     "message": "Mevcut kuruluşu ekle"
@@ -4757,7 +4773,7 @@
     }
   },
   "detachOrganizationConfirmation": {
-    "message": "Bu organizasyonu ayırmak istediğinizden emin misiniz? Kuruluş var olmaya devam edecek, ancak artık sağlayıcı tarafından yönetilmeyecek."
+    "message": "Bu kuruluşu ayırmak istediğinizden emin misiniz? Kuruluş var olmaya devam edecek, ancak artık sağlayıcı tarafından yönetilmeyecek."
   },
   "add": {
     "message": "Ekle"
@@ -4869,7 +4885,7 @@
     "message": "Kullanıcı bilgileri uç noktasından hak talepleri alın"
   },
   "additionalScopes": {
-    "message": "Özel Kapsamlar"
+    "message": "Özel kapsamlar"
   },
   "additionalUserIdClaimTypes": {
     "message": "Özel Kullanıcı Kimliği Talep Türleri"
@@ -4926,7 +4942,7 @@
     "message": "Tek çıkış (SLO) servis URL'si"
   },
   "idpX509PublicCert": {
-    "message": "X509 Genel Sertifika"
+    "message": "X509 açık sertifikası"
   },
   "idpOutboundSigningAlgorithm": {
     "message": "Çıkış imza algoritması"
@@ -4941,7 +4957,7 @@
     "message": "İmza doğrulama istekleri"
   },
   "ssoSettingsSaved": {
-    "message": "Tek Oturum Açma yapılandırması kaydedildi."
+    "message": "Tek oturum açma yapılandırması kaydedildi"
   },
   "sponsoredFamilies": {
     "message": "Ücretsiz Bitwarden Aile"
@@ -5225,9 +5241,6 @@
   "billingSyncApiKeyRotated": {
     "message": "Anahtar yenilendi."
   },
-  "billingSync": {
-    "message": "Faturalandırma Eşitlemesi"
-  },
   "billingSyncDesc": {
     "message": "Faturalandırma Eşitlemesi, şirket içinde barındırılan Bitwarden'ınızı Bitwarden bulut sunucusuna bağlayarak üyeler için Ücretsiz Aile planları ve gelişmiş faturalandırma özellikleri sağlar."
   },
@@ -5278,6 +5291,15 @@
   },
   "required": {
     "message": "zorunlu"
+  },
+  "characterMaximum": {
+    "message": "en fazla $MAX$ karakter",
+    "placeholders": {
+      "max": {
+        "content": "$1",
+        "example": "100"
+      }
+    }
   },
   "idpSingleSignOnServiceUrlRequired": {
     "message": "Varlık Kimliği bir URL değilse gereklidir."
@@ -6082,6 +6104,36 @@
       }
     }
   },
+  "licenseAndBillingManagement": {
+    "message": "Lisans ve fatura yönetimi"
+  },
+  "automaticSync": {
+    "message": "Otomatik eşitleme"
+  },
+  "manualUpload": {
+    "message": "Elle yükleme"
+  },
+  "manualUploadDesc": {
+    "message": "Fatura senkronizasyonunu etkinleştirmek istemiyorsanız, lisansınızı buradan elle yükleyin."
+  },
+  "syncLicense": {
+    "message": "Lisansı eşitle"
+  },
+  "licenseSyncSuccess": {
+    "message": "Lisans başarıyla eşitlendi"
+  },
+  "licenseUploadSuccess": {
+    "message": "Lisans başarıyla yüklendi"
+  },
+  "lastLicenseSync": {
+    "message": "Son lisans eşitlemesi"
+  },
+  "billingSyncHelp": {
+    "message": "Fatura Eşitlemesi yardımı"
+  },
+  "uploadLicense": {
+    "message": "Lisansı yükle"
+  },
   "lowKdfIterations": {
     "message": "Düşük KDF Yinelemeleri"
   },
@@ -6090,5 +6142,17 @@
   },
   "changeKdfSettings": {
     "message": "KDF ayarlarını değiştir"
+  },
+  "changeKdfLoggedOutWarning": {
+    "message": "Devam etmek, mevcut oturumunuzdan çıkmanıza neden olacak ve tekrar oturum açmanızı gerektirecektir. Diğer cihazlardaki etkin oturumlar, bir saate kadar etkin kalmaya devam edebilir. Veri kaybını önlemek için şifreleme ayarlarınızı değiştirmeden önce kasanızı dışa aktarmanızı öneririz."
+  },
+  "secretsManagerBeta": {
+    "message": "Secrets Manager Beta"
+  },
+  "secretsManagerBetaDesc": {
+    "message": "Beta programı sırasında Secrets Manager'a kullanıcı erişimini ücretsiz olarak etkinleştirin."
+  },
+  "userAccessSecretsManager": {
+    "message": "Bu kullanıcı Secrets Manager Beta'ya erişebilir"
   }
 }

@@ -1157,6 +1157,19 @@
       }
     }
   },
+  "kdfMemory": {
+    "message": "Pamięć KDF (MB)",
+    "description": "Memory refers to computer memory (RAM). MB is short for megabytes."
+  },
+  "argon2Warning": {
+    "message": "Ustawienie liczby powtórzeń KDF, zużycia pamięci i współbieżności zbyt wysoko może skutkować obniżeniem wydajności podczas logowania (i odblokowywania sejfu) Bitwarden na wolniejszych albo starszych urządzeniach. Zalecamy stopniowe zwiększanie tej wartości i przetestowanie jej na wszystkich Twoich urządzeniach."
+  },
+  "kdfParallelism": {
+    "message": "Współbieżność KDF"
+  },
+  "argon2Desc": {
+    "message": "Wyższe wartości iteracji KDF, pamięci i współbieżności mogą pomóc chronić Twoje hasło główne przed złamaniem przez atakującego."
+  },
   "changeKdf": {
     "message": "Zmień KDF"
   },
@@ -2043,6 +2056,9 @@
   },
   "manageSubscription": {
     "message": "Zarządzaj subskrypcją"
+  },
+  "launchCloudSubscription": {
+    "message": "Uruchom subskrypcję chmury"
   },
   "storage": {
     "message": "Przestrzeń"
@@ -5225,9 +5241,6 @@
   "billingSyncApiKeyRotated": {
     "message": "Token został zmieniony"
   },
-  "billingSync": {
-    "message": "Synchronizacja płatności"
-  },
   "billingSyncDesc": {
     "message": "Synchronizacja płatności zapewnia darmowe plany rodzinne dla członków i zaawansowane możliwości rozliczeniowe, łącząc Twój własny hostowany Bitwarden z serwerem w chmurze Bitwarden."
   },
@@ -5278,6 +5291,15 @@
   },
   "required": {
     "message": "wymagane"
+  },
+  "characterMaximum": {
+    "message": "$MAX$ znaków maksymalnie",
+    "placeholders": {
+      "max": {
+        "content": "$1",
+        "example": "100"
+      }
+    }
   },
   "idpSingleSignOnServiceUrlRequired": {
     "message": "Wymagane, jeśli identyfikator podmiotu nie jest adres URL."
@@ -6082,6 +6104,36 @@
       }
     }
   },
+  "licenseAndBillingManagement": {
+    "message": "Zarządzanie licencjami i rozliczeniami"
+  },
+  "automaticSync": {
+    "message": "Automatyczna synchronizacja"
+  },
+  "manualUpload": {
+    "message": "Przesyłanie ręczne"
+  },
+  "manualUploadDesc": {
+    "message": "Jeśli nie chcesz włączać synchronizacji rozliczeń, ręcznie prześlij swoją licencję tutaj."
+  },
+  "syncLicense": {
+    "message": "Synchronizuj licencję"
+  },
+  "licenseSyncSuccess": {
+    "message": "Pomyślnie zsynchronizowano licencję"
+  },
+  "licenseUploadSuccess": {
+    "message": "Pomyślnie przesłano licencję"
+  },
+  "lastLicenseSync": {
+    "message": "Ostatnia synchronizacja licencji"
+  },
+  "billingSyncHelp": {
+    "message": "Pomoc synchronizacji płatności"
+  },
+  "uploadLicense": {
+    "message": "Prześlij licencję"
+  },
   "lowKdfIterations": {
     "message": "Niska liczba iteracji KDF"
   },
@@ -6090,5 +6142,17 @@
   },
   "changeKdfSettings": {
     "message": "Zmień ustawienia KDF"
+  },
+  "changeKdfLoggedOutWarning": {
+    "message": "Kontynuowanie spowoduje wylogowanie z bieżącej sesji i konieczność ponownego zalogowania. Aktywne sesje na innych urządzeniach mogą pozostać aktywne przez maksymalnie godzinę. Zalecamy wyeksportowanie sejfu przed zmianą ustawień szyfrowania, aby zapobiec utracie danych."
+  },
+  "secretsManagerBeta": {
+    "message": "Manager sekretów beta"
+  },
+  "secretsManagerBetaDesc": {
+    "message": "Włącz dostęp użytkownikom do Managera sekretów bez żadnych opłat podczas programu Beta."
+  },
+  "userAccessSecretsManager": {
+    "message": "Ten użytkownik może uzyskać dostęp do Managera sekretów Beta"
   }
 }

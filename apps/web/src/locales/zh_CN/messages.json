@@ -1157,6 +1157,19 @@
       }
     }
   },
+  "kdfMemory": {
+    "message": "KDF 内存 (MB)",
+    "description": "Memory refers to computer memory (RAM). MB is short for megabytes."
+  },
+  "argon2Warning": {
+    "message": "如果将 KDF 迭代、内存占用和并行设置得太高，可能导致在相对老旧的设备上登录（解锁） Bitwarden 时性能不佳。 我们建议以小量递增的方式更改这些设置，然后测试您的所有设备。"
+  },
+  "kdfParallelism": {
+    "message": "KDF 并行性"
+  },
+  "argon2Desc": {
+    "message": "更高的 KDF 迭代、内存占用和并行可以帮助保护您的主密码免遭攻击者的暴力破解。"
+  },
   "changeKdf": {
     "message": "更改 KDF"
   },
@@ -2043,6 +2056,9 @@
   },
   "manageSubscription": {
     "message": "管理订阅"
+  },
+  "launchCloudSubscription": {
+    "message": "启动云订阅"
   },
   "storage": {
     "message": "存储"
@@ -5225,9 +5241,6 @@
   "billingSyncApiKeyRotated": {
     "message": "令牌已轮换"
   },
-  "billingSync": {
-    "message": "计费同步"
-  },
   "billingSyncDesc": {
     "message": "计费同步通过将您的自托管 Bitwarden 链接到 Bitwarden 云服务器，为成员提供免费家庭计划和高级计费功能。"
   },
@@ -5278,6 +5291,15 @@
   },
   "required": {
     "message": "必填"
+  },
+  "characterMaximum": {
+    "message": "$MAX$ 字符最大值",
+    "placeholders": {
+      "max": {
+        "content": "$1",
+        "example": "100"
+      }
+    }
   },
   "idpSingleSignOnServiceUrlRequired": {
     "message": "如果实体 ID 不是一个 URL，则必填。"
@@ -6082,13 +6104,55 @@
       }
     }
   },
+  "licenseAndBillingManagement": {
+    "message": "许可证和账单管理"
+  },
+  "automaticSync": {
+    "message": "自动同步"
+  },
+  "manualUpload": {
+    "message": "手动上传"
+  },
+  "manualUploadDesc": {
+    "message": "如果您不想进行账单同步，可以在这里手动上传您的许可证。"
+  },
+  "syncLicense": {
+    "message": "同步许可证"
+  },
+  "licenseSyncSuccess": {
+    "message": "成功同步许可证"
+  },
+  "licenseUploadSuccess": {
+    "message": "成功上传许可证"
+  },
+  "lastLicenseSync": {
+    "message": "最后一次许可证同步"
+  },
+  "billingSyncHelp": {
+    "message": "账单同步帮助"
+  },
+  "uploadLicense": {
+    "message": "上传许可证"
+  },
   "lowKdfIterations": {
-    "message": "Low KDF Iterations"
+    "message": "低KDF 迭代数"
   },
   "lowKdfIterationsDesc": {
-    "message": "Increase your KDF encryption settings to improve the security of your account."
+    "message": "增加您的 KDF 加密设置，以提高您账户的安全。"
   },
   "changeKdfSettings": {
-    "message": "Change KDF settings"
+    "message": "更改 KDF 设置"
+  },
+  "changeKdfLoggedOutWarning": {
+    "message": "本操作将您注销当前会话，要求您重新登录。在其他设备上的活动会话可能将继续保持一小时。 我们建议在更改您的加密设置之前导出您的密码库，以防止数据丢失。"
+  },
+  "secretsManagerBeta": {
+    "message": "Secrets Manager 测试版"
+  },
+  "secretsManagerBetaDesc": {
+    "message": "在测试版期间，允许用户免费访问 Secrets Manager。"
+  },
+  "userAccessSecretsManager": {
+    "message": "此用户可以访问 Secrets Manager 测试版"
   }
 }

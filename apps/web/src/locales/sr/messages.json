@@ -1157,6 +1157,19 @@
       }
     }
   },
+  "kdfMemory": {
+    "message": "KDF меморија (МБ)",
+    "description": "Memory refers to computer memory (RAM). MB is short for megabytes."
+  },
+  "argon2Warning": {
+    "message": "Постављање превисоких KDF итерација, меморија и паралелизам може резултирати лошим перформансама приликом пријављивања (и откључавања) Bitwarden-а на старим уређајима или са споријим процесорима. Препоручујемо вам да промените вредност у корацима, а затим тестирате све своје уређаје."
+  },
+  "kdfParallelism": {
+    "message": "KDF паралелизам"
+  },
+  "argon2Desc": {
+    "message": "Веће KDF итерације, меморија и паралелизам могу помоћи у заштити ваше главне лозинке од грубе присиле од стране нападача."
+  },
   "changeKdf": {
     "message": "Променити KDF"
   },
@@ -2043,6 +2056,9 @@
   },
   "manageSubscription": {
     "message": "Управљај претплатама"
+  },
+  "launchCloudSubscription": {
+    "message": "Покренути Cloud претплату"
   },
   "storage": {
     "message": "Складиште"
@@ -5225,11 +5241,8 @@
   "billingSyncApiKeyRotated": {
     "message": "Токен је обрнут."
   },
-  "billingSync": {
-    "message": "Синхронизација наплате"
-  },
   "billingSyncDesc": {
-    "message": "Billing sync provides Free Families plans for members and advanced billing capabilities by linking your self-hosted Bitwarden to the Bitwarden cloud server."
+    "message": "Billing sync unlocks Families sponsorships and automatic license syncing on your server. After making updates in the Bitwarden cloud server, select Sync License to apply changes."
   },
   "billingSyncKeyDesc": {
     "message": "A billing sync token from your cloud organization's subscription settings is required to complete this form."
@@ -5278,6 +5291,15 @@
   },
   "required": {
     "message": "обавезно"
+  },
+  "characterMaximum": {
+    "message": "Максимум $MAX$ карактера",
+    "placeholders": {
+      "max": {
+        "content": "$1",
+        "example": "100"
+      }
+    }
   },
   "idpSingleSignOnServiceUrlRequired": {
     "message": "Потребно ако Entity ID није УРЛ."
@@ -6082,6 +6104,36 @@
       }
     }
   },
+  "licenseAndBillingManagement": {
+    "message": "Управљање лиценцама и наплатом"
+  },
+  "automaticSync": {
+    "message": "Аутоматска синхронизација"
+  },
+  "manualUpload": {
+    "message": "Ручно отпремање"
+  },
+  "manualUploadDesc": {
+    "message": "If you do not want to opt into billing sync, manually upload your license here."
+  },
+  "syncLicense": {
+    "message": "Синхронизација лиценце"
+  },
+  "licenseSyncSuccess": {
+    "message": "Успешна синхронизација лиценце"
+  },
+  "licenseUploadSuccess": {
+    "message": "Успешан унос лиценце"
+  },
+  "lastLicenseSync": {
+    "message": "Последња синх лиценце"
+  },
+  "billingSyncHelp": {
+    "message": "Помоћ синх наплате"
+  },
+  "uploadLicense": {
+    "message": "Унос лиценце"
+  },
   "lowKdfIterations": {
     "message": "Low KDF Iterations"
   },
@@ -6090,5 +6142,17 @@
   },
   "changeKdfSettings": {
     "message": "Change KDF settings"
+  },
+  "changeKdfLoggedOutWarning": {
+    "message": "Ако наставите, одјавићете се са ваше тренутне сесије, што захтева да се поново пријавите. Активне сесије на другим уређајима могу да остану активне до један сат. Препоручујемо да извезете сеф пре него што промените подешавања шифровања да бисте спречили губитак података."
+  },
+  "secretsManagerBeta": {
+    "message": "Secrets Manager Beta"
+  },
+  "secretsManagerBetaDesc": {
+    "message": "Омогућите приступ корисницима Secrets Manager без накнаде током Beta програма."
+  },
+  "userAccessSecretsManager": {
+    "message": "Овај корисник може приступити Secrets Manager Beta"
   }
 }

@@ -1157,6 +1157,19 @@
       }
     }
   },
+  "kdfMemory": {
+    "message": "KDF memória (MB)",
+    "description": "Memory refers to computer memory (RAM). MB is short for megabytes."
+  },
+  "argon2Warning": {
+    "message": "A KDF-iterációk, a memória és a párhuzamosság túl magasra állítása gyenge teljesítményt eredményezhet a Bitwardenbe bejelentkezéskor (és a feloldáskor) lassabb vagy régebbi eszközökön. Célszerű ezek egyenkénti lecserélése kis lépésekben, majd a tesztelés az összes eszközön."
+  },
+  "kdfParallelism": {
+    "message": "KDF párhuzamosság"
+  },
+  "argon2Desc": {
+    "message": "A magasabb szintű KDF iterációk, a memória és a párhuzamosság segíthet megvédeni mesterjelszót a támadók erőszakossága ellen."
+  },
   "changeKdf": {
     "message": "KDF megváltoztatása"
   },
@@ -2043,6 +2056,9 @@
   },
   "manageSubscription": {
     "message": "Előfizetés kezelése"
+  },
+  "launchCloudSubscription": {
+    "message": "Felhő előfizetés indítása"
   },
   "storage": {
     "message": "Tárhely"
@@ -5225,9 +5241,6 @@
   "billingSyncApiKeyRotated": {
     "message": "A vezérjel gördülő váltásra került."
   },
-  "billingSync": {
-    "message": "Számlázási szinkron"
-  },
   "billingSyncDesc": {
     "message": "A Számlázási szinkron a Free Familes előfizetési lehetőségeket nyújt a tagoknak a saját kiszolgálójú Bitwarden és a Bitwarden felhőszerver összekapcsolásával."
   },
@@ -5278,6 +5291,15 @@
   },
   "required": {
     "message": "kötelező"
+  },
+  "characterMaximum": {
+    "message": "maximálisan $MAX$ karakter",
+    "placeholders": {
+      "max": {
+        "content": "$1",
+        "example": "100"
+      }
+    }
   },
   "idpSingleSignOnServiceUrlRequired": {
     "message": "Szükséges ha az entitás azonosító nem webcím."
@@ -6082,6 +6104,36 @@
       }
     }
   },
+  "licenseAndBillingManagement": {
+    "message": "Licensz és számlázás kezelés"
+  },
+  "automaticSync": {
+    "message": "Automatikus szinkronizálás"
+  },
+  "manualUpload": {
+    "message": "Manuális feltöltés"
+  },
+  "manualUploadDesc": {
+    "message": "Ha nem szeretnénk feliratkozni a számlázási szinkronizálásra, manuálisan töltsük fel a licenszet ide."
+  },
+  "syncLicense": {
+    "message": "Licensz szinkronizálása"
+  },
+  "licenseSyncSuccess": {
+    "message": "A szinkronizálás sikeres volt."
+  },
+  "licenseUploadSuccess": {
+    "message": "A kicensz feltöltés sikeres volt."
+  },
+  "lastLicenseSync": {
+    "message": "Utolsó licensz szinkronizálás"
+  },
+  "billingSyncHelp": {
+    "message": "Számlázási szinkronizálás súgó"
+  },
+  "uploadLicense": {
+    "message": "Licensz letöltése"
+  },
   "lowKdfIterations": {
     "message": "Alacsony KDF iterációk"
   },
@@ -6090,5 +6142,17 @@
   },
   "changeKdfSettings": {
     "message": "KDF beállítások megváltoztatása"
+  },
+  "changeKdfLoggedOutWarning": {
+    "message": "A továbblépéssel kijelentkeztetésre kerülünk az aktuális munkamenetből és újra be kell jelentkezni. A többi eszközön lévő aktív munkamenetek akár egy óráig is aktívak maradhatnak. Célszerű a titkosítási beállítások módosítása előtt a széf exportálása  az adatvesztés elkerülése érdekében."
+  },
+  "secretsManagerBeta": {
+    "message": "Titkos kód kezelő béta"
+  },
+  "secretsManagerBetaDesc": {
+    "message": "Engedélyezze a felhasználóknak a Titkos kód kezelő ingyenes elérését a Béta program alatt."
+  },
+  "userAccessSecretsManager": {
+    "message": "Ez a felhasználó hozzáférhet a Titkos kód kezelő béta verziójához."
   }
 }

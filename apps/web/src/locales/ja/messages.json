@@ -1157,6 +1157,19 @@
       }
     }
   },
+  "kdfMemory": {
+    "message": "KDFメモリ (MB)",
+    "description": "Memory refers to computer memory (RAM). MB is short for megabytes."
+  },
+  "argon2Warning": {
+    "message": "KDFのイテレーション、メモリ、並列性を高く設定すると、遅いデバイスまたは古いデバイスで Bitwarden にログイン (およびロック解除) した時にパフォーマンスが低下する可能性があります。 これらを少しずつ個別に変更し、すべてのデバイスでテストすることをお勧めします。"
+  },
+  "kdfParallelism": {
+    "message": "KDF 並列性"
+  },
+  "argon2Desc": {
+    "message": "KDF のイテレーション、メモリ、並列性が高いほど、攻撃者によるマスターパスワードのブルートフォース攻撃を防止できます。"
+  },
   "changeKdf": {
     "message": "KDFの変更"
   },
@@ -2043,6 +2056,9 @@
   },
   "manageSubscription": {
     "message": "契約の管理"
+  },
+  "launchCloudSubscription": {
+    "message": "クラウドサブスクリプションを起動"
   },
   "storage": {
     "message": "ストレージ"
@@ -5225,11 +5241,8 @@
   "billingSyncApiKeyRotated": {
     "message": "トークンを更新しました。"
   },
-  "billingSync": {
-    "message": "請求の同期"
-  },
   "billingSyncDesc": {
-    "message": "Billing sync provides Free Families plans for members and advanced billing capabilities by linking your self-hosted Bitwarden to the Bitwarden cloud server."
+    "message": "Billing sync unlocks Families sponsorships and automatic license syncing on your server. After making updates in the Bitwarden cloud server, select Sync License to apply changes."
   },
   "billingSyncKeyDesc": {
     "message": "A billing sync token from your cloud organization's subscription settings is required to complete this form."
@@ -5278,6 +5291,15 @@
   },
   "required": {
     "message": "必須"
+  },
+  "characterMaximum": {
+    "message": "最大 $MAX$ 文字",
+    "placeholders": {
+      "max": {
+        "content": "$1",
+        "example": "100"
+      }
+    }
   },
   "idpSingleSignOnServiceUrlRequired": {
     "message": "エンティティ ID が URL でない場合は必須です。"
@@ -6082,6 +6104,36 @@
       }
     }
   },
+  "licenseAndBillingManagement": {
+    "message": "ライセンスと請求管理"
+  },
+  "automaticSync": {
+    "message": "自動同期"
+  },
+  "manualUpload": {
+    "message": "手動アップロード"
+  },
+  "manualUploadDesc": {
+    "message": "請求を同期したくない場合は、ここでライセンスを手動でアップロードしてください。"
+  },
+  "syncLicense": {
+    "message": "ライセンスを同期"
+  },
+  "licenseSyncSuccess": {
+    "message": "ライセンスを同期しました"
+  },
+  "licenseUploadSuccess": {
+    "message": "ライセンスをアップロードしました"
+  },
+  "lastLicenseSync": {
+    "message": "最後のライセンス同期"
+  },
+  "billingSyncHelp": {
+    "message": "請求同期のヘルプ"
+  },
+  "uploadLicense": {
+    "message": "ライセンスをアップロード"
+  },
   "lowKdfIterations": {
     "message": "低 KDF イテレーション"
   },
@@ -6090,5 +6142,17 @@
   },
   "changeKdfSettings": {
     "message": "KDF 設定の変更"
+  },
+  "changeKdfLoggedOutWarning": {
+    "message": "続行すると現在のセッションからログアウトするため、再度ログインする必要があります。 他のデバイスでのアクティブなセッションは、最大1時間アクティブになり続ける可能性があります。 暗号化設定を変更する前に、保管庫をエクスポートしてデータの損失を防ぐことをお勧めします。"
+  },
+  "secretsManagerBeta": {
+    "message": "ベータ版シークレットマネージャー"
+  },
+  "secretsManagerBetaDesc": {
+    "message": "ベータプログラム中、シークレットマネージャーへのユーザーアクセスを無償で有効にします。"
+  },
+  "userAccessSecretsManager": {
+    "message": "このユーザーはベータ版シークレットマネージャーにアクセスできます"
   }
 }

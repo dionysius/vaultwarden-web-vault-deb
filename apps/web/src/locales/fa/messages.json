@@ -1157,6 +1157,19 @@
       }
     }
   },
+  "kdfMemory": {
+    "message": "حافظه‌ی KDF (MB)",
+    "description": "Memory refers to computer memory (RAM). MB is short for megabytes."
+  },
+  "argon2Warning": {
+    "message": "تنظیم تکرارهای KDF، حافظه و موازی سازی بیش از حد می‌تواند منجر به عملکرد ضعیف هنگام ورود به Bitwarden (و باز کردن قفل) در دستگاه های کندتر یا قدیمی تر شود. توصیه می‌کنیم این موارد را به صورت جداگانه و با افزایش های کوچک تغییر دهید و سپس همه دستگاه های خود را آزمایش کنید."
+  },
+  "kdfParallelism": {
+    "message": "موازی سازی KDF"
+  },
+  "argon2Desc": {
+    "message": "تکرارهای KDF بالاتر، حافظه و موازی سازی می‌تواند به محافظت از کلمه عبور اصلی شما در برابر حمله بروت فورث توسط مهاجم کمک کند."
+  },
   "changeKdf": {
     "message": "تغییر KDF"
   },
@@ -2043,6 +2056,9 @@
   },
   "manageSubscription": {
     "message": "مدیریت اشتراک"
+  },
+  "launchCloudSubscription": {
+    "message": "اشتراک Cloud را راه اندازی کنید"
   },
   "storage": {
     "message": "حافظه"
@@ -5225,9 +5241,6 @@
   "billingSyncApiKeyRotated": {
     "message": "توکن چرخانده شد"
   },
-  "billingSync": {
-    "message": "همگام‌سازی صورتحساب"
-  },
   "billingSyncDesc": {
     "message": "همگام‌سازی صورتحساب با پیوند دادن Bitwarden خود میزبان شما به سرور ابری Bitwarden، برنامه‌های خانواده رایگان را برای اعضا و قابلیت‌های پیشرفته صورتحساب ارائه می‌کند."
   },
@@ -5278,6 +5291,15 @@
   },
   "required": {
     "message": "الزامی است"
+  },
+  "characterMaximum": {
+    "message": "حداکثر کاراکتر $MAX$",
+    "placeholders": {
+      "max": {
+        "content": "$1",
+        "example": "100"
+      }
+    }
   },
   "idpSingleSignOnServiceUrlRequired": {
     "message": "اگر شناسه موجودیت یک نشانی اینترنتی نباشد، الزامی است."
@@ -6082,13 +6104,55 @@
       }
     }
   },
+  "licenseAndBillingManagement": {
+    "message": "مدیریت مجوز و صورتحساب"
+  },
+  "automaticSync": {
+    "message": "همگام‌سازی خودکار"
+  },
+  "manualUpload": {
+    "message": "آپلود دستی"
+  },
+  "manualUploadDesc": {
+    "message": "اگر نمی‌خواهید همگام‌سازی صورتحساب را انتخاب کنید، مجوز خود را به‌صورت دستی در اینجا آپلود کنید."
+  },
+  "syncLicense": {
+    "message": "مجوز همگام‌سازی"
+  },
+  "licenseSyncSuccess": {
+    "message": "مجوز همگام‌سازی با موفقیت انجام شد"
+  },
+  "licenseUploadSuccess": {
+    "message": "مجوز با موفقیت بارگذاری شد"
+  },
+  "lastLicenseSync": {
+    "message": "آخرین همگام‌سازی مجوز"
+  },
+  "billingSyncHelp": {
+    "message": "راهنمای همگام‌سازی صورتحساب"
+  },
+  "uploadLicense": {
+    "message": "بارگذاری مجوز"
+  },
   "lowKdfIterations": {
-    "message": "Low KDF Iterations"
+    "message": "تکرار KDF کم"
   },
   "lowKdfIterationsDesc": {
-    "message": "Increase your KDF encryption settings to improve the security of your account."
+    "message": "تنظیمات رمزگذاری KDF خود را برای بهبود امنیت حساب خود افزایش دهید."
   },
   "changeKdfSettings": {
-    "message": "Change KDF settings"
+    "message": "تغییر تنظیمات KDF"
+  },
+  "changeKdfLoggedOutWarning": {
+    "message": "ادامه، شما را از نشست فعلی خارج می‌کند و باید دوباره وارد سیستم شوید. نشست‌های فعال در دستگاه‌های دیگر ممکن است تا یک ساعت فعال بمانند. توصیه می‌کنیم قبل از تغییر تنظیمات رمزگذاری برای جلوگیری از دست رفتن داده‌ها، گاوصندوق خود را برون ریزی کنید."
+  },
+  "secretsManagerBeta": {
+    "message": "بتا مدیر اسرار"
+  },
+  "secretsManagerBetaDesc": {
+    "message": "در طول برنامه بتا، دسترسی کاربر به مدیر اسرار را بدون هیچ هزینه ای فعال کنید."
+  },
+  "userAccessSecretsManager": {
+    "message": "این کاربر می‌تواند به بتای مدیر اسرار دسترسی داشته باشد"
   }
 }

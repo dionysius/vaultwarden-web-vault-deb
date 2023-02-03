@@ -1157,6 +1157,19 @@
       }
     }
   },
+  "kdfMemory": {
+    "message": "Memòria KDF (MB)",
+    "description": "Memory refers to computer memory (RAM). MB is short for megabytes."
+  },
+  "argon2Warning": {
+    "message": "La configuració de les iteracions, la memòria i el paral·lelisme de KDF massa alts podria provocar un rendiment baix quan inicieu sessió (i desbloquegeu) Bitwarden en dispositius més lents o antics. Us recomanem que els canvieu individualment en increments més menuts i després proveu tots els vostres dispositius."
+  },
+  "kdfParallelism": {
+    "message": "Paral·lelisme KDF"
+  },
+  "argon2Desc": {
+    "message": "Les iteracions de KDF, la memòria i el paral·lelisme més alts poden ajudar a protegir la vostra contrasenya mestra de ser forçada per força bruta per un atacant."
+  },
   "changeKdf": {
     "message": "Canvia KDF"
   },
@@ -2043,6 +2056,9 @@
   },
   "manageSubscription": {
     "message": "Administra la subscripció"
+  },
+  "launchCloudSubscription": {
+    "message": "Inicia la subscripció al núvol"
   },
   "storage": {
     "message": "Emmagatzematge"
@@ -5225,9 +5241,6 @@
   "billingSyncApiKeyRotated": {
     "message": "Token girat."
   },
-  "billingSync": {
-    "message": "Sincronització de facturació"
-  },
   "billingSyncDesc": {
     "message": "La sincronització de facturació ofereix plans familiars gratuïts i capacitats de facturació avançades enllaçant el vostre Bitwarden autoallotjat amb el vostre servidor al núvol de Bitwarden."
   },
@@ -5278,6 +5291,15 @@
   },
   "required": {
     "message": "requerit"
+  },
+  "characterMaximum": {
+    "message": "$MAX$ caràcters màxim",
+    "placeholders": {
+      "max": {
+        "content": "$1",
+        "example": "100"
+      }
+    }
   },
   "idpSingleSignOnServiceUrlRequired": {
     "message": "Requerit si l'identificador d'entitat no és un URL."
@@ -6082,6 +6104,36 @@
       }
     }
   },
+  "licenseAndBillingManagement": {
+    "message": "Gestió de llicències i facturació"
+  },
+  "automaticSync": {
+    "message": "Sincronització automàtica"
+  },
+  "manualUpload": {
+    "message": "Pujada manual"
+  },
+  "manualUploadDesc": {
+    "message": "Si no voleu activar la sincronització de facturació, pugeu manualment la vostra llicència ací."
+  },
+  "syncLicense": {
+    "message": "Sincronització de la llicència"
+  },
+  "licenseSyncSuccess": {
+    "message": "Llicència sincronitzada correctament"
+  },
+  "licenseUploadSuccess": {
+    "message": "Llicència pujada correctament"
+  },
+  "lastLicenseSync": {
+    "message": "Última sincronització de llicència"
+  },
+  "billingSyncHelp": {
+    "message": "Ajuda de sincronització de facturació"
+  },
+  "uploadLicense": {
+    "message": "Puja la llicència"
+  },
   "lowKdfIterations": {
     "message": "Iteracions de KDF baixes"
   },
@@ -6090,5 +6142,17 @@
   },
   "changeKdfSettings": {
     "message": "Canvia la configuració de KDF"
+  },
+  "changeKdfLoggedOutWarning": {
+    "message": "Si continueu, es tancarà la sessió de la vostra sessió actual i us demanarà que torneu a iniciar sessió. Les sessions actives en altres dispositius poden continuar romanent actives fins a una hora. Us recomanem que exporteu la vostra caixa forta abans de canviar la configuració d'encriptació per evitar la pèrdua de dades."
+  },
+  "secretsManagerBeta": {
+    "message": "Administrador de secrets Beta"
+  },
+  "secretsManagerBetaDesc": {
+    "message": "Activa l'accés dels usuaris a l'administrador de secrets sense cap càrrec durant el programa beta."
+  },
+  "userAccessSecretsManager": {
+    "message": "Aquest usuari pot accedir a la beta de l'administrador de secrets"
   }
 }

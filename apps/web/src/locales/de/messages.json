@@ -309,7 +309,7 @@
     "message": "Mitglieder suchen"
   },
   "searchGroups": {
-    "message": "Search groups"
+    "message": "Gruppen suchen"
   },
   "allItems": {
     "message": "Alle Einträge"
@@ -1149,13 +1149,26 @@
     }
   },
   "kdfIterationsWarning": {
-    "message": "Wenn du die Anzahl der KDF-Iterationen zu hoch setzt, kann es sein, dass das Einloggen in Bitwarden (und Entsperren) auf langsameren Geräten länger dauert. Wir empfehlen, dass du den Wert um $INCREMENT$ Schrittweise anhebest und es auf allen Geräten testest.",
+    "message": "Wenn du die Anzahl der KDF-Iterationen zu hoch setzt, kann es sein, dass das Einloggen in (und Entsperren von) Bitwarden auf langsameren Geräten länger dauert. Wir empfehlen, dass du den Wert wiederholt um $INCREMENT$ anhebst und auf all deinen Geräten testest.",
     "placeholders": {
       "increment": {
         "content": "$1",
         "example": "50,000"
       }
     }
+  },
+  "kdfMemory": {
+    "message": "KDF-Speicher (MB)",
+    "description": "Memory refers to computer memory (RAM). MB is short for megabytes."
+  },
+  "argon2Warning": {
+    "message": "Werden KDF-Iterationen, -Speicher und -Parallelität zu hoch eingestellt, kann das zu einer schlechten Leistung führen, wenn du dich bei Bitwarden auf langsameren oder älteren Geräten einloggst (und diese entsperrst). Wir empfehlen dir, diese individuell in kleinen Schritten zu ändern und dann alle deine Geräte zu testen."
+  },
+  "kdfParallelism": {
+    "message": "KDF-Parallelität"
+  },
+  "argon2Desc": {
+    "message": "Höhere KDF-Iterationen, -Speicher und -Parallelität helfen dabei, dein Master-Passwort besser vor Brute-Force-Angriffen zu schützen."
   },
   "changeKdf": {
     "message": "KDF ändern"
@@ -2044,6 +2057,9 @@
   "manageSubscription": {
     "message": "Abo verwalten"
   },
+  "launchCloudSubscription": {
+    "message": "Cloud-Abonnement starten"
+  },
   "storage": {
     "message": "Speicher"
   },
@@ -2497,7 +2513,7 @@
     "message": "Mitglied bearbeiten"
   },
   "fieldOnTabRequiresAttention": {
-    "message": "A field on the '$TAB$' tab requires your attention.",
+    "message": "Ein Feld auf der Registerkarte '$TAB$' erfordert deine Aufmerksamkeit.",
     "placeholders": {
       "tab": {
         "content": "$1",
@@ -5225,9 +5241,6 @@
   "billingSyncApiKeyRotated": {
     "message": "Token erneuert."
   },
-  "billingSync": {
-    "message": "Rechnungssynchronisation"
-  },
   "billingSyncDesc": {
     "message": "Die Rechnungssynchronisation bietet ein kostenloses Familien-Abo für Mitglieder und erweiterte Abrechnungsmöglichkeiten, indem du dein selbst gehostetes Bitwarden mit dem Bitwarden Cloud-Server verbindest."
   },
@@ -5278,6 +5291,15 @@
   },
   "required": {
     "message": "erforderlich"
+  },
+  "characterMaximum": {
+    "message": "Maximal $MAX$ Zeichen",
+    "placeholders": {
+      "max": {
+        "content": "$1",
+        "example": "100"
+      }
+    }
   },
   "idpSingleSignOnServiceUrlRequired": {
     "message": "Erforderlich, wenn die Entitäts-ID keine URL ist."
@@ -5565,10 +5587,10 @@
     }
   },
   "multipleInputEmails": {
-    "message": "1 or more emails are invalid"
+    "message": "Mindestens 1 E-Mail-Adresse ist ungültig"
   },
   "tooManyEmails": {
-    "message": "You can only submit up to $COUNT$ emails at a time",
+    "message": "Du kannst nur bis zu $COUNT$ E-Mails gleichzeitig senden",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -6082,6 +6104,36 @@
       }
     }
   },
+  "licenseAndBillingManagement": {
+    "message": "Lizenz- und Rechnungsverwaltung"
+  },
+  "automaticSync": {
+    "message": "Automatische Synchronisierung"
+  },
+  "manualUpload": {
+    "message": "Manuelles Hochladen"
+  },
+  "manualUploadDesc": {
+    "message": "Wenn du dich nicht für die Abrechnungssynchronisierung entscheiden möchtest, lade deine Lizenz hier manuell hoch."
+  },
+  "syncLicense": {
+    "message": "Lizenz synchronisieren"
+  },
+  "licenseSyncSuccess": {
+    "message": "Lizenz erfolgreich synchronisiert"
+  },
+  "licenseUploadSuccess": {
+    "message": "Lizenz erfolgreich hochgeladen"
+  },
+  "lastLicenseSync": {
+    "message": "Letzte Lizenz-Synchronisierung"
+  },
+  "billingSyncHelp": {
+    "message": "Hilfe zur Abrechnungssynchronisierung"
+  },
+  "uploadLicense": {
+    "message": "Lizenz hochladen"
+  },
   "lowKdfIterations": {
     "message": "Geringe KDF-Iterationen"
   },
@@ -6090,5 +6142,17 @@
   },
   "changeKdfSettings": {
     "message": "KDF-Einstellungen ändern"
+  },
+  "changeKdfLoggedOutWarning": {
+    "message": "Wenn du fortfährst, wirst du aus deiner aktuellen Sitzung abgemeldet und musst dich neu anmelden. Aktive Sitzungen auf anderen Geräten können bis zu einer Stunde weiter aktiv bleiben. Wir empfehlen, deinen Tresor zu exportieren, bevor du die Verschlüsselungseinstellungen änderst, um Datenverlust zu vermeiden."
+  },
+  "secretsManagerBeta": {
+    "message": "Secrets Manager Beta"
+  },
+  "secretsManagerBetaDesc": {
+    "message": "Aktiviere kostenlosen Benutzerzugriff auf den Secrets Manager während des Beta-Programms."
+  },
+  "userAccessSecretsManager": {
+    "message": "Dieser Benutzer kann auf die Secrets Manager Beta zugreifen"
   }
 }

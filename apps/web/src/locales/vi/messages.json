@@ -281,35 +281,35 @@
     "message": "Tìm trong danh sách Yêu thích"
   },
   "searchLogin": {
-    "message": "Search logins",
+    "message": "Tìm kiếm thông tin đăng nhập",
     "description": "Search Login type"
   },
   "searchCard": {
-    "message": "Search cards",
+    "message": "Tìm thẻ",
     "description": "Search Card type"
   },
   "searchIdentity": {
-    "message": "Search identities",
+    "message": "Tìm kiếm danh tính",
     "description": "Search Identity type"
   },
   "searchSecureNote": {
-    "message": "Search secure notes",
+    "message": "Tìm kiếm ghi chú an toàn",
     "description": "Search Secure Note type"
   },
   "searchVault": {
     "message": "Tìm kiếm trong Kho"
   },
   "searchMyVault": {
-    "message": "Search my vault"
+    "message": "Tìm kiếm trong kho"
   },
   "searchOrganization": {
-    "message": "Search organization"
+    "message": "Tìm tổ chức"
   },
   "searchMembers": {
-    "message": "Search members"
+    "message": "Tìm thành viên"
   },
   "searchGroups": {
-    "message": "Search groups"
+    "message": "Tìm nhóm"
   },
   "allItems": {
     "message": "Tất cả các mục"
@@ -393,7 +393,7 @@
     "message": "Chọn"
   },
   "newItem": {
-    "message": "New item"
+    "message": "Mục mới"
   },
   "addItem": {
     "message": "Thêm mục"
@@ -405,11 +405,11 @@
     "message": "Xem mục"
   },
   "new": {
-    "message": "New",
+    "message": "Mới",
     "description": "for adding new items"
   },
   "item": {
-    "message": "Item"
+    "message": "Mục"
   },
   "ex": {
     "message": "vd.",
@@ -465,7 +465,7 @@
     "message": "Kho của tôi"
   },
   "allVaults": {
-    "message": "All vaults"
+    "message": "Tất cả kho"
   },
   "vault": {
     "message": "Kho"
@@ -477,7 +477,7 @@
     "message": "Vault items"
   },
   "filter": {
-    "message": "Filter"
+    "message": "Bộ Lọc"
   },
   "moveSelectedToOrg": {
     "message": "Chuyển đã chọn tới Tổ chức"
@@ -541,7 +541,7 @@
     }
   },
   "movedItemsToOrg": {
-    "message": "Selected items moved to $ORGNAME$",
+    "message": "Đã di chuyển các mục đã chọn đến $ORGNAME$",
     "placeholders": {
       "orgname": {
         "content": "$1",
@@ -586,10 +586,10 @@
     "message": "Đã xóa thư mục"
   },
   "editInfo": {
-    "message": "Edit info"
+    "message": "Chỉnh sửa thông tin"
   },
   "access": {
-    "message": "Access"
+    "message": "Quyền truy cập"
   },
   "loggedOut": {
     "message": "Đã đăng xuất"
@@ -616,22 +616,22 @@
     "message": "Đăng nhập hoặc tạo tài khoản mới để truy cập kho mật khẩu của bạn."
   },
   "loginWithDevice": {
-    "message": "Log in with device"
+    "message": "Đăng nhập bằng thiết bị"
   },
   "loginWithDeviceEnabledInfo": {
-    "message": "Log in with device must be set up in the settings of the Bitwarden mobile app. Need another option?"
+    "message": "Đăng nhập bằng thiết bị phải được thiết lập trong cài đặt của ứng dụng di động Bitwarden. Cần một lựa chọn khác?"
   },
   "loginWithMasterPassword": {
-    "message": "Log in with master password"
+    "message": "Đăng nhập bằng mật khẩu chính"
   },
   "createAccount": {
     "message": "Tạo tài khoản"
   },
   "newAroundHere": {
-    "message": "New around here?"
+    "message": "Bạn mới tới đây sao?"
   },
   "startTrial": {
-    "message": "Start trial"
+    "message": "Bắt đầu dùng thử"
   },
   "logIn": {
     "message": "Đăng nhập"
@@ -658,7 +658,7 @@
     "message": "Mật khẩu chính là mật khẩu bạn dùng để truy cập vào kho lưu trữ của bạn. Mật khẩu này rất quan trọng và bạn đừng nên quên mật khẩu chính này. Bạn sẽ không thể khôi phục mật khẩu chính trong trường hợp bạn quên nó."
   },
   "masterPassImportant": {
-    "message": "Master passwords cannot be recovered if you forget it!"
+    "message": "Không thể khôi phục mật khẩu chính nếu bạn quên!"
   },
   "masterPassHintDesc": {
     "message": "Gợi ý mật khẩu chính có thể giúp bạn nhớ lại mật khẩu của mình nếu bạn quên nó."
@@ -691,13 +691,13 @@
     "message": "Địa chỉ email không hợp lệ."
   },
   "masterPasswordRequired": {
-    "message": "Master password is required."
+    "message": "Yêu cầu mật khẩu chính."
   },
   "confirmMasterPasswordRequired": {
-    "message": "Master password retype is required."
+    "message": "Yêu cầu nhập lại mật khẩu chính."
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least 8 characters long."
+    "message": "Mật khẩu chính phải có ít nhất 8 kí tự."
   },
   "masterPassDoesntMatch": {
     "message": "Xác minh mật khẩu chính không đúng."
@@ -706,7 +706,7 @@
     "message": "Tài khoản của bạn đã được tạo! Bạn có thể đăng nhập ngay bây giờ."
   },
   "trialAccountCreated": {
-    "message": "Account created successfully."
+    "message": "Tài Khoản Đã Tạo Thành Công."
   },
   "masterPassSent": {
     "message": "Chúng tôi đã gửi cho bạn email với gợi ý mật khẩu chính của bạn."
@@ -740,7 +740,7 @@
     "message": "Mật khẩu chính không hợp lệ"
   },
   "invalidFilePassword": {
-    "message": "Invalid file password, please use the password you entered when you created the export file."
+    "message": "Mật khẩu tệp không hợp lệ, vui lòng sử dụng mật khẩu bạn đã nhập khi tạo tệp xuất."
   },
   "lockNow": {
     "message": "Khóa ngay"
@@ -749,7 +749,7 @@
     "message": "Không có mục nào để liệt kê."
   },
   "noPermissionToViewAllCollectionItems": {
-    "message": "You do not have permission to view all items in this collection."
+    "message": "Bạn không có quyền xem tất cả các mục trong bộ sưu tập này."
   },
   "noCollectionsInList": {
     "message": "Không có bộ sưu tập nào để liệt kê."
@@ -761,7 +761,7 @@
     "message": "Không có người nào để liệt kê."
   },
   "noMembersInList": {
-    "message": "There are no members to list."
+    "message": "Không có người nào để liệt kê."
   },
   "noEventsInList": {
     "message": "Không có sự kiện nào để liệt kê."
@@ -773,7 +773,7 @@
     "message": "Bạn không thuộc tổ chức nào. Tổ chức sẽ cho phép bạn chia sẻ với người dùng khác một cách bảo mật."
   },
   "notificationSentDevice": {
-    "message": "A notification has been sent to your device."
+    "message": "Một thông báo đã được gửi đến thiết bị của bạn."
   },
   "versionNumber": {
     "message": "Phiên bản $VERSION_NUMBER$",
@@ -955,7 +955,7 @@
     "message": "Cảnh báo"
   },
   "confirmVaultExport": {
-    "message": "Confirm vault export"
+    "message": "Xác nhận xuất kho lưu trữ"
   },
   "exportWarningDesc": {
     "message": "Bản trích xuất này chứa dữ liệu kho bạn và không được mã hóa. Bạn không nên lưu trữ hay gửi tập tin trích xuất thông qua phương thức không an toàn (như email). Vui lòng xóa nó ngay lập tức khi bạn đã sử dụng xong."
@@ -982,7 +982,7 @@
     "message": "This password will be used to export and import this file"
   },
   "confirmMasterPassword": {
-    "message": "Confirm master password"
+    "message": "Xác nhận mật khẩu chính"
   },
   "confirmFormat": {
     "message": "Confirm format"
@@ -1157,6 +1157,19 @@
       }
     }
   },
+  "kdfMemory": {
+    "message": "KDF memory (MB)",
+    "description": "Memory refers to computer memory (RAM). MB is short for megabytes."
+  },
+  "argon2Warning": {
+    "message": "Setting your KDF iterations, memory, and parallelism too high could result in poor performance when logging into (and unlocking) Bitwarden on slower or older devices. We recommend changing these individually in small increments and then test all of your devices."
+  },
+  "kdfParallelism": {
+    "message": "KDF parallelism"
+  },
+  "argon2Desc": {
+    "message": "Higher KDF iterations, memory, and parallelism can help protect your master password from being brute forced by an attacker."
+  },
   "changeKdf": {
     "message": "Thay đổi KDF"
   },
@@ -1282,13 +1295,13 @@
     "message": "Tùy chọn"
   },
   "preferences": {
-    "message": "Preferences"
+    "message": "Tuỳ chỉnh"
   },
   "preferencesDesc": {
-    "message": "Customize your web vault experience."
+    "message": "Tùy chỉnh trải nghiệm Kho trên web của bạn."
   },
   "preferencesUpdated": {
-    "message": "Preferences saved"
+    "message": "Đã lưu tuỳ chỉnh"
   },
   "language": {
     "message": "Ngôn ngữ"
@@ -2044,6 +2057,9 @@
   "manageSubscription": {
     "message": "Manage subscription"
   },
+  "launchCloudSubscription": {
+    "message": "Bắt Đầu Đăng Ký Đám Mây"
+  },
   "storage": {
     "message": "Lưu trữ"
   },
@@ -2079,10 +2095,10 @@
     "message": "Change payment method"
   },
   "invoices": {
-    "message": "Invoices"
+    "message": "Hóa đơn"
   },
   "noInvoices": {
-    "message": "No invoices."
+    "message": "Không có hóa đơn."
   },
   "paid": {
     "message": "Paid",
@@ -3987,7 +4003,7 @@
     "message": "Expired"
   },
   "searchSends": {
-    "message": "Tìm kiếm Send",
+    "message": "Tìm kiếm trong Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendProtectedPassword": {
@@ -4014,7 +4030,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "noSendsInList": {
-    "message": "There are no Sends to list.",
+    "message": "Không có Sends trong danh sách.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "emergencyAccess": {
@@ -4362,7 +4378,7 @@
     "message": "Share text or files directly with anyone."
   },
   "sendVaultCardLearnMore": {
-    "message": "Learn more",
+    "message": "Tìm hiểu thêm",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read '**Learn more**, see how it works, or try it now. '"
   },
   "sendVaultCardSee": {
@@ -4370,7 +4386,7 @@
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Learn more, **see** how it works, or try it now.'"
   },
   "sendVaultCardHowItWorks": {
-    "message": "how it works",
+    "message": "cách thức hoạt động",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Learn more, see **how it works**, or try it now.'"
   },
   "sendVaultCardOr": {
@@ -5225,11 +5241,8 @@
   "billingSyncApiKeyRotated": {
     "message": "Token rotated"
   },
-  "billingSync": {
-    "message": "Billing sync"
-  },
   "billingSyncDesc": {
-    "message": "Billing sync provides Free Families plans for members and advanced billing capabilities by linking your self-hosted Bitwarden to the Bitwarden cloud server."
+    "message": "Billing sync unlocks Families sponsorships and automatic license syncing on your server. After making updates in the Bitwarden cloud server, select Sync License to apply changes."
   },
   "billingSyncKeyDesc": {
     "message": "A billing sync token from your cloud organization's subscription settings is required to complete this form."
@@ -5279,6 +5292,15 @@
   "required": {
     "message": "required"
   },
+  "characterMaximum": {
+    "message": "$MAX$ ký tự tối đa",
+    "placeholders": {
+      "max": {
+        "content": "$1",
+        "example": "100"
+      }
+    }
+  },
   "idpSingleSignOnServiceUrlRequired": {
     "message": "Required if Entity ID is not a URL."
   },
@@ -5325,13 +5347,13 @@
     "message": "Master password"
   },
   "security": {
-    "message": "Security"
+    "message": "Bảo mật"
   },
   "keys": {
     "message": "Keys"
   },
   "billingHistory": {
-    "message": "Billing history"
+    "message": "Lịch sử Thanh toán"
   },
   "backToReports": {
     "message": "Back to reports"
@@ -6082,6 +6104,36 @@
       }
     }
   },
+  "licenseAndBillingManagement": {
+    "message": "Quản lý giấy phép và thanh toán"
+  },
+  "automaticSync": {
+    "message": "Tự động đồng bộ"
+  },
+  "manualUpload": {
+    "message": "Tải lên thủ công"
+  },
+  "manualUploadDesc": {
+    "message": "Nếu không muốn thực hiện đồng bộ hóa thanh toán, bạn có thể tải lên giấy phép của mình theo cách thủ công tại đây."
+  },
+  "syncLicense": {
+    "message": "Đồng bộ hóa giấy phép"
+  },
+  "licenseSyncSuccess": {
+    "message": "Đồng bộ hóa giấy phép thành công"
+  },
+  "licenseUploadSuccess": {
+    "message": "Tải lên giấy phép thành công"
+  },
+  "lastLicenseSync": {
+    "message": "Đồng bộ hóa giấy phép lần cuối"
+  },
+  "billingSyncHelp": {
+    "message": "Trợ giúp về Đồng Bộ Thanh Toán"
+  },
+  "uploadLicense": {
+    "message": "Tải lên giấy phép"
+  },
   "lowKdfIterations": {
     "message": "Low KDF Iterations"
   },
@@ -6089,6 +6141,18 @@
     "message": "Increase your KDF encryption settings to improve the security of your account."
   },
   "changeKdfSettings": {
-    "message": "Change KDF settings"
+    "message": "Thay đổi cài đặt KDF"
+  },
+  "changeKdfLoggedOutWarning": {
+    "message": "Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour. We recommend exporting your vault before changing your encryption settings to prevent data loss."
+  },
+  "secretsManagerBeta": {
+    "message": "Secrets Manager Beta"
+  },
+  "secretsManagerBetaDesc": {
+    "message": "Enable user access to the Secrets Manager at no charge during the Beta program."
+  },
+  "userAccessSecretsManager": {
+    "message": "This user can access the Secrets Manager Beta"
   }
 }
