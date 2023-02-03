@@ -4,6 +4,8 @@ import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { UriMatchType } from "@bitwarden/common/enums/uriMatchType";
 
+import { BrowserApi } from "../../browser/browserApi";
+
 @Component({
   selector: "app-autofill",
   templateUrl: "autofill.component.html",
@@ -50,5 +52,9 @@ export class AutofillComponent implements OnInit {
 
   async saveDefaultUriMatch() {
     await this.stateService.setDefaultUriMatch(this.defaultUriMatch);
+  }
+
+  AboutAutofill() {
+    BrowserApi.createNewTab("https://bitwarden.com/help/auto-fill-browser/");
   }
 }
