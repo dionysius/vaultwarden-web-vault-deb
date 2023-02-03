@@ -178,7 +178,7 @@
     "message": "Vyžaduje prémiový účet"
   },
   "premiumRequiredDesc": {
-    "message": "Pre použitie tejto funkcie je potrebné prémiové členstvo."
+    "message": "Na použitie tejto funkcie je potrebné prémiové členstvo."
   },
   "errorOccurred": {
     "message": "Vyskytla sa chyba."
@@ -1590,7 +1590,7 @@
     "message": "Bohužiaľ, integrácia v prehliadači je zatiaľ podporovaná iba vo verzii Mac App Store."
   },
   "browserIntegrationWindowsStoreDesc": {
-    "message": "Bohužiaľ, integrácia v prehliadači je zatiaľ podporovaná iba vo verzii Windows Store."
+    "message": "Bohužiaľ, integrácia v prehliadači zatiaľ nie je podporovaná, ak je aplikácia nainštalovaná cez Microsoft Store."
   },
   "browserIntegrationLinuxDesc": {
     "message": "Bohužiaľ, integrácia prehliadača nie je v súčasnosti podporovaná vo verzii pre Linux."
