@@ -1,4 +1,6 @@
 /* eslint-disable no-useless-escape */
+import * as path from "path";
+
 import { getHostname, parse } from "tldts";
 import { Merge } from "type-fest";
 
@@ -496,6 +498,15 @@ export class Utils {
       /[!'()*]/g,
       (c) => `%${c.charCodeAt(0).toString(16).toUpperCase()}`
     );
+  }
+
+  /**
+   * Normalizes a path for defense against attacks like traversals
+   * @param denormalizedPath
+   * @returns
+   */
+  static normalizePath(denormalizedPath: string): string {
+    return path.normalize(decodeURIComponent(denormalizedPath)).replace(/^(\.\.(\/|\\|$))+/, "");
   }
 
   private static isMobile(win: Window) {

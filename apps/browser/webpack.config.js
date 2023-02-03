@@ -209,7 +209,7 @@ const mainConfig = {
       util: require.resolve("util/"),
       url: require.resolve("url/"),
       fs: false,
-      path: false,
+      path: require.resolve("path-browserify"),
     },
   },
   output: {

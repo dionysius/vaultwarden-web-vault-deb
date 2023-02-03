@@ -355,9 +355,9 @@ const webpackConfig = {
       util: require.resolve("util/"),
       assert: false,
       url: false,
-      path: false,
       fs: false,
       process: false,
+      path: require.resolve("path-browserify"),
     },
   },
   output: {
