@@ -1,8 +1,10 @@
-import { I18nService as BaseI18nService } from "@bitwarden/common/services/i18n.service";
+import { TranslationService as BaseTranslationService } from "@bitwarden/common/services/translation.service";
 
-import { SupportedTranslationLocales } from "../../translation-constants";
+import { SupportedTranslationLocales } from "../translation-constants";
 
-export class I18nService extends BaseI18nService {
+export class TranslationService extends BaseTranslationService {
+  private _translationLocale: string;
+
   constructor(systemLanguage: string, localesDirectory: string) {
     super(systemLanguage || "en-US", localesDirectory, async (formattedLocale: string) => {
       const filePath =
@@ -17,5 +19,13 @@ export class I18nService extends BaseI18nService {
     });
 
     this.supportedTranslationLocales = SupportedTranslationLocales;
+  }
+
+  get translationLocale(): string {
+    return this._translationLocale;
+  }
+
+  set translationLocale(locale: string) {
+    this._translationLocale = locale;
   }
 }

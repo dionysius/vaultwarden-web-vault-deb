@@ -1,5 +1,6 @@
 import { b64Decode, getQsParam } from "./common";
 import { buildDataString, parseWebauthnJson } from "./common-webauthn";
+import { TranslationService } from "./translation.service";
 
 require("./webauthn.scss");
 
@@ -7,9 +8,8 @@ let parsed = false;
 let webauthnJson: any;
 let parentUrl: string = null;
 let sentSuccess = false;
-let locale = "en";
-
-let locales: any = {};
+let locale: string = null;
+let localeService: TranslationService = null;
 
 function parseParameters() {
   if (parsed) {
@@ -24,7 +24,7 @@ function parseParameters() {
     parentUrl = decodeURIComponent(parentUrl);
   }
 
-  locale = getQsParam("locale").replace("-", "_");
+  locale = getQsParam("locale") ?? "en";
 
   const version = getQsParam("v");
 
@@ -61,18 +61,19 @@ function parseParametersV2() {
 document.addEventListener("DOMContentLoaded", async () => {
   parseParameters();
   try {
-    locales = await loadLocales(locale);
+    localeService = new TranslationService(locale, "locales");
   } catch {
-    // eslint-disable-next-line
-    console.error("Failed to load the locale", locale);
-    locales = await loadLocales("en");
+    error("Failed to load the provided locale " + locale);
+    localeService = new TranslationService("en", "locales");
   }
 
-  document.getElementById("msg").innerText = translate("webAuthnFallbackMsg");
-  document.getElementById("remember-label").innerText = translate("rememberMe");
+  await localeService.init();
+
+  document.getElementById("msg").innerText = localeService.t("webAuthnFallbackMsg");
+  document.getElementById("remember-label").innerText = localeService.t("rememberMe");
 
   const button = document.getElementById("webauthn-button");
-  button.innerText = translate("webAuthnAuthenticate");
+  button.innerText = localeService.t("webAuthnAuthenticate");
   button.onclick = start;
 
   document.getElementById("spinner").classList.add("d-none");
@@ -81,23 +82,13 @@ document.addEventListener("DOMContentLoaded", async () => {
   content.classList.remove("d-none");
 });
 
-async function loadLocales(newLocale: string) {
-  const filePath = `locales/${newLocale}/messages.json?cache=${process.env.CACHE_TAG}`;
-  const localesResult = await fetch(filePath);
-  return await localesResult.json();
-}
-
-function translate(id: string) {
-  return locales[id]?.message || "";
-}
-
 function start() {
   if (sentSuccess) {
     return;
   }
 
   if (!("credentials" in navigator)) {
-    error(translate("webAuthnNotSupported"));
+    error(localeService.t("webAuthnNotSupported"));
     return;
   }
 
@@ -133,7 +124,7 @@ async function initWebAuthn(obj: any) {
     window.postMessage({ command: "webAuthnResult", data: dataString, remember: remember }, "*");
 
     sentSuccess = true;
-    success(translate("webAuthnSuccess"));
+    success(localeService.t("webAuthnSuccess"));
   } catch (err) {
     error(err);
   }
