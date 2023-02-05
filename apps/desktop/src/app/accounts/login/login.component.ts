@@ -20,7 +20,7 @@ import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUti
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
 
-import { EnvironmentComponent } from "./environment.component";
+import { EnvironmentComponent } from "../environment.component";
 
 const BroadcasterSubscriptionId = "LoginComponent";
 
@@ -93,6 +93,7 @@ export class LoginComponent extends BaseLoginComponent implements OnDestroy {
 
   async ngOnInit() {
     await super.ngOnInit();
+    await this.checkSelfHosted();
     this.broadcasterService.subscribe(BroadcasterSubscriptionId, async (message: any) => {
       this.ngZone.run(() => {
         switch (message.command) {
@@ -136,9 +137,10 @@ export class LoginComponent extends BaseLoginComponent implements OnDestroy {
       this.showingModal = false;
     });
 
-    // eslint-disable-next-line rxjs-angular/prefer-takeuntil
-    childComponent.onSaved.subscribe(() => {
+    // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
+    childComponent.onSaved.subscribe(async () => {
       modal.close();
+      await this.checkSelfHosted();
     });
   }
 
@@ -174,5 +176,11 @@ export class LoginComponent extends BaseLoginComponent implements OnDestroy {
   private focusInput() {
     const email = this.loggedEmail;
     document.getElementById(email == null || email === "" ? "email" : "masterPassword").focus();
+  }
+
+  private async checkSelfHosted() {
+    this.selfHosted = this.environmentService.isSelfHosted();
+
+    await this.getLoginWithDevice(this.loggedEmail);
   }
 }

@@ -622,3 +622,35 @@ main {
     position: relative;
   }
 }
+
+.login-with-device {
+  .fingerprint-phrase-header {
+    padding-top: 1rem;
+    display: block;
+  }
+
+  @include themify($themes) {
+    .fingerprint-text {
+      color: themed("codeColor");
+      font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
+        monospace;
+      padding: 1rem 0;
+    }
+  }
+
+  .resend-notification {
+    padding-bottom: 1rem;
+    a {
+      cursor: pointer;
+    }
+  }
+
+  .footer {
+    padding-top: 1rem;
+
+    a {
+      padding-top: 1rem;
+      display: block;
+    }
+  }
+}

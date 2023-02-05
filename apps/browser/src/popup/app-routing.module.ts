@@ -18,6 +18,7 @@ import { EnvironmentComponent } from "./accounts/environment.component";
 import { HintComponent } from "./accounts/hint.component";
 import { HomeComponent } from "./accounts/home.component";
 import { LockComponent } from "./accounts/lock.component";
+import { LoginWithDeviceComponent } from "./accounts/login-with-device.component";
 import { LoginComponent } from "./accounts/login.component";
 import { RegisterComponent } from "./accounts/register.component";
 import { RemovePasswordComponent } from "./accounts/remove-password.component";
@@ -66,6 +67,12 @@ const routes: Routes = [
     component: LoginComponent,
     canActivate: [UnauthGuard],
     data: { state: "login" },
+  },
+  {
+    path: "login-with-device",
+    component: LoginWithDeviceComponent,
+    canActivate: [UnauthGuard],
+    data: { state: "login-with-device" },
   },
   {
     path: "lock",

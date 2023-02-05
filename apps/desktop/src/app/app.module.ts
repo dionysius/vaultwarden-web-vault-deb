@@ -27,7 +27,8 @@ import { DeleteAccountComponent } from "./accounts/delete-account.component";
 import { EnvironmentComponent } from "./accounts/environment.component";
 import { HintComponent } from "./accounts/hint.component";
 import { LockComponent } from "./accounts/lock.component";
-import { LoginComponent } from "./accounts/login.component";
+import { LoginApprovalComponent } from "./accounts/login/login-approval.component";
+import { LoginModule } from "./accounts/login/login.module";
 import { RegisterComponent } from "./accounts/register.component";
 import { RemovePasswordComponent } from "./accounts/remove-password.component";
 import { SetPasswordComponent } from "./accounts/set-password.component";
@@ -55,7 +56,7 @@ import { GeneratorComponent } from "./vault/generator.component";
 import { PasswordGeneratorHistoryComponent } from "./vault/password-generator-history.component";
 
 @NgModule({
-  imports: [SharedModule, AppRoutingModule, VaultFilterModule],
+  imports: [SharedModule, AppRoutingModule, VaultFilterModule, LoginModule],
   declarations: [
     AccessibilityCookieComponent,
     AccountSwitcherComponent,
@@ -74,7 +75,6 @@ import { PasswordGeneratorHistoryComponent } from "./vault/password-generator-hi
     HeaderComponent,
     HintComponent,
     LockComponent,
-    LoginComponent,
     NavComponent,
     GeneratorComponent,
     PasswordGeneratorHistoryComponent,
@@ -100,6 +100,7 @@ import { PasswordGeneratorHistoryComponent } from "./vault/password-generator-hi
     VaultTimeoutInputComponent,
     ViewComponent,
     ViewCustomFieldsComponent,
+    LoginApprovalComponent,
   ],
   bootstrap: [AppComponent],
 })

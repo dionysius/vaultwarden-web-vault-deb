@@ -9,6 +9,13 @@
       <div class="box-content">
         <div class="box-content-row box-content-row-flex" appBoxRow>
           <div class="row-main">
+            <input id="email" type="text" formControlName="email" [hidden]="true" />
+            <input
+              id="rememberEmail"
+              type="checkbox"
+              formControlName="rememberEmail"
+              [hidden]="true"
+            />
             <label for="masterPassword">{{ "masterPass" | i18n }}</label>
             <input
               id="masterPassword"
@@ -54,6 +61,11 @@
         >
         <i class="bwi bwi-spinner bwi-lg bwi-spin" [hidden]="!form.loading" aria-hidden="true"></i>
       </button>
+      <div class="tw-mb-3" *ngIf="showLoginWithDevice && showPasswordless">
+        <button type="button" class="btn block" (click)="startPasswordlessLogin()">
+          <span> <i class="bwi bwi-mobile"></i> {{ "loginWithDevice" | i18n }} </span>
+        </button>
+      </div>
       <button type="button" (click)="launchSsoBrowser()" class="btn block">
         <i class="bwi bwi-provider" aria-hidden="true"></i> {{ "enterpriseSingleSignOn" | i18n }}
       </button>

@@ -1,4 +1,6 @@
-import { app, dialog, ipcMain, Menu, MenuItem, nativeTheme, session } from "electron";
+import * as path from "path";
+
+import { app, dialog, ipcMain, Menu, MenuItem, nativeTheme, session, Notification } from "electron";
 
 import { MessagingService } from "@bitwarden/common/abstractions/messaging.service";
 import { ThemeType } from "@bitwarden/common/enums/themeType";
@@ -49,6 +51,21 @@ export class ElectronMainMessagingService implements MessagingService {
 
     ipcMain.handle("getCookie", async (event, options) => {
       return await session.defaultSession.cookies.get(options);
+    });
+
+    ipcMain.handle("loginRequest", async (event, options) => {
+      const alert = new Notification({
+        title: options.alertTitle,
+        body: options.alertBody,
+        closeButtonText: options.buttonText,
+        icon: path.join(__dirname, "images/icon.png"),
+      });
+
+      alert.addListener("click", () => {
+        this.windowMain.win.show();
+      });
+
+      alert.show();
     });
 
     nativeTheme.on("updated", () => {

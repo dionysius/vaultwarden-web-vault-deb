@@ -13,6 +13,7 @@ import { first } from "rxjs/operators";
 import { ModalRef } from "@bitwarden/angular/components/modal/modal.ref";
 import { ModalService } from "@bitwarden/angular/services/modal.service";
 import { VaultFilter } from "@bitwarden/angular/vault/vault-filter/models/vault-filter.model";
+import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { BroadcasterService } from "@bitwarden/common/abstractions/broadcaster.service";
 import { EventCollectionService } from "@bitwarden/common/abstractions/event/event-collection.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
@@ -98,7 +99,8 @@ export class VaultComponent implements OnInit, OnDestroy {
     private totpService: TotpService,
     private passwordRepromptService: PasswordRepromptService,
     private stateService: StateService,
-    private searchBarService: SearchBarService
+    private searchBarService: SearchBarService,
+    private apiService: ApiService
   ) {}
 
   async ngOnInit() {
@@ -207,6 +209,16 @@ export class VaultComponent implements OnInit, OnDestroy {
 
     this.searchBarService.setEnabled(true);
     this.searchBarService.setPlaceholderText(this.i18nService.t("searchVault"));
+
+    const approveLoginRequests = await this.stateService.getApproveLoginRequests();
+    if (approveLoginRequests) {
+      const authRequest = await this.apiService.getLastAuthRequest();
+      if (authRequest != null) {
+        this.messagingService.send("openLoginApproval", {
+          notificationId: authRequest.id,
+        });
+      }
+    }
   }
 
   ngOnDestroy() {

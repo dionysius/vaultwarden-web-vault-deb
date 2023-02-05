@@ -209,18 +209,6 @@ export class LoginComponent extends BaseLoginComponent implements OnInit, OnDest
     await super.submit(false);
   }
 
-  async startPasswordlessLogin() {
-    this.formGroup.get("masterPassword")?.clearValidators();
-    this.formGroup.get("masterPassword")?.updateValueAndValidity();
-
-    if (!this.formGroup.valid) {
-      return;
-    }
-
-    this.setFormValues();
-    this.router.navigate(["/login-with-device"]);
-  }
-
   private getPasswordStrengthUserInput() {
     const email = this.formGroup.value.email;
     let userInput: string[] = [];

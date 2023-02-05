@@ -213,4 +213,13 @@ export class EnvironmentService implements EnvironmentServiceAbstraction {
       this.getApiUrl()
     );
   }
+
+  isSelfHosted(): boolean {
+    return ![
+      "http://vault.bitwarden.com",
+      "https://vault.bitwarden.com",
+      "http://vault.qa.bitwarden.pw",
+      "https://vault.qa.bitwarden.pw",
+    ].includes(this.getWebVaultUrl());
+  }
 }

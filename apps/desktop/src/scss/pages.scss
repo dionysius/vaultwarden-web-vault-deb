@@ -1,6 +1,7 @@
 ﻿@import "variables.scss";
 
 #login-page,
+#login-with-device-page,
 #lock-page,
 #sso-page,
 #set-password-page,
@@ -187,7 +188,8 @@
   }
 }
 
-#login-page {
+#login-page,
+#login-with-device-page {
   flex-direction: column;
   justify-content: unset;
   padding-top: 20px;
@@ -212,6 +214,60 @@
         @include themify($themes) {
           color: themed("primaryColor");
         }
+      }
+    }
+  }
+}
+
+#login-with-device-page {
+  .content {
+    display: block;
+    width: 350px !important;
+
+    .fingerprint {
+      margin: auto;
+      width: 315px;
+
+      .fingerpint-header {
+        padding-left: 15px;
+      }
+    }
+
+    .section {
+      margin-bottom: 30px;
+    }
+
+    .another-method {
+      display: flex;
+      margin: auto;
+      .description-text {
+        padding-right: 5px;
+      }
+    }
+
+    code {
+      @include themify($themes) {
+        color: themed("codeColor");
+      }
+    }
+  }
+}
+
+#login-approval-page {
+  .section-title {
+    padding: 20px;
+  }
+  .content {
+    padding: 16px;
+    .section {
+      margin-bottom: 30px;
+      code {
+        @include themify($themes) {
+          color: themed("codeColor");
+        }
+      }
+      h4.label {
+        font-weight: bold;
       }
     }
   }

@@ -18,11 +18,14 @@ import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { Utils } from "@bitwarden/common/misc/utils";
 import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
 
+import { flagEnabled } from "../../flags";
+
 @Component({
   selector: "app-login",
   templateUrl: "login.component.html",
 })
 export class LoginComponent extends BaseLoginComponent {
+  showPasswordless = false;
   constructor(
     apiService: ApiService,
     appIdService: AppIdService,
@@ -64,6 +67,13 @@ export class LoginComponent extends BaseLoginComponent {
       await syncService.fullSync(true);
     };
     super.successRoute = "/tabs/vault";
+    this.showPasswordless = flagEnabled("showPasswordless");
+
+    if (this.showPasswordless) {
+      this.formGroup.controls.email.setValue(this.loginService.getEmail());
+      this.formGroup.controls.rememberEmail.setValue(this.loginService.getRememberEmail());
+      this.validateEmail();
+    }
   }
 
   settings() {

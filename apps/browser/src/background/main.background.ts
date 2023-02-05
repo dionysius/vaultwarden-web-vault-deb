@@ -374,7 +374,8 @@ export default class MainBackground {
       this.environmentService,
       this.stateService,
       this.twoFactorService,
-      this.i18nService
+      this.i18nService,
+      this.encryptService
     );
 
     this.vaultTimeoutSettingsService = new VaultTimeoutSettingsService(
@@ -460,7 +461,8 @@ export default class MainBackground {
       logoutCallback,
       this.logService,
       this.stateService,
-      this.authService
+      this.authService,
+      this.messagingService
     );
     this.popupUtilsService = new PopupUtilsService(isPrivateMode);
 

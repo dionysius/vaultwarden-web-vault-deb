@@ -1,7 +1,8 @@
-import { Component, OnDestroy, OnInit } from "@angular/core";
+import { Component, OnDestroy, OnInit, ViewChild, ViewContainerRef } from "@angular/core";
 import { Router } from "@angular/router";
 
 import { LoginWithDeviceComponent as BaseLoginWithDeviceComponent } from "@bitwarden/angular/components/login-with-device.component";
+import { ModalService } from "@bitwarden/angular/services/modal.service";
 import { AnonymousHubService } from "@bitwarden/common/abstractions/anonymousHub.service";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { AppIdService } from "@bitwarden/common/abstractions/appId.service";
@@ -14,9 +15,11 @@ import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { LoginService } from "@bitwarden/common/abstractions/login.service";
 import { PasswordGenerationService } from "@bitwarden/common/abstractions/passwordGeneration.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
+import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { ValidationService } from "@bitwarden/common/abstractions/validation.service";
+import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
 
-import { StateService } from "../../core/state/state.service";
+import { EnvironmentComponent } from "../environment.component";
 
 @Component({
   selector: "app-login-with-device",
@@ -26,8 +29,12 @@ export class LoginWithDeviceComponent
   extends BaseLoginWithDeviceComponent
   implements OnInit, OnDestroy
 {
+  @ViewChild("environment", { read: ViewContainerRef, static: true })
+  environmentModal: ViewContainerRef;
+  showingModal = false;
+
   constructor(
-    router: Router,
+    protected router: Router,
     cryptoService: CryptoService,
     cryptoFunctionService: CryptoFunctionService,
     appIdService: AppIdService,
@@ -40,6 +47,8 @@ export class LoginWithDeviceComponent
     platformUtilsService: PlatformUtilsService,
     anonymousHubService: AnonymousHubService,
     validationService: ValidationService,
+    private modalService: ModalService,
+    syncService: SyncService,
     stateService: StateService,
     loginService: LoginService
   ) {
@@ -60,5 +69,38 @@ export class LoginWithDeviceComponent
       stateService,
       loginService
     );
+
+    super.onSuccessfulLogin = () => {
+      return syncService.fullSync(true);
+    };
+  }
+
+  async settings() {
+    const [modal, childComponent] = await this.modalService.openViewRef(
+      EnvironmentComponent,
+      this.environmentModal
+    );
+
+    // eslint-disable-next-line rxjs-angular/prefer-takeuntil
+    modal.onShown.subscribe(() => {
+      this.showingModal = true;
+    });
+    // eslint-disable-next-line rxjs-angular/prefer-takeuntil
+    modal.onClosed.subscribe(() => {
+      this.showingModal = false;
+    });
+
+    // eslint-disable-next-line rxjs-angular/prefer-takeuntil
+    childComponent.onSaved.subscribe(() => {
+      modal.close();
+    });
+  }
+
+  ngOnDestroy(): void {
+    super.ngOnDestroy();
+  }
+
+  goToLogin() {
+    this.router.navigate(["/login"]);
   }
 }

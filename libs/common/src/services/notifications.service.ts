@@ -6,6 +6,7 @@ import { AppIdService } from "../abstractions/appId.service";
 import { AuthService } from "../abstractions/auth.service";
 import { EnvironmentService } from "../abstractions/environment.service";
 import { LogService } from "../abstractions/log.service";
+import { MessagingService } from "../abstractions/messaging.service";
 import { NotificationsService as NotificationsServiceAbstraction } from "../abstractions/notifications.service";
 import { StateService } from "../abstractions/state.service";
 import { AuthenticationStatus } from "../enums/authenticationStatus";
@@ -34,7 +35,8 @@ export class NotificationsService implements NotificationsServiceAbstraction {
     private logoutCallback: (expired: boolean) => Promise<void>,
     private logService: LogService,
     private stateService: StateService,
-    private authService: AuthService
+    private authService: AuthService,
+    private messagingService: MessagingService
   ) {
     this.environmentService.urls.subscribe(() => {
       if (!this.inited) {
@@ -182,6 +184,13 @@ export class NotificationsService implements NotificationsServiceAbstraction {
         break;
       case NotificationType.SyncSendDelete:
         await this.syncService.syncDeleteSend(notification.payload as SyncSendNotification);
+        break;
+      case NotificationType.AuthRequest:
+        if (await this.stateService.getApproveLoginRequests()) {
+          this.messagingService.send("openLoginApproval", {
+            notificationId: notification.payload.id,
+          });
+        }
         break;
       default:
         break;

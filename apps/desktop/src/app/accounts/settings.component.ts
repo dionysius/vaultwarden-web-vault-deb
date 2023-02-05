@@ -54,6 +54,7 @@ export class SettingsComponent implements OnInit {
   openAtLogin: boolean;
   requireEnableTray = false;
   showDuckDuckGoIntegrationOption = false;
+  approveLoginRequests = false;
 
   enableTrayText: string;
   enableTrayDescText: string;
@@ -190,6 +191,7 @@ export class SettingsComponent implements OnInit {
 
     const pinSet = await this.vaultTimeoutSettingsService.isPinLockSet();
     this.pin = pinSet[0] || pinSet[1];
+    this.approveLoginRequests = await this.stateService.getApproveLoginRequests();
 
     // Account preferences
     this.enableFavicons = !(await this.stateService.getDisableFavicon());
@@ -460,5 +462,9 @@ export class SettingsComponent implements OnInit {
     await this.stateService.setEnableBrowserIntegrationFingerprint(
       this.enableBrowserIntegrationFingerprint
     );
+  }
+
+  async updateApproveLoginRequests() {
+    await this.stateService.setApproveLoginRequests(this.approveLoginRequests);
   }
 }

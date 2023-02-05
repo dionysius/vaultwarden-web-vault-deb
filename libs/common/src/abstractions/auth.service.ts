@@ -10,6 +10,7 @@ import {
 } from "../models/domain/log-in-credentials";
 import { SymmetricCryptoKey } from "../models/domain/symmetric-crypto-key";
 import { TokenTwoFactorRequest } from "../models/request/identity-token/token-two-factor.request";
+import { AuthRequestResponse } from "../models/response/auth-request.response";
 import { AuthRequestPushNotification } from "../models/response/notification.response";
 
 export abstract class AuthService {
@@ -37,6 +38,10 @@ export abstract class AuthService {
   authingWithPasswordless: () => boolean;
   getAuthStatus: (userId?: string) => Promise<AuthenticationStatus>;
   authResponsePushNotifiction: (notification: AuthRequestPushNotification) => Promise<any>;
-
+  passwordlessLogin: (
+    id: string,
+    key: string,
+    requestApproved: boolean
+  ) => Promise<AuthRequestResponse>;
   getPushNotifcationObs$: () => Observable<any>;
 }

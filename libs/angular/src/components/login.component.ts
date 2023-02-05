@@ -32,7 +32,7 @@ export class LoginComponent extends CaptchaProtectedComponent implements OnInit 
   onSuccessfulLoginNavigate: () => Promise<any>;
   onSuccessfulLoginTwoFactorNavigate: () => Promise<any>;
   onSuccessfulLoginForceResetNavigate: () => Promise<any>;
-  private selfHosted = false;
+  selfHosted = false;
   showLoginWithDevice: boolean;
   validatedEmail = false;
   paramEmailSet = false;
@@ -176,6 +176,18 @@ export class LoginComponent extends CaptchaProtectedComponent implements OnInit 
     }
   }
 
+  async startPasswordlessLogin() {
+    this.formGroup.get("masterPassword")?.clearValidators();
+    this.formGroup.get("masterPassword")?.updateValueAndValidity();
+
+    if (!this.formGroup.valid) {
+      return;
+    }
+
+    const email = this.formGroup.get("email").value;
+    this.router.navigate(["/login-with-device"], { state: { email: email } });
+  }
+
   async launchSsoBrowser(clientId: string, ssoRedirectUri: string) {
     await this.saveEmailSettings();
     // Generate necessary sso params
@@ -259,7 +271,7 @@ export class LoginComponent extends CaptchaProtectedComponent implements OnInit 
     return `${error.controlName}${name}`;
   }
 
-  private async getLoginWithDevice(email: string) {
+  async getLoginWithDevice(email: string) {
     try {
       const deviceIdentifier = await this.appIdService.getAppId();
       const res = await this.apiService.getKnownDevice(email, deviceIdentifier);

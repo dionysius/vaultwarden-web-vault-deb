@@ -34,4 +34,9 @@ export abstract class EnvironmentService {
   setUrls: (urls: Urls) => Promise<Urls>;
   getUrls: () => Urls;
   isCloud: () => boolean;
+  /**
+   * @remarks For desktop and browser use only.
+   * For web, use PlatformUtilsService.isSelfHost()
+   */
+  isSelfHosted: () => boolean;
 }
