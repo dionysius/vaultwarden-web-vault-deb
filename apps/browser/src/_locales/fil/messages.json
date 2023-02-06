@@ -1181,13 +1181,13 @@
     "message": "Estado/Probinsya"
   },
   "zipPostalCode": {
-    "message": "Zip / Postal code"
+    "message": "Código ng Zip / Postal"
   },
   "country": {
     "message": "Bayan"
   },
   "type": {
-    "message": "Type"
+    "message": "Uri"
   },
   "typeLogin": {
     "message": "Login"
@@ -1929,14 +1929,14 @@
     "message": "Uri ng username"
   },
   "plusAddressedEmail": {
-    "message": "Plus addressed email",
+    "message": "Plus na naka-address na email",
     "description": "Username generator option that appends a random sub-address to the username. For example: address+subaddress@email.com"
   },
   "plusAddressedEmailDesc": {
     "message": "Gamitin ang mga kakayahan ng sub address ng iyong email provider."
   },
   "catchallEmail": {
-    "message": "Catch-all email"
+    "message": "Catch-all na email"
   },
   "catchallEmailDesc": {
     "message": "Gamitin ang naka configure na inbox ng catch all ng iyong domain."
@@ -2051,28 +2051,28 @@
     "message": "Tandaan ang email"
   },
   "loginWithDevice": {
-    "message": "Log in with device"
+    "message": "Mag log in gamit ang device"
   },
   "loginWithDeviceEnabledInfo": {
-    "message": "Log in with device must be set up in the settings of the Bitwarden app. Need another option?"
+    "message": "Ang pag log in gamit ang device ay dapat na naka set up sa mga setting ng Bitwarden app. Kailangan mo ng ibang opsyon?"
   },
   "fingerprintPhraseHeader": {
-    "message": "Fingerprint phrase"
+    "message": "Hulmabig ng Hilik ng Dako"
   },
   "fingerprintMatchInfo": {
-    "message": "Please make sure your vault is unlocked and the Fingerprint phrase matches on the other device."
+    "message": "Mangyaring tiyakin na ang iyong vault ay naka unlock at ang parirala ng Fingerprint ay tumutugma sa kabilang aparato."
   },
   "resendNotification": {
-    "message": "Resend notification"
+    "message": "Muling ipadala ang abiso"
   },
   "viewAllLoginOptions": {
-    "message": "View all log in options"
+    "message": "Tingnan ang lahat ng mga pagpipilian sa pag log in"
   },
   "notificationSentDevice": {
-    "message": "A notification has been sent to your device."
+    "message": "Naipadala na ang notification sa iyong device."
   },
   "logInInitiated": {
-    "message": "Log in initiated"
+    "message": "Mag log in na sinimulan"
   },
   "exposedMasterPassword": {
     "message": "Nakalantad na Master Password"
