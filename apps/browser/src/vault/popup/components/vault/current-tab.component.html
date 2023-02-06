@@ -36,6 +36,27 @@
   </div>
   <ng-container *ngIf="loaded">
     <app-vault-select (onVaultSelectionChanged)="load()"></app-vault-select>
+    <app-callout
+      *ngIf="showTryAutofillOnPageLoad"
+      type="info"
+      title="{{ 'tryAutofillPageLoad' | i18n }}"
+    >
+      <p>{{ "autofillPageLoadInfo" | i18n }}</p>
+      <button
+        type="button"
+        class="btn primary callout-half"
+        appStopClick
+        (click)="setAutofillOnPageLoad()"
+      >
+        {{ "turnOn" | i18n }}
+      </button>
+      <button type="button" class="btn callout-half" appStopClick (click)="notNow()">
+        {{ "notNow" | i18n }}
+      </button>
+    </app-callout>
+    <app-callout *ngIf="showSelectAutofillCallout" type="info" title="{{ 'tryAutofill' | i18n }}">
+      <p>{{ "autofillSelectInfo" | i18n }}</p>
+    </app-callout>
     <div class="box list" *ngIf="loginCiphers">
       <h2 class="box-header">
         {{ "typeLogins" | i18n }}

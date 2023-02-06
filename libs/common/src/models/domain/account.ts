@@ -216,6 +216,7 @@ export class AccountSettings {
   disableChangedPasswordNotification?: boolean;
   disableContextMenuItem?: boolean;
   disableGa?: boolean;
+  dismissedAutoFillOnPageLoadCallout?: boolean;
   dontShowCardsCurrentTab?: boolean;
   dontShowIdentitiesCurrentTab?: boolean;
   enableAlwaysOnTop?: boolean;

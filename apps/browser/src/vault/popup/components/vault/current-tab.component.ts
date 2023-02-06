@@ -42,6 +42,8 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
   loaded = false;
   isLoading = false;
   showOrganizations = false;
+  showTryAutofillOnPageLoad = false;
+  showSelectAutofillCallout = false;
   protected search$ = new Subject<void>();
   private destroy$ = new Subject<void>();
 
@@ -112,6 +114,11 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
     this.search$
       .pipe(debounceTime(500), takeUntil(this.destroy$))
       .subscribe(() => this.searchVault());
+
+    this.showTryAutofillOnPageLoad =
+      this.loginCiphers.length > 0 &&
+      !(await this.stateService.getEnableAutoFillOnPageLoad()) &&
+      !(await this.stateService.getDismissedAutofillCallout());
   }
 
   ngOnDestroy() {
@@ -140,7 +147,7 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
     this.router.navigate(["/view-cipher"], { queryParams: { cipherId: cipher.id } });
   }
 
-  async fillCipher(cipher: CipherView) {
+  async fillCipher(cipher: CipherView, closePopupDelay?: number) {
     if (
       cipher.reprompt !== CipherRepromptType.None &&
       !(await this.passwordRepromptService.showPasswordPrompt())
@@ -170,11 +177,15 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
         this.platformUtilsService.copyToClipboard(this.totpCode, { window: window });
       }
       if (this.popupUtilsService.inPopup(window)) {
-        if (this.platformUtilsService.isFirefox() || this.platformUtilsService.isSafari()) {
-          BrowserApi.closePopup(window);
+        if (!closePopupDelay) {
+          if (this.platformUtilsService.isFirefox() || this.platformUtilsService.isSafari()) {
+            BrowserApi.closePopup(window);
+          } else {
+            // Slight delay to fix bug in Chromium browsers where popup closes without copying totp to clipboard
+            setTimeout(() => BrowserApi.closePopup(window), 50);
+          }
         } else {
-          // Slight delay to fix bug in Chromium browsers where popup closes without copying totp to clipboard
-          setTimeout(() => BrowserApi.closePopup(window), 50);
+          setTimeout(() => BrowserApi.closePopup(window), closePopupDelay);
         }
       }
     } catch {
@@ -261,5 +272,19 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
       this.cipherService.sortCiphersByLastUsedThenName(a, b)
     );
     this.isLoading = this.loaded = true;
+  }
+
+  async setAutofillOnPageLoad() {
+    await this.stateService.setEnableAutoFillOnPageLoad(true);
+    this.platformUtilsService.showToast("success", null, this.i18nService.t("autofillTurnedOn"));
+    await this.fillCipher(this.loginCiphers[0], 3000);
+    await this.stateService.setDismissedAutofillCallout(true);
+    this.showTryAutofillOnPageLoad = false;
+  }
+
+  async notNow() {
+    await this.stateService.setDismissedAutofillCallout(true);
+    this.showTryAutofillOnPageLoad = false;
+    this.showSelectAutofillCallout = true;
   }
 }
