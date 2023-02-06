@@ -1,6 +1,6 @@
 import { DIALOG_DATA, DialogConfig, DialogRef } from "@angular/cdk/dialog";
 import { ChangeDetectorRef, Component, Inject, OnDestroy, OnInit } from "@angular/core";
-import { FormBuilder, FormControl, Validators } from "@angular/forms";
+import { FormBuilder, Validators } from "@angular/forms";
 import { catchError, combineLatest, from, map, of, Subject, switchMap, takeUntil } from "rxjs";
 
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
@@ -90,11 +90,11 @@ export class GroupAddEditComponent implements OnInit, OnDestroy {
   group: GroupView;
 
   groupForm = this.formBuilder.group({
-    accessAll: new FormControl(false),
-    name: new FormControl("", [Validators.required, Validators.maxLength(100)]),
-    externalId: new FormControl("", Validators.maxLength(300)),
-    members: new FormControl<AccessItemValue[]>([]),
-    collections: new FormControl<AccessItemValue[]>([]),
+    accessAll: [false],
+    name: ["", [Validators.required, Validators.maxLength(100)]],
+    externalId: this.formBuilder.control({ value: "", disabled: true }),
+    members: [[] as AccessItemValue[]],
+    collections: [[] as AccessItemValue[]],
   });
 
   get groupId(): string | undefined {
@@ -246,7 +246,6 @@ export class GroupAddEditComponent implements OnInit, OnDestroy {
 
     const formValue = this.groupForm.value;
     groupView.name = formValue.name;
-    groupView.externalId = formValue.externalId;
     groupView.accessAll = formValue.accessAll;
     groupView.members = formValue.members?.map((m) => m.id) ?? [];
 

@@ -3,7 +3,6 @@ import { SelectionReadOnlyRequest } from "@bitwarden/common/models/request/selec
 export class GroupRequest {
   name: string;
   accessAll: boolean;
-  externalId: string;
   collections: SelectionReadOnlyRequest[] = [];
   users: string[] = [];
 }

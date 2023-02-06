@@ -64,7 +64,6 @@ export class GroupService {
   async save(group: GroupView): Promise<GroupView> {
     const request = new GroupRequest();
     request.name = group.name;
-    request.externalId = group.externalId;
     request.accessAll = group.accessAll;
     request.users = group.members;
     request.collections = group.collections.map(
