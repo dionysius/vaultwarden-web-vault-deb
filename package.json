@@ -21,6 +21,7 @@
     "test": "jest",
     "test:watch": "jest --clearCache && jest --watch",
     "test:watch:all": "jest --watchAll",
+    "test:types": "for p in libs/**/tsconfig.spec.json; do  echo \"Typechecking $p\"; tsc --noEmit --project $p; done",
     "docs:json": "compodoc -p ./tsconfig.json -e json -d .",
     "storybook": "npm run docs:json && start-storybook -p 6006",
     "build-storybook": "npm run docs:json && build-storybook",

@@ -46,11 +46,7 @@ jobs:
       # Tests in apps/ are typechecked when their app is built, so we just do it here for libs/
       # See https://bitwarden.atlassian.net/browse/EC-497
       - name: Run typechecking
-        run: |
-          for p in libs/**/tsconfig.spec.json; do
-            echo "Typechecking $p"
-            npx tsc --noEmit --project $p
-          done
+        run: npm run test:types
 
       - name: Run tests
         run: npm run test
