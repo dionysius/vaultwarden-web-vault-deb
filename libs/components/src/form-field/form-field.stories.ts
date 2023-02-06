@@ -17,6 +17,7 @@ import { CheckboxModule } from "../checkbox";
 import { IconButtonModule } from "../icon-button";
 import { InputModule } from "../input/input.module";
 import { RadioButtonModule } from "../radio-button";
+import { SelectModule } from "../select";
 import { I18nMockService } from "../utils/i18n-mock.service";
 
 import { BitFormFieldComponent } from "./form-field.component";
@@ -37,12 +38,14 @@ export default {
         AsyncActionsModule,
         CheckboxModule,
         RadioButtonModule,
+        SelectModule,
       ],
       providers: [
         {
           provide: I18nService,
           useFactory: () => {
             return new I18nMockService({
+              selectPlaceholder: "-- Select --",
               required: "required",
               inputRequired: "Input is required.",
               inputEmail: "Input is not an email-address.",
@@ -231,6 +234,22 @@ const SelectTemplate: Story<BitFormFieldComponent> = (args: BitFormFieldComponen
 
 export const Select = SelectTemplate.bind({});
 Select.args = {};
+
+const AdvancedSelectTemplate: Story<BitFormFieldComponent> = (args: BitFormFieldComponent) => ({
+  props: args,
+  template: `
+    <bit-form-field>
+      <bit-label>Label</bit-label>
+      <bit-select>
+        <bit-option label="Select"></bit-option>
+        <bit-option label="Other"></bit-option>
+      </bit-select>
+    </bit-form-field>
+  `,
+});
+
+export const AdvancedSelect = AdvancedSelectTemplate.bind({});
+AdvancedSelectTemplate.args = {};
 
 const TextareaTemplate: Story<BitFormFieldComponent> = (args: BitFormFieldComponent) => ({
   props: args,

@@ -62,7 +62,7 @@ export class CollectionDialogComponent implements OnInit, OnDestroy {
   protected formGroup = this.formBuilder.group({
     name: ["", [Validators.required, BitValidators.forbiddenCharacters(["/"])]],
     externalId: "",
-    parent: null as string | null,
+    parent: undefined as string | undefined,
     access: [[] as AccessItemValue[]],
   });
   protected PermissionMode = PermissionMode;
@@ -121,7 +121,7 @@ export class CollectionDialogComponent implements OnInit, OnDestroy {
           }
 
           const { name, parent } = parseName(this.collection);
-          if (parent !== null && !this.nestOptions.find((c) => c.name === parent)) {
+          if (parent !== undefined && !this.nestOptions.find((c) => c.name === parent)) {
             this.deletedParentName = parent;
           }
 
@@ -135,7 +135,7 @@ export class CollectionDialogComponent implements OnInit, OnDestroy {
         } else {
           this.nestOptions = collections;
           const parent = collections.find((c) => c.id === this.params.parentCollectionId);
-          this.formGroup.patchValue({ parent: parent?.name ?? null });
+          this.formGroup.patchValue({ parent: parent?.name ?? undefined });
         }
 
         this.loading = false;
@@ -237,7 +237,7 @@ export class CollectionDialogComponent implements OnInit, OnDestroy {
 function parseName(collection: CollectionView) {
   const nameParts = collection.name?.split("/");
   const name = nameParts[nameParts.length - 1];
-  const parent = nameParts.length > 1 ? nameParts.slice(0, -1).join("/") : null;
+  const parent = nameParts.length > 1 ? nameParts.slice(0, -1).join("/") : undefined;
 
   return { name, parent };
 }

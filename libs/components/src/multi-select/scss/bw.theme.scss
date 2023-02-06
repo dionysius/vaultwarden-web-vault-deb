@@ -115,6 +115,12 @@ $ng-dropdown-shadow: rgb(var(--color-secondary-100)) !default;
       .ng-placeholder {
         color: $ng-select-placeholder;
       }
+
+      .ng-input {
+        > input {
+          color: $ng-select-input-text;
+        }
+      }
     }
   }
   &.ng-select-single {
@@ -203,9 +209,6 @@ $ng-dropdown-shadow: rgb(var(--color-secondary-100)) !default;
           padding: 0 0 3px 3px;
           @include rtl {
             padding: 0 3px 3px 0;
-          }
-          > input {
-            color: $ng-select-input-text;
           }
         }
         .ng-placeholder {

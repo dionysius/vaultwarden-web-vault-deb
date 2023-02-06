@@ -30,15 +30,24 @@
 
           <bit-form-field>
             <bit-label>{{ "nestCollectionUnder" | i18n }}</bit-label>
-            <select bitInput formControlName="parent">
-              <option [ngValue]="null">-</option>
-              <option *ngIf="deletedParentName" disabled [ngValue]="deletedParentName">
-                {{ deletedParentName }} ({{ "deleted" | i18n }})
-              </option>
-              <option *ngFor="let collection of nestOptions" [ngValue]="collection.name">
-                {{ collection.name }}
-              </option>
-            </select>
+            <bit-select bitInput formControlName="parent">
+              <bit-option [value]="undefined" [label]="'noCollection' | i18n"> </bit-option>
+              <bit-option
+                *ngIf="deletedParentName"
+                disabled
+                icon="bwi-collection"
+                [value]="deletedParentName"
+                label="{{ deletedParentName }} ({{ 'deleted' | i18n }})"
+              >
+              </bit-option>
+              <bit-option
+                *ngFor="let collection of nestOptions"
+                icon="bwi-collection"
+                [value]="collection.name"
+                [label]="collection.name"
+              >
+              </bit-option>
+            </bit-select>
           </bit-form-field>
         </bit-tab>
         <bit-tab label="{{ 'access' | i18n }}">

@@ -5670,6 +5670,9 @@
    },
    "customColor": {
     "message": "Custom Color"
+   },
+  "selectPlaceholder": {
+    "message": "-- Select --"
   },
   "multiSelectPlaceholder": {
     "message": "-- Type to filter --"
@@ -5999,6 +6002,9 @@
   },
   "collection": {
     "message": "Collection"
+  },
+  "noCollection": {
+    "message": "No collection"
   },
   "canView": {
     "message": "Can view"
