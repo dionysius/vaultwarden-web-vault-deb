@@ -15,7 +15,7 @@
     "message": "Veidi"
   },
   "typeLogin": {
-    "message": "Pierakstīšanās vienums"
+    "message": "Pieteikšanās vienums"
   },
   "typeCard": {
     "message": "Karte"
@@ -491,13 +491,13 @@
     "message": "Mape izdzēsta"
   },
   "loginOrCreateNewAccount": {
-    "message": "Pieraksties vai izveido jaunu kontu, lai piekļūtu drošajai glabātavai!"
+    "message": "Jāpiesakās vai jāizveido jauns konts, lai piekļūdu drošajai glabātavai."
   },
   "createAccount": {
     "message": "Izveidot kontu"
   },
   "logIn": {
-    "message": "Pierakstīties"
+    "message": "Pieteikties"
   },
   "submit": {
     "message": "Iesniegt"
@@ -662,7 +662,7 @@
     "message": "Apstiprinājuma kodi tiks nosūtīti e-pastā."
   },
   "loginUnavailable": {
-    "message": "Pierakstīšanās nav pieejama"
+    "message": "Pieteikšanās nav pieejama"
   },
   "noTwoStepProviders": {
     "message": "Šim kontam ir iespējota divpakāpju pierakstīšanās, bet šajā ierīcē netiek atbalstīts neviens no uzstādītajiem divpakāpju pārbaudes nodrošinātājiem."
@@ -728,7 +728,7 @@
     "message": "Izrakstījies"
   },
   "loginExpired": {
-    "message": "Pierakstīšanās sesija ir beigusies."
+    "message": "Pieteikšanās sesija ir beigusies."
   },
   "logOutConfirmation": {
     "message": "Vai tiešām izrakstīties?"
@@ -789,7 +789,7 @@
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "yourAccountsFingerprint": {
-    "message": "Konta atpazīšanas vārdkopa",
+    "message": "Jūsu konta pirkstu nospieduma frāze",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "goToWebVault": {
@@ -808,7 +808,7 @@
     "message": "Sinhronizācija neizdevās"
   },
   "yourVaultIsLocked": {
-    "message": "Glabātava ir slēgta. Nepieciešams norādīt galveno paroli, lai turpinātu."
+    "message": "Jūsu glabātuve ir bloķēta. Lai turpinātu, apstipriniet savu identitāti."
   },
   "unlock": {
     "message": "Atslēgt"
@@ -830,7 +830,7 @@
     "message": "Nederīga galvenā parole"
   },
   "twoStepLoginConfirmation": {
-    "message": "Divpakāpju pieslēgšanās padara kontu krietni drošāku, pieprasot apstiprināt pierakstīšanos ar tādu citu ierīču vai pakalpojumu starpniecību kā drošības atslēga, autentificētāja lietotne, īsziņa, tālruņa zvans vai e-pasts. Divpakāpju pierakstīšanos var iespējot bitwarden.com tīmekļa glabātavā. Vai apmeklēt tīmekļa vietni?"
+    "message": "Divpakāpju pieteikšanās padara kontu krietni drošāku, pieprasot apstiprināt pieteikšanos ar tādu citu ierīču vai pakalpojumu starpniecību kā drošības atslēga, autentificētāja lietotne, īsziņa, tālruņa zvans vai e-pasts. Divpakāpju pieteikšanos var iespējot bitwarden.com tīmekļa glabātavā. Vai apmeklēt tīmekļa vietni?"
   },
   "twoStepLogin": {
     "message": "Divpakāpju pierakstīšanās"
@@ -1006,7 +1006,7 @@
     "message": "Pārsāknēt, lai atjauninātu"
   },
   "restartToUpdateDesc": {
-    "message": "Laidiens $VERSION_NUM$ ir gatavs uzstādīšanai. Ir jāpārsāknē lietotne, lai pabeigtu atjaunināšanu. Vai pārsāknēt un atjaunināt?",
+    "message": "Versija $VERSION_NUM$ ir gatava instalēšanai. Lai pabeigtu instalēšanu, lietojumprogramma ir jārestartē. Vai vēlaties restartēt un atjaunināt tūlīt?",
     "placeholders": {
       "version_num": {
         "content": "$1",
@@ -1018,7 +1018,7 @@
     "message": "Pieejams atjauninājums"
   },
   "updateAvailableDesc": {
-    "message": "Atrasts atjauninājums. Vai lejupielādēt to?"
+    "message": "Atrasts atjauninājums. Vai vēlaties to lejupielādēt?"
   },
   "restart": {
     "message": "Pārsāknēt"
@@ -1071,7 +1071,7 @@
     "message": "Tādas papildus divpakāpju pierakstīšanās iespējas kā YubiKey, FIDO U2F un Duo."
   },
   "premiumSignUpReports": {
-    "message": "Paroļu higiēnas, kontu veselības un datu pārkāpumu pārskati, lai uzturētu glabātavu drošu."
+    "message": "Paroles higiēnas, konta stāvokļa un datu pārkāpumu pārskati, lai jūsu glabātuve būtu drošībā."
   },
   "premiumSignUpTotp": {
     "message": "TOTP apstiprinājuma kodu (2FA) veidotājs piekļuves ierakstiem glabātavā."
@@ -1089,7 +1089,7 @@
     "message": "Premium dalību ir iespējams iegādāties bitwarden.com tīmekļa glabātavā. Vai apmeklēt tīmekļa vietni?"
   },
   "premiumCurrentMember": {
-    "message": "Tu esi Premium dalībnieks!"
+    "message": "Jūs esat premium dalībnieks!"
   },
   "premiumCurrentMemberThanks": {
     "message": "Paldies, ka atbalsti Bitwarden!"
@@ -1371,7 +1371,7 @@
     "message": "Atslēgt ar PIN"
   },
   "setYourPinCode": {
-    "message": "Uzstādi savu PIN kodu Bitwarden atslēgšanai! Tavi PIN iestatījumi tiks atiestatīti, ja Tu pilnībā izrakstīsies no lietotnes."
+    "message": "Iestatiet savu PIN kodu Bitwarden atbloķēšanai. Jūsu PIN iestatījumi tiks atiestatīti, ja kādreiz pilnībā izrakstīsities no lietotnes."
   },
   "pinRequired": {
     "message": "Ir nepieciešams PIN kods."
@@ -1952,7 +1952,7 @@
     "message": "Veidotājs"
   },
   "whatWouldYouLikeToGenerate": {
-    "message": "Ko ir nepieciešams izveidot?"
+    "message": "Ko jūs vēlētos izveidot?"
   },
   "passwordType": {
     "message": "Paroles veids"
@@ -2044,13 +2044,13 @@
     "message": "Atcerēties e-pasta adresi"
   },
   "notYou": {
-    "message": "Tas neesi Tu?"
+    "message": "Tas neesat Jūs?"
   },
   "newAroundHere": {
     "message": "Jauns šeit?"
   },
   "loggingInTo": {
-    "message": "Pierakstās $DOMAIN$",
+    "message": "Piesakās $DOMAIN$",
     "placeholders": {
       "domain": {
         "content": "$1",
@@ -2059,10 +2059,140 @@
     }
   },
   "logInWithAnotherDevice": {
-    "message": "Pierakstīties ar citu ierīci"
+    "message": "Pieteikties ar citu ierīci"
+  },
+  "logInInitiated": {
+    "message": "Uzsākta pieteikšanās"
+  },
+  "notificationSentDevice": {
+    "message": "Uz jūsu ierīci ir nosūtīts paziņojums."
+  },
+  "fingerprintMatchInfo": {
+    "message": "Jāpārliecinās, ka glabātava ir atslēgta un atpazīšanas vārdkopa ir tāda pati arī citā ierīcē."
+  },
+  "fingerprintPhraseHeader": {
+    "message": "Atpazīšanas vārdkopa"
+  },
+  "needAnotherOption": {
+    "message": "Ir jāuzstāda pieteikšanās ar ierīci Bitwarden lietotnes iestatījumos. Nepieciešama cita iespēja?"
+  },
+  "viewAllLoginOptions": {
+    "message": "Skatīt visas pieteikšanās iespējas"
+  },
+  "resendNotification": {
+    "message": "Atkārtoti nosūtīt paziņojumu"
   },
   "toggleCharacterCount": {
     "message": "Pārslēgt rakstzīmju skaita attēlošanu",
     "description": "'Character count' describes a feature that displays a number next to each character of the password."
+  },
+  "areYouTryingtoLogin": {
+    "message": "Vai mēģini pieteikties?"
+  },
+  "logInAttemptBy": {
+    "message": "$EMAIL$ pieteikšanās mēģinajums",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
+  },
+  "deviceType": {
+    "message": "Ierīces veids"
+  },
+  "ipAddress": {
+    "message": "IP adrese"
+  },
+  "time": {
+    "message": "Laiks"
+  },
+  "confirmLogIn": {
+    "message": "Apstiprināt pieteikšanos"
+  },
+  "denyLogIn": {
+    "message": "Atteikt pieteikšanos"
+  },
+  "approveLoginRequests": {
+    "message": "Apstiprināt pieteikšanās pieprasījumus"
+  },
+  "logInConfirmedForEmailOnDevice": {
+    "message": "$EMAIL$ pieteikšanās apstiprināta ierīcē $DEVICE$",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      },
+      "device": {
+        "content": "$2",
+        "example": "iOS"
+      }
+    }
+  },
+  "youDeniedALogInAttemptFromAnotherDevice": {
+    "message": "Tu noraidīji pieteikšanās mēģinājumu no citas ierīces. Ja tas tiešām biji Tu, mēģini pieteikties no ierīces vēlreiz!"
+  },
+  "justNow": {
+    "message": "Tikko"
+  },
+  "requestedXMinutesAgo": {
+    "message": "Pieprasīts pirms $MINUTES$ minūtēm",
+    "placeholders": {
+      "minutes": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
+  "loginRequestHasAlreadyExpired": {
+    "message": "Pierakstīšanās pieprasījuma derīgums jau ir beidzies."
+  },
+  "thisRequestIsNoLongerValid": {
+    "message": "Šis pieprasījums vairs nav derīgs."
+  },
+  "approveLoginRequestDesc": {
+    "message": "Izmantot šo ierīci, lai apstiprinātu pieteikšanās pieprasījumus no citām ierīcēm."
+  },
+  "confirmLoginAtemptForMail": {
+    "message": "Apstiprināt $EMAIL$ pieteikšanās mēģinājumu",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
+  },
+  "logInRequested": {
+    "message": "Pieprasīta pieteikšanās"
+  },
+  "exposedMasterPassword": {
+    "message": "Noplūdusi galvenā parole"
+  },
+  "exposedMasterPasswordDesc": {
+    "message": "Parole atrasta datu pārkāpumā. Izmantojiet unikālu paroli, lai aizsargātu savu kontu. Vai tiešām vēlaties izmantot atklātu paroli?"
+  },
+  "weakAndExposedMasterPassword": {
+    "message": "Vāja un noplūdusi galvenā parole"
+  },
+  "weakAndBreachedMasterPasswordDesc": {
+    "message": "Noteikta vāja parole, un tā ir atrasta datu noplūdē. Jāizmanto spēcīga parole, lai aizsargātu savu kontu. Vai tiešām izmantot šo paroli?"
+  },
+  "checkForBreaches": {
+    "message": "Pārbaudīt šo paroli pret zināmiem datu pārkāpumiem"
+  },
+  "important": {
+    "message": "Svarīgi:"
+  },
+  "masterPasswordHint": {
+    "message": "Galvenā parole nevar tikt atgūta, ja tā ir aizmirsta!"
+  },
+  "characterMinimum": {
+    "message": "Vismaz $LENGTH$ rakstzīmes",
+    "placeholders": {
+      "length": {
+        "content": "$1",
+        "example": "14"
+      }
+    }
   }
 }

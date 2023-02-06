@@ -178,7 +178,7 @@
     "message": "Premium notwendig"
   },
   "premiumRequiredDesc": {
-    "message": "Eine Premium-Mitgliedschaft ist für diese Funktion notwendig."
+    "message": "Für diese Funktion ist eine Premium-Mitgliedschaft notwendig."
   },
   "errorOccurred": {
     "message": "Ein Fehler ist aufgetreten."
@@ -2061,8 +2061,138 @@
   "logInWithAnotherDevice": {
     "message": "Mit einem anderen Gerät anmelden"
   },
+  "logInInitiated": {
+    "message": "Anmeldung initiiert"
+  },
+  "notificationSentDevice": {
+    "message": "Eine Benachrichtigung wurde an dein Gerät gesendet."
+  },
+  "fingerprintMatchInfo": {
+    "message": "Bitte stelle sicher, dass dein Tresor entsperrt ist und die Fingerabdruck-Phrase mit dem anderen Gerät übereinstimmt."
+  },
+  "fingerprintPhraseHeader": {
+    "message": "Fingerabdruck-Phrase"
+  },
+  "needAnotherOption": {
+    "message": "Mit Gerät anmelden muss in den Einstellungen der Bitwarden App eingerichtet werden. Benötigst du eine andere Option?"
+  },
+  "viewAllLoginOptions": {
+    "message": "Alle Anmelde-Optionen anzeigen"
+  },
+  "resendNotification": {
+    "message": "Benachrichtigung erneut senden"
+  },
   "toggleCharacterCount": {
     "message": "Zeichenzählung ein-/ausschalten",
     "description": "'Character count' describes a feature that displays a number next to each character of the password."
+  },
+  "areYouTryingtoLogin": {
+    "message": "Versuchst du dich anzumelden?"
+  },
+  "logInAttemptBy": {
+    "message": "Anmeldeversuch von $EMAIL$",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
+  },
+  "deviceType": {
+    "message": "Geräte-Typ"
+  },
+  "ipAddress": {
+    "message": "IP-Adresse"
+  },
+  "time": {
+    "message": "Zeit"
+  },
+  "confirmLogIn": {
+    "message": "Anmeldung bestätigen"
+  },
+  "denyLogIn": {
+    "message": "Anmeldung verweigern"
+  },
+  "approveLoginRequests": {
+    "message": "Anmeldeanfragen genehmigen"
+  },
+  "logInConfirmedForEmailOnDevice": {
+    "message": "Anmeldung von $EMAIL$ auf $DEVICE$ bestätigt",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      },
+      "device": {
+        "content": "$2",
+        "example": "iOS"
+      }
+    }
+  },
+  "youDeniedALogInAttemptFromAnotherDevice": {
+    "message": "Du hast einen Anmeldeversuch von einem anderen Gerät abgelehnt. Wenn du das wirklich warst, versuche dich erneut mit dem Gerät anzumelden."
+  },
+  "justNow": {
+    "message": "Gerade eben"
+  },
+  "requestedXMinutesAgo": {
+    "message": "Vor $MINUTES$ Minuten angefordert",
+    "placeholders": {
+      "minutes": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
+  "loginRequestHasAlreadyExpired": {
+    "message": "Anmeldeanfrage ist bereits abgelaufen."
+  },
+  "thisRequestIsNoLongerValid": {
+    "message": "Diese Anfrage ist nicht mehr gültig."
+  },
+  "approveLoginRequestDesc": {
+    "message": "Benutze dieses Gerät, um Anmeldeanfragen von anderen Geräten zu genehmigen."
+  },
+  "confirmLoginAtemptForMail": {
+    "message": "Anmeldeversuch von $EMAIL$ bestätigen",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
+  },
+  "logInRequested": {
+    "message": "Anmeldung angefordert"
+  },
+  "exposedMasterPassword": {
+    "message": "Kompromittiertes Master-Passwort"
+  },
+  "exposedMasterPasswordDesc": {
+    "message": "Passwort in einem Datendiebstahl gefunden. Verwende ein einzigartiges Passwort, um dein Konto zu schützen. Bist du sicher, dass du ein kompromittiertes Passwort verwenden möchtest?"
+  },
+  "weakAndExposedMasterPassword": {
+    "message": "Schwaches und kompromittiertes Master-Passwort"
+  },
+  "weakAndBreachedMasterPasswordDesc": {
+    "message": "Schwaches Passwort erkannt und in einem Datendiebstahl gefunden. Verwende ein starkes und einzigartiges Passwort, um dein Konto zu schützen. Bist du sicher, dass du dieses Passwort verwenden möchtest?"
+  },
+  "checkForBreaches": {
+    "message": "Bekannte Datendiebstähle auf dieses Passwort überprüfen"
+  },
+  "important": {
+    "message": "Wichtig:"
+  },
+  "masterPasswordHint": {
+    "message": "Dein Master-Passwort kann nicht wiederhergestellt werden, wenn du es vergisst!"
+  },
+  "characterMinimum": {
+    "message": "Mindestens $LENGTH$ Zeichen",
+    "placeholders": {
+      "length": {
+        "content": "$1",
+        "example": "14"
+      }
+    }
   }
 }

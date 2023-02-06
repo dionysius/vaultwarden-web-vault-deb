@@ -2061,8 +2061,138 @@
   "logInWithAnotherDevice": {
     "message": "Iniciar sesión con otro dispositivo"
   },
+  "logInInitiated": {
+    "message": "Inicio de sesión en proceso"
+  },
+  "notificationSentDevice": {
+    "message": "Se ha enviado una notificación a tu dispositivo."
+  },
+  "fingerprintMatchInfo": {
+    "message": "Por favor, asegúrese de que su caja fuerte está desbloqueada y la frase de huella dactilar coincide con el otro dispositivo."
+  },
+  "fingerprintPhraseHeader": {
+    "message": "Frase de huella dactilar"
+  },
+  "needAnotherOption": {
+    "message": "Iniciar sesión con el dispositivo debe estar habilitado en los ajustes de la aplicación móvil Bitwarden. ¿Necesitas otra opción?"
+  },
+  "viewAllLoginOptions": {
+    "message": "Ver todas las opciones de inicio de sesión"
+  },
+  "resendNotification": {
+    "message": "Reenviar notificación"
+  },
   "toggleCharacterCount": {
     "message": "Activar recuento de caracteres",
     "description": "'Character count' describes a feature that displays a number next to each character of the password."
+  },
+  "areYouTryingtoLogin": {
+    "message": "¿Estás intentando iniciar sesión?"
+  },
+  "logInAttemptBy": {
+    "message": "Intento de inicio de sesión de $EMAIL$",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
+  },
+  "deviceType": {
+    "message": "Tipo de dispositivo"
+  },
+  "ipAddress": {
+    "message": "Dirección IP"
+  },
+  "time": {
+    "message": "Hora"
+  },
+  "confirmLogIn": {
+    "message": "Confirmar inicio de sesión"
+  },
+  "denyLogIn": {
+    "message": "Denegar inicio de sesión"
+  },
+  "approveLoginRequests": {
+    "message": "Aprobar solicitudes de inicio de sesión"
+  },
+  "logInConfirmedForEmailOnDevice": {
+    "message": "Inicio de sesión confirmado para $EMAIL$ en $DEVICE$",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      },
+      "device": {
+        "content": "$2",
+        "example": "iOS"
+      }
+    }
+  },
+  "youDeniedALogInAttemptFromAnotherDevice": {
+    "message": "Has denegado un intento de inicio de sesión desde otro dispositivo. Si realmente fuiste tú, intenta iniciar sesión con el dispositivo de nuevo."
+  },
+  "justNow": {
+    "message": "Justo ahora"
+  },
+  "requestedXMinutesAgo": {
+    "message": "Solicitado hace $MINUTES$ minutos",
+    "placeholders": {
+      "minutes": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
+  "loginRequestHasAlreadyExpired": {
+    "message": "La solicitud de acceso ya ha caducado."
+  },
+  "thisRequestIsNoLongerValid": {
+    "message": "Esta solicitud ya no es válida."
+  },
+  "approveLoginRequestDesc": {
+    "message": "Utilice este dispositivo para aprobar las peticiones de inicio de sesión realizadas desde otros dispositivos."
+  },
+  "confirmLoginAtemptForMail": {
+    "message": "Confirmar intento de inicio de sesión para $EMAIL$",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
+  },
+  "logInRequested": {
+    "message": "Inicio de sesión solicitado"
+  },
+  "exposedMasterPassword": {
+    "message": "Contraseña maestra comprometida"
+  },
+  "exposedMasterPasswordDesc": {
+    "message": "Password found in a data breach. Use a unique password to protect your account. Are you sure you want to use an exposed password?"
+  },
+  "weakAndExposedMasterPassword": {
+    "message": "Weak and Exposed Master Password"
+  },
+  "weakAndBreachedMasterPasswordDesc": {
+    "message": "Weak password identified and found in a data breach. Use a strong and unique password to protect your account. Are you sure you want to use this password?"
+  },
+  "checkForBreaches": {
+    "message": "Check known data breaches for this password"
+  },
+  "important": {
+    "message": "Important:"
+  },
+  "masterPasswordHint": {
+    "message": "Your master password cannot be recovered if you forget it!"
+  },
+  "characterMinimum": {
+    "message": "$LENGTH$ character minimum",
+    "placeholders": {
+      "length": {
+        "content": "$1",
+        "example": "14"
+      }
+    }
   }
 }

@@ -2061,8 +2061,138 @@
   "logInWithAnotherDevice": {
     "message": "Logi sisse läbi teise seadme"
   },
+  "logInInitiated": {
+    "message": "Sisselogimine on käivitatud"
+  },
+  "notificationSentDevice": {
+    "message": "Sinu seadmesse saadeti teavitus."
+  },
+  "fingerprintMatchInfo": {
+    "message": "Veendu, et hoidla on lahti lukustatud ja sõrmejälje fraasid seadmete vahel ühtivad."
+  },
+  "fingerprintPhraseHeader": {
+    "message": "Sõrmejälje fraas"
+  },
+  "needAnotherOption": {
+    "message": "Bitwardeni rakenduse seadistuses peab olema konfigureeritud sisselogimine läbi seadme. Vajad teist valikut?"
+  },
+  "viewAllLoginOptions": {
+    "message": "Vaata kõiki valikuid"
+  },
+  "resendNotification": {
+    "message": "Saada märguanne uuesti"
+  },
   "toggleCharacterCount": {
     "message": "Loenda kirjatähtede hulka",
     "description": "'Character count' describes a feature that displays a number next to each character of the password."
+  },
+  "areYouTryingtoLogin": {
+    "message": "Oled sisse logimas?"
+  },
+  "logInAttemptBy": {
+    "message": "Sisselogimise päring $EMAIL$-lt",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
+  },
+  "deviceType": {
+    "message": "Seadme tüüp"
+  },
+  "ipAddress": {
+    "message": "IP aadress"
+  },
+  "time": {
+    "message": "Aeg"
+  },
+  "confirmLogIn": {
+    "message": "Kinnita sisselogimine"
+  },
+  "denyLogIn": {
+    "message": "Tühista sisselogimine"
+  },
+  "approveLoginRequests": {
+    "message": "Sisselogimise päringute kinnitamine"
+  },
+  "logInConfirmedForEmailOnDevice": {
+    "message": "$EMAIL$ sisselogimine seadmes $DEVICE$ on kinnitatud",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      },
+      "device": {
+        "content": "$2",
+        "example": "iOS"
+      }
+    }
+  },
+  "youDeniedALogInAttemptFromAnotherDevice": {
+    "message": "Sisselogimise päring on tühistatud. Vajadusel proovi uuesti."
+  },
+  "justNow": {
+    "message": "Just praegu"
+  },
+  "requestedXMinutesAgo": {
+    "message": "Päring saabus $MINUTES$ minuti eest",
+    "placeholders": {
+      "minutes": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
+  "loginRequestHasAlreadyExpired": {
+    "message": "Sisselogimise päring on juba aegunud."
+  },
+  "thisRequestIsNoLongerValid": {
+    "message": "See päring ei ole enam kehtiv."
+  },
+  "approveLoginRequestDesc": {
+    "message": "Kasuta seda seadet, et kinnitada teistes seadmetes tehtavad sisselogimised."
+  },
+  "confirmLoginAtemptForMail": {
+    "message": "Kinnita sisselogimise katse $EMAIL$-le",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
+  },
+  "logInRequested": {
+    "message": "Sisselogimise päring on saadetud"
+  },
+  "exposedMasterPassword": {
+    "message": "Ülemparool on haavatav"
+  },
+  "exposedMasterPasswordDesc": {
+    "message": "Ülemparool on varasemalt lekkinud. Kasuta konto kaitsmiseks unikaalset parooli. Oled kindel, et soovid kasutada varem lekkinud parooli?"
+  },
+  "weakAndExposedMasterPassword": {
+    "message": "Nõrk ja haavatav ülemparool"
+  },
+  "weakAndBreachedMasterPasswordDesc": {
+    "message": "Tuvastati nõrk ning andmelekkes lekkinud ülemparool. Kasuta konto paremaks turvamiseks tugevamat parooli. Oled kindel, et soovid nõrga parooliga jätkata?"
+  },
+  "checkForBreaches": {
+    "message": "Otsi seda parooli teadaolevatest andmeleketest"
+  },
+  "important": {
+    "message": "Tähtis:"
+  },
+  "masterPasswordHint": {
+    "message": "Ülemparooli ei saa taastada, kui sa selle unustama peaksid!"
+  },
+  "characterMinimum": {
+    "message": "Minimaalselt $LENGTH$ tähemärki",
+    "placeholders": {
+      "length": {
+        "content": "$1",
+        "example": "14"
+      }
+    }
   }
 }

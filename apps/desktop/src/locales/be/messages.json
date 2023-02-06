@@ -2061,8 +2061,138 @@
   "logInWithAnotherDevice": {
     "message": "Увайсці з іншай прылады"
   },
+  "logInInitiated": {
+    "message": "Ініцыяваны ўваход"
+  },
+  "notificationSentDevice": {
+    "message": "Апавяшчэнне было адпраўлена на вашу прыладу."
+  },
+  "fingerprintMatchInfo": {
+    "message": "Пераканайцеся, што ваша сховішча разблакіравана, а фраза адбітка пальца супадае з іншай прыладай."
+  },
+  "fingerprintPhraseHeader": {
+    "message": "Фраза адбітка пальца"
+  },
+  "needAnotherOption": {
+    "message": "Неабходна наладзіць уваход з прыладай у наладах мабільнай праграмы Bitwarden. Патрабуецца іншы варыянт?"
+  },
+  "viewAllLoginOptions": {
+    "message": "Паглядзець усе параметры ўваходу"
+  },
+  "resendNotification": {
+    "message": "Адправіць апавяшчэнне паўторна"
+  },
   "toggleCharacterCount": {
     "message": "Пераключыць лічыльнік сімвалаў",
     "description": "'Character count' describes a feature that displays a number next to each character of the password."
+  },
+  "areYouTryingtoLogin": {
+    "message": "Вы спрабуеце ўвайсці?"
+  },
+  "logInAttemptBy": {
+    "message": "Спроба ўваходу $EMAIL$",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
+  },
+  "deviceType": {
+    "message": "Тып прылады"
+  },
+  "ipAddress": {
+    "message": "IP-адрас"
+  },
+  "time": {
+    "message": "Час"
+  },
+  "confirmLogIn": {
+    "message": "Пацвердзіць уваход"
+  },
+  "denyLogIn": {
+    "message": "Адхіліць уваход"
+  },
+  "approveLoginRequests": {
+    "message": "Ухваліць запыт уваходу"
+  },
+  "logInConfirmedForEmailOnDevice": {
+    "message": "Уваход пацверджаны для $EMAIL$ на $DEVICE$",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      },
+      "device": {
+        "content": "$2",
+        "example": "iOS"
+      }
+    }
+  },
+  "youDeniedALogInAttemptFromAnotherDevice": {
+    "message": "Вы адхілілі спробу ўваходу з іншай прылады. Калі гэта сапраўды былі вы, паспрабуйце ўвайсці з прыладай яшчэ раз."
+  },
+  "justNow": {
+    "message": "Толькі што"
+  },
+  "requestedXMinutesAgo": {
+    "message": "Запытана (хвілін таму: $MINUTES$)",
+    "placeholders": {
+      "minutes": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
+  "loginRequestHasAlreadyExpired": {
+    "message": "Запыт на ўваход пратэрмінаваны."
+  },
+  "thisRequestIsNoLongerValid": {
+    "message": "Гэты запыт больш не дзейнічае."
+  },
+  "approveLoginRequestDesc": {
+    "message": "Выкарыстоўваць гэту прыладу для ўхвалення запытаў на ўваход, якія зроблены з іншых прылад."
+  },
+  "confirmLoginAtemptForMail": {
+    "message": "Пацвердзіць спробу ўваходу для $EMAIL$",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
+  },
+  "logInRequested": {
+    "message": "Запытаны ўваход"
+  },
+  "exposedMasterPassword": {
+    "message": "Скампраметаваны асноўны пароль"
+  },
+  "exposedMasterPasswordDesc": {
+    "message": "Пароль знойдзены ва ўцечках даных. Выкарыстоўвайце ўнікальныя паролі для абароны свайго ўліковага запісу. Вы сапраўды хочаце выкарыстоўваць скампраметаваны пароль?"
+  },
+  "weakAndExposedMasterPassword": {
+    "message": "Ненадзейны і скампраметаваны асноўны пароль"
+  },
+  "weakAndBreachedMasterPasswordDesc": {
+    "message": "Вызначаны ненадзейны пароль, які знойдзены ва ўцечках даных. Выкарыстоўвайце надзейныя і ўнікальныя паролі для абароны свайго ўліковага запісу. Вы сапраўды хочаце выкарыстоўваць гэты пароль?"
+  },
+  "checkForBreaches": {
+    "message": "Праверыць у вядомых уцечках даных для гэтага пароля"
+  },
+  "important": {
+    "message": "Важна:"
+  },
+  "masterPasswordHint": {
+    "message": "Ваш асноўны пароль немагчыма будзе аднавіць, калі вы яго забудзеце!"
+  },
+  "characterMinimum": {
+    "message": "Мінімальная колькасць сімвалаў: $LENGTH$",
+    "placeholders": {
+      "length": {
+        "content": "$1",
+        "example": "14"
+      }
+    }
   }
 }

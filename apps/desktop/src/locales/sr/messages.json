@@ -2061,8 +2061,138 @@
   "logInWithAnotherDevice": {
     "message": "Пријавите се са другим уређајем"
   },
+  "logInInitiated": {
+    "message": "Пријава је покренута"
+  },
+  "notificationSentDevice": {
+    "message": "Обавештење је послато на ваш уређај."
+  },
+  "fingerprintMatchInfo": {
+    "message": "Уверите се да је ваш сеф откључан и да се фраза отиска прста подудара на другом уређају."
+  },
+  "fingerprintPhraseHeader": {
+    "message": "Сигурносна фраза сефа"
+  },
+  "needAnotherOption": {
+    "message": "Пријава помоћу уређаја мора бити подешена у подешавањима Bitwarden апликације. Потребна је друга опција?"
+  },
+  "viewAllLoginOptions": {
+    "message": "Погредајте све опције пријављивања"
+  },
+  "resendNotification": {
+    "message": "Поново послати обавештење"
+  },
   "toggleCharacterCount": {
     "message": "Пребаци бројање слова",
     "description": "'Character count' describes a feature that displays a number next to each character of the password."
+  },
+  "areYouTryingtoLogin": {
+    "message": "Да ли покушавате да се пријавите?"
+  },
+  "logInAttemptBy": {
+    "message": "Покушај пријаве од $EMAIL$",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
+  },
+  "deviceType": {
+    "message": "Тип уређаја"
+  },
+  "ipAddress": {
+    "message": "ИП адреса"
+  },
+  "time": {
+    "message": "Време"
+  },
+  "confirmLogIn": {
+    "message": "Потврди пријављивање"
+  },
+  "denyLogIn": {
+    "message": "Одбиј пријављивање"
+  },
+  "approveLoginRequests": {
+    "message": "Одобравање захтева за пријављивање"
+  },
+  "logInConfirmedForEmailOnDevice": {
+    "message": "Пријава потврђена за $EMAIL$ на $DEVICE$",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      },
+      "device": {
+        "content": "$2",
+        "example": "iOS"
+      }
+    }
+  },
+  "youDeniedALogInAttemptFromAnotherDevice": {
+    "message": "Одбили сте покушај пријаве са другог уређаја. Ако сте то заиста били ви, покушајте поново да се пријавите помоћу уређаја."
+  },
+  "justNow": {
+    "message": "Управо сада"
+  },
+  "requestedXMinutesAgo": {
+    "message": "Траћено пре $MINUTES$ минута",
+    "placeholders": {
+      "minutes": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
+  "loginRequestHasAlreadyExpired": {
+    "message": "Захтев за пријаву је већ истекао."
+  },
+  "thisRequestIsNoLongerValid": {
+    "message": "Овај захтев више не важи."
+  },
+  "approveLoginRequestDesc": {
+    "message": "Користите овај уређај за одобравање захтева за пријављивање са других уређаја."
+  },
+  "confirmLoginAtemptForMail": {
+    "message": "Потврдити пријаву за $EMAIL$",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
+  },
+  "logInRequested": {
+    "message": "Захтев пријаве"
+  },
+  "exposedMasterPassword": {
+    "message": "Изложена главна лозинка"
+  },
+  "exposedMasterPasswordDesc": {
+    "message": "Лозинка је пронађена у случају повреде података. Користите јединствену лозинку да бисте заштитили свој налог. Да ли сте сигурни да желите да користите откривену лозинку?"
+  },
+  "weakAndExposedMasterPassword": {
+    "message": "Слаба и зложена главна лозинка"
+  },
+  "weakAndBreachedMasterPasswordDesc": {
+    "message": "Идентификована је слаба лозинка и пронађена у упаду података. Користите јаку и јединствену лозинку да заштитите свој налог. Да ли сте сигурни да желите да користите ову лозинку?"
+  },
+  "checkForBreaches": {
+    "message": "Проверите познате упада података за ову лозинку"
+  },
+  "important": {
+    "message": "Важно:"
+  },
+  "masterPasswordHint": {
+    "message": "Ваша главна лозинка се не може повратити ако је заборавите!"
+  },
+  "characterMinimum": {
+    "message": "Минимум $LENGTH$ карактера",
+    "placeholders": {
+      "length": {
+        "content": "$1",
+        "example": "14"
+      }
+    }
   }
 }

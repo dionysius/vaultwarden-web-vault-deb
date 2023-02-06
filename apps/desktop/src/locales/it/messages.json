@@ -2061,8 +2061,138 @@
   "logInWithAnotherDevice": {
     "message": "Accedi con un altro dispositivo"
   },
+  "logInInitiated": {
+    "message": "Login avviato"
+  },
+  "notificationSentDevice": {
+    "message": "Una notifica è stata inviata al tuo dispositivo."
+  },
+  "fingerprintMatchInfo": {
+    "message": "Assicurati che la tua cassaforte sia sbloccata e che la \"frase impronta\" corrisponda sull'altro dispositivo."
+  },
+  "fingerprintPhraseHeader": {
+    "message": "Frase impronta"
+  },
+  "needAnotherOption": {
+    "message": "Il login con il dispositivo deve essere abilitato nelle impostazioni dell'app Bitwarden. Hai bisogno di un'altra opzione?"
+  },
+  "viewAllLoginOptions": {
+    "message": "Visualizza tutte le opzioni di accesso"
+  },
+  "resendNotification": {
+    "message": "Invia nuova notifica"
+  },
   "toggleCharacterCount": {
     "message": "Attiva/disattiva conteggio caratteri",
     "description": "'Character count' describes a feature that displays a number next to each character of the password."
+  },
+  "areYouTryingtoLogin": {
+    "message": "Stai cercando di accedere?"
+  },
+  "logInAttemptBy": {
+    "message": "Tentativo di accesso di $EMAIL$",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
+  },
+  "deviceType": {
+    "message": "Tipo di dispositivo"
+  },
+  "ipAddress": {
+    "message": "Indirizzo IP"
+  },
+  "time": {
+    "message": "Ora"
+  },
+  "confirmLogIn": {
+    "message": "Conferma accesso"
+  },
+  "denyLogIn": {
+    "message": "Nega accesso"
+  },
+  "approveLoginRequests": {
+    "message": "Approva le richieste di accesso"
+  },
+  "logInConfirmedForEmailOnDevice": {
+    "message": "Login confermato per $EMAIL$ da $DEVICE$",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      },
+      "device": {
+        "content": "$2",
+        "example": "iOS"
+      }
+    }
+  },
+  "youDeniedALogInAttemptFromAnotherDevice": {
+    "message": "Hai negato un tentativo di accesso da un altro dispositivo. Se sei stato davvero tu, prova ad accedere nuovamente dal dispositivo."
+  },
+  "justNow": {
+    "message": "Proprio ora"
+  },
+  "requestedXMinutesAgo": {
+    "message": "Richiesto $MINUTES$ minuti fa",
+    "placeholders": {
+      "minutes": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
+  "loginRequestHasAlreadyExpired": {
+    "message": "La richiesta di accesso è già scaduta."
+  },
+  "thisRequestIsNoLongerValid": {
+    "message": "La richiesta non è più valida."
+  },
+  "approveLoginRequestDesc": {
+    "message": "Usa questo dispositivo per approvare le richieste di accesso fatte da altri dispositivi."
+  },
+  "confirmLoginAtemptForMail": {
+    "message": "Conferma il tentativo di accesso di $EMAIL$",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
+  },
+  "logInRequested": {
+    "message": "Accesso richiesto"
+  },
+  "exposedMasterPassword": {
+    "message": "Password principale violata"
+  },
+  "exposedMasterPasswordDesc": {
+    "message": "Password trovata in un database di data breach noto. Usa una password esclusiva per proteggere il tuo account. Sei sicuro di voler usare una password violata?"
+  },
+  "weakAndExposedMasterPassword": {
+    "message": "Password principale debole e violata"
+  },
+  "weakAndBreachedMasterPasswordDesc": {
+    "message": "Password debole trovata in un database di data breach noto. Usa una password forte ed esclusiva per proteggere il tuo account. Sei sicuro di voler utilizzare questa password?"
+  },
+  "checkForBreaches": {
+    "message": "Controlla se la tua password è presente nei database dei data breach noti"
+  },
+  "important": {
+    "message": "Importante:"
+  },
+  "masterPasswordHint": {
+    "message": "La tua password principale non può essere recuperata se la dimentichi!"
+  },
+  "characterMinimum": {
+    "message": "Minimo $LENGTH$ caratteri",
+    "placeholders": {
+      "length": {
+        "content": "$1",
+        "example": "14"
+      }
+    }
   }
 }

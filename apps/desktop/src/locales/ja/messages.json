@@ -2061,8 +2061,138 @@
   "logInWithAnotherDevice": {
     "message": "別のデバイスでログイン"
   },
+  "logInInitiated": {
+    "message": "ログイン開始"
+  },
+  "notificationSentDevice": {
+    "message": "デバイスに通知を送信しました。"
+  },
+  "fingerprintMatchInfo": {
+    "message": "保管庫がロックされていることと、パスフレーズが他のデバイスと一致していることを確認してください。"
+  },
+  "fingerprintPhraseHeader": {
+    "message": "パスフレーズ"
+  },
+  "needAnotherOption": {
+    "message": "Bitwarden アプリの設定でデバイスでログインする必要があります。別のオプションが必要ですか？"
+  },
+  "viewAllLoginOptions": {
+    "message": "すべてのログインオプションを表示"
+  },
+  "resendNotification": {
+    "message": "通知を再送信する"
+  },
   "toggleCharacterCount": {
     "message": "文字カウントを切り替える",
     "description": "'Character count' describes a feature that displays a number next to each character of the password."
+  },
+  "areYouTryingtoLogin": {
+    "message": "ログインしようとしていますか？"
+  },
+  "logInAttemptBy": {
+    "message": "$EMAIL$ によるログインの試行",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
+  },
+  "deviceType": {
+    "message": "デバイス種別"
+  },
+  "ipAddress": {
+    "message": "IP アドレス"
+  },
+  "time": {
+    "message": "時間"
+  },
+  "confirmLogIn": {
+    "message": "ログインを承認"
+  },
+  "denyLogIn": {
+    "message": "ログインを拒否"
+  },
+  "approveLoginRequests": {
+    "message": "ログインリクエストを承認する"
+  },
+  "logInConfirmedForEmailOnDevice": {
+    "message": "$EMAIL$ に $DEVICE$ でのログインを承認しました",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      },
+      "device": {
+        "content": "$2",
+        "example": "iOS"
+      }
+    }
+  },
+  "youDeniedALogInAttemptFromAnotherDevice": {
+    "message": "別のデバイスからのログイン試行を拒否しました。本当にあなたであった場合は、もう一度デバイスでログインしてみてください。"
+  },
+  "justNow": {
+    "message": "たった今"
+  },
+  "requestedXMinutesAgo": {
+    "message": "$MINUTES$ 分前",
+    "placeholders": {
+      "minutes": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
+  "loginRequestHasAlreadyExpired": {
+    "message": "ログインリクエストの有効期限が切れています。"
+  },
+  "thisRequestIsNoLongerValid": {
+    "message": "このリクエストは無効になりました。"
+  },
+  "approveLoginRequestDesc": {
+    "message": "このデバイスを使用して、他のデバイスからのログインリクエストを承認します。"
+  },
+  "confirmLoginAtemptForMail": {
+    "message": "$EMAIL$ のログイン試行を確認",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
+  },
+  "logInRequested": {
+    "message": "ログインリクエスト済み"
+  },
+  "exposedMasterPassword": {
+    "message": "流出したマスターパスワード"
+  },
+  "exposedMasterPasswordDesc": {
+    "message": "入力したパスワードはデータ流出結果に含まれていました。アカウントを保護するためには一意のパスワードを使用してください。本当に流出済みのパスワードを使用しますか？"
+  },
+  "weakAndExposedMasterPassword": {
+    "message": "脆弱で流出済みのマスターパスワード"
+  },
+  "weakAndBreachedMasterPasswordDesc": {
+    "message": "入力されたパスワードは脆弱かつすでに流出済みです。アカウントを守るためより強力で一意なパスワードを使用してください。本当にこの脆弱なパスワードを使用しますか？"
+  },
+  "checkForBreaches": {
+    "message": "このパスワードの既知のデータ流出を確認"
+  },
+  "important": {
+    "message": "重要"
+  },
+  "masterPasswordHint": {
+    "message": "マスターパスワードを忘れた場合は復元できません！"
+  },
+  "characterMinimum": {
+    "message": "$LENGTH$ 文字以上",
+    "placeholders": {
+      "length": {
+        "content": "$1",
+        "example": "14"
+      }
+    }
   }
 }

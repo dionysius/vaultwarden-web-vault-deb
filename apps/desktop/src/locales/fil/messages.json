@@ -18,13 +18,13 @@
     "message": "Mag-login"
   },
   "typeCard": {
-    "message": "Card"
+    "message": "Karta"
   },
   "typeIdentity": {
-    "message": "Identity"
+    "message": "Pagkakakilanla"
   },
   "typeSecureNote": {
-    "message": "Secure note"
+    "message": "Secure na tala"
   },
   "folders": {
     "message": "Mga Folder"
@@ -157,13 +157,13 @@
     "message": "Kumpanya"
   },
   "ssn": {
-    "message": "Social Security number"
+    "message": "Numero ng Seguridad Sosyal"
   },
   "passportNumber": {
     "message": "Numero ng Pasaporte"
   },
   "licenseNumber": {
-    "message": "License number"
+    "message": "Numero ng Lisensya"
   },
   "email": {
     "message": "Mag-email"
@@ -284,7 +284,7 @@
     "message": "Address 3"
   },
   "cityTown": {
-    "message": "City / Town"
+    "message": "Bayan/Town"
   },
   "stateProvince": {
     "message": "Estado/Probinsya"
@@ -476,7 +476,7 @@
     "message": "Maximum na laki ng file ay 500 MB."
   },
   "updateKey": {
-    "message": "You cannot use this feature until you update your encryption key."
+    "message": "Hindi mo maari gamitin ang tampok na ito hanggang hindi mo iupdate ang iyong encryption key."
   },
   "editedFolder": {
     "message": "Nai-save na folder"
@@ -692,16 +692,16 @@
     "message": "URL ng API server"
   },
   "webVaultUrl": {
-    "message": "Web vault server URL"
+    "message": "Web vault server URL - URL ng Server ng Web vault"
   },
   "identityUrl": {
-    "message": "Identity server URL"
+    "message": "Identity server URL - URL ng Server ng Identity"
   },
   "notificationsUrl": {
     "message": "URL ng server ng mga abiso"
   },
   "iconsUrl": {
-    "message": "Icons server URL"
+    "message": "Icons server URL - URL ng Server ng Mga Icon"
   },
   "environmentSaved": {
     "message": "Nai-save ang mga URL ng Kapaligiran"
@@ -1107,7 +1107,7 @@
     "message": "Kumpleto na ang pag-refresh"
   },
   "passwordHistory": {
-    "message": "Password history"
+    "message": "Kasaysayan ng Password"
   },
   "clear": {
     "message": "Hilahin",
@@ -1230,11 +1230,11 @@
     "message": "Naguumpisa sa"
   },
   "regEx": {
-    "message": "Regular expression",
+    "message": "Regular Expression - Regular na Pagpapahayag",
     "description": "A programming term, also known as 'RegEx'."
   },
   "matchDetection": {
-    "message": "Match detection",
+    "message": "Match Detection - Pagtuklas ng Pares",
     "description": "URI match detection for auto-fill."
   },
   "defaultMatchDetection": {
@@ -1266,7 +1266,7 @@
     "description": "Application window should always stay on top of other windows"
   },
   "dateUpdated": {
-    "message": "Updated",
+    "message": "Na-update",
     "description": "ex. Date this item was updated"
   },
   "dateCreated": {
@@ -1274,7 +1274,7 @@
     "description": "ex. Date this item was created"
   },
   "datePasswordUpdated": {
-    "message": "Password updated",
+    "message": "Na-update ang password",
     "description": "ex. Date this password was updated"
   },
   "exportVault": {
@@ -1462,7 +1462,7 @@
     "message": "Ang isa o higit pang mga patakaran sa organisasyon ay nakakaapekto sa iyong mga setting ng generator."
   },
   "vaultTimeoutAction": {
-    "message": "Vault timeout action"
+    "message": "Aksyon sa Vault timeout"
   },
   "vaultTimeoutActionLockDesc": {
     "message": "Kailangan ang master password o iba pang paraan ng pag unlock upang ma access muli ang iyong vault."
@@ -1475,11 +1475,11 @@
     "description": "Verb form: to make secure or inaccesible by"
   },
   "trash": {
-    "message": "Trash",
+    "message": "Basurahan",
     "description": "Noun: a special folder to hold deleted items"
   },
   "searchTrash": {
-    "message": "Search trash"
+    "message": "Maghanap ng basurahan"
   },
   "permanentlyDeleteItem": {
     "message": "Permanenteng tanggalin ang item"
@@ -1825,10 +1825,10 @@
     "message": "Ang pagkilos na ito ay protektado. Upang magpatuloy, mangyaring ipasok muli ang iyong master password upang i verify ang iyong pagkakakilanlan."
   },
   "updatedMasterPassword": {
-    "message": "Updated master password"
+    "message": "I-update ang master password"
   },
   "updateMasterPassword": {
-    "message": "Update master password"
+    "message": "I-update ang master password"
   },
   "updateMasterPasswordWarning": {
     "message": "Ang iyong master password ay binago kamakailan ng isang administrator sa iyong samahan. Para ma-access ang vault, kailangan mo itong i-update ngayon. Ang proceeding ay mag-log out sa iyong kasalukuyang session, na nangangailangan na mag-log in muli. Ang mga aktibong sesyon sa iba pang mga aparato ay maaaring patuloy na manatiling aktibo hanggang sa isang oras."
@@ -1961,10 +1961,10 @@
     "message": "Muling bumuo ng username"
   },
   "generateUsername": {
-    "message": "Generate username"
+    "message": "Lumikha ng username"
   },
   "usernameType": {
-    "message": "Username type"
+    "message": "Uri ng username"
   },
   "plusAddressedEmail": {
     "message": "Plus addressed email",
@@ -2061,8 +2061,138 @@
   "logInWithAnotherDevice": {
     "message": "Mag log in gamit ang ibang device"
   },
+  "logInInitiated": {
+    "message": "Mag log in na sinimulan"
+  },
+  "notificationSentDevice": {
+    "message": "Naipadala na ang notification sa iyong device."
+  },
+  "fingerprintMatchInfo": {
+    "message": "Mangyaring tiyakin na ang iyong vault ay naka unlock at ang parirala ng Fingerprint ay tumutugma sa iba pang aparato."
+  },
+  "fingerprintPhraseHeader": {
+    "message": "Hulmabig ng Hilik ng Dako"
+  },
+  "needAnotherOption": {
+    "message": "Ang pag log in gamit ang device ay dapat na naka set up sa mga setting ng Bitwarden app. Kailangan mo ng ibang opsyon?"
+  },
+  "viewAllLoginOptions": {
+    "message": "Tingnan ang lahat ng mga pagpipilian sa pag login"
+  },
+  "resendNotification": {
+    "message": "Muling ipadala ang abiso"
+  },
   "toggleCharacterCount": {
     "message": "I-toggle ang bilang ng character",
     "description": "'Character count' describes a feature that displays a number next to each character of the password."
+  },
+  "areYouTryingtoLogin": {
+    "message": "Sinusubukan mo bang mag-log in?"
+  },
+  "logInAttemptBy": {
+    "message": "Pag-login pagtatangka sa pamamagitan ng $EMAIL$",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
+  },
+  "deviceType": {
+    "message": "Uri ng Device"
+  },
+  "ipAddress": {
+    "message": "IP Address"
+  },
+  "time": {
+    "message": "Oras na"
+  },
+  "confirmLogIn": {
+    "message": "Kumpirmahin ang pag-login"
+  },
+  "denyLogIn": {
+    "message": "Tanggihan ang pag login"
+  },
+  "approveLoginRequests": {
+    "message": "Aprubahan ang mga kahilingan sa pag login"
+  },
+  "logInConfirmedForEmailOnDevice": {
+    "message": "Nakumpirma ang pag-login para sa $EMAIL$ sa $DEVICE$",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      },
+      "device": {
+        "content": "$2",
+        "example": "iOS"
+      }
+    }
+  },
+  "youDeniedALogInAttemptFromAnotherDevice": {
+    "message": "Tinanggihan mo ang isang pagtatangka sa pag login mula sa ibang aparato. Kung ito talaga ay ikaw, subukang mag-log in gamit ang device."
+  },
+  "justNow": {
+    "message": "Ngayon lamang"
+  },
+  "requestedXMinutesAgo": {
+    "message": "Hiniling $MINUTES$ minuto ang nakalipas",
+    "placeholders": {
+      "minutes": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
+  "loginRequestHasAlreadyExpired": {
+    "message": "Nag expire na ang request sa pag login."
+  },
+  "thisRequestIsNoLongerValid": {
+    "message": "Hindi na valid ang request na ito."
+  },
+  "approveLoginRequestDesc": {
+    "message": "Gamitin ang device na ito para aprubahan ang mga kahilingan sa pag-login na ginawa mula sa iba pang mga device."
+  },
+  "confirmLoginAtemptForMail": {
+    "message": "Kumpirmahin ang pagtatangka sa pag-login para sa $EMAIL$",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
+  },
+  "logInRequested": {
+    "message": "Hiniling ang pag log in"
+  },
+  "exposedMasterPassword": {
+    "message": "Nakalantad na Master Password"
+  },
+  "exposedMasterPasswordDesc": {
+    "message": "Password na nakita sa data breach. Gamitin ang natatanging password upang makaproteksyon sa iyong account. Sigurado ka ba na gusto mong gamitin ang naipakitang password?"
+  },
+  "weakAndExposedMasterPassword": {
+    "message": "Mahinang at Naipakitang Pangunahing Password"
+  },
+  "weakAndBreachedMasterPasswordDesc": {
+    "message": "Mahinang password na nakilala at nakita sa data breach. Gamitin ang malakas at natatanging password upang makaproteksyon sa iyong account. Sigurado ka ba na gusto mong gamitin ang password na ito?"
+  },
+  "checkForBreaches": {
+    "message": "Tingnan ang kilalang breaches ng data para sa password na ito"
+  },
+  "important": {
+    "message": "Mahalaga:"
+  },
+  "masterPasswordHint": {
+    "message": "Hindi mababawi ang password ng master mo kung nakalimutan mo ito!"
+  },
+  "characterMinimum": {
+    "message": "$LENGTH$ character minimum",
+    "placeholders": {
+      "length": {
+        "content": "$1",
+        "example": "14"
+      }
+    }
   }
 }
