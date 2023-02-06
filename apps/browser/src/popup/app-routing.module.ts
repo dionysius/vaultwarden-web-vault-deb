@@ -1,10 +1,23 @@
 import { Injectable, NgModule } from "@angular/core";
 import { ActivatedRouteSnapshot, RouteReuseStrategy, RouterModule, Routes } from "@angular/router";
 
-import { AuthGuard } from "@bitwarden/angular/guards/auth.guard";
-import { LockGuard } from "@bitwarden/angular/guards/lock.guard";
-import { UnauthGuard } from "@bitwarden/angular/guards/unauth.guard";
+import { AuthGuard } from "@bitwarden/angular/auth/guards/auth.guard";
+import { LockGuard } from "@bitwarden/angular/auth/guards/lock.guard";
+import { UnauthGuard } from "@bitwarden/angular/auth/guards/unauth.guard";
 
+import { EnvironmentComponent } from "../auth/popup/environment.component";
+import { HintComponent } from "../auth/popup/hint.component";
+import { HomeComponent } from "../auth/popup/home.component";
+import { LockComponent } from "../auth/popup/lock.component";
+import { LoginWithDeviceComponent } from "../auth/popup/login-with-device.component";
+import { LoginComponent } from "../auth/popup/login.component";
+import { RegisterComponent } from "../auth/popup/register.component";
+import { RemovePasswordComponent } from "../auth/popup/remove-password.component";
+import { SetPasswordComponent } from "../auth/popup/set-password.component";
+import { SsoComponent } from "../auth/popup/sso.component";
+import { TwoFactorOptionsComponent } from "../auth/popup/two-factor-options.component";
+import { TwoFactorComponent } from "../auth/popup/two-factor.component";
+import { UpdateTempPasswordComponent } from "../auth/popup/update-temp-password.component";
 import { AddEditComponent } from "../vault/popup/components/vault/add-edit.component";
 import { AttachmentsComponent } from "../vault/popup/components/vault/attachments.component";
 import { CurrentTabComponent } from "../vault/popup/components/vault/current-tab.component";
@@ -14,19 +27,6 @@ import { VaultFilterComponent } from "../vault/popup/components/vault/vault-filt
 import { VaultItemsComponent } from "../vault/popup/components/vault/vault-items.component";
 import { ViewComponent } from "../vault/popup/components/vault/view.component";
 
-import { EnvironmentComponent } from "./accounts/environment.component";
-import { HintComponent } from "./accounts/hint.component";
-import { HomeComponent } from "./accounts/home.component";
-import { LockComponent } from "./accounts/lock.component";
-import { LoginWithDeviceComponent } from "./accounts/login-with-device.component";
-import { LoginComponent } from "./accounts/login.component";
-import { RegisterComponent } from "./accounts/register.component";
-import { RemovePasswordComponent } from "./accounts/remove-password.component";
-import { SetPasswordComponent } from "./accounts/set-password.component";
-import { SsoComponent } from "./accounts/sso.component";
-import { TwoFactorOptionsComponent } from "./accounts/two-factor-options.component";
-import { TwoFactorComponent } from "./accounts/two-factor.component";
-import { UpdateTempPasswordComponent } from "./accounts/update-temp-password.component";
 import { GeneratorComponent } from "./generator/generator.component";
 import { PasswordGeneratorHistoryComponent } from "./generator/password-generator-history.component";
 import { SendAddEditComponent } from "./send/send-add-edit.component";

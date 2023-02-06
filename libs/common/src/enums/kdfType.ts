@@ -1,4 +1,4 @@
-import { KdfConfig } from "../models/domain/kdf-config";
+import { KdfConfig } from "../auth/models/domain/kdf-config";
 
 export enum KdfType {
   PBKDF2_SHA256 = 0,

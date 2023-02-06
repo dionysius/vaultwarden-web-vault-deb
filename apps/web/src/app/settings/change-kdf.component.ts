@@ -7,6 +7,7 @@ import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { MessagingService } from "@bitwarden/common/abstractions/messaging.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
+import { KdfConfig } from "@bitwarden/common/auth/models/domain/kdf-config";
 import {
   DEFAULT_KDF_CONFIG,
   DEFAULT_PBKDF2_ITERATIONS,
@@ -15,7 +16,6 @@ import {
   DEFAULT_ARGON2_PARALLELISM,
   KdfType,
 } from "@bitwarden/common/enums/kdfType";
-import { KdfConfig } from "@bitwarden/common/models/domain/kdf-config";
 import { KdfRequest } from "@bitwarden/common/models/request/kdf.request";
 
 @Component({

@@ -1,8 +1,8 @@
 import { mock, MockProxy } from "jest-mock-extended";
 
-import { AuthService } from "@bitwarden/common/abstractions/auth.service";
 import { EventCollectionService } from "@bitwarden/common/abstractions/event/event-collection.service";
 import { TotpService } from "@bitwarden/common/abstractions/totp.service";
+import { AuthService } from "@bitwarden/common/auth/abstractions/auth.service";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
 import { CipherRepromptType } from "@bitwarden/common/vault/enums/cipher-reprompt-type";
 import { CipherType } from "@bitwarden/common/vault/enums/cipher-type";

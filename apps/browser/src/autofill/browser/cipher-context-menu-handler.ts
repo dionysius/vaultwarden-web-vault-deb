@@ -1,6 +1,6 @@
-import { AuthService } from "@bitwarden/common/abstractions/auth.service";
 import { SearchService } from "@bitwarden/common/abstractions/search.service";
-import { AuthenticationStatus } from "@bitwarden/common/enums/authenticationStatus";
+import { AuthService } from "@bitwarden/common/auth/abstractions/auth.service";
+import { AuthenticationStatus } from "@bitwarden/common/auth/enums/authentication-status";
 import { StateFactory } from "@bitwarden/common/factories/stateFactory";
 import { Utils } from "@bitwarden/common/misc/utils";
 import { GlobalState } from "@bitwarden/common/models/domain/global-state";
@@ -12,7 +12,7 @@ import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 import {
   authServiceFactory,
   AuthServiceInitOptions,
-} from "../../background/service_factories/auth-service.factory";
+} from "../../auth/background/service-factories/auth-service.factory";
 import { CachedServices } from "../../background/service_factories/factory-options";
 import { searchServiceFactory } from "../../background/service_factories/search-service.factory";
 import { BrowserApi } from "../../browser/browserApi";

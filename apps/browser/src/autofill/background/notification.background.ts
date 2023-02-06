@@ -1,8 +1,8 @@
 import { firstValueFrom } from "rxjs";
 
-import { AuthService } from "@bitwarden/common/abstractions/auth.service";
 import { PolicyService } from "@bitwarden/common/abstractions/policy/policy.service.abstraction";
-import { AuthenticationStatus } from "@bitwarden/common/enums/authenticationStatus";
+import { AuthService } from "@bitwarden/common/auth/abstractions/auth.service";
+import { AuthenticationStatus } from "@bitwarden/common/auth/enums/authentication-status";
 import { PolicyType } from "@bitwarden/common/enums/policyType";
 import { ThemeType } from "@bitwarden/common/enums/themeType";
 import { Utils } from "@bitwarden/common/misc/utils";

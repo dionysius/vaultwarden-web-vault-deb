@@ -1,6 +1,6 @@
+import { CaptchaProtectedRequest } from "../../auth/models/request/captcha-protected.request";
 import { KdfType } from "../../enums/kdfType";
 
-import { CaptchaProtectedRequest } from "./captcha-protected.request";
 import { KeysRequest } from "./keys.request";
 import { ReferenceEventRequest } from "./reference-event.request";
 

@@ -1,6 +1,11 @@
 import { ApiService as AbstractApiService } from "@bitwarden/common/abstractions/api.service";
 import { ApiService } from "@bitwarden/common/services/api.service";
 
+import {
+  tokenServiceFactory,
+  TokenServiceInitOptions,
+} from "../../auth/background/service-factories/token-service.factory";
+
 import { AppIdServiceInitOptions, appIdServiceFactory } from "./app-id-service.factory";
 import {
   environmentServiceFactory,
@@ -11,7 +16,6 @@ import {
   PlatformUtilsServiceInitOptions,
   platformUtilsServiceFactory,
 } from "./platform-utils-service.factory";
-import { TokenServiceInitOptions, tokenServiceFactory } from "./token-service.factory";
 
 type ApiServiceFactoryOptions = FactoryOptions & {
   apiServiceOptions: {

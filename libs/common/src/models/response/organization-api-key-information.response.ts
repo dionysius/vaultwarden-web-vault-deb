@@ -1,4 +1,4 @@
-import { OrganizationApiKeyType } from "../../enums/organizationApiKeyType";
+import { OrganizationApiKeyType } from "../../auth/enums/organization-api-key-type";
 
 import { BaseResponse } from "./base.response";
 

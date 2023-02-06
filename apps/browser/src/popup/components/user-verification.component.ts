@@ -2,7 +2,7 @@ import { animate, style, transition, trigger } from "@angular/animations";
 import { Component } from "@angular/core";
 import { NG_VALUE_ACCESSOR } from "@angular/forms";
 
-import { UserVerificationComponent as BaseComponent } from "@bitwarden/angular/components/user-verification.component";
+import { UserVerificationComponent as BaseComponent } from "@bitwarden/angular/auth/components/user-verification.component";
 
 @Component({
   selector: "app-user-verification",

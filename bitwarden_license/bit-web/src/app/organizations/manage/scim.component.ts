@@ -7,13 +7,13 @@ import { EnvironmentService } from "@bitwarden/common/abstractions/environment.s
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { OrganizationApiServiceAbstraction } from "@bitwarden/common/abstractions/organization/organization-api.service.abstraction";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
-import { OrganizationApiKeyType } from "@bitwarden/common/enums/organizationApiKeyType";
+import { OrganizationApiKeyType } from "@bitwarden/common/auth/enums/organization-api-key-type";
+import { ApiKeyResponse } from "@bitwarden/common/auth/models/response/api-key.response";
 import { OrganizationConnectionType } from "@bitwarden/common/enums/organizationConnectionType";
 import { ScimConfigApi } from "@bitwarden/common/models/api/scim-config.api";
 import { OrganizationApiKeyRequest } from "@bitwarden/common/models/request/organization-api-key.request";
 import { OrganizationConnectionRequest } from "@bitwarden/common/models/request/organization-connection.request";
 import { ScimConfigRequest } from "@bitwarden/common/models/request/scim-config.request";
-import { ApiKeyResponse } from "@bitwarden/common/models/response/api-key.response";
 import { OrganizationConnectionResponse } from "@bitwarden/common/models/response/organization-connection.response";
 
 @Component({

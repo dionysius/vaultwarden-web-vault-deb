@@ -1,6 +1,7 @@
 import { Jsonify } from "type-fest";
 
-import { AuthenticationStatus } from "../../enums/authenticationStatus";
+import { AuthenticationStatus } from "../../auth/enums/authentication-status";
+import { EnvironmentUrls } from "../../auth/models/domain/environment-urls";
 import { KdfType } from "../../enums/kdfType";
 import { UriMatchType } from "../../enums/uriMatchType";
 import { Utils } from "../../misc/utils";
@@ -20,7 +21,6 @@ import { CollectionView } from "../view/collection.view";
 import { SendView } from "../view/send.view";
 
 import { EncString } from "./enc-string";
-import { EnvironmentUrls } from "./environment-urls";
 import { GeneratedPasswordHistory } from "./generated-password-history";
 import { Policy } from "./policy";
 import { SymmetricCryptoKey } from "./symmetric-crypto-key";

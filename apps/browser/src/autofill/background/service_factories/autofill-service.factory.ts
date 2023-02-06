@@ -1,4 +1,8 @@
 import {
+  TotpServiceInitOptions,
+  totpServiceFactory,
+} from "../../../auth/background/service-factories/totp-service.factory";
+import {
   EventCollectionServiceInitOptions,
   eventCollectionServiceFactory,
 } from "../../../background/service_factories/event-collection-service.factory";
@@ -15,10 +19,6 @@ import {
   stateServiceFactory,
   StateServiceInitOptions,
 } from "../../../background/service_factories/state-service.factory";
-import {
-  totpServiceFactory,
-  TotpServiceInitOptions,
-} from "../../../background/service_factories/totp-service.factory";
 import {
   cipherServiceFactory,
   CipherServiceInitOptions,

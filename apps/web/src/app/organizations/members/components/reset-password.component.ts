@@ -19,8 +19,8 @@ import { OrganizationUserResetPasswordRequest } from "@bitwarden/common/abstract
 import { PasswordGenerationService } from "@bitwarden/common/abstractions/passwordGeneration.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { PolicyService } from "@bitwarden/common/abstractions/policy/policy.service.abstraction";
+import { KdfConfig } from "@bitwarden/common/auth/models/domain/kdf-config";
 import { EncString } from "@bitwarden/common/models/domain/enc-string";
-import { KdfConfig } from "@bitwarden/common/models/domain/kdf-config";
 import { MasterPasswordPolicyOptions } from "@bitwarden/common/models/domain/master-password-policy-options";
 import { SymmetricCryptoKey } from "@bitwarden/common/models/domain/symmetric-crypto-key";
 

@@ -1,9 +1,8 @@
 import { AfterContentInit, Component, Input } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 
-import { SsoComponent } from "@bitwarden/angular/components/sso.component";
+import { SsoComponent } from "@bitwarden/angular/auth/components/sso.component";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
-import { AuthService } from "@bitwarden/common/abstractions/auth.service";
 import { CryptoFunctionService } from "@bitwarden/common/abstractions/cryptoFunction.service";
 import { EnvironmentService } from "@bitwarden/common/abstractions/environment.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
@@ -11,6 +10,7 @@ import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { PasswordGenerationService } from "@bitwarden/common/abstractions/passwordGeneration.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
+import { AuthService } from "@bitwarden/common/auth/abstractions/auth.service";
 import { Organization } from "@bitwarden/common/models/domain/organization";
 
 @Component({

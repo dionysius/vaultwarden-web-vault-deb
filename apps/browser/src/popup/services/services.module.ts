@@ -1,7 +1,7 @@
 import { APP_INITIALIZER, LOCALE_ID, NgModule } from "@angular/core";
 
-import { LockGuard as BaseLockGuardService } from "@bitwarden/angular/guards/lock.guard";
-import { UnauthGuard as BaseUnauthGuardService } from "@bitwarden/angular/guards/unauth.guard";
+import { LockGuard as BaseLockGuardService } from "@bitwarden/angular/auth/guards/lock.guard";
+import { UnauthGuard as BaseUnauthGuardService } from "@bitwarden/angular/auth/guards/unauth.guard";
 import { MEMORY_STORAGE, SECURE_STORAGE } from "@bitwarden/angular/services/injection-tokens";
 import { JslibServicesModule } from "@bitwarden/angular/services/jslib-services.module";
 import { ThemingService } from "@bitwarden/angular/services/theming/theming.service";
@@ -9,7 +9,6 @@ import { AbstractThemingService } from "@bitwarden/angular/services/theming/them
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { AppIdService } from "@bitwarden/common/abstractions/appId.service";
 import { AuditService } from "@bitwarden/common/abstractions/audit.service";
-import { AuthService as AuthServiceAbstraction } from "@bitwarden/common/abstractions/auth.service";
 import { CollectionService } from "@bitwarden/common/abstractions/collection.service";
 import { ConfigApiServiceAbstraction } from "@bitwarden/common/abstractions/config/config-api.service.abstraction";
 import { ConfigServiceAbstraction } from "@bitwarden/common/abstractions/config/config.service.abstraction";
@@ -23,9 +22,7 @@ import { ExportService } from "@bitwarden/common/abstractions/export.service";
 import { FileDownloadService } from "@bitwarden/common/abstractions/fileDownload/fileDownload.service";
 import { FileUploadService } from "@bitwarden/common/abstractions/fileUpload.service";
 import { I18nService as I18nServiceAbstraction } from "@bitwarden/common/abstractions/i18n.service";
-import { KeyConnectorService } from "@bitwarden/common/abstractions/keyConnector.service";
 import { LogService as LogServiceAbstraction } from "@bitwarden/common/abstractions/log.service";
-import { LoginService as LoginServiceAbstraction } from "@bitwarden/common/abstractions/login.service";
 import { MessagingService } from "@bitwarden/common/abstractions/messaging.service";
 import { NotificationsService } from "@bitwarden/common/abstractions/notifications.service";
 import { OrganizationService } from "@bitwarden/common/abstractions/organization/organization.service.abstraction";
@@ -49,19 +46,22 @@ import {
   AbstractMemoryStorageService,
   AbstractStorageService,
 } from "@bitwarden/common/abstractions/storage.service";
-import { TokenService } from "@bitwarden/common/abstractions/token.service";
 import { TotpService } from "@bitwarden/common/abstractions/totp.service";
-import { TwoFactorService } from "@bitwarden/common/abstractions/twoFactor.service";
 import { UserVerificationService } from "@bitwarden/common/abstractions/userVerification/userVerification.service.abstraction";
 import { UsernameGenerationService } from "@bitwarden/common/abstractions/usernameGeneration.service";
 import { VaultTimeoutService } from "@bitwarden/common/abstractions/vaultTimeout/vaultTimeout.service";
 import { VaultTimeoutSettingsService } from "@bitwarden/common/abstractions/vaultTimeout/vaultTimeoutSettings.service";
+import { AuthService as AuthServiceAbstraction } from "@bitwarden/common/auth/abstractions/auth.service";
+import { KeyConnectorService } from "@bitwarden/common/auth/abstractions/key-connector.service";
+import { LoginService as LoginServiceAbstraction } from "@bitwarden/common/auth/abstractions/login.service";
+import { TokenService } from "@bitwarden/common/auth/abstractions/token.service";
+import { TwoFactorService } from "@bitwarden/common/auth/abstractions/two-factor.service";
+import { AuthService } from "@bitwarden/common/auth/services/auth.service";
+import { LoginService } from "@bitwarden/common/auth/services/login.service";
 import { StateFactory } from "@bitwarden/common/factories/stateFactory";
 import { GlobalState } from "@bitwarden/common/models/domain/global-state";
-import { AuthService } from "@bitwarden/common/services/auth.service";
 import { ConsoleLogService } from "@bitwarden/common/services/consoleLog.service";
 import { ContainerService } from "@bitwarden/common/services/container.service";
-import { LoginService } from "@bitwarden/common/services/login.service";
 import { PolicyApiService } from "@bitwarden/common/services/policy/policy-api.service";
 import { SearchService } from "@bitwarden/common/services/search.service";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
@@ -74,6 +74,7 @@ import { PasswordRepromptService as PasswordRepromptServiceAbstraction } from "@
 import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
 import { FolderApiService } from "@bitwarden/common/vault/services/folder/folder-api.service";
 
+import { LockGuardService, UnauthGuardService } from "../../auth/popup/services";
 import { AutofillService } from "../../autofill/services/abstractions/autofill.service";
 import MainBackground from "../../background/main.background";
 import { BrowserApi } from "../../browser/browserApi";
@@ -95,10 +96,8 @@ import { VaultFilterService } from "../../vault/services/vault-filter.service";
 
 import { DebounceNavigationService } from "./debounceNavigationService";
 import { InitService } from "./init.service";
-import { LockGuardService } from "./lock-guard.service";
 import { PopupSearchService } from "./popup-search.service";
 import { PopupUtilsService } from "./popup-utils.service";
-import { UnauthGuardService } from "./unauth-guard.service";
 
 const needsBackgroundInit = BrowserApi.getBackgroundPage() == null;
 const isPrivateMode = needsBackgroundInit && BrowserApi.manifestVersion !== 3;

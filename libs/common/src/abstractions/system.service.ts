@@ -1,4 +1,4 @@
-import { AuthService } from "./auth.service";
+import { AuthService } from "../auth/abstractions/auth.service";
 
 export abstract class SystemService {
   startProcessReload: (authService: AuthService) => Promise<void>;

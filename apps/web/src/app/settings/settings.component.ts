@@ -4,7 +4,7 @@ import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { BroadcasterService } from "@bitwarden/common/abstractions/broadcaster.service";
 import { OrganizationService } from "@bitwarden/common/abstractions/organization/organization.service.abstraction";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
-import { TokenService } from "@bitwarden/common/abstractions/token.service";
+import { TokenService } from "@bitwarden/common/auth/abstractions/token.service";
 
 import { StateService } from "../core";
 

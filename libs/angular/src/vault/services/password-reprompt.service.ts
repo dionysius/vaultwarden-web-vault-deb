@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 
-import { KeyConnectorService } from "@bitwarden/common/abstractions/keyConnector.service";
+import { KeyConnectorService } from "@bitwarden/common/auth/abstractions/key-connector.service";
 import { PasswordRepromptService as PasswordRepromptServiceAbstraction } from "@bitwarden/common/vault/abstractions/password-reprompt.service";
 
 import { ModalService } from "../../services/modal.service";

@@ -1,23 +1,23 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 
-import { AuthGuard } from "@bitwarden/angular/guards/auth.guard";
-import { LockGuard } from "@bitwarden/angular/guards/lock.guard";
+import { AuthGuard } from "@bitwarden/angular/auth/guards/auth.guard";
+import { LockGuard } from "@bitwarden/angular/auth/guards/lock.guard";
 
+import { AccessibilityCookieComponent } from "../auth/accessibility-cookie.component";
+import { LoginGuard } from "../auth/guards/login.guard";
+import { LockComponent } from "../auth/lock.component";
+import { LoginWithDeviceComponent } from "../auth/login/login-with-device.component";
+import { LoginComponent } from "../auth/login/login.component";
+import { RegisterComponent } from "../auth/register.component";
+import { RemovePasswordComponent } from "../auth/remove-password.component";
+import { SetPasswordComponent } from "../auth/set-password.component";
+import { SsoComponent } from "../auth/sso.component";
+import { TwoFactorComponent } from "../auth/two-factor.component";
+import { UpdateTempPasswordComponent } from "../auth/update-temp-password.component";
 import { VaultComponent } from "../vault/app/vault/vault.component";
 
-import { AccessibilityCookieComponent } from "./accounts/accessibility-cookie.component";
 import { HintComponent } from "./accounts/hint.component";
-import { LockComponent } from "./accounts/lock.component";
-import { LoginWithDeviceComponent } from "./accounts/login/login-with-device.component";
-import { LoginComponent } from "./accounts/login/login.component";
-import { RegisterComponent } from "./accounts/register.component";
-import { RemovePasswordComponent } from "./accounts/remove-password.component";
-import { SetPasswordComponent } from "./accounts/set-password.component";
-import { SsoComponent } from "./accounts/sso.component";
-import { TwoFactorComponent } from "./accounts/two-factor.component";
-import { UpdateTempPasswordComponent } from "./accounts/update-temp-password.component";
-import { LoginGuard } from "./guards/login.guard";
 import { SendComponent } from "./send/send.component";
 
 const routes: Routes = [

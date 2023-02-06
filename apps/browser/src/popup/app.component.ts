@@ -12,11 +12,11 @@ import { IndividualConfig, ToastrService } from "ngx-toastr";
 import { Subject, takeUntil } from "rxjs";
 import Swal, { SweetAlertIcon } from "sweetalert2";
 
-import { AuthService } from "@bitwarden/common/abstractions/auth.service";
 import { BroadcasterService } from "@bitwarden/common/abstractions/broadcaster.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { MessagingService } from "@bitwarden/common/abstractions/messaging.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
+import { AuthService } from "@bitwarden/common/auth/abstractions/auth.service";
 
 import { BrowserApi } from "../browser/browserApi";
 import { BrowserStateService } from "../services/abstractions/browser-state.service";

@@ -1,7 +1,6 @@
 import { ApiService } from "../../../abstractions/api.service";
 import { CollectionService } from "../../../abstractions/collection.service";
 import { CryptoService } from "../../../abstractions/crypto.service";
-import { KeyConnectorService } from "../../../abstractions/keyConnector.service";
 import { LogService } from "../../../abstractions/log.service";
 import { MessagingService } from "../../../abstractions/messaging.service";
 import { InternalOrganizationService } from "../../../abstractions/organization/organization.service.abstraction";
@@ -10,6 +9,7 @@ import { ProviderService } from "../../../abstractions/provider.service";
 import { SendService } from "../../../abstractions/send.service";
 import { SettingsService } from "../../../abstractions/settings.service";
 import { StateService } from "../../../abstractions/state.service";
+import { KeyConnectorService } from "../../../auth/abstractions/key-connector.service";
 import { sequentialize } from "../../../misc/sequentialize";
 import { CollectionData } from "../../../models/data/collection.data";
 import { OrganizationData } from "../../../models/data/organization.data";

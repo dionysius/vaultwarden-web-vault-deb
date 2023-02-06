@@ -5,7 +5,7 @@ import * as fe from "node-fetch";
 import { AppIdService } from "@bitwarden/common/abstractions/appId.service";
 import { EnvironmentService } from "@bitwarden/common/abstractions/environment.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
-import { TokenService } from "@bitwarden/common/abstractions/token.service";
+import { TokenService } from "@bitwarden/common/auth/abstractions/token.service";
 import { ApiService } from "@bitwarden/common/services/api.service";
 
 (global as any).fetch = fe.default;

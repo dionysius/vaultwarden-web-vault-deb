@@ -1,6 +1,5 @@
+import { PasswordRequest } from "../../auth/models/request/password.request";
 import { KdfType } from "../../enums/kdfType";
-
-import { PasswordRequest } from "./password.request";
 
 export class KdfRequest extends PasswordRequest {
   kdf: KdfType;
