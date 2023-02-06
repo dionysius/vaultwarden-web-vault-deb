@@ -378,7 +378,7 @@
     "message": "Estado/Probinsya"
   },
   "zipPostalCode": {
-    "message": "Zip / Postal code"
+    "message": "Código ng Zip / Postal"
   },
   "country": {
     "message": "Bayan"
@@ -4849,7 +4849,7 @@
     "message": "Pumili ng uri ng SSO"
   },
   "type": {
-    "message": "Type"
+    "message": "Uri"
   },
   "openIdConnectConfig": {
     "message": "OpenID konek na pagsasaayos"
@@ -5387,14 +5387,14 @@
     "message": "Uri ng username"
   },
   "plusAddressedEmail": {
-    "message": "Plus addressed email",
+    "message": "Plus na naka-address na email",
     "description": "Username generator option that appends a random sub-address to the username. For example: address+subaddress@email.com"
   },
   "plusAddressedEmailDesc": {
     "message": "Gamitin ang mga kakayahan ng sub address ng iyong email provider."
   },
   "catchallEmail": {
-    "message": "Catch-all email"
+    "message": "Catch-all na email"
   },
   "catchallEmailDesc": {
     "message": "Gamitin ang naka configure na inbox ng catch all ng iyong domain."
