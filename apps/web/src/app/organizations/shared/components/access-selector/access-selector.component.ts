@@ -285,12 +285,11 @@ export class AccessSelectorComponent implements ControlValueAccessor, OnInit, On
   }
 
   private _itemComparator(a: AccessItemView, b: AccessItemView) {
-    if (a.type != b.type) {
-      return a.type - b.type;
-    }
-    return this.i18nService.collator.compare(
-      a.listName + a.labelName + a.readonly,
-      b.listName + b.labelName + b.readonly
+    return (
+      a.type - b.type ||
+      this.i18nService.collator.compare(a.listName, b.listName) ||
+      this.i18nService.collator.compare(a.labelName, b.labelName) ||
+      Number(b.readonly) - Number(a.readonly)
     );
   }
 }
