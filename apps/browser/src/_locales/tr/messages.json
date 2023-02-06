@@ -2050,6 +2050,30 @@
   "rememberEmail": {
     "message": "E-postayı hatırla"
   },
+  "loginWithDevice": {
+    "message": "Cihazla giriş yap"
+  },
+  "loginWithDeviceEnabledInfo": {
+    "message": "Cihazla girişi Bitwarden mobil uygulamasının ayarlarından etkinleştirmelisiniz. Başka bir seçeneğe mi ihtiyacınız var?"
+  },
+  "fingerprintPhraseHeader": {
+    "message": "Parmak izi ifadesi"
+  },
+  "fingerprintMatchInfo": {
+    "message": "Lütfen kasanızın kilidinin açık olduğundan ve parmak izi ifadesinin diğer cihazla eşleştiğinden emin olun."
+  },
+  "resendNotification": {
+    "message": "Bildirimi yeniden gönder"
+  },
+  "viewAllLoginOptions": {
+    "message": "Tüm giriş seçeneklerini gör"
+  },
+  "notificationSentDevice": {
+    "message": "Cihazınıza bir bildirim gönderildi."
+  },
+  "logInInitiated": {
+    "message": "Giriş başlatıldı"
+  },
   "exposedMasterPassword": {
     "message": "Açığa Çıkmış Ana Parola"
   },

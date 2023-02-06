@@ -2050,6 +2050,30 @@
   "rememberEmail": {
     "message": "记住电子邮件地址"
   },
+  "loginWithDevice": {
+    "message": "使用设备登录"
+  },
+  "loginWithDeviceEnabledInfo": {
+    "message": "Log in with device must be set up in the settings of the Bitwarden app. Need another option?"
+  },
+  "fingerprintPhraseHeader": {
+    "message": "Fingerprint phrase"
+  },
+  "fingerprintMatchInfo": {
+    "message": "Please make sure your vault is unlocked and the Fingerprint phrase matches on the other device."
+  },
+  "resendNotification": {
+    "message": "重新发送通知"
+  },
+  "viewAllLoginOptions": {
+    "message": "View all log in options"
+  },
+  "notificationSentDevice": {
+    "message": "A notification has been sent to your device."
+  },
+  "logInInitiated": {
+    "message": "Log in initiated"
+  },
   "exposedMasterPassword": {
     "message": "暴露的主密码"
   },

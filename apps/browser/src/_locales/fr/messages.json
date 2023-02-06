@@ -458,7 +458,7 @@
     }
   },
   "autofillError": {
-    "message": "Impossible de saisir automatiquement l'élément sélectionné sur cette page. Plutôt copiez-collez l'information."
+    "message": "Impossible de saisir automatiquement l'élément sélectionné sur cette page. Copiez-collez plutôt l'information."
   },
   "loggedOut": {
     "message": "Déconnecté"
@@ -960,13 +960,13 @@
     "message": "Si un formulaire de connexion est détecté, saisir automatiquement lors du chargement de la page web."
   },
   "experimentalFeature": {
-    "message": "Compromised or untrusted websites can exploit auto-fill on page load."
+    "message": "Les sites web compromis ou non fiables peuvent exploiter la saisie automatique au chargement de la page."
   },
   "learnMoreAboutAutofill": {
     "message": "En savoir plus sur la saisie automatique"
   },
   "defaultAutoFillOnPageLoad": {
-    "message": "Paramètre de saisie automatique par défaut pour les identifiants"
+    "message": "Paramètre de saisie automatique par défaut pour les éléments de connexion"
   },
   "defaultAutoFillOnPageLoadDesc": {
     "message": "Vous pouvez désactiver la saisie automatique au chargement de la page pour les éléments de connexion individuels à partir de la vue Éditer l'élément."
@@ -2049,6 +2049,30 @@
   },
   "rememberEmail": {
     "message": "Se souvenir du courriel"
+  },
+  "loginWithDevice": {
+    "message": "Log in with device"
+  },
+  "loginWithDeviceEnabledInfo": {
+    "message": "Log in with device must be set up in the settings of the Bitwarden app. Need another option?"
+  },
+  "fingerprintPhraseHeader": {
+    "message": "Fingerprint phrase"
+  },
+  "fingerprintMatchInfo": {
+    "message": "Please make sure your vault is unlocked and the Fingerprint phrase matches on the other device."
+  },
+  "resendNotification": {
+    "message": "Resend notification"
+  },
+  "viewAllLoginOptions": {
+    "message": "View all log in options"
+  },
+  "notificationSentDevice": {
+    "message": "A notification has been sent to your device."
+  },
+  "logInInitiated": {
+    "message": "Log in initiated"
   },
   "exposedMasterPassword": {
     "message": "Mot de passe principal exposé"

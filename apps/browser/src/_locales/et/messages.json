@@ -2050,6 +2050,30 @@
   "rememberEmail": {
     "message": "Mäleta e-posti aadressi"
   },
+  "loginWithDevice": {
+    "message": "Logi sisse seadme kaudu"
+  },
+  "loginWithDeviceEnabledInfo": {
+    "message": "Bitwardeni rakenduse seadistuses peab olema konfigureeritud sisselogimine läbi seadme. Vajad teist valikut?"
+  },
+  "fingerprintPhraseHeader": {
+    "message": "Sõrmejälje fraas"
+  },
+  "fingerprintMatchInfo": {
+    "message": "Veendu, et hoidla on lahti lukustatud ja sõrmejälje fraasid seadmete vahel ühtivad."
+  },
+  "resendNotification": {
+    "message": "Saada märguanne uuesti"
+  },
+  "viewAllLoginOptions": {
+    "message": "Vaata kõiki valikuid"
+  },
+  "notificationSentDevice": {
+    "message": "Sinu seadmesse saadeti teavitus."
+  },
+  "logInInitiated": {
+    "message": "Sisselogimine on käivitatud"
+  },
   "exposedMasterPassword": {
     "message": "Exposed Master Password"
   },

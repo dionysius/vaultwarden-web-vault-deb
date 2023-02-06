@@ -2050,6 +2050,30 @@
   "rememberEmail": {
     "message": "Запам'ятати е-пошту"
   },
+  "loginWithDevice": {
+    "message": "Увійти з пристроєм"
+  },
+  "loginWithDeviceEnabledInfo": {
+    "message": "Потрібно увімкнути схвалення запитів на вхід у налаштуваннях програми Bitwarden. Потрібен інший варіант?"
+  },
+  "fingerprintPhraseHeader": {
+    "message": "Фраза відбитка"
+  },
+  "fingerprintMatchInfo": {
+    "message": "Переконайтеся, що ваше сховище розблоковане, а фраза відбитка збігається з іншим пристроєм."
+  },
+  "resendNotification": {
+    "message": "Надіслати сповіщення ще раз"
+  },
+  "viewAllLoginOptions": {
+    "message": "Переглянути всі варіанти входу"
+  },
+  "notificationSentDevice": {
+    "message": "Сповіщення було надіслано на ваш пристрій."
+  },
+  "logInInitiated": {
+    "message": "Ініційовано вхід"
+  },
   "exposedMasterPassword": {
     "message": "Головний пароль викрито"
   },

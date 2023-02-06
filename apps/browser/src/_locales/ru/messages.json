@@ -960,10 +960,10 @@
     "message": "Если обнаружена форма входа, автозаполнение выполняется при загрузке веб-страницы."
   },
   "experimentalFeature": {
-    "message": "Compromised or untrusted websites can exploit auto-fill on page load."
+    "message": "Взломанные или недоверенные сайты могут внедрить вредоносный код во время автозаполнения при загрузке страницы."
   },
   "learnMoreAboutAutofill": {
-    "message": "Learn more about auto-fill"
+    "message": "Узнать больше об автозаполнении"
   },
   "defaultAutoFillOnPageLoad": {
     "message": "Настройка автозаполнения по умолчанию для логинов"
@@ -1127,7 +1127,7 @@
     "message": "Тов."
   },
   "mx": {
-    "message": "Mx"
+    "message": "Микстер"
   },
   "firstName": {
     "message": "Имя"
@@ -2050,6 +2050,30 @@
   "rememberEmail": {
     "message": "Запомнить email"
   },
+  "loginWithDevice": {
+    "message": "Войти с помощью устройства"
+  },
+  "loginWithDeviceEnabledInfo": {
+    "message": "Вход с устройства должен быть настроен в настройках мобильного приложения Bitwarden. Нужен другой вариант?"
+  },
+  "fingerprintPhraseHeader": {
+    "message": "Фраза отпечатка"
+  },
+  "fingerprintMatchInfo": {
+    "message": "Убедитесь, что ваше хранилище разблокировано и фраза отпечатка пальца совпадает на другом устройстве."
+  },
+  "resendNotification": {
+    "message": "Отправить уведомление повторно"
+  },
+  "viewAllLoginOptions": {
+    "message": "Посмотреть все варианты авторизации"
+  },
+  "notificationSentDevice": {
+    "message": "На ваше устройство отправлено уведомление."
+  },
+  "logInInitiated": {
+    "message": "Вход инициирован"
+  },
   "exposedMasterPassword": {
     "message": "Мастер-пароль скомпрометирован"
   },
@@ -2060,7 +2084,7 @@
     "message": "Слабый и скомпрометированный мастер-пароль"
   },
   "weakAndBreachedMasterPasswordDesc": {
-    "message": "Обнаружен слабый пароль, найденный в утечке данных. Используйте надежный и уникальный пароль для защиты своего аккаунта. Вы уверены, что хотите использовать этот пароль?"
+    "message": "Обнаружен слабый пароль, найденный в утечке данных. Используйте надежный и уникальный пароль для защиты вашего аккаунта. Вы уверены, что хотите использовать этот пароль?"
   },
   "checkForBreaches": {
     "message": "Проверьте известные случаи утечки данных для этого пароля"

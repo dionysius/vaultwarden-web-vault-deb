@@ -960,10 +960,10 @@
     "message": "Se viene rilevato un modulo di accesso, effettua un auto-completamento quando la pagina web si carica."
   },
   "experimentalFeature": {
-    "message": "Compromised or untrusted websites can exploit auto-fill on page load."
+    "message": "I siti web compromessi o non attendibili possono sfruttare l'autorizzazione all'inserimento automatico all'avvio della pagina."
   },
   "learnMoreAboutAutofill": {
-    "message": "Learn more about auto-fill"
+    "message": "Ulteriori informazioni sul completamento automatico"
   },
   "defaultAutoFillOnPageLoad": {
     "message": "Impostazioni di completamento automatico predefinito per i login"
@@ -2049,6 +2049,30 @@
   },
   "rememberEmail": {
     "message": "Ricorda email"
+  },
+  "loginWithDevice": {
+    "message": "Accedi con il dispositivo"
+  },
+  "loginWithDeviceEnabledInfo": {
+    "message": "Il login con il dispositivo deve essere abilitato nelle impostazioni dell'app Bitwarden. Hai bisogno di un'altra opzione?"
+  },
+  "fingerprintPhraseHeader": {
+    "message": "Frase impronta"
+  },
+  "fingerprintMatchInfo": {
+    "message": "Assicurati che la tua cassaforte sia sbloccata e che la \"frase impronta\" corrisponda sull'altro dispositivo."
+  },
+  "resendNotification": {
+    "message": "Invia nuova notifica"
+  },
+  "viewAllLoginOptions": {
+    "message": "Visualizza tutte le opzioni di accesso"
+  },
+  "notificationSentDevice": {
+    "message": "Una notifica è stata inviata al tuo dispositivo."
+  },
+  "logInInitiated": {
+    "message": "Login avviato"
   },
   "exposedMasterPassword": {
     "message": "Password principale violata"

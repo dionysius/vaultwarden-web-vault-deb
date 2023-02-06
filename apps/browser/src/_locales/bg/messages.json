@@ -2050,6 +2050,30 @@
   "rememberEmail": {
     "message": "Запомняне на е-пощата"
   },
+  "loginWithDevice": {
+    "message": "Вписване с устройство"
+  },
+  "loginWithDeviceEnabledInfo": {
+    "message": "Вписването с устройство трябва да е включено в настройките на приложението на Битуорден. Друга настройка ли търсите?"
+  },
+  "fingerprintPhraseHeader": {
+    "message": "Уникална фраза"
+  },
+  "fingerprintMatchInfo": {
+    "message": "Уверете се, че трезорът Ви е отключен и че Уникалната фраза съвпада с другото устройство."
+  },
+  "resendNotification": {
+    "message": "Повторно изпращане на известието"
+  },
+  "viewAllLoginOptions": {
+    "message": "Вижте всички възможности за вписване"
+  },
+  "notificationSentDevice": {
+    "message": "Към устройството Ви е изпратено известие."
+  },
+  "logInInitiated": {
+    "message": "Вписването е стартирано"
+  },
   "exposedMasterPassword": {
     "message": "Exposed Master Password"
   },

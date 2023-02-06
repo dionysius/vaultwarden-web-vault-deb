@@ -2050,6 +2050,30 @@
   "rememberEmail": {
     "message": "Kom ihåg e-postadress"
   },
+  "loginWithDevice": {
+    "message": "Logga in med enhet"
+  },
+  "loginWithDeviceEnabledInfo": {
+    "message": "Log in with device must be set up in the settings of the Bitwarden app. Need another option?"
+  },
+  "fingerprintPhraseHeader": {
+    "message": "Fingeravtrycksfras"
+  },
+  "fingerprintMatchInfo": {
+    "message": "Please make sure your vault is unlocked and the Fingerprint phrase matches on the other device."
+  },
+  "resendNotification": {
+    "message": "Resend notification"
+  },
+  "viewAllLoginOptions": {
+    "message": "Visa alla inloggningsalternativ"
+  },
+  "notificationSentDevice": {
+    "message": "En avisering har skickats till din enhet."
+  },
+  "logInInitiated": {
+    "message": "Log in initiated"
+  },
   "exposedMasterPassword": {
     "message": "Huvudlösenordet har avslöjats"
   },

@@ -2050,6 +2050,30 @@
   "rememberEmail": {
     "message": "Zapamätať si e-mail"
   },
+  "loginWithDevice": {
+    "message": "Prihlásiť pomocou zariadenia"
+  },
+  "loginWithDeviceEnabledInfo": {
+    "message": "Prihlásenie pomocou zariadenia musí byť nastavené v nastaveniach aplikácie Bitwarden. Potrebujete inú možnosť?"
+  },
+  "fingerprintPhraseHeader": {
+    "message": "Fráza odtlačku prsta"
+  },
+  "fingerprintMatchInfo": {
+    "message": "Uistite sa, že je váš trezor odomknutý a fráza odtlačku prsta sa zhoduje s frázou na druhom zariadení."
+  },
+  "resendNotification": {
+    "message": "Znova odoslať upozornenie"
+  },
+  "viewAllLoginOptions": {
+    "message": "Zobraziť všetky možnosti prihlásenia"
+  },
+  "notificationSentDevice": {
+    "message": "Do vášho zariadenia bolo odoslané upozornenie."
+  },
+  "logInInitiated": {
+    "message": "Iniciované prihlásenie"
+  },
   "exposedMasterPassword": {
     "message": "Odhalené hlavné heslo"
   },

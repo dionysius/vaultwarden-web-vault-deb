@@ -2050,6 +2050,30 @@
   "rememberEmail": {
     "message": "Ingat email"
   },
+  "loginWithDevice": {
+    "message": "Log in with device"
+  },
+  "loginWithDeviceEnabledInfo": {
+    "message": "Log in with device must be set up in the settings of the Bitwarden app. Need another option?"
+  },
+  "fingerprintPhraseHeader": {
+    "message": "Fingerprint phrase"
+  },
+  "fingerprintMatchInfo": {
+    "message": "Please make sure your vault is unlocked and the Fingerprint phrase matches on the other device."
+  },
+  "resendNotification": {
+    "message": "Resend notification"
+  },
+  "viewAllLoginOptions": {
+    "message": "View all log in options"
+  },
+  "notificationSentDevice": {
+    "message": "A notification has been sent to your device."
+  },
+  "logInInitiated": {
+    "message": "Log in initiated"
+  },
   "exposedMasterPassword": {
     "message": "Exposed Master Password"
   },

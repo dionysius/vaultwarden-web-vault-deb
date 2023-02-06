@@ -960,10 +960,10 @@
     "message": "اگر یک فرم ورودی شناسایی شد، وقتی صفحه وب بارگذاری شد، به صورت خودکار پر شود."
   },
   "experimentalFeature": {
-    "message": "Compromised or untrusted websites can exploit auto-fill on page load."
+    "message": "وب‌سایت‌های در معرض خطر یا نامعتبر می‌توانند از پر کردن خودکار در بارگذاری صفحه سوء استفاده کنند."
   },
   "learnMoreAboutAutofill": {
-    "message": "Learn more about auto-fill"
+    "message": "درباره پر کردن خودکار بیشتر بدانید"
   },
   "defaultAutoFillOnPageLoad": {
     "message": "تنظیم تکمیل خودکار پیش‌فرض برای موارد ورود به سیستم"
@@ -2049,6 +2049,30 @@
   },
   "rememberEmail": {
     "message": "ایمیل را به خاطر بسپار"
+  },
+  "loginWithDevice": {
+    "message": "ورود با دستگاه"
+  },
+  "loginWithDeviceEnabledInfo": {
+    "message": "ورود به سیستم با دستگاه باید در تنظیمات برنامه‌ی Bitwarden تنظیم شود. به گزینه دیگری نیاز دارید؟"
+  },
+  "fingerprintPhraseHeader": {
+    "message": "عبارت اثر انگشت"
+  },
+  "fingerprintMatchInfo": {
+    "message": "لطفاً مطمئن شوید که قفل گاوصندوق شما باز است و عبارت اثر انگشت با دستگاه دیگر مطابقت دارد."
+  },
+  "resendNotification": {
+    "message": "ارسال مجدد اعلان"
+  },
+  "viewAllLoginOptions": {
+    "message": "مشاهده همه گزینه‌های ورود به سیستم"
+  },
+  "notificationSentDevice": {
+    "message": "یک اعلان به دستگاه شما ارسال شده است."
+  },
+  "logInInitiated": {
+    "message": "ورود به سیستم آغاز شد"
   },
   "exposedMasterPassword": {
     "message": "کلمه عبور اصلی افشا شده"

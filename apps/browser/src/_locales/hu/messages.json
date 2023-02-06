@@ -2050,6 +2050,30 @@
   "rememberEmail": {
     "message": "Email megjegyzése"
   },
+  "loginWithDevice": {
+    "message": "Bejelentkezés eszközzel"
+  },
+  "loginWithDeviceEnabledInfo": {
+    "message": "Az eszközzel történő bejelentkezést a Biwarden mobilalkalmazás beállításaiban kell beállítani. Másik opcióra van szükség?"
+  },
+  "fingerprintPhraseHeader": {
+    "message": "Ujjlenyomat kifejezés"
+  },
+  "fingerprintMatchInfo": {
+    "message": "Ellenőrizzük, hogy a széf feloldásra került és az Ujjlenyomat kifejezés egyezik a másik eszközön levővel."
+  },
+  "resendNotification": {
+    "message": "Értesítés újraküldése"
+  },
+  "viewAllLoginOptions": {
+    "message": "Összes bejelentkezési opció megtekintése"
+  },
+  "notificationSentDevice": {
+    "message": "Egy értesítés lett elküldve az eszközre."
+  },
+  "logInInitiated": {
+    "message": "A bejelentkezés elindításra került."
+  },
   "exposedMasterPassword": {
     "message": "Kiszivárgott mesterjelszó"
   },

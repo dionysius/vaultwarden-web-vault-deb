@@ -960,7 +960,7 @@
     "message": "Als een inlogformulier wordt gedetecteerd, dan worden de inloggegevens automatisch ingevuld."
   },
   "experimentalFeature": {
-    "message": "Compromised or untrusted websites can exploit auto-fill on page load."
+    "message": "Gehackte of onbetrouwbare websites kunnen auto-invullen tijdens het laden van de pagina misbruiken."
   },
   "learnMoreAboutAutofill": {
     "message": "Lees meer over automatisch invullen"
@@ -2050,6 +2050,30 @@
   "rememberEmail": {
     "message": "E-mailadres onthouden"
   },
+  "loginWithDevice": {
+    "message": "Inloggen met apparaat"
+  },
+  "loginWithDeviceEnabledInfo": {
+    "message": "Inloggen met apparaat moet aangezet worden in de instellingen van de Bitwarden app. Nood aan een andere optie?"
+  },
+  "fingerprintPhraseHeader": {
+    "message": "Vingerafdrukzin"
+  },
+  "fingerprintMatchInfo": {
+    "message": "Zorg ervoor dat je kluis is ontgrendeld en de vingerafdrukzin hetzelfde is op het andere apparaat."
+  },
+  "resendNotification": {
+    "message": "Melding opnieuw verzenden"
+  },
+  "viewAllLoginOptions": {
+    "message": "Alle loginopties bekijken"
+  },
+  "notificationSentDevice": {
+    "message": "Er is een melding naar je apparaat verzonden."
+  },
+  "logInInitiated": {
+    "message": "Inloggen gestart"
+  },
   "exposedMasterPassword": {
     "message": "Gelekt hoofdwachtwoord"
   },
@@ -2069,7 +2093,7 @@
     "message": "Belangrijk:"
   },
   "masterPasswordHint": {
-    "message": "Je kunt je hoofdwachtwoord niet herstellen als je het vergeet!"
+    "message": "Je hoofdwachtwoord kan niet hersteld worden als je het vergeet!"
   },
   "characterMinimum": {
     "message": "$LENGTH$ tekens minimaal",

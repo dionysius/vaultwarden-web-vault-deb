@@ -2050,6 +2050,30 @@
   "rememberEmail": {
     "message": "Recorda el correu electronic"
   },
+  "loginWithDevice": {
+    "message": "Inici de sessió amb dispositiu"
+  },
+  "loginWithDeviceEnabledInfo": {
+    "message": "L'inici de sessió amb el dispositiu ha d'estar activat a la configuració de l'aplicació Bitwarden. Necessiteu una altra opció?"
+  },
+  "fingerprintPhraseHeader": {
+    "message": "Frase d'empremta digital"
+  },
+  "fingerprintMatchInfo": {
+    "message": "Assegureu-vos que la vostra caixa forta estiga desbloquejada i que la frase d'empremta digital coincidisca amb l'altre dispositiu."
+  },
+  "resendNotification": {
+    "message": "Torna a enviar la notificació"
+  },
+  "viewAllLoginOptions": {
+    "message": "Veure totes les opcions d'inici de sessió"
+  },
+  "notificationSentDevice": {
+    "message": "S'ha enviat una notificació al vostre dispositiu."
+  },
+  "logInInitiated": {
+    "message": "S'ha iniciat la sessió"
+  },
   "exposedMasterPassword": {
     "message": "Contrasenya mestra exposada"
   },

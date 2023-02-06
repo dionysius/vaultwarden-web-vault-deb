@@ -960,10 +960,10 @@
     "message": "Калі выяўлена форма ўваходу, то будзе выканана яе аўтазапаўненне падчас загрузкі вэб-старонкі."
   },
   "experimentalFeature": {
-    "message": "Compromised or untrusted websites can exploit auto-fill on page load."
+    "message": "Скампраметаваныя або ненадзейныя вэб-сайты могуць задзейнічаць функцыю аўтазапаўнення падчас загрузкі старонкі."
   },
   "learnMoreAboutAutofill": {
-    "message": "Learn more about auto-fill"
+    "message": "Даведацца больш пра аўтазапаўненне"
   },
   "defaultAutoFillOnPageLoad": {
     "message": "Прадвызначаная налада аўтазапаўнення для элементаў уваходу"
@@ -2049,6 +2049,30 @@
   },
   "rememberEmail": {
     "message": "Запомніць электронную пошту"
+  },
+  "loginWithDevice": {
+    "message": "Уваход з прыладай"
+  },
+  "loginWithDeviceEnabledInfo": {
+    "message": "Неабходна наладзіць уваход з прыладай у наладах мабільнай праграмы Bitwarden. Патрабуецца іншы варыянт?"
+  },
+  "fingerprintPhraseHeader": {
+    "message": "Фраза адбітка пальца"
+  },
+  "fingerprintMatchInfo": {
+    "message": "Пераканайцеся, што ваша сховішча разблакіравана, а фраза адбітка пальца супадае з іншай прыладай."
+  },
+  "resendNotification": {
+    "message": "Адправіць апавяшчэнне паўторна"
+  },
+  "viewAllLoginOptions": {
+    "message": "Паглядзець усе варыянты ўваходу"
+  },
+  "notificationSentDevice": {
+    "message": "Апавяшчэнне было адпраўлена на вашу прыладу."
+  },
+  "logInInitiated": {
+    "message": "Ініцыяваны ўваход"
   },
   "exposedMasterPassword": {
     "message": "Скампраметаваны асноўны пароль"

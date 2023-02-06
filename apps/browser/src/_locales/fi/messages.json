@@ -491,7 +491,7 @@
     "message": "Voit vaihtaa pääsalasanasi bitwarden.com-verkkoholvissa. Haluatko käydä sivustolla nyt?"
   },
   "twoStepLoginConfirmation": {
-    "message": "Kaksivaiheinen kirjautuminen tekee tilistäsi turvallisemman edellyttämällä salasanan lisäksi kirjautumisen lisätodennusta todennuslaitteen, ‑sovelluksen, tekstiviestin, puhelun tai sähköpostin avulla. Voit ottaa kaksivaiheisen kirjautumisen käyttöön bitwarden.com‑verkkoholvissa. Haluatko käydä sivustolla nyt?"
+    "message": "Kaksivaiheinen kirjautuminen parantaa tilisi suojausta vaatimalla kirjautumisen vahvistuksen salasanan lisäksi todennuslaitteen, ‑sovelluksen, tekstiviestin, puhelun tai sähköpostin avulla. Voit ottaa kaksivaiheisen kirjautumisen käyttöön bitwarden.com‑verkkoholvissa. Haluatko avata sen nyt?"
   },
   "editedFolder": {
     "message": "Kansio tallennettiin"
@@ -1826,7 +1826,7 @@
     "message": "Vaihda pääsalasana"
   },
   "updateMasterPasswordWarning": {
-    "message": "Organisaatiosi ylläpito on hiljattain vaihtanut pääsalasanasi. Käyttääksesi holvia, on sinun päivitettävä se nyt. Tämä uloskirjaa kaikki nykyiset istunnot pakottaen uudelleenkirjautumisen. Muiden laitteiden aktiiviset istunnot saattavat toimia vielä tunnin ajan."
+    "message": "Organisaatiosi ylläpito on hiljattain vaihtanut pääsalasanasi. Käyttääksesi holvia sinun on päivitettävä pääsalasanasi nyt. Tämä uloskirjaa kaikki nykyiset istunnot pakottaen uudelleenkirjautumisen. Muiden laitteiden aktiiviset istunnot saattavat toimia vielä tunnin ajan."
   },
   "resetPasswordPolicyAutoEnroll": {
     "message": "Automaattinen liitos"
@@ -2049,6 +2049,30 @@
   },
   "rememberEmail": {
     "message": "Muista sähköpostiosoite"
+  },
+  "loginWithDevice": {
+    "message": "Laitteella kirjautuminen"
+  },
+  "loginWithDeviceEnabledInfo": {
+    "message": "Laitteella kirjautuminen on määritettävä Bitwarden-mobiilisovelluksen asetuksista. Tarvitsetko eri vaihtoehdon?"
+  },
+  "fingerprintPhraseHeader": {
+    "message": "Tunnistelauseke"
+  },
+  "fingerprintMatchInfo": {
+    "message": "Varmista, että holvisi on avattu ja tunnistelauseke täsmää toisella laitteella."
+  },
+  "resendNotification": {
+    "message": "Lähetä ilmoitus uudelleen"
+  },
+  "viewAllLoginOptions": {
+    "message": "Näytä kaikki kirjautumisvaihtoehdot"
+  },
+  "notificationSentDevice": {
+    "message": "Laitteellesi on lähetetty ilmoitus."
+  },
+  "logInInitiated": {
+    "message": "Kirjautuminen aloitettu"
   },
   "exposedMasterPassword": {
     "message": "Paljastunut pääsalasana"
