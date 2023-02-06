@@ -161,6 +161,9 @@ export class AddEditComponent implements OnInit, OnDestroy {
   }
 
   async ngOnInit() {
+    this.writeableCollections = await this.loadCollections();
+    this.canUseReprompt = await this.passwordRepromptService.enabled();
+
     this.policyService
       .policyAppliesToActiveUser$(PolicyType.PersonalOwnership)
       .pipe(
@@ -201,10 +204,6 @@ export class AddEditComponent implements OnInit, OnDestroy {
     if (!this.allowPersonal) {
       this.organizationId = this.ownershipOptions[0].value;
     }
-
-    this.writeableCollections = await this.loadCollections();
-
-    this.canUseReprompt = await this.passwordRepromptService.enabled();
   }
 
   async load() {
