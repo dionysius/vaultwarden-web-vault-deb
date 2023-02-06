@@ -10,6 +10,7 @@ export class OrganizationUserAdminView {
   organizationId: string;
   type: OrganizationUserType;
   status: OrganizationUserStatusType;
+  externalId: string;
   accessAll: boolean;
   permissions: PermissionsApi;
   resetPasswordEnrolled: boolean;

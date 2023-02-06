@@ -26,7 +26,7 @@
               <bit-hint>{{ "inviteMultipleEmailDesc" | i18n: "20" }}</bit-hint>
             </bit-form-field>
           </ng-container>
-          <fieldset role="radiogroup" aria-labelledby="roleGroupLabel">
+          <fieldset role="radiogroup" aria-labelledby="roleGroupLabel" class="tw-mb-6">
             <legend
               id="roleGroupLabel"
               class="tw-mb-2 tw-block tw-text-base tw-font-semibold tw-text-main"
@@ -105,7 +105,7 @@
                 </div>
               </label>
             </div>
-            <div class="tw-mb-2 tw-flex tw-items-baseline">
+            <div class="tw-flex tw-items-baseline">
               <input
                 type="radio"
                 id="userTypeCustom"
@@ -134,6 +134,11 @@
               </label>
             </div>
           </fieldset>
+          <bit-form-field>
+            <bit-label>{{ "externalId" | i18n }}</bit-label>
+            <input bitInput type="text" formControlName="externalId" />
+            <bit-hint>{{ "externalIdDesc" | i18n }}</bit-hint>
+          </bit-form-field>
           <ng-container *ngIf="customUserTypeSelected">
             <h3 class="mt-4 d-flex tw-font-semibold">
               {{ "permissions" | i18n }}
