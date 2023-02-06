@@ -309,7 +309,7 @@
     "message": "Cerca membri"
   },
   "searchGroups": {
-    "message": "Search groups"
+    "message": "Cerca gruppi"
   },
   "allItems": {
     "message": "Tutti gli elementi"
@@ -1158,17 +1158,17 @@
     }
   },
   "kdfMemory": {
-    "message": "KDF memory (MB)",
+    "message": "Memoria KDF (MB)",
     "description": "Memory refers to computer memory (RAM). MB is short for megabytes."
   },
   "argon2Warning": {
-    "message": "Setting your KDF iterations, memory, and parallelism too high could result in poor performance when logging into (and unlocking) Bitwarden on slower or older devices. We recommend changing these individually in small increments and then test all of your devices."
+    "message": "Impostare le tue iterazioni KDF, la memoria e il parallelismo su livelli troppo alti potrebbe comportare scarse performance durante l'accesso (e lo sblocco) di Bitwarden su dispositivi vecchi o già lenti. Si raccomanda di modificare gradualmente queste impostazioni e fare gli opportuni test sui tutti i tuoi dispositivi."
   },
   "kdfParallelism": {
-    "message": "KDF parallelism"
+    "message": "Parallelismo KDF"
   },
   "argon2Desc": {
-    "message": "Higher KDF iterations, memory, and parallelism can help protect your master password from being brute forced by an attacker."
+    "message": "Un valore più alto di iterazioni KDF, memoria e parallelismo può aiutarti a proteggere la tua password principale da attacchi \"brute force\"."
   },
   "changeKdf": {
     "message": "Cambia KDF"
@@ -2058,7 +2058,7 @@
     "message": "Gestisci abbonamento"
   },
   "launchCloudSubscription": {
-    "message": "Launch Cloud Subscription"
+    "message": "Avvia abbonamento cloud"
   },
   "storage": {
     "message": "Spazio di archiviazione"
@@ -2513,7 +2513,7 @@
     "message": "Modifica membro"
   },
   "fieldOnTabRequiresAttention": {
-    "message": "A field on the '$TAB$' tab requires your attention.",
+    "message": "Un campo nel tab '$TAB$' richiede la tua attenzione.",
     "placeholders": {
       "tab": {
         "content": "$1",
@@ -5293,7 +5293,7 @@
     "message": "obbligatorio"
   },
   "characterMaximum": {
-    "message": "$MAX$ character maximum",
+    "message": "Massimo $MAX$ caratteri",
     "placeholders": {
       "max": {
         "content": "$1",
@@ -5587,10 +5587,10 @@
     }
   },
   "multipleInputEmails": {
-    "message": "1 or more emails are invalid"
+    "message": "Una o più email non valide"
   },
   "tooManyEmails": {
-    "message": "You can only submit up to $COUNT$ emails at a time",
+    "message": "Puoi inviare fino a $COUNT$ email alla volta",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -6105,54 +6105,54 @@
     }
   },
   "licenseAndBillingManagement": {
-    "message": "License and billing management"
+    "message": "Licenza e gestione fatturazione"
   },
   "automaticSync": {
-    "message": "Automatic sync"
+    "message": "Sincronizzazione automatica"
   },
   "manualUpload": {
-    "message": "Manual upload"
+    "message": "Caricamento manuale"
   },
   "manualUploadDesc": {
-    "message": "If you do not want to opt into billing sync, manually upload your license here."
+    "message": "Se non si desidera l'opzione di sincronizzazione della fattura, caricare manualmente la licenza."
   },
   "syncLicense": {
-    "message": "Sync license"
+    "message": "Sincronizza licenza"
   },
   "licenseSyncSuccess": {
-    "message": "Successfully synced license"
+    "message": "Licenza sincronizzata con successo"
   },
   "licenseUploadSuccess": {
-    "message": "Successfully uploaded license"
+    "message": "Licenza caricata con successo"
   },
   "lastLicenseSync": {
-    "message": "Last license sync"
+    "message": "Ultima sincronizzazione licenza"
   },
   "billingSyncHelp": {
-    "message": "Billing Sync help"
+    "message": "Aiuto per la sincronizzazione della fatturazione"
   },
   "uploadLicense": {
-    "message": "Upload license"
+    "message": "Carica licenza"
   },
   "lowKdfIterations": {
-    "message": "Low KDF Iterations"
+    "message": "Iterazioni KDF basse"
   },
   "lowKdfIterationsDesc": {
-    "message": "Increase your KDF encryption settings to improve the security of your account."
+    "message": "Aumenta le impostazioni di crittografia KDF per migliorare la sicurezza del tuo account."
   },
   "changeKdfSettings": {
-    "message": "Change KDF settings"
+    "message": "Cambia impostazioni KDF"
   },
   "changeKdfLoggedOutWarning": {
-    "message": "Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour. We recommend exporting your vault before changing your encryption settings to prevent data loss."
+    "message": "Procedendo verrai disconnesso dalla sessione corrente e dovrai effettuare di nuovo il login. Le sessioni attive su altri dispositivi possono continuare a rimanere attive per un massimo di un'ora. Si consiglia di esportare la cassaforte prima di modificare le impostazioni di crittografia, per evitare la perdita di dati."
   },
   "secretsManagerBeta": {
-    "message": "Secrets Manager Beta"
+    "message": "Gestore segreti (beta)"
   },
   "secretsManagerBetaDesc": {
-    "message": "Enable user access to the Secrets Manager at no charge during the Beta program."
+    "message": "Abilita gratuitamente l'accesso dell'utente al Gestore Segreti durante il programma beta."
   },
   "userAccessSecretsManager": {
-    "message": "This user can access the Secrets Manager Beta"
+    "message": "Questo utente può accedere alla beta del gestore segreti"
   }
 }

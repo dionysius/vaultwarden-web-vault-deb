@@ -281,35 +281,35 @@
     "message": "Пошук у абраным"
   },
   "searchLogin": {
-    "message": "Search logins",
+    "message": "Пошук даных уваходу",
     "description": "Search Login type"
   },
   "searchCard": {
-    "message": "Search cards",
+    "message": "Пошук картак",
     "description": "Search Card type"
   },
   "searchIdentity": {
-    "message": "Search identities",
+    "message": "Пошук пасведчанняў",
     "description": "Search Identity type"
   },
   "searchSecureNote": {
-    "message": "Search secure notes",
+    "message": "Пошук абароненых нататак",
     "description": "Search Secure Note type"
   },
   "searchVault": {
     "message": "Пошук у сховішчы"
   },
   "searchMyVault": {
-    "message": "Search my vault"
+    "message": "Пошук у сховішчы"
   },
   "searchOrganization": {
-    "message": "Search organization"
+    "message": "Пошук у арганізацыі"
   },
   "searchMembers": {
-    "message": "Search members"
+    "message": "Пошук удзельнікаў"
   },
   "searchGroups": {
-    "message": "Search groups"
+    "message": "Пошук груп"
   },
   "allItems": {
     "message": "Усе элементы"
@@ -393,7 +393,7 @@
     "message": "Выбраць"
   },
   "newItem": {
-    "message": "New item"
+    "message": "Новы элемент"
   },
   "addItem": {
     "message": "Дадаць элемент"
@@ -409,7 +409,7 @@
     "description": "for adding new items"
   },
   "item": {
-    "message": "Item"
+    "message": "Элемент"
   },
   "ex": {
     "message": "напр.",
@@ -477,7 +477,7 @@
     "message": "Элементы сховішча"
   },
   "filter": {
-    "message": "Filter"
+    "message": "Фільтр"
   },
   "moveSelectedToOrg": {
     "message": "Перамясціць выбранае ў арганізацыю"
@@ -586,10 +586,10 @@
     "message": "Папка выдалена"
   },
   "editInfo": {
-    "message": "Edit info"
+    "message": "Рэдагаваць інфармацыю"
   },
   "access": {
-    "message": "Access"
+    "message": "Доступ"
   },
   "loggedOut": {
     "message": "Вы выйшлі"
@@ -749,7 +749,7 @@
     "message": "У спісе адсутнічаюць элементы."
   },
   "noPermissionToViewAllCollectionItems": {
-    "message": "You do not have permission to view all items in this collection."
+    "message": "У вас няма правоў для прагляду ўсіх элементаў у гэтай калекцыі."
   },
   "noCollectionsInList": {
     "message": "У спісе адсутнічаюць калекцыі."
@@ -761,7 +761,7 @@
     "message": "У спісе адсутнічаюць карыстальнікі."
   },
   "noMembersInList": {
-    "message": "There are no members to list."
+    "message": "У спісе адсутнічаюць удзельнікі."
   },
   "noEventsInList": {
     "message": "У спісе адсутнічаюць падзеі."
@@ -908,7 +908,7 @@
     }
   },
   "deleteSelectedCollectionsDesc": {
-    "message": "$COUNT$ collection(s) will be permanently deleted.",
+    "message": "Наступная колькасць калекцый будзе незваротна выдалена: $COUNT$",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -917,7 +917,7 @@
     }
   },
   "deleteSelectedConfirmation": {
-    "message": "Are you sure you want to continue?"
+    "message": "Вы сапраўды хочаце працягнуць?"
   },
   "moveSelectedItemsDesc": {
     "message": "Выберыце папку ў якую вы хочаце перамясціць выбраныя элементы (колькасць: $COUNT$ шт.).",
@@ -1158,17 +1158,17 @@
     }
   },
   "kdfMemory": {
-    "message": "KDF memory (MB)",
+    "message": "Памяць KDF (МБ)",
     "description": "Memory refers to computer memory (RAM). MB is short for megabytes."
   },
   "argon2Warning": {
-    "message": "Setting your KDF iterations, memory, and parallelism too high could result in poor performance when logging into (and unlocking) Bitwarden on slower or older devices. We recommend changing these individually in small increments and then test all of your devices."
+    "message": "Занадта вялікае значэнне ітэрацый KDF, памяці і паралелізму можа стаць вынікам павольнай працы падчас выхаду (і разблакіроўкі) Bitwarden на бюджэтных і састарэлых прыладах. Мы рэкамендуем змяняць гэтыя параметры паасобку з невялікім крокам, а потым тэсціраваць на ўсіх вашых прыладах."
   },
   "kdfParallelism": {
-    "message": "KDF parallelism"
+    "message": "Паралелізм KDF"
   },
   "argon2Desc": {
-    "message": "Higher KDF iterations, memory, and parallelism can help protect your master password from being brute forced by an attacker."
+    "message": "Высокае значэнне ітэрацыі KDF, памяці і паралелізму дапаможа абараніць асноўны пароль ад атакі поўным пераборам."
   },
   "changeKdf": {
     "message": "Змяніць KDF"
@@ -2058,7 +2058,7 @@
     "message": "Кіраванне падпіскай"
   },
   "launchCloudSubscription": {
-    "message": "Launch Cloud Subscription"
+    "message": "Запусціць воблачную падпіску"
   },
   "storage": {
     "message": "Сховішча"
@@ -2453,7 +2453,7 @@
     "message": "Вы сапраўды хочаце выдаліць гэту групу?"
   },
   "deleteMultipleGroupsConfirmation": {
-    "message": "Are you sure you want to delete the following $QUANTITY$ group(s)?",
+    "message": "Вы сапраўды хочаце выдаліць наступную колькасць груп: $QUANTITY$?",
     "placeholders": {
       "quantity": {
         "content": "$1",
@@ -2480,7 +2480,7 @@
     "message": "Знешні ідэнтыфікатар можа быць выкарыстаны ў якасці спасылкі для сувязі гэтага рэсурсу са знешняй сістэмай, такой як каталог карыстальніка."
   },
   "nestCollectionUnder": {
-    "message": "Nest collection under"
+    "message": "Размясціць калекцыю пад"
   },
   "accessControl": {
     "message": "Кантроль доступу"
@@ -2504,16 +2504,16 @@
     "message": "Рэдагаваць калекцыю"
   },
   "collectionInfo": {
-    "message": "Collection info"
+    "message": "Інфармацыя пра калекцыю"
   },
   "deleteCollectionConfirmation": {
     "message": "Вы сапраўды хочаце выдаліць гэту калекцыю?"
   },
   "editMember": {
-    "message": "Edit member"
+    "message": "Рэдагаваць удзельніка"
   },
   "fieldOnTabRequiresAttention": {
-    "message": "A field on the '$TAB$' tab requires your attention.",
+    "message": "Поле на ўкладцы '$TAB$' патрабуе вашай увагі.",
     "placeholders": {
       "tab": {
         "content": "$1",
@@ -2540,7 +2540,7 @@
     "message": "Гэты карыстальнік можа атрымліваць доступ і змяняць усе элементы."
   },
   "userAccessSelectedCollections": {
-    "message": "Гэта карыстальнік можа мець доступ толькі да выбраных калекцый."
+    "message": "Гэты карыстальнік можа мець доступ толькі да выбраных калекцый."
   },
   "search": {
     "message": "Пошук"
@@ -2786,7 +2786,7 @@
     }
   },
   "deletedCollections": {
-    "message": "Deleted collections"
+    "message": "Выдаленыя калекцыі"
   },
   "deletedCollectionId": {
     "message": "Выдалена калекцыя $ID$.",
@@ -2834,7 +2834,7 @@
     }
   },
   "deletedManyGroups": {
-    "message": "Deleted $QUANTITY$ group(s).",
+    "message": "Выдалена груп: $QUANTITY$",
     "placeholders": {
       "quantity": {
         "content": "$1",
@@ -5293,7 +5293,7 @@
     "message": "патрабуецца"
   },
   "characterMaximum": {
-    "message": "$MAX$ character maximum",
+    "message": "Максімум $MAX$ сімвалаў",
     "placeholders": {
       "max": {
         "content": "$1",
@@ -5578,7 +5578,7 @@
     }
   },
   "inputForbiddenCharacters": {
-    "message": "The following characters are not allowed: $CHARACTERS$",
+    "message": "Наступныя сімвалы забаронены: $CHARACTERS$",
     "placeholders": {
       "characters": {
         "content": "$1",
@@ -5587,10 +5587,10 @@
     }
   },
   "multipleInputEmails": {
-    "message": "1 or more emails are invalid"
+    "message": "1 або некалькі адрасоў электроннай пошты з'яўляюцца памылковымі"
   },
   "tooManyEmails": {
-    "message": "You can only submit up to $COUNT$ emails at a time",
+    "message": "Вы можаце адправіць за раз наступную колькасць лістоў: $COUNT$",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -5961,7 +5961,7 @@
     "message": "Абнавіць"
   },
   "plusNMore": {
-    "message": "+ $QUANTITY$ more",
+    "message": "+ яшчэ $QUANTITY$",
     "placeholders": {
       "quantity": {
         "content": "$1",
@@ -5970,34 +5970,34 @@
     }
   },
   "groupInfo": {
-    "message": "Group info"
+    "message": "Інфармацыя пра групу"
   },
   "editGroupMembersDesc": {
-    "message": "Grant members access to the group's assigned collections."
+    "message": "Забяспечыць удзельнікам групы доступ да прызначаных калекцый."
   },
   "editGroupCollectionsDesc": {
-    "message": "Grant access to collections by adding them to this group."
+    "message": "Забяспечыць доступ да калекцый, дадаўшы іх у гэту групу."
   },
   "accessAllCollectionsDesc": {
-    "message": "Grant access to all current and future collections."
+    "message": "Забяспечыць доступ да ўсіх бягучых і будучых калекцый."
   },
   "accessAllCollectionsHelp": {
-    "message": "If checked, this will replace all other collection permissions."
+    "message": "Калі пазначана, то гэта заменіць усе іншыя дазволы на калекцыю."
   },
   "selectMembers": {
-    "message": "Select members"
+    "message": "Выбраць удзельнікаў"
   },
   "selectCollections": {
-    "message": "Select collections"
+    "message": "Выбраць калекцыі"
   },
   "role": {
     "message": "Роля"
   },
   "removeMember": {
-    "message": "Remove member"
+    "message": "Выдаліць удзільніка"
   },
   "collection": {
-    "message": "Collection"
+    "message": "Калекцыя"
   },
   "canView": {
     "message": "Можа праглядаць"
@@ -6012,13 +6012,13 @@
     "message": "Можа рэдагаваць (без пароляў)"
   },
   "noCollectionsAdded": {
-    "message": "No collections added"
+    "message": "Няма дадзеных калекцый"
   },
   "noMembersAdded": {
-    "message": "No members added"
+    "message": "Няма дададзеных удзельнікаў"
   },
   "noGroupsAdded": {
-    "message": "No groups added"
+    "message": "Няма дадзеных груп"
   },
   "group": {
     "message": "Група"
@@ -6030,37 +6030,37 @@
     "message": "Гэты ўдзельнік можа атрымліваць доступ і змяняць усе элементы."
   },
   "membersColumnHeader": {
-    "message": "Member/Group"
+    "message": "Удзельнік/Група"
   },
   "groupAndMemberColumnHeader": {
-    "message": "Member"
+    "message": "Удзельнік"
   },
   "selectGroupsAndMembers": {
-    "message": "Select groups and members"
+    "message": "Выбраць групы і ўдзельнікаў"
   },
   "selectGroups": {
-    "message": "Select groups"
+    "message": "Выбраць групы"
   },
   "userPermissionOverrideHelper": {
-    "message": "Permissions set for a member will replace permissions set by that member's group"
+    "message": "Дазволы прызначаныя для ўдзельніка, заменяць дазволы, якія прызначаны групай гэтага ўдзельніка"
   },
   "noMembersOrGroupsAdded": {
-    "message": "No members or groups added"
+    "message": "Няма дададзены ўдзельнікі або групы"
   },
   "deleted": {
-    "message": "Deleted"
+    "message": "Выдалена"
   },
   "memberStatusFilter": {
-    "message": "Member status filter"
+    "message": "Фільтр статусу ўдзельніка"
   },
   "inviteMember": {
-    "message": "Invite member"
+    "message": "Запрасіць удзельніка"
   },
   "needsConfirmation": {
-    "message": "Needs confirmation"
+    "message": "Патрабуецца пацвярджэнне"
   },
   "memberRole": {
-    "message": "Member role"
+    "message": "Роля ўдзельніка"
   },
   "moreFromBitwarden": {
     "message": "Больш ад Bitwarden"
@@ -6105,54 +6105,54 @@
     }
   },
   "licenseAndBillingManagement": {
-    "message": "License and billing management"
+    "message": "Кіраванне ліцэнзіямі і плацяжамі"
   },
   "automaticSync": {
-    "message": "Automatic sync"
+    "message": "Аўтаматычная сінхранізацыя"
   },
   "manualUpload": {
-    "message": "Manual upload"
+    "message": "Ручное запампоўванне"
   },
   "manualUploadDesc": {
-    "message": "If you do not want to opt into billing sync, manually upload your license here."
+    "message": "Калі вы не хочаце карыстацца плацежнай сінхранізацыяй, запампуйце сваю ліцэнзію тут."
   },
   "syncLicense": {
-    "message": "Sync license"
+    "message": "Сінхранізаваць ліцэнзію"
   },
   "licenseSyncSuccess": {
-    "message": "Successfully synced license"
+    "message": "Ліцэнзія паспяхова сінхранізавана"
   },
   "licenseUploadSuccess": {
-    "message": "Successfully uploaded license"
+    "message": "Ліцэнзія паспяхова запампавана"
   },
   "lastLicenseSync": {
-    "message": "Last license sync"
+    "message": "Апошняя сінхранізацыя ліцэнзіі"
   },
   "billingSyncHelp": {
-    "message": "Billing Sync help"
+    "message": "Дапамога з плацежнай сінхранізацыяй"
   },
   "uploadLicense": {
-    "message": "Upload license"
+    "message": "Запампаваць ліцэнзію"
   },
   "lowKdfIterations": {
-    "message": "Low KDF Iterations"
+    "message": "Нізкае значэнне ітэрацыі KDF"
   },
   "lowKdfIterationsDesc": {
-    "message": "Increase your KDF encryption settings to improve the security of your account."
+    "message": "Наладзьце ўзровень шыфравання KDF, каб удасканаліць бяспеку вашага ўліковага запісу."
   },
   "changeKdfSettings": {
-    "message": "Change KDF settings"
+    "message": "Змяніце налады KDF"
   },
   "changeKdfLoggedOutWarning": {
-    "message": "Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour. We recommend exporting your vault before changing your encryption settings to prevent data loss."
+    "message": "Працягваючы, вы выйдзіце з бягучага сеанса і вам неабходна будзе ўвайсці паўторна. Сеансы на іншых прыладах могуць заставацца актыўнымі на працягу адной гадзіны. Мы рэкамендуем экспартаваць ваша сховішча перад тым, як змяняць налады шыфравання, каб пазбегнуць страты даных."
   },
   "secretsManagerBeta": {
-    "message": "Secrets Manager Beta"
+    "message": "Менеджар сакрэтаў (бэта-версія)"
   },
   "secretsManagerBetaDesc": {
-    "message": "Enable user access to the Secrets Manager at no charge during the Beta program."
+    "message": "Дазвольце карыстальнікам доступ да Менеджара сакрэтаў падчас праграмы бэта-тэсціравання."
   },
   "userAccessSecretsManager": {
-    "message": "This user can access the Secrets Manager Beta"
+    "message": "Гэты карыстальнік можа атрымаць доступ да Менеджара сакрэтаў у рэжыме бэта-тэсціравання"
   }
 }

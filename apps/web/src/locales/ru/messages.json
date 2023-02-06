@@ -134,7 +134,7 @@
     "message": "Проф."
   },
   "mx": {
-    "message": "Mx"
+    "message": "Микстер"
   },
   "dr": {
     "message": "Тов."
@@ -3555,7 +3555,7 @@
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "fingerprintMatchInfo": {
-    "message": "Убедитесь, что ваше хранилище разблокировано, а фраза отпечатка соответствует другому устройству."
+    "message": "Убедитесь, что ваше хранилище разблокировано и фраза отпечатка пальца совпадает на другом устройстве."
   },
   "fingerprintPhraseHeader": {
     "message": "Фраза отпечатка"

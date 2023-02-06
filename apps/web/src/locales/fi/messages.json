@@ -619,7 +619,7 @@
     "message": "Laitteella kirjautuminen"
   },
   "loginWithDeviceEnabledInfo": {
-    "message": "Laitteella kirjautuminen on määritettävä Bitwardenin mobiilisovelluksen asetuksista. Tarvitsetko toisen vaihtoehdon?"
+    "message": "Laitteella kirjautuminen on määritettävä Bitwarden-mobiilisovelluksen asetuksista. Tarvitsetko eri vaihtoehdon?"
   },
   "loginWithMasterPassword": {
     "message": "Kirjaudu pääsalasanalla"
@@ -1104,7 +1104,7 @@
     }
   },
   "loggedOutWarning": {
-    "message": "Jatkamalla kirjaudut ulos nykyisestä istunnostasi ja joudut kirjautumaan uudelleen. Aktiiviset istunnot toisilla laitteilla saattavat pysyä aktiivisina vielä tunnin ajan."
+    "message": "Jatkamalla kirjaudut ulos nykyisestä istunnostasi ja joudut kirjautumaan uudelleen. Muiden laitteiden istunnot saattavat pysyä aktiivisina vielä tunnin ajan."
   },
   "emailChanged": {
     "message": "Sähköpostiosoite tallennettiin"
@@ -4785,7 +4785,7 @@
     "message": "Päivitä pääsalasana"
   },
   "updateMasterPasswordWarning": {
-    "message": "Organisaatiosi ylläpito on hiljattain vaihtanut pääsalasanasi. Käyttääksesi holvia, sinun on vaihdettava se nyt. Tämä uloskirjaa kaikki nykyiset istunnot pakottaen uudelleenkirjautumisen. Muiden laitteiden aktiiviset istunnot saattavat toimia vielä tunnin ajan."
+    "message": "Organisaatiosi ylläpito on hiljattain vaihtanut pääsalasanasi. Käyttääksesi holvia sinun on päivitettävä pääsalasanasi nyt. Tämä uloskirjaa kaikki nykyiset istunnot pakottaen uudelleenkirjautumisen. Muiden laitteiden aktiiviset istunnot saattavat toimia vielä tunnin ajan."
   },
   "masterPasswordInvalidWarning": {
     "message": "Pääsalasanasi ei vastaa organisaatiokäytäntöä. Liittyäksesi organisaatioon, on sinun päivitettävä se nyt. Tämä uloskirjaa kaikki nykyiset istunnot pakottaen uudelleenkirjautumisen. Muiden laitteiden aktiiviset istunnot saattavat toimia vielä tunnin ajan."

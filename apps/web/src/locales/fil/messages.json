@@ -71,13 +71,13 @@
     "message": "Kumpanya"
   },
   "ssn": {
-    "message": "Social Security number"
+    "message": "Numero ng Seguridad Sosyal"
   },
   "passportNumber": {
     "message": "Numero ng Pasaporte"
   },
   "licenseNumber": {
-    "message": "License number"
+    "message": "Numero ng Lisensya"
   },
   "email": {
     "message": "Email"
@@ -194,7 +194,7 @@
     "description": "Domain name. Example: website.com"
   },
   "domainName": {
-    "message": "Domain name",
+    "message": "Pangalan ng domain",
     "description": "Domain name. Example: website.com"
   },
   "host": {
@@ -208,11 +208,11 @@
     "message": "Naguumpisa sa"
   },
   "regEx": {
-    "message": "Regular expression",
+    "message": "Regular Expression - Regular na Pagpapahayag",
     "description": "A programming term, also known as 'RegEx'."
   },
   "matchDetection": {
-    "message": "Match detection",
+    "message": "Match Detection - Pagtuklas ng Pares",
     "description": "URI match detection for auto-fill."
   },
   "defaultMatchDetection": {
@@ -324,13 +324,13 @@
     "message": "Login"
   },
   "typeCard": {
-    "message": "Card"
+    "message": "Karta"
   },
   "typeIdentity": {
-    "message": "Identity"
+    "message": "Pagkakakilanlan"
   },
   "typeSecureNote": {
-    "message": "Secure note"
+    "message": "Secure na tala"
   },
   "typeLoginPlural": {
     "message": "Mga Login"
@@ -516,10 +516,10 @@
     "message": "Pumili ng File"
   },
   "maxFileSize": {
-    "message": "Maximum file size is 500 MB."
+    "message": "Maximum na laki ng file ay 500 MB."
   },
   "updateKey": {
-    "message": "You cannot use this feature until you update your encryption key."
+    "message": "Hindi mo maari gamitin ang tampok na ito hanggang hindi mo iupdate ang iyong encryption key."
   },
   "addedItem": {
     "message": "Ang item ay idinagdag"
@@ -601,7 +601,7 @@
     "message": "Sigurado ka bang gusto mong mag-log out?"
   },
   "logOut": {
-    "message": "Log out"
+    "message": "Mag-Log Out"
   },
   "ok": {
     "message": "Ok"
@@ -770,7 +770,7 @@
     "message": "Bagong organisasyon"
   },
   "noOrganizationsList": {
-    "message": "You do not belong to any organizations. Organizations allow you to securely share items with other users."
+    "message": "Hindi ka kabilang sa anumang mga organisasyon. Pinapayagan ka ng mga organisasyon na ligtas na magbahagi ng mga item sa iba pang mga gumagamit."
   },
   "notificationSentDevice": {
     "message": "Naipadala na ang notification sa iyong device."
@@ -846,7 +846,7 @@
     "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
   },
   "yubiKeyTitle": {
-    "message": "YubiKey OTP security key"
+    "message": "YubiKey OTP susi ng seguridad"
   },
   "yubiKeyDesc": {
     "message": "Gamitin ang YubiKey upang ma-access ang iyong account. Gumagana sa mga YubiKey 4, 4 Nano, 4C, at NEO devices."
@@ -1070,7 +1070,7 @@
     "message": "Isama ang numero"
   },
   "passwordHistory": {
-    "message": "Password history"
+    "message": "Kasaysayan ng Password"
   },
   "noPasswordsInList": {
     "message": "Walang mga password na i-list."
@@ -3470,15 +3470,15 @@
     "message": "Sa browser refresh"
   },
   "dateUpdated": {
-    "message": "Updated",
+    "message": "Na-update",
     "description": "ex. Date this item was updated"
   },
   "dateCreated": {
-    "message": "Created",
+    "message": "Nilikha",
     "description": "ex. Date this item was created"
   },
   "datePasswordUpdated": {
-    "message": "Password updated",
+    "message": "Na-update ang passwor",
     "description": "ex. Date this password was updated"
   },
   "organizationIsDisabled": {
@@ -3693,7 +3693,7 @@
     "message": "Kagustuhan ng gumagamit"
   },
   "vaultTimeoutAction": {
-    "message": "Vault timeout action"
+    "message": "Aksyon sa Vault timeout"
   },
   "vaultTimeoutActionLockDesc": {
     "message": "Kailangan ang master password o iba pang paraan ng pag unlock upang ma access muli ang iyong vault."
@@ -3706,11 +3706,11 @@
     "description": "Verb form: to make secure or inaccesible by"
   },
   "trash": {
-    "message": "Trash",
+    "message": "Basurahan",
     "description": "Noun: A special folder for holding deleted items that have not yet been permanently deleted"
   },
   "searchTrash": {
-    "message": "Search trash"
+    "message": "Maghanap ng basurahan"
   },
   "permanentlyDelete": {
     "message": "Permanenteng tanggalin"
@@ -3719,13 +3719,13 @@
     "message": "Permanenteng tanggalin ang napili"
   },
   "permanentlyDeleteItem": {
-    "message": "Permanently delete item"
+    "message": "Permanenteng tanggalin ang item"
   },
   "permanentlyDeleteItemConfirmation": {
-    "message": "Are you sure you want to permanently delete this item?"
+    "message": "Sigurado ka bang gusto mong tuluyang tanggalin ang item na ito?"
   },
   "permanentlyDeletedItem": {
-    "message": "Item permanently deleted"
+    "message": "Item permanenteng tinanggal"
   },
   "permanentlyDeletedItems": {
     "message": "Tuluyang tinanggal ang mga item"
@@ -3755,7 +3755,7 @@
     "message": "Ibalik muli ang napiling"
   },
   "restoreItem": {
-    "message": "Restore item"
+    "message": "Ibalik ang item"
   },
   "restoredItem": {
     "message": "Item na nai-restore"
@@ -4546,7 +4546,7 @@
     "message": "Ang mga miyembro sa samahan ay kailangang mag self enroll o awtomatikong magpatala bago mai reset ng mga administrator ang kanilang master password."
   },
   "resetPasswordPolicyAutoEnroll": {
-    "message": "Automatic enrollment"
+    "message": "Awtomatikong pagpapatala"
   },
   "resetPasswordPolicyAutoEnrollDescription": {
     "message": "Lahat ng miyembro ay awtomatikong ipapatala sa password reset kapag tinanggap na ang kanilang imbitasyon at hindi na papayagang mag withdraw."
@@ -4651,7 +4651,7 @@
     "message": "Ibalik muli ang mga gumagamit"
   },
   "error": {
-    "message": "Error"
+    "message": "Mali"
   },
   "resetPasswordManageUsers": {
     "message": "Pamahalaan ang mga gumagamit ay dapat ding ipagkaloob sa pamahalaan ang pahintulot sa pag reset ng password"
@@ -4779,13 +4779,13 @@
     "message": "Magdagdag"
   },
   "updatedMasterPassword": {
-    "message": "Master password saved"
+    "message": "Master password na save"
   },
   "updateMasterPassword": {
-    "message": "Update master password"
+    "message": "I-update ang master password"
   },
   "updateMasterPasswordWarning": {
-    "message": "Your master password was recently changed by an administrator in your organization. In order to access the vault, you must update your master password now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
+    "message": "Ang iyong master password ay kamakailan lamang na binago ng isang administrator sa iyong organisasyon. Upang makapunta sa vault, kailangan mong i-update ito ngayon. Ang pagpapatuloy ay maglilipat ka sa iyong kasalukuyang sesyon, na nangangailangan sa iyo na mag-log in muli. Ang mga aktibong sesyon sa iba pang mga device ay maaaring magpatuloy na aktibo hanggang sa isang oras."
   },
   "masterPasswordInvalidWarning": {
     "message": "Ang iyong master password ay hindi nakakatugon sa mga kinakailangan sa patakaran ng organisasyong ito. Upang sumali sa samahan, kailangan mong i update ang iyong master password ngayon. Ang proceeding ay mag-log out sa iyong kasalukuyang session, na nangangailangan na mag-log in muli. Ang mga aktibong sesyon sa iba pang mga aparato ay maaaring patuloy na manatiling aktibo hanggang sa isang oras."
@@ -5378,26 +5378,26 @@
     "message": "Uri ng Password"
   },
   "regenerateUsername": {
-    "message": "Regenerate username"
+    "message": "Muling bumuo ng username"
   },
   "generateUsername": {
-    "message": "Generate username"
+    "message": "Lumikha ng username"
   },
   "usernameType": {
-    "message": "Username type"
+    "message": "Uri ng username"
   },
   "plusAddressedEmail": {
     "message": "Plus addressed email",
     "description": "Username generator option that appends a random sub-address to the username. For example: address+subaddress@email.com"
   },
   "plusAddressedEmailDesc": {
-    "message": "Use your email provider's sub-addressing capabilities."
+    "message": "Gamitin ang mga kakayahan ng sub address ng iyong email provider."
   },
   "catchallEmail": {
     "message": "Catch-all email"
   },
   "catchallEmailDesc": {
-    "message": "Use your domain's configured catch-all inbox."
+    "message": "Gamitin ang naka configure na inbox ng catch all ng iyong domain."
   },
   "random": {
     "message": "Random",
@@ -5466,7 +5466,7 @@
     "message": "Ipinasa ang alias ng email"
   },
   "forwardedEmailDesc": {
-    "message": "Generate an email alias with an external forwarding service."
+    "message": "Bumuo ng isang email alias na may isang panlabas na serbisyo sa pagpapasa."
   },
   "hostname": {
     "message": "Pangalan ng Hostname",
