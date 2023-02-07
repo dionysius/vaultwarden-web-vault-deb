@@ -59,7 +59,7 @@ export class RegisterComponent extends CaptchaProtectedComponent implements OnIn
           ),
         ],
       ],
-      checkForBreaches: [false],
+      checkForBreaches: [true],
       acceptPolicies: [false, [this.acceptPoliciesValidation()]],
     },
     {
