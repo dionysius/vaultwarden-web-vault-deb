@@ -61,7 +61,7 @@
         <div class="tw-flex tw-items-center" *ngSwitchCase="itemType.Member">
           <bit-avatar size="small" class="tw-mr-3" text="{{ item.labelName }}"></bit-avatar>
           <div class="tw-flex tw-flex-col">
-            <div class="tw-text-sm">
+            <div>
               {{ item.labelName }}
               <span *ngIf="$any(item).status == 0" bitBadge badgeType="secondary">
                 {{ "invited" | i18n }}
@@ -73,7 +73,7 @@
           </div>
         </div>
 
-        <div class="tw-flex tw-items-center tw-text-sm" *ngSwitchDefault>
+        <div class="tw-flex tw-items-center" *ngSwitchDefault>
           <i
             class="bwi tw-mr-3 tw-px-0.5 tw-text-2xl"
             [ngClass]="item.icon || itemIcon(item)"
