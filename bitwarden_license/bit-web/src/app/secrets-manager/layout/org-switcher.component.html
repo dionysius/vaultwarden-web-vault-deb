@@ -28,6 +28,7 @@
     </bit-nav-item>
   </ng-container>
   <bit-nav-item
+    *ngIf="!hideNewButton"
     icon="bwi-plus"
     [text]="'newOrganization' | i18n"
     route="/create-organization"
