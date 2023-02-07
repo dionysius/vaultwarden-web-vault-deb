@@ -33,7 +33,8 @@ export class DialogService extends Dialog implements OnDestroy {
     "tw-bg-black",
     "tw-bg-opacity-30",
     "tw-inset-0",
-    "tw-z-40",
+    // CDK dialog panels have a default z-index of 1000. Matching this allows us to easily stack dialogs.
+    "tw-z-[1000]",
   ];
 
   constructor(

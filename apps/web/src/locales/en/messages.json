@@ -5674,6 +5674,9 @@
   "selectPlaceholder": {
     "message": "-- Select --"
   },
+  "selectPlaceholder": {
+    "message": "-- Select --"
+  },
   "multiSelectPlaceholder": {
     "message": "-- Type to filter --"
   },
@@ -5724,11 +5727,8 @@
   "secretProjectAssociationDescription" :{
     "message": "Select projects that the secret will be associated with. Only organization users with access to these projects will be able to see the secret."
   },
-  "typeOrSelectProjects" :{
-    "message": "Type or select Projects"
-  },
-  "typeOrSelectProject" :{
-    "message": "Type or select Project"
+  "selectProjects": {
+    "message": "Select projects"
   },
   "project":{
     "message": "Project"

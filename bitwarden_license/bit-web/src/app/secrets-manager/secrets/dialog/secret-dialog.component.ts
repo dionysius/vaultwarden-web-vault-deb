@@ -1,16 +1,19 @@
 import { DialogRef, DIALOG_DATA } from "@angular/cdk/dialog";
 import { Component, Inject, OnInit } from "@angular/core";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
-import { Subject, takeUntil } from "rxjs";
+import { lastValueFrom, Subject, takeUntil } from "rxjs";
 
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
+import { DialogService } from "@bitwarden/components";
 
 import { ProjectListView } from "../../models/view/project-list.view";
 import { SecretProjectView } from "../../models/view/secret-project.view";
 import { SecretView } from "../../models/view/secret.view";
 import { ProjectService } from "../../projects/project.service";
 import { SecretService } from "../secret.service";
+
+import { SecretDeleteDialogComponent, SecretDeleteOperation } from "./secret-delete.component";
 
 export enum OperationType {
   Add,
@@ -47,11 +50,14 @@ export class SecretDialogComponent implements OnInit {
     private secretService: SecretService,
     private i18nService: I18nService,
     private platformUtilsService: PlatformUtilsService,
-    private projectService: ProjectService
+    private projectService: ProjectService,
+    private dialogService: DialogService
   ) {}
 
   async ngOnInit() {
-    this.projects = await this.projectService.getProjects(this.data.organizationId);
+    this.projects = await this.projectService
+      .getProjects(this.data.organizationId)
+      .then((projects) => projects.sort((a, b) => a.name.localeCompare(b.name)));
 
     if (this.data.operation === OperationType.Edit && this.data.secretId) {
       await this.loadData();
@@ -134,6 +140,26 @@ export class SecretDialogComponent implements OnInit {
     }
     this.dialogRef.close();
   };
+
+  get deleteButtonIsVisible(): boolean {
+    return this.data.operation === OperationType.Edit;
+  }
+
+  protected openDeleteSecretDialog() {
+    const dialogRef = this.dialogService.open<unknown, SecretDeleteOperation>(
+      SecretDeleteDialogComponent,
+      {
+        data: {
+          secretIds: [this.data.secretId],
+        },
+      }
+    );
+
+    // If the secret is deleted, chain close this dialog after the delete dialog
+    lastValueFrom(dialogRef.closed).then(
+      (closeData) => closeData !== undefined && this.dialogRef.close()
+    );
+  }
 
   private async createSecret(secretView: SecretView) {
     await this.secretService.create(this.data.organizationId, secretView);

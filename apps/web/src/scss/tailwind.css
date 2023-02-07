@@ -3,3 +3,11 @@
 @tailwind utilities;
 
 @import "../../../../libs/components/src/tw-theme.css";
+
+/** 
+ * tw-break-words does not work with table cells:
+ * https://github.com/tailwindlabs/tailwindcss/issues/835
+ */
+td.tw-break-words {
+  overflow-wrap: anywhere;
+}
