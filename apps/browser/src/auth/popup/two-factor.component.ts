@@ -68,8 +68,8 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
       return syncService.fullSync(true);
     };
     super.successRoute = "/tabs/vault";
-    this.webAuthnNewTab =
-      this.platformUtilsService.isFirefox() || this.platformUtilsService.isSafari();
+    // FIXME: Chromium 110 has broken WebAuthn support in extensions via an iframe
+    this.webAuthnNewTab = true;
   }
 
   async ngOnInit() {
