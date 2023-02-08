@@ -24,9 +24,7 @@ import { StateFactory } from "@bitwarden/common/factories/stateFactory";
 import { MemoryStorageService } from "@bitwarden/common/services/memoryStorage.service";
 import { PasswordRepromptService as PasswordRepromptServiceAbstraction } from "@bitwarden/common/vault/abstractions/password-reprompt.service";
 
-// TODO refine elsint rule for **/app/core/*
-// eslint-disable-next-line no-restricted-imports
-import { PasswordRepromptService } from "../../vault/app/core/password-reprompt.service";
+import { PasswordRepromptService } from "../../vault/core/password-reprompt.service";
 
 import { BroadcasterMessagingService } from "./broadcaster-messaging.service";
 import { EventService } from "./event.service";

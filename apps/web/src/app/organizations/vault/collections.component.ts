@@ -11,11 +11,11 @@ import { CipherData } from "@bitwarden/common/vault/models/data/cipher.data";
 import { Cipher } from "@bitwarden/common/vault/models/domain/cipher";
 import { CipherCollectionsRequest } from "@bitwarden/common/vault/models/request/cipher-collections.request";
 
-import { CollectionsComponent as BaseCollectionsComponent } from "../../../vault/app/vault/collections.component";
+import { CollectionsComponent as BaseCollectionsComponent } from "../../../vault/individual-vault/collections.component";
 
 @Component({
   selector: "app-org-vault-collections",
-  templateUrl: "../../../vault/app/vault/collections.component.html",
+  templateUrl: "../../../vault/individual-vault/collections.component.html",
 })
 export class CollectionsComponent extends BaseCollectionsComponent {
   organization: Organization;

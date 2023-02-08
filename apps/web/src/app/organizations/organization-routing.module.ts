@@ -12,13 +12,14 @@ import {
 } from "@bitwarden/common/abstractions/organization/organization.service.abstraction";
 import { Organization } from "@bitwarden/common/models/domain/organization";
 
+import { VaultModule } from "../../vault/org-vault/vault.module";
+
 import { OrganizationPermissionsGuard } from "./guards/org-permissions.guard";
 import { OrganizationRedirectGuard } from "./guards/org-redirect.guard";
 import { OrganizationLayoutComponent } from "./layouts/organization-layout.component";
 import { CollectionsComponent } from "./manage/collections.component";
 import { GroupsComponent } from "./manage/groups.component";
 import { ManageComponent } from "./manage/manage.component";
-import { VaultModule } from "./vault/vault.module";
 
 const routes: Routes = [
   {
