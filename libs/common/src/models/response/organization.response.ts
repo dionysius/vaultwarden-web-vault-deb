@@ -5,7 +5,6 @@ import { PlanResponse } from "./plan.response";
 
 export class OrganizationResponse extends BaseResponse {
   id: string;
-  identifier: string;
   name: string;
   businessName: string;
   businessAddress1: string;
@@ -32,7 +31,6 @@ export class OrganizationResponse extends BaseResponse {
   constructor(response: any) {
     super(response);
     this.id = this.getResponseProperty("Id");
-    this.identifier = this.getResponseProperty("Identifier");
     this.name = this.getResponseProperty("Name");
     this.businessName = this.getResponseProperty("BusinessName");
     this.businessAddress1 = this.getResponseProperty("BusinessAddress1");

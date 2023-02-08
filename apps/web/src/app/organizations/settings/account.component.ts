@@ -77,7 +77,6 @@ export class AccountComponent {
       request.name = this.org.name;
       request.businessName = this.org.businessName;
       request.billingEmail = this.org.billingEmail;
-      request.identifier = this.org.identifier;
 
       // Backfill pub/priv key if necessary
       if (!this.org.hasPublicAndPrivateKeys) {
