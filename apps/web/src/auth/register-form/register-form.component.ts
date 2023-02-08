@@ -63,6 +63,8 @@ export class RegisterFormComponent extends BaseRegisterComponent {
   }
 
   async ngOnInit() {
+    // TODO: Remove once breach checks are added for web
+    this.formGroup.patchValue({ checkForBreaches: false });
     await super.ngOnInit();
     this.referenceData = this.referenceDataValue;
 
