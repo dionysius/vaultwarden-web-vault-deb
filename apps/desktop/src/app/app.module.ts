@@ -11,6 +11,7 @@ import { ColorPasswordPipe } from "@bitwarden/angular/pipes/color-password.pipe"
 import { AccessibilityCookieComponent } from "../auth/accessibility-cookie.component";
 import { DeleteAccountComponent } from "../auth/delete-account.component";
 import { EnvironmentComponent } from "../auth/environment.component";
+import { HintComponent } from "../auth/hint.component";
 import { LockComponent } from "../auth/lock.component";
 import { LoginApprovalComponent } from "../auth/login/login-approval.component";
 import { LoginModule } from "../auth/login/login.module";
@@ -35,7 +36,6 @@ import { VaultComponent } from "../vault/app/vault/vault.component";
 import { ViewCustomFieldsComponent } from "../vault/app/vault/view-custom-fields.component";
 import { ViewComponent } from "../vault/app/vault/view.component";
 
-import { HintComponent } from "./accounts/hint.component";
 import { SettingsComponent } from "./accounts/settings.component";
 import { VaultTimeoutInputComponent } from "./accounts/vault-timeout-input.component";
 import { AppRoutingModule } from "./app-routing.module";

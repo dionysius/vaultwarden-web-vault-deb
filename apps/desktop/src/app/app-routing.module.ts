@@ -6,6 +6,7 @@ import { LockGuard } from "@bitwarden/angular/auth/guards/lock.guard";
 
 import { AccessibilityCookieComponent } from "../auth/accessibility-cookie.component";
 import { LoginGuard } from "../auth/guards/login.guard";
+import { HintComponent } from "../auth/hint.component";
 import { LockComponent } from "../auth/lock.component";
 import { LoginWithDeviceComponent } from "../auth/login/login-with-device.component";
 import { LoginComponent } from "../auth/login/login.component";
@@ -17,7 +18,6 @@ import { TwoFactorComponent } from "../auth/two-factor.component";
 import { UpdateTempPasswordComponent } from "../auth/update-temp-password.component";
 import { VaultComponent } from "../vault/app/vault/vault.component";
 
-import { HintComponent } from "./accounts/hint.component";
 import { SendComponent } from "./send/send.component";
 
 const routes: Routes = [
