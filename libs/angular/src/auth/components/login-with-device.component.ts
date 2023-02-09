@@ -67,7 +67,7 @@ export class LoginWithDeviceComponent
 
     const navigation = this.router.getCurrentNavigation();
     if (navigation) {
-      this.email = navigation.extras?.state?.email;
+      this.email = this.loginService.getEmail();
     }
 
     //gets signalR push notification
