@@ -218,26 +218,35 @@ export class VaultComponent implements OnInit, OnDestroy {
   }
 
   async addCipher() {
-    const component = await this.editCipher(null);
-    component.organizationId = this.organization.id;
-    component.type = this.activeFilter.cipherType;
-    component.collections = (
-      await firstValueFrom(this.vaultFilterService.filteredCollections$)
-    ).filter((c) => !c.readOnly && c.id != null);
-    if (this.activeFilter.collectionId) {
-      component.collectionIds = [this.activeFilter.collectionId];
-    }
+    const collections = (await firstValueFrom(this.vaultFilterService.filteredCollections$)).filter(
+      (c) => !c.readOnly && c.id != null
+    );
+
+    await this.editCipher(null, (comp) => {
+      comp.organizationId = this.organization.id;
+      comp.type = this.activeFilter.cipherType;
+      comp.collections = collections;
+      if (this.activeFilter.collectionId) {
+        comp.collectionIds = [this.activeFilter.collectionId];
+      }
+    });
   }
 
   async navigateToCipher(cipher: CipherView) {
     this.go({ itemId: cipher?.id });
   }
 
-  async editCipher(cipher: CipherView) {
-    return this.editCipherId(cipher?.id);
+  async editCipher(
+    cipher: CipherView,
+    additionalComponentParameters?: (comp: AddEditComponent) => void
+  ) {
+    return this.editCipherId(cipher?.id, additionalComponentParameters);
   }
 
-  async editCipherId(cipherId: string) {
+  async editCipherId(
+    cipherId: string,
+    additionalComponentParameters?: (comp: AddEditComponent) => void
+  ) {
     const cipher = await this.cipherService.get(cipherId);
     if (cipher != null && cipher.reprompt != 0) {
       if (!(await this.passwordRepromptService.showPasswordPrompt())) {
@@ -246,28 +255,35 @@ export class VaultComponent implements OnInit, OnDestroy {
       }
     }
 
+    const defaultComponentParameters = (comp: AddEditComponent) => {
+      comp.organization = this.organization;
+      comp.cipherId = cipherId;
+      // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
+      comp.onSavedCipher.subscribe(async () => {
+        modal.close();
+        await this.vaultItemsComponent.refresh();
+      });
+      // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
+      comp.onDeletedCipher.subscribe(async () => {
+        modal.close();
+        await this.vaultItemsComponent.refresh();
+      });
+      // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
+      comp.onRestoredCipher.subscribe(async () => {
+        modal.close();
+        await this.vaultItemsComponent.refresh();
+      });
+    };
+
     const [modal, childComponent] = await this.modalService.openViewRef(
       AddEditComponent,
       this.cipherAddEditModalRef,
-      (comp) => {
-        comp.organization = this.organization;
-        comp.cipherId = cipherId;
-        // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
-        comp.onSavedCipher.subscribe(async () => {
-          modal.close();
-          await this.vaultItemsComponent.refresh();
-        });
-        // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
-        comp.onDeletedCipher.subscribe(async () => {
-          modal.close();
-          await this.vaultItemsComponent.refresh();
-        });
-        // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
-        comp.onRestoredCipher.subscribe(async () => {
-          modal.close();
-          await this.vaultItemsComponent.refresh();
-        });
-      }
+      additionalComponentParameters == null
+        ? defaultComponentParameters
+        : (comp) => {
+            defaultComponentParameters(comp);
+            additionalComponentParameters(comp);
+          }
     );
 
     modal.onClosedPromise().then(() => {
@@ -278,13 +294,16 @@ export class VaultComponent implements OnInit, OnDestroy {
   }
 
   async cloneCipher(cipher: CipherView) {
-    const component = await this.editCipher(cipher);
-    component.cloneMode = true;
-    component.organizationId = this.organization.id;
-    component.collections = (
-      await firstValueFrom(this.vaultFilterService.filteredCollections$)
-    ).filter((c) => !c.readOnly && c.id != null);
-    component.collectionIds = cipher.collectionIds;
+    const collections = (await firstValueFrom(this.vaultFilterService.filteredCollections$)).filter(
+      (c) => !c.readOnly && c.id != null
+    );
+
+    await this.editCipher(cipher, (comp) => {
+      comp.cloneMode = true;
+      comp.collections = collections;
+      comp.organizationId = this.organization.id;
+      comp.collectionIds = cipher.collectionIds;
+    });
   }
 
   async viewEvents(cipher: CipherView) {
