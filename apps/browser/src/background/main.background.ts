@@ -573,7 +573,11 @@ export default class MainBackground {
     this.avatarUpdateService = new AvatarUpdateService(this.apiService, this.stateService);
 
     if (!this.popupOnlyContext) {
-      this.mainContextMenuHandler = new MainContextMenuHandler(this.stateService, this.i18nService);
+      this.mainContextMenuHandler = new MainContextMenuHandler(
+        this.stateService,
+        this.i18nService,
+        this.logService
+      );
 
       this.cipherContextMenuHandler = new CipherContextMenuHandler(
         this.mainContextMenuHandler,
