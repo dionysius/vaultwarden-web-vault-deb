@@ -1,4 +1,5 @@
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
+import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { StateFactory } from "@bitwarden/common/factories/stateFactory";
 import { Utils } from "@bitwarden/common/misc/utils";
 import { GlobalState } from "@bitwarden/common/models/domain/global-state";
@@ -10,6 +11,10 @@ import {
   i18nServiceFactory,
   I18nServiceInitOptions,
 } from "../../background/service_factories/i18n-service.factory";
+import {
+  logServiceFactory,
+  LogServiceInitOptions,
+} from "../../background/service_factories/log-service.factory";
 import {
   stateServiceFactory,
   StateServiceInitOptions,
@@ -36,7 +41,11 @@ export class MainContextMenuHandler {
 
   create: (options: chrome.contextMenus.CreateProperties) => Promise<void>;
 
-  constructor(private stateService: BrowserStateService, private i18nService: I18nService) {
+  constructor(
+    private stateService: BrowserStateService,
+    private i18nService: I18nService,
+    private logService: LogService
+  ) {
     if (chrome.contextMenus) {
       this.create = (options) => {
         return new Promise<void>((resolve, reject) => {
@@ -56,30 +65,32 @@ export class MainContextMenuHandler {
 
   static async mv3Create(cachedServices: CachedServices) {
     const stateFactory = new StateFactory(GlobalState, Account);
-    const serviceOptions: StateServiceInitOptions & I18nServiceInitOptions = {
-      cryptoFunctionServiceOptions: {
-        win: self,
-      },
-      encryptServiceOptions: {
-        logMacFailures: false,
-      },
-      i18nServiceOptions: {
-        systemLanguage: chrome.i18n.getUILanguage(),
-      },
-      logServiceOptions: {
-        isDev: false,
-      },
-      stateMigrationServiceOptions: {
-        stateFactory: stateFactory,
-      },
-      stateServiceOptions: {
-        stateFactory: stateFactory,
-      },
-    };
+    const serviceOptions: StateServiceInitOptions & I18nServiceInitOptions & LogServiceInitOptions =
+      {
+        cryptoFunctionServiceOptions: {
+          win: self,
+        },
+        encryptServiceOptions: {
+          logMacFailures: false,
+        },
+        i18nServiceOptions: {
+          systemLanguage: chrome.i18n.getUILanguage(),
+        },
+        logServiceOptions: {
+          isDev: false,
+        },
+        stateMigrationServiceOptions: {
+          stateFactory: stateFactory,
+        },
+        stateServiceOptions: {
+          stateFactory: stateFactory,
+        },
+      };
 
     return new MainContextMenuHandler(
       await stateServiceFactory(cachedServices, serviceOptions),
-      await i18nServiceFactory(cachedServices, serviceOptions)
+      await i18nServiceFactory(cachedServices, serviceOptions),
+      await logServiceFactory(cachedServices, serviceOptions)
     );
   }
 
@@ -89,17 +100,17 @@ export class MainContextMenuHandler {
    */
   async init(): Promise<boolean> {
     const menuDisabled = await this.stateService.getDisableContextMenuItem();
-
-    if (this.initRunning) {
-      return menuDisabled;
+    if (menuDisabled) {
+      await MainContextMenuHandler.removeAll();
+      return false;
     }
 
-    try {
-      if (menuDisabled) {
-        await MainContextMenuHandler.removeAll();
-        return false;
-      }
+    if (this.initRunning) {
+      return true;
+    }
+    this.initRunning = true;
 
+    try {
       const create = async (options: Omit<chrome.contextMenus.CreateProperties, "contexts">) => {
         await this.create({ ...options, contexts: ["all"] });
       };
@@ -152,11 +163,12 @@ export class MainContextMenuHandler {
         parentId: ROOT_ID,
         title: this.i18nService.t("copyElementIdentifier"),
       });
-
-      return true;
+    } catch (error) {
+      this.logService.warning(error.message);
     } finally {
       this.initRunning = false;
     }
+    return true;
   }
 
   static async removeAll() {
@@ -190,33 +202,37 @@ export class MainContextMenuHandler {
       return;
     }
 
-    const sanitizedTitle = MainContextMenuHandler.sanitizeContextMenuTitle(title);
+    try {
+      const sanitizedTitle = MainContextMenuHandler.sanitizeContextMenuTitle(title);
 
-    const createChildItem = async (parent: string) => {
-      const menuItemId = `${parent}_${id}`;
-      return await this.create({
-        type: "normal",
-        id: menuItemId,
-        parentId: parent,
-        title: sanitizedTitle,
-        contexts: ["all"],
-      });
-    };
+      const createChildItem = async (parent: string) => {
+        const menuItemId = `${parent}_${id}`;
+        return await this.create({
+          type: "normal",
+          id: menuItemId,
+          parentId: parent,
+          title: sanitizedTitle,
+          contexts: ["all"],
+        });
+      };
 
-    if (cipher == null || !Utils.isNullOrEmpty(cipher.login.password)) {
-      await createChildItem(AUTOFILL_ID);
-      if (cipher?.viewPassword ?? true) {
-        await createChildItem(COPY_PASSWORD_ID);
+      if (cipher == null || !Utils.isNullOrEmpty(cipher.login.password)) {
+        await createChildItem(AUTOFILL_ID);
+        if (cipher?.viewPassword ?? true) {
+          await createChildItem(COPY_PASSWORD_ID);
+        }
       }
-    }
 
-    if (cipher == null || !Utils.isNullOrEmpty(cipher.login.username)) {
-      await createChildItem(COPY_USERNAME_ID);
-    }
+      if (cipher == null || !Utils.isNullOrEmpty(cipher.login.username)) {
+        await createChildItem(COPY_USERNAME_ID);
+      }
 
-    const canAccessPremium = await this.stateService.getCanAccessPremium();
-    if (canAccessPremium && (cipher == null || !Utils.isNullOrEmpty(cipher.login.totp))) {
-      await createChildItem(COPY_VERIFICATIONCODE_ID);
+      const canAccessPremium = await this.stateService.getCanAccessPremium();
+      if (canAccessPremium && (cipher == null || !Utils.isNullOrEmpty(cipher.login.totp))) {
+        await createChildItem(COPY_VERIFICATIONCODE_ID);
+      }
+    } catch (error) {
+      this.logService.warning(error.message);
     }
   }
 
