@@ -76,9 +76,9 @@ export class SortableComponent implements OnInit {
 
   get icon() {
     if (!this.isActive) {
-      return "bwi-chevron-up tw-opacity-0 group-hover:tw-opacity-100 group-focus-visible:tw-opacity-100";
+      return "bwi-up-down-btn";
     }
-    return this.direction === "asc" ? "bwi-chevron-up" : "bwi-angle-down";
+    return this.direction === "asc" ? "bwi-up-solid" : "bwi-down-solid";
   }
 
   get classList() {
