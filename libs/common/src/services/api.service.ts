@@ -1991,7 +1991,9 @@ export class ApiService implements ApiServiceAbstraction {
     apiUrl = Utils.isNullOrWhitespace(apiUrl) ? this.environmentService.getApiUrl() : apiUrl;
 
     // Prevent directory traversal from malicious paths
-    const requestUrl = apiUrl + Utils.normalizePath(path);
+    const pathParts = path.split("?");
+    const requestUrl =
+      apiUrl + Utils.normalizePath(pathParts[0]) + (pathParts.length > 1 ? `?${pathParts[1]}` : "");
 
     const headers = new Headers({
       "Device-Type": this.deviceType,
