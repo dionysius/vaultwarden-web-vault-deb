@@ -56,7 +56,12 @@
       function getPageDetails(theDoc, oneShotId) {
           // start helpers
 
-          // get the value of a dom element's attribute
+          /**
+           * For a given element `el`, returns the value of the attribute `attrName`.
+           * @param {HTMLElement} el 
+           * @param {string} attrName 
+           * @returns {string} The value of the attribute
+           */
           function getElementAttrValue(el, attrName) {
               var attrVal = el[attrName];
               if ('string' == typeof attrVal) {
@@ -89,7 +94,11 @@
               return elType !== el.type;
           }
 
-          // get the value of a dom element
+          /**
+           * Returns the value of the given element.
+           * @param {HTMLElement} el 
+           * @returns {any} Value of the element
+           */
           function getElementValue(el) {
               switch (toLowerString(el.type)) {
                   case 'checkbox':
@@ -113,7 +122,11 @@
               }
           }
 
-          // get all the options for a "select" element
+          /**
+           * If `el` is a `<select>` element, return an array of all of the options' `text` properties.
+           * @param {HTMLElement} el 
+           * @returns {string[]} An array of options for the given `<select>` element
+           */
           function getSelectElementOptions(el) {
               if (!el.options) {
                   return null;
@@ -132,34 +145,51 @@
               };
           }
 
-          // get the top label
+          /**
+           * If `el` is in a data table, get the label in the row directly above it
+           * @param {HTMLElement} el 
+           * @returns {string} A string containing the label, or null if not found
+           */
           function getLabelTop(el) {
               var parent;
+
+              // Traverse up the DOM until we reach either the top or the table data element containing our field
               for (el = el.parentElement || el.parentNode; el && 'td' != toLowerString(el.tagName);) {
                   el = el.parentElement || el.parentNode;
               }
 
+              // If we reached the top, return null
               if (!el || void 0 === el) {
                   return null;
               }
 
+              // Establish the parent of the table and make sure it's a table row
               parent = el.parentElement || el.parentNode;
               if ('tr' != parent.tagName.toLowerCase()) {
                   return null;
               }
 
+              // Get the previous sibling of the table row and make sure it's a table row
               parent = parent.previousElementSibling;
               if (!parent || 'tr' != (parent.tagName + '').toLowerCase() ||
                   parent.cells && el.cellIndex >= parent.cells.length) {
                   return null;
               }
 
+              // Parent is established as the row above the table data element containing our field
+              // Now let's traverse over to the cell in the same column as our field
               el = parent.cells[el.cellIndex];
+
+              // Get the contents of this label
               var elText = el.textContent || el.innerText;
               return elText = cleanText(elText);
           }
 
-          // get all the tags for a given label
+          /**
+           * Get the contents of the elements that are labels for `el`
+           * @param {HTMLElement} el 
+           * @returns {string} A string containing all of the `innerText` or `textContent` values for all elements that are labels for `el`
+           */
           function getLabelTag(el) {
               var docLabel,
                   theLabels = [];
@@ -207,7 +237,13 @@
               }).join('');
           }
 
-          // add property and value to the object if there is a value
+          /**
+           * Add property `prop` with value `val` to the object `obj`
+           * @param {object} obj 
+           * @param {string} prop 
+           * @param {any} val 
+           * @param {*} d 
+           */
           function addProp(obj, prop, val, d) {
               if (0 !== d && d === val || null === val || void 0 === val) {
                   return;
@@ -216,12 +252,21 @@
               obj[prop] = val;
           }
 
-          // lowercase helper
+          /**
+           * Converts the string `s` to lowercase
+           * @param {string} s 
+           * @returns Lowercase string
+           */
           function toLowerString(s) {
               return 'string' === typeof s ? s.toLowerCase() : ('' + s).toLowerCase();
           }
 
-          // query the document helper
+          /**
+           * Query the document `doc` for elements matching the selector `selector`
+           * @param {Document} doc 
+           * @param {string} query 
+           * @returns {HTMLElement[]} An array of elements matching the selector
+           */
           function queryDoc(doc, query) {
               var els = [];
               try {
@@ -405,6 +450,12 @@
 
       document.elementForOPID = getElementForOPID;
 
+      /**
+       * Do the event on the element.
+       * @param {HTMLElement} kedol The element to do the event on
+       * @param {string} fonor The event name 
+       * @returns 
+       */
       function doEventOnElement(kedol, fonor) {
           var quebo;
           isFirefox ? (quebo = document.createEvent('KeyboardEvent'), quebo.initKeyEvent(fonor, true, false, null, false, false, false, false, 0, 0)) : (quebo = kedol.ownerDocument.createEvent('Events'),
@@ -413,20 +464,35 @@
           return quebo;
       }
 
-      // clean up the text
+      /**
+       * Clean up the string `s` to remove non-printable characters and whitespace.
+       * @param {string} s 
+       * @returns {string} Clean text
+       */
       function cleanText(s) {
           var sVal = null;
           s && (sVal = s.replace(/^\\s+|\\s+$|\\r?\\n.*$/gm, ''), sVal = 0 < sVal.length ? sVal : null);
           return sVal;
       }
 
-      // check the node type and adjust the array accordingly
+      /**
+       * If `el` is a text node, add the node's text to `arr`.
+       * If `el` is an element node, add the element's `textContent or `innerText` to `arr`.
+       * @param {string[]} arr An array of `textContent` or `innerText` values 
+       * @param {HTMLElement} el The element to push to the array
+       */
       function checkNodeType(arr, el) {
           var theText = '';
           3 === el.nodeType ? theText = el.nodeValue : 1 === el.nodeType && (theText = el.textContent || el.innerText);
           (theText = cleanText(theText)) && arr.push(theText);
       }
 
+      /**
+       * Check if `el` is a type that indicates the transition to a new section of the page.
+       * If so, this indicates that we should not use `el` or its children for getting autofill context for the previous element.
+       * @param {HTMLElement} el The element to check
+       * @returns {boolean} Returns `true` if `el` is an HTML element from a known set and `false` otherwise
+       */
       function isKnownTag(el) {
           if (el && void 0 !== el) {
               var tags = 'select option input form textarea button table iframe body head script'.split(' ');
@@ -444,6 +510,12 @@
           }
       }
 
+      /**
+       * Recursively gather all of the text values from the elements preceding `el` in the DOM
+       * @param {HTMLElement} el 
+       * @param {string[]} arr An array of `textContent` or `innerText` values
+       * @param {number} steps The number of steps to take up the DOM tree 
+       */
       function shiftForLeftLabel(el, arr, steps) {
           var sib;
           for (steps || (steps = 0); el && el.previousSibling;) {
@@ -470,37 +542,51 @@
           }
       }
 
-      // is a dom element visible on screen?
+      /**
+       * Determine if the element is visible.
+       * Visible is define as not having `display: none` or `visibility: hidden`.
+       * @param {HTMLElement} el 
+       * @returns {boolean} Returns `true` if the element is visible and `false` otherwise
+       */
       function isElementVisible(el) {
           var theEl = el;
+          // Get the top level document
           el = (el = el.ownerDocument) ? el.defaultView : {};
 
-          // walk the dom tree
+          // walk the dom tree until we reach the top
           for (var elStyle; theEl && theEl !== document;) {
+              // Calculate the style of the element
               elStyle = el.getComputedStyle ? el.getComputedStyle(theEl, null) : theEl.style;
+              // If there's no computed style at all, we're done, as we know that it's not hidden
               if (!elStyle) {
                   return true;
               }
 
+              // If the element's computed style includes `display: none` or `visibility: hidden`, we know it's hidden
               if ('none' === elStyle.display || 'hidden' == elStyle.visibility) {
                   return false;
               }
 
-              // walk up
+              // At this point, we aren't sure if the element is hidden or not, so we need to keep walking up the tree
               theEl = theEl.parentNode;
           }
 
           return theEl === document;
       }
 
-      // is a dom element "viewable" on screen?
+      /**
+       * Determine if the element is "viewable" on the screen.
+       * "Viewable" is defined as being visible in the DOM and being within the confines of the viewport.
+       * @param {HTMLElement} el 
+       * @returns {boolean} Returns `true` if the element is viewable and `false` otherwise
+       */
       function isElementViewable(el) {
           var theDoc = el.ownerDocument.documentElement,
-              rect = el.getBoundingClientRect(),
-              docScrollWidth = theDoc.scrollWidth,
-              docScrollHeight = theDoc.scrollHeight,
-              leftOffset = rect.left - theDoc.clientLeft,
-              topOffset = rect.top - theDoc.clientTop,
+              rect = el.getBoundingClientRect(), // getBoundingClientRect is relative to the viewport
+              docScrollWidth = theDoc.scrollWidth, // scrollWidth is the width of the document including any overflow
+              docScrollHeight = theDoc.scrollHeight, // scrollHeight is the height of the document including any overflow
+              leftOffset = rect.left - theDoc.clientLeft, // How far from the left of the viewport is the element, minus the left border width?
+              topOffset = rect.top - theDoc.clientTop, // How far from the top of the viewport is the element, minus the top border width?
               theRect;
 
           if (!isElementVisible(el) || !el.offsetParent || 10 > el.clientWidth || 10 > el.clientHeight) {
@@ -512,30 +598,49 @@
               return false;
           }
 
+          // If any of the rects have a left side that is further right than the document width or a right side that is
+          // further left than the origin (i.e. is negative), we consider the element to be not viewable
           for (var i = 0; i < rects.length; i++) {
               if (theRect = rects[i], theRect.left > docScrollWidth || 0 > theRect.right) {
                   return false;
               }
           }
 
+          // If the element is further left than the document width, or further down than the document height, we know that it's not viewable
           if (0 > leftOffset || leftOffset > docScrollWidth || 0 > topOffset || topOffset > docScrollHeight) {
               return false;
           }
 
-          // walk the tree
+          // Our next check is going to get the center point of the element, and then use elementFromPoint to see if the element
+          // is actually returned from that point. If it is, we know that it's viewable. If it isn't, we know that it's not viewable.
+          // If the right side of the bounding rectangle is outside the viewport, the x coordinate of the center point is the window width (minus offset) divided by 2.
+          // If the right side of the bounding rectangle is inside the viewport, the x coordinate of the center point is the width of the bounding rectangle divided by 2.
+          // If the bottom of the bounding rectangle is outside the viewport, the y coordinate of the center point is the window height (minus offset) divided by 2.
+          // If the bottom side of the bounding rectangle is inside the viewport, the y coordinate of the center point is the height of the bounding rectangle divided by 
+          // We then use elementFromPoint to find the element at that point.
           for (var pointEl = el.ownerDocument.elementFromPoint(leftOffset + (rect.right > window.innerWidth ? (window.innerWidth - leftOffset) / 2 : rect.width / 2), topOffset + (rect.bottom > window.innerHeight ? (window.innerHeight - topOffset) / 2 : rect.height / 2)); pointEl && pointEl !== el && pointEl !== document;) {
-              if (pointEl.tagName && 'string' === typeof pointEl.tagName && 'label' === pointEl.tagName.toLowerCase()
-                  && el.labels && 0 < el.labels.length) {
-                  return 0 <= Array.prototype.slice.call(el.labels).indexOf(pointEl);
-              }
+             // If the element we found is a label, and the element we're checking has labels
+             if (pointEl.tagName && 'string' === typeof pointEl.tagName && 'label' === pointEl.tagName.toLowerCase()
+                && el.labels && 0 < el.labels.length) {
+                // Return true if the element we found is one of the labels for the element we're checking.
+                // This means that the element we're looking for is considered viewable
+                return 0 <= Array.prototype.slice.call(el.labels).indexOf(pointEl);
+            }
 
-              // walk up
-              pointEl = pointEl.parentNode;
+            // Walk up the DOM tree to check the parent element
+            pointEl = pointEl.parentNode;
           }
 
+          // If the for loop exited because we found the element we're looking for, return true, as it's viewable
+          // If the element that we found isn't the element we're looking for, it means the element we're looking for is not viewable
           return pointEl === el;
       }
 
+      /**
+       * Retrieve the element from the document with the specified `opid` property
+       * @param {number} opId 
+       * @returns {HTMLElement} The element with the specified `opiId`, or `null` if no such element exists
+       */
       function getElementForOPID(opId) {
           var theEl;
           if (void 0 === opId || null === opId) {
@@ -561,7 +666,12 @@
           }
       }
 
-      // get all the form elements that we care about
+      /**
+       * Query `theDoc` for form elements that we can use for autofill, ranked by importance and limited by `limit`
+       * @param {Document} theDoc The Document to query
+       * @param {number} limit The maximum number of elements to return
+       * @returns An array of HTMLElements
+       */
       function getFormElements(theDoc, limit) {
           // START MODIFICATION
           var els = [];
@@ -603,7 +713,11 @@
           // END MODIFICATION
       }
 
-      // focus the element and optionally restore its original value
+      /**
+       * Focus the element `el` and optionally restore its original value
+       * @param {HTMLElement} el 
+       * @param {boolean} setVal Set the value of the element to its original value
+       */
       function focusElement(el, setVal) {
           if (setVal) {
               var initialValue = el.value;
@@ -755,7 +869,12 @@
           return el ? (fillTheElement(el, op), [el]) : null;
       }
 
-      // do a fill by query operation
+      /**
+       * Find all elements matching `query` and fill them using the value `op` from the fill script
+       * @param {string} query 
+       * @param {string} op 
+       * @returns {HTMLElement}
+       */
       function doFillByQuery(query, op) {
           var elements = selectAllFromDoc(query);
           return Array.prototype.map.call(Array.prototype.slice.call(elements), function (el) {
@@ -764,7 +883,12 @@
           }, this);
       }
 
-      // do a simple set value by query
+      /**
+       * Assign `valueToSet` to all elements in the DOM that match `query`.
+       * @param {string} query 
+       * @param {string} valueToSet 
+       * @returns {Array} Array of elements that were set.
+       */
       function doSimpleSetByQuery(query, valueToSet) {
           var elements = selectAllFromDoc(query),
               arr = [];
@@ -774,7 +898,11 @@
           return arr;
       }
 
-      // focus by opid
+      /**
+       * Do a a click and focus on the element with the given `opId`.
+       * @param {number} opId 
+       * @returns 
+       */
       function doFocusByOpId(opId) {
           var el = getElementByOpId(opId)
           if (el) {
@@ -785,13 +913,21 @@
           return null;
       }
 
-      // do a click by opid operation
+      /**
+       * Do a click on the element with the given `opId`.
+       * @param {number} opId 
+       * @returns 
+       */
       function doClickByOpId(opId) {
           var el = getElementByOpId(opId);
           return el ? clickElement(el) ? [el] : null : null;
       }
 
-      // do a click by query operation
+      /**
+       * Do a `click` and `focus` on all elements that match the query. 
+       * @param {string} query 
+       * @returns 
+       */
       function doClickByQuery(query) {
           query = selectAllFromDoc(query);
           return Array.prototype.map.call(Array.prototype.slice.call(query), function (el) {
@@ -811,7 +947,11 @@
       },
           styleTimeout = 200;
 
-      // fill an element
+      /**
+       * Fll an element `el` using the value `op` from the fill script
+       * @param {HTMLElement} el 
+       * @param {string} op 
+       */
       function fillTheElement(el, op) {
           var shouldCheck;
           if (el && null !== op && void 0 !== op && !(el.disabled || el.a || el.readOnly)) {
@@ -840,7 +980,11 @@
           }
       }
 
-      // do all the full operations needed
+      /**
+       * Do all the fill operations needed on the element `el`.
+       * @param {HTMLElement} el 
+       * @param {*} afterValSetFunc The function to perform after the operations are complete.
+       */
       function doAllFillOperations(el, afterValSetFunc) {
           setValueForElement(el);
           afterValSetFunc(el);
@@ -860,7 +1004,12 @@
 
       document.elementForOPID = getElementByOpId;
 
-      // normalize the event based on API support
+      /**
+       * Normalize the event based on API support
+       * @param {HTMLElement} el 
+       * @param {string} eventName 
+       * @returns {Event} A normalized event
+       */
       function normalizeEvent(el, eventName) {
           var ev;
           if ('KeyboardEvent' in window) {
@@ -882,7 +1031,11 @@
           return ev;
       }
 
-      // set value of the given element
+      /**
+       * Simulate the entry of a value into an element.
+       * Clicks the element, focuses it, and then fires a keydown, keypress, and keyup event.
+       * @param {HTMLElement} el 
+       */
       function setValueForElement(el) {
           var valueToSet = el.value;
           clickElement(el);
@@ -893,7 +1046,11 @@
           el.value !== valueToSet && (el.value = valueToSet);
       }
 
-      // set value of the given element by using events
+      /**
+       * Simulate the entry of a value into an element by using events.
+       * Dispatches a keydown, keypress, and keyup event, then fires the `input` and `change` events before removing focus.
+       * @param {HTMLElement} el 
+       */
       function setValueForElementByEvent(el) {
           var valueToSet = el.value,
               ev1 = el.ownerDocument.createEvent('HTMLEvents'),
@@ -910,7 +1067,11 @@
           el.value !== valueToSet && (el.value = valueToSet);
       }
 
-      // click on an element
+      /**
+       * Click on an element `el`
+       * @param {HTMLElement} el 
+       * @returns {boolean} Returns true if the element was clicked and false if it was not able to be clicked
+       */
       function clickElement(el) {
           if (!el || el && 'function' !== typeof el.click) {
               return false;
@@ -919,7 +1080,10 @@
           return true;
       }
 
-      // get all fields we care about
+      /**
+       * Get all the elements on the DOM that are likely to be a password field
+       * @returns {Array} Array of elements
+       */
       function getAllFields() {
           var r = RegExp('((\\\\b|_|-)pin(\\\\b|_|-)|password|passwort|kennwort|passe|contraseña|senha|密码|adgangskode|hasło|wachtwoord)', 'i');
           return Array.prototype.slice.call(selectAllFromDoc("input[type='text']")).filter(function (el) {
@@ -927,7 +1091,9 @@
           }, this);
       }
 
-      // touch all the fields
+      /**
+       * Touch all the fields
+       */
       function touchAllFields() {
           getAllFields().forEach(function (el) {
               setValueForElement(el);
@@ -936,7 +1102,11 @@
           });
       }
 
-      // can we see the element to apply some styling?
+      /**
+       * Determine if we can apply styling to `el` to indicate that it was filled.
+       * @param {HTMLElement} el 
+       * @returns {boolean} Returns true if we can see the element to apply styling.
+       */
       function canSeeElementToStyle(el) {
           var currentEl;
           if (currentEl = animateTheFilling) {
@@ -965,7 +1135,11 @@
           return currentEl ? -1 !== 'email text password number tel url'.split(' ').indexOf(el.type || '') : false;
       }
 
-      // find the element for this operation
+      /**
+       * Find the element for the given `opid`.
+       * @param {number} theOpId 
+       * @returns {HTMLElement} The element for the given `opid`, or `null` if not found.
+       */
       function getElementByOpId(theOpId) {
           var theElement;
           if (void 0 === theOpId || null === theOpId) {
@@ -993,7 +1167,11 @@
           }
       }
 
-      // helper for doc.querySelectorAll
+      /**
+       * Helper for doc.querySelectorAll
+       * @param {string} theSelector 
+       * @returns 
+       */
       function selectAllFromDoc(theSelector) {
           var d = document, elements = [];
           try {
@@ -1002,7 +1180,11 @@
           return elements;
       }
 
-      // focus an element and optionally re-set its value after focusing
+      /**
+       * Focus an element and optionally re-set its value after focusing
+       * @param {HTMLElement} el 
+       * @param {boolean} setValue Re-set the value after focusing
+       */
       function doFocusElement(el, setValue) {
           if (setValue) {
               var existingValue = el.value;
