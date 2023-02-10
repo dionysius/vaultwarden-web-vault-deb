@@ -970,7 +970,7 @@
     "message": "Idioma"
   },
   "languageDesc": {
-    "message": "Canvia l'idioma que utilitza l'aplicació. Es requereix un reinici."
+    "message": "Canvia l'idioma que utilitza l'aplicació. Cal realitzar un reinici."
   },
   "theme": {
     "message": "Tema"
@@ -2062,35 +2062,35 @@
     "message": "Inicia sessió amb un altre dispositiu"
   },
   "logInInitiated": {
-    "message": "Log in initiated"
+    "message": "S'ha iniciat la sessió"
   },
   "notificationSentDevice": {
-    "message": "A notification has been sent to your device."
+    "message": "S'ha enviat una notificació al vostre dispositiu."
   },
   "fingerprintMatchInfo": {
-    "message": "Please make sure your vault is unlocked and Fingerprint phrase matches the other device."
+    "message": "Assegureu-vos que la vostra caixa forta estiga desbloquejada i que la frase d'empremta digital coincidisca amb l'altre dispositiu."
   },
   "fingerprintPhraseHeader": {
-    "message": "Fingerprint phrase"
+    "message": "Frase d'empremta digital"
   },
   "needAnotherOption": {
-    "message": "Log in with device must be set up in the settings of the Bitwarden app. Need another option?"
+    "message": "L'inici de sessió amb el dispositiu ha d'estar activat a la configuració de l'aplicació Bitwarden. Necessiteu una altra opció?"
   },
   "viewAllLoginOptions": {
-    "message": "View all login options"
+    "message": "Veure totes les opcions d'inici de sessió"
   },
   "resendNotification": {
-    "message": "Resend notification"
+    "message": "Torna a enviar la notificació"
   },
   "toggleCharacterCount": {
     "message": "Commuta el recompte de caràcters",
     "description": "'Character count' describes a feature that displays a number next to each character of the password."
   },
   "areYouTryingtoLogin": {
-    "message": "Are you trying to log in?"
+    "message": "Esteu intentant iniciar sessió?"
   },
   "logInAttemptBy": {
-    "message": "Login attempt by $EMAIL$",
+    "message": "Intent d'inici de sessió per $EMAIL$",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -2099,25 +2099,25 @@
     }
   },
   "deviceType": {
-    "message": "Device Type"
+    "message": "Tipus de dispositiu"
   },
   "ipAddress": {
-    "message": "IP Address"
+    "message": "Adreça IP"
   },
   "time": {
-    "message": "Time"
+    "message": "Hora"
   },
   "confirmLogIn": {
-    "message": "Confirm login"
+    "message": "Confirma l'inici de sessió"
   },
   "denyLogIn": {
-    "message": "Deny login"
+    "message": "Denega l'inici de sessió"
   },
   "approveLoginRequests": {
-    "message": "Approve login requests"
+    "message": "Aprova les sol·licituds d'inici de sessió"
   },
   "logInConfirmedForEmailOnDevice": {
-    "message": "Login confirmed for $EMAIL$ on $DEVICE$",
+    "message": "S'ha confirmat l'inici de sessió per a $EMAIL$ a $DEVICE$",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -2130,13 +2130,13 @@
     }
   },
   "youDeniedALogInAttemptFromAnotherDevice": {
-    "message": "You denied a login attempt from another device. If this really was you, try to log in with the device again."
+    "message": "Heu denegat un intent d'inici de sessió des d'un altre dispositiu. Si realment heu sigut vosaltres, intenteu tornar a iniciar sessió amb el dispositiu."
   },
   "justNow": {
-    "message": "Just now"
+    "message": "Ara mateix"
   },
   "requestedXMinutesAgo": {
-    "message": "Requested $MINUTES$ minutes ago",
+    "message": "S'ha sol·licitat fa $MINUTES$ minuts",
     "placeholders": {
       "minutes": {
         "content": "$1",
@@ -2145,16 +2145,16 @@
     }
   },
   "loginRequestHasAlreadyExpired": {
-    "message": "Login request has already expired."
+    "message": "La sol·licitud d'inici de sessió ja ha caducat."
   },
   "thisRequestIsNoLongerValid": {
-    "message": "This request is no longer valid."
+    "message": "Aquesta sol·licitud ja no és vàlida."
   },
   "approveLoginRequestDesc": {
-    "message": "Use this device to approve login requests made from other devices."
+    "message": "Utilitzeu aquest dispositiu per aprovar les sol·licituds d'inici de sessió fetes des d'altres dispositius."
   },
   "confirmLoginAtemptForMail": {
-    "message": "Confirm login attempt for $EMAIL$",
+    "message": "Confirmeu l'intent d'inici de sessió per a $EMAIL$",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -2163,7 +2163,7 @@
     }
   },
   "logInRequested": {
-    "message": "Log in requested"
+    "message": "S'ha sol·licitat inici de sessió"
   },
   "exposedMasterPassword": {
     "message": "Contrasenya mestra exposada"

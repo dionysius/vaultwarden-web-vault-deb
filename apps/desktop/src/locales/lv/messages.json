@@ -491,7 +491,7 @@
     "message": "Mape izdzēsta"
   },
   "loginOrCreateNewAccount": {
-    "message": "Jāpiesakās vai jāizveido jauns konts, lai piekļūdu drošajai glabātavai."
+    "message": "Jāpiesakās vai jāizveido jauns konts, lai piekļūtu drošajai glabātavai."
   },
   "createAccount": {
     "message": "Izveidot kontu"
@@ -548,7 +548,7 @@
     "message": "Galvenās paroles apstiprinājums nesakrīt."
   },
   "newAccountCreated": {
-    "message": "Tavs jaunais konts ir izveidots. Tagad Tu vari pierakstīties."
+    "message": "Jaunais konts ir izveidots. Tagad vari pieteikties."
   },
   "masterPassSent": {
     "message": "Mēs nosūtījām galvenās paroles norādi e-pastā."
@@ -614,7 +614,7 @@
     "message": "Sūtīt apstiprinājuma koda e-pastu vēlreiz"
   },
   "useAnotherTwoStepMethod": {
-    "message": "Izmantot citu divpakāpju pierakstīšanās veidu"
+    "message": "Izmantot citu divpakāpju pieteikšanās veidu"
   },
   "insertYubiKey": {
     "message": "Ievieto savu YubiKey datora USB ligzdā un pieskaries tā pogai!"
@@ -665,13 +665,13 @@
     "message": "Pieteikšanās nav pieejama"
   },
   "noTwoStepProviders": {
-    "message": "Šim kontam ir iespējota divpakāpju pierakstīšanās, bet šajā ierīcē netiek atbalstīts neviens no uzstādītajiem divpakāpju pārbaudes nodrošinātājiem."
+    "message": "Šim kontam ir iespējota divpakāpju pieteikšanās, bet šajā ierīcē netiek atbalstīts neviens no uzstādītajiem divpakāpju pārbaudes nodrošinātājiem."
   },
   "noTwoStepProviders2": {
     "message": "Lūgums pievienot papildus nodrošinātājus, kas tiek labāk atbalstīti dažādās ierīcēs (piemēram, autentificētāja lietotne)."
   },
   "twoStepOptions": {
-    "message": "Divpakāpju pierakstīšanās iespējas"
+    "message": "Divpakāpju pieteikšanās iespējas"
   },
   "selfHostedEnvironment": {
     "message": "Pašuzturēta vide"
@@ -725,19 +725,19 @@
     "message": "Iespēja nav pieejama"
   },
   "loggedOut": {
-    "message": "Izrakstījies"
+    "message": "Atteicies"
   },
   "loginExpired": {
     "message": "Pieteikšanās sesija ir beigusies."
   },
   "logOutConfirmation": {
-    "message": "Vai tiešām izrakstīties?"
+    "message": "Vai tiešām atteikties?"
   },
   "logOut": {
-    "message": "Izrakstīties"
+    "message": "Atteikties"
   },
   "addNewLogin": {
-    "message": "Pievienot jaunu pierakstīšanās vienumu"
+    "message": "Jauns pieteikšanās vienums"
   },
   "addNewItem": {
     "message": "Pievienot jaunu vienumu"
@@ -789,7 +789,7 @@
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "yourAccountsFingerprint": {
-    "message": "Jūsu konta pirkstu nospieduma frāze",
+    "message": "Konta atpazīšanas vārdkopa",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "goToWebVault": {
@@ -814,7 +814,7 @@
     "message": "Atslēgt"
   },
   "loggedInAsOn": {
-    "message": "Pierakstījies $HOSTNAME$ kā $EMAIL$.",
+    "message": "Pieteicies $HOSTNAME$ kā $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -833,7 +833,7 @@
     "message": "Divpakāpju pieteikšanās padara kontu krietni drošāku, pieprasot apstiprināt pieteikšanos ar tādu citu ierīču vai pakalpojumu starpniecību kā drošības atslēga, autentificētāja lietotne, īsziņa, tālruņa zvans vai e-pasts. Divpakāpju pieteikšanos var iespējot bitwarden.com tīmekļa glabātavā. Vai apmeklēt tīmekļa vietni?"
   },
   "twoStepLogin": {
-    "message": "Divpakāpju pierakstīšanās"
+    "message": "Divpakāpju pieteikšanās"
   },
   "vaultTimeout": {
     "message": "Glabātavas noildze"
@@ -904,13 +904,13 @@
     "message": "Rādīt vietņu ikonas"
   },
   "faviconDesc": {
-    "message": "Attēlot atpazīstamu attēlu pie katra pierakstīšanās vienuma."
+    "message": "Attēlot atpazīstamu attēlu pie katra pieteikšanās vienuma."
   },
   "enableMinToTray": {
-    "message": "Samazināt ikonu joslā"
+    "message": "Samazināt ikonjoslā"
   },
   "enableMinToTrayDesc": {
-    "message": "Tā vietā, lai samazinātu logu, parādīt ikonu sistēmas joslā."
+    "message": "Tā vietā, lai samazinātu logu, parādīt ikonu sistēmas ikonjoslā."
   },
   "enableMinToMenuBar": {
     "message": "Samazināt izvēļņjoslā"
@@ -919,10 +919,10 @@
     "message": "Tā vietā, lai samazinātu logu, parādīt ikonu izvēļņjoslā."
   },
   "enableCloseToTray": {
-    "message": "Aizverot pārvietot uz ikonu joslu"
+    "message": "Aizverot pārvietot uz ikonjoslu"
   },
   "enableCloseToTrayDesc": {
-    "message": "Tā vietā, lai aizvērtu logu, parādīt ikonu sistēmas joslā."
+    "message": "Tā vietā, lai aizvērtu logu, parādīt ikonu sistēmas ikonjoslā."
   },
   "enableCloseToMenuBar": {
     "message": "Aizvērt izvēļņjoslā"
@@ -934,13 +934,13 @@
     "message": "Iespējot parādīšanu ikonjoslā"
   },
   "enableTrayDesc": {
-    "message": "Vienmēr rādīt ikonu sistēmas joslā."
+    "message": "Vienmēr rādīt ikonu sistēmas ikonjoslā."
   },
   "startToTray": {
-    "message": "Sāknēt samazinātu ikonu joslā"
+    "message": "Sāknēt samazinātu ikonjoslā"
   },
   "startToTrayDesc": {
-    "message": "Kad lietotne tiek sāknēta, rādīt tikai ikonu sistēmas ikonu joslā."
+    "message": "Kad lietotne tiek sāknēta, rādīt tikai ikonu sistēmas ikonjoslā."
   },
   "startToMenuBar": {
     "message": "Sāknēt samazinātu izvēļņjoslā"
@@ -949,10 +949,10 @@
     "message": "Kad lietotne tiek sāknēta, attēlot tikai ikonu izvēļņjoslā."
   },
   "openAtLogin": {
-    "message": "Automātiski sāknēt pēc pierakstīšanās"
+    "message": "Automātiski sāknēt pēc pieteikšanās"
   },
   "openAtLoginDesc": {
-    "message": "Automātiski sāknēt Bitwarden darbvirsmas lietotni pēc pierakstīšanās."
+    "message": "Automātiski sāknēt Bitwarden darbvirsmas lietotni pēc pieteikšanās."
   },
   "alwaysShowDock": {
     "message": "Vienmēr rādīt lietotņu joslā"
@@ -964,7 +964,7 @@
     "message": "Apstiprināt parādīšanas ikonjoslā atspējošanu"
   },
   "confirmTrayDesc": {
-    "message": "Šī iestatījuma atspējošana padarīs nepieejamas arī citus ar ikonjoslu saistītus uzstādījumus."
+    "message": "Šī iestatījuma izslēgšana padarīs nepieejamas arī citus ar ikonjoslu saistītus uzstādījumus."
   },
   "language": {
     "message": "Valoda"
@@ -1068,13 +1068,13 @@
     "message": "1 GB šifrētas krātuves datņu pielikumiem."
   },
   "premiumSignUpTwoStep": {
-    "message": "Tādas papildus divpakāpju pierakstīšanās iespējas kā YubiKey, FIDO U2F un Duo."
+    "message": "Tādas papildu divpakāpju pieteikšanās iespējas kā YubiKey, FIDO U2F un Duo."
   },
   "premiumSignUpReports": {
     "message": "Paroles higiēnas, konta stāvokļa un datu pārkāpumu pārskati, lai jūsu glabātuve būtu drošībā."
   },
   "premiumSignUpTotp": {
-    "message": "TOTP apstiprinājuma kodu (2FA) veidotājs piekļuves ierakstiem glabātavā."
+    "message": "TOTP apstiprinājuma koda (2FA) veidotājs glabātavas pieteikšanās vienumiem."
   },
   "premiumSignUpSupport": {
     "message": "Priekšrocīgs lietotāju atbalsts."
@@ -1259,7 +1259,7 @@
     "description": "Text for a button that toggles the visibility of the window. Shows the window when it is hidden or hides the window if it is currently open."
   },
   "hideToTray": {
-    "message": "Paslēpt rīkjoslā"
+    "message": "Paslēpt ikonjoslā"
   },
   "alwaysOnTop": {
     "message": "Vienmēr priekšā",
@@ -1371,7 +1371,7 @@
     "message": "Atslēgt ar PIN"
   },
   "setYourPinCode": {
-    "message": "Iestatiet savu PIN kodu Bitwarden atbloķēšanai. Jūsu PIN iestatījumi tiks atiestatīti, ja kādreiz pilnībā izrakstīsities no lietotnes."
+    "message": "Iestatīt PIN kodu Bitwarden atslēgšanai. PIN iestatījumi tiks atiestatīti pēc pilnīgas izrakstīšanās no lietotnes."
   },
   "pinRequired": {
     "message": "Ir nepieciešams PIN kods."
@@ -1468,7 +1468,7 @@
     "message": "Ir nepieciešams atkārtoti ievadīt galveno paroli, lai piekļūt aizslēgtai glabātavai."
   },
   "vaultTimeoutActionLogOutDesc": {
-    "message": "Pēc izrakstīšanās no glabātavas ir nepieciešams tai pieslēgties atkārtoti."
+    "message": "Ir nepieciešama atkārtota pieteikšanās, lai atkal piekļūtu glabātavai."
   },
   "lock": {
     "message": "Aizslēgt",
@@ -1503,13 +1503,13 @@
     "message": "Neatgriezeniski izdzēst"
   },
   "vaultTimeoutLogOutConfirmation": {
-    "message": "Izrakstīšanās noņems piekļuvi glabātavai un pieprasa tiešsaistes pierakstīšanos pēc noildzes laika. Vai tiešām izmantot šo iestatījumu?"
+    "message": "Atteikšanās noņems piekļuvi glabātavai un pieprasīs tiešsaistes pieteikšanos pēc noildzes laika. Vai tiešām izmantot šo iestatījumu?"
   },
   "vaultTimeoutLogOutConfirmationTitle": {
     "message": "Noildzes darbības apstiprināšana"
   },
   "enterpriseSingleSignOn": {
-    "message": "Uzņēmuma vienotā pierakstīšanās"
+    "message": "Uzņēmuma vienotā pieteikšanās"
   },
   "setMasterPassword": {
     "message": "Uzstādīt galveno paroli"
@@ -1773,7 +1773,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendDisabledWarning": {
-    "message": "Uzņēmuma nosacījumu kopas dēļ ir tikai iespējams dzēst esošu \"Send\".",
+    "message": "Uzņēmuma nosacījumu dēļ ir iespējams izdzēst tikai esošu \"Send\".",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "copyLink": {
@@ -1831,7 +1831,7 @@
     "message": "Atjaunināt galveno paroli"
   },
   "updateMasterPasswordWarning": {
-    "message": "Apvienības pārvaldnieks nesen nomainīja galveno paroli. Lai piekļūtu glabātavai, tā ir jāatjaunina. Turpinot tiks izbeigta pašreizējā sesija un tiks pieprasīta atkārtota pierakstīšanās. Esošās sesijas citās iekārtās var turpināt darboties līdz vienai stundai."
+    "message": "Apvienības pārvaldnieks nesen nomainīja galveno paroli. Tā ir jāatjaunina, lai varētu piekļūt glabātavai. Turpinot tiks izbeigta pašreizējā sesija un tiks pieprasīta atkārtota pieteikšanās. Esošās sesijas citās ierīcēs var turpināt darboties līdz vienai stundai."
   },
   "hours": {
     "message": "Stundas"
@@ -1877,7 +1877,7 @@
     "message": "Galvenā parole tika noņemta."
   },
   "convertOrganizationEncryptionDesc": {
-    "message": "$ORGANIZATION$ izmanto vienoto pieteikšanos ar pašizvietotu atslēgu serveri. Tās dalībniekiem vairs nav nepieciešama galvenā parole, lai pieslēgtos.",
+    "message": "$ORGANIZATION$ izmanto vienoto pieteikšanos ar pašizvietotu atslēgu serveri. Tās dalībniekiem vairs nav nepieciešama galvenā parole, lai pieteiktos.",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -1901,7 +1901,7 @@
     "message": "Aizslēgt visas glabātavas"
   },
   "accountLimitReached": {
-    "message": "Vienlaicīgi var būt pierakstījušies ne vairāk kā 5 konti."
+    "message": "Vienlaicīgi var pieteikteis ne vairāk kā 5 konti."
   },
   "accountPreferences": {
     "message": "Uzstādījumi"
@@ -1910,7 +1910,7 @@
     "message": "Lietotnes iestatījumi (visi konti)"
   },
   "accountSwitcherLimitReached": {
-    "message": "Sasniegti konta ierobežojumi. Izrakstīties, lai pievienotu citu."
+    "message": "Sasniegti konta ierobežojumi. Atteikties, lai pievienotu citu."
   },
   "settingsTitle": {
     "message": "Lietotnes iestatījumi kontam $EMAIL$",
@@ -1928,7 +1928,7 @@
     "message": "Iespējas"
   },
   "sessionTimeout": {
-    "message": "Sesijai iestājās noildze. Lūgums mēģināt pierakstīties vēlreiz."
+    "message": "Sesijai iestājās noildze. Lūgums mēģināt pieteikties vēlreiz."
   },
   "exportingPersonalVaultTitle": {
     "message": "Izdod personīgo glabātavu"
@@ -2035,10 +2035,10 @@
     "message": "Glabātava"
   },
   "loginWithMasterPassword": {
-    "message": "Pierakstīties ar galveno paroli"
+    "message": "Pieteikties ar galveno paroli"
   },
   "loggingInAs": {
-    "message": "Pierakstās kā"
+    "message": "Piesakās kā"
   },
   "rememberEmail": {
     "message": "Atcerēties e-pasta adresi"
@@ -2090,7 +2090,7 @@
     "message": "Vai mēģini pieteikties?"
   },
   "logInAttemptBy": {
-    "message": "$EMAIL$ pieteikšanās mēģinajums",
+    "message": "$EMAIL$ pieteikšanās mēģinājums",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -2145,7 +2145,7 @@
     }
   },
   "loginRequestHasAlreadyExpired": {
-    "message": "Pierakstīšanās pieprasījuma derīgums jau ir beidzies."
+    "message": "Pieteikšanās pieprasījuma derīgums jau ir beidzies."
   },
   "thisRequestIsNoLongerValid": {
     "message": "Šis pieprasījums vairs nav derīgs."
@@ -2169,13 +2169,13 @@
     "message": "Noplūdusi galvenā parole"
   },
   "exposedMasterPasswordDesc": {
-    "message": "Parole atrasta datu pārkāpumā. Izmantojiet unikālu paroli, lai aizsargātu savu kontu. Vai tiešām vēlaties izmantot atklātu paroli?"
+    "message": "Parole atrasta datu noplūdē. Jāizmanto neatkārtojama parole, lai aizsargātu savu kontu. Vai tiešām izmantot atklātu paroli?"
   },
   "weakAndExposedMasterPassword": {
     "message": "Vāja un noplūdusi galvenā parole"
   },
   "weakAndBreachedMasterPasswordDesc": {
-    "message": "Noteikta vāja parole, un tā ir atrasta datu noplūdē. Jāizmanto spēcīga parole, lai aizsargātu savu kontu. Vai tiešām izmantot šo paroli?"
+    "message": "Noteikta vāja parole, un tā ir atrasta datu noplūdē. Jāizmanto spēcīga un neatkārtojama parole, lai aizsargātu savu kontu. Vai tiešām izmantot šo paroli?"
   },
   "checkForBreaches": {
     "message": "Pārbaudīt šo paroli pret zināmiem datu pārkāpumiem"

@@ -2077,10 +2077,10 @@
     "message": "Log in with device must be set up in the settings of the Bitwarden app. Need another option?"
   },
   "viewAllLoginOptions": {
-    "message": "View all login options"
+    "message": "查看所有登录选项"
   },
   "resendNotification": {
-    "message": "Resend notification"
+    "message": "重新发送通知"
   },
   "toggleCharacterCount": {
     "message": "字符计数开关",
@@ -2099,7 +2099,7 @@
     }
   },
   "deviceType": {
-    "message": "Device Type"
+    "message": "设备类型"
   },
   "ipAddress": {
     "message": "IP 地址"
@@ -2114,7 +2114,7 @@
     "message": "拒绝登录"
   },
   "approveLoginRequests": {
-    "message": "Approve login requests"
+    "message": "批准登录请求"
   },
   "logInConfirmedForEmailOnDevice": {
     "message": "Login confirmed for $EMAIL$ on $DEVICE$",

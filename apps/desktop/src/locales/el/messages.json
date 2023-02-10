@@ -2071,13 +2071,13 @@
     "message": "Please make sure your vault is unlocked and Fingerprint phrase matches the other device."
   },
   "fingerprintPhraseHeader": {
-    "message": "Fingerprint phrase"
+    "message": "Φράση δακτυλικών αποτυπωμάτων"
   },
   "needAnotherOption": {
     "message": "Log in with device must be set up in the settings of the Bitwarden app. Need another option?"
   },
   "viewAllLoginOptions": {
-    "message": "View all login options"
+    "message": "Δείτε όλες τις επιλογές σύνδεσης"
   },
   "resendNotification": {
     "message": "Resend notification"
@@ -2087,7 +2087,7 @@
     "description": "'Character count' describes a feature that displays a number next to each character of the password."
   },
   "areYouTryingtoLogin": {
-    "message": "Are you trying to log in?"
+    "message": "Προσπαθείτε να συνδεθείτε;"
   },
   "logInAttemptBy": {
     "message": "Login attempt by $EMAIL$",
@@ -2105,7 +2105,7 @@
     "message": "IP Address"
   },
   "time": {
-    "message": "Time"
+    "message": "Ώρα"
   },
   "confirmLogIn": {
     "message": "Confirm login"
@@ -2133,7 +2133,7 @@
     "message": "You denied a login attempt from another device. If this really was you, try to log in with the device again."
   },
   "justNow": {
-    "message": "Just now"
+    "message": "Μόλις τώρα"
   },
   "requestedXMinutesAgo": {
     "message": "Requested $MINUTES$ minutes ago",
@@ -2166,7 +2166,7 @@
     "message": "Log in requested"
   },
   "exposedMasterPassword": {
-    "message": "Exposed Master Password"
+    "message": "Εκτεθειμένος Κύριος Κωδικός Πρόσβασης"
   },
   "exposedMasterPasswordDesc": {
     "message": "Password found in a data breach. Use a unique password to protect your account. Are you sure you want to use an exposed password?"
@@ -2178,13 +2178,13 @@
     "message": "Weak password identified and found in a data breach. Use a strong and unique password to protect your account. Are you sure you want to use this password?"
   },
   "checkForBreaches": {
-    "message": "Check known data breaches for this password"
+    "message": "Ελέγξτε γνωστές παραβιάσεις δεδομένων για αυτόν τον κωδικό"
   },
   "important": {
-    "message": "Important:"
+    "message": "Σημαντικό:"
   },
   "masterPasswordHint": {
-    "message": "Your master password cannot be recovered if you forget it!"
+    "message": "Ο κύριος κωδικός πρόσβασης δεν μπορεί να ανακτηθεί εάν τον ξεχάσετε!"
   },
   "characterMinimum": {
     "message": "$LENGTH$ character minimum",

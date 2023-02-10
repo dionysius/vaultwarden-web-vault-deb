@@ -2090,7 +2090,7 @@
     "message": "آیا در تلاش برای ورود به سیستم هستید؟"
   },
   "logInAttemptBy": {
-    "message": "Login attempt by $EMAIL$",
+    "message": "تلاش برای ورود به سیستم توسط $EMAIL$",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -2099,25 +2099,25 @@
     }
   },
   "deviceType": {
-    "message": "Device Type"
+    "message": "نوع دستگاه"
   },
   "ipAddress": {
-    "message": "IP Address"
+    "message": "نشانی IP"
   },
   "time": {
-    "message": "Time"
+    "message": "زمان"
   },
   "confirmLogIn": {
-    "message": "Confirm login"
+    "message": "تأیید ورود"
   },
   "denyLogIn": {
-    "message": "Deny login"
+    "message": "رد ورود"
   },
   "approveLoginRequests": {
-    "message": "Approve login requests"
+    "message": "درخواست های ورود را تأیید کنید"
   },
   "logInConfirmedForEmailOnDevice": {
-    "message": "Login confirmed for $EMAIL$ on $DEVICE$",
+    "message": "ورود به سیستم برای $EMAIL$ در $DEVICE$ تأیید شد",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -2130,13 +2130,13 @@
     }
   },
   "youDeniedALogInAttemptFromAnotherDevice": {
-    "message": "You denied a login attempt from another device. If this really was you, try to log in with the device again."
+    "message": "شما تلاش برای ورود به سیستم از دستگاه دیگری را رد کردید. اگر واقعاً این شما بودید، سعی کنید دوباره با دستگاه وارد شوید."
   },
   "justNow": {
-    "message": "Just now"
+    "message": "همین الان"
   },
   "requestedXMinutesAgo": {
-    "message": "Requested $MINUTES$ minutes ago",
+    "message": "$MINUTES$ دقیقه قبل درخواست شد",
     "placeholders": {
       "minutes": {
         "content": "$1",
@@ -2145,16 +2145,16 @@
     }
   },
   "loginRequestHasAlreadyExpired": {
-    "message": "Login request has already expired."
+    "message": "درخواست ورود قبلاً منقضی شده است."
   },
   "thisRequestIsNoLongerValid": {
-    "message": "This request is no longer valid."
+    "message": "این درخواست دیگر معتبر نیست."
   },
   "approveLoginRequestDesc": {
-    "message": "Use this device to approve login requests made from other devices."
+    "message": "از این دستگاه برای تأیید درخواست‌های ورود به سیستم از دستگاه‌های دیگر استفاده کنید."
   },
   "confirmLoginAtemptForMail": {
-    "message": "Confirm login attempt for $EMAIL$",
+    "message": "تأیید تلاش برای ورود به سیستم برای $EMAIL$",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -2163,7 +2163,7 @@
     }
   },
   "logInRequested": {
-    "message": "Log in requested"
+    "message": "ورود الزامیست"
   },
   "exposedMasterPassword": {
     "message": "کلمه عبور اصلی افشا شده"

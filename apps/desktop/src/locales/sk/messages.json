@@ -913,7 +913,7 @@
     "message": "Namiesto minimalizácie okna zobraziť ikonu v systémovej lište."
   },
   "enableMinToMenuBar": {
-    "message": "Minimalizovať na panel úloh"
+    "message": "Minimalizovať do lišty"
   },
   "enableMinToMenuBarDesc": {
     "message": "Namiesto minimalizácie okna zobraziť ikonu na paneli úloh."
@@ -1425,7 +1425,7 @@
     "message": "Vždy zobraziť ikonu na paneli úloh."
   },
   "hideToMenuBar": {
-    "message": "Skryť do panela úloh"
+    "message": "Skryť do lišty"
   },
   "selectOneCollection": {
     "message": "Musíte vybrať aspoň jednu zbierku."
@@ -2083,7 +2083,7 @@
     "message": "Znova odoslať upozornenie"
   },
   "toggleCharacterCount": {
-    "message": "Toggle character count",
+    "message": "Prepnúť počítadlo znakov",
     "description": "'Character count' describes a feature that displays a number next to each character of the password."
   },
   "areYouTryingtoLogin": {

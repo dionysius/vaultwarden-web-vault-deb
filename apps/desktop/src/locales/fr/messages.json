@@ -1462,7 +1462,7 @@
     "message": "Une ou plusieurs politiques d'organisation affectent les paramètres de votre générateur."
   },
   "vaultTimeoutAction": {
-    "message": "Action lors de l'expiration du délai du coffre"
+    "message": "Action après délai d'expiration du coffre"
   },
   "vaultTimeoutActionLockDesc": {
     "message": "Un mot de passe principal ou une autre méthode de déverrouillage est nécessaire pour accéder à nouveau à votre coffre."
@@ -2062,35 +2062,35 @@
     "message": "Connectez-vous avec un autre appareil"
   },
   "logInInitiated": {
-    "message": "Log in initiated"
+    "message": "Connexion initiée"
   },
   "notificationSentDevice": {
-    "message": "A notification has been sent to your device."
+    "message": "Une notification a été envoyée à votre appareil."
   },
   "fingerprintMatchInfo": {
-    "message": "Please make sure your vault is unlocked and Fingerprint phrase matches the other device."
+    "message": "Veuillez vous assurer que votre coffre est déverrouillé et que la phrase d'empreinte correspond à celle de l'autre appareil."
   },
   "fingerprintPhraseHeader": {
-    "message": "Fingerprint phrase"
+    "message": "Phrase d'empreinte"
   },
   "needAnotherOption": {
-    "message": "Log in with device must be set up in the settings of the Bitwarden app. Need another option?"
+    "message": "La connexion avec l'appareil doit être configurée dans les paramètres de l'application Bitwarden. Besoin d'une autre option ?"
   },
   "viewAllLoginOptions": {
-    "message": "View all login options"
+    "message": "Afficher toutes les options de connexion"
   },
   "resendNotification": {
-    "message": "Resend notification"
+    "message": "Renvoyer la notification"
   },
   "toggleCharacterCount": {
     "message": "Activer/Désactiver le compte de caractères",
     "description": "'Character count' describes a feature that displays a number next to each character of the password."
   },
   "areYouTryingtoLogin": {
-    "message": "Are you trying to log in?"
+    "message": "Essayez-vous de vous connecter ?"
   },
   "logInAttemptBy": {
-    "message": "Login attempt by $EMAIL$",
+    "message": "Tentative de connexion par $EMAIL$",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -2099,7 +2099,7 @@
     }
   },
   "deviceType": {
-    "message": "Device Type"
+    "message": "Type d'appareil"
   },
   "ipAddress": {
     "message": "Adresse IP"
@@ -2108,16 +2108,16 @@
     "message": "Heure"
   },
   "confirmLogIn": {
-    "message": "Confirm login"
+    "message": "Confirmer la connexion"
   },
   "denyLogIn": {
-    "message": "Deny login"
+    "message": "Refuser la connexion"
   },
   "approveLoginRequests": {
-    "message": "Approve login requests"
+    "message": "Approuver les demandes de connexion"
   },
   "logInConfirmedForEmailOnDevice": {
-    "message": "Login confirmed for $EMAIL$ on $DEVICE$",
+    "message": "Connexion confirmée pour $EMAIL$ sur $DEVICE$",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -2130,13 +2130,13 @@
     }
   },
   "youDeniedALogInAttemptFromAnotherDevice": {
-    "message": "You denied a login attempt from another device. If this really was you, try to log in with the device again."
+    "message": "Vous avez refusé une tentative de connexion à partir d'un autre appareil. Si c'était vraiment vous, essayez de vous connecter à nouveau avec l'appareil."
   },
   "justNow": {
     "message": "À l'instant"
   },
   "requestedXMinutesAgo": {
-    "message": "Requested $MINUTES$ minutes ago",
+    "message": "Demandé il y a $MINUTES$ minutes",
     "placeholders": {
       "minutes": {
         "content": "$1",
@@ -2145,16 +2145,16 @@
     }
   },
   "loginRequestHasAlreadyExpired": {
-    "message": "Login request has already expired."
+    "message": "La demande de connexion a déjà expiré."
   },
   "thisRequestIsNoLongerValid": {
-    "message": "This request is no longer valid."
+    "message": "Cette demande n'est plus valide."
   },
   "approveLoginRequestDesc": {
-    "message": "Use this device to approve login requests made from other devices."
+    "message": "Utiliser cet appareil pour approuver les demandes de connexion faites à partir d'autres appareils."
   },
   "confirmLoginAtemptForMail": {
-    "message": "Confirm login attempt for $EMAIL$",
+    "message": "Confirmer la tentative de connexion pour $EMAIL$",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -2163,19 +2163,19 @@
     }
   },
   "logInRequested": {
-    "message": "Log in requested"
+    "message": "Connexion demandée"
   },
   "exposedMasterPassword": {
-    "message": "Exposed Master Password"
+    "message": "Mot de passe principal exposé"
   },
   "exposedMasterPasswordDesc": {
-    "message": "Password found in a data breach. Use a unique password to protect your account. Are you sure you want to use an exposed password?"
+    "message": "Mot de passe trouvé dans une brèche de données. Utilisez un mot de passe unique pour protéger votre compte. Êtes-vous sûr de vouloir utiliser un mot de passe exposé ?"
   },
   "weakAndExposedMasterPassword": {
-    "message": "Weak and Exposed Master Password"
+    "message": "Mot de passe principal faible et exposé"
   },
   "weakAndBreachedMasterPasswordDesc": {
-    "message": "Weak password identified and found in a data breach. Use a strong and unique password to protect your account. Are you sure you want to use this password?"
+    "message": "Mot de passe faible identifié et trouvé dans une brèche de données. Utilisez un mot de passe robuste et unique pour protéger votre compte. Êtes-vous sûr de vouloir utiliser ce mot de passe ?"
   },
   "checkForBreaches": {
     "message": "Vérifier les brèches de données connues pour ce mot de passe"
@@ -2187,7 +2187,7 @@
     "message": "Votre mot de passe principal ne peut pas être récupéré si vous l'oubliez !"
   },
   "characterMinimum": {
-    "message": "$LENGTH$ character minimum",
+    "message": "$LENGTH$ caractère minimum",
     "placeholders": {
       "length": {
         "content": "$1",
