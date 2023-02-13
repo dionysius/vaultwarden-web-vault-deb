@@ -1,0 +1,18 @@
+import { formatDate } from "@angular/common";
+import { Injectable } from "@angular/core";
+import { firstValueFrom } from "rxjs";
+
+import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
+
+@Injectable({
+  providedIn: "root",
+})
+export class SecretsManagerPortingService {
+  constructor(private i18nService: I18nService) {}
+
+  async getFileName(prefix: string = null, extension = "json"): Promise<string> {
+    const locale = await firstValueFrom(this.i18nService.locale$);
+    const dateString = formatDate(new Date(), "yyyyMMddHHmmss", locale);
+    return "bitwarden" + (prefix ? "_" + prefix : "") + "_export_" + dateString + "." + extension;
+  }
+}

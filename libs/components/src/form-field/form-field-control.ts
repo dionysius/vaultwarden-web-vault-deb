@@ -5,7 +5,8 @@ export type InputTypes =
   | "datetime-local"
   | "email"
   | "checkbox"
-  | "search";
+  | "search"
+  | "file";
 
 export abstract class BitFormFieldControl {
   ariaDescribedBy: string;

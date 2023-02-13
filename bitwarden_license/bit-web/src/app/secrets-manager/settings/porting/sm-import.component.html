@@ -1,0 +1,42 @@
+<sm-header></sm-header>
+
+<form [formGroup]="formGroup" [bitSubmit]="submit" class="tw-max-w-xl">
+  <bit-form-field>
+    <bit-label>{{ "fileUpload" | i18n }}</bit-label>
+    <div class="file-selector">
+      <button bitButton type="button" buttonType="secondary" (click)="fileSelector.click()">
+        {{ "chooseFile" | i18n }}
+      </button>
+      {{ selectedFile?.name ?? ("noFileChosen" | i18n) }}
+    </div>
+    <input
+      #fileSelector
+      hidden
+      bitInput
+      type="file"
+      id="file"
+      class="form-control-file"
+      name="file"
+      (change)="setSelectedFile($event)"
+      accept="application/JSON"
+    />
+    <bit-hint>{{ "acceptedFormats" | i18n }} JSON</bit-hint>
+  </bit-form-field>
+  <div class="my-4">
+    {{ "or" | i18n }}
+  </div>
+  <bit-form-field>
+    <bit-label for="pastedContents">{{ "copyPasteImportContents" | i18n }}</bit-label>
+    <textarea
+      bitInput
+      id="pastedContents"
+      class="form-control"
+      name="FileContents"
+      formControlName="pastedContents"
+    ></textarea>
+    <bit-hint>{{ "acceptedFormats" | i18n }} JSON</bit-hint>
+  </bit-form-field>
+  <button bitButton bitformButton type="submit" buttonType="primary">
+    {{ "importData" | i18n }}
+  </button>
+</form>
