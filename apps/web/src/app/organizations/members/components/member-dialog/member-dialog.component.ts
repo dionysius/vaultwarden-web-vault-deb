@@ -14,6 +14,7 @@ import { Organization } from "@bitwarden/common/models/domain/organization";
 import { CollectionView } from "@bitwarden/common/models/view/collection.view";
 import { DialogService } from "@bitwarden/components";
 
+import { flagEnabled } from "../../../../../utils/flags";
 import {
   CollectionAccessSelectionView,
   CollectionAdminService,
@@ -161,7 +162,7 @@ export class MemberDialogComponent implements OnInit, OnDestroy {
       .subscribe(({ organization, collections, userDetails, groups }) => {
         this.organization = organization;
         this.canUseCustomPermissions = organization.useCustomPermissions;
-        this.canUseSecretsManager = organization.useSecretsManager;
+        this.canUseSecretsManager = organization.useSecretsManager && flagEnabled("secretsManager");
 
         this.collectionAccessItems = [].concat(
           collections.map((c) => mapCollectionToAccessItemView(c))
