@@ -1,3 +1,4 @@
+import { hasModifierKey } from "@angular/cdk/keycodes";
 import {
   Component,
   Input,
@@ -66,6 +67,29 @@ export class MultiSelectComponent implements OnInit, BitFormFieldControl, Contro
     this.placeholder = this.placeholder ?? this.i18nService.t("multiSelectPlaceholder");
     this.loadingText = this.i18nService.t("multiSelectLoading");
   }
+
+  /** Function for customizing keyboard navigation */
+  /** Needs to be arrow function to retain `this` scope. */
+  keyDown = (event: KeyboardEvent) => {
+    if (!this.select.isOpen && event.key === "Enter" && !hasModifierKey(event)) {
+      return false;
+    }
+
+    if (this.select.isOpen && event.key === "Enter" && !hasModifierKey(event)) {
+      this.select.close();
+      event.preventDefault();
+      return false;
+    }
+
+    if (this.select.isOpen && event.key === "Escape" && !hasModifierKey(event)) {
+      this.selectedItems = [];
+      this.select.close();
+      event.stopPropagation();
+      return false;
+    }
+
+    return true;
+  };
 
   /** Helper method for showing selected state in custom template */
   isSelected(item: any): boolean {
