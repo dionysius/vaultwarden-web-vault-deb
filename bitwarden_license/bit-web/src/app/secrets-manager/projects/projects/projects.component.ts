@@ -21,7 +21,8 @@ import { ProjectService } from "../project.service";
   templateUrl: "./projects.component.html",
 })
 export class ProjectsComponent implements OnInit {
-  projects$: Observable<ProjectListView[]>;
+  protected projects$: Observable<ProjectListView[]>;
+  protected search: string;
 
   private organizationId: string;
 

@@ -1,5 +1,5 @@
 <sm-header>
-  <input bitInput [placeholder]="'searchProjects' | i18n" />
+  <input bitInput [placeholder]="'searchProjects' | i18n" [(ngModel)]="search" />
   <sm-new-menu></sm-new-menu>
 </sm-header>
 <sm-projects-list
@@ -7,5 +7,6 @@
   (editProjectEvent)="openEditProject($event)"
   (deleteProjectEvent)="openDeleteProjectDialog($event)"
   [projects]="projects$ | async"
+  [search]="search"
 >
 </sm-projects-list>
