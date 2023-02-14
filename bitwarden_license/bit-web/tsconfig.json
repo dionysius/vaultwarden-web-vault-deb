@@ -7,5 +7,6 @@
       "@bitwarden/angular/*": ["../../libs/angular/src/*"],
       "@bitwarden/components": ["../../libs/components/src"]
     }
-  }
+  },
+  "include": ["src/**/*.stories.ts"]
 }
