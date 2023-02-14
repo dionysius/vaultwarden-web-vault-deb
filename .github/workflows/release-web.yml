@@ -107,14 +107,14 @@ jobs:
       - name: Login to Azure - QA Subscription
         uses: Azure/login@ec3c14589bd3e9312b3cc8c41e6860e258df9010  # v1.1
         with:
-          creds: ${{ secrets.AZURE_QA_KV_CREDENTIALS }}
+          creds: ${{ secrets.AZURE_PROD_KV_CREDENTIALS }}
 
       - name: Login to Azure ACR
-        run: az acr login -n bitwardenqa
+        run: az acr login -n bitwardenprod
 
       - name: Tag version
         env:
-          REGISTRY: bitwardenqa.azurecr.io
+          REGISTRY: bitwardenprod.azurecr.io
         run: |
           if [[ "${{ github.event.inputs.release_type }}" == "Dry Run" ]]; then
             docker tag bitwarden/web:latest $REGISTRY/web:$_RELEASE_VERSION
@@ -129,7 +129,7 @@ jobs:
       - name: Push version
         if: ${{ github.event.inputs.release_type != 'Dry Run' }}
         env:
-          REGISTRY: bitwardenqa.azurecr.io
+          REGISTRY: bitwardenprod.azurecr.io
         run: |
           docker push $REGISTRY/web:$_RELEASE_VERSION
 
