@@ -1,5 +1,3 @@
-<!-- Please remove this disable statement when editing this file! -->
-<!-- eslint-disable @angular-eslint/template/button-has-type -->
 <bit-simple-dialog>
   <i bit-dialog-icon class="bwi tw-text-3xl" [class]="iconClasses" aria-hidden="true"></i>
 
@@ -8,12 +6,18 @@
   <div bitDialogContent>{{ content }}</div>
 
   <div bitDialogFooter class="tw-flex tw-flex-row tw-gap-2">
-    <button bitButton buttonType="primary" (click)="dialogRef.close(SimpleDialogCloseType.ACCEPT)">
+    <button
+      type="button"
+      bitButton
+      buttonType="primary"
+      (click)="dialogRef.close(SimpleDialogCloseType.ACCEPT)"
+    >
       {{ acceptButtonText }}
     </button>
 
     <button
       *ngIf="showCancelButton"
+      type="button"
       bitButton
       buttonType="secondary"
       (click)="dialogRef.close(SimpleDialogCloseType.CANCEL)"

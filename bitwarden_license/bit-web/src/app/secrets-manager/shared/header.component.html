@@ -1,5 +1,3 @@
-<!-- Please remove this disable statement when editing this file! -->
-<!-- eslint-disable @angular-eslint/template/button-has-type -->
 <header
   *ngIf="routeData$ | async as routeData"
   class="-tw-m-6 tw-mb-3 tw-flex tw-flex-col tw-p-6"
@@ -28,7 +26,11 @@
         <ng-content></ng-content>
         <product-switcher></product-switcher>
         <ng-container *ngIf="account$ | async as account">
-          <button [bitMenuTriggerFor]="accountMenu" class="tw-border-0 tw-bg-transparent tw-p-0">
+          <button
+            type="button"
+            [bitMenuTriggerFor]="accountMenu"
+            class="tw-border-0 tw-bg-transparent tw-p-0"
+          >
             <bit-avatar [id]="account.userId" [text]="account.name || account.email"></bit-avatar>
           </button>
 
