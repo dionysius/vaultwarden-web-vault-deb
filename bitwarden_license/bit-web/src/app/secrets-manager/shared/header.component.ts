@@ -2,6 +2,7 @@ import { Component, Input } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { combineLatest, map, Observable } from "rxjs";
 
+import { MessagingService } from "@bitwarden/common/abstractions/messaging.service";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { AccountProfile } from "@bitwarden/common/models/domain/account";
 
@@ -23,7 +24,11 @@ export class HeaderComponent {
   protected routeData$: Observable<{ titleId: string }>;
   protected account$: Observable<AccountProfile>;
 
-  constructor(private route: ActivatedRoute, private stateService: StateService) {
+  constructor(
+    private route: ActivatedRoute,
+    private stateService: StateService,
+    private messagingService: MessagingService
+  ) {
     this.routeData$ = this.route.data.pipe(
       map((params) => {
         return {
@@ -40,5 +45,13 @@ export class HeaderComponent {
         return accounts[activeAccount]?.profile;
       })
     );
+  }
+
+  protected lock() {
+    this.messagingService.send("lockVault");
+  }
+
+  protected logout() {
+    this.messagingService.send("logout");
   }
 }

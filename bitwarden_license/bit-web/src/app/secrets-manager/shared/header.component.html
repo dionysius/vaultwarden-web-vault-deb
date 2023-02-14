@@ -67,11 +67,11 @@
 
               <bit-menu-divider></bit-menu-divider>
 
-              <button bitMenuItem type="button">
+              <button bitMenuItem type="button" (click)="lock()">
                 <i class="bwi bwi-fw bwi-lock" aria-hidden="true"></i>
                 {{ "lockNow" | i18n }}
               </button>
-              <button bitMenuItem type="button">
+              <button bitMenuItem type="button" (click)="logout()">
                 <i class="bwi bwi-fw bwi-sign-out" aria-hidden="true"></i>
                 {{ "logOut" | i18n }}
               </button>

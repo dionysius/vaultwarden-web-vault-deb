@@ -8,9 +8,9 @@ import { EncString } from "@bitwarden/common/models/domain/enc-string";
 import { SymmetricCryptoKey } from "@bitwarden/common/models/domain/symmetric-crypto-key";
 import { ListResponse } from "@bitwarden/common/models/response/list.response";
 
-import { BulkOperationStatus } from "../layout/dialogs/bulk-status-dialog.component";
 import { ProjectListView } from "../models/view/project-list.view";
 import { ProjectView } from "../models/view/project.view";
+import { BulkOperationStatus } from "../shared/dialogs/bulk-status-dialog.component";
 
 import { ProjectRequest } from "./models/requests/project.request";
 import { ProjectListItemResponse } from "./models/responses/project-list-item.response";
