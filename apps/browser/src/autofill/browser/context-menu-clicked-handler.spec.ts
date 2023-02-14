@@ -9,13 +9,12 @@ import { CipherType } from "@bitwarden/common/vault/enums/cipher-type";
 import { Cipher } from "@bitwarden/common/vault/models/domain/cipher";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 
-import { AutofillTabCommand } from "../commands/autofill-tab-command";
-
 import {
   CopyToClipboardAction,
   ContextMenuClickedHandler,
   CopyToClipboardOptions,
   GeneratePasswordToClipboardAction,
+  AutofillAction,
 } from "./context-menu-clicked-handler";
 import {
   AUTOFILL_ID,
@@ -59,9 +58,9 @@ describe("ContextMenuClickedHandler", () => {
 
   let copyToClipboard: CopyToClipboardAction;
   let generatePasswordToClipboard: GeneratePasswordToClipboardAction;
+  let autofill: AutofillAction;
   let authService: MockProxy<AuthService>;
   let cipherService: MockProxy<CipherService>;
-  let autofillTabCommand: MockProxy<AutofillTabCommand>;
   let totpService: MockProxy<TotpService>;
   let eventCollectionService: MockProxy<EventCollectionService>;
 
@@ -70,18 +69,18 @@ describe("ContextMenuClickedHandler", () => {
   beforeEach(() => {
     copyToClipboard = jest.fn<void, [CopyToClipboardOptions]>();
     generatePasswordToClipboard = jest.fn<Promise<void>, [tab: chrome.tabs.Tab]>();
+    autofill = jest.fn<Promise<void>, [tab: chrome.tabs.Tab, cipher: CipherView]>();
     authService = mock();
     cipherService = mock();
-    autofillTabCommand = mock();
     totpService = mock();
     eventCollectionService = mock();
 
     sut = new ContextMenuClickedHandler(
       copyToClipboard,
       generatePasswordToClipboard,
+      autofill,
       authService,
       cipherService,
-      autofillTabCommand,
       totpService,
       eventCollectionService
     );
@@ -106,9 +105,9 @@ describe("ContextMenuClickedHandler", () => {
 
       await sut.run(createData("T_1", AUTOFILL_ID), { id: 5 } as any);
 
-      expect(autofillTabCommand.doAutofillTabWithCipherCommand).toBeCalledTimes(1);
+      expect(autofill).toBeCalledTimes(1);
 
-      expect(autofillTabCommand.doAutofillTabWithCipherCommand).toBeCalledWith({ id: 5 }, cipher);
+      expect(autofill).toBeCalledWith({ id: 5 }, cipher);
     });
 
     it("copies username to clipboard", async () => {

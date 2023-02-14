@@ -89,7 +89,6 @@ import TabsBackground from "../autofill/background/tabs.background";
 import { CipherContextMenuHandler } from "../autofill/browser/cipher-context-menu-handler";
 import { ContextMenuClickedHandler } from "../autofill/browser/context-menu-clicked-handler";
 import { MainContextMenuHandler } from "../autofill/browser/main-context-menu-handler";
-import { AutofillTabCommand } from "../autofill/commands/autofill-tab-command";
 import { AutofillService as AutofillServiceAbstraction } from "../autofill/services/abstractions/autofill.service";
 import AutofillService from "../autofill/services/autofill.service";
 import { BrowserApi } from "../browser/browserApi";
@@ -543,9 +542,20 @@ export default class MainBackground {
           this.platformUtilsService.copyToClipboard(password, { window: window });
           this.passwordGenerationService.addHistory(password);
         },
+        async (tab, cipher) => {
+          this.loginToAutoFill = cipher;
+          if (tab == null) {
+            return;
+          }
+
+          BrowserApi.tabSendMessage(tab, {
+            command: "collectPageDetails",
+            tab: tab,
+            sender: "contextMenu",
+          });
+        },
         this.authService,
         this.cipherService,
-        new AutofillTabCommand(this.autofillService),
         this.totpService,
         this.eventCollectionService
       );
