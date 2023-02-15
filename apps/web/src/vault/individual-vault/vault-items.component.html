@@ -16,6 +16,7 @@
             type="checkbox"
             bitCheckbox
             id="checkAll"
+            [disabled]="isProcessingAction"
             (change)="checkAll($any($event.target).checked)"
             [(ngModel)]="isAllChecked"
           />
@@ -33,6 +34,7 @@
         <th bitCell class="tw-min-w-fit tw-text-right">
           <button
             [bitMenuTriggerFor]="headerMenu"
+            [disabled]="isProcessingAction"
             bitIconButton="bwi-ellipsis-v"
             size="small"
             type="button"
@@ -77,8 +79,8 @@
       <tr
         bitRow
         *ngFor="let col of filteredCollections"
-        (click)="navigateCollection(col)"
-        class="tw-cursor-pointer"
+        [class.tw-cursor-pointer]="!isProcessingAction"
+        (click)="!isProcessingAction && navigateCollection(col)"
         alignContent="middle"
       >
         <td bitCell (click)="checkRow(col)" appStopProp>
@@ -87,6 +89,7 @@
             class="tw-cursor-pointer"
             type="checkbox"
             bitCheckbox
+            [disabled]="isProcessingAction"
             [(ngModel)]="$any(col).checked"
             appStopProp
           />
@@ -102,6 +105,7 @@
             class="tw-text-start"
             linkType="secondary"
             (click)="navigateCollection(col)"
+            [disabled]="isProcessingAction"
           >
             {{ col.node.name }}
           </button>
@@ -128,6 +132,7 @@
           <button
             *ngIf="canEditCollection(col.node) || canDeleteCollection(col.node)"
             [bitMenuTriggerFor]="collectionOptions"
+            [disabled]="isProcessingAction"
             size="small"
             bitIconButton="bwi-ellipsis-v"
             type="button"
@@ -167,12 +172,18 @@
       <tr
         bitRow
         *ngFor="let c of filteredCiphers"
-        class="tw-cursor-pointer"
-        (click)="selectCipher(c)"
+        [class.tw-cursor-pointer]="!isProcessingAction"
+        (click)="!isProcessingAction && selectCipher(c)"
         alignContent="middle"
       >
         <td bitCell (click)="checkRow(c)" appStopProp>
-          <input type="checkbox" bitCheckbox [(ngModel)]="$any(c).checked" appStopProp />
+          <input
+            type="checkbox"
+            bitCheckbox
+            [disabled]="isProcessingAction"
+            [(ngModel)]="$any(c).checked"
+            appStopProp
+          />
         </td>
         <td bitCell>
           <app-vault-icon [cipher]="c"></app-vault-icon>
@@ -185,6 +196,7 @@
             [queryParams]="{ itemId: c.id }"
             queryParamsHandling="merge"
             title="{{ 'editItem' | i18n }}"
+            [disabled]="isProcessingAction"
           >
             {{ c.name }}
           </button>
@@ -230,6 +242,7 @@
         <td bitCell class="tw-text-right">
           <button
             [bitMenuTriggerFor]="cipherOptions"
+            [disabled]="isProcessingAction"
             size="small"
             bitIconButton="bwi-ellipsis-v"
             type="button"

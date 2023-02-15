@@ -530,6 +530,13 @@ export class VaultItemsComponent extends BaseVaultItemsComponent implements OnDe
     return false; // Always return false for non org vault
   }
 
+  /**
+   * @deprecated Block interaction using long running modal dialog instead
+   */
+  protected get isProcessingAction() {
+    return this.actionPromise != null;
+  }
+
   protected updateSearchedCollections(collections: TreeNode<CollectionFilter>[]) {
     if (this.searchService.isSearchable(this.searchText)) {
       this.searchedCollections = this.searchPipe.transform(

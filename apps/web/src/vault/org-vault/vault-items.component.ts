@@ -310,6 +310,13 @@ export class VaultItemsComponent extends BaseVaultItemsComponent implements OnDe
     }
   }
 
+  /**
+   * @deprecated Block interaction using long running modal dialog instead
+   */
+  protected get isProcessingAction() {
+    return this.actionPromise != null;
+  }
+
   protected deleteCipherWithServer(id: string, permanent: boolean) {
     if (!this.organization?.canEditAnyCollection) {
       return super.deleteCipherWithServer(id, this.deleted);
