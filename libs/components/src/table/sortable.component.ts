@@ -85,9 +85,9 @@ export class SortableComponent implements OnInit {
     return [
       // Offset to border and padding
       "-tw-m-1.5",
+      "tw-font-bold",
 
       // Below is copied from BitIconButtonComponent
-      "tw-font-semibold",
       "tw-border",
       "tw-border-solid",
       "tw-rounded",
