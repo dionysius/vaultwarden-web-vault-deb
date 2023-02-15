@@ -917,7 +917,7 @@
     }
   },
   "deleteSelectedConfirmation": {
-    "message": "Are you sure you want to continue?"
+    "message": "您確定要繼續嗎?"
   },
   "moveSelectedItemsDesc": {
     "message": "選擇要將這 $COUNT$ 個項目移動至哪個資料夾。",
@@ -1247,6 +1247,9 @@
   },
   "importSuccess": {
     "message": "資料匯入成功"
+  },
+  "dataExportSuccess": {
+    "message": "Data successfully exported"
   },
   "importWarning": {
     "message": "即將匯入資料至 $ORGANIZATION$。您的資料可能會與該組織中的成員共用，確定要繼續嗎？",
@@ -5670,6 +5673,9 @@
   "customColor": {
     "message": "自訂顏色"
   },
+  "selectPlaceholder": {
+    "message": "-- Select --"
+  },
   "multiSelectPlaceholder": {
     "message": "-- 輸入以進行篩選 --"
   },
@@ -5720,11 +5726,8 @@
   "secretProjectAssociationDescription": {
     "message": "選擇與機密相關聯的項目。僅有權存取該項目的組織使用者能檢視該機密。"
   },
-  "typeOrSelectProjects": {
-    "message": "輸入或選擇項目"
-  },
-  "typeOrSelectProject": {
-    "message": "輸入或選擇項目"
+  "selectProjects": {
+    "message": "Select projects"
   },
   "project": {
     "message": "項目"
@@ -5999,6 +6002,9 @@
   "collection": {
     "message": "集合"
   },
+  "noCollection": {
+    "message": "No collection"
+  },
   "canView": {
     "message": "可以檢視"
   },
@@ -6104,6 +6110,33 @@
       }
     }
   },
+  "exportData": {
+    "message": "Export data"
+  },
+  "exportingOrganizationSecretDataTitle": {
+    "message": "Exporting Organization Secret Data"
+  },
+  "exportingOrganizationSecretDataDescription": {
+    "message": "Only the Secrets Manager data associated with $ORGANIZATION$ will be exported. Items in other products or from other organizations will not be included.",
+    "placeholders": {
+      "ORGANIZATION": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "fileUpload": {
+    "message": "File upload"
+  },
+  "acceptedFormats": {
+    "message": "Accepted Formats:"
+  },
+  "copyPasteImportContents": {
+    "message": "Copy & paste import contents:"
+  },
+  "or": {
+    "message": "or"
+  },
   "licenseAndBillingManagement": {
     "message": "License and billing management"
   },
@@ -6134,6 +6167,33 @@
   "uploadLicense": {
     "message": "Upload license"
   },
+  "projectPeopleDescription": {
+    "message": "Grant groups or people access to this project."
+  },
+  "projectPeopleSelectHint": {
+    "message": "Type or select people or groups"
+  },
+  "projectServiceAccountsDescription": {
+    "message": "Grant service accounts access to this project."
+  },
+  "projectServiceAccountsSelectHint": {
+    "message": "Type or select service accounts"
+  },
+  "projectEmptyPeopleAccessPolicies": {
+    "message": "Add people or groups to start collaborating"
+  },
+  "projectEmptyServiceAccountAccessPolicies": {
+    "message": "Add service accounts to grant access"
+  },
+  "canWrite": {
+    "message": "Can write"
+  },
+  "canReadWrite": {
+    "message": "Can read, write"
+  },
+  "groupSlashUser": {
+    "message": "Group/User"
+  },
   "lowKdfIterations": {
     "message": "Low KDF Iterations"
   },
@@ -6154,5 +6214,14 @@
   },
   "userAccessSecretsManager": {
     "message": "This user can access the Secrets Manager Beta"
+  },
+  "resolveTheErrorsBelowAndTryAgain": {
+    "message": "Resolve the errors below and try again."
+  },
+  "description": {
+    "message": "Description"
+  },
+  "errorReadingImportFile": {
+    "message": "An error occurred when trying to read the import file"
   }
 }

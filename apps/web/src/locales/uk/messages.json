@@ -1248,6 +1248,9 @@
   "importSuccess": {
     "message": "Дані успішно імпортовано"
   },
+  "dataExportSuccess": {
+    "message": "Дані успішно експортовано"
+  },
   "importWarning": {
     "message": "Ви імпортуєте дані до $ORGANIZATION$. Ваші дані можуть бути доступними учасникам цієї організації. Ви хочете продовжити?",
     "placeholders": {
@@ -5670,6 +5673,9 @@
   "customColor": {
     "message": "Власний колір"
   },
+  "selectPlaceholder": {
+    "message": "-- Оберіть--"
+  },
   "multiSelectPlaceholder": {
     "message": "-- Введіть для фільтрування --"
   },
@@ -5720,11 +5726,8 @@
   "secretProjectAssociationDescription": {
     "message": "Оберіть проєкти, з якими буде пов'язано секретний ключ."
   },
-  "typeOrSelectProjects": {
-    "message": "Введіть або виберіть проєкти"
-  },
-  "typeOrSelectProject": {
-    "message": "Введіть або виберіть проєкт"
+  "selectProjects": {
+    "message": "Виберіть проєкти"
   },
   "project": {
     "message": "Проєкт"
@@ -5999,6 +6002,9 @@
   "collection": {
     "message": "Збірка"
   },
+  "noCollection": {
+    "message": "Немає збірки"
+  },
   "canView": {
     "message": "Може переглядати"
   },
@@ -6104,6 +6110,33 @@
       }
     }
   },
+  "exportData": {
+    "message": "Експортувати дані"
+  },
+  "exportingOrganizationSecretDataTitle": {
+    "message": "Експорт секретних даних організації"
+  },
+  "exportingOrganizationSecretDataDescription": {
+    "message": "Будуть експортовані лише дані менеджера секретів, пов'язані з $ORGANIZATION$. Елементи інших продуктів чи інших організацій не будуть включені.",
+    "placeholders": {
+      "ORGANIZATION": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "fileUpload": {
+    "message": "Вивантаження файлу"
+  },
+  "acceptedFormats": {
+    "message": "Прийнятні формати:"
+  },
+  "copyPasteImportContents": {
+    "message": "Скопіюйте і вставте вміст імпорту:"
+  },
+  "or": {
+    "message": "або"
+  },
   "licenseAndBillingManagement": {
     "message": "Керування ліцензіями й платежами"
   },
@@ -6134,6 +6167,33 @@
   "uploadLicense": {
     "message": "Вивантажити ліцензію"
   },
+  "projectPeopleDescription": {
+    "message": "Надайте групам або людям доступ до цього проєкту."
+  },
+  "projectPeopleSelectHint": {
+    "message": "Введіть або виберіть людей або групи"
+  },
+  "projectServiceAccountsDescription": {
+    "message": "Надайте службовим обліковим записам доступ до цього проєкту."
+  },
+  "projectServiceAccountsSelectHint": {
+    "message": "Введіть або виберіть службові облікові записи"
+  },
+  "projectEmptyPeopleAccessPolicies": {
+    "message": "Додайте людей або групи, щоб почати співпрацю"
+  },
+  "projectEmptyServiceAccountAccessPolicies": {
+    "message": "Додайте службові облікові записи для надання доступу"
+  },
+  "canWrite": {
+    "message": "Може записувати"
+  },
+  "canReadWrite": {
+    "message": "Може читати й записувати"
+  },
+  "groupSlashUser": {
+    "message": "Група/Користувач"
+  },
   "lowKdfIterations": {
     "message": "Низький показник KDF-ітерацій"
   },
@@ -6154,5 +6214,14 @@
   },
   "userAccessSecretsManager": {
     "message": "Цей користувач має доступ до бета-версії керування секретами"
+  },
+  "resolveTheErrorsBelowAndTryAgain": {
+    "message": "Розв'яжіть зазначені помилки та повторіть спробу."
+  },
+  "description": {
+    "message": "Опис"
+  },
+  "errorReadingImportFile": {
+    "message": "Під час спроби прочитання імпортованого файлу сталася помилка"
   }
 }

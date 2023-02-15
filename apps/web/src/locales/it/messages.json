@@ -1248,6 +1248,9 @@
   "importSuccess": {
     "message": "I dati sono stati importati correttamente nella tua cassaforte."
   },
+  "dataExportSuccess": {
+    "message": "Dati esportati con successo"
+  },
   "importWarning": {
     "message": "Stai importando dati in $ORGANIZATION$. I tuoi dati potrebbero essere condivisi con i membri di questa organizzazione. Vuoi procedere?",
     "placeholders": {
@@ -5670,6 +5673,9 @@
   "customColor": {
     "message": "Colore Personalizzato"
   },
+  "selectPlaceholder": {
+    "message": "-- Seleziona --"
+  },
   "multiSelectPlaceholder": {
     "message": "-- Scrivi per filtrare --"
   },
@@ -5720,11 +5726,8 @@
   "secretProjectAssociationDescription": {
     "message": "Seleziona i progetti a cui sarà associato il segreto. Solo gli utenti dell'organizzazione con accesso a questi progetti saranno in grado di vedere il segreto."
   },
-  "typeOrSelectProjects": {
-    "message": "Digita o seleziona progetti"
-  },
-  "typeOrSelectProject": {
-    "message": "Digita o seleziona progetto"
+  "selectProjects": {
+    "message": "Seleziona i progetti"
   },
   "project": {
     "message": "Progetto"
@@ -5999,6 +6002,9 @@
   "collection": {
     "message": "Raccolta"
   },
+  "noCollection": {
+    "message": "Nessuna raccolta"
+  },
   "canView": {
     "message": "Può visualizzare"
   },
@@ -6104,6 +6110,33 @@
       }
     }
   },
+  "exportData": {
+    "message": "Esporta dati"
+  },
+  "exportingOrganizationSecretDataTitle": {
+    "message": "Esportazione dati segreti dell'organizzazione in corso"
+  },
+  "exportingOrganizationSecretDataDescription": {
+    "message": "Saranno esportati solo i dati del Gestore dei Segreti associato a $ORGANIZATION$. Gli elementi in altri prodotti e gli elementi da altre organizzazioni non saranno inclusi.",
+    "placeholders": {
+      "ORGANIZATION": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "fileUpload": {
+    "message": "Caricamento file"
+  },
+  "acceptedFormats": {
+    "message": "Formati accettati:"
+  },
+  "copyPasteImportContents": {
+    "message": "Copia e incolla contenuti d'importazione:"
+  },
+  "or": {
+    "message": "o"
+  },
   "licenseAndBillingManagement": {
     "message": "Licenza e gestione fatturazione"
   },
@@ -6134,6 +6167,33 @@
   "uploadLicense": {
     "message": "Carica licenza"
   },
+  "projectPeopleDescription": {
+    "message": "Consenti ai gruppi o alle persone l'accesso a questo progetto."
+  },
+  "projectPeopleSelectHint": {
+    "message": "Digita o seleziona persone o gruppi"
+  },
+  "projectServiceAccountsDescription": {
+    "message": "Concedi l'accesso a questo progetto agli account di servizio."
+  },
+  "projectServiceAccountsSelectHint": {
+    "message": "Digita o seleziona account di servizio"
+  },
+  "projectEmptyPeopleAccessPolicies": {
+    "message": "Aggiungi persone o gruppi per iniziare a collaborare"
+  },
+  "projectEmptyServiceAccountAccessPolicies": {
+    "message": "Aggiungi account di servizio per concedere l'accesso"
+  },
+  "canWrite": {
+    "message": "Può scrivere"
+  },
+  "canReadWrite": {
+    "message": "Può leggere, scrivere"
+  },
+  "groupSlashUser": {
+    "message": "Gruppo/Utente"
+  },
   "lowKdfIterations": {
     "message": "Iterazioni KDF basse"
   },
@@ -6154,5 +6214,14 @@
   },
   "userAccessSecretsManager": {
     "message": "Questo utente può accedere alla beta del gestore segreti"
+  },
+  "resolveTheErrorsBelowAndTryAgain": {
+    "message": "Correggi gli errori sotto e prova di nuovo."
+  },
+  "description": {
+    "message": "Descrizione"
+  },
+  "errorReadingImportFile": {
+    "message": "Si è verificato un errore durante la lettura del file d'importazione"
   }
 }

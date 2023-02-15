@@ -1248,6 +1248,9 @@
   "importSuccess": {
     "message": "Veriler başarıyla içe aktarıldı"
   },
+  "dataExportSuccess": {
+    "message": "Veriler başarıyla dışa aktarıldı"
+  },
   "importWarning": {
     "message": "$ORGANIZATION$ kuruluşuna veri aktarıyorsunuz. Verileriniz bu kuruluşun üyeleriyle paylaşılabilir. Devam etmek istiyor musunuz?",
     "placeholders": {
@@ -5670,6 +5673,9 @@
   "customColor": {
     "message": "Özel Renk"
   },
+  "selectPlaceholder": {
+    "message": "-- Seçin --"
+  },
   "multiSelectPlaceholder": {
     "message": "-- Filtrelemek İçin Yazın --"
   },
@@ -5720,11 +5726,8 @@
   "secretProjectAssociationDescription": {
     "message": "Sırrın ilişkilendirileceği projeleri seçin. Yalnızca bu projelere erişimi olan kuruluş kullanıcıları sırrı görebilir."
   },
-  "typeOrSelectProjects": {
-    "message": "Projeleri yazın veya seçin"
-  },
-  "typeOrSelectProject": {
-    "message": "Projeyi yazın veya seçin"
+  "selectProjects": {
+    "message": "Projeleri seçin"
   },
   "project": {
     "message": "Proje"
@@ -5999,6 +6002,9 @@
   "collection": {
     "message": "Koleksiyon"
   },
+  "noCollection": {
+    "message": "Koleksiyon yok"
+  },
   "canView": {
     "message": "Görüntüleyebilir"
   },
@@ -6104,6 +6110,33 @@
       }
     }
   },
+  "exportData": {
+    "message": "Verileri dışarı aktar"
+  },
+  "exportingOrganizationSecretDataTitle": {
+    "message": "Kuruluş Gizli Verilerini Dışa Aktarma"
+  },
+  "exportingOrganizationSecretDataDescription": {
+    "message": "Yalnızca $ORGANIZATION$ ile ilişkili Secrets Manager verileri dışa aktarılacaktır. Diğer ürünlerdeki veya diğer kuruluşlardaki öğeler dahil edilmeyecektir.",
+    "placeholders": {
+      "ORGANIZATION": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "fileUpload": {
+    "message": "Dosya yükleme"
+  },
+  "acceptedFormats": {
+    "message": "Kabul edilen biçimler:"
+  },
+  "copyPasteImportContents": {
+    "message": "İçe aktarılacak içerikleri kopyalayıp yapıştırın:"
+  },
+  "or": {
+    "message": "veya"
+  },
   "licenseAndBillingManagement": {
     "message": "Lisans ve fatura yönetimi"
   },
@@ -6134,6 +6167,33 @@
   "uploadLicense": {
     "message": "Lisansı yükle"
   },
+  "projectPeopleDescription": {
+    "message": "Gruplara veya kişilere bu projeye erişim izni verin."
+  },
+  "projectPeopleSelectHint": {
+    "message": "Kişileri veya grupları yazın veya seçin"
+  },
+  "projectServiceAccountsDescription": {
+    "message": "Hizmet hesaplarına bu projeye erişim izni verin."
+  },
+  "projectServiceAccountsSelectHint": {
+    "message": "Hizmet hesaplarını yazın veya seçin"
+  },
+  "projectEmptyPeopleAccessPolicies": {
+    "message": "Ortak çalışmaya başlamak için kişi veya grup ekleyin"
+  },
+  "projectEmptyServiceAccountAccessPolicies": {
+    "message": "Erişim vermek için hizmet hesapları ekleyin"
+  },
+  "canWrite": {
+    "message": "Yazabilir"
+  },
+  "canReadWrite": {
+    "message": "Okuyabilir, yazabilir"
+  },
+  "groupSlashUser": {
+    "message": "Grup/Kullanıcı"
+  },
   "lowKdfIterations": {
     "message": "Düşük KDF Yinelemeleri"
   },
@@ -6154,5 +6214,14 @@
   },
   "userAccessSecretsManager": {
     "message": "Bu kullanıcı Secrets Manager Beta'ya erişebilir"
+  },
+  "resolveTheErrorsBelowAndTryAgain": {
+    "message": "Aşağıdaki hataları düzeltip yeniden deneyin."
+  },
+  "description": {
+    "message": "Açıklama"
+  },
+  "errorReadingImportFile": {
+    "message": "İçe aktarma dosyası okunurken bir hata oluştu"
   }
 }

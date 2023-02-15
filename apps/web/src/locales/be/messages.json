@@ -1248,6 +1248,9 @@
   "importSuccess": {
     "message": "Даныя былі паспяхова імпартаваны ў ваша сховішча."
   },
+  "dataExportSuccess": {
+    "message": "Data successfully exported"
+  },
   "importWarning": {
     "message": "Вы імпартуеце даныя ў $ORGANIZATION$. Вашы даныя могуць быць абагулены з удзельнікамі арганізацыі. Вы сапраўды хочаце працягнуць?",
     "placeholders": {
@@ -3017,7 +3020,7 @@
     "message": "Доступ да групы"
   },
   "groupAccessUserDesc": {
-    "message": "Рэдагуйце групы да якіх належыць гэты карыстальнік."
+    "message": "Даць удзельнікам доступ да калекцый, дадаўшы іх у 1 або некалькі груп."
   },
   "invitedUsers": {
     "message": "Запрошаныя карыстальнікі."
@@ -4055,7 +4058,7 @@
     "message": "Прызначаны ў якасці экстраннага кантакту"
   },
   "noGrantedAccess": {
-    "message": "У вас пакуль няма экстранных кантактаў."
+    "message": "Вас пакуль яшчэ ніхто не прызначаў у якасці экстраннага кантакту."
   },
   "inviteEmergencyContact": {
     "message": "Запрасіць экстранны кантакт"
@@ -4085,7 +4088,7 @@
     "message": "Час чакання"
   },
   "waitTimeDesc": {
-    "message": "Час, пасля якога доступ будзе дазволены аўтаматычна."
+    "message": "Час, пасля якога доступ надаецца аўтаматычна."
   },
   "oneDay": {
     "message": "1 дзень"
@@ -4246,7 +4249,7 @@
     "message": "Карыстальніцкі"
   },
   "customDesc": {
-    "message": "Дазваляе больш паглыблена кантраляваць дазволы карыстальніка для дадатковых канфігурацый."
+    "message": "Даць удзельнікам карыстальніцкія дазволы"
   },
   "customDescNonEnterpriseStart": {
     "message": "Карыстальніцкія ролі з'яўляюцца ",
@@ -4654,7 +4657,7 @@
     "message": "Памылка"
   },
   "resetPasswordManageUsers": {
-    "message": "Кіраванне карыстальнікамі павінна таксама быць уключана з дазволам \"Кіраванне скіданнем пароля\""
+    "message": "Для кіравання карыстальнікамі неабходна даць дазвол на кіраванне скідання пароля"
   },
   "setupProvider": {
     "message": "Налады пастаўшчыка"
@@ -5670,6 +5673,9 @@
   "customColor": {
     "message": "Карыстальніцкі колер"
   },
+  "selectPlaceholder": {
+    "message": "-- Выбраць --"
+  },
   "multiSelectPlaceholder": {
     "message": "- Увядзіце для фільтрацыі -"
   },
@@ -5720,11 +5726,8 @@
   "secretProjectAssociationDescription": {
     "message": "Выберыце праекты з якімі будзе звязаны сакрэт. Толькі карыстальнікі арганізацыі з доступам да гэтых праектаў змогуць бачыць сакрэт."
   },
-  "typeOrSelectProjects": {
-    "message": "Увядзіце або выберыце праекты"
-  },
-  "typeOrSelectProject": {
-    "message": "Увядзіце або выберыце праект"
+  "selectProjects": {
+    "message": "Выберыце праекты"
   },
   "project": {
     "message": "Праект"
@@ -5973,13 +5976,13 @@
     "message": "Інфармацыя пра групу"
   },
   "editGroupMembersDesc": {
-    "message": "Забяспечыць удзельнікам групы доступ да прызначаных калекцый."
+    "message": "Даць удзельнікам групы доступ да прызначаных калекцый."
   },
   "editGroupCollectionsDesc": {
     "message": "Забяспечыць доступ да калекцый, дадаўшы іх у гэту групу."
   },
   "accessAllCollectionsDesc": {
-    "message": "Забяспечыць доступ да ўсіх бягучых і будучых калекцый."
+    "message": "Даць доступ да ўсіх бягучых і будучых калекцый."
   },
   "accessAllCollectionsHelp": {
     "message": "Калі пазначана, то гэта заменіць усе іншыя дазволы на калекцыю."
@@ -5998,6 +6001,9 @@
   },
   "collection": {
     "message": "Калекцыя"
+  },
+  "noCollection": {
+    "message": "Няма калекцый"
   },
   "canView": {
     "message": "Можа праглядаць"
@@ -6104,6 +6110,33 @@
       }
     }
   },
+  "exportData": {
+    "message": "Export data"
+  },
+  "exportingOrganizationSecretDataTitle": {
+    "message": "Exporting Organization Secret Data"
+  },
+  "exportingOrganizationSecretDataDescription": {
+    "message": "Only the Secrets Manager data associated with $ORGANIZATION$ will be exported. Items in other products or from other organizations will not be included.",
+    "placeholders": {
+      "ORGANIZATION": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "fileUpload": {
+    "message": "File upload"
+  },
+  "acceptedFormats": {
+    "message": "Accepted Formats:"
+  },
+  "copyPasteImportContents": {
+    "message": "Copy & paste import contents:"
+  },
+  "or": {
+    "message": "or"
+  },
   "licenseAndBillingManagement": {
     "message": "Кіраванне ліцэнзіямі і плацяжамі"
   },
@@ -6134,6 +6167,33 @@
   "uploadLicense": {
     "message": "Запампаваць ліцэнзію"
   },
+  "projectPeopleDescription": {
+    "message": "Даць групам або людзям доступ да гэтых праектаў."
+  },
+  "projectPeopleSelectHint": {
+    "message": "Увядзіце або выберыце людзей (групы)"
+  },
+  "projectServiceAccountsDescription": {
+    "message": "Даць сэрвісным уліковым запісам доступ да гэтага праекта."
+  },
+  "projectServiceAccountsSelectHint": {
+    "message": "Увядзіце або выберыце сэрвісныя ўліковы запісы"
+  },
+  "projectEmptyPeopleAccessPolicies": {
+    "message": "Дадаць людзей або групы, каб пачаць сумесную працу"
+  },
+  "projectEmptyServiceAccountAccessPolicies": {
+    "message": "Дадаць сэрвісныя ўліковы запісы для надання доступу"
+  },
+  "canWrite": {
+    "message": "Можа запісваць"
+  },
+  "canReadWrite": {
+    "message": "Можа чытаць і запісваць"
+  },
+  "groupSlashUser": {
+    "message": "Група/Карыстальнік"
+  },
   "lowKdfIterations": {
     "message": "Нізкае значэнне ітэрацыі KDF"
   },
@@ -6154,5 +6214,14 @@
   },
   "userAccessSecretsManager": {
     "message": "Гэты карыстальнік можа атрымаць доступ да Менеджара сакрэтаў у рэжыме бэта-тэсціравання"
+  },
+  "resolveTheErrorsBelowAndTryAgain": {
+    "message": "Resolve the errors below and try again."
+  },
+  "description": {
+    "message": "Description"
+  },
+  "errorReadingImportFile": {
+    "message": "An error occurred when trying to read the import file"
   }
 }

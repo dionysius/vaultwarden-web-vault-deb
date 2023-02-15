@@ -1248,6 +1248,9 @@
   "importSuccess": {
     "message": "Данните са внесени успешно в трезора ви."
   },
+  "dataExportSuccess": {
+    "message": "Данните са изнесени успешно"
+  },
   "importWarning": {
     "message": "Внасяте данни към организацията „$ORGANIZATION$“. Данните могат да бъдат споделени с членовете ѝ. Сигурни ли сте, че искате да продължите?",
     "placeholders": {
@@ -5670,6 +5673,9 @@
   "customColor": {
     "message": "Персонализиран цвят"
   },
+  "selectPlaceholder": {
+    "message": "-- Изберете --"
+  },
   "multiSelectPlaceholder": {
     "message": "-- Пишете тук за филтриране --"
   },
@@ -5720,11 +5726,8 @@
   "secretProjectAssociationDescription": {
     "message": "Изберете проектите, с които ще бъде свързана тази тайна. Само потребителите в организацията, които имат достъп до тези проекти, ще могат да виждат тайната."
   },
-  "typeOrSelectProjects": {
-    "message": "Пишете тук или изберете проекти"
-  },
-  "typeOrSelectProject": {
-    "message": "Пишете тук или изберете проект"
+  "selectProjects": {
+    "message": "Изберете проекти"
   },
   "project": {
     "message": "Проект"
@@ -5910,7 +5913,7 @@
     "message": "Изтича"
   },
   "canRead": {
-    "message": "Can Read"
+    "message": "Can read"
   },
   "accessTokensNoItemsTitle": {
     "message": "Няма идентификатори за достъп за показване"
@@ -5998,6 +6001,9 @@
   },
   "collection": {
     "message": "Колекция"
+  },
+  "noCollection": {
+    "message": "Няма колекция"
   },
   "canView": {
     "message": "Може да преглежда"
@@ -6104,6 +6110,33 @@
       }
     }
   },
+  "exportData": {
+    "message": "Изнасяне на данни"
+  },
+  "exportingOrganizationSecretDataTitle": {
+    "message": "Изнасяне на тайните данни на организацията"
+  },
+  "exportingOrganizationSecretDataDescription": {
+    "message": "Ще бъдат изнесени само тайните данни свързани с $ORGANIZATION$. Записите в други продукти и тези в други организации няма да бъдат включени.",
+    "placeholders": {
+      "ORGANIZATION": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "fileUpload": {
+    "message": "Качване на файлове"
+  },
+  "acceptedFormats": {
+    "message": "Поддържани формати:"
+  },
+  "copyPasteImportContents": {
+    "message": "Копирайте и поставете съдържанието за внасяне:"
+  },
+  "or": {
+    "message": "или"
+  },
   "licenseAndBillingManagement": {
     "message": "Управление на лицензи и таксуване"
   },
@@ -6134,6 +6167,33 @@
   "uploadLicense": {
     "message": "Качване на лиценз"
   },
+  "projectPeopleDescription": {
+    "message": "Дайте права на групи и хора до този проект."
+  },
+  "projectPeopleSelectHint": {
+    "message": "Пишете тук или изберете хора или групи"
+  },
+  "projectServiceAccountsDescription": {
+    "message": "Grant service accounts access to this project."
+  },
+  "projectServiceAccountsSelectHint": {
+    "message": "Type or select service accounts"
+  },
+  "projectEmptyPeopleAccessPolicies": {
+    "message": "Добавете хора или групи, за да започнете да работите съвместно"
+  },
+  "projectEmptyServiceAccountAccessPolicies": {
+    "message": "Add service accounts to grant access"
+  },
+  "canWrite": {
+    "message": "Може да пише"
+  },
+  "canReadWrite": {
+    "message": "Може да чете и пише"
+  },
+  "groupSlashUser": {
+    "message": "Група/потребител"
+  },
   "lowKdfIterations": {
     "message": "Малко повторения за KDF"
   },
@@ -6154,5 +6214,14 @@
   },
   "userAccessSecretsManager": {
     "message": "Този потребител има достъп до Управлението на тайни (Бета)"
+  },
+  "resolveTheErrorsBelowAndTryAgain": {
+    "message": "Оправете грешките по-долу и опитайте отново."
+  },
+  "description": {
+    "message": "Описание"
+  },
+  "errorReadingImportFile": {
+    "message": "Възникна грешка при опита за четене на файла за внасяне"
   }
 }

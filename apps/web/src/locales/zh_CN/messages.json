@@ -1248,6 +1248,9 @@
   "importSuccess": {
     "message": "数据导入成功"
   },
+  "dataExportSuccess": {
+    "message": "数据导出成功"
+  },
   "importWarning": {
     "message": "您正在将数据导入到 $ORGANIZATION$。您的数据可能会与此组织中的成员共享。是否继续？",
     "placeholders": {
@@ -5670,6 +5673,9 @@
   "customColor": {
     "message": "自定义颜色"
   },
+  "selectPlaceholder": {
+    "message": "-- Select --"
+  },
   "multiSelectPlaceholder": {
     "message": "-- 键入以筛选 --"
   },
@@ -5720,11 +5726,8 @@
   "secretProjectAssociationDescription": {
     "message": "选择与机密相关联的项目。仅有权访问该项目的组织用户能查看该机密。"
   },
-  "typeOrSelectProjects": {
-    "message": "输入或选择项目"
-  },
-  "typeOrSelectProject": {
-    "message": "输入或选择项目"
+  "selectProjects": {
+    "message": "选择项目"
   },
   "project": {
     "message": "项目"
@@ -5999,6 +6002,9 @@
   "collection": {
     "message": "Collection"
   },
+  "noCollection": {
+    "message": "No collection"
+  },
   "canView": {
     "message": "可以查看"
   },
@@ -6104,6 +6110,33 @@
       }
     }
   },
+  "exportData": {
+    "message": "导出数据"
+  },
+  "exportingOrganizationSecretDataTitle": {
+    "message": "正在导出组织安全数据"
+  },
+  "exportingOrganizationSecretDataDescription": {
+    "message": "Only the Secrets Manager data associated with $ORGANIZATION$ will be exported. Items in other products or from other organizations will not be included.",
+    "placeholders": {
+      "ORGANIZATION": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "fileUpload": {
+    "message": "文件上传"
+  },
+  "acceptedFormats": {
+    "message": "Accepted Formats:"
+  },
+  "copyPasteImportContents": {
+    "message": "复制并粘贴导入内容："
+  },
+  "or": {
+    "message": "或"
+  },
   "licenseAndBillingManagement": {
     "message": "许可证和账单管理"
   },
@@ -6134,6 +6167,33 @@
   "uploadLicense": {
     "message": "上传许可证"
   },
+  "projectPeopleDescription": {
+    "message": "Grant groups or people access to this project."
+  },
+  "projectPeopleSelectHint": {
+    "message": "Type or select people or groups"
+  },
+  "projectServiceAccountsDescription": {
+    "message": "Grant service accounts access to this project."
+  },
+  "projectServiceAccountsSelectHint": {
+    "message": "Type or select service accounts"
+  },
+  "projectEmptyPeopleAccessPolicies": {
+    "message": "Add people or groups to start collaborating"
+  },
+  "projectEmptyServiceAccountAccessPolicies": {
+    "message": "Add service accounts to grant access"
+  },
+  "canWrite": {
+    "message": "Can write"
+  },
+  "canReadWrite": {
+    "message": "Can read, write"
+  },
+  "groupSlashUser": {
+    "message": "Group/User"
+  },
   "lowKdfIterations": {
     "message": "低KDF 迭代数"
   },
@@ -6154,5 +6214,14 @@
   },
   "userAccessSecretsManager": {
     "message": "此用户可以访问 Secrets Manager 测试版"
+  },
+  "resolveTheErrorsBelowAndTryAgain": {
+    "message": "Resolve the errors below and try again."
+  },
+  "description": {
+    "message": "说明"
+  },
+  "errorReadingImportFile": {
+    "message": "An error occurred when trying to read the import file"
   }
 }

@@ -1149,7 +1149,7 @@
     }
   },
   "kdfIterationsWarning": {
-    "message": "Setting your KDF iterations too high could result in poor performance when logging into (and unlocking) Bitwarden on slower or older devices. We recommend that you increase the value in increments of $INCREMENT$ and then test all of your devices.",
+    "message": "KDF iterasiyalarınızı çox yüksək tənzimləmək, yavaş və ya köhnə cihazlarda \"Bitwarden\"ə giriş edərkən (və ya kilidi açarkən) aşağı performansa səbəb ola bilər. Dəyəri $INCREMENT$ artımları ilə artırmağınızı və daha sonra bütün cihazlarınızda test etməyinizi məsləhət görürük.",
     "placeholders": {
       "increment": {
         "content": "$1",
@@ -1247,6 +1247,9 @@
   },
   "importSuccess": {
     "message": "Verilənlər anbarınıza uğurla idxal edildi."
+  },
+  "dataExportSuccess": {
+    "message": "Məlumat uğurla xaricə köçürüldü"
   },
   "importWarning": {
     "message": "$ORGANIZATION$ təşkilatına verilənləri idxal edirsiniz. Verilənlərinizi bu təşkilatın üzvləri ilə paylaşa bilərsiniz. Davam etmək istəyirsiniz?",
@@ -5670,6 +5673,9 @@
   "customColor": {
     "message": "Özəl rəng"
   },
+  "selectPlaceholder": {
+    "message": "-- Seç --"
+  },
   "multiSelectPlaceholder": {
     "message": "-- Filtrləmək üçün yazın --"
   },
@@ -5720,11 +5726,8 @@
   "secretProjectAssociationDescription": {
     "message": "Sirrin əlaqələndiriləcəyi layihələri seçin. Yalnız bu layihələrə müraciəti olan təşkilat istifadəçiləri sirri görə biləcək."
   },
-  "typeOrSelectProjects": {
-    "message": "Layihələri yazın və ya seçin"
-  },
-  "typeOrSelectProject": {
-    "message": "Layihə yazın və ya seçin"
+  "selectProjects": {
+    "message": "Layihələri seçin"
   },
   "project": {
     "message": "Layihə"
@@ -5999,6 +6002,9 @@
   "collection": {
     "message": "Kolleksiya"
   },
+  "noCollection": {
+    "message": "Kolleksiya yoxdur"
+  },
   "canView": {
     "message": "Baxa bilər"
   },
@@ -6104,6 +6110,33 @@
       }
     }
   },
+  "exportData": {
+    "message": "Məlumatı xaricə köçür"
+  },
+  "exportingOrganizationSecretDataTitle": {
+    "message": "Təşkilat Gizli Məlumatlarının xaricə köçürülməsi"
+  },
+  "exportingOrganizationSecretDataDescription": {
+    "message": "Yalnız $ORGANIZATION$ ilə əlaqəli Secrets Manager məlumatları xaricə köçürüləcək. Digər məhsullardakı və ya digər təşkilatlardan olan elementlər daxil edilmir.",
+    "placeholders": {
+      "ORGANIZATION": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "fileUpload": {
+    "message": "Fayl yüklə"
+  },
+  "acceptedFormats": {
+    "message": "Qəbul edilən formatlar:"
+  },
+  "copyPasteImportContents": {
+    "message": "Daxilə köçürmə məzmunlarını kopyala və yapışdır:"
+  },
+  "or": {
+    "message": "və ya"
+  },
   "licenseAndBillingManagement": {
     "message": "Lisenziya və faktura idarəetməsi"
   },
@@ -6134,6 +6167,33 @@
   "uploadLicense": {
     "message": "Lisenziyanı yüklə"
   },
+  "projectPeopleDescription": {
+    "message": "Qrup və ya insanların bu layihəyə müraciətinə icazə verin."
+  },
+  "projectPeopleSelectHint": {
+    "message": "İnsanları və ya qrupları yazın və ya seçin"
+  },
+  "projectServiceAccountsDescription": {
+    "message": "Xidmət hesablarının bu layihəyə müraciətinə icazə verin."
+  },
+  "projectServiceAccountsSelectHint": {
+    "message": "Xidmət hesablarını yazın və ya seçin"
+  },
+  "projectEmptyPeopleAccessPolicies": {
+    "message": "Əməkdaşlığa başlamaq insanları və ya qrupları əlavə edin"
+  },
+  "projectEmptyServiceAccountAccessPolicies": {
+    "message": "Müraciət icazəsi veriləcək xidmət hesablarını əlavə edin"
+  },
+  "canWrite": {
+    "message": "Yaza bilər"
+  },
+  "canReadWrite": {
+    "message": "Oxuya, yaza bilər"
+  },
+  "groupSlashUser": {
+    "message": "Qrup/İstifadəçi"
+  },
   "lowKdfIterations": {
     "message": "Aşağı KDF iterasiyaları"
   },
@@ -6154,5 +6214,14 @@
   },
   "userAccessSecretsManager": {
     "message": "Bu istifadəçi \"Secrets Manager Beta\"ya müraciət edə bilər"
+  },
+  "resolveTheErrorsBelowAndTryAgain": {
+    "message": "Aşağıdakı xətaları həll edin və yenidən sınayın."
+  },
+  "description": {
+    "message": "Açıqlama"
+  },
+  "errorReadingImportFile": {
+    "message": "Daxilə köçürmə faylını oxumağa çalışarkən xəta baş verdi"
   }
 }

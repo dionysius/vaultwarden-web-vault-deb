@@ -1248,6 +1248,9 @@
   "importSuccess": {
     "message": "Az adatok sikeresen importálásra kerültek a széfbe."
   },
+  "dataExportSuccess": {
+    "message": "Az adatok sikeresen exportálásra kerültek."
+  },
   "importWarning": {
     "message": "Adatokat importálunk $ORGANIZATION$ mappába. Az adatok megoszthatók a szervezet tagjaival. Folytatjuk?",
     "placeholders": {
@@ -5670,6 +5673,9 @@
   "customColor": {
     "message": "Egyedi szín"
   },
+  "selectPlaceholder": {
+    "message": "-- Választás --"
+  },
   "multiSelectPlaceholder": {
     "message": "-- Szűrendő típus --"
   },
@@ -5720,11 +5726,8 @@
   "secretProjectAssociationDescription": {
     "message": "Válasszzuk ki azokat a projekteket, amelyekhez a titkos kód társítva lesz. Csak az ezekhez a projektekhez hozzáféréssel rendelkező szervezeti felhasználók láthatják a titkos kódot."
   },
-  "typeOrSelectProjects": {
-    "message": "Projektek begépelése vagy kiválasztása"
-  },
-  "typeOrSelectProject": {
-    "message": "Projekt begépelése vagy kiválasztása"
+  "selectProjects": {
+    "message": "Projekt választás"
   },
   "project": {
     "message": "Projekt"
@@ -5999,6 +6002,9 @@
   "collection": {
     "message": "Gyűjtemény"
   },
+  "noCollection": {
+    "message": "Nincs gyűjtemény."
+  },
   "canView": {
     "message": "Megtekintheti"
   },
@@ -6104,6 +6110,33 @@
       }
     }
   },
+  "exportData": {
+    "message": "Adatok exportálása"
+  },
+  "exportingOrganizationSecretDataTitle": {
+    "message": "Szervezeti titkos adatok exportálása"
+  },
+  "exportingOrganizationSecretDataDescription": {
+    "message": "Csak $ORGANIZATION$ szervezethez társított titkos kezelés adatok kerülnek exportálásra. Más termékekben vagy más szervezetektől származó elemek nem kerülnek be.",
+    "placeholders": {
+      "ORGANIZATION": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "fileUpload": {
+    "message": "Fájlfeltöltés"
+  },
+  "acceptedFormats": {
+    "message": "Elfogadott formátumok:"
+  },
+  "copyPasteImportContents": {
+    "message": "Importálás tartalmat másolása és beillesztése:"
+  },
+  "or": {
+    "message": "vagy"
+  },
   "licenseAndBillingManagement": {
     "message": "Licensz és számlázás kezelés"
   },
@@ -6134,6 +6167,33 @@
   "uploadLicense": {
     "message": "Licensz letöltése"
   },
+  "projectPeopleDescription": {
+    "message": "Adjunk hozzáférést csoportoknak vagy személyeknek ehhez a projekthez."
+  },
+  "projectPeopleSelectHint": {
+    "message": "Csoportok vagy személyek beírása vagy kiválasztása"
+  },
+  "projectServiceAccountsDescription": {
+    "message": "Szolgáltatás fiókok elérésének engedélyezése ehhez a projekthez."
+  },
+  "projectServiceAccountsSelectHint": {
+    "message": "Írjuk be vagy válasszuk ki a szolgáltatásfiókokat"
+  },
+  "projectEmptyPeopleAccessPolicies": {
+    "message": "Az együttműködés megkezdéséhez vegyünk fel személyeket vagy csoportokat"
+  },
+  "projectEmptyServiceAccountAccessPolicies": {
+    "message": "Adjunk hozzá szolgáltatás fiókokat a hozzáférés biztosításához"
+  },
+  "canWrite": {
+    "message": "Írhat"
+  },
+  "canReadWrite": {
+    "message": "Írhat, olvashat"
+  },
+  "groupSlashUser": {
+    "message": "Csoport/Felhasználó"
+  },
   "lowKdfIterations": {
     "message": "Alacsony KDF iterációk"
   },
@@ -6154,5 +6214,14 @@
   },
   "userAccessSecretsManager": {
     "message": "Ez a felhasználó hozzáférhet a Titkos kód kezelő béta verziójához."
+  },
+  "resolveTheErrorsBelowAndTryAgain": {
+    "message": "Az alábbi hibák feloldása és ismételt próbálkozás."
+  },
+  "description": {
+    "message": "Leírás"
+  },
+  "errorReadingImportFile": {
+    "message": "Hiba történt az import fájl beolvasásának kísérletekor."
   }
 }

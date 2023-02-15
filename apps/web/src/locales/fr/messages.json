@@ -399,7 +399,7 @@
     "message": "Ajouter un élément"
   },
   "editItem": {
-    "message": "Modifier l'élément"
+    "message": "Éditer l'élément"
   },
   "viewItem": {
     "message": "Afficher l'élément"
@@ -743,7 +743,7 @@
     "message": "Mot de passe de fichier invalide, veuillez utiliser le mot de passe que vous avez entré lorsque vous avez créé le fichier d'exportation."
   },
   "lockNow": {
-    "message": "Vérrouiller maintenant"
+    "message": "Verrouiller maintenant"
   },
   "noItemsInList": {
     "message": "Aucun élément à afficher."
@@ -824,7 +824,7 @@
     "message": "Identifiant non disponible"
   },
   "noTwoStepProviders": {
-    "message": "Ce compte dispose d'une authentification à deux facteurs mise en place, cependant, aucun des fournisseurs à deux facteurs configurés n'est pris en charge par ce navigateur web."
+    "message": "Ce compte dispose d'une authentification à deux facteurs de configurée, cependant, aucun des fournisseurs à deux facteurs configurés n'est pris en charge par ce navigateur web."
   },
   "noTwoStepProviders2": {
     "message": "Merci d'utiliser un navigateur web compatible (comme Chrome) et/ou d'ajouter des services additionnels d'identification en deux étapes qui sont mieux supportés par les navigateurs web (comme par exemple une application d'authentification)."
@@ -1248,6 +1248,9 @@
   "importSuccess": {
     "message": "Les données ont été importées dans votre coffre avec succès."
   },
+  "dataExportSuccess": {
+    "message": "Données exportées avec succès"
+  },
   "importWarning": {
     "message": "Vous importez des données vers $ORGANIZATION$. Vos données pourraient être partagées avec les membres de cette organisation. Voulez-vous continuer ?",
     "placeholders": {
@@ -1387,7 +1390,7 @@
     "message": "Si vous avez configuré SSO ou si vous prévoyez de le faire, l'authentification à deux facteurs peut déjà être imposée via votre fournisseur d'identité."
   },
   "twoStepLoginRecoveryWarning": {
-    "message": "La mise en place d'un système d'authentification à deux étapes peut vous bloquer définitivement l'accès à votre compte Bitwarden. Un code de récupération vous permet d'accéder à votre compte dans le cas où vous ne pouvez plus utiliser votre fournisseur normal d'authentification à deux facteurs (exemple : vous perdez votre appareil). L'assistance de Bitwarden ne pourra pas vous aider si vous perdez l'accès à votre compte. Nous vous recommandons de noter ou d'imprimer le code de récupération et de le conserver dans un lieu sûr."
+    "message": "La configuration d'un système d'authentification à deux facteurs peut définitivement verrouiler l'accès à votre compte Bitwarden. Un code de récupération vous permet d'accéder à votre compte dans le cas où vous ne pouvez plus utiliser votre fournisseur normal d'authentification à deux facteurs (exemple : vous perdez votre appareil). L'assistance de Bitwarden ne pourra pas vous aider si vous perdez l'accès à votre compte. Nous vous recommandons de noter ou d'imprimer le code de récupération et de le conserver dans un lieu sûr."
   },
   "viewRecoveryCode": {
     "message": "Voir le code de récupération"
@@ -3693,7 +3696,7 @@
     "message": "Choix laissé à l'utilisateur"
   },
   "vaultTimeoutAction": {
-    "message": "Action lors de l'expiration du délai du coffre"
+    "message": "Action après délai d'expiration du coffre"
   },
   "vaultTimeoutActionLockDesc": {
     "message": "Un mot de passe principal ou une autre méthode de déverrouillage est nécessaire pour accéder à nouveau à votre coffre."
@@ -5149,7 +5152,7 @@
     "message": "Key Connector"
   },
   "memberDecryptionKeyConnectorDesc": {
-    "message": "Connectez l'authentification par SSO à votre serveur de clés de déchiffrement auto-hébergé. En utilisant cette option, les membres n'auront pas besoin d'utiliser leurs mots de passe principaux pour déchiffrer les données du coffre. Contactez le support Bitwarden pour une assistance à la mise en place."
+    "message": "Connectez l'identifiant via SSO à votre serveur de clés de déchiffrement auto-hébergé. En utilisant cette option, les membres n'auront pas besoin d'utiliser leurs mots de passe principaux pour déchiffrer les données du coffre. Contactez le support Bitwarden pour une assistance à la configuration."
   },
   "keyConnectorPolicyRestriction": {
     "message": "\"Connexion avec SSO et déchiffrement avec Key Connector\" est activé. Cette politique ne s'appliquera qu'aux propriétaires et aux administrateurs."
@@ -5670,6 +5673,9 @@
   "customColor": {
     "message": "Couleur Personnalisée"
   },
+  "selectPlaceholder": {
+    "message": "-- Sélectionner--"
+  },
   "multiSelectPlaceholder": {
     "message": "-- Tapez pour Filtrer --"
   },
@@ -5720,11 +5726,8 @@
   "secretProjectAssociationDescription": {
     "message": "Sélectionnez les projets auxquels le secret sera associé. Seuls les utilisateurs de l'organisation ayant accès à ces projets pourront voir le secret."
   },
-  "typeOrSelectProjects": {
-    "message": "Écrivez ou sélectionnez des Projets"
-  },
-  "typeOrSelectProject": {
-    "message": "Écrivez ou sélectionnez un Projet"
+  "selectProjects": {
+    "message": "Sélectionnez les projets"
   },
   "project": {
     "message": "Projet"
@@ -5999,6 +6002,9 @@
   "collection": {
     "message": "Collection"
   },
+  "noCollection": {
+    "message": "Aucune collection"
+  },
   "canView": {
     "message": "Peut voir"
   },
@@ -6104,6 +6110,33 @@
       }
     }
   },
+  "exportData": {
+    "message": "Exporter les données"
+  },
+  "exportingOrganizationSecretDataTitle": {
+    "message": "Exportation des Données Secrètes de l'Organisation"
+  },
+  "exportingOrganizationSecretDataDescription": {
+    "message": "Seules les données du Gestionnaire de Secrets associées à $ORGANIZATION$ seront exportées. Les articles d'autres produits ou d'autres organisations ne seront pas inclus.",
+    "placeholders": {
+      "ORGANIZATION": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "fileUpload": {
+    "message": "Chargement du fichier"
+  },
+  "acceptedFormats": {
+    "message": "Formats acceptés :"
+  },
+  "copyPasteImportContents": {
+    "message": "Copier et coller le contenu de l'importation :"
+  },
+  "or": {
+    "message": "ou"
+  },
   "licenseAndBillingManagement": {
     "message": "Gestion des licences et de la facturation"
   },
@@ -6134,6 +6167,33 @@
   "uploadLicense": {
     "message": "Téléverser la licence"
   },
+  "projectPeopleDescription": {
+    "message": "Accorder l'accès à ce projet à des groupes ou à des personnes."
+  },
+  "projectPeopleSelectHint": {
+    "message": "Saisissez ou sélectionnez des personnes ou des groupes"
+  },
+  "projectServiceAccountsDescription": {
+    "message": "Accorder l'accès aux comptes de service à ce projet."
+  },
+  "projectServiceAccountsSelectHint": {
+    "message": "Saisissez ou sélectionnez les comptes de service"
+  },
+  "projectEmptyPeopleAccessPolicies": {
+    "message": "Ajouter des personnes ou des groupes pour commencer à collaborer"
+  },
+  "projectEmptyServiceAccountAccessPolicies": {
+    "message": "Ajouter des comptes de service pour accorder l'accès"
+  },
+  "canWrite": {
+    "message": "Peut écrire"
+  },
+  "canReadWrite": {
+    "message": "Peut lire, écrire"
+  },
+  "groupSlashUser": {
+    "message": "Groupe/Utilisateur"
+  },
   "lowKdfIterations": {
     "message": "Itérations KDF basses"
   },
@@ -6154,5 +6214,14 @@
   },
   "userAccessSecretsManager": {
     "message": "Cet utilisateur peut accéder au gestionnaire de secrets bêta"
+  },
+  "resolveTheErrorsBelowAndTryAgain": {
+    "message": "Résolvez les erreurs ci-dessous et réessayez."
+  },
+  "description": {
+    "message": "Description"
+  },
+  "errorReadingImportFile": {
+    "message": "Une erreur est survenue lors de la lecture du fichier importé"
   }
 }

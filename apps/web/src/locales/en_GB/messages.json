@@ -1149,7 +1149,7 @@
     }
   },
   "kdfIterationsWarning": {
-    "message": "Setting your KDF iterations too high could result in poor performance when logging into (and unlocking) Bitwarden on devices with slower CPUs. We recommend that you increase the value in increments of $INCREMENT$ and then test all of your devices.",
+    "message": "Setting your KDF iterations too high could result in poor performance when logging into (and unlocking) Bitwarden on slower or older devices. We recommend that you increase the value in increments of $INCREMENT$ and then test all of your devices.",
     "placeholders": {
       "increment": {
         "content": "$1",
@@ -1247,6 +1247,9 @@
   },
   "importSuccess": {
     "message": "Data successfully imported"
+  },
+  "dataExportSuccess": {
+    "message": "Data successfully exported"
   },
   "importWarning": {
     "message": "You are importing data to $ORGANIZATION$. Your data may be shared with members of this organisation. Do you want to proceed?",
@@ -4453,10 +4456,10 @@
     "message": "Your password hint cannot be the same as your password."
   },
   "enrollPasswordReset": {
-    "message": "Enroll in password reset"
+    "message": "Enrol in password reset"
   },
   "enrolledPasswordReset": {
-    "message": "Enrolled in password reset"
+    "message": "Enroled in password reset"
   },
   "withdrawPasswordReset": {
     "message": "Withdraw from password reset"
@@ -4468,7 +4471,7 @@
     "message": "Withdrawal success!"
   },
   "eventEnrollPasswordReset": {
-    "message": "User $ID$ enrolled in password reset.",
+    "message": "User $ID$ enroled in password reset.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -4543,22 +4546,22 @@
     "message": "Allow admins to reset master passwords for members."
   },
   "resetPasswordPolicyWarning": {
-    "message": "Members in the organisation will need to self-enroll or be auto-enrolled before administrators can reset their master password."
+    "message": "Members in the organisation will need to self-enrol or be auto-enroled before administrators can reset their master password."
   },
   "resetPasswordPolicyAutoEnroll": {
-    "message": "Automatic enrollment"
+    "message": "Automatic enrolment"
   },
   "resetPasswordPolicyAutoEnrollDescription": {
-    "message": "All members will be automatically enrolled in password reset once their invite is accepted and will not be allowed to withdraw."
+    "message": "All members will be automatically enroled in password reset once their invite is accepted and will not be allowed to withdraw."
   },
   "resetPasswordPolicyAutoEnrollWarning": {
-    "message": "Members already in the organisation will not be retroactively enrolled in password reset. They will need to self-enroll before administrators can reset their master password."
+    "message": "Members already in the organisation will not be retroactively enroled in password reset. They will need to self-enrol before administrators can reset their master password."
   },
   "resetPasswordPolicyAutoEnrollCheckbox": {
-    "message": "Require new members to be enrolled automatically"
+    "message": "Require new members to be enroled automatically"
   },
   "resetPasswordAutoEnrollInviteWarning": {
-    "message": "This organisation has an Enterprise policy that will automatically enroll you in password reset. Enrollment will allow organisation administrators to change your master password."
+    "message": "This organisation has an Enterprise policy that will automatically enrol you in password reset. Enrolment will allow organisation administrators to change your master password."
   },
   "resetPasswordOrgKeysError": {
     "message": "Organisation keys response is null"
@@ -5670,6 +5673,9 @@
   "customColor": {
     "message": "Custom Colour"
   },
+  "selectPlaceholder": {
+    "message": "-- Select --"
+  },
   "multiSelectPlaceholder": {
     "message": "-- Type to filter --"
   },
@@ -5720,11 +5726,8 @@
   "secretProjectAssociationDescription": {
     "message": "Select projects that the secret will be associated with. Only organisation users with access to these projects will be able to see the secret."
   },
-  "typeOrSelectProjects": {
-    "message": "Type or select Projects"
-  },
-  "typeOrSelectProject": {
-    "message": "Type or select Project"
+  "selectProjects": {
+    "message": "Select projects"
   },
   "project": {
     "message": "Project"
@@ -5910,7 +5913,7 @@
     "message": "Expires"
   },
   "canRead": {
-    "message": "Can Read"
+    "message": "Can read"
   },
   "accessTokensNoItemsTitle": {
     "message": "No access tokens to show"
@@ -5998,6 +6001,9 @@
   },
   "collection": {
     "message": "Collection"
+  },
+  "noCollection": {
+    "message": "No collection"
   },
   "canView": {
     "message": "Can view"
@@ -6104,6 +6110,33 @@
       }
     }
   },
+  "exportData": {
+    "message": "Export data"
+  },
+  "exportingOrganizationSecretDataTitle": {
+    "message": "Exporting Organisation Secret Data"
+  },
+  "exportingOrganizationSecretDataDescription": {
+    "message": "Only the Secrets Manager data associated with $ORGANIZATION$ will be exported. Items in other products or from other organisations will not be included.",
+    "placeholders": {
+      "ORGANIZATION": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "fileUpload": {
+    "message": "File upload"
+  },
+  "acceptedFormats": {
+    "message": "Accepted Formats:"
+  },
+  "copyPasteImportContents": {
+    "message": "Copy & paste import contents:"
+  },
+  "or": {
+    "message": "or"
+  },
   "licenseAndBillingManagement": {
     "message": "Licence and billing management"
   },
@@ -6134,6 +6167,33 @@
   "uploadLicense": {
     "message": "Upload licence"
   },
+  "projectPeopleDescription": {
+    "message": "Grant groups or people access to this project."
+  },
+  "projectPeopleSelectHint": {
+    "message": "Type or select people or groups"
+  },
+  "projectServiceAccountsDescription": {
+    "message": "Grant service accounts access to this project."
+  },
+  "projectServiceAccountsSelectHint": {
+    "message": "Type or select service accounts"
+  },
+  "projectEmptyPeopleAccessPolicies": {
+    "message": "Add people or groups to start collaborating"
+  },
+  "projectEmptyServiceAccountAccessPolicies": {
+    "message": "Add service accounts to grant access"
+  },
+  "canWrite": {
+    "message": "Can write"
+  },
+  "canReadWrite": {
+    "message": "Can read, write"
+  },
+  "groupSlashUser": {
+    "message": "Group/User"
+  },
   "lowKdfIterations": {
     "message": "Low KDF Iterations"
   },
@@ -6154,5 +6214,14 @@
   },
   "userAccessSecretsManager": {
     "message": "This user can access the Secrets Manager Beta"
+  },
+  "resolveTheErrorsBelowAndTryAgain": {
+    "message": "Resolve the errors below and try again."
+  },
+  "description": {
+    "message": "Description"
+  },
+  "errorReadingImportFile": {
+    "message": "An error occurred when trying to read the import file"
   }
 }

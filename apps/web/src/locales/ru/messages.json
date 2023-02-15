@@ -1248,6 +1248,9 @@
   "importSuccess": {
     "message": "Данные успешно импортированы"
   },
+  "dataExportSuccess": {
+    "message": "Данные успешно экспортированы"
+  },
   "importWarning": {
     "message": "Вы импортируете данные в $ORGANIZATION$. Члены этой организации могут получить доступ к вашим данным. Хотите продолжить?",
     "placeholders": {
@@ -4462,7 +4465,7 @@
     "message": "Отказаться от сброса пароля"
   },
   "enrollPasswordResetSuccess": {
-    "message": "Регистрация успешна!"
+    "message": "Записано успешно!"
   },
   "withdrawPasswordResetSuccess": {
     "message": "Запись успешно отменена!"
@@ -4546,7 +4549,7 @@
     "message": "Пользователи организации должны зарегистрироваться самостоятельно или быть зарегистрированными автоматически, чтобы администраторы могли сбросить их мастер-пароль."
   },
   "resetPasswordPolicyAutoEnroll": {
-    "message": "Автоматическое развертывание"
+    "message": "Автоматическое регистрация"
   },
   "resetPasswordPolicyAutoEnrollDescription": {
     "message": "Все пользователи будут автоматически зарегистрированы на сброс пароля, после того как их приглашение будет принято, и им не будет разрешено отказаться от его выполнения."
@@ -5670,6 +5673,9 @@
   "customColor": {
     "message": "Пользовательский цвет"
   },
+  "selectPlaceholder": {
+    "message": "-- Выбрать --"
+  },
   "multiSelectPlaceholder": {
     "message": "-- Введите для фильтрации --"
   },
@@ -5720,11 +5726,8 @@
   "secretProjectAssociationDescription": {
     "message": "Выберите проекты, с которыми будет связан секрет. Только пользователи организации, имеющие доступ к этим проектам, смогут увидеть секрет."
   },
-  "typeOrSelectProjects": {
-    "message": "Введите или выберите проекты"
-  },
-  "typeOrSelectProject": {
-    "message": "Введите или выберите проекты"
+  "selectProjects": {
+    "message": "Выберите проекты"
   },
   "project": {
     "message": "Проект"
@@ -5999,6 +6002,9 @@
   "collection": {
     "message": "Коллекция"
   },
+  "noCollection": {
+    "message": "Нет коллекций"
+  },
   "canView": {
     "message": "Может просматривать"
   },
@@ -6104,6 +6110,33 @@
       }
     }
   },
+  "exportData": {
+    "message": "Экспорт данных"
+  },
+  "exportingOrganizationSecretDataTitle": {
+    "message": "Экспорт секретных данных организации"
+  },
+  "exportingOrganizationSecretDataDescription": {
+    "message": "Будут экспортированы только данные менеджера секретов, связанные с $ORGANIZATION$. Элементы в других продуктах или из других организаций включены не будут.",
+    "placeholders": {
+      "ORGANIZATION": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "fileUpload": {
+    "message": "Загрузить файл"
+  },
+  "acceptedFormats": {
+    "message": "Допустимые форматы:"
+  },
+  "copyPasteImportContents": {
+    "message": "Скопировать и вставить содержимое импорта:"
+  },
+  "or": {
+    "message": "или"
+  },
   "licenseAndBillingManagement": {
     "message": "Управление лицензиями и выставлением счетов"
   },
@@ -6134,6 +6167,33 @@
   "uploadLicense": {
     "message": "Загрузить лицензию"
   },
+  "projectPeopleDescription": {
+    "message": "Предоставить группам или людям доступ к этому проекту."
+  },
+  "projectPeopleSelectHint": {
+    "message": "Введите или выберите людей или группы"
+  },
+  "projectServiceAccountsDescription": {
+    "message": "Предоставить сервисным аккаунтам доступ к этому проекту."
+  },
+  "projectServiceAccountsSelectHint": {
+    "message": "Введите или выберите сервисные аккаунты"
+  },
+  "projectEmptyPeopleAccessPolicies": {
+    "message": "Добавить людей или группы, чтобы начать совместную работу"
+  },
+  "projectEmptyServiceAccountAccessPolicies": {
+    "message": "Добавить сервисные аккаунты для предоставления доступа"
+  },
+  "canWrite": {
+    "message": "Может записывать"
+  },
+  "canReadWrite": {
+    "message": "Может читать, записывать"
+  },
+  "groupSlashUser": {
+    "message": "Группа/Пользователь"
+  },
   "lowKdfIterations": {
     "message": "Низкие итерации KDF"
   },
@@ -6154,5 +6214,14 @@
   },
   "userAccessSecretsManager": {
     "message": "Этот пользователь может получить доступ к Менеджеру секретов Beta"
+  },
+  "resolveTheErrorsBelowAndTryAgain": {
+    "message": "Устраните указанные ниже ошибки и повторите попытку."
+  },
+  "description": {
+    "message": "Описание"
+  },
+  "errorReadingImportFile": {
+    "message": "Произошла ошибка при попытке чтения импортируемого файла"
   }
 }

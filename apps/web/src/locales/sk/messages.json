@@ -1248,6 +1248,9 @@
   "importSuccess": {
     "message": "Dáta boli úspešne importované do trezora."
   },
+  "dataExportSuccess": {
+    "message": "Dáta boli úspešne exportované"
+  },
   "importWarning": {
     "message": "Importujete údaje do $ORGANIZATION$. Vaše údaje môžu byť zdieľané s členmi tejto organizácie. Chcete pokračovať?",
     "placeholders": {
@@ -5670,6 +5673,9 @@
   "customColor": {
     "message": "Vlastná farba"
   },
+  "selectPlaceholder": {
+    "message": "-- Vyberte --"
+  },
   "multiSelectPlaceholder": {
     "message": "-- Začnite písať pre filtrovanie --"
   },
@@ -5720,11 +5726,8 @@
   "secretProjectAssociationDescription": {
     "message": "Vyberte projekty ku ktorým bude heslo patriť. Iba tí používatelia organizácie, ktorí majú prístup k zvoleným projektom budú môcť vidieť heslo."
   },
-  "typeOrSelectProjects": {
-    "message": "Zadajte alebo vyberte Projekty"
-  },
-  "typeOrSelectProject": {
-    "message": "Zadajte alebo vyberte Projekt"
+  "selectProjects": {
+    "message": "Vyberte projekty"
   },
   "project": {
     "message": "Project"
@@ -5910,7 +5913,7 @@
     "message": "Expires"
   },
   "canRead": {
-    "message": "Can Read"
+    "message": "Can read"
   },
   "accessTokensNoItemsTitle": {
     "message": "No access tokens to show"
@@ -5998,6 +6001,9 @@
   },
   "collection": {
     "message": "Zbierka"
+  },
+  "noCollection": {
+    "message": "Žiadna zbierka"
   },
   "canView": {
     "message": "Môže zobraziť"
@@ -6104,6 +6110,33 @@
       }
     }
   },
+  "exportData": {
+    "message": "Exportovať dáta"
+  },
+  "exportingOrganizationSecretDataTitle": {
+    "message": "Exportovať tajné dáta Organizácie"
+  },
+  "exportingOrganizationSecretDataDescription": {
+    "message": "Exportované budú iba Secrets Manager dáta spojené s organizáciou $ORGANIZATION$. Položky v ostatných produktoch a položky z iných organizácií nebudú zahrnuté.",
+    "placeholders": {
+      "ORGANIZATION": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "fileUpload": {
+    "message": "Nahrať súbor"
+  },
+  "acceptedFormats": {
+    "message": "Akceptované formáty:"
+  },
+  "copyPasteImportContents": {
+    "message": "Kopírovať a vložiť obsah pre import:"
+  },
+  "or": {
+    "message": "alebo"
+  },
   "licenseAndBillingManagement": {
     "message": "License and billing management"
   },
@@ -6134,6 +6167,33 @@
   "uploadLicense": {
     "message": "Upload license"
   },
+  "projectPeopleDescription": {
+    "message": "Povoľte skupinám, alebo jednotlivcom prístup k tomuto projektu."
+  },
+  "projectPeopleSelectHint": {
+    "message": "Zadajte alebo vyberte jednotlivcov alebo skupiny"
+  },
+  "projectServiceAccountsDescription": {
+    "message": "Povoľte služobným kontám prístup k tomuto projektu."
+  },
+  "projectServiceAccountsSelectHint": {
+    "message": "Zadajte alebo vyberte služobné kontá"
+  },
+  "projectEmptyPeopleAccessPolicies": {
+    "message": "Pridajte jednotlivcov alebo skupiny a začnite spolupracovať"
+  },
+  "projectEmptyServiceAccountAccessPolicies": {
+    "message": "Pridajte služobné kontá pre povolenie prístupu"
+  },
+  "canWrite": {
+    "message": "Môže zapisovať"
+  },
+  "canReadWrite": {
+    "message": "Môže čítať, zapisovať"
+  },
+  "groupSlashUser": {
+    "message": "Skupina/Používateľ"
+  },
   "lowKdfIterations": {
     "message": "Nízky počet iterácií KDF"
   },
@@ -6154,5 +6214,14 @@
   },
   "userAccessSecretsManager": {
     "message": "Tento používateľ má prístup k beta verzii Secrets Manager"
+  },
+  "resolveTheErrorsBelowAndTryAgain": {
+    "message": "Vyriešte problémy nižšie a skúste to znova."
+  },
+  "description": {
+    "message": "Popis"
+  },
+  "errorReadingImportFile": {
+    "message": "Pri pokuse o prečítanie súboru na import sa vyskytla chyba"
   }
 }

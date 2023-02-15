@@ -1248,6 +1248,9 @@
   "importSuccess": {
     "message": "Подаци су успешно увезени у ваш сеф."
   },
+  "dataExportSuccess": {
+    "message": "Подаци су успешно извезени"
+  },
   "importWarning": {
     "message": "Увозите податке у $ORGANIZATION$. Ваши подаци могу бити подељени са члановима ове организације. Да ли желите да наставите?",
     "placeholders": {
@@ -5670,6 +5673,9 @@
   "customColor": {
     "message": "Сопствена боја"
   },
+  "selectPlaceholder": {
+    "message": "-- Одабрати --"
+  },
   "multiSelectPlaceholder": {
     "message": "-- Тип за филтрирање --"
   },
@@ -5720,11 +5726,8 @@
   "secretProjectAssociationDescription": {
     "message": "Select projects that the secret will be associated with. Only organization users with access to these projects will be able to see the secret."
   },
-  "typeOrSelectProjects": {
-    "message": "Type or select Projects"
-  },
-  "typeOrSelectProject": {
-    "message": "Type or select Project"
+  "selectProjects": {
+    "message": "Одабрати пројекте"
   },
   "project": {
     "message": "Пројекат"
@@ -5999,6 +6002,9 @@
   "collection": {
     "message": "Collection"
   },
+  "noCollection": {
+    "message": "Нема колекције"
+  },
   "canView": {
     "message": "Може прегледати"
   },
@@ -6104,6 +6110,33 @@
       }
     }
   },
+  "exportData": {
+    "message": "Увези податке"
+  },
+  "exportingOrganizationSecretDataTitle": {
+    "message": "Извоз тајних података организације"
+  },
+  "exportingOrganizationSecretDataDescription": {
+    "message": "Само подаци тајног менаџера повезани са $ORGANIZATION$ биће извезени. Ставке у другим производима или из других организација неће бити укључене.",
+    "placeholders": {
+      "ORGANIZATION": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "fileUpload": {
+    "message": "Отпремање датотеке"
+  },
+  "acceptedFormats": {
+    "message": "Прихваћени формати:"
+  },
+  "copyPasteImportContents": {
+    "message": "Копирајте и налепите садржај увоза:"
+  },
+  "or": {
+    "message": "или"
+  },
   "licenseAndBillingManagement": {
     "message": "Управљање лиценцама и наплатом"
   },
@@ -6134,6 +6167,33 @@
   "uploadLicense": {
     "message": "Унос лиценце"
   },
+  "projectPeopleDescription": {
+    "message": "Одобрите групама или људима приступ овом пројекту."
+  },
+  "projectPeopleSelectHint": {
+    "message": "Унесите или изаберите људе или групе"
+  },
+  "projectServiceAccountsDescription": {
+    "message": "Одобрите услужним налозима приступ овом пројекту."
+  },
+  "projectServiceAccountsSelectHint": {
+    "message": "Унесите или изаберите сервисне налоге"
+  },
+  "projectEmptyPeopleAccessPolicies": {
+    "message": "Додајте људе или групе да бисте започели сарадњу"
+  },
+  "projectEmptyServiceAccountAccessPolicies": {
+    "message": "Додајте налоге услуге да бисте одобрили приступ"
+  },
+  "canWrite": {
+    "message": "Може писати"
+  },
+  "canReadWrite": {
+    "message": "Може читати, писати"
+  },
+  "groupSlashUser": {
+    "message": "Група/Корисник"
+  },
   "lowKdfIterations": {
     "message": "Low KDF Iterations"
   },
@@ -6154,5 +6214,14 @@
   },
   "userAccessSecretsManager": {
     "message": "Овај корисник може приступити Secrets Manager Beta"
+  },
+  "resolveTheErrorsBelowAndTryAgain": {
+    "message": "Поправите грешке испод и покушајте поново."
+  },
+  "description": {
+    "message": "Опис"
+  },
+  "errorReadingImportFile": {
+    "message": "Дошло је до грешке у покушају читања датотеке за увоз"
   }
 }

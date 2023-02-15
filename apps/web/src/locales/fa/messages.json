@@ -1248,6 +1248,9 @@
   "importSuccess": {
     "message": "داده‌ها با موفقیت درون ریزی شد"
   },
+  "dataExportSuccess": {
+    "message": "Data successfully exported"
+  },
   "importWarning": {
     "message": "شما در حال درون ریزی داده به $ORGANIZATION$ هستید. داده‌های شما ممکن است با اعضای این سازمان به اشتراک گذاشته شود. آیا می‌خواهید ادامه دهید؟",
     "placeholders": {
@@ -5670,6 +5673,9 @@
   "customColor": {
     "message": "رنگ سفارشی"
   },
+  "selectPlaceholder": {
+    "message": "-- انتخاب --"
+  },
   "multiSelectPlaceholder": {
     "message": "-- برای فیلتر تایپ کنید --"
   },
@@ -5720,11 +5726,8 @@
   "secretProjectAssociationDescription": {
     "message": "پروژه هایی را انتخاب کنید که راز با آن‌ها مرتبط باشد. فقط کاربران سازمانی که به این پروژه ها دسترسی دارند می‌توانند این راز را ببینند."
   },
-  "typeOrSelectProjects": {
-    "message": "پروژه ها را تایپ یا انتخاب کنید"
-  },
-  "typeOrSelectProject": {
-    "message": "پروژه را تایپ یا انتخاب کنید"
+  "selectProjects": {
+    "message": "انتخاب پروژه‌ها"
   },
   "project": {
     "message": "پروژه"
@@ -5999,6 +6002,9 @@
   "collection": {
     "message": "مجموعه"
   },
+  "noCollection": {
+    "message": "مجموعه ای وجود ندارد"
+  },
   "canView": {
     "message": "می‌تواند مشاهده کند"
   },
@@ -6104,6 +6110,33 @@
       }
     }
   },
+  "exportData": {
+    "message": "Export data"
+  },
+  "exportingOrganizationSecretDataTitle": {
+    "message": "Exporting Organization Secret Data"
+  },
+  "exportingOrganizationSecretDataDescription": {
+    "message": "Only the Secrets Manager data associated with $ORGANIZATION$ will be exported. Items in other products or from other organizations will not be included.",
+    "placeholders": {
+      "ORGANIZATION": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "fileUpload": {
+    "message": "File upload"
+  },
+  "acceptedFormats": {
+    "message": "Accepted Formats:"
+  },
+  "copyPasteImportContents": {
+    "message": "Copy & paste import contents:"
+  },
+  "or": {
+    "message": "or"
+  },
   "licenseAndBillingManagement": {
     "message": "مدیریت مجوز و صورتحساب"
   },
@@ -6134,6 +6167,33 @@
   "uploadLicense": {
     "message": "بارگذاری مجوز"
   },
+  "projectPeopleDescription": {
+    "message": "به گروه‌ها یا افراد اجازه دسترسی به این پروژه را بدهید."
+  },
+  "projectPeopleSelectHint": {
+    "message": "افراد یا گروه‌ها را تایپ یا انتخاب کنید"
+  },
+  "projectServiceAccountsDescription": {
+    "message": "به حساب‌های خدماتی اجازه دسترسی به این پروژه را بدهید."
+  },
+  "projectServiceAccountsSelectHint": {
+    "message": "حساب‌های سرویس را تایپ یا انتخاب کنید"
+  },
+  "projectEmptyPeopleAccessPolicies": {
+    "message": "برای شروع همکاری افراد یا گروه‌ها را اضافه کنید"
+  },
+  "projectEmptyServiceAccountAccessPolicies": {
+    "message": "برای اعطای دسترسی، حساب‌های سرویس اضافه کنید"
+  },
+  "canWrite": {
+    "message": "می‌توان نوشت"
+  },
+  "canReadWrite": {
+    "message": "می‌توان خواند، نوشت"
+  },
+  "groupSlashUser": {
+    "message": "گروه/کاربر"
+  },
   "lowKdfIterations": {
     "message": "تکرار KDF کم"
   },
@@ -6154,5 +6214,14 @@
   },
   "userAccessSecretsManager": {
     "message": "این کاربر می‌تواند به بتای مدیر اسرار دسترسی داشته باشد"
+  },
+  "resolveTheErrorsBelowAndTryAgain": {
+    "message": "Resolve the errors below and try again."
+  },
+  "description": {
+    "message": "Description"
+  },
+  "errorReadingImportFile": {
+    "message": "An error occurred when trying to read the import file"
   }
 }

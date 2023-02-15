@@ -613,13 +613,13 @@
     "message": "Nē"
   },
   "loginOrCreateNewAccount": {
-    "message": "Jāpiesakās vai jāizveido jauns konts, lai piekļūdu drošajai glabātavai."
+    "message": "Jāpiesakās vai jāizveido jauns konts, lai piekļūtu drošajai glabātavai."
   },
   "loginWithDevice": {
     "message": "Pieteikties ar ierīci"
   },
   "loginWithDeviceEnabledInfo": {
-    "message": "Ir jāuzstāda pieteikšanās ar ierīci Bitwarden lietotnes iestatījumos. Nepieciešama cita iespēja?"
+    "message": "Ir jāuzstāda pieteikšanās ar ierīci Bitwarden tālruņa lietotnes iestatījumos. Nepieciešama cita iespēja?"
   },
   "loginWithMasterPassword": {
     "message": "Pieteikties ar galveno paroli"
@@ -1248,6 +1248,9 @@
   "importSuccess": {
     "message": "Dati ir veiksmīgi ievietoti glabātavā."
   },
+  "dataExportSuccess": {
+    "message": "Dati izgūti veiksmīgi"
+  },
   "importWarning": {
     "message": "Jūs importējat datus uz $ORGANIZATION$. Jūsu dati var tikt kopīgoti ar šīs organizācijas dalībniekiem. Vai vēlaties turpināt?",
     "placeholders": {
@@ -1740,7 +1743,7 @@
     "message": "Vairākkārt izmantoto paroļu pārskats"
   },
   "reusedPasswordsReportDesc": {
-    "message": "Ja izmantota pakalpojuma drošība ir ietekmēta, vienādas paroles izmantošana citur rada urķiem iespēju viegli iegūt piekļuvi citiem tiešsaistes kontiem. Katrā kontā vai pakalpojumā ir ieteicams izmantot paroli, kas nav izmantota citur."
+    "message": "Paroļu vairākkārtēja izmantošāna ļauj uzbrucējiem vieglāk ielauzties vairākos kontos. Šīs paroles ir jānomaina, lai katra no tām būtu neatkārtojama."
   },
   "reusedPasswordsFound": {
     "message": "Atrastās vairākkārt izmantotās paroles"
@@ -2714,7 +2717,7 @@
     }
   },
   "viewedCardNumberItemId": {
-    "message": "Skatīts ienuma $ID$ kartes numurs.",
+    "message": "Skatīts vienuma $ID$ kartes numurs.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -3192,11 +3195,11 @@
     "description": "A billing plan/package. For example: Families, Teams, Enterprise, etc."
   },
   "changeBillingPlan": {
-    "message": "Uzlabot plānu",
+    "message": "Paaugstināt plānu",
     "description": "A billing plan/package. For example: Families, Teams, Enterprise, etc."
   },
   "changeBillingPlanUpgrade": {
-    "message": "Uzlabot kontu uz citu plānu var norādot informāciju zemāk. Lūgums pārliecinieties, ka kontam ir pievienots derīgs apmaksas veids.",
+    "message": "Paaugstināt kontu uz citu plānu var norādot informāciju zemāk. Lūgums pārliecināties, ka kontam ir pievienots derīgs apmaksas veids.",
     "description": "A billing plan/package. For example: Families, Teams, Enterprise, etc."
   },
   "invoiceNumber": {
@@ -3547,7 +3550,7 @@
     "message": "Glabātavā atrodas veci datņu pielikumi, kas ir jāsalabo, pirms tiek veikta konta šifrēšanas atslēgu maiņa."
   },
   "yourAccountsFingerprint": {
-    "message": "Jūsu konta pirksta nospieduma frāze",
+    "message": "Konta atpazīšanas vārdkopa",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "fingerprintEnsureIntegrityVerify": {
@@ -3824,7 +3827,7 @@
     "message": "Pieteikties no apvienības vienotās pieteikšanās portāla. Lūgums ievadīt apvienības identifikatoru, lai sāktu."
   },
   "enterpriseSingleSignOn": {
-    "message": "Uzņēmuma vienotā pierakstīšanās"
+    "message": "Uzņēmuma vienotā pieteikšanās"
   },
   "ssoHandOff": {
     "message": "Šo cilni tagad var aizvērt un turpināt paplašinājumā."
@@ -3881,7 +3884,7 @@
     "message": "Priekšnosacījumi"
   },
   "requireSsoPolicyReq": {
-    "message": "Vienas vienīgas apvienības uzņēmuma nosacījumiem ir jābūt iespējotai pirms šī nosacījuma uzstādīšanas."
+    "message": "Vienas vienīgas apvienības uzņēmuma nosacījumiem ir jābūt ieslēgtiem pirms šī nosacījuma uzstādīšanas."
   },
   "requireSsoPolicyReqError": {
     "message": "Vienas vienīgas apvienības nosacījumi nav iespējoti."
@@ -4202,7 +4205,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendDisabledWarning": {
-    "message": "Organizācijas politikas dēļ jūs varat dzēst tikai esošu Sūtījumu.",
+    "message": "Uzņēmuma nosacījumu dēļ ir iespējams izdzēst tikai esošu \"Send\".",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendOptions": {
@@ -4257,7 +4260,7 @@
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Custom roles is an enterprise feature. Contact our support team to upgrade your subscription'"
   },
   "customDescNonEnterpriseEnd": {
-    "message": "Sazinieties ar mūsu atbalsta komandu, lai jauninātu abonementu",
+    "message": ". Lai paaugstinātu abonementu, jāsazinās ar mūsu atbalsta komandu",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Custom roles is an enterprise feature. Contact our support team to upgrade your subscription'"
   },
   "customNonEnterpriseError": {
@@ -4453,10 +4456,10 @@
     "message": "Paroles norāde nedrīkst būt tāda pati kā parole."
   },
   "enrollPasswordReset": {
-    "message": "Pievienot paroles atiestatīšanās sarakstam"
+    "message": "Pievienot paroles atiestatīšanas sarakstam"
   },
   "enrolledPasswordReset": {
-    "message": "Pievienots paroles atiestatīšanās sarakstam"
+    "message": "Pievienots paroles atiestatīšanas sarakstam"
   },
   "withdrawPasswordReset": {
     "message": "Izņemt no paroles atiestatīšanas saraksta"
@@ -5670,6 +5673,9 @@
   "customColor": {
     "message": "Pielāgota krāsa"
   },
+  "selectPlaceholder": {
+    "message": "-- Atlasīt --"
+  },
   "multiSelectPlaceholder": {
     "message": "-- Rakstīt, lai atlasītu --"
   },
@@ -5720,11 +5726,8 @@
   "secretProjectAssociationDescription": {
     "message": "Atlasīt projektus, ar kuriem tiks saistīts noslēpums. Tikai apvienību lietotāji ar piekļuvi šiem projektiem varēs redzēt noslēpumu."
   },
-  "typeOrSelectProjects": {
-    "message": "Ierakstīt vai atlasīt projektus"
-  },
-  "typeOrSelectProject": {
-    "message": "Ierakstīt vai atlasīt projektu"
+  "selectProjects": {
+    "message": "Atlasīt projektus"
   },
   "project": {
     "message": "Projekts"
@@ -5999,6 +6002,9 @@
   "collection": {
     "message": "Krājums"
   },
+  "noCollection": {
+    "message": "Nav krājuma"
+  },
   "canView": {
     "message": "Var skatīt"
   },
@@ -6104,6 +6110,33 @@
       }
     }
   },
+  "exportData": {
+    "message": "Izgūt datus"
+  },
+  "exportingOrganizationSecretDataTitle": {
+    "message": "Apvienības slepeno datu izgūšana"
+  },
+  "exportingOrganizationSecretDataDescription": {
+    "message": "Tiks izgūti tikai ar $ORGANIZATION$ saistītie Noslēpumu pārvaldnieka dati. Netiks iekļauti citu produktu vai apvienību vienumi.",
+    "placeholders": {
+      "ORGANIZATION": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "fileUpload": {
+    "message": "Datņu augšupielāde"
+  },
+  "acceptedFormats": {
+    "message": "Pieļaujamie veidi:"
+  },
+  "copyPasteImportContents": {
+    "message": "Ievietot starpliktuvē un ielīmēt ievietojamo saturu:"
+  },
+  "or": {
+    "message": "vai"
+  },
   "licenseAndBillingManagement": {
     "message": "Licenču un norēķinu pārvaldība"
   },
@@ -6134,6 +6167,33 @@
   "uploadLicense": {
     "message": "Augšupielādēt licenci"
   },
+  "projectPeopleDescription": {
+    "message": "Piešķirt kopām vai cilvēkiem piekļuvi šim projektam."
+  },
+  "projectPeopleSelectHint": {
+    "message": "Ievadīt vai atlasīt cilvēkus vai kopas"
+  },
+  "projectServiceAccountsDescription": {
+    "message": "Piešķirt pakalpojumu kontiem piekļuvi šim projektam."
+  },
+  "projectServiceAccountsSelectHint": {
+    "message": "Ievadīt vai atlasīt pakalpojumu kontus"
+  },
+  "projectEmptyPeopleAccessPolicies": {
+    "message": "Pievienot cilvēkus vai kopas, lai sāktu sadarboties"
+  },
+  "projectEmptyServiceAccountAccessPolicies": {
+    "message": "Pievienot pakalpojumu kontus, lai piešķirtu piekļuvi"
+  },
+  "canWrite": {
+    "message": "Var rakstīt"
+  },
+  "canReadWrite": {
+    "message": "Var lasīt, rakstīt"
+  },
+  "groupSlashUser": {
+    "message": "Kopa/Lietotājs"
+  },
   "lowKdfIterations": {
     "message": "Zems KDF atkārtojumu skaits"
   },
@@ -6154,5 +6214,14 @@
   },
   "userAccessSecretsManager": {
     "message": "Šis lietotājs var piekļūt Noslēpumu pārvaldniekam Beta"
+  },
+  "resolveTheErrorsBelowAndTryAgain": {
+    "message": "Jāatrisina zemāk norādītās kļūdas un jāmēģina vēlreiz."
+  },
+  "description": {
+    "message": "Apraksts"
+  },
+  "errorReadingImportFile": {
+    "message": "Atgadījās kļūda, kad tika mēģināts nolasīt ievietošanas datni"
   }
 }

@@ -1248,6 +1248,9 @@
   "importSuccess": {
     "message": "データを保管庫にインポートしました。"
   },
+  "dataExportSuccess": {
+    "message": "データをエクスポートしました"
+  },
   "importWarning": {
     "message": "$ORGANIZATION$にデータをインポートしています。データはこの組織のメンバーと共有される可能性があります。続行しますか？",
     "placeholders": {
@@ -5670,6 +5673,9 @@
   "customColor": {
     "message": "カスタム色"
   },
+  "selectPlaceholder": {
+    "message": "-- Select --"
+  },
   "multiSelectPlaceholder": {
     "message": "-- 入力して絞り込み --"
   },
@@ -5720,11 +5726,8 @@
   "secretProjectAssociationDescription": {
     "message": "シークレットを関連付けるプロジェクトを選択します。これらのプロジェクトにアクセスできる組織ユーザーのみがシークレットを表示できます。"
   },
-  "typeOrSelectProjects": {
-    "message": "プロジェクトを入力または選択"
-  },
-  "typeOrSelectProject": {
-    "message": "プロジェクトを入力または選択"
+  "selectProjects": {
+    "message": "プロジェクトの選択"
   },
   "project": {
     "message": "プロジェクト"
@@ -5910,7 +5913,7 @@
     "message": "Expires"
   },
   "canRead": {
-    "message": "Can Read"
+    "message": "Can read"
   },
   "accessTokensNoItemsTitle": {
     "message": "表示するアクセス トークンはありません"
@@ -5998,6 +6001,9 @@
   },
   "collection": {
     "message": "コレクション"
+  },
+  "noCollection": {
+    "message": "No collection"
   },
   "canView": {
     "message": "閲覧可能"
@@ -6104,6 +6110,33 @@
       }
     }
   },
+  "exportData": {
+    "message": "データのエクスポート"
+  },
+  "exportingOrganizationSecretDataTitle": {
+    "message": "組織のシークレットデータのエクスポート"
+  },
+  "exportingOrganizationSecretDataDescription": {
+    "message": "$ORGANIZATION$ に関連付けられたシークレットマネージャーのデータのみをエクスポートします。他の製品または他の組織からのアイテムは含まれません。",
+    "placeholders": {
+      "ORGANIZATION": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "fileUpload": {
+    "message": "ファイルのアップロード"
+  },
+  "acceptedFormats": {
+    "message": "利用できる形式："
+  },
+  "copyPasteImportContents": {
+    "message": "インポートする内容をコピーして貼り付け:"
+  },
+  "or": {
+    "message": "または"
+  },
   "licenseAndBillingManagement": {
     "message": "ライセンスと請求管理"
   },
@@ -6134,6 +6167,33 @@
   "uploadLicense": {
     "message": "ライセンスをアップロード"
   },
+  "projectPeopleDescription": {
+    "message": "グループまたは人にこのプロジェクトへのアクセスを許可します。"
+  },
+  "projectPeopleSelectHint": {
+    "message": "人やグループを入力・選択"
+  },
+  "projectServiceAccountsDescription": {
+    "message": "このプロジェクトへのサービスアカウントのアクセスを許可します。"
+  },
+  "projectServiceAccountsSelectHint": {
+    "message": "サービスアカウントを入力・選択"
+  },
+  "projectEmptyPeopleAccessPolicies": {
+    "message": "人やグループを追加してコラボレーションを開始します"
+  },
+  "projectEmptyServiceAccountAccessPolicies": {
+    "message": "アクセスを許可するサービスアカウントを追加"
+  },
+  "canWrite": {
+    "message": "書き込み可能"
+  },
+  "canReadWrite": {
+    "message": "読み取りと書き込み可能"
+  },
+  "groupSlashUser": {
+    "message": "グループ/ユーザー"
+  },
   "lowKdfIterations": {
     "message": "低 KDF イテレーション"
   },
@@ -6154,5 +6214,14 @@
   },
   "userAccessSecretsManager": {
     "message": "このユーザーはベータ版シークレットマネージャーにアクセスできます"
+  },
+  "resolveTheErrorsBelowAndTryAgain": {
+    "message": "以下のエラーを解決してやり直してください。"
+  },
+  "description": {
+    "message": "説明"
+  },
+  "errorReadingImportFile": {
+    "message": "インポートファイルの読み込み中にエラーが発生しました"
   }
 }

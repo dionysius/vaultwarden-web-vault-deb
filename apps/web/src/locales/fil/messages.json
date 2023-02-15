@@ -1248,6 +1248,9 @@
   "importSuccess": {
     "message": "Matagumpay na na import ang data"
   },
+  "dataExportSuccess": {
+    "message": "Data successfully exported"
+  },
   "importWarning": {
     "message": "Nag-aangkat ka ng data sa $ORGANIZATION$. Ang iyong data ay maaaring ibahagi sa mga miyembro ng organisasyong ito. Gusto mo bang magpatuloy?",
     "placeholders": {
@@ -5670,6 +5673,9 @@
   "customColor": {
     "message": "Pasadyang Kulay"
   },
+  "selectPlaceholder": {
+    "message": "--Piliin--"
+  },
   "multiSelectPlaceholder": {
     "message": "-- Uri ng filter --"
   },
@@ -5720,11 +5726,8 @@
   "secretProjectAssociationDescription": {
     "message": "Pumili ng mga proyekto na ang lihim ay maiugnay. Tanging ang mga gumagamit ng organisasyon na may access sa mga proyektong ito ang makakakita ng lihim."
   },
-  "typeOrSelectProjects": {
-    "message": "Uri o piliin ang Mga Proyekto"
-  },
-  "typeOrSelectProject": {
-    "message": "Uri o piliin ang Proyekto"
+  "selectProjects": {
+    "message": "Pilipitin ang mga proyekto"
   },
   "project": {
     "message": "Proyekto"
@@ -5999,6 +6002,9 @@
   "collection": {
     "message": "Koleksyon"
   },
+  "noCollection": {
+    "message": "Walang koleksyon"
+  },
   "canView": {
     "message": "Maaaring tingnan"
   },
@@ -6104,6 +6110,33 @@
       }
     }
   },
+  "exportData": {
+    "message": "Export data"
+  },
+  "exportingOrganizationSecretDataTitle": {
+    "message": "Exporting Organization Secret Data"
+  },
+  "exportingOrganizationSecretDataDescription": {
+    "message": "Only the Secrets Manager data associated with $ORGANIZATION$ will be exported. Items in other products or from other organizations will not be included.",
+    "placeholders": {
+      "ORGANIZATION": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "fileUpload": {
+    "message": "File upload"
+  },
+  "acceptedFormats": {
+    "message": "Accepted Formats:"
+  },
+  "copyPasteImportContents": {
+    "message": "Copy & paste import contents:"
+  },
+  "or": {
+    "message": "or"
+  },
   "licenseAndBillingManagement": {
     "message": "Pamamahala ng lisensya at pagsingil"
   },
@@ -6134,6 +6167,33 @@
   "uploadLicense": {
     "message": "Mag-upload ng lisensya"
   },
+  "projectPeopleDescription": {
+    "message": "Bigyan ng access ang mga grupo o tao sa proyektong ito."
+  },
+  "projectPeopleSelectHint": {
+    "message": "I-type o piliin ang mga tao o grupo"
+  },
+  "projectServiceAccountsDescription": {
+    "message": "Bigyan ng access ang mga service account sa proyektong ito."
+  },
+  "projectServiceAccountsSelectHint": {
+    "message": "I-type o piliin ang mga service account"
+  },
+  "projectEmptyPeopleAccessPolicies": {
+    "message": "Magdagdag ng mga tao o grupo upang magsimulang mag-collaborate"
+  },
+  "projectEmptyServiceAccountAccessPolicies": {
+    "message": "Magdagdag ng mga service account upang mabigyan ng access"
+  },
+  "canWrite": {
+    "message": "Maaaring magsulat"
+  },
+  "canReadWrite": {
+    "message": "Maaaring magbasa, magsulat"
+  },
+  "groupSlashUser": {
+    "message": "Grupo/User"
+  },
   "lowKdfIterations": {
     "message": "Mababang KDF Iterations"
   },
@@ -6154,5 +6214,14 @@
   },
   "userAccessSecretsManager": {
     "message": "Maaaring ma access ng gumagamit na ito ang Secrets Manager Beta"
+  },
+  "resolveTheErrorsBelowAndTryAgain": {
+    "message": "Resolve the errors below and try again."
+  },
+  "description": {
+    "message": "Description"
+  },
+  "errorReadingImportFile": {
+    "message": "An error occurred when trying to read the import file"
   }
 }

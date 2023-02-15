@@ -1248,6 +1248,9 @@
   "importSuccess": {
     "message": "Les dades s'han importat amb èxit"
   },
+  "dataExportSuccess": {
+    "message": "Les dades s'han exportat correctament"
+  },
   "importWarning": {
     "message": "Esteu important dades a $ORGANIZATION$. Les vostres dades es poden compartir amb membres d'aquesta organització. Voleu continuar?",
     "placeholders": {
@@ -5670,6 +5673,9 @@
   "customColor": {
     "message": "Color personalitzat"
   },
+  "selectPlaceholder": {
+    "message": "-- Selecciona --"
+  },
   "multiSelectPlaceholder": {
     "message": "-- Escriviu per filtrar --"
   },
@@ -5720,11 +5726,8 @@
   "secretProjectAssociationDescription": {
     "message": "Selecciona los proyectos a los que se asociará el secreto. Sólo los usuarios de la organización con acceso a estos proyectos podrán verlo."
   },
-  "typeOrSelectProjects": {
-    "message": "Teclea o selecciona proyectos"
-  },
-  "typeOrSelectProject": {
-    "message": "Teclea o selecciona proyecto"
+  "selectProjects": {
+    "message": "Selecciona projectes"
   },
   "project": {
     "message": "Projecte"
@@ -5910,7 +5913,7 @@
     "message": "Caduca"
   },
   "canRead": {
-    "message": "Pot llegir"
+    "message": "Es pot llegir"
   },
   "accessTokensNoItemsTitle": {
     "message": "No hi ha tokens d'accés per mostrar"
@@ -5998,6 +6001,9 @@
   },
   "collection": {
     "message": "Col·lecció"
+  },
+  "noCollection": {
+    "message": "Cap col·lecció"
   },
   "canView": {
     "message": "Pot veure"
@@ -6104,6 +6110,33 @@
       }
     }
   },
+  "exportData": {
+    "message": "Exportar dades"
+  },
+  "exportingOrganizationSecretDataTitle": {
+    "message": "Exportació de dades secretes de l’organització"
+  },
+  "exportingOrganizationSecretDataDescription": {
+    "message": "Només s'exportaran les dades del gestor de Secrets associades a $ORGANIZATION$. No s'inclouran elements d'altres productes o d'altres organitzacions.",
+    "placeholders": {
+      "ORGANIZATION": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "fileUpload": {
+    "message": "Càrrega de fitxers"
+  },
+  "acceptedFormats": {
+    "message": "Formats acceptats:"
+  },
+  "copyPasteImportContents": {
+    "message": "Copia i enganxa contingut d'importació:"
+  },
+  "or": {
+    "message": "o"
+  },
   "licenseAndBillingManagement": {
     "message": "Gestió de llicències i facturació"
   },
@@ -6134,6 +6167,33 @@
   "uploadLicense": {
     "message": "Puja la llicència"
   },
+  "projectPeopleDescription": {
+    "message": "Dona accés a aquest projecte a grups o persones."
+  },
+  "projectPeopleSelectHint": {
+    "message": "Escriu o selecciona persones o grups"
+  },
+  "projectServiceAccountsDescription": {
+    "message": "Dona accés a aquest projecte als comptes de servei."
+  },
+  "projectServiceAccountsSelectHint": {
+    "message": "Escriu o selecciona comptes de servei"
+  },
+  "projectEmptyPeopleAccessPolicies": {
+    "message": "Afegeix persones o grups per començar a col·laborar"
+  },
+  "projectEmptyServiceAccountAccessPolicies": {
+    "message": "Afig comptes de servei per concedir accés"
+  },
+  "canWrite": {
+    "message": "Es pot escriure"
+  },
+  "canReadWrite": {
+    "message": "Es pot llegir, escriure"
+  },
+  "groupSlashUser": {
+    "message": "Grup/Usuari"
+  },
   "lowKdfIterations": {
     "message": "Iteracions de KDF baixes"
   },
@@ -6154,5 +6214,14 @@
   },
   "userAccessSecretsManager": {
     "message": "Aquest usuari pot accedir a la beta de l'administrador de secrets"
+  },
+  "resolveTheErrorsBelowAndTryAgain": {
+    "message": "Resoleu els errors següents i torneu-ho a provar."
+  },
+  "description": {
+    "message": "Descripció"
+  },
+  "errorReadingImportFile": {
+    "message": "S'ha produït un error en intentar llegir el fitxer d'importació"
   }
 }

@@ -1248,6 +1248,9 @@
   "importSuccess": {
     "message": "De gegevens zijn in je kluis geïmporteerd."
   },
+  "dataExportSuccess": {
+    "message": "Gegevens succesvol geëxporteerd"
+  },
   "importWarning": {
     "message": "Je importeert gegevens naar $ORGANIZATION$. Je gegevens kunnen gedeeld worden met de leden van deze organisatie. Wil je doorgaan?",
     "placeholders": {
@@ -5670,6 +5673,9 @@
   "customColor": {
     "message": "Aangepaste kleur"
   },
+  "selectPlaceholder": {
+    "message": "-- Selecteer --"
+  },
   "multiSelectPlaceholder": {
     "message": "-- Type om te filteren --"
   },
@@ -5720,11 +5726,8 @@
   "secretProjectAssociationDescription": {
     "message": "Kies projecten om het geheim aan te koppelen. Alleen gebruikers uit de organisatie met toegang tot deze projecten kunnen het geheim zien."
   },
-  "typeOrSelectProjects": {
-    "message": "Typ of kies projecten"
-  },
-  "typeOrSelectProject": {
-    "message": "Typ of kies een project"
+  "selectProjects": {
+    "message": "Projecten selecteren"
   },
   "project": {
     "message": "Project"
@@ -5751,49 +5754,49 @@
     "message": "Service-accounts"
   },
   "secrets": {
-    "message": "Secrets"
+    "message": "Geheimen"
   },
   "nameValuePair": {
     "message": "Naam/waarde paar"
   },
   "secretEdited": {
-    "message": "Secret edited"
+    "message": "Geheim bewerkt"
   },
   "secretCreated": {
-    "message": "Secret created"
+    "message": "Geheim aangemaakt"
   },
   "newSecret": {
-    "message": "New secret"
+    "message": "Nieuw geheim"
   },
   "newServiceAccount": {
-    "message": "New service account"
+    "message": "Nieuw service account"
   },
   "secretsNoItemsTitle": {
-    "message": "No secrets to show"
+    "message": "Geen geheimen om weer te geven"
   },
   "secretsNoItemsMessage": {
-    "message": "To get started, add a new secret or import secrets."
+    "message": "Om te starten, voeg een nieuw geheim toe of importeer een geheim."
   },
   "serviceAccountsNoItemsTitle": {
     "message": "Geen inhoud beschikbaar"
   },
   "serviceAccountsNoItemsMessage": {
-    "message": "Create a new service account to get started automating secret access."
+    "message": "Maak een nieuw service account aan om te beginnen met het automatiseren van geheime toegang."
   },
   "searchSecrets": {
-    "message": "Search secrets"
+    "message": "Geheimen zoeken"
   },
   "deleteServiceAccounts": {
-    "message": "Delete service accounts"
+    "message": "Verwijder service accounts"
   },
   "deleteServiceAccount": {
-    "message": "Delete service account"
+    "message": "Verwijder service account"
   },
   "viewServiceAccount": {
-    "message": "View service account"
+    "message": "Bekijk service account"
   },
   "searchServiceAccounts": {
-    "message": "Search service accounts"
+    "message": "Zoek service account"
   },
   "addProject": {
     "message": "Project toevoegen"
@@ -5814,34 +5817,34 @@
     "message": "Nieuw Project"
   },
   "softDeleteSecretWarning": {
-    "message": "Deleting secrets can affect existing integrations."
+    "message": "Verwijderen van geheimen kan invloed hebben op bestaande integraties."
   },
   "softDeletesSuccessToast": {
-    "message": "Secrets sent to trash"
+    "message": "Geheimen verplaatst naar prullenbak"
   },
   "serviceAccountCreated": {
-    "message": "Service account created"
+    "message": "Service account aangemaakt"
   },
   "smAccess": {
     "message": "Toegang"
   },
   "projectCommaSecret": {
-    "message": "Project, Secret"
+    "message": "Project, geheim"
   },
   "serviceAccountName": {
     "message": "Service account naam"
   },
   "newSaSelectAccess": {
-    "message": "Type or select projects or secrets"
+    "message": "Typ of selecteer projecten of geheimen"
   },
   "newSaTypeToFilter": {
-    "message": "Type to filter"
+    "message": "Typ om te filteren"
   },
   "deleteProjectsToast": {
     "message": "Projecten verwijderd"
   },
   "deleteProjectToast": {
-    "message": "The project and all associated secrets have been deleted"
+    "message": "Het project en alle bijbehorende geheimen zijn verwijderd"
   },
   "deleteProjectDialogMessage": {
     "message": "Het verwijderen van project $PROJECT$ is permanent en onomkeerbaar.",
@@ -5886,7 +5889,7 @@
     "message": "Geen projecten om weer te geven"
   },
   "projectsNoItemsMessage": {
-    "message": "Add a new project to get started organizing secrets."
+    "message": "Voeg een nieuw project toe om te starten met het organiseren van geheimen."
   },
   "smConfirmationRequired": {
     "message": "Bevestiging vereist"
@@ -5895,16 +5898,16 @@
     "message": "De volgende projecten konden niet worden verwijderd:"
   },
   "softDeleteSuccessToast": {
-    "message": "Secret sent to trash"
+    "message": "Geheim verplaatst naar prullenbak"
   },
   "searchProjects": {
     "message": "Zoek projecten"
   },
   "accessTokens": {
-    "message": "Access tokens"
+    "message": "Toegangstoken"
   },
   "createAccessToken": {
-    "message": "Create access token"
+    "message": "Toegangstoken aanmaken"
   },
   "expires": {
     "message": "Verloopt"
@@ -5913,10 +5916,10 @@
     "message": "Kan lezen"
   },
   "accessTokensNoItemsTitle": {
-    "message": "No access tokens to show"
+    "message": "Geen toegangstokens om weer te geven"
   },
   "accessTokensNoItemsDesc": {
-    "message": "To get started, create an access token"
+    "message": "Om te starten, creeer een toegangstoken"
   },
   "downloadAccessToken": {
     "message": "Download of kopieer voordat u afsluit."
@@ -5925,7 +5928,7 @@
     "message": "Verloopt op:"
   },
   "accessTokenCallOutTitle": {
-    "message": "Access tokens are not stored and cannot be retrieved"
+    "message": "Toegangstokens zijn niet opgeslagen en kunnen niet worden opgehaald"
   },
   "copyToken": {
     "message": "Kopieer token"
@@ -5998,6 +6001,9 @@
   },
   "collection": {
     "message": "Collectie"
+  },
+  "noCollection": {
+    "message": "Geen collectie"
   },
   "canView": {
     "message": "Kan bekijken"
@@ -6104,6 +6110,33 @@
       }
     }
   },
+  "exportData": {
+    "message": "Gegevens exporteren"
+  },
+  "exportingOrganizationSecretDataTitle": {
+    "message": "Geheime gegevens van de organisatie exporteren"
+  },
+  "exportingOrganizationSecretDataDescription": {
+    "message": "Exporteert alleen de organisatiekluis van $ORGANIZATION$. Items in andere producten of van andere organisaties zijn niet inbegrepen.",
+    "placeholders": {
+      "ORGANIZATION": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "fileUpload": {
+    "message": "Bestand uploaden"
+  },
+  "acceptedFormats": {
+    "message": "Toegestane formaten:"
+  },
+  "copyPasteImportContents": {
+    "message": "Kopieer en plak de inhoud van de import:"
+  },
+  "or": {
+    "message": "of"
+  },
   "licenseAndBillingManagement": {
     "message": "Licentie- en facturatiebeheer"
   },
@@ -6134,14 +6167,41 @@
   "uploadLicense": {
     "message": "Licentie uploaden"
   },
+  "projectPeopleDescription": {
+    "message": "Groepen of mensen toegang tot dit project geven."
+  },
+  "projectPeopleSelectHint": {
+    "message": "Typ of selecteer mensen of groepen"
+  },
+  "projectServiceAccountsDescription": {
+    "message": "Serviceaccounts toegang geven tot dit project."
+  },
+  "projectServiceAccountsSelectHint": {
+    "message": "Typ of selecteer serviceaccounts"
+  },
+  "projectEmptyPeopleAccessPolicies": {
+    "message": "Mensen of groepen toevoegen om samen te werken"
+  },
+  "projectEmptyServiceAccountAccessPolicies": {
+    "message": "Serviceaccounts toevoegen om toegang te verlenen"
+  },
+  "canWrite": {
+    "message": "Kan schrijven"
+  },
+  "canReadWrite": {
+    "message": "Kan lezen, schrijven"
+  },
+  "groupSlashUser": {
+    "message": "Groep/Gebruiker"
+  },
   "lowKdfIterations": {
-    "message": "Low KDF Iterations"
+    "message": "Weinig KDF-iteraties"
   },
   "lowKdfIterationsDesc": {
-    "message": "Increase your KDF encryption settings to improve the security of your account."
+    "message": "Verhoog je KDF-versleutelingsinstellingen om je account beter te beveiligen."
   },
   "changeKdfSettings": {
-    "message": "Change KDF settings"
+    "message": "KDF-instellingen wijzigen"
   },
   "changeKdfLoggedOutWarning": {
     "message": "Als je doorgaat zal je huidige sessie uitloggen, waarna je opnieuw moet inloggen. Actieve sessies op andere apparaten blijven mogelijk nog een uur actief. We raden je aan je kluis te exporteren voordat je je versleutelingsinstellingen wijzigt om gegevensverlies te voorkomen."
@@ -6154,5 +6214,14 @@
   },
   "userAccessSecretsManager": {
     "message": "Deze gebruiker heeft toegang tot de Secrets Manager Bèta"
+  },
+  "resolveTheErrorsBelowAndTryAgain": {
+    "message": "Los onderstaande fouten op en probeer het opnieuw."
+  },
+  "description": {
+    "message": "Omschrijving"
+  },
+  "errorReadingImportFile": {
+    "message": "Er is een fout opgetreden bij het lezen van het bronbestand"
   }
 }

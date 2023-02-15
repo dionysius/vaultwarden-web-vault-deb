@@ -1248,6 +1248,9 @@
   "importSuccess": {
     "message": "Tietojen tuonti onnistui"
   },
+  "dataExportSuccess": {
+    "message": "Tietojen vienti onnistui"
+  },
   "importWarning": {
     "message": "Olet tuomassa tietoja organisaatioon $ORGANIZATION$. Tietojasi saatetaan jakaa organisaation jäsenten kesken. Haluatko jatkaa?",
     "placeholders": {
@@ -2249,16 +2252,16 @@
     "message": "Perheille"
   },
   "planDescFamilies": {
-    "message": "Henkilökohtaiseen käyttöön, jaettavaksi perheen ja ystävien kanssa."
+    "message": "Henkilökohtaiseen käyttöön, jaettavaksi perheelle ja kavereille."
   },
   "planNameTeams": {
-    "message": "Tiimit"
+    "message": "Tiimeille"
   },
   "planDescTeams": {
-    "message": "Yrityksille ja muille yhteisöille."
+    "message": "Yrityksille ja muille pienille ryhmäorganisaatioille."
   },
   "planNameEnterprise": {
-    "message": "Yritykset"
+    "message": "Yrityksille"
   },
   "planDescEnterprise": {
     "message": "Yrityksille ja muille suurille organisaatioille."
@@ -3413,7 +3416,7 @@
     "message": "Päivitä organisaatio"
   },
   "upgradeOrganizationDesc": {
-    "message": "Ominaisuus ei ole käytettävissä ilmaisille organisaatioille. Vaihda maksulliseen tilaustyyppiin avataksesi enemmän ominaisuuksia."
+    "message": "Ominaisuus ei ole ilmaisorganisaatioiden käytettävissä. Avaa lisää ominaisuuksia vaihtamalla maksulliseen tilaukseen."
   },
   "createOrganizationStep1": {
     "message": "Luo organisaatio: Vaihe 1"
@@ -3830,7 +3833,7 @@
     "message": "Voit nyt sulkea tämän välilehden ja jatkaa laajennuksessa."
   },
   "includeAllTeamsFeatures": {
-    "message": "Kaikki Tiimit-tilauksen ominaisuudet, sekä:"
+    "message": "Kaikki Tiimeille-tilauksen ominaisuudet, sekä:"
   },
   "includeSsoAuthentication": {
     "message": "Kertakirjautumisen (SSO) todennus SAML 2.0 ja OpenID Connect -todentajilla"
@@ -4261,7 +4264,7 @@
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Custom roles is an enterprise feature. Contact our support team to upgrade your subscription'"
   },
   "customNonEnterpriseError": {
-    "message": "Mukautettujen käyttöoikeuksien käyttöönottamiseksi organisaatiolla on oltava Yritykset 2020 -tilaus."
+    "message": "Mukautettujen käyttöoikeuksien käyttöönottamiseksi organisaatiolla on oltava Yrityksille 2020 -tilaus."
   },
   "permissions": {
     "message": "Käyttöoikeudet"
@@ -4972,7 +4975,7 @@
     "message": "Bitwarden Perheille -tilaus sisältää"
   },
   "sponsoredFamiliesPremiumAccess": {
-    "message": "Premium-käyttöoikeuden 6 käyttäjälle"
+    "message": "Premium-käyttöoikeus 6 käyttäjälle"
   },
   "sponsoredFamiliesSharedCollections": {
     "message": "Jaetut kokoelmat perheen salaisuuksille"
@@ -5005,7 +5008,7 @@
     "message": "Sinulle on tarjottu ilmaista Bitwarden Perheille -organisaatiota. Jatka kirjautumalla tarjouksen saaneelle tilille."
   },
   "sponsoredFamiliesAcceptFailed": {
-    "message": "Tarjousta ei voitu hyväksyä. Lähetä tarjoussähköposti uudestaan yritystililtäsi ja yritä uudelleen."
+    "message": "Tarjousta ei voitu hyväksyä. Lähetä tarjoussähköposti yritystililtäsi uudestaan ja yritä sitten uudelleen."
   },
   "sponsoredFamiliesAcceptFailedShort": {
     "message": "Kutsua ei voitu hyväksyä. $DESCRIPTION$",
@@ -5242,7 +5245,7 @@
     "message": "Tunniste uudistettiin"
   },
   "billingSyncDesc": {
-    "message": "Laskutuksen synkronointi mahdollistaa jäsenille ilmaiset Perheille-tilaukset ja edistyneet laskutusominaisuudet liittämällä itse ylläpitämäsi Bitwarden-palvelimen Bitwardenin pilvipalvelimeen."
+    "message": "Laskutuksen synkronointi avaa palvelimellesi Perheille-sponsoroinnin ja automaattisen lisenssin synkronoinnin. Tehtyäsi muutokset Bitwardenin pilvipalvelimelle, ota ne käyttöön valitsemalla \"Synkronoi lisenssi\"."
   },
   "billingSyncKeyDesc": {
     "message": "Lomakkeen täyttöön tarvitaan laskutuksen synkronointitunniste pilviorganisaatiosi tilausasetuksista."
@@ -5670,6 +5673,9 @@
   "customColor": {
     "message": "Oma väri"
   },
+  "selectPlaceholder": {
+    "message": "-- Valitse --"
+  },
   "multiSelectPlaceholder": {
     "message": "-- Suodatettava tyyppi --"
   },
@@ -5720,11 +5726,8 @@
   "secretProjectAssociationDescription": {
     "message": "Valitse projektit, joihin salaisuus liitetään. Salaisuuden voivat nähdä vain ne organisaation käyttäjät, joilla on näiden projektien käyttöoikeus."
   },
-  "typeOrSelectProjects": {
-    "message": "Syötä tai valitse projektit"
-  },
-  "typeOrSelectProject": {
-    "message": "Syötä tai valitse projekti"
+  "selectProjects": {
+    "message": "Valitse projektit"
   },
   "project": {
     "message": "Projekti"
@@ -5999,6 +6002,9 @@
   "collection": {
     "message": "Kokoelma"
   },
+  "noCollection": {
+    "message": "Ei kokoelmaa"
+  },
   "canView": {
     "message": "Voi tarkastella"
   },
@@ -6104,6 +6110,33 @@
       }
     }
   },
+  "exportData": {
+    "message": "Vie tietoja"
+  },
+  "exportingOrganizationSecretDataTitle": {
+    "message": "Organisaation salauisuus-tietojen vienti"
+  },
+  "exportingOrganizationSecretDataDescription": {
+    "message": "Vain organisaatioon $ORGANIZATION$ liitetyt Salaisuushallinnan kohteet viedään. Muiden tuotteiden ja organisaatioiden kohteet eivät sisälly tähän.",
+    "placeholders": {
+      "ORGANIZATION": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "fileUpload": {
+    "message": "Tiedoston tallennus"
+  },
+  "acceptedFormats": {
+    "message": "Hyväksytyt muodot:"
+  },
+  "copyPasteImportContents": {
+    "message": "Kopioi ja liitä tuonnin sisältö:"
+  },
+  "or": {
+    "message": "tai"
+  },
   "licenseAndBillingManagement": {
     "message": "Lisenssien ja laskutuksen hallinta"
   },
@@ -6134,6 +6167,33 @@
   "uploadLicense": {
     "message": "Tallenna lisenssi"
   },
+  "projectPeopleDescription": {
+    "message": "Myönnä ryhmille tai henkilöille tämän projektin käyttöoikeus."
+  },
+  "projectPeopleSelectHint": {
+    "message": "Kirjoita tai valitse henkilöitä tai ryhmiä"
+  },
+  "projectServiceAccountsDescription": {
+    "message": "Myönnä palvelutileille tämän projektin käyttöoikeus."
+  },
+  "projectServiceAccountsSelectHint": {
+    "message": "Kirjoita tai valitse palvelutilit"
+  },
+  "projectEmptyPeopleAccessPolicies": {
+    "message": "Aloita yhteiskäyttö lisäämällä henkilöitä tai ryhmiä"
+  },
+  "projectEmptyServiceAccountAccessPolicies": {
+    "message": "Lisää palvelutilejä myöntääksesi käyttöoikeuden"
+  },
+  "canWrite": {
+    "message": "Voi kirjoittaa"
+  },
+  "canReadWrite": {
+    "message": "Voi lukea, kirjoittaa"
+  },
+  "groupSlashUser": {
+    "message": "Ryhmä/käyttäjä"
+  },
   "lowKdfIterations": {
     "message": "Alhainen KDF-toistomäärä"
   },
@@ -6150,9 +6210,18 @@
     "message": "Salaisuushallinta Beta"
   },
   "secretsManagerBetaDesc": {
-    "message": "Salli käyttäjille Salaisuuksienhallinan käyttöoikeus Beta-ohjelman aikana veloituksetta."
+    "message": "Anna käyttäjien käyttää Salaisuuksienhallintaa sen Beta-ohjelman aikana veloituksetta."
   },
   "userAccessSecretsManager": {
-    "message": "Tämä käyttäjä voi käyttää Salaisuuksienhallinnan Betaa"
+    "message": "Tämä käyttäjä voi käyttää Salaisuushallinnan Betaa"
+  },
+  "resolveTheErrorsBelowAndTryAgain": {
+    "message": "Korjaa seuravat virheet ja yritä uudelleen."
+  },
+  "description": {
+    "message": "Kuvaus"
+  },
+  "errorReadingImportFile": {
+    "message": "Tuontitiedostoa luettaessa tapahtui virhe"
   }
 }

@@ -1162,7 +1162,7 @@
     "description": "Memory refers to computer memory (RAM). MB is short for megabytes."
   },
   "argon2Warning": {
-    "message": "Setting your KDF iterations, memory, and parallelism too high could result in poor performance when logging into (and unlocking) Bitwarden on slower or older devices. We recommend changing these individually in small increments and then test all of your devices."
+    "message": "Establecer sus iteraciones, memorias y paralelismo KDF demasiado altos podría resultar en un mal rendimiento al iniciar sesión (y desbloquear) en dispositivos más lentos o antiguos. Recomendamos cambiarlos individualmente en pequeños incrementos y luego probar todos sus dispositivos."
   },
   "kdfParallelism": {
     "message": "Paralelismo KDF"
@@ -1247,6 +1247,9 @@
   },
   "importSuccess": {
     "message": "La información ha sido importada correctamente en tu caja fuerte."
+  },
+  "dataExportSuccess": {
+    "message": "Datos exportados con éxito"
   },
   "importWarning": {
     "message": "Estás importando datos a $ORGANIZATION$. Tus datos pueden ser compartidos con miembros de esta organización. ¿Quieres continuar?",
@@ -5670,6 +5673,9 @@
   "customColor": {
     "message": "Color personalizado"
   },
+  "selectPlaceholder": {
+    "message": "-- Selecciona --"
+  },
   "multiSelectPlaceholder": {
     "message": "-- Escriba para filtrar --"
   },
@@ -5720,11 +5726,8 @@
   "secretProjectAssociationDescription": {
     "message": "Seleccione los proyectos con los que se asociará el secreto. Sólo los usuarios de la organización con acceso a estos proyectos podrán ver el secreto."
   },
-  "typeOrSelectProjects": {
-    "message": "Escriba o seleccione proyectos"
-  },
-  "typeOrSelectProject": {
-    "message": "Escriba o seleccione un proyecto"
+  "selectProjects": {
+    "message": "Seleccionar proyectos"
   },
   "project": {
     "message": "Proyecto"
@@ -5999,6 +6002,9 @@
   "collection": {
     "message": "Colección"
   },
+  "noCollection": {
+    "message": "Sin colecciones"
+  },
   "canView": {
     "message": "Puede ver"
   },
@@ -6104,6 +6110,33 @@
       }
     }
   },
+  "exportData": {
+    "message": "Exportar datos"
+  },
+  "exportingOrganizationSecretDataTitle": {
+    "message": "Exportando caja fuerte de la organización"
+  },
+  "exportingOrganizationSecretDataDescription": {
+    "message": "Solo se exportarán los secretos de la organización asociada con $ORGANIZATION$. No se incluirán elementos personales de otras organizaciones.",
+    "placeholders": {
+      "ORGANIZATION": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "fileUpload": {
+    "message": "Subir archivo"
+  },
+  "acceptedFormats": {
+    "message": "Formatos aceptados:"
+  },
+  "copyPasteImportContents": {
+    "message": "Copiar y pegar contenido importado:"
+  },
+  "or": {
+    "message": "o"
+  },
   "licenseAndBillingManagement": {
     "message": "Gestión de licencias y facturación"
   },
@@ -6134,6 +6167,33 @@
   "uploadLicense": {
     "message": "Subir licencia"
   },
+  "projectPeopleDescription": {
+    "message": "Otorgar acceso a grupos o personas a este proyecto."
+  },
+  "projectPeopleSelectHint": {
+    "message": "Escriba o seleccione personas o grupos"
+  },
+  "projectServiceAccountsDescription": {
+    "message": "Otorgar acceso a las cuentas de servicio a este proyecto."
+  },
+  "projectServiceAccountsSelectHint": {
+    "message": "Escriba o seleccione cuentas de servicio"
+  },
+  "projectEmptyPeopleAccessPolicies": {
+    "message": "Añadir personas o grupos para empezar a colaborar"
+  },
+  "projectEmptyServiceAccountAccessPolicies": {
+    "message": "Añadir cuentas de servicio para conceder acceso"
+  },
+  "canWrite": {
+    "message": "Puede escribir"
+  },
+  "canReadWrite": {
+    "message": "Puede leer, escribir"
+  },
+  "groupSlashUser": {
+    "message": "Grupo/Usuario"
+  },
   "lowKdfIterations": {
     "message": "Iteraciones KDF bajas"
   },
@@ -6144,7 +6204,7 @@
     "message": "Cambiar ajustes de KDF"
   },
   "changeKdfLoggedOutWarning": {
-    "message": "Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour. We recommend exporting your vault before changing your encryption settings to prevent data loss."
+    "message": "Proceder le desconectará de su sesión actual, requiriendo que vuelva a iniciar sesión. Las sesiones activas en otros dispositivos pueden seguir estando activas durante hasta una hora. Recomendamos exportar su caja fuerte antes de cambiar su configuración de cifrado para prevenir la pérdida de datos."
   },
   "secretsManagerBeta": {
     "message": "Administrador de secretos Beta"
@@ -6154,5 +6214,14 @@
   },
   "userAccessSecretsManager": {
     "message": "Este usuario puede acceder al Administrador Secretos Beta"
+  },
+  "resolveTheErrorsBelowAndTryAgain": {
+    "message": "Corrija los siguientes errores e inténtelo de nuevo"
+  },
+  "description": {
+    "message": "Descripción"
+  },
+  "errorReadingImportFile": {
+    "message": "Ocurrió un error al intentar leer el archivo importado"
   }
 }

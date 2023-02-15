@@ -833,7 +833,7 @@
     "message": "Optionen für Zwei-Faktor-Authentifizierung"
   },
   "recoveryCodeDesc": {
-    "message": "Zugang zu allen Zwei-Faktor-Anbietern verloren? Benutzen Sie Ihren Wiederherstellungscode, um alle Zwei-Faktor-Anbieter in Ihrem Konto zu deaktivieren."
+    "message": "Zugang zu allen Zwei-Faktor-Anbietern verloren? Benutze deinen Wiederherstellungscode, um alle Zwei-Faktor-Anbieter in deinem Konto zu deaktivieren."
   },
   "recoveryCodeTitle": {
     "message": "Wiederherstellungscode"
@@ -961,7 +961,7 @@
     "message": "Dieser Export enthält Ihre Tresor-Daten in einem unverschlüsseltem Format. Sie sollten die Datei daher nicht über unsichere Kanäle (z.B. E-Mail) versenden oder speichern. Löschen Sie die Datei sofort nach ihrer Verwendung."
   },
   "encExportKeyWarningDesc": {
-    "message": "Dieser Export verschlüsselt Ihre Daten mit dem Verschlüsselungscode Ihres Kontos. Falls Sie Ihren Verschlüsselungscode erneuern, sollten Sie den Export erneut durchführen, da Sie die zuvor erstellte Datei ansonsten nicht mehr entschlüsseln können."
+    "message": "Dieser Export verschlüsselt deine Daten mit dem Verschlüsselungscode deines Kontos. Falls du deinen Verschlüsselungscode erneuerst, solltest du den Export erneut durchführen, da du die zuvor erstellte Datei ansonsten nicht mehr entschlüsseln kannst."
   },
   "encExportAccountWarningDesc": {
     "message": "Die Verschlüsselungscodes eines Kontos sind für jedes Bitwarden-Benutzerkonto einzigartig, deshalb kannst du keinen verschlüsselten Export in ein anderes Konto importieren."
@@ -1018,7 +1018,7 @@
     "message": "Diese Datei ist passwortgeschützt. Bitte gebe das Dateipasswort ein, um Daten zu importieren."
   },
   "exportSuccess": {
-    "message": "Ihre Daten wurden exportiert."
+    "message": "Tresor-Daten exportiert"
   },
   "passwordGenerator": {
     "message": "Passwortgenerator"
@@ -1246,7 +1246,10 @@
     "message": "Es gab ein Problem mit den Daten, die Sie importieren wollten. Bitte beheben Sie die unten aufgeführten Fehler in Ihrer Quelldatei und versuchen Sie es erneut."
   },
   "importSuccess": {
-    "message": "Daten wurden erfolgreich in Ihren Tresor importiert."
+    "message": "Daten erfolgreich importiert"
+  },
+  "dataExportSuccess": {
+    "message": "Daten erfolgreich exportiert"
   },
   "importWarning": {
     "message": "Sie importieren Daten nach $ORGANIZATION$. Ihre Daten können mit Mitgliedern dieser Organisation geteilt werden. Möchten Sie fortfahren?",
@@ -1620,7 +1623,7 @@
     "message": "Ihr Wiederherstellungsschlüssel für die Zwei-Faktor-Anmeldung in Bitwarden"
   },
   "twoFactorRecoveryNoCode": {
-    "message": "Sie haben noch keine Variante der Zwei-Faktor-Anmeldung aktiviert. Nachdem Sie eine Zwei-Faktor-Anmeldung aktiviert haben, finden Sie hier Ihren Wiederherstellungs-Code."
+    "message": "Du hast noch keinen Anbieter für die Zwei-Faktor-Anmeldung eingerichtet. Nachdem du einen Anbieter für die Zwei-Faktor-Anmeldung eingerichtet hast, findest du hier deinen Wiederherstellungscode."
   },
   "printCode": {
     "message": "Code drucken",
@@ -1867,7 +1870,7 @@
     "message": "Sie haben ein Premium-Abo aktiviert."
   },
   "premiumUpgradeUnlockFeatures": {
-    "message": "Machen Sie ein Upgrade Ihres Kontos auf eine Premium-Mitgliedschaft, um zusätzliche, großartige Funktionen freizuschalten."
+    "message": "Mache ein Upgrade deines Kontos auf eine Premium-Mitgliedschaft, um zusätzliche, großartige Funktionen freizuschalten."
   },
   "premiumSignUpStorage": {
     "message": "1 GB verschlüsselter Speicherplatz für Datei-Anhänge."
@@ -2004,7 +2007,7 @@
     "message": "Kreditkarte"
   },
   "paypalClickSubmit": {
-    "message": "Klicken Sie auf die Schaltfläche PayPal, um sich bei Ihrem PayPal-Konto anzumelden und anschließend auf die Schaltfläche Senden, um fortzufahren."
+    "message": "Klicke auf den PayPal Button, um dich bei deinem PayPal-Konto anzumelden und anschließend auf den Senden-Button, um fortzufahren."
   },
   "cancelSubscription": {
     "message": "Abo kündigen"
@@ -2339,7 +2342,7 @@
     "message": "Zugriffskontrolle durch Gruppen"
   },
   "syncUsersFromDirectory": {
-    "message": "Synchronisieren Sie Ihre Benutzer und Gruppen aus einem Verzeichnis"
+    "message": "Synchronisiere deine Benutzer und Gruppen aus einem Ordner"
   },
   "trackAuditLogs": {
     "message": "Nachverfolgung von Benutzeraktivitäten mittels Auditprotokollen"
@@ -3077,7 +3080,7 @@
     "message": "Sehen Sie in Ihrem E-Mail-Posteingang nach, ob Sie Ihren Bestätigungscode erhalten haben"
   },
   "emailVerified": {
-    "message": "Ihre E-Mail-Adresse wurde verifiziert"
+    "message": "Deine Konto-E-Mail-Adresse wurde verifiziert"
   },
   "emailVerifiedFailed": {
     "message": "Ihre E-Mail kann nicht verifiziert werden. Versuchen Sie eine neue Bestätigungs-E-Mail zu senden."
@@ -3122,13 +3125,13 @@
     "message": "E-Mail-Adresse merken"
   },
   "recoverAccountTwoStepDesc": {
-    "message": "Falls Sie nicht mit Ihren normalen Zwei-Faktor-Anmeldemethoden auf Ihren Account zugreifen können, nutzen Sie Ihren Zwei-Faktor-Wiederherstellungscode, um alle Zwei-Faktor-Anbieter für Ihr Konto zu deaktivieren."
+    "message": "Falls du nicht mit deinen normalen Zwei-Faktor-Anmeldemethoden auf dein Konto zugreifen kannst, nutze deinen Zwei-Faktor-Wiederherstellungscode, um alle Zwei-Faktor-Anbieter für dein Konto zu deaktivieren."
   },
   "recoverAccountTwoStep": {
     "message": "Zwei-Faktor-Authentifizierung wiederherstellen"
   },
   "twoStepRecoverDisabled": {
-    "message": "Zwei-Faktor-Authentifizierung wurde für Ihren Account deaktiviert."
+    "message": "Zwei-Faktor Anmeldung wurde für deinen Account deaktiviert."
   },
   "learnMore": {
     "message": "Erfahre mehr"
@@ -3140,7 +3143,7 @@
     "message": "Wir haben Ihnen eine E-Mail mit weiteren Anweisungen gesendet, sofern Ihr Konto existiert."
   },
   "deleteRecoverConfirmDesc": {
-    "message": "Sie haben die Löschung Ihres Bitwarden-Kontos angefragt. Klicken Sie diesen Button, um die Löschung zu bestätigen."
+    "message": "Du hast die Löschung deines Bitwarden-Kontos angefragt. Benutze den Button unten, um die Löschung zu bestätigen."
   },
   "myOrganization": {
     "message": "Meine Organisation"
@@ -4978,7 +4981,7 @@
     "message": "Gemeinsame Sammlungen für Familiengeheimnisse"
   },
   "badToken": {
-    "message": "Der Link ist nicht mehr gültig. Bitte lasse dir vom Förderer das Angebot erneut senden."
+    "message": "Der Link ist nicht mehr gültig. Bitte lasse dir vom Paten das Angebot erneut senden."
   },
   "reclaimedFreePlan": {
     "message": "Kostenloses Abo zurückgefordert"
@@ -5203,10 +5206,10 @@
     "message": "KOSTENLOS mit Patenschaft"
   },
   "viewBillingSyncToken": {
-    "message": "Rechnungssynchronisierungs-Token ansehen"
+    "message": "Rechnungssynchronisations-Token ansehen"
   },
   "generateBillingSyncToken": {
-    "message": "Rechnungssynchronisierungs-Token generieren"
+    "message": "Rechnungssynchronisations-Token generieren"
   },
   "copyPasteBillingSync": {
     "message": "Kopiere dieses Token und füge es in die Rechnungssynchronisations-Einstellungen deiner selbst gehosteten Organisation ein."
@@ -5239,7 +5242,7 @@
     "message": "Um deine Organisation auf deinem eigenen Server einzurichten, musst du deine Lizenzdatei hochladen. Um kostenlose Familien-Abos und erweiterte Abrechnungsmöglichkeiten für deine selbst gehostete Organisation anzubieten, musst du die Rechnungssynchronisation einrichten."
   },
   "billingSyncApiKeyRotated": {
-    "message": "Token erneuert."
+    "message": "Token erneuert"
   },
   "billingSyncDesc": {
     "message": "Die Rechnungssynchronisation bietet ein kostenloses Familien-Abo für Mitglieder und erweiterte Abrechnungsmöglichkeiten, indem du dein selbst gehostetes Bitwarden mit dem Bitwarden Cloud-Server verbindest."
@@ -5425,7 +5428,7 @@
     }
   },
   "awaitingSyncSingular": {
-    "message": "Token vor $DAYS$ Tag erneuert. Aktualisiere den Rechnungssynchronsierungs-Token in deinen selbst gehosteten Organisationseinstellungen.",
+    "message": "Token vor $DAYS$ Tag erneuert. Aktualisiere den Rechnungssynchronisations-Token in deinen selbst gehosteten Organisationseinstellungen.",
     "placeholders": {
       "days": {
         "content": "$1",
@@ -5434,7 +5437,7 @@
     }
   },
   "awaitingSyncPlural": {
-    "message": "Token vor $DAYS$ Tagen erneuert. Aktualisiere den Rechnungssynchronsierungs-Token in deinen selbst gehosteten Organisationseinstellungen.",
+    "message": "Token vor $DAYS$ Tagen erneuert. Aktualisiere den Rechnungssynchronisations-Token in deinen selbst gehosteten Organisationseinstellungen.",
     "placeholders": {
       "days": {
         "content": "$1",
@@ -5670,6 +5673,9 @@
   "customColor": {
     "message": "Eigene Farbe"
   },
+  "selectPlaceholder": {
+    "message": "-- Auswählen --"
+  },
   "multiSelectPlaceholder": {
     "message": "-- Typ zum Filtern --"
   },
@@ -5720,11 +5726,8 @@
   "secretProjectAssociationDescription": {
     "message": "Wähle Projekte aus, denen das Geheimnis zugeordnet werden soll. Nur Organisationsbenutzer mit Zugriff auf diese Projekte können das Geheimnis sehen."
   },
-  "typeOrSelectProjects": {
-    "message": "Projektnamen eingeben oder auswählen"
-  },
-  "typeOrSelectProject": {
-    "message": "Projektname eingeben oder auswählen"
+  "selectProjects": {
+    "message": "Projekte auswählen"
   },
   "project": {
     "message": "Projekt"
@@ -5999,6 +6002,9 @@
   "collection": {
     "message": "Sammlung"
   },
+  "noCollection": {
+    "message": "Keine Sammlung"
+  },
   "canView": {
     "message": "Darf anzeigen"
   },
@@ -6104,6 +6110,33 @@
       }
     }
   },
+  "exportData": {
+    "message": "Daten exportieren"
+  },
+  "exportingOrganizationSecretDataTitle": {
+    "message": "Geheimdaten der Organisation exportieren"
+  },
+  "exportingOrganizationSecretDataDescription": {
+    "message": "Nur die mit $ORGANIZATION$ verknüpften Daten des Secrets Manager werden exportiert. Einträge in anderen Produkten oder anderen Organisationen werden nicht berücksichtigt.",
+    "placeholders": {
+      "ORGANIZATION": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "fileUpload": {
+    "message": "Datei-Upload"
+  },
+  "acceptedFormats": {
+    "message": "Akzeptierte Formate:"
+  },
+  "copyPasteImportContents": {
+    "message": "Kopiere und füge importierte Inhalte ein:"
+  },
+  "or": {
+    "message": "oder"
+  },
   "licenseAndBillingManagement": {
     "message": "Lizenz- und Rechnungsverwaltung"
   },
@@ -6114,7 +6147,7 @@
     "message": "Manuelles Hochladen"
   },
   "manualUploadDesc": {
-    "message": "Wenn du dich nicht für die Abrechnungssynchronisierung entscheiden möchtest, lade deine Lizenz hier manuell hoch."
+    "message": "Wenn du dich nicht für die Rechnungssynchronisation entscheiden möchtest, lade deine Lizenz hier manuell hoch."
   },
   "syncLicense": {
     "message": "Lizenz synchronisieren"
@@ -6129,10 +6162,37 @@
     "message": "Letzte Lizenz-Synchronisierung"
   },
   "billingSyncHelp": {
-    "message": "Hilfe zur Abrechnungssynchronisierung"
+    "message": "Hilfe zur Rechnungssynchronisation"
   },
   "uploadLicense": {
     "message": "Lizenz hochladen"
+  },
+  "projectPeopleDescription": {
+    "message": "Gruppen oder Personen Zugriff auf dieses Projekt gewähren."
+  },
+  "projectPeopleSelectHint": {
+    "message": "Personen oder Gruppen suchen oder auswählen"
+  },
+  "projectServiceAccountsDescription": {
+    "message": "Dienstkonten Zugriff auf dieses Projekt gewähren."
+  },
+  "projectServiceAccountsSelectHint": {
+    "message": "Dienstkonten suchen oder auswählen"
+  },
+  "projectEmptyPeopleAccessPolicies": {
+    "message": "Personen oder Gruppen hinzufügen, um mit der Zusammenarbeit zu beginnen"
+  },
+  "projectEmptyServiceAccountAccessPolicies": {
+    "message": "Dienstkonten hinzufügen, um Zugriff zu gewähren"
+  },
+  "canWrite": {
+    "message": "Kann schreiben"
+  },
+  "canReadWrite": {
+    "message": "Kann lesen, schreiben"
+  },
+  "groupSlashUser": {
+    "message": "Gruppe/Benutzer"
   },
   "lowKdfIterations": {
     "message": "Geringe KDF-Iterationen"
@@ -6154,5 +6214,14 @@
   },
   "userAccessSecretsManager": {
     "message": "Dieser Benutzer kann auf die Secrets Manager Beta zugreifen"
+  },
+  "resolveTheErrorsBelowAndTryAgain": {
+    "message": "Behebe die unten aufgeführten Fehler und versuche es erneut."
+  },
+  "description": {
+    "message": "Beschreibung"
+  },
+  "errorReadingImportFile": {
+    "message": "Beim Lesen der Importdatei ist ein Fehler aufgetreten"
   }
 }

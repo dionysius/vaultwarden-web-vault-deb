@@ -1248,6 +1248,9 @@
   "importSuccess": {
     "message": "Data telah berhasil diimpor ke lemari besi Anda."
   },
+  "dataExportSuccess": {
+    "message": "Data successfully exported"
+  },
   "importWarning": {
     "message": "Anda mengimpor data ke $ORGANIZATION$. Data Anda dapat dibagikan dengan anggota organisasi ini. Apakah Anda ingin melanjutkan?",
     "placeholders": {
@@ -5670,6 +5673,9 @@
   "customColor": {
     "message": "Custom Color"
   },
+  "selectPlaceholder": {
+    "message": "-- Select --"
+  },
   "multiSelectPlaceholder": {
     "message": "-- Ketik untuk menyaring --"
   },
@@ -5720,11 +5726,8 @@
   "secretProjectAssociationDescription": {
     "message": "Select projects that the secret will be associated with. Only organization users with access to these projects will be able to see the secret."
   },
-  "typeOrSelectProjects": {
-    "message": "Type or select Projects"
-  },
-  "typeOrSelectProject": {
-    "message": "Type or select Project"
+  "selectProjects": {
+    "message": "Select projects"
   },
   "project": {
     "message": "Project"
@@ -5910,7 +5913,7 @@
     "message": "Expires"
   },
   "canRead": {
-    "message": "Can Read"
+    "message": "Can read"
   },
   "accessTokensNoItemsTitle": {
     "message": "No access tokens to show"
@@ -5998,6 +6001,9 @@
   },
   "collection": {
     "message": "Collection"
+  },
+  "noCollection": {
+    "message": "No collection"
   },
   "canView": {
     "message": "Can view"
@@ -6104,6 +6110,33 @@
       }
     }
   },
+  "exportData": {
+    "message": "Export data"
+  },
+  "exportingOrganizationSecretDataTitle": {
+    "message": "Exporting Organization Secret Data"
+  },
+  "exportingOrganizationSecretDataDescription": {
+    "message": "Only the Secrets Manager data associated with $ORGANIZATION$ will be exported. Items in other products or from other organizations will not be included.",
+    "placeholders": {
+      "ORGANIZATION": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "fileUpload": {
+    "message": "File upload"
+  },
+  "acceptedFormats": {
+    "message": "Accepted Formats:"
+  },
+  "copyPasteImportContents": {
+    "message": "Copy & paste import contents:"
+  },
+  "or": {
+    "message": "or"
+  },
   "licenseAndBillingManagement": {
     "message": "License and billing management"
   },
@@ -6134,6 +6167,33 @@
   "uploadLicense": {
     "message": "Upload license"
   },
+  "projectPeopleDescription": {
+    "message": "Grant groups or people access to this project."
+  },
+  "projectPeopleSelectHint": {
+    "message": "Type or select people or groups"
+  },
+  "projectServiceAccountsDescription": {
+    "message": "Grant service accounts access to this project."
+  },
+  "projectServiceAccountsSelectHint": {
+    "message": "Type or select service accounts"
+  },
+  "projectEmptyPeopleAccessPolicies": {
+    "message": "Add people or groups to start collaborating"
+  },
+  "projectEmptyServiceAccountAccessPolicies": {
+    "message": "Add service accounts to grant access"
+  },
+  "canWrite": {
+    "message": "Can write"
+  },
+  "canReadWrite": {
+    "message": "Can read, write"
+  },
+  "groupSlashUser": {
+    "message": "Kelompok/Pengguna"
+  },
   "lowKdfIterations": {
     "message": "Low KDF Iterations"
   },
@@ -6154,5 +6214,14 @@
   },
   "userAccessSecretsManager": {
     "message": "This user can access the Secrets Manager Beta"
+  },
+  "resolveTheErrorsBelowAndTryAgain": {
+    "message": "Resolve the errors below and try again."
+  },
+  "description": {
+    "message": "Description"
+  },
+  "errorReadingImportFile": {
+    "message": "An error occurred when trying to read the import file"
   }
 }

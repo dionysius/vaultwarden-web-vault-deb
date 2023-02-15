@@ -1248,6 +1248,9 @@
   "importSuccess": {
     "message": "Dane zostały zaimportowane"
   },
+  "dataExportSuccess": {
+    "message": "Dane zostały pomyślnie wyeksportowane"
+  },
   "importWarning": {
     "message": "Importujesz dane do organizacji $ORGANIZATION$. Dane mogą zostać udostępnione członkom organizacji. Czy chcesz kontynuować?",
     "placeholders": {
@@ -5670,6 +5673,9 @@
   "customColor": {
     "message": "Kolor użytkownika"
   },
+  "selectPlaceholder": {
+    "message": "-- Wybierz --"
+  },
   "multiSelectPlaceholder": {
     "message": "-- Pisz, aby filtrować --"
   },
@@ -5720,11 +5726,8 @@
   "secretProjectAssociationDescription": {
     "message": "Wybierz projekty, z którymi będzie skojarzony sekret. Tylko użytkownicy organizacji z dostępem do tych projektów będą mogli zobaczyć sekret."
   },
-  "typeOrSelectProjects": {
-    "message": "Wpisz lub wybierz projekty"
-  },
-  "typeOrSelectProject": {
-    "message": "Wpisz lub wybierz projekt"
+  "selectProjects": {
+    "message": "Wybierz projekty"
   },
   "project": {
     "message": "Projekt"
@@ -5999,6 +6002,9 @@
   "collection": {
     "message": "Kolekcja"
   },
+  "noCollection": {
+    "message": "Brak kolekcji"
+  },
   "canView": {
     "message": "Może wyświetlać"
   },
@@ -6104,6 +6110,33 @@
       }
     }
   },
+  "exportData": {
+    "message": "Eksportuj dane"
+  },
+  "exportingOrganizationSecretDataTitle": {
+    "message": "Eksportowanie sekretnych danych organizacji"
+  },
+  "exportingOrganizationSecretDataDescription": {
+    "message": "Eksportowane będą tylko dane Menedżera sekretów powiązane z $ORGANIZATION$. Elementy w innych produktach lub z innych organizacji nie zostaną uwzględnione.",
+    "placeholders": {
+      "ORGANIZATION": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "fileUpload": {
+    "message": "Przesyłanie plików"
+  },
+  "acceptedFormats": {
+    "message": "Dozwolone formaty:"
+  },
+  "copyPasteImportContents": {
+    "message": "Kopiuj i wklej zawartość importu:"
+  },
+  "or": {
+    "message": "lub"
+  },
   "licenseAndBillingManagement": {
     "message": "Zarządzanie licencjami i rozliczeniami"
   },
@@ -6134,6 +6167,33 @@
   "uploadLicense": {
     "message": "Prześlij licencję"
   },
+  "projectPeopleDescription": {
+    "message": "Przyznaj grupom lub osobom dostęp do tego projektu."
+  },
+  "projectPeopleSelectHint": {
+    "message": "Wpisz lub wybierz osoby lub grupy"
+  },
+  "projectServiceAccountsDescription": {
+    "message": "Przyznaj dostęp kontom serwisowym do tego projektu."
+  },
+  "projectServiceAccountsSelectHint": {
+    "message": "Wpisz lub wybierz konta serwisowe"
+  },
+  "projectEmptyPeopleAccessPolicies": {
+    "message": "Dodaj osoby lub grupy, aby rozpocząć współpracę"
+  },
+  "projectEmptyServiceAccountAccessPolicies": {
+    "message": "Dodaj konta serwisowe, aby udzielić dostępu"
+  },
+  "canWrite": {
+    "message": "Można pisać"
+  },
+  "canReadWrite": {
+    "message": "Może odczytywać, pisać"
+  },
+  "groupSlashUser": {
+    "message": "Grupa/Użytkownik"
+  },
   "lowKdfIterations": {
     "message": "Niska liczba iteracji KDF"
   },
@@ -6154,5 +6214,14 @@
   },
   "userAccessSecretsManager": {
     "message": "Ten użytkownik może uzyskać dostęp do Managera sekretów Beta"
+  },
+  "resolveTheErrorsBelowAndTryAgain": {
+    "message": "Usuń poniższe błędy i spróbuj ponownie."
+  },
+  "description": {
+    "message": "Opis"
+  },
+  "errorReadingImportFile": {
+    "message": "Wystąpił błąd podczas próby odczytu pliku importu"
   }
 }
