@@ -2103,5 +2103,26 @@
         "example": "14"
       }
     }
+  },
+  "tryAutofillPageLoad": {
+    "message": "Automatisch invullen bij laden van pagina?"
+  },
+  "tryAutofill": {
+    "message": "Hoe automatisch aanvullen"
+  },
+  "autofillPageLoadInfo": {
+    "message": "Inlogformulieren worden automatisch ingevuld als je automatisch invullen bij laden van pagina inschakelt."
+  },
+  "autofillSelectInfo": {
+    "message": "Kies een item van deze pagina om het formulier op het actieve tabblad automatisch in te vullen."
+  },
+  "autofillTurnedOn": {
+    "message": "Automatisch invullen bij laden van pagina ingeschakeld"
+  },
+  "turnOn": {
+    "message": "Inschakelen"
+  },
+  "notNow": {
+    "message": "Niet nu"
   }
 }

@@ -2103,5 +2103,26 @@
         "example": "14"
       }
     }
+  },
+  "tryAutofillPageLoad": {
+    "message": "Auto-Ausfüllen beim Laden einer Seite versuchen?"
+  },
+  "tryAutofill": {
+    "message": "So funktioniert Auto-Ausfüllen"
+  },
+  "autofillPageLoadInfo": {
+    "message": "Anmeldeformulare werden automatisch die passenden Anmeldedaten ausfüllen, wenn du Auto-Ausfüllen beim Laden einer Seite aktivierst."
+  },
+  "autofillSelectInfo": {
+    "message": "Wähle einen Eintrag von dieser Seite, um das Formular auf dem aktiven Tab automatisch auszufüllen."
+  },
+  "autofillTurnedOn": {
+    "message": "Auto-Ausfüllen beim Laden einer Seite eingeschaltet"
+  },
+  "turnOn": {
+    "message": "Einschalten"
+  },
+  "notNow": {
+    "message": "Nicht jetzt"
   }
 }

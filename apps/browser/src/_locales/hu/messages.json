@@ -960,7 +960,7 @@
     "message": "Ha egy bejelentkezési űrlap észlelésre került, az adatok automatikus kitöltése az oldal betöltésekor."
   },
   "experimentalFeature": {
-    "message": "Compromised or untrusted websites can exploit auto-fill on page load."
+    "message": "Az oldalbetöltésnél automatikus kitöltést a feltört vagy nem megbízhatató weboldalak kihasználhatják."
   },
   "learnMoreAboutAutofill": {
     "message": "További információk az automatikus kitöltésről"
@@ -2103,5 +2103,26 @@
         "example": "14"
       }
     }
+  },
+  "tryAutofillPageLoad": {
+    "message": "Az automatikus kitöltést kipróbálása oldalbetöltésnél?"
+  },
+  "tryAutofill": {
+    "message": "Automatikus kitöltés működése"
+  },
+  "autofillPageLoadInfo": {
+    "message": "A bejelentkező űrlapok akutomatikusan kitöltődnek hozzáillő adatokkal ha az automatikus kitöltés oldalbetöltésnél be van kapcsolva."
+  },
+  "autofillSelectInfo": {
+    "message": "Erről az oldalról egy elemet kiválasztva az aktív fül űrlapját automatikusan kitölti."
+  },
+  "autofillTurnedOn": {
+    "message": "Automatikus kitöltés oldalbetöltésnél bekapcsolva"
+  },
+  "turnOn": {
+    "message": "Bekapcsolás"
+  },
+  "notNow": {
+    "message": "Most nem"
   }
 }

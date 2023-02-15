@@ -2103,5 +2103,26 @@
         "example": "14"
       }
     }
+  },
+  "tryAutofillPageLoad": {
+    "message": "Subukan ang auto-fill sa pag-load ng pahina?"
+  },
+  "tryAutofill": {
+    "message": "Paano mag-auto-fill"
+  },
+  "autofillPageLoadInfo": {
+    "message": "Ang mga form ng login ay awtomatikong bubunuin ang katugmang mga kredensyal kung ikaw ay nag-on ng auto-fill sa pag-load ng pahina."
+  },
+  "autofillSelectInfo": {
+    "message": "Pumili ng isang item mula sa pahinang ito upang auto-fill ang form ng aktibong tab."
+  },
+  "autofillTurnedOn": {
+    "message": "Auto-fill sa pag-load ng pahina na naka-on"
+  },
+  "turnOn": {
+    "message": "I-on"
+  },
+  "notNow": {
+    "message": "Hindi ngayon"
   }
 }

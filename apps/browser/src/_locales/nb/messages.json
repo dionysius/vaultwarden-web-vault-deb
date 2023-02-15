@@ -960,10 +960,10 @@
     "message": "Dersom et innloggingskjema blir oppdaget, utfør automatisk en auto-utfylling når nettstedet lastes inn."
   },
   "experimentalFeature": {
-    "message": "Compromised or untrusted websites can exploit auto-fill on page load."
+    "message": "Kompromitterte eller upålitelige nettsider kan utnytte auto-utfylling når du laster inn siden."
   },
   "learnMoreAboutAutofill": {
-    "message": "Learn more about auto-fill"
+    "message": "Lær mer om auto-utfylling"
   },
   "defaultAutoFillOnPageLoad": {
     "message": "Standard autofyll innstilling for innloggingselementer"
@@ -1127,7 +1127,7 @@
     "message": "Dr."
   },
   "mx": {
-    "message": "Mx"
+    "message": "Nøytral"
   },
   "firstName": {
     "message": "Fornavn"
@@ -2051,28 +2051,28 @@
     "message": "Husk e-post"
   },
   "loginWithDevice": {
-    "message": "Log in with device"
+    "message": "Logg inn med enhet"
   },
   "loginWithDeviceEnabledInfo": {
-    "message": "Log in with device must be set up in the settings of the Bitwarden app. Need another option?"
+    "message": "Logg på med enhet må settes opp i Bitwarden-innstillingene. Trenger du et annet alternativ?"
   },
   "fingerprintPhraseHeader": {
-    "message": "Fingerprint phrase"
+    "message": "Fingeravtrykksfrase"
   },
   "fingerprintMatchInfo": {
-    "message": "Please make sure your vault is unlocked and the Fingerprint phrase matches on the other device."
+    "message": "Kontroller at hvelvet ditt er låst opp, og at fingeravtrykksfrasen er lik på den andre enheten."
   },
   "resendNotification": {
-    "message": "Resend notification"
+    "message": "Send varslingen på nytt"
   },
   "viewAllLoginOptions": {
-    "message": "View all log in options"
+    "message": "Vis alle innloggingsalternativer"
   },
   "notificationSentDevice": {
-    "message": "A notification has been sent to your device."
+    "message": "Et varsel er sendt til enheten din."
   },
   "logInInitiated": {
-    "message": "Log in initiated"
+    "message": "Innlogging startet"
   },
   "exposedMasterPassword": {
     "message": "Eksponert hovedpassord"
@@ -2103,5 +2103,26 @@
         "example": "14"
       }
     }
+  },
+  "tryAutofillPageLoad": {
+    "message": "Prøv auto-utfylling når siden lastes?"
+  },
+  "tryAutofill": {
+    "message": "Hvordan bruke auto-utfylling"
+  },
+  "autofillPageLoadInfo": {
+    "message": "Innloggingsskjemaer vil fylle ut matchende innloggingsinformasjon dersom du aktiverer auto-utfylling ved innlastning av side."
+  },
+  "autofillSelectInfo": {
+    "message": "Velg et element fra denne siden for å auto-utfylle den aktive fanens skjema."
+  },
+  "autofillTurnedOn": {
+    "message": "Auto-utfyll ved innlastning av side aktivert"
+  },
+  "turnOn": {
+    "message": "Slå på"
+  },
+  "notNow": {
+    "message": "Ikke nå"
   }
 }

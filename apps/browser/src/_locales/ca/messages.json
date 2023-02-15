@@ -960,7 +960,7 @@
     "message": "Si es detecta un formulari d'inici de sessió, es realitza automàticament un emplenament automàtic quan es carrega la pàgina web."
   },
   "experimentalFeature": {
-    "message": "Compromised or untrusted websites can exploit auto-fill on page load."
+    "message": "Els llocs web compromesos o no fiables poden aprofitar-se de l'emplenament automàtic en carregar de la pàgina."
   },
   "learnMoreAboutAutofill": {
     "message": "Obteniu més informació sobre l'emplenament automàtic"
@@ -2103,5 +2103,26 @@
         "example": "14"
       }
     }
+  },
+  "tryAutofillPageLoad": {
+    "message": "Es prova l'emplenament automàtic en carregar la pàgina?"
+  },
+  "tryAutofill": {
+    "message": "Com emplenar automàticament"
+  },
+  "autofillPageLoadInfo": {
+    "message": "Els formularis d'inici de sessió emplenaran automàticament les credencials coincidents si activeu l'emplenament automàtic en carregar la pàgina."
+  },
+  "autofillSelectInfo": {
+    "message": "Selecciona un element d'aquesta pàgina per emplenar automàticament el formulari de la pestanya activa."
+  },
+  "autofillTurnedOn": {
+    "message": "S'ha activat l'emplenament automàtic en carregar de la pàgina"
+  },
+  "turnOn": {
+    "message": "Activa"
+  },
+  "notNow": {
+    "message": "Ara no"
   }
 }

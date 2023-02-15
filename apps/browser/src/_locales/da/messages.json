@@ -2103,5 +2103,26 @@
         "example": "14"
       }
     }
+  },
+  "tryAutofillPageLoad": {
+    "message": "Prøv autoudfyldning ved sideindlæsning?"
+  },
+  "tryAutofill": {
+    "message": "Sådan autoudfyldes"
+  },
+  "autofillPageLoadInfo": {
+    "message": "Login-formularer udfyldes automatisk med matchende legitimationsoplysninger, hvis autoudfyldning ved sideindlæsning aktiveres."
+  },
+  "autofillSelectInfo": {
+    "message": "Vælg et element fra denne side for at autoudfylde den aktive fanes formular."
+  },
+  "autofillTurnedOn": {
+    "message": "Autoudfyldning ved sideindlæsning aktiveret"
+  },
+  "turnOn": {
+    "message": "Aktivér"
+  },
+  "notNow": {
+    "message": "Ikke nu"
   }
 }

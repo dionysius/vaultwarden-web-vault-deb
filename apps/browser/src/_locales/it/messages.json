@@ -2103,5 +2103,26 @@
         "example": "14"
       }
     }
+  },
+  "tryAutofillPageLoad": {
+    "message": "Vuoi provare l'autocompletamento al caricamento della pagina?"
+  },
+  "tryAutofill": {
+    "message": "Come utilizzare l'autocompletamento"
+  },
+  "autofillPageLoadInfo": {
+    "message": "I moduli di accesso verranno completati automaticamente con le credenziali corrispondenti se si attiva l'autocompletamento al caricamento della pagina."
+  },
+  "autofillSelectInfo": {
+    "message": "Seleziona un elemento da questa pagina per completare automaticamente il modulo della scheda attiva."
+  },
+  "autofillTurnedOn": {
+    "message": "Autocompletamento al caricamento della pagina attivato"
+  },
+  "turnOn": {
+    "message": "Attiva"
+  },
+  "notNow": {
+    "message": "Non ora"
   }
 }

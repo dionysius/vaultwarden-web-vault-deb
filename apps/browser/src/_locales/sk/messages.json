@@ -543,7 +543,7 @@
     "message": "Naozaj chcete odstrániť túto položku?"
   },
   "deletedItem": {
-    "message": "Odstránená položka"
+    "message": "Položka odstránená"
   },
   "overwritePassword": {
     "message": "Prepísať heslo"
@@ -960,7 +960,7 @@
     "message": "Ak je detekovaný prihlasovací formulár, automaticky vykonať vypĺňanie pri načítaní stránky."
   },
   "experimentalFeature": {
-    "message": "Compromised or untrusted websites can exploit auto-fill on page load."
+    "message": "Skompromitované alebo nedôveryhodné stránky môžu pri svojom načítaní zneužiť automatické dopĺňanie."
   },
   "learnMoreAboutAutofill": {
     "message": "Dozvedieť sa viac o automatickom dopĺňaní"
@@ -2103,5 +2103,26 @@
         "example": "14"
       }
     }
+  },
+  "tryAutofillPageLoad": {
+    "message": "Chcete vyskúšať automatické vypĺňanie pri načítaní stránky?"
+  },
+  "tryAutofill": {
+    "message": "Ako používať automatické vypĺňanie"
+  },
+  "autofillPageLoadInfo": {
+    "message": "Ak zapnete automatické vyplňovanie pri načítaní stránky, prihlasovacie polia sa automaticky vyplnia zodpovedajúce povereniami."
+  },
+  "autofillSelectInfo": {
+    "message": "Výberom položky na tejto stránke automaticky vyplníte formulár aktívnej karty."
+  },
+  "autofillTurnedOn": {
+    "message": "Automatické vypĺňanie pri načítaní stránky zapnuté"
+  },
+  "turnOn": {
+    "message": "Zapnúť"
+  },
+  "notNow": {
+    "message": "Teraz nie"
   }
 }

@@ -2103,5 +2103,26 @@
         "example": "14"
       }
     }
+  },
+  "tryAutofillPageLoad": {
+    "message": "Sayfa yüklenince otomatik doldurma denensin mi?"
+  },
+  "tryAutofill": {
+    "message": "Otomatik doldurma nasıl yapılır?"
+  },
+  "autofillPageLoadInfo": {
+    "message": "Sayfa yüklendiğinde otomatik doldurmayı açarsanız giriş formlarıyla eşleşen hesap bilgileri otomatik olarak dolduracaktır."
+  },
+  "autofillSelectInfo": {
+    "message": "Etkin sekmedeki formu otomatik doldurmak için bu sayfadan bir kayıt seçin."
+  },
+  "autofillTurnedOn": {
+    "message": "Sayfa yüklendiğinde otomatik doldurma açık"
+  },
+  "turnOn": {
+    "message": "Aç"
+  },
+  "notNow": {
+    "message": "Henüz değil"
   }
 }

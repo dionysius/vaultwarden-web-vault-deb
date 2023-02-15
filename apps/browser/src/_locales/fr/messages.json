@@ -110,7 +110,7 @@
     "message": "Il n'y a pas d'identifiants disponibles à saisir automatiquement pour l'onglet actuel du navigateur."
   },
   "addLogin": {
-    "message": "Ajouter un site"
+    "message": "Ajouter un identifiant"
   },
   "addItem": {
     "message": "Ajouter un élément"
@@ -215,7 +215,7 @@
     "message": "Générer automatiquement des mots de passe robustes et uniques pour vos identifiants."
   },
   "bitWebVault": {
-    "message": "Coffre en ligne de bitwarden"
+    "message": "Coffre web bitwarden"
   },
   "importItems": {
     "message": "Importer des éléments"
@@ -339,7 +339,7 @@
     "message": "Votre navigateur web ne supporte pas la copie rapide depuis le presse-papier. Copiez-le manuellement à la place."
   },
   "verifyIdentity": {
-    "message": "Confirmer votre identité"
+    "message": "Vérifier l'identité"
   },
   "yourVaultIsLocked": {
     "message": "Votre coffre est verrouillé. Vérifiez votre identité pour continuer."
@@ -552,7 +552,7 @@
     "message": "Êtes-vous sûr de vouloir écraser le mot de passe actuel ?"
   },
   "overwriteUsername": {
-    "message": "Remplacer le nom d'utilisateur"
+    "message": "Écraser le nom d'utilisateur"
   },
   "overwriteUsernameConfirmation": {
     "message": "Êtes-vous sûr(e) de vouloir remplacer le nom d'utilisateur actuel ?"
@@ -567,7 +567,7 @@
     "message": "Rechercher dans le type"
   },
   "noneFolder": {
-    "message": "Pas de dossier",
+    "message": "Aucun dossier",
     "description": "This is the folder for uncategorized items"
   },
   "enableAddLoginNotification": {
@@ -873,7 +873,7 @@
     "message": "Identifiant non disponible"
   },
   "noTwoStepProviders": {
-    "message": "Ce compte dispose d'une authentification à deux facteurs mise en place, mais aucun des fournisseurs d'authentification à deux facteurs configurés ne sont pris en charge par ce navigateur web."
+    "message": "Ce compte dispose d'une authentification à deux facteurs de configurée, cependant, aucun des fournisseurs à deux facteurs configurés n'est pris en charge par ce navigateur web."
   },
   "noTwoStepProviders2": {
     "message": "Merci d'utiliser un navigateur web compatible (comme Chrome) et/ou d'ajouter des services additionnels d'identification en deux étapes qui sont mieux supportés par les navigateurs web (comme par exemple une application d'authentification)."
@@ -1136,7 +1136,7 @@
     "message": "Deuxième prénom"
   },
   "lastName": {
-    "message": "Nom"
+    "message": "Nom de famille"
   },
   "fullName": {
     "message": "Nom et prénom"
@@ -2051,28 +2051,28 @@
     "message": "Se souvenir du courriel"
   },
   "loginWithDevice": {
-    "message": "Log in with device"
+    "message": "Se connecter avec l'appareil"
   },
   "loginWithDeviceEnabledInfo": {
-    "message": "Log in with device must be set up in the settings of the Bitwarden app. Need another option?"
+    "message": "La connexion avec l'appareil doit être configurée dans les paramètres de l'application Bitwarden. Besoin d'une autre option ?"
   },
   "fingerprintPhraseHeader": {
-    "message": "Fingerprint phrase"
+    "message": "Phrase d'empreinte"
   },
   "fingerprintMatchInfo": {
-    "message": "Please make sure your vault is unlocked and the Fingerprint phrase matches on the other device."
+    "message": "Veuillez vous assurer que votre coffre est déverrouillé et que la phrase d'empreinte correspond à celle de l'autre appareil."
   },
   "resendNotification": {
-    "message": "Resend notification"
+    "message": "Renvoyer la notification"
   },
   "viewAllLoginOptions": {
-    "message": "View all log in options"
+    "message": "Afficher toutes les options de connexion"
   },
   "notificationSentDevice": {
-    "message": "A notification has been sent to your device."
+    "message": "Une notification a été envoyée à votre appareil."
   },
   "logInInitiated": {
-    "message": "Log in initiated"
+    "message": "Connexion initiée"
   },
   "exposedMasterPassword": {
     "message": "Mot de passe principal exposé"
@@ -2096,12 +2096,33 @@
     "message": "Votre mot de passe principal ne peut pas être récupéré si vous l'oubliez !"
   },
   "characterMinimum": {
-    "message": "Caractère minimum $LENGTH$",
+    "message": "$LENGTH$ caractère minimum",
     "placeholders": {
       "length": {
         "content": "$1",
         "example": "14"
       }
     }
+  },
+  "tryAutofillPageLoad": {
+    "message": "Essayer la saisie automatique au chargement de la page ?"
+  },
+  "tryAutofill": {
+    "message": "Comment saisir automatiquement"
+  },
+  "autofillPageLoadInfo": {
+    "message": "Les formulaires de connexion saisiront automatiquement les informations d'identification correspondantes si vous activez la fonction de saisie automatique au chargement de la page."
+  },
+  "autofillSelectInfo": {
+    "message": "Sélectionnez un élément depuis cette page pour saisir automatiquement le formulaire de l'onglet actif."
+  },
+  "autofillTurnedOn": {
+    "message": "Saisie automatique au chargement de la page activé"
+  },
+  "turnOn": {
+    "message": "Activer"
+  },
+  "notNow": {
+    "message": "Pas maintenant"
   }
 }

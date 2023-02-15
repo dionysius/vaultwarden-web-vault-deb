@@ -2103,5 +2103,26 @@
         "example": "14"
       }
     }
+  },
+  "tryAutofillPageLoad": {
+    "message": "Spróbować autouzupełnić po załadowaniu strony?"
+  },
+  "tryAutofill": {
+    "message": "Jak autouzupełniać"
+  },
+  "autofillPageLoadInfo": {
+    "message": "Formularze logowania automatycznie wypełnią się pasującymi danymi uwierzytelniającymi, jeśli włączysz autouzupełnianie po załadowaniu strony."
+  },
+  "autofillSelectInfo": {
+    "message": "Wybierz element z tej strony, aby automatycznie wypełnić formularz na aktywnej karcie."
+  },
+  "autofillTurnedOn": {
+    "message": "Automatyczne uzupełnianie przy wczytywaniu strony zostało włączone"
+  },
+  "turnOn": {
+    "message": "Włącz"
+  },
+  "notNow": {
+    "message": "Nie teraz"
   }
 }

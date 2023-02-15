@@ -2103,5 +2103,26 @@
         "example": "14"
       }
     }
+  },
+  "tryAutofillPageLoad": {
+    "message": "Pyritäänkö lomakkeet täyttämään sivun avautuessa automaattisesti?"
+  },
+  "tryAutofill": {
+    "message": "Miten täytetään automaattisesti"
+  },
+  "autofillPageLoadInfo": {
+    "message": "Jos otat automaattisen täytön sivun avautuessa käyttöön, täytetään kirjautumislomakkeet automaattisesti sopivilla tunnuksilla."
+  },
+  "autofillSelectInfo": {
+    "message": "Valitse tältä sivulta aktiivisella välilehdellä olevan lomakkeen automaattiseen täyttöön käytettävä kohde."
+  },
+  "autofillTurnedOn": {
+    "message": "Automaattinen täyttö sivun avautuessa otettiin käyttöön"
+  },
+  "turnOn": {
+    "message": "Ota käyttöön"
+  },
+  "notNow": {
+    "message": "Ei nyt"
   }
 }

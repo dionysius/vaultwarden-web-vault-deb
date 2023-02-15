@@ -963,7 +963,7 @@
     "message": "Compromised or untrusted websites can exploit auto-fill on page load."
   },
   "learnMoreAboutAutofill": {
-    "message": "Learn more about auto-fill"
+    "message": "Tìm hiểu thêm về tự động điền"
   },
   "defaultAutoFillOnPageLoad": {
     "message": "Cài đặt tự động điền mặc định cho mục đăng nhập"
@@ -1452,7 +1452,7 @@
     "message": "Tổ chức của bạn yêu cầu mật khẩu chính của bạn phải đáp ứng các yêu cầu sau:"
   },
   "policyInEffectMinComplexity": {
-    "message": "Minimum complexity score of $SCORE$",
+    "message": "Điểm phức tạp tối thiểu của $SCORE$",
     "placeholders": {
       "score": {
         "content": "$1",
@@ -1494,7 +1494,7 @@
     "message": "Bạn đồng ý với những điều sau khi nhấn chọn ô này:"
   },
   "acceptPoliciesRequired": {
-    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+    "message": "Điều khoản sử dụng và Chính sách quyền riêng tư chưa được đồng ý."
   },
   "termsOfService": {
     "message": "Điều khoản sử dụng"
@@ -2051,25 +2051,25 @@
     "message": "Ghi nhớ email"
   },
   "loginWithDevice": {
-    "message": "Log in with device"
+    "message": "Đăng nhập bằng thiết bị"
   },
   "loginWithDeviceEnabledInfo": {
     "message": "Log in with device must be set up in the settings of the Bitwarden app. Need another option?"
   },
   "fingerprintPhraseHeader": {
-    "message": "Fingerprint phrase"
+    "message": "Cụm từ dấu vân tay"
   },
   "fingerprintMatchInfo": {
     "message": "Please make sure your vault is unlocked and the Fingerprint phrase matches on the other device."
   },
   "resendNotification": {
-    "message": "Resend notification"
+    "message": "Gửi lại thông báo"
   },
   "viewAllLoginOptions": {
-    "message": "View all log in options"
+    "message": "Xem tất cả tùy chọn đăng nhập"
   },
   "notificationSentDevice": {
-    "message": "A notification has been sent to your device."
+    "message": "Một thông báo đã được gửi đến thiết bị của bạn."
   },
   "logInInitiated": {
     "message": "Log in initiated"
@@ -2103,5 +2103,26 @@
         "example": "14"
       }
     }
+  },
+  "tryAutofillPageLoad": {
+    "message": "Try auto-fill on page load?"
+  },
+  "tryAutofill": {
+    "message": "Cách tự động điền"
+  },
+  "autofillPageLoadInfo": {
+    "message": "Login forms will automatically fill in matching credentials if you turn on auto-fill on page load."
+  },
+  "autofillSelectInfo": {
+    "message": "Select an item from this page to auto-fill the active tab's form."
+  },
+  "autofillTurnedOn": {
+    "message": "Auto-fill on page load turned on"
+  },
+  "turnOn": {
+    "message": "Bật"
+  },
+  "notNow": {
+    "message": "Không phải bây giờ"
   }
 }

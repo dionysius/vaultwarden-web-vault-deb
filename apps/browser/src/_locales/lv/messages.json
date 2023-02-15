@@ -11,7 +11,7 @@
     "description": "Extension description"
   },
   "loginOrCreateNewAccount": {
-    "message": "Jāpiesakās vai jāizveido jauns konts, lai piekļūdu drošajai glabātavai."
+    "message": "Jāpiesakās vai jāizveido jauns konts, lai piekļūtu drošajai glabātavai."
   },
   "createAccount": {
     "message": "Izveidot kontu"
@@ -20,7 +20,7 @@
     "message": "Pieteikties"
   },
   "enterpriseSingleSignOn": {
-    "message": "Uzņēmuma vienotā pierakstīšanās"
+    "message": "Uzņēmuma vienotā pieteikšanās"
   },
   "cancel": {
     "message": "Atcelt"
@@ -77,7 +77,7 @@
     "message": "Ievietot piezīmi starpliktuvē"
   },
   "copyUri": {
-    "message": "Ievietot URI starpliktuvē"
+    "message": "Ievietot vietrādi starpliktuvē"
   },
   "copyUsername": {
     "message": "Ievietot lietotājvārdu starpliktuvē"
@@ -221,7 +221,7 @@
     "message": "Ievietot vienumus"
   },
   "select": {
-    "message": "Atlasīt"
+    "message": "Izvēlēties"
   },
   "generatePassword": {
     "message": "Veidot paroli"
@@ -333,10 +333,10 @@
     "message": "Novērtēt paplašinājumu"
   },
   "rateExtensionDesc": {
-    "message": "Lūdzu, apsver palīdzēt mums ar labu atsauksmi!"
+    "message": "Lūgums apsvērt palīdzēt mums ar labu atsauksmi."
   },
   "browserNotSupportClipboard": {
-    "message": "Tavs tīmekļa pārlūks neatbalsta vienkāršu starpliktuves kopēšanu. Nokopē to pašrocīgi!"
+    "message": "Tīmekļa pārlūks neatbalsta vienkāršu starpliktuves kopēšanu. Tā vietā tas pašrocīgi jāievieto starpliktuvē."
   },
   "verifyIdentity": {
     "message": "Apstiprināt identitāti"
@@ -458,7 +458,7 @@
     }
   },
   "autofillError": {
-    "message": "Neizdevās automātiski aizpildīt izvēlēto vienumu šajā lapā. Tā vietā kopē un ielīmē to! "
+    "message": "Neizdevās automātiski aizpildīt izvēlēto vienumu šajā lapā. Tā vietā informācija ir jāievieto starpliktuvē un jāielīmē pašrocīgi."
   },
   "loggedOut": {
     "message": "Atteicies"
@@ -738,7 +738,7 @@
     "message": "Datne"
   },
   "selectFile": {
-    "message": "Atlasīt datni."
+    "message": "Atlasīt datni"
   },
   "maxFileSize": {
     "message": "Lielākais pieļaujamais datnes izmērs ir 500 MB."
@@ -1366,7 +1366,7 @@
     "message": "Atslēgt ar PIN"
   },
   "setYourPinCode": {
-    "message": "Uzstādīt PIN kodu Bitwarden atslēgšanai. PIN iestatījumi tiks atiestatīti, ja jebkad tiks veikta pilnīga izrakstīšanās no lietotnes."
+    "message": "Iestatīt PIN kodu Bitwarden atslēgšanai. PIN iestatījumi tiks atiestatīti pēc pilnīgas izrakstīšanās no lietotnes."
   },
   "pinRequired": {
     "message": "Ir nepieciešams PIN kods."
@@ -1625,7 +1625,7 @@
     "message": "Aizsargāts ar paroli"
   },
   "copySendLink": {
-    "message": "Kopēt Sūtījuma saiti",
+    "message": "Ievietot \"Send\" saiti starpliktuvē",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "removePassword": {
@@ -1723,7 +1723,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendShareDesc": {
-    "message": "Saglabājot, kopējiet šī Sūtījuma saiti starpliktuvē.",
+    "message": "Saglabāšanas brīdī ievietot šī \"Send\" saiti starpliktuvē.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendTextDesc": {
@@ -1748,7 +1748,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendDisabledWarning": {
-    "message": "Organizācijas politikas dēļ jūs varat dzēst tikai esošu Sūtījumu.",
+    "message": "Uzņēmuma nosacījumu dēļ ir iespējams izdzēst tikai esošu \"Send\".",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createdSend": {
@@ -2103,5 +2103,26 @@
         "example": "14"
       }
     }
+  },
+  "tryAutofillPageLoad": {
+    "message": "Vai mēģināt automātiski aizpildīt pēc lapas ielādes?"
+  },
+  "tryAutofill": {
+    "message": "Kā automātiski aizpildīt"
+  },
+  "autofillPageLoadInfo": {
+    "message": "Pieteikšanās veidnēs automātiski tiks ievadīta atbilstoša pieteikšanās informācija, ja ir ieslēgta automātiskā aizpildīšana pēc lapas ielādēšanas."
+  },
+  "autofillSelectInfo": {
+    "message": "Atlasīt šīs lapas vienumu, lai automātiski aizpildītu pašreizējās cilnes veidlapu."
+  },
+  "autofillTurnedOn": {
+    "message": "Ir ieslēgta automātiskā aizpilde pēc lapas ielādes"
+  },
+  "turnOn": {
+    "message": "Ieslēgt"
+  },
+  "notNow": {
+    "message": "Ne tagad"
   }
 }
