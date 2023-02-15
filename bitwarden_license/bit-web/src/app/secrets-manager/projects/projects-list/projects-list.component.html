@@ -58,7 +58,7 @@
         <i class="bwi bwi-collection tw-text-xl tw-text-muted" aria-hidden="true"></i>
       </td>
       <td bitCell class="tw-break-all">
-        <a [routerLink]="[project.id]">{{ project.name }}</a>
+        <a bitLink [routerLink]="[project.id]">{{ project.name }}</a>
       </td>
       <td bitCell>{{ project.revisionDate | date: "medium" }}</td>
       <td bitCell>
