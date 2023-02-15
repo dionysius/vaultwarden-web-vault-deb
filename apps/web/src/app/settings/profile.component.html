@@ -33,7 +33,8 @@
     </div>
     <div class="col-6">
       <div class="mb-3">
-        <dynamic-avatar text="{{ profile | userName }}" [size]="'large'"> </dynamic-avatar>
+        <dynamic-avatar text="{{ profile | userName }}" [id]="profile.id" [size]="'large'">
+        </dynamic-avatar>
         <button
           type="button"
           class="btn btn-outline-secondary tw-ml-3.5"
