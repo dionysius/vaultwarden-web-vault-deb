@@ -581,7 +581,7 @@
     "message": "จำเป็นต้องมีรหัสการตรวจสอบยืนยัน"
   },
   "invalidVerificationCode": {
-    "message": "Invalid verification code"
+    "message": "รหัสการตรวจสอบสิทธิ์ไม่ถูกต้อง"
   },
   "continue": {
     "message": "ดำเนินการต่อไป"
@@ -755,7 +755,7 @@
     "message": "กำลังโหลด..."
   },
   "lockVault": {
-    "message": "Lock vault"
+    "message": "ล็อกตู้เซฟ"
   },
   "passwordGenerator": {
     "message": "ตัวสร้างรหัสผ่าน"
@@ -789,7 +789,7 @@
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "yourAccountsFingerprint": {
-    "message": "Your account's fingerprint phrase",
+    "message": "ข้อความลายนิ้วมือของบัญชีของคุณ",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "goToWebVault": {
@@ -836,7 +836,7 @@
     "message": "เข้าสู่ระบบแบบสองขั้นตอน"
   },
   "vaultTimeout": {
-    "message": "Vault timeout"
+    "message": "หมดเวลาล็อกตู้เซฟ"
   },
   "vaultTimeoutDesc": {
     "message": "Choose when your vault will take the vault timeout action."
@@ -897,7 +897,7 @@
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "clearClipboardDesc": {
-    "message": "Automatically clear copied values from your clipboard.",
+    "message": "ล้างค่าที่คัดลอกโดยอัตโนมัติจากคลิปบอร์ดของคุณ",
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "enableFavicon": {

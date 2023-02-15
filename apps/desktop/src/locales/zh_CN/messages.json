@@ -2071,7 +2071,7 @@
     "message": "Please make sure your vault is unlocked and Fingerprint phrase matches the other device."
   },
   "fingerprintPhraseHeader": {
-    "message": "Fingerprint phrase"
+    "message": "指纹短语"
   },
   "needAnotherOption": {
     "message": "Log in with device must be set up in the settings of the Bitwarden app. Need another option?"
@@ -2148,7 +2148,7 @@
     "message": "Login request has already expired."
   },
   "thisRequestIsNoLongerValid": {
-    "message": "This request is no longer valid."
+    "message": "请求已失效"
   },
   "approveLoginRequestDesc": {
     "message": "Use this device to approve login requests made from other devices."
@@ -2181,13 +2181,13 @@
     "message": "Check known data breaches for this password"
   },
   "important": {
-    "message": "Important:"
+    "message": "重要事项："
   },
   "masterPasswordHint": {
     "message": "Your master password cannot be recovered if you forget it!"
   },
   "characterMinimum": {
-    "message": "$LENGTH$ character minimum",
+    "message": "$LENGTH$ 字符下限",
     "placeholders": {
       "length": {
         "content": "$1",

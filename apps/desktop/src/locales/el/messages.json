@@ -15,7 +15,7 @@
     "message": "Τύποι"
   },
   "typeLogin": {
-    "message": "Είσοδος"
+    "message": "Σύνδεση"
   },
   "typeCard": {
     "message": "Κάρτα"
@@ -45,10 +45,10 @@
     "message": "Κοινοποίηση"
   },
   "moveToOrganization": {
-    "message": "Μετακίνηση στον Οργανισμό"
+    "message": "Μετακίνηση σε οργανισμό"
   },
   "movedItemToOrg": {
-    "message": "$ITEMNAME$ μετακινήθηκε στο $ORGNAME$",
+    "message": "Το $ITEMNAME$ μετακινήθηκε στο $ORGNAME$",
     "placeholders": {
       "itemname": {
         "content": "$1",
@@ -113,7 +113,7 @@
     "message": "Σημειώσεις"
   },
   "customFields": {
-    "message": "Πεδία Ορισμένα από το Χρήστη"
+    "message": "Προσαρμοσμένα πεδία"
   },
   "launch": {
     "message": "Εκκίνηση"
@@ -239,10 +239,10 @@
     "message": "Κα"
   },
   "mx": {
-    "message": "Mx"
+    "message": "Mx στα Ελληνικά"
   },
   "dr": {
-    "message": "Dr"
+    "message": "Δρ"
   },
   "expirationMonth": {
     "message": "Μήνας λήξης"
@@ -284,7 +284,7 @@
     "message": "Διεύθυνση 3"
   },
   "cityTown": {
-    "message": "Πόλη / Κωμόπολη"
+    "message": "Πόλη"
   },
   "stateProvince": {
     "message": "Περιοχή / Νομός"
@@ -349,10 +349,10 @@
     "message": "Απαιτείται όνομα."
   },
   "addedItem": {
-    "message": "Προστέθηκε στοιχείο"
+    "message": "Το στοιχείο προστέθηκε"
   },
   "editedItem": {
-    "message": "Επεξεργασμένο στοιχείο"
+    "message": "Το στοιχείο αποθηκεύτηκε"
   },
   "deleteItem": {
     "message": "Διαγραφή Στοιχείου"
@@ -364,19 +364,19 @@
     "message": "Διαγραφή Συνημμένου"
   },
   "deleteItemConfirmation": {
-    "message": "Είστε βέβαιοι ότι θέλετε να διαγράψετε αυτό το στοιχείο;"
+    "message": "Είστε βέβαιοι ότι θέλετε να μετακινήσετε αυτό το στοιχείο στον κάδο απορριμμάτων;"
   },
   "deletedItem": {
-    "message": "Διαγραμμένο στοιχείο"
+    "message": "Το στοιχείο μετακινήθηκε στον κάδο απορριμάτων"
   },
   "overwritePasswordConfirmation": {
     "message": "Είστε βέβαιοι ότι θέλετε να αντικαταστήσετε τον τρέχον κωδικό πρόσβασης;"
   },
   "overwriteUsername": {
-    "message": "Αντικατάσταση Username"
+    "message": "Αντικατάσταση ονόματος χρήστη"
   },
   "overwriteUsernameConfirmation": {
-    "message": "Είστε βέβαιοι ότι θέλετε να αντικαταστήσετε το τρέχον username;"
+    "message": "Είστε βέβαιοι ότι θέλετε να αντικαταστήσετε το τρέχον όνομα χρήστη;"
   },
   "noneFolder": {
     "message": "Χωρίς Φάκελο",
@@ -407,7 +407,7 @@
     "message": "Κεφαλαία (A-Z)"
   },
   "lowercase": {
-    "message": "Πεζά (α-ω)"
+    "message": "Πεζά (a-z)"
   },
   "numbers": {
     "message": "Αριθμοί (0-9)"
@@ -422,11 +422,11 @@
     "message": "Διαχωριστής Λέξεων"
   },
   "capitalize": {
-    "message": "Κεφαλαιοποίηση",
+    "message": "Κεφαλαία",
     "description": "Make the first letter of a word uppercase."
   },
   "includeNumber": {
-    "message": "Συμπερίληψη Αριθμών"
+    "message": "Συμπερίληψη αριθμού"
   },
   "close": {
     "message": "Κλείσιμο"
@@ -435,7 +435,7 @@
     "message": "Ελάχιστα Αριθμητικά Ψηφία"
   },
   "minSpecial": {
-    "message": "Ελάχιστο Ειδικών Χαρακτήρων",
+    "message": "Ελάχιστοι ειδικοί χαρακτήρες",
     "description": "Minimum Special Characters"
   },
   "ambiguous": {
@@ -451,7 +451,7 @@
     "message": "Αναζήτηση στα Αγαπημένα"
   },
   "searchType": {
-    "message": "Τύπος Αναζήτησης",
+    "message": "Αναζήτηση σε αυτόν τον τύπο",
     "description": "Search item type"
   },
   "newAttachment": {
@@ -464,13 +464,13 @@
     "message": "Είστε βέβαιοι ότι θέλετε να διαγράψετε αυτό το συνημμένο;"
   },
   "attachmentSaved": {
-    "message": "Το συννημένο έχει αποθηκευτεί."
+    "message": "Το συννημένο αποθηκεύτηκε"
   },
   "file": {
     "message": "Αρχείο"
   },
   "selectFile": {
-    "message": "Επιλέξτε ένα αρχείο."
+    "message": "Επιλέξτε ένα αρχείο"
   },
   "maxFileSize": {
     "message": "Το μέγιστο μέγεθος αρχείου είναι 500 MB."
@@ -479,16 +479,16 @@
     "message": "Δεν μπορείτε να χρησιμοποιήσετε αυτήν τη λειτουργία μέχρι να ενημερώσετε το κλειδί κρυπτογράφησης."
   },
   "editedFolder": {
-    "message": "Επεξεργασμένος φάκελος"
+    "message": "Ο φάκελος αποθηκεύτηκε"
   },
   "addedFolder": {
-    "message": "Προστέθηκε φάκελος"
+    "message": "Ο φάκελος προστέθηκε"
   },
   "deleteFolderConfirmation": {
-    "message": "Είστε βέβαιοι ότι θέλετε να διαγράψετε αυτό τον φάκελο;"
+    "message": "Είστε βέβαιοι ότι θέλετε να διαγράψετε αυτόν τον φάκελο;"
   },
   "deletedFolder": {
-    "message": "Διεγραμμένος φάκελος"
+    "message": "Ο φάκελος διαγράφηκε"
   },
   "loginOrCreateNewAccount": {
     "message": "Συνδεθείτε ή δημιουργήστε ένα νέο λογαριασμό για να αποκτήσετε πρόσβαση στο ασφαλές vault σας."
@@ -512,7 +512,7 @@
     "message": "Η υπόδειξη κύριου κωδικού μπορεί να σας βοηθήσει να θυμηθείτε τον κωδικό σας αν τον ξεχάσετε."
   },
   "reTypeMasterPass": {
-    "message": "Επαλήθευση Κύριου Κωδικού"
+    "message": "Επιβεβαίωση κύριου κωδικού"
   },
   "masterPassHint": {
     "message": "Υπόδειξη Κύριου Κωδικού (προαιρετικό)"
@@ -524,7 +524,7 @@
     "message": "Υπόδειξη Κωδικού"
   },
   "enterEmailToGetHint": {
-    "message": "Εισαγάγετε τη διεύθυνση email του λογαριασμού σας για να λάβετε την υπόδειξη του κύριου κωδικού."
+    "message": "Εισάγετε τη διεύθυνση email του λογαριασμού σας για να λάβετε την υπόδειξη του κύριου κωδικού."
   },
   "getMasterPasswordHint": {
     "message": "Λήψη υπόδειξης κύριου κωδικού"
@@ -536,10 +536,10 @@
     "message": "Μη έγκυρη διεύθυνση e-mail."
   },
   "masterPasswordRequired": {
-    "message": "Απαιτείται κύριος κωδικός πρόσβασης."
+    "message": "Απαιτείται ο κύριος κωδικός."
   },
   "confirmMasterPasswordRequired": {
-    "message": "Απαιτείται ξανά ο κύριος κωδικός πρόσβασης."
+    "message": "Απαιτείται επιβεβαίωση του κύριου κωδικού."
   },
   "masterPasswordMinlength": {
     "message": "Ο κύριος κωδικός πρέπει να έχει μήκος τουλάχιστον 8 χαρακτήρες."
@@ -611,13 +611,13 @@
     "message": "Να με θυμάσαι"
   },
   "sendVerificationCodeEmailAgain": {
-    "message": "Επανάληψη αποστολής κωδικού επαλήθευσης στο e-mail"
+    "message": "Επανάληψη αποστολής email με κωδικό επαλήθευσης"
   },
   "useAnotherTwoStepMethod": {
-    "message": "Χρήση άλλης μεθόδου εισόδου δύο παραγόντων"
+    "message": "Χρήση άλλης μεθόδου σύνδεσης δύο βημάτων"
   },
   "insertYubiKey": {
-    "message": "Τοποθετήστε το YubiKey στη θύρα USB του υπολογιστή σας και έπειτα κάντε κλικ στο κουμπί του."
+    "message": "Τοποθετήστε το YubiKey στη θύρα USB του υπολογιστή σας και έπειτα πατήστε το κουμπί του."
   },
   "insertU2f": {
     "message": "Εισάγετε το κλειδί ασφαλείας στη θύρα USB του υπολογιστή σας. Αν έχει κουμπί, πατήστε το."
@@ -665,13 +665,13 @@
     "message": "Σύνδεση μη διαθέσιμη"
   },
   "noTwoStepProviders": {
-    "message": "Αυτός ο λογαριασμός έχει δυνατότητα σύνδεσης σε δύο βήματα, ωστόσο, από αυτήν τη συσκευή δεν υποστηρίζεται κανένας από τους διαμορφωμένους παροχείς δύο βημάτων."
+    "message": "Αυτός ο λογαριασμός έχει ενεργοποιημένη τη σύνδεση σε δύο βήματα, ωστόσο, κανένας από τους καθορισμένους παρόχους δύο βημάτων δεν υποστηρίζεται από αυτήν τη συσκευή."
   },
   "noTwoStepProviders2": {
     "message": "Προσθέστε επιπλέον παρόχους που υποστηρίζονται καλύτερα σε όλες τις συσκευές (όπως μια εφαρμογή επαλήθευσης)."
   },
   "twoStepOptions": {
-    "message": "Επιλογές Σύνδεσης Δύο Παραγόντων"
+    "message": "Επιλογές σύνδεσης δύο βημάτων"
   },
   "selfHostedEnvironment": {
     "message": "Αυτο-Φιλοξενούμενο Περιβάλλον"
@@ -692,16 +692,16 @@
     "message": "URL Διακομιστή API"
   },
   "webVaultUrl": {
-    "message": "Web Vault Server URL"
+    "message": "URL διακομιστή web vault"
   },
   "identityUrl": {
-    "message": "URL Ταυτότητας Διακομιστή"
+    "message": "URL διακομιστή ταυτότητας"
   },
   "notificationsUrl": {
-    "message": "Ειδοποιήσεις Διεύθυνσης URL Διακομιστή"
+    "message": "URL διακομιστή ειδοποιήσεων"
   },
   "iconsUrl": {
-    "message": "Εικονίδια διακομιστή URL"
+    "message": "URL διακομιστή εικονιδίων"
   },
   "environmentSaved": {
     "message": "Οι διευθύνσεις URL περιβάλλοντος έχουν αποθηκευτεί."
@@ -796,10 +796,10 @@
     "message": "Πηγαίνετε στο Web Vault"
   },
   "getMobileApp": {
-    "message": "Λάβετε την Εφαρμογή Κινητού"
+    "message": "Κατεβάστε την εφαρμογή για κινητά"
   },
   "getBrowserExtension": {
-    "message": "Λάβετε την Επέκταση Browser"
+    "message": "Κατεβάστε την επέκταση προγράμματος περιήγησης"
   },
   "syncingComplete": {
     "message": "Ο συγχρονισμός ολοκληρώθηκε"
@@ -808,7 +808,7 @@
     "message": "Ο συγχρονισμός απέτυχε"
   },
   "yourVaultIsLocked": {
-    "message": "Το vault σας είναι κλειδωμένο. Επαληθεύστε τον κύριο κωδικό πρόσβασης για να συνεχίσετε."
+    "message": "Το vault σας είναι κλειδωμένο. Επαληθεύστε την ταυτότητά σας για να συνεχίσετε."
   },
   "unlock": {
     "message": "Ξεκλείδωμα"
@@ -830,7 +830,7 @@
     "message": "Μη έγκυρος κύριος κωδικός πρόσβασης"
   },
   "twoStepLoginConfirmation": {
-    "message": "Η σύνδεση σε δύο βήματα καθιστά ασφαλέστερο τον λογαριασμό σας, απαιτώντας να επαληθεύσετε τα στοιχεία σας με μια άλλη συσκευή, όπως κλειδί ασφαλείας, εφαρμογή επαλήθευσης ταυτότητας, μήνυμα SMS, τηλεφωνική κλήση ή email. Μπορείτε να ενεργοποιήσετε τη σύνδεση σε δύο βήματα στο bitwarden.com. Θέλετε να επισκεφθείτε την ιστοσελίδα τώρα;"
+    "message": "Η σύνδεση σε δύο βήματα καθιστά ασφαλέστερο τον λογαριασμό σας, απαιτώντας να επαληθεύσετε τα στοιχεία σας με μια άλλη συσκευή, όπως ένα κλειδί ασφαλείας, εφαρμογή επαλήθευσης ταυτότητας, SMS, τηλεφωνική κλήση, ή email. Μπορείτε να ενεργοποιήσετε τη σύνδεση σε δύο βήματα στο web vault στο bitwarden.com. Θέλετε να επισκεφθείτε την ιστοσελίδα τώρα;"
   },
   "twoStepLogin": {
     "message": "Σύνδεση σε δύο βήματα"
@@ -839,7 +839,7 @@
     "message": "Χρόνος Λήξης Vault"
   },
   "vaultTimeoutDesc": {
-    "message": "Επιλέξτε πότε θα λήξει το vault και πραγματοποιήστε την επιλεγμένη ενέργεια."
+    "message": "Επιλέξτε πότε θα πραγματοποιείται η επιλεγμένη ενέργεια χρόνου λήξης vault."
   },
   "immediately": {
     "message": "Άμεσα"
@@ -907,10 +907,10 @@
     "message": "Εμφάνιση μιας αναγνωρίσιμης εικόνας δίπλα σε κάθε σύνδεση."
   },
   "enableMinToTray": {
-    "message": "Ελαχιστοποίηση σε Εικονίδιο Δίσκου"
+    "message": "Ελαχιστοποίηση σε εικονίδιο περιοχής ειδοποιήσεων"
   },
   "enableMinToTrayDesc": {
-    "message": "Όταν ελαχιστοποιείτε το παράθυρο, εμφανίζεται ένα εικονίδιο στο δίσκο συστήματος αντί αυτού."
+    "message": "Κατά την ελαχιστοποίηση του παραθύρου, να εμφανίζεται ένα εικονίδιο στην περιοχή ειδοποιήσεων."
   },
   "enableMinToMenuBar": {
     "message": "Ελαχιστοποίηση στη γραμμή μενού"
@@ -922,7 +922,7 @@
     "message": "Κλείσιμο στο Εικονίδιο Δίσκου"
   },
   "enableCloseToTrayDesc": {
-    "message": "Όταν κλείνετε το παράθυρο, εμφανίζεται ένα εικονίδιο στο δίσκο συστήματος αντί αυτού."
+    "message": "Κατά το κλείσιμο του παραθύρου, να εμφανίζεται ένα εικονίδιο στην περιοχή ειδοποιήσεων."
   },
   "enableCloseToMenuBar": {
     "message": "Κλείσιμο στη γραμμή μενού"
@@ -934,13 +934,13 @@
     "message": "Ενεργοποίηση Εικονιδίου Δίσκου"
   },
   "enableTrayDesc": {
-    "message": "Να εμφανίζεται πάντα ένα εικονίδιο στο δίσκο συστήματος."
+    "message": "Να εμφανίζεται πάντα ένα εικονίδιο στην περιοχή ειδοποιήσεων."
   },
   "startToTray": {
     "message": "Έναρξη στο εικονίδιο δίσκου"
   },
   "startToTrayDesc": {
-    "message": "Όταν ξεκινήσει η εφαρμογή, εμφανίζεται μόνο ένα εικονίδιο στο δίσκο συστήματος."
+    "message": "Όταν ξεκινάει για πρώτη φορά η εφαρμογή, να εμφανίζεται μόνο ένα εικονίδιο στην περιοχή ειδοποιήσεων."
   },
   "startToMenuBar": {
     "message": "Έναρξη στη γραμμή μενού"
@@ -2062,25 +2062,25 @@
     "message": "Συνδεθείτε με άλλη συσκευή"
   },
   "logInInitiated": {
-    "message": "Log in initiated"
+    "message": "Η σύνδεση ξεκίνησε"
   },
   "notificationSentDevice": {
-    "message": "A notification has been sent to your device."
+    "message": "Μια ειδοποίηση έχει σταλεί στη συσκευή σας."
   },
   "fingerprintMatchInfo": {
-    "message": "Please make sure your vault is unlocked and Fingerprint phrase matches the other device."
+    "message": "Βεβαιωθείτε ότι το vault σας είναι ξεκλείδωτο και ότι η Φράση δακτυλικών αποτυπωμάτων ταιριάζει στην άλλη συσκευή."
   },
   "fingerprintPhraseHeader": {
     "message": "Φράση δακτυλικών αποτυπωμάτων"
   },
   "needAnotherOption": {
-    "message": "Log in with device must be set up in the settings of the Bitwarden app. Need another option?"
+    "message": "Η σύνδεση με χρήση συσκευής πρέπει να ρυθμιστεί στις ρυθμίσεις της εφαρμογής Bitwarden. Χρειάζεστε άλλη επιλογή;"
   },
   "viewAllLoginOptions": {
     "message": "Δείτε όλες τις επιλογές σύνδεσης"
   },
   "resendNotification": {
-    "message": "Resend notification"
+    "message": "Επαναποστολή ειδοποίησης"
   },
   "toggleCharacterCount": {
     "message": "Εναλλαγή μετρήσεων χαρακτήρων",
@@ -2090,7 +2090,7 @@
     "message": "Προσπαθείτε να συνδεθείτε;"
   },
   "logInAttemptBy": {
-    "message": "Login attempt by $EMAIL$",
+    "message": "Προσπάθεια σύνδεσης από $EMAIL$",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -2099,25 +2099,25 @@
     }
   },
   "deviceType": {
-    "message": "Device Type"
+    "message": "Τύπος Συσκευής"
   },
   "ipAddress": {
-    "message": "IP Address"
+    "message": "Διεύθυνση IP"
   },
   "time": {
     "message": "Ώρα"
   },
   "confirmLogIn": {
-    "message": "Confirm login"
+    "message": "Επιβεβαίωση σύνδεσης"
   },
   "denyLogIn": {
-    "message": "Deny login"
+    "message": "Άρνηση σύνδεσης"
   },
   "approveLoginRequests": {
-    "message": "Approve login requests"
+    "message": "Έγκριση αιτημάτων σύνδεσης"
   },
   "logInConfirmedForEmailOnDevice": {
-    "message": "Login confirmed for $EMAIL$ on $DEVICE$",
+    "message": "Επιβεβαιώθηκε η σύνδεση του $EMAIL$ στη συσκευή $DEVICE$",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -2130,13 +2130,13 @@
     }
   },
   "youDeniedALogInAttemptFromAnotherDevice": {
-    "message": "You denied a login attempt from another device. If this really was you, try to log in with the device again."
+    "message": "Απορρίψατε μια προσπάθεια σύνδεσης από μια άλλη συσκευή. Αν πραγματικά ήσασταν εσείς, προσπαθήστε να συνδεθείτε ξανά με τη συσκευή."
   },
   "justNow": {
     "message": "Μόλις τώρα"
   },
   "requestedXMinutesAgo": {
-    "message": "Requested $MINUTES$ minutes ago",
+    "message": "Ζητήθηκε $MINUTES$ λεπτά πριν",
     "placeholders": {
       "minutes": {
         "content": "$1",
@@ -2145,16 +2145,16 @@
     }
   },
   "loginRequestHasAlreadyExpired": {
-    "message": "Login request has already expired."
+    "message": "Το αίτημα σύνδεσης έχει ήδη λήξει."
   },
   "thisRequestIsNoLongerValid": {
-    "message": "This request is no longer valid."
+    "message": "Αυτό το αίτημα δεν είναι πλέον έγκυρο."
   },
   "approveLoginRequestDesc": {
-    "message": "Use this device to approve login requests made from other devices."
+    "message": "Χρησιμοποιήστε αυτήν τη συσκευή για να εγκρίνετε αιτήματα σύνδεσης από άλλες συσκευές."
   },
   "confirmLoginAtemptForMail": {
-    "message": "Confirm login attempt for $EMAIL$",
+    "message": "Επιβεβαίωση προσπάθειας σύνδεσης για $EMAIL$",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -2163,19 +2163,19 @@
     }
   },
   "logInRequested": {
-    "message": "Log in requested"
+    "message": "Ζητήθηκε σύνδεση"
   },
   "exposedMasterPassword": {
     "message": "Εκτεθειμένος Κύριος Κωδικός Πρόσβασης"
   },
   "exposedMasterPasswordDesc": {
-    "message": "Password found in a data breach. Use a unique password to protect your account. Are you sure you want to use an exposed password?"
+    "message": "Ο κωδικός βρέθηκε σε μια παραβίαση δεδομένων. Χρησιμοποιήστε έναν μοναδικό κωδικό πρόσβασης για την προστασία του λογαριασμού σας. Είστε βέβαιοι ότι θέλετε να χρησιμοποιήσετε έναν εκτεθειμένο κωδικό πρόσβασης;"
   },
   "weakAndExposedMasterPassword": {
-    "message": "Weak and Exposed Master Password"
+    "message": "Αδύναμος και Εκτεθειμένος Κύριος Κωδικός"
   },
   "weakAndBreachedMasterPasswordDesc": {
-    "message": "Weak password identified and found in a data breach. Use a strong and unique password to protect your account. Are you sure you want to use this password?"
+    "message": "Αδύναμος κωδικός που έχει βρεθεί σε μια παραβίαση δεδομένων. Χρησιμοποιήστε ένα ισχυρό και μοναδικό κωδικό πρόσβασης για την προστασία του λογαριασμού σας. Είστε βέβαιοι ότι θέλετε να χρησιμοποιήσετε αυτόν τον κωδικό πρόσβασης;"
   },
   "checkForBreaches": {
     "message": "Ελέγξτε γνωστές παραβιάσεις δεδομένων για αυτόν τον κωδικό"
@@ -2187,7 +2187,7 @@
     "message": "Ο κύριος κωδικός πρόσβασης δεν μπορεί να ανακτηθεί εάν τον ξεχάσετε!"
   },
   "characterMinimum": {
-    "message": "$LENGTH$ character minimum",
+    "message": "Τουλάχιστον $LENGTH$ χαρακτήρες",
     "placeholders": {
       "length": {
         "content": "$1",
