@@ -215,15 +215,16 @@ export class VaultFilterService implements VaultFilterServiceAbstraction {
     storedFolders: FolderView[],
     org?: Organization
   ): Promise<FolderView[]> {
-    if (org?.id == null) {
+    // If no org or "My Vault" is selected, show all folders
+    if (org?.id == null || org?.id == "MyVault") {
       return storedFolders;
     }
+
+    // Otherwise, show only folders that have ciphers from the selected org and the "no folder" folder
     const ciphers = await this.cipherService.getAllDecrypted();
     const orgCiphers = ciphers.filter((c) => c.organizationId == org?.id);
     return storedFolders.filter(
-      (f) =>
-        orgCiphers.filter((oc) => oc.folderId == f.id).length > 0 ||
-        ciphers.filter((c) => c.folderId == f.id).length < 1
+      (f) => orgCiphers.some((oc) => oc.folderId == f.id) || f.id == null
     );
   }
 
