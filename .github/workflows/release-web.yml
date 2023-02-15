@@ -104,7 +104,7 @@ jobs:
           echo "DOCKER_CONTENT_TRUST=0" >> $GITHUB_ENV
 
       ########## ACR ##########
-      - name: Login to Azure - QA Subscription
+      - name: Login to Azure - PROD Subscription
         uses: Azure/login@ec3c14589bd3e9312b3cc8c41e6860e258df9010  # v1.1
         with:
           creds: ${{ secrets.AZURE_PROD_KV_CREDENTIALS }}
