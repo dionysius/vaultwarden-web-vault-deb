@@ -13,6 +13,7 @@ import {
 } from "rxjs";
 
 import { ValidationService } from "@bitwarden/common/abstractions/validation.service";
+import { Utils } from "@bitwarden/common/misc/utils";
 import { SelectItemView } from "@bitwarden/components/src/multi-select/models/select-item-view";
 
 import {
@@ -165,21 +166,25 @@ export class AccessSelectorComponent implements OnInit, OnDestroy {
   ): SelectItemView[] => {
     const selectItemsView = potentialGrantees.map((granteeView) => {
       let icon: string;
-      let listName: string;
+      let listName = granteeView.name;
+      let labelName = granteeView.name;
       if (granteeView.type === "user") {
         icon = this.userIcon;
-        listName = `${granteeView.name} (${granteeView.email})`;
+        if (Utils.isNullOrWhitespace(granteeView.name)) {
+          listName = granteeView.email;
+          labelName = granteeView.email;
+        } else {
+          listName = `${granteeView.name} (${granteeView.email})`;
+        }
       } else if (granteeView.type === "group") {
         icon = this.groupIcon;
-        listName = granteeView.name;
-      } else {
+      } else if (granteeView.type === "serviceAccount") {
         icon = this.serviceAccountIcon;
-        listName = granteeView.name;
       }
       return {
         icon: icon,
         id: granteeView.id,
-        labelName: granteeView.name,
+        labelName: labelName,
         listName: listName,
       };
     });
