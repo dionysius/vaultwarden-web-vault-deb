@@ -3,6 +3,7 @@ import { View } from "../view/view";
 import { EncString } from "./enc-string";
 import { SymmetricCryptoKey } from "./symmetric-crypto-key";
 
+// https://contributing.bitwarden.com/architecture/clients/data-model#domain
 export default class Domain {
   protected buildDomainModel<D extends Domain>(
     domain: D,

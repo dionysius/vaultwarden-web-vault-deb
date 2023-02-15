@@ -22,6 +22,7 @@ export class EventResponse extends BaseResponse {
   ipAddress: string;
   installationId: string;
   systemUser: EventSystemUser;
+  domainName: string;
 
   constructor(response: any) {
     super(response);
@@ -42,5 +43,6 @@ export class EventResponse extends BaseResponse {
     this.ipAddress = this.getResponseProperty("IpAddress");
     this.installationId = this.getResponseProperty("InstallationId");
     this.systemUser = this.getResponseProperty("SystemUser");
+    this.domainName = this.getResponseProperty("DomainName");
   }
 }

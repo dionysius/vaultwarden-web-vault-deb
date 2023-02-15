@@ -45,6 +45,14 @@
             {{ "exportVault" | i18n }}
           </a>
           <a
+            routerLink="domain-verification"
+            class="list-group-item"
+            routerLinkActive="active"
+            *ngIf="organization?.canManageDomainVerification"
+          >
+            {{ "domainVerification" | i18n }}
+          </a>
+          <a
             routerLink="sso"
             class="list-group-item"
             routerLinkActive="active"

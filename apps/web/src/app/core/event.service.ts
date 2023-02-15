@@ -397,6 +397,19 @@ export class EventService {
           this.getShortId(ev.providerOrganizationId)
         );
         break;
+      // Org Domain claiming events
+      case EventType.OrganizationDomain_Added:
+        msg = humanReadableMsg = this.i18nService.t("addedDomain", ev.domainName);
+        break;
+      case EventType.OrganizationDomain_Removed:
+        msg = humanReadableMsg = this.i18nService.t("removedDomain", ev.domainName);
+        break;
+      case EventType.OrganizationDomain_Verified:
+        msg = humanReadableMsg = this.i18nService.t("domainVerifiedEvent", ev.domainName);
+        break;
+      case EventType.OrganizationDomain_NotVerified:
+        msg = humanReadableMsg = this.i18nService.t("domainNotVerifiedEvent", ev.domainName);
+        break;
       default:
         break;
     }
@@ -446,6 +459,8 @@ export class EventService {
         return ["bwi-globe", this.i18nService.t("webVault") + " - Edge"];
       case DeviceType.IEBrowser:
         return ["bwi-globe", this.i18nService.t("webVault") + " - IE"];
+      case DeviceType.Server:
+        return ["bwi-server", this.i18nService.t("server")];
       case DeviceType.UnknownBrowser:
         return [
           "bwi-globe",

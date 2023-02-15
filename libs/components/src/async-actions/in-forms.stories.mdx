@@ -105,7 +105,7 @@ class Component {
 
 ### 2. Add directive to the `form` element
 
-The `bitSubmit` directive is required beacuse of its coordinating role inside of a form.
+The `bitSubmit` directive is required because of its coordinating role inside of a form.
 
 ```html
 <form [formGroup]="formGroup" [bitSubmit]="submit">...</form>
@@ -120,4 +120,12 @@ Add `bitButton`, `bitFormButton`, `bitAction` directives to the button. Make sur
 ```html
 <button type="button" bitFormButton bitButton [bitAction]="handler">Do action</button>
 <button type="button" bitFormButton bitIconButton="bwi-star" [bitAction]="handler"></button>
+```
+
+## `[bitSubmit]` Disabled Form Submit
+
+If you need your form to be able to submit even when the form is disabled, then add `[allowDisabledFormSubmit]="true"` to your `<form>`
+
+```html
+<form [formGroup]="formGroup" [bitSubmit]="submit" [allowDisabledFormSubmit]="true">...</form>
 ```

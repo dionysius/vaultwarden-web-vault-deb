@@ -20,6 +20,8 @@ export class BitSubmitDirective implements OnInit, OnDestroy {
 
   @Input("bitSubmit") protected handler: FunctionReturningAwaitable;
 
+  @Input() allowDisabledFormSubmit?: boolean = false;
+
   readonly loading$ = this._loading$.asObservable();
   readonly disabled$ = this._disabled$.asObservable();
 
@@ -56,9 +58,13 @@ export class BitSubmitDirective implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.formGroupDirective.statusChanges
-      .pipe(takeUntil(this.destroy$))
-      .subscribe((c) => this._disabled$.next(c === "DISABLED"));
+    this.formGroupDirective.statusChanges.pipe(takeUntil(this.destroy$)).subscribe((c) => {
+      if (this.allowDisabledFormSubmit) {
+        this._disabled$.next(false);
+      } else {
+        this._disabled$.next(c === "DISABLED");
+      }
+    });
   }
 
   get disabled() {
