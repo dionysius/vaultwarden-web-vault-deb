@@ -1,3 +1,4 @@
+// Increment by 100 for each new set of events
 export enum EventType {
   User_LoggedIn = 1000,
   User_ChangedPassword = 1001,
@@ -73,8 +74,8 @@ export enum EventType {
   ProviderOrganization_Removed = 1902,
   ProviderOrganization_VaultAccessed = 1903,
 
-  OrganizationDomain_Added = 1904,
-  OrganizationDomain_Removed = 1905,
-  OrganizationDomain_Verified = 1906,
-  OrganizationDomain_NotVerified = 1907,
+  OrganizationDomain_Added = 2000,
+  OrganizationDomain_Removed = 2001,
+  OrganizationDomain_Verified = 2002,
+  OrganizationDomain_NotVerified = 2003,
 }
