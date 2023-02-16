@@ -82,7 +82,7 @@ export class MenuTriggerForDirective implements OnDestroy {
     this.overlayRef.attach(templatePortal);
 
     this.closedEventsSub = this.getClosedEvents().subscribe((event: KeyboardEvent | undefined) => {
-      if (event?.key === "Tab") {
+      if (["Tab", "Escape"].includes(event?.key)) {
         // Required to ensure tab order resumes correctly
         this.elementRef.nativeElement.focus();
       }

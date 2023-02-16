@@ -184,6 +184,7 @@ export class WebPlatformUtilsService implements PlatformUtilsService {
       showConfirmButton: true,
       confirmButtonText: confirmText == null ? this.i18nService.t("ok") : confirmText,
       target: target != null ? target : "body",
+      onOpen: () => Swal.getConfirmButton().focus(),
     });
 
     if (bootstrapModal != null) {

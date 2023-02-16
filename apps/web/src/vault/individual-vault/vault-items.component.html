@@ -43,8 +43,7 @@
           <bit-menu #headerMenu>
             <ng-container>
               <button
-                class="dropdown-item"
-                appStopClick
+                bitMenuItem
                 (click)="bulkMove()"
                 *ngIf="!activeFilter.isDeleted && !organization"
               >
@@ -52,19 +51,18 @@
                 {{ "moveSelected" | i18n }}
               </button>
               <button
-                class="dropdown-item"
-                appStopClick
+                bitMenuItem
                 (click)="bulkShare()"
                 *ngIf="!activeFilter.isDeleted && !organization"
               >
                 <i class="bwi bwi-fw bwi-arrow-circle-right" aria-hidden="true"></i>
                 {{ "moveSelectedToOrg" | i18n }}
               </button>
-              <button class="dropdown-item" (click)="bulkRestore()" *ngIf="activeFilter.isDeleted">
+              <button bitMenuItem (click)="bulkRestore()" *ngIf="activeFilter.isDeleted">
                 <i class="bwi bwi-fw bwi-undo" aria-hidden="true"></i>
                 {{ "restoreSelected" | i18n }}
               </button>
-              <button class="dropdown-item text-danger" (click)="bulkDelete()">
+              <button bitMenuItem class="tw-text-danger" (click)="bulkDelete()">
                 <i class="bwi bwi-fw bwi-trash" aria-hidden="true"></i>
                 {{
                   (activeFilter.isDeleted ? "permanentlyDeleteSelected" : "deleteSelected") | i18n
