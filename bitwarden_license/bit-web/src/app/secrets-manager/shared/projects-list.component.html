@@ -31,7 +31,7 @@
           {{ "all" | i18n }}
         </label>
       </th>
-      <th bitCell colspan="2" bitSortable="name" default>{{ "name" | i18n }}</th>
+      <th bitCell class="tw-w-full tw-text-left" bitSortable="name" default>{{ "name" | i18n }}</th>
       <th bitCell bitSortable="revisionDate">{{ "lastEdited" | i18n }}</th>
       <th bitCell class="tw-w-0">
         <button
@@ -54,13 +54,15 @@
           [checked]="selection.isSelected(project.id)"
         />
       </td>
-      <td bitCell class="tw-w-0 tw-pr-0">
-        <i class="bwi bwi-collection tw-text-xl tw-text-muted" aria-hidden="true"></i>
+      <td bitCell>
+        <div class="tw-flex tw-items-center tw-gap-4 tw-break-all">
+          <i class="bwi bwi-collection tw-text-xl tw-text-muted" aria-hidden="true"></i>
+          <a bitLink [routerLink]="['/sm', project.organizationId, 'projects', project.id]">{{
+            project.name
+          }}</a>
+        </div>
       </td>
-      <td bitCell class="tw-break-all">
-        <a bitLink [routerLink]="[project.id]">{{ project.name }}</a>
-      </td>
-      <td bitCell>{{ project.revisionDate | date: "medium" }}</td>
+      <td bitCell class="tw-whitespace-nowrap">{{ project.revisionDate | date: "medium" }}</td>
       <td bitCell>
         <button
           type="button"
@@ -76,7 +78,7 @@
           <i class="bwi bwi-fw bwi-pencil tw-text-xl" aria-hidden="true"></i>
           {{ "editProject" | i18n }}
         </button>
-        <a bitMenuItem [routerLink]="project.id">
+        <a bitMenuItem [routerLink]="['/sm', project.organizationId, 'projects', project.id]">
           <i class="bwi bwi-fw bwi-eye tw-text-xl" aria-hidden="true"></i>
           {{ "viewProject" | i18n }}
         </a>

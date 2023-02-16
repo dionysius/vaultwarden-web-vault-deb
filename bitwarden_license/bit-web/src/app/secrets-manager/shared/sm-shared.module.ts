@@ -10,6 +10,7 @@ import { BulkStatusDialogComponent } from "./dialogs/bulk-status-dialog.componen
 import { HeaderComponent } from "./header.component";
 import { NewMenuComponent } from "./new-menu.component";
 import { NoItemsComponent } from "./no-items.component";
+import { ProjectsListComponent } from "./projects-list.component";
 import { SecretsListComponent } from "./secrets-list.component";
 
 @NgModule({
@@ -20,6 +21,7 @@ import { SecretsListComponent } from "./secrets-list.component";
     HeaderComponent,
     NewMenuComponent,
     NoItemsComponent,
+    ProjectsListComponent,
     SecretsListComponent,
     AccessSelectorComponent,
   ],
@@ -28,6 +30,7 @@ import { SecretsListComponent } from "./secrets-list.component";
     HeaderComponent,
     NewMenuComponent,
     NoItemsComponent,
+    ProjectsListComponent,
     SecretsListComponent,
     AccessSelectorComponent,
   ],
