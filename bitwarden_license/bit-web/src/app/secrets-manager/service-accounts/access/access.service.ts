@@ -11,6 +11,7 @@ import { SymmetricCryptoKey } from "@bitwarden/common/models/domain/symmetric-cr
 import { ListResponse } from "@bitwarden/common/models/response/list.response";
 
 import { AccessTokenRequest } from "../models/requests/access-token.request";
+import { RevokeAccessTokensRequest } from "../models/requests/revoke-access-tokens.request";
 import { AccessTokenCreationResponse } from "../models/responses/access-token-creation.response";
 import { AccessTokenResponse } from "../models/responses/access-tokens.response";
 import { AccessTokenView } from "../models/view/access-token.view";
@@ -78,6 +79,21 @@ export class AccessService {
     this._accessToken.next(null);
     const b64Key = Utils.fromBufferToB64(keyMaterial);
     return `${this._accessTokenVersion}.${result.id}.${result.clientSecret}:${b64Key}`;
+  }
+
+  async revokeAccessTokens(serviceAccountId: string, accessTokenIds: string[]): Promise<void> {
+    const request = new RevokeAccessTokensRequest();
+    request.ids = accessTokenIds;
+
+    await this.apiService.send(
+      "POST",
+      "/service-accounts/" + serviceAccountId + "/access-tokens/revoke",
+      request,
+      true,
+      false
+    );
+
+    this._accessToken.next(null);
   }
 
   private async createAccessTokenRequest(

@@ -5952,6 +5952,16 @@
   "revokeAccessToken": {
     "message": "Revoke access token"
   },
+  "revokeAccessTokens": {
+    "message": "Revoke access tokens"
+  },
+  "revokeAccessTokenDesc": {
+    "message": "Revoking access tokens is permanent and irreversible."
+  },
+  "accessTokenRevoked": {
+    "message": "Access tokens revoked",
+    "description": "Toast message after deleting one or multiple access tokens."
+  },
   "submenu": {
     "message": "Submenu"
   },

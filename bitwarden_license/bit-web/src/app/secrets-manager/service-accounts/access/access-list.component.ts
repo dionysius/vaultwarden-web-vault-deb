@@ -19,6 +19,7 @@ export class AccessListComponent {
   private _tokens: AccessTokenView[];
 
   @Output() newAccessTokenEvent = new EventEmitter();
+  @Output() revokeAccessTokensEvent = new EventEmitter<AccessTokenView[]>();
 
   protected selection = new SelectionModel<string>(true, []);
 
@@ -32,6 +33,11 @@ export class AccessListComponent {
     this.isAllSelected()
       ? this.selection.clear()
       : this.selection.select(...this.tokens.map((s) => s.id));
+  }
+
+  protected revokeSelected() {
+    const selected = this.tokens.filter((s) => this.selection.selected.includes(s.id));
+    this.revokeAccessTokensEvent.emit(selected);
   }
 
   protected permission(token: AccessTokenView) {
