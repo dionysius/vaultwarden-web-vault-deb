@@ -171,6 +171,8 @@ export class RegisterComponent extends CaptchaProtectedComponent implements OnIn
           return this.i18nService.t("masterPassDoesntMatch");
         case "inputsMatchError":
           return this.i18nService.t("hintEqualsPassword");
+        case "minlength":
+          return this.i18nService.t("masterPasswordMinlength", Utils.minimumPasswordLength);
         default:
           return this.i18nService.t(this.errorTag(error));
       }

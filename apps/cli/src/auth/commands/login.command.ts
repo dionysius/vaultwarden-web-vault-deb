@@ -373,8 +373,10 @@ export class LoginCommand {
       return this.updateTempPassword("Master password is required.\n");
     }
 
-    if (masterPassword.length < 8) {
-      return this.updateTempPassword("Master password must be at least 8 characters long.\n");
+    if (masterPassword.length < Utils.minimumPasswordLength) {
+      return this.updateTempPassword(
+        `Master password must be at least ${Utils.minimumPasswordLength} characters long.\n`
+      );
     }
 
     // Strength & Policy Validation
