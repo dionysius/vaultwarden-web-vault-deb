@@ -2,7 +2,7 @@ import { Meta, Story } from "@storybook/angular";
 
 import { ColorPasswordComponent } from "./color-password.component";
 
-const examplePassword = "Wq$Jk😀7jDX#rS5Sdi!z";
+const examplePassword = "Wq$Jk😀7j  DX#rS5Sdi!z ";
 
 export default {
   title: "Component Library/Color Password",
