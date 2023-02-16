@@ -115,6 +115,10 @@ export class BrowserApi {
     return chrome.extension.getBackgroundPage();
   }
 
+  static isBackgroundPage(window: Window & typeof globalThis): boolean {
+    return window === chrome.extension.getBackgroundPage();
+  }
+
   static getApplicationVersion(): string {
     return chrome.runtime.getManifest().version;
   }

@@ -4,7 +4,6 @@ import { SessionStorable } from "./session-storable";
 import { InitializeOptions } from "./sync-item-metadata";
 
 class BuildOptions<T, TJson = Jsonify<T>> {
-  ctor?: new () => T;
   initializer?: (keyValuePair: TJson) => T;
   initializeAs?: InitializeOptions;
 }
@@ -48,7 +47,6 @@ export function sessionSync<T>(buildOptions: BuildOptions<T>) {
     p.__syncedItemMetadata.push({
       propertyKey,
       sessionKey: `${propertyKey}_${index++}`,
-      ctor: buildOptions.ctor,
       initializer: buildOptions.initializer,
       initializeAs: buildOptions.initializeAs ?? "object",
     });

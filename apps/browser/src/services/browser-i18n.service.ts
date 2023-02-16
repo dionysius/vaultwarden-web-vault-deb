@@ -8,7 +8,7 @@ import I18nService from "./i18n.service";
 
 @browserSession
 export class BrowserI18nService extends I18nService {
-  @sessionSync({ ctor: String })
+  @sessionSync({ initializer: (s: string) => s })
   protected _locale: ReplaySubject<string>;
 
   constructor(systemLanguage: string, private stateService: StateService) {

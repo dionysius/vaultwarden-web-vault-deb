@@ -53,8 +53,8 @@ describe("session syncer", () => {
         new SessionSyncer(behaviorSubject, storageService, {
           propertyKey,
           sessionKey,
-          ctor: String,
           initializeAs: "object",
+          initializer: () => null,
         })
       ).toBeDefined();
       expect(
@@ -72,8 +72,9 @@ describe("session syncer", () => {
           propertyKey,
           sessionKey,
           initializeAs: "object",
+          initializer: null,
         });
-      }).toThrowError("ctor or initializer must be provided");
+      }).toThrowError("initializer must be provided");
     });
   });
 
@@ -106,7 +107,7 @@ describe("session syncer", () => {
     it("should grab an initial value from storage if it exists", async () => {
       storageService.has.mockResolvedValue(true);
       //Block a call to update
-      const updateSpy = jest.spyOn(sut as any, "update").mockImplementation();
+      const updateSpy = jest.spyOn(sut as any, "updateFromMemory").mockImplementation();
 
       sut.init();
       await awaitAsync();
@@ -128,20 +129,15 @@ describe("session syncer", () => {
 
   describe("a value is emitted on the observable", () => {
     let sendMessageSpy: jest.SpyInstance;
+    const value = "test";
+    const serializedValue = JSON.stringify(value);
 
     beforeEach(() => {
       sendMessageSpy = jest.spyOn(BrowserApi, "sendMessage");
 
       sut.init();
 
-      behaviorSubject.next("test");
-    });
-
-    it("should update the session memory", async () => {
-      // await finishing of fire-and-forget operation
-      await new Promise((resolve) => setTimeout(resolve, 100));
-      expect(storageService.save).toHaveBeenCalledTimes(1);
-      expect(storageService.save).toHaveBeenCalledWith(sessionKey, "test");
+      behaviorSubject.next(value);
     });
 
     it("should update sessionSyncers in other contexts", async () => {
@@ -149,7 +145,10 @@ describe("session syncer", () => {
       await new Promise((resolve) => setTimeout(resolve, 100));
 
       expect(sendMessageSpy).toHaveBeenCalledTimes(1);
-      expect(sendMessageSpy).toHaveBeenCalledWith(`${sessionKey}_update`, { id: sut.id });
+      expect(sendMessageSpy).toHaveBeenCalledWith(`${sessionKey}_update`, {
+        id: sut.id,
+        serializedValue,
+      });
     });
   });
 
@@ -185,26 +184,104 @@ describe("session syncer", () => {
     it("should update from message on emit from another instance", async () => {
       const builder = jest.fn();
       jest.spyOn(SyncedItemMetadata, "builder").mockReturnValue(builder);
-      storageService.getBypassCache.mockResolvedValue("test");
+      const value = "test";
+      const serializedValue = JSON.stringify(value);
+      builder.mockReturnValue(value);
 
       // Expect no circular messaging
       await awaitAsync();
       expect(sendMessageSpy).toHaveBeenCalledTimes(0);
 
-      await sut.updateFromMessage({ command: `${sessionKey}_update`, id: "different_id" });
+      await sut.updateFromMessage({
+        command: `${sessionKey}_update`,
+        id: "different_id",
+        serializedValue,
+      });
       await awaitAsync();
 
-      expect(storageService.getBypassCache).toHaveBeenCalledTimes(1);
-      expect(storageService.getBypassCache).toHaveBeenCalledWith(sessionKey, {
-        deserializer: builder,
-      });
+      expect(storageService.getBypassCache).toHaveBeenCalledTimes(0);
 
       expect(nextSpy).toHaveBeenCalledTimes(1);
-      expect(nextSpy).toHaveBeenCalledWith("test");
-      expect(behaviorSubject.value).toBe("test");
+      expect(nextSpy).toHaveBeenCalledWith(value);
+      expect(behaviorSubject.value).toBe(value);
 
       // Expect no circular messaging
       expect(sendMessageSpy).toHaveBeenCalledTimes(0);
+    });
+  });
+
+  describe("memory storage", () => {
+    const value = "test";
+    const serializedValue = JSON.stringify(value);
+    let saveSpy: jest.SpyInstance;
+    const builder = jest.fn().mockReturnValue(value);
+    const manifestVersionSpy = jest.spyOn(BrowserApi, "manifestVersion", "get");
+    const isBackgroundPageSpy = jest.spyOn(BrowserApi, "isBackgroundPage");
+
+    beforeEach(async () => {
+      jest.spyOn(SyncedItemMetadata, "builder").mockReturnValue(builder);
+      saveSpy = jest.spyOn(storageService, "save");
+
+      sut.init();
+      await awaitAsync();
+    });
+
+    afterEach(() => {
+      jest.resetAllMocks();
+    });
+
+    it("should always store on observed next for manifest version 3", async () => {
+      manifestVersionSpy.mockReturnValue(3);
+      isBackgroundPageSpy.mockReturnValueOnce(true).mockReturnValueOnce(false);
+      behaviorSubject.next(value);
+      await awaitAsync();
+      behaviorSubject.next(value);
+      await awaitAsync();
+
+      expect(saveSpy).toHaveBeenCalledTimes(2);
+    });
+
+    it("should not store on message receive for manifest version 3", async () => {
+      manifestVersionSpy.mockReturnValue(3);
+      isBackgroundPageSpy.mockReturnValueOnce(true).mockReturnValueOnce(false);
+      await sut.updateFromMessage({
+        command: `${sessionKey}_update`,
+        id: "different_id",
+        serializedValue,
+      });
+      await awaitAsync();
+
+      expect(saveSpy).toHaveBeenCalledTimes(0);
+    });
+
+    it("should store on message receive for manifest version 2 for background page only", async () => {
+      manifestVersionSpy.mockReturnValue(2);
+      isBackgroundPageSpy.mockReturnValueOnce(true).mockReturnValueOnce(false);
+      await sut.updateFromMessage({
+        command: `${sessionKey}_update`,
+        id: "different_id",
+        serializedValue,
+      });
+      await awaitAsync();
+      await sut.updateFromMessage({
+        command: `${sessionKey}_update`,
+        id: "different_id",
+        serializedValue,
+      });
+      await awaitAsync();
+
+      expect(saveSpy).toHaveBeenCalledTimes(1);
+    });
+
+    it("should store on observed next for manifest version 2 for background page only", async () => {
+      manifestVersionSpy.mockReturnValue(2);
+      isBackgroundPageSpy.mockReturnValueOnce(true).mockReturnValueOnce(false);
+      behaviorSubject.next(value);
+      await awaitAsync();
+      behaviorSubject.next(value);
+      await awaitAsync();
+
+      expect(saveSpy).toHaveBeenCalledTimes(1);
     });
   });
 });

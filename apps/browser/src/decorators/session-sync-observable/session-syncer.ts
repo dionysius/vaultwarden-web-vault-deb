@@ -23,8 +23,8 @@ export class SessionSyncer {
       throw new Error("subject must inherit from Subject");
     }
 
-    if (metaData.ctor == null && metaData.initializer == null) {
-      throw new Error("ctor or initializer must be provided");
+    if (metaData.initializer == null) {
+      throw new Error("initializer must be provided");
     }
   }
 
@@ -45,7 +45,7 @@ export class SessionSyncer {
     // must be synchronous
     const hasInSessionMemory = await this.memoryStorageService.has(this.metaData.sessionKey);
     if (hasInSessionMemory) {
-      await this.update();
+      await this.updateFromMemory();
     }
 
     this.listenForUpdates();
@@ -83,21 +83,31 @@ export class SessionSyncer {
     if (message.command != this.updateMessageCommand || message.id === this.id) {
       return;
     }
-    this.update();
+    await this.update(message.serializedValue);
   }
 
-  async update() {
+  async updateFromMemory() {
+    const value = await this.memoryStorageService.getBypassCache(this.metaData.sessionKey);
+    await this.update(value);
+  }
+
+  async update(serializedValue: any) {
+    const unBuiltValue = JSON.parse(serializedValue);
+    if (BrowserApi.manifestVersion !== 3 && BrowserApi.isBackgroundPage(self)) {
+      await this.memoryStorageService.save(this.metaData.sessionKey, serializedValue);
+    }
     const builder = SyncedItemMetadata.builder(this.metaData);
-    const value = await this.memoryStorageService.getBypassCache(this.metaData.sessionKey, {
-      deserializer: builder,
-    });
+    const value = builder(unBuiltValue);
     this.ignoreNUpdates = 1;
     this.subject.next(value);
   }
 
   private async updateSession(value: any) {
-    await this.memoryStorageService.save(this.metaData.sessionKey, value);
-    await BrowserApi.sendMessage(this.updateMessageCommand, { id: this.id });
+    const serializedValue = JSON.stringify(value);
+    if (BrowserApi.manifestVersion === 3 || BrowserApi.isBackgroundPage(self)) {
+      await this.memoryStorageService.save(this.metaData.sessionKey, serializedValue);
+    }
+    await BrowserApi.sendMessage(this.updateMessageCommand, { id: this.id, serializedValue });
   }
 
   private get updateMessageCommand() {

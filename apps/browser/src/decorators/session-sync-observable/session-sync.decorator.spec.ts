@@ -4,11 +4,10 @@ import { sessionSync } from "./session-sync.decorator";
 
 describe("sessionSync decorator", () => {
   const initializer = (s: string) => "test";
-  const ctor = String;
   class TestClass {
-    @sessionSync({ ctor: ctor, initializer: initializer })
+    @sessionSync({ initializer: initializer })
     private testProperty = new BehaviorSubject("");
-    @sessionSync({ ctor: ctor, initializer: initializer, initializeAs: "array" })
+    @sessionSync({ initializer: initializer, initializeAs: "array" })
     private secondTestProperty = new BehaviorSubject("");
 
     complete() {
@@ -23,13 +22,11 @@ describe("sessionSync decorator", () => {
       expect.objectContaining({
         propertyKey: "testProperty",
         sessionKey: "testProperty_0",
-        ctor: ctor,
         initializer: initializer,
       }),
       expect.objectContaining({
         propertyKey: "secondTestProperty",
         sessionKey: "secondTestProperty_1",
-        ctor: ctor,
         initializer: initializer,
         initializeAs: "array",
       }),
@@ -38,7 +35,7 @@ describe("sessionSync decorator", () => {
   });
 
   class TestClass2 {
-    @sessionSync({ ctor: ctor, initializer: initializer })
+    @sessionSync({ initializer: initializer })
     private testProperty = new BehaviorSubject("");
 
     complete() {
@@ -52,7 +49,6 @@ describe("sessionSync decorator", () => {
       expect.objectContaining({
         propertyKey: "testProperty",
         sessionKey: "testProperty_2",
-        ctor: ctor,
         initializer: initializer,
       }),
     ]);
