@@ -33,6 +33,7 @@ $background-color-alt2: #ededed;
 $box-background-color: $background-color;
 $box-background-hover-color: $list-item-hover;
 $box-border-color: $border-color;
+$border-color-alt: #c3c5c7;
 
 $button-border-color: darken($border-color-dark, 12%);
 $button-background-color: white;
@@ -47,6 +48,7 @@ $themes: (
     textColor: $text-color,
     borderColor: $border-color-dark,
     backgroundColor: $background-color,
+    borderColorAlt: $border-color-alt,
     backgroundColorAlt: $background-color-alt,
     backgroundColorAlt2: $background-color-alt2,
     scrollbarColor: rgba(100, 100, 100, 0.2),
@@ -103,6 +105,7 @@ $themes: (
     textColor: #ffffff,
     borderColor: #2f2f2f,
     backgroundColor: #363636,
+    borderColorAlt: #6e788a,
     backgroundColorAlt: #3d3d3d,
     backgroundColorAlt2: #222222,
     scrollbarColor: #4d4d4d,
@@ -159,6 +162,7 @@ $themes: (
     textColor: $nord5,
     borderColor: $nord0,
     backgroundColor: $nord2,
+    borderColorAlt: $nord5,
     backgroundColorAlt: $nord1,
     backgroundColorAlt2: $nord1,
     scrollbarColor: $nord4,
