@@ -1,4 +1,5 @@
 import { KeeperCsvImporter as Importer } from "@bitwarden/common/importers/keeper/keeper-csv-importer";
+import { Utils } from "@bitwarden/common/misc/utils";
 
 import { testData as TestData } from "./test-data/keeper-csv/testdata.csv";
 
@@ -73,5 +74,50 @@ describe("Keeper CSV Importer", () => {
     const cipher3 = result.ciphers.shift();
     expect(cipher3.fields[0].name).toEqual("Account ID");
     expect(cipher3.fields[0].value).toEqual("23456");
+  });
+
+  it("should create folders, with subfolders and relationships", async () => {
+    const result = await importer.parse(TestData);
+    expect(result != null).toBe(true);
+
+    const folders = result.folders;
+    expect(folders).not.toBeNull();
+    expect(folders.length).toBe(2);
+
+    const folder1 = folders.shift();
+    expect(folder1.name).toBe("Foo");
+
+    //With subfolders
+    const folder2 = folders.shift();
+    expect(folder2.name).toBe("Foo/Baz");
+
+    // [Cipher, Folder]
+    expect(result.folderRelationships.length).toBe(3);
+    expect(result.folderRelationships[0]).toEqual([0, 0]);
+    expect(result.folderRelationships[1]).toEqual([1, 0]);
+    expect(result.folderRelationships[2]).toEqual([2, 1]);
+  });
+
+  it("should create collections, with subcollections and relationships", async () => {
+    importer.organizationId = Utils.newGuid();
+    const result = await importer.parse(TestData);
+    expect(result != null).toBe(true);
+
+    const collections = result.collections;
+    expect(collections).not.toBeNull();
+    expect(collections.length).toBe(2);
+
+    const collections1 = collections.shift();
+    expect(collections1.name).toBe("Foo");
+
+    //With subCollection
+    const collections2 = collections.shift();
+    expect(collections2.name).toBe("Foo/Baz");
+
+    // [Cipher, Folder]
+    expect(result.collectionRelationships.length).toBe(3);
+    expect(result.collectionRelationships[0]).toEqual([0, 0]);
+    expect(result.collectionRelationships[1]).toEqual([1, 0]);
+    expect(result.collectionRelationships[2]).toEqual([2, 1]);
   });
 });
