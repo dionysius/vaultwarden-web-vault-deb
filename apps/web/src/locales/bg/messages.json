@@ -697,7 +697,14 @@
     "message": "Повторното въвеждане на главната парола е задължително."
   },
   "masterPasswordMinlength": {
-    "message": "Главната парола трябва да е дълга поне 8 знака."
+    "message": "Master password must be at least $VALUE$ characters long.",
+    "description": "The Master Password must be at least a specific number of characters long.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "8"
+      }
+    }
   },
   "masterPassDoesntMatch": {
     "message": "Главната парола и потвърждението ѝ не съвпадат."
@@ -5948,6 +5955,16 @@
   "revokeAccessToken": {
     "message": "Анулиране на идентификатора за достъп"
   },
+  "revokeAccessTokens": {
+    "message": "Анулиране на идентификаторите за достъп"
+  },
+  "revokeAccessTokenDesc": {
+    "message": "Анулирането на идентификатори за достъп е окончателно и необратимо."
+  },
+  "accessTokenRevoked": {
+    "message": "Идентификаторите за достъп са анулирани",
+    "description": "Toast message after deleting one or multiple access tokens."
+  },
   "submenu": {
     "message": "Подменю"
   },
@@ -6035,6 +6052,135 @@
   "memberAccessAll": {
     "message": "Този член има достъп до всички записи и може да ги редактира."
   },
+  "domainVerification": {
+    "message": "Потвърждаване на домейн"
+  },
+  "newDomain": {
+    "message": "Нов домейн"
+  },
+  "noDomains": {
+    "message": "Няма домейни"
+  },
+  "noDomainsSubText": {
+    "message": "Свързването на домейн позволява на членовете да пропускат полето за идентификатор за еднократно удостоверяване по време на вписване чрез този метод."
+  },
+  "verifyDomain": {
+    "message": "Потвърждаване на домейна"
+  },
+  "reverifyDomain": {
+    "message": "Повторно потвърждаване на домейна"
+  },
+  "copyDnsTxtRecord": {
+    "message": "Копирайте записа TXT от DNS"
+  },
+  "dnsTxtRecord": {
+    "message": "Pапис TXT от DNS"
+  },
+  "dnsTxtRecordInputHint": {
+    "message": "Копирайте и поставете записа TXT в системата на своя доставчик на DNS."
+  },
+  "domainNameInputHint": {
+    "message": "Пример: mydomain.com. Под-домейните изискват всеки отделен запис да бъде потвърден."
+  },
+  "automaticDomainVerification": {
+    "message": "Автоматично потвърждаване на домейн"
+  },
+  "automaticDomainVerificationProcess": {
+    "message": "Битуорден ще се опита да потвърди домейна 3 пъти през първите 72 часа. Ако той не може да бъде потвърден, проверете записа за DNS в сървъра си и направете потвърждаването ръчно. Домейнът ще бъде премахнат от организацията Ви след 7 дни, ако не бъде потвърден."
+  },
+  "invalidDomainNameMessage": {
+    "message": "Неправилен формат. Пример: mydomain.com. Под-домейните изискват всеки отделен запис да бъде потвърден."
+  },
+  "removeDomain": {
+    "message": "Премахване на домейна"
+  },
+  "removeDomainWarning": {
+    "message": "Премахването на домейна не може да бъде отменено. Наистина ли искате да продължите?"
+  },
+  "domainRemoved": {
+    "message": "Домейнът е премахнат"
+  },
+  "domainSaved": {
+    "message": "Домейнът е запазен"
+  },
+  "domainVerified": {
+    "message": "Домейнът е потвърден"
+  },
+  "duplicateDomainError": {
+    "message": "Не може да заявите един и същ домейн повече от веднъж."
+  },
+  "domainNotAvailable": {
+    "message": "Някой вече ползва $DOMAIN$. Изберете различен домейн, за да продължите.",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
+  },
+  "domainNotVerified": {
+    "message": "Домейнът $DOMAIN$ не е потвърден. Проверете записа в DNS.",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
+  },
+  "domainStatusVerified": {
+    "message": "Потвърден"
+  },
+  "domainStatusUnverified": {
+    "message": "Непотвърден"
+  },
+  "domainNameTh": {
+    "message": "Име"
+  },
+  "domainStatusTh": {
+    "message": "Състояние"
+  },
+  "lastChecked": {
+    "message": "Последна проверка"
+  },
+  "domainFormInvalid": {
+    "message": "Във формуляра има грешки, които трябва да погледнете"
+  },
+  "addedDomain": {
+    "message": "Добавен е домейн $DOMAIN$",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
+  },
+  "removedDomain": {
+    "message": "Премахнат е домейн $DOMAIN$",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
+  },
+  "domainVerifiedEvent": {
+    "message": "Домейнът $DOMAIN$ е потвърден",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
+  },
+  "domainNotVerifiedEvent": {
+    "message": "Домейнът $DOMAIN$ не е потвърден",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
+  },
   "membersColumnHeader": {
     "message": "Член/група"
   },
@@ -6109,6 +6255,9 @@
         "example": "2"
       }
     }
+  },
+  "server": {
+    "message": "Сървър"
   },
   "exportData": {
     "message": "Изнасяне на данни"
@@ -6214,6 +6363,25 @@
   },
   "userAccessSecretsManager": {
     "message": "Този потребител има достъп до Управлението на тайни (Бета)"
+  },
+  "important": {
+    "message": "Important:"
+  },
+  "viewAll": {
+    "message": "Показване на всички"
+  },
+  "showingPortionOfTotal": {
+    "message": "Показани: $PORTION$ от $TOTAL$",
+    "placeholders": {
+      "portion": {
+        "content": "$1",
+        "example": "2"
+      },
+      "total": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
   },
   "resolveTheErrorsBelowAndTryAgain": {
     "message": "Оправете грешките по-долу и опитайте отново."

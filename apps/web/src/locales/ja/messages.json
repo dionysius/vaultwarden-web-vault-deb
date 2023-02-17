@@ -697,7 +697,14 @@
     "message": "マスターパスワードの再入力が必要です。"
   },
   "masterPasswordMinlength": {
-    "message": "マスターパスワードは、少なくとも8文字以上で設定してください。"
+    "message": "Master password must be at least $VALUE$ characters long.",
+    "description": "The Master Password must be at least a specific number of characters long.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "8"
+      }
+    }
   },
   "masterPassDoesntMatch": {
     "message": "マスターパスワードが一致しません。"
@@ -824,7 +831,7 @@
     "message": "ログインできません。"
   },
   "noTwoStepProviders": {
-    "message": "このアカウントは2段階認証が有効ですが、このブラウザに対応した2段階認証プロパイダが一つも設定されていません。"
+    "message": "このアカウントでは2段階ログインが有効になっていますが、このブラウザは設定された2段階ログインプロバイダのいずれにも対応していません。"
   },
   "noTwoStepProviders2": {
     "message": "Chrome などの対応したブラウザを使うか、より幅広い端末に対応した認証プロパイダを追加してください。"
@@ -860,7 +867,7 @@
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc": {
-    "message": "FIDO U2F が有効なセキュリティキーを使ってアカウントにアクセスできます。"
+    "message": "アカウントにアクセスするには、FIDO U2F対応のセキュリティキーを使用してください。"
   },
   "u2fTitle": {
     "message": "FIDO U2F セキュリティキー"
@@ -872,7 +879,7 @@
     "message": "アカウントにアクセスするには、WebAuthn 対応のセキュリティキーを使用してください。"
   },
   "webAuthnMigrated": {
-    "message": "(FIDOから統合)"
+    "message": "(FIDOから移行)"
   },
   "emailTitle": {
     "message": "メールアドレス"
@@ -890,7 +897,7 @@
     "message": "組織"
   },
   "moveToOrgDesc": {
-    "message": "このアイテムを移動する組織を選択してください。組織に移動すると、アイテムの所有権がその組織に移行します。 このアイテムが移動された後、あなたはこのアイテムの直接の所有者にはなりません。"
+    "message": "このアイテムを移動する組織を選択してください。組織に移動すると、アイテムの所有権はその組織に移ります。移動した後、あなたはこのアイテムの直接の所有者ではなくなります。"
   },
   "moveManyToOrgDesc": {
     "message": "このアイテムを移動する組織を選択してください。組織に移動すると、アイテムの所有権がその組織に移行します。 このアイテムが移動された後、あなたはこのアイテムの直接の所有者にはなりません。"
@@ -1671,7 +1678,7 @@
     "message": "二段階認証を利用していないアイテムが見つかりました"
   },
   "inactive2faFoundDesc": {
-    "message": "We found $COUNT$ website(s) in your vault that may not be configured with two-step login (according to 2fa.directory). To further protect these accounts, you should set up two-step login.",
+    "message": "保管庫に $COUNT$ 個のウェブサイトがあり、2段階認証でのログインが設定されていない可能性があります (2fa.directory によれば)。これらのアカウントをさらに保護するには、2段階認証のログインを設定する必要があります。",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -1689,7 +1696,7 @@
     "message": "流出パスワード調査"
   },
   "exposedPasswordsReportDesc": {
-    "message": "Passwords exposed in a data breach are easy targets for attackers. Change these passwords to prevent potential break-ins."
+    "message": "データ漏洩で公開されたパスワードは簡単に攻撃されてしまいます。パスワードを変更して、潜在的な侵入を防いでください。"
   },
   "exposedPasswordsFound": {
     "message": "流出したパスワードが見つかりました"
@@ -2963,7 +2970,7 @@
     }
   },
   "createdOrganizationId": {
-    "message": "Created organization $ID$.",
+    "message": "組織 $ID$ を作成しました。",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -4867,7 +4874,7 @@
     "message": "コールバックパス"
   },
   "signedOutCallbackPath": {
-    "message": "Signed out callback path"
+    "message": "サインアウトしたコールバックパス"
   },
   "authority": {
     "message": "権限"
@@ -4876,7 +4883,7 @@
     "message": "クライアントID"
   },
   "clientSecret": {
-    "message": "Client secret"
+    "message": "クライアントシークレット"
   },
   "metadataAddress": {
     "message": "メタデータアドレス"
@@ -4885,49 +4892,49 @@
     "message": "OIDCリダイレクトの動作"
   },
   "getClaimsFromUserInfoEndpoint": {
-    "message": "Get claims from user info endpoint"
+    "message": "ユーザー情報エンドポイントから請求を取得する"
   },
   "additionalScopes": {
-    "message": "Custom scopes"
+    "message": "カスタムスコープ"
   },
   "additionalUserIdClaimTypes": {
-    "message": "Custom user ID claim types"
+    "message": "カスタムユーザー ID 要求タイプ"
   },
   "additionalEmailClaimTypes": {
-    "message": "Email claim types"
+    "message": "メール要求タイプ"
   },
   "additionalNameClaimTypes": {
-    "message": "Custom name claim types"
+    "message": "カスタム名称要求タイプ"
   },
   "acrValues": {
-    "message": "Requested authentication context class reference values"
+    "message": "要求された認証コンテキストクラスの参照値"
   },
   "expectedReturnAcrValue": {
-    "message": "Expected \"acr\" claim value in response"
+    "message": "応答内の \"acr\" 要求値"
   },
   "spEntityId": {
-    "message": "SP entity ID"
+    "message": "SP エンティティ ID"
   },
   "spMetadataUrl": {
     "message": "SAML 2.0 メタデータ URL"
   },
   "spAcsUrl": {
-    "message": "Assertion consumer service (ACS) URL"
+    "message": "Assertion Consumer Service (ACS) URL"
   },
   "spNameIdFormat": {
     "message": "名前IDの形式"
   },
   "spOutboundSigningAlgorithm": {
-    "message": "Outbound signing algorithm"
+    "message": "送信署名アルゴリズム"
   },
   "spSigningBehavior": {
-    "message": "Signing behavior"
+    "message": "署名の動作"
   },
   "spMinIncomingSigningAlgorithm": {
-    "message": "Minimum incoming signing algorithm"
+    "message": "最小受信署名アルゴリズム"
   },
   "spWantAssertionsSigned": {
-    "message": "Expect signed assertions"
+    "message": "署名済みアサーションを期待する"
   },
   "spValidateCertificates": {
     "message": "証明書を検証する"
@@ -4939,19 +4946,19 @@
     "message": "バインディングの種類"
   },
   "idpSingleSignOnServiceUrl": {
-    "message": "Single sign-on service URL"
+    "message": "シングルサインオンサービス URL"
   },
   "idpSingleLogoutServiceUrl": {
-    "message": "Single log-out service URL"
+    "message": "シングルログアウトサービス URL"
   },
   "idpX509PublicCert": {
-    "message": "X509 public certificate"
+    "message": "X509 公開鍵証明書"
   },
   "idpOutboundSigningAlgorithm": {
-    "message": "Outbound signing algorithm"
+    "message": "送信署名アルゴリズム"
   },
   "idpAllowUnsolicitedAuthnResponse": {
-    "message": "Allow unsolicited authentication response"
+    "message": "未承認の認証応答を許可する"
   },
   "idpAllowOutboundLogoutRequests": {
     "message": "アウトバウンドログアウト要求を許可する"
@@ -4960,7 +4967,7 @@
     "message": "認証リクエストに署名する"
   },
   "ssoSettingsSaved": {
-    "message": "Single sign-on configuration saved"
+    "message": "シングルサインオン設定を保存しました"
   },
   "sponsoredFamilies": {
     "message": "Bitwarden 家族向けプランを無償で"
@@ -4978,13 +4985,13 @@
     "message": "最大 6 人のプレミアム機能へのアクセス"
   },
   "sponsoredFamiliesSharedCollections": {
-    "message": "Shared collections for Family secrets"
+    "message": "家族の秘密のための共有されたコレクション"
   },
   "badToken": {
     "message": "リンクは無効になりました。スポンサーにオファーを再送信してもらってください。"
   },
   "reclaimedFreePlan": {
-    "message": "Reclaimed free plan"
+    "message": "再要求した無料プラン"
   },
   "redeem": {
     "message": "引き換える"
@@ -5140,7 +5147,7 @@
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Use the require single-sign-on authentication policy to require all members to log in with SSO.'"
   },
   "ssoPolicyHelpKeyConnector": {
-    "message": "The require SSO authentication and single organization policies are required to set up Key Connector decryption."
+    "message": "キー コネクタの復号を設定するには、SSO 認証と単一の組織ポリシーが必要です。"
   },
   "memberDecryptionOption": {
     "message": "メンバー復号オプション"
@@ -5245,10 +5252,10 @@
     "message": "トークンを更新しました。"
   },
   "billingSyncDesc": {
-    "message": "Billing sync unlocks Families sponsorships and automatic license syncing on your server. After making updates in the Bitwarden cloud server, select Sync License to apply changes."
+    "message": "請求同期は、あなたのサーバー上のファミリースポンサーシップと自動ライセンス同期を解除します。 Bitwarden クラウドサーバーで更新を行ったら、ライセンス同期を選択して変更を適用してください。"
   },
   "billingSyncKeyDesc": {
-    "message": "A billing sync token from your cloud organization's subscription settings is required to complete this form."
+    "message": "このフォームを完了するには、クラウド組織のサブスクリプション設定からの請求同期トークンが必要です。"
   },
   "billingSyncKey": {
     "message": "請求同期トークン"
@@ -5674,7 +5681,7 @@
     "message": "カスタム色"
   },
   "selectPlaceholder": {
-    "message": "-- Select --"
+    "message": "-- 選択 --"
   },
   "multiSelectPlaceholder": {
     "message": "-- 入力して絞り込み --"
@@ -5892,13 +5899,13 @@
     "message": "秘密を始めるために新しいプロジェクトを追加する。"
   },
   "smConfirmationRequired": {
-    "message": "Confirmation required"
+    "message": "確認が必要です"
   },
   "bulkDeleteProjectsErrorMessage": {
-    "message": "The following projects could not be deleted:"
+    "message": "次のプロジェクトを削除できませんでした:"
   },
   "softDeleteSuccessToast": {
-    "message": "Secret sent to trash"
+    "message": "シークレットをゴミ箱に送る"
   },
   "searchProjects": {
     "message": "プロジェクトを検索"
@@ -5910,10 +5917,10 @@
     "message": "アクセストークンを作成"
   },
   "expires": {
-    "message": "Expires"
+    "message": "有効期限"
   },
   "canRead": {
-    "message": "Can read"
+    "message": "読み取り可能"
   },
   "accessTokensNoItemsTitle": {
     "message": "表示するアクセス トークンはありません"
@@ -5925,10 +5932,10 @@
     "message": "閉じる前にダウンロードまたはコピーする。"
   },
   "expiresOnAccessToken": {
-    "message": "Expires on:"
+    "message": "有効期限:"
   },
   "accessTokenCallOutTitle": {
-    "message": "Access tokens are not stored and cannot be retrieved"
+    "message": "アクセストークンは保存されていないため、取得できません"
   },
   "copyToken": {
     "message": "トークンをコピー"
@@ -5937,16 +5944,26 @@
     "message": "アクセストークン"
   },
   "accessTokenExpirationRequired": {
-    "message": "Expiration date required"
+    "message": "有効期限は必須です"
   },
   "accessTokenCreatedAndCopied": {
-    "message": "Access token created and copied to clipboard"
+    "message": "アクセストークンが作成され、クリップボードにコピーされました"
   },
   "accessTokenPermissionsBetaNotification": {
-    "message": "Permissions management is unavailable for beta."
+    "message": "ベータ版では権限管理が利用できません。"
   },
   "revokeAccessToken": {
     "message": "アクセストークンの取り消し"
+  },
+  "revokeAccessTokens": {
+    "message": "アクセストークンを取り消す"
+  },
+  "revokeAccessTokenDesc": {
+    "message": "アクセストークンの取り消しは永続的で不可逆的です。"
+  },
+  "accessTokenRevoked": {
+    "message": "アクセストークンを取り消しました",
+    "description": "Toast message after deleting one or multiple access tokens."
   },
   "submenu": {
     "message": "サブメニュー"
@@ -6003,7 +6020,7 @@
     "message": "コレクション"
   },
   "noCollection": {
-    "message": "No collection"
+    "message": "コレクションなし"
   },
   "canView": {
     "message": "閲覧可能"
@@ -6034,6 +6051,135 @@
   },
   "memberAccessAll": {
     "message": "このメンバーはすべてのアイテムにアクセスして変更できます。"
+  },
+  "domainVerification": {
+    "message": "ドメイン検証"
+  },
+  "newDomain": {
+    "message": "新しいドメイン"
+  },
+  "noDomains": {
+    "message": "ドメインはありません"
+  },
+  "noDomainsSubText": {
+    "message": "ドメインを接続すると、メンバーは SSO でログインする際に SSO 識別子フィールドをスキップできます。"
+  },
+  "verifyDomain": {
+    "message": "ドメインを確認"
+  },
+  "reverifyDomain": {
+    "message": "ドメインを再確認する"
+  },
+  "copyDnsTxtRecord": {
+    "message": "DNS TXT レコードをコピー"
+  },
+  "dnsTxtRecord": {
+    "message": "DNS TXT レコード"
+  },
+  "dnsTxtRecordInputHint": {
+    "message": "TXT レコードをコピーして DNS プロバイダーに貼り付けてください。"
+  },
+  "domainNameInputHint": {
+    "message": "例: mydomain.com サブドメインを検証するには別々のエントリが必要です。"
+  },
+  "automaticDomainVerification": {
+    "message": "ドメインの自動認証"
+  },
+  "automaticDomainVerificationProcess": {
+    "message": "Bitwarden は最初の 72 時間以内にドメインの検証を3回試みます。 ドメインが検証できない場合は、ホストの DNS レコードを確認し、手動で検証してください。 認証されていない場合、ドメインは7日後に組織から削除されます。"
+  },
+  "invalidDomainNameMessage": {
+    "message": "入力されたものは有効な形式ではありません。フォーマット例: mydomain.com サブドメインは検証するために個別のエントリを必要とします。"
+  },
+  "removeDomain": {
+    "message": "ドメインを削除"
+  },
+  "removeDomainWarning": {
+    "message": "ドメインを削除すると元に戻せません。続行してもよろしいですか？"
+  },
+  "domainRemoved": {
+    "message": "ドメインを削除しました"
+  },
+  "domainSaved": {
+    "message": "ドメインを保存しました"
+  },
+  "domainVerified": {
+    "message": "ドメインを認証しました"
+  },
+  "duplicateDomainError": {
+    "message": "同じドメインを二度要求することはできません。"
+  },
+  "domainNotAvailable": {
+    "message": "他の誰かが $DOMAIN$を使用しています。別のドメインを使用して続行してください。",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
+  },
+  "domainNotVerified": {
+    "message": "$DOMAIN$ は認証されていません。DNS レコードを確認してください。",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
+  },
+  "domainStatusVerified": {
+    "message": "認証済み"
+  },
+  "domainStatusUnverified": {
+    "message": "未認証"
+  },
+  "domainNameTh": {
+    "message": "名前"
+  },
+  "domainStatusTh": {
+    "message": "状態"
+  },
+  "lastChecked": {
+    "message": "最終確認日"
+  },
+  "domainFormInvalid": {
+    "message": "注意が必要なフォームエラーがあります"
+  },
+  "addedDomain": {
+    "message": "ドメイン $DOMAIN$ を追加しました",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
+  },
+  "removedDomain": {
+    "message": "ドメイン $DOMAIN$ を削除しました",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
+  },
+  "domainVerifiedEvent": {
+    "message": "$DOMAIN$ を認証しました",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
+  },
+  "domainNotVerifiedEvent": {
+    "message": "$DOMAIN$ は認証されていません",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
   },
   "membersColumnHeader": {
     "message": "メンバー/グループ"
@@ -6109,6 +6255,9 @@
         "example": "2"
       }
     }
+  },
+  "server": {
+    "message": "サーバー"
   },
   "exportData": {
     "message": "データのエクスポート"
@@ -6214,6 +6363,25 @@
   },
   "userAccessSecretsManager": {
     "message": "このユーザーはベータ版シークレットマネージャーにアクセスできます"
+  },
+  "important": {
+    "message": "Important:"
+  },
+  "viewAll": {
+    "message": "すべて表示"
+  },
+  "showingPortionOfTotal": {
+    "message": "$TOTAL$件中$PORTION$件を表示",
+    "placeholders": {
+      "portion": {
+        "content": "$1",
+        "example": "2"
+      },
+      "total": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
   },
   "resolveTheErrorsBelowAndTryAgain": {
     "message": "以下のエラーを解決してやり直してください。"

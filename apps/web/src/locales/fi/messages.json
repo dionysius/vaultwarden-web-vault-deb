@@ -697,7 +697,14 @@
     "message": "Pääsalasanan uudelleensyöttö vaaditaan."
   },
   "masterPasswordMinlength": {
-    "message": "Pääsalasanan tulee sisältää ainakin 8 merkkiä."
+    "message": "Master password must be at least $VALUE$ characters long.",
+    "description": "The Master Password must be at least a specific number of characters long.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "8"
+      }
+    }
   },
   "masterPassDoesntMatch": {
     "message": "Pääsalasanan vahvistus ei täsmää."
@@ -5032,7 +5039,7 @@
     "message": "Lunastettu tili"
   },
   "revokeAccount": {
-    "message": "Irtisano tili $NAME$",
+    "message": "Peru tili $NAME$",
     "placeholders": {
       "name": {
         "content": "$1",
@@ -5948,6 +5955,16 @@
   "revokeAccessToken": {
     "message": "Peru käyttötunniste"
   },
+  "revokeAccessTokens": {
+    "message": "Mitätöi käyttötunnisteet"
+  },
+  "revokeAccessTokenDesc": {
+    "message": "Käyttötunnisteiden mitätöinti on pysyvää, eikä sitä ole mahdollista perua."
+  },
+  "accessTokenRevoked": {
+    "message": "Käyttötunnisteet peruttiin",
+    "description": "Toast message after deleting one or multiple access tokens."
+  },
   "submenu": {
     "message": "Alavalikko"
   },
@@ -6035,6 +6052,135 @@
   "memberAccessAll": {
     "message": "Tämä jäsen voi tarkastella ja muokata kaikkia kohteita."
   },
+  "domainVerification": {
+    "message": "Verkkotunnusten vahvistus"
+  },
+  "newDomain": {
+    "message": "Uusi verkkotunnus"
+  },
+  "noDomains": {
+    "message": "Verkkotunnuksia ei ole"
+  },
+  "noDomainsSubText": {
+    "message": "Oman verkkotunnuksen liittäminen mahdollistaa jäsenille kertakirjautumistunnisteen ohituksen kertakirjautumisen kautta kirjauduttaessa."
+  },
+  "verifyDomain": {
+    "message": "Vahvista verkkotunnus"
+  },
+  "reverifyDomain": {
+    "message": "Vahvista verkkotunnus uudelleen"
+  },
+  "copyDnsTxtRecord": {
+    "message": "Kopioi DNS TXT -tietue"
+  },
+  "dnsTxtRecord": {
+    "message": "DNS TXT -tietue"
+  },
+  "dnsTxtRecordInputHint": {
+    "message": "Kopioi ja liitä TXT-tietue DNS-toimittajasi tietoihin."
+  },
+  "domainNameInputHint": {
+    "message": "Esimerkki: omaosoite.fi. Aliverkkotunnukset on määritettävä ja vahvistettava erikseen."
+  },
+  "automaticDomainVerification": {
+    "message": "Automaattinen verkkotunnusvarmennus"
+  },
+  "automaticDomainVerificationProcess": {
+    "message": "Bitwarden yrittää vahvistaa verkkotunnuksen 3 kertaa ensimmäisten 72 tunnin aikana. Jos vahvistus ei onnistu, tarkista verkkotunnuksesi DNS-tietue ja suorita vahvistus manuaalisesti. Vahvistamattomat verkkotunnukset poistetaan organisaatiosta 7 päivän kuluttua."
+  },
+  "invalidDomainNameMessage": {
+    "message": "Syöte ei ole kelvollisessa muodossa. Muoto: omaosoite.fi. Aliverkkotunnukset on määritettävä ja vahvistettava erikseen."
+  },
+  "removeDomain": {
+    "message": "Poista verkkotunnus"
+  },
+  "removeDomainWarning": {
+    "message": "Verkkotunnuksen poistoa ei ole mahdollista kumota. Haluatko varmasti jatkaa?"
+  },
+  "domainRemoved": {
+    "message": "Verkkotunnus poistettiin"
+  },
+  "domainSaved": {
+    "message": "Verkkotunnus tallennettiin"
+  },
+  "domainVerified": {
+    "message": "Verkkotunnus vahvistettiin"
+  },
+  "duplicateDomainError": {
+    "message": "Et voi lunastaa samaa verkkotunnusta kahdesti."
+  },
+  "domainNotAvailable": {
+    "message": "Joku muu on jo lunastanut verkkotunnuksen $DOMAIN$ käyttöönsä. Jatka käyttämällä eri verkkotunnusta.",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
+  },
+  "domainNotVerified": {
+    "message": "Verkkotunnusta $DOMAIN$ ei vahvistettu. Tarkista DNS-tietueesi.",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
+  },
+  "domainStatusVerified": {
+    "message": "Vahvistettu"
+  },
+  "domainStatusUnverified": {
+    "message": "Vahvistamaton"
+  },
+  "domainNameTh": {
+    "message": "Nimi"
+  },
+  "domainStatusTh": {
+    "message": "Tila"
+  },
+  "lastChecked": {
+    "message": "Edellinen tarkastus"
+  },
+  "domainFormInvalid": {
+    "message": "Lomakkeessa havaittiin virheitä, jotka vaativat korjausta"
+  },
+  "addedDomain": {
+    "message": "Lisättiin verkkotunnus $DOMAIN$",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
+  },
+  "removedDomain": {
+    "message": "Poistettiin verkkotunnus $DOMAIN$",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
+  },
+  "domainVerifiedEvent": {
+    "message": "Vahvistettiin verkkotunnus $DOMAIN$",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
+  },
+  "domainNotVerifiedEvent": {
+    "message": "Verkkotunnusta $DOMAIN$ ei vahvistettu",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
+  },
   "membersColumnHeader": {
     "message": "Jäsen/ryhmä"
   },
@@ -6110,11 +6256,14 @@
       }
     }
   },
+  "server": {
+    "message": "Palvelin"
+  },
   "exportData": {
     "message": "Vie tietoja"
   },
   "exportingOrganizationSecretDataTitle": {
-    "message": "Organisaation salauisuus-tietojen vienti"
+    "message": "Organisaation salaisuus-tietojen vienti"
   },
   "exportingOrganizationSecretDataDescription": {
     "message": "Vain organisaatioon $ORGANIZATION$ liitetyt Salaisuushallinnan kohteet viedään. Muiden tuotteiden ja organisaatioiden kohteet eivät sisälly tähän.",
@@ -6214,6 +6363,25 @@
   },
   "userAccessSecretsManager": {
     "message": "Tämä käyttäjä voi käyttää Salaisuushallinnan Betaa"
+  },
+  "important": {
+    "message": "Important:"
+  },
+  "viewAll": {
+    "message": "Näytä kaikki"
+  },
+  "showingPortionOfTotal": {
+    "message": "Näytetään $PORTION$/$TOTAL$",
+    "placeholders": {
+      "portion": {
+        "content": "$1",
+        "example": "2"
+      },
+      "total": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
   },
   "resolveTheErrorsBelowAndTryAgain": {
     "message": "Korjaa seuravat virheet ja yritä uudelleen."

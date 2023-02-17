@@ -697,7 +697,14 @@
     "message": "Erneute Eingabe des Master-Passworts ist erforderlich."
   },
   "masterPasswordMinlength": {
-    "message": "Das Master-Passwort muss mindestens 8 Zeichen lang sein."
+    "message": "Master password must be at least $VALUE$ characters long.",
+    "description": "The Master Password must be at least a specific number of characters long.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "8"
+      }
+    }
   },
   "masterPassDoesntMatch": {
     "message": "Master-Passwort-Bestätigung stimmt nicht überein."
@@ -5948,6 +5955,16 @@
   "revokeAccessToken": {
     "message": "Zugriffstoken widerrufen"
   },
+  "revokeAccessTokens": {
+    "message": "Zugriffstokens widerrufen"
+  },
+  "revokeAccessTokenDesc": {
+    "message": "Das Widerrufen von Zugriffstokens ist dauerhaft und unumkehrbar."
+  },
+  "accessTokenRevoked": {
+    "message": "Zugriffstokens widerrufen",
+    "description": "Toast message after deleting one or multiple access tokens."
+  },
   "submenu": {
     "message": "Untermenü"
   },
@@ -6035,6 +6052,135 @@
   "memberAccessAll": {
     "message": "Dieses Mitglied darf auf alle Elemente zugreifen und diese ändern."
   },
+  "domainVerification": {
+    "message": "Domain-Verifizierung"
+  },
+  "newDomain": {
+    "message": "Neue Domain"
+  },
+  "noDomains": {
+    "message": "Keine Domains"
+  },
+  "noDomainsSubText": {
+    "message": "Durch das Verbinden einer Domain können Mitglieder das SSO-Kennungsfeld während der Anmeldung mit SSO überspringen."
+  },
+  "verifyDomain": {
+    "message": "Domain überprüfen"
+  },
+  "reverifyDomain": {
+    "message": "Domain erneut verifizieren"
+  },
+  "copyDnsTxtRecord": {
+    "message": "DNS-TXT-Eintrag kopieren"
+  },
+  "dnsTxtRecord": {
+    "message": "DNS-TXT-Eintrag"
+  },
+  "dnsTxtRecordInputHint": {
+    "message": "Kopiere den TXT-Eintrag und füge ihn bei deinem DNS-Provider ein."
+  },
+  "domainNameInputHint": {
+    "message": "Beispiel: mydomain.com. Subdomains erfordern separate Einträge zur Verifizierung."
+  },
+  "automaticDomainVerification": {
+    "message": "Automatische Domain-Verifizierung"
+  },
+  "automaticDomainVerificationProcess": {
+    "message": "Bitwarden wird in den ersten 72 Stunden 3 Mal versuchen, die Domain zu überprüfen. Wenn die Domain nicht verifiziert werden kann, überprüfe den DNS-Eintrag auf deinem Host und verifiziere sie manuell. Die Domain wird in 7 Tagen aus deiner Organisation entfernt, wenn sie nicht verifiziert ist"
+  },
+  "invalidDomainNameMessage": {
+    "message": "Eingabe ist kein gültiges Format. Format: mydomain.com. Subdomains erfordern separate Einträge, um verifiziert zu werden."
+  },
+  "removeDomain": {
+    "message": "Domain entfernen"
+  },
+  "removeDomainWarning": {
+    "message": "Das Entfernen einer Domain kann nicht rückgängig gemacht werden. Bist du sicher, dass du fortfahren möchtest?"
+  },
+  "domainRemoved": {
+    "message": "Domain entfernt"
+  },
+  "domainSaved": {
+    "message": "Domain gespeichert"
+  },
+  "domainVerified": {
+    "message": "Domain verifiziert"
+  },
+  "duplicateDomainError": {
+    "message": "Du kannst die gleiche Domain nicht zweimal beanspruchen."
+  },
+  "domainNotAvailable": {
+    "message": "Jemand anderes benutzt $DOMAIN$. Verwende eine andere Domain, um fortzufahren.",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
+  },
+  "domainNotVerified": {
+    "message": "$DOMAIN$ nicht verifiziert. Überprüfe deinen DNS-Eintrag.",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
+  },
+  "domainStatusVerified": {
+    "message": "Verifiziert"
+  },
+  "domainStatusUnverified": {
+    "message": "Nicht verifiziert"
+  },
+  "domainNameTh": {
+    "message": "Name"
+  },
+  "domainStatusTh": {
+    "message": "Status"
+  },
+  "lastChecked": {
+    "message": "Zuletzt überprüft"
+  },
+  "domainFormInvalid": {
+    "message": "Es gibt Formularfehler, die deine Aufmerksamkeit benötigen"
+  },
+  "addedDomain": {
+    "message": "Domain $DOMAIN$ hinzugefügt",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
+  },
+  "removedDomain": {
+    "message": "Domain $DOMAIN$ entfernt",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
+  },
+  "domainVerifiedEvent": {
+    "message": "$DOMAIN$ verifiziert",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
+  },
+  "domainNotVerifiedEvent": {
+    "message": "$DOMAIN$ nicht verifiziert",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
+  },
   "membersColumnHeader": {
     "message": "Mitglied/Gruppe"
   },
@@ -6109,6 +6255,9 @@
         "example": "2"
       }
     }
+  },
+  "server": {
+    "message": "Server"
   },
   "exportData": {
     "message": "Daten exportieren"
@@ -6214,6 +6363,25 @@
   },
   "userAccessSecretsManager": {
     "message": "Dieser Benutzer kann auf die Secrets Manager Beta zugreifen"
+  },
+  "important": {
+    "message": "Important:"
+  },
+  "viewAll": {
+    "message": "Alles anzeigen"
+  },
+  "showingPortionOfTotal": {
+    "message": "Zeige $PORTION$ von $TOTAL$",
+    "placeholders": {
+      "portion": {
+        "content": "$1",
+        "example": "2"
+      },
+      "total": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
   },
   "resolveTheErrorsBelowAndTryAgain": {
     "message": "Behebe die unten aufgeführten Fehler und versuche es erneut."

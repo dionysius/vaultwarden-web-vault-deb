@@ -697,7 +697,14 @@
     "message": "Se requiere volver a teclear la contraseña maestra."
   },
   "masterPasswordMinlength": {
-    "message": "La contraseña maestra debe tener al menos 8 caracteres."
+    "message": "La contraseña maestra debe tener al menos $VALUE$ caracteres.",
+    "description": "The Master Password must be at least a specific number of characters long.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "8"
+      }
+    }
   },
   "masterPassDoesntMatch": {
     "message": "La confirmación de contraseña maestra no coincide."
@@ -1686,16 +1693,16 @@
     "message": "Instrucciones"
   },
   "exposedPasswordsReport": {
-    "message": "Infome de contraseñas expuestas"
+    "message": "Infome de contraseñas comprometidas"
   },
   "exposedPasswordsReportDesc": {
-    "message": "Las contraseñas comprometidas en una brecha de datos son blancos fáciles para los atacantes. Cambia estas contraseñas para evitar futuras brechas."
+    "message": "Las contraseñas comprometidas en una brecha de datos son blancos fáciles para los atacantes. Cambia estas contraseñas para evitar futuras intrusiones."
   },
   "exposedPasswordsFound": {
     "message": "Contraseñas comprometidas encontradas"
   },
   "exposedPasswordsFoundDesc": {
-    "message": "Hemos encontrado $COUNT$ elementos en su caja fuerte que tienen contraseñas que fueron comprometidas en violaciones de datos conocidas. Debe cambiarlos para utilizar una contraseña nueva.",
+    "message": "Hemos encontrado $COUNT$ elementos en su caja fuerte que tienen contraseñas que fueron comprometidas en filtraciones de datos conocidas. Debe cambiarlos para utilizar una contraseña nueva.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -1704,13 +1711,13 @@
     }
   },
   "noExposedPasswords": {
-    "message": "No hay elementos en su caja fuerte que tengan contraseñas que hayan sido comprometidas en violaciones de datos conocidas."
+    "message": "No hay elementos en su caja fuerte que tengan contraseñas que hayan sido comprometidas en filtraciones de datos conocidas."
   },
   "checkExposedPasswords": {
     "message": "Compruebe las contraseñas comprometidas"
   },
   "exposedXTimes": {
-    "message": "Comprometidas $COUNT$ vez/veces",
+    "message": "Comprometida $COUNT$ veces",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -1770,10 +1777,10 @@
     }
   },
   "dataBreachReport": {
-    "message": "Informe de violación de datos"
+    "message": "Informe de filtración de datos"
   },
   "breachDesc": {
-    "message": "Una \"filtración\" es un incidente en el que los delincuentes informáticos han accedido ilegalmente a los datos de un sitio y los han hecho públicos. Revisa los tipos de datos que fueron comprometidos (direcciones de correo electrónico, contraseñas, tarjetas de crédito, etc.) y toma las medidas apropiadas, como cambiar las contraseñas."
+    "message": "Las cuentas filtradas pueden exponer su información personal. Protege las cuentas filtradas activando 2FA o creando una contraseña más segura."
   },
   "breachCheckUsernameEmail": {
     "message": "Verifica cualquier nombre de usuario o dirección de correo electrónico que utilices."
@@ -1882,7 +1889,7 @@
     "message": "Acceso de emergencia"
   },
   "premiumSignUpReports": {
-    "message": "Higiene de contraseña, salud de la cuenta e informes de violaciones de datos para mantener su caja fuerte segura."
+    "message": "Higiene de contraseña, salud de la cuenta e informes de filtraciones de datos para mantener su caja fuerte segura."
   },
   "premiumSignUpTotp": {
     "message": "Generador de código de verificación TOTP (2FA) para iniciar sesión en su caja fuerte."
@@ -5948,6 +5955,16 @@
   "revokeAccessToken": {
     "message": "Revocar token de acceso"
   },
+  "revokeAccessTokens": {
+    "message": "Revocar tokens de acceso"
+  },
+  "revokeAccessTokenDesc": {
+    "message": "La revocación los tokens de acceso es permanente e irreversible."
+  },
+  "accessTokenRevoked": {
+    "message": "Tokens de acceso revocados",
+    "description": "Toast message after deleting one or multiple access tokens."
+  },
   "submenu": {
     "message": "Submenú"
   },
@@ -6035,6 +6052,135 @@
   "memberAccessAll": {
     "message": "Este miembro puede acceder y modificar todos los elementos."
   },
+  "domainVerification": {
+    "message": "Verificación de dominio"
+  },
+  "newDomain": {
+    "message": "Nuevo dominio"
+  },
+  "noDomains": {
+    "message": "No hay dominios"
+  },
+  "noDomainsSubText": {
+    "message": "Conectar un dominio permite a los miembros omitir el campo identificador SSO durante el inicio de sesión con SSO."
+  },
+  "verifyDomain": {
+    "message": "Verificar dominio"
+  },
+  "reverifyDomain": {
+    "message": "Reverificar dominio"
+  },
+  "copyDnsTxtRecord": {
+    "message": "Copiar registro DNS TXT"
+  },
+  "dnsTxtRecord": {
+    "message": "Registro DNS TXT"
+  },
+  "dnsTxtRecordInputHint": {
+    "message": "Copia y pega el registro TXT en tu proveedor de DNS."
+  },
+  "domainNameInputHint": {
+    "message": "Ejemplo: mydomain.com. Los subdominios requieren entradas separadas para ser verificadas."
+  },
+  "automaticDomainVerification": {
+    "message": "Verificación automática de dominio"
+  },
+  "automaticDomainVerificationProcess": {
+    "message": "Bitwarden intentará verificar el dominio 3 veces durante las primeras 72 horas. Si el dominio no puede ser verificado, compruebe el registro DNS en su host y verifique manualmente. El dominio se eliminará de su organización en 7 días si no se verifica"
+  },
+  "invalidDomainNameMessage": {
+    "message": "Los datos inreoducidos no tienen un formato válido. Formato: midominio.com. Los subdominios requieren entradas separadas para ser verificadas."
+  },
+  "removeDomain": {
+    "message": "Eliminar dominio"
+  },
+  "removeDomainWarning": {
+    "message": "La eliminación de un dominio no se puede deshacer. ¿Está seguro de que desea continuar?"
+  },
+  "domainRemoved": {
+    "message": "Dominio eliminado"
+  },
+  "domainSaved": {
+    "message": "Dominio guardado"
+  },
+  "domainVerified": {
+    "message": "Dominio verificado"
+  },
+  "duplicateDomainError": {
+    "message": "No puedes reclamar el mismo dominio dos veces."
+  },
+  "domainNotAvailable": {
+    "message": "Alguien más está usando $DOMAIN$. Utilice un dominio diferente para continuar.",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
+  },
+  "domainNotVerified": {
+    "message": "$DOMAIN$ no verificado. Compruebe su registro DNS.",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
+  },
+  "domainStatusVerified": {
+    "message": "Verificado"
+  },
+  "domainStatusUnverified": {
+    "message": "No Verificado"
+  },
+  "domainNameTh": {
+    "message": "Nombre"
+  },
+  "domainStatusTh": {
+    "message": "Estado"
+  },
+  "lastChecked": {
+    "message": "Última vez revisado"
+  },
+  "domainFormInvalid": {
+    "message": "Hay errores de formulario que necesitan su atención"
+  },
+  "addedDomain": {
+    "message": "Dominio añadido $DOMAIN$",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
+  },
+  "removedDomain": {
+    "message": "Dominio $DOMAIN$ eliminado",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
+  },
+  "domainVerifiedEvent": {
+    "message": "$DOMAIN$ verificado",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
+  },
+  "domainNotVerifiedEvent": {
+    "message": "$DOMAIN$ no verificado",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
+  },
   "membersColumnHeader": {
     "message": "Miembro/Grupo"
   },
@@ -6109,6 +6255,9 @@
         "example": "2"
       }
     }
+  },
+  "server": {
+    "message": "Servidor"
   },
   "exportData": {
     "message": "Exportar datos"
@@ -6214,6 +6363,25 @@
   },
   "userAccessSecretsManager": {
     "message": "Este usuario puede acceder al Administrador Secretos Beta"
+  },
+  "important": {
+    "message": "Importante:"
+  },
+  "viewAll": {
+    "message": "Ver todo"
+  },
+  "showingPortionOfTotal": {
+    "message": "Mostrando $PORTION$ de $TOTAL$",
+    "placeholders": {
+      "portion": {
+        "content": "$1",
+        "example": "2"
+      },
+      "total": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
   },
   "resolveTheErrorsBelowAndTryAgain": {
     "message": "Corrija los siguientes errores e inténtelo de nuevo"

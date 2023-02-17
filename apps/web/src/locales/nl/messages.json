@@ -697,7 +697,14 @@
     "message": "Type je hoofdwachtwoord opnieuw in."
   },
   "masterPasswordMinlength": {
-    "message": "Hoofdwachtwoord moet minstens 8 karakters lang zijn."
+    "message": "Master password must be at least $VALUE$ characters long.",
+    "description": "The Master Password must be at least a specific number of characters long.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "8"
+      }
+    }
   },
   "masterPassDoesntMatch": {
     "message": "De hoofdwachtwoorden komen niet overeen."
@@ -5948,6 +5955,16 @@
   "revokeAccessToken": {
     "message": "Toegangstoken intrekken"
   },
+  "revokeAccessTokens": {
+    "message": "Toegangstokens intrekken"
+  },
+  "revokeAccessTokenDesc": {
+    "message": "Toegangstokens intrekken is permanent en onomkeerbaar."
+  },
+  "accessTokenRevoked": {
+    "message": "Toegangstokens ingetrokken",
+    "description": "Toast message after deleting one or multiple access tokens."
+  },
   "submenu": {
     "message": "Submenu"
   },
@@ -6035,6 +6052,135 @@
   "memberAccessAll": {
     "message": "Deze gebruiker kan alle items inzien en bewerken."
   },
+  "domainVerification": {
+    "message": "Domeinverificatie"
+  },
+  "newDomain": {
+    "message": "Nieuw domein"
+  },
+  "noDomains": {
+    "message": "Geen domeinen"
+  },
+  "noDomainsSubText": {
+    "message": "Door een domein te verbinden kunnen leden het SSO-identificatieveld tijdens het inloggen met SSO overslaan."
+  },
+  "verifyDomain": {
+    "message": "Domein verifiëren"
+  },
+  "reverifyDomain": {
+    "message": "Domein herverifiëren"
+  },
+  "copyDnsTxtRecord": {
+    "message": "DNS TXT record kopiëren"
+  },
+  "dnsTxtRecord": {
+    "message": "DNS TXT record"
+  },
+  "dnsTxtRecordInputHint": {
+    "message": "Kopieer en plak het TXT-record in je DNS-provider."
+  },
+  "domainNameInputHint": {
+    "message": "Voorbeeld: mijndomein.com. Subdomeinen moet je afzonderlijk verifiëren."
+  },
+  "automaticDomainVerification": {
+    "message": "Automatische domeinverificatie"
+  },
+  "automaticDomainVerificationProcess": {
+    "message": "Bitwarden probeert het domein gedurende de eerste 72 uur driemaal te verifiëren. Als het domein niet geverifieerd kan worden, controleer dan het DNS-record in je host en controleer het handmatig. Het domein wordt binnen 7 dagen verwijderd uit je organisatie als het niet geverifieerd is"
+  },
+  "invalidDomainNameMessage": {
+    "message": "Invoer is geen geldig formaat. Formaat: mijndomein.com. Subdomeinen moet je afzonderlijk verifiëren."
+  },
+  "removeDomain": {
+    "message": "Domein verwijderen"
+  },
+  "removeDomainWarning": {
+    "message": "Je kunt het verwijderen van een domein niet ongedaan maken. Weet je zeker dat je wilt doorgaan?"
+  },
+  "domainRemoved": {
+    "message": "Domein verwijderd"
+  },
+  "domainSaved": {
+    "message": "Domein opgeslagen"
+  },
+  "domainVerified": {
+    "message": "Domein geverifieerd"
+  },
+  "duplicateDomainError": {
+    "message": "Je kunt hetzelfde domein niet tweemaal opeisen."
+  },
+  "domainNotAvailable": {
+    "message": "Iemand anders gebruikt $DOMAIN$ al. Gebruik een ander domein om door te gaan.",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
+  },
+  "domainNotVerified": {
+    "message": "$DOMAIN$ niet geverifieerd. Controleer je DNS-record.",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
+  },
+  "domainStatusVerified": {
+    "message": "Geverifiëerd"
+  },
+  "domainStatusUnverified": {
+    "message": "Niet geverifieerd"
+  },
+  "domainNameTh": {
+    "message": "Naam"
+  },
+  "domainStatusTh": {
+    "message": "Status"
+  },
+  "lastChecked": {
+    "message": "Laatst gecontroleerd"
+  },
+  "domainFormInvalid": {
+    "message": "Er zijn formulierfouten die je aandacht vereisen"
+  },
+  "addedDomain": {
+    "message": "Domein $DOMAIN$ toegevoegd",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
+  },
+  "removedDomain": {
+    "message": "Domein $DOMAIN$ verwijderd",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
+  },
+  "domainVerifiedEvent": {
+    "message": "$DOMAIN$ geverifieerd",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
+  },
+  "domainNotVerifiedEvent": {
+    "message": "$DOMAIN$ niet geverifieerd",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
+  },
   "membersColumnHeader": {
     "message": "Lid/Groep"
   },
@@ -6109,6 +6255,9 @@
         "example": "2"
       }
     }
+  },
+  "server": {
+    "message": "Server"
   },
   "exportData": {
     "message": "Gegevens exporteren"
@@ -6214,6 +6363,25 @@
   },
   "userAccessSecretsManager": {
     "message": "Deze gebruiker heeft toegang tot de Secrets Manager Bèta"
+  },
+  "important": {
+    "message": "Important:"
+  },
+  "viewAll": {
+    "message": "View all"
+  },
+  "showingPortionOfTotal": {
+    "message": "Showing $PORTION$ of $TOTAL$",
+    "placeholders": {
+      "portion": {
+        "content": "$1",
+        "example": "2"
+      },
+      "total": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
   },
   "resolveTheErrorsBelowAndTryAgain": {
     "message": "Los onderstaande fouten op en probeer het opnieuw."

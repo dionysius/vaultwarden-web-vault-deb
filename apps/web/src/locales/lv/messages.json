@@ -697,7 +697,14 @@
     "message": "Ir nepieciešama galvenās paroles atkārtota ievadīšana."
   },
   "masterPasswordMinlength": {
-    "message": "Galvenajai parolei ir jābūt vismaz 8 rakstzīmes garai."
+    "message": "Master password must be at least $VALUE$ characters long.",
+    "description": "The Master Password must be at least a specific number of characters long.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "8"
+      }
+    }
   },
   "masterPassDoesntMatch": {
     "message": "Galvenās paroles apstiprinājums nesakrīt."
@@ -5948,6 +5955,16 @@
   "revokeAccessToken": {
     "message": "Atsaukt piekļuves pilnvaru"
   },
+  "revokeAccessTokens": {
+    "message": "Revoke access tokens"
+  },
+  "revokeAccessTokenDesc": {
+    "message": "Revoking access tokens is permanent and irreversible."
+  },
+  "accessTokenRevoked": {
+    "message": "Access tokens revoked",
+    "description": "Toast message after deleting one or multiple access tokens."
+  },
   "submenu": {
     "message": "Apakšizvēlne"
   },
@@ -6035,6 +6052,135 @@
   "memberAccessAll": {
     "message": "Šis dalībnieks var piekļūt visiem vienumiem un mainīt tos."
   },
+  "domainVerification": {
+    "message": "Domēna apstiprināšana"
+  },
+  "newDomain": {
+    "message": "Jauns domēns"
+  },
+  "noDomains": {
+    "message": "Nav domēnu"
+  },
+  "noDomainsSubText": {
+    "message": "Savienošanās ar domēnu ļauj dalībniekiem pieteikšanās ar SSO laikā izlaist vienotās pieteikšanās identifikatora lauku."
+  },
+  "verifyDomain": {
+    "message": "Apstiprināt domēnu"
+  },
+  "reverifyDomain": {
+    "message": "Atkārtoti apstiprināt domēnu"
+  },
+  "copyDnsTxtRecord": {
+    "message": "Ievietot starpliktuvē DNS TXT ierakstu"
+  },
+  "dnsTxtRecord": {
+    "message": "DNS TXT ieraksts"
+  },
+  "dnsTxtRecordInputHint": {
+    "message": "TXT ieraksts ir jāievieto starpliktuvē un jāielīmē DNS nodrošinātāja pārvaldības lapā."
+  },
+  "domainNameInputHint": {
+    "message": "Piemērs: mansdomens.lv. Apakšdomēniem ir nepieciešams apstiprināt atsevišķus ierakstus."
+  },
+  "automaticDomainVerification": {
+    "message": "Automātiska domēnu apstiprināšana"
+  },
+  "automaticDomainVerificationProcess": {
+    "message": "Bitwarden mēģinās pārbaudīt domēnu 3 reizes pirmajās 72 stundās. Ja domēnu nevarēs apstiprināt, būs jāpārbauda DNS ieraksts saimniekdatorā un pašrocīgi jāapstiprina. Domēns tiks noņemts no apvienības pēc 7 dienām, ja tas nebūs apstiprināts"
+  },
+  "invalidDomainNameMessage": {
+    "message": "Ievadītā vērtība ir nederīga. Piemēram: mansdomens.lv. Apakšdomēniem ir nepieciešams apstiprināt atsevišķus ierakstus."
+  },
+  "removeDomain": {
+    "message": "Noņemt domeinu"
+  },
+  "removeDomainWarning": {
+    "message": "Domēna noņemšanu nevar atdarīt. Vai tiešām turpināt?"
+  },
+  "domainRemoved": {
+    "message": "Domēns ir noņemts"
+  },
+  "domainSaved": {
+    "message": "Domēns ir saglabāts"
+  },
+  "domainVerified": {
+    "message": "Domēns ir apstiprināts"
+  },
+  "duplicateDomainError": {
+    "message": "Vienu domēnu nevar pieprasīt divreiz."
+  },
+  "domainNotAvailable": {
+    "message": "Kāds cits izmanto $DOMAIN$. Jāizmanto cits domēns, lai turpinātu.",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
+  },
+  "domainNotVerified": {
+    "message": "$DOMAIN$ nav apstiprināts. Jāpārbauda DNS ieraksts.",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
+  },
+  "domainStatusVerified": {
+    "message": "Apstiprināts"
+  },
+  "domainStatusUnverified": {
+    "message": "Nav apstiprināts"
+  },
+  "domainNameTh": {
+    "message": "Nosaukums"
+  },
+  "domainStatusTh": {
+    "message": "Stāvoklis"
+  },
+  "lastChecked": {
+    "message": "Pēdējoreiz pārbaudīts"
+  },
+  "domainFormInvalid": {
+    "message": "Veidlapā ir kļūdas, kurām ir jāpievērš uzmanība"
+  },
+  "addedDomain": {
+    "message": "Domēns $DOMAIN$ ir pievienots",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
+  },
+  "removedDomain": {
+    "message": "Domēns $DOMAIN$ ir noņemts",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
+  },
+  "domainVerifiedEvent": {
+    "message": "$DOMAIN$ ir apstiprināts",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
+  },
+  "domainNotVerifiedEvent": {
+    "message": "$DOMAIN$ nav apstiprināts",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
+  },
   "membersColumnHeader": {
     "message": "Dalībnieks/Grupa"
   },
@@ -6109,6 +6255,9 @@
         "example": "2"
       }
     }
+  },
+  "server": {
+    "message": "Serveris"
   },
   "exportData": {
     "message": "Izgūt datus"
@@ -6214,6 +6363,25 @@
   },
   "userAccessSecretsManager": {
     "message": "Šis lietotājs var piekļūt Noslēpumu pārvaldniekam Beta"
+  },
+  "important": {
+    "message": "Important:"
+  },
+  "viewAll": {
+    "message": "View all"
+  },
+  "showingPortionOfTotal": {
+    "message": "Showing $PORTION$ of $TOTAL$",
+    "placeholders": {
+      "portion": {
+        "content": "$1",
+        "example": "2"
+      },
+      "total": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
   },
   "resolveTheErrorsBelowAndTryAgain": {
     "message": "Jāatrisina zemāk norādītās kļūdas un jāmēģina vēlreiz."

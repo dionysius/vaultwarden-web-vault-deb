@@ -697,7 +697,14 @@
     "message": "Hovedadgangskode kræves angivet igen."
   },
   "masterPasswordMinlength": {
-    "message": "Hovedadgangskoden skal være på mindst 8 tegn."
+    "message": "Master password must be at least $VALUE$ characters long.",
+    "description": "The Master Password must be at least a specific number of characters long.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "8"
+      }
+    }
   },
   "masterPassDoesntMatch": {
     "message": "Hovedadgangskoderne matcher ikke."
@@ -5948,6 +5955,16 @@
   "revokeAccessToken": {
     "message": "Ophæv adgangstoken"
   },
+  "revokeAccessTokens": {
+    "message": "Revoke access tokens"
+  },
+  "revokeAccessTokenDesc": {
+    "message": "Revoking access tokens is permanent and irreversible."
+  },
+  "accessTokenRevoked": {
+    "message": "Access tokens revoked",
+    "description": "Toast message after deleting one or multiple access tokens."
+  },
   "submenu": {
     "message": "Undermenu"
   },
@@ -6035,6 +6052,135 @@
   "memberAccessAll": {
     "message": "Dette medlem kan tilgå og ændre alle emner."
   },
+  "domainVerification": {
+    "message": "Domænebekræftelse"
+  },
+  "newDomain": {
+    "message": "Nyt domæne"
+  },
+  "noDomains": {
+    "message": "Ingen domæner"
+  },
+  "noDomainsSubText": {
+    "message": "Tilslutning af et domæne lader medlemmer overspringe SSO-identifikationsfeltet under SSO-baseret indlogning."
+  },
+  "verifyDomain": {
+    "message": "Bekræft domæne"
+  },
+  "reverifyDomain": {
+    "message": "Genbekræft domæne"
+  },
+  "copyDnsTxtRecord": {
+    "message": "Kopiér DNS TXT-post"
+  },
+  "dnsTxtRecord": {
+    "message": "DNS TXT-post"
+  },
+  "dnsTxtRecordInputHint": {
+    "message": "Kopiér og indsæt TXT-posten i din DNS-udbyder."
+  },
+  "domainNameInputHint": {
+    "message": "Eks.: mitdomaene.dk. Underdomæner kræver at separate poster bekræftes."
+  },
+  "automaticDomainVerification": {
+    "message": "Automatisk Domænebekræftelse"
+  },
+  "automaticDomainVerificationProcess": {
+    "message": "Bitwarden vil forsøge at bekræfte domænet 3 gange i løbet af de første 72 timer. Kan domænet ikke bekræftes, så tjek DNS-posten på værten og bekræft manuelt. Såfremt ubekræftet efter 7 dage, fjernes domænet fra organisationen"
+  },
+  "invalidDomainNameMessage": {
+    "message": "Input er ikke i et gyldigt format. Format: mitdomaene.dk. Underdomæner kræver at separate poster bekræftes."
+  },
+  "removeDomain": {
+    "message": "Fjern domæne"
+  },
+  "removeDomainWarning": {
+    "message": "En domænefjernelse er irreversibel. Fortsæt — helt sikker?"
+  },
+  "domainRemoved": {
+    "message": "Domæne fjernet"
+  },
+  "domainSaved": {
+    "message": "Domæne gemt"
+  },
+  "domainVerified": {
+    "message": "Domæne bekræftet"
+  },
+  "duplicateDomainError": {
+    "message": "Der kan ikke gøres krav på det samme domæne to gange."
+  },
+  "domainNotAvailable": {
+    "message": "$DOMAIN$ bruges allerede. Brug et andet domæne for at fortsætte.",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
+  },
+  "domainNotVerified": {
+    "message": "$DOMAIN$ ikke bekræftet. Tjek DNS-posten.",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
+  },
+  "domainStatusVerified": {
+    "message": "Bekræftet"
+  },
+  "domainStatusUnverified": {
+    "message": "Ikke-bekræftet"
+  },
+  "domainNameTh": {
+    "message": "Navn"
+  },
+  "domainStatusTh": {
+    "message": "Status"
+  },
+  "lastChecked": {
+    "message": "Senest tjekket"
+  },
+  "domainFormInvalid": {
+    "message": "Der fndes formularfejl, som kræver håndtering"
+  },
+  "addedDomain": {
+    "message": "Domænet $DOMAIN$ tilføjet",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
+  },
+  "removedDomain": {
+    "message": "Domænet $DOMAIN$ fjernet",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
+  },
+  "domainVerifiedEvent": {
+    "message": "$DOMAIN$ bekræftet",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
+  },
+  "domainNotVerifiedEvent": {
+    "message": "$DOMAIN$ ikke bekræftet",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
+  },
   "membersColumnHeader": {
     "message": "Medlem/Gruppe"
   },
@@ -6109,6 +6255,9 @@
         "example": "2"
       }
     }
+  },
+  "server": {
+    "message": "Server"
   },
   "exportData": {
     "message": "Eksportér data"
@@ -6214,6 +6363,25 @@
   },
   "userAccessSecretsManager": {
     "message": "Denne bruger kan tilgå Secrets Manager Beta"
+  },
+  "important": {
+    "message": "Vigtigt:"
+  },
+  "viewAll": {
+    "message": "View all"
+  },
+  "showingPortionOfTotal": {
+    "message": "Showing $PORTION$ of $TOTAL$",
+    "placeholders": {
+      "portion": {
+        "content": "$1",
+        "example": "2"
+      },
+      "total": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
   },
   "resolveTheErrorsBelowAndTryAgain": {
     "message": "Ret fejlene nedenfor og forsøg igen."

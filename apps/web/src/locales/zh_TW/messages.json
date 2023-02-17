@@ -300,7 +300,7 @@
     "message": "搜尋密碼庫"
   },
   "searchMyVault": {
-    "message": "Search my vault"
+    "message": "搜尋我的密碼庫"
   },
   "searchOrganization": {
     "message": "搜尋組織"
@@ -697,7 +697,14 @@
     "message": "必須再次輸入主密碼。"
   },
   "masterPasswordMinlength": {
-    "message": "主密碼需要至少 8 個字元。"
+    "message": "Master password must be at least $VALUE$ characters long.",
+    "description": "The Master Password must be at least a specific number of characters long.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "8"
+      }
+    }
   },
   "masterPassDoesntMatch": {
     "message": "兩次填入的主密碼不相符。"
@@ -1158,14 +1165,14 @@
     }
   },
   "kdfMemory": {
-    "message": "KDF memory (MB)",
+    "message": "KDF 記憶體 (MB)",
     "description": "Memory refers to computer memory (RAM). MB is short for megabytes."
   },
   "argon2Warning": {
     "message": "Setting your KDF iterations, memory, and parallelism too high could result in poor performance when logging into (and unlocking) Bitwarden on slower or older devices. We recommend changing these individually in small increments and then test all of your devices."
   },
   "kdfParallelism": {
-    "message": "KDF parallelism"
+    "message": "KDF 平行數量"
   },
   "argon2Desc": {
     "message": "Higher KDF iterations, memory, and parallelism can help protect your master password from being brute forced by an attacker."
@@ -5674,7 +5681,7 @@
     "message": "自訂顏色"
   },
   "selectPlaceholder": {
-    "message": "-- Select --"
+    "message": "-- 選擇 --"
   },
   "multiSelectPlaceholder": {
     "message": "-- 輸入以進行篩選 --"
@@ -5948,6 +5955,16 @@
   "revokeAccessToken": {
     "message": "撤銷存取權杖"
   },
+  "revokeAccessTokens": {
+    "message": "Revoke access tokens"
+  },
+  "revokeAccessTokenDesc": {
+    "message": "Revoking access tokens is permanent and irreversible."
+  },
+  "accessTokenRevoked": {
+    "message": "Access tokens revoked",
+    "description": "Toast message after deleting one or multiple access tokens."
+  },
   "submenu": {
     "message": "子選單"
   },
@@ -6035,14 +6052,143 @@
   "memberAccessAll": {
     "message": "此成員可存取及變更所有項目。"
   },
+  "domainVerification": {
+    "message": "Domain verification"
+  },
+  "newDomain": {
+    "message": "New domain"
+  },
+  "noDomains": {
+    "message": "No domains"
+  },
+  "noDomainsSubText": {
+    "message": "Connecting a domain allows members to skip the SSO identifier field during Login with SSO."
+  },
+  "verifyDomain": {
+    "message": "驗證網域"
+  },
+  "reverifyDomain": {
+    "message": "重新驗證網域"
+  },
+  "copyDnsTxtRecord": {
+    "message": "複製 DNS TXT 記錄"
+  },
+  "dnsTxtRecord": {
+    "message": "DNS TXT 記錄"
+  },
+  "dnsTxtRecordInputHint": {
+    "message": "複製並貼上 TXT 記錄到您的 DNS 供應商。"
+  },
+  "domainNameInputHint": {
+    "message": "例如：mydomain.com。子網域需要分別加入以驗證。"
+  },
+  "automaticDomainVerification": {
+    "message": "自動網域驗證"
+  },
+  "automaticDomainVerificationProcess": {
+    "message": "Bitwarden will attempt to verify the domain 3 times during the first 72 hours. If the domain can’t be verified, check the DNS record in your host and manually verify. The domain will be removed from your organization in 7 days if it is not verified"
+  },
+  "invalidDomainNameMessage": {
+    "message": "Input is not a valid format. Format: mydomain.com. Subdomains require separate entries to be verified."
+  },
+  "removeDomain": {
+    "message": "刪除網域"
+  },
+  "removeDomainWarning": {
+    "message": "Removing a domain cannot be undone. Are you sure you want to continue?"
+  },
+  "domainRemoved": {
+    "message": "網域已移除"
+  },
+  "domainSaved": {
+    "message": "網域已儲存"
+  },
+  "domainVerified": {
+    "message": "已驗證網域"
+  },
+  "duplicateDomainError": {
+    "message": "You can't claim the same domain twice."
+  },
+  "domainNotAvailable": {
+    "message": "其他人正在使用 $DOMAIN$。請使用一個不同的網域名稱以繼續。",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
+  },
+  "domainNotVerified": {
+    "message": "$DOMAIN$ 未驗證。請檢查您的 DNS 記錄。",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
+  },
+  "domainStatusVerified": {
+    "message": "已驗證"
+  },
+  "domainStatusUnverified": {
+    "message": "未驗證"
+  },
+  "domainNameTh": {
+    "message": "Name"
+  },
+  "domainStatusTh": {
+    "message": "狀態"
+  },
+  "lastChecked": {
+    "message": "Last checked"
+  },
+  "domainFormInvalid": {
+    "message": "There are form errors that need your attention"
+  },
+  "addedDomain": {
+    "message": "已新增網域 $DOMAIN$",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
+  },
+  "removedDomain": {
+    "message": "已移除網域 $DOMAIN$",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
+  },
+  "domainVerifiedEvent": {
+    "message": "$DOMAIN$ 已驗證",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
+  },
+  "domainNotVerifiedEvent": {
+    "message": "$DOMAIN$ 未驗證",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
+  },
   "membersColumnHeader": {
-    "message": "Member/Group"
+    "message": "成員/群組"
   },
   "groupAndMemberColumnHeader": {
     "message": "成員"
   },
   "selectGroupsAndMembers": {
-    "message": "Select groups and members"
+    "message": "選擇群組和成員"
   },
   "selectGroups": {
     "message": "選擇群組"
@@ -6057,16 +6203,16 @@
     "message": "已刪除"
   },
   "memberStatusFilter": {
-    "message": "Member status filter"
+    "message": "成員狀態篩選器"
   },
   "inviteMember": {
     "message": "邀請成員"
   },
   "needsConfirmation": {
-    "message": "Needs confirmation"
+    "message": "待確認"
   },
   "memberRole": {
-    "message": "Member role"
+    "message": "成員角色"
   },
   "moreFromBitwarden": {
     "message": "來自 Bitwarden 的更多產品"
@@ -6110,8 +6256,11 @@
       }
     }
   },
+  "server": {
+    "message": "伺服器"
+  },
   "exportData": {
-    "message": "Export data"
+    "message": "匯出資料"
   },
   "exportingOrganizationSecretDataTitle": {
     "message": "Exporting Organization Secret Data"
@@ -6126,7 +6275,7 @@
     }
   },
   "fileUpload": {
-    "message": "File upload"
+    "message": "檔案上傳"
   },
   "acceptedFormats": {
     "message": "Accepted Formats:"
@@ -6135,7 +6284,7 @@
     "message": "Copy & paste import contents:"
   },
   "or": {
-    "message": "or"
+    "message": "或"
   },
   "licenseAndBillingManagement": {
     "message": "License and billing management"
@@ -6201,7 +6350,7 @@
     "message": "Increase your KDF encryption settings to improve the security of your account."
   },
   "changeKdfSettings": {
-    "message": "Change KDF settings"
+    "message": "變更 KDF 設定"
   },
   "changeKdfLoggedOutWarning": {
     "message": "Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour. We recommend exporting your vault before changing your encryption settings to prevent data loss."
@@ -6214,6 +6363,25 @@
   },
   "userAccessSecretsManager": {
     "message": "This user can access the Secrets Manager Beta"
+  },
+  "important": {
+    "message": "Important:"
+  },
+  "viewAll": {
+    "message": "View all"
+  },
+  "showingPortionOfTotal": {
+    "message": "Showing $PORTION$ of $TOTAL$",
+    "placeholders": {
+      "portion": {
+        "content": "$1",
+        "example": "2"
+      },
+      "total": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
   },
   "resolveTheErrorsBelowAndTryAgain": {
     "message": "Resolve the errors below and try again."

@@ -697,7 +697,14 @@
     "message": "Wymagane jest ponowne wpisanie hasła głównego."
   },
   "masterPasswordMinlength": {
-    "message": "Hasło główne musi zawierać co najmniej 8 znaków."
+    "message": "Hasło główne musi zawierać co najmniej $VALUE$ znaki(-ów).",
+    "description": "The Master Password must be at least a specific number of characters long.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "8"
+      }
+    }
   },
   "masterPassDoesntMatch": {
     "message": "Hasła nie pasują do siebie."
@@ -5948,6 +5955,16 @@
   "revokeAccessToken": {
     "message": "Unieważnij token dostępu"
   },
+  "revokeAccessTokens": {
+    "message": "Unieważnij tokeny dostępu"
+  },
+  "revokeAccessTokenDesc": {
+    "message": "Unieważnienie tokenów dostępu jest trwałe i nieodwracalne."
+  },
+  "accessTokenRevoked": {
+    "message": "Tokeny dostępu zostały odwołane",
+    "description": "Toast message after deleting one or multiple access tokens."
+  },
   "submenu": {
     "message": "Podmenu"
   },
@@ -6035,6 +6052,135 @@
   "memberAccessAll": {
     "message": "Ten użytkownik może wyświetlać i modyfikować wszystkie elementy."
   },
+  "domainVerification": {
+    "message": "Weryfikacja domeny"
+  },
+  "newDomain": {
+    "message": "Nowa domena"
+  },
+  "noDomains": {
+    "message": "Brak domen"
+  },
+  "noDomainsSubText": {
+    "message": "Połączenie domeny pozwala członkom na pominięcie pola identyfikatora SSO podczas logowania za pomocą SSO."
+  },
+  "verifyDomain": {
+    "message": "Zweryfikuj domenę"
+  },
+  "reverifyDomain": {
+    "message": "Zweryfikuj ponownie domenę"
+  },
+  "copyDnsTxtRecord": {
+    "message": "Kopiuj rekord DNS TXT"
+  },
+  "dnsTxtRecord": {
+    "message": "Rekord DNS TXT"
+  },
+  "dnsTxtRecordInputHint": {
+    "message": "Skopiuj i wklej rekord TXT do dostawcy DNS."
+  },
+  "domainNameInputHint": {
+    "message": "Przykład: mydomain.com. Subdomeny wymagają osobnych wpisów celem weryfikacji."
+  },
+  "automaticDomainVerification": {
+    "message": "Automatyczna weryfikacja domeny"
+  },
+  "automaticDomainVerificationProcess": {
+    "message": "Bitwarden spróbuje zweryfikować domenę 3 razy w ciągu pierwszych 72 godzin. Jeśli nie można zweryfikować domeny, sprawdź rekord DNS w swoim serwerze i sprawdź go ręcznie. Domena zostanie usunięta z Twojej organizacji w ciągu 7 dni, jeśli nie zostanie zweryfikowana"
+  },
+  "invalidDomainNameMessage": {
+    "message": "Wprowadzone dane są niepoprawne. Format: mydomain.com. Subdomeny wymagają osobnych wpisów celem weryfikacji."
+  },
+  "removeDomain": {
+    "message": "Usuń domenę"
+  },
+  "removeDomainWarning": {
+    "message": "Usunięcie domeny nie może zostać cofnięte. Czy na pewno chcesz kontynuować?"
+  },
+  "domainRemoved": {
+    "message": "Domena usunięta"
+  },
+  "domainSaved": {
+    "message": "Domena została zapisana"
+  },
+  "domainVerified": {
+    "message": "Domena zweryfikowana"
+  },
+  "duplicateDomainError": {
+    "message": "Nie możesz dwukrotnie dodać tej samej domeny."
+  },
+  "domainNotAvailable": {
+    "message": "Ktoś inny używa $DOMAIN$. Użyj innej domeny, aby kontynuować.",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
+  },
+  "domainNotVerified": {
+    "message": "$DOMAIN$ nie została zweryfikowana. Sprawdź swój rekord DNS.",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
+  },
+  "domainStatusVerified": {
+    "message": "Zweryfikowana"
+  },
+  "domainStatusUnverified": {
+    "message": "Niezweryfikowana"
+  },
+  "domainNameTh": {
+    "message": "Nazwa"
+  },
+  "domainStatusTh": {
+    "message": "Status"
+  },
+  "lastChecked": {
+    "message": "Ostatnio sprawdzona"
+  },
+  "domainFormInvalid": {
+    "message": "Istnieją błędy formularza, które wymagają Twojej uwagi"
+  },
+  "addedDomain": {
+    "message": "Dodano domenę $DOMAIN$",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
+  },
+  "removedDomain": {
+    "message": "Usunięto domenę $DOMAIN$",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
+  },
+  "domainVerifiedEvent": {
+    "message": "Zweryfikowano $DOMAIN$",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
+  },
+  "domainNotVerifiedEvent": {
+    "message": "$DOMAIN$ nie została zweryfikowana",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
+  },
   "membersColumnHeader": {
     "message": "Użytkownik/Grupa"
   },
@@ -6109,6 +6255,9 @@
         "example": "2"
       }
     }
+  },
+  "server": {
+    "message": "Serwer"
   },
   "exportData": {
     "message": "Eksportuj dane"
@@ -6214,6 +6363,25 @@
   },
   "userAccessSecretsManager": {
     "message": "Ten użytkownik może uzyskać dostęp do Managera sekretów Beta"
+  },
+  "important": {
+    "message": "Ważne:"
+  },
+  "viewAll": {
+    "message": "Pokaż wszystko"
+  },
+  "showingPortionOfTotal": {
+    "message": "Pokazano $PORTION$ z $TOTAL$",
+    "placeholders": {
+      "portion": {
+        "content": "$1",
+        "example": "2"
+      },
+      "total": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
   },
   "resolveTheErrorsBelowAndTryAgain": {
     "message": "Usuń poniższe błędy i spróbuj ponownie."

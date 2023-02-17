@@ -697,7 +697,14 @@
     "message": "Поновно уписивање главне лозинке је неопходно."
   },
   "masterPasswordMinlength": {
-    "message": "Главна лозинка треба имати барем 8 карактера."
+    "message": "Master password must be at least $VALUE$ characters long.",
+    "description": "The Master Password must be at least a specific number of characters long.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "8"
+      }
+    }
   },
   "masterPassDoesntMatch": {
     "message": "Потврђена Главна Лозинка се не подудара."
@@ -5948,6 +5955,16 @@
   "revokeAccessToken": {
     "message": "Revoke access token"
   },
+  "revokeAccessTokens": {
+    "message": "Опозови приступ токена"
+  },
+  "revokeAccessTokenDesc": {
+    "message": "Опозив приступних токена је трајно и неповратно."
+  },
+  "accessTokenRevoked": {
+    "message": "Приступ токена опозван",
+    "description": "Toast message after deleting one or multiple access tokens."
+  },
   "submenu": {
     "message": "Под-мени"
   },
@@ -6035,6 +6052,135 @@
   "memberAccessAll": {
     "message": "Овај члан може приступити и изменити све ставке."
   },
+  "domainVerification": {
+    "message": "Верификација домена"
+  },
+  "newDomain": {
+    "message": "Нови домен"
+  },
+  "noDomains": {
+    "message": "Нема домена"
+  },
+  "noDomainsSubText": {
+    "message": "Повезивање домена омогућава члановима да прескоче SSO идентификацију при пријављивање са SSO."
+  },
+  "verifyDomain": {
+    "message": "Потврди домен"
+  },
+  "reverifyDomain": {
+    "message": "Поново верификујте домен"
+  },
+  "copyDnsTxtRecord": {
+    "message": "Копирати DNS TXT запис"
+  },
+  "dnsTxtRecord": {
+    "message": "DNS TXT запис"
+  },
+  "dnsTxtRecordInputHint": {
+    "message": "Копирајте и налепите TXT запис у DNS провајдер."
+  },
+  "domainNameInputHint": {
+    "message": "Пример: mydomain.com. Под-домени захтевају посебне уносе да би били верификовани."
+  },
+  "automaticDomainVerification": {
+    "message": "Аутоматска верификација домена"
+  },
+  "automaticDomainVerificationProcess": {
+    "message": "Bitwarden ће покушати да верификује домен 3 пута током прва 72 сата. Ако домен не може да се верификује, проверите DNS запис у вашен хосту и верификујте ручно. Домен ће бити уклоњен из ваше организације за 7 дана ако не буде верификован"
+  },
+  "invalidDomainNameMessage": {
+    "message": "Унос није важећи формат. Формат: mydomain.com. Под-домени захтевају посебне уносе за проверу."
+  },
+  "removeDomain": {
+    "message": "Уклони домен"
+  },
+  "removeDomainWarning": {
+    "message": "Уклањање домена се не може опозвати. Сигурно наставити?"
+  },
+  "domainRemoved": {
+    "message": "Домен уклоњен"
+  },
+  "domainSaved": {
+    "message": "Домен сачуван"
+  },
+  "domainVerified": {
+    "message": "Домен верификован"
+  },
+  "duplicateDomainError": {
+    "message": "Не можете два пута тражити исти домен."
+  },
+  "domainNotAvailable": {
+    "message": "Неко други користи $DOMAIN$. Користите други домен да бисте наставили.",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
+  },
+  "domainNotVerified": {
+    "message": "$DOMAIN$ није проверен. Проверите ваш DNS запис.",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
+  },
+  "domainStatusVerified": {
+    "message": "Проверено"
+  },
+  "domainStatusUnverified": {
+    "message": "Није потврђен"
+  },
+  "domainNameTh": {
+    "message": "Име"
+  },
+  "domainStatusTh": {
+    "message": "Статус"
+  },
+  "lastChecked": {
+    "message": "Последња провера"
+  },
+  "domainFormInvalid": {
+    "message": "Постоје грешке у формулару које захтевају вашу пажњу"
+  },
+  "addedDomain": {
+    "message": "Домен $DOMAIN$ додат",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
+  },
+  "removedDomain": {
+    "message": "Домен $DOMAIN$ уклоњен",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
+  },
+  "domainVerifiedEvent": {
+    "message": "$DOMAIN$ проверен",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
+  },
+  "domainNotVerifiedEvent": {
+    "message": "$DOMAIN$ није проверен",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
+  },
   "membersColumnHeader": {
     "message": "Member/Group"
   },
@@ -6109,6 +6255,9 @@
         "example": "2"
       }
     }
+  },
+  "server": {
+    "message": "Сервер"
   },
   "exportData": {
     "message": "Увези податке"
@@ -6214,6 +6363,25 @@
   },
   "userAccessSecretsManager": {
     "message": "Овај корисник може приступити Secrets Manager Beta"
+  },
+  "important": {
+    "message": "Important:"
+  },
+  "viewAll": {
+    "message": "Прегледај све"
+  },
+  "showingPortionOfTotal": {
+    "message": "Приказ $PORTION$ од $TOTAL$",
+    "placeholders": {
+      "portion": {
+        "content": "$1",
+        "example": "2"
+      },
+      "total": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
   },
   "resolveTheErrorsBelowAndTryAgain": {
     "message": "Поправите грешке испод и покушајте поново."

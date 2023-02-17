@@ -697,7 +697,14 @@
     "message": "A mesterjelszó ismételt megadása kötelező."
   },
   "masterPasswordMinlength": {
-    "message": "A mesterjelszónak legalább 8 karakter hosszúnak kell lennie."
+    "message": "Master password must be at least $VALUE$ characters long.",
+    "description": "The Master Password must be at least a specific number of characters long.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "8"
+      }
+    }
   },
   "masterPassDoesntMatch": {
     "message": "A megadott két jelszó nem egyezik meg."
@@ -5948,6 +5955,16 @@
   "revokeAccessToken": {
     "message": "Elérési vezérjel visszavonása"
   },
+  "revokeAccessTokens": {
+    "message": "Elérési vezérjelek visszavonása"
+  },
+  "revokeAccessTokenDesc": {
+    "message": "Az elérési vezérjelek visszavonása végleges és visszavonhatatlan."
+  },
+  "accessTokenRevoked": {
+    "message": "Az elérési vezérjel visszavonásra került.",
+    "description": "Toast message after deleting one or multiple access tokens."
+  },
   "submenu": {
     "message": "Almenü"
   },
@@ -6035,6 +6052,135 @@
   "memberAccessAll": {
     "message": "Ez a felhasználó minden elemhez hozzáférhet és módosíthatja az összes elemet."
   },
+  "domainVerification": {
+    "message": "Domain ellenőrzés"
+  },
+  "newDomain": {
+    "message": "Új domain"
+  },
+  "noDomains": {
+    "message": "Nincs domain."
+  },
+  "noDomainsSubText": {
+    "message": "A domain csatlakoztatása lehetővé teszi a tagoknak, hogy kihagyják az SSO azonosító mezőt az SSO-val bejelentkezés során."
+  },
+  "verifyDomain": {
+    "message": "Domain ellenőrzése"
+  },
+  "reverifyDomain": {
+    "message": "Domain ismételt ellenőrzése"
+  },
+  "copyDnsTxtRecord": {
+    "message": "DNS TXT rekord másolása"
+  },
+  "dnsTxtRecord": {
+    "message": "DNS TXT rekord"
+  },
+  "dnsTxtRecordInputHint": {
+    "message": "A TXT rekord másolása és bellesztése a DNS szolgáltatóba."
+  },
+  "domainNameInputHint": {
+    "message": "Példa: mydomain.com. Az aldomainekhez külön bejegyzések szükségesek az ellenőrzéshez."
+  },
+  "automaticDomainVerification": {
+    "message": "Automatikus domain ellenőrzés"
+  },
+  "automaticDomainVerificationProcess": {
+    "message": "A Bitwarden az első 72 óra során háromszor kísérli meg a domain ellenőrzését. Ha a domain nem ellenőrizhető, ellenőrizzük a DNS rekordot a kiszolgálón és ellenőrizzük azt  manuálisan. A domain 7 napon belül eltávolításra kerül, ha nem kerül ellenőrzésre."
+  },
+  "invalidDomainNameMessage": {
+    "message": "A bemeneti formátum nem érvényes. Formátum: mydomain.com. Az aldomainekhez külön bejegyzések szükségesek az ellenőrzéshez."
+  },
+  "removeDomain": {
+    "message": "Domain eltávolítása"
+  },
+  "removeDomainWarning": {
+    "message": "A domain eltávolítása nem vonható vissza. Biztosan folytatni szeretnénk?"
+  },
+  "domainRemoved": {
+    "message": "A domain eltávolításra került."
+  },
+  "domainSaved": {
+    "message": "A domain mentésre került."
+  },
+  "domainVerified": {
+    "message": "A domain ellenőrzésre került."
+  },
+  "duplicateDomainError": {
+    "message": "Nem igényelhető kétszer ugyanaz a domain."
+  },
+  "domainNotAvailable": {
+    "message": "Valaki más használja $DOMAIN$ domaint. A folytatáshoz használjunk másik domaint.",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
+  },
+  "domainNotVerified": {
+    "message": "$DOMAIN$ nincs ellenőrizve. Ellenőrizzük a DNS rekordot.",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
+  },
+  "domainStatusVerified": {
+    "message": "Ellenőrzött"
+  },
+  "domainStatusUnverified": {
+    "message": "Nem ellenőrzött"
+  },
+  "domainNameTh": {
+    "message": "Név"
+  },
+  "domainStatusTh": {
+    "message": "Állapot"
+  },
+  "lastChecked": {
+    "message": "Utoljára ellenőrizve"
+  },
+  "domainFormInvalid": {
+    "message": "Vannak űrlaphibák, amelyekre figyelmet kell fordítani."
+  },
+  "addedDomain": {
+    "message": "$DOMAIN$ domain hozzáadásra került.",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
+  },
+  "removedDomain": {
+    "message": "$DOMAIN$ domain eltávolításra került.",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
+  },
+  "domainVerifiedEvent": {
+    "message": "$DOMAIN$ ellenőrzésre került.",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
+  },
+  "domainNotVerifiedEvent": {
+    "message": "$DOMAIN$ nem lett ellenőrizve.",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
+  },
   "membersColumnHeader": {
     "message": "Tag/Csoport"
   },
@@ -6109,6 +6255,9 @@
         "example": "2"
       }
     }
+  },
+  "server": {
+    "message": "Szerver"
   },
   "exportData": {
     "message": "Adatok exportálása"
@@ -6214,6 +6363,25 @@
   },
   "userAccessSecretsManager": {
     "message": "Ez a felhasználó hozzáférhet a Titkos kód kezelő béta verziójához."
+  },
+  "important": {
+    "message": "Important:"
+  },
+  "viewAll": {
+    "message": "Összes megtekintése"
+  },
+  "showingPortionOfTotal": {
+    "message": "$PORTION$ / $TOTAL$ megjelenítése",
+    "placeholders": {
+      "portion": {
+        "content": "$1",
+        "example": "2"
+      },
+      "total": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
   },
   "resolveTheErrorsBelowAndTryAgain": {
     "message": "Az alábbi hibák feloldása és ismételt próbálkozás."

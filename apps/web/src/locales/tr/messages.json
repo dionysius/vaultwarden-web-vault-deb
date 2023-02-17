@@ -697,7 +697,14 @@
     "message": "Ana parolayı yeniden yazmalısınız."
   },
   "masterPasswordMinlength": {
-    "message": "Ana parola en az 8 karakter uzunluğunda olmalıdır."
+    "message": "Master password must be at least $VALUE$ characters long.",
+    "description": "The Master Password must be at least a specific number of characters long.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "8"
+      }
+    }
   },
   "masterPassDoesntMatch": {
     "message": "Ana parola onayı eşleşmiyor."
@@ -5948,6 +5955,16 @@
   "revokeAccessToken": {
     "message": "Erişim anahtarını İptal Et"
   },
+  "revokeAccessTokens": {
+    "message": "Erişim anahtarını iptal et"
+  },
+  "revokeAccessTokenDesc": {
+    "message": "Erişim belirteçlerini iptal etmek kalıcıdır ve geri alınamaz."
+  },
+  "accessTokenRevoked": {
+    "message": "Erişim belirteçleri iptal edildi",
+    "description": "Toast message after deleting one or multiple access tokens."
+  },
   "submenu": {
     "message": "Alt menü"
   },
@@ -6035,6 +6052,135 @@
   "memberAccessAll": {
     "message": "Bu kullanıcı tüm kayıtlara erişebilir ve kayıtları değiştirebilir."
   },
+  "domainVerification": {
+    "message": "Alan adı doğrulama"
+  },
+  "newDomain": {
+    "message": "Yeni alan adı"
+  },
+  "noDomains": {
+    "message": "Alan adı yok"
+  },
+  "noDomainsSubText": {
+    "message": "Bir alan adının bağlanması, üyelerin SSO ile Oturum Açma sırasında SSO tanımlayıcı alanını atlamalarına olanak tanır."
+  },
+  "verifyDomain": {
+    "message": "Alan adını doğrula"
+  },
+  "reverifyDomain": {
+    "message": "Alan adını yeniden doğrula"
+  },
+  "copyDnsTxtRecord": {
+    "message": "DNS TXT kaydını kopyala"
+  },
+  "dnsTxtRecord": {
+    "message": "DNS TXT kaydı"
+  },
+  "dnsTxtRecordInputHint": {
+    "message": "TXT kaydını kopyalayıp DNS sağlayıcınıza yapıştırın."
+  },
+  "domainNameInputHint": {
+    "message": "Örnek: mydomain.com. Alt alan adlarının doğrulanması için ayrı girişler gerekir."
+  },
+  "automaticDomainVerification": {
+    "message": "Otomatik Alan Doğrulaması"
+  },
+  "automaticDomainVerificationProcess": {
+    "message": "Bitwarden, ilk 72 saat içinde etki alanını 3 kez doğrulamaya çalışacak. Alan doğrulanamıyorsa barındırıcınızdaki DNS kaydını kontrol edin ve manuel olarak doğrulayın. Alan adı, doğrulanmamışsa kuruluşunuzdan 7 gün içinde kaldırılacaktır"
+  },
+  "invalidDomainNameMessage": {
+    "message": "Giriş geçerli bir format değil. Biçim: mydomain.com. Alt alan adlarının doğrulanması için ayrı girişler gerekir."
+  },
+  "removeDomain": {
+    "message": "Alan adını kaldır"
+  },
+  "removeDomainWarning": {
+    "message": "Alan adını kaldırma işlemi geri alınamaz. Devam etmek istediğinizden emin misiniz?"
+  },
+  "domainRemoved": {
+    "message": "Alan adı kaldırıldı"
+  },
+  "domainSaved": {
+    "message": "Alan adı kaydedildi"
+  },
+  "domainVerified": {
+    "message": "Alan adı doğrulandı"
+  },
+  "duplicateDomainError": {
+    "message": "Aynı etki alanını iki kez talep edemezsiniz."
+  },
+  "domainNotAvailable": {
+    "message": "Başka biri $DOMAIN$ kullanıyor. Devam etmek için farklı bir etki alanı kullanın.",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
+  },
+  "domainNotVerified": {
+    "message": "$DOMAIN$ doğrulanmadı. DNS kaydınızı kontrol edin.",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
+  },
+  "domainStatusVerified": {
+    "message": "Doğrulandı"
+  },
+  "domainStatusUnverified": {
+    "message": "Doğrulanmadı"
+  },
+  "domainNameTh": {
+    "message": "İsim"
+  },
+  "domainStatusTh": {
+    "message": "Durum"
+  },
+  "lastChecked": {
+    "message": "Son kontrol"
+  },
+  "domainFormInvalid": {
+    "message": "İlgilenmeniz gereken form hataları var"
+  },
+  "addedDomain": {
+    "message": "$DOMAIN$ alan adı eklendi",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
+  },
+  "removedDomain": {
+    "message": "$DOMAIN$ alan adı kaldırıldı",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
+  },
+  "domainVerifiedEvent": {
+    "message": "$DOMAIN$ doğrulandı",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
+  },
+  "domainNotVerifiedEvent": {
+    "message": "$DOMAIN$ doğrulanmadı",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
+  },
   "membersColumnHeader": {
     "message": "Üye/Grup"
   },
@@ -6109,6 +6255,9 @@
         "example": "2"
       }
     }
+  },
+  "server": {
+    "message": "Sunucu"
   },
   "exportData": {
     "message": "Verileri dışarı aktar"
@@ -6214,6 +6363,25 @@
   },
   "userAccessSecretsManager": {
     "message": "Bu kullanıcı Secrets Manager Beta'ya erişebilir"
+  },
+  "important": {
+    "message": "Important:"
+  },
+  "viewAll": {
+    "message": "Tümünü göster"
+  },
+  "showingPortionOfTotal": {
+    "message": "$PORTION$/$TOTAL$ gösteriliyor",
+    "placeholders": {
+      "portion": {
+        "content": "$1",
+        "example": "2"
+      },
+      "total": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
   },
   "resolveTheErrorsBelowAndTryAgain": {
     "message": "Aşağıdaki hataları düzeltip yeniden deneyin."

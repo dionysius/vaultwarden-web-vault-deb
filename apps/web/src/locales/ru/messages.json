@@ -697,7 +697,14 @@
     "message": "Необходимо повторно ввести мастер-пароль."
   },
   "masterPasswordMinlength": {
-    "message": "Мастер-пароль должен содержать не менее 8 символов."
+    "message": "Master password must be at least $VALUE$ characters long.",
+    "description": "The Master Password must be at least a specific number of characters long.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "8"
+      }
+    }
   },
   "masterPassDoesntMatch": {
     "message": "Мастер-пароли не совпадают."
@@ -5948,6 +5955,16 @@
   "revokeAccessToken": {
     "message": "Отозвать токен доступа"
   },
+  "revokeAccessTokens": {
+    "message": "Отозвать токены доступа"
+  },
+  "revokeAccessTokenDesc": {
+    "message": "Отзыв токенов доступа является окончательным и необратимым."
+  },
+  "accessTokenRevoked": {
+    "message": "Токены доступа отозваны",
+    "description": "Toast message after deleting one or multiple access tokens."
+  },
   "submenu": {
     "message": "Подменю"
   },
@@ -6035,6 +6052,135 @@
   "memberAccessAll": {
     "message": "Эта пользователь может иметь доступ и изменять все элементы."
   },
+  "domainVerification": {
+    "message": "Верификация домена"
+  },
+  "newDomain": {
+    "message": "Новый домен"
+  },
+  "noDomains": {
+    "message": "Нет доменов"
+  },
+  "noDomainsSubText": {
+    "message": "Подключение домена позволит пользователям пропускать поле идентификатора SSO при авторизации с помощью SSO."
+  },
+  "verifyDomain": {
+    "message": "Верифицировать домен"
+  },
+  "reverifyDomain": {
+    "message": "Повторно верифицировать домен"
+  },
+  "copyDnsTxtRecord": {
+    "message": "Скопировать запись DNS TXT"
+  },
+  "dnsTxtRecord": {
+    "message": "Запись DNS TXT"
+  },
+  "dnsTxtRecordInputHint": {
+    "message": "Скопируйте и вставьте TXT-запись к своему провайдеру DNS."
+  },
+  "domainNameInputHint": {
+    "message": "Пример: mydomain.com. Для верификации субдоменов необходимы отдельные записи."
+  },
+  "automaticDomainVerification": {
+    "message": "Автоматическая верификация домена"
+  },
+  "automaticDomainVerificationProcess": {
+    "message": "Bitwarden попытается верифицировать домен 3 раза в течение первых 72 часов. Если верифицировать домен не удастся, проверьте DNS-запись на вашем хосте и верифицируйте вручную. Домен будет удален из вашей организации через 7 дней, если он не будет верифицирован"
+  },
+  "invalidDomainNameMessage": {
+    "message": "Введенные данные не соответствуют формату. Формат: mydomain.com. Для верификации субдоменов необходимы отдельные записи."
+  },
+  "removeDomain": {
+    "message": "Удалить домен"
+  },
+  "removeDomainWarning": {
+    "message": "Удаление домена не может быть отменено. Вы уверены, что хотите продолжить?"
+  },
+  "domainRemoved": {
+    "message": "Домен удален"
+  },
+  "domainSaved": {
+    "message": "Домен сохранен"
+  },
+  "domainVerified": {
+    "message": "Домен верифицирован"
+  },
+  "duplicateDomainError": {
+    "message": "Вы не можете заявить один и тот же домен дважды."
+  },
+  "domainNotAvailable": {
+    "message": "Кто-то другой использует домен $DOMAIN$. Для продолжения используйте другой домен.",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
+  },
+  "domainNotVerified": {
+    "message": "$DOMAIN$ не верифицирован. Проверьте запись DNS.",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
+  },
+  "domainStatusVerified": {
+    "message": "Верифицирован"
+  },
+  "domainStatusUnverified": {
+    "message": "Неверифицирован"
+  },
+  "domainNameTh": {
+    "message": "Название"
+  },
+  "domainStatusTh": {
+    "message": "Статус"
+  },
+  "lastChecked": {
+    "message": "Последняя проверка"
+  },
+  "domainFormInvalid": {
+    "message": "Имеются ошибки в форме, которые требуют вашего внимания"
+  },
+  "addedDomain": {
+    "message": "Добавлен домен $DOMAIN$",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
+  },
+  "removedDomain": {
+    "message": "Удален домен $DOMAIN$",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
+  },
+  "domainVerifiedEvent": {
+    "message": "$DOMAIN$ верифицирован",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
+  },
+  "domainNotVerifiedEvent": {
+    "message": "$DOMAIN$ не верифицирован",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
+  },
   "membersColumnHeader": {
     "message": "Участник/Группа"
   },
@@ -6109,6 +6255,9 @@
         "example": "2"
       }
     }
+  },
+  "server": {
+    "message": "Сервер"
   },
   "exportData": {
     "message": "Экспорт данных"
@@ -6214,6 +6363,25 @@
   },
   "userAccessSecretsManager": {
     "message": "Этот пользователь может получить доступ к Менеджеру секретов Beta"
+  },
+  "important": {
+    "message": "Important:"
+  },
+  "viewAll": {
+    "message": "Посмотреть все"
+  },
+  "showingPortionOfTotal": {
+    "message": "Показаны $PORTION$ из $TOTAL$",
+    "placeholders": {
+      "portion": {
+        "content": "$1",
+        "example": "2"
+      },
+      "total": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
   },
   "resolveTheErrorsBelowAndTryAgain": {
     "message": "Устраните указанные ниже ошибки и повторите попытку."

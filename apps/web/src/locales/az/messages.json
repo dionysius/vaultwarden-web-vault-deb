@@ -697,7 +697,14 @@
     "message": "Ana parolun yenidən yazılması lazımdır."
   },
   "masterPasswordMinlength": {
-    "message": "Ana parol ən azı 8 simvol uzunluğunda olmalıdır."
+    "message": "Master password must be at least $VALUE$ characters long.",
+    "description": "The Master Password must be at least a specific number of characters long.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "8"
+      }
+    }
   },
   "masterPassDoesntMatch": {
     "message": "Ana parol təsdiqləməsi uyğun gəlmir."
@@ -5948,6 +5955,16 @@
   "revokeAccessToken": {
     "message": "Müraciət tokenini ləğv et"
   },
+  "revokeAccessTokens": {
+    "message": "Müraciət tokenlərini ləğv et"
+  },
+  "revokeAccessTokenDesc": {
+    "message": "Müraciət tokenlərinin ləğv edilməsi daimi və geri qaytarıla bilməyən prosesdir."
+  },
+  "accessTokenRevoked": {
+    "message": "Müraciət tokenləri ləğv edildi",
+    "description": "Toast message after deleting one or multiple access tokens."
+  },
   "submenu": {
     "message": "Alt menyu"
   },
@@ -6035,6 +6052,135 @@
   "memberAccessAll": {
     "message": "Bu üzv, bütün elementlərə müraciət edə və onları dəyişdirə bilər."
   },
+  "domainVerification": {
+    "message": "Domen təsdiqləməsi"
+  },
+  "newDomain": {
+    "message": "Yeni domen"
+  },
+  "noDomains": {
+    "message": "Domen yoxdur"
+  },
+  "noDomainsSubText": {
+    "message": "Bir domenin bağlantı qurması, üzvlərin SSO ilə Giriş etməsi əsnasında SSO identifikatorunu ötürməsinə icazə verir."
+  },
+  "verifyDomain": {
+    "message": "Domeni təsdiqlə"
+  },
+  "reverifyDomain": {
+    "message": "Domeni yenidən təsdiqlə"
+  },
+  "copyDnsTxtRecord": {
+    "message": "DNS TXT qeydini kopyala"
+  },
+  "dnsTxtRecord": {
+    "message": "DNS TXT qeydi"
+  },
+  "dnsTxtRecordInputHint": {
+    "message": "TXT qeydini DNS Provayderinizə kopyalayıb yapışdırın."
+  },
+  "domainNameInputHint": {
+    "message": "Nümunə: mydomain.com. Alt domenlərin təsdiqlənməsi üçün ayrıca girişlər tələb olunur."
+  },
+  "automaticDomainVerification": {
+    "message": "Avtomatik Domen Təsdiqləməsi"
+  },
+  "automaticDomainVerificationProcess": {
+    "message": "Bitwarden, ilk 72 saat ərzində domeni 3 dəfə təsdiqləməyə çalışacaq. Əgər domen təsdiqlənə bilməsə, \"host\"unuzdakı DNS qeydini yoxlayıb əllə təsdiqləyin. Domen təsdiqlənməsə, 7 gün ərzində təşkilatınızdan silinəcək"
+  },
+  "invalidDomainNameMessage": {
+    "message": "Giriş, yararlı bir format deyil. Format: mydomain.com. Alt domenlərin təsdiqlənməsi üçün ayrıca girişlər tələb olunur."
+  },
+  "removeDomain": {
+    "message": "Domeni sil"
+  },
+  "removeDomainWarning": {
+    "message": "Domenin silinməsi, geri qaytarıla bilməyən prosesdir. Davam etmək istədiyinizə əminsiniz?"
+  },
+  "domainRemoved": {
+    "message": "Domen silindi"
+  },
+  "domainSaved": {
+    "message": "Domen saxlanıldı"
+  },
+  "domainVerified": {
+    "message": "Domen təsdiqləndi"
+  },
+  "duplicateDomainError": {
+    "message": "Eyni domeni iki dəfə tələb edə bilməzsiniz."
+  },
+  "domainNotAvailable": {
+    "message": "Kimsə $DOMAIN$ domenini istifadə edir. Davam etmək üçün fərqli bir domen istifadə edin.",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
+  },
+  "domainNotVerified": {
+    "message": "$DOMAIN$ təsdiqlənmədi. DNS qeydinizi yoxlayın.",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
+  },
+  "domainStatusVerified": {
+    "message": "Təsdiqləndi"
+  },
+  "domainStatusUnverified": {
+    "message": "Təsdiqlənmədi"
+  },
+  "domainNameTh": {
+    "message": "Ad"
+  },
+  "domainStatusTh": {
+    "message": "Vəziyyət"
+  },
+  "lastChecked": {
+    "message": "Son yoxlama"
+  },
+  "domainFormInvalid": {
+    "message": "Diqqətinizi tələb edən form xətaları var"
+  },
+  "addedDomain": {
+    "message": "$DOMAIN$ domeni əlavə edildi",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
+  },
+  "removedDomain": {
+    "message": "$DOMAIN$ domeni silindi",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
+  },
+  "domainVerifiedEvent": {
+    "message": "$DOMAIN$ təsdiqləndi",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
+  },
+  "domainNotVerifiedEvent": {
+    "message": "$DOMAIN$ təsdiqlənmədi",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
+  },
   "membersColumnHeader": {
     "message": "Üzv/Qrup"
   },
@@ -6109,6 +6255,9 @@
         "example": "2"
       }
     }
+  },
+  "server": {
+    "message": "Server"
   },
   "exportData": {
     "message": "Məlumatı xaricə köçür"
@@ -6214,6 +6363,25 @@
   },
   "userAccessSecretsManager": {
     "message": "Bu istifadəçi \"Secrets Manager Beta\"ya müraciət edə bilər"
+  },
+  "important": {
+    "message": "Important:"
+  },
+  "viewAll": {
+    "message": "Hamısına bax"
+  },
+  "showingPortionOfTotal": {
+    "message": "$PORTION$/$TOTAL$ göstərilir",
+    "placeholders": {
+      "portion": {
+        "content": "$1",
+        "example": "2"
+      },
+      "total": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
   },
   "resolveTheErrorsBelowAndTryAgain": {
     "message": "Aşağıdakı xətaları həll edin və yenidən sınayın."

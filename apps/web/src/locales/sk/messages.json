@@ -697,7 +697,14 @@
     "message": "Vyžaduje sa opätovné zadanie hlavného hesla."
   },
   "masterPasswordMinlength": {
-    "message": "Hlavné heslo musí mať aspoň 8 znakov."
+    "message": "Master password must be at least $VALUE$ characters long.",
+    "description": "The Master Password must be at least a specific number of characters long.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "8"
+      }
+    }
   },
   "masterPassDoesntMatch": {
     "message": "Potvrdenie hlavného hesla sa nezhoduje."
@@ -5948,6 +5955,16 @@
   "revokeAccessToken": {
     "message": "Revoke access token"
   },
+  "revokeAccessTokens": {
+    "message": "Zrušiť prístupové tokeny"
+  },
+  "revokeAccessTokenDesc": {
+    "message": "Zrušenie prístupových tokenov je nenávratné."
+  },
+  "accessTokenRevoked": {
+    "message": "Prístupové tokeny boli zrušené",
+    "description": "Toast message after deleting one or multiple access tokens."
+  },
   "submenu": {
     "message": "Submenu"
   },
@@ -6035,6 +6052,135 @@
   "memberAccessAll": {
     "message": "Tento člen môže upravovať a pristupovať k všetkým položkám."
   },
+  "domainVerification": {
+    "message": "Overenie domény"
+  },
+  "newDomain": {
+    "message": "Nová doména"
+  },
+  "noDomains": {
+    "message": "Žiadne domény"
+  },
+  "noDomainsSubText": {
+    "message": "Pripojenie domény umožňuje členom preskočiť počas prihlasovania sa prostredníctvom SSO pole identifikátora SSO."
+  },
+  "verifyDomain": {
+    "message": "Overiť doménu"
+  },
+  "reverifyDomain": {
+    "message": "Opätovne overiť doménu"
+  },
+  "copyDnsTxtRecord": {
+    "message": "Kopírovať DNS TXT záznam"
+  },
+  "dnsTxtRecord": {
+    "message": "DNS TXT záznam"
+  },
+  "dnsTxtRecordInputHint": {
+    "message": "Kopírujte TXT záznam k vášmu poskytovateľovi DNS."
+  },
+  "domainNameInputHint": {
+    "message": "Príklad: mydomain.com. Pre overenie subdomén musia byť tieto každá zadaná individuálne."
+  },
+  "automaticDomainVerification": {
+    "message": "Automatické Overenie Domény"
+  },
+  "automaticDomainVerificationProcess": {
+    "message": "Bitwarden sa pokúsi overiť doménu 3 krát počas prvých 72 hodín. Ak sa doménu nepodarilo overiť, skontrolujte DNS záznam u svojho hostiteľa a overte manuálne. Doména bude z organizácie odstránená po 7 dňoch ak nie je overená"
+  },
+  "invalidDomainNameMessage": {
+    "message": "Zadaný neplatný formát. Formát: mydomain.com. Pre overenie subdomén musia byť tieto každá zadaná individuálne."
+  },
+  "removeDomain": {
+    "message": "Odstrániť doménu"
+  },
+  "removeDomainWarning": {
+    "message": "Odstranenie domény nejde vrátiť späť. Naozaj chcete pokračovať?"
+  },
+  "domainRemoved": {
+    "message": "Doména odstránená"
+  },
+  "domainSaved": {
+    "message": "Doména uložená"
+  },
+  "domainVerified": {
+    "message": "Doména overená"
+  },
+  "duplicateDomainError": {
+    "message": "Nemôžete si privlastniť tú istú doménu dva krát."
+  },
+  "domainNotAvailable": {
+    "message": "Niekto iný používa doménu $DOMAIN$. Ak chcete pokračovať, použite inú doménu.",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
+  },
+  "domainNotVerified": {
+    "message": "$DOMAIN$ nie je overená. Overte si DNS záznam.",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
+  },
+  "domainStatusVerified": {
+    "message": "Overená"
+  },
+  "domainStatusUnverified": {
+    "message": "Neoverená"
+  },
+  "domainNameTh": {
+    "message": "Názov"
+  },
+  "domainStatusTh": {
+    "message": "Stav"
+  },
+  "lastChecked": {
+    "message": "Posledná kontrola"
+  },
+  "domainFormInvalid": {
+    "message": "Vo formulári sú chyby, ktoré vyžadujú vašu pozornosť"
+  },
+  "addedDomain": {
+    "message": "Pridaná doména $DOMAIN$",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
+  },
+  "removedDomain": {
+    "message": "Odstránená doména $DOMAIN$",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
+  },
+  "domainVerifiedEvent": {
+    "message": "$DOMAIN$ overená",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
+  },
+  "domainNotVerifiedEvent": {
+    "message": "$DOMAIN$ neoverená",
+    "placeholders": {
+      "DOMAIN": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
+  },
   "membersColumnHeader": {
     "message": "Člen/Skupina"
   },
@@ -6109,6 +6255,9 @@
         "example": "2"
       }
     }
+  },
+  "server": {
+    "message": "Server"
   },
   "exportData": {
     "message": "Exportovať dáta"
@@ -6214,6 +6363,25 @@
   },
   "userAccessSecretsManager": {
     "message": "Tento používateľ má prístup k beta verzii Secrets Manager"
+  },
+  "important": {
+    "message": "Important:"
+  },
+  "viewAll": {
+    "message": "Zobraziť všetko"
+  },
+  "showingPortionOfTotal": {
+    "message": "Zobrazuje sa $PORTION$ z $TOTAL$",
+    "placeholders": {
+      "portion": {
+        "content": "$1",
+        "example": "2"
+      },
+      "total": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
   },
   "resolveTheErrorsBelowAndTryAgain": {
     "message": "Vyriešte problémy nižšie a skúste to znova."
