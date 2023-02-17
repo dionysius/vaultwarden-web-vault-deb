@@ -542,7 +542,14 @@
     "message": "Kailangan ang master password retype."
   },
   "masterPasswordMinlength": {
-    "message": "Ang master password ay dapat hindi bababa sa 8 na mga character."
+    "message": "Master password must be at least $VALUE$ characters long.",
+    "description": "The Master Password must be at least a specific number of characters long.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "8"
+      }
+    }
   },
   "masterPassDoesntMatch": {
     "message": "Hindi tugma ang kumpirmasyon ng master password."

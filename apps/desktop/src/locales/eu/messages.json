@@ -542,7 +542,14 @@
     "message": "Pasahitz nagusia berridaztea derrigorrezkoa da."
   },
   "masterPasswordMinlength": {
-    "message": "Pasahitz nagusiak gutxienez 8 karaktere izan behar ditu."
+    "message": "Master password must be at least $VALUE$ characters long.",
+    "description": "The Master Password must be at least a specific number of characters long.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "8"
+      }
+    }
   },
   "masterPassDoesntMatch": {
     "message": "Pasahitz nagusiaren egiaztatzea ez dator bat."
