@@ -8,7 +8,7 @@ import { OrganizationPermissionsGuard } from "@bitwarden/web-vault/app/organizat
 import { OrganizationLayoutComponent } from "@bitwarden/web-vault/app/organizations/layouts/organization-layout.component";
 import { SettingsComponent } from "@bitwarden/web-vault/app/organizations/settings/settings.component";
 
-import { SsoComponent } from "../auth/sso.component";
+import { SsoComponent } from "../auth/sso/sso.component";
 
 import { DomainVerificationComponent } from "./manage/domain-verification/domain-verification.component";
 import { ScimComponent } from "./manage/scim.component";

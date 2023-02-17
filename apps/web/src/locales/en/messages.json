@@ -6146,6 +6146,9 @@
   "lastChecked": {
     "message": "Last checked"
   },
+  "editDomain": {
+    "message": "Edit domain"
+  },
   "domainFormInvalid": {
     "message": "There are form errors that need your attention"
   },
@@ -6395,5 +6398,8 @@
   },
   "errorReadingImportFile": {
     "message": "An error occurred when trying to read the import file"
+  },
+  "selectionIsRequired": {
+    "message": "Selection is required."
   }
 }

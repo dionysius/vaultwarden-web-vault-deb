@@ -30,14 +30,14 @@
   <ng-container>
     <app-input-checkbox
       controlId="enabled"
-      [formControl]="enabled"
+      formControlName="enabled"
       [label]="'allowSso' | i18n"
       [helperText]="'allowSsoDesc' | i18n"
     ></app-input-checkbox>
 
     <bit-form-field>
       <bit-label>{{ "ssoIdentifier" | i18n }}</bit-label>
-      <input bitInput type="text" [formControl]="ssoIdentifier" />
+      <input bitInput type="text" formControlName="ssoIdentifier" />
       <bit-hint>{{ "ssoIdentifierHint" | i18n }}</bit-hint>
     </bit-form-field>
 

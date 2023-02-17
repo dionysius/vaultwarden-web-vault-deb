@@ -2,7 +2,7 @@ import { NgModule } from "@angular/core";
 
 import { SharedModule } from "@bitwarden/web-vault/app/shared/shared.module";
 
-import { SsoComponent } from "../auth/sso.component";
+import { SsoComponent } from "../auth/sso/sso.component";
 
 import { InputCheckboxComponent } from "./components/input-checkbox.component";
 import { DomainAddEditDialogComponent } from "./manage/domain-verification/domain-add-edit-dialog/domain-add-edit-dialog.component";

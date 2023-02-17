@@ -30,9 +30,15 @@
         <ng-template body>
           <tr bitRow *ngFor="let orgDomain of orgDomains; index as i">
             <td bitCell>
-              <a bitLink href appStopClick linkType="primary" (click)="editDomain(orgDomain)">{{
-                orgDomain.domainName
-              }}</a>
+              <button
+                bitLink
+                type="button"
+                linkType="primary"
+                (click)="editDomain(orgDomain)"
+                appA11yTitle="{{ 'editDomain' | i18n }}"
+              >
+                {{ orgDomain.domainName }}
+              </button>
             </td>
             <td bitCell>
               <span *ngIf="!orgDomain?.verifiedDate" bitBadge badgeType="warning">{{
