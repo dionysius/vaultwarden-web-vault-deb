@@ -44,4 +44,5 @@ export abstract class PlatformUtilsService {
   supportsBiometric: () => Promise<boolean>;
   authenticateBiometric: () => Promise<boolean>;
   supportsSecureStorage: () => boolean;
+  getAutofillKeyboardShortcut: () => Promise<string>;
 }

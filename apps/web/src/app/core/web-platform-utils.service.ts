@@ -262,4 +262,8 @@ export class WebPlatformUtilsService implements PlatformUtilsService {
   supportsSecureStorage() {
     return false;
   }
+
+  getAutofillKeyboardShortcut(): Promise<string> {
+    return null;
+  }
 }

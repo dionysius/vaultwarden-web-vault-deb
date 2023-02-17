@@ -354,6 +354,7 @@
   &.box-content-row-flex,
   .box-content-row-flex,
   &.box-content-row-checkbox,
+  &.box-content-row-link,
   &.box-content-row-input,
   &.box-content-row-slider,
   &.box-content-row-multi {
@@ -398,6 +399,7 @@
   }
 
   &.box-content-row-checkbox,
+  &.box-content-row-link,
   &.box-content-row-input,
   &.box-content-row-slider {
     padding-top: 10px;

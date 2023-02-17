@@ -42,8 +42,8 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
   loaded = false;
   isLoading = false;
   showOrganizations = false;
-  showTryAutofillOnPageLoad = false;
-  showSelectAutofillCallout = false;
+  showHowToAutofill = false;
+  autofillCalloutText: string;
   protected search$ = new Subject<void>();
   private destroy$ = new Subject<void>();
 
@@ -103,10 +103,12 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
 
     if (!this.syncService.syncInProgress) {
       await this.load();
+      await this.setCallout();
     } else {
       this.loadedTimeout = window.setTimeout(async () => {
         if (!this.isLoading) {
           await this.load();
+          await this.setCallout();
         }
       }, 5000);
     }
@@ -114,11 +116,6 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
     this.search$
       .pipe(debounceTime(500), takeUntil(this.destroy$))
       .subscribe(() => this.searchVault());
-
-    this.showTryAutofillOnPageLoad =
-      this.loginCiphers.length > 0 &&
-      !(await this.stateService.getEnableAutoFillOnPageLoad()) &&
-      !(await this.stateService.getDismissedAutofillCallout());
   }
 
   ngOnDestroy() {
@@ -274,17 +271,32 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
     this.isLoading = this.loaded = true;
   }
 
-  async setAutofillOnPageLoad() {
-    await this.stateService.setEnableAutoFillOnPageLoad(true);
-    this.platformUtilsService.showToast("success", null, this.i18nService.t("autofillTurnedOn"));
-    await this.fillCipher(this.loginCiphers[0], 3000);
-    await this.stateService.setDismissedAutofillCallout(true);
-    this.showTryAutofillOnPageLoad = false;
+  async goToSettings() {
+    this.router.navigate(["autofill"]);
   }
 
-  async notNow() {
+  async dismissCallout() {
     await this.stateService.setDismissedAutofillCallout(true);
-    this.showTryAutofillOnPageLoad = false;
-    this.showSelectAutofillCallout = true;
+    this.showHowToAutofill = false;
+  }
+
+  private async setCallout() {
+    this.showHowToAutofill =
+      this.loginCiphers.length > 0 &&
+      !(await this.stateService.getEnableAutoFillOnPageLoad()) &&
+      !(await this.stateService.getDismissedAutofillCallout());
+
+    if (this.showHowToAutofill) {
+      const autofillCommand = await this.platformUtilsService.getAutofillKeyboardShortcut();
+      await this.setAutofillCalloutText(autofillCommand);
+    }
+  }
+
+  private setAutofillCalloutText(command: string) {
+    if (command) {
+      this.autofillCalloutText = this.i18nService.t("autofillSelectInfo", command);
+    } else {
+      this.autofillCalloutText = this.i18nService.t("autofillSelectInfoNoCommand");
+    }
   }
 }

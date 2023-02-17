@@ -377,4 +377,31 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
   supportsSecureStorage(): boolean {
     return false;
   }
+
+  async getAutofillKeyboardShortcut(): Promise<string> {
+    let autofillCommand: string;
+    // You can not change the command in Safari or obtain it programmatically
+    if (this.isSafari()) {
+      autofillCommand = "Cmd+Shift+L";
+    } else if (this.isFirefox()) {
+      autofillCommand = (await browser.commands.getAll()).find(
+        (c) => c.name === "autofill_login"
+      ).shortcut;
+      // Firefox is returing Ctrl instead of Cmd for the modifier key on macOS if
+      // the command is the default one set on installation.
+      if (
+        (await browser.runtime.getPlatformInfo()).os === "mac" &&
+        autofillCommand === "Ctrl+Shift+L"
+      ) {
+        autofillCommand = "Cmd+Shift+L";
+      }
+    } else {
+      await new Promise((resolve) =>
+        chrome.commands.getAll((c) =>
+          resolve((autofillCommand = c.find((c) => c.name === "autofill_login").shortcut))
+        )
+      );
+    }
+    return autofillCommand;
+  }
 }

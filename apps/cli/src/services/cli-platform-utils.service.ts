@@ -150,4 +150,8 @@ export class CliPlatformUtilsService implements PlatformUtilsService {
   supportsSecureStorage(): boolean {
     return false;
   }
+
+  getAutofillKeyboardShortcut(): Promise<string> {
+    return null;
+  }
 }
