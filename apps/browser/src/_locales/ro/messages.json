@@ -430,7 +430,14 @@
     "message": "Este necesară rescrierea parolei principale."
   },
   "masterPasswordMinlength": {
-    "message": "Parola principală trebuie să aibă cel puțin 8 caractere."
+    "message": "Master password must be at least $VALUE$ characters long.",
+    "description": "The Master Password must be at least a specific number of characters long.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "8"
+      }
+    }
   },
   "masterPassDoesntMatch": {
     "message": "Parola principală și confirmarea ei nu coincid!"

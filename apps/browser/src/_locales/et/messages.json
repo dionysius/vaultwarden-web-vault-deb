@@ -430,7 +430,14 @@
     "message": "Vajalik on ülemparooli uuesti sisestamine."
   },
   "masterPasswordMinlength": {
-    "message": "Ülemparool peab olema vähemalt 8 tähemärgi pikkune."
+    "message": "Master password must be at least $VALUE$ characters long.",
+    "description": "The Master Password must be at least a specific number of characters long.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "8"
+      }
+    }
   },
   "masterPassDoesntMatch": {
     "message": "Ülemparoolid ei ühti."
@@ -960,10 +967,10 @@
     "message": "Sisselogimise vormi tuvastamisel sisestatakse sinna kontoandmed automaatselt."
   },
   "experimentalFeature": {
-    "message": "Compromised or untrusted websites can exploit auto-fill on page load."
+    "message": "Häkitud või ebausaldusväärsed veebilehed võivad lehe laadimisel automaatset sisestamist kuritarvitada."
   },
   "learnMoreAboutAutofill": {
-    "message": "Learn more about auto-fill"
+    "message": "Rohkem infot automaattäite kohta"
   },
   "defaultAutoFillOnPageLoad": {
     "message": "Vaikevalik kontoandmete täitmiseks"
@@ -2075,28 +2082,28 @@
     "message": "Sisselogimine on käivitatud"
   },
   "exposedMasterPassword": {
-    "message": "Exposed Master Password"
+    "message": "Ülemparool on haavatav"
   },
   "exposedMasterPasswordDesc": {
-    "message": "Password found in a data breach. Use a unique password to protect your account. Are you sure you want to use an exposed password?"
+    "message": "Ülemparool on varasemalt lekkinud. Kasuta konto kaitsmiseks unikaalset parooli. Oled kindel, et soovid kasutada varem lekkinud parooli?"
   },
   "weakAndExposedMasterPassword": {
-    "message": "Weak and Exposed Master Password"
+    "message": "Nõrk ja haavatav ülemparool"
   },
   "weakAndBreachedMasterPasswordDesc": {
-    "message": "Weak password identified and found in a data breach. Use a strong and unique password to protect your account. Are you sure you want to use this password?"
+    "message": "Tuvastati nõrk ning andmelekkes lekkinud ülemparool. Kasuta konto paremaks turvamiseks tugevamat parooli. Oled kindel, et soovid nõrga parooliga jätkata?"
   },
   "checkForBreaches": {
-    "message": "Check known data breaches for this password"
+    "message": "Otsi seda parooli teadaolevatest andmeleketest"
   },
   "important": {
-    "message": "Important:"
+    "message": "Tähtis:"
   },
   "masterPasswordHint": {
-    "message": "Your master password cannot be recovered if you forget it!"
+    "message": "Ülemparooli ei saa taastada, kui sa selle unustama peaksid!"
   },
   "characterMinimum": {
-    "message": "$LENGTH$ character minimum",
+    "message": "Minimaalselt $LENGTH$ tähemärki",
     "placeholders": {
       "length": {
         "content": "$1",
@@ -2105,24 +2112,24 @@
     }
   },
   "tryAutofillPageLoad": {
-    "message": "Try auto-fill on page load?"
+    "message": "Proovi automaatset täitmist lehe laadimisel?"
   },
   "tryAutofill": {
-    "message": "How to auto-fill"
+    "message": "Kuidas automaatselt täita"
   },
   "autofillPageLoadInfo": {
-    "message": "Login forms will automatically fill in matching credentials if you turn on auto-fill on page load."
+    "message": "Automaatse täitmise sisselülitamiselt sisestatakse kontoandmete lahtritesse automaatselt sobivad kirjed."
   },
   "autofillSelectInfo": {
     "message": "Select an item from this page to auto-fill the active tab's form."
   },
   "autofillTurnedOn": {
-    "message": "Auto-fill on page load turned on"
+    "message": "Automaatne täitmine on sisselülitatud"
   },
   "turnOn": {
-    "message": "Turn on"
+    "message": "Lülita sisse"
   },
   "notNow": {
-    "message": "Not now"
+    "message": "Mitte praegu"
   }
 }

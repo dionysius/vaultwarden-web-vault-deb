@@ -348,7 +348,7 @@
     "message": "ताला खोलें"
   },
   "loggedInAsOn": {
-    "message": "पर के रूप में लॉग इन किया ।",
+    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -430,7 +430,14 @@
     "message": "मास्टर पासवर्ड पुनः डालने की आवश्यकता है।"
   },
   "masterPasswordMinlength": {
-    "message": "मास्टर पासवर्ड कम से कम 8 वर्ण लंबा होना चाहिए।"
+    "message": "Master password must be at least $VALUE$ characters long.",
+    "description": "The Master Password must be at least a specific number of characters long.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "8"
+      }
+    }
   },
   "masterPassDoesntMatch": {
     "message": "मास्टर पासवर्ड पुष्टि मेल नहीं खाती है।"
@@ -448,7 +455,7 @@
     "message": "सत्यापन कोड अवैध है"
   },
   "valueCopied": {
-    "message": " copied",
+    "message": "$VALUE$ copied",
     "description": "Value has been copied to the clipboard.",
     "placeholders": {
       "value": {
@@ -798,7 +805,7 @@
     "message": "Thank you for supporting bitwarden."
   },
   "premiumPrice": {
-    "message": "All for just %price% /year!",
+    "message": "All for just $PRICE$ /year!",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -828,7 +835,7 @@
     "message": "अपने ऑथेंटिकेटर ऐप से 6 डिजिट वेरिफिकेशन कोड डालें।"
   },
   "enterVerificationCodeEmail": {
-    "message": "Enter the 6 digit verification code that was emailed to",
+    "message": "Enter the 6 digit verification code that was emailed to $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -1242,7 +1249,7 @@
     "message": "चेक करें कि पासवर्ड सामने आ गया है या नहीं।"
   },
   "passwordExposed": {
-    "message": "This password has been exposed in data breaches. You should change it.",
+    "message": "This password has been exposed $VALUE$ time(s) in data breaches. You should change it.",
     "placeholders": {
       "value": {
         "content": "$1",
@@ -1581,7 +1588,7 @@
     "message": "बिटवर्डन इन डोमेन के लिए लॉगिन विवरण सहेजने के लिए नहीं कहेगा।परिवर्तनों को प्रभावी बनाने के लिए आपको पृष्ठ को ताज़ा करना होगा |"
   },
   "excludedDomainsInvalidDomain": {
-    "message": "$DOMAIN $ एक वैध डोमेन नहीं है",
+    "message": "$DOMAIN$ is not a valid domain",
     "placeholders": {
       "domain": {
         "content": "$1",
@@ -1692,7 +1699,7 @@
     "message": "1 दिन"
   },
   "days": {
-    "message": "#DAYS# दिन",
+    "message": "$DAYS$ days",
     "placeholders": {
       "days": {
         "content": "$1",

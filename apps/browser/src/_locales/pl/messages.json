@@ -430,7 +430,14 @@
     "message": "Wymagane jest ponowne wpisanie hasła głównego."
   },
   "masterPasswordMinlength": {
-    "message": "Hasło główne musi zawierać co najmniej 8 znaków."
+    "message": "Hasło główne musi zawierać co najmniej $VALUE$ znaki(-ów).",
+    "description": "The Master Password must be at least a specific number of characters long.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "8"
+      }
+    }
   },
   "masterPassDoesntMatch": {
     "message": "Hasła nie pasują do siebie."

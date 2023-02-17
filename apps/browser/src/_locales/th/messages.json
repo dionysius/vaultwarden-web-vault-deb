@@ -430,7 +430,14 @@
     "message": "ต้องพิมพ์รหัสผ่านหลักอีกครั้ง"
   },
   "masterPasswordMinlength": {
-    "message": "รหัสผ่านหลักต้องมีความยาวอย่างน้อย 8 ตัวอักษร"
+    "message": "Master password must be at least $VALUE$ characters long.",
+    "description": "The Master Password must be at least a specific number of characters long.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "8"
+      }
+    }
   },
   "masterPassDoesntMatch": {
     "message": "การยืนยันรหัสผ่านหลักไม่ตรงกัน"
@@ -448,7 +455,7 @@
     "message": "โค้ดยืนยันไม่ถูกต้อง"
   },
   "valueCopied": {
-    "message": " copied",
+    "message": "$VALUE$ copied",
     "description": "Value has been copied to the clipboard.",
     "placeholders": {
       "value": {
@@ -798,7 +805,7 @@
     "message": "Thank you for supporting bitwarden."
   },
   "premiumPrice": {
-    "message": "All for just %price% /year!",
+    "message": "All for just $PRICE$ /year!",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -828,7 +835,7 @@
     "message": "Enter the 6 digit verification code from your authenticator app."
   },
   "enterVerificationCodeEmail": {
-    "message": "Enter the 6 digit verification code that was emailed to",
+    "message": "Enter the 6 digit verification code that was emailed to $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -1242,7 +1249,7 @@
     "message": "ตรวจสอบว่ารหัสผ่านถูกเปิดเผยหรือไม่"
   },
   "passwordExposed": {
-    "message": "This password has been exposed in data breaches. You should change it.",
+    "message": "This password has been exposed $VALUE$ time(s) in data breaches. You should change it.",
     "placeholders": {
       "value": {
         "content": "$1",

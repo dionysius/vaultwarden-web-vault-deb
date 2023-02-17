@@ -430,7 +430,14 @@
     "message": "مطلوب إعادة كتابة كلمة المرور الرئيسية."
   },
   "masterPasswordMinlength": {
-    "message": "يجب أن يكون طول كلمة المرور الرئيسية 8 أحرف على الأقل."
+    "message": "Master password must be at least $VALUE$ characters long.",
+    "description": "The Master Password must be at least a specific number of characters long.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "8"
+      }
+    }
   },
   "masterPassDoesntMatch": {
     "message": "لا يتطابق تأكيد كلمة المرور مع كلمة المرور."

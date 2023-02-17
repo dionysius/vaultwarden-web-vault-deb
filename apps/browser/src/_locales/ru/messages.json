@@ -309,7 +309,7 @@
     "message": "Папка"
   },
   "deleteItem": {
-    "message": "Удаление элемента"
+    "message": "Удалить элемент"
   },
   "viewItem": {
     "message": "Просмотр элемента"
@@ -430,7 +430,14 @@
     "message": "Необходимо повторно ввести мастер-пароль."
   },
   "masterPasswordMinlength": {
-    "message": "Мастер-пароль должен содержать не менее 8 символов."
+    "message": "Master password must be at least $VALUE$ characters long.",
+    "description": "The Master Password must be at least a specific number of characters long.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "8"
+      }
+    }
   },
   "masterPassDoesntMatch": {
     "message": "Мастер-пароли не совпадают."

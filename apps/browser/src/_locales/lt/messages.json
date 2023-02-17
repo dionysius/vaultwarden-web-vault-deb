@@ -430,7 +430,14 @@
     "message": "Būtinas prisijungimo slaptažodžio patvirtinimas."
   },
   "masterPasswordMinlength": {
-    "message": "Pagrindinis slaptažodis turi būti bent 8 simbolių ilgio."
+    "message": "Master password must be at least $VALUE$ characters long.",
+    "description": "The Master Password must be at least a specific number of characters long.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "8"
+      }
+    }
   },
   "masterPassDoesntMatch": {
     "message": "Pagrindinio slaptažodžio patvirtinimas nesutampa."
