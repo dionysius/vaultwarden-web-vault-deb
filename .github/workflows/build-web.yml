@@ -132,122 +132,9 @@ jobs:
           path: apps/web/web-${{ env._VERSION }}-${{ matrix.name }}.zip
           if-no-files-found: error
 
-  build-commercial-selfhost-image:
-    name: Build self-host docker image
-    runs-on: ubuntu-22.04
-    needs:
-      - setup
-      - build-artifacts
-    env:
-      _VERSION: ${{ needs.setup.outputs.version }}
-
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b  # v3.0.2
-
-      - name: Setup DCT
-        if: github.ref == 'refs/heads/master' ||
-          github.ref == 'refs/heads/rc' ||
-          github.ref == 'refs/heads/hotfix-rc-web'
-        id: setup-dct
-        uses: bitwarden/gh-actions/setup-docker-trust@a8c384a05a974c05c48374c818b004be221d43ff
-        with:
-          azure-creds: ${{ secrets.AZURE_PROD_KV_CREDENTIALS }}
-          azure-keyvault-name: "bitwarden-prod-kv"
-
-      - name: Download selfhosted-COMMERCIAL artifact
-        uses: actions/download-artifact@fb598a63ae348fa914e94cd0ff38f362e927b741
-        with:
-          name: web-${{ env._VERSION }}-selfhosted-COMMERCIAL.zip
-          path: apps/web
-
-      - name: Extract artifact
-        working-directory: apps/web
-        run: unzip web-${{ env._VERSION }}-selfhosted-COMMERCIAL.zip
-
-      - name: Build Docker image
-        working-directory: apps/web
-        run: docker build -t bitwarden/web .
-
-      - name: Tag rc branch
-        if: github.ref == 'refs/heads/rc'
-        run: docker tag bitwarden/web bitwarden/web:rc
-
-      - name: Tag dev
-        if: github.ref == 'refs/heads/master'
-        run: docker tag bitwarden/web bitwarden/web:dev
-
-      - name: Tag hotfix branch
-        if: github.ref == 'refs/heads/hotfix-rc-web'
-        run: docker tag bitwarden/web bitwarden/web:hotfix-rc-web
-
-      - name: List Docker images
-        if: github.ref == 'refs/heads/master' ||
-          github.ref == 'refs/heads/rc' ||
-          github.ref == 'refs/heads/hotfix-rc-web'
-        run: docker images
-
-      - name: Push rc image
-        if: github.ref == 'refs/heads/rc'
-        run: docker push bitwarden/web:rc
-        env:
-          DOCKER_CONTENT_TRUST: 1
-          DOCKER_CONTENT_TRUST_REPOSITORY_PASSPHRASE: ${{ steps.setup-dct.outputs.dct-delegate-repo-passphrase }}
-
-      - name: Push dev image
-        if: github.ref == 'refs/heads/master'
-        run: docker push bitwarden/web:dev
-        env:
-          DOCKER_CONTENT_TRUST: 1
-          DOCKER_CONTENT_TRUST_REPOSITORY_PASSPHRASE: ${{ steps.setup-dct.outputs.dct-delegate-repo-passphrase }}
-
-      - name: Push hotfix image
-        if: github.ref == 'refs/heads/hotfix-rc-web'
-        run: docker push bitwarden/web:hotfix-rc-web
-        env:
-          DOCKER_CONTENT_TRUST: 1
-          DOCKER_CONTENT_TRUST_REPOSITORY_PASSPHRASE: ${{ steps.setup-dct.outputs.dct-delegate-repo-passphrase }}
-
-      - name: Log out of Docker
-        if: github.ref == 'refs/heads/master' ||
-          github.ref == 'refs/heads/rc' ||
-          github.ref == 'refs/heads/hotfix-rc-web'
-        run: |
-          docker logout
-          echo "DOCKER_CONTENT_TRUST=0" >> $GITHUB_ENV
-
-      - name: Login to Azure - PROD Subscription
-        uses: Azure/login@ec3c14589bd3e9312b3cc8c41e6860e258df9010  # v1.1
-        with:
-          creds: ${{ secrets.AZURE_PROD_KV_CREDENTIALS }}
-
-      - name: Login to Azure ACR
-        run: az acr login -n bitwardenprod
-
-      - name: Tag and Push to Azure PROD ACR
-        env:
-          REGISTRY: bitwardenprod.azurecr.io
-        run: |
-          if [[ $(grep "pull" <<< "${GITHUB_REF}") ]]; then
-            IMAGE_TAG=$(echo "${GITHUB_HEAD_REF}" | sed "s#/#-#g")
-          else
-            IMAGE_TAG=$(echo "${GITHUB_REF:11}" | sed "s#/#-#g")
-          fi
-
-          if [[ "$IMAGE_TAG" == "master" ]]; then
-            IMAGE_TAG=dev
-          fi
-
-          docker tag bitwarden/web \
-            $REGISTRY/web-sh:$IMAGE_TAG
-
-          docker push $REGISTRY/web-sh:$IMAGE_TAG
-
-      - name: Log out of Docker
-        run: docker logout
 
   build-containers:
-    name: Build Docker images for bitwardenprod
+    name: Build Docker images
     runs-on: ubuntu-22.04
     needs:
       - setup
@@ -257,21 +144,48 @@ jobs:
       matrix:
         include:
           - artifact_name: cloud-QA
-            image_name: web
+            registries: [bitwardenprod.azurecr.io, bitwardenqa.azurecr.io]
+            image_name: web-qa-cloud
           - artifact_name: ee
+            registries: [bitwardenprod.azurecr.io, bitwardenqa.azurecr.io]
             image_name: web-ee
+          - artifact_name: selfhosted-COMMERCIAL
+            registries: [bitwarden, bitwardenprod.azurecr.io, bitwardenqa.azurecr.io]
+            image_name: web
     env:
       _VERSION: ${{ needs.setup.outputs.version }}
     steps:
       - name: Checkout repo
         uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b  # v3.0.2
 
-      - name: Login to Azure
+      - name: Check Branch to Publish
+        env:
+          PUBLISH_BRANCHES: "master,rc,hotfix-rc"
+        id: publish-branch-check
+        run: |
+          IFS="," read -a publish_branches <<< $PUBLISH_BRANCHES
+
+          if [[ " ${publish_branches[*]} " =~ " ${GITHUB_REF:11} " ]]; then
+            echo "is_publish_branch=true" >> $GITHUB_ENV
+          else
+            echo "is_publish_branch=false" >> $GITHUB_ENV
+          fi
+
+      ########## ACRs ##########
+      - name: Login to Azure - QA
+        uses: Azure/login@ec3c14589bd3e9312b3cc8c41e6860e258df9010  # v1.1
+        with:
+          creds: ${{ secrets.AZURE_QA_KV_CREDENTIALS }}
+
+      - name: Log into QA container registry
+        run: az acr login -n bitwardenqa
+
+      - name: Login to Azure - Prod
         uses: Azure/login@ec3c14589bd3e9312b3cc8c41e6860e258df9010  # v1.1
         with:
           creds: ${{ secrets.AZURE_PROD_KV_CREDENTIALS }}
 
-      - name: Log into container registry
+      - name: Log into Prod container registry
         run: az acr login -n bitwardenprod
 
       - name: Download ${{ matrix.artifact_name }} artifact
@@ -280,18 +194,9 @@ jobs:
           name: web-${{ env._VERSION }}-${{ matrix.artifact_name }}.zip
           path: apps/web
 
-      - name: Extract artifact
-        working-directory: apps/web
-        run: unzip web-${{ env._VERSION }}-${{ matrix.artifact_name }}.zip
-
-      - name: Build Docker image
-        working-directory: apps/web
-        run: |
-          docker --version
-          docker build -t bitwardenprod.azurecr.io/${{ matrix.image_name }} .
-
-      - name: Get image tag
-        id: image-tag
+      ########## Generate image tag and build Docker image ##########
+      - name: Generate Docker image tag
+        id: tag
         run: |
           if [[ $(grep "pull" <<< "${GITHUB_REF}") ]]; then
             IMAGE_TAG=$(echo "${GITHUB_HEAD_REF}" | sed "s#/#-#g")
@@ -305,34 +210,60 @@ jobs:
             IMAGE_TAG=$IMAGE_TAG-$TAG_EXTENSION
           fi
 
-          echo "value=$IMAGE_TAG" >> $GITHUB_OUTPUT
+          echo "image_tag=$IMAGE_TAG" >> $GITHUB_OUTPUT
 
-      - name: Tag image
+      - name: Generate tag list
+        id: tag-list
         env:
-          IMAGE_TAG: ${{ steps.image-tag.outputs.value }}
-          IMAGE_NAME: ${{ matrix.image_name }}
-        run: docker tag bitwardenprod.azurecr.io/$IMAGE_NAME "bitwardenprod.azurecr.io/$IMAGE_NAME:$IMAGE_TAG"
+          IMAGE_TAG: ${{ steps.tag.outputs.image_tag }}
+          PROJECT_NAME: ${{ matrix.image_name }}
+        run: echo "tags=bitwardenqa.azurecr.io/${PROJECT_NAME}:${IMAGE_TAG},bitwardenprod.azurecr.io/${PROJECT_NAME}:${IMAGE_TAG}" >> $GITHUB_OUTPUT
 
-      - name: Tag dev
-        if: github.ref == 'refs/heads/master'
-        env:
-          IMAGE_NAME: ${{ matrix.image_name }}
-        run: docker tag bitwardenprod.azurecr.io/$IMAGE_NAME "bitwardenprod.azurecr.io/$IMAGE_NAME:dev"
+      ########## Build Image ##########
+      - name: Extract artifact
+        working-directory: apps/web
+        run: unzip web-${{ env._VERSION }}-${{ matrix.artifact_name }}.zip
 
-      - name: Push image
-        env:
-          IMAGE_TAG: ${{ steps.image-tag.outputs.value }}
-          IMAGE_NAME: ${{ matrix.image_name }}
-        run: docker push "bitwardenprod.azurecr.io/$IMAGE_NAME:$IMAGE_TAG"
+      - name: Retrieve github PAT secrets
+        id: retrieve-secret-pat
+        uses: bitwarden/gh-actions/get-keyvault-secrets@c3b3285993151c5af47cefcb3b9134c28ab479af
+        with:
+          keyvault: "bitwarden-prod-kv"
+          secrets: "github-pat-bitwarden-devops-bot-repo-scope"
 
-      - name: Push dev images
-        if: github.ref == 'refs/heads/master'
+      - name: Setup DCT
+        if: ${{ env.is_publish_branch == 'true' }}
+        id: setup-dct
+        uses: bitwarden/gh-actions/setup-docker-trust@a8c384a05a974c05c48374c818b004be221d43ff
+        with:
+          azure-creds: ${{ secrets.AZURE_PROD_KV_CREDENTIALS }}
+          azure-keyvault-name: "bitwarden-prod-kv"
+
+      - name: Build Docker image
+        uses: docker/build-push-action@c56af957549030174b10d6867f20e78cfd7debc5
+        with:
+          context: apps/web
+          file: apps/web/Dockerfile
+          platforms: linux/amd64
+          push: true
+          tags: ${{ steps.tag-list.outputs.tags }}
+          secrets: |
+            "GH_PAT=${{ steps.retrieve-secret-pat.outputs.github-pat-bitwarden-devops-bot-repo-scope }}"
+
+      - name: Push to DockerHub
+        if: contains(matrix.registries, 'bitwarden') && env.is_publish_branch == 'true'
         env:
-          IMAGE_NAME: ${{ matrix.image_name }}
-        run: docker push "bitwardenprod.azurecr.io/$IMAGE_NAME:dev"
+          IMAGE_TAG: ${{ steps.tag.outputs.image_tag }}
+          PROJECT_NAME: ${{ matrix.image_name }}
+          DOCKER_CONTENT_TRUST: 1
+          DOCKER_CONTENT_TRUST_REPOSITORY_PASSPHRASE: ${{ steps.setup-dct.outputs.dct-delegate-repo-passphrase }}
+        run: |
+          docker tag bitwardenprod.azurecr.io/$PROJECT_NAME:$IMAGE_TAG bitwarden/$PROJECT_NAME:$IMAGE_TAG
+          docker push bitwarden/$PROJECT_NAME:$IMAGE_TAG
 
       - name: Log out of Docker
         run: docker logout
+
 
   crowdin-push:
     name: Crowdin Push
@@ -377,7 +308,6 @@ jobs:
       - cloc
       - setup
       - build-artifacts
-      - build-commercial-selfhost-image
       - build-containers
       - crowdin-push
     steps:
@@ -387,7 +317,6 @@ jobs:
           CLOC_STATUS: ${{ needs.cloc.result }}
           SETUP_STATUS: ${{ needs.setup.result }}
           ARTIFACT_STATUS: ${{ needs.build-artifacts.result }}
-          BUILD_SELFHOST_STATUS: ${{ needs.build-commercial-selfhost-image.result }}
           BUILD_CONTAINERS_STATUS: ${{ needs.build-containers.result }}
           CROWDIN_PUSH_STATUS: ${{ needs.crowdin-push.result }}
         run: |
