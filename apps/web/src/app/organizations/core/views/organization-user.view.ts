@@ -15,6 +15,7 @@ export class OrganizationUserView {
   resetPasswordEnrolled: boolean;
   name: string;
   email: string;
+  avatarColor: string;
   twoFactorEnabled: boolean;
   usesKeyConnector: boolean;
 

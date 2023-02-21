@@ -44,6 +44,7 @@ export class OrganizationUserResponse extends BaseResponse {
 export class OrganizationUserUserDetailsResponse extends OrganizationUserResponse {
   name: string;
   email: string;
+  avatarColor: string;
   twoFactorEnabled: boolean;
   usesKeyConnector: boolean;
 
@@ -51,6 +52,7 @@ export class OrganizationUserUserDetailsResponse extends OrganizationUserRespons
     super(response);
     this.name = this.getResponseProperty("Name");
     this.email = this.getResponseProperty("Email");
+    this.avatarColor = this.getResponseProperty("AvatarColor");
     this.twoFactorEnabled = this.getResponseProperty("TwoFactorEnabled");
     this.usesKeyConnector = this.getResponseProperty("UsesKeyConnector") ?? false;
   }
