@@ -11,6 +11,7 @@ import { OrganizationSubscriptionUpdateRequest } from "../../models/request/orga
 import { OrganizationTaxInfoUpdateRequest } from "../../models/request/organization-tax-info-update.request";
 import { OrganizationUpdateRequest } from "../../models/request/organization-update.request";
 import { OrganizationUpgradeRequest } from "../../models/request/organization-upgrade.request";
+import { OrganizationEnrollSecretsManagerRequest } from "../../models/request/organization/organization-enroll-secrets-manager.request";
 import { PaymentRequest } from "../../models/request/payment.request";
 import { SeatRequest } from "../../models/request/seat.request";
 import { StorageRequest } from "../../models/request/storage.request";
@@ -59,4 +60,8 @@ export class OrganizationApiServiceAbstraction {
   getSso: (id: string) => Promise<OrganizationSsoResponse>;
   updateSso: (id: string, request: OrganizationSsoRequest) => Promise<OrganizationSsoResponse>;
   selfHostedSyncLicense: (id: string) => Promise<void>;
+  updateEnrollSecretsManager: (
+    id: string,
+    request: OrganizationEnrollSecretsManagerRequest
+  ) => Promise<void>;
 }

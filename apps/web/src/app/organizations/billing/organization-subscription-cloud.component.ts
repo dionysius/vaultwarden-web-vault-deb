@@ -134,6 +134,10 @@ export class OrganizationSubscriptionCloudComponent implements OnInit, OnDestroy
     return this.sub.plan.hasAdditionalSeatsOption;
   }
 
+  get isAdmin() {
+    return this.userOrg.isAdmin;
+  }
+
   get isSponsoredSubscription(): boolean {
     return this.sub.subscription?.items.some((i) => i.sponsoredSubscriptionItem);
   }
