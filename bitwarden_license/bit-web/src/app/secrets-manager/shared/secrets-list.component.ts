@@ -24,13 +24,15 @@ export class SecretsListComponent implements OnDestroy {
   }
   private _secrets: SecretListView[];
 
+  @Input() trash: boolean;
+
   @Output() editSecretEvent = new EventEmitter<string>();
   @Output() copySecretNameEvent = new EventEmitter<string>();
   @Output() copySecretValueEvent = new EventEmitter<string>();
-  @Output() projectsEvent = new EventEmitter<string>();
   @Output() onSecretCheckedEvent = new EventEmitter<string[]>();
   @Output() deleteSecretsEvent = new EventEmitter<string[]>();
   @Output() newSecretEvent = new EventEmitter();
+  @Output() restoreSecretsEvent = new EventEmitter();
 
   private destroy$: Subject<void> = new Subject<void>();
 
@@ -62,6 +64,12 @@ export class SecretsListComponent implements OnDestroy {
   bulkDeleteSecrets() {
     if (this.selection.selected.length >= 1) {
       this.deleteSecretsEvent.emit(this.selection.selected);
+    }
+  }
+
+  bulkRestoreSecrets() {
+    if (this.selection.selected.length >= 1) {
+      this.restoreSecretsEvent.emit(this.selection.selected);
     }
   }
 }

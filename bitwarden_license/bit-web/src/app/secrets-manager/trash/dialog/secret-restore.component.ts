@@ -4,37 +4,37 @@ import { Component, Inject } from "@angular/core";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 
-import { SecretService } from "../secret.service";
+import { SecretService } from "../../secrets/secret.service";
 
-export interface SecretDeleteOperation {
+export interface SecretRestoreOperation {
   secretIds: string[];
+  organizationId: string;
 }
 
 @Component({
-  selector: "sm-secret-delete-dialog",
-  templateUrl: "./secret-delete.component.html",
+  selector: "sm-secret-restore-dialog",
+  templateUrl: "./secret-restore.component.html",
 })
-export class SecretDeleteDialogComponent {
+export class SecretRestoreDialogComponent {
   constructor(
     public dialogRef: DialogRef,
     private secretService: SecretService,
     private i18nService: I18nService,
     private platformUtilsService: PlatformUtilsService,
-    @Inject(DIALOG_DATA) public data: SecretDeleteOperation
+    @Inject(DIALOG_DATA) public data: SecretRestoreOperation
   ) {}
 
   get title() {
-    return this.data.secretIds.length === 1 ? "deleteSecret" : "deleteSecrets";
+    return this.data.secretIds.length === 1 ? "restoreSecret" : "restoreSecrets";
   }
 
-  get submitButtonText() {
-    return this.data.secretIds.length === 1 ? "deleteSecret" : "deleteSecrets";
-  }
-
-  delete = async () => {
-    await this.secretService.delete(this.data.secretIds);
-    const message =
-      this.data.secretIds.length === 1 ? "softDeleteSuccessToast" : "softDeletesSuccessToast";
+  restore = async () => {
+    let message = "";
+    await this.secretService.restoreTrashed(this.data.organizationId, this.data.secretIds);
+    message =
+      this.data.secretIds.length === 1
+        ? "secretRestoredSuccessToast"
+        : "secretsRestoredSuccessToast";
     this.dialogRef.close(this.data.secretIds);
     this.platformUtilsService.showToast("success", null, this.i18nService.t(message));
   };

@@ -101,6 +101,42 @@ export class SecretService {
     this._secret.next(null);
   }
 
+  async getTrashedSecrets(organizationId: string): Promise<SecretListView[]> {
+    const r = await this.apiService.send(
+      "GET",
+      "/secrets/" + organizationId + "/trash",
+      null,
+      true,
+      true
+    );
+
+    return await this.createSecretsListView(organizationId, new SecretWithProjectsListResponse(r));
+  }
+
+  async deleteTrashed(organizationId: string, secretIds: string[]) {
+    await this.apiService.send(
+      "POST",
+      "/secrets/" + organizationId + "/trash/empty",
+      secretIds,
+      true,
+      true
+    );
+
+    this._secret.next(null);
+  }
+
+  async restoreTrashed(organizationId: string, secretIds: string[]) {
+    await this.apiService.send(
+      "POST",
+      "/secrets/" + organizationId + "/trash/restore",
+      secretIds,
+      true,
+      true
+    );
+
+    this._secret.next(null);
+  }
+
   private async getOrganizationKey(organizationId: string): Promise<SymmetricCryptoKey> {
     return await this.cryptoService.getOrgKey(organizationId);
   }

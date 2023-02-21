@@ -1,0 +1,9 @@
+<sm-header>
+  <sm-new-menu></sm-new-menu>
+</sm-header>
+<sm-secrets-list
+  (deleteSecretsEvent)="openDeleteSecret($event)"
+  (restoreSecretsEvent)="openRestoreSecret($event)"
+  [secrets]="secrets$ | async"
+  [trash]="true"
+></sm-secrets-list>
