@@ -5,6 +5,7 @@
   icon="bwi-business"
   [route]="['../', activeOrganization.id]"
   [(open)]="open"
+  [exactMatch]="true"
 >
   <ng-container *ngIf="organizations$ | async as organizations">
     <bit-nav-item

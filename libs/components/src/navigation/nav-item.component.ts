@@ -1,4 +1,4 @@
-import { Component, HostListener } from "@angular/core";
+import { Component, HostListener, Input } from "@angular/core";
 import { IsActiveMatchOptions } from "@angular/router";
 import { BehaviorSubject, map } from "rxjs";
 
@@ -19,12 +19,19 @@ export class NavItemComponent extends NavBaseComponent {
   protected get showActiveStyles() {
     return this._active && !this.hideActiveStyles;
   }
-  protected readonly rlaOptions: IsActiveMatchOptions = {
-    paths: "exact",
+  protected rlaOptions: IsActiveMatchOptions = {
+    paths: "subset",
     queryParams: "exact",
     fragment: "ignored",
     matrixParams: "ignored",
   };
+
+  /**
+   * if `true`, use `exact` match for path instead of `subset`.
+   */
+  @Input() set exactMatch(val: boolean) {
+    this.rlaOptions.paths = val ? "exact" : "subset";
+  }
 
   /**
    * The design spec calls for the an outline to wrap the entire element when the template's anchor/button has :focus-visible.
