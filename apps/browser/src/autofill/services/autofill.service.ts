@@ -12,11 +12,6 @@ import { FieldView } from "@bitwarden/common/vault/models/view/field.view";
 
 import { BrowserApi } from "../../browser/browserApi";
 import { BrowserStateService } from "../../services/abstractions/browser-state.service";
-import {
-  AutoFillConstants,
-  CreditCardAutoFillConstants,
-  IdentityAutoFillConstants,
-} from "../../services/autofillConstants";
 import AutofillField from "../models/autofill-field";
 import AutofillPageDetails from "../models/autofill-page-details";
 import AutofillScript from "../models/autofill-script";
@@ -27,6 +22,11 @@ import {
   PageDetail,
   FormData,
 } from "./abstractions/autofill.service";
+import {
+  AutoFillConstants,
+  CreditCardAutoFillConstants,
+  IdentityAutoFillConstants,
+} from "./autofill-constants";
 
 export interface GenerateFillScriptOptions {
   skipUsernameOnlyFill: boolean;

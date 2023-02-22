@@ -168,7 +168,6 @@
 ./apps/browser/src/services/vaultTimeout/vaultTimeout.service.ts
 ./apps/browser/src/services/browserCrypto.service.ts
 ./apps/browser/src/services/browserPlatformUtils.service.ts
-./apps/browser/src/services/autofillConstants.ts
 ./apps/browser/src/services/abstractions/abstractKeyGeneration.service.ts
 ./apps/browser/src/services/browserLocalStorage.service.ts
 ./apps/browser/src/services/localBackedSessionStorage.service.ts
