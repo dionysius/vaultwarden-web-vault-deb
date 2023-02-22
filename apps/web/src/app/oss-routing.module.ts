@@ -24,7 +24,6 @@ import { UpdateTempPasswordComponent } from "../auth/update-temp-password.compon
 import { VerifyEmailTokenComponent } from "../auth/verify-email-token.component";
 import { VerifyRecoverDeleteComponent } from "../auth/verify-recover-delete.component";
 import { flagEnabled, Flags } from "../utils/flags";
-import { VaultModule } from "../vault/individual-vault/vault.module";
 
 import { TrialInitiationComponent } from "./accounts/trial-initiation/trial-initiation.component";
 import { HomeGuard } from "./guards/home.guard";
@@ -46,6 +45,7 @@ import { SponsoredFamiliesComponent } from "./settings/sponsored-families.compon
 import { SubscriptionRoutingModule } from "./settings/subscription-routing.module";
 import { GeneratorComponent } from "./tools/generator.component";
 import { ToolsComponent } from "./tools/tools.component";
+import { VaultModule } from "./vault/individual-vault/vault.module";
 
 const routes: Routes = [
   {

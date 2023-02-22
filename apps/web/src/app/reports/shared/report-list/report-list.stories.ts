@@ -4,8 +4,8 @@ import { Meta, Story, moduleMetadata } from "@storybook/angular";
 import { JslibModule } from "@bitwarden/angular/jslib.module";
 import { BadgeModule, IconModule } from "@bitwarden/components";
 
-import { PremiumBadgeComponent } from "../../../../vault/components/premium-badge.component";
 import { PreloadedEnglishI18nModule } from "../../../tests/preloaded-english-i18n.module";
+import { PremiumBadgeComponent } from "../../../vault/components/premium-badge.component";
 import { reports } from "../../reports";
 import { ReportVariant } from "../models/report-variant";
 import { ReportCardComponent } from "../report-card/report-card.component";
