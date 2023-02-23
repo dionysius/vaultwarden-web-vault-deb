@@ -28,6 +28,7 @@ export class RegisterFormComponent extends BaseRegisterComponent {
   @Input() referenceDataValue: ReferenceEventRequest;
 
   showErrorSummary = false;
+  characterMinimumMessage: string;
 
   constructor(
     formValidationErrorService: FormValidationErrorsService,
@@ -63,13 +64,17 @@ export class RegisterFormComponent extends BaseRegisterComponent {
   }
 
   async ngOnInit() {
-    // TODO: Remove once breach checks are added for web
-    this.formGroup.patchValue({ checkForBreaches: false });
     await super.ngOnInit();
     this.referenceData = this.referenceDataValue;
 
     if (this.queryParamEmail) {
       this.formGroup.get("email")?.setValue(this.queryParamEmail);
+    }
+
+    if (this.enforcedPolicyOptions != null && this.enforcedPolicyOptions.minLength > 0) {
+      this.characterMinimumMessage = "";
+    } else {
+      this.characterMinimumMessage = this.i18nService.t("characterMinimum", this.minimumLength);
     }
   }
 

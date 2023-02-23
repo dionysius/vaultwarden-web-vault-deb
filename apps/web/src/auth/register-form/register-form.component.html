@@ -48,7 +48,7 @@
         ></button>
         <bit-hint>
           <span class="tw-font-semibold">{{ "important" | i18n }}</span>
-          {{ "masterPassImportant" | i18n }}
+          {{ "masterPassImportant" | i18n }} {{ characterMinimumMessage }}
         </bit-hint>
       </bit-form-field>
       <app-password-strength
@@ -82,7 +82,7 @@
 
     <div class="tw-mb-3">
       <bit-form-field>
-        <bit-label>{{ "masterPassHint" | i18n }}</bit-label>
+        <bit-label>{{ "masterPassHintLabel" | i18n }}</bit-label>
         <input id="register-form_input_hint" bitInput type="text" formControlName="hint" />
         <bit-hint>{{ "masterPassHintDesc" | i18n }}</bit-hint>
       </bit-form-field>
@@ -91,7 +91,20 @@
     <div [hidden]="!showCaptcha()">
       <iframe id="hcaptcha_iframe" height="80"></iframe>
     </div>
-
+    <div class="form-group">
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          id="checkForBreaches"
+          name="CheckBreach"
+          formControlName="checkForBreaches"
+        />
+        <label class="form-check-label" for="checkForBreaches">
+          {{ "checkForBreaches" | i18n }}
+        </label>
+      </div>
+    </div>
     <div class="tw-mb-3 tw-flex tw-items-start" *ngIf="showTerms">
       <div class="tw-flex tw-h-6 tw-items-center">
         <input
