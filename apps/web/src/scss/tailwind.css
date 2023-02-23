@@ -11,3 +11,12 @@
 td.tw-break-words {
   overflow-wrap: anywhere;
 }
+
+/** 
+ * tw-list-none hides summary arrow in Firefox & Chrome but not Safari:
+ * https://github.com/tailwindlabs/tailwindcss/issues/924#issuecomment-915509785
+ */
+summary.tw-list-none::marker,
+summary.tw-list-none::-webkit-details-marker {
+  display: none;
+}
