@@ -27,7 +27,7 @@
       <ng-container *ngIf="rows?.length > 0; else empty">
         <tr bitRow *ngFor="let row of rows">
           <td bitCell class="tw-w-0 tw-pr-0">
-            <i class="bwi {{ row.icon }} tw-text-xl tw-text-muted" aria-hidden="true"></i>
+            <i class="bwi {{ row.icon }} tw-text-muted" aria-hidden="true"></i>
           </td>
           <td bitCell>{{ row.name }}</td>
           <td bitCell *ngIf="row.type == 'serviceAccount'">

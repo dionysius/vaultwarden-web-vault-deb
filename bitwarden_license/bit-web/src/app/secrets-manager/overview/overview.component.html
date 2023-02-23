@@ -36,7 +36,7 @@
 
   <div class="tw-mt-6 tw-flex tw-flex-col tw-gap-6">
     <sm-section>
-      <h2 slot="summary" class="tw-mb-0 tw-text-2xl tw-font-semibold">{{ "projects" | i18n }}</h2>
+      <h2 slot="summary" class="tw-mb-0" bitTypography="h2" noMargin>{{ "projects" | i18n }}</h2>
       <sm-projects-list
         (newProjectEvent)="openNewProjectDialog()"
         (editProjectEvent)="openEditProject($event)"
@@ -49,7 +49,7 @@
       </div>
     </sm-section>
     <sm-section>
-      <h2 slot="summary" class="tw-mb-0 tw-text-2xl tw-font-semibold">{{ "secrets" | i18n }}</h2>
+      <h2 slot="summary" class="tw-mb-0" bitTypography="h2" noMargin>{{ "secrets" | i18n }}</h2>
       <sm-secrets-list
         baseRoute="secrets"
         (deleteSecretsEvent)="openDeleteSecret($event)"

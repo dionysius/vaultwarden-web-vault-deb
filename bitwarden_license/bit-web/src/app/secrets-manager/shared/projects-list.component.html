@@ -56,7 +56,7 @@
       </td>
       <td bitCell>
         <div class="tw-flex tw-items-center tw-gap-4 tw-break-all">
-          <i class="bwi bwi-collection tw-text-xl tw-text-muted" aria-hidden="true"></i>
+          <i class="bwi bwi-collection tw-text-muted" aria-hidden="true"></i>
           <a bitLink [routerLink]="['/sm', project.organizationId, 'projects', project.id]">{{
             project.name
           }}</a>
@@ -75,15 +75,15 @@
       </td>
       <bit-menu #projectMenu>
         <button type="button" bitMenuItem (click)="editProjectEvent.emit(project.id)">
-          <i class="bwi bwi-fw bwi-pencil tw-text-xl" aria-hidden="true"></i>
+          <i class="bwi bwi-fw bwi-pencil" aria-hidden="true"></i>
           {{ "editProject" | i18n }}
         </button>
         <a bitMenuItem [routerLink]="['/sm', project.organizationId, 'projects', project.id]">
-          <i class="bwi bwi-fw bwi-eye tw-text-xl" aria-hidden="true"></i>
+          <i class="bwi bwi-fw bwi-eye" aria-hidden="true"></i>
           {{ "viewProject" | i18n }}
         </a>
         <button type="button" bitMenuItem (click)="deleteProject(project.id)">
-          <i class="bwi bwi-fw bwi-trash tw-text-xl tw-text-danger" aria-hidden="true"></i>
+          <i class="bwi bwi-fw bwi-trash tw-text-danger" aria-hidden="true"></i>
           <span class="tw-text-danger">{{ "deleteProject" | i18n }}</span>
         </button>
       </bit-menu>
@@ -93,7 +93,7 @@
 
 <bit-menu #tableMenu>
   <button type="button" bitMenuItem (click)="bulkDeleteProjects()">
-    <i class="bwi bwi-fw bwi-trash tw-text-xl tw-text-danger" aria-hidden="true"></i>
+    <i class="bwi bwi-fw bwi-trash tw-text-danger" aria-hidden="true"></i>
     <span class="tw-text-danger">{{ "deleteProjects" | i18n }}</span>
   </button>
 </bit-menu>

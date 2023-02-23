@@ -14,7 +14,9 @@
       </div>
       <h1
         *ngIf="titleContainer.childElementCount === 0"
-        class="tw-m-0 tw-mr-2 tw-truncate tw-text-3xl tw-font-semibold tw-leading-10"
+        bitTypography="h1"
+        noMargin
+        class="tw-m-0 tw-mr-2 tw-truncate tw-leading-10"
         [title]="title || (routeData.titleId | i18n)"
       >
         <i *ngIf="icon" class="bwi {{ icon }}" aria-hidden="true"></i>
