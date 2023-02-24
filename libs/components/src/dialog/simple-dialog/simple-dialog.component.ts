@@ -2,7 +2,7 @@ import { Component, ContentChild, Directive } from "@angular/core";
 
 import { fadeIn } from "../animations";
 
-@Directive({ selector: "[bit-dialog-icon]" })
+@Directive({ selector: "[bitDialogIcon]" })
 export class IconDirective {}
 
 @Component({

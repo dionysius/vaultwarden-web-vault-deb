@@ -42,7 +42,7 @@ const TemplateWithIcon: Story<SimpleDialogComponent> = (args: SimpleDialogCompon
   props: args,
   template: `
   <bit-simple-dialog>
-      <i bit-dialog-icon class="bwi bwi-star tw-text-3xl tw-text-success" aria-hidden="true"></i>
+      <i bitDialogIcon class="bwi bwi-star tw-text-3xl tw-text-success" aria-hidden="true"></i>
       <span bitDialogTitle>Premium Subscription Available</span>
       <span bitDialogContent> Message Content</span>
       <div bitDialogFooter class="tw-flex tw-flex-row tw-gap-2">

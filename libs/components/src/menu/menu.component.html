@@ -5,6 +5,7 @@
     [attr.role]="ariaRole"
     [attr.aria-label]="ariaLabel"
     cdkTrapFocus
+    [cdkTrapFocusAutoCapture]="ariaRole === 'dialog'"
   >
     <ng-content></ng-content>
   </div>
