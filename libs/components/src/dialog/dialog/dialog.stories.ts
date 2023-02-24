@@ -82,6 +82,12 @@ Small.args = {
   title: "Small",
 };
 
+export const LongTitle = Template.bind({});
+LongTitle.args = {
+  dialogSize: "small",
+  title: "Long_Title_That_Should_Be_Truncated",
+};
+
 export const Large = Template.bind({});
 Large.args = {
   dialogSize: "large",
