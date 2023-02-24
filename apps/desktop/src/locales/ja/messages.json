@@ -542,7 +542,7 @@
     "message": "マスターパスワードの再入力が必要です。"
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least $VALUE$ characters long.",
+    "message": "マスターパスワードは少なくとも $VALUE$ 文字以上でなければなりません。",
     "description": "The Master Password must be at least a specific number of characters long.",
     "placeholders": {
       "value": {
