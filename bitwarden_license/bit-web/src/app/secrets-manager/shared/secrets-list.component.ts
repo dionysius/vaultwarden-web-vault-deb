@@ -24,6 +24,11 @@ export class SecretsListComponent implements OnDestroy {
   }
   private _secrets: SecretListView[];
 
+  @Input()
+  set search(search: string) {
+    this.dataSource.filter = search;
+  }
+
   @Input() trash: boolean;
 
   @Output() editSecretEvent = new EventEmitter<string>();

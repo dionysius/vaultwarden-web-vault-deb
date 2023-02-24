@@ -23,6 +23,8 @@ export class EventResponse extends BaseResponse {
   installationId: string;
   systemUser: EventSystemUser;
   domainName: string;
+  secretId: string;
+  serviceAccountId: string;
 
   constructor(response: any) {
     super(response);
@@ -44,5 +46,7 @@ export class EventResponse extends BaseResponse {
     this.installationId = this.getResponseProperty("InstallationId");
     this.systemUser = this.getResponseProperty("SystemUser");
     this.domainName = this.getResponseProperty("DomainName");
+    this.secretId = this.getResponseProperty("SecretId");
+    this.serviceAccountId = this.getResponseProperty("ServiceAccountId");
   }
 }

@@ -22,7 +22,8 @@ import { SecretService } from "./secret.service";
   templateUrl: "./secrets.component.html",
 })
 export class SecretsComponent implements OnInit {
-  secrets$: Observable<SecretListView[]>;
+  protected secrets$: Observable<SecretListView[]>;
+  protected search: string;
 
   private organizationId: string;
 
@@ -41,6 +42,10 @@ export class SecretsComponent implements OnInit {
         return await this.getSecrets();
       })
     );
+
+    if (this.route.snapshot.queryParams.search) {
+      this.search = this.route.snapshot.queryParams.search;
+    }
   }
 
   private async getSecrets(): Promise<SecretListView[]> {

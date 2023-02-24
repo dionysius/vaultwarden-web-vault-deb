@@ -139,6 +139,7 @@ export abstract class BaseEventsComponent {
           type: r.type,
           installationId: r.installationId,
           systemUser: r.systemUser,
+          serviceAccountId: r.serviceAccountId,
         });
       })
     );
