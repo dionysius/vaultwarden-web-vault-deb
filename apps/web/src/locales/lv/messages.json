@@ -5730,6 +5730,12 @@
   "deleteSecrets": {
     "message": "Izdzēst noslēpumus"
   },
+  "hardDeleteSecret": {
+    "message": "Neatgriezeniski izdzēst noslēpumu"
+  },
+  "hardDeleteSecrets": {
+    "message": "Neatgriezeniski izdzēst noslēpumus"
+  },
   "secretProjectAssociationDescription": {
     "message": "Atlasīt projektus, ar kuriem tiks saistīts noslēpums. Tikai apvienību lietotāji ar piekļuvi šiem projektiem varēs redzēt noslēpumu."
   },
@@ -5784,6 +5790,9 @@
   "secretsNoItemsMessage": {
     "message": "Lai sākut, ir jāpievieno jauns noslēpums vai jāievieto esoši."
   },
+  "secretsTrashNoItemsMessage": {
+    "message": "Atkritnē nav noslēpumu."
+  },
   "serviceAccountsNoItemsTitle": {
     "message": "Vēl nav nekā, ko parādīt"
   },
@@ -5828,6 +5837,15 @@
   },
   "softDeletesSuccessToast": {
     "message": "Noslēpumi ir pārvietoti uz atkritni"
+  },
+  "hardDeleteSecretConfirmation": {
+    "message": "Vai tiešām neatgriezeniski izdzēst šo noslēpumu?"
+  },
+  "hardDeleteSecretsConfirmation": {
+    "message": "Vai tiešām neatgriezeniski izdzēst šos noslēpumus?"
+  },
+  "hardDeletesSuccessToast": {
+    "message": "Noslēpumi ir neatgriezeniski izdzēsti"
   },
   "serviceAccountCreated": {
     "message": "Pakalpojumu konts ir izveidots"
@@ -5907,6 +5925,9 @@
   "softDeleteSuccessToast": {
     "message": "Noslēpums ir pārvietots uz atkritni"
   },
+  "hardDeleteSuccessToast": {
+    "message": "Noslēpums ir neatgriezeniski izdzēsts"
+  },
   "searchProjects": {
     "message": "Meklēt projektus"
   },
@@ -5956,13 +5977,13 @@
     "message": "Atsaukt piekļuves pilnvaru"
   },
   "revokeAccessTokens": {
-    "message": "Revoke access tokens"
+    "message": "Atsaukt piekļuves pilnvaras"
   },
   "revokeAccessTokenDesc": {
-    "message": "Revoking access tokens is permanent and irreversible."
+    "message": "Piekļuves pilnvaru atsaukšana ir paliekoša un neatgriezeniska."
   },
   "accessTokenRevoked": {
-    "message": "Access tokens revoked",
+    "message": "Piekļuves pilnvaras ir atsauktas",
     "description": "Toast message after deleting one or multiple access tokens."
   },
   "submenu": {
@@ -6092,10 +6113,10 @@
     "message": "Ievadītā vērtība ir nederīga. Piemēram: mansdomens.lv. Apakšdomēniem ir nepieciešams apstiprināt atsevišķus ierakstus."
   },
   "removeDomain": {
-    "message": "Noņemt domeinu"
+    "message": "Noņemt domēnu"
   },
   "removeDomainWarning": {
-    "message": "Domēna noņemšanu nevar atdarīt. Vai tiešām turpināt?"
+    "message": "Domēna noņemšanu nevar atsaukt. Vai tiešām turpināt?"
   },
   "domainRemoved": {
     "message": "Domēns ir noņemts"
@@ -6141,6 +6162,9 @@
   },
   "lastChecked": {
     "message": "Pēdējoreiz pārbaudīts"
+  },
+  "editDomain": {
+    "message": "Labot domēnu"
   },
   "domainFormInvalid": {
     "message": "Veidlapā ir kļūdas, kurām ir jāpievērš uzmanība"
@@ -6365,13 +6389,13 @@
     "message": "Šis lietotājs var piekļūt Noslēpumu pārvaldniekam Beta"
   },
   "important": {
-    "message": "Important:"
+    "message": "Svarīgi:"
   },
   "viewAll": {
-    "message": "View all"
+    "message": "Skatīt visu"
   },
   "showingPortionOfTotal": {
-    "message": "Showing $PORTION$ of $TOTAL$",
+    "message": "Rāda $PORTION$ no $TOTAL$",
     "placeholders": {
       "portion": {
         "content": "$1",
@@ -6391,5 +6415,100 @@
   },
   "errorReadingImportFile": {
     "message": "Atgadījās kļūda, kad tika mēģināts nolasīt ievietošanas datni"
+  },
+  "createSecret": {
+    "message": "Izveidot noslēpumu"
+  },
+  "createProject": {
+    "message": "Izveidot projektu"
+  },
+  "createServiceAccount": {
+    "message": "Izveidot pakalpojumu kontu"
+  },
+  "downloadThe": {
+    "message": "Lejupielādēt",
+    "description": "Link to a downloadable resource. This will be used as part of a larger phrase. Example: Download the Secrets Manager CLI"
+  },
+  "smCLI": {
+    "message": "Noslēpumu pārvaldnieka komandrindas saskarne"
+  },
+  "importSecrets": {
+    "message": "Ievietot noslēpumus"
+  },
+  "getStarted": {
+    "message": "Aiziet!"
+  },
+  "complete": {
+    "message": "Pabeigti $COMPLETED$/$TOTAL$",
+    "placeholders": {
+      "COMPLETED": {
+        "content": "$1",
+        "example": "1"
+      },
+      "TOTAL": {
+        "content": "$2",
+        "example": "4"
+      }
+    }
+  },
+  "restoreSecret": {
+    "message": "Atjaunot noslēpumu"
+  },
+  "restoreSecrets": {
+    "message": "Atjaunot noslēpumus"
+  },
+  "restoreSecretPrompt": {
+    "message": "Vai tiešām atjaunot šo noslēpumu?"
+  },
+  "restoreSecretsPrompt": {
+    "message": "Vai tiešām atjaunot šos noslēpumus?"
+  },
+  "secretRestoredSuccessToast": {
+    "message": "Noslēpums ir atjaunots"
+  },
+  "secretsRestoredSuccessToast": {
+    "message": "Noslēpumi ir atjaunoti"
+  },
+  "selectionIsRequired": {
+    "message": "Nepieciešams veikt atlasi."
+  },
+  "secretsManagerSubscriptionDesc": {
+    "message": "Ieslēgt apvienības piekļuvi Noslēpumu pārvaldniekam bez papildu maksas Beta programmas laikā. Lietotājiem Bet piekļuvi var nodrošināt sadaļā \"Dalībnieki\"."
+  },
+  "secretsManagerEnable": {
+    "message": "Iespējot Noslēpumu pārvaldnieks Beta"
+  },
+  "checkForBreaches": {
+    "message": "Check known data breaches for this password"
+  },
+  "exposedMasterPassword": {
+    "message": "Exposed Master Password"
+  },
+  "exposedMasterPasswordDesc": {
+    "message": "Password found in a data breach. Use a unique password to protect your account. Are you sure you want to use an exposed password?"
+  },
+  "weakAndExposedMasterPassword": {
+    "message": "Weak and Exposed Master Password"
+  },
+  "weakAndBreachedMasterPasswordDesc": {
+    "message": "Weak password identified and found in a data breach. Use a strong and unique password to protect your account. Are you sure you want to use this password?"
+  },
+  "characterMinimum": {
+    "message": "$LENGTH$ character minimum",
+    "placeholders": {
+      "length": {
+        "content": "$1",
+        "example": "14"
+      }
+    }
+  },
+  "masterPasswordMinimumlength": {
+    "message": "Master password must be at least $LENGTH$ characters long.",
+    "placeholders": {
+      "length": {
+        "content": "$1",
+        "example": "14"
+      }
+    }
   }
 }

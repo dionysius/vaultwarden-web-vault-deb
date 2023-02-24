@@ -5730,6 +5730,12 @@
   "deleteSecrets": {
     "message": "Изтриване на тайните"
   },
+  "hardDeleteSecret": {
+    "message": "Окончателно изтриване на тайната"
+  },
+  "hardDeleteSecrets": {
+    "message": "Окончателно изтриване на тайните"
+  },
   "secretProjectAssociationDescription": {
     "message": "Изберете проектите, с които ще бъде свързана тази тайна. Само потребителите в организацията, които имат достъп до тези проекти, ще могат да виждат тайната."
   },
@@ -5784,6 +5790,9 @@
   "secretsNoItemsMessage": {
     "message": "За да започнете, добавете нова тайна или внесете тайни."
   },
+  "secretsTrashNoItemsMessage": {
+    "message": "Няма тайни в кошчето."
+  },
   "serviceAccountsNoItemsTitle": {
     "message": "Все още няма нищо за показване"
   },
@@ -5828,6 +5837,15 @@
   },
   "softDeletesSuccessToast": {
     "message": "Тайните са преместени в кошчето"
+  },
+  "hardDeleteSecretConfirmation": {
+    "message": "Наистина ли искате да изтриете тайната окончателно?"
+  },
+  "hardDeleteSecretsConfirmation": {
+    "message": "Наистина ли искате да изтриете тайните окончателно?"
+  },
+  "hardDeletesSuccessToast": {
+    "message": "Тайните са изтрити окончателно"
   },
   "serviceAccountCreated": {
     "message": "Service account created"
@@ -5906,6 +5924,9 @@
   },
   "softDeleteSuccessToast": {
     "message": "Secret sent to trash"
+  },
+  "hardDeleteSuccessToast": {
+    "message": "Тайната е изтрита окончателно"
   },
   "searchProjects": {
     "message": "Search projects"
@@ -6142,6 +6163,9 @@
   "lastChecked": {
     "message": "Последна проверка"
   },
+  "editDomain": {
+    "message": "Редактиране на домейна"
+  },
   "domainFormInvalid": {
     "message": "Във формуляра има грешки, които трябва да погледнете"
   },
@@ -6365,7 +6389,7 @@
     "message": "Този потребител има достъп до Управлението на тайни (Бета)"
   },
   "important": {
-    "message": "Important:"
+    "message": "Важно:"
   },
   "viewAll": {
     "message": "Показване на всички"
@@ -6391,5 +6415,100 @@
   },
   "errorReadingImportFile": {
     "message": "Възникна грешка при опита за четене на файла за внасяне"
+  },
+  "createSecret": {
+    "message": "Създаване на тайна"
+  },
+  "createProject": {
+    "message": "Създаване на проект"
+  },
+  "createServiceAccount": {
+    "message": "Create a service account"
+  },
+  "downloadThe": {
+    "message": "Сваляне на",
+    "description": "Link to a downloadable resource. This will be used as part of a larger phrase. Example: Download the Secrets Manager CLI"
+  },
+  "smCLI": {
+    "message": "Клиент за команден ред за управление на тайни"
+  },
+  "importSecrets": {
+    "message": "Внасяне на тайни"
+  },
+  "getStarted": {
+    "message": "Get started"
+  },
+  "complete": {
+    "message": "Завършено: $COMPLETED$/$TOTAL$",
+    "placeholders": {
+      "COMPLETED": {
+        "content": "$1",
+        "example": "1"
+      },
+      "TOTAL": {
+        "content": "$2",
+        "example": "4"
+      }
+    }
+  },
+  "restoreSecret": {
+    "message": "Възстановяване на тайната"
+  },
+  "restoreSecrets": {
+    "message": "Възстановяване на тайните"
+  },
+  "restoreSecretPrompt": {
+    "message": "Наистина ли искате да възстановите тайната?"
+  },
+  "restoreSecretsPrompt": {
+    "message": "Наистина ли искате да възстановите тайните?"
+  },
+  "secretRestoredSuccessToast": {
+    "message": "Тайната е възстановена"
+  },
+  "secretsRestoredSuccessToast": {
+    "message": "Тайните са възстановени"
+  },
+  "selectionIsRequired": {
+    "message": "Изборът е задължителен."
+  },
+  "secretsManagerSubscriptionDesc": {
+    "message": "Включете достъпа на организацията до Управлението на пароли, безплатно по време на периода на бета-версията. Потребителите могат да получат достъп до бета-версията в настройките за Членовете."
+  },
+  "secretsManagerEnable": {
+    "message": "Включване на управлението на тайни (Бета)"
+  },
+  "checkForBreaches": {
+    "message": "Проверяване в известните случаи на изтекли данни за тази парола"
+  },
+  "exposedMasterPassword": {
+    "message": "Exposed Master Password"
+  },
+  "exposedMasterPasswordDesc": {
+    "message": "Password found in a data breach. Use a unique password to protect your account. Are you sure you want to use an exposed password?"
+  },
+  "weakAndExposedMasterPassword": {
+    "message": "Weak and Exposed Master Password"
+  },
+  "weakAndBreachedMasterPasswordDesc": {
+    "message": "Разпозната е слаба парола, която присъства в известен случай на изтекли данни. Използвайте силна и уникална парола, за да защитите данните си. Наистина ли искате да използвате тази парола?"
+  },
+  "characterMinimum": {
+    "message": "Минимум $LENGTH$ знака",
+    "placeholders": {
+      "length": {
+        "content": "$1",
+        "example": "14"
+      }
+    }
+  },
+  "masterPasswordMinimumlength": {
+    "message": "Главната парола трябва да е дълга поне $LENGTH$ знака.",
+    "placeholders": {
+      "length": {
+        "content": "$1",
+        "example": "14"
+      }
+    }
   }
 }

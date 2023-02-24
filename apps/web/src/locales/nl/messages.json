@@ -697,7 +697,7 @@
     "message": "Type je hoofdwachtwoord opnieuw in."
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least $VALUE$ characters long.",
+    "message": "Hoofdwachtwoord moet minstens $VALUE$ tekens lang zijn.",
     "description": "The Master Password must be at least a specific number of characters long.",
     "placeholders": {
       "value": {
@@ -1357,7 +1357,7 @@
     "message": "Personaliseren"
   },
   "newCustomDomain": {
-    "message": "Nieuw gepersonaliseerd domein"
+    "message": "Nieuw aangepast domein"
   },
   "newCustomDomainDesc": {
     "message": "Voer een lijst in met domeinen door komma's. Alleen basisdomeinen zijn toegestaan. Voer geen subdomeinen in. Gebruik bijvoorbeeld \"google.com\" in plaats van \"www.google.com\". Je kunt ook \"androidapp://package.name\" invoeren om een Android-app aan andere websitedomeinen te koppelen."
@@ -3342,7 +3342,7 @@
     }
   },
   "subscriptionFamiliesPlan": {
-    "message": "Je kunt niet meer dan $COUNT$ gebruikers uitnodigen zonder je abonnement te upgraden. Neem contact op met Customer Support om te upgraden.",
+    "message": "U kunt niet meer dan $COUNT$ leden uitnodigen zonder uw abonnement te upgraden. Neem contact op met Customer Support om te upgraden.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -3571,7 +3571,7 @@
     "message": "Vingerafdrukzin"
   },
   "dontAskFingerprintAgain": {
-    "message": "Niet meer vragen om de vingerafdrukzin te controleren",
+    "message": "Vraag nooit om de vingerafdrukzin te controleren voor uitgenodigde leden (niet aanbevolen)",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "free": {
@@ -4256,7 +4256,7 @@
     "message": "Aangepast"
   },
   "customDesc": {
-    "message": "Maakt een fijnmazige controle van gebruikersrechten voor geavanceerde configuraties mogelijk."
+    "message": "Verleen aangepaste rechten aan leden"
   },
   "customDescNonEnterpriseStart": {
     "message": "Aangepaste rollen is een ",
@@ -4271,7 +4271,7 @@
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Custom roles is an enterprise feature. Contact our support team to upgrade your subscription'"
   },
   "customNonEnterpriseError": {
-    "message": "Voor het inschakelen van aangepaste rechten moet de organisatie een Enterprise 2020-abonnement hebben."
+    "message": "Om aangepaste rechten in te schakelen moet de organisatie een Enterprise 2020 abonnement hebben."
   },
   "permissions": {
     "message": "Rechten"
@@ -4838,7 +4838,7 @@
     "message": "Je kluis time-out is hoger dan het maximum van jouw organisatie."
   },
   "vaultCustomTimeoutMinimum": {
-    "message": "De minimale instelbare time-out is 1 minuut."
+    "message": "Minimale aangepaste time-out is 1 minuut."
   },
   "vaultTimeoutRangeError": {
     "message": "Kluis time-out ligt niet binnen het toegestane bereik."
@@ -5730,6 +5730,12 @@
   "deleteSecrets": {
     "message": "Geheimen verwijderen"
   },
+  "hardDeleteSecret": {
+    "message": "Geheim definitief verwijderen"
+  },
+  "hardDeleteSecrets": {
+    "message": "Geheimen definitief verwijderen"
+  },
   "secretProjectAssociationDescription": {
     "message": "Kies projecten om het geheim aan te koppelen. Alleen gebruikers uit de organisatie met toegang tot deze projecten kunnen het geheim zien."
   },
@@ -5784,6 +5790,9 @@
   "secretsNoItemsMessage": {
     "message": "Om te starten, voeg een nieuw geheim toe of importeer een geheim."
   },
+  "secretsTrashNoItemsMessage": {
+    "message": "Er bevinden zich geen geheimen in de prullenbak."
+  },
   "serviceAccountsNoItemsTitle": {
     "message": "Geen inhoud beschikbaar"
   },
@@ -5828,6 +5837,15 @@
   },
   "softDeletesSuccessToast": {
     "message": "Geheimen verplaatst naar prullenbak"
+  },
+  "hardDeleteSecretConfirmation": {
+    "message": "Weet je zeker dat je dit geheim permanent wilt verwijderen?"
+  },
+  "hardDeleteSecretsConfirmation": {
+    "message": "Weet je zeker dat je deze geheimen permanent wilt verwijderen?"
+  },
+  "hardDeletesSuccessToast": {
+    "message": "Geheimen permanent verwijderd"
   },
   "serviceAccountCreated": {
     "message": "Service account aangemaakt"
@@ -5906,6 +5924,9 @@
   },
   "softDeleteSuccessToast": {
     "message": "Geheim verplaatst naar prullenbak"
+  },
+  "hardDeleteSuccessToast": {
+    "message": "Geheim permanent verwijderd"
   },
   "searchProjects": {
     "message": "Zoek projecten"
@@ -6032,7 +6053,7 @@
     "message": "Kan bewerken"
   },
   "canEditExceptPass": {
-    "message": "Kan bekijken, behalve wachtwoorden"
+    "message": "Kan bewerken, behalve wachtwoorden"
   },
   "noCollectionsAdded": {
     "message": "Geen collecties toegevoegd"
@@ -6141,6 +6162,9 @@
   },
   "lastChecked": {
     "message": "Laatst gecontroleerd"
+  },
+  "editDomain": {
+    "message": "Domein bewerken"
   },
   "domainFormInvalid": {
     "message": "Er zijn formulierfouten die je aandacht vereisen"
@@ -6365,13 +6389,13 @@
     "message": "Deze gebruiker heeft toegang tot de Secrets Manager Bèta"
   },
   "important": {
-    "message": "Important:"
+    "message": "Belangrijk:"
   },
   "viewAll": {
-    "message": "View all"
+    "message": "Alles weergeven"
   },
   "showingPortionOfTotal": {
-    "message": "Showing $PORTION$ of $TOTAL$",
+    "message": "Toont $PORTION$ van $TOTAL$",
     "placeholders": {
       "portion": {
         "content": "$1",
@@ -6391,5 +6415,100 @@
   },
   "errorReadingImportFile": {
     "message": "Er is een fout opgetreden bij het lezen van het bronbestand"
+  },
+  "createSecret": {
+    "message": "Geheim aanmaken"
+  },
+  "createProject": {
+    "message": "Project aanmaken"
+  },
+  "createServiceAccount": {
+    "message": "Service account aanmaken"
+  },
+  "downloadThe": {
+    "message": "Download de",
+    "description": "Link to a downloadable resource. This will be used as part of a larger phrase. Example: Download the Secrets Manager CLI"
+  },
+  "smCLI": {
+    "message": "Secrets Manager CLI"
+  },
+  "importSecrets": {
+    "message": "Geheimen importeren"
+  },
+  "getStarted": {
+    "message": "Aan de slag"
+  },
+  "complete": {
+    "message": "$COMPLETED$/$TOTAL$ Compleet",
+    "placeholders": {
+      "COMPLETED": {
+        "content": "$1",
+        "example": "1"
+      },
+      "TOTAL": {
+        "content": "$2",
+        "example": "4"
+      }
+    }
+  },
+  "restoreSecret": {
+    "message": "Geheim herstellen"
+  },
+  "restoreSecrets": {
+    "message": "Geheimen herstellen"
+  },
+  "restoreSecretPrompt": {
+    "message": "Weet je zeker dat je dit geheim wilt herstellen?"
+  },
+  "restoreSecretsPrompt": {
+    "message": "Weet je zeker dat je deze geheimen wilt herstellen?"
+  },
+  "secretRestoredSuccessToast": {
+    "message": "Geheim hersteld"
+  },
+  "secretsRestoredSuccessToast": {
+    "message": "Geheimen hersteld"
+  },
+  "selectionIsRequired": {
+    "message": "Selectie vereist."
+  },
+  "secretsManagerSubscriptionDesc": {
+    "message": "Organisatietoegang tot de Secrets Manager inschakelen is gratis tijdens het bètaprogramma. Gebruikers kunnen toegang tot de Bèta krijgen in Leden."
+  },
+  "secretsManagerEnable": {
+    "message": "Secrets Manager Bèta inschakelen"
+  },
+  "checkForBreaches": {
+    "message": "Check known data breaches for this password"
+  },
+  "exposedMasterPassword": {
+    "message": "Exposed Master Password"
+  },
+  "exposedMasterPasswordDesc": {
+    "message": "Password found in a data breach. Use a unique password to protect your account. Are you sure you want to use an exposed password?"
+  },
+  "weakAndExposedMasterPassword": {
+    "message": "Weak and Exposed Master Password"
+  },
+  "weakAndBreachedMasterPasswordDesc": {
+    "message": "Weak password identified and found in a data breach. Use a strong and unique password to protect your account. Are you sure you want to use this password?"
+  },
+  "characterMinimum": {
+    "message": "$LENGTH$ character minimum",
+    "placeholders": {
+      "length": {
+        "content": "$1",
+        "example": "14"
+      }
+    }
+  },
+  "masterPasswordMinimumlength": {
+    "message": "Master password must be at least $LENGTH$ characters long.",
+    "placeholders": {
+      "length": {
+        "content": "$1",
+        "example": "14"
+      }
+    }
   }
 }

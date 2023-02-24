@@ -658,7 +658,7 @@
     "message": "Hovedadgangskoden er den adgangskode, du bruger, når du tilgår din boks. Det er meget vigtigt, at hovedadgangskoden ikke glemmes, da der ikke er nogen måde, hvorpå den kan genoprettes."
   },
   "masterPassImportant": {
-    "message": "Hovedadgangskoder kan ikke gendannes, hvis de glemmes!"
+    "message": "Hovedadgangskoder kan ikke gendannes, hvis du glemmer dem!"
   },
   "masterPassHintDesc": {
     "message": "Et hovedadgangskodetip kan bidrage til at komme i tanke om adgangskoden, hvis den glemmes."
@@ -5730,6 +5730,12 @@
   "deleteSecrets": {
     "message": "Slet hemmeligheder"
   },
+  "hardDeleteSecret": {
+    "message": "Slet hemmelighed permanent"
+  },
+  "hardDeleteSecrets": {
+    "message": "Slet hemmeligheder permanent"
+  },
   "secretProjectAssociationDescription": {
     "message": "Vælg projekter, som hemmeligheden vil blive tilknyttet. Den vil kun kunne ses af organisationsbrugere med adgang til disse projekter."
   },
@@ -5784,6 +5790,9 @@
   "secretsNoItemsMessage": {
     "message": "Tilføj en ny hemmelighed eller importér hemmeligheder for at komme i gang."
   },
+  "secretsTrashNoItemsMessage": {
+    "message": "Der er ingen hemmeligheder i papirkurven."
+  },
   "serviceAccountsNoItemsTitle": {
     "message": "Intet at vise endnu"
   },
@@ -5828,6 +5837,15 @@
   },
   "softDeletesSuccessToast": {
     "message": "Hemmelighed sendt til papirkurv"
+  },
+  "hardDeleteSecretConfirmation": {
+    "message": "Sikker på, at denne hemmelighed skal slettes permanent?"
+  },
+  "hardDeleteSecretsConfirmation": {
+    "message": "Sikker på, at disse hemmeligheder skal slettes permanent?"
+  },
+  "hardDeletesSuccessToast": {
+    "message": "Hemmeligheder slettet permanent"
   },
   "serviceAccountCreated": {
     "message": "Tjenestekonto oprettet"
@@ -5906,6 +5924,9 @@
   },
   "softDeleteSuccessToast": {
     "message": "Hemmelighed sendt til papirkurv"
+  },
+  "hardDeleteSuccessToast": {
+    "message": "Hemmelighed slettet permanent"
   },
   "searchProjects": {
     "message": "Søg i projekter"
@@ -6142,6 +6163,9 @@
   "lastChecked": {
     "message": "Senest tjekket"
   },
+  "editDomain": {
+    "message": "Redigér domæne"
+  },
   "domainFormInvalid": {
     "message": "Der fndes formularfejl, som kræver håndtering"
   },
@@ -6368,10 +6392,10 @@
     "message": "Vigtigt:"
   },
   "viewAll": {
-    "message": "View all"
+    "message": "Vis alle"
   },
   "showingPortionOfTotal": {
-    "message": "Showing $PORTION$ of $TOTAL$",
+    "message": "Viser $PORTION$ af $TOTAL$",
     "placeholders": {
       "portion": {
         "content": "$1",
@@ -6391,5 +6415,100 @@
   },
   "errorReadingImportFile": {
     "message": "En fejl opstod under forsøget på at læse importfilen"
+  },
+  "createSecret": {
+    "message": "Opret en hemmelighed"
+  },
+  "createProject": {
+    "message": "Opret et projekt"
+  },
+  "createServiceAccount": {
+    "message": "Opret en tjenestekonto"
+  },
+  "downloadThe": {
+    "message": "Download",
+    "description": "Link to a downloadable resource. This will be used as part of a larger phrase. Example: Download the Secrets Manager CLI"
+  },
+  "smCLI": {
+    "message": "Secrets Manager CLI"
+  },
+  "importSecrets": {
+    "message": "Importér hemmeligheder"
+  },
+  "getStarted": {
+    "message": "Komme i gang"
+  },
+  "complete": {
+    "message": "$COMPLETED$/$TOTAL$ Færdig(e)",
+    "placeholders": {
+      "COMPLETED": {
+        "content": "$1",
+        "example": "1"
+      },
+      "TOTAL": {
+        "content": "$2",
+        "example": "4"
+      }
+    }
+  },
+  "restoreSecret": {
+    "message": "Gendan hemmelighed"
+  },
+  "restoreSecrets": {
+    "message": "Gendan hemmeligheder"
+  },
+  "restoreSecretPrompt": {
+    "message": "Sikker på, at denne hemmelighed skal gendannes?"
+  },
+  "restoreSecretsPrompt": {
+    "message": "Sikker på, at disse hemmeligheder skal gendannes?"
+  },
+  "secretRestoredSuccessToast": {
+    "message": "Hemmelighed gendannet"
+  },
+  "secretsRestoredSuccessToast": {
+    "message": "Hemmeligheder gendannet"
+  },
+  "selectionIsRequired": {
+    "message": "Valg er obligatorisk."
+  },
+  "secretsManagerSubscriptionDesc": {
+    "message": "Slå organisationsadgang til Secrets Manager til uden beregning under Beta-programmet. Brugere kan få adgang til Beta under Medlemmer."
+  },
+  "secretsManagerEnable": {
+    "message": "Aktivér Secrets Manager Beta"
+  },
+  "checkForBreaches": {
+    "message": "Tjek kendte datalæk for denne adgangskode"
+  },
+  "exposedMasterPassword": {
+    "message": "Kompromitteret hovedadgangskode"
+  },
+  "exposedMasterPasswordDesc": {
+    "message": "Adgangskode fundet i datalæk. Brug en unik adgangskode til kontobeskyttelse. Sikker på, at den kompromitterede adgangskode skal benyttes?"
+  },
+  "weakAndExposedMasterPassword": {
+    "message": "Svag og kompromitteret hovedadgangskode"
+  },
+  "weakAndBreachedMasterPasswordDesc": {
+    "message": "Svag adgangskode identificeret og fundet i datalæk. Brug en unik adgangskode til kontobeskyttelse. Sikker på, at at denne adgangskode skal bruges?"
+  },
+  "characterMinimum": {
+    "message": "Minimum $LENGTH$ tegn",
+    "placeholders": {
+      "length": {
+        "content": "$1",
+        "example": "14"
+      }
+    }
+  },
+  "masterPasswordMinimumlength": {
+    "message": "Hovedadgangskode skal udgøre minimum $LENGTH$ tegn.",
+    "placeholders": {
+      "length": {
+        "content": "$1",
+        "example": "14"
+      }
+    }
   }
 }

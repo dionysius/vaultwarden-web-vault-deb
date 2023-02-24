@@ -697,7 +697,7 @@
     "message": "Une nouvelle saisie du mot de passe principal est nécessaire."
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least $VALUE$ characters long.",
+    "message": "Le mot de passe principal doit comporter au moins $VALUE$ caractères.",
     "description": "The Master Password must be at least a specific number of characters long.",
     "placeholders": {
       "value": {
@@ -906,7 +906,7 @@
     "message": "Modifier les collections avec lesquelles cet élément est partagé. Seuls les utilisateurs de l'organisation avec un accès à ces collections pourront voir cet élément."
   },
   "deleteSelectedItemsDesc": {
-    "message": "Vous avez sélectionné $COUNT$ élément(s) à supprimer. Êtes-vous sûr de vouloir supprimer tous ces éléments ?",
+    "message": "$COUNT$ élément(s) va(vont) être envoyé(s) à la corbeille.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -5730,6 +5730,12 @@
   "deleteSecrets": {
     "message": "Supprimer les Secrets"
   },
+  "hardDeleteSecret": {
+    "message": "Supprimer définitivement le secret"
+  },
+  "hardDeleteSecrets": {
+    "message": "Supprimer définitivement les secrets"
+  },
   "secretProjectAssociationDescription": {
     "message": "Sélectionnez les projets auxquels le secret sera associé. Seuls les utilisateurs de l'organisation ayant accès à ces projets pourront voir le secret."
   },
@@ -5784,6 +5790,9 @@
   "secretsNoItemsMessage": {
     "message": "Pour commencer, ajoutez un nouveau secret ou importez des secrets."
   },
+  "secretsTrashNoItemsMessage": {
+    "message": "Il n'y a pas de secrets dans la corbeille."
+  },
   "serviceAccountsNoItemsTitle": {
     "message": "Rien à afficher pour l'instant"
   },
@@ -5828,6 +5837,15 @@
   },
   "softDeletesSuccessToast": {
     "message": "Secrets envoyés à la corbeille"
+  },
+  "hardDeleteSecretConfirmation": {
+    "message": "Êtes-vous sûr de vouloir supprimer définitivement ce secret ?"
+  },
+  "hardDeleteSecretsConfirmation": {
+    "message": "Êtes-vous sûr de vouloir supprimer définitivement ces secrets ?"
+  },
+  "hardDeletesSuccessToast": {
+    "message": "Secrets définitivement supprimés"
   },
   "serviceAccountCreated": {
     "message": "Compte de Service créé"
@@ -5906,6 +5924,9 @@
   },
   "softDeleteSuccessToast": {
     "message": "Secret envoyé à la corbeille"
+  },
+  "hardDeleteSuccessToast": {
+    "message": "Secret définitivement supprimé"
   },
   "searchProjects": {
     "message": "Rechercher des Projets"
@@ -6141,6 +6162,9 @@
   },
   "lastChecked": {
     "message": "Dernière vérification"
+  },
+  "editDomain": {
+    "message": "Éditer le domaine"
   },
   "domainFormInvalid": {
     "message": "Il y a des erreurs de formulaire qui nécessitent votre attention"
@@ -6391,5 +6415,100 @@
   },
   "errorReadingImportFile": {
     "message": "Une erreur est survenue lors de la lecture du fichier importé"
+  },
+  "createSecret": {
+    "message": "Créer un secret"
+  },
+  "createProject": {
+    "message": "Créer un projet"
+  },
+  "createServiceAccount": {
+    "message": "Créer un compte de service"
+  },
+  "downloadThe": {
+    "message": "Télécharger le",
+    "description": "Link to a downloadable resource. This will be used as part of a larger phrase. Example: Download the Secrets Manager CLI"
+  },
+  "smCLI": {
+    "message": "CLI du Gestionnaire de Secrets"
+  },
+  "importSecrets": {
+    "message": "Importer des secrets"
+  },
+  "getStarted": {
+    "message": "Commencer"
+  },
+  "complete": {
+    "message": "$COMPLETED$/$TOTAL$ Complété(s)",
+    "placeholders": {
+      "COMPLETED": {
+        "content": "$1",
+        "example": "1"
+      },
+      "TOTAL": {
+        "content": "$2",
+        "example": "4"
+      }
+    }
+  },
+  "restoreSecret": {
+    "message": "Restaurer le secret"
+  },
+  "restoreSecrets": {
+    "message": "Restaurer les secrets"
+  },
+  "restoreSecretPrompt": {
+    "message": "Êtes-vous sûr de vouloir restaurer ce secret ?"
+  },
+  "restoreSecretsPrompt": {
+    "message": "Êtes-vous sûr de vouloir restaurer ces secrets ?"
+  },
+  "secretRestoredSuccessToast": {
+    "message": "Secret restauré"
+  },
+  "secretsRestoredSuccessToast": {
+    "message": "Secrets restaurés"
+  },
+  "selectionIsRequired": {
+    "message": "Une sélection est requise."
+  },
+  "secretsManagerSubscriptionDesc": {
+    "message": "Activez l'accès de l'organisation au gestionnaire de secrets sans frais pendant le programme bêta. Les utilisateurs peuvent se voir accorder l'accès à la bêta dans Membres."
+  },
+  "secretsManagerEnable": {
+    "message": "Activer le gestionnaire de secrets bêta"
+  },
+  "checkForBreaches": {
+    "message": "Vérifier les brèches de données connues pour ce mot de passe"
+  },
+  "exposedMasterPassword": {
+    "message": "Mot de passe principal exposé"
+  },
+  "exposedMasterPasswordDesc": {
+    "message": "Mot de passe trouvé dans une brèche de données. Utilisez un mot de passe unique pour protéger votre compte. Êtes-vous sûr de vouloir utiliser un mot de passe exposé ?"
+  },
+  "weakAndExposedMasterPassword": {
+    "message": "Mot de passe principal faible et exposé"
+  },
+  "weakAndBreachedMasterPasswordDesc": {
+    "message": "Mot de passe faible identifié et trouvé dans une brèche de données. Utilisez un mot de passe robuste et unique pour protéger votre compte. Êtes-vous sûr de vouloir utiliser ce mot de passe ?"
+  },
+  "characterMinimum": {
+    "message": "$LENGTH$ caractère minimum",
+    "placeholders": {
+      "length": {
+        "content": "$1",
+        "example": "14"
+      }
+    }
+  },
+  "masterPasswordMinimumlength": {
+    "message": "Le mot de passe principal doit comporter au moins $LENGTH$ caractères.",
+    "placeholders": {
+      "length": {
+        "content": "$1",
+        "example": "14"
+      }
+    }
   }
 }

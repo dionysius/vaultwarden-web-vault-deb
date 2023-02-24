@@ -5730,6 +5730,12 @@
   "deleteSecrets": {
     "message": "Sırları Sil"
   },
+  "hardDeleteSecret": {
+    "message": "Sırrı kalıcı olarak sil"
+  },
+  "hardDeleteSecrets": {
+    "message": "Sırları kalıcı olarak sil"
+  },
   "secretProjectAssociationDescription": {
     "message": "Sırrın ilişkilendirileceği projeleri seçin. Yalnızca bu projelere erişimi olan kuruluş kullanıcıları sırrı görebilir."
   },
@@ -5784,6 +5790,9 @@
   "secretsNoItemsMessage": {
     "message": "Başlamak için yeni bir gizli dizin ekleyin veya gizli dizinleri içe aktarın."
   },
+  "secretsTrashNoItemsMessage": {
+    "message": "Çöpte sır yok."
+  },
   "serviceAccountsNoItemsTitle": {
     "message": "Henüz gösterecek bir şey yok"
   },
@@ -5828,6 +5837,15 @@
   },
   "softDeletesSuccessToast": {
     "message": "Çöpe atılan sırlar"
+  },
+  "hardDeleteSecretConfirmation": {
+    "message": "Bu sırrı kalıcı olarak silmek istediğinizden emin misiniz?"
+  },
+  "hardDeleteSecretsConfirmation": {
+    "message": "Bu sırları kalıcı olarak silmek istediğinizden emin misiniz?"
+  },
+  "hardDeletesSuccessToast": {
+    "message": "Sırlar kalıcı olarak silindi"
   },
   "serviceAccountCreated": {
     "message": "Hizmet Hesabı Oluşturuldu"
@@ -5906,6 +5924,9 @@
   },
   "softDeleteSuccessToast": {
     "message": "Çöpe atılan sır"
+  },
+  "hardDeleteSuccessToast": {
+    "message": "Sır kalıcı olarak silindi"
   },
   "searchProjects": {
     "message": "Projeleri ara"
@@ -6142,6 +6163,9 @@
   "lastChecked": {
     "message": "Son kontrol"
   },
+  "editDomain": {
+    "message": "Alan adını düzenle"
+  },
   "domainFormInvalid": {
     "message": "İlgilenmeniz gereken form hataları var"
   },
@@ -6365,7 +6389,7 @@
     "message": "Bu kullanıcı Secrets Manager Beta'ya erişebilir"
   },
   "important": {
-    "message": "Important:"
+    "message": "Önemli:"
   },
   "viewAll": {
     "message": "Tümünü göster"
@@ -6391,5 +6415,100 @@
   },
   "errorReadingImportFile": {
     "message": "İçe aktarma dosyası okunurken bir hata oluştu"
+  },
+  "createSecret": {
+    "message": "Bir sır oluştur"
+  },
+  "createProject": {
+    "message": "Proje oluştur"
+  },
+  "createServiceAccount": {
+    "message": "Bir hizmet hesabı oluşturun"
+  },
+  "downloadThe": {
+    "message": "İndir",
+    "description": "Link to a downloadable resource. This will be used as part of a larger phrase. Example: Download the Secrets Manager CLI"
+  },
+  "smCLI": {
+    "message": "Gizlilik Yöneticisi CLI"
+  },
+  "importSecrets": {
+    "message": "Sırları içe aktar"
+  },
+  "getStarted": {
+    "message": "Başla"
+  },
+  "complete": {
+    "message": "$COMPLETED$/$TOTAL$ Tamamlandı",
+    "placeholders": {
+      "COMPLETED": {
+        "content": "$1",
+        "example": "1"
+      },
+      "TOTAL": {
+        "content": "$2",
+        "example": "4"
+      }
+    }
+  },
+  "restoreSecret": {
+    "message": "Sırrı geri yükle"
+  },
+  "restoreSecrets": {
+    "message": "Sırları geri yükle"
+  },
+  "restoreSecretPrompt": {
+    "message": "Bu sırrı geri yüklemek istediğinizden emin misiniz?"
+  },
+  "restoreSecretsPrompt": {
+    "message": "Bu sırları geri yüklemek istediğinizden emin misiniz?"
+  },
+  "secretRestoredSuccessToast": {
+    "message": "Sır geri yüklendi"
+  },
+  "secretsRestoredSuccessToast": {
+    "message": "Sırlar geri yüklendi"
+  },
+  "selectionIsRequired": {
+    "message": "Seçim yapmanız gerekiyor."
+  },
+  "secretsManagerSubscriptionDesc": {
+    "message": "Beta programı boyunca Secrets Manager'a kuruluş erişimini ücretsiz olarak etkinleştirebilirsiniz. Üyeler sayfası üzerinden kullanıcılara Beta'ya erişim izni verebilirsiniz."
+  },
+  "secretsManagerEnable": {
+    "message": "Secrets Manager Beta'yı etkinleştir"
+  },
+  "checkForBreaches": {
+    "message": "Bu parola için bilinen veri ihlallerini kontrol edin"
+  },
+  "exposedMasterPassword": {
+    "message": "Açığa Çıkmış Ana Parola"
+  },
+  "exposedMasterPasswordDesc": {
+    "message": "Bu parola bir veri ihlalinde tespit edildi. Hesabınızı korumak için aynı parolayı farklı yerlerde kullanmayın. Bu parolayı kullanmak istediğinizden emin misiniz?"
+  },
+  "weakAndExposedMasterPassword": {
+    "message": "Zayıf ve Açığa Çıkmış Ana Parola"
+  },
+  "weakAndBreachedMasterPasswordDesc": {
+    "message": "Hem zayıf hem de veri ihlalinde yer alan bir tespit edildi. Hesabınızı korumak için güçlü bir parola seçin ve o parolayı başka yerlerde kullanmayın. Bu parolayı kullanmak istediğinizden emin misiniz?"
+  },
+  "characterMinimum": {
+    "message": "En az $LENGTH$ karakter",
+    "placeholders": {
+      "length": {
+        "content": "$1",
+        "example": "14"
+      }
+    }
+  },
+  "masterPasswordMinimumlength": {
+    "message": "Ana parola en az $LENGTH$ karakter uzunluğunda olmalıdır.",
+    "placeholders": {
+      "length": {
+        "content": "$1",
+        "example": "14"
+      }
+    }
   }
 }

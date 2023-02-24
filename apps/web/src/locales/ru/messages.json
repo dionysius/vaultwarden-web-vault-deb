@@ -697,7 +697,7 @@
     "message": "Необходимо повторно ввести мастер-пароль."
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least $VALUE$ characters long.",
+    "message": "Мастер-пароль должен содержать не менее $VALUE$ символов.",
     "description": "The Master Password must be at least a specific number of characters long.",
     "placeholders": {
       "value": {
@@ -5730,6 +5730,12 @@
   "deleteSecrets": {
     "message": "Удалить секреты"
   },
+  "hardDeleteSecret": {
+    "message": "Окончательно удалить секрет"
+  },
+  "hardDeleteSecrets": {
+    "message": "Окончательно удалить секреты"
+  },
   "secretProjectAssociationDescription": {
     "message": "Выберите проекты, с которыми будет связан секрет. Только пользователи организации, имеющие доступ к этим проектам, смогут увидеть секрет."
   },
@@ -5784,6 +5790,9 @@
   "secretsNoItemsMessage": {
     "message": "Чтобы начать, добавьте новый секрет или импортируйте их."
   },
+  "secretsTrashNoItemsMessage": {
+    "message": "В корзине нет секретов."
+  },
   "serviceAccountsNoItemsTitle": {
     "message": "Пока нечего показать"
   },
@@ -5828,6 +5837,15 @@
   },
   "softDeletesSuccessToast": {
     "message": "Секреты отправлены в корзину"
+  },
+  "hardDeleteSecretConfirmation": {
+    "message": "Вы уверены, что хотите удалить этот секрет?"
+  },
+  "hardDeleteSecretsConfirmation": {
+    "message": "Вы уверены, что хотите удалить эти секреты?"
+  },
+  "hardDeletesSuccessToast": {
+    "message": "Секреты удалены окончательно"
   },
   "serviceAccountCreated": {
     "message": "Сервисный аккаунт создан"
@@ -5906,6 +5924,9 @@
   },
   "softDeleteSuccessToast": {
     "message": "Секрет отправлен в корзину"
+  },
+  "hardDeleteSuccessToast": {
+    "message": "Секрет удален окончательно"
   },
   "searchProjects": {
     "message": "Поиск проектов"
@@ -6142,6 +6163,9 @@
   "lastChecked": {
     "message": "Последняя проверка"
   },
+  "editDomain": {
+    "message": "Редактировать домен"
+  },
   "domainFormInvalid": {
     "message": "Имеются ошибки в форме, которые требуют вашего внимания"
   },
@@ -6365,7 +6389,7 @@
     "message": "Этот пользователь может получить доступ к Менеджеру секретов Beta"
   },
   "important": {
-    "message": "Important:"
+    "message": "Важно:"
   },
   "viewAll": {
     "message": "Посмотреть все"
@@ -6391,5 +6415,100 @@
   },
   "errorReadingImportFile": {
     "message": "Произошла ошибка при попытке чтения импортируемого файла"
+  },
+  "createSecret": {
+    "message": "Создать секрет"
+  },
+  "createProject": {
+    "message": "Создать проект"
+  },
+  "createServiceAccount": {
+    "message": "Создать сервисный аккаунт"
+  },
+  "downloadThe": {
+    "message": "Скачать",
+    "description": "Link to a downloadable resource. This will be used as part of a larger phrase. Example: Download the Secrets Manager CLI"
+  },
+  "smCLI": {
+    "message": "Менеджер секретов CLI"
+  },
+  "importSecrets": {
+    "message": "Импорт секретов"
+  },
+  "getStarted": {
+    "message": "Начать"
+  },
+  "complete": {
+    "message": "Выполнено $COMPLETED$/$TOTAL$",
+    "placeholders": {
+      "COMPLETED": {
+        "content": "$1",
+        "example": "1"
+      },
+      "TOTAL": {
+        "content": "$2",
+        "example": "4"
+      }
+    }
+  },
+  "restoreSecret": {
+    "message": "Восстановить секрет"
+  },
+  "restoreSecrets": {
+    "message": "Восстановить секреты"
+  },
+  "restoreSecretPrompt": {
+    "message": "Уверены, что хотите восстановить этот секрет?"
+  },
+  "restoreSecretsPrompt": {
+    "message": "Уверены, что хотите восстановить эти секреты?"
+  },
+  "secretRestoredSuccessToast": {
+    "message": "Секрет восстановлен"
+  },
+  "secretsRestoredSuccessToast": {
+    "message": "Секреты восстановлены"
+  },
+  "selectionIsRequired": {
+    "message": "Требуется выбор."
+  },
+  "secretsManagerSubscriptionDesc": {
+    "message": "Включите доступ организации к Менеджеру секретов бесплатно во время программы бета-тестирования. Пользователям может быть предоставлен доступ к бета-версии в разделе Участники."
+  },
+  "secretsManagerEnable": {
+    "message": "Менеджер секретов Бета"
+  },
+  "checkForBreaches": {
+    "message": "Check known data breaches for this password"
+  },
+  "exposedMasterPassword": {
+    "message": "Exposed Master Password"
+  },
+  "exposedMasterPasswordDesc": {
+    "message": "Password found in a data breach. Use a unique password to protect your account. Are you sure you want to use an exposed password?"
+  },
+  "weakAndExposedMasterPassword": {
+    "message": "Weak and Exposed Master Password"
+  },
+  "weakAndBreachedMasterPasswordDesc": {
+    "message": "Weak password identified and found in a data breach. Use a strong and unique password to protect your account. Are you sure you want to use this password?"
+  },
+  "characterMinimum": {
+    "message": "$LENGTH$ character minimum",
+    "placeholders": {
+      "length": {
+        "content": "$1",
+        "example": "14"
+      }
+    }
+  },
+  "masterPasswordMinimumlength": {
+    "message": "Master password must be at least $LENGTH$ characters long.",
+    "placeholders": {
+      "length": {
+        "content": "$1",
+        "example": "14"
+      }
+    }
   }
 }

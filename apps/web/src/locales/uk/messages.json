@@ -658,7 +658,7 @@
     "message": "Головний пароль використовується для доступу до вашого сховища. Дуже важливо, щоб ви запам'ятали його. Якщо ви забудете головний пароль, його неможливо буде відновити."
   },
   "masterPassImportant": {
-    "message": "Головний пароль неможливо відновити, якщо ви забудете його!"
+    "message": "Головний пароль неможливо відновити, якщо ви його втратите!"
   },
   "masterPassHintDesc": {
     "message": "Якщо ви забудете головний пароль, підказка може допомогти вам згадати його."
@@ -697,7 +697,7 @@
     "message": "Необхідно повторно ввести головний пароль."
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least $VALUE$ characters long.",
+    "message": "Довжина головного пароля має бути принаймні $VALUE$ символів.",
     "description": "The Master Password must be at least a specific number of characters long.",
     "placeholders": {
       "value": {
@@ -3532,7 +3532,7 @@
     "message": "Слабкий головний пароль"
   },
   "weakMasterPasswordDesc": {
-    "message": "Обраний вами головний пароль є слабким. Для належного захисту свого облікового запису Bitwarden, вам слід використовувати надійний головний пароль (або парольну фразу). Ви впевнені, що хочете використати цей пароль?"
+    "message": "Виявлено слабкий пароль. Використовуйте надійний пароль для захисту свого облікового запису. Ви дійсно хочете використати слабкий пароль?"
   },
   "rotateAccountEncKey": {
     "message": "Також оновити ключ шифрування мого облікового запису"
@@ -5730,6 +5730,12 @@
   "deleteSecrets": {
     "message": "Видалити секрети"
   },
+  "hardDeleteSecret": {
+    "message": "Остаточно видалити секрет"
+  },
+  "hardDeleteSecrets": {
+    "message": "Остаточно видалити секрети"
+  },
   "secretProjectAssociationDescription": {
     "message": "Оберіть проєкти, з якими буде пов'язано секретний ключ."
   },
@@ -5784,6 +5790,9 @@
   "secretsNoItemsMessage": {
     "message": "Для початку додайте або імпортуйте секрети."
   },
+  "secretsTrashNoItemsMessage": {
+    "message": "У смітнику немає секретів."
+  },
   "serviceAccountsNoItemsTitle": {
     "message": "Наразі немає даних для показу"
   },
@@ -5828,6 +5837,15 @@
   },
   "softDeletesSuccessToast": {
     "message": "Секрети переміщено до смітника"
+  },
+  "hardDeleteSecretConfirmation": {
+    "message": "Ви дійсно хочете остаточно видалити цей секрет?"
+  },
+  "hardDeleteSecretsConfirmation": {
+    "message": "Ви дійсно хочете остаточно видалити ці секрети?"
+  },
+  "hardDeletesSuccessToast": {
+    "message": "Секрети остаточно видалено"
   },
   "serviceAccountCreated": {
     "message": "Службовий обліковий запис створено"
@@ -5907,6 +5925,9 @@
   "softDeleteSuccessToast": {
     "message": "Секрет переміщено до смітника"
   },
+  "hardDeleteSuccessToast": {
+    "message": "Секрет остаточно видалено"
+  },
   "searchProjects": {
     "message": "Пошук проєктів"
   },
@@ -5956,13 +5977,13 @@
     "message": "Відкликати токен доступу"
   },
   "revokeAccessTokens": {
-    "message": "Revoke access tokens"
+    "message": "Відкликати токени доступу"
   },
   "revokeAccessTokenDesc": {
-    "message": "Revoking access tokens is permanent and irreversible."
+    "message": "Відкликання токенів доступу – це остаточна та незворотна дія."
   },
   "accessTokenRevoked": {
-    "message": "Access tokens revoked",
+    "message": "Токени доступу відкликано",
     "description": "Toast message after deleting one or multiple access tokens."
   },
   "submenu": {
@@ -6053,64 +6074,64 @@
     "message": "Цей учасник має доступ і може редагувати всі елементи."
   },
   "domainVerification": {
-    "message": "Domain verification"
+    "message": "Перевірка доменів"
   },
   "newDomain": {
-    "message": "New domain"
+    "message": "Новий домен"
   },
   "noDomains": {
-    "message": "No domains"
+    "message": "Немає доменів"
   },
   "noDomainsSubText": {
-    "message": "Connecting a domain allows members to skip the SSO identifier field during Login with SSO."
+    "message": "Під'єднання домену дозволяє учасникам не використовувати поле ідентифікатора SSO під час входу з SSO."
   },
   "verifyDomain": {
-    "message": "Verify domain"
+    "message": "Підтвердити домен"
   },
   "reverifyDomain": {
-    "message": "Reverify domain"
+    "message": "Повторно підтвердити домен"
   },
   "copyDnsTxtRecord": {
-    "message": "Copy DNS TXT record"
+    "message": "Копіювати TXT-запис для DNS"
   },
   "dnsTxtRecord": {
-    "message": "DNS TXT record"
+    "message": "TXT-запис для DNS"
   },
   "dnsTxtRecordInputHint": {
-    "message": "Copy and paste the TXT record into your DNS Provider."
+    "message": "Скопіюйте і вставте TXT-запис у відповідне поле свого DNS-провайдера."
   },
   "domainNameInputHint": {
-    "message": "Example: mydomain.com. Subdomains require separate entries to be verified."
+    "message": "Зразок: mydomain.com. Для піддоменів потрібно підтвердити окремі записи."
   },
   "automaticDomainVerification": {
-    "message": "Automatic Domain Verification"
+    "message": "Автоматичне підтвердження доменів"
   },
   "automaticDomainVerificationProcess": {
-    "message": "Bitwarden will attempt to verify the domain 3 times during the first 72 hours. If the domain can’t be verified, check the DNS record in your host and manually verify. The domain will be removed from your organization in 7 days if it is not verified"
+    "message": "Bitwarden намагатиметься підтвердити домен 3 рази впродовж 72 годин. Якщо не вдасться підтвердити домен, перевірте DNS-запис у вашого провайдера й підтвердьте його вручну. Якщо домен не буде підтверджено протягом 7 днів, його буде вилучено з вашої організації"
   },
   "invalidDomainNameMessage": {
-    "message": "Input is not a valid format. Format: mydomain.com. Subdomains require separate entries to be verified."
+    "message": "Неправильний формат введення. Правильний формат: mydomain.com. Для підтвердження піддоменів потрібно ввести окремі записи."
   },
   "removeDomain": {
-    "message": "Remove domain"
+    "message": "Вилучити домен"
   },
   "removeDomainWarning": {
-    "message": "Removing a domain cannot be undone. Are you sure you want to continue?"
+    "message": "Вилучення домену – це незворотна дія. Ви дійсно хочете продовжити?"
   },
   "domainRemoved": {
-    "message": "Domain removed"
+    "message": "Домен вилучено"
   },
   "domainSaved": {
-    "message": "Domain saved"
+    "message": "Домен збережено"
   },
   "domainVerified": {
-    "message": "Domain verified"
+    "message": "Домен підтверджено"
   },
   "duplicateDomainError": {
-    "message": "You can't claim the same domain twice."
+    "message": "Не можна запитати той самий домен двічі."
   },
   "domainNotAvailable": {
-    "message": "Someone else is using $DOMAIN$. Use a different domain to continue.",
+    "message": "Хтось вже використовує $DOMAIN$. Щоб продовжити, використайте інший домен.",
     "placeholders": {
       "DOMAIN": {
         "content": "$1",
@@ -6119,7 +6140,7 @@
     }
   },
   "domainNotVerified": {
-    "message": "$DOMAIN$ not verified. Check your DNS record.",
+    "message": "$DOMAIN$ не підтверджено. Перевірте свій DNS-запис.",
     "placeholders": {
       "DOMAIN": {
         "content": "$1",
@@ -6128,25 +6149,28 @@
     }
   },
   "domainStatusVerified": {
-    "message": "Verified"
+    "message": "Підтверджено"
   },
   "domainStatusUnverified": {
-    "message": "Unverified"
+    "message": "Не підтверджено"
   },
   "domainNameTh": {
-    "message": "Name"
+    "message": "Ім'я"
   },
   "domainStatusTh": {
-    "message": "Status"
+    "message": "Стан"
   },
   "lastChecked": {
-    "message": "Last checked"
+    "message": "Востаннє перевірено"
+  },
+  "editDomain": {
+    "message": "Редагувати домен"
   },
   "domainFormInvalid": {
-    "message": "There are form errors that need your attention"
+    "message": "У формі є помилки, що потребують вашої уваги"
   },
   "addedDomain": {
-    "message": "Added domain $DOMAIN$",
+    "message": "Домен $DOMAIN$ додано",
     "placeholders": {
       "DOMAIN": {
         "content": "$1",
@@ -6155,7 +6179,7 @@
     }
   },
   "removedDomain": {
-    "message": "Removed domain $DOMAIN$",
+    "message": "Домен $DOMAIN$ вилучено",
     "placeholders": {
       "DOMAIN": {
         "content": "$1",
@@ -6164,7 +6188,7 @@
     }
   },
   "domainVerifiedEvent": {
-    "message": "$DOMAIN$ verified",
+    "message": "Домен $DOMAIN$ підтверджено",
     "placeholders": {
       "DOMAIN": {
         "content": "$1",
@@ -6173,7 +6197,7 @@
     }
   },
   "domainNotVerifiedEvent": {
-    "message": "$DOMAIN$ not verified",
+    "message": "Домен $DOMAIN$ не підтверджено",
     "placeholders": {
       "DOMAIN": {
         "content": "$1",
@@ -6257,7 +6281,7 @@
     }
   },
   "server": {
-    "message": "Server"
+    "message": "Сервер"
   },
   "exportData": {
     "message": "Експортувати дані"
@@ -6365,13 +6389,13 @@
     "message": "Цей користувач має доступ до бета-версії керування секретами"
   },
   "important": {
-    "message": "Important:"
+    "message": "Важливо:"
   },
   "viewAll": {
-    "message": "View all"
+    "message": "Переглянути все"
   },
   "showingPortionOfTotal": {
-    "message": "Showing $PORTION$ of $TOTAL$",
+    "message": "Показано $PORTION$ з $TOTAL$",
     "placeholders": {
       "portion": {
         "content": "$1",
@@ -6391,5 +6415,100 @@
   },
   "errorReadingImportFile": {
     "message": "Під час спроби прочитання імпортованого файлу сталася помилка"
+  },
+  "createSecret": {
+    "message": "Створити секрет"
+  },
+  "createProject": {
+    "message": "Створити проєкт"
+  },
+  "createServiceAccount": {
+    "message": "Створити службовий обліковий запис"
+  },
+  "downloadThe": {
+    "message": "Завантажити",
+    "description": "Link to a downloadable resource. This will be used as part of a larger phrase. Example: Download the Secrets Manager CLI"
+  },
+  "smCLI": {
+    "message": "Керування секретами CLI"
+  },
+  "importSecrets": {
+    "message": "Імпортувати секрети"
+  },
+  "getStarted": {
+    "message": "Початок роботи"
+  },
+  "complete": {
+    "message": "$COMPLETED$/$TOTAL$ завершено",
+    "placeholders": {
+      "COMPLETED": {
+        "content": "$1",
+        "example": "1"
+      },
+      "TOTAL": {
+        "content": "$2",
+        "example": "4"
+      }
+    }
+  },
+  "restoreSecret": {
+    "message": "Відновити секрет"
+  },
+  "restoreSecrets": {
+    "message": "Відновити секрети"
+  },
+  "restoreSecretPrompt": {
+    "message": "Ви дійсно хочете відновити цей секрет?"
+  },
+  "restoreSecretsPrompt": {
+    "message": "Ви дійсно хочете відновити ці секрети?"
+  },
+  "secretRestoredSuccessToast": {
+    "message": "Секрет відновлено"
+  },
+  "secretsRestoredSuccessToast": {
+    "message": "Секрети відновлено"
+  },
+  "selectionIsRequired": {
+    "message": "Потрібен вибір."
+  },
+  "secretsManagerSubscriptionDesc": {
+    "message": "Увімкніть доступ організації до керування секретами безплатно упродовж періоду бета-тестування. Користувачам можна надати доступ в бета-версії в меню учасників."
+  },
+  "secretsManagerEnable": {
+    "message": "Увімкнути керування секретами (бета-версія)"
+  },
+  "checkForBreaches": {
+    "message": "Перевірити відомі витоки даних для цього пароля"
+  },
+  "exposedMasterPassword": {
+    "message": "Головний пароль викрито"
+  },
+  "exposedMasterPasswordDesc": {
+    "message": "Пароль знайдено у витоку даних. Використовуйте унікальний пароль для захисту свого облікового запису. Ви дійсно хочете використати викритий пароль?"
+  },
+  "weakAndExposedMasterPassword": {
+    "message": "Слабкий і викритий головний пароль"
+  },
+  "weakAndBreachedMasterPasswordDesc": {
+    "message": "Виявлено слабкий пароль, який знайдено у витоку даних. Використовуйте надійний та унікальний пароль для захисту свого облікового запису. Ви дійсно хочете використати цей пароль?"
+  },
+  "characterMinimum": {
+    "message": "Мінімум $LENGTH$ символів",
+    "placeholders": {
+      "length": {
+        "content": "$1",
+        "example": "14"
+      }
+    }
+  },
+  "masterPasswordMinimumlength": {
+    "message": "Довжина головного пароля має бути принаймні $LENGTH$ символів.",
+    "placeholders": {
+      "length": {
+        "content": "$1",
+        "example": "14"
+      }
+    }
   }
 }

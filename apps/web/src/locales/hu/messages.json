@@ -5730,6 +5730,12 @@
   "deleteSecrets": {
     "message": "Titkos kódok törlése"
   },
+  "hardDeleteSecret": {
+    "message": "A titkos kulcs végleges törlése"
+  },
+  "hardDeleteSecrets": {
+    "message": "A titkos kulcsok végleges törlése"
+  },
   "secretProjectAssociationDescription": {
     "message": "Válasszzuk ki azokat a projekteket, amelyekhez a titkos kód társítva lesz. Csak az ezekhez a projektekhez hozzáféréssel rendelkező szervezeti felhasználók láthatják a titkos kódot."
   },
@@ -5784,6 +5790,9 @@
   "secretsNoItemsMessage": {
     "message": "Az induláshoz adjunk hozzá egy új titkos kódot vagy importáljunk ilyeneket."
   },
+  "secretsTrashNoItemsMessage": {
+    "message": "Nincs titkos kulcs a lomtárban."
+  },
   "serviceAccountsNoItemsTitle": {
     "message": "Nincs megjeleníthető tartalom."
   },
@@ -5828,6 +5837,15 @@
   },
   "softDeletesSuccessToast": {
     "message": "A titkos kód a lomtárba került."
+  },
+  "hardDeleteSecretConfirmation": {
+    "message": "Biztosan véglegesen törlésre kerüljön ez a titkos kulcs?"
+  },
+  "hardDeleteSecretsConfirmation": {
+    "message": "Biztosan véglegesen törlésre kerüljenek ezek a titkos kulcsok?"
+  },
+  "hardDeletesSuccessToast": {
+    "message": "A titkos kulcsok véglegesen törlésre kerültek."
   },
   "serviceAccountCreated": {
     "message": "A szolgáltatás fiók létrejött."
@@ -5906,6 +5924,9 @@
   },
   "softDeleteSuccessToast": {
     "message": "A titkos kód a lomtárba került."
+  },
+  "hardDeleteSuccessToast": {
+    "message": "A titkos kulcs véglegesen törlésre került."
   },
   "searchProjects": {
     "message": "Projektek keresése"
@@ -6142,6 +6163,9 @@
   "lastChecked": {
     "message": "Utoljára ellenőrizve"
   },
+  "editDomain": {
+    "message": "Domain szerkesztése"
+  },
   "domainFormInvalid": {
     "message": "Vannak űrlaphibák, amelyekre figyelmet kell fordítani."
   },
@@ -6365,7 +6389,7 @@
     "message": "Ez a felhasználó hozzáférhet a Titkos kód kezelő béta verziójához."
   },
   "important": {
-    "message": "Important:"
+    "message": "Fontos:"
   },
   "viewAll": {
     "message": "Összes megtekintése"
@@ -6391,5 +6415,100 @@
   },
   "errorReadingImportFile": {
     "message": "Hiba történt az import fájl beolvasásának kísérletekor."
+  },
+  "createSecret": {
+    "message": "Titkos kód létrehozása"
+  },
+  "createProject": {
+    "message": "Projekt létrehozása"
+  },
+  "createServiceAccount": {
+    "message": "Szolgáltatás fiók létrehozása"
+  },
+  "downloadThe": {
+    "message": "Töltsük le:",
+    "description": "Link to a downloadable resource. This will be used as part of a larger phrase. Example: Download the Secrets Manager CLI"
+  },
+  "smCLI": {
+    "message": "Secrets Manager CLI"
+  },
+  "importSecrets": {
+    "message": "Titkos kódok importálása"
+  },
+  "getStarted": {
+    "message": "Kezdés"
+  },
+  "complete": {
+    "message": "$COMPLETED$/$TOTAL$ kész",
+    "placeholders": {
+      "COMPLETED": {
+        "content": "$1",
+        "example": "1"
+      },
+      "TOTAL": {
+        "content": "$2",
+        "example": "4"
+      }
+    }
+  },
+  "restoreSecret": {
+    "message": "Titkos kulcs visszaállítása"
+  },
+  "restoreSecrets": {
+    "message": "Titkos kulcsok visszaállítása"
+  },
+  "restoreSecretPrompt": {
+    "message": "Biztosan visszaállításra kerüljön ez a titkos kulcs?"
+  },
+  "restoreSecretsPrompt": {
+    "message": "Biztosan visszaállításra kerüljenek ezek a titkos kulcsok?"
+  },
+  "secretRestoredSuccessToast": {
+    "message": "A titkos kulcs visszaállításra került."
+  },
+  "secretsRestoredSuccessToast": {
+    "message": "A titkos kulcsok visszaállításra kerültek."
+  },
+  "selectionIsRequired": {
+    "message": "A kiválasztás szükséges."
+  },
+  "secretsManagerSubscriptionDesc": {
+    "message": "A bétaprogram alatt díjmentesen engedélyezzük a szervezeti hozzáférést a Titkos kód kezelőhöz. A felhasználók hozzáférést kaphatnak a bétá verzióhoz a Tagok részben."
+  },
+  "secretsManagerEnable": {
+    "message": "A Titkos kód kezelő engedélyezése"
+  },
+  "checkForBreaches": {
+    "message": "Az ehhez a jelszóhoz tartozó ismert adatvédelmi incidensek ellenőrzése"
+  },
+  "exposedMasterPassword": {
+    "message": "Kiszivárgott mesterjelszó"
+  },
+  "exposedMasterPasswordDesc": {
+    "message": "A jelszó megtalálható egy adatvédelmi incidensben. A fiók védelméhez használjunk egyedi jelszót. Biztos, hogy kiszivárgott jelszót szeretnénk használni?"
+  },
+  "weakAndExposedMasterPassword": {
+    "message": "Gyenge és kiszivárgott mesterjelszó"
+  },
+  "weakAndBreachedMasterPasswordDesc": {
+    "message": "Gyenge jelszó lett azonosítva és megtalálva egy adatvédelmi incidens során. A fók védelme érdekében használjunk erős és egyedi jelszót. Biztosan használni szeretnénk ezt a jelszót?"
+  },
+  "characterMinimum": {
+    "message": "Legalább $LENGTH$ karakter",
+    "placeholders": {
+      "length": {
+        "content": "$1",
+        "example": "14"
+      }
+    }
+  },
+  "masterPasswordMinimumlength": {
+    "message": "A mesterjelszónak legalább $LENGTH$ karakter hosszúnak kell lennie.",
+    "placeholders": {
+      "length": {
+        "content": "$1",
+        "example": "14"
+      }
+    }
   }
 }

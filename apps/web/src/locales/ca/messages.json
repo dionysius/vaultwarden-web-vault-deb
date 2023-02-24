@@ -697,7 +697,7 @@
     "message": "Cal tornar a escriure la contrasenya mestra."
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least $VALUE$ characters long.",
+    "message": "La contrasenya mestra ha de contenir almenys $VALUE$ caràcters.",
     "description": "The Master Password must be at least a specific number of characters long.",
     "placeholders": {
       "value": {
@@ -5730,6 +5730,12 @@
   "deleteSecrets": {
     "message": "Suprimeix els secrets"
   },
+  "hardDeleteSecret": {
+    "message": "Suprimeix definitivament el secret"
+  },
+  "hardDeleteSecrets": {
+    "message": "Suprimeix definitivament els secrets"
+  },
   "secretProjectAssociationDescription": {
     "message": "Selecciona los proyectos a los que se asociará el secreto. Sólo los usuarios de la organización con acceso a estos proyectos podrán verlo."
   },
@@ -5784,6 +5790,9 @@
   "secretsNoItemsMessage": {
     "message": "Per començar, afig un secret nou o importa secrets."
   },
+  "secretsTrashNoItemsMessage": {
+    "message": "No hi ha secrets a la paperera."
+  },
   "serviceAccountsNoItemsTitle": {
     "message": "Encara no hi ha res a mostrar"
   },
@@ -5828,6 +5837,15 @@
   },
   "softDeletesSuccessToast": {
     "message": "Secrets enviats a la paperera"
+  },
+  "hardDeleteSecretConfirmation": {
+    "message": "Esteu segur que voleu suprimir definitivament aquest secret?"
+  },
+  "hardDeleteSecretsConfirmation": {
+    "message": "Esteu segur que voleu suprimir definitivament aquests secrets?"
+  },
+  "hardDeletesSuccessToast": {
+    "message": "Secrets suprimits definitivament"
   },
   "serviceAccountCreated": {
     "message": "Compte de servei creat"
@@ -5906,6 +5924,9 @@
   },
   "softDeleteSuccessToast": {
     "message": "S'ha enviat el secret a la paperera"
+  },
+  "hardDeleteSuccessToast": {
+    "message": "Secret suprimit definitivament"
   },
   "searchProjects": {
     "message": "Cerca projectes"
@@ -6142,6 +6163,9 @@
   "lastChecked": {
     "message": "Última comprovació"
   },
+  "editDomain": {
+    "message": "Editar el domini"
+  },
   "domainFormInvalid": {
     "message": "Hi ha errors de forma que necessiten la vostra atenció"
   },
@@ -6368,10 +6392,10 @@
     "message": "Important:"
   },
   "viewAll": {
-    "message": "View all"
+    "message": "Mostra-ho tot"
   },
   "showingPortionOfTotal": {
-    "message": "Showing $PORTION$ of $TOTAL$",
+    "message": "S'estan mostrant $PORTION$ de $TOTAL$",
     "placeholders": {
       "portion": {
         "content": "$1",
@@ -6391,5 +6415,100 @@
   },
   "errorReadingImportFile": {
     "message": "S'ha produït un error en intentar llegir el fitxer d'importació"
+  },
+  "createSecret": {
+    "message": "Crea un secret"
+  },
+  "createProject": {
+    "message": "Crea un projecte"
+  },
+  "createServiceAccount": {
+    "message": "Crea un compte de servei"
+  },
+  "downloadThe": {
+    "message": "Baixa el",
+    "description": "Link to a downloadable resource. This will be used as part of a larger phrase. Example: Download the Secrets Manager CLI"
+  },
+  "smCLI": {
+    "message": "Administrador de secrets CLI"
+  },
+  "importSecrets": {
+    "message": "Importa secrets"
+  },
+  "getStarted": {
+    "message": "Comencem"
+  },
+  "complete": {
+    "message": "$COMPLETED$/$TOTAL$ Completat",
+    "placeholders": {
+      "COMPLETED": {
+        "content": "$1",
+        "example": "1"
+      },
+      "TOTAL": {
+        "content": "$2",
+        "example": "4"
+      }
+    }
+  },
+  "restoreSecret": {
+    "message": "Restaura secret"
+  },
+  "restoreSecrets": {
+    "message": "Restaura secrets"
+  },
+  "restoreSecretPrompt": {
+    "message": "Esteu segur que voleu restaurar aquest secret?"
+  },
+  "restoreSecretsPrompt": {
+    "message": "Esteu segur que voleu restaurar aquests secrets?"
+  },
+  "secretRestoredSuccessToast": {
+    "message": "Secret restaurat"
+  },
+  "secretsRestoredSuccessToast": {
+    "message": "Secrets restaurats"
+  },
+  "selectionIsRequired": {
+    "message": "La selecció és necessària."
+  },
+  "secretsManagerSubscriptionDesc": {
+    "message": "Activeu l’accés a l’organització al Gestor de secrets sense cap càrrec durant el programa beta. Els usuaris poden rebre accés a la beta en membres."
+  },
+  "secretsManagerEnable": {
+    "message": "Habilita l'administrador de secrets Beta"
+  },
+  "checkForBreaches": {
+    "message": "Comproveu les filtracions de dades conegudes per a aquesta contrasenya"
+  },
+  "exposedMasterPassword": {
+    "message": "Contrasenya mestra exposada"
+  },
+  "exposedMasterPasswordDesc": {
+    "message": "S'ha trobat la contrasenya en una filtració de dades. Utilitzeu una contrasenya única per protegir el vostre compte. Esteu segur que voleu utilitzar una contrasenya exposada?"
+  },
+  "weakAndExposedMasterPassword": {
+    "message": "Contrasenya mestra exposada i poc segura"
+  },
+  "weakAndBreachedMasterPasswordDesc": {
+    "message": "Contrasenya feble identificada i trobada en una filtració de dades. Utilitzeu una contrasenya única i segura per protegir el vostre compte. Esteu segur que voleu utilitzar aquesta contrasenya?"
+  },
+  "characterMinimum": {
+    "message": "$LENGTH$ caràcters mínim",
+    "placeholders": {
+      "length": {
+        "content": "$1",
+        "example": "14"
+      }
+    }
+  },
+  "masterPasswordMinimumlength": {
+    "message": "La contrasenya mestra ha de tenir almenys $LENGTH$ caràcters.",
+    "placeholders": {
+      "length": {
+        "content": "$1",
+        "example": "14"
+      }
+    }
   }
 }

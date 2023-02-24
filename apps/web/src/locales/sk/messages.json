@@ -5730,6 +5730,12 @@
   "deleteSecrets": {
     "message": "Delete secrets"
   },
+  "hardDeleteSecret": {
+    "message": "Natrvalo odstrániť položku"
+  },
+  "hardDeleteSecrets": {
+    "message": "Natrvalo odstrániť položky"
+  },
   "secretProjectAssociationDescription": {
     "message": "Vyberte projekty ku ktorým bude heslo patriť. Iba tí používatelia organizácie, ktorí majú prístup k zvoleným projektom budú môcť vidieť heslo."
   },
@@ -5784,6 +5790,9 @@
   "secretsNoItemsMessage": {
     "message": "To get started, add a new secret or import secrets."
   },
+  "secretsTrashNoItemsMessage": {
+    "message": "V koši nie sú žiadne položky."
+  },
   "serviceAccountsNoItemsTitle": {
     "message": "Nothing to show yet"
   },
@@ -5828,6 +5837,15 @@
   },
   "softDeletesSuccessToast": {
     "message": "Secrets sent to trash"
+  },
+  "hardDeleteSecretConfirmation": {
+    "message": "Naozaj chcete natrvalo odstrániť túto položku?"
+  },
+  "hardDeleteSecretsConfirmation": {
+    "message": "Naozaj chcete tieto položky natrvalo odstrániť?"
+  },
+  "hardDeletesSuccessToast": {
+    "message": "Položky natrvalo odstránené"
   },
   "serviceAccountCreated": {
     "message": "Service account created"
@@ -5906,6 +5924,9 @@
   },
   "softDeleteSuccessToast": {
     "message": "Secret sent to trash"
+  },
+  "hardDeleteSuccessToast": {
+    "message": "Položka natrvalo odstránená"
   },
   "searchProjects": {
     "message": "Search projects"
@@ -6142,6 +6163,9 @@
   "lastChecked": {
     "message": "Posledná kontrola"
   },
+  "editDomain": {
+    "message": "Upraviť doménu"
+  },
   "domainFormInvalid": {
     "message": "Vo formulári sú chyby, ktoré vyžadujú vašu pozornosť"
   },
@@ -6365,7 +6389,7 @@
     "message": "Tento používateľ má prístup k beta verzii Secrets Manager"
   },
   "important": {
-    "message": "Important:"
+    "message": "Dôležité:"
   },
   "viewAll": {
     "message": "Zobraziť všetko"
@@ -6391,5 +6415,100 @@
   },
   "errorReadingImportFile": {
     "message": "Pri pokuse o prečítanie súboru na import sa vyskytla chyba"
+  },
+  "createSecret": {
+    "message": "Vytvoriť položku"
+  },
+  "createProject": {
+    "message": "Vytvoriť nový projekt"
+  },
+  "createServiceAccount": {
+    "message": "Vytvoriť služobné kontá"
+  },
+  "downloadThe": {
+    "message": "Stiahnuť",
+    "description": "Link to a downloadable resource. This will be used as part of a larger phrase. Example: Download the Secrets Manager CLI"
+  },
+  "smCLI": {
+    "message": "CLI verzia Secrets Manager"
+  },
+  "importSecrets": {
+    "message": "Importovať položky"
+  },
+  "getStarted": {
+    "message": "Začať"
+  },
+  "complete": {
+    "message": "$COMPLETED$/$TOTAL$ hotovo",
+    "placeholders": {
+      "COMPLETED": {
+        "content": "$1",
+        "example": "1"
+      },
+      "TOTAL": {
+        "content": "$2",
+        "example": "4"
+      }
+    }
+  },
+  "restoreSecret": {
+    "message": "Obnoviť položku"
+  },
+  "restoreSecrets": {
+    "message": "Obnoviť položky"
+  },
+  "restoreSecretPrompt": {
+    "message": "Naozaj chcete obnoviť túto položku?"
+  },
+  "restoreSecretsPrompt": {
+    "message": "Naozaj chcete obnoviť tieto položky?"
+  },
+  "secretRestoredSuccessToast": {
+    "message": "Položka obnovená"
+  },
+  "secretsRestoredSuccessToast": {
+    "message": "Položky obnovené"
+  },
+  "selectionIsRequired": {
+    "message": "Vyžaduje sa výber."
+  },
+  "secretsManagerSubscriptionDesc": {
+    "message": "Turn on organization access to the Secrets Manager at no charge during the Beta program. Users can be granted access to the Beta in Members."
+  },
+  "secretsManagerEnable": {
+    "message": "Enable Secrets Manager Beta"
+  },
+  "checkForBreaches": {
+    "message": "Skontrolovať známe úniky údajov pre toto heslo"
+  },
+  "exposedMasterPassword": {
+    "message": "Odhalené hlavné heslo"
+  },
+  "exposedMasterPasswordDesc": {
+    "message": "Heslo nájdené v uniknutých údajoch. Na ochranu svojho účtu používajte jedinečné heslo. Naozaj chcete používať odhalené heslo?"
+  },
+  "weakAndExposedMasterPassword": {
+    "message": "Slabé a odhalené hlavné heslo"
+  },
+  "weakAndBreachedMasterPasswordDesc": {
+    "message": "Slabé heslo, ktoré bolo tiež nájdené uniknutých údajoch. Na ochranu svojho účtu používajte silné a jedinečné heslo. Naozaj chcete používať toto heslo?"
+  },
+  "characterMinimum": {
+    "message": "Minimálny počet znakov $LENGTH$",
+    "placeholders": {
+      "length": {
+        "content": "$1",
+        "example": "14"
+      }
+    }
+  },
+  "masterPasswordMinimumlength": {
+    "message": "Hlavné heslo musí mať aspoň $LENGTH$ znakov.",
+    "placeholders": {
+      "length": {
+        "content": "$1",
+        "example": "14"
+      }
+    }
   }
 }

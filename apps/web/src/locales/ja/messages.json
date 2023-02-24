@@ -5730,6 +5730,12 @@
   "deleteSecrets": {
     "message": "シークレットを削除"
   },
+  "hardDeleteSecret": {
+    "message": "シークレットを完全に削除"
+  },
+  "hardDeleteSecrets": {
+    "message": "シークレットを完全に削除"
+  },
   "secretProjectAssociationDescription": {
     "message": "シークレットを関連付けるプロジェクトを選択します。これらのプロジェクトにアクセスできる組織ユーザーのみがシークレットを表示できます。"
   },
@@ -5784,6 +5790,9 @@
   "secretsNoItemsMessage": {
     "message": "まずは新しいシークレットの追加またはインポートをしてください。"
   },
+  "secretsTrashNoItemsMessage": {
+    "message": "ゴミ箱にシークレットはありません。"
+  },
   "serviceAccountsNoItemsTitle": {
     "message": "まだ表示するものはありません"
   },
@@ -5828,6 +5837,15 @@
   },
   "softDeletesSuccessToast": {
     "message": "シークレットをゴミ箱に送る"
+  },
+  "hardDeleteSecretConfirmation": {
+    "message": "このシークレットを完全に削除してもよろしいですか？"
+  },
+  "hardDeleteSecretsConfirmation": {
+    "message": "このシークレットを完全に削除してもよろしいですか？"
+  },
+  "hardDeletesSuccessToast": {
+    "message": "シークレットを完全に削除しました"
   },
   "serviceAccountCreated": {
     "message": "サービスアカウントを作成しました"
@@ -5906,6 +5924,9 @@
   },
   "softDeleteSuccessToast": {
     "message": "シークレットをゴミ箱に送る"
+  },
+  "hardDeleteSuccessToast": {
+    "message": "シークレットを完全に削除しました"
   },
   "searchProjects": {
     "message": "プロジェクトを検索"
@@ -6141,6 +6162,9 @@
   },
   "lastChecked": {
     "message": "最終確認日"
+  },
+  "editDomain": {
+    "message": "ドメインを編集"
   },
   "domainFormInvalid": {
     "message": "注意が必要なフォームエラーがあります"
@@ -6391,5 +6415,100 @@
   },
   "errorReadingImportFile": {
     "message": "インポートファイルの読み込み中にエラーが発生しました"
+  },
+  "createSecret": {
+    "message": "シークレットを作成"
+  },
+  "createProject": {
+    "message": "プロジェクトを作成"
+  },
+  "createServiceAccount": {
+    "message": "サービスアカウントを作成"
+  },
+  "downloadThe": {
+    "message": "ダウンロード",
+    "description": "Link to a downloadable resource. This will be used as part of a larger phrase. Example: Download the Secrets Manager CLI"
+  },
+  "smCLI": {
+    "message": "シークレットマネージャー CLI"
+  },
+  "importSecrets": {
+    "message": "シークレットをインポート"
+  },
+  "getStarted": {
+    "message": "始める"
+  },
+  "complete": {
+    "message": "$COMPLETED$/$TOTAL$ 完了",
+    "placeholders": {
+      "COMPLETED": {
+        "content": "$1",
+        "example": "1"
+      },
+      "TOTAL": {
+        "content": "$2",
+        "example": "4"
+      }
+    }
+  },
+  "restoreSecret": {
+    "message": "シークレットを復元"
+  },
+  "restoreSecrets": {
+    "message": "シークレットを復元"
+  },
+  "restoreSecretPrompt": {
+    "message": "このシークレットを復元しますか？"
+  },
+  "restoreSecretsPrompt": {
+    "message": "このシークレットを復元しますか？"
+  },
+  "secretRestoredSuccessToast": {
+    "message": "シークレットを復元しました"
+  },
+  "secretsRestoredSuccessToast": {
+    "message": "シークレットを復元しました"
+  },
+  "selectionIsRequired": {
+    "message": "選択が必要です。"
+  },
+  "secretsManagerSubscriptionDesc": {
+    "message": "ベータプログラム中はシークレットマネージャーへの組織アクセスを無償で有効にします。ユーザーはメンバーのベータ版へのアクセスを許可できます。"
+  },
+  "secretsManagerEnable": {
+    "message": "ベータ版のシークレットマネージャーを有効化"
+  },
+  "checkForBreaches": {
+    "message": "このパスワードの既知のデータ流出を確認"
+  },
+  "exposedMasterPassword": {
+    "message": "流出したマスターパスワード"
+  },
+  "exposedMasterPasswordDesc": {
+    "message": "入力したパスワードはデータ流出結果に含まれていました。アカウントを保護するためには一意のパスワードを使用してください。本当に流出済みのパスワードを使用しますか？"
+  },
+  "weakAndExposedMasterPassword": {
+    "message": "脆弱で流出済みのマスターパスワード"
+  },
+  "weakAndBreachedMasterPasswordDesc": {
+    "message": "入力されたパスワードは脆弱かつ流出済みです。アカウントを守るためより強力で一意なパスワードを使用してください。本当にこの脆弱なパスワードを使用しますか？"
+  },
+  "characterMinimum": {
+    "message": "$LENGTH$ 文字以上",
+    "placeholders": {
+      "length": {
+        "content": "$1",
+        "example": "14"
+      }
+    }
+  },
+  "masterPasswordMinimumlength": {
+    "message": "マスターパスワードは少なくとも $LENGTH$ 文字以上でなければなりません。",
+    "placeholders": {
+      "length": {
+        "content": "$1",
+        "example": "14"
+      }
+    }
   }
 }

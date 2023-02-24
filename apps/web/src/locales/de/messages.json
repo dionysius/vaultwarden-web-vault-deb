@@ -697,7 +697,7 @@
     "message": "Erneute Eingabe des Master-Passworts ist erforderlich."
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least $VALUE$ characters long.",
+    "message": "Das Master-Passwort muss mindestens $VALUE$ Zeichen lang sein.",
     "description": "The Master Password must be at least a specific number of characters long.",
     "placeholders": {
       "value": {
@@ -1394,7 +1394,7 @@
     "message": "Verwende die folgenden Optionen, um Zwei-Faktor-Authentifizierung über Duo zu erzwingen."
   },
   "twoStepLoginOrganizationSsoDesc": {
-    "message": "Wenn SSO eingerichtet oder dies geplant ist, wird die Zwei-Faktor-Authentifizierung möglicherweise bereits über den Identity Provider erzwungen."
+    "message": "Wenn SSO eingerichtet oder dies geplant ist, wird die Zwei-Faktor-Authentifizierung möglicherweise bereits über den Identitätsanbieter erzwungen."
   },
   "twoStepLoginRecoveryWarning": {
     "message": "Durch die Aktivierung der Zwei-Faktor-Authentifizierung könnten Sie sich dauerhaft aus Ihrem Bitwarden-Konto aussperren. Ein Wiederherstellungscode ermöglicht es Ihnen, auf Ihr Konto zuzugreifen, falls Sie Ihren normalen Zwei-Faktor-Anbieter nicht mehr verwenden können (z.B. wenn Sie Ihr Gerät verlieren). Der Bitwarden-Support kann Ihnen nicht helfen, wenn Sie den Zugang zu Ihrem Konto verlieren. Wir empfehlen Ihnen, den Wiederherstellungscode aufzuschreiben oder auszudrucken und an einem sicheren Ort aufzubewahren."
@@ -2523,7 +2523,7 @@
     "message": "Mitglied bearbeiten"
   },
   "fieldOnTabRequiresAttention": {
-    "message": "Ein Feld auf der Registerkarte '$TAB$' erfordert deine Aufmerksamkeit.",
+    "message": "Ein Feld auf dem '$TAB$'-Tab erfordert deine Aufmerksamkeit.",
     "placeholders": {
       "tab": {
         "content": "$1",
@@ -4457,7 +4457,7 @@
     "message": "WebAuthn wird in diesem Browser nicht unterstützt."
   },
   "webAuthnSuccess": {
-    "message": "<strong>WebAuthn erfolgreich verifiziert!</strong><br>Sie können diesen Tab nun schließen."
+    "message": "WebAuthn erfolgreich verifiziert! Du kannst diesen Tab nun schließen."
   },
   "hintEqualsPassword": {
     "message": "Dein Passwort-Hinweis darf nicht identisch mit deinem Passwort sein."
@@ -4798,7 +4798,7 @@
     "message": "Dein Master-Passwort wurde kürzlich von einem Administrator deiner Organisation geändert. Um auf den Tresor zuzugreifen, musst du dein Master-Passwort jetzt aktualisieren. Wenn Du fortfährst, wirst du aus der aktuellen Sitzung abgemeldet und eine erneute Anmeldung ist erforderlich. Aktive Sitzungen auf anderen Geräten können bis zu einer Stunde weiterhin aktiv bleiben."
   },
   "masterPasswordInvalidWarning": {
-    "message": "Ihr Master-Passwort erfüllt nicht die Anforderungen dieser Organisation. Um der Organisation beizutreten, müssen Sie Ihr Master-Passwort jetzt aktualisieren. Ein Fortfahren wird Ihre aktuelle Sitzung abmelden. Danach müssen Sie sich wieder anmelden. Aktive Sitzungen auf anderen Geräten können bis zu einer Stunde weiterhin aktiv bleiben."
+    "message": "Dein Master-Passwort entspricht nicht den Anforderungen der Richtlinie dieser Organisation. Um der Organisation beizutreten, musst du dein Master-Passwort jetzt aktualisieren. Ein Fortfahren wird deine aktuelle Sitzung abmelden. Danach musst du dich wieder anmelden. Aktive Sitzungen auf anderen Geräten können weiterhin bis zu einer Stunde aktiv bleiben."
   },
   "maximumVaultTimeout": {
     "message": "Tresor-Timeout"
@@ -5276,7 +5276,7 @@
     "message": "Entfernt (Warte auf Synchronisation)"
   },
   "requested": {
-    "message": "Beantragt"
+    "message": "Angefragt"
   },
   "formErrorSummaryPlural": {
     "message": "$COUNT$ Felder oben müssen beachtet werden.",
@@ -5327,13 +5327,13 @@
     "message": "Deine Sitzung ist abgelaufen. Bitte gehe zurück und versuche dich erneut einzuloggen."
   },
   "exportingPersonalVaultTitle": {
-    "message": "Persönlichen Tresor exportieren"
+    "message": "Einzelnen Tresor exportieren"
   },
   "exportingOrganizationVaultTitle": {
     "message": "Tresor der Organisation exportieren"
   },
   "exportingPersonalVaultDescription": {
-    "message": "Nur die persönlichen Tresoreinträge, die mit $EMAIL$ verbunden sind, werden exportiert. Tresoreinträge der Organisation werden nicht berücksichtigt.",
+    "message": "Es werden nur einzelne Tresor-Einträge exportiert, die mit $EMAIL$ verbunden sind. Tresor-Einträge der Organisation werden nicht berücksichtigt. Es werden nur Informationen der Tresor-Einträge exportiert. Diese enthalten nicht den zugehörigen Passwortverlauf oder Anhänge.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -5342,7 +5342,7 @@
     }
   },
   "exportingOrganizationVaultDescription": {
-    "message": "Nur der mit $ORGANIZATION$ verbundene Tresor der Organisation wird exportiert. Persönliche Tresoreinträge und Einträge anderer Organisationen werden nicht berücksichtigt.",
+    "message": "Nur der mit $ORGANIZATION$ verbundene Tresor der Organisation wird exportiert. Einzelne Tresor-Einträge und Einträge anderer Organisationen werden nicht berücksichtigt.",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -5560,7 +5560,7 @@
     "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
   },
   "scimSettingsSaved": {
-    "message": "Alle SCIM Einstellungen wurden erfolgreich gespeichert",
+    "message": "SCIM Einstellungen gespeichert",
     "description": "the text, 'SCIM', is an acronymn and should not be translated."
   },
   "inputRequired": {
@@ -5651,7 +5651,7 @@
     "message": "Avatar aktualisiert"
   },
   "brightBlue": {
-    "message": "Leuchtendes Blau"
+    "message": "Hellblau"
   },
   "green": {
     "message": "Grün"
@@ -5730,6 +5730,12 @@
   "deleteSecrets": {
     "message": "Geheimnisse löschen"
   },
+  "hardDeleteSecret": {
+    "message": "Geheimnis dauerhaft löschen"
+  },
+  "hardDeleteSecrets": {
+    "message": "Geheimnisse dauerhaft löschen"
+  },
   "secretProjectAssociationDescription": {
     "message": "Wähle Projekte aus, denen das Geheimnis zugeordnet werden soll. Nur Organisationsbenutzer mit Zugriff auf diese Projekte können das Geheimnis sehen."
   },
@@ -5784,6 +5790,9 @@
   "secretsNoItemsMessage": {
     "message": "Um loszulegen, füge ein neues Geheimnis hinzu oder importiere Geheimnisse."
   },
+  "secretsTrashNoItemsMessage": {
+    "message": "Es gibt keine Geheimnisse im Papierkorb."
+  },
   "serviceAccountsNoItemsTitle": {
     "message": "Hier gibt es noch nichts"
   },
@@ -5828,6 +5837,15 @@
   },
   "softDeletesSuccessToast": {
     "message": "Geheimnisse in Papierkorb verschoben"
+  },
+  "hardDeleteSecretConfirmation": {
+    "message": "Bist du sicher, dass du dieses Geheimnis dauerhaft löschen möchtest?"
+  },
+  "hardDeleteSecretsConfirmation": {
+    "message": "Bist du sicher, dass du diese Geheimnisse dauerhaft löschen möchtest?"
+  },
+  "hardDeletesSuccessToast": {
+    "message": "Geheimnisse dauerhaft gelöscht"
   },
   "serviceAccountCreated": {
     "message": "Dienstkonto erstellt"
@@ -5907,6 +5925,9 @@
   "softDeleteSuccessToast": {
     "message": "Geheimnis in Papierkorb verschoben"
   },
+  "hardDeleteSuccessToast": {
+    "message": "Geheimnis dauerhaft gelöscht"
+  },
   "searchProjects": {
     "message": "Projekte durchsuchen"
   },
@@ -5978,7 +5999,7 @@
     "message": "Mitglied"
   },
   "update": {
-    "message": "Aktualisierung"
+    "message": "Aktualisieren"
   },
   "plusNMore": {
     "message": "+ $QUANTITY$ mehr",
@@ -6050,7 +6071,7 @@
     "message": "Diese Gruppe darf auf alle Einträge zugreifen und diese ändern."
   },
   "memberAccessAll": {
-    "message": "Dieses Mitglied darf auf alle Elemente zugreifen und diese ändern."
+    "message": "Dieses Mitglied darf auf alle Einträge zugreifen und diese ändern."
   },
   "domainVerification": {
     "message": "Domain-Verifizierung"
@@ -6141,6 +6162,9 @@
   },
   "lastChecked": {
     "message": "Zuletzt überprüft"
+  },
+  "editDomain": {
+    "message": "Domain bearbeiten"
   },
   "domainFormInvalid": {
     "message": "Es gibt Formularfehler, die deine Aufmerksamkeit benötigen"
@@ -6365,7 +6389,7 @@
     "message": "Dieser Benutzer kann auf die Secrets Manager Beta zugreifen"
   },
   "important": {
-    "message": "Important:"
+    "message": "Wichtig:"
   },
   "viewAll": {
     "message": "Alles anzeigen"
@@ -6391,5 +6415,100 @@
   },
   "errorReadingImportFile": {
     "message": "Beim Lesen der Importdatei ist ein Fehler aufgetreten"
+  },
+  "createSecret": {
+    "message": "Ein Geheimnis erstellen"
+  },
+  "createProject": {
+    "message": "Ein Projekt erstellen"
+  },
+  "createServiceAccount": {
+    "message": "Ein Dienstkonto erstellen"
+  },
+  "downloadThe": {
+    "message": "Download the",
+    "description": "Link to a downloadable resource. This will be used as part of a larger phrase. Example: Download the Secrets Manager CLI"
+  },
+  "smCLI": {
+    "message": "Secrets Manager CLI"
+  },
+  "importSecrets": {
+    "message": "Geheimnisse importieren"
+  },
+  "getStarted": {
+    "message": "Loslegen"
+  },
+  "complete": {
+    "message": "$COMPLETED$/$TOTAL$ abgeschlossen",
+    "placeholders": {
+      "COMPLETED": {
+        "content": "$1",
+        "example": "1"
+      },
+      "TOTAL": {
+        "content": "$2",
+        "example": "4"
+      }
+    }
+  },
+  "restoreSecret": {
+    "message": "Geheimnis wiederherstellen"
+  },
+  "restoreSecrets": {
+    "message": "Geheimnisse wiederherstellen"
+  },
+  "restoreSecretPrompt": {
+    "message": "Bist du sicher, dass du dieses Geheimnis wiederherstellen möchtest?"
+  },
+  "restoreSecretsPrompt": {
+    "message": "Bist du sicher, dass du diese Geheimnisse wiederherstellen möchtest?"
+  },
+  "secretRestoredSuccessToast": {
+    "message": "Geheimnis wiederhergestellt"
+  },
+  "secretsRestoredSuccessToast": {
+    "message": "Geheimnisse wiederhergestellt"
+  },
+  "selectionIsRequired": {
+    "message": "Auswahl ist erforderlich."
+  },
+  "secretsManagerSubscriptionDesc": {
+    "message": "Aktiviere den Organisationszugriff auf den Secrets Manager kostenlos während des Beta-Programms. Benutzer können in \"Mitglieder\" Zugriff auf die Beta erhalten."
+  },
+  "secretsManagerEnable": {
+    "message": "Secrets Manager Beta aktivieren"
+  },
+  "checkForBreaches": {
+    "message": "Bekannte Datendiebstähle auf dieses Passwort überprüfen"
+  },
+  "exposedMasterPassword": {
+    "message": "Kompromittiertes Master-Passwort"
+  },
+  "exposedMasterPasswordDesc": {
+    "message": "Passwort in einem Datendiebstahl gefunden. Verwende ein einzigartiges Passwort, um dein Konto zu schützen. Bist du sicher, dass du ein kompromittiertes Passwort verwenden möchtest?"
+  },
+  "weakAndExposedMasterPassword": {
+    "message": "Schwaches und kompromittiertes Master-Passwort"
+  },
+  "weakAndBreachedMasterPasswordDesc": {
+    "message": "Schwaches Passwort erkannt und in einem Datendiebstahl gefunden. Verwende ein starkes und einzigartiges Passwort, um dein Konto zu schützen. Bist du sicher, dass du dieses Passwort verwenden möchtest?"
+  },
+  "characterMinimum": {
+    "message": "Mindestens $LENGTH$ Zeichen",
+    "placeholders": {
+      "length": {
+        "content": "$1",
+        "example": "14"
+      }
+    }
+  },
+  "masterPasswordMinimumlength": {
+    "message": "Das Master-Passwort muss mindestens $LENGTH$ Zeichen lang sein.",
+    "placeholders": {
+      "length": {
+        "content": "$1",
+        "example": "14"
+      }
+    }
   }
 }

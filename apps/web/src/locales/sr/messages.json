@@ -5730,6 +5730,12 @@
   "deleteSecrets": {
     "message": "Обрисати тајне"
   },
+  "hardDeleteSecret": {
+    "message": "Трајно избрисати тајну"
+  },
+  "hardDeleteSecrets": {
+    "message": "Трајно избрисати тајне"
+  },
   "secretProjectAssociationDescription": {
     "message": "Select projects that the secret will be associated with. Only organization users with access to these projects will be able to see the secret."
   },
@@ -5784,6 +5790,9 @@
   "secretsNoItemsMessage": {
     "message": "To get started, add a new secret or import secrets."
   },
+  "secretsTrashNoItemsMessage": {
+    "message": "У отпад нема тајне."
+  },
   "serviceAccountsNoItemsTitle": {
     "message": "Nothing to show yet"
   },
@@ -5828,6 +5837,15 @@
   },
   "softDeletesSuccessToast": {
     "message": "Secrets sent to trash"
+  },
+  "hardDeleteSecretConfirmation": {
+    "message": "Да ли сте сигурни да желите да трајно избришете ову тајну?"
+  },
+  "hardDeleteSecretsConfirmation": {
+    "message": "Да ли сте сигурни да желите да трајно избришете ове тајне?"
+  },
+  "hardDeletesSuccessToast": {
+    "message": "Тајне трајно избрисане"
   },
   "serviceAccountCreated": {
     "message": "Service account created"
@@ -5906,6 +5924,9 @@
   },
   "softDeleteSuccessToast": {
     "message": "Тајна послана у отпад"
+  },
+  "hardDeleteSuccessToast": {
+    "message": "Тајна трајно избрисана"
   },
   "searchProjects": {
     "message": "Претражити пројекте"
@@ -6142,6 +6163,9 @@
   "lastChecked": {
     "message": "Последња провера"
   },
+  "editDomain": {
+    "message": "Уреди домен"
+  },
   "domainFormInvalid": {
     "message": "Постоје грешке у формулару које захтевају вашу пажњу"
   },
@@ -6365,7 +6389,7 @@
     "message": "Овај корисник може приступити Secrets Manager Beta"
   },
   "important": {
-    "message": "Important:"
+    "message": "Важно:"
   },
   "viewAll": {
     "message": "Прегледај све"
@@ -6391,5 +6415,100 @@
   },
   "errorReadingImportFile": {
     "message": "Дошло је до грешке у покушају читања датотеке за увоз"
+  },
+  "createSecret": {
+    "message": "Креирати тајну"
+  },
+  "createProject": {
+    "message": "Креирај пројекат"
+  },
+  "createServiceAccount": {
+    "message": "Креирајте налог сервиса"
+  },
+  "downloadThe": {
+    "message": "Преузети",
+    "description": "Link to a downloadable resource. This will be used as part of a larger phrase. Example: Download the Secrets Manager CLI"
+  },
+  "smCLI": {
+    "message": "Secrets Manager CLI"
+  },
+  "importSecrets": {
+    "message": "Увоз тајне"
+  },
+  "getStarted": {
+    "message": "Почните"
+  },
+  "complete": {
+    "message": "$COMPLETED$/$TOTAL$ завршено",
+    "placeholders": {
+      "COMPLETED": {
+        "content": "$1",
+        "example": "1"
+      },
+      "TOTAL": {
+        "content": "$2",
+        "example": "4"
+      }
+    }
+  },
+  "restoreSecret": {
+    "message": "Врати тајну"
+  },
+  "restoreSecrets": {
+    "message": "Врати тајне"
+  },
+  "restoreSecretPrompt": {
+    "message": "Да ли сте сигурни да желите да вратите ову тајну?"
+  },
+  "restoreSecretsPrompt": {
+    "message": "Да ли сте сигурни да желите да вратите ове тајне?"
+  },
+  "secretRestoredSuccessToast": {
+    "message": "Тајна враћена"
+  },
+  "secretsRestoredSuccessToast": {
+    "message": "Тајне враћене"
+  },
+  "selectionIsRequired": {
+    "message": "Потребно је да изаберете нешто."
+  },
+  "secretsManagerSubscriptionDesc": {
+    "message": "Укључите приступ организације за Secrets Manager бесплатно током Бета програма. Корисницима се може одобрити приступ Бета у Члановима."
+  },
+  "secretsManagerEnable": {
+    "message": "Омогућити Secrets Manager Бета"
+  },
+  "checkForBreaches": {
+    "message": "Проверите познате упада података за ову лозинку"
+  },
+  "exposedMasterPassword": {
+    "message": "Изложена главна лозинка"
+  },
+  "exposedMasterPasswordDesc": {
+    "message": "Лозинка је пронађена у случају повреде података. Користите јединствену лозинку да бисте заштитили свој налог. Да ли сте сигурни да желите да користите откривену лозинку?"
+  },
+  "weakAndExposedMasterPassword": {
+    "message": "Слаба и зложена главна лозинка"
+  },
+  "weakAndBreachedMasterPasswordDesc": {
+    "message": "Идентификована је слаба лозинка и пронађена у упаду података. Користите јаку и јединствену лозинку да заштитите свој налог. Да ли сте сигурни да желите да користите ову лозинку?"
+  },
+  "characterMinimum": {
+    "message": "Минимум $LENGTH$ карактера",
+    "placeholders": {
+      "length": {
+        "content": "$1",
+        "example": "14"
+      }
+    }
+  },
+  "masterPasswordMinimumlength": {
+    "message": "Главна лозинка треба имати барем $LENGTH$ карактера.",
+    "placeholders": {
+      "length": {
+        "content": "$1",
+        "example": "14"
+      }
+    }
   }
 }

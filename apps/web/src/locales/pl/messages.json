@@ -1384,7 +1384,7 @@
     "message": "Zabezpiecz swoje konto poprzez wymóg wykonania dodatkowego kroku podczas logowania."
   },
   "twoStepLoginOrganizationDescStart": {
-    "message": "Wymuszaj opcje logowania dwustopniowego Bitwarden dla członków za pomocą ",
+    "message": "Wymuszaj opcje logowania dwustopniowego Bitwarden dla użytkowników za pomocą ",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enforce Bitwarden Two-step Login options for members by using the Two-step Login Policy.'"
   },
   "twoStepLoginPolicy": {
@@ -1426,7 +1426,7 @@
     "message": "Konto Premium jest wymagane"
   },
   "premiumRequiredDesc": {
-    "message": "Konto Premium jest wymagane, aby skorzystać z tej funkcji."
+    "message": "Członkostwo premium jest wymagane do korzystania z tej funkcji."
   },
   "youHavePremiumAccess": {
     "message": "Posiadasz dostęp do funkcji konta Premium"
@@ -1877,7 +1877,7 @@
     "message": "Konto Premium zostało zaktualizowane."
   },
   "premiumUpgradeUnlockFeatures": {
-    "message": "Zaktualizuj swoje konto do konta Premium i odblokuj dodatkowe funkcje."
+    "message": "Zaktualizuj swoje konto do członkostwa premium i odblokuj fajne, dodatkowe funkcje."
   },
   "premiumSignUpStorage": {
     "message": "1 GB przestrzeni na zaszyfrowane załączniki."
@@ -1932,7 +1932,7 @@
     "message": "Konto Premium"
   },
   "premiumAccessDesc": {
-    "message": "Możesz przyznać konta Premium wszystkim użytkownikom w Twojej organizacji za $PRICE$ /$INTERVAL$.",
+    "message": "Możesz przyznać dostęp premium wszystkim użytkownikom w Twojej organizacji za $PRICE$ /$INTERVAL$.",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -2185,7 +2185,7 @@
     }
   },
   "uploadLicenseFilePremium": {
-    "message": "Aby aktywować konto Premium, musisz przesłać plik licencyjny."
+    "message": "Aby zaktualizować swoje konto do wersji premium, musisz wgrać prawidłowy plik licencyjny."
   },
   "uploadLicenseFileOrg": {
     "message": "Aby utworzyć organizację na własnym serwerze, musisz przesłać plik licencyjny."
@@ -3063,7 +3063,7 @@
     }
   },
   "confirmUsers": {
-    "message": "Potwierdź użytkowników"
+    "message": "Zatwierdź użytkowników"
   },
   "usersNeedConfirmed": {
     "message": "Posiadasz użytkowników, którzy zaakceptowali zaproszenie, ale muszą jeszcze zostać potwierdzeni. Użytkownicy nie będą posiadali dostępu do organizacji, dopóki nie zostaną potwierdzeni."
@@ -5624,7 +5624,7 @@
     "message": "Wł."
   },
   "members": {
-    "message": "Członkowie"
+    "message": "Użytkownicy"
   },
   "reporting": {
     "message": "Zgłaszanie"
@@ -5730,6 +5730,12 @@
   "deleteSecrets": {
     "message": "Usuń sekrety"
   },
+  "hardDeleteSecret": {
+    "message": "Trwale usuń sekret"
+  },
+  "hardDeleteSecrets": {
+    "message": "Trwale usuń sekrety"
+  },
   "secretProjectAssociationDescription": {
     "message": "Wybierz projekty, z którymi będzie skojarzony sekret. Tylko użytkownicy organizacji z dostępem do tych projektów będą mogli zobaczyć sekret."
   },
@@ -5784,6 +5790,9 @@
   "secretsNoItemsMessage": {
     "message": "Aby rozpocząć, dodaj nowy sekret lub zaimportuj sekrety."
   },
+  "secretsTrashNoItemsMessage": {
+    "message": "W koszu nie ma żadnych sekretów."
+  },
   "serviceAccountsNoItemsTitle": {
     "message": "Nie ma nic do pokazania"
   },
@@ -5828,6 +5837,15 @@
   },
   "softDeletesSuccessToast": {
     "message": "Sekrety zostały przeniesione do kosza"
+  },
+  "hardDeleteSecretConfirmation": {
+    "message": "Czy na pewno chcesz trwale usunąć ten sekret?"
+  },
+  "hardDeleteSecretsConfirmation": {
+    "message": "Czy na pewno chcesz trwale usunąć te sekrety?"
+  },
+  "hardDeletesSuccessToast": {
+    "message": "Sekrety zostały trwale usunięte"
   },
   "serviceAccountCreated": {
     "message": "Konto usługi zostało utworzone"
@@ -5906,6 +5924,9 @@
   },
   "softDeleteSuccessToast": {
     "message": "Sekret został przeniesiony do kosza"
+  },
+  "hardDeleteSuccessToast": {
+    "message": "Sekrety zostały trwale usunięty"
   },
   "searchProjects": {
     "message": "Szukaj w projektach"
@@ -6142,6 +6163,9 @@
   "lastChecked": {
     "message": "Ostatnio sprawdzona"
   },
+  "editDomain": {
+    "message": "Edytuj domenę"
+  },
   "domainFormInvalid": {
     "message": "Istnieją błędy formularza, które wymagają Twojej uwagi"
   },
@@ -6356,13 +6380,13 @@
     "message": "Kontynuowanie spowoduje wylogowanie z bieżącej sesji i konieczność ponownego zalogowania. Aktywne sesje na innych urządzeniach mogą pozostać aktywne przez maksymalnie godzinę. Zalecamy wyeksportowanie sejfu przed zmianą ustawień szyfrowania, aby zapobiec utracie danych."
   },
   "secretsManagerBeta": {
-    "message": "Manager sekretów beta"
+    "message": "Menedżer sekretów beta"
   },
   "secretsManagerBetaDesc": {
-    "message": "Włącz dostęp użytkownikom do Managera sekretów bez żadnych opłat podczas programu Beta."
+    "message": "Włącz dostęp użytkownikom do menedżera sekretów bez żadnych opłat podczas programu beta."
   },
   "userAccessSecretsManager": {
-    "message": "Ten użytkownik może uzyskać dostęp do Managera sekretów Beta"
+    "message": "Ten użytkownik może uzyskać dostęp do menedżera sekretów beta"
   },
   "important": {
     "message": "Ważne:"
@@ -6391,5 +6415,100 @@
   },
   "errorReadingImportFile": {
     "message": "Wystąpił błąd podczas próby odczytu pliku importu"
+  },
+  "createSecret": {
+    "message": "Utwórz sekret"
+  },
+  "createProject": {
+    "message": "Utwórz projekt"
+  },
+  "createServiceAccount": {
+    "message": "Utwórz konto serwisowe"
+  },
+  "downloadThe": {
+    "message": "Pobierz",
+    "description": "Link to a downloadable resource. This will be used as part of a larger phrase. Example: Download the Secrets Manager CLI"
+  },
+  "smCLI": {
+    "message": "CLI menedżera sekretów"
+  },
+  "importSecrets": {
+    "message": "Importuj sekrety"
+  },
+  "getStarted": {
+    "message": "Pierwsze kroki"
+  },
+  "complete": {
+    "message": "Gotowe: $COMPLETED$/$TOTAL$",
+    "placeholders": {
+      "COMPLETED": {
+        "content": "$1",
+        "example": "1"
+      },
+      "TOTAL": {
+        "content": "$2",
+        "example": "4"
+      }
+    }
+  },
+  "restoreSecret": {
+    "message": "Przywróć sekret"
+  },
+  "restoreSecrets": {
+    "message": "Przywróć sekrety"
+  },
+  "restoreSecretPrompt": {
+    "message": "Czy na pewno chcesz przywrócić ten sekret?"
+  },
+  "restoreSecretsPrompt": {
+    "message": "Czy na pewno chcesz przywrócić te sekrety?"
+  },
+  "secretRestoredSuccessToast": {
+    "message": "Sekret przywrócony"
+  },
+  "secretsRestoredSuccessToast": {
+    "message": "Sekrety przywrócone"
+  },
+  "selectionIsRequired": {
+    "message": "Wybór jest wymagany."
+  },
+  "secretsManagerSubscriptionDesc": {
+    "message": "Włącz dostęp organizacji do menedżera sekretów bez żadnych opłat podczas programu beta. Użytkownicy mogą uzyskać dostęp do wersji beta w sekcji użytkownicy."
+  },
+  "secretsManagerEnable": {
+    "message": "Włącz menedżer sekretów beta"
+  },
+  "checkForBreaches": {
+    "message": "Sprawdź czy to hasło występowało w znanych wyciekach danych"
+  },
+  "exposedMasterPassword": {
+    "message": "Ujawnione hasło główne"
+  },
+  "exposedMasterPasswordDesc": {
+    "message": "Hasło ujawnione w wyniku naruszenia ochrony danych. Użyj unikalnego hasła, aby chronić swoje konto. Czy na pewno chcesz użyć ujawnionego hasła?"
+  },
+  "weakAndExposedMasterPassword": {
+    "message": "Słabe i ujawnione hasło główne"
+  },
+  "weakAndBreachedMasterPasswordDesc": {
+    "message": "Słabe hasło ujawnione w wyniku naruszenia ochrony danych. Użyj silnego i unikalnego hasła, aby chronić swoje konto. Czy na pewno chcesz użyć tego hasła?"
+  },
+  "characterMinimum": {
+    "message": "Minimum znaków: $LENGTH$",
+    "placeholders": {
+      "length": {
+        "content": "$1",
+        "example": "14"
+      }
+    }
+  },
+  "masterPasswordMinimumlength": {
+    "message": "Hasło główne musi zawierać co najmniej $LENGTH$ znaki(-ów).",
+    "placeholders": {
+      "length": {
+        "content": "$1",
+        "example": "14"
+      }
+    }
   }
 }

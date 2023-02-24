@@ -697,7 +697,7 @@
     "message": "Ana parolun yenidən yazılması lazımdır."
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least $VALUE$ characters long.",
+    "message": "Ana parol ən azı $VALUE$ simvol uzunluğunda olmalıdır.",
     "description": "The Master Password must be at least a specific number of characters long.",
     "placeholders": {
       "value": {
@@ -5730,6 +5730,12 @@
   "deleteSecrets": {
     "message": "\"Sirr\"ləri sil"
   },
+  "hardDeleteSecret": {
+    "message": "Sirri birdəfəlik sil"
+  },
+  "hardDeleteSecrets": {
+    "message": "Sirləri birdəfəlik sil"
+  },
   "secretProjectAssociationDescription": {
     "message": "Sirrin əlaqələndiriləcəyi layihələri seçin. Yalnız bu layihələrə müraciəti olan təşkilat istifadəçiləri sirri görə biləcək."
   },
@@ -5784,6 +5790,9 @@
   "secretsNoItemsMessage": {
     "message": "Başlamaq üçün yeni bir sirr əlavə edin və ya daxilə köçürün."
   },
+  "secretsTrashNoItemsMessage": {
+    "message": "Tullantı qutusunda heç bir sirr yoxdur."
+  },
   "serviceAccountsNoItemsTitle": {
     "message": "Göstəriləcək heç nə yoxdur"
   },
@@ -5828,6 +5837,15 @@
   },
   "softDeletesSuccessToast": {
     "message": "\"Sirr\"lər tullantı qutusuna göndərildi"
+  },
+  "hardDeleteSecretConfirmation": {
+    "message": "Bu sirri birdəfəlik silmək istədiyinizə əminsiniz?"
+  },
+  "hardDeleteSecretsConfirmation": {
+    "message": "Bu sirləri birdəfəlik silmək istədiyinizə əminsiniz?"
+  },
+  "hardDeletesSuccessToast": {
+    "message": "Sirlər birdəfəlik silindi"
   },
   "serviceAccountCreated": {
     "message": "Servis hesabı yaradıldı"
@@ -5906,6 +5924,9 @@
   },
   "softDeleteSuccessToast": {
     "message": "Sirr tullantı qutusuna göndərildi"
+  },
+  "hardDeleteSuccessToast": {
+    "message": "Sirr birdəfəlik silindi"
   },
   "searchProjects": {
     "message": "Layihə axtar"
@@ -6142,6 +6163,9 @@
   "lastChecked": {
     "message": "Son yoxlama"
   },
+  "editDomain": {
+    "message": "Domenə düzəliş et"
+  },
   "domainFormInvalid": {
     "message": "Diqqətinizi tələb edən form xətaları var"
   },
@@ -6365,7 +6389,7 @@
     "message": "Bu istifadəçi \"Secrets Manager Beta\"ya müraciət edə bilər"
   },
   "important": {
-    "message": "Important:"
+    "message": "Vacib:"
   },
   "viewAll": {
     "message": "Hamısına bax"
@@ -6391,5 +6415,100 @@
   },
   "errorReadingImportFile": {
     "message": "Daxilə köçürmə faylını oxumağa çalışarkən xəta baş verdi"
+  },
+  "createSecret": {
+    "message": "Bir sirr yarat"
+  },
+  "createProject": {
+    "message": "Bir layihə yarat"
+  },
+  "createServiceAccount": {
+    "message": "Bir xidmət hesabı yarat"
+  },
+  "downloadThe": {
+    "message": "Endir",
+    "description": "Link to a downloadable resource. This will be used as part of a larger phrase. Example: Download the Secrets Manager CLI"
+  },
+  "smCLI": {
+    "message": "Secrets Manager CLI"
+  },
+  "importSecrets": {
+    "message": "\"Sirr\"ləri daxilə köçür"
+  },
+  "getStarted": {
+    "message": "Başla"
+  },
+  "complete": {
+    "message": "$COMPLETED$/$TOTAL$ tamamlandı",
+    "placeholders": {
+      "COMPLETED": {
+        "content": "$1",
+        "example": "1"
+      },
+      "TOTAL": {
+        "content": "$2",
+        "example": "4"
+      }
+    }
+  },
+  "restoreSecret": {
+    "message": "\"Sirr\"i bərpa et"
+  },
+  "restoreSecrets": {
+    "message": "\"Sirr\"ləri bərpa et"
+  },
+  "restoreSecretPrompt": {
+    "message": "Bu sirri bərpa etmək istədiyinizə əminsiniz?"
+  },
+  "restoreSecretsPrompt": {
+    "message": "Bu sirləri bərpa etmək istədiyinizə əminsiniz?"
+  },
+  "secretRestoredSuccessToast": {
+    "message": "Sirr bərpa olundu"
+  },
+  "secretsRestoredSuccessToast": {
+    "message": "Sirlər bərpa olundu"
+  },
+  "selectionIsRequired": {
+    "message": "Seçim tələb olunur."
+  },
+  "secretsManagerSubscriptionDesc": {
+    "message": "Beta proqramı əsnasında \"Secret Manager\"ə təşkilat müraciətini ödənişsiz işə salın. İstifadəçilərə, Üzvlərdə Betaya müraciət icazəsi verilə bilər."
+  },
+  "secretsManagerEnable": {
+    "message": "\"Secrets Manager Beta\"nı fəallaşdır"
+  },
+  "checkForBreaches": {
+    "message": "Check known data breaches for this password"
+  },
+  "exposedMasterPassword": {
+    "message": "Exposed Master Password"
+  },
+  "exposedMasterPasswordDesc": {
+    "message": "Password found in a data breach. Use a unique password to protect your account. Are you sure you want to use an exposed password?"
+  },
+  "weakAndExposedMasterPassword": {
+    "message": "Weak and Exposed Master Password"
+  },
+  "weakAndBreachedMasterPasswordDesc": {
+    "message": "Weak password identified and found in a data breach. Use a strong and unique password to protect your account. Are you sure you want to use this password?"
+  },
+  "characterMinimum": {
+    "message": "$LENGTH$ character minimum",
+    "placeholders": {
+      "length": {
+        "content": "$1",
+        "example": "14"
+      }
+    }
+  },
+  "masterPasswordMinimumlength": {
+    "message": "Master password must be at least $LENGTH$ characters long.",
+    "placeholders": {
+      "length": {
+        "content": "$1",
+        "example": "14"
+      }
+    }
   }
 }
