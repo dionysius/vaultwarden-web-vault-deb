@@ -10,11 +10,12 @@
       icon="bwi-cli"
       [completed]="view.tasks.createServiceAccount"
     >
-      <span>
+      <span class="tw-pl-1">
         {{ "downloadThe" | i18n }} <a bitLink routerLink="">{{ "smCLI" | i18n }}</a>
       </span>
     </sm-onboarding-task>
     <sm-onboarding-task
+      *ngIf="userIsAdmin"
       [title]="'importSecrets' | i18n"
       [route]="['settings', 'import']"
       icon="bwi-download"
@@ -27,6 +28,7 @@
       [completed]="view.tasks.createSecret"
     ></sm-onboarding-task>
     <sm-onboarding-task
+      *ngIf="userIsAdmin"
       [title]="'createProject' | i18n"
       (click)="openNewProjectDialog()"
       icon="bwi-collection"

@@ -57,6 +57,7 @@ export class OverviewComponent implements OnInit, OnDestroy {
   private tableSize = 10;
   private organizationId: string;
   protected organizationName: string;
+  protected userIsAdmin: boolean;
 
   protected view$: Observable<{
     allProjects: ProjectListView[];
@@ -96,6 +97,7 @@ export class OverviewComponent implements OnInit, OnDestroy {
       .subscribe((org) => {
         this.organizationId = org.id;
         this.organizationName = org.name;
+        this.userIsAdmin = org.isAdmin;
       });
 
     const projects$ = combineLatest([
