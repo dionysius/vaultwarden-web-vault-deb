@@ -542,7 +542,7 @@
     "message": "مطلوب إعادة كتابة كلمة المرور الرئيسية."
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least $VALUE$ characters long.",
+    "message": "كلمة المرور الرئيسية يجب أن تكون على الأقل $VALUE$ حرفاً.",
     "description": "The Master Password must be at least a specific number of characters long.",
     "placeholders": {
       "value": {
@@ -2069,35 +2069,35 @@
     "message": "تسجيل الدخول باستخدام جهاز آخر"
   },
   "logInInitiated": {
-    "message": "Log in initiated"
+    "message": "بدء تسجيل الدخول"
   },
   "notificationSentDevice": {
-    "message": "A notification has been sent to your device."
+    "message": "تم إرسال إشعار إلى جهازك."
   },
   "fingerprintMatchInfo": {
-    "message": "Please make sure your vault is unlocked and Fingerprint phrase matches the other device."
+    "message": "الرجاء التأكد من أن المخزن الخاص بك غير مقفل وأن عبارة بصمة الإصبع تطابق الجهاز الآخر."
   },
   "fingerprintPhraseHeader": {
-    "message": "Fingerprint phrase"
+    "message": "عبارة بصمة الإصبع"
   },
   "needAnotherOption": {
-    "message": "Log in with device must be set up in the settings of the Bitwarden app. Need another option?"
+    "message": "تسجيل الدخول باستخدام الجهاز يجب أن يتم إعداده في إعدادات تطبيق Bitwarden. هل تحتاج إلى خيار آخر؟"
   },
   "viewAllLoginOptions": {
-    "message": "View all login options"
+    "message": "عرض جميع خيارات تسجيل الدخول"
   },
   "resendNotification": {
-    "message": "Resend notification"
+    "message": "إعادة إرسال الإشعار"
   },
   "toggleCharacterCount": {
     "message": "تبديل عدد الأحرف",
     "description": "'Character count' describes a feature that displays a number next to each character of the password."
   },
   "areYouTryingtoLogin": {
-    "message": "Are you trying to log in?"
+    "message": "هل تحاول تسجيل الدخول؟"
   },
   "logInAttemptBy": {
-    "message": "Login attempt by $EMAIL$",
+    "message": "محاولة تسجيل الدخول بواسطة $EMAIL$",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -2106,25 +2106,25 @@
     }
   },
   "deviceType": {
-    "message": "Device Type"
+    "message": "نوع الجهاز"
   },
   "ipAddress": {
-    "message": "IP Address"
+    "message": "عنوان IP"
   },
   "time": {
-    "message": "Time"
+    "message": "الوقت"
   },
   "confirmLogIn": {
-    "message": "Confirm login"
+    "message": "تأكيد تسجيل الدخول"
   },
   "denyLogIn": {
-    "message": "Deny login"
+    "message": "رفض تسجيل الدخول"
   },
   "approveLoginRequests": {
-    "message": "Approve login requests"
+    "message": "الموافقة على طلبات تسجيل الدخول"
   },
   "logInConfirmedForEmailOnDevice": {
-    "message": "Login confirmed for $EMAIL$ on $DEVICE$",
+    "message": "تم تأكيد تسجيل الدخول لـ $EMAIL$ في $DEVICE$",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -2137,13 +2137,13 @@
     }
   },
   "youDeniedALogInAttemptFromAnotherDevice": {
-    "message": "You denied a login attempt from another device. If this really was you, try to log in with the device again."
+    "message": "لقد رفضت محاولة تسجيل الدخول من جهاز آخر. إذا كان هذا بالفعل أنت ، حاول تسجيل الدخول مرة أخرى باستخدام الجهاز."
   },
   "justNow": {
-    "message": "Just now"
+    "message": "للتو الآن"
   },
   "requestedXMinutesAgo": {
-    "message": "Requested $MINUTES$ minutes ago",
+    "message": "طلب قبل $MINUTES$ دقائق",
     "placeholders": {
       "minutes": {
         "content": "$1",
@@ -2152,16 +2152,16 @@
     }
   },
   "loginRequestHasAlreadyExpired": {
-    "message": "Login request has already expired."
+    "message": "لقد انتهت صلاحية طلب تسجيل الدخول."
   },
   "thisRequestIsNoLongerValid": {
-    "message": "This request is no longer valid."
+    "message": "هذا الطلب لم يعد صالحًا."
   },
   "approveLoginRequestDesc": {
-    "message": "Use this device to approve login requests made from other devices."
+    "message": "استخدم هذا الجهاز للموافقة على طلبات تسجيل الدخول من الأجهزة الأخرى."
   },
   "confirmLoginAtemptForMail": {
-    "message": "Confirm login attempt for $EMAIL$",
+    "message": "تأكيد محاولة تسجيل الدخول لـ $EMAIL$",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -2170,31 +2170,31 @@
     }
   },
   "logInRequested": {
-    "message": "Log in requested"
+    "message": "طلب تسجيل الدخول"
   },
   "exposedMasterPassword": {
-    "message": "Exposed Master Password"
+    "message": "كلمة المرور الرئيسية مكشوفة"
   },
   "exposedMasterPasswordDesc": {
-    "message": "Password found in a data breach. Use a unique password to protect your account. Are you sure you want to use an exposed password?"
+    "message": "كلمة المرور موجودة في خرق البيانات. استخدم كلمة مرور فريدة لحماية حسابك. هل أنت متأكد من أنك تريد استخدام كلمة مرور مكشوفة؟"
   },
   "weakAndExposedMasterPassword": {
-    "message": "Weak and Exposed Master Password"
+    "message": "كلمة المرور الرئيسية ضعيفة ومكشوفة"
   },
   "weakAndBreachedMasterPasswordDesc": {
-    "message": "Weak password identified and found in a data breach. Use a strong and unique password to protect your account. Are you sure you want to use this password?"
+    "message": "كلمة مرور ضعيفة محددة وموجودة في خرق البيانات. استخدم كلمة مرور قوية وفريدة لحماية حسابك. هل أنت متأكد من أنك تريد استخدام كلمة المرور هذه؟"
   },
   "checkForBreaches": {
-    "message": "Check known data breaches for this password"
+    "message": "تحقق من خروقات البيانات المعروفة لكلمة المرور هذه"
   },
   "important": {
-    "message": "Important:"
+    "message": "مهم:"
   },
   "masterPasswordHint": {
-    "message": "Your master password cannot be recovered if you forget it!"
+    "message": "لا يمكن استعادة كلمة المرور الرئيسية إذا نسيتها!"
   },
   "characterMinimum": {
-    "message": "$LENGTH$ character minimum",
+    "message": "$LENGTH$ حرف أدنى",
     "placeholders": {
       "length": {
         "content": "$1",

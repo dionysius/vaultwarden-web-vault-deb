@@ -542,7 +542,7 @@
     "message": "Erneute Eingabe des Master-Passworts ist erforderlich."
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least $VALUE$ characters long.",
+    "message": "Das Master-Passwort muss mindestens $VALUE$ Zeichen lang sein.",
     "description": "The Master Password must be at least a specific number of characters long.",
     "placeholders": {
       "value": {

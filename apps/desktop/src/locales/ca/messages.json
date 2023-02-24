@@ -542,7 +542,7 @@
     "message": "Cal tornar a escriure la contrasenya mestra."
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least $VALUE$ characters long.",
+    "message": "La contrasenya mestra ha de contenir almenys $VALUE$ caràcters.",
     "description": "The Master Password must be at least a specific number of characters long.",
     "placeholders": {
       "value": {

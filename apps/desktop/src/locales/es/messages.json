@@ -542,7 +542,7 @@
     "message": "Se requiere volver a teclear la contraseña maestra."
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least $VALUE$ characters long.",
+    "message": "La contraseña maestra debe tener al menos $VALUE$ caracteres.",
     "description": "The Master Password must be at least a specific number of characters long.",
     "placeholders": {
       "value": {

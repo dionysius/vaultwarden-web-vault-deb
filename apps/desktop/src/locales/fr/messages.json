@@ -542,7 +542,7 @@
     "message": "Une nouvelle saisie du mot de passe principal est nécessaire."
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least $VALUE$ characters long.",
+    "message": "Le mot de passe principal doit comporter au moins $VALUE$ caractères.",
     "description": "The Master Password must be at least a specific number of characters long.",
     "placeholders": {
       "value": {

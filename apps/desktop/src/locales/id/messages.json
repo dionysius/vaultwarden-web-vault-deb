@@ -2173,7 +2173,7 @@
     "message": "Log in requested"
   },
   "exposedMasterPassword": {
-    "message": "Exposed Master Password"
+    "message": "Kata Sandi Utama terekspos"
   },
   "exposedMasterPasswordDesc": {
     "message": "Password found in a data breach. Use a unique password to protect your account. Are you sure you want to use an exposed password?"
@@ -2185,16 +2185,16 @@
     "message": "Weak password identified and found in a data breach. Use a strong and unique password to protect your account. Are you sure you want to use this password?"
   },
   "checkForBreaches": {
-    "message": "Check known data breaches for this password"
+    "message": "Periksa pelanggaran data yang diketahui untuk kata sandi ini"
   },
   "important": {
-    "message": "Important:"
+    "message": "Penting:"
   },
   "masterPasswordHint": {
-    "message": "Your master password cannot be recovered if you forget it!"
+    "message": "Kata sandi utama Anda tidak dapat dipulihkan jika Anda lupa!"
   },
   "characterMinimum": {
-    "message": "$LENGTH$ character minimum",
+    "message": "$LENGTH$ karakter minimal",
     "placeholders": {
       "length": {
         "content": "$1",

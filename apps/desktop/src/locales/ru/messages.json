@@ -542,7 +542,7 @@
     "message": "Необходимо повторно ввести мастер-пароль."
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least $VALUE$ characters long.",
+    "message": "Мастер-пароль должен содержать не менее $VALUE$ символов.",
     "description": "The Master Password must be at least a specific number of characters long.",
     "placeholders": {
       "value": {

@@ -542,7 +542,7 @@
     "message": "Pääsalasanan uudelleensyöttö vaaditaan."
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least $VALUE$ characters long.",
+    "message": "Pääsalasanan tulee sisältää vähintään $VALUE$ merkkiä.",
     "description": "The Master Password must be at least a specific number of characters long.",
     "placeholders": {
       "value": {
