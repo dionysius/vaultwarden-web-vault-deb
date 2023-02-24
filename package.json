@@ -203,7 +203,7 @@
     "react": "^18.0.0"
   },
   "lint-staged": {
-    "*": "prettier --ignore-unknown --write",
+    "*": "prettier --cache --ignore-unknown --write",
     "*.ts": "eslint --cache --cache-strategy content --fix"
   },
   "engines": {
