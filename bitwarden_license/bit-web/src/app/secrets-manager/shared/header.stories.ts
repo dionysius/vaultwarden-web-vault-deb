@@ -15,6 +15,7 @@ import {
   MenuModule,
   NavigationModule,
   TabsModule,
+  TypographyModule,
 } from "@bitwarden/components";
 import { InputModule } from "@bitwarden/components/src/input/input.module";
 import { PreloadedEnglishI18nModule } from "@bitwarden/web-vault/app/tests/preloaded-english-i18n.module";
@@ -65,9 +66,10 @@ export default {
         IconModule,
         InputModule,
         MenuModule,
+        TabsModule,
+        TypographyModule,
         NavigationModule,
         PreloadedEnglishI18nModule,
-        TabsModule,
       ],
       declarations: [HeaderComponent, MockProductSwitcher],
       providers: [
