@@ -2111,25 +2111,49 @@
       }
     }
   },
-  "tryAutofillPageLoad": {
-    "message": "Αυτόματη συμπλήρωση κατά τη φόρτωση της σελίδας;"
-  },
-  "tryAutofill": {
+  "howToAutofill": {
     "message": "Πώς να συμπληρώσετε αυτόματα"
   },
-  "autofillPageLoadInfo": {
-    "message": "Οι φόρμες σύνδεσης θα συμπληρώσουν αυτόματα τα αντίστοιχα διαπιστευτήρια αν ενεργοποιήσετε την αυτόματη συμπλήρωση κατά τη φόρτωση της σελίδας."
-  },
   "autofillSelectInfo": {
-    "message": "Επιλέξτε ένα στοιχείο από αυτή τη σελίδα για να συμπληρώσετε αυτόματα τη φόρμα της ενεργής καρτέλας."
+    "message": "Select an item from this page or use the shortcut: $COMMAND$. You can also try auto-fill on page load.",
+    "placeholders": {
+      "command": {
+        "content": "$1",
+        "example": "CTRL+Shift+L"
+      }
+    }
   },
-  "autofillTurnedOn": {
-    "message": "Η αυτόματη συμπλήρωση κατά τη φόρτωση της σελίδας ενεργοποιήθηκε"
+  "autofillSelectInfoNoCommand": {
+    "message": "Επιλέξτε ένα στοιχείο από αυτή τη σελίδα ή ορίστε μια συντόμευση στις ρυθμίσεις. Μπορείτε επίσης να δοκιμάσετε την αυτόματη συμπλήρωση κατά τη φόρτωση της σελίδας."
   },
-  "turnOn": {
-    "message": "Ενεργοποίηση"
+  "gotIt": {
+    "message": "Το κατάλαβα"
   },
-  "notNow": {
-    "message": "Όχι τώρα"
+  "autofillSettings": {
+    "message": "Ρυθμίσεις αυτόματης συμπλήρωσης"
+  },
+  "autofillShortcut": {
+    "message": "Συντόμευση πληκτρολογίου αυτόματης συμπλήρωσης"
+  },
+  "autofillShortcutNotSet": {
+    "message": "Η συντόμευση αυτόματης συμπλήρωσης δεν έχει οριστεί. Αλλάξτε τη στις ρυθμίσεις του περιηγητή."
+  },
+  "autofillShortcutText": {
+    "message": "Η συντόμευση αυτόματης συμπλήρωσης είναι: $COMMAND$. Αλλάξτε τη στις ρυθμίσεις του προγράμματος περιήγησης.",
+    "placeholders": {
+      "command": {
+        "content": "$1",
+        "example": "CTRL+Shift+L"
+      }
+    }
+  },
+  "autofillShortcutTextSafari": {
+    "message": "Προεπιλεγμένη συντόμευση αυτόματης συμπλήρωσης: $COMMAND$.",
+    "placeholders": {
+      "command": {
+        "content": "$1",
+        "example": "CTRL+Shift+L"
+      }
+    }
   }
 }

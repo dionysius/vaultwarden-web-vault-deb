@@ -430,7 +430,7 @@
     "message": "Cal tornar a escriure la contrasenya mestra."
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least $VALUE$ characters long.",
+    "message": "La contrasenya mestra ha de contenir almenys $VALUE$ caràcters.",
     "description": "The Master Password must be at least a specific number of characters long.",
     "placeholders": {
       "value": {
@@ -2111,25 +2111,49 @@
       }
     }
   },
-  "tryAutofillPageLoad": {
-    "message": "Es prova l'emplenament automàtic en carregar la pàgina?"
-  },
-  "tryAutofill": {
+  "howToAutofill": {
     "message": "Com emplenar automàticament"
   },
-  "autofillPageLoadInfo": {
-    "message": "Els formularis d'inici de sessió emplenaran automàticament les credencials coincidents si activeu l'emplenament automàtic en carregar la pàgina."
-  },
   "autofillSelectInfo": {
-    "message": "Selecciona un element d'aquesta pàgina per emplenar automàticament el formulari de la pestanya activa."
+    "message": "Select an item from this page or use the shortcut: $COMMAND$. You can also try auto-fill on page load.",
+    "placeholders": {
+      "command": {
+        "content": "$1",
+        "example": "CTRL+Shift+L"
+      }
+    }
   },
-  "autofillTurnedOn": {
-    "message": "S'ha activat l'emplenament automàtic en carregar de la pàgina"
+  "autofillSelectInfoNoCommand": {
+    "message": "Seleccioneu un element d'aquesta pàgina o definiu una drecera a la configuració. També podeu provar l'emplenament automàtic en carregar la pàgina."
   },
-  "turnOn": {
-    "message": "Activa"
+  "gotIt": {
+    "message": "D'acord"
   },
-  "notNow": {
-    "message": "Ara no"
+  "autofillSettings": {
+    "message": "Configuració d'emplenament automàtic"
+  },
+  "autofillShortcut": {
+    "message": "Drecera de teclat d'emplenament automàtic"
+  },
+  "autofillShortcutNotSet": {
+    "message": "La drecera d'emplenament automàtic no està configurada. Canvieu-ho a la configuració del navegador."
+  },
+  "autofillShortcutText": {
+    "message": "La drecera d'emplenament automàtic és: $COMMAND$. Canvieu-ho a la configuració del navegador.",
+    "placeholders": {
+      "command": {
+        "content": "$1",
+        "example": "CTRL+Shift+L"
+      }
+    }
+  },
+  "autofillShortcutTextSafari": {
+    "message": "Drecera d'emplenament automàtic per defecte: $COMMAND$.",
+    "placeholders": {
+      "command": {
+        "content": "$1",
+        "example": "CTRL+Shift+L"
+      }
+    }
   }
 }

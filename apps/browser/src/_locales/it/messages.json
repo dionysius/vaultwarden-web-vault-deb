@@ -2111,25 +2111,49 @@
       }
     }
   },
-  "tryAutofillPageLoad": {
-    "message": "Vuoi provare l'autocompletamento al caricamento della pagina?"
-  },
-  "tryAutofill": {
-    "message": "Come utilizzare l'autocompletamento"
-  },
-  "autofillPageLoadInfo": {
-    "message": "I moduli di accesso verranno completati automaticamente con le credenziali corrispondenti se si attiva l'autocompletamento al caricamento della pagina."
+  "howToAutofill": {
+    "message": "How to auto-fill"
   },
   "autofillSelectInfo": {
-    "message": "Seleziona un elemento da questa pagina per completare automaticamente il modulo della scheda attiva."
+    "message": "Select an item from this page or use the shortcut: $COMMAND$. You can also try auto-fill on page load.",
+    "placeholders": {
+      "command": {
+        "content": "$1",
+        "example": "CTRL+Shift+L"
+      }
+    }
   },
-  "autofillTurnedOn": {
-    "message": "Autocompletamento al caricamento della pagina attivato"
+  "autofillSelectInfoNoCommand": {
+    "message": "Select an item from this page or set a shortcut in settings. You can also try auto-fill on page load."
   },
-  "turnOn": {
-    "message": "Attiva"
+  "gotIt": {
+    "message": "Got it"
   },
-  "notNow": {
-    "message": "Non ora"
+  "autofillSettings": {
+    "message": "Auto-fill settings"
+  },
+  "autofillShortcut": {
+    "message": "Auto-fill keyboard shortcut"
+  },
+  "autofillShortcutNotSet": {
+    "message": "The auto-fill shortcut is not set. Change this in the browser's settings."
+  },
+  "autofillShortcutText": {
+    "message": "The auto-fill shortcut is: $COMMAND$. Change this in the browser's settings.",
+    "placeholders": {
+      "command": {
+        "content": "$1",
+        "example": "CTRL+Shift+L"
+      }
+    }
+  },
+  "autofillShortcutTextSafari": {
+    "message": "Default auto-fill shortcut: $COMMAND$.",
+    "placeholders": {
+      "command": {
+        "content": "$1",
+        "example": "CTRL+Shift+L"
+      }
+    }
   }
 }

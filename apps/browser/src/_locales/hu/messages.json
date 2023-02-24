@@ -2111,25 +2111,49 @@
       }
     }
   },
-  "tryAutofillPageLoad": {
-    "message": "Az automatikus kitöltést kipróbálása oldalbetöltésnél?"
-  },
-  "tryAutofill": {
-    "message": "Automatikus kitöltés működése"
-  },
-  "autofillPageLoadInfo": {
-    "message": "A bejelentkező űrlapok akutomatikusan kitöltődnek hozzáillő adatokkal ha az automatikus kitöltés oldalbetöltésnél be van kapcsolva."
+  "howToAutofill": {
+    "message": "Az automatikus kitöltés működése"
   },
   "autofillSelectInfo": {
-    "message": "Erről az oldalról egy elemet kiválasztva az aktív fül űrlapját automatikusan kitölti."
+    "message": "Select an item from this page or use the shortcut: $COMMAND$. You can also try auto-fill on page load.",
+    "placeholders": {
+      "command": {
+        "content": "$1",
+        "example": "CTRL+Shift+L"
+      }
+    }
   },
-  "autofillTurnedOn": {
-    "message": "Automatikus kitöltés oldalbetöltésnél bekapcsolva"
+  "autofillSelectInfoNoCommand": {
+    "message": "Válasszunk ki egy elemet erről az oldalról vagy állítsunk be egy billentyűparancs a beállításokban. Kipróbálhatjuk az automatikus kitöltést is az oldal betöltésekor."
   },
-  "turnOn": {
-    "message": "Bekapcsolás"
+  "gotIt": {
+    "message": "Rendben"
   },
-  "notNow": {
-    "message": "Most nem"
+  "autofillSettings": {
+    "message": "Automatikus kitöltés beállítások"
+  },
+  "autofillShortcut": {
+    "message": "Automatikus kitöltés billentyűparancs"
+  },
+  "autofillShortcutNotSet": {
+    "message": "Az automatikus kitöltés billentyűzetparancs nincs beállítva. Módosítsuk ezt a böngésző beállításaiban."
+  },
+  "autofillShortcutText": {
+    "message": "Az automatikus kitöltés billentyűparancsa: $COMMAND$. Módosítsuk ezt a böngésző beállításaiban.",
+    "placeholders": {
+      "command": {
+        "content": "$1",
+        "example": "CTRL+Shift+L"
+      }
+    }
+  },
+  "autofillShortcutTextSafari": {
+    "message": "Alapértelmezett automatikus kitöltési billenytűparancs: $COMMAND$.",
+    "placeholders": {
+      "command": {
+        "content": "$1",
+        "example": "CTRL+Shift+L"
+      }
+    }
   }
 }

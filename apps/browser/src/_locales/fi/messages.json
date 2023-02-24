@@ -430,7 +430,7 @@
     "message": "Pääsalasanan uudelleensyöttö vaaditaan."
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least $VALUE$ characters long.",
+    "message": "Pääsalasanan tulee sisältää vähintään $VALUE$ merkkiä.",
     "description": "The Master Password must be at least a specific number of characters long.",
     "placeholders": {
       "value": {
@@ -2111,25 +2111,49 @@
       }
     }
   },
-  "tryAutofillPageLoad": {
-    "message": "Pyritäänkö lomakkeet täyttämään sivun avautuessa automaattisesti?"
-  },
-  "tryAutofill": {
+  "howToAutofill": {
     "message": "Miten täytetään automaattisesti"
   },
-  "autofillPageLoadInfo": {
-    "message": "Jos otat automaattisen täytön sivun avautuessa käyttöön, täytetään kirjautumislomakkeet automaattisesti sopivilla tunnuksilla."
-  },
   "autofillSelectInfo": {
-    "message": "Valitse tältä sivulta aktiivisella välilehdellä olevan lomakkeen automaattiseen täyttöön käytettävä kohde."
+    "message": "Valitse kohde sivulta tai käytä pikanäppäintä $COMMAND$. Voit myös kokeilla automaattista täyttöä sivun avautuessa.",
+    "placeholders": {
+      "command": {
+        "content": "$1",
+        "example": "CTRL+Shift+L"
+      }
+    }
   },
-  "autofillTurnedOn": {
-    "message": "Automaattinen täyttö sivun avautuessa otettiin käyttöön"
+  "autofillSelectInfoNoCommand": {
+    "message": "Valitse kohde sivulta tai määritä pikanäppäin asetuksista. Voit myös kokeilla automaattista täyttöä sivun avautuessa."
   },
-  "turnOn": {
-    "message": "Ota käyttöön"
+  "gotIt": {
+    "message": "Selvä"
   },
-  "notNow": {
-    "message": "Ei nyt"
+  "autofillSettings": {
+    "message": "Automaattisen täytön asetukset"
+  },
+  "autofillShortcut": {
+    "message": "Automaattisen täytön pikanäppäin"
+  },
+  "autofillShortcutNotSet": {
+    "message": "Automaattisen täytön pikanäppäintä ei ole määritetty. Määritä se selaimen asetuksista."
+  },
+  "autofillShortcutText": {
+    "message": "Automaattisen täytön pikanäppäin on $COMMAND$. Vaihda se selaimen asetuksista.",
+    "placeholders": {
+      "command": {
+        "content": "$1",
+        "example": "CTRL+Shift+L"
+      }
+    }
+  },
+  "autofillShortcutTextSafari": {
+    "message": "Automaattisen täytön oletuspikanäppäin on $COMMAND$.",
+    "placeholders": {
+      "command": {
+        "content": "$1",
+        "example": "CTRL+Shift+L"
+      }
+    }
   }
 }

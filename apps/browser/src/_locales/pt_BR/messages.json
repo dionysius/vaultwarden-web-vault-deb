@@ -245,7 +245,7 @@
     "message": "Números (0-9)"
   },
   "specialCharacters": {
-    "message": "Caracteres Especiais (!@#$%^&*)"
+    "message": "Caracteres especiais (!@#$%^&*)"
   },
   "numWords": {
     "message": "Número de Palavras"
@@ -424,13 +424,13 @@
     "message": "Endereço de e-mail inválido."
   },
   "masterPasswordRequired": {
-    "message": "A senha mestre é obrigatória."
+    "message": "A senha mestra é obrigatória."
   },
   "confirmMasterPasswordRequired": {
-    "message": "É necessário redigitar a senha mestre."
+    "message": "É necessário redigitar a senha mestra."
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least $VALUE$ characters long.",
+    "message": "A senha mestra deve ter pelo menos $VALUE$ caracteres.",
     "description": "The Master Password must be at least a specific number of characters long.",
     "placeholders": {
       "value": {
@@ -656,7 +656,7 @@
     "message": "Exportar Cofre"
   },
   "fileFormat": {
-    "message": "Formato do Arquivo"
+    "message": "Formato de arquivo"
   },
   "warning": {
     "message": "AVISO",
@@ -751,7 +751,7 @@
     "message": "O tamanho máximo do arquivo é de 500 MB."
   },
   "featureUnavailable": {
-    "message": "Recurso Indisponível"
+    "message": "Funcionalidade Indisponível"
   },
   "updateKey": {
     "message": "Você não pode usar este recurso, até você atualizar sua chave de criptografia."
@@ -769,10 +769,10 @@
     "message": "Atualizar Assinatura"
   },
   "premiumNotCurrentMember": {
-    "message": "Você não é atualmente um membro premium."
+    "message": "Você não é um membro Premium atualmente."
   },
   "premiumSignUpAndGet": {
-    "message": "Registe-se para uma assinatura premium e obtenha:"
+    "message": "Registre-se para uma assinatura Premium e obtenha:"
   },
   "ppremiumSignUpStorage": {
     "message": "1 GB de armazenamento de arquivos encriptados."
@@ -790,7 +790,7 @@
     "message": "Prioridade no suporte ao cliente."
   },
   "ppremiumSignUpFuture": {
-    "message": "Todos os recursos premium no futuro. Mais em breve!"
+    "message": "Todas as funcionalidades Premium no futuro. Mais em breve!"
   },
   "premiumPurchase": {
     "message": "Comprar Premium"
@@ -820,7 +820,7 @@
     "message": "Copiar TOTP automaticamente"
   },
   "disableAutoTotpCopyDesc": {
-    "message": "Se a sua credencial tiver uma chave de autenticação anexada, o código de verificação TOTP será copiado automaticamente para a área de transferência quando você autopreencher a credencial."
+    "message": "Se sua credencial tiver uma chave de autenticação, copie o código de verificação TOTP quando for autopreenchê-la."
   },
   "enableAutoBiometricsPrompt": {
     "message": "Pedir biometria ao iniciar"
@@ -967,7 +967,7 @@
     "message": "Se um formulário de login for detectado, realizar automaticamente um auto-preenchimento quando a página web carregar."
   },
   "experimentalFeature": {
-    "message": "Compromised or untrusted websites can exploit auto-fill on page load."
+    "message": "Sites comprometidos ou não confiáveis podem tomar vantagem do autopreenchimento ao carregar a página."
   },
   "learnMoreAboutAutofill": {
     "message": "Saiba mais sobre preenchimento automático"
@@ -2058,19 +2058,19 @@
     "message": "Lembrar e-mail"
   },
   "loginWithDevice": {
-    "message": "Log in with device"
+    "message": "Fazer login com dispositivo"
   },
   "loginWithDeviceEnabledInfo": {
-    "message": "Log in with device must be set up in the settings of the Bitwarden app. Need another option?"
+    "message": "Login com dispositivo deve ser habilitado nas configurações do aplicativo móvel do Bitwarden. Necessita de outra opção?"
   },
   "fingerprintPhraseHeader": {
-    "message": "Fingerprint phrase"
+    "message": "Frase de impressão digital"
   },
   "fingerprintMatchInfo": {
-    "message": "Please make sure your vault is unlocked and the Fingerprint phrase matches on the other device."
+    "message": "Certifique-se que o cofre esteja desbloqueado e que a frase de impressão digital corresponda à do outro dispositivo."
   },
   "resendNotification": {
-    "message": "Resend notification"
+    "message": "Reenviar notificação"
   },
   "viewAllLoginOptions": {
     "message": "Ver todas as opções de login"
@@ -2079,7 +2079,7 @@
     "message": "Uma notificação foi enviada para seu dispositivo."
   },
   "logInInitiated": {
-    "message": "Log in initiated"
+    "message": "Login iniciado"
   },
   "exposedMasterPassword": {
     "message": "Senha Mestra comprometida"
@@ -2111,25 +2111,49 @@
       }
     }
   },
-  "tryAutofillPageLoad": {
-    "message": "Try auto-fill on page load?"
-  },
-  "tryAutofill": {
-    "message": "How to auto-fill"
-  },
-  "autofillPageLoadInfo": {
-    "message": "Login forms will automatically fill in matching credentials if you turn on auto-fill on page load."
+  "howToAutofill": {
+    "message": "Como autopreencher"
   },
   "autofillSelectInfo": {
-    "message": "Select an item from this page to auto-fill the active tab's form."
+    "message": "Selecione um item desta página ou use o atalho: $COMMAND$. Você também pode tentar o autopreenchimento ao carregar a página.",
+    "placeholders": {
+      "command": {
+        "content": "$1",
+        "example": "CTRL+Shift+L"
+      }
+    }
   },
-  "autofillTurnedOn": {
-    "message": "Auto-fill on page load turned on"
+  "autofillSelectInfoNoCommand": {
+    "message": "Selecione um item desta página ou use o atalho nas configurações. Você também pode tentar o autopreenchimento ao carregar a página."
   },
-  "turnOn": {
-    "message": "Turn on"
+  "gotIt": {
+    "message": "Entendi"
   },
-  "notNow": {
-    "message": "Not now"
+  "autofillSettings": {
+    "message": "Configurações de autopreenchimento"
+  },
+  "autofillShortcut": {
+    "message": "Atalho para autopreenchimento"
+  },
+  "autofillShortcutNotSet": {
+    "message": "O atalho de preenchimento automático não está definido. Altere-o nas configurações do navegador."
+  },
+  "autofillShortcutText": {
+    "message": "O atalho de preenchimento automático é: $COMMAND$. Altere-o nas configurações do navegador.",
+    "placeholders": {
+      "command": {
+        "content": "$1",
+        "example": "CTRL+Shift+L"
+      }
+    }
+  },
+  "autofillShortcutTextSafari": {
+    "message": "Atalho padrão de autopreenchimento: $COMMAND$.",
+    "placeholders": {
+      "command": {
+        "content": "$1",
+        "example": "CTRL+Shift+L"
+      }
+    }
   }
 }

@@ -2103,7 +2103,7 @@
     "message": "检查此密码的已知数据泄露"
   },
   "characterMinimum": {
-    "message": "重要",
+    "message": "$LENGTH$ character minimum",
     "placeholders": {
       "length": {
         "content": "$1",
@@ -2111,25 +2111,49 @@
       }
     }
   },
-  "tryAutofillPageLoad": {
-    "message": "Try auto-fill on page load?"
-  },
-  "tryAutofill": {
+  "howToAutofill": {
     "message": "如何自动填充"
   },
-  "autofillPageLoadInfo": {
-    "message": "Login forms will automatically fill in matching credentials if you turn on auto-fill on page load."
-  },
   "autofillSelectInfo": {
-    "message": "Select an item from this page to auto-fill the active tab's form."
+    "message": "Select an item from this page or use the shortcut: $COMMAND$. You can also try auto-fill on page load.",
+    "placeholders": {
+      "command": {
+        "content": "$1",
+        "example": "CTRL+Shift+L"
+      }
+    }
   },
-  "autofillTurnedOn": {
-    "message": "Auto-fill on page load turned on"
+  "autofillSelectInfoNoCommand": {
+    "message": "Select an item from this page or set a shortcut in settings. You can also try auto-fill on page load."
   },
-  "turnOn": {
-    "message": "开启"
+  "gotIt": {
+    "message": "明白了"
   },
-  "notNow": {
-    "message": "Not now"
+  "autofillSettings": {
+    "message": "自动填充设置"
+  },
+  "autofillShortcut": {
+    "message": "Auto-fill keyboard shortcut"
+  },
+  "autofillShortcutNotSet": {
+    "message": "The auto-fill shortcut is not set. Change this in the browser's settings."
+  },
+  "autofillShortcutText": {
+    "message": "The auto-fill shortcut is: $COMMAND$. Change this in the browser's settings.",
+    "placeholders": {
+      "command": {
+        "content": "$1",
+        "example": "CTRL+Shift+L"
+      }
+    }
+  },
+  "autofillShortcutTextSafari": {
+    "message": "默认自动填充快捷键： $COMMAND$",
+    "placeholders": {
+      "command": {
+        "content": "$1",
+        "example": "CTRL+Shift+L"
+      }
+    }
   }
 }

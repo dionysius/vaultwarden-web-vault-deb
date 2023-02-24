@@ -2111,25 +2111,49 @@
       }
     }
   },
-  "tryAutofillPageLoad": {
-    "message": "Пробај Аутоматско попуњавање наконг учитавања странице?"
-  },
-  "tryAutofill": {
+  "howToAutofill": {
     "message": "Како ауто-попуњавати"
   },
-  "autofillPageLoadInfo": {
-    "message": "Обрасци за пријаву ће аутоматски бити попуњени одговарајућим акредитивима ако укључите аутоматско попуњавање при учитавању странице."
-  },
   "autofillSelectInfo": {
-    "message": "Изаберите ставку са ове странице да бисте аутоматски попунили образац из активне картице."
+    "message": "Select an item from this page or use the shortcut: $COMMAND$. You can also try auto-fill on page load.",
+    "placeholders": {
+      "command": {
+        "content": "$1",
+        "example": "CTRL+Shift+L"
+      }
+    }
   },
-  "autofillTurnedOn": {
-    "message": "Аутоматско попуњавање при учитавању странице је укључено"
+  "autofillSelectInfoNoCommand": {
+    "message": "Изаберите ставку са ове странице или поставите пречицу у подешавањима. Такође можете покушати са аутоматским попуњавањем при учитавању странице."
   },
-  "turnOn": {
-    "message": "Укључи"
+  "gotIt": {
+    "message": "Разумем"
   },
-  "notNow": {
-    "message": "Не сада"
+  "autofillSettings": {
+    "message": "Подешавања Ауто-пуњења"
+  },
+  "autofillShortcut": {
+    "message": "Пречице Ауто-пуњења"
+  },
+  "autofillShortcutNotSet": {
+    "message": "Пречица за ауто-попуњавање није подешена. Промените ово у подешавањима претраживача."
+  },
+  "autofillShortcutText": {
+    "message": "Пречица ауто-пуњења је: $COMMAND$. Промените ово у подешавањима претраживача.",
+    "placeholders": {
+      "command": {
+        "content": "$1",
+        "example": "CTRL+Shift+L"
+      }
+    }
+  },
+  "autofillShortcutTextSafari": {
+    "message": "Подразумевана пречица за ауто-пуњење: $COMMAND$.",
+    "placeholders": {
+      "command": {
+        "content": "$1",
+        "example": "CTRL+Shift+L"
+      }
+    }
   }
 }

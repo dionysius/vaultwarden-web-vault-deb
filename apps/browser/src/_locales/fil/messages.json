@@ -430,7 +430,7 @@
     "message": "Kinakailangan ang ulitin ang master password."
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least $VALUE$ characters long.",
+    "message": "Ang master password ay dapat na hindi bababa sa $VALUE$ na mga character.",
     "description": "The Master Password must be at least a specific number of characters long.",
     "placeholders": {
       "value": {
@@ -2111,25 +2111,49 @@
       }
     }
   },
-  "tryAutofillPageLoad": {
-    "message": "Subukan ang auto-fill sa pag-load ng pahina?"
-  },
-  "tryAutofill": {
+  "howToAutofill": {
     "message": "Paano mag-auto-fill"
   },
-  "autofillPageLoadInfo": {
-    "message": "Ang mga form ng login ay awtomatikong bubunuin ang katugmang mga kredensyal kung ikaw ay nag-on ng auto-fill sa pag-load ng pahina."
-  },
   "autofillSelectInfo": {
-    "message": "Pumili ng isang item mula sa pahinang ito upang auto-fill ang form ng aktibong tab."
+    "message": "Select an item from this page or use the shortcut: $COMMAND$. You can also try auto-fill on page load.",
+    "placeholders": {
+      "command": {
+        "content": "$1",
+        "example": "CTRL+Shift+L"
+      }
+    }
   },
-  "autofillTurnedOn": {
-    "message": "Auto-fill sa pag-load ng pahina na naka-on"
+  "autofillSelectInfoNoCommand": {
+    "message": "Pumili ng isang item mula sa pahinang ito o magtakda ng shortcut sa mga setting. Maaari mo ring subukan ang auto-fill sa paglo-load ng page."
   },
-  "turnOn": {
-    "message": "I-on"
+  "gotIt": {
+    "message": "Nakuha ko"
   },
-  "notNow": {
-    "message": "Hindi ngayon"
+  "autofillSettings": {
+    "message": "Mga setting ng auto-fill"
+  },
+  "autofillShortcut": {
+    "message": "Keyboard shortcut para sa auto-fill"
+  },
+  "autofillShortcutNotSet": {
+    "message": "Hindi naka-set ang shortcut ng auto-fill. Baguhin ito sa mga setting ng browser."
+  },
+  "autofillShortcutText": {
+    "message": "Ang shortcut ng auto-fill ay: $COMMAND$. Baguhin ito sa mga setting ng browser.",
+    "placeholders": {
+      "command": {
+        "content": "$1",
+        "example": "CTRL+Shift+L"
+      }
+    }
+  },
+  "autofillShortcutTextSafari": {
+    "message": "Default shortcut ng auto-fill: $COMMAND$.",
+    "placeholders": {
+      "command": {
+        "content": "$1",
+        "example": "CTRL+Shift+L"
+      }
+    }
   }
 }

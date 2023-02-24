@@ -430,7 +430,7 @@
     "message": "Une nouvelle saisie du mot de passe principal est nécessaire."
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least $VALUE$ characters long.",
+    "message": "Le mot de passe principal doit comporter au moins $VALUE$ caractères.",
     "description": "The Master Password must be at least a specific number of characters long.",
     "placeholders": {
       "value": {
@@ -2111,25 +2111,49 @@
       }
     }
   },
-  "tryAutofillPageLoad": {
-    "message": "Essayer la saisie automatique au chargement de la page ?"
-  },
-  "tryAutofill": {
+  "howToAutofill": {
     "message": "Comment saisir automatiquement"
   },
-  "autofillPageLoadInfo": {
-    "message": "Les formulaires de connexion saisiront automatiquement les informations d'identification correspondantes si vous activez la fonction de saisie automatique au chargement de la page."
-  },
   "autofillSelectInfo": {
-    "message": "Sélectionnez un élément depuis cette page pour saisir automatiquement le formulaire de l'onglet actif."
+    "message": "Select an item from this page or use the shortcut: $COMMAND$. You can also try auto-fill on page load.",
+    "placeholders": {
+      "command": {
+        "content": "$1",
+        "example": "CTRL+Shift+L"
+      }
+    }
   },
-  "autofillTurnedOn": {
-    "message": "Saisie automatique au chargement de la page activé"
+  "autofillSelectInfoNoCommand": {
+    "message": "Sélectionnez un élément depuis cette page ou définissez un raccourci dans les paramètres. Vous pouvez également essayer la saisie automatique au chargement de la page."
   },
-  "turnOn": {
-    "message": "Activer"
+  "gotIt": {
+    "message": "Compris"
   },
-  "notNow": {
-    "message": "Pas maintenant"
+  "autofillSettings": {
+    "message": "Paramètres de saisie automatique"
+  },
+  "autofillShortcut": {
+    "message": "Raccourci clavier de saisie automatique"
+  },
+  "autofillShortcutNotSet": {
+    "message": "Le raccourci de saisie automatique n'est pas défini. Changez-le dans les paramètres du navigateur."
+  },
+  "autofillShortcutText": {
+    "message": "Le raccourci de saisie automatique est : $COMMAND$. Changez-le dans les paramètres du navigateur.",
+    "placeholders": {
+      "command": {
+        "content": "$1",
+        "example": "CTRL+Shift+L"
+      }
+    }
+  },
+  "autofillShortcutTextSafari": {
+    "message": "Raccourci de saisie automatique par défaut : $COMMAND$.",
+    "placeholders": {
+      "command": {
+        "content": "$1",
+        "example": "CTRL+Shift+L"
+      }
+    }
   }
 }

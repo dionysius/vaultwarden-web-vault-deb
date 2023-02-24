@@ -2111,25 +2111,49 @@
       }
     }
   },
-  "tryAutofillPageLoad": {
-    "message": "Sayfa yüklenince otomatik doldurma denensin mi?"
-  },
-  "tryAutofill": {
+  "howToAutofill": {
     "message": "Otomatik doldurma nasıl yapılır?"
   },
-  "autofillPageLoadInfo": {
-    "message": "Sayfa yüklendiğinde otomatik doldurmayı açarsanız giriş formlarıyla eşleşen hesap bilgileri otomatik olarak dolduracaktır."
-  },
   "autofillSelectInfo": {
-    "message": "Etkin sekmedeki formu otomatik doldurmak için bu sayfadan bir kayıt seçin."
+    "message": "Select an item from this page or use the shortcut: $COMMAND$. You can also try auto-fill on page load.",
+    "placeholders": {
+      "command": {
+        "content": "$1",
+        "example": "CTRL+Shift+L"
+      }
+    }
   },
-  "autofillTurnedOn": {
-    "message": "Sayfa yüklendiğinde otomatik doldurma açık"
+  "autofillSelectInfoNoCommand": {
+    "message": "Bu sayfadan bir kayıt seçin veya ayarlardan bir kısayol ayarlayın. Sayfa yüklenirken otomatik doldurmayı da deneyebilirsiniz."
   },
-  "turnOn": {
-    "message": "Aç"
+  "gotIt": {
+    "message": "Anladım"
   },
-  "notNow": {
-    "message": "Henüz değil"
+  "autofillSettings": {
+    "message": "Otomatik doldurma ayarları"
+  },
+  "autofillShortcut": {
+    "message": "Otomatik doldurma klavye kısayolu"
+  },
+  "autofillShortcutNotSet": {
+    "message": "Otomatik doldurma kısayolu ayarlanmamış. Bunu tarayıcının ayarlarından değiştirebilirsiniz."
+  },
+  "autofillShortcutText": {
+    "message": "Otomatik doldurma kısayolu: $COMMAND$. Bunu tarayıcının ayarlarından değiştirebilirsiniz.",
+    "placeholders": {
+      "command": {
+        "content": "$1",
+        "example": "CTRL+Shift+L"
+      }
+    }
+  },
+  "autofillShortcutTextSafari": {
+    "message": "Varsayılan otomatik doldurma kısayolu: $COMMAND$.",
+    "placeholders": {
+      "command": {
+        "content": "$1",
+        "example": "CTRL+Shift+L"
+      }
+    }
   }
 }

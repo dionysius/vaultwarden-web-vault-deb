@@ -2111,25 +2111,49 @@
       }
     }
   },
-  "tryAutofillPageLoad": {
-    "message": "Prøv autoudfyldning ved sideindlæsning?"
-  },
-  "tryAutofill": {
+  "howToAutofill": {
     "message": "Sådan autoudfyldes"
   },
-  "autofillPageLoadInfo": {
-    "message": "Login-formularer udfyldes automatisk med matchende legitimationsoplysninger, hvis autoudfyldning ved sideindlæsning aktiveres."
-  },
   "autofillSelectInfo": {
-    "message": "Vælg et element fra denne side for at autoudfylde den aktive fanes formular."
+    "message": "Select an item from this page or use the shortcut: $COMMAND$. You can also try auto-fill on page load.",
+    "placeholders": {
+      "command": {
+        "content": "$1",
+        "example": "CTRL+Shift+L"
+      }
+    }
   },
-  "autofillTurnedOn": {
-    "message": "Autoudfyldning ved sideindlæsning aktiveret"
+  "autofillSelectInfoNoCommand": {
+    "message": "Vælg et element fra denne side eller opsæt en genvej i indstillinger. Man kan også prøve autoudfyld ved sideindlæsning."
   },
-  "turnOn": {
-    "message": "Aktivér"
+  "gotIt": {
+    "message": "Forstået"
   },
-  "notNow": {
-    "message": "Ikke nu"
+  "autofillSettings": {
+    "message": "Autoudfyldelsesindstillinger"
+  },
+  "autofillShortcut": {
+    "message": "Autoudfyld-tastaturgenvej"
+  },
+  "autofillShortcutNotSet": {
+    "message": "Autoudfyldningsgenvejen er ikke opsat. Ændr dette i browserens indstillinger."
+  },
+  "autofillShortcutText": {
+    "message": "Autoudfyldningsgenvejen er: $COMMAND$. Ændr dette i browserens indstillinger.",
+    "placeholders": {
+      "command": {
+        "content": "$1",
+        "example": "CTRL+Shift+L"
+      }
+    }
+  },
+  "autofillShortcutTextSafari": {
+    "message": "Standard autoudfyldningsgenvej: $COMMAND$.",
+    "placeholders": {
+      "command": {
+        "content": "$1",
+        "example": "CTRL+Shift+L"
+      }
+    }
   }
 }

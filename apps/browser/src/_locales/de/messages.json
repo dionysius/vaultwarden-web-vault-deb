@@ -131,7 +131,7 @@
     "message": "Einen Bestätigungscode an deine E-Mail senden"
   },
   "sendCode": {
-    "message": "Send Code"
+    "message": "Code senden"
   },
   "codeSent": {
     "message": "Code gesendet"
@@ -430,7 +430,7 @@
     "message": "Erneute Eingabe des Master-Passworts ist erforderlich."
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least $VALUE$ characters long.",
+    "message": "Das Master-Passwort muss mindestens $VALUE$ Zeichen lang sein.",
     "description": "The Master Password must be at least a specific number of characters long.",
     "placeholders": {
       "value": {
@@ -541,10 +541,10 @@
     "message": "Neue URL"
   },
   "addedItem": {
-    "message": "Neuer Eintrag"
+    "message": "Eintrag hinzugefügt"
   },
   "editedItem": {
-    "message": "Eintrag bearbeitet"
+    "message": "Eintrag gespeichert"
   },
   "deleteItemConfirmation": {
     "message": "Soll dieser Eintrag wirklich in den Papierkorb verschoben werden?"
@@ -559,7 +559,7 @@
     "message": "Sind Sie sicher, dass Sie das aktuelle Passwort ersetzen möchten?"
   },
   "overwriteUsername": {
-    "message": "Benutzername überschreiben"
+    "message": "Benutzername ersetzten"
   },
   "overwriteUsernameConfirmation": {
     "message": "Bist du sicher, dass du den aktuellen Benutzernamen überschreiben möchtest?"
@@ -581,7 +581,7 @@
     "message": "Danach fragen Zugangsdaten hinzuzufügen"
   },
   "addLoginNotificationDesc": {
-    "message": "Die \"Login hinzufügen\" Benachrichtigung fragt dich automatisch, ob du neue Zugangsdaten im Tresor speichern möchtest, wenn du dich zum ersten Mal mit ihnen anmeldest."
+    "message": "Wenn ein Eintrag nicht in deinem Tresor gefunden wurde, danach fragen."
   },
   "showCardsCurrentTab": {
     "message": "Karten auf Tab Seite anzeigen"
@@ -730,16 +730,16 @@
     "message": "Möchtest du diesen Anhang wirklich löschen?"
   },
   "deletedAttachment": {
-    "message": "Gelöschter Anhang"
+    "message": "Anhang gelöscht"
   },
   "newAttachment": {
-    "message": "Anhang hinzufügen"
+    "message": "Neuen Anhang hinzufügen"
   },
   "noAttachments": {
     "message": "Keine Anhänge."
   },
   "attachmentSaved": {
-    "message": "Der Anhang wurde gespeichert."
+    "message": "Anhang gespeichert"
   },
   "file": {
     "message": "Datei"
@@ -772,7 +772,7 @@
     "message": "Du bist derzeit kein Premium-Mitglied."
   },
   "premiumSignUpAndGet": {
-    "message": "Werde Premium-Mitglied und erhalte dafür:"
+    "message": "Melde dich für eine Premium-Mitgliedschaft an und erhalte dafür:"
   },
   "ppremiumSignUpStorage": {
     "message": "1 GB verschlüsselter Speicherplatz für Dateianhänge."
@@ -820,13 +820,13 @@
     "message": "TOTP automatisch kopieren"
   },
   "disableAutoTotpCopyDesc": {
-    "message": "Ist ein Authentifizierungsschlüssel mit Ihren Zugangsdaten verknüpft, wird der TOTP Verifizierungscode automatisch in die Zwischenablage kopiert, wenn Sie die Zugangsdaten automatisch ausfüllen lassen."
+    "message": "Ist ein Authentifizierungsschlüssel mit deinen Zugangsdaten verknüpft, wird der TOTP Verifizierungscode in die Zwischenablage kopiert, wenn du die Zugangsdaten automatisch einfügen lässt."
   },
   "enableAutoBiometricsPrompt": {
     "message": "Beim Start nach biometrischen Daten fragen"
   },
   "premiumRequired": {
-    "message": "Erweiterte Mitgliedschaft wird benötigt"
+    "message": "Premium-Mitgliedschaft benötigt"
   },
   "premiumRequiredDesc": {
     "message": "Eine Premium-Mitgliedschaft ist für diese Funktion notwendig."
@@ -880,7 +880,7 @@
     "message": "Anmeldung nicht verfügbar"
   },
   "noTwoStepProviders": {
-    "message": "Dieses Konto hat eine aktive Zwei-Faktor Authentifizierung, allerdings wird keiner der konfigurierten Zwei-Faktor Anbieter von diesem Browser unterstützt."
+    "message": "Für dieses Konto wurde eine Zwei-Faktor-Authentifizierung eingerichtet, allerdings wird keiner der konfigurierten Zwei-Faktor-Anbieter von diesem Browser unterstützt."
   },
   "noTwoStepProviders2": {
     "message": "Bitte benutze einen unterstützten Browser (z.B. Chrome) und / oder füge zusätzliche Anbieter hinzu, die von mehr Browsern unterstützt werden (wie eine Authentifizierungs-App)."
@@ -889,7 +889,7 @@
     "message": "Optionen für Zwei-Faktor Authentifizierung"
   },
   "recoveryCodeDesc": {
-    "message": "Zugang zu allen Zwei-Faktor-Anbietern verloren? Benutzen Sie Ihren Wiederherstellungscode, um alle Zwei-Faktor-Anbieter in Ihrem Konto zu deaktivieren."
+    "message": "Zugang zu allen Zwei-Faktor Anbietern verloren? Benutze deinen Wiederherstellungscode, um alle Zwei-Faktor Anbieter in deinem Konto zu deaktivieren."
   },
   "recoveryCodeTitle": {
     "message": "Wiederherstellungscode"
@@ -928,7 +928,7 @@
     "message": "Bestätigungscodes werden Ihnen per E-Mail zugesandt."
   },
   "selfHostedEnvironment": {
-    "message": "Selbstgehostete Umgebung"
+    "message": "Selbst gehostete Umgebung"
   },
   "selfHostedEnvironmentFooter": {
     "message": "Bitte gib die Basis-URL deiner selbst gehosteten Bitwarden-Installation an."
@@ -946,7 +946,7 @@
     "message": "API Server URL"
   },
   "webVaultUrl": {
-    "message": "Web-Tresor Server URL"
+    "message": "URL des Web-Tresor-Servers"
   },
   "identityUrl": {
     "message": "URL des Identitätsservers"
@@ -955,28 +955,28 @@
     "message": "URL des Benachrichtigungsserver"
   },
   "iconsUrl": {
-    "message": "Icons Server URL"
+    "message": "URL des Icons-Servers"
   },
   "environmentSaved": {
-    "message": "Die URLs der Umgebung wurden gespeichert."
+    "message": "URLs der Umgebung gespeichert"
   },
   "enableAutoFillOnPageLoad": {
     "message": "Auto-Ausfüllen beim Laden einer Seite aktivieren"
   },
   "enableAutoFillOnPageLoadDesc": {
-    "message": "Wenn eine Zugangsmaske erkannt wird, füge automatisch die Zugangsdaten ein während die Webseite lädt."
+    "message": "Wenn eine Zugangsmaske erkannt wird, automatisch Zugangsdaten einfügen während die Webseite lädt."
   },
   "experimentalFeature": {
-    "message": "Compromised or untrusted websites can exploit auto-fill on page load."
+    "message": "Kompromittierte oder nicht vertrauenswürdige Webseiten können das automatische Ausfüllen beim Laden einer Seiten ausnutzen."
   },
   "learnMoreAboutAutofill": {
-    "message": "Erfahre mehr über Auto-Ausfüllen"
+    "message": "Erfahre mehr über automatisches Ausfüllen"
   },
   "defaultAutoFillOnPageLoad": {
     "message": "Standard Auto-Ausfüllen Einstellung für Login-Einträge"
   },
   "defaultAutoFillOnPageLoadDesc": {
-    "message": "Nachdem du das automatische Ausfüllen beim Laden der Seite aktiviert hast, kannst du die Funktion für einzelne Login-Einträge aktivieren oder deaktivieren. Dies ist die Standardeinstellung für Login-Einträge, die nicht separat konfiguriert wurden."
+    "message": "Nachdem du das automatische Ausfüllen beim Laden der Seite aktiviert hast, kannst du die Funktion für einzelne Login-Einträge aktivieren oder deaktivieren. Dies ist die Standardeinstellung für Zugangsdaten-Einträge, die nicht separat konfiguriert wurden."
   },
   "itemAutoFillOnPageLoad": {
     "message": "Automatisches Ausfüllen beim Laden der Seite (wenn in Optionen aktiviert)"
@@ -1212,7 +1212,7 @@
     "message": "Identität"
   },
   "passwordHistory": {
-    "message": "Kennwort-Historie"
+    "message": "Passwortverlauf"
   },
   "back": {
     "message": "Zurück"
@@ -1239,7 +1239,7 @@
     "message": "Zugangsdaten"
   },
   "secureNotes": {
-    "message": "Sichere Notiz"
+    "message": "Sichere Notizen"
   },
   "clear": {
     "message": "Löschen",
@@ -1447,10 +1447,10 @@
     "message": "Automatisch ausfüllen und speichern"
   },
   "autoFillSuccessAndSavedUri": {
-    "message": "Auto-Ausgefüllter Eintrag und gespeicherte URI"
+    "message": "Eintrag automatisch ausgefüllt und URI gespeichert"
   },
   "autoFillSuccess": {
-    "message": "Automatisch ausgefüllter Eintrag"
+    "message": "Eintrag automatisch ausgefüllt "
   },
   "setMasterPassword": {
     "message": "Master-Passwort festlegen"
@@ -1519,19 +1519,19 @@
     "message": "Desktop-Sync-Überprüfung"
   },
   "desktopIntegrationVerificationText": {
-    "message": "Bitte bestätigen Sie, dass die Desktop-Anwendung diesen Prüfschlüssel anzeigt: "
+    "message": "Bitte verifiziere, dass die Desktop-Anwendung diesen Prüfschlüssel anzeigt: "
   },
   "desktopIntegrationDisabledTitle": {
     "message": "Browser-Einbindung ist nicht aktiviert"
   },
   "desktopIntegrationDisabledDesc": {
-    "message": "Die Browser-Einbindung ist in der Bitwarden Desktop-Anwendung nicht aktiviert. Bitte aktivieren Sie diese in den Einstellungen innerhalb der Desktop-Anwendung."
+    "message": "Die Browser-Einbindung ist in der Bitwarden Desktop-Anwendung nicht aktiviert. Bitte aktiviere diese in den Einstellungen innerhalb der Desktop-Anwendung."
   },
   "startDesktopTitle": {
     "message": "Bitwarden Desktop-Anwendung starten"
   },
   "startDesktopDesc": {
-    "message": "Die Bitwarden Desktop-Anwendung muss gestartet werden, bevor diese Funktion verwendet werden kann."
+    "message": "Die Bitwarden Desktop-Anwendung muss gestartet werden, bevor Entsperren mit Biometrie verwendet werden kann."
   },
   "errorEnableBiometricTitle": {
     "message": "Biometrie kann nicht aktiviert werden"
@@ -1588,7 +1588,7 @@
     "message": "Bitwarden wird keine Login-Daten für diese Domäne speichern. Du musst die Seite aktualisieren, damit die Änderungen wirksam werden."
   },
   "excludedDomainsInvalidDomain": {
-    "message": "$DOMAIN$ ist keine gültige Domäne",
+    "message": "$DOMAIN$ ist keine gültige Domain",
     "placeholders": {
       "domain": {
         "content": "$1",
@@ -1744,14 +1744,14 @@
     "message": "Aktuelle Zugriffsanzahl"
   },
   "createSend": {
-    "message": "Neues Send erstellen",
+    "message": "Neues Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "newPassword": {
     "message": "Neues Passwort"
   },
   "sendDisabled": {
-    "message": "Send deaktiviert",
+    "message": "Send gelöscht",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendDisabledWarning": {
@@ -1763,7 +1763,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editedSend": {
-    "message": "Bearbeitetes Send",
+    "message": "Send gespeichert",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLinuxChromiumFileWarning": {
@@ -1833,7 +1833,7 @@
     "message": "Master-Passwort aktualisieren"
   },
   "updateMasterPasswordWarning": {
-    "message": "Dein Master-Passwort wurde kürzlich von einem Administrator Ihrer Organisation geändert. Um auf den Tresor zuzugreifen, musst du es jetzt aktualisieren. Wenn du fortfährst, wirst du aus der aktuellen Sitzung abgemeldet, eine erneute Anmeldung wird erforderlich. Aktive Sitzungen auf anderen Geräten können bis zu einer Stunde weiterhin aktiv bleiben."
+    "message": "Dein Master-Passwort wurde kürzlich von einem Administrator deiner Organisation geändert. Um auf den Tresor zuzugreifen, musst du es jetzt aktualisieren. Wenn du fortfährst, wirst du aus der aktuellen Sitzung abgemeldet und musst dich erneut anmelden. Aktive Sitzungen auf anderen Geräten können bis zu einer Stunde weiterhin aktiv bleiben."
   },
   "resetPasswordPolicyAutoEnroll": {
     "message": "Automatische Registrierung"
@@ -1897,7 +1897,7 @@
     "message": "Master-Passwort entfernen"
   },
   "removedMasterPassword": {
-    "message": "Master-Passwort entfernt."
+    "message": "Master-Passwort entfernt"
   },
   "leaveOrganizationConfirmation": {
     "message": "Bist du sicher, dass du diese Organisation verlassen möchtest?"
@@ -1912,10 +1912,10 @@
     "message": "Deine Sitzung ist abgelaufen. Bitte gehe zurück und versuche dich erneut einzuloggen."
   },
   "exportingPersonalVaultTitle": {
-    "message": "Persönlichen Tresor exportieren"
+    "message": "Einzelnen Tresor exportieren"
   },
   "exportingPersonalVaultDescription": {
-    "message": "Nur die persönlichen Tresoreinträge, die mit $EMAIL$ verbunden sind, werden exportiert. Tresoreinträge der Organisation werden nicht berücksichtigt.",
+    "message": "Nur die einzelnen Tresor-Einträge, die mit $EMAIL$ verbunden sind, werden exportiert. Tresor-Einträge der Organisation werden nicht berücksichtigt.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -2019,7 +2019,7 @@
     "message": "Server-Version"
   },
   "selfHosted": {
-    "message": "Selbst-gehostet"
+    "message": "Selbst gehostet"
   },
   "thirdParty": {
     "message": "Drittanbieter"
@@ -2111,25 +2111,49 @@
       }
     }
   },
-  "tryAutofillPageLoad": {
-    "message": "Auto-Ausfüllen beim Laden einer Seite versuchen?"
-  },
-  "tryAutofill": {
+  "howToAutofill": {
     "message": "So funktioniert Auto-Ausfüllen"
   },
-  "autofillPageLoadInfo": {
-    "message": "Anmeldeformulare werden automatisch die passenden Anmeldedaten ausfüllen, wenn du Auto-Ausfüllen beim Laden einer Seite aktivierst."
-  },
   "autofillSelectInfo": {
-    "message": "Wähle einen Eintrag von dieser Seite, um das Formular auf dem aktiven Tab automatisch auszufüllen."
+    "message": "Wähle einen Eintrag von dieser Seite aus oder verwende das Tastaturkürzel: $COMMAND$. Du kannst es auch mit dem automatischen Ausfüllen beim Laden der Seite versuchen.",
+    "placeholders": {
+      "command": {
+        "content": "$1",
+        "example": "CTRL+Shift+L"
+      }
+    }
   },
-  "autofillTurnedOn": {
-    "message": "Auto-Ausfüllen beim Laden einer Seite eingeschaltet"
+  "autofillSelectInfoNoCommand": {
+    "message": "Wähle einen Eintrag von dieser Seite aus oder lege ein Tastaturkürzel in den Einstellungen fest. Du kannst es auch mit dem automatischen Ausfüllen beim Laden der Seite versuchen."
   },
-  "turnOn": {
-    "message": "Einschalten"
+  "gotIt": {
+    "message": "Verstanden"
   },
-  "notNow": {
-    "message": "Nicht jetzt"
+  "autofillSettings": {
+    "message": "Auto-Ausfüllen Einstellungen"
+  },
+  "autofillShortcut": {
+    "message": "Auto-Ausfüllen Tastaturkürzel"
+  },
+  "autofillShortcutNotSet": {
+    "message": "Das Auto-Ausfüllen-Tastaturkürzel ist nicht gesetzt. Ändere das in den Browser-Einstellungen."
+  },
+  "autofillShortcutText": {
+    "message": "Das Auto-Ausfüllen-Tastaturkürzel ist: $COMMAND$. Ändere das in den Browser-Einstellungen.",
+    "placeholders": {
+      "command": {
+        "content": "$1",
+        "example": "CTRL+Shift+L"
+      }
+    }
+  },
+  "autofillShortcutTextSafari": {
+    "message": "Standard-Auto-Ausfüllen-Tastaturkürzel: $COMMAND$.",
+    "placeholders": {
+      "command": {
+        "content": "$1",
+        "example": "CTRL+Shift+L"
+      }
+    }
   }
 }

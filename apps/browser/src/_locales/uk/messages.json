@@ -430,7 +430,7 @@
     "message": "Необхідно повторно ввести головний пароль."
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least $VALUE$ characters long.",
+    "message": "Довжина головного пароля має бути принаймні $VALUE$ символів.",
     "description": "The Master Password must be at least a specific number of characters long.",
     "placeholders": {
       "value": {
@@ -2111,25 +2111,49 @@
       }
     }
   },
-  "tryAutofillPageLoad": {
-    "message": "Спробувати автозаповнення на сторінці?"
-  },
-  "tryAutofill": {
+  "howToAutofill": {
     "message": "Як працює автозаповнення"
   },
-  "autofillPageLoadInfo": {
-    "message": "Якщо ви увімкнете автозаповнення на сторінці, форми входу автоматично заповнюватимуться відповідними обліковими даними."
-  },
   "autofillSelectInfo": {
-    "message": "Перебуваючи на цій сторінці, оберіть запис для автоматичного заповнення форми входу."
+    "message": "Виберіть елемент на цій сторінці або скористайтеся комбінацією клавіш: $COMMAND$. Ви також можете спробувати автозаповнення під час завантаження сторінки.",
+    "placeholders": {
+      "command": {
+        "content": "$1",
+        "example": "CTRL+Shift+L"
+      }
+    }
   },
-  "autofillTurnedOn": {
-    "message": "Автозаповнення на сторінці увімкнено"
+  "autofillSelectInfoNoCommand": {
+    "message": "Виберіть елемент на цій сторінці або встановіть комбінацію клавіш. Ви також можете спробувати автозаповнення під час завантаження сторінки."
   },
-  "turnOn": {
-    "message": "Увімкнути"
+  "gotIt": {
+    "message": "Зрозуміло"
   },
-  "notNow": {
-    "message": "Не зараз"
+  "autofillSettings": {
+    "message": "Налаштування автозаповнення"
+  },
+  "autofillShortcut": {
+    "message": "Комбінації клавіш автозаповнення"
+  },
+  "autofillShortcutNotSet": {
+    "message": "Комбінацію клавіш для автозаповнення не встановлено. Змініть це в налаштуваннях браузера."
+  },
+  "autofillShortcutText": {
+    "message": "Комбінація клавіш автозаповнення: $COMMAND$. Змініть це в налаштуваннях браузера.",
+    "placeholders": {
+      "command": {
+        "content": "$1",
+        "example": "CTRL+Shift+L"
+      }
+    }
+  },
+  "autofillShortcutTextSafari": {
+    "message": "Типова комбінація клавіш автозаповнення: $COMMAND$.",
+    "placeholders": {
+      "command": {
+        "content": "$1",
+        "example": "CTRL+Shift+L"
+      }
+    }
   }
 }

@@ -430,7 +430,7 @@
     "message": "مطلوب إعادة كتابة كلمة المرور الرئيسية."
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least $VALUE$ characters long.",
+    "message": "كلمة المرور الرئيسية يجب أن تكون على الأقل $VALUE$ حرفاً.",
     "description": "The Master Password must be at least a specific number of characters long.",
     "placeholders": {
       "value": {
@@ -964,70 +964,70 @@
     "message": "ملء تلقائي عند تحميل الصفحة"
   },
   "enableAutoFillOnPageLoadDesc": {
-    "message": "If a login form is detected, auto-fill when the web page loads."
+    "message": "إذا تم اكتشاف نموذج تسجيل الدخول، يتم التعبئة التلقائية عند تحميل صفحة الويب."
   },
   "experimentalFeature": {
-    "message": "Compromised or untrusted websites can exploit auto-fill on page load."
+    "message": "مواقع المساومة أو غير الموثوق بها يمكن أن تستغل الملء التلقائي في تحميل الصفحة."
   },
   "learnMoreAboutAutofill": {
-    "message": "Learn more about auto-fill"
+    "message": "تعرف على المزيد حول الملء التلقائي"
   },
   "defaultAutoFillOnPageLoad": {
-    "message": "Default autofill setting for login items"
+    "message": "الإعداد الافتراضي للملء التلقائي لعناصر تسجيل الدخول"
   },
   "defaultAutoFillOnPageLoadDesc": {
-    "message": "You can turn off auto-fill on page load for individual login items from the item's Edit view."
+    "message": "يمكنك إيقاف الملء التلقائي في تحميل الصفحة لعناصر تسجيل الدخول الفردية من عرض تحرير العنصر."
   },
   "itemAutoFillOnPageLoad": {
-    "message": "Auto-fill on page load (if set up in Options)"
+    "message": "ملء تلقائي عند تحميل الصفحة (إذا كان الإعداد في الخيارات)"
   },
   "autoFillOnPageLoadUseDefault": {
     "message": "إستخدم الإعداد الإفتراضي"
   },
   "autoFillOnPageLoadYes": {
-    "message": "Auto-fill on page load"
+    "message": "ملء تلقائي عند تحميل الصفحة"
   },
   "autoFillOnPageLoadNo": {
-    "message": "Do not auto-fill on page load"
+    "message": "لا تملأ تلقائياً عند تحميل الصفحة"
   },
   "commandOpenPopup": {
-    "message": "Open vault popup"
+    "message": "فتح منبثقات المخزن"
   },
   "commandOpenSidebar": {
-    "message": "Open vault in sidebar"
+    "message": "فتح المخزن في الشريط الجانبي"
   },
   "commandAutofillDesc": {
-    "message": "Auto-fill the last used login for the current website"
+    "message": "ملء تلقائي لآخر تسجيل دخول مستخدم للموقع الحالي"
   },
   "commandGeneratePasswordDesc": {
-    "message": "Generate and copy a new random password to the clipboard"
+    "message": "إنشاء واستنساخ كلمة مرور عشوائية جديدة إلى الحافظة"
   },
   "commandLockVaultDesc": {
-    "message": "Lock the vault"
+    "message": "قفل المخزن"
   },
   "privateModeWarning": {
-    "message": "Private mode support is experimental and some features are limited."
+    "message": "دعم الوضع الخاص تجريبي وبعض الميزات محدودة."
   },
   "customFields": {
-    "message": "Custom fields"
+    "message": "الحقول المخصصة"
   },
   "copyValue": {
-    "message": "Copy value"
+    "message": "نسخ القيمة"
   },
   "value": {
-    "message": "Value"
+    "message": "القيمة"
   },
   "newCustomField": {
-    "message": "New custom field"
+    "message": "حقل مخصص جديد"
   },
   "dragToSort": {
-    "message": "Drag to sort"
+    "message": "اسحب للفرز"
   },
   "cfTypeText": {
-    "message": "Text"
+    "message": "نص"
   },
   "cfTypeHidden": {
-    "message": "Hidden"
+    "message": "مخفي"
   },
   "cfTypeBoolean": {
     "message": "قيمة منطقية"
@@ -1306,30 +1306,30 @@
     "description": "An entity of multiple related people (ex. a team or business organization)."
   },
   "types": {
-    "message": "Types"
+    "message": "أنواع"
   },
   "allItems": {
-    "message": "All items"
+    "message": "كافة العناصر"
   },
   "noPasswordsInList": {
-    "message": "There are no passwords to list."
+    "message": "لا توجد كلمات مرور للعرض."
   },
   "remove": {
-    "message": "Remove"
+    "message": "إزالة"
   },
   "default": {
-    "message": "Default"
+    "message": "الافتراضي"
   },
   "dateUpdated": {
-    "message": "Updated",
+    "message": "تم التحديث",
     "description": "ex. Date this item was updated"
   },
   "dateCreated": {
-    "message": "Created",
+    "message": "أنشئ",
     "description": "ex. Date this item was created"
   },
   "datePasswordUpdated": {
-    "message": "Password updated",
+    "message": "تحديث كلمة المرور",
     "description": "ex. Date this password was updated"
   },
   "neverLockWarning": {
@@ -2111,25 +2111,49 @@
       }
     }
   },
-  "tryAutofillPageLoad": {
-    "message": "Try auto-fill on page load?"
-  },
-  "tryAutofill": {
+  "howToAutofill": {
     "message": "How to auto-fill"
   },
-  "autofillPageLoadInfo": {
-    "message": "Login forms will automatically fill in matching credentials if you turn on auto-fill on page load."
-  },
   "autofillSelectInfo": {
-    "message": "Select an item from this page to auto-fill the active tab's form."
+    "message": "Select an item from this page or use the shortcut: $COMMAND$. You can also try auto-fill on page load.",
+    "placeholders": {
+      "command": {
+        "content": "$1",
+        "example": "CTRL+Shift+L"
+      }
+    }
   },
-  "autofillTurnedOn": {
-    "message": "Auto-fill on page load turned on"
+  "autofillSelectInfoNoCommand": {
+    "message": "Select an item from this page or set a shortcut in settings. You can also try auto-fill on page load."
   },
-  "turnOn": {
-    "message": "Turn on"
+  "gotIt": {
+    "message": "Got it"
   },
-  "notNow": {
-    "message": "Not now"
+  "autofillSettings": {
+    "message": "Auto-fill settings"
+  },
+  "autofillShortcut": {
+    "message": "Auto-fill keyboard shortcut"
+  },
+  "autofillShortcutNotSet": {
+    "message": "The auto-fill shortcut is not set. Change this in the browser's settings."
+  },
+  "autofillShortcutText": {
+    "message": "The auto-fill shortcut is: $COMMAND$. Change this in the browser's settings.",
+    "placeholders": {
+      "command": {
+        "content": "$1",
+        "example": "CTRL+Shift+L"
+      }
+    }
+  },
+  "autofillShortcutTextSafari": {
+    "message": "Default auto-fill shortcut: $COMMAND$.",
+    "placeholders": {
+      "command": {
+        "content": "$1",
+        "example": "CTRL+Shift+L"
+      }
+    }
   }
 }

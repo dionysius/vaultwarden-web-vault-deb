@@ -805,7 +805,7 @@
     "message": "Täname, et toetad Bitwardenit."
   },
   "premiumPrice": {
-    "message": "Kõik see ainult %price% aastas!",
+    "message": "Kõik see ainult $PRICE$ / aastas!",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -835,7 +835,7 @@
     "message": "Sisesta autentimise rakendusest 6 kohaline number."
   },
   "enterVerificationCodeEmail": {
-    "message": "Sisesta 6 kohaline number, mis saadeti e-posti aadressile",
+    "message": "Sisesta 6 kohaline number, mis saadeti e-posti aadressile $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -2111,25 +2111,49 @@
       }
     }
   },
-  "tryAutofillPageLoad": {
-    "message": "Proovi automaatset täitmist lehe laadimisel?"
-  },
-  "tryAutofill": {
-    "message": "Kuidas automaatselt täita"
-  },
-  "autofillPageLoadInfo": {
-    "message": "Automaatse täitmise sisselülitamiselt sisestatakse kontoandmete lahtritesse automaatselt sobivad kirjed."
+  "howToAutofill": {
+    "message": "How to auto-fill"
   },
   "autofillSelectInfo": {
-    "message": "Select an item from this page to auto-fill the active tab's form."
+    "message": "Select an item from this page or use the shortcut: $COMMAND$. You can also try auto-fill on page load.",
+    "placeholders": {
+      "command": {
+        "content": "$1",
+        "example": "CTRL+Shift+L"
+      }
+    }
   },
-  "autofillTurnedOn": {
-    "message": "Automaatne täitmine on sisselülitatud"
+  "autofillSelectInfoNoCommand": {
+    "message": "Select an item from this page or set a shortcut in settings. You can also try auto-fill on page load."
   },
-  "turnOn": {
-    "message": "Lülita sisse"
+  "gotIt": {
+    "message": "Got it"
   },
-  "notNow": {
-    "message": "Mitte praegu"
+  "autofillSettings": {
+    "message": "Auto-fill settings"
+  },
+  "autofillShortcut": {
+    "message": "Auto-fill keyboard shortcut"
+  },
+  "autofillShortcutNotSet": {
+    "message": "The auto-fill shortcut is not set. Change this in the browser's settings."
+  },
+  "autofillShortcutText": {
+    "message": "The auto-fill shortcut is: $COMMAND$. Change this in the browser's settings.",
+    "placeholders": {
+      "command": {
+        "content": "$1",
+        "example": "CTRL+Shift+L"
+      }
+    }
+  },
+  "autofillShortcutTextSafari": {
+    "message": "Default auto-fill shortcut: $COMMAND$.",
+    "placeholders": {
+      "command": {
+        "content": "$1",
+        "example": "CTRL+Shift+L"
+      }
+    }
   }
 }

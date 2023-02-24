@@ -430,7 +430,7 @@
     "message": "Необходимо повторно ввести мастер-пароль."
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least $VALUE$ characters long.",
+    "message": "Мастер-пароль должен содержать не менее $VALUE$ символов.",
     "description": "The Master Password must be at least a specific number of characters long.",
     "placeholders": {
       "value": {
@@ -2111,25 +2111,49 @@
       }
     }
   },
-  "tryAutofillPageLoad": {
-    "message": "Попробовать автозаполнение при загрузке страницы?"
-  },
-  "tryAutofill": {
+  "howToAutofill": {
     "message": "Как использовать автозаполнение"
   },
-  "autofillPageLoadInfo": {
-    "message": "Если включить автозаполнение при загрузке страницы, то формы входа в систему автоматически заполняются соответствующими учетными данными."
-  },
   "autofillSelectInfo": {
-    "message": "Выберите элемент с этой страницы для автоматического заполнения формы на активной вкладке."
+    "message": "Выберите элемент на этой странице или воспользуйтесь сочетанием клавиш: $COMMAND$. Также вы можете попробовать автозаполнение при загрузке страницы.",
+    "placeholders": {
+      "command": {
+        "content": "$1",
+        "example": "CTRL+Shift+L"
+      }
+    }
   },
-  "autofillTurnedOn": {
-    "message": "Автозаполнение при загрузке страницы включено"
+  "autofillSelectInfoNoCommand": {
+    "message": "Выберите элемент на этой странице или задайте сочетание клавиш в настройках. Также вы можете попробовать автозаполнение при загрузке страницы."
   },
-  "turnOn": {
-    "message": "Включить"
+  "gotIt": {
+    "message": "Понятно"
   },
-  "notNow": {
-    "message": "Не сейчас"
+  "autofillSettings": {
+    "message": "Настройки автозаполнения"
+  },
+  "autofillShortcut": {
+    "message": "Сочетание клавиш для автозаполнения"
+  },
+  "autofillShortcutNotSet": {
+    "message": "Сочетание клавиш для автозаполнения не установлено. Установите его в настройках браузера."
+  },
+  "autofillShortcutText": {
+    "message": "Сочетание клавиш для автозаполнения: $COMMAND$. Измените его в настройках браузера.",
+    "placeholders": {
+      "command": {
+        "content": "$1",
+        "example": "CTRL+Shift+L"
+      }
+    }
+  },
+  "autofillShortcutTextSafari": {
+    "message": "Сочетание клавиш для автозаполнения по умолчанию: $COMMAND$.",
+    "placeholders": {
+      "command": {
+        "content": "$1",
+        "example": "CTRL+Shift+L"
+      }
+    }
   }
 }

@@ -430,7 +430,7 @@
     "message": "Неабходна паўторна ўвесці асноўны пароль."
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least $VALUE$ characters long.",
+    "message": "Асноўны пароль павінен змяшчаць прынамсі $VALUE$ сімвалаў.",
     "description": "The Master Password must be at least a specific number of characters long.",
     "placeholders": {
       "value": {
@@ -2111,25 +2111,49 @@
       }
     }
   },
-  "tryAutofillPageLoad": {
-    "message": "Паспрабаваць аўтазапоўніць пры загрузцы старонкі?"
-  },
-  "tryAutofill": {
+  "howToAutofill": {
     "message": "Як аўтазапоўніць"
   },
-  "autofillPageLoadInfo": {
-    "message": "Калі аўтазапаўненне пры загрузцы старонкі ўключана, формы ўваходу будуць аўтаматычна запаўняцца адпаведнымі ўліковымі данымі."
-  },
   "autofillSelectInfo": {
-    "message": "Выберыце элемент з гэтай старонкі для аўтазапаўнення формы на актыўнай укладцы."
+    "message": "Select an item from this page or use the shortcut: $COMMAND$. You can also try auto-fill on page load.",
+    "placeholders": {
+      "command": {
+        "content": "$1",
+        "example": "CTRL+Shift+L"
+      }
+    }
   },
-  "autofillTurnedOn": {
-    "message": "Аўтазапаўненне пры загрузцы старонкі ўключана"
+  "autofillSelectInfoNoCommand": {
+    "message": "Выберыце элемент на гэтай старонцы або задайце спалучэнні клавіш у наладах. Вы таксама можаце паспрабаваць аўтазапаўненне пры загрузцы старонкі."
   },
-  "turnOn": {
-    "message": "Уключыць"
+  "gotIt": {
+    "message": "Зразумела"
   },
-  "notNow": {
-    "message": "Не зараз"
+  "autofillSettings": {
+    "message": "Налады аўтазапаўнення"
+  },
+  "autofillShortcut": {
+    "message": "Спалучэнні клавіш аўтазапаўнення"
+  },
+  "autofillShortcutNotSet": {
+    "message": "Спалучэнні клавіш аўтазапаўнення не зададзены. Змяніце гэта ў наладах браўзера."
+  },
+  "autofillShortcutText": {
+    "message": "Спалучэнні клавіш аўтазапаўнення: $COMMAND$. Змяніце гэта ў наладах браўзера.",
+    "placeholders": {
+      "command": {
+        "content": "$1",
+        "example": "CTRL+Shift+L"
+      }
+    }
+  },
+  "autofillShortcutTextSafari": {
+    "message": "Прадвызначаная спалучэнні клавіш аўтазапаўнення: $COMMAND$.",
+    "placeholders": {
+      "command": {
+        "content": "$1",
+        "example": "CTRL+Shift+L"
+      }
+    }
   }
 }

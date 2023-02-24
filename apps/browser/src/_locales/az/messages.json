@@ -2111,25 +2111,49 @@
       }
     }
   },
-  "tryAutofillPageLoad": {
-    "message": "Səhifə yüklənəndə avto-doldurma sınansın?"
-  },
-  "tryAutofill": {
+  "howToAutofill": {
     "message": "Avto-doldurma necə edilir"
   },
-  "autofillPageLoadInfo": {
-    "message": "Səhifə yüklənərkən avto-doldurmanı işə salsanız giriş formları uyğun gələn kimlik məlumatlarını avtomatik dolduracaq."
-  },
   "autofillSelectInfo": {
-    "message": "Aktiv vərəqin formunu avtomatik doldurmaq üçün bu səhifədən bir element seçin."
+    "message": "Select an item from this page or use the shortcut: $COMMAND$. You can also try auto-fill on page load.",
+    "placeholders": {
+      "command": {
+        "content": "$1",
+        "example": "CTRL+Shift+L"
+      }
+    }
   },
-  "autofillTurnedOn": {
-    "message": "Səhifə yüklənərkən avto-doldurma işə salındı"
+  "autofillSelectInfoNoCommand": {
+    "message": "Bu səhifədən bir element seçin və ya tənzimləmələrdə bir qısayol tənzimləyin. Həmçinin səhifə yüklənəndə avto-doldurmanı sınaya bilərsiniz."
   },
-  "turnOn": {
-    "message": "İşə sal"
+  "gotIt": {
+    "message": "Anladım"
   },
-  "notNow": {
-    "message": "İndi yox"
+  "autofillSettings": {
+    "message": "Avto-doldurma tənzimləmələri"
+  },
+  "autofillShortcut": {
+    "message": "Avto-doldurma klaviatura qısayolu"
+  },
+  "autofillShortcutNotSet": {
+    "message": "Avto-doldurma qısayolu tənzimlənməyib. Bunu brauzerin tənzimləmələrində dəyişdirin."
+  },
+  "autofillShortcutText": {
+    "message": "Avto-doldurma qısayolu: $COMMAND$. Bunu brauzerin tənzimləmələrində dəyişdirin.",
+    "placeholders": {
+      "command": {
+        "content": "$1",
+        "example": "CTRL+Shift+L"
+      }
+    }
+  },
+  "autofillShortcutTextSafari": {
+    "message": "İlkin avto-doldurma qısayolu: $COMMAND$.",
+    "placeholders": {
+      "command": {
+        "content": "$1",
+        "example": "CTRL+Shift+L"
+      }
+    }
   }
 }

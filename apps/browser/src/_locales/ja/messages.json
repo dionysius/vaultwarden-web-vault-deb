@@ -430,7 +430,7 @@
     "message": "マスターパスワードの再入力が必要です。"
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least $VALUE$ characters long.",
+    "message": "マスターパスワードは少なくとも $VALUE$ 文字以上でなければなりません。",
     "description": "The Master Password must be at least a specific number of characters long.",
     "placeholders": {
       "value": {
@@ -967,7 +967,7 @@
     "message": "ページ読み込み時にログインフォームを検出したとき、ログイン情報を自動入力します。"
   },
   "experimentalFeature": {
-    "message": "Compromised or untrusted websites can exploit auto-fill on page load."
+    "message": "ウイルス感染したり信頼できないウェブサイトは、ページの読み込み時の自動入力を悪用できてしまいます。"
   },
   "learnMoreAboutAutofill": {
     "message": "自動入力についての詳細"
@@ -2091,7 +2091,7 @@
     "message": "脆弱で流出済みのマスターパスワード"
   },
   "weakAndBreachedMasterPasswordDesc": {
-    "message": "入力されたパスワードは脆弱かつすでに流出済みです。アカウントを守るためより強力で一意なパスワードを使用してください。本当にこの脆弱なパスワードを使用しますか？"
+    "message": "入力されたパスワードは脆弱かつ流出済みです。アカウントを守るためより強力で一意なパスワードを使用してください。本当にこの脆弱なパスワードを使用しますか？"
   },
   "checkForBreaches": {
     "message": "このパスワードの既知のデータ流出を確認"
@@ -2111,25 +2111,49 @@
       }
     }
   },
-  "tryAutofillPageLoad": {
-    "message": "ページ読み込み時に自動入力しますか？"
-  },
-  "tryAutofill": {
+  "howToAutofill": {
     "message": "自動入力する方法"
   },
-  "autofillPageLoadInfo": {
-    "message": "ページ読み込み時の自動入力をオンにすると、一致するログイン情報を自動的にフォームに入力します。"
-  },
   "autofillSelectInfo": {
-    "message": "アクティブなタブのフォームを自動入力するには、このページでアイテムを選択してください。"
+    "message": "Select an item from this page or use the shortcut: $COMMAND$. You can also try auto-fill on page load.",
+    "placeholders": {
+      "command": {
+        "content": "$1",
+        "example": "CTRL+Shift+L"
+      }
+    }
   },
-  "autofillTurnedOn": {
-    "message": "ページ読み込み時の自動入力をオンにしました"
+  "autofillSelectInfoNoCommand": {
+    "message": "このページからアイテムを選択するか、設定でショートカットを設定します。ページの読み込み時に自動入力を試すこともできます。"
   },
-  "turnOn": {
-    "message": "オンにする"
+  "gotIt": {
+    "message": "了解"
   },
-  "notNow": {
-    "message": "後でする"
+  "autofillSettings": {
+    "message": "自動入力の設定"
+  },
+  "autofillShortcut": {
+    "message": "自動入力キーボードショートカット"
+  },
+  "autofillShortcutNotSet": {
+    "message": "自動入力のショートカットが設定されていません。ブラウザの設定で変更してください。"
+  },
+  "autofillShortcutText": {
+    "message": "自動入力のショートカットは $COMMAND$ です。ブラウザの設定でこれを変更してください。",
+    "placeholders": {
+      "command": {
+        "content": "$1",
+        "example": "CTRL+Shift+L"
+      }
+    }
+  },
+  "autofillShortcutTextSafari": {
+    "message": "デフォルトの自動入力ショートカットは $COMMAND$ です。",
+    "placeholders": {
+      "command": {
+        "content": "$1",
+        "example": "CTRL+Shift+L"
+      }
+    }
   }
 }

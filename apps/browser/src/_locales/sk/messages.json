@@ -430,7 +430,7 @@
     "message": "Vyžaduje sa opätovné zadanie hlavného hesla."
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least $VALUE$ characters long.",
+    "message": "Hlavné heslo musí mať aspoň $VALUE$ znakov.",
     "description": "The Master Password must be at least a specific number of characters long.",
     "placeholders": {
       "value": {
@@ -2111,25 +2111,49 @@
       }
     }
   },
-  "tryAutofillPageLoad": {
-    "message": "Chcete vyskúšať automatické vypĺňanie pri načítaní stránky?"
-  },
-  "tryAutofill": {
+  "howToAutofill": {
     "message": "Ako používať automatické vypĺňanie"
   },
-  "autofillPageLoadInfo": {
-    "message": "Ak zapnete automatické vyplňovanie pri načítaní stránky, prihlasovacie polia sa automaticky vyplnia zodpovedajúce povereniami."
-  },
   "autofillSelectInfo": {
-    "message": "Výberom položky na tejto stránke automaticky vyplníte formulár aktívnej karty."
+    "message": "Select an item from this page or use the shortcut: $COMMAND$. You can also try auto-fill on page load.",
+    "placeholders": {
+      "command": {
+        "content": "$1",
+        "example": "CTRL+Shift+L"
+      }
+    }
   },
-  "autofillTurnedOn": {
-    "message": "Automatické vypĺňanie pri načítaní stránky zapnuté"
+  "autofillSelectInfoNoCommand": {
+    "message": "Vyberte položku z tejto stránky alebo nastavte skratku v nastaveniach. Môžete tiež vyskúšať automatické vypĺňanie pri načítaní stránky."
   },
-  "turnOn": {
-    "message": "Zapnúť"
+  "gotIt": {
+    "message": "Chápem"
   },
-  "notNow": {
-    "message": "Teraz nie"
+  "autofillSettings": {
+    "message": "Nastavenia automatického vypĺňania"
+  },
+  "autofillShortcut": {
+    "message": "Klávesová skratka automatického vypĺňania"
+  },
+  "autofillShortcutNotSet": {
+    "message": "Skratka automatického vypĺňania nie je nastavená. Zmeníte ju v nastaveniach prehliadača."
+  },
+  "autofillShortcutText": {
+    "message": "Skratka automatického vypĺňania je: $COMMAND$. Zmeníte ju v nastaveniach prehliadača.",
+    "placeholders": {
+      "command": {
+        "content": "$1",
+        "example": "CTRL+Shift+L"
+      }
+    }
+  },
+  "autofillShortcutTextSafari": {
+    "message": "Predvolená skratka automatického vypĺňania: $COMMAND$.",
+    "placeholders": {
+      "command": {
+        "content": "$1",
+        "example": "CTRL+Shift+L"
+      }
+    }
   }
 }

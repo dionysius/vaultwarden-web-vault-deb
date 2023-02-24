@@ -2111,25 +2111,49 @@
       }
     }
   },
-  "tryAutofillPageLoad": {
-    "message": "پر کردن خودکار در بارگیری صفحه را امتحان می‌کنید؟"
-  },
-  "tryAutofill": {
-    "message": "نحوه پر کردن خودکار"
-  },
-  "autofillPageLoadInfo": {
-    "message": "اگر در بارگذاری صفحه، پر کردن خودکار را روشن کنید، فرم‌های ورود به‌طور خودکار اعتبارنامه‌های منطبق را پر می‌کنند."
+  "howToAutofill": {
+    "message": "How to auto-fill"
   },
   "autofillSelectInfo": {
-    "message": "برای پر کردن خودکار فرم برگه فعال، موردی را از این صفحه انتخاب کنید."
+    "message": "Select an item from this page or use the shortcut: $COMMAND$. You can also try auto-fill on page load.",
+    "placeholders": {
+      "command": {
+        "content": "$1",
+        "example": "CTRL+Shift+L"
+      }
+    }
   },
-  "autofillTurnedOn": {
-    "message": "پر کردن خودکار در بارگیری صفحه روشن شد"
+  "autofillSelectInfoNoCommand": {
+    "message": "Select an item from this page or set a shortcut in settings. You can also try auto-fill on page load."
   },
-  "turnOn": {
-    "message": "روشن"
+  "gotIt": {
+    "message": "Got it"
   },
-  "notNow": {
-    "message": "الان نه"
+  "autofillSettings": {
+    "message": "Auto-fill settings"
+  },
+  "autofillShortcut": {
+    "message": "Auto-fill keyboard shortcut"
+  },
+  "autofillShortcutNotSet": {
+    "message": "The auto-fill shortcut is not set. Change this in the browser's settings."
+  },
+  "autofillShortcutText": {
+    "message": "The auto-fill shortcut is: $COMMAND$. Change this in the browser's settings.",
+    "placeholders": {
+      "command": {
+        "content": "$1",
+        "example": "CTRL+Shift+L"
+      }
+    }
+  },
+  "autofillShortcutTextSafari": {
+    "message": "Default auto-fill shortcut: $COMMAND$.",
+    "placeholders": {
+      "command": {
+        "content": "$1",
+        "example": "CTRL+Shift+L"
+      }
+    }
   }
 }

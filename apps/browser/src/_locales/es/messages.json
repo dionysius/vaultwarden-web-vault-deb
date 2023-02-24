@@ -430,7 +430,7 @@
     "message": "Se requiere volver a teclear la contraseña maestra."
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least $VALUE$ characters long.",
+    "message": "La contraseña maestra debe tener al menos $VALUE$ caracteres.",
     "description": "The Master Password must be at least a specific number of characters long.",
     "placeholders": {
       "value": {
@@ -967,7 +967,7 @@
     "message": "Si se detecta un formulario, realizar automáticamente un autorellenado cuando la web cargue."
   },
   "experimentalFeature": {
-    "message": "Compromised or untrusted websites can exploit auto-fill on page load."
+    "message": "Los sitios web vulnerados o no confiables pueden explotar el autorelleno al cargar la página."
   },
   "learnMoreAboutAutofill": {
     "message": "Más información sobre el relleno automático"
@@ -2111,25 +2111,49 @@
       }
     }
   },
-  "tryAutofillPageLoad": {
-    "message": "Try auto-fill on page load?"
-  },
-  "tryAutofill": {
-    "message": "How to auto-fill"
-  },
-  "autofillPageLoadInfo": {
-    "message": "Login forms will automatically fill in matching credentials if you turn on auto-fill on page load."
+  "howToAutofill": {
+    "message": "Cómo autorellenar"
   },
   "autofillSelectInfo": {
-    "message": "Select an item from this page to auto-fill the active tab's form."
+    "message": "Seleccione un elemento de esta página o utilice el acceso directo: $COMMAND$. También puede intentar autorellenar al cargar la página.",
+    "placeholders": {
+      "command": {
+        "content": "$1",
+        "example": "CTRL+Shift+L"
+      }
+    }
   },
-  "autofillTurnedOn": {
-    "message": "Auto-fill on page load turned on"
+  "autofillSelectInfoNoCommand": {
+    "message": "Seleccione un elemento de esta página o establezca un acceso directo en los ajustes. También puede intentar autocompletar automáticamente en la carga de la página."
   },
-  "turnOn": {
-    "message": "Turn on"
+  "gotIt": {
+    "message": "Entendido"
   },
-  "notNow": {
-    "message": "Not now"
+  "autofillSettings": {
+    "message": "Ajustes de autocompletar"
+  },
+  "autofillShortcut": {
+    "message": "Atajo de teclado para autocompletar"
+  },
+  "autofillShortcutNotSet": {
+    "message": "El atajo de autocompletar no está establecido. Cambie esto en los ajustes del navegador."
+  },
+  "autofillShortcutText": {
+    "message": "El atajo de autocompletar es $COMMAND$. Cambie esto en los ajustes del navegador.",
+    "placeholders": {
+      "command": {
+        "content": "$1",
+        "example": "CTRL+Shift+L"
+      }
+    }
+  },
+  "autofillShortcutTextSafari": {
+    "message": "Atajo de autocompletar predeterminado: $COMMAND$.",
+    "placeholders": {
+      "command": {
+        "content": "$1",
+        "example": "CTRL+Shift+L"
+      }
+    }
   }
 }

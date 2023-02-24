@@ -2111,25 +2111,49 @@
       }
     }
   },
-  "tryAutofillPageLoad": {
-    "message": "Spróbować autouzupełnić po załadowaniu strony?"
-  },
-  "tryAutofill": {
+  "howToAutofill": {
     "message": "Jak autouzupełniać"
   },
-  "autofillPageLoadInfo": {
-    "message": "Formularze logowania automatycznie wypełnią się pasującymi danymi uwierzytelniającymi, jeśli włączysz autouzupełnianie po załadowaniu strony."
-  },
   "autofillSelectInfo": {
-    "message": "Wybierz element z tej strony, aby automatycznie wypełnić formularz na aktywnej karcie."
+    "message": "Select an item from this page or use the shortcut: $COMMAND$. You can also try auto-fill on page load.",
+    "placeholders": {
+      "command": {
+        "content": "$1",
+        "example": "CTRL+Shift+L"
+      }
+    }
   },
-  "autofillTurnedOn": {
-    "message": "Automatyczne uzupełnianie przy wczytywaniu strony zostało włączone"
+  "autofillSelectInfoNoCommand": {
+    "message": "Wybierz element z tej strony lub ustaw skrót w ustawieniach. Możesz również spróbować autouzupełniania przy wczytywaniu strony."
   },
-  "turnOn": {
-    "message": "Włącz"
+  "gotIt": {
+    "message": "Rozumiem"
   },
-  "notNow": {
-    "message": "Nie teraz"
+  "autofillSettings": {
+    "message": "Ustawienia autouzupełniania"
+  },
+  "autofillShortcut": {
+    "message": "Skrót klawiaturowy autouzupełniania"
+  },
+  "autofillShortcutNotSet": {
+    "message": "Skrót autouzupełniania nie jest ustawiony. Zmień to w ustawieniach przeglądarki."
+  },
+  "autofillShortcutText": {
+    "message": "Skrót autouzupełniania to: $COMMAND$. Zmień to w ustawieniach przeglądarki.",
+    "placeholders": {
+      "command": {
+        "content": "$1",
+        "example": "CTRL+Shift+L"
+      }
+    }
+  },
+  "autofillShortcutTextSafari": {
+    "message": "Domyślny skrót autouzupełniania: $COMMAND$.",
+    "placeholders": {
+      "command": {
+        "content": "$1",
+        "example": "CTRL+Shift+L"
+      }
+    }
   }
 }

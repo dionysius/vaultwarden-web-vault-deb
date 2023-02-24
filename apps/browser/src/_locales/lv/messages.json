@@ -2111,25 +2111,49 @@
       }
     }
   },
-  "tryAutofillPageLoad": {
-    "message": "Vai mēģināt automātiski aizpildīt pēc lapas ielādes?"
-  },
-  "tryAutofill": {
+  "howToAutofill": {
     "message": "Kā automātiski aizpildīt"
   },
-  "autofillPageLoadInfo": {
-    "message": "Pieteikšanās veidnēs automātiski tiks ievadīta atbilstoša pieteikšanās informācija, ja ir ieslēgta automātiskā aizpildīšana pēc lapas ielādēšanas."
-  },
   "autofillSelectInfo": {
-    "message": "Atlasīt šīs lapas vienumu, lai automātiski aizpildītu pašreizējās cilnes veidlapu."
+    "message": "Select an item from this page or use the shortcut: $COMMAND$. You can also try auto-fill on page load.",
+    "placeholders": {
+      "command": {
+        "content": "$1",
+        "example": "CTRL+Shift+L"
+      }
+    }
   },
-  "autofillTurnedOn": {
-    "message": "Ir ieslēgta automātiskā aizpilde pēc lapas ielādes"
+  "autofillSelectInfoNoCommand": {
+    "message": "Jāatlasa šīs lapas vienums vai jāizveido īsceļš iestatījumos. Ir iespējams arī mēģināt automātiski aizpildīt pēc lapas ielādes."
   },
-  "turnOn": {
-    "message": "Ieslēgt"
+  "gotIt": {
+    "message": "Sapratu"
   },
-  "notNow": {
-    "message": "Ne tagad"
+  "autofillSettings": {
+    "message": "Automātiskās aizpildes iestatījumi"
+  },
+  "autofillShortcut": {
+    "message": "Automātiskās aizpildes īsinājumtaustiņi"
+  },
+  "autofillShortcutNotSet": {
+    "message": "Automātiskās aizpildes īsceļš nav uzstādīts. To var izdarīt pārlūka iestatījumos."
+  },
+  "autofillShortcutText": {
+    "message": "Automātiskās aizpildes īsceļš ir: $COMMAND$. To var mainīt pārlūka iestatījumos.",
+    "placeholders": {
+      "command": {
+        "content": "$1",
+        "example": "CTRL+Shift+L"
+      }
+    }
+  },
+  "autofillShortcutTextSafari": {
+    "message": "Automātiskās aizpildes noklusējuma īsceļš: $COMMAND$.",
+    "placeholders": {
+      "command": {
+        "content": "$1",
+        "example": "CTRL+Shift+L"
+      }
+    }
   }
 }

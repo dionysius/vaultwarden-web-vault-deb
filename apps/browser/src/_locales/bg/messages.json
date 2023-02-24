@@ -2111,25 +2111,49 @@
       }
     }
   },
-  "tryAutofillPageLoad": {
-    "message": "Да се направи ли опит за автоматично попълване при зареждане на страницата?"
-  },
-  "tryAutofill": {
+  "howToAutofill": {
     "message": "Как се ползва автоматичното попълване"
   },
-  "autofillPageLoadInfo": {
-    "message": "Ако включите автоматичното попълване при зареждане на страницата, формулярите за вписване ще бъдат автоматично попълвани при наличие на съвпадение в трезора."
-  },
   "autofillSelectInfo": {
-    "message": "Изберете елемент от тази страница, за да се попълни автоматично формуляра в текущия раздел."
+    "message": "Select an item from this page or use the shortcut: $COMMAND$. You can also try auto-fill on page load.",
+    "placeholders": {
+      "command": {
+        "content": "$1",
+        "example": "CTRL+Shift+L"
+      }
+    }
   },
-  "autofillTurnedOn": {
-    "message": "Авт. попълване при зареждане на страницата е включено"
+  "autofillSelectInfoNoCommand": {
+    "message": "Изберете елемент от тази страница или задайте клавишна комбинация в настройките. Можете да опитате и функцията за автоматично попълване при зареждане на страницата."
   },
-  "turnOn": {
-    "message": "Включване"
+  "gotIt": {
+    "message": "Разбрано"
   },
-  "notNow": {
-    "message": "Не сега"
+  "autofillSettings": {
+    "message": "Настройки за автоматичното попълване"
+  },
+  "autofillShortcut": {
+    "message": "Клавишна комбинация за автоматично попълване"
+  },
+  "autofillShortcutNotSet": {
+    "message": "Няма зададена клавишна комбинация за автоматичното попълване. Променете това в настройките на браузъра."
+  },
+  "autofillShortcutText": {
+    "message": "Клавишната комбинация за автоматично попълване е: $COMMAND$. Може да я промените в настройките на браузъра.",
+    "placeholders": {
+      "command": {
+        "content": "$1",
+        "example": "CTRL+Shift+L"
+      }
+    }
+  },
+  "autofillShortcutTextSafari": {
+    "message": "Стандартна клавишна комбинация за автоматично попълване: $COMMAND$.",
+    "placeholders": {
+      "command": {
+        "content": "$1",
+        "example": "CTRL+Shift+L"
+      }
+    }
   }
 }

@@ -2111,25 +2111,49 @@
       }
     }
   },
-  "tryAutofillPageLoad": {
-    "message": "Automatisch invullen bij laden van pagina?"
-  },
-  "tryAutofill": {
+  "howToAutofill": {
     "message": "Hoe automatisch aanvullen"
   },
-  "autofillPageLoadInfo": {
-    "message": "Inlogformulieren worden automatisch ingevuld als je automatisch invullen bij laden van pagina inschakelt."
-  },
   "autofillSelectInfo": {
-    "message": "Kies een item van deze pagina om het formulier op het actieve tabblad automatisch in te vullen."
+    "message": "Select an item from this page or use the shortcut: $COMMAND$. You can also try auto-fill on page load.",
+    "placeholders": {
+      "command": {
+        "content": "$1",
+        "example": "CTRL+Shift+L"
+      }
+    }
   },
-  "autofillTurnedOn": {
-    "message": "Automatisch invullen bij laden van pagina ingeschakeld"
+  "autofillSelectInfoNoCommand": {
+    "message": "Kies een item van deze pagina of stel een snelkoppeling in de instellingen in. Je kunt ook automatisch invullen bij het laden van een pagina proberen."
   },
-  "turnOn": {
-    "message": "Inschakelen"
+  "gotIt": {
+    "message": "Ik snap het"
   },
-  "notNow": {
-    "message": "Niet nu"
+  "autofillSettings": {
+    "message": "Instellingen automatisch invullen"
+  },
+  "autofillShortcut": {
+    "message": "Snelkoppeling automatisch invullen"
+  },
+  "autofillShortcutNotSet": {
+    "message": "De sneltoets voor automatisch invullen is niet ingesteld. Wijzig dit in de instellingen van de browser."
+  },
+  "autofillShortcutText": {
+    "message": "De sneltoets voor automatisch invullen is: $COMMAND$. Wijzig dit in de instellingen van de browser.",
+    "placeholders": {
+      "command": {
+        "content": "$1",
+        "example": "CTRL+Shift+L"
+      }
+    }
+  },
+  "autofillShortcutTextSafari": {
+    "message": "Standaard snelkoppeling voor automatisch invullen:: $COMMAND$.",
+    "placeholders": {
+      "command": {
+        "content": "$1",
+        "example": "CTRL+Shift+L"
+      }
+    }
   }
 }
