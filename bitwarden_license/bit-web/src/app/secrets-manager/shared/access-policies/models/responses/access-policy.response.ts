@@ -30,6 +30,19 @@ export class UserProjectAccessPolicyResponse extends BaseAccessPolicyResponse {
   }
 }
 
+export class UserServiceAccountAccessPolicyResponse extends BaseAccessPolicyResponse {
+  organizationUserId: string;
+  organizationUserName: string;
+  grantedServiceAccountId: string;
+
+  constructor(response: any) {
+    super(response);
+    this.organizationUserId = this.getResponseProperty("OrganizationUserId");
+    this.organizationUserName = this.getResponseProperty("OrganizationUserName");
+    this.grantedServiceAccountId = this.getResponseProperty("GrantedServiceAccountId");
+  }
+}
+
 export class GroupProjectAccessPolicyResponse extends BaseAccessPolicyResponse {
   groupId: string;
   groupName: string;
@@ -40,6 +53,19 @@ export class GroupProjectAccessPolicyResponse extends BaseAccessPolicyResponse {
     this.groupId = this.getResponseProperty("GroupId");
     this.groupName = this.getResponseProperty("GroupName");
     this.grantedProjectId = this.getResponseProperty("GrantedProjectId");
+  }
+}
+
+export class GroupServiceAccountAccessPolicyResponse extends BaseAccessPolicyResponse {
+  groupId: string;
+  groupName: string;
+  grantedServiceAccountId: string;
+
+  constructor(response: any) {
+    super(response);
+    this.groupId = this.getResponseProperty("GroupId");
+    this.groupName = this.getResponseProperty("GroupName");
+    this.grantedServiceAccountId = this.getResponseProperty("GrantedServiceAccountId");
   }
 }
 

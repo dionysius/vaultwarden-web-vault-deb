@@ -1,13 +1,13 @@
-import { Component, OnDestroy, OnInit } from "@angular/core";
+import { Component } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
-import { map, Observable, startWith, Subject, switchMap, takeUntil } from "rxjs";
+import { combineLatestWith, map, Observable, startWith, Subject, switchMap, takeUntil } from "rxjs";
 
-import { SelectItemView } from "@bitwarden/components";
+import { SelectItemView } from "@bitwarden/components/src/multi-select/models/select-item-view";
 
 import {
-  GroupProjectAccessPolicyView,
-  ProjectAccessPoliciesView,
-  UserProjectAccessPolicyView,
+  GroupServiceAccountAccessPolicyView,
+  ServiceAccountAccessPoliciesView,
+  UserServiceAccountAccessPolicyView,
 } from "../../models/view/access-policy.view";
 import { AccessPolicyService } from "../../shared/access-policies/access-policy.service";
 import {
@@ -16,19 +16,19 @@ import {
 } from "../../shared/access-policies/access-selector.component";
 
 @Component({
-  selector: "sm-project-people",
-  templateUrl: "./project-people.component.html",
+  selector: "sm-service-account-people",
+  templateUrl: "./service-account-people.component.html",
 })
-export class ProjectPeopleComponent implements OnInit, OnDestroy {
+export class ServiceAccountPeopleComponent {
   private destroy$ = new Subject<void>();
-  private organizationId: string;
-  private projectId: string;
+  private serviceAccountId: string;
 
   protected rows$: Observable<AccessSelectorRowView[]> =
-    this.accessPolicyService.projectAccessPolicyChanges$.pipe(
+    this.accessPolicyService.serviceAccountAccessPolicyChanges$.pipe(
       startWith(null),
-      switchMap(() =>
-        this.accessPolicyService.getProjectAccessPolicies(this.organizationId, this.projectId)
+      combineLatestWith(this.route.params),
+      switchMap(([_, params]) =>
+        this.accessPolicyService.getServiceAccountAccessPolicies(params.serviceAccountId)
       ),
       map((policies) => {
         const rows: AccessSelectorRowView[] = [];
@@ -41,6 +41,7 @@ export class ProjectPeopleComponent implements OnInit, OnDestroy {
             read: policy.read,
             write: policy.write,
             icon: AccessSelectorComponent.userIcon,
+            static: true,
           });
         });
 
@@ -53,40 +54,41 @@ export class ProjectPeopleComponent implements OnInit, OnDestroy {
             read: policy.read,
             write: policy.write,
             icon: AccessSelectorComponent.groupIcon,
+            static: true,
           });
         });
+
         return rows;
       })
     );
 
   protected handleCreateAccessPolicies(selected: SelectItemView[]) {
-    const projectAccessPoliciesView = new ProjectAccessPoliciesView();
-    projectAccessPoliciesView.userAccessPolicies = selected
+    const serviceAccountAccessPoliciesView = new ServiceAccountAccessPoliciesView();
+    serviceAccountAccessPoliciesView.userAccessPolicies = selected
       .filter((selection) => AccessSelectorComponent.getAccessItemType(selection) === "user")
       .map((filtered) => {
-        const view = new UserProjectAccessPolicyView();
-        view.grantedProjectId = this.projectId;
+        const view = new UserServiceAccountAccessPolicyView();
+        view.grantedServiceAccountId = this.serviceAccountId;
         view.organizationUserId = filtered.id;
         view.read = true;
-        view.write = false;
+        view.write = true;
         return view;
       });
 
-    projectAccessPoliciesView.groupAccessPolicies = selected
+    serviceAccountAccessPoliciesView.groupAccessPolicies = selected
       .filter((selection) => AccessSelectorComponent.getAccessItemType(selection) === "group")
       .map((filtered) => {
-        const view = new GroupProjectAccessPolicyView();
-        view.grantedProjectId = this.projectId;
+        const view = new GroupServiceAccountAccessPolicyView();
+        view.grantedServiceAccountId = this.serviceAccountId;
         view.groupId = filtered.id;
         view.read = true;
-        view.write = false;
+        view.write = true;
         return view;
       });
 
-    return this.accessPolicyService.createProjectAccessPolicies(
-      this.organizationId,
-      this.projectId,
-      projectAccessPoliciesView
+    return this.accessPolicyService.createServiceAccountAccessPolicies(
+      this.serviceAccountId,
+      serviceAccountAccessPoliciesView
     );
   }
 
@@ -94,8 +96,7 @@ export class ProjectPeopleComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.route.params.pipe(takeUntil(this.destroy$)).subscribe((params) => {
-      this.organizationId = params.organizationId;
-      this.projectId = params.projectId;
+      this.serviceAccountId = params.serviceAccountId;
     });
   }
 

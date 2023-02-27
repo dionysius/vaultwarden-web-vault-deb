@@ -2,6 +2,7 @@ import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 
 import { AccessTokenComponent } from "./access/access-tokens.component";
+import { ServiceAccountPeopleComponent } from "./people/service-account-people.component";
 import { ServiceAccountComponent } from "./service-account.component";
 import { ServiceAccountsComponent } from "./service-accounts.component";
 
@@ -22,6 +23,10 @@ const routes: Routes = [
       {
         path: "access",
         component: AccessTokenComponent,
+      },
+      {
+        path: "people",
+        component: ServiceAccountPeopleComponent,
       },
     ],
   },
