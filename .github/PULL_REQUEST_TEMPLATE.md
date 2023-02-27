@@ -30,3 +30,4 @@
 - Please add **unit tests** where it makes sense to do so (encouraged but not required)
 - If this change requires a **documentation update** - notify the documentation team
 - If this change has particular **deployment requirements** - notify the DevOps team
+- Ensure that all UI additions follow [WCAG AA requirements](https://contributing.bitwarden.com/contributing/accessibility/)
