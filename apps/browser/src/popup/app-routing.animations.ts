@@ -197,6 +197,9 @@ export const routerTransition = trigger("routerTransition", [
 
   transition("tabs => lock", inSlideDown),
 
+  transition("tabs => help-and-feedback", inSlideLeft),
+  transition("help-and-feedback => tabs", outSlideRight),
+
   transition("tabs => send-type", inSlideLeft),
   transition("send-type => tabs", outSlideRight),
 
