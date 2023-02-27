@@ -54,6 +54,7 @@ type Tasks = {
 })
 export class OverviewComponent implements OnInit, OnDestroy {
   private destroy$: Subject<void> = new Subject<void>();
+  private prevShouldReuseRoute: any;
   private tableSize = 10;
   private organizationId: string;
   protected organizationName: string;
@@ -80,6 +81,7 @@ export class OverviewComponent implements OnInit, OnDestroy {
      * We want to remount the `sm-onboarding` component on route change.
      * The component only toggles its visibility on init and on user dismissal.
      */
+    this.prevShouldReuseRoute = this.router.routeReuseStrategy.shouldReuseRoute;
     this.router.routeReuseStrategy.shouldReuseRoute = () => false;
   }
 
@@ -133,6 +135,7 @@ export class OverviewComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
+    this.router.routeReuseStrategy.shouldReuseRoute = this.prevShouldReuseRoute;
     this.destroy$.next();
     this.destroy$.complete();
   }
