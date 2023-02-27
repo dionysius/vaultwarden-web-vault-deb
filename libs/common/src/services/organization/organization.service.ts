@@ -1,4 +1,4 @@
-import { BehaviorSubject, concatMap } from "rxjs";
+import { BehaviorSubject, concatMap, map, Observable } from "rxjs";
 
 import { InternalOrganizationService as InternalOrganizationServiceAbstraction } from "../../abstractions/organization/organization.service.abstraction";
 import { StateService } from "../../abstractions/state.service";
@@ -24,6 +24,10 @@ export class OrganizationService implements InternalOrganizationServiceAbstracti
         })
       )
       .subscribe();
+  }
+
+  get$(id: string): Observable<Organization | undefined> {
+    return this.organizations$.pipe(map((orgs) => orgs.find((o) => o.id === id)));
   }
 
   async getAll(userId?: string): Promise<Organization[]> {

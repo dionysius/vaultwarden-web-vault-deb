@@ -3,12 +3,12 @@
     <div class="col-3">
       <div class="card">
         <div class="card-header">{{ "settings" | i18n }}</div>
-        <div class="list-group list-group-flush">
+        <div class="list-group list-group-flush" *ngIf="organization$ | async as org">
           <a
             routerLink="account"
             class="list-group-item"
             routerLinkActive="active"
-            *ngIf="organization?.isOwner"
+            *ngIf="org.isOwner"
           >
             {{ "organizationInfo" | i18n }}
           </a>
@@ -16,7 +16,7 @@
             routerLink="policies"
             class="list-group-item"
             routerLinkActive="active"
-            *ngIf="organization?.canManagePolicies"
+            *ngIf="org.canManagePolicies"
           >
             {{ "policies" | i18n }}
           </a>
@@ -24,7 +24,7 @@
             routerLink="two-factor"
             class="list-group-item"
             routerLinkActive="active"
-            *ngIf="organization?.use2fa && organization?.isOwner"
+            *ngIf="org.use2fa && org.isOwner"
           >
             {{ "twoStepLogin" | i18n }}
           </a>
@@ -32,7 +32,7 @@
             routerLink="tools/import"
             class="list-group-item"
             routerLinkActive="active"
-            *ngIf="organization?.canAccessImportExport"
+            *ngIf="org.canAccessImportExport"
           >
             {{ "importData" | i18n }}
           </a>
@@ -40,7 +40,7 @@
             routerLink="tools/export"
             class="list-group-item"
             routerLinkActive="active"
-            *ngIf="organization?.canAccessImportExport"
+            *ngIf="org.canAccessImportExport"
           >
             {{ "exportVault" | i18n }}
           </a>
@@ -48,7 +48,7 @@
             routerLink="domain-verification"
             class="list-group-item"
             routerLinkActive="active"
-            *ngIf="organization?.canManageDomainVerification"
+            *ngIf="org?.canManageDomainVerification"
           >
             {{ "domainVerification" | i18n }}
           </a>
@@ -56,7 +56,7 @@
             routerLink="sso"
             class="list-group-item"
             routerLinkActive="active"
-            *ngIf="organization?.canManageSso"
+            *ngIf="org.canManageSso"
           >
             {{ "singleSignOn" | i18n }}
           </a>
@@ -64,7 +64,7 @@
             routerLink="scim"
             class="list-group-item"
             routerLinkActive="active"
-            *ngIf="organization?.canManageScim"
+            *ngIf="org.canManageScim"
           >
             {{ "scim" | i18n }}
           </a>

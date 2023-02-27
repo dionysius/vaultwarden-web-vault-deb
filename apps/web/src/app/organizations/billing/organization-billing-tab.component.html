@@ -8,7 +8,7 @@
             {{ "subscription" | i18n }}
           </a>
           <a
-            *ngIf="showPaymentAndHistory"
+            *ngIf="showPaymentAndHistory$ | async"
             routerLink="payment-method"
             class="list-group-item"
             routerLinkActive="active"
@@ -16,7 +16,7 @@
             {{ "paymentMethod" | i18n }}
           </a>
           <a
-            *ngIf="showPaymentAndHistory"
+            *ngIf="showPaymentAndHistory$ | async"
             routerLink="history"
             class="list-group-item"
             routerLinkActive="active"

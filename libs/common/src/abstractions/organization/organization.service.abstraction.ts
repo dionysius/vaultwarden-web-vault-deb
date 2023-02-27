@@ -32,7 +32,7 @@ export function canAccessReportingTab(org: Organization): boolean {
 }
 
 export function canAccessBillingTab(org: Organization): boolean {
-  return org.canManageBilling;
+  return org.isOwner;
 }
 
 export function canAccessOrgAdmin(org: Organization): boolean {
@@ -63,6 +63,7 @@ export function isNotProviderUser(org: Organization): boolean {
 export abstract class OrganizationService {
   organizations$: Observable<Organization[]>;
 
+  get$: (id: string) => Observable<Organization | undefined>;
   get: (id: string) => Organization;
   getByIdentifier: (identifier: string) => Organization;
   getAll: (userId?: string) => Promise<Organization[]>;
