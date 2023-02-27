@@ -238,7 +238,11 @@ export class LoginComponent extends CaptchaProtectedComponent implements OnInit 
 
   toggleValidateEmail(value: boolean) {
     this.validatedEmail = value;
-    this.formGroup.controls.masterPassword.reset();
+    if (!value) {
+      // Reset master password only when going from validated to not validated (not you btn press)
+      // so that autofill can work properly
+      this.formGroup.controls.masterPassword.reset();
+    }
   }
 
   setFormValues() {
