@@ -43,9 +43,6 @@
                 <option value="canRead" [selected]="row.read && row.write != true">
                   {{ "canRead" | i18n }}
                 </option>
-                <option value="canWrite" [selected]="row.read != true && row.write">
-                  {{ "canWrite" | i18n }}
-                </option>
                 <option value="canReadWrite" [selected]="row.read && row.write">
                   {{ "canReadWrite" | i18n }}
                 </option>
