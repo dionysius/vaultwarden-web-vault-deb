@@ -12,9 +12,9 @@ import { BaseAccessPolicyView } from "../../models/view/access-policy.view";
 import { AccessPolicyService } from "./access-policy.service";
 
 export type AccessSelectorRowView = {
-  type: "user" | "group" | "serviceAccount";
+  type: "user" | "group" | "serviceAccount" | "project";
   name: string;
-  granteeId: string;
+  id: string;
   accessPolicyId: string;
   read: boolean;
   write: boolean;
@@ -30,6 +30,7 @@ export class AccessSelectorComponent implements OnInit {
   static readonly userIcon = "bwi-user";
   static readonly groupIcon = "bwi-family";
   static readonly serviceAccountIcon = "bwi-wrench";
+  static readonly projectIcon = "bwi-collection";
 
   @Output() onCreateAccessPolicies = new EventEmitter<SelectItemView[]>();
 
@@ -37,7 +38,7 @@ export class AccessSelectorComponent implements OnInit {
   @Input() hint: string;
   @Input() columnTitle: string;
   @Input() emptyMessage: string;
-  @Input() granteeType: "people" | "serviceAccounts";
+  @Input() granteeType: "people" | "serviceAccounts" | "projects";
 
   protected rows$ = new Subject<AccessSelectorRowView[]>();
   @Input() private set rows(value: AccessSelectorRowView[]) {
@@ -57,7 +58,7 @@ export class AccessSelectorComponent implements OnInit {
     switchMap(([rows, params]) =>
       this.getPotentialGrantees(params.organizationId).then((grantees) =>
         grantees
-          .filter((g) => !rows.some((row) => row.granteeId === g.id))
+          .filter((g) => !rows.some((row) => row.id === g.id))
           .map((granteeView) => {
             let icon: string;
             let listName = granteeView.name;
@@ -74,6 +75,8 @@ export class AccessSelectorComponent implements OnInit {
               icon = AccessSelectorComponent.groupIcon;
             } else if (granteeView.type === "serviceAccount") {
               icon = AccessSelectorComponent.serviceAccountIcon;
+            } else if (granteeView.type === "project") {
+              icon = AccessSelectorComponent.projectIcon;
             }
             return {
               icon: icon,
@@ -144,9 +147,14 @@ export class AccessSelectorComponent implements OnInit {
   };
 
   private getPotentialGrantees(organizationId: string) {
-    return this.granteeType === "people"
-      ? this.accessPolicyService.getPeoplePotentialGrantees(organizationId)
-      : this.accessPolicyService.getServiceAccountsPotentialGrantees(organizationId);
+    switch (this.granteeType) {
+      case "people":
+        return this.accessPolicyService.getPeoplePotentialGrantees(organizationId);
+      case "serviceAccounts":
+        return this.accessPolicyService.getServiceAccountsPotentialGrantees(organizationId);
+      case "projects":
+        return this.accessPolicyService.getProjectsPotentialGrantees(organizationId);
+    }
   }
 
   static getAccessItemType(item: SelectItemView) {
@@ -157,6 +165,8 @@ export class AccessSelectorComponent implements OnInit {
         return "group";
       case AccessSelectorComponent.serviceAccountIcon:
         return "serviceAccount";
+      case AccessSelectorComponent.projectIcon:
+        return "project";
     }
   }
 }

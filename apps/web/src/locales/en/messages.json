@@ -5864,7 +5864,7 @@
     "message": "Service account name"
   },
   "newSaSelectAccess":{
-    "message": "Type or select projects or secrets"
+    "message": "Type or select projects"
   },
   "newSaTypeToFilter":{
     "message": "Type to filter"
@@ -6364,6 +6364,12 @@
   },
   "serviceAccountPeopleDescription": {
     "message": "Grant groups or people access to this service account."
+  },
+  "serviceAccountProjectsDescription": {
+    "message": "Assign projects to this service account. "
+  },
+  "serviceAccountEmptyProjectAccesspolicies": {
+    "message": "Add projects to grant access"
   },
   "canWrite": {
     "message": "Can write"

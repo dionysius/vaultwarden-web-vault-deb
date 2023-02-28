@@ -3,6 +3,7 @@ import { RouterModule, Routes } from "@angular/router";
 
 import { AccessTokenComponent } from "./access/access-tokens.component";
 import { ServiceAccountPeopleComponent } from "./people/service-account-people.component";
+import { ServiceAccountProjectsComponent } from "./projects/service-account-projects.component";
 import { ServiceAccountComponent } from "./service-account.component";
 import { ServiceAccountsComponent } from "./service-accounts.component";
 
@@ -18,7 +19,7 @@ const routes: Routes = [
       {
         path: "",
         pathMatch: "full",
-        redirectTo: "access",
+        redirectTo: "projects",
       },
       {
         path: "access",
@@ -27,6 +28,10 @@ const routes: Routes = [
       {
         path: "people",
         component: ServiceAccountPeopleComponent,
+      },
+      {
+        path: "projects",
+        component: ServiceAccountProjectsComponent,
       },
     ],
   },

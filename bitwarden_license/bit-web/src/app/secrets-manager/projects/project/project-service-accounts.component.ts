@@ -33,7 +33,7 @@ export class ProjectServiceAccountsComponent implements OnInit, OnDestroy {
         policies.serviceAccountAccessPolicies.map((policy) => ({
           type: "serviceAccount",
           name: policy.serviceAccountName,
-          granteeId: policy.serviceAccountId,
+          id: policy.serviceAccountId,
           accessPolicyId: policy.id,
           read: policy.read,
           write: policy.write,

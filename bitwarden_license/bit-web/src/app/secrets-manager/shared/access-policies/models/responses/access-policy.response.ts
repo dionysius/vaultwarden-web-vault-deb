@@ -73,11 +73,13 @@ export class ServiceAccountProjectAccessPolicyResponse extends BaseAccessPolicyR
   serviceAccountId: string;
   serviceAccountName: string;
   grantedProjectId: string;
+  grantedProjectName: string;
 
   constructor(response: any) {
     super(response);
     this.serviceAccountId = this.getResponseProperty("ServiceAccountId");
     this.serviceAccountName = this.getResponseProperty("ServiceAccountName");
     this.grantedProjectId = this.getResponseProperty("GrantedProjectId");
+    this.grantedProjectName = this.getResponseProperty("GrantedProjectName");
   }
 }

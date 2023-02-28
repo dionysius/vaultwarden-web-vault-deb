@@ -36,7 +36,7 @@ export class ServiceAccountPeopleComponent {
           rows.push({
             type: "user",
             name: policy.organizationUserName,
-            granteeId: policy.organizationUserId,
+            id: policy.organizationUserId,
             accessPolicyId: policy.id,
             read: policy.read,
             write: policy.write,
@@ -49,7 +49,7 @@ export class ServiceAccountPeopleComponent {
           rows.push({
             type: "group",
             name: policy.groupName,
-            granteeId: policy.groupId,
+            id: policy.groupId,
             accessPolicyId: policy.id,
             read: policy.read,
             write: policy.write,

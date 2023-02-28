@@ -34,6 +34,7 @@ export class ServiceAccountProjectAccessPolicyView extends BaseAccessPolicyView 
   serviceAccountId: string;
   serviceAccountName: string;
   grantedProjectId: string;
+  grantedProjectName: string;
 }
 
 export class ProjectAccessPoliciesView {
