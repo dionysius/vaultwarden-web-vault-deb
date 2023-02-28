@@ -11,7 +11,9 @@ import {
   distinct,
 } from "rxjs";
 
+import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { OrganizationService } from "@bitwarden/common/abstractions/organization/organization.service.abstraction";
+import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { DialogService } from "@bitwarden/components";
 
 import { ProjectListView } from "../models/view/project-list.view";
@@ -75,7 +77,9 @@ export class OverviewComponent implements OnInit, OnDestroy {
     private secretService: SecretService,
     private serviceAccountService: ServiceAccountService,
     private dialogService: DialogService,
-    private organizationService: OrganizationService
+    private organizationService: OrganizationService,
+    private platformUtilsService: PlatformUtilsService,
+    private i18nService: I18nService
   ) {
     /**
      * We want to remount the `sm-onboarding` component on route change.
@@ -221,5 +225,24 @@ export class OverviewComponent implements OnInit, OnDestroy {
         operation: OperationType.Add,
       },
     });
+  }
+
+  copySecretName(name: string) {
+    this.platformUtilsService.copyToClipboard(name);
+    this.platformUtilsService.showToast(
+      "success",
+      null,
+      this.i18nService.t("valueCopied", this.i18nService.t("name"))
+    );
+  }
+
+  async copySecretValue(id: string) {
+    const secret = await this.secretService.getBySecretId(id);
+    this.platformUtilsService.copyToClipboard(secret.value);
+    this.platformUtilsService.showToast(
+      "success",
+      null,
+      this.i18nService.t("valueCopied", this.i18nService.t("value"))
+    );
   }
 }

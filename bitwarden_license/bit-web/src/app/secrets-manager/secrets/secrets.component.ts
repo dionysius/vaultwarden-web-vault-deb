@@ -2,6 +2,8 @@ import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { combineLatestWith, Observable, startWith, switchMap } from "rxjs";
 
+import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
+import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { DialogService } from "@bitwarden/components";
 
 import { SecretListView } from "../models/view/secret-list.view";
@@ -30,7 +32,9 @@ export class SecretsComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private secretService: SecretService,
-    private dialogService: DialogService
+    private dialogService: DialogService,
+    private platformUtilsService: PlatformUtilsService,
+    private i18nService: I18nService
   ) {}
 
   ngOnInit() {
@@ -77,5 +81,24 @@ export class SecretsComponent implements OnInit {
         operation: OperationType.Add,
       },
     });
+  }
+
+  copySecretName(name: string) {
+    this.platformUtilsService.copyToClipboard(name);
+    this.platformUtilsService.showToast(
+      "success",
+      null,
+      this.i18nService.t("valueCopied", this.i18nService.t("name"))
+    );
+  }
+
+  async copySecretValue(id: string) {
+    const secret = await this.secretService.getBySecretId(id);
+    this.platformUtilsService.copyToClipboard(secret.value);
+    this.platformUtilsService.showToast(
+      "success",
+      null,
+      this.i18nService.t("valueCopied", this.i18nService.t("value"))
+    );
   }
 }
