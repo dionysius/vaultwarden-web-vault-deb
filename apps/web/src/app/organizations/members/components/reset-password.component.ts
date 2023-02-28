@@ -109,7 +109,7 @@ export class ResetPasswordComponent implements OnInit, OnDestroy {
       return false;
     }
 
-    if (this.newPassword.length < 8) {
+    if (this.newPassword.length < Utils.minimumPasswordLength) {
       this.platformUtilsService.showToast(
         "error",
         this.i18nService.t("errorOccurred"),
