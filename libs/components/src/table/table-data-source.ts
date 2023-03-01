@@ -132,7 +132,7 @@ export class TableDataSource<T> extends DataSource<T> {
    */
   protected sortData(data: T[], sort: Sort): T[] {
     const column = sort.column;
-    const direction = sort.direction;
+    const directionModifier = sort.direction === "asc" ? 1 : -1;
     if (!column) {
       return data;
     }
@@ -140,7 +140,7 @@ export class TableDataSource<T> extends DataSource<T> {
     return data.sort((a, b) => {
       // If a custom sort function is provided, use it instead of the default.
       if (sort.fn) {
-        return sort.fn(a, b) * (direction === "asc" ? 1 : -1);
+        return sort.fn(a, b) * directionModifier;
       }
 
       let valueA = this.sortingDataAccessor(a, column);
@@ -161,6 +161,10 @@ export class TableDataSource<T> extends DataSource<T> {
         }
       }
 
+      if (typeof valueA === "string" && typeof valueB === "string") {
+        return valueA.localeCompare(valueB) * directionModifier;
+      }
+
       // If both valueA and valueB exist (truthy), then compare the two. Otherwise, check if
       // one value exists while the other doesn't. In this case, existing value should come last.
       // This avoids inconsistent results when comparing values to undefined/null.
@@ -179,7 +183,7 @@ export class TableDataSource<T> extends DataSource<T> {
         comparatorResult = -1;
       }
 
-      return comparatorResult * (direction === "asc" ? 1 : -1);
+      return comparatorResult * directionModifier;
     });
   }
 

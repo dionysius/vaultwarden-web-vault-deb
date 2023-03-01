@@ -168,3 +168,31 @@ const FilterableTemplate: Story = (args) => ({
 });
 
 export const Filterable = FilterableTemplate.bind({});
+
+const data4 = new TableDataSource<{ name: string }>();
+
+data4.data = [...Array(5).keys()].map((i) => ({
+  name: i % 2 == 0 ? `name-${i}`.toUpperCase() : `name-${i}`.toLowerCase(),
+}));
+
+const VariableCaseTemplate: Story = (args) => ({
+  props: {
+    dataSource: data4,
+  },
+  template: `
+    <bit-table [dataSource]="dataSource">
+      <ng-container header>
+        <tr>
+          <th bitCell bitSortable="name" default>Name</th>
+        </tr>
+      </ng-container>
+      <ng-template body let-rows$>
+        <tr bitRow *ngFor="let r of rows$ | async">
+          <td bitCell>{{ r.name }}</td>
+        </tr>
+      </ng-template>
+    </bit-table>
+    `,
+});
+
+export const VariableCase = VariableCaseTemplate.bind({});
