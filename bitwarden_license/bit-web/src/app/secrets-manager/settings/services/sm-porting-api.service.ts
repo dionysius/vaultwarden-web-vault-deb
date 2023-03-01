@@ -30,19 +30,13 @@ export class SecretsManagerPortingApiService {
   ) {}
 
   async export(organizationId: string, exportFormat = "json"): Promise<string> {
-    let response = {};
-
-    try {
-      response = await this.apiService.send(
-        "GET",
-        "/sm/" + organizationId + "/export?format=" + exportFormat,
-        null,
-        true,
-        true
-      );
-    } catch (error) {
-      return null;
-    }
+    const response = await this.apiService.send(
+      "GET",
+      "/sm/" + organizationId + "/export?format=" + exportFormat,
+      null,
+      true,
+      true
+    );
 
     return JSON.stringify(
       await this.decryptExport(organizationId, new SecretsManagerExportResponse(response)),

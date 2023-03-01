@@ -10,8 +10,13 @@
   [text]="'serviceAccounts' | i18n"
   route="service-accounts"
 ></bit-nav-item>
-<bit-nav-item icon="bwi-trash" [text]="'trash' | i18n" route="trash"></bit-nav-item>
-<bit-nav-group icon="bwi-cog" [text]="'settings' | i18n">
+<bit-nav-item
+  icon="bwi-trash"
+  [text]="'trash' | i18n"
+  route="trash"
+  *ngIf="isAdmin$ | async"
+></bit-nav-item>
+<bit-nav-group icon="bwi-cog" [text]="'settings' | i18n" *ngIf="isAdmin$ | async">
   <bit-nav-item [text]="'importData' | i18n" route="settings/import"></bit-nav-item>
   <bit-nav-item [text]="'exportData' | i18n" route="settings/export"></bit-nav-item>
 </bit-nav-group>
