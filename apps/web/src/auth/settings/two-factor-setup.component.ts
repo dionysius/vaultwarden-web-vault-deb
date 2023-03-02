@@ -43,6 +43,8 @@ export class TwoFactorSetupComponent implements OnInit, OnDestroy {
   modal: ModalRef;
   formPromise: Promise<any>;
 
+  tabbedHeader = true;
+
   private destroy$ = new Subject<void>();
   private twoFactorAuthPolicyAppliesToActiveUser: boolean;
 

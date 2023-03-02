@@ -17,6 +17,7 @@ import { TwoFactorSetupComponent as BaseTwoFactorSetupComponent } from "../../..
 })
 // eslint-disable-next-line rxjs-angular/prefer-takeuntil
 export class TwoFactorSetupComponent extends BaseTwoFactorSetupComponent {
+  tabbedHeader = false;
   constructor(
     apiService: ApiService,
     modalService: ModalService,

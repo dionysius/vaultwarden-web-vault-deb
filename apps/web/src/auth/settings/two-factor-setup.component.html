@@ -1,6 +1,6 @@
 <!-- Please remove this disable statement when editing this file! -->
 <!-- eslint-disable @angular-eslint/template/button-has-type -->
-<div class="page-header">
+<div [ngClass]="tabbedHeader ? 'tabbed-header' : 'page-header'">
   <h1 *ngIf="!organizationId">{{ "twoStepLogin" | i18n }}</h1>
   <h1 *ngIf="organizationId">{{ "twoStepLoginEnforcement" | i18n }}</h1>
 </div>
