@@ -5922,8 +5922,8 @@
     "description": "Notifies that the selected projects have been deleted"
   },
   "deleteProjectToast": {
-    "message": "The project and all associated secrets have been deleted",
-    "description": "Notifies that a project and its secrets have been deleted"
+    "message": "Project deleted",
+    "description": "Notifies that a project has been deleted"
   },
   "deleteProjectDialogMessage": {
     "message": "Deleting project $PROJECT$ is permanent and irreversible.",
