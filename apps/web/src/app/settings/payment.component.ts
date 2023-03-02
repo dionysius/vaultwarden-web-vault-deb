@@ -49,7 +49,7 @@ export class PaymentComponent implements OnInit, OnDestroy {
     private themingService: AbstractThemingService
   ) {
     this.stripeScript = window.document.createElement("script");
-    this.stripeScript.src = "https://js.stripe.com/v3/";
+    this.stripeScript.src = "https://js.stripe.com/v3/?advancedFraudSignals=false";
     this.stripeScript.async = true;
     this.stripeScript.onload = () => {
       this.stripe = (window as any).Stripe(process.env.STRIPE_KEY);
