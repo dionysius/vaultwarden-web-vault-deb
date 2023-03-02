@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { Observable, switchMap } from "rxjs";
 
-import { ProjectView } from "../../models/view/project.view";
+import { ProjectPermissionDetailsView } from "../../models/view/project.view";
 import { ProjectService } from "../project.service";
 
 @Component({
@@ -10,7 +10,7 @@ import { ProjectService } from "../project.service";
   templateUrl: "./project.component.html",
 })
 export class ProjectComponent implements OnInit {
-  project$: Observable<ProjectView>;
+  project$: Observable<ProjectPermissionDetailsView>;
 
   constructor(private route: ActivatedRoute, private projectService: ProjectService) {}
 

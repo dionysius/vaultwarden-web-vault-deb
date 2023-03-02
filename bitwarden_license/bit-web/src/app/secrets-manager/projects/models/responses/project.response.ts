@@ -16,3 +16,14 @@ export class ProjectResponse extends BaseResponse {
     this.revisionDate = this.getResponseProperty("RevisionDate");
   }
 }
+
+export class ProjectPermissionDetailsResponse extends ProjectResponse {
+  read: boolean;
+  write: boolean;
+
+  constructor(response: any) {
+    super(response);
+    this.read = this.getResponseProperty("Read");
+    this.write = this.getResponseProperty("Write");
+  }
+}

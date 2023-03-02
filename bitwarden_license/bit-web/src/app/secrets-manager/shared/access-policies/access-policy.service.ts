@@ -277,10 +277,12 @@ export class AccessPolicyService {
       ...this.createBaseAccessPolicyView(response),
       grantedProjectId: response.grantedProjectId,
       serviceAccountId: response.serviceAccountId,
-      grantedProjectName: await this.encryptService.decryptToUtf8(
-        new EncString(response.grantedProjectName),
-        organizationKey
-      ),
+      grantedProjectName: response.grantedProjectName
+        ? await this.encryptService.decryptToUtf8(
+            new EncString(response.grantedProjectName),
+            organizationKey
+          )
+        : null,
       serviceAccountName: await this.encryptService.decryptToUtf8(
         new EncString(response.serviceAccountName),
         organizationKey

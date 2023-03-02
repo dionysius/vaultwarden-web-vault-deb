@@ -9,12 +9,15 @@ import { SymmetricCryptoKey } from "@bitwarden/common/models/domain/symmetric-cr
 import { ListResponse } from "@bitwarden/common/models/response/list.response";
 
 import { ProjectListView } from "../models/view/project-list.view";
-import { ProjectView } from "../models/view/project.view";
+import { ProjectPermissionDetailsView, ProjectView } from "../models/view/project.view";
 import { BulkOperationStatus } from "../shared/dialogs/bulk-status-dialog.component";
 
 import { ProjectRequest } from "./models/requests/project.request";
 import { ProjectListItemResponse } from "./models/responses/project-list-item.response";
-import { ProjectResponse } from "./models/responses/project.response";
+import {
+  ProjectPermissionDetailsResponse,
+  ProjectResponse,
+} from "./models/responses/project.response";
 
 @Injectable({
   providedIn: "root",
@@ -29,10 +32,10 @@ export class ProjectService {
     private encryptService: EncryptService
   ) {}
 
-  async getByProjectId(projectId: string): Promise<ProjectView> {
+  async getByProjectId(projectId: string): Promise<ProjectPermissionDetailsView> {
     const r = await this.apiService.send("GET", "/projects/" + projectId, null, true, true);
-    const projectResponse = new ProjectResponse(r);
-    return await this.createProjectView(projectResponse);
+    const projectResponse = new ProjectPermissionDetailsResponse(r);
+    return await this.createProjectPermissionDetailsView(projectResponse);
   }
 
   async getProjects(organizationId: string): Promise<ProjectListView[]> {
@@ -96,7 +99,9 @@ export class ProjectService {
     return request;
   }
 
-  private async createProjectView(projectResponse: ProjectResponse): Promise<ProjectView> {
+  private async createProjectView(
+    projectResponse: ProjectResponse | ProjectPermissionDetailsResponse
+  ) {
     const orgKey = await this.getOrganizationKey(projectResponse.organizationId);
 
     const projectView = new ProjectView();
@@ -108,8 +113,17 @@ export class ProjectService {
       new EncString(projectResponse.name),
       orgKey
     );
-
     return projectView;
+  }
+
+  private async createProjectPermissionDetailsView(
+    projectResponse: ProjectPermissionDetailsResponse
+  ): Promise<ProjectPermissionDetailsView> {
+    return {
+      ...(await this.createProjectView(projectResponse)),
+      read: projectResponse.read,
+      write: projectResponse.write,
+    };
   }
 
   private async createProjectsListView(
