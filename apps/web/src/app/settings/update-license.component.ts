@@ -54,7 +54,11 @@ export class UpdateLicenseComponent {
       });
 
       await this.formPromise;
-      this.platformUtilsService.showToast("success", null, this.i18nService.t("updatedLicense"));
+      this.platformUtilsService.showToast(
+        "success",
+        null,
+        this.i18nService.t("licenseUploadSuccess")
+      );
       this.onUpdated.emit();
     } catch (e) {
       this.logService.error(e);

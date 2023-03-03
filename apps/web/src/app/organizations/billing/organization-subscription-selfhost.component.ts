@@ -128,11 +128,6 @@ export class OrganizationSubscriptionSelfhostComponent implements OnInit, OnDest
   licenseUploaded() {
     this.load();
     this.messagingService.send("updatedOrgLicense");
-    this.platformUtilsService.showToast(
-      "success",
-      null,
-      this.i18nService.t("licenseUploadSuccess")
-    );
   }
 
   manageBillingSyncSelfHosted() {
