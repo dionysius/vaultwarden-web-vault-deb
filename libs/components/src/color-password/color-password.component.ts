@@ -11,7 +11,7 @@ enum CharacterType {
 
 @Component({
   selector: "bit-color-password",
-  template: `<div
+  template: `<span
     *ngFor="let character of passwordArray; index as i"
     [class]="getCharacterClass(character)"
   >
@@ -19,7 +19,8 @@ enum CharacterType {
     <span *ngIf="showCount" class="tw-whitespace-nowrap tw-text-xs tw-leading-5 tw-text-main">{{
       i + 1
     }}</span>
-  </div>`,
+  </span>`,
+  preserveWhitespaces: false,
 })
 export class ColorPasswordComponent {
   @Input() private password: string = null;
@@ -44,10 +45,11 @@ export class ColorPasswordComponent {
 
   getCharacterClass(character: string) {
     const charType = this.getCharacterType(character);
-    const charClass = this.characterStyles[charType].concat("tw-inline-flex");
+    const charClass = this.characterStyles[charType];
 
     if (this.showCount) {
       return charClass.concat([
+        "tw-inline-flex",
         "tw-flex-col",
         "tw-items-center",
         "tw-w-7",
