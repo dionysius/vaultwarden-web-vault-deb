@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from "@angular/core";
-import { ActivatedRoute, Router } from "@angular/router";
+import { ActivatedRoute } from "@angular/router";
 import {
   map,
   Observable,
@@ -8,7 +8,8 @@ import {
   takeUntil,
   combineLatest,
   startWith,
-  distinct,
+  distinctUntilChanged,
+  take,
 } from "rxjs";
 
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
@@ -56,11 +57,11 @@ type Tasks = {
 })
 export class OverviewComponent implements OnInit, OnDestroy {
   private destroy$: Subject<void> = new Subject<void>();
-  private prevShouldReuseRoute: any;
   private tableSize = 10;
   private organizationId: string;
   protected organizationName: string;
   protected userIsAdmin: boolean;
+  protected showOnboarding = false;
 
   protected view$: Observable<{
     allProjects: ProjectListView[];
@@ -72,7 +73,6 @@ export class OverviewComponent implements OnInit, OnDestroy {
 
   constructor(
     private route: ActivatedRoute,
-    private router: Router,
     private projectService: ProjectService,
     private secretService: SecretService,
     private serviceAccountService: ServiceAccountService,
@@ -80,19 +80,12 @@ export class OverviewComponent implements OnInit, OnDestroy {
     private organizationService: OrganizationService,
     private platformUtilsService: PlatformUtilsService,
     private i18nService: I18nService
-  ) {
-    /**
-     * We want to remount the `sm-onboarding` component on route change.
-     * The component only toggles its visibility on init and on user dismissal.
-     */
-    this.prevShouldReuseRoute = this.router.routeReuseStrategy.shouldReuseRoute;
-    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
-  }
+  ) {}
 
   ngOnInit() {
     const orgId$ = this.route.params.pipe(
       map((p) => p.organizationId),
-      distinct()
+      distinctUntilChanged()
     );
 
     orgId$
@@ -136,10 +129,19 @@ export class OverviewComponent implements OnInit, OnDestroy {
         };
       })
     );
+
+    // Refresh onboarding status when orgId changes by fetching the first value from view$.
+    orgId$
+      .pipe(
+        switchMap(() => this.view$.pipe(take(1))),
+        takeUntil(this.destroy$)
+      )
+      .subscribe((view) => {
+        this.showOnboarding = Object.values(view.tasks).includes(false);
+      });
   }
 
   ngOnDestroy(): void {
-    this.router.routeReuseStrategy.shouldReuseRoute = this.prevShouldReuseRoute;
     this.destroy$.next();
     this.destroy$.complete();
   }
@@ -244,5 +246,9 @@ export class OverviewComponent implements OnInit, OnDestroy {
       null,
       this.i18nService.t("valueCopied", this.i18nService.t("value"))
     );
+  }
+
+  protected hideOnboarding() {
+    this.showOnboarding = false;
   }
 }
