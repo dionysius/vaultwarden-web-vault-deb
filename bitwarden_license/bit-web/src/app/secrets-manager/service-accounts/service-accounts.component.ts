@@ -8,6 +8,10 @@ import { ServiceAccountView } from "../models/view/service-account.view";
 import { AccessPolicyService } from "../shared/access-policies/access-policy.service";
 
 import {
+  ServiceAccountDeleteDialogComponent,
+  ServiceAccountDeleteOperation,
+} from "./dialog/service-account-delete-dialog.component";
+import {
   ServiceAccountDialogComponent,
   ServiceAccountOperation,
 } from "./dialog/service-account-dialog.component";
@@ -48,6 +52,17 @@ export class ServiceAccountsComponent implements OnInit {
         organizationId: this.organizationId,
       },
     });
+  }
+
+  openDeleteDialog(event: ServiceAccountView[]) {
+    this.dialogService.open<unknown, ServiceAccountDeleteOperation>(
+      ServiceAccountDeleteDialogComponent,
+      {
+        data: {
+          serviceAccounts: event,
+        },
+      }
+    );
   }
 
   private async getServiceAccounts(): Promise<ServiceAccountView[]> {
