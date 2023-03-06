@@ -2061,9 +2061,6 @@
   "updateLicense": {
     "message": "Оновити ліцензію"
   },
-  "updatedLicense": {
-    "message": "Ліцензію оновлено"
-  },
   "manageSubscription": {
     "message": "Керувати передплатою"
   },
@@ -5707,28 +5704,36 @@
     "message": "Приховати"
   },
   "projects": {
-    "message": "Проєкти"
+    "message": "Проєкти",
+    "description": "Description for the Projects field."
   },
   "lastEdited": {
-    "message": "Востаннє редаговано"
+    "message": "Востаннє редаговано",
+    "description": "The label for the date and time when a item was last edited."
   },
   "editSecret": {
-    "message": "Редагувати секрет"
+    "message": "Редагувати секрет",
+    "description": "Action to modify an existing secret."
   },
   "addSecret": {
-    "message": "Додати секрет"
+    "message": "Додати секрет",
+    "description": "Action to create a new secret."
   },
   "copySecretName": {
-    "message": "Копіювати назву секрету"
+    "message": "Копіювати назву секрету",
+    "description": "Action to copy the name of a secret to the system's clipboard."
   },
   "copySecretValue": {
-    "message": "Копіювати значення секрету"
+    "message": "Копіювати значення секрету",
+    "description": "Action to copy the value of a secret to the system's clipboard."
   },
   "deleteSecret": {
-    "message": "Видалити секрет"
+    "message": "Видалити секрет",
+    "description": "Action to delete a single secret from the system."
   },
   "deleteSecrets": {
-    "message": "Видалити секрети"
+    "message": "Видалити секрети",
+    "description": "The action to delete multiple secrets from the system."
   },
   "hardDeleteSecret": {
     "message": "Остаточно видалити секрет"
@@ -5737,106 +5742,143 @@
     "message": "Остаточно видалити секрети"
   },
   "secretProjectAssociationDescription": {
-    "message": "Оберіть проєкти, з якими буде пов'язано секретний ключ."
+    "message": "Оберіть проєкти, з якими буде пов'язано секретний ключ.",
+    "description": "A prompt explaining how secrets can be associated with projects."
   },
   "selectProjects": {
-    "message": "Виберіть проєкти"
+    "message": "Виберіть проєкти",
+    "description": "A label for a type-to-filter input field to choose projects."
+  },
+  "searchProjects": {
+    "message": "Пошук проєктів",
+    "description": "Label for the search bar used to search projects."
   },
   "project": {
-    "message": "Проєкт"
+    "message": "Проєкт",
+    "description": "Similar to collections, projects can be used to group secrets."
   },
   "editProject": {
-    "message": "Редагувати проєкт"
+    "message": "Редагувати проєкт",
+    "description": "The action to modify an existing project."
   },
   "viewProject": {
-    "message": "Переглянути проєкт"
+    "message": "Переглянути проєкт",
+    "description": "The action to view details of a project."
   },
   "deleteProject": {
-    "message": "Видалити проєкт"
+    "message": "Видалити проєкт",
+    "description": "The action to delete a project from the system."
   },
   "deleteProjects": {
-    "message": "Видалити проєкти"
+    "message": "Видалити проєкти",
+    "description": "The action to delete multiple projects from the system."
   },
   "secret": {
-    "message": "Секрет"
+    "message": "Секрет",
+    "description": "Label for a secret (key/value pair)"
   },
   "serviceAccount": {
-    "message": "Службовий обліковий запис"
+    "message": "Службовий обліковий запис",
+    "description": "A machine user which can be used to automate processes and access secrets in the system."
   },
   "serviceAccounts": {
-    "message": "Службові облікові записи"
+    "message": "Службові облікові записи",
+    "description": "The title for the section that deals with service accounts."
   },
   "secrets": {
-    "message": "Секрети"
+    "message": "Секрети",
+    "description": "The title for the section of the application that deals with secrets."
   },
   "nameValuePair": {
-    "message": "Пара – Назва/Значення"
+    "message": "Пара – Назва/Значення",
+    "description": "Title for a name/ value pair. Secrets typically consist of a name and value pair."
   },
   "secretEdited": {
-    "message": "Секрет відредаговано"
+    "message": "Секрет відредаговано",
+    "description": "Notification for the successful editing of a secret."
   },
   "secretCreated": {
-    "message": "Секрет створено"
+    "message": "Секрет створено",
+    "description": "Notification for the successful creation of a secret."
   },
   "newSecret": {
-    "message": "Новий секрет"
+    "message": "Новий секрет",
+    "description": "Title for creating a new secret."
   },
   "newServiceAccount": {
-    "message": "Новий службовий обліковий запис"
+    "message": "Новий службовий обліковий запис",
+    "description": "Title for creating a new service account."
   },
   "secretsNoItemsTitle": {
-    "message": "Немає секретів для показу"
+    "message": "Немає секретів для показу",
+    "description": "Empty state to indicate that there are no secrets to display."
   },
   "secretsNoItemsMessage": {
-    "message": "Для початку додайте або імпортуйте секрети."
+    "message": "Для початку додайте або імпортуйте секрети.",
+    "description": "Message to encourage the user to start adding secrets."
   },
   "secretsTrashNoItemsMessage": {
     "message": "У смітнику немає секретів."
   },
-  "serviceAccountsNoItemsTitle": {
-    "message": "Наразі немає даних для показу"
-  },
   "serviceAccountsNoItemsMessage": {
-    "message": "Створіть новий службовий обліковий запис, щоб почати автоматизацію доступу до секретів."
+    "message": "Створіть новий службовий обліковий запис, щоб почати автоматизацію доступу до секретів.",
+    "description": "Message to encourage the user to start creating service accounts."
+  },
+  "serviceAccountsNoItemsTitle": {
+    "message": "Наразі немає даних для показу",
+    "description": "Title to indicate that there are no service accounts to display."
   },
   "searchSecrets": {
-    "message": "Пошук секретів"
+    "message": "Пошук секретів",
+    "description": "Placeholder text for searching secrets."
   },
   "deleteServiceAccounts": {
-    "message": "Видалити службові облікові записи"
+    "message": "Видалити службові облікові записи",
+    "description": "Title for the action to delete one or multiple service accounts."
   },
   "deleteServiceAccount": {
-    "message": "Видалити службовий обліковий запис"
+    "message": "Видалити службовий обліковий запис",
+    "description": "Title for the action to delete a single service account."
   },
   "viewServiceAccount": {
-    "message": "Переглянути службовий обліковий запис"
+    "message": "Переглянути службовий обліковий запис",
+    "description": "Action to view the details of a service account."
   },
   "searchServiceAccounts": {
-    "message": "Пошук службових облікових записів"
+    "message": "Пошук службових облікових записів",
+    "description": "Placeholder text for searching service accounts."
   },
   "addProject": {
-    "message": "Додати проєкт"
+    "message": "Додати проєкт",
+    "description": "Title for creating a new project."
   },
   "projectEdited": {
-    "message": "Проєкт відредаговано"
+    "message": "Проєкт відредаговано",
+    "description": "Notification for the successful editing of a project."
   },
   "projectSaved": {
-    "message": "Проєкт збережено"
+    "message": "Проєкт збережено",
+    "description": "Notification for the successful saving of a project."
   },
   "projectCreated": {
-    "message": "Проєкт створено"
+    "message": "Проєкт створено",
+    "description": "Notification for the successful creation of a project."
   },
   "projectName": {
-    "message": "Назва проєкту"
+    "message": "Назва проєкту",
+    "description": "Label for entering the name of a project."
   },
   "newProject": {
-    "message": "Новий проєкт"
+    "message": "Новий проєкт",
+    "description": "Title for creating a new project."
   },
   "softDeleteSecretWarning": {
-    "message": "Видалення секретів може вплинути на наявні інтеграції."
+    "message": "Видалення секретів може вплинути на наявні інтеграції.",
+    "description": "Warns that deleting secrets can have consequences on integrations"
   },
   "softDeletesSuccessToast": {
-    "message": "Секрети переміщено до смітника"
+    "message": "Секрети переміщено до смітника",
+    "description": "Notifies that the selected secrets have been moved to the trash"
   },
   "hardDeleteSecretConfirmation": {
     "message": "Ви дійсно хочете остаточно видалити цей секрет?"
@@ -5847,32 +5889,41 @@
   "hardDeletesSuccessToast": {
     "message": "Секрети остаточно видалено"
   },
-  "serviceAccountCreated": {
-    "message": "Службовий обліковий запис створено"
-  },
   "smAccess": {
-    "message": "Доступ"
+    "message": "Доступ",
+    "description": "Title indicating what permissions a service account has"
   },
   "projectCommaSecret": {
-    "message": "Проєкт, секрет"
+    "message": "Проєкт, секрет",
+    "description": ""
   },
   "serviceAccountName": {
-    "message": "Назва сервісного облікового запису"
+    "message": "Назва сервісного облікового запису",
+    "description": "Label for the name of a service account"
+  },
+  "serviceAccountCreated": {
+    "message": "Службовий обліковий запис створено",
+    "description": "Notifies that a new service account has been created"
   },
   "newSaSelectAccess": {
-    "message": "Введіть або виберіть проєкти чи секрети"
+    "message": "Введіть або виберіть проєкти чи секрети",
+    "description": "Instructions for selecting projects or secrets for a new service account"
   },
   "newSaTypeToFilter": {
-    "message": "Введіть, щоб фільтрувати"
+    "message": "Введіть, щоб фільтрувати",
+    "description": "Instructions for filtering a list of projects or secrets"
   },
   "deleteProjectsToast": {
-    "message": "Проєкти видалено"
+    "message": "Проєкти видалено",
+    "description": "Notifies that the selected projects have been deleted"
   },
   "deleteProjectToast": {
-    "message": "Проєкт і всі пов'язані секрети було видалено"
+    "message": "Проєкт видалено",
+    "description": "Notifies that a project has been deleted"
   },
   "deleteProjectDialogMessage": {
     "message": "Видалення проєкту $PROJECT$ – незворотна дія.",
+    "description": "Informs users that projects are hard deleted and not sent to trash",
     "placeholders": {
       "project": {
         "content": "$1",
@@ -5882,6 +5933,7 @@
   },
   "deleteProjectInputLabel": {
     "message": "Введіть \"$CONFIRM$\" для продовження",
+    "description": "Users are prompted to type 'confirm' to delete a project",
     "placeholders": {
       "confirm": {
         "content": "$1",
@@ -5891,6 +5943,7 @@
   },
   "deleteProjectConfirmMessage": {
     "message": "Видалити $PROJECT$",
+    "description": "Confirmation prompt to delete a specific project, where '$PROJECT$' is a placeholder for the name of the project.",
     "placeholders": {
       "project": {
         "content": "$1",
@@ -5900,6 +5953,7 @@
   },
   "deleteProjectsConfirmMessage": {
     "message": "Видалити $COUNT$ проєктів",
+    "description": "Confirmation prompt to delete multiple projects, where '$COUNT$' is a placeholder for the number of projects to be deleted.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -5908,73 +5962,91 @@
     }
   },
   "deleteProjectsDialogMessage": {
-    "message": "Видалення проєктів – це незворотна дія."
+    "message": "Видалення проєктів – це незворотна дія.",
+    "description": "This message is displayed in a dialog box as a warning before proceeding with project deletion."
   },
   "projectsNoItemsTitle": {
-    "message": "Немає проєктів для показу"
+    "message": "Немає проєктів для показу",
+    "description": "Empty state to be displayed when there are no projects to display in the list."
   },
   "projectsNoItemsMessage": {
-    "message": "Додайте новий проєкт, щоб почати організовувати секрети."
+    "message": "Додайте новий проєкт, щоб почати організовувати секрети.",
+    "description": "Message to be displayed when there are no projects to display in the list."
   },
   "smConfirmationRequired": {
-    "message": "Потрібне підтвердження"
+    "message": "Потрібне підтвердження",
+    "description": "Indicates that user confirmation is required for an action to proceed."
   },
   "bulkDeleteProjectsErrorMessage": {
-    "message": "Зазначені проєкти неможливо видалити:"
+    "message": "Зазначені проєкти неможливо видалити:",
+    "description": "Message to be displayed when there is an error during bulk project deletion."
   },
   "softDeleteSuccessToast": {
-    "message": "Секрет переміщено до смітника"
+    "message": "Секрет переміщено до смітника",
+    "description": "Notification to be displayed when a secret is successfully sent to the trash."
   },
   "hardDeleteSuccessToast": {
     "message": "Секрет остаточно видалено"
   },
-  "searchProjects": {
-    "message": "Пошук проєктів"
-  },
   "accessTokens": {
-    "message": "Токени доступу"
+    "message": "Токени доступу",
+    "description": "Title for the section displaying access tokens."
   },
   "createAccessToken": {
-    "message": "Створити токен доступу"
+    "message": "Створити токен доступу",
+    "description": "Button label for creating a new access token."
   },
   "expires": {
-    "message": "Завершується"
+    "message": "Завершується",
+    "description": "Label for the expiration date of an access token."
   },
   "canRead": {
-    "message": "Може читати"
+    "message": "Може читати",
+    "description": "Label for the access level of an access token (Read only)."
   },
   "accessTokensNoItemsTitle": {
-    "message": "Немає токенів доступу"
+    "message": "Немає токенів доступу",
+    "description": "Title to be displayed when there are no access tokens to display in the list."
   },
   "accessTokensNoItemsDesc": {
-    "message": "Щоб розпочати, створіть токен доступу"
+    "message": "Щоб розпочати, створіть токен доступу",
+    "description": "Message to be displayed when there are no access tokens to display in the list."
   },
   "downloadAccessToken": {
-    "message": "Завантажте чи скопіюйте перед закриттям."
+    "message": "Завантажте чи скопіюйте перед закриттям.",
+    "description": "Message to be displayed before closing an access token, reminding the user to download or copy it."
   },
   "expiresOnAccessToken": {
-    "message": "Завершується:"
+    "message": "Завершується:",
+    "description": "Label for the expiration date of an access token."
   },
   "accessTokenCallOutTitle": {
-    "message": "Токени доступу не зберігаються і не можуть бути завантажені"
+    "message": "Токени доступу не зберігаються і не можуть бути завантажені",
+    "description": "Notification to inform the user that access tokens are only displayed once and cannot be retrieved again."
   },
   "copyToken": {
-    "message": "Копіювати токен"
+    "message": "Копіювати токен",
+    "description": "Copies the generated access token to the user's clipboard."
   },
   "accessToken": {
-    "message": "Токен доступу"
+    "message": "Токен доступу",
+    "description": "A unique string that gives a client application (eg. CLI) access to a secret or set of secrets."
   },
   "accessTokenExpirationRequired": {
-    "message": "Дата завершення обов'язкова"
+    "message": "Дата завершення обов'язкова",
+    "description": "Error message indicating that an expiration date for the access token must be set."
   },
   "accessTokenCreatedAndCopied": {
-    "message": "Токен доступу створено і скопійовано до буфера обміну"
+    "message": "Токен доступу створено і скопійовано до буфера обміну",
+    "description": "Notification to inform the user that the access token has been created and copied to the clipboard."
   },
   "accessTokenPermissionsBetaNotification": {
-    "message": "Керування дозволами недоступне у бета-версії."
+    "message": "Керування дозволами недоступне у бета-версії.",
+    "description": "Notification to inform the user that the feature for managing access token permissions is not available in the beta version."
   },
   "revokeAccessToken": {
-    "message": "Відкликати токен доступу"
+    "message": "Відкликати токен доступу",
+    "description": "Invalidates / cancels an access token and as such removes access to secrets for the client application."
   },
   "revokeAccessTokens": {
     "message": "Відкликати токени доступу"
@@ -6358,8 +6430,14 @@
   "projectEmptyServiceAccountAccessPolicies": {
     "message": "Додайте службові облікові записи для надання доступу"
   },
-  "canWrite": {
-    "message": "Може записувати"
+  "serviceAccountPeopleDescription": {
+    "message": "Надайте групам або людям доступ до цього службового облікового запису."
+  },
+  "serviceAccountProjectsDescription": {
+    "message": "Призначити проєкти цьому службовому обліковому запису. "
+  },
+  "serviceAccountEmptyProjectAccesspolicies": {
+    "message": "Додайте проєкти, щоб надати доступ"
   },
   "canReadWrite": {
     "message": "Може читати й записувати"
@@ -6415,6 +6493,19 @@
   },
   "errorReadingImportFile": {
     "message": "Під час спроби прочитання імпортованого файлу сталася помилка"
+  },
+  "accessedSecret": {
+    "message": "Доступ до секрету $SECRET_ID$.",
+    "placeholders": {
+      "secret_id": {
+        "content": "$1",
+        "example": "4d34e8a8"
+      }
+    }
+  },
+  "sdk": {
+    "message": "SDK",
+    "description": "Software Development Kit"
   },
   "createSecret": {
     "message": "Створити секрет"
@@ -6510,5 +6601,8 @@
         "example": "14"
       }
     }
+  },
+  "dismiss": {
+    "message": "Dismiss"
   }
 }

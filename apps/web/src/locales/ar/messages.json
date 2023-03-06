@@ -134,7 +134,7 @@
     "message": "الآنسة"
   },
   "mx": {
-    "message": "ماكس"
+    "message": "محايد"
   },
   "dr": {
     "message": "د"
@@ -306,10 +306,10 @@
     "message": "Search organization"
   },
   "searchMembers": {
-    "message": "Search members"
+    "message": "البحث في الأعضاء"
   },
   "searchGroups": {
-    "message": "Search groups"
+    "message": "البحث عن فِرَق"
   },
   "allItems": {
     "message": "جميع العناصر"
@@ -351,13 +351,13 @@
     "message": "المجموعات"
   },
   "firstName": {
-    "message": "الاسم الأول"
+    "message": "الاسم"
   },
   "middleName": {
-    "message": "الاسم الأوسط"
+    "message": "الاسم الثاني"
   },
   "lastName": {
-    "message": "الاسم الأخير"
+    "message": "اللقب"
   },
   "fullName": {
     "message": "الاسم الكامل"
@@ -393,7 +393,7 @@
     "message": "اختر"
   },
   "newItem": {
-    "message": "New item"
+    "message": "عنصر جديد"
   },
   "addItem": {
     "message": "إضافة عنصر"
@@ -405,11 +405,11 @@
     "message": "عرض العنصر"
   },
   "new": {
-    "message": "New",
+    "message": "جديد",
     "description": "for adding new items"
   },
   "item": {
-    "message": "Item"
+    "message": "عنصر"
   },
   "ex": {
     "message": "مثال.",
@@ -480,7 +480,7 @@
     "message": "Filter"
   },
   "moveSelectedToOrg": {
-    "message": "نقل العناصر المختارة إلى مؤسسة"
+    "message": "نقل العناصر المختارة إلى منظمة"
   },
   "deleteSelected": {
     "message": "حذف العناصر المختارة"
@@ -559,7 +559,7 @@
     "message": "حذف المرفق"
   },
   "deleteItemConfirmation": {
-    "message": "هل تريد فعلًا أن تحذف؟"
+    "message": "هل تريد فعلًا أن تحذف هذا العنصر وترسله إلى سلة المهملات؟"
   },
   "deletedItem": {
     "message": "تم حذف العنصر"
@@ -989,7 +989,7 @@
     "message": "This password will be used to export and import this file"
   },
   "confirmMasterPassword": {
-    "message": "Confirm master password"
+    "message": "تأكيد كلمة المرور الرئيسية"
   },
   "confirmFormat": {
     "message": "تأكيد التنسيق"
@@ -1007,7 +1007,7 @@
     "message": "Set a file password to encrypt the export and import it to any Bitwarden account using the password for decryption."
   },
   "exportTypeHeading": {
-    "message": "Export type"
+    "message": "نوع التصدير"
   },
   "accountRestricted": {
     "message": "Account restricted"
@@ -1064,7 +1064,7 @@
     "message": "Special characters (!@#$%^&*)"
   },
   "numWords": {
-    "message": "Number of words"
+    "message": "عدد الكلمات"
   },
   "wordSeparator": {
     "message": "Word separator"
@@ -1074,7 +1074,7 @@
     "description": "Make the first letter of a word uppercase."
   },
   "includeNumber": {
-    "message": "Include number"
+    "message": "بما في ذلك الأرقام"
   },
   "passwordHistory": {
     "message": "سجل كلمات المرور"
@@ -2061,9 +2061,6 @@
   "updateLicense": {
     "message": "Update license"
   },
-  "updatedLicense": {
-    "message": "Updated license"
-  },
   "manageSubscription": {
     "message": "Manage subscription"
   },
@@ -2215,7 +2212,7 @@
     "message": "اختر خِطَّة اشتراكك"
   },
   "users": {
-    "message": "Users"
+    "message": "المستخدمون"
   },
   "userSeats": {
     "message": "User seats"
@@ -2436,31 +2433,31 @@
     "message": "Event logs"
   },
   "people": {
-    "message": "People"
+    "message": "الأشخاص"
   },
   "policies": {
-    "message": "Policies"
+    "message": "السياسات"
   },
   "singleSignOn": {
-    "message": "Single sign-on"
+    "message": "استيثاق أحادي"
   },
   "editPolicy": {
-    "message": "Edit policy"
+    "message": "تعديل السياسة"
   },
   "groups": {
-    "message": "Groups"
+    "message": "الفِرَق"
   },
   "newGroup": {
-    "message": "New group"
+    "message": "فريق جديد"
   },
   "addGroup": {
-    "message": "Add group"
+    "message": "إضافة فريق"
   },
   "editGroup": {
-    "message": "Edit group"
+    "message": "تعديل الفريق"
   },
   "deleteGroupConfirmation": {
-    "message": "Are you sure you want to delete this group?"
+    "message": "هل أنت متيقِّن من أنك تريد حذف هذا الفريق؟"
   },
   "deleteMultipleGroupsConfirmation": {
     "message": "Are you sure you want to delete the following $QUANTITY$ group(s)?",
@@ -2583,13 +2580,13 @@
     "message": "Manage organization access, all collections, members, reporting, and security settings"
   },
   "user": {
-    "message": "User"
+    "message": "مستخدِم"
   },
   "userDesc": {
     "message": "Access and add items to assigned collections"
   },
   "manager": {
-    "message": "Manager"
+    "message": "مدير"
   },
   "managerDesc": {
     "message": "Create, delete, and manage access in assigned collections"
@@ -2598,7 +2595,7 @@
     "message": "All"
   },
   "refresh": {
-    "message": "Refresh"
+    "message": "إنعاش"
   },
   "timestamp": {
     "message": "Timestamp"
@@ -3156,7 +3153,7 @@
     "message": "منظمتي"
   },
   "organizationInfo": {
-    "message": "Organization info"
+    "message": "معلومات عن المنظمة"
   },
   "deleteOrganization": {
     "message": "Delete organization"
@@ -3414,7 +3411,7 @@
     "message": "Subscription"
   },
   "loading": {
-    "message": "Loading"
+    "message": "جارٍ التحميل"
   },
   "upgrade": {
     "message": "Upgrade"
@@ -3444,7 +3441,7 @@
     "message": "Terms of Service and Privacy Policy have not been acknowledged."
   },
   "termsOfService": {
-    "message": "Terms of Service"
+    "message": "شروط الخدمة"
   },
   "privacyPolicy": {
     "message": "Privacy Policy"
@@ -4152,10 +4149,10 @@
     }
   },
   "approve": {
-    "message": "Approve"
+    "message": "مصادقة"
   },
   "reject": {
-    "message": "Reject"
+    "message": "رفض"
   },
   "approveAccessConfirmation": {
     "message": "Are you sure you want to approve emergency access? This will allow $USER$ to $ACTION$ your account.",
@@ -4319,19 +4316,19 @@
     "message": "Delete assigned collections"
   },
   "manageGroups": {
-    "message": "Manage groups"
+    "message": "إدارة الفِرَق"
   },
   "managePolicies": {
-    "message": "Manage policies"
+    "message": "إدارة السياسات"
   },
   "manageSso": {
-    "message": "Manage SSO"
+    "message": "إدارة SSO"
   },
   "manageUsers": {
-    "message": "Manage users"
+    "message": "إدارة المستخدمين"
   },
   "manageResetPassword": {
-    "message": "Manage password reset"
+    "message": "إدارة إعادة تعيين كلمة المرور"
   },
   "disableRequiredError": {
     "message": "You must manually turn the $POLICYNAME$ policy before this policy can be turned off.",
@@ -4396,7 +4393,7 @@
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Learn more, **see** how it works, or try it now.'"
   },
   "sendVaultCardHowItWorks": {
-    "message": "how it works",
+    "message": "كيف يعمل",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Learn more, see **how it works**, or try it now.'"
   },
   "sendVaultCardOr": {
@@ -4404,7 +4401,7 @@
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Learn more, see how it works, **or** try it now.'"
   },
   "sendVaultCardTryItNow": {
-    "message": "try it now",
+    "message": "جربه الآن",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Learn more, see how it works, or **try it now**.'"
   },
   "sendAccessTaglineOr": {
@@ -4416,7 +4413,7 @@
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Learn more about Bitwarden Send or **sign up** to try it today.'"
   },
   "sendAccessTaglineTryToday": {
-    "message": "to try it today.",
+    "message": "لتجربته اليوم.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Learn more about Bitwarden Send or sign up to **try it today.**'"
   },
   "sendCreatorIdentifier": {
@@ -4813,10 +4810,10 @@
     "message": "Invalid maximum vault timeout."
   },
   "hours": {
-    "message": "Hours"
+    "message": "ساعات"
   },
   "minutes": {
-    "message": "Minutes"
+    "message": "دقائق"
   },
   "vaultTimeoutPolicyInEffect": {
     "message": "Your organization policies are affecting your vault timeout. Maximum allowed vault timeout is $HOURS$ hour(s) and $MINUTES$ minute(s)",
@@ -5198,7 +5195,7 @@
     "message": "Sponsoring organization"
   },
   "keyConnectorTest": {
-    "message": "Test"
+    "message": "اختبار"
   },
   "keyConnectorTestSuccess": {
     "message": "Success! Key Connector reached."
@@ -5243,7 +5240,7 @@
     "message": "Rotating the billing sync token will invalidate the previous token."
   },
   "selfHostingTitle": {
-    "message": "Self-hosting"
+    "message": "استضافة ذاتية"
   },
   "selfHostingEnterpriseOrganizationSectionCopy": {
     "message": "To set-up your organization on your own server, you will need to upload your license file. To support Free Families plans and advanced billing capabilities for your self-hosted organization, you will need to set up billing sync."
@@ -5479,7 +5476,7 @@
     "message": "Generate an email alias with an external forwarding service."
   },
   "hostname": {
-    "message": "Hostname",
+    "message": "اسم المضيف",
     "description": "Part of a URL."
   },
   "apiAccessToken": {
@@ -5624,7 +5621,7 @@
     "message": "On"
   },
   "members": {
-    "message": "Members"
+    "message": "الأعضاء"
   },
   "reporting": {
     "message": "Reporting"
@@ -5642,46 +5639,46 @@
     "message": "ليس حسابك؟"
   },
   "pickAnAvatarColor": {
-    "message": "Pick an avatar color"
+    "message": "اختر لون الصورة الرمزية"
   },
   "customizeAvatar": {
-    "message": "Customize avatar"
+    "message": "تخصيص الصورة الرمزية"
   },
   "avatarUpdated": {
-    "message": "Avatar updated"
+    "message": "تم تحديث الصورة الرمزية"
   },
   "brightBlue": {
-    "message": "Bright Blue"
+    "message": "أزرق فاتح"
   },
   "green": {
-    "message": "Green"
+    "message": "أخضر"
   },
   "orange": {
-    "message": "Orange"
+    "message": "برتقالي"
   },
   "lavender": {
-    "message": "Lavender"
+    "message": "أرجواني"
   },
   "yellow": {
-    "message": "Yellow"
+    "message": "أصفر"
   },
   "indigo": {
-    "message": "Indigo"
+    "message": "نيلي"
   },
   "teal": {
-    "message": "Teal"
+    "message": "أزرق مخضر"
   },
   "salmon": {
     "message": "Salmon"
   },
   "pink": {
-    "message": "Pink"
+    "message": "وردي"
   },
   "customColor": {
-    "message": "Custom Color"
+    "message": "لون مخصص"
   },
   "selectPlaceholder": {
-    "message": "-- Select --"
+    "message": "-- اختيار --"
   },
   "multiSelectPlaceholder": {
     "message": "-- Type to filter --"
@@ -5707,28 +5704,36 @@
     "message": "Hide"
   },
   "projects": {
-    "message": "Projects"
+    "message": "المشروعات",
+    "description": "Description for the Projects field."
   },
   "lastEdited": {
-    "message": "Last edited"
+    "message": "Last edited",
+    "description": "The label for the date and time when a item was last edited."
   },
   "editSecret": {
-    "message": "Edit secret"
+    "message": "Edit secret",
+    "description": "Action to modify an existing secret."
   },
   "addSecret": {
-    "message": "Add secret"
+    "message": "Add secret",
+    "description": "Action to create a new secret."
   },
   "copySecretName": {
-    "message": "Copy secret name"
+    "message": "Copy secret name",
+    "description": "Action to copy the name of a secret to the system's clipboard."
   },
   "copySecretValue": {
-    "message": "Copy secret value"
+    "message": "Copy secret value",
+    "description": "Action to copy the value of a secret to the system's clipboard."
   },
   "deleteSecret": {
-    "message": "Delete secret"
+    "message": "Delete secret",
+    "description": "Action to delete a single secret from the system."
   },
   "deleteSecrets": {
-    "message": "Delete secrets"
+    "message": "Delete secrets",
+    "description": "The action to delete multiple secrets from the system."
   },
   "hardDeleteSecret": {
     "message": "Permanently delete secret"
@@ -5737,106 +5742,143 @@
     "message": "Permanently delete secrets"
   },
   "secretProjectAssociationDescription": {
-    "message": "Select projects that the secret will be associated with. Only organization users with access to these projects will be able to see the secret."
+    "message": "Select projects that the secret will be associated with. Only organization users with access to these projects will be able to see the secret.",
+    "description": "A prompt explaining how secrets can be associated with projects."
   },
   "selectProjects": {
-    "message": "Select projects"
+    "message": "Select projects",
+    "description": "A label for a type-to-filter input field to choose projects."
+  },
+  "searchProjects": {
+    "message": "Search projects",
+    "description": "Label for the search bar used to search projects."
   },
   "project": {
-    "message": "Project"
+    "message": "المشروع",
+    "description": "Similar to collections, projects can be used to group secrets."
   },
   "editProject": {
-    "message": "Edit project"
+    "message": "Edit project",
+    "description": "The action to modify an existing project."
   },
   "viewProject": {
-    "message": "View project"
+    "message": "View project",
+    "description": "The action to view details of a project."
   },
   "deleteProject": {
-    "message": "Delete project"
+    "message": "Delete project",
+    "description": "The action to delete a project from the system."
   },
   "deleteProjects": {
-    "message": "Delete projects"
+    "message": "Delete projects",
+    "description": "The action to delete multiple projects from the system."
   },
   "secret": {
-    "message": "Secret"
+    "message": "Secret",
+    "description": "Label for a secret (key/value pair)"
   },
   "serviceAccount": {
-    "message": "Service account"
+    "message": "Service account",
+    "description": "A machine user which can be used to automate processes and access secrets in the system."
   },
   "serviceAccounts": {
-    "message": "Service accounts"
+    "message": "Service accounts",
+    "description": "The title for the section that deals with service accounts."
   },
   "secrets": {
-    "message": "Secrets"
+    "message": "Secrets",
+    "description": "The title for the section of the application that deals with secrets."
   },
   "nameValuePair": {
-    "message": "Name/Value pair"
+    "message": "Name/Value pair",
+    "description": "Title for a name/ value pair. Secrets typically consist of a name and value pair."
   },
   "secretEdited": {
-    "message": "Secret edited"
+    "message": "Secret edited",
+    "description": "Notification for the successful editing of a secret."
   },
   "secretCreated": {
-    "message": "Secret created"
+    "message": "Secret created",
+    "description": "Notification for the successful creation of a secret."
   },
   "newSecret": {
-    "message": "New secret"
+    "message": "New secret",
+    "description": "Title for creating a new secret."
   },
   "newServiceAccount": {
-    "message": "New service account"
+    "message": "New service account",
+    "description": "Title for creating a new service account."
   },
   "secretsNoItemsTitle": {
-    "message": "No secrets to show"
+    "message": "No secrets to show",
+    "description": "Empty state to indicate that there are no secrets to display."
   },
   "secretsNoItemsMessage": {
-    "message": "To get started, add a new secret or import secrets."
+    "message": "To get started, add a new secret or import secrets.",
+    "description": "Message to encourage the user to start adding secrets."
   },
   "secretsTrashNoItemsMessage": {
     "message": "There are no secrets in the trash."
   },
-  "serviceAccountsNoItemsTitle": {
-    "message": "Nothing to show yet"
-  },
   "serviceAccountsNoItemsMessage": {
-    "message": "Create a new service account to get started automating secret access."
+    "message": "Create a new service account to get started automating secret access.",
+    "description": "Message to encourage the user to start creating service accounts."
+  },
+  "serviceAccountsNoItemsTitle": {
+    "message": "Nothing to show yet",
+    "description": "Title to indicate that there are no service accounts to display."
   },
   "searchSecrets": {
-    "message": "Search secrets"
+    "message": "Search secrets",
+    "description": "Placeholder text for searching secrets."
   },
   "deleteServiceAccounts": {
-    "message": "Delete service accounts"
+    "message": "Delete service accounts",
+    "description": "Title for the action to delete one or multiple service accounts."
   },
   "deleteServiceAccount": {
-    "message": "Delete service account"
+    "message": "Delete service account",
+    "description": "Title for the action to delete a single service account."
   },
   "viewServiceAccount": {
-    "message": "View service account"
+    "message": "View service account",
+    "description": "Action to view the details of a service account."
   },
   "searchServiceAccounts": {
-    "message": "Search service accounts"
+    "message": "Search service accounts",
+    "description": "Placeholder text for searching service accounts."
   },
   "addProject": {
-    "message": "Add project"
+    "message": "Add project",
+    "description": "Title for creating a new project."
   },
   "projectEdited": {
-    "message": "Project edited"
+    "message": "Project edited",
+    "description": "Notification for the successful editing of a project."
   },
   "projectSaved": {
-    "message": "Project saved"
+    "message": "Project saved",
+    "description": "Notification for the successful saving of a project."
   },
   "projectCreated": {
-    "message": "Project created"
+    "message": "Project created",
+    "description": "Notification for the successful creation of a project."
   },
   "projectName": {
-    "message": "Project name"
+    "message": "Project name",
+    "description": "Label for entering the name of a project."
   },
   "newProject": {
-    "message": "New project"
+    "message": "New project",
+    "description": "Title for creating a new project."
   },
   "softDeleteSecretWarning": {
-    "message": "Deleting secrets can affect existing integrations."
+    "message": "Deleting secrets can affect existing integrations.",
+    "description": "Warns that deleting secrets can have consequences on integrations"
   },
   "softDeletesSuccessToast": {
-    "message": "Secrets sent to trash"
+    "message": "Secrets sent to trash",
+    "description": "Notifies that the selected secrets have been moved to the trash"
   },
   "hardDeleteSecretConfirmation": {
     "message": "Are you sure you want to permanently delete this secret?"
@@ -5847,32 +5889,41 @@
   "hardDeletesSuccessToast": {
     "message": "Secrets permanently deleted"
   },
-  "serviceAccountCreated": {
-    "message": "Service account created"
-  },
   "smAccess": {
-    "message": "Access"
+    "message": "Access",
+    "description": "Title indicating what permissions a service account has"
   },
   "projectCommaSecret": {
-    "message": "Project, Secret"
+    "message": "Project, Secret",
+    "description": ""
   },
   "serviceAccountName": {
-    "message": "Service account name"
+    "message": "Service account name",
+    "description": "Label for the name of a service account"
+  },
+  "serviceAccountCreated": {
+    "message": "Service account created",
+    "description": "Notifies that a new service account has been created"
   },
   "newSaSelectAccess": {
-    "message": "Type or select projects or secrets"
+    "message": "Type or select projects or secrets",
+    "description": "Instructions for selecting projects or secrets for a new service account"
   },
   "newSaTypeToFilter": {
-    "message": "Type to filter"
+    "message": "Type to filter",
+    "description": "Instructions for filtering a list of projects or secrets"
   },
   "deleteProjectsToast": {
-    "message": "Projects deleted"
+    "message": "Projects deleted",
+    "description": "Notifies that the selected projects have been deleted"
   },
   "deleteProjectToast": {
-    "message": "The project and all associated secrets have been deleted"
+    "message": "Project deleted",
+    "description": "Notifies that a project has been deleted"
   },
   "deleteProjectDialogMessage": {
     "message": "Deleting project $PROJECT$ is permanent and irreversible.",
+    "description": "Informs users that projects are hard deleted and not sent to trash",
     "placeholders": {
       "project": {
         "content": "$1",
@@ -5882,6 +5933,7 @@
   },
   "deleteProjectInputLabel": {
     "message": "Type \"$CONFIRM$\" to continue",
+    "description": "Users are prompted to type 'confirm' to delete a project",
     "placeholders": {
       "confirm": {
         "content": "$1",
@@ -5891,6 +5943,7 @@
   },
   "deleteProjectConfirmMessage": {
     "message": "Delete $PROJECT$",
+    "description": "Confirmation prompt to delete a specific project, where '$PROJECT$' is a placeholder for the name of the project.",
     "placeholders": {
       "project": {
         "content": "$1",
@@ -5900,6 +5953,7 @@
   },
   "deleteProjectsConfirmMessage": {
     "message": "Delete $COUNT$ Projects",
+    "description": "Confirmation prompt to delete multiple projects, where '$COUNT$' is a placeholder for the number of projects to be deleted.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -5908,73 +5962,91 @@
     }
   },
   "deleteProjectsDialogMessage": {
-    "message": "Deleting projects is permanent and irreversible."
+    "message": "Deleting projects is permanent and irreversible.",
+    "description": "This message is displayed in a dialog box as a warning before proceeding with project deletion."
   },
   "projectsNoItemsTitle": {
-    "message": "No projects to display"
+    "message": "No projects to display",
+    "description": "Empty state to be displayed when there are no projects to display in the list."
   },
   "projectsNoItemsMessage": {
-    "message": "Add a new project to get started organizing secrets."
+    "message": "Add a new project to get started organizing secrets.",
+    "description": "Message to be displayed when there are no projects to display in the list."
   },
   "smConfirmationRequired": {
-    "message": "Confirmation required"
+    "message": "Confirmation required",
+    "description": "Indicates that user confirmation is required for an action to proceed."
   },
   "bulkDeleteProjectsErrorMessage": {
-    "message": "The following projects could not be deleted:"
+    "message": "The following projects could not be deleted:",
+    "description": "Message to be displayed when there is an error during bulk project deletion."
   },
   "softDeleteSuccessToast": {
-    "message": "Secret sent to trash"
+    "message": "Secret sent to trash",
+    "description": "Notification to be displayed when a secret is successfully sent to the trash."
   },
   "hardDeleteSuccessToast": {
     "message": "Secret permanently deleted"
   },
-  "searchProjects": {
-    "message": "Search projects"
-  },
   "accessTokens": {
-    "message": "Access tokens"
+    "message": "Access tokens",
+    "description": "Title for the section displaying access tokens."
   },
   "createAccessToken": {
-    "message": "Create access token"
+    "message": "Create access token",
+    "description": "Button label for creating a new access token."
   },
   "expires": {
-    "message": "Expires"
+    "message": "Expires",
+    "description": "Label for the expiration date of an access token."
   },
   "canRead": {
-    "message": "Can read"
+    "message": "Can read",
+    "description": "Label for the access level of an access token (Read only)."
   },
   "accessTokensNoItemsTitle": {
-    "message": "No access tokens to show"
+    "message": "No access tokens to show",
+    "description": "Title to be displayed when there are no access tokens to display in the list."
   },
   "accessTokensNoItemsDesc": {
-    "message": "To get started, create an access token"
+    "message": "To get started, create an access token",
+    "description": "Message to be displayed when there are no access tokens to display in the list."
   },
   "downloadAccessToken": {
-    "message": "Download or copy before closing."
+    "message": "Download or copy before closing.",
+    "description": "Message to be displayed before closing an access token, reminding the user to download or copy it."
   },
   "expiresOnAccessToken": {
-    "message": "Expires on:"
+    "message": "Expires on:",
+    "description": "Label for the expiration date of an access token."
   },
   "accessTokenCallOutTitle": {
-    "message": "Access tokens are not stored and cannot be retrieved"
+    "message": "Access tokens are not stored and cannot be retrieved",
+    "description": "Notification to inform the user that access tokens are only displayed once and cannot be retrieved again."
   },
   "copyToken": {
-    "message": "Copy token"
+    "message": "Copy token",
+    "description": "Copies the generated access token to the user's clipboard."
   },
   "accessToken": {
-    "message": "Access token"
+    "message": "Access token",
+    "description": "A unique string that gives a client application (eg. CLI) access to a secret or set of secrets."
   },
   "accessTokenExpirationRequired": {
-    "message": "Expiration date required"
+    "message": "Expiration date required",
+    "description": "Error message indicating that an expiration date for the access token must be set."
   },
   "accessTokenCreatedAndCopied": {
-    "message": "Access token created and copied to clipboard"
+    "message": "Access token created and copied to clipboard",
+    "description": "Notification to inform the user that the access token has been created and copied to the clipboard."
   },
   "accessTokenPermissionsBetaNotification": {
-    "message": "Permissions management is unavailable for beta."
+    "message": "Permissions management is unavailable for beta.",
+    "description": "Notification to inform the user that the feature for managing access token permissions is not available in the beta version."
   },
   "revokeAccessToken": {
-    "message": "Revoke access token"
+    "message": "Revoke access token",
+    "description": "Invalidates / cancels an access token and as such removes access to secrets for the client application."
   },
   "revokeAccessTokens": {
     "message": "Revoke access tokens"
@@ -6358,8 +6430,14 @@
   "projectEmptyServiceAccountAccessPolicies": {
     "message": "Add service accounts to grant access"
   },
-  "canWrite": {
-    "message": "Can write"
+  "serviceAccountPeopleDescription": {
+    "message": "Grant groups or people access to this service account."
+  },
+  "serviceAccountProjectsDescription": {
+    "message": "Assign projects to this service account. "
+  },
+  "serviceAccountEmptyProjectAccesspolicies": {
+    "message": "Add projects to grant access"
   },
   "canReadWrite": {
     "message": "Can read, write"
@@ -6389,7 +6467,7 @@
     "message": "This user can access the Secrets Manager Beta"
   },
   "important": {
-    "message": "Important:"
+    "message": "هام:"
   },
   "viewAll": {
     "message": "View all"
@@ -6411,10 +6489,23 @@
     "message": "Resolve the errors below and try again."
   },
   "description": {
-    "message": "Description"
+    "message": "الوصف"
   },
   "errorReadingImportFile": {
     "message": "An error occurred when trying to read the import file"
+  },
+  "accessedSecret": {
+    "message": "Accessed secret $SECRET_ID$.",
+    "placeholders": {
+      "secret_id": {
+        "content": "$1",
+        "example": "4d34e8a8"
+      }
+    }
+  },
+  "sdk": {
+    "message": "SDK",
+    "description": "Software Development Kit"
   },
   "createSecret": {
     "message": "Create a secret"
@@ -6510,5 +6601,8 @@
         "example": "14"
       }
     }
+  },
+  "dismiss": {
+    "message": "Dismiss"
   }
 }

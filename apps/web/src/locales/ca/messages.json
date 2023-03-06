@@ -2061,9 +2061,6 @@
   "updateLicense": {
     "message": "Actualitza la llicència"
   },
-  "updatedLicense": {
-    "message": "Llicència actualitzada"
-  },
   "manageSubscription": {
     "message": "Administra la subscripció"
   },
@@ -5707,28 +5704,36 @@
     "message": "Amaga"
   },
   "projects": {
-    "message": "Projectes"
+    "message": "Projectes",
+    "description": "Description for the Projects field."
   },
   "lastEdited": {
-    "message": "Última edició"
+    "message": "Última edició",
+    "description": "The label for the date and time when a item was last edited."
   },
   "editSecret": {
-    "message": "Edita secret"
+    "message": "Edita secret",
+    "description": "Action to modify an existing secret."
   },
   "addSecret": {
-    "message": "Afig secret"
+    "message": "Afig secret",
+    "description": "Action to create a new secret."
   },
   "copySecretName": {
-    "message": "Copia el nom del secret"
+    "message": "Copia el nom del secret",
+    "description": "Action to copy the name of a secret to the system's clipboard."
   },
   "copySecretValue": {
-    "message": "Copia el valor del secret"
+    "message": "Copia el valor del secret",
+    "description": "Action to copy the value of a secret to the system's clipboard."
   },
   "deleteSecret": {
-    "message": "Suprimeix el secret"
+    "message": "Suprimeix el secret",
+    "description": "Action to delete a single secret from the system."
   },
   "deleteSecrets": {
-    "message": "Suprimeix els secrets"
+    "message": "Suprimeix els secrets",
+    "description": "The action to delete multiple secrets from the system."
   },
   "hardDeleteSecret": {
     "message": "Suprimeix definitivament el secret"
@@ -5737,106 +5742,143 @@
     "message": "Suprimeix definitivament els secrets"
   },
   "secretProjectAssociationDescription": {
-    "message": "Selecciona los proyectos a los que se asociará el secreto. Sólo los usuarios de la organización con acceso a estos proyectos podrán verlo."
+    "message": "Selecciona los proyectos a los que se asociará el secreto. Sólo los usuarios de la organización con acceso a estos proyectos podrán verlo.",
+    "description": "A prompt explaining how secrets can be associated with projects."
   },
   "selectProjects": {
-    "message": "Selecciona projectes"
+    "message": "Selecciona projectes",
+    "description": "A label for a type-to-filter input field to choose projects."
+  },
+  "searchProjects": {
+    "message": "Cerca projectes",
+    "description": "Label for the search bar used to search projects."
   },
   "project": {
-    "message": "Projecte"
+    "message": "Projecte",
+    "description": "Similar to collections, projects can be used to group secrets."
   },
   "editProject": {
-    "message": "Edita el projecte"
+    "message": "Edita el projecte",
+    "description": "The action to modify an existing project."
   },
   "viewProject": {
-    "message": "Veure el projecte"
+    "message": "Veure el projecte",
+    "description": "The action to view details of a project."
   },
   "deleteProject": {
-    "message": "Suprimeix el projecte"
+    "message": "Suprimeix el projecte",
+    "description": "The action to delete a project from the system."
   },
   "deleteProjects": {
-    "message": "Suprimeix els projectes"
+    "message": "Suprimeix els projectes",
+    "description": "The action to delete multiple projects from the system."
   },
   "secret": {
-    "message": "Secret"
+    "message": "Secret",
+    "description": "Label for a secret (key/value pair)"
   },
   "serviceAccount": {
-    "message": "Compte del servei"
+    "message": "Compte del servei",
+    "description": "A machine user which can be used to automate processes and access secrets in the system."
   },
   "serviceAccounts": {
-    "message": "Comptes del servei"
+    "message": "Comptes del servei",
+    "description": "The title for the section that deals with service accounts."
   },
   "secrets": {
-    "message": "Secrets"
+    "message": "Secrets",
+    "description": "The title for the section of the application that deals with secrets."
   },
   "nameValuePair": {
-    "message": "Nom/Parell de valors"
+    "message": "Nom/Parell de valors",
+    "description": "Title for a name/ value pair. Secrets typically consist of a name and value pair."
   },
   "secretEdited": {
-    "message": "S'ha editat el secret"
+    "message": "S'ha editat el secret",
+    "description": "Notification for the successful editing of a secret."
   },
   "secretCreated": {
-    "message": "S'ha creat el secret"
+    "message": "S'ha creat el secret",
+    "description": "Notification for the successful creation of a secret."
   },
   "newSecret": {
-    "message": "Secret nou"
+    "message": "Secret nou",
+    "description": "Title for creating a new secret."
   },
   "newServiceAccount": {
-    "message": "Compte nou del servei"
+    "message": "Compte nou del servei",
+    "description": "Title for creating a new service account."
   },
   "secretsNoItemsTitle": {
-    "message": "No hi ha cap secret per mostrar"
+    "message": "No hi ha cap secret per mostrar",
+    "description": "Empty state to indicate that there are no secrets to display."
   },
   "secretsNoItemsMessage": {
-    "message": "Per començar, afig un secret nou o importa secrets."
+    "message": "Per començar, afig un secret nou o importa secrets.",
+    "description": "Message to encourage the user to start adding secrets."
   },
   "secretsTrashNoItemsMessage": {
     "message": "No hi ha secrets a la paperera."
   },
-  "serviceAccountsNoItemsTitle": {
-    "message": "Encara no hi ha res a mostrar"
-  },
   "serviceAccountsNoItemsMessage": {
-    "message": "Crea un compte de servei nou per començar a automatitzar l'accés secret."
+    "message": "Crea un compte de servei nou per començar a automatitzar l'accés secret.",
+    "description": "Message to encourage the user to start creating service accounts."
+  },
+  "serviceAccountsNoItemsTitle": {
+    "message": "Encara no hi ha res a mostrar",
+    "description": "Title to indicate that there are no service accounts to display."
   },
   "searchSecrets": {
-    "message": "Cerca secrets"
+    "message": "Cerca secrets",
+    "description": "Placeholder text for searching secrets."
   },
   "deleteServiceAccounts": {
-    "message": "Suprimeix els comptes de servei"
+    "message": "Suprimeix els comptes de servei",
+    "description": "Title for the action to delete one or multiple service accounts."
   },
   "deleteServiceAccount": {
-    "message": "Suprimeix el compte de servei"
+    "message": "Suprimeix el compte de servei",
+    "description": "Title for the action to delete a single service account."
   },
   "viewServiceAccount": {
-    "message": "Veure el compte de servei"
+    "message": "Veure el compte de servei",
+    "description": "Action to view the details of a service account."
   },
   "searchServiceAccounts": {
-    "message": "Cerca els comptes de servei"
+    "message": "Cerca els comptes de servei",
+    "description": "Placeholder text for searching service accounts."
   },
   "addProject": {
-    "message": "Afig un projecte"
+    "message": "Afig un projecte",
+    "description": "Title for creating a new project."
   },
   "projectEdited": {
-    "message": "Projecte editat"
+    "message": "Projecte editat",
+    "description": "Notification for the successful editing of a project."
   },
   "projectSaved": {
-    "message": "Projecte guardat"
+    "message": "Projecte guardat",
+    "description": "Notification for the successful saving of a project."
   },
   "projectCreated": {
-    "message": "Projecte creat"
+    "message": "Projecte creat",
+    "description": "Notification for the successful creation of a project."
   },
   "projectName": {
-    "message": "Nom del Projecte"
+    "message": "Nom del Projecte",
+    "description": "Label for entering the name of a project."
   },
   "newProject": {
-    "message": "Projecte nou"
+    "message": "Projecte nou",
+    "description": "Title for creating a new project."
   },
   "softDeleteSecretWarning": {
-    "message": "La supressió de secrets pot afectar les integracions existents."
+    "message": "La supressió de secrets pot afectar les integracions existents.",
+    "description": "Warns that deleting secrets can have consequences on integrations"
   },
   "softDeletesSuccessToast": {
-    "message": "Secrets enviats a la paperera"
+    "message": "Secrets enviats a la paperera",
+    "description": "Notifies that the selected secrets have been moved to the trash"
   },
   "hardDeleteSecretConfirmation": {
     "message": "Esteu segur que voleu suprimir definitivament aquest secret?"
@@ -5847,32 +5889,41 @@
   "hardDeletesSuccessToast": {
     "message": "Secrets suprimits definitivament"
   },
-  "serviceAccountCreated": {
-    "message": "Compte de servei creat"
-  },
   "smAccess": {
-    "message": "Accés"
+    "message": "Accés",
+    "description": "Title indicating what permissions a service account has"
   },
   "projectCommaSecret": {
-    "message": "Projecte, secret"
+    "message": "Projecte, secret",
+    "description": ""
   },
   "serviceAccountName": {
-    "message": "Nom del compte de servei"
+    "message": "Nom del compte de servei",
+    "description": "Label for the name of a service account"
+  },
+  "serviceAccountCreated": {
+    "message": "Compte de servei creat",
+    "description": "Notifies that a new service account has been created"
   },
   "newSaSelectAccess": {
-    "message": "Escriu o selecciona projectes o secrets"
+    "message": "Escriu o selecciona projectes o secrets",
+    "description": "Instructions for selecting projects or secrets for a new service account"
   },
   "newSaTypeToFilter": {
-    "message": "Escriu per a filtrar"
+    "message": "Escriu per a filtrar",
+    "description": "Instructions for filtering a list of projects or secrets"
   },
   "deleteProjectsToast": {
-    "message": "Projectes suprimits"
+    "message": "Projectes suprimits",
+    "description": "Notifies that the selected projects have been deleted"
   },
   "deleteProjectToast": {
-    "message": "El projecte i tots els secrets associats s'han suprimit"
+    "message": "El projecte i tots els secrets associats s'han suprimit",
+    "description": "Notifies that a project has been deleted"
   },
   "deleteProjectDialogMessage": {
     "message": "La supressió de $PROJECT$ és permanent i irreversible.",
+    "description": "Informs users that projects are hard deleted and not sent to trash",
     "placeholders": {
       "project": {
         "content": "$1",
@@ -5882,6 +5933,7 @@
   },
   "deleteProjectInputLabel": {
     "message": "Escriu \"$CONFIRM$\" per continuar",
+    "description": "Users are prompted to type 'confirm' to delete a project",
     "placeholders": {
       "confirm": {
         "content": "$1",
@@ -5891,6 +5943,7 @@
   },
   "deleteProjectConfirmMessage": {
     "message": "Suprimeix $PROJECT$",
+    "description": "Confirmation prompt to delete a specific project, where '$PROJECT$' is a placeholder for the name of the project.",
     "placeholders": {
       "project": {
         "content": "$1",
@@ -5900,6 +5953,7 @@
   },
   "deleteProjectsConfirmMessage": {
     "message": "Suprimeix $COUNT$ projectes",
+    "description": "Confirmation prompt to delete multiple projects, where '$COUNT$' is a placeholder for the number of projects to be deleted.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -5908,73 +5962,91 @@
     }
   },
   "deleteProjectsDialogMessage": {
-    "message": "La supressió de projectes és permanent i irreversible."
+    "message": "La supressió de projectes és permanent i irreversible.",
+    "description": "This message is displayed in a dialog box as a warning before proceeding with project deletion."
   },
   "projectsNoItemsTitle": {
-    "message": "No hi ha cap projecte per mostrar"
+    "message": "No hi ha cap projecte per mostrar",
+    "description": "Empty state to be displayed when there are no projects to display in the list."
   },
   "projectsNoItemsMessage": {
-    "message": "Afig un projecte nou per començar a organitzar secrets."
+    "message": "Afig un projecte nou per començar a organitzar secrets.",
+    "description": "Message to be displayed when there are no projects to display in the list."
   },
   "smConfirmationRequired": {
-    "message": "Cal confirmació"
+    "message": "Cal confirmació",
+    "description": "Indicates that user confirmation is required for an action to proceed."
   },
   "bulkDeleteProjectsErrorMessage": {
-    "message": "Els següents projectes no es poden eliminar:"
+    "message": "Els següents projectes no es poden eliminar:",
+    "description": "Message to be displayed when there is an error during bulk project deletion."
   },
   "softDeleteSuccessToast": {
-    "message": "S'ha enviat el secret a la paperera"
+    "message": "S'ha enviat el secret a la paperera",
+    "description": "Notification to be displayed when a secret is successfully sent to the trash."
   },
   "hardDeleteSuccessToast": {
     "message": "Secret suprimit definitivament"
   },
-  "searchProjects": {
-    "message": "Cerca projectes"
-  },
   "accessTokens": {
-    "message": "Tokens d'accès"
+    "message": "Tokens d'accès",
+    "description": "Title for the section displaying access tokens."
   },
   "createAccessToken": {
-    "message": "Crea un token d'accés"
+    "message": "Crea un token d'accés",
+    "description": "Button label for creating a new access token."
   },
   "expires": {
-    "message": "Caduca"
+    "message": "Caduca",
+    "description": "Label for the expiration date of an access token."
   },
   "canRead": {
-    "message": "Es pot llegir"
+    "message": "Es pot llegir",
+    "description": "Label for the access level of an access token (Read only)."
   },
   "accessTokensNoItemsTitle": {
-    "message": "No hi ha tokens d'accés per mostrar"
+    "message": "No hi ha tokens d'accés per mostrar",
+    "description": "Title to be displayed when there are no access tokens to display in the list."
   },
   "accessTokensNoItemsDesc": {
-    "message": "Per començar, crea un token d'accés"
+    "message": "Per començar, crea un token d'accés",
+    "description": "Message to be displayed when there are no access tokens to display in the list."
   },
   "downloadAccessToken": {
-    "message": "Baixa o copia abans de tancar."
+    "message": "Baixa o copia abans de tancar.",
+    "description": "Message to be displayed before closing an access token, reminding the user to download or copy it."
   },
   "expiresOnAccessToken": {
-    "message": "Caduca el:"
+    "message": "Caduca el:",
+    "description": "Label for the expiration date of an access token."
   },
   "accessTokenCallOutTitle": {
-    "message": "Els tokens d'accés no s'emmagatzemen i no es poden recuperar"
+    "message": "Els tokens d'accés no s'emmagatzemen i no es poden recuperar",
+    "description": "Notification to inform the user that access tokens are only displayed once and cannot be retrieved again."
   },
   "copyToken": {
-    "message": "Copia el token"
+    "message": "Copia el token",
+    "description": "Copies the generated access token to the user's clipboard."
   },
   "accessToken": {
-    "message": "Token d'accés"
+    "message": "Token d'accés",
+    "description": "A unique string that gives a client application (eg. CLI) access to a secret or set of secrets."
   },
   "accessTokenExpirationRequired": {
-    "message": "La data de caducitat és obligatòria"
+    "message": "La data de caducitat és obligatòria",
+    "description": "Error message indicating that an expiration date for the access token must be set."
   },
   "accessTokenCreatedAndCopied": {
-    "message": "Token d'accés creat i copiat al porta-retalls"
+    "message": "Token d'accés creat i copiat al porta-retalls",
+    "description": "Notification to inform the user that the access token has been created and copied to the clipboard."
   },
   "accessTokenPermissionsBetaNotification": {
-    "message": "La gestió de permisos no està disponible per a la versió beta."
+    "message": "La gestió de permisos no està disponible per a la versió beta.",
+    "description": "Notification to inform the user that the feature for managing access token permissions is not available in the beta version."
   },
   "revokeAccessToken": {
-    "message": "Revoca el token d'accés"
+    "message": "Revoca el token d'accés",
+    "description": "Invalidates / cancels an access token and as such removes access to secrets for the client application."
   },
   "revokeAccessTokens": {
     "message": "Revoca tokens d'accés"
@@ -6358,8 +6430,14 @@
   "projectEmptyServiceAccountAccessPolicies": {
     "message": "Afig comptes de servei per concedir accés"
   },
-  "canWrite": {
-    "message": "Es pot escriure"
+  "serviceAccountPeopleDescription": {
+    "message": "Concediu accés a aquest compte de servei a grups o persones."
+  },
+  "serviceAccountProjectsDescription": {
+    "message": "Assigna projectes a aquest compte de servei. "
+  },
+  "serviceAccountEmptyProjectAccesspolicies": {
+    "message": "Afig projectes per concedir accés"
   },
   "canReadWrite": {
     "message": "Es pot llegir, escriure"
@@ -6415,6 +6493,19 @@
   },
   "errorReadingImportFile": {
     "message": "S'ha produït un error en intentar llegir el fitxer d'importació"
+  },
+  "accessedSecret": {
+    "message": "S'ha accedit al secret $SECRET_ID$.",
+    "placeholders": {
+      "secret_id": {
+        "content": "$1",
+        "example": "4d34e8a8"
+      }
+    }
+  },
+  "sdk": {
+    "message": "SDK",
+    "description": "Software Development Kit"
   },
   "createSecret": {
     "message": "Crea un secret"
@@ -6510,5 +6601,8 @@
         "example": "14"
       }
     }
+  },
+  "dismiss": {
+    "message": "Descarta"
   }
 }

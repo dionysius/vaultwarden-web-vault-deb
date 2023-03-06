@@ -236,7 +236,7 @@
     "message": "Pārbaudīt, vai parole ir bijusi nopludināta."
   },
   "passwordExposed": {
-    "message": "Šī parole ir atklāta $VALUE$ reizi(-es) datu pārkāpumos. Jums vajadzētu to nomainīt.",
+    "message": "Šī parole datu noplūdēs ir atklāta $VALUE$ reizi(es). To vajadzētu nomainīt.",
     "placeholders": {
       "value": {
         "content": "$1",
@@ -245,7 +245,7 @@
     }
   },
   "passwordSafe": {
-    "message": "Šī parole netika atrasta nevienā no zināmajiem datu pārkāpumiem. Tai vajadzētu būt droši izmantojamai."
+    "message": "Šī parole netika atrasta nevienā zināmā datu noplūdē. Tai vajadzētu būt droši izmantojamai."
   },
   "save": {
     "message": "Saglabāt"
@@ -697,7 +697,7 @@
     "message": "Ir nepieciešama galvenās paroles atkārtota ievadīšana."
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least $VALUE$ characters long.",
+    "message": "Galvenajai parolei ir jābūt vismaz $VALUE$ rakstzīmes garai.",
     "description": "The Master Password must be at least a specific number of characters long.",
     "placeholders": {
       "value": {
@@ -1696,13 +1696,13 @@
     "message": "Atklāto paroļu pārskats"
   },
   "exposedPasswordsReportDesc": {
-    "message": "Atklātās paroles ir paroles, kas ir atrastas zināmos datu pārkāpumos, kuras urķi ir publicējuši vai pārdod tumšajā tīmeklī."
+    "message": "Paroles, kas ir pieejamas datu noplūdēs, ir viegls mērķis uzbrucējiem. Šīs paroles ir jānomaina, lai novērstu iespējamu to ļaunprātīgu izmantošanu."
   },
   "exposedPasswordsFound": {
     "message": "Atrastas atklātās paroles"
   },
   "exposedPasswordsFoundDesc": {
-    "message": "Glabātavā tika atrasts(i) $COUNT$ vienums(i), kuros ir paroles, kas ir atklātas zināmos datu pārkāpumos. Vienumus vajadzētu mainīt, lai izmantotu jaunu paroli.",
+    "message": "Glabātavā tika atrasts(i) $COUNT$ vienums(i), kuros ir paroles, kas ir atklātas zināmās datu noplūdēs. Tos vajadzētu mainīt, lai izmantotu jaunu paroli.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -1711,7 +1711,7 @@
     }
   },
   "noExposedPasswords": {
-    "message": "Glabātavā nav vienumu, kam būtu paroles, kas ir atklātas zināmos datu pārkāpumos."
+    "message": "Glabātavā nav vienumu, kuros būtu paroles, kas ir atklātas zināmās datu noplūdēs."
   },
   "checkExposedPasswords": {
     "message": "Pārbaudīt atklātās paroles"
@@ -1780,13 +1780,13 @@
     "message": "Datu noplūde"
   },
   "breachDesc": {
-    "message": "Uzlauzti konti var atklāt jūsu personisko informāciju. Aizsargājiet uzlauztos kontus, iespējojot 2FA vai izveidojot spēcīgāku paroli."
+    "message": "Kontu datu noplūde var atklāt personisko informāciju. Datu noplūdēs iekļuvušos kontus var padarīt drošus, iespējojot divpakāpju pārbaudi vai izveidojot spēcīgāku paroli."
   },
   "breachCheckUsernameEmail": {
-    "message": "Pārbaudiet jebkādus lietotājvārdus vai e-pasta adreses kuras jūs izmantojat."
+    "message": "Jāpārbauda jebkurš lietotājvārds vai e-pasta adrese, kas tiek izmantota."
   },
   "checkBreaches": {
-    "message": "Pārbaudīt datu pārkāpumus"
+    "message": "Pārbaudīt datu noplūdes"
   },
   "breachUsernameNotFound": {
     "message": "$USERNAME$ netika atrasts nevienā zināmā datu noplūdē.",
@@ -1802,7 +1802,7 @@
     "description": "ex. Good News, No Breached Accounts Found!"
   },
   "breachUsernameFound": {
-    "message": "$USERNAME$ tika atrasts $COUNT$ (dažādos) datu pārkāpumā(os) tīmeklī.",
+    "message": "$USERNAME$ tika atrasts $COUNT$ dažādā(s) datu nopūdē(s), kas ir pieejama(s) tiešsaistē.",
     "placeholders": {
       "username": {
         "content": "$1",
@@ -1815,7 +1815,7 @@
     }
   },
   "breachFound": {
-    "message": "Atrasti datu pārkāpumos iekļuvušie konti"
+    "message": "Atrasti datu noplūdēs iekļuvuši konti"
   },
   "compromisedData": {
     "message": "Datu pārkāpumos iesaistītie dati"
@@ -1827,10 +1827,10 @@
     "message": "Ietekmētie lietotāji"
   },
   "breachOccurred": {
-    "message": "Ir bijis datu pārkāpums"
+    "message": "Ir notikusi datu noplūde"
   },
   "breachReported": {
-    "message": "Par datu pārkāpumu ir ziņots"
+    "message": "Ziņots par datu noplūdi"
   },
   "reportError": {
     "message": "Radusies kļūda pārskata lādēšanā. Lūgums mēģināt vēlreiz"
@@ -1889,7 +1889,7 @@
     "message": "Ārkārtas piekļuve"
   },
   "premiumSignUpReports": {
-    "message": "Paroles higiēnas, konta stāvokļa un datu pārkāpumu pārskati, lai jūsu glabātuve būtu drošībā."
+    "message": "Paroļu higiēnas, konta veselības un datu noplūžu pārskati, lai uzturētu glabātavu drošu."
   },
   "premiumSignUpTotp": {
     "message": "TOTP apstiprinājuma koda (2FA) veidotājs glabātavas pieteikšanās vienumiem."
@@ -2060,9 +2060,6 @@
   },
   "updateLicense": {
     "message": "Atjaunināt licenci"
-  },
-  "updatedLicense": {
-    "message": "Atjauninātā licence"
   },
   "manageSubscription": {
     "message": "Pārvaldīt abonementus"
@@ -5707,28 +5704,36 @@
     "message": "Paslēpt"
   },
   "projects": {
-    "message": "Projekti"
+    "message": "Projekti",
+    "description": "Description for the Projects field."
   },
   "lastEdited": {
-    "message": "Pēdējo reizi labots"
+    "message": "Pēdējo reizi labots",
+    "description": "The label for the date and time when a item was last edited."
   },
   "editSecret": {
-    "message": "Labot noslēpumu"
+    "message": "Labot noslēpumu",
+    "description": "Action to modify an existing secret."
   },
   "addSecret": {
-    "message": "Pievienot noslēpumu"
+    "message": "Pievienot noslēpumu",
+    "description": "Action to create a new secret."
   },
   "copySecretName": {
-    "message": "Ievietot noslēpuma nosaukumu starpliktuvē"
+    "message": "Ievietot noslēpuma nosaukumu starpliktuvē",
+    "description": "Action to copy the name of a secret to the system's clipboard."
   },
   "copySecretValue": {
-    "message": "Ievietot noslēpuma vērtību starpliktuvē"
+    "message": "Ievietot noslēpuma vērtību starpliktuvē",
+    "description": "Action to copy the value of a secret to the system's clipboard."
   },
   "deleteSecret": {
-    "message": "Izdzēst noslēpumu"
+    "message": "Izdzēst noslēpumu",
+    "description": "Action to delete a single secret from the system."
   },
   "deleteSecrets": {
-    "message": "Izdzēst noslēpumus"
+    "message": "Izdzēst noslēpumus",
+    "description": "The action to delete multiple secrets from the system."
   },
   "hardDeleteSecret": {
     "message": "Neatgriezeniski izdzēst noslēpumu"
@@ -5737,106 +5742,143 @@
     "message": "Neatgriezeniski izdzēst noslēpumus"
   },
   "secretProjectAssociationDescription": {
-    "message": "Atlasīt projektus, ar kuriem tiks saistīts noslēpums. Tikai apvienību lietotāji ar piekļuvi šiem projektiem varēs redzēt noslēpumu."
+    "message": "Atlasīt projektus, ar kuriem tiks saistīts noslēpums. Tikai apvienību lietotāji ar piekļuvi šiem projektiem varēs redzēt noslēpumu.",
+    "description": "A prompt explaining how secrets can be associated with projects."
   },
   "selectProjects": {
-    "message": "Atlasīt projektus"
+    "message": "Atlasīt projektus",
+    "description": "A label for a type-to-filter input field to choose projects."
+  },
+  "searchProjects": {
+    "message": "Meklēt projektus",
+    "description": "Label for the search bar used to search projects."
   },
   "project": {
-    "message": "Projekts"
+    "message": "Projekts",
+    "description": "Similar to collections, projects can be used to group secrets."
   },
   "editProject": {
-    "message": "Labot projektu"
+    "message": "Labot projektu",
+    "description": "The action to modify an existing project."
   },
   "viewProject": {
-    "message": "Skatīt projektu"
+    "message": "Skatīt projektu",
+    "description": "The action to view details of a project."
   },
   "deleteProject": {
-    "message": "Izdzēst projektu"
+    "message": "Izdzēst projektu",
+    "description": "The action to delete a project from the system."
   },
   "deleteProjects": {
-    "message": "Izdzēst projektus"
+    "message": "Izdzēst projektus",
+    "description": "The action to delete multiple projects from the system."
   },
   "secret": {
-    "message": "Noslēpums"
+    "message": "Noslēpums",
+    "description": "Label for a secret (key/value pair)"
   },
   "serviceAccount": {
-    "message": "Pakalpojumu konts"
+    "message": "Pakalpojumu konts",
+    "description": "A machine user which can be used to automate processes and access secrets in the system."
   },
   "serviceAccounts": {
-    "message": "Pakalpojumu konti"
+    "message": "Pakalpojumu konti",
+    "description": "The title for the section that deals with service accounts."
   },
   "secrets": {
-    "message": "Noslēpumi"
+    "message": "Noslēpumi",
+    "description": "The title for the section of the application that deals with secrets."
   },
   "nameValuePair": {
-    "message": "Nosaukuma/vērtības pāris"
+    "message": "Nosaukuma/vērtības pāris",
+    "description": "Title for a name/ value pair. Secrets typically consist of a name and value pair."
   },
   "secretEdited": {
-    "message": "Noslēpums ir labots"
+    "message": "Noslēpums ir labots",
+    "description": "Notification for the successful editing of a secret."
   },
   "secretCreated": {
-    "message": "Noslēpums ir izveidots"
+    "message": "Noslēpums ir izveidots",
+    "description": "Notification for the successful creation of a secret."
   },
   "newSecret": {
-    "message": "Jauns noslēpums"
+    "message": "Jauns noslēpums",
+    "description": "Title for creating a new secret."
   },
   "newServiceAccount": {
-    "message": "Jauns pakalpojumu konts"
+    "message": "Jauns pakalpojumu konts",
+    "description": "Title for creating a new service account."
   },
   "secretsNoItemsTitle": {
-    "message": "Nav noslēpumu, ko parādīt"
+    "message": "Nav noslēpumu, ko parādīt",
+    "description": "Empty state to indicate that there are no secrets to display."
   },
   "secretsNoItemsMessage": {
-    "message": "Lai sākut, ir jāpievieno jauns noslēpums vai jāievieto esoši."
+    "message": "Lai sākut, ir jāpievieno jauns noslēpums vai jāievieto esoši.",
+    "description": "Message to encourage the user to start adding secrets."
   },
   "secretsTrashNoItemsMessage": {
     "message": "Atkritnē nav noslēpumu."
   },
-  "serviceAccountsNoItemsTitle": {
-    "message": "Vēl nav nekā, ko parādīt"
-  },
   "serviceAccountsNoItemsMessage": {
-    "message": "Jāizveido jauns pakalpojumu konts, lai sāktu automatizēt piekļuvi noslēpumiem."
+    "message": "Jāizveido jauns pakalpojumu konts, lai sāktu automatizēt piekļuvi noslēpumiem.",
+    "description": "Message to encourage the user to start creating service accounts."
+  },
+  "serviceAccountsNoItemsTitle": {
+    "message": "Vēl nav nekā, ko parādīt",
+    "description": "Title to indicate that there are no service accounts to display."
   },
   "searchSecrets": {
-    "message": "Meklēt noslēpumus"
+    "message": "Meklēt noslēpumus",
+    "description": "Placeholder text for searching secrets."
   },
   "deleteServiceAccounts": {
-    "message": "Izdzēst pakalpojumu kontus"
+    "message": "Izdzēst pakalpojumu kontus",
+    "description": "Title for the action to delete one or multiple service accounts."
   },
   "deleteServiceAccount": {
-    "message": "Izdzēst pakalpojumu kontu"
+    "message": "Izdzēst pakalpojumu kontu",
+    "description": "Title for the action to delete a single service account."
   },
   "viewServiceAccount": {
-    "message": "Skatīt pakalpojumu kontu"
+    "message": "Skatīt pakalpojumu kontu",
+    "description": "Action to view the details of a service account."
   },
   "searchServiceAccounts": {
-    "message": "Meklēt pakalpojumu kontus"
+    "message": "Meklēt pakalpojumu kontus",
+    "description": "Placeholder text for searching service accounts."
   },
   "addProject": {
-    "message": "Pievienot projektu"
+    "message": "Pievienot projektu",
+    "description": "Title for creating a new project."
   },
   "projectEdited": {
-    "message": "Projekts labots"
+    "message": "Projekts labots",
+    "description": "Notification for the successful editing of a project."
   },
   "projectSaved": {
-    "message": "Projekts ir saglabāts"
+    "message": "Projekts ir saglabāts",
+    "description": "Notification for the successful saving of a project."
   },
   "projectCreated": {
-    "message": "Projekts ir izveidots"
+    "message": "Projekts ir izveidots",
+    "description": "Notification for the successful creation of a project."
   },
   "projectName": {
-    "message": "Projekta nosaukums"
+    "message": "Projekta nosaukums",
+    "description": "Label for entering the name of a project."
   },
   "newProject": {
-    "message": "Jauns projekts"
+    "message": "Jauns projekts",
+    "description": "Title for creating a new project."
   },
   "softDeleteSecretWarning": {
-    "message": "Noslēpumu dzēšana var ietekmēt esošās sasaistes."
+    "message": "Noslēpumu dzēšana var ietekmēt esošās sasaistes.",
+    "description": "Warns that deleting secrets can have consequences on integrations"
   },
   "softDeletesSuccessToast": {
-    "message": "Noslēpumi ir pārvietoti uz atkritni"
+    "message": "Noslēpumi ir pārvietoti uz atkritni",
+    "description": "Notifies that the selected secrets have been moved to the trash"
   },
   "hardDeleteSecretConfirmation": {
     "message": "Vai tiešām neatgriezeniski izdzēst šo noslēpumu?"
@@ -5847,32 +5889,41 @@
   "hardDeletesSuccessToast": {
     "message": "Noslēpumi ir neatgriezeniski izdzēsti"
   },
-  "serviceAccountCreated": {
-    "message": "Pakalpojumu konts ir izveidots"
-  },
   "smAccess": {
-    "message": "Piekļuve"
+    "message": "Piekļuve",
+    "description": "Title indicating what permissions a service account has"
   },
   "projectCommaSecret": {
-    "message": "Projekts, noslēpums"
+    "message": "Projekts, noslēpums",
+    "description": ""
   },
   "serviceAccountName": {
-    "message": "Pakalpojumu konta nosaukums"
+    "message": "Pakalpojumu konta nosaukums",
+    "description": "Label for the name of a service account"
+  },
+  "serviceAccountCreated": {
+    "message": "Pakalpojumu konts ir izveidots",
+    "description": "Notifies that a new service account has been created"
   },
   "newSaSelectAccess": {
-    "message": "Rakstīt vai atlasīt projektus vai noslēpumus"
+    "message": "Rakstīt vai atlasīt projektus vai noslēpumus",
+    "description": "Instructions for selecting projects or secrets for a new service account"
   },
   "newSaTypeToFilter": {
-    "message": "Rakstīt, lai atlasītu"
+    "message": "Rakstīt, lai atlasītu",
+    "description": "Instructions for filtering a list of projects or secrets"
   },
   "deleteProjectsToast": {
-    "message": "Projekti ir izdzēsti"
+    "message": "Projekti ir izdzēsti",
+    "description": "Notifies that the selected projects have been deleted"
   },
   "deleteProjectToast": {
-    "message": "Projekts un visi saistītie noslēpumi tika izdzēsti"
+    "message": "Projekts un visi saistītie noslēpumi tika izdzēsti",
+    "description": "Notifies that a project has been deleted"
   },
   "deleteProjectDialogMessage": {
     "message": "Projekta $PROJECT$ izdzēšana ir paliekoša un neatgriezeniska.",
+    "description": "Informs users that projects are hard deleted and not sent to trash",
     "placeholders": {
       "project": {
         "content": "$1",
@@ -5882,6 +5933,7 @@
   },
   "deleteProjectInputLabel": {
     "message": "Jāieraksta \"$CONFIRM$\", lai turpinātu",
+    "description": "Users are prompted to type 'confirm' to delete a project",
     "placeholders": {
       "confirm": {
         "content": "$1",
@@ -5891,6 +5943,7 @@
   },
   "deleteProjectConfirmMessage": {
     "message": "Izdzēst $PROJECT$",
+    "description": "Confirmation prompt to delete a specific project, where '$PROJECT$' is a placeholder for the name of the project.",
     "placeholders": {
       "project": {
         "content": "$1",
@@ -5900,6 +5953,7 @@
   },
   "deleteProjectsConfirmMessage": {
     "message": "Izdzēst $COUNT$ projektus",
+    "description": "Confirmation prompt to delete multiple projects, where '$COUNT$' is a placeholder for the number of projects to be deleted.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -5908,73 +5962,91 @@
     }
   },
   "deleteProjectsDialogMessage": {
-    "message": "Projektu izdzēšana ir paliekoša un neatgriezeniska."
+    "message": "Projektu izdzēšana ir paliekoša un neatgriezeniska.",
+    "description": "This message is displayed in a dialog box as a warning before proceeding with project deletion."
   },
   "projectsNoItemsTitle": {
-    "message": "Nav projektu, ko attēlot"
+    "message": "Nav projektu, ko attēlot",
+    "description": "Empty state to be displayed when there are no projects to display in the list."
   },
   "projectsNoItemsMessage": {
-    "message": "Jāpievieno jauns projkets, lai sāktu kārtot noslēpumus."
+    "message": "Jāpievieno jauns projkets, lai sāktu kārtot noslēpumus.",
+    "description": "Message to be displayed when there are no projects to display in the list."
   },
   "smConfirmationRequired": {
-    "message": "Nepieciešams apstiprinājums"
+    "message": "Nepieciešams apstiprinājums",
+    "description": "Indicates that user confirmation is required for an action to proceed."
   },
   "bulkDeleteProjectsErrorMessage": {
-    "message": "Šos projektus nebija iespējams izdzēst:"
+    "message": "Šos projektus nebija iespējams izdzēst:",
+    "description": "Message to be displayed when there is an error during bulk project deletion."
   },
   "softDeleteSuccessToast": {
-    "message": "Noslēpums ir pārvietots uz atkritni"
+    "message": "Noslēpums ir pārvietots uz atkritni",
+    "description": "Notification to be displayed when a secret is successfully sent to the trash."
   },
   "hardDeleteSuccessToast": {
     "message": "Noslēpums ir neatgriezeniski izdzēsts"
   },
-  "searchProjects": {
-    "message": "Meklēt projektus"
-  },
   "accessTokens": {
-    "message": "Piekļuves pilnvaras"
+    "message": "Piekļuves pilnvaras",
+    "description": "Title for the section displaying access tokens."
   },
   "createAccessToken": {
-    "message": "Izveidot piekļuves pilnvaru"
+    "message": "Izveidot piekļuves pilnvaru",
+    "description": "Button label for creating a new access token."
   },
   "expires": {
-    "message": "Izbeidzas"
+    "message": "Izbeidzas",
+    "description": "Label for the expiration date of an access token."
   },
   "canRead": {
-    "message": "Var lasīt"
+    "message": "Var lasīt",
+    "description": "Label for the access level of an access token (Read only)."
   },
   "accessTokensNoItemsTitle": {
-    "message": "Nav piekļuves pilnvaru, ko parādīt"
+    "message": "Nav piekļuves pilnvaru, ko parādīt",
+    "description": "Title to be displayed when there are no access tokens to display in the list."
   },
   "accessTokensNoItemsDesc": {
-    "message": "Lai sāktu, jāizveido piekļuves pilnvara"
+    "message": "Lai sāktu, jāizveido piekļuves pilnvara",
+    "description": "Message to be displayed when there are no access tokens to display in the list."
   },
   "downloadAccessToken": {
-    "message": "Jālejupielādē vai jāievieto starpliktuvē pirms aizvēršanas."
+    "message": "Jālejupielādē vai jāievieto starpliktuvē pirms aizvēršanas.",
+    "description": "Message to be displayed before closing an access token, reminding the user to download or copy it."
   },
   "expiresOnAccessToken": {
-    "message": "Beidzas:"
+    "message": "Beidzas:",
+    "description": "Label for the expiration date of an access token."
   },
   "accessTokenCallOutTitle": {
-    "message": "Piekļuves pilnvaras netiek glabātas un tās nevar atgūt"
+    "message": "Piekļuves pilnvaras netiek glabātas un tās nevar atgūt",
+    "description": "Notification to inform the user that access tokens are only displayed once and cannot be retrieved again."
   },
   "copyToken": {
-    "message": "Ievietot pilnvaru starpliktuvē"
+    "message": "Ievietot pilnvaru starpliktuvē",
+    "description": "Copies the generated access token to the user's clipboard."
   },
   "accessToken": {
-    "message": "Piekļuves pilnvara"
+    "message": "Piekļuves pilnvara",
+    "description": "A unique string that gives a client application (eg. CLI) access to a secret or set of secrets."
   },
   "accessTokenExpirationRequired": {
-    "message": "Nepieciešams norādīt beigu datumu"
+    "message": "Nepieciešams norādīt beigu datumu",
+    "description": "Error message indicating that an expiration date for the access token must be set."
   },
   "accessTokenCreatedAndCopied": {
-    "message": "Piekļuves pilnvara ir izveidota un ievietota starpliktuvē"
+    "message": "Piekļuves pilnvara ir izveidota un ievietota starpliktuvē",
+    "description": "Notification to inform the user that the access token has been created and copied to the clipboard."
   },
   "accessTokenPermissionsBetaNotification": {
-    "message": "Atļauju pārvaldība nav pieejama bēta laidienā."
+    "message": "Atļauju pārvaldība nav pieejama bēta laidienā.",
+    "description": "Notification to inform the user that the feature for managing access token permissions is not available in the beta version."
   },
   "revokeAccessToken": {
-    "message": "Atsaukt piekļuves pilnvaru"
+    "message": "Atsaukt piekļuves pilnvaru",
+    "description": "Invalidates / cancels an access token and as such removes access to secrets for the client application."
   },
   "revokeAccessTokens": {
     "message": "Atsaukt piekļuves pilnvaras"
@@ -6358,8 +6430,14 @@
   "projectEmptyServiceAccountAccessPolicies": {
     "message": "Pievienot pakalpojumu kontus, lai piešķirtu piekļuvi"
   },
-  "canWrite": {
-    "message": "Var rakstīt"
+  "serviceAccountPeopleDescription": {
+    "message": "Piešķirt kopām vai cilvēkiem piekļuvi šim pakalpojumu kontam."
+  },
+  "serviceAccountProjectsDescription": {
+    "message": "Piešķirt projektus šim pakalpojumu kontam. "
+  },
+  "serviceAccountEmptyProjectAccesspolicies": {
+    "message": "Jāpievieno projekti, lai nodrošinātu piekļuvi"
   },
   "canReadWrite": {
     "message": "Var lasīt, rakstīt"
@@ -6415,6 +6493,19 @@
   },
   "errorReadingImportFile": {
     "message": "Atgadījās kļūda, kad tika mēģināts nolasīt ievietošanas datni"
+  },
+  "accessedSecret": {
+    "message": "Tika piekļūts noslēpumam $SECRET_ID$.",
+    "placeholders": {
+      "secret_id": {
+        "content": "$1",
+        "example": "4d34e8a8"
+      }
+    }
+  },
+  "sdk": {
+    "message": "Izstrādātāja rīkkopa",
+    "description": "Software Development Kit"
   },
   "createSecret": {
     "message": "Izveidot noslēpumu"
@@ -6479,22 +6570,22 @@
     "message": "Iespējot Noslēpumu pārvaldnieks Beta"
   },
   "checkForBreaches": {
-    "message": "Check known data breaches for this password"
+    "message": "Meklēt šo paroli zināmās datu noplūdēs"
   },
   "exposedMasterPassword": {
-    "message": "Exposed Master Password"
+    "message": "Noplūdusi galvenā parole"
   },
   "exposedMasterPasswordDesc": {
-    "message": "Password found in a data breach. Use a unique password to protect your account. Are you sure you want to use an exposed password?"
+    "message": "Parole atrasta datu noplūdē. Jāizmanto neatkārtojama parole, lai aizsargātu savu kontu. Vai tiešām izmantot noplūdušu paroli?"
   },
   "weakAndExposedMasterPassword": {
-    "message": "Weak and Exposed Master Password"
+    "message": "Vāja un noplūdusi galvenā parole"
   },
   "weakAndBreachedMasterPasswordDesc": {
-    "message": "Weak password identified and found in a data breach. Use a strong and unique password to protect your account. Are you sure you want to use this password?"
+    "message": "Noteikta vāja parole, un tā ir atrasta datu noplūdē. Jāizmanto spēcīga un neatkārtojama parole, lai aizsargātu savu kontu. Vai tiešām izmantot šo paroli?"
   },
   "characterMinimum": {
-    "message": "$LENGTH$ character minimum",
+    "message": "Vismaz $LENGTH$ rakstzīmes",
     "placeholders": {
       "length": {
         "content": "$1",
@@ -6503,12 +6594,15 @@
     }
   },
   "masterPasswordMinimumlength": {
-    "message": "Master password must be at least $LENGTH$ characters long.",
+    "message": "Galvenajai parolei ir jābūt vismaz $LENGTH$ rakstzīmes garai.",
     "placeholders": {
       "length": {
         "content": "$1",
         "example": "14"
       }
     }
+  },
+  "dismiss": {
+    "message": "Noraidīt"
   }
 }

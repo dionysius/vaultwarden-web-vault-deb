@@ -2061,9 +2061,6 @@
   "updateLicense": {
     "message": "Lisenziyanı güncəllə"
   },
-  "updatedLicense": {
-    "message": "Lisenziyanı güncəlləndi"
-  },
   "manageSubscription": {
     "message": "Abunəliyi idarə et"
   },
@@ -5707,28 +5704,36 @@
     "message": "Gizlət"
   },
   "projects": {
-    "message": "Layihələr"
+    "message": "Layihələr",
+    "description": "Description for the Projects field."
   },
   "lastEdited": {
-    "message": "Son düzəliş"
+    "message": "Son düzəliş",
+    "description": "The label for the date and time when a item was last edited."
   },
   "editSecret": {
-    "message": "\"Sirr\"ə düzəliş et"
+    "message": "\"Sirr\"ə düzəliş et",
+    "description": "Action to modify an existing secret."
   },
   "addSecret": {
-    "message": "Sirr əlavə et"
+    "message": "Sirr əlavə et",
+    "description": "Action to create a new secret."
   },
   "copySecretName": {
-    "message": "Sirr adını kopyala"
+    "message": "Sirr adını kopyala",
+    "description": "Action to copy the name of a secret to the system's clipboard."
   },
   "copySecretValue": {
-    "message": "Sirr dəyərini kopyala"
+    "message": "Sirr dəyərini kopyala",
+    "description": "Action to copy the value of a secret to the system's clipboard."
   },
   "deleteSecret": {
-    "message": "Sirri sil"
+    "message": "Sirri sil",
+    "description": "Action to delete a single secret from the system."
   },
   "deleteSecrets": {
-    "message": "\"Sirr\"ləri sil"
+    "message": "\"Sirr\"ləri sil",
+    "description": "The action to delete multiple secrets from the system."
   },
   "hardDeleteSecret": {
     "message": "Sirri birdəfəlik sil"
@@ -5737,106 +5742,143 @@
     "message": "Sirləri birdəfəlik sil"
   },
   "secretProjectAssociationDescription": {
-    "message": "Sirrin əlaqələndiriləcəyi layihələri seçin. Yalnız bu layihələrə müraciəti olan təşkilat istifadəçiləri sirri görə biləcək."
+    "message": "Sirrin əlaqələndiriləcəyi layihələri seçin. Yalnız bu layihələrə müraciəti olan təşkilat istifadəçiləri sirri görə biləcək.",
+    "description": "A prompt explaining how secrets can be associated with projects."
   },
   "selectProjects": {
-    "message": "Layihələri seçin"
+    "message": "Layihələri seçin",
+    "description": "A label for a type-to-filter input field to choose projects."
+  },
+  "searchProjects": {
+    "message": "Layihə axtar",
+    "description": "Label for the search bar used to search projects."
   },
   "project": {
-    "message": "Layihə"
+    "message": "Layihə",
+    "description": "Similar to collections, projects can be used to group secrets."
   },
   "editProject": {
-    "message": "Layihəyə düzəliş et"
+    "message": "Layihəyə düzəliş et",
+    "description": "The action to modify an existing project."
   },
   "viewProject": {
-    "message": "Layihəyə bax"
+    "message": "Layihəyə bax",
+    "description": "The action to view details of a project."
   },
   "deleteProject": {
-    "message": "Layihəni sil"
+    "message": "Layihəni sil",
+    "description": "The action to delete a project from the system."
   },
   "deleteProjects": {
-    "message": "Layihələri sil"
+    "message": "Layihələri sil",
+    "description": "The action to delete multiple projects from the system."
   },
   "secret": {
-    "message": "Sirr"
+    "message": "Sirr",
+    "description": "Label for a secret (key/value pair)"
   },
   "serviceAccount": {
-    "message": "Servis hesabı"
+    "message": "Servis hesabı",
+    "description": "A machine user which can be used to automate processes and access secrets in the system."
   },
   "serviceAccounts": {
-    "message": "Servis hesabları"
+    "message": "Servis hesabları",
+    "description": "The title for the section that deals with service accounts."
   },
   "secrets": {
-    "message": "\"Sirr\"lər"
+    "message": "\"Sirr\"lər",
+    "description": "The title for the section of the application that deals with secrets."
   },
   "nameValuePair": {
-    "message": "Ad/Dəyər cütü"
+    "message": "Ad/Dəyər cütü",
+    "description": "Title for a name/ value pair. Secrets typically consist of a name and value pair."
   },
   "secretEdited": {
-    "message": "\"Sirr\"ə düzəliş edildi"
+    "message": "\"Sirr\"ə düzəliş edildi",
+    "description": "Notification for the successful editing of a secret."
   },
   "secretCreated": {
-    "message": "Sirr yaradıldı"
+    "message": "Sirr yaradıldı",
+    "description": "Notification for the successful creation of a secret."
   },
   "newSecret": {
-    "message": "Yeni Sirr"
+    "message": "Yeni Sirr",
+    "description": "Title for creating a new secret."
   },
   "newServiceAccount": {
-    "message": "Yeni Servis hesabı"
+    "message": "Yeni Servis hesabı",
+    "description": "Title for creating a new service account."
   },
   "secretsNoItemsTitle": {
-    "message": "Göstəriləcək sirr yoxdur"
+    "message": "Göstəriləcək sirr yoxdur",
+    "description": "Empty state to indicate that there are no secrets to display."
   },
   "secretsNoItemsMessage": {
-    "message": "Başlamaq üçün yeni bir sirr əlavə edin və ya daxilə köçürün."
+    "message": "Başlamaq üçün yeni bir sirr əlavə edin və ya daxilə köçürün.",
+    "description": "Message to encourage the user to start adding secrets."
   },
   "secretsTrashNoItemsMessage": {
     "message": "Tullantı qutusunda heç bir sirr yoxdur."
   },
-  "serviceAccountsNoItemsTitle": {
-    "message": "Göstəriləcək heç nə yoxdur"
-  },
   "serviceAccountsNoItemsMessage": {
-    "message": "\"Sirr\" müraciətini avtomatlaşdırmağa başlamaq üçün yeni bir Servis hesabı yaradın."
+    "message": "\"Sirr\" müraciətini avtomatlaşdırmağa başlamaq üçün yeni bir Servis hesabı yaradın.",
+    "description": "Message to encourage the user to start creating service accounts."
+  },
+  "serviceAccountsNoItemsTitle": {
+    "message": "Göstəriləcək heç nə yoxdur",
+    "description": "Title to indicate that there are no service accounts to display."
   },
   "searchSecrets": {
-    "message": "\"Sirr\"ləri axtar"
+    "message": "\"Sirr\"ləri axtar",
+    "description": "Placeholder text for searching secrets."
   },
   "deleteServiceAccounts": {
-    "message": "Servis hesablarını sil"
+    "message": "Servis hesablarını sil",
+    "description": "Title for the action to delete one or multiple service accounts."
   },
   "deleteServiceAccount": {
-    "message": "Servis hesabını sil"
+    "message": "Servis hesabını sil",
+    "description": "Title for the action to delete a single service account."
   },
   "viewServiceAccount": {
-    "message": "Servis hesabına bax"
+    "message": "Servis hesabına bax",
+    "description": "Action to view the details of a service account."
   },
   "searchServiceAccounts": {
-    "message": "Servis hesablarına bax"
+    "message": "Servis hesablarına bax",
+    "description": "Placeholder text for searching service accounts."
   },
   "addProject": {
-    "message": "Layihə əlavə et"
+    "message": "Layihə əlavə et",
+    "description": "Title for creating a new project."
   },
   "projectEdited": {
-    "message": "Layihəyə düzəliş edildi"
+    "message": "Layihəyə düzəliş edildi",
+    "description": "Notification for the successful editing of a project."
   },
   "projectSaved": {
-    "message": "Layihə saxlanıldı"
+    "message": "Layihə saxlanıldı",
+    "description": "Notification for the successful saving of a project."
   },
   "projectCreated": {
-    "message": "Layihə yaradıldı"
+    "message": "Layihə yaradıldı",
+    "description": "Notification for the successful creation of a project."
   },
   "projectName": {
-    "message": "Layihə adı"
+    "message": "Layihə adı",
+    "description": "Label for entering the name of a project."
   },
   "newProject": {
-    "message": "Yeni layihə"
+    "message": "Yeni layihə",
+    "description": "Title for creating a new project."
   },
   "softDeleteSecretWarning": {
-    "message": "\"Sirr\"ləri silmək, mövcud inteqrasiyalara təsir edə bilər."
+    "message": "\"Sirr\"ləri silmək, mövcud inteqrasiyalara təsir edə bilər.",
+    "description": "Warns that deleting secrets can have consequences on integrations"
   },
   "softDeletesSuccessToast": {
-    "message": "\"Sirr\"lər tullantı qutusuna göndərildi"
+    "message": "\"Sirr\"lər tullantı qutusuna göndərildi",
+    "description": "Notifies that the selected secrets have been moved to the trash"
   },
   "hardDeleteSecretConfirmation": {
     "message": "Bu sirri birdəfəlik silmək istədiyinizə əminsiniz?"
@@ -5847,32 +5889,41 @@
   "hardDeletesSuccessToast": {
     "message": "Sirlər birdəfəlik silindi"
   },
-  "serviceAccountCreated": {
-    "message": "Servis hesabı yaradıldı"
-  },
   "smAccess": {
-    "message": "Müraciət"
+    "message": "Müraciət",
+    "description": "Title indicating what permissions a service account has"
   },
   "projectCommaSecret": {
-    "message": "Layihə, Sirr"
+    "message": "Layihə, Sirr",
+    "description": ""
   },
   "serviceAccountName": {
-    "message": "Servis hesab adı"
+    "message": "Servis hesab adı",
+    "description": "Label for the name of a service account"
+  },
+  "serviceAccountCreated": {
+    "message": "Servis hesabı yaradıldı",
+    "description": "Notifies that a new service account has been created"
   },
   "newSaSelectAccess": {
-    "message": "Layihələri və ya \"Sirr\"ləri yazın və ya seçin"
+    "message": "Layihələri və ya \"Sirr\"ləri yazın və ya seçin",
+    "description": "Instructions for selecting projects or secrets for a new service account"
   },
   "newSaTypeToFilter": {
-    "message": "Filtrləmək üçün yazın"
+    "message": "Filtrləmək üçün yazın",
+    "description": "Instructions for filtering a list of projects or secrets"
   },
   "deleteProjectsToast": {
-    "message": "Layihələr silindi"
+    "message": "Layihələr silindi",
+    "description": "Notifies that the selected projects have been deleted"
   },
   "deleteProjectToast": {
-    "message": "Layihə və əlaqələndirilmiş bütün \"sirr\"ləri silindi"
+    "message": "Layihə və əlaqələndirilmiş bütün \"sirr\"ləri silindi",
+    "description": "Notifies that a project has been deleted"
   },
   "deleteProjectDialogMessage": {
     "message": "$PROJECT$ layihəsinin silinməsi daimi və geri qaytarıla bilməyən prosesdir.",
+    "description": "Informs users that projects are hard deleted and not sent to trash",
     "placeholders": {
       "project": {
         "content": "$1",
@@ -5882,6 +5933,7 @@
   },
   "deleteProjectInputLabel": {
     "message": "Davam etmək üçün \"$CONFIRM$\" yazın",
+    "description": "Users are prompted to type 'confirm' to delete a project",
     "placeholders": {
       "confirm": {
         "content": "$1",
@@ -5891,6 +5943,7 @@
   },
   "deleteProjectConfirmMessage": {
     "message": "$PROJECT$ sil",
+    "description": "Confirmation prompt to delete a specific project, where '$PROJECT$' is a placeholder for the name of the project.",
     "placeholders": {
       "project": {
         "content": "$1",
@@ -5900,6 +5953,7 @@
   },
   "deleteProjectsConfirmMessage": {
     "message": "$COUNT$ layihəni sil",
+    "description": "Confirmation prompt to delete multiple projects, where '$COUNT$' is a placeholder for the number of projects to be deleted.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -5908,73 +5962,91 @@
     }
   },
   "deleteProjectsDialogMessage": {
-    "message": "Layihələrin silinməsi daimi və geri qaytarıla bilməyən prosesdir."
+    "message": "Layihələrin silinməsi daimi və geri qaytarıla bilməyən prosesdir.",
+    "description": "This message is displayed in a dialog box as a warning before proceeding with project deletion."
   },
   "projectsNoItemsTitle": {
-    "message": "Görüntülənəcək heç bir layihə yoxdur"
+    "message": "Görüntülənəcək heç bir layihə yoxdur",
+    "description": "Empty state to be displayed when there are no projects to display in the list."
   },
   "projectsNoItemsMessage": {
-    "message": "\"Sirr\"ləri təşkil etməyə başlamaq üçün yeni bir layihə əlavə edin."
+    "message": "\"Sirr\"ləri təşkil etməyə başlamaq üçün yeni bir layihə əlavə edin.",
+    "description": "Message to be displayed when there are no projects to display in the list."
   },
   "smConfirmationRequired": {
-    "message": "Təsdiq tələb olunur"
+    "message": "Təsdiq tələb olunur",
+    "description": "Indicates that user confirmation is required for an action to proceed."
   },
   "bulkDeleteProjectsErrorMessage": {
-    "message": "Aşağıdakı layihələr silinə bilmədi:"
+    "message": "Aşağıdakı layihələr silinə bilmədi:",
+    "description": "Message to be displayed when there is an error during bulk project deletion."
   },
   "softDeleteSuccessToast": {
-    "message": "Sirr tullantı qutusuna göndərildi"
+    "message": "Sirr tullantı qutusuna göndərildi",
+    "description": "Notification to be displayed when a secret is successfully sent to the trash."
   },
   "hardDeleteSuccessToast": {
     "message": "Sirr birdəfəlik silindi"
   },
-  "searchProjects": {
-    "message": "Layihə axtar"
-  },
   "accessTokens": {
-    "message": "Müraciət tokenləri"
+    "message": "Müraciət tokenləri",
+    "description": "Title for the section displaying access tokens."
   },
   "createAccessToken": {
-    "message": "Müraciət tokeni yarat"
+    "message": "Müraciət tokeni yarat",
+    "description": "Button label for creating a new access token."
   },
   "expires": {
-    "message": "Müddəti bitir"
+    "message": "Müddəti bitir",
+    "description": "Label for the expiration date of an access token."
   },
   "canRead": {
-    "message": "Oxuna bilər"
+    "message": "Oxuna bilər",
+    "description": "Label for the access level of an access token (Read only)."
   },
   "accessTokensNoItemsTitle": {
-    "message": "Göstəriləcək heç bir müraciət tokeni yoxdur"
+    "message": "Göstəriləcək heç bir müraciət tokeni yoxdur",
+    "description": "Title to be displayed when there are no access tokens to display in the list."
   },
   "accessTokensNoItemsDesc": {
-    "message": "Başlamaq üçün bir müraciət tokeni yarat"
+    "message": "Başlamaq üçün bir müraciət tokeni yarat",
+    "description": "Message to be displayed when there are no access tokens to display in the list."
   },
   "downloadAccessToken": {
-    "message": "Bağlamazdan əvvəl endir və ya kopyala."
+    "message": "Bağlamazdan əvvəl endir və ya kopyala.",
+    "description": "Message to be displayed before closing an access token, reminding the user to download or copy it."
   },
   "expiresOnAccessToken": {
-    "message": "Bitmə vaxtı:"
+    "message": "Bitmə vaxtı:",
+    "description": "Label for the expiration date of an access token."
   },
   "accessTokenCallOutTitle": {
-    "message": "Müraciət tokenləri saxlanılmadı və alına bilmir"
+    "message": "Müraciət tokenləri saxlanılmadı və alına bilmir",
+    "description": "Notification to inform the user that access tokens are only displayed once and cannot be retrieved again."
   },
   "copyToken": {
-    "message": "Tokeni kopyala"
+    "message": "Tokeni kopyala",
+    "description": "Copies the generated access token to the user's clipboard."
   },
   "accessToken": {
-    "message": "Müraciət tokeni"
+    "message": "Müraciət tokeni",
+    "description": "A unique string that gives a client application (eg. CLI) access to a secret or set of secrets."
   },
   "accessTokenExpirationRequired": {
-    "message": "Bitmə vaxtı tələb olunur"
+    "message": "Bitmə vaxtı tələb olunur",
+    "description": "Error message indicating that an expiration date for the access token must be set."
   },
   "accessTokenCreatedAndCopied": {
-    "message": "Müraciət tokeni yaradıldı və lövhəyə kopyalandı"
+    "message": "Müraciət tokeni yaradıldı və lövhəyə kopyalandı",
+    "description": "Notification to inform the user that the access token has been created and copied to the clipboard."
   },
   "accessTokenPermissionsBetaNotification": {
-    "message": "Beta üçün icazələrin idarə edilməsi əlçatmazdır."
+    "message": "Beta üçün icazələrin idarə edilməsi əlçatmazdır.",
+    "description": "Notification to inform the user that the feature for managing access token permissions is not available in the beta version."
   },
   "revokeAccessToken": {
-    "message": "Müraciət tokenini ləğv et"
+    "message": "Müraciət tokenini ləğv et",
+    "description": "Invalidates / cancels an access token and as such removes access to secrets for the client application."
   },
   "revokeAccessTokens": {
     "message": "Müraciət tokenlərini ləğv et"
@@ -6358,8 +6430,14 @@
   "projectEmptyServiceAccountAccessPolicies": {
     "message": "Müraciət icazəsi veriləcək xidmət hesablarını əlavə edin"
   },
-  "canWrite": {
-    "message": "Yaza bilər"
+  "serviceAccountPeopleDescription": {
+    "message": "Qrup və ya insanların bu xidmət hesabına müraciətinə icazə verin."
+  },
+  "serviceAccountProjectsDescription": {
+    "message": "Bu xidmət hesabına layihələr təyin edin. "
+  },
+  "serviceAccountEmptyProjectAccesspolicies": {
+    "message": "Müraciət icazəsi vermək üçün layihə əlavə edin"
   },
   "canReadWrite": {
     "message": "Oxuya, yaza bilər"
@@ -6415,6 +6493,19 @@
   },
   "errorReadingImportFile": {
     "message": "Daxilə köçürmə faylını oxumağa çalışarkən xəta baş verdi"
+  },
+  "accessedSecret": {
+    "message": "$SECRET_ID$ sirrinə müraciət edildi.",
+    "placeholders": {
+      "secret_id": {
+        "content": "$1",
+        "example": "4d34e8a8"
+      }
+    }
+  },
+  "sdk": {
+    "message": "SDK",
+    "description": "Software Development Kit"
   },
   "createSecret": {
     "message": "Bir sirr yarat"
@@ -6479,22 +6570,22 @@
     "message": "\"Secrets Manager Beta\"nı fəallaşdır"
   },
   "checkForBreaches": {
-    "message": "Check known data breaches for this password"
+    "message": "Bu parol üçün bilinən məlumat pozuntularını yoxlayın"
   },
   "exposedMasterPassword": {
-    "message": "Exposed Master Password"
+    "message": "İfşa olunmuş ana parol"
   },
   "exposedMasterPasswordDesc": {
-    "message": "Password found in a data breach. Use a unique password to protect your account. Are you sure you want to use an exposed password?"
+    "message": "Parol, məlumat pozuntusunda tapıldı. Hesabınızı qorumaq üçün unikal bir parol istifadə edin. İfşa olunmuş bir parol istifadə etmək istədiyinizə əminsiniz?"
   },
   "weakAndExposedMasterPassword": {
-    "message": "Weak and Exposed Master Password"
+    "message": "Zəif və ifşa olunmuş ana parol"
   },
   "weakAndBreachedMasterPasswordDesc": {
-    "message": "Weak password identified and found in a data breach. Use a strong and unique password to protect your account. Are you sure you want to use this password?"
+    "message": "Zəif parol məlumat pozuntusunda aşkarlandı və tapıldı. Hesabınızı qorumaq üçün güclü və unikal bir parol istifadə edin. Bu parolu istifadə etmək istədiyinizə əminsiniz?"
   },
   "characterMinimum": {
-    "message": "$LENGTH$ character minimum",
+    "message": "Minimum $LENGTH$ simvol",
     "placeholders": {
       "length": {
         "content": "$1",
@@ -6503,12 +6594,15 @@
     }
   },
   "masterPasswordMinimumlength": {
-    "message": "Master password must be at least $LENGTH$ characters long.",
+    "message": "Ana parol ən azı $LENGTH$ simvol uzunluğunda olmalıdır.",
     "placeholders": {
       "length": {
         "content": "$1",
         "example": "14"
       }
     }
+  },
+  "dismiss": {
+    "message": "Rədd et"
   }
 }

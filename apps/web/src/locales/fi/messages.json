@@ -658,7 +658,7 @@
     "message": "Pääsalasanalla pääset käsiksi holviisi. On erittäin tärkeää, että muistat pääsalasanasi, koska sen palautus ei ole mahdollista, jos unohdat sen."
   },
   "masterPassImportant": {
-    "message": "Pääsalasanan palautus ei ole mahdollista, jos unohdat sen!"
+    "message": "Pääsalasanasi palauttaminen ei ole mahdollista, jos unohdat sen!"
   },
   "masterPassHintDesc": {
     "message": "Pääsalasanan vihje voi auttaa sinua muistamaan unohtamasi salasanan."
@@ -2060,9 +2060,6 @@
   },
   "updateLicense": {
     "message": "Päivitä lisenssi"
-  },
-  "updatedLicense": {
-    "message": "Lisenssi päivitettiin"
   },
   "manageSubscription": {
     "message": "Hallitse tilausta"
@@ -5707,28 +5704,36 @@
     "message": "Piilota"
   },
   "projects": {
-    "message": "Projektit"
+    "message": "Projektit",
+    "description": "Description for the Projects field."
   },
   "lastEdited": {
-    "message": "Viimeksi muokattu"
+    "message": "Viimeksi muokattu",
+    "description": "The label for the date and time when a item was last edited."
   },
   "editSecret": {
-    "message": "Muokkaa salaisuutta"
+    "message": "Muokkaa salaisuutta",
+    "description": "Action to modify an existing secret."
   },
   "addSecret": {
-    "message": "Lisää salaisuus"
+    "message": "Lisää salaisuus",
+    "description": "Action to create a new secret."
   },
   "copySecretName": {
-    "message": "Kopioi salaisuuden nimi"
+    "message": "Kopioi salaisuuden nimi",
+    "description": "Action to copy the name of a secret to the system's clipboard."
   },
   "copySecretValue": {
-    "message": "Kopioi salaisuuden arvo"
+    "message": "Kopioi salaisuuden arvo",
+    "description": "Action to copy the value of a secret to the system's clipboard."
   },
   "deleteSecret": {
-    "message": "Poista salaisuus"
+    "message": "Poista salaisuus",
+    "description": "Action to delete a single secret from the system."
   },
   "deleteSecrets": {
-    "message": "Poista salaisuudet"
+    "message": "Poista salaisuudet",
+    "description": "The action to delete multiple secrets from the system."
   },
   "hardDeleteSecret": {
     "message": "Poista salaisuus pysyvästi"
@@ -5737,106 +5742,143 @@
     "message": "Poista salaisuudet pysyvästi"
   },
   "secretProjectAssociationDescription": {
-    "message": "Valitse projektit, joihin salaisuus liitetään. Salaisuuden voivat nähdä vain ne organisaation käyttäjät, joilla on käyttöoikeudet näihin projekteihin."
+    "message": "Valitse projektit, joihin salaisuus liitetään. Salaisuuden voivat nähdä vain ne organisaation käyttäjät, joilla on käyttöoikeudet näihin projekteihin.",
+    "description": "A prompt explaining how secrets can be associated with projects."
   },
   "selectProjects": {
-    "message": "Valitse projektit"
+    "message": "Valitse projektit",
+    "description": "A label for a type-to-filter input field to choose projects."
+  },
+  "searchProjects": {
+    "message": "Etsi projekteista",
+    "description": "Label for the search bar used to search projects."
   },
   "project": {
-    "message": "Projekti"
+    "message": "Projekti",
+    "description": "Similar to collections, projects can be used to group secrets."
   },
   "editProject": {
-    "message": "Muokkaa projektia"
+    "message": "Muokkaa projektia",
+    "description": "The action to modify an existing project."
   },
   "viewProject": {
-    "message": "Näytä projekti"
+    "message": "Näytä projekti",
+    "description": "The action to view details of a project."
   },
   "deleteProject": {
-    "message": "Poista projekti"
+    "message": "Poista projekti",
+    "description": "The action to delete a project from the system."
   },
   "deleteProjects": {
-    "message": "Poista projektit"
+    "message": "Poista projektit",
+    "description": "The action to delete multiple projects from the system."
   },
   "secret": {
-    "message": "Salaisuus"
+    "message": "Salaisuus",
+    "description": "Label for a secret (key/value pair)"
   },
   "serviceAccount": {
-    "message": "Palvelutili"
+    "message": "Palvelutili",
+    "description": "A machine user which can be used to automate processes and access secrets in the system."
   },
   "serviceAccounts": {
-    "message": "Palvelutilit"
+    "message": "Palvelutilit",
+    "description": "The title for the section that deals with service accounts."
   },
   "secrets": {
-    "message": "Salaisuudet"
+    "message": "Salaisuudet",
+    "description": "The title for the section of the application that deals with secrets."
   },
   "nameValuePair": {
-    "message": "Nimi/arvopari"
+    "message": "Nimi/arvopari",
+    "description": "Title for a name/ value pair. Secrets typically consist of a name and value pair."
   },
   "secretEdited": {
-    "message": "Salaisuutta muokattiin"
+    "message": "Salaisuutta muokattiin",
+    "description": "Notification for the successful editing of a secret."
   },
   "secretCreated": {
-    "message": "Salaisuus luotiin"
+    "message": "Salaisuus luotiin",
+    "description": "Notification for the successful creation of a secret."
   },
   "newSecret": {
-    "message": "Uusi salaisuus"
+    "message": "Uusi salaisuus",
+    "description": "Title for creating a new secret."
   },
   "newServiceAccount": {
-    "message": "Uusi palvelutili"
+    "message": "Uusi palvelutili",
+    "description": "Title for creating a new service account."
   },
   "secretsNoItemsTitle": {
-    "message": "Näytettäviä salaisuuksia ei ole"
+    "message": "Näytettäviä salaisuuksia ei ole",
+    "description": "Empty state to indicate that there are no secrets to display."
   },
   "secretsNoItemsMessage": {
-    "message": "Aloita lisäämällä uusi salaisuus tai tuomalla niitä."
+    "message": "Aloita lisäämällä uusi salaisuus tai tuomalla niitä.",
+    "description": "Message to encourage the user to start adding secrets."
   },
   "secretsTrashNoItemsMessage": {
     "message": "Roskakorissa ei ole salaisuuksia."
   },
-  "serviceAccountsNoItemsTitle": {
-    "message": "Mitään näytettävää ei vielä ole"
-  },
   "serviceAccountsNoItemsMessage": {
-    "message": "Aloita salaisen käytön automatisointi luomalla uusi palvelutili."
+    "message": "Aloita salaisen käytön automatisointi luomalla uusi palvelutili.",
+    "description": "Message to encourage the user to start creating service accounts."
+  },
+  "serviceAccountsNoItemsTitle": {
+    "message": "Mitään näytettävää ei vielä ole",
+    "description": "Title to indicate that there are no service accounts to display."
   },
   "searchSecrets": {
-    "message": "Etsi salaisuuksista"
+    "message": "Etsi salaisuuksista",
+    "description": "Placeholder text for searching secrets."
   },
   "deleteServiceAccounts": {
-    "message": "Poista palvelutilit"
+    "message": "Poista palvelutilit",
+    "description": "Title for the action to delete one or multiple service accounts."
   },
   "deleteServiceAccount": {
-    "message": "Poista palvelutili"
+    "message": "Poista palvelutili",
+    "description": "Title for the action to delete a single service account."
   },
   "viewServiceAccount": {
-    "message": "Näytä palvelutili"
+    "message": "Näytä palvelutili",
+    "description": "Action to view the details of a service account."
   },
   "searchServiceAccounts": {
-    "message": "Etsi palvelutileistä"
+    "message": "Etsi palvelutileistä",
+    "description": "Placeholder text for searching service accounts."
   },
   "addProject": {
-    "message": "Lisää projekti"
+    "message": "Lisää projekti",
+    "description": "Title for creating a new project."
   },
   "projectEdited": {
-    "message": "Projektia muokattiin"
+    "message": "Projektia muokattiin",
+    "description": "Notification for the successful editing of a project."
   },
   "projectSaved": {
-    "message": "Projekti tallennettiin"
+    "message": "Projekti tallennettiin",
+    "description": "Notification for the successful saving of a project."
   },
   "projectCreated": {
-    "message": "Projekti luotiin"
+    "message": "Projekti luotiin",
+    "description": "Notification for the successful creation of a project."
   },
   "projectName": {
-    "message": "Projektin nimi"
+    "message": "Projektin nimi",
+    "description": "Label for entering the name of a project."
   },
   "newProject": {
-    "message": "Uusi projekti"
+    "message": "Uusi projekti",
+    "description": "Title for creating a new project."
   },
   "softDeleteSecretWarning": {
-    "message": "Salaisuuksien poisto voi vaikuttaa olemassa oleviin integrointeihin."
+    "message": "Salaisuuksien poisto voi vaikuttaa olemassa oleviin integrointeihin.",
+    "description": "Warns that deleting secrets can have consequences on integrations"
   },
   "softDeletesSuccessToast": {
-    "message": "Salaisuudet siirrettiin roskakoriin"
+    "message": "Salaisuudet siirrettiin roskakoriin",
+    "description": "Notifies that the selected secrets have been moved to the trash"
   },
   "hardDeleteSecretConfirmation": {
     "message": "Haluatko varmasti poistaa salaisuuden pysyvästi?"
@@ -5847,32 +5889,41 @@
   "hardDeletesSuccessToast": {
     "message": "Salaisuudet poistettiin pysyvästi"
   },
-  "serviceAccountCreated": {
-    "message": "Palvelutili luotiin"
-  },
   "smAccess": {
-    "message": "Käyttöoikeudet"
+    "message": "Käyttöoikeudet",
+    "description": "Title indicating what permissions a service account has"
   },
   "projectCommaSecret": {
-    "message": "Projekti, salaisuus"
+    "message": "Projekti, salaisuus",
+    "description": ""
   },
   "serviceAccountName": {
-    "message": "Palvelutilin nimi"
+    "message": "Palvelutilin nimi",
+    "description": "Label for the name of a service account"
+  },
+  "serviceAccountCreated": {
+    "message": "Palvelutili luotiin",
+    "description": "Notifies that a new service account has been created"
   },
   "newSaSelectAccess": {
-    "message": "Syötä tai valitse projekteja tai salaisuuksia"
+    "message": "Syötä tai valitse projekteja tai salaisuuksia",
+    "description": "Instructions for selecting projects or secrets for a new service account"
   },
   "newSaTypeToFilter": {
-    "message": "Suodata kirjoittamalla"
+    "message": "Suodata kirjoittamalla",
+    "description": "Instructions for filtering a list of projects or secrets"
   },
   "deleteProjectsToast": {
-    "message": "Projektit poistettiin"
+    "message": "Projektit poistettiin",
+    "description": "Notifies that the selected projects have been deleted"
   },
   "deleteProjectToast": {
-    "message": "Projekti ja kaikki siihen liittyvät salaisuudet poistettiin"
+    "message": "Projekti ja kaikki siihen liittyvät salaisuudet poistettiin",
+    "description": "Notifies that a project has been deleted"
   },
   "deleteProjectDialogMessage": {
     "message": "Projektin $PROJECT$ poisto on pysyvää, eikä sitä ole mahdollista perua.",
+    "description": "Informs users that projects are hard deleted and not sent to trash",
     "placeholders": {
       "project": {
         "content": "$1",
@@ -5882,6 +5933,7 @@
   },
   "deleteProjectInputLabel": {
     "message": "Jatka syöttämällä \"$CONFIRM$\"",
+    "description": "Users are prompted to type 'confirm' to delete a project",
     "placeholders": {
       "confirm": {
         "content": "$1",
@@ -5891,6 +5943,7 @@
   },
   "deleteProjectConfirmMessage": {
     "message": "Poista $PROJECT$",
+    "description": "Confirmation prompt to delete a specific project, where '$PROJECT$' is a placeholder for the name of the project.",
     "placeholders": {
       "project": {
         "content": "$1",
@@ -5900,6 +5953,7 @@
   },
   "deleteProjectsConfirmMessage": {
     "message": "Poista $COUNT$ projektia",
+    "description": "Confirmation prompt to delete multiple projects, where '$COUNT$' is a placeholder for the number of projects to be deleted.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -5908,73 +5962,91 @@
     }
   },
   "deleteProjectsDialogMessage": {
-    "message": "Projektien poisto on pysyvää, eikä sitä ole mahdollista perua."
+    "message": "Projektien poisto on pysyvää, eikä sitä ole mahdollista perua.",
+    "description": "This message is displayed in a dialog box as a warning before proceeding with project deletion."
   },
   "projectsNoItemsTitle": {
-    "message": "Näytettäviä projekteja ei ole"
+    "message": "Näytettäviä projekteja ei ole",
+    "description": "Empty state to be displayed when there are no projects to display in the list."
   },
   "projectsNoItemsMessage": {
-    "message": "Aloita salaisuuksien järjestely luomalla uusi projekti."
+    "message": "Aloita salaisuuksien järjestely luomalla uusi projekti.",
+    "description": "Message to be displayed when there are no projects to display in the list."
   },
   "smConfirmationRequired": {
-    "message": "Vahvistus vaaditaan"
+    "message": "Vahvistus vaaditaan",
+    "description": "Indicates that user confirmation is required for an action to proceed."
   },
   "bulkDeleteProjectsErrorMessage": {
-    "message": "Seuraavia projekteja ei voitu poistaa:"
+    "message": "Seuraavia projekteja ei voitu poistaa:",
+    "description": "Message to be displayed when there is an error during bulk project deletion."
   },
   "softDeleteSuccessToast": {
-    "message": "Salaisuus siirrettiin roskakoriin"
+    "message": "Salaisuus siirrettiin roskakoriin",
+    "description": "Notification to be displayed when a secret is successfully sent to the trash."
   },
   "hardDeleteSuccessToast": {
     "message": "Salaisuus poistettiin pysyvästi"
   },
-  "searchProjects": {
-    "message": "Etsi projekteista"
-  },
   "accessTokens": {
-    "message": "Käyttötunnisteet"
+    "message": "Käyttötunnisteet",
+    "description": "Title for the section displaying access tokens."
   },
   "createAccessToken": {
-    "message": "Luo käyttötunniste"
+    "message": "Luo käyttötunniste",
+    "description": "Button label for creating a new access token."
   },
   "expires": {
-    "message": "Erääntyy"
+    "message": "Erääntyy",
+    "description": "Label for the expiration date of an access token."
   },
   "canRead": {
-    "message": "Voi lukea"
+    "message": "Voi lukea",
+    "description": "Label for the access level of an access token (Read only)."
   },
   "accessTokensNoItemsTitle": {
-    "message": "Näytettäviä käyttötunnisteita ei ole"
+    "message": "Näytettäviä käyttötunnisteita ei ole",
+    "description": "Title to be displayed when there are no access tokens to display in the list."
   },
   "accessTokensNoItemsDesc": {
-    "message": "Aloita luomalla käyttötunniste"
+    "message": "Aloita luomalla käyttötunniste",
+    "description": "Message to be displayed when there are no access tokens to display in the list."
   },
   "downloadAccessToken": {
-    "message": "Lataa tai kopioi ennen sulkua."
+    "message": "Lataa tai kopioi ennen sulkua.",
+    "description": "Message to be displayed before closing an access token, reminding the user to download or copy it."
   },
   "expiresOnAccessToken": {
-    "message": "Erääntyy:"
+    "message": "Erääntyy:",
+    "description": "Label for the expiration date of an access token."
   },
   "accessTokenCallOutTitle": {
-    "message": "Käyttötunnisteita ei säilytetä, eikä niiden palautus ole mahdollista"
+    "message": "Käyttötunnisteita ei säilytetä, eikä niiden palautus ole mahdollista",
+    "description": "Notification to inform the user that access tokens are only displayed once and cannot be retrieved again."
   },
   "copyToken": {
-    "message": "Kopioi tunniste"
+    "message": "Kopioi tunniste",
+    "description": "Copies the generated access token to the user's clipboard."
   },
   "accessToken": {
-    "message": "Käyttötunniste"
+    "message": "Käyttötunniste",
+    "description": "A unique string that gives a client application (eg. CLI) access to a secret or set of secrets."
   },
   "accessTokenExpirationRequired": {
-    "message": "Erääntymisajankohta vaaditaan"
+    "message": "Erääntymisajankohta vaaditaan",
+    "description": "Error message indicating that an expiration date for the access token must be set."
   },
   "accessTokenCreatedAndCopied": {
-    "message": "Käyttötunniste luotiin ja kopioitiin leikepöydälle"
+    "message": "Käyttötunniste luotiin ja kopioitiin leikepöydälle",
+    "description": "Notification to inform the user that the access token has been created and copied to the clipboard."
   },
   "accessTokenPermissionsBetaNotification": {
-    "message": "Käyttöoikeushallinta ei ole käytettävissä beta-vaiheessa."
+    "message": "Käyttöoikeushallinta ei ole käytettävissä beta-vaiheessa.",
+    "description": "Notification to inform the user that the feature for managing access token permissions is not available in the beta version."
   },
   "revokeAccessToken": {
-    "message": "Mitätöi käyttötunniste"
+    "message": "Mitätöi käyttötunniste",
+    "description": "Invalidates / cancels an access token and as such removes access to secrets for the client application."
   },
   "revokeAccessTokens": {
     "message": "Mitätöi käyttötunnisteet"
@@ -6341,13 +6413,13 @@
     "message": "Tallenna lisenssi"
   },
   "projectPeopleDescription": {
-    "message": "Myönnä ryhmille tai henkilöille käyttöoikeudet tähän projektiin."
+    "message": "Myönnä ryhmille tai henkilöille tämän projektin käyttöoikeus."
   },
   "projectPeopleSelectHint": {
     "message": "Syötä tai valitse henkilöt tai ryhmät"
   },
   "projectServiceAccountsDescription": {
-    "message": "Myönnä palvelutileille käyttöoikeudet tähän projektiin."
+    "message": "Myönnä palvelutileille tämän projektin käyttöoikeus."
   },
   "projectServiceAccountsSelectHint": {
     "message": "Syötä tai valitse palvelutilit"
@@ -6358,8 +6430,14 @@
   "projectEmptyServiceAccountAccessPolicies": {
     "message": "Myönnä käyttöoikeuksia lisäämällä palvelutilejä"
   },
-  "canWrite": {
-    "message": "Voi kirjoittaa"
+  "serviceAccountPeopleDescription": {
+    "message": "Myönnä ryhmille tai henkilöille tämän palvelutilin käyttöoikeus."
+  },
+  "serviceAccountProjectsDescription": {
+    "message": "Määritä palvelutilille projekteja. "
+  },
+  "serviceAccountEmptyProjectAccesspolicies": {
+    "message": "Lisää projekteja käyttöoikeuksien myöntämiseksi"
   },
   "canReadWrite": {
     "message": "Voi lukea, kirjoittaa"
@@ -6415,6 +6493,19 @@
   },
   "errorReadingImportFile": {
     "message": "Tuontitiedostoa luettaessa tapahtui virhe."
+  },
+  "accessedSecret": {
+    "message": "Avasi salaisuuden $SECRET_ID$.",
+    "placeholders": {
+      "secret_id": {
+        "content": "$1",
+        "example": "4d34e8a8"
+      }
+    }
+  },
+  "sdk": {
+    "message": "SDK",
+    "description": "Software Development Kit"
   },
   "createSecret": {
     "message": "Luo salaisuus"
@@ -6510,5 +6601,8 @@
         "example": "14"
       }
     }
+  },
+  "dismiss": {
+    "message": "Hylkää"
   }
 }

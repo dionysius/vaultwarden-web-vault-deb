@@ -574,7 +574,7 @@
     "message": "Sind Sie sicher, dass Sie das aktuelle Passwort überschreiben möchten?"
   },
   "editedFolder": {
-    "message": "Ordner bearbeitet"
+    "message": "Ordner gespeichert"
   },
   "addedFolder": {
     "message": "Ordner hinzugefügt"
@@ -619,7 +619,7 @@
     "message": "Mit Gerät anmelden"
   },
   "loginWithDeviceEnabledInfo": {
-    "message": "Mit Gerät anmelden muss in den Einstellungen der Bitwarden Mobile App aktiviert sein. Brauchst du eine andere Möglichkeit?"
+    "message": "Mit Gerät anmelden muss in den Einstellungen der Bitwarden App eingerichtet werden. Benötigst du eine andere Option?"
   },
   "loginWithMasterPassword": {
     "message": "Mit Master-Passwort anmelden"
@@ -631,13 +631,13 @@
     "message": "Neu hier?"
   },
   "startTrial": {
-    "message": "Probephase starten"
+    "message": "Testversion starten"
   },
   "logIn": {
     "message": "Anmelden"
   },
   "logInInitiated": {
-    "message": "Anmeldung initiiert"
+    "message": "Anmeldung eingeleitet"
   },
   "submit": {
     "message": "Absenden"
@@ -658,7 +658,7 @@
     "message": "Das Master-Passwort wird verwendet, um den Tresor zu öffnen. Es ist sehr wichtig, dass Sie das Passwort nicht vergessen, da es keine Möglichkeit gibt es zurückzusetzen."
   },
   "masterPassImportant": {
-    "message": "Master-Passwörter können nicht wiederhergestellt werden, wenn du sie vergisst!"
+    "message": "Dein Master-Passwort kann nicht wiederhergestellt werden, wenn du es vergisst!"
   },
   "masterPassHintDesc": {
     "message": "Ein Master-Passwort-Hinweis kann Ihnen helfen, sich an das Passwort zu erinnern, wenn Sie es vergessen haben sollten."
@@ -713,7 +713,7 @@
     "message": "Ihr neues Konto wurde erstellt! Sie können sich jetzt anmelden."
   },
   "trialAccountCreated": {
-    "message": "Konto wurde erfolgreich erstellt."
+    "message": "Konto erfolgreich erstellt."
   },
   "masterPassSent": {
     "message": "Wir haben Ihnen eine E-Mail mit dem Master-Passwort-Hinweis zu gesendet."
@@ -1004,7 +1004,7 @@
     "message": "Verwende den Verschlüsselungscode deines Kontos, abgeleitet vom Benutzernamen und Master-Passwort, um den Export zu verschlüsseln und den Import auf das aktuelle Bitwarden-Konto zu beschränken."
   },
   "passwordProtectedOptionDescription": {
-    "message": "Lege ein Passwort fest, um den Export zu verschlüsseln und ihn in ein beliebiges Bitwarden-Konto zu importieren, wobei das Passwort zum Entschlüsseln genutzt wird."
+    "message": "Lege ein Dateipasswort fest, um den Export zu verschlüsseln und importiere ihn in ein beliebiges Bitwarden-Konto, wobei das Passwort zum Entschlüsseln genutzt wird."
   },
   "exportTypeHeading": {
     "message": "Exporttyp"
@@ -1311,7 +1311,7 @@
     "message": "Passe den Web-Tresor deinen Bedürfnissen an."
   },
   "preferencesUpdated": {
-    "message": "Einstellungen aktualisiert"
+    "message": "Einstellungen gespeichert"
   },
   "language": {
     "message": "Sprache"
@@ -1320,7 +1320,7 @@
     "message": "Ändern Sie die Sprache für den Web-Tresor."
   },
   "enableFavicon": {
-    "message": "Zeige Webseiten-Icons"
+    "message": "Webseiten-Icons anzeigen"
   },
   "faviconDesc": {
     "message": "Ein wiedererkennbares Bild neben jeden Zugangsdaten anzeigen."
@@ -1384,14 +1384,14 @@
     "message": "Sichern Sie Ihr Konto mit Zwei-Faktor-Authentifizierung."
   },
   "twoStepLoginOrganizationDescStart": {
-    "message": "Erzwinge Zwei-Faktor-Authentifizierung in Bitwarden für Mitglieder durch Verwendung der ",
+    "message": "Erzwinge eine Zwei-Faktor-Authentifizierung in Bitwarden für Mitglieder durch Verwendung der ",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enforce Bitwarden Two-step Login options for members by using the Two-step Login Policy.'"
   },
   "twoStepLoginPolicy": {
     "message": "Richtlinie für Zwei-Faktor-Authentifizierung"
   },
   "twoStepLoginOrganizationDuoDesc": {
-    "message": "Verwende die folgenden Optionen, um Zwei-Faktor-Authentifizierung über Duo zu erzwingen."
+    "message": "Verwende die folgenden Optionen, um eine Zwei-Faktor-Authentifizierung über Duo zu erzwingen."
   },
   "twoStepLoginOrganizationSsoDesc": {
     "message": "Wenn SSO eingerichtet oder dies geplant ist, wird die Zwei-Faktor-Authentifizierung möglicherweise bereits über den Identitätsanbieter erzwungen."
@@ -1839,7 +1839,7 @@
     "message": "Rechnung"
   },
   "billingPlanLabel": {
-    "message": "Abrechnungsplan"
+    "message": "Rechnungsplan"
   },
   "paymentType": {
     "message": "Zahlungsart"
@@ -1874,7 +1874,7 @@
     "description": "Another way of saying \"Get a Premium membership\""
   },
   "premiumUpdated": {
-    "message": "Sie haben ein Premium-Abo aktiviert."
+    "message": "Du hast ein Premium-Abo aktiviert."
   },
   "premiumUpgradeUnlockFeatures": {
     "message": "Mache ein Upgrade deines Kontos auf eine Premium-Mitgliedschaft, um zusätzliche, großartige Funktionen freizuschalten."
@@ -2060,9 +2060,6 @@
   },
   "updateLicense": {
     "message": "Lizenz aktualisieren"
-  },
-  "updatedLicense": {
-    "message": "Aktualisierte Lizenz"
   },
   "manageSubscription": {
     "message": "Abo verwalten"
@@ -2475,7 +2472,7 @@
     "message": "Sind Sie sich sicher, dass Sie diesen Benutzer löschen wollen?"
   },
   "removeOrgUserConfirmation": {
-    "message": "Wenn ein Mitglied entfernt wurde, hat es keinen Zugriff mehr auf die Organisationsdaten und diese Aktion ist unumkehrbar. Um das Mitglied wieder zur Organisation hinzuzufügen, muss es erneut eingeladen und eingebunden werden."
+    "message": "Wenn ein Mitglied entfernt wurde, hat es keinen Zugriff mehr auf die Organisationsdaten und diese Aktion ist unwiderruflich. Um das Mitglied wieder zur Organisation hinzuzufügen, muss es erneut eingeladen und eingebunden werden."
   },
   "revokeUserConfirmation": {
     "message": "Wenn ein Mitglied widerrufen wurde, hat es keinen Zugriff mehr auf Organisationsdaten. Um den Mitgliederzugriff schnell wiederherzustellen, gehe zum Widerrufen-Tab."
@@ -3171,7 +3168,7 @@
     }
   },
   "deletingOrganizationActiveUserAccountsWarning": {
-    "message": "Die Benutzerkonten bleiben nach dem Löschen aktiv, sind aber nicht mehr mit dieser Organisation verknüpft."
+    "message": "Die Benutzerkonten bleiben nach dem Löschen aktiv, werden aber nicht mehr mit dieser Organisation verknüpft."
   },
   "deletingOrganizationIsPermanentWarning": {
     "message": "Das Löschen von $ORGANIZATION$ ist dauerhaft und unwiderruflich.",
@@ -3706,10 +3703,10 @@
     "message": "Aktion bei Tresor-Timeout"
   },
   "vaultTimeoutActionLockDesc": {
-    "message": "Ein gesperrter Tresor erfordert die Eingabe des Master-Passworts, um erneut darauf zugreifen zu können."
+    "message": "Um wieder auf deinen Tresor zugreifen zu können, ist dein Master-Passwort oder eine andere Entsperr-Methode erforderlich."
   },
   "vaultTimeoutActionLogOutDesc": {
-    "message": "Ein ausgeloggter Tresor erfordert eine Neu-Authentifizierung, um erneut darauf zugreifen zu können."
+    "message": "Um wieder auf deinen Tresor zugreifen zu können, ist eine erneute Authentifizierung erforderlich."
   },
   "lock": {
     "message": "Sperren",
@@ -3834,7 +3831,7 @@
     "message": "Über den Single Sign-on Ihrer Organisation anmelden. Bitte geben Sie Ihre Organisationskennung an, um zu beginnen."
   },
   "enterpriseSingleSignOn": {
-    "message": "Enterprise Single Sign-On"
+    "message": "Enterprise Single-Sign-On"
   },
   "ssoHandOff": {
     "message": "Sie können diesen Tab nun schließen und in der Erweiterung fortfahren."
@@ -3885,7 +3882,7 @@
     "message": "Single Sign-On Authentifizierung"
   },
   "requireSsoPolicyDesc": {
-    "message": "Benutzer müssen sich per Enterprise Single Sign-On anmelden."
+    "message": "Mitglieder müssen sich per Enterprise Single-Sign-On anmelden."
   },
   "prerequisite": {
     "message": "Voraussetzung"
@@ -4604,7 +4601,7 @@
     "message": "Bist du sicher, dass du die folgenden Benutzer entfernen möchtest? Der Prozess kann einige Sekunden dauern und kann nicht unterbrochen oder abgebrochen werden."
   },
   "removeOrgUsersConfirmation": {
-    "message": "Wenn Mitglieder entfernt werden, haben sie keinen Zugriff mehr auf Organisationsdaten und diese Aktion ist unumkehrbar. Um das Mitglied wieder zur Organisation hinzuzufügen, muss es erneut eingeladen und eingebunden werden. Der Prozess kann einige Sekunden dauern und kann nicht unterbrochen oder abgebrochen werden."
+    "message": "Wenn Mitglieder entfernt werden, haben sie keinen Zugriff mehr auf Organisationsdaten und diese Aktion ist unwideruflich. Um das Mitglied wieder zur Organisation hinzuzufügen, muss es erneut eingeladen und eingebunden werden. Der Prozess kann einige Sekunden dauern und kann nicht unterbrochen oder abgebrochen werden."
   },
   "revokeUsersWarning": {
     "message": "Wenn Mitglieder widerrufen werden, haben sie keinen Zugriff mehr auf Organisationsdaten. Um den Mitgliederzugriff schnell wiederherzustellen, gehe zum Widerrufen-Tab. Der Prozess kann einige Sekunden dauern und kann nicht unterbrochen oder abgebrochen werden."
@@ -4640,7 +4637,7 @@
     "message": "Erfolgreich entfernt"
   },
   "bulkRevokedMessage": {
-    "message": "Zugriff auf die Organisation erfolgreich zurückgezogen"
+    "message": "Zugriff auf die Organisation erfolgreich widerrufen"
   },
   "bulkRestoredMessage": {
     "message": "Zugriff auf die Organisation erfolgreich wiederhergestellt"
@@ -5222,7 +5219,7 @@
     "message": "Kopiere dieses Token und füge es in die Rechnungssynchronisations-Einstellungen deiner selbst gehosteten Organisation ein."
   },
   "billingSyncCanAccess": {
-    "message": "Dein Rechnungssynchronisations-Token kann auf die Abonnement-Einstellungen dieser Organisation zugreifen und diese bearbeiten."
+    "message": "Dein Rechnungssynchronisations-Token kann auf die Abo-Einstellungen dieser Organisation zugreifen und diese bearbeiten."
   },
   "manageBillingSync": {
     "message": "Rechnungssynchronisation verwalten"
@@ -5240,7 +5237,7 @@
     "message": "Wenn du fortfährt, musst du die Rechnungssynchronisation auf deinem selbst gehosteten Server neu einrichten."
   },
   "rotateBillingSyncTokenTitle": {
-    "message": "Durch Erneuerung des Rechnungssynchroniserungs-Token wird der vorherige Token ungültig."
+    "message": "Durch Erneuerung des Rechnungssynchronisierungs-Tokens wird der vorherige Token ungültig."
   },
   "selfHostingTitle": {
     "message": "Selbst gehostet"
@@ -5252,7 +5249,7 @@
     "message": "Token erneuert"
   },
   "billingSyncDesc": {
-    "message": "Die Rechnungssynchronisation bietet ein kostenloses Familien-Abo für Mitglieder und erweiterte Abrechnungsmöglichkeiten, indem du dein selbst gehostetes Bitwarden mit dem Bitwarden Cloud-Server verbindest."
+    "message": "Die Rechnungssynchronisation schaltet Patenschaften für Familien und eine automatische Lizenz-Synchronisation auf deinem Server frei. Nach der Aktualisierung des Bitwarden Cloud-Servers, wähle Lizenz synchronisieren aus, um die Änderungen anzuwenden."
   },
   "billingSyncKeyDesc": {
     "message": "Um dieses Formular auszufüllen, ist ein Rechnungssynchronisations-Token aus den Abo-Einstellungen deiner Cloud-Organisation erforderlich."
@@ -5267,13 +5264,13 @@
     "message": "Inaktiv"
   },
   "sentAwaitingSync": {
-    "message": "Gesendet (Warte auf Synchronisation)"
+    "message": "Gesendet (warte auf Synchronisierung)"
   },
   "sent": {
     "message": "Gesendet"
   },
   "requestRemoved": {
-    "message": "Entfernt (Warte auf Synchronisation)"
+    "message": "Entfernt (warte auf Synchronisierung)"
   },
   "requested": {
     "message": "Angefragt"
@@ -5324,10 +5321,10 @@
     "message": "Mehrere mit einem Komma trennen."
   },
   "sessionTimeout": {
-    "message": "Deine Sitzung ist abgelaufen. Bitte gehe zurück und versuche dich erneut einzuloggen."
+    "message": "Deine Sitzung ist abgelaufen. Bitte gehe zurück und versuche dich erneut anzumelden."
   },
   "exportingPersonalVaultTitle": {
-    "message": "Einzelnen Tresor exportieren"
+    "message": "Persönlichen Tresor exportieren"
   },
   "exportingOrganizationVaultTitle": {
     "message": "Tresor der Organisation exportieren"
@@ -5351,7 +5348,7 @@
     }
   },
   "accessDenied": {
-    "message": "Zugriff verweigert. Du hast keine Berechtigung, um diese Seite anzuzeigen."
+    "message": "Zugriff verweigert. Du hast keine Berechtigung, diese Seite anzuzeigen."
   },
   "masterPassword": {
     "message": "Master-Passwort"
@@ -5394,20 +5391,20 @@
     "message": "Benutzernamen generieren"
   },
   "usernameType": {
-    "message": "Benutzernamentyp"
+    "message": "Benutzernamenstyp"
   },
   "plusAddressedEmail": {
-    "message": "Mit Plus adressierte E-Mail",
+    "message": "Mit Plus adressierte E-Mail-Adresse",
     "description": "Username generator option that appends a random sub-address to the username. For example: address+subaddress@email.com"
   },
   "plusAddressedEmailDesc": {
     "message": "Verwende die Unteradressierungsmöglichkeiten deines E-Mail-Providers."
   },
   "catchallEmail": {
-    "message": "Catch-all-E-Mail-Adresse"
+    "message": "Catch-All E-Mail-Adresse"
   },
   "catchallEmailDesc": {
-    "message": "Verwenden Sie den konfigurierten Catch-All-Posteingang Ihrer Domain."
+    "message": "Verwenden den konfigurierten Catch-All-Posteingang deiner Domain."
   },
   "random": {
     "message": "Zufällig",
@@ -5420,7 +5417,7 @@
     "message": "Dienst"
   },
   "unknownCipher": {
-    "message": "Unbekannter Eintrag, du musst dich möglicherweise mit einem anderen Konto anmelden, um auf diesen Eintrag zuzugreifen."
+    "message": "Unbekannter Eintrag. Du musst möglicherweise eine Berechtigung anfordern, um auf diesen Eintrag zuzugreifen."
   },
   "cannotSponsorSelf": {
     "message": "Du kannst nicht für das aktive Konto einlösen. Gebe eine andere E-Mail ein."
@@ -5492,13 +5489,13 @@
     "message": "Aktiviere Geräteverifizierung"
   },
   "deviceVerificationDesc": {
-    "message": "Falls aktiviert, werden Verifizierungscodes an deine E-Mail-Adresse gesendet, wenn du dich von einem unbekannten Gerät einloggst"
+    "message": "Verifizierungscodes werden an deine E-Mail-Adresse gesendet, wenn du dich von einem unbekannten Gerät einloggst"
   },
   "updatedDeviceVerification": {
     "message": "Aktualisierte Geräteverifizierung"
   },
   "areYouSureYouWantToEnableDeviceVerificationTheVerificationCodeEmailsWillArriveAtX": {
-    "message": "Bist du sicher, dass du die Geräteverifizierung aktivieren möchtest? Der Verifizierungsscode wird an folgende E-Mails versendet: $EMAIL$",
+    "message": "Bist du sicher, dass du die Geräteverifizierung aktivieren möchtest? Die Verifizierungsscodes werden an folgende E-Mail-Adresse versendet: $EMAIL$",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -5533,7 +5530,7 @@
     "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
   },
   "rotateScimKey": {
-    "message": "Den SCIM-API-Schlüssel erneuern",
+    "message": "Den SCIM API-Schlüssel erneuern",
     "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
   },
   "rotateScimKeyWarning": {
@@ -5552,7 +5549,7 @@
     "description": "the text, 'SCIM' and 'URL', are acronymns and should not be translated."
   },
   "scimUrl": {
-    "message": "SCIM-URL",
+    "message": "SCIM URL",
     "description": "the text, 'SCIM' and 'URL', are acronymns and should not be translated."
   },
   "scimApiKeyRotated": {
@@ -5636,7 +5633,7 @@
     "message": "Anzahl der Benutzer"
   },
   "loggingInAs": {
-    "message": "Einloggen als"
+    "message": "Anmelden als"
   },
   "notYou": {
     "message": "Nicht du?"
@@ -5684,7 +5681,7 @@
     "message": "-- Auswählen --"
   },
   "multiSelectPlaceholder": {
-    "message": "-- Typ zum Filtern --"
+    "message": "-- Schreiben zum Filtern --"
   },
   "multiSelectLoading": {
     "message": "Optionen werden abgerufen..."
@@ -5707,28 +5704,36 @@
     "message": "Ausblenden"
   },
   "projects": {
-    "message": "Projekte"
+    "message": "Projekte",
+    "description": "Description for the Projects field."
   },
   "lastEdited": {
-    "message": "Zuletzt bearbeitet"
+    "message": "Zuletzt bearbeitet",
+    "description": "The label for the date and time when a item was last edited."
   },
   "editSecret": {
-    "message": "Geheimnis bearbeiten"
+    "message": "Geheimnis bearbeiten",
+    "description": "Action to modify an existing secret."
   },
   "addSecret": {
-    "message": "Geheimnis hinzufügen"
+    "message": "Geheimnis hinzufügen",
+    "description": "Action to create a new secret."
   },
   "copySecretName": {
-    "message": "Geheimnamen kopieren"
+    "message": "Geheimnamen kopieren",
+    "description": "Action to copy the name of a secret to the system's clipboard."
   },
   "copySecretValue": {
-    "message": "Geheimen Wert kopieren"
+    "message": "Geheimen Wert kopieren",
+    "description": "Action to copy the value of a secret to the system's clipboard."
   },
   "deleteSecret": {
-    "message": "Geheimnis löschen"
+    "message": "Geheimnis löschen",
+    "description": "Action to delete a single secret from the system."
   },
   "deleteSecrets": {
-    "message": "Geheimnisse löschen"
+    "message": "Geheimnisse löschen",
+    "description": "The action to delete multiple secrets from the system."
   },
   "hardDeleteSecret": {
     "message": "Geheimnis dauerhaft löschen"
@@ -5737,106 +5742,143 @@
     "message": "Geheimnisse dauerhaft löschen"
   },
   "secretProjectAssociationDescription": {
-    "message": "Wähle Projekte aus, denen das Geheimnis zugeordnet werden soll. Nur Organisationsbenutzer mit Zugriff auf diese Projekte können das Geheimnis sehen."
+    "message": "Wähle Projekte aus, denen das Geheimnis zugeordnet werden soll. Nur Organisationsbenutzer mit Zugriff auf diese Projekte können das Geheimnis sehen.",
+    "description": "A prompt explaining how secrets can be associated with projects."
   },
   "selectProjects": {
-    "message": "Projekte auswählen"
+    "message": "Projekte auswählen",
+    "description": "A label for a type-to-filter input field to choose projects."
+  },
+  "searchProjects": {
+    "message": "Projekte suchen",
+    "description": "Label for the search bar used to search projects."
   },
   "project": {
-    "message": "Projekt"
+    "message": "Projekt",
+    "description": "Similar to collections, projects can be used to group secrets."
   },
   "editProject": {
-    "message": "Projekt bearbeiten"
+    "message": "Projekt bearbeiten",
+    "description": "The action to modify an existing project."
   },
   "viewProject": {
-    "message": "Projekt anzeigen"
+    "message": "Projekt anzeigen",
+    "description": "The action to view details of a project."
   },
   "deleteProject": {
-    "message": "Projekt löschen"
+    "message": "Projekt löschen",
+    "description": "The action to delete a project from the system."
   },
   "deleteProjects": {
-    "message": "Projekte löschen"
+    "message": "Projekte löschen",
+    "description": "The action to delete multiple projects from the system."
   },
   "secret": {
-    "message": "Geheimnis"
+    "message": "Geheimnis",
+    "description": "Label for a secret (key/value pair)"
   },
   "serviceAccount": {
-    "message": "Dienstkonto"
+    "message": "Dienstkonto",
+    "description": "A machine user which can be used to automate processes and access secrets in the system."
   },
   "serviceAccounts": {
-    "message": "Dienstkonten"
+    "message": "Dienstkonten",
+    "description": "The title for the section that deals with service accounts."
   },
   "secrets": {
-    "message": "Geheimnisse"
+    "message": "Geheimnisse",
+    "description": "The title for the section of the application that deals with secrets."
   },
   "nameValuePair": {
-    "message": "Name/Wert-Paar"
+    "message": "Name/Wert-Paar",
+    "description": "Title for a name/ value pair. Secrets typically consist of a name and value pair."
   },
   "secretEdited": {
-    "message": "Geheimnis bearbeitet"
+    "message": "Geheimnis bearbeitet",
+    "description": "Notification for the successful editing of a secret."
   },
   "secretCreated": {
-    "message": "Geheimnis erstellt"
+    "message": "Geheimnis erstellt",
+    "description": "Notification for the successful creation of a secret."
   },
   "newSecret": {
-    "message": "Neues Geheimnis"
+    "message": "Neues Geheimnis",
+    "description": "Title for creating a new secret."
   },
   "newServiceAccount": {
-    "message": "Neues Dienstkonto"
+    "message": "Neues Dienstkonto",
+    "description": "Title for creating a new service account."
   },
   "secretsNoItemsTitle": {
-    "message": "Keine Geheimnisse zum Anzeigen"
+    "message": "Keine Geheimnisse zum Anzeigen",
+    "description": "Empty state to indicate that there are no secrets to display."
   },
   "secretsNoItemsMessage": {
-    "message": "Um loszulegen, füge ein neues Geheimnis hinzu oder importiere Geheimnisse."
+    "message": "Um loszulegen, füge ein neues Geheimnis hinzu oder importiere Geheimnisse.",
+    "description": "Message to encourage the user to start adding secrets."
   },
   "secretsTrashNoItemsMessage": {
     "message": "Es gibt keine Geheimnisse im Papierkorb."
   },
-  "serviceAccountsNoItemsTitle": {
-    "message": "Hier gibt es noch nichts"
-  },
   "serviceAccountsNoItemsMessage": {
-    "message": "Erstelle ein neues Dienstkonto, um mit der Automation für Zugriffe auf Geheimnisse zu beginnen."
+    "message": "Erstelle ein neues Dienstkonto, um mit der Automation für Zugriffe auf Geheimnisse zu beginnen.",
+    "description": "Message to encourage the user to start creating service accounts."
+  },
+  "serviceAccountsNoItemsTitle": {
+    "message": "Hier gibt es noch nichts",
+    "description": "Title to indicate that there are no service accounts to display."
   },
   "searchSecrets": {
-    "message": "Geheimnisse durchsuchen"
+    "message": "Geheimnisse durchsuchen",
+    "description": "Placeholder text for searching secrets."
   },
   "deleteServiceAccounts": {
-    "message": "Dienstkonten löschen"
+    "message": "Dienstkonten löschen",
+    "description": "Title for the action to delete one or multiple service accounts."
   },
   "deleteServiceAccount": {
-    "message": "Dienstkonto löschen"
+    "message": "Dienstkonto löschen",
+    "description": "Title for the action to delete a single service account."
   },
   "viewServiceAccount": {
-    "message": "Dienstkonto anzeigen"
+    "message": "Dienstkonto anzeigen",
+    "description": "Action to view the details of a service account."
   },
   "searchServiceAccounts": {
-    "message": "Dienstkonten durchsuchen"
+    "message": "Dienstkonten suchen",
+    "description": "Placeholder text for searching service accounts."
   },
   "addProject": {
-    "message": "Projekt hinzufügen"
+    "message": "Projekt hinzufügen",
+    "description": "Title for creating a new project."
   },
   "projectEdited": {
-    "message": "Projekt bearbeitet"
+    "message": "Projekt bearbeitet",
+    "description": "Notification for the successful editing of a project."
   },
   "projectSaved": {
-    "message": "Projekt gespeichert"
+    "message": "Projekt gespeichert",
+    "description": "Notification for the successful saving of a project."
   },
   "projectCreated": {
-    "message": "Projekt erstellt"
+    "message": "Projekt erstellt",
+    "description": "Notification for the successful creation of a project."
   },
   "projectName": {
-    "message": "Projektname"
+    "message": "Projektname",
+    "description": "Label for entering the name of a project."
   },
   "newProject": {
-    "message": "Neues Projekt"
+    "message": "Neues Projekt",
+    "description": "Title for creating a new project."
   },
   "softDeleteSecretWarning": {
-    "message": "Das Löschen von Geheimnissen kann bestehende Integrationen beeinflussen."
+    "message": "Das Löschen von Geheimnissen kann bestehende Integrationen beeinflussen.",
+    "description": "Warns that deleting secrets can have consequences on integrations"
   },
   "softDeletesSuccessToast": {
-    "message": "Geheimnisse in Papierkorb verschoben"
+    "message": "Geheimnisse in Papierkorb verschoben",
+    "description": "Notifies that the selected secrets have been moved to the trash"
   },
   "hardDeleteSecretConfirmation": {
     "message": "Bist du sicher, dass du dieses Geheimnis dauerhaft löschen möchtest?"
@@ -5847,32 +5889,41 @@
   "hardDeletesSuccessToast": {
     "message": "Geheimnisse dauerhaft gelöscht"
   },
-  "serviceAccountCreated": {
-    "message": "Dienstkonto erstellt"
-  },
   "smAccess": {
-    "message": "Zugriff"
+    "message": "Zugriff",
+    "description": "Title indicating what permissions a service account has"
   },
   "projectCommaSecret": {
-    "message": "Projekt, Geheimnis"
+    "message": "Projekt, Geheimnis",
+    "description": ""
   },
   "serviceAccountName": {
-    "message": "Name des Dienstkontos"
+    "message": "Name des Dienstkontos",
+    "description": "Label for the name of a service account"
+  },
+  "serviceAccountCreated": {
+    "message": "Dienstkonto erstellt",
+    "description": "Notifies that a new service account has been created"
   },
   "newSaSelectAccess": {
-    "message": "Projektnamen oder Geheimnisse eingeben oder auswählen"
+    "message": "Projektnamen oder Geheimnisse eingeben oder auswählen",
+    "description": "Instructions for selecting projects or secrets for a new service account"
   },
   "newSaTypeToFilter": {
-    "message": "Schreiben, um zu filtern"
+    "message": "Schreiben, um zu filtern",
+    "description": "Instructions for filtering a list of projects or secrets"
   },
   "deleteProjectsToast": {
-    "message": "Projekte gelöscht"
+    "message": "Projekte gelöscht",
+    "description": "Notifies that the selected projects have been deleted"
   },
   "deleteProjectToast": {
-    "message": "Das Projekt und alle zugehörigen Geheimnisse wurden gelöscht"
+    "message": "Das Projekt und alle zugehörigen Geheimnisse wurden gelöscht",
+    "description": "Notifies that a project has been deleted"
   },
   "deleteProjectDialogMessage": {
     "message": "Das Löschen des Projekts $PROJECT$ ist dauerhaft und unwiderruflich.",
+    "description": "Informs users that projects are hard deleted and not sent to trash",
     "placeholders": {
       "project": {
         "content": "$1",
@@ -5882,6 +5933,7 @@
   },
   "deleteProjectInputLabel": {
     "message": "Gebe \"$CONFIRM$\" ein, um fortzufahren",
+    "description": "Users are prompted to type 'confirm' to delete a project",
     "placeholders": {
       "confirm": {
         "content": "$1",
@@ -5891,6 +5943,7 @@
   },
   "deleteProjectConfirmMessage": {
     "message": "$PROJECT$ löschen",
+    "description": "Confirmation prompt to delete a specific project, where '$PROJECT$' is a placeholder for the name of the project.",
     "placeholders": {
       "project": {
         "content": "$1",
@@ -5900,6 +5953,7 @@
   },
   "deleteProjectsConfirmMessage": {
     "message": "$COUNT$ Projekte löschen",
+    "description": "Confirmation prompt to delete multiple projects, where '$COUNT$' is a placeholder for the number of projects to be deleted.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -5908,73 +5962,91 @@
     }
   },
   "deleteProjectsDialogMessage": {
-    "message": "Das Löschen von Projekten ist dauerhaft und unwiderruflich."
+    "message": "Das Löschen von Projekten ist dauerhaft und unwiderruflich.",
+    "description": "This message is displayed in a dialog box as a warning before proceeding with project deletion."
   },
   "projectsNoItemsTitle": {
-    "message": "Keine Projekte zum Anzeigen"
+    "message": "Keine Projekte zum Anzeigen",
+    "description": "Empty state to be displayed when there are no projects to display in the list."
   },
   "projectsNoItemsMessage": {
-    "message": "Füge ein neues Projekt hinzu, um mit der Organisation von Geheimnissen zu beginnen."
+    "message": "Füge ein neues Projekt hinzu, um mit der Organisation von Geheimnissen zu beginnen.",
+    "description": "Message to be displayed when there are no projects to display in the list."
   },
   "smConfirmationRequired": {
-    "message": "Bestätigung erforderlich"
+    "message": "Bestätigung erforderlich",
+    "description": "Indicates that user confirmation is required for an action to proceed."
   },
   "bulkDeleteProjectsErrorMessage": {
-    "message": "Die folgenden Projekte konnten nicht gelöscht werden:"
+    "message": "Die folgenden Projekte konnten nicht gelöscht werden:",
+    "description": "Message to be displayed when there is an error during bulk project deletion."
   },
   "softDeleteSuccessToast": {
-    "message": "Geheimnis in Papierkorb verschoben"
+    "message": "Geheimnis in Papierkorb verschoben",
+    "description": "Notification to be displayed when a secret is successfully sent to the trash."
   },
   "hardDeleteSuccessToast": {
     "message": "Geheimnis dauerhaft gelöscht"
   },
-  "searchProjects": {
-    "message": "Projekte durchsuchen"
-  },
   "accessTokens": {
-    "message": "Zugriffstokens"
+    "message": "Zugriffstokens",
+    "description": "Title for the section displaying access tokens."
   },
   "createAccessToken": {
-    "message": "Zugriffstoken erstellen"
+    "message": "Zugriffstoken erstellen",
+    "description": "Button label for creating a new access token."
   },
   "expires": {
-    "message": "Läuft ab"
+    "message": "Läuft ab",
+    "description": "Label for the expiration date of an access token."
   },
   "canRead": {
-    "message": "Kann lesen"
+    "message": "Kann lesen",
+    "description": "Label for the access level of an access token (Read only)."
   },
   "accessTokensNoItemsTitle": {
-    "message": "Keine Zugriffstoken zum Anzeigen"
+    "message": "Keine Zugriffstoken zum Anzeigen",
+    "description": "Title to be displayed when there are no access tokens to display in the list."
   },
   "accessTokensNoItemsDesc": {
-    "message": "Um loszulegen, erstelle ein Zugriffstoken"
+    "message": "Um loszulegen, erstelle ein Zugriffstoken",
+    "description": "Message to be displayed when there are no access tokens to display in the list."
   },
   "downloadAccessToken": {
-    "message": "Vor dem Schließen herunterladen oder kopieren."
+    "message": "Vor dem Schließen herunterladen oder kopieren.",
+    "description": "Message to be displayed before closing an access token, reminding the user to download or copy it."
   },
   "expiresOnAccessToken": {
-    "message": "Läuft ab am:"
+    "message": "Läuft ab am:",
+    "description": "Label for the expiration date of an access token."
   },
   "accessTokenCallOutTitle": {
-    "message": "Zugriffstoken sind nicht gespeichert und können nicht abgerufen werden"
+    "message": "Zugriffstoken sind nicht gespeichert und können nicht abgerufen werden",
+    "description": "Notification to inform the user that access tokens are only displayed once and cannot be retrieved again."
   },
   "copyToken": {
-    "message": "Token kopieren"
+    "message": "Token kopieren",
+    "description": "Copies the generated access token to the user's clipboard."
   },
   "accessToken": {
-    "message": "Zugriffstoken"
+    "message": "Zugriffstoken",
+    "description": "A unique string that gives a client application (eg. CLI) access to a secret or set of secrets."
   },
   "accessTokenExpirationRequired": {
-    "message": "Ablaufdatum erforderlich"
+    "message": "Ablaufdatum erforderlich",
+    "description": "Error message indicating that an expiration date for the access token must be set."
   },
   "accessTokenCreatedAndCopied": {
-    "message": "Zugriffstoken erstellt und in Zwischenablage kopiert"
+    "message": "Zugriffstoken erstellt und in Zwischenablage kopiert",
+    "description": "Notification to inform the user that the access token has been created and copied to the clipboard."
   },
   "accessTokenPermissionsBetaNotification": {
-    "message": "Die Berechtigungsverwaltung ist in der Beta nicht verfügbar."
+    "message": "Die Berechtigungsverwaltung ist in der Beta nicht verfügbar.",
+    "description": "Notification to inform the user that the feature for managing access token permissions is not available in the beta version."
   },
   "revokeAccessToken": {
-    "message": "Zugriffstoken widerrufen"
+    "message": "Zugriffstoken widerrufen",
+    "description": "Invalidates / cancels an access token and as such removes access to secrets for the client application."
   },
   "revokeAccessTokens": {
     "message": "Zugriffstokens widerrufen"
@@ -6358,8 +6430,14 @@
   "projectEmptyServiceAccountAccessPolicies": {
     "message": "Dienstkonten hinzufügen, um Zugriff zu gewähren"
   },
-  "canWrite": {
-    "message": "Kann schreiben"
+  "serviceAccountPeopleDescription": {
+    "message": "Gruppen oder Personen Zugriff auf dieses Dienstkonto gewähren."
+  },
+  "serviceAccountProjectsDescription": {
+    "message": "Diesem Dienstkonto Projekte zuweisen. "
+  },
+  "serviceAccountEmptyProjectAccesspolicies": {
+    "message": "Projekte hinzufügen, um Zugriff zu gewähren"
   },
   "canReadWrite": {
     "message": "Kann lesen, schreiben"
@@ -6416,17 +6494,30 @@
   "errorReadingImportFile": {
     "message": "Beim Lesen der Importdatei ist ein Fehler aufgetreten"
   },
+  "accessedSecret": {
+    "message": "Auf Geheimnis $SECRET_ID$ zugegriffen.",
+    "placeholders": {
+      "secret_id": {
+        "content": "$1",
+        "example": "4d34e8a8"
+      }
+    }
+  },
+  "sdk": {
+    "message": "SDK",
+    "description": "Software Development Kit"
+  },
   "createSecret": {
-    "message": "Ein Geheimnis erstellen"
+    "message": "Geheimnis erstellen"
   },
   "createProject": {
-    "message": "Ein Projekt erstellen"
+    "message": "Projekt erstellen"
   },
   "createServiceAccount": {
-    "message": "Ein Dienstkonto erstellen"
+    "message": "Dienstkonto erstellen"
   },
   "downloadThe": {
-    "message": "Download the",
+    "message": "Download von",
     "description": "Link to a downloadable resource. This will be used as part of a larger phrase. Example: Download the Secrets Manager CLI"
   },
   "smCLI": {
@@ -6510,5 +6601,8 @@
         "example": "14"
       }
     }
+  },
+  "dismiss": {
+    "message": "Dismiss"
   }
 }

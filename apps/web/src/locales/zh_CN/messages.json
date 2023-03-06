@@ -2061,9 +2061,6 @@
   "updateLicense": {
     "message": "更新许可证"
   },
-  "updatedLicense": {
-    "message": "许可证已更新"
-  },
   "manageSubscription": {
     "message": "管理订阅"
   },
@@ -5681,7 +5678,7 @@
     "message": "自定义颜色"
   },
   "selectPlaceholder": {
-    "message": "-- Select --"
+    "message": "-- 选择 --"
   },
   "multiSelectPlaceholder": {
     "message": "-- 键入以筛选 --"
@@ -5707,28 +5704,36 @@
     "message": "隐藏"
   },
   "projects": {
-    "message": "项目"
+    "message": "项目",
+    "description": "Description for the Projects field."
   },
   "lastEdited": {
-    "message": "上次编辑时间"
+    "message": "上次编辑时间",
+    "description": "The label for the date and time when a item was last edited."
   },
   "editSecret": {
-    "message": "编辑机密"
+    "message": "编辑机密",
+    "description": "Action to modify an existing secret."
   },
   "addSecret": {
-    "message": "添加机密"
+    "message": "添加机密",
+    "description": "Action to create a new secret."
   },
   "copySecretName": {
-    "message": "复制机密名称"
+    "message": "复制机密名称",
+    "description": "Action to copy the name of a secret to the system's clipboard."
   },
   "copySecretValue": {
-    "message": "复制机密值"
+    "message": "复制机密值",
+    "description": "Action to copy the value of a secret to the system's clipboard."
   },
   "deleteSecret": {
-    "message": "删除机密"
+    "message": "删除机密",
+    "description": "Action to delete a single secret from the system."
   },
   "deleteSecrets": {
-    "message": "删除机密"
+    "message": "删除机密",
+    "description": "The action to delete multiple secrets from the system."
   },
   "hardDeleteSecret": {
     "message": "Permanently delete secret"
@@ -5737,106 +5742,143 @@
     "message": "Permanently delete secrets"
   },
   "secretProjectAssociationDescription": {
-    "message": "选择与机密相关联的项目。仅有权访问该项目的组织用户能查看该机密。"
+    "message": "选择与机密相关联的项目。仅有权访问该项目的组织用户能查看该机密。",
+    "description": "A prompt explaining how secrets can be associated with projects."
   },
   "selectProjects": {
-    "message": "选择项目"
+    "message": "选择项目",
+    "description": "A label for a type-to-filter input field to choose projects."
+  },
+  "searchProjects": {
+    "message": "搜索项目",
+    "description": "Label for the search bar used to search projects."
   },
   "project": {
-    "message": "项目"
+    "message": "项目",
+    "description": "Similar to collections, projects can be used to group secrets."
   },
   "editProject": {
-    "message": "编辑项目"
+    "message": "编辑项目",
+    "description": "The action to modify an existing project."
   },
   "viewProject": {
-    "message": "查看项目"
+    "message": "查看项目",
+    "description": "The action to view details of a project."
   },
   "deleteProject": {
-    "message": "删除项目"
+    "message": "删除项目",
+    "description": "The action to delete a project from the system."
   },
   "deleteProjects": {
-    "message": "删除项目"
+    "message": "删除项目",
+    "description": "The action to delete multiple projects from the system."
   },
   "secret": {
-    "message": "机密"
+    "message": "机密",
+    "description": "Label for a secret (key/value pair)"
   },
   "serviceAccount": {
-    "message": "服务账户"
+    "message": "服务账户",
+    "description": "A machine user which can be used to automate processes and access secrets in the system."
   },
   "serviceAccounts": {
-    "message": "服务帐户"
+    "message": "服务帐户",
+    "description": "The title for the section that deals with service accounts."
   },
   "secrets": {
-    "message": "机密"
+    "message": "机密",
+    "description": "The title for the section of the application that deals with secrets."
   },
   "nameValuePair": {
-    "message": "名称/值对"
+    "message": "名称/值对",
+    "description": "Title for a name/ value pair. Secrets typically consist of a name and value pair."
   },
   "secretEdited": {
-    "message": "机密已编辑"
+    "message": "机密已编辑",
+    "description": "Notification for the successful editing of a secret."
   },
   "secretCreated": {
-    "message": "机密已创建"
+    "message": "机密已创建",
+    "description": "Notification for the successful creation of a secret."
   },
   "newSecret": {
-    "message": "新建机密"
+    "message": "新建机密",
+    "description": "Title for creating a new secret."
   },
   "newServiceAccount": {
-    "message": "新建服务账户"
+    "message": "新建服务账户",
+    "description": "Title for creating a new service account."
   },
   "secretsNoItemsTitle": {
-    "message": "没有可显示的机密"
+    "message": "没有可显示的机密",
+    "description": "Empty state to indicate that there are no secrets to display."
   },
   "secretsNoItemsMessage": {
-    "message": "要开始，请添加一个新的机密或导入机密。"
+    "message": "要开始，请添加一个新的机密或导入机密。",
+    "description": "Message to encourage the user to start adding secrets."
   },
   "secretsTrashNoItemsMessage": {
     "message": "There are no secrets in the trash."
   },
-  "serviceAccountsNoItemsTitle": {
-    "message": "还没有要显示的内容"
-  },
   "serviceAccountsNoItemsMessage": {
-    "message": "Create a new service account to get started automating secret access."
+    "message": "Create a new service account to get started automating secret access.",
+    "description": "Message to encourage the user to start creating service accounts."
+  },
+  "serviceAccountsNoItemsTitle": {
+    "message": "还没有要显示的内容",
+    "description": "Title to indicate that there are no service accounts to display."
   },
   "searchSecrets": {
-    "message": "搜索机密"
+    "message": "搜索机密",
+    "description": "Placeholder text for searching secrets."
   },
   "deleteServiceAccounts": {
-    "message": "删除服务账户"
+    "message": "删除服务账户",
+    "description": "Title for the action to delete one or multiple service accounts."
   },
   "deleteServiceAccount": {
-    "message": "删除服务帐户"
+    "message": "删除服务帐户",
+    "description": "Title for the action to delete a single service account."
   },
   "viewServiceAccount": {
-    "message": "查看服务账户"
+    "message": "查看服务账户",
+    "description": "Action to view the details of a service account."
   },
   "searchServiceAccounts": {
-    "message": "搜索服务账户"
+    "message": "搜索服务账户",
+    "description": "Placeholder text for searching service accounts."
   },
   "addProject": {
-    "message": "添加项目"
+    "message": "添加项目",
+    "description": "Title for creating a new project."
   },
   "projectEdited": {
-    "message": "项目已编辑"
+    "message": "项目已编辑",
+    "description": "Notification for the successful editing of a project."
   },
   "projectSaved": {
-    "message": "项目已保存"
+    "message": "项目已保存",
+    "description": "Notification for the successful saving of a project."
   },
   "projectCreated": {
-    "message": "项目已创建"
+    "message": "项目已创建",
+    "description": "Notification for the successful creation of a project."
   },
   "projectName": {
-    "message": "项目名称"
+    "message": "项目名称",
+    "description": "Label for entering the name of a project."
   },
   "newProject": {
-    "message": "新建项目"
+    "message": "新建项目",
+    "description": "Title for creating a new project."
   },
   "softDeleteSecretWarning": {
-    "message": "删除机密可能会影响现有的集成。"
+    "message": "删除机密可能会影响现有的集成。",
+    "description": "Warns that deleting secrets can have consequences on integrations"
   },
   "softDeletesSuccessToast": {
-    "message": "机密已发送到回收站"
+    "message": "机密已发送到回收站",
+    "description": "Notifies that the selected secrets have been moved to the trash"
   },
   "hardDeleteSecretConfirmation": {
     "message": "Are you sure you want to permanently delete this secret?"
@@ -5847,32 +5889,41 @@
   "hardDeletesSuccessToast": {
     "message": "Secrets permanently deleted"
   },
-  "serviceAccountCreated": {
-    "message": "服务帐户已创建"
-  },
   "smAccess": {
-    "message": "Access"
+    "message": "Access",
+    "description": "Title indicating what permissions a service account has"
   },
   "projectCommaSecret": {
-    "message": "项目，机密"
+    "message": "项目，机密",
+    "description": ""
   },
   "serviceAccountName": {
-    "message": "服务账户名称"
+    "message": "服务账户名称",
+    "description": "Label for the name of a service account"
+  },
+  "serviceAccountCreated": {
+    "message": "服务帐户已创建",
+    "description": "Notifies that a new service account has been created"
   },
   "newSaSelectAccess": {
-    "message": "输入或选择项目或机密"
+    "message": "输入或选择项目或机密",
+    "description": "Instructions for selecting projects or secrets for a new service account"
   },
   "newSaTypeToFilter": {
-    "message": "键入以筛选"
+    "message": "键入以筛选",
+    "description": "Instructions for filtering a list of projects or secrets"
   },
   "deleteProjectsToast": {
-    "message": "项目已删除"
+    "message": "项目已删除",
+    "description": "Notifies that the selected projects have been deleted"
   },
   "deleteProjectToast": {
-    "message": "项目和所有相关的机密已被删除"
+    "message": "项目和所有相关的机密已被删除",
+    "description": "Notifies that a project has been deleted"
   },
   "deleteProjectDialogMessage": {
     "message": "删除项目 $PROJECT$ 是永久性的，不可撤销！",
+    "description": "Informs users that projects are hard deleted and not sent to trash",
     "placeholders": {
       "project": {
         "content": "$1",
@@ -5882,6 +5933,7 @@
   },
   "deleteProjectInputLabel": {
     "message": "输入「$CONFIRM$」以继续",
+    "description": "Users are prompted to type 'confirm' to delete a project",
     "placeholders": {
       "confirm": {
         "content": "$1",
@@ -5891,6 +5943,7 @@
   },
   "deleteProjectConfirmMessage": {
     "message": "删除 $PROJECT$",
+    "description": "Confirmation prompt to delete a specific project, where '$PROJECT$' is a placeholder for the name of the project.",
     "placeholders": {
       "project": {
         "content": "$1",
@@ -5900,6 +5953,7 @@
   },
   "deleteProjectsConfirmMessage": {
     "message": "删除 $COUNT$ 个项目",
+    "description": "Confirmation prompt to delete multiple projects, where '$COUNT$' is a placeholder for the number of projects to be deleted.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -5908,73 +5962,91 @@
     }
   },
   "deleteProjectsDialogMessage": {
-    "message": "删除项目是永久性的，不可撤销！"
+    "message": "删除项目是永久性的，不可撤销！",
+    "description": "This message is displayed in a dialog box as a warning before proceeding with project deletion."
   },
   "projectsNoItemsTitle": {
-    "message": "没有可显示的项目"
+    "message": "没有可显示的项目",
+    "description": "Empty state to be displayed when there are no projects to display in the list."
   },
   "projectsNoItemsMessage": {
-    "message": "Add a new project to get started organizing secrets."
+    "message": "Add a new project to get started organizing secrets.",
+    "description": "Message to be displayed when there are no projects to display in the list."
   },
   "smConfirmationRequired": {
-    "message": "需要确认"
+    "message": "需要确认",
+    "description": "Indicates that user confirmation is required for an action to proceed."
   },
   "bulkDeleteProjectsErrorMessage": {
-    "message": "以下项目无法删除："
+    "message": "以下项目无法删除：",
+    "description": "Message to be displayed when there is an error during bulk project deletion."
   },
   "softDeleteSuccessToast": {
-    "message": "机密已发送到回收站"
+    "message": "机密已发送到回收站",
+    "description": "Notification to be displayed when a secret is successfully sent to the trash."
   },
   "hardDeleteSuccessToast": {
     "message": "Secret permanently deleted"
   },
-  "searchProjects": {
-    "message": "搜索项目"
-  },
   "accessTokens": {
-    "message": "访问令牌"
+    "message": "访问令牌",
+    "description": "Title for the section displaying access tokens."
   },
   "createAccessToken": {
-    "message": "创建访问令牌"
+    "message": "创建访问令牌",
+    "description": "Button label for creating a new access token."
   },
   "expires": {
-    "message": "到期"
+    "message": "到期",
+    "description": "Label for the expiration date of an access token."
   },
   "canRead": {
-    "message": "可以读取"
+    "message": "可以读取",
+    "description": "Label for the access level of an access token (Read only)."
   },
   "accessTokensNoItemsTitle": {
-    "message": "没有可显示的访问令牌"
+    "message": "没有可显示的访问令牌",
+    "description": "Title to be displayed when there are no access tokens to display in the list."
   },
   "accessTokensNoItemsDesc": {
-    "message": "要开始，请创建一个访问令牌"
+    "message": "要开始，请创建一个访问令牌",
+    "description": "Message to be displayed when there are no access tokens to display in the list."
   },
   "downloadAccessToken": {
-    "message": "关闭前下载或复制。"
+    "message": "关闭前下载或复制。",
+    "description": "Message to be displayed before closing an access token, reminding the user to download or copy it."
   },
   "expiresOnAccessToken": {
-    "message": "有效期至："
+    "message": "有效期至：",
+    "description": "Label for the expiration date of an access token."
   },
   "accessTokenCallOutTitle": {
-    "message": "访问令牌未存储，无法获取"
+    "message": "访问令牌未存储，无法获取",
+    "description": "Notification to inform the user that access tokens are only displayed once and cannot be retrieved again."
   },
   "copyToken": {
-    "message": "复制令牌"
+    "message": "复制令牌",
+    "description": "Copies the generated access token to the user's clipboard."
   },
   "accessToken": {
-    "message": "访问令牌"
+    "message": "访问令牌",
+    "description": "A unique string that gives a client application (eg. CLI) access to a secret or set of secrets."
   },
   "accessTokenExpirationRequired": {
-    "message": "到期日期是必需的。"
+    "message": "到期日期是必需的。",
+    "description": "Error message indicating that an expiration date for the access token must be set."
   },
   "accessTokenCreatedAndCopied": {
-    "message": "访问令牌已创建且已复制到剪贴板"
+    "message": "访问令牌已创建且已复制到剪贴板",
+    "description": "Notification to inform the user that the access token has been created and copied to the clipboard."
   },
   "accessTokenPermissionsBetaNotification": {
-    "message": "Beta 版中的权限管理不可用。"
+    "message": "Beta 版中的权限管理不可用。",
+    "description": "Notification to inform the user that the feature for managing access token permissions is not available in the beta version."
   },
   "revokeAccessToken": {
-    "message": "撤销访问令牌"
+    "message": "撤销访问令牌",
+    "description": "Invalidates / cancels an access token and as such removes access to secrets for the client application."
   },
   "revokeAccessTokens": {
     "message": "Revoke access tokens"
@@ -6358,8 +6430,14 @@
   "projectEmptyServiceAccountAccessPolicies": {
     "message": "Add service accounts to grant access"
   },
-  "canWrite": {
-    "message": "Can write"
+  "serviceAccountPeopleDescription": {
+    "message": "Grant groups or people access to this service account."
+  },
+  "serviceAccountProjectsDescription": {
+    "message": "Assign projects to this service account. "
+  },
+  "serviceAccountEmptyProjectAccesspolicies": {
+    "message": "Add projects to grant access"
   },
   "canReadWrite": {
     "message": "Can read, write"
@@ -6389,10 +6467,10 @@
     "message": "此用户可以访问 Secrets Manager 测试版"
   },
   "important": {
-    "message": "Important:"
+    "message": "重要事项："
   },
   "viewAll": {
-    "message": "View all"
+    "message": "查看全部"
   },
   "showingPortionOfTotal": {
     "message": "Showing $PORTION$ of $TOTAL$",
@@ -6415,6 +6493,19 @@
   },
   "errorReadingImportFile": {
     "message": "An error occurred when trying to read the import file"
+  },
+  "accessedSecret": {
+    "message": "访问了密钥 $SECRET_ID$。",
+    "placeholders": {
+      "secret_id": {
+        "content": "$1",
+        "example": "4d34e8a8"
+      }
+    }
+  },
+  "sdk": {
+    "message": "SDK",
+    "description": "Software Development Kit"
   },
   "createSecret": {
     "message": "Create a secret"
@@ -6510,5 +6601,8 @@
         "example": "14"
       }
     }
+  },
+  "dismiss": {
+    "message": "关闭"
   }
 }

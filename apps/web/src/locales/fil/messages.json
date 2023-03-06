@@ -1,6 +1,6 @@
 {
   "pageTitle": {
-    "message": "$APP_NAME$ Web Vault",
+    "message": "Web Vault ng $APP_NAME$",
     "description": "The title of the website in the browser window.",
     "placeholders": {
       "app_name": {
@@ -10,7 +10,7 @@
     }
   },
   "whatTypeOfItem": {
-    "message": "Anong type ng item ito"
+    "message": "Ano'ng uri ng item na ito?"
   },
   "name": {
     "message": "Pangalan"
@@ -32,22 +32,22 @@
     "message": "Bagong URI"
   },
   "username": {
-    "message": "Ang pangalan ng tagagamit"
+    "message": "Username"
   },
   "password": {
-    "message": "Ang Password"
+    "message": "Password"
   },
   "newPassword": {
     "message": "Bagong password"
   },
   "passphrase": {
-    "message": "Pasa salita"
+    "message": "Passphrase"
   },
   "notes": {
-    "message": "Mga nota"
+    "message": "Mga Tala"
   },
   "customFields": {
-    "message": "Pasadyang mga patlang"
+    "message": "Ipinasadyang mga field"
   },
   "cardholderName": {
     "message": "Pangalan ng cardholder"
@@ -59,25 +59,25 @@
     "message": "Tatak"
   },
   "expiration": {
-    "message": "Pag-expire"
+    "message": "Mag-e-expire"
   },
   "securityCode": {
-    "message": "Kodigo ng Seguridad"
+    "message": "Code panseguridad (CVV)"
   },
   "identityName": {
-    "message": "Pangalan ng Identidad"
+    "message": "Pangalan ng pagkakakilanlan"
   },
   "company": {
     "message": "Kumpanya"
   },
   "ssn": {
-    "message": "Numero ng Seguridad Sosyal"
+    "message": "Numero ng National ID / Social Security"
   },
   "passportNumber": {
-    "message": "Numero ng Pasaporte"
+    "message": "Numero ng pasaporte"
   },
   "licenseNumber": {
-    "message": "Numero ng Lisensya"
+    "message": "Numero ng lisensya"
   },
   "email": {
     "message": "Email"
@@ -122,43 +122,43 @@
     "message": "Disyembre"
   },
   "title": {
-    "message": "Pamagat"
+    "message": "Title"
   },
   "mr": {
-    "message": "Ginoo"
+    "message": "G"
   },
   "mrs": {
     "message": "Gng"
   },
   "ms": {
-    "message": "Ms"
+    "message": "Bb"
   },
   "mx": {
     "message": "Mx"
   },
   "dr": {
-    "message": "Dr"
+    "message": "Dr(a)"
   },
   "expirationMonth": {
-    "message": "Buwan ng Pagpaso"
+    "message": "Buwan ng pag-expire"
   },
   "expirationYear": {
-    "message": "Taon ng Pag-expire"
+    "message": "Taon ng pag-expire"
   },
   "authenticatorKeyTotp": {
-    "message": "Susi ng Authenticator (TOTP)"
+    "message": "Authenticator key (TOTP)"
   },
   "folder": {
-    "message": "Folder/Direktoryo"
+    "message": "Folder"
   },
   "newCustomField": {
-    "message": "Bagong custom field"
+    "message": "Bagong pasadyang field"
   },
   "value": {
     "message": "Halaga"
   },
   "dragToSort": {
-    "message": "I-drag upang i-sort"
+    "message": "Hilahin para pagsunud-sunurin"
   },
   "cfTypeText": {
     "message": "Teksto"
@@ -170,11 +170,11 @@
     "message": "Boolean"
   },
   "cfTypeLinked": {
-    "message": "Nilikha",
+    "message": "Naka-link",
     "description": "This describes a field that is 'linked' (related) to another field."
   },
   "remove": {
-    "message": "Alisin"
+    "message": "Tanggalin"
   },
   "unassigned": {
     "message": "Hindi nakatalaga"
@@ -187,7 +187,7 @@
     "message": "Magdagdag ng folder"
   },
   "editFolder": {
-    "message": "I-edit ang folder"
+    "message": "Baguhin ang folder"
   },
   "baseDomain": {
     "message": "Base domain",
@@ -205,38 +205,38 @@
     "message": "Eksakto"
   },
   "startsWith": {
-    "message": "Naguumpisa sa"
+    "message": "Nag-uumpisa sa"
   },
   "regEx": {
-    "message": "Regular Expression - Regular na Pagpapahayag",
+    "message": "Regular na expression",
     "description": "A programming term, also known as 'RegEx'."
   },
   "matchDetection": {
-    "message": "Match Detection - Pagtuklas ng Pares",
+    "message": "Deteksyon ng tugma",
     "description": "URI match detection for auto-fill."
   },
   "defaultMatchDetection": {
-    "message": "Kamalian ng Default",
+    "message": "Default na deteksyon ng pagkakatugma",
     "description": "Default URI match detection for auto-fill."
   },
   "never": {
     "message": "Hindi kailanman"
   },
   "toggleVisibility": {
-    "message": "I-toggle ang kakayahang makita"
+    "message": "Ipakita/itago"
   },
   "toggleCollapse": {
-    "message": "I-toggle ang pagbagal",
+    "message": "Palakihin/paliitin",
     "description": "Toggling an expand/collapse state."
   },
   "generatePassword": {
-    "message": "Magtatag ng Password"
+    "message": "Gumawa ng password"
   },
   "checkPassword": {
-    "message": "Suriin kung ang password ay na-expose."
+    "message": "Tingnan kung nakompromiso na ba ang password."
   },
   "passwordExposed": {
-    "message": "Ang password na ito ay na-expose na $VALUE$ beses sa mga data breach. Dapat mong baguhin ito.",
+    "message": "Nakompromiso na nang $VALUE$ beses ang password na ito sa mga data breach. Dapat mo na itong palitan.",
     "placeholders": {
       "value": {
         "content": "$1",
@@ -245,7 +245,7 @@
     }
   },
   "passwordSafe": {
-    "message": "Ang password na ito ay hindi natagpuan sa alinman sa mga alam na data breach. Maaari itong gamitin nang ligtas."
+    "message": "Hindi pa nakokompromiso ang password na ito sa mga naitalang data breach. Ligtas itong gamitin."
   },
   "save": {
     "message": "I-save"
@@ -260,56 +260,56 @@
     "message": "Isara"
   },
   "delete": {
-    "message": "Alisin"
+    "message": "Burahin"
   },
   "favorite": {
-    "message": "Ang Paborito"
+    "message": "Paborito"
   },
   "unfavorite": {
     "message": "Hindi paborito"
   },
   "edit": {
-    "message": "I-edit"
+    "message": "Baguhin"
   },
   "searchCollection": {
-    "message": "Maghanap ng koleksyon"
+    "message": "Maghanap sa koleksyon"
   },
   "searchFolder": {
-    "message": "Maghanap ng folder"
+    "message": "Maghanap sa folder"
   },
   "searchFavorites": {
-    "message": "Maghanap ng mga paborito"
+    "message": "Maghanap sa mga paborito"
   },
   "searchLogin": {
-    "message": "Maghanap ng mga login",
+    "message": "Maghanap sa mga login",
     "description": "Search Login type"
   },
   "searchCard": {
-    "message": "Mga search card",
+    "message": "Maghanap sa mga kard",
     "description": "Search Card type"
   },
   "searchIdentity": {
-    "message": "Maghanap ng mga pagkakakilanlan",
+    "message": "Maghanap sa mga pagkakakilanlan",
     "description": "Search Identity type"
   },
   "searchSecureNote": {
-    "message": "Maghanap ng mga secure na tala",
+    "message": "Maghanap sa mga secure na tala",
     "description": "Search Secure Note type"
   },
   "searchVault": {
-    "message": "Hanapin ang vault"
+    "message": "Maghanap sa vault"
   },
   "searchMyVault": {
-    "message": "Maghanap sa aking vault"
+    "message": "Maghanap sa vault ko"
   },
   "searchOrganization": {
-    "message": "Maghanap ng organisasyon"
+    "message": "Maghanap sa organisasyon"
   },
   "searchMembers": {
-    "message": "Maghanap ng mga miyembro"
+    "message": "Maghanap sa mga miyembro"
   },
   "searchGroups": {
-    "message": "Maghanap ng mga grupo"
+    "message": "Maghanap sa mga grupo"
   },
   "allItems": {
     "message": "Lahat ng mga item"
@@ -324,7 +324,7 @@
     "message": "Login"
   },
   "typeCard": {
-    "message": "Karta"
+    "message": "Kard"
   },
   "typeIdentity": {
     "message": "Pagkakakilanlan"
@@ -336,31 +336,31 @@
     "message": "Mga Login"
   },
   "typeCardPlural": {
-    "message": "Mga Karta"
+    "message": "Mga Kard"
   },
   "typeIdentityPlural": {
-    "message": "Mga Identidad"
+    "message": "Mga Pagkakakilanlan"
   },
   "typeSecureNotePlural": {
-    "message": "Mga Secure Note"
+    "message": "Mga Secure na Tala"
   },
   "folders": {
     "message": "Mga Folder"
   },
   "collections": {
-    "message": "Koleksyon"
+    "message": "Mga Koleksyon"
   },
   "firstName": {
-    "message": "Unang Pangalan"
+    "message": "Unang pangalan"
   },
   "middleName": {
-    "message": "Gitnang Pangalan"
+    "message": "Gitnang pangalan"
   },
   "lastName": {
-    "message": "Huling pangalan"
+    "message": "Apelyido"
   },
   "fullName": {
-    "message": "Buong Pangalan"
+    "message": "Buong pangalan"
   },
   "address1": {
     "message": "Address 1"
@@ -372,19 +372,19 @@
     "message": "Address 3"
   },
   "cityTown": {
-    "message": "Bayan/Town"
+    "message": "Lungsod / Bayan"
   },
   "stateProvince": {
-    "message": "Estado/Probinsya"
+    "message": "Estado / Probinsya"
   },
   "zipPostalCode": {
-    "message": "Código ng Zip / Postal"
+    "message": "Zip / Postal code"
   },
   "country": {
-    "message": "Bayan"
+    "message": "Bansa"
   },
   "shared": {
-    "message": "Iniimbak"
+    "message": "Naibahagi"
   },
   "attachments": {
     "message": "Mga Attachment"
@@ -396,33 +396,33 @@
     "message": "Bagong item"
   },
   "addItem": {
-    "message": "Magdagdag ng Item"
+    "message": "Magdagdag ng item"
   },
   "editItem": {
-    "message": "Baguhin ang Item"
+    "message": "Baguhin ang item"
   },
   "viewItem": {
-    "message": "Tingnan ang Item"
+    "message": "Tingnan ang item"
   },
   "new": {
-    "message": "Bagong",
+    "message": "Bago",
     "description": "for adding new items"
   },
   "item": {
     "message": "Item"
   },
   "ex": {
-    "message": "ex.",
+    "message": "hal.",
     "description": "Short abbreviation for 'example'."
   },
   "other": {
     "message": "Iba pa"
   },
   "share": {
-    "message": "I-share"
+    "message": "Ibahagi"
   },
   "moveToOrganization": {
-    "message": "Lumipat sa organisasyon"
+    "message": "Ilipat sa organisasyon"
   },
   "valueCopied": {
     "message": "Kinopya ang $VALUE$",
@@ -439,19 +439,19 @@
     "description": "Copy value to clipboard"
   },
   "copyPassword": {
-    "message": "Kopyahin ang Password",
+    "message": "Kopyahin ang password",
     "description": "Copy password to clipboard"
   },
   "copyUsername": {
-    "message": "Kopyahin ang pangalan ng gumagamit",
+    "message": "Kopyahin ang username",
     "description": "Copy username to clipboard"
   },
   "copyNumber": {
-    "message": "Pamamagitan ng Kopya ng Bilang",
+    "message": "Kopyahin ang numero",
     "description": "Copy credit card number"
   },
   "copySecurityCode": {
-    "message": "Kopyahin ang code ng seguridad",
+    "message": "Kopyahin ang code panseguridad",
     "description": "Copy credit card security code (CVV)"
   },
   "copyUri": {
@@ -462,73 +462,73 @@
     "message": "Ako"
   },
   "myVault": {
-    "message": "Aking Kahadeyero"
+    "message": "Vault ko"
   },
   "allVaults": {
-    "message": "Lahat ng Vault"
+    "message": "Lahat ng mga vault"
   },
   "vault": {
-    "message": "Ayos"
+    "message": "Vault"
   },
   "vaults": {
-    "message": "Mga Vault"
+    "message": "Mga vault"
   },
   "vaultItems": {
     "message": "Mga item sa vault"
   },
   "filter": {
-    "message": "Filter"
+    "message": "Mga pansala"
   },
   "moveSelectedToOrg": {
-    "message": "Ilipat ang pinili sa organisasyon"
+    "message": "Ilipat sa napiling organisasyon"
   },
   "deleteSelected": {
-    "message": "Tanggalin ang napiling"
+    "message": "Burahin ang napili"
   },
   "moveSelected": {
-    "message": "Ilipat ang napiling"
+    "message": "Ilipat ang napili"
   },
   "selectAll": {
-    "message": "Piliin ang lahat"
+    "message": "Piliin lahat"
   },
   "unselectAll": {
-    "message": "I-unselect ang lahat"
+    "message": "Huwag piliin lahat"
   },
   "launch": {
-    "message": "Paglulunsad"
+    "message": "Buksan"
   },
   "newAttachment": {
     "message": "Magdagdag ng bagong attachment"
   },
   "deletedAttachment": {
-    "message": "Attachment na natanggal"
+    "message": "Binura ang attachment"
   },
   "deleteAttachmentConfirmation": {
-    "message": "Sigurado ka bang gusto mong tanggalin ang attachment na ito?"
+    "message": "Sigurado ka bang gusto mong burahin ang attachment na ito?"
   },
   "attachmentSaved": {
-    "message": "Attachment na nai-save"
+    "message": "Na-save ang attachment"
   },
   "file": {
-    "message": "Mag-file"
+    "message": "File"
   },
   "selectFile": {
-    "message": "Pumili ng File"
+    "message": "Pumili ng file."
   },
   "maxFileSize": {
-    "message": "Maximum na laki ng file ay 500 MB."
+    "message": "Hanggang sa 500 MB lang dapat ang mga file."
   },
   "updateKey": {
-    "message": "Hindi mo maari gamitin ang tampok na ito hanggang hindi mo iupdate ang iyong encryption key."
+    "message": "Hindi mo magagamit ang feature na ito hanggang sa i-update mo ang encryption key mo."
   },
   "addedItem": {
-    "message": "Ang item ay idinagdag"
+    "message": "Naidagdag ang item"
   },
   "editedItem": {
-    "message": "Ang item ay nai-save"
+    "message": "Na-save ang item"
   },
   "movedItemToOrg": {
-    "message": "$ITEMNAME$ lumipat sa $ORGNAME$",
+    "message": "Inilipat ang $ITEMNAME$ sa $ORGNAME$",
     "placeholders": {
       "itemname": {
         "content": "$1",
@@ -550,22 +550,22 @@
     }
   },
   "deleteItem": {
-    "message": "Tanggalin ang Item"
+    "message": "Burahin ang item"
   },
   "deleteFolder": {
     "message": "Burahin ang folder"
   },
   "deleteAttachment": {
-    "message": "Tanggalin ang attachment"
+    "message": "Burahin ang attachment"
   },
   "deleteItemConfirmation": {
-    "message": "Gusto mo bang talagang ipadala sa basura?"
+    "message": "Gusto mo ba talaga itong itapon?"
   },
   "deletedItem": {
-    "message": "Pinadala ang Item sa basurahan"
+    "message": "Itinapon ang item sa basurahan"
   },
   "deletedItems": {
-    "message": "Mga item na ipinadala sa basurahan"
+    "message": "Itinapon ang mga item sa basurahan"
   },
   "movedItems": {
     "message": "Inilipat ang mga item"
@@ -574,37 +574,37 @@
     "message": "Sigurado ka bang gusto mong palitan ang kasalukuyang password?"
   },
   "editedFolder": {
-    "message": "Nai-save na folder"
+    "message": "Sinave ang folder"
   },
   "addedFolder": {
-    "message": "Idinagdag na folder"
+    "message": "Idinagdag ang folder"
   },
   "deleteFolderConfirmation": {
-    "message": "Sigurado ka bang gusto mong tanggalin ang folder na ito?"
+    "message": "Sigurado ka bang gusto mong burahin ang folder na ito?"
   },
   "deletedFolder": {
-    "message": "Tinanggal na folder"
+    "message": "Binura ang folder"
   },
   "editInfo": {
-    "message": "I-edit ang impormasyon"
+    "message": "Baguhin ang impormasyon"
   },
   "access": {
-    "message": "I-access"
+    "message": "Access"
   },
   "loggedOut": {
-    "message": "Umalis na"
+    "message": "Naka-log out"
   },
   "loginExpired": {
-    "message": "Nag-expire na ang iyong session sa login."
+    "message": "Nag-expire na ang login session mo."
   },
   "logOutConfirmation": {
     "message": "Sigurado ka bang gusto mong mag-log out?"
   },
   "logOut": {
-    "message": "Mag-Log Out"
+    "message": "Mag-log out"
   },
   "ok": {
-    "message": "Ok"
+    "message": "Sige"
   },
   "yes": {
     "message": "Oo"
@@ -613,91 +613,91 @@
     "message": "Hindi"
   },
   "loginOrCreateNewAccount": {
-    "message": "Maglog-in o gumawa ng bagong account para ma-access ang iyong ligtas na kahadeyero."
+    "message": "Mag-log in o gumawa ng bagong account para ma-access ang secure vault mo."
   },
   "loginWithDevice": {
-    "message": "Mag log in gamit ang device"
+    "message": "Mag-log in gamit ang device"
   },
   "loginWithDeviceEnabledInfo": {
-    "message": "Ang pag log in gamit ang device ay dapat na naka set up sa mga setting ng Bitwarden mobile app. Kailangan mo ng ibang opsyon?"
+    "message": "Dapat nakahanda ang pagla-log in gamit ang device sa mga setting ng mobile app ng Bitwarden. Kailangan ng higit pang opsyon?"
   },
   "loginWithMasterPassword": {
-    "message": "Mag-login gamit ang pangunahing password"
+    "message": "Mag-log in gamit ang master password"
   },
   "createAccount": {
-    "message": "Gumawa ng Account"
+    "message": "Gumawa ng account"
   },
   "newAroundHere": {
-    "message": "Mag-login gamit ang pangunahing password?"
+    "message": "Bago rito?"
   },
   "startTrial": {
-    "message": "Simulan ang pagsubok"
+    "message": "Simulan ang trial"
   },
   "logIn": {
     "message": "Mag-log in"
   },
   "logInInitiated": {
-    "message": "Mag log in na sinimulan"
+    "message": "Sinimulan ang pag-log in"
   },
   "submit": {
-    "message": "Isumite"
+    "message": "Ipadala"
   },
   "emailAddressDesc": {
-    "message": "Gagamitin mo ang iyong email address upang mag log in."
+    "message": "Gagamitin mo ang email address mo para mag-log in."
   },
   "yourName": {
-    "message": "Ang iyong pangalan"
+    "message": "Pangalan mo"
   },
   "yourNameDesc": {
-    "message": "Ano po ba ang dapat naming itawag sa inyo"
+    "message": "Ano'ng dapat itawag namin sa'yo?"
   },
   "masterPass": {
-    "message": "Master Password"
+    "message": "Master password"
   },
   "masterPassDesc": {
-    "message": "Ang master password ay ang password na gagamitin mo upang ma-access ang iyong kahadeyero. Napakaimportante na hindi mo makalimutan ang iyong master password. Walang paraan upang ma-recover ang password kapag nakalimutan mo ito."
+    "message": "Ang master password ang password na gagamitin mo para ma-access ang vault. Napakamahalagang hindi mo kailanman makalimutan ang master password—kung gaano kahalagang makalimutan mo ang iyong ex, ganyan kahalagang maalala mo ang master password mo. Hindi kayang mabalik ang master password kung nakalimutan mo ito."
   },
   "masterPassImportant": {
-    "message": "Hindi mababawi ang mga master password kung nakalimutan mo ito!"
+    "message": "Hindi na mare-recover ang master password kapag nakalimutan mo ito!"
   },
   "masterPassHintDesc": {
-    "message": "May isang pahiwatig para sa master password na makakatulong na maalala mo ang iyong password kapag nakalimutan mo ito."
+    "message": "Makakatulong ang palatandaan ng master password na maalala mo ang password mo kung nakalimutan mo ito."
   },
   "reTypeMasterPass": {
-    "message": "Muling i-type ang Master Password"
+    "message": "I-type ulit ang master password"
   },
   "masterPassHint": {
-    "message": "Mungkahi sa Master Password (opsyonal)"
+    "message": "Palatandaan ng master password (opsyonal)"
   },
   "masterPassHintLabel": {
-    "message": "Master password pahiwatig"
+    "message": "Palatandaan ng master password"
   },
   "settings": {
-    "message": "Mga Preperensya"
+    "message": "Mga Setting"
   },
   "passwordHint": {
-    "message": "Mungkahi sa Password"
+    "message": "Palatandaan ng password"
   },
   "enterEmailToGetHint": {
-    "message": "Ipasok ang iyong email address ng account para makatanggap ng hint ng iyong master password."
+    "message": "Ipasok ang email address ng account mo para makita ang palatandaan ng master password mo."
   },
   "getMasterPasswordHint": {
-    "message": "Makuha ang Punong Password na Hint"
+    "message": "Kunin ang palatandaan ng master password"
   },
   "emailRequired": {
     "message": "Kinakailangan ang email address."
   },
   "invalidEmail": {
-    "message": "Di-wasto na email address."
+    "message": "'Di-wastong email address."
   },
   "masterPasswordRequired": {
-    "message": "Maling address ng email."
+    "message": "Kinakailangan ang master password."
   },
   "confirmMasterPasswordRequired": {
-    "message": "Kinakailangan ang ulitin ang master password."
+    "message": "Kailangang i-type ulit ang master password."
   },
   "masterPasswordMinlength": {
-    "message": "Ang master password ay dapat na hindi bababa sa $VALUE$ na mga character.",
+    "message": "Hindi dapat bumaba sa $VALUE$ karakter ang master password.",
     "description": "The Master Password must be at least a specific number of characters long.",
     "placeholders": {
       "value": {
@@ -707,31 +707,31 @@
     }
   },
   "masterPassDoesntMatch": {
-    "message": "Hindi tumutugma ang kumpirmasyon ng master password."
+    "message": "May hindi pagtutugma sa kumpirmasyon ng master password."
   },
   "newAccountCreated": {
     "message": "Nalikha na ang iyong bagong account! Maaari ka nang mag-log in."
   },
   "trialAccountCreated": {
-    "message": "Matagumpay na nilikha ang account."
+    "message": "Matagumpay na nalikha ang account."
   },
   "masterPassSent": {
-    "message": "Pinadala na namin sa iyo ang email na may hint ng master password mo."
+    "message": "Pinadalhan ka namin ng email na may palatandaan ng master password mo."
   },
   "unexpectedError": {
-    "message": "Namana ang isang hindi inaasahang error."
+    "message": "Nagkaroon ng hindi inaasahang problema."
   },
   "emailAddress": {
-    "message": "Email Address"
+    "message": "Email address"
   },
   "yourVaultIsLocked": {
-    "message": "Naka-lock ang iyong vault. Patunayan ang iyong pagkakakilanlan upang magpatuloy."
+    "message": "Naka-lock ang vault mo. Beripikahin ang master password mo para tumuloy."
   },
   "unlock": {
-    "message": "Buksan"
+    "message": "I-unlock"
   },
   "loggedInAsEmailOn": {
-    "message": "Nag-log in bilang $EMAIL$ noong $HOSTNAME$.",
+    "message": "Naka-log in bilang si $EMAIL$ sa $HOSTNAME$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -747,40 +747,40 @@
     "message": "Hindi wasto ang master password"
   },
   "invalidFilePassword": {
-    "message": "Imbalidong file password, mangyaring gamitin ang password na iyong ipinasok kapag nilikha mo ang export file."
+    "message": "Hindi wasto ang password ng file, mangyaring gamitin ang password na inilagay mo noong ginawa mo ang export file."
   },
   "lockNow": {
-    "message": "Mag-kandado Na"
+    "message": "I-lock ngayon"
   },
   "noItemsInList": {
-    "message": "Walang mga bagay na maipapakita."
+    "message": "Walang maililistang item."
   },
   "noPermissionToViewAllCollectionItems": {
-    "message": "Wala kang pahintulot na tingnan ang lahat ng item sa koleksyong ito."
+    "message": "Wala kang pahintulot na makita lahat ng mga item sa koleksyong ito."
   },
   "noCollectionsInList": {
-    "message": "Walang mga koleksyon na maipapakita."
+    "message": "Walang maililistang koleksyon."
   },
   "noGroupsInList": {
-    "message": "Walang mga grupo na ilista."
+    "message": "Walang maililistang mga pangkat."
   },
   "noUsersInList": {
-    "message": "Walang mga gumagamit na ilista."
+    "message": "Walang maililistang user."
   },
   "noMembersInList": {
-    "message": "Walang mga miyembro na ilista."
+    "message": "Walang maililistang miyembro."
   },
   "noEventsInList": {
-    "message": "Walang mga kaganapan na ilista."
+    "message": "Walang maililistang kaganapan."
   },
   "newOrganization": {
     "message": "Bagong organisasyon"
   },
   "noOrganizationsList": {
-    "message": "Hindi ka kabilang sa anumang mga organisasyon. Pinapayagan ka ng mga organisasyon na ligtas na magbahagi ng mga item sa iba pang mga gumagamit."
+    "message": "Hindi ka kabilang sa anumang organisasyon. Ligtas kang makakapagbahagi ng mga item sa iba pang mga user sa organisasyon."
   },
   "notificationSentDevice": {
-    "message": "Naipadala na ang notification sa iyong device."
+    "message": "Nakapagpadala na ng notipikasyon sa device mo."
   },
   "versionNumber": {
     "message": "Bersyon $VERSION_NUMBER$",
@@ -792,10 +792,10 @@
     }
   },
   "enterVerificationCodeApp": {
-    "message": "Ipasok ang 6 na digit na code ng pagpapatunay mula sa iyong authenticator app."
+    "message": "Ilagay ang 6 na numerong code pamberipika mula sa authenticator app mo."
   },
   "enterVerificationCodeEmail": {
-    "message": "Ipasok ang 6 na digit na code na na-email sa $EMAIL$.",
+    "message": "Ilagay ang 6 na numerong code pamberipikang in-email sa $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -804,7 +804,7 @@
     }
   },
   "verificationCodeEmailSent": {
-    "message": "Veripikasyon na email na ipinadala sa $EMAIL$.",
+    "message": "Ipinadala ang email pamberipika sa $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -813,28 +813,28 @@
     }
   },
   "rememberMe": {
-    "message": "Tandaan mo ako"
+    "message": "Tandaan ako"
   },
   "sendVerificationCodeEmailAgain": {
-    "message": "Ipadala muli ang email ng verification code"
+    "message": "Ipadala ulit ang email na naglalaman ng code pamberipika"
   },
   "useAnotherTwoStepMethod": {
-    "message": "Gamitin ang isa pang two-step na paraan ng pag-login"
+    "message": "Gumamit ng ibang paraan sa dalawang-hakbang na pag-log in"
   },
   "insertYubiKey": {
-    "message": "I-insert ang iyong YubiKey sa USB port ng iyong computer, pagkatapos ay tindigin ang buton nito."
+    "message": "Ipasok ang YubiKey mo sa USB port ng iyong computer, tapos pindutin ang buton nito."
   },
   "insertU2f": {
-    "message": "I-insert ang iyong security key sa USB port ng iyong computer. Kung mayroon itong buton, tindigin ito."
+    "message": "Ipasok ang security key mo sa USB port ng iyong computer. Kung may buton, pindutin ito."
   },
   "loginUnavailable": {
-    "message": "Hindi magagamit ang pag-login"
+    "message": "Hindi available ang login"
   },
   "noTwoStepProviders": {
-    "message": "Mayroong naka-set up na two-step login ang account na ito, ngunit walang sinusuportahang two-step provider ng web browser na ito."
+    "message": "May dalawang-hakbang na pag-log in ang account na ito, pero hindi suportado ng web browser na ito ang anumang naitakdang two-step provider."
   },
   "noTwoStepProviders2": {
-    "message": "Mangyaring gamitin ang isang suportadong web browser (tulad ng Chrome) at/o magdagdag ng karagdagang mga provider na mas suportado sa ibat ibang web browsers (tulad ng isang authenticator app)."
+    "message": "Mangyaring gumamit ng suportadong web browser (tulad ng Firefox) at/o karagdagang provider na may mas mainam na suporta sa iba't-ibang mga device (tulad ng isang authenticator app)."
   },
   "twoStepOptions": {
     "message": "Mga pagpipilian para sa two-step login"
@@ -2060,9 +2060,6 @@
   },
   "updateLicense": {
     "message": "Update ng lisensya"
-  },
-  "updatedLicense": {
-    "message": "Na-update na lisensya"
   },
   "manageSubscription": {
     "message": "Pamahalaan ang subscription"
@@ -5707,28 +5704,36 @@
     "message": "Tago"
   },
   "projects": {
-    "message": "Mga Proyekto"
+    "message": "Mga Proyekto",
+    "description": "Description for the Projects field."
   },
   "lastEdited": {
-    "message": "Huling na-edit"
+    "message": "Huling na-edit",
+    "description": "The label for the date and time when a item was last edited."
   },
   "editSecret": {
-    "message": "Edit lihim"
+    "message": "Edit lihim",
+    "description": "Action to modify an existing secret."
   },
   "addSecret": {
-    "message": "Magdagdag ng lihim"
+    "message": "Magdagdag ng lihim",
+    "description": "Action to create a new secret."
   },
   "copySecretName": {
-    "message": "Kopyahin ang lihim na pangalan"
+    "message": "Kopyahin ang lihim na pangalan",
+    "description": "Action to copy the name of a secret to the system's clipboard."
   },
   "copySecretValue": {
-    "message": "Kopyahin ang lihim na halaga"
+    "message": "Kopyahin ang lihim na halaga",
+    "description": "Action to copy the value of a secret to the system's clipboard."
   },
   "deleteSecret": {
-    "message": "Tanggalin ang lihim"
+    "message": "Tanggalin ang lihim",
+    "description": "Action to delete a single secret from the system."
   },
   "deleteSecrets": {
-    "message": "Tanggalin ang mga lihim"
+    "message": "Tanggalin ang mga lihim",
+    "description": "The action to delete multiple secrets from the system."
   },
   "hardDeleteSecret": {
     "message": "Permanenteng burahin ang lihim"
@@ -5737,106 +5742,143 @@
     "message": "Permanenteng burahin ang mga lihim"
   },
   "secretProjectAssociationDescription": {
-    "message": "Pumili ng mga proyekto na ang lihim ay maiugnay. Tanging ang mga gumagamit ng organisasyon na may access sa mga proyektong ito ang makakakita ng lihim."
+    "message": "Pumili ng mga proyekto na ang lihim ay maiugnay. Tanging ang mga gumagamit ng organisasyon na may access sa mga proyektong ito ang makakakita ng lihim.",
+    "description": "A prompt explaining how secrets can be associated with projects."
   },
   "selectProjects": {
-    "message": "Pilipitin ang mga proyekto"
+    "message": "Pilipitin ang mga proyekto",
+    "description": "A label for a type-to-filter input field to choose projects."
+  },
+  "searchProjects": {
+    "message": "Maghanap ng mga proyekto",
+    "description": "Label for the search bar used to search projects."
   },
   "project": {
-    "message": "Proyekto"
+    "message": "Proyekto",
+    "description": "Similar to collections, projects can be used to group secrets."
   },
   "editProject": {
-    "message": "I-edit ang proyekto"
+    "message": "I-edit ang proyekto",
+    "description": "The action to modify an existing project."
   },
   "viewProject": {
-    "message": "Tingnan ang proyekto"
+    "message": "Tingnan ang proyekto",
+    "description": "The action to view details of a project."
   },
   "deleteProject": {
-    "message": "Tanggalin ang proyekto"
+    "message": "Tanggalin ang proyekto",
+    "description": "The action to delete a project from the system."
   },
   "deleteProjects": {
-    "message": "Tanggalin ang mga proyekto"
+    "message": "Tanggalin ang mga proyekto",
+    "description": "The action to delete multiple projects from the system."
   },
   "secret": {
-    "message": "Lihim na"
+    "message": "Lihim na",
+    "description": "Label for a secret (key/value pair)"
   },
   "serviceAccount": {
-    "message": "Account sa serbisyo"
+    "message": "Account sa serbisyo",
+    "description": "A machine user which can be used to automate processes and access secrets in the system."
   },
   "serviceAccounts": {
-    "message": "Mga account sa serbisyo"
+    "message": "Mga account sa serbisyo",
+    "description": "The title for the section that deals with service accounts."
   },
   "secrets": {
-    "message": "Mga lihim"
+    "message": "Mga lihim",
+    "description": "The title for the section of the application that deals with secrets."
   },
   "nameValuePair": {
-    "message": "Pares ng Pangalan/Halaga"
+    "message": "Pares ng Pangalan/Halaga",
+    "description": "Title for a name/ value pair. Secrets typically consist of a name and value pair."
   },
   "secretEdited": {
-    "message": "Lihim na na edit"
+    "message": "Lihim na na edit",
+    "description": "Notification for the successful editing of a secret."
   },
   "secretCreated": {
-    "message": "Lihim na nilikha"
+    "message": "Lihim na nilikha",
+    "description": "Notification for the successful creation of a secret."
   },
   "newSecret": {
-    "message": "Bagong lihim"
+    "message": "Bagong lihim",
+    "description": "Title for creating a new secret."
   },
   "newServiceAccount": {
-    "message": "Bagong account sa serbisyo"
+    "message": "Bagong account sa serbisyo",
+    "description": "Title for creating a new service account."
   },
   "secretsNoItemsTitle": {
-    "message": "Walang lihim na maipapakita"
+    "message": "Walang lihim na maipapakita",
+    "description": "Empty state to indicate that there are no secrets to display."
   },
   "secretsNoItemsMessage": {
-    "message": "Upang makapagsimula, magdagdag ng isang bagong lihim o mga lihim ng pag import."
+    "message": "Upang makapagsimula, magdagdag ng isang bagong lihim o mga lihim ng pag import.",
+    "description": "Message to encourage the user to start adding secrets."
   },
   "secretsTrashNoItemsMessage": {
     "message": "Walang mga lihim sa basurahan."
   },
-  "serviceAccountsNoItemsTitle": {
-    "message": "Wala pang maipapakita"
-  },
   "serviceAccountsNoItemsMessage": {
-    "message": "Gumawa ng bagong service account para makapagsimula sa pag-automate ng lihim na access."
+    "message": "Gumawa ng bagong service account para makapagsimula sa pag-automate ng lihim na access.",
+    "description": "Message to encourage the user to start creating service accounts."
+  },
+  "serviceAccountsNoItemsTitle": {
+    "message": "Wala pang maipapakita",
+    "description": "Title to indicate that there are no service accounts to display."
   },
   "searchSecrets": {
-    "message": "Maghanap ng mga lihim"
+    "message": "Maghanap ng mga lihim",
+    "description": "Placeholder text for searching secrets."
   },
   "deleteServiceAccounts": {
-    "message": "Tanggalin ang mga service account"
+    "message": "Tanggalin ang mga service account",
+    "description": "Title for the action to delete one or multiple service accounts."
   },
   "deleteServiceAccount": {
-    "message": "Tanggalin ang service account"
+    "message": "Tanggalin ang service account",
+    "description": "Title for the action to delete a single service account."
   },
   "viewServiceAccount": {
-    "message": "Tingnan ang service account"
+    "message": "Tingnan ang service account",
+    "description": "Action to view the details of a service account."
   },
   "searchServiceAccounts": {
-    "message": "Maghanap ng mga account sa serbisyo"
+    "message": "Maghanap ng mga account sa serbisyo",
+    "description": "Placeholder text for searching service accounts."
   },
   "addProject": {
-    "message": "Magdagdag ng proyekto"
+    "message": "Magdagdag ng proyekto",
+    "description": "Title for creating a new project."
   },
   "projectEdited": {
-    "message": "Na edit ng proyekto"
+    "message": "Na edit ng proyekto",
+    "description": "Notification for the successful editing of a project."
   },
   "projectSaved": {
-    "message": "Nai save ang proyekto"
+    "message": "Nai save ang proyekto",
+    "description": "Notification for the successful saving of a project."
   },
   "projectCreated": {
-    "message": "Nilikha ang proyekto"
+    "message": "Nilikha ang proyekto",
+    "description": "Notification for the successful creation of a project."
   },
   "projectName": {
-    "message": "Pangalan ng proyekto"
+    "message": "Pangalan ng proyekto",
+    "description": "Label for entering the name of a project."
   },
   "newProject": {
-    "message": "Bagong proyekto"
+    "message": "Bagong proyekto",
+    "description": "Title for creating a new project."
   },
   "softDeleteSecretWarning": {
-    "message": "Ang pagtanggal ng mga lihim ay maaaring makaapekto sa mga umiiral na pagsasama."
+    "message": "Ang pagtanggal ng mga lihim ay maaaring makaapekto sa mga umiiral na pagsasama.",
+    "description": "Warns that deleting secrets can have consequences on integrations"
   },
   "softDeletesSuccessToast": {
-    "message": "Mga lihim na ipinadala sa basurahan"
+    "message": "Mga lihim na ipinadala sa basurahan",
+    "description": "Notifies that the selected secrets have been moved to the trash"
   },
   "hardDeleteSecretConfirmation": {
     "message": "Sigurado ka bang gusto mong i-permanenteng burahin ang lihim na ito?"
@@ -5847,32 +5889,41 @@
   "hardDeletesSuccessToast": {
     "message": "Lihim na permanenteng nabura"
   },
-  "serviceAccountCreated": {
-    "message": "Nilikha ang service account"
-  },
   "smAccess": {
-    "message": "I-access"
+    "message": "I-access",
+    "description": "Title indicating what permissions a service account has"
   },
   "projectCommaSecret": {
-    "message": "Proyekto, Lihim"
+    "message": "Proyekto, Lihim",
+    "description": ""
   },
   "serviceAccountName": {
-    "message": "Pangalan ng account sa serbisyo"
+    "message": "Pangalan ng account sa serbisyo",
+    "description": "Label for the name of a service account"
+  },
+  "serviceAccountCreated": {
+    "message": "Nilikha ang service account",
+    "description": "Notifies that a new service account has been created"
   },
   "newSaSelectAccess": {
-    "message": "Mag type o pumili ng mga proyekto o lihim"
+    "message": "Mag type o pumili ng mga proyekto o lihim",
+    "description": "Instructions for selecting projects or secrets for a new service account"
   },
   "newSaTypeToFilter": {
-    "message": "Mag-type para i-filter"
+    "message": "Mag-type para i-filter",
+    "description": "Instructions for filtering a list of projects or secrets"
   },
   "deleteProjectsToast": {
-    "message": "Mga proyektong tinanggal"
+    "message": "Mga proyektong tinanggal",
+    "description": "Notifies that the selected projects have been deleted"
   },
   "deleteProjectToast": {
-    "message": "Ang proyekto at lahat ng mga kaugnay na lihim ay tinanggal"
+    "message": "Ang proyekto at lahat ng mga kaugnay na lihim ay tinanggal",
+    "description": "Notifies that a project has been deleted"
   },
   "deleteProjectDialogMessage": {
     "message": "Ang pagtanggal ng proyekto $PROJECT$ ay permanente at hindi mababago.",
+    "description": "Informs users that projects are hard deleted and not sent to trash",
     "placeholders": {
       "project": {
         "content": "$1",
@@ -5882,6 +5933,7 @@
   },
   "deleteProjectInputLabel": {
     "message": "I-type ang \"$CONFIRM$\" para magpatuloy",
+    "description": "Users are prompted to type 'confirm' to delete a project",
     "placeholders": {
       "confirm": {
         "content": "$1",
@@ -5891,6 +5943,7 @@
   },
   "deleteProjectConfirmMessage": {
     "message": "Tanggalin ang $PROJECT$",
+    "description": "Confirmation prompt to delete a specific project, where '$PROJECT$' is a placeholder for the name of the project.",
     "placeholders": {
       "project": {
         "content": "$1",
@@ -5900,6 +5953,7 @@
   },
   "deleteProjectsConfirmMessage": {
     "message": "Tanggalin ang $COUNT$ Projects",
+    "description": "Confirmation prompt to delete multiple projects, where '$COUNT$' is a placeholder for the number of projects to be deleted.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -5908,73 +5962,91 @@
     }
   },
   "deleteProjectsDialogMessage": {
-    "message": "Ang pagtanggal ng mga proyekto ay permanente at hindi maibabalik."
+    "message": "Ang pagtanggal ng mga proyekto ay permanente at hindi maibabalik.",
+    "description": "This message is displayed in a dialog box as a warning before proceeding with project deletion."
   },
   "projectsNoItemsTitle": {
-    "message": "Walang mga proyekto na ipapakita"
+    "message": "Walang mga proyekto na ipapakita",
+    "description": "Empty state to be displayed when there are no projects to display in the list."
   },
   "projectsNoItemsMessage": {
-    "message": "Magdagdag ng isang bagong proyekto upang makapagsimula sa pag aayos ng mga lihim."
+    "message": "Magdagdag ng isang bagong proyekto upang makapagsimula sa pag aayos ng mga lihim.",
+    "description": "Message to be displayed when there are no projects to display in the list."
   },
   "smConfirmationRequired": {
-    "message": "Kailangan ang kumpirmasyon"
+    "message": "Kailangan ang kumpirmasyon",
+    "description": "Indicates that user confirmation is required for an action to proceed."
   },
   "bulkDeleteProjectsErrorMessage": {
-    "message": "Hindi matanggal ang mga sumusunod na proyekto:"
+    "message": "Hindi matanggal ang mga sumusunod na proyekto:",
+    "description": "Message to be displayed when there is an error during bulk project deletion."
   },
   "softDeleteSuccessToast": {
-    "message": "Lihim na ipinadala sa basurahan"
+    "message": "Lihim na ipinadala sa basurahan",
+    "description": "Notification to be displayed when a secret is successfully sent to the trash."
   },
   "hardDeleteSuccessToast": {
     "message": "Lihim na permanenteng nabura"
   },
-  "searchProjects": {
-    "message": "Maghanap ng mga proyekto"
-  },
   "accessTokens": {
-    "message": "Mga token ng access"
+    "message": "Mga token ng access",
+    "description": "Title for the section displaying access tokens."
   },
   "createAccessToken": {
-    "message": "Lumikha ng access token"
+    "message": "Lumikha ng access token",
+    "description": "Button label for creating a new access token."
   },
   "expires": {
-    "message": "Nag-expire na"
+    "message": "Nag-expire na",
+    "description": "Label for the expiration date of an access token."
   },
   "canRead": {
-    "message": "Marunong Magbasa"
+    "message": "Marunong Magbasa",
+    "description": "Label for the access level of an access token (Read only)."
   },
   "accessTokensNoItemsTitle": {
-    "message": "Walang access token na ipapakita"
+    "message": "Walang access token na ipapakita",
+    "description": "Title to be displayed when there are no access tokens to display in the list."
   },
   "accessTokensNoItemsDesc": {
-    "message": "Upang makapagsimula, lumikha ng isang access token"
+    "message": "Upang makapagsimula, lumikha ng isang access token",
+    "description": "Message to be displayed when there are no access tokens to display in the list."
   },
   "downloadAccessToken": {
-    "message": "Mag download o kopyahin bago magsara."
+    "message": "Mag download o kopyahin bago magsara.",
+    "description": "Message to be displayed before closing an access token, reminding the user to download or copy it."
   },
   "expiresOnAccessToken": {
-    "message": "Nag-expire sa:"
+    "message": "Nag-expire sa:",
+    "description": "Label for the expiration date of an access token."
   },
   "accessTokenCallOutTitle": {
-    "message": "Ang mga access token ay hindi naka-imbak at hindi maaaring makuha"
+    "message": "Ang mga access token ay hindi naka-imbak at hindi maaaring makuha",
+    "description": "Notification to inform the user that access tokens are only displayed once and cannot be retrieved again."
   },
   "copyToken": {
-    "message": "Kopyahin ang token"
+    "message": "Kopyahin ang token",
+    "description": "Copies the generated access token to the user's clipboard."
   },
   "accessToken": {
-    "message": "I-access ang token"
+    "message": "I-access ang token",
+    "description": "A unique string that gives a client application (eg. CLI) access to a secret or set of secrets."
   },
   "accessTokenExpirationRequired": {
-    "message": "Kailangan ang expiration date"
+    "message": "Kailangan ang expiration date",
+    "description": "Error message indicating that an expiration date for the access token must be set."
   },
   "accessTokenCreatedAndCopied": {
-    "message": "Access token na nilikha at kinopya sa clipboard"
+    "message": "Access token na nilikha at kinopya sa clipboard",
+    "description": "Notification to inform the user that the access token has been created and copied to the clipboard."
   },
   "accessTokenPermissionsBetaNotification": {
-    "message": "Ang pamamahala ng mga pahintulot ay hindi magagamit para sa beta."
+    "message": "Ang pamamahala ng mga pahintulot ay hindi magagamit para sa beta.",
+    "description": "Notification to inform the user that the feature for managing access token permissions is not available in the beta version."
   },
   "revokeAccessToken": {
-    "message": "Bawiin ang access token"
+    "message": "Bawiin ang access token",
+    "description": "Invalidates / cancels an access token and as such removes access to secrets for the client application."
   },
   "revokeAccessTokens": {
     "message": "Tanggalin ang access tokens"
@@ -6358,8 +6430,14 @@
   "projectEmptyServiceAccountAccessPolicies": {
     "message": "Magdagdag ng mga service account upang mabigyan ng access"
   },
-  "canWrite": {
-    "message": "Maaaring magsulat"
+  "serviceAccountPeopleDescription": {
+    "message": "Bigyan ng access ang mga grupo o tao sa account ng serbisyo na ito."
+  },
+  "serviceAccountProjectsDescription": {
+    "message": "Asignahin ang mga proyekto sa account ng serbisyo na ito. "
+  },
+  "serviceAccountEmptyProjectAccesspolicies": {
+    "message": "Idagdag ang mga proyekto upang bigyan ng access"
   },
   "canReadWrite": {
     "message": "Maaaring magbasa, magsulat"
@@ -6415,6 +6493,19 @@
   },
   "errorReadingImportFile": {
     "message": "May nangyaring error kapag sinusubukang basahin ang import file"
+  },
+  "accessedSecret": {
+    "message": "Naka-access sa secret $SECRET_ID$.",
+    "placeholders": {
+      "secret_id": {
+        "content": "$1",
+        "example": "4d34e8a8"
+      }
+    }
+  },
+  "sdk": {
+    "message": "SDK",
+    "description": "Software Development Kit"
   },
   "createSecret": {
     "message": "Lumikha ng lihim"
@@ -6479,19 +6570,19 @@
     "message": "Paganahin ang Secrets Manager Beta"
   },
   "checkForBreaches": {
-    "message": "Check known data breaches for this password"
+    "message": "Tingnan ang kilalang breaches ng data para sa password na ito"
   },
   "exposedMasterPassword": {
-    "message": "Exposed Master Password"
+    "message": "Nakalantad na Master Password"
   },
   "exposedMasterPasswordDesc": {
-    "message": "Password found in a data breach. Use a unique password to protect your account. Are you sure you want to use an exposed password?"
+    "message": "Password na nakita sa data breach. Gamitin ang natatanging password upang makaproteksyon sa iyong account. Sigurado ka ba na gusto mong gamitin ang naipakitang password?"
   },
   "weakAndExposedMasterPassword": {
-    "message": "Weak and Exposed Master Password"
+    "message": "Mahinang at Naipakitang Pangunahing Password"
   },
   "weakAndBreachedMasterPasswordDesc": {
-    "message": "Weak password identified and found in a data breach. Use a strong and unique password to protect your account. Are you sure you want to use this password?"
+    "message": "Mahinang password na nakilala at nakita sa data breach. Gamitin ang malakas at natatanging password upang makaproteksyon sa iyong account. Sigurado ka ba na gusto mong gamitin ang password na ito?"
   },
   "characterMinimum": {
     "message": "$LENGTH$ character minimum",
@@ -6503,12 +6594,15 @@
     }
   },
   "masterPasswordMinimumlength": {
-    "message": "Master password must be at least $LENGTH$ characters long.",
+    "message": "Ang master password ay dapat na hindi bababa sa $LENGTH$ mga character.",
     "placeholders": {
       "length": {
         "content": "$1",
         "example": "14"
       }
     }
+  },
+  "dismiss": {
+    "message": "Dismiss"
   }
 }

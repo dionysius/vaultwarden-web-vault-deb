@@ -697,7 +697,7 @@
     "message": "マスターパスワードの再入力が必要です。"
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least $VALUE$ characters long.",
+    "message": "マスターパスワードは少なくとも $VALUE$ 文字以上でなければなりません。",
     "description": "The Master Password must be at least a specific number of characters long.",
     "placeholders": {
       "value": {
@@ -831,7 +831,7 @@
     "message": "ログインできません。"
   },
   "noTwoStepProviders": {
-    "message": "このアカウントでは2段階ログインが有効になっていますが、このブラウザは設定された2段階ログインプロバイダのいずれにも対応していません。"
+    "message": "このアカウントは2段階認証が有効ですが、このブラウザに対応した2段階認証プロパイダーが一つも設定されていません。"
   },
   "noTwoStepProviders2": {
     "message": "Chrome などの対応したブラウザを使うか、より幅広い端末に対応した認証プロパイダを追加してください。"
@@ -1397,7 +1397,7 @@
     "message": "SSO 設定または設定予定がある場合は、ID プロバイダーを通じて2段階ログインがすでに強制されている場合があります。"
   },
   "twoStepLoginRecoveryWarning": {
-    "message": "二段階認証を有効にすると Bitwarden アカウントから永久に閉め出されてしまうことがあります。リカバリーコードがあれば、通常の二段階認証プロバイダを使えなくなったとき(デバイスの紛失等)でもアカウントにアクセスできます。アカウントにアクセスできなくなっても Bitwarden はサポート出来ないため、リカバリーコードを書き出すか印刷し安全な場所で保管しておくことを推奨します。"
+    "message": "2段階認証を有効にすると Bitwarden アカウントから永久に閉め出されてしまうことがあります。リカバリーコードがあれば、通常の2段階認証プロバイダを使えなくなったとき (デバイスの紛失等) でもアカウントにアクセスできます。アカウントにアクセスできなくなっても Bitwarden はサポート出来ないため、リカバリーコードを書き出すか印刷し安全な場所で保管しておくことを推奨します。"
   },
   "viewRecoveryCode": {
     "message": "リカバリーコードを確認"
@@ -2060,9 +2060,6 @@
   },
   "updateLicense": {
     "message": "ライセンスの更新"
-  },
-  "updatedLicense": {
-    "message": "ライセンスは更新されました"
   },
   "manageSubscription": {
     "message": "契約の管理"
@@ -5707,28 +5704,36 @@
     "message": "隠す"
   },
   "projects": {
-    "message": "プロジェクト"
+    "message": "プロジェクト",
+    "description": "Description for the Projects field."
   },
   "lastEdited": {
-    "message": "最終編集日"
+    "message": "最終編集日",
+    "description": "The label for the date and time when a item was last edited."
   },
   "editSecret": {
-    "message": "シークレットを編集"
+    "message": "シークレットを編集",
+    "description": "Action to modify an existing secret."
   },
   "addSecret": {
-    "message": "シークレットを追加"
+    "message": "シークレットを追加",
+    "description": "Action to create a new secret."
   },
   "copySecretName": {
-    "message": "シークレット名をコピー"
+    "message": "シークレット名をコピー",
+    "description": "Action to copy the name of a secret to the system's clipboard."
   },
   "copySecretValue": {
-    "message": "シークレット値をコピー"
+    "message": "シークレット値をコピー",
+    "description": "Action to copy the value of a secret to the system's clipboard."
   },
   "deleteSecret": {
-    "message": "シークレットを削除"
+    "message": "シークレットを削除",
+    "description": "Action to delete a single secret from the system."
   },
   "deleteSecrets": {
-    "message": "シークレットを削除"
+    "message": "シークレットを削除",
+    "description": "The action to delete multiple secrets from the system."
   },
   "hardDeleteSecret": {
     "message": "シークレットを完全に削除"
@@ -5737,106 +5742,143 @@
     "message": "シークレットを完全に削除"
   },
   "secretProjectAssociationDescription": {
-    "message": "シークレットを関連付けるプロジェクトを選択します。これらのプロジェクトにアクセスできる組織ユーザーのみがシークレットを表示できます。"
+    "message": "シークレットを関連付けるプロジェクトを選択します。これらのプロジェクトにアクセスできる組織ユーザーのみがシークレットを表示できます。",
+    "description": "A prompt explaining how secrets can be associated with projects."
   },
   "selectProjects": {
-    "message": "プロジェクトの選択"
+    "message": "プロジェクトの選択",
+    "description": "A label for a type-to-filter input field to choose projects."
+  },
+  "searchProjects": {
+    "message": "プロジェクトを検索",
+    "description": "Label for the search bar used to search projects."
   },
   "project": {
-    "message": "プロジェクト"
+    "message": "プロジェクト",
+    "description": "Similar to collections, projects can be used to group secrets."
   },
   "editProject": {
-    "message": "プロジェクトを編集"
+    "message": "プロジェクトを編集",
+    "description": "The action to modify an existing project."
   },
   "viewProject": {
-    "message": "プロジェクトを表示"
+    "message": "プロジェクトを表示",
+    "description": "The action to view details of a project."
   },
   "deleteProject": {
-    "message": "プロジェクトを削除"
+    "message": "プロジェクトを削除",
+    "description": "The action to delete a project from the system."
   },
   "deleteProjects": {
-    "message": "プロジェクトを削除"
+    "message": "プロジェクトを削除",
+    "description": "The action to delete multiple projects from the system."
   },
   "secret": {
-    "message": "シークレット"
+    "message": "シークレット",
+    "description": "Label for a secret (key/value pair)"
   },
   "serviceAccount": {
-    "message": "サービスアカウント"
+    "message": "サービスアカウント",
+    "description": "A machine user which can be used to automate processes and access secrets in the system."
   },
   "serviceAccounts": {
-    "message": "サービスアカウント"
+    "message": "サービスアカウント",
+    "description": "The title for the section that deals with service accounts."
   },
   "secrets": {
-    "message": "シークレット"
+    "message": "シークレット",
+    "description": "The title for the section of the application that deals with secrets."
   },
   "nameValuePair": {
-    "message": "名前と値のペア"
+    "message": "名前と値のペア",
+    "description": "Title for a name/ value pair. Secrets typically consist of a name and value pair."
   },
   "secretEdited": {
-    "message": "シークレットを編集しました"
+    "message": "シークレットを編集しました",
+    "description": "Notification for the successful editing of a secret."
   },
   "secretCreated": {
-    "message": "シークレットを作成しました"
+    "message": "シークレットを作成しました",
+    "description": "Notification for the successful creation of a secret."
   },
   "newSecret": {
-    "message": "新しいシークレット"
+    "message": "新しいシークレット",
+    "description": "Title for creating a new secret."
   },
   "newServiceAccount": {
-    "message": "新しいサービスアカウント"
+    "message": "新しいサービスアカウント",
+    "description": "Title for creating a new service account."
   },
   "secretsNoItemsTitle": {
-    "message": "表示するシークレットはありません"
+    "message": "表示するシークレットはありません",
+    "description": "Empty state to indicate that there are no secrets to display."
   },
   "secretsNoItemsMessage": {
-    "message": "まずは新しいシークレットの追加またはインポートをしてください。"
+    "message": "まずは新しいシークレットの追加またはインポートをしてください。",
+    "description": "Message to encourage the user to start adding secrets."
   },
   "secretsTrashNoItemsMessage": {
     "message": "ゴミ箱にシークレットはありません。"
   },
-  "serviceAccountsNoItemsTitle": {
-    "message": "まだ表示するものはありません"
-  },
   "serviceAccountsNoItemsMessage": {
-    "message": "シークレットアクセスを自動化するためには、新しいサービスアカウントを作成してください。"
+    "message": "シークレットアクセスを自動化するためには、新しいサービスアカウントを作成してください。",
+    "description": "Message to encourage the user to start creating service accounts."
+  },
+  "serviceAccountsNoItemsTitle": {
+    "message": "まだ表示するものはありません",
+    "description": "Title to indicate that there are no service accounts to display."
   },
   "searchSecrets": {
-    "message": "シークレットを検索"
+    "message": "シークレットを検索",
+    "description": "Placeholder text for searching secrets."
   },
   "deleteServiceAccounts": {
-    "message": "サービスアカウントを削除"
+    "message": "サービスアカウントを削除",
+    "description": "Title for the action to delete one or multiple service accounts."
   },
   "deleteServiceAccount": {
-    "message": "サービスアカウントを削除"
+    "message": "サービスアカウントを削除",
+    "description": "Title for the action to delete a single service account."
   },
   "viewServiceAccount": {
-    "message": "サービスアカウントを表示"
+    "message": "サービスアカウントを表示",
+    "description": "Action to view the details of a service account."
   },
   "searchServiceAccounts": {
-    "message": "サービスアカウントを検索"
+    "message": "サービスアカウントを検索",
+    "description": "Placeholder text for searching service accounts."
   },
   "addProject": {
-    "message": "プロジェクトを追加"
+    "message": "プロジェクトを追加",
+    "description": "Title for creating a new project."
   },
   "projectEdited": {
-    "message": "プロジェクトを編集しました"
+    "message": "プロジェクトを編集しました",
+    "description": "Notification for the successful editing of a project."
   },
   "projectSaved": {
-    "message": "プロジェクトを保存しました"
+    "message": "プロジェクトを保存しました",
+    "description": "Notification for the successful saving of a project."
   },
   "projectCreated": {
-    "message": "プロジェクトを作成しました"
+    "message": "プロジェクトを作成しました",
+    "description": "Notification for the successful creation of a project."
   },
   "projectName": {
-    "message": "プロジェクト名"
+    "message": "プロジェクト名",
+    "description": "Label for entering the name of a project."
   },
   "newProject": {
-    "message": "新しいプロジェクト"
+    "message": "新しいプロジェクト",
+    "description": "Title for creating a new project."
   },
   "softDeleteSecretWarning": {
-    "message": "シークレットを削除すると、既存の連携に影響する可能性があります。"
+    "message": "シークレットを削除すると、既存の連携に影響する可能性があります。",
+    "description": "Warns that deleting secrets can have consequences on integrations"
   },
   "softDeletesSuccessToast": {
-    "message": "シークレットをゴミ箱に送る"
+    "message": "シークレットをゴミ箱に送る",
+    "description": "Notifies that the selected secrets have been moved to the trash"
   },
   "hardDeleteSecretConfirmation": {
     "message": "このシークレットを完全に削除してもよろしいですか？"
@@ -5847,32 +5889,41 @@
   "hardDeletesSuccessToast": {
     "message": "シークレットを完全に削除しました"
   },
-  "serviceAccountCreated": {
-    "message": "サービスアカウントを作成しました"
-  },
   "smAccess": {
-    "message": "アクセス"
+    "message": "アクセス",
+    "description": "Title indicating what permissions a service account has"
   },
   "projectCommaSecret": {
-    "message": "プロジェクト、シークレット"
+    "message": "プロジェクト、シークレット",
+    "description": ""
   },
   "serviceAccountName": {
-    "message": "サービスアカウント名"
+    "message": "サービスアカウント名",
+    "description": "Label for the name of a service account"
+  },
+  "serviceAccountCreated": {
+    "message": "サービスアカウントを作成しました",
+    "description": "Notifies that a new service account has been created"
   },
   "newSaSelectAccess": {
-    "message": "プロジェクトまたはシークレットを入力・選択"
+    "message": "プロジェクトまたはシークレットを入力・選択",
+    "description": "Instructions for selecting projects or secrets for a new service account"
   },
   "newSaTypeToFilter": {
-    "message": "入力して絞り込む"
+    "message": "入力して絞り込む",
+    "description": "Instructions for filtering a list of projects or secrets"
   },
   "deleteProjectsToast": {
-    "message": "プロジェクトを削除しました"
+    "message": "プロジェクトを削除しました",
+    "description": "Notifies that the selected projects have been deleted"
   },
   "deleteProjectToast": {
-    "message": "プロジェクトと関連するすべてのシークレットを削除しました"
+    "message": "プロジェクトと関連するすべてのシークレットを削除しました",
+    "description": "Notifies that a project has been deleted"
   },
   "deleteProjectDialogMessage": {
     "message": "プロジェクト $PROJECT$ を削除すると元に戻せません。",
+    "description": "Informs users that projects are hard deleted and not sent to trash",
     "placeholders": {
       "project": {
         "content": "$1",
@@ -5882,6 +5933,7 @@
   },
   "deleteProjectInputLabel": {
     "message": "「$CONFIRM$」と入力して続行",
+    "description": "Users are prompted to type 'confirm' to delete a project",
     "placeholders": {
       "confirm": {
         "content": "$1",
@@ -5891,6 +5943,7 @@
   },
   "deleteProjectConfirmMessage": {
     "message": "$PROJECT$ を削除",
+    "description": "Confirmation prompt to delete a specific project, where '$PROJECT$' is a placeholder for the name of the project.",
     "placeholders": {
       "project": {
         "content": "$1",
@@ -5900,6 +5953,7 @@
   },
   "deleteProjectsConfirmMessage": {
     "message": "$COUNT$ 個のプロジェクトを削除",
+    "description": "Confirmation prompt to delete multiple projects, where '$COUNT$' is a placeholder for the number of projects to be deleted.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -5908,73 +5962,91 @@
     }
   },
   "deleteProjectsDialogMessage": {
-    "message": "プロジェクトを削除すると元に戻せません。"
+    "message": "プロジェクトを削除すると元に戻せません。",
+    "description": "This message is displayed in a dialog box as a warning before proceeding with project deletion."
   },
   "projectsNoItemsTitle": {
-    "message": "表示するプロジェクトがありません"
+    "message": "表示するプロジェクトがありません",
+    "description": "Empty state to be displayed when there are no projects to display in the list."
   },
   "projectsNoItemsMessage": {
-    "message": "秘密を始めるために新しいプロジェクトを追加する。"
+    "message": "秘密を始めるために新しいプロジェクトを追加する。",
+    "description": "Message to be displayed when there are no projects to display in the list."
   },
   "smConfirmationRequired": {
-    "message": "確認が必要です"
+    "message": "確認が必要です",
+    "description": "Indicates that user confirmation is required for an action to proceed."
   },
   "bulkDeleteProjectsErrorMessage": {
-    "message": "次のプロジェクトを削除できませんでした:"
+    "message": "次のプロジェクトを削除できませんでした:",
+    "description": "Message to be displayed when there is an error during bulk project deletion."
   },
   "softDeleteSuccessToast": {
-    "message": "シークレットをゴミ箱に送る"
+    "message": "シークレットをゴミ箱に送る",
+    "description": "Notification to be displayed when a secret is successfully sent to the trash."
   },
   "hardDeleteSuccessToast": {
     "message": "シークレットを完全に削除しました"
   },
-  "searchProjects": {
-    "message": "プロジェクトを検索"
-  },
   "accessTokens": {
-    "message": "アクセストークン"
+    "message": "アクセストークン",
+    "description": "Title for the section displaying access tokens."
   },
   "createAccessToken": {
-    "message": "アクセストークンを作成"
+    "message": "アクセストークンを作成",
+    "description": "Button label for creating a new access token."
   },
   "expires": {
-    "message": "有効期限"
+    "message": "有効期限",
+    "description": "Label for the expiration date of an access token."
   },
   "canRead": {
-    "message": "読み取り可能"
+    "message": "読み取り可能",
+    "description": "Label for the access level of an access token (Read only)."
   },
   "accessTokensNoItemsTitle": {
-    "message": "表示するアクセス トークンはありません"
+    "message": "表示するアクセス トークンはありません",
+    "description": "Title to be displayed when there are no access tokens to display in the list."
   },
   "accessTokensNoItemsDesc": {
-    "message": "始めるにはアクセストークンを作成してください"
+    "message": "始めるにはアクセストークンを作成してください",
+    "description": "Message to be displayed when there are no access tokens to display in the list."
   },
   "downloadAccessToken": {
-    "message": "閉じる前にダウンロードまたはコピーする。"
+    "message": "閉じる前にダウンロードまたはコピーする。",
+    "description": "Message to be displayed before closing an access token, reminding the user to download or copy it."
   },
   "expiresOnAccessToken": {
-    "message": "有効期限:"
+    "message": "有効期限:",
+    "description": "Label for the expiration date of an access token."
   },
   "accessTokenCallOutTitle": {
-    "message": "アクセストークンは保存されていないため、取得できません"
+    "message": "アクセストークンは保存されていないため、取得できません",
+    "description": "Notification to inform the user that access tokens are only displayed once and cannot be retrieved again."
   },
   "copyToken": {
-    "message": "トークンをコピー"
+    "message": "トークンをコピー",
+    "description": "Copies the generated access token to the user's clipboard."
   },
   "accessToken": {
-    "message": "アクセストークン"
+    "message": "アクセストークン",
+    "description": "A unique string that gives a client application (eg. CLI) access to a secret or set of secrets."
   },
   "accessTokenExpirationRequired": {
-    "message": "有効期限は必須です"
+    "message": "有効期限は必須です",
+    "description": "Error message indicating that an expiration date for the access token must be set."
   },
   "accessTokenCreatedAndCopied": {
-    "message": "アクセストークンが作成され、クリップボードにコピーされました"
+    "message": "アクセストークンが作成され、クリップボードにコピーされました",
+    "description": "Notification to inform the user that the access token has been created and copied to the clipboard."
   },
   "accessTokenPermissionsBetaNotification": {
-    "message": "ベータ版では権限管理が利用できません。"
+    "message": "ベータ版では権限管理が利用できません。",
+    "description": "Notification to inform the user that the feature for managing access token permissions is not available in the beta version."
   },
   "revokeAccessToken": {
-    "message": "アクセストークンの取り消し"
+    "message": "アクセストークンの取り消し",
+    "description": "Invalidates / cancels an access token and as such removes access to secrets for the client application."
   },
   "revokeAccessTokens": {
     "message": "アクセストークンを取り消す"
@@ -6341,10 +6413,10 @@
     "message": "ライセンスをアップロード"
   },
   "projectPeopleDescription": {
-    "message": "グループまたは人にこのプロジェクトへのアクセスを許可します。"
+    "message": "グループまたはメンバーにこのプロジェクトへのアクセスを許可します。"
   },
   "projectPeopleSelectHint": {
-    "message": "人やグループを入力・選択"
+    "message": "メンバーやグループを入力・選択"
   },
   "projectServiceAccountsDescription": {
     "message": "このプロジェクトへのサービスアカウントのアクセスを許可します。"
@@ -6353,13 +6425,19 @@
     "message": "サービスアカウントを入力・選択"
   },
   "projectEmptyPeopleAccessPolicies": {
-    "message": "人やグループを追加してコラボレーションを開始します"
+    "message": "メンバーやグループを追加してコラボレーションを開始します"
   },
   "projectEmptyServiceAccountAccessPolicies": {
     "message": "アクセスを許可するサービスアカウントを追加"
   },
-  "canWrite": {
-    "message": "書き込み可能"
+  "serviceAccountPeopleDescription": {
+    "message": "グループまたはメンバーにこのサービスアカウントへのアクセスを許可します。"
+  },
+  "serviceAccountProjectsDescription": {
+    "message": "このサービスアカウントにプロジェクトを割り当てます。 "
+  },
+  "serviceAccountEmptyProjectAccesspolicies": {
+    "message": "アクセスを許可するプロジェクトを追加"
   },
   "canReadWrite": {
     "message": "読み取りと書き込み可能"
@@ -6389,7 +6467,7 @@
     "message": "このユーザーはベータ版シークレットマネージャーにアクセスできます"
   },
   "important": {
-    "message": "Important:"
+    "message": "重要"
   },
   "viewAll": {
     "message": "すべて表示"
@@ -6415,6 +6493,19 @@
   },
   "errorReadingImportFile": {
     "message": "インポートファイルの読み込み中にエラーが発生しました"
+  },
+  "accessedSecret": {
+    "message": "シークレット $SECRET_ID$ にアクセスしました。",
+    "placeholders": {
+      "secret_id": {
+        "content": "$1",
+        "example": "4d34e8a8"
+      }
+    }
+  },
+  "sdk": {
+    "message": "SDK",
+    "description": "Software Development Kit"
   },
   "createSecret": {
     "message": "シークレットを作成"
@@ -6510,5 +6601,8 @@
         "example": "14"
       }
     }
+  },
+  "dismiss": {
+    "message": "表示しない"
   }
 }

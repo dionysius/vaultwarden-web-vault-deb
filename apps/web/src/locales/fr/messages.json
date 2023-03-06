@@ -613,7 +613,7 @@
     "message": "Non"
   },
   "loginOrCreateNewAccount": {
-    "message": "Identifiez-vous ou créez un nouveau compte pour accéder à votre coffre sécurisé."
+    "message": "Connectez-vous ou créez un nouveau compte pour accéder à votre coffre sécurisé."
   },
   "loginWithDevice": {
     "message": "Se connecter avec l'appareil"
@@ -2060,9 +2060,6 @@
   },
   "updateLicense": {
     "message": "Mettre à jour la licence"
-  },
-  "updatedLicense": {
-    "message": "Licence mise à jour"
   },
   "manageSubscription": {
     "message": "Gérer l'abonnement"
@@ -5707,28 +5704,36 @@
     "message": "Masquer"
   },
   "projects": {
-    "message": "Projets"
+    "message": "Projets",
+    "description": "Description for the Projects field."
   },
   "lastEdited": {
-    "message": "Dernière Modification"
+    "message": "Dernière Modification",
+    "description": "The label for the date and time when a item was last edited."
   },
   "editSecret": {
-    "message": "Modifier le Secret"
+    "message": "Modifier le Secret",
+    "description": "Action to modify an existing secret."
   },
   "addSecret": {
-    "message": "Ajouter un Secret"
+    "message": "Ajouter un Secret",
+    "description": "Action to create a new secret."
   },
   "copySecretName": {
-    "message": "Copier le Nom du Secret"
+    "message": "Copier le Nom du Secret",
+    "description": "Action to copy the name of a secret to the system's clipboard."
   },
   "copySecretValue": {
-    "message": "Copier la Valeur Secrète"
+    "message": "Copier la Valeur Secrète",
+    "description": "Action to copy the value of a secret to the system's clipboard."
   },
   "deleteSecret": {
-    "message": "Supprimer le Secret"
+    "message": "Supprimer le Secret",
+    "description": "Action to delete a single secret from the system."
   },
   "deleteSecrets": {
-    "message": "Supprimer les Secrets"
+    "message": "Supprimer les Secrets",
+    "description": "The action to delete multiple secrets from the system."
   },
   "hardDeleteSecret": {
     "message": "Supprimer définitivement le secret"
@@ -5737,106 +5742,143 @@
     "message": "Supprimer définitivement les secrets"
   },
   "secretProjectAssociationDescription": {
-    "message": "Sélectionnez les projets auxquels le secret sera associé. Seuls les utilisateurs de l'organisation ayant accès à ces projets pourront voir le secret."
+    "message": "Sélectionnez les projets auxquels le secret sera associé. Seuls les utilisateurs de l'organisation ayant accès à ces projets pourront voir le secret.",
+    "description": "A prompt explaining how secrets can be associated with projects."
   },
   "selectProjects": {
-    "message": "Sélectionnez les projets"
+    "message": "Sélectionnez les projets",
+    "description": "A label for a type-to-filter input field to choose projects."
+  },
+  "searchProjects": {
+    "message": "Rechercher des Projets",
+    "description": "Label for the search bar used to search projects."
   },
   "project": {
-    "message": "Projet"
+    "message": "Projet",
+    "description": "Similar to collections, projects can be used to group secrets."
   },
   "editProject": {
-    "message": "Modifier le Projet"
+    "message": "Modifier le Projet",
+    "description": "The action to modify an existing project."
   },
   "viewProject": {
-    "message": "Afficher le Projet"
+    "message": "Afficher le Projet",
+    "description": "The action to view details of a project."
   },
   "deleteProject": {
-    "message": "Supprimer le Projet"
+    "message": "Supprimer le Projet",
+    "description": "The action to delete a project from the system."
   },
   "deleteProjects": {
-    "message": "Supprimer les Projets"
+    "message": "Supprimer les Projets",
+    "description": "The action to delete multiple projects from the system."
   },
   "secret": {
-    "message": "Secret"
+    "message": "Secret",
+    "description": "Label for a secret (key/value pair)"
   },
   "serviceAccount": {
-    "message": "Compte de Service"
+    "message": "Compte de Service",
+    "description": "A machine user which can be used to automate processes and access secrets in the system."
   },
   "serviceAccounts": {
-    "message": "Comptes de Service"
+    "message": "Comptes de Service",
+    "description": "The title for the section that deals with service accounts."
   },
   "secrets": {
-    "message": "Secrets"
+    "message": "Secrets",
+    "description": "The title for the section of the application that deals with secrets."
   },
   "nameValuePair": {
-    "message": "Nom/Paire de Valeur"
+    "message": "Nom/Paire de Valeur",
+    "description": "Title for a name/ value pair. Secrets typically consist of a name and value pair."
   },
   "secretEdited": {
-    "message": "Secret Modifié"
+    "message": "Secret Modifié",
+    "description": "Notification for the successful editing of a secret."
   },
   "secretCreated": {
-    "message": "Secret Créé"
+    "message": "Secret Créé",
+    "description": "Notification for the successful creation of a secret."
   },
   "newSecret": {
-    "message": "Nouveau Secret"
+    "message": "Nouveau Secret",
+    "description": "Title for creating a new secret."
   },
   "newServiceAccount": {
-    "message": "Nouveau Compte de Service"
+    "message": "Nouveau Compte de Service",
+    "description": "Title for creating a new service account."
   },
   "secretsNoItemsTitle": {
-    "message": "Aucun secret à afficher"
+    "message": "Aucun secret à afficher",
+    "description": "Empty state to indicate that there are no secrets to display."
   },
   "secretsNoItemsMessage": {
-    "message": "Pour commencer, ajoutez un nouveau secret ou importez des secrets."
+    "message": "Pour commencer, ajoutez un nouveau secret ou importez des secrets.",
+    "description": "Message to encourage the user to start adding secrets."
   },
   "secretsTrashNoItemsMessage": {
     "message": "Il n'y a pas de secrets dans la corbeille."
   },
-  "serviceAccountsNoItemsTitle": {
-    "message": "Rien à afficher pour l'instant"
-  },
   "serviceAccountsNoItemsMessage": {
-    "message": "Créez un nouveau Compte de Service pour commencer à automatiser l'accès secret."
+    "message": "Créez un nouveau Compte de Service pour commencer à automatiser l'accès secret.",
+    "description": "Message to encourage the user to start creating service accounts."
+  },
+  "serviceAccountsNoItemsTitle": {
+    "message": "Rien à afficher pour l'instant",
+    "description": "Title to indicate that there are no service accounts to display."
   },
   "searchSecrets": {
-    "message": "Rechercher des Secrets"
+    "message": "Rechercher des Secrets",
+    "description": "Placeholder text for searching secrets."
   },
   "deleteServiceAccounts": {
-    "message": "Supprimer des Comptes de Service"
+    "message": "Supprimer des Comptes de Service",
+    "description": "Title for the action to delete one or multiple service accounts."
   },
   "deleteServiceAccount": {
-    "message": "Supprimer le Compte de Service"
+    "message": "Supprimer le Compte de Service",
+    "description": "Title for the action to delete a single service account."
   },
   "viewServiceAccount": {
-    "message": "Afficher le Compte de Service"
+    "message": "Afficher le Compte de Service",
+    "description": "Action to view the details of a service account."
   },
   "searchServiceAccounts": {
-    "message": "Rechercher des Comptes de Service"
+    "message": "Rechercher des Comptes de Service",
+    "description": "Placeholder text for searching service accounts."
   },
   "addProject": {
-    "message": "Ajouter un Projet"
+    "message": "Ajouter un Projet",
+    "description": "Title for creating a new project."
   },
   "projectEdited": {
-    "message": "Projet modifié"
+    "message": "Projet modifié",
+    "description": "Notification for the successful editing of a project."
   },
   "projectSaved": {
-    "message": "Projet sauvegardé"
+    "message": "Projet sauvegardé",
+    "description": "Notification for the successful saving of a project."
   },
   "projectCreated": {
-    "message": "Projet créé"
+    "message": "Projet créé",
+    "description": "Notification for the successful creation of a project."
   },
   "projectName": {
-    "message": "Nom du Projet"
+    "message": "Nom du Projet",
+    "description": "Label for entering the name of a project."
   },
   "newProject": {
-    "message": "Nouveau Projet"
+    "message": "Nouveau Projet",
+    "description": "Title for creating a new project."
   },
   "softDeleteSecretWarning": {
-    "message": "La suppression de secrets peut affecter les intégrations existantes."
+    "message": "La suppression de secrets peut affecter les intégrations existantes.",
+    "description": "Warns that deleting secrets can have consequences on integrations"
   },
   "softDeletesSuccessToast": {
-    "message": "Secrets envoyés à la corbeille"
+    "message": "Secrets envoyés à la corbeille",
+    "description": "Notifies that the selected secrets have been moved to the trash"
   },
   "hardDeleteSecretConfirmation": {
     "message": "Êtes-vous sûr de vouloir supprimer définitivement ce secret ?"
@@ -5847,32 +5889,41 @@
   "hardDeletesSuccessToast": {
     "message": "Secrets définitivement supprimés"
   },
-  "serviceAccountCreated": {
-    "message": "Compte de Service créé"
-  },
   "smAccess": {
-    "message": "Accès"
+    "message": "Accès",
+    "description": "Title indicating what permissions a service account has"
   },
   "projectCommaSecret": {
-    "message": "Projet, Secret"
+    "message": "Projet, Secret",
+    "description": ""
   },
   "serviceAccountName": {
-    "message": "Nom du Compte de Service"
+    "message": "Nom du Compte de Service",
+    "description": "Label for the name of a service account"
+  },
+  "serviceAccountCreated": {
+    "message": "Compte de Service créé",
+    "description": "Notifies that a new service account has been created"
   },
   "newSaSelectAccess": {
-    "message": "Tapez ou Sélectionnez des Projets ou des Secrets"
+    "message": "Tapez ou Sélectionnez des Projets ou des Secrets",
+    "description": "Instructions for selecting projects or secrets for a new service account"
   },
   "newSaTypeToFilter": {
-    "message": "Tapez pour Filtrer"
+    "message": "Tapez pour Filtrer",
+    "description": "Instructions for filtering a list of projects or secrets"
   },
   "deleteProjectsToast": {
-    "message": "Projets supprimés"
+    "message": "Projets supprimés",
+    "description": "Notifies that the selected projects have been deleted"
   },
   "deleteProjectToast": {
-    "message": "Le projet et tous les secrets associés ont été supprimés"
+    "message": "Le projet et tous les secrets associés ont été supprimés",
+    "description": "Notifies that a project has been deleted"
   },
   "deleteProjectDialogMessage": {
     "message": "La suppression du projet $PROJECT$ est permanente et irréversible.",
+    "description": "Informs users that projects are hard deleted and not sent to trash",
     "placeholders": {
       "project": {
         "content": "$1",
@@ -5882,6 +5933,7 @@
   },
   "deleteProjectInputLabel": {
     "message": "Tapez \"$CONFIRM$\" pour continuer",
+    "description": "Users are prompted to type 'confirm' to delete a project",
     "placeholders": {
       "confirm": {
         "content": "$1",
@@ -5891,6 +5943,7 @@
   },
   "deleteProjectConfirmMessage": {
     "message": "Supprimer $PROJECT$",
+    "description": "Confirmation prompt to delete a specific project, where '$PROJECT$' is a placeholder for the name of the project.",
     "placeholders": {
       "project": {
         "content": "$1",
@@ -5900,6 +5953,7 @@
   },
   "deleteProjectsConfirmMessage": {
     "message": "Supprimer $COUNT$ projets",
+    "description": "Confirmation prompt to delete multiple projects, where '$COUNT$' is a placeholder for the number of projects to be deleted.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -5908,73 +5962,91 @@
     }
   },
   "deleteProjectsDialogMessage": {
-    "message": "La suppression de projets est permanente et irréversible."
+    "message": "La suppression de projets est permanente et irréversible.",
+    "description": "This message is displayed in a dialog box as a warning before proceeding with project deletion."
   },
   "projectsNoItemsTitle": {
-    "message": "Aucun projet à afficher"
+    "message": "Aucun projet à afficher",
+    "description": "Empty state to be displayed when there are no projects to display in the list."
   },
   "projectsNoItemsMessage": {
-    "message": "Ajouter un nouveau projet pour commencer à organiser des secrets."
+    "message": "Ajouter un nouveau projet pour commencer à organiser des secrets.",
+    "description": "Message to be displayed when there are no projects to display in the list."
   },
   "smConfirmationRequired": {
-    "message": "Confirmation requise"
+    "message": "Confirmation requise",
+    "description": "Indicates that user confirmation is required for an action to proceed."
   },
   "bulkDeleteProjectsErrorMessage": {
-    "message": "Les projets suivants n'ont pu être supprimés :"
+    "message": "Les projets suivants n'ont pu être supprimés :",
+    "description": "Message to be displayed when there is an error during bulk project deletion."
   },
   "softDeleteSuccessToast": {
-    "message": "Secret envoyé à la corbeille"
+    "message": "Secret envoyé à la corbeille",
+    "description": "Notification to be displayed when a secret is successfully sent to the trash."
   },
   "hardDeleteSuccessToast": {
     "message": "Secret définitivement supprimé"
   },
-  "searchProjects": {
-    "message": "Rechercher des Projets"
-  },
   "accessTokens": {
-    "message": "Jetons d'accès"
+    "message": "Jetons d'accès",
+    "description": "Title for the section displaying access tokens."
   },
   "createAccessToken": {
-    "message": "Créer un jeton d'accès"
+    "message": "Créer un jeton d'accès",
+    "description": "Button label for creating a new access token."
   },
   "expires": {
-    "message": "Expire"
+    "message": "Expire",
+    "description": "Label for the expiration date of an access token."
   },
   "canRead": {
-    "message": "Peut Lire"
+    "message": "Peut Lire",
+    "description": "Label for the access level of an access token (Read only)."
   },
   "accessTokensNoItemsTitle": {
-    "message": "Aucun jeton d'accès à afficher"
+    "message": "Aucun jeton d'accès à afficher",
+    "description": "Title to be displayed when there are no access tokens to display in the list."
   },
   "accessTokensNoItemsDesc": {
-    "message": "Pour commencer, créez un jeton d'accès"
+    "message": "Pour commencer, créez un jeton d'accès",
+    "description": "Message to be displayed when there are no access tokens to display in the list."
   },
   "downloadAccessToken": {
-    "message": "Télécharger ou copier avant de fermer."
+    "message": "Télécharger ou copier avant de fermer.",
+    "description": "Message to be displayed before closing an access token, reminding the user to download or copy it."
   },
   "expiresOnAccessToken": {
-    "message": "Expire le:"
+    "message": "Expire le:",
+    "description": "Label for the expiration date of an access token."
   },
   "accessTokenCallOutTitle": {
-    "message": "Les jetons d'accès ne sont pas stockés et ne peuvent pas être récupérés"
+    "message": "Les jetons d'accès ne sont pas stockés et ne peuvent pas être récupérés",
+    "description": "Notification to inform the user that access tokens are only displayed once and cannot be retrieved again."
   },
   "copyToken": {
-    "message": "Copier le jeton"
+    "message": "Copier le jeton",
+    "description": "Copies the generated access token to the user's clipboard."
   },
   "accessToken": {
-    "message": "Jeton d'accès"
+    "message": "Jeton d'accès",
+    "description": "A unique string that gives a client application (eg. CLI) access to a secret or set of secrets."
   },
   "accessTokenExpirationRequired": {
-    "message": "Date d'expiration requise"
+    "message": "Date d'expiration requise",
+    "description": "Error message indicating that an expiration date for the access token must be set."
   },
   "accessTokenCreatedAndCopied": {
-    "message": "Jeton d'accès créé et copié dans le presse-papiers"
+    "message": "Jeton d'accès créé et copié dans le presse-papiers",
+    "description": "Notification to inform the user that the access token has been created and copied to the clipboard."
   },
   "accessTokenPermissionsBetaNotification": {
-    "message": "La gestion des permissions n'est pas disponible pour la bêta."
+    "message": "La gestion des permissions n'est pas disponible pour la bêta.",
+    "description": "Notification to inform the user that the feature for managing access token permissions is not available in the beta version."
   },
   "revokeAccessToken": {
-    "message": "Révoquer le jeton d'accès"
+    "message": "Révoquer le jeton d'accès",
+    "description": "Invalidates / cancels an access token and as such removes access to secrets for the client application."
   },
   "revokeAccessTokens": {
     "message": "Révoquer les jetons d'accès"
@@ -6358,8 +6430,14 @@
   "projectEmptyServiceAccountAccessPolicies": {
     "message": "Ajouter des comptes de service pour accorder l'accès"
   },
-  "canWrite": {
-    "message": "Peut écrire"
+  "serviceAccountPeopleDescription": {
+    "message": "Accorder l'accès à ce compte de service à des groupes ou à des personnes."
+  },
+  "serviceAccountProjectsDescription": {
+    "message": "Assigner des projets à ce compte de service. "
+  },
+  "serviceAccountEmptyProjectAccesspolicies": {
+    "message": "Ajouter des projets pour accorder l'accès"
   },
   "canReadWrite": {
     "message": "Peut lire, écrire"
@@ -6415,6 +6493,19 @@
   },
   "errorReadingImportFile": {
     "message": "Une erreur est survenue lors de la lecture du fichier importé"
+  },
+  "accessedSecret": {
+    "message": "Accès au secret $SECRET_ID$.",
+    "placeholders": {
+      "secret_id": {
+        "content": "$1",
+        "example": "4d34e8a8"
+      }
+    }
+  },
+  "sdk": {
+    "message": "SDK",
+    "description": "Software Development Kit"
   },
   "createSecret": {
     "message": "Créer un secret"
@@ -6494,7 +6585,7 @@
     "message": "Mot de passe faible identifié et trouvé dans une brèche de données. Utilisez un mot de passe robuste et unique pour protéger votre compte. Êtes-vous sûr de vouloir utiliser ce mot de passe ?"
   },
   "characterMinimum": {
-    "message": "$LENGTH$ caractère minimum",
+    "message": "$LENGTH$ caractères minimum",
     "placeholders": {
       "length": {
         "content": "$1",
@@ -6510,5 +6601,8 @@
         "example": "14"
       }
     }
+  },
+  "dismiss": {
+    "message": "Rejeter"
   }
 }

@@ -2061,9 +2061,6 @@
   "updateLicense": {
     "message": "Ажурирање лиценце"
   },
-  "updatedLicense": {
-    "message": "Лиценца ажурирана"
-  },
   "manageSubscription": {
     "message": "Управљај претплатама"
   },
@@ -5707,28 +5704,36 @@
     "message": "Сакриј"
   },
   "projects": {
-    "message": "Пројекти"
+    "message": "Пројекти",
+    "description": "Description for the Projects field."
   },
   "lastEdited": {
-    "message": "Последња измена"
+    "message": "Последња измена",
+    "description": "The label for the date and time when a item was last edited."
   },
   "editSecret": {
-    "message": "Уреди тајну"
+    "message": "Уреди тајну",
+    "description": "Action to modify an existing secret."
   },
   "addSecret": {
-    "message": "Додај тајну"
+    "message": "Додај тајну",
+    "description": "Action to create a new secret."
   },
   "copySecretName": {
-    "message": "Копирати име тајне"
+    "message": "Копирати име тајне",
+    "description": "Action to copy the name of a secret to the system's clipboard."
   },
   "copySecretValue": {
-    "message": "Копирати вредност тајне"
+    "message": "Копирати вредност тајне",
+    "description": "Action to copy the value of a secret to the system's clipboard."
   },
   "deleteSecret": {
-    "message": "Обрисати тајну"
+    "message": "Обрисати тајну",
+    "description": "Action to delete a single secret from the system."
   },
   "deleteSecrets": {
-    "message": "Обрисати тајне"
+    "message": "Обрисати тајне",
+    "description": "The action to delete multiple secrets from the system."
   },
   "hardDeleteSecret": {
     "message": "Трајно избрисати тајну"
@@ -5737,106 +5742,143 @@
     "message": "Трајно избрисати тајне"
   },
   "secretProjectAssociationDescription": {
-    "message": "Select projects that the secret will be associated with. Only organization users with access to these projects will be able to see the secret."
+    "message": "Select projects that the secret will be associated with. Only organization users with access to these projects will be able to see the secret.",
+    "description": "A prompt explaining how secrets can be associated with projects."
   },
   "selectProjects": {
-    "message": "Одабрати пројекте"
+    "message": "Одабрати пројекте",
+    "description": "A label for a type-to-filter input field to choose projects."
+  },
+  "searchProjects": {
+    "message": "Претражити пројекте",
+    "description": "Label for the search bar used to search projects."
   },
   "project": {
-    "message": "Пројекат"
+    "message": "Пројекат",
+    "description": "Similar to collections, projects can be used to group secrets."
   },
   "editProject": {
-    "message": "Уреди Пројекат"
+    "message": "Уреди Пројекат",
+    "description": "The action to modify an existing project."
   },
   "viewProject": {
-    "message": "Приказ пројекта"
+    "message": "Приказ пројекта",
+    "description": "The action to view details of a project."
   },
   "deleteProject": {
-    "message": "Избриши пројекат"
+    "message": "Избриши пројекат",
+    "description": "The action to delete a project from the system."
   },
   "deleteProjects": {
-    "message": "Избриши пројекте"
+    "message": "Избриши пројекте",
+    "description": "The action to delete multiple projects from the system."
   },
   "secret": {
-    "message": "Тајна"
+    "message": "Тајна",
+    "description": "Label for a secret (key/value pair)"
   },
   "serviceAccount": {
-    "message": "Налог сервиса"
+    "message": "Налог сервиса",
+    "description": "A machine user which can be used to automate processes and access secrets in the system."
   },
   "serviceAccounts": {
-    "message": "Налози сервиса"
+    "message": "Налози сервиса",
+    "description": "The title for the section that deals with service accounts."
   },
   "secrets": {
-    "message": "Тајне"
+    "message": "Тајне",
+    "description": "The title for the section of the application that deals with secrets."
   },
   "nameValuePair": {
-    "message": "Name/Value pair"
+    "message": "Name/Value pair",
+    "description": "Title for a name/ value pair. Secrets typically consist of a name and value pair."
   },
   "secretEdited": {
-    "message": "Тајна промењена"
+    "message": "Тајна промењена",
+    "description": "Notification for the successful editing of a secret."
   },
   "secretCreated": {
-    "message": "Тајна креирана"
+    "message": "Тајна креирана",
+    "description": "Notification for the successful creation of a secret."
   },
   "newSecret": {
-    "message": "Нова тајна"
+    "message": "Нова тајна",
+    "description": "Title for creating a new secret."
   },
   "newServiceAccount": {
-    "message": "New service account"
+    "message": "New service account",
+    "description": "Title for creating a new service account."
   },
   "secretsNoItemsTitle": {
-    "message": "Нема тајне за приказ"
+    "message": "Нема тајне за приказ",
+    "description": "Empty state to indicate that there are no secrets to display."
   },
   "secretsNoItemsMessage": {
-    "message": "To get started, add a new secret or import secrets."
+    "message": "To get started, add a new secret or import secrets.",
+    "description": "Message to encourage the user to start adding secrets."
   },
   "secretsTrashNoItemsMessage": {
     "message": "У отпад нема тајне."
   },
-  "serviceAccountsNoItemsTitle": {
-    "message": "Nothing to show yet"
-  },
   "serviceAccountsNoItemsMessage": {
-    "message": "Create a new service account to get started automating secret access."
+    "message": "Create a new service account to get started automating secret access.",
+    "description": "Message to encourage the user to start creating service accounts."
+  },
+  "serviceAccountsNoItemsTitle": {
+    "message": "Nothing to show yet",
+    "description": "Title to indicate that there are no service accounts to display."
   },
   "searchSecrets": {
-    "message": "Претражити тајне"
+    "message": "Претражити тајне",
+    "description": "Placeholder text for searching secrets."
   },
   "deleteServiceAccounts": {
-    "message": "Delete service accounts"
+    "message": "Delete service accounts",
+    "description": "Title for the action to delete one or multiple service accounts."
   },
   "deleteServiceAccount": {
-    "message": "Delete service account"
+    "message": "Delete service account",
+    "description": "Title for the action to delete a single service account."
   },
   "viewServiceAccount": {
-    "message": "View service account"
+    "message": "View service account",
+    "description": "Action to view the details of a service account."
   },
   "searchServiceAccounts": {
-    "message": "Search service accounts"
+    "message": "Search service accounts",
+    "description": "Placeholder text for searching service accounts."
   },
   "addProject": {
-    "message": "Додај пројекат"
+    "message": "Додај пројекат",
+    "description": "Title for creating a new project."
   },
   "projectEdited": {
-    "message": "Пројекат промењен"
+    "message": "Пројекат промењен",
+    "description": "Notification for the successful editing of a project."
   },
   "projectSaved": {
-    "message": "Пројекат сачуван"
+    "message": "Пројекат сачуван",
+    "description": "Notification for the successful saving of a project."
   },
   "projectCreated": {
-    "message": "Пројекат креиран"
+    "message": "Пројекат креиран",
+    "description": "Notification for the successful creation of a project."
   },
   "projectName": {
-    "message": "Назив Пројекта"
+    "message": "Назив Пројекта",
+    "description": "Label for entering the name of a project."
   },
   "newProject": {
-    "message": "Нови пројекат"
+    "message": "Нови пројекат",
+    "description": "Title for creating a new project."
   },
   "softDeleteSecretWarning": {
-    "message": "Deleting secrets can affect existing integrations."
+    "message": "Deleting secrets can affect existing integrations.",
+    "description": "Warns that deleting secrets can have consequences on integrations"
   },
   "softDeletesSuccessToast": {
-    "message": "Secrets sent to trash"
+    "message": "Secrets sent to trash",
+    "description": "Notifies that the selected secrets have been moved to the trash"
   },
   "hardDeleteSecretConfirmation": {
     "message": "Да ли сте сигурни да желите да трајно избришете ову тајну?"
@@ -5847,32 +5889,41 @@
   "hardDeletesSuccessToast": {
     "message": "Тајне трајно избрисане"
   },
-  "serviceAccountCreated": {
-    "message": "Service account created"
-  },
   "smAccess": {
-    "message": "Приступ"
+    "message": "Приступ",
+    "description": "Title indicating what permissions a service account has"
   },
   "projectCommaSecret": {
-    "message": "Пројекат, тајна"
+    "message": "Пројекат, тајна",
+    "description": ""
   },
   "serviceAccountName": {
-    "message": "Има налога сервиса"
+    "message": "Има налога сервиса",
+    "description": "Label for the name of a service account"
+  },
+  "serviceAccountCreated": {
+    "message": "Service account created",
+    "description": "Notifies that a new service account has been created"
   },
   "newSaSelectAccess": {
-    "message": "Type or select projects or secrets"
+    "message": "Type or select projects or secrets",
+    "description": "Instructions for selecting projects or secrets for a new service account"
   },
   "newSaTypeToFilter": {
-    "message": "Тип за филтрирање"
+    "message": "Тип за филтрирање",
+    "description": "Instructions for filtering a list of projects or secrets"
   },
   "deleteProjectsToast": {
-    "message": "Пројекат избрисан"
+    "message": "Пројекат избрисан",
+    "description": "Notifies that the selected projects have been deleted"
   },
   "deleteProjectToast": {
-    "message": "Пројекат и све повезане тајне су избрисане"
+    "message": "Пројекат и све повезане тајне су избрисане",
+    "description": "Notifies that a project has been deleted"
   },
   "deleteProjectDialogMessage": {
     "message": "Брисање пројекта $PROJECT$ је трајно и неповратно.",
+    "description": "Informs users that projects are hard deleted and not sent to trash",
     "placeholders": {
       "project": {
         "content": "$1",
@@ -5882,6 +5933,7 @@
   },
   "deleteProjectInputLabel": {
     "message": "Унети \"$CONFIRM$\" за наставак",
+    "description": "Users are prompted to type 'confirm' to delete a project",
     "placeholders": {
       "confirm": {
         "content": "$1",
@@ -5891,6 +5943,7 @@
   },
   "deleteProjectConfirmMessage": {
     "message": "Обрисати $PROJECT$",
+    "description": "Confirmation prompt to delete a specific project, where '$PROJECT$' is a placeholder for the name of the project.",
     "placeholders": {
       "project": {
         "content": "$1",
@@ -5900,6 +5953,7 @@
   },
   "deleteProjectsConfirmMessage": {
     "message": "Обрисати $COUNT$ пројекта",
+    "description": "Confirmation prompt to delete multiple projects, where '$COUNT$' is a placeholder for the number of projects to be deleted.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -5908,73 +5962,91 @@
     }
   },
   "deleteProjectsDialogMessage": {
-    "message": "Брисање пројекта је трајно и неповратно."
+    "message": "Брисање пројекта је трајно и неповратно.",
+    "description": "This message is displayed in a dialog box as a warning before proceeding with project deletion."
   },
   "projectsNoItemsTitle": {
-    "message": "Нема пројекта за приказ"
+    "message": "Нема пројекта за приказ",
+    "description": "Empty state to be displayed when there are no projects to display in the list."
   },
   "projectsNoItemsMessage": {
-    "message": "Add a new project to get started organizing secrets."
+    "message": "Add a new project to get started organizing secrets.",
+    "description": "Message to be displayed when there are no projects to display in the list."
   },
   "smConfirmationRequired": {
-    "message": "Потврда је обавезна"
+    "message": "Потврда је обавезна",
+    "description": "Indicates that user confirmation is required for an action to proceed."
   },
   "bulkDeleteProjectsErrorMessage": {
-    "message": "Следећи пројекти се не могу избрисати:"
+    "message": "Следећи пројекти се не могу избрисати:",
+    "description": "Message to be displayed when there is an error during bulk project deletion."
   },
   "softDeleteSuccessToast": {
-    "message": "Тајна послана у отпад"
+    "message": "Тајна послана у отпад",
+    "description": "Notification to be displayed when a secret is successfully sent to the trash."
   },
   "hardDeleteSuccessToast": {
     "message": "Тајна трајно избрисана"
   },
-  "searchProjects": {
-    "message": "Претражити пројекте"
-  },
   "accessTokens": {
-    "message": "Приступни токени"
+    "message": "Приступни токени",
+    "description": "Title for the section displaying access tokens."
   },
   "createAccessToken": {
-    "message": "Креирати приступни токен"
+    "message": "Креирати приступни токен",
+    "description": "Button label for creating a new access token."
   },
   "expires": {
-    "message": "Истиче"
+    "message": "Истиче",
+    "description": "Label for the expiration date of an access token."
   },
   "canRead": {
-    "message": "Може да чита"
+    "message": "Може да чита",
+    "description": "Label for the access level of an access token (Read only)."
   },
   "accessTokensNoItemsTitle": {
-    "message": "Нема токен за приказ"
+    "message": "Нема токен за приказ",
+    "description": "Title to be displayed when there are no access tokens to display in the list."
   },
   "accessTokensNoItemsDesc": {
-    "message": "To get started, create an access token"
+    "message": "To get started, create an access token",
+    "description": "Message to be displayed when there are no access tokens to display in the list."
   },
   "downloadAccessToken": {
-    "message": "Преузмите или копирајте пре затварања."
+    "message": "Преузмите или копирајте пре затварања.",
+    "description": "Message to be displayed before closing an access token, reminding the user to download or copy it."
   },
   "expiresOnAccessToken": {
-    "message": "Истиче:"
+    "message": "Истиче:",
+    "description": "Label for the expiration date of an access token."
   },
   "accessTokenCallOutTitle": {
-    "message": "Access tokens are not stored and cannot be retrieved"
+    "message": "Access tokens are not stored and cannot be retrieved",
+    "description": "Notification to inform the user that access tokens are only displayed once and cannot be retrieved again."
   },
   "copyToken": {
-    "message": "Копирај токен"
+    "message": "Копирај токен",
+    "description": "Copies the generated access token to the user's clipboard."
   },
   "accessToken": {
-    "message": "Приступни токени"
+    "message": "Приступни токени",
+    "description": "A unique string that gives a client application (eg. CLI) access to a secret or set of secrets."
   },
   "accessTokenExpirationRequired": {
-    "message": "Потребан је датум истека"
+    "message": "Потребан је датум истека",
+    "description": "Error message indicating that an expiration date for the access token must be set."
   },
   "accessTokenCreatedAndCopied": {
-    "message": "Access token created and copied to clipboard"
+    "message": "Access token created and copied to clipboard",
+    "description": "Notification to inform the user that the access token has been created and copied to the clipboard."
   },
   "accessTokenPermissionsBetaNotification": {
-    "message": "Permissions management is unavailable for beta."
+    "message": "Permissions management is unavailable for beta.",
+    "description": "Notification to inform the user that the feature for managing access token permissions is not available in the beta version."
   },
   "revokeAccessToken": {
-    "message": "Revoke access token"
+    "message": "Revoke access token",
+    "description": "Invalidates / cancels an access token and as such removes access to secrets for the client application."
   },
   "revokeAccessTokens": {
     "message": "Опозови приступ токена"
@@ -6358,8 +6430,14 @@
   "projectEmptyServiceAccountAccessPolicies": {
     "message": "Додајте налоге услуге да бисте одобрили приступ"
   },
-  "canWrite": {
-    "message": "Може писати"
+  "serviceAccountPeopleDescription": {
+    "message": "Одобрите групама или људима приступ овом налогу сервиса."
+  },
+  "serviceAccountProjectsDescription": {
+    "message": "Доделите пројекте овом налогу услуге. "
+  },
+  "serviceAccountEmptyProjectAccesspolicies": {
+    "message": "Додајте пројекте да бисте одобрили приступ"
   },
   "canReadWrite": {
     "message": "Може читати, писати"
@@ -6415,6 +6493,19 @@
   },
   "errorReadingImportFile": {
     "message": "Дошло је до грешке у покушају читања датотеке за увоз"
+  },
+  "accessedSecret": {
+    "message": "Приступ тајни $SECRET_ID$.",
+    "placeholders": {
+      "secret_id": {
+        "content": "$1",
+        "example": "4d34e8a8"
+      }
+    }
+  },
+  "sdk": {
+    "message": "SDK",
+    "description": "Software Development Kit"
   },
   "createSecret": {
     "message": "Креирати тајну"
@@ -6510,5 +6601,8 @@
         "example": "14"
       }
     }
+  },
+  "dismiss": {
+    "message": "Одбаци"
   }
 }

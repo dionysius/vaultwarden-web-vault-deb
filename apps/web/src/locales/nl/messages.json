@@ -2061,9 +2061,6 @@
   "updateLicense": {
     "message": "Licentie bijwerken"
   },
-  "updatedLicense": {
-    "message": "Licentie bijgewerkt"
-  },
   "manageSubscription": {
     "message": "Abonnement beheren"
   },
@@ -5707,28 +5704,36 @@
     "message": "Verbergen"
   },
   "projects": {
-    "message": "Projecten"
+    "message": "Projecten",
+    "description": "Description for the Projects field."
   },
   "lastEdited": {
-    "message": "Laatst bewerkt"
+    "message": "Laatst bewerkt",
+    "description": "The label for the date and time when a item was last edited."
   },
   "editSecret": {
-    "message": "Bewerk geheim"
+    "message": "Bewerk geheim",
+    "description": "Action to modify an existing secret."
   },
   "addSecret": {
-    "message": "Geheim toevoegen"
+    "message": "Geheim toevoegen",
+    "description": "Action to create a new secret."
   },
   "copySecretName": {
-    "message": "Kopieer geheime naam"
+    "message": "Kopieer geheime naam",
+    "description": "Action to copy the name of a secret to the system's clipboard."
   },
   "copySecretValue": {
-    "message": "Geheime waarde kopiëren"
+    "message": "Geheime waarde kopiëren",
+    "description": "Action to copy the value of a secret to the system's clipboard."
   },
   "deleteSecret": {
-    "message": "Geheim verwijderen"
+    "message": "Geheim verwijderen",
+    "description": "Action to delete a single secret from the system."
   },
   "deleteSecrets": {
-    "message": "Geheimen verwijderen"
+    "message": "Geheimen verwijderen",
+    "description": "The action to delete multiple secrets from the system."
   },
   "hardDeleteSecret": {
     "message": "Geheim definitief verwijderen"
@@ -5737,106 +5742,143 @@
     "message": "Geheimen definitief verwijderen"
   },
   "secretProjectAssociationDescription": {
-    "message": "Kies projecten om het geheim aan te koppelen. Alleen gebruikers uit de organisatie met toegang tot deze projecten kunnen het geheim zien."
+    "message": "Kies projecten om het geheim aan te koppelen. Alleen gebruikers uit de organisatie met toegang tot deze projecten kunnen het geheim zien.",
+    "description": "A prompt explaining how secrets can be associated with projects."
   },
   "selectProjects": {
-    "message": "Projecten selecteren"
+    "message": "Projecten selecteren",
+    "description": "A label for a type-to-filter input field to choose projects."
+  },
+  "searchProjects": {
+    "message": "Zoek projecten",
+    "description": "Label for the search bar used to search projects."
   },
   "project": {
-    "message": "Project"
+    "message": "Project",
+    "description": "Similar to collections, projects can be used to group secrets."
   },
   "editProject": {
-    "message": "Bewerk project"
+    "message": "Bewerk project",
+    "description": "The action to modify an existing project."
   },
   "viewProject": {
-    "message": "Bekijk project"
+    "message": "Bekijk project",
+    "description": "The action to view details of a project."
   },
   "deleteProject": {
-    "message": "Verwijder project"
+    "message": "Verwijder project",
+    "description": "The action to delete a project from the system."
   },
   "deleteProjects": {
-    "message": "Verwijder projecten"
+    "message": "Verwijder projecten",
+    "description": "The action to delete multiple projects from the system."
   },
   "secret": {
-    "message": "Geheim"
+    "message": "Geheim",
+    "description": "Label for a secret (key/value pair)"
   },
   "serviceAccount": {
-    "message": "Service-account"
+    "message": "Service-account",
+    "description": "A machine user which can be used to automate processes and access secrets in the system."
   },
   "serviceAccounts": {
-    "message": "Service-accounts"
+    "message": "Service-accounts",
+    "description": "The title for the section that deals with service accounts."
   },
   "secrets": {
-    "message": "Geheimen"
+    "message": "Geheimen",
+    "description": "The title for the section of the application that deals with secrets."
   },
   "nameValuePair": {
-    "message": "Naam/waarde paar"
+    "message": "Naam/waarde paar",
+    "description": "Title for a name/ value pair. Secrets typically consist of a name and value pair."
   },
   "secretEdited": {
-    "message": "Geheim bewerkt"
+    "message": "Geheim bewerkt",
+    "description": "Notification for the successful editing of a secret."
   },
   "secretCreated": {
-    "message": "Geheim aangemaakt"
+    "message": "Geheim aangemaakt",
+    "description": "Notification for the successful creation of a secret."
   },
   "newSecret": {
-    "message": "Nieuw geheim"
+    "message": "Nieuw geheim",
+    "description": "Title for creating a new secret."
   },
   "newServiceAccount": {
-    "message": "Nieuw service account"
+    "message": "Nieuw service account",
+    "description": "Title for creating a new service account."
   },
   "secretsNoItemsTitle": {
-    "message": "Geen geheimen om weer te geven"
+    "message": "Geen geheimen om weer te geven",
+    "description": "Empty state to indicate that there are no secrets to display."
   },
   "secretsNoItemsMessage": {
-    "message": "Om te starten, voeg een nieuw geheim toe of importeer een geheim."
+    "message": "Om te starten, voeg een nieuw geheim toe of importeer een geheim.",
+    "description": "Message to encourage the user to start adding secrets."
   },
   "secretsTrashNoItemsMessage": {
     "message": "Er bevinden zich geen geheimen in de prullenbak."
   },
-  "serviceAccountsNoItemsTitle": {
-    "message": "Geen inhoud beschikbaar"
-  },
   "serviceAccountsNoItemsMessage": {
-    "message": "Maak een nieuw service account aan om te beginnen met het automatiseren van geheime toegang."
+    "message": "Maak een nieuw service account aan om te beginnen met het automatiseren van geheime toegang.",
+    "description": "Message to encourage the user to start creating service accounts."
+  },
+  "serviceAccountsNoItemsTitle": {
+    "message": "Geen inhoud beschikbaar",
+    "description": "Title to indicate that there are no service accounts to display."
   },
   "searchSecrets": {
-    "message": "Geheimen zoeken"
+    "message": "Geheimen zoeken",
+    "description": "Placeholder text for searching secrets."
   },
   "deleteServiceAccounts": {
-    "message": "Verwijder service accounts"
+    "message": "Verwijder service accounts",
+    "description": "Title for the action to delete one or multiple service accounts."
   },
   "deleteServiceAccount": {
-    "message": "Verwijder service account"
+    "message": "Verwijder service account",
+    "description": "Title for the action to delete a single service account."
   },
   "viewServiceAccount": {
-    "message": "Bekijk service account"
+    "message": "Bekijk service account",
+    "description": "Action to view the details of a service account."
   },
   "searchServiceAccounts": {
-    "message": "Zoek service account"
+    "message": "Zoek service account",
+    "description": "Placeholder text for searching service accounts."
   },
   "addProject": {
-    "message": "Project toevoegen"
+    "message": "Project toevoegen",
+    "description": "Title for creating a new project."
   },
   "projectEdited": {
-    "message": "Project bewerkt"
+    "message": "Project bewerkt",
+    "description": "Notification for the successful editing of a project."
   },
   "projectSaved": {
-    "message": "Project opgeslagen"
+    "message": "Project opgeslagen",
+    "description": "Notification for the successful saving of a project."
   },
   "projectCreated": {
-    "message": "Project aangemaakt"
+    "message": "Project aangemaakt",
+    "description": "Notification for the successful creation of a project."
   },
   "projectName": {
-    "message": "Projectnaam"
+    "message": "Projectnaam",
+    "description": "Label for entering the name of a project."
   },
   "newProject": {
-    "message": "Nieuw Project"
+    "message": "Nieuw Project",
+    "description": "Title for creating a new project."
   },
   "softDeleteSecretWarning": {
-    "message": "Verwijderen van geheimen kan invloed hebben op bestaande integraties."
+    "message": "Verwijderen van geheimen kan invloed hebben op bestaande integraties.",
+    "description": "Warns that deleting secrets can have consequences on integrations"
   },
   "softDeletesSuccessToast": {
-    "message": "Geheimen verplaatst naar prullenbak"
+    "message": "Geheimen verplaatst naar prullenbak",
+    "description": "Notifies that the selected secrets have been moved to the trash"
   },
   "hardDeleteSecretConfirmation": {
     "message": "Weet je zeker dat je dit geheim permanent wilt verwijderen?"
@@ -5847,32 +5889,41 @@
   "hardDeletesSuccessToast": {
     "message": "Geheimen permanent verwijderd"
   },
-  "serviceAccountCreated": {
-    "message": "Service account aangemaakt"
-  },
   "smAccess": {
-    "message": "Toegang"
+    "message": "Toegang",
+    "description": "Title indicating what permissions a service account has"
   },
   "projectCommaSecret": {
-    "message": "Project, geheim"
+    "message": "Project, geheim",
+    "description": ""
   },
   "serviceAccountName": {
-    "message": "Service account naam"
+    "message": "Service account naam",
+    "description": "Label for the name of a service account"
+  },
+  "serviceAccountCreated": {
+    "message": "Service account aangemaakt",
+    "description": "Notifies that a new service account has been created"
   },
   "newSaSelectAccess": {
-    "message": "Typ of selecteer projecten of geheimen"
+    "message": "Typ of selecteer projecten of geheimen",
+    "description": "Instructions for selecting projects or secrets for a new service account"
   },
   "newSaTypeToFilter": {
-    "message": "Typ om te filteren"
+    "message": "Typ om te filteren",
+    "description": "Instructions for filtering a list of projects or secrets"
   },
   "deleteProjectsToast": {
-    "message": "Projecten verwijderd"
+    "message": "Projecten verwijderd",
+    "description": "Notifies that the selected projects have been deleted"
   },
   "deleteProjectToast": {
-    "message": "Het project en alle bijbehorende geheimen zijn verwijderd"
+    "message": "Het project en alle bijbehorende geheimen zijn verwijderd",
+    "description": "Notifies that a project has been deleted"
   },
   "deleteProjectDialogMessage": {
     "message": "Het verwijderen van project $PROJECT$ is permanent en onomkeerbaar.",
+    "description": "Informs users that projects are hard deleted and not sent to trash",
     "placeholders": {
       "project": {
         "content": "$1",
@@ -5882,6 +5933,7 @@
   },
   "deleteProjectInputLabel": {
     "message": "Typ \"$CONFIRM$\" om door te gaan",
+    "description": "Users are prompted to type 'confirm' to delete a project",
     "placeholders": {
       "confirm": {
         "content": "$1",
@@ -5891,6 +5943,7 @@
   },
   "deleteProjectConfirmMessage": {
     "message": "$PROJECT$ verwijderen",
+    "description": "Confirmation prompt to delete a specific project, where '$PROJECT$' is a placeholder for the name of the project.",
     "placeholders": {
       "project": {
         "content": "$1",
@@ -5900,6 +5953,7 @@
   },
   "deleteProjectsConfirmMessage": {
     "message": "$COUNT$ projecten verwijderen",
+    "description": "Confirmation prompt to delete multiple projects, where '$COUNT$' is a placeholder for the number of projects to be deleted.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -5908,73 +5962,91 @@
     }
   },
   "deleteProjectsDialogMessage": {
-    "message": "Het verwijderen van projecten is permanent en onomkeerbaar."
+    "message": "Het verwijderen van projecten is permanent en onomkeerbaar.",
+    "description": "This message is displayed in a dialog box as a warning before proceeding with project deletion."
   },
   "projectsNoItemsTitle": {
-    "message": "Geen projecten om weer te geven"
+    "message": "Geen projecten om weer te geven",
+    "description": "Empty state to be displayed when there are no projects to display in the list."
   },
   "projectsNoItemsMessage": {
-    "message": "Voeg een nieuw project toe om te starten met het organiseren van geheimen."
+    "message": "Voeg een nieuw project toe om te starten met het organiseren van geheimen.",
+    "description": "Message to be displayed when there are no projects to display in the list."
   },
   "smConfirmationRequired": {
-    "message": "Bevestiging vereist"
+    "message": "Bevestiging vereist",
+    "description": "Indicates that user confirmation is required for an action to proceed."
   },
   "bulkDeleteProjectsErrorMessage": {
-    "message": "De volgende projecten konden niet worden verwijderd:"
+    "message": "De volgende projecten konden niet worden verwijderd:",
+    "description": "Message to be displayed when there is an error during bulk project deletion."
   },
   "softDeleteSuccessToast": {
-    "message": "Geheim verplaatst naar prullenbak"
+    "message": "Geheim verplaatst naar prullenbak",
+    "description": "Notification to be displayed when a secret is successfully sent to the trash."
   },
   "hardDeleteSuccessToast": {
     "message": "Geheim permanent verwijderd"
   },
-  "searchProjects": {
-    "message": "Zoek projecten"
-  },
   "accessTokens": {
-    "message": "Toegangstoken"
+    "message": "Toegangstoken",
+    "description": "Title for the section displaying access tokens."
   },
   "createAccessToken": {
-    "message": "Toegangstoken aanmaken"
+    "message": "Toegangstoken aanmaken",
+    "description": "Button label for creating a new access token."
   },
   "expires": {
-    "message": "Verloopt"
+    "message": "Verloopt",
+    "description": "Label for the expiration date of an access token."
   },
   "canRead": {
-    "message": "Kan lezen"
+    "message": "Kan lezen",
+    "description": "Label for the access level of an access token (Read only)."
   },
   "accessTokensNoItemsTitle": {
-    "message": "Geen toegangstokens om weer te geven"
+    "message": "Geen toegangstokens om weer te geven",
+    "description": "Title to be displayed when there are no access tokens to display in the list."
   },
   "accessTokensNoItemsDesc": {
-    "message": "Om te starten, creeer een toegangstoken"
+    "message": "Om te starten, creeer een toegangstoken",
+    "description": "Message to be displayed when there are no access tokens to display in the list."
   },
   "downloadAccessToken": {
-    "message": "Download of kopieer voordat u afsluit."
+    "message": "Download of kopieer voordat u afsluit.",
+    "description": "Message to be displayed before closing an access token, reminding the user to download or copy it."
   },
   "expiresOnAccessToken": {
-    "message": "Verloopt op:"
+    "message": "Verloopt op:",
+    "description": "Label for the expiration date of an access token."
   },
   "accessTokenCallOutTitle": {
-    "message": "Toegangstokens zijn niet opgeslagen en kunnen niet worden opgehaald"
+    "message": "Toegangstokens zijn niet opgeslagen en kunnen niet worden opgehaald",
+    "description": "Notification to inform the user that access tokens are only displayed once and cannot be retrieved again."
   },
   "copyToken": {
-    "message": "Kopieer token"
+    "message": "Kopieer token",
+    "description": "Copies the generated access token to the user's clipboard."
   },
   "accessToken": {
-    "message": "Toegangstoken"
+    "message": "Toegangstoken",
+    "description": "A unique string that gives a client application (eg. CLI) access to a secret or set of secrets."
   },
   "accessTokenExpirationRequired": {
-    "message": "Vervaldatum vereist"
+    "message": "Vervaldatum vereist",
+    "description": "Error message indicating that an expiration date for the access token must be set."
   },
   "accessTokenCreatedAndCopied": {
-    "message": "Toegangstoken aangemaakt en gekopieerd naar klembord"
+    "message": "Toegangstoken aangemaakt en gekopieerd naar klembord",
+    "description": "Notification to inform the user that the access token has been created and copied to the clipboard."
   },
   "accessTokenPermissionsBetaNotification": {
-    "message": "Beheer van machtigingen is niet beschikbaar in deze beta."
+    "message": "Beheer van machtigingen is niet beschikbaar in deze beta.",
+    "description": "Notification to inform the user that the feature for managing access token permissions is not available in the beta version."
   },
   "revokeAccessToken": {
-    "message": "Toegangstoken intrekken"
+    "message": "Toegangstoken intrekken",
+    "description": "Invalidates / cancels an access token and as such removes access to secrets for the client application."
   },
   "revokeAccessTokens": {
     "message": "Toegangstokens intrekken"
@@ -6358,8 +6430,14 @@
   "projectEmptyServiceAccountAccessPolicies": {
     "message": "Serviceaccounts toevoegen om toegang te verlenen"
   },
-  "canWrite": {
-    "message": "Kan schrijven"
+  "serviceAccountPeopleDescription": {
+    "message": "Grant groups or people access to this service account."
+  },
+  "serviceAccountProjectsDescription": {
+    "message": "Projecten aan dit serviceaccount toewijzen. "
+  },
+  "serviceAccountEmptyProjectAccesspolicies": {
+    "message": "Projecten toevoegen om toegang te verlenen"
   },
   "canReadWrite": {
     "message": "Kan lezen, schrijven"
@@ -6415,6 +6493,19 @@
   },
   "errorReadingImportFile": {
     "message": "Er is een fout opgetreden bij het lezen van het bronbestand"
+  },
+  "accessedSecret": {
+    "message": "Geopend geheim $SECRET_ID$.",
+    "placeholders": {
+      "secret_id": {
+        "content": "$1",
+        "example": "4d34e8a8"
+      }
+    }
+  },
+  "sdk": {
+    "message": "SDK",
+    "description": "Software Development Kit"
   },
   "createSecret": {
     "message": "Geheim aanmaken"
@@ -6510,5 +6601,8 @@
         "example": "14"
       }
     }
+  },
+  "dismiss": {
+    "message": "Sluiten"
   }
 }

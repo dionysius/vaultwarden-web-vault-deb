@@ -658,7 +658,7 @@
     "message": "A mesterjelszó a jelszó a széf eléréséhez. Nagyon fontos a mesterjelszó ismerete. Nincs mód a jelszó visszaállítására."
   },
   "masterPassImportant": {
-    "message": "Az elfelejtett mesterjelszavak nem állíthatók helyre!"
+    "message": "Az mesterjelszó nem állítható helyre!"
   },
   "masterPassHintDesc": {
     "message": "A mesterjelszó emlékeztető segíthet emlékezni a jelszóra elfelejtése esetén."
@@ -697,7 +697,7 @@
     "message": "A mesterjelszó ismételt megadása kötelező."
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least $VALUE$ characters long.",
+    "message": "A mesterjelszónak legalább $VALUE$ karakter hosszúnak kell lennie.",
     "description": "The Master Password must be at least a specific number of characters long.",
     "placeholders": {
       "value": {
@@ -906,7 +906,7 @@
     "message": "A megosztásra kerülő elem gyűjteményének szerkesztése. Csak az ezeket a gyűjteményeket elérő szervezeti felhasználók látják ezt az elemet."
   },
   "deleteSelectedItemsDesc": {
-    "message": "$COUNT$ elem törlésre lett kijelölve. Biztosan törölni szeretnénk az összes ilyen elemet?",
+    "message": "$COUNT$ elem a lomtárba kerül.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -2061,9 +2061,6 @@
   "updateLicense": {
     "message": "Licensz frissítése"
   },
-  "updatedLicense": {
-    "message": "A licensz frissítésre került."
-  },
   "manageSubscription": {
     "message": "Előfizetés kezelése"
   },
@@ -2487,7 +2484,7 @@
     "message": "Külső azonosító"
   },
   "externalIdDesc": {
-    "message": "A külső azonosító hivatkozásként használható, vagy ahhoz, hogy ezt az erőforrást egy külső rendszerhez, például felhasználói könyvtárhoz kapcsoljuk."
+    "message": "A külső azonosító a Bitwarden tárkapcsoló és API által nem titkosított referencia."
   },
   "nestCollectionUnder": {
     "message": "Gyűjtemény beágyazása:"
@@ -2535,7 +2532,7 @@
     "message": "Új felhasználó meghívása a szervezetéhez a Bitwarden fiók e-mail címének megadásával. Ha még nem rendelkezik Bitwarden-fiókkal, felkérjük új fiók létrehozására.\n"
   },
   "inviteMultipleEmailDesc": {
-    "message": "Egymástól vesszővel elválasztott email címek megadásával egyszerre akár $COUNT$ felhasználó meghívható.",
+    "message": "Legfeljebb $COUNT$, egymástól vesszővel elválasztott email cím.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -3027,7 +3024,7 @@
     "message": "Csoport hozzáférés"
   },
   "groupAccessUserDesc": {
-    "message": "A felhasználóhoz tartozó csoportok szerkesztése."
+    "message": "Tagi hozzáférés kiosztása gyűjteményekhez 1 vagy több csoporthoz hozzáadásssa."
   },
   "invitedUsers": {
     "message": "A meghívott felhasználók."
@@ -3063,7 +3060,7 @@
     }
   },
   "confirmUsers": {
-    "message": "Felhasználók megerősítése"
+    "message": "Tagok megerősítése"
   },
   "usersNeedConfirmed": {
     "message": "Vannak olyan felhasználók, akik elfogadták a meghívást, de ezt még meg kell erősíteni. A felhasználók csak a megerősítésük utánt férhetnek hozzá a szervezethez."
@@ -3238,7 +3235,7 @@
     "message": "A bankszámla ellenőrzésének sikertelensége elmaradt fizetéshez és az előfizetés leállításához vezet."
   },
   "verifiedBankAccount": {
-    "message": "A bankszámla megerősítésre került."
+    "message": "A bankszámla ellenőrzésre került."
   },
   "bankAccount": {
     "message": "Bankszámla"
@@ -3254,7 +3251,7 @@
     }
   },
   "routingNumber": {
-    "message": "Banki azonosító szám",
+    "message": "Útvonalszám",
     "description": "Bank account routing number"
   },
   "accountNumber": {
@@ -3495,7 +3492,7 @@
     "message": "A szervezet letiltásra került."
   },
   "disabledOrganizationFilterError": {
-    "message": "A letiltott szervezetek elemeii nem érhetők el. Vegyük fel a kapcsolatot a szervezet tulajdonosával segítségért."
+    "message": "A letiltott szervezetek elemei nem érhetők el. Vegyük fel a kapcsolatot a szervezet tulajdonosával segítségért."
   },
   "licenseIsExpired": {
     "message": "A licensz lejárt."
@@ -3571,7 +3568,7 @@
     "message": "Ujjlenyomat kifejezés"
   },
   "dontAskFingerprintAgain": {
-    "message": "Soha ne kérjükk a meghívottak ujjlenyomat kifejezésének ellenőrzését (nem ajánlott)",
+    "message": "Soha ne kérjük a meghívottak ujjlenyomat kifejezésének ellenőrzését (nem ajánlott)",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "free": {
@@ -4655,7 +4652,7 @@
     "message": "Felhasználók eltávolítása"
   },
   "revokeUsers": {
-    "message": "Felhasználók visstavonása"
+    "message": "Felhasználók visszavonása"
   },
   "restoreUsers": {
     "message": "Felhasználók helyreállítása"
@@ -5707,28 +5704,36 @@
     "message": "Elrejtés"
   },
   "projects": {
-    "message": "Projektek"
+    "message": "Projektek",
+    "description": "Description for the Projects field."
   },
   "lastEdited": {
-    "message": "Utolsó szerkesztés"
+    "message": "Utolsó szerkesztés",
+    "description": "The label for the date and time when a item was last edited."
   },
   "editSecret": {
-    "message": "Titkos kód szerkesztés"
+    "message": "Titkos kód szerkesztés",
+    "description": "Action to modify an existing secret."
   },
   "addSecret": {
-    "message": "Titkos kód hozzáadás"
+    "message": "Titkos kód hozzáadás",
+    "description": "Action to create a new secret."
   },
   "copySecretName": {
-    "message": "Titkos kódnév másolás"
+    "message": "Titkos kódnév másolás",
+    "description": "Action to copy the name of a secret to the system's clipboard."
   },
   "copySecretValue": {
-    "message": "Titkos kódérték másolás"
+    "message": "Titkos kódérték másolás",
+    "description": "Action to copy the value of a secret to the system's clipboard."
   },
   "deleteSecret": {
-    "message": "Titkos kód törlés"
+    "message": "Titkos kód törlés",
+    "description": "Action to delete a single secret from the system."
   },
   "deleteSecrets": {
-    "message": "Titkos kódok törlése"
+    "message": "Titkos kódok törlése",
+    "description": "The action to delete multiple secrets from the system."
   },
   "hardDeleteSecret": {
     "message": "A titkos kulcs végleges törlése"
@@ -5737,106 +5742,143 @@
     "message": "A titkos kulcsok végleges törlése"
   },
   "secretProjectAssociationDescription": {
-    "message": "Válasszzuk ki azokat a projekteket, amelyekhez a titkos kód társítva lesz. Csak az ezekhez a projektekhez hozzáféréssel rendelkező szervezeti felhasználók láthatják a titkos kódot."
+    "message": "Válasszzuk ki azokat a projekteket, amelyekhez a titkos kód társítva lesz. Csak az ezekhez a projektekhez hozzáféréssel rendelkező szervezeti felhasználók láthatják a titkos kódot.",
+    "description": "A prompt explaining how secrets can be associated with projects."
   },
   "selectProjects": {
-    "message": "Projekt választás"
+    "message": "Projekt választás",
+    "description": "A label for a type-to-filter input field to choose projects."
+  },
+  "searchProjects": {
+    "message": "Projektek keresése",
+    "description": "Label for the search bar used to search projects."
   },
   "project": {
-    "message": "Projekt"
+    "message": "Projekt",
+    "description": "Similar to collections, projects can be used to group secrets."
   },
   "editProject": {
-    "message": "Projekt szerkesztése"
+    "message": "Projekt szerkesztése",
+    "description": "The action to modify an existing project."
   },
   "viewProject": {
-    "message": "Projekt megtekintése"
+    "message": "Projekt megtekintése",
+    "description": "The action to view details of a project."
   },
   "deleteProject": {
-    "message": "Projekt törlése"
+    "message": "Projekt törlése",
+    "description": "The action to delete a project from the system."
   },
   "deleteProjects": {
-    "message": "Projektek törlése"
+    "message": "Projektek törlése",
+    "description": "The action to delete multiple projects from the system."
   },
   "secret": {
-    "message": "Titkos kód"
+    "message": "Titkos kód",
+    "description": "Label for a secret (key/value pair)"
   },
   "serviceAccount": {
-    "message": "Szolgáltatás fiók"
+    "message": "Szolgáltatás fiók",
+    "description": "A machine user which can be used to automate processes and access secrets in the system."
   },
   "serviceAccounts": {
-    "message": "Szolgáltatás fiókok"
+    "message": "Szolgáltatás fiókok",
+    "description": "The title for the section that deals with service accounts."
   },
   "secrets": {
-    "message": "Titkos kódok"
+    "message": "Titkos kódok",
+    "description": "The title for the section of the application that deals with secrets."
   },
   "nameValuePair": {
-    "message": "Név/érték pár"
+    "message": "Név/érték pár",
+    "description": "Title for a name/ value pair. Secrets typically consist of a name and value pair."
   },
   "secretEdited": {
-    "message": "A titkos kód szerkesztésre került."
+    "message": "A titkos kód szerkesztésre került.",
+    "description": "Notification for the successful editing of a secret."
   },
   "secretCreated": {
-    "message": "A titkos kód létrejött."
+    "message": "A titkos kód létrejött.",
+    "description": "Notification for the successful creation of a secret."
   },
   "newSecret": {
-    "message": "Új titkos kód"
+    "message": "Új titkos kód",
+    "description": "Title for creating a new secret."
   },
   "newServiceAccount": {
-    "message": "Új szolgáltatás fiók"
+    "message": "Új szolgáltatás fiók",
+    "description": "Title for creating a new service account."
   },
   "secretsNoItemsTitle": {
-    "message": "Nincs megjeleníthető titkos kód."
+    "message": "Nincs megjeleníthető titkos kód.",
+    "description": "Empty state to indicate that there are no secrets to display."
   },
   "secretsNoItemsMessage": {
-    "message": "Az induláshoz adjunk hozzá egy új titkos kódot vagy importáljunk ilyeneket."
+    "message": "Az induláshoz adjunk hozzá egy új titkos kódot vagy importáljunk ilyeneket.",
+    "description": "Message to encourage the user to start adding secrets."
   },
   "secretsTrashNoItemsMessage": {
     "message": "Nincs titkos kulcs a lomtárban."
   },
-  "serviceAccountsNoItemsTitle": {
-    "message": "Nincs megjeleníthető tartalom."
-  },
   "serviceAccountsNoItemsMessage": {
-    "message": "Új szolgáltatás fiók létrehozása a titkos kód automatikus hozzáféréséhez."
+    "message": "Új szolgáltatás fiók létrehozása a titkos kód automatikus hozzáféréséhez.",
+    "description": "Message to encourage the user to start creating service accounts."
+  },
+  "serviceAccountsNoItemsTitle": {
+    "message": "Nincs megjeleníthető tartalom.",
+    "description": "Title to indicate that there are no service accounts to display."
   },
   "searchSecrets": {
-    "message": "Titkos kódok keresése"
+    "message": "Titkos kódok keresése",
+    "description": "Placeholder text for searching secrets."
   },
   "deleteServiceAccounts": {
-    "message": "Szolgáltatás fiókok törlése"
+    "message": "Szolgáltatás fiókok törlése",
+    "description": "Title for the action to delete one or multiple service accounts."
   },
   "deleteServiceAccount": {
-    "message": "Szolgáltatás fiók törlése"
+    "message": "Szolgáltatás fiók törlése",
+    "description": "Title for the action to delete a single service account."
   },
   "viewServiceAccount": {
-    "message": "Szolgáltatás fiók megtekintése"
+    "message": "Szolgáltatás fiók megtekintése",
+    "description": "Action to view the details of a service account."
   },
   "searchServiceAccounts": {
-    "message": "Szolgáltatás fiókok keresése"
+    "message": "Szolgáltatás fiókok keresése",
+    "description": "Placeholder text for searching service accounts."
   },
   "addProject": {
-    "message": "Projekt hozzáadása"
+    "message": "Projekt hozzáadása",
+    "description": "Title for creating a new project."
   },
   "projectEdited": {
-    "message": "A projekt szerkesztésre került."
+    "message": "A projekt szerkesztésre került.",
+    "description": "Notification for the successful editing of a project."
   },
   "projectSaved": {
-    "message": "A projekt mentésre került."
+    "message": "A projekt mentésre került.",
+    "description": "Notification for the successful saving of a project."
   },
   "projectCreated": {
-    "message": "A projekt létrejött."
+    "message": "A projekt létrejött.",
+    "description": "Notification for the successful creation of a project."
   },
   "projectName": {
-    "message": "Projektnév"
+    "message": "Projektnév",
+    "description": "Label for entering the name of a project."
   },
   "newProject": {
-    "message": "Új projekt"
+    "message": "Új projekt",
+    "description": "Title for creating a new project."
   },
   "softDeleteSecretWarning": {
-    "message": "A titkos kódok törlése érintheti a létező integrációkat."
+    "message": "A titkos kódok törlése érintheti a létező integrációkat.",
+    "description": "Warns that deleting secrets can have consequences on integrations"
   },
   "softDeletesSuccessToast": {
-    "message": "A titkos kód a lomtárba került."
+    "message": "A titkos kód a lomtárba került.",
+    "description": "Notifies that the selected secrets have been moved to the trash"
   },
   "hardDeleteSecretConfirmation": {
     "message": "Biztosan véglegesen törlésre kerüljön ez a titkos kulcs?"
@@ -5847,32 +5889,41 @@
   "hardDeletesSuccessToast": {
     "message": "A titkos kulcsok véglegesen törlésre kerültek."
   },
-  "serviceAccountCreated": {
-    "message": "A szolgáltatás fiók létrejött."
-  },
   "smAccess": {
-    "message": "Hozzáférés"
+    "message": "Hozzáférés",
+    "description": "Title indicating what permissions a service account has"
   },
   "projectCommaSecret": {
-    "message": "Projekt titkos kód"
+    "message": "Projekt titkos kód",
+    "description": ""
   },
   "serviceAccountName": {
-    "message": "Szolgáltatás fiók név"
+    "message": "Szolgáltatás fiók név",
+    "description": "Label for the name of a service account"
+  },
+  "serviceAccountCreated": {
+    "message": "A szolgáltatás fiók létrejött.",
+    "description": "Notifies that a new service account has been created"
   },
   "newSaSelectAccess": {
-    "message": "Gépeljük be vagy válasszunk projekteket vagy titkos kódokat"
+    "message": "Gépeljük be vagy válasszunk projekteket vagy titkos kódokat",
+    "description": "Instructions for selecting projects or secrets for a new service account"
   },
   "newSaTypeToFilter": {
-    "message": "Gépelés a szűréshez"
+    "message": "Gépelés a szűréshez",
+    "description": "Instructions for filtering a list of projects or secrets"
   },
   "deleteProjectsToast": {
-    "message": "A projekt törésre került."
+    "message": "A projekt törésre került.",
+    "description": "Notifies that the selected projects have been deleted"
   },
   "deleteProjectToast": {
-    "message": "A projekt és az összes társított titkos kód törlésre került."
+    "message": "A projekt és az összes társított titkos kód törlésre került.",
+    "description": "Notifies that a project has been deleted"
   },
   "deleteProjectDialogMessage": {
     "message": "$PROJECT$ projekt törlése végleges és visszafordíthatatlan.",
+    "description": "Informs users that projects are hard deleted and not sent to trash",
     "placeholders": {
       "project": {
         "content": "$1",
@@ -5882,6 +5933,7 @@
   },
   "deleteProjectInputLabel": {
     "message": "\"$CONFIRM$\" begépelése a folytatáshoz",
+    "description": "Users are prompted to type 'confirm' to delete a project",
     "placeholders": {
       "confirm": {
         "content": "$1",
@@ -5891,6 +5943,7 @@
   },
   "deleteProjectConfirmMessage": {
     "message": "$PROJECT$ törlése",
+    "description": "Confirmation prompt to delete a specific project, where '$PROJECT$' is a placeholder for the name of the project.",
     "placeholders": {
       "project": {
         "content": "$1",
@@ -5900,6 +5953,7 @@
   },
   "deleteProjectsConfirmMessage": {
     "message": "$COUNT$ projekt törlése",
+    "description": "Confirmation prompt to delete multiple projects, where '$COUNT$' is a placeholder for the number of projects to be deleted.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -5908,73 +5962,91 @@
     }
   },
   "deleteProjectsDialogMessage": {
-    "message": "A projektek törlése végleges és visszavonhatatlan."
+    "message": "A projektek törlése végleges és visszavonhatatlan.",
+    "description": "This message is displayed in a dialog box as a warning before proceeding with project deletion."
   },
   "projectsNoItemsTitle": {
-    "message": "Nincs megjelenítendő projekt."
+    "message": "Nincs megjelenítendő projekt.",
+    "description": "Empty state to be displayed when there are no projects to display in the list."
   },
   "projectsNoItemsMessage": {
-    "message": "Új projekt hozzáadása a titkos kódok szervezésének elkezdéséhez."
+    "message": "Új projekt hozzáadása a titkos kódok szervezésének elkezdéséhez.",
+    "description": "Message to be displayed when there are no projects to display in the list."
   },
   "smConfirmationRequired": {
-    "message": "Megerősítés szükséges"
+    "message": "Megerősítés szükséges",
+    "description": "Indicates that user confirmation is required for an action to proceed."
   },
   "bulkDeleteProjectsErrorMessage": {
-    "message": "A következő projekteket nem lehet törölni:"
+    "message": "A következő projekteket nem lehet törölni:",
+    "description": "Message to be displayed when there is an error during bulk project deletion."
   },
   "softDeleteSuccessToast": {
-    "message": "A titkos kód a lomtárba került."
+    "message": "A titkos kód a lomtárba került.",
+    "description": "Notification to be displayed when a secret is successfully sent to the trash."
   },
   "hardDeleteSuccessToast": {
     "message": "A titkos kulcs véglegesen törlésre került."
   },
-  "searchProjects": {
-    "message": "Projektek keresése"
-  },
   "accessTokens": {
-    "message": "Vezérjelek elérése"
+    "message": "Vezérjelek elérése",
+    "description": "Title for the section displaying access tokens."
   },
   "createAccessToken": {
-    "message": "Elérési vezérjel létrehozása"
+    "message": "Elérési vezérjel létrehozása",
+    "description": "Button label for creating a new access token."
   },
   "expires": {
-    "message": "Lejárat"
+    "message": "Lejárat",
+    "description": "Label for the expiration date of an access token."
   },
   "canRead": {
-    "message": "Olvashat"
+    "message": "Olvashat",
+    "description": "Label for the access level of an access token (Read only)."
   },
   "accessTokensNoItemsTitle": {
-    "message": "Nincs megjelenítendő elérési vezérjel."
+    "message": "Nincs megjelenítendő elérési vezérjel.",
+    "description": "Title to be displayed when there are no access tokens to display in the list."
   },
   "accessTokensNoItemsDesc": {
-    "message": "Az induláshoz hozzunk létre egy elérési vezérjelet."
+    "message": "Az induláshoz hozzunk létre egy elérési vezérjelet.",
+    "description": "Message to be displayed when there are no access tokens to display in the list."
   },
   "downloadAccessToken": {
-    "message": "Letöltés vagy másolás a bezárás eőtt."
+    "message": "Letöltés vagy másolás a bezárás eőtt.",
+    "description": "Message to be displayed before closing an access token, reminding the user to download or copy it."
   },
   "expiresOnAccessToken": {
-    "message": "Lejárat:"
+    "message": "Lejárat:",
+    "description": "Label for the expiration date of an access token."
   },
   "accessTokenCallOutTitle": {
-    "message": "Az elérési vezérjelek nincsnek tárolva és nem olvashatók vissza."
+    "message": "Az elérési vezérjelek nincsnek tárolva és nem olvashatók vissza.",
+    "description": "Notification to inform the user that access tokens are only displayed once and cannot be retrieved again."
   },
   "copyToken": {
-    "message": "Vezérjel másolása"
+    "message": "Vezérjel másolása",
+    "description": "Copies the generated access token to the user's clipboard."
   },
   "accessToken": {
-    "message": "Elérési vezérjel"
+    "message": "Elérési vezérjel",
+    "description": "A unique string that gives a client application (eg. CLI) access to a secret or set of secrets."
   },
   "accessTokenExpirationRequired": {
-    "message": "A lejárati dátum megadása kötelező."
+    "message": "A lejárati dátum megadása kötelező.",
+    "description": "Error message indicating that an expiration date for the access token must be set."
   },
   "accessTokenCreatedAndCopied": {
-    "message": "Az elérési vezérjel létrejött és a vágólapra került."
+    "message": "Az elérési vezérjel létrejött és a vágólapra került.",
+    "description": "Notification to inform the user that the access token has been created and copied to the clipboard."
   },
   "accessTokenPermissionsBetaNotification": {
-    "message": "A jofgosultság kezelő bétaként érhető el."
+    "message": "A jofgosultság kezelő bétaként érhető el.",
+    "description": "Notification to inform the user that the feature for managing access token permissions is not available in the beta version."
   },
   "revokeAccessToken": {
-    "message": "Elérési vezérjel visszavonása"
+    "message": "Elérési vezérjel visszavonása",
+    "description": "Invalidates / cancels an access token and as such removes access to secrets for the client application."
   },
   "revokeAccessTokens": {
     "message": "Elérési vezérjelek visszavonása"
@@ -6358,8 +6430,14 @@
   "projectEmptyServiceAccountAccessPolicies": {
     "message": "Adjunk hozzá szolgáltatás fiókokat a hozzáférés biztosításához"
   },
-  "canWrite": {
-    "message": "Írhat"
+  "serviceAccountPeopleDescription": {
+    "message": "Adjunk hozzáférést csoportoknak vagy személyeknek ehhez a szolgáltatás fiókhoz."
+  },
+  "serviceAccountProjectsDescription": {
+    "message": "Projektek hozzárendelése ehhez a szolgáltatás fiókhoz."
+  },
+  "serviceAccountEmptyProjectAccesspolicies": {
+    "message": "Projektek hozzáadása jogosultság kiosztásához"
   },
   "canReadWrite": {
     "message": "Írhat, olvashat"
@@ -6415,6 +6493,19 @@
   },
   "errorReadingImportFile": {
     "message": "Hiba történt az import fájl beolvasásának kísérletekor."
+  },
+  "accessedSecret": {
+    "message": "Hozzáférés a titkos $SECRET_ID$ azonosítóhoz.",
+    "placeholders": {
+      "secret_id": {
+        "content": "$1",
+        "example": "4d34e8a8"
+      }
+    }
+  },
+  "sdk": {
+    "message": "SDK",
+    "description": "Software Development Kit"
   },
   "createSecret": {
     "message": "Titkos kód létrehozása"
@@ -6510,5 +6601,8 @@
         "example": "14"
       }
     }
+  },
+  "dismiss": {
+    "message": "Elvetés"
   }
 }
