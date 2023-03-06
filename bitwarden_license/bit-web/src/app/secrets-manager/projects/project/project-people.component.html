@@ -10,6 +10,8 @@
     [columnTitle]="'groupSlashUser' | i18n"
     [emptyMessage]="'projectEmptyPeopleAccessPolicies' | i18n"
     (onCreateAccessPolicies)="handleCreateAccessPolicies($event)"
+    (onDeleteAccessPolicy)="handleDeleteAccessPolicy($event)"
+    (onUpdateAccessPolicy)="handleUpdateAccessPolicy($event)"
   >
   </sm-access-selector>
 </div>

@@ -1,8 +1,9 @@
 import { Component, OnDestroy, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
-import { map, Observable, startWith, Subject, switchMap, takeUntil } from "rxjs";
+import { map, Observable, share, startWith, Subject, switchMap, takeUntil } from "rxjs";
 
-import { SelectItemView } from "@bitwarden/components";
+import { ValidationService } from "@bitwarden/common/abstractions/validation.service";
+import { DialogService, SelectItemView } from "@bitwarden/components";
 
 import {
   GroupProjectAccessPolicyView,
@@ -14,6 +15,10 @@ import {
   AccessSelectorComponent,
   AccessSelectorRowView,
 } from "../../shared/access-policies/access-selector.component";
+import {
+  AccessRemovalDetails,
+  AccessRemovalDialogComponent,
+} from "../../shared/access-policies/dialogs/access-removal-dialog.component";
 
 @Component({
   selector: "sm-project-people",
@@ -23,6 +28,7 @@ export class ProjectPeopleComponent implements OnInit, OnDestroy {
   private destroy$ = new Subject<void>();
   private organizationId: string;
   private projectId: string;
+  private rows: AccessSelectorRowView[];
 
   protected rows$: Observable<AccessSelectorRowView[]> =
     this.accessPolicyService.projectAccessPolicyChanges$.pipe(
@@ -40,6 +46,7 @@ export class ProjectPeopleComponent implements OnInit, OnDestroy {
             accessPolicyId: policy.id,
             read: policy.read,
             write: policy.write,
+            userId: policy.userId,
             icon: AccessSelectorComponent.userIcon,
           });
         });
@@ -52,11 +59,13 @@ export class ProjectPeopleComponent implements OnInit, OnDestroy {
             accessPolicyId: policy.id,
             read: policy.read,
             write: policy.write,
+            currentUserInGroup: policy.currentUserInGroup,
             icon: AccessSelectorComponent.groupIcon,
           });
         });
         return rows;
-      })
+      }),
+      share()
     );
 
   protected handleCreateAccessPolicies(selected: SelectItemView[]) {
@@ -90,17 +99,94 @@ export class ProjectPeopleComponent implements OnInit, OnDestroy {
     );
   }
 
-  constructor(private route: ActivatedRoute, private accessPolicyService: AccessPolicyService) {}
+  protected async handleDeleteAccessPolicy(policy: AccessSelectorRowView) {
+    if (
+      await this.accessPolicyService.needToShowAccessRemovalWarning(
+        this.organizationId,
+        policy,
+        this.rows
+      )
+    ) {
+      this.launchDeleteWarningDialog(policy);
+      return;
+    }
+
+    try {
+      await this.accessPolicyService.deleteAccessPolicy(policy.accessPolicyId);
+    } catch (e) {
+      this.validationService.showError(e);
+    }
+  }
+
+  protected async handleUpdateAccessPolicy(policy: AccessSelectorRowView) {
+    if (
+      policy.read === true &&
+      policy.write === false &&
+      (await this.accessPolicyService.needToShowAccessRemovalWarning(
+        this.organizationId,
+        policy,
+        this.rows
+      ))
+    ) {
+      this.launchUpdateWarningDialog(policy);
+      return;
+    }
+
+    try {
+      return await this.accessPolicyService.updateAccessPolicy(
+        AccessSelectorComponent.getBaseAccessPolicyView(policy)
+      );
+    } catch (e) {
+      this.validationService.showError(e);
+    }
+  }
+
+  constructor(
+    private route: ActivatedRoute,
+    private dialogService: DialogService,
+    private validationService: ValidationService,
+    private accessPolicyService: AccessPolicyService
+  ) {}
 
   ngOnInit(): void {
     this.route.params.pipe(takeUntil(this.destroy$)).subscribe((params) => {
       this.organizationId = params.organizationId;
       this.projectId = params.projectId;
     });
+
+    this.rows$.pipe(takeUntil(this.destroy$)).subscribe((rows) => {
+      this.rows = rows;
+    });
   }
 
   ngOnDestroy(): void {
     this.destroy$.next();
     this.destroy$.complete();
+  }
+
+  private async launchDeleteWarningDialog(policy: AccessSelectorRowView) {
+    this.dialogService.open<unknown, AccessRemovalDetails>(AccessRemovalDialogComponent, {
+      data: {
+        title: "smAccessRemovalWarningProjectTitle",
+        message: "smAccessRemovalWarningProjectMessage",
+        operation: "delete",
+        type: "project",
+        returnRoute: ["sm", this.organizationId, "projects"],
+        policy,
+      },
+    });
+  }
+
+  private launchUpdateWarningDialog(policy: AccessSelectorRowView) {
+    this.dialogService.open<unknown, AccessRemovalDetails>(AccessRemovalDialogComponent, {
+      data: {
+        title: "smAccessRemovalWarningProjectTitle",
+        message: "smAccessRemovalWarningProjectMessage",
+        operation: "update",
+        type: "project",
+        returnRoute: ["sm", this.organizationId, "projects"],
+        policy,
+      },
+    });
   }
 }

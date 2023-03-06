@@ -35,11 +35,7 @@
               *ngIf="!row.static; else staticPermissions"
               class="tw-mb-auto tw-inline-block tw-w-auto"
             >
-              <select
-                bitInput
-                (change)="update($event.target, row.accessPolicyId)"
-                [disabled]="row.static"
-              >
+              <select bitInput (change)="update($event.target, row)" [disabled]="row.static">
                 <option value="canRead" [selected]="row.read && row.write != true">
                   {{ "canRead" | i18n }}
                 </option>
@@ -62,7 +58,7 @@
               size="default"
               [attr.title]="'remove' | i18n"
               [attr.aria-label]="'remove' | i18n"
-              [bitAction]="delete(row.accessPolicyId)"
+              [bitAction]="delete(row)"
             ></button>
           </td>
         </tr>

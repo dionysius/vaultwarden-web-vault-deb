@@ -1,10 +1,11 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
-import { combineLatestWith, Observable, startWith, switchMap } from "rxjs";
+import { combineLatest, Observable, startWith, switchMap } from "rxjs";
 
 import { DialogService } from "@bitwarden/components";
 
 import { ProjectListView } from "../../models/view/project-list.view";
+import { AccessPolicyService } from "../../shared/access-policies/access-policy.service";
 import {
   ProjectDeleteDialogComponent,
   ProjectDeleteOperation,
@@ -29,14 +30,17 @@ export class ProjectsComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private projectService: ProjectService,
+    private accessPolicyService: AccessPolicyService,
     private dialogService: DialogService
   ) {}
 
   ngOnInit() {
-    this.projects$ = this.projectService.project$.pipe(
-      startWith(null),
-      combineLatestWith(this.route.params),
-      switchMap(async ([_, params]) => {
+    this.projects$ = combineLatest([
+      this.route.params,
+      this.projectService.project$.pipe(startWith(null)),
+      this.accessPolicyService.projectAccessPolicyChanges$.pipe(startWith(null)),
+    ]).pipe(
+      switchMap(async ([params]) => {
         this.organizationId = params.organizationId;
         return await this.getProjects();
       })

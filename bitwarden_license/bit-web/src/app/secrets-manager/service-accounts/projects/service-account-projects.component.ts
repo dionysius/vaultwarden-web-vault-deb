@@ -2,6 +2,7 @@ import { Component } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { combineLatestWith, map, Observable, startWith, Subject, switchMap, takeUntil } from "rxjs";
 
+import { ValidationService } from "@bitwarden/common/abstractions/validation.service";
 import { SelectItemView } from "@bitwarden/components/src/multi-select/models/select-item-view";
 
 import { ServiceAccountProjectAccessPolicyView } from "../../models/view/access-policy.view";
@@ -62,7 +63,19 @@ export class ServiceAccountProjectsComponent {
     );
   }
 
-  constructor(private route: ActivatedRoute, private accessPolicyService: AccessPolicyService) {}
+  protected async handleDeleteAccessPolicy(policy: AccessSelectorRowView) {
+    try {
+      await this.accessPolicyService.deleteAccessPolicy(policy.accessPolicyId);
+    } catch (e) {
+      this.validationService.showError(e);
+    }
+  }
+
+  constructor(
+    private route: ActivatedRoute,
+    private validationService: ValidationService,
+    private accessPolicyService: AccessPolicyService
+  ) {}
 
   ngOnInit(): void {
     this.route.params.pipe(takeUntil(this.destroy$)).subscribe((params) => {
