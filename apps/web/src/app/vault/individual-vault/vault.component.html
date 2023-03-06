@@ -7,7 +7,6 @@
             <app-vault-filter
               #vaultFilter
               [activeFilter]="activeFilter"
-              (activeFilterChanged)="applyVaultFilter($event)"
               (onSearchTextChanged)="filterSearchText($event)"
               (onAddFolder)="addFolder()"
               (onEditFolder)="editFolder($event)"
@@ -19,7 +18,6 @@
     <div [ngClass]="{ 'col-6': isShowingCards, 'col-9': !isShowingCards }">
       <app-vault-header
         [activeFilter]="activeFilter"
-        (activeFilterChanged)="applyVaultFilter($event)"
         [actionPromise]="vaultItemsComponent.actionPromise"
         (onAddCipher)="addCipher()"
       ></app-vault-header>
@@ -28,7 +26,6 @@
       </app-callout>
       <app-vault-items
         [activeFilter]="activeFilter"
-        (activeFilterChanged)="applyVaultFilter($event)"
         (onCipherClicked)="navigateToCipher($event)"
         (onAttachmentsClicked)="editCipherAttachments($event)"
         (onAddCipher)="addCipher()"

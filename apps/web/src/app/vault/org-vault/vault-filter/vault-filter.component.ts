@@ -1,9 +1,8 @@
 import { Component, Input, OnDestroy, OnInit } from "@angular/core";
-import { firstValueFrom, Subject, switchMap, takeUntil } from "rxjs";
+import { firstValueFrom, Subject } from "rxjs";
 
 import { Organization } from "@bitwarden/common/models/domain/organization";
 import { TreeNode } from "@bitwarden/common/models/domain/tree-node";
-import { CollectionView } from "@bitwarden/common/models/view/collection.view";
 
 import { VaultFilterComponent as BaseVaultFilterComponent } from "../../individual-vault/vault-filter/components/vault-filter.component"; //../../vault/vault-filter/components/vault-filter.component";
 import {
@@ -39,28 +38,6 @@ export class VaultFilterComponent extends BaseVaultFilterComponent implements On
   ngOnDestroy() {
     this.destroy$.next();
     this.destroy$.complete();
-  }
-
-  protected loadSubscriptions() {
-    this.vaultFilterService.filteredCollections$
-      .pipe(
-        switchMap(async (collections) => {
-          this.removeInvalidCollectionSelection(collections);
-        }),
-        takeUntil(this.destroy$)
-      )
-      .subscribe();
-  }
-
-  protected async removeInvalidCollectionSelection(collections: CollectionView[]) {
-    if (this.activeFilter.selectedCollectionNode) {
-      if (!collections.some((f) => f.id === this.activeFilter.collectionId)) {
-        this.activeFilter.resetFilter();
-        this.activeFilter.selectedCollectionNode =
-          (await this.getDefaultFilter()) as TreeNode<CollectionFilter>;
-        this.applyVaultFilter(this.activeFilter);
-      }
-    }
   }
 
   async buildAllFilters(): Promise<VaultFilterList> {

@@ -54,14 +54,21 @@ export type VaultItemRow = (CipherView | TreeNode<CollectionFilter>) & { checked
   templateUrl: "vault-items.component.html",
 })
 export class VaultItemsComponent extends BaseVaultItemsComponent implements OnDestroy {
-  @Input() showAddNew = true;
-  @Input() activeFilter: VaultFilter;
   @Output() activeFilterChanged = new EventEmitter<VaultFilter>();
   @Output() onAttachmentsClicked = new EventEmitter<CipherView>();
   @Output() onShareClicked = new EventEmitter<CipherView>();
   @Output() onEditCipherCollectionsClicked = new EventEmitter<CipherView>();
   @Output() onCloneClicked = new EventEmitter<CipherView>();
   @Output() onOrganzationBadgeClicked = new EventEmitter<string>();
+
+  private _activeFilter: VaultFilter;
+  @Input() get activeFilter(): VaultFilter {
+    return this._activeFilter;
+  }
+  set activeFilter(value: VaultFilter) {
+    this._activeFilter = value;
+    this.reload(this.activeFilter.buildFilter(), this.activeFilter.isDeleted);
+  }
 
   cipherType = CipherType;
   actionPromise: Promise<any>;
@@ -81,6 +88,10 @@ export class VaultItemsComponent extends BaseVaultItemsComponent implements OnDe
   protected pagedCiphers: CipherView[] = [];
   protected pagedCollections: TreeNode<CollectionFilter>[] = [];
   protected searchedCollections: TreeNode<CollectionFilter>[] = [];
+
+  get showAddNew() {
+    return !this.activeFilter.isDeleted;
+  }
 
   get collections(): TreeNode<CollectionFilter>[] {
     return this.activeFilter?.selectedCollectionNode?.children ?? [];

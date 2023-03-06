@@ -10,7 +10,6 @@
               #vaultFilter
               [organization]="organization"
               [activeFilter]="activeFilter"
-              (activeFilterChanged)="applyVaultFilter($event)"
               (onSearchTextChanged)="filterSearchText($event)"
             ></app-organization-vault-filter>
           </div>
@@ -20,7 +19,6 @@
     <div class="col-9">
       <app-org-vault-header
         [activeFilter]="activeFilter"
-        (activeFilterChanged)="applyVaultFilter($event)"
         (onCollectionChanged)="refreshItems()"
         [actionPromise]="vaultItemsComponent.actionPromise"
         (onAddCipher)="addCipher()"
@@ -36,7 +34,6 @@
       <app-org-vault-items
         [activeFilter]="activeFilter"
         [initOrganization]="organization"
-        (activeFilterChanged)="applyVaultFilter($event)"
         (onCipherClicked)="navigateToCipher($event)"
         (onAttachmentsClicked)="editCipherAttachments($event)"
         (onAddCipher)="addCipher()"

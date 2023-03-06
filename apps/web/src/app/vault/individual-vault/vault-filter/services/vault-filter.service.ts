@@ -22,6 +22,7 @@ import { TreeNode } from "@bitwarden/common/models/domain/tree-node";
 import { CollectionView } from "@bitwarden/common/models/view/collection.view";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
 import { FolderService } from "@bitwarden/common/vault/abstractions/folder/folder.service.abstraction";
+import { CipherType } from "@bitwarden/common/vault/enums/cipher-type";
 import { FolderView } from "@bitwarden/common/vault/models/view/folder.view";
 
 import { CollectionAdminView } from "../../../../organizations/core";
@@ -72,6 +73,8 @@ export class VaultFilterService implements VaultFilterServiceAbstraction {
   collectionTree$: Observable<TreeNode<CollectionFilter>> = this.filteredCollections$.pipe(
     map((collections) => this.buildCollectionTree(collections))
   );
+
+  cipherTypeTree$: Observable<TreeNode<CipherTypeFilter>> = this.buildCipherTypeTree();
 
   constructor(
     protected stateService: StateService,
@@ -253,5 +256,45 @@ export class VaultFilterService implements VaultFilterServiceAbstraction {
   protected getFolderFilterHead(): TreeNode<FolderFilter> {
     const head = new FolderView() as FolderFilter;
     return new TreeNode<FolderFilter>(head, null, "folders", "AllFolders");
+  }
+
+  protected buildCipherTypeTree(): Observable<TreeNode<CipherTypeFilter>> {
+    const allTypeFilters: CipherTypeFilter[] = [
+      {
+        id: "favorites",
+        name: this.i18nService.t("favorites"),
+        type: "favorites",
+        icon: "bwi-star",
+      },
+      {
+        id: "login",
+        name: this.i18nService.t("typeLogin"),
+        type: CipherType.Login,
+        icon: "bwi-globe",
+      },
+      {
+        id: "card",
+        name: this.i18nService.t("typeCard"),
+        type: CipherType.Card,
+        icon: "bwi-credit-card",
+      },
+      {
+        id: "identity",
+        name: this.i18nService.t("typeIdentity"),
+        type: CipherType.Identity,
+        icon: "bwi-id-card",
+      },
+      {
+        id: "note",
+        name: this.i18nService.t("typeSecureNote"),
+        type: CipherType.SecureNote,
+        icon: "bwi-sticky-note",
+      },
+    ];
+
+    return this.buildTypeTree(
+      { id: "AllItems", name: "allItems", type: "all", icon: "" },
+      allTypeFilters
+    );
   }
 }
