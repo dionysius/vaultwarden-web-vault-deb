@@ -2,6 +2,8 @@ import { SelectionModel } from "@angular/cdk/collections";
 import { Component, EventEmitter, Input, OnDestroy, Output } from "@angular/core";
 import { Subject, takeUntil } from "rxjs";
 
+import { TableDataSource } from "@bitwarden/components";
+
 import { ServiceAccountView } from "../models/view/service-account.view";
 
 @Component({
@@ -9,6 +11,8 @@ import { ServiceAccountView } from "../models/view/service-account.view";
   templateUrl: "./service-accounts-list.component.html",
 })
 export class ServiceAccountsListComponent implements OnDestroy {
+  protected dataSource = new TableDataSource<ServiceAccountView>();
+
   @Input()
   get serviceAccounts(): ServiceAccountView[] {
     return this._serviceAccounts;
@@ -16,6 +20,7 @@ export class ServiceAccountsListComponent implements OnDestroy {
   set serviceAccounts(serviceAccounts: ServiceAccountView[]) {
     this.selection.clear();
     this._serviceAccounts = serviceAccounts;
+    this.dataSource.data = serviceAccounts;
   }
   private _serviceAccounts: ServiceAccountView[];
 
