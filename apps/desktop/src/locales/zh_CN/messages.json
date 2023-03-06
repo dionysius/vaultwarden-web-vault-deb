@@ -542,7 +542,7 @@
     "message": "必须填写确认主密码。"
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least $VALUE$ characters long.",
+    "message": "主密码至少需要 $VALUE$ 个字符。",
     "description": "The Master Password must be at least a specific number of characters long.",
     "placeholders": {
       "value": {

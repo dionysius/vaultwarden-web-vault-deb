@@ -542,7 +542,7 @@
     "message": "Ir nepieciešama galvenās paroles atkārtota ievadīšana."
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least $VALUE$ characters long.",
+    "message": "Galvenajai parolei ir jābūt vismaz $VALUE$ rakstzīmes garai.",
     "description": "The Master Password must be at least a specific number of characters long.",
     "placeholders": {
       "value": {
@@ -1078,7 +1078,7 @@
     "message": "Tādas papildu divpakāpju pieteikšanās iespējas kā YubiKey, FIDO U2F un Duo."
   },
   "premiumSignUpReports": {
-    "message": "Paroles higiēnas, konta stāvokļa un datu pārkāpumu pārskati, lai jūsu glabātuve būtu drošībā."
+    "message": "Paroļu higiēnas, konta veselības un datu noplūžu pārskati, lai uzturētu glabātavu drošu."
   },
   "premiumSignUpTotp": {
     "message": "TOTP apstiprinājuma koda (2FA) veidotājs glabātavas pieteikšanās vienumiem."
@@ -1207,7 +1207,7 @@
     "message": "Pārbaudīt, vai parole ir bijusi nopludināta."
   },
   "passwordExposed": {
-    "message": "Šī parole datu pārkāpumos ir atklāta $VALUE$ reizi(es). To vajag mainīt.",
+    "message": "Šī parole datu noplūdēs ir atklāta $VALUE$ reizi(es). To vajadzētu nomainīt.",
     "placeholders": {
       "value": {
         "content": "$1",
@@ -1216,7 +1216,7 @@
     }
   },
   "passwordSafe": {
-    "message": "Šī parole netika atrasta nevienā no zināmajiem datu pārkāpumiem. Tai vajadzētu būt droši izmantojamai."
+    "message": "Šī parole netika atrasta nevienā zināmā datu noplūdē. Tai vajadzētu būt droši izmantojamai."
   },
   "baseDomain": {
     "message": "Pamata domēns",
@@ -2176,7 +2176,7 @@
     "message": "Noplūdusi galvenā parole"
   },
   "exposedMasterPasswordDesc": {
-    "message": "Parole atrasta datu noplūdē. Jāizmanto neatkārtojama parole, lai aizsargātu savu kontu. Vai tiešām izmantot atklātu paroli?"
+    "message": "Parole atrasta datu noplūdē. Jāizmanto neatkārtojama parole, lai aizsargātu savu kontu. Vai tiešām izmantot noplūdušu paroli?"
   },
   "weakAndExposedMasterPassword": {
     "message": "Vāja un noplūdusi galvenā parole"
@@ -2185,7 +2185,7 @@
     "message": "Noteikta vāja parole, un tā ir atrasta datu noplūdē. Jāizmanto spēcīga un neatkārtojama parole, lai aizsargātu savu kontu. Vai tiešām izmantot šo paroli?"
   },
   "checkForBreaches": {
-    "message": "Pārbaudīt šo paroli pret zināmiem datu pārkāpumiem"
+    "message": "Meklēt šo paroli zināmās datu noplūdēs"
   },
   "important": {
     "message": "Svarīgi:"

@@ -455,7 +455,7 @@
     "description": "Search item type"
   },
   "newAttachment": {
-    "message": "Anhang hinzufügen"
+    "message": "Neuen Anhang hinzufügen"
   },
   "deletedAttachment": {
     "message": "Anhang gelöscht"
@@ -464,7 +464,7 @@
     "message": "Bist du sicher, dass du diesen Anhang löschen möchtest?"
   },
   "attachmentSaved": {
-    "message": "Der Anhang wurde gespeichert."
+    "message": "Anhang gespeichert"
   },
   "file": {
     "message": "Datei"
@@ -630,7 +630,7 @@
     "message": "Stecke deinen Sicherheitsschlüssel in einen USB-Anschluss deines Computers. Falls er einen Knopf hat, drücke diesen."
   },
   "recoveryCodeDesc": {
-    "message": "Zugang zu allen Zwei-Faktor Anbietern verloren? Benutzen Sie Ihren Wiederherstellungscode, um alle Zwei-Faktor Anbieter in Ihrem Konto zu deaktivieren."
+    "message": "Zugang zu allen Zwei-Faktor-Anbietern verloren? Benutze deinen Wiederherstellungscode, um alle Zwei-Faktor-Anbieter in deinem Konto zu deaktivieren."
   },
   "recoveryCodeTitle": {
     "message": "Wiederherstellungscode"
@@ -660,7 +660,7 @@
     "message": "FIDO2 WebAuthn"
   },
   "webAuthnDesc": {
-    "message": "Benutze einen WebAuthn-kompatiblen Sicherheitsschlüssel um auf dein Konto zuzugreifen."
+    "message": "Benutze einen beliebigen WebAuthn kompatiblen Sicherheitsschlüssel, um auf dein Konto zuzugreifen."
   },
   "emailTitle": {
     "message": "E-Mail"
@@ -669,10 +669,10 @@
     "message": "Bestätigungscodes werden dir per E-Mail zugesandt."
   },
   "loginUnavailable": {
-    "message": "Login nicht verfügbar"
+    "message": "Anmeldung nicht verfügbar"
   },
   "noTwoStepProviders": {
-    "message": "Dieses Konto hat eine aktive Zwei-Faktor-Authentifizierung, allerdings wird keiner der konfigurierten Zwei-Faktor-Anbieter von diesem Gerät unterstützt."
+    "message": "Für dieses Konto ist eine aktive Zwei-Faktor-Authentifizierung eingerichtet, allerdings wird keiner der konfigurierten Zwei-Faktor-Anbieter von diesem Gerät unterstützt."
   },
   "noTwoStepProviders2": {
     "message": "Bitte wähle zusätzliche Dienste, die über mehrere Geräte funktionieren (zum Beispiel eine Authentifizierungs-App)."
@@ -696,22 +696,22 @@
     "message": "Server-URL"
   },
   "apiUrl": {
-    "message": "API-Server-URL"
+    "message": "API Server-URL"
   },
   "webVaultUrl": {
-    "message": "Web-Tresor-Server-URL"
+    "message": "URL des Web-Tresor-Servers"
   },
   "identityUrl": {
-    "message": "Identitätsserver-URL"
+    "message": "URL des Identitätsservers"
   },
   "notificationsUrl": {
-    "message": "Benachrichtigungsserver-URL"
+    "message": "URL des Benachrichtigungsservers"
   },
   "iconsUrl": {
-    "message": "Icons-Server-URL"
+    "message": "URL des Icons-Servers"
   },
   "environmentSaved": {
-    "message": "Die URLs der Umgebung wurden gespeichert."
+    "message": "URLs der Umgebung gespeichert"
   },
   "ok": {
     "message": "Ok"
@@ -744,13 +744,13 @@
     "message": "Abmelden"
   },
   "addNewLogin": {
-    "message": "Login hinzufügen"
+    "message": "Neue Zugangsdaten"
   },
   "addNewItem": {
-    "message": "Neuen Eintrag hinzufügen"
+    "message": "Neuer Eintrag"
   },
   "addNewFolder": {
-    "message": "Neuen Ordner hinzufügen"
+    "message": "Neuer Ordner"
   },
   "view": {
     "message": "Ansicht"
@@ -783,7 +783,7 @@
     "message": "Folge uns"
   },
   "syncVault": {
-    "message": "Tresor jetzt synchronisieren"
+    "message": "Tresor synchronisieren"
   },
   "changeMasterPass": {
     "message": "Master-Passwort ändern"
@@ -792,7 +792,7 @@
     "message": "Du kannst dein Master-Passwort im bitwarden.com-Web-Tresor ändern. Möchtest du die Seite jetzt öffnen?"
   },
   "fingerprintPhrase": {
-    "message": "Prüfschlüssel",
+    "message": "Fingerabdruck-Phrase",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "yourAccountsFingerprint": {
@@ -803,7 +803,7 @@
     "message": "Web-Tresor öffnen"
   },
   "getMobileApp": {
-    "message": "Mobile App laden"
+    "message": "Mobile App installieren"
   },
   "getBrowserExtension": {
     "message": "Browser-Erweiterung installieren"
@@ -837,7 +837,7 @@
     "message": "Ungültiges Master-Passwort"
   },
   "twoStepLoginConfirmation": {
-    "message": "Mit Zwei-Faktor-Authentifizierung wird dein Account zusätzlich abgesichert, da jede Anmeldung durch einen Sicherheitscode, eine Authentifizierungs-App, SMS, einen Anruf oder eine E-Mail verifiziert werden muss. Zwei-Faktor-Authentifizierung kann im bitwarden.com-Web-Tresor aktiviert werden. Möchtest du die Seite jetzt öffnen?"
+    "message": "Mit der Zwei-Faktor-Authentifizierung wird dein Konto zusätzlich abgesichert, da jede Anmeldung mit einem anderen Gerät wie einem Sicherheitsschlüssel, einer Authentifizierungs-App, einer SMS, einem Anruf oder einer E-Mail verifiziert werden muss. Die Zwei-Faktor-Authentifizierung kann im bitwarden.com Web-Tresor aktiviert werden. Möchtest du die Webseite jetzt öffnen?"
   },
   "twoStepLogin": {
     "message": "Zwei-Faktor-Authentifizierung"
@@ -926,7 +926,7 @@
     "message": "Bei minimiertem Fenster stattdessen ein Symbol in der Menüleiste anzeigen."
   },
   "enableCloseToTray": {
-    "message": "In den Infobereich minimieren"
+    "message": "In die Taskleiste minimieren"
   },
   "enableCloseToTrayDesc": {
     "message": "Zeige ein Symbol in der Taskleiste, wenn das Fenster geschlossen wird."
@@ -938,7 +938,7 @@
     "message": "Beim Schließen des Fensters stattdessen ein Symbol in der Menüleiste anzeigen."
   },
   "enableTray": {
-    "message": "Taskleisten-Symbol einschalten"
+    "message": "Taskleisten-Symbol anzeigen"
   },
   "enableTrayDesc": {
     "message": "Dauerhaft ein Symbol in der Taskleiste anzeigen."
@@ -968,10 +968,10 @@
     "message": "Das Bitwarden-Symbol im Dock anzeigen, auch wenn es in die Menüleiste minimiert wird."
   },
   "confirmTrayTitle": {
-    "message": "Tray deaktivieren bestätigen"
+    "message": "In Taskleiste minimieren bestätigen"
   },
   "confirmTrayDesc": {
-    "message": "Deaktivieren dieser Einstellung wird auch alle anderen Tray-bezogenen Einstellungen deaktivieren."
+    "message": "Durch Deaktivieren dieser Einstellung werden auch alle anderen Taskleisten-bezogenen Einstellungen deaktiviert."
   },
   "language": {
     "message": "Sprache"
@@ -998,7 +998,7 @@
     "description": "Copy to clipboard"
   },
   "checkForUpdates": {
-    "message": "Auf Updates prüfen …"
+    "message": "Nach Aktualisierungen suchen…"
   },
   "version": {
     "message": "Version $VERSION_NUM$",
@@ -1010,7 +1010,7 @@
     }
   },
   "restartToUpdate": {
-    "message": "Neu starten, um zu updaten"
+    "message": "Neu starten, um zu aktualisieren"
   },
   "restartToUpdateDesc": {
     "message": "Version $VERSION_NUM$ steht zur Installation bereit. Du musst Bitwarden neustarten, um die Installation abzuschließen. Möchtest du jetzt neustarten und updaten?",
@@ -1037,13 +1037,13 @@
     "message": "Derzeit gibt es keine Updates. Du verwendest die neueste Version."
   },
   "updateError": {
-    "message": "Update-Fehler"
+    "message": "Aktualisierungsfehler"
   },
   "unknown": {
     "message": "Unbekannt"
   },
   "copyUsername": {
-    "message": "Benutzerrname kopieren"
+    "message": "Benutzernamen kopieren"
   },
   "copyNumber": {
     "message": "Nummer kopieren",
@@ -1069,7 +1069,7 @@
     "message": "Du hast derzeit keine Premium-Mitgliedschaft."
   },
   "premiumSignUpAndGet": {
-    "message": "Werde Premium-Mitglied und erhalte dafür:"
+    "message": "Melde dich für eine Premium-Mitgliedschaft an und erhalte dafür:"
   },
   "premiumSignUpStorage": {
     "message": "1 GB verschlüsselter Speicherplatz für Dateianhänge."
@@ -1114,7 +1114,7 @@
     "message": "Aktualisierung abgeschlossen"
   },
   "passwordHistory": {
-    "message": "Kennwort-Historie"
+    "message": "Passwortverlauf"
   },
   "clear": {
     "message": "Leeren",
@@ -1147,7 +1147,7 @@
     "message": "Verkleinern"
   },
   "resetZoom": {
-    "message": "Zoom zurücksetzen"
+    "message": "Originalgröße"
   },
   "toggleFullScreen": {
     "message": "Vollbildmodus umschalten"
@@ -1266,7 +1266,7 @@
     "description": "Text for a button that toggles the visibility of the window. Shows the window when it is hidden or hides the window if it is currently open."
   },
   "hideToTray": {
-    "message": "Nur in der Taskleiste anzeigen"
+    "message": "In Taskleiste verstecken"
   },
   "alwaysOnTop": {
     "message": "Immer im Vordergrund",
@@ -1414,7 +1414,7 @@
     "message": "Unten fortfahren, um dein Konto und alle Tresor-Daten zu löschen."
   },
   "deleteAccountWarning": {
-    "message": "Die Kontolöschung ist permanent. Sie kann nicht rückgängig gemacht werden."
+    "message": "Die Kontolöschung ist dauerhaft. Sie kann nicht rückgängig gemacht werden."
   },
   "accountDeleted": {
     "message": "Konto gelöscht"
@@ -1438,7 +1438,7 @@
     "message": "Du musst mindestens eine Sammlung auswählen."
   },
   "premiumUpdated": {
-    "message": "Du hast ein Upgrade auf Premium durchgeführt."
+    "message": "Du hast ein Premium-Abo aktiviert."
   },
   "restore": {
     "message": "Wiederherstellen"
@@ -1472,10 +1472,10 @@
     "message": "Aktion bei Tresor-Timeout"
   },
   "vaultTimeoutActionLockDesc": {
-    "message": "Ein gesperrter Tresor erfordert die erneute Eingabe des Master-Passworts, um abermals darauf zugreifen zu können."
+    "message": "Um wieder auf deinen Tresor zugreifen zu können, ist dein Master-Passwort oder eine andere Entsperr-Methode erforderlich."
   },
   "vaultTimeoutActionLogOutDesc": {
-    "message": "Ein ausgeloggter Tresor erfordert eine Neu-Authentifizierung, um erneut darauf zugreifen zu können."
+    "message": "Um wieder auf deinen Tresor zugreifen zu können, ist eine erneute Authentifizierung erforderlich."
   },
   "lock": {
     "message": "Sperren",
@@ -1516,7 +1516,7 @@
     "message": "Timeout-Aktion bestätigen"
   },
   "enterpriseSingleSignOn": {
-    "message": "Enterprise Single Sign-On"
+    "message": "Enterprise Single-Sign-On"
   },
   "setMasterPassword": {
     "message": "Master-Passwort festlegen"
@@ -1579,10 +1579,10 @@
     "message": "Die Nutzungsbedingungen und Datenschutzerklärung wurden nicht akzeptiert."
   },
   "enableBrowserIntegration": {
-    "message": "Browser-Integration aktivieren"
+    "message": "Browser-Einbindung aktivieren"
   },
   "enableBrowserIntegrationDesc": {
-    "message": "Die Browser-Integration wird für Biometrie im Browser verwendet."
+    "message": "Die Browser-Einbindung wird für Biometrie im Browser verwendet."
   },
   "enableDuckDuckGoBrowserIntegration": {
     "message": "DuckDuckGo Browser-Einbindung erlauben"
@@ -1594,19 +1594,19 @@
     "message": "Browser-Einbindung wird nicht unterstützt"
   },
   "browserIntegrationMasOnlyDesc": {
-    "message": "Leider wird die Browser-Integration derzeit nur in der Mac App Store Version unterstützt."
+    "message": "Leider wird die Browsers-Einbindung derzeit nur in der Mac App Store Version unterstützt."
   },
   "browserIntegrationWindowsStoreDesc": {
-    "message": "Leider wird die Browser-Integration derzeit nicht in der Windows Store Version unterstützt."
+    "message": "Leider wird die Browser-Einbindung derzeit nicht in der Microsoft Store Version unterstützt."
   },
   "browserIntegrationLinuxDesc": {
     "message": "Leider wird die Browser-Einbindung derzeit nicht in der Linux Version unterstützt."
   },
   "enableBrowserIntegrationFingerprint": {
-    "message": "Überprüfung für Browser-Integration verlangen"
+    "message": "Überprüfung für Browser-Einbindung verlangen"
   },
   "enableBrowserIntegrationFingerprintDesc": {
-    "message": "Eine zusätzliche Sicherheitsebene aktivieren, indem eine Prüfschlüssel-Validierung verlangt wird, wenn eine Verbindung zwischen deiner Desktop-Anwendung und dem Browser aufgebaut wird. Nach Aktivierung ist bei jedem Verbindungsaufbau ein Benutzer-Eingriff erforderlich."
+    "message": "Eine zusätzliche Sicherheitsebene hinzufügen, indem eine Fingerabdruck-Phrasen-Validierung verlangt wird, wenn eine Verbindung zwischen deiner Desktop-Anwendung und dem Browser aufgebaut wird. Nach Aktivierung ist bei jedem Verbindungsaufbau ein Benutzer-Eingriff und Verifizierung erforderlich."
   },
   "approve": {
     "message": "Genehmigen"
@@ -1630,13 +1630,13 @@
     "message": "Möchtest du diese Anfrage genehmigen?"
   },
   "verifyNativeMessagingConnectionWarning": {
-    "message": "Wenn du diese Anfrage nicht initiiert hast, genehmige sie nicht."
+    "message": "Wenn du diese Anfrage nicht veranlasst hast, genehmige sie nicht."
   },
   "biometricsNotEnabledTitle": {
     "message": "Biometrie ist nicht aktiviert"
   },
   "biometricsNotEnabledDesc": {
-    "message": "Biometrie im Browser setzt voraus, dass Biometrie zuerst in den Einstellungen der Desktop-Anwendung aktiviert ist."
+    "message": "Biometrie im Browser setzt voraus, dass Biometrie zuerst in den Einstellungen der Desktop-Anwendung aktiviert wird."
   },
   "personalOwnershipSubmitError": {
     "message": "Aufgrund einer Unternehmensrichtlinie darfst du keine Einträge in deinem persönlichen Tresor speichern. Ändere die Eigentümer-Option in eine Organisation und wähle aus den verfügbaren Sammlungen."
@@ -1725,7 +1725,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editedSend": {
-    "message": "Send bearbeitet",
+    "message": "Send gespeichert",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "deletedSend": {
@@ -1740,7 +1740,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createSend": {
-    "message": "Send erstellen",
+    "message": "Neues Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendTextDesc": {
@@ -1776,7 +1776,7 @@
     "message": "Den Link zum Teilen dieses Sends beim Speichern in meine Zwischenablage kopieren."
   },
   "sendDisabled": {
-    "message": "Send deaktiviert",
+    "message": "Send gelöscht",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendDisabledWarning": {
@@ -1881,7 +1881,7 @@
     "message": "Master-Passwort entfernen"
   },
   "removedMasterPassword": {
-    "message": "Master-Passwort entfernt."
+    "message": "Master-Passwort entfernt"
   },
   "convertOrganizationEncryptionDesc": {
     "message": "$ORGANIZATION$ verwendet SSO mit einem selbst gehosteten Schlüsselserver. Ein Master-Passwort ist nicht mehr erforderlich, damit sich Mitglieder dieser Organisation anmelden können.",
@@ -1917,7 +1917,7 @@
     "message": "App-Einstellungen (Alle Konten)"
   },
   "accountSwitcherLimitReached": {
-    "message": "Kontolimit erreicht. Abmelden von einem Konto, um ein anderes hinzuzufügen."
+    "message": "Kontolimit erreicht. Von einem Konto abmelden, um ein anderes hinzuzufügen."
   },
   "settingsTitle": {
     "message": "App-Einstellungen für $EMAIL$",
@@ -1941,7 +1941,7 @@
     "message": "Persönlichen Tresor exportieren"
   },
   "exportingPersonalVaultDescription": {
-    "message": "Nur die persönlichen Tresoreinträge, die mit $EMAIL$ verbunden sind, werden exportiert. Tresoreinträge der Organisation werden nicht berücksichtigt.",
+    "message": "Nur die persönlichen Tresor-Einträge, die mit $EMAIL$ verbunden sind, werden exportiert. Tresor-Einträge der Organisation werden nicht berücksichtigt.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -1959,7 +1959,7 @@
     "message": "Generator"
   },
   "whatWouldYouLikeToGenerate": {
-    "message": "Was möchtest du erzeugen?"
+    "message": "Was möchtest du generieren?"
   },
   "passwordType": {
     "message": "Passworttyp"
@@ -1968,13 +1968,13 @@
     "message": "Benutzername neu generieren"
   },
   "generateUsername": {
-    "message": "Benutzernamen erzeugen"
+    "message": "Benutzernamen generieren"
   },
   "usernameType": {
     "message": "Benutzernamentyp"
   },
   "plusAddressedEmail": {
-    "message": "Mit Plus adressierte E-Mail",
+    "message": "Mit Plus adressierte E-Mail-Adresse",
     "description": "Username generator option that appends a random sub-address to the username. For example: address+subaddress@email.com"
   },
   "plusAddressedEmailDesc": {
@@ -2033,7 +2033,7 @@
     "message": "Auf Einträge in deaktivierten Organisationen kann nicht zugegriffen werden. Kontaktiere deinen Organisationseigentümer für Unterstützung."
   },
   "neverLockWarning": {
-    "message": "Bist du sicher, dass du die Option \"Nie\" verwenden möchten? Durch das Setzen der Sperroptionen zu \"Nie\" wird der Verschlüsselungsschlüssel deines Tresors auf deinem Gerät gespeichert. Wenn du diese Option verwendest, solltest du sicherstellen, dass dein Gerät ausreichend geschützt ist."
+    "message": "Bist du sicher, dass du die Option \"Nie\" verwenden möchtest? Durch das Setzen der Sperroptionen zu \"Nie\" wird der Verschlüsselungscode deines Tresors auf deinem Gerät gespeichert. Wenn du diese Option verwendest, solltest du sicherstellen, dass dein Gerät ausreichend geschützt ist."
   },
   "cardBrandMir": {
     "message": "Mir"
@@ -2045,7 +2045,7 @@
     "message": "Mit Master-Passwort anmelden"
   },
   "loggingInAs": {
-    "message": "Einloggen als"
+    "message": "Anmelden als"
   },
   "rememberEmail": {
     "message": "E-Mail-Adresse merken"
@@ -2069,7 +2069,7 @@
     "message": "Mit einem anderen Gerät anmelden"
   },
   "logInInitiated": {
-    "message": "Anmeldung initiiert"
+    "message": "Anmeldung eingeleitet"
   },
   "notificationSentDevice": {
     "message": "Eine Benachrichtigung wurde an dein Gerät gesendet."
@@ -2106,7 +2106,7 @@
     }
   },
   "deviceType": {
-    "message": "Geräte-Typ"
+    "message": "Gerätetyp"
   },
   "ipAddress": {
     "message": "IP-Adresse"

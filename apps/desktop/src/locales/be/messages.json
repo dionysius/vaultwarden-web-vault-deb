@@ -542,7 +542,7 @@
     "message": "Неабходна паўторна ўвесці асноўны пароль."
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least $VALUE$ characters long.",
+    "message": "Асноўны пароль павінен змяшчаць прынамсі $VALUE$ сімвалаў.",
     "description": "The Master Password must be at least a specific number of characters long.",
     "placeholders": {
       "value": {

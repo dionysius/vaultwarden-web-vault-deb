@@ -1790,10 +1790,10 @@
     "message": "Deaktivert"
   },
   "removePassword": {
-    "message": "Remove password"
+    "message": "Fjern passord"
   },
   "removedPassword": {
-    "message": "Password removed"
+    "message": "Passord fjernet"
   },
   "removePasswordConfirmation": {
     "message": "Are you sure you want to remove the password?"
@@ -2109,19 +2109,19 @@
     "message": "Device Type"
   },
   "ipAddress": {
-    "message": "IP Address"
+    "message": "IP-adresse"
   },
   "time": {
-    "message": "Time"
+    "message": "Tid"
   },
   "confirmLogIn": {
-    "message": "Confirm login"
+    "message": "Bekreft innlogging"
   },
   "denyLogIn": {
-    "message": "Deny login"
+    "message": "Avslå innlogging"
   },
   "approveLoginRequests": {
-    "message": "Approve login requests"
+    "message": "Godkjenn innloggingsforespørsler"
   },
   "logInConfirmedForEmailOnDevice": {
     "message": "Login confirmed for $EMAIL$ on $DEVICE$",
@@ -2143,7 +2143,7 @@
     "message": "Just now"
   },
   "requestedXMinutesAgo": {
-    "message": "Requested $MINUTES$ minutes ago",
+    "message": "Forespurt for $MINUTES$ minutter siden",
     "placeholders": {
       "minutes": {
         "content": "$1",
@@ -2152,10 +2152,10 @@
     }
   },
   "loginRequestHasAlreadyExpired": {
-    "message": "Login request has already expired."
+    "message": "Innloggingsforespørselen er allerede utløpt."
   },
   "thisRequestIsNoLongerValid": {
-    "message": "This request is no longer valid."
+    "message": "Denne forespørselen er ikke lenger gyldig."
   },
   "approveLoginRequestDesc": {
     "message": "Use this device to approve login requests made from other devices."
@@ -2188,7 +2188,7 @@
     "message": "Check known data breaches for this password"
   },
   "important": {
-    "message": "Important:"
+    "message": "Viktig:"
   },
   "masterPasswordHint": {
     "message": "Your master password cannot be recovered if you forget it!"
