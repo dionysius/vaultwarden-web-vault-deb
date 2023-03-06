@@ -23,10 +23,10 @@ export class SecretsManagerExportComponent implements OnInit, OnDestroy {
 
   protected orgName: string;
   protected orgId: string;
-  protected exportFormats: string[] = ["json"];
+  protected exportFormats: string[] = ["Bitwarden (json)"];
 
   protected formGroup = new FormGroup({
-    format: new FormControl("json", [Validators.required]),
+    format: new FormControl("Bitwarden (json)", [Validators.required]),
   });
 
   constructor(
