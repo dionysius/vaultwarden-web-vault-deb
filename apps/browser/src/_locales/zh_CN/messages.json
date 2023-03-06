@@ -195,6 +195,15 @@
   "helpFeedback": {
     "message": "帮助与反馈"
   },
+  "helpCenter": {
+    "message": "Bitwarden 帮助中心"
+  },
+  "communityForums": {
+    "message": "探索 Bitwarden 社区论坛"
+  },
+  "contactSupport": {
+    "message": "联系 Bitwarden 支持"
+  },
   "sync": {
     "message": "同步"
   },
@@ -2064,7 +2073,7 @@
     "message": "Log in with device must be set up in the settings of the Bitwarden app. Need another option?"
   },
   "fingerprintPhraseHeader": {
-    "message": "Fingerprint phrase"
+    "message": "指纹短语"
   },
   "fingerprintMatchInfo": {
     "message": "Please make sure your vault is unlocked and the Fingerprint phrase matches on the other device."
@@ -2073,13 +2082,13 @@
     "message": "重新发送通知"
   },
   "viewAllLoginOptions": {
-    "message": "View all log in options"
+    "message": "查看所有登录选项"
   },
   "notificationSentDevice": {
-    "message": "A notification has been sent to your device."
+    "message": "通知已发送到您的设备。"
   },
   "logInInitiated": {
-    "message": "Log in initiated"
+    "message": "登录已发起"
   },
   "exposedMasterPassword": {
     "message": "暴露的主密码"
@@ -2133,7 +2142,7 @@
     "message": "自动填充设置"
   },
   "autofillShortcut": {
-    "message": "Auto-fill keyboard shortcut"
+    "message": "自动填充键盘快捷键"
   },
   "autofillShortcutNotSet": {
     "message": "The auto-fill shortcut is not set. Change this in the browser's settings."
@@ -2148,7 +2157,7 @@
     }
   },
   "autofillShortcutTextSafari": {
-    "message": "默认自动填充快捷键： $COMMAND$",
+    "message": "默认自动填充快捷键：$COMMAND$",
     "placeholders": {
       "command": {
         "content": "$1",

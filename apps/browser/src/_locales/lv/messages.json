@@ -195,6 +195,15 @@
   "helpFeedback": {
     "message": "Palīdzība un atsauksmes"
   },
+  "helpCenter": {
+    "message": "Bitwarden palīdzības centrs"
+  },
+  "communityForums": {
+    "message": "Izpētīt Bitwarden kopienas forumus"
+  },
+  "contactSupport": {
+    "message": "Sazināties ar Bitwarden atbalstu"
+  },
   "sync": {
     "message": "Sinhronizēt"
   },
@@ -430,7 +439,7 @@
     "message": "Ir nepieciešama galvenās paroles atkārtota ievadīšana."
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least $VALUE$ characters long.",
+    "message": "Galvenajai parolei ir jābūt vismaz $VALUE$ rakstzīmes garai.",
     "description": "The Master Password must be at least a specific number of characters long.",
     "placeholders": {
       "value": {
@@ -781,7 +790,7 @@
     "message": "Tādas papildu divpakāpju pieteikšanās iespējas kā YubiKey, FIDO U2F un Duo."
   },
   "ppremiumSignUpReports": {
-    "message": "Paroļu higiēnas, kontu veselības un datu pārkāpumu pārskati, lai uzturētu glabātavu drošu."
+    "message": "Paroļu higiēnas, konta veselības un datu noplūžu pārskati, lai uzturētu glabātavu drošu."
   },
   "ppremiumSignUpTotp": {
     "message": "TOTP apstiprinājuma koda (2FA) veidotājs glabātavas pieteikšanās vienumiem."
@@ -1249,7 +1258,7 @@
     "message": "Pārbaudīt, vai parole ir bijusi nopludināta."
   },
   "passwordExposed": {
-    "message": "Šī parole datu pārkāpumos ir atklāta $VALUE$ reizi(es). To vajag mainīt.",
+    "message": "Šī parole datu noplūdēs ir atklāta $VALUE$ reizi(es). To vajadzētu nomainīt.",
     "placeholders": {
       "value": {
         "content": "$1",
@@ -1258,7 +1267,7 @@
     }
   },
   "passwordSafe": {
-    "message": "Šī parole netika atrasta nevienā no zināmajiem datu pārkāpumiem. Tai vajadzētu būt droši izmantojamai."
+    "message": "Šī parole netika atrasta nevienā zināmā datu noplūdē. Tai vajadzētu būt droši izmantojamai."
   },
   "baseDomain": {
     "message": "Pamata domēns",
@@ -2085,16 +2094,16 @@
     "message": "Noplūdusi galvenā parole"
   },
   "exposedMasterPasswordDesc": {
-    "message": "Parole ir atrasta datu noplūdē. Jāizmanto spēcīga parole, lai aizsargātu savu kontu. Vai tiešām izmantot noplūdušu paroli?"
+    "message": "Parole atrasta datu noplūdē. Jāizmanto neatkārtojama parole, lai aizsargātu savu kontu. Vai tiešām izmantot noplūdušu paroli?"
   },
   "weakAndExposedMasterPassword": {
     "message": "Vāja un noplūdusi galvenā parole"
   },
   "weakAndBreachedMasterPasswordDesc": {
-    "message": "Noteikta vāja parole, un tā ir atrasta datu noplūdē. Jāizmanto spēcīga parole, lai aizsargātu savu kontu. Vai tiešām izmantot šo paroli?"
+    "message": "Noteikta vāja parole, un tā ir atrasta datu noplūdē. Jāizmanto spēcīga un neatkārtojama parole, lai aizsargātu savu kontu. Vai tiešām izmantot šo paroli?"
   },
   "checkForBreaches": {
-    "message": "Pārbaudīt šo paroli pret zināmām datu noplūdēm"
+    "message": "Meklēt šo paroli zināmās datu noplūdēs"
   },
   "important": {
     "message": "Svarīgi:"
@@ -2115,7 +2124,7 @@
     "message": "Kā automātiski aizpildīt"
   },
   "autofillSelectInfo": {
-    "message": "Select an item from this page or use the shortcut: $COMMAND$. You can also try auto-fill on page load.",
+    "message": "Jāatlasa šīs lapas vienums vai jāizmanto īsceļš: $COMMAND$. Ir iespējams arī mēģināt automātiski aizpildīt pēc lapas ielādes.",
     "placeholders": {
       "command": {
         "content": "$1",

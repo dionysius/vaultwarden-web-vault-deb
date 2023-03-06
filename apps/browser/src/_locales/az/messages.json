@@ -195,6 +195,15 @@
   "helpFeedback": {
     "message": "Kömək və əks əlaqə"
   },
+  "helpCenter": {
+    "message": "Bitwarden Kömək mərkəzi"
+  },
+  "communityForums": {
+    "message": "Bitwarden cəmiyyət forumlarını kəşf et"
+  },
+  "contactSupport": {
+    "message": "Bitwarden dəstəyi ilə əlaqə saxla"
+  },
   "sync": {
     "message": "Eyniləşdirmə"
   },
@@ -430,7 +439,7 @@
     "message": "Ana parolun yenidən yazılması lazımdır."
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least $VALUE$ characters long.",
+    "message": "Ana parol ən azı $VALUE$ simvol uzunluğunda olmalıdır.",
     "description": "The Master Password must be at least a specific number of characters long.",
     "placeholders": {
       "value": {
@@ -2115,7 +2124,7 @@
     "message": "Avto-doldurma necə edilir"
   },
   "autofillSelectInfo": {
-    "message": "Select an item from this page or use the shortcut: $COMMAND$. You can also try auto-fill on page load.",
+    "message": "Bu səhifədən bir element seçin və ya qısayol istifadə edin: $COMMAND$. Həmçinin səhifə yüklənəndə avto-doldurmanı sınaya bilərsiniz.",
     "placeholders": {
       "command": {
         "content": "$1",

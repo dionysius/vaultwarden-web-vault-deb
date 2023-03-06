@@ -195,6 +195,15 @@
   "helpFeedback": {
     "message": "Help & reacties"
   },
+  "helpCenter": {
+    "message": "Bitwarden Hulpcentrum"
+  },
+  "communityForums": {
+    "message": "Ontdek Bitwarden community-forums"
+  },
+  "contactSupport": {
+    "message": "Contacteer Bitwarden support"
+  },
   "sync": {
     "message": "Synchroniseren"
   },
@@ -430,7 +439,7 @@
     "message": "Type je hoofdwachtwoord opnieuw in."
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least $VALUE$ characters long.",
+    "message": "Hoofdwachtwoord moet minstens $VALUE$ tekens lang zijn.",
     "description": "The Master Password must be at least a specific number of characters long.",
     "placeholders": {
       "value": {
@@ -2115,7 +2124,7 @@
     "message": "Hoe automatisch aanvullen"
   },
   "autofillSelectInfo": {
-    "message": "Select an item from this page or use the shortcut: $COMMAND$. You can also try auto-fill on page load.",
+    "message": "Kies een item van deze pagina of gebruik de snelkoppeling: $COMMAND$. Je kunt ook automatisch invullen bij het laden van een pagina proberen.",
     "placeholders": {
       "command": {
         "content": "$1",

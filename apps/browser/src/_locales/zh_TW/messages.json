@@ -195,6 +195,15 @@
   "helpFeedback": {
     "message": "協助與意見反應"
   },
+  "helpCenter": {
+    "message": "Bitwarden 說明中心"
+  },
+  "communityForums": {
+    "message": "瀏覽 Bitwarden 社群論壇"
+  },
+  "contactSupport": {
+    "message": "連絡 Bitwarden 客戶支援"
+  },
   "sync": {
     "message": "同步"
   },
@@ -430,7 +439,7 @@
     "message": "必須再次輸入主密碼。"
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least $VALUE$ characters long.",
+    "message": "主密碼需要至少 $VALUE$ 個字元。",
     "description": "The Master Password must be at least a specific number of characters long.",
     "placeholders": {
       "value": {
@@ -970,7 +979,7 @@
     "message": "Compromised or untrusted websites can exploit auto-fill on page load."
   },
   "learnMoreAboutAutofill": {
-    "message": "Learn more about auto-fill"
+    "message": "進一步瞭解「自動填入」功能"
   },
   "defaultAutoFillOnPageLoad": {
     "message": "登入項目的預設自動填入設定"
@@ -2058,28 +2067,28 @@
     "message": "記住電子郵件地址"
   },
   "loginWithDevice": {
-    "message": "Log in with device"
+    "message": "使用裝置登入"
   },
   "loginWithDeviceEnabledInfo": {
     "message": "Log in with device must be set up in the settings of the Bitwarden app. Need another option?"
   },
   "fingerprintPhraseHeader": {
-    "message": "Fingerprint phrase"
+    "message": "指紋短語"
   },
   "fingerprintMatchInfo": {
     "message": "Please make sure your vault is unlocked and the Fingerprint phrase matches on the other device."
   },
   "resendNotification": {
-    "message": "Resend notification"
+    "message": "重新傳送通知"
   },
   "viewAllLoginOptions": {
-    "message": "View all log in options"
+    "message": "檢視所有登入選項"
   },
   "notificationSentDevice": {
-    "message": "A notification has been sent to your device."
+    "message": "已傳送通知至您的裝置。"
   },
   "logInInitiated": {
-    "message": "Log in initiated"
+    "message": "登入已起始"
   },
   "exposedMasterPassword": {
     "message": "已暴露的主密碼"
@@ -2112,7 +2121,7 @@
     }
   },
   "howToAutofill": {
-    "message": "How to auto-fill"
+    "message": "如何自動填入"
   },
   "autofillSelectInfo": {
     "message": "Select an item from this page or use the shortcut: $COMMAND$. You can also try auto-fill on page load.",
@@ -2127,13 +2136,13 @@
     "message": "Select an item from this page or set a shortcut in settings. You can also try auto-fill on page load."
   },
   "gotIt": {
-    "message": "Got it"
+    "message": "我知道了"
   },
   "autofillSettings": {
-    "message": "Auto-fill settings"
+    "message": "自動填入設定"
   },
   "autofillShortcut": {
-    "message": "Auto-fill keyboard shortcut"
+    "message": "自動填入鍵盤快速鍵"
   },
   "autofillShortcutNotSet": {
     "message": "The auto-fill shortcut is not set. Change this in the browser's settings."
@@ -2148,7 +2157,7 @@
     }
   },
   "autofillShortcutTextSafari": {
-    "message": "Default auto-fill shortcut: $COMMAND$.",
+    "message": "預設自動填入快速鍵：$COMMAND$",
     "placeholders": {
       "command": {
         "content": "$1",

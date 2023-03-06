@@ -20,7 +20,7 @@
     "message": "Anmelden"
   },
   "enterpriseSingleSignOn": {
-    "message": "Enterprise Single Sign-On"
+    "message": "Enterprise Single-Sign-On"
   },
   "cancel": {
     "message": "Abbrechen"
@@ -113,7 +113,7 @@
     "message": "Zugangsdaten hinzufügen"
   },
   "addItem": {
-    "message": "Neuer Eintrag"
+    "message": "Eintrag hinzufügen"
   },
   "passwordHint": {
     "message": "Passwort-Hinweis"
@@ -194,6 +194,15 @@
   },
   "helpFeedback": {
     "message": "Hilfe & Feedback"
+  },
+  "helpCenter": {
+    "message": "Bitwarden Hilfezentrum"
+  },
+  "communityForums": {
+    "message": "Bitwarden Community-Forum erkunden"
+  },
+  "contactSupport": {
+    "message": "Bitwarden Kundendienst kontaktieren"
   },
   "sync": {
     "message": "Synchronisierung"
@@ -282,7 +291,7 @@
     "message": "Keine Einträge zum Anzeigen vorhanden."
   },
   "itemInformation": {
-    "message": "Anmeldedaten Information"
+    "message": "Eintrags-Information"
   },
   "username": {
     "message": "Nutzername"
@@ -342,7 +351,7 @@
     "message": "Identität verifizieren"
   },
   "yourVaultIsLocked": {
-    "message": "Ihr Tresor ist gesperrt. Bestätigen Sie Ihre Identität um fortzufahren."
+    "message": "Dein Tresor ist gesperrt. Überprüfe deine Identität, um fortzufahren."
   },
   "unlock": {
     "message": "Entsperren"
@@ -498,10 +507,10 @@
     "message": "Du kannst dein Master-Passwort im Bitwarden.com Web-Tresor ändern. Möchtest du die Seite jetzt öffnen?"
   },
   "twoStepLoginConfirmation": {
-    "message": "Mit der Zwei-Faktor-Authentifizierung wird dein Account zusätzlich abgesichert, da jede Anmeldung durch einen Sicherheitscode, eine Authentifizierungs-App, eine SMS, einen Anruf oder eine E-Mail verifiziert werden muss. Die Zwei-Faktor-Authentifizierung kann im bitwarden.com Web-Tresor aktiviert werden. Möchtest du die Seite jetzt öffnen?"
+    "message": "Mit der Zwei-Faktor-Authentifizierung wird dein Konto zusätzlich abgesichert, da jede Anmeldung mit einem anderen Gerät wie einem Sicherheitsschlüssel, einer Authentifizierungs-App, einer SMS, einem Anruf oder einer E-Mail verifiziert werden muss. Die Zwei-Faktor-Authentifizierung kann im bitwarden.com Web-Tresor aktiviert werden. Möchtest du die Webseite jetzt öffnen?"
   },
   "editedFolder": {
-    "message": "Ordner bearbeitet"
+    "message": "Ordner gespeichert"
   },
   "deleteFolderConfirmation": {
     "message": "Soll dieser Ordner wirklich gelöscht werden?"
@@ -578,10 +587,10 @@
     "description": "This is the folder for uncategorized items"
   },
   "enableAddLoginNotification": {
-    "message": "Danach fragen Zugangsdaten hinzuzufügen"
+    "message": "Nach dem Hinzufügen von Zugangsdaten fragen"
   },
   "addLoginNotificationDesc": {
-    "message": "Wenn ein Eintrag nicht in deinem Tresor gefunden wurde, danach fragen."
+    "message": "Nach dem Hinzufügen eines Eintrags fragen, wenn dieser nicht in deinem Tresor gefunden wurde."
   },
   "showCardsCurrentTab": {
     "message": "Karten auf Tab Seite anzeigen"
@@ -880,13 +889,13 @@
     "message": "Anmeldung nicht verfügbar"
   },
   "noTwoStepProviders": {
-    "message": "Für dieses Konto wurde eine Zwei-Faktor-Authentifizierung eingerichtet, allerdings wird keiner der konfigurierten Zwei-Faktor-Anbieter von diesem Browser unterstützt."
+    "message": "Für dieses Konto ist eine Zwei-Faktor-Authentifizierung eingerichtet, allerdings wird keiner der konfigurierten Zwei-Faktor-Anbieter von diesem Browser unterstützt."
   },
   "noTwoStepProviders2": {
     "message": "Bitte benutze einen unterstützten Browser (z.B. Chrome) und / oder füge zusätzliche Anbieter hinzu, die von mehr Browsern unterstützt werden (wie eine Authentifizierungs-App)."
   },
   "twoStepOptions": {
-    "message": "Optionen für Zwei-Faktor Authentifizierung"
+    "message": "Optionen für Zwei-Faktor-Authentifizierung"
   },
   "recoveryCodeDesc": {
     "message": "Zugang zu allen Zwei-Faktor Anbietern verloren? Benutze deinen Wiederherstellungscode, um alle Zwei-Faktor Anbieter in deinem Konto zu deaktivieren."
@@ -919,7 +928,7 @@
     "message": "FIDO2 WebAuthn"
   },
   "webAuthnDesc": {
-    "message": "Benutze einen WebAuthn-kompatiblen Sicherheitsschlüssel, um auf dein Konto zuzugreifen."
+    "message": "Benutze einen beliebigen WebAuthn kompatiblen Sicherheitsschlüssel, um auf dein Konto zuzugreifen."
   },
   "emailTitle": {
     "message": "E-Mail"
@@ -952,7 +961,7 @@
     "message": "URL des Identitätsservers"
   },
   "notificationsUrl": {
-    "message": "URL des Benachrichtigungsserver"
+    "message": "URL des Benachrichtigungsservers"
   },
   "iconsUrl": {
     "message": "URL des Icons-Servers"
@@ -964,10 +973,10 @@
     "message": "Auto-Ausfüllen beim Laden einer Seite aktivieren"
   },
   "enableAutoFillOnPageLoadDesc": {
-    "message": "Wenn eine Zugangsmaske erkannt wird, automatisch Zugangsdaten einfügen während die Webseite lädt."
+    "message": "Wenn eine Anmeldemaske erkannt wird, die Zugangsdaten automatisch ausfüllen während die Webseite lädt."
   },
   "experimentalFeature": {
-    "message": "Kompromittierte oder nicht vertrauenswürdige Webseiten können das automatische Ausfüllen beim Laden einer Seiten ausnutzen."
+    "message": "Kompromittierte oder nicht vertrauenswürdige Webseiten können das automatische Ausfüllen beim Laden der Seite ausnutzen."
   },
   "learnMoreAboutAutofill": {
     "message": "Erfahre mehr über automatisches Ausfüllen"
@@ -976,7 +985,7 @@
     "message": "Standard Auto-Ausfüllen Einstellung für Login-Einträge"
   },
   "defaultAutoFillOnPageLoadDesc": {
-    "message": "Nachdem du das automatische Ausfüllen beim Laden der Seite aktiviert hast, kannst du die Funktion für einzelne Login-Einträge aktivieren oder deaktivieren. Dies ist die Standardeinstellung für Zugangsdaten-Einträge, die nicht separat konfiguriert wurden."
+    "message": "Du kannst das automatische Ausfüllen beim Laden der Seite für einzelne Zugangsdaten-Einträge in der Bearbeiten-Ansicht des Eintrags deaktivieren."
   },
   "itemAutoFillOnPageLoad": {
     "message": "Automatisches Ausfüllen beim Laden der Seite (wenn in Optionen aktiviert)"
@@ -1294,7 +1303,7 @@
     "message": "Umschaltoptionen"
   },
   "toggleCurrentUris": {
-    "message": "Aktuelle URIs ändern",
+    "message": "Aktuelle URIs umschalten",
     "description": "Toggle the display of the URIs of the currently open tabs in the browser."
   },
   "currentUri": {
@@ -1519,7 +1528,7 @@
     "message": "Desktop-Sync-Überprüfung"
   },
   "desktopIntegrationVerificationText": {
-    "message": "Bitte verifiziere, dass die Desktop-Anwendung diesen Prüfschlüssel anzeigt: "
+    "message": "Bitte überprüfe, dass die Desktop-Anwendung diesen Prüfschlüssel anzeigt: "
   },
   "desktopIntegrationDisabledTitle": {
     "message": "Browser-Einbindung ist nicht aktiviert"
@@ -1555,7 +1564,7 @@
     "message": "Biometrie ist nicht aktiviert"
   },
   "biometricsNotEnabledDesc": {
-    "message": "Biometrie im Browser setzt voraus, dass Biometrie zuerst in den Einstellungen der Desktop-Anwendung aktiviert ist."
+    "message": "Biometrie im Browser setzt voraus, dass Biometrie zuerst in den Einstellungen der Desktop-Anwendung aktiviert wird."
   },
   "biometricsNotSupportedTitle": {
     "message": "Biometrie wird nicht unterstützt"
@@ -1870,7 +1879,7 @@
     "message": "Dein Tresor-Timeout überschreitet die von deinem Unternehmen festgelegten Beschränkungen."
   },
   "vaultExportDisabled": {
-    "message": "Tresor-Export deaktiviert"
+    "message": "Tresor-Export nicht verfügbar"
   },
   "personalVaultExportPolicyInEffect": {
     "message": "Eine oder mehrere Unternehmensrichtlinien hindern dich daran, deinen persönlichen Tresor zu exportieren."
@@ -1909,10 +1918,10 @@
     "message": "Zeichenzählung ein-/ausschalten"
   },
   "sessionTimeout": {
-    "message": "Deine Sitzung ist abgelaufen. Bitte gehe zurück und versuche dich erneut einzuloggen."
+    "message": "Deine Sitzung ist abgelaufen. Bitte gehe zurück und versuche dich erneut anzumelden."
   },
   "exportingPersonalVaultTitle": {
-    "message": "Einzelnen Tresor exportieren"
+    "message": "Persönlichen Tresor exportieren"
   },
   "exportingPersonalVaultDescription": {
     "message": "Nur die einzelnen Tresor-Einträge, die mit $EMAIL$ verbunden sind, werden exportiert. Tresor-Einträge der Organisation werden nicht berücksichtigt.",
@@ -1933,10 +1942,10 @@
     "message": "Benutzernamen generieren"
   },
   "usernameType": {
-    "message": "Benutzernamentyp"
+    "message": "Benutzernamenstyp"
   },
   "plusAddressedEmail": {
-    "message": "Mit Plus adressierte E-Mail",
+    "message": "Mit Plus adressierte E-Mail-Adresse",
     "description": "Username generator option that appends a random sub-address to the username. For example: address+subaddress@email.com"
   },
   "plusAddressedEmailDesc": {
@@ -2034,7 +2043,7 @@
     }
   },
   "lastSeenOn": {
-    "message": "zuletzt am $DATE$ gesehen",
+    "message": "zuletzt gesehen am: $DATE$",
     "placeholders": {
       "date": {
         "content": "$1",
@@ -2046,7 +2055,7 @@
     "message": "Mit Master-Passwort anmelden"
   },
   "loggingInAs": {
-    "message": "Einloggen als"
+    "message": "Anmelden als"
   },
   "notYou": {
     "message": "Nicht du?"
@@ -2079,7 +2088,7 @@
     "message": "Eine Benachrichtigung wurde an dein Gerät gesendet."
   },
   "logInInitiated": {
-    "message": "Anmeldung initiiert"
+    "message": "Anmeldung eingeleitet"
   },
   "exposedMasterPassword": {
     "message": "Kompromittiertes Master-Passwort"
@@ -2112,7 +2121,7 @@
     }
   },
   "howToAutofill": {
-    "message": "So funktioniert Auto-Ausfüllen"
+    "message": "So funktioniert automatisches Ausfüllen"
   },
   "autofillSelectInfo": {
     "message": "Wähle einen Eintrag von dieser Seite aus oder verwende das Tastaturkürzel: $COMMAND$. Du kannst es auch mit dem automatischen Ausfüllen beim Laden der Seite versuchen.",

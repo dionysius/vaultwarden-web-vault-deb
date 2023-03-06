@@ -195,6 +195,15 @@
   "helpFeedback": {
     "message": "Aiuto e segnalazioni"
   },
+  "helpCenter": {
+    "message": "Bitwarden Help center"
+  },
+  "communityForums": {
+    "message": "Explore Bitwarden community forums"
+  },
+  "contactSupport": {
+    "message": "Contact Bitwarden support"
+  },
   "sync": {
     "message": "Sincronizza"
   },
@@ -2112,7 +2121,7 @@
     }
   },
   "howToAutofill": {
-    "message": "How to auto-fill"
+    "message": "Come utilizzare l'autocompletamento"
   },
   "autofillSelectInfo": {
     "message": "Select an item from this page or use the shortcut: $COMMAND$. You can also try auto-fill on page load.",
@@ -2124,22 +2133,22 @@
     }
   },
   "autofillSelectInfoNoCommand": {
-    "message": "Select an item from this page or set a shortcut in settings. You can also try auto-fill on page load."
+    "message": "Seleziona un elemento da questa pagina o imposta una scorciatoia nelle impostazioni. Puoi anche provare il completamento automatico al caricamento della pagina."
   },
   "gotIt": {
-    "message": "Got it"
+    "message": "Capito"
   },
   "autofillSettings": {
-    "message": "Auto-fill settings"
+    "message": "Impostazioni di autocompletamento"
   },
   "autofillShortcut": {
-    "message": "Auto-fill keyboard shortcut"
+    "message": "Scorciatoia da tastiera per l'autocompletamento"
   },
   "autofillShortcutNotSet": {
-    "message": "The auto-fill shortcut is not set. Change this in the browser's settings."
+    "message": "La scorciatoia per l'autocompletamento non è stata impostata. Impostala nelle impostazioni del browser."
   },
   "autofillShortcutText": {
-    "message": "The auto-fill shortcut is: $COMMAND$. Change this in the browser's settings.",
+    "message": "La scorciatoia per l'autocompletamento è: $COMMAND$. Cambiala nelle impostazioni del browser.",
     "placeholders": {
       "command": {
         "content": "$1",
@@ -2148,7 +2157,7 @@
     }
   },
   "autofillShortcutTextSafari": {
-    "message": "Default auto-fill shortcut: $COMMAND$.",
+    "message": "Scorciatoia per l'autocompletamento di default: $COMMAND$.",
     "placeholders": {
       "command": {
         "content": "$1",

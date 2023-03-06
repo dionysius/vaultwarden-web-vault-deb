@@ -195,6 +195,15 @@
   "helpFeedback": {
     "message": "Βοήθεια & Σχόλια"
   },
+  "helpCenter": {
+    "message": "Κέντρο βοήθειας Bitwarden"
+  },
+  "communityForums": {
+    "message": "Εξερευνήστε τα φόρουμ της κοινότητας του Bitwarden"
+  },
+  "contactSupport": {
+    "message": "Επικοινωνία με την υποστήριξη Bitwarden"
+  },
   "sync": {
     "message": "Συγχρονισμός"
   },
@@ -430,7 +439,7 @@
     "message": "Απαιτείται ξανά ο κύριος κωδικός πρόσβασης."
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least $VALUE$ characters long.",
+    "message": "Ο κύριος κωδικός πρέπει να έχει μήκος τουλάχιστον $VALUE$ χαρακτήρες.",
     "description": "The Master Password must be at least a specific number of characters long.",
     "placeholders": {
       "value": {
@@ -2115,7 +2124,7 @@
     "message": "Πώς να συμπληρώσετε αυτόματα"
   },
   "autofillSelectInfo": {
-    "message": "Select an item from this page or use the shortcut: $COMMAND$. You can also try auto-fill on page load.",
+    "message": "Επιλέξτε ένα αντικείμενο από αυτή τη σελίδα ή χρησιμοποιήστε τη συντόμευση: $COMMAND$. Μπορείτε επίσης να δοκιμάσετε την αυτόματη συμπλήρωση κατά τη φόρτωση της σελίδας.",
     "placeholders": {
       "command": {
         "content": "$1",

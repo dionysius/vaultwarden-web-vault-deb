@@ -195,6 +195,15 @@
   "helpFeedback": {
     "message": "Pomoč in povratne informacije"
   },
+  "helpCenter": {
+    "message": "Bitwarden Help center"
+  },
+  "communityForums": {
+    "message": "Explore Bitwarden community forums"
+  },
+  "contactSupport": {
+    "message": "Contact Bitwarden support"
+  },
   "sync": {
     "message": "Sinhronizacija"
   },
@@ -2064,7 +2073,7 @@
     "message": "Log in with device must be set up in the settings of the Bitwarden app. Need another option?"
   },
   "fingerprintPhraseHeader": {
-    "message": "Fingerprint phrase"
+    "message": "Fraza prstnega odtisa"
   },
   "fingerprintMatchInfo": {
     "message": "Please make sure your vault is unlocked and the Fingerprint phrase matches on the other device."

@@ -195,6 +195,15 @@
   "helpFeedback": {
     "message": "Ajuda i comentaris"
   },
+  "helpCenter": {
+    "message": "Centre d'ajuda de Bitwarden"
+  },
+  "communityForums": {
+    "message": "Explora els fòrums de la comunitat de Bitwarden"
+  },
+  "contactSupport": {
+    "message": "Contacta amb l'assistència de Bitwarden"
+  },
   "sync": {
     "message": "Sincronització"
   },
@@ -2115,7 +2124,7 @@
     "message": "Com emplenar automàticament"
   },
   "autofillSelectInfo": {
-    "message": "Select an item from this page or use the shortcut: $COMMAND$. You can also try auto-fill on page load.",
+    "message": "Seleccioneu un element d'aquesta pàgina o utilitzeu la drecera: $COMMAND$. També podeu provar l'emplenament automàtic en carregar la pàgina.",
     "placeholders": {
       "command": {
         "content": "$1",

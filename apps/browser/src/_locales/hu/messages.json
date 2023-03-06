@@ -195,6 +195,15 @@
   "helpFeedback": {
     "message": "Súgó és visszajelzés"
   },
+  "helpCenter": {
+    "message": "Bitwardsn Segítségközpont"
+  },
+  "communityForums": {
+    "message": "Bitwarden közösségi fórum felfedezése"
+  },
+  "contactSupport": {
+    "message": "Kapcsolatfelvétel a Bitwarden támogatással"
+  },
   "sync": {
     "message": "Szinkronizálás"
   },
@@ -430,7 +439,7 @@
     "message": "A mesterjelszó ismételt megadása kötelező."
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least $VALUE$ characters long.",
+    "message": "A mesterjelszónak legalább $VALUE$ karakter hosszúnak kell lennie.",
     "description": "The Master Password must be at least a specific number of characters long.",
     "placeholders": {
       "value": {
@@ -2115,7 +2124,7 @@
     "message": "Az automatikus kitöltés működése"
   },
   "autofillSelectInfo": {
-    "message": "Select an item from this page or use the shortcut: $COMMAND$. You can also try auto-fill on page load.",
+    "message": "Válasszunk ki egy elemet erről az oldalról vagy használjuk a billentyűparancsot: $COMMAND$. Kipróbálhatjuk az automatikus kitöltést is az oldal betöltésekor.",
     "placeholders": {
       "command": {
         "content": "$1",

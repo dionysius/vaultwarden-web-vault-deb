@@ -195,6 +195,15 @@
   "helpFeedback": {
     "message": "Pomoc i opinie"
   },
+  "helpCenter": {
+    "message": "Centrum pomocy Bitwarden"
+  },
+  "communityForums": {
+    "message": "Przeglądaj fora społeczności Bitwarden"
+  },
+  "contactSupport": {
+    "message": "Skontaktuj się z pomocą techniczną Bitwarden"
+  },
   "sync": {
     "message": "Synchronizacja"
   },
@@ -2115,7 +2124,7 @@
     "message": "Jak autouzupełniać"
   },
   "autofillSelectInfo": {
-    "message": "Select an item from this page or use the shortcut: $COMMAND$. You can also try auto-fill on page load.",
+    "message": "Wybierz element z tej strony lub użyj skrótu: $COMMAND$. Możesz również spróbować autouzupełniania przy wczytywaniu strony.",
     "placeholders": {
       "command": {
         "content": "$1",

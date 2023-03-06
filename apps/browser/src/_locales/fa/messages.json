@@ -195,6 +195,15 @@
   "helpFeedback": {
     "message": "کمک و بازخورد"
   },
+  "helpCenter": {
+    "message": "Bitwarden Help center"
+  },
+  "communityForums": {
+    "message": "Explore Bitwarden community forums"
+  },
+  "contactSupport": {
+    "message": "Contact Bitwarden support"
+  },
   "sync": {
     "message": "همگام‌سازی"
   },
@@ -430,7 +439,7 @@
     "message": "نوشتن مجدد کلمه عبور اصلی ضروری است."
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least $VALUE$ characters long.",
+    "message": "طول کلمه عبور اصلی باید حداقل $VALUE$ کاراکتر باشد.",
     "description": "The Master Password must be at least a specific number of characters long.",
     "placeholders": {
       "value": {
@@ -2112,10 +2121,10 @@
     }
   },
   "howToAutofill": {
-    "message": "How to auto-fill"
+    "message": "نحوه پر کردن خودکار"
   },
   "autofillSelectInfo": {
-    "message": "Select an item from this page or use the shortcut: $COMMAND$. You can also try auto-fill on page load.",
+    "message": "یک مورد را از این صفحه انتخاب کنید یا از میانبر استفاده کنید: $COMMAND$. همچنین می‌توانید پر کردن خودکار را در بارگذاری صفحه امتحان کنید.",
     "placeholders": {
       "command": {
         "content": "$1",
@@ -2124,22 +2133,22 @@
     }
   },
   "autofillSelectInfoNoCommand": {
-    "message": "Select an item from this page or set a shortcut in settings. You can also try auto-fill on page load."
+    "message": "یک مورد را از این صفحه انتخاب کنید یا یک میانبر در تنظیمات تنظیم کنید. همچنین می‌توانید پر کردن خودکار را در بارگذاری صفحه امتحان کنید."
   },
   "gotIt": {
-    "message": "Got it"
+    "message": "متوجه شدم"
   },
   "autofillSettings": {
-    "message": "Auto-fill settings"
+    "message": "تنظیمات پر کردن خودکار"
   },
   "autofillShortcut": {
-    "message": "Auto-fill keyboard shortcut"
+    "message": "میانبر صفحه کلید پر کردن خودکار"
   },
   "autofillShortcutNotSet": {
-    "message": "The auto-fill shortcut is not set. Change this in the browser's settings."
+    "message": "میانبر پر کردن خودکار تنظیم نشده است. این را در تنظیمات مرورگر تغییر دهید."
   },
   "autofillShortcutText": {
-    "message": "The auto-fill shortcut is: $COMMAND$. Change this in the browser's settings.",
+    "message": "میانبر پر کردن خودکار: $COMMAND$ است. این را در تنظیمات مرورگر تغییر دهید.",
     "placeholders": {
       "command": {
         "content": "$1",
@@ -2148,7 +2157,7 @@
     }
   },
   "autofillShortcutTextSafari": {
-    "message": "Default auto-fill shortcut: $COMMAND$.",
+    "message": "میانبر پر کردن خودکار پیش‌فرض: $COMMAND$.",
     "placeholders": {
       "command": {
         "content": "$1",

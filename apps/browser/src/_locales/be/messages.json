@@ -195,6 +195,15 @@
   "helpFeedback": {
     "message": "Даведка і зваротная сувязь"
   },
+  "helpCenter": {
+    "message": "Даведачны цэнтр Bitwarden"
+  },
+  "communityForums": {
+    "message": "Наведайце форумы супольнасці Bitwarden"
+  },
+  "contactSupport": {
+    "message": "Звярніцеся ў службу падтрымкі Bitwarden"
+  },
   "sync": {
     "message": "Сінхранізаваць"
   },
@@ -2115,7 +2124,7 @@
     "message": "Як аўтазапоўніць"
   },
   "autofillSelectInfo": {
-    "message": "Select an item from this page or use the shortcut: $COMMAND$. You can also try auto-fill on page load.",
+    "message": "Выберыце элемент на гэтай старонцы або скарыстайцеся спалучэннем клавіш: $COMMAND$. Вы таксама можаце паспрабаваць аўтазапаўненне пры загрузцы старонкі.",
     "placeholders": {
       "command": {
         "content": "$1",

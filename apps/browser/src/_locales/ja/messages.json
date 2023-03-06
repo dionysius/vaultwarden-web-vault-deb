@@ -195,6 +195,15 @@
   "helpFeedback": {
     "message": "ヘルプ＆フィードバック"
   },
+  "helpCenter": {
+    "message": "Bitwarden ヘルプセンター"
+  },
+  "communityForums": {
+    "message": "Bitwarden コミュニティフォーラムを探索"
+  },
+  "contactSupport": {
+    "message": "Bitwarden サポートへの問い合わせ"
+  },
   "sync": {
     "message": "同期"
   },
@@ -2115,7 +2124,7 @@
     "message": "自動入力する方法"
   },
   "autofillSelectInfo": {
-    "message": "Select an item from this page or use the shortcut: $COMMAND$. You can also try auto-fill on page load.",
+    "message": "このページからアイテムを選択するか、ショートカット: $COMMAND$を使用します。ページの読み込み時に自動入力を試すこともできます。",
     "placeholders": {
       "command": {
         "content": "$1",
