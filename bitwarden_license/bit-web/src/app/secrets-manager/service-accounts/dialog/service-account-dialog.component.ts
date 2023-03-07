@@ -1,15 +1,11 @@
 import { DialogRef, DIALOG_DATA } from "@angular/cdk/dialog";
-import { Component, Inject, OnInit } from "@angular/core";
+import { Component, Inject } from "@angular/core";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 
-import { ProjectListView } from "../../models/view/project-list.view";
-import { SecretListView } from "../../models/view/secret-list.view";
 import { ServiceAccountView } from "../../models/view/service-account.view";
-import { ProjectService } from "../../projects/project.service";
-import { SecretService } from "../../secrets/secret.service";
 import { ServiceAccountService } from "../service-account.service";
 
 export interface ServiceAccountOperation {
@@ -20,11 +16,8 @@ export interface ServiceAccountOperation {
   selector: "sm-service-account-dialog",
   templateUrl: "./service-account-dialog.component.html",
 })
-export class ServiceAccountDialogComponent implements OnInit {
-  projects: ProjectListView[];
-  secrets: SecretListView[];
-
-  formGroup = new FormGroup({
+export class ServiceAccountDialogComponent {
+  protected formGroup = new FormGroup({
     name: new FormControl("", [Validators.required]),
   });
 
@@ -33,15 +26,8 @@ export class ServiceAccountDialogComponent implements OnInit {
     @Inject(DIALOG_DATA) private data: ServiceAccountOperation,
     private serviceAccountService: ServiceAccountService,
     private i18nService: I18nService,
-    private platformUtilsService: PlatformUtilsService,
-    private projectService: ProjectService,
-    private secretService: SecretService
+    private platformUtilsService: PlatformUtilsService
   ) {}
-
-  async ngOnInit() {
-    this.projects = await this.projectService.getProjects(this.data.organizationId);
-    this.secrets = await this.secretService.getSecrets(this.data.organizationId);
-  }
 
   submit = async () => {
     this.formGroup.markAllAsTouched();
