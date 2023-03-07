@@ -116,7 +116,11 @@ export class OverviewComponent implements OnInit, OnDestroy {
       share()
     );
 
-    const secrets$ = combineLatest([orgId$, this.secretService.secret$.pipe(startWith(null))]).pipe(
+    const secrets$ = combineLatest([
+      orgId$,
+      this.secretService.secret$.pipe(startWith(null)),
+      this.projectService.project$.pipe(startWith(null)),
+    ]).pipe(
       switchMap(([orgId]) => this.secretService.getSecrets(orgId)),
       share()
     );

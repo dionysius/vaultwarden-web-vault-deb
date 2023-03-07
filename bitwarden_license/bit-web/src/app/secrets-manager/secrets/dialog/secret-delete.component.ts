@@ -46,7 +46,7 @@ export class SecretDeleteDialogComponent {
 
     if (bulkResponses.find((response) => response.errorMessage)) {
       this.openBulkStatusDialog(bulkResponses.filter((response) => response.errorMessage));
-      this.dialogRef.close();
+      this.dialogRef.close(true);
       return;
     }
 
@@ -54,7 +54,7 @@ export class SecretDeleteDialogComponent {
       this.data.secrets.length === 1 ? "softDeleteSuccessToast" : "softDeletesSuccessToast";
     this.platformUtilsService.showToast("success", null, this.i18nService.t(message));
 
-    this.dialogRef.close();
+    this.dialogRef.close(true);
   };
 
   openBulkStatusDialog(bulkStatusResults: BulkOperationStatus[]) {
@@ -62,7 +62,7 @@ export class SecretDeleteDialogComponent {
       data: {
         title: "deleteSecrets",
         subTitle: "secrets",
-        columnTitle: "secretName",
+        columnTitle: "name",
         message: "bulkDeleteSecretsErrorMessage",
         details: bulkStatusResults,
       },

@@ -78,7 +78,7 @@ export class SecretDialogComponent implements OnInit {
       name: secret.name,
       value: secret.value,
       notes: secret.note,
-      project: secret.projects[0]?.id,
+      project: secret.projects[0]?.id ?? "",
     });
     this.loading = false;
   }
@@ -154,12 +154,18 @@ export class SecretDialogComponent implements OnInit {
   private getSecretListView() {
     const secretListViews: SecretListView[] = [];
     const emptyProjects: SecretProjectView[] = [];
-    const selectedProject = [this.projects.find((p) => p.id == this.formGroup.value.project)];
 
     const secretListView = new SecretListView();
+
+    if (this.formGroup.value.project) {
+      secretListView.projects = [this.projects.find((p) => p.id == this.formGroup.value.project)];
+    } else {
+      secretListView.projects = emptyProjects;
+    }
+
     secretListView.organizationId = this.data.organizationId;
+    secretListView.id = this.data.secretId;
     secretListView.name = this.formGroup.value.name;
-    secretListView.projects = selectedProject ? selectedProject : emptyProjects;
     secretListViews.push(secretListView);
     return secretListViews;
   }
