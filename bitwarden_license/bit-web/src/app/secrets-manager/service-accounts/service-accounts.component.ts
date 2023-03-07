@@ -22,7 +22,8 @@ import { ServiceAccountService } from "./service-account.service";
   templateUrl: "./service-accounts.component.html",
 })
 export class ServiceAccountsComponent implements OnInit {
-  serviceAccounts$: Observable<ServiceAccountView[]>;
+  protected serviceAccounts$: Observable<ServiceAccountView[]>;
+  protected search: string;
 
   private organizationId: string;
 
