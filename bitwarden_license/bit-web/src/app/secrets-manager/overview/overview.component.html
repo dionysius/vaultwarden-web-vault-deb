@@ -2,7 +2,7 @@
   <sm-new-menu></sm-new-menu>
 </sm-header>
 
-<div *ngIf="view$ | async as view; else spinner">
+<div *ngIf="!loading && view$ | async as view; else spinner">
   <sm-onboarding [title]="'getStarted' | i18n" *ngIf="showOnboarding" (dismiss)="hideOnboarding()">
     <sm-onboarding-task
       [title]="'createServiceAccount' | i18n"

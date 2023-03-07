@@ -10,11 +10,13 @@ import {
   startWith,
   distinctUntilChanged,
   take,
+  share,
 } from "rxjs";
 
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { OrganizationService } from "@bitwarden/common/abstractions/organization/organization.service.abstraction";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
+import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { DialogService } from "@bitwarden/components";
 
 import { ProjectListView } from "../models/view/project-list.view";
@@ -45,6 +47,10 @@ import {
 import { ServiceAccountService } from "../service-accounts/service-account.service";
 
 type Tasks = {
+  [organizationId: string]: OrganizationTasks;
+};
+
+type OrganizationTasks = {
   importSecrets: boolean;
   createSecret: boolean;
   createProject: boolean;
@@ -62,13 +68,14 @@ export class OverviewComponent implements OnInit, OnDestroy {
   protected organizationName: string;
   protected userIsAdmin: boolean;
   protected showOnboarding = false;
+  protected loading = true;
 
   protected view$: Observable<{
     allProjects: ProjectListView[];
     allSecrets: SecretListView[];
     latestProjects: ProjectListView[];
     latestSecrets: SecretListView[];
-    tasks: Tasks;
+    tasks: OrganizationTasks;
   }>;
 
   constructor(
@@ -78,6 +85,7 @@ export class OverviewComponent implements OnInit, OnDestroy {
     private serviceAccountService: ServiceAccountService,
     private dialogService: DialogService,
     private organizationService: OrganizationService,
+    private stateService: StateService,
     private platformUtilsService: PlatformUtilsService,
     private i18nService: I18nService
   ) {}
@@ -97,37 +105,47 @@ export class OverviewComponent implements OnInit, OnDestroy {
         this.organizationId = org.id;
         this.organizationName = org.name;
         this.userIsAdmin = org.isAdmin;
+        this.loading = true;
       });
 
     const projects$ = combineLatest([
       orgId$,
       this.projectService.project$.pipe(startWith(null)),
-    ]).pipe(switchMap(([orgId]) => this.projectService.getProjects(orgId)));
+    ]).pipe(
+      switchMap(([orgId]) => this.projectService.getProjects(orgId)),
+      share()
+    );
 
     const secrets$ = combineLatest([orgId$, this.secretService.secret$.pipe(startWith(null))]).pipe(
-      switchMap(([orgId]) => this.secretService.getSecrets(orgId))
+      switchMap(([orgId]) => this.secretService.getSecrets(orgId)),
+      share()
     );
 
     const serviceAccounts$ = combineLatest([
       orgId$,
       this.serviceAccountService.serviceAccount$.pipe(startWith(null)),
-    ]).pipe(switchMap(([orgId]) => this.serviceAccountService.getServiceAccounts(orgId)));
+    ]).pipe(
+      switchMap(([orgId]) => this.serviceAccountService.getServiceAccounts(orgId)),
+      share()
+    );
 
-    this.view$ = combineLatest([projects$, secrets$, serviceAccounts$]).pipe(
-      map(([projects, secrets, serviceAccounts]) => {
-        return {
-          latestProjects: this.getRecentItems(projects, this.tableSize),
-          latestSecrets: this.getRecentItems(secrets, this.tableSize),
-          allProjects: projects,
-          allSecrets: secrets,
-          tasks: {
-            importSecrets: secrets.length > 0,
-            createSecret: secrets.length > 0,
-            createProject: projects.length > 0,
-            createServiceAccount: serviceAccounts.length > 0,
-          },
-        };
-      })
+    this.view$ = orgId$.pipe(
+      switchMap((orgId) =>
+        combineLatest([projects$, secrets$, serviceAccounts$]).pipe(
+          switchMap(async ([projects, secrets, serviceAccounts]) => ({
+            latestProjects: this.getRecentItems(projects, this.tableSize),
+            latestSecrets: this.getRecentItems(secrets, this.tableSize),
+            allProjects: projects,
+            allSecrets: secrets,
+            tasks: await this.saveCompletedTasks(orgId, {
+              importSecrets: secrets.length > 0,
+              createSecret: secrets.length > 0,
+              createProject: projects.length > 0,
+              createServiceAccount: serviceAccounts.length > 0,
+            }),
+          }))
+        )
+      )
     );
 
     // Refresh onboarding status when orgId changes by fetching the first value from view$.
@@ -138,6 +156,7 @@ export class OverviewComponent implements OnInit, OnDestroy {
       )
       .subscribe((view) => {
         this.showOnboarding = Object.values(view.tasks).includes(false);
+        this.loading = false;
       });
   }
 
@@ -152,6 +171,29 @@ export class OverviewComponent implements OnInit, OnDestroy {
         return new Date(b.revisionDate).getTime() - new Date(a.revisionDate).getTime();
       })
       .slice(0, length) as T;
+  }
+
+  private async saveCompletedTasks(
+    organizationId: string,
+    orgTasks: OrganizationTasks
+  ): Promise<OrganizationTasks> {
+    const prevTasks = ((await this.stateService.getSMOnboardingTasks()) || {}) as Tasks;
+    const newlyCompletedOrgTasks = Object.fromEntries(
+      Object.entries(orgTasks).filter(([_k, v]) => v === true)
+    );
+    const nextOrgTasks = {
+      importSecrets: false,
+      createSecret: false,
+      createProject: false,
+      createServiceAccount: false,
+      ...prevTasks[organizationId],
+      ...newlyCompletedOrgTasks,
+    };
+    this.stateService.setSMOnboardingTasks({
+      ...prevTasks,
+      [organizationId]: nextOrgTasks,
+    });
+    return nextOrgTasks as OrganizationTasks;
   }
 
   // Projects ---
