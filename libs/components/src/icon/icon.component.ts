@@ -1,5 +1,5 @@
 import { Component, HostBinding, Input } from "@angular/core";
-import { DomSanitizer } from "@angular/platform-browser";
+import { DomSanitizer, SafeHtml } from "@angular/platform-browser";
 
 import { Icon, isIcon } from "./icon";
 
@@ -8,17 +8,17 @@ import { Icon, isIcon } from "./icon";
   template: ``,
 })
 export class BitIconComponent {
-  @Input() icon: Icon;
-
-  @HostBinding()
-  protected get innerHtml() {
-    if (!isIcon(this.icon)) {
-      return "";
+  @Input() set icon(icon: Icon) {
+    if (!isIcon(icon)) {
+      this.innerHtml = "";
+      return;
     }
 
-    const svg = this.icon.svg;
-    return this.domSanitizer.bypassSecurityTrustHtml(svg);
+    const svg = icon.svg;
+    this.innerHtml = this.domSanitizer.bypassSecurityTrustHtml(svg);
   }
+
+  @HostBinding() innerHtml: SafeHtml;
 
   constructor(private domSanitizer: DomSanitizer) {}
 }
