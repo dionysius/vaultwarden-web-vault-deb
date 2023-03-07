@@ -77,6 +77,12 @@ export class LoginCommand {
       const apiIdentifiers = await this.apiIdentifiers();
       clientId = apiIdentifiers.clientId;
       clientSecret = apiIdentifiers.clientSecret;
+      if (clientId == null || clientId.trim() === "") {
+        return Response.badRequest("client_id is required.");
+      }
+      if (clientSecret == null || clientSecret === "") {
+        return Response.badRequest("client_secret is required.");
+      }
     } else if (options.sso != null && this.canInteract) {
       const passwordOptions: any = {
         type: "password",
@@ -161,9 +167,23 @@ export class LoginCommand {
         if (!clientId.startsWith("user")) {
           return Response.error("Invalid API Key; Organization API Key currently not supported");
         }
-        response = await this.authService.logIn(
-          new UserApiLogInCredentials(clientId, clientSecret)
-        );
+        try {
+          response = await this.authService.logIn(
+            new UserApiLogInCredentials(clientId, clientSecret)
+          );
+        } catch (e) {
+          // handle API key login failures
+          // Handle invalid client error as server doesn't return a useful message
+          if (
+            e?.response?.error &&
+            typeof e.response.error === "string" &&
+            e.response.error === "invalid_client"
+          ) {
+            return Response.badRequest("client_id or client_secret is incorrect. Try again.");
+          }
+          // Pass error up to be handled by the outer catch block below
+          throw e;
+        }
       } else if (ssoCode != null && ssoCodeVerifier != null) {
         response = await this.authService.logIn(
           new SsoLogInCredentials(
@@ -547,16 +567,20 @@ export class LoginCommand {
     let clientSecret: string = null;
 
     const storedClientSecret: string = this.clientSecret || process.env.BW_CLIENTSECRET;
-    if (this.canInteract && storedClientSecret == null) {
-      const answer: inquirer.Answers = await inquirer.createPromptModule({
-        output: process.stderr,
-      })({
-        type: "input",
-        name: "clientSecret",
-        message:
-          (isAdditionalAuthentication ? additionalAuthenticationMessage : "") + "client_secret:",
-      });
-      clientSecret = answer.clientSecret;
+    if (storedClientSecret == null) {
+      if (this.canInteract) {
+        const answer: inquirer.Answers = await inquirer.createPromptModule({
+          output: process.stderr,
+        })({
+          type: "input",
+          name: "clientSecret",
+          message:
+            (isAdditionalAuthentication ? additionalAuthenticationMessage : "") + "client_secret:",
+        });
+        clientSecret = answer.clientSecret;
+      } else {
+        clientSecret = null;
+      }
     } else {
       clientSecret = storedClientSecret;
     }
