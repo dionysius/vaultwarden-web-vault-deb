@@ -46,7 +46,9 @@ export class TrashComponent implements OnInit {
     return await this.secretService.getTrashedSecrets(this.organizationId);
   }
 
-  openDeleteSecret(secretIds: string[]) {
+  openDeleteSecret(secrets: SecretListView[]) {
+    const secretIds = secrets.map((secret) => secret.id);
+
     this.dialogService.open<unknown, SecretHardDeleteOperation>(SecretHardDeleteDialogComponent, {
       data: {
         secretIds: secretIds,

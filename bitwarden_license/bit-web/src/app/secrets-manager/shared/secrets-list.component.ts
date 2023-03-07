@@ -35,7 +35,7 @@ export class SecretsListComponent implements OnDestroy {
   @Output() copySecretNameEvent = new EventEmitter<string>();
   @Output() copySecretValueEvent = new EventEmitter<string>();
   @Output() onSecretCheckedEvent = new EventEmitter<string[]>();
-  @Output() deleteSecretsEvent = new EventEmitter<string[]>();
+  @Output() deleteSecretsEvent = new EventEmitter<SecretListView[]>();
   @Output() newSecretEvent = new EventEmitter();
   @Output() restoreSecretsEvent = new EventEmitter();
 
@@ -68,7 +68,9 @@ export class SecretsListComponent implements OnDestroy {
 
   bulkDeleteSecrets() {
     if (this.selection.selected.length >= 1) {
-      this.deleteSecretsEvent.emit(this.selection.selected);
+      this.deleteSecretsEvent.emit(
+        this.secrets.filter((secret) => this.selection.isSelected(secret.id))
+      );
     }
   }
 
