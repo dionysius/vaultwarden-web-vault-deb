@@ -14,6 +14,7 @@ import { PolicyService } from "@bitwarden/common/abstractions/policy/policy.serv
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { TotpService } from "@bitwarden/common/abstractions/totp.service";
 import { EventType } from "@bitwarden/common/enums/eventType";
+import { ProductType } from "@bitwarden/common/enums/productType";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
 import { FolderService } from "@bitwarden/common/vault/abstractions/folder/folder.service.abstraction";
 import { PasswordRepromptService } from "@bitwarden/common/vault/abstractions/password-reprompt.service";
@@ -86,11 +87,7 @@ export class AddEditComponent extends BaseAddEditComponent implements OnInit, On
     this.cleanUp();
 
     this.canAccessPremium = await this.stateService.getCanAccessPremium();
-    if (
-      this.cipher.type === CipherType.Login &&
-      this.cipher.login.totp &&
-      (this.cipher.organizationUseTotp || this.canAccessPremium)
-    ) {
+    if (this.showTotp()) {
       await this.totpUpdateCode();
       const interval = this.totpService.getTimeInterval(this.cipher.login.totp);
       await this.totpTick(interval);
@@ -243,6 +240,15 @@ export class AddEditComponent extends BaseAddEditComponent implements OnInit, On
       (!this.editMode || this.cloneMode) &&
       this.ownershipOptions != null &&
       (this.ownershipOptions.length > 1 || !this.allowPersonal)
+    );
+  }
+
+  protected showTotp() {
+    return (
+      this.cipher.type === CipherType.Login &&
+      this.cipher.login.totp &&
+      this.organization?.planProductType != ProductType.Free &&
+      (this.cipher.organizationUseTotp || this.canAccessPremium)
     );
   }
 
