@@ -61,8 +61,7 @@ export class ProductSwitcherContentComponent {
           name: "Secrets Manager Beta",
           icon: "bwi-cli",
           appRoute: ["/sm", smOrg?.id],
-          // TODO: update marketing link
-          marketingRoute: "#",
+          marketingRoute: "https://bitwarden.com/products/secrets-manager/",
         },
         orgs: {
           name: "Organizations",
@@ -74,12 +73,14 @@ export class ProductSwitcherContentComponent {
       const bento: ProductSwitcherItem[] = [products.pm];
       const other: ProductSwitcherItem[] = [];
 
-      if (smOrg) {
-        bento.push(products.sm);
-      }
-
       if (orgs.length === 0) {
         other.push(products.orgs);
+      }
+
+      if (smOrg) {
+        bento.push(products.sm);
+      } else {
+        other.push(products.sm);
       }
 
       return {
