@@ -16,23 +16,24 @@
     </sm-onboarding-task>
     <sm-onboarding-task
       *ngIf="userIsAdmin"
+      [title]="'createProject' | i18n"
+      (click)="openNewProjectDialog()"
+      icon="bwi-collection"
+      [completed]="view.tasks.createProject"
+    ></sm-onboarding-task>
+    <sm-onboarding-task
+      *ngIf="userIsAdmin"
       [title]="'importSecrets' | i18n"
       [route]="['settings', 'import']"
       icon="bwi-download"
       [completed]="view.tasks.importSecrets"
     ></sm-onboarding-task>
     <sm-onboarding-task
+      *ngIf="view.tasks.createProject"
       [title]="'createSecret' | i18n"
       (click)="openSecretDialog()"
       icon="bwi-key"
       [completed]="view.tasks.createSecret"
-    ></sm-onboarding-task>
-    <sm-onboarding-task
-      *ngIf="userIsAdmin"
-      [title]="'createProject' | i18n"
-      (click)="openNewProjectDialog()"
-      icon="bwi-collection"
-      [completed]="view.tasks.createProject"
     ></sm-onboarding-task>
   </sm-onboarding>
 

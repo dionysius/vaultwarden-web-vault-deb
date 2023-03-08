@@ -23,10 +23,6 @@ export class OnboardingComponent {
     return this.tasks.length === 0 ? 0 : (this.amountCompleted / this.tasks.length) * 100;
   }
 
-  protected get isComplete(): boolean {
-    return this.tasks.length > 0 && this.tasks.length === this.amountCompleted;
-  }
-
   protected toggle() {
     this.open = !this.open;
   }

@@ -55,6 +55,11 @@ const Template: Story = (args) => ({
         </span>
       </sm-onboarding-task>
       <sm-onboarding-task
+        [title]="'createProject' | i18n"
+        icon="bwi-collection"
+        [completed]="createProject"
+      ></sm-onboarding-task>
+      <sm-onboarding-task
         [title]="'importSecrets' | i18n"
         icon="bwi-download"
         [completed]="importSecrets$ | async"
@@ -63,11 +68,6 @@ const Template: Story = (args) => ({
         [title]="'createSecret' | i18n"
         icon="bwi-key"
         [completed]="createSecret"
-      ></sm-onboarding-task>
-      <sm-onboarding-task
-        [title]="'createProject' | i18n"
-        icon="bwi-collection"
-        [completed]="createProject"
       ></sm-onboarding-task>
     </sm-onboarding>
   `,

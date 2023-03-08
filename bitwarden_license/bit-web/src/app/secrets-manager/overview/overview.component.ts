@@ -91,6 +91,7 @@ export class OverviewComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit() {
+    this.stateService.setSMOnboardingTasks(null);
     const orgId$ = this.route.params.pipe(
       map((p) => p.organizationId),
       distinctUntilChanged()
@@ -297,5 +298,11 @@ export class OverviewComponent implements OnInit, OnDestroy {
 
   protected hideOnboarding() {
     this.showOnboarding = false;
+    this.saveCompletedTasks(this.organizationId, {
+      importSecrets: true,
+      createSecret: true,
+      createProject: true,
+      createServiceAccount: true,
+    });
   }
 }

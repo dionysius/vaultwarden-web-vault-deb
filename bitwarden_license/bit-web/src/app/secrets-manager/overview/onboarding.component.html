@@ -18,13 +18,7 @@
     <ng-content></ng-content>
   </ul>
   <div class="tw-p-4 tw-pt-0">
-    <button
-      bitLink
-      type="button"
-      class="tw-ml-auto tw-block"
-      [ngClass]="{ 'tw-invisible': !isComplete }"
-      (click)="dismiss.emit()"
-    >
+    <button bitLink type="button" class="tw-ml-auto tw-block" (click)="dismiss.emit()">
       {{ "dismiss" | i18n }}
     </button>
   </div>
