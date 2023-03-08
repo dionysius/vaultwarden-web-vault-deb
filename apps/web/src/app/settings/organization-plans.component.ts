@@ -71,7 +71,7 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
     this.formGroup?.controls?.plan?.setValue(plan);
   }
   private _plan = PlanType.Free;
-  @Input() providerId: string;
+  @Input() providerId?: string;
   @Output() onSuccess = new EventEmitter<OnSuccessArgs>();
   @Output() onCanceled = new EventEmitter<void>();
   @Output() onTrialBillingSuccess = new EventEmitter();
@@ -80,7 +80,7 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
   selfHosted = false;
   productTypes = ProductType;
   formPromise: Promise<string>;
-  singleOrgPolicyBlock = false;
+  singleOrgPolicyAppliesToActiveUser = false;
   isInTrialFlow = false;
   discount = 0;
 
@@ -146,7 +146,7 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
       .policyAppliesToActiveUser$(PolicyType.SingleOrg)
       .pipe(takeUntil(this.destroy$))
       .subscribe((policyAppliesToActiveUser) => {
-        this.singleOrgPolicyBlock = policyAppliesToActiveUser;
+        this.singleOrgPolicyAppliesToActiveUser = policyAppliesToActiveUser;
       });
 
     this.loading = false;
@@ -155,6 +155,10 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.destroy$.next();
     this.destroy$.complete();
+  }
+
+  get singleOrgPolicyBlock() {
+    return this.singleOrgPolicyAppliesToActiveUser && this.providerId == null;
   }
 
   get createOrganization() {
