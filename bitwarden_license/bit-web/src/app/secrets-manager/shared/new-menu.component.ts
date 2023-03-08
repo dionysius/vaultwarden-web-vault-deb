@@ -61,6 +61,7 @@ export class NewMenuComponent implements OnInit, OnDestroy {
     this.dialogService.open<unknown, ServiceAccountOperation>(ServiceAccountDialogComponent, {
       data: {
         organizationId: this.organizationId,
+        operation: OperationType.Add,
       },
     });
   }

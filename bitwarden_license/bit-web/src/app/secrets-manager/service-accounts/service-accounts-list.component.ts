@@ -32,6 +32,7 @@ export class ServiceAccountsListComponent implements OnDestroy {
   @Output() newServiceAccountEvent = new EventEmitter();
   @Output() deleteServiceAccountsEvent = new EventEmitter<ServiceAccountView[]>();
   @Output() onServiceAccountCheckedEvent = new EventEmitter<string[]>();
+  @Output() editServiceAccountEvent = new EventEmitter<string>();
 
   private destroy$: Subject<void> = new Subject<void>();
 

@@ -5876,6 +5876,10 @@
     "message": "Search service accounts",
     "description": "Placeholder text for searching service accounts."
   },
+  "editServiceAccount":{
+    "message":"Edit service account",
+    "description" : "Title for editing a service account."
+  },
   "addProject": {
     "message": "Add project",
     "description": "Title for creating a new project."
@@ -5932,6 +5936,10 @@
    "serviceAccountCreated": {
     "message": "Service account created",
     "description": "Notifies that a new service account has been created"
+  },
+  "serviceAccountUpdated": {
+    "message": "Service account updated",
+    "description": "Notifies that a service account has been updated"
   },
   "newSaSelectAccess": {
     "message": "Type or select projects or secrets",
