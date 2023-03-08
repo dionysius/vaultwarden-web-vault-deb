@@ -45,6 +45,7 @@ import { CipherData } from "../vault/models/data/cipher.data";
 import { FolderData } from "../vault/models/data/folder.data";
 import { LocalData } from "../vault/models/data/local.data";
 import { CipherView } from "../vault/models/view/cipher.view";
+import { AddEditCipherInfo } from "../vault/types/add-edit-cipher-info";
 
 const keys = {
   state: "state",
@@ -222,13 +223,13 @@ export class StateService<
     await this.saveAccount(account, options);
   }
 
-  async getAddEditCipherInfo(options?: StorageOptions): Promise<any> {
+  async getAddEditCipherInfo(options?: StorageOptions): Promise<AddEditCipherInfo> {
     return (
       await this.getAccount(this.reconcileOptions(options, await this.defaultInMemoryOptions()))
     )?.data?.addEditCipherInfo;
   }
 
-  async setAddEditCipherInfo(value: any, options?: StorageOptions): Promise<void> {
+  async setAddEditCipherInfo(value: AddEditCipherInfo, options?: StorageOptions): Promise<void> {
     const account = await this.getAccount(
       this.reconcileOptions(options, await this.defaultInMemoryOptions())
     );

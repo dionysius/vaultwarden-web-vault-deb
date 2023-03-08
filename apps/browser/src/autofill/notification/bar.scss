@@ -80,7 +80,7 @@ button {
   cursor: pointer;
 }
 
-button:not(.neutral):not(.link) {
+button.primary:not(.neutral) {
   @include themify($themes) {
     background-color: themed("primaryColor");
     color: themed("textContrast");
@@ -91,6 +91,21 @@ button:not(.neutral):not(.link) {
     @include themify($themes) {
       background-color: darken(themed("primaryColor"), 1.5%);
       color: darken(themed("textContrast"), 6%);
+    }
+  }
+}
+
+button.secondary:not(.neutral) {
+  @include themify($themes) {
+    background-color: themed("backgroundColor");
+    color: themed("mutedTextColor");
+    border-color: themed("mutedTextColor");
+  }
+
+  &:hover {
+    @include themify($themes) {
+      background-color: darken(themed("backgroundColor"), 1.5%);
+      color: darken(themed("mutedTextColor"), 6%);
     }
   }
 }
@@ -130,12 +145,8 @@ button {
   font-family: $font-family-sans-serif;
 }
 
-.select-folder[isVaultLocked="true"] {
-  display: none;
-}
-
 @media screen and (max-width: 768px) {
-  .select-folder {
+  #select-folder {
     display: none;
   }
 }

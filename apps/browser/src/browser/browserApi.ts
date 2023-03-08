@@ -127,8 +127,44 @@ export class BrowserApi {
     return Promise.resolve(chrome.extension.getViews({ type: "popup" }).length > 0);
   }
 
-  static createNewTab(url: string, extensionPage = false, active = true) {
-    chrome.tabs.create({ url: url, active: active });
+  static createNewTab(url: string, active = true, openerTab?: chrome.tabs.Tab) {
+    chrome.tabs.create({ url: url, active: active, openerTabId: openerTab?.id });
+  }
+
+  static openBitwardenExtensionTab(
+    relativeUrl: string,
+    active = true,
+    openerTab?: chrome.tabs.Tab
+  ) {
+    if (relativeUrl.includes("uilocation=tab")) {
+      this.createNewTab(relativeUrl, active, openerTab);
+      return;
+    }
+
+    const fullUrl = chrome.extension.getURL(relativeUrl);
+    const parsedUrl = new URL(fullUrl);
+    parsedUrl.searchParams.set("uilocation", "tab");
+    this.createNewTab(parsedUrl.toString(), active, openerTab);
+  }
+
+  static async closeBitwardenExtensionTab() {
+    const tabs = await BrowserApi.tabsQuery({
+      active: true,
+      title: "Bitwarden",
+      windowType: "normal",
+      currentWindow: true,
+    });
+
+    if (tabs.length === 0) {
+      return;
+    }
+
+    const tabToClose = tabs[tabs.length - 1];
+    chrome.tabs.remove(tabToClose.id);
+
+    if (tabToClose.openerTabId) {
+      this.focusTab(tabToClose.openerTabId);
+    }
   }
 
   static messageListener(
@@ -147,23 +183,7 @@ export class BrowserApi {
     return chrome.runtime.sendMessage(message);
   }
 
-  static async closeLoginTab() {
-    const tabs = await BrowserApi.tabsQuery({
-      active: true,
-      title: "Bitwarden",
-      windowType: "normal",
-      currentWindow: true,
-    });
-
-    if (tabs.length === 0) {
-      return;
-    }
-
-    const tabToClose = tabs[tabs.length - 1].id;
-    chrome.tabs.remove(tabToClose);
-  }
-
-  static async focusSpecifiedTab(tabId: number) {
+  static async focusTab(tabId: number) {
     chrome.tabs.update(tabId, { active: true, highlighted: true });
   }
 

@@ -10,6 +10,7 @@ $brand-primary: #175ddc;
 
 $background-color: #f0f0f0;
 
+$solarizedDarkBase0: #839496;
 $solarizedDarkBase03: #002b36;
 $solarizedDarkBase02: #073642;
 $solarizedDarkBase01: #586e75;
@@ -20,6 +21,7 @@ $solarizedDarkGreen: #859900;
 $themes: (
   light: (
     textColor: $text-color,
+    mutedTextColor: #6d757e,
     backgroundColor: $background-color,
     primaryColor: $brand-primary,
     buttonPrimaryColor: $brand-primary,
@@ -29,6 +31,7 @@ $themes: (
   ),
   dark: (
     textColor: #ffffff,
+    mutedTextColor: #bac0ce,
     backgroundColor: #2f343d,
     buttonPrimaryColor: #6f9df1,
     primaryColor: #6f9df1,
@@ -38,6 +41,7 @@ $themes: (
   ),
   nord: (
     textColor: $nord5,
+    mutedTextColor: $nord4,
     backgroundColor: $nord1,
     buttonPrimaryColor: $nord8,
     primaryColor: $nord9,
@@ -47,6 +51,8 @@ $themes: (
   ),
   solarizedDark: (
     textColor: $solarizedDarkBase2,
+    // Muted uses main text color to avoid contrast issues
+    mutedTextColor: $solarizedDarkBase2,
     backgroundColor: $solarizedDarkBase03,
     buttonPrimaryColor: $solarizedDarkCyan,
     primaryColor: $solarizedDarkGreen,

@@ -10,13 +10,14 @@ import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUti
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { UsernameGenerationService } from "@bitwarden/common/abstractions/usernameGeneration.service";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
+import { AddEditCipherInfo } from "@bitwarden/common/vault/types/add-edit-cipher-info";
 
 @Component({
   selector: "app-generator",
   templateUrl: "generator.component.html",
 })
 export class GeneratorComponent extends BaseGeneratorComponent {
-  private addEditCipherInfo: any;
+  private addEditCipherInfo: AddEditCipherInfo;
   private cipherState: CipherView;
 
   constructor(

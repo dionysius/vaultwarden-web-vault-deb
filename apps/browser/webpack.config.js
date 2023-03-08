@@ -146,7 +146,7 @@ const mainConfig = {
     "content/notificationBar": "./src/autofill/content/notification-bar.ts",
     "content/contextMenuHandler": "./src/autofill/content/context-menu-handler.ts",
     "content/message_handler": "./src/autofill/content/message_handler.ts",
-    "notification/bar": "./src/autofill/notification/bar.js",
+    "notification/bar": "./src/autofill/notification/bar.ts",
     "encrypt-worker": "../../libs/common/src/services/cryptography/encrypt.worker.ts",
   },
   optimization: {

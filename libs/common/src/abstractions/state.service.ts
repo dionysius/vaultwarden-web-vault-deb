@@ -26,6 +26,7 @@ import { CipherData } from "../vault/models/data/cipher.data";
 import { FolderData } from "../vault/models/data/folder.data";
 import { LocalData } from "../vault/models/data/local.data";
 import { CipherView } from "../vault/models/view/cipher.view";
+import { AddEditCipherInfo } from "../vault/types/add-edit-cipher-info";
 
 export abstract class StateService<T extends Account = Account> {
   accounts$: Observable<{ [userId: string]: T }>;
@@ -39,8 +40,8 @@ export abstract class StateService<T extends Account = Account> {
 
   getAccessToken: (options?: StorageOptions) => Promise<string>;
   setAccessToken: (value: string, options?: StorageOptions) => Promise<void>;
-  getAddEditCipherInfo: (options?: StorageOptions) => Promise<any>;
-  setAddEditCipherInfo: (value: any, options?: StorageOptions) => Promise<void>;
+  getAddEditCipherInfo: (options?: StorageOptions) => Promise<AddEditCipherInfo>;
+  setAddEditCipherInfo: (value: AddEditCipherInfo, options?: StorageOptions) => Promise<void>;
   getAlwaysShowDock: (options?: StorageOptions) => Promise<boolean>;
   setAlwaysShowDock: (value: boolean, options?: StorageOptions) => Promise<void>;
   getApiKeyClientId: (options?: StorageOptions) => Promise<string>;

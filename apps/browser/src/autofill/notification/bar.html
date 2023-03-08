@@ -28,21 +28,27 @@
         </button>
       </div>
     </div>
-    <div id="templates" style="display: none">
-      <div class="inner-wrapper" id="template-add">
-        <div class="add-text"></div>
-        <div class="add-buttons">
-          <button type="button" class="never-save link"></button>
-          <select class="select-folder" isVaultLocked="false"></select>
-          <button type="button" class="add-save"></button>
-        </div>
-      </div>
-      <div class="inner-wrapper" id="template-change">
-        <div class="change-text"></div>
-        <div class="change-buttons">
-          <button type="button" class="change-save"></button>
-        </div>
+  </body>
+
+  <template id="template-add">
+    <div class="inner-wrapper">
+      <div id="add-text"></div>
+      <div>
+        <button type="button" id="never-save" class="link"></button>
+        <select id="select-folder"></select>
+        <button type="button" id="add-edit" class="secondary"></button>
+        <button type="button" id="add-save" class="primary"></button>
       </div>
     </div>
-  </body>
+  </template>
+
+  <template id="template-change">
+    <div class="inner-wrapper">
+      <div id="change-text"></div>
+      <div>
+        <button type="button" id="change-edit" class="secondary"></button>
+        <button type="button" id="change-save" class="primary"></button>
+      </div>
+    </div>
+  </template>
 </html>

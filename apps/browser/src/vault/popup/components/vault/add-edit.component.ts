@@ -130,15 +130,11 @@ export class AddEditComponent extends BaseAddEditComponent {
           : tabs.filter((tab) => tab.url != null && tab.url !== "").map((tab) => tab.url);
     }
 
-    window.setTimeout(() => {
-      if (!this.editMode) {
-        if (this.cipher.name != null && this.cipher.name !== "") {
-          document.getElementById("loginUsername").focus();
-        } else {
-          document.getElementById("name").focus();
-        }
-      }
-    }, 200);
+    this.setFocus();
+
+    if (this.popupUtilsService.inTab(window)) {
+      this.popupUtilsService.enableCloseTabWarning();
+    }
   }
 
   async load() {
@@ -149,16 +145,23 @@ export class AddEditComponent extends BaseAddEditComponent {
   }
 
   async submit(): Promise<boolean> {
-    if (await super.submit()) {
-      if (this.cloneMode) {
-        this.router.navigate(["/tabs/vault"]);
-      } else {
-        this.location.back();
-      }
+    const success = await super.submit();
+    if (!success) {
+      return false;
+    }
+
+    if (this.popupUtilsService.inTab(window)) {
+      this.popupUtilsService.disableCloseTabWarning();
+      this.messagingService.send("closeTab", { delay: 1000 });
       return true;
     }
 
-    return false;
+    if (this.cloneMode) {
+      this.router.navigate(["/tabs/vault"]);
+    } else {
+      this.location.back();
+    }
+    return true;
   }
 
   attachments() {
@@ -184,6 +187,12 @@ export class AddEditComponent extends BaseAddEditComponent {
 
   cancel() {
     super.cancel();
+
+    if (this.popupUtilsService.inTab(window)) {
+      this.messagingService.send("closeTab");
+      return;
+    }
+
     this.location.back();
   }
 
@@ -234,5 +243,19 @@ export class AddEditComponent extends BaseAddEditComponent {
           ? []
           : this.collections.filter((c) => (c as any).checked).map((c) => c.id),
     });
+  }
+
+  private setFocus() {
+    window.setTimeout(() => {
+      if (this.editMode) {
+        return;
+      }
+
+      if (this.cipher.name != null && this.cipher.name !== "") {
+        document.getElementById("loginUsername").focus();
+      } else {
+        document.getElementById("name").focus();
+      }
+    }, 200);
   }
 }
