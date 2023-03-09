@@ -20,3 +20,11 @@ summary.tw-list-none::marker,
 summary.tw-list-none::-webkit-details-marker {
   display: none;
 }
+
+/** 
+ * Arbitrary values can't be used with `text-align`:
+ * https://github.com/tailwindlabs/tailwindcss/issues/802#issuecomment-849013311
+ */
+.tw-text-unset {
+  text-align: unset;
+}

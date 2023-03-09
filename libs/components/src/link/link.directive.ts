@@ -24,6 +24,7 @@ const linkStyles: Record<LinkType, string[]> = {
 };
 
 const commonStyles = [
+  "tw-text-unset",
   "tw-leading-none",
   "tw-p-0",
   "tw-font-semibold",
