@@ -19,4 +19,11 @@ export class OnboardingTaskComponent {
 
   @Input()
   route: string | any[];
+
+  handleClick(ev: MouseEvent) {
+    /**
+     * If the main `ng-content` is clicked, we don't want to trigger the task's click handler.
+     */
+    ev.stopPropagation();
+  }
 }

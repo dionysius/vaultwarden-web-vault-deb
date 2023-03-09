@@ -15,7 +15,11 @@
   <button type="button" bitLink *ngIf="!route">
     <ng-container *ngTemplateOutlet="content"></ng-container>
   </button>
-  <div class="tw-ml-8 tw-mt-1 tw-text-sm" [ngClass]="{ 'tw-opacity-50': completed }">
+  <div
+    class="tw-ml-8 tw-mt-1 tw-text-sm"
+    [ngClass]="{ 'tw-opacity-50': completed }"
+    (click)="handleClick($event)"
+  >
     <ng-content></ng-content>
   </div>
 </li>
