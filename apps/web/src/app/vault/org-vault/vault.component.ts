@@ -223,7 +223,6 @@ export class VaultComponent implements OnInit, OnDestroy {
     );
 
     await this.editCipher(null, (comp) => {
-      comp.organizationId = this.organization.id;
       comp.type = this.activeFilter.cipherType;
       comp.collections = collections;
       if (this.activeFilter.collectionId) {
@@ -257,6 +256,7 @@ export class VaultComponent implements OnInit, OnDestroy {
 
     const defaultComponentParameters = (comp: AddEditComponent) => {
       comp.organization = this.organization;
+      comp.organizationId = this.organization.id;
       comp.cipherId = cipherId;
       // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
       comp.onSavedCipher.subscribe(async () => {
@@ -301,7 +301,6 @@ export class VaultComponent implements OnInit, OnDestroy {
     await this.editCipher(cipher, (comp) => {
       comp.cloneMode = true;
       comp.collections = collections;
-      comp.organizationId = this.organization.id;
       comp.collectionIds = cipher.collectionIds;
     });
   }

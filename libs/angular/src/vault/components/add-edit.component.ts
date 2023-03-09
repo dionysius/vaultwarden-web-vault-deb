@@ -201,7 +201,7 @@ export class AddEditComponent implements OnInit, OnDestroy {
           this.ownershipOptions.push({ name: o.name, value: o.id });
         }
       });
-    if (!this.allowPersonal) {
+    if (!this.allowPersonal && this.organizationId == undefined) {
       this.organizationId = this.defaultOwnerId;
     }
   }
