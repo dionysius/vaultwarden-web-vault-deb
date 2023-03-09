@@ -10,7 +10,9 @@
   <bit-form-field class="tw-max-w-sm">
     <bit-label>{{ "fileFormat" | i18n }}</bit-label>
     <select bitInput formControlName="format">
-      <option *ngFor="let format of exportFormats" [ngValue]="format">{{ format }}</option>
+      <option *ngFor="let format of exportFormats; let i = index" [value]="i">
+        {{ format.name }}
+      </option>
     </select>
   </bit-form-field>
 
