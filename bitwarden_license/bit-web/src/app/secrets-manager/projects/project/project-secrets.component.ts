@@ -17,6 +17,7 @@ import {
   SecretOperation,
 } from "../../secrets/dialog/secret-dialog.component";
 import { SecretService } from "../../secrets/secret.service";
+import { SecretsListComponent } from "../../shared/secrets-list.component";
 
 @Component({
   selector: "sm-project-secrets",
@@ -81,21 +82,15 @@ export class ProjectSecretsComponent {
   }
 
   copySecretName(name: string) {
-    this.platformUtilsService.copyToClipboard(name);
-    this.platformUtilsService.showToast(
-      "success",
-      null,
-      this.i18nService.t("valueCopied", this.i18nService.t("name"))
-    );
+    SecretsListComponent.copySecretName(name, this.platformUtilsService, this.i18nService);
   }
 
-  async copySecretValue(id: string) {
-    const secret = await this.secretService.getBySecretId(id);
-    this.platformUtilsService.copyToClipboard(secret.value);
-    this.platformUtilsService.showToast(
-      "success",
-      null,
-      this.i18nService.t("valueCopied", this.i18nService.t("value"))
+  copySecretValue(id: string) {
+    SecretsListComponent.copySecretValue(
+      id,
+      this.platformUtilsService,
+      this.i18nService,
+      this.secretService
     );
   }
 }
