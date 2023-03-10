@@ -15,7 +15,7 @@
     "message": "Typen"
   },
   "typeLogin": {
-    "message": "Login"
+    "message": "Anmeldung"
   },
   "typeCard": {
     "message": "Karte"
@@ -36,7 +36,7 @@
     "message": "Tresor durchsuchen"
   },
   "addItem": {
-    "message": "Neuer Eintrag"
+    "message": "Eintrag hinzufügen"
   },
   "shared": {
     "message": "Freigegeben"
@@ -61,7 +61,7 @@
     }
   },
   "moveToOrgDesc": {
-    "message": "Wähle eine Organisation aus, in die du diesen Eintrag verschieben möchtest. Das Verschieben in eine Organisation überträgt das Eigentum an diese Organisation. Du bist nicht mehr der direkte Besitzer dieses Eintrags, sobald er verschoben wurde."
+    "message": "Wähle eine Organisation aus, in die du diesen Eintrag verschieben möchtest. Das Verschieben in eine Organisation überträgt das Eigentum an diese Organisation. Du bist nicht mehr der direkte Eigentümer dieses Eintrags, sobald er verschoben wurde."
   },
   "attachments": {
     "message": "Anhänge"
@@ -101,7 +101,7 @@
     "message": "Eintrag bearbeiten"
   },
   "emailAddress": {
-    "message": "E-Mail Adresse"
+    "message": "E-Mail-Adresse"
   },
   "verificationCodeTotp": {
     "message": "Verifizierungscode (TOTP)"
@@ -352,7 +352,7 @@
     "message": "Eintrag hinzugefügt"
   },
   "editedItem": {
-    "message": "Eintrag bearbeitet"
+    "message": "Eintrag gespeichert"
   },
   "deleteItem": {
     "message": "Eintrag löschen"
@@ -426,7 +426,7 @@
     "description": "Make the first letter of a word uppercase."
   },
   "includeNumber": {
-    "message": "Ziffer hinzufügen"
+    "message": "Ziffern einschließen"
   },
   "close": {
     "message": "Schließen"
@@ -470,7 +470,7 @@
     "message": "Datei"
   },
   "selectFile": {
-    "message": "Wähle eine Datei."
+    "message": "Eine Datei auswählen"
   },
   "maxFileSize": {
     "message": "Die maximale Dateigröße beträgt 500 MB."
@@ -479,7 +479,7 @@
     "message": "Du kannst diese Funktion nicht nutzen, bevor du deinen Verschlüsselungsschlüssel aktualisiert hast."
   },
   "editedFolder": {
-    "message": "Ordner bearbeitet"
+    "message": "Ordner gespeichert"
   },
   "addedFolder": {
     "message": "Ordner hinzugefügt"
@@ -536,7 +536,7 @@
     "message": "Ungültige E-Mail-Adresse."
   },
   "masterPasswordRequired": {
-    "message": "Das Master-Passwort ist erforderlich."
+    "message": "Master-Passwort ist erforderlich."
   },
   "confirmMasterPasswordRequired": {
     "message": "Erneute Eingabe des Master-Passworts ist erforderlich."
@@ -564,7 +564,7 @@
     "message": "Ein unerwarteter Fehler ist aufgetreten."
   },
   "itemInformation": {
-    "message": "Eintrags-Information"
+    "message": "Eintragsinformationen"
   },
   "noItemsInList": {
     "message": "Keine Einträge vorhanden."
@@ -636,7 +636,7 @@
     "message": "Wiederherstellungscode"
   },
   "authenticatorAppTitle": {
-    "message": "Authentifizierungs-App"
+    "message": "Authenticator App"
   },
   "authenticatorAppDesc": {
     "message": "Verwende eine Authentifizierungs-App (wie zum Beispiel Authy oder Google Authenticator), um zeitbasierte Verifizierungscodes zu generieren.",
@@ -660,7 +660,7 @@
     "message": "FIDO2 WebAuthn"
   },
   "webAuthnDesc": {
-    "message": "Benutze einen beliebigen WebAuthn kompatiblen Sicherheitsschlüssel, um auf dein Konto zuzugreifen."
+    "message": "Benutze einen beliebigen WebAuthn-kompatiblen Sicherheitsschlüssel, um auf dein Konto zuzugreifen."
   },
   "emailTitle": {
     "message": "E-Mail"
@@ -681,7 +681,7 @@
     "message": "Optionen für Zwei-Faktor-Authentifizierung"
   },
   "selfHostedEnvironment": {
-    "message": "Selbstgehostete Anwendung"
+    "message": "Selbst gehostete Umgebung"
   },
   "selfHostedEnvironmentFooter": {
     "message": "Bitte gib die Basis-URL deiner selbst gehosteten Bitwarden-Installation an."
@@ -815,7 +815,7 @@
     "message": "Synchronisierung fehlgeschlagen"
   },
   "yourVaultIsLocked": {
-    "message": "Dein Tresor ist gesperrt. Überprüfe deine Identität, um fortzufahren."
+    "message": "Dein Tresor ist gesperrt. Verifiziere deine Identität, um fortzufahren."
   },
   "unlock": {
     "message": "Entsperren"
@@ -837,7 +837,7 @@
     "message": "Ungültiges Master-Passwort"
   },
   "twoStepLoginConfirmation": {
-    "message": "Mit der Zwei-Faktor-Authentifizierung wird dein Konto zusätzlich abgesichert, da jede Anmeldung mit einem anderen Gerät wie einem Sicherheitsschlüssel, einer Authentifizierungs-App, einer SMS, einem Anruf oder einer E-Mail verifiziert werden muss. Die Zwei-Faktor-Authentifizierung kann im bitwarden.com Web-Tresor aktiviert werden. Möchtest du die Webseite jetzt öffnen?"
+    "message": "Mit der Zwei-Faktor-Authentifizierung wird dein Konto zusätzlich abgesichert, da jede Anmeldung mit einem anderen Gerät wie einem Sicherheitsschlüssel, einer Authentifizierungs-App, einer SMS, einem Anruf oder einer E-Mail verifiziert werden muss. Die Zwei-Faktor-Authentifizierung kann im bitwarden.com Web-Tresor aktiviert werden. Möchtest du die Website jetzt öffnen?"
   },
   "twoStepLogin": {
     "message": "Zwei-Faktor-Authentifizierung"
@@ -882,7 +882,7 @@
     "message": "4 Stunden"
   },
   "onIdle": {
-    "message": "Im Leerlauf"
+    "message": "Bei Systeminaktivität"
   },
   "onSleep": {
     "message": "Im Standby"
@@ -908,7 +908,7 @@
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "enableFavicon": {
-    "message": "Zeige Webseiten-Icons"
+    "message": "Website-Symbole anzeigen"
   },
   "faviconDesc": {
     "message": "Ein wiedererkennbares Bild neben jeden Zugangsdaten anzeigen."
@@ -1043,7 +1043,7 @@
     "message": "Unbekannt"
   },
   "copyUsername": {
-    "message": "Benutzernamen kopieren"
+    "message": "Benutzername kopieren"
   },
   "copyNumber": {
     "message": "Nummer kopieren",
@@ -1223,7 +1223,7 @@
     "description": "Domain name. Ex. website.com"
   },
   "domainName": {
-    "message": "Domain-Name",
+    "message": "Domainname",
     "description": "Domain name. Ex. website.com"
   },
   "host": {
@@ -1426,7 +1426,7 @@
     "message": "Einstellungen"
   },
   "enableMenuBar": {
-    "message": "Menüleisten-Symbol aktivieren"
+    "message": "Menüleisten-Symbol anzeigen"
   },
   "enableMenuBarDesc": {
     "message": "Immer ein Symbol in der Menüleiste anzeigen."
@@ -1438,7 +1438,7 @@
     "message": "Du musst mindestens eine Sammlung auswählen."
   },
   "premiumUpdated": {
-    "message": "Du hast ein Premium-Abo aktiviert."
+    "message": "Du hast ein Upgrade auf Premium durchgeführt."
   },
   "restore": {
     "message": "Wiederherstellen"
@@ -1472,7 +1472,7 @@
     "message": "Aktion bei Tresor-Timeout"
   },
   "vaultTimeoutActionLockDesc": {
-    "message": "Um wieder auf deinen Tresor zugreifen zu können, ist dein Master-Passwort oder eine andere Entsperr-Methode erforderlich."
+    "message": "Um wieder auf deinen Tresor zugreifen zu können, ist dein Master-Passwort oder eine andere Entsperrmethode erforderlich."
   },
   "vaultTimeoutActionLogOutDesc": {
     "message": "Um wieder auf deinen Tresor zugreifen zu können, ist eine erneute Authentifizierung erforderlich."
@@ -1582,7 +1582,7 @@
     "message": "Browser-Einbindung aktivieren"
   },
   "enableBrowserIntegrationDesc": {
-    "message": "Die Browser-Einbindung wird für Biometrie im Browser verwendet."
+    "message": "Die Browser-Integration wird für Biometrie im Browser verwendet."
   },
   "enableDuckDuckGoBrowserIntegration": {
     "message": "DuckDuckGo Browser-Einbindung erlauben"
@@ -1591,19 +1591,19 @@
     "message": "Verwende deinen Bitwarden-Tresor, wenn du mit DuckDuckGo surfst."
   },
   "browserIntegrationUnsupportedTitle": {
-    "message": "Browser-Einbindung wird nicht unterstützt"
+    "message": "Browser-Integration wird nicht unterstützt"
   },
   "browserIntegrationMasOnlyDesc": {
-    "message": "Leider wird die Browsers-Einbindung derzeit nur in der Mac App Store Version unterstützt."
+    "message": "Leider wird die Browser-Integration derzeit nur in der Mac App Store Version unterstützt."
   },
   "browserIntegrationWindowsStoreDesc": {
-    "message": "Leider wird die Browser-Einbindung derzeit nicht in der Microsoft Store Version unterstützt."
+    "message": "Leider wird die Browser-Integration derzeit nicht in der Microsoft Store Version unterstützt."
   },
   "browserIntegrationLinuxDesc": {
-    "message": "Leider wird die Browser-Einbindung derzeit nicht in der Linux Version unterstützt."
+    "message": "Leider wird die Browser-Integration derzeit nicht in der Linux Version unterstützt."
   },
   "enableBrowserIntegrationFingerprint": {
-    "message": "Überprüfung für Browser-Einbindung verlangen"
+    "message": "Verifizierung für Browser-Integration verlangen"
   },
   "enableBrowserIntegrationFingerprintDesc": {
     "message": "Eine zusätzliche Sicherheitsebene hinzufügen, indem eine Fingerabdruck-Phrasen-Validierung verlangt wird, wenn eine Verbindung zwischen deiner Desktop-Anwendung und dem Browser aufgebaut wird. Nach Aktivierung ist bei jedem Verbindungsaufbau ein Benutzer-Eingriff und Verifizierung erforderlich."
@@ -1633,10 +1633,10 @@
     "message": "Wenn du diese Anfrage nicht veranlasst hast, genehmige sie nicht."
   },
   "biometricsNotEnabledTitle": {
-    "message": "Biometrie ist nicht aktiviert"
+    "message": "Biometrie ist nicht eingerichtet"
   },
   "biometricsNotEnabledDesc": {
-    "message": "Biometrie im Browser setzt voraus, dass Biometrie zuerst in den Einstellungen der Desktop-Anwendung aktiviert wird."
+    "message": "Biometrie im Browser setzt voraus, dass Biometrie zuerst in den Einstellungen der Desktop-Anwendung eingerichtet wird."
   },
   "personalOwnershipSubmitError": {
     "message": "Aufgrund einer Unternehmensrichtlinie darfst du keine Einträge in deinem persönlichen Tresor speichern. Ändere die Eigentümer-Option in eine Organisation und wähle aus den verfügbaren Sammlungen."
@@ -1838,7 +1838,7 @@
     "message": "Master-Passwort aktualisieren"
   },
   "updateMasterPasswordWarning": {
-    "message": "Dein Master-Passwort wurde kürzlich von einem Administrator deiner Organisation geändert. Um auf den Tresor zuzugreifen, musst du es jetzt aktualisieren. Wenn Du fortfährst, wirst du aus der aktuellen Sitzung abgemeldet und eine erneute Anmeldung ist erforderlich. Aktive Sitzungen auf anderen Geräten können bis zu einer Stunde weiterhin aktiv bleiben."
+    "message": "Dein Master-Passwort wurde kürzlich von einem Administrator deiner Organisation geändert. Um auf den Tresor zuzugreifen, musst du es jetzt aktualisieren. Wenn du fortfährst, wirst du aus der aktuellen Sitzung abgemeldet und eine erneute Anmeldung ist erforderlich. Aktive Sitzungen auf anderen Geräten können bis zu einer Stunde weiterhin aktiv bleiben."
   },
   "hours": {
     "message": "Stunden"
@@ -1866,7 +1866,7 @@
     "message": "Automatische Registrierung"
   },
   "resetPasswordAutoEnrollInviteWarning": {
-    "message": "Diese Organisation hat eine Unternehmensrichtlinie, die dich automatisch für die Passwort Zurücksetzung registriert. Die Registrierung wird es Administratoren der Organisation erlauben, dein Master-Passwort zu ändern."
+    "message": "Diese Organisation hat eine Unternehmensrichtlinie, die dich automatisch für die Passwortzurücksetzung registriert. Die Registrierung wird es Administratoren der Organisation erlauben, dein Master-Passwort zu ändern."
   },
   "vaultExportDisabled": {
     "message": "Tresor-Export deaktiviert"
@@ -1968,7 +1968,7 @@
     "message": "Benutzername neu generieren"
   },
   "generateUsername": {
-    "message": "Benutzernamen generieren"
+    "message": "Benutzername generieren"
   },
   "usernameType": {
     "message": "Benutzernamentyp"
@@ -1993,7 +1993,7 @@
     "message": "Zufälliges Wort"
   },
   "websiteName": {
-    "message": "Webseiten-Name"
+    "message": "Websitename"
   },
   "service": {
     "message": "Dienst"
@@ -2002,7 +2002,7 @@
     "message": "Alle Tresore"
   },
   "searchOrganization": {
-    "message": "Organisationen durchsuchen"
+    "message": "Organisation durchsuchen"
   },
   "searchMyVault": {
     "message": "Meinen Tresor durchsuchen"
@@ -2081,16 +2081,16 @@
     "message": "Fingerabdruck-Phrase"
   },
   "needAnotherOption": {
-    "message": "Mit Gerät anmelden muss in den Einstellungen der Bitwarden App eingerichtet werden. Benötigst du eine andere Option?"
+    "message": "Die Anmeldung über ein Gerät muss in den Einstellungen der Bitwarden App eingerichtet werden. Benötigst du eine andere Option?"
   },
   "viewAllLoginOptions": {
-    "message": "Alle Anmelde-Optionen anzeigen"
+    "message": "Alle Anmeldeoptionen anzeigen"
   },
   "resendNotification": {
     "message": "Benachrichtigung erneut senden"
   },
   "toggleCharacterCount": {
-    "message": "Zeichenzählung ein-/ausschalten",
+    "message": "Zeichenanzahl ein-/ausschalten",
     "description": "'Character count' describes a feature that displays a number next to each character of the password."
   },
   "areYouTryingtoLogin": {
@@ -2115,10 +2115,10 @@
     "message": "Zeit"
   },
   "confirmLogIn": {
-    "message": "Anmeldung bestätigen"
+    "message": "Anmeldung genehmigen"
   },
   "denyLogIn": {
-    "message": "Anmeldung verweigern"
+    "message": "Anmeldung ablehnen"
   },
   "approveLoginRequests": {
     "message": "Anmeldeanfragen genehmigen"
@@ -2161,7 +2161,7 @@
     "message": "Benutze dieses Gerät, um Anmeldeanfragen von anderen Geräten zu genehmigen."
   },
   "confirmLoginAtemptForMail": {
-    "message": "Anmeldeversuch von $EMAIL$ bestätigen",
+    "message": "Anmeldeversuch von $EMAIL$ genehmigen",
     "placeholders": {
       "email": {
         "content": "$1",
