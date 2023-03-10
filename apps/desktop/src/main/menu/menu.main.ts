@@ -1,8 +1,10 @@
 import { app, Menu } from "electron";
 
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
+import { MessagingService } from "@bitwarden/common/abstractions/messaging.service";
+import { StateService } from "@bitwarden/common/abstractions/state.service";
 
-import { Main } from "../../main";
+import { UpdaterMain } from "../updater.main";
 import { WindowMain } from "../window.main";
 
 import { MenuUpdateRequest } from "./menu.updater";
@@ -11,13 +13,13 @@ import { Menubar } from "./menubar";
 const cloudWebVaultUrl = "https://vault.bitwarden.com";
 
 export class MenuMain {
-  private i18nService: I18nService;
-  private windowMain: WindowMain;
-
-  constructor(private main: Main) {
-    this.i18nService = main.i18nService;
-    this.windowMain = main.windowMain;
-  }
+  constructor(
+    private i18nService: I18nService,
+    private messagingService: MessagingService,
+    private stateService: StateService,
+    private windowMain: WindowMain,
+    private updaterMain: UpdaterMain
+  ) {}
 
   async init() {
     this.initContextMenu();
@@ -31,9 +33,9 @@ export class MenuMain {
   private async setMenu(updateRequest?: MenuUpdateRequest) {
     Menu.setApplicationMenu(
       new Menubar(
-        this.main.i18nService,
-        this.main.messagingService,
-        this.main.updaterMain,
+        this.i18nService,
+        this.messagingService,
+        this.updaterMain,
         this.windowMain,
         await this.getWebVaultUrl(),
         app.getVersion(),
@@ -44,7 +46,7 @@ export class MenuMain {
 
   private async getWebVaultUrl() {
     let webVaultUrl = cloudWebVaultUrl;
-    const urlsObj: any = await this.main.stateService.getEnvironmentUrls();
+    const urlsObj = await this.stateService.getEnvironmentUrls();
     if (urlsObj != null) {
       if (urlsObj.base != null) {
         webVaultUrl = urlsObj.base;

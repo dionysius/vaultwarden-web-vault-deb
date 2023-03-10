@@ -3,9 +3,9 @@ import { ipcMain, systemPreferences } from "electron";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 
-import { BiometricMain } from "../biometric/biometric.main";
+import { BiometricsServiceAbstraction } from "./biometrics.service.abstraction";
 
-export default class BiometricDarwinMain implements BiometricMain {
+export default class BiometricDarwinMain implements BiometricsServiceAbstraction {
   constructor(private i18nservice: I18nService, private stateService: StateService) {}
 
   async init() {

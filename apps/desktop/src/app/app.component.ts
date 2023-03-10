@@ -156,6 +156,7 @@ export class AppComponent implements OnInit, OnDestroy {
         switch (message.command) {
           case "loggedIn":
           case "unlocked":
+            this.recordActivity();
             this.notificationsService.updateConnection();
             this.updateAppMenu();
             this.systemService.cancelProcessReload();
@@ -197,6 +198,12 @@ export class AppComponent implements OnInit, OnDestroy {
             await this.updateAppMenu();
             await this.systemService.clearPendingClipboard();
             await this.systemService.startProcessReload(this.authService);
+            break;
+          case "startProcessReload":
+            this.systemService.startProcessReload(this.authService);
+            break;
+          case "cancelProcessReload":
+            this.systemService.cancelProcessReload();
             break;
           case "reloadProcess":
             (window.location as any).reload(true);

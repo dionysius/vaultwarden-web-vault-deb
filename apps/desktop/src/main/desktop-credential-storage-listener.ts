@@ -2,13 +2,16 @@ import { ipcMain } from "electron";
 
 import { passwords } from "@bitwarden/desktop-native";
 
-import { BiometricMain } from "./biometric/biometric.main";
+import { BiometricsServiceAbstraction } from "./biometric/index";
 
 const AuthRequiredSuffix = "_biometric";
 const AuthenticatedActions = ["getPassword"];
 
 export class DesktopCredentialStorageListener {
-  constructor(private serviceName: string, private biometricService: BiometricMain) {}
+  constructor(
+    private serviceName: string,
+    private biometricService: BiometricsServiceAbstraction
+  ) {}
 
   init() {
     ipcMain.handle("keytar", async (event: any, message: any) => {

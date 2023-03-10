@@ -7,9 +7,9 @@ import { biometrics } from "@bitwarden/desktop-native";
 
 import { WindowMain } from "../window.main";
 
-import { BiometricMain } from "./biometric.main";
+import { BiometricsServiceAbstraction } from "./biometrics.service.abstraction";
 
-export default class BiometricWindowsMain implements BiometricMain {
+export default class BiometricWindowsMain implements BiometricsServiceAbstraction {
   constructor(
     private i18nservice: I18nService,
     private windowMain: WindowMain,

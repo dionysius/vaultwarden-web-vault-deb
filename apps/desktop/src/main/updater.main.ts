@@ -16,11 +16,7 @@ export class UpdaterMain {
   private doingUpdateCheckWithFeedback = false;
   private canUpdate = false;
 
-  constructor(
-    private i18nService: I18nService,
-    private windowMain: WindowMain,
-    private projectName: string
-  ) {
+  constructor(private i18nService: I18nService, private windowMain: WindowMain) {
     autoUpdater.logger = log;
 
     const linuxCanUpdate = process.platform === "linux" && isAppImage();
@@ -49,8 +45,7 @@ export class UpdaterMain {
 
         const result = await dialog.showMessageBox(this.windowMain.win, {
           type: "info",
-          title:
-            this.i18nService.t(this.projectName) + " - " + this.i18nService.t("updateAvailable"),
+          title: this.i18nService.t("bitwarden") + " - " + this.i18nService.t("updateAvailable"),
           message: this.i18nService.t("updateAvailable"),
           detail: this.i18nService.t("updateAvailableDesc"),
           buttons: [this.i18nService.t("yes"), this.i18nService.t("no")],
@@ -87,7 +82,7 @@ export class UpdaterMain {
 
       const result = await dialog.showMessageBox(this.windowMain.win, {
         type: "info",
-        title: this.i18nService.t(this.projectName) + " - " + this.i18nService.t("restartToUpdate"),
+        title: this.i18nService.t("bitwarden") + " - " + this.i18nService.t("restartToUpdate"),
         message: this.i18nService.t("restartToUpdate"),
         detail: this.i18nService.t("restartToUpdateDesc", info.version),
         buttons: [this.i18nService.t("restart"), this.i18nService.t("later")],
