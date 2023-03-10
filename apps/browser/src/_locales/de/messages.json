@@ -7,7 +7,7 @@
     "description": "Extension name, MUST be less than 40 characters (Safari restriction)"
   },
   "extDesc": {
-    "message": "Bitwarden ist ein sicherer und kostenloser Passwortmanager für all Ihre Geräte.",
+    "message": "Ein sicherer und kostenloser Passwortmanager für all deine Geräte.",
     "description": "Extension description"
   },
   "loginOrCreateNewAccount": {
@@ -80,7 +80,7 @@
     "message": "URI kopieren"
   },
   "copyUsername": {
-    "message": "Nutzernamen kopieren"
+    "message": "Benutzername kopieren"
   },
   "copyNumber": {
     "message": "Nummer kopieren"
@@ -199,10 +199,10 @@
     "message": "Bitwarden Hilfezentrum"
   },
   "communityForums": {
-    "message": "Bitwarden Community-Forum erkunden"
+    "message": "Bitwarden Community-Foren erkunden"
   },
   "contactSupport": {
-    "message": "Bitwarden Kundendienst kontaktieren"
+    "message": "Bitwarden Support kontaktieren"
   },
   "sync": {
     "message": "Synchronisierung"
@@ -267,7 +267,7 @@
     "description": "Make the first letter of a work uppercase."
   },
   "includeNumber": {
-    "message": "Ziffer hinzufügen"
+    "message": "Ziffern einschließen"
   },
   "minNumbers": {
     "message": "Mindestanzahl Ziffern"
@@ -291,7 +291,7 @@
     "message": "Keine Einträge zum Anzeigen vorhanden."
   },
   "itemInformation": {
-    "message": "Eintrags-Information"
+    "message": "Eintragsinformationen"
   },
   "username": {
     "message": "Nutzername"
@@ -339,7 +339,7 @@
     "message": "Sonstige"
   },
   "rateExtension": {
-    "message": "Bewerte die Erweiterung"
+    "message": "Erweiterung bewerten"
   },
   "rateExtensionDesc": {
     "message": "Wir würden uns freuen, wenn du uns mit einer positiven Bewertung helfen könntest!"
@@ -351,7 +351,7 @@
     "message": "Identität verifizieren"
   },
   "yourVaultIsLocked": {
-    "message": "Dein Tresor ist gesperrt. Überprüfe deine Identität, um fortzufahren."
+    "message": "Dein Tresor ist gesperrt. Verifiziere deine Identität, um fortzufahren."
   },
   "unlock": {
     "message": "Entsperren"
@@ -507,7 +507,7 @@
     "message": "Du kannst dein Master-Passwort im Bitwarden.com Web-Tresor ändern. Möchtest du die Seite jetzt öffnen?"
   },
   "twoStepLoginConfirmation": {
-    "message": "Mit der Zwei-Faktor-Authentifizierung wird dein Konto zusätzlich abgesichert, da jede Anmeldung mit einem anderen Gerät wie einem Sicherheitsschlüssel, einer Authentifizierungs-App, einer SMS, einem Anruf oder einer E-Mail verifiziert werden muss. Die Zwei-Faktor-Authentifizierung kann im bitwarden.com Web-Tresor aktiviert werden. Möchtest du die Webseite jetzt öffnen?"
+    "message": "Mit der Zwei-Faktor-Authentifizierung wird dein Konto zusätzlich abgesichert, da jede Anmeldung mit einem anderen Gerät wie einem Sicherheitsschlüssel, einer Authentifizierungs-App, einer SMS, einem Anruf oder einer E-Mail verifiziert werden muss. Die Zwei-Faktor-Authentifizierung kann im bitwarden.com Web-Tresor aktiviert werden. Möchtest du die Website jetzt öffnen?"
   },
   "editedFolder": {
     "message": "Ordner gespeichert"
@@ -519,7 +519,7 @@
     "message": "Ordner gelöscht"
   },
   "gettingStartedTutorial": {
-    "message": "Erste Schritte Anleitung"
+    "message": "Erste Schritte"
   },
   "gettingStartedTutorialVideo": {
     "message": "Sieh dir unser Tutorial an, um hilfreiche Tipps zum Umgang mit der Browser-Erweiterung zu erfahren."
@@ -568,7 +568,7 @@
     "message": "Sind Sie sicher, dass Sie das aktuelle Passwort ersetzen möchten?"
   },
   "overwriteUsername": {
-    "message": "Benutzername ersetzten"
+    "message": "Benutzername ersetzen"
   },
   "overwriteUsernameConfirmation": {
     "message": "Bist du sicher, dass du den aktuellen Benutzernamen überschreiben möchtest?"
@@ -619,10 +619,10 @@
     "message": "Ja, jetzt speichern"
   },
   "enableChangedPasswordNotification": {
-    "message": "Danach fragen bestehende Zugangsdaten zu aktualisieren"
+    "message": "Nach dem Aktualisieren bestehender Zugangsdaten fragen"
   },
   "changedPasswordNotificationDesc": {
-    "message": "Danach fragen das Passwort der Zugangsdaten zu aktualisieren, wenn eine Änderung auf einer Webseite erkannt wird."
+    "message": "Nach dem Aktualisieren eines Passworts fragen, wenn eine Änderung auf einer Website erkannt wird."
   },
   "notificationChangeDesc": {
     "message": "Möchtest du dieses Passwort in Bitwarden aktualisieren?"
@@ -805,7 +805,7 @@
     "message": "Premium-Mitgliedschaft kaufen"
   },
   "premiumPurchaseAlert": {
-    "message": "Du kannst deine Premium-Mitgliedschaft im Bitwarden.com Web-Tresor kaufen. Möchtest du die Webseite jetzt besuchen?"
+    "message": "Du kannst deine Premium-Mitgliedschaft im Bitwarden.com Web-Tresor kaufen. Möchtest du die Website jetzt besuchen?"
   },
   "premiumCurrentMember": {
     "message": "Du bist jetzt Premium-Mitglied!"
@@ -904,7 +904,7 @@
     "message": "Wiederherstellungscode"
   },
   "authenticatorAppTitle": {
-    "message": "Authentifizierungs-App"
+    "message": "Authenticator App"
   },
   "authenticatorAppDesc": {
     "message": "Verwende eine Authentifizierungs-App (wie zum Beispiel Authy oder Google Authenticator), um zeitbasierte Verifizierungscodes zu generieren.",
@@ -928,7 +928,7 @@
     "message": "FIDO2 WebAuthn"
   },
   "webAuthnDesc": {
-    "message": "Benutze einen beliebigen WebAuthn kompatiblen Sicherheitsschlüssel, um auf dein Konto zuzugreifen."
+    "message": "Benutze einen beliebigen WebAuthn-kompatiblen Sicherheitsschlüssel, um auf dein Konto zuzugreifen."
   },
   "emailTitle": {
     "message": "E-Mail"
@@ -976,19 +976,19 @@
     "message": "Wenn eine Anmeldemaske erkannt wird, die Zugangsdaten automatisch ausfüllen während die Webseite lädt."
   },
   "experimentalFeature": {
-    "message": "Kompromittierte oder nicht vertrauenswürdige Webseiten können das automatische Ausfüllen beim Laden der Seite ausnutzen."
+    "message": "Kompromittierte oder nicht vertrauenswürdige Websites können Auto-Ausfüllen beim Laden der Seite ausnutzen."
   },
   "learnMoreAboutAutofill": {
-    "message": "Erfahre mehr über automatisches Ausfüllen"
+    "message": "Erfahre mehr über Auto-Ausfüllen"
   },
   "defaultAutoFillOnPageLoad": {
     "message": "Standard Auto-Ausfüllen Einstellung für Login-Einträge"
   },
   "defaultAutoFillOnPageLoadDesc": {
-    "message": "Du kannst das automatische Ausfüllen beim Laden der Seite für einzelne Zugangsdaten-Einträge in der Bearbeiten-Ansicht des Eintrags deaktivieren."
+    "message": "Du kannst Auto-Ausfüllen beim Laden der Seite für einzelne Zugangsdaten-Einträge in der Bearbeiten-Ansicht des Eintrags deaktivieren."
   },
   "itemAutoFillOnPageLoad": {
-    "message": "Automatisches Ausfüllen beim Laden der Seite (wenn in Optionen aktiviert)"
+    "message": "Auto-Ausfüllen beim Laden der Seite (wenn in Optionen aktiviert)"
   },
   "autoFillOnPageLoadUseDefault": {
     "message": "Nutze Standardeinstellung"
@@ -1056,7 +1056,7 @@
     "message": "Dieser Browser kann U2F-Anfragen in diesem Popup-Fenster nicht verarbeiten. Möchtest du dieses Popup in einem neuen Fenster öffnen, damit du dich mit U2F anmelden kannst?"
   },
   "enableFavicon": {
-    "message": "Zeige Webseiten-Icons"
+    "message": "Website-Symbole anzeigen"
   },
   "faviconDesc": {
     "message": "Ein wiedererkennbares Bild neben jeden Zugangsdaten anzeigen."
@@ -1397,7 +1397,7 @@
     "message": "Warte auf Bestätigung vom Desktop"
   },
   "awaitDesktopDesc": {
-    "message": "Bitte bestätige die Verwendung von Biometrie in der Bitwarden Desktop-Anwendung, um Biometrie für den Browser zu aktivieren."
+    "message": "Bitte bestätige die Verwendung von Biometrie in der Bitwarden Desktop-Anwendung, um Biometrie für den Browser einzurichten."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Bei Neustart des Browsers mit Master-Passwort sperren"
@@ -1453,7 +1453,7 @@
     "message": "Bestätigung der Timeout-Aktion"
   },
   "autoFillAndSave": {
-    "message": "Automatisch ausfüllen und speichern"
+    "message": "Auto-Ausfüllen und speichern"
   },
   "autoFillSuccessAndSavedUri": {
     "message": "Eintrag automatisch ausgefüllt und URI gespeichert"
@@ -1528,13 +1528,13 @@
     "message": "Desktop-Sync-Überprüfung"
   },
   "desktopIntegrationVerificationText": {
-    "message": "Bitte überprüfe, dass die Desktop-Anwendung diesen Prüfschlüssel anzeigt: "
+    "message": "Bitte überprüfe, dass die Desktop-Anwendung diesen Fingerabdruck anzeigt: "
   },
   "desktopIntegrationDisabledTitle": {
-    "message": "Browser-Einbindung ist nicht aktiviert"
+    "message": "Browser-Integration ist nicht aktiviert"
   },
   "desktopIntegrationDisabledDesc": {
-    "message": "Die Browser-Einbindung ist in der Bitwarden Desktop-Anwendung nicht aktiviert. Bitte aktiviere diese in den Einstellungen innerhalb der Desktop-Anwendung."
+    "message": "Die Browser-Integration ist in der Bitwarden Desktop-Anwendung nicht eingerichtet. Bitte richte diese in den Einstellungen der Desktop-Anwendung ein."
   },
   "startDesktopTitle": {
     "message": "Bitwarden Desktop-Anwendung starten"
@@ -1543,7 +1543,7 @@
     "message": "Die Bitwarden Desktop-Anwendung muss gestartet werden, bevor Entsperren mit Biometrie verwendet werden kann."
   },
   "errorEnableBiometricTitle": {
-    "message": "Biometrie kann nicht aktiviert werden"
+    "message": "Biometrie konnte nicht eingerichtet werden"
   },
   "errorEnableBiometricDesc": {
     "message": "Die Aktion wurde von der Desktop-Anwendung abgebrochen"
@@ -1561,10 +1561,10 @@
     "message": "Konten stimmen nicht überein"
   },
   "biometricsNotEnabledTitle": {
-    "message": "Biometrie ist nicht aktiviert"
+    "message": "Biometrie ist nicht eingerichtet"
   },
   "biometricsNotEnabledDesc": {
-    "message": "Biometrie im Browser setzt voraus, dass Biometrie zuerst in den Einstellungen der Desktop-Anwendung aktiviert wird."
+    "message": "Biometrie im Browser setzt voraus, dass Biometrie zuerst in den Einstellungen der Desktop-Anwendung eingerichtet wird."
   },
   "biometricsNotSupportedTitle": {
     "message": "Biometrie wird nicht unterstützt"
@@ -1921,7 +1921,7 @@
     "message": "Deine Sitzung ist abgelaufen. Bitte gehe zurück und versuche dich erneut anzumelden."
   },
   "exportingPersonalVaultTitle": {
-    "message": "Persönlichen Tresor exportieren"
+    "message": "Persönlicher Tresor wird exportiert"
   },
   "exportingPersonalVaultDescription": {
     "message": "Nur die einzelnen Tresor-Einträge, die mit $EMAIL$ verbunden sind, werden exportiert. Tresor-Einträge der Organisation werden nicht berücksichtigt.",
@@ -1939,7 +1939,7 @@
     "message": "Benutzername neu generieren"
   },
   "generateUsername": {
-    "message": "Benutzernamen generieren"
+    "message": "Benutzername generieren"
   },
   "usernameType": {
     "message": "Benutzernamenstyp"
@@ -1964,7 +1964,7 @@
     "message": "Zufälliges Wort"
   },
   "websiteName": {
-    "message": "Webseiten-Name"
+    "message": "Websitename"
   },
   "whatWouldYouLikeToGenerate": {
     "message": "Was möchtest du generieren?"
@@ -2070,7 +2070,7 @@
     "message": "Mit Gerät anmelden"
   },
   "loginWithDeviceEnabledInfo": {
-    "message": "Mit Gerät anmelden muss in den Einstellungen der Bitwarden App eingerichtet werden. Benötigst du eine andere Option?"
+    "message": "Die Anmeldung über ein Gerät muss in den Einstellungen der Bitwarden App eingerichtet werden. Benötigst du eine andere Option?"
   },
   "fingerprintPhraseHeader": {
     "message": "Fingerabdruck-Phrase"
@@ -2082,7 +2082,7 @@
     "message": "Benachrichtigung erneut senden"
   },
   "viewAllLoginOptions": {
-    "message": "Alle Anmelde-Optionen anzeigen"
+    "message": "Alle Anmeldeoptionen anzeigen"
   },
   "notificationSentDevice": {
     "message": "Eine Benachrichtigung wurde an dein Gerät gesendet."
@@ -2121,10 +2121,10 @@
     }
   },
   "howToAutofill": {
-    "message": "So funktioniert automatisches Ausfüllen"
+    "message": "So funktioniert Auto-Ausfüllen"
   },
   "autofillSelectInfo": {
-    "message": "Wähle einen Eintrag von dieser Seite aus oder verwende das Tastaturkürzel: $COMMAND$. Du kannst es auch mit dem automatischen Ausfüllen beim Laden der Seite versuchen.",
+    "message": "Wähle einen Eintrag von dieser Seite aus oder verwende das Tastaturkürzel: $COMMAND$. Du kannst es auch mit dem Auto-Ausfüllen beim Laden der Seite versuchen.",
     "placeholders": {
       "command": {
         "content": "$1",
@@ -2145,10 +2145,10 @@
     "message": "Auto-Ausfüllen Tastaturkürzel"
   },
   "autofillShortcutNotSet": {
-    "message": "Das Auto-Ausfüllen-Tastaturkürzel ist nicht gesetzt. Ändere das in den Browser-Einstellungen."
+    "message": "Das Auto-Ausfüllen Tastaturkürzel ist nicht gesetzt. Du kannst eines in den Browser-Einstellungen festlegen."
   },
   "autofillShortcutText": {
-    "message": "Das Auto-Ausfüllen-Tastaturkürzel ist: $COMMAND$. Ändere das in den Browser-Einstellungen.",
+    "message": "Das Auto-Ausfüllen Tastaturkürzel ist: $COMMAND$. Du kannst es in den Browser-Einstellungen ändern.",
     "placeholders": {
       "command": {
         "content": "$1",
@@ -2157,7 +2157,7 @@
     }
   },
   "autofillShortcutTextSafari": {
-    "message": "Standard-Auto-Ausfüllen-Tastaturkürzel: $COMMAND$.",
+    "message": "Standard-Auto-Ausfüllen Tastaturkürzel: $COMMAND$.",
     "placeholders": {
       "command": {
         "content": "$1",

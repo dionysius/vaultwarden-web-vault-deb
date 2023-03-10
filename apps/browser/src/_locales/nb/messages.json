@@ -196,13 +196,13 @@
     "message": "Hjelp og tilbakemelding"
   },
   "helpCenter": {
-    "message": "Bitwarden Help center"
+    "message": "Bitwarden hjelpesenter"
   },
   "communityForums": {
-    "message": "Explore Bitwarden community forums"
+    "message": "Utforsk Bitwardens community forum"
   },
   "contactSupport": {
-    "message": "Contact Bitwarden support"
+    "message": "Kontakt Bitwarden brukerstøtte"
   },
   "sync": {
     "message": "Synkroniser"
@@ -439,7 +439,7 @@
     "message": "Skriv inn hovedpassordet på nytt."
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least $VALUE$ characters long.",
+    "message": "Hovedpassordet må være minst $VALUE$ tegn.",
     "description": "The Master Password must be at least a specific number of characters long.",
     "placeholders": {
       "value": {
@@ -2121,10 +2121,10 @@
     }
   },
   "howToAutofill": {
-    "message": "How to auto-fill"
+    "message": "Hvordan bruke auto-utfylling"
   },
   "autofillSelectInfo": {
-    "message": "Select an item from this page or use the shortcut: $COMMAND$. You can also try auto-fill on page load.",
+    "message": "Velg et element fra denne siden eller bruk snarveien: $COMMAND$. Du kan også prøve autoutfylling når siden lastes inn.",
     "placeholders": {
       "command": {
         "content": "$1",
@@ -2133,22 +2133,22 @@
     }
   },
   "autofillSelectInfoNoCommand": {
-    "message": "Select an item from this page or set a shortcut in settings. You can also try auto-fill on page load."
+    "message": "Velg et element fra denne siden eller sett en snarvei i innstillinger. Du kan også prøve autoutfylling når siden lastes inn."
   },
   "gotIt": {
-    "message": "Got it"
+    "message": "Skjønner"
   },
   "autofillSettings": {
-    "message": "Auto-fill settings"
+    "message": "Innstillinger for auto-utfylling"
   },
   "autofillShortcut": {
-    "message": "Auto-fill keyboard shortcut"
+    "message": "Auto-utfyll tastatursnarvei"
   },
   "autofillShortcutNotSet": {
-    "message": "The auto-fill shortcut is not set. Change this in the browser's settings."
+    "message": "Snarveien for automatisk utfylling er ikke angitt. Endre dette i nettleserens innstillinger."
   },
   "autofillShortcutText": {
-    "message": "The auto-fill shortcut is: $COMMAND$. Change this in the browser's settings.",
+    "message": "Snarveien for automatisk utfylling er: $COMMAND$. Endre dette i nettleserens innstillinger.",
     "placeholders": {
       "command": {
         "content": "$1",
@@ -2157,7 +2157,7 @@
     }
   },
   "autofillShortcutTextSafari": {
-    "message": "Default auto-fill shortcut: $COMMAND$.",
+    "message": "Standard auto-utfyllingssnarvei: $COMMAND$.",
     "placeholders": {
       "command": {
         "content": "$1",
