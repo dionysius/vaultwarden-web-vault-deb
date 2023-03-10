@@ -1,15 +1,18 @@
-import { ApiService } from "../abstractions/api.service";
-import { CryptoService } from "../abstractions/crypto.service";
-import { StateService } from "../abstractions/state.service";
-import { UsernameGenerationService as BaseUsernameGenerationService } from "../abstractions/usernameGeneration.service";
-import { AnonAddyForwarder } from "../email-forwarders/anon-addy-forwarder";
-import { DuckDuckGoForwarder } from "../email-forwarders/duck-duck-go-forwarder";
-import { FastmailForwarder } from "../email-forwarders/fastmail-forwarder";
-import { FirefoxRelayForwarder } from "../email-forwarders/firefox-relay-forwarder";
-import { Forwarder } from "../email-forwarders/forwarder";
-import { ForwarderOptions } from "../email-forwarders/forwarder-options";
-import { SimpleLoginForwarder } from "../email-forwarders/simple-login-forwarder";
-import { EFFLongWordList } from "../misc/wordlist";
+import { ApiService } from "../../../abstractions/api.service";
+import { CryptoService } from "../../../abstractions/crypto.service";
+import { StateService } from "../../../abstractions/state.service";
+import { EFFLongWordList } from "../../../misc/wordlist";
+
+import {
+  AnonAddyForwarder,
+  DuckDuckGoForwarder,
+  FastmailForwarder,
+  FirefoxRelayForwarder,
+  Forwarder,
+  ForwarderOptions,
+  SimpleLoginForwarder,
+} from "./email-forwarders";
+import { UsernameGenerationServiceAbstraction } from "./username-generation.service.abstraction";
 
 const DefaultOptions = {
   type: "word",
@@ -21,7 +24,7 @@ const DefaultOptions = {
   forwardedAnonAddyDomain: "anonaddy.me",
 };
 
-export class UsernameGenerationService implements BaseUsernameGenerationService {
+export class UsernameGenerationService implements UsernameGenerationServiceAbstraction {
   constructor(
     private cryptoService: CryptoService,
     private stateService: StateService,

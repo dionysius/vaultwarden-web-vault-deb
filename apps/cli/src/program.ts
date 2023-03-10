@@ -12,7 +12,6 @@ import { Main } from "./bw";
 import { CompletionCommand } from "./commands/completion.command";
 import { ConfigCommand } from "./commands/config.command";
 import { EncodeCommand } from "./commands/encode.command";
-import { GenerateCommand } from "./commands/generate.command";
 import { ServeCommand } from "./commands/serve.command";
 import { StatusCommand } from "./commands/status.command";
 import { UpdateCommand } from "./commands/update.command";
@@ -21,6 +20,7 @@ import { ListResponse } from "./models/response/list.response";
 import { MessageResponse } from "./models/response/message.response";
 import { StringResponse } from "./models/response/string.response";
 import { TemplateResponse } from "./models/response/template.response";
+import { GenerateCommand } from "./tools/generate.command";
 import { CliUtils } from "./utils";
 import { SyncCommand } from "./vault/sync.command";
 

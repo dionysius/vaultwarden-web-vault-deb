@@ -7,7 +7,6 @@ import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { MessagingService } from "@bitwarden/common/abstractions/messaging.service";
-import { PasswordGenerationService } from "@bitwarden/common/abstractions/passwordGeneration.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { PolicyService } from "@bitwarden/common/abstractions/policy/policy.service.abstraction";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
@@ -18,6 +17,7 @@ import { PolicyData } from "@bitwarden/common/models/data/policy.data";
 import { Policy } from "@bitwarden/common/models/domain/policy";
 import { SymmetricCryptoKey } from "@bitwarden/common/models/domain/symmetric-crypto-key";
 import { PolicyResponse } from "@bitwarden/common/models/response/policy.response";
+import { PasswordGenerationServiceAbstraction } from "@bitwarden/common/tools/generator/password";
 
 @Component({
   selector: "emergency-access-takeover",
@@ -42,7 +42,7 @@ export class EmergencyAccessTakeoverComponent
     cryptoService: CryptoService,
     messagingService: MessagingService,
     stateService: StateService,
-    passwordGenerationService: PasswordGenerationService,
+    passwordGenerationService: PasswordGenerationServiceAbstraction,
     platformUtilsService: PlatformUtilsService,
     policyService: PolicyService,
     private apiService: ApiService,

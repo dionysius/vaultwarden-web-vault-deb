@@ -4,7 +4,7 @@ import { ActivatedRoute } from "@angular/router";
 import { ModalService } from "@bitwarden/angular/services/modal.service";
 import { MessagingService } from "@bitwarden/common/abstractions/messaging.service";
 import { OrganizationService } from "@bitwarden/common/abstractions/organization/organization.service.abstraction";
-import { PasswordGenerationService } from "@bitwarden/common/abstractions/passwordGeneration.service";
+import { PasswordGenerationServiceAbstraction } from "@bitwarden/common/tools/generator/password";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
 import { PasswordRepromptService } from "@bitwarden/common/vault/abstractions/password-reprompt.service";
 import { Cipher } from "@bitwarden/common/vault/models/domain/cipher";
@@ -23,7 +23,7 @@ export class WeakPasswordsReportComponent extends BaseWeakPasswordsReportCompone
 
   constructor(
     cipherService: CipherService,
-    passwordGenerationService: PasswordGenerationService,
+    passwordGenerationService: PasswordGenerationServiceAbstraction,
     modalService: ModalService,
     messagingService: MessagingService,
     private route: ActivatedRoute,

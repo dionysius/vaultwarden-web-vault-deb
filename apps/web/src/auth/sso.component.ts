@@ -10,7 +10,6 @@ import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { OrgDomainApiServiceAbstraction } from "@bitwarden/common/abstractions/organization-domain/org-domain-api.service.abstraction";
 import { OrganizationDomainSsoDetailsResponse } from "@bitwarden/common/abstractions/organization-domain/responses/organization-domain-sso-details.response";
-import { PasswordGenerationService } from "@bitwarden/common/abstractions/passwordGeneration.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { ValidationService } from "@bitwarden/common/abstractions/validation.service";
@@ -18,6 +17,7 @@ import { AuthService } from "@bitwarden/common/auth/abstractions/auth.service";
 import { LoginService } from "@bitwarden/common/auth/abstractions/login.service";
 import { HttpStatusCode } from "@bitwarden/common/enums/http-status-code.enum";
 import { ErrorResponse } from "@bitwarden/common/models/response/error.response";
+import { PasswordGenerationServiceAbstraction } from "@bitwarden/common/tools/generator/password";
 
 @Component({
   selector: "app-sso",
@@ -35,7 +35,7 @@ export class SsoComponent extends BaseSsoComponent {
     apiService: ApiService,
     cryptoFunctionService: CryptoFunctionService,
     environmentService: EnvironmentService,
-    passwordGenerationService: PasswordGenerationService,
+    passwordGenerationService: PasswordGenerationServiceAbstraction,
     logService: LogService,
     private orgDomainApiService: OrgDomainApiServiceAbstraction,
     private loginService: LoginService,

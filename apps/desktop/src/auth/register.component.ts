@@ -11,10 +11,10 @@ import { EnvironmentService } from "@bitwarden/common/abstractions/environment.s
 import { FormValidationErrorsService } from "@bitwarden/common/abstractions/formValidationErrors.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
-import { PasswordGenerationService } from "@bitwarden/common/abstractions/passwordGeneration.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { AuthService } from "@bitwarden/common/auth/abstractions/auth.service";
+import { PasswordGenerationServiceAbstraction } from "@bitwarden/common/tools/generator/password";
 
 const BroadcasterSubscriptionId = "RegisterComponent";
 
@@ -33,7 +33,7 @@ export class RegisterComponent extends BaseRegisterComponent implements OnInit, 
     apiService: ApiService,
     stateService: StateService,
     platformUtilsService: PlatformUtilsService,
-    passwordGenerationService: PasswordGenerationService,
+    passwordGenerationService: PasswordGenerationServiceAbstraction,
     environmentService: EnvironmentService,
     private broadcasterService: BroadcasterService,
     private ngZone: NgZone,

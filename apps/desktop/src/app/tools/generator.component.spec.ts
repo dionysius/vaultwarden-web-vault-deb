@@ -8,10 +8,10 @@ import { mock, MockProxy } from "jest-mock-extended";
 import { I18nPipe } from "@bitwarden/angular/pipes/i18n.pipe";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
-import { PasswordGenerationService } from "@bitwarden/common/abstractions/passwordGeneration.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
-import { UsernameGenerationService } from "@bitwarden/common/abstractions/usernameGeneration.service";
+import { PasswordGenerationServiceAbstraction } from "@bitwarden/common/tools/generator/password";
+import { UsernameGenerationServiceAbstraction } from "@bitwarden/common/tools/generator/username";
 
 import { GeneratorComponent } from "./generator.component";
 
@@ -27,12 +27,12 @@ describe("GeneratorComponent", () => {
       declarations: [GeneratorComponent, I18nPipe],
       providers: [
         {
-          provide: PasswordGenerationService,
-          useClass: Substitute.for<PasswordGenerationService>(),
+          provide: PasswordGenerationServiceAbstraction,
+          useClass: Substitute.for<PasswordGenerationServiceAbstraction>(),
         },
         {
-          provide: UsernameGenerationService,
-          useClass: Substitute.for<UsernameGenerationService>(),
+          provide: UsernameGenerationServiceAbstraction,
+          useClass: Substitute.for<UsernameGenerationServiceAbstraction>(),
         },
         {
           provide: StateService,

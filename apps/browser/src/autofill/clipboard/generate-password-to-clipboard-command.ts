@@ -1,4 +1,4 @@
-import { PasswordGenerationService } from "@bitwarden/common/abstractions/passwordGeneration.service";
+import { PasswordGenerationServiceAbstraction } from "@bitwarden/common/tools/generator/password";
 
 import { setAlarmTime } from "../../alarms/alarm-state";
 import { BrowserStateService } from "../../services/abstractions/browser-state.service";
@@ -8,7 +8,7 @@ import { copyToClipboard } from "./copy-to-clipboard-command";
 
 export class GeneratePasswordToClipboardCommand {
   constructor(
-    private passwordGenerationService: PasswordGenerationService,
+    private passwordGenerationService: PasswordGenerationServiceAbstraction,
     private stateService: BrowserStateService
   ) {}
 

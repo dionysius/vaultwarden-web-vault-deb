@@ -4,11 +4,11 @@ import { first } from "rxjs/operators";
 
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
-import { PasswordGenerationService } from "@bitwarden/common/abstractions/passwordGeneration.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
-import { UsernameGenerationService } from "@bitwarden/common/abstractions/usernameGeneration.service";
 import { PasswordGeneratorPolicyOptions } from "@bitwarden/common/models/domain/password-generator-policy-options";
+import { PasswordGenerationServiceAbstraction } from "@bitwarden/common/tools/generator/password";
+import { UsernameGenerationServiceAbstraction } from "@bitwarden/common/tools/generator/username";
 
 @Directive()
 export class GeneratorComponent implements OnInit {
@@ -33,8 +33,8 @@ export class GeneratorComponent implements OnInit {
   usernameWebsite: string = null;
 
   constructor(
-    protected passwordGenerationService: PasswordGenerationService,
-    protected usernameGenerationService: UsernameGenerationService,
+    protected passwordGenerationService: PasswordGenerationServiceAbstraction,
+    protected usernameGenerationService: UsernameGenerationServiceAbstraction,
     protected platformUtilsService: PlatformUtilsService,
     protected stateService: StateService,
     protected i18nService: I18nService,

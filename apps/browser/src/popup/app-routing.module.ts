@@ -18,6 +18,8 @@ import { SsoComponent } from "../auth/popup/sso.component";
 import { TwoFactorOptionsComponent } from "../auth/popup/two-factor-options.component";
 import { TwoFactorComponent } from "../auth/popup/two-factor.component";
 import { UpdateTempPasswordComponent } from "../auth/popup/update-temp-password.component";
+import { GeneratorComponent } from "../tools/popup/generator/generator.component";
+import { PasswordGeneratorHistoryComponent } from "../tools/popup/generator/password-generator-history.component";
 import { AddEditComponent } from "../vault/popup/components/vault/add-edit.component";
 import { AttachmentsComponent } from "../vault/popup/components/vault/attachments.component";
 import { CurrentTabComponent } from "../vault/popup/components/vault/current-tab.component";
@@ -27,8 +29,6 @@ import { VaultFilterComponent } from "../vault/popup/components/vault/vault-filt
 import { VaultItemsComponent } from "../vault/popup/components/vault/vault-items.component";
 import { ViewComponent } from "../vault/popup/components/vault/view.component";
 
-import { GeneratorComponent } from "./generator/generator.component";
-import { PasswordGeneratorHistoryComponent } from "./generator/password-generator-history.component";
 import { SendAddEditComponent } from "./send/send-add-edit.component";
 import { SendGroupingsComponent } from "./send/send-groupings.component";
 import { SendTypeComponent } from "./send/send-type.component";

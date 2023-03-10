@@ -16,7 +16,6 @@ import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { OrganizationUserService } from "@bitwarden/common/abstractions/organization-user/organization-user.service";
 import { OrganizationUserResetPasswordRequest } from "@bitwarden/common/abstractions/organization-user/requests";
-import { PasswordGenerationService } from "@bitwarden/common/abstractions/passwordGeneration.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { PolicyService } from "@bitwarden/common/abstractions/policy/policy.service.abstraction";
 import { KdfConfig } from "@bitwarden/common/auth/models/domain/kdf-config";
@@ -24,6 +23,7 @@ import { Utils } from "@bitwarden/common/misc/utils";
 import { EncString } from "@bitwarden/common/models/domain/enc-string";
 import { MasterPasswordPolicyOptions } from "@bitwarden/common/models/domain/master-password-policy-options";
 import { SymmetricCryptoKey } from "@bitwarden/common/models/domain/symmetric-crypto-key";
+import { PasswordGenerationServiceAbstraction } from "@bitwarden/common/tools/generator/password";
 
 @Component({
   selector: "app-reset-password",
@@ -48,7 +48,7 @@ export class ResetPasswordComponent implements OnInit, OnDestroy {
   constructor(
     private i18nService: I18nService,
     private platformUtilsService: PlatformUtilsService,
-    private passwordGenerationService: PasswordGenerationService,
+    private passwordGenerationService: PasswordGenerationServiceAbstraction,
     private policyService: PolicyService,
     private cryptoService: CryptoService,
     private logService: LogService,

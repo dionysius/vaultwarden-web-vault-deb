@@ -1,4 +1,4 @@
-import { ApiService } from "../abstractions/api.service";
+import { ApiService } from "../../../../abstractions/api.service";
 
 import { Forwarder } from "./forwarder";
 import { ForwarderOptions } from "./forwarder-options";

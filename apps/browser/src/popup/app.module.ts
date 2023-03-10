@@ -33,6 +33,8 @@ import { TwoFactorOptionsComponent } from "../auth/popup/two-factor-options.comp
 import { TwoFactorComponent } from "../auth/popup/two-factor.component";
 import { UpdateTempPasswordComponent } from "../auth/popup/update-temp-password.component";
 import { CollectionsComponent } from "../popup/vault/collections.component";
+import { GeneratorComponent } from "../tools/popup/generator/generator.component";
+import { PasswordGeneratorHistoryComponent } from "../tools/popup/generator/password-generator-history.component";
 import { ActionButtonsComponent } from "../vault/popup/components/action-buttons.component";
 import { CipherRowComponent } from "../vault/popup/components/cipher-row.component";
 import { PasswordRepromptComponent } from "../vault/popup/components/password-reprompt.component";
@@ -55,8 +57,6 @@ import { PrivateModeWarningComponent } from "./components/private-mode-warning.c
 import { SendListComponent } from "./components/send-list.component";
 import { SetPinComponent } from "./components/set-pin.component";
 import { UserVerificationComponent } from "./components/user-verification.component";
-import { GeneratorComponent } from "./generator/generator.component";
-import { PasswordGeneratorHistoryComponent } from "./generator/password-generator-history.component";
 import { EffluxDatesComponent as SendEffluxDatesComponent } from "./send/efflux-dates.component";
 import { SendAddEditComponent } from "./send/send-add-edit.component";
 import { SendGroupingsComponent } from "./send/send-groupings.component";

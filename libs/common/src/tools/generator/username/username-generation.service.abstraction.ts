@@ -1,4 +1,4 @@
-export abstract class UsernameGenerationService {
+export abstract class UsernameGenerationServiceAbstraction {
   generateUsername: (options: any) => Promise<string>;
   generateWord: (options: any) => Promise<string>;
   generateSubaddress: (options: any) => Promise<string>;

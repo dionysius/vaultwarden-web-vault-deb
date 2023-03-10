@@ -1,5 +1,7 @@
-import { PasswordGenerationService as AbstractPasswordGenerationService } from "@bitwarden/common/abstractions/passwordGeneration.service";
-import { PasswordGenerationService } from "@bitwarden/common/services/passwordGeneration.service";
+import {
+  PasswordGenerationService,
+  PasswordGenerationServiceAbstraction,
+} from "@bitwarden/common/tools/generator/password";
 
 import { cryptoServiceFactory, CryptoServiceInitOptions } from "./crypto-service.factory";
 import { CachedServices, factory, FactoryOptions } from "./factory-options";
@@ -14,9 +16,9 @@ export type PasswordGenerationServiceInitOptions = PasswordGenerationServiceFact
   StateServiceInitOptions;
 
 export function passwordGenerationServiceFactory(
-  cache: { passwordGenerationService?: AbstractPasswordGenerationService } & CachedServices,
+  cache: { passwordGenerationService?: PasswordGenerationServiceAbstraction } & CachedServices,
   opts: PasswordGenerationServiceInitOptions
-): Promise<AbstractPasswordGenerationService> {
+): Promise<PasswordGenerationServiceAbstraction> {
   return factory(
     cache,
     "passwordGenerationService",

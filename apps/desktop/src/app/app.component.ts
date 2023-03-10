@@ -23,7 +23,6 @@ import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { MessagingService } from "@bitwarden/common/abstractions/messaging.service";
 import { NotificationsService } from "@bitwarden/common/abstractions/notifications.service";
-import { PasswordGenerationService } from "@bitwarden/common/abstractions/passwordGeneration.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { InternalPolicyService } from "@bitwarden/common/abstractions/policy/policy.service.abstraction";
 import { SearchService } from "@bitwarden/common/abstractions/search.service";
@@ -35,6 +34,7 @@ import { VaultTimeoutSettingsService } from "@bitwarden/common/abstractions/vaul
 import { AuthService } from "@bitwarden/common/auth/abstractions/auth.service";
 import { KeyConnectorService } from "@bitwarden/common/auth/abstractions/key-connector.service";
 import { AuthenticationStatus } from "@bitwarden/common/auth/enums/authentication-status";
+import { PasswordGenerationServiceAbstraction } from "@bitwarden/common/tools/generator/password";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
 import { InternalFolderService } from "@bitwarden/common/vault/abstractions/folder/folder.service.abstraction";
 import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
@@ -47,9 +47,9 @@ import { PremiumComponent } from "../vault/app/accounts/premium.component";
 import { FolderAddEditComponent } from "../vault/app/vault/folder-add-edit.component";
 
 import { SettingsComponent } from "./accounts/settings.component";
+import { GeneratorComponent } from "./tools/generator.component";
+import { PasswordGeneratorHistoryComponent } from "./tools/password-generator-history.component";
 import { ExportComponent } from "./vault/export.component";
-import { GeneratorComponent } from "./vault/generator.component";
-import { PasswordGeneratorHistoryComponent } from "./vault/password-generator-history.component";
 
 const BroadcasterSubscriptionId = "AppComponent";
 const IdleTimeout = 60000 * 10; // 10 minutes
@@ -110,7 +110,7 @@ export class AppComponent implements OnInit, OnDestroy {
     private folderService: InternalFolderService,
     private settingsService: SettingsService,
     private syncService: SyncService,
-    private passwordGenerationService: PasswordGenerationService,
+    private passwordGenerationService: PasswordGenerationServiceAbstraction,
     private cipherService: CipherService,
     private authService: AuthService,
     private router: Router,

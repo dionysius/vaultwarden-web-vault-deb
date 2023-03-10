@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnChanges, Output } from "@angular/core";
 
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
-import { PasswordGenerationService } from "@bitwarden/common/abstractions/passwordGeneration.service";
+import { PasswordGenerationServiceAbstraction } from "@bitwarden/common/tools/generator/password";
 
 export interface PasswordColorText {
   color: string;
@@ -59,7 +59,7 @@ export class PasswordStrengthComponent implements OnChanges {
 
   constructor(
     private i18nService: I18nService,
-    private passwordGenerationService: PasswordGenerationService
+    private passwordGenerationService: PasswordGenerationServiceAbstraction
   ) {}
 
   ngOnChanges(): void {

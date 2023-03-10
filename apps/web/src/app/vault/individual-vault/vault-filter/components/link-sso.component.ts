@@ -7,11 +7,11 @@ import { CryptoFunctionService } from "@bitwarden/common/abstractions/cryptoFunc
 import { EnvironmentService } from "@bitwarden/common/abstractions/environment.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
-import { PasswordGenerationService } from "@bitwarden/common/abstractions/passwordGeneration.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { AuthService } from "@bitwarden/common/auth/abstractions/auth.service";
 import { Organization } from "@bitwarden/common/models/domain/organization";
+import { PasswordGenerationServiceAbstraction } from "@bitwarden/common/tools/generator/password";
 
 @Component({
   selector: "app-link-sso",
@@ -29,7 +29,7 @@ export class LinkSsoComponent extends SsoComponent implements AfterContentInit {
     router: Router,
     route: ActivatedRoute,
     cryptoFunctionService: CryptoFunctionService,
-    passwordGenerationService: PasswordGenerationService,
+    passwordGenerationService: PasswordGenerationServiceAbstraction,
     stateService: StateService,
     environmentService: EnvironmentService,
     logService: LogService

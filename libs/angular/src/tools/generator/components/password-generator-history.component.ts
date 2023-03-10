@@ -1,16 +1,18 @@
 import { Directive, OnInit } from "@angular/core";
 
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
-import { PasswordGenerationService } from "@bitwarden/common/abstractions/passwordGeneration.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
-import { GeneratedPasswordHistory } from "@bitwarden/common/models/domain/generated-password-history";
+import {
+  GeneratedPasswordHistory,
+  PasswordGenerationServiceAbstraction,
+} from "@bitwarden/common/tools/generator/password";
 
 @Directive()
 export class PasswordGeneratorHistoryComponent implements OnInit {
   history: GeneratedPasswordHistory[] = [];
 
   constructor(
-    protected passwordGenerationService: PasswordGenerationService,
+    protected passwordGenerationService: PasswordGenerationServiceAbstraction,
     protected platformUtilsService: PlatformUtilsService,
     protected i18nService: I18nService,
     private win: Window

@@ -50,10 +50,10 @@ import { AddEditComponent as SendAddEditComponent } from "./send/add-edit.compon
 import { EffluxDatesComponent as SendEffluxDatesComponent } from "./send/efflux-dates.component";
 import { SendComponent } from "./send/send.component";
 import { SharedModule } from "./shared/shared.module";
+import { GeneratorComponent } from "./tools/generator.component";
+import { PasswordGeneratorHistoryComponent } from "./tools/password-generator-history.component";
 import { CollectionsComponent } from "./vault/collections.component";
 import { ExportComponent } from "./vault/export.component";
-import { GeneratorComponent } from "./vault/generator.component";
-import { PasswordGeneratorHistoryComponent } from "./vault/password-generator-history.component";
 
 @NgModule({
   imports: [SharedModule, AppRoutingModule, VaultFilterModule, LoginModule],

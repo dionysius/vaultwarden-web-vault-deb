@@ -86,7 +86,6 @@
 ./libs/common/src/abstractions/fileDownload/fileDownloadBuilder.ts
 ./libs/common/src/abstractions/fileDownload/fileDownload.service.ts
 ./libs/common/src/abstractions/fileDownload/fileDownloadRequest.ts
-./libs/common/src/abstractions/passwordGeneration.service.ts
 ./libs/common/src/abstractions/formValidationErrors.service.ts
 ./libs/common/src/abstractions/vaultTimeout/vaultTimeoutSettings.service.ts
 ./libs/common/src/abstractions/vaultTimeout/vaultTimeout.service.ts
@@ -94,10 +93,8 @@
 ./libs/common/src/abstractions/cryptoFunction.service.ts
 ./libs/common/src/abstractions/anonymousHub.service.ts
 ./libs/common/src/abstractions/appId.service.ts
-./libs/common/src/abstractions/usernameGeneration.service.ts
 ./libs/common/src/services/azureFileUpload.service.ts
 ./libs/common/src/services/stateMigration.service.ts
-./libs/common/src/services/passwordGeneration.service.ts
 ./libs/common/src/services/consoleLog.service.ts
 ./libs/common/src/services/formValidationErrors.service.ts
 ./libs/common/src/services/vaultTimeout/vaultTimeoutSettings.service.ts
@@ -105,7 +102,6 @@
 ./libs/common/src/services/fileUpload.service.ts
 ./libs/common/src/services/anonymousHub.service.ts
 ./libs/common/src/services/appId.service.ts
-./libs/common/src/services/usernameGeneration.service.ts
 ./libs/common/src/services/noopMessaging.service.ts
 ./libs/common/src/services/memoryStorage.service.ts
 ./libs/common/src/services/bitwardenFileUpload.service.ts

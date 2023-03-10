@@ -12,7 +12,6 @@ import {
 } from "@bitwarden/common/abstractions/formValidationErrors.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
-import { PasswordGenerationService } from "@bitwarden/common/abstractions/passwordGeneration.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { AuthService } from "@bitwarden/common/auth/abstractions/auth.service";
@@ -23,6 +22,7 @@ import { Utils } from "@bitwarden/common/misc/utils";
 import { KeysRequest } from "@bitwarden/common/models/request/keys.request";
 import { ReferenceEventRequest } from "@bitwarden/common/models/request/reference-event.request";
 import { RegisterRequest } from "@bitwarden/common/models/request/register.request";
+import { PasswordGenerationServiceAbstraction } from "@bitwarden/common/tools/generator/password";
 
 import { CaptchaProtectedComponent } from "../auth/components/captcha-protected.component";
 import { PasswordColorText } from "../shared/components/password-strength/password-strength.component";
@@ -87,7 +87,7 @@ export class RegisterComponent extends CaptchaProtectedComponent implements OnIn
     protected apiService: ApiService,
     protected stateService: StateService,
     platformUtilsService: PlatformUtilsService,
-    protected passwordGenerationService: PasswordGenerationService,
+    protected passwordGenerationService: PasswordGenerationServiceAbstraction,
     environmentService: EnvironmentService,
     protected logService: LogService,
     protected auditService: AuditService

@@ -1,5 +1,5 @@
-import { PasswordGenerationService } from "@bitwarden/common/abstractions/passwordGeneration.service";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
+import { PasswordGenerationServiceAbstraction } from "@bitwarden/common/tools/generator/password";
 
 import { Response } from "../models/response";
 import { StringResponse } from "../models/response/string.response";
@@ -7,7 +7,7 @@ import { CliUtils } from "../utils";
 
 export class GenerateCommand {
   constructor(
-    private passwordGenerationService: PasswordGenerationService,
+    private passwordGenerationService: PasswordGenerationServiceAbstraction,
     private stateService: StateService
   ) {}
 

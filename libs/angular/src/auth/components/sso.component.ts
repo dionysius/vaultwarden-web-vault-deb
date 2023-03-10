@@ -7,7 +7,6 @@ import { CryptoFunctionService } from "@bitwarden/common/abstractions/cryptoFunc
 import { EnvironmentService } from "@bitwarden/common/abstractions/environment.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
-import { PasswordGenerationService } from "@bitwarden/common/abstractions/passwordGeneration.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { AuthService } from "@bitwarden/common/auth/abstractions/auth.service";
@@ -15,6 +14,7 @@ import { AuthResult } from "@bitwarden/common/auth/models/domain/auth-result";
 import { SsoLogInCredentials } from "@bitwarden/common/auth/models/domain/log-in-credentials";
 import { SsoPreValidateResponse } from "@bitwarden/common/auth/models/response/sso-pre-validate.response";
 import { Utils } from "@bitwarden/common/misc/utils";
+import { PasswordGenerationServiceAbstraction } from "@bitwarden/common/tools/generator/password";
 
 @Directive()
 export class SsoComponent {
@@ -48,7 +48,7 @@ export class SsoComponent {
     protected apiService: ApiService,
     protected cryptoFunctionService: CryptoFunctionService,
     protected environmentService: EnvironmentService,
-    protected passwordGenerationService: PasswordGenerationService,
+    protected passwordGenerationService: PasswordGenerationServiceAbstraction,
     protected logService: LogService
   ) {}
 

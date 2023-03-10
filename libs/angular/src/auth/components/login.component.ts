@@ -13,7 +13,6 @@ import {
 } from "@bitwarden/common/abstractions/formValidationErrors.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
-import { PasswordGenerationService } from "@bitwarden/common/abstractions/passwordGeneration.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { AuthService } from "@bitwarden/common/auth/abstractions/auth.service";
@@ -21,6 +20,7 @@ import { LoginService } from "@bitwarden/common/auth/abstractions/login.service"
 import { AuthResult } from "@bitwarden/common/auth/models/domain/auth-result";
 import { PasswordLogInCredentials } from "@bitwarden/common/auth/models/domain/log-in-credentials";
 import { Utils } from "@bitwarden/common/misc/utils";
+import { PasswordGenerationServiceAbstraction } from "@bitwarden/common/tools/generator/password";
 
 import { CaptchaProtectedComponent } from "./captcha-protected.component";
 
@@ -60,7 +60,7 @@ export class LoginComponent extends CaptchaProtectedComponent implements OnInit 
     i18nService: I18nService,
     protected stateService: StateService,
     environmentService: EnvironmentService,
-    protected passwordGenerationService: PasswordGenerationService,
+    protected passwordGenerationService: PasswordGenerationServiceAbstraction,
     protected cryptoFunctionService: CryptoFunctionService,
     protected logService: LogService,
     protected ngZone: NgZone,

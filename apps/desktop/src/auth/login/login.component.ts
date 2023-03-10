@@ -13,11 +13,11 @@ import { FormValidationErrorsService } from "@bitwarden/common/abstractions/form
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { MessagingService } from "@bitwarden/common/abstractions/messaging.service";
-import { PasswordGenerationService } from "@bitwarden/common/abstractions/passwordGeneration.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { AuthService } from "@bitwarden/common/auth/abstractions/auth.service";
 import { LoginService } from "@bitwarden/common/auth/abstractions/login.service";
+import { PasswordGenerationServiceAbstraction } from "@bitwarden/common/tools/generator/password";
 import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
 
 import { EnvironmentComponent } from "../environment.component";
@@ -57,7 +57,7 @@ export class LoginComponent extends BaseLoginComponent implements OnDestroy {
     platformUtilsService: PlatformUtilsService,
     stateService: StateService,
     environmentService: EnvironmentService,
-    passwordGenerationService: PasswordGenerationService,
+    passwordGenerationService: PasswordGenerationServiceAbstraction,
     cryptoFunctionService: CryptoFunctionService,
     private broadcasterService: BroadcasterService,
     ngZone: NgZone,

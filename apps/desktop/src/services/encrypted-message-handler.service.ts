@@ -1,11 +1,11 @@
 import { firstValueFrom } from "rxjs";
 
 import { MessagingService } from "@bitwarden/common/abstractions/messaging.service";
-import { PasswordGenerationService } from "@bitwarden/common/abstractions/passwordGeneration.service";
 import { PolicyService } from "@bitwarden/common/abstractions/policy/policy.service.abstraction";
 import { AuthService } from "@bitwarden/common/auth/abstractions/auth.service";
 import { AuthenticationStatus } from "@bitwarden/common/auth/enums/authentication-status";
 import { PolicyType } from "@bitwarden/common/enums/policyType";
+import { PasswordGenerationServiceAbstraction } from "@bitwarden/common/tools/generator/password";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
 import { CipherType } from "@bitwarden/common/vault/enums/cipher-type";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
@@ -34,7 +34,7 @@ export class EncryptedMessageHandlerService {
     private cipherService: CipherService,
     private policyService: PolicyService,
     private messagingService: MessagingService,
-    private passwordGenerationService: PasswordGenerationService
+    private passwordGenerationService: PasswordGenerationServiceAbstraction
   ) {}
 
   async responseDataForCommand(

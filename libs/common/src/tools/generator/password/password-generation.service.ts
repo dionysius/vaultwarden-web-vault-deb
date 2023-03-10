@@ -1,15 +1,16 @@
 import * as zxcvbn from "zxcvbn";
 
-import { CryptoService } from "../abstractions/crypto.service";
-import { PasswordGenerationService as PasswordGenerationServiceAbstraction } from "../abstractions/passwordGeneration.service";
-import { PolicyService } from "../abstractions/policy/policy.service.abstraction";
-import { StateService } from "../abstractions/state.service";
-import { PolicyType } from "../enums/policyType";
-import { EFFLongWordList } from "../misc/wordlist";
-import { EncString } from "../models/domain/enc-string";
-import { GeneratedPasswordHistory } from "../models/domain/generated-password-history";
-import { PasswordGeneratorOptions } from "../models/domain/password-generator-options";
-import { PasswordGeneratorPolicyOptions } from "../models/domain/password-generator-policy-options";
+import { CryptoService } from "../../../abstractions/crypto.service";
+import { PolicyService } from "../../../abstractions/policy/policy.service.abstraction";
+import { StateService } from "../../../abstractions/state.service";
+import { PolicyType } from "../../../enums/policyType";
+import { EFFLongWordList } from "../../../misc/wordlist";
+import { EncString } from "../../../models/domain/enc-string";
+import { PasswordGeneratorPolicyOptions } from "../../../models/domain/password-generator-policy-options";
+
+import { GeneratedPasswordHistory } from "./generated-password-history";
+import { PasswordGenerationServiceAbstraction } from "./password-generation.service.abstraction";
+import { PasswordGeneratorOptions } from "./password-generator-options";
 
 const DefaultOptions: PasswordGeneratorOptions = {
   length: 14,

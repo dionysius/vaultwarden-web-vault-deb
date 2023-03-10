@@ -5,6 +5,7 @@ import { EnvironmentUrls } from "../../auth/models/domain/environment-urls";
 import { KdfType } from "../../enums/kdfType";
 import { UriMatchType } from "../../enums/uriMatchType";
 import { Utils } from "../../misc/utils";
+import { GeneratedPasswordHistory } from "../../tools/generator/password";
 import { DeepJsonify } from "../../types/deep-jsonify";
 import { CipherData } from "../../vault/models/data/cipher.data";
 import { FolderData } from "../../vault/models/data/folder.data";
@@ -21,7 +22,6 @@ import { CollectionView } from "../view/collection.view";
 import { SendView } from "../view/send.view";
 
 import { EncString } from "./enc-string";
-import { GeneratedPasswordHistory } from "./generated-password-history";
 import { Policy } from "./policy";
 import { SymmetricCryptoKey } from "./symmetric-crypto-key";
 

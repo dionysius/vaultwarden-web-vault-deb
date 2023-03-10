@@ -30,8 +30,8 @@ import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 import { FolderView } from "@bitwarden/common/vault/models/view/folder.view";
 
 import { SearchBarService } from "../../../app/layout/search/search-bar.service";
+import { GeneratorComponent } from "../../../app/tools/generator.component";
 import { CollectionsComponent } from "../../../app/vault/collections.component";
-import { GeneratorComponent } from "../../../app/vault/generator.component";
 import { invokeMenu, RendererMenuItem } from "../../../utils";
 
 import { AddEditComponent } from "./add-edit.component";

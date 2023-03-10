@@ -1,8 +1,8 @@
-import { PasswordGenerationService } from "@bitwarden/common/abstractions/passwordGeneration.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { VaultTimeoutService } from "@bitwarden/common/abstractions/vaultTimeout/vaultTimeout.service";
 import { AuthService } from "@bitwarden/common/auth/abstractions/auth.service";
 import { AuthenticationStatus } from "@bitwarden/common/auth/enums/authentication-status";
+import { PasswordGenerationServiceAbstraction } from "@bitwarden/common/tools/generator/password";
 
 import { BrowserApi } from "../browser/browserApi";
 
@@ -15,7 +15,7 @@ export default class CommandsBackground {
 
   constructor(
     private main: MainBackground,
-    private passwordGenerationService: PasswordGenerationService,
+    private passwordGenerationService: PasswordGenerationServiceAbstraction,
     private platformUtilsService: PlatformUtilsService,
     private vaultTimeoutService: VaultTimeoutService,
     private authService: AuthService
