@@ -5844,9 +5844,40 @@
     "message": "Tingnan ang service account",
     "description": "Action to view the details of a service account."
   },
+  "deleteServiceAccountDialogMessage": {
+    "message": "Ang pag-delete ng service account na $SERVICE_ACCOUNT$ ay permanente at hindi na maibabalik.",
+    "placeholders": {
+      "service_account": {
+        "content": "$1",
+        "example": "Service account name"
+      }
+    }
+  },
+  "deleteServiceAccountsDialogMessage": {
+    "message": "Ang pag-delete ng mga service accounts ay permanente at hindi na maibabalik."
+  },
+  "deleteServiceAccountsConfirmMessage": {
+    "message": "Burahin ang $COUNT$ service accounts",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "deleteServiceAccountToast": {
+    "message": "Na-delete na ang service account"
+  },
+  "deleteServiceAccountsToast": {
+    "message": "Na-delete na ang mga service accounts"
+  },
   "searchServiceAccounts": {
     "message": "Maghanap ng mga account sa serbisyo",
     "description": "Placeholder text for searching service accounts."
+  },
+  "editServiceAccount": {
+    "message": "I-edit ang serbisyo account",
+    "description": "Title for editing a service account."
   },
   "addProject": {
     "message": "Magdagdag ng proyekto",
@@ -5904,6 +5935,10 @@
   "serviceAccountCreated": {
     "message": "Nilikha ang service account",
     "description": "Notifies that a new service account has been created"
+  },
+  "serviceAccountUpdated": {
+    "message": "Na-update na ang serbisyo account",
+    "description": "Notifies that a service account has been updated"
   },
   "newSaSelectAccess": {
     "message": "Mag type o pumili ng mga proyekto o lihim",
@@ -6568,6 +6603,27 @@
   },
   "secretsManagerEnable": {
     "message": "Paganahin ang Secrets Manager Beta"
+  },
+  "saPeopleWarningTitle": {
+    "message": "Mga access tokens pa rin ang magagamit"
+  },
+  "saPeopleWarningMessage": {
+    "message": "Ang pagtanggal ng mga tao mula sa isang service account ay hindi nag-aalis ng access tokens na nilikha nila. Para sa pinakamahusay na praktika ng seguridad, inirerekomenda na i-revoke ang mga access tokens na nilikha ng mga taong tanggalin mula sa isang service account."
+  },
+  "smAccessRemovalWarningProjectTitle": {
+    "message": "Tanggalin ang access sa proyektong ito"
+  },
+  "smAccessRemovalWarningProjectMessage": {
+    "message": "Ang aksyon na ito ay tanggalin ang iyong access sa proyekto."
+  },
+  "smAccessRemovalWarningSaTitle": {
+    "message": "Tanggalin ang access sa service account na ito"
+  },
+  "smAccessRemovalWarningSaMessage": {
+    "message": "Ang aksyon na ito ay tanggalin ang iyong access sa service account."
+  },
+  "removeAccess": {
+    "message": "Tanggalin ang access"
   },
   "checkForBreaches": {
     "message": "Tingnan ang kilalang breaches ng data para sa password na ito"

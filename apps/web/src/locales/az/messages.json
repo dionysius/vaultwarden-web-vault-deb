@@ -5844,9 +5844,40 @@
     "message": "Servis hesabına bax",
     "description": "Action to view the details of a service account."
   },
+  "deleteServiceAccountDialogMessage": {
+    "message": "$SERVICE_ACCOUNT$ xidmət hesabının silinməsi daimi və geri qaytarıla bilməyən prosesdir.",
+    "placeholders": {
+      "service_account": {
+        "content": "$1",
+        "example": "Service account name"
+      }
+    }
+  },
+  "deleteServiceAccountsDialogMessage": {
+    "message": "Xidmət hesablarının silinməsi daimi və geri qaytarıla bilməyən prosesdir."
+  },
+  "deleteServiceAccountsConfirmMessage": {
+    "message": "$COUNT$ xidmət hesabını sil",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "deleteServiceAccountToast": {
+    "message": "Xidmət hesabı silindi"
+  },
+  "deleteServiceAccountsToast": {
+    "message": "Xidmət hesabları silindi"
+  },
   "searchServiceAccounts": {
     "message": "Servis hesablarına bax",
     "description": "Placeholder text for searching service accounts."
+  },
+  "editServiceAccount": {
+    "message": "Xidmət hesabına düzəliş et",
+    "description": "Title for editing a service account."
   },
   "addProject": {
     "message": "Layihə əlavə et",
@@ -5904,6 +5935,10 @@
   "serviceAccountCreated": {
     "message": "Servis hesabı yaradıldı",
     "description": "Notifies that a new service account has been created"
+  },
+  "serviceAccountUpdated": {
+    "message": "Xidmət hesabı güncəlləndi",
+    "description": "Notifies that a service account has been updated"
   },
   "newSaSelectAccess": {
     "message": "Layihələri və ya \"Sirr\"ləri yazın və ya seçin",
@@ -6568,6 +6603,27 @@
   },
   "secretsManagerEnable": {
     "message": "\"Secrets Manager Beta\"nı fəallaşdır"
+  },
+  "saPeopleWarningTitle": {
+    "message": "Müraciət tokenləri hələ də əlçatandır"
+  },
+  "saPeopleWarningMessage": {
+    "message": "İnsanları xidmət hesabından silsəniz belə, yaratdıqları müraciət tokenləri silinmir. Güvənliyin ən yaxşı təcrübəsi üçün, xidmət hesabından silinmiş insanlar tərəfindən yaradılan müraciət tokenlərinin ləğv edilməsi tövsiyə olunur."
+  },
+  "smAccessRemovalWarningProjectTitle": {
+    "message": "Bu layihəyə müraciəti sil"
+  },
+  "smAccessRemovalWarningProjectMessage": {
+    "message": "Bu əməliyyat, layihəyə olan müraciətinizi götürəcək."
+  },
+  "smAccessRemovalWarningSaTitle": {
+    "message": "Bu xidmət hesabına müraciəti sil"
+  },
+  "smAccessRemovalWarningSaMessage": {
+    "message": "Bu əməliyyat, xidmət hesabına olan müraciətinizi götürəcək."
+  },
+  "removeAccess": {
+    "message": "Müraciəti sil"
   },
   "checkForBreaches": {
     "message": "Bu parol üçün bilinən məlumat pozuntularını yoxlayın"

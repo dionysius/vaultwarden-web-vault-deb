@@ -5844,9 +5844,40 @@
     "message": "サービスアカウントを表示",
     "description": "Action to view the details of a service account."
   },
+  "deleteServiceAccountDialogMessage": {
+    "message": "サービスアカウント $SERVICE_ACCOUNT$ を削除すると元に戻せません。",
+    "placeholders": {
+      "service_account": {
+        "content": "$1",
+        "example": "Service account name"
+      }
+    }
+  },
+  "deleteServiceAccountsDialogMessage": {
+    "message": "サービスアカウントを削除すると元に戻すことはできません。"
+  },
+  "deleteServiceAccountsConfirmMessage": {
+    "message": "$COUNT$ のサービスアカウントを削除",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "deleteServiceAccountToast": {
+    "message": "サービスアカウントを削除しました"
+  },
+  "deleteServiceAccountsToast": {
+    "message": "サービスアカウントを削除しました"
+  },
   "searchServiceAccounts": {
     "message": "サービスアカウントを検索",
     "description": "Placeholder text for searching service accounts."
+  },
+  "editServiceAccount": {
+    "message": "サービスアカウントを編集",
+    "description": "Title for editing a service account."
   },
   "addProject": {
     "message": "プロジェクトを追加",
@@ -5904,6 +5935,10 @@
   "serviceAccountCreated": {
     "message": "サービスアカウントを作成しました",
     "description": "Notifies that a new service account has been created"
+  },
+  "serviceAccountUpdated": {
+    "message": "サービスアカウントを更新しました",
+    "description": "Notifies that a service account has been updated"
   },
   "newSaSelectAccess": {
     "message": "プロジェクトまたはシークレットを入力・選択",
@@ -6568,6 +6603,27 @@
   },
   "secretsManagerEnable": {
     "message": "ベータ版のシークレットマネージャーを有効化"
+  },
+  "saPeopleWarningTitle": {
+    "message": "アクセストークンはまだ利用可能です"
+  },
+  "saPeopleWarningMessage": {
+    "message": "サービスアカウントからユーザーを削除しても、作成したアクセストークンは削除されません。 セキュリティ向上のために、サービスアカウントから削除された人々によって作成されたアクセストークンを取り消すことをお勧めします。"
+  },
+  "smAccessRemovalWarningProjectTitle": {
+    "message": "このプロジェクトへのアクセスを削除"
+  },
+  "smAccessRemovalWarningProjectMessage": {
+    "message": "この操作により、プロジェクトへのアクセス権が削除されます。"
+  },
+  "smAccessRemovalWarningSaTitle": {
+    "message": "このサービスアカウントへのアクセスを削除"
+  },
+  "smAccessRemovalWarningSaMessage": {
+    "message": "この操作により、サービスアカウントへのアクセスを削除します。"
+  },
+  "removeAccess": {
+    "message": "アクセスを削除する"
   },
   "checkForBreaches": {
     "message": "このパスワードの既知のデータ流出を確認"

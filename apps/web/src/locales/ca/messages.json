@@ -5844,9 +5844,40 @@
     "message": "Veure el compte de servei",
     "description": "Action to view the details of a service account."
   },
+  "deleteServiceAccountDialogMessage": {
+    "message": "La supressió del compte de servei $SERVICE_ACCOUNT$ és permanent i irreversible.",
+    "placeholders": {
+      "service_account": {
+        "content": "$1",
+        "example": "Service account name"
+      }
+    }
+  },
+  "deleteServiceAccountsDialogMessage": {
+    "message": "La supressió de comptes de servei és permanent i irreversible."
+  },
+  "deleteServiceAccountsConfirmMessage": {
+    "message": "Suprimeix $COUNT$ comptes de servei",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "deleteServiceAccountToast": {
+    "message": "El compte de servei s'ha suprimit"
+  },
+  "deleteServiceAccountsToast": {
+    "message": "S'han suprimit els comptes de servei"
+  },
   "searchServiceAccounts": {
     "message": "Cerca els comptes de servei",
     "description": "Placeholder text for searching service accounts."
+  },
+  "editServiceAccount": {
+    "message": "Edita el compte de servei",
+    "description": "Title for editing a service account."
   },
   "addProject": {
     "message": "Afig un projecte",
@@ -5904,6 +5935,10 @@
   "serviceAccountCreated": {
     "message": "Compte de servei creat",
     "description": "Notifies that a new service account has been created"
+  },
+  "serviceAccountUpdated": {
+    "message": "Compte de servei actualitzat",
+    "description": "Notifies that a service account has been updated"
   },
   "newSaSelectAccess": {
     "message": "Escriu o selecciona projectes o secrets",
@@ -6568,6 +6603,27 @@
   },
   "secretsManagerEnable": {
     "message": "Habilita l'administrador de secrets Beta"
+  },
+  "saPeopleWarningTitle": {
+    "message": "Els tokens d'accés encara estan disponibles"
+  },
+  "saPeopleWarningMessage": {
+    "message": "La supressió de persones d'un compte de servei no suprimeix els testimonis d'accés que han creat. Per a les millors pràctiques de seguretat, es recomana revocar els testimonis d'accés creats per persones suprimides d'un compte de servei."
+  },
+  "smAccessRemovalWarningProjectTitle": {
+    "message": "Suprimeix l'accés a aquest projecte"
+  },
+  "smAccessRemovalWarningProjectMessage": {
+    "message": "Aquesta acció suprimirà l'accés al projecte."
+  },
+  "smAccessRemovalWarningSaTitle": {
+    "message": "Suprimeix l'accés a aquest compte de servei"
+  },
+  "smAccessRemovalWarningSaMessage": {
+    "message": "Aquesta acció suprimirà l'accés al compte de servei."
+  },
+  "removeAccess": {
+    "message": "Suprimeix l'accés"
   },
   "checkForBreaches": {
     "message": "Comproveu les filtracions de dades conegudes per a aquesta contrasenya"

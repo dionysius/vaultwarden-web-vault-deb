@@ -5844,9 +5844,40 @@
     "message": "Visualizza account di servizio",
     "description": "Action to view the details of a service account."
   },
+  "deleteServiceAccountDialogMessage": {
+    "message": "L'eliminazione dell'account di servizio $SERVICE_ACCOUNT$ è permanente e irreversibile.",
+    "placeholders": {
+      "service_account": {
+        "content": "$1",
+        "example": "Service account name"
+      }
+    }
+  },
+  "deleteServiceAccountsDialogMessage": {
+    "message": "L'eliminazione degli account di servizio è permanente e irreversibile."
+  },
+  "deleteServiceAccountsConfirmMessage": {
+    "message": "Elimina $COUNT$ account di servizio",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "deleteServiceAccountToast": {
+    "message": "L'account di servizio è stato eliminato"
+  },
+  "deleteServiceAccountsToast": {
+    "message": "Account di servizio eliminati"
+  },
   "searchServiceAccounts": {
     "message": "Cerca account di servizio",
     "description": "Placeholder text for searching service accounts."
+  },
+  "editServiceAccount": {
+    "message": "Modifica account di servizio",
+    "description": "Title for editing a service account."
   },
   "addProject": {
     "message": "Aggiungi progetto",
@@ -5904,6 +5935,10 @@
   "serviceAccountCreated": {
     "message": "Account di servizio creato",
     "description": "Notifies that a new service account has been created"
+  },
+  "serviceAccountUpdated": {
+    "message": "Account di servizio aggiornato",
+    "description": "Notifies that a service account has been updated"
   },
   "newSaSelectAccess": {
     "message": "Digita o seleziona progetti o segreti",
@@ -6431,13 +6466,13 @@
     "message": "Aggiungi account di servizio per concedere l'accesso"
   },
   "serviceAccountPeopleDescription": {
-    "message": "Grant groups or people access to this service account."
+    "message": "Consenti ai gruppi o alle persone l'accesso a questo account di servizio."
   },
   "serviceAccountProjectsDescription": {
-    "message": "Assign projects to this service account. "
+    "message": "Assegna progetti a questo account di servizio. "
   },
   "serviceAccountEmptyProjectAccesspolicies": {
-    "message": "Add projects to grant access"
+    "message": "Aggiungi progetti per concedere l'accesso"
   },
   "canReadWrite": {
     "message": "Può leggere, scrivere"
@@ -6569,6 +6604,27 @@
   "secretsManagerEnable": {
     "message": "Abilita il Gestore Segreti (Beta)"
   },
+  "saPeopleWarningTitle": {
+    "message": "Token di accesso ancora disponibili"
+  },
+  "saPeopleWarningMessage": {
+    "message": "La rimozione di persone da un account di servizio non rimuove i token di accesso da essi creati. Per ragioni di sicurezza, si raccomanda di revocare i token di accesso creati dalle persone rimosse da un account di servizio."
+  },
+  "smAccessRemovalWarningProjectTitle": {
+    "message": "Rimuovi l'accesso a questo progetto"
+  },
+  "smAccessRemovalWarningProjectMessage": {
+    "message": "Questa azione rimuoverà il tuo accesso al progetto."
+  },
+  "smAccessRemovalWarningSaTitle": {
+    "message": "Rimuovi l'accesso a questo account di servizio"
+  },
+  "smAccessRemovalWarningSaMessage": {
+    "message": "Questa azione rimuoverà il tuo accesso all'account di servizio."
+  },
+  "removeAccess": {
+    "message": "Rimuovi l'accesso"
+  },
   "checkForBreaches": {
     "message": "Controlla se questa password è presente nei database dei data breach noti"
   },
@@ -6603,6 +6659,6 @@
     }
   },
   "dismiss": {
-    "message": "Dismiss"
+    "message": "Rifiuta"
   }
 }

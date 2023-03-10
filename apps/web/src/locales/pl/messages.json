@@ -5844,9 +5844,40 @@
     "message": "Wyświetl konto serwisowe",
     "description": "Action to view the details of a service account."
   },
+  "deleteServiceAccountDialogMessage": {
+    "message": "Usunięcie konta serwisowego $SERVICE_ACCOUNT$ jest trwałe i nieodwracalne.",
+    "placeholders": {
+      "service_account": {
+        "content": "$1",
+        "example": "Service account name"
+      }
+    }
+  },
+  "deleteServiceAccountsDialogMessage": {
+    "message": "Usuwanie kont serwisowego jest trwałe i nieodwracalne."
+  },
+  "deleteServiceAccountsConfirmMessage": {
+    "message": "Usuń $COUNT$ kont serwisowych",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "deleteServiceAccountToast": {
+    "message": "Konto serwisowe zostało usunięte"
+  },
+  "deleteServiceAccountsToast": {
+    "message": "Usunięto konta serwisowe"
+  },
   "searchServiceAccounts": {
     "message": "Szukaj kont serwisowych",
     "description": "Placeholder text for searching service accounts."
+  },
+  "editServiceAccount": {
+    "message": "Edytuj konto serwisowe",
+    "description": "Title for editing a service account."
   },
   "addProject": {
     "message": "Dodaj projekt",
@@ -5904,6 +5935,10 @@
   "serviceAccountCreated": {
     "message": "Utworzono konto serwisowe",
     "description": "Notifies that a new service account has been created"
+  },
+  "serviceAccountUpdated": {
+    "message": "Zaktualizowano konto serwisowe",
+    "description": "Notifies that a service account has been updated"
   },
   "newSaSelectAccess": {
     "message": "Wpisz lub wybierz projekty lub sekrety",
@@ -6568,6 +6603,27 @@
   },
   "secretsManagerEnable": {
     "message": "Włącz menedżer sekretów beta"
+  },
+  "saPeopleWarningTitle": {
+    "message": "Tokeny dostępu są nadal dostępne"
+  },
+  "saPeopleWarningMessage": {
+    "message": "Usuwanie osób z konta serwisowego nie usuwa tokenów dostępu. W celu zapewnienia najlepszej praktyki bezpieczeństwa zaleca się cofnięcie tokenów dostępu stworzonych przez osoby usunięte z konta serwisowego."
+  },
+  "smAccessRemovalWarningProjectTitle": {
+    "message": "Usuń dostęp do tego projektu"
+  },
+  "smAccessRemovalWarningProjectMessage": {
+    "message": "Ta akcja usunie Twój dostęp do projektu."
+  },
+  "smAccessRemovalWarningSaTitle": {
+    "message": "Usuń dostęp do tego konta serwisowego"
+  },
+  "smAccessRemovalWarningSaMessage": {
+    "message": "Ta akcja usunie Twój dostęp do konta serwisowego."
+  },
+  "removeAccess": {
+    "message": "Usuń dostęp"
   },
   "checkForBreaches": {
     "message": "Sprawdź czy to hasło występowało w znanych wyciekach danych"

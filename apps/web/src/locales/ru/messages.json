@@ -5844,9 +5844,40 @@
     "message": "Просмотреть сервисный аккаунт",
     "description": "Action to view the details of a service account."
   },
+  "deleteServiceAccountDialogMessage": {
+    "message": "Удаление сервисного аккаунта $SERVICE_ACCOUNT$ окончательно и необратимо.",
+    "placeholders": {
+      "service_account": {
+        "content": "$1",
+        "example": "Service account name"
+      }
+    }
+  },
+  "deleteServiceAccountsDialogMessage": {
+    "message": "Удаление сервисных аккаунтов окончательно и необратимо."
+  },
+  "deleteServiceAccountsConfirmMessage": {
+    "message": "Сервисных аккаунтов к удалению: $COUNT$",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "deleteServiceAccountToast": {
+    "message": "Сервисный аккаунт удален"
+  },
+  "deleteServiceAccountsToast": {
+    "message": "Сервисные аккаунты удалены"
+  },
   "searchServiceAccounts": {
     "message": "Поиск сервисных аккаунтов",
     "description": "Placeholder text for searching service accounts."
+  },
+  "editServiceAccount": {
+    "message": "Изменить сервисный аккаунт",
+    "description": "Title for editing a service account."
   },
   "addProject": {
     "message": "Добавить проект",
@@ -5904,6 +5935,10 @@
   "serviceAccountCreated": {
     "message": "Сервисный аккаунт создан",
     "description": "Notifies that a new service account has been created"
+  },
+  "serviceAccountUpdated": {
+    "message": "Сервисный аккаунт изменен",
+    "description": "Notifies that a service account has been updated"
   },
   "newSaSelectAccess": {
     "message": "Введите или выберите проекты или секреты",
@@ -6568,6 +6603,27 @@
   },
   "secretsManagerEnable": {
     "message": "Менеджер секретов Бета"
+  },
+  "saPeopleWarningTitle": {
+    "message": "Токены доступа по-прежнему доступны"
+  },
+  "saPeopleWarningMessage": {
+    "message": "Удаление пользователей из сервисного аккаунта не приводит к удалению созданных ими токенов доступа. В целях обеспечения безопасности рекомендуется отзывать токены доступа, созданные пользователями, удаленными из сервисного аккаунта."
+  },
+  "smAccessRemovalWarningProjectTitle": {
+    "message": "Удалить доступ к этому проекту"
+  },
+  "smAccessRemovalWarningProjectMessage": {
+    "message": "Это действие лишит вас доступа к проекту."
+  },
+  "smAccessRemovalWarningSaTitle": {
+    "message": "Удалить доступ к этому сервисному аккаунту"
+  },
+  "smAccessRemovalWarningSaMessage": {
+    "message": "Это действие лишит вас доступа к сервисному аккаунту."
+  },
+  "removeAccess": {
+    "message": "Удалить доступ"
   },
   "checkForBreaches": {
     "message": "Проверьте известные случаи утечки данных для этого пароля"

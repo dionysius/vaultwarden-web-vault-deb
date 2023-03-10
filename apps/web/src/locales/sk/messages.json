@@ -5844,9 +5844,40 @@
     "message": "View service account",
     "description": "Action to view the details of a service account."
   },
+  "deleteServiceAccountDialogMessage": {
+    "message": "Deleting service account $SERVICE_ACCOUNT$ is permanent and irreversible.",
+    "placeholders": {
+      "service_account": {
+        "content": "$1",
+        "example": "Service account name"
+      }
+    }
+  },
+  "deleteServiceAccountsDialogMessage": {
+    "message": "Deleting service accounts is permanent and irreversible."
+  },
+  "deleteServiceAccountsConfirmMessage": {
+    "message": "Delete $COUNT$ service accounts",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "deleteServiceAccountToast": {
+    "message": "The service account have been deleted"
+  },
+  "deleteServiceAccountsToast": {
+    "message": "Service accounts deleted"
+  },
   "searchServiceAccounts": {
     "message": "Search service accounts",
     "description": "Placeholder text for searching service accounts."
+  },
+  "editServiceAccount": {
+    "message": "Edit service account",
+    "description": "Title for editing a service account."
   },
   "addProject": {
     "message": "Add project",
@@ -5904,6 +5935,10 @@
   "serviceAccountCreated": {
     "message": "Service account created",
     "description": "Notifies that a new service account has been created"
+  },
+  "serviceAccountUpdated": {
+    "message": "Service account updated",
+    "description": "Notifies that a service account has been updated"
   },
   "newSaSelectAccess": {
     "message": "Type or select projects or secrets",
@@ -6568,6 +6603,27 @@
   },
   "secretsManagerEnable": {
     "message": "Enable Secrets Manager Beta"
+  },
+  "saPeopleWarningTitle": {
+    "message": "Prístupové tokeny sú naďalej dostupné"
+  },
+  "saPeopleWarningMessage": {
+    "message": "Odobranie ľudí zo služobného konta neodstráni prístupové tokeny, ktoré vytvorili. Z ohľadom na dobré bezpečnostné praktiky odporúčame zrušiť prístupové tokeny vytvorené ľudmi ktorí boli odobraní zo služobného konta."
+  },
+  "smAccessRemovalWarningProjectTitle": {
+    "message": "Odstrániť prístup k tomuto projektu"
+  },
+  "smAccessRemovalWarningProjectMessage": {
+    "message": "Táto akcia odstráni váš prístup k projektu."
+  },
+  "smAccessRemovalWarningSaTitle": {
+    "message": "Odstrániť prístup k tomuto služobnému kontu"
+  },
+  "smAccessRemovalWarningSaMessage": {
+    "message": "Táto akcia odstráni váš prístup k služobnému kontu."
+  },
+  "removeAccess": {
+    "message": "Odstrániť prístup"
   },
   "checkForBreaches": {
     "message": "Skontrolovať známe úniky údajov pre toto heslo"

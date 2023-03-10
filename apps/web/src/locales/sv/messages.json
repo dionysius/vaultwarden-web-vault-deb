@@ -658,7 +658,7 @@
     "message": "Huvudlösenordet är det lösenord som du använder för att komma åt ditt valv. Det är väldigt viktigt att du inte glömmer bort ditt huvudlösenord, eftersom det inte går att återställa lösenordet ifall du skulle glömma bort det."
   },
   "masterPassImportant": {
-    "message": "Huvudlösenordet kan inte återställas om du glömmer det!"
+    "message": "Ditt huvudlösenord kan inte återställas om du glömmer det!"
   },
   "masterPassHintDesc": {
     "message": "En huvudlösenordsledtråd kan hjälpa dig att komma ihåg ditt lösenord om du glömmer bort det."
@@ -697,7 +697,7 @@
     "message": "Huvudlösenord måste anges igen."
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least $VALUE$ characters long.",
+    "message": "Huvudlösenordet måste vara minst $VALUE$ tecken långt.",
     "description": "The Master Password must be at least a specific number of characters long.",
     "placeholders": {
       "value": {
@@ -768,7 +768,7 @@
     "message": "Det finns inga användare att visa."
   },
   "noMembersInList": {
-    "message": "Det finns inga element att visa."
+    "message": "There are no members to list."
   },
   "noEventsInList": {
     "message": "Det finns inga händelser att visa."
@@ -3060,7 +3060,7 @@
     }
   },
   "confirmUsers": {
-    "message": "Bekräfta användare"
+    "message": "Bekräfta medlemmar"
   },
   "usersNeedConfirmed": {
     "message": "Du har användare som har accepterat sin inbjudan, men fortfarande måste bekräftas. Användarna har inte åtkomst till organisationen förrän de är bekräftade."
@@ -5844,9 +5844,40 @@
     "message": "View service account",
     "description": "Action to view the details of a service account."
   },
+  "deleteServiceAccountDialogMessage": {
+    "message": "Deleting service account $SERVICE_ACCOUNT$ is permanent and irreversible.",
+    "placeholders": {
+      "service_account": {
+        "content": "$1",
+        "example": "Service account name"
+      }
+    }
+  },
+  "deleteServiceAccountsDialogMessage": {
+    "message": "Deleting service accounts is permanent and irreversible."
+  },
+  "deleteServiceAccountsConfirmMessage": {
+    "message": "Delete $COUNT$ service accounts",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "deleteServiceAccountToast": {
+    "message": "The service account have been deleted"
+  },
+  "deleteServiceAccountsToast": {
+    "message": "Service accounts deleted"
+  },
   "searchServiceAccounts": {
     "message": "Search service accounts",
     "description": "Placeholder text for searching service accounts."
+  },
+  "editServiceAccount": {
+    "message": "Edit service account",
+    "description": "Title for editing a service account."
   },
   "addProject": {
     "message": "Lägg till projekt",
@@ -5904,6 +5935,10 @@
   "serviceAccountCreated": {
     "message": "Service account created",
     "description": "Notifies that a new service account has been created"
+  },
+  "serviceAccountUpdated": {
+    "message": "Service account updated",
+    "description": "Notifies that a service account has been updated"
   },
   "newSaSelectAccess": {
     "message": "Type or select projects or secrets",
@@ -6568,6 +6603,27 @@
   },
   "secretsManagerEnable": {
     "message": "Enable Secrets Manager Beta"
+  },
+  "saPeopleWarningTitle": {
+    "message": "Access tokens still available"
+  },
+  "saPeopleWarningMessage": {
+    "message": "Removing people from a service account does not remove the access tokens they created. For security best practice, it is recommended to revoke access tokens created by people removed from a service account."
+  },
+  "smAccessRemovalWarningProjectTitle": {
+    "message": "Remove access to this project"
+  },
+  "smAccessRemovalWarningProjectMessage": {
+    "message": "This action will remove your access to the project."
+  },
+  "smAccessRemovalWarningSaTitle": {
+    "message": "Remove access to this service account"
+  },
+  "smAccessRemovalWarningSaMessage": {
+    "message": "This action will remove your access to the service account."
+  },
+  "removeAccess": {
+    "message": "Remove access"
   },
   "checkForBreaches": {
     "message": "Check known data breaches for this password"

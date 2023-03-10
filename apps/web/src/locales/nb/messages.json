@@ -697,7 +697,7 @@
     "message": "Skriv inn hovedpassordet på nytt."
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least $VALUE$ characters long.",
+    "message": "Hovedpassordet må være minst $VALUE$ tegn.",
     "description": "The Master Password must be at least a specific number of characters long.",
     "placeholders": {
       "value": {
@@ -1165,17 +1165,17 @@
     }
   },
   "kdfMemory": {
-    "message": "KDF memory (MB)",
+    "message": "KDF-minne (MB)",
     "description": "Memory refers to computer memory (RAM). MB is short for megabytes."
   },
   "argon2Warning": {
-    "message": "Setting your KDF iterations, memory, and parallelism too high could result in poor performance when logging into (and unlocking) Bitwarden on slower or older devices. We recommend changing these individually in small increments and then test all of your devices."
+    "message": "Å velge for mange KDF-iterasjoner kan føre til dårlig ytelse når du logger inn (og låser opp) Bitwarden på enheter med tregere CPUer. Vi anbefaler at du øker verdien trinnvis for å deretter teste alle dine enheter."
   },
   "kdfParallelism": {
-    "message": "KDF parallelism"
+    "message": "KDF-parallellitet"
   },
   "argon2Desc": {
-    "message": "Higher KDF iterations, memory, and parallelism can help protect your master password from being brute forced by an attacker."
+    "message": "Høyere KDF-iterasjoner, minne og parallellitet kan hjelpe til med å beskytte hovedpassordet ditt fra å bli gjettet med rå kraft av en angriper."
   },
   "changeKdf": {
     "message": "Endre KDF"
@@ -1256,7 +1256,7 @@
     "message": "Dataene har blitt vellykket importert inn i hvelvet ditt."
   },
   "dataExportSuccess": {
-    "message": "Data successfully exported"
+    "message": "Data-eksporten var vellykket"
   },
   "importWarning": {
     "message": "Du importerer data til $ORGANIZATION$. Dataene kan deles med medlemmer av denne organisasjonen. Vil du fortsette?",
@@ -2065,7 +2065,7 @@
     "message": "Behandle abonnementet"
   },
   "launchCloudSubscription": {
-    "message": "Launch Cloud Subscription"
+    "message": "Start Sky-abonnement"
   },
   "storage": {
     "message": "Lagring"
@@ -5240,7 +5240,7 @@
     "message": "Rotasjon av faktureringssynkroniserings-token vil gjøre den forrige token ugyldig."
   },
   "selfHostingTitle": {
-    "message": "Self-hosting"
+    "message": "Selvhosting"
   },
   "selfHostingEnterpriseOrganizationSectionCopy": {
     "message": "For å konfigurere din organisasjon på egen server, må du laste opp din lisensfil. For å støtte gratis familie-planer og avanserte faktureringsmuligheter for din egen organisasjon må du sette opp faktureringssynkronisering."
@@ -5300,7 +5300,7 @@
     "message": "obligatorisk"
   },
   "characterMaximum": {
-    "message": "$MAX$ character maximum",
+    "message": "Maksimalt $MAX$ tegn",
     "placeholders": {
       "max": {
         "content": "$1",
@@ -5432,7 +5432,7 @@
     }
   },
   "awaitingSyncSingular": {
-    "message": "Token rotated $DAYS$ day ago. Update the billing sync token in your self-hosted organization settings.",
+    "message": "Token roterte for $DAYS$ dag siden. Oppdater faktureringsynk under self-hosted organisasjonsinnstillinger.",
     "placeholders": {
       "days": {
         "content": "$1",
@@ -5441,7 +5441,7 @@
     }
   },
   "awaitingSyncPlural": {
-    "message": "Token rotated $DAYS$ days ago. Update the billing sync token in your self-hosted organization settings.",
+    "message": "Token roterte for $DAYS$ dager siden. Oppdater faktureringsynk under self-hosted organisasjonsinnstillinger.",
     "placeholders": {
       "days": {
         "content": "$1",
@@ -5454,7 +5454,7 @@
     "Description": "Used as a prefix to indicate the last time a sync occured. Example \"Last sync 1968-11-16 00:00:00\""
   },
   "sponsorshipsSynced": {
-    "message": "Self-hosted sponsorships synced."
+    "message": "Selv-hosted sponsorater synkronisert."
   },
   "billingManagedByProvider": {
     "message": "Administrert av $PROVIDER$",
@@ -5678,7 +5678,7 @@
     "message": "Egendefinert farge"
   },
   "selectPlaceholder": {
-    "message": "-- Select --"
+    "message": "-- Velg --"
   },
   "multiSelectPlaceholder": {
     "message": "-- Skriv for å filtrere --"
@@ -5704,49 +5704,49 @@
     "message": "Skjul"
   },
   "projects": {
-    "message": "Projects",
+    "message": "Prosjekter",
     "description": "Description for the Projects field."
   },
   "lastEdited": {
-    "message": "Last edited",
+    "message": "Sist endret",
     "description": "The label for the date and time when a item was last edited."
   },
   "editSecret": {
-    "message": "Edit secret",
+    "message": "Rediger hemmelighet",
     "description": "Action to modify an existing secret."
   },
   "addSecret": {
-    "message": "Add secret",
+    "message": "Legg til hemmelighet",
     "description": "Action to create a new secret."
   },
   "copySecretName": {
-    "message": "Copy secret name",
+    "message": "Kopier hemmelighetsnavn",
     "description": "Action to copy the name of a secret to the system's clipboard."
   },
   "copySecretValue": {
-    "message": "Copy secret value",
+    "message": "Kopier hemmelighetsverdi",
     "description": "Action to copy the value of a secret to the system's clipboard."
   },
   "deleteSecret": {
-    "message": "Delete secret",
+    "message": "Slett hemmelighet",
     "description": "Action to delete a single secret from the system."
   },
   "deleteSecrets": {
-    "message": "Delete secrets",
+    "message": "Slett hemmeligheter",
     "description": "The action to delete multiple secrets from the system."
   },
   "hardDeleteSecret": {
-    "message": "Permanently delete secret"
+    "message": "Slett hemmelighet permanent"
   },
   "hardDeleteSecrets": {
-    "message": "Permanently delete secrets"
+    "message": "Slett hemmeligheter permanent"
   },
   "secretProjectAssociationDescription": {
-    "message": "Select projects that the secret will be associated with. Only organization users with access to these projects will be able to see the secret.",
+    "message": "Velg prosjekter som hemmeligheten skal tilknyttes. Bare organisasjonsbrukere med tilgang til disse prosjektene vil kunne se hemmeligheten.",
     "description": "A prompt explaining how secrets can be associated with projects."
   },
   "selectProjects": {
-    "message": "Select projects",
+    "message": "Velg prosjekter",
     "description": "A label for a type-to-filter input field to choose projects."
   },
   "searchProjects": {
@@ -5754,147 +5754,178 @@
     "description": "Label for the search bar used to search projects."
   },
   "project": {
-    "message": "Project",
+    "message": "Prosjekt",
     "description": "Similar to collections, projects can be used to group secrets."
   },
   "editProject": {
-    "message": "Edit project",
+    "message": "Rediger prosjekt",
     "description": "The action to modify an existing project."
   },
   "viewProject": {
-    "message": "View project",
+    "message": "Vis prosjekt",
     "description": "The action to view details of a project."
   },
   "deleteProject": {
-    "message": "Delete project",
+    "message": "Slett prosjekt",
     "description": "The action to delete a project from the system."
   },
   "deleteProjects": {
-    "message": "Delete projects",
+    "message": "Slett prosjekter",
     "description": "The action to delete multiple projects from the system."
   },
   "secret": {
-    "message": "Secret",
+    "message": "Hemmelighet",
     "description": "Label for a secret (key/value pair)"
   },
   "serviceAccount": {
-    "message": "Service account",
+    "message": "Tjenestekonto",
     "description": "A machine user which can be used to automate processes and access secrets in the system."
   },
   "serviceAccounts": {
-    "message": "Service accounts",
+    "message": "Tjenestekontoer",
     "description": "The title for the section that deals with service accounts."
   },
   "secrets": {
-    "message": "Secrets",
+    "message": "Hemmelighet",
     "description": "The title for the section of the application that deals with secrets."
   },
   "nameValuePair": {
-    "message": "Name/Value pair",
+    "message": "Navn/verdipar",
     "description": "Title for a name/ value pair. Secrets typically consist of a name and value pair."
   },
   "secretEdited": {
-    "message": "Secret edited",
+    "message": "Hemmelighet redigert",
     "description": "Notification for the successful editing of a secret."
   },
   "secretCreated": {
-    "message": "Secret created",
+    "message": "Hemmelighet opprettet",
     "description": "Notification for the successful creation of a secret."
   },
   "newSecret": {
-    "message": "New secret",
+    "message": "Ny hemmelighet",
     "description": "Title for creating a new secret."
   },
   "newServiceAccount": {
-    "message": "New service account",
+    "message": "Ny tjenestekonto",
     "description": "Title for creating a new service account."
   },
   "secretsNoItemsTitle": {
-    "message": "No secrets to show",
+    "message": "Ingen hemmeligheter å vise",
     "description": "Empty state to indicate that there are no secrets to display."
   },
   "secretsNoItemsMessage": {
-    "message": "To get started, add a new secret or import secrets.",
+    "message": "For å komme i gang, legg til en ny hemmelighet eller importer hemmeligheter.",
     "description": "Message to encourage the user to start adding secrets."
   },
   "secretsTrashNoItemsMessage": {
-    "message": "There are no secrets in the trash."
+    "message": "Det er ingen hemmeligheter i papirkurven."
   },
   "serviceAccountsNoItemsMessage": {
-    "message": "Create a new service account to get started automating secret access.",
+    "message": "Opprett en ny tjenestekonto for å komme i gang med å automatisere tilgang til hemmeligheter.",
     "description": "Message to encourage the user to start creating service accounts."
   },
   "serviceAccountsNoItemsTitle": {
-    "message": "Nothing to show yet",
+    "message": "Intet å vise ennå",
     "description": "Title to indicate that there are no service accounts to display."
   },
   "searchSecrets": {
-    "message": "Search secrets",
+    "message": "Søk hemmeligheter",
     "description": "Placeholder text for searching secrets."
   },
   "deleteServiceAccounts": {
-    "message": "Delete service accounts",
+    "message": "Slett tjenestekontoer",
     "description": "Title for the action to delete one or multiple service accounts."
   },
   "deleteServiceAccount": {
-    "message": "Delete service account",
+    "message": "Slett tjenestekonto",
     "description": "Title for the action to delete a single service account."
   },
   "viewServiceAccount": {
-    "message": "View service account",
+    "message": "Vis tjenestekonto",
     "description": "Action to view the details of a service account."
   },
+  "deleteServiceAccountDialogMessage": {
+    "message": "Sletting av tjenestekonto $SERVICE_ACCOUNT$ er permanent og ugjenkallelig.",
+    "placeholders": {
+      "service_account": {
+        "content": "$1",
+        "example": "Service account name"
+      }
+    }
+  },
+  "deleteServiceAccountsDialogMessage": {
+    "message": "Sletting av tjenestekontoer er permanent og ugjenkallelig."
+  },
+  "deleteServiceAccountsConfirmMessage": {
+    "message": "Slett $COUNT$ tjenestekontoer",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "deleteServiceAccountToast": {
+    "message": "Tjenestekontoen er slettet"
+  },
+  "deleteServiceAccountsToast": {
+    "message": "Tjenestekontoer slettet"
+  },
   "searchServiceAccounts": {
-    "message": "Search service accounts",
+    "message": "Søk etter tjenestekontoer",
     "description": "Placeholder text for searching service accounts."
   },
+  "editServiceAccount": {
+    "message": "Rediger tjenestekonto",
+    "description": "Title for editing a service account."
+  },
   "addProject": {
-    "message": "Add project",
+    "message": "Legg til prosjekt",
     "description": "Title for creating a new project."
   },
   "projectEdited": {
-    "message": "Project edited",
+    "message": "Prosjektet er redigert",
     "description": "Notification for the successful editing of a project."
   },
   "projectSaved": {
-    "message": "Project saved",
+    "message": "Prosjektet er lagret",
     "description": "Notification for the successful saving of a project."
   },
   "projectCreated": {
-    "message": "Project created",
+    "message": "Prosjekt opprettet",
     "description": "Notification for the successful creation of a project."
   },
   "projectName": {
-    "message": "Project name",
+    "message": "Prosjektnavn",
     "description": "Label for entering the name of a project."
   },
   "newProject": {
-    "message": "New project",
+    "message": "Nytt prosjekt",
     "description": "Title for creating a new project."
   },
   "softDeleteSecretWarning": {
-    "message": "Deleting secrets can affect existing integrations.",
+    "message": "Sletting av hemmeligheter kan påvirke eksisterende integrasjoner.",
     "description": "Warns that deleting secrets can have consequences on integrations"
   },
   "softDeletesSuccessToast": {
-    "message": "Secrets sent to trash",
+    "message": "Hemmeligheter sendt til papirkurven",
     "description": "Notifies that the selected secrets have been moved to the trash"
   },
   "hardDeleteSecretConfirmation": {
-    "message": "Are you sure you want to permanently delete this secret?"
+    "message": "Er du sikker på at du vil permanent slette denne hemmeligheten?"
   },
   "hardDeleteSecretsConfirmation": {
-    "message": "Are you sure you want to permanently delete these secrets?"
+    "message": "Er du sikker på at du vil permanent slette disse hemmelighetene?"
   },
   "hardDeletesSuccessToast": {
-    "message": "Secrets permanently deleted"
+    "message": "Hemmeligheter permanent slettet"
   },
   "smAccess": {
-    "message": "Access",
+    "message": "Tilgang",
     "description": "Title indicating what permissions a service account has"
   },
   "projectCommaSecret": {
-    "message": "Project, Secret",
+    "message": "Prosjekt, Hemmelighet",
     "description": ""
   },
   "serviceAccountName": {
@@ -5902,8 +5933,12 @@
     "description": "Label for the name of a service account"
   },
   "serviceAccountCreated": {
-    "message": "Service account created",
+    "message": "Tjenestekonto opprettet",
     "description": "Notifies that a new service account has been created"
+  },
+  "serviceAccountUpdated": {
+    "message": "Tjenestekonto oppdatert",
+    "description": "Notifies that a service account has been updated"
   },
   "newSaSelectAccess": {
     "message": "Skriv inn eller velg prosjekter eller hemmeligheter",
@@ -5986,7 +6021,7 @@
     "description": "Notification to be displayed when a secret is successfully sent to the trash."
   },
   "hardDeleteSuccessToast": {
-    "message": "Secret permanently deleted"
+    "message": "Hemmelighet permanent slettet"
   },
   "accessTokens": {
     "message": "Tilgangstoken",
@@ -6049,13 +6084,13 @@
     "description": "Invalidates / cancels an access token and as such removes access to secrets for the client application."
   },
   "revokeAccessTokens": {
-    "message": "Revoke access tokens"
+    "message": "Opphev tilgangstokener"
   },
   "revokeAccessTokenDesc": {
-    "message": "Revoking access tokens is permanent and irreversible."
+    "message": "Oppheving av tilgangstokener er permanent og irreversibelt."
   },
   "accessTokenRevoked": {
-    "message": "Access tokens revoked",
+    "message": "Tilgangtokener opphevet",
     "description": "Toast message after deleting one or multiple access tokens."
   },
   "submenu": {
@@ -6113,7 +6148,7 @@
     "message": "Samling"
   },
   "noCollection": {
-    "message": "No collection"
+    "message": "Ingen samling"
   },
   "canView": {
     "message": "Kan vise"
@@ -6146,64 +6181,64 @@
     "message": "Dette medlemmet har tilgang til og kan endre alle elementer."
   },
   "domainVerification": {
-    "message": "Domain verification"
+    "message": "Domenebekreftelse"
   },
   "newDomain": {
-    "message": "New domain"
+    "message": "Nytt domene"
   },
   "noDomains": {
-    "message": "No domains"
+    "message": "Ingen domener"
   },
   "noDomainsSubText": {
-    "message": "Connecting a domain allows members to skip the SSO identifier field during Login with SSO."
+    "message": "Tilslutning av et domene lar medlemmer hoppe over SSO-identifikasjonsfeltet under SSO-basert innlogging."
   },
   "verifyDomain": {
-    "message": "Verify domain"
+    "message": "Bekreft domene"
   },
   "reverifyDomain": {
-    "message": "Reverify domain"
+    "message": "Bekreft domene på nytt"
   },
   "copyDnsTxtRecord": {
-    "message": "Copy DNS TXT record"
+    "message": "Kopier DNS TXT oppføring"
   },
   "dnsTxtRecord": {
-    "message": "DNS TXT record"
+    "message": "DNS TXT oppføring"
   },
   "dnsTxtRecordInputHint": {
-    "message": "Copy and paste the TXT record into your DNS Provider."
+    "message": "Kopier og lim inn TXT oppføringen til din DNS-tilbyder."
   },
   "domainNameInputHint": {
-    "message": "Example: mydomain.com. Subdomains require separate entries to be verified."
+    "message": "Eksempel: mittdomene.com. Underdomener krever separate oppføringer for å bekreftes."
   },
   "automaticDomainVerification": {
-    "message": "Automatic Domain Verification"
+    "message": "Automatisk domenebekreftelse"
   },
   "automaticDomainVerificationProcess": {
-    "message": "Bitwarden will attempt to verify the domain 3 times during the first 72 hours. If the domain can’t be verified, check the DNS record in your host and manually verify. The domain will be removed from your organization in 7 days if it is not verified"
+    "message": "Bitwarden vil forsøke å verifisere domenet tre ganger de første 72 timene. Hvis domenet ikke kan bekreftes, sjekk DNS-oppføringen i verten og bekreft manuelt. Domenet vil bli fjernet fra organisasjonen din i løpet av syv dager hvis det ikke er bekreftet"
   },
   "invalidDomainNameMessage": {
-    "message": "Input is not a valid format. Format: mydomain.com. Subdomains require separate entries to be verified."
+    "message": "Input er ikke i et gyldig format. Format: mittdomene.com. Underdomener krever separate oppføringer for å bekreftes."
   },
   "removeDomain": {
-    "message": "Remove domain"
+    "message": "Fjern domene"
   },
   "removeDomainWarning": {
-    "message": "Removing a domain cannot be undone. Are you sure you want to continue?"
+    "message": "Fjerning av et domene kan ikke angres. Er du sikker på at du vil fortsette?"
   },
   "domainRemoved": {
-    "message": "Domain removed"
+    "message": "Domene fjernet"
   },
   "domainSaved": {
-    "message": "Domain saved"
+    "message": "Domene lagret"
   },
   "domainVerified": {
-    "message": "Domain verified"
+    "message": "Domene bekreftet"
   },
   "duplicateDomainError": {
-    "message": "You can't claim the same domain twice."
+    "message": "Du kan ikke kreve det samme domenet to ganger."
   },
   "domainNotAvailable": {
-    "message": "Someone else is using $DOMAIN$. Use a different domain to continue.",
+    "message": "Noen andre bruker $DOMAIN$. Bruk et annet domene for å fortsette.",
     "placeholders": {
       "DOMAIN": {
         "content": "$1",
@@ -6212,7 +6247,7 @@
     }
   },
   "domainNotVerified": {
-    "message": "$DOMAIN$ not verified. Check your DNS record.",
+    "message": "$DOMAIN$ ikke bekreftet. Sjekk DNS-oppføringen.",
     "placeholders": {
       "DOMAIN": {
         "content": "$1",
@@ -6221,28 +6256,28 @@
     }
   },
   "domainStatusVerified": {
-    "message": "Verified"
+    "message": "Bekreftet"
   },
   "domainStatusUnverified": {
-    "message": "Unverified"
+    "message": "Ubekreftet"
   },
   "domainNameTh": {
-    "message": "Name"
+    "message": "Navn"
   },
   "domainStatusTh": {
     "message": "Status"
   },
   "lastChecked": {
-    "message": "Last checked"
+    "message": "Sist sjekket"
   },
   "editDomain": {
-    "message": "Edit domain"
+    "message": "Rediger domene"
   },
   "domainFormInvalid": {
-    "message": "There are form errors that need your attention"
+    "message": "Det er feil i skjemaet som trenger din oppmerksomhet"
   },
   "addedDomain": {
-    "message": "Added domain $DOMAIN$",
+    "message": "Lagt til domene $DOMAIN$",
     "placeholders": {
       "DOMAIN": {
         "content": "$1",
@@ -6251,7 +6286,7 @@
     }
   },
   "removedDomain": {
-    "message": "Removed domain $DOMAIN$",
+    "message": "Fjernet domene $DOMAIN$",
     "placeholders": {
       "DOMAIN": {
         "content": "$1",
@@ -6260,7 +6295,7 @@
     }
   },
   "domainVerifiedEvent": {
-    "message": "$DOMAIN$ verified",
+    "message": "$DOMAIN$ bekreftet",
     "placeholders": {
       "DOMAIN": {
         "content": "$1",
@@ -6269,7 +6304,7 @@
     }
   },
   "domainNotVerifiedEvent": {
-    "message": "$DOMAIN$ not verified",
+    "message": "$DOMAIN$ ikke bekreftet",
     "placeholders": {
       "DOMAIN": {
         "content": "$1",
@@ -6299,16 +6334,16 @@
     "message": "Slettet"
   },
   "memberStatusFilter": {
-    "message": "Member status filter"
+    "message": "Medlemsstatusfilter"
   },
   "inviteMember": {
-    "message": "Invite member"
+    "message": "Inviter medlem"
   },
   "needsConfirmation": {
-    "message": "Needs confirmation"
+    "message": "Behøver bekreftelse"
   },
   "memberRole": {
-    "message": "Member role"
+    "message": "Medlemsrolle"
   },
   "moreFromBitwarden": {
     "message": "Mer fra Bitwarden"
@@ -6317,7 +6352,7 @@
     "message": "Bytt produkter"
   },
   "freeOrgInvLimitReachedManageBilling": {
-    "message": "Free organizations may have up to $SEATCOUNT$ members. Upgrade to a paid plan to invite more members.",
+    "message": "Gratis-organisasjoner kan ha opp til $SEATCOUNT$ medlemmer. Oppgrader til en betalt plan for å invitere flere medlemmer.",
     "placeholders": {
       "seatcount": {
         "content": "$1",
@@ -6326,7 +6361,7 @@
     }
   },
   "freeOrgInvLimitReachedNoManageBilling": {
-    "message": "Free organizations may have up to $SEATCOUNT$ members. Contact your organization owner to upgrade.",
+    "message": "Gratis-organisasjoner kan ha opptil $SEATCOUNT$ medlemmer. Kontakt organisasjonens eier for å oppgradere.",
     "placeholders": {
       "seatcount": {
         "content": "$1",
@@ -6335,7 +6370,7 @@
     }
   },
   "freeOrgMaxCollectionReachedManageBilling": {
-    "message": "Free organizations may have up to $COLLECTIONCOUNT$ collections. Upgrade to a paid plan to add more collections.",
+    "message": "Gratis-organisasjoner kan ha opp til $COLLECTIONCOUNT$ medlemmer. Oppgrader til en betalt plan for å invitere flere medlemmer.",
     "placeholders": {
       "COLLECTIONCOUNT": {
         "content": "$1",
@@ -6344,7 +6379,7 @@
     }
   },
   "freeOrgMaxCollectionReachedNoManageBilling": {
-    "message": "Free organizations may have up to $COLLECTIONCOUNT$ collections. Contact your organization owner to upgrade.",
+    "message": "Gratis-organisasjoner kan ha opptil $COLLECTIONCOUNT$ samlinger. Kontakt eieren av organisasjonen din for å oppgradere.",
     "placeholders": {
       "COLLECTIONCOUNT": {
         "content": "$1",
@@ -6356,13 +6391,13 @@
     "message": "Server"
   },
   "exportData": {
-    "message": "Export data"
+    "message": "Eksporter data"
   },
   "exportingOrganizationSecretDataTitle": {
-    "message": "Exporting Organization Secret Data"
+    "message": "Eksporterer organisasjonens hemmelige data"
   },
   "exportingOrganizationSecretDataDescription": {
-    "message": "Only the Secrets Manager data associated with $ORGANIZATION$ will be exported. Items in other products or from other organizations will not be included.",
+    "message": "Kun Secrets Manager-data tilknyttet $ORGANIZATION$ eksporteres. Elementer i andre produkter, eller fra andre organisasjoner, tas ikke med.",
     "placeholders": {
       "ORGANIZATION": {
         "content": "$1",
@@ -6371,46 +6406,46 @@
     }
   },
   "fileUpload": {
-    "message": "File upload"
+    "message": "Filopplasting"
   },
   "acceptedFormats": {
-    "message": "Accepted Formats:"
+    "message": "Aksepterte formater:"
   },
   "copyPasteImportContents": {
-    "message": "Copy & paste import contents:"
+    "message": "Kopier og lim inn import-innhold:"
   },
   "or": {
-    "message": "or"
+    "message": "eller"
   },
   "licenseAndBillingManagement": {
-    "message": "License and billing management"
+    "message": "Håndtering av lisens og fakturering"
   },
   "automaticSync": {
-    "message": "Automatic sync"
+    "message": "Automatisk synkronisering"
   },
   "manualUpload": {
-    "message": "Manual upload"
+    "message": "Manuell opplasting"
   },
   "manualUploadDesc": {
-    "message": "If you do not want to opt into billing sync, manually upload your license here."
+    "message": "Hvis du ikke ønsker å innmelding i faktureringssynkronisering kan du laste opp lisensen din her."
   },
   "syncLicense": {
-    "message": "Sync license"
+    "message": "Synkroniser lisens"
   },
   "licenseSyncSuccess": {
-    "message": "Successfully synced license"
+    "message": "Lisensen ble synkronisert"
   },
   "licenseUploadSuccess": {
-    "message": "Successfully uploaded license"
+    "message": "Lisensen ble lastet opp"
   },
   "lastLicenseSync": {
-    "message": "Last license sync"
+    "message": "Forrige lisenssynkronisering"
   },
   "billingSyncHelp": {
-    "message": "Billing Sync help"
+    "message": "Hjelp til fakturasynkronisering"
   },
   "uploadLicense": {
-    "message": "Upload license"
+    "message": "Last opp lisens"
   },
   "projectPeopleDescription": {
     "message": "Grant groups or people access to this project."
@@ -6569,23 +6604,44 @@
   "secretsManagerEnable": {
     "message": "Enable Secrets Manager Beta"
   },
+  "saPeopleWarningTitle": {
+    "message": "Access tokens still available"
+  },
+  "saPeopleWarningMessage": {
+    "message": "Removing people from a service account does not remove the access tokens they created. For security best practice, it is recommended to revoke access tokens created by people removed from a service account."
+  },
+  "smAccessRemovalWarningProjectTitle": {
+    "message": "Remove access to this project"
+  },
+  "smAccessRemovalWarningProjectMessage": {
+    "message": "This action will remove your access to the project."
+  },
+  "smAccessRemovalWarningSaTitle": {
+    "message": "Remove access to this service account"
+  },
+  "smAccessRemovalWarningSaMessage": {
+    "message": "This action will remove your access to the service account."
+  },
+  "removeAccess": {
+    "message": "Fjern tilgang"
+  },
   "checkForBreaches": {
-    "message": "Check known data breaches for this password"
+    "message": "Sjekk kjente databrudd for dette passordet"
   },
   "exposedMasterPassword": {
-    "message": "Exposed Master Password"
+    "message": "Kompromittert hovedpassord"
   },
   "exposedMasterPasswordDesc": {
-    "message": "Password found in a data breach. Use a unique password to protect your account. Are you sure you want to use an exposed password?"
+    "message": "Passord funnet i et databrudd. Bruk et unikt passord for å beskytte kontoen din. Er du sikker på at du vil bruke et utsatt passord?"
   },
   "weakAndExposedMasterPassword": {
-    "message": "Weak and Exposed Master Password"
+    "message": "Svakt og kompromittert hovedpassord"
   },
   "weakAndBreachedMasterPasswordDesc": {
-    "message": "Weak password identified and found in a data breach. Use a strong and unique password to protect your account. Are you sure you want to use this password?"
+    "message": "Svakt passord identifisert og funnet i et databrudd. Bruk et sterkt og unikt passord for å beskytte kontoen din. Er du sikker på at du vil bruke dette passordet?"
   },
   "characterMinimum": {
-    "message": "$LENGTH$ character minimum",
+    "message": "Minimum $LENGTH$ tegn",
     "placeholders": {
       "length": {
         "content": "$1",
@@ -6594,7 +6650,7 @@
     }
   },
   "masterPasswordMinimumlength": {
-    "message": "Master password must be at least $LENGTH$ characters long.",
+    "message": "Hovedpassordet må være minst $LENGTH$ tegn.",
     "placeholders": {
       "length": {
         "content": "$1",
@@ -6603,6 +6659,6 @@
     }
   },
   "dismiss": {
-    "message": "Dismiss"
+    "message": "Avvis"
   }
 }

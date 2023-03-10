@@ -5844,9 +5844,40 @@
     "message": "View service account",
     "description": "Action to view the details of a service account."
   },
+  "deleteServiceAccountDialogMessage": {
+    "message": "Deleting service account $SERVICE_ACCOUNT$ is permanent and irreversible.",
+    "placeholders": {
+      "service_account": {
+        "content": "$1",
+        "example": "Service account name"
+      }
+    }
+  },
+  "deleteServiceAccountsDialogMessage": {
+    "message": "Deleting service accounts is permanent and irreversible."
+  },
+  "deleteServiceAccountsConfirmMessage": {
+    "message": "Delete $COUNT$ service accounts",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "deleteServiceAccountToast": {
+    "message": "The service account have been deleted"
+  },
+  "deleteServiceAccountsToast": {
+    "message": "Service accounts deleted"
+  },
   "searchServiceAccounts": {
     "message": "Search service accounts",
     "description": "Placeholder text for searching service accounts."
+  },
+  "editServiceAccount": {
+    "message": "Edit service account",
+    "description": "Title for editing a service account."
   },
   "addProject": {
     "message": "Добавяне на проект",
@@ -5904,6 +5935,10 @@
   "serviceAccountCreated": {
     "message": "Service account created",
     "description": "Notifies that a new service account has been created"
+  },
+  "serviceAccountUpdated": {
+    "message": "Service account updated",
+    "description": "Notifies that a service account has been updated"
   },
   "newSaSelectAccess": {
     "message": "Пишете тук или изберете проекти или тайни",
@@ -6568,6 +6603,27 @@
   },
   "secretsManagerEnable": {
     "message": "Включване на управлението на тайни (Бета)"
+  },
+  "saPeopleWarningTitle": {
+    "message": "Идентификаторите за достъп все още са налични"
+  },
+  "saPeopleWarningMessage": {
+    "message": "Removing people from a service account does not remove the access tokens they created. For security best practice, it is recommended to revoke access tokens created by people removed from a service account."
+  },
+  "smAccessRemovalWarningProjectTitle": {
+    "message": "Премахване на достъпа до този проект"
+  },
+  "smAccessRemovalWarningProjectMessage": {
+    "message": "Това действие ще премахне достъпа Ви до проекта."
+  },
+  "smAccessRemovalWarningSaTitle": {
+    "message": "Remove access to this service account"
+  },
+  "smAccessRemovalWarningSaMessage": {
+    "message": "This action will remove your access to the service account."
+  },
+  "removeAccess": {
+    "message": "Премахване на достъпа"
   },
   "checkForBreaches": {
     "message": "Проверяване в известните случаи на изтекли данни за тази парола"

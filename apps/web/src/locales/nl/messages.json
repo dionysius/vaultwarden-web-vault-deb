@@ -5844,9 +5844,40 @@
     "message": "Bekijk service account",
     "description": "Action to view the details of a service account."
   },
+  "deleteServiceAccountDialogMessage": {
+    "message": "Het verwijderen van serviceaccount $SERVICE_ACCOUNT$ is definitief en onomkeerbaar.",
+    "placeholders": {
+      "service_account": {
+        "content": "$1",
+        "example": "Service account name"
+      }
+    }
+  },
+  "deleteServiceAccountsDialogMessage": {
+    "message": "Het verwijderen van serviceaccounts is definitief en onomkeerbaar."
+  },
+  "deleteServiceAccountsConfirmMessage": {
+    "message": "$COUNT$ serviceaccounts verwijderen",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "deleteServiceAccountToast": {
+    "message": "Het serviceaccount is verwijderd"
+  },
+  "deleteServiceAccountsToast": {
+    "message": "Serviceaccounts verwijderd"
+  },
   "searchServiceAccounts": {
     "message": "Zoek service account",
     "description": "Placeholder text for searching service accounts."
+  },
+  "editServiceAccount": {
+    "message": "Bewerk serviceaccount",
+    "description": "Title for editing a service account."
   },
   "addProject": {
     "message": "Project toevoegen",
@@ -5904,6 +5935,10 @@
   "serviceAccountCreated": {
     "message": "Service account aangemaakt",
     "description": "Notifies that a new service account has been created"
+  },
+  "serviceAccountUpdated": {
+    "message": "Serviceaccount bijgewerkt",
+    "description": "Notifies that a service account has been updated"
   },
   "newSaSelectAccess": {
     "message": "Typ of selecteer projecten of geheimen",
@@ -6568,6 +6603,27 @@
   },
   "secretsManagerEnable": {
     "message": "Secrets Manager Bèta inschakelen"
+  },
+  "saPeopleWarningTitle": {
+    "message": "Toegangstokens nog beschikbaar"
+  },
+  "saPeopleWarningMessage": {
+    "message": "Het verwijderen van mensen uit een serviceaccount verwijdert de door hen aangemaakte toegangstokens niet. Voor de veiligheid kun je het beste de toegangstokens die zijn gemaakt door mensen die zijn verwijderd uit een serviceaccount intrekken."
+  },
+  "smAccessRemovalWarningProjectTitle": {
+    "message": "Toegang tot dit project verwijderen"
+  },
+  "smAccessRemovalWarningProjectMessage": {
+    "message": "Deze actie verwijdert je toegang tot het project."
+  },
+  "smAccessRemovalWarningSaTitle": {
+    "message": "Verwijder toegang tot dit serviceaccount"
+  },
+  "smAccessRemovalWarningSaMessage": {
+    "message": "Deze actie verwijdert je toegang tot het serviceaccount."
+  },
+  "removeAccess": {
+    "message": "Toegang verwijderen"
   },
   "checkForBreaches": {
     "message": "Check known data breaches for this password"

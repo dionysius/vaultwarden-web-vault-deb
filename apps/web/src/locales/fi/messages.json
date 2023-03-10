@@ -5844,9 +5844,40 @@
     "message": "Näytä palvelutili",
     "description": "Action to view the details of a service account."
   },
+  "deleteServiceAccountDialogMessage": {
+    "message": "Palvelutilin $SERVICE_ACCOUNT$ poisto on pysyvää, eikä sitä ole mahdollista perua.",
+    "placeholders": {
+      "service_account": {
+        "content": "$1",
+        "example": "Service account name"
+      }
+    }
+  },
+  "deleteServiceAccountsDialogMessage": {
+    "message": "Palvelutilien poisto on pysyvää, eikä sitä ole mahdollista perua."
+  },
+  "deleteServiceAccountsConfirmMessage": {
+    "message": "Poista $COUNT$ palvelutiliä",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "deleteServiceAccountToast": {
+    "message": "Palvelutili on poistettu"
+  },
+  "deleteServiceAccountsToast": {
+    "message": "Palvelutilit on poistettu"
+  },
   "searchServiceAccounts": {
     "message": "Etsi palvelutileistä",
     "description": "Placeholder text for searching service accounts."
+  },
+  "editServiceAccount": {
+    "message": "Muokkaa palvelutiliä",
+    "description": "Title for editing a service account."
   },
   "addProject": {
     "message": "Lisää projekti",
@@ -5904,6 +5935,10 @@
   "serviceAccountCreated": {
     "message": "Palvelutili luotiin",
     "description": "Notifies that a new service account has been created"
+  },
+  "serviceAccountUpdated": {
+    "message": "Palvelutili päivitettiin",
+    "description": "Notifies that a service account has been updated"
   },
   "newSaSelectAccess": {
     "message": "Syötä tai valitse projekteja tai salaisuuksia",
@@ -6568,6 +6603,27 @@
   },
   "secretsManagerEnable": {
     "message": "Ota Salaisuushallinta Beta käyttöön"
+  },
+  "saPeopleWarningTitle": {
+    "message": "Käyttötunnisteet eivät vieläkään ole käytettävissä"
+  },
+  "saPeopleWarningMessage": {
+    "message": "Henkilöiden poisto palvelutililtä ei poista heidän luomiaan pääsytunnisteita. Parasta suojauskäytäntöä varten on suositeltavaa mitätöidä palvelutililtä poistettujen henkilöiden luomat tunnukset."
+  },
+  "smAccessRemovalWarningProjectTitle": {
+    "message": "Poista projektin käyttöoikeus"
+  },
+  "smAccessRemovalWarningProjectMessage": {
+    "message": "Toiminto poistaa käyttöoikeutesi projektiin."
+  },
+  "smAccessRemovalWarningSaTitle": {
+    "message": "Poista palvelutilin käyttöoikeus"
+  },
+  "smAccessRemovalWarningSaMessage": {
+    "message": "Toiminto poistaa käyttöoikeutesi palvelutiliin."
+  },
+  "removeAccess": {
+    "message": "Poista käyttöoikeus"
   },
   "checkForBreaches": {
     "message": "Tarkasta esiintyykö salasanaa tunnetuissa tietovuodoissa"

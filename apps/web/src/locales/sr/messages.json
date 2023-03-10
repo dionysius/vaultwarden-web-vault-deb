@@ -5844,9 +5844,40 @@
     "message": "View service account",
     "description": "Action to view the details of a service account."
   },
+  "deleteServiceAccountDialogMessage": {
+    "message": "Брисање налога услуге $SERVICE_ACCOUNT$ је трајно и неповратно.",
+    "placeholders": {
+      "service_account": {
+        "content": "$1",
+        "example": "Service account name"
+      }
+    }
+  },
+  "deleteServiceAccountsDialogMessage": {
+    "message": "Брисање услужних налога је трајно и неповратно."
+  },
+  "deleteServiceAccountsConfirmMessage": {
+    "message": "Брисање $COUNT$ сервисна рачуна",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "deleteServiceAccountToast": {
+    "message": "Услужни налог избрисан"
+  },
+  "deleteServiceAccountsToast": {
+    "message": "Услужни налог избрисан"
+  },
   "searchServiceAccounts": {
     "message": "Search service accounts",
     "description": "Placeholder text for searching service accounts."
+  },
+  "editServiceAccount": {
+    "message": "Уредити услужни налог",
+    "description": "Title for editing a service account."
   },
   "addProject": {
     "message": "Додај пројекат",
@@ -5904,6 +5935,10 @@
   "serviceAccountCreated": {
     "message": "Service account created",
     "description": "Notifies that a new service account has been created"
+  },
+  "serviceAccountUpdated": {
+    "message": "Услужни налог ажуриран",
+    "description": "Notifies that a service account has been updated"
   },
   "newSaSelectAccess": {
     "message": "Type or select projects or secrets",
@@ -6568,6 +6603,27 @@
   },
   "secretsManagerEnable": {
     "message": "Омогућити Secrets Manager Бета"
+  },
+  "saPeopleWarningTitle": {
+    "message": "Приступни токени су и даље доступни"
+  },
+  "saPeopleWarningMessage": {
+    "message": "Уклањање људи са налога услуге не уклања приступне токене које су креирали. Ради најбоље безбедносне праксе, препоручује се да опозовете приступне токене које су креирали људи уклоњени са налога услуге."
+  },
+  "smAccessRemovalWarningProjectTitle": {
+    "message": "Уклоните приступ овом пројекту"
+  },
+  "smAccessRemovalWarningProjectMessage": {
+    "message": "Ова радња ће уклонити ваш приступ пројекту."
+  },
+  "smAccessRemovalWarningSaTitle": {
+    "message": "Уклоните приступ овом налогу услуге"
+  },
+  "smAccessRemovalWarningSaMessage": {
+    "message": "Ова радња ће вам уклонити приступ налогу услуге."
+  },
+  "removeAccess": {
+    "message": "Уклони приступ"
   },
   "checkForBreaches": {
     "message": "Проверите познате упада података за ову лозинку"

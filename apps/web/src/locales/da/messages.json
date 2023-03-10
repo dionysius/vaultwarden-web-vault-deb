@@ -5844,9 +5844,40 @@
     "message": "Vis tjenestekonto",
     "description": "Action to view the details of a service account."
   },
+  "deleteServiceAccountDialogMessage": {
+    "message": "Sletning af tjenestekonto $SERVICE_ACCOUNT$ er permanent og irreversibel.",
+    "placeholders": {
+      "service_account": {
+        "content": "$1",
+        "example": "Service account name"
+      }
+    }
+  },
+  "deleteServiceAccountsDialogMessage": {
+    "message": "Sletning af tjenestekonti er permanent og irreversibel."
+  },
+  "deleteServiceAccountsConfirmMessage": {
+    "message": "Slet $COUNT$ tjenestekonti",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "deleteServiceAccountToast": {
+    "message": "Tjenestekonto slettet"
+  },
+  "deleteServiceAccountsToast": {
+    "message": "Tjenestekonti slettet"
+  },
   "searchServiceAccounts": {
     "message": "Find tjenestekonti",
     "description": "Placeholder text for searching service accounts."
+  },
+  "editServiceAccount": {
+    "message": "Redigere tjenestekonto",
+    "description": "Title for editing a service account."
   },
   "addProject": {
     "message": "Tilføj projekt",
@@ -5904,6 +5935,10 @@
   "serviceAccountCreated": {
     "message": "Tjenestekonto oprettet",
     "description": "Notifies that a new service account has been created"
+  },
+  "serviceAccountUpdated": {
+    "message": "Tjenestekonto opdateret",
+    "description": "Notifies that a service account has been updated"
   },
   "newSaSelectAccess": {
     "message": "Angiv/vælg projekter eller hemmeligheder",
@@ -6568,6 +6603,27 @@
   },
   "secretsManagerEnable": {
     "message": "Aktivér Secrets Manager Beta"
+  },
+  "saPeopleWarningTitle": {
+    "message": "Adgangstokener stadig tilgængelige"
+  },
+  "saPeopleWarningMessage": {
+    "message": "Fjernelse af personer fra en tjenestekonto fjerner ikke deres oprettede adgangstokener. For bedste sikkerhedspraksis anbefales ophævelse af adgangtokener oprettet af personer fjernet fra en tjenestekonto."
+  },
+  "smAccessRemovalWarningProjectTitle": {
+    "message": "Fjern adgang til dette projekt"
+  },
+  "smAccessRemovalWarningProjectMessage": {
+    "message": "Denne handling fjerner din projektadgang."
+  },
+  "smAccessRemovalWarningSaTitle": {
+    "message": "Fjern adgang til denne tjenestekonto"
+  },
+  "smAccessRemovalWarningSaMessage": {
+    "message": "Denne handling fjerner din tjenestekontoadgang."
+  },
+  "removeAccess": {
+    "message": "Fjern adgang"
   },
   "checkForBreaches": {
     "message": "Tjek kendte datalæk for denne adgangskode"

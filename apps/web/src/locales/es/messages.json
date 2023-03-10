@@ -5844,9 +5844,40 @@
     "message": "Ver cuenta de servicio",
     "description": "Action to view the details of a service account."
   },
+  "deleteServiceAccountDialogMessage": {
+    "message": "Eliminar cuenta de servicio $SERVICE_ACCOUNT$ es permanente e irreversible.",
+    "placeholders": {
+      "service_account": {
+        "content": "$1",
+        "example": "Service account name"
+      }
+    }
+  },
+  "deleteServiceAccountsDialogMessage": {
+    "message": "Eliminar la cuenta de servicio $Service_ACCOUNT$ es permanente e irreversible."
+  },
+  "deleteServiceAccountsConfirmMessage": {
+    "message": "Eliminar $COUNT$ cuentas de servicio",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "deleteServiceAccountToast": {
+    "message": "La cuenta de servicio ha sido eliminada"
+  },
+  "deleteServiceAccountsToast": {
+    "message": "Cuentas de servicio eliminadas"
+  },
   "searchServiceAccounts": {
     "message": "Buscar cuentas de servicio",
     "description": "Placeholder text for searching service accounts."
+  },
+  "editServiceAccount": {
+    "message": "Editar cuenta de servicio",
+    "description": "Title for editing a service account."
   },
   "addProject": {
     "message": "Añadir proyecto",
@@ -5904,6 +5935,10 @@
   "serviceAccountCreated": {
     "message": "Cuenta de servicio creada",
     "description": "Notifies that a new service account has been created"
+  },
+  "serviceAccountUpdated": {
+    "message": "Cuenta de servicio actualizada",
+    "description": "Notifies that a service account has been updated"
   },
   "newSaSelectAccess": {
     "message": "Escriba o seleccione proyectos o secretos",
@@ -6568,6 +6603,27 @@
   },
   "secretsManagerEnable": {
     "message": "Habilitar Administrador Secrets Beta"
+  },
+  "saPeopleWarningTitle": {
+    "message": "Tokens de acceso todavía disponibles"
+  },
+  "saPeopleWarningMessage": {
+    "message": "Removing people from a service account does not remove the access tokens they created. For security best practice, it is recommended to revoke access tokens created by people removed from a service account."
+  },
+  "smAccessRemovalWarningProjectTitle": {
+    "message": "Remove access to this project"
+  },
+  "smAccessRemovalWarningProjectMessage": {
+    "message": "This action will remove your access to the project."
+  },
+  "smAccessRemovalWarningSaTitle": {
+    "message": "Remove access to this service account"
+  },
+  "smAccessRemovalWarningSaMessage": {
+    "message": "This action will remove your access to the service account."
+  },
+  "removeAccess": {
+    "message": "Remove access"
   },
   "checkForBreaches": {
     "message": "Comprobar filtración de datos conocidas para esta contraseña"

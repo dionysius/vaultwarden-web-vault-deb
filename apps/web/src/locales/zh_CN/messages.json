@@ -309,7 +309,7 @@
     "message": "搜索成员"
   },
   "searchGroups": {
-    "message": "Search groups"
+    "message": "搜索群组"
   },
   "allItems": {
     "message": "所有项目"
@@ -5594,7 +5594,7 @@
     }
   },
   "multipleInputEmails": {
-    "message": "1 or more emails are invalid"
+    "message": "一个或多个电子邮件无效"
   },
   "tooManyEmails": {
     "message": "You can only submit up to $COUNT$ emails at a time",
@@ -5844,9 +5844,40 @@
     "message": "查看服务账户",
     "description": "Action to view the details of a service account."
   },
+  "deleteServiceAccountDialogMessage": {
+    "message": "Deleting service account $SERVICE_ACCOUNT$ is permanent and irreversible.",
+    "placeholders": {
+      "service_account": {
+        "content": "$1",
+        "example": "Service account name"
+      }
+    }
+  },
+  "deleteServiceAccountsDialogMessage": {
+    "message": "Deleting service accounts is permanent and irreversible."
+  },
+  "deleteServiceAccountsConfirmMessage": {
+    "message": "Delete $COUNT$ service accounts",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "deleteServiceAccountToast": {
+    "message": "The service account have been deleted"
+  },
+  "deleteServiceAccountsToast": {
+    "message": "服务账户已删除"
+  },
   "searchServiceAccounts": {
     "message": "搜索服务账户",
     "description": "Placeholder text for searching service accounts."
+  },
+  "editServiceAccount": {
+    "message": "编辑服务账户",
+    "description": "Title for editing a service account."
   },
   "addProject": {
     "message": "添加项目",
@@ -5904,6 +5935,10 @@
   "serviceAccountCreated": {
     "message": "服务帐户已创建",
     "description": "Notifies that a new service account has been created"
+  },
+  "serviceAccountUpdated": {
+    "message": "服务账户已更新",
+    "description": "Notifies that a service account has been updated"
   },
   "newSaSelectAccess": {
     "message": "输入或选择项目或机密",
@@ -6083,7 +6118,7 @@
     }
   },
   "groupInfo": {
-    "message": "Group info"
+    "message": "群组信息"
   },
   "editGroupMembersDesc": {
     "message": "Grant members access to the group's assigned collections."
@@ -6278,7 +6313,7 @@
     }
   },
   "membersColumnHeader": {
-    "message": "Member/Group"
+    "message": "成员/群组"
   },
   "groupAndMemberColumnHeader": {
     "message": "成员"
@@ -6287,7 +6322,7 @@
     "message": "Select groups and members"
   },
   "selectGroups": {
-    "message": "Select groups"
+    "message": "选择群组"
   },
   "userPermissionOverrideHelper": {
     "message": "Permissions set for a member will replace permissions set by that member's group"
@@ -6299,16 +6334,16 @@
     "message": "已删除"
   },
   "memberStatusFilter": {
-    "message": "Member status filter"
+    "message": "成员状态筛选"
   },
   "inviteMember": {
-    "message": "Invite member"
+    "message": "邀请成员"
   },
   "needsConfirmation": {
-    "message": "Needs confirmation"
+    "message": "需要确认"
   },
   "memberRole": {
-    "message": "Member role"
+    "message": "成员角色"
   },
   "moreFromBitwarden": {
     "message": "来自 Bitwarden 的更多产品"
@@ -6374,7 +6409,7 @@
     "message": "文件上传"
   },
   "acceptedFormats": {
-    "message": "Accepted Formats:"
+    "message": "可用格式："
   },
   "copyPasteImportContents": {
     "message": "复制并粘贴导入内容："
@@ -6443,7 +6478,7 @@
     "message": "Can read, write"
   },
   "groupSlashUser": {
-    "message": "Group/User"
+    "message": "群组/用户"
   },
   "lowKdfIterations": {
     "message": "低KDF 迭代数"
@@ -6527,7 +6562,7 @@
     "message": "Import secrets"
   },
   "getStarted": {
-    "message": "Get started"
+    "message": "开始使用"
   },
   "complete": {
     "message": "$COMPLETED$/$TOTAL$ Complete",
@@ -6568,6 +6603,27 @@
   },
   "secretsManagerEnable": {
     "message": "Enable Secrets Manager Beta"
+  },
+  "saPeopleWarningTitle": {
+    "message": "Access tokens still available"
+  },
+  "saPeopleWarningMessage": {
+    "message": "Removing people from a service account does not remove the access tokens they created. For security best practice, it is recommended to revoke access tokens created by people removed from a service account."
+  },
+  "smAccessRemovalWarningProjectTitle": {
+    "message": "Remove access to this project"
+  },
+  "smAccessRemovalWarningProjectMessage": {
+    "message": "This action will remove your access to the project."
+  },
+  "smAccessRemovalWarningSaTitle": {
+    "message": "Remove access to this service account"
+  },
+  "smAccessRemovalWarningSaMessage": {
+    "message": "This action will remove your access to the service account."
+  },
+  "removeAccess": {
+    "message": "Remove access"
   },
   "checkForBreaches": {
     "message": "检查已知的数据泄露是否包含此密码"

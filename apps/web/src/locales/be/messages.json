@@ -5844,9 +5844,40 @@
     "message": "Паглядзець сэрвісны ўліковы запіс",
     "description": "Action to view the details of a service account."
   },
+  "deleteServiceAccountDialogMessage": {
+    "message": "Выдаленне сэрвіснага ўліковага запісу $SERVICE_ACCOUNT$ з'яўляецца незваротным дзеяннем і яго нельга будзе адрабіць.",
+    "placeholders": {
+      "service_account": {
+        "content": "$1",
+        "example": "Service account name"
+      }
+    }
+  },
+  "deleteServiceAccountsDialogMessage": {
+    "message": "Выдаленне сэрвісных уліковых запісаў з'яўляецца незваротным дзеяннем і яго нельга будзе адрабіць."
+  },
+  "deleteServiceAccountsConfirmMessage": {
+    "message": "Выдаленне сэрвіснага ўліковага запісу $COUNT$",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "deleteServiceAccountToast": {
+    "message": "Сэрвісны ўліковы запіс быў выдалены"
+  },
+  "deleteServiceAccountsToast": {
+    "message": "Сэрвісны ўліковы запіс выдалены"
+  },
   "searchServiceAccounts": {
     "message": "Пошук сэрвісных уліковых запісаў",
     "description": "Placeholder text for searching service accounts."
+  },
+  "editServiceAccount": {
+    "message": "Edit service account",
+    "description": "Title for editing a service account."
   },
   "addProject": {
     "message": "Дадаць праект",
@@ -5904,6 +5935,10 @@
   "serviceAccountCreated": {
     "message": "Сэрвісныя ўліковыя запісы створаны",
     "description": "Notifies that a new service account has been created"
+  },
+  "serviceAccountUpdated": {
+    "message": "Service account updated",
+    "description": "Notifies that a service account has been updated"
   },
   "newSaSelectAccess": {
     "message": "Увядзіце або выберыце праекты (сакрэты)",
@@ -6568,6 +6603,27 @@
   },
   "secretsManagerEnable": {
     "message": "Уключыць кіраванне сакрэтамі (бэта-версія)"
+  },
+  "saPeopleWarningTitle": {
+    "message": "Токены доступу яшчэ даступны"
+  },
+  "saPeopleWarningMessage": {
+    "message": "Выдаленне людзей з сэрвіснага ўліковага запісу не прывядзе да выдалення токенаў доступу, якія яны стварылі. У мэтах бяспекі рэкамендуецца адклікаць токены доступу людзей, якія выдалены з сэрвіснага ўліковага запісу."
+  },
+  "smAccessRemovalWarningProjectTitle": {
+    "message": "Выдаліць доступ да гэтага праекта"
+  },
+  "smAccessRemovalWarningProjectMessage": {
+    "message": "Пры выкананні гэтага дзеяння вы будзе выдалены з праекта."
+  },
+  "smAccessRemovalWarningSaTitle": {
+    "message": "Выдаліць доступ да гэтага ўліковага запісу"
+  },
+  "smAccessRemovalWarningSaMessage": {
+    "message": "Пры выкананні гэтага дзеяння вы будзе выдалены з сэрвіснага ўліковага запісу."
+  },
+  "removeAccess": {
+    "message": "Выдаліць доступ"
   },
   "checkForBreaches": {
     "message": "Праверыць у вядомых уцечках даных для гэтага пароля"

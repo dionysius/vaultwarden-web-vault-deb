@@ -5844,9 +5844,40 @@
     "message": "Переглянути службовий обліковий запис",
     "description": "Action to view the details of a service account."
   },
+  "deleteServiceAccountDialogMessage": {
+    "message": "Видалення службового облікового запису $SERVICE_ACCOUNT$ – це остаточна й незворотна дія.",
+    "placeholders": {
+      "service_account": {
+        "content": "$1",
+        "example": "Service account name"
+      }
+    }
+  },
+  "deleteServiceAccountsDialogMessage": {
+    "message": "Видалення службових облікових записів – це остаточна й незворотна дія."
+  },
+  "deleteServiceAccountsConfirmMessage": {
+    "message": "Видалити $COUNT$ службових облікових записів",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "deleteServiceAccountToast": {
+    "message": "Службовий обліковий запис було видалено"
+  },
+  "deleteServiceAccountsToast": {
+    "message": "Службові облікові записи видалено"
+  },
   "searchServiceAccounts": {
     "message": "Пошук службових облікових записів",
     "description": "Placeholder text for searching service accounts."
+  },
+  "editServiceAccount": {
+    "message": "Редагувати службовий обліковий запис",
+    "description": "Title for editing a service account."
   },
   "addProject": {
     "message": "Додати проєкт",
@@ -5904,6 +5935,10 @@
   "serviceAccountCreated": {
     "message": "Службовий обліковий запис створено",
     "description": "Notifies that a new service account has been created"
+  },
+  "serviceAccountUpdated": {
+    "message": "Службовий обліковий запис оновлено",
+    "description": "Notifies that a service account has been updated"
   },
   "newSaSelectAccess": {
     "message": "Введіть або виберіть проєкти чи секрети",
@@ -6569,6 +6604,27 @@
   "secretsManagerEnable": {
     "message": "Увімкнути керування секретами (бета-версія)"
   },
+  "saPeopleWarningTitle": {
+    "message": "Токени доступу все ще доступні"
+  },
+  "saPeopleWarningMessage": {
+    "message": "Вилучення людей зі службового облікового запису не вилучає створені ними токени доступу. З міркувань безпеки рекомендовано відкликати токени доступу, створені людьми, вилученими зі службового облікового запису."
+  },
+  "smAccessRemovalWarningProjectTitle": {
+    "message": "Відкликати доступ до цього проєкту"
+  },
+  "smAccessRemovalWarningProjectMessage": {
+    "message": "Ця дія призведе до відкликання вашого доступу до цього проєкту."
+  },
+  "smAccessRemovalWarningSaTitle": {
+    "message": "Відкликати доступ до цього службового облікового запису"
+  },
+  "smAccessRemovalWarningSaMessage": {
+    "message": "Ця дія призведе до відкликання вашого доступу до цього службового облікового запису."
+  },
+  "removeAccess": {
+    "message": "Відкликати доступ"
+  },
   "checkForBreaches": {
     "message": "Перевірити відомі витоки даних для цього пароля"
   },
@@ -6603,6 +6659,6 @@
     }
   },
   "dismiss": {
-    "message": "Dismiss"
+    "message": "Відхилити"
   }
 }

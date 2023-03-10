@@ -5844,9 +5844,40 @@
     "message": "Hizmet Hesabını Görüntüle",
     "description": "Action to view the details of a service account."
   },
+  "deleteServiceAccountDialogMessage": {
+    "message": "$SERVICE_ACCOUNT$ hizmet hesabının silinmesi kalıcıdır ve geri alınamaz.",
+    "placeholders": {
+      "service_account": {
+        "content": "$1",
+        "example": "Service account name"
+      }
+    }
+  },
+  "deleteServiceAccountsDialogMessage": {
+    "message": "Hizmet hesaplarının silinmesi kalıcıdır ve geri alınamaz."
+  },
+  "deleteServiceAccountsConfirmMessage": {
+    "message": "$COUNT$ hizmet hesabını silin",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "deleteServiceAccountToast": {
+    "message": "Hizmet hesabı silindi"
+  },
+  "deleteServiceAccountsToast": {
+    "message": "Hizmet hesapları silindi"
+  },
   "searchServiceAccounts": {
     "message": "Hizmet Hesaplarını Ara",
     "description": "Placeholder text for searching service accounts."
+  },
+  "editServiceAccount": {
+    "message": "Hizmet hesabını düzenle",
+    "description": "Title for editing a service account."
   },
   "addProject": {
     "message": "Proje Ekle",
@@ -5904,6 +5935,10 @@
   "serviceAccountCreated": {
     "message": "Hizmet Hesabı Oluşturuldu",
     "description": "Notifies that a new service account has been created"
+  },
+  "serviceAccountUpdated": {
+    "message": "Hizmet hesabı güncellendi",
+    "description": "Notifies that a service account has been updated"
   },
   "newSaSelectAccess": {
     "message": "Projeleri veya Sırları Yazın veya Seçin",
@@ -6568,6 +6603,27 @@
   },
   "secretsManagerEnable": {
     "message": "Secrets Manager Beta'yı etkinleştir"
+  },
+  "saPeopleWarningTitle": {
+    "message": "Erişim belirteçleri hala kullanılabilir"
+  },
+  "saPeopleWarningMessage": {
+    "message": "Kişileri bir hizmet hesabından kaldırmak, oluşturdukları erişim belirteçlerini kaldırmaz. En iyi güvenlik uygulaması için, bir hizmet hesabından kaldırılan kişiler tarafından oluşturulan erişim belirteçlerinin iptal edilmesi önerilir."
+  },
+  "smAccessRemovalWarningProjectTitle": {
+    "message": "Bu projeye erişimi kaldır"
+  },
+  "smAccessRemovalWarningProjectMessage": {
+    "message": "Bu eylem, projeye erişiminizi kaldıracaktır."
+  },
+  "smAccessRemovalWarningSaTitle": {
+    "message": "Bu hizmet hesabına erişimi kaldır"
+  },
+  "smAccessRemovalWarningSaMessage": {
+    "message": "Bu işlem, hizmet hesabına erişiminizi kaldıracaktır."
+  },
+  "removeAccess": {
+    "message": "Erişimi kaldır"
   },
   "checkForBreaches": {
     "message": "Bu parola için bilinen veri ihlallerini kontrol edin"

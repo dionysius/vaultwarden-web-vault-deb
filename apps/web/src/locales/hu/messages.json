@@ -5844,9 +5844,40 @@
     "message": "Szolgáltatás fiók megtekintése",
     "description": "Action to view the details of a service account."
   },
+  "deleteServiceAccountDialogMessage": {
+    "message": "$SERVICE_ACCOUNT$ szolgáltatásfiók törlése végleges és visszafordíthatatlan.",
+    "placeholders": {
+      "service_account": {
+        "content": "$1",
+        "example": "Service account name"
+      }
+    }
+  },
+  "deleteServiceAccountsDialogMessage": {
+    "message": "A szolgáltatásfiókok törlése végleges és visszafordíthatatlan."
+  },
+  "deleteServiceAccountsConfirmMessage": {
+    "message": "$COUNT$ szolgáltatásfiókok törlése",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "deleteServiceAccountToast": {
+    "message": "A szolgáltatásfiók törlésre került."
+  },
+  "deleteServiceAccountsToast": {
+    "message": "A szolgáltatás fiókok törlésre kerültek."
+  },
   "searchServiceAccounts": {
     "message": "Szolgáltatás fiókok keresése",
     "description": "Placeholder text for searching service accounts."
+  },
+  "editServiceAccount": {
+    "message": "Szolgáltatás fiók szerkesztése",
+    "description": "Title for editing a service account."
   },
   "addProject": {
     "message": "Projekt hozzáadása",
@@ -5904,6 +5935,10 @@
   "serviceAccountCreated": {
     "message": "A szolgáltatás fiók létrejött.",
     "description": "Notifies that a new service account has been created"
+  },
+  "serviceAccountUpdated": {
+    "message": "A szolgáltatás fiók frissítésre került.",
+    "description": "Notifies that a service account has been updated"
   },
   "newSaSelectAccess": {
     "message": "Gépeljük be vagy válasszunk projekteket vagy titkos kódokat",
@@ -6568,6 +6603,27 @@
   },
   "secretsManagerEnable": {
     "message": "A Titkos kód kezelő engedélyezése"
+  },
+  "saPeopleWarningTitle": {
+    "message": "Az eléréi vezérjel még minig elérhető."
+  },
+  "saPeopleWarningMessage": {
+    "message": "Az emberek szolgáltatásfiókból való eltávolítása nem távolítja el az általuk létrehozott elérési vezérjeleket. A legjobb biztonsági gyakorlat érdekében javasolt visszavonni a szolgáltatásfiókból eltávolított személyek által létrehozott elérési vezérjeleket."
+  },
+  "smAccessRemovalWarningProjectTitle": {
+    "message": "A projekt elérés visszavonása"
+  },
+  "smAccessRemovalWarningProjectMessage": {
+    "message": "Ez a művelet eltávolítja a projekt elérési lehetőségét."
+  },
+  "smAccessRemovalWarningSaTitle": {
+    "message": "A fiók elérés visszavonása"
+  },
+  "smAccessRemovalWarningSaMessage": {
+    "message": "Ez a művelet eltávolítja a fiók elérési lehetőségét."
+  },
+  "removeAccess": {
+    "message": "Hozzáférés eltávolítása"
   },
   "checkForBreaches": {
     "message": "Az ehhez a jelszóhoz tartozó ismert adatvédelmi incidensek ellenőrzése"

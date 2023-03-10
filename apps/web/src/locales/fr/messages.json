@@ -5844,9 +5844,40 @@
     "message": "Afficher le Compte de Service",
     "description": "Action to view the details of a service account."
   },
+  "deleteServiceAccountDialogMessage": {
+    "message": "La suppression du compte de service $SERVICE_ACCOUNT$ est permanente et irréversible.",
+    "placeholders": {
+      "service_account": {
+        "content": "$1",
+        "example": "Service account name"
+      }
+    }
+  },
+  "deleteServiceAccountsDialogMessage": {
+    "message": "La suppression des comptes de service est permanente et irréversible."
+  },
+  "deleteServiceAccountsConfirmMessage": {
+    "message": "Supprimer les $COUNT$ comptes de service",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "deleteServiceAccountToast": {
+    "message": "Le compte de service a été supprimé"
+  },
+  "deleteServiceAccountsToast": {
+    "message": "Comptes de service supprimés"
+  },
   "searchServiceAccounts": {
     "message": "Rechercher des Comptes de Service",
     "description": "Placeholder text for searching service accounts."
+  },
+  "editServiceAccount": {
+    "message": "Éditer le compte de service",
+    "description": "Title for editing a service account."
   },
   "addProject": {
     "message": "Ajouter un Projet",
@@ -5904,6 +5935,10 @@
   "serviceAccountCreated": {
     "message": "Compte de Service créé",
     "description": "Notifies that a new service account has been created"
+  },
+  "serviceAccountUpdated": {
+    "message": "Compte de service mis à jour",
+    "description": "Notifies that a service account has been updated"
   },
   "newSaSelectAccess": {
     "message": "Tapez ou Sélectionnez des Projets ou des Secrets",
@@ -6568,6 +6603,27 @@
   },
   "secretsManagerEnable": {
     "message": "Activer le gestionnaire de secrets bêta"
+  },
+  "saPeopleWarningTitle": {
+    "message": "Jetons d'accès encore disponibles"
+  },
+  "saPeopleWarningMessage": {
+    "message": "Le retrait de personnes d'un compte de service ne supprime pas les jetons d'accès qu'ils ont créés. Pour les meilleures pratiques de sécurité, il est recommandé de révoquer les jetons d'accès créés par des personnes retirées d'un compte de service."
+  },
+  "smAccessRemovalWarningProjectTitle": {
+    "message": "Retirer l'accès à ce projet"
+  },
+  "smAccessRemovalWarningProjectMessage": {
+    "message": "Cette action retirera votre accès au projet."
+  },
+  "smAccessRemovalWarningSaTitle": {
+    "message": "Retirer l'accès à ce compte de service"
+  },
+  "smAccessRemovalWarningSaMessage": {
+    "message": "Cette action retirera votre accès au compte de service."
+  },
+  "removeAccess": {
+    "message": "Retirer l'accès"
   },
   "checkForBreaches": {
     "message": "Vérifier les brèches de données connues pour ce mot de passe"
