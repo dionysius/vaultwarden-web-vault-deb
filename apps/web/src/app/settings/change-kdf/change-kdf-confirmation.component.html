@@ -1,0 +1,50 @@
+<bit-dialog>
+  <span bitDialogTitle>
+    {{ "changeKdf" | i18n }}
+  </span>
+
+  <span bitDialogContent>
+    <bit-callout type="warning">{{ "changeKdfLoggedOutWarning" | i18n }}</bit-callout>
+    <form
+      id="form"
+      [formGroup]="form"
+      (ngSubmit)="submit()"
+      [appApiAction]="formPromise"
+      ngNativeValidate
+      autocomplete="off"
+    >
+      <div class="row">
+        <div class="col-12">
+          <bit-form-field class="tw-mb-1"
+            ><bit-label>{{ "masterPass" | i18n }}</bit-label>
+            <input
+              bitInput
+              type="password"
+              required
+              formControlName="masterPassword"
+              appAutofocus
+            />
+            <button
+              type="button"
+              bitSuffix
+              bitIconButton
+              bitPasswordInputToggle
+              [(toggled)]="showPassword"
+            ></button
+            ><bit-hint>
+              {{ "confirmIdentity" | i18n }}
+            </bit-hint></bit-form-field
+          >
+        </div>
+      </div>
+    </form>
+  </span>
+  <div bitDialogFooter class="tw-flex tw-flex-row tw-gap-2">
+    <button bitButton buttonType="primary" type="submit" [loading]="loading" form="form">
+      <span>{{ "changeKdf" | i18n }}</span>
+    </button>
+    <button bitButton buttonType="secondary" type="button" data-dismiss="modal">
+      {{ "cancel" | i18n }}
+    </button>
+  </div>
+</bit-dialog>

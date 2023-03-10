@@ -1,4 +1,6 @@
-import { Component, OnInit } from "@angular/core";
+import { DIALOG_DATA } from "@angular/cdk/dialog";
+import { Component, Inject } from "@angular/core";
+import { FormGroup, FormControl, Validators } from "@angular/forms";
 
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
@@ -8,28 +10,24 @@ import { MessagingService } from "@bitwarden/common/abstractions/messaging.servi
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { KdfConfig } from "@bitwarden/common/auth/models/domain/kdf-config";
-import {
-  DEFAULT_KDF_CONFIG,
-  DEFAULT_PBKDF2_ITERATIONS,
-  DEFAULT_ARGON2_ITERATIONS,
-  DEFAULT_ARGON2_MEMORY,
-  DEFAULT_ARGON2_PARALLELISM,
-  KdfType,
-} from "@bitwarden/common/enums/kdfType";
+import { KdfType } from "@bitwarden/common/enums/kdfType";
 import { KdfRequest } from "@bitwarden/common/models/request/kdf.request";
 
 @Component({
-  selector: "app-change-kdf",
-  templateUrl: "change-kdf.component.html",
+  selector: "app-change-kdf-confirmation",
+  templateUrl: "change-kdf-confirmation.component.html",
 })
-export class ChangeKdfComponent implements OnInit {
+export class ChangeKdfConfirmationComponent {
+  kdf: KdfType;
+  kdfConfig: KdfConfig;
+
+  form = new FormGroup({
+    masterPassword: new FormControl(null, Validators.required),
+  });
+  showPassword = false;
   masterPassword: string;
-  kdf = KdfType.PBKDF2_SHA256;
-  kdfConfig: KdfConfig = DEFAULT_KDF_CONFIG;
-  kdfType = KdfType;
-  kdfOptions: any[] = [];
   formPromise: Promise<any>;
-  recommendedPbkdf2Iterations = DEFAULT_PBKDF2_ITERATIONS;
+  loading = false;
 
   constructor(
     private apiService: ApiService,
@@ -37,21 +35,17 @@ export class ChangeKdfComponent implements OnInit {
     private platformUtilsService: PlatformUtilsService,
     private cryptoService: CryptoService,
     private messagingService: MessagingService,
+    private stateService: StateService,
     private logService: LogService,
-    private stateService: StateService
+    @Inject(DIALOG_DATA) params: { kdf: KdfType; kdfConfig: KdfConfig }
   ) {
-    this.kdfOptions = [
-      { name: "PBKDF2 SHA-256", value: KdfType.PBKDF2_SHA256 },
-      { name: "Argon2id", value: KdfType.Argon2id },
-    ];
-  }
-
-  async ngOnInit() {
-    this.kdf = await this.stateService.getKdfType();
-    this.kdfConfig = await this.stateService.getKdfConfig();
+    this.kdf = params.kdf;
+    this.kdfConfig = params.kdfConfig;
+    this.masterPassword = null;
   }
 
   async submit() {
+    this.loading = true;
     const hasEncKey = await this.cryptoService.hasEncKey();
     if (!hasEncKey) {
       this.platformUtilsService.showToast("error", null, this.i18nService.t("updateKey"));
@@ -69,41 +63,27 @@ export class ChangeKdfComponent implements OnInit {
       this.messagingService.send("logout");
     } catch (e) {
       this.logService.error(e);
-    }
-  }
-
-  async onChangeKdf(newValue: KdfType) {
-    if (newValue === KdfType.PBKDF2_SHA256) {
-      this.kdfConfig = new KdfConfig(DEFAULT_PBKDF2_ITERATIONS);
-    } else if (newValue === KdfType.Argon2id) {
-      this.kdfConfig = new KdfConfig(
-        DEFAULT_ARGON2_ITERATIONS,
-        DEFAULT_ARGON2_MEMORY,
-        DEFAULT_ARGON2_PARALLELISM
-      );
-    } else {
-      throw new Error("Unknown KDF type.");
+    } finally {
+      this.loading = false;
     }
   }
 
   private async makeKeyAndSaveAsync() {
+    const masterPassword = this.form.value.masterPassword;
     const request = new KdfRequest();
     request.kdf = this.kdf;
     request.kdfIterations = this.kdfConfig.iterations;
     request.kdfMemory = this.kdfConfig.memory;
     request.kdfParallelism = this.kdfConfig.parallelism;
-    request.masterPasswordHash = await this.cryptoService.hashPassword(this.masterPassword, null);
+    request.masterPasswordHash = await this.cryptoService.hashPassword(masterPassword, null);
     const email = await this.stateService.getEmail();
     const newKey = await this.cryptoService.makeKey(
-      this.masterPassword,
+      masterPassword,
       email,
       this.kdf,
       this.kdfConfig
     );
-    request.newMasterPasswordHash = await this.cryptoService.hashPassword(
-      this.masterPassword,
-      newKey
-    );
+    request.newMasterPasswordHash = await this.cryptoService.hashPassword(masterPassword, newKey);
     const newEncKey = await this.cryptoService.remakeEncKey(newKey);
     request.key = newEncKey[1].encryptedString;
 

@@ -74,7 +74,7 @@ import { BillingHistoryComponent } from "../settings/billing-history.component";
 import { BillingSyncKeyComponent } from "../settings/billing-sync-key.component";
 import { ChangeAvatarComponent } from "../settings/change-avatar.component";
 import { ChangeEmailComponent } from "../settings/change-email.component";
-import { ChangeKdfComponent } from "../settings/change-kdf.component";
+import { ChangeKdfModule } from "../settings/change-kdf/change-kdf.module";
 import { ChangePasswordComponent } from "../settings/change-password.component";
 import { CreateOrganizationComponent } from "../settings/create-organization.component";
 import { DeleteAccountComponent } from "../settings/delete-account.component";
@@ -117,7 +117,13 @@ import { SharedModule } from "./shared.module";
 // Please do not add to this list of declarations - we should refactor these into modules when doing so makes sense until there are none left.
 // If you are building new functionality, please create or extend a feature module instead.
 @NgModule({
-  imports: [SharedModule, OrganizationCreateModule, RegisterFormModule, ProductSwitcherModule],
+  imports: [
+    SharedModule,
+    OrganizationCreateModule,
+    RegisterFormModule,
+    ProductSwitcherModule,
+    ChangeKdfModule,
+  ],
   declarations: [
     PremiumBadgeComponent,
     AcceptEmergencyComponent,
@@ -135,7 +141,6 @@ import { SharedModule } from "./shared.module";
     AttachmentsComponent,
     BillingSyncKeyComponent,
     ChangeEmailComponent,
-    ChangeKdfComponent,
     ChangePasswordComponent,
     CollectionsComponent,
     CreateOrganizationComponent,
@@ -245,7 +250,6 @@ import { SharedModule } from "./shared.module";
     ApiKeyComponent,
     AttachmentsComponent,
     ChangeEmailComponent,
-    ChangeKdfComponent,
     ChangePasswordComponent,
     CollectionsComponent,
     CreateOrganizationComponent,
