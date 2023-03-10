@@ -15,6 +15,7 @@ import { WildcardRoutingModule } from "@bitwarden/web-vault/app/wildcard-routing
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { OrganizationsModule } from "./organizations/organizations.module";
+import { ActivateAutofillPolicyComponent } from "./policies/activate-autofill.component";
 import { DisablePersonalVaultExportPolicyComponent } from "./policies/disable-personal-vault-export.component";
 import { MaximumVaultTimeoutPolicyComponent } from "./policies/maximum-vault-timeout.component";
 
@@ -39,6 +40,7 @@ import { MaximumVaultTimeoutPolicyComponent } from "./policies/maximum-vault-tim
     AppComponent,
     DisablePersonalVaultExportPolicyComponent,
     MaximumVaultTimeoutPolicyComponent,
+    ActivateAutofillPolicyComponent,
   ],
   bootstrap: [AppComponent],
 })

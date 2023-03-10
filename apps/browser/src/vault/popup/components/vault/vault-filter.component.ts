@@ -6,6 +6,7 @@ import { first } from "rxjs/operators";
 
 import { VaultFilter } from "@bitwarden/angular/vault/vault-filter/models/vault-filter.model";
 import { BroadcasterService } from "@bitwarden/common/abstractions/broadcaster.service";
+import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { SearchService } from "@bitwarden/common/abstractions/search.service";
 import { TreeNode } from "@bitwarden/common/models/domain/tree-node";
@@ -72,6 +73,7 @@ export class VaultFilterComponent implements OnInit, OnDestroy {
   private allCiphers: CipherView[] = null;
 
   constructor(
+    private i18nService: I18nService,
     private cipherService: CipherService,
     private router: Router,
     private ngZone: NgZone,

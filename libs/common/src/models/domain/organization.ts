@@ -25,6 +25,7 @@ export class Organization {
   useCustomPermissions: boolean;
   useResetPassword: boolean;
   useSecretsManager: boolean;
+  useActivateAutofillPolicy: boolean;
   selfHost: boolean;
   usersGetPremium: boolean;
   seats: number;
@@ -72,6 +73,7 @@ export class Organization {
     this.useCustomPermissions = obj.useCustomPermissions;
     this.useResetPassword = obj.useResetPassword;
     this.useSecretsManager = obj.useSecretsManager;
+    this.useActivateAutofillPolicy = obj.useActivateAutofillPolicy;
     this.selfHost = obj.selfHost;
     this.usersGetPremium = obj.usersGetPremium;
     this.seats = obj.seats;

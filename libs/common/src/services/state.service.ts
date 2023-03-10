@@ -2365,6 +2365,26 @@ export class StateService<
     );
   }
 
+  async getActivateAutoFillOnPageLoadFromPolicy(options?: StorageOptions): Promise<boolean> {
+    return (
+      await this.getAccount(this.reconcileOptions(options, await this.defaultOnDiskLocalOptions()))
+    )?.settings?.activateAutoFillOnPageLoadFromPolicy;
+  }
+
+  async setActivateAutoFillOnPageLoadFromPolicy(
+    value: boolean,
+    options?: StorageOptions
+  ): Promise<void> {
+    const account = await this.getAccount(
+      this.reconcileOptions(options, await this.defaultOnDiskLocalOptions())
+    );
+    account.settings.activateAutoFillOnPageLoadFromPolicy = value;
+    return await this.saveAccount(
+      account,
+      this.reconcileOptions(options, await this.defaultOnDiskLocalOptions())
+    );
+  }
+
   async getSMOnboardingTasks(
     options?: StorageOptions
   ): Promise<Record<string, Record<string, boolean>>> {
