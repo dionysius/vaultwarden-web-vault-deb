@@ -244,7 +244,10 @@ export class VaultItemsComponent extends BaseVaultItemsComponent implements OnDe
   }
 
   async deleteCollection(collection: CollectionView): Promise<void> {
-    if (!this.organization.canDeleteAssignedCollections) {
+    if (
+      !this.organization.canDeleteAssignedCollections &&
+      !this.organization.canDeleteAnyCollection
+    ) {
       this.platformUtilsService.showToast(
         "error",
         this.i18nService.t("errorOccurred"),
@@ -270,6 +273,7 @@ export class VaultItemsComponent extends BaseVaultItemsComponent implements OnDe
         null,
         this.i18nService.t("deletedCollectionId", collection.name)
       );
+      this.actionPromise = null;
       await this.refresh();
     } catch (e) {
       this.logService.error(e);

@@ -209,7 +209,10 @@ export class VaultHeaderComponent {
   }
 
   async deleteCollection(collection: CollectionView): Promise<void> {
-    if (!this.organization.canDeleteAssignedCollections) {
+    if (
+      !this.organization.canDeleteAnyCollection &&
+      !this.organization.canDeleteAssignedCollections
+    ) {
       this.platformUtilsService.showToast(
         "error",
         this.i18nService.t("errorOccurred"),

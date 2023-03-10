@@ -116,7 +116,10 @@ export class BulkDeleteDialogComponent {
   }
 
   private async deleteCollections(): Promise<any> {
-    if (!this.organization.canDeleteAssignedCollections) {
+    if (
+      !this.organization.canDeleteAssignedCollections &&
+      !this.organization.canDeleteAnyCollection
+    ) {
       this.platformUtilsService.showToast(
         "error",
         this.i18nService.t("errorOccurred"),
