@@ -41,16 +41,8 @@ export class GeneratorComponent extends BaseGeneratorComponent {
       window
     );
     if (platformUtilsService.isSelfHost()) {
-      // Cannot use Firefox Relay on self hosted web vaults due to CORS issues with Firefox Relay API
-      this.forwardOptions.splice(
-        this.forwardOptions.findIndex((o) => o.value === "firefoxrelay"),
-        1
-      );
-      // Also cannot use Duck Duck Go on self hosted web vaults due to CORS issues
-      this.forwardOptions.splice(
-        this.forwardOptions.findIndex((o) => o.value === "duckduckgo"),
-        1
-      );
+      // Allow only valid email forwarders for self host
+      this.forwardOptions = this.forwardOptions.filter((forwarder) => forwarder.validForSelfHosted);
     }
   }
 
