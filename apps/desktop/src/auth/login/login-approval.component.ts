@@ -6,11 +6,13 @@ import { ModalRef } from "@bitwarden/angular/components/modal/modal.ref";
 import { ModalConfig } from "@bitwarden/angular/services/modal.service";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { AppIdService } from "@bitwarden/common/abstractions/appId.service";
+import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { AuthService } from "@bitwarden/common/auth/abstractions/auth.service";
 import { AuthRequestResponse } from "@bitwarden/common/auth/models/response/auth-request.response";
+import { Utils } from "@bitwarden/common/misc/utils";
 
 const RequestTimeOut = 60000 * 15; //15 Minutes
 const RequestTimeUpdate = 60000 * 5; //5 Minutes
@@ -25,6 +27,7 @@ export class LoginApprovalComponent implements OnInit, OnDestroy {
   private destroy$ = new Subject<void>();
 
   email: string;
+  fingerprintPhrase: string;
   authRequestResponse: AuthRequestResponse;
   interval: NodeJS.Timer;
   requestTimeText: string;
@@ -37,6 +40,7 @@ export class LoginApprovalComponent implements OnInit, OnDestroy {
     protected apiService: ApiService,
     protected authService: AuthService,
     protected appIdService: AppIdService,
+    protected cryptoService: CryptoService,
     private modalRef: ModalRef,
     config: ModalConfig
   ) {
@@ -61,8 +65,11 @@ export class LoginApprovalComponent implements OnInit, OnDestroy {
   async ngOnInit() {
     if (this.notificationId != null) {
       this.authRequestResponse = await this.apiService.getAuthRequest(this.notificationId);
-
+      const publicKey = Utils.fromB64ToArray(this.authRequestResponse.publicKey);
       this.email = await this.stateService.getEmail();
+      this.fingerprintPhrase = (
+        await this.cryptoService.getFingerprint(this.email, publicKey.buffer)
+      ).join("-");
       this.updateTimeText();
 
       this.interval = setInterval(() => {

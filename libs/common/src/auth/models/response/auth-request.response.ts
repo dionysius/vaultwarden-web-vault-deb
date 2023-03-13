@@ -12,7 +12,6 @@ export class AuthRequestResponse extends BaseResponse {
   masterPasswordHash: string;
   creationDate: string;
   requestApproved?: boolean;
-  requestFingerprint?: string;
   responseDate?: string;
   isAnswered: boolean;
   isExpired: boolean;
@@ -27,7 +26,6 @@ export class AuthRequestResponse extends BaseResponse {
     this.masterPasswordHash = this.getResponseProperty("MasterPasswordHash");
     this.creationDate = this.getResponseProperty("CreationDate");
     this.requestApproved = this.getResponseProperty("RequestApproved");
-    this.requestFingerprint = this.getResponseProperty("RequestFingerprint");
     this.responseDate = this.getResponseProperty("ResponseDate");
 
     const requestDate = new Date(this.creationDate);
