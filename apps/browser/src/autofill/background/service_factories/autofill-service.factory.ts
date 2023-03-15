@@ -16,6 +16,10 @@ import {
   LogServiceInitOptions,
 } from "../../../background/service_factories/log-service.factory";
 import {
+  settingsServiceFactory,
+  SettingsServiceInitOptions,
+} from "../../../background/service_factories/settings-service.factory";
+import {
   stateServiceFactory,
   StateServiceInitOptions,
 } from "../../../background/service_factories/state-service.factory";
@@ -33,7 +37,8 @@ export type AutoFillServiceInitOptions = AutoFillServiceOptions &
   StateServiceInitOptions &
   TotpServiceInitOptions &
   EventCollectionServiceInitOptions &
-  LogServiceInitOptions;
+  LogServiceInitOptions &
+  SettingsServiceInitOptions;
 
 export function autofillServiceFactory(
   cache: { autofillService?: AbstractAutoFillService } & CachedServices,
@@ -49,7 +54,8 @@ export function autofillServiceFactory(
         await stateServiceFactory(cache, opts),
         await totpServiceFactory(cache, opts),
         await eventCollectionServiceFactory(cache, opts),
-        await logServiceFactory(cache, opts)
+        await logServiceFactory(cache, opts),
+        await settingsServiceFactory(cache, opts)
       )
   );
 }

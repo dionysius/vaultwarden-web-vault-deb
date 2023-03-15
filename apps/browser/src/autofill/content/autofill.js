@@ -524,7 +524,6 @@
               title: theDoc.title,
               url: theView.location.href,
               documentUrl: theDoc.location.href,
-              tabUrl: theView.location.href,
               forms: function (forms) {
                   var formObj = {};
                   forms.forEach(function (f) {
@@ -910,6 +909,19 @@
 
           if (isSandboxed() || urlNotSecure(fillScript.savedUrls)) {
               return;
+          }
+
+          if (fillScript.untrustedIframe) {
+            // confirm() is blocked by sandboxed iframes, but we don't want to fill sandboxed iframes anyway.
+            // If this occurs, confirm() returns false without displaying the dialog box, and autofill will be aborted.
+            // The browser may print a message to the console, but this is not a standard error that we can handle.
+            var acceptedIframeWarning = confirm("The form is hosted by a different domain than the URI " +
+                "of your saved login. Choose OK to auto-fill anyway, or Cancel to stop. " +
+                "To prevent this warning in the future, save this URI, " +
+                window.location.hostname + ", to your login.");
+            if (!acceptedIframeWarning) {
+              return;
+            }
           }
 
           doOperation = function (ops, theOperation) {

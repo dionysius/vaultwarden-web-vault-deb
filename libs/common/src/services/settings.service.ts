@@ -40,6 +40,27 @@ export class SettingsService implements SettingsServiceAbstraction {
     await this.stateService.setSettings(settings);
   }
 
+  getEquivalentDomains(url: string): string[] {
+    const domain = Utils.getDomain(url);
+    if (domain == null) {
+      return null;
+    }
+
+    const settings = this._settings.getValue();
+
+    let result: string[] = [];
+
+    if (settings?.equivalentDomains != null) {
+      settings.equivalentDomains
+        .filter((ed) => ed.length > 0 && ed.includes(domain))
+        .forEach((ed) => {
+          result = result.concat(ed);
+        });
+    }
+
+    return result;
+  }
+
   async clear(userId?: string): Promise<void> {
     if (userId == null || userId == (await this.stateService.getUserId())) {
       this._settings.next({});

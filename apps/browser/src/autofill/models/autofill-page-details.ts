@@ -12,7 +12,6 @@ export default class AutofillPageDetails {
   title: string;
   url: string;
   documentUrl: string;
-  tabUrl: string;
   /**
    * A collection of all of the forms in the page DOM, keyed by their `opid`
    */
