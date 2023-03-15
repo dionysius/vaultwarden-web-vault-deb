@@ -305,9 +305,9 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
 
   private setAutofillCalloutText(command: string) {
     if (command) {
-      this.autofillCalloutText = this.i18nService.t("autofillSelectInfo", command);
+      this.autofillCalloutText = this.i18nService.t("autofillSelectInfoWithCommand", command);
     } else {
-      this.autofillCalloutText = this.i18nService.t("autofillSelectInfoNoCommand");
+      this.autofillCalloutText = this.i18nService.t("autofillSelectInfoWithoutCommand");
     }
   }
 }
