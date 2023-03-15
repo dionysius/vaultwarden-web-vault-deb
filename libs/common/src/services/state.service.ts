@@ -1585,7 +1585,7 @@ export class StateService<
     );
   }
 
-  async getEquivalentDomains(options?: StorageOptions): Promise<any> {
+  async getEquivalentDomains(options?: StorageOptions): Promise<string[][]> {
     return (
       await this.getAccount(this.reconcileOptions(options, await this.defaultOnDiskOptions()))
     )?.settings?.equivalentDomains;

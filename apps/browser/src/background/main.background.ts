@@ -443,7 +443,8 @@ export default class MainBackground {
       this.stateService,
       this.totpService,
       this.eventCollectionService,
-      this.logService
+      this.logService,
+      this.settingsService
     );
     this.containerService = new ContainerService(this.cryptoService, this.encryptService);
     this.auditService = new AuditService(this.cryptoFunctionService, this.apiService);

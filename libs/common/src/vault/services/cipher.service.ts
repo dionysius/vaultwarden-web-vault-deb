@@ -49,10 +49,6 @@ import { CipherView } from "../models/view/cipher.view";
 import { FieldView } from "../models/view/field.view";
 import { PasswordHistoryView } from "../models/view/password-history.view";
 
-const DomainMatchBlacklist = new Map<string, Set<string>>([
-  ["google.com", new Set(["script.google.com"])],
-]);
-
 export class CipherService implements CipherServiceAbstraction {
   private sortedCiphersCache: SortedCiphersCache = new SortedCiphersCache(
     this.sortCiphersByLastUsed
@@ -456,9 +452,9 @@ export class CipherService implements CipherServiceAbstraction {
           switch (match) {
             case UriMatchType.Domain:
               if (domain != null && u.domain != null && matchingDomains.indexOf(u.domain) > -1) {
-                if (DomainMatchBlacklist.has(u.domain)) {
+                if (Utils.DomainMatchBlacklist.has(u.domain)) {
                   const domainUrlHost = Utils.getHost(url);
-                  if (!DomainMatchBlacklist.get(u.domain).has(domainUrlHost)) {
+                  if (!Utils.DomainMatchBlacklist.get(u.domain).has(domainUrlHost)) {
                     return true;
                   }
                 } else {

@@ -1,14 +1,17 @@
 import { EventCollectionService } from "@bitwarden/common/abstractions/event/event-collection.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
+import { SettingsService } from "@bitwarden/common/abstractions/settings.service";
 import { TotpService } from "@bitwarden/common/abstractions/totp.service";
 import { EventType } from "@bitwarden/common/enums/eventType";
 import { FieldType } from "@bitwarden/common/enums/fieldType";
 import { UriMatchType } from "@bitwarden/common/enums/uriMatchType";
+import { Utils } from "@bitwarden/common/misc/utils";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
 import { CipherRepromptType } from "@bitwarden/common/vault/enums/cipher-reprompt-type";
 import { CipherType } from "@bitwarden/common/vault/enums/cipher-type";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 import { FieldView } from "@bitwarden/common/vault/models/view/field.view";
+import { LoginUriView } from "@bitwarden/common/vault/models/view/login-uri.view";
 
 import { BrowserApi } from "../../browser/browserApi";
 import { BrowserStateService } from "../../services/abstractions/browser-state.service";
@@ -34,6 +37,8 @@ export interface GenerateFillScriptOptions {
   onlyVisibleFields: boolean;
   fillNewPassword: boolean;
   cipher: CipherView;
+  tabUrl: string;
+  defaultUriMatch: UriMatchType;
 }
 
 export default class AutofillService implements AutofillServiceInterface {
@@ -42,7 +47,8 @@ export default class AutofillService implements AutofillServiceInterface {
     private stateService: BrowserStateService,
     private totpService: TotpService,
     private eventCollectionService: EventCollectionService,
-    private logService: LogService
+    private logService: LogService,
+    private settingsService: SettingsService
   ) {}
 
   getFormsWithPasswordFields(pageDetails: AutofillPageDetails): FormData[] {
@@ -84,7 +90,12 @@ export default class AutofillService implements AutofillServiceInterface {
     return formData;
   }
 
-  async doAutoFill(options: AutoFillOptions) {
+  /**
+   * Autofills a given tab with a given login item
+   * @param options Instructions about the autofill operation, including tab and login item
+   * @returns The TOTP code of the successfully autofilled login, if any
+   */
+  async doAutoFill(options: AutoFillOptions): Promise<string> {
     const tab = options.tab;
     if (!tab || !options.cipher || !options.pageDetails || !options.pageDetails.length) {
       throw new Error("Nothing to auto-fill.");
@@ -93,6 +104,8 @@ export default class AutofillService implements AutofillServiceInterface {
     let totpPromise: Promise<string> = null;
 
     const canAccessPremium = await this.stateService.getCanAccessPremium();
+    const defaultUriMatch = (await this.stateService.getDefaultUriMatch()) ?? UriMatchType.Domain;
+
     let didAutofill = false;
     options.pageDetails.forEach((pd) => {
       // make sure we're still on correct tab
@@ -106,9 +119,20 @@ export default class AutofillService implements AutofillServiceInterface {
         onlyVisibleFields: options.onlyVisibleFields || false,
         fillNewPassword: options.fillNewPassword || false,
         cipher: options.cipher,
+        tabUrl: tab.url,
+        defaultUriMatch: defaultUriMatch,
       });
 
       if (!fillScript || !fillScript.script || !fillScript.script.length) {
+        return;
+      }
+
+      if (
+        fillScript.untrustedIframe &&
+        options.allowUntrustedIframe != undefined &&
+        !options.allowUntrustedIframe
+      ) {
+        this.logService.info("Auto-fill on page load was blocked due to an untrusted iframe.");
         return;
       }
 
@@ -159,7 +183,18 @@ export default class AutofillService implements AutofillServiceInterface {
     }
   }
 
-  async doAutoFillOnTab(pageDetails: PageDetail[], tab: chrome.tabs.Tab, fromCommand: boolean) {
+  /**
+   * Autofills the specified tab with the next login item from the cache
+   * @param pageDetails The data scraped from the page
+   * @param tab The tab to be autofilled
+   * @param fromCommand Whether the autofill is triggered by a keyboard shortcut (`true`) or autofill on page load (`false`)
+   * @returns The TOTP code of the successfully autofilled login, if any
+   */
+  async doAutoFillOnTab(
+    pageDetails: PageDetail[],
+    tab: chrome.tabs.Tab,
+    fromCommand: boolean
+  ): Promise<string> {
     let cipher: CipherView;
     if (fromCommand) {
       cipher = await this.cipherService.getNextCipherForUrl(tab.url);
@@ -188,6 +223,7 @@ export default class AutofillService implements AutofillServiceInterface {
       onlyEmptyFields: !fromCommand,
       onlyVisibleFields: !fromCommand,
       fillNewPassword: fromCommand,
+      allowUntrustedIframe: fromCommand,
     });
 
     // Update last used index as autofill has succeed
@@ -198,7 +234,13 @@ export default class AutofillService implements AutofillServiceInterface {
     return totpCode;
   }
 
-  async doAutoFillActiveTab(pageDetails: PageDetail[], fromCommand: boolean) {
+  /**
+   * Autofills the active tab with the next login item from the cache
+   * @param pageDetails The data scraped from the page
+   * @param fromCommand Whether the autofill is triggered by a keyboard shortcut (`true`) or autofill on page load (`false`)
+   * @returns The TOTP code of the successfully autofilled login, if any
+   */
+  async doAutoFillActiveTab(pageDetails: PageDetail[], fromCommand: boolean): Promise<string> {
     const tab = await this.getActiveTab();
     if (!tab || !tab.url) {
       return;
@@ -308,6 +350,10 @@ export default class AutofillService implements AutofillServiceInterface {
     const login = options.cipher.login;
     fillScript.savedUrls =
       login?.uris?.filter((u) => u.match != UriMatchType.Never).map((u) => u.uri) ?? [];
+
+    const inIframe = pageDetails.url !== options.tabUrl;
+    fillScript.untrustedIframe =
+      inIframe && !this.iframeUrlMatches(pageDetails.url, options.cipher, options.defaultUriMatch);
 
     if (!login.password || login.password === "") {
       // No password for this login. Maybe they just wanted to auto-fill some custom fields?
@@ -740,6 +786,84 @@ export default class AutofillService implements AutofillServiceInterface {
     }
 
     return fillScript;
+  }
+
+  /**
+   * Determines whether to warn the user about filling an iframe
+   * @param pageUrl The url of the page/iframe, usually from AutofillPageDetails
+   * @param tabUrl The url of the tab, usually from the message sender (should not come from a content script because
+   *  that is likely to be incorrect in the case of iframes)
+   * @param loginItem The cipher to be filled
+   * @returns `true` if the iframe is untrusted and the warning should be shown, `false` otherwise
+   */
+  iframeUrlMatches(pageUrl: string, loginItem: CipherView, defaultUriMatch: UriMatchType): boolean {
+    // Check the pageUrl against cipher URIs using the configured match detection.
+    // If we are in this function at all, it is assumed that the tabUrl already matches a URL for `loginItem`,
+    // need to verify the pageUrl also matches one of the saved URIs using the match detection selected.
+    const uriMatched = loginItem.login.uris?.some((uri) =>
+      this.uriMatches(uri, pageUrl, defaultUriMatch)
+    );
+
+    return uriMatched;
+  }
+
+  // TODO should this be put in a common place (Utils maybe?) to be used both here and by CipherService?
+  private uriMatches(uri: LoginUriView, url: string, defaultUriMatch: UriMatchType): boolean {
+    const matchType = uri.match ?? defaultUriMatch;
+
+    const matchDomains = [Utils.getDomain(url)];
+    const equivalentDomains = this.settingsService.getEquivalentDomains(url);
+    if (equivalentDomains != null) {
+      matchDomains.push(...equivalentDomains);
+    }
+
+    switch (matchType) {
+      case UriMatchType.Domain:
+        if (url != null && uri.domain != null && matchDomains.includes(uri.domain)) {
+          if (Utils.DomainMatchBlacklist.has(uri.domain)) {
+            const domainUrlHost = Utils.getHost(url);
+            if (!Utils.DomainMatchBlacklist.get(uri.domain).has(domainUrlHost)) {
+              return true;
+            }
+          } else {
+            return true;
+          }
+        }
+        break;
+      case UriMatchType.Host: {
+        const urlHost = Utils.getHost(url);
+        if (urlHost != null && urlHost === Utils.getHost(uri.uri)) {
+          return true;
+        }
+        break;
+      }
+      case UriMatchType.Exact:
+        if (url === uri.uri) {
+          return true;
+        }
+        break;
+      case UriMatchType.StartsWith:
+        if (url.startsWith(uri.uri)) {
+          return true;
+        }
+        break;
+      case UriMatchType.RegularExpression:
+        try {
+          const regex = new RegExp(uri.uri, "i");
+          if (regex.test(url)) {
+            return true;
+          }
+        } catch (e) {
+          this.logService.error(e);
+          return false;
+        }
+        break;
+      case UriMatchType.Never:
+      default:
+        break;
+    }
+
+    return false;
   }
 
   private fieldAttrsContain(field: AutofillField, containsVal: string) {
