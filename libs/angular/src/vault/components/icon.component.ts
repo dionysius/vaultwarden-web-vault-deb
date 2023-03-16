@@ -20,7 +20,6 @@ const cardIcons: Record<string, string> = {
   Maestro: "card-maestro",
   UnionPay: "card-union-pay",
   RuPay: "card-ru-pay",
-  Mir: "card-mir",
 };
 
 @Component({
