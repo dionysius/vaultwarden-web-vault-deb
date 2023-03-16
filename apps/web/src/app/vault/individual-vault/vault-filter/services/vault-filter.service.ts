@@ -12,7 +12,10 @@ import {
 
 import { CollectionService } from "@bitwarden/common/abstractions/collection.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
-import { OrganizationService } from "@bitwarden/common/abstractions/organization/organization.service.abstraction";
+import {
+  isNotProviderUser,
+  OrganizationService,
+} from "@bitwarden/common/abstractions/organization/organization.service.abstraction";
 import { PolicyService } from "@bitwarden/common/abstractions/policy/policy.service.abstraction";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { PolicyType } from "@bitwarden/common/enums/policyType";
@@ -135,7 +138,7 @@ export class VaultFilterService implements VaultFilterServiceAbstraction {
       orgs = orgs.slice(0, 1);
     }
     if (orgs) {
-      orgs.forEach((org) => {
+      orgs.filter(isNotProviderUser).forEach((org) => {
         const orgCopy = org as OrganizationFilter;
         orgCopy.icon = "bwi-business";
         const node = new TreeNode<OrganizationFilter>(orgCopy, headNode, orgCopy.name);
