@@ -239,7 +239,7 @@
     "message": "Fröken"
   },
   "mx": {
-    "message": "Mx"
+    "message": "Vederbörande"
   },
   "dr": {
     "message": "Dr"
@@ -542,7 +542,7 @@
     "message": "Huvudlösenord måste anges igen."
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least $VALUE$ characters long.",
+    "message": "Huvudlösenordet måste vara minst $VALUE$ tecken långt.",
     "description": "The Master Password must be at least a specific number of characters long.",
     "placeholders": {
       "value": {
@@ -2066,25 +2066,25 @@
     "message": "Logga in med en annan enhet"
   },
   "logInInitiated": {
-    "message": "Log in initiated"
+    "message": "Inloggning påbörjad"
   },
   "notificationSentDevice": {
     "message": "En avisering har skickats till din enhet."
   },
   "fingerprintMatchInfo": {
-    "message": "Please make sure your vault is unlocked and Fingerprint phrase matches the other device."
+    "message": "Se till att ditt valv är upplåst och att fingeravtrycksfrasen matchar på den andra enheten."
   },
   "fingerprintPhraseHeader": {
     "message": "Fingeravtrycksfras"
   },
   "needAnotherOption": {
-    "message": "Log in with device must be set up in the settings of the Bitwarden app. Need another option?"
+    "message": "\"Logga in med enhet\" måste ställas in i inställningarna i Bitwardens app. Behöver du ett annat alternativ?"
   },
   "viewAllLoginOptions": {
     "message": "Visa alla inloggningsalternativ"
   },
   "resendNotification": {
-    "message": "Resend notification"
+    "message": "Skicka avisering igen"
   },
   "toggleCharacterCount": {
     "message": "Växla teckenantal",
@@ -2121,7 +2121,7 @@
     "message": "Godkänn inloggningsförfrågningar"
   },
   "logInConfirmedForEmailOnDevice": {
-    "message": "Login confirmed for $EMAIL$ on $DEVICE$",
+    "message": "Inloggning bekräftad för $EMAIL$ på $DEVICE$",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -2134,13 +2134,13 @@
     }
   },
   "youDeniedALogInAttemptFromAnotherDevice": {
-    "message": "You denied a login attempt from another device. If this really was you, try to log in with the device again."
+    "message": "Du nekade ett inloggningsförsök från en annan enhet. Om detta verkligen var du, försök att logga in med enheten igen."
   },
   "justNow": {
     "message": "Just nu"
   },
   "requestedXMinutesAgo": {
-    "message": "Requested $MINUTES$ minutes ago",
+    "message": "Begärd för $MINUTES$ minuter sedan",
     "placeholders": {
       "minutes": {
         "content": "$1",
@@ -2149,7 +2149,7 @@
     }
   },
   "loginRequestHasAlreadyExpired": {
-    "message": "Login request has already expired."
+    "message": "Inloggningsbegäran har redan löpt ut."
   },
   "thisRequestIsNoLongerValid": {
     "message": "Denna begäran är inte längre giltig."
@@ -2158,7 +2158,7 @@
     "message": "Använd denna enhet för att godkänna inloggningsförfrågningar från andra enheter."
   },
   "confirmLoginAtemptForMail": {
-    "message": "Confirm login attempt for $EMAIL$",
+    "message": "Bekräfta inloggningsförsök för $EMAIL$",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -2167,28 +2167,28 @@
     }
   },
   "logInRequested": {
-    "message": "Log in requested"
+    "message": "Inloggning begärd"
   },
   "exposedMasterPassword": {
-    "message": "Exposed Master Password"
+    "message": "Huvudlösenordet har exponerats"
   },
   "exposedMasterPasswordDesc": {
-    "message": "Password found in a data breach. Use a unique password to protect your account. Are you sure you want to use an exposed password?"
+    "message": "Lösenordet avslöjades vid ett dataintrång. Använd ett unikt lösenord för att skydda ditt konto. Är du säker på att du vill använda ett lösenord som avslöjats?"
   },
   "weakAndExposedMasterPassword": {
-    "message": "Weak and Exposed Master Password"
+    "message": "Huvudlösenordet är svagt och har exponerats"
   },
   "weakAndBreachedMasterPasswordDesc": {
-    "message": "Weak password identified and found in a data breach. Use a strong and unique password to protect your account. Are you sure you want to use this password?"
+    "message": "Lösenordet är svagt och avslöjades vid ett dataintrång. Använd ett starkt och unikt lösenord för att skydda ditt konto. Är det säkert att du vill använda detta lösenord?"
   },
   "checkForBreaches": {
-    "message": "Check known data breaches for this password"
+    "message": "Kontrollera kända dataintrång för detta lösenord"
   },
   "important": {
     "message": "Viktigt:"
   },
   "masterPasswordHint": {
-    "message": "Your master password cannot be recovered if you forget it!"
+    "message": "Ditt huvudlösenord kan inte återställas om du glömmer det!"
   },
   "characterMinimum": {
     "message": "Minst $LENGTH$ tecken",
