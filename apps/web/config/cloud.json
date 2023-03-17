@@ -16,7 +16,7 @@
     "proxyEvents": "https://events.bitwarden.com"
   },
   "flags": {
-    "secretsManager": false,
+    "secretsManager": true,
     "showPasswordless": true
   }
 }
