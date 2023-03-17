@@ -4852,6 +4852,18 @@
   "personalVaultExportPolicyInEffect": {
     "message": "Bir və ya daha çox təşkilat siyasəti, fərdi anbarınızı ixrac etməyinizin qarşısını alır."
   },
+  "activateAutofill": {
+    "message": "Avto-doldurmanı aktivləşdir"
+  },
+  "activateAutofillDesc": {
+    "message": "Bütün mövcud və yeni üzvlər üçün brauzer genişləndirməsindəki səhifə yükləmə tənzimləmələri ilə avto-doldurmanı aktivləşdirin."
+  },
+  "experimentalFeature": {
+    "message": "Təhlükəli və ya güvənilməyən veb saytlar, səhifə yüklənərkən avto-doldurmanı istifadə edə bilər."
+  },
+  "learnMoreAboutAutofill": {
+    "message": "Avto-doldurma haqqında daha ətraflı"
+  },
   "selectType": {
     "message": "SSO növü seçin"
   },
@@ -5625,9 +5637,6 @@
   },
   "reporting": {
     "message": "Hesabat göndərmə"
-  },
-  "cardBrandMir": {
-    "message": "Mir"
   },
   "numberOfUsers": {
     "message": "İstifadəçi sayı"
@@ -6490,7 +6499,7 @@
     "message": "KDF tənzimləmələrini dəyişdir"
   },
   "changeKdfLoggedOutWarning": {
-    "message": "Davam etsəniz hazırkı seansdan çıxış ediləcək, təkrar giriş etməyiniz tələb olunacaq. Digər cihazlardakı aktiv seanslar bir saata qədər aktiv qalmağa davam edə bilər. Məlumat itkisinin qarşısını almaq üçün şifrələmə tənzimləmələrinizi dəyişdirməzdən əvvəl anbarınızı xaricə köçürməyinizi tövsiyə edirik."
+    "message": "Proceeding will log you out of all active sessions. You will need to log back in and complete two-step login setup. We recommend exporting your vault before changing your encryption settings to prevent data loss."
   },
   "secretsManagerBeta": {
     "message": "Secrets Manager Beta"

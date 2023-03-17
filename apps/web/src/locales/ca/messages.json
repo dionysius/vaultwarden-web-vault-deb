@@ -4852,6 +4852,18 @@
   "personalVaultExportPolicyInEffect": {
     "message": "Una o més polítiques d'organització us impedeixen exportar la vostra caixa forta."
   },
+  "activateAutofill": {
+    "message": "Activa l'emplenament automàtic"
+  },
+  "activateAutofillDesc": {
+    "message": "Activa l'emplenament automàtic amb la configuració de càrrega de pàgina a l'extensió del navegador per a tots els membres existents i nous."
+  },
+  "experimentalFeature": {
+    "message": "Els llocs web compromesos o no fiables poden aprofitar l'emplenament automàtic en carregar de la pàgina."
+  },
+  "learnMoreAboutAutofill": {
+    "message": "Més informació sobre l'emplenament automàtic"
+  },
   "selectType": {
     "message": "Selecciona el tipus d'SSO"
   },
@@ -5625,9 +5637,6 @@
   },
   "reporting": {
     "message": "Informes"
-  },
-  "cardBrandMir": {
-    "message": "Mir"
   },
   "numberOfUsers": {
     "message": "Nombre d'usuaris"
@@ -6490,7 +6499,7 @@
     "message": "Canvia la configuració de KDF"
   },
   "changeKdfLoggedOutWarning": {
-    "message": "Si continueu, es tancarà la sessió de la vostra sessió actual i us demanarà que torneu a iniciar sessió. Les sessions actives en altres dispositius poden continuar romanent actives fins a una hora. Us recomanem que exporteu la vostra caixa forta abans de canviar la configuració d'encriptació per evitar la pèrdua de dades."
+    "message": "Proceeding will log you out of all active sessions. You will need to log back in and complete two-step login setup. We recommend exporting your vault before changing your encryption settings to prevent data loss."
   },
   "secretsManagerBeta": {
     "message": "Administrador de secrets Beta"

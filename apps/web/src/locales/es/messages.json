@@ -4852,6 +4852,18 @@
   "personalVaultExportPolicyInEffect": {
     "message": "Una o más políticas de tu organización te impiden exportar tu caja fuerte personal."
   },
+  "activateAutofill": {
+    "message": "Activar autocompletar"
+  },
+  "activateAutofillDesc": {
+    "message": "Active el autorrelleno con la configuración de carga de página en la extensión del navegador para todos los miembros existentes y nuevos."
+  },
+  "experimentalFeature": {
+    "message": "Los sitios web comprometidos o no confiables pueden explotar autocompletar al cargar la página."
+  },
+  "learnMoreAboutAutofill": {
+    "message": "Más información sobre autocompletar"
+  },
   "selectType": {
     "message": "Seleccionar tipo de SSO"
   },
@@ -5626,9 +5638,6 @@
   "reporting": {
     "message": "Informando"
   },
-  "cardBrandMir": {
-    "message": "Mir"
-  },
   "numberOfUsers": {
     "message": "Número de usuarios"
   },
@@ -5739,7 +5748,7 @@
     "message": "Permanently delete secret"
   },
   "hardDeleteSecrets": {
-    "message": "Permanently delete secrets"
+    "message": "Eliminar secretos de forma permanente"
   },
   "secretProjectAssociationDescription": {
     "message": "Seleccione los proyectos con los que se asociará el secreto. Sólo los usuarios de la organización con acceso a estos proyectos podrán ver el secreto.",
@@ -5818,7 +5827,7 @@
     "description": "Message to encourage the user to start adding secrets."
   },
   "secretsTrashNoItemsMessage": {
-    "message": "There are no secrets in the trash."
+    "message": "No hay secretos en la papelera."
   },
   "serviceAccountsNoItemsMessage": {
     "message": "Crear una nueva cuenta de servicio para comenzar a automatizar el acceso secreto.",
@@ -5912,13 +5921,13 @@
     "description": "Notifies that the selected secrets have been moved to the trash"
   },
   "hardDeleteSecretConfirmation": {
-    "message": "Are you sure you want to permanently delete this secret?"
+    "message": "¿Está seguro que desea eliminar permanentemente este secreto?"
   },
   "hardDeleteSecretsConfirmation": {
-    "message": "Are you sure you want to permanently delete these secrets?"
+    "message": "¿Está seguro que desea eliminar permanentemente estos secretos?"
   },
   "hardDeletesSuccessToast": {
-    "message": "Secrets permanently deleted"
+    "message": "Secretos eliminados permanentemente"
   },
   "smAccess": {
     "message": "Acceso",
@@ -6021,7 +6030,7 @@
     "description": "Notification to be displayed when a secret is successfully sent to the trash."
   },
   "hardDeleteSuccessToast": {
-    "message": "Secret permanently deleted"
+    "message": "Secreto eliminado permanentemente"
   },
   "accessTokens": {
     "message": "Tokens de acceso",
@@ -6472,7 +6481,7 @@
     "message": "Asignar proyectos a esta cuenta de servicio. "
   },
   "serviceAccountEmptyProjectAccesspolicies": {
-    "message": "Add projects to grant access"
+    "message": "Añadir proyectos para conceder acceso"
   },
   "canReadWrite": {
     "message": "Puede leer, escribir"
@@ -6490,7 +6499,7 @@
     "message": "Cambiar ajustes de KDF"
   },
   "changeKdfLoggedOutWarning": {
-    "message": "Proceder le desconectará de su sesión actual, requiriendo que vuelva a iniciar sesión. Las sesiones activas en otros dispositivos pueden seguir estando activas durante hasta una hora. Recomendamos exportar su caja fuerte antes de cambiar su configuración de cifrado para prevenir la pérdida de datos."
+    "message": "Proceeding will log you out of all active sessions. You will need to log back in and complete two-step login setup. We recommend exporting your vault before changing your encryption settings to prevent data loss."
   },
   "secretsManagerBeta": {
     "message": "Administrador de secretos Beta"
@@ -6578,22 +6587,22 @@
     }
   },
   "restoreSecret": {
-    "message": "Restore secret"
+    "message": "Restaurar secreto"
   },
   "restoreSecrets": {
-    "message": "Restore secrets"
+    "message": "Restaurar secretos"
   },
   "restoreSecretPrompt": {
-    "message": "Are you sure you want to restore this secret?"
+    "message": "¿Está seguro de que desea restaurar este secreto?"
   },
   "restoreSecretsPrompt": {
-    "message": "Are you sure you want to restore these secrets?"
+    "message": "¿Estás seguro de que quieres restaurar estos secretos?"
   },
   "secretRestoredSuccessToast": {
-    "message": "Secret restored"
+    "message": "Secreto restaurado"
   },
   "secretsRestoredSuccessToast": {
-    "message": "Secrets restored"
+    "message": "Secretos restaurados"
   },
   "selectionIsRequired": {
     "message": "Debe seleccionar una opción."
@@ -6608,22 +6617,22 @@
     "message": "Tokens de acceso todavía disponibles"
   },
   "saPeopleWarningMessage": {
-    "message": "Removing people from a service account does not remove the access tokens they created. For security best practice, it is recommended to revoke access tokens created by people removed from a service account."
+    "message": "Eliminar a la gente de una cuenta de servicio no elimina los tokens de acceso que crearon. Para las mejores prácticas de seguridad, se recomienda revocar los tokens de acceso creados por personas eliminadas de una cuenta de servicio."
   },
   "smAccessRemovalWarningProjectTitle": {
-    "message": "Remove access to this project"
+    "message": "Eliminar acceso a este proyecto"
   },
   "smAccessRemovalWarningProjectMessage": {
-    "message": "This action will remove your access to the project."
+    "message": "Esta acción eliminará su acceso al proyecto."
   },
   "smAccessRemovalWarningSaTitle": {
-    "message": "Remove access to this service account"
+    "message": "Eliminar el acceso a esta cuenta de servicio"
   },
   "smAccessRemovalWarningSaMessage": {
-    "message": "This action will remove your access to the service account."
+    "message": "Esta acción eliminará su acceso a la cuenta de servicio."
   },
   "removeAccess": {
-    "message": "Remove access"
+    "message": "Eliminar acceso"
   },
   "checkForBreaches": {
     "message": "Comprobar filtración de datos conocidas para esta contraseña"
@@ -6659,6 +6668,6 @@
     }
   },
   "dismiss": {
-    "message": "Dismiss"
+    "message": "Descartar"
   }
 }

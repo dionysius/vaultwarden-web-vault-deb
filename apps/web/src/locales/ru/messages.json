@@ -4852,6 +4852,18 @@
   "personalVaultExportPolicyInEffect": {
     "message": "Одна или несколько политик организации запрещают вам экспортировать личное хранилище."
   },
+  "activateAutofill": {
+    "message": "Активировать автозаполнение"
+  },
+  "activateAutofillDesc": {
+    "message": "Включить автозаполнение при загрузке страницы в расширении браузера для всех существующих и новых участников."
+  },
+  "experimentalFeature": {
+    "message": "Взломанные или недоверенные сайты могут внедрить вредоносный код во время автозаполнения при загрузке страницы."
+  },
+  "learnMoreAboutAutofill": {
+    "message": "Узнать больше об автозаполнении"
+  },
   "selectType": {
     "message": "Выберите тип SSO"
   },
@@ -5625,9 +5637,6 @@
   },
   "reporting": {
     "message": "Отчеты"
-  },
-  "cardBrandMir": {
-    "message": "Mir"
   },
   "numberOfUsers": {
     "message": "Количество пользователей"
@@ -6490,7 +6499,7 @@
     "message": "Изменить параметры KDF"
   },
   "changeKdfLoggedOutWarning": {
-    "message": "При продолжении текущая сессия будет завершена, после чего потребуется повторная авторизация. Сессии на других устройствах могут оставаться активными в течение часа. Мы рекомендуем экспортировать хранилище перед изменением настроек шифрования, чтобы предотвратить потерю данных."
+    "message": "Proceeding will log you out of all active sessions. You will need to log back in and complete two-step login setup. We recommend exporting your vault before changing your encryption settings to prevent data loss."
   },
   "secretsManagerBeta": {
     "message": "Менеджер секретов Beta"

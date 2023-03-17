@@ -4816,7 +4816,7 @@
     "message": "Minuuttia"
   },
   "vaultTimeoutPolicyInEffect": {
-    "message": "Organisaatiokäytännöt vaikuttavat holvin aikakatkaisuun. Suurin sallittu aika on $HOURS$ tunti(a) ja $MINUTES$ minuutti(a)",
+    "message": "Organisaatiokäytännöt vaikuttavat holvisi aikakatkaisuun. Suurin sallittu aika on $HOURS$ tunti(a) ja $MINUTES$ minuutti(a).",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -4851,6 +4851,18 @@
   },
   "personalVaultExportPolicyInEffect": {
     "message": "Yksi tai useampi organisaatiokäytäntö estää yksityisen holvisi viennin."
+  },
+  "activateAutofill": {
+    "message": "Aktivoi automaattinen täyttö"
+  },
+  "activateAutofillDesc": {
+    "message": "Aktivoi selainlaajennuksen \"Automaattinen täyttö sivun avautuessa\" -asetus kaikille nykyisille ja uusille jäsenille."
+  },
+  "experimentalFeature": {
+    "message": "Vaarantuneet tai epäluotettavat sivustot voivat väärinkäyttää sivun avautuessa suoritettavaa automaattista täyttöä."
+  },
+  "learnMoreAboutAutofill": {
+    "message": "Lue lisää automaattisesta täytöstä"
   },
   "selectType": {
     "message": "Valitse kertakirjautumisen tyyppi"
@@ -5626,9 +5638,6 @@
   "reporting": {
     "message": "Raportointi"
   },
-  "cardBrandMir": {
-    "message": "Mir"
-  },
   "numberOfUsers": {
     "message": "Käyttäjien määrä"
   },
@@ -5746,7 +5755,7 @@
     "description": "A prompt explaining how secrets can be associated with projects."
   },
   "selectProjects": {
-    "message": "Valitse projektit",
+    "message": "Valitse projekteja",
     "description": "A label for a type-to-filter input field to choose projects."
   },
   "searchProjects": {
@@ -5845,7 +5854,7 @@
     "description": "Action to view the details of a service account."
   },
   "deleteServiceAccountDialogMessage": {
-    "message": "Palvelutilin $SERVICE_ACCOUNT$ poisto on pysyvää, eikä sitä ole mahdollista perua.",
+    "message": "Palvelutilin $SERVICE_ACCOUNT$ poisto on pysyvää ja peruuttamatonta.",
     "placeholders": {
       "service_account": {
         "content": "$1",
@@ -5854,7 +5863,7 @@
     }
   },
   "deleteServiceAccountsDialogMessage": {
-    "message": "Palvelutilien poisto on pysyvää, eikä sitä ole mahdollista perua."
+    "message": "Palvelutilien poisto on pysyvää ja peruuttamatonta."
   },
   "deleteServiceAccountsConfirmMessage": {
     "message": "Poista $COUNT$ palvelutiliä",
@@ -5866,10 +5875,10 @@
     }
   },
   "deleteServiceAccountToast": {
-    "message": "Palvelutili on poistettu"
+    "message": "Palvelutili poistettiin"
   },
   "deleteServiceAccountsToast": {
-    "message": "Palvelutilit on poistettu"
+    "message": "Palvelutilit poistettiin"
   },
   "searchServiceAccounts": {
     "message": "Etsi palvelutileistä",
@@ -5953,7 +5962,7 @@
     "description": "Notifies that the selected projects have been deleted"
   },
   "deleteProjectToast": {
-    "message": "Projekti ja kaikki siihen liittyvät salaisuudet poistettiin",
+    "message": "Projekti poistettiin",
     "description": "Notifies that a project has been deleted"
   },
   "deleteProjectDialogMessage": {
@@ -6087,7 +6096,7 @@
     "message": "Mitätöi käyttötunnisteet"
   },
   "revokeAccessTokenDesc": {
-    "message": "Käyttötunnisteiden mitätöinti on pysyvää, eikä sitä ole mahdollista perua."
+    "message": "Käyttötunnisteiden mitätöinti on pysyvää ja peruuttamatonta."
   },
   "accessTokenRevoked": {
     "message": "Käyttötunnisteet mitätöitiin",
@@ -6211,7 +6220,7 @@
     "message": "Esimerkki: omaosoite.fi. Aliverkkotunnukset on määritettävä ja vahvistettava erikseen."
   },
   "automaticDomainVerification": {
-    "message": "Automaattinen verkkotunnusvarmennus"
+    "message": "Automaattinen verkkotunnuksen vahvistus"
   },
   "automaticDomainVerificationProcess": {
     "message": "Bitwarden yrittää vahvistaa verkkotunnuksen 3 kertaa ensimmäisten 72 tunnin aikana. Jos vahvistus ei onnistu, tarkista verkkotunnuksesi DNS-tietue ja suorita vahvistus manuaalisesti. Vahvistamattomat verkkotunnukset poistetaan organisaatiosta 7 päivän kuluttua."
@@ -6274,7 +6283,7 @@
     "message": "Muokkaa verkkotunnusta"
   },
   "domainFormInvalid": {
-    "message": "Lomakkeessa havaittiin virheitä, jotka vaativat korjausta"
+    "message": "Lomakkeessa havaittiin huomiotasi vaativia virheitä"
   },
   "addedDomain": {
     "message": "Verkkotunnus $DOMAIN$ lisättiin",
@@ -6304,7 +6313,7 @@
     }
   },
   "domainNotVerifiedEvent": {
-    "message": "Verkkotunnusta $DOMAIN$ ei ole vahvistettu",
+    "message": "Verkkotunnusta $DOMAIN$ ei vahvistettu",
     "placeholders": {
       "DOMAIN": {
         "content": "$1",
@@ -6394,7 +6403,7 @@
     "message": "Vie tietoja"
   },
   "exportingOrganizationSecretDataTitle": {
-    "message": "Organisaation salaisuus-tietojen vienti"
+    "message": "Organisaation salaisten tietojen vienti"
   },
   "exportingOrganizationSecretDataDescription": {
     "message": "Vain organisaatioon $ORGANIZATION$ liitetyt Salaisuushallinnan tiedot viedään. Muiden tuotteiden ja muiden organisaatioiden kohteet eivät sisälly tähän.",
@@ -6451,7 +6460,7 @@
     "message": "Myönnä ryhmille tai henkilöille tämän projektin käyttöoikeus."
   },
   "projectPeopleSelectHint": {
-    "message": "Syötä tai valitse henkilöt tai ryhmät"
+    "message": "Syötä tai valitse henkilöitä tai ryhmiä"
   },
   "projectServiceAccountsDescription": {
     "message": "Myönnä palvelutileille tämän projektin käyttöoikeus."
@@ -6469,7 +6478,7 @@
     "message": "Myönnä ryhmille tai henkilöille tämän palvelutilin käyttöoikeus."
   },
   "serviceAccountProjectsDescription": {
-    "message": "Määritä palvelutilille projekteja. "
+    "message": "Määritä palvelutilille projekteja."
   },
   "serviceAccountEmptyProjectAccesspolicies": {
     "message": "Lisää projekteja käyttöoikeuksien myöntämiseksi"
@@ -6490,7 +6499,7 @@
     "message": "Muuta KDF-asetuksia"
   },
   "changeKdfLoggedOutWarning": {
-    "message": "Jos jatkat, uloskirjaat nykyisen istunnon ja sinun on kirjauduttava takaisin sisään. Muiden laitteiden aktiiviset istunnot voivat toimia vielä tunnin ajan. Tietojesi säilyvyyden varmistamiseksi suosittelemme, että viet holvisi sisällön ennen kuin muutat salausasetuksiasi."
+    "message": "Jos jatkat, kirjataan kaikki aktiiviset istunnot ulos, jonka jälkeen sinun on kirjauduttava sisään uudelleen ja suoritettava kaksivaiheisen todennuksen määritys. Tietojesi säilyvyyden varmistamiseksi suosittelemme, että viet holvisi sisällön ennen kuin muutat salausasetuksiasi."
   },
   "secretsManagerBeta": {
     "message": "Salaisuushallinta Beta"
@@ -6556,7 +6565,7 @@
     "description": "Link to a downloadable resource. This will be used as part of a larger phrase. Example: Download the Secrets Manager CLI"
   },
   "smCLI": {
-    "message": "Salaisuushallinnan CLI"
+    "message": "Salaisuushallinnan komentoliittymä"
   },
   "importSecrets": {
     "message": "Tuo salaisuuksia"
@@ -6605,22 +6614,22 @@
     "message": "Ota Salaisuushallinta Beta käyttöön"
   },
   "saPeopleWarningTitle": {
-    "message": "Käyttötunnisteet eivät vieläkään ole käytettävissä"
+    "message": "Käyttöoikeustunnisteet ovat edelleen käytettävissä"
   },
   "saPeopleWarningMessage": {
-    "message": "Henkilöiden poisto palvelutililtä ei poista heidän luomiaan pääsytunnisteita. Parasta suojauskäytäntöä varten on suositeltavaa mitätöidä palvelutililtä poistettujen henkilöiden luomat tunnukset."
+    "message": "Henkilöiden poistaminen palvelutililtä ei poista heidän luomiaan käyttötunnisteita. Parasta suojauskäytäntöä varten on suositeltavaa mitätöidä palvelutililtä poistettujen henkilöiden luomat tunnukset."
   },
   "smAccessRemovalWarningProjectTitle": {
     "message": "Poista projektin käyttöoikeus"
   },
   "smAccessRemovalWarningProjectMessage": {
-    "message": "Toiminto poistaa käyttöoikeutesi projektiin."
+    "message": "Tämä poistaa käyttöoikeutesi projektiin."
   },
   "smAccessRemovalWarningSaTitle": {
     "message": "Poista palvelutilin käyttöoikeus"
   },
   "smAccessRemovalWarningSaMessage": {
-    "message": "Toiminto poistaa käyttöoikeutesi palvelutiliin."
+    "message": "Tämä poistaa käyttöoikeutesi palvelutiliin."
   },
   "removeAccess": {
     "message": "Poista käyttöoikeus"

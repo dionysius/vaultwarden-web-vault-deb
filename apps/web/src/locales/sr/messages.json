@@ -4852,6 +4852,18 @@
   "personalVaultExportPolicyInEffect": {
     "message": "Једна или више полиса ваше организације вас спречава да извезете ваш сеф."
   },
+  "activateAutofill": {
+    "message": "Активирати ауто-пуњење"
+  },
+  "activateAutofillDesc": {
+    "message": "Активирајте ауто-пуњење са подешавањима учитавања странице на екстензију прегледача за све постојеће и нове чланове."
+  },
+  "experimentalFeature": {
+    "message": "Компромитоване или непоуздане веб локације могу да искористе ауто-пуњење при учитавању странице."
+  },
+  "learnMoreAboutAutofill": {
+    "message": "Сазнајте више о ауто-пуњење"
+  },
   "selectType": {
     "message": "Одабрати тип SSO-а"
   },
@@ -5625,9 +5637,6 @@
   },
   "reporting": {
     "message": "Пријављивање"
-  },
-  "cardBrandMir": {
-    "message": "Mir"
   },
   "numberOfUsers": {
     "message": "Број корисника"
@@ -6490,7 +6499,7 @@
     "message": "Change KDF settings"
   },
   "changeKdfLoggedOutWarning": {
-    "message": "Ако наставите, одјавићете се са ваше тренутне сесије, што захтева да се поново пријавите. Активне сесије на другим уређајима могу да остану активне до један сат. Препоручујемо да извезете сеф пре него што промените подешавања шифровања да бисте спречили губитак података."
+    "message": "Proceeding will log you out of all active sessions. You will need to log back in and complete two-step login setup. We recommend exporting your vault before changing your encryption settings to prevent data loss."
   },
   "secretsManagerBeta": {
     "message": "Secrets Manager Beta"

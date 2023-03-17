@@ -4852,6 +4852,18 @@
   "personalVaultExportPolicyInEffect": {
     "message": "Organisatiebeleid voorkomt dat je je persoonlijke kluis exporteert."
   },
+  "activateAutofill": {
+    "message": "Automatisch invullen activeren"
+  },
+  "activateAutofillDesc": {
+    "message": "Automatisch invullen bij laden van pagina activeren in de browserextensie voor alle bestaande en nieuwe leden."
+  },
+  "experimentalFeature": {
+    "message": "Gehackte of onbetrouwbare websites kunnen automatisch invullen bij laden van pagina misbruiken."
+  },
+  "learnMoreAboutAutofill": {
+    "message": "Meer info over automatisch invullen"
+  },
   "selectType": {
     "message": "Selecteer Type"
   },
@@ -5625,9 +5637,6 @@
   },
   "reporting": {
     "message": "Rapporteren"
-  },
-  "cardBrandMir": {
-    "message": "Mir"
   },
   "numberOfUsers": {
     "message": "Aantal gebruikers"
@@ -6466,7 +6475,7 @@
     "message": "Serviceaccounts toevoegen om toegang te verlenen"
   },
   "serviceAccountPeopleDescription": {
-    "message": "Grant groups or people access to this service account."
+    "message": "Geef groepen of mensen toegang tot dit serviceaccount."
   },
   "serviceAccountProjectsDescription": {
     "message": "Projecten aan dit serviceaccount toewijzen. "
@@ -6490,7 +6499,7 @@
     "message": "KDF-instellingen wijzigen"
   },
   "changeKdfLoggedOutWarning": {
-    "message": "Als je doorgaat zal je huidige sessie uitloggen, waarna je opnieuw moet inloggen. Actieve sessies op andere apparaten blijven mogelijk nog een uur actief. We raden je aan je kluis te exporteren voordat je je versleutelingsinstellingen wijzigt om gegevensverlies te voorkomen."
+    "message": "Proceeding will log you out of all active sessions. You will need to log back in and complete two-step login setup. We recommend exporting your vault before changing your encryption settings to prevent data loss."
   },
   "secretsManagerBeta": {
     "message": "Secrets Manager Bèta"
@@ -6626,7 +6635,7 @@
     "message": "Toegang verwijderen"
   },
   "checkForBreaches": {
-    "message": "Check known data breaches for this password"
+    "message": "Controleer bekende datalekken voor dit wachtwoord"
   },
   "exposedMasterPassword": {
     "message": "Exposed Master Password"

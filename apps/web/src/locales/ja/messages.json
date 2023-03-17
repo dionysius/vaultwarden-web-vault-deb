@@ -4852,6 +4852,18 @@
   "personalVaultExportPolicyInEffect": {
     "message": "1 つ以上の組織ポリシーにより、個人の保管庫をエクスポートできません。"
   },
+  "activateAutofill": {
+    "message": "自動入力を有効にする"
+  },
+  "activateAutofillDesc": {
+    "message": "すべての既存および新規メンバーのブラウザ拡張機能のページ読み込み設定で、自動入力を有効にします。"
+  },
+  "experimentalFeature": {
+    "message": "ウイルス感染したり信頼できないウェブサイトは、ページの読み込み時の自動入力を悪用できてしまいます。"
+  },
+  "learnMoreAboutAutofill": {
+    "message": "自動入力についての詳細"
+  },
   "selectType": {
     "message": "SSO のタイプを選択"
   },
@@ -5625,9 +5637,6 @@
   },
   "reporting": {
     "message": "レポート"
-  },
-  "cardBrandMir": {
-    "message": "Mir"
   },
   "numberOfUsers": {
     "message": "ユーザー数"
@@ -6490,7 +6499,7 @@
     "message": "KDF 設定の変更"
   },
   "changeKdfLoggedOutWarning": {
-    "message": "続行すると現在のセッションからログアウトするため、再度ログインする必要があります。 他のデバイスでのアクティブなセッションは、最大1時間アクティブになり続ける可能性があります。 暗号化設定を変更する前に、保管庫をエクスポートしてデータの損失を防ぐことをお勧めします。"
+    "message": "Proceeding will log you out of all active sessions. You will need to log back in and complete two-step login setup. We recommend exporting your vault before changing your encryption settings to prevent data loss."
   },
   "secretsManagerBeta": {
     "message": "ベータ版シークレットマネージャー"

@@ -4852,6 +4852,18 @@
   "personalVaultExportPolicyInEffect": {
     "message": "En eller flere organisationspolitikker forhindrer eksport af din personlige boks."
   },
+  "activateAutofill": {
+    "message": "Aktivér autoudfyldning"
+  },
+  "activateAutofillDesc": {
+    "message": "Aktivér indstillingen Autoudfyldning ved sideindlæsning i browserudvidelsen for alle eksisterende og nye medlemmer."
+  },
+  "experimentalFeature": {
+    "message": "Kompromitterede eller ikke-betroede websteder kan udnytte autoudfyldning ved sideindlæsning."
+  },
+  "learnMoreAboutAutofill": {
+    "message": "Læs mere om autoudfyldning"
+  },
   "selectType": {
     "message": "Vælg SSO-type"
   },
@@ -5625,9 +5637,6 @@
   },
   "reporting": {
     "message": "Rapportering"
-  },
-  "cardBrandMir": {
-    "message": "Mir"
   },
   "numberOfUsers": {
     "message": "Antal brugere"
@@ -6490,7 +6499,7 @@
     "message": "Skift KDF-indstillinger"
   },
   "changeKdfLoggedOutWarning": {
-    "message": "Fortsættes, logges der ud af den aktuelle session, og der skal logges ind igen. Aktive sessioner på andre enheder kan forblive aktive i op til én time. For at forhindre datatab, anbefaler vi, at du eksporterer din boks, inden krypteringsindstillingerne ændres."
+    "message": "Proceeding will log you out of all active sessions. You will need to log back in and complete two-step login setup. We recommend exporting your vault before changing your encryption settings to prevent data loss."
   },
   "secretsManagerBeta": {
     "message": "Secrets Manager Beta"

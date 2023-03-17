@@ -625,7 +625,7 @@
     "message": "Se connecter avec le mot de passe principal"
   },
   "createAccount": {
-    "message": "Créer un compte"
+    "message": "Créez un compte"
   },
   "newAroundHere": {
     "message": "Vous êtes nouveau ici ?"
@@ -813,7 +813,7 @@
     }
   },
   "rememberMe": {
-    "message": "Rester connecté"
+    "message": "Se souvenir de moi"
   },
   "sendVerificationCodeEmailAgain": {
     "message": "Envoyer à nouveau le courriel de code de vérification"
@@ -849,17 +849,17 @@
     "message": "Application d'authentification"
   },
   "authenticatorAppDesc": {
-    "message": "Utiliser une application d'authentification (comme Authy ou Google Authenticator) pour générer des codes de vérification basés sur le temps.",
+    "message": "Utilisez une application d'authentification (comme Authy ou Google Authenticator) pour générer des codes de vérification basés sur le temps.",
     "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
   },
   "yubiKeyTitle": {
     "message": "Clé de sécurité OTP YubiKey"
   },
   "yubiKeyDesc": {
-    "message": "Utilisez une YubiKey pour accéder à votre compte. Fonctionne avec les YubiKey série 4, série 5 et NEO."
+    "message": "Utilisez une YubiKey pour accéder à votre compte. Fonctionne avec les YubiKey séries 4, séries 5 et NEO."
   },
   "duoDesc": {
-    "message": "S'authentifier avec Duo Security via l'application Duo Mobile, un SMS, un appel téléphonique, ou une clé de sécurité U2F.",
+    "message": "Vérifiez avec Duo Security à l'aide de l'application Duo Mobile, d'un SMS, d'un appel téléphonique ou d'une clé de sécurité U2F.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "duoOrganizationDesc": {
@@ -876,7 +876,7 @@
     "message": "WebAuthn FIDO2"
   },
   "webAuthnDesc": {
-    "message": "Utilisez n'importe quelle clé de sécurité compatible WebAuthn pour accéder à votre compte."
+    "message": "Utilisez n'importe quelle clé de sécurité compatible avec WebAuthn pour accéder à votre compte."
   },
   "webAuthnMigrated": {
     "message": "(Migré depuis FIDO)"
@@ -1187,7 +1187,7 @@
     "message": "Zone de danger"
   },
   "dangerZoneDesc": {
-    "message": "Attention, ces actions ne sont pas réversibles !"
+    "message": "Attention, ces actions sont irréversibles !"
   },
   "deauthorizeSessions": {
     "message": "Révoquer les sessions"
@@ -1317,20 +1317,20 @@
     "message": "Langue"
   },
   "languageDesc": {
-    "message": "Changer la langue utilisée par le coffre web."
+    "message": "Changez la langue utilisée par le coffre web."
   },
   "enableFavicon": {
     "message": "Afficher les icônes du site web"
   },
   "faviconDesc": {
-    "message": "Afficher une image reconnaissable à côté de chaque identifiant."
+    "message": "Affichez une image reconnaissable à côté de chaque identifiant."
   },
   "enableFullWidth": {
-    "message": "Activer la mise en page en pleine largeur",
+    "message": "Afficher la mise en page en pleine largeur",
     "description": "Allows scaling the web vault UI's width"
   },
   "enableFullWidthDesc": {
-    "message": "Permettre au coffre web de s’étendre sur toute la largeur de la fenêtre du navigateur."
+    "message": "Permettez au coffre web de s'étendre sur toute la largeur de la fenêtre du navigateur."
   },
   "default": {
     "message": "Par défaut"
@@ -1987,7 +1987,7 @@
     "description": "Short abbreviation for 'month'"
   },
   "paymentChargedAnnually": {
-    "message": "Votre mode de paiement sera facturé immédiatement et de manière récurrente chaque année. Vous pouvez annuler à tout moment."
+    "message": "Votre mode de paiement sera débité immédiatement, puis de façon récurrente chaque année. Vous pouvez résilier à tout moment."
   },
   "paymentCharged": {
     "message": "Votre mode de paiement sera facturé immédiatement et de manière récurrente chaque $INTERVAL$. Vous pouvez annuler à tout moment.",
@@ -2077,7 +2077,7 @@
     "message": "Retirer du stockage"
   },
   "subscriptionStorage": {
-    "message": "Votre abonnement a un total de $MAX_STORAGE$ Go de stockage de fichiers chiffrés. Vous utilisez actuellement $USED_STORAGE$.",
+    "message": "Votre abonnement possède un total de $MAX_STORAGE$ Go de stockage de fichiers chiffrés. Vous utilisez actuellement $USED_STORAGE$.",
     "placeholders": {
       "max_storage": {
         "content": "$1",
@@ -2391,7 +2391,7 @@
     "message": "Mensuel"
   },
   "annually": {
-    "message": "Annuel"
+    "message": "Annuellement"
   },
   "annual": {
     "message": "Annuel"
@@ -2436,7 +2436,7 @@
     "message": "Personnes"
   },
   "policies": {
-    "message": "Politiques"
+    "message": "Politiques de sécurité"
   },
   "singleSignOn": {
     "message": "Authentification unique"
@@ -3435,10 +3435,10 @@
     "message": "Vous n'avez rien sélectionné."
   },
   "acceptPolicies": {
-    "message": "En cochant cette case, vous acceptez les éléments suivants :"
+    "message": "En cochant cette case vous acceptez ce qui suit :"
   },
   "acceptPoliciesRequired": {
-    "message": "Les Conditions d'Utilisation et la Politique de Confidentialité n'ont pas été acceptées."
+    "message": "Les conditions d'utilisation et la politique de confidentialité n'ont pas été acceptées."
   },
   "termsOfService": {
     "message": "Conditions d'utilisation"
@@ -3576,32 +3576,32 @@
     "description": "Free, as in 'Free beer'"
   },
   "apiKey": {
-    "message": "Clé d'API"
+    "message": "Clé API"
   },
   "apiKeyDesc": {
-    "message": "Votre clé d'API peut être utilisée pour s'authentifier auprès de l'API publique Bitwarden."
+    "message": "Votre clé API peut être utilisée pour vous authentifier auprès de l'API publique de Bitwarden."
   },
   "apiKeyRotateDesc": {
-    "message": "Révoquer la clé d'API invalidera la clé précédente. Vous pouvez révoquer votre clé d'API si vous pensez que la clé actuelle a été compromise."
+    "message": "La régénération de la clé API invalidera la clé précédente. Vous pouvez régénérer votre clé API si vous estimez que la clé actuelle n'est plus utilisable en toute sécurité."
   },
   "apiKeyWarning": {
-    "message": "Votre clé d'API a un accès complet à l'organisation. Elle doit être gardée secrète."
+    "message": "Votre clé API possède un accès complet à l'organisation. Elle devrait être tenue secrète."
   },
   "userApiKeyDesc": {
-    "message": "Votre clé d'API peut être utilisée pour vous authentifier dans l'interface ligne de commande (CLI) de Bitwarden."
+    "message": "Votre clé API peut être utilisée pour vous authentifier dans la CLI de Bitwarden."
   },
   "userApiKeyWarning": {
-    "message": "Votre clé d'API est un mécanisme d'authentification alternatif. Elle doit être gardée secrète."
+    "message": "Votre clé API est un mécanisme d'authentification alternatif. Elle devrait être tenue secrète."
   },
   "oauth2ClientCredentials": {
     "message": "Identifiants du client OAuth 2.0",
     "description": "'OAuth 2.0' is a programming protocol. It should probably not be translated."
   },
   "viewApiKey": {
-    "message": "Voir la clé d'API"
+    "message": "Afficher la clé API"
   },
   "rotateApiKey": {
-    "message": "Révoquer la clé d'API"
+    "message": "Régénérer la clé API"
   },
   "selectOneCollection": {
     "message": "Vous devez sélectionner au moins une collection."
@@ -3646,10 +3646,10 @@
     "message": "Définir les exigences pour le générateur de mot de passe."
   },
   "passwordGeneratorPolicyInEffect": {
-    "message": "Une ou plusieurs politiques d'organisation affectent les paramètres de votre générateur."
+    "message": "Une ou plusieurs politiques de sécurité de l'organisation affectent les paramètres de votre générateur."
   },
   "masterPasswordPolicyInEffect": {
-    "message": "Une ou plusieurs politiques de l'organisation exigent que votre mot de passe principal réponde aux exigences suivantes :"
+    "message": "Une ou plusieurs politiques de sécurité de l'organisation exigent que votre mot de passe principal réponde aux exigences suivantes :"
   },
   "policyInEffectMinComplexity": {
     "message": "Score de complexité minimum de $SCORE$",
@@ -3706,7 +3706,7 @@
     "message": "Un mot de passe principal ou une autre méthode de déverrouillage est nécessaire pour accéder à nouveau à votre coffre."
   },
   "vaultTimeoutActionLogOutDesc": {
-    "message": "Un coffre déconnecté nécessite que vous vous ré-authentifiez pour y accéder de nouveau."
+    "message": "Une nouvelle authentification est requise pour accéder à nouveau à votre coffre."
   },
   "lock": {
     "message": "Verrouiller",
@@ -3843,7 +3843,7 @@
     "message": "Authentification SSO via SAML2.0 et OpenID Connect"
   },
   "includeEnterprisePolicies": {
-    "message": "Politiques d'entreprise"
+    "message": "Politiques de sécurité de l'entreprise"
   },
   "ssoValidationFailed": {
     "message": "Échec de la validation SSO"
@@ -4202,7 +4202,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "disableSendExemption": {
-    "message": "Les utilisateurs de l'organisation qui peuvent gérer les politiques de l'organisation sont exonérés de l'application de cette politique."
+    "message": "Les membres de l'organisation qui peuvent gérer les politiques de sécurité de l'organisation sont exemptés de l'application de cette politique de sécurité."
   },
   "sendDisabled": {
     "message": "Send supprimé",
@@ -4221,14 +4221,14 @@
     "description": "'Sends' is a plural noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendOptionsExemption": {
-    "message": "Les utilisateurs de l'organisation qui peuvent gérer les politiques de l'organisation sont exonérés de l'application de cette politique."
+    "message": "Les membres de l'organisation qui peuvent gérer les politiques de sécurité de l'organisation sont exemptés de l'application de cette politique de sécurité."
   },
   "disableHideEmail": {
     "message": "Toujours afficher l'adresse électronique du membre avec les destinataires lors de la création ou de l'édition d'un Send.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendOptionsPolicyInEffect": {
-    "message": "Les politiques d'organisation suivantes sont actuellement en vigueur :"
+    "message": "Les politiques de sécurité de l'organisation suivantes sont actuellement en vigueur :"
   },
   "sendDisableHideEmailInEffect": {
     "message": "Les utilisateurs ne sont pas autorisés à masquer leur adresse électronique aux destinataires lors de la création ou de l'édition d'un Send.",
@@ -4253,7 +4253,7 @@
     "message": "Personnalisé"
   },
   "customDesc": {
-    "message": "Permet un contrôle plus précis des permissions utilisateur pour les configurations avancées."
+    "message": "Accorder des autorisations personnalisées aux membres"
   },
   "customDescNonEnterpriseStart": {
     "message": "Rôles personnalisés est une ",
@@ -4319,7 +4319,7 @@
     "message": "Gérer les groupes"
   },
   "managePolicies": {
-    "message": "Gérer les politiques"
+    "message": "Gérer les politiques de sécurité"
   },
   "manageSso": {
     "message": "Gérer le SSO"
@@ -4535,7 +4535,7 @@
     "message": "cet utilisateur"
   },
   "resetPasswordMasterPasswordPolicyInEffect": {
-    "message": "Une ou plusieurs politiques de l'organisation exigent que le mot de passe principal réponde aux exigences suivantes :"
+    "message": "Une ou plusieurs politiques de sécurité de l'organisation exigent que votre mot de passe principal réponde aux exigences suivantes :"
   },
   "resetPasswordSuccess": {
     "message": "Mot de passe réinitialisé avec succès !"
@@ -4816,7 +4816,7 @@
     "message": "Minutes"
   },
   "vaultTimeoutPolicyInEffect": {
-    "message": "Les politiques de votre organisation affectent le délai d'expiration de votre coffre. Le délai d'expiration maximal autorisé est de $HOURS$ heure(s) et $MINUTES$ minute(s)",
+    "message": "Les politiques de sécurité de votre organisation affectent le délai d'expiration de votre coffre. Le délai d'expiration autorisé du coffre est de $HOURS$ heure(s) et $MINUTES$ minute(s) maximum",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -4850,7 +4850,19 @@
     "message": "Export du coffre supprimé"
   },
   "personalVaultExportPolicyInEffect": {
-    "message": "Une ou plusieurs politiques d'organisation vous empêchent d'exporter votre coffre personnel."
+    "message": "Une ou plusieurs politiques de sécurité de l'organisation vous empêchent d'exporter votre coffre individuel."
+  },
+  "activateAutofill": {
+    "message": "Activer la saisie automatique"
+  },
+  "activateAutofillDesc": {
+    "message": "Activer la saisie automatique avec les paramètres de chargement de page sur l'extension du navigateur pour tous les membres existants et nouveaux."
+  },
+  "experimentalFeature": {
+    "message": "Les sites web compromis ou non fiables peuvent exploiter la saisie automatique au chargement de la page."
+  },
+  "learnMoreAboutAutofill": {
+    "message": "En savoir plus sur la saisie automatique"
   },
   "selectType": {
     "message": "Sélectionnez le type de SSO"
@@ -5144,7 +5156,7 @@
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Use the require single-sign-on authentication policy to require all members to log in with SSO.'"
   },
   "ssoPolicyHelpKeyConnector": {
-    "message": "Les politiques \"Authentification SSO\" et \"Organisation Unique\" sont requises pour mettre en place le déchiffrement avec Key Connector."
+    "message": "L'authentification SSO requise et les politiques de sécurité uniques de l'organisation sont requis pour configurer le déchiffrement du Key Connector."
   },
   "memberDecryptionOption": {
     "message": "Options de déchiffrement des membres"
@@ -5360,7 +5372,7 @@
     "message": "Clés"
   },
   "billingHistory": {
-    "message": "Historique de Facturation"
+    "message": "Historique de facturation"
   },
   "backToReports": {
     "message": "Retour aux Rapports"
@@ -5519,29 +5531,29 @@
     "description": "the text, 'SCIM', is an acronymn and should not be translated."
   },
   "scimEnabledCheckboxDescHelpText": {
-    "message": "Configurez votre fournisseur d'identité préféré en configurant l'URL et la Clé d'API SCIM",
+    "message": "Configurez votre fournisseur d'identité préféré en configurant l'URL et la clé API SCIM",
     "description": "the text, 'SCIM', is an acronymn and should not be translated."
   },
   "scimApiKeyHelperText": {
-    "message": "Cette clé d'API a accès à la gestion des utilisateurs au sein de votre organisation. Elle doit être gardée secrète."
+    "message": "Cette clé API possède l'accès pour gérer les utilisateurs au sein de votre organisation. Elle devrait être tenue secrète."
   },
   "copyScimKey": {
-    "message": "Copiez la Clé d'API SCIM dans votre presse-papiers",
+    "message": "Copiez la clé API SCIM dans votre presse-papiers",
     "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
   },
   "rotateScimKey": {
-    "message": "Pivoter la Clé d'API SCIM",
+    "message": "Régénérer la clé API SCIM",
     "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
   },
   "rotateScimKeyWarning": {
-    "message": "Êtes-vous sûr de vouloir pivoter la Clé d'API SCIM ? La clé actuelle ne fonctionnera plus pour aucune intégration existante.",
+    "message": "Êtes-vous sûr de vouloir régénérer la clé API du SCIM ? La clé actuelle ne fonctionnera plus pour les intégrations existantes.",
     "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
   },
   "rotateKey": {
     "message": "Pivoter la Clé"
   },
   "scimApiKey": {
-    "message": "Clé d'API SCIM",
+    "message": "Clé API SCIM",
     "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
   },
   "copyScimUrl": {
@@ -5553,7 +5565,7 @@
     "description": "the text, 'SCIM' and 'URL', are acronymns and should not be translated."
   },
   "scimApiKeyRotated": {
-    "message": "La clé d'API SCIM a été pivotée avec succès",
+    "message": "Clé API SCIM régénérée avec succès",
     "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
   },
   "scimSettingsSaved": {
@@ -5625,9 +5637,6 @@
   },
   "reporting": {
     "message": "Compte Rendu"
-  },
-  "cardBrandMir": {
-    "message": "Mir"
   },
   "numberOfUsers": {
     "message": "Nombre d’utilisateurs"
@@ -6490,7 +6499,7 @@
     "message": "Changer les paramètres KDF"
   },
   "changeKdfLoggedOutWarning": {
-    "message": "En poursuivant, vous serez déconnecté de votre session actuelle et vous devrez vous reconnecter. Les sessions actives sur d'autres appareils peuvent rester actives pendant encore une heure. Nous vous recommandons d'exporter votre coffre avant de changer vos paramètres de chiffrement afin d'éviter une perte de données."
+    "message": "Proceeding will log you out of all active sessions. You will need to log back in and complete two-step login setup. We recommend exporting your vault before changing your encryption settings to prevent data loss."
   },
   "secretsManagerBeta": {
     "message": "Gestionnaire de secrets bêta"
@@ -6549,7 +6558,7 @@
     "message": "Créer un projet"
   },
   "createServiceAccount": {
-    "message": "Créer un compte de service"
+    "message": "Créez un compte de service"
   },
   "downloadThe": {
     "message": "Télécharger le",

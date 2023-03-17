@@ -4852,6 +4852,18 @@
   "personalVaultExportPolicyInEffect": {
     "message": "Co najmniej jedna zasada organizacji uniemożliwia wyeksportowanie osobistego sejfu."
   },
+  "activateAutofill": {
+    "message": "Włącz autouzupełnianie"
+  },
+  "activateAutofillDesc": {
+    "message": "Aktywuj autouzupełnianie podczas wczytywania strony w rozszerzeniu przeglądarki dla wszystkich istniejących i nowych użytkowników."
+  },
+  "experimentalFeature": {
+    "message": "Zaatakowane lub niezaufane witryny internetowe mogą wykorzystać funkcję autouzupełniania podczas wczytywania strony, aby wyrządzić szkody."
+  },
+  "learnMoreAboutAutofill": {
+    "message": "Dowiedz się więcej o autouzupełnianiu"
+  },
   "selectType": {
     "message": "Wybierz rodzaj logowania jednokrotnego SSO"
   },
@@ -5625,9 +5637,6 @@
   },
   "reporting": {
     "message": "Zgłaszanie"
-  },
-  "cardBrandMir": {
-    "message": "Mir"
   },
   "numberOfUsers": {
     "message": "Liczba użytkowników"
@@ -6490,7 +6499,7 @@
     "message": "Zmień ustawienia KDF"
   },
   "changeKdfLoggedOutWarning": {
-    "message": "Kontynuowanie spowoduje wylogowanie z bieżącej sesji i konieczność ponownego zalogowania. Aktywne sesje na innych urządzeniach mogą pozostać aktywne przez maksymalnie godzinę. Zalecamy wyeksportowanie sejfu przed zmianą ustawień szyfrowania, aby zapobiec utracie danych."
+    "message": "Proceeding will log you out of all active sessions. You will need to log back in and complete two-step login setup. We recommend exporting your vault before changing your encryption settings to prevent data loss."
   },
   "secretsManagerBeta": {
     "message": "Menedżer sekretów beta"

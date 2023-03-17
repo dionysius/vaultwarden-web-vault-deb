@@ -4852,6 +4852,18 @@
   "personalVaultExportPolicyInEffect": {
     "message": "Jedna alebo viacero zásad organizácie vám bráni exportovať váš osobný trezor."
   },
+  "activateAutofill": {
+    "message": "Activate auto-fill"
+  },
+  "activateAutofillDesc": {
+    "message": "Activate the auto-fill with page load settings on the browser extension for all existing and new members."
+  },
+  "experimentalFeature": {
+    "message": "Compromised or untrusted websites can exploit auto-fill on page load."
+  },
+  "learnMoreAboutAutofill": {
+    "message": "Learn more about auto-fill"
+  },
   "selectType": {
     "message": "Vyberte typ SSO"
   },
@@ -5625,9 +5637,6 @@
   },
   "reporting": {
     "message": "Reportuje"
-  },
-  "cardBrandMir": {
-    "message": "Mir"
   },
   "numberOfUsers": {
     "message": "Počet používateľov"
@@ -6490,7 +6499,7 @@
     "message": "Zmeniť nastavenia KDF"
   },
   "changeKdfLoggedOutWarning": {
-    "message": "Ak budete pokračovať, budete odhlásený z aktuálnej relácie a budete sa musieť opätovne prihlásiť. Aktívne relácie na iných zariadeniach môžu zostať aktívne až hodinu. Pred zmenou nastavení šifrovania odporúčame exportovať váš trezor aby ste predišli strate dát."
+    "message": "Proceeding will log you out of all active sessions. You will need to log back in and complete two-step login setup. We recommend exporting your vault before changing your encryption settings to prevent data loss."
   },
   "secretsManagerBeta": {
     "message": "Beta verzia Secrets Manager"

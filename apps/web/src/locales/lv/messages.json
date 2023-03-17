@@ -4852,6 +4852,18 @@
   "personalVaultExportPolicyInEffect": {
     "message": "Viens vai vairāki apvienības nosacījumi neļauj izgūt privātās glabātavas saturu."
   },
+  "activateAutofill": {
+    "message": "Iespējot automātisko aizpildīšanu"
+  },
+  "activateAutofillDesc": {
+    "message": "Pārlūka paplašinājumā iespējot automātisko aizpildīšanu lapas ielādes brīdī visiem esošajiem un jaunajiem dalībniekiem."
+  },
+  "experimentalFeature": {
+    "message": "Pārveidotās vai neuzticamās vietnēs automātiskā aizpildīšana lapas ielādes laikā var tikt ļaunprātīgi izmantota."
+  },
+  "learnMoreAboutAutofill": {
+    "message": "Uzzināt vairāk par automātisko aizpildīšanu"
+  },
   "selectType": {
     "message": "Atlasīt vienotās pieteikšanās veidu"
   },
@@ -5626,9 +5638,6 @@
   "reporting": {
     "message": "Atskaišu sagatavošana"
   },
-  "cardBrandMir": {
-    "message": "Mir"
-  },
   "numberOfUsers": {
     "message": "Lietotāju skaits"
   },
@@ -5845,7 +5854,7 @@
     "description": "Action to view the details of a service account."
   },
   "deleteServiceAccountDialogMessage": {
-    "message": "Deleting service account $SERVICE_ACCOUNT$ is permanent and irreversible.",
+    "message": "Pakalpojumu konta $SERVICE_ACCOUNT$ izdzēšana ir paliekoša un neatgriezeniska.",
     "placeholders": {
       "service_account": {
         "content": "$1",
@@ -5854,10 +5863,10 @@
     }
   },
   "deleteServiceAccountsDialogMessage": {
-    "message": "Deleting service accounts is permanent and irreversible."
+    "message": "Pakalpojumu kontu izdzēšana ir paliekoša un neatgriezeniska."
   },
   "deleteServiceAccountsConfirmMessage": {
-    "message": "Delete $COUNT$ service accounts",
+    "message": "Izdzēst $COUNT$ pakalpojumu kontu(s)",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -5866,17 +5875,17 @@
     }
   },
   "deleteServiceAccountToast": {
-    "message": "The service account have been deleted"
+    "message": "Pakalpojumu konts tika izdzēsts"
   },
   "deleteServiceAccountsToast": {
-    "message": "Service accounts deleted"
+    "message": "Pakalpojumu konti ir izdzēsti"
   },
   "searchServiceAccounts": {
     "message": "Meklēt pakalpojumu kontus",
     "description": "Placeholder text for searching service accounts."
   },
   "editServiceAccount": {
-    "message": "Edit service account",
+    "message": "Labot pakalpojumu kontu",
     "description": "Title for editing a service account."
   },
   "addProject": {
@@ -5937,7 +5946,7 @@
     "description": "Notifies that a new service account has been created"
   },
   "serviceAccountUpdated": {
-    "message": "Service account updated",
+    "message": "Pakalpojumu konts ir atjaunināts",
     "description": "Notifies that a service account has been updated"
   },
   "newSaSelectAccess": {
@@ -6490,7 +6499,7 @@
     "message": "Mainīt KDF iestatījumus"
   },
   "changeKdfLoggedOutWarning": {
-    "message": "Turpinot notiks atteikšanās no pašreizējās sesijas, tādējādi būs nepieciešams pieteikties vēlreiz. Citu ierīču aktīvās sesijas var turpināt darboties līdz vienai stundai. Pirms šifrēšanas iestatījumu maiņas ir ieteicams izgūt glabātavas saturu, lai novērstu datu zudumu."
+    "message": "Proceeding will log you out of all active sessions. You will need to log back in and complete two-step login setup. We recommend exporting your vault before changing your encryption settings to prevent data loss."
   },
   "secretsManagerBeta": {
     "message": "Noslēpumu pārvaldnieks Beta"
@@ -6605,25 +6614,25 @@
     "message": "Iespējot Noslēpumu pārvaldnieks Beta"
   },
   "saPeopleWarningTitle": {
-    "message": "Access tokens still available"
+    "message": "Piekļuves pilnvaras joprojām ir pieejamas"
   },
   "saPeopleWarningMessage": {
-    "message": "Removing people from a service account does not remove the access tokens they created. For security best practice, it is recommended to revoke access tokens created by people removed from a service account."
+    "message": "Cilvēku noņemšana no pakalpojumu konta nenoņem to izveidotās piekļuves pilnvaras. Labākajai drošības pieejai ir ieteicams atsaukt piekļuves pilnvaras, kuras ir izveidojuši cilvēki, kuri ir noņemti no pakalpojumu konta."
   },
   "smAccessRemovalWarningProjectTitle": {
-    "message": "Remove access to this project"
+    "message": "Noņemt piekļuvi šim projektam"
   },
   "smAccessRemovalWarningProjectMessage": {
-    "message": "This action will remove your access to the project."
+    "message": "Šī darbība noņems piekļuvi projektam."
   },
   "smAccessRemovalWarningSaTitle": {
-    "message": "Remove access to this service account"
+    "message": "Noņemt piekļuvi šim pakalpojumu kontam"
   },
   "smAccessRemovalWarningSaMessage": {
-    "message": "This action will remove your access to the service account."
+    "message": "Šī darbība noņems piekļuvi pakalpojumu kontam."
   },
   "removeAccess": {
-    "message": "Remove access"
+    "message": "Noņemt piekļuvi"
   },
   "checkForBreaches": {
     "message": "Meklēt šo paroli zināmās datu noplūdēs"

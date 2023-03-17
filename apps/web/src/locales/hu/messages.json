@@ -4852,6 +4852,18 @@
   "personalVaultExportPolicyInEffect": {
     "message": "Egy vagy több szervezeti házirend tiltja a személyes széf exportálását."
   },
+  "activateAutofill": {
+    "message": "Automatikus kitöltés bekapcsolása"
+  },
+  "activateAutofillDesc": {
+    "message": "Bekapcsolja az automatikus kitöltést az oldalbetöltési beállításokkal a böngésző bővítményben minden meglévő és új tag esetében."
+  },
+  "experimentalFeature": {
+    "message": "A veszélyeztetett vagy nem megbízható webhelyek kihasználhatják az oldal betöltéskor végrehajtott automatikus kitöltést."
+  },
+  "learnMoreAboutAutofill": {
+    "message": "További információ az automatikus kitöltésről"
+  },
   "selectType": {
     "message": "SSO típus választás"
   },
@@ -5625,9 +5637,6 @@
   },
   "reporting": {
     "message": "Jelentés"
-  },
-  "cardBrandMir": {
-    "message": "Mir"
   },
   "numberOfUsers": {
     "message": "Felhasználók száma"
@@ -6490,7 +6499,7 @@
     "message": "KDF beállítások megváltoztatása"
   },
   "changeKdfLoggedOutWarning": {
-    "message": "A továbblépéssel kijelentkeztetésre kerülünk az aktuális munkamenetből és újra be kell jelentkezni. A többi eszközön lévő aktív munkamenetek akár egy óráig is aktívak maradhatnak. Célszerű a titkosítási beállítások módosítása előtt a széf exportálása  az adatvesztés elkerülése érdekében."
+    "message": "Proceeding will log you out of all active sessions. You will need to log back in and complete two-step login setup. We recommend exporting your vault before changing your encryption settings to prevent data loss."
   },
   "secretsManagerBeta": {
     "message": "Titkos kód kezelő béta"

@@ -589,7 +589,7 @@
     "message": "编辑信息"
   },
   "access": {
-    "message": "Access"
+    "message": "访问权限"
   },
   "loggedOut": {
     "message": "已登出"
@@ -697,7 +697,7 @@
     "message": "必须再次输入主密码。"
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least $VALUE$ characters long.",
+    "message": "主密码必须至少 $VALUE$ 个字符长。",
     "description": "The Master Password must be at least a specific number of characters long.",
     "placeholders": {
       "value": {
@@ -1001,7 +1001,7 @@
     "message": "确认文件密码"
   },
   "accountRestrictedOptionDescription": {
-    "message": "Use your account encryption key, derived from your account's username and Master Password, to encrypt the export and restrict import to only the current Bitwarden account."
+    "message": "使用您账户的加密密钥，源自您账户的用户名和主密码， 加密导出并限制导入到当前的 Bitwarden 帐户。"
   },
   "passwordProtectedOptionDescription": {
     "message": "设置一个密码用来加密导出的数据，并使用此密码解密以导入到任意 Bitwarden 账户。"
@@ -1010,7 +1010,7 @@
     "message": "导出类型"
   },
   "accountRestricted": {
-    "message": "Account restricted"
+    "message": "账户已限制"
   },
   "passwordProtected": {
     "message": "密码保护"
@@ -1910,7 +1910,7 @@
     }
   },
   "premiumPriceWithFamilyPlan": {
-    "message": "Go premium for just $PRICE$ /year, or get premium accounts for $FAMILYPLANUSERCOUNT$ users and unlimited family sharing with a ",
+    "message": "只为 $PRICE$ /年，或为 $FAMILYPLANUSERCOUNT$ 用户获得高级帐户和无限的家庭共享 ",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -2460,7 +2460,7 @@
     "message": "您确定要删除此群组吗？"
   },
   "deleteMultipleGroupsConfirmation": {
-    "message": "Are you sure you want to delete the following $QUANTITY$ group(s)?",
+    "message": "您确定要删除以下 $QUANTITY$ 组?",
     "placeholders": {
       "quantity": {
         "content": "$1",
@@ -2487,7 +2487,7 @@
     "message": "外部 ID 可用作参考，或将此资源与用户目录等外部系统联系起来。"
   },
   "nestCollectionUnder": {
-    "message": "Nest collection under"
+    "message": "排料集合在"
   },
   "accessControl": {
     "message": "访问控制"
@@ -2511,7 +2511,7 @@
     "message": "编辑集合"
   },
   "collectionInfo": {
-    "message": "Collection info"
+    "message": "收藏信息"
   },
   "deleteCollectionConfirmation": {
     "message": "你确定要删除此集合吗？"
@@ -2520,7 +2520,7 @@
     "message": "编辑成员"
   },
   "fieldOnTabRequiresAttention": {
-    "message": "A field on the '$TAB$' tab requires your attention.",
+    "message": "'$TAB$' 选项卡上的字段需要您注意。",
     "placeholders": {
       "tab": {
         "content": "$1",
@@ -2793,7 +2793,7 @@
     }
   },
   "deletedCollections": {
-    "message": "Deleted collections"
+    "message": "已删除收藏"
   },
   "deletedCollectionId": {
     "message": "删除了集合 $ID$。",
@@ -2841,7 +2841,7 @@
     }
   },
   "deletedManyGroups": {
-    "message": "Deleted $QUANTITY$ group(s).",
+    "message": "已删除 $QUANTITY$ 个群组。",
     "placeholders": {
       "quantity": {
         "content": "$1",
@@ -4852,6 +4852,18 @@
   "personalVaultExportPolicyInEffect": {
     "message": "一个或多个组织策略阻止您导出个人密码库。"
   },
+  "activateAutofill": {
+    "message": "激活自动填充"
+  },
+  "activateAutofillDesc": {
+    "message": "激活所有现有成员和新成员的浏览器扩展中的页面加载时的自动填充设置。"
+  },
+  "experimentalFeature": {
+    "message": "不完整或不信任的网站可以在页面加载时自动填充。"
+  },
+  "learnMoreAboutAutofill": {
+    "message": "了解更多关于自动填充的信息"
+  },
   "selectType": {
     "message": "选择 SSO 类型"
   },
@@ -5585,7 +5597,7 @@
     }
   },
   "inputForbiddenCharacters": {
-    "message": "The following characters are not allowed: $CHARACTERS$",
+    "message": "以下字符是不允许的： $CHARACTERS$",
     "placeholders": {
       "characters": {
         "content": "$1",
@@ -5597,7 +5609,7 @@
     "message": "一个或多个电子邮件无效"
   },
   "tooManyEmails": {
-    "message": "You can only submit up to $COUNT$ emails at a time",
+    "message": "您一次只能提交最多 $COUNT$ 封邮件",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -5625,9 +5637,6 @@
   },
   "reporting": {
     "message": "报告"
-  },
-  "cardBrandMir": {
-    "message": "Mir"
   },
   "numberOfUsers": {
     "message": "用户数量"
@@ -5736,10 +5745,10 @@
     "description": "The action to delete multiple secrets from the system."
   },
   "hardDeleteSecret": {
-    "message": "Permanently delete secret"
+    "message": "永久删除密钥"
   },
   "hardDeleteSecrets": {
-    "message": "Permanently delete secrets"
+    "message": "永久删除密钥"
   },
   "secretProjectAssociationDescription": {
     "message": "选择与机密相关联的项目。仅有权访问该项目的组织用户能查看该机密。",
@@ -5818,10 +5827,10 @@
     "description": "Message to encourage the user to start adding secrets."
   },
   "secretsTrashNoItemsMessage": {
-    "message": "There are no secrets in the trash."
+    "message": "回收站中没有密钥。"
   },
   "serviceAccountsNoItemsMessage": {
-    "message": "Create a new service account to get started automating secret access.",
+    "message": "创建一个新的服务账户以开始自动密钥访问。",
     "description": "Message to encourage the user to start creating service accounts."
   },
   "serviceAccountsNoItemsTitle": {
@@ -5845,7 +5854,7 @@
     "description": "Action to view the details of a service account."
   },
   "deleteServiceAccountDialogMessage": {
-    "message": "Deleting service account $SERVICE_ACCOUNT$ is permanent and irreversible.",
+    "message": "删除服务账户 $SERVICE_ACCOUNT$ 是永久和不可逆的。",
     "placeholders": {
       "service_account": {
         "content": "$1",
@@ -5854,10 +5863,10 @@
     }
   },
   "deleteServiceAccountsDialogMessage": {
-    "message": "Deleting service accounts is permanent and irreversible."
+    "message": "删除服务账户是永久和不可逆的。"
   },
   "deleteServiceAccountsConfirmMessage": {
-    "message": "Delete $COUNT$ service accounts",
+    "message": "删除 $COUNT$ 个服务账户",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -5866,7 +5875,7 @@
     }
   },
   "deleteServiceAccountToast": {
-    "message": "The service account have been deleted"
+    "message": "服务账户已被删除"
   },
   "deleteServiceAccountsToast": {
     "message": "服务账户已删除"
@@ -5912,16 +5921,16 @@
     "description": "Notifies that the selected secrets have been moved to the trash"
   },
   "hardDeleteSecretConfirmation": {
-    "message": "Are you sure you want to permanently delete this secret?"
+    "message": "您确定要永久删除此密钥吗？"
   },
   "hardDeleteSecretsConfirmation": {
-    "message": "Are you sure you want to permanently delete these secrets?"
+    "message": "您确定要永久删除这些密钥吗？"
   },
   "hardDeletesSuccessToast": {
-    "message": "Secrets permanently deleted"
+    "message": "密钥已永久删除"
   },
   "smAccess": {
-    "message": "Access",
+    "message": "访问权限",
     "description": "Title indicating what permissions a service account has"
   },
   "projectCommaSecret": {
@@ -6005,7 +6014,7 @@
     "description": "Empty state to be displayed when there are no projects to display in the list."
   },
   "projectsNoItemsMessage": {
-    "message": "Add a new project to get started organizing secrets.",
+    "message": "添加一个新项目来开始组织密钥。",
     "description": "Message to be displayed when there are no projects to display in the list."
   },
   "smConfirmationRequired": {
@@ -6021,7 +6030,7 @@
     "description": "Notification to be displayed when a secret is successfully sent to the trash."
   },
   "hardDeleteSuccessToast": {
-    "message": "Secret permanently deleted"
+    "message": "密钥已永久删除"
   },
   "accessTokens": {
     "message": "访问令牌",
@@ -6084,13 +6093,13 @@
     "description": "Invalidates / cancels an access token and as such removes access to secrets for the client application."
   },
   "revokeAccessTokens": {
-    "message": "Revoke access tokens"
+    "message": "撤销访问令牌"
   },
   "revokeAccessTokenDesc": {
-    "message": "Revoking access tokens is permanent and irreversible."
+    "message": "撤销访问令牌是永久和不可逆的。"
   },
   "accessTokenRevoked": {
-    "message": "Access tokens revoked",
+    "message": "已撤销访问令牌",
     "description": "Toast message after deleting one or multiple access tokens."
   },
   "submenu": {
@@ -6109,7 +6118,7 @@
     "message": "更新"
   },
   "plusNMore": {
-    "message": "+ $QUANTITY$ more",
+    "message": "+ $QUANTITY$ 更多",
     "placeholders": {
       "quantity": {
         "content": "$1",
@@ -6121,34 +6130,34 @@
     "message": "群组信息"
   },
   "editGroupMembersDesc": {
-    "message": "Grant members access to the group's assigned collections."
+    "message": "授予成员访问群组指定收藏的权限。"
   },
   "editGroupCollectionsDesc": {
-    "message": "Grant access to collections by adding them to this group."
+    "message": "通过将资源库添加到此群组来授予访问权限。"
   },
   "accessAllCollectionsDesc": {
-    "message": "Grant access to all current and future collections."
+    "message": "允许访问所有当前和未来的资源库。"
   },
   "accessAllCollectionsHelp": {
-    "message": "If checked, this will replace all other collection permissions."
+    "message": "如果选中，这将替换所有其他资源库权限。"
   },
   "selectMembers": {
-    "message": "Select members"
+    "message": "选择成员"
   },
   "selectCollections": {
-    "message": "Select collections"
+    "message": "选择资源库"
   },
   "role": {
     "message": "角色"
   },
   "removeMember": {
-    "message": "Remove member"
+    "message": "移除成员"
   },
   "collection": {
-    "message": "Collection"
+    "message": "资源库"
   },
   "noCollection": {
-    "message": "No collection"
+    "message": "没有资源库"
   },
   "canView": {
     "message": "可以查看"
@@ -6163,13 +6172,13 @@
     "message": "除密码外，可以编辑"
   },
   "noCollectionsAdded": {
-    "message": "No collections added"
+    "message": "未添加资源库"
   },
   "noMembersAdded": {
-    "message": "No members added"
+    "message": "未添加成员"
   },
   "noGroupsAdded": {
-    "message": "No groups added"
+    "message": "没有添加组"
   },
   "group": {
     "message": "群组"
@@ -6319,16 +6328,16 @@
     "message": "成员"
   },
   "selectGroupsAndMembers": {
-    "message": "Select groups and members"
+    "message": "选择群组和成员"
   },
   "selectGroups": {
     "message": "选择群组"
   },
   "userPermissionOverrideHelper": {
-    "message": "Permissions set for a member will replace permissions set by that member's group"
+    "message": "为会员设置的权限将替换该成员组设置的权限"
   },
   "noMembersOrGroupsAdded": {
-    "message": "No members or groups added"
+    "message": "未添加成员或组"
   },
   "deleted": {
     "message": "已删除"
@@ -6397,7 +6406,7 @@
     "message": "正在导出组织安全数据"
   },
   "exportingOrganizationSecretDataDescription": {
-    "message": "Only the Secrets Manager data associated with $ORGANIZATION$ will be exported. Items in other products or from other organizations will not be included.",
+    "message": "将只导出与 $ORGANIZATION$ 相关联的密码管理器数据。其他产品或其他组织的项目将不包括在内。",
     "placeholders": {
       "ORGANIZATION": {
         "content": "$1",
@@ -6448,34 +6457,34 @@
     "message": "上传许可证"
   },
   "projectPeopleDescription": {
-    "message": "Grant groups or people access to this project."
+    "message": "授予群组或人对此项目的访问权限。"
   },
   "projectPeopleSelectHint": {
-    "message": "Type or select people or groups"
+    "message": "键入或选择人或组"
   },
   "projectServiceAccountsDescription": {
-    "message": "Grant service accounts access to this project."
+    "message": "授予此项目的服务账户访问权限。"
   },
   "projectServiceAccountsSelectHint": {
-    "message": "Type or select service accounts"
+    "message": "输入或选择服务账户"
   },
   "projectEmptyPeopleAccessPolicies": {
-    "message": "Add people or groups to start collaborating"
+    "message": "添加人或群组开始协作"
   },
   "projectEmptyServiceAccountAccessPolicies": {
-    "message": "Add service accounts to grant access"
+    "message": "添加服务账户以授予访问权限"
   },
   "serviceAccountPeopleDescription": {
-    "message": "Grant groups or people access to this service account."
+    "message": "授权群组或人访问此服务账户。"
   },
   "serviceAccountProjectsDescription": {
-    "message": "Assign projects to this service account. "
+    "message": "分配项目到此服务账户。 "
   },
   "serviceAccountEmptyProjectAccesspolicies": {
-    "message": "Add projects to grant access"
+    "message": "添加项目以授予访问"
   },
   "canReadWrite": {
-    "message": "Can read, write"
+    "message": "可以读取、写入"
   },
   "groupSlashUser": {
     "message": "群组/用户"
@@ -6490,7 +6499,7 @@
     "message": "更改 KDF 设置"
   },
   "changeKdfLoggedOutWarning": {
-    "message": "本操作将您注销当前会话，要求您重新登录。在其他设备上的活动会话可能将继续保持一小时。 我们建议在更改您的加密设置之前导出您的密码库，以防止数据丢失。"
+    "message": "Proceeding will log you out of all active sessions. You will need to log back in and complete two-step login setup. We recommend exporting your vault before changing your encryption settings to prevent data loss."
   },
   "secretsManagerBeta": {
     "message": "Secrets Manager 测试版"
@@ -6508,7 +6517,7 @@
     "message": "查看全部"
   },
   "showingPortionOfTotal": {
-    "message": "Showing $PORTION$ of $TOTAL$",
+    "message": "显示 $PORTION$ / $TOTAL$",
     "placeholders": {
       "portion": {
         "content": "$1",
@@ -6521,13 +6530,13 @@
     }
   },
   "resolveTheErrorsBelowAndTryAgain": {
-    "message": "Resolve the errors below and try again."
+    "message": "解决下面的错误，然后重试。"
   },
   "description": {
     "message": "说明"
   },
   "errorReadingImportFile": {
-    "message": "An error occurred when trying to read the import file"
+    "message": "尝试读取导入文件时出错"
   },
   "accessedSecret": {
     "message": "访问了密钥 $SECRET_ID$。",
@@ -6543,23 +6552,23 @@
     "description": "Software Development Kit"
   },
   "createSecret": {
-    "message": "Create a secret"
+    "message": "创建一个密钥"
   },
   "createProject": {
-    "message": "Create a project"
+    "message": "创建一个项目"
   },
   "createServiceAccount": {
-    "message": "Create a service account"
+    "message": "创建服务账户"
   },
   "downloadThe": {
-    "message": "Download the",
+    "message": "下载",
     "description": "Link to a downloadable resource. This will be used as part of a larger phrase. Example: Download the Secrets Manager CLI"
   },
   "smCLI": {
-    "message": "Secrets Manager CLI"
+    "message": "密钥管理器 CLI"
   },
   "importSecrets": {
-    "message": "Import secrets"
+    "message": "导入密钥"
   },
   "getStarted": {
     "message": "开始使用"
@@ -6578,52 +6587,52 @@
     }
   },
   "restoreSecret": {
-    "message": "Restore secret"
+    "message": "恢复密钥"
   },
   "restoreSecrets": {
-    "message": "Restore secrets"
+    "message": "恢复密钥"
   },
   "restoreSecretPrompt": {
-    "message": "Are you sure you want to restore this secret?"
+    "message": "您确定要还原此密钥吗？"
   },
   "restoreSecretsPrompt": {
-    "message": "Are you sure you want to restore these secrets?"
+    "message": "您确定要还原这些密钥吗？"
   },
   "secretRestoredSuccessToast": {
-    "message": "Secret restored"
+    "message": "已恢复密钥"
   },
   "secretsRestoredSuccessToast": {
-    "message": "Secrets restored"
+    "message": "已恢复密钥"
   },
   "selectionIsRequired": {
     "message": "必须选择"
   },
   "secretsManagerSubscriptionDesc": {
-    "message": "Turn on organization access to the Secrets Manager at no charge during the Beta program. Users can be granted access to the Beta in Members."
+    "message": "在测试程序期间，开启无需收费的密钥管理员的组织访问权限。用户可以被授予成员访问测试版的权限。"
   },
   "secretsManagerEnable": {
-    "message": "Enable Secrets Manager Beta"
+    "message": "启用 Secrets Manager 测试版"
   },
   "saPeopleWarningTitle": {
-    "message": "Access tokens still available"
+    "message": "访问令牌仍然可用"
   },
   "saPeopleWarningMessage": {
-    "message": "Removing people from a service account does not remove the access tokens they created. For security best practice, it is recommended to revoke access tokens created by people removed from a service account."
+    "message": "从服务账户中删除用户并不会删除他们创建的访问令牌。 为了安全方面的最佳做法，建议撤销从服务账户中移除的人创建的访问令牌。"
   },
   "smAccessRemovalWarningProjectTitle": {
-    "message": "Remove access to this project"
+    "message": "删除此项目的访问权限"
   },
   "smAccessRemovalWarningProjectMessage": {
-    "message": "This action will remove your access to the project."
+    "message": "此操作将删除您对项目的访问权限。"
   },
   "smAccessRemovalWarningSaTitle": {
-    "message": "Remove access to this service account"
+    "message": "删除此服务账户的访问权限"
   },
   "smAccessRemovalWarningSaMessage": {
-    "message": "This action will remove your access to the service account."
+    "message": "此操作将删除您对服务账户的访问。"
   },
   "removeAccess": {
-    "message": "Remove access"
+    "message": "移除访问"
   },
   "checkForBreaches": {
     "message": "检查已知的数据泄露是否包含此密码"

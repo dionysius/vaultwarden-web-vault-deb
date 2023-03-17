@@ -226,7 +226,7 @@
     "message": "Sichtbarkeit umschalten"
   },
   "toggleCollapse": {
-    "message": "Sammlung ein- / ausklappen",
+    "message": "Ein-/ausklappen",
     "description": "Toggling an expand/collapse state."
   },
   "generatePassword": {
@@ -321,7 +321,7 @@
     "message": "Typen"
   },
   "typeLogin": {
-    "message": "Anmeldung"
+    "message": "Zugangsdaten"
   },
   "typeCard": {
     "message": "Karte"
@@ -1022,13 +1022,13 @@
     "message": "Tresor-Import bestätigen"
   },
   "confirmVaultImportDesc": {
-    "message": "Diese Datei ist passwortgeschützt. Bitte gebe das Dateipasswort ein, um Daten zu importieren."
+    "message": "Diese Datei ist passwortgeschützt. Bitte gib das Dateipasswort ein, um Daten zu importieren."
   },
   "exportSuccess": {
     "message": "Tresor-Daten exportiert"
   },
   "passwordGenerator": {
-    "message": "Passwortgenerator"
+    "message": "Passwort-Generator"
   },
   "minComplexityScore": {
     "message": "Kleinste Komplexitätsstufe"
@@ -1074,7 +1074,7 @@
     "description": "Make the first letter of a word uppercase."
   },
   "includeNumber": {
-    "message": "Ziffer hinzufügen"
+    "message": "Ziffern einschließen"
   },
   "passwordHistory": {
     "message": "Passwortverlauf"
@@ -1087,7 +1087,7 @@
     "description": "To clear something out. Example: To clear browser history."
   },
   "accountUpdated": {
-    "message": "Konto aktualisiert"
+    "message": "Konto gespeichert"
   },
   "changeEmail": {
     "message": "E-Mail-Adresse ändern"
@@ -1111,10 +1111,10 @@
     }
   },
   "loggedOutWarning": {
-    "message": "Wenn Sie fortfahren, werden Sie aus Ihrer aktuellen Sitzung ausgeloggt. Aktive Sitzungen auf anderen Geräten können bis zu einer Stunde weiterhin verwendet werden."
+    "message": "Wenn du fortfährst, wirst du aus deiner aktuellen Sitzung ausgeloggt. Aktive Sitzungen auf anderen Geräten können bis zu einer Stunde weiterhin aktiv bleiben."
   },
   "emailChanged": {
-    "message": "E-Mail-Adresse geändert"
+    "message": "E-Mail-Adresse gespeichert"
   },
   "logBackIn": {
     "message": "Bitte melden Sie sich erneut an."
@@ -1126,7 +1126,7 @@
     "message": "Master-Passwort ändern"
   },
   "masterPasswordChanged": {
-    "message": "Master-Passwort geändert"
+    "message": "Master-Passwort gespeichert"
   },
   "currentMasterPass": {
     "message": "Aktuelles Master-Passwort"
@@ -1138,7 +1138,7 @@
     "message": "Neues Master-Passwort bestätigen"
   },
   "encKeySettings": {
-    "message": "Verschlüsselungscode-Einstellungen"
+    "message": "Verschlüsselungsschlüssel-Einstellungen"
   },
   "kdfAlgorithm": {
     "message": "KDF-Algorithmus"
@@ -1317,7 +1317,7 @@
     "message": "Sprache"
   },
   "languageDesc": {
-    "message": "Ändern Sie die Sprache für den Web-Tresor."
+    "message": "Die Sprache des Web-Tresors ändern."
   },
   "enableFavicon": {
     "message": "Website-Symbole anzeigen"
@@ -1597,7 +1597,7 @@
     "message": "Gib dem Sicherheitsschlüssel einen eigenen Namen, um ihn zu erkennen."
   },
   "twoFactorU2fPlugInReadKey": {
-    "message": "Stecke den Sicherheitsschlüssel in den USB-Port deines Computers und klicke auf den \"Schlüssel erkennen\"-Button."
+    "message": "Stecken Sie den Sicherheitsschlüssel in den USB-Port Ihres Computers und drücken Sie den \"Schlüssel erfassen\" Knopf."
   },
   "twoFactorU2fTouchButton": {
     "message": "Wenn der Sicherheitsschlüssel eine Taste hat, drücken Sie die."
@@ -1648,7 +1648,7 @@
     "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization vault."
   },
   "unsecuredWebsitesReport": {
-    "message": "Bericht über ungesicherte Websites"
+    "message": "Ungesicherte Websites"
   },
   "unsecuredWebsitesReportDesc": {
     "message": "URLs, die mit http:// beginnen, verwenden nicht die bestmögliche Verschlüsselung. Ändere die Anmelde-URIs für diese Konten zu https:// für sicheres Surfen."
@@ -1669,10 +1669,10 @@
     "message": "Es gibt keine Einträge in deinem Tresor, die unsichere URIs benutzen."
   },
   "inactive2faReport": {
-    "message": "Bericht über inaktive 2FA"
+    "message": "Inaktive Zwei-Faktor-Authentifizierung"
   },
   "inactive2faReportDesc": {
-    "message": "Die Zwei-Faktor-Authentifizierung (2FA) ist eine wichtige Sicherheitseinstellung, die Ihnen bei der Absicherung Ihrer Konten hilft. Wenn eine Webseite 2FA anbietet, sollten Sie es immer aktivieren."
+    "message": "Die Zwei-Faktor-Authentifizierung (2FA) ist eine wichtige Sicherheitseinstellung, die dir bei der Absicherung deiner Konten hilft. Wenn eine Webseite 2FA anbietet, solltest du es immer aktivieren."
   },
   "inactive2faFound": {
     "message": "Zugangsdaten ohne 2FA gefunden"
@@ -1687,13 +1687,13 @@
     }
   },
   "noInactive2fa": {
-    "message": "Es wurden keine Webseiten in Ihrem Tresor gefunden, bei denen eine Konfiguration der Zwei-Faktor Authentifizierung fehlt."
+    "message": "Es wurden keine Websites in deinem Tresor gefunden, bei denen eine Konfiguration der Zwei-Faktor-Authentifizierung fehlt."
   },
   "instructions": {
     "message": "Anleitung"
   },
   "exposedPasswordsReport": {
-    "message": "Bericht über kompromittierte Passwörter"
+    "message": "Kompromittierte Passwörter"
   },
   "exposedPasswordsReportDesc": {
     "message": "Durch Datendiebstahl aufgedeckte Passwörter sind einfache Ziele für Angreifer. Ändere diese Passwörter, um mögliche Einbrüche zu verhindern."
@@ -1702,7 +1702,7 @@
     "message": "Es wurden kompromittierte Passwörter gefunden"
   },
   "exposedPasswordsFoundDesc": {
-    "message": "Wir haben $COUNT$ Einträge in Ihrem Tresor gefunden, die in bekannten Passwortdiebstahl Datenbanken veröffentlicht wurden. Sie sollten diese Passwörter so schnell wie möglich ändern.",
+    "message": "Wir haben $COUNT$ Einträge in deinem Tresor gefunden, die in bekannten Passwortdiebstählen veröffentlicht wurden. Du solltest diese Passwörter so schnell wie möglich ändern.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -1711,7 +1711,7 @@
     }
   },
   "noExposedPasswords": {
-    "message": "Es scheint in Ihrem Tresor keine Passwörter zu geben, die in Passwortdiebstahl Datenbanken veröffentlicht wurden."
+    "message": "In deinem Tresor gibt es keine Passwörter, die in Passwortdiebstählen veröffentlicht wurden."
   },
   "checkExposedPasswords": {
     "message": "Auf kompromittierte Passwörter prüfen"
@@ -1726,16 +1726,16 @@
     }
   },
   "weakPasswordsReport": {
-    "message": "Bericht über schwache Passwörter"
+    "message": "Schwache Passwörter"
   },
   "weakPasswordsReportDesc": {
-    "message": "Schwache Passwörter können von Angreifern und automatisierten Prozessen, die Passwörter knacken, leicht erraten werden. Der Passwortgenerator von Bitwarden kann Ihnen helfen, starke und sichere Passwörter zu generieren."
+    "message": "Schwache Passwörter können von Angreifern leicht erraten werden. Ändere diese Kennwörter mithilfe des Passwort-Generators in sichere Passwörter."
   },
   "weakPasswordsFound": {
     "message": "Schwache Passwörter gefunden"
   },
   "weakPasswordsFoundDesc": {
-    "message": "Wir haben $COUNT$ Einträge mit schwachen Passwörtern in Ihrem Tresor gefunden. Sie sollten diese aktualisieren und ein sicheres Passwort verwenden.",
+    "message": "Wir haben $COUNT$ Einträge mit schwachen Passwörtern in deinem Tresor gefunden. Du solltest diese aktualisieren und ein sicheres Passwort verwenden.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -1744,19 +1744,19 @@
     }
   },
   "noWeakPasswords": {
-    "message": "Keine Einträge in Ihrem Tresor haben schwache Passwörter."
+    "message": "Keine Einträge in deinem Tresor haben schwache Passwörter."
   },
   "reusedPasswordsReport": {
-    "message": "Bericht über wiederverwendete Passwörter"
+    "message": "Wiederverwendete Passwörter"
   },
   "reusedPasswordsReportDesc": {
-    "message": "Wenn Sie Passwörter für mehrere Dienste gleichzeitig benutzen und einer dieser Dienste kompromittiert wird, ist es für Angreifer deutlich einfacher Zugriff zu den anderen Konten zu erlangen. Aus diesem Grund sollten Sie für jeden Dienst ein einzigartiges Passwort verwenden."
+    "message": "Die Wiederverwendung von Passwörtern macht es Angreifern leichter, in mehrere Konten einzubrechen. Ändere diese Passwörter so, dass jedes einzigartig ist."
   },
   "reusedPasswordsFound": {
     "message": "Wiederverwendete Passwörter gefunden"
   },
   "reusedPasswordsFoundDesc": {
-    "message": "Wir haben $COUNT$ Passwörter in Ihrem Tresor gefunden, die mehrfach benutzt wurden. Sie sollten diese ändern und jedes Passwort nur ein einziges Mal benutzen.",
+    "message": "Wir haben $COUNT$ Passwörter in deinem Tresor gefunden, die mehrfach benutzt wurden. Du solltest diese ändern und jedes Passwort nur ein einziges Mal benutzen.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -1765,10 +1765,10 @@
     }
   },
   "noReusedPasswords": {
-    "message": "In Ihrem Tresor wurden keine Einträge mit wiederverwendeten Passwörtern gefunden."
+    "message": "In deinem Tresor wurden keine Einträge mit wiederverwendeten Passwörtern gefunden."
   },
   "reusedXTimes": {
-    "message": "Bereits $COUNT$ mal verwendet",
+    "message": "$COUNT$ Mal wiederverwendet",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -1777,10 +1777,10 @@
     }
   },
   "dataBreachReport": {
-    "message": "Datendiebstahl-Bericht"
+    "message": "Datendiebstahl"
   },
   "breachDesc": {
-    "message": "Ein Datendiebstahl ist ein Vorfall, bei dem sich Hacker illegal Zugriff auf Daten von einer Website verschafft haben und diese im Anschluss veröffentlicht wurden. Prüfen Sie die Art der Daten, welche kompromittiert wurden (E-Mail-Adressen, Kennwörter, Kreditkarteninformationen) und leiten Sie entsprechende Handlungen ein, wie z.B. das Ändern von Kennwörtern."
+    "message": "Kompromittierte Konten können deine persönlichen Daten preisgeben. Sichere kompromittierte Konten, indem du 2FA aktivierst oder ein sicheres Passwort erstellst."
   },
   "breachCheckUsernameEmail": {
     "message": "Prüfen Sie alle Benutzernamen und E-Mail-Adressen, die Sie verwenden."
@@ -1798,7 +1798,7 @@
     }
   },
   "goodNews": {
-    "message": "Gute Nachrichten",
+    "message": "Gute Neuigkeiten",
     "description": "ex. Good News, No Breached Accounts Found!"
   },
   "breachUsernameFound": {
@@ -1842,7 +1842,7 @@
     "message": "Abrechnungsplan"
   },
   "paymentType": {
-    "message": "Zahlungsart"
+    "message": "Zahlungsmethode"
   },
   "accountCredit": {
     "message": "Kontoguthaben",
@@ -1861,10 +1861,10 @@
     "description": "Dollar amount, or quantity."
   },
   "creditDelayed": {
-    "message": "Aufgeladenes Guthaben wird auf Ihrem Konto verbucht, nachdem die Zahlung vollständig bearbeitet wurde. Einige Zahlungsarten brauchen mehr Zeit zum Bearbeiten als andere."
+    "message": "Das zusätzliche Guthaben wird deinem Konto gutgeschrieben, nachdem die Zahlung vollständig bearbeitet wurde. Einige Zahlungsmethoden sind verzögert und können länger als andere dauern."
   },
   "makeSureEnoughCredit": {
-    "message": "Bitte stellen Sie sicher, dass Ihr Konto über genügend Guthaben für diesen Kauf verfügt. Wenn Ihr Konto nicht über genügend Guthaben verfügt, wird Ihre hinterlegte Standard-Zahlungsart für den Ausgleich des Restbetrages verwendet. Über die Rechnungsseite können Sie Ihr Konto aufladen."
+    "message": "Bitte vergewissere dich, dass auf deinem Konto genügend Guthaben für diesen Kauf vorhanden ist. Wenn dein Konto nicht über genügend Guthaben verfügt, wird die Differenz mit deiner Standardzahlungsmethode beglichen. Du kannst deinem Konto auf der Seite \"Abrechnung\" Guthaben hinzufügen."
   },
   "creditAppliedDesc": {
     "message": "Das Guthaben deines Kontos kann für Einkäufe verwendet werden. Das verfügbare Guthaben wird automatisch auf die für dieses Konto erstellten Rechnungen angerechnet."
@@ -1889,10 +1889,10 @@
     "message": "Notfallzugriff"
   },
   "premiumSignUpReports": {
-    "message": "Berichte über Passwort-Hygiene, Kontostatus und Datendiebstähle, um Ihren Tresor sicher zu halten."
+    "message": "Berichte über Passwort-Hygiene, Kontostatus und Datendiebstähle, um deinen Tresor sicher zu halten."
   },
   "premiumSignUpTotp": {
-    "message": "TOTP Verifizierungscode-Generator (2FA) für Konten in Ihrem Tresor."
+    "message": "TOTP Verifizierungscode-Generator (2FA) für Zugangsdaten in deinem Tresor."
   },
   "premiumSignUpSupport": {
     "message": "Vorrangiger Kundenservice."
@@ -1929,7 +1929,7 @@
     "message": "Erweiterungen"
   },
   "premiumAccess": {
-    "message": "Zugriff für Premium"
+    "message": "Premium-Zugriff"
   },
   "premiumAccessDesc": {
     "message": "Du kannst allen Mitgliedern deiner Organisation zum Preis von $PRICE$ pro $INTERVAL$ einen Premium-Zugang ermöglichen.",
@@ -2014,7 +2014,7 @@
     "message": "Kreditkarte"
   },
   "paypalClickSubmit": {
-    "message": "Klicke auf den PayPal Button, um dich bei deinem PayPal-Konto anzumelden und anschließend auf den Senden-Button, um fortzufahren."
+    "message": "Klicke auf den PayPal Button, um dich bei deinem PayPal-Konto anzumelden und anschließend auf den Absenden-Button, um fortzufahren."
   },
   "cancelSubscription": {
     "message": "Abonnement kündigen"
@@ -2167,13 +2167,13 @@
     "message": "Zahlungsart aktualisiert."
   },
   "purchasePremium": {
-    "message": "Premium-Mitgliedschaft erwerben"
+    "message": "Premium kaufen"
   },
   "licenseFile": {
     "message": "Lizenzdatei"
   },
   "licenseFileDesc": {
-    "message": "Ihre Lizenzdatei wird so ähnlich wie $FILE_NAME$ heißen",
+    "message": "Deine Lizenzdatei wird in etwa $FILE_NAME$ heißen",
     "placeholders": {
       "file_name": {
         "content": "$1",
@@ -2182,16 +2182,16 @@
     }
   },
   "uploadLicenseFilePremium": {
-    "message": "Um Ihr Konto zu einer Premium-Mitgliedschaft hochzustufen, müssen Sie eine gültige Lizenzdatei hochladen."
+    "message": "Um dein Konto auf eine Premium-Mitgliedschaft upzugraden, musst du eine gültige Lizenzdatei hochladen."
   },
   "uploadLicenseFileOrg": {
-    "message": "Um eine vor Ort gehostete Organisation zu erstellen, müssen Sie eine gültige Lizenzdatei hochladen."
+    "message": "Um eine selbst gehostete Organisation zu erstellen, musst du eine gültige Lizenzdatei hochladen."
   },
   "accountEmailMustBeVerified": {
     "message": "Die E-Mail-Adresse Ihres Kontos muss bestätigt werden."
   },
   "newOrganizationDesc": {
-    "message": "Organisationen ermöglichen es Ihnen, Teile Ihres Tresors mit anderen zu teilen und verwandte Benutzer für eine bestimmte Gruppe wie eine Familie, ein kleines Team oder ein großes Unternehmen zu verwalten."
+    "message": "Organisationen ermöglichen es dir, Teile deines Tresors mit anderen zu teilen und verwandte Benutzer für eine bestimmte Gruppe wie eine Familie, ein kleines Team oder ein großes Unternehmen zu verwalten."
   },
   "generalInformation": {
     "message": "Allgemeine Informationen"
@@ -2203,13 +2203,13 @@
     "message": "Dieses Konto gehört einem Unternehmen."
   },
   "billingEmail": {
-    "message": "E-Mail für Rechnung"
+    "message": "Rechnungs-E-Mail-Adresse"
   },
   "businessName": {
     "message": "Firmenname"
   },
   "chooseYourPlan": {
-    "message": "Wählen Sie Ihr Abo"
+    "message": "Wähle dein Abonnement"
   },
   "users": {
     "message": "Benutzer"
@@ -2244,7 +2244,7 @@
     "description": "Free as in 'free beer'."
   },
   "planDescFree": {
-    "message": "Für Test- oder Privatanwender, die mit $COUNT$ anderen Benutzern teilen möchten.",
+    "message": "Zu Testzwecken oder für persönliche Benutzer zur gemeinsamen Nutzung mit $COUNT$ anderen Benutzern.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -2343,10 +2343,10 @@
     "message": "Mitglieder erhalten Zugriff auf Premium-Funktionen"
   },
   "controlAccessWithGroups": {
-    "message": "Zugriffskontrolle durch Gruppen"
+    "message": "Benutzerzugriff mit Gruppen steuern"
   },
   "syncUsersFromDirectory": {
-    "message": "Synchronisiere deine Benutzer und Gruppen aus einem Ordner"
+    "message": "Synchronisiere deine Benutzer und Gruppen aus einem Verzeichnis"
   },
   "trackAuditLogs": {
     "message": "Nachverfolgung von Benutzeraktivitäten mittels Auditprotokollen"
@@ -2376,7 +2376,7 @@
     }
   },
   "trialPaidInfoMessage": {
-    "message": "Deine kostenlose 7-tägige $PLAN$ Testversion wird nach 7 Tagen in ein kostenpflichtiges Abo umgewandelt.",
+    "message": "Deine kostenlose 7-tägige $PLAN$ Testversion wird nach 7 Tagen in ein kostenpflichtiges Abonnement umgewandelt.",
     "placeholders": {
       "plan": {
         "content": "$1",
@@ -2385,7 +2385,7 @@
     }
   },
   "trialConfirmationEmail": {
-    "message": "Wir haben eine Bestätigungs-E-Mail an die Rechnungs-E-Mail deines Teams gesendet an "
+    "message": "Wir haben eine Bestätigungs-E-Mail an die Rechnungs-E-Mail-Adresse deines Teams gesendet an "
   },
   "monthly": {
     "message": "Monatlich"
@@ -2499,7 +2499,7 @@
     "message": "Diese Gruppe kann nur auf die ausgewählten Sammlungen zugreifen."
   },
   "readOnly": {
-    "message": "Nur Lesen"
+    "message": "Schreibgeschützt"
   },
   "newCollection": {
     "message": "Neue Sammlung"
@@ -2520,7 +2520,7 @@
     "message": "Mitglied bearbeiten"
   },
   "fieldOnTabRequiresAttention": {
-    "message": "Ein Feld auf dem '$TAB$'-Tab erfordert deine Aufmerksamkeit.",
+    "message": "Ein Feld im '$TAB$'-Tab erfordert deine Aufmerksamkeit.",
     "placeholders": {
       "tab": {
         "content": "$1",
@@ -2541,7 +2541,7 @@
     }
   },
   "userUsingTwoStep": {
-    "message": "Dieser Benutzer hat seinen Account mit einer 2-Faktor-Anmeldung geschützt."
+    "message": "Dieser Benutzer hat sein Konto mit einer Zwei-Faktor-Authentifizierung geschützt."
   },
   "userAccessAllItems": {
     "message": "Der Benutzer kann alle Einträge einsehen und verändern."
@@ -2568,7 +2568,7 @@
     "message": "Besitzer"
   },
   "ownerDesc": {
-    "message": "Der Benutzer mit dem höchsten Berechtigungsgrad, der alle Aspekte Ihrer Organisation verwalten kann."
+    "message": "Kann die gesamte Organisation verwalten, inklusive Abrechnung und Abonnements"
   },
   "clientOwnerDesc": {
     "message": "Dieser Benutzer sollte unabhängig vom Anbieter sein. Wenn der Anbieter von der Organisation getrennt wird, behält dieser Benutzer das Eigentum an der Organisation."
@@ -2577,19 +2577,19 @@
     "message": "Administrator"
   },
   "adminDesc": {
-    "message": "Administratoren können auf alle Einträge, Sammlungen und Benutzer in der Organisation zugreifen und diese verwalten."
+    "message": "Kann den Zugriff auf die Organisation, alle Sammlungen, Mitglieder, Berichte und Sicherheitseinstellungen verwalten"
   },
   "user": {
     "message": "Benutzer"
   },
   "userDesc": {
-    "message": "Ein normaler Benutzer mit Zugriff auf die ihm zugewiesenen Sammlungen der Organisation."
+    "message": "Kann auf Einträge zugewiesener Sammlungen zugreifen und neue hinzufügen"
   },
   "manager": {
-    "message": "Vorgesetzter"
+    "message": "Manager"
   },
   "managerDesc": {
-    "message": "Erstelle, lösche und verwalte den Zugriff in zugewiesenen Sammlungen"
+    "message": "Kann Einträge in zugewiesenen Sammlungen erstellen, löschen und Zugriff darauf verwalten"
   },
   "all": {
     "message": "Alle"
@@ -2607,7 +2607,7 @@
     "message": "Unbekannt"
   },
   "loadMore": {
-    "message": "Weitere laden"
+    "message": "Mehr laden"
   },
   "mobile": {
     "message": "Mobil",
@@ -2631,13 +2631,13 @@
     "message": "Passwort des Kontos geändert"
   },
   "enabledUpdated2fa": {
-    "message": "Zwei-Faktor-Anmeldung aktiviert/aktualisiert."
+    "message": "Zwei-Faktor-Authentifizierung gespeichert"
   },
   "disabled2fa": {
-    "message": "Zwei-Faktor-Anmeldung deaktiviert."
+    "message": "Zwei-Faktor-Authentifizierung deaktiviert"
   },
   "recovered2fa": {
-    "message": "Konto aus der Zwei-Faktor-Anmeldung wiederhergestellt."
+    "message": "Konto aus der Zwei-Faktor-Authentifizierung wiederhergestellt."
   },
   "failedLogin": {
     "message": "Anmeldeversuch mit falschem Passwort fehlgeschlagen."
@@ -3021,13 +3021,13 @@
     "message": "Benutzertyp"
   },
   "groupAccess": {
-    "message": "Gruppenzugang"
+    "message": "Gruppenzugriff"
   },
   "groupAccessUserDesc": {
-    "message": "Die Gruppen bearbeiten, zu denen dieser Benutzer gehört."
+    "message": "Gewähren Mitgliedern Zugriff auf Sammlungen, indem du sie zu 1 oder mehr Gruppen hinzufügst."
   },
   "invitedUsers": {
-    "message": "Benutzer eingeladen."
+    "message": "Benutzer eingeladen"
   },
   "resendInvitation": {
     "message": "Einladung erneut versenden"
@@ -3036,7 +3036,7 @@
     "message": "E-Mail erneut senden"
   },
   "hasBeenReinvited": {
-    "message": "$USER$ wurde erneut eingeladen.",
+    "message": "$USER$ wurde erneut eingeladen",
     "placeholders": {
       "user": {
         "content": "$1",
@@ -3063,7 +3063,7 @@
     "message": "Benutzer bestätigen"
   },
   "usersNeedConfirmed": {
-    "message": "Sie haben Nutzer, die ihre Einladung angenommen haben, aber noch bestätigt werden müssen. Benutzer haben erst Zugriff auf die Organisation, wenn sie bestätigt wurden."
+    "message": "Du hast Mitglieder, die ihre Einladung angenommen haben, aber noch bestätigt werden müssen. Mitglieder haben erst Zugriff auf die Organisation, wenn sie bestätigt wurden."
   },
   "startDate": {
     "message": "Startdatum"
@@ -3078,7 +3078,7 @@
     "message": "Bestätigen Sie die E-Mail-Adresse Ihres Kontos, um den Zugriff auf alle Funktionen freizuschalten."
   },
   "verifyEmailFirst": {
-    "message": "Die E-Mail-Adresse Ihres Kontos muss zuerst bestätigt werden."
+    "message": "Die E-Mail-Adresse deines Kontos muss zuerst bestätigt werden."
   },
   "checkInboxForVerification": {
     "message": "Sehen Sie in Ihrem E-Mail-Posteingang nach, ob Sie Ihren Bestätigungscode erhalten haben"
@@ -3093,28 +3093,28 @@
     "message": "E-Mail-Verifizierung erforderlich"
   },
   "emailVerificationRequiredDesc": {
-    "message": "Sie müssen Ihre E-Mail verifizieren, um diese Funktion nutzen zu können."
+    "message": "Du musst deine E-Mail-Adresse verifizieren, um diese Funktion nutzen zu können."
   },
   "updateBrowser": {
     "message": "Browser aktualisieren"
   },
   "updateBrowserDesc": {
-    "message": "Sie benutzen einen nicht unterstützten Webbrowser. Der Web-Tresor funktioniert möglicherweise nicht richtig."
+    "message": "Du verwendest einen nicht unterstützten Webbrowser. Der Web-Tresor funktioniert möglicherweise nicht richtig."
   },
   "joinOrganization": {
     "message": "Organisation beitreten"
   },
   "joinOrganizationDesc": {
-    "message": "Du wurdest eingeladen, dem oben genannten Anbieter beizutreten. Um die Einladung anzunehmen, musst du ein Bitwarden-Konto erstellen, oder dich mit deinem bestehenden Bitwarden-Konto anmelden."
+    "message": "Du wurdest eingeladen, dem oben genannten Organisation beizutreten. Um die Einladung anzunehmen, musst du ein Bitwarden-Konto erstellen oder dich mit deinem bestehenden Bitwarden-Konto anmelden."
   },
   "inviteAccepted": {
     "message": "Einladung angenommen"
   },
   "inviteAcceptedDesc": {
-    "message": "Sie können der Organisation beitreten, sobald ein Administrator Ihre Mitgliedschaft bestätigt hat. Wir werden Sie dann per E-Mail benachrichtigen."
+    "message": "Du kannst der Organisation beitreten, sobald ein Administrator deine Mitgliedschaft bestätigt hat. Wir werden dich dann per E-Mail benachrichtigen."
   },
   "inviteAcceptFailed": {
-    "message": "Einladung konnte nicht akzeptiert werden. Zum Erhalten einer neuen Einladung, setzen Sie sich mit einem Administrator der Organisation in Verbindung."
+    "message": "Einladung kann nicht angenommen werden. Bitte einen Administrator der Organisation, eine neue Einladung zu senden."
   },
   "inviteAcceptFailedShort": {
     "message": "Die Einladung kann nicht angenommen werden. $DESCRIPTION$",
@@ -3135,7 +3135,7 @@
     "message": "Zwei-Faktor-Authentifizierung wiederherstellen"
   },
   "twoStepRecoverDisabled": {
-    "message": "Zwei-Faktor Anmeldung wurde für deinen Account deaktiviert."
+    "message": "Zwei-Faktor-Authentifizierung wurde für deinen Account deaktiviert."
   },
   "learnMore": {
     "message": "Erfahre mehr"
@@ -3153,13 +3153,13 @@
     "message": "Meine Organisation"
   },
   "organizationInfo": {
-    "message": "Organisationsinfo"
+    "message": "Organisationsinformationen"
   },
   "deleteOrganization": {
     "message": "Organisation löschen"
   },
   "deletingOrganizationContentWarning": {
-    "message": "Gebe das Master-Passwort ein, um das Löschen von $ORGANIZATION$ und allen zugehörigen Daten zu bestätigen. Die Tresordaten in $ORGANIZATION$ beinhalten:",
+    "message": "Gib das Master-Passwort ein, um das Löschen von $ORGANIZATION$ und allen zugehörigen Daten zu bestätigen. Die Tresordaten in $ORGANIZATION$ beinhalten:",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -3203,7 +3203,7 @@
     "description": "A billing plan/package. For example: Families, Teams, Enterprise, etc."
   },
   "changeBillingPlanUpgrade": {
-    "message": "Ändern sie ihr Konto zu einem anderen Tarif, indem Sie folgende Informationen bereitstellen. Bitte stellen Sie sicher, dass Sie eine aktive Zahlungsmethode zu ihren Konto hinzugefügt haben.",
+    "message": "Upgrade dein Konto auf einen anderen Tarif, indem du die unten stehenden Informationen angibst. Bitte vergewissere dich, dass du eine aktive Zahlungsmethode zu deinem Konto hinzugefügt hast.",
     "description": "A billing plan/package. For example: Families, Teams, Enterprise, etc."
   },
   "invoiceNumber": {
@@ -3426,7 +3426,7 @@
     "message": "Organisation erstellen: Schritt 1"
   },
   "createOrganizationCreatePersonalAccount": {
-    "message": "Bevor Sie eine Organisation erstellen können, müssen Sie zuerst ein eigenes kostenloses Konto erstellen."
+    "message": "Bevor du eine Organisation erstellen kannst, musst du zuerst ein eigenes kostenloses Konto erstellen."
   },
   "refunded": {
     "message": "Erstattet"
@@ -3435,7 +3435,7 @@
     "message": "Sie haben keine Auswahl getroffen."
   },
   "acceptPolicies": {
-    "message": "Durch Anwählen dieses Kästchens erklären Sie sich mit folgendem einverstanden:"
+    "message": "Durch Anwählen dieses Kästchens erklärst du dich mit Folgendem einverstanden:"
   },
   "acceptPoliciesRequired": {
     "message": "Die Nutzungsbedingungen und Datenschutzerklärung wurden nicht akzeptiert."
@@ -3453,7 +3453,7 @@
     "message": "Tresor-Timeout"
   },
   "vaultTimeoutDesc": {
-    "message": "Legen Sie einen Timeout für den Tresor und die auszuführende Aktion fest."
+    "message": "Lege einen Timeout für den Tresor und die auszuführende Aktion fest."
   },
   "oneMinute": {
     "message": "1 Minute"
@@ -3489,7 +3489,7 @@
     "description": "ex. Date this password was updated"
   },
   "organizationIsDisabled": {
-    "message": "Organisation ist deaktiviert."
+    "message": "Organisation ist deaktiviert"
   },
   "disabledOrganizationFilterError": {
     "message": "Auf Einträge in deaktivierten Organisationen kann nicht zugegriffen werden. Kontaktiere deinen Organisationseigentümer für Unterstützung."
@@ -3498,7 +3498,7 @@
     "message": "Lizenz ist abgelaufen."
   },
   "updatedUsers": {
-    "message": "Aktualisierte Benutzer"
+    "message": "Benutzer aktualisiert"
   },
   "selected": {
     "message": "Ausgewählt"
@@ -3529,36 +3529,36 @@
     "message": "Schwaches Master-Passwort"
   },
   "weakMasterPasswordDesc": {
-    "message": "Das Master-Passwort, das du gewählt hast, ist schwach. Du solltest ein starkes Master-Passwort (oder eine Passphrase) auswählen, um dein Bitwarden-Konto richtig zu schützen. Bist du sicher, dass du dieses Master-Passwort verwenden willst?"
+    "message": "Schwaches Passwort erkannt. Verwende ein starkes Passwort, um dein Konto zu schützen. Bist du sicher, dass du ein schwaches Passwort verwenden möchtest?"
   },
   "rotateAccountEncKey": {
-    "message": "Auch den Verschlüsselungscode meines Kontos aktualisieren"
+    "message": "Auch den Verschlüsselungsschlüssel meines Kontos erneuern"
   },
   "rotateEncKeyTitle": {
-    "message": "Verschlüsselungscode aktualisieren"
+    "message": "Verschlüsselungsschlüssel erneuern"
   },
   "rotateEncKeyConfirmation": {
-    "message": "Bist du sicher, dass du deinen Verschlüsselungscode aktualisieren möchtest?"
+    "message": "Bist du sicher, dass du deinen Verschlüsselungsschlüssel erneuern möchtest?"
   },
   "attachmentsNeedFix": {
     "message": "Dieser Eintrag hat Anhänge, die repariert werden müssen."
   },
   "attachmentFixDesc": {
-    "message": "Diese Dateianlage muss aufgrund ihres Alters aktualisiert werden. Klicken Sie hier, um mehr zu erfahren."
+    "message": "Dieser Dateianhang muss aufgrund ihres Alters aktualisiert werden. Klicke hier, um mehr zu erfahren."
   },
   "fix": {
     "message": "Reparieren",
     "description": "This is a verb. ex. 'Fix The Car'"
   },
   "oldAttachmentsNeedFixDesc": {
-    "message": "Es gibt alte Dateianhänge in deinem Tresor, die repariert werden müssen, bevor du deinen Verschlüsselungscode aktualisieren kannst."
+    "message": "Es gibt alte Dateianhänge in deinem Tresor, die repariert werden müssen, bevor du deinen Verschlüsselungsschlüssel erneuern kannst."
   },
   "yourAccountsFingerprint": {
-    "message": "Prüfschlüssel für Ihren Account",
+    "message": "Fingerabdruck-Phrase deines Kontos",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "fingerprintEnsureIntegrityVerify": {
-    "message": "Um die Sicherheit ihres Verschlüsselungscodes zu gewähren, bestätigen Sie bitte den Prüfschlüssel des Benutzers.",
+    "message": "Um die Integrität deiner Verschlüsselungsschlüssel zu gewährleisten, überprüfe bitte die Fingerabdruck-Phrase des Benutzers, bevor du fortfährst.",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "fingerprintMatchInfo": {
@@ -3568,33 +3568,33 @@
     "message": "Fingerabdruck-Phrase"
   },
   "dontAskFingerprintAgain": {
-    "message": "Nicht erneut nach dem Prüfschlüssel fragen",
+    "message": "Keine Aufforderung zur Überprüfung von Fingerabdruck-Phrasen für eingeladene Benutzer (nicht empfohlen)",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "free": {
-    "message": "Kostenlos",
+    "message": "Free",
     "description": "Free, as in 'Free beer'"
   },
   "apiKey": {
     "message": "API-Schlüssel"
   },
   "apiKeyDesc": {
-    "message": "Dein API-Schlüssel kann zur Authentifizierung für die öffentlichen Bitwarden-API benutzt werden."
+    "message": "Dein API-Schlüssel kann zur Authentifizierung für die öffentliche Bitwarden-API benutzt werden."
   },
   "apiKeyRotateDesc": {
-    "message": "Mit der Erneuerung des API-Schlüssels wird der bisherige Schlüssel ungültig. Sie können Ihren API-Schlüssel erneuern, wenn die sichere Verwendung Ihres aktuellen Schlüssel nicht mehr gewährleistet ist."
+    "message": "Mit der Erneuerung des API-Schlüssels wird der bisherige Schlüssel ungültig. Du kannst deinen API-Schlüssel erneuern, wenn du denkst, dass die sichere Verwendung deines aktuellen Schlüssel nicht mehr gewährleistet ist."
   },
   "apiKeyWarning": {
-    "message": "Ihr API-Schlüssel hat vollen Zugriff auf die Organisation. Er sollte geheim gehalten werden."
+    "message": "Dein API-Schlüssel hat vollen Zugriff auf die Organisation. Er sollte geheim gehalten werden."
   },
   "userApiKeyDesc": {
-    "message": "Ihr API-Schlüssel kann zur Authentifizierung im Bitwarden CLI verwendet werden."
+    "message": "Dein API-Schlüssel kann zur Authentifizierung in der Bitwarden CLI verwendet werden."
   },
   "userApiKeyWarning": {
-    "message": "Ihr API-Schlüssel ist ein alternativer Authentifizierungsmechanismus. Er sollte geheim gehalten werden."
+    "message": "Dein API-Schlüssel ist ein alternativer Authentifizierungsmechanismus. Er sollte geheim gehalten werden."
   },
   "oauth2ClientCredentials": {
-    "message": "OAuth 2.0 Client Anmeldeinformationen",
+    "message": "OAuth 2.0 Client-Zugangsdaten",
     "description": "'OAuth 2.0' is a programming protocol. It should probably not be translated."
   },
   "viewApiKey": {
@@ -3604,19 +3604,19 @@
     "message": "API-Schlüssel erneuern"
   },
   "selectOneCollection": {
-    "message": "Sie müssen mindestens eine Sammlung auswählen."
+    "message": "Du musst mindestens eine Sammlung auswählen."
   },
   "couldNotChargeCardPayInvoice": {
-    "message": "Wir sind nicht in der Lage Ihre Kreditkarte zu belasten. Bitte bezahlen Sie den unten aufgelisteten noch nicht beglichenen Rechnungsbetrag."
+    "message": "Wir konnten deine Karte nicht belasten. Bitte sieh dir die unten aufgeführte unbezahlte Rechnung an und begleiche sie."
   },
   "inAppPurchase": {
     "message": "In-App-Kauf"
   },
   "cannotPerformInAppPurchase": {
-    "message": "Sie können diese Aktion nicht durchführen, wenn sie eine In-App-Kauf Zahlungsart nutzen."
+    "message": "Du kannst diese Aktion nicht durchführen, wenn du eine In-App-Kauf Zahlungsmethode nutzt."
   },
   "manageSubscriptionFromStore": {
-    "message": "Sie müssen Ihr Abonnement im entsprechenden App Store verwalten, über dem Ihr In-App-Kauf getätigt wurde."
+    "message": "Du musst dein Abonnement im entsprechenden App Store verwalten, über den der In-App-Kauf getätigt wurde."
   },
   "minLength": {
     "message": "Mindestlänge"
@@ -3816,10 +3816,10 @@
     "message": "Steuerinformationen aktualisiert."
   },
   "setMasterPassword": {
-    "message": "Masterpasswort festlegen"
+    "message": "Master-Passwort festlegen"
   },
   "ssoCompleteRegistration": {
-    "message": "Bitte legen Sie ein Masterpasswort für den Schutz Ihres Tresors fest, um die Anmeldung über SSO abzuschließen."
+    "message": "Bitte lege ein Master-Passwort für den Schutz deines Tresors fest, um die Anmeldung über SSO abzuschließen."
   },
   "identifier": {
     "message": "Kennung"
@@ -3828,19 +3828,19 @@
     "message": "Organisationskennung"
   },
   "ssoLogInWithOrgIdentifier": {
-    "message": "Über den Single Sign-on Ihrer Organisation anmelden. Bitte geben Sie Ihre Organisationskennung an, um zu beginnen."
+    "message": "Melde dich über das Single Sign-on-Portal deiner Organisation an. Bitte gib die SSO-Kennung deiner Organisation ein, um zu beginnen."
   },
   "enterpriseSingleSignOn": {
     "message": "Enterprise Single-Sign-On"
   },
   "ssoHandOff": {
-    "message": "Sie können diesen Tab nun schließen und in der Erweiterung fortfahren."
+    "message": "Du kannst diesen Tab nun schließen und in der Erweiterung fortfahren."
   },
   "includeAllTeamsFeatures": {
-    "message": "Alle Teams Funktionen, zusätzlich:"
+    "message": "Alle Teams-Funktionen, plus:"
   },
   "includeSsoAuthentication": {
-    "message": "SSO Authentifikation über SAML2.0 und OpenID Connect"
+    "message": "SSO-Authentifizierung über SAML2.0 und OpenID Connect"
   },
   "includeEnterprisePolicies": {
     "message": "Unternehmensrichtlinien"
@@ -3849,19 +3849,19 @@
     "message": "SSO Validierung fehlgeschlagen"
   },
   "ssoIdentifierRequired": {
-    "message": "Unternehmenskennung ist erforderlich."
+    "message": "SSO-Kennung der Organisation erforderlich."
   },
   "ssoIdentifier": {
     "message": "SSO-Kennung"
   },
   "ssoIdentifierHint": {
-    "message": "Gib den Mitgliedern diese ID, um sich mit SSO anzumelden."
+    "message": "Gib diese Kennung an deine Mitglieder weiter, damit sie sich mit SSO anmelden können."
   },
   "unlinkSso": {
-    "message": "SSO Verknüpfung aufheben"
+    "message": "SSO-Verknüpfung aufheben"
   },
   "unlinkSsoConfirmation": {
-    "message": "Bist du sicher, dass du SSO für diese Organisation aufheben möchtest?"
+    "message": "Bist du sicher, dass du die SSO-Verknüpfung für diese Organisation aufheben möchtest?"
   },
   "linkSso": {
     "message": "SSO verknüpfen"
@@ -3873,16 +3873,16 @@
     "message": "Benutzern verbieten, anderen Organisationen beizutreten."
   },
   "singleOrgBlockCreateMessage": {
-    "message": "Ihre aktuelle Organisation hat eine Richtlinie, die es Ihnen nicht erlaubt, mehr als einer Organisation beizutreten. Bitte kontaktieren Sie die Administratoren Ihrer Organisation oder melden Sie sich mit einem anderen Bitwarden-Konto an."
+    "message": "Deine aktuelle Organisation hat eine Richtlinie, die es dir nicht erlaubt, mehr als einer Organisation beizutreten. Bitte kontaktiere die Administratoren deiner Organisation oder melden dich mit einem anderen Bitwarden-Konto an."
   },
   "singleOrgPolicyWarning": {
-    "message": "Organisationsmitglieder, die nicht Eigentümer oder Administratoren sind und bereits Mitglied einer anderen Organisation sind, werden aus Ihrer Organisation entfernt."
+    "message": "Organisationsmitglieder, die nicht Eigentümer oder Administratoren sind und bereits Mitglied einer anderen Organisation sind, werden aus deiner Organisation entfernt."
   },
   "requireSso": {
-    "message": "Single Sign-On Authentifizierung"
+    "message": "Single Sign-on-Authentifizierung erfordern"
   },
   "requireSsoPolicyDesc": {
-    "message": "Mitglieder müssen sich per Enterprise Single-Sign-On anmelden."
+    "message": "Mitglieder müssen sich per Enterprise Single-Sign-on anmelden."
   },
   "prerequisite": {
     "message": "Voraussetzung"
@@ -3903,7 +3903,7 @@
     "message": "Text"
   },
   "createSend": {
-    "message": "Neues Send erstellen",
+    "message": "Neues Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editSend": {
@@ -3911,11 +3911,11 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createdSend": {
-    "message": "Send erstellt",
+    "message": "Send gespeichert",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editedSend": {
-    "message": "Send bearbeitet",
+    "message": "Send gespeichert",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "deletedSend": {
@@ -4168,13 +4168,13 @@
     }
   },
   "emergencyApproved": {
-    "message": "Notfallzugriff genehmigt."
+    "message": "Notfallzugriff genehmigt"
   },
   "emergencyRejected": {
     "message": "Notfallzugriff abgelehnt"
   },
   "passwordResetFor": {
-    "message": "Passwort für $USER$ zurückgesetzt. Sie können sich jetzt mit dem neuen Passwort anmelden.",
+    "message": "Passwort für $USER$ zurückgesetzt. Du kannst dich jetzt mit dem neuen Passwort anmelden.",
     "placeholders": {
       "user": {
         "content": "$1",
@@ -4183,33 +4183,33 @@
     }
   },
   "personalOwnership": {
-    "message": "Persönliches Eigentum"
+    "message": "Persönlichen Tresor entfernen"
   },
   "personalOwnershipPolicyDesc": {
     "message": "Benutzern vorschreiben, Tresoreinträge in einer Organisation zu speichern, indem sie die persönliche Eigentumsoption entfernen."
   },
   "personalOwnershipExemption": {
-    "message": "Organisationseigentümer und Administratoren sind von der Durchsetzung dieser Richtlinie ausgenommen."
+    "message": "Organisationseigentümer und -administratoren sind von der Durchsetzung dieser Richtlinie ausgenommen."
   },
   "personalOwnershipSubmitError": {
-    "message": "Aufgrund einer Unternehmensrichtlinie dürfen Sie keine Einträge in Ihrem persönlichen Tresor speichern. Ändern Sie die Eigentümer-Option in eine Organisation und wählen Sie aus den verfügbaren Sammlungen."
+    "message": "Aufgrund einer Unternehmensrichtlinie darfst du keine Einträge in deinem persönlichen Tresor speichern. Ändere die Eigentümer-Option in eine Organisation und wähle aus den verfügbaren Sammlungen."
   },
   "disableSend": {
-    "message": "Send deaktivieren"
+    "message": "Send entfernen"
   },
   "disableSendPolicyDesc": {
-    "message": "Benutzern das Erstellen oder Bearbeiten eines Bitwarden Sends nicht gestatten. Das Löschen eines bestehenden Sends ist weiterhin erlaubt.",
+    "message": "Mitgliedern nicht erlauben, Sends zu erstellen oder zu bearbeiten.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "disableSendExemption": {
-    "message": "Benutzer der Organisation, die die Richtlinien der Organisation verwalten können, sind von der Durchsetzung dieser Richtlinie ausgenommen."
+    "message": "Organisationsmitglieder, die die Richtlinien der Organisation verwalten können, sind von der Durchsetzung dieser Richtlinie ausgenommen."
   },
   "sendDisabled": {
-    "message": "Send deaktiviert",
+    "message": "Send entfernt",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendDisabledWarning": {
-    "message": "Aufgrund einer Unternehmensrichtlinie können Sie nur ein bestehendes Send löschen.",
+    "message": "Aufgrund einer Unternehmensrichtlinie kannst du ein bestehendes Send nur löschen.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendOptions": {
@@ -4217,11 +4217,11 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendOptionsPolicyDesc": {
-    "message": "Einstellungen zum Erstellen und Bearbeiten von Sends.",
+    "message": "Lege Einstellungen zum Erstellen und Bearbeiten von Sends fest.",
     "description": "'Sends' is a plural noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendOptionsExemption": {
-    "message": "Benutzer der Organisation, die die Richtlinien der Organisation verwalten können, sind von der Durchsetzung dieser Richtlinie ausgenommen."
+    "message": "Organisationsmitglieder, die die Richtlinien der Organisation verwalten können, sind von der Durchsetzung dieser Richtlinie ausgenommen."
   },
   "disableHideEmail": {
     "message": "Benutzern nicht gestatten, ihre E-Mail-Adresse vor Empfängern zu verstecken, wenn sie ein Send erstellen oder bearbeiten.",
@@ -4244,7 +4244,7 @@
     }
   },
   "planPrice": {
-    "message": "Abopreis"
+    "message": "Tarifpreis"
   },
   "estimatedTax": {
     "message": "Voraussichtliche Steuern"
@@ -4253,22 +4253,22 @@
     "message": "Benutzerdefiniert"
   },
   "customDesc": {
-    "message": "Feinere Kontrolle der Benutzer Berechtigungen für erweiterte Konfigurationen erlauben."
+    "message": "Mitgliedern benutzerdefinierte Berechtigungen gewähren"
   },
   "customDescNonEnterpriseStart": {
     "message": "Benutzerdefinierte Rollen sind eine ",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Custom roles is an enterprise feature. Contact our support team to upgrade your subscription'"
   },
   "customDescNonEnterpriseLink": {
-    "message": "Funktion für Unternehmen",
+    "message": "Funktion des Enterprise-Tarifs",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Custom roles is an enterprise feature. Contact our support team to upgrade your subscription'"
   },
   "customDescNonEnterpriseEnd": {
-    "message": ". Kontaktiere unser Kundenserviceteam, um dein Abo hochzustufen",
+    "message": ". Kontaktiere unser Supportteam, um dein Abonnement zu upgraden",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Custom roles is an enterprise feature. Contact our support team to upgrade your subscription'"
   },
   "customNonEnterpriseError": {
-    "message": "Um benutzerdefinierte Berechtigungen zu ermöglichen, muss sich die Organisation auf einem 2020er Unternehmensabo befinden."
+    "message": "Um benutzerdefinierte Berechtigungen zu ermöglichen, muss sich die Organisation auf einem 2020er Enterprise-Tarif befinden."
   },
   "permissions": {
     "message": "Berechtigungen"
@@ -4301,10 +4301,10 @@
     "message": "Neue Sammlungen erstellen"
   },
   "editAnyCollection": {
-    "message": "Beliebige Sammlung bearbeiten"
+    "message": "Jede Sammlung bearbeiten"
   },
   "deleteAnyCollection": {
-    "message": "Beliebige Sammlung löschen"
+    "message": "Jede Sammlung löschen"
   },
   "manageAssignedCollections": {
     "message": "Zugewiesene Sammlungen verwalten"
@@ -4328,7 +4328,7 @@
     "message": "Benutzer verwalten"
   },
   "manageResetPassword": {
-    "message": "Passwort Zurücksetzung verwalten"
+    "message": "Passwortzurücksetzung verwalten"
   },
   "disableRequiredError": {
     "message": "Du musst die $POLICYNAME$-Richtlinie manuell deaktivieren, bevor diese Richtlinie deaktiviert werden kann.",
@@ -4340,7 +4340,7 @@
     }
   },
   "personalOwnershipPolicyInEffect": {
-    "message": "Eine Organisationsrichtlinie beeinflusst Ihre Eigentümer-Optionen."
+    "message": "Eine Organisationsrichtlinie beeinflusst deine Eigentümer-Optionen."
   },
   "personalOwnershipPolicyInEffectImports": {
     "message": "Eine Organisationsrichtlinie hat das Importieren von Einträgen in deinen persönlichen Tresor deaktiviert."
@@ -4556,16 +4556,16 @@
     "message": "Automatische Registrierung"
   },
   "resetPasswordPolicyAutoEnrollDescription": {
-    "message": "Alle Benutzer werden automatisch für das Zurücksetzen des Passworts registriert, sobald ihre Einladung angenommen wurde."
+    "message": "Alle Benutzer werden automatisch für die Passwortzurücksetzung registriert, sobald ihre Einladung angenommen wurde und können sich nicht davon abmelden."
   },
   "resetPasswordPolicyAutoEnrollWarning": {
-    "message": "Benutzer, die bereits in der Organisation sind, werden nicht rückwirkend für das Zurücksetzen des Passworts registriert. Sie müssen sich selbst registrieren, bevor Administratoren deren Master-Passwort zurücksetzen können."
+    "message": "Benutzer, die bereits in der Organisation sind, werden nicht rückwirkend für Passwortzurücksetzung registriert. Sie müssen sich selbst registrieren, bevor Administratoren deren Master-Passwort zurücksetzen können."
   },
   "resetPasswordPolicyAutoEnrollCheckbox": {
-    "message": "Neue Benutzer automatisch registrieren"
+    "message": "Neue Mitglieder müssen automatisch registriert werden"
   },
   "resetPasswordAutoEnrollInviteWarning": {
-    "message": "Diese Organisation hat eine Unternehmensrichtlinie, die dich automatisch zum Zurücksetzen deines Passworts registriert. Die Registrierung wird es Administratoren der Organisation erlauben, dein Master-Passwort zu ändern."
+    "message": "Diese Organisation hat eine Unternehmensrichtlinie, die dich automatisch zur Passwortzurücksetzung registriert. Die Registrierung wird es Administratoren der Organisation erlauben, dein Master-Passwort zu ändern."
   },
   "resetPasswordOrgKeysError": {
     "message": "Die Rückmeldung der Organisationsschlüssel ist null"
@@ -4586,7 +4586,7 @@
     "message": "Master-Passwort bestätigen"
   },
   "passwordConfirmationDesc": {
-    "message": "Diese Aktion ist geschützt. Um fortzufahren, geben Sie bitte Ihr Master-Passwort erneut ein, um Ihre Identität zu bestätigen."
+    "message": "Diese Aktion ist geschützt. Um fortzufahren, gib bitte dein Master-Passwort erneut ein, um deine Identität zu verifizieren."
   },
   "reinviteSelected": {
     "message": "Einladungen erneut senden"
@@ -4595,7 +4595,7 @@
     "message": "Benachrichtigung erneut senden"
   },
   "noSelectedUsersApplicable": {
-    "message": "Diese Aktion ist für keinen der ausgewählten Benutzer anwendbar."
+    "message": "Diese Aktion ist auf keinen der ausgewählten Benutzer anwendbar."
   },
   "removeUsersWarning": {
     "message": "Bist du sicher, dass du die folgenden Benutzer entfernen möchtest? Der Prozess kann einige Sekunden dauern und kann nicht unterbrochen oder abgebrochen werden."
@@ -4613,7 +4613,7 @@
     "message": "Wähle ein Design für deinen Web-Tresor."
   },
   "themeSystem": {
-    "message": "Benutze Systemdesign"
+    "message": "Systemdesign verwenden"
   },
   "themeDark": {
     "message": "Dunkel"
@@ -4625,13 +4625,13 @@
     "message": "Auswahl bestätigen"
   },
   "bulkConfirmStatus": {
-    "message": "Multi-Aktion Status"
+    "message": "Massenaktionsstatus"
   },
   "bulkConfirmMessage": {
-    "message": "Erfolgreich bestätigt."
+    "message": "Erfolgreich bestätigt"
   },
   "bulkReinviteMessage": {
-    "message": "Erfolgreich wieder eingeladen."
+    "message": "Erfolgreich erneut eingeladen"
   },
   "bulkRemovedMessage": {
     "message": "Erfolgreich entfernt"
@@ -4670,13 +4670,13 @@
     "message": "Du wurdest eingeladen, einen neuen Anbieter einzurichten. Um fortzufahren, musst du dich anmelden oder ein neues Bitwarden-Konto erstellen."
   },
   "setupProviderDesc": {
-    "message": "Bitte gib unten die Details ein, um die Anbieter-Einrichtung abzuschließen. Kontaktiere den Kundenservice, falls du Fragen hast."
+    "message": "Bitte gib die nachstehenden Daten ein, um die Einrichtung des Providers abzuschließen. Wende dich an den Kundensupport, wenn du Fragen hast."
   },
   "providerName": {
     "message": "Anbietername"
   },
   "providerSetup": {
-    "message": "Der Anbieter wurde eingerichtet."
+    "message": "Anbieter erfolgreich eingerichtet"
   },
   "clients": {
     "message": "Kunden"
@@ -4689,13 +4689,13 @@
     "message": "Anbieter-Administrator"
   },
   "providerAdminDesc": {
-    "message": "Der Benutzer mit dem höchsten Zugriffsrechten, der alle Aspekte Ihres Anbieters verwalten kann, sowie auf die Kunden-Organisationen zugreifen und diese verwalten kann."
+    "message": "Der Benutzer mit den höchsten Zugriffsrechten, der alle Aspekte deines Anbieters verwalten kann, sowie auf die Kunden-Organisationen zugreifen und diese verwalten kann."
   },
   "serviceUser": {
-    "message": "Service Benutzer"
+    "message": "Dienstbenutzer"
   },
   "serviceUserDesc": {
-    "message": "Service Benutzer können auf alle Kunden-Organisationen zugreifen und sie verwalten."
+    "message": "Dienstbenutzer können auf alle Kunden-Organisationen zugreifen und sie verwalten."
   },
   "providerInviteUserDesc": {
     "message": "Lade einen neuen Benutzer zu deinem Anbieter ein, indem du die E-Mail-Adresse seines Bitwarden-Kontos unten einträgst. Falls dieser noch kein Bitwarden-Konto besitzt, wird er/sie zur Erstellung eines neuen Kontos aufgefordert."
@@ -4852,6 +4852,18 @@
   "personalVaultExportPolicyInEffect": {
     "message": "Eine oder mehrere Unternehmensrichtlinien verhindern es, dass du deinen persönlichen Tresor exportieren kannst."
   },
+  "activateAutofill": {
+    "message": "Auto-Ausfüllen aktivieren"
+  },
+  "activateAutofillDesc": {
+    "message": "Aktiviere Auto-Ausfüllen mit den Seitenladeeinstellungen der Browser-Erweiterung für alle bestehenden und neuen Mitglieder."
+  },
+  "experimentalFeature": {
+    "message": "Kompromittierte oder nicht vertrauenswürdige Websites können Auto-Ausfüllen beim Laden der Seite ausnutzen."
+  },
+  "learnMoreAboutAutofill": {
+    "message": "Erfahre mehr über Auto-Ausfüllen"
+  },
   "selectType": {
     "message": "SSO-Typ auswählen"
   },
@@ -4934,7 +4946,7 @@
     "message": "Möchte Zusicherungen signieren"
   },
   "spValidateCertificates": {
-    "message": "Zertifikate überprüfen"
+    "message": "Zertifikate validieren"
   },
   "idpEntityId": {
     "message": "Entitäts-ID"
@@ -4943,10 +4955,10 @@
     "message": "Bindungstyp"
   },
   "idpSingleSignOnServiceUrl": {
-    "message": "Single Sign-On Service-URL"
+    "message": "Single Sign-on-Dienst-URL"
   },
   "idpSingleLogoutServiceUrl": {
-    "message": "Single Log-Out Service-URL"
+    "message": "Single Log-out Dienst-URL"
   },
   "idpX509PublicCert": {
     "message": "Öffentliches X509-Zertifikat"
@@ -4955,28 +4967,28 @@
     "message": "Ausgehender Signaturalgorithmus"
   },
   "idpAllowUnsolicitedAuthnResponse": {
-    "message": "Erlaube unaufgeforderte Authentifizierungsantwort"
+    "message": "Unaufgeforderte Authentifizierungsantwort zulassen"
   },
   "idpAllowOutboundLogoutRequests": {
     "message": "Ausgehende Abmeldeanfragen erlauben"
   },
   "idpSignAuthenticationRequests": {
-    "message": "Signiere Authentifizierungsanfragen"
+    "message": "Authentifizierungsanfragen signieren"
   },
   "ssoSettingsSaved": {
-    "message": "Single Sign-On Konfiguration wurde gespeichert."
+    "message": "Single Sign-on Konfiguration wurde gespeichert"
   },
   "sponsoredFamilies": {
-    "message": "Kostenloses Bitwarden Familienabo"
+    "message": "Kostenloses Bitwarden Families"
   },
   "sponsoredFamiliesEligible": {
-    "message": "Du und deine Familie haben Anspruch auf ein kostenloses Bitwarden Familienabo. Mit deiner persönlichen E-Mail einlösen, um deine Daten zu schützen, auch wenn du nicht am Arbeitsplatz bist."
+    "message": "Du und deine Familie haben Anspruch auf Free Bitwarden Families. Mit deiner persönlichen E-Mail-Adresse einlösen, um deine Daten zu schützen, auch wenn du nicht am Arbeitsplatz bist."
   },
   "sponsoredFamiliesEligibleCard": {
-    "message": "Löse dein kostenloses Bitwarden für Familien Abo heute ein, um deine Daten zu schützen, auch wenn du nicht am Arbeitsplatz bist."
+    "message": "Löse deinen Free Bitwarden Families-Tarif heute ein, um deine Daten zu schützen, auch wenn du nicht am Arbeitsplatz bist."
   },
   "sponsoredFamiliesInclude": {
-    "message": "Das Bitwarden für Familien Abo beinhaltet"
+    "message": "Der Bitwarden Families-Tarif beinhaltet"
   },
   "sponsoredFamiliesPremiumAccess": {
     "message": "Premium-Zugang für bis zu 6 Benutzer"
@@ -4985,31 +4997,31 @@
     "message": "Gemeinsame Sammlungen für Familiengeheimnisse"
   },
   "badToken": {
-    "message": "Der Link ist nicht mehr gültig. Bitte lasse dir vom Paten das Angebot erneut senden."
+    "message": "Der Link ist nicht mehr gültig. Bitte lasse dir vom Sponsor das Angebot erneut senden."
   },
   "reclaimedFreePlan": {
-    "message": "Kostenloses Abo zurückgefordert"
+    "message": "Kostenlosen Tarif zurückgefordert"
   },
   "redeem": {
     "message": "Einlösen"
   },
   "sponsoredFamiliesSelectOffer": {
-    "message": "Wähle die Organisation aus, die du gerne fördern möchtest"
+    "message": "Wähle die Organisation aus, die du gerne sponsern möchtest"
   },
   "familiesSponsoringOrgSelect": {
-    "message": "Welches kostenlose Familienangebot möchtest du einlösen?"
+    "message": "Welches Free Families-Angebot möchtest du einlösen?"
   },
   "sponsoredFamiliesEmail": {
-    "message": "Gebe deine persönliche E-Mail ein, um Bitwarden Familien einlösen zu können"
+    "message": "Gib deine persönliche E-Mail-Adresse ein, um Bitwarden Families einzulösen"
   },
   "sponsoredFamiliesLeaveCopy": {
-    "message": "Wenn du ein Angebot entfernst oder von der Patenschaft-Organisation entfernt wirst, verfällt deine Patenschaft am nächsten Verlängerungsdatum."
+    "message": "Wenn du ein Angebot entfernst oder von der Sponsoring-Organisation entfernt wirst, verfällt dein Sponsoring am nächsten Verlängerungsdatum."
   },
   "acceptBitwardenFamiliesHelp": {
-    "message": "Angebot für eine bestehende Organisation akzeptieren oder eine neue Familien-Organisation erstellen."
+    "message": "Angebot für eine bestehende Organisation akzeptieren oder eine neue Families-Organisation erstellen."
   },
   "setupSponsoredFamiliesLoginDesc": {
-    "message": "Dir wurde ein kostenloses Bitwarden Familien-Organisationsabo angeboten. Um fortzufahren, musst du dich in das Konto einloggen, das das Angebot erhalten hat."
+    "message": "Dir wurde ein kostenloser Bitwarden Families-Organisationstarif angeboten. Um fortzufahren, musst du dich in das Konto einloggen, das das Angebot erhalten hat."
   },
   "sponsoredFamiliesAcceptFailed": {
     "message": "Angebot kann nicht angenommen werden. Bitte sende die Angebotsmail von deinem Unternehmenskonto erneut und versuche es noch einmal."
@@ -5024,16 +5036,16 @@
     }
   },
   "sponsoredFamiliesOffer": {
-    "message": "Kostenloses Bitwarden Familien-Organisationsangebot einlösen"
+    "message": "Free Bitwarden Families akzeptieren"
   },
   "sponsoredFamiliesOfferRedeemed": {
-    "message": "Kostenloses Bitwarden Familien-Angebot erfolgreich eingelöst"
+    "message": "Free Bitwarden Families-Angebot erfolgreich eingelöst"
   },
   "redeemed": {
     "message": "Eingelöst"
   },
   "redeemedAccount": {
-    "message": "Eingelöstes Konto"
+    "message": "Konto eingelöst"
   },
   "revokeAccount": {
     "message": "Konto $NAME$ zurückziehen",
@@ -5045,7 +5057,7 @@
     }
   },
   "resendEmailLabel": {
-    "message": "Patenschaft-E-Mail erneut an $NAME$ Patenschaft senden",
+    "message": "Sponsoring-E-Mail erneut an $NAME$ Sponsoring senden",
     "placeholders": {
       "name": {
         "content": "$1",
@@ -5054,7 +5066,7 @@
     }
   },
   "freeFamiliesPlan": {
-    "message": "Kostenloses Familien Abo"
+    "message": "Free Families-Tarif"
   },
   "redeemNow": {
     "message": "Jetzt einlösen"
@@ -5219,7 +5231,7 @@
     "message": "Kopiere dieses Token und füge es in die Rechnungssynchronisations-Einstellungen deiner selbst gehosteten Organisation ein."
   },
   "billingSyncCanAccess": {
-    "message": "Dein Rechnungssynchronisations-Token kann auf die Abo-Einstellungen dieser Organisation zugreifen und diese bearbeiten."
+    "message": "Dein Rechnungssynchronisations-Token kann auf die Abonnement-Einstellungen dieser Organisation zugreifen und diese bearbeiten."
   },
   "manageBillingSync": {
     "message": "Rechnungssynchronisation verwalten"
@@ -5243,16 +5255,16 @@
     "message": "Selbst gehostet"
   },
   "selfHostingEnterpriseOrganizationSectionCopy": {
-    "message": "Um deine Organisation auf deinem eigenen Server einzurichten, musst du deine Lizenzdatei hochladen. Um kostenlose Familien-Abos und erweiterte Abrechnungsmöglichkeiten für deine selbst gehostete Organisation anzubieten, musst du die Rechnungssynchronisation einrichten."
+    "message": "Um deine Organisation auf deinem eigenen Server einzurichten, musst du deine Lizenzdatei hochladen. Um Free Families-Tarife und erweiterte Abrechnungsmöglichkeiten für deine selbst gehostete Organisation anzubieten, musst du die Rechnungssynchronisation einrichten."
   },
   "billingSyncApiKeyRotated": {
     "message": "Token erneuert"
   },
   "billingSyncDesc": {
-    "message": "Die Rechnungssynchronisation schaltet Patenschaften für Familien und eine automatische Lizenz-Synchronisation auf deinem Server frei. Nach der Aktualisierung des Bitwarden Cloud-Servers, wähle Lizenz synchronisieren aus, um die Änderungen anzuwenden."
+    "message": "Die Rechnungssynchronisation schaltet Sponsorings für Families und eine automatische Lizenz-Synchronisation auf deinem Server frei. Nach der Aktualisierung des Bitwarden Cloud-Servers, wähle Lizenz synchronisieren aus, um die Änderungen anzuwenden."
   },
   "billingSyncKeyDesc": {
-    "message": "Um dieses Formular auszufüllen, ist ein Rechnungssynchronisations-Token aus den Abo-Einstellungen deiner Cloud-Organisation erforderlich."
+    "message": "Um dieses Formular auszufüllen, ist ein Rechnungssynchronisations-Token aus den Abonnement-Einstellungen deiner Cloud-Organisation erforderlich."
   },
   "billingSyncKey": {
     "message": "Rechnungssynchronisations-Token"
@@ -5276,7 +5288,7 @@
     "message": "Angefragt"
   },
   "formErrorSummaryPlural": {
-    "message": "$COUNT$ Felder oben müssen beachtet werden.",
+    "message": "$COUNT$ Felder oben benötigen deine Aufmerksamkeit.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -5285,7 +5297,7 @@
     }
   },
   "formErrorSummarySingle": {
-    "message": "1 Feld oben muss beachtet werden."
+    "message": "1 Feld benötigt deine Aufmerksamkeit."
   },
   "fieldRequiredError": {
     "message": "$FIELDNAME$ ist erforderlich.",
@@ -5324,13 +5336,13 @@
     "message": "Deine Sitzung ist abgelaufen. Bitte gehe zurück und versuche dich erneut anzumelden."
   },
   "exportingPersonalVaultTitle": {
-    "message": "Persönlichen Tresor exportieren"
+    "message": "Persönlicher Tresor wird exportiert"
   },
   "exportingOrganizationVaultTitle": {
-    "message": "Tresor der Organisation exportieren"
+    "message": "Tresor der Organisation wird exportiert"
   },
   "exportingPersonalVaultDescription": {
-    "message": "Es werden nur einzelne Tresor-Einträge exportiert, die mit $EMAIL$ verbunden sind. Tresor-Einträge der Organisation werden nicht berücksichtigt. Es werden nur Informationen der Tresor-Einträge exportiert. Diese enthalten nicht den zugehörigen Passwortverlauf oder Anhänge.",
+    "message": "Es werden nur persönliche Tresoreinträge exportiert, die mit $EMAIL$ verbunden sind. Tresoreinträge der Organisation werden nicht berücksichtigt. Es werden nur Informationen der Tresoreinträge exportiert. Diese enthalten nicht den zugehörigen Passwortverlauf oder Anhänge.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -5339,7 +5351,7 @@
     }
   },
   "exportingOrganizationVaultDescription": {
-    "message": "Nur der mit $ORGANIZATION$ verbundene Tresor der Organisation wird exportiert. Einzelne Tresor-Einträge und Einträge anderer Organisationen werden nicht berücksichtigt.",
+    "message": "Nur der mit $ORGANIZATION$ verbundene Tresor der Organisation wird exportiert. Persönliche Tresoreinträge und Einträge anderer Organisationen werden nicht berücksichtigt.",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -5348,7 +5360,7 @@
     }
   },
   "accessDenied": {
-    "message": "Zugriff verweigert. Du hast keine Berechtigung, diese Seite anzuzeigen."
+    "message": "Zugriff verweigert. Du hast keine Berechtigung, diese Seite zu sehen."
   },
   "masterPassword": {
     "message": "Master-Passwort"
@@ -5388,13 +5400,13 @@
     "message": "Benutzername neu generieren"
   },
   "generateUsername": {
-    "message": "Benutzernamen generieren"
+    "message": "Benutzername generieren"
   },
   "usernameType": {
     "message": "Benutzernamenstyp"
   },
   "plusAddressedEmail": {
-    "message": "Mit Plus adressierte E-Mail-Adresse",
+    "message": "Plus-adressierte E-Mail-Adresse",
     "description": "Username generator option that appends a random sub-address to the username. For example: address+subaddress@email.com"
   },
   "plusAddressedEmailDesc": {
@@ -5624,10 +5636,7 @@
     "message": "Mitglieder"
   },
   "reporting": {
-    "message": "Bericht"
-  },
-  "cardBrandMir": {
-    "message": "Mir"
+    "message": "Berichte"
   },
   "numberOfUsers": {
     "message": "Anzahl der Benutzer"
@@ -5639,13 +5648,13 @@
     "message": "Nicht du?"
   },
   "pickAnAvatarColor": {
-    "message": "Wähle eine Avatar-Farbe"
+    "message": "Wähle eine Profilbild-Farbe"
   },
   "customizeAvatar": {
-    "message": "Avatar anpassen"
+    "message": "Profilbild anpassen"
   },
   "avatarUpdated": {
-    "message": "Avatar aktualisiert"
+    "message": "Profilbild aktualisiert"
   },
   "brightBlue": {
     "message": "Hellblau"
@@ -5720,11 +5729,11 @@
     "description": "Action to create a new secret."
   },
   "copySecretName": {
-    "message": "Geheimnamen kopieren",
+    "message": "Geheimnisnamen kopieren",
     "description": "Action to copy the name of a secret to the system's clipboard."
   },
   "copySecretValue": {
-    "message": "Geheimen Wert kopieren",
+    "message": "Geheimnis-Wert kopieren",
     "description": "Action to copy the value of a secret to the system's clipboard."
   },
   "deleteSecret": {
@@ -5750,7 +5759,7 @@
     "description": "A label for a type-to-filter input field to choose projects."
   },
   "searchProjects": {
-    "message": "Projekte suchen",
+    "message": "Projekte durchsuchen",
     "description": "Label for the search bar used to search projects."
   },
   "project": {
@@ -6087,7 +6096,7 @@
     "message": "Zugriffstokens widerrufen"
   },
   "revokeAccessTokenDesc": {
-    "message": "Das Widerrufen von Zugriffstokens ist dauerhaft und unumkehrbar."
+    "message": "Das Widerrufen von Zugriffstokens ist dauerhaft und unwiderruflich."
   },
   "accessTokenRevoked": {
     "message": "Zugriffstokens widerrufen",
@@ -6118,10 +6127,10 @@
     }
   },
   "groupInfo": {
-    "message": "Gruppeninfo"
+    "message": "Gruppeninformationen"
   },
   "editGroupMembersDesc": {
-    "message": "Erlaube Mitgliedern Zugriff auf die zugewiesenen Sammlungen der Gruppe."
+    "message": "Gewähre Mitgliedern Zugriff auf die zugewiesenen Sammlungen der Gruppe."
   },
   "editGroupCollectionsDesc": {
     "message": "Gewähre Zugriff auf Sammlungen, indem du diese zu dieser Gruppe hinzufügst."
@@ -6193,7 +6202,7 @@
     "message": "Durch das Verbinden einer Domain können Mitglieder das SSO-Kennungsfeld während der Anmeldung mit SSO überspringen."
   },
   "verifyDomain": {
-    "message": "Domain überprüfen"
+    "message": "Domain verifizieren"
   },
   "reverifyDomain": {
     "message": "Domain erneut verifizieren"
@@ -6340,7 +6349,7 @@
     "message": "Mitglied einladen"
   },
   "needsConfirmation": {
-    "message": "Benötigt eine Bestätigung"
+    "message": "Bestätigung erforderlich"
   },
   "memberRole": {
     "message": "Mitgliedsrolle"
@@ -6394,7 +6403,7 @@
     "message": "Daten exportieren"
   },
   "exportingOrganizationSecretDataTitle": {
-    "message": "Geheimdaten der Organisation exportieren"
+    "message": "Geheimnisdaten der Organisation exportieren"
   },
   "exportingOrganizationSecretDataDescription": {
     "message": "Nur die mit $ORGANIZATION$ verknüpften Daten des Secrets Manager werden exportiert. Einträge in anderen Produkten oder anderen Organisationen werden nicht berücksichtigt.",
@@ -6418,7 +6427,7 @@
     "message": "oder"
   },
   "licenseAndBillingManagement": {
-    "message": "Lizenz- und Rechnungsverwaltung"
+    "message": "Lizenz- und Abrechnungsverwaltung"
   },
   "automaticSync": {
     "message": "Automatische Synchronisierung"
@@ -6490,7 +6499,7 @@
     "message": "KDF-Einstellungen ändern"
   },
   "changeKdfLoggedOutWarning": {
-    "message": "Wenn du fortfährst, wirst du aus deiner aktuellen Sitzung abgemeldet und musst dich neu anmelden. Aktive Sitzungen auf anderen Geräten können bis zu einer Stunde weiter aktiv bleiben. Wir empfehlen, deinen Tresor zu exportieren, bevor du die Verschlüsselungseinstellungen änderst, um Datenverlust zu vermeiden."
+    "message": "Proceeding will log you out of all active sessions. You will need to log back in and complete two-step login setup. We recommend exporting your vault before changing your encryption settings to prevent data loss."
   },
   "secretsManagerBeta": {
     "message": "Secrets Manager Beta"
@@ -6605,10 +6614,10 @@
     "message": "Secrets Manager Beta aktivieren"
   },
   "saPeopleWarningTitle": {
-    "message": "Access tokens still available"
+    "message": "Zugriffstokens weiterhin verfügbar"
   },
   "saPeopleWarningMessage": {
-    "message": "Das Entfernen von Personen aus einem Dienstkonto entfernt nicht die von ihnen erstellten Zugangs-Token. Aus Sicherheitsgründen wird empfohlen, Zugangs-Token zu widerrufen, die von Personen erstellt wurden, die von einem Dienstkonto entfernt wurden."
+    "message": "Das Entfernen von Personen aus einem Dienstkonto entfernt nicht die von ihnen erstellten Zugriffstoken. Aus Sicherheitsgründen wird empfohlen, Zugriffstoken zu widerrufen, die von Personen erstellt wurden, die aus einem Dienstkonto entfernt wurden."
   },
   "smAccessRemovalWarningProjectTitle": {
     "message": "Zugriff auf dieses Projekt entfernen"

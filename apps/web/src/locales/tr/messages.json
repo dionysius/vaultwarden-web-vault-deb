@@ -4852,6 +4852,18 @@
   "personalVaultExportPolicyInEffect": {
     "message": "Bir veya daha fazla kuruluş ilkesi, kişisel kasanızı dışa aktarmanızı engelliyor."
   },
+  "activateAutofill": {
+    "message": "Otomatik doldurmayı etkinleştir"
+  },
+  "activateAutofillDesc": {
+    "message": "Tüm mevcut ve yeni üyeler için tarayıcı uzantısındaki \"sayfa yüklendiğinde otomatik doldur\" ayarını etkinleştir."
+  },
+  "experimentalFeature": {
+    "message": "Ele geçirilmiş veya güvenilmeyen web siteleri sayfa yüklenirken otomatik doldurmayı suistimal edebilir."
+  },
+  "learnMoreAboutAutofill": {
+    "message": "Otomatik doldurma hakkında bilgi alın"
+  },
   "selectType": {
     "message": "SSO türünü seçin"
   },
@@ -5625,9 +5637,6 @@
   },
   "reporting": {
     "message": "Raporlama"
-  },
-  "cardBrandMir": {
-    "message": "Mir"
   },
   "numberOfUsers": {
     "message": "Kullanıcı sayısı"
@@ -6490,7 +6499,7 @@
     "message": "KDF ayarlarını değiştir"
   },
   "changeKdfLoggedOutWarning": {
-    "message": "Devam etmek, mevcut oturumunuzdan çıkmanıza neden olacak ve tekrar oturum açmanızı gerektirecektir. Diğer cihazlardaki etkin oturumlar, bir saate kadar etkin kalmaya devam edebilir. Veri kaybını önlemek için şifreleme ayarlarınızı değiştirmeden önce kasanızı dışa aktarmanızı öneririz."
+    "message": "Proceeding will log you out of all active sessions. You will need to log back in and complete two-step login setup. We recommend exporting your vault before changing your encryption settings to prevent data loss."
   },
   "secretsManagerBeta": {
     "message": "Secrets Manager Beta"

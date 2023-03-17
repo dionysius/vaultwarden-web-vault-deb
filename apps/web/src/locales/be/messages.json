@@ -4852,6 +4852,18 @@
   "personalVaultExportPolicyInEffect": {
     "message": "Адна або больш палітык арганізацыі не дазваляюць вам экспартаваць асабістае сховішча."
   },
+  "activateAutofill": {
+    "message": "Актываваць аўтазапаўненне"
+  },
+  "activateAutofillDesc": {
+    "message": "Activate the auto-fill with page load settings on the browser extension for all existing and new members."
+  },
+  "experimentalFeature": {
+    "message": "Скампраметаваныя або ненадзейныя вэб-сайты могуць задзейнічаць функцыю аўтазапаўнення падчас загрузкі старонкі."
+  },
+  "learnMoreAboutAutofill": {
+    "message": "Даведацца больш пра аўтазапаўненне"
+  },
   "selectType": {
     "message": "Выберыце тып SSO"
   },
@@ -5626,9 +5638,6 @@
   "reporting": {
     "message": "Справаздачы"
   },
-  "cardBrandMir": {
-    "message": "Mir"
-  },
   "numberOfUsers": {
     "message": "Колькасць карыстальнікаў"
   },
@@ -5876,7 +5885,7 @@
     "description": "Placeholder text for searching service accounts."
   },
   "editServiceAccount": {
-    "message": "Edit service account",
+    "message": "Рэдагаваць сэрвісны ўліковы запіс",
     "description": "Title for editing a service account."
   },
   "addProject": {
@@ -5937,7 +5946,7 @@
     "description": "Notifies that a new service account has been created"
   },
   "serviceAccountUpdated": {
-    "message": "Service account updated",
+    "message": "Сэрвісны ўліковы запіс абноўлены",
     "description": "Notifies that a service account has been updated"
   },
   "newSaSelectAccess": {
@@ -6490,7 +6499,7 @@
     "message": "Змяніце налады KDF"
   },
   "changeKdfLoggedOutWarning": {
-    "message": "Працягваючы, вы выйдзіце з бягучага сеанса і вам неабходна будзе ўвайсці паўторна. Сеансы на іншых прыладах могуць заставацца актыўнымі на працягу адной гадзіны. Мы рэкамендуем экспартаваць ваша сховішча перад тым, як змяняць налады шыфравання, каб пазбегнуць страты даных."
+    "message": "Proceeding will log you out of all active sessions. You will need to log back in and complete two-step login setup. We recommend exporting your vault before changing your encryption settings to prevent data loss."
   },
   "secretsManagerBeta": {
     "message": "Менеджар сакрэтаў (бэта-версія)"

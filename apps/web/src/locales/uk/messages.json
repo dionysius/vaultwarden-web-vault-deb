@@ -4852,6 +4852,18 @@
   "personalVaultExportPolicyInEffect": {
     "message": "Одна чи декілька політик організації не дозволяють вам експортувати особисте сховище."
   },
+  "activateAutofill": {
+    "message": "Activate auto-fill"
+  },
+  "activateAutofillDesc": {
+    "message": "Activate the auto-fill with page load settings on the browser extension for all existing and new members."
+  },
+  "experimentalFeature": {
+    "message": "Compromised or untrusted websites can exploit auto-fill on page load."
+  },
+  "learnMoreAboutAutofill": {
+    "message": "Learn more about auto-fill"
+  },
   "selectType": {
     "message": "Оберіть тип SSO"
   },
@@ -5625,9 +5637,6 @@
   },
   "reporting": {
     "message": "Звіти"
-  },
-  "cardBrandMir": {
-    "message": "Mir"
   },
   "numberOfUsers": {
     "message": "Кількість користувачів"
@@ -6490,7 +6499,7 @@
     "message": "Змінити налаштування KDF"
   },
   "changeKdfLoggedOutWarning": {
-    "message": "Продовжуючи, ви вийдете з поточного сеансу і необхідно буде виконати вхід знову. Активні сеанси на інших пристроях можуть залишатися активними протягом години. Ми рекомендуємо експортувати ваше сховище перед зміною налаштувань шифрування для запобігання втрати даних."
+    "message": "Proceeding will log you out of all active sessions. You will need to log back in and complete two-step login setup. We recommend exporting your vault before changing your encryption settings to prevent data loss."
   },
   "secretsManagerBeta": {
     "message": "Керування секретами (бета-версія)"
