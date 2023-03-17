@@ -202,7 +202,7 @@
     "message": "Utforska Bitwardens communityforum"
   },
   "contactSupport": {
-    "message": "Contact Bitwarden support"
+    "message": "Kontakta Bitwarden support"
   },
   "sync": {
     "message": "Synkronisera"
@@ -439,7 +439,7 @@
     "message": "Huvudlösenord måste anges igen."
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least $VALUE$ characters long.",
+    "message": "Huvudlösenordet måste vara minst $VALUE$ tecken långt.",
     "description": "The Master Password must be at least a specific number of characters long.",
     "placeholders": {
       "value": {
@@ -976,10 +976,10 @@
     "message": "Utför automatisk ifyllnad om ett inloggningsformulär upptäcks när webbsidan laddas."
   },
   "experimentalFeature": {
-    "message": "Compromised or untrusted websites can exploit auto-fill on page load."
+    "message": "Komprometterade eller ej betrodda webbplatser kan utnyttja automatisk ifyllnad vid sidladdning."
   },
   "learnMoreAboutAutofill": {
-    "message": "Learn more about auto-fill"
+    "message": "Läs mer om automatisk ifyllnad"
   },
   "defaultAutoFillOnPageLoad": {
     "message": "Standardinställning för autofyll för inloggningsobjekt"
@@ -1143,7 +1143,7 @@
     "message": "Dr"
   },
   "mx": {
-    "message": "Mx"
+    "message": "Vederbörande"
   },
   "firstName": {
     "message": "Förnamn"
@@ -2067,16 +2067,16 @@
     "message": "Logga in med enhet"
   },
   "loginWithDeviceEnabledInfo": {
-    "message": "Log in with device must be set up in the settings of the Bitwarden app. Need another option?"
+    "message": "\"Logga in med enhet\" måste ställas in i inställningarna i Bitwardens app. Behöver du ett annat alternativ?"
   },
   "fingerprintPhraseHeader": {
     "message": "Fingeravtrycksfras"
   },
   "fingerprintMatchInfo": {
-    "message": "Please make sure your vault is unlocked and the Fingerprint phrase matches on the other device."
+    "message": "Se till att ditt valv är upplåst och att fingeravtrycksfrasen matchar på den andra enheten."
   },
   "resendNotification": {
-    "message": "Resend notification"
+    "message": "Skicka avisering igen"
   },
   "viewAllLoginOptions": {
     "message": "Visa alla inloggningsalternativ"
@@ -2085,16 +2085,16 @@
     "message": "En avisering har skickats till din enhet."
   },
   "logInInitiated": {
-    "message": "Log in initiated"
+    "message": "Inloggning påbörjad"
   },
   "exposedMasterPassword": {
-    "message": "Huvudlösenordet har avslöjats"
+    "message": "Huvudlösenordet har exponerats"
   },
   "exposedMasterPasswordDesc": {
     "message": "Lösenordet avslöjades vid ett dataintrång. Använd ett unikt lösenord för att skydda ditt konto. Är du säker på att du vill använda ett lösenord som avslöjats?"
   },
   "weakAndExposedMasterPassword": {
-    "message": "Huvudlösenordet är svagt och har avslöjats"
+    "message": "Huvudlösenordet är svagt och har exponerats"
   },
   "weakAndBreachedMasterPasswordDesc": {
     "message": "Lösenordet är svagt och avslöjades vid ett dataintrång. Använd ett starkt och unikt lösenord för att skydda ditt konto. Är det säkert att du vill använda detta lösenord?"
@@ -2121,10 +2121,10 @@
     "message": "Dina organisationspolicyer har aktiverat automatisk ifyllnad vid sidladdning."
   },
   "howToAutofill": {
-    "message": "How to auto-fill"
+    "message": "Hur du fyller i automatiskt"
   },
   "autofillSelectInfoWithCommand": {
-    "message": "Select an item from this page or use the shortcut: $COMMAND$",
+    "message": "Välj ett objekt från denna sida eller använd genvägen: $COMMAND$",
     "placeholders": {
       "command": {
         "content": "$1",
@@ -2133,22 +2133,22 @@
     }
   },
   "autofillSelectInfoWithoutCommand": {
-    "message": "Select an item from this page or set a shortcut in settings."
+    "message": "Välj ett objekt från den här sidan eller ange en genväg i inställningarna."
   },
   "gotIt": {
-    "message": "Got it"
+    "message": "Förstått"
   },
   "autofillSettings": {
-    "message": "Auto-fill settings"
+    "message": "Inställningar för automatisk ifyllnad"
   },
   "autofillShortcut": {
-    "message": "Auto-fill keyboard shortcut"
+    "message": "Tangentbordsgenväg för automatisk ifyllnad"
   },
   "autofillShortcutNotSet": {
-    "message": "The auto-fill shortcut is not set. Change this in the browser's settings."
+    "message": "Genvägen för automatisk ifyllnad är inte satt. Ändra detta i webbläsarens inställningar."
   },
   "autofillShortcutText": {
-    "message": "The auto-fill shortcut is: $COMMAND$. Change this in the browser's settings.",
+    "message": "Genvägen för automatisk ifyllnad är: $COMMAND$. Ändra detta i webbläsarens inställningar.",
     "placeholders": {
       "command": {
         "content": "$1",
@@ -2157,7 +2157,7 @@
     }
   },
   "autofillShortcutTextSafari": {
-    "message": "Default auto-fill shortcut: $COMMAND$.",
+    "message": "Standardgenväg för automatisk ifyllnad: $COMMAND$.",
     "placeholders": {
       "command": {
         "content": "$1",
