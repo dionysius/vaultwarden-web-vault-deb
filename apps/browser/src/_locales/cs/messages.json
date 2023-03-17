@@ -2003,9 +2003,6 @@
   "disabledOrganizationFilterError": {
     "message": "K položkám v deaktivované organizaci nemáte přístup. Požádejte o pomoc vlastníka organizace."
   },
-  "cardBrandMir": {
-    "message": "Mir"
-  },
   "loggingInTo": {
     "message": "Přihlašování do $DOMAIN$",
     "placeholders": {
@@ -2120,11 +2117,14 @@
       }
     }
   },
+  "autofillPageLoadPolicyActivated": {
+    "message": "Your organization policies have turned on auto-fill on page load."
+  },
   "howToAutofill": {
     "message": "How to auto-fill"
   },
-  "autofillSelectInfo": {
-    "message": "Select an item from this page or use the shortcut: $COMMAND$. You can also try auto-fill on page load.",
+  "autofillSelectInfoWithCommand": {
+    "message": "Vyberte položku z této stránky nebo použijte zkratku: $COMMAND$",
     "placeholders": {
       "command": {
         "content": "$1",
@@ -2132,8 +2132,8 @@
       }
     }
   },
-  "autofillSelectInfoNoCommand": {
-    "message": "Select an item from this page or set a shortcut in settings. You can also try auto-fill on page load."
+  "autofillSelectInfoWithoutCommand": {
+    "message": "Vyberte položku z této stránky nebo nastavte zkratku v nastavení."
   },
   "gotIt": {
     "message": "Got it"

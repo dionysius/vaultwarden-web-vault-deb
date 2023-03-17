@@ -196,13 +196,13 @@
     "message": "کمک و بازخورد"
   },
   "helpCenter": {
-    "message": "Bitwarden Help center"
+    "message": "مرکز راهنمایی Bitwarden"
   },
   "communityForums": {
-    "message": "Explore Bitwarden community forums"
+    "message": "انجمن‌های Bitwarden را کاوش کنید"
   },
   "contactSupport": {
-    "message": "Contact Bitwarden support"
+    "message": "پیام به پشتیبانیBitwarden"
   },
   "sync": {
     "message": "همگام‌سازی"
@@ -2003,9 +2003,6 @@
   "disabledOrganizationFilterError": {
     "message": "موارد موجود در سازمان‌های غیرفعال، قابل دسترسی نیستند. برای دریافت کمک با مالک سازمان خود تماس بگیرید."
   },
-  "cardBrandMir": {
-    "message": "میر"
-  },
   "loggingInTo": {
     "message": "ورود به $DOMAIN$",
     "placeholders": {
@@ -2120,11 +2117,14 @@
       }
     }
   },
+  "autofillPageLoadPolicyActivated": {
+    "message": "خط مشی‌های سازمان شما پر کردن خودکار هنگام بارگیری صفحه را روشن کرده است."
+  },
   "howToAutofill": {
     "message": "نحوه پر کردن خودکار"
   },
-  "autofillSelectInfo": {
-    "message": "یک مورد را از این صفحه انتخاب کنید یا از میانبر استفاده کنید: $COMMAND$. همچنین می‌توانید پر کردن خودکار را در بارگذاری صفحه امتحان کنید.",
+  "autofillSelectInfoWithCommand": {
+    "message": "یک مورد را از این صفحه انتخاب کنید یا از میانبر استفاده کنید: $COMMAND$",
     "placeholders": {
       "command": {
         "content": "$1",
@@ -2132,8 +2132,8 @@
       }
     }
   },
-  "autofillSelectInfoNoCommand": {
-    "message": "یک مورد را از این صفحه انتخاب کنید یا یک میانبر در تنظیمات تنظیم کنید. همچنین می‌توانید پر کردن خودکار را در بارگذاری صفحه امتحان کنید."
+  "autofillSelectInfoWithoutCommand": {
+    "message": "یک مورد را از این صفحه انتخاب کنید یا یک میانبر در تنظیمات تنظیم کنید."
   },
   "gotIt": {
     "message": "متوجه شدم"

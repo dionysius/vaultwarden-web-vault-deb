@@ -196,13 +196,13 @@
     "message": "Aide et commentaires"
   },
   "helpCenter": {
-    "message": "Bitwarden Help center"
+    "message": "Centre d'aide Bitwarden"
   },
   "communityForums": {
-    "message": "Explore Bitwarden community forums"
+    "message": "Explorez les forums de la communauté Bitwarden"
   },
   "contactSupport": {
-    "message": "Contact Bitwarden support"
+    "message": "Contacter le support Bitwarden"
   },
   "sync": {
     "message": "Synchroniser"
@@ -1412,7 +1412,7 @@
     "message": "Cloner"
   },
   "passwordGeneratorPolicyInEffect": {
-    "message": "Une ou plusieurs politiques d'organisation affectent les paramètres de votre générateur."
+    "message": "Une ou plusieurs politiques de sécurité de l'organisation affectent les paramètres de votre générateur."
   },
   "vaultTimeoutAction": {
     "message": "Action après délai d'expiration du coffre"
@@ -1465,7 +1465,7 @@
     "message": "Définir le mot de passe principal"
   },
   "masterPasswordPolicyInEffect": {
-    "message": "Une ou plusieurs politiques de l'organisation exigent que votre mot de passe principal réponde aux exigences suivantes :"
+    "message": "Une ou plusieurs politiques de sécurité de l'organisation exigent que votre mot de passe principal réponde aux exigences suivantes :"
   },
   "policyInEffectMinComplexity": {
     "message": "Score de complexité minimum de $SCORE$",
@@ -1507,10 +1507,10 @@
     "message": "Votre nouveau mot de passe principal ne répond pas aux exigences en matière de politique de sécurité."
   },
   "acceptPolicies": {
-    "message": "En cochant cette case, vous acceptez les éléments suivants :"
+    "message": "En cochant cette case vous acceptez ce qui suit :"
   },
   "acceptPoliciesRequired": {
-    "message": "Les Conditions d'Utilisation et la Politique de Confidentialité n'ont pas été acceptées."
+    "message": "Les conditions d'utilisation et la politique de confidentialité n'ont pas été acceptées."
   },
   "termsOfService": {
     "message": "Conditions d'utilisation"
@@ -1818,7 +1818,7 @@
     "message": "Masquer mon adresse électronique aux destinataires."
   },
   "sendOptionsPolicyInEffect": {
-    "message": "Une ou plusieurs politiques d'organisation affectent vos options Send."
+    "message": "Une ou plusieurs politiques de sécurité de l'organisation affectent vos options Send."
   },
   "passwordPrompt": {
     "message": "Ressaisir le mot de passe principal"
@@ -1863,7 +1863,7 @@
     "message": "Minutes"
   },
   "vaultTimeoutPolicyInEffect": {
-    "message": "Les politiques de votre organisation affectent le délai d'expiration de votre coffre-fort. Le délai d'expiration maximal autorisé est de $HOURS$ heure(s) et $MINUTES$ minute(s)",
+    "message": "Les politiques de sécurité de votre organisation affectent le délai d'expiration de votre coffre. Le délai d'expiration autorisé du coffre est de $HOURS$ heure(s) et $MINUTES$ minute(s) maximum",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -1882,7 +1882,7 @@
     "message": "Export du coffre désactivé"
   },
   "personalVaultExportPolicyInEffect": {
-    "message": "Une ou plusieurs politiques d'organisation vous empêchent d'exporter votre coffre personnel."
+    "message": "Une ou plusieurs politiques de sécurité de l'organisation vous empêchent d'exporter votre coffre individuel."
   },
   "copyCustomFieldNameInvalidElement": {
     "message": "Aucun élément de formulaire valide n'a pu être identifié. Essayez plutôt d'inspecter le HTML."
@@ -2003,9 +2003,6 @@
   "disabledOrganizationFilterError": {
     "message": "Les éléments des organisations suspendues ne sont pas accessibles. Contactez le propriétaire de votre organisation pour obtenir de l'aide."
   },
-  "cardBrandMir": {
-    "message": "Mir"
-  },
   "loggingInTo": {
     "message": "Connexion à $DOMAIN$",
     "placeholders": {
@@ -2120,11 +2117,14 @@
       }
     }
   },
+  "autofillPageLoadPolicyActivated": {
+    "message": "Les politiques de sécurité de votre organisation ont activé la saisie automatique lors du chargement de la page."
+  },
   "howToAutofill": {
     "message": "Comment saisir automatiquement"
   },
-  "autofillSelectInfo": {
-    "message": "Select an item from this page or use the shortcut: $COMMAND$. You can also try auto-fill on page load.",
+  "autofillSelectInfoWithCommand": {
+    "message": "Sélectionnez un élément depuis cette page ou utilisez le raccourci : $COMMAND$",
     "placeholders": {
       "command": {
         "content": "$1",
@@ -2132,8 +2132,8 @@
       }
     }
   },
-  "autofillSelectInfoNoCommand": {
-    "message": "Sélectionnez un élément depuis cette page ou définissez un raccourci dans les paramètres. Vous pouvez également essayer la saisie automatique au chargement de la page."
+  "autofillSelectInfoWithoutCommand": {
+    "message": "Sélectionnez un élément depuis cette page ou définissez un raccourci dans les paramètres."
   },
   "gotIt": {
     "message": "Compris"

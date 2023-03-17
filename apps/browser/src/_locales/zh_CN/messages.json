@@ -439,7 +439,7 @@
     "message": "必须填写确认主密码。"
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least $VALUE$ characters long.",
+    "message": "主密码至少需要 $VALUE$ 个字符。",
     "description": "The Master Password must be at least a specific number of characters long.",
     "placeholders": {
       "value": {
@@ -976,7 +976,7 @@
     "message": "网页加载时如果检测到登录表单，则执行自动填充。"
   },
   "experimentalFeature": {
-    "message": "Compromised or untrusted websites can exploit auto-fill on page load."
+    "message": "不完整或不信任的网站可以在页面加载时自动填充。"
   },
   "learnMoreAboutAutofill": {
     "message": "了解更多关于自动填充的信息"
@@ -2003,9 +2003,6 @@
   "disabledOrganizationFilterError": {
     "message": "无法访问已暂停组织中的项目。请联系您的组织所有者获取帮助。"
   },
-  "cardBrandMir": {
-    "message": "Mir"
-  },
   "loggingInTo": {
     "message": "正在登录到 $DOMAIN$",
     "placeholders": {
@@ -2070,13 +2067,13 @@
     "message": "使用设备登录"
   },
   "loginWithDeviceEnabledInfo": {
-    "message": "Log in with device must be set up in the settings of the Bitwarden app. Need another option?"
+    "message": "必须在 Bitwarden 应用程序的设置中启用设备登录。需要其他选项吗？"
   },
   "fingerprintPhraseHeader": {
     "message": "指纹短语"
   },
   "fingerprintMatchInfo": {
-    "message": "Please make sure your vault is unlocked and the Fingerprint phrase matches on the other device."
+    "message": "请确保您的密码库已解锁，并且指纹短语与其他设备上的相匹配。"
   },
   "resendNotification": {
     "message": "重新发送通知"
@@ -2112,7 +2109,7 @@
     "message": "检查此密码的已知数据泄露"
   },
   "characterMinimum": {
-    "message": "$LENGTH$ character minimum",
+    "message": "至少 $LENGTH$ 个字符",
     "placeholders": {
       "length": {
         "content": "$1",
@@ -2120,11 +2117,14 @@
       }
     }
   },
+  "autofillPageLoadPolicyActivated": {
+    "message": "您的组织策略已经在页面加载时打开了自动填充。"
+  },
   "howToAutofill": {
     "message": "如何自动填充"
   },
-  "autofillSelectInfo": {
-    "message": "Select an item from this page or use the shortcut: $COMMAND$. You can also try auto-fill on page load.",
+  "autofillSelectInfoWithCommand": {
+    "message": "从此页面选择一个项目，或使用快捷键: $COMMAND$",
     "placeholders": {
       "command": {
         "content": "$1",
@@ -2132,8 +2132,8 @@
       }
     }
   },
-  "autofillSelectInfoNoCommand": {
-    "message": "Select an item from this page or set a shortcut in settings. You can also try auto-fill on page load."
+  "autofillSelectInfoWithoutCommand": {
+    "message": "从此页面选择一个项目，或者在设置中设置一个快捷方式。"
   },
   "gotIt": {
     "message": "明白了"
@@ -2145,10 +2145,10 @@
     "message": "自动填充键盘快捷键"
   },
   "autofillShortcutNotSet": {
-    "message": "The auto-fill shortcut is not set. Change this in the browser's settings."
+    "message": "未设置自动填充快捷键。请在浏览器设置中更改此设置。"
   },
   "autofillShortcutText": {
-    "message": "The auto-fill shortcut is: $COMMAND$. Change this in the browser's settings.",
+    "message": "自动填充快捷方式为： $COMMAND$。在浏览器设置中更改此项。",
     "placeholders": {
       "command": {
         "content": "$1",

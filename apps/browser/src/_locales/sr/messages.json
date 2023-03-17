@@ -3,15 +3,15 @@
     "message": "Bitwarden"
   },
   "extName": {
-    "message": "Bitwarden - Бесплатни Менаџер Лозинки",
+    "message": "Bitwarden - бесплатни менаџер лозинки",
     "description": "Extension name, MUST be less than 40 characters (Safari restriction)"
   },
   "extDesc": {
-    "message": "Сигурни и бесплатни менаџер лозинке за све ваше уређаје.",
+    "message": "Сигурни и бесплатни менаџер лозинки за све ваше уређаје.",
     "description": "Extension description"
   },
   "loginOrCreateNewAccount": {
-    "message": "Пријавите се или креирајте нови налог за приступ Сефу."
+    "message": "Пријавите се или креирајте нови налог за приступ сефу."
   },
   "createAccount": {
     "message": "Креирај налог"
@@ -439,7 +439,7 @@
     "message": "Поновно уписивање главне лозинке је неопходно."
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least $VALUE$ characters long.",
+    "message": "Главна лозинка мора бити дужине најмање $VALUE$ карактера.",
     "description": "The Master Password must be at least a specific number of characters long.",
     "placeholders": {
       "value": {
@@ -976,7 +976,7 @@
     "message": "Ако се открије образац за пријаву, извршите аутоматско попуњавање када се веб страница учита."
   },
   "experimentalFeature": {
-    "message": "Compromised or untrusted websites can exploit auto-fill on page load."
+    "message": "Компромитоване или непоуздане веб локације могу да искористе ауто-пуњење при учитавању странице."
   },
   "learnMoreAboutAutofill": {
     "message": "Сазнајте више о ауто-пуњење"
@@ -2003,9 +2003,6 @@
   "disabledOrganizationFilterError": {
     "message": "Није могуће приступити ставкама у онемогућене организације. Обратите се власнику организације за помоћ."
   },
-  "cardBrandMir": {
-    "message": "Mir"
-  },
   "loggingInTo": {
     "message": "Пријављивање на $DOMAIN$",
     "placeholders": {
@@ -2091,13 +2088,13 @@
     "message": "Пријава је покренута"
   },
   "exposedMasterPassword": {
-    "message": "Exposed Master Password"
+    "message": "Изложена главна лозинка"
   },
   "exposedMasterPasswordDesc": {
     "message": "Password found in a data breach. Use a unique password to protect your account. Are you sure you want to use an exposed password?"
   },
   "weakAndExposedMasterPassword": {
-    "message": "Weak and Exposed Master Password"
+    "message": "Слаба и изложена главна лозинка"
   },
   "weakAndBreachedMasterPasswordDesc": {
     "message": "Weak password identified and found in a data breach. Use a strong and unique password to protect your account. Are you sure you want to use this password?"
@@ -2106,13 +2103,13 @@
     "message": "Check known data breaches for this password"
   },
   "important": {
-    "message": "Important:"
+    "message": "Важно:"
   },
   "masterPasswordHint": {
-    "message": "Your master password cannot be recovered if you forget it!"
+    "message": "Ваша главна лозинка се не може повратити ако је заборавите!"
   },
   "characterMinimum": {
-    "message": "$LENGTH$ character minimum",
+    "message": "Минимум $LENGTH$ карактера",
     "placeholders": {
       "length": {
         "content": "$1",
@@ -2120,11 +2117,14 @@
       }
     }
   },
+  "autofillPageLoadPolicyActivated": {
+    "message": "Смернице ваше организације су укључиле ауто-пуњење при учитавању странице."
+  },
   "howToAutofill": {
     "message": "Како ауто-попуњавати"
   },
-  "autofillSelectInfo": {
-    "message": "Select an item from this page or use the shortcut: $COMMAND$. You can also try auto-fill on page load.",
+  "autofillSelectInfoWithCommand": {
+    "message": "Select an item from this page or use the shortcut: $COMMAND$",
     "placeholders": {
       "command": {
         "content": "$1",
@@ -2132,8 +2132,8 @@
       }
     }
   },
-  "autofillSelectInfoNoCommand": {
-    "message": "Изаберите ставку са ове странице или поставите пречицу у подешавањима. Такође можете покушати са аутоматским попуњавањем при учитавању странице."
+  "autofillSelectInfoWithoutCommand": {
+    "message": "Select an item from this page or set a shortcut in settings."
   },
   "gotIt": {
     "message": "Разумем"

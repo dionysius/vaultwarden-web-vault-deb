@@ -2003,9 +2003,6 @@
   "disabledOrganizationFilterError": {
     "message": "A letiltott szervezetek elemei nem érhetők el. Vegyük fel a kapcsolatot a szervezet tulajdonosával segítségért."
   },
-  "cardBrandMir": {
-    "message": "Mir"
-  },
   "loggingInTo": {
     "message": "Bejelentkezés $DOMAIN$ területre",
     "placeholders": {
@@ -2120,11 +2117,14 @@
       }
     }
   },
+  "autofillPageLoadPolicyActivated": {
+    "message": "A szervezeti szabályzat bekapcsolta az automatikus kitöltést az oldalbetöltéskor."
+  },
   "howToAutofill": {
     "message": "Az automatikus kitöltés működése"
   },
-  "autofillSelectInfo": {
-    "message": "Válasszunk ki egy elemet erről az oldalról vagy használjuk a billentyűparancsot: $COMMAND$. Kipróbálhatjuk az automatikus kitöltést is az oldal betöltésekor.",
+  "autofillSelectInfoWithCommand": {
+    "message": "Válasszunk egy elemet ezen az oldalon vagy használjuk a parancsikont: $COMMAND$.",
     "placeholders": {
       "command": {
         "content": "$1",
@@ -2132,8 +2132,8 @@
       }
     }
   },
-  "autofillSelectInfoNoCommand": {
-    "message": "Válasszunk ki egy elemet erről az oldalról vagy állítsunk be egy billentyűparancs a beállításokban. Kipróbálhatjuk az automatikus kitöltést is az oldal betöltésekor."
+  "autofillSelectInfoWithoutCommand": {
+    "message": "Válasszunk egy elemet ezen az oldalon vagy állítsunk be parancsikont a beállításokban."
   },
   "gotIt": {
     "message": "Rendben"

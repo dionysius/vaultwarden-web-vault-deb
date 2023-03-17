@@ -2003,9 +2003,6 @@
   "disabledOrganizationFilterError": {
     "message": "Записите в изключени организации не са достъпни. Свържете се със собственика на организацията си за помощ."
   },
-  "cardBrandMir": {
-    "message": "Мир"
-  },
   "loggingInTo": {
     "message": "Вписване в $DOMAIN$",
     "placeholders": {
@@ -2120,11 +2117,14 @@
       }
     }
   },
+  "autofillPageLoadPolicyActivated": {
+    "message": "Автоматичното попълване при зареждане на страница е включено в съответствие с политиките на Вашата организация."
+  },
   "howToAutofill": {
     "message": "Как се ползва автоматичното попълване"
   },
-  "autofillSelectInfo": {
-    "message": "Select an item from this page or use the shortcut: $COMMAND$. You can also try auto-fill on page load.",
+  "autofillSelectInfoWithCommand": {
+    "message": "Изберете елемент от тази страница или използвайте следната комбинация: $COMMAND$",
     "placeholders": {
       "command": {
         "content": "$1",
@@ -2132,8 +2132,8 @@
       }
     }
   },
-  "autofillSelectInfoNoCommand": {
-    "message": "Изберете елемент от тази страница или задайте клавишна комбинация в настройките. Можете да опитате и функцията за автоматично попълване при зареждане на страницата."
+  "autofillSelectInfoWithoutCommand": {
+    "message": "Изберете елемент от тази страница или задайте клавишна комбинация в настройките."
   },
   "gotIt": {
     "message": "Разбрано"

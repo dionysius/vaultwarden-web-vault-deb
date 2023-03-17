@@ -2003,9 +2003,6 @@
   "disabledOrganizationFilterError": {
     "message": "Доступ да элементаў у адключаных арганізацыях немагчымы. Звяжыце з уладальнікам арганізацыі для атрымання дапамогі."
   },
-  "cardBrandMir": {
-    "message": "Mir"
-  },
   "loggingInTo": {
     "message": "Увайсці ў $DOMAIN$",
     "placeholders": {
@@ -2120,11 +2117,14 @@
       }
     }
   },
+  "autofillPageLoadPolicyActivated": {
+    "message": "Аўтазапаўненне пры загрузцы старонцы было ўключана палітыкамі вашай арганізацыі."
+  },
   "howToAutofill": {
     "message": "Як аўтазапоўніць"
   },
-  "autofillSelectInfo": {
-    "message": "Выберыце элемент на гэтай старонцы або скарыстайцеся спалучэннем клавіш: $COMMAND$. Вы таксама можаце паспрабаваць аўтазапаўненне пры загрузцы старонкі.",
+  "autofillSelectInfoWithCommand": {
+    "message": "Select an item from this page or use the shortcut: $COMMAND$",
     "placeholders": {
       "command": {
         "content": "$1",
@@ -2132,8 +2132,8 @@
       }
     }
   },
-  "autofillSelectInfoNoCommand": {
-    "message": "Выберыце элемент на гэтай старонцы або задайце спалучэнні клавіш у наладах. Вы таксама можаце паспрабаваць аўтазапаўненне пры загрузцы старонкі."
+  "autofillSelectInfoWithoutCommand": {
+    "message": "Select an item from this page or set a shortcut in settings."
   },
   "gotIt": {
     "message": "Зразумела"

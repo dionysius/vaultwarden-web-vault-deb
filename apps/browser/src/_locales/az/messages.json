@@ -2003,9 +2003,6 @@
   "disabledOrganizationFilterError": {
     "message": "Sıradan çıxarılmış Təşkilatlardakı elementlərə müraciət edilə bilmir. Kömək üçün Təşkilatınızın sahibi ilə əlaqə saxlayın."
   },
-  "cardBrandMir": {
-    "message": "Mir"
-  },
   "loggingInTo": {
     "message": "$DOMAIN$ domeninə giriş edilir",
     "placeholders": {
@@ -2120,11 +2117,14 @@
       }
     }
   },
+  "autofillPageLoadPolicyActivated": {
+    "message": "Təşkilatınızın siyasətləri, səhifə yüklənəndə avto-doldurmanı işə saldı."
+  },
   "howToAutofill": {
     "message": "Avto-doldurma necə edilir"
   },
-  "autofillSelectInfo": {
-    "message": "Bu səhifədən bir element seçin və ya qısayol istifadə edin: $COMMAND$. Həmçinin səhifə yüklənəndə avto-doldurmanı sınaya bilərsiniz.",
+  "autofillSelectInfoWithCommand": {
+    "message": "Bu səhifədən bir element seçin və ya qısayolu istifadə edin: $COMMAND$",
     "placeholders": {
       "command": {
         "content": "$1",
@@ -2132,8 +2132,8 @@
       }
     }
   },
-  "autofillSelectInfoNoCommand": {
-    "message": "Bu səhifədən bir element seçin və ya tənzimləmələrdə bir qısayol tənzimləyin. Həmçinin səhifə yüklənəndə avto-doldurmanı sınaya bilərsiniz."
+  "autofillSelectInfoWithoutCommand": {
+    "message": "Bu səhifədən bir element seçin və ya tənzimləmələrdə bir qısayol tənzimləyin."
   },
   "gotIt": {
     "message": "Anladım"

@@ -2003,9 +2003,6 @@
   "disabledOrganizationFilterError": {
     "message": "No es pot accedir als elements de les organitzacions inhabilitades. Poseu-vos en contacte amb el propietari de la vostra organització per obtenir ajuda."
   },
-  "cardBrandMir": {
-    "message": "Mir"
-  },
   "loggingInTo": {
     "message": "Inici de sessió a $DOMAIN$",
     "placeholders": {
@@ -2120,11 +2117,14 @@
       }
     }
   },
+  "autofillPageLoadPolicyActivated": {
+    "message": "Les polítiques de l'organització han activat l'emplenament automàtic en carregar la pàgina."
+  },
   "howToAutofill": {
     "message": "Com emplenar automàticament"
   },
-  "autofillSelectInfo": {
-    "message": "Seleccioneu un element d'aquesta pàgina o utilitzeu la drecera: $COMMAND$. També podeu provar l'emplenament automàtic en carregar la pàgina.",
+  "autofillSelectInfoWithCommand": {
+    "message": "Seleccioneu un element d'aquesta pàgina o utilitzeu la drecera: $COMMAND$",
     "placeholders": {
       "command": {
         "content": "$1",
@@ -2132,8 +2132,8 @@
       }
     }
   },
-  "autofillSelectInfoNoCommand": {
-    "message": "Seleccioneu un element d'aquesta pàgina o definiu una drecera a la configuració. També podeu provar l'emplenament automàtic en carregar la pàgina."
+  "autofillSelectInfoWithoutCommand": {
+    "message": "Seleccioneu un element d'aquesta pàgina o definiu una drecera a la configuració."
   },
   "gotIt": {
     "message": "D'acord"

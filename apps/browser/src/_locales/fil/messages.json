@@ -2003,9 +2003,6 @@
   "disabledOrganizationFilterError": {
     "message": "Mga item sa mga naka-suspindong Organisasyon ay hindi ma-access. Mangyaring makipag-ugnayan sa may-ari ng iyong Organisasyon para sa tulong."
   },
-  "cardBrandMir": {
-    "message": "Mir"
-  },
   "loggingInTo": {
     "message": "Nag-lolog in sa $DOMAIN$",
     "placeholders": {
@@ -2120,11 +2117,14 @@
       }
     }
   },
+  "autofillPageLoadPolicyActivated": {
+    "message": "Ang mga patakaran ng iyong organisasyon ay nagbigay ng pag-automatikong pag-load sa pahina."
+  },
   "howToAutofill": {
     "message": "Paano mag-auto-fill"
   },
-  "autofillSelectInfo": {
-    "message": "Select an item from this page or use the shortcut: $COMMAND$. You can also try auto-fill on page load.",
+  "autofillSelectInfoWithCommand": {
+    "message": "Select an item from this page or use the shortcut: $COMMAND$",
     "placeholders": {
       "command": {
         "content": "$1",
@@ -2132,8 +2132,8 @@
       }
     }
   },
-  "autofillSelectInfoNoCommand": {
-    "message": "Pumili ng isang item mula sa pahinang ito o magtakda ng shortcut sa mga setting. Maaari mo ring subukan ang auto-fill sa paglo-load ng page."
+  "autofillSelectInfoWithoutCommand": {
+    "message": "Select an item from this page or set a shortcut in settings."
   },
   "gotIt": {
     "message": "Nakuha ko"

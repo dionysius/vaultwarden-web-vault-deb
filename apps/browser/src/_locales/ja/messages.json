@@ -2003,9 +2003,6 @@
   "disabledOrganizationFilterError": {
     "message": "無効な組織のアイテムにアクセスすることはできません。組織の所有者に連絡してください。"
   },
-  "cardBrandMir": {
-    "message": "Mir"
-  },
   "loggingInTo": {
     "message": "$DOMAIN$ にログイン中",
     "placeholders": {
@@ -2120,11 +2117,14 @@
       }
     }
   },
+  "autofillPageLoadPolicyActivated": {
+    "message": "組織のポリシーはページ読み込み時の自動入力をオンにしました。"
+  },
   "howToAutofill": {
     "message": "自動入力する方法"
   },
-  "autofillSelectInfo": {
-    "message": "このページからアイテムを選択するか、ショートカット: $COMMAND$を使用します。ページの読み込み時に自動入力を試すこともできます。",
+  "autofillSelectInfoWithCommand": {
+    "message": "このページからアイテムを選択するか、ショートカットを使用してください: $COMMAND$",
     "placeholders": {
       "command": {
         "content": "$1",
@@ -2132,8 +2132,8 @@
       }
     }
   },
-  "autofillSelectInfoNoCommand": {
-    "message": "このページからアイテムを選択するか、設定でショートカットを設定します。ページの読み込み時に自動入力を試すこともできます。"
+  "autofillSelectInfoWithoutCommand": {
+    "message": "このページからアイテムを選択するか、設定でショートカットを設定してください。"
   },
   "gotIt": {
     "message": "了解"

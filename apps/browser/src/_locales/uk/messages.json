@@ -1146,7 +1146,7 @@
     "message": "Mx"
   },
   "firstName": {
-    "message": "Ім’я"
+    "message": "Ім'я"
   },
   "middleName": {
     "message": "По батькові"
@@ -2003,9 +2003,6 @@
   "disabledOrganizationFilterError": {
     "message": "Записи у вимкнених організаціях недоступні. Зверніться до власника вашої організації для отримання допомоги."
   },
-  "cardBrandMir": {
-    "message": "Mir"
-  },
   "loggingInTo": {
     "message": "Вхід до $DOMAIN$",
     "placeholders": {
@@ -2120,11 +2117,14 @@
       }
     }
   },
+  "autofillPageLoadPolicyActivated": {
+    "message": "Політикою вашої організації було увімкнено автозаповнення на сторінці."
+  },
   "howToAutofill": {
     "message": "Як працює автозаповнення"
   },
-  "autofillSelectInfo": {
-    "message": "Виберіть елемент на цій сторінці або скористайтеся комбінацією клавіш: $COMMAND$. Ви також можете спробувати автозаповнення під час завантаження сторінки.",
+  "autofillSelectInfoWithCommand": {
+    "message": "Select an item from this page or use the shortcut: $COMMAND$",
     "placeholders": {
       "command": {
         "content": "$1",
@@ -2132,8 +2132,8 @@
       }
     }
   },
-  "autofillSelectInfoNoCommand": {
-    "message": "Виберіть елемент на цій сторінці або встановіть комбінацію клавіш. Ви також можете спробувати автозаповнення під час завантаження сторінки."
+  "autofillSelectInfoWithoutCommand": {
+    "message": "Select an item from this page or set a shortcut in settings."
   },
   "gotIt": {
     "message": "Зрозуміло"

@@ -196,13 +196,13 @@
     "message": "Tuki ja palaute"
   },
   "helpCenter": {
-    "message": "Bitwardenin tukikeskus"
+    "message": "Bitwardenin Tukikeskus"
   },
   "communityForums": {
-    "message": "Tutustu Bitwardenin yhteisöön"
+    "message": "Tutustu Bitwardenin keskustelualueeseen"
   },
   "contactSupport": {
-    "message": "Ota yhteyttä Bitwardenin tukeen"
+    "message": "Ota yhteyttä Bitwardenin asiakaspalveluun"
   },
   "sync": {
     "message": "Synkronointi"
@@ -796,7 +796,7 @@
     "message": "Kaksivaiheisen kirjautumisen (2FA) TOTP-todennuskoodien generaattori holvisi kirjautumistiedoille."
   },
   "ppremiumSignUpSupport": {
-    "message": "Ensisijainen asiakastuki."
+    "message": "Ensisijainen asiakaspalvelu."
   },
   "ppremiumSignUpFuture": {
     "message": "Kaikki tulossa olevat Premium-toiminnot. Lisää tulossa pian!"
@@ -1863,7 +1863,7 @@
     "message": "Minuuttia"
   },
   "vaultTimeoutPolicyInEffect": {
-    "message": "Organisaatiokäytännöt vaikuttavat holvin aikakatkaisuun. Suurin sallittu aika on $HOURS$ tunti(a) ja $MINUTES$ minuutti(a)",
+    "message": "Organisaatiokäytännöt vaikuttavat holvisi aikakatkaisuun. Suurin sallittu aika on $HOURS$ tunti(a) ja $MINUTES$ minuutti(a).",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -2003,9 +2003,6 @@
   "disabledOrganizationFilterError": {
     "message": "Käytöstä poistettujen organisaatioiden kohteet eivät ole käytettävissä. Ole yhteydessä organisaation omistajaan saadaksesi apua."
   },
-  "cardBrandMir": {
-    "message": "Mir"
-  },
   "loggingInTo": {
     "message": "Kirjaudutaan palveluun $DOMAIN$",
     "placeholders": {
@@ -2120,11 +2117,14 @@
       }
     }
   },
+  "autofillPageLoadPolicyActivated": {
+    "message": "Organisaatiokäytännöt ovat poistaneet käytöstä automaattisen täytön sivun avautuessa."
+  },
   "howToAutofill": {
     "message": "Miten täytetään automaattisesti"
   },
-  "autofillSelectInfo": {
-    "message": "Valitse kohde sivulta tai käytä pikanäppäintä $COMMAND$. Voit myös kokeilla automaattista täyttöä sivun avautuessa.",
+  "autofillSelectInfoWithCommand": {
+    "message": "Valitse kohde tältä sivulta tai käytä pikanäppäintä $COMMAND$",
     "placeholders": {
       "command": {
         "content": "$1",
@@ -2132,8 +2132,8 @@
       }
     }
   },
-  "autofillSelectInfoNoCommand": {
-    "message": "Valitse kohde sivulta tai määritä pikanäppäin asetuksista. Voit myös kokeilla automaattista täyttöä sivun avautuessa."
+  "autofillSelectInfoWithoutCommand": {
+    "message": "Valitse kohde tältä sivulta tai määritä pikanäppäin asetuksista."
   },
   "gotIt": {
     "message": "Selvä"

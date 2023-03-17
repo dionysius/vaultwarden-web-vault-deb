@@ -2003,9 +2003,6 @@
   "disabledOrganizationFilterError": {
     "message": "Itens em Organizações Desativadas não podem ser acessados. Entre em contato com o proprietário da sua Organização para obter assistência."
   },
-  "cardBrandMir": {
-    "message": "Mir"
-  },
   "loggingInTo": {
     "message": "Fazendo login em $DOMAIN$",
     "placeholders": {
@@ -2120,11 +2117,14 @@
       }
     }
   },
+  "autofillPageLoadPolicyActivated": {
+    "message": "Your organization policies have turned on auto-fill on page load."
+  },
   "howToAutofill": {
     "message": "Como autopreencher"
   },
-  "autofillSelectInfo": {
-    "message": "Selecione um item desta página ou use o atalho: $COMMAND$. Você também pode tentar o autopreenchimento ao carregar a página.",
+  "autofillSelectInfoWithCommand": {
+    "message": "Select an item from this page or use the shortcut: $COMMAND$",
     "placeholders": {
       "command": {
         "content": "$1",
@@ -2132,8 +2132,8 @@
       }
     }
   },
-  "autofillSelectInfoNoCommand": {
-    "message": "Selecione um item desta página ou use o atalho nas configurações. Você também pode tentar o autopreenchimento ao carregar a página."
+  "autofillSelectInfoWithoutCommand": {
+    "message": "Select an item from this page or set a shortcut in settings."
   },
   "gotIt": {
     "message": "Entendi"

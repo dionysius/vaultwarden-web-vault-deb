@@ -1062,10 +1062,10 @@
     "message": "Ein wiedererkennbares Bild neben jeden Zugangsdaten anzeigen."
   },
   "enableBadgeCounter": {
-    "message": "Zeige Badge-Zähler"
+    "message": "Badge-Zähler anzeigen"
   },
   "badgeCounterDesc": {
-    "message": "Gebe an, wie viele Zugangsdaten du für die aktuelle Webseite besitzt."
+    "message": "Zeigt an, wie viele Zugangsdaten du für die aktuelle Webseite besitzt."
   },
   "cardholderName": {
     "message": "Name des Karteninhabers"
@@ -1945,7 +1945,7 @@
     "message": "Benutzernamenstyp"
   },
   "plusAddressedEmail": {
-    "message": "Mit Plus adressierte E-Mail-Adresse",
+    "message": "Plus-adressierte E-Mail-Adresse",
     "description": "Username generator option that appends a random sub-address to the username. For example: address+subaddress@email.com"
   },
   "plusAddressedEmailDesc": {
@@ -2002,9 +2002,6 @@
   },
   "disabledOrganizationFilterError": {
     "message": "Auf Einträge in deaktivierten Organisationen kann nicht zugegriffen werden. Kontaktiere deinen Organisationseigentümer für Unterstützung."
-  },
-  "cardBrandMir": {
-    "message": "Mir"
   },
   "loggingInTo": {
     "message": "Anmelden bei $DOMAIN$",
@@ -2120,11 +2117,14 @@
       }
     }
   },
+  "autofillPageLoadPolicyActivated": {
+    "message": "Deine Organisationsrichtlinien haben Auto-Ausfüllen beim Laden von Seiten aktiviert."
+  },
   "howToAutofill": {
     "message": "So funktioniert Auto-Ausfüllen"
   },
-  "autofillSelectInfo": {
-    "message": "Wähle einen Eintrag von dieser Seite aus oder verwende das Tastaturkürzel: $COMMAND$. Du kannst es auch mit dem Auto-Ausfüllen beim Laden der Seite versuchen.",
+  "autofillSelectInfoWithCommand": {
+    "message": "Wähle einen Eintrag von dieser Seite aus oder verwende das Tastaturkürzel: $COMMAND$",
     "placeholders": {
       "command": {
         "content": "$1",
@@ -2132,8 +2132,8 @@
       }
     }
   },
-  "autofillSelectInfoNoCommand": {
-    "message": "Wähle einen Eintrag von dieser Seite aus oder lege ein Tastaturkürzel in den Einstellungen fest. Du kannst es auch mit dem automatischen Ausfüllen beim Laden der Seite versuchen."
+  "autofillSelectInfoWithoutCommand": {
+    "message": "Wähle einen Eintrag von dieser Seite aus oder lege ein Tastaturkürzel in den Einstellungen fest."
   },
   "gotIt": {
     "message": "Verstanden"

@@ -439,7 +439,7 @@
     "message": "Vajalik on ülemparooli uuesti sisestamine."
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least $VALUE$ characters long.",
+    "message": "Ülemparool peab olema vähemalt $VALUE$ tähemärgi pikkune.",
     "description": "The Master Password must be at least a specific number of characters long.",
     "placeholders": {
       "value": {
@@ -2003,9 +2003,6 @@
   "disabledOrganizationFilterError": {
     "message": "Organisatsiooni alla kuuluvatele kirjetele ei ole ligipääsu. Kontakteeru oma organisatsiooni omanikuga."
   },
-  "cardBrandMir": {
-    "message": "Mir"
-  },
   "loggingInTo": {
     "message": "Sisselogimine läbi $DOMAIN$",
     "placeholders": {
@@ -2120,11 +2117,14 @@
       }
     }
   },
-  "howToAutofill": {
-    "message": "How to auto-fill"
+  "autofillPageLoadPolicyActivated": {
+    "message": "Sinu organisatsioon ei võimalda lehe laadimisel automaatset kontoandmete täitmist kasutada."
   },
-  "autofillSelectInfo": {
-    "message": "Select an item from this page or use the shortcut: $COMMAND$. You can also try auto-fill on page load.",
+  "howToAutofill": {
+    "message": "Kuidas automaatselt täita"
+  },
+  "autofillSelectInfoWithCommand": {
+    "message": "Vali sellele lehelt kirje või kasuta otseteed: $COMMAND$",
     "placeholders": {
       "command": {
         "content": "$1",
@@ -2132,23 +2132,23 @@
       }
     }
   },
-  "autofillSelectInfoNoCommand": {
-    "message": "Select an item from this page or set a shortcut in settings. You can also try auto-fill on page load."
+  "autofillSelectInfoWithoutCommand": {
+    "message": "Vali sellelt lehelt kirje või määra seadetes otsetee."
   },
   "gotIt": {
-    "message": "Got it"
+    "message": "Selge"
   },
   "autofillSettings": {
-    "message": "Auto-fill settings"
+    "message": "Automaattäite seaded"
   },
   "autofillShortcut": {
-    "message": "Auto-fill keyboard shortcut"
+    "message": "Automaattäite klaviatuuri otseteed"
   },
   "autofillShortcutNotSet": {
-    "message": "The auto-fill shortcut is not set. Change this in the browser's settings."
+    "message": "Automaattäite otsetee pole määratud. Muuda seda brauseri seadetes."
   },
   "autofillShortcutText": {
-    "message": "The auto-fill shortcut is: $COMMAND$. Change this in the browser's settings.",
+    "message": "Automaattäite otsetee on: $COMMAND$. Saad seda brauseri seadetes muuta.",
     "placeholders": {
       "command": {
         "content": "$1",
@@ -2157,7 +2157,7 @@
     }
   },
   "autofillShortcutTextSafari": {
-    "message": "Default auto-fill shortcut: $COMMAND$.",
+    "message": "Vaike automaattäite otsetee on: $COMMAND$.",
     "placeholders": {
       "command": {
         "content": "$1",

@@ -89,7 +89,7 @@
     "message": "Ievietot drošības kodu starpliktuvē"
   },
   "autoFill": {
-    "message": "Automātiskā aizpilde"
+    "message": "Automātiskā aizpildīšana"
   },
   "generatePasswordCopied": {
     "message": "Veidot paroli (ievietota starpliktuvē)"
@@ -976,7 +976,7 @@
     "message": "Ja tiek noteikta pieteikšanās veidne, tā tiks aizpildīta lapas ielādes brīdī."
   },
   "experimentalFeature": {
-    "message": "Kompromitētas vai neuzticamas vietnes var izmantot automātisko aizpildīšanu lapas ielādes laikā."
+    "message": "Pārveidotās vai neuzticamās vietnēs automātiskā aizpildīšana lapas ielādes laikā var tikt ļaunprātīgi izmantota."
   },
   "learnMoreAboutAutofill": {
     "message": "Uzzināt vairāk par automātisko aizpildīšanu"
@@ -2003,9 +2003,6 @@
   "disabledOrganizationFilterError": {
     "message": "Atspējotu apvienību vienumiem nevar piekļūt. Jāsazinās ar apvienības īpašnieku, lai iegūtu palīdzību."
   },
-  "cardBrandMir": {
-    "message": "Mir"
-  },
   "loggingInTo": {
     "message": "Piesakās $DOMAIN$",
     "placeholders": {
@@ -2120,11 +2117,14 @@
       }
     }
   },
+  "autofillPageLoadPolicyActivated": {
+    "message": "Tavas apvienības nosacījumos ir ieslēgta automātiskā aizpildīšana lapas ielādes brīdī."
+  },
   "howToAutofill": {
     "message": "Kā automātiski aizpildīt"
   },
-  "autofillSelectInfo": {
-    "message": "Jāatlasa šīs lapas vienums vai jāizmanto īsceļš: $COMMAND$. Ir iespējams arī mēģināt automātiski aizpildīt pēc lapas ielādes.",
+  "autofillSelectInfoWithCommand": {
+    "message": "Jāatlasa vienums šai lapai vai jāizmanto īsceļš: $COMMAND$",
     "placeholders": {
       "command": {
         "content": "$1",
@@ -2132,8 +2132,8 @@
       }
     }
   },
-  "autofillSelectInfoNoCommand": {
-    "message": "Jāatlasa šīs lapas vienums vai jāizveido īsceļš iestatījumos. Ir iespējams arī mēģināt automātiski aizpildīt pēc lapas ielādes."
+  "autofillSelectInfoWithoutCommand": {
+    "message": "Jāatlasa vienums šai lapai vai iestatījumos jāuzstāda īsceļš."
   },
   "gotIt": {
     "message": "Sapratu"

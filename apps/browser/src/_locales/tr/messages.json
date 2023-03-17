@@ -2003,9 +2003,6 @@
   "disabledOrganizationFilterError": {
     "message": "Askıya alınmış kuruluşlardaki kayıtlara erişilemez. Destek almak için kuruluş sahibinizle iletişime geçin."
   },
-  "cardBrandMir": {
-    "message": "Mir"
-  },
   "loggingInTo": {
     "message": "$DOMAIN$ sitesine giriş yapılıyor",
     "placeholders": {
@@ -2120,11 +2117,14 @@
       }
     }
   },
+  "autofillPageLoadPolicyActivated": {
+    "message": "Kuruluş ilkeleriniz, sayfa yüklendiğinde otomatik doldurmayı etkinleştirdi."
+  },
   "howToAutofill": {
     "message": "Otomatik doldurma nasıl yapılır?"
   },
-  "autofillSelectInfo": {
-    "message": "Bu sayfadan bir kayıt seçin veya $COMMAND$ kısayolunu kullanın. Sayfa yüklenirken otomatik doldurmayı da deneyebilirsiniz.",
+  "autofillSelectInfoWithCommand": {
+    "message": "Bu sayfadan bir kayıt seçin veya $COMMAND$ kısayolunu kullanın.",
     "placeholders": {
       "command": {
         "content": "$1",
@@ -2132,8 +2132,8 @@
       }
     }
   },
-  "autofillSelectInfoNoCommand": {
-    "message": "Bu sayfadan bir kayıt seçin veya ayarlardan bir kısayol ayarlayın. Sayfa yüklenirken otomatik doldurmayı da deneyebilirsiniz."
+  "autofillSelectInfoWithoutCommand": {
+    "message": "Bu sayfadan bir kayıt seçin veya ayarlardan bir kısayol ayarlayın."
   },
   "gotIt": {
     "message": "Anladım"

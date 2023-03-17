@@ -2003,9 +2003,6 @@
   "disabledOrganizationFilterError": {
     "message": "K položkám vo vypnutej organizácii nie je možné pristupovať. Požiadajte o pomoc vlastníka organizácie."
   },
-  "cardBrandMir": {
-    "message": "Mir"
-  },
   "loggingInTo": {
     "message": "Prihlásenie do $DOMAIN$",
     "placeholders": {
@@ -2120,11 +2117,14 @@
       }
     }
   },
+  "autofillPageLoadPolicyActivated": {
+    "message": "V pravidlách vašej organizácie je zapnuté automatické vypĺňanie pri načítaní stránky."
+  },
   "howToAutofill": {
     "message": "Ako používať automatické vypĺňanie"
   },
-  "autofillSelectInfo": {
-    "message": "Select an item from this page or use the shortcut: $COMMAND$. You can also try auto-fill on page load.",
+  "autofillSelectInfoWithCommand": {
+    "message": "Vyberte položku z tejto stránky, alebo použite skratku: $COMMAND$",
     "placeholders": {
       "command": {
         "content": "$1",
@@ -2132,8 +2132,8 @@
       }
     }
   },
-  "autofillSelectInfoNoCommand": {
-    "message": "Vyberte položku z tejto stránky alebo nastavte skratku v nastaveniach. Môžete tiež vyskúšať automatické vypĺňanie pri načítaní stránky."
+  "autofillSelectInfoWithoutCommand": {
+    "message": "Vyberte položku z tejto stránky, alebo nastavte skratku v nastaveniach."
   },
   "gotIt": {
     "message": "Chápem"

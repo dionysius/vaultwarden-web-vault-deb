@@ -2003,9 +2003,6 @@
   "disabledOrganizationFilterError": {
     "message": "Nie można uzyskać dostępu do elementów w zawieszonych organizacjach. Skontaktuj się z właścicielem organizacji, aby uzyskać pomoc."
   },
-  "cardBrandMir": {
-    "message": "Mir"
-  },
   "loggingInTo": {
     "message": "Logowanie do $DOMAIN$",
     "placeholders": {
@@ -2120,11 +2117,14 @@
       }
     }
   },
+  "autofillPageLoadPolicyActivated": {
+    "message": "Twoja organizacji włączyła autouzupełnianie podczas wczytywania strony."
+  },
   "howToAutofill": {
     "message": "Jak autouzupełniać"
   },
-  "autofillSelectInfo": {
-    "message": "Wybierz element z tej strony lub użyj skrótu: $COMMAND$. Możesz również spróbować autouzupełniania przy wczytywaniu strony.",
+  "autofillSelectInfoWithCommand": {
+    "message": "Wybierz element z tej strony lub użyj skrótu: $COMMAND$",
     "placeholders": {
       "command": {
         "content": "$1",
@@ -2132,8 +2132,8 @@
       }
     }
   },
-  "autofillSelectInfoNoCommand": {
-    "message": "Wybierz element z tej strony lub ustaw skrót w ustawieniach. Możesz również spróbować autouzupełniania przy wczytywaniu strony."
+  "autofillSelectInfoWithoutCommand": {
+    "message": "Wybierz element z tej strony lub ustaw skrót w ustawieniach."
   },
   "gotIt": {
     "message": "Rozumiem"

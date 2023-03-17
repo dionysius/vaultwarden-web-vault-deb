@@ -2003,9 +2003,6 @@
   "disabledOrganizationFilterError": {
     "message": "No se puede acceder a los elementos de las organizaciones desactivadas. Póngase en contacto con el personal propietario de la organización para obtener ayuda."
   },
-  "cardBrandMir": {
-    "message": "Mir"
-  },
   "loggingInTo": {
     "message": "Iniciando sesión en $DOMAIN$",
     "placeholders": {
@@ -2120,11 +2117,14 @@
       }
     }
   },
+  "autofillPageLoadPolicyActivated": {
+    "message": "Las políticas de su organización han activado autocompletar al cargar la página."
+  },
   "howToAutofill": {
     "message": "Cómo autorellenar"
   },
-  "autofillSelectInfo": {
-    "message": "Seleccione un elemento de esta página o utilice el acceso directo: $COMMAND$. También puede intentar autorellenar al cargar la página.",
+  "autofillSelectInfoWithCommand": {
+    "message": "Seleccione un elemento de esta página o utilice el acceso directo: $COMMAND$",
     "placeholders": {
       "command": {
         "content": "$1",
@@ -2132,8 +2132,8 @@
       }
     }
   },
-  "autofillSelectInfoNoCommand": {
-    "message": "Seleccione un elemento de esta página o establezca un acceso directo en los ajustes. También puede intentar autocompletar automáticamente en la carga de la página."
+  "autofillSelectInfoWithoutCommand": {
+    "message": "Seleccione un elemento de esta página o establezca un acceso directo en los ajustes."
   },
   "gotIt": {
     "message": "Entendido"

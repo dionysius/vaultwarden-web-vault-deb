@@ -439,7 +439,7 @@
     "message": "È necessario reinserire la password principale."
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least $VALUE$ characters long.",
+    "message": "La password principale deve essere lunga almeno $VALUE$ caratteri.",
     "description": "The Master Password must be at least a specific number of characters long.",
     "placeholders": {
       "value": {
@@ -596,13 +596,13 @@
     "message": "Mostra le carte nella pagina delle schede"
   },
   "showCardsCurrentTabDesc": {
-    "message": "Elenca le carte nella pagina della scheda per un facile completamento automatico."
+    "message": "Elenca le carte nella sezione Scheda per un riempimento automatico più facile."
   },
   "showIdentitiesCurrentTab": {
     "message": "Mostra le identità nella pagina della scheda"
   },
   "showIdentitiesCurrentTabDesc": {
-    "message": "Elenca le carte nella pagina della scheda per un facile completamento automatico."
+    "message": "Elenca le identità nella sezione Scheda per un riempimento automatico più facile."
   },
   "clearClipboard": {
     "message": "Cancella appunti",
@@ -641,7 +641,7 @@
     "description": "Default URI match detection for auto-fill."
   },
   "defaultUriMatchDetectionDesc": {
-    "message": "Scegli il modo predefinito in cui il rilevamento della corrispondenza URI viene gestito per gli accessi quando si eseguono azioni come il riempimento automatico."
+    "message": "Scegli il modo predefinito in cui il rilevamento della corrispondenza URI viene gestito per i login quando si eseguono azioni come il riempimento automatico."
   },
   "theme": {
     "message": "Tema"
@@ -829,7 +829,7 @@
     "message": "Copia TOTP automaticamente"
   },
   "disableAutoTotpCopyDesc": {
-    "message": "Se il login ha una chiave di autenticazione, il codice di verifica TOTP viene automaticamente copiato negli appunti ogni volta che si compila automaticamente l'accesso."
+    "message": "Se un login ha una chiave di autenticazione, copia automaticamente il codice di verifica TOTP negli appunti quando riempi automaticamente il login."
   },
   "enableAutoBiometricsPrompt": {
     "message": "Richiedi dati biometrici all'avvio"
@@ -973,31 +973,31 @@
     "message": "Abilita l'auto-completamento al caricamento della pagina"
   },
   "enableAutoFillOnPageLoadDesc": {
-    "message": "Se viene rilevato un modulo di accesso, effettua un auto-completamento quando la pagina web si carica."
+    "message": "Se è rilevato un modulo di login, riempi automaticamente quando la pagina si carica."
   },
   "experimentalFeature": {
-    "message": "I siti web compromessi o non attendibili possono sfruttare l'autorizzazione all'inserimento automatico all'avvio della pagina."
+    "message": "I siti web compromessi o non attendibili possono abusare del riempimento automatico al caricamento della pagina."
   },
   "learnMoreAboutAutofill": {
-    "message": "Ulteriori informazioni sul completamento automatico"
+    "message": "Ulteriori informazioni sul riempimento automatico"
   },
   "defaultAutoFillOnPageLoad": {
     "message": "Impostazioni di completamento automatico predefinito per i login"
   },
   "defaultAutoFillOnPageLoadDesc": {
-    "message": "Dopo aver abilitato il completamento automatico al caricamento della pagina, è possibile abilitare o disabilitare la funzione per singoli login. Questa è l'impostazione predefinita per i login che non sono configurati separatamente."
+    "message": "Puoi disattivare il riempimento automatico al caricamento della pagina per singoli login dalla sezione Modifica elemento."
   },
   "itemAutoFillOnPageLoad": {
-    "message": "Autocompletamento al caricamento della pagina (se abilitato nelle opzioni)"
+    "message": "Riempi automaticamente al caricamento della pagina (se abilitato in Opzioni)"
   },
   "autoFillOnPageLoadUseDefault": {
     "message": "Usa impostazione predefinita"
   },
   "autoFillOnPageLoadYes": {
-    "message": "Autocompletamento al caricamento della pagina"
+    "message": "Riempimento automatico al caricamento della pagina"
   },
   "autoFillOnPageLoadNo": {
-    "message": "Non completare automaticamente al caricamento della pagina"
+    "message": "Non riempire automaticamente al caricamento della pagina"
   },
   "commandOpenPopup": {
     "message": "Apri popup cassaforte"
@@ -1006,7 +1006,7 @@
     "message": "Apri la cassaforte nella barra laterale"
   },
   "commandAutofillDesc": {
-    "message": "Auto-completa con l'ultimo accesso utilizzato sul sito corrente"
+    "message": "Riempi automaticamente con l'ultimo login utilizzato sul sito corrente"
   },
   "commandGeneratePasswordDesc": {
     "message": "Genera e copia una nuova password casuale negli appunti"
@@ -2003,9 +2003,6 @@
   "disabledOrganizationFilterError": {
     "message": "Non è possibile accedere agli oggetti nelle organizzazioni disabilitate. Contatta il proprietario della tua organizzazione per ricevere assistenza."
   },
-  "cardBrandMir": {
-    "message": "Mir"
-  },
   "loggingInTo": {
     "message": "Accedo a $DOMAIN$",
     "placeholders": {
@@ -2120,11 +2117,14 @@
       }
     }
   },
-  "howToAutofill": {
-    "message": "Come utilizzare l'autocompletamento"
+  "autofillPageLoadPolicyActivated": {
+    "message": "Le politiche della tua organizzazione hanno attivato il riempimento automatico al caricamento della pagina."
   },
-  "autofillSelectInfo": {
-    "message": "Select an item from this page or use the shortcut: $COMMAND$. You can also try auto-fill on page load.",
+  "howToAutofill": {
+    "message": "Come riempire automaticamente"
+  },
+  "autofillSelectInfoWithCommand": {
+    "message": "Seleziona un elemento da questa pagina o usa la scorciatoia: $COMMAND$",
     "placeholders": {
       "command": {
         "content": "$1",
@@ -2132,23 +2132,23 @@
       }
     }
   },
-  "autofillSelectInfoNoCommand": {
-    "message": "Seleziona un elemento da questa pagina o imposta una scorciatoia nelle impostazioni. Puoi anche provare il completamento automatico al caricamento della pagina."
+  "autofillSelectInfoWithoutCommand": {
+    "message": "Seleziona un elemento da questa pagina o imposta una scorciatoia nelle impostazioni."
   },
   "gotIt": {
     "message": "Capito"
   },
   "autofillSettings": {
-    "message": "Impostazioni di autocompletamento"
+    "message": "Impostazioni di riempimento automatico"
   },
   "autofillShortcut": {
-    "message": "Scorciatoia da tastiera per l'autocompletamento"
+    "message": "Scorciatoia per il riempimento automatico"
   },
   "autofillShortcutNotSet": {
-    "message": "La scorciatoia per l'autocompletamento non è stata impostata. Impostala nelle impostazioni del browser."
+    "message": "La scorciatoia per il riempimento automatico non è stata impostata. Impostala nelle impostazioni del browser."
   },
   "autofillShortcutText": {
-    "message": "La scorciatoia per l'autocompletamento è: $COMMAND$. Cambiala nelle impostazioni del browser.",
+    "message": "La scorciatoia per il riempimento automatico è: $COMMAND$. Cambiala nelle impostazioni del browser.",
     "placeholders": {
       "command": {
         "content": "$1",
@@ -2157,7 +2157,7 @@
     }
   },
   "autofillShortcutTextSafari": {
-    "message": "Scorciatoia per l'autocompletamento di default: $COMMAND$.",
+    "message": "Scorciatoia predefinita per il riempimento automatico: $COMMAND$.",
     "placeholders": {
       "command": {
         "content": "$1",

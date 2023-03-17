@@ -2003,9 +2003,6 @@
   "disabledOrganizationFilterError": {
     "message": "Elementer i suspenderede organisationer kan ikke tilgås. Kontakt din organisationsejer for at få hjælp."
   },
-  "cardBrandMir": {
-    "message": "Mir"
-  },
   "loggingInTo": {
     "message": "Logger ind på $DOMAIN$",
     "placeholders": {
@@ -2120,11 +2117,14 @@
       }
     }
   },
+  "autofillPageLoadPolicyActivated": {
+    "message": "Organisationspolitikkerne har aktiveret autoudfyldning ved sideindlæsning."
+  },
   "howToAutofill": {
     "message": "Sådan autoudfyldes"
   },
-  "autofillSelectInfo": {
-    "message": "Select an item from this page or use the shortcut: $COMMAND$. You can also try auto-fill on page load.",
+  "autofillSelectInfoWithCommand": {
+    "message": "Vælg et element fra denne side eller brug genvejen: $COMMAND$",
     "placeholders": {
       "command": {
         "content": "$1",
@@ -2132,8 +2132,8 @@
       }
     }
   },
-  "autofillSelectInfoNoCommand": {
-    "message": "Vælg et element fra denne side eller opsæt en genvej i indstillinger. Man kan også prøve autoudfyld ved sideindlæsning."
+  "autofillSelectInfoWithoutCommand": {
+    "message": "Vælg et element fra denne side eller opret en genvej i Indstillinger."
   },
   "gotIt": {
     "message": "Forstået"

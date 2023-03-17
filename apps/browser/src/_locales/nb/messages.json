@@ -2003,9 +2003,6 @@
   "disabledOrganizationFilterError": {
     "message": "Elementer i deaktiverte organisasjoner kan ikke aksesseres. Kontakt organisasjonseier for hjelp."
   },
-  "cardBrandMir": {
-    "message": "Mir"
-  },
   "loggingInTo": {
     "message": "Logger inn på $DOMAIN$",
     "placeholders": {
@@ -2120,11 +2117,14 @@
       }
     }
   },
+  "autofillPageLoadPolicyActivated": {
+    "message": "Your organization policies have turned on auto-fill on page load."
+  },
   "howToAutofill": {
     "message": "Hvordan bruke auto-utfylling"
   },
-  "autofillSelectInfo": {
-    "message": "Velg et element fra denne siden eller bruk snarveien: $COMMAND$. Du kan også prøve autoutfylling når siden lastes inn.",
+  "autofillSelectInfoWithCommand": {
+    "message": "Select an item from this page or use the shortcut: $COMMAND$",
     "placeholders": {
       "command": {
         "content": "$1",
@@ -2132,8 +2132,8 @@
       }
     }
   },
-  "autofillSelectInfoNoCommand": {
-    "message": "Velg et element fra denne siden eller sett en snarvei i innstillinger. Du kan også prøve autoutfylling når siden lastes inn."
+  "autofillSelectInfoWithoutCommand": {
+    "message": "Select an item from this page or set a shortcut in settings."
   },
   "gotIt": {
     "message": "Skjønner"

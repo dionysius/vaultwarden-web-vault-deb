@@ -2003,9 +2003,6 @@
   "disabledOrganizationFilterError": {
     "message": "Доступ к элементам в отключенных организациях невозможен. Обратитесь за помощью к владельцу организации."
   },
-  "cardBrandMir": {
-    "message": "Mir"
-  },
   "loggingInTo": {
     "message": "Вход в $DOMAIN$",
     "placeholders": {
@@ -2120,11 +2117,14 @@
       }
     }
   },
+  "autofillPageLoadPolicyActivated": {
+    "message": "Автозаполнение при загрузке страницы было активировано политиками вашей организации."
+  },
   "howToAutofill": {
     "message": "Как использовать автозаполнение"
   },
-  "autofillSelectInfo": {
-    "message": "Выберите элемент на этой странице или воспользуйтесь сочетанием клавиш: $COMMAND$. Также вы можете попробовать автозаполнение при загрузке страницы.",
+  "autofillSelectInfoWithCommand": {
+    "message": "Выберите элемент на этой странице или используйте сочетание клавиш: $COMMAND$",
     "placeholders": {
       "command": {
         "content": "$1",
@@ -2132,8 +2132,8 @@
       }
     }
   },
-  "autofillSelectInfoNoCommand": {
-    "message": "Выберите элемент на этой странице или задайте сочетание клавиш в настройках. Также вы можете попробовать автозаполнение при загрузке страницы."
+  "autofillSelectInfoWithoutCommand": {
+    "message": "Выберите элемент на этой странице или задайте сочетание клавиш в настройках."
   },
   "gotIt": {
     "message": "Понятно"
