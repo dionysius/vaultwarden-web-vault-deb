@@ -45,7 +45,7 @@
     "message": "Delen"
   },
   "moveToOrganization": {
-    "message": "Naar organisatie verplaatsen"
+    "message": "Verplaats naar organisatie"
   },
   "movedItemToOrg": {
     "message": "$ITEMNAME$ verplaatst naar $ORGNAME$",
@@ -119,7 +119,7 @@
     "message": "Starten"
   },
   "copyValue": {
-    "message": "Waarde kopiëren",
+    "message": "Kopieer waarde",
     "description": "Copy value to clipboard"
   },
   "minimizeOnCopyToClipboard": {
@@ -257,7 +257,7 @@
     "message": "Overig"
   },
   "generatePassword": {
-    "message": "Wachtwoord genereren"
+    "message": "Genereer wachtwoord"
   },
   "type": {
     "message": "Categorie"
@@ -349,50 +349,50 @@
     "message": "Naam is vereist."
   },
   "addedItem": {
-    "message": "Item is toegevoegd"
+    "message": "Item toegevoegd"
   },
   "editedItem": {
-    "message": "Item is bewerkt"
+    "message": "Item opgeslagen"
   },
   "deleteItem": {
-    "message": "Item verwijderen"
+    "message": "Verwijder item"
   },
   "deleteFolder": {
-    "message": "Map verwijderen"
+    "message": "Verwijder folder"
   },
   "deleteAttachment": {
-    "message": "Bijlage verwijderen"
+    "message": "Verwijder bijlage"
   },
   "deleteItemConfirmation": {
     "message": "Weet je zeker dat je dit naar de prullenbak wilt verplaatsen?"
   },
   "deletedItem": {
-    "message": "Item is verwijderd"
+    "message": "Item verwijderd"
   },
   "overwritePasswordConfirmation": {
     "message": "Weet je zeker dat je het huidige wachtwoord wilt overschrijven?"
   },
   "overwriteUsername": {
-    "message": "Gebruikersnaam overschrijven"
+    "message": "Overschrijf gebruikersnaam"
   },
   "overwriteUsernameConfirmation": {
-    "message": "Weet je zeker dat je de huidige gebruikersnaam wilt overschrijven?"
+    "message": "Weet je zeker dat je de huidige gebruikersnaam wilt wijzigen?"
   },
   "noneFolder": {
     "message": "Geen map",
     "description": "This is the folder for uncategorized items"
   },
   "addFolder": {
-    "message": "Map toevoegen"
+    "message": "Voeg map toe"
   },
   "editFolder": {
-    "message": "Map bewerken"
+    "message": "Wijzig map"
   },
   "regeneratePassword": {
-    "message": "Opnieuw genereren"
+    "message": "Genereer wachtwoord"
   },
   "copyPassword": {
-    "message": "Wachtwoord kopiëren"
+    "message": "Kopieer wachtwoord"
   },
   "copyUri": {
     "message": "URI kopiëren"
@@ -2034,9 +2034,6 @@
   },
   "neverLockWarning": {
     "message": "Weet je zeker dat je de optie \"Nooit\" wilt gebruiken? De vergrendelingsoptie \"Nooit\" bewaart de sleutel van je kluis op je apparaat. Als je deze optie gebruikt, moet je ervoor zorgen dat je je apparaat naar behoren beschermt."
-  },
-  "cardBrandMir": {
-    "message": "Mir"
   },
   "vault": {
     "message": "Kluis"
