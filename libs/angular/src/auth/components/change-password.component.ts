@@ -167,31 +167,33 @@ export class ChangePasswordComponent implements OnInit, OnDestroy {
       if (!result) {
         return false;
       }
-    }
-    if (weakPassword) {
-      const result = await this.platformUtilsService.showDialog(
-        this.i18nService.t("weakMasterPasswordDesc"),
-        this.i18nService.t("weakMasterPassword"),
-        this.i18nService.t("yes"),
-        this.i18nService.t("no"),
-        "warning"
-      );
-      if (!result) {
-        return false;
+    } else {
+      if (weakPassword) {
+        const result = await this.platformUtilsService.showDialog(
+          this.i18nService.t("weakMasterPasswordDesc"),
+          this.i18nService.t("weakMasterPassword"),
+          this.i18nService.t("yes"),
+          this.i18nService.t("no"),
+          "warning"
+        );
+        if (!result) {
+          return false;
+        }
+      }
+      if (this.leakedPassword) {
+        const result = await this.platformUtilsService.showDialog(
+          this.i18nService.t("exposedMasterPasswordDesc"),
+          this.i18nService.t("exposedMasterPassword"),
+          this.i18nService.t("yes"),
+          this.i18nService.t("no"),
+          "warning"
+        );
+        if (!result) {
+          return false;
+        }
       }
     }
-    if (this.leakedPassword) {
-      const result = await this.platformUtilsService.showDialog(
-        this.i18nService.t("exposedMasterPasswordDesc"),
-        this.i18nService.t("exposedMasterPassword"),
-        this.i18nService.t("yes"),
-        this.i18nService.t("no"),
-        "warning"
-      );
-      if (!result) {
-        return false;
-      }
-    }
+
     return true;
   }
 
