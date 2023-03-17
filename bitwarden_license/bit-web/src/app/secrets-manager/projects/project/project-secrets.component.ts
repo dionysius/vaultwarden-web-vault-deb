@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
-import { combineLatestWith, Observable, startWith, switchMap } from "rxjs";
+import { combineLatestWith, filter, Observable, startWith, switchMap } from "rxjs";
 
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
@@ -18,6 +18,7 @@ import {
 } from "../../secrets/dialog/secret-dialog.component";
 import { SecretService } from "../../secrets/secret.service";
 import { SecretsListComponent } from "../../shared/secrets-list.component";
+import { ProjectService } from "../project.service";
 
 @Component({
   selector: "sm-project-secrets",
@@ -31,6 +32,7 @@ export class ProjectSecretsComponent {
 
   constructor(
     private route: ActivatedRoute,
+    private projectService: ProjectService,
     private secretService: SecretService,
     private dialogService: DialogService,
     private platformUtilsService: PlatformUtilsService,
@@ -38,9 +40,15 @@ export class ProjectSecretsComponent {
   ) {}
 
   ngOnInit() {
+    // Refresh list if project is edited
+    const currentProjectEdited = this.projectService.project$.pipe(
+      filter((p) => p?.id === this.projectId),
+      startWith(null)
+    );
+
     this.secrets$ = this.secretService.secret$.pipe(
       startWith(null),
-      combineLatestWith(this.route.params),
+      combineLatestWith(this.route.params, currentProjectEdited),
       switchMap(async ([_, params]) => {
         this.organizationId = params.organizationId;
         this.projectId = params.projectId;
