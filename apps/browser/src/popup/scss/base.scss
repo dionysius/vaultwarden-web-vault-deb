@@ -222,6 +222,7 @@ header {
     justify-content: center;
     align-items: center;
     height: 100%;
+    white-space: pre;
 
     @include themify($themes) {
       color: themed("headerColor");
