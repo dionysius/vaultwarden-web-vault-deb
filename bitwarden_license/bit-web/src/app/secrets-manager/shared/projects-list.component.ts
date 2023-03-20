@@ -2,6 +2,8 @@ import { SelectionModel } from "@angular/cdk/collections";
 import { Component, EventEmitter, Input, OnDestroy, Output } from "@angular/core";
 import { Subject, takeUntil } from "rxjs";
 
+import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
+import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { TableDataSource } from "@bitwarden/components";
 
 import { ProjectListView } from "../models/view/project-list.view";
@@ -38,7 +40,10 @@ export class ProjectsListComponent implements OnDestroy {
 
   selection = new SelectionModel<string>(true, []);
 
-  constructor() {
+  constructor(
+    private i18nService: I18nService,
+    private platformUtilsService: PlatformUtilsService
+  ) {
     this.selection.changed
       .pipe(takeUntil(this.destroy$))
       .subscribe((_) => this.onProjectCheckedEvent.emit(this.selection.selected));
@@ -66,8 +71,16 @@ export class ProjectsListComponent implements OnDestroy {
   }
 
   bulkDeleteProjects() {
-    this.deleteProjectEvent.emit(
-      this.projects.filter((project) => this.selection.isSelected(project.id))
-    );
+    if (this.selection.selected.length >= 1) {
+      this.deleteProjectEvent.emit(
+        this.projects.filter((project) => this.selection.isSelected(project.id))
+      );
+    } else {
+      this.platformUtilsService.showToast(
+        "error",
+        this.i18nService.t("errorOccurred"),
+        this.i18nService.t("nothingSelected")
+      );
+    }
   }
 }

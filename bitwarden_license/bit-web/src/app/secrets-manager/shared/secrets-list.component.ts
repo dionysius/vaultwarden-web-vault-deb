@@ -46,7 +46,10 @@ export class SecretsListComponent implements OnDestroy {
 
   selection = new SelectionModel<string>(true, []);
 
-  constructor() {
+  constructor(
+    private i18nService: I18nService,
+    private platformUtilsService: PlatformUtilsService
+  ) {
     this.selection.changed
       .pipe(takeUntil(this.destroy$))
       .subscribe((_) => this.onSecretCheckedEvent.emit(this.selection.selected));
@@ -74,12 +77,24 @@ export class SecretsListComponent implements OnDestroy {
       this.deleteSecretsEvent.emit(
         this.secrets.filter((secret) => this.selection.isSelected(secret.id))
       );
+    } else {
+      this.platformUtilsService.showToast(
+        "error",
+        this.i18nService.t("errorOccurred"),
+        this.i18nService.t("nothingSelected")
+      );
     }
   }
 
   bulkRestoreSecrets() {
     if (this.selection.selected.length >= 1) {
       this.restoreSecretsEvent.emit(this.selection.selected);
+    } else {
+      this.platformUtilsService.showToast(
+        "error",
+        this.i18nService.t("errorOccurred"),
+        this.i18nService.t("nothingSelected")
+      );
     }
   }
 
