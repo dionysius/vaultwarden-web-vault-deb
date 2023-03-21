@@ -12,7 +12,7 @@ on:
         type: choice
         options:
           - QA
-          - POC
+          - POC2
 
 
 jobs:
