@@ -235,12 +235,6 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
           this.clipboardWriteCallback(text, clearMs);
         }
       });
-    } else if ((win as any).clipboardData && (win as any).clipboardData.setData) {
-      // IE specific code path to prevent textarea being shown while dialog is visible.
-      (win as any).clipboardData.setData("Text", text);
-      if (!clearing && this.clipboardWriteCallback != null) {
-        this.clipboardWriteCallback(text, clearMs);
-      }
     } else if (doc.queryCommandSupported && doc.queryCommandSupported("copy")) {
       if (this.isChrome() && text === "") {
         text = "\u0000";

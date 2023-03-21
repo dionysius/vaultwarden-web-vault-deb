@@ -215,10 +215,7 @@ export class WebPlatformUtilsService implements PlatformUtilsService {
     } else if (options && options.doc) {
       doc = options.doc;
     }
-    if ((win as any).clipboardData && (win as any).clipboardData.setData) {
-      // IE specific code path to prevent textarea being shown while dialog is visible.
-      (win as any).clipboardData.setData("Text", text);
-    } else if (doc.queryCommandSupported && doc.queryCommandSupported("copy")) {
+    if (doc.queryCommandSupported && doc.queryCommandSupported("copy")) {
       const textarea = doc.createElement("textarea");
       textarea.textContent = text;
       // Prevent scrolling to bottom of page in MS Edge.
