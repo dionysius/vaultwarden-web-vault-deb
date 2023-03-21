@@ -26,7 +26,7 @@
   </app-callout>
   <ng-container *ngIf="ciphers.length">
     <app-callout type="danger" title="{{ 'inactive2faFound' | i18n }}">
-      {{ "inactive2faFoundDesc" | i18n: (ciphers.length | number) }}
+      {{ "inactive2faFoundDesc" | i18n : (ciphers.length | number) }}
     </app-callout>
     <table class="table table-hover table-list table-ciphers">
       <tbody>

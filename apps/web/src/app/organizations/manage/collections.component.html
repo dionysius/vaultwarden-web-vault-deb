@@ -35,7 +35,7 @@
     !loading &&
     (isPaging()
       ? pagedCollections
-      : (collections | search: searchText:'name':'id')) as searchedCollections
+      : (collections | search : searchText : 'name' : 'id')) as searchedCollections
   "
 >
   <p *ngIf="!searchedCollections.length">{{ "noCollectionsInList" | i18n }}</p>

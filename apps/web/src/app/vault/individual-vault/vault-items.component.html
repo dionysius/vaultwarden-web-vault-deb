@@ -113,7 +113,7 @@
         <td bitCell>
           <ng-container *ngIf="!organization">
             <app-org-badge
-              organizationName="{{ col.node.organizationId | orgNameFromId: organizations }}"
+              organizationName="{{ col.node.organizationId | orgNameFromId : organizations }}"
               [profileName]="profileName"
               (onOrganizationClicked)="onOrganizationClicked(col.node.organizationId)"
               appStopProp
@@ -224,7 +224,7 @@
         <td bitCell>
           <ng-container *ngIf="!organization">
             <app-org-badge
-              organizationName="{{ c.organizationId | orgNameFromId: organizations }}"
+              organizationName="{{ c.organizationId | orgNameFromId : organizations }}"
               profileName="{{ profileName }}"
               (onOrganizationClicked)="onOrganizationClicked(c.organizationId)"
               appStopProp

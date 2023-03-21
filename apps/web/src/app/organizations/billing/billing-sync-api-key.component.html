@@ -60,13 +60,13 @@
           </div>
           <div class="small text-muted mt-2" *ngIf="showLastSyncText">
             <b class="font-weight-semibold">{{ "lastSync" | i18n }}:</b>
-            {{ lastSyncDate | date: "medium" }}
+            {{ lastSyncDate | date : "medium" }}
           </div>
           <div class="small text-danger mt-2" *ngIf="showAwaitingSyncText">
             <i class="bwi bwi-error"></i>
             {{
               (daysBetween === 1 ? "awaitingSyncSingular" : "awaitingSyncPlural")
-                | i18n: daysBetween
+                | i18n : daysBetween
             }}
           </div>
         </div>

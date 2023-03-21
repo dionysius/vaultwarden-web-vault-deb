@@ -58,7 +58,7 @@
         *ngFor="let a of accounts | keyvalue"
         class="account"
         (click)="switch(a.key)"
-        appA11yTitle="{{ 'loggedInAsOn' | i18n: a.value.profile.email:a.value.serverUrl }}"
+        appA11yTitle="{{ 'loggedInAsOn' | i18n : a.value.profile.email : a.value.serverUrl }}"
         attr.aria-label="{{ 'switchAccount' | i18n }}"
       >
         <app-avatar

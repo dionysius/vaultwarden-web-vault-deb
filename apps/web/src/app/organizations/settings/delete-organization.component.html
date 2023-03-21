@@ -21,7 +21,7 @@
       </div>
       <div class="modal-body">
         <app-callout type="warning">{{
-          "deletingOrganizationIsPermanentWarning" | i18n: organizationName
+          "deletingOrganizationIsPermanentWarning" | i18n : organizationName
         }}</app-callout>
         <p id="organizationDeleteDescription">
           <ng-container
@@ -34,7 +34,7 @@
           </ng-container>
           <ng-template #regularDelete>
             <ng-container *ngIf="organizationContentSummary.totalItemCount > 0">
-              {{ "deletingOrganizationContentWarning" | i18n: organizationName }}
+              {{ "deletingOrganizationContentWarning" | i18n : organizationName }}
               <ul>
                 <li *ngFor="let type of organizationContentSummary.itemCountByType">
                   {{ type.count }} {{ type.localizationKey | i18n }}

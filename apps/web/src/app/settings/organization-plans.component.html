@@ -13,7 +13,7 @@
       <label for="file">{{ "licenseFile" | i18n }}</label>
       <input type="file" id="file" class="form-control-file" name="file" required />
       <small class="form-text text-muted">{{
-        "licenseFileDesc" | i18n: "bitwarden_organization_license.json"
+        "licenseFileDesc" | i18n : "bitwarden_organization_license.json"
       }}</small>
     </div>
     <button type="submit" class="btn btn-primary btn-submit" [disabled]="form.loading">
@@ -51,7 +51,7 @@
     />
     <label class="form-check-label" for="product{{ selectableProduct.product }}">
       {{ selectableProduct.nameLocalizationKey | i18n }}
-      <small class="mb-1">{{ selectableProduct.descriptionLocalizationKey | i18n: "1" }}</small>
+      <small class="mb-1">{{ selectableProduct.descriptionLocalizationKey | i18n : "1" }}</small>
       <ng-container
         *ngIf="selectableProduct.product === productTypes.Enterprise; else fullFeatureList"
       >
@@ -63,28 +63,28 @@
         >
         <small *ngIf="selectableProduct.trialPeriodDays && createOrganization"
           >•
-          {{ "xDayFreeTrial" | i18n: selectableProduct.trialPeriodDays }}
+          {{ "xDayFreeTrial" | i18n : selectableProduct.trialPeriodDays }}
         </small>
       </ng-container>
       <ng-template #fullFeatureList>
         <small *ngIf="selectableProduct.product == productTypes.Free"
-          >• {{ "limitedUsers" | i18n: selectableProduct.maxUsers }}</small
+          >• {{ "limitedUsers" | i18n : selectableProduct.maxUsers }}</small
         >
         <small *ngIf="selectableProduct.product != productTypes.Free && selectableProduct.maxUsers"
-          >• {{ "addShareLimitedUsers" | i18n: selectableProduct.maxUsers }}</small
+          >• {{ "addShareLimitedUsers" | i18n : selectableProduct.maxUsers }}</small
         >
         <small *ngIf="!selectableProduct.maxUsers">• {{ "addShareUnlimitedUsers" | i18n }}</small>
         <small *ngIf="selectableProduct.maxCollections"
-          >• {{ "limitedCollections" | i18n: selectableProduct.maxCollections }}</small
+          >• {{ "limitedCollections" | i18n : selectableProduct.maxCollections }}</small
         >
         <small *ngIf="selectableProduct.maxAdditionalSeats"
-          >• {{ "addShareLimitedUsers" | i18n: selectableProduct.maxAdditionalSeats }}</small
+          >• {{ "addShareLimitedUsers" | i18n : selectableProduct.maxAdditionalSeats }}</small
         >
         <small *ngIf="!selectableProduct.maxCollections"
           >• {{ "createUnlimitedCollections" | i18n }}</small
         >
         <small *ngIf="selectableProduct.baseStorageGb"
-          >• {{ "gbEncryptedFileStorage" | i18n: selectableProduct.baseStorageGb + "GB" }}</small
+          >• {{ "gbEncryptedFileStorage" | i18n : selectableProduct.baseStorageGb + "GB" }}</small
         >
         <small *ngIf="selectableProduct.hasGroups">• {{ "controlAccessWithGroups" | i18n }}</small>
         <small *ngIf="selectableProduct.hasApi">• {{ "trackAuditLogs" | i18n }}</small>
@@ -98,21 +98,21 @@
         >
         <small *ngIf="selectableProduct.trialPeriodDays && createOrganization"
           >•
-          {{ "xDayFreeTrial" | i18n: selectableProduct.trialPeriodDays }}
+          {{ "xDayFreeTrial" | i18n : selectableProduct.trialPeriodDays }}
         </small>
       </ng-template>
       <span *ngIf="selectableProduct.product != productTypes.Free">
         <ng-container *ngIf="selectableProduct.basePrice && !acceptingSponsorship">
-          {{ selectableProduct.basePrice / 12 | currency: "$" }} /{{ "month" | i18n }},
-          {{ "includesXUsers" | i18n: selectableProduct.baseSeats }}
+          {{ selectableProduct.basePrice / 12 | currency : "$" }} /{{ "month" | i18n }},
+          {{ "includesXUsers" | i18n : selectableProduct.baseSeats }}
           <ng-container *ngIf="selectableProduct.hasAdditionalSeatsOption">
             {{ ("additionalUsers" | i18n).toLowerCase() }}
-            {{ selectableProduct.seatPrice / 12 | currency: "$" }} /{{ "month" | i18n }}
+            {{ selectableProduct.seatPrice / 12 | currency : "$" }} /{{ "month" | i18n }}
           </ng-container>
         </ng-container>
       </span>
       <span *ngIf="!selectableProduct.basePrice && selectableProduct.hasAdditionalSeatsOption">
-        {{ "costPerUser" | i18n: (selectableProduct.seatPrice / 12 | currency: "$") }} /{{
+        {{ "costPerUser" | i18n : (selectableProduct.seatPrice / 12 | currency : "$") }} /{{
           "month" | i18n
         }}
       </span>
@@ -152,7 +152,7 @@
         />
         <small class="text-muted form-text">{{
           "userSeatsAdditionalDesc"
-            | i18n: selectedPlan.baseSeats:(seatPriceMonthly(selectedPlan) | currency: "$")
+            | i18n : selectedPlan.baseSeats : (seatPriceMonthly(selectedPlan) | currency : "$")
         }}</small>
       </div>
     </div>
@@ -172,7 +172,7 @@
           "additionalStorageIntervalDesc"
             | i18n
               : "1 GB"
-              : (additionalStoragePriceMonthly(selectedPlan) | currency: "$")
+              : (additionalStoragePriceMonthly(selectedPlan) | currency : "$")
               : ("month" | i18n)
         }}</small>
       </div>
@@ -192,7 +192,7 @@
           }}</label>
         </div>
         <small class="text-muted form-text">{{
-          "premiumAccessDesc" | i18n: (3.33 | currency: "$"):("month" | i18n)
+          "premiumAccessDesc" | i18n : (3.33 | currency : "$") : ("month" | i18n)
         }}</small>
       </div>
     </div>
@@ -210,17 +210,18 @@
         <ng-container *ngIf="selectablePlan.isAnnual">
           {{ "annually" | i18n }}
           <small *ngIf="selectablePlan.basePrice">
-            {{ "basePrice" | i18n }}: {{ selectablePlan.basePrice / 12 | currency: "$" }} &times; 12
+            {{ "basePrice" | i18n }}: {{ selectablePlan.basePrice / 12 | currency : "$" }} &times;
+            12
             {{ "monthAbbr" | i18n }}
             =
             <ng-container *ngIf="acceptingSponsorship; else notAcceptingSponsorship">
               <span style="text-decoration: line-through">{{
-                selectablePlan.basePrice | currency: "$"
+                selectablePlan.basePrice | currency : "$"
               }}</span>
               {{ "freeWithSponsorship" | i18n }}
             </ng-container>
             <ng-template #notAcceptingSponsorship>
-              {{ selectablePlan.basePrice | currency: "$" }}
+              {{ selectablePlan.basePrice | currency : "$" }}
               /{{ "year" | i18n }}
             </ng-template>
           </small>
@@ -228,41 +229,41 @@
             <span *ngIf="selectablePlan.baseSeats">{{ "additionalUsers" | i18n }}:</span>
             <span *ngIf="!selectablePlan.baseSeats">{{ "users" | i18n }}:</span>
             {{ formGroup.controls["additionalSeats"].value || 0 }} &times;
-            {{ selectablePlan.seatPrice / 12 | currency: "$" }} &times; 12
-            {{ "monthAbbr" | i18n }} = {{ seatTotal(selectablePlan) | currency: "$" }} /{{
+            {{ selectablePlan.seatPrice / 12 | currency : "$" }} &times; 12
+            {{ "monthAbbr" | i18n }} = {{ seatTotal(selectablePlan) | currency : "$" }} /{{
               "year" | i18n
             }}
           </small>
           <small *ngIf="selectablePlan.hasAdditionalStorageOption">
             {{ "additionalStorageGb" | i18n }}:
             {{ formGroup.controls["additionalStorage"].value || 0 }} &times;
-            {{ selectablePlan.additionalStoragePricePerGb / 12 | currency: "$" }} &times; 12
+            {{ selectablePlan.additionalStoragePricePerGb / 12 | currency : "$" }} &times; 12
             {{ "monthAbbr" | i18n }} =
-            {{ additionalStorageTotal(selectablePlan) | currency: "$" }} /{{ "year" | i18n }}
+            {{ additionalStorageTotal(selectablePlan) | currency : "$" }} /{{ "year" | i18n }}
           </small>
         </ng-container>
         <ng-container *ngIf="!selectablePlan.isAnnual">
           {{ "monthly" | i18n }}
           <small *ngIf="selectablePlan.basePrice">
-            {{ "basePrice" | i18n }}: {{ selectablePlan.basePrice | currency: "$" }}
+            {{ "basePrice" | i18n }}: {{ selectablePlan.basePrice | currency : "$" }}
             {{ "monthAbbr" | i18n }}
             =
-            {{ selectablePlan.basePrice | currency: "$" }}
+            {{ selectablePlan.basePrice | currency : "$" }}
             /{{ "month" | i18n }}
           </small>
           <small *ngIf="selectablePlan.hasAdditionalSeatsOption">
             <span *ngIf="selectablePlan.baseSeats">{{ "additionalUsers" | i18n }}:</span>
             <span *ngIf="!selectablePlan.baseSeats">{{ "users" | i18n }}:</span>
             {{ formGroup.controls["additionalSeats"].value || 0 }} &times;
-            {{ selectablePlan.seatPrice | currency: "$" }} {{ "monthAbbr" | i18n }} =
-            {{ seatTotal(selectablePlan) | currency: "$" }} /{{ "month" | i18n }}
+            {{ selectablePlan.seatPrice | currency : "$" }} {{ "monthAbbr" | i18n }} =
+            {{ seatTotal(selectablePlan) | currency : "$" }} /{{ "month" | i18n }}
           </small>
           <small *ngIf="selectablePlan.hasAdditionalStorageOption">
             {{ "additionalStorageGb" | i18n }}:
             {{ formGroup.controls["additionalStorage"].value || 0 }} &times;
-            {{ selectablePlan.additionalStoragePricePerGb | currency: "$" }}
+            {{ selectablePlan.additionalStoragePricePerGb | currency : "$" }}
             {{ "monthAbbr" | i18n }} =
-            {{ additionalStorageTotal(selectablePlan) | currency: "$" }} /{{ "month" | i18n }}
+            {{ additionalStorageTotal(selectablePlan) | currency : "$" }} /{{ "month" | i18n }}
           </small>
         </ng-container>
       </label>
@@ -278,15 +279,15 @@
     <app-tax-info (onCountryChanged)="changedCountry()"></app-tax-info>
     <div id="price" class="my-4">
       <div class="text-muted text-sm">
-        {{ "planPrice" | i18n }}: {{ subtotal | currency: "USD $" }}
+        {{ "planPrice" | i18n }}: {{ subtotal | currency : "USD $" }}
         <br />
         <ng-container>
-          {{ "estimatedTax" | i18n }}: {{ taxCharges | currency: "USD $" }}
+          {{ "estimatedTax" | i18n }}: {{ taxCharges | currency : "USD $" }}
         </ng-container>
       </div>
       <hr class="my-1 col-3 ml-0" />
       <p class="text-lg">
-        <strong>{{ "total" | i18n }}:</strong> {{ total | currency: "USD $" }}/{{
+        <strong>{{ "total" | i18n }}:</strong> {{ total | currency : "USD $" }}/{{
           selectedPlanInterval | i18n
         }}
       </p>

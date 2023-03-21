@@ -100,7 +100,9 @@
 <ng-container
   *ngIf="
     !loading &&
-    (isPaging() ? pagedUsers : (users | search: searchText:'name':'email':'id')) as searchedUsers
+    (isPaging()
+      ? pagedUsers
+      : (users | search : searchText : 'name' : 'email' : 'id')) as searchedUsers
   "
 >
   <p *ngIf="!searchedUsers.length">{{ "noUsersInList" | i18n }}</p>

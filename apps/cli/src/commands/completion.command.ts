@@ -20,7 +20,7 @@ const validShells = ["zsh"];
 
 export class CompletionCommand {
   async run(options: program.OptionValues) {
-    const shell: typeof validShells[number] = options.shell;
+    const shell: (typeof validShells)[number] = options.shell;
 
     if (!shell) {
       return Response.badRequest("`shell` option was not provided.");

@@ -28,7 +28,7 @@
     <dd>{{ sub.plan.name }}</dd>
     <dt>{{ "expiration" | i18n }}</dt>
     <dd *ngIf="sub.expiration">
-      {{ sub.expiration | date: "mediumDate" }}
+      {{ sub.expiration | date : "mediumDate" }}
       <span *ngIf="isExpired" class="text-danger ml-2">
         <i class="bwi bwi-exclamation-triangle" aria-hidden="true"></i>
         {{ "licenseIsExpired" | i18n }}
@@ -38,7 +38,7 @@
     <ng-container *ngIf="billingSyncSetUp">
       <dt>{{ "lastLicenseSync" | i18n }}</dt>
       <dd>
-        {{ lastLicenseSync != null ? (lastLicenseSync | date: "medium") : ("never" | i18n) }}
+        {{ lastLicenseSync != null ? (lastLicenseSync | date : "medium") : ("never" | i18n) }}
       </dd>
     </ng-container>
   </dl>

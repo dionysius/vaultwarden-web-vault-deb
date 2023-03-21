@@ -8,7 +8,7 @@
       >
         <!-- First node in the tree is the "Org Name Vault" item. The rest come from user input. -->
         <ng-container *ngIf="first">
-          {{ activeOrganizationId | orgNameFromId: (organizations$ | async) }}
+          {{ activeOrganizationId | orgNameFromId : (organizations$ | async) }}
           {{ "vault" | i18n | lowercase }}
         </ng-container>
         <ng-container *ngIf="!first">{{ collection.node.name }}</ng-container>

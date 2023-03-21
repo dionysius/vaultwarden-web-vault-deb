@@ -1,5 +1,5 @@
 <app-callout type="info" *ngIf="vaultTimeoutPolicy">
-  {{ "vaultTimeoutPolicyInEffect" | i18n: vaultTimeoutPolicyHours:vaultTimeoutPolicyMinutes }}
+  {{ "vaultTimeoutPolicyInEffect" | i18n : vaultTimeoutPolicyHours : vaultTimeoutPolicyMinutes }}
 </app-callout>
 
 <div [formGroup]="form">

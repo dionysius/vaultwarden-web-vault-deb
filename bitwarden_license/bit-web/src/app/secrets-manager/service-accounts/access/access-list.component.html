@@ -59,9 +59,9 @@
       <td bitCell>{{ token.name }}</td>
       <td bitCell>{{ permission(token) | i18n }}</td>
       <td bitCell>
-        {{ token.expireAt === null ? ("never" | i18n) : (token.expireAt | date: "medium") }}
+        {{ token.expireAt === null ? ("never" | i18n) : (token.expireAt | date : "medium") }}
       </td>
-      <td bitCell>{{ token.revisionDate | date: "medium" }}</td>
+      <td bitCell>{{ token.revisionDate | date : "medium" }}</td>
       <td bitCell>
         <button
           type="button"
