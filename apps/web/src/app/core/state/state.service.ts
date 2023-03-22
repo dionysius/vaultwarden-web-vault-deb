@@ -12,8 +12,8 @@ import {
   AbstractMemoryStorageService,
   AbstractStorageService,
 } from "@bitwarden/common/abstractions/storage.service";
+import { CollectionData } from "@bitwarden/common/admin-console/models/data/collection.data";
 import { StateFactory } from "@bitwarden/common/factories/stateFactory";
-import { CollectionData } from "@bitwarden/common/models/data/collection.data";
 import { SendData } from "@bitwarden/common/models/data/send.data";
 import { StorageOptions } from "@bitwarden/common/models/domain/storage-options";
 import { StateService as BaseStateService } from "@bitwarden/common/services/state.service";

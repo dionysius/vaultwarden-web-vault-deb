@@ -1,14 +1,14 @@
 import * as program from "commander";
 
+import { ConfirmCommand } from "./admin-console/commands/confirm.command";
+import { ShareCommand } from "./admin-console/commands/share.command";
 import { Main } from "./bw";
-import { ConfirmCommand } from "./commands/confirm.command";
 import { EditCommand } from "./commands/edit.command";
 import { ExportCommand } from "./commands/export.command";
 import { GetCommand } from "./commands/get.command";
 import { ImportCommand } from "./commands/import.command";
 import { ListCommand } from "./commands/list.command";
 import { RestoreCommand } from "./commands/restore.command";
-import { ShareCommand } from "./commands/share.command";
 import { Response } from "./models/response";
 import { Program } from "./program";
 import { CliUtils } from "./utils";

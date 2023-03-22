@@ -3,8 +3,8 @@ import { firstValueFrom, Subject } from "rxjs";
 
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
-import { PolicyService } from "@bitwarden/common/abstractions/policy/policy.service.abstraction";
-import { PolicyType } from "@bitwarden/common/enums/policyType";
+import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
+import { PolicyType } from "@bitwarden/common/admin-console/enums/policy-type";
 import { TreeNode } from "@bitwarden/common/models/domain/tree-node";
 import { CipherType } from "@bitwarden/common/vault/enums/cipher-type";
 

@@ -1,10 +1,10 @@
 // eslint-disable-next-line no-restricted-imports
 import { Substitute, SubstituteOf } from "@fluffy-spoon/substitute";
 
-import { CollectionService } from "@bitwarden/common/abstractions/collection.service";
 import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { ImportApiServiceAbstraction } from "@bitwarden/common/abstractions/import/import-api.service.abstraction";
+import { CollectionService } from "@bitwarden/common/admin-console/abstractions/collection.service";
 import { BitwardenPasswordProtectedImporter } from "@bitwarden/common/importers/bitwarden-password-protected-importer";
 import { Importer } from "@bitwarden/common/importers/importer";
 import { Utils } from "@bitwarden/common/misc/utils";

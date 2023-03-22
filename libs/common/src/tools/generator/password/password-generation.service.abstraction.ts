@@ -1,6 +1,6 @@
 import * as zxcvbn from "zxcvbn";
 
-import { PasswordGeneratorPolicyOptions } from "../../../models/domain/password-generator-policy-options";
+import { PasswordGeneratorPolicyOptions } from "../../../admin-console/models/domain/password-generator-policy-options";
 
 import { GeneratedPasswordHistory } from "./generated-password-history";
 import { PasswordGeneratorOptions } from "./password-generator-options";

@@ -2,6 +2,10 @@ import { KeyConnectorService as AbstractKeyConnectorService } from "@bitwarden/c
 import { KeyConnectorService } from "@bitwarden/common/auth/services/key-connector.service";
 
 import {
+  OrganizationServiceInitOptions,
+  organizationServiceFactory,
+} from "../../../admin-console/background/service-factories/organization-service.factory";
+import {
   apiServiceFactory,
   ApiServiceInitOptions,
 } from "../../../background/service_factories/api-service.factory";
@@ -22,10 +26,6 @@ import {
   logServiceFactory,
   LogServiceInitOptions,
 } from "../../../background/service_factories/log-service.factory";
-import {
-  OrganizationServiceInitOptions,
-  organizationServiceFactory,
-} from "../../../background/service_factories/organization-service.factory";
 import {
   stateServiceFactory,
   StateServiceInitOptions,

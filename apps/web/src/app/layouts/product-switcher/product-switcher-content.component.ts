@@ -2,7 +2,7 @@ import { Component, ViewChild } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { combineLatest, map } from "rxjs";
 
-import { OrganizationService } from "@bitwarden/common/abstractions/organization/organization.service.abstraction";
+import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 import { MenuComponent } from "@bitwarden/components";
 
 type ProductSwitcherItem = {

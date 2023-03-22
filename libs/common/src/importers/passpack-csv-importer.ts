@@ -1,5 +1,5 @@
+import { CollectionView } from "../admin-console/models/view/collection.view";
 import { ImportResult } from "../models/domain/import-result";
-import { CollectionView } from "../models/view/collection.view";
 
 import { BaseImporter } from "./base-importer";
 import { Importer } from "./importer";

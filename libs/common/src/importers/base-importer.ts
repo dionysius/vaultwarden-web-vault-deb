@@ -1,11 +1,11 @@
 import * as papa from "papaparse";
 
 import { LogService } from "../abstractions/log.service";
+import { CollectionView } from "../admin-console/models/view/collection.view";
 import { FieldType } from "../enums/fieldType";
 import { SecureNoteType } from "../enums/secureNoteType";
 import { Utils } from "../misc/utils";
 import { ImportResult } from "../models/domain/import-result";
-import { CollectionView } from "../models/view/collection.view";
 import { ConsoleLogService } from "../services/consoleLog.service";
 import { CipherType } from "../vault/enums/cipher-type";
 import { CipherView } from "../vault/models/view/cipher.view";

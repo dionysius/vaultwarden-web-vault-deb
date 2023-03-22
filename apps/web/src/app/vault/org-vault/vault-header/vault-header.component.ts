@@ -5,12 +5,12 @@ import { firstValueFrom, lastValueFrom } from "rxjs";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
-import { OrganizationService } from "@bitwarden/common/abstractions/organization/organization.service.abstraction";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
+import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
+import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
+import { CollectionView } from "@bitwarden/common/admin-console/models/view/collection.view";
 import { ProductType } from "@bitwarden/common/enums/productType";
-import { Organization } from "@bitwarden/common/models/domain/organization";
 import { TreeNode } from "@bitwarden/common/models/domain/tree-node";
-import { CollectionView } from "@bitwarden/common/models/view/collection.view";
 import {
   DialogService,
   SimpleDialogCloseType,
@@ -18,12 +18,12 @@ import {
   SimpleDialogType,
 } from "@bitwarden/components";
 
-import { CollectionAdminService, CollectionAdminView } from "../../../organizations/core";
 import {
   CollectionDialogResult,
   CollectionDialogTabType,
   openCollectionDialog,
-} from "../../../organizations/shared";
+} from "../../../admin-console/organizations/shared/components/collection-dialog";
+import { CollectionAdminService, CollectionAdminView } from "../../../organizations/core";
 import { VaultFilterService } from "../../individual-vault/vault-filter/services/abstractions/vault-filter.service";
 import { VaultFilter } from "../../individual-vault/vault-filter/shared/models/vault-filter.model";
 import { CollectionFilter } from "../../individual-vault/vault-filter/shared/models/vault-filter.type";

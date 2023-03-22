@@ -1,5 +1,5 @@
+import { CollectionView } from "@bitwarden/common/admin-console/models/view/collection.view";
 import { Utils } from "@bitwarden/common/misc/utils";
-import { CollectionView } from "@bitwarden/common/models/view/collection.view";
 import { DeepJsonify } from "@bitwarden/common/types/deep-jsonify";
 import { CipherType } from "@bitwarden/common/vault/enums/cipher-type";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";

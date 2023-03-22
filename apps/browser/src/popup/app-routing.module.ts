@@ -22,6 +22,7 @@ import { GeneratorComponent } from "../tools/popup/generator/generator.component
 import { PasswordGeneratorHistoryComponent } from "../tools/popup/generator/password-generator-history.component";
 import { AddEditComponent } from "../vault/popup/components/vault/add-edit.component";
 import { AttachmentsComponent } from "../vault/popup/components/vault/attachments.component";
+import { CollectionsComponent } from "../vault/popup/components/vault/collections.component";
 import { CurrentTabComponent } from "../vault/popup/components/vault/current-tab.component";
 import { PasswordHistoryComponent } from "../vault/popup/components/vault/password-history.component";
 import { ShareComponent } from "../vault/popup/components/vault/share.component";
@@ -44,7 +45,6 @@ import { PremiumComponent } from "./settings/premium.component";
 import { SettingsComponent } from "./settings/settings.component";
 import { SyncComponent } from "./settings/sync.component";
 import { TabsComponent } from "./tabs.component";
-import { CollectionsComponent } from "./vault/collections.component";
 
 const routes: Routes = [
   {

@@ -6,6 +6,11 @@ import { EncryptService } from "../abstractions/encrypt.service";
 import { LogService } from "../abstractions/log.service";
 import { PlatformUtilsService } from "../abstractions/platformUtils.service";
 import { StateService } from "../abstractions/state.service";
+import { EncryptedOrganizationKeyData } from "../admin-console/models/data/encrypted-organization-key.data";
+import { BaseEncryptedOrganizationKey } from "../admin-console/models/domain/encrypted-organization-key";
+import { ProfileOrganizationResponse } from "../admin-console/models/response/profile-organization.response";
+import { ProfileProviderOrganizationResponse } from "../admin-console/models/response/profile-provider-organization.response";
+import { ProfileProviderResponse } from "../admin-console/models/response/profile-provider.response";
 import { KdfConfig } from "../auth/models/domain/kdf-config";
 import { EncryptionType } from "../enums/encryptionType";
 import { HashPurpose } from "../enums/hashPurpose";
@@ -19,14 +24,9 @@ import { KeySuffixOptions } from "../enums/keySuffixOptions";
 import { sequentialize } from "../misc/sequentialize";
 import { Utils } from "../misc/utils";
 import { EFFLongWordList } from "../misc/wordlist";
-import { EncryptedOrganizationKeyData } from "../models/data/encrypted-organization-key.data";
 import { EncArrayBuffer } from "../models/domain/enc-array-buffer";
 import { EncString } from "../models/domain/enc-string";
-import { BaseEncryptedOrganizationKey } from "../models/domain/encrypted-organization-key";
 import { SymmetricCryptoKey } from "../models/domain/symmetric-crypto-key";
-import { ProfileOrganizationResponse } from "../models/response/profile-organization.response";
-import { ProfileProviderOrganizationResponse } from "../models/response/profile-provider-organization.response";
-import { ProfileProviderResponse } from "../models/response/profile-provider.response";
 
 export class CryptoService implements CryptoServiceAbstraction {
   constructor(

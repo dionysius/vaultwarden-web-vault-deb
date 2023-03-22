@@ -8,6 +8,8 @@ import * as koaJson from "koa-json";
 import { KeySuffixOptions } from "@bitwarden/common/enums/keySuffixOptions";
 import { Utils } from "@bitwarden/common/misc/utils";
 
+import { ConfirmCommand } from "../admin-console/commands/confirm.command";
+import { ShareCommand } from "../admin-console/commands/share.command";
 import { LockCommand } from "../auth/commands/lock.command";
 import { UnlockCommand } from "../auth/commands/unlock.command";
 import { Main } from "../bw";
@@ -18,7 +20,6 @@ import { CreateCommand } from "../vault/create.command";
 import { DeleteCommand } from "../vault/delete.command";
 import { SyncCommand } from "../vault/sync.command";
 
-import { ConfirmCommand } from "./confirm.command";
 import { EditCommand } from "./edit.command";
 import { GetCommand } from "./get.command";
 import { ListCommand } from "./list.command";
@@ -29,7 +30,6 @@ import { SendEditCommand } from "./send/edit.command";
 import { SendGetCommand } from "./send/get.command";
 import { SendListCommand } from "./send/list.command";
 import { SendRemovePasswordCommand } from "./send/remove-password.command";
-import { ShareCommand } from "./share.command";
 import { StatusCommand } from "./status.command";
 
 export class ServeCommand {

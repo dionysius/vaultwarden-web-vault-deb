@@ -2,9 +2,9 @@ import { Component } from "@angular/core";
 
 import { AppComponent as BaseAppComponent } from "@bitwarden/web-vault/app/app.component";
 
-import { ActivateAutofillPolicy } from "./policies/activate-autofill.component";
-import { DisablePersonalVaultExportPolicy } from "./policies/disable-personal-vault-export.component";
-import { MaximumVaultTimeoutPolicy } from "./policies/maximum-vault-timeout.component";
+import { ActivateAutofillPolicy } from "./admin-console/policies/activate-autofill.component";
+import { DisablePersonalVaultExportPolicy } from "./admin-console/policies/disable-personal-vault-export.component";
+import { MaximumVaultTimeoutPolicy } from "./admin-console/policies/maximum-vault-timeout.component";
 
 @Component({
   selector: "app-root",

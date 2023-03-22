@@ -1,7 +1,7 @@
+import { CollectionView } from "../admin-console/models/view/collection.view";
 import { FieldType } from "../enums/fieldType";
 import { SecureNoteType } from "../enums/secureNoteType";
 import { ImportResult } from "../models/domain/import-result";
-import { CollectionView } from "../models/view/collection.view";
 import { CipherRepromptType } from "../vault/enums/cipher-reprompt-type";
 import { CipherType } from "../vault/enums/cipher-type";
 import { CipherView } from "../vault/models/view/cipher.view";

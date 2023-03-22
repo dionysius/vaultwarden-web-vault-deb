@@ -3,8 +3,8 @@ import { RouterModule } from "@angular/router";
 import { Meta, Story, moduleMetadata } from "@storybook/angular";
 import { BehaviorSubject } from "rxjs";
 
-import { OrganizationService } from "@bitwarden/common/abstractions/organization/organization.service.abstraction";
-import { Organization } from "@bitwarden/common/models/domain/organization";
+import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
+import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
 import { IconModule } from "@bitwarden/components";
 import { PreloadedEnglishI18nModule } from "@bitwarden/web-vault/app/tests/preloaded-english-i18n.module";
 

@@ -1,7 +1,8 @@
+import { ProfileOrganizationResponse } from "../../admin-console/models/response/profile-organization.response";
+import { ProfileProviderOrganizationResponse } from "../../admin-console/models/response/profile-provider-organization.response";
+import { ProfileProviderResponse } from "../../admin-console/models/response/profile-provider.response";
+
 import { BaseResponse } from "./base.response";
-import { ProfileOrganizationResponse } from "./profile-organization.response";
-import { ProfileProviderOrganizationResponse } from "./profile-provider-organization.response";
-import { ProfileProviderResponse } from "./profile-provider.response";
 
 export class ProfileResponse extends BaseResponse {
   id: string;

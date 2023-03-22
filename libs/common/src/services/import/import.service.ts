@@ -1,8 +1,9 @@
-import { CollectionService } from "../../abstractions/collection.service";
 import { CryptoService } from "../../abstractions/crypto.service";
 import { I18nService } from "../../abstractions/i18n.service";
 import { ImportApiServiceAbstraction } from "../../abstractions/import/import-api.service.abstraction";
 import { ImportService as ImportServiceAbstraction } from "../../abstractions/import/import.service.abstraction";
+import { CollectionService } from "../../admin-console/abstractions/collection.service";
+import { CollectionRequest } from "../../admin-console/models/request/collection.request";
 import {
   featuredImportOptions,
   ImportOption,
@@ -71,7 +72,6 @@ import { YotiCsvImporter } from "../../importers/yoti-csv-importer";
 import { ZohoVaultCsvImporter } from "../../importers/zohovault-csv-importer";
 import { Utils } from "../../misc/utils";
 import { ImportResult } from "../../models/domain/import-result";
-import { CollectionRequest } from "../../models/request/collection.request";
 import { ImportCiphersRequest } from "../../models/request/import-ciphers.request";
 import { ImportOrganizationCiphersRequest } from "../../models/request/import-organization-ciphers.request";
 import { KvpRequest } from "../../models/request/kvp.request";

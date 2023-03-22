@@ -27,6 +27,7 @@ import { PasswordRepromptComponent } from "../vault/app/components/password-repr
 import { AddEditCustomFieldsComponent } from "../vault/app/vault/add-edit-custom-fields.component";
 import { AddEditComponent } from "../vault/app/vault/add-edit.component";
 import { AttachmentsComponent } from "../vault/app/vault/attachments.component";
+import { CollectionsComponent } from "../vault/app/vault/collections.component";
 import { FolderAddEditComponent } from "../vault/app/vault/folder-add-edit.component";
 import { PasswordHistoryComponent } from "../vault/app/vault/password-history.component";
 import { ShareComponent } from "../vault/app/vault/share.component";
@@ -52,7 +53,6 @@ import { SendComponent } from "./send/send.component";
 import { SharedModule } from "./shared/shared.module";
 import { GeneratorComponent } from "./tools/generator.component";
 import { PasswordGeneratorHistoryComponent } from "./tools/password-generator-history.component";
-import { CollectionsComponent } from "./vault/collections.component";
 import { ExportComponent } from "./vault/export.component";
 
 @NgModule({

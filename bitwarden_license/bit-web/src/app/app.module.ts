@@ -12,12 +12,12 @@ import { OssRoutingModule } from "@bitwarden/web-vault/app/oss-routing.module";
 import { OssModule } from "@bitwarden/web-vault/app/oss.module";
 import { WildcardRoutingModule } from "@bitwarden/web-vault/app/wildcard-routing.module";
 
+import { OrganizationsModule } from "./admin-console/organizations/organizations.module";
+import { ActivateAutofillPolicyComponent } from "./admin-console/policies/activate-autofill.component";
+import { DisablePersonalVaultExportPolicyComponent } from "./admin-console/policies/disable-personal-vault-export.component";
+import { MaximumVaultTimeoutPolicyComponent } from "./admin-console/policies/maximum-vault-timeout.component";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
-import { OrganizationsModule } from "./organizations/organizations.module";
-import { ActivateAutofillPolicyComponent } from "./policies/activate-autofill.component";
-import { DisablePersonalVaultExportPolicyComponent } from "./policies/disable-personal-vault-export.component";
-import { MaximumVaultTimeoutPolicyComponent } from "./policies/maximum-vault-timeout.component";
 
 @NgModule({
   imports: [

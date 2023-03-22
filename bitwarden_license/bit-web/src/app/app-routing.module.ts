@@ -1,7 +1,7 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 
-import { ProvidersModule } from "./providers/providers.module";
+import { ProvidersModule } from "./admin-console/providers/providers.module";
 
 const routes: Routes = [
   {

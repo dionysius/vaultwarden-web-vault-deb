@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
-import { SelectionReadOnlyRequest } from "@bitwarden/common/models/request/selection-read-only.request";
+import { SelectionReadOnlyRequest } from "@bitwarden/common/admin-console/models/request/selection-read-only.request";
 import { ListResponse } from "@bitwarden/common/models/response/list.response";
 
 import { CoreOrganizationModule } from "../../core-organization.module";

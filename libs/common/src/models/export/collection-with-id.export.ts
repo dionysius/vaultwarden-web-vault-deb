@@ -1,5 +1,5 @@
-import { Collection as CollectionDomain } from "../domain/collection";
-import { CollectionView } from "../view/collection.view";
+import { Collection as CollectionDomain } from "../../admin-console/models/domain/collection";
+import { CollectionView } from "../../admin-console/models/view/collection.view";
 
 import { CollectionExport } from "./collection.export";
 

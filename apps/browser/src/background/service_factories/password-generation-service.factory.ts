@@ -3,9 +3,13 @@ import {
   PasswordGenerationServiceAbstraction,
 } from "@bitwarden/common/tools/generator/password";
 
+import {
+  policyServiceFactory,
+  PolicyServiceInitOptions,
+} from "../../admin-console/background/service-factories/policy-service.factory";
+
 import { cryptoServiceFactory, CryptoServiceInitOptions } from "./crypto-service.factory";
 import { CachedServices, factory, FactoryOptions } from "./factory-options";
-import { policyServiceFactory, PolicyServiceInitOptions } from "./policy-service.factory";
 import { stateServiceFactory, StateServiceInitOptions } from "./state-service.factory";
 
 type PasswordGenerationServiceFactoryOptions = FactoryOptions;

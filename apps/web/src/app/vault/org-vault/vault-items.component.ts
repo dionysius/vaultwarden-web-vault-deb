@@ -6,27 +6,27 @@ import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { EventCollectionService } from "@bitwarden/common/abstractions/event/event-collection.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
-import { OrganizationService } from "@bitwarden/common/abstractions/organization/organization.service.abstraction";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { SearchService } from "@bitwarden/common/abstractions/search.service";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { TotpService } from "@bitwarden/common/abstractions/totp.service";
+import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
+import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
+import { CollectionView } from "@bitwarden/common/admin-console/models/view/collection.view";
 import { TokenService } from "@bitwarden/common/auth/abstractions/token.service";
-import { Organization } from "@bitwarden/common/models/domain/organization";
 import { TreeNode } from "@bitwarden/common/models/domain/tree-node";
-import { CollectionView } from "@bitwarden/common/models/view/collection.view";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
 import { PasswordRepromptService } from "@bitwarden/common/vault/abstractions/password-reprompt.service";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 import { DialogService } from "@bitwarden/components";
 
-import { CollectionAdminView } from "../../organizations/core";
-import { GroupService } from "../../organizations/core/services/group/group.service";
 import {
   CollectionDialogResult,
   CollectionDialogTabType,
   openCollectionDialog,
-} from "../../organizations/shared/components/collection-dialog/collection-dialog.component";
+} from "../../admin-console/organizations/shared/components/collection-dialog";
+import { CollectionAdminView } from "../../organizations/core";
+import { GroupService } from "../../organizations/core/services/group/group.service";
 import {
   BulkDeleteDialogResult,
   openBulkDeleteDialog,

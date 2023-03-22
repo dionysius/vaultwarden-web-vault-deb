@@ -2,9 +2,9 @@ import { Component, Input, OnInit } from "@angular/core";
 import { FormBuilder } from "@angular/forms";
 
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
-import { OrganizationApiServiceAbstraction } from "@bitwarden/common/abstractions/organization/organization-api.service.abstraction";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
-import { OrganizationEnrollSecretsManagerRequest } from "@bitwarden/common/models/request/organization/organization-enroll-secrets-manager.request";
+import { OrganizationApiServiceAbstraction } from "@bitwarden/common/admin-console/abstractions/organization/organization-api.service.abstraction";
+import { OrganizationEnrollSecretsManagerRequest } from "@bitwarden/common/admin-console/models/request/organization/organization-enroll-secrets-manager.request";
 import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
 
 import { flagEnabled } from "../../../../utils/flags";

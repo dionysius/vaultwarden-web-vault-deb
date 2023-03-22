@@ -1,15 +1,15 @@
 import { Injectable, OnDestroy } from "@angular/core";
 import { filter, map, Observable, ReplaySubject, Subject, switchMap, takeUntil } from "rxjs";
 
-import { CollectionService } from "@bitwarden/common/abstractions/collection.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
+import { StateService } from "@bitwarden/common/abstractions/state.service";
+import { CollectionService } from "@bitwarden/common/admin-console/abstractions/collection.service";
 import {
   canAccessVaultTab,
   OrganizationService,
-} from "@bitwarden/common/abstractions/organization/organization.service.abstraction";
-import { PolicyService } from "@bitwarden/common/abstractions/policy/policy.service.abstraction";
-import { StateService } from "@bitwarden/common/abstractions/state.service";
-import { Organization } from "@bitwarden/common/models/domain/organization";
+} from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
+import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
+import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
 import { TreeNode } from "@bitwarden/common/models/domain/tree-node";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
 import { FolderService } from "@bitwarden/common/vault/abstractions/folder/folder.service.abstraction";

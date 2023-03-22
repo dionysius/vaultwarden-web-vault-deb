@@ -1,5 +1,12 @@
 import { Jsonify } from "type-fest";
 
+import { CollectionData } from "../../admin-console/models/data/collection.data";
+import { EncryptedOrganizationKeyData } from "../../admin-console/models/data/encrypted-organization-key.data";
+import { OrganizationData } from "../../admin-console/models/data/organization.data";
+import { PolicyData } from "../../admin-console/models/data/policy.data";
+import { ProviderData } from "../../admin-console/models/data/provider.data";
+import { Policy } from "../../admin-console/models/domain/policy";
+import { CollectionView } from "../../admin-console/models/view/collection.view";
 import { AuthenticationStatus } from "../../auth/enums/authentication-status";
 import { EnvironmentUrls } from "../../auth/models/domain/environment-urls";
 import { KdfType } from "../../enums/kdfType";
@@ -10,19 +17,12 @@ import { DeepJsonify } from "../../types/deep-jsonify";
 import { CipherData } from "../../vault/models/data/cipher.data";
 import { FolderData } from "../../vault/models/data/folder.data";
 import { CipherView } from "../../vault/models/view/cipher.view";
-import { CollectionData } from "../data/collection.data";
-import { EncryptedOrganizationKeyData } from "../data/encrypted-organization-key.data";
 import { EventData } from "../data/event.data";
-import { OrganizationData } from "../data/organization.data";
-import { PolicyData } from "../data/policy.data";
-import { ProviderData } from "../data/provider.data";
 import { SendData } from "../data/send.data";
 import { ServerConfigData } from "../data/server-config.data";
-import { CollectionView } from "../view/collection.view";
 import { SendView } from "../view/send.view";
 
 import { EncString } from "./enc-string";
-import { Policy } from "./policy";
 import { SymmetricCryptoKey } from "./symmetric-crypto-key";
 
 export class EncryptionPair<TEncrypted, TDecrypted> {

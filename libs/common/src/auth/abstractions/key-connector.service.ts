@@ -1,4 +1,4 @@
-import { Organization } from "../../models/domain/organization";
+import { Organization } from "../../admin-console/models/domain/organization";
 import { IdentityTokenResponse } from "../models/response/identity-token.response";
 
 export abstract class KeyConnectorService {

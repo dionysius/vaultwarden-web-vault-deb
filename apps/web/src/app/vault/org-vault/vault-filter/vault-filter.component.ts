@@ -1,7 +1,7 @@
 import { Component, Input, OnDestroy, OnInit } from "@angular/core";
 import { firstValueFrom, Subject } from "rxjs";
 
-import { Organization } from "@bitwarden/common/models/domain/organization";
+import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
 import { TreeNode } from "@bitwarden/common/models/domain/tree-node";
 
 import { VaultFilterComponent as BaseVaultFilterComponent } from "../../individual-vault/vault-filter/components/vault-filter.component"; //../../vault/vault-filter/components/vault-filter.component";

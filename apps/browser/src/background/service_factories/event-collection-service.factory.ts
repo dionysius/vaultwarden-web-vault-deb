@@ -2,6 +2,10 @@ import { EventCollectionService as AbstractEventCollectionService } from "@bitwa
 import { EventCollectionService } from "@bitwarden/common/services/event/event-collection.service";
 
 import {
+  organizationServiceFactory,
+  OrganizationServiceInitOptions,
+} from "../../admin-console/background/service-factories/organization-service.factory";
+import {
   cipherServiceFactory,
   CipherServiceInitOptions,
 } from "../../vault/background/service_factories/cipher-service.factory";
@@ -11,10 +15,6 @@ import {
   EventUploadServiceInitOptions,
 } from "./event-upload-service.factory";
 import { FactoryOptions, CachedServices, factory } from "./factory-options";
-import {
-  organizationServiceFactory,
-  OrganizationServiceInitOptions,
-} from "./organization-service.factory";
 import { stateServiceFactory, StateServiceInitOptions } from "./state-service.factory";
 
 type EventCollectionServiceOptions = FactoryOptions;

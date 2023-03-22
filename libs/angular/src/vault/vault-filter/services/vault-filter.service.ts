@@ -1,18 +1,18 @@
 import { Injectable } from "@angular/core";
 import { firstValueFrom, from, mergeMap, Observable } from "rxjs";
 
-import { CollectionService } from "@bitwarden/common/abstractions/collection.service";
+import { StateService } from "@bitwarden/common/abstractions/state.service";
+import { CollectionService } from "@bitwarden/common/admin-console/abstractions/collection.service";
 import {
   isNotProviderUser,
   OrganizationService,
-} from "@bitwarden/common/abstractions/organization/organization.service.abstraction";
-import { PolicyService } from "@bitwarden/common/abstractions/policy/policy.service.abstraction";
-import { StateService } from "@bitwarden/common/abstractions/state.service";
-import { PolicyType } from "@bitwarden/common/enums/policyType";
+} from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
+import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
+import { PolicyType } from "@bitwarden/common/admin-console/enums/policy-type";
+import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
+import { CollectionView } from "@bitwarden/common/admin-console/models/view/collection.view";
 import { ServiceUtils } from "@bitwarden/common/misc/serviceUtils";
-import { Organization } from "@bitwarden/common/models/domain/organization";
 import { TreeNode } from "@bitwarden/common/models/domain/tree-node";
-import { CollectionView } from "@bitwarden/common/models/view/collection.view";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
 import { FolderService } from "@bitwarden/common/vault/abstractions/folder/folder.service.abstraction";
 import { FolderView } from "@bitwarden/common/vault/models/view/folder.view";

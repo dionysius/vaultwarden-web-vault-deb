@@ -2,8 +2,8 @@ import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { EnvironmentService } from "@bitwarden/common/services/environment.service";
 
+import { GroupPolicyEnvironment } from "../admin-console/types/group-policy-environment";
 import { devFlagEnabled, devFlagValue } from "../flags";
-import { GroupPolicyEnvironment } from "../types/group-policy-environment";
 
 export class BrowserEnvironmentService extends EnvironmentService {
   constructor(stateService: StateService, private logService: LogService) {
