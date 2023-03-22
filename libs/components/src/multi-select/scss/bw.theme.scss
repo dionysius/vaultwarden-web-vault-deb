@@ -12,6 +12,7 @@ $ng-select-border: rgb(var(--color-secondary-500)) !default;
 $ng-select-border-radius: 4px !default;
 $ng-select-bg: rgb(var(--color-background-alt)) !default;
 $ng-select-selected: transparent !default;
+$ng-select-selected-alt: rgb(var(--color-text-main) / 0.06) !default;
 $ng-select-selected-text: $ng-select-primary-text !default;
 
 $ng-select-marked: rgb(var(--color-text-main) / 0.12) !default;
@@ -356,10 +357,15 @@ $ng-dropdown-shadow: rgb(var(--color-secondary-100)) !default;
       background-color: $ng-select-dropdown-option-bg;
       color: $ng-select-dropdown-option-text;
       padding: 8px 10px;
+      &.ng-option-selected {
+        background-color: $ng-select-selected-alt;
+      }
+      &.ng-option-selected.ng-option-marked {
+        background-color: $ng-select-marked;
+      }
       &.ng-option-selected,
       &.ng-option-selected.ng-option-marked {
         color: $ng-select-selected-text;
-        background-color: $ng-select-selected;
         .ng-option-label {
           font-weight: 600;
         }
