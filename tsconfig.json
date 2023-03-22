@@ -3,7 +3,7 @@
     "pretty": true,
     "moduleResolution": "node",
     "noImplicitAny": true,
-    "target": "ES6",
+    "target": "ES2016",
     "module": "ES2020",
     "lib": ["es5", "es6", "es7", "dom"],
     "sourceMap": true,
@@ -25,7 +25,8 @@
       {
         "transform": "typescript-transform-paths"
       }
-    ]
+    ],
+    "useDefineForClassFields": false
   },
   "include": ["apps/web/src/**/*", "libs/*/src/**/*", "bitwarden_license/bit-web/src/**/*"],
   "exclude": ["apps/web/src/**/*.spec.ts", "libs/*/src/**/*.spec.ts"]

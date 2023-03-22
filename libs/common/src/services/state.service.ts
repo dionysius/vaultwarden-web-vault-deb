@@ -2901,7 +2901,7 @@ function withPrototypeForArrayMembers<T>(
       value: function (...args: any[]) {
         const originalResult: Promise<any[]> = originalMethod.apply(this, args);
 
-        if (!(originalResult instanceof Promise)) {
+        if (!Utils.isPromise(originalResult)) {
           throw new Error(
             `Error applying prototype to stored value -- result is not a promise for method ${String(
               propertyKey
@@ -2949,7 +2949,7 @@ function withPrototypeForObjectValues<T>(
       value: function (...args: any[]) {
         const originalResult: Promise<{ [key: string]: T }> = originalMethod.apply(this, args);
 
-        if (!(originalResult instanceof Promise)) {
+        if (!Utils.isPromise(originalResult)) {
           throw new Error(
             `Error applying prototype to stored value -- result is not a promise for method ${String(
               propertyKey

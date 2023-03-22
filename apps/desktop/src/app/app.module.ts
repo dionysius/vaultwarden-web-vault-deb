@@ -1,4 +1,4 @@
-import "zone.js/dist/zone";
+import "zone.js";
 
 // Register the locales for the application
 import "./locales";

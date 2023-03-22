@@ -3,6 +3,7 @@ import {
   Component,
   ContentChildren,
   EventEmitter,
+  forwardRef,
   Input,
   Output,
   QueryList,
@@ -16,7 +17,7 @@ import { NavItemComponent } from "./nav-item.component";
   templateUrl: "./nav-group.component.html",
 })
 export class NavGroupComponent extends NavBaseComponent implements AfterContentInit {
-  @ContentChildren(NavGroupComponent, {
+  @ContentChildren(forwardRef(() => NavGroupComponent), {
     descendants: true,
   })
   nestedGroups!: QueryList<NavGroupComponent>;

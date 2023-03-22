@@ -41,10 +41,6 @@ export class TwoFactorComponent extends CaptchaProtectedComponent implements OnI
   onSuccessfulLogin: () => Promise<any>;
   onSuccessfulLoginNavigate: () => Promise<any>;
 
-  get webAuthnAllow(): string {
-    return `publickey-credentials-get ${this.environmentService.getWebVaultUrl()}`;
-  }
-
   protected loginRoute = "login";
   protected successRoute = "vault";
 
