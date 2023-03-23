@@ -6,7 +6,6 @@ export class PasswordlessCreateAuthRequest {
     readonly deviceIdentifier: string,
     readonly publicKey: string,
     readonly type: AuthRequestType,
-    readonly accessCode: string,
-    readonly fingerprintPhrase: string
+    readonly accessCode: string
   ) {}
 }

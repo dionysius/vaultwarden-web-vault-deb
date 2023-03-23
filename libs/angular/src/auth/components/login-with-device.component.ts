@@ -35,6 +35,7 @@ export class LoginWithDeviceComponent
   email: string;
   showResendNotification = false;
   passwordlessRequest: PasswordlessCreateAuthRequest;
+  fingerprintPhrase: string;
   onSuccessfulLoginTwoFactorNavigate: () => Promise<any>;
   onSuccessfulLogin: () => Promise<any>;
   onSuccessfulLoginNavigate: () => Promise<any>;
@@ -170,20 +171,20 @@ export class LoginWithDeviceComponent
 
   private async buildAuthRequest() {
     this.authRequestKeyPair = await this.cryptoFunctionService.rsaGenerateKeyPair(2048);
-    const fingerprint = await (
-      await this.cryptoService.getFingerprint(this.email, this.authRequestKeyPair[0])
-    ).join("-");
     const deviceIdentifier = await this.appIdService.getAppId();
     const publicKey = Utils.fromBufferToB64(this.authRequestKeyPair[0]);
     const accessCode = await this.passwordGenerationService.generatePassword({ length: 25 });
+
+    this.fingerprintPhrase = (
+      await this.cryptoService.getFingerprint(this.email, this.authRequestKeyPair[0])
+    ).join("-");
 
     this.passwordlessRequest = new PasswordlessCreateAuthRequest(
       this.email,
       deviceIdentifier,
       publicKey,
       AuthRequestType.AuthenticateAndUnlock,
-      accessCode,
-      fingerprint
+      accessCode
     );
   }
 
