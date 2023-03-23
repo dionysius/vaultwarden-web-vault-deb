@@ -98,6 +98,10 @@
               {
                 "target": "./libs/common/**/*",
                 "from": "./libs/node/**/*"
+              },
+              {
+                "target": "./libs/common/**/*",
+                "from": "./libs/importer/**/*"
               }
             ]
           }
@@ -149,6 +153,12 @@
       "files": ["libs/node/src/**/*.ts"],
       "rules": {
         "no-restricted-imports": ["error", { "patterns": ["@bitwarden/node/*", "src/**/*"] }]
+      }
+    },
+    {
+      "files": ["libs/importer/src/**/*.ts"],
+      "rules": {
+        "no-restricted-imports": ["error", { "patterns": ["@bitwarden/importer/*", "src/**/*"] }]
       }
     }
   ]

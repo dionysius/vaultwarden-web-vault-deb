@@ -6,14 +6,17 @@ import Swal, { SweetAlertIcon } from "sweetalert2";
 
 import { ModalService } from "@bitwarden/angular/services/modal.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
-import { ImportService } from "@bitwarden/common/abstractions/import/import.service.abstraction";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
 import { PolicyType } from "@bitwarden/common/admin-console/enums/policy-type";
-import { ImportOption, ImportType } from "@bitwarden/common/enums/importOptions";
-import { ImportError } from "@bitwarden/common/importers/import-error";
 import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
+import {
+  ImportOption,
+  ImportType,
+  ImportError,
+  ImportServiceAbstraction,
+} from "@bitwarden/importer";
 
 import { FilePasswordPromptComponent } from "./file-password-prompt.component";
 
@@ -36,7 +39,7 @@ export class ImportComponent implements OnInit {
 
   constructor(
     protected i18nService: I18nService,
-    protected importService: ImportService,
+    protected importService: ImportServiceAbstraction,
     protected router: Router,
     protected platformUtilsService: PlatformUtilsService,
     protected policyService: PolicyService,

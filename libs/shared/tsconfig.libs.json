@@ -4,7 +4,8 @@
     "paths": {
       "@bitwarden/common/*": ["../common/src/*"],
       "@bitwarden/angular/*": ["../angular/src/*"],
-      "@bitwarden/node/*": ["../node/src/*"]
+      "@bitwarden/node/*": ["../node/src/*"],
+      "@bitwarden/importer": ["../importer/src"]
     }
   }
 }

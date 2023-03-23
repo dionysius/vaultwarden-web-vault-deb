@@ -3,12 +3,12 @@ import { ActivatedRoute, Router } from "@angular/router";
 
 import { ModalService } from "@bitwarden/angular/services/modal.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
-import { ImportService } from "@bitwarden/common/abstractions/import/import.service.abstraction";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
 import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
+import { ImportServiceAbstraction } from "@bitwarden/importer";
 
 import { ImportComponent } from "../../../../tools/import-export/import.component";
 
@@ -22,7 +22,7 @@ export class OrganizationImportComponent extends ImportComponent {
 
   constructor(
     i18nService: I18nService,
-    importService: ImportService,
+    importService: ImportServiceAbstraction,
     router: Router,
     private route: ActivatedRoute,
     platformUtilsService: PlatformUtilsService,
