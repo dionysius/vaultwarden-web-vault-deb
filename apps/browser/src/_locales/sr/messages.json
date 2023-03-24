@@ -2124,7 +2124,7 @@
     "message": "Како ауто-попуњавати"
   },
   "autofillSelectInfoWithCommand": {
-    "message": "Select an item from this page or use the shortcut: $COMMAND$",
+    "message": "Изаберите ставку са ове странице или користите пречицу: $COMMAND$",
     "placeholders": {
       "command": {
         "content": "$1",
@@ -2133,7 +2133,7 @@
     }
   },
   "autofillSelectInfoWithoutCommand": {
-    "message": "Select an item from this page or set a shortcut in settings."
+    "message": "Изаберите ставку са ове странице или поставите пречицу у подешавањима."
   },
   "gotIt": {
     "message": "Разумем"

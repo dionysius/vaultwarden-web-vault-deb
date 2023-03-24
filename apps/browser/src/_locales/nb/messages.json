@@ -1412,7 +1412,7 @@
     "message": "Klon"
   },
   "passwordGeneratorPolicyInEffect": {
-    "message": "En eller flere av organisasjonens vilkår påvirker generatorinnstillingene dine."
+    "message": "En eller flere av virksomhetens regler påvirker generatorinnstillingene dine."
   },
   "vaultTimeoutAction": {
     "message": "Handling ved tidsavbrudd i hvelvet"
@@ -1465,7 +1465,7 @@
     "message": "Angi hovedpassord"
   },
   "masterPasswordPolicyInEffect": {
-    "message": "Ett eller flere av organisasjonens vilkår krever at hovedpassordet oppfyller følgende krav:"
+    "message": "En eller flere av virksomhetens regler krever at hovedpassordet oppfyller følgende krav:"
   },
   "policyInEffectMinComplexity": {
     "message": "Minimumspoengsum for kompleksistet er $SCORE$",
@@ -1504,7 +1504,7 @@
     }
   },
   "masterPasswordPolicyRequirementsNotMet": {
-    "message": "Det nye hovedpassordet ditt oppfyller ikke vilkårene."
+    "message": "Det nye hovedpassordet ditt oppfyller ikke vilkår i virksomhetsreglene."
   },
   "acceptPolicies": {
     "message": "Ved å merke av denne boksen sier du deg enig i følgende:"
@@ -1585,10 +1585,10 @@
     "message": "Denne handlingen kan ikke gjøres i sidestolpen, prøv på nytt i sprettoppvinduet eller popvindu."
   },
   "personalOwnershipSubmitError": {
-    "message": "På grunn av bedrifsretningslinjer er du begrenset fra å lagre objekter til ditt personlige hvelv. Endre alternativ for eierskap til en organisasjon og velg blant tilgjengelige samlinger."
+    "message": "På grunn av en virksomhetsregel er du begrenset fra å lagre objekter til ditt personlige hvelv. Endre alternativ for eierskap til en organisasjon og velg blant tilgjengelige samlinger."
   },
   "personalOwnershipPolicyInEffect": {
-    "message": "En bedriftsretningslinje påvirker dine eierskapsinnstillinger."
+    "message": "En virksomhetsregel påvirker dine eierskapsinnstillinger."
   },
   "excludedDomains": {
     "message": "Ekskluderte domener"
@@ -1818,7 +1818,7 @@
     "message": "Skjul min e-postadresse fra mottakere."
   },
   "sendOptionsPolicyInEffect": {
-    "message": "En eller flere av organisasjons retningslinjer påvirker generatorinnstillingene dine."
+    "message": "En eller flere av virksomhetens regler påvirker generatorinnstillingene dine."
   },
   "passwordPrompt": {
     "message": "Forespørsel om hovedpassord på nytt"
@@ -1848,7 +1848,7 @@
     "message": "Automatisk registrering"
   },
   "resetPasswordAutoEnrollInviteWarning": {
-    "message": "Denne organisasjonen har en bedriftsoppsettsregel som automatisk innrullerer deg i tilbakestilling av passord. Registrering vil tillate organisasjonsadministratorer å endre hovedpassordet ditt."
+    "message": "Denne organisasjonen har en virksomhetsregel som automatisk innrullerer deg i tilbakestilling av passord. Registrering vil tillate organisasjonsadministratorer å endre hovedpassordet ditt."
   },
   "selectFolder": {
     "message": "Velg mappe …"
@@ -1863,7 +1863,7 @@
     "message": "Minutter"
   },
   "vaultTimeoutPolicyInEffect": {
-    "message": "Organisasjonens retningslinjer påvirker tidsavbruddet for hvelvet ditt. Maksimalt tillatt tidsavbrudd for hvelv er $HOURS$ time(r) og $MINUTES$ minutt(er)",
+    "message": "Din virksomhets regler påvirker tidsavbruddet for hvelvet ditt. Maksimalt tillatt tidsavbrudd for hvelv er $HOURS$ time(r) og $MINUTES$ minutt(er)",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -1882,7 +1882,7 @@
     "message": "Hvelveksportering er skrudd av"
   },
   "personalVaultExportPolicyInEffect": {
-    "message": "En eller flere regler i organisasjonsoppsettet forhindrer deg i å eksportere ditt personlige hvelv."
+    "message": "En eller flere virksomhetsregler forhindrer deg i å eksportere ditt personlige hvelv."
   },
   "copyCustomFieldNameInvalidElement": {
     "message": "Klarte ikke å identifisere et gyldig skjemaelement. Prøv å inspisere HTML-en i stedet."
@@ -2118,13 +2118,13 @@
     }
   },
   "autofillPageLoadPolicyActivated": {
-    "message": "Your organization policies have turned on auto-fill on page load."
+    "message": "Virksomhetsreglene dine har slått på automatisk utfylling av sidene."
   },
   "howToAutofill": {
     "message": "Hvordan bruke auto-utfylling"
   },
   "autofillSelectInfoWithCommand": {
-    "message": "Select an item from this page or use the shortcut: $COMMAND$",
+    "message": "Velg et element fra denne siden eller bruk snarveien: $COMMAND$",
     "placeholders": {
       "command": {
         "content": "$1",
@@ -2133,7 +2133,7 @@
     }
   },
   "autofillSelectInfoWithoutCommand": {
-    "message": "Select an item from this page or set a shortcut in settings."
+    "message": "Velg et element fra denne siden eller angi en snarvei i innstillingene."
   },
   "gotIt": {
     "message": "Skjønner"

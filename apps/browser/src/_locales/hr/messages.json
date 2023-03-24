@@ -196,13 +196,13 @@
     "message": "Pomoć i povratne informacije"
   },
   "helpCenter": {
-    "message": "Bitwarden Help center"
+    "message": "Bitwarden centar za pomoć"
   },
   "communityForums": {
-    "message": "Explore Bitwarden community forums"
+    "message": "Istraži forume zajednice Bitwarden"
   },
   "contactSupport": {
-    "message": "Contact Bitwarden support"
+    "message": "Kontaktiraj Bitwarden pomoć"
   },
   "sync": {
     "message": "Sinkronizacija"
@@ -439,7 +439,7 @@
     "message": "Potreban je ponovni unos glavne lozinke."
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least $VALUE$ characters long.",
+    "message": "Glavna lozinka mora imati najmanje $VALUE$ znakova.",
     "description": "The Master Password must be at least a specific number of characters long.",
     "placeholders": {
       "value": {
@@ -976,10 +976,10 @@
     "message": "Nakon učitavanja web stranice, ako je otkriven obrazac za prijavu, auto-ispuni."
   },
   "experimentalFeature": {
-    "message": "Compromised or untrusted websites can exploit auto-fill on page load."
+    "message": "Ugrožene ili nepouzdane web stranice mogu iskoristiti auto-ispunu prilikom učitavanja stranice."
   },
   "learnMoreAboutAutofill": {
-    "message": "Learn more about auto-fill"
+    "message": "Saznaj više o auto-ispuni"
   },
   "defaultAutoFillOnPageLoad": {
     "message": "Zadana postvaka Auto-ispune za prijave"
@@ -2064,52 +2064,52 @@
     "message": "Zapamti adresu e-pošte"
   },
   "loginWithDevice": {
-    "message": "Log in with device"
+    "message": "Prijava uređajem"
   },
   "loginWithDeviceEnabledInfo": {
-    "message": "Log in with device must be set up in the settings of the Bitwarden app. Need another option?"
+    "message": "Prijava uređajem mora biti namještena u postavka Bitwarden mobilne aplikacije. Trebaš drugu opciju?"
   },
   "fingerprintPhraseHeader": {
-    "message": "Fingerprint phrase"
+    "message": "Jedinstvena fraza"
   },
   "fingerprintMatchInfo": {
-    "message": "Please make sure your vault is unlocked and the Fingerprint phrase matches on the other device."
+    "message": "Provjeri je li trezor otključan i slaže li se jedinstvena fraza s drugim uređajem."
   },
   "resendNotification": {
-    "message": "Resend notification"
+    "message": "Ponovno pošalji obavijest"
   },
   "viewAllLoginOptions": {
-    "message": "View all log in options"
+    "message": "Pogledaj sve mogućnosti prijave"
   },
   "notificationSentDevice": {
-    "message": "A notification has been sent to your device."
+    "message": "Obavijest je poslana na tvoj uređaj."
   },
   "logInInitiated": {
-    "message": "Log in initiated"
+    "message": "Pokrenuta prijava"
   },
   "exposedMasterPassword": {
-    "message": "Exposed Master Password"
+    "message": "Ukradena glavna lozinka"
   },
   "exposedMasterPasswordDesc": {
-    "message": "Password found in a data breach. Use a unique password to protect your account. Are you sure you want to use an exposed password?"
+    "message": "Lozinka je nađena među ukradenima tijekom krađa podataka. Za zaštitu svog računa koristi jedinstvenu lozinku. Želiš li svejedno korisiti ukradenu lozinku?"
   },
   "weakAndExposedMasterPassword": {
-    "message": "Weak and Exposed Master Password"
+    "message": "Slaba i ukradena glavna lozinka"
   },
   "weakAndBreachedMasterPasswordDesc": {
-    "message": "Weak password identified and found in a data breach. Use a strong and unique password to protect your account. Are you sure you want to use this password?"
+    "message": "Slaba lozinka je nađena među ukradenima tijekom krađa podataka. Za zaštitu svog računa koristi jaku i jedinstvenu lozinku. Želiš li svejedno korisiti slabu, ukradenu lozinku?"
   },
   "checkForBreaches": {
-    "message": "Check known data breaches for this password"
+    "message": "Provjeri je li lozinka ukradena prilikom krađe podataka"
   },
   "important": {
-    "message": "Important:"
+    "message": "Važno:"
   },
   "masterPasswordHint": {
-    "message": "Your master password cannot be recovered if you forget it!"
+    "message": "Glavnu lozinku nije moguće oporaviti ako ju zaboraviš!"
   },
   "characterMinimum": {
-    "message": "$LENGTH$ character minimum",
+    "message": "najmanje $LENGTH$ znakova",
     "placeholders": {
       "length": {
         "content": "$1",
@@ -2118,13 +2118,13 @@
     }
   },
   "autofillPageLoadPolicyActivated": {
-    "message": "Your organization policies have turned on auto-fill on page load."
+    "message": "Prema pravilima tvoje organizacije uključena je auto-ispuna prilikom učitavanja stranice."
   },
   "howToAutofill": {
-    "message": "How to auto-fill"
+    "message": "Kako auto-ispuniti"
   },
   "autofillSelectInfoWithCommand": {
-    "message": "Select an item from this page or use the shortcut: $COMMAND$",
+    "message": "Odaberi stavku s ove stranice ili koristi prečac $COMMAND$",
     "placeholders": {
       "command": {
         "content": "$1",
@@ -2133,22 +2133,22 @@
     }
   },
   "autofillSelectInfoWithoutCommand": {
-    "message": "Select an item from this page or set a shortcut in settings."
+    "message": "Odaberi stavku s ove stranice ili namjesti prečac u postavkama."
   },
   "gotIt": {
-    "message": "Got it"
+    "message": "U redu"
   },
   "autofillSettings": {
-    "message": "Auto-fill settings"
+    "message": "Postavke auto-ispune"
   },
   "autofillShortcut": {
-    "message": "Auto-fill keyboard shortcut"
+    "message": "Tipkovnički precač auto-ispune"
   },
   "autofillShortcutNotSet": {
-    "message": "The auto-fill shortcut is not set. Change this in the browser's settings."
+    "message": "Prečac auto-ispune nije postavljen. Promijeni u postavkama preglednika."
   },
   "autofillShortcutText": {
-    "message": "The auto-fill shortcut is: $COMMAND$. Change this in the browser's settings.",
+    "message": "Prečac auto-ispune je: $COMMAND$. Promijeni u postavkama preglednika.",
     "placeholders": {
       "command": {
         "content": "$1",
@@ -2157,7 +2157,7 @@
     }
   },
   "autofillShortcutTextSafari": {
-    "message": "Default auto-fill shortcut: $COMMAND$.",
+    "message": "Zadani prečac auto-ispune: $COMMAND$.",
     "placeholders": {
       "command": {
         "content": "$1",

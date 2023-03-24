@@ -196,13 +196,13 @@
     "message": "Help & Feedback"
   },
   "helpCenter": {
-    "message": "Bitwarden Help center"
+    "message": "बिटवॉर्डेन सहायता केंद्र"
   },
   "communityForums": {
     "message": "Explore Bitwarden community forums"
   },
   "contactSupport": {
-    "message": "Contact Bitwarden support"
+    "message": "बिटवॉर्डेन सहायता से संपर्क करें"
   },
   "sync": {
     "message": "सिंक"
@@ -357,7 +357,7 @@
     "message": "ताला खोलें"
   },
   "loggedInAsOn": {
-    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
+    "message": "$HOSTNAME$ पर $EMAIL$ के रूप में लॉग इन किया है।",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -439,7 +439,7 @@
     "message": "मास्टर पासवर्ड पुनः डालने की आवश्यकता है।"
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least $VALUE$ characters long.",
+    "message": "मास्टर पासवर्ड कम से कम $VALUE$ अक्षर लंबा होना चाहिए।",
     "description": "The Master Password must be at least a specific number of characters long.",
     "placeholders": {
       "value": {
@@ -464,7 +464,7 @@
     "message": "सत्यापन कोड अवैध है"
   },
   "valueCopied": {
-    "message": "$VALUE$ copied",
+    "message": "$VALUE$ कॉपी हो गया है।",
     "description": "Value has been copied to the clipboard.",
     "placeholders": {
       "value": {

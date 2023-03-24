@@ -1628,7 +1628,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "maxAccessCountReached": {
-    "message": "Досягнуто максимальну кількість доступів",
+    "message": "Досягнуто максимальної кількості доступів",
     "description": "This text will be displayed after a Send has been accessed the maximum amount of times."
   },
   "expired": {
@@ -2124,7 +2124,7 @@
     "message": "Як працює автозаповнення"
   },
   "autofillSelectInfoWithCommand": {
-    "message": "Select an item from this page or use the shortcut: $COMMAND$",
+    "message": "Виберіть елемент з цієї сторінки або використайте комбінацію клавіш: $COMMAND$",
     "placeholders": {
       "command": {
         "content": "$1",
@@ -2133,7 +2133,7 @@
     }
   },
   "autofillSelectInfoWithoutCommand": {
-    "message": "Select an item from this page or set a shortcut in settings."
+    "message": "Виберіть елемент з цієї сторінки або встановіть комбінацію клавіш у налаштуваннях."
   },
   "gotIt": {
     "message": "Зрозуміло"

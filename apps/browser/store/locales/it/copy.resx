@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Name" xml:space="preserve">
-    <value>Bitwarden – Gestore di password gratuito</value>
+    <value>Bitwarden – Gestore di Password Gratuito</value>
   </data>
   <data name="Summary" xml:space="preserve">
     <value>Un gestore di password sicuro e gratuito per tutti i tuoi dispositivi</value>
@@ -126,29 +126,30 @@
   <data name="Description" xml:space="preserve">
     <value>Bitwarden, Inc. è la società madre di 8bit Solutions LLC.
 
-NOMINATO MIGLIOR PASSWORD MANAGER DA THE VERGE, US NEWS &amp; WORLD REPORT, CNET E ALTRO.
+NOMINATO MIGLIOR PASSWORD MANAGER DA THE VERGE, U.S. NEWS &amp; WORLD REPORT, CNET, E ALTRO.
 
-Gestisci, archivia, proteggi e condividi password illimitate su dispositivi illimitati da qualsiasi luogo. Bitwarden offre soluzioni di gestione delle password open source a tutti, a casa, al lavoro o in viaggio.
+Gestisci, archivia, proteggi, e condividi password illimitate su dispositivi illimitati da qualsiasi luogo. Bitwarden offre soluzioni di gestione delle password open-source a tutti, a casa, al lavoro, o in viaggio.
 
-Genera password complesse, uniche e casuali in base ai requisiti di sicurezza per ogni sito web che frequenti.
+Genera password forti, uniche, e casuali in base ai requisiti di sicurezza per ogni sito web che frequenti.
 
-Bitwarden Send trasmette rapidamente informazioni cifrate --- file e testo in chiaro - direttamente a chiunque.
+Bitwarden Send trasmette rapidamente informazioni criptate - via file e testo in chiaro - direttamente a chiunque.
 
-Bitwarden offre piani Teams ed Enterprise per le aziende in modo da poter condividere le password in modo sicuro con i colleghi.
+Bitwarden offre piani Teams ed Enterprise per le aziende così puoi condividere le password in modo sicuro con i tuoi colleghi.
 
-Perché scegliere Bitwarden:
+Perché Scegliere Bitwarden:
 
-Crittografia di livello mondiale
-Le password sono protette con cifratura end-to-end avanzata (AES-256 bit, hashtag con sale e PBKDF2 SHA-256) in modo che i tuoi dati rimangano al sicuro e privati.
+Criptografia Di Livello Mondiale
+Le password sono protette con criptografia end-to-end avanzata (AES-256 bit, salted hashing, e PBKDF2 SHA-256) per tenere i tuoi dati al sicuro e privati.
 
-Generatore di password integrato
-Genera password complesse, uniche e casuali in base ai requisiti di sicurezza per ogni sito web che frequenti.
+Generatore Di Password Integrato
+Genera password forti, uniche e casuali in base ai requisiti di sicurezza per ogni sito web che frequenti.
 
-Traduzioni globali
-Le traduzioni di Bitwarden esistono in 40 lingue e sono in crescita, grazie alla nostra comunità globale.
+Traduzioni Globali
+Le traduzioni di Bitwarden esistono in 40 lingue e sono in crescita grazie alla nostra comunità globale.
 
-Applicazioni multipiattaforma
-Proteggi e condividi i dati sensibili all'interno del tuo Bitwarden Vault da qualsiasi browser, dispositivo mobile o sistema operativo desktop e altro ancora.</value>
+Applicazioni Multipiattaforma
+Proteggi e condividi i dati sensibili all'interno della tua cassaforte di Bitwarden da qualsiasi browser, dispositivo mobile, o sistema operativo desktop, e altro.
+</value>
   </data>
   <data name="AssetTitle" xml:space="preserve">
     <value>Un gestore di password sicuro e gratuito per tutti i tuoi dispositivi</value>
@@ -157,18 +158,18 @@ Proteggi e condividi i dati sensibili all'interno del tuo Bitwarden Vault da qua
     <value>Sincronizza e accedi alla tua cassaforte da più dispositivi</value>
   </data>
   <data name="ScreenshotVault" xml:space="preserve">
-    <value>Gestisci tutte le tue password ed i tuoi login da una cassaforte sicura</value>
+    <value>Gestisci tutte le tue password e i tuoi login da una cassaforte sicura</value>
   </data>
   <data name="ScreenshotAutofill" xml:space="preserve">
-    <value>Completa velocemente tutte le tue credenziali di accesso in qualunque sito tu visiti</value>
+    <value>Riempi velocemente le tue credenziali di accesso in qualunque sito che visiti</value>
   </data>
   <data name="ScreenshotMenu" xml:space="preserve">
-    <value>La tua cassaforte è facilmente accessibile dal menu contestuale del tasto destro del mouse</value>
+    <value>La tua cassaforte è facilmente accessibile dal menu contestuale (tasto destro del mouse)</value>
   </data>
   <data name="ScreenshotPassword" xml:space="preserve">
     <value>Genera automaticamente password complesse, casuali e sicure</value>
   </data>
   <data name="ScreenshotEdit" xml:space="preserve">
-    <value>Le tue informazioni sono salvate in modo sicuro grazie all'algoritmo di cifratura AES-256</value>
+    <value>Le tue informazioni sono salvate in modo sicuro grazie all'algoritmo di criptografia AES-256</value>
   </data>
 </root>
