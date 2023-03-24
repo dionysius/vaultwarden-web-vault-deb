@@ -542,7 +542,7 @@
     "message": "Potreban je ponovni unos glavne lozinke."
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least $VALUE$ characters long.",
+    "message": "Glavna lozinka mora imati najmanje $VALUE$ znakova.",
     "description": "The Master Password must be at least a specific number of characters long.",
     "placeholders": {
       "value": {
@@ -2066,35 +2066,35 @@
     "message": "Prijava drugim uređajem"
   },
   "logInInitiated": {
-    "message": "Log in initiated"
+    "message": "Pokrenuta prijava"
   },
   "notificationSentDevice": {
-    "message": "A notification has been sent to your device."
+    "message": "Obavijest je poslana na tvoj uređaj."
   },
   "fingerprintMatchInfo": {
-    "message": "Please make sure your vault is unlocked and Fingerprint phrase matches the other device."
+    "message": "Provjeri je li trezor otključan i slaže li se jedinstvena fraza s drugim uređajem."
   },
   "fingerprintPhraseHeader": {
-    "message": "Fingerprint phrase"
+    "message": "Jedinstvena fraza"
   },
   "needAnotherOption": {
-    "message": "Log in with device must be set up in the settings of the Bitwarden app. Need another option?"
+    "message": "Prijava uređajem mora biti namještena u postavka Bitwarden mobilne aplikacije. Trebaš drugu opciju?"
   },
   "viewAllLoginOptions": {
-    "message": "View all login options"
+    "message": "Pogledaj sve mogućnosti prijave"
   },
   "resendNotification": {
-    "message": "Resend notification"
+    "message": "Ponovno pošalji obavijest"
   },
   "toggleCharacterCount": {
-    "message": "Toggle character count",
+    "message": "Prikaži/Sakrij broj znakova",
     "description": "'Character count' describes a feature that displays a number next to each character of the password."
   },
   "areYouTryingtoLogin": {
-    "message": "Are you trying to log in?"
+    "message": "Pokušavaš li se prijaviti?"
   },
   "logInAttemptBy": {
-    "message": "Login attempt by $EMAIL$",
+    "message": "$EMAIL$ se pokušava prijaviti",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -2103,25 +2103,25 @@
     }
   },
   "deviceType": {
-    "message": "Device Type"
+    "message": "Vrsta uređaja"
   },
   "ipAddress": {
-    "message": "IP Address"
+    "message": "IP Adresa"
   },
   "time": {
-    "message": "Time"
+    "message": "Vrijeme"
   },
   "confirmLogIn": {
-    "message": "Confirm login"
+    "message": "Potvrdi prijavu"
   },
   "denyLogIn": {
-    "message": "Deny login"
+    "message": "Odbij prijavu"
   },
   "approveLoginRequests": {
-    "message": "Approve login requests"
+    "message": "Odobri pokušaje prijave"
   },
   "logInConfirmedForEmailOnDevice": {
-    "message": "Login confirmed for $EMAIL$ on $DEVICE$",
+    "message": "Prijava za $EMAIL$ potvrđena na uređaju $DEVICE$",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -2134,13 +2134,13 @@
     }
   },
   "youDeniedALogInAttemptFromAnotherDevice": {
-    "message": "You denied a login attempt from another device. If this really was you, try to log in with the device again."
+    "message": "Odbijena je prijava na drugom uređaju. Ako si ovo stvarno ti, pokušaj se ponovno prijaviti uređajem."
   },
   "justNow": {
-    "message": "Just now"
+    "message": "Upravo"
   },
   "requestedXMinutesAgo": {
-    "message": "Requested $MINUTES$ minutes ago",
+    "message": "Zatraženo prije $MINUTES$ minute/a",
     "placeholders": {
       "minutes": {
         "content": "$1",
@@ -2149,16 +2149,16 @@
     }
   },
   "loginRequestHasAlreadyExpired": {
-    "message": "Login request has already expired."
+    "message": "Zahtjev za prijavu je već istekao."
   },
   "thisRequestIsNoLongerValid": {
-    "message": "This request is no longer valid."
+    "message": "Ovaj zahtjev više nije valjan."
   },
   "approveLoginRequestDesc": {
-    "message": "Use this device to approve login requests made from other devices."
+    "message": "Koristi ovaj uređaj za odobrenje zahtjeva za prijavu na drugim uređajima."
   },
   "confirmLoginAtemptForMail": {
-    "message": "Confirm login attempt for $EMAIL$",
+    "message": "Potvrdi pokušaj prijave za $EMAIL$",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -2167,31 +2167,31 @@
     }
   },
   "logInRequested": {
-    "message": "Log in requested"
+    "message": "Zatražena je prijava"
   },
   "exposedMasterPassword": {
-    "message": "Exposed Master Password"
+    "message": "Ukradena glavna lozinka"
   },
   "exposedMasterPasswordDesc": {
-    "message": "Password found in a data breach. Use a unique password to protect your account. Are you sure you want to use an exposed password?"
+    "message": "Lozinka je nađena među ukradenima tijekom krađa podataka. Za zaštitu svog računa koristi jedinstvenu lozinku. Želiš li svejedno korisiti ukradenu lozinku?"
   },
   "weakAndExposedMasterPassword": {
-    "message": "Weak and Exposed Master Password"
+    "message": "Slaba i ukradena glavna lozinka"
   },
   "weakAndBreachedMasterPasswordDesc": {
-    "message": "Weak password identified and found in a data breach. Use a strong and unique password to protect your account. Are you sure you want to use this password?"
+    "message": "Slaba lozinka je nađena među ukradenima tijekom krađa podataka. Za zaštitu svog računa koristi jaku i jedinstvenu lozinku. Želiš li svejedno korisiti slabu, ukradenu lozinku?"
   },
   "checkForBreaches": {
-    "message": "Check known data breaches for this password"
+    "message": "Provjeri je li lozinka ukradena prilikom krađe podataka"
   },
   "important": {
-    "message": "Important:"
+    "message": "Važno:"
   },
   "masterPasswordHint": {
-    "message": "Your master password cannot be recovered if you forget it!"
+    "message": "Glavnu lozinku nije moguće oporaviti ako ju zaboraviš!"
   },
   "characterMinimum": {
-    "message": "$LENGTH$ character minimum",
+    "message": "najmanje $LENGTH$ znakova",
     "placeholders": {
       "length": {
         "content": "$1",

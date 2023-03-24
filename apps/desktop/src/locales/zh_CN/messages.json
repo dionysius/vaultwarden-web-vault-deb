@@ -9,7 +9,7 @@
     "message": "所有项目"
   },
   "favorites": {
-    "message": "我的收藏"
+    "message": "收藏夹"
   },
   "types": {
     "message": "类型"
@@ -145,7 +145,7 @@
     "message": "品牌"
   },
   "expiration": {
-    "message": "到期日"
+    "message": "过期日"
   },
   "securityCode": {
     "message": "安全码"
@@ -245,10 +245,10 @@
     "message": "博士"
   },
   "expirationMonth": {
-    "message": "到期月份"
+    "message": "过期月份"
   },
   "expirationYear": {
-    "message": "到期年份"
+    "message": "过期年份"
   },
   "select": {
     "message": "选择"
@@ -542,7 +542,7 @@
     "message": "必须填写确认主密码。"
   },
   "masterPasswordMinlength": {
-    "message": "主密码至少需要 $VALUE$ 个字符。",
+    "message": "主密码必须至少 $VALUE$ 个字符长度。",
     "description": "The Master Password must be at least a specific number of characters long.",
     "placeholders": {
       "value": {
@@ -747,7 +747,7 @@
     "message": "添加新登录"
   },
   "addNewItem": {
-    "message": "添加新项目"
+    "message": "新增项目"
   },
   "addNewFolder": {
     "message": "添加文件夹"
@@ -837,7 +837,7 @@
     "message": "无效的主密码"
   },
   "twoStepLoginConfirmation": {
-    "message": "两步登录要求您从其他设备（例如安全钥匙、验证器应用、短信、电话或者电子邮件）来验证您的登录，这能使您的账户更加安全。两步登录需要在 bitwarden.com 网页版密码中设置。您现在要访问这个网站吗？"
+    "message": "两步登录要求您从其他设备（例如安全钥匙、验证器应用、短信、电话或者电子邮件）来验证您的登录，这能使您的账户更加安全。两步登录需要在 bitwarden.com 网页版密码库中设置。现在访问此网站吗？"
   },
   "twoStepLogin": {
     "message": "两步登录"
@@ -1561,7 +1561,7 @@
     "message": "至少包含一个数字"
   },
   "policyInEffectSpecial": {
-    "message": "至少包含一个以下特殊字符：$CHARS$",
+    "message": "至少包含一个以下特殊字符 $CHARS$",
     "placeholders": {
       "chars": {
         "content": "$1",
@@ -1679,7 +1679,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "expirationDate": {
-    "message": "到期日期"
+    "message": "过期日期"
   },
   "expirationDateDesc": {
     "message": "设置后，对此 Send 的访问将在指定的日期和时间后过期。",
@@ -2066,13 +2066,13 @@
     "message": "使用其他设备登录"
   },
   "logInInitiated": {
-    "message": "已发起登录"
+    "message": "登录已发起"
   },
   "notificationSentDevice": {
     "message": "通知已发送到您的设备。"
   },
   "fingerprintMatchInfo": {
-    "message": "请确保您的密码库已解锁，并且指纹与其他设备匹配。"
+    "message": "请确保您的密码库已解锁，并且指纹短语与其他设备匹配。"
   },
   "fingerprintPhraseHeader": {
     "message": "指纹短语"
@@ -2094,7 +2094,7 @@
     "message": "您正在尝试登录吗？"
   },
   "logInAttemptBy": {
-    "message": "$EMAIL$ 尝试登录",
+    "message": "$EMAIL$ 的登录尝试",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -2134,13 +2134,13 @@
     }
   },
   "youDeniedALogInAttemptFromAnotherDevice": {
-    "message": "您拒绝了另一台设备的登录尝试。如果真的是您，请尝试再次使用该设备登录。"
+    "message": "您拒绝了一个来自其他设备的登录尝试。若确认是您自己，请尝试再次使用该设备登录。"
   },
   "justNow": {
     "message": "刚刚"
   },
   "requestedXMinutesAgo": {
-    "message": "在$MINUTES$ 分钟前发出的请求",
+    "message": "在 $MINUTES$ 分钟前发出的请求",
     "placeholders": {
       "minutes": {
         "content": "$1",
@@ -2152,7 +2152,7 @@
     "message": "登录请求已过期。"
   },
   "thisRequestIsNoLongerValid": {
-    "message": "请求已失效"
+    "message": "此请求已失效。"
   },
   "approveLoginRequestDesc": {
     "message": "使用此设备批准其他设备的登录请求。"
@@ -2170,19 +2170,19 @@
     "message": "已请求登录"
   },
   "exposedMasterPassword": {
-    "message": "已被暴露过的主密码"
+    "message": "已暴露的主密码"
   },
   "exposedMasterPasswordDesc": {
-    "message": "当前密码已在数据泄漏中被检测到。请使用独特的密码来保护您的帐户。您确定要继续使用已被暴露过的密码吗？"
+    "message": "密码在数据泄露中被发现。请使用一个独一无二的的密码以保护您的账户。确定要使用已暴露的密码吗？"
   },
   "weakAndExposedMasterPassword": {
-    "message": "主密码太弱并且已经被暴露过"
+    "message": "主密码弱且曾经暴露"
   },
   "weakAndBreachedMasterPasswordDesc": {
-    "message": "当前密码太弱并已在数据泄漏中被检测到。使用密码性强且独特的密码来保护您的帐户。您确定要继续使用当前密码吗？"
+    "message": "识别到弱密码且其出现在数据泄露中。请使用一个强且唯一的密码以保护你的账户。确定要使用这个密码吗？"
   },
   "checkForBreaches": {
-    "message": "检查已知的数据泄露是否包含此密码。"
+    "message": "检查已知的数据泄露是否包含此密码"
   },
   "important": {
     "message": "重要事项："
@@ -2191,7 +2191,7 @@
     "message": "主密码忘记后，将无法恢复！"
   },
   "characterMinimum": {
-    "message": "$LENGTH$ 字符下限",
+    "message": "至少 $LENGTH$ 个字符",
     "placeholders": {
       "length": {
         "content": "$1",

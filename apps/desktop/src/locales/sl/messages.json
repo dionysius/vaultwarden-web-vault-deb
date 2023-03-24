@@ -95,7 +95,7 @@
     "message": "Geslo"
   },
   "passphrase": {
-    "message": "Šifrirna fraza"
+    "message": "Večbesedno geslo"
   },
   "editItem": {
     "message": "Uredi vnos"
@@ -792,11 +792,11 @@
     "message": "Svoje glavno geslo lahko spremenite v bitwarden.com spletnem trezorju. Želite obiskati spletno stran zdaj?"
   },
   "fingerprintPhrase": {
-    "message": "Fraza prstnega odtisa",
+    "message": "Identifikacijsko geslo",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "yourAccountsFingerprint": {
-    "message": "Fraza prstnega odtisa vašega računa",
+    "message": "Identifikacijsko geslo vašega računa",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "goToWebVault": {
