@@ -5875,7 +5875,7 @@
     }
   },
   "deleteServiceAccountToast": {
-    "message": "Xidmət hesabı silindi"
+    "message": "Service account deleted"
   },
   "deleteServiceAccountsToast": {
     "message": "Xidmət hesabları silindi"
@@ -6036,8 +6036,8 @@
     "message": "Müraciət tokenləri",
     "description": "Title for the section displaying access tokens."
   },
-  "createAccessToken": {
-    "message": "Müraciət tokeni yarat",
+  "newAccessToken": {
+    "message": "Yeni müraciət tokeni",
     "description": "Button label for creating a new access token."
   },
   "expires": {
@@ -6499,7 +6499,7 @@
     "message": "KDF tənzimləmələrini dəyişdir"
   },
   "changeKdfLoggedOutWarning": {
-    "message": "Proceeding will log you out of all active sessions. You will need to log back in and complete two-step login setup. We recommend exporting your vault before changing your encryption settings to prevent data loss."
+    "message": "Proses, bütün aktiv seanslardan çıxış etməyinizi təmin edəcək. Təkrar giriş etməyiniz və iki mərhələli giriş quraşdırmasını tamamlamağınız lazımdır. Məlumat itkisinin qarşısını almaq üçün şifrələmə tənzimləmələrinizi dəyişdirməzdən əvvəl anbarınızı xaricə köçürməyinizi tövsiyə edirik."
   },
   "secretsManagerBeta": {
     "message": "Secrets Manager Beta"

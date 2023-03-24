@@ -4853,16 +4853,16 @@
     "message": "Uma ou mais políticas da organização impdem que você exporte seu cofre pessoal."
   },
   "activateAutofill": {
-    "message": "Activate auto-fill"
+    "message": "Ativar preenchimento automático"
   },
   "activateAutofillDesc": {
-    "message": "Activate the auto-fill with page load settings on the browser extension for all existing and new members."
+    "message": "Ative o autopreenchimento com configurações de carregamento de página na extensão do navegador para todos os membros existentes e novos."
   },
   "experimentalFeature": {
-    "message": "Compromised or untrusted websites can exploit auto-fill on page load."
+    "message": "Sites comprometidos ou não confiáveis podem tomar vantagem do autopreenchimento ao carregar a página."
   },
   "learnMoreAboutAutofill": {
-    "message": "Learn more about auto-fill"
+    "message": "Saiba mais sobre preenchimento automático"
   },
   "selectType": {
     "message": "Selecionar Tipo de SSO"
@@ -5854,7 +5854,7 @@
     "description": "Action to view the details of a service account."
   },
   "deleteServiceAccountDialogMessage": {
-    "message": "Deleting service account $SERVICE_ACCOUNT$ is permanent and irreversible.",
+    "message": "Excluir conta de serviço $SERVICE_ACCOUNT$ é permanente e irreversível.",
     "placeholders": {
       "service_account": {
         "content": "$1",
@@ -5863,10 +5863,10 @@
     }
   },
   "deleteServiceAccountsDialogMessage": {
-    "message": "Deleting service accounts is permanent and irreversible."
+    "message": "A exclusão de projetos é permanente e irreversível."
   },
   "deleteServiceAccountsConfirmMessage": {
-    "message": "Delete $COUNT$ service accounts",
+    "message": "Excluir $COUNT$ contas de serviço",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -5875,17 +5875,17 @@
     }
   },
   "deleteServiceAccountToast": {
-    "message": "The service account have been deleted"
+    "message": "Conta de serviço excluída"
   },
   "deleteServiceAccountsToast": {
-    "message": "Service accounts deleted"
+    "message": "Contas de serviço excluídas"
   },
   "searchServiceAccounts": {
     "message": "Pesquisar contas de serviço",
     "description": "Placeholder text for searching service accounts."
   },
   "editServiceAccount": {
-    "message": "Edit service account",
+    "message": "Editar conta de serviço",
     "description": "Title for editing a service account."
   },
   "addProject": {
@@ -5946,7 +5946,7 @@
     "description": "Notifies that a new service account has been created"
   },
   "serviceAccountUpdated": {
-    "message": "Service account updated",
+    "message": "Conta de serviço atualizada",
     "description": "Notifies that a service account has been updated"
   },
   "newSaSelectAccess": {
@@ -6036,8 +6036,8 @@
     "message": "Tokens de acesso",
     "description": "Title for the section displaying access tokens."
   },
-  "createAccessToken": {
-    "message": "Criar token de acesso",
+  "newAccessToken": {
+    "message": "Novo token de acesso",
     "description": "Button label for creating a new access token."
   },
   "expires": {
@@ -6065,57 +6065,57 @@
     "description": "Label for the expiration date of an access token."
   },
   "accessTokenCallOutTitle": {
-    "message": "Access tokens are not stored and cannot be retrieved",
+    "message": "Os tokens de acesso não são armazenados e não podem ser recuperados",
     "description": "Notification to inform the user that access tokens are only displayed once and cannot be retrieved again."
   },
   "copyToken": {
-    "message": "Copy token",
+    "message": "Copiar token",
     "description": "Copies the generated access token to the user's clipboard."
   },
   "accessToken": {
-    "message": "Access token",
+    "message": "Token de acesso",
     "description": "A unique string that gives a client application (eg. CLI) access to a secret or set of secrets."
   },
   "accessTokenExpirationRequired": {
-    "message": "Expiration date required",
+    "message": "Data de validade requerida",
     "description": "Error message indicating that an expiration date for the access token must be set."
   },
   "accessTokenCreatedAndCopied": {
-    "message": "Access token created and copied to clipboard",
+    "message": "Token de acesso criado e copiado para a área de transferência",
     "description": "Notification to inform the user that the access token has been created and copied to the clipboard."
   },
   "accessTokenPermissionsBetaNotification": {
-    "message": "Permissions management is unavailable for beta.",
+    "message": "O gerenciamento de permissões não está disponível para versão beta.",
     "description": "Notification to inform the user that the feature for managing access token permissions is not available in the beta version."
   },
   "revokeAccessToken": {
-    "message": "Revoke access token",
+    "message": "Revogar token de acesso",
     "description": "Invalidates / cancels an access token and as such removes access to secrets for the client application."
   },
   "revokeAccessTokens": {
-    "message": "Revoke access tokens"
+    "message": "Revogar tokens de acesso"
   },
   "revokeAccessTokenDesc": {
-    "message": "Revoking access tokens is permanent and irreversible."
+    "message": "Revogar tokens de acesso é permanente e irreversível."
   },
   "accessTokenRevoked": {
-    "message": "Access tokens revoked",
+    "message": "Tokens de acesso revogados",
     "description": "Toast message after deleting one or multiple access tokens."
   },
   "submenu": {
     "message": "Submenu"
   },
   "from": {
-    "message": "From"
+    "message": "De"
   },
   "to": {
-    "message": "To"
+    "message": "Para"
   },
   "member": {
-    "message": "Member"
+    "message": "Membro"
   },
   "update": {
-    "message": "Update"
+    "message": "Atualizar"
   },
   "plusNMore": {
     "message": "+ $QUANTITY$ mais",
@@ -6133,55 +6133,55 @@
     "message": "Conceder acesso às coleções atribuídas ao grupo."
   },
   "editGroupCollectionsDesc": {
-    "message": "Grant access to collections by adding them to this group."
+    "message": "Conceder acesso às coleções adicionando-as a este grupo."
   },
   "accessAllCollectionsDesc": {
-    "message": "Grant access to all current and future collections."
+    "message": "Conceder acesso a todas as coleções atuais e futuras."
   },
   "accessAllCollectionsHelp": {
-    "message": "If checked, this will replace all other collection permissions."
+    "message": "Se marcado, isto irá substituir todas as permissões de outras coleções."
   },
   "selectMembers": {
-    "message": "Select members"
+    "message": "Selecionar membros"
   },
   "selectCollections": {
-    "message": "Select collections"
+    "message": "Selecionar coleções"
   },
   "role": {
-    "message": "Role"
+    "message": "Função"
   },
   "removeMember": {
-    "message": "Remove member"
+    "message": "Remover membro"
   },
   "collection": {
-    "message": "Collection"
+    "message": "Coleção"
   },
   "noCollection": {
-    "message": "No collection"
+    "message": "Sem coleções"
   },
   "canView": {
-    "message": "Can view"
+    "message": "Pode ver"
   },
   "canViewExceptPass": {
-    "message": "Can view, except passwords"
+    "message": "Pode ver, exceto senhas"
   },
   "canEdit": {
-    "message": "Can edit"
+    "message": "Pode editar"
   },
   "canEditExceptPass": {
-    "message": "Can edit, except passwords"
+    "message": "Pode editar, exceto senhas"
   },
   "noCollectionsAdded": {
-    "message": "No collections added"
+    "message": "Nenhuma coleção adicionada"
   },
   "noMembersAdded": {
-    "message": "No members added"
+    "message": "Nenhum membro adicionado"
   },
   "noGroupsAdded": {
-    "message": "No groups added"
+    "message": "Nenhum grupo adicionado"
   },
   "group": {
-    "message": "Group"
+    "message": "Grupo"
   },
   "groupAccessAll": {
     "message": "This group can access and modify all items."
@@ -6211,7 +6211,7 @@
     "message": "Copy DNS TXT record"
   },
   "dnsTxtRecord": {
-    "message": "DNS TXT record"
+    "message": "Registro DNS TXT"
   },
   "dnsTxtRecordInputHint": {
     "message": "Copy and paste the TXT record into your DNS Provider."

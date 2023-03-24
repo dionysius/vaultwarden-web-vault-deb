@@ -5875,7 +5875,7 @@
     }
   },
   "deleteServiceAccountToast": {
-    "message": "Hizmet hesabı silindi"
+    "message": "Service account deleted"
   },
   "deleteServiceAccountsToast": {
     "message": "Hizmet hesapları silindi"
@@ -6036,8 +6036,8 @@
     "message": "Erişim anahtarları",
     "description": "Title for the section displaying access tokens."
   },
-  "createAccessToken": {
-    "message": "Erişim anahtarı oluşturma",
+  "newAccessToken": {
+    "message": "Yeni erişim belirteci",
     "description": "Button label for creating a new access token."
   },
   "expires": {

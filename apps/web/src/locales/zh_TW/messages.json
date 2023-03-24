@@ -5875,7 +5875,7 @@
     }
   },
   "deleteServiceAccountToast": {
-    "message": "The service account have been deleted"
+    "message": "Service account deleted"
   },
   "deleteServiceAccountsToast": {
     "message": "Service accounts deleted"
@@ -6036,8 +6036,8 @@
     "message": "存取權杖",
     "description": "Title for the section displaying access tokens."
   },
-  "createAccessToken": {
-    "message": "建立存取權杖",
+  "newAccessToken": {
+    "message": "New access token",
     "description": "Button label for creating a new access token."
   },
   "expires": {

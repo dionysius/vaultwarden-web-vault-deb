@@ -5875,7 +5875,7 @@
     }
   },
   "deleteServiceAccountToast": {
-    "message": "Сэрвісны ўліковы запіс быў выдалены"
+    "message": "Service account deleted"
   },
   "deleteServiceAccountsToast": {
     "message": "Сэрвісны ўліковы запіс выдалены"
@@ -6036,8 +6036,8 @@
     "message": "Токены доступу",
     "description": "Title for the section displaying access tokens."
   },
-  "createAccessToken": {
-    "message": "Стварыць токены доступу",
+  "newAccessToken": {
+    "message": "New access token",
     "description": "Button label for creating a new access token."
   },
   "expires": {

@@ -5875,7 +5875,7 @@
     }
   },
   "deleteServiceAccountToast": {
-    "message": "Услужни налог избрисан"
+    "message": "Service account deleted"
   },
   "deleteServiceAccountsToast": {
     "message": "Услужни налог избрисан"
@@ -6036,8 +6036,8 @@
     "message": "Приступни токени",
     "description": "Title for the section displaying access tokens."
   },
-  "createAccessToken": {
-    "message": "Креирати приступни токен",
+  "newAccessToken": {
+    "message": "Нови приступни токен",
     "description": "Button label for creating a new access token."
   },
   "expires": {

@@ -5240,7 +5240,7 @@
     "message": "Set up billing sync"
   },
   "generateToken": {
-    "message": "Generate token"
+    "message": "Generera token"
   },
   "rotateToken": {
     "message": "Rotate token"
@@ -5391,16 +5391,16 @@
     "message": "Generator"
   },
   "whatWouldYouLikeToGenerate": {
-    "message": "What would you like to generate?"
+    "message": "Vad vill du generera?"
   },
   "passwordType": {
     "message": "Lösenordstyp"
   },
   "regenerateUsername": {
-    "message": "Regenerate username"
+    "message": "Återskapa användarnamn"
   },
   "generateUsername": {
-    "message": "Generate username"
+    "message": "Generera användarnamn"
   },
   "usernameType": {
     "message": "Username type"
@@ -5419,7 +5419,7 @@
     "message": "Use your domain's configured catch-all inbox."
   },
   "random": {
-    "message": "Random",
+    "message": "Slumpmässigt",
     "description": "Generates domain-based username using random letters"
   },
   "randomWord": {
@@ -5485,14 +5485,14 @@
     "message": "Forwarded email alias"
   },
   "forwardedEmailDesc": {
-    "message": "Generate an email alias with an external forwarding service."
+    "message": "Generera ett e-postalias med en extern vidarebefordranstjänst."
   },
   "hostname": {
     "message": "Hostname",
     "description": "Part of a URL."
   },
   "apiAccessToken": {
-    "message": "API access token"
+    "message": "API-åtkomsttoken"
   },
   "deviceVerification": {
     "message": "Device verification"
@@ -5866,7 +5866,7 @@
     "message": "Att ta bort tjänstkonton är permanent och kan inte ångras."
   },
   "deleteServiceAccountsConfirmMessage": {
-    "message": "Ta bort $COUNT$ tjänstkonton",
+    "message": "Radera $COUNT$ tjänstkonton",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -5875,7 +5875,7 @@
     }
   },
   "deleteServiceAccountToast": {
-    "message": "Tjänstkontot har tagits bort"
+    "message": "Service account deleted"
   },
   "deleteServiceAccountsToast": {
     "message": "Tjänstkonton togs bort"
@@ -6033,11 +6033,11 @@
     "message": "Secret permanently deleted"
   },
   "accessTokens": {
-    "message": "Access tokens",
+    "message": "Åtkomsttoken",
     "description": "Title for the section displaying access tokens."
   },
-  "createAccessToken": {
-    "message": "Create access token",
+  "newAccessToken": {
+    "message": "Nytt åtkomsttoken",
     "description": "Button label for creating a new access token."
   },
   "expires": {
@@ -6049,11 +6049,11 @@
     "description": "Label for the access level of an access token (Read only)."
   },
   "accessTokensNoItemsTitle": {
-    "message": "No access tokens to show",
+    "message": "Inga åtkomsttoken att visa",
     "description": "Title to be displayed when there are no access tokens to display in the list."
   },
   "accessTokensNoItemsDesc": {
-    "message": "To get started, create an access token",
+    "message": "Skapa ett åtkomsttoken för att komma igång",
     "description": "Message to be displayed when there are no access tokens to display in the list."
   },
   "downloadAccessToken": {
@@ -6061,11 +6061,11 @@
     "description": "Message to be displayed before closing an access token, reminding the user to download or copy it."
   },
   "expiresOnAccessToken": {
-    "message": "Expires on:",
+    "message": "Upphör:",
     "description": "Label for the expiration date of an access token."
   },
   "accessTokenCallOutTitle": {
-    "message": "Access tokens are not stored and cannot be retrieved",
+    "message": "Åtkomsttoken lagras inte och kan inte hämtas",
     "description": "Notification to inform the user that access tokens are only displayed once and cannot be retrieved again."
   },
   "copyToken": {
@@ -6073,7 +6073,7 @@
     "description": "Copies the generated access token to the user's clipboard."
   },
   "accessToken": {
-    "message": "Access token",
+    "message": "Åtkomsttoken",
     "description": "A unique string that gives a client application (eg. CLI) access to a secret or set of secrets."
   },
   "accessTokenExpirationRequired": {
@@ -6081,7 +6081,7 @@
     "description": "Error message indicating that an expiration date for the access token must be set."
   },
   "accessTokenCreatedAndCopied": {
-    "message": "Access token created and copied to clipboard",
+    "message": "Åtkomsttoken skapades och kopierades till urklipp",
     "description": "Notification to inform the user that the access token has been created and copied to the clipboard."
   },
   "accessTokenPermissionsBetaNotification": {
@@ -6089,17 +6089,17 @@
     "description": "Notification to inform the user that the feature for managing access token permissions is not available in the beta version."
   },
   "revokeAccessToken": {
-    "message": "Revoke access token",
+    "message": "Återkalla åtkomsttoken",
     "description": "Invalidates / cancels an access token and as such removes access to secrets for the client application."
   },
   "revokeAccessTokens": {
-    "message": "Revoke access tokens"
+    "message": "Återkalla åtkomsttoken"
   },
   "revokeAccessTokenDesc": {
-    "message": "Revoking access tokens is permanent and irreversible."
+    "message": "Att återkalla åtkomsttoken är permanent och kan inte ångras."
   },
   "accessTokenRevoked": {
-    "message": "Access tokens revoked",
+    "message": "Åtkomsttoken återkallades",
     "description": "Toast message after deleting one or multiple access tokens."
   },
   "submenu": {
@@ -6614,7 +6614,7 @@
     "message": "Enable Secrets Manager Beta"
   },
   "saPeopleWarningTitle": {
-    "message": "Access tokens still available"
+    "message": "Åtkomsttoken fortfarande tillgängliga"
   },
   "saPeopleWarningMessage": {
     "message": "Removing people from a service account does not remove the access tokens they created. For security best practice, it is recommended to revoke access tokens created by people removed from a service account."

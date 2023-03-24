@@ -5875,7 +5875,7 @@
     }
   },
   "deleteServiceAccountToast": {
-    "message": "サービスアカウントを削除しました"
+    "message": "Service account deleted"
   },
   "deleteServiceAccountsToast": {
     "message": "サービスアカウントを削除しました"
@@ -6036,8 +6036,8 @@
     "message": "アクセストークン",
     "description": "Title for the section displaying access tokens."
   },
-  "createAccessToken": {
-    "message": "アクセストークンを作成",
+  "newAccessToken": {
+    "message": "新しいアクセストークン",
     "description": "Button label for creating a new access token."
   },
   "expires": {
@@ -6499,7 +6499,7 @@
     "message": "KDF 設定の変更"
   },
   "changeKdfLoggedOutWarning": {
-    "message": "Proceeding will log you out of all active sessions. You will need to log back in and complete two-step login setup. We recommend exporting your vault before changing your encryption settings to prevent data loss."
+    "message": "続行すると、すべてのアクティブなセッションからログアウトします。再度ログインし、2段階認証を完了する必要があります。 暗号化設定を変更する前に、保管庫をエクスポートしてデータの損失を防ぐことをおすすめします。"
   },
   "secretsManagerBeta": {
     "message": "ベータ版シークレットマネージャー"

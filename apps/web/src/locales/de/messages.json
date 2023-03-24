@@ -2484,7 +2484,7 @@
     "message": "Externe ID"
   },
   "externalIdDesc": {
-    "message": "Die externe ID kann als Referenz oder zur Verbindung zu einem externen System, wie einem Benutzerverzeichnis, verwendet werden."
+    "message": "Die externe ID ist eine unverschlüsselte Referenz, die vom Bitwarden Directory Connector und der API verwendet wird."
   },
   "nestCollectionUnder": {
     "message": "Sammlung verschachteln unter"
@@ -2562,7 +2562,7 @@
     "message": "Bestätigt"
   },
   "clientOwnerEmail": {
-    "message": "Kunden-E-Mail"
+    "message": "E-Mail-Adresse des Kundenorganisation-Eigentümers"
   },
   "owner": {
     "message": "Besitzer"
@@ -3795,7 +3795,7 @@
     }
   },
   "vaultTimeoutLogOutConfirmation": {
-    "message": "Nach dem Ausloggen verlierst du jeglichen Zugriff auf deinen Tresor und es ist nach Ablauf der Timeout-Zeit eine Online-Authentifizierung erforderlich. Bist du sicher, dass du diese Einstellung nutzen möchtest?"
+    "message": "Nach dem Abmelden verlierst du jeglichen Zugriff auf deinen Tresor und nach Ablauf der Timeout-Zeit ist eine Online-Authentifizierung erforderlich. Bist du sicher, dass du diese Einstellung nutzen möchtest?"
   },
   "vaultTimeoutLogOutConfirmationTitle": {
     "message": "Bestätigung der Timeout-Aktion"
@@ -4670,7 +4670,7 @@
     "message": "Du wurdest eingeladen, einen neuen Anbieter einzurichten. Um fortzufahren, musst du dich anmelden oder ein neues Bitwarden-Konto erstellen."
   },
   "setupProviderDesc": {
-    "message": "Bitte gib die nachstehenden Daten ein, um die Einrichtung des Providers abzuschließen. Wende dich an den Kundensupport, wenn du Fragen hast."
+    "message": "Bitte gib die nachstehenden Daten ein, um die Einrichtung des Anbieters abzuschließen. Wende dich an den Kundensupport, wenn du Fragen hast."
   },
   "providerName": {
     "message": "Anbietername"
@@ -5416,7 +5416,7 @@
     "message": "Catch-All E-Mail-Adresse"
   },
   "catchallEmailDesc": {
-    "message": "Verwenden den konfigurierten Catch-All-Posteingang deiner Domain."
+    "message": "Verwende den konfigurierten Catch-All-Posteingang deiner Domain."
   },
   "random": {
     "message": "Zufällig",
@@ -5702,11 +5702,11 @@
     "message": "Alles löschen"
   },
   "toggleCharacterCount": {
-    "message": "Zeichenzählung ein-/ausschalten",
+    "message": "Zeichenanzahl umschalten",
     "description": "'Character count' describes a feature that displays a number next to each character of the password."
   },
   "passwordCharacterCount": {
-    "message": "Passwort Zeichenzählung",
+    "message": "Passwort-Zeichenanzahl",
     "description": "'Character count' describes a feature that displays a number next to each character of the password."
   },
   "hide": {
@@ -5875,7 +5875,7 @@
     }
   },
   "deleteServiceAccountToast": {
-    "message": "Das Dienstkonto wurde gelöscht"
+    "message": "Service account deleted"
   },
   "deleteServiceAccountsToast": {
     "message": "Dienstkonten gelöscht"
@@ -6036,8 +6036,8 @@
     "message": "Zugriffstokens",
     "description": "Title for the section displaying access tokens."
   },
-  "createAccessToken": {
-    "message": "Zugriffstoken erstellen",
+  "newAccessToken": {
+    "message": "Neuer Zugriffstoken",
     "description": "Button label for creating a new access token."
   },
   "expires": {
@@ -6499,7 +6499,7 @@
     "message": "KDF-Einstellungen ändern"
   },
   "changeKdfLoggedOutWarning": {
-    "message": "Proceeding will log you out of all active sessions. You will need to log back in and complete two-step login setup. We recommend exporting your vault before changing your encryption settings to prevent data loss."
+    "message": "Wenn du fortfährst, wirst du von allen aktiven Sitzungen abgemeldet. Du musst dich erneut anmelden und die Zwei-Faktor-Authentifizierung durchführen. Wir empfehlen, deinen Tresor zu exportieren, bevor du deine Verschlüsselungseinstellungen änderst, um Datenverluste zu vermeiden."
   },
   "secretsManagerBeta": {
     "message": "Secrets Manager Beta"

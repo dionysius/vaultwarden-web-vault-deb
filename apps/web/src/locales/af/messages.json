@@ -393,7 +393,7 @@
     "message": "Kies"
   },
   "newItem": {
-    "message": "New item"
+    "message": "Nuwe item"
   },
   "addItem": {
     "message": "Voeg item toe"
@@ -405,7 +405,7 @@
     "message": "Bekyk item"
   },
   "new": {
-    "message": "New",
+    "message": "Nuut",
     "description": "for adding new items"
   },
   "item": {
@@ -5875,7 +5875,7 @@
     }
   },
   "deleteServiceAccountToast": {
-    "message": "The service account have been deleted"
+    "message": "Service account deleted"
   },
   "deleteServiceAccountsToast": {
     "message": "Service accounts deleted"
@@ -6036,8 +6036,8 @@
     "message": "Access tokens",
     "description": "Title for the section displaying access tokens."
   },
-  "createAccessToken": {
-    "message": "Create access token",
+  "newAccessToken": {
+    "message": "New access token",
     "description": "Button label for creating a new access token."
   },
   "expires": {

@@ -5875,7 +5875,7 @@
     }
   },
   "deleteServiceAccountToast": {
-    "message": "حساب سرویس حذف شده است"
+    "message": "Service account deleted"
   },
   "deleteServiceAccountsToast": {
     "message": "حساب‌های سرویس حذف شد"
@@ -6036,8 +6036,8 @@
     "message": "دسترسی به توکن‌ها",
     "description": "Title for the section displaying access tokens."
   },
-  "createAccessToken": {
-    "message": "توکن دسترسی ایجاد کنید",
+  "newAccessToken": {
+    "message": "New access token",
     "description": "Button label for creating a new access token."
   },
   "expires": {

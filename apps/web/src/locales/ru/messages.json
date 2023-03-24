@@ -5875,7 +5875,7 @@
     }
   },
   "deleteServiceAccountToast": {
-    "message": "Сервисный аккаунт удален"
+    "message": "Service account deleted"
   },
   "deleteServiceAccountsToast": {
     "message": "Сервисные аккаунты удалены"
@@ -6036,8 +6036,8 @@
     "message": "Токены доступа",
     "description": "Title for the section displaying access tokens."
   },
-  "createAccessToken": {
-    "message": "Создать токен доступа",
+  "newAccessToken": {
+    "message": "Новый токен доступа",
     "description": "Button label for creating a new access token."
   },
   "expires": {
@@ -6499,7 +6499,7 @@
     "message": "Изменить параметры KDF"
   },
   "changeKdfLoggedOutWarning": {
-    "message": "Proceeding will log you out of all active sessions. You will need to log back in and complete two-step login setup. We recommend exporting your vault before changing your encryption settings to prevent data loss."
+    "message": "При продолжении все активные сессии будут завершены. Вам потребуется авторизоваться повторно и выполнить настройку двухэтапной аутентификации. Мы рекомендуем экспортировать хранилище перед изменением настроек шифрования, чтобы предотвратить потерю данных."
   },
   "secretsManagerBeta": {
     "message": "Менеджер секретов Beta"

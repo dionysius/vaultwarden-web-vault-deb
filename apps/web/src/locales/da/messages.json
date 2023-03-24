@@ -5875,7 +5875,7 @@
     }
   },
   "deleteServiceAccountToast": {
-    "message": "Tjenestekonto slettet"
+    "message": "Service account deleted"
   },
   "deleteServiceAccountsToast": {
     "message": "Tjenestekonti slettet"
@@ -6036,8 +6036,8 @@
     "message": "Adgangstokener",
     "description": "Title for the section displaying access tokens."
   },
-  "createAccessToken": {
-    "message": "Opret adgangstoken",
+  "newAccessToken": {
+    "message": "Nyt adgangstoken",
     "description": "Button label for creating a new access token."
   },
   "expires": {

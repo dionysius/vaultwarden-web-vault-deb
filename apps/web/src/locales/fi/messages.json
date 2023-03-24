@@ -853,7 +853,7 @@
     "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
   },
   "yubiKeyTitle": {
-    "message": "YubiKey OTP -todennuslaite"
+    "message": "YubiKey OTP"
   },
   "yubiKeyDesc": {
     "message": "Käytä YubiKey-todennuslaitetta tilisi avaukseen. Toimii YubiKey 4 ja 5 -sarjojen sekä NEO -laitteiden kanssa."
@@ -873,7 +873,7 @@
     "message": "FIDO U2F ‑todennuslaite"
   },
   "webAuthnTitle": {
-    "message": "FIDO2 WebAuthn -todennuslaite"
+    "message": "FIDO2 WebAuthn"
   },
   "webAuthnDesc": {
     "message": "Avaa tilisi millä tahansa WebAuthn‑yhteensopivalla todennuslaitteella."
@@ -2472,7 +2472,7 @@
     "message": "Haluatko varmasti poistaa käyttäjän?"
   },
   "removeOrgUserConfirmation": {
-    "message": "Poisteltulla jäsenellä ei ole enää käyttöoikeuksia organisaation tietoihin, eikä poistoa ole mahdollista perua. Jos jäsen halutaan palauttaa organisaatioon, hänet on kutsuttava ja määritettävä uudelleen."
+    "message": "Poistetulla jäsenellä ei ole enää käyttöoikeuksia organisaation tietoihin, eikä poiston peruminen ole mahdollista. Jos jäsen halutaan palauttaa organisaatioon, hänet on kutsuttava ja määritettävä uudelleen."
   },
   "revokeUserConfirmation": {
     "message": "Mitätöidyllä jäsenellä ei ole enää käyttöoikeutta organisaation tietoihin. Oikeudet voidaan palauttaa nopeasti Mitätöidyt-välilehdeltä."
@@ -3015,7 +3015,7 @@
     "message": "Tapahtui virhe."
   },
   "userAccess": {
-    "message": "Käyttäjän käyttöoikeudet"
+    "message": "Käyttäjän oikeudet"
   },
   "userType": {
     "message": "Käyttäjän tyyppi"
@@ -3171,7 +3171,7 @@
     "message": "Käyttäjätilit pysyvät poiston jälkeen toiminnassa, mutta niiden kytkös tähän organisaatioon poistuu."
   },
   "deletingOrganizationIsPermanentWarning": {
-    "message": "Organisaation $ORGANIZATION$ poisto on pysyvää, eikä sitä ole mahdollista perua.",
+    "message": "Organisaation $ORGANIZATION$ poisto on pysyvää ja peruuttamatonta.",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -4598,10 +4598,10 @@
     "message": "Toiminto ei koske valittuja käyttäjiä."
   },
   "removeUsersWarning": {
-    "message": "Haluatko varmasti poistaa seuraavat käyttäjät? Käsittely voi kestää muutamia sekunteja, eikä sen keskeytys tai peruminen ole mahdollista."
+    "message": "Haluatko varmasti poistaa seuraavat käyttäjät? Käsittely voi kestää muutamia sekunteja, eikä sen keskeyttäminen tai peruminen ole mahdollista."
   },
   "removeOrgUsersConfirmation": {
-    "message": "Poisteltuilla jäsenillä ei ole enää käyttöoikeuksia organisaation tietoihin, eikä poistoa ole mahdollista perua. Jos jäseniä halutaan palauttaa organisaatioon, heidät on kutsuttava ja määritettävä uudelleen. Käsittely voi kestää muutamia sekunteja, eikä sitä ole mahdollista keskeyttää tai perua."
+    "message": "Poistetuilla jäsenillä ei ole enää käyttöoikeuksia organisaation tietoihin, eikä poiston peruminen ole mahdollista. Jos jäseniä halutaan palauttaa organisaatioon, heidät on kutsuttava ja määritettävä uudelleen. Käsittely voi kestää muutamia sekunteja, eikä sen keskeyttäminen tai peruminen ole mahdollista."
   },
   "revokeUsersWarning": {
     "message": "Mitätöidyillä jäsenillä ei ole enää käyttöoikeuksia organisaation tietoihin. Oikeudet voidaan palauttaa nopeasti Mitätöidyt-välilehdeltä. Käsittely voi kestää muutamia sekunteja, ei sitä ole mahdollista keskeytttää tai perua."
@@ -5875,7 +5875,7 @@
     }
   },
   "deleteServiceAccountToast": {
-    "message": "Palvelutili poistettiin"
+    "message": "Service account deleted"
   },
   "deleteServiceAccountsToast": {
     "message": "Palvelutilit poistettiin"
@@ -5913,7 +5913,7 @@
     "description": "Title for creating a new project."
   },
   "softDeleteSecretWarning": {
-    "message": "Salaisuuksien poisto voi vaikuttaa olemassa oleviin integrointeihin.",
+    "message": "Salaisuuksien poistaminen voi vaikuttaa olemassa oleviin integrointeihin.",
     "description": "Warns that deleting secrets can have consequences on integrations"
   },
   "softDeletesSuccessToast": {
@@ -5966,7 +5966,7 @@
     "description": "Notifies that a project has been deleted"
   },
   "deleteProjectDialogMessage": {
-    "message": "Projektin $PROJECT$ poisto on pysyvää, eikä sitä ole mahdollista perua.",
+    "message": "Projektin $PROJECT$ poisto on pysyvää ja peruuttamatonta.",
     "description": "Informs users that projects are hard deleted and not sent to trash",
     "placeholders": {
       "project": {
@@ -6006,7 +6006,7 @@
     }
   },
   "deleteProjectsDialogMessage": {
-    "message": "Projektien poisto on pysyvää, eikä sitä ole mahdollista perua.",
+    "message": "Projektien poisto on pysyvää ja peruuttamatonta.",
     "description": "This message is displayed in a dialog box as a warning before proceeding with project deletion."
   },
   "projectsNoItemsTitle": {
@@ -6036,8 +6036,8 @@
     "message": "Käyttötunnisteet",
     "description": "Title for the section displaying access tokens."
   },
-  "createAccessToken": {
-    "message": "Luo käyttötunniste",
+  "newAccessToken": {
+    "message": "Uusi käyttötunniste",
     "description": "Button label for creating a new access token."
   },
   "expires": {
@@ -6057,7 +6057,7 @@
     "description": "Message to be displayed when there are no access tokens to display in the list."
   },
   "downloadAccessToken": {
-    "message": "Lataa tai kopioi ennen sulkua.",
+    "message": "Lataa tai kopioi ennen kuin suljet tämän ruudun.",
     "description": "Message to be displayed before closing an access token, reminding the user to download or copy it."
   },
   "expiresOnAccessToken": {
@@ -6065,7 +6065,7 @@
     "description": "Label for the expiration date of an access token."
   },
   "accessTokenCallOutTitle": {
-    "message": "Käyttötunnisteita ei säilytetä, eikä niiden palautus ole mahdollista",
+    "message": "Tunnisteita ei säilytetä, eivätkä ne ole palautettavissa",
     "description": "Notification to inform the user that access tokens are only displayed once and cannot be retrieved again."
   },
   "copyToken": {
@@ -6406,7 +6406,7 @@
     "message": "Organisaation salaisten tietojen vienti"
   },
   "exportingOrganizationSecretDataDescription": {
-    "message": "Vain organisaatioon $ORGANIZATION$ liitetyt Salaisuushallinnan tiedot viedään. Muiden tuotteiden ja muiden organisaatioiden kohteet eivät sisälly tähän.",
+    "message": "Vain organisaatioon $ORGANIZATION$ liitetyt Salaisuushallinnan tiedot viedään. Muiden tuotteiden ja organisaatioiden kohteet eivät sisälly tähän.",
     "placeholders": {
       "ORGANIZATION": {
         "content": "$1",
@@ -6415,13 +6415,13 @@
     }
   },
   "fileUpload": {
-    "message": "Tiedoston tallennus"
+    "message": "Valitse tuotava tiedosto"
   },
   "acceptedFormats": {
     "message": "Hyväksytyt muodot:"
   },
   "copyPasteImportContents": {
-    "message": "Kopioi ja liitä tuonnin sisältö:"
+    "message": "Kopioi ja liitä tuotava sisältö:"
   },
   "or": {
     "message": "tai"
@@ -6508,7 +6508,7 @@
     "message": "Myönnä käyttäjille Salaisuushallinnan käyttöoikeudet veloituksetta sen beta-vaiheen ajan."
   },
   "userAccessSecretsManager": {
-    "message": "Tämä käyttäjä voi käyttää Salaisuushallinnan betaa"
+    "message": "Käyttäjä voi käyttää Salaisuushallinnan Beta-versiota"
   },
   "important": {
     "message": "Tärkeää:"
@@ -6565,7 +6565,7 @@
     "description": "Link to a downloadable resource. This will be used as part of a larger phrase. Example: Download the Secrets Manager CLI"
   },
   "smCLI": {
-    "message": "Salaisuushallinnan komentoliittymä"
+    "message": "Salaisuushallinnan CLI"
   },
   "importSecrets": {
     "message": "Tuo salaisuuksia"
@@ -6608,10 +6608,10 @@
     "message": "Valinta vaaditaan."
   },
   "secretsManagerSubscriptionDesc": {
-    "message": "Ota Salaisuushallinta käyttöön organisaatiossasi veloituksetta sen Beta-ohjelman ajan. Käyttäjäkohtaiset käyttöoikeudet voidaan myöntää jäsenhallinan kautta."
+    "message": "Ota Salaisuushallinta käyttöön organisaatiossasi veloituksetta sen Beta-vaiheen aikana. Käyttäjäkohtaiset käyttöoikeudet voidaan myöntää jäsenhallinan kautta."
   },
   "secretsManagerEnable": {
-    "message": "Ota Salaisuushallinta Beta käyttöön"
+    "message": "Käytä Salaisuushallinnan Beta-versiota"
   },
   "saPeopleWarningTitle": {
     "message": "Käyttöoikeustunnisteet ovat edelleen käytettävissä"

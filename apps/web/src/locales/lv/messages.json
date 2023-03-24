@@ -5875,7 +5875,7 @@
     }
   },
   "deleteServiceAccountToast": {
-    "message": "Pakalpojumu konts tika izdzēsts"
+    "message": "Service account deleted"
   },
   "deleteServiceAccountsToast": {
     "message": "Pakalpojumu konti ir izdzēsti"
@@ -6036,8 +6036,8 @@
     "message": "Piekļuves pilnvaras",
     "description": "Title for the section displaying access tokens."
   },
-  "createAccessToken": {
-    "message": "Izveidot piekļuves pilnvaru",
+  "newAccessToken": {
+    "message": "Jauna piekļuves pilnvara",
     "description": "Button label for creating a new access token."
   },
   "expires": {

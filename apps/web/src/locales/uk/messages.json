@@ -1951,7 +1951,7 @@
     "message": "# додаткових ГБ"
   },
   "additionalStorageIntervalDesc": {
-    "message": "У ваш тарифний план включено зашифроване сховище файлів, розміром $SIZE$. Ви можете збільшити обсяг сховища по ціні $PRICE$ за ГБ /$INTERVAL$.",
+    "message": "У ваш тарифний план включено зашифроване сховище файлів, розміром $SIZE$. Ви можете збільшити обсяг сховища за ціною $PRICE$ за ГБ /$INTERVAL$.",
     "placeholders": {
       "size": {
         "content": "$1",
@@ -2775,7 +2775,7 @@
     }
   },
   "createdCollectionId": {
-    "message": "Створена збірка $ID$.",
+    "message": "Створено збірку $ID$.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2784,7 +2784,7 @@
     }
   },
   "editedCollectionId": {
-    "message": "Змінена збірка $ID$.",
+    "message": "Збірку $ID$ змінено.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2796,7 +2796,7 @@
     "message": "Збірки видалено"
   },
   "deletedCollectionId": {
-    "message": "Видалена збірка $ID$.",
+    "message": "Збірку $ID$ видалено.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2805,7 +2805,7 @@
     }
   },
   "editedPolicyId": {
-    "message": "$ID$ зміненої політики.",
+    "message": "Змінено політику $ID$.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2814,7 +2814,7 @@
     }
   },
   "createdGroupId": {
-    "message": "Створена група $ID$.",
+    "message": "Створено групу $ID$.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2823,7 +2823,7 @@
     }
   },
   "editedGroupId": {
-    "message": "Змінена група $ID$.",
+    "message": "Групу $ID$ змінено.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2832,7 +2832,7 @@
     }
   },
   "deletedGroupId": {
-    "message": "Видалена група $ID$.",
+    "message": "Групу $ID$ видалено.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2841,7 +2841,7 @@
     }
   },
   "deletedManyGroups": {
-    "message": "Групи видалено ($QUANTITY$).",
+    "message": "Групи ($QUANTITY$) видалено.",
     "placeholders": {
       "quantity": {
         "content": "$1",
@@ -2850,7 +2850,7 @@
     }
   },
   "removedUserId": {
-    "message": "Вилучений користувач $ID$.",
+    "message": "Користувача $ID$ вилучено.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2922,7 +2922,7 @@
     }
   },
   "invitedUserId": {
-    "message": "Запрошений користувач $ID$.",
+    "message": "Запрошено користувача $ID$.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2931,7 +2931,7 @@
     }
   },
   "confirmedUserId": {
-    "message": "Підтверджений користувач $ID$.",
+    "message": "Підтверджено користувача $ID$.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2940,7 +2940,7 @@
     }
   },
   "editedUserId": {
-    "message": "Змінений користувач $ID$.",
+    "message": "Користувача $ID$ змінено.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2949,7 +2949,7 @@
     }
   },
   "editedGroupsForUser": {
-    "message": "Змінені групи для користувача $ID$.",
+    "message": "Для користувача $ID$ змінено групи.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2958,7 +2958,7 @@
     }
   },
   "unlinkedSsoUser": {
-    "message": "Незв'язаний SSO для користувача $ID$.",
+    "message": "Користувач $ID$ не має пов'язаного SSO.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2985,7 +2985,7 @@
     }
   },
   "removedOrganizationId": {
-    "message": "Вилучено організацію $ID$.",
+    "message": "Організацію $ID$ вилучено.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -4000,7 +4000,7 @@
     "message": "Усі відправлення"
   },
   "maxAccessCountReached": {
-    "message": "Досягнуто максимальну кількість доступів",
+    "message": "Досягнуто максимальної кількості доступів",
     "description": "This text will be displayed after a Send has been accessed the maximum amount of times."
   },
   "pendingDeletion": {
@@ -4853,16 +4853,16 @@
     "message": "Одна чи декілька політик організації не дозволяють вам експортувати особисте сховище."
   },
   "activateAutofill": {
-    "message": "Activate auto-fill"
+    "message": "Активувати автозаповнення"
   },
   "activateAutofillDesc": {
-    "message": "Activate the auto-fill with page load settings on the browser extension for all existing and new members."
+    "message": "Активувати автозаповнення під час завантаження сторінки в налаштуваннях розширення браузера для всіх наявних і нових учасників."
   },
   "experimentalFeature": {
-    "message": "Compromised or untrusted websites can exploit auto-fill on page load."
+    "message": "Скомпрометовані або ненадійні вебсайти можуть використати функцію автозаповнення під час завантаження сторінки для завдання шкоди."
   },
   "learnMoreAboutAutofill": {
-    "message": "Learn more about auto-fill"
+    "message": "Дізнатися більше про автозаповнення"
   },
   "selectType": {
     "message": "Оберіть тип SSO"
@@ -5875,7 +5875,7 @@
     }
   },
   "deleteServiceAccountToast": {
-    "message": "Службовий обліковий запис було видалено"
+    "message": "Service account deleted"
   },
   "deleteServiceAccountsToast": {
     "message": "Службові облікові записи видалено"
@@ -6036,8 +6036,8 @@
     "message": "Токени доступу",
     "description": "Title for the section displaying access tokens."
   },
-  "createAccessToken": {
-    "message": "Створити токен доступу",
+  "newAccessToken": {
+    "message": "Новий токен доступу",
     "description": "Button label for creating a new access token."
   },
   "expires": {
@@ -6499,7 +6499,7 @@
     "message": "Змінити налаштування KDF"
   },
   "changeKdfLoggedOutWarning": {
-    "message": "Proceeding will log you out of all active sessions. You will need to log back in and complete two-step login setup. We recommend exporting your vault before changing your encryption settings to prevent data loss."
+    "message": "Продовжуючи, ви вийдете з усіх активних сеансів. Необхідно буде повторно виконати вхід і пройти двоетапну перевірку. Перед зміною налаштувань шифрування ми рекомендуємо експортувати ваше сховище, щоб запобігти можливій втраті даних."
   },
   "secretsManagerBeta": {
     "message": "Керування секретами (бета-версія)"

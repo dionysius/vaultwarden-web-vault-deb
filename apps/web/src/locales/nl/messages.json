@@ -5875,7 +5875,7 @@
     }
   },
   "deleteServiceAccountToast": {
-    "message": "Het serviceaccount is verwijderd"
+    "message": "Service account deleted"
   },
   "deleteServiceAccountsToast": {
     "message": "Serviceaccounts verwijderd"
@@ -6036,8 +6036,8 @@
     "message": "Toegangstoken",
     "description": "Title for the section displaying access tokens."
   },
-  "createAccessToken": {
-    "message": "Toegangstoken aanmaken",
+  "newAccessToken": {
+    "message": "Nieuw toegangstoken",
     "description": "Button label for creating a new access token."
   },
   "expires": {

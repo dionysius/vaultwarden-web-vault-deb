@@ -5875,7 +5875,7 @@
     }
   },
   "deleteServiceAccountToast": {
-    "message": "A szolgáltatásfiók törlésre került."
+    "message": "Service account deleted"
   },
   "deleteServiceAccountsToast": {
     "message": "A szolgáltatás fiókok törlésre kerültek."
@@ -6036,8 +6036,8 @@
     "message": "Vezérjelek elérése",
     "description": "Title for the section displaying access tokens."
   },
-  "createAccessToken": {
-    "message": "Elérési vezérjel létrehozása",
+  "newAccessToken": {
+    "message": "Új hozzáférési vezérjel",
     "description": "Button label for creating a new access token."
   },
   "expires": {

@@ -5875,7 +5875,7 @@
     }
   },
   "deleteServiceAccountToast": {
-    "message": "La cuenta de servicio ha sido eliminada"
+    "message": "Service account deleted"
   },
   "deleteServiceAccountsToast": {
     "message": "Cuentas de servicio eliminadas"
@@ -6036,8 +6036,8 @@
     "message": "Tokens de acceso",
     "description": "Title for the section displaying access tokens."
   },
-  "createAccessToken": {
-    "message": "Crear un token de acceso",
+  "newAccessToken": {
+    "message": "Nuevo token de acceso",
     "description": "Button label for creating a new access token."
   },
   "expires": {

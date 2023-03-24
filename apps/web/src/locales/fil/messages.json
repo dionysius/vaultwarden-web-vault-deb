@@ -1453,64 +1453,64 @@
     "message": "Gawin ito para mai-set up ang dalawang-hakbang na pag-log in gamit ang isang authenticator app:"
   },
   "twoStepAuthenticatorDownloadApp": {
-    "message": "Mag download ng isang dalawang hakbang na authenticator app"
+    "message": "Mag-download ng isang two-step authenticator app"
   },
   "twoStepAuthenticatorNeedApp": {
-    "message": "Kailangan mo ba ng dalawang-hakbang na authenticator app? Download ang isa sa mga sumusunod"
+    "message": "Kailangan ng two-step authenticator app? I-download ang isa sa mga sumusunod"
   },
   "iosDevices": {
-    "message": "Mga aparatong iOS"
+    "message": "Mga iOS device"
   },
   "androidDevices": {
-    "message": "Mga aparatong Android"
+    "message": "Mga Android device"
   },
   "windowsDevices": {
     "message": "Mga Windows device"
   },
   "twoStepAuthenticatorAppsRecommended": {
-    "message": "Ang mga app na ito ay inirerekomenda, gayunpaman, ang iba pang mga app ng authenticator ay gagana din."
+    "message": "Inirerekomenda ang mga app na ito, pero pwede rin ang iba pang mga app pang-authenticate."
   },
   "twoStepAuthenticatorScanCode": {
-    "message": "I-scan ang QR code na ito gamit ang iyong authenticator app"
+    "message": "I-scan ang QR code na ito gamit ang authenticator app mo"
   },
   "key": {
-    "message": "Susi"
+    "message": "Key"
   },
   "twoStepAuthenticatorEnterCode": {
-    "message": "Ipasok ang nagresultang 6 digit verification code mula sa app"
+    "message": "Ipasok ang 6 na numerong code pamberipika galing sa app"
   },
   "twoStepAuthenticatorReaddDesc": {
-    "message": "Kung sakaling kailangan mong idagdag ito sa isa pang aparato, sa ibaba ay ang QR code (o key) na kinakailangan ng iyong authenticator app."
+    "message": "Kung kailangan mo itong idagdag sa iba pang device, nasa ibaba ang QR code (o key) na kailangan ng authenticator app mo."
   },
   "twoStepDisableDesc": {
-    "message": "Sigurado ka bang gusto mong patayin ang dalawang-hakbang na login provider na ito?"
+    "message": "Sigurado ka bang gusto mong isara ang provider ng dalawang-hakbang na pag-log in na ito?"
   },
   "twoStepDisabled": {
-    "message": "Naka off ang two step login provider."
+    "message": "Isinara ang provider ng dalawang-hakbang na pag-log in."
   },
   "twoFactorYubikeyAdd": {
-    "message": "Magdagdag ng bagong YubiKey sa iyong account"
+    "message": "Magdagdag ng bagong YubiKey sa account mo"
   },
   "twoFactorYubikeyPlugIn": {
-    "message": "I-plug ang YubiKey sa USB port ng iyong computer."
+    "message": "Isaksak ang YubiKey sa USB port ng kompyuter mo."
   },
   "twoFactorYubikeySelectKey": {
-    "message": "Piliin ang unang walang laman na YubiKey input field sa ibaba."
+    "message": "Piliin ang unang walang lamang YubiKey sa input field sa ibaba."
   },
   "twoFactorYubikeyTouchButton": {
-    "message": "Pindutin ang pindutan ng YubiKey ni."
+    "message": "Pindutin ang buton ng YubiKey."
   },
   "twoFactorYubikeySaveForm": {
     "message": "I-save ang form."
   },
   "twoFactorYubikeyWarning": {
-    "message": "Dahil sa mga limitasyon ng platform, ang YubiKeys ay hindi maaaring gamitin sa lahat ng mga aplikasyon ng Bitwarden. Dapat kang mag set up ng isa pang dalawang hakbang na tagapagbigay ng pag login upang ma access mo ang iyong account kapag hindi magamit ang YubiKey. Mga suportadong platform:"
+    "message": "Hindi magagamit sa lahat ng mga aplikasyon ng Bitwarden ang YubiKey dahil sa mga limitasyon ng platform. Dapat mag-set up ka ng isa pang provider ng dalawang-hakbang na pag-log in para ma-access mo ang account mo sakaling hindi magamit ang YubiKey. Mga suportadong platform:"
   },
   "twoFactorYubikeySupportUsb": {
-    "message": "Web vault, desktop application, CLI, at lahat ng mga extension ng browser sa isang aparato na may USB port na maaaring tanggapin ang iyong YubiKey."
+    "message": "Web vault, aplikasyon sa desktop, CLI, at lahat ng mga ekstensyon sa browser sa mga device na may USB port na masasaksakan ng YubiKey mo."
   },
   "twoFactorYubikeySupportMobile": {
-    "message": "Mga mobile app sa isang aparato na may mga kakayahan sa NFC o isang port ng data na maaaring tanggapin ang iyong YubiKey."
+    "message": "Mga mobile app sa isang device na may NFC o data port na masasaksakan ng YubiKey mo."
   },
   "yubikeyX": {
     "message": "YubiKey $INDEX$",
@@ -1543,121 +1543,121 @@
     "message": "Suporta sa NFC"
   },
   "twoFactorYubikeySupportsNfc": {
-    "message": "Ang isa sa aking mga susi ay sumusuporta sa NFC."
+    "message": "Sinusuportahan ng isa sa mga key ko ang NFC."
   },
   "twoFactorYubikeySupportsNfcDesc": {
-    "message": "Kung ang isa sa iyong YubiKey ay sumusuporta sa NFC (tulad ng isang YubiKey NEO), ikaw ay hinihimok sa mga mobile device tuwing natukoy ang availability ng NFC."
+    "message": "Kung sinusuportahan ng isa sa mga YubiKey mo ang NFC (halimbawa, YubiKey NEO), mapo-prompt ka sa mga mobile device kapag na-detect ang NFC availability."
   },
   "yubikeysUpdated": {
-    "message": "Na update ang YubiKeys"
+    "message": "Na-update ang mga YubiKey"
   },
   "disableAllKeys": {
-    "message": "I-deactivate ang lahat ng key"
+    "message": "I-deactivate lahat ng mga key"
   },
   "twoFactorDuoDesc": {
-    "message": "Ipasok ang impormasyon ng aplikasyon ng Bitwarden mula sa iyong panel ng Duo Admin."
+    "message": "Ipasok ang impormasyon ng aplikasyon ng Bitwarden sa Duo Admin panel mo."
   },
   "twoFactorDuoIntegrationKey": {
-    "message": "Key ng pagsasama"
+    "message": "Key pang-integrasyon"
   },
   "twoFactorDuoSecretKey": {
-    "message": "Lihim na susi"
+    "message": "Sikretong key"
   },
   "twoFactorDuoApiHostname": {
     "message": "Hostname ng API"
   },
   "twoFactorEmailDesc": {
-    "message": "Sundin ang mga hakbang na ito upang mai set up ang dalawang hakbang na pag login sa email:"
+    "message": "Sundin ito para ma-set up ang dalawang-hakbang na pag-log in gamit ang email:"
   },
   "twoFactorEmailEnterEmail": {
-    "message": "Ipasok ang email na nais mong makatanggap ng mga verification code"
+    "message": "Ilagay ang email kung saan mo gustong makatanggap ng mga code pamberipika"
   },
   "twoFactorEmailEnterCode": {
-    "message": "Ipasok ang nagresultang 6 digit verification code mula sa email"
+    "message": "Ipasok ang 6 na numerong code pamberipika galing sa email"
   },
   "sendEmail": {
-    "message": "Magpadala ng email"
+    "message": "Ipadala ang email"
   },
   "twoFactorU2fAdd": {
-    "message": "Magdagdag ng FIDO U2F security key sa iyong account"
+    "message": "Magdagdag ng FIDO U2F security key sa account mo"
   },
   "removeU2fConfirmation": {
-    "message": "Sigurado ka bang gusto mong alisin ang security key na ito?"
+    "message": "Sigurado ka bang gusto mong tanggalin ang security key na ito?"
   },
   "twoFactorWebAuthnAdd": {
-    "message": "Magdagdag ng isang key ng seguridad ng WebAuthn sa iyong account"
+    "message": "Magdagdag ng WebAuthn security key sa account mo"
   },
   "readKey": {
-    "message": "Basahin ang susi"
+    "message": "Basahin ang key"
   },
   "keyCompromised": {
-    "message": "Nakompromiso ang susi."
+    "message": "Nakompromiso ang key."
   },
   "twoFactorU2fGiveName": {
-    "message": "Bigyan ang security key ng isang friendly na pangalan upang matukoy ito."
+    "message": "Bigyan ng simpleng pangalan ang security key para madali itong matukoy."
   },
   "twoFactorU2fPlugInReadKey": {
-    "message": "I-plug ang security key sa USB port ng iyong computer at i-click ang \"Read Key\" button."
+    "message": "Isaksak ang security key sa USB port ng kompyuter mo at pindutin ang butong \"Basahin ang Key\"."
   },
   "twoFactorU2fTouchButton": {
-    "message": "Kung ang security key ay may isang pindutan, hawakan ito."
+    "message": "Kung may buton ang security key, pindutin ito."
   },
   "twoFactorU2fSaveForm": {
     "message": "I-save ang form."
   },
   "twoFactorU2fWarning": {
-    "message": "Dahil sa mga limitasyon ng platform, ang FIDO U2F ay hindi maaaring gamitin sa lahat ng mga aplikasyon ng Bitwarden. Dapat kang mag set up ng isa pang dalawang hakbang na tagapagbigay ng pag login upang ma access mo ang iyong account kapag hindi magamit ang FIDO U2F. Mga suportadong platform:"
+    "message": "Hindi magagamit sa lahat ng mga aplikasyon ng Bitwarden ang FIDO U2F dahil sa mga limitasyon ng platform. Dapat mag-set up ka ng isa pang provider ng dalawang-hakbang na pag-log in para ma-access mo ang account mo sakaling hindi magamit ang FIDO U2F. Mga suportadong platform:"
   },
   "twoFactorU2fSupportWeb": {
-    "message": "Web vault at mga extension ng browser sa isang desktop / laptop na may isang U2F suportado browser (Chrome, Opera, Vivaldi, o Firefox na may FIDO U2F nakabukas)."
+    "message": "Web vault at mga ekstensyon pang-browser sa desktop/laptop na may browser na sinusuportahan ang U2F (Chrome, Opera, Vivaldi, o Firefox na nakabukas ang FIDO U2F)."
   },
   "twoFactorU2fWaiting": {
-    "message": "Naghihintay para sa iyo na hawakan ang pindutan sa iyong key ng seguridad"
+    "message": "Naghihintay na mapindot ang buton sa security key mo"
   },
   "twoFactorU2fClickSave": {
-    "message": "Gamitin ang pindutan ng \"I-save\" sa ibaba para buhayin ang security key na ito para sa dalawang-hakbang na pag-login."
+    "message": "Pindutin ang \"I-save\" sa ibaba para ma-activate ang security key na ito para sa dalawang-hakbang na pag-log in."
   },
   "twoFactorU2fProblemReadingTryAgain": {
-    "message": "May problema sa pagbabasa ng security key. Try mo ulit."
+    "message": "Nagkaproblema sa pagbabasa ng security key. Pakisubukan ulit."
   },
   "twoFactorWebAuthnWarning": {
-    "message": "Dahil sa mga limitasyon ng platform, hindi maaaring gamitin ang WebAuthn sa lahat ng mga aplikasyon ng Bitwarden. Dapat kang mag set up ng isa pang dalawang hakbang na provider ng pag login upang ma access mo ang iyong account kapag hindi magamit ang WebAuthn. Mga suportadong platform:"
+    "message": "Hindi magagamit sa lahat ng mga aplikasyon ng Bitwarden ang WebAuthn dahil sa mga limitasyon ng platform. Dapat mag-set up ka ng isa pang provider ng dalawang-hakbang na pag-log in para ma-access mo ang account mo sakaling hindi magamit ang WebAuthn. Mga suportadong platform:"
   },
   "twoFactorWebAuthnSupportWeb": {
-    "message": "Web vault at mga extension ng browser sa isang desktop / laptop na may isang WebAuthn suportado browser (Chrome, Opera, Vivaldi, o Firefox na may FIDO U2F nakabukas)."
+    "message": "Web vault at mga ekstensyon pang-browser sa desktop/laptop na may browser na sinusuportahan ang WebAuthn (Chrome, Opera, Vivaldi, o Firefox na nakabukas ang FIDO U2F)."
   },
   "twoFactorRecoveryYourCode": {
-    "message": "Ang iyong Bitwarden dalawang hakbang na code sa pagbawi ng pag login"
+    "message": "Code pang-recover mo sa dalawang-hakbang na pag-log in sa Bitwarden"
   },
   "twoFactorRecoveryNoCode": {
-    "message": "Hindi ka pa nag set up ng anumang dalawang hakbang na mga tagapagbigay ng pag login. Pagkatapos mong mag set up ng isang dalawang hakbang na tagapagbigay ng pag login maaari mong suriin pabalik dito para sa iyong code sa pagbawi."
+    "message": "Hindi ka pa nakapag-set up ng anumang provider ng dalawang-hakbang na pag-log in. Pagkatapos mong makapag-set up nito, bumalik rito para makita ang mga code pang-recover mo."
   },
   "printCode": {
-    "message": "Mag-print ng code",
+    "message": "I-print ang code",
     "description": "Print 2FA recovery code"
   },
   "reports": {
-    "message": "Mga Ulat"
+    "message": "Mga ulat"
   },
   "reportsDesc": {
-    "message": "Kilalanin at isara ang mga puwang sa seguridad sa iyong mga online account sa pamamagitan ng pag click sa mga ulat sa ibaba.",
+    "message": "Tingnan ang mga ulat sa ibaba para kilalanin at tapalan ang mga butas sa seguridad sa mga account mo online.",
     "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization vault."
   },
   "orgsReportsDesc": {
-    "message": "Tukuyin at isara ang mga puwang sa seguridad sa mga account ng iyong organisasyon sa pamamagitan ng pag-click sa mga ulat sa ibaba.",
+    "message": "Tingnan ang mga ulat sa ibaba para kilalanin at tapalan ang mga butas sa seguridad sa mga account ng organisasyon mo.",
     "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization vault."
   },
   "unsecuredWebsitesReport": {
-    "message": "Hindi ligtas na mga website"
+    "message": "Mga website na hindi ligtas"
   },
   "unsecuredWebsitesReportDesc": {
-    "message": "Ang mga URL na nagsisimula sa http:// ay hindi gumagamit ng pinakamahusay na magagamit na pag encrypt. Baguhin ang mga URI ng pag login para sa mga account na ito upang https:// para sa mas ligtas na pag browse."
+    "message": "Hindi gumagamit ng pinakamainam na encryption ang mga URL na nagsisimula sa http://. Gawing https:// ang mga URI ng login ng mga account na ito para sa mas ligtas na pagba-browse."
   },
   "unsecuredWebsitesFound": {
-    "message": "Natagpuan ang mga website na hindi secure"
+    "message": "May nakitang mga website na hindi ligtas"
   },
   "unsecuredWebsitesFoundDesc": {
-    "message": "Nakita namin ang $COUNT$ na mga item sa iyong vault na may mga hindi secure na URI. Dapat mong baguhin ang kanilang scheme ng URI sa https:// kung pinapayagan ito ng website.",
+    "message": "May $COUNT$ item sa vault mo na gumagamit ng hindi ligtas na URI. Dapat gawing https:// ang URI scheme nito kung maa-access mo ang website gamit nito.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -1666,19 +1666,19 @@
     }
   },
   "noUnsecuredWebsites": {
-    "message": "Walang mga item sa iyong vault na may mga unsecured URI."
+    "message": "Walang item sa vault mo na may hindi ligtas na URI."
   },
   "inactive2faReport": {
-    "message": "Hindi aktibo ang dalawang hakbang na pag login"
+    "message": "Nakasarang dalawang-hakbang na pag-log in"
   },
   "inactive2faReportDesc": {
-    "message": "Ang dalawang hakbang na pag login ay nagdaragdag ng isang layer ng proteksyon sa iyong mga account. Mag set up ng dalawang hakbang na pag login gamit ang Bitwarden authenticator para sa mga account na ito o gumamit ng isang alternatibong paraan."
+    "message": "Nagdadagdag ng karagdagang proteksyon sa mga account mo ang dalawang-hakbang na pag-log in. I-set up ang dalawang-hakbang na pag-log in sa mga account na ito gamit ang Bitwarden o iba pang paraan."
   },
   "inactive2faFound": {
-    "message": "Natagpuan ang mga login na walang dalawang hakbang na pag login"
+    "message": "May mga login na nakasara ang dalawang-hakbang na pag-log in"
   },
   "inactive2faFoundDesc": {
-    "message": "Natagpuan namin ang (mga) website ng $COUNT$ sa iyong vault na maaaring hindi naka-configure gamit ang dalawang-hakbang na pag-login (ayon sa 2fa.directory). Upang higit pang maprotektahan ang mga account na ito, dapat kang mag set up ng dalawang hakbang na pag login.",
+    "message": "May $COUNT$ website sa vault mo na maaaring hindi pa gumagamit ng dalawang-hakbang na pag-log in (ayon sa 2fa.directory). I-set up ang dalawang-hakbang na pag-log in sa mga account na ito para sa karagdagang proteksyon.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -1687,22 +1687,22 @@
     }
   },
   "noInactive2fa": {
-    "message": "Walang mga website na natagpuan sa iyong vault na may nawawalang dalawang hakbang na pagsasaayos ng pag login."
+    "message": "Walang website sa vault mo na hindi pa gumagamit ng dalawang-hakbang na pag-log in."
   },
   "instructions": {
-    "message": "Mga tagubilin"
+    "message": "Mga panuto"
   },
   "exposedPasswordsReport": {
-    "message": "Mga nakalantad na password"
+    "message": "Mga nakompromisong password"
   },
   "exposedPasswordsReportDesc": {
-    "message": "Ang mga password na nakalantad sa isang paglabag sa data ay madaling target para sa mga attacker. Baguhin ang mga password na ito upang maiwasan ang mga potensyal na break in."
+    "message": "Madaling maha-hack ang mga password na nakompromiso sa data breach. Palitan ang mga password na ito para maiwasan ang posibleng pagka-hack."
   },
   "exposedPasswordsFound": {
-    "message": "Natagpuan ang mga nakalantad na password"
+    "message": "May nakitang mga nakompromisong password"
   },
   "exposedPasswordsFoundDesc": {
-    "message": "Natagpuan namin ang $COUNT$ item sa iyong vault na may mga password na nakalantad sa mga kilalang paglabag sa data. Dapat mong baguhin ang mga ito upang gumamit ng isang bagong password.",
+    "message": "May $COUNT$ item sa vault mo na may password na nakompromiso sa mga naitalang data breach. Kailangan mo silang baguhin.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -1711,13 +1711,13 @@
     }
   },
   "noExposedPasswords": {
-    "message": "Walang mga item sa iyong vault ang may mga password na nalantad sa mga kilalang paglabag sa data."
+    "message": "Walang item sa vault mo na may password na nakompromiso sa mga naitalang data breach."
   },
   "checkExposedPasswords": {
-    "message": "Suriin ang mga nakalantad na password"
+    "message": "Tingnan ang mga nakompromisong password"
   },
   "exposedXTimes": {
-    "message": "Nakalantad $COUNT$ (mga) oras",
+    "message": "Nakompromiso $COUNT$ beses",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -1726,16 +1726,16 @@
     }
   },
   "weakPasswordsReport": {
-    "message": "Mahina ang mga password"
+    "message": "Mga mahinang password"
   },
   "weakPasswordsReportDesc": {
-    "message": "Ang mga mahina na password ay madaling hulaan ng mga attacker. Palitan ang mga password na ito sa mga malakas na gamit ang password generator."
+    "message": "Madaling mahuhulaan ng mga hacker ang mahihinang password. Palakasin ang mga ito gamit ang tagagawa ng password."
   },
   "weakPasswordsFound": {
-    "message": "Mahina ang mga password na natagpuan"
+    "message": "May mga mahinang password"
   },
   "weakPasswordsFoundDesc": {
-    "message": "Natagpuan namin ang $COUNT$ item sa iyong vault na may mga password na hindi malakas. Dapat mong i update ang mga ito upang magamit ang mas malakas na mga password.",
+    "message": "May $COUNT$ item sa vault mo na may mahinang password. Dapat mo silang palakasin.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -1744,19 +1744,19 @@
     }
   },
   "noWeakPasswords": {
-    "message": "Walang mga item sa iyong vault na may mahinang mga password."
+    "message": "Walang item sa vault mo na may mahinang password."
   },
   "reusedPasswordsReport": {
-    "message": "Muling ginamit na mga password"
+    "message": "Mga naulit na password"
   },
   "reusedPasswordsReportDesc": {
-    "message": "Ang muling paggamit ng mga password ay ginagawang mas madali para sa mga attacker na masira sa maraming mga account. Baguhin ang mga password na ito upang ang bawat isa ay natatangi."
+    "message": "Mas madaling makakapasok sa maramihang mga account ang mga hacker kung uulit-ulitin mo ang mga password mo. Gawing unique ang mga password na ito."
   },
   "reusedPasswordsFound": {
-    "message": "Natagpuan ang mga ginamit na password"
+    "message": "May mga naulit na password"
   },
   "reusedPasswordsFoundDesc": {
-    "message": "Natagpuan namin ang $COUNT$ password na muling ginagamit sa iyong vault. Dapat mong baguhin ang mga ito sa isang natatanging halaga.",
+    "message": "May $COUNT$ item sa vault mo na may password na pinapaulit-ulit. Kailangan mo silang gawing unique.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -1765,10 +1765,10 @@
     }
   },
   "noReusedPasswords": {
-    "message": "Walang mga pag login sa iyong vault na may mga password na muling ginagamit."
+    "message": "Walang paulit-ulit na password sa mga login sa vault mo."
   },
   "reusedXTimes": {
-    "message": "Muling ginamit $COUNT$ beses",
+    "message": "Pinaulit-ulit $COUNT$ beses",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -1777,7 +1777,7 @@
     }
   },
   "dataBreachReport": {
-    "message": "Paglabag sa data"
+    "message": "Pagkakompromiso sa datos"
   },
   "breachDesc": {
     "message": "Maaaring ilantad ng mga nilabag na account ang iyong personal na impormasyon. Secure breached account sa pamamagitan ng pagpapagana ng 2FA o paglikha ng isang mas malakas na password."
@@ -4853,16 +4853,16 @@
     "message": "Ang isa o higit pang mga patakaran ng organisasyon ay nagpipigil sa iyo mula sa pag-export ng iyong indibidwal na vault."
   },
   "activateAutofill": {
-    "message": "I-activate ang auto-fill"
+    "message": "Buksan ang autofill"
   },
   "activateAutofillDesc": {
-    "message": "I-activate ang auto-fill na may mga pag-load ng pahina settings sa browser extension para sa lahat ng umiiral at bagong mga miyembro."
+    "message": "Buksan ang autofill na may mga setting ng page load sa ekstensyon pang-browser sa lahat ng kasalukyan at bagong miyembro."
   },
   "experimentalFeature": {
-    "message": "Ang mga nakompromiso o hindi pinagkakatiwalaang mga website ay maaaring samantalahin ang awtomatikong pagpuno sa pag load ng pahina."
+    "message": "Maaaring pagsamantalahan ng mga nakompromisong website ang pag-autofill pagka-load ng pahina."
   },
   "learnMoreAboutAutofill": {
-    "message": "Matuto nang higit pa tungkol sa auto fill"
+    "message": "Matuto pa tungkol sa autofill"
   },
   "selectType": {
     "message": "Pumili ng uri ng SSO"
@@ -5875,7 +5875,7 @@
     }
   },
   "deleteServiceAccountToast": {
-    "message": "Na-delete na ang service account"
+    "message": "Service account deleted"
   },
   "deleteServiceAccountsToast": {
     "message": "Na-delete na ang mga service accounts"
@@ -6036,8 +6036,8 @@
     "message": "Mga token ng access",
     "description": "Title for the section displaying access tokens."
   },
-  "createAccessToken": {
-    "message": "Lumikha ng access token",
+  "newAccessToken": {
+    "message": "New access token",
     "description": "Button label for creating a new access token."
   },
   "expires": {

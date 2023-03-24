@@ -465,7 +465,7 @@
     "message": "La mia cassaforte"
   },
   "allVaults": {
-    "message": "Tutte le Casseforti"
+    "message": "Tutte le casseforti"
   },
   "vault": {
     "message": "Cassaforte"
@@ -477,7 +477,7 @@
     "message": "Elementi della cassaforte"
   },
   "filter": {
-    "message": "Filtro"
+    "message": "Filtra"
   },
   "moveSelectedToOrg": {
     "message": "Sposta selezionati in organizzazione"
@@ -507,7 +507,7 @@
     "message": "Sei sicuro di voler eliminare questo allegato?"
   },
   "attachmentSaved": {
-    "message": "L'allegato è stato salvato."
+    "message": "Allegato salvato"
   },
   "file": {
     "message": "File"
@@ -525,7 +525,7 @@
     "message": "Elemento aggiunto"
   },
   "editedItem": {
-    "message": "Elemento modificato"
+    "message": "Elemento salvato"
   },
   "movedItemToOrg": {
     "message": "$ITEMNAME$ spostato in $ORGNAME$",
@@ -574,7 +574,7 @@
     "message": "Sei sicuro di voler sovrascrivere la password corrente?"
   },
   "editedFolder": {
-    "message": "Cartella modificata"
+    "message": "Cartella salvata"
   },
   "addedFolder": {
     "message": "Cartella aggiunta"
@@ -601,7 +601,7 @@
     "message": "Sei sicuro di volerti disconnettere?"
   },
   "logOut": {
-    "message": "Disconnetti"
+    "message": "Esci"
   },
   "ok": {
     "message": "Ok"
@@ -619,10 +619,10 @@
     "message": "Accedi con il dispositivo"
   },
   "loginWithDeviceEnabledInfo": {
-    "message": "Il login con il dispositivo deve essere abilitato nelle impostazioni dell'app mobile Bitwarden. Hai bisogno di un'altra opzione?"
+    "message": "Il login con dispositivo deve essere abilitato nelle impostazioni dell'app mobile di Bitwarden. Hai bisogno di un'altra opzione?"
   },
   "loginWithMasterPassword": {
-    "message": "Accedi con la password principale"
+    "message": "Accedi con password principale"
   },
   "createAccount": {
     "message": "Crea account"
@@ -631,7 +631,7 @@
     "message": "Nuovo da queste parti?"
   },
   "startTrial": {
-    "message": "Inizia il periodo di prova"
+    "message": "Inizia periodo di prova"
   },
   "logIn": {
     "message": "Accedi"
@@ -658,7 +658,7 @@
     "message": "La password principale è la password che utilizzi per accedere alla tua cassaforte. È molto importante che tu non la dimentichi. Non c'è modo di recuperare questa password nel caso che tu la dimenticassi."
   },
   "masterPassImportant": {
-    "message": "Le password principali non possono essere recuperate se dimenticate!"
+    "message": "La tua password principale non può essere recuperata se la dimentichi!"
   },
   "masterPassHintDesc": {
     "message": "Un suggerimento che può aiutarti a ricordare la tua password principale se la dimentichi."
@@ -691,10 +691,10 @@
     "message": "L'indirizzo email non è valido."
   },
   "masterPasswordRequired": {
-    "message": "È necessario inserire la password principale."
+    "message": "La password principale è obbligatoria."
   },
   "confirmMasterPasswordRequired": {
-    "message": "È necessario reinserire la password principale."
+    "message": "Reinserire la password principale è obbligatorio."
   },
   "masterPasswordMinlength": {
     "message": "La password principale deve essere lunga almeno $VALUE$ caratteri.",
@@ -750,7 +750,7 @@
     "message": "Password errata, usa la password che hai inserito alla creazione del file di esportazione."
   },
   "lockNow": {
-    "message": "Blocca"
+    "message": "Blocca ora"
   },
   "noItemsInList": {
     "message": "Non ci sono elementi da mostrare."
@@ -1199,7 +1199,7 @@
     "message": "Inoltre, procedere ti disconnetterà dalla sessione corrente, richiedendoti di accedere di nuovo. Se abilitata, ti sarà richiesta nuovamente la verifica in due passaggi. Le sessioni attive su altri dispositivi potrebbero continuare a rimanere attive per un massimo di un'ora."
   },
   "sessionsDeauthorized": {
-    "message": "Tutte le sessioni sono state annullate"
+    "message": "Ogni sessione revocata"
   },
   "purgeVault": {
     "message": "Svuota cassaforte"
@@ -1220,13 +1220,13 @@
     "message": "Lo svuotamento della cassaforte è permanente. Questa azione non è reversibile."
   },
   "vaultPurged": {
-    "message": "La tua cassaforte è stata svuotata."
+    "message": "Cassaforte svuotata."
   },
   "deleteAccount": {
     "message": "Elimina account"
   },
   "deleteAccountDesc": {
-    "message": "Procedi qui sotto per eliminare il tuo account e tutti i dati ad esso associati."
+    "message": "Procedi sotto per eliminare il tuo account e tutti i dati della tua cassaforte."
   },
   "deleteAccountWarning": {
     "message": "L'eliminazione dell'account è permanente. Questa azione non è reversibile."
@@ -1253,7 +1253,7 @@
     "message": "Si è verificato un problema con i dati che hai provato a importare. Risolvi gli errori elencati di seguito nel file importato e riprova."
   },
   "importSuccess": {
-    "message": "I dati sono stati importati correttamente nella tua cassaforte."
+    "message": "Dati importati con successo"
   },
   "dataExportSuccess": {
     "message": "Dati esportati con successo"
@@ -1283,7 +1283,7 @@
     "message": "Seleziona il file da importare"
   },
   "chooseFile": {
-    "message": "Seleziona File"
+    "message": "Seleziona file"
   },
   "noFileChosen": {
     "message": "Nessun file selezionato"
@@ -1311,7 +1311,7 @@
     "message": "Personalizza l'esperienza della tua cassaforte web."
   },
   "preferencesUpdated": {
-    "message": "Preferenze aggiornate"
+    "message": "Preferenze salvate"
   },
   "language": {
     "message": "Lingua"
@@ -1320,10 +1320,10 @@
     "message": "Cambia la lingua utilizzata dalla cassaforte web."
   },
   "enableFavicon": {
-    "message": "Mostra icone del sito"
+    "message": "Mostra icone dei siti"
   },
   "faviconDesc": {
-    "message": "Mostra un'immagine riconoscibile accanto a ogni login."
+    "message": "Mostra un piccolo logo riconoscibile accanto a ogni login."
   },
   "enableFullWidth": {
     "message": "Disposizione a larghezza piena",
@@ -1372,7 +1372,7 @@
     }
   },
   "domainsUpdated": {
-    "message": "Domini aggiornati"
+    "message": "Domini salvati"
   },
   "twoStepLogin": {
     "message": "Verifica in due passaggi"
@@ -1384,20 +1384,20 @@
     "message": "Proteggi il tuo account richiedendo un passaggio aggiuntivo all'accesso."
   },
   "twoStepLoginOrganizationDescStart": {
-    "message": "Forza le opzioni di accesso in due passaggi di Bitwarden per i membri utilizzando il ",
+    "message": "Forza le opzioni di verifica in due passaggi di Bitwarden per i membri usando il ",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enforce Bitwarden Two-step Login options for members by using the Two-step Login Policy.'"
   },
   "twoStepLoginPolicy": {
-    "message": "Politica di accesso in due passaggi"
+    "message": "Politica di verifica in due passaggi"
   },
   "twoStepLoginOrganizationDuoDesc": {
-    "message": "Per applicare l'accesso in due passaggi tramite Duo, utilizzare le opzioni qui sotto."
+    "message": "Per forzare la verifica in due passaggi tramite Duo, usa le opzioni qui sotto."
   },
   "twoStepLoginOrganizationSsoDesc": {
     "message": "Se hai configurato SSO o prevedi di farlo, la verifica in due passaggi potrebbe già essere forzato dal tuo Identity Provider."
   },
   "twoStepLoginRecoveryWarning": {
-    "message": "Con la verifica in due passaggi potresti bloccare permanentemente il tuo account di Bitwarden. Un codice di recupero ti permette di accedere al tuo account nel caso in cui non fossi più in grado di utilizzare il tuo solito metodo di verifica (ad esempio se perdi il tuo telefono). L'assistenza di Bitwarden non sarà in grado di aiutarti qualora dovessi perdere l'accesso al tuo account. Ti consigliamo di scrivere o stampare il tuo codice di recupero e di conservarlo in un luogo sicuro."
+    "message": "Impostare la verifica in due passaggi potrebbe bloccarti permanentemente fuori dal tuo account Bitwarden. Un codice di recupero ti permette di accedere al tuo account nel caso non fossi più in grado di utilizzare il tuo solito metodo di verifica in due passaggi (per esempio se perdi il telefono). L'assistenza di Bitwarden non sarà in grado di aiutarti se perdi l'accesso al tuo account. Scrivi o stampa il tuo codice di recupero e conservalo in un luogo sicuro."
   },
   "viewRecoveryCode": {
     "message": "Visualizza codice di recupero"
@@ -1407,13 +1407,13 @@
     "description": "Two-step login providers such as YubiKey, Duo, Authenticator apps, Email, etc."
   },
   "enable": {
-    "message": "Abilita"
+    "message": "Attiva"
   },
   "enabled": {
-    "message": "Abilitato"
+    "message": "Attivato"
   },
   "restoreAccess": {
-    "message": "Ripristina l'accesso"
+    "message": "Ripristina accesso"
   },
   "premium": {
     "message": "Premium",
@@ -1423,25 +1423,25 @@
     "message": "Abbonamento Premium"
   },
   "premiumRequired": {
-    "message": "Abbonamento Premium richiesto"
+    "message": "Premium necessario"
   },
   "premiumRequiredDesc": {
     "message": "Un abbonamento Premium è richiesto per utilizzare questa funzionalità."
   },
   "youHavePremiumAccess": {
-    "message": "Hai accesso premium"
+    "message": "Hai accesso Premium"
   },
   "alreadyPremiumFromOrg": {
-    "message": "Hai già accesso alle funzioni premium a causa di un'organizzazione di cui sei membro."
+    "message": "Hai già accesso alle funzionalità Premium grazie a un'organizzazione di cui sei membro."
   },
   "manage": {
     "message": "Gestisci"
   },
   "disable": {
-    "message": "Disabilita"
+    "message": "Disattiva"
   },
   "revokeAccess": {
-    "message": "Revoca l'accesso"
+    "message": "Revoca accesso"
   },
   "twoStepLoginProviderEnabled": {
     "message": "Questo metodo di verifica in due passaggi è abilitato sul tuo account."
@@ -1483,10 +1483,10 @@
     "message": "Nel caso in cui fosse necessario aggiungerlo ad un altro dispositivo, di seguito è riportato il QR code (o la chiave) richiesta dalla tua applicazione di autenticazione."
   },
   "twoStepDisableDesc": {
-    "message": "Sei sicuro di voler disabilitare questo metodo di verifica in due passaggi?"
+    "message": "Sei sicuro di voler rimuovere questo metodo di verifica in due passaggi?"
   },
   "twoStepDisabled": {
-    "message": "Metodo di verifica in due passaggi disabilitato."
+    "message": "Metodo di verifica in due passaggi rimosso."
   },
   "twoFactorYubikeyAdd": {
     "message": "Aggiungi una nuova YubiKey al tuo account"
@@ -1504,7 +1504,7 @@
     "message": "Salva il modulo."
   },
   "twoFactorYubikeyWarning": {
-    "message": "A causa di limitazioni della piattaforma, YubiKey non può essere utilizzato su tutte le applicazioni Bitwarden. Dovresti abilitare un altro metodo di verifica in due passaggi in modo da poter accedere al tuo account anche dove YubiKeys non può essere usato. Piattaforme supportate:"
+    "message": "A causa di limitazioni della piattaforma, YubiKey non può essere usato su tutte le app di Bitwarden. Abilita un altro metodo di verifica in due passaggi per poter accedere al tuo account anche quando YubiKey non può essere usato. Piattaforme supportate:"
   },
   "twoFactorYubikeySupportUsb": {
     "message": "La cassaforte web, l'applicazione desktop, la CLI e tutte le estensioni per browser su un dispositivo con una porta USB in grado di accettare la tua YubiKey."
@@ -1552,7 +1552,7 @@
     "message": "Yubikey aggiornate"
   },
   "disableAllKeys": {
-    "message": "Disabilita tutte le chiavi"
+    "message": "Disattiva tutti le chiavi"
   },
   "twoFactorDuoDesc": {
     "message": "Inserisci le informazioni della applicazione Bitwarden dal tuo pannello amministratore Duo."
@@ -1588,7 +1588,7 @@
     "message": "Aggiungi una chiave di sicurezza WebAuthn al tuo account"
   },
   "readKey": {
-    "message": "Leggi la chiave"
+    "message": "Leggi chiave"
   },
   "keyCompromised": {
     "message": "La chiave è compromessa."
@@ -1606,10 +1606,10 @@
     "message": "Salva il modulo."
   },
   "twoFactorU2fWarning": {
-    "message": "A causa di limitazioni della piattaforma, FIDO U2F non può essere utilizzato su tutte le applicazioni Bitwarden. Dovresti abilitare un altro metodo di verifica in due passaggi in modo da poter accedere al tuo account anche dove FIDO U2F non può essere usato. Piattaforme supportate:"
+    "message": "A causa di limitazioni della piattaforma, FIDO U2F non può essere usato su tutte le app di Bitwarden. Abilita un altro metodo di verifica in due passaggi per poter accedere al tuo account anche quando FIDO U2F non può essere usato. Piattaforme supportate:"
   },
   "twoFactorU2fSupportWeb": {
-    "message": "Cassaforte web ed estensione per il browser desktop/laptop con un U2F browser abilitato (Chrome, Opera, Vivaldi o Firefox con FIDO U2F abilitato)."
+    "message": "Cassaforte web ed estensione per il browser desktop/laptop con un U2F browser abilitato U2F (Chrome, Opera, Vivaldi o Firefox con FIDO U2F abilitato)."
   },
   "twoFactorU2fWaiting": {
     "message": "In attesa che venga premuto il pulsante della tua chiave di sicurezza"
@@ -1621,7 +1621,7 @@
     "message": "Si è verificato un problema durante la lettura della chiave di sicurezza. Riprova."
   },
   "twoFactorWebAuthnWarning": {
-    "message": "A causa di limitazioni della piattaforma, WebAuthn non può essere utilizzato su tutte le applicazioni Bitwarden. Dovresti abilitare un altro metodo di verifica in due passaggi in modo da poter accedere al tuo account anche dove WebAuthn non può essere usato. Piattaforme supportate:"
+    "message": "A causa di limitazioni della piattaforma, WebAuthn non può essere utilizzato su tutte le applicazioni Bitwarden. Dovresti abilitare un altro metodo di verifica in due passaggi per accedere al tuo account anche quando WebAuthn non può essere usato. Piattaforme supportate:"
   },
   "twoFactorWebAuthnSupportWeb": {
     "message": "Cassaforte Web ed estensione per il browser desktop/portatile con un browser abilitato per WebAuthn (Chrome, Opera, Vivaldi o Firefox con FIDO U2F abilitato)."
@@ -1630,17 +1630,17 @@
     "message": "Il tuo codice di recupero Bitwarden per la verifica in due passaggi"
   },
   "twoFactorRecoveryNoCode": {
-    "message": "Non hai ancora abilitato alcun metodo per la verifica in due passaggi. Dopo aver abilitato un metodo per la verifica in due passaggi torna qui per trovare il tuoi codice di recupero."
+    "message": "Non hai abilitato nessun metodo per la verifica in due passaggi. Dopo averne abilitato uno, puoi tornare qui per ottenere il tuoi codice di recupero."
   },
   "printCode": {
-    "message": "Stampa il codice",
+    "message": "Stampa codice",
     "description": "Print 2FA recovery code"
   },
   "reports": {
     "message": "Resoconti"
   },
   "reportsDesc": {
-    "message": "Identifica e chiudi i problemi di sicurezza dei tuoi account online cliccando sui report in basso.",
+    "message": "Identifica e correggi problemi di sicurezza nei tuoi account online cliccando sulle segnalazioni qui sotto.",
     "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization vault."
   },
   "orgsReportsDesc": {
@@ -1648,10 +1648,10 @@
     "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization vault."
   },
   "unsecuredWebsitesReport": {
-    "message": "Resoconto sui siti web non protetti"
+    "message": "Siti web non sicuri"
   },
   "unsecuredWebsitesReportDesc": {
-    "message": "L'utilizzo di siti web non protetti con lo schema http:// può essere pericoloso. Se il sito web lo consente, devi sempre accedervi utilizzando lo schema https:// in modo che la connessione sia cifrata."
+    "message": "Indirizzi che cominciano con http:// non usano la migliore crittografia disponibile. Modifica gli URI di accesso per questi account usando https:// per una maggiore sicurezza."
   },
   "unsecuredWebsitesFound": {
     "message": "Trovati siti web non protetti"
@@ -1669,16 +1669,16 @@
     "message": "Nessun elemento nella tua cassaforte ha URI non protetti."
   },
   "inactive2faReport": {
-    "message": "Resoconto 2FA inattivi"
+    "message": "Verifiche in due passaggi inattive"
   },
   "inactive2faReportDesc": {
-    "message": "L'autenticazione a due fattori (2FA) è un'impostazione di sicurezza importante che consente di proteggere i tuoi account. Se il sito web lo offre, dovresti sempre abilitare l'autenticazione a due fattori."
+    "message": "La verifica in due passaggi aggiunge un livello di protezione ai tuoi account. Imposta la verifica in due passaggi usando l'autenticatore di Bitwarden o un altro metodo."
   },
   "inactive2faFound": {
-    "message": "Accessi senza 2FA trovati"
+    "message": "Login senza verifica in due passaggi trovati"
   },
   "inactive2faFoundDesc": {
-    "message": "Abbiamo trovato $COUNT$ siti web nella tua cassaforte che potrebbero non essere configurati con l'accesso in due passaggi (secondo 2fa.directory). Per proteggere ulteriormente questi account, è necessario impostare il login in due passaggi.",
+    "message": "Abbiamo trovato $COUNT$ siti web nella tua cassaforte che potrebbero non essere configurati con la verifica in due passaggi (secondo 2fa.directory). Per proteggere ulteriormente questi account, abilita la verifica in due passaggi.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -1687,19 +1687,19 @@
     }
   },
   "noInactive2fa": {
-    "message": "Nessun sito web è stato trovato nella cassaforte con una configurazione di autenticazione a due fattori mancante."
+    "message": "Non sono stati trovati siti web senza verifica in due passaggi nella tua cassaforte."
   },
   "instructions": {
     "message": "Istruzioni"
   },
   "exposedPasswordsReport": {
-    "message": "Resoconto sulle password esposte"
+    "message": "Password esposte"
   },
   "exposedPasswordsReportDesc": {
-    "message": "Le password esposte in una violazione dei dati sono un facile bersaglio per gli aggressori. Cambiate queste password per evitare potenziali intrusioni."
+    "message": "Password esposte in una violazione dei dati sono un bersaglio facile per utenti malintenzionati. Cambia queste password per evitare potenziali intrusioni."
   },
   "exposedPasswordsFound": {
-    "message": "Trovate password esposte"
+    "message": "Password esposte trovate"
   },
   "exposedPasswordsFoundDesc": {
     "message": "Abbiamo trovato $COUNT$ elementi nella tua cassaforte che hanno password che sono state esposte a violazioni di dati note. Dovresti modificarli per usare una nuova password.",
@@ -1726,13 +1726,13 @@
     }
   },
   "weakPasswordsReport": {
-    "message": "Resoconto sulle password deboli"
+    "message": "Password deboli"
   },
   "weakPasswordsReportDesc": {
-    "message": "Le password deboli possono essere facilmente intuite dagli hacker e dagli strumenti automatici utilizzati per decifrare le password. Il generatore di password di Bitwarden può aiutarti a creare password robuste."
+    "message": "Le password deboli possono essere facilmente indovinate da utenti malintenzionati. Rendi queste password robuste usando il generatore di password."
   },
   "weakPasswordsFound": {
-    "message": "Trovate password deboli"
+    "message": "Password deboli trovate"
   },
   "weakPasswordsFoundDesc": {
     "message": "Abbiamo trovato $COUNT$ elementi nella tua cassaforte con password non robuste. Dovresti aggiornarli per usare password più robuste.",
@@ -1747,13 +1747,13 @@
     "message": "Nessun elemento nella tua cassaforte ha password deboli."
   },
   "reusedPasswordsReport": {
-    "message": "Resoconto sulle password riutilizzate"
+    "message": "Password riutilizzate"
   },
   "reusedPasswordsReportDesc": {
-    "message": "Se un servizio che usi è compromesso, riutilizzare la stessa password altrove può consentire agli hacker di accedere facilmente a più account online. È necessario utilizzare una password univoca per ogni account o servizio."
+    "message": "Riutilizzare le password rende facile per utenti malintenzionati di entrare in più account. Cambia queste password in modo che ognuna sia unica."
   },
   "reusedPasswordsFound": {
-    "message": "Trovate password riutilizzate"
+    "message": "Password riutilizzate trovate"
   },
   "reusedPasswordsFoundDesc": {
     "message": "Abbiamo trovato $COUNT$ password che sono riutilizzate nella tua cassaforte. Dovresti cambiarle in un valore univoco.",
@@ -1777,16 +1777,16 @@
     }
   },
   "dataBreachReport": {
-    "message": "Resoconto sulle violazioni dei dati"
+    "message": "Violazioni dei dati"
   },
   "breachDesc": {
-    "message": "Una \"violazione\" è un incidente dove i dati di un sito sono stati illegalmente accessi dagli hacker e poi rilasciati pubblicamente. Esaminare i tipi di dati che sono stati compromessi (indirizzi email, password, carte di credito ecc.) e adottare azioni appropriate, ad esempio la modifica delle password."
+    "message": "Account violati possono esporre le tue informazioni personali. Proteggi gli account violati abilitando 2FA o creando una password più sicura."
   },
   "breachCheckUsernameEmail": {
     "message": "Controlla ogni nome utente o indirizzi email che usi."
   },
   "checkBreaches": {
-    "message": "Verifica violazioni"
+    "message": "Verifica violazioni dei dati"
   },
   "breachUsernameNotFound": {
     "message": "$USERNAME$ non è stato trovato in nessuna violazione di dati conosciuta.",
@@ -1877,7 +1877,7 @@
     "message": "Hai effettuato l'aggiornamento a Premium."
   },
   "premiumUpgradeUnlockFeatures": {
-    "message": "Aggiorna il tuo account per un abbonamento premium e sblocca alcune funzioni aggiuntive."
+    "message": "Passa a Premium e sblocca alcune funzionalità utili."
   },
   "premiumSignUpStorage": {
     "message": "1 GB di spazio di archiviazione cifrato per gli allegati."
@@ -1898,7 +1898,7 @@
     "message": "Supporto clienti prioritario."
   },
   "premiumSignUpFuture": {
-    "message": "Tutte le funzioni premium. Nuove in arrivo!"
+    "message": "Tutte le prossime funzioni Premium. Nuove in arrivo!"
   },
   "premiumPrice": {
     "message": "Il tutto per solo $PRICE$ all'anno!",
@@ -1910,7 +1910,7 @@
     }
   },
   "premiumPriceWithFamilyPlan": {
-    "message": "Passa a premium per soli $PRICE$ /anno, o aggiungi account premium per $FAMILYPLANUSERCOUNT$ utenti e condivisione in famiglia senza limiti con un ",
+    "message": "Passa a Premium per solo $PRICE$ /anno, o aggiungi account Premium per $FAMILYPLANUSERCOUNT$ utenti e condivisione in famiglia senza limiti con un ",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -1932,7 +1932,7 @@
     "message": "Accesso Premium"
   },
   "premiumAccessDesc": {
-    "message": "Puoi aggiungere l'accesso premium a tutti i membri della tua organizzazione per $PRICE$ /$INTERVAL$.",
+    "message": "Puoi aggiungere l'accesso Premium a tutti i membri della tua organizzazione per $PRICE$ /$INTERVAL$.",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -1999,7 +1999,7 @@
     }
   },
   "paymentChargedWithTrial": {
-    "message": "Il tuo piano include una prova gratuita di 7 giorni. La tua carta non verrà addebitata fino alla fine del periodo di prova e su base ricorrente ogni $INTERVAL$. È possibile annullare in qualsiasi momento."
+    "message": "Il tuo piano include una prova gratuita di 7 giorni. Il tuo metodo di pagamento non sarà addebitato fino alla fine del periodo di prova. Puoi cancellarlo in qualsiasi momento."
   },
   "paymentInformation": {
     "message": "Informazioni sul pagamento"
@@ -2008,13 +2008,13 @@
     "message": "Dati di fatturazione"
   },
   "billingTrialSubLabel": {
-    "message": "Non verrà addebitato nulla sul vostro metodo di pagamento durante i sette giorni di prova gratuita."
+    "message": "Il tuo metodo di pagamento non sarà addebitato durante i 7 giorni d prova gratuita."
   },
   "creditCard": {
     "message": "Carta di credito"
   },
   "paypalClickSubmit": {
-    "message": "Fai clic sul pulsante di PayPal per accedere al tuo account PayPal, quindi fai clic sul pulsante Invia per continuare."
+    "message": "Clicca il pulsante PayPal per accedere al tuo account PayPal, poi clicca sul pulsante Invia qui sotto per continuare."
   },
   "cancelSubscription": {
     "message": "Annulla abbonamento"
@@ -2041,7 +2041,7 @@
     "message": "Sei sicuro di voler annullare il tuo abbonamento? Alla fine di questo ciclo di fatturazione perderai l'accesso a tutte le funzionalità aggiuntive date dall'abbonamento."
   },
   "canceledSubscription": {
-    "message": "L'abbonamento è stato annullato."
+    "message": "Abbonamento annullato"
   },
   "neverExpires": {
     "message": "Nessuna scadenza"
@@ -2490,7 +2490,7 @@
     "message": "Raccolta annidata"
   },
   "accessControl": {
-    "message": "Controllo di accesso"
+    "message": "Controllo accesso"
   },
   "groupAccessAllItems": {
     "message": "Questo gruppo può accedere e modificare tutti gli elementi."
@@ -2520,7 +2520,7 @@
     "message": "Modifica membro"
   },
   "fieldOnTabRequiresAttention": {
-    "message": "Un campo nel tab '$TAB$' richiede la tua attenzione.",
+    "message": "Un campo nella scheda '$TAB$' richiede la tua attenzione.",
     "placeholders": {
       "tab": {
         "content": "$1",
@@ -2529,10 +2529,10 @@
     }
   },
   "inviteUserDesc": {
-    "message": "Invita un nuovo utente alla tua organizzazione inserendo il suo indirizzo email dell'account Bitwarden di seguito. Se non hanno già un account Bitwarden, verrà richiesto di creare un nuovo account."
+    "message": "Invita un nuovo utente alla tua organizzazione inserendo il suo indirizzo email dell'account Bitwarden qui sotto. Se non ha già un account Bitwarden, gli sarà richiesto di creare un nuovo account."
   },
   "inviteMultipleEmailDesc": {
-    "message": "Puoi invitare fino a $COUNT$ utenti alla volta inserendo un elenco di indirizzi email separati da una virgola.",
+    "message": "Invita fino a $COUNT$ indirizzi email separati da una virgola.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -2541,7 +2541,7 @@
     }
   },
   "userUsingTwoStep": {
-    "message": "Questo utente utilizza l'accesso in due passaggi per proteggere il proprio account."
+    "message": "Questo utente usa la verifica in due passaggi per proteggere il suo account."
   },
   "userAccessAllItems": {
     "message": "Questo utente può accedere e modificare tutti gli elementi."
@@ -2568,7 +2568,7 @@
     "message": "Proprietario"
   },
   "ownerDesc": {
-    "message": "L'utente con accesso più alto sarà in grado di gestire tutti gli aspetti della tua organizzazione."
+    "message": "Gestisci tutti gli aspetti della tua organizzazione, inclusi fatturazione e abbonamenti"
   },
   "clientOwnerDesc": {
     "message": "Questo utente non dovrebbe dipendere dal fornitore. Se il fornitore viene rimosso dall'organizzazione, questo utente manterrà la proprietà dell'organizzazione."
@@ -2577,7 +2577,7 @@
     "message": "Amministratore"
   },
   "adminDesc": {
-    "message": "Gli amministratori possono accedere e gestire tutti gli elementi, le raccolte e gli utenti dell'organizzazione."
+    "message": "Gestisci l'accesso all'organizzazione, tutte le raccolte, i membri, i rapporti e le impostazioni di sicurezza"
   },
   "user": {
     "message": "Utente"
@@ -2589,7 +2589,7 @@
     "message": "Responsabile"
   },
   "managerDesc": {
-    "message": "I responsabili possono accedere e gestire le raccolte assegnate nella propria organizzazione."
+    "message": "Crea, elimina, e gestisci l'accesso nelle raccolte assegnate"
   },
   "all": {
     "message": "Tutti"
@@ -2625,16 +2625,16 @@
     "message": "Cassaforte web"
   },
   "loggedIn": {
-    "message": "Accesso effettuato."
+    "message": "Accesso effettuato"
   },
   "changedPassword": {
-    "message": "Password dell'account modificata."
+    "message": "Password dell'account cambiata"
   },
   "enabledUpdated2fa": {
-    "message": "Verifica in due passaggi abilitata/aggiornata."
+    "message": "Verifica in due passaggi salvata"
   },
   "disabled2fa": {
-    "message": "Verifica in due passaggi disabilitata."
+    "message": "Verifica in due passaggi disattivata"
   },
   "recovered2fa": {
     "message": "Account ripristinato dalla verifica in due passaggi."
@@ -2766,7 +2766,7 @@
     }
   },
   "autofilledItemId": {
-    "message": "Elemento riempito automaticamente $ID$.",
+    "message": "$ID$ riempito automaticamente.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2805,7 +2805,7 @@
     }
   },
   "editedPolicyId": {
-    "message": "Policy $ID$ modificata.",
+    "message": "Politica $ID$ modificata.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -3024,10 +3024,10 @@
     "message": "Gruppo di accesso"
   },
   "groupAccessUserDesc": {
-    "message": "Modificare i gruppi a cui appartiene questo utente."
+    "message": "Concedi ai membri accesso alle raccolte aggiungendoli a uno o più gruppi."
   },
   "invitedUsers": {
-    "message": "Invitato/i utente/i."
+    "message": "Utenti invitati"
   },
   "resendInvitation": {
     "message": "Invia nuovamente l'invito"
@@ -3036,7 +3036,7 @@
     "message": "Invia email di nuovo"
   },
   "hasBeenReinvited": {
-    "message": "$USER$ è stato invitato.",
+    "message": "$USER$ invitato di nuovo",
     "placeholders": {
       "user": {
         "content": "$1",
@@ -3051,7 +3051,7 @@
     "message": "Conferma utente"
   },
   "hasBeenConfirmed": {
-    "message": "$USER$ è stato confermato.",
+    "message": "$USER$ confermato.",
     "placeholders": {
       "user": {
         "content": "$1",
@@ -3063,7 +3063,7 @@
     "message": "Conferma utenti"
   },
   "usersNeedConfirmed": {
-    "message": "Hai utenti che hanno accettato il loro invito, ma devono ancora essere confermati. Gli utenti non avranno accesso all'organizzazione fino a quando non sono confermati."
+    "message": "Hai membri che hanno accettato il loro invito, ma che devono ancora essere confermati. I membri non avranno accesso all'organizzazione finché non sono confermati."
   },
   "startDate": {
     "message": "Data di inizio"
@@ -3084,7 +3084,7 @@
     "message": "Controlla la tua casella di posta per il collegamenti di verifica."
   },
   "emailVerified": {
-    "message": "Il tuo indirizzo email è stato verificato."
+    "message": "Email dell'account verificata"
   },
   "emailVerifiedFailed": {
     "message": "Impossibile verificare il tuo indirizzo email. Prova a inviare una nuova email di verifica."
@@ -3096,7 +3096,7 @@
     "message": "Devi verificare la tua email per utilizzare questa funzionalità."
   },
   "updateBrowser": {
-    "message": "Aggiorna il browser"
+    "message": "Aggiorna browser"
   },
   "updateBrowserDesc": {
     "message": "Stai utilizzando un browser non supportato. La cassaforte web potrebbe non funzionare correttamente."
@@ -3105,13 +3105,13 @@
     "message": "Unisciti all'organizzazione"
   },
   "joinOrganizationDesc": {
-    "message": "Sei stato invitato a far parte dell'organizzazione sopra elencata. Per accettare l'invito, è necessario accedere o creare un nuovo account di Bitwarden."
+    "message": "Sei stato invitato a far parte dell'organizzazione qui sopra. Per accettare l'invito, accedi o crea un nuovo account Bitwarden."
   },
   "inviteAccepted": {
     "message": "Invito accettato"
   },
   "inviteAcceptedDesc": {
-    "message": "Puoi accedere a questa organizzazione una volta che un amministratore conferma la tua iscrizione. Ti invieremo una email quando accadrà."
+    "message": "Puoi accedere a questa organizzazione quando un amministratore conferma la tua iscrizione. Ti invieremo una email quando sarai confermato."
   },
   "inviteAcceptFailed": {
     "message": "Non è possibile accettare l'invito. Chiedi ad un amministratore dell'organizzazione di inviare un nuovo invito."
@@ -3129,13 +3129,13 @@
     "message": "Ricorda email"
   },
   "recoverAccountTwoStepDesc": {
-    "message": "Se non puoi accedere al tuo account attraverso i normali metodi di verifica in due passaggi, puoi usare il codice di recupero per la verifica in due passaggi per disabilitare tutti i metodi di verifica in due passaggi presenti sul tuo account."
+    "message": "Se non puoi accedere al tuo account usando i normali metodi di verifica in due passaggi, usa il tuo codice di recupero per disattivare tutti i metodi di verifica sul tuo account."
   },
   "recoverAccountTwoStep": {
-    "message": "Ripristina la verifica in due passaggi dell'account"
+    "message": "Recupera verifica in due passaggi"
   },
   "twoStepRecoverDisabled": {
-    "message": "La verifica in due passaggi è stata disabilitata sul tuo account."
+    "message": "Verifica in due passaggi disabilitata sul tuo account."
   },
   "learnMore": {
     "message": "Ulteriori informazioni"
@@ -3186,7 +3186,7 @@
     "message": "L'organizzazione e tutti i dati associati sono stati eliminati."
   },
   "organizationUpdated": {
-    "message": "Organizzazione aggiornata"
+    "message": "Organizzazione salvata"
   },
   "taxInformation": {
     "message": "Informazioni fiscali"
@@ -4859,10 +4859,10 @@
     "message": "Attiva l'impostazione di riempimento automatico al caricamento della pagina nella estensione per il browser per tutti i membri esistenti e nuovi."
   },
   "experimentalFeature": {
-    "message": "I siti web compromessi o non attendibili possono abusare del riempimento automatico al caricamento della pagina."
+    "message": "Siti compromessi potrebbero sfruttare il riempimento automatico al caricamento della pagina."
   },
   "learnMoreAboutAutofill": {
-    "message": "Scopri di più sul riempimento automatico"
+    "message": "Ulteriori informazioni"
   },
   "selectType": {
     "message": "Seleziona tipo di SSO"
@@ -5875,7 +5875,7 @@
     }
   },
   "deleteServiceAccountToast": {
-    "message": "L'account di servizio è stato eliminato"
+    "message": "Service account deleted"
   },
   "deleteServiceAccountsToast": {
     "message": "Account di servizio eliminati"
@@ -6036,8 +6036,8 @@
     "message": "Token di accesso",
     "description": "Title for the section displaying access tokens."
   },
-  "createAccessToken": {
-    "message": "Genera token di accesso",
+  "newAccessToken": {
+    "message": "Nuovo token di accesso",
     "description": "Button label for creating a new access token."
   },
   "expires": {
@@ -6499,7 +6499,7 @@
     "message": "Cambia impostazioni KDF"
   },
   "changeKdfLoggedOutWarning": {
-    "message": "Proceeding will log you out of all active sessions. You will need to log back in and complete two-step login setup. We recommend exporting your vault before changing your encryption settings to prevent data loss."
+    "message": "Procedendo verrai disconnesso da tutte le sessioni attualmente attive. Dovrai nuovamente effettuare il login insieme all'autenticazione a due fattori. Ti consigliamo di esportare la tua cassaforte prima di cambiare le impostazioni di criptazione per prevenire perdite di dati."
   },
   "secretsManagerBeta": {
     "message": "Gestore segreti (beta)"
