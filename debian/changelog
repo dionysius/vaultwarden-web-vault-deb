@@ -1,3 +1,10 @@
+vaultwarden-web-vault (2023.3.0-0) unstable; urgency=medium
+
+  * fix import upstream source command
+  * update web-vault patch for v2023.3.0
+
+ -- dionysius <dragon.dionysius@gmail.com>  Tue, 28 Mar 2023 01:18:28 +0200
+
 vaultwarden-web-vault (2023.2.0-0) unstable; urgency=medium
 
   * update patch for 2023.2.0
