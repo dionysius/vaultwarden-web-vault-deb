@@ -434,6 +434,7 @@ export class ViewComponent implements OnDestroy, OnInit {
   private cleanUp() {
     this.totpCode = null;
     this.cipher = null;
+    this.folder = null;
     this.showPassword = false;
     this.showCardNumber = false;
     this.showCardCode = false;
