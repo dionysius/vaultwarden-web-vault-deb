@@ -9,8 +9,8 @@ import { OrganizationLayoutComponent } from "@bitwarden/web-vault/app/admin-cons
 import { SettingsComponent } from "@bitwarden/web-vault/app/admin-console/organizations/settings/settings.component";
 
 import { SsoComponent } from "../../auth/sso/sso.component";
-import { DomainVerificationComponent } from "../../organizations/manage/domain-verification/domain-verification.component";
 
+import { DomainVerificationComponent } from "./manage/domain-verification/domain-verification.component";
 import { ScimComponent } from "./manage/scim.component";
 
 const routes: Routes = [
