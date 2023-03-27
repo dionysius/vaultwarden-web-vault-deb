@@ -1,7 +1,7 @@
 import { OrganizationUserStatusType } from "@bitwarden/common/admin-console/enums/organization-user-status-type";
 import { OrganizationUserType } from "@bitwarden/common/admin-console/enums/organization-user-type";
 
-import { BaseResponse } from "./base.response";
+import { BaseResponse } from "../../../models/response/base.response";
 
 export class OrganizationUserResponse implements BaseResponse {
   object: string;
