@@ -68,9 +68,12 @@ export class SendView implements View {
   }
 
   toJSON() {
-    return Utils.merge(this, {
-      key: Utils.fromBufferToB64(this.key),
-    });
+    return Utils.merge(
+      { ...this },
+      {
+        key: Utils.fromBufferToB64(this.key),
+      }
+    );
   }
 
   static fromJSON(json: DeepJsonify<SendView>) {
