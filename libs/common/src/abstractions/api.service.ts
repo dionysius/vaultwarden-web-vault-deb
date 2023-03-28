@@ -112,8 +112,6 @@ import { KeysRequest } from "../models/request/keys.request";
 import { OrganizationImportRequest } from "../models/request/organization-import.request";
 import { PreloginRequest } from "../models/request/prelogin.request";
 import { RegisterRequest } from "../models/request/register.request";
-import { SendAccessRequest } from "../models/request/send-access.request";
-import { SendRequest } from "../models/request/send.request";
 import { StorageRequest } from "../models/request/storage.request";
 import { UpdateAvatarRequest } from "../models/request/update-avatar.request";
 import { UpdateDomainsRequest } from "../models/request/update-domains.request";
@@ -125,12 +123,7 @@ import { DomainsResponse } from "../models/response/domains.response";
 import { EventResponse } from "../models/response/event.response";
 import { ListResponse } from "../models/response/list.response";
 import { ProfileResponse } from "../models/response/profile.response";
-import { SendAccessResponse } from "../models/response/send-access.response";
-import { SendFileDownloadDataResponse } from "../models/response/send-file-download-data.response";
-import { SendFileUploadDataResponse } from "../models/response/send-file-upload-data.response";
-import { SendResponse } from "../models/response/send.response";
 import { UserKeyResponse } from "../models/response/user-key.response";
-import { SendAccessView } from "../models/view/send-access.view";
 import { AttachmentRequest } from "../vault/models/request/attachment.request";
 import { CipherBulkDeleteRequest } from "../vault/models/request/cipher-bulk-delete.request";
 import { CipherBulkMoveRequest } from "../vault/models/request/cipher-bulk-move.request";
@@ -212,31 +205,6 @@ export abstract class ApiService {
 
   getUserBillingHistory: () => Promise<BillingHistoryResponse>;
   getUserBillingPayment: () => Promise<BillingPaymentResponse>;
-
-  getSend: (id: string) => Promise<SendResponse>;
-  postSendAccess: (
-    id: string,
-    request: SendAccessRequest,
-    apiUrl?: string
-  ) => Promise<SendAccessResponse>;
-  getSends: () => Promise<ListResponse<SendResponse>>;
-  postSend: (request: SendRequest) => Promise<SendResponse>;
-  postFileTypeSend: (request: SendRequest) => Promise<SendFileUploadDataResponse>;
-  postSendFile: (sendId: string, fileId: string, data: FormData) => Promise<any>;
-  /**
-   * @deprecated Mar 25 2021: This method has been deprecated in favor of direct uploads.
-   * This method still exists for backward compatibility with old server versions.
-   */
-  postSendFileLegacy: (data: FormData) => Promise<SendResponse>;
-  putSend: (id: string, request: SendRequest) => Promise<SendResponse>;
-  putSendRemovePassword: (id: string) => Promise<SendResponse>;
-  deleteSend: (id: string) => Promise<any>;
-  getSendFileDownloadData: (
-    send: SendAccessView,
-    request: SendAccessRequest,
-    apiUrl?: string
-  ) => Promise<SendFileDownloadDataResponse>;
-  renewSendFileUploadUrl: (sendId: string, fileId: string) => Promise<SendFileUploadDataResponse>;
 
   getCipher: (id: string) => Promise<CipherResponse>;
   getFullCipherDetails: (id: string) => Promise<CipherResponse>;

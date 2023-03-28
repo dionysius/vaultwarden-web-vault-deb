@@ -11,7 +11,7 @@ import { MessagingService } from "@bitwarden/common/abstractions/messaging.servi
 import { OrganizationUserService } from "@bitwarden/common/abstractions/organization-user/organization-user.service";
 import { OrganizationUserResetPasswordEnrollmentRequest } from "@bitwarden/common/abstractions/organization-user/requests";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
-import { SendService } from "@bitwarden/common/abstractions/send.service";
+import { SendService } from "@bitwarden/common/abstractions/send/send.service.abstraction";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { OrganizationApiServiceAbstraction } from "@bitwarden/common/admin-console/abstractions/organization/organization-api.service.abstraction";
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
@@ -240,7 +240,7 @@ export class ChangePasswordComponent extends BaseChangePasswordComponent {
       request.ciphers.push(new CipherWithIdRequest(cipher));
     }
 
-    const sends = await this.sendService.getAll();
+    const sends = await firstValueFrom(this.sendService.sends$);
     await Promise.all(
       sends.map(async (send) => {
         const cryptoKey = await this.cryptoService.decryptToBytes(send.key, null);

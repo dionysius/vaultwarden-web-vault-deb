@@ -120,7 +120,13 @@ export abstract class StateService<T extends Account = Account> {
     value: Map<string, SymmetricCryptoKey>,
     options?: StorageOptions
   ) => Promise<void>;
+  /**
+   * @deprecated Do not call this directly, use SendService
+   */
   getDecryptedSends: (options?: StorageOptions) => Promise<SendView[]>;
+  /**
+   * @deprecated Do not call this directly, use SendService
+   */
   setDecryptedSends: (value: SendView[], options?: StorageOptions) => Promise<void>;
   getDefaultUriMatch: (options?: StorageOptions) => Promise<UriMatchType>;
   setDefaultUriMatch: (value: UriMatchType, options?: StorageOptions) => Promise<void>;
@@ -237,7 +243,13 @@ export abstract class StateService<T extends Account = Account> {
   setEncryptedPrivateKey: (value: string, options?: StorageOptions) => Promise<void>;
   getEncryptedProviderKeys: (options?: StorageOptions) => Promise<any>;
   setEncryptedProviderKeys: (value: any, options?: StorageOptions) => Promise<void>;
+  /**
+   * @deprecated Do not call this directly, use SendService
+   */
   getEncryptedSends: (options?: StorageOptions) => Promise<{ [id: string]: SendData }>;
+  /**
+   * @deprecated Do not call this directly, use SendService
+   */
   setEncryptedSends: (value: { [id: string]: SendData }, options?: StorageOptions) => Promise<void>;
   getEntityId: (options?: StorageOptions) => Promise<string>;
   setEntityId: (value: string, options?: StorageOptions) => Promise<void>;

@@ -6,7 +6,8 @@ import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { SearchService } from "@bitwarden/common/abstractions/search.service";
-import { SendService } from "@bitwarden/common/abstractions/send.service";
+import { SendApiService } from "@bitwarden/common/abstractions/send/send-api.service.abstraction";
+import { SendService } from "@bitwarden/common/abstractions/send/send.service.abstraction";
 import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
 import { PolicyType } from "@bitwarden/common/admin-console/enums/policy-type";
 import { SendType } from "@bitwarden/common/enums/sendType";
@@ -47,7 +48,8 @@ export class SendComponent implements OnInit, OnDestroy {
     protected ngZone: NgZone,
     protected searchService: SearchService,
     protected policyService: PolicyService,
-    private logService: LogService
+    private logService: LogService,
+    protected sendApiService: SendApiService
   ) {}
 
   async ngOnInit() {
@@ -66,8 +68,9 @@ export class SendComponent implements OnInit, OnDestroy {
 
   async load(filter: (send: SendView) => boolean = null) {
     this.loading = true;
-    const sends = await this.sendService.getAllDecrypted();
-    this.sends = sends;
+    this.sendService.sendViews$.pipe(takeUntil(this.destroy$)).subscribe((sends) => {
+      this.sends = sends;
+    });
     if (this.onSuccessfulLoad != null) {
       await this.onSuccessfulLoad();
     } else {
@@ -134,7 +137,7 @@ export class SendComponent implements OnInit, OnDestroy {
     }
 
     try {
-      this.actionPromise = this.sendService.removePasswordWithServer(s.id);
+      this.actionPromise = this.sendApiService.removePassword(s.id);
       await this.actionPromise;
       if (this.onSuccessfulRemovePassword != null) {
         this.onSuccessfulRemovePassword();
@@ -165,7 +168,7 @@ export class SendComponent implements OnInit, OnDestroy {
     }
 
     try {
-      this.actionPromise = this.sendService.deleteWithServer(s.id);
+      this.actionPromise = this.sendApiService.delete(s.id);
       await this.actionPromise;
 
       if (this.onSuccessfulDelete != null) {

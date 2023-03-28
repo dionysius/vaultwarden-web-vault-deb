@@ -1,3 +1,5 @@
+import { Jsonify } from "type-fest";
+
 import { SendFileData } from "../data/send-file.data";
 import { SendFileView } from "../view/send-file.view";
 
@@ -40,5 +42,15 @@ export class SendFile extends Domain {
       key
     );
     return view;
+  }
+
+  static fromJSON(obj: Jsonify<SendFile>) {
+    if (obj == null) {
+      return null;
+    }
+
+    return Object.assign(new SendFile(), obj, {
+      fileName: EncString.fromJSON(obj.fileName),
+    });
   }
 }

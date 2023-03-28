@@ -3,7 +3,7 @@ import * as program from "commander";
 import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
 import { EnvironmentService } from "@bitwarden/common/abstractions/environment.service";
 import { SearchService } from "@bitwarden/common/abstractions/search.service";
-import { SendService } from "@bitwarden/common/abstractions/send.service";
+import { SendService } from "@bitwarden/common/abstractions/send/send.service.abstraction";
 import { Utils } from "@bitwarden/common/misc/utils";
 import { SendView } from "@bitwarden/common/models/view/send.view";
 
@@ -66,12 +66,12 @@ export class SendGetCommand extends DownloadCommand {
 
   private async getSendView(id: string): Promise<SendView | SendView[]> {
     if (Utils.isGuid(id)) {
-      const send = await this.sendService.get(id);
+      const send = await this.sendService.getFromState(id);
       if (send != null) {
         return await send.decrypt();
       }
     } else if (id.trim() !== "") {
-      let sends = await this.sendService.getAllDecrypted();
+      let sends = await this.sendService.getAllDecryptedFromState();
       sends = this.searchService.searchSends(sends, id);
       if (sends.length > 1) {
         return sends;

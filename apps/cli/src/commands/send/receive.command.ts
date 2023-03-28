@@ -6,6 +6,7 @@ import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
 import { CryptoFunctionService } from "@bitwarden/common/abstractions/cryptoFunction.service";
 import { EnvironmentService } from "@bitwarden/common/abstractions/environment.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
+import { SendApiService } from "@bitwarden/common/abstractions/send/send-api.service.abstraction";
 import { SendType } from "@bitwarden/common/enums/sendType";
 import { NodeUtils } from "@bitwarden/common/misc/nodeUtils";
 import { Utils } from "@bitwarden/common/misc/utils";
@@ -29,7 +30,8 @@ export class SendReceiveCommand extends DownloadCommand {
     cryptoService: CryptoService,
     private cryptoFunctionService: CryptoFunctionService,
     private platformUtilsService: PlatformUtilsService,
-    private environmentService: EnvironmentService
+    private environmentService: EnvironmentService,
+    private sendApiService: SendApiService
   ) {
     super(cryptoService);
   }
@@ -84,7 +86,7 @@ export class SendReceiveCommand extends DownloadCommand {
         process.stdout.write(response?.text?.text);
         return Response.success();
       case SendType.File: {
-        const downloadData = await this.apiService.getSendFileDownloadData(
+        const downloadData = await this.sendApiService.getSendFileDownloadData(
           response,
           this.sendAccessRequest,
           apiUrl
@@ -135,7 +137,11 @@ export class SendReceiveCommand extends DownloadCommand {
     key: ArrayBuffer
   ): Promise<Response | SendAccessView> {
     try {
-      const sendResponse = await this.apiService.postSendAccess(id, this.sendAccessRequest, url);
+      const sendResponse = await this.sendApiService.postSendAccess(
+        id,
+        this.sendAccessRequest,
+        url
+      );
 
       const sendAccess = new SendAccess(sendResponse);
       this.decKey = await this.cryptoService.makeSendKey(key);

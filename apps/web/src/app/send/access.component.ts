@@ -7,6 +7,7 @@ import { CryptoFunctionService } from "@bitwarden/common/abstractions/cryptoFunc
 import { FileDownloadService } from "@bitwarden/common/abstractions/fileDownload/fileDownload.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
+import { SendApiService } from "@bitwarden/common/abstractions/send/send-api.service.abstraction";
 import { SEND_KDF_ITERATIONS } from "@bitwarden/common/enums/kdfType";
 import { SendType } from "@bitwarden/common/enums/sendType";
 import { Utils } from "@bitwarden/common/misc/utils";
@@ -48,7 +49,8 @@ export class AccessComponent implements OnInit {
     private platformUtilsService: PlatformUtilsService,
     private route: ActivatedRoute,
     private cryptoService: CryptoService,
-    private fileDownloadService: FileDownloadService
+    private fileDownloadService: FileDownloadService,
+    private sendApiService: SendApiService
   ) {}
 
   get sendText() {
@@ -93,7 +95,7 @@ export class AccessComponent implements OnInit {
       return;
     }
 
-    const downloadData = await this.apiService.getSendFileDownloadData(
+    const downloadData = await this.sendApiService.getSendFileDownloadData(
       this.send,
       this.accessRequest
     );
@@ -157,9 +159,9 @@ export class AccessComponent implements OnInit {
     try {
       let sendResponse: SendAccessResponse = null;
       if (this.loading) {
-        sendResponse = await this.apiService.postSendAccess(this.id, this.accessRequest);
+        sendResponse = await this.sendApiService.postSendAccess(this.id, this.accessRequest);
       } else {
-        this.formPromise = this.apiService.postSendAccess(this.id, this.accessRequest);
+        this.formPromise = this.sendApiService.postSendAccess(this.id, this.accessRequest);
         sendResponse = await this.formPromise;
       }
       this.passwordRequired = false;

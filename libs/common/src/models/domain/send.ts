@@ -1,3 +1,5 @@
+import { Jsonify } from "type-fest";
+
 import { SendType } from "../../enums/sendType";
 import { Utils } from "../../misc/utils";
 import { SendData } from "../data/send.data";
@@ -101,5 +103,26 @@ export class Send extends Domain {
     }
 
     return model;
+  }
+
+  static fromJSON(obj: Jsonify<Send>) {
+    if (obj == null) {
+      return null;
+    }
+
+    const revisionDate = obj.revisionDate == null ? null : new Date(obj.revisionDate);
+    const expirationDate = obj.expirationDate == null ? null : new Date(obj.expirationDate);
+    const deletionDate = obj.deletionDate == null ? null : new Date(obj.deletionDate);
+
+    return Object.assign(new Send(), obj, {
+      key: EncString.fromJSON(obj.key),
+      name: EncString.fromJSON(obj.name),
+      notes: EncString.fromJSON(obj.notes),
+      text: SendText.fromJSON(obj.text),
+      file: SendFile.fromJSON(obj.file),
+      revisionDate,
+      expirationDate,
+      deletionDate,
+    });
   }
 }

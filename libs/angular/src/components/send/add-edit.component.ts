@@ -7,7 +7,8 @@ import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { MessagingService } from "@bitwarden/common/abstractions/messaging.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
-import { SendService } from "@bitwarden/common/abstractions/send.service";
+import { SendApiService } from "@bitwarden/common/abstractions/send/send-api.service.abstraction";
+import { SendService } from "@bitwarden/common/abstractions/send/send.service.abstraction";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
 import { PolicyType } from "@bitwarden/common/admin-console/enums/policy-type";
@@ -58,7 +59,8 @@ export class AddEditComponent implements OnInit, OnDestroy {
     protected messagingService: MessagingService,
     protected policyService: PolicyService,
     private logService: LogService,
-    protected stateService: StateService
+    protected stateService: StateService,
+    protected sendApiService: SendApiService
   ) {
     this.typeOptions = [
       { name: i18nService.t("sendTypeFile"), value: SendType.File },
@@ -127,7 +129,7 @@ export class AddEditComponent implements OnInit, OnDestroy {
 
     if (this.send == null) {
       if (this.editMode) {
-        const send = await this.loadSend();
+        const send = this.loadSend();
         this.send = await send.decrypt();
       } else {
         this.send = new SendView();
@@ -191,7 +193,7 @@ export class AddEditComponent implements OnInit, OnDestroy {
     }
 
     this.formPromise = this.encryptSend(file).then(async (encSend) => {
-      const uploadPromise = this.sendService.saveWithServer(encSend);
+      const uploadPromise = this.sendApiService.save(encSend);
       await uploadPromise;
       if (this.send.id == null) {
         this.send.id = encSend[0].id;
@@ -241,7 +243,7 @@ export class AddEditComponent implements OnInit, OnDestroy {
     }
 
     try {
-      this.deletePromise = this.sendService.deleteWithServer(this.send.id);
+      this.deletePromise = this.sendApiService.delete(this.send.id);
       await this.deletePromise;
       this.platformUtilsService.showToast("success", null, this.i18nService.t("deletedSend"));
       await this.load();
@@ -270,7 +272,7 @@ export class AddEditComponent implements OnInit, OnDestroy {
     this.showOptions = !this.showOptions;
   }
 
-  protected async loadSend(): Promise<Send> {
+  protected loadSend(): Send {
     return this.sendService.get(this.sendId);
   }
 

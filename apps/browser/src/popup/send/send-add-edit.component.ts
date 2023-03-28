@@ -9,7 +9,8 @@ import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { MessagingService } from "@bitwarden/common/abstractions/messaging.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
-import { SendService } from "@bitwarden/common/abstractions/send.service";
+import { SendApiService } from "@bitwarden/common/abstractions/send/send-api.service.abstraction";
+import { SendService } from "@bitwarden/common/abstractions/send/send.service.abstraction";
 import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
 
 import { BrowserStateService } from "../../services/abstractions/browser-state.service";
@@ -43,7 +44,8 @@ export class SendAddEditComponent extends BaseAddEditComponent {
     private router: Router,
     private location: Location,
     private popupUtilsService: PopupUtilsService,
-    logService: LogService
+    logService: LogService,
+    sendApiService: SendApiService
   ) {
     super(
       i18nService,
@@ -54,7 +56,8 @@ export class SendAddEditComponent extends BaseAddEditComponent {
       messagingService,
       policyService,
       logService,
-      stateService
+      stateService,
+      sendApiService
     );
   }
 

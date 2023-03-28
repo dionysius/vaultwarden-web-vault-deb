@@ -109,7 +109,8 @@ export class SendProgram extends Program {
           this.main.cryptoService,
           this.main.cryptoFunctionService,
           this.main.platformUtilsService,
-          this.main.environmentService
+          this.main.environmentService,
+          this.main.sendApiService
         );
         const response = await cmd.run(url, options);
         this.processResponse(response);
@@ -259,7 +260,12 @@ export class SendProgram extends Program {
           this.main.searchService,
           this.main.cryptoService
         );
-        const cmd = new SendEditCommand(this.main.sendService, this.main.stateService, getCmd);
+        const cmd = new SendEditCommand(
+          this.main.sendService,
+          this.main.stateService,
+          getCmd,
+          this.main.sendApiService
+        );
         const response = await cmd.run(encodedJson, options);
         this.processResponse(response);
       });
@@ -273,7 +279,7 @@ export class SendProgram extends Program {
       })
       .action(async (id: string) => {
         await this.exitIfLocked();
-        const cmd = new SendDeleteCommand(this.main.sendService);
+        const cmd = new SendDeleteCommand(this.main.sendService, this.main.sendApiService);
         const response = await cmd.run(id);
         this.processResponse(response);
       });
@@ -287,7 +293,7 @@ export class SendProgram extends Program {
       })
       .action(async (id: string) => {
         await this.exitIfLocked();
-        const cmd = new SendRemovePasswordCommand(this.main.sendService);
+        const cmd = new SendRemovePasswordCommand(this.main.sendService, this.main.sendApiService);
         const response = await cmd.run(id);
         this.processResponse(response);
       });
@@ -327,7 +333,8 @@ export class SendProgram extends Program {
     const cmd = new SendCreateCommand(
       this.main.sendService,
       this.main.stateService,
-      this.main.environmentService
+      this.main.environmentService,
+      this.main.sendApiService
     );
     return await cmd.run(encodedJson, options);
   }

@@ -7,6 +7,7 @@ import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { MessagingService } from "@bitwarden/common/abstractions/messaging.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
+import { SendApiService } from "@bitwarden/common/abstractions/send/send-api.service.abstraction";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { CollectionService } from "@bitwarden/common/admin-console/abstractions/collection.service";
 import {
@@ -99,7 +100,8 @@ export class AddEditComponent implements OnInit, OnDestroy {
     protected policyService: PolicyService,
     private logService: LogService,
     protected passwordRepromptService: PasswordRepromptService,
-    private organizationService: OrganizationService
+    private organizationService: OrganizationService,
+    protected sendApiService: SendApiService
   ) {
     this.typeOptions = [
       { name: i18nService.t("typeLogin"), value: CipherType.Login },

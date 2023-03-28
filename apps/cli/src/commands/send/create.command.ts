@@ -2,7 +2,8 @@ import * as fs from "fs";
 import * as path from "path";
 
 import { EnvironmentService } from "@bitwarden/common/abstractions/environment.service";
-import { SendService } from "@bitwarden/common/abstractions/send.service";
+import { SendApiService } from "@bitwarden/common/abstractions/send/send-api.service.abstraction";
+import { SendService } from "@bitwarden/common/abstractions/send/send.service.abstraction";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { SendType } from "@bitwarden/common/enums/sendType";
 import { NodeUtils } from "@bitwarden/common/misc/nodeUtils";
@@ -16,7 +17,8 @@ export class SendCreateCommand {
   constructor(
     private sendService: SendService,
     private stateService: StateService,
-    private environmentService: EnvironmentService
+    private environmentService: EnvironmentService,
+    private sendApiService: SendApiService
   ) {}
 
   async run(requestJson: any, cmdOptions: Record<string, any>) {
@@ -120,8 +122,8 @@ export class SendCreateCommand {
       encSend.deletionDate = sendView.deletionDate;
       encSend.expirationDate = sendView.expirationDate;
 
-      await this.sendService.saveWithServer([encSend, fileData]);
-      const newSend = await this.sendService.get(encSend.id);
+      await this.sendApiService.save([encSend, fileData]);
+      const newSend = await this.sendService.getFromState(encSend.id);
       const decSend = await newSend.decrypt();
       const res = new SendResponse(decSend, this.environmentService.getWebVaultUrl());
       return Response.success(res);

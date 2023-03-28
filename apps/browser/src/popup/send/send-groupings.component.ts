@@ -8,7 +8,8 @@ import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { SearchService } from "@bitwarden/common/abstractions/search.service";
-import { SendService } from "@bitwarden/common/abstractions/send.service";
+import { SendApiService } from "@bitwarden/common/abstractions/send/send-api.service.abstraction";
+import { SendService } from "@bitwarden/common/abstractions/send/send.service.abstraction";
 import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
 import { SendType } from "@bitwarden/common/enums/sendType";
 import { SendView } from "@bitwarden/common/models/view/send.view";
@@ -47,7 +48,8 @@ export class SendGroupingsComponent extends BaseSendComponent {
     private syncService: SyncService,
     private changeDetectorRef: ChangeDetectorRef,
     private broadcasterService: BroadcasterService,
-    logService: LogService
+    logService: LogService,
+    sendApiService: SendApiService
   ) {
     super(
       sendService,
@@ -57,7 +59,8 @@ export class SendGroupingsComponent extends BaseSendComponent {
       ngZone,
       searchService,
       policyService,
-      logService
+      logService,
+      sendApiService
     );
     super.onSuccessfulLoad = async () => {
       this.calculateTypeCounts();

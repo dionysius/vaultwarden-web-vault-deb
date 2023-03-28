@@ -7,6 +7,7 @@ import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { MessagingService } from "@bitwarden/common/abstractions/messaging.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
+import { SendApiService } from "@bitwarden/common/abstractions/send/send-api.service.abstraction";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { TotpService } from "@bitwarden/common/abstractions/totp.service";
 import { CollectionService } from "@bitwarden/common/admin-console/abstractions/collection.service";
@@ -47,7 +48,8 @@ export class AddEditComponent extends BaseAddEditComponent {
     policyService: PolicyService,
     logService: LogService,
     passwordRepromptService: PasswordRepromptService,
-    organizationService: OrganizationService
+    organizationService: OrganizationService,
+    sendApiService: SendApiService
   ) {
     super(
       cipherService,
@@ -64,7 +66,8 @@ export class AddEditComponent extends BaseAddEditComponent {
       policyService,
       organizationService,
       logService,
-      passwordRepromptService
+      passwordRepromptService,
+      sendApiService
     );
   }
 

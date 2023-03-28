@@ -133,9 +133,10 @@ export class ServeCommand {
     this.sendCreateCommand = new SendCreateCommand(
       this.main.sendService,
       this.main.stateService,
-      this.main.environmentService
+      this.main.environmentService,
+      this.main.sendApiService
     );
-    this.sendDeleteCommand = new SendDeleteCommand(this.main.sendService);
+    this.sendDeleteCommand = new SendDeleteCommand(this.main.sendService, this.main.sendApiService);
     this.sendGetCommand = new SendGetCommand(
       this.main.sendService,
       this.main.environmentService,
@@ -145,14 +146,18 @@ export class ServeCommand {
     this.sendEditCommand = new SendEditCommand(
       this.main.sendService,
       this.main.stateService,
-      this.sendGetCommand
+      this.sendGetCommand,
+      this.main.sendApiService
     );
     this.sendListCommand = new SendListCommand(
       this.main.sendService,
       this.main.environmentService,
       this.main.searchService
     );
-    this.sendRemovePasswordCommand = new SendRemovePasswordCommand(this.main.sendService);
+    this.sendRemovePasswordCommand = new SendRemovePasswordCommand(
+      this.main.sendService,
+      this.main.sendApiService
+    );
   }
 
   async run(options: program.OptionValues) {

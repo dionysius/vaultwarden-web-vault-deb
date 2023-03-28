@@ -1,4 +1,5 @@
-import { SendService } from "@bitwarden/common/abstractions/send.service";
+import { SendApiService } from "@bitwarden/common/abstractions/send/send-api.service.abstraction";
+import { SendService } from "@bitwarden/common/abstractions/send/send.service.abstraction";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { SendType } from "@bitwarden/common/enums/sendType";
 
@@ -12,7 +13,8 @@ export class SendEditCommand {
   constructor(
     private sendService: SendService,
     private stateService: StateService,
-    private getCommand: SendGetCommand
+    private getCommand: SendGetCommand,
+    private sendApiService: SendApiService
   ) {}
 
   async run(requestJson: string, cmdOptions: Record<string, any>): Promise<Response> {
@@ -45,7 +47,7 @@ export class SendEditCommand {
       req.id = req.id.toLowerCase();
     }
 
-    const send = await this.sendService.get(req.id);
+    const send = await this.sendService.getFromState(req.id);
 
     if (send == null) {
       return Response.notFound();
@@ -72,7 +74,7 @@ export class SendEditCommand {
       encSend.deletionDate = sendView.deletionDate;
       encSend.expirationDate = sendView.expirationDate;
 
-      await this.sendService.saveWithServer([encSend, encFileData]);
+      await this.sendApiService.save([encSend, encFileData]);
     } catch (e) {
       return Response.error(e);
     }
