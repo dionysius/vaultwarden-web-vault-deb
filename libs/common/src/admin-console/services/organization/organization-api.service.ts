@@ -1,4 +1,5 @@
 import { ApiService } from "../../../abstractions/api.service";
+import { OrganizationApiKeyRequest } from "../../../admin-console/models/request/organization-api-key.request";
 import { OrganizationSsoRequest } from "../../../auth/models/request/organization-sso.request";
 import { SecretVerificationRequest } from "../../../auth/models/request/secret-verification.request";
 import { ApiKeyResponse } from "../../../auth/models/response/api-key.response";
@@ -11,7 +12,6 @@ import { OrganizationSubscriptionResponse } from "../../../billing/models/respon
 import { PaymentResponse } from "../../../billing/models/response/payment.response";
 import { TaxInfoResponse } from "../../../billing/models/response/tax-info.response";
 import { ImportDirectoryRequest } from "../../../models/request/import-directory.request";
-import { OrganizationApiKeyRequest } from "../../../models/request/organization-api-key.request";
 import { SeatRequest } from "../../../models/request/seat.request";
 import { StorageRequest } from "../../../models/request/storage.request";
 import { VerifyBankRequest } from "../../../models/request/verify-bank.request";
