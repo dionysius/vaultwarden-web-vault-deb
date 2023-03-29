@@ -1,6 +1,5 @@
 import { NgModule } from "@angular/core";
 
-import { SecretsManagerEnrollComponent } from "../../organizations/billing/secrets-manager/enroll.component";
 import { LooseComponentsModule, SharedModule } from "../../shared";
 
 import { AdjustSubscription } from "./adjust-subscription.component";
@@ -12,6 +11,7 @@ import { OrganizationBillingRoutingModule } from "./organization-billing-routing
 import { OrganizationBillingTabComponent } from "./organization-billing-tab.component";
 import { OrganizationSubscriptionCloudComponent } from "./organization-subscription-cloud.component";
 import { OrganizationSubscriptionSelfhostComponent } from "./organization-subscription-selfhost.component";
+import { SecretsManagerEnrollComponent } from "./secrets-manager/enroll.component";
 import { SubscriptionHiddenComponent } from "./subscription-hidden.component";
 
 @NgModule({
