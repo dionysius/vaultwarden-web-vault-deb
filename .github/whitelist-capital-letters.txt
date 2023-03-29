@@ -30,9 +30,6 @@
 ./libs/common/spec/models/domain/encString.spec.ts
 ./libs/common/spec/models/domain/symmetricCryptoKey.spec.ts
 ./libs/common/spec/models/domain/encArrayBuffer.spec.ts
-./libs/common/spec/models/domain/sendAccess.spec.ts
-./libs/common/spec/models/domain/sendFile.spec.ts
-./libs/common/spec/models/domain/sendText.spec.ts
 ./libs/common/spec/matchers/toEqualBuffer.spec.ts
 ./libs/common/spec/matchers/toEqualBuffer.ts
 ./libs/common/spec/services/stateMigration.service.spec.ts
@@ -46,7 +43,6 @@
 ./libs/common/src/enums/clientType.ts
 ./libs/common/src/enums/encryptedExportType.ts
 ./libs/common/src/enums/linkedIdType.ts
-./libs/common/src/enums/sendType.ts
 ./libs/common/src/enums/encryptionType.ts
 ./libs/common/src/enums/htmlStorageLocation.ts
 ./libs/common/src/enums/notificationType.ts

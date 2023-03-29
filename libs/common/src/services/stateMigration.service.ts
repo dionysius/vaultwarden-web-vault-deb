@@ -11,7 +11,6 @@ import { StateVersion } from "../enums/stateVersion";
 import { ThemeType } from "../enums/themeType";
 import { StateFactory } from "../factories/stateFactory";
 import { EventData } from "../models/data/event.data";
-import { SendData } from "../models/data/send.data";
 import {
   Account,
   AccountSettings,
@@ -22,6 +21,7 @@ import { EncString } from "../models/domain/enc-string";
 import { GlobalState } from "../models/domain/global-state";
 import { StorageOptions } from "../models/domain/storage-options";
 import { GeneratedPasswordHistory } from "../tools/generator/password";
+import { SendData } from "../tools/send/models/data/send.data";
 import { CipherData } from "../vault/models/data/cipher.data";
 import { FolderData } from "../vault/models/data/folder.data";
 

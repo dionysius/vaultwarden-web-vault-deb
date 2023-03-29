@@ -26,11 +26,6 @@ import { MessagingService } from "@bitwarden/common/abstractions/messaging.servi
 import { NotificationsService } from "@bitwarden/common/abstractions/notifications.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { SearchService as SearchServiceAbstraction } from "@bitwarden/common/abstractions/search.service";
-import { SendApiService as SendApiServiceAbstraction } from "@bitwarden/common/abstractions/send/send-api.service.abstraction";
-import {
-  InternalSendService as InternalSendServiceAbstraction,
-  SendService,
-} from "@bitwarden/common/abstractions/send/send.service.abstraction";
 import { SettingsService } from "@bitwarden/common/abstractions/settings.service";
 import {
   StateService as BaseStateServiceAbstraction,
@@ -66,9 +61,14 @@ import { GlobalState } from "@bitwarden/common/models/domain/global-state";
 import { ConsoleLogService } from "@bitwarden/common/services/consoleLog.service";
 import { ContainerService } from "@bitwarden/common/services/container.service";
 import { SearchService } from "@bitwarden/common/services/search.service";
-import { SendApiService } from "@bitwarden/common/services/send/send-api.service";
 import { PasswordGenerationServiceAbstraction } from "@bitwarden/common/tools/generator/password";
 import { UsernameGenerationServiceAbstraction } from "@bitwarden/common/tools/generator/username";
+import { SendApiService } from "@bitwarden/common/tools/send/services/send-api.service";
+import { SendApiService as SendApiServiceAbstraction } from "@bitwarden/common/tools/send/services/send-api.service.abstraction";
+import {
+  InternalSendService as InternalSendServiceAbstraction,
+  SendService,
+} from "@bitwarden/common/tools/send/services/send.service.abstraction";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
 import { CipherFileUploadService } from "@bitwarden/common/vault/abstractions/file-upload/cipher-file-upload.service";
 import { FolderApiServiceAbstraction } from "@bitwarden/common/vault/abstractions/folder/folder-api.service.abstraction";

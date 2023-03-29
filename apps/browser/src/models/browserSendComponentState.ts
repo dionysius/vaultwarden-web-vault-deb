@@ -1,6 +1,6 @@
-import { SendType } from "@bitwarden/common/enums/sendType";
 import { Utils } from "@bitwarden/common/misc/utils";
-import { SendView } from "@bitwarden/common/models/view/send.view";
+import { SendType } from "@bitwarden/common/tools/send/enums/send-type";
+import { SendView } from "@bitwarden/common/tools/send/models/view/send.view";
 import { DeepJsonify } from "@bitwarden/common/types/deep-jsonify";
 
 import { BrowserComponentState } from "./browserComponentState";

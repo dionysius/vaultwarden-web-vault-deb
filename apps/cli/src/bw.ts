@@ -36,8 +36,6 @@ import { MemoryStorageService } from "@bitwarden/common/services/memoryStorage.s
 import { NoopMessagingService } from "@bitwarden/common/services/noopMessaging.service";
 import { OrganizationUserServiceImplementation } from "@bitwarden/common/services/organization-user/organization-user.service.implementation";
 import { SearchService } from "@bitwarden/common/services/search.service";
-import { SendApiService } from "@bitwarden/common/services/send/send-api.service";
-import { SendService } from "@bitwarden/common/services/send/send.service";
 import { SettingsService } from "@bitwarden/common/services/settings.service";
 import { StateService } from "@bitwarden/common/services/state.service";
 import { StateMigrationService } from "@bitwarden/common/services/stateMigration.service";
@@ -48,6 +46,8 @@ import {
   PasswordGenerationService,
   PasswordGenerationServiceAbstraction,
 } from "@bitwarden/common/tools/generator/password";
+import { SendApiService } from "@bitwarden/common/tools/send/services/send-api.service";
+import { SendService } from "@bitwarden/common/tools/send/services/send.service";
 import { InternalFolderService } from "@bitwarden/common/vault/abstractions/folder/folder.service.abstraction";
 import { CipherService } from "@bitwarden/common/vault/services/cipher.service";
 import { CipherFileUploadService } from "@bitwarden/common/vault/services/file-upload/cipher-file-upload.service";
@@ -64,13 +64,13 @@ import {
 import { NodeCryptoFunctionService } from "@bitwarden/node/services/node-crypto-function.service";
 
 import { Program } from "./program";
-import { SendProgram } from "./send.program";
 import { CliPlatformUtilsService } from "./services/cli-platform-utils.service";
 import { ConsoleLogService } from "./services/console-log.service";
 import { I18nService } from "./services/i18n.service";
 import { LowdbStorageService } from "./services/lowdb-storage.service";
 import { NodeApiService } from "./services/node-api.service";
 import { NodeEnvSecureStorageService } from "./services/node-env-secure-storage.service";
+import { SendProgram } from "./tools/send/send.program";
 import { VaultProgram } from "./vault.program";
 
 // Polyfills

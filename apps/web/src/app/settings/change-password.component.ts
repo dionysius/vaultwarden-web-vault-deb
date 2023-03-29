@@ -11,7 +11,6 @@ import { MessagingService } from "@bitwarden/common/abstractions/messaging.servi
 import { OrganizationUserService } from "@bitwarden/common/abstractions/organization-user/organization-user.service";
 import { OrganizationUserResetPasswordEnrollmentRequest } from "@bitwarden/common/abstractions/organization-user/requests";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
-import { SendService } from "@bitwarden/common/abstractions/send/send.service.abstraction";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { OrganizationApiServiceAbstraction } from "@bitwarden/common/admin-console/abstractions/organization/organization-api.service.abstraction";
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
@@ -23,9 +22,10 @@ import { PasswordRequest } from "@bitwarden/common/auth/models/request/password.
 import { Utils } from "@bitwarden/common/misc/utils";
 import { EncString } from "@bitwarden/common/models/domain/enc-string";
 import { SymmetricCryptoKey } from "@bitwarden/common/models/domain/symmetric-crypto-key";
-import { SendWithIdRequest } from "@bitwarden/common/models/request/send-with-id.request";
 import { UpdateKeyRequest } from "@bitwarden/common/models/request/update-key.request";
 import { PasswordGenerationServiceAbstraction } from "@bitwarden/common/tools/generator/password";
+import { SendWithIdRequest } from "@bitwarden/common/tools/send/models/request/send-with-id.request";
+import { SendService } from "@bitwarden/common/tools/send/services/send.service.abstraction";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
 import { FolderService } from "@bitwarden/common/vault/abstractions/folder/folder.service.abstraction";
 import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";

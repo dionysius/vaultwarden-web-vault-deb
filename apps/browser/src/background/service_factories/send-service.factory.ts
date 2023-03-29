@@ -1,4 +1,4 @@
-import { InternalSendService } from "@bitwarden/common/abstractions/send/send.service.abstraction";
+import { InternalSendService } from "@bitwarden/common/tools/send/services/send.service.abstraction";
 
 import { BrowserSendService } from "../../services/browser-send.service";
 

@@ -16,6 +16,14 @@ import { Main } from "../bw";
 import { Response } from "../models/response";
 import { FileResponse } from "../models/response/file.response";
 import { GenerateCommand } from "../tools/generate.command";
+import {
+  SendEditCommand,
+  SendCreateCommand,
+  SendDeleteCommand,
+  SendGetCommand,
+  SendListCommand,
+  SendRemovePasswordCommand,
+} from "../tools/send";
 import { CreateCommand } from "../vault/create.command";
 import { DeleteCommand } from "../vault/delete.command";
 import { SyncCommand } from "../vault/sync.command";
@@ -24,12 +32,6 @@ import { EditCommand } from "./edit.command";
 import { GetCommand } from "./get.command";
 import { ListCommand } from "./list.command";
 import { RestoreCommand } from "./restore.command";
-import { SendCreateCommand } from "./send/create.command";
-import { SendDeleteCommand } from "./send/delete.command";
-import { SendEditCommand } from "./send/edit.command";
-import { SendGetCommand } from "./send/get.command";
-import { SendListCommand } from "./send/list.command";
-import { SendRemovePasswordCommand } from "./send/remove-password.command";
 import { StatusCommand } from "./status.command";
 
 export class ServeCommand {

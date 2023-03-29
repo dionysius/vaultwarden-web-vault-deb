@@ -36,14 +36,14 @@ import { FrontendLayoutComponent } from "./layouts/frontend-layout.component";
 import { UserLayoutComponent } from "./layouts/user-layout.component";
 import { OrganizationModule } from "./organizations/organization.module";
 import { ReportsModule } from "./reports";
-import { AccessComponent } from "./send/access.component";
-import { SendComponent } from "./send/send.component";
 import { AccountComponent } from "./settings/account.component";
 import { DomainRulesComponent } from "./settings/domain-rules.component";
 import { PreferencesComponent } from "./settings/preferences.component";
 import { SecurityRoutingModule } from "./settings/security-routing.module";
 import { SettingsComponent } from "./settings/settings.component";
 import { GeneratorComponent } from "./tools/generator.component";
+import { AccessComponent } from "./tools/send/access.component";
+import { SendComponent } from "./tools/send/send.component";
 import { ToolsComponent } from "./tools/tools.component";
 import { VaultModule } from "./vault/individual-vault/vault.module";
 

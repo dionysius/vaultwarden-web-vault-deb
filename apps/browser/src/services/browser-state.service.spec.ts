@@ -5,12 +5,12 @@ import {
   AbstractMemoryStorageService,
   AbstractStorageService,
 } from "@bitwarden/common/abstractions/storage.service";
-import { SendType } from "@bitwarden/common/enums/sendType";
 import { StateFactory } from "@bitwarden/common/factories/stateFactory";
 import { GlobalState } from "@bitwarden/common/models/domain/global-state";
 import { State } from "@bitwarden/common/models/domain/state";
-import { SendView } from "@bitwarden/common/models/view/send.view";
 import { StateMigrationService } from "@bitwarden/common/services/stateMigration.service";
+import { SendType } from "@bitwarden/common/tools/send/enums/send-type";
+import { SendView } from "@bitwarden/common/tools/send/models/view/send.view";
 
 import { Account } from "../models/account";
 import { BrowserComponentState } from "../models/browserComponentState";

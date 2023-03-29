@@ -15,8 +15,6 @@ import { MessagingService as MessagingServiceAbstraction } from "@bitwarden/comm
 import { NotificationsService as NotificationsServiceAbstraction } from "@bitwarden/common/abstractions/notifications.service";
 import { PlatformUtilsService as PlatformUtilsServiceAbstraction } from "@bitwarden/common/abstractions/platformUtils.service";
 import { SearchService as SearchServiceAbstraction } from "@bitwarden/common/abstractions/search.service";
-import { SendApiService as SendApiServiceAbstraction } from "@bitwarden/common/abstractions/send/send-api.service.abstraction";
-import { InternalSendService as InternalSendServiceAbstraction } from "@bitwarden/common/abstractions/send/send.service.abstraction";
 import { SettingsService as SettingsServiceAbstraction } from "@bitwarden/common/abstractions/settings.service";
 import {
   AbstractMemoryStorageService,
@@ -63,7 +61,6 @@ import { FileUploadService } from "@bitwarden/common/services/file-upload/file-u
 import { MemoryStorageService } from "@bitwarden/common/services/memoryStorage.service";
 import { NotificationsService } from "@bitwarden/common/services/notifications.service";
 import { SearchService } from "@bitwarden/common/services/search.service";
-import { SendApiService } from "@bitwarden/common/services/send/send-api.service";
 import { StateMigrationService } from "@bitwarden/common/services/stateMigration.service";
 import { SystemService } from "@bitwarden/common/services/system.service";
 import { TotpService } from "@bitwarden/common/services/totp.service";
@@ -77,6 +74,9 @@ import {
   UsernameGenerationService,
   UsernameGenerationServiceAbstraction,
 } from "@bitwarden/common/tools/generator/username";
+import { SendApiService } from "@bitwarden/common/tools/send/services/send-api.service";
+import { SendApiService as SendApiServiceAbstraction } from "@bitwarden/common/tools/send/services/send-api.service.abstraction";
+import { InternalSendService as InternalSendServiceAbstraction } from "@bitwarden/common/tools/send/services/send.service.abstraction";
 import { CipherService as CipherServiceAbstraction } from "@bitwarden/common/vault/abstractions/cipher.service";
 import { CipherFileUploadService as CipherFileUploadServiceAbstraction } from "@bitwarden/common/vault/abstractions/file-upload/cipher-file-upload.service";
 import { FolderApiServiceAbstraction } from "@bitwarden/common/vault/abstractions/folder/folder-api.service.abstraction";

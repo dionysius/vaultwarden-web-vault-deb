@@ -8,7 +8,6 @@ import { CollectionService } from "@bitwarden/common/admin-console/abstractions/
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
 import { CollectionView } from "@bitwarden/common/admin-console/models/view/collection.view";
-import { SendType } from "@bitwarden/common/enums/sendType";
 import { Utils } from "@bitwarden/common/misc/utils";
 import { EncString } from "@bitwarden/common/models/domain/enc-string";
 import { CardExport } from "@bitwarden/common/models/export/card.export";
@@ -21,6 +20,7 @@ import { LoginUriExport } from "@bitwarden/common/models/export/login-uri.export
 import { LoginExport } from "@bitwarden/common/models/export/login.export";
 import { SecureNoteExport } from "@bitwarden/common/models/export/secure-note.export";
 import { ErrorResponse } from "@bitwarden/common/models/response/error.response";
+import { SendType } from "@bitwarden/common/tools/send/enums/send-type";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
 import { FolderService } from "@bitwarden/common/vault/abstractions/folder/folder.service.abstraction";
 import { CipherType } from "@bitwarden/common/vault/enums/cipher-type";
@@ -33,9 +33,9 @@ import { OrganizationCollectionResponse } from "../admin-console/models/response
 import { OrganizationResponse } from "../admin-console/models/response/organization.response";
 import { SelectionReadOnly } from "../admin-console/models/selection-read-only";
 import { Response } from "../models/response";
-import { SendResponse } from "../models/response/send.response";
 import { StringResponse } from "../models/response/string.response";
 import { TemplateResponse } from "../models/response/template.response";
+import { SendResponse } from "../tools/send/models/send.response";
 import { CliUtils } from "../utils";
 import { CipherResponse } from "../vault/models/cipher.response";
 import { FolderResponse } from "../vault/models/folder.response";

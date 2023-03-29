@@ -3,7 +3,7 @@ import { PolicyResponse } from "../../../admin-console/models/response/policy.re
 import { BaseResponse } from "../../../models/response/base.response";
 import { DomainsResponse } from "../../../models/response/domains.response";
 import { ProfileResponse } from "../../../models/response/profile.response";
-import { SendResponse } from "../../../models/response/send.response";
+import { SendResponse } from "../../../tools/send/models/response/send.response";
 
 import { CipherResponse } from "./cipher.response";
 import { FolderResponse } from "./folder.response";

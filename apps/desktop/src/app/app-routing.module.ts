@@ -18,7 +18,7 @@ import { TwoFactorComponent } from "../auth/two-factor.component";
 import { UpdateTempPasswordComponent } from "../auth/update-temp-password.component";
 import { VaultComponent } from "../vault/app/vault/vault.component";
 
-import { SendComponent } from "./send/send.component";
+import { SendComponent } from "./tools/send/send.component";
 
 const routes: Routes = [
   { path: "", redirectTo: "/vault", pathMatch: "full" },

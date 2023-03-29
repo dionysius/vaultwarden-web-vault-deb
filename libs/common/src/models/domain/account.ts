@@ -13,14 +13,14 @@ import { KdfType } from "../../enums/kdfType";
 import { UriMatchType } from "../../enums/uriMatchType";
 import { Utils } from "../../misc/utils";
 import { GeneratedPasswordHistory } from "../../tools/generator/password";
+import { SendData } from "../../tools/send/models/data/send.data";
+import { SendView } from "../../tools/send/models/view/send.view";
 import { DeepJsonify } from "../../types/deep-jsonify";
 import { CipherData } from "../../vault/models/data/cipher.data";
 import { FolderData } from "../../vault/models/data/folder.data";
 import { CipherView } from "../../vault/models/view/cipher.view";
 import { EventData } from "../data/event.data";
-import { SendData } from "../data/send.data";
 import { ServerConfigData } from "../data/server-config.data";
-import { SendView } from "../view/send.view";
 
 import { EncString } from "./enc-string";
 import { SymmetricCryptoKey } from "./symmetric-crypto-key";

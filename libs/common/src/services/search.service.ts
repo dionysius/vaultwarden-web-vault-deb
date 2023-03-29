@@ -5,7 +5,7 @@ import { LogService } from "../abstractions/log.service";
 import { SearchService as SearchServiceAbstraction } from "../abstractions/search.service";
 import { FieldType } from "../enums/fieldType";
 import { UriMatchType } from "../enums/uriMatchType";
-import { SendView } from "../models/view/send.view";
+import { SendView } from "../tools/send/models/view/send.view";
 import { CipherService } from "../vault/abstractions/cipher.service";
 import { CipherType } from "../vault/enums/cipher-type";
 import { CipherView } from "../vault/models/view/cipher.view";

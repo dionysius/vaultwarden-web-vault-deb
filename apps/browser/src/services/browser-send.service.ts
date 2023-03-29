@@ -1,8 +1,8 @@
 import { BehaviorSubject } from "rxjs";
 
-import { Send } from "@bitwarden/common/models/domain/send";
-import { SendView } from "@bitwarden/common/models/view/send.view";
-import { SendService } from "@bitwarden/common/services/send/send.service";
+import { Send } from "@bitwarden/common/tools/send/models/domain/send";
+import { SendView } from "@bitwarden/common/tools/send/models/view/send.view";
+import { SendService } from "@bitwarden/common/tools/send/services/send.service";
 
 import { browserSession, sessionSync } from "../decorators/session-sync-observable";
 
