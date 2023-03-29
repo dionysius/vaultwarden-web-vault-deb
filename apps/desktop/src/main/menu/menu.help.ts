@@ -16,8 +16,7 @@ export class HelpMenu implements IMenubarMenu {
 
   get items(): MenuItemConstructorOptions[] {
     const items = [
-      this.getHelp,
-      this.contactUs,
+      this.helpAndFeedback,
       this.fileBugReport,
       this.legal,
       this.separator,
@@ -45,18 +44,10 @@ export class HelpMenu implements IMenubarMenu {
     this._aboutMenu = aboutMenu;
   }
 
-  private get contactUs(): MenuItemConstructorOptions {
+  private get helpAndFeedback(): MenuItemConstructorOptions {
     return {
-      id: "contactUs",
-      label: this.localize("contactUs"),
-      click: () => shell.openExternal("https://bitwarden.com/contact"),
-    };
-  }
-
-  private get getHelp(): MenuItemConstructorOptions {
-    return {
-      id: "getHelp",
-      label: this.localize("getHelp"),
+      id: "helpAndFeedback",
+      label: this.localize("helpAndFeedback"),
       click: () => shell.openExternal("https://bitwarden.com/help"),
     };
   }
