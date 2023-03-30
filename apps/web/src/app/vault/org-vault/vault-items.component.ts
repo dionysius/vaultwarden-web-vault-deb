@@ -20,13 +20,13 @@ import { PasswordRepromptService } from "@bitwarden/common/vault/abstractions/pa
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 import { DialogService } from "@bitwarden/components";
 
+import { CollectionAdminView } from "../../admin-console/organizations/core";
+import { GroupService } from "../../admin-console/organizations/core/services/group/group.service";
 import {
   CollectionDialogResult,
   CollectionDialogTabType,
   openCollectionDialog,
 } from "../../admin-console/organizations/shared/components/collection-dialog";
-import { CollectionAdminView } from "../../organizations/core";
-import { GroupService } from "../../organizations/core/services/group/group.service";
 import {
   BulkDeleteDialogResult,
   openBulkDeleteDialog,

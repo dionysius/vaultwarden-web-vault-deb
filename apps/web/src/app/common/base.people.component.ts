@@ -19,8 +19,8 @@ import { ProviderUserUserDetailsResponse } from "@bitwarden/common/admin-console
 import { Utils } from "@bitwarden/common/misc/utils";
 import { ListResponse } from "@bitwarden/common/models/response/list.response";
 
+import { OrganizationUserView } from "../admin-console/organizations/core/views/organization-user.view";
 import { UserConfirmComponent } from "../admin-console/organizations/manage/user-confirm.component";
-import { OrganizationUserView } from "../organizations/core/views/organization-user.view";
 
 type StatusType = OrganizationUserStatusType | ProviderUserStatusType;
 

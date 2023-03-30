@@ -3,8 +3,9 @@ import { RouterModule, Routes } from "@angular/router";
 
 import { canAccessMembersTab } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 
-import { OrganizationPermissionsGuard } from "../../admin-console/organizations/guards/org-permissions.guard";
-import { PeopleComponent } from "../../admin-console/organizations/members/people.component";
+import { OrganizationPermissionsGuard } from "../guards/org-permissions.guard";
+
+import { PeopleComponent } from "./people.component";
 
 const routes: Routes = [
   {

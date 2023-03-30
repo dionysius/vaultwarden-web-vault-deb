@@ -28,7 +28,7 @@ import { FolderService } from "@bitwarden/common/vault/abstractions/folder/folde
 import { CipherType } from "@bitwarden/common/vault/enums/cipher-type";
 import { FolderView } from "@bitwarden/common/vault/models/view/folder.view";
 
-import { CollectionAdminView } from "../../../../organizations/core";
+import { CollectionAdminView } from "../../../../admin-console/organizations/core";
 import {
   CipherTypeFilter,
   CollectionFilter,

@@ -51,7 +51,7 @@ const routes: Routes = [
       },
       {
         path: "members",
-        loadChildren: () => import("../../organizations/members").then((m) => m.MembersModule),
+        loadChildren: () => import("./members").then((m) => m.MembersModule),
       },
       {
         path: "groups",

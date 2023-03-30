@@ -19,11 +19,14 @@ import {
 } from "@bitwarden/components";
 
 import {
+  CollectionAdminService,
+  CollectionAdminView,
+} from "../../../admin-console/organizations/core";
+import {
   CollectionDialogResult,
   CollectionDialogTabType,
   openCollectionDialog,
 } from "../../../admin-console/organizations/shared/components/collection-dialog";
-import { CollectionAdminService, CollectionAdminView } from "../../../organizations/core";
 import { VaultFilterService } from "../../individual-vault/vault-filter/services/abstractions/vault-filter.service";
 import { VaultFilter } from "../../individual-vault/vault-filter/shared/models/vault-filter.model";
 import { CollectionFilter } from "../../individual-vault/vault-filter/shared/models/vault-filter.type";

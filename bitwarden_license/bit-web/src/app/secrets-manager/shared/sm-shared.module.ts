@@ -1,8 +1,8 @@
 import { NgModule } from "@angular/core";
 
 import { MultiSelectModule } from "@bitwarden/components";
+import { CoreOrganizationModule } from "@bitwarden/web-vault/app/admin-console/organizations/core";
 import { ProductSwitcherModule } from "@bitwarden/web-vault/app/layouts/product-switcher/product-switcher.module";
-import { CoreOrganizationModule } from "@bitwarden/web-vault/app/organizations/core";
 import { SharedModule } from "@bitwarden/web-vault/app/shared";
 
 import { AccessSelectorComponent } from "./access-policies/access-selector.component";

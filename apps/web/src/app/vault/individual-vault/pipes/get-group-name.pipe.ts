@@ -1,6 +1,6 @@
 import { Pipe, PipeTransform } from "@angular/core";
 
-import { GroupView } from "../../../organizations/core";
+import { GroupView } from "../../../admin-console/organizations/core";
 
 @Pipe({
   name: "groupNameFromId",

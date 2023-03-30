@@ -23,7 +23,7 @@ import { CipherType } from "@bitwarden/common/vault/enums/cipher-type";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 import { DialogService, Icons } from "@bitwarden/components";
 
-import { CollectionAdminView, GroupView } from "../../organizations/core";
+import { CollectionAdminView, GroupView } from "../../admin-console/organizations/core";
 
 import {
   BulkDeleteDialogResult,

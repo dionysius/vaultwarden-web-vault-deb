@@ -22,7 +22,7 @@ import {
   GroupView,
   OrganizationUserAdminView,
   UserAdminService,
-} from "../../../../../organizations/core";
+} from "../../../core";
 import {
   AccessItemType,
   AccessItemValue,

@@ -4,7 +4,7 @@ import { Meta, moduleMetadata, Story } from "@storybook/angular";
 import { JslibModule } from "@bitwarden/angular/jslib.module";
 import { InputModule } from "@bitwarden/components/src/input/input.module";
 
-import { PreloadedEnglishI18nModule } from "../../../../tests/preloaded-english-i18n.module";
+import { PreloadedEnglishI18nModule } from "../../../../../tests/preloaded-english-i18n.module";
 
 import { SearchInputComponent } from "./search-input.component";
 
