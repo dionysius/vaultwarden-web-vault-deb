@@ -81,7 +81,7 @@ export class TabListItemDirective implements FocusableOption {
       "tw-border-t-primary-500",
       "tw-border-b",
       "tw-border-b-background",
-      "tw-bg-background",
+      "!tw-bg-background",
       "hover:tw-border-t-primary-700",
       "focus-visible:tw-border-t-primary-700",
       "focus-visible:!tw-text-primary-700",
