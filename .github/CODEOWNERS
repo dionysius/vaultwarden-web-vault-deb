@@ -7,7 +7,7 @@
 # @bitwarden/team-leads
 
 ## Secrets Manager team files ##
-bitwarden_license/bit-web/src/app/secrets-manager @bitwarden/pod-sm-dev
+bitwarden_license/bit-web/src/app/secrets-manager @bitwarden/team-secrets-manager-dev
 
 ## Auth team files ##
 apps/browser/src/auth @bitwarden/team-auth-dev
