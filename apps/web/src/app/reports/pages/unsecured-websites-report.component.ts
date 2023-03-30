@@ -24,9 +24,7 @@ export class UnsecuredWebsitesReportComponent extends CipherReportComponent impl
   }
 
   async ngOnInit() {
-    if (await this.checkAccess()) {
-      await super.load();
-    }
+    await super.load();
   }
 
   async setCiphers() {

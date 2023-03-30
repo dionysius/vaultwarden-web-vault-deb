@@ -9,6 +9,7 @@ import { InactiveTwoFactorReportComponent } from "../../../admin-console/organiz
 import { ReusedPasswordsReportComponent } from "../../../admin-console/organizations/tools/reused-passwords-report.component";
 import { UnsecuredWebsitesReportComponent } from "../../../admin-console/organizations/tools/unsecured-websites-report.component";
 import { WeakPasswordsReportComponent } from "../../../admin-console/organizations/tools/weak-passwords-report.component";
+import { IsPaidOrgGuard } from "../guards/is-paid-org.guard";
 import { OrganizationPermissionsGuard } from "../guards/org-permissions.guard";
 import { OrganizationRedirectGuard } from "../guards/org-redirect.guard";
 import { EventsComponent } from "../manage/events.component";
@@ -46,6 +47,7 @@ const routes: Routes = [
             data: {
               titleId: "exposedPasswordsReport",
             },
+            canActivate: [IsPaidOrgGuard],
           },
           {
             path: "inactive-two-factor-report",
@@ -53,6 +55,7 @@ const routes: Routes = [
             data: {
               titleId: "inactive2faReport",
             },
+            canActivate: [IsPaidOrgGuard],
           },
           {
             path: "reused-passwords-report",
@@ -60,6 +63,7 @@ const routes: Routes = [
             data: {
               titleId: "reusedPasswordsReport",
             },
+            canActivate: [IsPaidOrgGuard],
           },
           {
             path: "unsecured-websites-report",
@@ -67,6 +71,7 @@ const routes: Routes = [
             data: {
               titleId: "unsecuredWebsitesReport",
             },
+            canActivate: [IsPaidOrgGuard],
           },
           {
             path: "weak-passwords-report",
@@ -74,6 +79,7 @@ const routes: Routes = [
             data: {
               titleId: "weakPasswordsReport",
             },
+            canActivate: [IsPaidOrgGuard],
           },
         ],
       },

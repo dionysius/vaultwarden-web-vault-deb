@@ -72,18 +72,6 @@ export class CipherReportComponent {
     return childComponent;
   }
 
-  protected async checkAccess(): Promise<boolean> {
-    if (this.organization != null) {
-      // TODO: Maybe we want to just make sure they are not on a free plan? Just compare useTotp for now
-      // since all paid plans include useTotp
-      if (this.requiresPaid && !this.organization.useTotp) {
-        this.messagingService.send("upgradeOrganization", { organizationId: this.organization.id });
-        return false;
-      }
-    }
-    return true;
-  }
-
   protected async setCiphers() {
     this.ciphers = [];
   }

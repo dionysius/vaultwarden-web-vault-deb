@@ -33,12 +33,11 @@ export class ExposedPasswordsReportComponent extends BaseExposedPasswordsReportC
     super(cipherService, auditService, modalService, messagingService, passwordRepromptService);
   }
 
-  ngOnInit() {
+  async ngOnInit() {
     // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
     this.route.parent.parent.params.subscribe(async (params) => {
       this.organization = await this.organizationService.get(params.organizationId);
       this.manageableCiphers = await this.cipherService.getAll();
-      await this.checkAccess();
     });
   }
 

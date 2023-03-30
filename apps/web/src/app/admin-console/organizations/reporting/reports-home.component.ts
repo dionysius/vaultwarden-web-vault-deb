@@ -1,8 +1,9 @@
-import { Component, OnDestroy, OnInit } from "@angular/core";
-import { NavigationEnd, Router } from "@angular/router";
-import { filter, Subject, takeUntil } from "rxjs";
+import { Component, OnInit } from "@angular/core";
+import { ActivatedRoute, NavigationEnd, Router } from "@angular/router";
+import { filter, map, Observable, startWith } from "rxjs";
 
 import { StateService } from "@bitwarden/common/abstractions/state.service";
+import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 
 import { ReportVariant, reports, ReportType, ReportEntry } from "../../../reports";
 
@@ -10,56 +11,56 @@ import { ReportVariant, reports, ReportType, ReportEntry } from "../../../report
   selector: "app-org-reports-home",
   templateUrl: "reports-home.component.html",
 })
-export class ReportsHomeComponent implements OnInit, OnDestroy {
-  reports: ReportEntry[];
+export class ReportsHomeComponent implements OnInit {
+  reports$: Observable<ReportEntry[]>;
+  homepage$: Observable<boolean>;
 
-  homepage = true;
-  private destrory$: Subject<void> = new Subject<void>();
+  constructor(
+    private route: ActivatedRoute,
+    private stateService: StateService,
+    private organizationService: OrganizationService,
+    private router: Router
+  ) {}
 
-  constructor(private stateService: StateService, router: Router) {
-    router.events
-      .pipe(
-        filter((event) => event instanceof NavigationEnd),
-        takeUntil(this.destrory$)
-      )
-      .subscribe((event) => {
-        this.homepage = (event as NavigationEnd).urlAfterRedirects.endsWith("/reports");
-      });
+  ngOnInit() {
+    this.homepage$ = this.router.events.pipe(
+      filter((event) => event instanceof NavigationEnd),
+      map((event) => (event as NavigationEnd).urlAfterRedirects.endsWith("/reports")),
+      startWith(true)
+    );
+
+    this.reports$ = this.route.params.pipe(
+      map((params) => this.organizationService.get(params.organizationId)),
+      map((org) => this.buildReports(org.isFreeOrg))
+    );
   }
 
-  async ngOnInit(): Promise<void> {
-    const userHasPremium = await this.stateService.getCanAccessPremium();
+  private buildReports(upgradeRequired: boolean): ReportEntry[] {
+    const reportRequiresUpgrade = upgradeRequired
+      ? ReportVariant.RequiresUpgrade
+      : ReportVariant.Enabled;
 
-    const reportRequiresPremium = userHasPremium
-      ? ReportVariant.Enabled
-      : ReportVariant.RequiresPremium;
-
-    this.reports = [
+    return [
       {
         ...reports[ReportType.ExposedPasswords],
-        variant: reportRequiresPremium,
+        variant: reportRequiresUpgrade,
       },
       {
         ...reports[ReportType.ReusedPasswords],
-        variant: reportRequiresPremium,
+        variant: reportRequiresUpgrade,
       },
       {
         ...reports[ReportType.WeakPasswords],
-        variant: reportRequiresPremium,
+        variant: reportRequiresUpgrade,
       },
       {
         ...reports[ReportType.UnsecuredWebsites],
-        variant: reportRequiresPremium,
+        variant: reportRequiresUpgrade,
       },
       {
         ...reports[ReportType.Inactive2fa],
-        variant: reportRequiresPremium,
+        variant: reportRequiresUpgrade,
       },
     ];
-  }
-
-  ngOnDestroy(): void {
-    this.destrory$.next();
-    this.destrory$.complete();
   }
 }

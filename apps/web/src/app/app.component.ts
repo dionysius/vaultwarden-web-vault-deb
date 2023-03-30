@@ -139,8 +139,8 @@ export class AppComponent implements OnDestroy, OnInit {
               this.router.navigate([
                 "organizations",
                 message.organizationId,
-                "settings",
                 "billing",
+                "subscription",
               ]);
             }
             break;

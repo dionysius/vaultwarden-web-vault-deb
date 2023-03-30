@@ -210,6 +210,11 @@ export class Organization {
     return this.useSecretsManager && this.accessSecretsManager;
   }
 
+  get isFreeOrg() {
+    // return true if organization needs to be upgraded from a free org
+    return !this.useTotp;
+  }
+
   static fromJSON(json: Jsonify<Organization>) {
     if (json == null) {
       return null;
