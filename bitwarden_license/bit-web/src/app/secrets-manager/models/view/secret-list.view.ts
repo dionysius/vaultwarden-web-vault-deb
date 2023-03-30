@@ -7,4 +7,6 @@ export class SecretListView {
   creationDate: string;
   revisionDate: string;
   projects: SecretProjectView[];
+  read: boolean;
+  write: boolean;
 }

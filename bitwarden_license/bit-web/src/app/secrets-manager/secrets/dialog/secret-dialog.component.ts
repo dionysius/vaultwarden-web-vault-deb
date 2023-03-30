@@ -44,6 +44,7 @@ export class SecretDialogComponent implements OnInit {
   projects: ProjectListView[];
 
   private destroy$ = new Subject<void>();
+
   constructor(
     public dialogRef: DialogRef,
     @Inject(DIALOG_DATA) private data: SecretOperation,
@@ -80,8 +81,12 @@ export class SecretDialogComponent implements OnInit {
       notes: secret.note,
       project: secret.projects[0]?.id ?? "",
     });
+
     this.loading = false;
-    this.formGroup.enable();
+
+    if (secret.write) {
+      this.formGroup.enable();
+    }
   }
 
   ngOnDestroy(): void {
