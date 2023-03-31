@@ -36,3 +36,17 @@ apps/desktop/src/vault @bitwarden/team-vault-dev
 apps/web/src/app/vault @bitwarden/team-vault-dev
 libs/angular/src/vault @bitwarden/team-vault-dev
 libs/common/src/vault @bitwarden/team-vault-dev
+
+## Admin Console team files ##
+apps/browser/src/admin-console @bitwarden/team-admin-console-dev
+apps/cli/src/admin-console @bitwarden/team-admin-console-dev
+apps/desktop/src/admin-console @bitwarden/team-admin-console-dev
+apps/web/src/app/admin-console @bitwarden/team-admin-console-dev
+bitwarden_license/bit-web/src/app/admin-console @bitwarden/team-admin-console-dev
+libs/angular/src/admin-console @bitwarden/team-admin-console-dev
+libs/common/src/admin-console @bitwarden/team-admin-console-dev
+
+## Billing team files ##
+apps/web/src/app/billing @bitwarden/team-billing-dev
+libs/angular/src/billing @bitwarden/team-billing-dev
+libs/common/src/billing @bitwarden/team-billing-dev
