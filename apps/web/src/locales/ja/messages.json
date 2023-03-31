@@ -2019,6 +2019,9 @@
   "cancelSubscription": {
     "message": "契約のキャンセル"
   },
+  "subscriptionExpiration": {
+    "message": "サブスクリプションの有効期限"
+  },
   "subscriptionCanceled": {
     "message": "契約はキャンセルされました。"
   },
@@ -6669,5 +6672,8 @@
   },
   "dismiss": {
     "message": "表示しない"
+  },
+  "notAvailableForFreeOrganization": {
+    "message": "This feature is not available for free organizations. Contact your organization owner to upgrade."
   }
 }

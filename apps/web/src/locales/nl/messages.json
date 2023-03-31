@@ -2019,6 +2019,9 @@
   "cancelSubscription": {
     "message": "Abonnement opzeggen"
   },
+  "subscriptionExpiration": {
+    "message": "Abonnement vervaldatum"
+  },
   "subscriptionCanceled": {
     "message": "Het abonnement is opgezegd."
   },
@@ -6669,5 +6672,8 @@
   },
   "dismiss": {
     "message": "Sluiten"
+  },
+  "notAvailableForFreeOrganization": {
+    "message": "Deze optie is niet beschikbaar voor gratis organisaties. Contacteer uw organisatie-eigenaar om te upgraden."
   }
 }

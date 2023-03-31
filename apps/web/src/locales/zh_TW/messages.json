@@ -2019,6 +2019,9 @@
   "cancelSubscription": {
     "message": "取消訂閱"
   },
+  "subscriptionExpiration": {
+    "message": "Subscription expiration"
+  },
   "subscriptionCanceled": {
     "message": "已取消訂閱"
   },
@@ -6669,5 +6672,8 @@
   },
   "dismiss": {
     "message": "Dismiss"
+  },
+  "notAvailableForFreeOrganization": {
+    "message": "This feature is not available for free organizations. Contact your organization owner to upgrade."
   }
 }

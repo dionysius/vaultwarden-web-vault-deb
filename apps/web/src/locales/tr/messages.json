@@ -697,7 +697,7 @@
     "message": "Ana parolayı yeniden yazmalısınız."
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least $VALUE$ characters long.",
+    "message": "Ana parola en az $VALUE$ karakter uzunluğunda olmalıdır.",
     "description": "The Master Password must be at least a specific number of characters long.",
     "placeholders": {
       "value": {
@@ -2018,6 +2018,9 @@
   },
   "cancelSubscription": {
     "message": "Aboneliği iptal et"
+  },
+  "subscriptionExpiration": {
+    "message": "Abonelik bitişi"
   },
   "subscriptionCanceled": {
     "message": "Aboneliğiniz iptal edildi."
@@ -5875,7 +5878,7 @@
     }
   },
   "deleteServiceAccountToast": {
-    "message": "Service account deleted"
+    "message": "Hizmet hesabı silindi"
   },
   "deleteServiceAccountsToast": {
     "message": "Hizmet hesapları silindi"
@@ -6499,7 +6502,7 @@
     "message": "KDF ayarlarını değiştir"
   },
   "changeKdfLoggedOutWarning": {
-    "message": "Proceeding will log you out of all active sessions. You will need to log back in and complete two-step login setup. We recommend exporting your vault before changing your encryption settings to prevent data loss."
+    "message": "İşlem, tüm aktif oturumlardan çıkış yapmanızı sağlayacaktır. Tekrar oturum açmanız ve iki adımlı oturum açma kurulumunu tamamlamanız gerekecek. Veri kaybını önlemek için şifreleme ayarlarınızı değiştirmeden önce kasanızı dışa aktarmanızı öneririz."
   },
   "secretsManagerBeta": {
     "message": "Secrets Manager Beta"
@@ -6669,5 +6672,8 @@
   },
   "dismiss": {
     "message": "Kapat"
+  },
+  "notAvailableForFreeOrganization": {
+    "message": "This feature is not available for free organizations. Contact your organization owner to upgrade."
   }
 }

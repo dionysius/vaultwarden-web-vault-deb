@@ -2019,6 +2019,9 @@
   "cancelSubscription": {
     "message": "Cancel·la la subscripció"
   },
+  "subscriptionExpiration": {
+    "message": "Caducitat de la subscripció"
+  },
   "subscriptionCanceled": {
     "message": "S'ha cancel·lat la subscripció."
   },
@@ -5875,7 +5878,7 @@
     }
   },
   "deleteServiceAccountToast": {
-    "message": "Service account deleted"
+    "message": "S'ha suprimit el compte de servei"
   },
   "deleteServiceAccountsToast": {
     "message": "S'han suprimit els comptes de servei"
@@ -6669,5 +6672,8 @@
   },
   "dismiss": {
     "message": "Descarta"
+  },
+  "notAvailableForFreeOrganization": {
+    "message": "This feature is not available for free organizations. Contact your organization owner to upgrade."
   }
 }

@@ -2019,6 +2019,9 @@
   "cancelSubscription": {
     "message": "Avbryt abonnementet"
   },
+  "subscriptionExpiration": {
+    "message": "Subscription expiration"
+  },
   "subscriptionCanceled": {
     "message": "Abonnementet har blitt avbrutt."
   },
@@ -6669,5 +6672,8 @@
   },
   "dismiss": {
     "message": "Avvis"
+  },
+  "notAvailableForFreeOrganization": {
+    "message": "This feature is not available for free organizations. Contact your organization owner to upgrade."
   }
 }

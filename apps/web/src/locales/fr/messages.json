@@ -2019,6 +2019,9 @@
   "cancelSubscription": {
     "message": "Annuler l'abonnement"
   },
+  "subscriptionExpiration": {
+    "message": "Expiration de l'abonnement"
+  },
   "subscriptionCanceled": {
     "message": "L'abonnement a été annulé."
   },
@@ -6669,5 +6672,8 @@
   },
   "dismiss": {
     "message": "Rejeter"
+  },
+  "notAvailableForFreeOrganization": {
+    "message": "Cette fonctionnalité n'est pas disponible pour les organisations gratuites. Contactez le propriétaire de votre organisation pour une mise à niveau."
   }
 }

@@ -2019,6 +2019,9 @@
   "cancelSubscription": {
     "message": "Anuluj subskrypcję"
   },
+  "subscriptionExpiration": {
+    "message": "Wygaśnięcie subskrypcji"
+  },
   "subscriptionCanceled": {
     "message": "Subskrypcja została anulowana."
   },
@@ -5875,7 +5878,7 @@
     }
   },
   "deleteServiceAccountToast": {
-    "message": "Service account deleted"
+    "message": "Usunięto konto serwisowe"
   },
   "deleteServiceAccountsToast": {
     "message": "Usunięto konta serwisowe"
@@ -6669,5 +6672,8 @@
   },
   "dismiss": {
     "message": "Odrzuć"
+  },
+  "notAvailableForFreeOrganization": {
+    "message": "Ta funkcja nie jest dostępna dla darmowych organizacji. Skontaktuj się z właścicielem organizacji, aby ulepszyć."
   }
 }

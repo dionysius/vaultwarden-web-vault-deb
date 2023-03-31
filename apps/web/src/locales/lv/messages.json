@@ -2019,6 +2019,9 @@
   "cancelSubscription": {
     "message": "Atcelt abonementu"
   },
+  "subscriptionExpiration": {
+    "message": "Abonementa izbeigšanās"
+  },
   "subscriptionCanceled": {
     "message": "Abonements ir atcelts."
   },
@@ -6669,5 +6672,8 @@
   },
   "dismiss": {
     "message": "Noraidīt"
+  },
+  "notAvailableForFreeOrganization": {
+    "message": "This feature is not available for free organizations. Contact your organization owner to upgrade."
   }
 }

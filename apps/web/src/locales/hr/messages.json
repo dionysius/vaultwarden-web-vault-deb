@@ -2019,6 +2019,9 @@
   "cancelSubscription": {
     "message": "Otkaži pretplatu"
   },
+  "subscriptionExpiration": {
+    "message": "Subscription expiration"
+  },
   "subscriptionCanceled": {
     "message": "Pretplata otkazana."
   },
@@ -6669,5 +6672,8 @@
   },
   "dismiss": {
     "message": "Odbaci"
+  },
+  "notAvailableForFreeOrganization": {
+    "message": "This feature is not available for free organizations. Contact your organization owner to upgrade."
   }
 }

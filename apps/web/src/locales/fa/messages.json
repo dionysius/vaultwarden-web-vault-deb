@@ -2019,6 +2019,9 @@
   "cancelSubscription": {
     "message": "لغو اشتراک"
   },
+  "subscriptionExpiration": {
+    "message": "Subscription expiration"
+  },
   "subscriptionCanceled": {
     "message": "اشتراک شما لغو گردید."
   },
@@ -6669,5 +6672,8 @@
   },
   "dismiss": {
     "message": "نادیده گرفتن"
+  },
+  "notAvailableForFreeOrganization": {
+    "message": "This feature is not available for free organizations. Contact your organization owner to upgrade."
   }
 }

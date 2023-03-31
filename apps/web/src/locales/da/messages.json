@@ -2019,6 +2019,9 @@
   "cancelSubscription": {
     "message": "Opsig abonnement"
   },
+  "subscriptionExpiration": {
+    "message": "Abonnementsudløb"
+  },
   "subscriptionCanceled": {
     "message": "Dit abonnement er opsagt."
   },
@@ -5875,7 +5878,7 @@
     }
   },
   "deleteServiceAccountToast": {
-    "message": "Service account deleted"
+    "message": "Tjenestekonto slettet"
   },
   "deleteServiceAccountsToast": {
     "message": "Tjenestekonti slettet"
@@ -6669,5 +6672,8 @@
   },
   "dismiss": {
     "message": "Afvis"
+  },
+  "notAvailableForFreeOrganization": {
+    "message": "This feature is not available for free organizations. Contact your organization owner to upgrade."
   }
 }

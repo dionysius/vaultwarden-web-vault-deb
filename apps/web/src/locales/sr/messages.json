@@ -2019,6 +2019,9 @@
   "cancelSubscription": {
     "message": "Откажи претплату"
   },
+  "subscriptionExpiration": {
+    "message": "Subscription expiration"
+  },
   "subscriptionCanceled": {
     "message": "Претплата је отказана."
   },
@@ -6669,5 +6672,8 @@
   },
   "dismiss": {
     "message": "Одбаци"
+  },
+  "notAvailableForFreeOrganization": {
+    "message": "This feature is not available for free organizations. Contact your organization owner to upgrade."
   }
 }

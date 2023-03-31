@@ -2019,6 +2019,9 @@
   "cancelSubscription": {
     "message": "Скасаваць падпіску"
   },
+  "subscriptionExpiration": {
+    "message": "Тэрмін дзеяння падпіскі"
+  },
   "subscriptionCanceled": {
     "message": "Падпіска была скасавана."
   },
@@ -4856,7 +4859,7 @@
     "message": "Актываваць аўтазапаўненне"
   },
   "activateAutofillDesc": {
-    "message": "Activate the auto-fill with page load settings on the browser extension for all existing and new members."
+    "message": "Актываваць аўтазапаўненне падчас загрузкі старонкі ў наладах пашырэння браўзера для ўсіх існуючых і новых удзельнікаў."
   },
   "experimentalFeature": {
     "message": "Скампраметаваныя або ненадзейныя вэб-сайты могуць задзейнічаць функцыю аўтазапаўнення падчас загрузкі старонкі."
@@ -5875,7 +5878,7 @@
     }
   },
   "deleteServiceAccountToast": {
-    "message": "Service account deleted"
+    "message": "Сэрвісны ўліковы запіс выдалены"
   },
   "deleteServiceAccountsToast": {
     "message": "Сэрвісны ўліковы запіс выдалены"
@@ -6037,7 +6040,7 @@
     "description": "Title for the section displaying access tokens."
   },
   "newAccessToken": {
-    "message": "New access token",
+    "message": "Новы токен доступу",
     "description": "Button label for creating a new access token."
   },
   "expires": {
@@ -6499,7 +6502,7 @@
     "message": "Змяніце налады KDF"
   },
   "changeKdfLoggedOutWarning": {
-    "message": "Proceeding will log you out of all active sessions. You will need to log back in and complete two-step login setup. We recommend exporting your vault before changing your encryption settings to prevent data loss."
+    "message": "Калі вы працягніце, то гэта прывядзе да выхаду з усіх актыўных сеансаў. Вам неабходна будзе паўторна выканаць уваход і прайсці двухэтапную праверку. Перад зменай наладаў шыфравання мы рэкамендуем экспартаваць ваша сховішча, каб прадухіліць магчымую страту даных."
   },
   "secretsManagerBeta": {
     "message": "Менеджар сакрэтаў (бэта-версія)"
@@ -6669,5 +6672,8 @@
   },
   "dismiss": {
     "message": "Адхіліць"
+  },
+  "notAvailableForFreeOrganization": {
+    "message": "This feature is not available for free organizations. Contact your organization owner to upgrade."
   }
 }

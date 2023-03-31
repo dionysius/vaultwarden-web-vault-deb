@@ -1597,7 +1597,7 @@
     "message": "Gib dem Sicherheitsschlüssel einen eigenen Namen, um ihn zu erkennen."
   },
   "twoFactorU2fPlugInReadKey": {
-    "message": "Stecken Sie den Sicherheitsschlüssel in den USB-Port Ihres Computers und drücken Sie den \"Schlüssel erfassen\" Knopf."
+    "message": "Stecke den Sicherheitsschlüssel in den USB-Port deines Computers und drücke den \"Schlüssel erfassen\" Knopf."
   },
   "twoFactorU2fTouchButton": {
     "message": "Wenn der Sicherheitsschlüssel eine Taste hat, drücken Sie die."
@@ -2018,6 +2018,9 @@
   },
   "cancelSubscription": {
     "message": "Abonnement kündigen"
+  },
+  "subscriptionExpiration": {
+    "message": "Ablauf des Abonnements"
   },
   "subscriptionCanceled": {
     "message": "Das Abonnement wurde gekündigt."
@@ -3831,7 +3834,7 @@
     "message": "Melde dich über das Single Sign-on-Portal deiner Organisation an. Bitte gib die SSO-Kennung deiner Organisation ein, um zu beginnen."
   },
   "enterpriseSingleSignOn": {
-    "message": "Enterprise Single-Sign-On"
+    "message": "Enterprise Single Sign-on"
   },
   "ssoHandOff": {
     "message": "Du kannst diesen Tab nun schließen und in der Erweiterung fortfahren."
@@ -5875,7 +5878,7 @@
     }
   },
   "deleteServiceAccountToast": {
-    "message": "Service account deleted"
+    "message": "Dienstkonto gelöscht"
   },
   "deleteServiceAccountsToast": {
     "message": "Dienstkonten gelöscht"
@@ -6669,5 +6672,8 @@
   },
   "dismiss": {
     "message": "Verwerfen"
+  },
+  "notAvailableForFreeOrganization": {
+    "message": "This feature is not available for free organizations. Contact your organization owner to upgrade."
   }
 }

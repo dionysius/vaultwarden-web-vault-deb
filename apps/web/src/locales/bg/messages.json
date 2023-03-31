@@ -2019,6 +2019,9 @@
   "cancelSubscription": {
     "message": "Прекратяване на абонамента"
   },
+  "subscriptionExpiration": {
+    "message": "Изтичане на абонамента"
+  },
   "subscriptionCanceled": {
     "message": "Абонаментът е прекратен."
   },
@@ -5787,11 +5790,11 @@
     "description": "Label for a secret (key/value pair)"
   },
   "serviceAccount": {
-    "message": "Service account",
+    "message": "Сервизен акаунт",
     "description": "A machine user which can be used to automate processes and access secrets in the system."
   },
   "serviceAccounts": {
-    "message": "Service accounts",
+    "message": "Сервизни акаунти",
     "description": "The title for the section that deals with service accounts."
   },
   "secrets": {
@@ -5815,7 +5818,7 @@
     "description": "Title for creating a new secret."
   },
   "newServiceAccount": {
-    "message": "New service account",
+    "message": "Нов сервизен акаунт",
     "description": "Title for creating a new service account."
   },
   "secretsNoItemsTitle": {
@@ -5830,7 +5833,7 @@
     "message": "Няма тайни в кошчето."
   },
   "serviceAccountsNoItemsMessage": {
-    "message": "Create a new service account to get started automating secret access.",
+    "message": "Създайте нов сервизен акаунт, за да можете да автоматизирате достъпа до тайните.",
     "description": "Message to encourage the user to start creating service accounts."
   },
   "serviceAccountsNoItemsTitle": {
@@ -5842,19 +5845,19 @@
     "description": "Placeholder text for searching secrets."
   },
   "deleteServiceAccounts": {
-    "message": "Delete service accounts",
+    "message": "Изтриване на сервизните акаунти",
     "description": "Title for the action to delete one or multiple service accounts."
   },
   "deleteServiceAccount": {
-    "message": "Delete service account",
+    "message": "Изтриване на сервизния акаунт",
     "description": "Title for the action to delete a single service account."
   },
   "viewServiceAccount": {
-    "message": "View service account",
+    "message": "Преглед на сервизния акаунт",
     "description": "Action to view the details of a service account."
   },
   "deleteServiceAccountDialogMessage": {
-    "message": "Deleting service account $SERVICE_ACCOUNT$ is permanent and irreversible.",
+    "message": "Изтриването на сервизния акаунт $SERVICE_ACCOUNT$ е окончателно и необратимо.",
     "placeholders": {
       "service_account": {
         "content": "$1",
@@ -5863,10 +5866,10 @@
     }
   },
   "deleteServiceAccountsDialogMessage": {
-    "message": "Deleting service accounts is permanent and irreversible."
+    "message": "Изтриването на сервизни акаунти е окончателно и необратимо."
   },
   "deleteServiceAccountsConfirmMessage": {
-    "message": "Delete $COUNT$ service accounts",
+    "message": "Изтриване $COUNT$ сервизни акаунти",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -5875,17 +5878,17 @@
     }
   },
   "deleteServiceAccountToast": {
-    "message": "Service account deleted"
+    "message": "Сервизният акаунт е изтрит"
   },
   "deleteServiceAccountsToast": {
-    "message": "Service accounts deleted"
+    "message": "Сервизните акаунти са изтрити"
   },
   "searchServiceAccounts": {
-    "message": "Search service accounts",
+    "message": "Търсене на сервизни акаунти",
     "description": "Placeholder text for searching service accounts."
   },
   "editServiceAccount": {
-    "message": "Edit service account",
+    "message": "Редактиране на сервизния акаунт",
     "description": "Title for editing a service account."
   },
   "addProject": {
@@ -5938,15 +5941,15 @@
     "description": ""
   },
   "serviceAccountName": {
-    "message": "Service account name",
+    "message": "Име на сервизния акаунт",
     "description": "Label for the name of a service account"
   },
   "serviceAccountCreated": {
-    "message": "Service account created",
+    "message": "Сервизният акаунт е създаден",
     "description": "Notifies that a new service account has been created"
   },
   "serviceAccountUpdated": {
-    "message": "Service account updated",
+    "message": "Сервизният акаунт е обновен",
     "description": "Notifies that a service account has been updated"
   },
   "newSaSelectAccess": {
@@ -6463,22 +6466,22 @@
     "message": "Пишете тук или изберете хора или групи"
   },
   "projectServiceAccountsDescription": {
-    "message": "Grant service accounts access to this project."
+    "message": "Дайте достъп на сервизните акаунти до този проект."
   },
   "projectServiceAccountsSelectHint": {
-    "message": "Type or select service accounts"
+    "message": "Пишете тук или изберете сервизни акаунти"
   },
   "projectEmptyPeopleAccessPolicies": {
     "message": "Добавете хора или групи, за да започнете да работите съвместно"
   },
   "projectEmptyServiceAccountAccessPolicies": {
-    "message": "Add service accounts to grant access"
+    "message": "Добавете сервизни акаунти, за да дадете достъп"
   },
   "serviceAccountPeopleDescription": {
-    "message": "Grant groups or people access to this service account."
+    "message": "Дайте права на групи и хора до този сервизен акаунт."
   },
   "serviceAccountProjectsDescription": {
-    "message": "Assign projects to this service account. "
+    "message": "Назначете проекти към този сервизен акаунт. "
   },
   "serviceAccountEmptyProjectAccesspolicies": {
     "message": "Добавете проекти към които да е разрешен достъпът"
@@ -6558,7 +6561,7 @@
     "message": "Създаване на проект"
   },
   "createServiceAccount": {
-    "message": "Create a service account"
+    "message": "Създаване на сервизен акаунт"
   },
   "downloadThe": {
     "message": "Сваляне на",
@@ -6617,7 +6620,7 @@
     "message": "Идентификаторите за достъп все още са налични"
   },
   "saPeopleWarningMessage": {
-    "message": "Removing people from a service account does not remove the access tokens they created. For security best practice, it is recommended to revoke access tokens created by people removed from a service account."
+    "message": "Премахването на хора от даден сервизен акаунт не премахва идентификаторите за достъп, които те са създали. От гледна точка на сигурността е препоръчително да отнемете достъпа чрез идентификаторите създадени от хора, които са били премахнати от сервизен акаунт."
   },
   "smAccessRemovalWarningProjectTitle": {
     "message": "Премахване на достъпа до този проект"
@@ -6626,10 +6629,10 @@
     "message": "Това действие ще премахне достъпа Ви до проекта."
   },
   "smAccessRemovalWarningSaTitle": {
-    "message": "Remove access to this service account"
+    "message": "Премахване на достъпа до този сервизен акаунт"
   },
   "smAccessRemovalWarningSaMessage": {
-    "message": "This action will remove your access to the service account."
+    "message": "Това действие ще премахне достъпа Ви до сервизния акаунт."
   },
   "removeAccess": {
     "message": "Премахване на достъпа"
@@ -6669,5 +6672,8 @@
   },
   "dismiss": {
     "message": "Dismiss"
+  },
+  "notAvailableForFreeOrganization": {
+    "message": "This feature is not available for free organizations. Contact your organization owner to upgrade."
   }
 }

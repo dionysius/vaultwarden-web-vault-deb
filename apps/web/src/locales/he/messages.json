@@ -2019,6 +2019,9 @@
   "cancelSubscription": {
     "message": "בטל מנוי"
   },
+  "subscriptionExpiration": {
+    "message": "Subscription expiration"
+  },
   "subscriptionCanceled": {
     "message": "המנוי בוטל."
   },
@@ -6669,5 +6672,8 @@
   },
   "dismiss": {
     "message": "Dismiss"
+  },
+  "notAvailableForFreeOrganization": {
+    "message": "This feature is not available for free organizations. Contact your organization owner to upgrade."
   }
 }

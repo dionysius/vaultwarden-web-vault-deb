@@ -971,7 +971,7 @@
     "message": "此导出使用您账户的加密密钥来加密您的数据。如果您曾经轮换过账户的加密密钥，您应将其重新导出，否则您将无法解密导出的文件。"
   },
   "encExportAccountWarningDesc": {
-    "message": "账户加密密钥对每个 Bitwarden 用户账户都是唯一的，所以您不能将加密的导出导入到另一个账户。"
+    "message": "每个 Bitwarden 用户账户的账户加密密钥都是唯一的，因此您无法将加密的导出导入到另一个账户。"
   },
   "export": {
     "message": "导出"
@@ -1756,7 +1756,7 @@
     "message": "发现重复使用的密码"
   },
   "reusedPasswordsFoundDesc": {
-    "message": "我们在您的密码库中发现了 $COUNT$ 个密码被重复使用。您应该将它们更改为不同的值。",
+    "message": "我们在您的密码库中发现了 $COUNT$ 个被重复使用的密码。您应该将它们更改为唯一值。",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -2018,6 +2018,9 @@
   },
   "cancelSubscription": {
     "message": "取消订阅"
+  },
+  "subscriptionExpiration": {
+    "message": "订阅过期"
   },
   "subscriptionCanceled": {
     "message": "您的订阅已取消。"
@@ -2520,7 +2523,7 @@
     "message": "编辑成员"
   },
   "fieldOnTabRequiresAttention": {
-    "message": "'$TAB$' 标签页上的字段需要您注意。",
+    "message": "「$TAB$」标签页上的字段需要您注意。",
     "placeholders": {
       "tab": {
         "content": "$1",
@@ -4053,7 +4056,7 @@
     "message": "可信的紧急联系人"
   },
   "noTrustedContacts": {
-    "message": "您尚未添加任何紧急联系人，请邀请可信的联系人以开始。"
+    "message": "您尚未添加任何紧急联系人，请邀请可信的联系人以开始使用。"
   },
   "addEmergencyContact": {
     "message": "添加紧急联系人"
@@ -5690,7 +5693,7 @@
     "message": "-- 选择 --"
   },
   "multiSelectPlaceholder": {
-    "message": "-- 输入筛选条件 --"
+    "message": "-- 输入以筛选 --"
   },
   "multiSelectLoading": {
     "message": "正在获取选项..."
@@ -5713,11 +5716,11 @@
     "message": "隐藏"
   },
   "projects": {
-    "message": "项目",
+    "message": "工程",
     "description": "Description for the Projects field."
   },
   "lastEdited": {
-    "message": "最后编辑于",
+    "message": "上次编辑",
     "description": "The label for the date and time when a item was last edited."
   },
   "editSecret": {
@@ -5751,35 +5754,35 @@
     "message": "永久删除机密"
   },
   "secretProjectAssociationDescription": {
-    "message": "选择与机密相关联的项目。仅有权访问该项目的组织用户能查看该机密。",
+    "message": "选择要将此机密与其相关联的工程。仅有权访问这些工程的组织用户能查看该机密。",
     "description": "A prompt explaining how secrets can be associated with projects."
   },
   "selectProjects": {
-    "message": "选择项目",
+    "message": "选择工程",
     "description": "A label for a type-to-filter input field to choose projects."
   },
   "searchProjects": {
-    "message": "搜索方案",
+    "message": "搜索工程",
     "description": "Label for the search bar used to search projects."
   },
   "project": {
-    "message": "方案",
+    "message": "工程",
     "description": "Similar to collections, projects can be used to group secrets."
   },
   "editProject": {
-    "message": "编辑方案",
+    "message": "编辑工程",
     "description": "The action to modify an existing project."
   },
   "viewProject": {
-    "message": "查看方案",
+    "message": "查看工程",
     "description": "The action to view details of a project."
   },
   "deleteProject": {
-    "message": "删除方案",
+    "message": "删除工程",
     "description": "The action to delete a project from the system."
   },
   "deleteProjects": {
-    "message": "删除方案",
+    "message": "删除工程",
     "description": "The action to delete multiple projects from the system."
   },
   "secret": {
@@ -5823,14 +5826,14 @@
     "description": "Empty state to indicate that there are no secrets to display."
   },
   "secretsNoItemsMessage": {
-    "message": "要开始，请添加一个新的机密或导入机密。",
+    "message": "要开始使用，请添加一个新的机密或导入机密。",
     "description": "Message to encourage the user to start adding secrets."
   },
   "secretsTrashNoItemsMessage": {
     "message": "回收站中没有机密。"
   },
   "serviceAccountsNoItemsMessage": {
-    "message": "创建一个新的服务账户以开始自动机密访问。",
+    "message": "创建一个新的服务账户以开始使用自动机密访问。",
     "description": "Message to encourage the user to start creating service accounts."
   },
   "serviceAccountsNoItemsTitle": {
@@ -5875,7 +5878,7 @@
     }
   },
   "deleteServiceAccountToast": {
-    "message": "Service account deleted"
+    "message": "服务账户已删除"
   },
   "deleteServiceAccountsToast": {
     "message": "服务账户已删除"
@@ -5889,27 +5892,27 @@
     "description": "Title for editing a service account."
   },
   "addProject": {
-    "message": "添加方案",
+    "message": "添加工程",
     "description": "Title for creating a new project."
   },
   "projectEdited": {
-    "message": "方案已编辑",
+    "message": "工程已编辑",
     "description": "Notification for the successful editing of a project."
   },
   "projectSaved": {
-    "message": "方案已保存",
+    "message": "工程已保存",
     "description": "Notification for the successful saving of a project."
   },
   "projectCreated": {
-    "message": "方案已创建",
+    "message": "工程已创建",
     "description": "Notification for the successful creation of a project."
   },
   "projectName": {
-    "message": "方案名称",
+    "message": "工程名称",
     "description": "Label for entering the name of a project."
   },
   "newProject": {
-    "message": "新建方案",
+    "message": "新建工程",
     "description": "Title for creating a new project."
   },
   "softDeleteSecretWarning": {
@@ -5934,7 +5937,7 @@
     "description": "Title indicating what permissions a service account has"
   },
   "projectCommaSecret": {
-    "message": "方案，机密",
+    "message": "工程，机密",
     "description": ""
   },
   "serviceAccountName": {
@@ -5950,23 +5953,23 @@
     "description": "Notifies that a service account has been updated"
   },
   "newSaSelectAccess": {
-    "message": "输入或选择方案或机密",
+    "message": "输入或选择工程或机密",
     "description": "Instructions for selecting projects or secrets for a new service account"
   },
   "newSaTypeToFilter": {
-    "message": "输入筛选条件",
+    "message": "输入以筛选",
     "description": "Instructions for filtering a list of projects or secrets"
   },
   "deleteProjectsToast": {
-    "message": "方案已删除",
+    "message": "工程已删除",
     "description": "Notifies that the selected projects have been deleted"
   },
   "deleteProjectToast": {
-    "message": "方案已删除",
+    "message": "工程已删除",
     "description": "Notifies that a project has been deleted"
   },
   "deleteProjectDialogMessage": {
-    "message": "删除项目 $PROJECT$ 是永久性的，不可撤销！",
+    "message": "删除工程 $PROJECT$ 是永久性的，不可撤销！",
     "description": "Informs users that projects are hard deleted and not sent to trash",
     "placeholders": {
       "project": {
@@ -5996,7 +5999,7 @@
     }
   },
   "deleteProjectsConfirmMessage": {
-    "message": "删除 $COUNT$ 个方案",
+    "message": "删除 $COUNT$ 个工程",
     "description": "Confirmation prompt to delete multiple projects, where '$COUNT$' is a placeholder for the number of projects to be deleted.",
     "placeholders": {
       "count": {
@@ -6006,15 +6009,15 @@
     }
   },
   "deleteProjectsDialogMessage": {
-    "message": "删除方案是永久性的，不可撤销！",
+    "message": "删除工程是永久性的，不可撤销！",
     "description": "This message is displayed in a dialog box as a warning before proceeding with project deletion."
   },
   "projectsNoItemsTitle": {
-    "message": "没有可显示的方案",
+    "message": "没有可显示的工程",
     "description": "Empty state to be displayed when there are no projects to display in the list."
   },
   "projectsNoItemsMessage": {
-    "message": "添加一个新方案来以开始组织机密。",
+    "message": "添加一个新工程以开始使用组织机密。",
     "description": "Message to be displayed when there are no projects to display in the list."
   },
   "smConfirmationRequired": {
@@ -6022,7 +6025,7 @@
     "description": "Indicates that user confirmation is required for an action to proceed."
   },
   "bulkDeleteProjectsErrorMessage": {
-    "message": "以下方案无法删除：",
+    "message": "以下工程无法删除：",
     "description": "Message to be displayed when there is an error during bulk project deletion."
   },
   "softDeleteSuccessToast": {
@@ -6053,11 +6056,11 @@
     "description": "Title to be displayed when there are no access tokens to display in the list."
   },
   "accessTokensNoItemsDesc": {
-    "message": "要开始，请创建一个访问令牌",
+    "message": "要开始使用，请创建一个访问令牌",
     "description": "Message to be displayed when there are no access tokens to display in the list."
   },
   "downloadAccessToken": {
-    "message": "关闭前下载或复制。",
+    "message": "请在关闭前下载或复制！",
     "description": "Message to be displayed before closing an access token, reminding the user to download or copy it."
   },
   "expiresOnAccessToken": {
@@ -6089,17 +6092,17 @@
     "description": "Notification to inform the user that the feature for managing access token permissions is not available in the beta version."
   },
   "revokeAccessToken": {
-    "message": "撤销访问令牌",
+    "message": "吊销访问令牌",
     "description": "Invalidates / cancels an access token and as such removes access to secrets for the client application."
   },
   "revokeAccessTokens": {
-    "message": "撤销访问令牌"
+    "message": "吊销访问令牌"
   },
   "revokeAccessTokenDesc": {
-    "message": "撤销访问令牌是永久和不可逆的。"
+    "message": "吊销访问令牌是永久和不可逆的。"
   },
   "accessTokenRevoked": {
-    "message": "已撤销访问令牌",
+    "message": "访问令牌已吊销",
     "description": "Toast message after deleting one or multiple access tokens."
   },
   "submenu": {
@@ -6193,10 +6196,10 @@
     "message": "域验证"
   },
   "newDomain": {
-    "message": "新域"
+    "message": "新增域"
   },
   "noDomains": {
-    "message": "无域"
+    "message": "没有域"
   },
   "noDomainsSubText": {
     "message": "连接域允许成员在使用 SSO 登录时跳过 SSO 标识符字段。"
@@ -6223,19 +6226,19 @@
     "message": "自动域验证"
   },
   "automaticDomainVerificationProcess": {
-    "message": "Bitwarden 将尝试在 72 小时内验证域名 3 次。 如果无法验证域，请检查主机中的 DNS 记录并手动验证。 如果域无法验证，将在 7 天内从您的组织中删除。"
+    "message": "Bitwarden 将尝试在 72 小时内验证此域 3 次。如果无法验证此域，请检查主机中的 DNS 记录并手动验证。如果此域无法验证，7 天内将从您的组织中移除。"
   },
   "invalidDomainNameMessage": {
     "message": "输入格式不正确。格式：mydomain.com。子域需要单独的条目进行验证。"
   },
   "removeDomain": {
-    "message": "删除域"
+    "message": "移除域"
   },
   "removeDomainWarning": {
-    "message": "删除域不能撤消。您确定要继续吗？"
+    "message": "移除域不能撤消。您确定要继续吗？"
   },
   "domainRemoved": {
-    "message": "域已删除"
+    "message": "域已移除"
   },
   "domainSaved": {
     "message": "域已保存"
@@ -6256,7 +6259,7 @@
     }
   },
   "domainNotVerified": {
-    "message": "$DOMAIN$ 未验证。请检查您的DNS记录。",
+    "message": "$DOMAIN$ 无法验证。请检查您的 DNS 记录。",
     "placeholders": {
       "DOMAIN": {
         "content": "$1",
@@ -6268,7 +6271,7 @@
     "message": "已验证"
   },
   "domainStatusUnverified": {
-    "message": "未验证"
+    "message": "无法验证"
   },
   "domainNameTh": {
     "message": "域名"
@@ -6283,7 +6286,7 @@
     "message": "编辑域"
   },
   "domainFormInvalid": {
-    "message": "表单错误需要您注意。"
+    "message": "表单错误需要您注意"
   },
   "addedDomain": {
     "message": "已添加域 $DOMAIN$",
@@ -6295,7 +6298,7 @@
     }
   },
   "removedDomain": {
-    "message": "已删除域 $DOMAIN$",
+    "message": "已移除域 $DOMAIN$",
     "placeholders": {
       "DOMAIN": {
         "content": "$1",
@@ -6313,7 +6316,7 @@
     }
   },
   "domainNotVerifiedEvent": {
-    "message": "$DOMAIN$ 未验证",
+    "message": "$DOMAIN$ 无法验证",
     "placeholders": {
       "DOMAIN": {
         "content": "$1",
@@ -6457,13 +6460,13 @@
     "message": "上传许可证"
   },
   "projectPeopleDescription": {
-    "message": "授予群组或人员对此方案的访问权限。"
+    "message": "授予群组或人员对此工程的访问权限。"
   },
   "projectPeopleSelectHint": {
     "message": "输入或选择人员或群组"
   },
   "projectServiceAccountsDescription": {
-    "message": "授予服务账户对此方案的访问权限。"
+    "message": "授予服务账户对此工程的访问权限。"
   },
   "projectServiceAccountsSelectHint": {
     "message": "输入或选择服务账户"
@@ -6478,13 +6481,13 @@
     "message": "授予群组或人员对此服务账户的访问权限。"
   },
   "serviceAccountProjectsDescription": {
-    "message": "分配项目到此服务账户。 "
+    "message": "分配工程到此服务账户。 "
   },
   "serviceAccountEmptyProjectAccesspolicies": {
-    "message": "添加方案以授予访问权限"
+    "message": "添加工程以授予访问权限"
   },
   "canReadWrite": {
-    "message": "可以读取、写入"
+    "message": "可以读取和写入"
   },
   "groupSlashUser": {
     "message": "群组/用户"
@@ -6517,7 +6520,7 @@
     "message": "查看全部"
   },
   "showingPortionOfTotal": {
-    "message": "显示 $PORTION$ 中的 $TOTAL$",
+    "message": "显示 $PORTION$ / $TOTAL$",
     "placeholders": {
       "portion": {
         "content": "$1",
@@ -6555,7 +6558,7 @@
     "message": "创建一个机密"
   },
   "createProject": {
-    "message": "创建一个方案"
+    "message": "创建一个工程"
   },
   "createServiceAccount": {
     "message": "创建服务账户"
@@ -6574,7 +6577,7 @@
     "message": "开始使用"
   },
   "complete": {
-    "message": "$COMPLETED$/$TOTAL$ 完成",
+    "message": "$COMPLETED$ / $TOTAL$ 完成",
     "placeholders": {
       "COMPLETED": {
         "content": "$1",
@@ -6593,22 +6596,22 @@
     "message": "还原机密"
   },
   "restoreSecretPrompt": {
-    "message": "您确定要还原此机密吗？"
+    "message": "您确定要恢复此机密吗？"
   },
   "restoreSecretsPrompt": {
-    "message": "您确定要还原这些密机密吗？"
+    "message": "您确定要恢复这些密机密吗？"
   },
   "secretRestoredSuccessToast": {
-    "message": "机密已还原"
+    "message": "机密已恢复"
   },
   "secretsRestoredSuccessToast": {
-    "message": "机密已还原"
+    "message": "机密已恢复"
   },
   "selectionIsRequired": {
     "message": "必须选择"
   },
   "secretsManagerSubscriptionDesc": {
-    "message": "在 Beta 计划期间，开启机密管理器的组织访问权限是免费的。成员中的用户会被授予对 Beta 版的访问权限。"
+    "message": "在 Beta 计划期间，开启组织对机密管理器的访问权限是免费的。成员中的用户会被授予对 Beta 版的访问权限。"
   },
   "secretsManagerEnable": {
     "message": "启用机密管理器 Beta 版"
@@ -6617,13 +6620,13 @@
     "message": "访问令牌仍然可用"
   },
   "saPeopleWarningMessage": {
-    "message": "从服务账户中移除人员并不会移除他们已创建的访问令牌。基于安全方面的最佳做法，建议撤销从服务账户中被移除的人员创建的访问令牌。"
+    "message": "从服务账户中移除人员并不会移除他们已创建的访问令牌。基于安全方面的最佳做法，建议吊销从服务账户中被移除的人员创建的访问令牌。"
   },
   "smAccessRemovalWarningProjectTitle": {
-    "message": "移除此方案的访问权限"
+    "message": "移除对此工程的访问权限"
   },
   "smAccessRemovalWarningProjectMessage": {
-    "message": "此操作将移除您对此方案的访问权限。"
+    "message": "此操作将移除您对此工程的访问权限。"
   },
   "smAccessRemovalWarningSaTitle": {
     "message": "删除对此服务账户的访问权限"
@@ -6641,7 +6644,7 @@
     "message": "已暴露的主密码"
   },
   "exposedMasterPasswordDesc": {
-    "message": "密码在数据泄露中被发现。请使用一个独一无二的的密码以保护您的账户。确定要使用已暴露的密码吗？"
+    "message": "密码在数据泄露中被发现。请使用一个唯一的密码以保护您的账户。确定要使用已暴露的密码吗？"
   },
   "weakAndExposedMasterPassword": {
     "message": "主密码弱且曾经暴露"
@@ -6669,5 +6672,8 @@
   },
   "dismiss": {
     "message": "取消"
+  },
+  "notAvailableForFreeOrganization": {
+    "message": "This feature is not available for free organizations. Contact your organization owner to upgrade."
   }
 }

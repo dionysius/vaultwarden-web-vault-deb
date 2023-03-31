@@ -2019,6 +2019,9 @@
   "cancelSubscription": {
     "message": "Előfizetés megszüntetése"
   },
+  "subscriptionExpiration": {
+    "message": "Előfizetés lejárat"
+  },
   "subscriptionCanceled": {
     "message": "Az előfizetés törlésre került."
   },
@@ -6669,5 +6672,8 @@
   },
   "dismiss": {
     "message": "Elvetés"
+  },
+  "notAvailableForFreeOrganization": {
+    "message": "This feature is not available for free organizations. Contact your organization owner to upgrade."
   }
 }

@@ -281,35 +281,35 @@
     "message": "즐겨찾기 검색"
   },
   "searchLogin": {
-    "message": "Search logins",
+    "message": "로그인 검색",
     "description": "Search Login type"
   },
   "searchCard": {
-    "message": "Search cards",
+    "message": "카드 검색",
     "description": "Search Card type"
   },
   "searchIdentity": {
-    "message": "Search identities",
+    "message": "신원 검색",
     "description": "Search Identity type"
   },
   "searchSecureNote": {
-    "message": "Search secure notes",
+    "message": "보안 메모 검색",
     "description": "Search Secure Note type"
   },
   "searchVault": {
     "message": "보관함 검색"
   },
   "searchMyVault": {
-    "message": "Search my vault"
+    "message": "내 보관함 검색"
   },
   "searchOrganization": {
-    "message": "Search organization"
+    "message": "조직 검색"
   },
   "searchMembers": {
-    "message": "Search members"
+    "message": "구성원 검색"
   },
   "searchGroups": {
-    "message": "Search groups"
+    "message": "그룹 검색"
   },
   "allItems": {
     "message": "모든 항목"
@@ -393,7 +393,7 @@
     "message": "선택"
   },
   "newItem": {
-    "message": "New item"
+    "message": "새 항목"
   },
   "addItem": {
     "message": "항목 추가"
@@ -409,7 +409,7 @@
     "description": "for adding new items"
   },
   "item": {
-    "message": "Item"
+    "message": "항목"
   },
   "ex": {
     "message": "예)",
@@ -477,7 +477,7 @@
     "message": "보관함 항목"
   },
   "filter": {
-    "message": "Filter"
+    "message": "필터"
   },
   "moveSelectedToOrg": {
     "message": "선택한 항목을 조직으로 이동함"
@@ -589,7 +589,7 @@
     "message": "Edit info"
   },
   "access": {
-    "message": "Access"
+    "message": "접근"
   },
   "loggedOut": {
     "message": "로그아웃됨"
@@ -616,19 +616,19 @@
     "message": "안전 보관함에 접근하려면 로그인하거나 새 계정을 만드세요."
   },
   "loginWithDevice": {
-    "message": "Log in with device"
+    "message": "기기로 로그인"
   },
   "loginWithDeviceEnabledInfo": {
-    "message": "Log in with device must be set up in the settings of the Bitwarden mobile app. Need another option?"
+    "message": "기기로 로그인하려면 Bitwarden 모바일 앱 설정에서 설정해야 합니다. 다른 방식이 필요하신가요?"
   },
   "loginWithMasterPassword": {
-    "message": "Log in with master password"
+    "message": "마스터 비밀번호로 로그인"
   },
   "createAccount": {
     "message": "계정 만들기"
   },
   "newAroundHere": {
-    "message": "New around here?"
+    "message": "새로 찾아오셨나요?"
   },
   "startTrial": {
     "message": "평가판 시작"
@@ -649,7 +649,7 @@
     "message": "이름"
   },
   "yourNameDesc": {
-    "message": "당신은 어떻게 불립니까?"
+    "message": "어떻게 불러드릴까요?"
   },
   "masterPass": {
     "message": "마스터 비밀번호"
@@ -697,7 +697,7 @@
     "message": "마스터 비밀번호를 재입력해야 합니다."
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least $VALUE$ characters long.",
+    "message": "마스터 비밀번호는 최소 $VALUE$자 이상이어야 합니다.",
     "description": "The Master Password must be at least a specific number of characters long.",
     "placeholders": {
       "value": {
@@ -713,7 +713,7 @@
     "message": "계정 생성이 완료되었습니다! 이제 로그인하실 수 있습니다."
   },
   "trialAccountCreated": {
-    "message": "Account created successfully."
+    "message": "계정 생성에 성공했습니다."
   },
   "masterPassSent": {
     "message": "마스터 비밀번호 힌트가 담긴 이메일을 보냈습니다."
@@ -747,7 +747,7 @@
     "message": "잘못된 마스터 비밀번호"
   },
   "invalidFilePassword": {
-    "message": "Invalid file password, please use the password you entered when you created the export file."
+    "message": "파일 암호가 잘못되었습니다. 내보낸 파일을 생성했을 때 사용한 암호를 입력하세요."
   },
   "lockNow": {
     "message": "지금 잠그기"
@@ -756,7 +756,7 @@
     "message": "항목이 없습니다."
   },
   "noPermissionToViewAllCollectionItems": {
-    "message": "You do not have permission to view all items in this collection."
+    "message": "이 컬렉션의 모든 항목을 볼 권한이 없습니다."
   },
   "noCollectionsInList": {
     "message": "콜렉션이 없습니다."
@@ -780,7 +780,7 @@
     "message": "당신은 어떤 조직에도 속해있지 않습니다. 조직은 다른 사용자들과 안전하게 항목을 공유할 수 있게 해줍니다."
   },
   "notificationSentDevice": {
-    "message": "A notification has been sent to your device."
+    "message": "기기에 알림이 전송되었습니다."
   },
   "versionNumber": {
     "message": "버전 $VERSION_NUMBER$",
@@ -924,7 +924,7 @@
     }
   },
   "deleteSelectedConfirmation": {
-    "message": "Are you sure you want to continue?"
+    "message": "정말 계속하시겠습니까?"
   },
   "moveSelectedItemsDesc": {
     "message": "선택된 $COUNT$ 개의 항목을 옮길 폴더를 선택하십시오.",
@@ -989,16 +989,16 @@
     "message": "This password will be used to export and import this file"
   },
   "confirmMasterPassword": {
-    "message": "Confirm master password"
+    "message": "마스터 비밀번호 확인"
   },
   "confirmFormat": {
-    "message": "Confirm format"
+    "message": "형식 확인"
   },
   "filePassword": {
-    "message": "File password"
+    "message": "파일 암호"
   },
   "confirmFilePassword": {
-    "message": "Confirm file password"
+    "message": "파일 암호 확인"
   },
   "accountRestrictedOptionDescription": {
     "message": "Use your account encryption key, derived from your account's username and Master Password, to encrypt the export and restrict import to only the current Bitwarden account."
@@ -1016,13 +1016,13 @@
     "message": "Password protected"
   },
   "filePasswordAndConfirmFilePasswordDoNotMatch": {
-    "message": "“File password”  and “Confirm file password“ do not match."
+    "message": "'파일 암호'와 '파일 암호 확인'이 일치하지 않습니다."
   },
   "confirmVaultImport": {
-    "message": "Confirm vault import"
+    "message": "보관함 가져오기 확인"
   },
   "confirmVaultImportDesc": {
-    "message": "This file is password-protected. Please enter the file password to import data."
+    "message": "이 파일은 암호로 보호받고 있습니다. 데이터를 가져오려면 파일 암호를 입력하세요."
   },
   "exportSuccess": {
     "message": "보관함 데이터를 내보냈습니다."
@@ -1165,14 +1165,14 @@
     }
   },
   "kdfMemory": {
-    "message": "KDF memory (MB)",
+    "message": "KDF 메모리 (MB)",
     "description": "Memory refers to computer memory (RAM). MB is short for megabytes."
   },
   "argon2Warning": {
     "message": "Setting your KDF iterations, memory, and parallelism too high could result in poor performance when logging into (and unlocking) Bitwarden on slower or older devices. We recommend changing these individually in small increments and then test all of your devices."
   },
   "kdfParallelism": {
-    "message": "KDF parallelism"
+    "message": "KDF 병렬화"
   },
   "argon2Desc": {
     "message": "Higher KDF iterations, memory, and parallelism can help protect your master password from being brute forced by an attacker."
@@ -1283,10 +1283,10 @@
     "message": "불러올 파일"
   },
   "chooseFile": {
-    "message": "Choose File"
+    "message": "파일 선택"
   },
   "noFileChosen": {
-    "message": "No file chosen"
+    "message": "선택된 파일 없음"
   },
   "orCopyPasteFileContents": {
     "message": "또는 가져온 파일 내용 복사/붙여넣기"
@@ -1388,7 +1388,7 @@
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enforce Bitwarden Two-step Login options for members by using the Two-step Login Policy.'"
   },
   "twoStepLoginPolicy": {
-    "message": "Two-step Login Policy"
+    "message": "2단계 인증 정책"
   },
   "twoStepLoginOrganizationDuoDesc": {
     "message": "To enforce Two-step Login through Duo, use the options below."
@@ -2019,6 +2019,9 @@
   "cancelSubscription": {
     "message": "구독 취소"
   },
+  "subscriptionExpiration": {
+    "message": "구독 만료"
+  },
   "subscriptionCanceled": {
     "message": "구독을 취소했습니다."
   },
@@ -2511,13 +2514,13 @@
     "message": "컬렉션 편집"
   },
   "collectionInfo": {
-    "message": "Collection info"
+    "message": "컬렉션 정보"
   },
   "deleteCollectionConfirmation": {
     "message": "정말 이 컬렉션을 삭제하시겠습니까?"
   },
   "editMember": {
-    "message": "Edit member"
+    "message": "구성원 편집"
   },
   "fieldOnTabRequiresAttention": {
     "message": "A field on the '$TAB$' tab requires your attention.",
@@ -2691,7 +2694,7 @@
     }
   },
   "viewAllLoginOptions": {
-    "message": "View all log in options"
+    "message": "모든 로그인 방식 보기"
   },
   "viewedItemId": {
     "message": "$ID$ 항목을 확인했습니다.",
@@ -2793,7 +2796,7 @@
     }
   },
   "deletedCollections": {
-    "message": "Deleted collections"
+    "message": "삭제된 컬렉션"
   },
   "deletedCollectionId": {
     "message": "$ID$ 컬렉션이 삭제되었습니다.",
@@ -3199,7 +3202,7 @@
     "description": "A billing plan/package. For example: Families, Teams, Enterprise, etc."
   },
   "changeBillingPlan": {
-    "message": "Change Plan",
+    "message": "요금제 업그레이드",
     "description": "A billing plan/package. For example: Families, Teams, Enterprise, etc."
   },
   "changeBillingPlanUpgrade": {
@@ -3568,7 +3571,7 @@
     "message": "Fingerprint phrase"
   },
   "dontAskFingerprintAgain": {
-    "message": "지문 구절을 다시 확인하지 않음",
+    "message": "초대된 사용자의 지문 구절을 확인하지 않음 (권장되지 않음)",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "free": {
@@ -5066,7 +5069,7 @@
     }
   },
   "freeFamiliesPlan": {
-    "message": "Free Families plan"
+    "message": "무료 가족 요금제"
   },
   "redeemNow": {
     "message": "Redeem now"
@@ -5633,7 +5636,7 @@
     "message": "On"
   },
   "members": {
-    "message": "Members"
+    "message": "구성원"
   },
   "reporting": {
     "message": "Reporting"
@@ -5687,7 +5690,7 @@
     "message": "Custom Color"
   },
   "selectPlaceholder": {
-    "message": "-- Select --"
+    "message": "-- 선택 --"
   },
   "multiSelectPlaceholder": {
     "message": "-- Type to filter --"
@@ -6112,7 +6115,7 @@
     "message": "To"
   },
   "member": {
-    "message": "Member"
+    "message": "구성원"
   },
   "update": {
     "message": "Update"
@@ -6127,7 +6130,7 @@
     }
   },
   "groupInfo": {
-    "message": "Group info"
+    "message": "그룹 정보"
   },
   "editGroupMembersDesc": {
     "message": "Grant members access to the group's assigned collections."
@@ -6142,7 +6145,7 @@
     "message": "If checked, this will replace all other collection permissions."
   },
   "selectMembers": {
-    "message": "Select members"
+    "message": "구성원 선택"
   },
   "selectCollections": {
     "message": "Select collections"
@@ -6151,7 +6154,7 @@
     "message": "Role"
   },
   "removeMember": {
-    "message": "Remove member"
+    "message": "구성원 제거"
   },
   "collection": {
     "message": "Collection"
@@ -6175,7 +6178,7 @@
     "message": "No collections added"
   },
   "noMembersAdded": {
-    "message": "No members added"
+    "message": "추가된 구성원이 없습니다"
   },
   "noGroupsAdded": {
     "message": "No groups added"
@@ -6187,7 +6190,7 @@
     "message": "This group can access and modify all items."
   },
   "memberAccessAll": {
-    "message": "This member can access and modify all items."
+    "message": "이 구성원은 모든 항목에 접근 및 수정이 가능합니다."
   },
   "domainVerification": {
     "message": "Domain verification"
@@ -6325,7 +6328,7 @@
     "message": "Member/Group"
   },
   "groupAndMemberColumnHeader": {
-    "message": "Member"
+    "message": "구성원"
   },
   "selectGroupsAndMembers": {
     "message": "Select groups and members"
@@ -6346,13 +6349,13 @@
     "message": "Member status filter"
   },
   "inviteMember": {
-    "message": "Invite member"
+    "message": "구성원 초대"
   },
   "needsConfirmation": {
     "message": "Needs confirmation"
   },
   "memberRole": {
-    "message": "Member role"
+    "message": "구성원 역할"
   },
   "moreFromBitwarden": {
     "message": "More from Bitwarden"
@@ -6415,7 +6418,7 @@
     }
   },
   "fileUpload": {
-    "message": "File upload"
+    "message": "파일 업로드"
   },
   "acceptedFormats": {
     "message": "Accepted Formats:"
@@ -6536,7 +6539,7 @@
     "message": "Description"
   },
   "errorReadingImportFile": {
-    "message": "An error occurred when trying to read the import file"
+    "message": "가져온 파일을 읽는 도중 오류가 발생했습니다"
   },
   "accessedSecret": {
     "message": "Accessed secret $SECRET_ID$.",
@@ -6555,7 +6558,7 @@
     "message": "Create a secret"
   },
   "createProject": {
-    "message": "Create a project"
+    "message": "프로젝트 생성"
   },
   "createServiceAccount": {
     "message": "Create a service account"
@@ -6650,7 +6653,7 @@
     "message": "Weak password identified and found in a data breach. Use a strong and unique password to protect your account. Are you sure you want to use this password?"
   },
   "characterMinimum": {
-    "message": "$LENGTH$ character minimum",
+    "message": "$LENGTH$자 이상이어야 합니다",
     "placeholders": {
       "length": {
         "content": "$1",
@@ -6659,7 +6662,7 @@
     }
   },
   "masterPasswordMinimumlength": {
-    "message": "Master password must be at least $LENGTH$ characters long.",
+    "message": "마스터 비밀번호는 최소 $LENGTH$자 이상이어야 합니다.",
     "placeholders": {
       "length": {
         "content": "$1",
@@ -6669,5 +6672,8 @@
   },
   "dismiss": {
     "message": "Dismiss"
+  },
+  "notAvailableForFreeOrganization": {
+    "message": "This feature is not available for free organizations. Contact your organization owner to upgrade."
   }
 }

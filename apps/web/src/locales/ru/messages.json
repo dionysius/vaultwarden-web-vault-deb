@@ -2019,6 +2019,9 @@
   "cancelSubscription": {
     "message": "Отменить подписку"
   },
+  "subscriptionExpiration": {
+    "message": "Subscription expiration"
+  },
   "subscriptionCanceled": {
     "message": "Подписка отменена."
   },
@@ -6669,5 +6672,8 @@
   },
   "dismiss": {
     "message": "Отклонить"
+  },
+  "notAvailableForFreeOrganization": {
+    "message": "Эта функция недоступна для бесплатных организаций. Свяжитесь с владельцем вашей организации для обновления."
   }
 }
