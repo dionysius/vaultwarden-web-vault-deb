@@ -474,7 +474,7 @@
     }
   },
   "autofillError": {
-    "message": "Valitttua kohdetta ei voitu täyttää tälle sivulle automaattisesti. Kopioi ja liitä tiedot itse."
+    "message": "Valittua kohdetta ei voitu täyttää tälle sivulle automaattisesti. Kopioi ja liitä tiedot itse."
   },
   "loggedOut": {
     "message": "Kirjauduttu ulos"
@@ -979,7 +979,7 @@
     "message": "Vaarantuneet tai epäluotettavat sivustot voivat väärinkäyttää sivun avautuessa suoritettavaa automaattista täyttöä."
   },
   "learnMoreAboutAutofill": {
-    "message": "Lue lisää automaattisesta täytöstä"
+    "message": "Lisätietoja automaattisesta täytöstä"
   },
   "defaultAutoFillOnPageLoad": {
     "message": "Automaattisen täytön oletusasetus kirjautumistiedoille"
@@ -2124,7 +2124,7 @@
     "message": "Miten täytetään automaattisesti"
   },
   "autofillSelectInfoWithCommand": {
-    "message": "Valitse kohde tältä sivulta tai käytä pikanäppäintä $COMMAND$",
+    "message": "Valitse tälle sivulle sopiva kohde tai käytä pikanäppäintä $COMMAND$.",
     "placeholders": {
       "command": {
         "content": "$1",
@@ -2133,13 +2133,13 @@
     }
   },
   "autofillSelectInfoWithoutCommand": {
-    "message": "Valitse kohde tältä sivulta tai määritä pikanäppäin asetuksista."
+    "message": "Valitse tälle sivulle sopiva kohde tai määritä pikanäppäin asetuksista."
   },
   "gotIt": {
     "message": "Selvä"
   },
   "autofillSettings": {
-    "message": "Automaattisen täytön asetukset"
+    "message": "Täytön asetukset"
   },
   "autofillShortcut": {
     "message": "Automaattisen täytön pikanäppäin"

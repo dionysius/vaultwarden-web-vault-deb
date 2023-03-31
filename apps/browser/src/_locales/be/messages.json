@@ -2124,7 +2124,7 @@
     "message": "Як аўтазапоўніць"
   },
   "autofillSelectInfoWithCommand": {
-    "message": "Select an item from this page or use the shortcut: $COMMAND$",
+    "message": "Выберыце элемент на гэтай старонцы або скарыстайцеся спалучэннем клавіш: $COMMAND$",
     "placeholders": {
       "command": {
         "content": "$1",
@@ -2133,7 +2133,7 @@
     }
   },
   "autofillSelectInfoWithoutCommand": {
-    "message": "Select an item from this page or set a shortcut in settings."
+    "message": "Выберыце элемент на гэтай старонцы або задайце спалучэнне клавіш у наладах."
   },
   "gotIt": {
     "message": "Зразумела"
