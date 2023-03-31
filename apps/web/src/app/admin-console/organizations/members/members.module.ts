@@ -1,7 +1,7 @@
 import { NgModule } from "@angular/core";
 
-import { SharedOrganizationModule } from "../../../organizations/shared";
 import { LooseComponentsModule } from "../../../shared";
+import { SharedOrganizationModule } from "../shared";
 
 import { BulkConfirmComponent } from "./components/bulk/bulk-confirm.component";
 import { BulkRemoveComponent } from "./components/bulk/bulk-remove.component";
