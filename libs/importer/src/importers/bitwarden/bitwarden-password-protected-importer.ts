@@ -9,17 +9,7 @@ import { ImportResult } from "../../models/import-result";
 import { Importer } from "../importer";
 
 import { BitwardenJsonImporter } from "./bitwarden-json-importer";
-
-interface BitwardenPasswordProtectedFileFormat {
-  encrypted: boolean;
-  passwordProtected: boolean;
-  salt: string;
-  kdfIterations: number;
-  kdfType: number;
-  encKeyValidation_DO_NOT_EDIT: string;
-  data: string;
-}
-
+import { BitwardenPasswordProtectedFileFormat } from "./bitwarden-password-protected-types";
 export class BitwardenPasswordProtectedImporter extends BitwardenJsonImporter implements Importer {
   private key: SymmetricCryptoKey;
 
@@ -50,8 +40,8 @@ export class BitwardenPasswordProtectedImporter extends BitwardenJsonImporter im
     this.key = await this.cryptoService.makePinKey(
       this.password,
       jdoc.salt,
-      KdfType.PBKDF2_SHA256,
-      new KdfConfig(jdoc.kdfIterations)
+      jdoc.kdfType,
+      new KdfConfig(jdoc.kdfIterations, jdoc.kdfMemory, jdoc.kdfParallelism)
     );
 
     const encKeyValidation = new EncString(jdoc.encKeyValidation_DO_NOT_EDIT);

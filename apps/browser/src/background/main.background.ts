@@ -466,7 +466,8 @@ export default class MainBackground {
       this.cipherService,
       this.apiService,
       this.cryptoService,
-      this.cryptoFunctionService
+      this.cryptoFunctionService,
+      this.stateService
     );
     this.notificationsService = new NotificationsService(
       this.syncService,
