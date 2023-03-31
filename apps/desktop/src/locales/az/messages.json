@@ -542,7 +542,7 @@
     "message": "Ana parolun yenidən yazılması lazımdır."
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least $VALUE$ characters long.",
+    "message": "Ana parol ən azı $VALUE$ simvol uzunluğunda olmalıdır.",
     "description": "The Master Password must be at least a specific number of characters long.",
     "placeholders": {
       "value": {
@@ -769,6 +769,9 @@
   },
   "contactUs": {
     "message": "Bizimlə əlaqə"
+  },
+  "helpAndFeedback": {
+    "message": "Kömək və əks-əlaqə"
   },
   "getHelp": {
     "message": "Kömək alın"

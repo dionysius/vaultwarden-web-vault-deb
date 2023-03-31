@@ -770,6 +770,9 @@
   "contactUs": {
     "message": "Зв'язатися з нами"
   },
+  "helpAndFeedback": {
+    "message": "Допомога та зворотний зв'язок"
+  },
   "getHelp": {
     "message": "Отримати допомогу"
   },
@@ -1672,7 +1675,7 @@
     "message": "Текст"
   },
   "deletionDate": {
-    "message": "Дата видалення"
+    "message": "Термін дії"
   },
   "deletionDateDesc": {
     "message": "Відправлення буде остаточно видалено у вказаний час.",
@@ -1762,7 +1765,7 @@
     "message": "1 день"
   },
   "custom": {
-    "message": "Спеціальний"
+    "message": "Власний"
   },
   "deleteSendConfirmation": {
     "message": "Ви дійсно хочете видалити це відправлення?",

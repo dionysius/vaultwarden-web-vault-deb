@@ -542,7 +542,7 @@
     "message": "נדרשת חזרה על הסיסמה הראשית."
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least $VALUE$ characters long.",
+    "message": "סיסמאת המאסטר חייבת להיות באורך $VALUE$ תווים.",
     "description": "The Master Password must be at least a specific number of characters long.",
     "placeholders": {
       "value": {
@@ -769,6 +769,9 @@
   },
   "contactUs": {
     "message": "יצירת קשר אתנו"
+  },
+  "helpAndFeedback": {
+    "message": "עזרה ומשוב"
   },
   "getHelp": {
     "message": "קבלת עזרה"
@@ -2066,35 +2069,35 @@
     "message": "התחבר עם מכשיר אחר"
   },
   "logInInitiated": {
-    "message": "Log in initiated"
+    "message": "התחברות החלה"
   },
   "notificationSentDevice": {
-    "message": "A notification has been sent to your device."
+    "message": "התראה נשלחה למכשירך."
   },
   "fingerprintMatchInfo": {
-    "message": "Please make sure your vault is unlocked and Fingerprint phrase matches the other device."
+    "message": "וודא שהכספת שלך לא נעולה ושם המזהה שלך מתאים למכשיר השני."
   },
   "fingerprintPhraseHeader": {
-    "message": "Fingerprint phrase"
+    "message": "שם מזהה"
   },
   "needAnotherOption": {
-    "message": "Log in with device must be set up in the settings of the Bitwarden app. Need another option?"
+    "message": "התחברות עם מכשיר צריכה להיות מוגדרת בהגדרות האפליקציה. זקוק/ה לאפשרות נוספת?"
   },
   "viewAllLoginOptions": {
-    "message": "View all login options"
+    "message": "צפייה בכל אפשרות ההתחברות"
   },
   "resendNotification": {
-    "message": "Resend notification"
+    "message": "שליחת התראה מחדש"
   },
   "toggleCharacterCount": {
     "message": "החלפת מצב ספירת תווים",
     "description": "'Character count' describes a feature that displays a number next to each character of the password."
   },
   "areYouTryingtoLogin": {
-    "message": "Are you trying to log in?"
+    "message": "האם את/ה מנסה להתחבר? "
   },
   "logInAttemptBy": {
-    "message": "Login attempt by $EMAIL$",
+    "message": "ניסיון התחברות של $EMAIL$",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -2103,25 +2106,25 @@
     }
   },
   "deviceType": {
-    "message": "Device Type"
+    "message": "סוג מכשיר"
   },
   "ipAddress": {
-    "message": "IP Address"
+    "message": "‏כתובת IP"
   },
   "time": {
-    "message": "Time"
+    "message": "זמן"
   },
   "confirmLogIn": {
-    "message": "Confirm login"
+    "message": "אישור ההתחברות"
   },
   "denyLogIn": {
-    "message": "Deny login"
+    "message": "ביטול התחברות"
   },
   "approveLoginRequests": {
-    "message": "Approve login requests"
+    "message": "אישור בקשות התחברות"
   },
   "logInConfirmedForEmailOnDevice": {
-    "message": "Login confirmed for $EMAIL$ on $DEVICE$",
+    "message": "התחברות אושרה עבור $EMAIL$ במכשיר $DEVICE$",
     "placeholders": {
       "email": {
         "content": "$1",
