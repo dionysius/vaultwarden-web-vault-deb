@@ -4,6 +4,7 @@ import { Arg, Substitute, SubstituteOf } from "@fluffy-spoon/substitute";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
 import { CryptoFunctionService } from "@bitwarden/common/abstractions/cryptoFunction.service";
+import { KdfConfig } from "@bitwarden/common/auth/models/domain/kdf-config";
 import { KdfType, DEFAULT_PBKDF2_ITERATIONS } from "@bitwarden/common/enums/kdfType";
 import { Utils } from "@bitwarden/common/misc/utils";
 import { EncString } from "@bitwarden/common/models/domain/enc-string";
@@ -153,9 +154,12 @@ describe("ExportService", () => {
     cipherService = Substitute.for<CipherService>();
     folderService = Substitute.for<FolderService>();
     cryptoService = Substitute.for<CryptoService>();
+    stateService = Substitute.for<StateService>();
 
     folderService.getAllDecryptedFromState().resolves(UserFolderViews);
     folderService.getAllFromState().resolves(UserFolders);
+    stateService.getKdfType().resolves(KdfType.PBKDF2_SHA256);
+    stateService.getKdfConfig().resolves(new KdfConfig(DEFAULT_PBKDF2_ITERATIONS));
 
     exportService = new ExportService(
       folderService,
