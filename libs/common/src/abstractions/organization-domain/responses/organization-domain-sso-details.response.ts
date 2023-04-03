@@ -5,7 +5,6 @@ export class OrganizationDomainSsoDetailsResponse extends BaseResponse {
   organizationIdentifier: string;
   ssoAvailable: boolean;
   domainName: string;
-  ssoRequired: boolean;
   verifiedDate?: Date;
 
   constructor(response: any) {
@@ -14,7 +13,6 @@ export class OrganizationDomainSsoDetailsResponse extends BaseResponse {
     this.organizationIdentifier = this.getResponseProperty("organizationIdentifier");
     this.ssoAvailable = this.getResponseProperty("ssoAvailable");
     this.domainName = this.getResponseProperty("domainName");
-    this.ssoRequired = this.getResponseProperty("ssoRequired");
     this.verifiedDate = this.getResponseProperty("verifiedDate");
   }
 }

@@ -104,11 +104,8 @@ export class SsoComponent extends BaseSsoComponent {
       const errorResponse: ErrorResponse = error as ErrorResponse;
       switch (errorResponse.statusCode) {
         case HttpStatusCode.NotFound:
-          if (errorResponse?.message?.includes("Claimed org domain not found")) {
-            // Do nothing. This is a valid case.
-            return;
-          }
-          break;
+          //this is a valid case for a domain not found
+          return;
 
         default:
           this.validationService.showError(errorResponse);
