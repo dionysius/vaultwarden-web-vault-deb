@@ -31,114 +31,20 @@
   /*
   MODIFICATIONS FROM ORIGINAL
 
-  1.  Populate isFirefox
-  2.  Remove isChrome and isSafari since they are not used.
-  3.  Unminify and format to meet Mozilla review requirements.
-  4.  Remove unnecessary input types from getFormElements query selector and limit number of elements returned.
-  5.  Remove fakeTested prop.
-  6.  Rename com.agilebits.* stuff to com.bitwarden.*
-  7.  Remove "some useful globals" on window
-  8.  Add ability to autofill span[data-bwautofill] elements
-  9.  Add new handler, for new command that responds with page details in response callback
+  1. Populate isFirefox
+  2. Remove isChrome and isSafari since they are not used.
+  3. Unminify and format to meet Mozilla review requirements.
+  4. Remove unnecessary input types from getFormElements query selector and limit number of elements returned.
+  5. Remove fakeTested prop.
+  6. Rename com.agilebits.* stuff to com.bitwarden.*
+  7. Remove "some useful globals" on window
+  8. Add ability to autofill span[data-bwautofill] elements
+  9. Add new handler, for new command that responds with page details in response callback
   10. Handle sandbox iframe and sandbox rule in CSP
   11. Work on array of saved urls instead of just one to determine if we should autofill non-https sites
   12. Remove setting of attribute com.browser.browser.userEdited on user-inputs
   13. Handle null value URLs in urlNotSecure
-  14. Implement new HTML element query logic to be able to traverse into ShadowRoot
   */
-
-  /*
-   * `openOrClosedShadowRoot` is only available to WebExtensions.
-   * We need to use the correct implementation based on browser.
-   */
-  // START MODIFICATION
-  var getShadowRoot;
-
-  if (chrome.dom && chrome.dom.openOrClosedShadowRoot) {
-      // Chromium 88+
-      // https://developer.chrome.com/docs/extensions/reference/dom/
-      getShadowRoot = function (element) {
-          if (!(element instanceof HTMLElement)) {
-              return null;
-          }
-
-          return chrome.dom.openOrClosedShadowRoot(element);
-      };
-  } else {
-      getShadowRoot = function (element) {
-          // `openOrClosedShadowRoot` is currently available for Firefox 63+
-          // https://developer.mozilla.org/en-US/docs/Web/API/Element/openOrClosedShadowRoot
-          // Fallback to usual shadowRoot if it doesn't exist, which will only find open ShadowRoots, not closed ones.
-          // https://developer.mozilla.org/en-US/docs/Web/API/ShadowRoot#browser_compatibility
-          return element.openOrClosedShadowRoot || element.shadowRoot;
-      };
-  }
-
-  /*
-   * Returns elements like Document.querySelectorAll does, but traverses the document and shadow
-   * roots, yielding a visited node only if it passes the predicate in filterCallback.
-   */
-  function queryDocAll(doc, rootEl, filterCallback) {
-      var accumulatedNodes = [];
-
-      // mutates accumulatedNodes
-      accumulatingQueryDocAll(doc, rootEl, filterCallback, accumulatedNodes);
-
-      return accumulatedNodes;
-  }
-
-  function accumulatingQueryDocAll(doc, rootEl, filterCallback, accumulatedNodes) {
-      var treeWalker = doc.createTreeWalker(rootEl, NodeFilter.SHOW_ELEMENT);
-      var node;
-
-      while (node = treeWalker.nextNode()) {
-        if (filterCallback(node)) {
-            accumulatedNodes.push(node);
-        }
-
-        // If node contains a ShadowRoot we want to step into it and also traverse all child nodes inside.
-        var nodeShadowRoot = getShadowRoot(node);
-
-        if (!nodeShadowRoot) {
-          continue;
-        }
-
-        // recursively traverse into ShadowRoot
-        accumulatingQueryDocAll(doc, nodeShadowRoot, filterCallback, accumulatedNodes);
-    }
-  }
-
-  /*
-   * Returns an element like Document.querySelector does, but traverses the document and shadow
-   * roots, yielding a visited node only if it passes the predicate in filterCallback.
-   */
-  function queryDoc(doc, rootEl, filterCallback) {
-      var treeWalker = doc.createTreeWalker(rootEl, NodeFilter.SHOW_ELEMENT);
-      var node;
-
-      while (node = treeWalker.nextNode()) {
-          if (filterCallback(node)) {
-              return node;
-          }
-
-          // If node contains a ShadowRoot we want to step into it and also traverse all child nodes inside.
-          var nodeShadowRoot = getShadowRoot(node);
-
-          if (!nodeShadowRoot) {
-            continue;
-          }
-
-          // recursively traverse into ShadowRoot
-          var subQueryResult = queryDoc(doc, nodeShadowRoot, filterCallback);
-
-          if (subQueryResult) {
-              return subQueryResult;
-          }
-      }
-
-      return null;
-  }
-  // END MODIFICATION
 
   function collect(document, undefined) {
       // START MODIFICATION
@@ -152,8 +58,8 @@
 
           /**
            * For a given element `el`, returns the value of the attribute `attrName`.
-           * @param {HTMLElement} el
-           * @param {string} attrName
+           * @param {HTMLElement} el 
+           * @param {string} attrName 
            * @returns {string} The value of the attribute
            */
           function getElementAttrValue(el, attrName) {
@@ -190,7 +96,7 @@
 
           /**
            * Returns the value of the given element.
-           * @param {HTMLElement} el
+           * @param {HTMLElement} el 
            * @returns {any} Value of the element
            */
           function getElementValue(el) {
@@ -218,7 +124,7 @@
 
           /**
            * If `el` is a `<select>` element, return an array of all of the options' `text` properties.
-           * @param {HTMLElement} el
+           * @param {HTMLElement} el 
            * @returns {string[]} An array of options for the given `<select>` element
            */
           function getSelectElementOptions(el) {
@@ -241,7 +147,7 @@
 
           /**
            * If `el` is in a data table, get the label in the row directly above it
-           * @param {HTMLElement} el
+           * @param {HTMLElement} el 
            * @returns {string} A string containing the label, or null if not found
            */
           function getLabelTop(el) {
@@ -281,7 +187,7 @@
 
           /**
            * Get the contents of the elements that are labels for `el`
-           * @param {HTMLElement} el
+           * @param {HTMLElement} el 
            * @returns {string} A string containing all of the `innerText` or `textContent` values for all elements that are labels for `el`
            */
           function getLabelTag(el) {
@@ -292,22 +198,12 @@
                   theLabels = Array.prototype.slice.call(el.labels);
               } else {
                   if (el.id) {
-                      // START MODIFICATION
-                      var elId = JSON.stringify(el.id);
-                      var labelsByReferencedId = queryDocAll(theDoc, theDoc.body, function (node) {
-                          return node.nodeName === 'LABEL' && node.htmlFor === elId;
-                      });
-                      theLabels = theLabels.concat(labelsByReferencedId);
-                      // END MODIFICATION
+                      theLabels = theLabels.concat(Array.prototype.slice.call(
+                          queryDoc(theDoc, 'label[for=' + JSON.stringify(el.id) + ']')));
                   }
 
                   if (el.name) {
-                      // START MODIFICATION
-                      var elName = JSON.stringify(el.name);
-                      docLabel = queryDocAll(theDoc, theDoc.body, function (node) {
-                          return node.nodeName === 'LABEL' && node.htmlFor === elName;
-                      });
-                      // END MODIFICATION
+                      docLabel = queryDoc(theDoc, 'label[for=' + JSON.stringify(el.name) + ']');
 
                       for (var labelIndex = 0; labelIndex < docLabel.length; labelIndex++) {
                           if (-1 === theLabels.indexOf(docLabel[labelIndex])) {
@@ -343,10 +239,10 @@
 
           /**
            * Add property `prop` with value `val` to the object `obj`
-           * @param {object} obj
-           * @param {string} prop
-           * @param {any} val
-           * @param {*} d
+           * @param {object} obj 
+           * @param {string} prop 
+           * @param {any} val 
+           * @param {*} d 
            */
           function addProp(obj, prop, val, d) {
               if (0 !== d && d === val || null === val || void 0 === val) {
@@ -358,27 +254,34 @@
 
           /**
            * Converts the string `s` to lowercase
-           * @param {string} s
+           * @param {string} s 
            * @returns Lowercase string
            */
           function toLowerString(s) {
               return 'string' === typeof s ? s.toLowerCase() : ('' + s).toLowerCase();
           }
-          // START MODIFICATION
-          // renamed queryDoc to queryDocAll and moved to top
-          // END MODIFICATION
+
+          /**
+           * Query the document `doc` for elements matching the selector `selector`
+           * @param {Document} doc 
+           * @param {string} query 
+           * @returns {HTMLElement[]} An array of elements matching the selector
+           */
+          function queryDoc(doc, query) {
+              var els = [];
+              try {
+                  els = doc.querySelectorAll(query);
+              } catch (e) { }
+              return els;
+          }
+
           // end helpers
 
           var theView = theDoc.defaultView ? theDoc.defaultView : window,
               passwordRegEx = RegExp('((\\\\b|_|-)pin(\\\\b|_|-)|password|passwort|kennwort|(\\\\b|_|-)passe(\\\\b|_|-)|contraseña|senha|密码|adgangskode|hasło|wachtwoord)', 'i');
 
           // get all the docs
-          // START MODIFICATION
-          var formNodes = queryDocAll(theDoc, theDoc.body, function (el) {
-              return el.nodeName === 'FORM';
-          });
-          var theForms = formNodes.map(function (formEl, elIndex) {
-          // END MODIFICATION
+          var theForms = Array.prototype.slice.call(queryDoc(theDoc, 'form')).map(function (formEl, elIndex) {
               var op = {},
                   formOpId = '__form__' + elIndex;
 
@@ -536,11 +439,7 @@
           };
 
           // get proper page title. maybe they are using the special meta tag?
-          // START MODIFICATION
-          var theTitle = queryDoc(theDoc, theDoc, function (node) {
-              return node.hasAttribute('data-onepassword-title');
-          });
-          // END MODIFICATION
+          var theTitle = document.querySelector('[data-onepassword-title]')
           if (theTitle && theTitle.dataset[DISPLAY_TITLE_ATTRIBUE]) {
               pageDetails.displayTitle = theTitle.dataset.onepasswordTitle;
           }
@@ -553,8 +452,8 @@
       /**
        * Do the event on the element.
        * @param {HTMLElement} kedol The element to do the event on
-       * @param {string} fonor The event name
-       * @returns
+       * @param {string} fonor The event name 
+       * @returns 
        */
       function doEventOnElement(kedol, fonor) {
           var quebo;
@@ -566,7 +465,7 @@
 
       /**
        * Clean up the string `s` to remove non-printable characters and whitespace.
-       * @param {string} s
+       * @param {string} s 
        * @returns {string} Clean text
        */
       function cleanText(s) {
@@ -578,7 +477,7 @@
       /**
        * If `el` is a text node, add the node's text to `arr`.
        * If `el` is an element node, add the element's `textContent or `innerText` to `arr`.
-       * @param {string[]} arr An array of `textContent` or `innerText` values
+       * @param {string[]} arr An array of `textContent` or `innerText` values 
        * @param {HTMLElement} el The element to push to the array
        */
       function checkNodeType(arr, el) {
@@ -612,9 +511,9 @@
 
       /**
        * Recursively gather all of the text values from the elements preceding `el` in the DOM
-       * @param {HTMLElement} el
+       * @param {HTMLElement} el 
        * @param {string[]} arr An array of `textContent` or `innerText` values
-       * @param {number} steps The number of steps to take up the DOM tree
+       * @param {number} steps The number of steps to take up the DOM tree 
        */
       function shiftForLeftLabel(el, arr, steps) {
           var sib;
@@ -645,7 +544,7 @@
       /**
        * Determine if the element is visible.
        * Visible is define as not having `display: none` or `visibility: hidden`.
-       * @param {HTMLElement} el
+       * @param {HTMLElement} el 
        * @returns {boolean} Returns `true` if the element is visible and `false` otherwise
        */
       function isElementVisible(el) {
@@ -656,10 +555,7 @@
           // walk the dom tree until we reach the top
           for (var elStyle; theEl && theEl !== document;) {
               // Calculate the style of the element
-              // START MODIFICATION
-              elStyle = el.getComputedStyle && theEl instanceof Element ? el.getComputedStyle(theEl, null) : theEl.style;
-              // END MODIFICATION
-
+              elStyle = el.getComputedStyle ? el.getComputedStyle(theEl, null) : theEl.style;
               // If there's no computed style at all, we're done, as we know that it's not hidden
               if (!elStyle) {
                   return true;
@@ -680,7 +576,7 @@
       /**
        * Determine if the element is "viewable" on the screen.
        * "Viewable" is defined as being visible in the DOM and being within the confines of the viewport.
-       * @param {HTMLElement} el
+       * @param {HTMLElement} el 
        * @returns {boolean} Returns `true` if the element is viewable and `false` otherwise
        */
       function isElementViewable(el) {
@@ -719,7 +615,7 @@
           // If the right side of the bounding rectangle is outside the viewport, the x coordinate of the center point is the window width (minus offset) divided by 2.
           // If the right side of the bounding rectangle is inside the viewport, the x coordinate of the center point is the width of the bounding rectangle divided by 2.
           // If the bottom of the bounding rectangle is outside the viewport, the y coordinate of the center point is the window height (minus offset) divided by 2.
-          // If the bottom side of the bounding rectangle is inside the viewport, the y coordinate of the center point is the height of the bounding rectangle divided by
+          // If the bottom side of the bounding rectangle is inside the viewport, the y coordinate of the center point is the height of the bounding rectangle divided by 
           // We then use elementFromPoint to find the element at that point.
           for (var pointEl = el.ownerDocument.elementFromPoint(leftOffset + (rect.right > window.innerWidth ? (window.innerWidth - leftOffset) / 2 : rect.width / 2), topOffset + (rect.bottom > window.innerHeight ? (window.innerHeight - topOffset) / 2 : rect.height / 2)); pointEl && pointEl !== el && pointEl !== document;) {
              // If the element we found is a label, and the element we're checking has labels
@@ -741,7 +637,7 @@
 
       /**
        * Retrieve the element from the document with the specified `opid` property
-       * @param {number} opId
+       * @param {number} opId 
        * @returns {HTMLElement} The element with the specified `opiId`, or `null` if no such element exists
        */
       function getElementForOPID(opId) {
@@ -769,28 +665,6 @@
           }
       }
 
-      var ignoredInputTypes = {
-        hidden: true,
-        submit: true,
-        reset: true,
-        button: true,
-        image: true,
-        file: true,
-      };
-
-      /*
-       * inputEl MUST BE an instanceof HTMLInputElement, else inputEl.type.toLowerCase will throw an error
-       */
-      function isRelevantInputField(inputEl) {
-        if (inputEl.hasAttribute('data-bwignore')) {
-          return false;
-        }
-
-        const isIgnoredInputType = ignoredInputTypes.hasOwnProperty(inputEl.type.toLowerCase());
-
-        return !isIgnoredInputType;
-      }
-
       /**
        * Query `theDoc` for form elements that we can use for autofill, ranked by importance and limited by `limit`
        * @param {Document} theDoc The Document to query
@@ -799,19 +673,13 @@
        */
       function getFormElements(theDoc, limit) {
           // START MODIFICATION
-
-          var els = queryDocAll(theDoc, theDoc.body, function (el) {
-              switch (el.nodeName) {
-                  case 'SELECT':
-                      return true;
-                  case 'SPAN':
-                      return el.hasAttribute('data-bwautofill');
-                  case 'INPUT':
-                      return isRelevantInputField(el);
-                  default:
-                      return false;
-              }
-          });
+          var els = [];
+          try {
+              var elsList = theDoc.querySelectorAll('input:not([type="hidden"]):not([type="submit"]):not([type="reset"])' +
+                  ':not([type="button"]):not([type="image"]):not([type="file"]):not([data-bwignore]), select, ' +
+                  'span[data-bwautofill]');
+              els = Array.prototype.slice.call(elsList);
+          } catch (e) { }
 
           if (!limit || els.length <= limit) {
               return els;
@@ -841,12 +709,12 @@
           }
 
           return returnEls;
+          // END MODIFICATION
       }
-      // END MODIFICATION
 
       /**
        * Focus the element `el` and optionally restore its original value
-       * @param {HTMLElement} el
+       * @param {HTMLElement} el 
        * @param {boolean} setVal Set the value of the element to its original value
        */
       function focusElement(el, setVal) {
@@ -871,12 +739,6 @@
       var markTheFilling = true,
           animateTheFilling = true;
 
-      function queryPasswordInputs() {
-        return queryDocAll(document, document.body, function (el) {
-          return el.nodeName === 'INPUT' && el.type.toLowerCase() === 'password';
-        })
-      }
-
       // Check if URL is not secure when the original saved one was
       function urlNotSecure(savedURLs) {
           var passwordInputs = null;
@@ -884,7 +746,7 @@
               return false;
           }
 
-          return savedURLs.some(url => url?.indexOf('https://') === 0) && 'http:' === document.location.protocol && (passwordInputs = queryPasswordInputs(),
+          return savedURLs.some(url => url?.indexOf('https://') === 0) && 'http:' === document.location.protocol && (passwordInputs = document.querySelectorAll('input[type=password]'),
               0 < passwordInputs.length && (confirmResult = confirm('Warning: This is an unsecured HTTP page, and any information you submit can potentially be seen and changed by others. This Login was originally saved on a secure (HTTPS) page.\n\nDo you still wish to fill this login?'),
                   0 == confirmResult)) ? true : false;
       }
@@ -1021,8 +883,8 @@
 
       /**
        * Find all elements matching `query` and fill them using the value `op` from the fill script
-       * @param {string} query
-       * @param {string} op
+       * @param {string} query 
+       * @param {string} op 
        * @returns {HTMLElement}
        */
       function doFillByQuery(query, op) {
@@ -1035,8 +897,8 @@
 
       /**
        * Assign `valueToSet` to all elements in the DOM that match `query`.
-       * @param {string} query
-       * @param {string} valueToSet
+       * @param {string} query 
+       * @param {string} valueToSet 
        * @returns {Array} Array of elements that were set.
        */
       function doSimpleSetByQuery(query, valueToSet) {
@@ -1050,8 +912,8 @@
 
       /**
        * Do a a click and focus on the element with the given `opId`.
-       * @param {number} opId
-       * @returns
+       * @param {number} opId 
+       * @returns 
        */
       function doFocusByOpId(opId) {
           var el = getElementByOpId(opId)
@@ -1065,8 +927,8 @@
 
       /**
        * Do a click on the element with the given `opId`.
-       * @param {number} opId
-       * @returns
+       * @param {number} opId 
+       * @returns 
        */
       function doClickByOpId(opId) {
           var el = getElementByOpId(opId);
@@ -1074,9 +936,9 @@
       }
 
       /**
-       * Do a `click` and `focus` on all elements that match the query.
-       * @param {string} query
-       * @returns
+       * Do a `click` and `focus` on all elements that match the query. 
+       * @param {string} query 
+       * @returns 
        */
       function doClickByQuery(query) {
           query = selectAllFromDoc(query);
@@ -1099,8 +961,8 @@
 
       /**
        * Fll an element `el` using the value `op` from the fill script
-       * @param {HTMLElement} el
-       * @param {string} op
+       * @param {HTMLElement} el 
+       * @param {string} op 
        */
       function fillTheElement(el, op) {
           var shouldCheck;
@@ -1132,7 +994,7 @@
 
       /**
        * Do all the fill operations needed on the element `el`.
-       * @param {HTMLElement} el
+       * @param {HTMLElement} el 
        * @param {*} afterValSetFunc The function to perform after the operations are complete.
        */
       function doAllFillOperations(el, afterValSetFunc) {
@@ -1156,8 +1018,8 @@
 
       /**
        * Normalize the event based on API support
-       * @param {HTMLElement} el
-       * @param {string} eventName
+       * @param {HTMLElement} el 
+       * @param {string} eventName 
        * @returns {Event} A normalized event
        */
       function normalizeEvent(el, eventName) {
@@ -1184,7 +1046,7 @@
       /**
        * Simulate the entry of a value into an element.
        * Clicks the element, focuses it, and then fires a keydown, keypress, and keyup event.
-       * @param {HTMLElement} el
+       * @param {HTMLElement} el 
        */
       function setValueForElement(el) {
           var valueToSet = el.value;
@@ -1199,7 +1061,7 @@
       /**
        * Simulate the entry of a value into an element by using events.
        * Dispatches a keydown, keypress, and keyup event, then fires the `input` and `change` events before removing focus.
-       * @param {HTMLElement} el
+       * @param {HTMLElement} el 
        */
       function setValueForElementByEvent(el) {
           var valueToSet = el.value,
@@ -1219,7 +1081,7 @@
 
       /**
        * Click on an element `el`
-       * @param {HTMLElement} el
+       * @param {HTMLElement} el 
        * @returns {boolean} Returns true if the element was clicked and false if it was not able to be clicked
        */
       function clickElement(el) {
@@ -1236,12 +1098,9 @@
        */
       function getAllFields() {
           var r = RegExp('((\\\\b|_|-)pin(\\\\b|_|-)|password|passwort|kennwort|passe|contraseña|senha|密码|adgangskode|hasło|wachtwoord)', 'i');
-          return queryDocAll(document, document.body, function (el) {
-              return el.nodeName === 'INPUT' &&
-                  el.type.toLowerCase() === 'text' &&
-                  el.value &&
-                  r.test(el.value);
-          });
+          return Array.prototype.slice.call(selectAllFromDoc("input[type='text']")).filter(function (el) {
+              return el.value && r.test(el.value);
+          }, this);
       }
 
       /**
@@ -1257,7 +1116,7 @@
 
       /**
        * Determine if we can apply styling to `el` to indicate that it was filled.
-       * @param {HTMLElement} el
+       * @param {HTMLElement} el 
        * @returns {boolean} Returns true if we can see the element to apply styling.
        */
       function canSeeElementToStyle(el) {
@@ -1266,9 +1125,7 @@
               a: {
                   currentEl = el;
                   for (var owner = el.ownerDocument, owner = owner ? owner.defaultView : {}, theStyle; currentEl && currentEl !== document;) {
-                      // START MODIFICATION
-                      theStyle = owner.getComputedStyle && currentEl instanceof Element ? owner.getComputedStyle(currentEl, null) : currentEl.style;
-                      // END MODIFICATION
+                      theStyle = owner.getComputedStyle ? owner.getComputedStyle(currentEl, null) : currentEl.style;
                       if (!theStyle) {
                           currentEl = true;
                           break a;
@@ -1292,7 +1149,7 @@
 
       /**
        * Find the element for the given `opid`.
-       * @param {number} theOpId
+       * @param {number} theOpId 
        * @returns {HTMLElement} The element for the given `opid`, or `null` if not found.
        */
       function getElementByOpId(theOpId) {
@@ -1302,19 +1159,12 @@
           }
           try {
               // START MODIFICATION
-              var filteredElements = queryDocAll(document, document.body, function (el) {
-                  switch (el.nodeName) {
-                      case 'INPUT':
-                      case 'SELECT':
-                      case 'BUTTON':
-                          return el.opid === theOpId;
-                      case 'SPAN':
-                          return el.hasAttribute('data-bwautofill') && el.opid === theOpId;
-                  }
-
-                  return false;
-              });
+              var elements = Array.prototype.slice.call(selectAllFromDoc('input, select, button, ' +
+                  'span[data-bwautofill]'));
               // END MODIFICATION
+              var filteredElements = elements.filter(function (o) {
+                  return o.opid == theOpId;
+              });
               if (0 < filteredElements.length) {
                   theElement = filteredElements[0],
                       1 < filteredElements.length && console.warn('More than one element found with opid ' + theOpId);
@@ -1331,20 +1181,20 @@
 
       /**
        * Helper for doc.querySelectorAll
-       * @param {string} theSelector
-       * @returns
+       * @param {string} theSelector 
+       * @returns 
        */
       function selectAllFromDoc(theSelector) {
-          // START MODIFICATION
-          return queryDocAll(document, document, function(node) {
-              return node.matches(theSelector);
-          });
-          // END MODIFICATION
+          var d = document, elements = [];
+          try {
+              elements = d.querySelectorAll(theSelector);
+          } catch (e) { }
+          return elements;
       }
 
       /**
        * Focus an element and optionally re-set its value after focusing
-       * @param {HTMLElement} el
+       * @param {HTMLElement} el 
        * @param {boolean} setValue Re-set the value after focusing
        */
       function doFocusElement(el, setValue) {
