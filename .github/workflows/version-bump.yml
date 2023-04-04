@@ -18,6 +18,18 @@ on:
         description: "New Version"
         required: true
 
+  workflow_call:
+    inputs:
+      version_number:
+        required: true
+        type: string
+      client:
+        required: true
+        type: string
+    secrets:
+      AZURE_PROD_KV_CREDENTIALS:
+        required: true
+
 defaults:
   run:
     shell: bash
