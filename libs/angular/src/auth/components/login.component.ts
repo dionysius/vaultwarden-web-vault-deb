@@ -1,4 +1,4 @@
-import { Directive, NgZone, OnInit } from "@angular/core";
+import { Directive, ElementRef, NgZone, OnInit, ViewChild } from "@angular/core";
 import { FormBuilder, Validators } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
 import { take } from "rxjs/operators";
@@ -26,6 +26,8 @@ import { CaptchaProtectedComponent } from "./captcha-protected.component";
 
 @Directive()
 export class LoginComponent extends CaptchaProtectedComponent implements OnInit {
+  @ViewChild("masterPasswordInput", { static: true }) masterPasswordInput: ElementRef;
+
   showPassword = false;
   formPromise: Promise<AuthResult>;
   onSuccessfulLogin: () => Promise<any>;
@@ -238,10 +240,16 @@ export class LoginComponent extends CaptchaProtectedComponent implements OnInit 
 
   toggleValidateEmail(value: boolean) {
     this.validatedEmail = value;
-    if (!value) {
-      // Reset master password only when going from validated to not validated (not you btn press)
+    if (!this.validatedEmail) {
+      // Reset master password only when going from validated to not validated
       // so that autofill can work properly
       this.formGroup.controls.masterPassword.reset();
+    } else {
+      // When email is validated, focus on master password after
+      // waiting for input to be rendered
+      this.ngZone.onStable
+        .pipe(take(1))
+        .subscribe(() => this.masterPasswordInput?.nativeElement?.focus());
     }
   }
 
