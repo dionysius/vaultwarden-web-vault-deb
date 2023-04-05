@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { ipcRenderer } from "electron";
 
 import { ThemingService } from "@bitwarden/angular/services/theming/theming.service";
-import { ThemeType } from "@bitwarden/common/enums/themeType";
+import { ThemeType } from "@bitwarden/common/enums";
 
 @Injectable()
 export class DesktopThemingService extends ThemingService {

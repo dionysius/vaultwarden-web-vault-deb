@@ -1,4 +1,4 @@
-import { FieldType } from "@bitwarden/common/enums/fieldType";
+import { FieldType } from "@bitwarden/common/enums";
 import { FolderView } from "@bitwarden/common/vault/models/view/folder.view";
 
 import { ImportResult } from "../models/import-result";

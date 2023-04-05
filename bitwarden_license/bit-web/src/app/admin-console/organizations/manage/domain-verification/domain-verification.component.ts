@@ -8,7 +8,7 @@ import { OrgDomainServiceAbstraction } from "@bitwarden/common/abstractions/orga
 import { OrganizationDomainResponse } from "@bitwarden/common/abstractions/organization-domain/responses/organization-domain.response";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { ValidationService } from "@bitwarden/common/abstractions/validation.service";
-import { HttpStatusCode } from "@bitwarden/common/enums/http-status-code.enum";
+import { HttpStatusCode } from "@bitwarden/common/enums";
 import { ErrorResponse } from "@bitwarden/common/models/response/error.response";
 import { DialogService } from "@bitwarden/components";
 

@@ -1,4 +1,4 @@
-import { ThemeType } from "@bitwarden/common/enums/themeType";
+import { ThemeType } from "@bitwarden/common/enums";
 
 export interface Theme {
   configuredTheme: ThemeType;

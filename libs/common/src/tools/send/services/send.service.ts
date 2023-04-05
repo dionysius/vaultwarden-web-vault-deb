@@ -4,7 +4,7 @@ import { CryptoService } from "../../../abstractions/crypto.service";
 import { CryptoFunctionService } from "../../../abstractions/cryptoFunction.service";
 import { I18nService } from "../../../abstractions/i18n.service";
 import { StateService } from "../../../abstractions/state.service";
-import { SEND_KDF_ITERATIONS } from "../../../enums/kdfType";
+import { SEND_KDF_ITERATIONS } from "../../../enums";
 import { Utils } from "../../../misc/utils";
 import { EncArrayBuffer } from "../../../models/domain/enc-array-buffer";
 import { EncString } from "../../../models/domain/enc-string";

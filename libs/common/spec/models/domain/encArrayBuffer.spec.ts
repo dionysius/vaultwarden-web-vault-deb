@@ -1,4 +1,4 @@
-import { EncryptionType } from "@bitwarden/common/enums/encryptionType";
+import { EncryptionType } from "@bitwarden/common/enums";
 import { EncArrayBuffer } from "@bitwarden/common/models/domain/enc-array-buffer";
 
 import { makeStaticByteArray } from "../../utils";

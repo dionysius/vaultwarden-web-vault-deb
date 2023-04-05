@@ -5,10 +5,7 @@ import { PolicyData } from "../admin-console/models/data/policy.data";
 import { ProviderData } from "../admin-console/models/data/provider.data";
 import { EnvironmentUrls } from "../auth/models/domain/environment-urls";
 import { TokenService } from "../auth/services/token.service";
-import { HtmlStorageLocation } from "../enums/htmlStorageLocation";
-import { KdfType } from "../enums/kdfType";
-import { StateVersion } from "../enums/stateVersion";
-import { ThemeType } from "../enums/themeType";
+import { HtmlStorageLocation, KdfType, StateVersion, ThemeType } from "../enums";
 import { StateFactory } from "../factories/stateFactory";
 import { EventData } from "../models/data/event.data";
 import {

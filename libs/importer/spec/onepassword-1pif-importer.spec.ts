@@ -1,4 +1,4 @@
-import { FieldType } from "@bitwarden/common/enums/fieldType";
+import { FieldType } from "@bitwarden/common/enums";
 
 import { OnePassword1PifImporter } from "../src/importers";
 

@@ -4,7 +4,7 @@ import { mock, MockProxy } from "jest-mock-extended";
 
 import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
 import { EncryptService } from "@bitwarden/common/abstractions/encrypt.service";
-import { EncryptionType } from "@bitwarden/common/enums/encryptionType";
+import { EncryptionType } from "@bitwarden/common/enums";
 import { EncString } from "@bitwarden/common/models/domain/enc-string";
 import { SymmetricCryptoKey } from "@bitwarden/common/models/domain/symmetric-crypto-key";
 import { ContainerService } from "@bitwarden/common/services/container.service";

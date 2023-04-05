@@ -43,7 +43,7 @@ import { Collection } from "@bitwarden/common/admin-console/models/domain/collec
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
 import { OrganizationKeysRequest } from "@bitwarden/common/admin-console/models/request/organization-keys.request";
 import { CollectionDetailsResponse } from "@bitwarden/common/admin-console/models/response/collection.response";
-import { ProductType } from "@bitwarden/common/enums/productType";
+import { ProductType } from "@bitwarden/common/enums";
 import { ListResponse } from "@bitwarden/common/models/response/list.response";
 import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
 import {

@@ -1,6 +1,6 @@
 import { Jsonify } from "type-fest";
 
-import { EncryptionType } from "../../enums/encryptionType";
+import { EncryptionType } from "../../enums";
 import { IEncrypted } from "../../interfaces/IEncrypted";
 import { Utils } from "../../misc/utils";
 

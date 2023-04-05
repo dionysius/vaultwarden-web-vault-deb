@@ -1,7 +1,7 @@
 import { CryptoFunctionService } from "../../abstractions/cryptoFunction.service";
 import { EncryptService } from "../../abstractions/encrypt.service";
 import { LogService } from "../../abstractions/log.service";
-import { EncryptionType } from "../../enums/encryptionType";
+import { EncryptionType } from "../../enums";
 import { IEncrypted } from "../../interfaces/IEncrypted";
 import { Decryptable } from "../../interfaces/decryptable.interface";
 import { InitializerMetadata } from "../../interfaces/initializer-metadata.interface";

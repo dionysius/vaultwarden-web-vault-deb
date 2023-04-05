@@ -1,6 +1,6 @@
 import { AppIdService as AppIdServiceAbstraction } from "../abstractions/appId.service";
 import { AbstractStorageService } from "../abstractions/storage.service";
-import { HtmlStorageLocation } from "../enums/htmlStorageLocation";
+import { HtmlStorageLocation } from "../enums";
 import { Utils } from "../misc/utils";
 
 export class AppIdService implements AppIdServiceAbstraction {

@@ -12,15 +12,15 @@ import { ProfileOrganizationResponse } from "../admin-console/models/response/pr
 import { ProfileProviderOrganizationResponse } from "../admin-console/models/response/profile-provider-organization.response";
 import { ProfileProviderResponse } from "../admin-console/models/response/profile-provider.response";
 import { KdfConfig } from "../auth/models/domain/kdf-config";
-import { EncryptionType } from "../enums/encryptionType";
-import { HashPurpose } from "../enums/hashPurpose";
 import {
   DEFAULT_ARGON2_ITERATIONS,
   DEFAULT_ARGON2_MEMORY,
   DEFAULT_ARGON2_PARALLELISM,
+  EncryptionType,
+  HashPurpose,
   KdfType,
-} from "../enums/kdfType";
-import { KeySuffixOptions } from "../enums/keySuffixOptions";
+  KeySuffixOptions,
+} from "../enums";
 import { sequentialize } from "../misc/sequentialize";
 import { Utils } from "../misc/utils";
 import { EFFLongWordList } from "../misc/wordlist";

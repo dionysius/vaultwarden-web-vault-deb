@@ -7,7 +7,7 @@ import { CryptoFunctionService } from "@bitwarden/common/abstractions/cryptoFunc
 import { FileDownloadService } from "@bitwarden/common/abstractions/fileDownload/fileDownload.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
-import { SEND_KDF_ITERATIONS } from "@bitwarden/common/enums/kdfType";
+import { SEND_KDF_ITERATIONS } from "@bitwarden/common/enums";
 import { Utils } from "@bitwarden/common/misc/utils";
 import { EncArrayBuffer } from "@bitwarden/common/models/domain/enc-array-buffer";
 import { SymmetricCryptoKey } from "@bitwarden/common/models/domain/symmetric-crypto-key";

@@ -1,4 +1,4 @@
-import { ProductType } from "../../../enums/productType";
+import { ProductType } from "../../../enums";
 import { BaseResponse } from "../../../models/response/base.response";
 import { OrganizationUserStatusType } from "../../enums/organization-user-status-type";
 import { OrganizationUserType } from "../../enums/organization-user-type";

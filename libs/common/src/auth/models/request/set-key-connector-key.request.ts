@@ -1,4 +1,4 @@
-import { KdfType } from "../../../enums/kdfType";
+import { KdfType } from "../../../enums";
 import { KeysRequest } from "../../../models/request/keys.request";
 import { KdfConfig } from "../domain/kdf-config";
 

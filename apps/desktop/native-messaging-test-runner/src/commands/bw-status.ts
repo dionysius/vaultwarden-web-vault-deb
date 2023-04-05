@@ -1,6 +1,6 @@
 import "module-alias/register";
 
-import { NativeMessagingVersion } from "@bitwarden/common/enums/nativeMessagingVersion";
+import { NativeMessagingVersion } from "@bitwarden/common/enums";
 
 import { LogUtils } from "../log-utils";
 import NativeMessageService from "../native-message.service";

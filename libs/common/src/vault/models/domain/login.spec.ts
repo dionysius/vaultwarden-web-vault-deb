@@ -2,7 +2,7 @@
 import { Substitute, Arg } from "@fluffy-spoon/substitute";
 
 import { mockEnc, mockFromJson } from "../../../../spec/utils";
-import { UriMatchType } from "../../../enums/uriMatchType";
+import { UriMatchType } from "../../../enums";
 import { EncString } from "../../../models/domain/enc-string";
 import { LoginData } from "../../models/data/login.data";
 import { Login } from "../../models/domain/login";

@@ -10,7 +10,7 @@ import { MessagingService } from "@bitwarden/common/abstractions/messaging.servi
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { KdfConfig } from "@bitwarden/common/auth/models/domain/kdf-config";
-import { KdfType } from "@bitwarden/common/enums/kdfType";
+import { KdfType } from "@bitwarden/common/enums";
 import { KdfRequest } from "@bitwarden/common/models/request/kdf.request";
 
 @Component({

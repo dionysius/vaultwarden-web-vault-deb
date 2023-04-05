@@ -1,4 +1,4 @@
-import { KdfType } from "../../../enums/kdfType";
+import { KdfType } from "../../../enums";
 import { BaseResponse } from "../../../models/response/base.response";
 import { CipherResponse } from "../../../vault/models/response/cipher.response";
 import { EmergencyAccessStatusType } from "../../enums/emergency-access-status-type";

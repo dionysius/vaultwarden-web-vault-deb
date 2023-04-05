@@ -1,4 +1,4 @@
-import { DeviceType } from "../../../enums/deviceType";
+import { DeviceType } from "../../../enums";
 import { BaseResponse } from "../../../models/response/base.response";
 
 const RequestTimeOut = 60000 * 15; //15 Minutes

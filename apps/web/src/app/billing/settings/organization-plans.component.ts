@@ -28,7 +28,7 @@ import { ProviderOrganizationCreateRequest } from "@bitwarden/common/admin-conso
 import { PaymentMethodType } from "@bitwarden/common/billing/enums/payment-method-type";
 import { PlanType } from "@bitwarden/common/billing/enums/plan-type";
 import { PlanResponse } from "@bitwarden/common/billing/models/response/plan.response";
-import { ProductType } from "@bitwarden/common/enums/productType";
+import { ProductType } from "@bitwarden/common/enums";
 import { EncString } from "@bitwarden/common/models/domain/enc-string";
 import { SymmetricCryptoKey } from "@bitwarden/common/models/domain/symmetric-crypto-key";
 import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";

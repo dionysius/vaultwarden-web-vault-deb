@@ -15,7 +15,7 @@ import { Policy } from "@bitwarden/common/admin-console/models/domain/policy";
 import { PolicyResponse } from "@bitwarden/common/admin-console/models/response/policy.response";
 import { KdfConfig } from "@bitwarden/common/auth/models/domain/kdf-config";
 import { EmergencyAccessPasswordRequest } from "@bitwarden/common/auth/models/request/emergency-access-password.request";
-import { KdfType } from "@bitwarden/common/enums/kdfType";
+import { KdfType } from "@bitwarden/common/enums";
 import { SymmetricCryptoKey } from "@bitwarden/common/models/domain/symmetric-crypto-key";
 import { PasswordGenerationServiceAbstraction } from "@bitwarden/common/tools/generator/password";
 

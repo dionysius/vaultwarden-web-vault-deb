@@ -1,5 +1,4 @@
-import { FieldType } from "../../enums/fieldType";
-import { LinkedIdType } from "../../enums/linkedIdType";
+import { FieldType, LinkedIdType } from "../../enums";
 import { BaseResponse } from "../response/base.response";
 
 export class FieldApi extends BaseResponse {

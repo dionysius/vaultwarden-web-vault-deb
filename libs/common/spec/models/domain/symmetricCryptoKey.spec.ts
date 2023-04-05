@@ -1,4 +1,4 @@
-import { EncryptionType } from "@bitwarden/common/enums/encryptionType";
+import { EncryptionType } from "@bitwarden/common/enums";
 import { SymmetricCryptoKey } from "@bitwarden/common/models/domain/symmetric-crypto-key";
 
 import { makeStaticByteArray } from "../../utils";

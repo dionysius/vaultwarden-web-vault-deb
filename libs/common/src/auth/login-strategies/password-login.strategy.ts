@@ -5,7 +5,7 @@ import { LogService } from "../../abstractions/log.service";
 import { MessagingService } from "../../abstractions/messaging.service";
 import { PlatformUtilsService } from "../../abstractions/platformUtils.service";
 import { StateService } from "../../abstractions/state.service";
-import { HashPurpose } from "../../enums/hashPurpose";
+import { HashPurpose } from "../../enums";
 import { SymmetricCryptoKey } from "../../models/domain/symmetric-crypto-key";
 import { AuthService } from "../abstractions/auth.service";
 import { TokenService } from "../abstractions/token.service";

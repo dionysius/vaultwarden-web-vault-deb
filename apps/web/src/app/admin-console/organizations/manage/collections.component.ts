@@ -19,7 +19,7 @@ import {
   CollectionResponse,
 } from "@bitwarden/common/admin-console/models/response/collection.response";
 import { CollectionView } from "@bitwarden/common/admin-console/models/view/collection.view";
-import { ProductType } from "@bitwarden/common/enums/productType";
+import { ProductType } from "@bitwarden/common/enums";
 import { ListResponse } from "@bitwarden/common/models/response/list.response";
 import {
   DialogService,

@@ -3,7 +3,7 @@ import { Substitute, Arg, SubstituteOf } from "@fluffy-spoon/substitute";
 
 import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
-import { KdfType } from "@bitwarden/common/enums/kdfType";
+import { KdfType } from "@bitwarden/common/enums";
 import { Utils } from "@bitwarden/common/misc/utils";
 
 import { BitwardenPasswordProtectedImporter } from "../src/importers";

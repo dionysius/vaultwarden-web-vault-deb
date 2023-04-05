@@ -1,4 +1,4 @@
-import { SecureNoteType } from "../../../enums/secureNoteType";
+import { SecureNoteType } from "../../../enums";
 import { SecureNoteData } from "../data/secure-note.data";
 
 import { SecureNote } from "./secure-note";

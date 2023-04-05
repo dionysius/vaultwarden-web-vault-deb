@@ -15,7 +15,7 @@ import { Collection } from "../admin-console/models/domain/collection";
 import { CollectionDetailsResponse } from "../admin-console/models/response/collection.response";
 import { CollectionView } from "../admin-console/models/view/collection.view";
 import { KdfConfig } from "../auth/models/domain/kdf-config";
-import { KdfType } from "../enums/kdfType";
+import { KdfType } from "../enums";
 import { Utils } from "../misc/utils";
 import { CipherWithIdExport as CipherExport } from "../models/export/cipher-with-ids.export";
 import { CollectionWithIdExport as CollectionExport } from "../models/export/collection-with-id.export";

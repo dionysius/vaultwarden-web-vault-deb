@@ -2,7 +2,7 @@ import * as chalk from "chalk";
 import * as program from "commander";
 
 import { AuthenticationStatus } from "@bitwarden/common/auth/enums/authentication-status";
-import { KeySuffixOptions } from "@bitwarden/common/enums/keySuffixOptions";
+import { KeySuffixOptions } from "@bitwarden/common/enums";
 
 import { LockCommand } from "./auth/commands/lock.command";
 import { LoginCommand } from "./auth/commands/login.command";

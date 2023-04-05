@@ -1,4 +1,4 @@
-import { LinkedIdType } from "../enums/linkedIdType";
+import { LinkedIdType } from "../enums";
 import { ItemView } from "../vault/models/view/item.view";
 
 export class LinkedMetadata {

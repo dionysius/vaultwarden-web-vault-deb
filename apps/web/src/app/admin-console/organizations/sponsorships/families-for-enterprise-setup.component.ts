@@ -13,7 +13,7 @@ import { Organization } from "@bitwarden/common/admin-console/models/domain/orga
 import { OrganizationSponsorshipRedeemRequest } from "@bitwarden/common/admin-console/models/request/organization/organization-sponsorship-redeem.request";
 import { PlanSponsorshipType } from "@bitwarden/common/billing/enums/plan-sponsorship-type";
 import { PlanType } from "@bitwarden/common/billing/enums/plan-type";
-import { ProductType } from "@bitwarden/common/enums/productType";
+import { ProductType } from "@bitwarden/common/enums";
 import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
 
 import { OrganizationPlansComponent } from "../../../billing/settings/organization-plans.component";

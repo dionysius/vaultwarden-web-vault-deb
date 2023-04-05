@@ -9,7 +9,7 @@ import {
   DEFAULT_ARGON2_MEMORY,
   DEFAULT_ARGON2_PARALLELISM,
   KdfType,
-} from "@bitwarden/common/enums/kdfType";
+} from "@bitwarden/common/enums";
 import { DialogService } from "@bitwarden/components";
 
 import { ChangeKdfConfirmationComponent } from "./change-kdf-confirmation.component";

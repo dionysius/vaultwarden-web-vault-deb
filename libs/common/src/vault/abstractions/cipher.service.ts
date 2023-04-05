@@ -1,4 +1,4 @@
-import { UriMatchType } from "../../enums/uriMatchType";
+import { UriMatchType } from "../../enums";
 import { SymmetricCryptoKey } from "../../models/domain/symmetric-crypto-key";
 import { CipherType } from "../enums/cipher-type";
 import { CipherData } from "../models/data/cipher.data";

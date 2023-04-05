@@ -2,7 +2,7 @@ import { EventCollectionService as EventCollectionServiceAbstraction } from "../
 import { EventUploadService } from "../../abstractions/event/event-upload.service";
 import { StateService } from "../../abstractions/state.service";
 import { OrganizationService } from "../../admin-console/abstractions/organization/organization.service.abstraction";
-import { EventType } from "../../enums/eventType";
+import { EventType } from "../../enums";
 import { EventData } from "../../models/data/event.data";
 import { CipherService } from "../../vault/abstractions/cipher.service";
 

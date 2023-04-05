@@ -1,4 +1,4 @@
-import { UriMatchType } from "../../../enums/uriMatchType";
+import { UriMatchType } from "../../../enums";
 import { LoginUriApi } from "../../../models/api/login-uri.api";
 
 export class LoginUriData {
