@@ -1,7 +1,7 @@
 import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { CollectionService } from "@bitwarden/common/admin-console/abstractions/collection.service";
-import { CollectionRequest } from "@bitwarden/common/admin-console/models/request/collection.request";
+import { CollectionWithIdRequest } from "@bitwarden/common/admin-console/models/request/collection-with-id.request";
 import { Utils } from "@bitwarden/common/misc/utils";
 import { ImportCiphersRequest } from "@bitwarden/common/models/request/import-ciphers.request";
 import { ImportOrganizationCiphersRequest } from "@bitwarden/common/models/request/import-organization-ciphers.request";
@@ -11,7 +11,7 @@ import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.servi
 import { FolderService } from "@bitwarden/common/vault/abstractions/folder/folder.service.abstraction";
 import { CipherType } from "@bitwarden/common/vault/enums/cipher-type";
 import { CipherRequest } from "@bitwarden/common/vault/models/request/cipher.request";
-import { FolderRequest } from "@bitwarden/common/vault/models/request/folder.request";
+import { FolderWithIdRequest } from "@bitwarden/common/vault/models/request/folder-with-id.request";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 
 import {
@@ -304,7 +304,7 @@ export class ImportService implements ImportServiceAbstraction {
       if (importResult.folders != null) {
         for (let i = 0; i < importResult.folders.length; i++) {
           const f = await this.folderService.encrypt(importResult.folders[i]);
-          request.folders.push(new FolderRequest(f));
+          request.folders.push(new FolderWithIdRequest(f));
         }
       }
       if (importResult.folderRelationships != null) {
@@ -324,7 +324,7 @@ export class ImportService implements ImportServiceAbstraction {
         for (let i = 0; i < importResult.collections.length; i++) {
           importResult.collections[i].organizationId = organizationId;
           const c = await this.collectionService.encrypt(importResult.collections[i]);
-          request.collections.push(new CollectionRequest(c));
+          request.collections.push(new CollectionWithIdRequest(c));
         }
       }
       if (importResult.collectionRelationships != null) {
