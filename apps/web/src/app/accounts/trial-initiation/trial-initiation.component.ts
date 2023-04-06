@@ -13,7 +13,7 @@ import { PolicyService } from "@bitwarden/common/admin-console/abstractions/poli
 import { PolicyData } from "@bitwarden/common/admin-console/models/data/policy.data";
 import { MasterPasswordPolicyOptions } from "@bitwarden/common/admin-console/models/domain/master-password-policy-options";
 import { Policy } from "@bitwarden/common/admin-console/models/domain/policy";
-import { PlanType } from "@bitwarden/common/billing/enums/plan-type";
+import { PlanType } from "@bitwarden/common/billing/enums";
 import { ProductType } from "@bitwarden/common/enums";
 import { ReferenceEventRequest } from "@bitwarden/common/models/request/reference-event.request";
 

@@ -1,6 +1,6 @@
 import { Component, Input } from "@angular/core";
 
-import { ProviderUserStatusType } from "@bitwarden/common/admin-console/enums/provider-user-status-type";
+import { ProviderUserStatusType } from "@bitwarden/common/admin-console/enums";
 import { ProviderUserBulkConfirmRequest } from "@bitwarden/common/admin-console/models/request/provider/provider-user-bulk-confirm.request";
 import { ProviderUserBulkRequest } from "@bitwarden/common/admin-console/models/request/provider/provider-user-bulk.request";
 import { BulkConfirmComponent as OrganizationBulkConfirmComponent } from "@bitwarden/web-vault/app/admin-console/organizations/members/components/bulk/bulk-confirm.component";

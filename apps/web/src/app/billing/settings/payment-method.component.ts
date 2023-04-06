@@ -8,7 +8,7 @@ import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { OrganizationApiServiceAbstraction } from "@bitwarden/common/admin-console/abstractions/organization/organization-api.service.abstraction";
 import { OrganizationResponse } from "@bitwarden/common/admin-console/models/response/organization.response";
-import { PaymentMethodType } from "@bitwarden/common/billing/enums/payment-method-type";
+import { PaymentMethodType } from "@bitwarden/common/billing/enums";
 import { BillingPaymentResponse } from "@bitwarden/common/billing/models/response/billing-payment.response";
 import { VerifyBankRequest } from "@bitwarden/common/models/request/verify-bank.request";
 

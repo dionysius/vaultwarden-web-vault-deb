@@ -3,8 +3,10 @@ import { action } from "@storybook/addon-actions";
 import { Meta, moduleMetadata, Story } from "@storybook/angular";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
-import { OrganizationUserStatusType } from "@bitwarden/common/admin-console/enums/organization-user-status-type";
-import { OrganizationUserType } from "@bitwarden/common/admin-console/enums/organization-user-type";
+import {
+  OrganizationUserStatusType,
+  OrganizationUserType,
+} from "@bitwarden/common/admin-console/enums";
 import {
   AvatarModule,
   BadgeModule,

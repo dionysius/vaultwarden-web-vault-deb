@@ -4,7 +4,7 @@ import { Subject, takeUntil } from "rxjs";
 import { AbstractThemingService } from "@bitwarden/angular/services/theming/theming.service.abstraction";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
-import { PaymentMethodType } from "@bitwarden/common/billing/enums/payment-method-type";
+import { PaymentMethodType } from "@bitwarden/common/billing/enums";
 
 @Component({
   selector: "app-payment",

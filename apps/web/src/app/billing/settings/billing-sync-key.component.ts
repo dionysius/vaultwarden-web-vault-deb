@@ -4,7 +4,7 @@ import { ModalRef } from "@bitwarden/angular/components/modal/modal.ref";
 import { ModalConfig } from "@bitwarden/angular/services/modal.service";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
-import { OrganizationConnectionType } from "@bitwarden/common/admin-console/enums/organization-connection-type";
+import { OrganizationConnectionType } from "@bitwarden/common/admin-console/enums";
 import { OrganizationConnectionRequest } from "@bitwarden/common/admin-console/models/request/organization-connection.request";
 import { OrganizationConnectionResponse } from "@bitwarden/common/admin-console/models/response/organization-connection.response";
 import { BillingSyncConfigApi } from "@bitwarden/common/billing/models/api/billing-sync-config.api";

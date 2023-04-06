@@ -11,8 +11,7 @@ import { ValidationService } from "@bitwarden/common/abstractions/validation.ser
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
 import { OrganizationSponsorshipRedeemRequest } from "@bitwarden/common/admin-console/models/request/organization/organization-sponsorship-redeem.request";
-import { PlanSponsorshipType } from "@bitwarden/common/billing/enums/plan-sponsorship-type";
-import { PlanType } from "@bitwarden/common/billing/enums/plan-type";
+import { PlanType, PlanSponsorshipType } from "@bitwarden/common/billing/enums";
 import { ProductType } from "@bitwarden/common/enums";
 import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
 

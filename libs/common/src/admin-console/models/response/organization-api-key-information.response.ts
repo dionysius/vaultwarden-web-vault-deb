@@ -1,5 +1,5 @@
 import { BaseResponse } from "../../../models/response/base.response";
-import { OrganizationApiKeyType } from "../../enums/organization-api-key-type";
+import { OrganizationApiKeyType } from "../../enums";
 
 export class OrganizationApiKeyInformationResponse extends BaseResponse {
   keyType: OrganizationApiKeyType;

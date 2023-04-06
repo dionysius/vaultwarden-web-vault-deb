@@ -35,9 +35,11 @@ import { OrganizationApiServiceAbstraction } from "@bitwarden/common/admin-conso
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 import { PolicyApiServiceAbstraction as PolicyApiService } from "@bitwarden/common/admin-console/abstractions/policy/policy-api.service.abstraction";
 import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
-import { OrganizationUserStatusType } from "@bitwarden/common/admin-console/enums/organization-user-status-type";
-import { OrganizationUserType } from "@bitwarden/common/admin-console/enums/organization-user-type";
-import { PolicyType } from "@bitwarden/common/admin-console/enums/policy-type";
+import {
+  OrganizationUserStatusType,
+  OrganizationUserType,
+  PolicyType,
+} from "@bitwarden/common/admin-console/enums";
 import { CollectionData } from "@bitwarden/common/admin-console/models/data/collection.data";
 import { Collection } from "@bitwarden/common/admin-console/models/domain/collection";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";

@@ -1,4 +1,4 @@
-import { PlanType } from "../../../billing/enums/plan-type";
+import { PlanType } from "../../../billing/enums";
 
 import { OrganizationKeysRequest } from "./organization-keys.request";
 

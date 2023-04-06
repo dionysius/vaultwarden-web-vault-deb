@@ -1,4 +1,4 @@
-import { PaymentMethodType } from "../../enums/payment-method-type";
+import { PaymentMethodType } from "../../enums";
 
 import { OrganizationTaxInfoUpdateRequest } from "./organization-tax-info-update.request";
 

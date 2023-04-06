@@ -7,8 +7,10 @@ import { EnvironmentService } from "@bitwarden/common/abstractions/environment.s
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { OrganizationApiServiceAbstraction } from "@bitwarden/common/admin-console/abstractions/organization/organization-api.service.abstraction";
-import { OrganizationApiKeyType } from "@bitwarden/common/admin-console/enums/organization-api-key-type";
-import { OrganizationConnectionType } from "@bitwarden/common/admin-console/enums/organization-connection-type";
+import {
+  OrganizationApiKeyType,
+  OrganizationConnectionType,
+} from "@bitwarden/common/admin-console/enums";
 import { ScimConfigApi } from "@bitwarden/common/admin-console/models/api/scim-config.api";
 import { OrganizationApiKeyRequest } from "@bitwarden/common/admin-console/models/request/organization-api-key.request";
 import { OrganizationConnectionRequest } from "@bitwarden/common/admin-console/models/request/organization-connection.request";

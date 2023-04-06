@@ -1,5 +1,5 @@
 import Domain from "../../../models/domain/domain-base";
-import { PolicyType } from "../../enums/policy-type";
+import { PolicyType } from "../../enums";
 import { PolicyData } from "../data/policy.data";
 
 export class Policy extends Domain {

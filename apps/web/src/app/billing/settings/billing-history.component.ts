@@ -1,7 +1,6 @@
 import { Component, Input } from "@angular/core";
 
-import { PaymentMethodType } from "@bitwarden/common/billing/enums/payment-method-type";
-import { TransactionType } from "@bitwarden/common/billing/enums/transaction-type";
+import { PaymentMethodType, TransactionType } from "@bitwarden/common/billing/enums";
 import { BillingHistoryResponse } from "@bitwarden/common/billing/models/response/billing-history.response";
 
 @Component({

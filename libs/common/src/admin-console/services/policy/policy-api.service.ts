@@ -6,7 +6,7 @@ import { Utils } from "../../../misc/utils";
 import { ListResponse } from "../../../models/response/list.response";
 import { PolicyApiServiceAbstraction } from "../../abstractions/policy/policy-api.service.abstraction";
 import { InternalPolicyService } from "../../abstractions/policy/policy.service.abstraction";
-import { PolicyType } from "../../enums/policy-type";
+import { PolicyType } from "../../enums";
 import { PolicyData } from "../../models/data/policy.data";
 import { MasterPasswordPolicyOptions } from "../../models/domain/master-password-policy-options";
 import { PolicyRequest } from "../../models/request/policy.request";

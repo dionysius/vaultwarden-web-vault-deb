@@ -1,8 +1,7 @@
 import { Jsonify } from "type-fest";
 
 import { ProductType } from "../../../enums";
-import { OrganizationUserStatusType } from "../../enums/organization-user-status-type";
-import { OrganizationUserType } from "../../enums/organization-user-type";
+import { OrganizationUserStatusType, OrganizationUserType } from "../../enums";
 import { PermissionsApi } from "../api/permissions.api";
 import { OrganizationData } from "../data/organization.data";
 

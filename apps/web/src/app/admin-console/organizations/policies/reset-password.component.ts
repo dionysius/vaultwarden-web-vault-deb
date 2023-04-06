@@ -2,7 +2,7 @@ import { Component } from "@angular/core";
 import { UntypedFormBuilder } from "@angular/forms";
 
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
-import { PolicyType } from "@bitwarden/common/admin-console/enums/policy-type";
+import { PolicyType } from "@bitwarden/common/admin-console/enums";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
 
 import { BasePolicy, BasePolicyComponent } from "./base-policy.component";

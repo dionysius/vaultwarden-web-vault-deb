@@ -2,7 +2,7 @@ import { firstValueFrom } from "rxjs";
 
 import { MessagingService } from "@bitwarden/common/abstractions/messaging.service";
 import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
-import { PolicyType } from "@bitwarden/common/admin-console/enums/policy-type";
+import { PolicyType } from "@bitwarden/common/admin-console/enums";
 import { AuthService } from "@bitwarden/common/auth/abstractions/auth.service";
 import { AuthenticationStatus } from "@bitwarden/common/auth/enums/authentication-status";
 import { PasswordGenerationServiceAbstraction } from "@bitwarden/common/tools/generator/password";

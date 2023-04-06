@@ -1,7 +1,7 @@
 import { Directive, Input, OnInit } from "@angular/core";
 import { UntypedFormControl, UntypedFormGroup } from "@angular/forms";
 
-import { PolicyType } from "@bitwarden/common/admin-console/enums/policy-type";
+import { PolicyType } from "@bitwarden/common/admin-console/enums";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
 import { PolicyRequest } from "@bitwarden/common/admin-console/models/request/policy.request";
 import { PolicyResponse } from "@bitwarden/common/admin-console/models/response/policy.response";

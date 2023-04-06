@@ -7,7 +7,7 @@ import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { MessagingService } from "@bitwarden/common/abstractions/messaging.service";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
-import { PolicyType } from "@bitwarden/common/admin-console/enums/policy-type";
+import { PolicyType } from "@bitwarden/common/admin-console/enums";
 import { TwoFactorProviderType } from "@bitwarden/common/auth/enums/two-factor-provider-type";
 import { TwoFactorProviders } from "@bitwarden/common/auth/services/two-factor.service";
 

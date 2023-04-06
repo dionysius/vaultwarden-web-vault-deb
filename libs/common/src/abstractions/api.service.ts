@@ -1,4 +1,4 @@
-import { OrganizationConnectionType } from "../admin-console/enums/organization-connection-type";
+import { OrganizationConnectionType } from "../admin-console/enums";
 import { CollectionRequest } from "../admin-console/models/request/collection.request";
 import { OrganizationConnectionRequest } from "../admin-console/models/request/organization-connection.request";
 import { OrganizationSponsorshipCreateRequest } from "../admin-console/models/request/organization/organization-sponsorship-create.request";

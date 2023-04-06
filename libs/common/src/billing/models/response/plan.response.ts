@@ -1,6 +1,6 @@
 import { ProductType } from "../../../enums";
 import { BaseResponse } from "../../../models/response/base.response";
-import { PlanType } from "../../enums/plan-type";
+import { PlanType } from "../../enums";
 
 export class PlanResponse extends BaseResponse {
   type: PlanType;

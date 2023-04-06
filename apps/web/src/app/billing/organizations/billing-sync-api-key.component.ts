@@ -6,7 +6,7 @@ import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { UserVerificationService } from "@bitwarden/common/abstractions/userVerification/userVerification.service.abstraction";
 import { OrganizationApiServiceAbstraction } from "@bitwarden/common/admin-console/abstractions/organization/organization-api.service.abstraction";
-import { OrganizationApiKeyType } from "@bitwarden/common/admin-console/enums/organization-api-key-type";
+import { OrganizationApiKeyType } from "@bitwarden/common/admin-console/enums";
 import { OrganizationApiKeyRequest } from "@bitwarden/common/admin-console/models/request/organization-api-key.request";
 import { ApiKeyResponse } from "@bitwarden/common/auth/models/response/api-key.response";
 import { Verification } from "@bitwarden/common/types/verification";

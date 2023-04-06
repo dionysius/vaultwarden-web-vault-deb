@@ -3,7 +3,7 @@ import * as inquirer from "inquirer";
 
 import { ExportFormat, ExportService } from "@bitwarden/common/abstractions/export.service";
 import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
-import { PolicyType } from "@bitwarden/common/admin-console/enums/policy-type";
+import { PolicyType } from "@bitwarden/common/admin-console/enums";
 import { Utils } from "@bitwarden/common/misc/utils";
 
 import { Response } from "../models/response";

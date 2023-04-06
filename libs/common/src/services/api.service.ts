@@ -2,7 +2,7 @@ import { ApiService as ApiServiceAbstraction } from "../abstractions/api.service
 import { AppIdService } from "../abstractions/appId.service";
 import { EnvironmentService } from "../abstractions/environment.service";
 import { PlatformUtilsService } from "../abstractions/platformUtils.service";
-import { OrganizationConnectionType } from "../admin-console/enums/organization-connection-type";
+import { OrganizationConnectionType } from "../admin-console/enums";
 import { CollectionRequest } from "../admin-console/models/request/collection.request";
 import { OrganizationConnectionRequest } from "../admin-console/models/request/organization-connection.request";
 import { OrganizationSponsorshipCreateRequest } from "../admin-console/models/request/organization/organization-sponsorship-create.request";

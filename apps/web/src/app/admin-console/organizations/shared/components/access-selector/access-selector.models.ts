@@ -1,5 +1,7 @@
-import { OrganizationUserStatusType } from "@bitwarden/common/admin-console/enums/organization-user-status-type";
-import { OrganizationUserType } from "@bitwarden/common/admin-console/enums/organization-user-type";
+import {
+  OrganizationUserStatusType,
+  OrganizationUserType,
+} from "@bitwarden/common/admin-console/enums";
 import { SelectItemView } from "@bitwarden/components";
 
 import { CollectionAccessSelectionView } from "../../../core";

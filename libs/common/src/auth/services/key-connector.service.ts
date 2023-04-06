@@ -4,7 +4,7 @@ import { CryptoFunctionService } from "../../abstractions/cryptoFunction.service
 import { LogService } from "../../abstractions/log.service";
 import { StateService } from "../../abstractions/state.service";
 import { OrganizationService } from "../../admin-console/abstractions/organization/organization.service.abstraction";
-import { OrganizationUserType } from "../../admin-console/enums/organization-user-type";
+import { OrganizationUserType } from "../../admin-console/enums";
 import { Utils } from "../../misc/utils";
 import { SymmetricCryptoKey } from "../../models/domain/symmetric-crypto-key";
 import { KeysRequest } from "../../models/request/keys.request";

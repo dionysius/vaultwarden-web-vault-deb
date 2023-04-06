@@ -1,4 +1,4 @@
-import { ProviderUserType } from "../../../enums/provider-user-type";
+import { ProviderUserType } from "../../../enums";
 
 export class ProviderUserUpdateRequest {
   type: ProviderUserType;

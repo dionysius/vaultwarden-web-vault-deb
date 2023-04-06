@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { first } from "rxjs/operators";
 
-import { PlanType } from "@bitwarden/common/billing/enums/plan-type";
+import { PlanType } from "@bitwarden/common/billing/enums";
 import { ProductType } from "@bitwarden/common/enums";
 
 import { OrganizationPlansComponent } from "../../billing/settings/organization-plans.component";

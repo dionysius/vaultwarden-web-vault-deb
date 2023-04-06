@@ -1,5 +1,5 @@
 import { ListResponse } from "../../../models/response/list.response";
-import { PolicyType } from "../../enums/policy-type";
+import { PolicyType } from "../../enums";
 import { MasterPasswordPolicyOptions } from "../../models/domain/master-password-policy-options";
 import { PolicyRequest } from "../../models/request/policy.request";
 import { PolicyResponse } from "../../models/response/policy.response";

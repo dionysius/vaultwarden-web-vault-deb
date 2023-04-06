@@ -1,5 +1,5 @@
 import { BaseResponse } from "../../../models/response/base.response";
-import { PolicyType } from "../../enums/policy-type";
+import { PolicyType } from "../../enums";
 
 export class PolicyResponse extends BaseResponse {
   id: string;
