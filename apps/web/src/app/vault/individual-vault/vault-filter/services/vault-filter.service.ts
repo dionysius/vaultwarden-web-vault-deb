@@ -138,12 +138,16 @@ export class VaultFilterService implements VaultFilterServiceAbstraction {
       orgs = orgs.slice(0, 1);
     }
     if (orgs) {
+      const orgNodes: TreeNode<OrganizationFilter>[] = [];
       orgs.filter(isNotProviderUser).forEach((org) => {
         const orgCopy = org as OrganizationFilter;
         orgCopy.icon = "bwi-business";
         const node = new TreeNode<OrganizationFilter>(orgCopy, headNode, orgCopy.name);
-        headNode.children.push(node);
+        orgNodes.push(node);
       });
+      // Sort organization nodes, then add them to the list after 'My Vault' and 'All Vaults' if present
+      orgNodes.sort((a, b) => a.node.name.localeCompare(b.node.name));
+      headNode.children.push(...orgNodes);
     }
     return headNode;
   }
