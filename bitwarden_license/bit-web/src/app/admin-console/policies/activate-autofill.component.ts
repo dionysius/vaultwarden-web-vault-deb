@@ -9,7 +9,7 @@ import {
 
 export class ActivateAutofillPolicy extends BasePolicy {
   name = "activateAutofill";
-  description = "activateAutofillDesc";
+  description = "activateAutofillPolicyDesc";
   type = PolicyType.ActivateAutofill;
   component = ActivateAutofillPolicyComponent;
 
