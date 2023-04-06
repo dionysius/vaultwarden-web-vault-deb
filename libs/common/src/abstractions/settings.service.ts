@@ -6,6 +6,6 @@ export abstract class SettingsService {
   settings$: Observable<AccountSettingsSettings>;
 
   setEquivalentDomains: (equivalentDomains: string[][]) => Promise<any>;
-  getEquivalentDomains: (url: string) => string[];
+  getEquivalentDomains: (url: string) => Set<string>;
   clear: (userId?: string) => Promise<void>;
 }

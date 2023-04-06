@@ -129,4 +129,60 @@ export class LoginUriView implements View {
   static fromJSON(obj: Partial<Jsonify<LoginUriView>>): LoginUriView {
     return Object.assign(new LoginUriView(), obj);
   }
+
+  matchesUri(
+    targetUri: string,
+    equivalentDomains: Set<string>,
+    defaultUriMatch: UriMatchType = null
+  ): boolean {
+    if (!this.uri || !targetUri) {
+      return false;
+    }
+
+    let matchType = this.match ?? defaultUriMatch;
+    matchType ??= UriMatchType.Domain;
+
+    const targetDomain = Utils.getDomain(targetUri);
+    const matchDomains = equivalentDomains.add(targetDomain);
+
+    switch (matchType) {
+      case UriMatchType.Domain:
+        return this.matchesDomain(targetUri, matchDomains);
+      case UriMatchType.Host: {
+        const urlHost = Utils.getHost(targetUri);
+        return urlHost != null && urlHost === Utils.getHost(this.uri);
+      }
+      case UriMatchType.Exact:
+        return targetUri === this.uri;
+      case UriMatchType.StartsWith:
+        return targetUri.startsWith(this.uri);
+      case UriMatchType.RegularExpression:
+        try {
+          const regex = new RegExp(this.uri, "i");
+          return regex.test(targetUri);
+        } catch (e) {
+          // Invalid regex
+          return false;
+        }
+      case UriMatchType.Never:
+        return false;
+      default:
+        break;
+    }
+
+    return false;
+  }
+
+  private matchesDomain(targetUri: string, matchDomains: Set<string>) {
+    if (targetUri == null || this.domain == null || !matchDomains.has(this.domain)) {
+      return false;
+    }
+
+    if (Utils.DomainMatchBlacklist.has(this.domain)) {
+      const domainUrlHost = Utils.getHost(targetUri);
+      return !Utils.DomainMatchBlacklist.get(this.domain).has(domainUrlHost);
+    }
+
+    return true;
+  }
 }

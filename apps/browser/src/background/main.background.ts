@@ -309,7 +309,6 @@ export default class MainBackground {
       this.apiService,
       this.i18nService,
       () => this.searchService,
-      this.logService,
       this.stateService,
       this.encryptService,
       this.cipherFileUploadService

@@ -1,4 +1,3 @@
-import { UriMatchType } from "@bitwarden/common/enums";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 
 import AutofillField from "../../models/autofill-field";
@@ -40,9 +39,4 @@ export abstract class AutofillService {
     fromCommand: boolean
   ) => Promise<string>;
   doAutoFillActiveTab: (pageDetails: PageDetail[], fromCommand: boolean) => Promise<string>;
-  iframeUrlMatches: (
-    pageUrl: string,
-    loginItem: CipherView,
-    defaultUriMatch: UriMatchType
-  ) => boolean;
 }

@@ -17,6 +17,12 @@ describe("SettingsService", () => {
   let activeAccount: BehaviorSubject<string>;
   let activeAccountUnlocked: BehaviorSubject<boolean>;
 
+  const mockEquivalentDomains = [
+    ["example.com", "exampleapp.com", "example.co.uk", "ejemplo.es"],
+    ["bitwarden.com", "bitwarden.co.uk", "sm-bitwarden.com"],
+    ["example.co.uk", "exampleapp.co.uk"],
+  ];
+
   beforeEach(() => {
     cryptoService = Substitute.for();
     encryptService = Substitute.for();
@@ -24,7 +30,7 @@ describe("SettingsService", () => {
     activeAccount = new BehaviorSubject("123");
     activeAccountUnlocked = new BehaviorSubject(true);
 
-    stateService.getSettings().resolves({ equivalentDomains: [["test"], ["domains"]] });
+    stateService.getSettings().resolves({ equivalentDomains: mockEquivalentDomains });
     stateService.activeAccount$.returns(activeAccount);
     stateService.activeAccountUnlocked$.returns(activeAccountUnlocked);
     (window as any).bitwardenContainerService = new ContainerService(cryptoService, encryptService);
@@ -38,12 +44,21 @@ describe("SettingsService", () => {
   });
 
   describe("getEquivalentDomains", () => {
-    it("returns value", async () => {
-      const result = await firstValueFrom(settingsService.settings$);
+    it("returns all equivalent domains for a URL", async () => {
+      const actual = settingsService.getEquivalentDomains("example.co.uk");
+      const expected = new Set([
+        "example.com",
+        "exampleapp.com",
+        "example.co.uk",
+        "ejemplo.es",
+        "exampleapp.co.uk",
+      ]);
+      expect(actual).toEqual(expected);
+    });
 
-      expect(result).toEqual({
-        equivalentDomains: [["test"], ["domains"]],
-      });
+    it("returns an empty set if there are no equivalent domains", () => {
+      const actual = settingsService.getEquivalentDomains("asdf");
+      expect(actual).toEqual(new Set());
     });
   });
 

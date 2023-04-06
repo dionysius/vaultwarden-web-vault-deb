@@ -5,7 +5,6 @@ import { ApiService } from "../../abstractions/api.service";
 import { CryptoService } from "../../abstractions/crypto.service";
 import { EncryptService } from "../../abstractions/encrypt.service";
 import { I18nService } from "../../abstractions/i18n.service";
-import { LogService } from "../../abstractions/log.service";
 import { SearchService } from "../../abstractions/search.service";
 import { SettingsService } from "../../abstractions/settings.service";
 import { StateService } from "../../abstractions/state.service";
@@ -28,7 +27,6 @@ describe("Cipher Service", () => {
   let cipherFileUploadService: SubstituteOf<CipherFileUploadService>;
   let i18nService: SubstituteOf<I18nService>;
   let searchService: SubstituteOf<SearchService>;
-  let logService: SubstituteOf<LogService>;
   let encryptService: SubstituteOf<EncryptService>;
 
   let cipherService: CipherService;
@@ -41,7 +39,6 @@ describe("Cipher Service", () => {
     cipherFileUploadService = Substitute.for<CipherFileUploadService>();
     i18nService = Substitute.for<I18nService>();
     searchService = Substitute.for<SearchService>();
-    logService = Substitute.for<LogService>();
     encryptService = Substitute.for<EncryptService>();
 
     cryptoService.encryptToBytes(Arg.any(), Arg.any()).resolves(ENCRYPTED_BYTES);
@@ -53,7 +50,6 @@ describe("Cipher Service", () => {
       apiService,
       i18nService,
       () => searchService,
-      logService,
       stateService,
       encryptService,
       cipherFileUploadService

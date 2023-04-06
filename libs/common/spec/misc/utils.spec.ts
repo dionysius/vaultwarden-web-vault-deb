@@ -346,4 +346,14 @@ describe("Utils Service", () => {
       ).toBe("api/sends/access/sendkey");
     });
   });
+
+  describe("getUrl", () => {
+    it("assumes a http protocol if no protocol is specified", () => {
+      const urlString = "www.exampleapp.com.au:4000";
+
+      const actual = Utils.getUrl(urlString);
+
+      expect(actual.protocol).toBe("http:");
+    });
+  });
 });

@@ -252,7 +252,6 @@ import { AbstractThemingService } from "./theming/theming.service.abstraction";
         apiService: ApiServiceAbstraction,
         i18nService: I18nServiceAbstraction,
         injector: Injector,
-        logService: LogService,
         stateService: StateServiceAbstraction,
         encryptService: EncryptService,
         fileUploadService: CipherFileUploadServiceAbstraction
@@ -263,7 +262,6 @@ import { AbstractThemingService } from "./theming/theming.service.abstraction";
           apiService,
           i18nService,
           () => injector.get(SearchServiceAbstraction),
-          logService,
           stateService,
           encryptService,
           fileUploadService
@@ -274,7 +272,6 @@ import { AbstractThemingService } from "./theming/theming.service.abstraction";
         ApiServiceAbstraction,
         I18nServiceAbstraction,
         Injector, // TODO: Get rid of this circular dependency!
-        LogService,
         StateServiceAbstraction,
         EncryptService,
         CipherFileUploadServiceAbstraction,

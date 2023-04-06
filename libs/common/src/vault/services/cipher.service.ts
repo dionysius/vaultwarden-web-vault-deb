@@ -1,17 +1,13 @@
-import { firstValueFrom } from "rxjs";
-
 import { ApiService } from "../../abstractions/api.service";
 import { CryptoService } from "../../abstractions/crypto.service";
 import { EncryptService } from "../../abstractions/encrypt.service";
 import { I18nService } from "../../abstractions/i18n.service";
-import { LogService } from "../../abstractions/log.service";
 import { SearchService } from "../../abstractions/search.service";
 import { SettingsService } from "../../abstractions/settings.service";
 import { StateService } from "../../abstractions/state.service";
 import { FieldType, UriMatchType } from "../../enums";
 import { sequentialize } from "../../misc/sequentialize";
 import { Utils } from "../../misc/utils";
-import { AccountSettingsSettings } from "../../models/domain/account";
 import Domain from "../../models/domain/domain-base";
 import { EncArrayBuffer } from "../../models/domain/enc-array-buffer";
 import { EncString } from "../../models/domain/enc-string";
@@ -58,7 +54,6 @@ export class CipherService implements CipherServiceAbstraction {
     private apiService: ApiService,
     private i18nService: I18nService,
     private searchService: () => SearchService,
-    private logService: LogService,
     private stateService: StateService,
     private encryptService: EncryptService,
     private cipherFileUploadService: CipherFileUploadService
@@ -399,37 +394,9 @@ export class CipherService implements CipherServiceAbstraction {
       return Promise.resolve([]);
     }
 
-    const domain = Utils.getDomain(url);
-    const eqDomainsPromise =
-      domain == null
-        ? Promise.resolve([])
-        : firstValueFrom(this.settingsService.settings$).then(
-            (settings: AccountSettingsSettings) => {
-              let matches: any[] = [];
-              settings?.equivalentDomains?.forEach((eqDomain: any) => {
-                if (eqDomain.length && eqDomain.indexOf(domain) >= 0) {
-                  matches = matches.concat(eqDomain);
-                }
-              });
-
-              if (!matches.length) {
-                matches.push(domain);
-              }
-
-              return matches;
-            }
-          );
-
-    const result = await Promise.all([eqDomainsPromise, this.getAllDecrypted()]);
-    const matchingDomains = result[0];
-    const ciphers = result[1];
-
-    if (defaultMatch == null) {
-      defaultMatch = await this.stateService.getDefaultUriMatch();
-      if (defaultMatch == null) {
-        defaultMatch = UriMatchType.Domain;
-      }
-    }
+    const equivalentDomains = this.settingsService.getEquivalentDomains(url);
+    const ciphers = await this.getAllDecrypted();
+    defaultMatch ??= await this.stateService.getDefaultUriMatch();
 
     return ciphers.filter((cipher) => {
       if (cipher.deletedDate != null) {
@@ -439,59 +406,8 @@ export class CipherService implements CipherServiceAbstraction {
         return true;
       }
 
-      if (url != null && cipher.type === CipherType.Login && cipher.login.uris != null) {
-        for (let i = 0; i < cipher.login.uris.length; i++) {
-          const u = cipher.login.uris[i];
-          if (u.uri == null) {
-            continue;
-          }
-
-          const match = u.match == null ? defaultMatch : u.match;
-          switch (match) {
-            case UriMatchType.Domain:
-              if (domain != null && u.domain != null && matchingDomains.indexOf(u.domain) > -1) {
-                if (Utils.DomainMatchBlacklist.has(u.domain)) {
-                  const domainUrlHost = Utils.getHost(url);
-                  if (!Utils.DomainMatchBlacklist.get(u.domain).has(domainUrlHost)) {
-                    return true;
-                  }
-                } else {
-                  return true;
-                }
-              }
-              break;
-            case UriMatchType.Host: {
-              const urlHost = Utils.getHost(url);
-              if (urlHost != null && urlHost === Utils.getHost(u.uri)) {
-                return true;
-              }
-              break;
-            }
-            case UriMatchType.Exact:
-              if (url === u.uri) {
-                return true;
-              }
-              break;
-            case UriMatchType.StartsWith:
-              if (url.startsWith(u.uri)) {
-                return true;
-              }
-              break;
-            case UriMatchType.RegularExpression:
-              try {
-                const regex = new RegExp(u.uri, "i");
-                if (regex.test(url)) {
-                  return true;
-                }
-              } catch (e) {
-                this.logService.error(e);
-              }
-              break;
-            case UriMatchType.Never:
-            default:
-              break;
-          }
-        }
+      if (cipher.type === CipherType.Login && cipher.login !== null) {
+        return cipher.login.matchesUri(url, equivalentDomains, defaultMatch);
       }
 
       return false;

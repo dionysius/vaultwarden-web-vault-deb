@@ -3,13 +3,11 @@ import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { SettingsService } from "@bitwarden/common/abstractions/settings.service";
 import { TotpService } from "@bitwarden/common/abstractions/totp.service";
 import { EventType, FieldType, UriMatchType } from "@bitwarden/common/enums";
-import { Utils } from "@bitwarden/common/misc/utils";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
 import { CipherRepromptType } from "@bitwarden/common/vault/enums/cipher-reprompt-type";
 import { CipherType } from "@bitwarden/common/vault/enums/cipher-type";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 import { FieldView } from "@bitwarden/common/vault/models/view/field.view";
-import { LoginUriView } from "@bitwarden/common/vault/models/view/login-uri.view";
 
 import { BrowserApi } from "../../browser/browserApi";
 import { BrowserStateService } from "../../services/abstractions/browser-state.service";
@@ -349,9 +347,7 @@ export default class AutofillService implements AutofillServiceInterface {
     fillScript.savedUrls =
       login?.uris?.filter((u) => u.match != UriMatchType.Never).map((u) => u.uri) ?? [];
 
-    const inIframe = pageDetails.url !== options.tabUrl;
-    fillScript.untrustedIframe =
-      inIframe && !this.iframeUrlMatches(pageDetails.url, options.cipher, options.defaultUriMatch);
+    fillScript.untrustedIframe = this.inUntrustedIframe(pageDetails.url, options);
 
     if (!login.password || login.password === "") {
       // No password for this login. Maybe they just wanted to auto-fill some custom fields?
@@ -787,81 +783,28 @@ export default class AutofillService implements AutofillServiceInterface {
   }
 
   /**
-   * Determines whether to warn the user about filling an iframe
+   * Determines whether an iframe is potentially dangerous ("untrusted") to autofill
    * @param pageUrl The url of the page/iframe, usually from AutofillPageDetails
-   * @param tabUrl The url of the tab, usually from the message sender (should not come from a content script because
-   *  that is likely to be incorrect in the case of iframes)
-   * @param loginItem The cipher to be filled
-   * @returns `true` if the iframe is untrusted and the warning should be shown, `false` otherwise
+   * @param options The GenerateFillScript options
+   * @returns `true` if the iframe is untrusted and a warning should be shown, `false` otherwise
    */
-  iframeUrlMatches(pageUrl: string, loginItem: CipherView, defaultUriMatch: UriMatchType): boolean {
+  private inUntrustedIframe(pageUrl: string, options: GenerateFillScriptOptions): boolean {
+    // If the pageUrl (from the content script) matches the tabUrl (from the sender tab), we are not in an iframe
+    // This also avoids a false positive if no URI is saved and the user triggers auto-fill anyway
+    if (pageUrl === options.tabUrl) {
+      return false;
+    }
+
     // Check the pageUrl against cipher URIs using the configured match detection.
-    // If we are in this function at all, it is assumed that the tabUrl already matches a URL for `loginItem`,
-    // need to verify the pageUrl also matches one of the saved URIs using the match detection selected.
-    const uriMatched = loginItem.login.uris?.some((uri) =>
-      this.uriMatches(uri, pageUrl, defaultUriMatch)
+    // Remember: if we are in this function, the tabUrl already matches a saved URI for the login.
+    // We need to verify the pageUrl also matches.
+    const equivalentDomains = this.settingsService.getEquivalentDomains(pageUrl);
+    const matchesUri = options.cipher.login.matchesUri(
+      pageUrl,
+      equivalentDomains,
+      options.defaultUriMatch
     );
-
-    return uriMatched;
-  }
-
-  // TODO should this be put in a common place (Utils maybe?) to be used both here and by CipherService?
-  private uriMatches(uri: LoginUriView, url: string, defaultUriMatch: UriMatchType): boolean {
-    const matchType = uri.match ?? defaultUriMatch;
-
-    const matchDomains = [Utils.getDomain(url)];
-    const equivalentDomains = this.settingsService.getEquivalentDomains(url);
-    if (equivalentDomains != null) {
-      matchDomains.push(...equivalentDomains);
-    }
-
-    switch (matchType) {
-      case UriMatchType.Domain:
-        if (url != null && uri.domain != null && matchDomains.includes(uri.domain)) {
-          if (Utils.DomainMatchBlacklist.has(uri.domain)) {
-            const domainUrlHost = Utils.getHost(url);
-            if (!Utils.DomainMatchBlacklist.get(uri.domain).has(domainUrlHost)) {
-              return true;
-            }
-          } else {
-            return true;
-          }
-        }
-        break;
-      case UriMatchType.Host: {
-        const urlHost = Utils.getHost(url);
-        if (urlHost != null && urlHost === Utils.getHost(uri.uri)) {
-          return true;
-        }
-        break;
-      }
-      case UriMatchType.Exact:
-        if (url === uri.uri) {
-          return true;
-        }
-        break;
-      case UriMatchType.StartsWith:
-        if (url.startsWith(uri.uri)) {
-          return true;
-        }
-        break;
-      case UriMatchType.RegularExpression:
-        try {
-          const regex = new RegExp(uri.uri, "i");
-          if (regex.test(url)) {
-            return true;
-          }
-        } catch (e) {
-          this.logService.error(e);
-          return false;
-        }
-        break;
-      case UriMatchType.Never:
-      default:
-        break;
-    }
-
-    return false;
+    return !matchesUri;
   }
 
   private fieldAttrsContain(field: AutofillField, containsVal: string) {
