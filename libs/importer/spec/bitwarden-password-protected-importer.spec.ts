@@ -1,75 +1,87 @@
-// eslint-disable-next-line no-restricted-imports
-import { Substitute, Arg, SubstituteOf } from "@fluffy-spoon/substitute";
+import { mock, MockProxy } from "jest-mock-extended";
 
 import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { KdfType } from "@bitwarden/common/enums";
 import { Utils } from "@bitwarden/common/misc/utils";
 
-import { BitwardenPasswordProtectedImporter } from "../src/importers";
-import { ImportResult } from "../src/models/import-result";
+import {
+  BitwardenPasswordProtectedImporter,
+  BitwardenJsonImporter,
+} from "../src/importers/bitwarden";
 
-import { data as emptyDecryptedData } from "./test-data/bitwarden-json/empty.json";
+import { emptyAccountEncrypted } from "./test-data/bitwarden-json/account-encrypted.json";
+import { emptyUnencryptedExport } from "./test-data/bitwarden-json/unencrypted.json";
 
 describe("BitwardenPasswordProtectedImporter", () => {
   let importer: BitwardenPasswordProtectedImporter;
-  let cryptoService: SubstituteOf<CryptoService>;
-  let i18nService: SubstituteOf<I18nService>;
+  let cryptoService: MockProxy<CryptoService>;
+  let i18nService: MockProxy<I18nService>;
   const password = Utils.newGuid();
-  const result = new ImportResult();
-  let jDoc: {
-    encrypted?: boolean;
-    passwordProtected?: boolean;
-    salt?: string;
-    kdfIterations?: any;
-    kdfType?: any;
-    encKeyValidation_DO_NOT_EDIT?: string;
-    data?: string;
+  const promptForPassword_callback = async () => {
+    return password;
   };
 
   beforeEach(() => {
-    cryptoService = Substitute.for<CryptoService>();
-    i18nService = Substitute.for<I18nService>();
+    cryptoService = mock<CryptoService>();
+    i18nService = mock<I18nService>();
 
-    jDoc = {
-      encrypted: true,
-      passwordProtected: true,
-      salt: "c2FsdA==",
-      kdfIterations: 100000,
-      kdfType: KdfType.PBKDF2_SHA256,
-      encKeyValidation_DO_NOT_EDIT: Utils.newGuid(),
-      data: Utils.newGuid(),
-    };
-
-    result.success = true;
-    importer = new BitwardenPasswordProtectedImporter(cryptoService, i18nService, password);
+    importer = new BitwardenPasswordProtectedImporter(
+      cryptoService,
+      i18nService,
+      promptForPassword_callback
+    );
   });
 
-  describe("Required Json Data", () => {
+  describe("Unencrypted", () => {
+    beforeAll(() => {
+      jest.spyOn(BitwardenJsonImporter.prototype, "parse");
+    });
+
+    it("Should call BitwardenJsonImporter", async () => {
+      expect((await importer.parse(emptyUnencryptedExport)).success).toEqual(true);
+      expect(BitwardenJsonImporter.prototype.parse).toHaveBeenCalledWith(emptyUnencryptedExport);
+    });
+  });
+
+  describe("Account encrypted", () => {
+    beforeAll(() => {
+      jest.spyOn(BitwardenJsonImporter.prototype, "parse");
+    });
+
+    it("Should call BitwardenJsonImporter", async () => {
+      expect((await importer.parse(emptyAccountEncrypted)).success).toEqual(true);
+      expect(BitwardenJsonImporter.prototype.parse).toHaveBeenCalledWith(emptyAccountEncrypted);
+    });
+  });
+
+  describe("Password protected", () => {
+    let jDoc: {
+      encrypted?: boolean;
+      passwordProtected?: boolean;
+      salt?: string;
+      kdfIterations?: any;
+      kdfType?: any;
+      encKeyValidation_DO_NOT_EDIT?: string;
+      data?: string;
+    };
+
+    beforeEach(() => {
+      jDoc = {
+        encrypted: true,
+        passwordProtected: true,
+        salt: "c2FsdA==",
+        kdfIterations: 100000,
+        kdfType: KdfType.PBKDF2_SHA256,
+        encKeyValidation_DO_NOT_EDIT: Utils.newGuid(),
+        data: Utils.newGuid(),
+      };
+    });
+
     it("succeeds with default jdoc", async () => {
-      cryptoService.decryptToUtf8(Arg.any(), Arg.any()).resolves(emptyDecryptedData);
+      cryptoService.decryptToUtf8.mockReturnValue(Promise.resolve(emptyUnencryptedExport));
 
       expect((await importer.parse(JSON.stringify(jDoc))).success).toEqual(true);
-    });
-
-    it("fails if encrypted === false", async () => {
-      jDoc.encrypted = false;
-      expect((await importer.parse(JSON.stringify(jDoc))).success).toEqual(false);
-    });
-
-    it("fails if encrypted === null", async () => {
-      jDoc.encrypted = null;
-      expect((await importer.parse(JSON.stringify(jDoc))).success).toEqual(false);
-    });
-
-    it("fails if passwordProtected === false", async () => {
-      jDoc.passwordProtected = false;
-      expect((await importer.parse(JSON.stringify(jDoc))).success).toEqual(false);
-    });
-
-    it("fails if passwordProtected === null", async () => {
-      jDoc.passwordProtected = null;
-      expect((await importer.parse(JSON.stringify(jDoc))).success).toEqual(false);
     });
 
     it("fails if salt === null", async () => {

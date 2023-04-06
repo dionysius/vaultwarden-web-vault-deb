@@ -1256,6 +1256,15 @@
   "importSuccess": {
     "message": "Data successfully imported"
   },
+  "importSuccessNumberOfItems": {
+    "message": "A total of $AMOUNT$ items were imported.",
+    "placeholders": {
+      "amount": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },    
   "dataExportSuccess": {
     "message": "Data successfully exported"
   },

@@ -11,14 +11,15 @@ import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUti
 import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
 import { PolicyType } from "@bitwarden/common/admin-console/enums";
 import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
+import { DialogService } from "@bitwarden/components";
 import {
   ImportOption,
   ImportType,
-  ImportError,
+  ImportResult,
   ImportServiceAbstraction,
 } from "@bitwarden/importer";
 
-import { FilePasswordPromptComponent } from "./file-password-prompt.component";
+import { ImportSuccessDialogComponent, FilePasswordPromptComponent } from "./dialog";
 
 @Component({
   selector: "app-import",
@@ -30,7 +31,6 @@ export class ImportComponent implements OnInit {
   format: ImportType = null;
   fileContents: string;
   fileSelected: File;
-  formPromise: Promise<ImportError>;
   loading = false;
   importBlockedByPolicy = false;
 
@@ -45,7 +45,8 @@ export class ImportComponent implements OnInit {
     protected policyService: PolicyService,
     private logService: LogService,
     protected modalService: ModalService,
-    protected syncService: SyncService
+    protected syncService: SyncService,
+    protected dialogService: DialogService
   ) {}
 
   async ngOnInit() {
@@ -68,7 +69,15 @@ export class ImportComponent implements OnInit {
 
     this.loading = true;
 
-    const importer = this.importService.getImporter(this.format, this.organizationId);
+    const promptForPassword_callback = async () => {
+      return await this.getFilePassword();
+    };
+
+    const importer = this.importService.getImporter(
+      this.format,
+      promptForPassword_callback,
+      this.organizationId
+    );
     if (importer === null) {
       this.platformUtilsService.showToast(
         "error",
@@ -117,30 +126,17 @@ export class ImportComponent implements OnInit {
     }
 
     try {
-      this.formPromise = this.importService.import(importer, fileContents, this.organizationId);
-      let error = await this.formPromise;
-
-      if (error?.passwordRequired) {
-        const filePassword = await this.getFilePassword();
-        if (filePassword == null) {
-          this.loading = false;
-          return;
-        }
-
-        error = await this.doPasswordProtectedImport(filePassword, fileContents);
-      }
-
-      if (error != null) {
-        this.error(error);
-        this.loading = false;
-        return;
-      }
+      const result = await this.importService.import(importer, fileContents, this.organizationId);
 
       //No errors, display success message
-      this.platformUtilsService.showToast("success", null, this.i18nService.t("importSuccess"));
+      this.dialogService.open<unknown, ImportResult>(ImportSuccessDialogComponent, {
+        data: result,
+      });
+
       this.syncService.fullSync(true);
       this.router.navigate(this.successNavigate);
     } catch (e) {
+      this.error(e);
       this.logService.error(e);
     }
 
@@ -267,18 +263,5 @@ export class ImportComponent implements OnInit {
     }
 
     return await ref.onClosedPromise();
-  }
-
-  async doPasswordProtectedImport(
-    filePassword: string,
-    fileContents: string
-  ): Promise<ImportError> {
-    const passwordProtectedImporter = this.importService.getImporter(
-      "bitwardenpasswordprotected",
-      this.organizationId,
-      filePassword
-    );
-
-    return this.importService.import(passwordProtectedImporter, fileContents, this.organizationId);
   }
 }

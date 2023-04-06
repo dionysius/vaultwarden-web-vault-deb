@@ -1,6 +1,6 @@
 import { Importer } from "../importers/importer";
-import { ImportError } from "../models/import-error";
 import { ImportOption, ImportType } from "../models/import-options";
+import { ImportResult } from "../models/import-result";
 
 export abstract class ImportServiceAbstraction {
   featuredImportOptions: readonly ImportOption[];
@@ -10,10 +10,10 @@ export abstract class ImportServiceAbstraction {
     importer: Importer,
     fileContents: string,
     organizationId?: string
-  ) => Promise<ImportError>;
+  ) => Promise<ImportResult>;
   getImporter: (
     format: ImportType | "bitwardenpasswordprotected",
-    organizationId: string,
-    password?: string
+    promptForPassword_callback: () => Promise<string>,
+    organizationId: string
   ) => Importer;
 }

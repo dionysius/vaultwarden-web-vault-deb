@@ -15,14 +15,19 @@ import {
 
 import { LooseComponentsModule, SharedModule } from "../../shared";
 
+import { ImportSuccessDialogComponent, FilePasswordPromptComponent } from "./dialog";
 import { ExportComponent } from "./export.component";
-import { FilePasswordPromptComponent } from "./file-password-prompt.component";
 import { ImportExportRoutingModule } from "./import-export-routing.module";
 import { ImportComponent } from "./import.component";
 
 @NgModule({
   imports: [SharedModule, LooseComponentsModule, ImportExportRoutingModule],
-  declarations: [ImportComponent, ExportComponent, FilePasswordPromptComponent],
+  declarations: [
+    ImportComponent,
+    ExportComponent,
+    FilePasswordPromptComponent,
+    ImportSuccessDialogComponent,
+  ],
   providers: [
     {
       provide: ImportApiServiceAbstraction,

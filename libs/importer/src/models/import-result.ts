@@ -4,7 +4,6 @@ import { FolderView } from "@bitwarden/common/vault/models/view/folder.view";
 
 export class ImportResult {
   success = false;
-  missingPassword = false;
   errorMessage: string;
   ciphers: CipherView[] = [];
   folders: FolderView[] = [];

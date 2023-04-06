@@ -20,7 +20,6 @@ import {
   AvastJsonImporter,
   AviraCsvImporter,
   BitwardenCsvImporter,
-  BitwardenJsonImporter,
   BitwardenPasswordProtectedImporter,
   BlackBerryCsvImporter,
   BlurCsvImporter,
@@ -76,7 +75,6 @@ import {
   ZohoVaultCsvImporter,
 } from "../importers";
 import { Importer } from "../importers/importer";
-import { ImportError } from "../models/import-error";
 import {
   featuredImportOptions,
   ImportOption,
@@ -109,48 +107,55 @@ export class ImportService implements ImportServiceAbstraction {
     importer: Importer,
     fileContents: string,
     organizationId: string = null
-  ): Promise<ImportError> {
+  ): Promise<ImportResult> {
     const importResult = await importer.parse(fileContents);
-    if (importResult.success) {
-      if (importResult.folders.length === 0 && importResult.ciphers.length === 0) {
-        return new ImportError(this.i18nService.t("importNothingError"));
-      } else if (importResult.ciphers.length > 0) {
-        const halfway = Math.floor(importResult.ciphers.length / 2);
-        const last = importResult.ciphers.length - 1;
-
-        if (
-          this.badData(importResult.ciphers[0]) &&
-          this.badData(importResult.ciphers[halfway]) &&
-          this.badData(importResult.ciphers[last])
-        ) {
-          return new ImportError(this.i18nService.t("importFormatError"));
-        }
-      }
-      try {
-        await this.postImport(importResult, organizationId);
-      } catch (error) {
-        const errorResponse = new ErrorResponse(error, 400);
-        return this.handleServerError(errorResponse, importResult);
-      }
-      return null;
-    } else {
+    if (!importResult.success) {
       if (!Utils.isNullOrWhitespace(importResult.errorMessage)) {
-        return new ImportError(importResult.errorMessage, importResult.missingPassword);
-      } else {
-        return new ImportError(
-          this.i18nService.t("importFormatError"),
-          importResult.missingPassword
-        );
+        throw new Error(importResult.errorMessage);
+      }
+      throw new Error(this.i18nService.t("importFormatError"));
+    }
+
+    if (importResult.folders.length === 0 && importResult.ciphers.length === 0) {
+      throw new Error(this.i18nService.t("importNothingError"));
+    }
+
+    if (importResult.ciphers.length > 0) {
+      const halfway = Math.floor(importResult.ciphers.length / 2);
+      const last = importResult.ciphers.length - 1;
+
+      if (
+        this.badData(importResult.ciphers[0]) &&
+        this.badData(importResult.ciphers[halfway]) &&
+        this.badData(importResult.ciphers[last])
+      ) {
+        throw new Error(this.i18nService.t("importFormatError"));
       }
     }
+
+    try {
+      if (organizationId != null) {
+        await this.handleOrganizationalImport(importResult, organizationId);
+      } else {
+        await this.handleIndividualImport(importResult);
+      }
+    } catch (error) {
+      const errorResponse = new ErrorResponse(error, 400);
+      throw this.handleServerError(errorResponse, importResult);
+    }
+    return importResult;
   }
 
   getImporter(
     format: ImportType | "bitwardenpasswordprotected",
-    organizationId: string = null,
-    password: string = null
+    promptForPassword_callback: () => Promise<string>,
+    organizationId: string = null
   ): Importer {
-    const importer = this.getImporterInstance(format, password);
+    if (promptForPassword_callback == null) {
+      return null;
+    }
+
+    const importer = this.getImporterInstance(format, promptForPassword_callback);
     if (importer == null) {
       return null;
     }
@@ -158,7 +163,10 @@ export class ImportService implements ImportServiceAbstraction {
     return importer;
   }
 
-  private getImporterInstance(format: ImportType | "bitwardenpasswordprotected", password: string) {
+  private getImporterInstance(
+    format: ImportType | "bitwardenpasswordprotected",
+    promptForPassword_callback: () => Promise<string>
+  ) {
     if (format == null) {
       return null;
     }
@@ -167,12 +175,11 @@ export class ImportService implements ImportServiceAbstraction {
       case "bitwardencsv":
         return new BitwardenCsvImporter();
       case "bitwardenjson":
-        return new BitwardenJsonImporter(this.cryptoService, this.i18nService);
       case "bitwardenpasswordprotected":
         return new BitwardenPasswordProtectedImporter(
           this.cryptoService,
           this.i18nService,
-          password
+          promptForPassword_callback
         );
       case "lastpasscsv":
       case "passboltcsv":
@@ -294,46 +301,46 @@ export class ImportService implements ImportServiceAbstraction {
     }
   }
 
-  private async postImport(importResult: ImportResult, organizationId: string = null) {
-    if (organizationId == null) {
-      const request = new ImportCiphersRequest();
-      for (let i = 0; i < importResult.ciphers.length; i++) {
-        const c = await this.cipherService.encrypt(importResult.ciphers[i]);
-        request.ciphers.push(new CipherRequest(c));
-      }
-      if (importResult.folders != null) {
-        for (let i = 0; i < importResult.folders.length; i++) {
-          const f = await this.folderService.encrypt(importResult.folders[i]);
-          request.folders.push(new FolderWithIdRequest(f));
-        }
-      }
-      if (importResult.folderRelationships != null) {
-        importResult.folderRelationships.forEach((r) =>
-          request.folderRelationships.push(new KvpRequest(r[0], r[1]))
-        );
-      }
-      return await this.importApiService.postImportCiphers(request);
-    } else {
-      const request = new ImportOrganizationCiphersRequest();
-      for (let i = 0; i < importResult.ciphers.length; i++) {
-        importResult.ciphers[i].organizationId = organizationId;
-        const c = await this.cipherService.encrypt(importResult.ciphers[i]);
-        request.ciphers.push(new CipherRequest(c));
-      }
-      if (importResult.collections != null) {
-        for (let i = 0; i < importResult.collections.length; i++) {
-          importResult.collections[i].organizationId = organizationId;
-          const c = await this.collectionService.encrypt(importResult.collections[i]);
-          request.collections.push(new CollectionWithIdRequest(c));
-        }
-      }
-      if (importResult.collectionRelationships != null) {
-        importResult.collectionRelationships.forEach((r) =>
-          request.collectionRelationships.push(new KvpRequest(r[0], r[1]))
-        );
-      }
-      return await this.importApiService.postImportOrganizationCiphers(organizationId, request);
+  private async handleIndividualImport(importResult: ImportResult) {
+    const request = new ImportCiphersRequest();
+    for (let i = 0; i < importResult.ciphers.length; i++) {
+      const c = await this.cipherService.encrypt(importResult.ciphers[i]);
+      request.ciphers.push(new CipherRequest(c));
     }
+    if (importResult.folders != null) {
+      for (let i = 0; i < importResult.folders.length; i++) {
+        const f = await this.folderService.encrypt(importResult.folders[i]);
+        request.folders.push(new FolderWithIdRequest(f));
+      }
+    }
+    if (importResult.folderRelationships != null) {
+      importResult.folderRelationships.forEach((r) =>
+        request.folderRelationships.push(new KvpRequest(r[0], r[1]))
+      );
+    }
+    return await this.importApiService.postImportCiphers(request);
+  }
+
+  private async handleOrganizationalImport(importResult: ImportResult, organizationId: string) {
+    const request = new ImportOrganizationCiphersRequest();
+    for (let i = 0; i < importResult.ciphers.length; i++) {
+      importResult.ciphers[i].organizationId = organizationId;
+      const c = await this.cipherService.encrypt(importResult.ciphers[i]);
+      request.ciphers.push(new CipherRequest(c));
+    }
+    if (importResult.collections != null) {
+      for (let i = 0; i < importResult.collections.length; i++) {
+        importResult.collections[i].organizationId = organizationId;
+        const c = await this.collectionService.encrypt(importResult.collections[i]);
+        request.collections.push(new CollectionWithIdRequest(c));
+      }
+    }
+    if (importResult.collectionRelationships != null) {
+      importResult.collectionRelationships.forEach((r) =>
+        request.collectionRelationships.push(new KvpRequest(r[0], r[1]))
+      );
+    }
+    return await this.importApiService.postImportOrganizationCiphers(organizationId, request);
   }
 
   private badData(c: CipherView) {
@@ -345,9 +352,9 @@ export class ImportService implements ImportServiceAbstraction {
     );
   }
 
-  private handleServerError(errorResponse: ErrorResponse, importResult: ImportResult): ImportError {
+  private handleServerError(errorResponse: ErrorResponse, importResult: ImportResult): Error {
     if (errorResponse.validationErrors == null) {
-      return new ImportError(errorResponse.message);
+      return new Error(errorResponse.message);
     }
 
     let errorMessage = "";
@@ -385,6 +392,6 @@ export class ImportService implements ImportServiceAbstraction {
       errorMessage += "[" + itemType + '] "' + item.name + '": ' + value;
     });
 
-    return new ImportError(errorMessage);
+    return new Error(errorMessage);
   }
 }
