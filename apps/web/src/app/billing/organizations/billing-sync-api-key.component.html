@@ -37,7 +37,7 @@
 
         <div *ngIf="clientSecret && !showRotateScreen">
           <p>{{ "copyPasteBillingSync" | i18n }}</p>
-          <label for="clientSecret">Billing Sync Key</label>
+          <label for="clientSecret">{{ "billingSyncKey" | i18n }}</label>
           <div class="input-group">
             <input
               id="clientSecret"
