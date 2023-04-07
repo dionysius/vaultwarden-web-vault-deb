@@ -637,7 +637,7 @@
     "message": "Verwende einen zweiten Klick, um auf die Erstellung von Passwörtern und passende Zugangsdaten für die Webseite zuzugreifen. "
   },
   "defaultUriMatchDetection": {
-    "message": "Standard-URI-Match-Erkennung",
+    "message": "Standard URI-Übereinstimmungserkennung",
     "description": "Default URI match detection for auto-fill."
   },
   "defaultUriMatchDetectionDesc": {
@@ -1292,7 +1292,7 @@
     "description": "A programming term, also known as 'RegEx'."
   },
   "matchDetection": {
-    "message": "Match-Erkennung",
+    "message": "Übereinstimmungserkennung",
     "description": "URI match detection for auto-fill."
   },
   "defaultMatchDetection": {

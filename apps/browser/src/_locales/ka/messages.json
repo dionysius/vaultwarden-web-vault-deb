@@ -137,7 +137,7 @@
     "message": "კოდი გაიგზავნა"
   },
   "verificationCode": {
-    "message": "ვერიფიკაციის კოდი"
+    "message": "ერთჯერადი კოდი"
   },
   "confirmIdentity": {
     "message": "Confirm your identity to continue."
@@ -427,10 +427,10 @@
     "message": "დაფიქსირდა შეცდომა"
   },
   "emailRequired": {
-    "message": "ელექტრონული ფოსტის მისამართი აუცილებელია."
+    "message": "ელ-ფოსტის მისამართი აუცილებელია."
   },
   "invalidEmail": {
-    "message": "არასწორი ელექტრო ფოსტის მისამართი."
+    "message": "არასწორი ელ-ფოსტის მისამართი."
   },
   "masterPasswordRequired": {
     "message": "Master password is required."
@@ -458,7 +458,7 @@
     "message": "We've sent you an email with your master password hint."
   },
   "verificationCodeRequired": {
-    "message": "ვერიფიკაციის კოდი აუცილებელია."
+    "message": "ერთჯერადი კოდი აუცილებელია."
   },
   "invalidVerificationCode": {
     "message": "Invalid verification code"

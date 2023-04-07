@@ -345,7 +345,7 @@
     "message": "Молимо вас да размотрите да нам помогнете уз добру оцену!"
   },
   "browserNotSupportClipboard": {
-    "message": "Ваш прегледач не подржава једноставно копирање у привремену меморију. Уместо тога копирајте га ручно."
+    "message": "Ваш прегледач не подржава једноставно копирање у клипборду. Уместо тога копирајте га ручно."
   },
   "verifyIdentity": {
     "message": "Потврдите идентитет"
@@ -2091,16 +2091,16 @@
     "message": "Изложена главна лозинка"
   },
   "exposedMasterPasswordDesc": {
-    "message": "Password found in a data breach. Use a unique password to protect your account. Are you sure you want to use an exposed password?"
+    "message": "Лозинка је пронађена у случају повреде података. Користите јединствену лозинку да бисте заштитили свој налог. Да ли сте сигурни да желите да користите откривену лозинку?"
   },
   "weakAndExposedMasterPassword": {
     "message": "Слаба и изложена главна лозинка"
   },
   "weakAndBreachedMasterPasswordDesc": {
-    "message": "Weak password identified and found in a data breach. Use a strong and unique password to protect your account. Are you sure you want to use this password?"
+    "message": "Идентификована је слаба лозинка и пронађена у упаду података. Користите јаку и јединствену лозинку да заштитите свој налог. Да ли сте сигурни да желите да користите ову лозинку?"
   },
   "checkForBreaches": {
-    "message": "Check known data breaches for this password"
+    "message": "Проверите познате упада података за ову лозинку"
   },
   "important": {
     "message": "Важно:"
