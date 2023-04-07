@@ -1255,6 +1255,15 @@
   "importSuccess": {
     "message": "Matagumpay na na-import ang data"
   },
+  "importSuccessNumberOfItems": {
+    "message": "A total of $AMOUNT$ items were imported.",
+    "placeholders": {
+      "amount": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
   "dataExportSuccess": {
     "message": "Matagumpay na na-export ang data"
   },
@@ -1780,16 +1789,16 @@
     "message": "Pagkakompromiso sa datos"
   },
   "breachDesc": {
-    "message": "Maaaring ilantad ng mga nilabag na account ang iyong personal na impormasyon. Secure breached account sa pamamagitan ng pagpapagana ng 2FA o paglikha ng isang mas malakas na password."
+    "message": "Maaaring mailantad ang personal mong impormasyon dahil sa mga nakompromisong account. Gawing ligtas ang mga nakompromisong account gamit ang 2FA o mas malakas na password."
   },
   "breachCheckUsernameEmail": {
-    "message": "Suriin ang anumang mga username o email address na ginagamit mo."
+    "message": "Tingnan ang anumang username o email address na ginagamit mo."
   },
   "checkBreaches": {
-    "message": "Suriin ang mga paglabag"
+    "message": "Tingnan ang mga pagkakompromiso"
   },
   "breachUsernameNotFound": {
-    "message": "$USERNAME$ ay hindi natagpuan sa anumang kilalang paglabag sa data.",
+    "message": "Wala ang $USERNAME$ sa mga naitalang pagkakompromiso sa datos.",
     "placeholders": {
       "username": {
         "content": "$1",
@@ -1802,7 +1811,7 @@
     "description": "ex. Good News, No Breached Accounts Found!"
   },
   "breachUsernameFound": {
-    "message": "$USERNAME$ ay natagpuan sa $COUNT$ iba't ibang mga paglabag sa data online.",
+    "message": "Nakita ang $USERNAME$ sa $COUNT$ naitalang pagkakompromiso sa datos.",
     "placeholders": {
       "username": {
         "content": "$1",
@@ -1815,25 +1824,25 @@
     }
   },
   "breachFound": {
-    "message": "Natagpuan ang mga nabasag na account"
+    "message": "May mga na-breach na account"
   },
   "compromisedData": {
-    "message": "Nakompromiso ang data"
+    "message": "Nakompromisong datos"
   },
   "website": {
     "message": "Website"
   },
   "affectedUsers": {
-    "message": "Mga apektadong gumagamit"
+    "message": "Mga apektadong user"
   },
   "breachOccurred": {
-    "message": "Naganap ang paglabag"
+    "message": "Naganap ang breach"
   },
   "breachReported": {
-    "message": "Iniulat ang paglabag"
+    "message": "Naiulat ang breach"
   },
   "reportError": {
-    "message": "May nangyaring error sa pagsisikap na i-load ang report. Subukan mo ulit"
+    "message": "Nagkaproblema sa paglo-load ng ulat. Subukan ulit"
   },
   "billing": {
     "message": "Pagsingil"
@@ -1861,47 +1870,47 @@
     "description": "Dollar amount, or quantity."
   },
   "creditDelayed": {
-    "message": "Ang idinagdag na credit ay lilitaw sa iyong account pagkatapos na ganap na maproseso ang pagbabayad. Ang ilang mga paraan ng pagbabayad ay naantala at maaaring tumagal nang mas mahaba upang maproseso kaysa sa iba."
+    "message": "Lalabas sa account mo ang naidagdag na credit pagkatapos ng pagpoproseso sa bayad mo. Maaaring mas matagal ang ilang mga paraan sa pagbabayad."
   },
   "makeSureEnoughCredit": {
-    "message": "Mangyaring tiyakin na ang iyong account ay may sapat na kredito na magagamit para sa pagbili na ito. Kung ang iyong account ay walang sapat na credit na magagamit, ang iyong default na paraan ng pagbabayad sa file ay gagamitin para sa pagkakaiba. Maaari kang magdagdag ng credit sa iyong account mula sa pahina ng Pagsingil."
+    "message": "Siguraduhing may sapat na credit ang account mo para sa pagbiling ito. Kung walang sapat na credit ang account mo, gagamitin ang default na paraan sa pagbabayad ng account mo at gagamiting pantapal sa kulang. Makakapagdagdag ka ng credit sa account mo sa pahina ng Pagsingil."
   },
   "creditAppliedDesc": {
-    "message": "Ang credit ng iyong account ay maaaring gamitin upang gumawa ng mga pagbili. Anumang magagamit na credit ay awtomatikong ilalapat patungo sa mga invoice na nabuo para sa account na ito."
+    "message": "Magagamit ang credit ng account mo para mamili. Mailalapat sa anumang bayarin sa account na ito ang available na credit."
   },
   "goPremium": {
-    "message": "Pumunta sa Premium",
+    "message": "Magpa-Premium",
     "description": "Another way of saying \"Get a Premium membership\""
   },
   "premiumUpdated": {
-    "message": "Nag upgrade ka na sa Premium."
+    "message": "Naka-upgrade ka na sa Premium."
   },
   "premiumUpgradeUnlockFeatures": {
-    "message": "I upgrade ang iyong account sa isang pagiging miyembro ng Premium at i unlock ang ilang mga mahusay na karagdagang tampok."
+    "message": "Mag-upgrade sa Premium at makakuha ng magagandang mga karagdagang feature."
   },
   "premiumSignUpStorage": {
-    "message": "1 GB naka encrypt na imbakan para sa mga attachment ng file."
+    "message": "1GB na naka-encrypt na storage para sa mga file attachment."
   },
   "premiumSignUpTwoStep": {
-    "message": "Karagdagang dalawang hakbang na mga pagpipilian sa pag login tulad ng YubiKey, FIDO U2F, at Duo."
+    "message": "Karagdagang mga opsyon para sa dalawang-hakbang na pag-log in tulad ng YubiKey, FIDO U2F, at Duo."
   },
   "premiumSignUpEmergency": {
     "message": "Emergency access"
   },
   "premiumSignUpReports": {
-    "message": "Kalinisan ng password, kalusugan ng account, at mga ulat ng paglabag sa data upang mapanatiling ligtas ang iyong vault."
+    "message": "Kaligtasan sa password, kalusugan ng account, at mga ulat sa pagkakompromiso ng datos para panatilihing ligtas ang vault mo."
   },
   "premiumSignUpTotp": {
-    "message": "TOTP verification code (2FA) generator para sa mga pag login sa iyong vault."
+    "message": "Tagagawa ng TOTP verification code (2FA) para sa mga login sa vault mo."
   },
   "premiumSignUpSupport": {
-    "message": "Priority suporta sa customer."
+    "message": "Priyoridad sa suporta pang-customer."
   },
   "premiumSignUpFuture": {
-    "message": "Lahat ng mga tampok ng Premium sa hinaharap. Marami pang darating sa lalong madaling panahon!"
+    "message": "Lahat ng mga Premium feature sa hinaharap. Abangan!"
   },
   "premiumPrice": {
-    "message": "Lahat para lamang sa $PRICE$ /taon!",
+    "message": "Lahat para sa $PRICE$ lang kada taon!",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -1910,7 +1919,7 @@
     }
   },
   "premiumPriceWithFamilyPlan": {
-    "message": "Pumunta sa premium para lamang $PRICE$ /taon, o makakuha ng mga premium account para sa mga gumagamit ng $FAMILYPLANUSERCOUNT$ at walang limitasyong pagbabahagi ng pamilya sa isang ",
+    "message": "Magpa-premium para sa $PRICE$ lang kada taon, o kumuha ng mga premium account para sa $FAMILYPLANUSERCOUNT$ user at walang limitasyong pagbabahaging pampamilya sa ",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -1923,16 +1932,16 @@
     }
   },
   "bitwardenFamiliesPlan": {
-    "message": "Plano ng mga Pamilya ng Bitwarden."
+    "message": "Planong Pampamilya ng Bitwarden."
   },
   "addons": {
     "message": "Mga addon"
   },
   "premiumAccess": {
-    "message": "Pag access sa premium"
+    "message": "Premium access"
   },
   "premiumAccessDesc": {
-    "message": "Maaari kang magdagdag ng Premium access sa lahat ng miyembro ng iyong organisasyon para sa $PRICE$ /$INTERVAL$.",
+    "message": "Makakapagbigay ka ng Premium access sa lahat ng mga miyembro ng organisasyon mo para sa $PRICE$ kada $INTERVAL$.",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -1945,13 +1954,13 @@
     }
   },
   "additionalStorageGb": {
-    "message": "Karagdagang imbakan (GB)"
+    "message": "Karagdagang storage (GB)"
   },
   "additionalStorageGbDesc": {
     "message": "# ng karagdagang GB"
   },
   "additionalStorageIntervalDesc": {
-    "message": "Ang iyong plano ay may $SIZE$ ng naka-encrypt na imbakan ng file. Maaari kang magdagdag ng karagdagang imbakan para sa $PRICE$ bawat GB /$INTERVAL$.",
+    "message": "May $SIZE$ na naka-encrypt na file storage ang plano mo. Makakapagdagdag ka pa para sa $PRICE$ kada GB kada $INTERVAL$.",
     "placeholders": {
       "size": {
         "content": "$1",
@@ -1971,26 +1980,26 @@
     "message": "Buod"
   },
   "total": {
-    "message": "Kabuuang"
+    "message": "Kabuuan"
   },
   "year": {
     "message": "taon"
   },
   "yr": {
-    "message": "yr"
+    "message": "tn"
   },
   "month": {
     "message": "buwan"
   },
   "monthAbbr": {
-    "message": "mo.",
+    "message": "bw.",
     "description": "Short abbreviation for 'month'"
   },
   "paymentChargedAnnually": {
-    "message": "Ang iyong paraan ng pagbabayad ay sisingilin kaagad at pagkatapos ay sa isang paulit ulit na batayan bawat taon. Maaari mong kanselahin anumang oras."
+    "message": "Agarang sisingilin ang paraan mo sa pagbabayad at paulit-ulit taun-taon. Makakapagkansela ka kailanman."
   },
   "paymentCharged": {
-    "message": "Ang iyong paraan ng pagbabayad ay sisingilin kaagad at pagkatapos ay paulit-ulit na batayan ang bawat $INTERVAL$. Maaari mong kanselahin anumang oras.",
+    "message": "Agarang sisingilin ang paraan mo sa pagbabayad at paulit-ulit bawat $INTERVAL$. Makakapagkansela ka kailanman.",
     "placeholders": {
       "interval": {
         "content": "$1",
@@ -1999,7 +2008,7 @@
     }
   },
   "paymentChargedWithTrial": {
-    "message": "Ang iyong plano ay may kasamang libreng 7 araw na pagsubok. Ang iyong paraan ng pagbabayad ay hindi sisingilin hanggang sa matapos ang pagsubok. Maaari mong kanselahin anumang oras."
+    "message": "May libreng 7 araw na trial ang plano mo. Hindi sisingilin ang paraan mo sa pagbabayad hanggang sa matapos ang libreng trial. Makakapagkansela ka kailanman."
   },
   "paymentInformation": {
     "message": "Impormasyon sa pagbabayad"
@@ -4858,8 +4867,8 @@
   "activateAutofill": {
     "message": "Buksan ang autofill"
   },
-  "activateAutofillDesc": {
-    "message": "Buksan ang autofill na may mga setting ng page load sa ekstensyon pang-browser sa lahat ng kasalukyan at bagong miyembro."
+  "activateAutofillPolicyDesc": {
+    "message": "Activate the auto-fill on page load setting on the browser extension for all existing and new members."
   },
   "experimentalFeature": {
     "message": "Maaaring pagsamantalahan ng mga nakompromisong website ang pag-autofill pagka-load ng pahina."

@@ -1255,6 +1255,15 @@
   "importSuccess": {
     "message": "数据导入成功"
   },
+  "importSuccessNumberOfItems": {
+    "message": "A total of $AMOUNT$ items were imported.",
+    "placeholders": {
+      "amount": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
   "dataExportSuccess": {
     "message": "数据导出成功"
   },
@@ -4858,8 +4867,8 @@
   "activateAutofill": {
     "message": "激活自动填充"
   },
-  "activateAutofillDesc": {
-    "message": "为所有现有成员和新成员激活浏览器扩展中的页面加载时自动填充设置。"
+  "activateAutofillPolicyDesc": {
+    "message": "Activate the auto-fill on page load setting on the browser extension for all existing and new members."
   },
   "experimentalFeature": {
     "message": "不完整或不信任的网站可以在页面加载时自动填充。"
@@ -6629,7 +6638,7 @@
     "message": "此操作将移除您对此工程的访问权限。"
   },
   "smAccessRemovalWarningSaTitle": {
-    "message": "删除对此服务账户的访问权限"
+    "message": "移除对此服务账户的访问权限"
   },
   "smAccessRemovalWarningSaMessage": {
     "message": "此操作将移除您对此服务账户的访问权限。"
@@ -6674,6 +6683,6 @@
     "message": "取消"
   },
   "notAvailableForFreeOrganization": {
-    "message": "This feature is not available for free organizations. Contact your organization owner to upgrade."
+    "message": "免费组织不能使用此功能。请联系您的组织所有者寻求升级。"
   }
 }

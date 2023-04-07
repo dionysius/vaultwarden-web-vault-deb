@@ -1255,6 +1255,15 @@
   "importSuccess": {
     "message": "Data er nu importeret"
   },
+  "importSuccessNumberOfItems": {
+    "message": "I alt $AMOUNT$ emner blev importeret.",
+    "placeholders": {
+      "amount": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
   "dataExportSuccess": {
     "message": "Data hermed eksporteret"
   },
@@ -4858,7 +4867,7 @@
   "activateAutofill": {
     "message": "Aktivér autoudfyldning"
   },
-  "activateAutofillDesc": {
+  "activateAutofillPolicyDesc": {
     "message": "Aktivér indstillingen Autoudfyldning ved sideindlæsning i browserudvidelsen for alle eksisterende og nye medlemmer."
   },
   "experimentalFeature": {
@@ -6674,6 +6683,6 @@
     "message": "Afvis"
   },
   "notAvailableForFreeOrganization": {
-    "message": "This feature is not available for free organizations. Contact your organization owner to upgrade."
+    "message": "Denne funktion er ikke tilgængelig for gratis organisationer. Kontakt organisationsejeren for at opgradere."
   }
 }

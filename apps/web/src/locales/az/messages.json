@@ -1255,6 +1255,15 @@
   "importSuccess": {
     "message": "Verilənlər anbarınıza uğurla idxal edildi."
   },
+  "importSuccessNumberOfItems": {
+    "message": "A total of $AMOUNT$ items were imported.",
+    "placeholders": {
+      "amount": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
   "dataExportSuccess": {
     "message": "Məlumat uğurla xaricə köçürüldü"
   },
@@ -4858,8 +4867,8 @@
   "activateAutofill": {
     "message": "Avto-doldurmanı aktivləşdir"
   },
-  "activateAutofillDesc": {
-    "message": "Bütün mövcud və yeni üzvlər üçün brauzer genişləndirməsindəki səhifə yükləmə tənzimləmələri ilə avto-doldurmanı aktivləşdirin."
+  "activateAutofillPolicyDesc": {
+    "message": "Activate the auto-fill on page load setting on the browser extension for all existing and new members."
   },
   "experimentalFeature": {
     "message": "Təhlükəli və ya güvənilməyən veb saytlar, səhifə yüklənərkən avto-doldurmanı istifadə edə bilər."
@@ -6674,6 +6683,6 @@
     "message": "Rədd et"
   },
   "notAvailableForFreeOrganization": {
-    "message": "This feature is not available for free organizations. Contact your organization owner to upgrade."
+    "message": "Bu özəllik ödənişsiz təşkilatlar üçün əlçatmazdır. Yüksəltmək üçün təşkilatınızın sahibi ilə əlaqə saxlayın."
   }
 }

@@ -1255,6 +1255,15 @@
   "importSuccess": {
     "message": "データを保管庫にインポートしました。"
   },
+  "importSuccessNumberOfItems": {
+    "message": "合計 $AMOUNT$ 件のアイテムをインポートしました。",
+    "placeholders": {
+      "amount": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
   "dataExportSuccess": {
     "message": "データをエクスポートしました"
   },
@@ -4858,7 +4867,7 @@
   "activateAutofill": {
     "message": "自動入力を有効にする"
   },
-  "activateAutofillDesc": {
+  "activateAutofillPolicyDesc": {
     "message": "すべての既存および新規メンバーのブラウザ拡張機能のページ読み込み設定で、自動入力を有効にします。"
   },
   "experimentalFeature": {
@@ -6674,6 +6683,6 @@
     "message": "表示しない"
   },
   "notAvailableForFreeOrganization": {
-    "message": "This feature is not available for free organizations. Contact your organization owner to upgrade."
+    "message": "この機能は無料の組織では利用できません。アップグレードするには組織の所有者に連絡してください。"
   }
 }

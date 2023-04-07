@@ -1255,6 +1255,15 @@
   "importSuccess": {
     "message": "Данните са внесени успешно в трезора ви."
   },
+  "importSuccessNumberOfItems": {
+    "message": "A total of $AMOUNT$ items were imported.",
+    "placeholders": {
+      "amount": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
   "dataExportSuccess": {
     "message": "Данните са изнесени успешно"
   },
@@ -4858,8 +4867,8 @@
   "activateAutofill": {
     "message": "Включване на автоматичното попълване"
   },
-  "activateAutofillDesc": {
-    "message": "Включване на автоматичното попълване при зареждане на страница в браузърното разширение на всички текущи и бъдещи членове."
+  "activateAutofillPolicyDesc": {
+    "message": "Activate the auto-fill on page load setting on the browser extension for all existing and new members."
   },
   "experimentalFeature": {
     "message": "Компроментирани и измамни уеб сайтове могат да се възползват от автоматичното попълване при зареждане на страницата."
@@ -6674,6 +6683,6 @@
     "message": "Dismiss"
   },
   "notAvailableForFreeOrganization": {
-    "message": "This feature is not available for free organizations. Contact your organization owner to upgrade."
+    "message": "Тази функционалност не е налична за организациите използващи безплатния план. Свържете се със собственика на организацията си, за да преминете към платен абонамент."
   }
 }

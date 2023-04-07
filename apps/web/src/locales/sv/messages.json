@@ -1255,6 +1255,15 @@
   "importSuccess": {
     "message": "Data har importerats till ditt valv"
   },
+  "importSuccessNumberOfItems": {
+    "message": "A total of $AMOUNT$ items were imported.",
+    "placeholders": {
+      "amount": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
   "dataExportSuccess": {
     "message": "Data har exporterats från ditt valv"
   },
@@ -1696,7 +1705,7 @@
     "message": "Rapport om avslöjade lösenord"
   },
   "exposedPasswordsReportDesc": {
-    "message": "Lösenord som exponeras i ett dataintrång är enkla mål för angripare. Ändra dessa lösenord för att förhindra potentiella intrång."
+    "message": "Lösenord som exponerats vid ett dataintrång är enkla mål för angripare. Ändra dessa lösenord för att förhindra potentiella intrång."
   },
   "exposedPasswordsFound": {
     "message": "Avslöjade lösenord hittades"
@@ -1910,7 +1919,7 @@
     }
   },
   "premiumPriceWithFamilyPlan": {
-    "message": "Go premium for just $PRICE$ /year, or get premium accounts for $FAMILYPLANUSERCOUNT$ users and unlimited family sharing with a ",
+    "message": "Uppgradera till premium för bara $PRICE$ /år, eller skaffa premiumkonton för $FAMILYPLANUSERCOUNT$ användare och obegränsad familjedelning med en ",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -2020,7 +2029,7 @@
     "message": "Avsluta prenumeration"
   },
   "subscriptionExpiration": {
-    "message": "Subscription expiration"
+    "message": "Förfallodatum för prenumeration"
   },
   "subscriptionCanceled": {
     "message": "Prenumerationen har avslutats."
@@ -2068,7 +2077,7 @@
     "message": "Hantera prenumeration"
   },
   "launchCloudSubscription": {
-    "message": "Launch Cloud Subscription"
+    "message": "Starta molnprenumeration"
   },
   "storage": {
     "message": "Lagring"
@@ -2370,7 +2379,7 @@
     }
   },
   "trialThankYou": {
-    "message": "Thanks for signing up for Bitwarden for $PLAN$!",
+    "message": "Tack för att du registrerar dig för Bitwarden för $PLAN$!",
     "placeholders": {
       "plan": {
         "content": "$1",
@@ -2379,7 +2388,7 @@
     }
   },
   "trialPaidInfoMessage": {
-    "message": "Your $PLAN$ 7 day free trial will be converted to a paid subscription after 7 days.",
+    "message": "Din $PLAN$ 7-dagars gratis provperiod kommer att övergå till en betald prenumeration efter 7 dagar.",
     "placeholders": {
       "plan": {
         "content": "$1",
@@ -2388,7 +2397,7 @@
     }
   },
   "trialConfirmationEmail": {
-    "message": "We've sent a confirmation email to your team's billing email at "
+    "message": "Vi har skickat en bekräftelse via e-post till ditt teams faktureringsadress "
   },
   "monthly": {
     "message": "Månadsvis"
@@ -2463,7 +2472,7 @@
     "message": "Är du säker på att du vill radera denna grupp?"
   },
   "deleteMultipleGroupsConfirmation": {
-    "message": "Are you sure you want to delete the following $QUANTITY$ group(s)?",
+    "message": "Är du säker på att du vill ta bort följande $QUANTITY$ grupper?",
     "placeholders": {
       "quantity": {
         "content": "$1",
@@ -3312,7 +3321,7 @@
     "message": "Prenumerationsplatser"
   },
   "subscriptionUpdated": {
-    "message": "Subscription updated"
+    "message": "Prenumeration uppdaterad"
   },
   "additionalOptions": {
     "message": "Ytterligare alternativ"
@@ -3628,7 +3637,7 @@
     "message": "Klona"
   },
   "masterPassPolicyTitle": {
-    "message": "Master password requirements"
+    "message": "Krav på huvudlösenord"
   },
   "masterPassPolicyDesc": {
     "message": "Ange minimikrav för huvudlösenordsstyrka."
@@ -4762,7 +4771,7 @@
     "message": "Provider suspended"
   },
   "providerUpdated": {
-    "message": "Provider saved"
+    "message": "Leverantör sparades"
   },
   "yourProviderIs": {
     "message": "Your Provider is $PROVIDER$. They have administrative and billing privileges for your organization.",
@@ -4789,13 +4798,13 @@
     "message": "Lägg till"
   },
   "updatedMasterPassword": {
-    "message": "Master password saved"
+    "message": "Huvudlösenordet sparades"
   },
   "updateMasterPassword": {
     "message": "Uppdatera huvudlösenord"
   },
   "updateMasterPasswordWarning": {
-    "message": "Your master password was recently changed by an administrator in your organization. In order to access the vault, you must update your master password now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
+    "message": "Ditt huvudlösenord ändrades nyligen av en administratör i din organisation. För att få tillgång till valvet måste du uppdatera ditt huvudlösenord nu. Om du fortsätter kommer du att loggas ut från din nuvarande session, vilket kräver att du loggar in igen. Aktiva sessioner på andra enheter kan komma att vara aktiva i upp till en timme."
   },
   "masterPasswordInvalidWarning": {
     "message": "Your master password does not meet the policy requirements of this organization. In order to join the organization, you must update your master password now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
@@ -4858,8 +4867,8 @@
   "activateAutofill": {
     "message": "Aktivera autofyll"
   },
-  "activateAutofillDesc": {
-    "message": "Activate the auto-fill with page load settings on the browser extension for all existing and new members."
+  "activateAutofillPolicyDesc": {
+    "message": "Activate the auto-fill on page load setting on the browser extension for all existing and new members."
   },
   "experimentalFeature": {
     "message": "Compromised or untrusted websites can exploit auto-fill on page load."
@@ -6641,13 +6650,13 @@
     "message": "Check known data breaches for this password"
   },
   "exposedMasterPassword": {
-    "message": "Exposed Master Password"
+    "message": "Huvudlösenordet har exponerats"
   },
   "exposedMasterPasswordDesc": {
-    "message": "Password found in a data breach. Use a unique password to protect your account. Are you sure you want to use an exposed password?"
+    "message": "Lösenordet upptäcktes vid ett dataintrång. Använd ett unikt lösenord för att skydda ditt konto. Är det säkert att du vill använda ett exponerat lösenord?"
   },
   "weakAndExposedMasterPassword": {
-    "message": "Weak and Exposed Master Password"
+    "message": "Svagt och exponerat huvudlösenord"
   },
   "weakAndBreachedMasterPasswordDesc": {
     "message": "Weak password identified and found in a data breach. Use a strong and unique password to protect your account. Are you sure you want to use this password?"
@@ -6674,6 +6683,6 @@
     "message": "Dismiss"
   },
   "notAvailableForFreeOrganization": {
-    "message": "This feature is not available for free organizations. Contact your organization owner to upgrade."
+    "message": "Denna funktion är inte tillgänglig för icke-betalande organisationer. Kontakta organisationens ägare för att uppgradera."
   }
 }

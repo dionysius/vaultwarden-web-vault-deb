@@ -1255,6 +1255,15 @@
   "importSuccess": {
     "message": "Veriler başarıyla içe aktarıldı"
   },
+  "importSuccessNumberOfItems": {
+    "message": "Toplam $AMOUNT$ kayıt içe aktarıldı.",
+    "placeholders": {
+      "amount": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
   "dataExportSuccess": {
     "message": "Veriler başarıyla dışa aktarıldı"
   },
@@ -4858,7 +4867,7 @@
   "activateAutofill": {
     "message": "Otomatik doldurmayı etkinleştir"
   },
-  "activateAutofillDesc": {
+  "activateAutofillPolicyDesc": {
     "message": "Tüm mevcut ve yeni üyeler için tarayıcı uzantısındaki \"sayfa yüklendiğinde otomatik doldur\" ayarını etkinleştir."
   },
   "experimentalFeature": {
@@ -6674,6 +6683,6 @@
     "message": "Kapat"
   },
   "notAvailableForFreeOrganization": {
-    "message": "This feature is not available for free organizations. Contact your organization owner to upgrade."
+    "message": "Bu özellik ücretsiz kuruluşlar için mevcut değildir. Yükseltmek için kuruluşunuzun sahibiyle iletişime geçin."
   }
 }

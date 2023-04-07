@@ -1255,6 +1255,15 @@
   "importSuccess": {
     "message": "Daten erfolgreich importiert"
   },
+  "importSuccessNumberOfItems": {
+    "message": "Insgesamt wurden $AMOUNT$ Einträge importiert.",
+    "placeholders": {
+      "amount": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
   "dataExportSuccess": {
     "message": "Daten erfolgreich exportiert"
   },
@@ -1857,7 +1866,7 @@
     "description": "Add more credit to your account's balance."
   },
   "amount": {
-    "message": "Anzahl",
+    "message": "Betrag",
     "description": "Dollar amount, or quantity."
   },
   "creditDelayed": {
@@ -3507,7 +3516,7 @@
     "message": "Ausgewählt"
   },
   "ownership": {
-    "message": "Besitzer"
+    "message": "Eigentümer"
   },
   "whoOwnsThisItem": {
     "message": "Wem gehört dieser Eintrag?"
@@ -4664,7 +4673,7 @@
     "message": "Fehler"
   },
   "resetPasswordManageUsers": {
-    "message": "Benutzer verwalten muss ebenfalls mit der Passwort zurücksetzen Berechtigung aktiviert werden"
+    "message": "\"Benutzer verwalten\" muss ebenfalls mit der \"Passwort zurücksetzen\"-Berechtigung aktiviert werden"
   },
   "setupProvider": {
     "message": "Anbieter-Einrichtung"
@@ -4858,8 +4867,8 @@
   "activateAutofill": {
     "message": "Auto-Ausfüllen aktivieren"
   },
-  "activateAutofillDesc": {
-    "message": "Aktiviere Auto-Ausfüllen mit den Seitenladeeinstellungen der Browser-Erweiterung für alle bestehenden und neuen Mitglieder."
+  "activateAutofillPolicyDesc": {
+    "message": "Activate the auto-fill on page load setting on the browser extension for all existing and new members."
   },
   "experimentalFeature": {
     "message": "Kompromittierte oder nicht vertrauenswürdige Websites können Auto-Ausfüllen beim Laden der Seite ausnutzen."
@@ -4907,16 +4916,16 @@
     "message": "Ansprüche vom Benutzer Info-Endpunkt erhalten"
   },
   "additionalScopes": {
-    "message": "Zusätzliche/Benutzerdefinierte Bereiche (durch Komma getrennt)"
+    "message": "Benutzerdefinierte Bereiche"
   },
   "additionalUserIdClaimTypes": {
-    "message": "Zusätzliche/benutzerdefinierte Client-ID Anspruchstypen (durch Komma getrennt)"
+    "message": "Benutzerdefinierte Client-ID Anspruchstypen"
   },
   "additionalEmailClaimTypes": {
-    "message": "Zusätzliche/Benutzerdefinierte E-Mail Anspruchstypen (durch Komma getrennt)"
+    "message": "Benutzerdefinierte E-Mail Anspruchstypen"
   },
   "additionalNameClaimTypes": {
-    "message": "Zusätzliche/Benutzerdefinierte Namen Anspruchstypen (durch Komma getrennt)"
+    "message": "Benutzerdefinierte Namen Anspruchstypen"
   },
   "acrValues": {
     "message": "Angeforderte Authentifizierungskontextklassen Referenzwerte (acr_values)"
@@ -4946,7 +4955,7 @@
     "message": "Minimal eingehender Signaturalgorithmus"
   },
   "spWantAssertionsSigned": {
-    "message": "Möchte Zusicherungen signieren"
+    "message": "Signierte Assertions erwarten"
   },
   "spValidateCertificates": {
     "message": "Zertifikate validieren"
@@ -6674,6 +6683,6 @@
     "message": "Verwerfen"
   },
   "notAvailableForFreeOrganization": {
-    "message": "This feature is not available for free organizations. Contact your organization owner to upgrade."
+    "message": "Diese Funktion ist für kostenlose Organisationen nicht verfügbar. Kontaktiere deinen Organisationseigentümer zum Upgraden."
   }
 }

@@ -1255,6 +1255,15 @@
   "importSuccess": {
     "message": "Dane zostały zaimportowane"
   },
+  "importSuccessNumberOfItems": {
+    "message": "W sumie zaimportowano $AMOUNT$ elementów.",
+    "placeholders": {
+      "amount": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
   "dataExportSuccess": {
     "message": "Dane zostały pomyślnie wyeksportowane"
   },
@@ -4858,7 +4867,7 @@
   "activateAutofill": {
     "message": "Włącz autouzupełnianie"
   },
-  "activateAutofillDesc": {
+  "activateAutofillPolicyDesc": {
     "message": "Aktywuj autouzupełnianie podczas wczytywania strony w rozszerzeniu przeglądarki dla wszystkich istniejących i nowych użytkowników."
   },
   "experimentalFeature": {

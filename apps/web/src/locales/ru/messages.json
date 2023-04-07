@@ -1255,6 +1255,15 @@
   "importSuccess": {
     "message": "Данные успешно импортированы"
   },
+  "importSuccessNumberOfItems": {
+    "message": "A total of $AMOUNT$ items were imported.",
+    "placeholders": {
+      "amount": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
   "dataExportSuccess": {
     "message": "Данные успешно экспортированы"
   },
@@ -2020,7 +2029,7 @@
     "message": "Отменить подписку"
   },
   "subscriptionExpiration": {
-    "message": "Subscription expiration"
+    "message": "Срок действия подписки"
   },
   "subscriptionCanceled": {
     "message": "Подписка отменена."
@@ -4858,8 +4867,8 @@
   "activateAutofill": {
     "message": "Активировать автозаполнение"
   },
-  "activateAutofillDesc": {
-    "message": "Включить автозаполнение при загрузке страницы в расширении браузера для всех существующих и новых участников."
+  "activateAutofillPolicyDesc": {
+    "message": "Activate the auto-fill on page load setting on the browser extension for all existing and new members."
   },
   "experimentalFeature": {
     "message": "Взломанные или недоверенные сайты могут внедрить вредоносный код во время автозаполнения при загрузке страницы."
@@ -5878,7 +5887,7 @@
     }
   },
   "deleteServiceAccountToast": {
-    "message": "Service account deleted"
+    "message": "Сервисный аккаунт удален"
   },
   "deleteServiceAccountsToast": {
     "message": "Сервисные аккаунты удалены"
@@ -6674,6 +6683,6 @@
     "message": "Отклонить"
   },
   "notAvailableForFreeOrganization": {
-    "message": "Эта функция недоступна для бесплатных организаций. Свяжитесь с владельцем вашей организации для обновления."
+    "message": "Эта функция недоступна для организаций с бесплатным тарифом. Свяжитесь с владельцем вашей организации для перехода на другой тариф."
   }
 }

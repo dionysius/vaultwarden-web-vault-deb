@@ -281,35 +281,35 @@
     "message": "Претражи омиљене"
   },
   "searchLogin": {
-    "message": "Search logins",
+    "message": "Претражити пријаве",
     "description": "Search Login type"
   },
   "searchCard": {
-    "message": "Search cards",
+    "message": "Претражити картице",
     "description": "Search Card type"
   },
   "searchIdentity": {
-    "message": "Search identities",
+    "message": "Претражити идентитете",
     "description": "Search Identity type"
   },
   "searchSecureNote": {
-    "message": "Search secure notes",
+    "message": "Претражити сигурносне белешке",
     "description": "Search Secure Note type"
   },
   "searchVault": {
     "message": "Претражи сеф"
   },
   "searchMyVault": {
-    "message": "Search my vault"
+    "message": "Претражити мој сеф"
   },
   "searchOrganization": {
-    "message": "Search organization"
+    "message": "Претражити организацију"
   },
   "searchMembers": {
-    "message": "Search members"
+    "message": "Претрага чланова"
   },
   "searchGroups": {
-    "message": "Search groups"
+    "message": "Претрага група"
   },
   "allItems": {
     "message": "Све ставке"
@@ -393,7 +393,7 @@
     "message": "Изабери"
   },
   "newItem": {
-    "message": "New item"
+    "message": "Нова ставке"
   },
   "addItem": {
     "message": "Додај ставку"
@@ -405,11 +405,11 @@
     "message": "Види ставку"
   },
   "new": {
-    "message": "New",
+    "message": "Ново/а",
     "description": "for adding new items"
   },
   "item": {
-    "message": "Item"
+    "message": "Ставка"
   },
   "ex": {
     "message": "нпр.",
@@ -477,7 +477,7 @@
     "message": "Стaвке сефа"
   },
   "filter": {
-    "message": "Filter"
+    "message": "Филтер"
   },
   "moveSelectedToOrg": {
     "message": "Премести одабрано у организацију"
@@ -586,10 +586,10 @@
     "message": "Фасцикла обрисана"
   },
   "editInfo": {
-    "message": "Edit info"
+    "message": "Измени информације"
   },
   "access": {
-    "message": "Access"
+    "message": "Приступ"
   },
   "loggedOut": {
     "message": "Одјављено"
@@ -697,7 +697,7 @@
     "message": "Поновно уписивање главне лозинке је неопходно."
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least $VALUE$ characters long.",
+    "message": "Главна лозинка мора бити дужине најмање $VALUE$ карактера.",
     "description": "The Master Password must be at least a specific number of characters long.",
     "placeholders": {
       "value": {
@@ -756,7 +756,7 @@
     "message": "Нама ставке у листи."
   },
   "noPermissionToViewAllCollectionItems": {
-    "message": "You do not have permission to view all items in this collection."
+    "message": "Немате дозволу да видите све ставке у овој колекцији."
   },
   "noCollectionsInList": {
     "message": "Нема колекције у листи."
@@ -768,7 +768,7 @@
     "message": "Нема корисника у листи."
   },
   "noMembersInList": {
-    "message": "There are no members to list."
+    "message": "Нема чланова за приказивање."
   },
   "noEventsInList": {
     "message": "Нема догађаја у листи."
@@ -915,7 +915,7 @@
     }
   },
   "deleteSelectedCollectionsDesc": {
-    "message": "$COUNT$ collection(s) will be permanently deleted.",
+    "message": "$COUNT$ колекција/е ће бити трајно избрисана/е.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -924,7 +924,7 @@
     }
   },
   "deleteSelectedConfirmation": {
-    "message": "Are you sure you want to continue?"
+    "message": "Желите ли заиста да наставите?"
   },
   "moveSelectedItemsDesc": {
     "message": "Изаберите фасциклу у коју желите да преместите одабране $COUNT$ ставке.",
@@ -1254,6 +1254,15 @@
   },
   "importSuccess": {
     "message": "Подаци су успешно увезени у ваш сеф."
+  },
+  "importSuccessNumberOfItems": {
+    "message": "A total of $AMOUNT$ items were imported.",
+    "placeholders": {
+      "amount": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
   },
   "dataExportSuccess": {
     "message": "Подаци су успешно извезени"
@@ -1923,7 +1932,7 @@
     }
   },
   "bitwardenFamiliesPlan": {
-    "message": "Bitwarden Families plan."
+    "message": "Bitwarden Families план."
   },
   "addons": {
     "message": "Додаци"
@@ -2020,7 +2029,7 @@
     "message": "Откажи претплату"
   },
   "subscriptionExpiration": {
-    "message": "Subscription expiration"
+    "message": "Истицање претплате"
   },
   "subscriptionCanceled": {
     "message": "Претплата је отказана."
@@ -2463,7 +2472,7 @@
     "message": "Да ли сте сигурни да желите да обришете ову групу?"
   },
   "deleteMultipleGroupsConfirmation": {
-    "message": "Are you sure you want to delete the following $QUANTITY$ group(s)?",
+    "message": "Да ли сте сигурни да желите да избришете $QUANTITY$ групу/е?",
     "placeholders": {
       "quantity": {
         "content": "$1",
@@ -2514,13 +2523,13 @@
     "message": "Уреди колекцију"
   },
   "collectionInfo": {
-    "message": "Collection info"
+    "message": "Инфо колекције"
   },
   "deleteCollectionConfirmation": {
     "message": "Сигурно обрисати ову колекцију?"
   },
   "editMember": {
-    "message": "Edit member"
+    "message": "Уредити члан"
   },
   "fieldOnTabRequiresAttention": {
     "message": "A field on the '$TAB$' tab requires your attention.",
@@ -2796,7 +2805,7 @@
     }
   },
   "deletedCollections": {
-    "message": "Deleted collections"
+    "message": "Избрисане колекције"
   },
   "deletedCollectionId": {
     "message": "Колекција $ID$ избрисана.",
@@ -2844,7 +2853,7 @@
     }
   },
   "deletedManyGroups": {
-    "message": "Deleted $QUANTITY$ group(s).",
+    "message": "Обрисано $QUANTITY$ група/е.",
     "placeholders": {
       "quantity": {
         "content": "$1",
@@ -4858,8 +4867,8 @@
   "activateAutofill": {
     "message": "Активирати ауто-пуњење"
   },
-  "activateAutofillDesc": {
-    "message": "Активирајте ауто-пуњење са подешавањима учитавања странице на екстензију прегледача за све постојеће и нове чланове."
+  "activateAutofillPolicyDesc": {
+    "message": "Activate the auto-fill on page load setting on the browser extension for all existing and new members."
   },
   "experimentalFeature": {
     "message": "Компромитоване или непоуздане веб локације могу да искористе ауто-пуњење при учитавању странице."
@@ -5488,7 +5497,7 @@
     "message": "Forwarded email alias"
   },
   "forwardedEmailDesc": {
-    "message": "Generate an email alias with an external forwarding service."
+    "message": "Генеришите псеудоним е-поште помоћу екстерне услуге прослеђивања."
   },
   "hostname": {
     "message": "Име домаћина",
@@ -5530,7 +5539,7 @@
     "description": "the text, 'SCIM', is an acronymn and should not be translated."
   },
   "scimEnabledCheckboxDesc": {
-    "message": "Enable SCIM",
+    "message": "Упали SCIM",
     "description": "the text, 'SCIM', is an acronymn and should not be translated."
   },
   "scimEnabledCheckboxDescHelpText": {
@@ -6328,7 +6337,7 @@
     "message": "Member/Group"
   },
   "groupAndMemberColumnHeader": {
-    "message": "Member"
+    "message": "Члан"
   },
   "selectGroupsAndMembers": {
     "message": "Select groups and members"
@@ -6340,22 +6349,22 @@
     "message": "Permissions set for a member will replace permissions set by that member's group"
   },
   "noMembersOrGroupsAdded": {
-    "message": "No members or groups added"
+    "message": "Нема додатих чланова или група"
   },
   "deleted": {
-    "message": "Deleted"
+    "message": "Обрисано"
   },
   "memberStatusFilter": {
-    "message": "Member status filter"
+    "message": "Филтрирај члан по статусу"
   },
   "inviteMember": {
-    "message": "Invite member"
+    "message": "Позови Члан"
   },
   "needsConfirmation": {
-    "message": "Needs confirmation"
+    "message": "Потребна је потврда"
   },
   "memberRole": {
-    "message": "Member role"
+    "message": "Улога члана"
   },
   "moreFromBitwarden": {
     "message": "Више од Bitwarden"

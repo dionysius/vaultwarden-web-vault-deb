@@ -1255,6 +1255,15 @@
   "importSuccess": {
     "message": "De gegevens zijn in je kluis geïmporteerd."
   },
+  "importSuccessNumberOfItems": {
+    "message": "A total of $AMOUNT$ items were imported.",
+    "placeholders": {
+      "amount": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
   "dataExportSuccess": {
     "message": "Gegevens succesvol geëxporteerd"
   },
@@ -4858,8 +4867,8 @@
   "activateAutofill": {
     "message": "Automatisch invullen activeren"
   },
-  "activateAutofillDesc": {
-    "message": "Automatisch invullen bij laden van pagina activeren in de browserextensie voor alle bestaande en nieuwe leden."
+  "activateAutofillPolicyDesc": {
+    "message": "Activate the auto-fill on page load setting on the browser extension for all existing and new members."
   },
   "experimentalFeature": {
     "message": "Gehackte of onbetrouwbare websites kunnen automatisch invullen bij laden van pagina misbruiken."

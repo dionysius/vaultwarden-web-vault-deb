@@ -1255,6 +1255,15 @@
   "importSuccess": {
     "message": "Az adatok sikeresen importálásra kerültek a széfbe."
   },
+  "importSuccessNumberOfItems": {
+    "message": "A total of $AMOUNT$ items were imported.",
+    "placeholders": {
+      "amount": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
   "dataExportSuccess": {
     "message": "Az adatok sikeresen exportálásra kerültek."
   },
@@ -4858,8 +4867,8 @@
   "activateAutofill": {
     "message": "Automatikus kitöltés bekapcsolása"
   },
-  "activateAutofillDesc": {
-    "message": "Bekapcsolja az automatikus kitöltést az oldalbetöltési beállításokkal a böngésző bővítményben minden meglévő és új tag esetében."
+  "activateAutofillPolicyDesc": {
+    "message": "Activate the auto-fill on page load setting on the browser extension for all existing and new members."
   },
   "experimentalFeature": {
     "message": "A veszélyeztetett vagy nem megbízható webhelyek kihasználhatják az oldal betöltéskor végrehajtott automatikus kitöltést."
@@ -6674,6 +6683,6 @@
     "message": "Elvetés"
   },
   "notAvailableForFreeOrganization": {
-    "message": "This feature is not available for free organizations. Contact your organization owner to upgrade."
+    "message": "Ez a funkció nem érhető el ingyenes szervezetek számára. Az áttéréshez a szervezet tulajdonosához kell fordulni."
   }
 }

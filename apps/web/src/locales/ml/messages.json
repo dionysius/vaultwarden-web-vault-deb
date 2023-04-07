@@ -1255,6 +1255,15 @@
   "importSuccess": {
     "message": "Data has been successfully imported into your vault."
   },
+  "importSuccessNumberOfItems": {
+    "message": "A total of $AMOUNT$ items were imported.",
+    "placeholders": {
+      "amount": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
   "dataExportSuccess": {
     "message": "Data successfully exported"
   },
@@ -4858,8 +4867,8 @@
   "activateAutofill": {
     "message": "Activate auto-fill"
   },
-  "activateAutofillDesc": {
-    "message": "Activate the auto-fill with page load settings on the browser extension for all existing and new members."
+  "activateAutofillPolicyDesc": {
+    "message": "Activate the auto-fill on page load setting on the browser extension for all existing and new members."
   },
   "experimentalFeature": {
     "message": "Compromised or untrusted websites can exploit auto-fill on page load."

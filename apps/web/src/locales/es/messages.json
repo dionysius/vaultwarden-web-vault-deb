@@ -1255,6 +1255,15 @@
   "importSuccess": {
     "message": "La información ha sido importada correctamente en tu caja fuerte."
   },
+  "importSuccessNumberOfItems": {
+    "message": "A total of $AMOUNT$ items were imported.",
+    "placeholders": {
+      "amount": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
   "dataExportSuccess": {
     "message": "Datos exportados con éxito"
   },
@@ -4858,8 +4867,8 @@
   "activateAutofill": {
     "message": "Activar autocompletar"
   },
-  "activateAutofillDesc": {
-    "message": "Active el autorrelleno con la configuración de carga de página en la extensión del navegador para todos los miembros existentes y nuevos."
+  "activateAutofillPolicyDesc": {
+    "message": "Activate the auto-fill on page load setting on the browser extension for all existing and new members."
   },
   "experimentalFeature": {
     "message": "Los sitios web comprometidos o no confiables pueden explotar autocompletar al cargar la página."
@@ -5748,7 +5757,7 @@
     "description": "The action to delete multiple secrets from the system."
   },
   "hardDeleteSecret": {
-    "message": "Permanently delete secret"
+    "message": "Eliminar secreto permanentemente"
   },
   "hardDeleteSecrets": {
     "message": "Eliminar secretos de forma permanente"
@@ -5878,7 +5887,7 @@
     }
   },
   "deleteServiceAccountToast": {
-    "message": "Service account deleted"
+    "message": "Cuenta de servicio eliminada"
   },
   "deleteServiceAccountsToast": {
     "message": "Cuentas de servicio eliminadas"
@@ -6502,7 +6511,7 @@
     "message": "Cambiar ajustes de KDF"
   },
   "changeKdfLoggedOutWarning": {
-    "message": "Proceeding will log you out of all active sessions. You will need to log back in and complete two-step login setup. We recommend exporting your vault before changing your encryption settings to prevent data loss."
+    "message": "Al continuar, saldrá de todas las sesiones activas. Deberá volver a iniciar sesión y completar la configuración de inicio de sesión en dos pasos. Le recomendamos que exporte su caja fuerte antes de cambiar la configuración de cifrado para evitar la pérdida de datos."
   },
   "secretsManagerBeta": {
     "message": "Administrador de secretos Beta"
@@ -6561,7 +6570,7 @@
     "message": "Crear un proyecto"
   },
   "createServiceAccount": {
-    "message": "Create a service account"
+    "message": "Crear cuenta de servicio"
   },
   "downloadThe": {
     "message": "Descargar el",

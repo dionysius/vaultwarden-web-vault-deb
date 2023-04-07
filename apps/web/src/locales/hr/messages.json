@@ -1255,6 +1255,15 @@
   "importSuccess": {
     "message": "Uvoz podataka u trezor je uspio"
   },
+  "importSuccessNumberOfItems": {
+    "message": "A total of $AMOUNT$ items were imported.",
+    "placeholders": {
+      "amount": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
   "dataExportSuccess": {
     "message": "Izvoz podataka uspješan"
   },
@@ -4858,8 +4867,8 @@
   "activateAutofill": {
     "message": "Aktiviraj auto-ispunu"
   },
-  "activateAutofillDesc": {
-    "message": "Aktivira auto-ispunu kod učitavanja stranice u dodatku za preglednik za sve postojeće i nove korisnike."
+  "activateAutofillPolicyDesc": {
+    "message": "Activate the auto-fill on page load setting on the browser extension for all existing and new members."
   },
   "experimentalFeature": {
     "message": "Ugrožene ili nepouzdane web stranice mogu iskoristiti auto-ispunu prilikom učitavanja stranice."

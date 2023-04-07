@@ -1255,6 +1255,15 @@
   "importSuccess": {
     "message": "داده‌ها با موفقیت درون ریزی شد"
   },
+  "importSuccessNumberOfItems": {
+    "message": "A total of $AMOUNT$ items were imported.",
+    "placeholders": {
+      "amount": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
   "dataExportSuccess": {
     "message": "داده‌ها با موفقیت برون ریزی شد"
   },
@@ -4858,8 +4867,8 @@
   "activateAutofill": {
     "message": "پر کردن خودکار را فعال کنید"
   },
-  "activateAutofillDesc": {
-    "message": "تنظیمات پر کردن خودکار با بارگذاری صفحه را در افزونه مرورگر برای همه اعضای موجود و جدید فعال کنید."
+  "activateAutofillPolicyDesc": {
+    "message": "Activate the auto-fill on page load setting on the browser extension for all existing and new members."
   },
   "experimentalFeature": {
     "message": "وب‌سایت‌های در معرض خطر یا نامعتبر می‌توانند از پر کردن خودکار در بارگذاری صفحه سوء استفاده کنند."

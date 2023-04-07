@@ -1255,6 +1255,15 @@
   "importSuccess": {
     "message": "Дані успішно імпортовано"
   },
+  "importSuccessNumberOfItems": {
+    "message": "A total of $AMOUNT$ items were imported.",
+    "placeholders": {
+      "amount": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
   "dataExportSuccess": {
     "message": "Дані успішно експортовано"
   },
@@ -4858,8 +4867,8 @@
   "activateAutofill": {
     "message": "Активувати автозаповнення"
   },
-  "activateAutofillDesc": {
-    "message": "Активувати автозаповнення під час завантаження сторінки в налаштуваннях розширення браузера для всіх наявних і нових учасників."
+  "activateAutofillPolicyDesc": {
+    "message": "Activate the auto-fill on page load setting on the browser extension for all existing and new members."
   },
   "experimentalFeature": {
     "message": "Скомпрометовані або ненадійні вебсайти можуть використати функцію автозаповнення під час завантаження сторінки для завдання шкоди."

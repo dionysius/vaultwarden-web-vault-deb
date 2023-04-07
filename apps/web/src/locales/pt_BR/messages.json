@@ -1255,6 +1255,15 @@
   "importSuccess": {
     "message": "Os dados foram importados com sucesso para o seu cofre."
   },
+  "importSuccessNumberOfItems": {
+    "message": "A total of $AMOUNT$ items were imported.",
+    "placeholders": {
+      "amount": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
   "dataExportSuccess": {
     "message": "Dados exportados com sucesso"
   },
@@ -4858,8 +4867,8 @@
   "activateAutofill": {
     "message": "Ativar preenchimento automático"
   },
-  "activateAutofillDesc": {
-    "message": "Ative o autopreenchimento com configurações de carregamento de página na extensão do navegador para todos os membros existentes e novos."
+  "activateAutofillPolicyDesc": {
+    "message": "Activate the auto-fill on page load setting on the browser extension for all existing and new members."
   },
   "experimentalFeature": {
     "message": "Sites comprometidos ou não confiáveis podem tomar vantagem do autopreenchimento ao carregar a página."

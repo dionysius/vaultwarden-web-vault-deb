@@ -1255,6 +1255,15 @@
   "importSuccess": {
     "message": "Tietojen tuonti onnistui"
   },
+  "importSuccessNumberOfItems": {
+    "message": "A total of $AMOUNT$ items were imported.",
+    "placeholders": {
+      "amount": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
   "dataExportSuccess": {
     "message": "Tietojen vienti onnistui"
   },
@@ -4858,8 +4867,8 @@
   "activateAutofill": {
     "message": "Aktivoi automaattinen täyttö"
   },
-  "activateAutofillDesc": {
-    "message": "Aktivoi selainlaajennuksen \"Automaattinen täyttö sivun avautuessa\" -asetus kaikille nykyisille ja uusille jäsenille."
+  "activateAutofillPolicyDesc": {
+    "message": "Activate the auto-fill on page load setting on the browser extension for all existing and new members."
   },
   "experimentalFeature": {
     "message": "Vaarantuneet tai epäluotettavat sivustot voivat väärinkäyttää sivun avautuessa suoritettavaa automaattista täyttöä."
@@ -6674,6 +6683,6 @@
     "message": "Hylkää"
   },
   "notAvailableForFreeOrganization": {
-    "message": "This feature is not available for free organizations. Contact your organization owner to upgrade."
+    "message": "Ominaisuus ei ole käytettävissä ilmaisella organisaatiotilauksella. Ole tilauspäivityksestä yhteydessä organisaatiosi omistajaan."
   }
 }

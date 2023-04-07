@@ -1,6 +1,6 @@
 {
   "pageTitle": {
-    "message": "$APP_NAME$ Web Vault",
+    "message": "$APP_NAME$ ვებ საცავი",
     "description": "The title of the website in the browser window.",
     "placeholders": {
       "app_name": {
@@ -10,10 +10,10 @@
     }
   },
   "whatTypeOfItem": {
-    "message": "What type of item is this?"
+    "message": "Რა სახის საგანია ეს?"
   },
   "name": {
-    "message": "Name"
+    "message": "სახელი"
   },
   "uri": {
     "message": "URI"
@@ -29,214 +29,214 @@
     }
   },
   "newUri": {
-    "message": "New URI"
+    "message": "ახალი URI"
   },
   "username": {
-    "message": "Username"
+    "message": "მომხმარებლის სახელი"
   },
   "password": {
-    "message": "Password"
+    "message": "პაროლი"
   },
   "newPassword": {
-    "message": "New password"
+    "message": "ახალი პაროლი"
   },
   "passphrase": {
-    "message": "Passphrase"
+    "message": "ფრაზა პაროლი"
   },
   "notes": {
-    "message": "Notes"
+    "message": "ჩანაწერები"
   },
   "customFields": {
-    "message": "Custom fields"
+    "message": "თქვენზე მორგებული ველები"
   },
   "cardholderName": {
-    "message": "Cardholder name"
+    "message": "ბარათის მფლობელის სახელი"
   },
   "number": {
-    "message": "Number"
+    "message": "ნომერი"
   },
   "brand": {
-    "message": "Brand"
+    "message": "ბრენდი"
   },
   "expiration": {
-    "message": "Expiration"
+    "message": "ვადის გასვლის თარიღი"
   },
   "securityCode": {
-    "message": "Security code (CVV)"
+    "message": "უსაფრთხოების კოდი (CVV)"
   },
   "identityName": {
-    "message": "Identity name"
+    "message": "მოწმობის სახელი"
   },
   "company": {
-    "message": "Company"
+    "message": "კომპანია"
   },
   "ssn": {
-    "message": "Social Security number"
+    "message": "პირადი ნომერი"
   },
   "passportNumber": {
-    "message": "Passport number"
+    "message": "პასპორტის ნომერი"
   },
   "licenseNumber": {
-    "message": "License number"
+    "message": "მართვის მოწმობის ნომერი"
   },
   "email": {
-    "message": "Email"
+    "message": "ელ-ფოსტა"
   },
   "phone": {
-    "message": "Phone"
+    "message": "ტელეფონი"
   },
   "january": {
-    "message": "January"
+    "message": "იანვარი"
   },
   "february": {
-    "message": "February"
+    "message": "თებერვალი"
   },
   "march": {
-    "message": "March"
+    "message": "მარტი"
   },
   "april": {
-    "message": "April"
+    "message": "აპრილი"
   },
   "may": {
-    "message": "May"
+    "message": "მაისი"
   },
   "june": {
-    "message": "June"
+    "message": "ივნისი"
   },
   "july": {
-    "message": "July"
+    "message": "ივლისი"
   },
   "august": {
-    "message": "August"
+    "message": "აგვისტო"
   },
   "september": {
-    "message": "September"
+    "message": "სექტემბერი"
   },
   "october": {
-    "message": "October"
+    "message": "ოქტომბერი"
   },
   "november": {
-    "message": "November"
+    "message": "ნოემბერი"
   },
   "december": {
-    "message": "December"
+    "message": "დეკემბერი"
   },
   "title": {
-    "message": "Title"
+    "message": "წოდება"
   },
   "mr": {
-    "message": "Mr"
+    "message": "ბატონი"
   },
   "mrs": {
-    "message": "Mrs"
+    "message": "ქალბატონი"
   },
   "ms": {
-    "message": "Ms"
+    "message": "ქალბატონი"
   },
   "mx": {
-    "message": "Mx"
+    "message": "უსქესო"
   },
   "dr": {
-    "message": "Dr"
+    "message": "დოქტორი"
   },
   "expirationMonth": {
-    "message": "Expiration month"
+    "message": "ვადა გასვლის თვე"
   },
   "expirationYear": {
-    "message": "Expiration year"
+    "message": "ვადა გასვლის წელი"
   },
   "authenticatorKeyTotp": {
-    "message": "Authenticator key (TOTP)"
+    "message": "ავთენტიკატორის გასაღები (TOTP)"
   },
   "folder": {
-    "message": "Folder"
+    "message": "საქაღალდე"
   },
   "newCustomField": {
-    "message": "New custom field"
+    "message": "ახალი თქვენზე მორგებული ველი"
   },
   "value": {
-    "message": "Value"
+    "message": "მნიშვნელობა"
   },
   "dragToSort": {
-    "message": "Drag to sort"
+    "message": "გადაადგილე დასახარისხებლად"
   },
   "cfTypeText": {
-    "message": "Text"
+    "message": "ტექსტი"
   },
   "cfTypeHidden": {
-    "message": "Hidden"
+    "message": "დამალული"
   },
   "cfTypeBoolean": {
-    "message": "Boolean"
+    "message": "ბულის ცვლადი"
   },
   "cfTypeLinked": {
-    "message": "Linked",
+    "message": "დაკავშირებული",
     "description": "This describes a field that is 'linked' (related) to another field."
   },
   "remove": {
-    "message": "Remove"
+    "message": "ამოღება"
   },
   "unassigned": {
-    "message": "Unassigned"
+    "message": "არა მიკუთვნილი"
   },
   "noneFolder": {
-    "message": "No folder",
+    "message": "საქაღალდის გარეშე",
     "description": "This is the folder for uncategorized items"
   },
   "addFolder": {
-    "message": "Add folder"
+    "message": "საქაღალდის დამატება"
   },
   "editFolder": {
-    "message": "Edit folder"
+    "message": "საქაღალდის ჩასწორება"
   },
   "baseDomain": {
-    "message": "Base domain",
+    "message": "დომენის ბაზა",
     "description": "Domain name. Example: website.com"
   },
   "domainName": {
-    "message": "Domain name",
+    "message": "დომენის სახელი",
     "description": "Domain name. Example: website.com"
   },
   "host": {
-    "message": "Host",
+    "message": "ჰოსტი",
     "description": "A URL's host value. For example, the host of https://sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
-    "message": "Exact"
+    "message": "იგივე"
   },
   "startsWith": {
-    "message": "Starts with"
+    "message": "იწყება როგორც"
   },
   "regEx": {
-    "message": "Regular expression",
+    "message": "რეგულარული გამოსახულება",
     "description": "A programming term, also known as 'RegEx'."
   },
   "matchDetection": {
-    "message": "Match detection",
+    "message": "დამთხვევის ამოცნობა",
     "description": "URI match detection for auto-fill."
   },
   "defaultMatchDetection": {
-    "message": "Default match detection",
+    "message": "ორიგინალი დამთხვევის ამოცნობა",
     "description": "Default URI match detection for auto-fill."
   },
   "never": {
-    "message": "Never"
+    "message": "არასოდეს"
   },
   "toggleVisibility": {
-    "message": "Toggle visibility"
+    "message": "ხილვადობის გადამრთველი"
   },
   "toggleCollapse": {
-    "message": "Toggle collapse",
+    "message": "ჩამოშლის გადამრთველი",
     "description": "Toggling an expand/collapse state."
   },
   "generatePassword": {
-    "message": "Generate password"
+    "message": "წარმოქმენი პაროლი"
   },
   "checkPassword": {
-    "message": "Check if password has been exposed."
+    "message": "შეამოწმე პაროლი თუ გაბაზრდა"
   },
   "passwordExposed": {
-    "message": "This password has been exposed $VALUE$ time(s) in data breaches. You should change it.",
+    "message": "ეს პაროლი გაბაზრდა $VALUE$-ჯერ მონაცემთა გარღვევებში. უნდა შეცვალოთ.",
     "placeholders": {
       "value": {
         "content": "$1",
@@ -245,187 +245,187 @@
     }
   },
   "passwordSafe": {
-    "message": "This password was not found in any known data breaches. It should be safe to use."
+    "message": "ეს პაროლი არ მოიძებნა არცერთ ნაცნობ მონაცემთა გარღვევაში. უსაფრთხოა მისი გამოყენება."
   },
   "save": {
-    "message": "Save"
+    "message": "შენახვა"
   },
   "cancel": {
-    "message": "Cancel"
+    "message": "გაუქმება"
   },
   "canceled": {
-    "message": "Canceled"
+    "message": "გაუქმებულია"
   },
   "close": {
-    "message": "Close"
+    "message": "დახურვა"
   },
   "delete": {
-    "message": "Delete"
+    "message": "წაშლა"
   },
   "favorite": {
-    "message": "Favorite"
+    "message": "რჩეული"
   },
   "unfavorite": {
-    "message": "Unfavorite"
+    "message": "რჩეულებიდან ამოღება"
   },
   "edit": {
-    "message": "Edit"
+    "message": "რედაქტირება"
   },
   "searchCollection": {
-    "message": "Search collection"
+    "message": "ძებნა კოლექციაში"
   },
   "searchFolder": {
-    "message": "Search folder"
+    "message": "ძებნა საქაღალდეში"
   },
   "searchFavorites": {
-    "message": "Search favorites"
+    "message": "ძებნა რჩეულებში"
   },
   "searchLogin": {
-    "message": "Search logins",
+    "message": "ძებნა მომხმარებლების",
     "description": "Search Login type"
   },
   "searchCard": {
-    "message": "Search cards",
+    "message": "ძებნა ბარათების",
     "description": "Search Card type"
   },
   "searchIdentity": {
-    "message": "Search identities",
+    "message": "ძებნა იდენტობების",
     "description": "Search Identity type"
   },
   "searchSecureNote": {
-    "message": "Search secure notes",
+    "message": "ძებნა უსაფრთხო ჩანაწერების",
     "description": "Search Secure Note type"
   },
   "searchVault": {
-    "message": "Search vault"
+    "message": "ძებნა საცავში"
   },
   "searchMyVault": {
-    "message": "Search my vault"
+    "message": "ძებნა ჩემს საცავში"
   },
   "searchOrganization": {
-    "message": "Search organization"
+    "message": "ძებნა ორგანიზაციაში"
   },
   "searchMembers": {
-    "message": "Search members"
+    "message": "ძებნა წევრების"
   },
   "searchGroups": {
-    "message": "Search groups"
+    "message": "ძებნა ჯგუფების"
   },
   "allItems": {
-    "message": "All items"
+    "message": "ყველა საგნები"
   },
   "favorites": {
-    "message": "Favorites"
+    "message": "რჩეულები"
   },
   "types": {
-    "message": "Types"
+    "message": "ტიპები"
   },
   "typeLogin": {
-    "message": "Login"
+    "message": "მომხმარებელი"
   },
   "typeCard": {
-    "message": "Card"
+    "message": "ბარათი"
   },
   "typeIdentity": {
-    "message": "Identity"
+    "message": "იდენტობა"
   },
   "typeSecureNote": {
-    "message": "Secure note"
+    "message": "უსაფრთხო ჩანაწერი"
   },
   "typeLoginPlural": {
-    "message": "Logins"
+    "message": "მომხმარებლები"
   },
   "typeCardPlural": {
-    "message": "Cards"
+    "message": "ბარათები"
   },
   "typeIdentityPlural": {
-    "message": "Identities"
+    "message": "იდენტობები"
   },
   "typeSecureNotePlural": {
-    "message": "Secure notes"
+    "message": "უსაფრთხო ჩანაწერები"
   },
   "folders": {
-    "message": "Folders"
+    "message": "საქაღალდეები"
   },
   "collections": {
-    "message": "Collections"
+    "message": "კოლექციები"
   },
   "firstName": {
-    "message": "First name"
+    "message": "სახელი"
   },
   "middleName": {
-    "message": "Middle name"
+    "message": "მამის / მეორე სახელი"
   },
   "lastName": {
-    "message": "Last name"
+    "message": "გვარი"
   },
   "fullName": {
-    "message": "Full name"
+    "message": "სრული სახელი"
   },
   "address1": {
-    "message": "Address 1"
+    "message": "მისამართი 1"
   },
   "address2": {
-    "message": "Address 2"
+    "message": "მისამართი 2"
   },
   "address3": {
-    "message": "Address 3"
+    "message": "მისამართი 3"
   },
   "cityTown": {
-    "message": "City / Town"
+    "message": "ქალაქი / დასახლება"
   },
   "stateProvince": {
-    "message": "State / Province"
+    "message": "შტატი / მხარე"
   },
   "zipPostalCode": {
-    "message": "Zip / Postal code"
+    "message": "საფოსტო კოდი"
   },
   "country": {
-    "message": "Country"
+    "message": "ქვეყანა"
   },
   "shared": {
-    "message": "Shared"
+    "message": "გაზიარებული"
   },
   "attachments": {
-    "message": "Attachments"
+    "message": "მიმაგრებული ფაილები"
   },
   "select": {
-    "message": "Select"
+    "message": "მონიშვნა"
   },
   "newItem": {
-    "message": "New item"
+    "message": "ახალი საგანი"
   },
   "addItem": {
-    "message": "Add item"
+    "message": "დაამატე საგანი"
   },
   "editItem": {
-    "message": "Edit item"
+    "message": "რედაქტირება საგნის"
   },
   "viewItem": {
-    "message": "View item"
+    "message": "ნახვა საგნის"
   },
   "new": {
-    "message": "New",
+    "message": "ახალი",
     "description": "for adding new items"
   },
   "item": {
-    "message": "Item"
+    "message": "საგანი"
   },
   "ex": {
-    "message": "ex.",
+    "message": "მაგ.",
     "description": "Short abbreviation for 'example'."
   },
   "other": {
-    "message": "Other"
+    "message": "სხვა"
   },
   "share": {
-    "message": "Share"
+    "message": "გაზიარება"
   },
   "moveToOrganization": {
-    "message": "Move to organization"
+    "message": "გადაიყვანე ორგანიზაციაში"
   },
   "valueCopied": {
-    "message": "$VALUE$ copied",
+    "message": "$VALUE$ ასლირებულია",
     "description": "Value has been copied to the clipboard.",
     "placeholders": {
       "value": {
@@ -435,100 +435,100 @@
     }
   },
   "copyValue": {
-    "message": "Copy value",
+    "message": "ასლირება მნიშვნელობის",
     "description": "Copy value to clipboard"
   },
   "copyPassword": {
-    "message": "Copy password",
+    "message": "ასლირება პაროლის",
     "description": "Copy password to clipboard"
   },
   "copyUsername": {
-    "message": "Copy username",
+    "message": "ასლირება მომხმარებლის სახელის",
     "description": "Copy username to clipboard"
   },
   "copyNumber": {
-    "message": "Copy number",
+    "message": "ასლირება ნომრის",
     "description": "Copy credit card number"
   },
   "copySecurityCode": {
-    "message": "Copy security code",
+    "message": "ასლირება უსაფრთხოების კოდის",
     "description": "Copy credit card security code (CVV)"
   },
   "copyUri": {
-    "message": "Copy URI",
+    "message": "ასლირება URI-ის",
     "description": "Copy URI to clipboard"
   },
   "me": {
-    "message": "Me"
+    "message": "მე"
   },
   "myVault": {
-    "message": "My vault"
+    "message": "ჩემი საცავი"
   },
   "allVaults": {
-    "message": "All vaults"
+    "message": "ყველა საცავი"
   },
   "vault": {
-    "message": "Vault"
+    "message": "საცავი"
   },
   "vaults": {
-    "message": "Vaults"
+    "message": "საცავები"
   },
   "vaultItems": {
-    "message": "Vault items"
+    "message": "საცავის საგნები"
   },
   "filter": {
-    "message": "Filter"
+    "message": "ფილტრი"
   },
   "moveSelectedToOrg": {
-    "message": "Move selected to organization"
+    "message": "გადაყვანა შერჩეულის ორგანიზაციაში"
   },
   "deleteSelected": {
-    "message": "Delete selected"
+    "message": "წაშლა შერჩეულის"
   },
   "moveSelected": {
-    "message": "Move selected"
+    "message": "გადაყვანა შერჩეულის"
   },
   "selectAll": {
-    "message": "Select all"
+    "message": "ყველას შერჩევა"
   },
   "unselectAll": {
-    "message": "Unselect all"
+    "message": "არშერჩევა ყველასი"
   },
   "launch": {
-    "message": "Launch"
+    "message": "გახსნა"
   },
   "newAttachment": {
-    "message": "Add new attachment"
+    "message": "დამატება ახალი მისამაგრებლელის"
   },
   "deletedAttachment": {
-    "message": "Deleted attachment"
+    "message": "წაშლილი მიმაგრება"
   },
   "deleteAttachmentConfirmation": {
-    "message": "Are you sure you want to delete this attachment?"
+    "message": "დარწმუნებული ხართ წაშალოთ ეს მიმაგრება?"
   },
   "attachmentSaved": {
-    "message": "Attachment saved"
+    "message": "მიმაგრება შენახულია"
   },
   "file": {
-    "message": "File"
+    "message": "ფაილი"
   },
   "selectFile": {
-    "message": "Select a file."
+    "message": "აირჩიეთ ფაილი."
   },
   "maxFileSize": {
-    "message": "Maximum file size is 500 MB."
+    "message": "მაქსიმალური ფაილის ზომაა 500 მბ."
   },
   "updateKey": {
-    "message": "You cannot use this feature until you update your encryption key."
+    "message": "თქვენ არ შეგიძლიათ ამ ფუნქციით სარგებლობაბ მანამ არ განაახლებთ დაშიფვრის გასაღებს."
   },
   "addedItem": {
-    "message": "Item added"
+    "message": "საგანი დამატებულია"
   },
   "editedItem": {
-    "message": "Item saved"
+    "message": "საგანი შენახულია"
   },
   "movedItemToOrg": {
-    "message": "$ITEMNAME$ moved to $ORGNAME$",
+    "message": "$ITEMNAME$ გადაყვანიალია $ORGNAME$-ში",
     "placeholders": {
       "itemname": {
         "content": "$1",
@@ -541,7 +541,7 @@
     }
   },
   "movedItemsToOrg": {
-    "message": "Selected items moved to $ORGNAME$",
+    "message": "მონიშნული საგანები გადაყვანილია $ORGNAME$-ში",
     "placeholders": {
       "orgname": {
         "content": "$1",
@@ -550,154 +550,154 @@
     }
   },
   "deleteItem": {
-    "message": "Delete item"
+    "message": "წაშლილი საგნები"
   },
   "deleteFolder": {
-    "message": "Delete folder"
+    "message": "წაშლა საქაღალდის"
   },
   "deleteAttachment": {
-    "message": "Delete attachment"
+    "message": "წაშლა მიმაგრების"
   },
   "deleteItemConfirmation": {
-    "message": "Do you really want to send to the trash?"
+    "message": "დარწმუნებული ხართ ნაგავში გადაიყვანოთ?"
   },
   "deletedItem": {
-    "message": "Item sent to trash"
+    "message": "საგანი გადაყვანილია ნაგავში"
   },
   "deletedItems": {
-    "message": "Items sent to trash"
+    "message": "საგნები გადაყვანილია ნაგავში"
   },
   "movedItems": {
-    "message": "Items moved"
+    "message": "საგნები გადაყვანილია"
   },
   "overwritePasswordConfirmation": {
-    "message": "Are you sure you want to overwrite the current password?"
+    "message": "დარწმუნებული ხართ გადააწეროთ არსებულ პაროლს?"
   },
   "editedFolder": {
-    "message": "Folder saved"
+    "message": "საქაღალდე შენახულია"
   },
   "addedFolder": {
-    "message": "Folder added"
+    "message": "საქაღალდე დამატებულია"
   },
   "deleteFolderConfirmation": {
-    "message": "Are you sure you want to delete this folder?"
+    "message": "დარწმუნებული ხართ წაშალოთ ეს საქაღალდე?"
   },
   "deletedFolder": {
-    "message": "Folder deleted"
+    "message": "საქაღალდე წაშლილია"
   },
   "editInfo": {
-    "message": "Edit info"
+    "message": "რედაქტირება ინფორმაციის"
   },
   "access": {
-    "message": "Access"
+    "message": "წვდომა"
   },
   "loggedOut": {
-    "message": "Logged out"
+    "message": "გამოსვლა"
   },
   "loginExpired": {
-    "message": "Your login session has expired."
+    "message": "თქვენი სისტემაში შესვლის სესიას ვადა გაუვიდა."
   },
   "logOutConfirmation": {
-    "message": "Are you sure you want to log out?"
+    "message": "ნამდვილად გსურთ გასვლა სისტემიდან?"
   },
   "logOut": {
-    "message": "Log out"
+    "message": "სისტემიდან გამოსვლა"
   },
   "ok": {
-    "message": "Ok"
+    "message": "კაი"
   },
   "yes": {
-    "message": "Yes"
+    "message": "კი"
   },
   "no": {
-    "message": "No"
+    "message": "არა"
   },
   "loginOrCreateNewAccount": {
-    "message": "Log in or create a new account to access your secure vault."
+    "message": "სისტემაში შედით ან შექმენით ახალი ანგარიში თქვენს დაცულ საცავთან საწვდომად."
   },
   "loginWithDevice": {
-    "message": "Log in with device"
+    "message": "შესვლა მოწყობილობით"
   },
   "loginWithDeviceEnabledInfo": {
-    "message": "Log in with device must be set up in the settings of the Bitwarden mobile app. Need another option?"
+    "message": "შესვლა მოწყობილობით უნდა იყოს გამართული Bitwarden-ის მობილური აპლიკაციის პარამეტრებში. სხვა ვარიანთი გჭირდებათ?"
   },
   "loginWithMasterPassword": {
-    "message": "Log in with master password"
+    "message": "ავტორიზაცია მთავარი პაროლით"
   },
   "createAccount": {
-    "message": "Create account"
+    "message": "ანგარიშის შექმნა"
   },
   "newAroundHere": {
-    "message": "New around here?"
+    "message": "ახალი ხართ აქა?"
   },
   "startTrial": {
-    "message": "Start trial"
+    "message": "საცდელი პერიოდის დაწყება"
   },
   "logIn": {
-    "message": "Log in"
+    "message": "ავტორიზაცია"
   },
   "logInInitiated": {
-    "message": "Log in initiated"
+    "message": "ავტორიზაცია დაწყებულია"
   },
   "submit": {
-    "message": "Submit"
+    "message": "გადაცემა"
   },
   "emailAddressDesc": {
-    "message": "You'll use your email address to log in."
+    "message": "თქვენ გამოიყენებთ თქვენს ელ-ფოსტას სისტემაში შესასვლელად."
   },
   "yourName": {
-    "message": "Your name"
+    "message": "თქვენი სახელი"
   },
   "yourNameDesc": {
-    "message": "What should we call you?"
+    "message": "როგორ მოგმართოთ?"
   },
   "masterPass": {
-    "message": "Master password"
+    "message": "მთავარი პაროლი"
   },
   "masterPassDesc": {
-    "message": "The master password is the password you use to access your vault. It is very important that you do not forget your master password. There is no way to recover the password in the event that you forget it."
+    "message": "მთავარი პაროლი არის პაროლი რომელსაც გამოიყენებთ თქვენს საცავში შესაღწევად. ძალიან მნიშვნელოვანია რომ არ დაგავიწყდეთ თქვენი მთავარი პაროლი. ვერანაირად მოხერხდება პაროლის აღდგენა იმ შემთხვევაში თუ დაგავიწყდათ."
   },
   "masterPassImportant": {
-    "message": "Your master password cannot be recovered if you forget it!"
+    "message": "თქვენი მთავარი პაროლი ვერ აღდგება თუ დაგავიწყდათ!"
   },
   "masterPassHintDesc": {
-    "message": "A master password hint can help you remember your password if you forget it."
+    "message": "მთავარი პაროლის მინიშნებას შეუძლია დაგეხმაროთ პაროლის გახსენებაში თუ დაგავიწყდათ."
   },
   "reTypeMasterPass": {
-    "message": "Re-type master password"
+    "message": "შელახლა შეიყვანეთ მთავარი პაროლი"
   },
   "masterPassHint": {
-    "message": "Master password hint (optional)"
+    "message": "მთავარი პაროლის მინიშნება (არჩევითი)"
   },
   "masterPassHintLabel": {
-    "message": "Master password hint"
+    "message": "მთავარი პაროლის მინიშნება"
   },
   "settings": {
-    "message": "Settings"
+    "message": "პარამეტრები"
   },
   "passwordHint": {
-    "message": "Password hint"
+    "message": "პაროლის მინიშნება"
   },
   "enterEmailToGetHint": {
-    "message": "Enter your account email address to receive your master password hint."
+    "message": "შეიყვანეთ თქვენი ანგარიშის ელ-ფოსტა რომ მიიღოთ თქვენი მთავარი პაროლის მინიშნება."
   },
   "getMasterPasswordHint": {
-    "message": "Get master password hint"
+    "message": "მიიღეთ მთავარი პაროლის მინიშნება"
   },
   "emailRequired": {
-    "message": "Email address is required."
+    "message": "ელ-ფოსტა სავალდებულოა."
   },
   "invalidEmail": {
-    "message": "Invalid email address."
+    "message": "არასწორი ელ-ფოსტის მისამრთი."
   },
   "masterPasswordRequired": {
-    "message": "Master password is required."
+    "message": "მთავარი პაროლი სავალდებულოა."
   },
   "confirmMasterPasswordRequired": {
-    "message": "Master password retype is required."
+    "message": "მთავარი პაროლის ხელახლა შეყვანა სავალდებულოა."
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least $VALUE$ characters long.",
+    "message": "მთავარი პაროლი უნდა იყოს არა ნაკლებ $VALUE$ ასონიშის სიგრძე.",
     "description": "The Master Password must be at least a specific number of characters long.",
     "placeholders": {
       "value": {
@@ -707,31 +707,31 @@
     }
   },
   "masterPassDoesntMatch": {
-    "message": "Master password confirmation does not match."
+    "message": "მთავარი პაროლის დადასტურება არ ემთხვევა."
   },
   "newAccountCreated": {
-    "message": "Your new account has been created! You may now log in."
+    "message": "თქვენი ახალი ანგარიში შემნილია! თქვენ შეგიძლიათ შესვლა."
   },
   "trialAccountCreated": {
-    "message": "Account created successfully."
+    "message": "ანგარიში წარმატებით შეიქმნა."
   },
   "masterPassSent": {
-    "message": "We've sent you an email with your master password hint."
+    "message": "ჩვენ გამოგიგზავნეთ ელ-ფოსთა თქვენი მთავარი პაროლის მინიშნებით."
   },
   "unexpectedError": {
-    "message": "An unexpected error has occurred."
+    "message": "წარმოიშვა გაუთვალისწინებელი ხარვეზი."
   },
   "emailAddress": {
-    "message": "Email address"
+    "message": "ელ-ფოსტის მისამართი"
   },
   "yourVaultIsLocked": {
-    "message": "Your vault is locked. Verify your master password to continue."
+    "message": "თქვენი საცავი ჩაკეტილია. დაადასტურეთ თქვენი მთავარი პაროლი გასაგრძელებლად."
   },
   "unlock": {
-    "message": "Unlock"
+    "message": "გახსნა"
   },
   "loggedInAsEmailOn": {
-    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
+    "message": "ავტორიზებული როგორც $EMAIL$ $HOSTNAME$-ზე",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -744,46 +744,46 @@
     }
   },
   "invalidMasterPassword": {
-    "message": "Invalid master password"
+    "message": "არასწორი მთავარი პაროლი"
   },
   "invalidFilePassword": {
-    "message": "Invalid file password, please use the password you entered when you created the export file."
+    "message": "არასწორი ფაილის პაროლი, გთხოვთ გამოიყენოთ პაროლი რომელიც თქვენ შეიყვანეთ როცა შექმენით ექსპორტ ფაილი."
   },
   "lockNow": {
-    "message": "Lock now"
+    "message": "ახლავე ჩაკეტვა"
   },
   "noItemsInList": {
-    "message": "There are no items to list."
+    "message": "არაა საგნები სიაში ჩამოსათველალდ."
   },
   "noPermissionToViewAllCollectionItems": {
-    "message": "You do not have permission to view all items in this collection."
+    "message": "თქვენ არ გაქვთ უფლება ნახოთ ყველა საგანი ამ კოლექციაში."
   },
   "noCollectionsInList": {
-    "message": "There are no collections to list."
+    "message": "არაა კოლექციები ჩამოსათველად."
   },
   "noGroupsInList": {
-    "message": "There are no groups to list."
+    "message": "არაა ჯგუფები ჩამოსათველად."
   },
   "noUsersInList": {
-    "message": "There are no users to list."
+    "message": "არაა მომხმარებლები ჩამოსათველად."
   },
   "noMembersInList": {
-    "message": "There are no members to list."
+    "message": "არაა წევრები ჩამოსათველად."
   },
   "noEventsInList": {
-    "message": "There are no events to list."
+    "message": "არაა მოვლენები ჩამოსათველად."
   },
   "newOrganization": {
-    "message": "New organization"
+    "message": "ახალი ორგანიზაცია"
   },
   "noOrganizationsList": {
-    "message": "You do not belong to any organizations. Organizations allow you to securely share items with other users."
+    "message": "თქვენ არ მიეკუთვნებით არცერთ ორგანიზაციებს. ორგანიზაციები გაძლევთ საშუალებას დაცულად გაუზიაროთ საგნები სხვა მომხმარებლებს."
   },
   "notificationSentDevice": {
-    "message": "A notification has been sent to your device."
+    "message": "შეტყობინება გამოიგზავნა თქვენი ტელეფონის მისამართით."
   },
   "versionNumber": {
-    "message": "Version $VERSION_NUMBER$",
+    "message": "ვერსია $VERSION_NUMBER$",
     "placeholders": {
       "version_number": {
         "content": "$1",
@@ -792,10 +792,10 @@
     }
   },
   "enterVerificationCodeApp": {
-    "message": "Enter the 6 digit verification code from your authenticator app."
+    "message": "შეიყვანეთ 6 ნიშნა ერთჯერადი კოდი თქვენი ავთენტიკატორი აპლიკაციიდან."
   },
   "enterVerificationCodeEmail": {
-    "message": "Enter the 6 digit verification code that was emailed to $EMAIL$.",
+    "message": "შეიყვანეთ 6 ნიშნა ერთჯერადი კოდი რომელიც ელ-ფოსთით გაიგზავნა $EMAIL$-ის მისამართით.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -804,7 +804,7 @@
     }
   },
   "verificationCodeEmailSent": {
-    "message": "Verification email sent to $EMAIL$.",
+    "message": "ერთჯერადი კოდი გაგზავნილია $EMAIL$-ზე.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -813,88 +813,88 @@
     }
   },
   "rememberMe": {
-    "message": "Remember me"
+    "message": "დამიმახსოვრე"
   },
   "sendVerificationCodeEmailAgain": {
-    "message": "Send verification code email again"
+    "message": "გამოგზავნა ერთჯერადი კოდის ელ-ფოსტაზე განმეორებით"
   },
   "useAnotherTwoStepMethod": {
-    "message": "Use another two-step login method"
+    "message": "გამოყენება სხვა ორსაფეხურიანი შესვლის მეთოდით"
   },
   "insertYubiKey": {
-    "message": "Insert your YubiKey into your computer's USB port, then touch its button."
+    "message": "შეარჭეთ თქვენი YubiKey თქვენს კომპიუტერის USB პორტში, შემდგომ დაადეთ მის ღილაკს."
   },
   "insertU2f": {
-    "message": "Insert your security key into your computer's USB port. If it has a button, touch it."
+    "message": "შეარჭეთ თქვენი უსაფრთხოების გასაღები თქვენს კომპიუტერის USB პორტში. თუ ღილაკი აქვს, შეეხეთ."
   },
   "loginUnavailable": {
-    "message": "Login unavailable"
+    "message": "შესვლა მიუღწევადია"
   },
   "noTwoStepProviders": {
-    "message": "This account has two-step login set up, however, none of the configured two-step providers are supported by this web browser."
+    "message": "ამ ანგარის აქვს ორსაფეხურიანი ავტორიზაცია გამართული, მაგრამ, არცერთ მოწყობილ ორსაფეხურიან პროვაიდერებს არ აქვს მხარდაჭერილი ეს ვებ ბრაუზერი."
   },
   "noTwoStepProviders2": {
-    "message": "Please use a supported web browser (such as Chrome) and/or add additional providers that are better supported across web browsers (such as an authenticator app)."
+    "message": "გთხოვთ გამოიყენოთ მხრდაჭერილი ვებ ბრაუზერი (როგორციაა ქრომი) და ან დაამატეთ დამატებითი პროვაიდერები რომლებიც უკეთ მხრდაჭერენ სხვადასხვა ვებ ბრაუზერებს (როგორიცაა ავთენტიკატორი აპი)."
   },
   "twoStepOptions": {
-    "message": "Two-step login options"
+    "message": "ორსაფეხურიანი ავტორიზაციის პარამეტრები"
   },
   "recoveryCodeDesc": {
-    "message": "Lost access to all of your two-step login providers? Use your recovery code to turn off all two-step login providers from your account."
+    "message": "დაკარგეთ წვდომა ყველა შენს ორსაფეხურიან პროვაიდერებთან? გამოიყენეთ თქვენი აღდგენის კოდი რომ გათიშოთ ყველა ორსაფეხურიანი ავტორიზაციის პროვაიდერები შენი ანგარიშიდან."
   },
   "recoveryCodeTitle": {
-    "message": "Recovery code"
+    "message": "აღდგენის კოდი"
   },
   "authenticatorAppTitle": {
-    "message": "Authenticator app"
+    "message": "ავთენტიკატორი აპი"
   },
   "authenticatorAppDesc": {
-    "message": "Use an authenticator app (such as Authy or Google Authenticator) to generate time-based verification codes.",
+    "message": "გამოიყენეთ ავთენტიკატორი აპი (როგორიცაა Authy ან Google Authenticator-ი) რომ წამმოქმნათ დროზე დაფუძნებული ერთჯერადი კოდები.",
     "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
   },
   "yubiKeyTitle": {
     "message": "YubiKey OTP security key"
   },
   "yubiKeyDesc": {
-    "message": "Use a YubiKey to access your account. Works with YubiKey 4 series, 5 series, and NEO devices."
+    "message": "გამოიყენეთ YubiKey ანგარიშში შესასვლელად. მუშაობს YubiKey 4 სერია, 5 სერია, და NEO მოწყობილობებთან."
   },
   "duoDesc": {
-    "message": "Verify with Duo Security using the Duo Mobile app, SMS, phone call, or U2F security key.",
+    "message": "დაადასტურეთ Duo Security-ი Duo მობილური აპლიკაციის, სმს-ის, სატელეფონო ზარის, ან U2F უსაფრთხოების გასაღებით.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "duoOrganizationDesc": {
-    "message": "Verify with Duo Security for your organization using the Duo Mobile app, SMS, phone call, or U2F security key.",
+    "message": "დაადასტურეთ Duo Security-ი შენი ორგანიზაციისთვის Duo მობილური აპლიკაციის, სმს-ის, სატელეფონო ზარის, ან U2F უსაფრთხოების გასაღებით.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc": {
-    "message": "Use any FIDO U2F compatible security key to access your account."
+    "message": "გამოიყენეთ ნებისმიერი FIDO U2F მხარდამჭერი უსაფრთხოების გასაღები ანგარიშში შესასვლელად."
   },
   "u2fTitle": {
-    "message": "FIDO U2F security key"
+    "message": "FIDO U2F უსაფრთხოების გასაღები"
   },
   "webAuthnTitle": {
     "message": "FIDO2 WebAuthn"
   },
   "webAuthnDesc": {
-    "message": "Use any WebAuthn compatible security key to access your account."
+    "message": "გამოიყენეთ ნებისმიერი WebAuthn მხარდამჭერი უსაფრთხოების გასაღები ანგარიშში შესასვლელად."
   },
   "webAuthnMigrated": {
-    "message": "(Migrated from FIDO)"
+    "message": "(გადმომიგრირდა FIDO-დან)"
   },
   "emailTitle": {
-    "message": "Email"
+    "message": "ელ-ფოსტა"
   },
   "emailDesc": {
-    "message": "Verification codes will be emailed to you."
+    "message": "ერთჯერადი კოდი ელ-ფოსტაზე გამოგეგზავნებათ."
   },
   "continue": {
-    "message": "Continue"
+    "message": "გაგრძელება"
   },
   "organization": {
-    "message": "Organization"
+    "message": "ორგანიზაცია"
   },
   "organizations": {
-    "message": "Organizations"
+    "message": "ორგანიზაციები"
   },
   "moveToOrgDesc": {
     "message": "Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved."
@@ -924,10 +924,10 @@
     }
   },
   "deleteSelectedConfirmation": {
-    "message": "Are you sure you want to continue?"
+    "message": "დარწმუნებული ხართ რომ გინდათ გაგრძელება?"
   },
   "moveSelectedItemsDesc": {
-    "message": "Choose a folder that you would like to move the $COUNT$ selected item(s) to.",
+    "message": "აირჩიეთ საქაღალდე რომელშიც გსურთ გადაიტანოთ $COUNT$ არჩეული საგნი(ები).",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -936,7 +936,7 @@
     }
   },
   "moveSelectedItemsCountDesc": {
-    "message": "You have selected $COUNT$ item(s). $MOVEABLE_COUNT$ item(s) can be moved to an organization, $NONMOVEABLE_COUNT$ cannot.",
+    "message": "თქვენ მონიშნეთ $COUNT$ საგანი(ები). $MOVEABLE_COUNT$ საგან(ები)-ს გადატანა შესაძლებელია ორგანიზაციაში, $NONMOVEABLE_COUNT$ ვერა",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -953,16 +953,16 @@
     }
   },
   "verificationCodeTotp": {
-    "message": "Verification code (TOTP)"
+    "message": "ერთჯერადი კოდი (TOTP)"
   },
   "copyVerificationCode": {
-    "message": "Copy verification code"
+    "message": "დააკოპირე ერთჯერადი კოდი"
   },
   "warning": {
-    "message": "Warning"
+    "message": "გაფრთხილება"
   },
   "confirmVaultExport": {
-    "message": "Confirm vault export"
+    "message": "დაადასტურეთ საცავის ექსპორტი"
   },
   "exportWarningDesc": {
     "message": "This export contains your vault data in an unencrypted format. You should not store or send the exported file over unsecure channels (such as email). Delete it immediately after you are done using it."
@@ -974,13 +974,13 @@
     "message": "Account encryption keys are unique to each Bitwarden user account, so you can't import an encrypted export into a different account."
   },
   "export": {
-    "message": "Export"
+    "message": "ექსპორტი"
   },
   "exportVault": {
-    "message": "Export vault"
+    "message": "ექსპორტი საცავის"
   },
   "fileFormat": {
-    "message": "File format"
+    "message": "ფაილის ფორმატი"
   },
   "fileEncryptedExportWarningDesc": {
     "message": "This file export will be password protected and require the file password to decrypt."
@@ -1255,6 +1255,15 @@
   "importSuccess": {
     "message": "Data successfully imported"
   },
+  "importSuccessNumberOfItems": {
+    "message": "A total of $AMOUNT$ items were imported.",
+    "placeholders": {
+      "amount": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
   "dataExportSuccess": {
     "message": "Data successfully exported"
   },
@@ -1403,7 +1412,7 @@
     "message": "View recovery code"
   },
   "providers": {
-    "message": "Providers",
+    "message": "პროვაიდერები",
     "description": "Two-step login providers such as YubiKey, Duo, Authenticator apps, Email, etc."
   },
   "enable": {
@@ -1450,13 +1459,13 @@
     "message": "Enter your master password to modify two-step login settings."
   },
   "twoStepAuthenticatorDesc": {
-    "message": "Follow these steps to set up two-step login with an authenticator app:"
+    "message": "მიყევით ამ ნაბიჯებს რომ გამართოთ ორსაფეხურიანი ავტორიზაცია ავთენტიკატორი აპით:"
   },
   "twoStepAuthenticatorDownloadApp": {
-    "message": "Download a two-step authenticator app"
+    "message": "ჩამოტვირთეთ ორსაფეხურიანი ავთენტიკატორი აპი"
   },
   "twoStepAuthenticatorNeedApp": {
-    "message": "Need a two-step authenticator app? Download one of the following"
+    "message": "გჭირდებატ ორსაფეხურიანი ავთენტიკატორი აპი? ჩამოტვირთეთ ერთერთი რომელიმე შემდეგიდან"
   },
   "iosDevices": {
     "message": "iOS devices"
@@ -1468,19 +1477,19 @@
     "message": "Windows devices"
   },
   "twoStepAuthenticatorAppsRecommended": {
-    "message": "These apps are recommended, however, other authenticator apps will also work."
+    "message": "ეს აპლიკაციები არის რეკომენდირებული, თუმცა, სხვა ავთენტიკატორი აპპლიკაციებიც იმუშავებს."
   },
   "twoStepAuthenticatorScanCode": {
-    "message": "Scan this QR code with your authenticator app"
+    "message": "დაასკანირეთ ეს QR-კოდი თქვენი ავთენტიკატორი აპით"
   },
   "key": {
     "message": "Key"
   },
   "twoStepAuthenticatorEnterCode": {
-    "message": "Enter the resulting 6 digit verification code from the app"
+    "message": "შეიყვანეთ გამოსახული 6 ნიშნა ერთჯერადი კოდი აპლიკაციიდან"
   },
   "twoStepAuthenticatorReaddDesc": {
-    "message": "In case you need to add it to another device, below is the QR code (or key) required by your authenticator app."
+    "message": "იმ შემთხვევაში თუ გჭირდებათ სხვა მოწყობილობის დამატება, ქვემოთ არის QR-კოდი (ან გასაღები) მოთხოვნილი თქვენი ავთენტიკატორი აპისგან."
   },
   "twoStepDisableDesc": {
     "message": "Are you sure you want to turn off this two-step login provider?"
@@ -1672,10 +1681,10 @@
     "message": "Inactive two-step login"
   },
   "inactive2faReportDesc": {
-    "message": "Two-step login adds a layer of protection to your accounts. Set up two-step login using Bitwarden authenticator for these accounts or use an alternative method."
+    "message": "ორსაფეხურიანი ავტორიზაცია ამატებს დამცავ შრეს თქვენი ანგარიშების დასაცავად. გამართეთ ორსაფეხურიანი ავტორიზაცია Bitwarden ავთენტიკატორით ამ ანაგარიშებისთვის ან გამოიყენეთ ალტერნატიული მეთოდი."
   },
   "inactive2faFound": {
-    "message": "Logins without two-step login found"
+    "message": "მომხმარებლები ორსაფეხურიანი სისტემაში შესვლის გარეშე ნაპოვნია"
   },
   "inactive2faFoundDesc": {
     "message": "We found $COUNT$ website(s) in your vault that may not be configured with two-step login (according to 2fa.directory). To further protect these accounts, you should set up two-step login.",
@@ -1765,7 +1774,7 @@
     }
   },
   "noReusedPasswords": {
-    "message": "No logins in your vault have passwords that are being reused."
+    "message": "მომხმარებლები შენს საცავში არ გამოიყენებენ განმეორებულ პაროლს."
   },
   "reusedXTimes": {
     "message": "Reused $COUNT$ times",
@@ -1892,7 +1901,7 @@
     "message": "Password hygiene, account health, and data breach reports to keep your vault safe."
   },
   "premiumSignUpTotp": {
-    "message": "TOTP verification code (2FA) generator for logins in your vault."
+    "message": "TOTP ერთჯერადი კოდი (2FA) წარმომქმნელი შენს საცავში მომხმარებლების შესასვლელად."
   },
   "premiumSignUpSupport": {
     "message": "Priority customer support."
@@ -4858,8 +4867,8 @@
   "activateAutofill": {
     "message": "Activate auto-fill"
   },
-  "activateAutofillDesc": {
-    "message": "Activate the auto-fill with page load settings on the browser extension for all existing and new members."
+  "activateAutofillPolicyDesc": {
+    "message": "Activate the auto-fill on page load setting on the browser extension for all existing and new members."
   },
   "experimentalFeature": {
     "message": "Compromised or untrusted websites can exploit auto-fill on page load."

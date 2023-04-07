@@ -1255,6 +1255,15 @@
   "importSuccess": {
     "message": "Les données ont été importées dans votre coffre avec succès."
   },
+  "importSuccessNumberOfItems": {
+    "message": "Un total de $AMOUNT$ élément(s) a été importé.",
+    "placeholders": {
+      "amount": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
   "dataExportSuccess": {
     "message": "Données exportées avec succès"
   },
@@ -4858,8 +4867,8 @@
   "activateAutofill": {
     "message": "Activer la saisie automatique"
   },
-  "activateAutofillDesc": {
-    "message": "Activer la saisie automatique avec les paramètres de chargement de page sur l'extension du navigateur pour tous les membres existants et nouveaux."
+  "activateAutofillPolicyDesc": {
+    "message": "Activer le paramètre de saisie automatique au chargement de la page sur l'extension du navigateur pour tous les membres existants et nouveaux."
   },
   "experimentalFeature": {
     "message": "Les sites web compromis ou non fiables peuvent exploiter la saisie automatique au chargement de la page."
@@ -5878,7 +5887,7 @@
     }
   },
   "deleteServiceAccountToast": {
-    "message": "Service account deleted"
+    "message": "Compte de service supprimé"
   },
   "deleteServiceAccountsToast": {
     "message": "Comptes de service supprimés"
@@ -6502,7 +6511,7 @@
     "message": "Changer les paramètres KDF"
   },
   "changeKdfLoggedOutWarning": {
-    "message": "Proceeding will log you out of all active sessions. You will need to log back in and complete two-step login setup. We recommend exporting your vault before changing your encryption settings to prevent data loss."
+    "message": "En poursuivant, vous serez déconnecté de toutes les sessions actives. Vous devrez vous reconnecter et terminer le paramétrage de l'authentification à deux facteurs. Nous vous recommandons d'exporter votre coffre avant de modifier vos paramètres de chiffrement afin d'éviter toute perte de données."
   },
   "secretsManagerBeta": {
     "message": "Gestionnaire de secrets bêta"
