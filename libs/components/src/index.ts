@@ -16,6 +16,7 @@ export * from "./link";
 export * from "./menu";
 export * from "./multi-select";
 export * from "./navigation";
+export * from "./no-items";
 export * from "./progress";
 export * from "./radio-button";
 export * from "./table";

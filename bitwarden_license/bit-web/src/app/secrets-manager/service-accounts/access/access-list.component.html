@@ -2,7 +2,7 @@
   <i class="bwi bwi-spinner bwi-spin bwi-3x"></i>
 </div>
 
-<sm-no-items *ngIf="tokens?.length == 0">
+<bit-no-items *ngIf="tokens?.length == 0">
   <ng-container slot="title">{{ "accessTokensNoItemsTitle" | i18n }}</ng-container>
   <ng-container slot="description">{{ "accessTokensNoItemsDesc" | i18n }}</ng-container>
   <button
@@ -15,7 +15,7 @@
     <i class="bwi bwi-plus" aria-hidden="true"></i>
     {{ "newAccessToken" | i18n }}
   </button>
-</sm-no-items>
+</bit-no-items>
 
 <bit-table *ngIf="tokens?.length >= 1">
   <ng-container header>
