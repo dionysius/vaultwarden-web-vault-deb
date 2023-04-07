@@ -49,7 +49,7 @@ describe("Cipher Service", () => {
       settingsService,
       apiService,
       i18nService,
-      () => searchService,
+      searchService,
       stateService,
       encryptService,
       cipherFileUploadService

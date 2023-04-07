@@ -1,4 +1,3 @@
-import { SearchService } from "@bitwarden/common/abstractions/search.service";
 import { AuthenticationStatus } from "@bitwarden/common/auth/enums/authentication-status";
 import { StateFactory } from "@bitwarden/common/factories/stateFactory";
 import { GlobalState } from "@bitwarden/common/models/domain/global-state";
@@ -59,9 +58,6 @@ const doAutoFillLogin = async (tab: chrome.tabs.Tab): Promise<void> => {
     },
     i18nServiceOptions: {
       systemLanguage: BrowserApi.getUILanguage(self),
-    },
-    cipherServiceOptions: {
-      searchServiceFactory: null as () => SearchService, // No dependence on search service
     },
   };
   const logService = await logServiceFactory(cachedServices, opts);

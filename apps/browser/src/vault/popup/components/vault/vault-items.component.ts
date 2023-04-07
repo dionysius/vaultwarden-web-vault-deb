@@ -66,10 +66,10 @@ export class VaultItemsComponent extends BaseVaultItemsComponent implements OnIn
     private folderService: FolderService,
     private collectionService: CollectionService,
     private platformUtilsService: PlatformUtilsService,
-    private cipherService: CipherService,
+    cipherService: CipherService,
     private vaultFilterService: VaultFilterService
   ) {
-    super(searchService);
+    super(searchService, cipherService);
     this.applySavedState =
       (window as any).previousPopupUrl != null &&
       !(window as any).previousPopupUrl.startsWith("/ciphers");

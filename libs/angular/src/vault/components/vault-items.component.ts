@@ -2,6 +2,7 @@ import { Directive, EventEmitter, Input, Output } from "@angular/core";
 
 import { SearchService } from "@bitwarden/common/abstractions/search.service";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
+import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 
 @Directive()
@@ -31,7 +32,7 @@ export class VaultItemsComponent {
     this._searchText = value;
   }
 
-  constructor(protected searchService: SearchService) {}
+  constructor(protected searchService: SearchService, protected cipherService: CipherService) {}
 
   async load(filter: (cipher: CipherView) => boolean = null, deleted = false) {
     this.deleted = deleted ?? false;
@@ -92,6 +93,7 @@ export class VaultItemsComponent {
   protected deletedFilter: (cipher: CipherView) => boolean = (c) => c.isDeleted === this.deleted;
 
   protected async doSearch(indexedCiphers?: CipherView[]) {
+    indexedCiphers = indexedCiphers ?? (await this.cipherService.getAllDecrypted());
     this.ciphers = await this.searchService.searchCiphers(
       this.searchText,
       [this.filter, this.deletedFilter],

@@ -1,5 +1,4 @@
 import { EventCollectionService } from "@bitwarden/common/abstractions/event/event-collection.service";
-import { SearchService } from "@bitwarden/common/abstractions/search.service";
 import { TotpService } from "@bitwarden/common/abstractions/totp.service";
 import { AuthService } from "@bitwarden/common/auth/abstractions/auth.service";
 import { AuthenticationStatus } from "@bitwarden/common/auth/enums/authentication-status";
@@ -19,7 +18,6 @@ import LockedVaultPendingNotificationsItem from "../../background/models/lockedV
 import { eventCollectionServiceFactory } from "../../background/service_factories/event-collection-service.factory";
 import { CachedServices } from "../../background/service_factories/factory-options";
 import { passwordGenerationServiceFactory } from "../../background/service_factories/password-generation-service.factory";
-import { searchServiceFactory } from "../../background/service_factories/search-service.factory";
 import { stateServiceFactory } from "../../background/service_factories/state-service.factory";
 import { BrowserApi } from "../../browser/browserApi";
 import { Account } from "../../models/account";
@@ -63,13 +61,9 @@ export class ContextMenuClickedHandler {
 
   static async mv3Create(cachedServices: CachedServices) {
     const stateFactory = new StateFactory(GlobalState, Account);
-    let searchService: SearchService | null = null;
     const serviceOptions: AuthServiceInitOptions & CipherServiceInitOptions = {
       apiServiceOptions: {
         logoutCallback: NOT_IMPLEMENTED,
-      },
-      cipherServiceOptions: {
-        searchServiceFactory: () => searchService,
       },
       cryptoFunctionServiceOptions: {
         win: self,
@@ -98,7 +92,6 @@ export class ContextMenuClickedHandler {
         stateFactory: stateFactory,
       },
     };
-    searchService = await searchServiceFactory(cachedServices, serviceOptions);
 
     const generatePasswordToClipboardCommand = new GeneratePasswordToClipboardCommand(
       await passwordGenerationServiceFactory(cachedServices, serviceOptions),

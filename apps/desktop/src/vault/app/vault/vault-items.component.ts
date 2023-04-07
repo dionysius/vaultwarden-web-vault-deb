@@ -2,6 +2,7 @@ import { Component } from "@angular/core";
 
 import { VaultItemsComponent as BaseVaultItemsComponent } from "@bitwarden/angular/vault/components/vault-items.component";
 import { SearchService } from "@bitwarden/common/abstractions/search.service";
+import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 
 import { SearchBarService } from "../../../app/layout/search/search-bar.service";
@@ -12,8 +13,12 @@ import { SearchBarService } from "../../../app/layout/search/search-bar.service"
 })
 // eslint-disable-next-line rxjs-angular/prefer-takeuntil
 export class VaultItemsComponent extends BaseVaultItemsComponent {
-  constructor(searchService: SearchService, searchBarService: SearchBarService) {
-    super(searchService);
+  constructor(
+    searchService: SearchService,
+    searchBarService: SearchBarService,
+    cipherService: CipherService
+  ) {
+    super(searchService, cipherService);
 
     // eslint-disable-next-line rxjs-angular/prefer-takeuntil
     searchBarService.searchText$.subscribe((searchText) => {

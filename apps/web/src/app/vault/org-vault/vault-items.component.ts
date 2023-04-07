@@ -110,7 +110,8 @@ export class VaultItemsComponent extends BaseVaultItemsComponent implements OnDe
         (c) => c.organizationId === this.organization?.id
       );
     }
-    await this.searchService.indexCiphers(this.organization?.id, this.allCiphers);
+
+    this.searchService.indexCiphers(this.allCiphers, this.organization?.id);
   }
 
   async refreshCollections(): Promise<void> {

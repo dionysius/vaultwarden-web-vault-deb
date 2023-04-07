@@ -53,7 +53,7 @@ export class CipherService implements CipherServiceAbstraction {
     private settingsService: SettingsService,
     private apiService: ApiService,
     private i18nService: I18nService,
-    private searchService: () => SearchService,
+    private searchService: SearchService,
     private stateService: StateService,
     private encryptService: EncryptService,
     private cipherFileUploadService: CipherFileUploadService
@@ -68,9 +68,9 @@ export class CipherService implements CipherServiceAbstraction {
     await this.stateService.setDecryptedCiphers(value);
     if (this.searchService != null) {
       if (value == null) {
-        this.searchService().clearIndex();
+        this.searchService.clearIndex();
       } else {
-        this.searchService().indexCiphers();
+        this.searchService.indexCiphers(value);
       }
     }
   }
@@ -358,9 +358,9 @@ export class CipherService implements CipherServiceAbstraction {
   private async reindexCiphers() {
     const userId = await this.stateService.getUserId();
     const reindexRequired =
-      this.searchService != null && (this.searchService().indexedEntityId ?? userId) !== userId;
+      this.searchService != null && (this.searchService.indexedEntityId ?? userId) !== userId;
     if (reindexRequired) {
-      await this.searchService().indexCiphers(userId, await this.getDecryptedCipherCache());
+      this.searchService.indexCiphers(await this.getDecryptedCipherCache(), userId);
     }
   }
 

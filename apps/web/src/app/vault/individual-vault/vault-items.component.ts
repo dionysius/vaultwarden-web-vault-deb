@@ -118,7 +118,7 @@ export class VaultItemsComponent extends BaseVaultItemsComponent implements OnDe
     protected i18nService: I18nService,
     protected platformUtilsService: PlatformUtilsService,
     protected vaultFilterService: VaultFilterService,
-    protected cipherService: CipherService,
+    cipherService: CipherService,
     protected eventCollectionService: EventCollectionService,
     protected totpService: TotpService,
     protected stateService: StateService,
@@ -129,7 +129,7 @@ export class VaultItemsComponent extends BaseVaultItemsComponent implements OnDe
     private organizationService: OrganizationService,
     private tokenService: TokenService
   ) {
-    super(searchService);
+    super(searchService, cipherService);
   }
 
   ngOnDestroy() {
@@ -223,6 +223,7 @@ export class VaultItemsComponent extends BaseVaultItemsComponent implements OnDe
   }
 
   async doSearch(indexedCiphers?: CipherView[]) {
+    indexedCiphers = indexedCiphers ?? (await this.cipherService.getAllDecrypted());
     this.ciphers = await this.searchService.searchCiphers(
       this.searchText,
       [this.filter, this.deletedFilter],

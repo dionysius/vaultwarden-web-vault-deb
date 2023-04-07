@@ -1,4 +1,3 @@
-import { SearchService } from "@bitwarden/common/abstractions/search.service";
 import { AuthService } from "@bitwarden/common/auth/abstractions/auth.service";
 import { AuthenticationStatus } from "@bitwarden/common/auth/enums/authentication-status";
 import { StateFactory } from "@bitwarden/common/factories/stateFactory";
@@ -14,7 +13,6 @@ import {
   AuthServiceInitOptions,
 } from "../../auth/background/service-factories/auth-service.factory";
 import { CachedServices } from "../../background/service_factories/factory-options";
-import { searchServiceFactory } from "../../background/service_factories/search-service.factory";
 import { BrowserApi } from "../../browser/browserApi";
 import { Account } from "../../models/account";
 import {
@@ -45,13 +43,9 @@ export class CipherContextMenuHandler {
 
   static async create(cachedServices: CachedServices) {
     const stateFactory = new StateFactory(GlobalState, Account);
-    let searchService: SearchService | null = null;
     const serviceOptions: AuthServiceInitOptions & CipherServiceInitOptions = {
       apiServiceOptions: {
         logoutCallback: NOT_IMPLEMENTED,
-      },
-      cipherServiceOptions: {
-        searchServiceFactory: () => searchService,
       },
       cryptoFunctionServiceOptions: {
         win: self,
@@ -80,7 +74,6 @@ export class CipherContextMenuHandler {
         stateFactory: stateFactory,
       },
     };
-    searchService = await searchServiceFactory(cachedServices, serviceOptions);
     return new CipherContextMenuHandler(
       await MainContextMenuHandler.mv3Create(cachedServices),
       await authServiceFactory(cachedServices, serviceOptions),
