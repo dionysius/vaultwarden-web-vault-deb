@@ -411,19 +411,20 @@ export abstract class BaseImporter {
   }
 
   protected processFolder(result: ImportResult, folderName: string) {
+    if (this.isNullOrWhitespace(folderName)) {
+      return;
+    }
+
     let folderIndex = result.folders.length;
-    const hasFolder = !this.isNullOrWhitespace(folderName);
     // Replace backslashes with forward slashes, ensuring we create sub-folders
     folderName = folderName.replace("\\", "/");
-    let addFolder = hasFolder;
+    let addFolder = true;
 
-    if (hasFolder) {
-      for (let i = 0; i < result.folders.length; i++) {
-        if (result.folders[i].name === folderName) {
-          addFolder = false;
-          folderIndex = i;
-          break;
-        }
+    for (let i = 0; i < result.folders.length; i++) {
+      if (result.folders[i].name === folderName) {
+        addFolder = false;
+        folderIndex = i;
+        break;
       }
     }
 
@@ -432,9 +433,8 @@ export abstract class BaseImporter {
       f.name = folderName;
       result.folders.push(f);
     }
-    if (hasFolder) {
-      result.folderRelationships.push([result.ciphers.length, folderIndex]);
-    }
+
+    result.folderRelationships.push([result.ciphers.length, folderIndex]);
   }
 
   protected convertToNoteIfNeeded(cipher: CipherView) {
