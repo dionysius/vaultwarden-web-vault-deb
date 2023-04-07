@@ -542,7 +542,7 @@
     "message": "Поновно уписивање главне лозинке је неопходно."
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least $VALUE$ characters long.",
+    "message": "Главна лозинка мора бити дужине најмање $VALUE$ карактера.",
     "description": "The Master Password must be at least a specific number of characters long.",
     "placeholders": {
       "value": {
@@ -771,7 +771,7 @@
     "message": "Контактирајте нас"
   },
   "helpAndFeedback": {
-    "message": "Help and feedback"
+    "message": "Помоћ и повратне информације"
   },
   "getHelp": {
     "message": "Потражи помоћ"
