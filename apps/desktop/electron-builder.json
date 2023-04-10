@@ -66,6 +66,7 @@
       ],
       "CFBundleDevelopmentRegion": "en"
     },
+    "singleArchFiles": "node_modules/@bitwarden/desktop-native/desktop_native.darwin-*.node",
     "target": ["dmg", "zip"]
   },
   "win": {
