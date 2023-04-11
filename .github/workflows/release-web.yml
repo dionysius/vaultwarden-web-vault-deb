@@ -72,7 +72,7 @@ jobs:
         id: setup-dct
         uses: bitwarden/gh-actions/setup-docker-trust@a8c384a05a974c05c48374c818b004be221d43ff
         with:
-          azure-creds: ${{ secrets.AZURE_PROD_KV_CREDENTIALS }}
+          azure-creds: ${{ secrets.AZURE_KV_CI_SERVICE_PRINCIPAL }}
           azure-keyvault-name: "bitwarden-prod-kv"
 
       - name: Pull branch image
