@@ -6,6 +6,7 @@ import * as util from "util";
 
 import { ipcMain } from "electron";
 import * as ipc from "node-ipc";
+import { getIpcSocketRoot } from "../proxy/ipc";
 
 import { LogService } from "@bitwarden/common/abstractions/log.service";
 
@@ -25,11 +26,9 @@ export class NativeMessagingMain {
   async listen() {
     ipc.config.id = "bitwarden";
     ipc.config.retry = 1500;
-    if (process.platform === "darwin") {
-      if (!existsSync(`${homedir()}/tmp`)) {
-        await fs.mkdir(`${homedir()}/tmp`);
-      }
-      ipc.config.socketRoot = `${homedir()}/tmp/`;
+    const ipcSocketRoot = getIpcSocketRoot();
+    if (ipcSocketRoot != null) {
+      ipc.config.socketRoot = ipcSocketRoot;
     }
 
     ipc.serve(() => {
