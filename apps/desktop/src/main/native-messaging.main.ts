@@ -6,9 +6,10 @@ import * as util from "util";
 
 import { ipcMain } from "electron";
 import * as ipc from "node-ipc";
-import { getIpcSocketRoot } from "../proxy/ipc";
 
 import { LogService } from "@bitwarden/common/abstractions/log.service";
+
+import { getIpcSocketRoot } from "../proxy/ipc";
 
 import { WindowMain } from "./window.main";
 
