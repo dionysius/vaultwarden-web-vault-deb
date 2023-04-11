@@ -1,5 +1,5 @@
 import { Component, ViewChild } from "@angular/core";
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 import { combineLatest, map } from "rxjs";
 
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
@@ -25,6 +25,11 @@ type ProductSwitcherItem = {
    * Route for items in the `otherProducts$` section
    */
   marketingRoute?: string | any[];
+
+  /**
+   * Used to apply css styles to show when a button is selected
+   */
+  isActive?: boolean;
 };
 
 @Component({
@@ -56,12 +61,14 @@ export class ProductSwitcherContentComponent {
           icon: "bwi-lock",
           appRoute: "/vault",
           marketingRoute: "https://bitwarden.com/products/personal/",
+          isActive: !this.router.url.includes("/sm/"),
         },
         sm: {
           name: "Secrets Manager Beta",
           icon: "bwi-cli",
           appRoute: ["/sm", smOrg?.id],
           marketingRoute: "https://bitwarden.com/products/secrets-manager/",
+          isActive: this.router.url.includes("/sm/"),
         },
         orgs: {
           name: "Organizations",
@@ -90,5 +97,9 @@ export class ProductSwitcherContentComponent {
     })
   );
 
-  constructor(private organizationService: OrganizationService, private route: ActivatedRoute) {}
+  constructor(
+    private organizationService: OrganizationService,
+    private route: ActivatedRoute,
+    private router: Router
+  ) {}
 }
