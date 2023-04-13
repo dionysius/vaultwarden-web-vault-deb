@@ -8,6 +8,11 @@ let ServiceNameBiometric = ServiceName + "_biometric"
 
 class SafariWebExtensionHandler: NSObject, NSExtensionRequestHandling {
 
+    override init() {
+        super.init();
+        NSApplication.shared.setActivationPolicy(.accessory)
+    }
+
 	func beginRequest(with context: NSExtensionContext) {
         let item = context.inputItems[0] as! NSExtensionItem
         let message = item.userInfo?[SFExtensionMessageKey] as AnyObject?
@@ -54,24 +59,24 @@ class SafariWebExtensionHandler: NSObject, NSExtensionRequestHandling {
             guard let data = blobData else {
                 return
             }
+            
             let panel = NSSavePanel()
-            panel.isFloatingPanel = true
             panel.canCreateDirectories = true
             panel.nameFieldStringValue = dlMsg.fileName
-            panel.begin { response in
-                if response == NSApplication.ModalResponse.OK {
-                    if let url = panel.url {
-                        do {
-                            let fileManager = FileManager.default
-                            if !fileManager.fileExists(atPath: url.absoluteString) {
-                                fileManager.createFile(atPath: url.absoluteString, contents: Data(),
-                                                       attributes: nil)
-                            }
-                            try data.write(to: url)
-                        } catch {
-                            print(error)
-                            NSLog("ERROR in downloadFile, \(error)")
+            let response = panel.runModal();
+           
+            if response == NSApplication.ModalResponse.OK {
+                if let url = panel.url {
+                    do {
+                        let fileManager = FileManager.default
+                        if !fileManager.fileExists(atPath: url.absoluteString) {
+                            fileManager.createFile(atPath: url.absoluteString, contents: Data(),
+                                                   attributes: nil)
                         }
+                        try data.write(to: url)
+                    } catch {
+                        print(error)
+                        NSLog("ERROR in downloadFile, \(error)")
                     }
                 }
             }
