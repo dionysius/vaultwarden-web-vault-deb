@@ -246,7 +246,7 @@ jobs:
         uses: bitwarden/gh-actions/setup-docker-trust@a8c384a05a974c05c48374c818b004be221d43ff
         with:
           azure-creds: ${{ secrets.AZURE_KV_CI_SERVICE_PRINCIPAL }}
-          azure-keyvault-name: "bitwarden-prod-kv"
+          azure-keyvault-name: "bitwarden-ci"
 
       - name: Build Docker image
         uses: docker/build-push-action@c56af957549030174b10d6867f20e78cfd7debc5
