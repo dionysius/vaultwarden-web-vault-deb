@@ -3,7 +3,6 @@ import { firstValueFrom, ReplaySubject, take } from "rxjs";
 
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
-import { CollectionService } from "@bitwarden/common/admin-console/abstractions/collection.service";
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
 import { PolicyType } from "@bitwarden/common/admin-console/enums";
@@ -23,7 +22,6 @@ describe("vault filter service", () => {
   let organizationService: MockProxy<OrganizationService>;
   let folderService: MockProxy<FolderService>;
   let cipherService: MockProxy<CipherService>;
-  let collectionService: MockProxy<CollectionService>;
   let policyService: MockProxy<PolicyService>;
   let i18nService: MockProxy<I18nService>;
   let organizations: ReplaySubject<Organization[]>;
@@ -34,7 +32,6 @@ describe("vault filter service", () => {
     organizationService = mock<OrganizationService>();
     folderService = mock<FolderService>();
     cipherService = mock<CipherService>();
-    collectionService = mock<CollectionService>();
     policyService = mock<PolicyService>();
     i18nService = mock<I18nService>();
     i18nService.collator = new Intl.Collator("en-US");
@@ -50,7 +47,6 @@ describe("vault filter service", () => {
       organizationService,
       folderService,
       cipherService,
-      collectionService,
       policyService,
       i18nService
     );
@@ -177,8 +173,7 @@ describe("vault filter service", () => {
           createCollectionView("1", "collection 1", "org test id"),
           createCollectionView("2", "collection 2", "non matching org id"),
         ];
-        collectionService.getAllDecrypted.mockResolvedValue(storedCollections);
-        vaultFilterService.reloadCollections();
+        vaultFilterService.reloadCollections(storedCollections);
 
         await expect(firstValueFrom(vaultFilterService.filteredCollections$)).resolves.toEqual([
           createCollectionView("1", "collection 1", "org test id"),
@@ -193,8 +188,7 @@ describe("vault filter service", () => {
           createCollectionView("id-2", "Collection 1/Collection 2", "org test id"),
           createCollectionView("id-3", "Collection 1/Collection 3", "org test id"),
         ];
-        collectionService.getAllDecrypted.mockResolvedValue(storedCollections);
-        vaultFilterService.reloadCollections();
+        vaultFilterService.reloadCollections(storedCollections);
 
         const result = await firstValueFrom(vaultFilterService.collectionTree$);
 
@@ -207,8 +201,7 @@ describe("vault filter service", () => {
           createCollectionView("id-1", "Collection 1", "org test id"),
           createCollectionView("id-3", "Collection 1/Collection 2/Collection 3", "org test id"),
         ];
-        collectionService.getAllDecrypted.mockResolvedValue(storedCollections);
-        vaultFilterService.reloadCollections();
+        vaultFilterService.reloadCollections(storedCollections);
 
         const result = await firstValueFrom(vaultFilterService.collectionTree$);
 
@@ -224,8 +217,7 @@ describe("vault filter service", () => {
           createCollectionView("id-3", "Collection 1/Collection 2/Collection 3", "org test id"),
           createCollectionView("id-4", "Collection 1/Collection 4", "org test id"),
         ];
-        collectionService.getAllDecrypted.mockResolvedValue(storedCollections);
-        vaultFilterService.reloadCollections();
+        vaultFilterService.reloadCollections(storedCollections);
 
         const result = await firstValueFrom(vaultFilterService.collectionTree$);
 
@@ -243,8 +235,7 @@ describe("vault filter service", () => {
           createCollectionView("id-1", "Collection 1", "org test id"),
           createCollectionView("id-3", "Collection 1/Collection 2/Collection 3", "org test id"),
         ];
-        collectionService.getAllDecrypted.mockResolvedValue(storedCollections);
-        vaultFilterService.reloadCollections();
+        vaultFilterService.reloadCollections(storedCollections);
 
         const result = await firstValueFrom(vaultFilterService.collectionTree$);
 

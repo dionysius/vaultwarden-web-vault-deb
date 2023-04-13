@@ -18,11 +18,14 @@
     </div>
     <div class="col-9">
       <app-org-vault-header
-        [activeFilter]="activeFilter"
-        (onCollectionChanged)="refreshItems()"
-        [actionPromise]="vaultItemsComponent.actionPromise"
-        (onAddCipher)="addCipher()"
+        [filter]="filter"
+        [loading]="refreshing"
         [organization]="organization"
+        [collection]="selectedCollection"
+        (onAddCipher)="addCipher()"
+        (onAddCollection)="addCollection()"
+        (onEditCollection)="editCollection(selectedCollection.node, $event.tab)"
+        (onDeleteCollection)="deleteCollection(selectedCollection.node)"
       ></app-org-vault-header>
       <app-callout
         type="warning"
@@ -31,21 +34,68 @@
       >
         {{ trashCleanupWarning }}
       </app-callout>
-      <app-org-vault-items
-        [activeFilter]="activeFilter"
-        [initOrganization]="organization"
-        (onCipherClicked)="navigateToCipher($event)"
-        (onAttachmentsClicked)="editCipherAttachments($event)"
-        (onAddCipher)="addCipher()"
-        (onEditCipherCollectionsClicked)="editCipherCollections($event)"
-        (onEventsClicked)="viewEvents($event)"
-        (onCloneClicked)="cloneCipher($event)"
+      <app-vault-items
+        [ciphers]="ciphers"
+        [collections]="collections"
+        [allCollections]="allCollections"
+        [allOrganizations]="organization ? [organization] : []"
+        [allGroups]="allGroups"
+        [disabled]="loading"
+        [showOwner]="false"
+        [showCollections]="filter.type !== undefined"
+        [showGroups]="
+          organization?.useGroups &&
+          ((filter.type === undefined && filter.collectionId === undefined) ||
+            filter.collectionId !== undefined)
+        "
+        [showPremiumFeatures]="organization?.useTotp"
+        [showBulkMove]="false"
+        [showBulkTrashOptions]="filter.type === 'trash'"
+        [useEvents]="organization?.useEvents"
+        [editableCollections]="true"
+        [cloneableOrganizationCiphers]="true"
+        (onEvent)="onVaultItemsEvent($event)"
       >
-      </app-org-vault-items>
+      </app-vault-items>
+      <div
+        class="tw-mt-6 tw-flex tw-h-full tw-flex-col tw-items-center tw-justify-start"
+        *ngIf="showMissingCollectionPermissionMessage"
+      >
+        <bit-icon [icon]="noItemIcon" aria-hidden="true"></bit-icon>
+        <p>{{ "noPermissionToViewAllCollectionItems" | i18n }}</p>
+      </div>
+      <div
+        class="tw-mt-6 tw-flex tw-h-full tw-flex-col tw-items-center tw-justify-start"
+        *ngIf="isEmpty && !showMissingCollectionPermissionMessage && !performingInitialLoad"
+      >
+        <bit-icon [icon]="noItemIcon" aria-hidden="true"></bit-icon>
+        <p>{{ "noItemsInList" | i18n }}</p>
+        <button
+          type="button"
+          buttonType="primary"
+          bitButton
+          (click)="addCipher()"
+          *ngIf="filter.type !== 'trash' && filter.collectionId !== Unassigned"
+        >
+          <i class="bwi bwi-plus bwi-fw" aria-hidden="true"></i>
+          {{ "newItem" | i18n }}
+        </button>
+      </div>
+      <div
+        class="tw-mt-6 tw-flex tw-h-full tw-flex-col tw-items-center tw-justify-start"
+        *ngIf="performingInitialLoad"
+      >
+        <i
+          class="bwi bwi-spinner bwi-spin text-muted"
+          title="{{ 'loading' | i18n }}"
+          aria-hidden="true"
+        ></i>
+        <span class="sr-only">{{ "loading" | i18n }}</span>
+      </div>
     </div>
   </div>
+  <ng-template #attachments></ng-template>
+  <ng-template #cipherAddEdit></ng-template>
+  <ng-template #collectionsModal></ng-template>
+  <ng-template #eventsTemplate></ng-template>
 </div>
-<ng-template #attachments></ng-template>
-<ng-template #cipherAddEdit></ng-template>
-<ng-template #collections></ng-template>
-<ng-template #eventsTemplate></ng-template>

@@ -26,12 +26,22 @@ export class TableBodyDirective {
 })
 export class TableComponent implements OnDestroy, AfterContentChecked {
   @Input() dataSource: TableDataSource<any>;
+  @Input() layout: "auto" | "fixed" = "auto";
 
   @ContentChild(TableBodyDirective) templateVariable: TableBodyDirective;
 
   protected rows: Observable<readonly any[]>;
 
   private _initialized = false;
+
+  get tableClass() {
+    return [
+      "tw-w-full",
+      "tw-leading-normal",
+      "tw-text-main",
+      this.layout === "auto" ? "tw-table-auto" : "tw-table-fixed",
+    ];
+  }
 
   ngAfterContentChecked(): void {
     if (!this._initialized && isDataSource(this.dataSource)) {

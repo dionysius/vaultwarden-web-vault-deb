@@ -1,6 +1,7 @@
 /* eslint-disable no-useless-escape */
 import * as path from "path";
 
+import { Observable, of, switchMap } from "rxjs";
 import { getHostname, parse } from "tldts";
 import { Merge } from "type-fest";
 
@@ -524,6 +525,17 @@ export class Utils {
 
   static delay(ms: number): Promise<void> {
     return new Promise((resolve) => setTimeout(resolve, ms));
+  }
+
+  /**
+   * Generate an observable from a function that returns a promise.
+   * Similar to the rxjs function {@link from} with one big exception:
+   * {@link from} will not re-execute the function when observers resubscribe.
+   * {@link Util.asyncToObservable} will execute `generator` for every
+   * subscribe, making it ideal if the value ever needs to be refreshed.
+   * */
+  static asyncToObservable<T>(generator: () => Promise<T>): Observable<T> {
+    return of(undefined).pipe(switchMap(() => generator()));
   }
 
   private static isAppleMobile(win: Window) {

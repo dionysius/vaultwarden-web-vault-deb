@@ -1,85 +1,118 @@
-import { Component, EventEmitter, Input, Output } from "@angular/core";
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from "@angular/core";
 
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
-import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
+import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
+import { CollectionView } from "@bitwarden/common/admin-console/models/view/collection.view";
 import { TreeNode } from "@bitwarden/common/models/domain/tree-node";
 
-import { VaultFilter } from "../vault-filter/shared/models/vault-filter.model";
-import { CollectionFilter } from "../vault-filter/shared/models/vault-filter.type";
+import {
+  All,
+  RoutedVaultFilterModel,
+  Unassigned,
+} from "../vault-filter/shared/models/routed-vault-filter.model";
 
 @Component({
   selector: "app-vault-header",
   templateUrl: "./vault-header.component.html",
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class VaultHeaderComponent {
-  /**
-   * Promise that is used to determine the loading state of the header via the ApiAction directive.
-   * When the promise exists and is not resolved, the loading spinner will be shown.
-   */
-  @Input() actionPromise: Promise<any>;
+  protected Unassigned = Unassigned;
+  protected All = All;
 
   /**
-   * The filter being actively applied to the vault view
+   * Boolean to determine the loading state of the header.
+   * Shows a loading spinner if set to true
    */
-  @Input() activeFilter: VaultFilter;
+  @Input() loading: boolean;
+
+  /** Current active fitler */
+  @Input() filter: RoutedVaultFilterModel;
 
   /**
-   * Emits when the active filter has been modified by the header
+   * All organizations that can be shown
    */
-  @Output() activeFilterChanged = new EventEmitter<VaultFilter>();
+  @Input() organizations: Organization[] = [];
+
+  /**
+   * Currently selected collection
+   */
+  @Input() collection?: TreeNode<CollectionView>;
 
   /**
    * Emits an event when the new item button is clicked in the header
    */
   @Output() onAddCipher = new EventEmitter<void>();
 
-  organizations$ = this.organizationService.organizations$;
-
-  constructor(private organizationService: OrganizationService, private i18nService: I18nService) {}
+  constructor(private i18nService: I18nService) {}
 
   /**
    * The id of the organization that is currently being filtered on.
    * This can come from a collection filter or organization filter, if applied.
    */
-  get activeOrganizationId() {
-    if (this.activeFilter.selectedCollectionNode != null) {
-      return this.activeFilter.selectedCollectionNode.node.organizationId;
+  protected get activeOrganizationId() {
+    if (this.collection != undefined) {
+      return this.collection.node.organizationId;
     }
-    if (this.activeFilter.selectedOrganizationNode != null) {
-      return this.activeFilter.selectedOrganizationNode.node.id;
+
+    if (this.filter.organizationId !== undefined) {
+      return this.filter.organizationId;
     }
+
     return undefined;
   }
 
-  get title() {
-    if (this.activeFilter.isCollectionSelected) {
-      if (this.activeFilter.isUnassignedCollectionSelected) {
-        return this.i18nService.t("unassigned");
-      }
-      return this.activeFilter.selectedCollectionNode.node.name;
+  protected get activeOrganization() {
+    const organizationId = this.activeOrganizationId;
+    return this.organizations?.find((org) => org.id === organizationId);
+  }
+
+  protected get showBreadcrumbs() {
+    return this.filter.collectionId !== undefined && this.filter.collectionId !== All;
+  }
+
+  protected get title() {
+    if (this.filter.collectionId === Unassigned) {
+      return this.i18nService.t("unassigned");
     }
 
-    if (this.activeFilter.isMyVaultSelected) {
+    if (this.collection) {
+      return this.collection.node.name;
+    }
+
+    if (this.filter.organizationId === Unassigned) {
       return this.i18nService.t("myVault");
     }
 
-    if (this.activeFilter?.selectedOrganizationNode != null) {
-      return `${this.activeFilter.selectedOrganizationNode.node.name} ${this.i18nService
-        .t("vault")
-        .toLowerCase()}`;
+    const activeOrganization = this.activeOrganization;
+    if (activeOrganization) {
+      return `${activeOrganization.name} ${this.i18nService.t("vault").toLowerCase()}`;
     }
 
     return this.i18nService.t("allVaults");
   }
 
-  applyCollectionFilter(collection: TreeNode<CollectionFilter>) {
-    const filter = this.activeFilter;
-    filter.resetFilter();
-    filter.selectedCollectionNode = collection;
-    this.activeFilterChanged.emit(filter);
+  /**
+   * A list of collection filters that form a chain from the organization root to currently selected collection.
+   * Begins from the organization root and excludes the currently selected collection.
+   */
+  protected get collections() {
+    if (this.collection == undefined) {
+      return [];
+    }
+
+    const collections = [this.collection];
+    while (collections[collections.length - 1].parent != undefined) {
+      collections.push(collections[collections.length - 1].parent);
+    }
+
+    return collections
+      .slice(1)
+      .reverse()
+      .map((treeNode) => treeNode.node);
   }
 
-  addCipher() {
+  protected addCipher() {
     this.onAddCipher.emit();
   }
 }

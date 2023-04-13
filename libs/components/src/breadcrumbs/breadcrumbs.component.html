@@ -6,6 +6,7 @@
       class="tw-my-2 tw-inline-block"
       [routerLink]="breadcrumb.route"
       [queryParams]="breadcrumb.queryParams"
+      [queryParamsHandling]="breadcrumb.queryParamsHandling"
     >
       <ng-container [ngTemplateOutlet]="breadcrumb.content"></ng-container>
     </a>
@@ -43,6 +44,7 @@
           linkType="primary"
           [routerLink]="breadcrumb.route"
           [queryParams]="breadcrumb.queryParams"
+          [queryParamsHandling]="breadcrumb.queryParamsHandling"
         >
           <ng-container [ngTemplateOutlet]="breadcrumb.content"></ng-container>
         </a>
@@ -64,6 +66,7 @@
         class="tw-my-2 tw-inline-block"
         [routerLink]="breadcrumb.route"
         [queryParams]="breadcrumb.queryParams"
+        [queryParamsHandling]="breadcrumb.queryParamsHandling"
       >
         <ng-container [ngTemplateOutlet]="breadcrumb.content"></ng-container>
       </a>

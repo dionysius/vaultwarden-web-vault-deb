@@ -94,14 +94,14 @@ export class ServiceUtils {
 
   /**
    * Searches an array of tree nodes for a node with a matching `id`
-   * @param {TreeNode<ITreeNodeObject>} nodeTree - An array of TreeNode branches that will be searched
+   * @param {TreeNode<T>} nodeTree - An array of TreeNode branches that will be searched
    * @param {string} id - The id of the node to be found
-   * @returns {TreeNode<ITreeNodeObject>} The node with a matching `id`
+   * @returns {TreeNode<T>} The node with a matching `id`
    */
-  static getTreeNodeObjectFromList(
-    nodeTree: TreeNode<ITreeNodeObject>[],
+  static getTreeNodeObjectFromList<T extends ITreeNodeObject>(
+    nodeTree: TreeNode<T>[],
     id: string
-  ): TreeNode<ITreeNodeObject> {
+  ): TreeNode<T> {
     for (let i = 0; i < nodeTree.length; i++) {
       if (nodeTree[i].node.id === id) {
         return nodeTree[i];

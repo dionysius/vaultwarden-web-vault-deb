@@ -1,0 +1,316 @@
+import { Component } from "@angular/core";
+import { RouterModule } from "@angular/router";
+import { Meta, moduleMetadata, Story } from "@storybook/angular";
+import { BehaviorSubject } from "rxjs";
+
+import { AvatarUpdateService } from "@bitwarden/common/abstractions/account/avatar-update.service";
+import { EnvironmentService } from "@bitwarden/common/abstractions/environment.service";
+import { StateService } from "@bitwarden/common/abstractions/state.service";
+import { OrganizationUserType } from "@bitwarden/common/admin-console/enums";
+import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
+import { TokenService } from "@bitwarden/common/auth/abstractions/token.service";
+import { SymmetricCryptoKey } from "@bitwarden/common/models/domain/symmetric-crypto-key";
+import { CipherType } from "@bitwarden/common/vault/enums/cipher-type";
+import { AttachmentView } from "@bitwarden/common/vault/models/view/attachment.view";
+import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
+import { LoginUriView } from "@bitwarden/common/vault/models/view/login-uri.view";
+import { LoginView } from "@bitwarden/common/vault/models/view/login.view";
+
+import {
+  CollectionAccessSelectionView,
+  CollectionAdminView,
+  GroupView,
+} from "../../../admin-console/organizations/core";
+import { PreloadedEnglishI18nModule } from "../../../tests/preloaded-english-i18n.module";
+import { Unassigned } from "../../individual-vault/vault-filter/shared/models/routed-vault-filter.model";
+
+import { VaultItemsComponent } from "./vault-items.component";
+import { VaultItemsModule } from "./vault-items.module";
+
+@Component({
+  template: "",
+})
+class EmptyComponent {}
+
+const organizations = [...new Array(3).keys()].map(createOrganization);
+const groups = [...Array(3).keys()].map(createGroupView);
+const collections = [...Array(5).keys()].map(createCollectionView);
+const ciphers = [...Array(50).keys()].map((i) => createCipherView(i));
+const deletedCiphers = [...Array(15).keys()].map((i) => createCipherView(i, true));
+const organizationOnlyCiphers = ciphers.filter((c) => c.organizationId != undefined);
+const deletedOrganizationOnlyCiphers = deletedCiphers.filter((c) => c.organizationId != undefined);
+
+export default {
+  title: "Web/Vault/Items",
+  component: VaultItemsComponent,
+  decorators: [
+    moduleMetadata({
+      imports: [
+        VaultItemsModule,
+        PreloadedEnglishI18nModule,
+        RouterModule.forRoot([{ path: "**", component: EmptyComponent }], { useHash: true }),
+      ],
+      providers: [
+        {
+          provide: EnvironmentService,
+          useValue: {
+            getIconsUrl() {
+              return "";
+            },
+          } as Partial<EnvironmentService>,
+        },
+        {
+          provide: StateService,
+          useValue: {
+            activeAccount$: new BehaviorSubject("1").asObservable(),
+            accounts$: new BehaviorSubject({ "1": { profile: { name: "Foo" } } }).asObservable(),
+            async getDisableFavicon() {
+              return false;
+            },
+          } as Partial<StateService>,
+        },
+        {
+          provide: AvatarUpdateService,
+          useValue: {
+            async loadColorFromState() {
+              return "#FF0000";
+            },
+          } as Partial<AvatarUpdateService>,
+        },
+        {
+          provide: TokenService,
+          useValue: {
+            async getUserId() {
+              return "user-id";
+            },
+            async getName() {
+              return "name";
+            },
+            async getEmail() {
+              return "email";
+            },
+          } as Partial<TokenService>,
+        },
+      ],
+    }),
+  ],
+  args: {
+    disabled: false,
+    allCollections: collections,
+    allGroups: groups,
+    allOrganizations: organizations,
+  },
+  argTypes: { onEvent: { action: "onEvent" } },
+} as Meta;
+
+const Template: Story<VaultItemsComponent> = (args: VaultItemsComponent) => ({
+  props: args,
+});
+
+export const Individual = Template.bind({});
+Individual.args = {
+  ciphers,
+  collections: [],
+  showOwner: true,
+  showCollections: false,
+  showGroups: false,
+  showPremiumFeatures: true,
+  showBulkMove: true,
+  showBulkTrashOptions: false,
+  useEvents: false,
+  editableCollections: false,
+  cloneableOrganizationCiphers: false,
+};
+
+export const IndividualDisabled = Template.bind({});
+IndividualDisabled.args = {
+  ciphers,
+  collections: [],
+  disabled: true,
+  showOwner: true,
+  showCollections: false,
+  showGroups: false,
+  showPremiumFeatures: true,
+  showBulkMove: true,
+  showBulkTrashOptions: false,
+  useEvents: false,
+  editableCollections: false,
+  cloneableOrganizationCiphers: false,
+};
+
+export const IndividualTrash = Template.bind({});
+IndividualTrash.args = {
+  ciphers: deletedCiphers,
+  collections: [],
+  showOwner: true,
+  showCollections: false,
+  showGroups: false,
+  showPremiumFeatures: true,
+  showBulkMove: false,
+  showBulkTrashOptions: true,
+  useEvents: false,
+  editableCollections: false,
+  cloneableOrganizationCiphers: false,
+};
+
+export const IndividualTopLevelCollection = Template.bind({});
+IndividualTopLevelCollection.args = {
+  ciphers: [],
+  collections,
+  showOwner: true,
+  showCollections: false,
+  showGroups: false,
+  showPremiumFeatures: true,
+  showBulkMove: false,
+  showBulkTrashOptions: false,
+  useEvents: false,
+  editableCollections: false,
+  cloneableOrganizationCiphers: false,
+};
+
+export const IndividualSecondLevelCollection = Template.bind({});
+IndividualSecondLevelCollection.args = {
+  ciphers,
+  collections,
+  showOwner: true,
+  showCollections: false,
+  showGroups: false,
+  showPremiumFeatures: true,
+  showBulkMove: true,
+  showBulkTrashOptions: false,
+  useEvents: false,
+  editableCollections: false,
+  cloneableOrganizationCiphers: false,
+};
+
+export const OrganizationVault = Template.bind({});
+OrganizationVault.args = {
+  ciphers: organizationOnlyCiphers,
+  collections: [],
+  showOwner: false,
+  showCollections: true,
+  showGroups: false,
+  showPremiumFeatures: true,
+  showBulkMove: false,
+  showBulkTrashOptions: false,
+  useEvents: true,
+  editableCollections: true,
+  cloneableOrganizationCiphers: true,
+};
+
+export const OrganizationTrash = Template.bind({});
+OrganizationTrash.args = {
+  ciphers: deletedOrganizationOnlyCiphers,
+  collections: [],
+  showOwner: false,
+  showCollections: true,
+  showGroups: false,
+  showPremiumFeatures: true,
+  showBulkMove: false,
+  showBulkTrashOptions: true,
+  useEvents: true,
+  editableCollections: true,
+  cloneableOrganizationCiphers: true,
+};
+
+const unassignedCollection = new CollectionAdminView();
+unassignedCollection.id = Unassigned;
+unassignedCollection.name = "Unassigned";
+export const OrganizationTopLevelCollection = Template.bind({});
+OrganizationTopLevelCollection.args = {
+  ciphers: [],
+  collections: collections.concat(unassignedCollection),
+  showOwner: false,
+  showCollections: false,
+  showGroups: true,
+  showPremiumFeatures: true,
+  showBulkMove: false,
+  showBulkTrashOptions: false,
+  useEvents: true,
+  editableCollections: true,
+  cloneableOrganizationCiphers: true,
+};
+
+export const OrganizationSecondLevelCollection = Template.bind({});
+OrganizationSecondLevelCollection.args = {
+  ciphers: organizationOnlyCiphers,
+  collections,
+  showOwner: false,
+  showCollections: false,
+  showGroups: true,
+  showPremiumFeatures: true,
+  showBulkMove: false,
+  showBulkTrashOptions: false,
+  useEvents: true,
+  editableCollections: true,
+  cloneableOrganizationCiphers: true,
+};
+
+function createCipherView(i: number, deleted = false): CipherView {
+  const organization = organizations[i % (organizations.length + 1)];
+  const collection = collections[i % (collections.length + 1)];
+  const view = new CipherView();
+  view.id = `cipher-${i}`;
+  view.name = `Vault item ${i}`;
+  view.type = CipherType.Login;
+  view.organizationId = organization?.id;
+  view.deletedDate = deleted ? new Date() : undefined;
+  view.login = new LoginView();
+  view.login.username = i % 10 === 0 ? undefined : `username-${i}`;
+  view.login.totp = i % 2 === 0 ? "I65VU7K5ZQL7WB4E" : undefined;
+  view.login.uris = [new LoginUriView()];
+  view.login.uris[0].uri = "https://bitwarden.com";
+  view.collectionIds = collection ? [collection.id] : [];
+
+  if (i === 0) {
+    // Old attachment
+    const attachement = new AttachmentView();
+    view.organizationId = null;
+    view.collectionIds = [];
+    view.attachments = [attachement];
+  } else if (i % 5 === 0) {
+    const attachement = new AttachmentView();
+    attachement.key = new SymmetricCryptoKey(new ArrayBuffer(32));
+    view.attachments = [attachement];
+  }
+
+  return view;
+}
+
+function createCollectionView(i: number): CollectionAdminView {
+  const organization = organizations[i % (organizations.length + 1)];
+  const group = groups[i % (groups.length + 1)];
+  const view = new CollectionAdminView();
+  view.id = `collection-${i}`;
+  view.name = `Collection ${i}`;
+  view.organizationId = organization?.id;
+
+  if (group !== undefined) {
+    view.groups = [
+      new CollectionAccessSelectionView({
+        id: group.id,
+        hidePasswords: false,
+        readOnly: false,
+      }),
+    ];
+  }
+
+  return view;
+}
+
+function createGroupView(i: number): GroupView {
+  const organization = organizations[i % organizations.length];
+  const view = new GroupView();
+  view.id = `group-${i}`;
+  view.name = `Group ${i}`;
+  view.organizationId = organization.id;
+  return view;
+}
+
+function createOrganization(i: number): Organization {
+  const organization = new Organization();
+  organization.id = `organization-${i}`;
+  organization.name = `Organization ${i}`;
+  organization.type = OrganizationUserType.Owner;
+  return organization;
+}

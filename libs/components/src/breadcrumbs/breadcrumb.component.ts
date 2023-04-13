@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output, TemplateRef, ViewChild } from "@angular/core";
+import { QueryParamsHandling } from "@angular/router";
 
 @Component({
   selector: "bit-breadcrumb",
@@ -13,6 +14,9 @@ export class BreadcrumbComponent {
 
   @Input()
   queryParams?: Record<string, string> = {};
+
+  @Input()
+  queryParamsHandling?: QueryParamsHandling;
 
   @Output()
   click = new EventEmitter();

@@ -53,7 +53,7 @@ export class RoutedVaultFilterBridge implements VaultFilter {
   set selectedOrganizationNode(value: TreeNode<OrganizationFilter>) {
     this.bridgeService.navigate({
       ...this.routedFilter,
-      organizationId: value.node.id,
+      organizationId: value?.node.id === "MyVault" ? Unassigned : value?.node.id,
       folderId: undefined,
       collectionId: undefined,
     });

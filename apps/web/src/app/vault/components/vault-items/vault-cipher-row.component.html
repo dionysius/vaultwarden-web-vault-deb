@@ -1,0 +1,147 @@
+<td bitCell [ngClass]="RowHeightClass" class="tw-min-w-fit">
+  <input
+    type="checkbox"
+    bitCheckbox
+    appStopProp
+    [disabled]="disabled"
+    [checked]="checked"
+    (change)="$event ? this.checkedToggled.next() : null"
+  />
+</td>
+<td bitCell [ngClass]="RowHeightClass" class="tw-min-w-fit">
+  <app-vault-icon [cipher]="cipher"></app-vault-icon>
+</td>
+<td
+  bitCell
+  [ngClass]="RowHeightClass"
+  class="tw-overflow-hidden tw-text-ellipsis tw-whitespace-nowrap"
+>
+  <div class="tw-inline-flex tw-w-full">
+    <button
+      bitLink
+      class="tw-overflow-hidden tw-text-ellipsis tw-text-start"
+      [disabled]="disabled"
+      [routerLink]="[]"
+      [queryParams]="{ itemId: cipher.id }"
+      queryParamsHandling="merge"
+      title="{{ 'editItem' | i18n }}"
+      type="button"
+    >
+      {{ cipher.name }}
+    </button>
+    <ng-container *ngIf="cipher.hasAttachments">
+      <i
+        class="bwi bwi-paperclip tw-ml-2"
+        appStopProp
+        title="{{ 'attachments' | i18n }}"
+        aria-hidden="true"
+      ></i>
+      <span class="sr-only">{{ "attachments" | i18n }}</span>
+      <ng-container *ngIf="showFixOldAttachments">
+        <i
+          class="bwi bwi-exclamation-triangle tw-ml-2 tw-text-warning"
+          appStopProp
+          title="{{ 'attachmentsNeedFix' | i18n }}"
+          aria-hidden="true"
+        ></i>
+        <span class="sr-only">{{ "attachmentsNeedFix" | i18n }}</span>
+      </ng-container>
+    </ng-container>
+  </div>
+  <br />
+  <span class="tw-text-sm tw-text-muted" appStopProp>{{ cipher.subTitle }}</span>
+</td>
+<td bitCell [ngClass]="RowHeightClass" *ngIf="showOwner">
+  <app-org-badge
+    [disabled]="disabled"
+    [organizationId]="cipher.organizationId"
+    [organizationName]="cipher.organizationId | orgNameFromId : organizations"
+    appStopProp
+  >
+  </app-org-badge>
+</td>
+<td bitCell [ngClass]="RowHeightClass" *ngIf="showCollections">
+  <app-collection-badge
+    *ngIf="cipher.collectionIds"
+    [collectionIds]="cipher.collectionIds"
+    [collections]="collections"
+  ></app-collection-badge>
+</td>
+<td bitCell [ngClass]="RowHeightClass" *ngIf="showGroups"></td>
+<td bitCell [ngClass]="RowHeightClass" class="tw-text-right">
+  <button
+    [disabled]="disabled"
+    [bitMenuTriggerFor]="cipherOptions"
+    size="small"
+    bitIconButton="bwi-ellipsis-v"
+    type="button"
+    appA11yTitle="{{ 'options' | i18n }}"
+    appStopProp
+  ></button>
+  <bit-menu #cipherOptions>
+    <ng-container *ngIf="cipher.type === CipherType.Login && !cipher.isDeleted">
+      <button bitMenuItem type="button" (click)="copy('username')">
+        <i class="bwi bwi-fw bwi-clone" aria-hidden="true"></i>
+        {{ "copyUsername" | i18n }}
+      </button>
+      <button bitMenuItem type="button" (click)="copy('password')" *ngIf="cipher.viewPassword">
+        <i class="bwi bwi-fw bwi-clone" aria-hidden="true"></i>
+        {{ "copyPassword" | i18n }}
+      </button>
+      <button bitMenuItem type="button" (click)="copy('totp')" *ngIf="showTotpCopyButton">
+        <i class="bwi bwi-fw bwi-clone" aria-hidden="true"></i>
+        {{ "copyVerificationCode" | i18n }}
+      </button>
+      <a
+        bitMenuItem
+        *ngIf="cipher.login.canLaunch"
+        type="button"
+        [href]="cipher.login.launchUri"
+        target="_blank"
+      >
+        <i class="bwi bwi-fw bwi-share-square" aria-hidden="true"></i>
+        {{ "launch" | i18n }}
+      </a>
+    </ng-container>
+    <button bitMenuItem type="button" (click)="attachments()">
+      <i class="bwi bwi-fw bwi-paperclip" aria-hidden="true"></i>
+      {{ "attachments" | i18n }}
+    </button>
+    <button bitMenuItem *ngIf="cloneable && !cipher.isDeleted" type="button" (click)="clone()">
+      <i class="bwi bwi-fw bwi-files" aria-hidden="true"></i>
+      {{ "clone" | i18n }}
+    </button>
+    <button
+      bitMenuItem
+      *ngIf="!cipher.organizationId && !cipher.isDeleted"
+      type="button"
+      (click)="moveToOrganization()"
+    >
+      <i class="bwi bwi-fw bwi-arrow-circle-right" aria-hidden="true"></i>
+      {{ "moveToOrganization" | i18n }}
+    </button>
+    <button
+      bitMenuItem
+      *ngIf="cipher.organizationId && !cipher.isDeleted"
+      type="button"
+      (click)="editCollections()"
+    >
+      <i class="bwi bwi-fw bwi-collection" aria-hidden="true"></i>
+      {{ "collections" | i18n }}
+    </button>
+    <button bitMenuItem *ngIf="cipher.organizationId && useEvents" type="button" (click)="events()">
+      <i class="bwi bwi-fw bwi-file-text" aria-hidden="true"></i>
+      {{ "eventLogs" | i18n }}
+    </button>
+    <button bitMenuItem (click)="restore()" type="button" *ngIf="cipher.isDeleted">
+      <i class="bwi bwi-fw bwi-undo" aria-hidden="true"></i>
+      {{ "restore" | i18n }}
+    </button>
+    <button bitMenuItem (click)="deleteCipher()" type="button">
+      <span class="tw-text-danger">
+        <i class="bwi bwi-fw bwi-trash" aria-hidden="true"></i>
+        {{ (cipher.isDeleted ? "permanentlyDelete" : "delete") | i18n }}
+      </span>
+    </button>
+  </bit-menu>
+</td>

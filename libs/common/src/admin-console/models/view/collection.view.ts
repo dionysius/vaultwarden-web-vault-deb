@@ -3,6 +3,8 @@ import { View } from "../../../models/view/view";
 import { Collection } from "../domain/collection";
 import { CollectionAccessDetailsResponse } from "../response/collection.response";
 
+export const NestingDelimiter = "/";
+
 export class CollectionView implements View, ITreeNodeObject {
   id: string = null;
   organizationId: string = null;

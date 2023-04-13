@@ -1,20 +1,23 @@
-import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
+import { Component, Input, OnChanges } from "@angular/core";
 
 import { AvatarUpdateService } from "@bitwarden/common/abstractions/account/avatar-update.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { TokenService } from "@bitwarden/common/auth/abstractions/token.service";
 import { Utils } from "@bitwarden/common/misc/utils";
 
+import { Unassigned } from "../vault-filter/shared/models/routed-vault-filter.model";
+
 @Component({
   selector: "app-org-badge",
   templateUrl: "organization-name-badge.component.html",
 })
-export class OrganizationNameBadgeComponent implements OnInit {
+export class OrganizationNameBadgeComponent implements OnChanges {
+  @Input() organizationId?: string;
   @Input() organizationName: string;
-  @Input() profileName: string;
+  @Input() disabled: boolean;
 
-  @Output() onOrganizationClicked = new EventEmitter<string>();
-
+  // Need a separate variable or we get weird behavior when used as part of cdk virtual scrolling
+  name: string;
   color: string;
   textColor: string;
   isMe: boolean;
@@ -25,12 +28,13 @@ export class OrganizationNameBadgeComponent implements OnInit {
     private tokenService: TokenService
   ) {}
 
-  async ngOnInit(): Promise<void> {
-    if (this.organizationName == null || this.organizationName === "") {
-      this.organizationName = this.i18nService.t("me");
-      this.isMe = true;
-    }
+  // ngOnChanges is required since this component might be reused as part of
+  // cdk virtual scrolling
+  async ngOnChanges() {
+    this.isMe = this.organizationName == null || this.organizationName === "";
+
     if (this.isMe) {
+      this.name = this.i18nService.t("me");
       this.color = await this.avatarService.loadColorFromState();
       if (this.color == null) {
         const userId = await this.tokenService.getUserId();
@@ -43,12 +47,13 @@ export class OrganizationNameBadgeComponent implements OnInit {
         }
       }
     } else {
+      this.name = this.organizationName;
       this.color = Utils.stringToColor(this.organizationName.toUpperCase());
     }
     this.textColor = Utils.pickTextColorBasedOnBgColor(this.color, 135, true) + "!important";
   }
 
-  emitOnOrganizationClicked() {
-    this.onOrganizationClicked.emit();
+  get organizationIdLink() {
+    return this.organizationId ?? Unassigned;
   }
 }

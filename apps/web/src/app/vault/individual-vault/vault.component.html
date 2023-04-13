@@ -17,24 +17,61 @@
     </div>
     <div [ngClass]="{ 'col-6': isShowingCards, 'col-9': !isShowingCards }">
       <app-vault-header
-        [activeFilter]="activeFilter"
-        [actionPromise]="vaultItemsComponent.actionPromise"
+        [filter]="filter"
+        [loading]="refreshing && !performingInitialLoad"
+        [organizations]="allOrganizations"
+        [collection]="selectedCollection"
         (onAddCipher)="addCipher()"
       ></app-vault-header>
       <app-callout type="warning" *ngIf="activeFilter.isDeleted" icon="bwi-exclamation-triangle">
         {{ trashCleanupWarning }}
       </app-callout>
       <app-vault-items
-        [activeFilter]="activeFilter"
-        (onCipherClicked)="navigateToCipher($event)"
-        (onAttachmentsClicked)="editCipherAttachments($event)"
-        (onAddCipher)="addCipher()"
-        (onShareClicked)="shareCipher($event)"
-        (onEditCipherCollectionsClicked)="editCipherCollections($event)"
-        (onCloneClicked)="cloneCipher($event)"
-        (onOrganzationBadgeClicked)="applyOrganizationFilter($event)"
+        [ciphers]="ciphers"
+        [collections]="collections"
+        [allCollections]="allCollections"
+        [allOrganizations]="allOrganizations"
+        [disabled]="refreshing"
+        [showOwner]="true"
+        [showCollections]="false"
+        [showGroups]="false"
+        [showPremiumFeatures]="canAccessPremium"
+        [showBulkMove]="showBulkMove"
+        [showBulkTrashOptions]="filter.type === 'trash'"
+        [useEvents]="false"
+        [editableCollections]="false"
+        [cloneableOrganizationCiphers]="false"
+        (onEvent)="onVaultItemsEvent($event)"
       >
       </app-vault-items>
+      <div
+        *ngIf="performingInitialLoad"
+        class="tw-mt-6 tw-flex tw-h-full tw-flex-col tw-items-center tw-justify-start"
+      >
+        <i
+          class="bwi bwi-spinner bwi-spin text-muted"
+          title="{{ 'loading' | i18n }}"
+          aria-hidden="true"
+        ></i>
+        <span class="sr-only">{{ "loading" | i18n }}</span>
+      </div>
+      <div
+        *ngIf="isEmpty && !performingInitialLoad"
+        class="tw-mt-6 tw-flex tw-h-full tw-flex-col tw-items-center tw-justify-start"
+      >
+        <bit-icon [icon]="noItemIcon" aria-hidden="true"></bit-icon>
+        <p>{{ "noItemsInList" | i18n }}</p>
+        <button
+          type="button"
+          buttonType="primary"
+          bitButton
+          (click)="addCipher()"
+          *ngIf="filter.type !== 'trash'"
+        >
+          <i class="bwi bwi-plus bwi-fw" aria-hidden="true"></i>
+          {{ "newItem" | i18n }}
+        </button>
+      </div>
     </div>
     <div class="col-3">
       <div class="card border-warning mb-4" *ngIf="showUpdateKey">
@@ -96,5 +133,5 @@
 <ng-template #folderAddEdit></ng-template>
 <ng-template #cipherAddEdit></ng-template>
 <ng-template #share></ng-template>
-<ng-template #collections></ng-template>
+<ng-template #collectionsModal></ng-template>
 <ng-template #updateKeyTemplate></ng-template>

@@ -151,7 +151,12 @@ function createLegacyFilterForEndUser(
     legacyFilter.selectedFolderNode = ServiceUtils.getTreeNodeObject(folderTree, filter.folderId);
   }
 
-  if (filter.organizationId !== undefined) {
+  if (filter.organizationId !== undefined && filter.organizationId === Unassigned) {
+    legacyFilter.selectedOrganizationNode = ServiceUtils.getTreeNodeObject(
+      organizationTree,
+      "MyVault"
+    );
+  } else if (filter.organizationId !== undefined && filter.organizationId !== Unassigned) {
     legacyFilter.selectedOrganizationNode = ServiceUtils.getTreeNodeObject(
       organizationTree,
       filter.organizationId
