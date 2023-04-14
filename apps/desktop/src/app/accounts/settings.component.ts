@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
-import { UntypedFormControl } from "@angular/forms";
-import { debounceTime } from "rxjs/operators";
+import { FormBuilder } from "@angular/forms";
+import { Observable, Subject } from "rxjs";
+import { concatMap, debounceTime, filter, map, takeUntil, tap } from "rxjs/operators";
 
 import { ModalService } from "@bitwarden/angular/services/modal.service";
 import { AbstractThemingService } from "@bitwarden/angular/services/theming/theming.service.abstraction";
@@ -10,7 +11,10 @@ import { MessagingService } from "@bitwarden/common/abstractions/messaging.servi
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { VaultTimeoutSettingsService } from "@bitwarden/common/abstractions/vaultTimeout/vaultTimeoutSettings.service";
+import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
+import { PolicyType } from "@bitwarden/common/admin-console/enums";
 import { DeviceType, ThemeType, StorageLocation } from "@bitwarden/common/enums";
+import { VaultTimeoutAction } from "@bitwarden/common/enums/vault-timeout-action.enum";
 import { Utils } from "@bitwarden/common/misc/utils";
 
 import { flagEnabled } from "../../flags";
@@ -23,36 +27,20 @@ import { SetPinComponent } from "../components/set-pin.component";
 })
 // eslint-disable-next-line rxjs-angular/prefer-takeuntil
 export class SettingsComponent implements OnInit {
-  vaultTimeoutAction: string;
-  pin: boolean = null;
-  enableFavicons = false;
-  enableBrowserIntegration = false;
-  enableDuckDuckGoBrowserIntegration = false;
-  enableBrowserIntegrationFingerprint = false;
-  enableMinToTray = false;
-  enableCloseToTray = false;
-  enableTray = false;
+  // For use in template
+  protected readonly VaultTimeoutAction = VaultTimeoutAction;
+
   showMinToTray = false;
-  startToTray = false;
-  minimizeOnCopyToClipboard = false;
-  locale: string;
-  vaultTimeouts: any[];
+  vaultTimeoutOptions: any[];
   localeOptions: any[];
-  theme: ThemeType;
   themeOptions: any[];
-  clearClipboard: number;
   clearClipboardOptions: any[];
   supportsBiometric: boolean;
-  biometric: boolean;
   biometricText: string;
-  autoPromptBiometrics: boolean;
   autoPromptBiometricsText: string;
-  alwaysShowDock: boolean;
   showAlwaysShowDock = false;
-  openAtLogin: boolean;
   requireEnableTray = false;
   showDuckDuckGoIntegrationOption = false;
-  approveLoginRequests = false;
 
   enableTrayText: string;
   enableTrayDescText: string;
@@ -63,17 +51,52 @@ export class SettingsComponent implements OnInit {
   startToTrayText: string;
   startToTrayDescText: string;
 
-  vaultTimeout: UntypedFormControl = new UntypedFormControl(null);
-
   showSecurity = true;
   showAccountPreferences = true;
   showAppPreferences = true;
 
   currentUserEmail: string;
 
+  vaultTimeoutPolicyCallout: Observable<{
+    timeout: { hours: number; minutes: number };
+    action: "lock" | "logOut";
+  }>;
   previousVaultTimeout: number = null;
 
+  form = this.formBuilder.group({
+    // Security
+    vaultTimeout: [null as number | null],
+    vaultTimeoutAction: [VaultTimeoutAction.Lock],
+    pin: [null as boolean | null],
+    biometric: false,
+    autoPromptBiometrics: false,
+    approveLoginRequests: false,
+    // Account Preferences
+    clearClipboard: [null as number | null],
+    minimizeOnCopyToClipboard: false,
+    enableFavicons: false,
+    // App Settings
+    enableTray: false,
+    enableMinToTray: false,
+    enableCloseToTray: false,
+    startToTray: false,
+    openAtLogin: false,
+    alwaysShowDock: false,
+    enableBrowserIntegration: false,
+    enableBrowserIntegrationFingerprint: this.formBuilder.control<boolean>({
+      value: false,
+      disabled: true,
+    }),
+    enableDuckDuckGoBrowserIntegration: false,
+    theme: [null as ThemeType | null],
+    locale: [null as string | null],
+  });
+
+  private destroy$ = new Subject<void>();
+
   constructor(
+    private policyService: PolicyService,
+    private formBuilder: FormBuilder,
     private i18nService: I18nService,
     private platformUtilsService: PlatformUtilsService,
     private vaultTimeoutSettingsService: VaultTimeoutSettingsService,
@@ -107,108 +130,158 @@ export class SettingsComponent implements OnInit {
     // DuckDuckGo browser is only for macos initially
     this.showDuckDuckGoIntegrationOption = flagEnabled("showDDGSetting") && isMac;
 
-    this.vaultTimeouts = [
+    this.vaultTimeoutOptions = [
       // { name: i18nService.t('immediately'), value: 0 },
-      { name: i18nService.t("oneMinute"), value: 1 },
-      { name: i18nService.t("fiveMinutes"), value: 5 },
-      { name: i18nService.t("fifteenMinutes"), value: 15 },
-      { name: i18nService.t("thirtyMinutes"), value: 30 },
-      { name: i18nService.t("oneHour"), value: 60 },
-      { name: i18nService.t("fourHours"), value: 240 },
-      { name: i18nService.t("onIdle"), value: -4 },
-      { name: i18nService.t("onSleep"), value: -3 },
+      { name: this.i18nService.t("oneMinute"), value: 1 },
+      { name: this.i18nService.t("fiveMinutes"), value: 5 },
+      { name: this.i18nService.t("fifteenMinutes"), value: 15 },
+      { name: this.i18nService.t("thirtyMinutes"), value: 30 },
+      { name: this.i18nService.t("oneHour"), value: 60 },
+      { name: this.i18nService.t("fourHours"), value: 240 },
+      { name: this.i18nService.t("onIdle"), value: -4 },
+      { name: this.i18nService.t("onSleep"), value: -3 },
     ];
 
     if (this.platformUtilsService.getDevice() !== DeviceType.LinuxDesktop) {
-      this.vaultTimeouts.push({ name: i18nService.t("onLocked"), value: -2 });
+      this.vaultTimeoutOptions.push({ name: this.i18nService.t("onLocked"), value: -2 });
     }
 
-    this.vaultTimeouts = this.vaultTimeouts.concat([
-      { name: i18nService.t("onRestart"), value: -1 },
-      { name: i18nService.t("never"), value: null },
+    this.vaultTimeoutOptions = this.vaultTimeoutOptions.concat([
+      { name: this.i18nService.t("onRestart"), value: -1 },
+      { name: this.i18nService.t("never"), value: null },
     ]);
 
     const localeOptions: any[] = [];
-    i18nService.supportedTranslationLocales.forEach((locale) => {
+    this.i18nService.supportedTranslationLocales.forEach((locale) => {
       let name = locale;
-      if (i18nService.localeNames.has(locale)) {
-        name += " - " + i18nService.localeNames.get(locale);
+      if (this.i18nService.localeNames.has(locale)) {
+        name += " - " + this.i18nService.localeNames.get(locale);
       }
       localeOptions.push({ name: name, value: locale });
     });
-    localeOptions.sort(Utils.getSortFunction(i18nService, "name"));
-    localeOptions.splice(0, 0, { name: i18nService.t("default"), value: null });
+    localeOptions.sort(Utils.getSortFunction(this.i18nService, "name"));
+    localeOptions.splice(0, 0, { name: this.i18nService.t("default"), value: null });
     this.localeOptions = localeOptions;
 
     this.themeOptions = [
-      { name: i18nService.t("default"), value: ThemeType.System },
-      { name: i18nService.t("light"), value: ThemeType.Light },
-      { name: i18nService.t("dark"), value: ThemeType.Dark },
+      { name: this.i18nService.t("default"), value: ThemeType.System },
+      { name: this.i18nService.t("light"), value: ThemeType.Light },
+      { name: this.i18nService.t("dark"), value: ThemeType.Dark },
       { name: "Nord", value: ThemeType.Nord },
     ];
 
     this.clearClipboardOptions = [
-      { name: i18nService.t("never"), value: null },
-      { name: i18nService.t("tenSeconds"), value: 10 },
-      { name: i18nService.t("twentySeconds"), value: 20 },
-      { name: i18nService.t("thirtySeconds"), value: 30 },
-      { name: i18nService.t("oneMinute"), value: 60 },
-      { name: i18nService.t("twoMinutes"), value: 120 },
-      { name: i18nService.t("fiveMinutes"), value: 300 },
+      { name: this.i18nService.t("never"), value: null },
+      { name: this.i18nService.t("tenSeconds"), value: 10 },
+      { name: this.i18nService.t("twentySeconds"), value: 20 },
+      { name: this.i18nService.t("thirtySeconds"), value: 30 },
+      { name: this.i18nService.t("oneMinute"), value: 60 },
+      { name: this.i18nService.t("twoMinutes"), value: 120 },
+      { name: this.i18nService.t("fiveMinutes"), value: 300 },
     ];
   }
 
   async ngOnInit() {
-    // App preferences
-    this.showMinToTray = this.platformUtilsService.getDevice() !== DeviceType.LinuxDesktop;
-    this.enableMinToTray = await this.stateService.getEnableMinimizeToTray();
-    this.enableCloseToTray = await this.stateService.getEnableCloseToTray();
-    this.enableTray = await this.stateService.getEnableTray();
-    this.startToTray = await this.stateService.getEnableStartToTray();
-
-    this.alwaysShowDock = await this.stateService.getAlwaysShowDock();
-    this.showAlwaysShowDock = this.platformUtilsService.getDevice() === DeviceType.MacOsDesktop;
-    this.openAtLogin = await this.stateService.getOpenAtLogin();
-
-    this.locale = (await this.stateService.getLocale()) ?? null;
-    this.theme = await this.stateService.getTheme();
-
     if ((await this.stateService.getUserId()) == null) {
       return;
     }
     this.currentUserEmail = await this.stateService.getEmail();
 
-    // Security
-    this.vaultTimeout.setValue(await this.stateService.getVaultTimeout());
-    this.vaultTimeoutAction = await this.stateService.getVaultTimeoutAction();
-    this.previousVaultTimeout = this.vaultTimeout.value;
-    // eslint-disable-next-line rxjs-angular/prefer-takeuntil
-    this.vaultTimeout.valueChanges.pipe(debounceTime(500)).subscribe(() => {
-      this.saveVaultTimeoutOptions();
-    });
+    // Load timeout policy
+    this.vaultTimeoutPolicyCallout = this.policyService.get$(PolicyType.MaximumVaultTimeout).pipe(
+      filter((policy) => policy != null),
+      map((policy) => {
+        let timeout;
+        if (policy.data?.minutes) {
+          timeout = {
+            hours: Math.floor(policy.data?.minutes / 60),
+            minutes: policy.data?.minutes % 60,
+          };
+        }
+        return { timeout: timeout, action: policy.data?.action };
+      }),
+      tap((policy) => {
+        if (policy.action) {
+          this.form.controls.vaultTimeoutAction.disable({ emitEvent: false });
+        } else {
+          this.form.controls.vaultTimeoutAction.enable({ emitEvent: false });
+        }
+      })
+    );
 
+    // Load initial values
     const pinSet = await this.vaultTimeoutSettingsService.isPinLockSet();
-    this.pin = pinSet[0] || pinSet[1];
-    this.approveLoginRequests = await this.stateService.getApproveLoginRequests();
+    const initialValues = {
+      vaultTimeout: await this.vaultTimeoutSettingsService.getVaultTimeout(),
+      vaultTimeoutAction: await this.vaultTimeoutSettingsService.getVaultTimeoutAction(),
+      pin: pinSet[0] || pinSet[1],
+      biometric: await this.vaultTimeoutSettingsService.isBiometricLockSet(),
+      autoPromptBiometrics: !(await this.stateService.getNoAutoPromptBiometrics()),
+      approveLoginRequests: (await this.stateService.getApproveLoginRequests()) ?? false,
+      clearClipboard: await this.stateService.getClearClipboard(),
+      minimizeOnCopyToClipboard: await this.stateService.getMinimizeOnCopyToClipboard(),
+      enableFavicons: !(await this.stateService.getDisableFavicon()),
+      enableTray: await this.stateService.getEnableTray(),
+      enableMinToTray: await this.stateService.getEnableMinimizeToTray(),
+      enableCloseToTray: await this.stateService.getEnableCloseToTray(),
+      startToTray: await this.stateService.getEnableStartToTray(),
+      openAtLogin: await this.stateService.getOpenAtLogin(),
+      alwaysShowDock: await this.stateService.getAlwaysShowDock(),
+      enableBrowserIntegration: await this.stateService.getEnableBrowserIntegration(),
+      enableBrowserIntegrationFingerprint:
+        await this.stateService.getEnableBrowserIntegrationFingerprint(),
+      enableDuckDuckGoBrowserIntegration:
+        await this.stateService.getEnableDuckDuckGoBrowserIntegration(),
+      theme: await this.stateService.getTheme(),
+      locale: (await this.stateService.getLocale()) ?? null,
+    };
+    this.form.setValue(initialValues, { emitEvent: false });
 
-    // Account preferences
-    this.enableFavicons = !(await this.stateService.getDisableFavicon());
-    this.enableBrowserIntegration = await this.stateService.getEnableBrowserIntegration();
-    this.enableDuckDuckGoBrowserIntegration =
-      await this.stateService.getEnableDuckDuckGoBrowserIntegration();
-    this.enableBrowserIntegrationFingerprint =
-      await this.stateService.getEnableBrowserIntegrationFingerprint();
-    this.clearClipboard = await this.stateService.getClearClipboard();
-    this.minimizeOnCopyToClipboard = await this.stateService.getMinimizeOnCopyToClipboard();
+    if (this.form.value.enableBrowserIntegration) {
+      this.form.controls.enableBrowserIntegrationFingerprint.enable();
+    }
+
+    // Non-form values
+    this.showMinToTray = this.platformUtilsService.getDevice() !== DeviceType.LinuxDesktop;
+    this.showAlwaysShowDock = this.platformUtilsService.getDevice() === DeviceType.MacOsDesktop;
     this.supportsBiometric = await this.platformUtilsService.supportsBiometric();
-    this.biometric = await this.vaultTimeoutSettingsService.isBiometricLockSet();
     this.biometricText = await this.stateService.getBiometricText();
-    this.autoPromptBiometrics = !(await this.stateService.getNoAutoPromptBiometrics());
     this.autoPromptBiometricsText = await this.stateService.getNoAutoPromptBiometricsText();
+    this.previousVaultTimeout = this.form.value.vaultTimeout;
+
+    // Form events
+    this.form.controls.vaultTimeout.valueChanges
+      .pipe(
+        debounceTime(500),
+        concatMap(async (value) => {
+          await this.saveVaultTimeout(value);
+        }),
+        takeUntil(this.destroy$)
+      )
+      .subscribe();
+
+    this.form.controls.vaultTimeoutAction.valueChanges
+      .pipe(
+        concatMap(async (action) => {
+          await this.saveVaultTimeoutAction(action);
+        }),
+        takeUntil(this.destroy$)
+      )
+      .subscribe();
+
+    this.form.controls.enableBrowserIntegration.valueChanges
+      .pipe(takeUntil(this.destroy$))
+      .subscribe((enabled) => {
+        if (enabled) {
+          this.form.controls.enableBrowserIntegrationFingerprint.enable();
+        } else {
+          this.form.controls.enableBrowserIntegrationFingerprint.disable();
+        }
+      });
   }
 
-  async saveVaultTimeoutOptions() {
-    if (this.vaultTimeout.value == null) {
+  async saveVaultTimeout(newValue: number) {
+    if (newValue == null) {
       const confirmed = await this.platformUtilsService.showDialog(
         this.i18nService.t("neverLockWarning"),
         "",
@@ -217,31 +290,17 @@ export class SettingsComponent implements OnInit {
         "warning"
       );
       if (!confirmed) {
-        this.vaultTimeout.setValue(this.previousVaultTimeout);
-        return;
-      }
-    }
-
-    if (this.vaultTimeoutAction === "logOut") {
-      const confirmed = await this.platformUtilsService.showDialog(
-        this.i18nService.t("vaultTimeoutLogOutConfirmation"),
-        this.i18nService.t("vaultTimeoutLogOutConfirmationTitle"),
-        this.i18nService.t("yes"),
-        this.i18nService.t("cancel"),
-        "warning"
-      );
-      if (!confirmed) {
-        this.vaultTimeoutAction = "lock";
+        this.form.controls.vaultTimeout.setValue(this.previousVaultTimeout);
         return;
       }
     }
 
     // Avoid saving 0 since it's useless as a timeout value.
-    if (this.vaultTimeout.value === 0) {
+    if (this.form.value.vaultTimeout === 0) {
       return;
     }
 
-    if (!this.vaultTimeout.valid) {
+    if (!this.form.controls.vaultTimeout.valid) {
       this.platformUtilsService.showToast(
         "error",
         null,
@@ -250,39 +309,71 @@ export class SettingsComponent implements OnInit {
       return;
     }
 
-    this.previousVaultTimeout = this.vaultTimeout.value;
+    this.previousVaultTimeout = this.form.value.vaultTimeout;
 
     await this.vaultTimeoutSettingsService.setVaultTimeoutOptions(
-      this.vaultTimeout.value,
-      this.vaultTimeoutAction
+      newValue,
+      this.form.value.vaultTimeoutAction
+    );
+  }
+
+  async saveVaultTimeoutAction(newValue: VaultTimeoutAction) {
+    if (newValue === "logOut") {
+      const confirmed = await this.platformUtilsService.showDialog(
+        this.i18nService.t("vaultTimeoutLogOutConfirmation"),
+        this.i18nService.t("vaultTimeoutLogOutConfirmationTitle"),
+        this.i18nService.t("yes"),
+        this.i18nService.t("cancel"),
+        "warning"
+      );
+      if (!confirmed) {
+        this.form.controls.vaultTimeoutAction.patchValue(VaultTimeoutAction.Lock, {
+          emitEvent: false,
+        });
+        return;
+      }
+    }
+
+    if (this.form.controls.vaultTimeout.hasError("policyError")) {
+      this.platformUtilsService.showToast(
+        "error",
+        null,
+        this.i18nService.t("vaultTimeoutTooLarge")
+      );
+      return;
+    }
+
+    await this.vaultTimeoutSettingsService.setVaultTimeoutOptions(
+      this.form.value.vaultTimeout,
+      newValue
     );
   }
 
   async updatePin() {
-    if (this.pin) {
+    if (this.form.value.pin) {
       const ref = this.modalService.open(SetPinComponent, { allowMultipleModals: true });
 
       if (ref == null) {
-        this.pin = false;
+        this.form.controls.pin.setValue(false);
         return;
       }
 
-      this.pin = await ref.onClosedPromise();
+      this.form.controls.pin.setValue(await ref.onClosedPromise());
     }
-    if (!this.pin) {
+    if (!this.form.value.pin) {
       await this.cryptoService.clearPinProtectedKey();
       await this.vaultTimeoutSettingsService.clear();
     }
   }
 
-  async updateBiometric(newValue: boolean) {
+  async updateBiometric() {
     // NOTE: A bug in angular causes [ngModel] to not reflect the backing field value
     // causing the checkbox to remain checked even if authentication fails.
     // The bug should resolve itself once the angular issue is resolved.
     // See: https://github.com/angular/angular/issues/13063
 
-    if (!newValue || !this.supportsBiometric) {
-      this.biometric = false;
+    if (!this.form.value.biometric || !this.supportsBiometric) {
+      this.form.controls.biometric.setValue(false);
       await this.stateService.setBiometricUnlock(null);
       await this.cryptoService.toggleKey();
       return;
@@ -291,17 +382,17 @@ export class SettingsComponent implements OnInit {
     const authResult = await this.platformUtilsService.authenticateBiometric();
 
     if (!authResult) {
-      this.biometric = false;
+      this.form.controls.biometric.setValue(false);
       return;
     }
 
-    this.biometric = true;
+    this.form.controls.biometric.setValue(true);
     await this.stateService.setBiometricUnlock(true);
     await this.cryptoService.toggleKey();
   }
 
   async updateAutoPromptBiometrics() {
-    if (this.autoPromptBiometrics) {
+    if (this.form.value.autoPromptBiometrics) {
       await this.stateService.setNoAutoPromptBiometrics(null);
     } else {
       await this.stateService.setNoAutoPromptBiometrics(true);
@@ -309,31 +400,31 @@ export class SettingsComponent implements OnInit {
   }
 
   async saveFavicons() {
-    await this.stateService.setDisableFavicon(!this.enableFavicons);
-    await this.stateService.setDisableFavicon(!this.enableFavicons, {
+    await this.stateService.setDisableFavicon(!this.form.value.enableFavicons);
+    await this.stateService.setDisableFavicon(!this.form.value.enableFavicons, {
       storageLocation: StorageLocation.Disk,
     });
     this.messagingService.send("refreshCiphers");
   }
 
   async saveMinToTray() {
-    await this.stateService.setEnableMinimizeToTray(this.enableMinToTray);
+    await this.stateService.setEnableMinimizeToTray(this.form.value.enableMinToTray);
   }
 
   async saveCloseToTray() {
     if (this.requireEnableTray) {
-      this.enableTray = true;
-      await this.stateService.setEnableTray(this.enableTray);
+      this.form.controls.enableTray.setValue(true);
+      await this.stateService.setEnableTray(this.form.value.enableTray);
     }
 
-    await this.stateService.setEnableCloseToTray(this.enableCloseToTray);
+    await this.stateService.setEnableCloseToTray(this.form.value.enableCloseToTray);
   }
 
   async saveTray() {
     if (
       this.requireEnableTray &&
-      !this.enableTray &&
-      (this.startToTray || this.enableCloseToTray)
+      !this.form.value.enableTray &&
+      (this.form.value.startToTray || this.form.value.enableCloseToTray)
     ) {
       const confirm = await this.platformUtilsService.showDialog(
         this.i18nService.t("confirmTrayDesc"),
@@ -344,53 +435,55 @@ export class SettingsComponent implements OnInit {
       );
 
       if (confirm) {
-        this.startToTray = false;
-        await this.stateService.setEnableStartToTray(this.startToTray);
-        this.enableCloseToTray = false;
-        await this.stateService.setEnableCloseToTray(this.enableCloseToTray);
+        this.form.controls.startToTray.setValue(false, { emitEvent: false });
+        await this.stateService.setEnableStartToTray(this.form.value.startToTray);
+        this.form.controls.enableCloseToTray.setValue(false, { emitEvent: false });
+        await this.stateService.setEnableCloseToTray(this.form.value.enableCloseToTray);
       } else {
-        this.enableTray = true;
+        this.form.controls.enableTray.setValue(true);
       }
 
       return;
     }
 
-    await this.stateService.setEnableTray(this.enableTray);
-    this.messagingService.send(this.enableTray ? "showTray" : "removeTray");
+    await this.stateService.setEnableTray(this.form.value.enableTray);
+    this.messagingService.send(this.form.value.enableTray ? "showTray" : "removeTray");
   }
 
   async saveStartToTray() {
     if (this.requireEnableTray) {
-      this.enableTray = true;
-      await this.stateService.setEnableTray(this.enableTray);
+      this.form.controls.enableTray.setValue(true);
+      await this.stateService.setEnableTray(this.form.value.enableTray);
     }
 
-    await this.stateService.setEnableStartToTray(this.startToTray);
+    await this.stateService.setEnableStartToTray(this.form.value.startToTray);
   }
 
   async saveLocale() {
-    await this.stateService.setLocale(this.locale);
+    await this.stateService.setLocale(this.form.value.locale);
   }
 
   async saveTheme() {
-    await this.themingService.updateConfiguredTheme(this.theme);
+    await this.themingService.updateConfiguredTheme(this.form.value.theme);
   }
 
   async saveMinOnCopyToClipboard() {
-    await this.stateService.setMinimizeOnCopyToClipboard(this.minimizeOnCopyToClipboard);
+    await this.stateService.setMinimizeOnCopyToClipboard(this.form.value.minimizeOnCopyToClipboard);
   }
 
   async saveClearClipboard() {
-    await this.stateService.setClearClipboard(this.clearClipboard);
+    await this.stateService.setClearClipboard(this.form.value.clearClipboard);
   }
 
   async saveAlwaysShowDock() {
-    await this.stateService.setAlwaysShowDock(this.alwaysShowDock);
+    await this.stateService.setAlwaysShowDock(this.form.value.alwaysShowDock);
   }
 
   async saveOpenAtLogin() {
-    this.stateService.setOpenAtLogin(this.openAtLogin);
-    this.messagingService.send(this.openAtLogin ? "addOpenAtLogin" : "removeOpenAtLogin");
+    this.stateService.setOpenAtLogin(this.form.value.openAtLogin);
+    this.messagingService.send(
+      this.form.value.openAtLogin ? "addOpenAtLogin" : "removeOpenAtLogin"
+    );
   }
 
   async saveBrowserIntegration() {
@@ -403,7 +496,7 @@ export class SettingsComponent implements OnInit {
         "warning"
       );
 
-      this.enableBrowserIntegration = false;
+      this.form.controls.enableBrowserIntegration.setValue(false);
       return;
     } else if (isWindowsStore()) {
       await this.platformUtilsService.showDialog(
@@ -414,7 +507,7 @@ export class SettingsComponent implements OnInit {
         "warning"
       );
 
-      this.enableBrowserIntegration = false;
+      this.form.controls.enableBrowserIntegration.setValue(false);
       return;
     } else if (process.platform == "linux") {
       await this.platformUtilsService.showDialog(
@@ -425,32 +518,34 @@ export class SettingsComponent implements OnInit {
         "warning"
       );
 
-      this.enableBrowserIntegration = false;
+      this.form.controls.enableBrowserIntegration.setValue(false);
       return;
     }
 
-    await this.stateService.setEnableBrowserIntegration(this.enableBrowserIntegration);
+    await this.stateService.setEnableBrowserIntegration(this.form.value.enableBrowserIntegration);
     this.messagingService.send(
-      this.enableBrowserIntegration ? "enableBrowserIntegration" : "disableBrowserIntegration"
+      this.form.value.enableBrowserIntegration
+        ? "enableBrowserIntegration"
+        : "disableBrowserIntegration"
     );
 
-    if (!this.enableBrowserIntegration) {
-      this.enableBrowserIntegrationFingerprint = false;
+    if (!this.form.value.enableBrowserIntegration) {
+      this.form.controls.enableBrowserIntegrationFingerprint.setValue(false);
       this.saveBrowserIntegrationFingerprint();
     }
   }
 
   async saveDdgBrowserIntegration() {
     await this.stateService.setEnableDuckDuckGoBrowserIntegration(
-      this.enableDuckDuckGoBrowserIntegration
+      this.form.value.enableDuckDuckGoBrowserIntegration
     );
 
-    if (!this.enableBrowserIntegration) {
+    if (!this.form.value.enableBrowserIntegration) {
       await this.stateService.setDuckDuckGoSharedKey(null);
     }
 
     this.messagingService.send(
-      this.enableDuckDuckGoBrowserIntegration
+      this.form.value.enableDuckDuckGoBrowserIntegration
         ? "enableDuckDuckGoBrowserIntegration"
         : "disableDuckDuckGoBrowserIntegration"
     );
@@ -458,11 +553,16 @@ export class SettingsComponent implements OnInit {
 
   async saveBrowserIntegrationFingerprint() {
     await this.stateService.setEnableBrowserIntegrationFingerprint(
-      this.enableBrowserIntegrationFingerprint
+      this.form.value.enableBrowserIntegrationFingerprint
     );
   }
 
   async updateApproveLoginRequests() {
-    await this.stateService.setApproveLoginRequests(this.approveLoginRequests);
+    await this.stateService.setApproveLoginRequests(this.form.value.approveLoginRequests);
+  }
+
+  ngOnDestroy() {
+    this.destroy$.next();
+    this.destroy$.complete();
   }
 }

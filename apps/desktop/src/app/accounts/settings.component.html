@@ -1,7 +1,7 @@
 <div class="modal fade" role="dialog" aria-modal="true" aria-labelledby="settingsTitle">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <div class="modal-body form">
+      <div class="modal-body form" [formGroup]="form">
         <div class="box">
           <h1 class="box-header" id="settingsTitle">
             {{ "settingsTitle" | i18n : currentUserEmail }}
@@ -30,9 +30,29 @@
               </button>
             </h2>
             <ng-container *ngIf="showSecurity">
+              <app-callout type="info" *ngIf="vaultTimeoutPolicyCallout | async as policy">
+                <span *ngIf="policy.timeout && policy.action">
+                  {{
+                    "vaultTimeoutPolicyWithActionInEffect"
+                      | i18n
+                        : policy.timeout.hours
+                        : policy.timeout.minutes
+                        : (policy.action | i18n)
+                  }}
+                </span>
+                <span *ngIf="policy.timeout && !policy.action">
+                  {{
+                    "vaultTimeoutPolicyInEffect"
+                      | i18n : policy.timeout.hours : policy.timeout.minutes
+                  }}
+                </span>
+                <span *ngIf="!policy.timeout && policy.action">
+                  {{ "vaultTimeoutActionPolicyInEffect" | i18n : (policy.action | i18n) }}
+                </span>
+              </app-callout>
               <app-vault-timeout-input
-                [vaultTimeouts]="vaultTimeouts"
-                [formControl]="vaultTimeout"
+                [vaultTimeoutOptions]="vaultTimeoutOptions"
+                [formControl]="form.controls.vaultTimeout"
                 ngDefaultControl
               ></app-vault-timeout-input>
               <div class="form-group">
@@ -41,12 +61,10 @@
                   <label for="vaultTimeoutActionLock">
                     <input
                       type="radio"
-                      name="VaultTimeoutAction"
                       id="vaultTimeoutActionLock"
-                      value="lock"
+                      value="{{ VaultTimeoutAction.Lock }}"
                       aria-describedby="vaultTimeoutActionLockHelp"
-                      [(ngModel)]="vaultTimeoutAction"
-                      (change)="saveVaultTimeoutOptions()"
+                      formControlName="vaultTimeoutAction"
                     />
                     {{ "lock" | i18n }}
                   </label>
@@ -58,12 +76,10 @@
                   <label for="vaultTimeoutActionLogOut">
                     <input
                       type="radio"
-                      name="VaultTimeoutAction"
                       id="vaultTimeoutActionLogOut"
-                      value="logOut"
+                      value="{{ VaultTimeoutAction.LogOut }}"
                       aria-describedby="vaultTimeoutActionLogOutHelp"
-                      [(ngModel)]="vaultTimeoutAction"
-                      (change)="saveVaultTimeoutOptions()"
+                      formControlName="vaultTimeoutAction"
                     />
                     {{ "logOut" | i18n }}
                   </label>
@@ -75,13 +91,7 @@
               <div class="form-group">
                 <div class="checkbox">
                   <label for="pin">
-                    <input
-                      id="pin"
-                      type="checkbox"
-                      name="PIN"
-                      [(ngModel)]="pin"
-                      (change)="updatePin()"
-                    />
+                    <input id="pin" type="checkbox" formControlName="pin" (change)="updatePin()" />
                     {{ "unlockWithPin" | i18n }}
                   </label>
                 </div>
@@ -92,22 +102,20 @@
                     <input
                       id="biometric"
                       type="checkbox"
-                      name="biometric"
-                      [ngModel]="biometric"
-                      (ngModelChange)="updateBiometric($event)"
+                      formControlName="biometric"
+                      (change)="updateBiometric()"
                     />
                     {{ biometricText | i18n }}
                   </label>
                 </div>
               </div>
-              <div class="form-group" *ngIf="supportsBiometric && biometric">
+              <div class="form-group" *ngIf="supportsBiometric && this.form.value.biometric">
                 <div class="checkbox">
                   <label for="autoPromptBiometrics">
                     <input
                       id="autoPromptBiometrics"
                       type="checkbox"
-                      name="autoPromptBiometrics"
-                      [(ngModel)]="autoPromptBiometrics"
+                      formControlName="autoPromptBiometrics"
                       (change)="updateAutoPromptBiometrics()"
                     />
                     {{ autoPromptBiometricsText | i18n }}
@@ -120,8 +128,7 @@
                     <input
                       id="approveLoginRequests"
                       type="checkbox"
-                      name="approveLoginRequests"
-                      [(ngModel)]="approveLoginRequests"
+                      formControlName="approveLoginRequests"
                       (change)="updateApproveLoginRequests()"
                     />
                     {{ "approveLoginRequests" | i18n }}
@@ -159,9 +166,8 @@
                 <label for="clearClipboard">{{ "clearClipboard" | i18n }}</label>
                 <select
                   id="clearClipboard"
-                  name="ClearClipboard"
                   aria-describedby="clearClipboardHelp"
-                  [(ngModel)]="clearClipboard"
+                  formControlName="clearClipboard"
                   (change)="saveClearClipboard()"
                 >
                   <option *ngFor="let o of clearClipboardOptions" [ngValue]="o.value">
@@ -178,9 +184,8 @@
                     <input
                       id="minimizeOnCopyToClipboard"
                       type="checkbox"
-                      name="MinimizeOnCopyToClipboard"
                       aria-describedby="minimizeOnCopyToClipboardHelp"
-                      [(ngModel)]="minimizeOnCopyToClipboard"
+                      formControlName="minimizeOnCopyToClipboard"
                       (change)="saveMinOnCopyToClipboard()"
                     />
                     {{ "minimizeOnCopyToClipboard" | i18n }}
@@ -196,9 +201,8 @@
                     <input
                       id="enableFavicons"
                       type="checkbox"
-                      name="enableFavicons"
                       aria-describedby="enableFaviconsHelp"
-                      [(ngModel)]="enableFavicons"
+                      formControlName="enableFavicons"
                       (change)="saveFavicons()"
                     />
                     {{ "enableFavicon" | i18n }}
@@ -238,9 +242,8 @@
                     <input
                       id="enableTray"
                       type="checkbox"
-                      name="EnableTray"
                       aria-describedby="enableTrayHelp"
-                      [(ngModel)]="enableTray"
+                      formControlName="enableTray"
                       (change)="saveTray()"
                     />
                     {{ enableTrayText }}
@@ -254,9 +257,8 @@
                     <input
                       id="enableMinToTray"
                       type="checkbox"
-                      name="EnableMinToTray"
                       aria-describedby="enableMinToTrayHelp"
-                      [(ngModel)]="enableMinToTray"
+                      formControlName="enableMinToTray"
                       (change)="saveMinToTray()"
                     />
                     {{ enableMinToTrayText }}
@@ -272,9 +274,8 @@
                     <input
                       id="enableCloseToTray"
                       type="checkbox"
-                      name="EnableCloseToTray"
                       aria-describedby="enableCloseToTrayHelp"
-                      [(ngModel)]="enableCloseToTray"
+                      formControlName="enableCloseToTray"
                       (change)="saveCloseToTray()"
                     />
                     {{ enableCloseToTrayText }}
@@ -290,9 +291,8 @@
                     <input
                       id="startToTray"
                       type="checkbox"
-                      name="StartToTray"
                       aria-describedby="startToTrayHelp"
-                      [(ngModel)]="startToTray"
+                      formControlName="startToTray"
                       (change)="saveStartToTray()"
                     />
                     {{ startToTrayText }}
@@ -306,9 +306,8 @@
                     <input
                       id="openAtLogin"
                       type="checkbox"
-                      name="OpenAtLogin"
                       aria-describedby="openAtLoginHelp"
-                      [(ngModel)]="openAtLogin"
+                      formControlName="openAtLogin"
                       (change)="saveOpenAtLogin()"
                     />
                     {{ "openAtLogin" | i18n }}
@@ -324,9 +323,8 @@
                     <input
                       id="alwaysShowDock"
                       type="checkbox"
-                      name="AlwaysShowDock"
                       aria-describedby="alwaysShowDockHelp"
-                      [(ngModel)]="alwaysShowDock"
+                      formControlName="alwaysShowDock"
                       (change)="saveAlwaysShowDock()"
                     />
                     {{ "alwaysShowDock" | i18n }}
@@ -342,9 +340,8 @@
                     <input
                       id="enableBrowserIntegration"
                       type="checkbox"
-                      name="EnableBrowserIntegration"
                       aria-describedby="enableBrowserIntegrationHelp"
-                      [(ngModel)]="enableBrowserIntegration"
+                      formControlName="enableBrowserIntegration"
                       (change)="saveBrowserIntegration()"
                     />
                     {{ "enableBrowserIntegration" | i18n }}
@@ -360,11 +357,9 @@
                     <input
                       id="enableBrowserIntegrationFingerprint"
                       type="checkbox"
-                      name="EnableBrowserIntegrationFingerprint"
                       aria-describedby="enableBrowserIntegrationFingerprintHelp"
-                      [(ngModel)]="enableBrowserIntegrationFingerprint"
+                      formControlName="enableBrowserIntegrationFingerprint"
                       (change)="saveBrowserIntegrationFingerprint()"
-                      [disabled]="!enableBrowserIntegration"
                     />
                     {{ "enableBrowserIntegrationFingerprint" | i18n }}
                   </label>
@@ -379,8 +374,7 @@
                     <input
                       id="enableDuckDuckGoBrowserIntegration"
                       type="checkbox"
-                      name="enableDuckDuckGoBrowserIntegration"
-                      [(ngModel)]="enableDuckDuckGoBrowserIntegration"
+                      formControlName="enableDuckDuckGoBrowserIntegration"
                       (change)="saveDdgBrowserIntegration()"
                     />
                     {{ "enableDuckDuckGoBrowserIntegration" | i18n }}
@@ -394,9 +388,8 @@
                 <label for="theme">{{ "theme" | i18n }}</label>
                 <select
                   id="theme"
-                  name="Theme"
                   aria-describedby="themeHelp"
-                  [(ngModel)]="theme"
+                  formControlName="theme"
                   (change)="saveTheme()"
                 >
                   <option *ngFor="let o of themeOptions" [ngValue]="o.value">{{ o.name }}</option>
@@ -407,9 +400,8 @@
                 <label for="locale">{{ "language" | i18n }}</label>
                 <select
                   id="locale"
-                  name="Locale"
                   aria-describedby="localeHelp"
-                  [(ngModel)]="locale"
+                  formControlName="locale"
                   (change)="saveLocale()"
                 >
                   <option *ngFor="let o of localeOptions" [ngValue]="o.value">{{ o.name }}</option>

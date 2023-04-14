@@ -1,6 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
-import { UntypedFormControl } from "@angular/forms";
+import { FormBuilder } from "@angular/forms";
 import { Router } from "@angular/router";
+import { concatMap, filter, map, Observable, Subject, takeUntil, tap } from "rxjs";
 import Swal from "sweetalert2";
 
 import { ModalService } from "@bitwarden/angular/services/modal.service";
@@ -12,8 +13,11 @@ import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUti
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { VaultTimeoutService } from "@bitwarden/common/abstractions/vaultTimeout/vaultTimeout.service";
 import { VaultTimeoutSettingsService } from "@bitwarden/common/abstractions/vaultTimeout/vaultTimeoutSettings.service";
+import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
+import { PolicyType } from "@bitwarden/common/admin-console/enums";
 import { KeyConnectorService } from "@bitwarden/common/auth/abstractions/key-connector.service";
 import { DeviceType } from "@bitwarden/common/enums";
+import { VaultTimeoutAction } from "@bitwarden/common/enums/vault-timeout-action.enum";
 
 import { BrowserApi } from "../../browser/browserApi";
 import { BiometricErrors, BiometricErrorTypes } from "../../models/biometricErrors";
@@ -44,19 +48,29 @@ const RateUrls = {
 export class SettingsComponent implements OnInit {
   @ViewChild("vaultTimeoutActionSelect", { read: ElementRef, static: true })
   vaultTimeoutActionSelectRef: ElementRef;
-  vaultTimeouts: any[];
-  vaultTimeoutActions: any[];
-  vaultTimeoutAction: string;
-  pin: boolean = null;
+  vaultTimeoutOptions: any[];
+  vaultTimeoutActionOptions: any[];
+  vaultTimeoutPolicyCallout: Observable<{
+    timeout: { hours: number; minutes: number };
+    action: VaultTimeoutAction;
+  }>;
   supportsBiometric: boolean;
-  biometric = false;
-  enableAutoBiometricsPrompt = true;
   previousVaultTimeout: number = null;
   showChangeMasterPass = true;
 
-  vaultTimeout: UntypedFormControl = new UntypedFormControl(null);
+  form = this.formBuilder.group({
+    vaultTimeout: [null as number | null],
+    vaultTimeoutAction: [VaultTimeoutAction.Lock],
+    pin: [null as boolean | null],
+    biometric: false,
+    enableAutoBiometricsPrompt: true,
+  });
+
+  private destroy$ = new Subject<void>();
 
   constructor(
+    private policyService: PolicyService,
+    private formBuilder: FormBuilder,
     private platformUtilsService: PlatformUtilsService,
     private i18nService: I18nService,
     private vaultTimeoutService: VaultTimeoutService,
@@ -72,10 +86,31 @@ export class SettingsComponent implements OnInit {
   ) {}
 
   async ngOnInit() {
+    this.vaultTimeoutPolicyCallout = this.policyService.get$(PolicyType.MaximumVaultTimeout).pipe(
+      filter((policy) => policy != null),
+      map((policy) => {
+        let timeout;
+        if (policy.data?.minutes) {
+          timeout = {
+            hours: Math.floor(policy.data?.minutes / 60),
+            minutes: policy.data?.minutes % 60,
+          };
+        }
+        return { timeout: timeout, action: policy.data?.action };
+      }),
+      tap((policy) => {
+        if (policy.action) {
+          this.form.controls.vaultTimeoutAction.disable({ emitEvent: false });
+        } else {
+          this.form.controls.vaultTimeoutAction.enable({ emitEvent: false });
+        }
+      })
+    );
+
     const showOnLocked =
       !this.platformUtilsService.isFirefox() && !this.platformUtilsService.isSafari();
 
-    this.vaultTimeouts = [
+    this.vaultTimeoutOptions = [
       { name: this.i18nService.t("immediately"), value: 0 },
       { name: this.i18nService.t("oneMinute"), value: 1 },
       { name: this.i18nService.t("fiveMinutes"), value: 5 },
@@ -88,40 +123,63 @@ export class SettingsComponent implements OnInit {
     ];
 
     if (showOnLocked) {
-      this.vaultTimeouts.push({ name: this.i18nService.t("onLocked"), value: -2 });
+      this.vaultTimeoutOptions.push({ name: this.i18nService.t("onLocked"), value: -2 });
     }
 
-    this.vaultTimeouts.push({ name: this.i18nService.t("onRestart"), value: -1 });
-    this.vaultTimeouts.push({ name: this.i18nService.t("never"), value: null });
+    this.vaultTimeoutOptions.push({ name: this.i18nService.t("onRestart"), value: -1 });
+    this.vaultTimeoutOptions.push({ name: this.i18nService.t("never"), value: null });
 
-    this.vaultTimeoutActions = [
-      { name: this.i18nService.t("lock"), value: "lock" },
-      { name: this.i18nService.t("logOut"), value: "logOut" },
+    this.vaultTimeoutActionOptions = [
+      { name: this.i18nService.t(VaultTimeoutAction.Lock), value: VaultTimeoutAction.Lock },
+      { name: this.i18nService.t(VaultTimeoutAction.LogOut), value: VaultTimeoutAction.LogOut },
     ];
 
     let timeout = await this.vaultTimeoutSettingsService.getVaultTimeout();
-    if (timeout != null) {
-      if (timeout === -2 && !showOnLocked) {
-        timeout = -1;
-      }
-      this.vaultTimeout.setValue(timeout);
+    if (timeout === -2 && !showOnLocked) {
+      timeout = -1;
     }
-    this.previousVaultTimeout = this.vaultTimeout.value;
-    // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
-    this.vaultTimeout.valueChanges.subscribe(async (value) => {
-      await this.saveVaultTimeout(value);
-    });
-
-    const action = await this.stateService.getVaultTimeoutAction();
-    this.vaultTimeoutAction = action == null ? "lock" : action;
-
     const pinSet = await this.vaultTimeoutSettingsService.isPinLockSet();
-    this.pin = pinSet[0] || pinSet[1];
 
+    const initialValues = {
+      vaultTimeout: timeout,
+      vaultTimeoutAction: await this.vaultTimeoutSettingsService.getVaultTimeoutAction(),
+      pin: pinSet[0] || pinSet[1],
+      biometric: await this.vaultTimeoutSettingsService.isBiometricLockSet(),
+      enableAutoBiometricsPrompt: !(await this.stateService.getDisableAutoBiometricsPrompt()),
+    };
+    this.form.setValue(initialValues, { emitEvent: false });
+
+    this.previousVaultTimeout = timeout;
     this.supportsBiometric = await this.platformUtilsService.supportsBiometric();
-    this.biometric = await this.vaultTimeoutSettingsService.isBiometricLockSet();
-    this.enableAutoBiometricsPrompt = !(await this.stateService.getDisableAutoBiometricsPrompt());
     this.showChangeMasterPass = !(await this.keyConnectorService.getUsesKeyConnector());
+
+    this.form.controls.vaultTimeout.valueChanges
+      .pipe(
+        concatMap(async (value) => {
+          await this.saveVaultTimeout(value);
+        }),
+        takeUntil(this.destroy$)
+      )
+      .subscribe();
+
+    this.form.controls.vaultTimeoutAction.valueChanges
+      .pipe(
+        concatMap(async (action) => {
+          await this.saveVaultTimeoutAction(action);
+        }),
+        takeUntil(this.destroy$)
+      )
+      .subscribe();
+
+    this.form.controls.biometric.valueChanges
+      .pipe(takeUntil(this.destroy$))
+      .subscribe((enabled) => {
+        if (enabled) {
+          this.form.controls.enableAutoBiometricsPrompt.enable();
+        } else {
+          this.form.controls.enableAutoBiometricsPrompt.disable();
+        }
+      });
   }
 
   async saveVaultTimeout(newValue: number) {
@@ -134,14 +192,14 @@ export class SettingsComponent implements OnInit {
         "warning"
       );
       if (!confirmed) {
-        this.vaultTimeout.setValue(this.previousVaultTimeout);
+        this.form.controls.vaultTimeout.setValue(this.previousVaultTimeout);
         return;
       }
     }
 
     // The minTimeoutError does not apply to browser because it supports Immediately
     // So only check for the policyError
-    if (this.vaultTimeout.hasError("policyError")) {
+    if (this.form.controls.vaultTimeout.hasError("policyError")) {
       this.platformUtilsService.showToast(
         "error",
         null,
@@ -150,19 +208,19 @@ export class SettingsComponent implements OnInit {
       return;
     }
 
-    this.previousVaultTimeout = this.vaultTimeout.value;
+    this.previousVaultTimeout = this.form.value.vaultTimeout;
 
     await this.vaultTimeoutSettingsService.setVaultTimeoutOptions(
-      this.vaultTimeout.value,
-      this.vaultTimeoutAction
+      newValue,
+      this.form.value.vaultTimeoutAction
     );
     if (this.previousVaultTimeout == null) {
       this.messagingService.send("bgReseedStorage");
     }
   }
 
-  async saveVaultTimeoutAction(newValue: string) {
-    if (newValue === "logOut") {
+  async saveVaultTimeoutAction(newValue: VaultTimeoutAction) {
+    if (newValue === VaultTimeoutAction.LogOut) {
       const confirmed = await this.platformUtilsService.showDialog(
         this.i18nService.t("vaultTimeoutLogOutConfirmation"),
         this.i18nService.t("vaultTimeoutLogOutConfirmationTitle"),
@@ -171,17 +229,20 @@ export class SettingsComponent implements OnInit {
         "warning"
       );
       if (!confirmed) {
-        this.vaultTimeoutActions.forEach((option: any, i) => {
-          if (option.value === this.vaultTimeoutAction) {
+        this.vaultTimeoutActionOptions.forEach((option: any, i) => {
+          if (option.value === this.form.value.vaultTimeoutAction) {
             this.vaultTimeoutActionSelectRef.nativeElement.value =
-              i + ": " + this.vaultTimeoutAction;
+              i + ": " + this.form.value.vaultTimeoutAction;
           }
+        });
+        this.form.controls.vaultTimeoutAction.patchValue(VaultTimeoutAction.Lock, {
+          emitEvent: false,
         });
         return;
       }
     }
 
-    if (this.vaultTimeout.hasError("policyError")) {
+    if (this.form.controls.vaultTimeout.hasError("policyError")) {
       this.platformUtilsService.showToast(
         "error",
         null,
@@ -190,23 +251,22 @@ export class SettingsComponent implements OnInit {
       return;
     }
 
-    this.vaultTimeoutAction = newValue;
     await this.vaultTimeoutSettingsService.setVaultTimeoutOptions(
-      this.vaultTimeout.value,
-      this.vaultTimeoutAction
+      this.form.value.vaultTimeout,
+      newValue
     );
   }
 
   async updatePin() {
-    if (this.pin) {
+    if (this.form.value.pin) {
       const ref = this.modalService.open(SetPinComponent, { allowMultipleModals: true });
 
       if (ref == null) {
-        this.pin = false;
+        this.form.controls.pin.setValue(false);
         return;
       }
 
-      this.pin = await ref.onClosedPromise();
+      this.form.controls.pin.setValue(await ref.onClosedPromise());
     } else {
       await this.cryptoService.clearPinProtectedKey();
       await this.vaultTimeoutSettingsService.clear();
@@ -214,7 +274,7 @@ export class SettingsComponent implements OnInit {
   }
 
   async updateBiometric() {
-    if (this.biometric && this.supportsBiometric) {
+    if (this.form.value.biometric && this.supportsBiometric) {
       let granted;
       try {
         granted = await BrowserApi.requestPermission({ permissions: ["nativeMessaging"] });
@@ -229,7 +289,7 @@ export class SettingsComponent implements OnInit {
             this.i18nService.t("ok"),
             null
           );
-          this.biometric = false;
+          this.form.controls.biometric.setValue(false);
           return;
         }
       }
@@ -241,7 +301,7 @@ export class SettingsComponent implements OnInit {
           this.i18nService.t("ok"),
           null
         );
-        this.biometric = false;
+        this.form.controls.biometric.setValue(false);
         return;
       }
 
@@ -264,17 +324,17 @@ export class SettingsComponent implements OnInit {
       await Promise.race([
         submitted.then(async (result) => {
           if (result.dismiss === Swal.DismissReason.cancel) {
-            this.biometric = false;
+            this.form.controls.biometric.setValue(false);
             await this.stateService.setBiometricAwaitingAcceptance(null);
           }
         }),
         this.platformUtilsService
           .authenticateBiometric()
           .then((result) => {
-            this.biometric = result;
+            this.form.controls.biometric.setValue(result);
 
             Swal.close();
-            if (this.biometric === false) {
+            if (this.form.value.biometric === false) {
               this.platformUtilsService.showToast(
                 "error",
                 this.i18nService.t("errorEnableBiometricTitle"),
@@ -284,7 +344,7 @@ export class SettingsComponent implements OnInit {
           })
           .catch((e) => {
             // Handle connection errors
-            this.biometric = false;
+            this.form.controls.biometric.setValue(false);
 
             const error = BiometricErrors[e as BiometricErrorTypes];
 
@@ -304,7 +364,9 @@ export class SettingsComponent implements OnInit {
   }
 
   async updateAutoBiometricsPrompt() {
-    await this.stateService.setDisableAutoBiometricsPrompt(!this.enableAutoBiometricsPrompt);
+    await this.stateService.setDisableAutoBiometricsPrompt(
+      !this.form.value.enableAutoBiometricsPrompt
+    );
   }
 
   async lock() {
@@ -314,7 +376,7 @@ export class SettingsComponent implements OnInit {
   async logOut() {
     const confirmed = await this.platformUtilsService.showDialog(
       this.i18nService.t("logOutConfirmation"),
-      this.i18nService.t("logOut"),
+      this.i18nService.t(VaultTimeoutAction.LogOut),
       this.i18nService.t("yes"),
       this.i18nService.t("cancel")
     );
@@ -408,5 +470,10 @@ export class SettingsComponent implements OnInit {
   rate() {
     const deviceType = this.platformUtilsService.getDevice();
     BrowserApi.createNewTab((RateUrls as any)[deviceType]);
+  }
+
+  ngOnDestroy() {
+    this.destroy$.next();
+    this.destroy$.complete();
   }
 }

@@ -10,6 +10,7 @@ import { PolicyResponse } from "../../models/response/policy.response";
 
 export abstract class PolicyService {
   policies$: Observable<Policy[]>;
+  get$: (policyType: PolicyType, policyFilter?: (policy: Policy) => boolean) => Observable<Policy>;
   masterPasswordPolicyOptions$: (policies?: Policy[]) => Observable<MasterPasswordPolicyOptions>;
   policyAppliesToActiveUser$: (
     policyType: PolicyType,

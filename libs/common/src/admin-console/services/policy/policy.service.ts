@@ -43,6 +43,28 @@ export class PolicyService implements InternalPolicyServiceAbstraction {
   }
 
   /**
+   * Returns the first policy found that applies to the active user
+   * @param policyType Policy type to search for
+   * @param policyFilter Additional filter to apply to the policy
+   */
+  get$(policyType: PolicyType, policyFilter?: (policy: Policy) => boolean): Observable<Policy> {
+    return this.policies$.pipe(
+      concatMap(async (policies) => {
+        const userId = await this.stateService.getUserId();
+        const appliesToCurrentUser = await this.checkPoliciesThatApplyToUser(
+          policies,
+          policyType,
+          policyFilter,
+          userId
+        );
+        if (appliesToCurrentUser) {
+          return policies.find((policy) => policy.type === policyType && policy.enabled);
+        }
+      })
+    );
+  }
+
+  /**
    * @deprecated Do not call this, use the policies$ observable collection
    */
   async getAll(type?: PolicyType, userId?: string): Promise<Policy[]> {

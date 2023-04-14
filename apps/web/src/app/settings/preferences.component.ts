@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { UntypedFormControl } from "@angular/forms";
+import { FormBuilder } from "@angular/forms";
+import { concatMap, filter, map, Observable, Subject, takeUntil, tap } from "rxjs";
 
 import { AbstractThemingService } from "@bitwarden/angular/services/theming/theming.service.abstraction";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
@@ -7,7 +8,10 @@ import { MessagingService } from "@bitwarden/common/abstractions/messaging.servi
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { VaultTimeoutSettingsService } from "@bitwarden/common/abstractions/vaultTimeout/vaultTimeoutSettings.service";
+import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
+import { PolicyType } from "@bitwarden/common/admin-console/enums";
 import { ThemeType } from "@bitwarden/common/enums";
+import { VaultTimeoutAction } from "@bitwarden/common/enums/vault-timeout-action.enum";
 import { Utils } from "@bitwarden/common/misc/utils";
 
 @Component({
@@ -15,21 +19,33 @@ import { Utils } from "@bitwarden/common/misc/utils";
   templateUrl: "preferences.component.html",
 })
 export class PreferencesComponent implements OnInit {
-  vaultTimeoutAction = "lock";
-  enableFavicons: boolean;
-  enableFullWidth: boolean;
-  theme: ThemeType;
-  locale: string;
-  vaultTimeouts: { name: string; value: number }[];
+  // For use in template
+  protected readonly VaultTimeoutAction = VaultTimeoutAction;
+
+  vaultTimeoutPolicyCallout: Observable<{
+    timeout: { hours: number; minutes: number };
+    action: VaultTimeoutAction;
+  }>;
+  vaultTimeoutOptions: { name: string; value: number }[];
   localeOptions: any[];
   themeOptions: any[];
 
-  vaultTimeout: UntypedFormControl = new UntypedFormControl(null);
-
   private startingLocale: string;
   private startingTheme: ThemeType;
+  private destroy$ = new Subject<void>();
+
+  form = this.formBuilder.group({
+    vaultTimeout: [null as number | null],
+    vaultTimeoutAction: [VaultTimeoutAction.Lock],
+    enableFavicons: true,
+    enableFullWidth: false,
+    theme: [ThemeType.Light],
+    locale: [null as string | null],
+  });
 
   constructor(
+    private formBuilder: FormBuilder,
+    private policyService: PolicyService,
     private stateService: StateService,
     private i18nService: I18nService,
     private vaultTimeoutSettingsService: VaultTimeoutSettingsService,
@@ -37,7 +53,7 @@ export class PreferencesComponent implements OnInit {
     private messagingService: MessagingService,
     private themingService: AbstractThemingService
   ) {
-    this.vaultTimeouts = [
+    this.vaultTimeoutOptions = [
       { name: i18nService.t("oneMinute"), value: 1 },
       { name: i18nService.t("fiveMinutes"), value: 5 },
       { name: i18nService.t("fifteenMinutes"), value: 15 },
@@ -47,7 +63,7 @@ export class PreferencesComponent implements OnInit {
       { name: i18nService.t("onRefresh"), value: -1 },
     ];
     if (this.platformUtilsService.isDev()) {
-      this.vaultTimeouts.push({ name: i18nService.t("never"), value: null });
+      this.vaultTimeoutOptions.push({ name: i18nService.t("never"), value: null });
     }
 
     const localeOptions: any[] = [];
@@ -69,20 +85,65 @@ export class PreferencesComponent implements OnInit {
   }
 
   async ngOnInit() {
-    this.vaultTimeout.setValue(await this.vaultTimeoutSettingsService.getVaultTimeout());
-    this.vaultTimeoutAction = await this.stateService.getVaultTimeoutAction();
-    this.enableFavicons = !(await this.stateService.getDisableFavicon());
-    this.enableFullWidth = await this.stateService.getEnableFullWidth();
+    this.vaultTimeoutPolicyCallout = this.policyService.get$(PolicyType.MaximumVaultTimeout).pipe(
+      filter((policy) => policy != null),
+      map((policy) => {
+        let timeout;
+        if (policy.data?.minutes) {
+          timeout = {
+            hours: Math.floor(policy.data?.minutes / 60),
+            minutes: policy.data?.minutes % 60,
+          };
+        }
+        return { timeout: timeout, action: policy.data?.action };
+      }),
+      tap((policy) => {
+        if (policy.action) {
+          this.form.controls.vaultTimeoutAction.disable({ emitEvent: false });
+        } else {
+          this.form.controls.vaultTimeoutAction.enable({ emitEvent: false });
+        }
+      })
+    );
 
-    this.locale = (await this.stateService.getLocale()) ?? null;
-    this.startingLocale = this.locale;
+    this.form.controls.vaultTimeoutAction.valueChanges
+      .pipe(
+        concatMap(async (action) => {
+          if (action === VaultTimeoutAction.LogOut) {
+            const confirmed = await this.platformUtilsService.showDialog(
+              this.i18nService.t("vaultTimeoutLogOutConfirmation"),
+              this.i18nService.t("vaultTimeoutLogOutConfirmationTitle"),
+              this.i18nService.t("yes"),
+              this.i18nService.t("cancel"),
+              "warning"
+            );
+            if (!confirmed) {
+              this.form.controls.vaultTimeoutAction.patchValue(VaultTimeoutAction.Lock, {
+                emitEvent: false,
+              });
+              return;
+            }
+          }
+        }),
+        takeUntil(this.destroy$)
+      )
+      .subscribe();
 
-    this.theme = await this.stateService.getTheme();
-    this.startingTheme = this.theme;
+    const initialFormValues = {
+      vaultTimeout: await this.vaultTimeoutSettingsService.getVaultTimeout(),
+      vaultTimeoutAction: await this.vaultTimeoutSettingsService.getVaultTimeoutAction(),
+      enableFavicons: !(await this.stateService.getDisableFavicon()),
+      enableFullWidth: await this.stateService.getEnableFullWidth(),
+      theme: await this.stateService.getTheme(),
+      locale: (await this.stateService.getLocale()) ?? null,
+    };
+    this.startingLocale = initialFormValues.locale;
+    this.startingTheme = initialFormValues.theme;
+    this.form.setValue(initialFormValues, { emitEvent: false });
   }
 
   async submit() {
-    if (!this.vaultTimeout.valid) {
+    if (!this.form.controls.vaultTimeout.valid) {
       this.platformUtilsService.showToast(
         "error",
         null,
@@ -90,20 +151,21 @@ export class PreferencesComponent implements OnInit {
       );
       return;
     }
+    const values = this.form.value;
 
     await this.vaultTimeoutSettingsService.setVaultTimeoutOptions(
-      this.vaultTimeout.value,
-      this.vaultTimeoutAction
+      values.vaultTimeout,
+      values.vaultTimeoutAction
     );
-    await this.stateService.setDisableFavicon(!this.enableFavicons);
-    await this.stateService.setEnableFullWidth(this.enableFullWidth);
+    await this.stateService.setDisableFavicon(!values.enableFavicons);
+    await this.stateService.setEnableFullWidth(values.enableFullWidth);
     this.messagingService.send("setFullWidth");
-    if (this.theme !== this.startingTheme) {
-      await this.themingService.updateConfiguredTheme(this.theme);
-      this.startingTheme = this.theme;
+    if (values.theme !== this.startingTheme) {
+      await this.themingService.updateConfiguredTheme(values.theme);
+      this.startingTheme = values.theme;
     }
-    await this.stateService.setLocale(this.locale);
-    if (this.locale !== this.startingLocale) {
+    await this.stateService.setLocale(values.locale);
+    if (values.locale !== this.startingLocale) {
       window.location.reload();
     } else {
       this.platformUtilsService.showToast(
@@ -114,20 +176,8 @@ export class PreferencesComponent implements OnInit {
     }
   }
 
-  async vaultTimeoutActionChanged(newValue: string) {
-    if (newValue === "logOut") {
-      const confirmed = await this.platformUtilsService.showDialog(
-        this.i18nService.t("vaultTimeoutLogOutConfirmation"),
-        this.i18nService.t("vaultTimeoutLogOutConfirmationTitle"),
-        this.i18nService.t("yes"),
-        this.i18nService.t("cancel"),
-        "warning"
-      );
-      if (!confirmed) {
-        this.vaultTimeoutAction = "lock";
-        return;
-      }
-    }
-    this.vaultTimeoutAction = newValue;
+  ngOnDestroy() {
+    this.destroy$.next();
+    this.destroy$.complete();
   }
 }
