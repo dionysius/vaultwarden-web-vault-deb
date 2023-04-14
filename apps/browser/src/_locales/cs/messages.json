@@ -199,10 +199,10 @@
     "message": "Bitwarden Help center"
   },
   "communityForums": {
-    "message": "Explore Bitwarden community forums"
+    "message": "Prozkoumejte komunitní fóra Bitwarden"
   },
   "contactSupport": {
-    "message": "Contact Bitwarden support"
+    "message": "Kontaktujte podporu/support Bitwarden"
   },
   "sync": {
     "message": "Synchronizace"
@@ -439,7 +439,7 @@
     "message": "Je vyžadováno zopakovat zadání hlavního hesla."
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least $VALUE$ characters long.",
+    "message": "Zakládní heslo musí obsahovat alespoň $VALUE$ znaků.",
     "description": "The Master Password must be at least a specific number of characters long.",
     "placeholders": {
       "value": {
@@ -976,10 +976,10 @@
     "message": "Pokud je zjištěn přihlašovací formulář, automaticky se při načítání webové stránky vyplní přihlašovací údaje."
   },
   "experimentalFeature": {
-    "message": "Compromised or untrusted websites can exploit auto-fill on page load."
+    "message": "Kompromitované nebo nedůvěryhodné webové stránky mohou zneužívat automatické vyplňování při načítání stránky."
   },
   "learnMoreAboutAutofill": {
-    "message": "Learn more about auto-fill"
+    "message": "Více informací o automatickém vyplňování"
   },
   "defaultAutoFillOnPageLoad": {
     "message": "Výchozí nastavení automatického vyplňování pro položky přihlášení"
@@ -2064,31 +2064,31 @@
     "message": "Pamatovat si e-mail"
   },
   "loginWithDevice": {
-    "message": "Log in with device"
+    "message": "Přihlásit se pomocí zařízení"
   },
   "loginWithDeviceEnabledInfo": {
     "message": "Log in with device must be set up in the settings of the Bitwarden app. Need another option?"
   },
   "fingerprintPhraseHeader": {
-    "message": "Fingerprint phrase"
+    "message": "Unikátní přístupová fráze"
   },
   "fingerprintMatchInfo": {
-    "message": "Please make sure your vault is unlocked and the Fingerprint phrase matches on the other device."
+    "message": "Ověřte, zda je trezor odemčený a jestli se unikátní přístupová fráze shoduje s frází na druhém zařízení."
   },
   "resendNotification": {
-    "message": "Resend notification"
+    "message": "Znovu odeslat upozornění"
   },
   "viewAllLoginOptions": {
-    "message": "View all log in options"
+    "message": "Zobrazit veškeré možnosti přihlášení"
   },
   "notificationSentDevice": {
-    "message": "A notification has been sent to your device."
+    "message": "Na vaše zařízení bylo odesláno upozornění."
   },
   "logInInitiated": {
-    "message": "Log in initiated"
+    "message": "Přihlášení zahájeno"
   },
   "exposedMasterPassword": {
-    "message": "Exposed Master Password"
+    "message": "Odhalené základní heslo"
   },
   "exposedMasterPasswordDesc": {
     "message": "Password found in a data breach. Use a unique password to protect your account. Are you sure you want to use an exposed password?"

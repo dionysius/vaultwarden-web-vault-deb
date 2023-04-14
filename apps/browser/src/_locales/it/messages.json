@@ -675,10 +675,10 @@
     "message": "Conferma esportazione della cassaforte"
   },
   "exportWarningDesc": {
-    "message": "Questa esportazione contiene i dati della tua cassaforte in un formato non cifrato. Non salvare o inviare il file esportato su canali non protetti (come la posta elettronica). Eliminalo immediatamente dopo l'utilizzo."
+    "message": "Questa esportazione contiene i dati della tua cassaforte in un formato non criptato. Non salvare o inviare il file esportato attraverso canali non protetti (come le email). Eliminalo immediatamente dopo l'utilizzo."
   },
   "encExportKeyWarningDesc": {
-    "message": "Questa esportazione cripta i tuoi dati usando la chiave di criptografia del tuo account. Se cambi la chiave di criptografia del tuo account, non sarai più in grado di decifrare il file esportato dovrai eseguire una nuova esportazione."
+    "message": "Questa esportazione cripta i tuoi dati usando la chiave di criptografia del tuo account. Se cambi la chiave di criptografia del tuo account, non potrai più decifrare il file esportato e dovrai eseguire una nuova esportazione."
   },
   "encExportAccountWarningDesc": {
     "message": "Le chiavi di criptografia dell'account sono uniche per ogni account Bitwarden, quindi non puoi importare un file di esportazione criptato in un account diverso."
@@ -715,7 +715,7 @@
     }
   },
   "moveToOrgDesc": {
-    "message": "Scegli un'organizzazione in cui vuoi spostare questo elemento. Spostare in un'organizzazione trasferisce la proprietà dell'elemento all'organizzazione. Non sarai più il proprietario diretto di questo elemento una volta spostato."
+    "message": "Scegli un'organizzazione in cui vuoi spostare questo elemento. Spostarlo in un'organizzazione trasferisce la proprietà dell'elemento all'organizzazione. Una volta spostato, non sarai più il proprietario diretto di questo elemento."
   },
   "learnMore": {
     "message": "Ulteriori informazioni"
@@ -793,7 +793,7 @@
     "message": "Sicurezza delle password, integrità dell'account, e rapporti su violazioni di dati per mantenere sicura la tua cassaforte."
   },
   "ppremiumSignUpTotp": {
-    "message": "Generatore di codice di verifica TOTP (2FA) per i login nella tua cassaforte."
+    "message": "Generatore di codici di verifica TOTP (2FA) per i login nella tua cassaforte."
   },
   "ppremiumSignUpSupport": {
     "message": "Supporto clienti prioritario."
@@ -1140,7 +1140,7 @@
     "message": "Sig.ra"
   },
   "dr": {
-    "message": "Dr."
+    "message": "Dott"
   },
   "mx": {
     "message": "Mx"
@@ -1267,7 +1267,7 @@
     }
   },
   "passwordSafe": {
-    "message": "Questa password non è stata trovata in database di violazioni noti. Dovrebbe essere sicura da usare."
+    "message": "Questa password non è stata trovata in violazioni di dati note. Dovrebbe essere sicura da usare."
   },
   "baseDomain": {
     "message": "Dominio di base",
@@ -1412,7 +1412,7 @@
     "message": "Clona"
   },
   "passwordGeneratorPolicyInEffect": {
-    "message": "Una o più politiche dell'organizzazione controllano le tue impostazioni del generatore."
+    "message": "Una o più politiche dell'organizzazione stanno influenzando le impostazioni del tuo generatore."
   },
   "vaultTimeoutAction": {
     "message": "Azione timeout cassaforte"
@@ -1465,7 +1465,7 @@
     "message": "Imposta password principale"
   },
   "masterPasswordPolicyInEffect": {
-    "message": "La password principale deve avere i seguenti requisiti, stabiliti dalle politiche dell'organizzazione:"
+    "message": "Una o più politiche dell'organizzazione richiedono che la tua password principale soddisfi questi requisiti:"
   },
   "policyInEffectMinComplexity": {
     "message": "Punteggio minimo di complessità di $SCORE$",
@@ -1723,7 +1723,7 @@
     "message": "Numero massimo di accessi"
   },
   "maximumAccessCountDesc": {
-    "message": "Se impostata, gli utenti potranno più accedere a questo Send una volta raggiunto il numero massimo di accessi.",
+    "message": "Se impostata, gli utenti non potranno più accedere a questo Send una volta raggiunto il numero massimo di accessi.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendPasswordDesc": {
@@ -1821,13 +1821,13 @@
     "message": "Una o più politiche dell'organizzazione stanno influenzando le tue opzioni di Send."
   },
   "passwordPrompt": {
-    "message": "Nuova richiesta della password principale"
+    "message": "Richiedi di inserire la password principale di nuovo per visualizzare questo elemento"
   },
   "passwordConfirmation": {
     "message": "Conferma della password principale"
   },
   "passwordConfirmationDesc": {
-    "message": "Questa azione è protetta. Per continuare, inserisci nuovamente la tua password principale per verificare la tua identità."
+    "message": "Questa azione è protetta. Inserisci la tua password principale di nuovo per verificare la tua identità."
   },
   "emailVerificationRequired": {
     "message": "Verifica email obbligatoria"
@@ -1842,7 +1842,7 @@
     "message": "Aggiorna password principale"
   },
   "updateMasterPasswordWarning": {
-    "message": "La tua password principale è stata recentemente modificata da un amministratore nella tua organizzazione. Per accedere alla cassaforte, devi aggiornarla ora. Procedendo sarai disconnesso dalla sessione attuale, richiedendo di effettuare nuovamente l'accesso. Le sessioni attive su altri dispositivi possono continuare a rimanere attive per un massimo di un'ora."
+    "message": "La tua password principale è stata recentemente modificata da un amministratore nella tua organizzazione. Per accedere alla cassaforte, aggiornala ora. Procedere ti farà uscire dalla sessione corrente, richiedendoti di accedere di nuovo. Le sessioni attive su altri dispositivi potrebbero continuare a rimanere attive per un massimo di un'ora."
   },
   "resetPasswordPolicyAutoEnroll": {
     "message": "Iscrizione automatica"
