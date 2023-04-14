@@ -6,13 +6,17 @@ import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { MessagingService } from "@bitwarden/common/abstractions/messaging.service";
 import { OrganizationUserService } from "@bitwarden/common/abstractions/organization-user/organization-user.service";
-import { OrganizationUserAcceptRequest } from "@bitwarden/common/abstractions/organization-user/requests";
+import {
+  OrganizationUserAcceptInitRequest,
+  OrganizationUserAcceptRequest,
+} from "@bitwarden/common/abstractions/organization-user/requests";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { OrganizationApiServiceAbstraction } from "@bitwarden/common/admin-console/abstractions/organization/organization-api.service.abstraction";
 import { PolicyApiServiceAbstraction } from "@bitwarden/common/admin-console/abstractions/policy/policy-api.service.abstraction";
 import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
 import { Policy } from "@bitwarden/common/admin-console/models/domain/policy";
+import { OrganizationKeysRequest } from "@bitwarden/common/admin-console/models/request/organization-keys.request";
 import { Utils } from "@bitwarden/common/misc/utils";
 
 import { BaseAcceptComponent } from "../app/common/base.accept.component";
@@ -44,37 +48,83 @@ export class AcceptOrganizationComponent extends BaseAcceptComponent {
   }
 
   async authedHandler(qParams: Params): Promise<void> {
-    const needsReAuth = (await this.stateService.getOrganizationInvitation()) != null;
-    if (!needsReAuth) {
-      // Accepting an org invite requires authentication from a logged out state
-      this.messagingService.send("logout", { redirect: false });
-      await this.prepareOrganizationInvitation(qParams);
-      return;
+    const initOrganization =
+      qParams.initOrganization != null && qParams.initOrganization.toLocaleLowerCase() === "true";
+    if (initOrganization) {
+      this.actionPromise = this.acceptInitOrganizationFlow(qParams);
+    } else {
+      const needsReAuth = (await this.stateService.getOrganizationInvitation()) == null;
+      if (needsReAuth) {
+        // Accepting an org invite requires authentication from a logged out state
+        this.messagingService.send("logout", { redirect: false });
+        await this.prepareOrganizationInvitation(qParams);
+        return;
+      }
+
+      // User has already logged in and passed the Master Password policy check
+      this.actionPromise = this.acceptFlow(qParams);
     }
 
-    // User has already logged in and passed the Master Password policy check
-    this.actionPromise = this.prepareAcceptRequest(qParams).then(async (request) => {
-      await this.organizationUserService.postOrganizationUserAccept(
-        qParams.organizationId,
-        qParams.organizationUserId,
-        request
-      );
-    });
-
-    await this.stateService.setOrganizationInvitation(null);
     await this.actionPromise;
+    await this.stateService.setOrganizationInvitation(null);
     this.platformUtilService.showToast(
       "success",
       this.i18nService.t("inviteAccepted"),
-      this.i18nService.t("inviteAcceptedDesc"),
+      initOrganization
+        ? this.i18nService.t("inviteInitAcceptedDesc")
+        : this.i18nService.t("inviteAcceptedDesc"),
       { timeout: 10000 }
     );
-
     this.router.navigate(["/vault"]);
   }
 
   async unauthedHandler(qParams: Params): Promise<void> {
     await this.prepareOrganizationInvitation(qParams);
+  }
+
+  private async acceptInitOrganizationFlow(qParams: Params): Promise<any> {
+    return this.prepareAcceptInitRequest(qParams).then((request) =>
+      this.organizationUserService.postOrganizationUserAcceptInit(
+        qParams.organizationId,
+        qParams.organizationUserId,
+        request
+      )
+    );
+  }
+
+  private async acceptFlow(qParams: Params): Promise<any> {
+    return this.prepareAcceptRequest(qParams).then((request) =>
+      this.organizationUserService.postOrganizationUserAccept(
+        qParams.organizationId,
+        qParams.organizationUserId,
+        request
+      )
+    );
+  }
+
+  private async prepareAcceptInitRequest(
+    qParams: Params
+  ): Promise<OrganizationUserAcceptInitRequest> {
+    const request = new OrganizationUserAcceptInitRequest();
+    request.token = qParams.token;
+
+    const [encryptedOrgShareKey, orgShareKey] = await this.cryptoService.makeShareKey();
+    const [orgPublicKey, encryptedOrgPrivateKey] = await this.cryptoService.makeKeyPair(
+      orgShareKey
+    );
+    const collection = await this.cryptoService.encrypt(
+      this.i18nService.t("defaultCollection"),
+      orgShareKey
+    );
+
+    request.key = encryptedOrgShareKey.encryptedString;
+    request.keys = new OrganizationKeysRequest(
+      orgPublicKey,
+      encryptedOrgPrivateKey.encryptedString
+    );
+    request.collectionName = collection.encryptedString;
+
+    return request;
   }
 
   private async prepareAcceptRequest(qParams: Params): Promise<OrganizationUserAcceptRequest> {

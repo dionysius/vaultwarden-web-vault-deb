@@ -34,7 +34,7 @@ const routes: Routes = [
         canActivate: [OrganizationPermissionsGuard],
         data: {
           titleId: "paymentMethod",
-          organizationPermissions: (org: Organization) => org.canManageBilling,
+          organizationPermissions: (org: Organization) => org.canEditPaymentMethods,
         },
       },
       {
@@ -43,7 +43,7 @@ const routes: Routes = [
         canActivate: [OrganizationPermissionsGuard],
         data: {
           titleId: "billingHistory",
-          organizationPermissions: (org: Organization) => org.canManageBilling,
+          organizationPermissions: (org: Organization) => org.canViewBillingHistory,
         },
       },
     ],

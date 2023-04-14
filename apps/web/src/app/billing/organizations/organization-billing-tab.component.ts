@@ -21,7 +21,12 @@ export class OrganizationBillingTabComponent implements OnInit {
   ngOnInit() {
     this.showPaymentAndHistory$ = this.route.params.pipe(
       switchMap((params) => this.organizationService.get$(params.organizationId)),
-      map((org) => !this.platformUtilsService.isSelfHost() && org.canManageBilling)
+      map(
+        (org) =>
+          !this.platformUtilsService.isSelfHost() &&
+          org.canViewBillingHistory &&
+          org.canEditPaymentMethods
+      )
     );
   }
 }

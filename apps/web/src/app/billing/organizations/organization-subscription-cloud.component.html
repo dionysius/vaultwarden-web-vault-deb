@@ -17,7 +17,7 @@
 </ng-container>
 
 <app-org-subscription-hidden
-  *ngIf="firstLoaded && !userOrg.canManageBilling"
+  *ngIf="firstLoaded && !userOrg.canViewSubscription"
   [providerName]="userOrg.providerName"
 ></app-org-subscription-hidden>
 
@@ -64,30 +64,24 @@
         </ng-container>
       </dl>
     </div>
-    <div class="col-8" *ngIf="subscription">
-      <strong class="d-block mb-1">{{ "details" | i18n }}</strong>
-      <table class="table">
-        <tbody>
-          <tr *ngFor="let i of subscription.items">
-            <td>
-              {{ i.name }} {{ i.quantity > 1 ? "&times;" + i.quantity : "" }} @
-              {{ i.amount | currency : "$" }}
-            </td>
-            <td>{{ i.quantity * i.amount | currency : "$" }} /{{ i.interval | i18n }}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <ng-container *ngIf="userOrg?.providerId != null">
-      <div class="col-sm">
-        <dl>
-          <dt>{{ "provider" | i18n }}</dt>
-          <dd>{{ "yourProviderIs" | i18n : userOrg.providerName }}</dd>
-        </dl>
+    <ng-container *ngIf="userOrg.canEditSubscription">
+      <div class="col-8" *ngIf="subscription">
+        <strong class="d-block mb-1">{{ "details" | i18n }}</strong>
+        <table class="table">
+          <tbody>
+            <tr *ngFor="let i of subscription.items">
+              <td>
+                {{ i.name }} {{ i.quantity > 1 ? "&times;" + i.quantity : "" }} @
+                {{ i.amount | currency : "$" }}
+              </td>
+              <td>{{ i.quantity * i.amount | currency : "$" }} /{{ i.interval | i18n }}</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </ng-container>
   </div>
-  <ng-container>
+  <ng-container *ngIf="userOrg.canEditSubscription">
     <button
       bitButton
       buttonType="secondary"
@@ -105,80 +99,84 @@
     ></app-change-plan>
   </ng-container>
 
-  <sm-enroll
-    *ngIf="isAdmin"
-    [enabled]="sub?.useSecretsManager"
-    [organizationId]="organizationId"
-  ></sm-enroll>
-
-  <h2 class="spaced-header">{{ "manageSubscription" | i18n }}</h2>
-  <p class="mb-4">{{ subscriptionDesc }}</p>
-  <ng-container
-    *ngIf="
-      subscription && canAdjustSeats && !subscription.cancelled && !subscriptionMarkedForCancel
-    "
-  >
-    <div class="mt-3">
-      <app-adjust-subscription
-        [seatPrice]="seatPrice"
-        [organizationId]="organizationId"
-        [interval]="billingInterval"
-        [currentSeatCount]="seats"
-        [maxAutoscaleSeats]="maxAutoscaleSeats"
-        (onAdjusted)="subscriptionAdjusted()"
-      >
-      </app-adjust-subscription>
-    </div>
+  <ng-container *ngIf="userOrg.canEditSubscription">
+    <sm-enroll
+      *ngIf="isAdmin"
+      [enabled]="sub?.useSecretsManager"
+      [organizationId]="organizationId"
+    ></sm-enroll>
   </ng-container>
-  <button
-    bitButton
-    buttonType="danger"
-    type="button"
-    [bitAction]="removeSponsorship"
-    *ngIf="isSponsoredSubscription"
-  >
-    {{ "removeSponsorship" | i18n }}
-  </button>
-  <h2 class="spaced-header">{{ "storage" | i18n }}</h2>
-  <p>{{ "subscriptionStorage" | i18n : sub.maxStorageGb || 0 : sub.storageName || "0 MB" }}</p>
-  <div class="progress">
-    <div
-      class="progress-bar bg-success"
-      role="progressbar"
-      [ngStyle]="{ width: storageProgressWidth + '%' }"
-      [attr.aria-valuenow]="storagePercentage"
-      aria-valuemin="0"
-      aria-valuemax="100"
+
+  <ng-container *ngIf="userOrg.canEditSubscription">
+    <h2 class="spaced-header">{{ "manageSubscription" | i18n }}</h2>
+    <p class="mb-4">{{ subscriptionDesc }}</p>
+    <ng-container
+      *ngIf="
+        subscription && canAdjustSeats && !subscription.cancelled && !subscriptionMarkedForCancel
+      "
     >
-      {{ storagePercentage / 100 | percent }}
-    </div>
-  </div>
-  <ng-container *ngIf="subscription && !subscription.cancelled && !subscriptionMarkedForCancel">
-    <div class="mt-3">
-      <div class="d-flex" *ngIf="!showAdjustStorage">
-        <button bitButton buttonType="secondary" type="button" (click)="adjustStorage(true)">
-          {{ "addStorage" | i18n }}
-        </button>
-        <button
-          bitButton
-          buttonType="secondary"
-          type="button"
-          class="ml-1"
-          (click)="adjustStorage(false)"
+      <div class="mt-3">
+        <app-adjust-subscription
+          [seatPrice]="seatPrice"
+          [organizationId]="organizationId"
+          [interval]="billingInterval"
+          [currentSeatCount]="seats"
+          [maxAutoscaleSeats]="maxAutoscaleSeats"
+          (onAdjusted)="subscriptionAdjusted()"
         >
-          {{ "removeStorage" | i18n }}
-        </button>
+        </app-adjust-subscription>
       </div>
-      <app-adjust-storage
-        [storageGbPrice]="storageGbPrice"
-        [add]="adjustStorageAdd"
-        [organizationId]="organizationId"
-        [interval]="billingInterval"
-        (onAdjusted)="closeStorage(true)"
-        (onCanceled)="closeStorage(false)"
-        *ngIf="showAdjustStorage"
-      ></app-adjust-storage>
+    </ng-container>
+    <button
+      bitButton
+      buttonType="danger"
+      type="button"
+      [bitAction]="removeSponsorship"
+      *ngIf="isSponsoredSubscription"
+    >
+      {{ "removeSponsorship" | i18n }}
+    </button>
+    <h2 class="spaced-header">{{ "storage" | i18n }}</h2>
+    <p>{{ "subscriptionStorage" | i18n : sub.maxStorageGb || 0 : sub.storageName || "0 MB" }}</p>
+    <div class="progress">
+      <div
+        class="progress-bar bg-success"
+        role="progressbar"
+        [ngStyle]="{ width: storageProgressWidth + '%' }"
+        [attr.aria-valuenow]="storagePercentage"
+        aria-valuemin="0"
+        aria-valuemax="100"
+      >
+        {{ storagePercentage / 100 | percent }}
+      </div>
     </div>
+    <ng-container *ngIf="subscription && !subscription.cancelled && !subscriptionMarkedForCancel">
+      <div class="mt-3">
+        <div class="d-flex" *ngIf="!showAdjustStorage">
+          <button bitButton buttonType="secondary" type="button" (click)="adjustStorage(true)">
+            {{ "addStorage" | i18n }}
+          </button>
+          <button
+            bitButton
+            buttonType="secondary"
+            type="button"
+            class="ml-1"
+            (click)="adjustStorage(false)"
+          >
+            {{ "removeStorage" | i18n }}
+          </button>
+        </div>
+        <app-adjust-storage
+          [storageGbPrice]="storageGbPrice"
+          [add]="adjustStorageAdd"
+          [organizationId]="organizationId"
+          [interval]="billingInterval"
+          (onAdjusted)="closeStorage(true)"
+          (onCanceled)="closeStorage(false)"
+          *ngIf="showAdjustStorage"
+        ></app-adjust-storage>
+      </div>
+    </ng-container>
   </ng-container>
 
   <h2 class="spaced-header">{{ "selfHostingTitle" | i18n }}</h2>
@@ -214,20 +212,22 @@
       (onCanceled)="closeDownloadLicense()"
     ></app-download-license>
   </div>
-  <h2 class="spaced-header">{{ "additionalOptions" | i18n }}</h2>
-  <p class="mb-4">
-    {{ "additionalOptionsDesc" | i18n }}
-  </p>
-  <div class="d-flex">
-    <button
-      bitButton
-      buttonType="danger"
-      [bitAction]="cancel"
-      type="button"
-      class="ml-1"
-      *ngIf="subscription && !subscription.cancelled && !subscriptionMarkedForCancel"
-    >
-      {{ "cancelSubscription" | i18n }}
-    </button>
-  </div>
+  <ng-container *ngIf="userOrg.canEditSubscription">
+    <h2 class="spaced-header">{{ "additionalOptions" | i18n }}</h2>
+    <p class="mb-4">
+      {{ "additionalOptionsDesc" | i18n }}
+    </p>
+    <div class="d-flex">
+      <button
+        bitButton
+        buttonType="danger"
+        [bitAction]="cancel"
+        type="button"
+        class="ml-1"
+        *ngIf="subscription && !subscription.cancelled && !subscriptionMarkedForCancel"
+      >
+        {{ "cancelSubscription" | i18n }}
+      </button>
+    </div>
+  </ng-container>
 </ng-container>

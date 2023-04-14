@@ -27,7 +27,7 @@ export class IsPaidOrgGuard implements CanActivate {
 
     if (org.isFreeOrg) {
       // Users without billing permission can't access billing
-      if (!org.canManageBilling) {
+      if (!org.canEditSubscription) {
         await this.platformUtilsService.showDialog(
           this.i18nService.t("notAvailableForFreeOrganization"),
           this.i18nService.t("upgradeOrganization"),

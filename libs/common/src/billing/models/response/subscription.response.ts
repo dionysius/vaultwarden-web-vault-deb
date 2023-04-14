@@ -75,7 +75,7 @@ export class BillingSubscriptionItemResponse extends BaseResponse {
 
 export class BillingSubscriptionUpcomingInvoiceResponse extends BaseResponse {
   date: string;
-  amount: number;
+  amount?: number;
 
   constructor(response: any) {
     super(response);

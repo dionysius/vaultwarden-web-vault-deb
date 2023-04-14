@@ -33,7 +33,7 @@ export class AccountComponent {
   rotateApiKeyModalRef: ViewContainerRef;
 
   selfHosted = false;
-  canManageBilling = true;
+  canEditSubscription = true;
   loading = true;
   canUseApi = false;
   org: OrganizationResponse;
@@ -60,7 +60,9 @@ export class AccountComponent {
     // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
     this.route.parent.parent.params.subscribe(async (params) => {
       this.organizationId = params.organizationId;
-      this.canManageBilling = this.organizationService.get(this.organizationId).canManageBilling;
+      this.canEditSubscription = this.organizationService.get(
+        this.organizationId
+      ).canEditSubscription;
       try {
         this.org = await this.organizationApiService.get(this.organizationId);
         this.canUseApi = this.org.useApi;

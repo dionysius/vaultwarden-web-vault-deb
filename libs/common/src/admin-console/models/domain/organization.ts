@@ -1,6 +1,6 @@
 import { Jsonify } from "type-fest";
 
-import { ProductType } from "../../../enums";
+import { ProductType, ProviderType } from "../../../enums";
 import { OrganizationUserStatusType, OrganizationUserType } from "../../enums";
 import { PermissionsApi } from "../api/permissions.api";
 import { OrganizationData } from "../data/organization.data";
@@ -38,6 +38,7 @@ export class Organization {
   hasPublicAndPrivateKeys: boolean;
   providerId: string;
   providerName: string;
+  providerType?: ProviderType;
   isProviderUser: boolean;
   familySponsorshipFriendlyName: string;
   familySponsorshipAvailable: boolean;
@@ -86,6 +87,7 @@ export class Organization {
     this.hasPublicAndPrivateKeys = obj.hasPublicAndPrivateKeys;
     this.providerId = obj.providerId;
     this.providerName = obj.providerName;
+    this.providerType = obj.providerType;
     this.isProviderUser = obj.isProviderUser;
     this.familySponsorshipFriendlyName = obj.familySponsorshipFriendlyName;
     this.familySponsorshipAvailable = obj.familySponsorshipAvailable;
@@ -197,8 +199,26 @@ export class Organization {
     return this.canManagePolicies;
   }
 
-  get canManageBilling() {
-    return this.isOwner && (this.isProviderUser || !this.hasProvider);
+  get canViewSubscription() {
+    if (this.canEditSubscription) {
+      return true;
+    }
+
+    return this.hasProvider && this.providerType === ProviderType.Msp
+      ? this.isProviderUser
+      : this.isOwner;
+  }
+
+  get canEditSubscription() {
+    return this.hasProvider ? this.isProviderUser : this.isOwner;
+  }
+
+  get canEditPaymentMethods() {
+    return this.canEditSubscription;
+  }
+
+  get canViewBillingHistory() {
+    return this.canEditSubscription;
   }
 
   get hasProvider() {

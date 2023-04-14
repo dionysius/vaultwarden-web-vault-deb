@@ -16,6 +16,7 @@ export * from "./log-level-type.enum";
 export * from "./native-messaging-version.enum";
 export * from "./notification-type.enum";
 export * from "./product-type.enum";
+export * from "./provider-type.enum";
 export * from "./secure-note-type.enum";
 export * from "./state-version.enum";
 export * from "./storage-location.enum";

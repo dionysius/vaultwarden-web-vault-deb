@@ -151,7 +151,7 @@ export class CollectionsComponent implements OnInit {
       const orgUpgradeSimpleDialogOpts: SimpleDialogOptions = {
         title: this.i18nService.t("upgradeOrganization"),
         content: this.i18nService.t(
-          this.organization.canManageBilling
+          this.organization.canEditSubscription
             ? "freeOrgMaxCollectionReachedManageBilling"
             : "freeOrgMaxCollectionReachedNoManageBilling",
           this.organization.maxCollections
@@ -159,7 +159,7 @@ export class CollectionsComponent implements OnInit {
         type: SimpleDialogType.PRIMARY,
       };
 
-      if (this.organization.canManageBilling) {
+      if (this.organization.canEditSubscription) {
         orgUpgradeSimpleDialogOpts.acceptButtonText = this.i18nService.t("upgrade");
       } else {
         orgUpgradeSimpleDialogOpts.acceptButtonText = this.i18nService.t("ok");
@@ -173,7 +173,7 @@ export class CollectionsComponent implements OnInit {
           return;
         }
 
-        if (result == SimpleDialogCloseType.ACCEPT && this.organization.canManageBilling) {
+        if (result == SimpleDialogCloseType.ACCEPT && this.organization.canEditSubscription) {
           this.router.navigate(
             ["/organizations", this.organization.id, "billing", "subscription"],
             { queryParams: { upgrade: true } }

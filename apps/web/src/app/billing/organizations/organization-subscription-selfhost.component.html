@@ -18,7 +18,7 @@
 </ng-container>
 
 <app-org-subscription-hidden
-  *ngIf="firstLoaded && !userOrg.canManageBilling"
+  *ngIf="firstLoaded && !userOrg.canViewSubscription"
   [providerName]="userOrg.providerName"
 ></app-org-subscription-hidden>
 

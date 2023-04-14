@@ -101,7 +101,7 @@ export class OrganizationSubscriptionSelfhostComponent implements OnInit, OnDest
     }
     this.loading = true;
     this.userOrg = this.organizationService.get(this.organizationId);
-    if (this.userOrg.canManageBilling) {
+    if (this.userOrg.canViewSubscription) {
       this.sub = await this.organizationApiService.getSubscription(this.organizationId);
     }
 

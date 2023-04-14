@@ -1,4 +1,4 @@
-import { ProductType } from "../../../enums";
+import { ProductType, ProviderType } from "../../../enums";
 import { BaseResponse } from "../../../models/response/base.response";
 import { OrganizationUserStatusType, OrganizationUserType } from "../../enums";
 import { PermissionsApi } from "../api/permissions.api";
@@ -37,6 +37,7 @@ export class ProfileOrganizationResponse extends BaseResponse {
   userId: string;
   providerId: string;
   providerName: string;
+  providerType?: ProviderType;
   familySponsorshipFriendlyName: string;
   familySponsorshipAvailable: boolean;
   planProductType: ProductType;
@@ -82,6 +83,7 @@ export class ProfileOrganizationResponse extends BaseResponse {
     this.userId = this.getResponseProperty("UserId");
     this.providerId = this.getResponseProperty("ProviderId");
     this.providerName = this.getResponseProperty("ProviderName");
+    this.providerType = this.getResponseProperty("ProviderType");
     this.familySponsorshipFriendlyName = this.getResponseProperty("FamilySponsorshipFriendlyName");
     this.familySponsorshipAvailable = this.getResponseProperty("FamilySponsorshipAvailable");
     this.planProductType = this.getResponseProperty("PlanProductType");
