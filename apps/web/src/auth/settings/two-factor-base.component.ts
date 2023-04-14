@@ -23,6 +23,7 @@ export abstract class TwoFactorBaseComponent {
 
   protected hashedSecret: string;
   protected verificationType: VerificationType;
+  protected componentName = "";
 
   constructor(
     protected apiService: ApiService,
@@ -53,7 +54,9 @@ export abstract class TwoFactorBaseComponent {
       this.i18nService.t("disable"),
       this.i18nService.t("yes"),
       this.i18nService.t("no"),
-      "warning"
+      "warning",
+      false,
+      this.componentName != "" ? this.componentName + " .modal-content" : null
     );
     if (!confirmed) {
       return;

@@ -26,6 +26,8 @@ export class TwoFactorEmailComponent extends TwoFactorBaseComponent {
   formPromise: Promise<TwoFactorEmailResponse>;
   emailPromise: Promise<unknown>;
 
+  override componentName = "app-two-factor-email";
+
   constructor(
     apiService: ApiService,
     i18nService: I18nService,

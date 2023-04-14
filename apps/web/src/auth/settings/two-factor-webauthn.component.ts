@@ -41,6 +41,8 @@ export class TwoFactorWebAuthnComponent extends TwoFactorBaseComponent {
   challengePromise: Promise<ChallengeResponse>;
   formPromise: Promise<TwoFactorWebAuthnResponse>;
 
+  override componentName = "app-two-factor-webauthn";
+
   constructor(
     apiService: ApiService,
     i18nService: I18nService,
