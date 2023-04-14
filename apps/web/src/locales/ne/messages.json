@@ -1256,7 +1256,7 @@
     "message": "Data successfully imported"
   },
   "importSuccessNumberOfItems": {
-    "message": "A total of $AMOUNT$ items were imported.",
+    "message": "कुल $AMOUNT$ वस्तुहरू आयात गरियो।",
     "placeholders": {
       "amount": {
         "content": "$1",
@@ -2029,7 +2029,7 @@
     "message": "Cancel subscription"
   },
   "subscriptionExpiration": {
-    "message": "Subscription expiration"
+    "message": "सदस्यताको म्याद समाप्त"
   },
   "subscriptionCanceled": {
     "message": "The subscription has been canceled."
@@ -3124,6 +3124,9 @@
   },
   "inviteAcceptedDesc": {
     "message": "You can access this organization once an administrator confirms your membership. We'll send you an email when that happens."
+  },
+  "inviteInitAcceptedDesc": {
+    "message": "You can now access this organization."
   },
   "inviteAcceptFailed": {
     "message": "Unable to accept invitation. Ask an organization admin to send a new invitation."
@@ -4868,7 +4871,7 @@
     "message": "Activate auto-fill"
   },
   "activateAutofillPolicyDesc": {
-    "message": "Activate the auto-fill on page load setting on the browser extension for all existing and new members."
+    "message": "सबै अवस्थित र नयाँ सदस्यहरूको लागि ब्राउजर एक्सटेन्सनको पृष्ठ लोड सेटिङमा स्वत: भरण विकल्प सक्रिय गर्नुहोस्।"
   },
   "experimentalFeature": {
     "message": "Compromised or untrusted websites can exploit auto-fill on page load."
@@ -6683,6 +6686,6 @@
     "message": "Dismiss"
   },
   "notAvailableForFreeOrganization": {
-    "message": "This feature is not available for free organizations. Contact your organization owner to upgrade."
+    "message": "यो सुविधा नि:शुल्क संस्थाहरूको लागि उपलब्ध छैन। स्तरवृद्धि गर्न आफ्नो संस्थाको मालिकलाई सम्पर्क गर्नुहोस्।"
   }
 }

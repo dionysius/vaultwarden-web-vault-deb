@@ -1256,7 +1256,7 @@
     "message": "Az adatok sikeresen importálásra kerültek a széfbe."
   },
   "importSuccessNumberOfItems": {
-    "message": "A total of $AMOUNT$ items were imported.",
+    "message": "Összesen $AMOUNT$ elem lett importálva.",
     "placeholders": {
       "amount": {
         "content": "$1",
@@ -3125,6 +3125,9 @@
   "inviteAcceptedDesc": {
     "message": "A szervezet elérhető, amikor az adminisztrátor jóváhagyja a tagságot.  Amint ez megtörténik, értesítő email érkezik."
   },
+  "inviteInitAcceptedDesc": {
+    "message": "Mostantól elérhető ez a szervezet."
+  },
   "inviteAcceptFailed": {
     "message": "A meghívás nem fogadható el. Kérjük fel a szervezet adminisztrátorát új meghívó küldésére."
   },
@@ -4868,7 +4871,7 @@
     "message": "Automatikus kitöltés bekapcsolása"
   },
   "activateAutofillPolicyDesc": {
-    "message": "Activate the auto-fill on page load setting on the browser extension for all existing and new members."
+    "message": "Bekapcsolja az automatikus kitöltést az oldalbetöltési beállításokkal a böngésző bővítményben minden meglévő és új tag esetében."
   },
   "experimentalFeature": {
     "message": "A veszélyeztetett vagy nem megbízható webhelyek kihasználhatják az oldal betöltéskor végrehajtott automatikus kitöltést."

@@ -1256,7 +1256,7 @@
     "message": "Данные успешно импортированы"
   },
   "importSuccessNumberOfItems": {
-    "message": "A total of $AMOUNT$ items were imported.",
+    "message": "Всего было импортировано элементов: $AMOUNT$.",
     "placeholders": {
       "amount": {
         "content": "$1",
@@ -3125,6 +3125,9 @@
   "inviteAcceptedDesc": {
     "message": "Вы получите доступ к этой организации, как только администратор подтвердит ваше членство. Когда это произойдет, мы отправим вам email."
   },
+  "inviteInitAcceptedDesc": {
+    "message": "You can now access this organization."
+  },
   "inviteAcceptFailed": {
     "message": "Не удается принять приглашение. Попросите администратора организации выслать новое."
   },
@@ -4868,7 +4871,7 @@
     "message": "Активировать автозаполнение"
   },
   "activateAutofillPolicyDesc": {
-    "message": "Activate the auto-fill on page load setting on the browser extension for all existing and new members."
+    "message": "Включить автозаполнение при загрузке страницы в расширении браузера для всех существующих и новых участников."
   },
   "experimentalFeature": {
     "message": "Взломанные или недоверенные сайты могут внедрить вредоносный код во время автозаполнения при загрузке страницы."

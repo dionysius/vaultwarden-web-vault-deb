@@ -2029,7 +2029,7 @@
     "message": "Скасувати передплату"
   },
   "subscriptionExpiration": {
-    "message": "Термін дії передплати"
+    "message": "Subscription expiration"
   },
   "subscriptionCanceled": {
     "message": "Передплату було скасовано."
@@ -3124,6 +3124,9 @@
   },
   "inviteAcceptedDesc": {
     "message": "Ви можете отримати доступ до цієї організації одразу після підтвердження адміністратором. Ми надішлемо вам електронне повідомлення, коли це станеться."
+  },
+  "inviteInitAcceptedDesc": {
+    "message": "You can now access this organization."
   },
   "inviteAcceptFailed": {
     "message": "Не вдалося прийняти запрошення. Попросіть адміністратора організації надіслати вам нове."

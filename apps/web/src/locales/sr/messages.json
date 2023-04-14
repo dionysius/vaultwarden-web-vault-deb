@@ -2029,7 +2029,7 @@
     "message": "Откажи претплату"
   },
   "subscriptionExpiration": {
-    "message": "Истицање претплате"
+    "message": "Subscription expiration"
   },
   "subscriptionCanceled": {
     "message": "Претплата је отказана."
@@ -3124,6 +3124,9 @@
   },
   "inviteAcceptedDesc": {
     "message": "Овој организацији можете приступити када администратор потврди ваше чланство. Послаћемо вам имејл када се то догоди."
+  },
+  "inviteInitAcceptedDesc": {
+    "message": "You can now access this organization."
   },
   "inviteAcceptFailed": {
     "message": "Није могуће прихватити позивницу. Замолите администратора организације да пошаље нову позивницу."

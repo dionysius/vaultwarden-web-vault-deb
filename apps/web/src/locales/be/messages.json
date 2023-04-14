@@ -2029,7 +2029,7 @@
     "message": "Скасаваць падпіску"
   },
   "subscriptionExpiration": {
-    "message": "Тэрмін дзеяння падпіскі"
+    "message": "Subscription expiration"
   },
   "subscriptionCanceled": {
     "message": "Падпіска была скасавана."
@@ -3124,6 +3124,9 @@
   },
   "inviteAcceptedDesc": {
     "message": "Вы можаце атрымаць доступ да гэтай арганізацыі адразу пасля таго, як будзе пацверджаны ваш удзел. Мы апавясцім вас, калі гэта адбудзецца."
+  },
+  "inviteInitAcceptedDesc": {
+    "message": "You can now access this organization."
   },
   "inviteAcceptFailed": {
     "message": "Немагчыма прыняць запрашэнне. Папрасіце адміністратара арганізацыі адправіць яго яшчэ раз."
@@ -6683,6 +6686,6 @@
     "message": "Адхіліць"
   },
   "notAvailableForFreeOrganization": {
-    "message": "Гэта функцыя недаступна для бясплатных арганізацый. Звяжыцеся з уладальнікам вашай арганізацыі для паляпшэння."
+    "message": "This feature is not available for free organizations. Contact your organization owner to upgrade."
   }
 }

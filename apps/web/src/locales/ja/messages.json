@@ -3125,6 +3125,9 @@
   "inviteAcceptedDesc": {
     "message": "組織の管理者が承認すると組織へアクセスできるようになります。アクセスできるようになったらメールでお知らせします。"
   },
+  "inviteInitAcceptedDesc": {
+    "message": "この組織にアクセスできるようになりました。"
+  },
   "inviteAcceptFailed": {
     "message": "招待を承諾出来ませんでした。組織の管理者に招待を再送信するように依頼してください。"
   },
@@ -5887,7 +5890,7 @@
     }
   },
   "deleteServiceAccountToast": {
-    "message": "Service account deleted"
+    "message": "サービスアカウントは削除されました"
   },
   "deleteServiceAccountsToast": {
     "message": "サービスアカウントを削除しました"

@@ -1256,7 +1256,7 @@
     "message": "Dati ir veiksmīgi ievietoti glabātavā."
   },
   "importSuccessNumberOfItems": {
-    "message": "A total of $AMOUNT$ items were imported.",
+    "message": "Kopumā tika ievietoti $AMOUNT$ vienumi.",
     "placeholders": {
       "amount": {
         "content": "$1",
@@ -3125,6 +3125,9 @@
   "inviteAcceptedDesc": {
     "message": "Piekļūt apvienībai varēs, kad tās pārvaldnieks apstiprinās dalību. Tiks nosūtīts e-pasta ziņojums, kad tas notiks."
   },
+  "inviteInitAcceptedDesc": {
+    "message": "You can now access this organization."
+  },
   "inviteAcceptFailed": {
     "message": "Nav iespējams pieņemt uzaicinājumu. Jālūdz apvienības pārvaldniekam nosūtīt jaunu."
   },
@@ -4868,7 +4871,7 @@
     "message": "Iespējot automātisko aizpildīšanu"
   },
   "activateAutofillPolicyDesc": {
-    "message": "Activate the auto-fill on page load setting on the browser extension for all existing and new members."
+    "message": "Pārlūka paplašinājumā iespējot automātisko aizpildīšanu lapas ielādes brīdī visiem esošajiem un jaunajiem dalībniekiem."
   },
   "experimentalFeature": {
     "message": "Pārveidotās vai neuzticamās vietnēs automātiskā aizpildīšana lapas ielādes laikā var tikt ļaunprātīgi izmantota."
@@ -5887,7 +5890,7 @@
     }
   },
   "deleteServiceAccountToast": {
-    "message": "Service account deleted"
+    "message": "Pakalpojumu konts ir izdzēsts"
   },
   "deleteServiceAccountsToast": {
     "message": "Pakalpojumu konti ir izdzēsti"
@@ -6511,7 +6514,7 @@
     "message": "Mainīt KDF iestatījumus"
   },
   "changeKdfLoggedOutWarning": {
-    "message": "Proceeding will log you out of all active sessions. You will need to log back in and complete two-step login setup. We recommend exporting your vault before changing your encryption settings to prevent data loss."
+    "message": "Turpinot notiks atteikšanās no visām aktīvām sesijām. Jums būs atkārtoti jāpiesakās un jāveic divpakapāju autentifikācijas uzstādīšana. Mēs iesakām eksportēt savu glabātavu pirms šifrēšanas iestatījumu maiņas lai novērstu datu zudumu."
   },
   "secretsManagerBeta": {
     "message": "Noslēpumu pārvaldnieks Beta"

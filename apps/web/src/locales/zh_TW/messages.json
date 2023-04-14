@@ -3072,7 +3072,7 @@
     }
   },
   "confirmUsers": {
-    "message": "確認使用者"
+    "message": "確認成員"
   },
   "usersNeedConfirmed": {
     "message": "有使用者已接受邀請，但仍然需要確認。在確認之前，使用者將無法存取組織。"
@@ -3124,6 +3124,9 @@
   },
   "inviteAcceptedDesc": {
     "message": "管理員確認您的成員身分後，您便可以存取此組織。到時我們會向您傳送電子郵件通知。"
+  },
+  "inviteInitAcceptedDesc": {
+    "message": "您現在可以存取此組織。"
   },
   "inviteAcceptFailed": {
     "message": "無法接受邀請。請要求組織管理員傳送新的邀請。"
@@ -3399,7 +3402,7 @@
     }
   },
   "keyUpdated": {
-    "message": "已更新金鑰"
+    "message": "金鑰已更新"
   },
   "updateKeyTitle": {
     "message": "更新金鑰"
@@ -5767,7 +5770,7 @@
     "description": "A prompt explaining how secrets can be associated with projects."
   },
   "selectProjects": {
-    "message": "Select projects",
+    "message": "選取專案",
     "description": "A label for a type-to-filter input field to choose projects."
   },
   "searchProjects": {
@@ -6049,7 +6052,7 @@
     "description": "Title for the section displaying access tokens."
   },
   "newAccessToken": {
-    "message": "New access token",
+    "message": "新增存取權杖",
     "description": "Button label for creating a new access token."
   },
   "expires": {
@@ -6283,16 +6286,16 @@
     "message": "未驗證"
   },
   "domainNameTh": {
-    "message": "Name"
+    "message": "名稱"
   },
   "domainStatusTh": {
     "message": "狀態"
   },
   "lastChecked": {
-    "message": "Last checked"
+    "message": "上次確認"
   },
   "editDomain": {
-    "message": "Edit domain"
+    "message": "編輯網域名稱"
   },
   "domainFormInvalid": {
     "message": "There are form errors that need your attention"
@@ -6466,7 +6469,7 @@
     "message": "Billing Sync help"
   },
   "uploadLicense": {
-    "message": "Upload license"
+    "message": "上傳授權證"
   },
   "projectPeopleDescription": {
     "message": "Grant groups or people access to this project."
@@ -6526,7 +6529,7 @@
     "message": "Important:"
   },
   "viewAll": {
-    "message": "View all"
+    "message": "檢視全部"
   },
   "showingPortionOfTotal": {
     "message": "Showing $PORTION$ of $TOTAL$",

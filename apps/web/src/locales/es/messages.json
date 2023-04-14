@@ -1256,7 +1256,7 @@
     "message": "La información ha sido importada correctamente en tu caja fuerte."
   },
   "importSuccessNumberOfItems": {
-    "message": "A total of $AMOUNT$ items were imported.",
+    "message": "Un total de $AMOUNT$ elementos fueron importados.",
     "placeholders": {
       "amount": {
         "content": "$1",
@@ -2029,7 +2029,7 @@
     "message": "Cancelar suscripción"
   },
   "subscriptionExpiration": {
-    "message": "Fecha de vencimiento de la suscripción"
+    "message": "Caducidad de la suscripción"
   },
   "subscriptionCanceled": {
     "message": "La suscripción ha sido cancelada."
@@ -3124,6 +3124,9 @@
   },
   "inviteAcceptedDesc": {
     "message": "Puede acceder a esta organización una vez que un administrador confirme su membresía. Te enviaremos un correo electrónico cuando eso suceda."
+  },
+  "inviteInitAcceptedDesc": {
+    "message": "Ahora puede acceder a esta organización."
   },
   "inviteAcceptFailed": {
     "message": "No se puede aceptar la invitación. Pida a un administrador de la organización que envíe una nueva invitación."
@@ -4868,7 +4871,7 @@
     "message": "Activar autocompletar"
   },
   "activateAutofillPolicyDesc": {
-    "message": "Activate the auto-fill on page load setting on the browser extension for all existing and new members."
+    "message": "Active el autocompletar con los ajustes de carga de página en la extensión del navegador para todos los miembros existentes y nuevos."
   },
   "experimentalFeature": {
     "message": "Los sitios web comprometidos o no confiables pueden explotar autocompletar al cargar la página."

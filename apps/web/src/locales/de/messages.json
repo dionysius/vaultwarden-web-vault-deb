@@ -3125,6 +3125,9 @@
   "inviteAcceptedDesc": {
     "message": "Du kannst der Organisation beitreten, sobald ein Administrator deine Mitgliedschaft bestätigt hat. Wir werden dich dann per E-Mail benachrichtigen."
   },
+  "inviteInitAcceptedDesc": {
+    "message": "Du kannst nun auf diese Organisation zugreifen."
+  },
   "inviteAcceptFailed": {
     "message": "Einladung kann nicht angenommen werden. Bitte einen Administrator der Organisation, eine neue Einladung zu senden."
   },
@@ -4868,7 +4871,7 @@
     "message": "Auto-Ausfüllen aktivieren"
   },
   "activateAutofillPolicyDesc": {
-    "message": "Activate the auto-fill on page load setting on the browser extension for all existing and new members."
+    "message": "Aktiviere die Einstellung \"Auto-Ausfüllen beim Laden einer Seite\" in der Browser-Erweiterung für alle bestehenden und neuen Mitglieder."
   },
   "experimentalFeature": {
     "message": "Kompromittierte oder nicht vertrauenswürdige Websites können Auto-Ausfüllen beim Laden der Seite ausnutzen."

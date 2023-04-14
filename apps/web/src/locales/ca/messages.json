@@ -1256,7 +1256,7 @@
     "message": "Les dades s'han importat amb èxit"
   },
   "importSuccessNumberOfItems": {
-    "message": "A total of $AMOUNT$ items were imported.",
+    "message": "S'han importat un total de $AMOUNT$ elements.",
     "placeholders": {
       "amount": {
         "content": "$1",
@@ -3125,6 +3125,9 @@
   "inviteAcceptedDesc": {
     "message": "Podeu accedir a aquesta organització una vegada que un administrador confirme la vostra pertinença. Rebreu un correu electrònic quan això passe."
   },
+  "inviteInitAcceptedDesc": {
+    "message": "You can now access this organization."
+  },
   "inviteAcceptFailed": {
     "message": "No es pot acceptar la invitació. Demaneu a l'administrador d'una organització que envie una invitació nova."
   },
@@ -4868,7 +4871,7 @@
     "message": "Activa l'emplenament automàtic"
   },
   "activateAutofillPolicyDesc": {
-    "message": "Activate the auto-fill on page load setting on the browser extension for all existing and new members."
+    "message": "Activeu l'emplenament automàtic a la configuració de la càrrega de la pàgina en l'extensió del navegador per a tots els membres existents i nous."
   },
   "experimentalFeature": {
     "message": "Els llocs web compromesos o no fiables poden aprofitar l'emplenament automàtic en carregar de la pàgina."
@@ -6683,6 +6686,6 @@
     "message": "Descarta"
   },
   "notAvailableForFreeOrganization": {
-    "message": "Aquesta funció no està disponible per a organitzacions gratuïtes. Poseu-vos en contacte amb el propietari de la vostra organització per actualitzar.-la."
+    "message": "Aquesta característica no està disponible per a organitzacions gratuïtes. Poseu-vos en contacte amb el propietari de la vostra organització per actualitzar.-la."
   }
 }

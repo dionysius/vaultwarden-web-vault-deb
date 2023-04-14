@@ -3125,6 +3125,9 @@
   "inviteAcceptedDesc": {
     "message": "Vous pourrez accéder à cette organisation dès qu'un administrateur aura confirmé votre adhésion. Nous vous enverrons un courriel lorsque cela se produira."
   },
+  "inviteInitAcceptedDesc": {
+    "message": "Vous pouvez maintenant accéder à cette organisation."
+  },
   "inviteAcceptFailed": {
     "message": "Impossible d’accepter l’invitation. Demandez à un administrateur de l'organisation d’envoyer une nouvelle invitation."
   },

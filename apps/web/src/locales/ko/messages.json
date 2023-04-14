@@ -2029,7 +2029,7 @@
     "message": "구독 취소"
   },
   "subscriptionExpiration": {
-    "message": "구독 만료"
+    "message": "Subscription expiration"
   },
   "subscriptionCanceled": {
     "message": "구독을 취소했습니다."
@@ -3124,6 +3124,9 @@
   },
   "inviteAcceptedDesc": {
     "message": "관리자의 확인을 받으면 조직에 액세스할 수 있습니다. 승인이 이뤄지면 이메일을 보내드리겠습니다."
+  },
+  "inviteInitAcceptedDesc": {
+    "message": "You can now access this organization."
   },
   "inviteAcceptFailed": {
     "message": "초대를 수락할 수 없습니다. 조직 관리자에게 새 초대장을 보내도록 요청하십시오."

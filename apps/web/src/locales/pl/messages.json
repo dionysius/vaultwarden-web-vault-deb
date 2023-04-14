@@ -1256,7 +1256,7 @@
     "message": "Dane zostały zaimportowane"
   },
   "importSuccessNumberOfItems": {
-    "message": "W sumie zaimportowano $AMOUNT$ elementów.",
+    "message": "Zaimportowano elementów: $AMOUNT$.",
     "placeholders": {
       "amount": {
         "content": "$1",
@@ -3124,6 +3124,9 @@
   },
   "inviteAcceptedDesc": {
     "message": "Dostęp do tej organizacji otrzymasz po potwierdzeniu członkostwa przez administratora. Dostaniesz wtedy wiadomość e-mail."
+  },
+  "inviteInitAcceptedDesc": {
+    "message": "Możesz teraz uzyskać dostęp do tej organizacji."
   },
   "inviteAcceptFailed": {
     "message": "Nie można zaakceptować zaproszenia. Poproś administratora organizacji o wysłanie nowego zaproszenia."
@@ -6683,6 +6686,6 @@
     "message": "Odrzuć"
   },
   "notAvailableForFreeOrganization": {
-    "message": "Ta funkcja nie jest dostępna dla darmowych organizacji. Skontaktuj się z właścicielem organizacji, aby ulepszyć."
+    "message": "Ta funkcja nie jest dostępna dla darmowych organizacji. Skontaktuj się z właścicielem organizacji, aby ją ulepszyć."
   }
 }

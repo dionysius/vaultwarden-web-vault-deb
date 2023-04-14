@@ -1256,7 +1256,7 @@
     "message": "数据导入成功"
   },
   "importSuccessNumberOfItems": {
-    "message": "A total of $AMOUNT$ items were imported.",
+    "message": "一共导入了 $AMOUNT$ 个项目。",
     "placeholders": {
       "amount": {
         "content": "$1",
@@ -2089,7 +2089,7 @@
     "message": "移除存储空间"
   },
   "subscriptionStorage": {
-    "message": "您的订阅共有 $MAX_STORAGE$ GB 的加密存储空间。您目前已使用 $USED_STORAGE$ 。",
+    "message": "您的订阅一共有 $MAX_STORAGE$ GB 的加密存储空间。您目前已使用 $USED_STORAGE$ 。",
     "placeholders": {
       "max_storage": {
         "content": "$1",
@@ -3125,6 +3125,9 @@
   "inviteAcceptedDesc": {
     "message": "管理员确认您的成员资格后，您将能访问此组织。到时我们将向您发送电子邮件通知。"
   },
+  "inviteInitAcceptedDesc": {
+    "message": "您现在可以访问此组织。"
+  },
   "inviteAcceptFailed": {
     "message": "无法接受邀请。请向组织管理员请求发送新的邀请。"
   },
@@ -3360,7 +3363,7 @@
     }
   },
   "subscriptionSponsoredFamiliesPlan": {
-    "message": "您的订阅允许总共 $COUNT$ 位成员。您的计划由一个外部组织赞助和支付费用。",
+    "message": "您的订阅一共允许 $COUNT$ 位成员。您的计划由一个外部组织赞助和支付费用。",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -4868,7 +4871,7 @@
     "message": "激活自动填充"
   },
   "activateAutofillPolicyDesc": {
-    "message": "Activate the auto-fill on page load setting on the browser extension for all existing and new members."
+    "message": "为所有现有成员和新成员激活浏览器扩展上的页面加载时的自动填充设置。"
   },
   "experimentalFeature": {
     "message": "不完整或不信任的网站可以在页面加载时自动填充。"
@@ -5823,11 +5826,11 @@
     "description": "Notification for the successful creation of a secret."
   },
   "newSecret": {
-    "message": "新建机密",
+    "message": "新增机密",
     "description": "Title for creating a new secret."
   },
   "newServiceAccount": {
-    "message": "新建服务账户",
+    "message": "新增服务账户",
     "description": "Title for creating a new service account."
   },
   "secretsNoItemsTitle": {
@@ -5866,7 +5869,7 @@
     "description": "Action to view the details of a service account."
   },
   "deleteServiceAccountDialogMessage": {
-    "message": "删除服务账户 $SERVICE_ACCOUNT$ 是永久和不可逆的。",
+    "message": "删除服务账户 $SERVICE_ACCOUNT$ 是永久性的，无法撤销！",
     "placeholders": {
       "service_account": {
         "content": "$1",
@@ -5875,7 +5878,7 @@
     }
   },
   "deleteServiceAccountsDialogMessage": {
-    "message": "删除服务账户是永久和不可逆的。"
+    "message": "删除服务账户是永久性的，无法撤销！"
   },
   "deleteServiceAccountsConfirmMessage": {
     "message": "删除 $COUNT$ 个服务账户",
@@ -5921,7 +5924,7 @@
     "description": "Label for entering the name of a project."
   },
   "newProject": {
-    "message": "新建工程",
+    "message": "新增工程",
     "description": "Title for creating a new project."
   },
   "softDeleteSecretWarning": {
@@ -5978,7 +5981,7 @@
     "description": "Notifies that a project has been deleted"
   },
   "deleteProjectDialogMessage": {
-    "message": "删除工程 $PROJECT$ 是永久性的，不可撤销！",
+    "message": "删除工程 $PROJECT$ 是永久性的，无法撤销！",
     "description": "Informs users that projects are hard deleted and not sent to trash",
     "placeholders": {
       "project": {
@@ -6018,7 +6021,7 @@
     }
   },
   "deleteProjectsDialogMessage": {
-    "message": "删除工程是永久性的，不可撤销！",
+    "message": "删除工程是永久性的，无法撤销！",
     "description": "This message is displayed in a dialog box as a warning before proceeding with project deletion."
   },
   "projectsNoItemsTitle": {
@@ -6108,7 +6111,7 @@
     "message": "吊销访问令牌"
   },
   "revokeAccessTokenDesc": {
-    "message": "吊销访问令牌是永久和不可逆的。"
+    "message": "吊销访问令牌是永久性的，无法撤销！"
   },
   "accessTokenRevoked": {
     "message": "访问令牌已吊销",
@@ -6235,7 +6238,7 @@
     "message": "自动域验证"
   },
   "automaticDomainVerificationProcess": {
-    "message": "Bitwarden 将尝试在 72 小时内验证此域 3 次。如果无法验证此域，请检查主机中的 DNS 记录并手动验证。如果此域无法验证，7 天内将从您的组织中移除。"
+    "message": "Bitwarden 将尝试在 72 小时内验证此域 3 次。如果无法验证此域，请检查您的主机中的 DNS 记录并手动验证。如果此域无法验证，7 天内将从您的组织中移除。"
   },
   "invalidDomainNameMessage": {
     "message": "输入格式不正确。格式：mydomain.com。子域需要单独的条目进行验证。"
@@ -6517,7 +6520,7 @@
     "message": "机密管理器 Beta 版"
   },
   "secretsManagerBetaDesc": {
-    "message": "在 Beta 计划期间，允许用户免费访问机密管理器。"
+    "message": "在 Beta 计划期间，启用用户对机密管理器的访问是免费的。"
   },
   "userAccessSecretsManager": {
     "message": "此用户可以访问机密管理器 Beta 版"
@@ -6620,7 +6623,7 @@
     "message": "必须选择"
   },
   "secretsManagerSubscriptionDesc": {
-    "message": "在 Beta 计划期间，开启组织对机密管理器的访问权限是免费的。成员中的用户会被授予对 Beta 版的访问权限。"
+    "message": "在 Beta 计划期间，开启组织对机密管理器的访问是免费的。成员中的用户会被授予对 Beta 版的访问权限。"
   },
   "secretsManagerEnable": {
     "message": "启用机密管理器 Beta 版"

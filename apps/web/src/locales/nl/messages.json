@@ -2029,7 +2029,7 @@
     "message": "Abonnement opzeggen"
   },
   "subscriptionExpiration": {
-    "message": "Abonnement vervaldatum"
+    "message": "Subscription expiration"
   },
   "subscriptionCanceled": {
     "message": "Het abonnement is opgezegd."
@@ -3124,6 +3124,9 @@
   },
   "inviteAcceptedDesc": {
     "message": "Je krijgt toegang tot deze organisatie zodra een beheerder je lidmaatschap bevestigt. We sturen je een e-mail zodra dat gebeurt."
+  },
+  "inviteInitAcceptedDesc": {
+    "message": "Je hebt nu toegang tot deze organisatie."
   },
   "inviteAcceptFailed": {
     "message": "De uitnodiging is niet geaccepteerd. Vraag een beheerder van de organisatie om een nieuwe uitnodiging te versturen."
@@ -6683,6 +6686,6 @@
     "message": "Sluiten"
   },
   "notAvailableForFreeOrganization": {
-    "message": "Deze optie is niet beschikbaar voor gratis organisaties. Contacteer uw organisatie-eigenaar om te upgraden."
+    "message": "This feature is not available for free organizations. Contact your organization owner to upgrade."
   }
 }
