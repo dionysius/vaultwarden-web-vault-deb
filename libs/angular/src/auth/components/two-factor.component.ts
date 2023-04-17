@@ -15,6 +15,7 @@ import { LoginService } from "@bitwarden/common/auth/abstractions/login.service"
 import { TwoFactorService } from "@bitwarden/common/auth/abstractions/two-factor.service";
 import { TwoFactorProviderType } from "@bitwarden/common/auth/enums/two-factor-provider-type";
 import { AuthResult } from "@bitwarden/common/auth/models/domain/auth-result";
+import { ForceResetPasswordReason } from "@bitwarden/common/auth/models/domain/force-reset-password-reason";
 import { TokenTwoFactorRequest } from "@bitwarden/common/auth/models/request/identity-token/token-two-factor.request";
 import { TwoFactorEmailRequest } from "@bitwarden/common/auth/models/request/two-factor-email.request";
 import { TwoFactorProviders } from "@bitwarden/common/auth/services/two-factor.service";
@@ -208,7 +209,7 @@ export class TwoFactorComponent extends CaptchaProtectedComponent implements OnI
     if (response.resetMasterPassword) {
       this.successRoute = "set-password";
     }
-    if (response.forcePasswordReset) {
+    if (response.forcePasswordReset !== ForceResetPasswordReason.None) {
       this.successRoute = "update-temp-password";
     }
     if (this.onSuccessfulLoginNavigate != null) {

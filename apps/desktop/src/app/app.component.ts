@@ -34,6 +34,7 @@ import { InternalPolicyService } from "@bitwarden/common/admin-console/abstracti
 import { AuthService } from "@bitwarden/common/auth/abstractions/auth.service";
 import { KeyConnectorService } from "@bitwarden/common/auth/abstractions/key-connector.service";
 import { AuthenticationStatus } from "@bitwarden/common/auth/enums/authentication-status";
+import { ForceResetPasswordReason } from "@bitwarden/common/auth/models/domain/force-reset-password-reason";
 import { PasswordGenerationServiceAbstraction } from "@bitwarden/common/tools/generator/password";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
 import { InternalFolderService } from "@bitwarden/common/vault/abstractions/folder/folder.service.abstraction";
@@ -350,8 +351,13 @@ export class AppComponent implements OnInit, OnDestroy {
             const locked =
               (await this.authService.getAuthStatus(message.userId)) ===
               AuthenticationStatus.Locked;
+            const forcedPasswordReset =
+              (await this.stateService.getForcePasswordResetReason({ userId: message.userId })) !=
+              ForceResetPasswordReason.None;
             if (locked) {
               this.messagingService.send("locked", { userId: message.userId });
+            } else if (forcedPasswordReset) {
+              this.router.navigate(["update-temp-password"]);
             } else {
               this.messagingService.send("unlocked");
               this.loading = true;

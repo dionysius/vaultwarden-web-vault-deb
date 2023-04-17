@@ -59,7 +59,8 @@ export class UserApiLogInStrategy extends LogInStrategy {
       await this.buildDeviceRequest()
     );
 
-    return this.startLogIn();
+    const [authResult] = await this.startLogIn();
+    return authResult;
   }
 
   protected async saveAccountInformation(tokenResponse: IdentityTokenResponse) {

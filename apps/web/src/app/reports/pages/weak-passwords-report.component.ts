@@ -79,6 +79,7 @@ export class WeakPasswordsReportComponent extends CipherReportComponent implemen
         }
         const result = this.passwordGenerationService.passwordStrength(
           c.login.password,
+          null,
           userInput.length > 0 ? userInput : null
         );
         this.passwordStrengthCache.set(cacheKey, result.score);

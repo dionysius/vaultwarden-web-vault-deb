@@ -7,6 +7,7 @@ import { PolicyResponse } from "../../models/response/policy.response";
 export class PolicyApiServiceAbstraction {
   getPolicy: (organizationId: string, type: PolicyType) => Promise<PolicyResponse>;
   getPolicies: (organizationId: string) => Promise<ListResponse<PolicyResponse>>;
+
   getPoliciesByToken: (
     organizationId: string,
     token: string,

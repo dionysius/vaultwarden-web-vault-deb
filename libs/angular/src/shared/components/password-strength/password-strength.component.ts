@@ -98,30 +98,11 @@ export class PasswordStrengthComponent implements OnChanges {
 
     const strengthResult = this.passwordGenerationService.passwordStrength(
       masterPassword,
-      this.getPasswordStrengthUserInput()
+      this.email,
+      this.name?.trim().toLowerCase().split(" ")
     );
     this.passwordStrengthResult.emit(strengthResult);
     this.masterPasswordScore = strengthResult == null ? null : strengthResult.score;
-  }
-
-  getPasswordStrengthUserInput() {
-    let userInput: string[] = [];
-    const email = this.email;
-    const name = this.name;
-    const atPosition = email?.indexOf("@");
-    if (atPosition > -1) {
-      userInput = userInput.concat(
-        email
-          .substr(0, atPosition)
-          .trim()
-          .toLowerCase()
-          .split(/[^A-Za-z0-9]/)
-      );
-    }
-    if (name != null && name !== "") {
-      userInput = userInput.concat(name.trim().toLowerCase().split(" "));
-    }
-    return userInput;
   }
 
   setPasswordScoreText(color: string, text: string) {

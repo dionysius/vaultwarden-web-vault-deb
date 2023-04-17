@@ -30,6 +30,10 @@ export class BitErrorComponent {
         return this.i18nService.t("inputMinLength", this.error[1]?.requiredLength);
       case "maxlength":
         return this.i18nService.t("inputMaxLength", this.error[1]?.requiredLength);
+      case "min":
+        return this.i18nService.t("inputMinValue", this.error[1]?.min);
+      case "max":
+        return this.i18nService.t("inputMaxValue", this.error[1]?.max);
       case "forbiddenCharacters":
         return this.i18nService.t("inputForbiddenCharacters", this.error[1]?.characters.join(", "));
       case "multipleEmails":

@@ -1,10 +1,12 @@
 import { Utils } from "../../../misc/utils";
 import { TwoFactorProviderType } from "../../enums/two-factor-provider-type";
 
+import { ForceResetPasswordReason } from "./force-reset-password-reason";
+
 export class AuthResult {
   captchaSiteKey = "";
   resetMasterPassword = false;
-  forcePasswordReset = false;
+  forcePasswordReset: ForceResetPasswordReason = ForceResetPasswordReason.None;
   twoFactorProviders: Map<TwoFactorProviderType, { [key: string]: string }> = null;
 
   get requiresCaptcha() {

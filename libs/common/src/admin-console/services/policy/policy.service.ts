@@ -1,4 +1,4 @@
-import { of, concatMap, BehaviorSubject, Observable, map } from "rxjs";
+import { BehaviorSubject, concatMap, map, Observable, of } from "rxjs";
 
 import { StateService } from "../../../abstractions/state.service";
 import { Utils } from "../../../misc/utils";
@@ -136,6 +136,10 @@ export class PolicyService implements InternalPolicyServiceAbstraction {
 
           if (currentPolicy.data.requireSpecial) {
             enforcedOptions.requireSpecial = true;
+          }
+
+          if (currentPolicy.data.enforceOnLogin) {
+            enforcedOptions.enforceOnLogin = true;
           }
         });
 

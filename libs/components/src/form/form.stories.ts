@@ -1,11 +1,11 @@
 import {
   AbstractControl,
+  FormBuilder,
   FormsModule,
   ReactiveFormsModule,
   ValidationErrors,
   ValidatorFn,
   Validators,
-  FormBuilder,
 } from "@angular/forms";
 import { Meta, moduleMetadata, Story } from "@storybook/angular";
 
@@ -47,6 +47,8 @@ export default {
               checkboxRequired: "Option is required",
               inputRequired: "Input is required.",
               inputEmail: "Input is not an email-address.",
+              inputMinValue: (min) => `Input value must be at least ${min}.`,
+              inputMaxValue: (max) => `Input value must not exceed ${max}.`,
             });
           },
         },
@@ -68,6 +70,7 @@ const exampleFormObj = fb.group({
   country: [undefined as string | undefined, [Validators.required]],
   terms: [false, [Validators.requiredTrue]],
   updates: ["yes"],
+  age: [null, [Validators.min(0), Validators.max(150)]],
 });
 
 // Custom error message, `message` is shown as the error message
@@ -101,6 +104,17 @@ const FullExampleTemplate: Story = (args) => ({
         <bit-select formControlName="country">
           <bit-option *ngFor="let country of countries" [value]="country.value" [label]="country.name"></bit-option>
         </bit-select>
+      </bit-form-field>
+
+      <bit-form-field>
+        <bit-label>Age</bit-label>
+        <input
+          bitInput
+          type="number"
+          formControlName="age"
+          min="0"
+          max="150"
+        />
       </bit-form-field>
 
       <bit-form-control>

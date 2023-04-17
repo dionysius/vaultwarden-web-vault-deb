@@ -9,6 +9,7 @@ import { Policy } from "../../admin-console/models/domain/policy";
 import { CollectionView } from "../../admin-console/models/view/collection.view";
 import { AuthenticationStatus } from "../../auth/enums/authentication-status";
 import { EnvironmentUrls } from "../../auth/models/domain/environment-urls";
+import { ForceResetPasswordReason } from "../../auth/models/domain/force-reset-password-reason";
 import { KdfType, UriMatchType } from "../../enums";
 import { Utils } from "../../misc/utils";
 import { GeneratedPasswordHistory } from "../../tools/generator/password";
@@ -180,7 +181,7 @@ export class AccountProfile {
   entityId?: string;
   entityType?: string;
   everBeenUnlocked?: boolean;
-  forcePasswordReset?: boolean;
+  forcePasswordResetReason?: ForceResetPasswordReason;
   hasPremiumPersonally?: boolean;
   hasPremiumFromOrganization?: boolean;
   lastSync?: string;

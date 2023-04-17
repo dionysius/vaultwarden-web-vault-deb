@@ -15,6 +15,7 @@ import { ProviderData } from "../../../admin-console/models/data/provider.data";
 import { CollectionDetailsResponse } from "../../../admin-console/models/response/collection.response";
 import { PolicyResponse } from "../../../admin-console/models/response/policy.response";
 import { KeyConnectorService } from "../../../auth/abstractions/key-connector.service";
+import { ForceResetPasswordReason } from "../../../auth/models/domain/force-reset-password-reason";
 import { sequentialize } from "../../../misc/sequentialize";
 import { DomainsResponse } from "../../../models/response/domains.response";
 import {
@@ -311,8 +312,14 @@ export class SyncService implements SyncServiceAbstraction {
     await this.stateService.setEmailVerified(response.emailVerified);
     await this.stateService.setHasPremiumPersonally(response.premiumPersonally);
     await this.stateService.setHasPremiumFromOrganization(response.premiumFromOrganization);
-    await this.stateService.setForcePasswordReset(response.forcePasswordReset);
     await this.keyConnectorService.setUsesKeyConnector(response.usesKeyConnector);
+
+    // The `forcePasswordReset` flag indicates an admin has reset the user's password and must be updated
+    if (response.forcePasswordReset) {
+      await this.stateService.setForcePasswordResetReason(
+        ForceResetPasswordReason.AdminForcePasswordReset
+      );
+    }
 
     await this.syncProfileOrganizations(response);
 

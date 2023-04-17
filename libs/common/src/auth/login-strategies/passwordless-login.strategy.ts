@@ -81,6 +81,7 @@ export class PasswordlessLogInStrategy extends LogInStrategy {
     );
 
     this.tokenRequest.setPasswordlessAccessCode(credentials.authRequestId);
-    return this.startLogIn();
+    const [authResult] = await this.startLogIn();
+    return authResult;
   }
 }

@@ -155,7 +155,7 @@ export class LoginComponent extends BaseLoginComponent implements OnInit, OnDest
     if (this.enforcedPasswordPolicyOptions != null) {
       const strengthResult = this.passwordGenerationService.passwordStrength(
         masterPassword,
-        this.getPasswordStrengthUserInput()
+        this.formGroup.value.email
       );
       const masterPasswordScore = strengthResult == null ? null : strengthResult.score;
 
@@ -207,21 +207,5 @@ export class LoginComponent extends BaseLoginComponent implements OnInit, OnDest
       await this.stateService.setRememberedEmail(null);
     }
     await super.submit(false);
-  }
-
-  private getPasswordStrengthUserInput() {
-    const email = this.formGroup.value.email;
-    let userInput: string[] = [];
-    const atPosition = email.indexOf("@");
-    if (atPosition > -1) {
-      userInput = userInput.concat(
-        email
-          .substr(0, atPosition)
-          .trim()
-          .toLowerCase()
-          .split(/[^A-Za-z0-9]/)
-      );
-    }
-    return userInput;
   }
 }

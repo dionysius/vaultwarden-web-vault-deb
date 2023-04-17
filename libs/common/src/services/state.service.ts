@@ -16,6 +16,7 @@ import { ProviderData } from "../admin-console/models/data/provider.data";
 import { Policy } from "../admin-console/models/domain/policy";
 import { CollectionView } from "../admin-console/models/view/collection.view";
 import { EnvironmentUrls } from "../auth/models/domain/environment-urls";
+import { ForceResetPasswordReason } from "../auth/models/domain/force-reset-password-reason";
 import { KdfConfig } from "../auth/models/domain/kdf-config";
 import { HtmlStorageLocation, KdfType, StorageLocation, ThemeType, UriMatchType } from "../enums";
 import { VaultTimeoutAction } from "../enums/vault-timeout-action.enum";
@@ -1635,21 +1636,27 @@ export class StateService<
     );
   }
 
-  async getForcePasswordReset(options?: StorageOptions): Promise<boolean> {
+  async getForcePasswordResetReason(options?: StorageOptions): Promise<ForceResetPasswordReason> {
     return (
-      (await this.getAccount(this.reconcileOptions(options, await this.defaultInMemoryOptions())))
-        ?.profile?.forcePasswordReset ?? false
+      (
+        await this.getAccount(
+          this.reconcileOptions(options, await this.defaultOnDiskMemoryOptions())
+        )
+      )?.profile?.forcePasswordResetReason ?? ForceResetPasswordReason.None
     );
   }
 
-  async setForcePasswordReset(value: boolean, options?: StorageOptions): Promise<void> {
+  async setForcePasswordResetReason(
+    value: ForceResetPasswordReason,
+    options?: StorageOptions
+  ): Promise<void> {
     const account = await this.getAccount(
-      this.reconcileOptions(options, await this.defaultInMemoryOptions())
+      this.reconcileOptions(options, await this.defaultOnDiskMemoryOptions())
     );
-    account.profile.forcePasswordReset = value;
+    account.profile.forcePasswordResetReason = value;
     await this.saveAccount(
       account,
-      this.reconcileOptions(options, await this.defaultInMemoryOptions())
+      this.reconcileOptions(options, await this.defaultOnDiskMemoryOptions())
     );
   }
 

@@ -65,6 +65,7 @@ export class SsoLogInStrategy extends LogInStrategy {
       await this.buildDeviceRequest()
     );
 
-    return this.startLogIn();
+    const [authResult] = await this.startLogIn();
+    return authResult;
   }
 }

@@ -11,22 +11,28 @@ import { CryptoFunctionService } from "@bitwarden/common/abstractions/cryptoFunc
 import { EnvironmentService } from "@bitwarden/common/abstractions/environment.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
+import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
+import { PolicyApiServiceAbstraction } from "@bitwarden/common/admin-console/abstractions/policy/policy-api.service.abstraction";
 import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
 import { AuthService } from "@bitwarden/common/auth/abstractions/auth.service";
 import { KeyConnectorService } from "@bitwarden/common/auth/abstractions/key-connector.service";
 import { TwoFactorService } from "@bitwarden/common/auth/abstractions/two-factor.service";
 import { TwoFactorProviderType } from "@bitwarden/common/auth/enums/two-factor-provider-type";
 import { AuthResult } from "@bitwarden/common/auth/models/domain/auth-result";
+import { ForceResetPasswordReason } from "@bitwarden/common/auth/models/domain/force-reset-password-reason";
 import {
-  UserApiLogInCredentials,
   PasswordLogInCredentials,
   SsoLogInCredentials,
+  UserApiLogInCredentials,
 } from "@bitwarden/common/auth/models/domain/log-in-credentials";
 import { TokenTwoFactorRequest } from "@bitwarden/common/auth/models/request/identity-token/token-two-factor.request";
+import { PasswordRequest } from "@bitwarden/common/auth/models/request/password.request";
 import { TwoFactorEmailRequest } from "@bitwarden/common/auth/models/request/two-factor-email.request";
 import { UpdateTempPasswordRequest } from "@bitwarden/common/auth/models/request/update-temp-password.request";
 import { NodeUtils } from "@bitwarden/common/misc/nodeUtils";
 import { Utils } from "@bitwarden/common/misc/utils";
+import { EncString } from "@bitwarden/common/models/domain/enc-string";
+import { SymmetricCryptoKey } from "@bitwarden/common/models/domain/symmetric-crypto-key";
 import { ErrorResponse } from "@bitwarden/common/models/response/error.response";
 import { PasswordGenerationServiceAbstraction } from "@bitwarden/common/tools/generator/password";
 import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
@@ -55,6 +61,8 @@ export class LoginCommand {
     protected twoFactorService: TwoFactorService,
     protected syncService: SyncService,
     protected keyConnectorService: KeyConnectorService,
+    protected policyApiService: PolicyApiServiceAbstraction,
+    protected orgService: OrganizationService,
     protected logoutCallback: () => Promise<void>
   ) {}
 
@@ -306,9 +314,20 @@ export class LoginCommand {
         );
       }
 
-      // Handle Updating Temp Password if NOT using an API Key for authentication
-      if (response.forcePasswordReset && clientId == null && clientSecret == null) {
-        return await this.updateTempPassword();
+      // Run full sync before handling success response or password reset flows (to get Master Password Policies)
+      await this.syncService.fullSync(true);
+
+      // Handle updating passwords if NOT using an API Key for authentication
+      if (
+        response.forcePasswordReset != ForceResetPasswordReason.None &&
+        clientId == null &&
+        clientSecret == null
+      ) {
+        if (response.forcePasswordReset === ForceResetPasswordReason.AdminForcePasswordReset) {
+          return await this.updateTempPassword();
+        } else if (response.forcePasswordReset === ForceResetPasswordReason.WeakMasterPassword) {
+          return await this.updateWeakPassword(password);
+        }
       }
 
       return await this.handleSuccessResponse();
@@ -323,8 +342,6 @@ export class LoginCommand {
   }
 
   private async handleSuccessResponse(): Promise<Response> {
-    await this.syncService.fullSync(true);
-
     const usesKeyConnector = await this.keyConnectorService.getUsesKeyConnector();
 
     if (
@@ -357,7 +374,59 @@ export class LoginCommand {
     return Response.success(res);
   }
 
-  private async updateTempPassword(error?: string): Promise<Response> {
+  private async handleUpdatePasswordSuccessResponse(): Promise<Response> {
+    await this.logoutCallback();
+    this.authService.logOut(() => {
+      /* Do nothing */
+    });
+
+    const res = new MessageResponse(
+      "Your master password has been updated!",
+      "\n" + "You have been logged out and must log in again to access the vault."
+    );
+
+    return Response.success(res);
+  }
+
+  private async updateWeakPassword(currentPassword: string) {
+    // If no interaction available, alert user to use web vault
+    if (!this.canInteract) {
+      await this.logoutCallback();
+      this.authService.logOut(() => {
+        /* Do nothing */
+      });
+      return Response.error(
+        new MessageResponse(
+          "Your master password does not meet one or more of your organization policies. In order to access the vault, you must update your master password now via the web vault. You have been logged out.",
+          null
+        )
+      );
+    }
+
+    try {
+      const { newPasswordHash, newEncKey, hint } = await this.collectNewMasterPasswordDetails(
+        "Your master password does not meet one or more of your organization policies. In order to access the vault, you must update your master password now."
+      );
+
+      const request = new PasswordRequest();
+      request.masterPasswordHash = await this.cryptoService.hashPassword(currentPassword, null);
+      request.masterPasswordHint = hint;
+      request.newMasterPasswordHash = newPasswordHash;
+      request.key = newEncKey[1].encryptedString;
+
+      await this.apiService.postPassword(request);
+
+      return await this.handleUpdatePasswordSuccessResponse();
+    } catch (e) {
+      await this.logoutCallback();
+      this.authService.logOut(() => {
+        /* Do nothing */
+      });
+      return Response.error(e);
+    }
+  }
+
+  private async updateTempPassword() {
     // If no interaction available, alert user to use web vault
     if (!this.canInteract) {
       await this.logoutCallback();
@@ -372,14 +441,49 @@ export class LoginCommand {
       );
     }
 
+    try {
+      const { newPasswordHash, newEncKey, hint } = await this.collectNewMasterPasswordDetails(
+        "An organization administrator recently changed your master password. In order to access the vault, you must update your master password now."
+      );
+
+      const request = new UpdateTempPasswordRequest();
+      request.key = newEncKey[1].encryptedString;
+      request.newMasterPasswordHash = newPasswordHash;
+      request.masterPasswordHint = hint;
+
+      await this.apiService.putUpdateTempPassword(request);
+
+      return await this.handleUpdatePasswordSuccessResponse();
+    } catch (e) {
+      await this.logoutCallback();
+      this.authService.logOut(() => {
+        /* Do nothing */
+      });
+      return Response.error(e);
+    }
+  }
+
+  /**
+   * Collect new master password and hint from the CLI. The collected password
+   * is validated against any applicable master password policies and a new encryption
+   * key is generated
+   * @param prompt - Message that is displayed during the initial prompt
+   * @param error
+   */
+  private async collectNewMasterPasswordDetails(
+    prompt: string,
+    error?: string
+  ): Promise<{
+    newPasswordHash: string;
+    newEncKey: [SymmetricCryptoKey, EncString];
+    hint?: string;
+  }> {
     if (this.email == null || this.email === "undefined") {
       this.email = await this.stateService.getEmail();
     }
 
     // Get New Master Password
-    const baseMessage =
-      "An organization administrator recently changed your master password. In order to access the vault, you must update your master password now.\n" +
-      "Master password: ";
+    const baseMessage = `${prompt}\n` + "Master password: ";
     const firstMessage = error != null ? error + baseMessage : baseMessage;
     const mp: inquirer.Answers = await inquirer.createPromptModule({ output: process.stderr })({
       type: "password",
@@ -390,11 +494,12 @@ export class LoginCommand {
 
     // Master Password Validation
     if (masterPassword == null || masterPassword === "") {
-      return this.updateTempPassword("Master password is required.\n");
+      return this.collectNewMasterPasswordDetails(prompt, "Master password is required.\n");
     }
 
     if (masterPassword.length < Utils.minimumPasswordLength) {
-      return this.updateTempPassword(
+      return this.collectNewMasterPasswordDetails(
+        prompt,
         `Master password must be at least ${Utils.minimumPasswordLength} characters long.\n`
       );
     }
@@ -402,8 +507,27 @@ export class LoginCommand {
     // Strength & Policy Validation
     const strengthResult = this.passwordGenerationService.passwordStrength(
       masterPassword,
-      this.getPasswordStrengthUserInput()
+      this.email
     );
+
+    const enforcedPolicyOptions = await firstValueFrom(
+      this.policyService.masterPasswordPolicyOptions$()
+    );
+
+    // Verify master password meets policy requirements
+    if (
+      enforcedPolicyOptions != null &&
+      !this.policyService.evaluateMasterPassword(
+        strengthResult.score,
+        masterPassword,
+        enforcedPolicyOptions
+      )
+    ) {
+      return this.collectNewMasterPasswordDetails(
+        prompt,
+        "Your new master password does not meet the policy requirements.\n"
+      );
+    }
 
     // Get New Master Password Re-type
     const reTypeMessage = "Re-type New Master password (Strength: " + strengthResult.score + ")";
@@ -416,7 +540,10 @@ export class LoginCommand {
 
     // Re-type Validation
     if (masterPassword !== masterPasswordRetype) {
-      return this.updateTempPassword("Master password confirmation does not match.\n");
+      return this.collectNewMasterPasswordDetails(
+        prompt,
+        "Master password confirmation does not match.\n"
+      );
     }
 
     // Get Hint (optional)
@@ -426,59 +553,25 @@ export class LoginCommand {
       message: "Master Password Hint (optional):",
     });
     const masterPasswordHint = hint.input;
-
-    // Retrieve details for key generation
-    const enforcedPolicyOptions = await firstValueFrom(
-      this.policyService.masterPasswordPolicyOptions$()
-    );
     const kdf = await this.stateService.getKdfType();
     const kdfConfig = await this.stateService.getKdfConfig();
 
-    if (
-      enforcedPolicyOptions != null &&
-      !this.policyService.evaluateMasterPassword(
-        strengthResult.score,
-        masterPassword,
-        enforcedPolicyOptions
-      )
-    ) {
-      return this.updateTempPassword(
-        "Your new master password does not meet the policy requirements.\n"
-      );
-    }
+    // Create new key and hash new password
+    const newKey = await this.cryptoService.makeKey(
+      masterPassword,
+      this.email.trim().toLowerCase(),
+      kdf,
+      kdfConfig
+    );
+    const newPasswordHash = await this.cryptoService.hashPassword(masterPassword, newKey);
 
-    try {
-      // Create new key and hash new password
-      const newKey = await this.cryptoService.makeKey(
-        masterPassword,
-        this.email.trim().toLowerCase(),
-        kdf,
-        kdfConfig
-      );
-      const newPasswordHash = await this.cryptoService.hashPassword(masterPassword, newKey);
+    // Grab user's current enc key
+    const userEncKey = await this.cryptoService.getEncKey();
 
-      // Grab user's current enc key
-      const userEncKey = await this.cryptoService.getEncKey();
+    // Create new encKey for the User
+    const newEncKey = await this.cryptoService.remakeEncKey(newKey, userEncKey);
 
-      // Create new encKey for the User
-      const newEncKey = await this.cryptoService.remakeEncKey(newKey, userEncKey);
-
-      // Create request
-      const request = new UpdateTempPasswordRequest();
-      request.key = newEncKey[1].encryptedString;
-      request.newMasterPasswordHash = newPasswordHash;
-      request.masterPasswordHint = masterPasswordHint;
-
-      // Update user's password
-      await this.apiService.putUpdateTempPassword(request);
-      return this.handleSuccessResponse();
-    } catch (e) {
-      await this.logoutCallback();
-      this.authService.logOut(() => {
-        /* Do nothing */
-      });
-      return Response.error(e);
-    }
+    return { newPasswordHash, newEncKey, hint: masterPasswordHint };
   }
 
   private async handleCaptchaRequired(
@@ -521,21 +614,6 @@ export class LoginCommand {
         return Response.error(e);
       }
     }
-  }
-
-  private getPasswordStrengthUserInput() {
-    let userInput: string[] = [];
-    const atPosition = this.email.indexOf("@");
-    if (atPosition > -1) {
-      userInput = userInput.concat(
-        this.email
-          .substr(0, atPosition)
-          .trim()
-          .toLowerCase()
-          .split(/[^A-Za-z0-9]/)
-      );
-    }
-    return userInput;
   }
 
   private async apiClientId(): Promise<string> {

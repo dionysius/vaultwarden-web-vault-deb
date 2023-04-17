@@ -11,6 +11,7 @@ import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUti
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { AuthService } from "@bitwarden/common/auth/abstractions/auth.service";
 import { AuthResult } from "@bitwarden/common/auth/models/domain/auth-result";
+import { ForceResetPasswordReason } from "@bitwarden/common/auth/models/domain/force-reset-password-reason";
 import { SsoLogInCredentials } from "@bitwarden/common/auth/models/domain/log-in-credentials";
 import { SsoPreValidateResponse } from "@bitwarden/common/auth/models/response/sso-pre-validate.response";
 import { Utils } from "@bitwarden/common/misc/utils";
@@ -204,7 +205,7 @@ export class SsoComponent {
             },
           });
         }
-      } else if (response.forcePasswordReset) {
+      } else if (response.forcePasswordReset !== ForceResetPasswordReason.None) {
         if (this.onSuccessfulLoginForceResetNavigate != null) {
           this.onSuccessfulLoginForceResetNavigate();
         } else {

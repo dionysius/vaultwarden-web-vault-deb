@@ -87,6 +87,7 @@ import { IdentityCaptchaResponse } from "../auth/models/response/identity-captch
 import { IdentityTokenResponse } from "../auth/models/response/identity-token.response";
 import { IdentityTwoFactorResponse } from "../auth/models/response/identity-two-factor.response";
 import { KeyConnectorUserKeyResponse } from "../auth/models/response/key-connector-user-key.response";
+import { MasterPasswordPolicyResponse } from "../auth/models/response/master-password-policy.response";
 import { PreloginResponse } from "../auth/models/response/prelogin.response";
 import { RegisterResponse } from "../auth/models/response/register.response";
 import { SsoPreValidateResponse } from "../auth/models/response/sso-pre-validate.response";
@@ -421,8 +422,10 @@ export class ApiService implements ApiServiceAbstraction {
     return this.send("POST", "/accounts/verify-email-token", request, false, false);
   }
 
-  postAccountVerifyPassword(request: SecretVerificationRequest): Promise<any> {
-    return this.send("POST", "/accounts/verify-password", request, true, false);
+  postAccountVerifyPassword(
+    request: SecretVerificationRequest
+  ): Promise<MasterPasswordPolicyResponse> {
+    return this.send("POST", "/accounts/verify-password", request, true, true);
   }
 
   postAccountRecoverDelete(request: DeleteRecoverRequest): Promise<any> {

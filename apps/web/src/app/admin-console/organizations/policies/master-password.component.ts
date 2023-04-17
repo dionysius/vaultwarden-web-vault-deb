@@ -1,9 +1,12 @@
 import { Component } from "@angular/core";
-import { UntypedFormBuilder } from "@angular/forms";
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 
+import { ControlsOf } from "@bitwarden/angular/types/controls-of";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 import { PolicyType } from "@bitwarden/common/admin-console/enums";
+import { MasterPasswordPolicyOptions } from "@bitwarden/common/admin-console/models/domain/master-password-policy-options";
+import { Utils } from "@bitwarden/common/misc/utils";
 
 import { BasePolicy, BasePolicyComponent } from "./base-policy.component";
 
@@ -19,20 +22,23 @@ export class MasterPasswordPolicy extends BasePolicy {
   templateUrl: "master-password.component.html",
 })
 export class MasterPasswordPolicyComponent extends BasePolicyComponent {
-  data = this.formBuilder.group({
+  MinPasswordLength = Utils.minimumPasswordLength;
+
+  data: FormGroup<ControlsOf<MasterPasswordPolicyOptions>> = this.formBuilder.group({
     minComplexity: [null],
-    minLength: [null],
-    requireUpper: [null],
-    requireLower: [null],
-    requireNumbers: [null],
-    requireSpecial: [null],
+    minLength: [this.MinPasswordLength, [Validators.min(Utils.minimumPasswordLength)]],
+    requireUpper: [false],
+    requireLower: [false],
+    requireNumbers: [false],
+    requireSpecial: [false],
+    enforceOnLogin: [false],
   });
 
   passwordScores: { name: string; value: number }[];
   showKeyConnectorInfo = false;
 
   constructor(
-    private formBuilder: UntypedFormBuilder,
+    private formBuilder: FormBuilder,
     i18nService: I18nService,
     private organizationService: OrganizationService
   ) {
