@@ -56,12 +56,21 @@ export function canAccessAdmin(i18nService: I18nService) {
   );
 }
 
-export function isNotProviderUser(org: Organization): boolean {
-  return !org.isProviderUser;
+/**
+ * Returns `true` if a user is a member of an organization (rather than only being a ProviderUser)
+ * @deprecated Use organizationService.memberOrganizations$ instead
+ */
+export function isMember(org: Organization): boolean {
+  return org.isMember;
 }
 
 export abstract class OrganizationService {
   organizations$: Observable<Organization[]>;
+
+  /**
+   * Organizations that the user is a member of (excludes organizations that they only have access to via a provider)
+   */
+  memberOrganizations$: Observable<Organization[]>;
 
   get$: (id: string) => Observable<Organization | undefined>;
   get: (id: string) => Organization;

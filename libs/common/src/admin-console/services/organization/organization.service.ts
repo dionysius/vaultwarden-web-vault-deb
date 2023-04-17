@@ -1,7 +1,10 @@
 import { BehaviorSubject, concatMap, map, Observable } from "rxjs";
 
 import { StateService } from "../../../abstractions/state.service";
-import { InternalOrganizationService as InternalOrganizationServiceAbstraction } from "../../abstractions/organization/organization.service.abstraction";
+import {
+  InternalOrganizationService as InternalOrganizationServiceAbstraction,
+  isMember,
+} from "../../abstractions/organization/organization.service.abstraction";
 import { OrganizationData } from "../../models/data/organization.data";
 import { Organization } from "../../models/domain/organization";
 
@@ -9,6 +12,7 @@ export class OrganizationService implements InternalOrganizationServiceAbstracti
   protected _organizations = new BehaviorSubject<Organization[]>([]);
 
   organizations$ = this._organizations.asObservable();
+  memberOrganizations$ = this.organizations$.pipe(map((orgs) => orgs.filter(isMember)));
 
   constructor(private stateService: StateService) {
     this.stateService.activeAccountUnlocked$

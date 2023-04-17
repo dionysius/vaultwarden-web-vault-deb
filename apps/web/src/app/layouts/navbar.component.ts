@@ -1,12 +1,11 @@
 import { Component, OnInit } from "@angular/core";
-import { map, Observable } from "rxjs";
+import { Observable } from "rxjs";
 
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { MessagingService } from "@bitwarden/common/abstractions/messaging.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import {
   canAccessAdmin,
-  isNotProviderUser,
   OrganizationService,
 } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 import { ProviderService } from "@bitwarden/common/admin-console/abstractions/provider.service";
@@ -54,8 +53,7 @@ export class NavbarComponent implements OnInit {
     }
     this.providers = await this.providerService.getAll();
 
-    this.organizations$ = this.organizationService.organizations$.pipe(
-      map((orgs) => orgs.filter(isNotProviderUser)),
+    this.organizations$ = this.organizationService.memberOrganizations$.pipe(
       canAccessAdmin(this.i18nService)
     );
   }

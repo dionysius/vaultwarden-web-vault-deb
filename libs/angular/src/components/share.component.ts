@@ -5,10 +5,7 @@ import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { CollectionService } from "@bitwarden/common/admin-console/abstractions/collection.service";
-import {
-  isNotProviderUser,
-  OrganizationService,
-} from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
+import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 import { OrganizationUserStatusType } from "@bitwarden/common/admin-console/enums";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
 import { CollectionView } from "@bitwarden/common/admin-console/models/view/collection.view";
@@ -54,13 +51,10 @@ export class ShareComponent implements OnInit, OnDestroy {
     const allCollections = await this.collectionService.getAllDecrypted();
     this.writeableCollections = allCollections.map((c) => c).filter((c) => !c.readOnly);
 
-    this.organizations$ = this.organizationService.organizations$.pipe(
+    this.organizations$ = this.organizationService.memberOrganizations$.pipe(
       map((orgs) => {
         return orgs
-          .filter(
-            (o) =>
-              o.enabled && o.status === OrganizationUserStatusType.Confirmed && isNotProviderUser(o)
-          )
+          .filter((o) => o.enabled && o.status === OrganizationUserStatusType.Confirmed)
           .sort(Utils.getSortFunction(this.i18nService, "name"));
       })
     );

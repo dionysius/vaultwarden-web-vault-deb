@@ -314,24 +314,13 @@ export class SyncService implements SyncServiceAbstraction {
     await this.stateService.setForcePasswordReset(response.forcePasswordReset);
     await this.keyConnectorService.setUsesKeyConnector(response.usesKeyConnector);
 
-    const organizations: { [id: string]: OrganizationData } = {};
-    response.organizations.forEach((o) => {
-      organizations[o.id] = new OrganizationData(o);
-    });
+    await this.syncProfileOrganizations(response);
 
     const providers: { [id: string]: ProviderData } = {};
     response.providers.forEach((p) => {
       providers[p.id] = new ProviderData(p);
     });
 
-    response.providerOrganizations.forEach((o) => {
-      if (organizations[o.id] == null) {
-        organizations[o.id] = new OrganizationData(o);
-        organizations[o.id].isProviderUser = true;
-      }
-    });
-
-    await this.organizationService.replace(organizations);
     await this.providerService.save(providers);
 
     if (await this.keyConnectorService.userNeedsMigration()) {
@@ -340,6 +329,29 @@ export class SyncService implements SyncServiceAbstraction {
     } else {
       this.keyConnectorService.removeConvertAccountRequired();
     }
+  }
+
+  private async syncProfileOrganizations(response: ProfileResponse) {
+    const organizations: { [id: string]: OrganizationData } = {};
+    response.organizations.forEach((o) => {
+      organizations[o.id] = new OrganizationData(o, {
+        isMember: true,
+        isProviderUser: false,
+      });
+    });
+
+    response.providerOrganizations.forEach((o) => {
+      if (organizations[o.id] == null) {
+        organizations[o.id] = new OrganizationData(o, {
+          isMember: false,
+          isProviderUser: true,
+        });
+      } else {
+        organizations[o.id].isProviderUser = true;
+      }
+    });
+
+    await this.organizationService.replace(organizations);
   }
 
   private async syncFolders(response: FolderResponse[]) {

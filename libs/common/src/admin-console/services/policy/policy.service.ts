@@ -260,7 +260,7 @@ export class PolicyService implements InternalPolicyServiceAbstraction {
     await this.stateService.setEncryptedPolicies(null, { userId: userId });
   }
 
-  private isExcemptFromPolicies(organization: Organization, policyType: PolicyType) {
+  private isExemptFromPolicies(organization: Organization, policyType: PolicyType) {
     if (policyType === PolicyType.MaximumVaultTimeout) {
       return organization.type === OrganizationUserType.Owner;
     }
@@ -291,7 +291,7 @@ export class PolicyService implements InternalPolicyServiceAbstraction {
         o.status >= OrganizationUserStatusType.Accepted &&
         o.usePolicies &&
         policySet.has(o.id) &&
-        !this.isExcemptFromPolicies(o, policyType)
+        !this.isExemptFromPolicies(o, policyType)
     );
   }
 }

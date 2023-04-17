@@ -251,6 +251,7 @@ describe("vault filter service", () => {
     org.id = id;
     org.name = name;
     org.identifier = name;
+    org.isMember = true;
     return org;
   }
 
