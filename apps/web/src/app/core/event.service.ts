@@ -487,12 +487,7 @@ export class EventService {
     const a = this.makeAnchor(shortId);
     a.setAttribute(
       "href",
-      "#/organizations/" +
-        ev.organizationId +
-        "/vault?search=" +
-        shortId +
-        "&viewEvents=" +
-        ev.cipherId
+      `#/organizations/${ev.organizationId}/vault?search=${shortId}&viewEvents=${ev.cipherId}&type=all`
     );
     return a.outerHTML;
   }
@@ -507,10 +502,9 @@ export class EventService {
   private formatCollectionId(ev: EventResponse) {
     const shortId = this.getShortId(ev.collectionId);
     const a = this.makeAnchor(shortId);
-    // TODO: Update view/edit collection link after EC-14 is completed
     a.setAttribute(
       "href",
-      "#/organizations/" + ev.organizationId + "/manage/collections?search=" + shortId
+      `#/organizations/${ev.organizationId}/vault?collectionId=${ev.collectionId}`
     );
     return a.outerHTML;
   }
@@ -557,7 +551,7 @@ export class EventService {
     const a = this.makeAnchor(shortId);
     a.setAttribute(
       "href",
-      "#/organizations/" + ev.organizationId + "/manage/policies?policyId=" + ev.policyId
+      "#/organizations/" + ev.organizationId + "/settings/policies?policyId=" + ev.policyId
     );
     return a.outerHTML;
   }

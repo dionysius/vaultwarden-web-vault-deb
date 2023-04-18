@@ -21,7 +21,8 @@
         placeholder="{{ searchPlaceholder | i18n }}"
         id="search"
         class="form-control"
-        (input)="searchTextChanged($any($event.target).value)"
+        [ngModel]="searchText"
+        (ngModelChange)="onSearchTextChanged($event)"
         autocomplete="off"
         appAutofocus
       />

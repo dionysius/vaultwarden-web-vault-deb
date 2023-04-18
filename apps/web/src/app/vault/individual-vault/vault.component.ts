@@ -8,7 +8,14 @@ import {
   ViewContainerRef,
 } from "@angular/core";
 import { ActivatedRoute, Params, Router } from "@angular/router";
-import { BehaviorSubject, combineLatest, firstValueFrom, lastValueFrom, Subject } from "rxjs";
+import {
+  BehaviorSubject,
+  combineLatest,
+  firstValueFrom,
+  lastValueFrom,
+  Observable,
+  Subject,
+} from "rxjs";
 import {
   concatMap,
   debounceTime,
@@ -131,9 +138,10 @@ export class VaultComponent implements OnInit, OnDestroy {
   protected collections: CollectionView[];
   protected isEmpty: boolean;
   protected selectedCollection: TreeNode<CollectionView> | undefined;
+  protected currentSearchText$: Observable<string>;
 
-  private refresh$ = new BehaviorSubject<void>(null);
   private searchText$ = new Subject<string>();
+  private refresh$ = new BehaviorSubject<void>(null);
   private destroy$ = new Subject<void>();
 
   constructor(
@@ -242,12 +250,12 @@ export class VaultComponent implements OnInit, OnDestroy {
         })
       );
 
-    const querySearchText$ = this.route.queryParams.pipe(map((queryParams) => queryParams.search));
+    this.currentSearchText$ = this.route.queryParams.pipe(map((queryParams) => queryParams.search));
 
     const ciphers$ = combineLatest([
       Utils.asyncToObservable(() => this.cipherService.getAllDecrypted()),
       filter$,
-      querySearchText$,
+      this.currentSearchText$,
     ]).pipe(
       filter(([ciphers, filter]) => ciphers != undefined && filter != undefined),
       concatMap(async ([ciphers, filter, searchText]) => {
@@ -262,7 +270,7 @@ export class VaultComponent implements OnInit, OnDestroy {
       shareReplay({ refCount: true, bufferSize: 1 })
     );
 
-    const collections$ = combineLatest([nestedCollections$, filter$, querySearchText$]).pipe(
+    const collections$ = combineLatest([nestedCollections$, filter$, this.currentSearchText$]).pipe(
       filter(([collections, filter]) => collections != undefined && filter != undefined),
       map(([collections, filter, searchText]) => {
         if (filter.collectionId === undefined || filter.collectionId === Unassigned) {

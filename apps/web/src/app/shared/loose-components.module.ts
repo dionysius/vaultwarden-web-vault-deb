@@ -36,10 +36,8 @@ import { VerifyRecoverDeleteComponent } from "../../auth/verify-recover-delete.c
 import { OrganizationSwitcherComponent } from "../admin-console/components/organization-switcher.component";
 import { OrganizationCreateModule } from "../admin-console/organizations/create/organization-create.module";
 import { OrganizationLayoutComponent } from "../admin-console/organizations/layouts/organization-layout.component";
-import { CollectionsComponent as OrgManageCollectionsComponent } from "../admin-console/organizations/manage/collections.component";
 import { EntityEventsComponent as OrgEntityEventsComponent } from "../admin-console/organizations/manage/entity-events.component";
 import { EventsComponent as OrgEventsComponent } from "../admin-console/organizations/manage/events.component";
-import { ManageComponent as OrgManageComponent } from "../admin-console/organizations/manage/manage.component";
 import { UserConfirmComponent as OrgUserConfirmComponent } from "../admin-console/organizations/manage/user-confirm.component";
 import { AcceptFamilySponsorshipComponent } from "../admin-console/organizations/sponsorships/accept-family-sponsorship.component";
 import { FamiliesForEnterpriseSetupComponent } from "../admin-console/organizations/sponsorships/families-for-enterprise-setup.component";
@@ -172,8 +170,6 @@ import { SharedModule } from "./shared.module";
     OrgEventsComponent,
     OrgExposedPasswordsReportComponent,
     OrgInactiveTwoFactorReportComponent,
-    OrgManageCollectionsComponent,
-    OrgManageComponent,
     OrgReusedPasswordsReportComponent,
     OrgToolsComponent,
     OrgUnsecuredWebsitesReportComponent,
@@ -281,8 +277,6 @@ import { SharedModule } from "./shared.module";
     OrgEventsComponent,
     OrgExposedPasswordsReportComponent,
     OrgInactiveTwoFactorReportComponent,
-    OrgManageCollectionsComponent,
-    OrgManageComponent,
     OrgReusedPasswordsReportComponent,
     OrgToolsComponent,
     OrgUnsecuredWebsitesReportComponent,

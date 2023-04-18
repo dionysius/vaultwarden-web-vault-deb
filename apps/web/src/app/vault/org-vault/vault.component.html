@@ -10,7 +10,8 @@
               #vaultFilter
               [organization]="organization"
               [activeFilter]="activeFilter"
-              (onSearchTextChanged)="filterSearchText($event)"
+              [searchText]="currentSearchText$ | async"
+              (searchTextChanged)="filterSearchText($event)"
             ></app-organization-vault-filter>
           </div>
         </div>

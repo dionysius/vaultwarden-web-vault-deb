@@ -32,12 +32,13 @@ import { OrganizationOptionsComponent } from "./organization-options.component";
 export class VaultFilterComponent implements OnInit, OnDestroy {
   filters?: VaultFilterList;
   @Input() activeFilter: VaultFilter = new VaultFilter();
-  @Output() onSearchTextChanged = new EventEmitter<string>();
   @Output() onAddFolder = new EventEmitter<never>();
   @Output() onEditFolder = new EventEmitter<FolderFilter>();
 
+  @Input() searchText = "";
+  @Output() searchTextChanged = new EventEmitter<string>();
+
   isLoaded = false;
-  searchText = "";
 
   protected destroy$: Subject<void> = new Subject<void>();
 
@@ -99,9 +100,9 @@ export class VaultFilterComponent implements OnInit, OnDestroy {
     this.destroy$.complete();
   }
 
-  searchTextChanged(t: string) {
+  onSearchTextChanged(t: string) {
     this.searchText = t;
-    this.onSearchTextChanged.emit(t);
+    this.searchTextChanged.emit(t);
   }
 
   applyOrganizationFilter = async (orgNode: TreeNode<OrganizationFilter>): Promise<void> => {
