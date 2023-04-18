@@ -16,4 +16,24 @@ export namespace passwords {
 export namespace biometrics {
   export function prompt(hwnd: Buffer, message: string): Promise<boolean>
   export function available(): Promise<boolean>
+  export function setBiometricSecret(service: string, account: string, secret: string, keyMaterial: KeyMaterial | undefined | null, ivB64: string): Promise<string>
+  export function getBiometricSecret(service: string, account: string, keyMaterial?: KeyMaterial | undefined | null): Promise<string>
+  /**
+   * Derives key material from biometric data. Returns a string encoded with a
+   * base64 encoded key and the base64 encoded challenge used to create it
+   * separated by a `|` character.
+   *
+   * If the iv is provided, it will be used as the challenge. Otherwise a random challenge will be generated.
+   *
+   * `format!("<key_base64>|<iv_base64>")`
+   */
+  export function deriveKeyMaterial(iv?: string | undefined | null): Promise<OsDerivedKey>
+  export interface KeyMaterial {
+    osKeyPartB64: string
+    clientKeyPartB64?: string
+  }
+  export interface OsDerivedKey {
+    keyB64: string
+    ivB64: string
+  }
 }

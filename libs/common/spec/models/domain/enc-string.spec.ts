@@ -25,6 +25,16 @@ describe("EncString", () => {
       });
     });
 
+    describe("isSerializedEncString", () => {
+      it("is true if valid", () => {
+        expect(EncString.isSerializedEncString("3.data")).toBe(true);
+      });
+
+      it("is false if invalid", () => {
+        expect(EncString.isSerializedEncString("3.data|test")).toBe(false);
+      });
+    });
+
     describe("parse existing", () => {
       it("valid", () => {
         const encString = new EncString("3.data");
@@ -89,6 +99,16 @@ describe("EncString", () => {
       });
     });
 
+    describe("isSerializedEncString", () => {
+      it("is true if valid", () => {
+        expect(EncString.isSerializedEncString("0.iv|data")).toBe(true);
+      });
+
+      it("is false if invalid", () => {
+        expect(EncString.isSerializedEncString("0.iv|data|mac")).toBe(false);
+      });
+    });
+
     describe("parse existing", () => {
       it("valid", () => {
         const encString = new EncString("0.iv|data");
@@ -122,6 +142,16 @@ describe("EncString", () => {
         encryptionType: 2,
         iv: "iv",
         mac: "mac",
+      });
+    });
+
+    describe("isSerializedEncString", () => {
+      it("is true if valid", () => {
+        expect(EncString.isSerializedEncString("2.iv|data|mac")).toBe(true);
+      });
+
+      it("is false if invalid", () => {
+        expect(EncString.isSerializedEncString("2.iv|data")).toBe(false);
       });
     });
 

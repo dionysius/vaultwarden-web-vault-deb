@@ -2,72 +2,65 @@ import { CryptoFunctionService } from "@bitwarden/common/abstractions/cryptoFunc
 import { EncryptService } from "@bitwarden/common/abstractions/encrypt.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
-import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { KeySuffixOptions } from "@bitwarden/common/enums";
+import { Utils } from "@bitwarden/common/misc/utils";
 import { SymmetricCryptoKey } from "@bitwarden/common/models/domain/symmetric-crypto-key";
 import { CryptoService } from "@bitwarden/common/services/crypto.service";
+import { CsprngString } from "@bitwarden/common/types/csprng";
+
+import { ElectronStateService } from "./electron-state.service.abstraction";
 
 export class ElectronCryptoService extends CryptoService {
   constructor(
     cryptoFunctionService: CryptoFunctionService,
     encryptService: EncryptService,
-    platformUtilService: PlatformUtilsService,
+    platformUtilsService: PlatformUtilsService,
     logService: LogService,
-    stateService: StateService
+    protected override stateService: ElectronStateService
   ) {
-    super(cryptoFunctionService, encryptService, platformUtilService, logService, stateService);
+    super(cryptoFunctionService, encryptService, platformUtilsService, logService, stateService);
   }
 
-  async hasKeyStored(keySuffix: KeySuffixOptions): Promise<boolean> {
-    await this.upgradeSecurelyStoredKey();
-    return super.hasKeyStored(keySuffix);
-  }
+  protected override async storeKey(key: SymmetricCryptoKey, userId?: string) {
+    await super.storeKey(key, userId);
 
-  protected async storeKey(key: SymmetricCryptoKey, userId?: string) {
-    if (await this.shouldStoreKey(KeySuffixOptions.Auto, userId)) {
-      await this.stateService.setCryptoMasterKeyAuto(key.keyB64, { userId: userId });
+    const storeBiometricKey = await this.shouldStoreKey(KeySuffixOptions.Biometric, userId);
+
+    if (storeBiometricKey) {
+      await this.storeBiometricKey(key, userId);
     } else {
-      this.clearStoredKey(KeySuffixOptions.Auto);
-    }
-
-    if (await this.shouldStoreKey(KeySuffixOptions.Biometric, userId)) {
-      await this.stateService.setCryptoMasterKeyBiometric(key.keyB64, { userId: userId });
-    } else {
-      this.clearStoredKey(KeySuffixOptions.Biometric);
+      await this.stateService.setCryptoMasterKeyBiometric(null, { userId: userId });
     }
   }
 
-  protected async retrieveKeyFromStorage(keySuffix: KeySuffixOptions, userId?: string) {
-    await this.upgradeSecurelyStoredKey();
-    return super.retrieveKeyFromStorage(keySuffix, userId);
+  protected async storeBiometricKey(key: SymmetricCryptoKey, userId?: string): Promise<void> {
+    let clientEncKeyHalf: CsprngString = null;
+    if (await this.stateService.getBiometricRequirePasswordOnStart({ userId })) {
+      clientEncKeyHalf = await this.getBiometricEncryptionClientKeyHalf(userId);
+    }
+    await this.stateService.setCryptoMasterKeyBiometric(
+      { key: key.keyB64, clientEncKeyHalf },
+      { userId: userId }
+    );
   }
 
-  /**
-   * @deprecated 4 Jun 2021 This is temporary upgrade method to move from a single shared stored key to
-   * multiple, unique stored keys for each use, e.g. never logout vs. biometric authentication.
-   */
-  private async upgradeSecurelyStoredKey() {
-    // attempt key upgrade, but if we fail just delete it. Keys will be stored property upon unlock anyway.
-    const key = await this.stateService.getCryptoMasterKeyB64();
-
-    if (key == null) {
-      return;
-    }
-
+  private async getBiometricEncryptionClientKeyHalf(userId?: string): Promise<CsprngString | null> {
     try {
-      if (await this.shouldStoreKey(KeySuffixOptions.Auto)) {
-        await this.stateService.setCryptoMasterKeyAuto(key);
+      let biometricKey = await this.stateService
+        .getBiometricEncryptionClientKeyHalf({ userId })
+        .then((result) => result?.decrypt(null /* user encrypted */))
+        .then((result) => result as CsprngString);
+      const userKey = await this.getKeyForUserEncryption();
+      if (biometricKey == null && userKey != null) {
+        const keyBytes = await this.cryptoFunctionService.randomBytes(32);
+        biometricKey = Utils.fromBufferToUtf8(keyBytes) as CsprngString;
+        const encKey = await this.encryptService.encrypt(biometricKey, userKey);
+        await this.stateService.setBiometricEncryptionClientKeyHalf(encKey);
       }
-      if (await this.shouldStoreKey(KeySuffixOptions.Biometric)) {
-        await this.stateService.setCryptoMasterKeyBiometric(key);
-      }
-    } catch (e) {
-      this.logService.error(
-        `Encountered error while upgrading obsolete Bitwarden secure storage item:`
-      );
-      this.logService.error(e);
-    }
 
-    await this.stateService.setCryptoMasterKeyB64(null);
+      return biometricKey;
+    } catch {
+      return null;
+    }
   }
 }

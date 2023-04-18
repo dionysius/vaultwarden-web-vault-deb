@@ -24,7 +24,6 @@ export class GlobalState {
   mainWindowSize?: number;
   enableBiometrics?: boolean;
   biometricText?: string;
-  noAutoPromptBiometrics?: boolean;
   noAutoPromptBiometricsText?: string;
   stateVersion: StateVersion = StateVersion.One;
   environmentUrls: EnvironmentUrls = new EnvironmentUrls();

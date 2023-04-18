@@ -8,6 +8,7 @@ import { EncString } from "@bitwarden/common/models/domain/enc-string";
 import { SymmetricCryptoKey } from "@bitwarden/common/models/domain/symmetric-crypto-key";
 import { EncryptServiceImplementation } from "@bitwarden/common/services/cryptography/encrypt.service.implementation";
 
+import { CsprngArray } from "../../src/types/csprng";
 import { makeStaticByteArray } from "../utils";
 
 describe("EncryptService", () => {
@@ -37,7 +38,9 @@ describe("EncryptService", () => {
 
     describe("encrypts data", () => {
       beforeEach(() => {
-        cryptoFunctionService.randomBytes.calledWith(16).mockResolvedValueOnce(iv.buffer);
+        cryptoFunctionService.randomBytes
+          .calledWith(16)
+          .mockResolvedValueOnce(iv.buffer as CsprngArray);
         cryptoFunctionService.aesEncrypt.mockResolvedValue(encryptedData.buffer);
       });
 

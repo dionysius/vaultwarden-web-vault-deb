@@ -53,7 +53,7 @@
       </div>
     </div>
     <div class="buttons with-rows">
-      <div class="buttons-row" *ngIf="supportsBiometric && biometricLock">
+      <div class="buttons-row" *ngIf="supportsBiometric && biometricLock && biometricReady">
         <button
           type="button"
           class="btn block"

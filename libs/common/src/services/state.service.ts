@@ -1,5 +1,5 @@
 import { BehaviorSubject, concatMap } from "rxjs";
-import { Jsonify } from "type-fest";
+import { Jsonify, JsonValue } from "type-fest";
 
 import { LogService } from "../abstractions/log.service";
 import { StateService as StateServiceAbstraction } from "../abstractions/state.service";
@@ -18,6 +18,7 @@ import { CollectionView } from "../admin-console/models/view/collection.view";
 import { EnvironmentUrls } from "../auth/models/domain/environment-urls";
 import { ForceResetPasswordReason } from "../auth/models/domain/force-reset-password-reason";
 import { KdfConfig } from "../auth/models/domain/kdf-config";
+import { BiometricKey } from "../auth/types/biometric-key";
 import { HtmlStorageLocation, KdfType, StorageLocation, ThemeType, UriMatchType } from "../enums";
 import { VaultTimeoutAction } from "../enums/vault-timeout-action.enum";
 import { StateFactory } from "../factories/stateFactory";
@@ -607,7 +608,7 @@ export class StateService<
     );
   }
 
-  async setCryptoMasterKeyBiometric(value: string, options?: StorageOptions): Promise<void> {
+  async setCryptoMasterKeyBiometric(value: BiometricKey, options?: StorageOptions): Promise<void> {
     options = this.reconcileOptions(
       this.reconcileOptions(options, { keySuffix: "biometric" }),
       await this.defaultSecureStorageOptions()
@@ -1132,24 +1133,6 @@ export class StateService<
     account.settings.enableAutoFillOnPageLoad = value;
     await this.saveAccount(
       account,
-      this.reconcileOptions(options, await this.defaultOnDiskOptions())
-    );
-  }
-
-  async getEnableBiometric(options?: StorageOptions): Promise<boolean> {
-    return (
-      (await this.getGlobals(this.reconcileOptions(options, await this.defaultOnDiskOptions())))
-        ?.enableBiometrics ?? false
-    );
-  }
-
-  async setEnableBiometric(value: boolean, options?: StorageOptions): Promise<void> {
-    const globals = await this.getGlobals(
-      this.reconcileOptions(options, await this.defaultOnDiskOptions())
-    );
-    globals.enableBiometrics = value;
-    await this.saveGlobals(
-      globals,
       this.reconcileOptions(options, await this.defaultOnDiskOptions())
     );
   }
@@ -1872,24 +1855,6 @@ export class StateService<
     account.settings.neverDomains = value;
     await this.saveAccount(
       account,
-      this.reconcileOptions(options, await this.defaultOnDiskOptions())
-    );
-  }
-
-  async getNoAutoPromptBiometrics(options?: StorageOptions): Promise<boolean> {
-    return (
-      (await this.getGlobals(this.reconcileOptions(options, await this.defaultOnDiskOptions())))
-        ?.noAutoPromptBiometrics ?? false
-    );
-  }
-
-  async setNoAutoPromptBiometrics(value: boolean, options?: StorageOptions): Promise<void> {
-    const globals = await this.getGlobals(
-      this.reconcileOptions(options, await this.defaultOnDiskOptions())
-    );
-    globals.noAutoPromptBiometrics = value;
-    await this.saveGlobals(
-      globals,
       this.reconcileOptions(options, await this.defaultOnDiskOptions())
     );
   }
@@ -2848,7 +2813,11 @@ export class StateService<
     return this.reconcileOptions(options, defaultOptions);
   }
 
-  private async saveSecureStorageKey(key: string, value: string, options?: StorageOptions) {
+  private async saveSecureStorageKey<T extends JsonValue>(
+    key: string,
+    value: T,
+    options?: StorageOptions
+  ) {
     return value == null
       ? await this.secureStorageService.remove(`${options.userId}${key}`, options)
       : await this.secureStorageService.save(`${options.userId}${key}`, value, options);

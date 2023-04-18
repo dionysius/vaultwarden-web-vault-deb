@@ -13,13 +13,16 @@ import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { MessagingService } from "@bitwarden/common/abstractions/messaging.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
-import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { VaultTimeoutService } from "@bitwarden/common/abstractions/vaultTimeout/vaultTimeout.service";
 import { VaultTimeoutSettingsService } from "@bitwarden/common/abstractions/vaultTimeout/vaultTimeoutSettings.service";
 import { PolicyApiServiceAbstraction } from "@bitwarden/common/admin-console/abstractions/policy/policy-api.service.abstraction";
 import { InternalPolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
 import { KeyConnectorService } from "@bitwarden/common/auth/abstractions/key-connector.service";
+import { DeviceType, KeySuffixOptions } from "@bitwarden/common/enums";
 import { PasswordGenerationServiceAbstraction } from "@bitwarden/common/tools/generator/password";
+
+import { ElectronStateService } from "../services/electron-state.service.abstraction";
+import { BiometricStorageAction, BiometricMessage } from "../types/biometric-message";
 
 const BroadcasterSubscriptionId = "LockComponent";
 
@@ -29,6 +32,7 @@ const BroadcasterSubscriptionId = "LockComponent";
 })
 export class LockComponent extends BaseLockComponent {
   private deferFocus: boolean = null;
+  protected biometricReady = false;
   protected oldOs = false;
   protected deprecated = false;
 
@@ -41,7 +45,7 @@ export class LockComponent extends BaseLockComponent {
     vaultTimeoutService: VaultTimeoutService,
     vaultTimeoutSettingsService: VaultTimeoutSettingsService,
     environmentService: EnvironmentService,
-    stateService: StateService,
+    protected override stateService: ElectronStateService,
     apiService: ApiService,
     private route: ActivatedRoute,
     private broadcasterService: BroadcasterService,
@@ -88,7 +92,10 @@ export class LockComponent extends BaseLockComponent {
 
   async ngOnInit() {
     await super.ngOnInit();
-    const autoPromptBiometric = !(await this.stateService.getNoAutoPromptBiometrics());
+    const autoPromptBiometric = !(await this.stateService.getDisableAutoBiometricsPrompt());
+    this.biometricReady = await this.canUseBiometric();
+
+    await this.displayBiometricUpdateWarning();
 
     // eslint-disable-next-line rxjs-angular/prefer-takeuntil
     this.route.queryParams.subscribe((params) => {
@@ -135,7 +142,44 @@ export class LockComponent extends BaseLockComponent {
     this.showPassword = false;
   }
 
+  private async canUseBiometric() {
+    const userId = await this.stateService.getUserId();
+    const val = await ipcRenderer.invoke("biometric", {
+      action: BiometricStorageAction.EnabledForUser,
+      key: `${userId}_masterkey_biometric`,
+      keySuffix: KeySuffixOptions.Biometric,
+      userId: userId,
+    } as BiometricMessage);
+    return val != null ? (JSON.parse(val) as boolean) : null;
+  }
+
   private focusInput() {
     document.getElementById(this.pinLock ? "pin" : "masterPassword").focus();
+  }
+
+  private async displayBiometricUpdateWarning(): Promise<void> {
+    if (await this.stateService.getDismissedBiometricRequirePasswordOnStart()) {
+      return;
+    }
+
+    if (this.platformUtilsService.getDevice() !== DeviceType.WindowsDesktop) {
+      return;
+    }
+
+    if (await this.stateService.getBiometricUnlock()) {
+      const response = await this.platformUtilsService.showDialog(
+        this.i18nService.t("windowsBiometricUpdateWarning"),
+        this.i18nService.t("windowsBiometricUpdateWarningTitle"),
+        this.i18nService.t("yes"),
+        this.i18nService.t("no")
+      );
+
+      await this.stateService.setBiometricRequirePasswordOnStart(response);
+      if (response) {
+        await this.stateService.setDisableAutoBiometricsPrompt(true);
+      }
+      this.supportsBiometric = await this.canUseBiometric();
+      await this.stateService.setDismissedBiometricRequirePasswordOnStart();
+    }
   }
 }

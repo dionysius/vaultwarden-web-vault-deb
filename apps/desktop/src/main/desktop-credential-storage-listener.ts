@@ -1,16 +1,20 @@
 import { ipcMain } from "electron";
 
+import { BiometricKey } from "@bitwarden/common/auth/types/biometric-key";
+import { ConsoleLogService } from "@bitwarden/common/services/consoleLog.service";
 import { passwords } from "@bitwarden/desktop-native";
+
+import { BiometricMessage, BiometricStorageAction } from "../types/biometric-message";
 
 import { BiometricsServiceAbstraction } from "./biometric/index";
 
 const AuthRequiredSuffix = "_biometric";
-const AuthenticatedActions = ["getPassword"];
 
 export class DesktopCredentialStorageListener {
   constructor(
     private serviceName: string,
-    private biometricService: BiometricsServiceAbstraction
+    private biometricService: BiometricsServiceAbstraction,
+    private logService: ConsoleLogService
   ) {}
 
   init() {
@@ -22,46 +26,107 @@ export class DesktopCredentialStorageListener {
           serviceName += message.keySuffix;
         }
 
-        const authenticationRequired =
-          AuthenticatedActions.includes(message.action) && AuthRequiredSuffix === message.keySuffix;
-        const authenticated = !authenticationRequired || (await this.authenticateBiometric());
-
         let val: string | boolean = null;
-        if (authenticated && message.action && message.key) {
+        if (message.action && message.key) {
           if (message.action === "getPassword") {
-            val = await this.getPassword(serviceName, message.key);
+            val = await this.getPassword(serviceName, message.key, message.keySuffix);
           } else if (message.action === "hasPassword") {
-            const result = await this.getPassword(serviceName, message.key);
+            const result = await passwords.getPassword(serviceName, message.key);
             val = result != null;
           } else if (message.action === "setPassword" && message.value) {
-            await passwords.setPassword(serviceName, message.key, message.value);
+            await this.setPassword(serviceName, message.key, message.value, message.keySuffix);
           } else if (message.action === "deletePassword") {
-            await passwords.deletePassword(serviceName, message.key);
+            await this.deletePassword(serviceName, message.key, message.keySuffix);
           }
         }
         return val;
-      } catch {
-        return null;
+      } catch (e) {
+        if (
+          e.message === "Password not found." ||
+          e.message === "The specified item could not be found in the keychain."
+        ) {
+          return null;
+        }
+        this.logService.info(e);
+      }
+    });
+
+    ipcMain.handle("biometric", async (event: any, message: BiometricMessage) => {
+      try {
+        let serviceName = this.serviceName;
+        message.keySuffix = "_" + (message.keySuffix ?? "");
+        if (message.keySuffix !== "_") {
+          serviceName += message.keySuffix;
+        }
+
+        let val: string | boolean = null;
+
+        if (!message.action) {
+          return val;
+        }
+
+        switch (message.action) {
+          case BiometricStorageAction.EnabledForUser:
+            if (!message.key || !message.userId) {
+              break;
+            }
+            val = await this.biometricService.canAuthBiometric({
+              service: serviceName,
+              key: message.key,
+              userId: message.userId,
+            });
+            break;
+          case BiometricStorageAction.OsSupported:
+            val = await this.biometricService.osSupportsBiometric();
+            break;
+          default:
+        }
+
+        return val;
+      } catch (e) {
+        this.logService.info(e);
       }
     });
   }
 
   // Gracefully handle old keytar values, and if detected updated the entry to the proper format
-  private async getPassword(serviceName: string, key: string) {
-    let val = await passwords.getPassword(serviceName, key);
+  private async getPassword(serviceName: string, key: string, keySuffix: string) {
+    let val: string;
+    if (keySuffix === AuthRequiredSuffix) {
+      val = (await this.biometricService.getBiometricKey(serviceName, key)) ?? null;
+    } else {
+      val = await passwords.getPassword(serviceName, key);
+    }
+
     try {
       JSON.parse(val);
     } catch (e) {
-      val = await passwords.getPasswordKeytar(serviceName, key);
-      await passwords.setPassword(serviceName, key, val);
+      throw new Error("Password in bad format" + e + val);
     }
+
     return val;
   }
 
-  private async authenticateBiometric(): Promise<boolean> {
-    if (this.biometricService) {
-      return await this.biometricService.authenticateBiometric();
+  private async setPassword(serviceName: string, key: string, value: string, keySuffix: string) {
+    if (keySuffix === AuthRequiredSuffix) {
+      const valueObj = JSON.parse(value) as BiometricKey;
+      await this.biometricService.setEncryptionKeyHalf({
+        service: serviceName,
+        key,
+        value: valueObj?.clientEncKeyHalf,
+      });
+      // Value is usually a JSON string, but we need to pass the key half as well, so we re-stringify key here.
+      await this.biometricService.setBiometricKey(serviceName, key, JSON.stringify(valueObj?.key));
+    } else {
+      await passwords.setPassword(serviceName, key, value);
     }
-    return false;
+  }
+
+  private async deletePassword(serviceName: string, key: string, keySuffix: string) {
+    if (keySuffix === AuthRequiredSuffix) {
+      await this.biometricService.deleteBiometricKey(serviceName, key);
+    } else {
+      await passwords.deletePassword(serviceName, key);
+    }
   }
 }

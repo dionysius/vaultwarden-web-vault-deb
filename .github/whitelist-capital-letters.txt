@@ -27,7 +27,6 @@
 ./libs/components/src/stories/Introduction.stories.mdx
 ./libs/common/spec/web/services/webCryptoFunction.service.spec.ts
 ./libs/common/spec/shared/interceptConsole.ts
-./libs/common/spec/models/domain/encString.spec.ts
 ./libs/common/spec/models/domain/symmetricCryptoKey.spec.ts
 ./libs/common/spec/models/domain/encArrayBuffer.spec.ts
 ./libs/common/spec/matchers/toEqualBuffer.spec.ts

@@ -1,3 +1,5 @@
+import * as path from "path";
+
 import { Utils } from "@bitwarden/common/misc/utils";
 
 describe("Utils Service", () => {
@@ -343,7 +345,7 @@ describe("Utils Service", () => {
     it("removes multiple encoded traversals", () => {
       expect(
         Utils.normalizePath("api/sends/access/..%2f..%2f..%2fapi%2fsends%2faccess%2fsendkey")
-      ).toBe("api/sends/access/sendkey");
+      ).toBe(path.normalize("api/sends/access/sendkey"));
     });
   });
 

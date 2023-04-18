@@ -1,6 +1,6 @@
 import { Jsonify } from "type-fest";
 
-import { EncryptionType } from "../../enums";
+import { EncryptionType, EXPECTED_NUM_PARTS_BY_ENCRYPTION_TYPE } from "../../enums";
 import { IEncrypted } from "../../interfaces/IEncrypted";
 import { Utils } from "../../misc/utils";
 
@@ -75,34 +75,26 @@ export class EncString implements IEncrypted {
       return;
     }
 
-    const { encType, encPieces } = this.parseEncryptedString(this.encryptedString);
+    const { encType, encPieces } = EncString.parseEncryptedString(this.encryptedString);
     this.encryptionType = encType;
+
+    if (encPieces.length !== EXPECTED_NUM_PARTS_BY_ENCRYPTION_TYPE[encType]) {
+      return;
+    }
 
     switch (encType) {
       case EncryptionType.AesCbc128_HmacSha256_B64:
       case EncryptionType.AesCbc256_HmacSha256_B64:
-        if (encPieces.length !== 3) {
-          return;
-        }
-
         this.iv = encPieces[0];
         this.data = encPieces[1];
         this.mac = encPieces[2];
         break;
       case EncryptionType.AesCbc256_B64:
-        if (encPieces.length !== 2) {
-          return;
-        }
-
         this.iv = encPieces[0];
         this.data = encPieces[1];
         break;
       case EncryptionType.Rsa2048_OaepSha256_B64:
       case EncryptionType.Rsa2048_OaepSha1_B64:
-        if (encPieces.length !== 1) {
-          return;
-        }
-
         this.data = encPieces[0];
         break;
       default:
@@ -110,7 +102,7 @@ export class EncString implements IEncrypted {
     }
   }
 
-  private parseEncryptedString(encryptedString: string): {
+  private static parseEncryptedString(encryptedString: string): {
     encType: EncryptionType;
     encPieces: string[];
   } {
@@ -137,6 +129,12 @@ export class EncString implements IEncrypted {
       encType,
       encPieces,
     };
+  }
+
+  static isSerializedEncString(s: string): boolean {
+    const { encType, encPieces } = this.parseEncryptedString(s);
+
+    return EXPECTED_NUM_PARTS_BY_ENCRYPTION_TYPE[encType] === encPieces.length;
   }
 
   async decrypt(orgId: string, key: SymmetricCryptoKey = null): Promise<string> {

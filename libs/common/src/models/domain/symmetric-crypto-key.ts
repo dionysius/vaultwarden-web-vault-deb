@@ -62,12 +62,16 @@ export class SymmetricCryptoKey {
     return { keyB64: this.keyB64 };
   }
 
-  static fromJSON(obj: Jsonify<SymmetricCryptoKey>): SymmetricCryptoKey {
-    if (obj == null) {
+  static fromString(s: string): SymmetricCryptoKey {
+    if (s == null) {
       return null;
     }
 
-    const arrayBuffer = Utils.fromB64ToArray(obj.keyB64).buffer;
+    const arrayBuffer = Utils.fromB64ToArray(s).buffer;
     return new SymmetricCryptoKey(arrayBuffer);
+  }
+
+  static fromJSON(obj: Jsonify<SymmetricCryptoKey>): SymmetricCryptoKey {
+    return SymmetricCryptoKey.fromString(obj?.keyB64);
   }
 }

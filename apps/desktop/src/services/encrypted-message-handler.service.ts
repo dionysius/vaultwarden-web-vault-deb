@@ -25,11 +25,11 @@ import { GenerateResponse } from "../models/native-messaging/encrypted-message-r
 import { SuccessStatusResponse } from "../models/native-messaging/encrypted-message-responses/success-status-response";
 import { UserStatusErrorResponse } from "../models/native-messaging/encrypted-message-responses/user-status-error-response";
 
-import { StateService } from "./state.service";
+import { ElectronStateService } from "./electron-state.service";
 
 export class EncryptedMessageHandlerService {
   constructor(
-    private stateService: StateService,
+    private stateService: ElectronStateService,
     private authService: AuthService,
     private cipherService: CipherService,
     private policyService: PolicyService,

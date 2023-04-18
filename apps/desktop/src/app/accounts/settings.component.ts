@@ -9,15 +9,15 @@ import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { MessagingService } from "@bitwarden/common/abstractions/messaging.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
-import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { VaultTimeoutSettingsService } from "@bitwarden/common/abstractions/vaultTimeout/vaultTimeoutSettings.service";
 import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
 import { PolicyType } from "@bitwarden/common/admin-console/enums";
-import { DeviceType, ThemeType, StorageLocation } from "@bitwarden/common/enums";
+import { DeviceType, ThemeType, StorageLocation, KeySuffixOptions } from "@bitwarden/common/enums";
 import { VaultTimeoutAction } from "@bitwarden/common/enums/vault-timeout-action.enum";
 import { Utils } from "@bitwarden/common/misc/utils";
 
 import { flagEnabled } from "../../flags";
+import { ElectronStateService } from "../../services/electron-state.service.abstraction";
 import { isWindowsStore } from "../../utils";
 import { SetPinComponent } from "../components/set-pin.component";
 
@@ -37,10 +37,12 @@ export class SettingsComponent implements OnInit {
   clearClipboardOptions: any[];
   supportsBiometric: boolean;
   biometricText: string;
+  additionalBiometricSettingsText: string;
   autoPromptBiometricsText: string;
   showAlwaysShowDock = false;
   requireEnableTray = false;
   showDuckDuckGoIntegrationOption = false;
+  isWindows: boolean;
 
   enableTrayText: string;
   enableTrayDescText: string;
@@ -70,6 +72,7 @@ export class SettingsComponent implements OnInit {
     pin: [null as boolean | null],
     biometric: false,
     autoPromptBiometrics: false,
+    requirePasswordOnStart: false,
     approveLoginRequests: false,
     // Account Preferences
     clearClipboard: [null as number | null],
@@ -100,7 +103,7 @@ export class SettingsComponent implements OnInit {
     private i18nService: I18nService,
     private platformUtilsService: PlatformUtilsService,
     private vaultTimeoutSettingsService: VaultTimeoutSettingsService,
-    private stateService: StateService,
+    private stateService: ElectronStateService,
     private messagingService: MessagingService,
     private cryptoService: CryptoService,
     private modalService: ModalService,
@@ -182,6 +185,8 @@ export class SettingsComponent implements OnInit {
   }
 
   async ngOnInit() {
+    this.isWindows = (await this.platformUtilsService.getDevice()) === DeviceType.WindowsDesktop;
+
     if ((await this.stateService.getUserId()) == null) {
       return;
     }
@@ -216,7 +221,9 @@ export class SettingsComponent implements OnInit {
       vaultTimeoutAction: await this.vaultTimeoutSettingsService.getVaultTimeoutAction(),
       pin: pinSet[0] || pinSet[1],
       biometric: await this.vaultTimeoutSettingsService.isBiometricLockSet(),
-      autoPromptBiometrics: !(await this.stateService.getNoAutoPromptBiometrics()),
+      autoPromptBiometrics: !(await this.stateService.getDisableAutoBiometricsPrompt()),
+      requirePasswordOnStart:
+        (await this.stateService.getBiometricRequirePasswordOnStart()) ?? false,
       approveLoginRequests: (await this.stateService.getApproveLoginRequests()) ?? false,
       clearClipboard: await this.stateService.getClearClipboard(),
       minimizeOnCopyToClipboard: await this.stateService.getMinimizeOnCopyToClipboard(),
@@ -246,6 +253,10 @@ export class SettingsComponent implements OnInit {
     this.showAlwaysShowDock = this.platformUtilsService.getDevice() === DeviceType.MacOsDesktop;
     this.supportsBiometric = await this.platformUtilsService.supportsBiometric();
     this.biometricText = await this.stateService.getBiometricText();
+    this.additionalBiometricSettingsText =
+      this.biometricText === "unlockWithTouchId"
+        ? "additionalTouchIdSettings"
+        : "additionalWindowsHelloSettings";
     this.autoPromptBiometricsText = await this.stateService.getNoAutoPromptBiometricsText();
     this.previousVaultTimeout = this.form.value.vaultTimeout;
 
@@ -379,24 +390,50 @@ export class SettingsComponent implements OnInit {
       return;
     }
 
-    const authResult = await this.platformUtilsService.authenticateBiometric();
-
-    if (!authResult) {
-      this.form.controls.biometric.setValue(false);
-      return;
-    }
-
-    this.form.controls.biometric.setValue(true);
     await this.stateService.setBiometricUnlock(true);
+    if (this.isWindows) {
+      // Recommended settings for Windows Hello
+      this.form.controls.requirePasswordOnStart.setValue(true);
+      this.form.controls.autoPromptBiometrics.setValue(false);
+      await this.stateService.setDisableAutoBiometricsPrompt(true);
+      await this.stateService.setBiometricRequirePasswordOnStart(true);
+      await this.stateService.setDismissedBiometricRequirePasswordOnStart();
+    }
     await this.cryptoService.toggleKey();
+
+    // Validate the key is stored in case biometrics fail.
+    const biometricSet = await this.cryptoService.hasKeyStored(KeySuffixOptions.Biometric);
+    this.form.controls.biometric.setValue(biometricSet);
+    if (!biometricSet) {
+      await this.stateService.setBiometricUnlock(null);
+    }
   }
 
   async updateAutoPromptBiometrics() {
     if (this.form.value.autoPromptBiometrics) {
-      await this.stateService.setNoAutoPromptBiometrics(null);
+      // require password on start must be disabled if auto prompt biometrics is enabled
+      this.form.controls.requirePasswordOnStart.setValue(false);
+      await this.updateRequirePasswordOnStart();
+
+      await this.stateService.setDisableAutoBiometricsPrompt(null);
     } else {
-      await this.stateService.setNoAutoPromptBiometrics(true);
+      await this.stateService.setDisableAutoBiometricsPrompt(true);
     }
+  }
+
+  async updateRequirePasswordOnStart() {
+    if (this.form.value.requirePasswordOnStart) {
+      // auto prompt biometrics must be disabled if require password on start is enabled
+      this.form.controls.autoPromptBiometrics.setValue(false);
+      await this.updateAutoPromptBiometrics();
+
+      await this.stateService.setBiometricRequirePasswordOnStart(true);
+    } else {
+      await this.stateService.setBiometricRequirePasswordOnStart(false);
+      await this.stateService.setBiometricEncryptionClientKeyHalf(null);
+    }
+    await this.stateService.setDismissedBiometricRequirePasswordOnStart();
+    await this.cryptoService.toggleKey();
   }
 
   async saveFavicons() {

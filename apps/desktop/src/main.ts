@@ -5,7 +5,6 @@ import { app } from "electron";
 import { StateFactory } from "@bitwarden/common/factories/stateFactory";
 import { GlobalState } from "@bitwarden/common/models/domain/global-state";
 import { MemoryStorageService } from "@bitwarden/common/services/memoryStorage.service";
-import { StateService } from "@bitwarden/common/services/state.service";
 
 import { BiometricsService, BiometricsServiceAbstraction } from "./main/biometric/index";
 import { DesktopCredentialStorageListener } from "./main/desktop-credential-storage-listener";
@@ -19,6 +18,7 @@ import { WindowMain } from "./main/window.main";
 import { Account } from "./models/account";
 import { ElectronLogService } from "./services/electron-log.service";
 import { ElectronMainMessagingService } from "./services/electron-main-messaging.service";
+import { ElectronStateService } from "./services/electron-state.service";
 import { ElectronStorageService } from "./services/electron-storage.service";
 import { I18nService } from "./services/i18n.service";
 
@@ -28,7 +28,7 @@ export class Main {
   storageService: ElectronStorageService;
   memoryStorageService: MemoryStorageService;
   messagingService: ElectronMainMessagingService;
-  stateService: StateService;
+  stateService: ElectronStateService;
   desktopCredentialStorageListener: DesktopCredentialStorageListener;
 
   windowMain: WindowMain;
@@ -85,7 +85,7 @@ export class Main {
     // TODO: this state service will have access to on disk storage, but not in memory storage.
     // If we could get this to work using the stateService singleton that the rest of the app uses we could save
     // ourselves from some hacks, like having to manually update the app menu vs. the menu subscribing to events.
-    this.stateService = new StateService(
+    this.stateService = new ElectronStateService(
       this.storageService,
       null,
       this.memoryStorageService,
@@ -128,7 +128,8 @@ export class Main {
 
     this.desktopCredentialStorageListener = new DesktopCredentialStorageListener(
       "Bitwarden",
-      this.biometricsService
+      this.biometricsService,
+      this.logService
     );
 
     this.nativeMessagingMain = new NativeMessagingMain(

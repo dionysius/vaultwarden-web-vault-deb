@@ -1,5 +1,6 @@
 // eslint-disable-next-line no-restricted-imports
-import { Arg, Substitute, SubstituteOf } from "@fluffy-spoon/substitute";
+import { Substitute, SubstituteOf } from "@fluffy-spoon/substitute";
+import { MockProxy, any, mock } from "jest-mock-extended";
 
 import { AbstractStorageService } from "@bitwarden/common/abstractions/storage.service";
 import { StateVersion } from "@bitwarden/common/enums";
@@ -14,14 +15,14 @@ const userId = "USER_ID";
 // so that we don't accidentally run all following migrations as well
 
 describe("State Migration Service", () => {
-  let storageService: SubstituteOf<AbstractStorageService>;
+  let storageService: MockProxy<AbstractStorageService>;
   let secureStorageService: SubstituteOf<AbstractStorageService>;
   let stateFactory: SubstituteOf<StateFactory>;
 
   let stateMigrationService: StateMigrationService;
 
   beforeEach(() => {
-    storageService = Substitute.for<AbstractStorageService>();
+    storageService = mock();
     secureStorageService = Substitute.for<AbstractStorageService>();
     stateFactory = Substitute.for<StateFactory>();
 
@@ -32,14 +33,18 @@ describe("State Migration Service", () => {
     );
   });
 
+  afterEach(() => {
+    jest.resetAllMocks();
+  });
+
   describe("StateVersion 3 to 4 migration", () => {
     beforeEach(() => {
       const globalVersion3: Partial<GlobalState> = {
         stateVersion: StateVersion.Three,
       };
 
-      storageService.get("global", Arg.any()).resolves(globalVersion3);
-      storageService.get("authenticatedAccounts", Arg.any()).resolves([userId]);
+      storageService.get.calledWith("global", any()).mockResolvedValue(globalVersion3);
+      storageService.get.calledWith("authenticatedAccounts", any()).mockResolvedValue([userId]);
     });
 
     it("clears everBeenUnlocked", async () => {
@@ -68,21 +73,23 @@ describe("State Migration Service", () => {
       };
       delete expectedAccountVersion4.profile.everBeenUnlocked;
 
-      storageService.get(userId, Arg.any()).resolves(accountVersion3);
+      storageService.get.calledWith(userId, any()).mockResolvedValue(accountVersion3);
 
       await (stateMigrationService as any).migrateStateFrom3To4();
 
-      storageService.received(1).save(userId, expectedAccountVersion4, Arg.any());
+      expect(storageService.save).toHaveBeenCalledTimes(2);
+      expect(storageService.save).toHaveBeenCalledWith(userId, expectedAccountVersion4, any());
     });
 
     it("updates StateVersion number", async () => {
       await (stateMigrationService as any).migrateStateFrom3To4();
 
-      storageService.received(1).save(
+      expect(storageService.save).toHaveBeenCalledWith(
         "global",
-        Arg.is((globals: GlobalState) => globals.stateVersion === StateVersion.Four),
-        Arg.any()
+        { stateVersion: StateVersion.Four },
+        any()
       );
+      expect(storageService.save).toHaveBeenCalledTimes(1);
     });
   });
 
@@ -142,6 +149,67 @@ describe("State Migration Service", () => {
       );
 
       expect(migratedAccount.keys.legacyEtmKey).toBeUndefined();
+    });
+  });
+
+  describe("StateVersion 6 to 7 migration", () => {
+    it("should delete global.noAutoPromptBiometrics value", async () => {
+      storageService.get
+        .calledWith("global", any())
+        .mockResolvedValue({ stateVersion: StateVersion.Six, noAutoPromptBiometrics: true });
+      storageService.get.calledWith("authenticatedAccounts", any()).mockResolvedValue([]);
+
+      await stateMigrationService.migrate();
+
+      expect(storageService.save).toHaveBeenCalledWith(
+        "global",
+        {
+          stateVersion: StateVersion.Seven,
+        },
+        any()
+      );
+    });
+
+    it("should call migrateStateFrom6To7 on each account", async () => {
+      const accountVersion6 = new Account({
+        otherStuff: "other stuff",
+      } as any);
+
+      storageService.get
+        .calledWith("global", any())
+        .mockResolvedValue({ stateVersion: StateVersion.Six, noAutoPromptBiometrics: true });
+      storageService.get.calledWith("authenticatedAccounts", any()).mockResolvedValue([userId]);
+      storageService.get.calledWith(userId, any()).mockResolvedValue(accountVersion6);
+
+      const migrateSpy = jest.fn();
+      (stateMigrationService as any).migrateAccountFrom6To7 = migrateSpy;
+
+      await stateMigrationService.migrate();
+
+      expect(migrateSpy).toHaveBeenCalledWith(true, accountVersion6);
+    });
+
+    it("should update account.settings.disableAutoBiometricsPrompt value if global is no prompt", async () => {
+      const result = await (stateMigrationService as any).migrateAccountFrom6To7(true, {
+        otherStuff: "other stuff",
+      });
+
+      expect(result).toEqual({
+        otherStuff: "other stuff",
+        settings: {
+          disableAutoBiometricsPrompt: true,
+        },
+      });
+    });
+
+    it("should not update account.settings.disableAutoBiometricsPrompt value if global auto prompt is enabled", async () => {
+      const result = await (stateMigrationService as any).migrateAccountFrom6To7(false, {
+        otherStuff: "other stuff",
+      });
+
+      expect(result).toEqual({
+        otherStuff: "other stuff",
+      });
     });
   });
 });

@@ -133,27 +133,20 @@ export class AccountKeys {
       return null;
     }
 
-    return Object.assign(
-      new AccountKeys(),
-      { cryptoMasterKey: SymmetricCryptoKey.fromJSON(obj?.cryptoMasterKey) },
-      {
-        cryptoSymmetricKey: EncryptionPair.fromJSON(
-          obj?.cryptoSymmetricKey,
-          SymmetricCryptoKey.fromJSON
-        ),
-      },
-      { organizationKeys: AccountKeys.initRecordEncryptionPairsFromJSON(obj?.organizationKeys) },
-      { providerKeys: AccountKeys.initRecordEncryptionPairsFromJSON(obj?.providerKeys) },
-      {
-        privateKey: EncryptionPair.fromJSON<string, ArrayBuffer>(
-          obj?.privateKey,
-          (decObj: string) => Utils.fromByteStringToArray(decObj).buffer
-        ),
-      },
-      {
-        publicKey: Utils.fromByteStringToArray(obj?.publicKey)?.buffer,
-      }
-    );
+    return Object.assign(new AccountKeys(), {
+      cryptoMasterKey: SymmetricCryptoKey.fromJSON(obj?.cryptoMasterKey),
+      cryptoSymmetricKey: EncryptionPair.fromJSON(
+        obj?.cryptoSymmetricKey,
+        SymmetricCryptoKey.fromJSON
+      ),
+      organizationKeys: AccountKeys.initRecordEncryptionPairsFromJSON(obj?.organizationKeys),
+      providerKeys: AccountKeys.initRecordEncryptionPairsFromJSON(obj?.providerKeys),
+      privateKey: EncryptionPair.fromJSON<string, ArrayBuffer>(
+        obj?.privateKey,
+        (decObj: string) => Utils.fromByteStringToArray(decObj).buffer
+      ),
+      publicKey: Utils.fromByteStringToArray(obj?.publicKey)?.buffer,
+    });
   }
 
   static initRecordEncryptionPairsFromJSON(obj: any) {

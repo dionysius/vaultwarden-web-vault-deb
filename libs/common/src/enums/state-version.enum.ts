@@ -5,5 +5,6 @@ export enum StateVersion {
   Four = 4, // Fix 'Never Lock' option by removing stale data
   Five = 5, // Migrate to new storage of encrypted organization keys
   Six = 6, // Delete account.keys.legacyEtmKey property
-  Latest = Six,
+  Seven = 7, // Remove global desktop auto prompt setting, move to account
+  Latest = Seven,
 }

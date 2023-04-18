@@ -7,6 +7,7 @@ import { CryptoFunctionService } from "@bitwarden/common/abstractions/cryptoFunc
 import { Utils } from "@bitwarden/common/misc/utils";
 import { DecryptParameters } from "@bitwarden/common/models/domain/decrypt-parameters";
 import { SymmetricCryptoKey } from "@bitwarden/common/models/domain/symmetric-crypto-key";
+import { CsprngArray } from "@bitwarden/common/types/csprng";
 
 export class NodeCryptoFunctionService implements CryptoFunctionService {
   pbkdf2(
@@ -270,13 +271,13 @@ export class NodeCryptoFunctionService implements CryptoFunctionService {
     });
   }
 
-  randomBytes(length: number): Promise<ArrayBuffer> {
-    return new Promise<ArrayBuffer>((resolve, reject) => {
+  randomBytes(length: number): Promise<CsprngArray> {
+    return new Promise<CsprngArray>((resolve, reject) => {
       crypto.randomBytes(length, (error, bytes) => {
         if (error != null) {
           reject(error);
         } else {
-          resolve(this.toArrayBuffer(bytes));
+          resolve(this.toArrayBuffer(bytes) as CsprngArray);
         }
       });
     });

@@ -30,8 +30,8 @@ import { SymmetricCryptoKey } from "../models/domain/symmetric-crypto-key";
 
 export class CryptoService implements CryptoServiceAbstraction {
   constructor(
-    private cryptoFunctionService: CryptoFunctionService,
-    private encryptService: EncryptService,
+    protected cryptoFunctionService: CryptoFunctionService,
+    protected encryptService: EncryptService,
     protected platformUtilService: PlatformUtilsService,
     protected logService: LogService,
     protected stateService: StateService
@@ -716,14 +716,17 @@ export class CryptoService implements CryptoServiceAbstraction {
   // ---HELPERS---
 
   protected async storeKey(key: SymmetricCryptoKey, userId?: string) {
-    if (await this.shouldStoreKey(KeySuffixOptions.Auto, userId)) {
-      await this.stateService.setCryptoMasterKeyAuto(key.keyB64, { userId: userId });
-    } else if (await this.shouldStoreKey(KeySuffixOptions.Biometric, userId)) {
-      await this.stateService.setCryptoMasterKeyBiometric(key.keyB64, { userId: userId });
+    const storeAuto = await this.shouldStoreKey(KeySuffixOptions.Auto, userId);
+
+    if (storeAuto) {
+      await this.storeAutoKey(key, userId);
     } else {
       await this.stateService.setCryptoMasterKeyAuto(null, { userId: userId });
-      await this.stateService.setCryptoMasterKeyBiometric(null, { userId: userId });
     }
+  }
+
+  protected async storeAutoKey(key: SymmetricCryptoKey, userId?: string) {
+    await this.stateService.setCryptoMasterKeyAuto(key.keyB64, { userId: userId });
   }
 
   protected async shouldStoreKey(keySuffix: KeySuffixOptions, userId?: string) {

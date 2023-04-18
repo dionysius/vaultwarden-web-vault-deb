@@ -1,16 +1,16 @@
-import { mock } from "jest-mock-extended";
+import { mock, MockProxy } from "jest-mock-extended";
 
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { MessagingService } from "@bitwarden/common/abstractions/messaging.service";
-import { StateService } from "@bitwarden/common/abstractions/state.service";
 
+import { ElectronStateService } from "../../services/electron-state.service.abstraction";
 import { WindowMain } from "../window.main";
 
 import BiometricDarwinMain from "./biometric.darwin.main";
 import BiometricWindowsMain from "./biometric.windows.main";
 import { BiometricsService } from "./biometrics.service";
-import { BiometricsServiceAbstraction } from "./biometrics.service.abstraction";
+import { OsBiometricService } from "./biometrics.service.abstraction";
 
 jest.mock("@bitwarden/desktop-native", () => {
   return {
@@ -22,11 +22,11 @@ jest.mock("@bitwarden/desktop-native", () => {
 describe("biometrics tests", function () {
   const i18nService = mock<I18nService>();
   const windowMain = mock<WindowMain>();
-  const stateService = mock<StateService>();
+  const stateService = mock<ElectronStateService>();
   const logService = mock<LogService>();
   const messagingService = mock<MessagingService>();
 
-  it("Should call the platformspecific methods", () => {
+  it("Should call the platformspecific methods", async () => {
     const sut = new BiometricsService(
       i18nService,
       windowMain,
@@ -36,13 +36,14 @@ describe("biometrics tests", function () {
       process.platform
     );
 
-    const mockService = mock<BiometricsServiceAbstraction>();
+    const mockService = mock<OsBiometricService>();
     (sut as any).platformSpecificService = mockService;
     sut.init();
+    sut.setEncryptionKeyHalf({ service: "test", key: "test", value: "test" });
     expect(mockService.init).toBeCalled();
 
-    sut.supportsBiometric();
-    expect(mockService.supportsBiometric).toBeCalled();
+    await sut.canAuthBiometric({ service: "test", key: "test", userId: "test" });
+    expect(mockService.osSupportsBiometric).toBeCalled();
 
     sut.authenticateBiometric();
     expect(mockService.authenticateBiometric).toBeCalled();
@@ -76,6 +77,52 @@ describe("biometrics tests", function () {
       const internalService = (sut as any).platformSpecificService;
       expect(internalService).not.toBeNull();
       expect(internalService).toBeInstanceOf(BiometricDarwinMain);
+    });
+  });
+
+  describe("can auth biometric", () => {
+    let sut: BiometricsService;
+    let innerService: MockProxy<OsBiometricService>;
+
+    beforeEach(() => {
+      sut = new BiometricsService(
+        i18nService,
+        windowMain,
+        stateService,
+        logService,
+        messagingService,
+        process.platform
+      );
+
+      innerService = mock();
+      (sut as any).platformSpecificService = innerService;
+      sut.init();
+    });
+
+    it("should return false if client key half is required and not provided", async () => {
+      stateService.getBiometricRequirePasswordOnStart.mockResolvedValue(true);
+
+      const result = await sut.canAuthBiometric({ service: "test", key: "test", userId: "test" });
+
+      expect(result).toBe(false);
+    });
+
+    it("should call osSupportsBiometric if client key half is provided", async () => {
+      sut.setEncryptionKeyHalf({ service: "test", key: "test", value: "test" });
+      expect(innerService.init).toBeCalled();
+
+      await sut.canAuthBiometric({ service: "test", key: "test", userId: "test" });
+      expect(innerService.osSupportsBiometric).toBeCalled();
+    });
+
+    it("should call osSupportBiometric if client key half is not required", async () => {
+      stateService.getBiometricRequirePasswordOnStart.mockResolvedValue(false);
+      innerService.osSupportsBiometric.mockResolvedValue(true);
+
+      const result = await sut.canAuthBiometric({ service: "test", key: "test", userId: "test" });
+
+      expect(result).toBe(true);
+      expect(innerService.osSupportsBiometric).toBeCalled();
     });
   });
 });

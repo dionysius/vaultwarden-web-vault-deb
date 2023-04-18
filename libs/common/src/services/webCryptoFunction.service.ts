@@ -5,6 +5,7 @@ import { CryptoFunctionService } from "../abstractions/cryptoFunction.service";
 import { Utils } from "../misc/utils";
 import { DecryptParameters } from "../models/domain/decrypt-parameters";
 import { SymmetricCryptoKey } from "../models/domain/symmetric-crypto-key";
+import { CsprngArray } from "../types/csprng";
 
 export class WebCryptoFunctionService implements CryptoFunctionService {
   private crypto: Crypto;
@@ -350,10 +351,10 @@ export class WebCryptoFunctionService implements CryptoFunctionService {
     return [publicKey, privateKey];
   }
 
-  randomBytes(length: number): Promise<ArrayBuffer> {
+  randomBytes(length: number): Promise<CsprngArray> {
     const arr = new Uint8Array(length);
     this.crypto.getRandomValues(arr);
-    return Promise.resolve(arr.buffer);
+    return Promise.resolve(arr.buffer as CsprngArray);
   }
 
   private toBuf(value: string | ArrayBuffer): ArrayBuffer {

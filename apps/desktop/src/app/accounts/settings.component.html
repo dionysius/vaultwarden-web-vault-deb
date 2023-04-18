@@ -108,9 +108,12 @@
                     {{ biometricText | i18n }}
                   </label>
                 </div>
+                <small class="help-block" *ngIf="this.form.value.biometric">{{
+                  additionalBiometricSettingsText | i18n
+                }}</small>
               </div>
               <div class="form-group" *ngIf="supportsBiometric && this.form.value.biometric">
-                <div class="checkbox">
+                <div class="checkbox form-group-child">
                   <label for="autoPromptBiometrics">
                     <input
                       id="autoPromptBiometrics"
@@ -121,6 +124,22 @@
                     {{ autoPromptBiometricsText | i18n }}
                   </label>
                 </div>
+              </div>
+              <div class="form-group" *ngIf="supportsBiometric && this.form.value.biometric">
+                <div class="checkbox form-group-child">
+                  <label for="requirePasswordOnStart">
+                    <input
+                      id="requirePasswordOnStart"
+                      type="checkbox"
+                      formControlName="requirePasswordOnStart"
+                      (change)="updateRequirePasswordOnStart()"
+                    />
+                    {{ "requirePasswordOnStart" | i18n }}
+                  </label>
+                </div>
+                <small class="help-block form-group-child" *ngIf="isWindows">{{
+                  "recommendedForSecurity" | i18n
+                }}</small>
               </div>
               <div class="form-group">
                 <div class="checkbox">

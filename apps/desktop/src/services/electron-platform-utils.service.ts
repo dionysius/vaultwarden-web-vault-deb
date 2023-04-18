@@ -6,6 +6,7 @@ import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUti
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { ClientType, DeviceType } from "@bitwarden/common/enums";
 
+import { BiometricMessage, BiometricStorageAction } from "../types/biometric-message";
 import { isDev, isMacAppStore } from "../utils";
 
 export class ElectronPlatformUtilsService implements PlatformUtilsService {
@@ -169,9 +170,15 @@ export class ElectronPlatformUtilsService implements PlatformUtilsService {
   }
 
   async supportsBiometric(): Promise<boolean> {
-    return await this.stateService.getEnableBiometric();
+    return await ipcRenderer.invoke("biometric", {
+      action: BiometricStorageAction.OsSupported,
+    } as BiometricMessage);
   }
 
+  /** This method is used to authenticate the user presence _only_.
+   * It should not be used in the process to retrieve
+   * biometric keys, which has a separate authentication mechanism.
+   * For biometric keys, invoke "keytar" with a biometric key suffix */
   async authenticateBiometric(): Promise<boolean> {
     const val = await ipcRenderer.invoke("biometric", {
       action: "authenticate",
