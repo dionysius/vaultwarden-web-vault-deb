@@ -48,12 +48,12 @@ import { HeaderComponent } from "./layout/header.component";
 import { NavComponent } from "./layout/nav.component";
 import { SearchComponent } from "./layout/search/search.component";
 import { SharedModule } from "./shared/shared.module";
+import { ExportComponent } from "./tools/export/export.component";
 import { GeneratorComponent } from "./tools/generator.component";
 import { PasswordGeneratorHistoryComponent } from "./tools/password-generator-history.component";
 import { AddEditComponent as SendAddEditComponent } from "./tools/send/add-edit.component";
 import { EffluxDatesComponent as SendEffluxDatesComponent } from "./tools/send/efflux-dates.component";
 import { SendComponent } from "./tools/send/send.component";
-import { ExportComponent } from "./vault/export.component";
 
 @NgModule({
   imports: [SharedModule, AppRoutingModule, VaultFilterModule, LoginModule],

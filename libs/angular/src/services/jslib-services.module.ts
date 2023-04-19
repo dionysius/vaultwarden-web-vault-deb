@@ -14,7 +14,6 @@ import { EncryptService } from "@bitwarden/common/abstractions/encrypt.service";
 import { EnvironmentService as EnvironmentServiceAbstraction } from "@bitwarden/common/abstractions/environment.service";
 import { EventCollectionService as EventCollectionServiceAbstraction } from "@bitwarden/common/abstractions/event/event-collection.service";
 import { EventUploadService as EventUploadServiceAbstraction } from "@bitwarden/common/abstractions/event/event-upload.service";
-import { ExportService as ExportServiceAbstraction } from "@bitwarden/common/abstractions/export.service";
 import { FileUploadService as FileUploadServiceAbstraction } from "@bitwarden/common/abstractions/file-upload/file-upload.service";
 import { FormValidationErrorsService as FormValidationErrorsServiceAbstraction } from "@bitwarden/common/abstractions/formValidationErrors.service";
 import { I18nService as I18nServiceAbstraction } from "@bitwarden/common/abstractions/i18n.service";
@@ -94,7 +93,6 @@ import { MultithreadEncryptServiceImplementation } from "@bitwarden/common/servi
 import { EnvironmentService } from "@bitwarden/common/services/environment.service";
 import { EventCollectionService } from "@bitwarden/common/services/event/event-collection.service";
 import { EventUploadService } from "@bitwarden/common/services/event/event-upload.service";
-import { ExportService } from "@bitwarden/common/services/export.service";
 import { FileUploadService } from "@bitwarden/common/services/file-upload/file-upload.service";
 import { FormValidationErrorsService } from "@bitwarden/common/services/formValidationErrors.service";
 import { NotificationsService } from "@bitwarden/common/services/notifications.service";
@@ -138,6 +136,10 @@ import { FolderApiService } from "@bitwarden/common/vault/services/folder/folder
 import { FolderService } from "@bitwarden/common/vault/services/folder/folder.service";
 import { SyncNotifierService } from "@bitwarden/common/vault/services/sync/sync-notifier.service";
 import { SyncService } from "@bitwarden/common/vault/services/sync/sync.service";
+import {
+  VaultExportService,
+  VaultExportServiceAbstraction,
+} from "@bitwarden/exporter/vault-export";
 
 import { AuthGuard } from "../auth/guards/auth.guard";
 import { LockGuard } from "../auth/guards/lock.guard";
@@ -464,8 +466,8 @@ import { AbstractThemingService } from "./theming/theming.service.abstraction";
       deps: [AbstractStorageService, SECURE_STORAGE, STATE_FACTORY],
     },
     {
-      provide: ExportServiceAbstraction,
-      useClass: ExportService,
+      provide: VaultExportServiceAbstraction,
+      useClass: VaultExportService,
       deps: [
         FolderServiceAbstraction,
         CipherServiceAbstraction,

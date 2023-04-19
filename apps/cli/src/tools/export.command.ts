@@ -1,20 +1,23 @@
 import * as program from "commander";
 import * as inquirer from "inquirer";
 
-import {
-  ExportFormat,
-  ExportService,
-  EXPORT_FORMATS,
-} from "@bitwarden/common/abstractions/export.service";
 import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
 import { PolicyType } from "@bitwarden/common/admin-console/enums";
 import { Utils } from "@bitwarden/common/misc/utils";
+import {
+  ExportFormat,
+  EXPORT_FORMATS,
+  VaultExportServiceAbstraction,
+} from "@bitwarden/exporter/vault-export";
 
 import { Response } from "../models/response";
 import { CliUtils } from "../utils";
 
 export class ExportCommand {
-  constructor(private exportService: ExportService, private policyService: PolicyService) {}
+  constructor(
+    private exportService: VaultExportServiceAbstraction,
+    private policyService: PolicyService
+  ) {}
 
   async run(options: program.OptionValues): Promise<Response> {
     if (

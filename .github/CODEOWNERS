@@ -25,7 +25,9 @@ apps/cli/src/app/tools @bitwarden/team-tools-dev
 apps/desktop/src/app/tools @bitwarden/team-tools-dev
 apps/web/src/app/tools @bitwarden/team-tools-dev
 libs/angular/src/tools @bitwarden/team-tools-dev
+libs/common/src/models/export @bitwarden/team-tools-dev
 libs/common/src/tools @bitwarden/team-tools-dev
+libs/exporter @bitwarden/team-tools-dev
 libs/importer @bitwarden/team-tools-dev
 
 ## Vault team files ##

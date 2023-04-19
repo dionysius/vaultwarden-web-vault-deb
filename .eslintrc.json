@@ -102,6 +102,10 @@
               {
                 "target": "./libs/common/**/*",
                 "from": "./libs/importer/**/*"
+              },
+              {
+                "target": "./libs/common/**/*",
+                "from": "./libs/exporter/**/*"
               }
             ]
           }
@@ -159,6 +163,12 @@
       "files": ["libs/importer/src/**/*.ts"],
       "rules": {
         "no-restricted-imports": ["error", { "patterns": ["@bitwarden/importer/*", "src/**/*"] }]
+      }
+    },
+    {
+      "files": ["libs/exporter/src/**/*.ts"],
+      "rules": {
+        "no-restricted-imports": ["error", { "patterns": ["@bitwarden/exporter/*", "src/**/*"] }]
       }
     }
   ]

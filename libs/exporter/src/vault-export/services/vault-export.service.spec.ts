@@ -8,8 +8,7 @@ import { KdfConfig } from "@bitwarden/common/auth/models/domain/kdf-config";
 import { KdfType, DEFAULT_PBKDF2_ITERATIONS } from "@bitwarden/common/enums";
 import { Utils } from "@bitwarden/common/misc/utils";
 import { EncString } from "@bitwarden/common/models/domain/enc-string";
-import { CipherWithIdExport as CipherExport } from "@bitwarden/common/models/export/cipher-with-ids.export";
-import { ExportService } from "@bitwarden/common/services/export.service";
+import { CipherWithIdExport } from "@bitwarden/common/models/export/cipher-with-ids.export";
 import { StateService } from "@bitwarden/common/services/state.service";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
 import { FolderService } from "@bitwarden/common/vault/abstractions/folder/folder.service.abstraction";
@@ -21,7 +20,9 @@ import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 import { FolderView } from "@bitwarden/common/vault/models/view/folder.view";
 import { LoginView } from "@bitwarden/common/vault/models/view/login.view";
 
-import { BuildTestObject, GetUniqueString } from "../utils";
+import { BuildTestObject, GetUniqueString } from "../../../../common/spec/utils";
+
+import { VaultExportService } from "./vault-export.service";
 
 const UserCipherViews = [
   generateCipherView(false),
@@ -101,9 +102,9 @@ function generateFolder() {
 
 function expectEqualCiphers(ciphers: CipherView[] | Cipher[], jsonResult: string) {
   const actual = JSON.stringify(JSON.parse(jsonResult).items);
-  const items: CipherExport[] = [];
+  const items: CipherWithIdExport[] = [];
   ciphers.forEach((c: CipherView | Cipher) => {
-    const item = new CipherExport();
+    const item = new CipherWithIdExport();
     item.build(c);
     items.push(item);
   });
@@ -139,8 +140,8 @@ function expectEqualFolders(folders: Folder[], jsonResult: string) {
   expect(actual).toEqual(JSON.stringify(items));
 }
 
-describe("ExportService", () => {
-  let exportService: ExportService;
+describe("VaultExportService", () => {
+  let exportService: VaultExportService;
   let apiService: SubstituteOf<ApiService>;
   let cryptoFunctionService: SubstituteOf<CryptoFunctionService>;
   let cipherService: SubstituteOf<CipherService>;
@@ -161,7 +162,7 @@ describe("ExportService", () => {
     stateService.getKdfType().resolves(KdfType.PBKDF2_SHA256);
     stateService.getKdfConfig().resolves(new KdfConfig(DEFAULT_PBKDF2_ITERATIONS));
 
-    exportService = new ExportService(
+    exportService = new VaultExportService(
       folderService,
       cipherService,
       apiService,

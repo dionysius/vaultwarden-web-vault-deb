@@ -4,12 +4,12 @@ import { KdfConfig } from "@bitwarden/common/auth/models/domain/kdf-config";
 import { KdfType } from "@bitwarden/common/enums";
 import { EncString } from "@bitwarden/common/models/domain/enc-string";
 import { SymmetricCryptoKey } from "@bitwarden/common/models/domain/symmetric-crypto-key";
+import { BitwardenPasswordProtectedFileFormat } from "@bitwarden/exporter/vault-export/bitwarden-password-protected-types";
 
 import { ImportResult } from "../../models/import-result";
 import { Importer } from "../importer";
 
 import { BitwardenJsonImporter } from "./bitwarden-json-importer";
-import { BitwardenPasswordProtectedFileFormat } from "./bitwarden-password-protected-types";
 export class BitwardenPasswordProtectedImporter extends BitwardenJsonImporter implements Importer {
   private key: SymmetricCryptoKey;
 

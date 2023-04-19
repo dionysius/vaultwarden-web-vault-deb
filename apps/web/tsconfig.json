@@ -9,7 +9,8 @@
       "@bitwarden/common/*": ["../../libs/common/src/*"],
       "@bitwarden/angular/*": ["../../libs/angular/src/*"],
       "@bitwarden/components": ["../../libs/components/src"],
-      "@bitwarden/importer": ["../../libs/importer/src"]
+      "@bitwarden/importer": ["../../libs/importer/src"],
+      "@bitwarden/exporter/*": ["../../libs/exporter/src/*"]
     }
   },
   "angularCompilerOptions": {

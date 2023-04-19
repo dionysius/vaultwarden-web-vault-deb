@@ -39,6 +39,7 @@ import { EffluxDatesComponent as SendEffluxDatesComponent } from "../tools/popup
 import { SendAddEditComponent } from "../tools/popup/send/send-add-edit.component";
 import { SendGroupingsComponent } from "../tools/popup/send/send-groupings.component";
 import { SendTypeComponent } from "../tools/popup/send/send-type.component";
+import { ExportComponent } from "../tools/popup/settings/export.component";
 import { ActionButtonsComponent } from "../vault/popup/components/action-buttons.component";
 import { CipherRowComponent } from "../vault/popup/components/cipher-row.component";
 import { PasswordRepromptComponent } from "../vault/popup/components/password-reprompt.component";
@@ -65,7 +66,6 @@ import { ServicesModule } from "./services/services.module";
 import { AboutComponent } from "./settings/about.component";
 import { AutofillComponent } from "./settings/autofill.component";
 import { ExcludedDomainsComponent } from "./settings/excluded-domains.component";
-import { ExportComponent } from "./settings/export.component";
 import { FolderAddEditComponent } from "./settings/folder-add-edit.component";
 import { FoldersComponent } from "./settings/folders.component";
 import { HelpAndFeedbackComponent } from "./settings/help-and-feedback.component";

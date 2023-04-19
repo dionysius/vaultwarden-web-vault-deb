@@ -4,7 +4,6 @@ import { merge, takeUntil, Subject, startWith } from "rxjs";
 
 import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
 import { EventCollectionService } from "@bitwarden/common/abstractions/event/event-collection.service";
-import { ExportService } from "@bitwarden/common/abstractions/export.service";
 import { FileDownloadService } from "@bitwarden/common/abstractions/fileDownload/fileDownload.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
@@ -13,6 +12,7 @@ import { UserVerificationService } from "@bitwarden/common/abstractions/userVeri
 import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
 import { PolicyType } from "@bitwarden/common/admin-console/enums";
 import { EncryptedExportType, EventType } from "@bitwarden/common/enums";
+import { VaultExportServiceAbstraction } from "@bitwarden/exporter/vault-export";
 
 @Directive()
 export class ExportComponent implements OnInit, OnDestroy {
@@ -41,7 +41,7 @@ export class ExportComponent implements OnInit, OnDestroy {
     protected cryptoService: CryptoService,
     protected i18nService: I18nService,
     protected platformUtilsService: PlatformUtilsService,
-    protected exportService: ExportService,
+    protected exportService: VaultExportServiceAbstraction,
     protected eventCollectionService: EventCollectionService,
     private policyService: PolicyService,
     protected win: Window,

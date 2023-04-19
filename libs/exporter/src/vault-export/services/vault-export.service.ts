@@ -1,37 +1,36 @@
 import * as papa from "papaparse";
 
-import { BitwardenPasswordProtectedFileFormat } from "@bitwarden/importer/src/importers/bitwarden/bitwarden-password-protected-types";
-
-import { ApiService } from "../abstractions/api.service";
-import { CryptoService } from "../abstractions/crypto.service";
-import { CryptoFunctionService } from "../abstractions/cryptoFunction.service";
+import { ApiService } from "@bitwarden/common/abstractions/api.service";
+import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
+import { CryptoFunctionService } from "@bitwarden/common/abstractions/cryptoFunction.service";
+import { StateService } from "@bitwarden/common/abstractions/state.service";
+import { CollectionData } from "@bitwarden/common/admin-console/models/data/collection.data";
+import { Collection } from "@bitwarden/common/admin-console/models/domain/collection";
+import { CollectionDetailsResponse } from "@bitwarden/common/admin-console/models/response/collection.response";
+import { CollectionView } from "@bitwarden/common/admin-console/models/view/collection.view";
+import { KdfConfig } from "@bitwarden/common/auth/models/domain/kdf-config";
+import { KdfType } from "@bitwarden/common/enums";
+import { Utils } from "@bitwarden/common/misc/utils";
 import {
-  ExportFormat,
-  ExportService as ExportServiceAbstraction,
-} from "../abstractions/export.service";
-import { StateService } from "../abstractions/state.service";
-import { CollectionData } from "../admin-console/models/data/collection.data";
-import { Collection } from "../admin-console/models/domain/collection";
-import { CollectionDetailsResponse } from "../admin-console/models/response/collection.response";
-import { CollectionView } from "../admin-console/models/view/collection.view";
-import { KdfConfig } from "../auth/models/domain/kdf-config";
-import { KdfType } from "../enums";
-import { Utils } from "../misc/utils";
-import { CipherWithIdExport as CipherExport } from "../models/export/cipher-with-ids.export";
-import { CollectionWithIdExport as CollectionExport } from "../models/export/collection-with-id.export";
-import { EventExport } from "../models/export/event.export";
-import { FolderWithIdExport as FolderExport } from "../models/export/folder-with-id.export";
-import { EventView } from "../models/view/event.view";
-import { CipherService } from "../vault/abstractions/cipher.service";
-import { FolderService } from "../vault/abstractions/folder/folder.service.abstraction";
-import { CipherType } from "../vault/enums/cipher-type";
-import { CipherData } from "../vault/models/data/cipher.data";
-import { Cipher } from "../vault/models/domain/cipher";
-import { Folder } from "../vault/models/domain/folder";
-import { CipherView } from "../vault/models/view/cipher.view";
-import { FolderView } from "../vault/models/view/folder.view";
+  CipherWithIdExport,
+  CollectionWithIdExport,
+  FolderWithIdExport,
+} from "@bitwarden/common/models/export";
+import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
+import { FolderService } from "@bitwarden/common/vault/abstractions/folder/folder.service.abstraction";
+import { CipherType } from "@bitwarden/common/vault/enums/cipher-type";
+import { CipherData } from "@bitwarden/common/vault/models/data/cipher.data";
+import { Cipher } from "@bitwarden/common/vault/models/domain/cipher";
+import { Folder } from "@bitwarden/common/vault/models/domain/folder";
+import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
+import { FolderView } from "@bitwarden/common/vault/models/view/folder.view";
 
-export class ExportService implements ExportServiceAbstraction {
+import { ExportHelper } from "../../export-helper";
+import { BitwardenPasswordProtectedFileFormat } from "../bitwarden-password-protected-types";
+
+import { ExportFormat, VaultExportServiceAbstraction } from "./vault-export.service.abstraction";
+
+export class VaultExportService implements VaultExportServiceAbstraction {
   constructor(
     private folderService: FolderService,
     private cipherService: CipherService,
@@ -93,24 +92,8 @@ export class ExportService implements ExportServiceAbstraction {
     }
   }
 
-  async getEventExport(events: EventView[]): Promise<string> {
-    return papa.unparse(events.map((e) => new EventExport(e)));
-  }
-
   getFileName(prefix: string = null, extension = "csv"): string {
-    const now = new Date();
-    const dateString =
-      now.getFullYear() +
-      "" +
-      this.padNumber(now.getMonth() + 1, 2) +
-      "" +
-      this.padNumber(now.getDate(), 2) +
-      this.padNumber(now.getHours(), 2) +
-      "" +
-      this.padNumber(now.getMinutes(), 2) +
-      this.padNumber(now.getSeconds(), 2);
-
-    return "bitwarden" + (prefix ? "_" + prefix : "") + "_export_" + dateString + "." + extension;
+    return ExportHelper.getFileName(prefix, extension);
   }
 
   private async getDecryptedExport(format: "json" | "csv"): Promise<string> {
@@ -170,7 +153,7 @@ export class ExportService implements ExportServiceAbstraction {
         if (f.id == null) {
           return;
         }
-        const folder = new FolderExport();
+        const folder = new FolderWithIdExport();
         folder.build(f);
         jsonDoc.folders.push(folder);
       });
@@ -179,7 +162,7 @@ export class ExportService implements ExportServiceAbstraction {
         if (c.organizationId != null) {
           return;
         }
-        const cipher = new CipherExport();
+        const cipher = new CipherWithIdExport();
         cipher.build(c);
         cipher.collectionIds = null;
         jsonDoc.items.push(cipher);
@@ -221,7 +204,7 @@ export class ExportService implements ExportServiceAbstraction {
       if (f.id == null) {
         return;
       }
-      const folder = new FolderExport();
+      const folder = new FolderWithIdExport();
       folder.build(f);
       jsonDoc.folders.push(folder);
     });
@@ -230,7 +213,7 @@ export class ExportService implements ExportServiceAbstraction {
       if (c.organizationId != null) {
         return;
       }
-      const cipher = new CipherExport();
+      const cipher = new CipherWithIdExport();
       cipher.build(c);
       cipher.collectionIds = null;
       jsonDoc.items.push(cipher);
@@ -313,13 +296,13 @@ export class ExportService implements ExportServiceAbstraction {
       };
 
       decCollections.forEach((c) => {
-        const collection = new CollectionExport();
+        const collection = new CollectionWithIdExport();
         collection.build(c);
         jsonDoc.collections.push(collection);
       });
 
       decCiphers.forEach((c) => {
-        const cipher = new CipherExport();
+        const cipher = new CipherWithIdExport();
         cipher.build(c);
         jsonDoc.items.push(cipher);
       });
@@ -373,24 +356,17 @@ export class ExportService implements ExportServiceAbstraction {
     };
 
     collections.forEach((c) => {
-      const collection = new CollectionExport();
+      const collection = new CollectionWithIdExport();
       collection.build(c);
       jsonDoc.collections.push(collection);
     });
 
     ciphers.forEach((c) => {
-      const cipher = new CipherExport();
+      const cipher = new CipherWithIdExport();
       cipher.build(c);
       jsonDoc.items.push(cipher);
     });
     return JSON.stringify(jsonDoc, null, "  ");
-  }
-
-  private padNumber(num: number, width: number, padCharacter = "0"): string {
-    const numString = num.toString();
-    return numString.length >= width
-      ? numString
-      : new Array(width - numString.length + 1).join(padCharacter) + numString;
   }
 
   private buildCommonCipher(cipher: any, c: CipherView) {
