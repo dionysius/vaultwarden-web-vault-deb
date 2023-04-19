@@ -91,31 +91,27 @@
     <div [hidden]="!showCaptcha()">
       <iframe id="hcaptcha_iframe" height="80"></iframe>
     </div>
-    <div class="form-group">
-      <div class="form-check">
-        <input
-          class="form-check-input"
-          type="checkbox"
-          id="checkForBreaches"
-          name="CheckBreach"
-          formControlName="checkForBreaches"
-        />
-        <label class="form-check-label" for="checkForBreaches">
-          {{ "checkForBreaches" | i18n }}
-        </label>
-      </div>
+    <div class="tw-mb-4 tw-flex tw-items-start">
+      <input
+        class="mt-1"
+        type="checkbox"
+        bitCheckbox
+        id="checkForBreaches"
+        name="CheckBreach"
+        formControlName="checkForBreaches"
+      />
+      <bit-label for="checkForBreaches"> {{ "checkForBreaches" | i18n }}</bit-label>
     </div>
     <div class="tw-mb-3 tw-flex tw-items-start" *ngIf="showTerms">
-      <div class="tw-flex tw-h-6 tw-items-center">
-        <input
-          id="register-form_input_accept-policies"
-          class="tw-border-gray-300 tw-w-4 tw-rounded tw-border"
-          bitInput
-          type="checkbox"
-          formControlName="acceptPolicies"
-        />
-      </div>
-      <bit-label class="ml-2">
+      <input
+        class="mt-1"
+        id="register-form-input-accept-policies"
+        bitCheckbox
+        type="checkbox"
+        formControlName="acceptPolicies"
+      />
+
+      <bit-label for="register-form-input-accept-policies">
         {{ "acceptPolicies" | i18n }}<br />
         <a href="https://bitwarden.com/terms/" target="_blank" rel="noopener">{{
           "termsOfService" | i18n
