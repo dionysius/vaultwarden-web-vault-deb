@@ -29,12 +29,11 @@
         </bit-toggle>
       </bit-toggle-group>
 
-      <app-search-input
+      <bit-search
         class="tw-grow"
         [(ngModel)]="searchText"
         [placeholder]="'searchMembers' | i18n"
-      >
-      </app-search-input>
+      ></bit-search>
 
       <button type="button" bitButton buttonType="primary" (click)="invite()">
         <i class="bwi bwi-plus bwi-fw" aria-hidden="true"></i>

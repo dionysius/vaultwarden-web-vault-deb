@@ -4,17 +4,17 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
 let nextId = 0;
 
 @Component({
-  selector: "app-search-input",
-  templateUrl: "./search-input.component.html",
+  selector: "bit-search",
+  templateUrl: "./search.component.html",
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
       multi: true,
-      useExisting: SearchInputComponent,
+      useExisting: SearchComponent,
     },
   ],
 })
-export class SearchInputComponent implements ControlValueAccessor {
+export class SearchComponent implements ControlValueAccessor {
   private notifyOnChange: (v: string) => void;
   private notifyOnTouch: () => void;
 

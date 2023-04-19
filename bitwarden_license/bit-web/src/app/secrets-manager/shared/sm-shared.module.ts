@@ -1,6 +1,6 @@
 import { NgModule } from "@angular/core";
 
-import { MultiSelectModule, NoItemsModule } from "@bitwarden/components";
+import { MultiSelectModule, SearchModule, NoItemsModule } from "@bitwarden/components";
 import { CoreOrganizationModule } from "@bitwarden/web-vault/app/admin-console/organizations/core";
 import { ProductSwitcherModule } from "@bitwarden/web-vault/app/layouts/product-switcher/product-switcher.module";
 import { SharedModule } from "@bitwarden/web-vault/app/shared";
@@ -20,17 +20,20 @@ import { SecretsListComponent } from "./secrets-list.component";
     MultiSelectModule,
     CoreOrganizationModule,
     NoItemsModule,
+    SearchModule,
   ],
   exports: [
     SharedModule,
     NoItemsModule,
     AccessRemovalDialogComponent,
+    AccessSelectorComponent,
     BulkStatusDialogComponent,
     HeaderComponent,
     NewMenuComponent,
     ProjectsListComponent,
+    SearchModule,
     SecretsListComponent,
-    AccessSelectorComponent,
+    SharedModule,
   ],
   declarations: [
     AccessRemovalDialogComponent,
