@@ -180,13 +180,17 @@ export class AppComponent implements OnInit, OnDestroy {
           case "lockVault":
             await this.vaultTimeoutService.lock(message.userId);
             break;
-          case "lockAllVaults":
-            for (const userId in await firstValueFrom(this.stateService.accounts$)) {
-              if (userId != null) {
-                await this.vaultTimeoutService.lock(userId);
-              }
-            }
+          case "lockAllVaults": {
+            const currentUser = await this.stateService.getUserId();
+            const accounts = await firstValueFrom(this.stateService.accounts$);
+            await this.vaultTimeoutService.lock(currentUser);
+            Promise.all(
+              Object.keys(accounts)
+                .filter((u) => u !== currentUser)
+                .map((u) => this.vaultTimeoutService.lock(u))
+            );
             break;
+          }
           case "locked":
             this.modalService.closeAll();
             if (
