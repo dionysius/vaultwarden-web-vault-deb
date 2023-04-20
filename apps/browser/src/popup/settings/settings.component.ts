@@ -1,7 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
 import { FormBuilder } from "@angular/forms";
 import { Router } from "@angular/router";
-import { concatMap, filter, map, Observable, Subject, takeUntil, tap } from "rxjs";
+import { concatMap, debounceTime, filter, map, Observable, Subject, takeUntil, tap } from "rxjs";
 import Swal from "sweetalert2";
 
 import { ModalService } from "@bitwarden/angular/services/modal.service";
@@ -155,6 +155,7 @@ export class SettingsComponent implements OnInit {
 
     this.form.controls.vaultTimeout.valueChanges
       .pipe(
+        debounceTime(250),
         concatMap(async (value) => {
           await this.saveVaultTimeout(value);
         }),
