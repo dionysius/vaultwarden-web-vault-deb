@@ -1392,11 +1392,17 @@
   "unlockWithWindowsHello": {
     "message": "Atslēgt ar Windows Hello"
   },
+  "additionalWindowsHelloSettings": {
+    "message": "Windows Hello papildu iestatījumi"
+  },
   "windowsHelloConsentMessage": {
     "message": "Apstiprināt Bitwarden."
   },
   "unlockWithTouchId": {
     "message": "Atslēgt ar Touch ID"
+  },
+  "additionalTouchIdSettings": {
+    "message": "Touch ID papildu iestatījumi"
   },
   "touchIdConsentMessage": {
     "message": "atslēgt glabātavu"
@@ -1406,6 +1412,12 @@
   },
   "autoPromptTouchId": {
     "message": "Palaišanā vaicāt pēc Touch ID"
+  },
+  "requirePasswordOnStart": {
+    "message": "Pieprasīt paroli vai PIN pēc lietotnes palaišanas"
+  },
+  "recommendedForSecurity": {
+    "message": "Ieteicams drošībai."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Aizslēgt ar galveno paroli pēc pārsāknēšanas"
@@ -1526,6 +1538,9 @@
   },
   "ssoCompleteRegistration": {
     "message": "Lai pabeigtu vienotās pieteikšanās uzstādīšanu, ir jānorāda galvenā parole, lai piekļūtu glabātavai un aizsargātu to."
+  },
+  "currentMasterPass": {
+    "message": "Pašreizējā galvenā parole"
   },
   "newMasterPass": {
     "message": "Jaunā galvenā parole"
@@ -1843,6 +1858,9 @@
   "updateMasterPasswordWarning": {
     "message": "Apvienības pārvaldnieks nesen nomainīja galveno paroli. Tā ir jāatjaunina, lai varētu piekļūt glabātavai. Turpinot tiks izbeigta pašreizējā sesija un tiks pieprasīta atkārtota pieteikšanās. Esošās sesijas citās ierīcēs var turpināt darboties līdz vienai stundai."
   },
+  "updateWeakMasterPasswordWarning": {
+    "message": "Galvenā parole neatbilst vienam vai vairākiem apvienības nosacījumiem. Ir jāatjaunina galvenā parole, lai varētu piekļūt glabātavai. Turpinot notiks atteikšanās no pašreizējās sesijas, un būs nepieciešams pieteikties no jauna. Citās ierīcēs esošās sesijas var turpināt darboties līdz vienai stundai."
+  },
   "hours": {
     "message": "Stundas"
   },
@@ -1859,6 +1877,32 @@
       "minutes": {
         "content": "$2",
         "example": "5"
+      }
+    }
+  },
+  "vaultTimeoutPolicyWithActionInEffect": {
+    "message": "Apvienības nosacījumi ietekmē glabātavas noildzi. Lielākā atļautā glabātavas noildze ir $HOURS$ stunda(s) un $MINUTES$ minūte(s). Kā glabātavas noildzes darbība ir uzstādīta $ACTION$.",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      },
+      "action": {
+        "content": "$3",
+        "example": "Lock"
+      }
+    }
+  },
+  "vaultTimeoutActionPolicyInEffect": {
+    "message": "Apvienības nosacījumos kā glabātavas noildzes darbība ir uzstādīta $ACTION$.",
+    "placeholders": {
+      "action": {
+        "content": "$1",
+        "example": "Lock"
       }
     }
   },
@@ -2201,5 +2245,19 @@
         "example": "14"
       }
     }
+  },
+  "windowsBiometricUpdateWarning": {
+    "message": "Bitwarden iesaka atjaunināt biometrijas iestatījumus, lai pieprasītu galveno paroli (vai PIN) pirmās atslēgšanas laikā. Vai atjaunināt iestatījumus tagad?"
+  },
+  "windowsBiometricUpdateWarningTitle": {
+    "message": "Ieteicamie iestatījumu atjauninājumi"
+  },
+  "windows8SoonDeprecated": {
+    "message": "Pašreiz izmantotā operētājsistēma vairs netiks atbalstīta pēc laidiena 2023.5.0. Nepieciešams uzlabot uz atbalstītu operētājsistēmu. Izmantošanas turpināšana bez operētājsistēmas atjaunināšanas var beigties ar neparedzētu uzvedību vai drošības bīstamībām.",
+    "description": "Windows 8, 8.1 and Server 2012 R2 are no longer supported by Electron & Chromium. Show a notice on the login and lock screen while 2023.4.0 is the active version."
+  },
+  "windows8Deprecated": {
+    "message": "Pašreiz izmantotā operētājsistēma vairs netiek atbalstīta. Izmantošanas turpināšana bez operētājsistēmas atjaunināšanas var beigties ar neparedzētu uzvedību.",
+    "description": "Windows 8, 8.1 and Server 2012 R2 are no longer supported by Electron & Chromium. Show a notice on the login and lock screen after 2023.5.0 is released."
   }
 }

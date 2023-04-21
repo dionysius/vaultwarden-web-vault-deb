@@ -1392,11 +1392,17 @@
   "unlockWithWindowsHello": {
     "message": "Odomknúť pomocou Windows Hello"
   },
+  "additionalWindowsHelloSettings": {
+    "message": "Ďalšie nastavenia Windows Hello"
+  },
   "windowsHelloConsentMessage": {
     "message": "Overiť sa pre Bitwarden."
   },
   "unlockWithTouchId": {
     "message": "Odomknúť s Touch ID"
+  },
+  "additionalTouchIdSettings": {
+    "message": "Ďalšie nastavenia Touch ID"
   },
   "touchIdConsentMessage": {
     "message": "odomknúť svoj trezor"
@@ -1406,6 +1412,12 @@
   },
   "autoPromptTouchId": {
     "message": "Pri spustení požiadať o Touch ID"
+  },
+  "requirePasswordOnStart": {
+    "message": "Pri spustení aplikácie vyžadovať heslo alebo PIN"
+  },
+  "recommendedForSecurity": {
+    "message": "Odporúča sa z hľadiska bezpečnosti."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Pri reštarte zamknúť s hlavným heslom"
@@ -1526,6 +1538,9 @@
   },
   "ssoCompleteRegistration": {
     "message": "Aby ste dokončili nastavenie prihlasovacieho portálu (SSO), prosím nastavte hlavné heslo na prístup a ochranu vášho trezora."
+  },
+  "currentMasterPass": {
+    "message": "Súčasné hlavné heslo"
   },
   "newMasterPass": {
     "message": "Nové hlavné heslo"
@@ -1843,6 +1858,9 @@
   "updateMasterPasswordWarning": {
     "message": "Vaše hlavné heslo nedávno zmenil správca vo vašej organizácii. Ak chcete získať prístup k trezoru, musíte ho teraz aktualizovať. Pokračovaním sa odhlásite z aktuálnej relácie a budete sa musieť znova prihlásiť. Aktívne relácie na iných zariadeniach môžu zostať aktívne až jednu hodinu."
   },
+  "updateWeakMasterPasswordWarning": {
+    "message": "Vaše hlavné heslo nespĺňa jednu alebo viacero podmienok vašej organizácie. Ak chcete získať prístup k trezoru, musíte teraz aktualizovať svoje hlavné heslo. Pokračovaním sa odhlásite z aktuálnej relácie a budete sa musieť znova prihlásiť. Aktívne relácie na iných zariadeniach môžu zostať aktívne až jednu hodinu."
+  },
   "hours": {
     "message": "Hodiny"
   },
@@ -1859,6 +1877,32 @@
       "minutes": {
         "content": "$2",
         "example": "5"
+      }
+    }
+  },
+  "vaultTimeoutPolicyWithActionInEffect": {
+    "message": "Zásady vašej organizácie ovplyvňujú časový limit trezoru. Maximálny povolený časový limit trezoru je $HOURS$ h a $MINUTES$ m. Nastavenie akcie pri vypršaní časového limitu je $ACTION$.",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      },
+      "action": {
+        "content": "$3",
+        "example": "Lock"
+      }
+    }
+  },
+  "vaultTimeoutActionPolicyInEffect": {
+    "message": "Zásady vašej organizácie nastavili akciu pri vypršaní časového limitu trezora na $ACTION$.",
+    "placeholders": {
+      "action": {
+        "content": "$1",
+        "example": "Lock"
       }
     }
   },
@@ -2201,5 +2245,19 @@
         "example": "14"
       }
     }
+  },
+  "windowsBiometricUpdateWarning": {
+    "message": "Bitwarden odporúča aktualizovať biometrické nastavenia tak, aby sa pri prvom odomknutí vyžadovalo hlavné heslo (alebo PIN). Chcete teraz aktualizovať svoje nastavenia?"
+  },
+  "windowsBiometricUpdateWarningTitle": {
+    "message": "Odporúčaná aktualizácia nastavenia"
+  },
+  "windows8SoonDeprecated": {
+    "message": "Operačný systém ktorý používate nebude po vydaní verzie 2023.5.0 naďalej podporovaný. Aktualizujte na podporovanú verziu operačného systému. Pokiaľ budete pokračovať bez aktualizácie systému, môžu nastať bezpečnostné problémy alebo dôjsť k nečakanému správaniu aplikácie.",
+    "description": "Windows 8, 8.1 and Server 2012 R2 are no longer supported by Electron & Chromium. Show a notice on the login and lock screen while 2023.4.0 is the active version."
+  },
+  "windows8Deprecated": {
+    "message": "Operačný systém ktorý používate už nie je podporovaný. Pokiaľ budete pokračovať bez aktualizácie systému, môže dôjsť k nečakanému správaniu aplikácie.",
+    "description": "Windows 8, 8.1 and Server 2012 R2 are no longer supported by Electron & Chromium. Show a notice on the login and lock screen after 2023.5.0 is released."
   }
 }

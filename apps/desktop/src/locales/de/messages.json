@@ -1392,11 +1392,17 @@
   "unlockWithWindowsHello": {
     "message": "Mit Windows Hello entsperren"
   },
+  "additionalWindowsHelloSettings": {
+    "message": "Zusätzliche Einstellungen für Windows Hello"
+  },
   "windowsHelloConsentMessage": {
     "message": "Für Bitwarden verifizieren."
   },
   "unlockWithTouchId": {
     "message": "Mit Touch ID entsperren"
+  },
+  "additionalTouchIdSettings": {
+    "message": "Zusätzliche Einstellungen für Touch ID"
   },
   "touchIdConsentMessage": {
     "message": "Deinen Tresor entsperren"
@@ -1406,6 +1412,12 @@
   },
   "autoPromptTouchId": {
     "message": "Beim Start nach Touch ID fragen"
+  },
+  "requirePasswordOnStart": {
+    "message": "Passwort oder PIN beim Start der App verlangen"
+  },
+  "recommendedForSecurity": {
+    "message": "Aus Sicherheitsgründen empfohlen."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Beim Neustart mit Master-Passwort sperren"
@@ -1526,6 +1538,9 @@
   },
   "ssoCompleteRegistration": {
     "message": "Bitte lege ein Masterpasswort für den Schutz deines Tresors fest, um die Anmeldung über SSO abzuschließen."
+  },
+  "currentMasterPass": {
+    "message": "Aktuelles Master-Passwort"
   },
   "newMasterPass": {
     "message": "Neues Master-Passwort"
@@ -1843,6 +1858,9 @@
   "updateMasterPasswordWarning": {
     "message": "Dein Master-Passwort wurde kürzlich von einem Administrator deiner Organisation geändert. Um auf den Tresor zuzugreifen, musst du es jetzt aktualisieren. Wenn du fortfährst, wirst du aus der aktuellen Sitzung abgemeldet und eine erneute Anmeldung ist erforderlich. Aktive Sitzungen auf anderen Geräten können bis zu einer Stunde weiterhin aktiv bleiben."
   },
+  "updateWeakMasterPasswordWarning": {
+    "message": "Dein Master-Passwort entspricht nicht einer oder mehreren Richtlinien deiner Organisation. Um auf den Tresor zugreifen zu können, musst du dein Master-Passwort jetzt aktualisieren. Wenn du fortfährst, wirst du von deiner aktuellen Sitzung abgemeldet und musst dich erneut anmelden. Aktive Sitzungen auf anderen Geräten können noch bis zu einer Stunde lang aktiv bleiben."
+  },
   "hours": {
     "message": "Stunden"
   },
@@ -1850,7 +1868,7 @@
     "message": "Minuten"
   },
   "vaultTimeoutPolicyInEffect": {
-    "message": "Die Unternehmensrichtlinien beeinflussen deinen Tresor-Timeout. Das maximal zulässige Tresor-Timeout ist $HOURS$ Stunde(n) und $MINUTES$ Minute(n)",
+    "message": "Deine Unternehmensrichtlinien haben das maximal zulässige Tresor-Timeout auf $HOURS$ Stunde(n) und $MINUTES$ Minute(n) festgelegt.",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -1859,6 +1877,32 @@
       "minutes": {
         "content": "$2",
         "example": "5"
+      }
+    }
+  },
+  "vaultTimeoutPolicyWithActionInEffect": {
+    "message": "Deine Organisationsrichtlinien beeinflussen dein Tresor-Timeout. Das maximal zulässige Tresor-Timeout beträgt $HOURS$ Stunde(n) und $MINUTES$ Minute(n). Deine Tresor-Timeout-Aktion ist auf $ACTION$ gesetzt.",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      },
+      "action": {
+        "content": "$3",
+        "example": "Lock"
+      }
+    }
+  },
+  "vaultTimeoutActionPolicyInEffect": {
+    "message": "Deine Organisationsrichtlinien haben deine Tresor-Timeout-Aktion auf $ACTION$ gesetzt.",
+    "placeholders": {
+      "action": {
+        "content": "$1",
+        "example": "Lock"
       }
     }
   },
@@ -2201,5 +2245,19 @@
         "example": "14"
       }
     }
+  },
+  "windowsBiometricUpdateWarning": {
+    "message": "Bitwarden empfiehlt, die Biometrie-Einstellungen zu aktualisieren, um beim ersten Entsperren dein Master-Passwort (oder deine PIN) zu verlangen. Möchtest du deine Einstellungen jetzt aktualisieren?"
+  },
+  "windowsBiometricUpdateWarningTitle": {
+    "message": "Empfohlene Aktualisierung der Einstellungen"
+  },
+  "windows8SoonDeprecated": {
+    "message": "Das von dir verwendete Betriebssystem wird nach dem Release 2023.5.0 nicht mehr unterstützt. Aktualisiere auf ein unterstütztes Betriebssystem. Ohne Aktualisierung deines Betriebssystems fortzufahren, kann zu unerwartetem Verhalten oder Sicherheitsrisiken führen.",
+    "description": "Windows 8, 8.1 and Server 2012 R2 are no longer supported by Electron & Chromium. Show a notice on the login and lock screen while 2023.4.0 is the active version."
+  },
+  "windows8Deprecated": {
+    "message": "Das von dir verwendete Betriebssystem wird nicht mehr unterstützt. Ohne Aktualisierung deines Betriebssystems fortzufahren, kann zu unerwartetem Verhalten führen.",
+    "description": "Windows 8, 8.1 and Server 2012 R2 are no longer supported by Electron & Chromium. Show a notice on the login and lock screen after 2023.5.0 is released."
   }
 }

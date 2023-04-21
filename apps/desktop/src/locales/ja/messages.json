@@ -1392,11 +1392,17 @@
   "unlockWithWindowsHello": {
     "message": "Windows Hello でロック解除"
   },
+  "additionalWindowsHelloSettings": {
+    "message": "追加の Windows Hello 設定"
+  },
   "windowsHelloConsentMessage": {
     "message": "Bitwarden の認証を行います。"
   },
   "unlockWithTouchId": {
     "message": "Touch ID でロック解除"
+  },
+  "additionalTouchIdSettings": {
+    "message": "追加の Touch ID 設定"
   },
   "touchIdConsentMessage": {
     "message": "Bitwarden の認証を行います。"
@@ -1406,6 +1412,12 @@
   },
   "autoPromptTouchId": {
     "message": "起動時に Touch ID を要求する"
+  },
+  "requirePasswordOnStart": {
+    "message": "アプリ起動時にパスワードまたは PIN を要求"
+  },
+  "recommendedForSecurity": {
+    "message": "セキュリティ向上のためおすすめします。"
   },
   "lockWithMasterPassOnRestart": {
     "message": "再起動時にマスターパスワードでロック"
@@ -1526,6 +1538,9 @@
   },
   "ssoCompleteRegistration": {
     "message": "SSO ログインを完了するには、保管庫にアクセス・保護するためのマスターパスワードを設定してください。"
+  },
+  "currentMasterPass": {
+    "message": "現在のマスターパスワード"
   },
   "newMasterPass": {
     "message": "新しいマスターパスワード"
@@ -1843,6 +1858,9 @@
   "updateMasterPasswordWarning": {
     "message": "マスターパスワードは最近組織の管理者によって変更されました。保管庫にアクセスするには、今すぐ更新する必要があります。 続行すると現在のセッションからログアウトし、再度ログインする必要があります。 他のデバイスでのアクティブなセッションは、最大1時間アクティブになり続けることがあります。"
   },
+  "updateWeakMasterPasswordWarning": {
+    "message": "マスターパスワードが組織のポリシーに適合していません。保管庫にアクセスするには、今すぐマスターパスワードを更新しなければなりません。続行すると現在のセッションからログアウトし、再度ログインする必要があります。 他のデバイス上のアクティブなセッションは、最大1時間アクティブであり続けることがあります。"
+  },
   "hours": {
     "message": "時間"
   },
@@ -1859,6 +1877,32 @@
       "minutes": {
         "content": "$2",
         "example": "5"
+      }
+    }
+  },
+  "vaultTimeoutPolicyWithActionInEffect": {
+    "message": "組織のポリシーがデータ保管庫のタイムアウトに影響しています。保管庫のタイムアウトの最大許容値は、$HOURS$時間$MINUTES$分です。保管庫タイムアウト時のアクションは、$ACTION$に設定されています。",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      },
+      "action": {
+        "content": "$3",
+        "example": "Lock"
+      }
+    }
+  },
+  "vaultTimeoutActionPolicyInEffect": {
+    "message": "組織のポリシーで、保管庫のタイムアウトアクションが$ACTION$に設定されています。",
+    "placeholders": {
+      "action": {
+        "content": "$1",
+        "example": "Lock"
       }
     }
   },
@@ -2201,5 +2245,19 @@
         "example": "14"
       }
     }
+  },
+  "windowsBiometricUpdateWarning": {
+    "message": "Bitwarden は最初のロック解除時にマスターパスワード（または PIN）を要求するよう生体認証設定を更新することをおすすめします。今すぐ設定を更新しますか？"
+  },
+  "windowsBiometricUpdateWarningTitle": {
+    "message": "設定の更新を推奨"
+  },
+  "windows8SoonDeprecated": {
+    "message": "現在使用されている OS は、2023.5.0 のリリース後はサポートされなくなります。サポートされている OS にアップグレードしてください。 OS を更新せずに続けると、予期せぬ動作やセキュリティ上のリスクが生じる可能性があります。",
+    "description": "Windows 8, 8.1 and Server 2012 R2 are no longer supported by Electron & Chromium. Show a notice on the login and lock screen while 2023.4.0 is the active version."
+  },
+  "windows8Deprecated": {
+    "message": "現在使用されている OS はサポートされなくなりました。OS を更新せずに続行すると、予期しない動作が発生する可能性があります。",
+    "description": "Windows 8, 8.1 and Server 2012 R2 are no longer supported by Electron & Chromium. Show a notice on the login and lock screen after 2023.5.0 is released."
   }
 }

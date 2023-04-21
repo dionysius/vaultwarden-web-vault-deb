@@ -1392,11 +1392,17 @@
   "unlockWithWindowsHello": {
     "message": "Desbloqueja amb Windows Hello"
   },
+  "additionalWindowsHelloSettings": {
+    "message": "Configuració addicional de Windows Hello"
+  },
   "windowsHelloConsentMessage": {
     "message": "Verifica per Bitwarden."
   },
   "unlockWithTouchId": {
     "message": "Desbloqueja amb Touch ID"
+  },
+  "additionalTouchIdSettings": {
+    "message": "Configuració addicional de Touch ID"
   },
   "touchIdConsentMessage": {
     "message": "desbloqueja la teva caixa forta"
@@ -1406,6 +1412,12 @@
   },
   "autoPromptTouchId": {
     "message": "Sol·liciteu Touch ID en iniciar"
+  },
+  "requirePasswordOnStart": {
+    "message": "Requereix contrasenya o PIN a l'inici de l'aplicació"
+  },
+  "recommendedForSecurity": {
+    "message": "Recomanat per seguretat."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Bloqueja amb la contrasenya mestra en reiniciar"
@@ -1526,6 +1538,9 @@
   },
   "ssoCompleteRegistration": {
     "message": "Per completar la sessió amb SSO, configureu una contrasenya mestra per accedir i protegir la vostra caixa forta."
+  },
+  "currentMasterPass": {
+    "message": "Contrasenya mestra actual"
   },
   "newMasterPass": {
     "message": "Contrasenya mestra nova"
@@ -1843,6 +1858,9 @@
   "updateMasterPasswordWarning": {
     "message": "Un administrador de l'organització ha canviat recentment la contrasenya principal. Per accedir a la caixa forta, heu d'actualitzar-la ara. Si continueu, es tancarà la sessió actual i heu de tornar a iniciar-la. És possible que les sessions obertes en altres dispositius continuen actives fins a una hora."
   },
+  "updateWeakMasterPasswordWarning": {
+    "message": "La vostra contrasenya mestra no compleix una o més de les polítiques de l'organització. Per accedir a la caixa forta, heu d'actualitzar-la ara. Si continueu, es tancarà la sessió actual i us demanarà que torneu a iniciar-la. Les sessions en altres dispositius poden continuar romanent actives fins a una hora."
+  },
   "hours": {
     "message": "Hores"
   },
@@ -1859,6 +1877,32 @@
       "minutes": {
         "content": "$2",
         "example": "5"
+      }
+    }
+  },
+  "vaultTimeoutPolicyWithActionInEffect": {
+    "message": "Les polítiques de l'organització afecten el temps d'espera de la caixa forta. El temps d'espera màxim permès de la caixa forta és de $HOURS$ hores i $MINUTES$ minuts. L'acció de temps d'espera de la caixa forta està definida en $ACTION$.",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      },
+      "action": {
+        "content": "$3",
+        "example": "Lock"
+      }
+    }
+  },
+  "vaultTimeoutActionPolicyInEffect": {
+    "message": "Les polítiques de l'organització han establert l'acció de temps d'espera de la caixa forta a $ACTION$.",
+    "placeholders": {
+      "action": {
+        "content": "$1",
+        "example": "Lock"
       }
     }
   },
@@ -2201,5 +2245,19 @@
         "example": "14"
       }
     }
+  },
+  "windowsBiometricUpdateWarning": {
+    "message": "Bitwarden recomana actualitzar la configuració biomètrica per requerir la vostra contrasenya mestra (o PIN) al primer desbloqueig. Voleu actualitzar ara la vostra configuració?"
+  },
+  "windowsBiometricUpdateWarningTitle": {
+    "message": "Actualització de configuració recomanada"
+  },
+  "windows8SoonDeprecated": {
+    "message": "El sistema operatiu que feu servir ja no serà compatible després de la versió 2023.5.0. Actualitzeu a un sistema operatiu compatible. Continuar sense actualitzar el sistema operatiu pot provocar un comportament inesperat o riscs de seguretat.",
+    "description": "Windows 8, 8.1 and Server 2012 R2 are no longer supported by Electron & Chromium. Show a notice on the login and lock screen while 2023.4.0 is the active version."
+  },
+  "windows8Deprecated": {
+    "message": "El sistema operatiu que utilitzeu ja no és compatible. Continuar sense actualitzar el sistema operatiu pot provocar un comportament inesperat.",
+    "description": "Windows 8, 8.1 and Server 2012 R2 are no longer supported by Electron & Chromium. Show a notice on the login and lock screen after 2023.5.0 is released."
   }
 }

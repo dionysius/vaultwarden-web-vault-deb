@@ -1392,20 +1392,32 @@
   "unlockWithWindowsHello": {
     "message": "Разблокировать с Windows Hello"
   },
+  "additionalWindowsHelloSettings": {
+    "message": "Дополнительные настройки Windows Hello"
+  },
   "windowsHelloConsentMessage": {
     "message": "Верификация для Bitwarden."
   },
   "unlockWithTouchId": {
     "message": "Разблокировать с Touch ID"
   },
+  "additionalTouchIdSettings": {
+    "message": "Дополнительные настройки Touch ID"
+  },
   "touchIdConsentMessage": {
     "message": "разблокировать ваше хранилище"
   },
   "autoPromptWindowsHello": {
-    "message": "Запрашивать Windows Hello при запуске"
+    "message": "Запрашивать Windows Hello при запуске приложения"
   },
   "autoPromptTouchId": {
-    "message": "Запрашивать Touch ID при запуске"
+    "message": "Запрашивать Touch ID при запуске приложения"
+  },
+  "requirePasswordOnStart": {
+    "message": "Требовать пароль или PIN-код при запуске приложения"
+  },
+  "recommendedForSecurity": {
+    "message": "Рекомендуется для обеспечения безопасности."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Блокировать мастер-паролем при перезапуске"
@@ -1526,6 +1538,9 @@
   },
   "ssoCompleteRegistration": {
     "message": "Для завершения процесса авторизации при помощи SSO, установите мастер-пароль для доступа к вашему хранилищу и его защиты."
+  },
+  "currentMasterPass": {
+    "message": "Текущий мастер-пароль"
   },
   "newMasterPass": {
     "message": "Новый мастер-пароль"
@@ -1843,6 +1858,9 @@
   "updateMasterPasswordWarning": {
     "message": "Мастер-пароль недавно был изменен администратором вашей организации. Чтобы получить доступ к хранилищу, вы должны обновить его сейчас. В результате текущий сеанс будет завершен, потребуется повторный вход. Сеансы на других устройствах могут оставаться активными в течение одного часа."
   },
+  "updateWeakMasterPasswordWarning": {
+    "message": "Ваш мастер-пароль не соответствует требованиям политики вашей организации. Для доступа к хранилищу вы должны обновить свой мастер-пароль прямо сейчас. При этом текущая сессия будет завершена и потребуется повторная авторизация. Сессии на других устройствах могут оставаться активными в течение часа."
+  },
   "hours": {
     "message": "Час."
   },
@@ -1850,7 +1868,7 @@
     "message": "Мин."
   },
   "vaultTimeoutPolicyInEffect": {
-    "message": "Политики вашей организации влияют на тайм-аут хранилища. Максимально допустимый тайм-аут хранилища составляет $HOURS$ час. и $MINUTES$ мин.",
+    "message": "В соответствии с политиками вашей организации максимально допустимый тайм-аут хранилища составляет $HOURS$ час. и $MINUTES$ мин.",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -1859,6 +1877,32 @@
       "minutes": {
         "content": "$2",
         "example": "5"
+      }
+    }
+  },
+  "vaultTimeoutPolicyWithActionInEffect": {
+    "message": "Политики вашей организации влияют на тайм-аут хранилища. Максимально допустимый тайм-аут хранилища составляет $HOURS$ час. и $MINUTES$ мин. Для вашего хранилища задан тайм-аут $ACTION$.",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      },
+      "action": {
+        "content": "$3",
+        "example": "Lock"
+      }
+    }
+  },
+  "vaultTimeoutActionPolicyInEffect": {
+    "message": "Политики вашей организации установили тайм-аут хранилища на $ACTION$.",
+    "placeholders": {
+      "action": {
+        "content": "$1",
+        "example": "Lock"
       }
     }
   },
@@ -2201,5 +2245,19 @@
         "example": "14"
       }
     }
+  },
+  "windowsBiometricUpdateWarning": {
+    "message": "Bitwarden рекомендует обновить настройки биометрии, чтобы при первой разблокировке требовался мастер-пароль (или PIN-код). Хотите обновить настройки прямо сейчас?"
+  },
+  "windowsBiometricUpdateWarningTitle": {
+    "message": "Рекомендуемое обновление настроек"
+  },
+  "windows8SoonDeprecated": {
+    "message": "Используемая вами операционная система перестанет поддерживаться после выхода версии 2023.5.0. Перейдите на поддерживаемую операционную систему. Дальнейшее использование не обновленной операционной системы может привести к непредсказуемому поведению или угрозе безопасности.",
+    "description": "Windows 8, 8.1 and Server 2012 R2 are no longer supported by Electron & Chromium. Show a notice on the login and lock screen while 2023.4.0 is the active version."
+  },
+  "windows8Deprecated": {
+    "message": "Используемая вами операционная система больше не поддерживается. Дальнейшее использование не обновленной операционной системы может привести к непредсказуемому поведению.",
+    "description": "Windows 8, 8.1 and Server 2012 R2 are no longer supported by Electron & Chromium. Show a notice on the login and lock screen after 2023.5.0 is released."
   }
 }

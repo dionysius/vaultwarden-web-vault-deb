@@ -257,7 +257,7 @@
     "message": "Ander"
   },
   "generatePassword": {
-    "message": "Genereer Wagwoord"
+    "message": "Wek 'n Wagwoord op"
   },
   "type": {
     "message": "Tipe"
@@ -389,7 +389,7 @@
     "message": "Wysig Vouer"
   },
   "regeneratePassword": {
-    "message": "Hergenereer Wagwoord"
+    "message": "Wek 'n wagwoord weer op"
   },
   "copyPassword": {
     "message": "Kopieer Wagwoord"
@@ -639,7 +639,7 @@
     "message": "Waarmerktoep"
   },
   "authenticatorAppDesc": {
-    "message": "Gebruik ’n waarmerktoep (soos Authy of Google Authenticator) om tydgebaseerde bevestigingskodes te genereer.",
+    "message": "Gebruik ’n waarmerktoep (soos Authy of Google Authenticator) om tydgebaseerde bevestigingskodes optewek.",
     "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
   },
   "yubiKeyTitle": {
@@ -765,13 +765,13 @@
     "message": "Vergrendel kluis"
   },
   "passwordGenerator": {
-    "message": "Wagwoordgenereerder"
+    "message": "Wagwoordopwekker"
   },
   "contactUs": {
     "message": "Kontak ons"
   },
   "helpAndFeedback": {
-    "message": "Help and feedback"
+    "message": "Hulp en terugvoer"
   },
   "getHelp": {
     "message": "Kry hulp"
@@ -1084,7 +1084,7 @@
     "message": "Wagwoordhigiëne, rekeningwelstand en databreukverslae om u kluis veilig te hou."
   },
   "premiumSignUpTotp": {
-    "message": "TOTP-bevestigingskodegenereerder (2FA) vir aantekenings in u kluis."
+    "message": "TOTP-bevestigingskode-opwekker (2FA) vir aantekenings in u kluis."
   },
   "premiumSignUpSupport": {
     "message": "Klantediens met hoë prioriteit."
@@ -1392,11 +1392,17 @@
   "unlockWithWindowsHello": {
     "message": "Ontgrendel met Windows Hello"
   },
+  "additionalWindowsHelloSettings": {
+    "message": "Additional Windows Hello settings"
+  },
   "windowsHelloConsentMessage": {
     "message": "Bevestig vir Bitwarden."
   },
   "unlockWithTouchId": {
     "message": "Ontgrendel met Touch ID"
+  },
+  "additionalTouchIdSettings": {
+    "message": "Additional Touch ID settings"
   },
   "touchIdConsentMessage": {
     "message": "ontgrendel u kluis"
@@ -1406,6 +1412,12 @@
   },
   "autoPromptTouchId": {
     "message": "Vra vir Touch ID by lansering"
+  },
+  "requirePasswordOnStart": {
+    "message": "Require password or PIN on app start"
+  },
+  "recommendedForSecurity": {
+    "message": "Recommended for security."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Vergrendel by herbegin met hoofwagwoord"
@@ -1469,7 +1481,7 @@
     "message": "Kloon"
   },
   "passwordGeneratorPolicyInEffect": {
-    "message": "Een of meer organisasiebeleide beïnvloed u genereerderinstellings."
+    "message": "Een of meer organisasiebeleide beïnvloed u opwekkerinstellings."
   },
   "vaultTimeoutAction": {
     "message": "Kluis-uittelaksie"
@@ -1526,6 +1538,9 @@
   },
   "ssoCompleteRegistration": {
     "message": "Om aantekening met SSO te voltooi moet u ’n hoofwagwoord instel vir toegang tot en beskerming van u kluis."
+  },
+  "currentMasterPass": {
+    "message": "Current master password"
   },
   "newMasterPass": {
     "message": "Nuwe hoofwagwoord"
@@ -1843,6 +1858,9 @@
   "updateMasterPasswordWarning": {
     "message": "U hoofwagwoord is onlangs deur ’n administrateur in u organisasie verander. Om toegang tot u kluis te verkry moet u dit nóú bywerk. Deur voort te gaan word u uit u huidige sessie geteken, waarna u weer sal moet aanteken. Aktiewe sessies op ander toestelle kan vir tot ’n uur steeds aktief bly."
   },
+  "updateWeakMasterPasswordWarning": {
+    "message": "Your master password does not meet one or more of your organization policies. In order to access the vault, you must update your master password now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
+  },
   "hours": {
     "message": "Uur"
   },
@@ -1859,6 +1877,32 @@
       "minutes": {
         "content": "$2",
         "example": "5"
+      }
+    }
+  },
+  "vaultTimeoutPolicyWithActionInEffect": {
+    "message": "Jou organisasie se beleid affekteer jou kluis-uittel tyd. Die maksimum toelaatbare kluis-uittel tyd is $HOURS$ uur(ure) en $MINUTES$ minuut(minute). Jou kluis-uittelaksie is gestel na $ACTION$.",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      },
+      "action": {
+        "content": "$3",
+        "example": "Lock"
+      }
+    }
+  },
+  "vaultTimeoutActionPolicyInEffect": {
+    "message": "Jou organisasie se beleid het jou kluis-uittel aksie na $ACTION$ gestel.",
+    "placeholders": {
+      "action": {
+        "content": "$1",
+        "example": "Lock"
       }
     }
   },
@@ -1959,19 +2003,19 @@
     "message": "Ontgrendel"
   },
   "generator": {
-    "message": "Genereerder"
+    "message": "Opwekker"
   },
   "whatWouldYouLikeToGenerate": {
-    "message": "Wat wil u genereer?"
+    "message": "Wat wil u opwek?"
   },
   "passwordType": {
     "message": "Wagwoordtipe"
   },
   "regenerateUsername": {
-    "message": "Hergenereer gebruikersnaam"
+    "message": "Wek 'n gebruikersnaam weer op"
   },
   "generateUsername": {
-    "message": "Genereer gebruikersnaam"
+    "message": "Wek 'n gebruikersnaam op"
   },
   "usernameType": {
     "message": "Gebruikersnaamtipe"
@@ -2014,7 +2058,7 @@
     "message": "E-posalias vir aanstuur"
   },
   "forwardedEmailDesc": {
-    "message": "Genereer ’n e-posalias met ’n eksterne aanstuurdiens."
+    "message": "Wek ’n e-posalias op met ’n eksterne aanstuurdiens."
   },
   "hostname": {
     "message": "Gasheernaam",
@@ -2201,5 +2245,19 @@
         "example": "14"
       }
     }
+  },
+  "windowsBiometricUpdateWarning": {
+    "message": "Bitwarden recommends updating your biometric settings to require your master password (or PIN) on the first unlock. Would you like to update your settings now?"
+  },
+  "windowsBiometricUpdateWarningTitle": {
+    "message": "Recommended Settings Update"
+  },
+  "windows8SoonDeprecated": {
+    "message": "The operating system you are using will no longer be supported after the 2023.5.0 release. Upgrade to a supported operating system. Continuing without updating your operating system may result in unexpected behavior or security risks.",
+    "description": "Windows 8, 8.1 and Server 2012 R2 are no longer supported by Electron & Chromium. Show a notice on the login and lock screen while 2023.4.0 is the active version."
+  },
+  "windows8Deprecated": {
+    "message": "The operating system you are using is no longer supported. Continuing without updating your operating system may result in unexpected behavior.",
+    "description": "Windows 8, 8.1 and Server 2012 R2 are no longer supported by Electron & Chromium. Show a notice on the login and lock screen after 2023.5.0 is released."
   }
 }

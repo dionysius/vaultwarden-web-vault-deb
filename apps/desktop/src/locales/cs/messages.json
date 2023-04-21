@@ -1392,11 +1392,17 @@
   "unlockWithWindowsHello": {
     "message": "Odemknout pomocí Windows Hello"
   },
+  "additionalWindowsHelloSettings": {
+    "message": "Další nastavení Windows Hello"
+  },
   "windowsHelloConsentMessage": {
     "message": "Ověřte se pro Bitwarden."
   },
   "unlockWithTouchId": {
     "message": "Odemknout pomocí Touch ID"
+  },
+  "additionalTouchIdSettings": {
+    "message": "Další nastavení Touch ID"
   },
   "touchIdConsentMessage": {
     "message": "odemknout váš trezor"
@@ -1406,6 +1412,12 @@
   },
   "autoPromptTouchId": {
     "message": "Při spuštění požádat o Touch ID"
+  },
+  "requirePasswordOnStart": {
+    "message": "Vyžadovat heslo nebo PIN při spuštění aplikace"
+  },
+  "recommendedForSecurity": {
+    "message": "Doporučeno pro bezpečnost."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Zamknout trezor při restartu pomocí hlavního hesla"
@@ -1526,6 +1538,9 @@
   },
   "ssoCompleteRegistration": {
     "message": "Chcete-li dokončit přihlášení pomocí SSO, nastavte prosím hlavní heslo pro přístup a ochranu vašeho trezoru."
+  },
+  "currentMasterPass": {
+    "message": "Aktuální hlavní heslo"
   },
   "newMasterPass": {
     "message": "Nové hlavní heslo"
@@ -1843,6 +1858,9 @@
   "updateMasterPasswordWarning": {
     "message": "Hlavní heslo bylo nedávno změněno administrátorem ve vaší organizaci. Pro přístup k trezoru jej musíte nyní aktualizovat. Pokračování vás odhlásí z vaší aktuální relace a bude nutné se přihlásit. Aktivní relace na jiných zařízeních mohou zůstat aktivní až po dobu jedné hodiny."
   },
+  "updateWeakMasterPasswordWarning": {
+    "message": "Vaše hlavní heslo nesplňuje jednu nebo více zásad Vaší organizace. Pro přístup k trezoru musíte nyní aktualizovat své hlavní heslo. Pokračování Vás odhlásí z Vaší aktuální relace a bude nutné se přihlásit. Aktivní relace na jiných zařízeních mohou zůstat aktivní až po dobu jedné hodiny."
+  },
   "hours": {
     "message": "Hodin"
   },
@@ -1859,6 +1877,32 @@
       "minutes": {
         "content": "$2",
         "example": "5"
+      }
+    }
+  },
+  "vaultTimeoutPolicyWithActionInEffect": {
+    "message": "Pravidla vaší organizace mají vliv na časový limit trezoru. Maximální povolený časový limit trezoru je $HOURS$ hodin a $MINUTES$ minut. Akce po časovém limitu trezoru je nastavena na $ACTION$.",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      },
+      "action": {
+        "content": "$3",
+        "example": "Lock"
+      }
+    }
+  },
+  "vaultTimeoutActionPolicyInEffect": {
+    "message": "Zásady Vaší organizace nastavily akce po časovém limitu trezoru na $ACTION$.",
+    "placeholders": {
+      "action": {
+        "content": "$1",
+        "example": "Lock"
       }
     }
   },
@@ -2201,5 +2245,19 @@
         "example": "14"
       }
     }
+  },
+  "windowsBiometricUpdateWarning": {
+    "message": "Bitwarden doporučuje aktualizovat Vaše biometrické nastavení tak, aby bylo při prvním odemknutí vyžadováno hlavní heslo (nebo PIN). Chcete aktualizovat nastavení nyní?"
+  },
+  "windowsBiometricUpdateWarningTitle": {
+    "message": "Aktualizace doporučených nastavení"
+  },
+  "windows8SoonDeprecated": {
+    "message": "Operační systém, který používáte, již nebude po vydání verze 2023.5.0 podporován. Aktualizujte na podporovaný operační systém. Pokračování bez aktualizace operačního systému může mít za následek neočekávané chování nebo bezpečnostní rizika.",
+    "description": "Windows 8, 8.1 and Server 2012 R2 are no longer supported by Electron & Chromium. Show a notice on the login and lock screen while 2023.4.0 is the active version."
+  },
+  "windows8Deprecated": {
+    "message": "Operační systém, který používáte, již není podporován. Pokračování bez aktualizace operačního systému může vést k neočekávanému chování.",
+    "description": "Windows 8, 8.1 and Server 2012 R2 are no longer supported by Electron & Chromium. Show a notice on the login and lock screen after 2023.5.0 is released."
   }
 }

@@ -1392,11 +1392,17 @@
   "unlockWithWindowsHello": {
     "message": "Отключване с Windows Hello"
   },
+  "additionalWindowsHelloSettings": {
+    "message": "Допълнителни настройки на Windows Hello"
+  },
   "windowsHelloConsentMessage": {
     "message": "Потвърждаване за Битуорден."
   },
   "unlockWithTouchId": {
     "message": "Отключване с Touch ID"
+  },
+  "additionalTouchIdSettings": {
+    "message": "Допълнителни настройки на Touch ID"
   },
   "touchIdConsentMessage": {
     "message": "отключете трезора си"
@@ -1406,6 +1412,12 @@
   },
   "autoPromptTouchId": {
     "message": "Питане за Touch ID при пускане"
+  },
+  "requirePasswordOnStart": {
+    "message": "Изискване на парола или ПИН при стартиране на приложението"
+  },
+  "recommendedForSecurity": {
+    "message": "Препоръчително от гледна точка на сигурността."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Заключване с главната парола при повторно пускане"
@@ -1526,6 +1538,9 @@
   },
   "ssoCompleteRegistration": {
     "message": "За да завършите настройките за еднократна идентификация, трябва да зададете главна парола за трезора."
+  },
+  "currentMasterPass": {
+    "message": "Текуща главна парола"
   },
   "newMasterPass": {
     "message": "Нова главна парола"
@@ -1843,6 +1858,9 @@
   "updateMasterPasswordWarning": {
     "message": "Вашата главна парола наскоро е била сменена от администратор в организацията Ви. За да получите достъп до трезора, трябва първо да я промените. Това означава, че ще бъдете отписан(а) от текущата си сесия и ще трябва да се впишете отново. Активните сесии на други устройства може да продължат да бъдат активни още един час."
   },
+  "updateWeakMasterPasswordWarning": {
+    "message": "Вашата главна парола не отговаря на една или повече политики на организацията Ви. За да получите достъп до трезора, трябва да промените главната си парола сега. Това означава, че ще бъдете отписан(а) от текущата си сесия и ще трябва да се впишете отново. Активните сесии на други устройства може да продължат да бъдат активни още един час."
+  },
   "hours": {
     "message": "Часа"
   },
@@ -1859,6 +1877,32 @@
       "minutes": {
         "content": "$2",
         "example": "5"
+      }
+    }
+  },
+  "vaultTimeoutPolicyWithActionInEffect": {
+    "message": "Настройките на организацията Ви влияят върху времето за достъп до трезора Ви. Максималното разрешено време за достъп е $HOURS$ час(а) и $MINUTES$ минута/и. Зададеното действие при изтичане на това време е $ACTION$.",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      },
+      "action": {
+        "content": "$3",
+        "example": "Lock"
+      }
+    }
+  },
+  "vaultTimeoutActionPolicyInEffect": {
+    "message": "Настройките на организацията Ви задават следното действие при изтичане на времето за достъп до трезора: $ACTION$.",
+    "placeholders": {
+      "action": {
+        "content": "$1",
+        "example": "Lock"
       }
     }
   },
@@ -2201,5 +2245,19 @@
         "example": "14"
       }
     }
+  },
+  "windowsBiometricUpdateWarning": {
+    "message": "Битуорден препоръчва да промените настройките си за биометрични данни, така че главната парола (или ПИН) да се изисква при първото отключване. Искате ли да промените настройките сега?"
+  },
+  "windowsBiometricUpdateWarningTitle": {
+    "message": "Препоръчителна промяна на настройките"
+  },
+  "windows8SoonDeprecated": {
+    "message": "Използваната от Вас операционна система вече няма да се поддържа след версия 2023.5.0. Най-добре е да надградите до поддържана такава. Ако продължите със сегашната си операционна система, е възможно да имате проблеми с приложението или със защитата на данните си.",
+    "description": "Windows 8, 8.1 and Server 2012 R2 are no longer supported by Electron & Chromium. Show a notice on the login and lock screen while 2023.4.0 is the active version."
+  },
+  "windows8Deprecated": {
+    "message": "Използваната от Вас операционна система вече не се поддържа. Ако продължите, е възможно да имате проблеми с приложението или със защитата на данните си.",
+    "description": "Windows 8, 8.1 and Server 2012 R2 are no longer supported by Electron & Chromium. Show a notice on the login and lock screen after 2023.5.0 is released."
   }
 }

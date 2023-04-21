@@ -1392,11 +1392,17 @@
   "unlockWithWindowsHello": {
     "message": "Odblokuj za pomocą Windows Hello"
   },
+  "additionalWindowsHelloSettings": {
+    "message": "Dodatkowe ustawienia Windows Hello"
+  },
   "windowsHelloConsentMessage": {
     "message": "Zweryfikuj dla Bitwarden."
   },
   "unlockWithTouchId": {
     "message": "Odblokuj za pomocą Touch ID"
+  },
+  "additionalTouchIdSettings": {
+    "message": "Dodatkowe ustawienia Touch ID"
   },
   "touchIdConsentMessage": {
     "message": "odblokuj sejf"
@@ -1406,6 +1412,12 @@
   },
   "autoPromptTouchId": {
     "message": "Poproś o Touch ID przy uruchomieniu"
+  },
+  "requirePasswordOnStart": {
+    "message": "Wymagaj hasła lub PIN przy starcie aplikacji"
+  },
+  "recommendedForSecurity": {
+    "message": "Zalecane dla bezpieczeństwa."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Zablokuj hasłem głównym po uruchomieniu ponownym"
@@ -1526,6 +1538,9 @@
   },
   "ssoCompleteRegistration": {
     "message": "W celu zakończenia jednokrotnego logowania SSO, ustaw hasło główne, aby uzyskać dostęp do sejfu."
+  },
+  "currentMasterPass": {
+    "message": "Aktualne hasło główne"
   },
   "newMasterPass": {
     "message": "Nowe hasło główne"
@@ -1843,6 +1858,9 @@
   "updateMasterPasswordWarning": {
     "message": "Hasło główne zostało zmienione przez administratora Twojej organizacji. Musisz je zaktualizować, aby uzyskać dostęp do sejfu. Ta czynność spowoduje wylogowanie z bieżącej sesji, przez co konieczne będzie ponowne zalogowanie się. Aktywne sesje na innych urządzeniach mogą pozostać aktywne przez maksymalnie godzinę."
   },
+  "updateWeakMasterPasswordWarning": {
+    "message": "Twoje hasło główne nie spełnia jednej lub kilku zasad organizacji. Aby uzyskać dostęp do sejfu, musisz teraz zaktualizować swoje hasło główne. Kontynuacja wyloguje Cię z bieżącej sesji, wymagając zalogowania się ponownie. Aktywne sesje na innych urządzeniach mogą pozostać aktywne przez maksymalnie jedną godzinę."
+  },
   "hours": {
     "message": "Godziny"
   },
@@ -1850,7 +1868,7 @@
     "message": "Minuty"
   },
   "vaultTimeoutPolicyInEffect": {
-    "message": "Zasady organizacji mają wpływ czas blokowania sejfu. Maksymalny dozwolony czas wynosi $HOURS$ godz. i $MINUTES$ min.",
+    "message": "Zasady organizacji mają wpływ na czas blokowania sejfu. Maksymalny dozwolony czas wynosi $HOURS$ godz. i $MINUTES$ min.",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -1859,6 +1877,32 @@
       "minutes": {
         "content": "$2",
         "example": "5"
+      }
+    }
+  },
+  "vaultTimeoutPolicyWithActionInEffect": {
+    "message": "Zasady organizacji mają wpływ na czas blokowania sejfu. Maksymalny dozwolony czas wynosi $HOURS$ godz. i $MINUTES$ min. Twój czas blokowania sejfu to $ACTION$.",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      },
+      "action": {
+        "content": "$3",
+        "example": "Lock"
+      }
+    }
+  },
+  "vaultTimeoutActionPolicyInEffect": {
+    "message": "Zasady organizacji ustawiły czas blokowania sejfu na $ACTION$.",
+    "placeholders": {
+      "action": {
+        "content": "$1",
+        "example": "Lock"
       }
     }
   },
@@ -2201,5 +2245,19 @@
         "example": "14"
       }
     }
+  },
+  "windowsBiometricUpdateWarning": {
+    "message": "Bitwarden zaleca aktualizację ustawień biometrycznych, aby wymagać hasła głównego (lub kodu PIN) przy pierwszym odblokowaniu. Czy chcesz teraz zaktualizować ustawienia?"
+  },
+  "windowsBiometricUpdateWarningTitle": {
+    "message": "Aktualizacja ustawień zalecanych"
+  },
+  "windows8SoonDeprecated": {
+    "message": "System operacyjny, którego używasz nie będzie już obsługiwany po wydaniu 2023.5.0. Uaktualnij do wspieranego systemu operacyjnego. Kontynuowanie bez aktualizacji systemu operacyjnego może powodować nieoczekiwane zachowania i zagrożenia bezpieczeństwa.",
+    "description": "Windows 8, 8.1 and Server 2012 R2 are no longer supported by Electron & Chromium. Show a notice on the login and lock screen while 2023.4.0 is the active version."
+  },
+  "windows8Deprecated": {
+    "message": "System operacyjny, którego używasz nie jest już obsługiwany. Kontynuacja bez aktualizacji systemu operacyjnego może skutkować nieoczekiwanym zachowaniem.",
+    "description": "Windows 8, 8.1 and Server 2012 R2 are no longer supported by Electron & Chromium. Show a notice on the login and lock screen after 2023.5.0 is released."
   }
 }

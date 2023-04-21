@@ -1392,11 +1392,17 @@
   "unlockWithWindowsHello": {
     "message": "Feloldás Windows Hello segítségével"
   },
+  "additionalWindowsHelloSettings": {
+    "message": "Kiegészítő Windows Hello beállítások"
+  },
   "windowsHelloConsentMessage": {
     "message": "Bitwarden ellenőrzés."
   },
   "unlockWithTouchId": {
     "message": "Feloldás Touch ID segítségével"
+  },
+  "additionalTouchIdSettings": {
+    "message": "Kiegészítő Touch ID beállítások"
   },
   "touchIdConsentMessage": {
     "message": "Bitwarden feloldás"
@@ -1406,6 +1412,12 @@
   },
   "autoPromptTouchId": {
     "message": "Érintés AZ kérése indításkor"
+  },
+  "requirePasswordOnStart": {
+    "message": "Jelszó vagy PIN kód szükséges az alkalmazás indításakor"
+  },
+  "recommendedForSecurity": {
+    "message": "Biztonsági szempontból ajánlott."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Lezárás mesterjelszóval újraindításkor"
@@ -1526,6 +1538,9 @@
   },
   "ssoCompleteRegistration": {
     "message": "Az SSO-val történő bejelentkezés befejezéséhez mesterjelszót kell beállítani a széf eléréséhez és védelméhez."
+  },
+  "currentMasterPass": {
+    "message": "Current master password"
   },
   "newMasterPass": {
     "message": "Új mesterjelszó"
@@ -1843,6 +1858,9 @@
   "updateMasterPasswordWarning": {
     "message": "A szervezet egyik adminisztrátora nemrég megváltoztatta a mesterjelszót. A széf eléréséhez most frissíteni kell a mesterjelszót. Továbblépéskor kijelentkezés történik a jelenlegi munkamenetből és újra be kell jelentkezni. Ha van aktív munkamenet más eszközön, az még legfeljebb egy óráig aktív maradhat."
   },
+  "updateWeakMasterPasswordWarning": {
+    "message": "Your master password does not meet one or more of your organization policies. In order to access the vault, you must update your master password now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
+  },
   "hours": {
     "message": "Óra"
   },
@@ -1859,6 +1877,32 @@
       "minutes": {
         "content": "$2",
         "example": "5"
+      }
+    }
+  },
+  "vaultTimeoutPolicyWithActionInEffect": {
+    "message": "A szervezeti házirendek hatással vannak a széf időkorlátjára. A széf időkorlátja legfeljebb $HOURS$ óra és $MINUTES$ perc lehet. A széf időkifutási művelete $ACTION$.",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      },
+      "action": {
+        "content": "$3",
+        "example": "Lock"
+      }
+    }
+  },
+  "vaultTimeoutActionPolicyInEffect": {
+    "message": "A szervezeti házirendek által jelenleg beállított időkifutási művelet $ACTION$.",
+    "placeholders": {
+      "action": {
+        "content": "$1",
+        "example": "Lock"
       }
     }
   },
@@ -2201,5 +2245,19 @@
         "example": "14"
       }
     }
+  },
+  "windowsBiometricUpdateWarning": {
+    "message": "A Bitwarden azt javasolja, hogy frissítsük a biometrikus beállításokat, hogy az első feloldáskor megköveteljük a mesterjelszót (vagy a PIN-kódot). Szeretnénk most frissíteni beállításokat?"
+  },
+  "windowsBiometricUpdateWarningTitle": {
+    "message": "Ajánlott beállítások frissítése"
+  },
+  "windows8SoonDeprecated": {
+    "message": "A használatban levő operációs rendszer a 2023.5.0 kiadás után már nem támogatott. Frissítsünk támogatott operációs rendszerre. Ha az operációs rendszer frissítése nélkül folytatjuk, az váratlan viselkedéshez vagy biztonsági kockázatokhoz vezethet.",
+    "description": "Windows 8, 8.1 and Server 2012 R2 are no longer supported by Electron & Chromium. Show a notice on the login and lock screen while 2023.4.0 is the active version."
+  },
+  "windows8Deprecated": {
+    "message": "A jelenleg használt operációs rendszer már nem támogatott. Ha az operációs rendszer frissítése nélkül folytatjuk, az váratlan viselkedést eredményezhet.",
+    "description": "Windows 8, 8.1 and Server 2012 R2 are no longer supported by Electron & Chromium. Show a notice on the login and lock screen after 2023.5.0 is released."
   }
 }

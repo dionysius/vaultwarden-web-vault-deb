@@ -1392,11 +1392,17 @@
   "unlockWithWindowsHello": {
     "message": "Oplås med Windows Hello"
   },
+  "additionalWindowsHelloSettings": {
+    "message": "Yderligere indstillinger for Windows Hello"
+  },
   "windowsHelloConsentMessage": {
     "message": "Bekræft for Bitwarden."
   },
   "unlockWithTouchId": {
     "message": "Oplås med Touch ID"
+  },
+  "additionalTouchIdSettings": {
+    "message": "Yderligere indstillinger for Touch ID"
   },
   "touchIdConsentMessage": {
     "message": "oplås din boks"
@@ -1406,6 +1412,12 @@
   },
   "autoPromptTouchId": {
     "message": "Bed om Touch ID ved start"
+  },
+  "requirePasswordOnStart": {
+    "message": "Kræv adgangskode eller PIN-kode ved app-start"
+  },
+  "recommendedForSecurity": {
+    "message": "Anbefales af sikkerhedshensyn."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Lås med hovedadgangskode ved genstart"
@@ -1526,6 +1538,9 @@
   },
   "ssoCompleteRegistration": {
     "message": "For at fuldføre indlogning vha. SSO skal en hovedadgangskode opsættes for at tilgå og beskytte din boks."
+  },
+  "currentMasterPass": {
+    "message": "Aktuel hovedadgangskode"
   },
   "newMasterPass": {
     "message": "Ny hovedadgangskode"
@@ -1843,6 +1858,9 @@
   "updateMasterPasswordWarning": {
     "message": "Din hovedadgangskode blev for nylig ændret af en organisations-admin. For at tilgå boksen, så opdatér din hovedadgangskode nu. Fortsættes, logges du ud af den nuværende session og vil skulle logger ind igen. Aktive sessioner på andre enheder kan forblive aktive i op til én time."
   },
+  "updateWeakMasterPasswordWarning": {
+    "message": "Din hovedadgangskode overholder ikke en eller flere organisationspolitikker. For at få adgang til boksen skal hovedadgangskode opdateres nu. Fortsættes, logges du ud af den nuværende session og vil skulle logger ind igen. Aktive sessioner på andre enheder kan forblive aktive i op til én time."
+  },
   "hours": {
     "message": "Timer"
   },
@@ -1859,6 +1877,32 @@
       "minutes": {
         "content": "$2",
         "example": "5"
+      }
+    }
+  },
+  "vaultTimeoutPolicyWithActionInEffect": {
+    "message": "Organisationspolitikkerne påvirker boks-timeout. Maks. tilladt boks-timeout er $HOURS$ time(r) og $MINUTES$ minut(ter). Boks-timeouthandlingen er pt. sat til $ACTION$.",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      },
+      "action": {
+        "content": "$3",
+        "example": "Lock"
+      }
+    }
+  },
+  "vaultTimeoutActionPolicyInEffect": {
+    "message": "Organisationspolitikker har sat boks-timeouthandlingen til $ACTION$.",
+    "placeholders": {
+      "action": {
+        "content": "$1",
+        "example": "Lock"
       }
     }
   },
@@ -2201,5 +2245,19 @@
         "example": "14"
       }
     }
+  },
+  "windowsBiometricUpdateWarning": {
+    "message": "Bitwarden anbefaler, af de biometriske indstillinger opdateres til at kræve hovedadgangskode (eller PIN-kode) ved første oplåsning. Opdatér indstillingerne nu?"
+  },
+  "windowsBiometricUpdateWarningTitle": {
+    "message": "Anbefalet indstillingsopdatering"
+  },
+  "windows8SoonDeprecated": {
+    "message": "Understøttelse af det anvendte operativsystem ophører med 2023.5.0-udgivelse. Opgradér til et understøttet operativsystem. Fortsættes uden at opdatere operativsystemet, kan det resultere i uventet adfærd eller sikkerhedsrisici.",
+    "description": "Windows 8, 8.1 and Server 2012 R2 are no longer supported by Electron & Chromium. Show a notice on the login and lock screen while 2023.4.0 is the active version."
+  },
+  "windows8Deprecated": {
+    "message": "Det anvendte operativsystem understøttes ikke længere. Fortsættes uden at opdatere operativsystemet, kan det resultere i uventet adfærd.",
+    "description": "Windows 8, 8.1 and Server 2012 R2 are no longer supported by Electron & Chromium. Show a notice on the login and lock screen after 2023.5.0 is released."
   }
 }

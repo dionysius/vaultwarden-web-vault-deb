@@ -1392,11 +1392,17 @@
   "unlockWithWindowsHello": {
     "message": "Разблакіраваць з Windows Hello"
   },
+  "additionalWindowsHelloSettings": {
+    "message": "Дадатковыя налады Windows Hello"
+  },
   "windowsHelloConsentMessage": {
     "message": "Праверыць на Bitwarden."
   },
   "unlockWithTouchId": {
     "message": "Разблакіраваць з Touch ID"
+  },
+  "additionalTouchIdSettings": {
+    "message": "Дадатковыя налады Touch ID"
   },
   "touchIdConsentMessage": {
     "message": "разблакіраваць ваша сховішча"
@@ -1406,6 +1412,12 @@
   },
   "autoPromptTouchId": {
     "message": "Пытацца пра Touch ID пры запуску"
+  },
+  "requirePasswordOnStart": {
+    "message": "Патрабаваць пароль або PIN пры запуску праграмы"
+  },
+  "recommendedForSecurity": {
+    "message": "Рэкамендуецца ў мэтах бяспекі."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Блакіраваць асноўным паролем пры перазапуску"
@@ -1526,6 +1538,9 @@
   },
   "ssoCompleteRegistration": {
     "message": "Для завяршэння працэсу ўваходу з дапамогай SSO, прызначце асноўны пароль для доступу да вашага сховішча і яго абароны."
+  },
+  "currentMasterPass": {
+    "message": "Бягучы асноўны пароль"
   },
   "newMasterPass": {
     "message": "Новы асноўны пароль"
@@ -1843,6 +1858,9 @@
   "updateMasterPasswordWarning": {
     "message": "Ваш асноўны пароль нядаўна быў зменены адміністратарам арганізацыі. Для таго, каб атрымаць доступ да вашага сховішча, вы павінны абнавіць яго зараз. Гэта прывядзе да завяршэння бягучага сеанса і вам неабходна будзе ўвайсці паўторна. Сеансы на іншых прыладах могуць заставацца актыўнымі на працягу адной гадзіны."
   },
+  "updateWeakMasterPasswordWarning": {
+    "message": "Ваш асноўны пароль не адпавядае адной або некалькім палітыкам арганізацыі. Для атрымання доступу да сховішча, вы павінны абнавіць яго. Працягваючы, вы выйдзіце з бягучага сеанса і вам неабходна будзе ўвайсці паўторна. Актыўныя сеансы на іншых прыладах могуць заставацца актыўнымі на працягу адной гадзіны."
+  },
   "hours": {
     "message": "Гадзіны"
   },
@@ -1859,6 +1877,32 @@
       "minutes": {
         "content": "$2",
         "example": "5"
+      }
+    }
+  },
+  "vaultTimeoutPolicyWithActionInEffect": {
+    "message": "Палітыка вашай арганізацыі ўплывае на час чакання сховішча. Максімальны дазволены час чакання сховішча складае гадзін: $HOURS$; хвілін: $MINUTES$. Для часу чакання вашага сховішча прызначана дзеянне $ACTION$.",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      },
+      "action": {
+        "content": "$3",
+        "example": "Lock"
+      }
+    }
+  },
+  "vaultTimeoutActionPolicyInEffect": {
+    "message": "Палітыкай вашай арганізацыі прызначана дзеянне $ACTION$ для часу чакання вашага сховішча.",
+    "placeholders": {
+      "action": {
+        "content": "$1",
+        "example": "Lock"
       }
     }
   },
@@ -2201,5 +2245,19 @@
         "example": "14"
       }
     }
+  },
+  "windowsBiometricUpdateWarning": {
+    "message": "Bitwarden рэкамендуе абнавіць вашы налады біяметрыі, каб пры першай разблакіроўцы патрабаваўся асноўны пароль (або PIN). Вы сапраўды хочаце абнавіць вашы налады?"
+  },
+  "windowsBiometricUpdateWarningTitle": {
+    "message": "Рэкамендаваныя налады абнаўлення"
+  },
+  "windows8SoonDeprecated": {
+    "message": "Пасля выпуску 2023.5.0 аперацыйная сістэма, якую вы выкарыстоўваеце больш не будзе падтрымліваецца. Перайдзіце на актуальную версію аперацыйнай сістэмы. Далейшае выкарыстанне аперацыйнай сістэмы без абнаўлення можа прывесці да непрадказальных паводзін або пагрозе ў бяспецы.",
+    "description": "Windows 8, 8.1 and Server 2012 R2 are no longer supported by Electron & Chromium. Show a notice on the login and lock screen while 2023.4.0 is the active version."
+  },
+  "windows8Deprecated": {
+    "message": "Аперацыйная сістэма, якую вы выкарыстоўваеце больш не падтрымліваецца. Далейшае выкарыстанне аперацыйнай сістэмы без абнаўлення можа прывесці да непрадказальных паводзін.",
+    "description": "Windows 8, 8.1 and Server 2012 R2 are no longer supported by Electron & Chromium. Show a notice on the login and lock screen after 2023.5.0 is released."
   }
 }
