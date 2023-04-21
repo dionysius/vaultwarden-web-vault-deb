@@ -114,7 +114,7 @@ export class LockComponent implements OnInit, OnDestroy {
     const success = (await this.cryptoService.getKey(KeySuffixOptions.Biometric)) != null;
 
     if (success) {
-      await this.doContinue();
+      await this.doContinue(false);
     }
 
     return success;
@@ -251,37 +251,39 @@ export class LockComponent implements OnInit, OnDestroy {
         await this.cryptoService.encrypt(key.key, pinKey)
       );
     }
-    await this.setKeyAndContinue(key);
+    await this.setKeyAndContinue(key, true);
   }
-  private async setKeyAndContinue(key: SymmetricCryptoKey) {
+  private async setKeyAndContinue(key: SymmetricCryptoKey, evaluatePasswordAfterUnlock = false) {
     await this.cryptoService.setKey(key);
-    await this.doContinue();
+    await this.doContinue(evaluatePasswordAfterUnlock);
   }
 
-  private async doContinue() {
+  private async doContinue(evaluatePasswordAfterUnlock: boolean) {
     await this.stateService.setEverBeenUnlocked(true);
     const disableFavicon = await this.stateService.getDisableFavicon();
     await this.stateService.setDisableFavicon(!!disableFavicon);
     this.messagingService.send("unlocked");
 
-    try {
-      // If we do not have any saved policies, attempt to load them from the service
-      if (this.enforcedMasterPasswordOptions == undefined) {
-        this.enforcedMasterPasswordOptions = await firstValueFrom(
-          this.policyService.masterPasswordPolicyOptions$()
-        );
-      }
+    if (evaluatePasswordAfterUnlock) {
+      try {
+        // If we do not have any saved policies, attempt to load them from the service
+        if (this.enforcedMasterPasswordOptions == undefined) {
+          this.enforcedMasterPasswordOptions = await firstValueFrom(
+            this.policyService.masterPasswordPolicyOptions$()
+          );
+        }
 
-      if (this.requirePasswordChange()) {
-        await this.stateService.setForcePasswordResetReason(
-          ForceResetPasswordReason.WeakMasterPassword
-        );
-        this.router.navigate([this.forcePasswordResetRoute]);
-        return;
+        if (this.requirePasswordChange()) {
+          await this.stateService.setForcePasswordResetReason(
+            ForceResetPasswordReason.WeakMasterPassword
+          );
+          this.router.navigate([this.forcePasswordResetRoute]);
+          return;
+        }
+      } catch (e) {
+        // Do not prevent unlock if there is an error evaluating policies
+        this.logService.error(e);
       }
-    } catch (e) {
-      // Do not prevent unlock if there is an error evaluating policies
-      this.logService.error(e);
     }
 
     if (this.onSuccessfulSubmit != null) {
