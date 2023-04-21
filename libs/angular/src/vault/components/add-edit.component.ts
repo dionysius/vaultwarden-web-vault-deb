@@ -610,7 +610,8 @@ export class AddEditComponent implements OnInit, OnDestroy {
   }
 
   protected restoreCipher() {
-    return this.cipherService.restoreWithServer(this.cipher.id);
+    const asAdmin = this.organization?.canEditAnyCollection;
+    return this.cipherService.restoreWithServer(this.cipher.id, asAdmin);
   }
 
   get defaultOwnerId(): string | null {
