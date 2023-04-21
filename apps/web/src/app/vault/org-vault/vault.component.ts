@@ -674,7 +674,8 @@ export class VaultComponent implements OnInit, OnDestroy {
     }
 
     try {
-      await this.cipherService.restoreWithServer(c.id);
+      const asAdmin = this.organization?.canEditAnyCollection;
+      await this.cipherService.restoreWithServer(c.id, asAdmin);
       this.platformUtilsService.showToast("success", null, this.i18nService.t("restoredItem"));
       this.refresh();
     } catch (e) {

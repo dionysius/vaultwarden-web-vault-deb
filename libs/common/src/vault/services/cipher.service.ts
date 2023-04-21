@@ -914,8 +914,10 @@ export class CipherService implements CipherServiceAbstraction {
     await this.stateService.setEncryptedCiphers(ciphers);
   }
 
-  async restoreWithServer(id: string): Promise<any> {
-    const response = await this.apiService.putRestoreCipher(id);
+  async restoreWithServer(id: string, asAdmin = false): Promise<any> {
+    const response = asAdmin
+      ? await this.apiService.putRestoreCipherAdmin(id)
+      : await this.apiService.putRestoreCipher(id);
     await this.restore({ id: id, revisionDate: response.revisionDate });
   }
 

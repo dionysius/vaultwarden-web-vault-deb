@@ -75,6 +75,6 @@ export abstract class CipherService {
   restore: (
     cipher: { id: string; revisionDate: string } | { id: string; revisionDate: string }[]
   ) => Promise<any>;
-  restoreWithServer: (id: string) => Promise<any>;
+  restoreWithServer: (id: string, asAdmin?: boolean) => Promise<any>;
   restoreManyWithServer: (ids: string[]) => Promise<any>;
 }
