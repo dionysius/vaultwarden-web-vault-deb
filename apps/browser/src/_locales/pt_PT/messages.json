@@ -80,7 +80,7 @@
     "message": "Copiar URI"
   },
   "copyUsername": {
-    "message": "Copiar Nome de Utilizador"
+    "message": "Copiar nome de utilizador"
   },
   "copyNumber": {
     "message": "Copiar Número"
@@ -568,7 +568,7 @@
     "message": "Tem a certeza de que pretende sobreescrever a palavra-passe atual?"
   },
   "overwriteUsername": {
-    "message": "Sobrescrever Nome de Utilizador"
+    "message": "Sobrescrever nome de utilizador"
   },
   "overwriteUsernameConfirmation": {
     "message": "Tem a certeza de que deseja sobrescrever o nome de utilizador atual?"
@@ -693,7 +693,7 @@
     "message": "Saiba mais sobre as Organizações"
   },
   "learnOrgConfirmation": {
-    "message": "O Bitwarden permite que você compartilhe os itens do seu cofre com outras pessoas usando uma organização. Gostaria de visitar o site bitwarden.com para saber mais?"
+    "message": "O Bitwarden permite-lhe partilhar os itens do seu cofre com outras pessoas ao usar uma organização. Gostaria de visitar o site bitwarden.com para saber mais?"
   },
   "moveToOrganization": {
     "message": "Mudança para Organização"
@@ -1464,6 +1464,15 @@
   "setMasterPassword": {
     "message": "Definir palavra-passe mestra"
   },
+  "currentMasterPass": {
+    "message": "Current master password"
+  },
+  "newMasterPass": {
+    "message": "New master password"
+  },
+  "confirmNewMasterPass": {
+    "message": "Confirm new master password"
+  },
   "masterPasswordPolicyInEffect": {
     "message": "Uma ou mais políticas da organização requerem que a sua palavra-passe mestra cumpra aos seguintes requisitos:"
   },
@@ -1844,6 +1853,9 @@
   "updateMasterPasswordWarning": {
     "message": "Your master password was recently changed by an administrator in your organization. In order to access the vault, you must update it now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
   },
+  "updateWeakMasterPasswordWarning": {
+    "message": "Your master password does not meet one or more of your organization policies. In order to access the vault, you must update your master password now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
+  },
   "resetPasswordPolicyAutoEnroll": {
     "message": "Inscrição Automática"
   },
@@ -1863,7 +1875,7 @@
     "message": "Minutos"
   },
   "vaultTimeoutPolicyInEffect": {
-    "message": "Your organization policies are affecting your vault timeout. Maximum allowed Vault Timeout is $HOURS$ hour(s) and $MINUTES$ minute(s)",
+    "message": "Your organization policies have set your maximum allowed vault timeout to $HOURS$ hour(s) and $MINUTES$ minute(s).",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -1872,6 +1884,32 @@
       "minutes": {
         "content": "$2",
         "example": "5"
+      }
+    }
+  },
+  "vaultTimeoutPolicyWithActionInEffect": {
+    "message": "Your organization policies are affecting your vault timeout. Maximum allowed vault timeout is $HOURS$ hour(s) and $MINUTES$ minute(s). Your vault timeout action is set to $ACTION$.",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      },
+      "action": {
+        "content": "$3",
+        "example": "Lock"
+      }
+    }
+  },
+  "vaultTimeoutActionPolicyInEffect": {
+    "message": "Your organization policies have set your vault timeout action to $ACTION$.",
+    "placeholders": {
+      "action": {
+        "content": "$1",
+        "example": "Lock"
       }
     }
   },
@@ -1936,13 +1974,13 @@
     "message": "Erro"
   },
   "regenerateUsername": {
-    "message": "Regerar Nome de Utilizador"
+    "message": "Regerar nome de utilizador"
   },
   "generateUsername": {
-    "message": "Gerar Nome de Utilizador"
+    "message": "Gerar nome de utilizador"
   },
   "usernameType": {
-    "message": "Tipo de Nome de Utilizador"
+    "message": "Tipo de nome de utilizador"
   },
   "plusAddressedEmail": {
     "message": "Plus addressed email",

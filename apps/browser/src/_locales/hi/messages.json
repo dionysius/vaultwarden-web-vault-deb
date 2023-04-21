@@ -1464,6 +1464,15 @@
   "setMasterPassword": {
     "message": "मास्टर पासवर्ड सेट करें"
   },
+  "currentMasterPass": {
+    "message": "Current master password"
+  },
+  "newMasterPass": {
+    "message": "New master password"
+  },
+  "confirmNewMasterPass": {
+    "message": "Confirm new master password"
+  },
   "masterPasswordPolicyInEffect": {
     "message": "एक या एक से अधिक संगठन नीतियों को निम्नलिखित आवश्यकताओं को पूरा करने के लिए आपके मास्टर पासवर्ड की आवश्यकता होती है:"
   },
@@ -1844,6 +1853,9 @@
   "updateMasterPasswordWarning": {
     "message": "आपका मास्टर पासवर्ड हाल ही में आपके संगठन के एक व्यवस्थापक द्वारा बदल दिया गया था। तिजोरी तक पहुँचने के लिए, आपको इसे अभी अपडेट करना होगा। ये कार्यवाही आपको अपने वर्तमान सत्र से लॉग आउट कर देगी, जिसके लिए आपको वापस लॉग इन करने की आवश्यकता होगी। अन्य उपकरणों पर सक्रिय सत्र एक घंटे तक सक्रिय रह सकते हैं।"
   },
+  "updateWeakMasterPasswordWarning": {
+    "message": "Your master password does not meet one or more of your organization policies. In order to access the vault, you must update your master password now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
+  },
   "resetPasswordPolicyAutoEnroll": {
     "message": "स्वचालित नामांकन"
   },
@@ -1872,6 +1884,32 @@
       "minutes": {
         "content": "$2",
         "example": "5"
+      }
+    }
+  },
+  "vaultTimeoutPolicyWithActionInEffect": {
+    "message": "Your organization policies are affecting your vault timeout. Maximum allowed vault timeout is $HOURS$ hour(s) and $MINUTES$ minute(s). Your vault timeout action is set to $ACTION$.",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      },
+      "action": {
+        "content": "$3",
+        "example": "Lock"
+      }
+    }
+  },
+  "vaultTimeoutActionPolicyInEffect": {
+    "message": "Your organization policies have set your vault timeout action to $ACTION$.",
+    "placeholders": {
+      "action": {
+        "content": "$1",
+        "example": "Lock"
       }
     }
   },

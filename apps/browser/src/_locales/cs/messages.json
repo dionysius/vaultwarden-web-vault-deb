@@ -196,7 +196,7 @@
     "message": "Nápověda a zpětná vazba"
   },
   "helpCenter": {
-    "message": "Bitwarden Help center"
+    "message": "Centrum nápovědy Bitwarden"
   },
   "communityForums": {
     "message": "Prozkoumejte komunitní fóra Bitwarden"
@@ -1464,6 +1464,15 @@
   "setMasterPassword": {
     "message": "Nastavit hlavní heslo"
   },
+  "currentMasterPass": {
+    "message": "Aktuální hlavní heslo"
+  },
+  "newMasterPass": {
+    "message": "Nové hlavní heslo"
+  },
+  "confirmNewMasterPass": {
+    "message": "Potvrďte nové hlavní heslo"
+  },
   "masterPasswordPolicyInEffect": {
     "message": "Jedna nebo více zásad organizace vyžaduje, aby hlavní heslo splňovalo následující požadavky:"
   },
@@ -1844,6 +1853,9 @@
   "updateMasterPasswordWarning": {
     "message": "Administrátor v organizaci nedávno změnil vaše hlavní heslo. Pro přístup k trezoru jej nyní musíte změnit. Pokračování vás odhlásí z vaší aktuální relace a bude nutné se znovu přihlásit. Aktivní relace na jiných zařízeních mohou zůstat aktivní až po dobu jedné hodiny."
   },
+  "updateWeakMasterPasswordWarning": {
+    "message": "Vaše hlavní heslo nesplňuje jednu nebo více zásad Vaší organizace. Pro přístup k trezoru musíte nyní aktualizovat své hlavní heslo. Pokračování Vás odhlásí z Vaší aktuální relace a bude nutné se přihlásit. Aktivní relace na jiných zařízeních mohou zůstat aktivní až po dobu jedné hodiny."
+  },
   "resetPasswordPolicyAutoEnroll": {
     "message": "Automatická registrace"
   },
@@ -1872,6 +1884,32 @@
       "minutes": {
         "content": "$2",
         "example": "5"
+      }
+    }
+  },
+  "vaultTimeoutPolicyWithActionInEffect": {
+    "message": "Pravidla Vaší organizace mají vliv na časový limit trezoru. Maximální povolený časový limit trezoru je $HOURS$ hodin a $MINUTES$ minut. Akce po časovém limitu trezoru je nastavena na $ACTION$.",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      },
+      "action": {
+        "content": "$3",
+        "example": "Lock"
+      }
+    }
+  },
+  "vaultTimeoutActionPolicyInEffect": {
+    "message": "Zásady Vaší organizace nastavily akce po časovém limitu trezoru na $ACTION$.",
+    "placeholders": {
+      "action": {
+        "content": "$1",
+        "example": "Lock"
       }
     }
   },
@@ -2067,7 +2105,7 @@
     "message": "Přihlásit se pomocí zařízení"
   },
   "loginWithDeviceEnabledInfo": {
-    "message": "Log in with device must be set up in the settings of the Bitwarden app. Need another option?"
+    "message": "Přihlášení pomocí zařízení musí být nastaveno v nastavení aplikace Bitwarden. Potřebujete další možnosti?"
   },
   "fingerprintPhraseHeader": {
     "message": "Unikátní přístupová fráze"
@@ -2091,25 +2129,25 @@
     "message": "Odhalené základní heslo"
   },
   "exposedMasterPasswordDesc": {
-    "message": "Password found in a data breach. Use a unique password to protect your account. Are you sure you want to use an exposed password?"
+    "message": "Heslo nalezeno při porušení ochrany osobních údajů. K zabezpečení svého účtu používejte jedinečné heslo. Jste si jisti, zda chcete používat zneužité heslo?"
   },
   "weakAndExposedMasterPassword": {
-    "message": "Weak and Exposed Master Password"
+    "message": "Slabé a zneužité hlavní heslo"
   },
   "weakAndBreachedMasterPasswordDesc": {
-    "message": "Weak password identified and found in a data breach. Use a strong and unique password to protect your account. Are you sure you want to use this password?"
+    "message": "Slabé heslo identifikované a nalezené při porušení ochrany osobních údajů. K zabezpečení vašeho účtu používejte silné a unikátní heslo. Jste si jisti, zda chcete používat toto heslo?"
   },
   "checkForBreaches": {
-    "message": "Check known data breaches for this password"
+    "message": "Zkontrolujte známé porušení ochrany osobních údajů pro toto heslo"
   },
   "important": {
-    "message": "Important:"
+    "message": "Důležité:"
   },
   "masterPasswordHint": {
-    "message": "Your master password cannot be recovered if you forget it!"
+    "message": "Vaše hlavní heslo nelze obnovit, pokud ho zapomenete!"
   },
   "characterMinimum": {
-    "message": "$LENGTH$ character minimum",
+    "message": "$LENGTH$ minimální počet znaků",
     "placeholders": {
       "length": {
         "content": "$1",
@@ -2118,10 +2156,10 @@
     }
   },
   "autofillPageLoadPolicyActivated": {
-    "message": "Your organization policies have turned on auto-fill on page load."
+    "message": "Podle směrnic vaší organizace je zapnuto automatické vyplňování při načítání stránky."
   },
   "howToAutofill": {
-    "message": "How to auto-fill"
+    "message": "Jak na automatické vyplňování"
   },
   "autofillSelectInfoWithCommand": {
     "message": "Vyberte položku z této stránky nebo použijte zkratku: $COMMAND$",
@@ -2136,19 +2174,19 @@
     "message": "Vyberte položku z této stránky nebo nastavte zkratku v nastavení."
   },
   "gotIt": {
-    "message": "Got it"
+    "message": "Rozumím"
   },
   "autofillSettings": {
-    "message": "Auto-fill settings"
+    "message": "Nastavení automatického vyplňování"
   },
   "autofillShortcut": {
-    "message": "Auto-fill keyboard shortcut"
+    "message": "Klávesová kombinace pro automatické vyplňování"
   },
   "autofillShortcutNotSet": {
-    "message": "The auto-fill shortcut is not set. Change this in the browser's settings."
+    "message": "Klávesová kombinace pro automatické vyplňování není nastavena. Změňte ji v nastavení prohlížeče."
   },
   "autofillShortcutText": {
-    "message": "The auto-fill shortcut is: $COMMAND$. Change this in the browser's settings.",
+    "message": "Klávesová kombinace pro automatické vyplňování je: $COMMAND$. Změňte ji v nastavení prohlížeče.",
     "placeholders": {
       "command": {
         "content": "$1",
@@ -2157,7 +2195,7 @@
     }
   },
   "autofillShortcutTextSafari": {
-    "message": "Default auto-fill shortcut: $COMMAND$.",
+    "message": "Výchozí klávesová kombinace pro automatické vyplňování: $COMMAND$.",
     "placeholders": {
       "command": {
         "content": "$1",
