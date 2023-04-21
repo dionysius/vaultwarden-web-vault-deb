@@ -558,7 +558,7 @@ export class VaultComponent implements OnInit, OnDestroy {
       this.collectionsModalRef,
       (comp) => {
         comp.collectionIds = cipher.collectionIds;
-        comp.collections = currCollections.filter((c) => !c.readOnly && c.id != null);
+        comp.collections = currCollections.filter((c) => !c.readOnly && c.id != Unassigned);
         comp.organization = this.organization;
         comp.cipherId = cipher.id;
         comp.onSavedCollections.pipe(takeUntil(this.destroy$)).subscribe(() => {
@@ -571,7 +571,7 @@ export class VaultComponent implements OnInit, OnDestroy {
 
   async addCipher() {
     const collections = (await firstValueFrom(this.vaultFilterService.filteredCollections$)).filter(
-      (c) => !c.readOnly && c.id != null
+      (c) => !c.readOnly && c.id != Unassigned
     );
 
     await this.editCipher(null, (comp) => {
@@ -644,7 +644,7 @@ export class VaultComponent implements OnInit, OnDestroy {
 
   async cloneCipher(cipher: CipherView) {
     const collections = (await firstValueFrom(this.vaultFilterService.filteredCollections$)).filter(
-      (c) => !c.readOnly && c.id != null
+      (c) => !c.readOnly && c.id != Unassigned
     );
 
     await this.editCipher(cipher, (comp) => {
