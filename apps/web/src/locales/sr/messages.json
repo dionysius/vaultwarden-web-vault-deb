@@ -1256,7 +1256,7 @@
     "message": "Подаци су успешно увезени у ваш сеф."
   },
   "importSuccessNumberOfItems": {
-    "message": "A total of $AMOUNT$ items were imported.",
+    "message": "$AMOUNT$ ставке/и су увезене.",
     "placeholders": {
       "amount": {
         "content": "$1",
@@ -2029,7 +2029,7 @@
     "message": "Откажи претплату"
   },
   "subscriptionExpiration": {
-    "message": "Subscription expiration"
+    "message": "Истицање претплате"
   },
   "subscriptionCanceled": {
     "message": "Претплата је отказана."
@@ -2499,7 +2499,7 @@
     "message": "Спољни ид се може користити као референца или за повезивање овог ресурса са спољним системом као што је корисничка фасцикла."
   },
   "nestCollectionUnder": {
-    "message": "Nest collection under"
+    "message": "Постави колекцију испод"
   },
   "accessControl": {
     "message": "Контрола Приступа"
@@ -2532,7 +2532,7 @@
     "message": "Уредити члан"
   },
   "fieldOnTabRequiresAttention": {
-    "message": "A field on the '$TAB$' tab requires your attention.",
+    "message": "Поље на језичку '$TAB$' захтева пажњу.",
     "placeholders": {
       "tab": {
         "content": "$1",
@@ -3126,7 +3126,7 @@
     "message": "Овој организацији можете приступити када администратор потврди ваше чланство. Послаћемо вам имејл када се то догоди."
   },
   "inviteInitAcceptedDesc": {
-    "message": "You can now access this organization."
+    "message": "Сада можете приступити овој организацији."
   },
   "inviteAcceptFailed": {
     "message": "Није могуће прихватити позивницу. Замолите администратора организације да пошаље нову позивницу."
@@ -4812,6 +4812,9 @@
   "masterPasswordInvalidWarning": {
     "message": "Ваша главна лозинка не испуњава услове политике ове организације. Да бисте се придружили организацији, морате одмах ажурирати своју главну лозинку. Ако наставите, одјавићете се из ваше тренутне сесије. Активне сесије на другим уређајима могу да остану активне до један сат."
   },
+  "updateWeakMasterPasswordWarning": {
+    "message": "Your master password does not meet one or more of your organization policies. In order to access the vault, you must update your master password now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
+  },
   "maximumVaultTimeout": {
     "message": "Тајмаут сефа"
   },
@@ -4840,6 +4843,32 @@
       "minutes": {
         "content": "$2",
         "example": "5"
+      }
+    }
+  },
+  "vaultTimeoutPolicyWithActionInEffect": {
+    "message": "Your organization policies are affecting your vault timeout. Maximum allowed vault timeout is $HOURS$ hour(s) and $MINUTES$ minute(s). Your vault timeout action is set to $ACTION$.",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      },
+      "action": {
+        "content": "$3",
+        "example": "Lock"
+      }
+    }
+  },
+  "vaultTimeoutActionPolicyInEffect": {
+    "message": "Your organization policies have set your vault timeout action to $ACTION$.",
+    "placeholders": {
+      "action": {
+        "content": "$1",
+        "example": "Lock"
       }
     }
   },
@@ -5231,7 +5260,7 @@
     "message": "Key Connector недоступан. Проверити URL."
   },
   "sponsorshipTokenHasExpired": {
-    "message": "The sponsorship offer has expired."
+    "message": "Понуда за спонзорство је истекла."
   },
   "freeWithSponsorship": {
     "message": "БЕСПЛАТНО уз спонзорство"
@@ -5497,7 +5526,7 @@
     "description": "This text is displayed if an organization's billing is managed by a Provider. It tells the user to contact the Provider for assistance."
   },
   "forwardedEmail": {
-    "message": "Forwarded email alias"
+    "message": "Прослеђен псеудоним е-поште"
   },
   "forwardedEmailDesc": {
     "message": "Генеришите псеудоним е-поште помоћу екстерне услуге прослеђивања."
@@ -5620,8 +5649,26 @@
       }
     }
   },
+  "inputMinValue": {
+    "message": "Input value must be at least $MIN$.",
+    "placeholders": {
+      "min": {
+        "content": "$1",
+        "example": "8"
+      }
+    }
+  },
+  "inputMaxValue": {
+    "message": "Input value must not exceed $MAX$.",
+    "placeholders": {
+      "max": {
+        "content": "$1",
+        "example": "100"
+      }
+    }
+  },
   "multipleInputEmails": {
-    "message": "1 or more emails are invalid"
+    "message": "1 или више имејлова су неважећи"
   },
   "tooManyEmails": {
     "message": "You can only submit up to $COUNT$ emails at a time",
@@ -5830,7 +5877,7 @@
     "description": "Title for creating a new secret."
   },
   "newServiceAccount": {
-    "message": "New service account",
+    "message": "Нови налог услуге",
     "description": "Title for creating a new service account."
   },
   "secretsNoItemsTitle": {
@@ -5849,7 +5896,7 @@
     "description": "Message to encourage the user to start creating service accounts."
   },
   "serviceAccountsNoItemsTitle": {
-    "message": "Nothing to show yet",
+    "message": "Нема ништа за приказати",
     "description": "Title to indicate that there are no service accounts to display."
   },
   "searchSecrets": {
@@ -5857,15 +5904,15 @@
     "description": "Placeholder text for searching secrets."
   },
   "deleteServiceAccounts": {
-    "message": "Delete service accounts",
+    "message": "Избришите сервисне налоге",
     "description": "Title for the action to delete one or multiple service accounts."
   },
   "deleteServiceAccount": {
-    "message": "Delete service account",
+    "message": "Избришите сервисни налог",
     "description": "Title for the action to delete a single service account."
   },
   "viewServiceAccount": {
-    "message": "View service account",
+    "message": "Видети сервисни налог",
     "description": "Action to view the details of a service account."
   },
   "deleteServiceAccountDialogMessage": {
@@ -5890,13 +5937,13 @@
     }
   },
   "deleteServiceAccountToast": {
-    "message": "Service account deleted"
+    "message": "Сервисни налог избрисан"
   },
   "deleteServiceAccountsToast": {
     "message": "Услужни налог избрисан"
   },
   "searchServiceAccounts": {
-    "message": "Search service accounts",
+    "message": "Тражити сервисне налоге",
     "description": "Placeholder text for searching service accounts."
   },
   "editServiceAccount": {
@@ -5928,11 +5975,11 @@
     "description": "Title for creating a new project."
   },
   "softDeleteSecretWarning": {
-    "message": "Deleting secrets can affect existing integrations.",
+    "message": "Брисање тајни може утицати на постојеће интеграције.",
     "description": "Warns that deleting secrets can have consequences on integrations"
   },
   "softDeletesSuccessToast": {
-    "message": "Secrets sent to trash",
+    "message": "Тајне послане у отпад",
     "description": "Notifies that the selected secrets have been moved to the trash"
   },
   "hardDeleteSecretConfirmation": {
@@ -5957,7 +6004,7 @@
     "description": "Label for the name of a service account"
   },
   "serviceAccountCreated": {
-    "message": "Service account created",
+    "message": "Сервисни налог креиран",
     "description": "Notifies that a new service account has been created"
   },
   "serviceAccountUpdated": {
@@ -6133,7 +6180,7 @@
     "message": "Ажурирај"
   },
   "plusNMore": {
-    "message": "+ $QUANTITY$ more",
+    "message": "+ још $QUANTITY$",
     "placeholders": {
       "quantity": {
         "content": "$1",
@@ -6142,7 +6189,7 @@
     }
   },
   "groupInfo": {
-    "message": "Group info"
+    "message": "Информације о групи"
   },
   "editGroupMembersDesc": {
     "message": "Grant members access to the group's assigned collections."
@@ -6157,19 +6204,19 @@
     "message": "If checked, this will replace all other collection permissions."
   },
   "selectMembers": {
-    "message": "Select members"
+    "message": "Изаберите чланове"
   },
   "selectCollections": {
-    "message": "Select collections"
+    "message": "Изаберите колекције"
   },
   "role": {
     "message": "Улога"
   },
   "removeMember": {
-    "message": "Remove member"
+    "message": "Уклони члан"
   },
   "collection": {
-    "message": "Collection"
+    "message": "Колекција"
   },
   "noCollection": {
     "message": "Нема колекције"
@@ -6187,13 +6234,13 @@
     "message": "Ноже уређивати осим лозинке"
   },
   "noCollectionsAdded": {
-    "message": "No collections added"
+    "message": "Ниједна колекција додата"
   },
   "noMembersAdded": {
-    "message": "No members added"
+    "message": "Ниједан члан додат"
   },
   "noGroupsAdded": {
-    "message": "No groups added"
+    "message": "Ниједна група додата"
   },
   "group": {
     "message": "Група"
@@ -6337,16 +6384,16 @@
     }
   },
   "membersColumnHeader": {
-    "message": "Member/Group"
+    "message": "Члан/Група"
   },
   "groupAndMemberColumnHeader": {
     "message": "Члан"
   },
   "selectGroupsAndMembers": {
-    "message": "Select groups and members"
+    "message": "Изаберите групе и чланове"
   },
   "selectGroups": {
-    "message": "Select groups"
+    "message": "Изаберите групе"
   },
   "userPermissionOverrideHelper": {
     "message": "Permissions set for a member will replace permissions set by that member's group"
@@ -6505,16 +6552,16 @@
     "message": "Група/Корисник"
   },
   "lowKdfIterations": {
-    "message": "Low KDF Iterations"
+    "message": "Ниска KDF понављања"
   },
   "lowKdfIterationsDesc": {
-    "message": "Increase your KDF encryption settings to improve the security of your account."
+    "message": "Повећајте KDF подешавања шифровања да бисте побољшали безбедност налога."
   },
   "changeKdfSettings": {
-    "message": "Change KDF settings"
+    "message": "Променити KDF подешавања"
   },
   "changeKdfLoggedOutWarning": {
-    "message": "Proceeding will log you out of all active sessions. You will need to log back in and complete two-step login setup. We recommend exporting your vault before changing your encryption settings to prevent data loss."
+    "message": "Ако наставите, одјавићете се са свих активних сесија. Мораћете поново да се пријавите и завршите подешавање пријаве у два корака. Препоручујемо да извезете трезор пре него што промените подешавања шифровања да бисте спречили губитак података."
   },
   "secretsManagerBeta": {
     "message": "Secrets Manager Beta"
@@ -6686,6 +6733,9 @@
     "message": "Одбаци"
   },
   "notAvailableForFreeOrganization": {
-    "message": "This feature is not available for free organizations. Contact your organization owner to upgrade."
+    "message": "Ова функција није доступна за бесплатне организације. Обратите се власнику организације за надоградњу."
+  },
+  "enforceOnLoginDesc": {
+    "message": "Захтевајте од постојећих чланова да промене њихове лозинке"
   }
 }

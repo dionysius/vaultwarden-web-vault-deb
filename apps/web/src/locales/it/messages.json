@@ -360,7 +360,7 @@
     "message": "Cognome"
   },
   "fullName": {
-    "message": "Nome completo"
+    "message": "Nome e cognome"
   },
   "address1": {
     "message": "Indirizzo 1"
@@ -685,13 +685,13 @@
     "message": "Ottieni suggerimento per la password principale"
   },
   "emailRequired": {
-    "message": "L'indirizzo email è obbligatorio."
+    "message": "Indirizzo email obbligatorio."
   },
   "invalidEmail": {
     "message": "L'indirizzo email non è valido."
   },
   "masterPasswordRequired": {
-    "message": "La password principale è obbligatoria."
+    "message": "Password principale obbligatoria."
   },
   "confirmMasterPasswordRequired": {
     "message": "Reinserire la password principale è obbligatorio."
@@ -4812,6 +4812,9 @@
   "masterPasswordInvalidWarning": {
     "message": "La tua password principale non soddisfa i requisiti minimi di questa organizzazione. Per accedere all'organizzazione, aggiornala ora. Procedere ti farà uscire dalla sessione corrente, richiedendoti di accedere di nuovo. Le sessioni attive su altri dispositivi potrebbero continuare a rimanere attive per un massimo di un'ora."
   },
+  "updateWeakMasterPasswordWarning": {
+    "message": "La tua password principale non soddisfa uno o più politiche della tua organizzazione. Per accedere alla cassaforte, aggiornala ora. Procedere ti farà uscire dalla sessione corrente, richiedendoti di accedere di nuovo. Le sessioni attive su altri dispositivi potrebbero continuare a rimanere attive per un massimo di un'ora."
+  },
   "maximumVaultTimeout": {
     "message": "Timeout cassaforte"
   },
@@ -4831,7 +4834,7 @@
     "message": "Minuti"
   },
   "vaultTimeoutPolicyInEffect": {
-    "message": "Le politiche della tua organizzazione stanno influenzando il timeout della tua cassaforte. Il tempo massimo consentito è di $HOURS$ ore e $MINUTES$ minuti",
+    "message": "Le politiche della tua organizzazione hanno impostato il timeout massimo consentito della tua cassaforte su $HOURS$ ore e $MINUTES$ minuti.",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -4840,6 +4843,32 @@
       "minutes": {
         "content": "$2",
         "example": "5"
+      }
+    }
+  },
+  "vaultTimeoutPolicyWithActionInEffect": {
+    "message": "Le politiche della tua organizzazione stanno influenzando il timeout della tua cassaforte. Il tempo massimo consentito è di $HOURS$ ore e $MINUTES$ minuti. La tua azione di timeout della cassaforte è impostata su $ACTION$.",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      },
+      "action": {
+        "content": "$3",
+        "example": "Lock"
+      }
+    }
+  },
+  "vaultTimeoutActionPolicyInEffect": {
+    "message": "Le politiche della tua organizzazione hanno impostato l'azione di timeout cassaforte su $ACTION$.",
+    "placeholders": {
+      "action": {
+        "content": "$1",
+        "example": "Lock"
       }
     }
   },
@@ -5617,6 +5646,24 @@
       "characters": {
         "content": "$1",
         "example": "@, #, $, %"
+      }
+    }
+  },
+  "inputMinValue": {
+    "message": "Il valore di input deve essere lungo almeno $MIN$ caratteri.",
+    "placeholders": {
+      "min": {
+        "content": "$1",
+        "example": "8"
+      }
+    }
+  },
+  "inputMaxValue": {
+    "message": "Il valore di input non deve superare i $MAX$ caratteri.",
+    "placeholders": {
+      "max": {
+        "content": "$1",
+        "example": "100"
       }
     }
   },
@@ -6687,5 +6734,8 @@
   },
   "notAvailableForFreeOrganization": {
     "message": "Questa funzionalità non è disponibile per le organizzazioni gratis. Contatta il proprietario della tua organizzazione per aggiornare."
+  },
+  "enforceOnLoginDesc": {
+    "message": "Obbliga i membri esistenti a cambiare le loro password"
   }
 }

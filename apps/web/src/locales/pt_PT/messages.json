@@ -936,7 +936,7 @@
     }
   },
   "moveSelectedItemsCountDesc": {
-    "message": "Você selecionou $COUNT$ item(s). $MOVEABLE_COUNT$ item(s) podem ser movidos para uma organização, $NONMOVEABLE_COUNT$ não podem.",
+    "message": "Selecionou $COUNT$ item(ns). $MOVEABLE_COUNT$ item(ns) podem ser movidos para uma organização, $NONMOVEABLE_COUNT$ não podem.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -1093,7 +1093,7 @@
     "message": "Alterar email"
   },
   "changeEmailTwoFactorWarning": {
-    "message": "Prosseguir irá mudar o endereço de e-mail da sua conta. Ele não irá mudar o endereço de e-mail usado para autenticação de dois fatores. Você pode alterar este endereço de e-mail nas configurações de login em duas etapas."
+    "message": "O procedimento alterará o endereço de e-mail da sua conta. Não alterará o endereço de e-mail utilizado para autenticação de início de sessão em duas etapas. Pode alterar este endereço de e-mail nas definições de início de sessão em duas etapas."
   },
   "newEmail": {
     "message": "Novo email"
@@ -1250,7 +1250,7 @@
     "message": "Erro de Importação"
   },
   "importErrorDesc": {
-    "message": "Houve um problema com os dados que você tentou importar. Por favor, resolva os erros listados abaixo em seu arquivo de origem e tente novamente."
+    "message": "Havia um problema com os dados que tentou importar. Por favor, resolva os erros listados abaixo no seu ficheiro-fonte e tente novamente."
   },
   "importSuccess": {
     "message": "Os dados foram importados com sucesso para o seu cofre."
@@ -1268,7 +1268,7 @@
     "message": "Data successfully exported"
   },
   "importWarning": {
-    "message": "Você está importando dados para $ORGANIZATION$. Os seus dados podem ser compartilhados com membros desta organização. Deseja continuar?",
+    "message": "Está a importar dados para a $ORGANIZATION$. Os seus dados podem ser partilhados com membros desta organização. Deseja prosseguir?",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -1438,10 +1438,10 @@
     "message": "É requerida uma adesão premium para utilizar esta funcionalidade."
   },
   "youHavePremiumAccess": {
-    "message": "Você tem acesso premium"
+    "message": "Tem acesso premium"
   },
   "alreadyPremiumFromOrg": {
-    "message": "Você já tem acesso às funcionalidades premium por causa de uma organização da qual é um membro."
+    "message": "Já tem acesso às funcionalidades premium por causa de uma organização da qual é um membro."
   },
   "manage": {
     "message": "Gerir"
@@ -2490,7 +2490,7 @@
     "message": "Quando um membro é revogado, já não terá acesso aos dados da organização. Para restaurar rapidamente o acesso ao membro vá para a aba Revogada."
   },
   "removeUserConfirmationKeyConnector": {
-    "message": "Atenção! Este utilizador requer o Key Connector para gerir a sua encriptação. Remover esse utilizador da sua organização desativará permanentemente a sua conta. Esta ação não pode ser desfeita. Você deseja continuar?"
+    "message": "Atenção! Este utilizador necessita do Key Connector para gerir a sua encriptação. A remoção deste utilizador da sua organização desativará permanentemente a sua conta. Esta ação não pode ser desfeita. Deseja prosseguir?"
   },
   "externalId": {
     "message": "Id externa"
@@ -3655,7 +3655,7 @@
     "message": "Os membros da organização que não tenham a autenticação de dois passos ativada para sua conta pessoal, serão removidos da organização e receberão um email notificando-os acerca da alteração."
   },
   "twoStepLoginPolicyUserWarning": {
-    "message": "É membro de uma organização que requer que a autenticação de dois passos esteja ativada na sua conta de utilizador. Se desativar todos os serviços de autenticação de dois passos, será automaticamente removido(a) dessas organizações."
+    "message": "É membro de uma organização que requer início de sessão em duas etapas para ser configurada na sua conta de utilizador. Se desligar todos os fornecedores de início de sessão em duas etapas, será automaticamente removido destas organizações."
   },
   "passwordGeneratorPolicyDesc": {
     "message": "Defina os requisitos mínimos para configuração do gerador de palavras-passe."
@@ -4189,7 +4189,7 @@
     "message": "Acesso de emergência rejeitado"
   },
   "passwordResetFor": {
-    "message": "Redefinição de senha para $USER$. Agora você pode aceder usando a nova senha.",
+    "message": "Redefinição da palavra-passe para $USER$. Pode agora iniciar sessão utilizando a nova palavra-passe.",
     "placeholders": {
       "user": {
         "content": "$1",
@@ -4441,7 +4441,7 @@
     }
   },
   "viewSendHiddenEmailWarning": {
-    "message": "O usuário Bitwarden que criou este Send escolheu ocultar o seu endereço de e-mail. Você deve garantir que confia na origem deste link antes de usar ou descarregar o seu conteúdo.",
+    "message": "O utilizador do Bitwarden que criou este Send optou por ocultar o seu endereço de e-mail. Deve garantir que confia na origem deste link antes de usar ou descarregar o seu conteúdo.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "expirationDateIsInvalid": {
@@ -4812,6 +4812,9 @@
   "masterPasswordInvalidWarning": {
     "message": "Your master password does not meet the policy requirements of this organization. In order to join the organization, you must update your master password now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
   },
+  "updateWeakMasterPasswordWarning": {
+    "message": "Your master password does not meet one or more of your organization policies. In order to access the vault, you must update your master password now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
+  },
   "maximumVaultTimeout": {
     "message": "Expiração do cofre"
   },
@@ -4831,7 +4834,7 @@
     "message": "Minutos"
   },
   "vaultTimeoutPolicyInEffect": {
-    "message": "Your organization policies are affecting your vault timeout. Maximum allowed vault timeout is $HOURS$ hour(s) and $MINUTES$ minute(s)",
+    "message": "Your organization policies have set your maximum allowed vault timeout to $HOURS$ hour(s) and $MINUTES$ minute(s).",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -4840,6 +4843,32 @@
       "minutes": {
         "content": "$2",
         "example": "5"
+      }
+    }
+  },
+  "vaultTimeoutPolicyWithActionInEffect": {
+    "message": "Your organization policies are affecting your vault timeout. Maximum allowed vault timeout is $HOURS$ hour(s) and $MINUTES$ minute(s). Your vault timeout action is set to $ACTION$.",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      },
+      "action": {
+        "content": "$3",
+        "example": "Lock"
+      }
+    }
+  },
+  "vaultTimeoutActionPolicyInEffect": {
+    "message": "Your organization policies have set your vault timeout action to $ACTION$.",
+    "placeholders": {
+      "action": {
+        "content": "$1",
+        "example": "Lock"
       }
     }
   },
@@ -5412,13 +5441,13 @@
     "message": "Password type"
   },
   "regenerateUsername": {
-    "message": "Regenerate username"
+    "message": "Regerar nome de utilizador"
   },
   "generateUsername": {
-    "message": "Generate username"
+    "message": "Gerar nome de utilizador"
   },
   "usernameType": {
-    "message": "Username type"
+    "message": "Tipo de nome de utilizador"
   },
   "plusAddressedEmail": {
     "message": "Plus addressed email",
@@ -5561,7 +5590,7 @@
     "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
   },
   "rotateScimKeyWarning": {
-    "message": "Você tem certeza que deseja gerar nova chave de API SCIM? A chave atual não funcionará mais para quaisquer integrações existentes.",
+    "message": "Tem a certeza de que quer rodar a chave SCIM API? A chave atual já não funcionará para quaisquer integrações existentes.",
     "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
   },
   "rotateKey": {
@@ -5617,6 +5646,24 @@
       "characters": {
         "content": "$1",
         "example": "@, #, $, %"
+      }
+    }
+  },
+  "inputMinValue": {
+    "message": "Input value must be at least $MIN$.",
+    "placeholders": {
+      "min": {
+        "content": "$1",
+        "example": "8"
+      }
+    }
+  },
+  "inputMaxValue": {
+    "message": "Input value must not exceed $MAX$.",
+    "placeholders": {
+      "max": {
+        "content": "$1",
+        "example": "100"
       }
     }
   },
@@ -6502,7 +6549,7 @@
     "message": "Can read, write"
   },
   "groupSlashUser": {
-    "message": "Group/User"
+    "message": "Grupo/Utilizador"
   },
   "lowKdfIterations": {
     "message": "Low KDF Iterations"
@@ -6687,5 +6734,8 @@
   },
   "notAvailableForFreeOrganization": {
     "message": "This feature is not available for free organizations. Contact your organization owner to upgrade."
+  },
+  "enforceOnLoginDesc": {
+    "message": "Require existing members to change their passwords"
   }
 }
