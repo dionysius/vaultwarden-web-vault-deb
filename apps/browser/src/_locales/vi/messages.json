@@ -196,13 +196,13 @@
     "message": "Trợ giúp & phản hồi"
   },
   "helpCenter": {
-    "message": "Bitwarden Help center"
+    "message": "Trung tâm hỗ trợ Bitwarden"
   },
   "communityForums": {
-    "message": "Explore Bitwarden community forums"
+    "message": "Khám phá diễn đàn cộng đồng Bitwarden"
   },
   "contactSupport": {
-    "message": "Contact Bitwarden support"
+    "message": "Liên hệ với bộ phận hỗ trợ Bitwarden"
   },
   "sync": {
     "message": "Đồng bộ"
@@ -622,7 +622,7 @@
     "message": "Hỏi để cập nhật đăng nhập hiện có"
   },
   "changedPasswordNotificationDesc": {
-    "message": "Ask to update a login's password when a change is detected on a website."
+    "message": "Yêu cầu cập nhật mật khẩu đăng nhập khi phát hiện thay đổi trên trang web."
   },
   "notificationChangeDesc": {
     "message": "Bạn có muốn cập nhật mật khẩu này trên Bitwarden không?"
@@ -634,7 +634,7 @@
     "message": "Hiển thị tuỳ chọn menu ngữ cảnh"
   },
   "contextMenuItemDesc": {
-    "message": "Use a secondary click to access password generation and matching logins for the website. "
+    "message": "Sử dụng một đúp chuột để truy cập vào việc tạo mật khẩu và thông tin đăng nhập phù hợp cho trang web. "
   },
   "defaultUriMatchDetection": {
     "message": "Phương thức kiểm tra URI mặc định",
@@ -678,10 +678,10 @@
     "message": "This export contains your vault data in an unencrypted format. You should not store or send the exported file over unsecure channels (such as email). Delete it immediately after you are done using it."
   },
   "encExportKeyWarningDesc": {
-    "message": "This export encrypts your data using your account's encryption key. If you ever rotate your account's encryption key you should export again since you will not be able to decrypt this export file."
+    "message": "Quá trình xuất này sẽ mã hóa dữ liệu của bạn bằng khóa mã hóa của tài khoản. Nếu bạn từng xoay khóa mã hóa tài khoản của mình, bạn nên xuất lại vì bạn sẽ không thể giải mã tệp xuất này."
   },
   "encExportAccountWarningDesc": {
-    "message": "Account encryption keys are unique to each Bitwarden user account, so you can't import an encrypted export into a different account."
+    "message": "Các khóa mã hóa tài khoản là duy nhất cho mỗi tài khoản người dùng Bitwarden, vì vậy bạn không thể nhập một bản xuất được mã hóa vào một tài khoản khác."
   },
   "exportMasterPassword": {
     "message": "Nhập mật khẩu chính để xuất kho lưu trữ của bạn."
@@ -693,7 +693,7 @@
     "message": "Xem tổ chức của bạn"
   },
   "learnOrgConfirmation": {
-    "message": "Bitwarden allows you to share your vault items with others by using an organization. Would you like to visit the bitwarden.com website to learn more?"
+    "message": "Bitwarden cho phép bạn chia sẻ các mục trong kho của mình với những người khác bằng cách sử dụng tài khoản tổ chức. Bạn có muốn truy cập trang web bitwarden.com để tìm hiểu thêm không?"
   },
   "moveToOrganization": {
     "message": "Di chuyển đến tổ chức"
@@ -715,7 +715,7 @@
     }
   },
   "moveToOrgDesc": {
-    "message": "Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved."
+    "message": "Chọn một tổ chức mà bạn muốn chuyển mục này tới. Việc di chuyển đến một tổ chức sẽ chuyển quyền sở hữu của mục sang tổ chức mà bạn chọn. Bạn sẽ không còn là chủ sở hữu trực tiếp của mục này một khi nó đã được chuyển."
   },
   "learnMore": {
     "message": "Tìm hiểu thêm"
@@ -877,7 +877,7 @@
     "message": "Lắp khóa bảo mật vào cổng USB máy tính của bạn. Nếu nó có một nút, hãy nhấn vào nó."
   },
   "webAuthnNewTab": {
-    "message": "To start the WebAuthn 2FA verification. Click the button below to open a new tab and follow the instructions provided in the new tab."
+    "message": "Để bắt đầu xác minh WebAuthn 2FA. Nhấp vào nút bên dưới để mở tab mới và làm theo hướng dẫn được cung cấp trong tab mới."
   },
   "webAuthnNewTabOpen": {
     "message": "Mở thẻ mới"
@@ -928,7 +928,7 @@
     "message": "FIDO2 WebAuthn"
   },
   "webAuthnDesc": {
-    "message": "Use any WebAuthn compatible security key to access your account."
+    "message": "Sử dụng bất kỳ khóa bảo mật tương thích với WebAuthn nào để truy cập vào tài khoản của bạn."
   },
   "emailTitle": {
     "message": "Email"
@@ -976,7 +976,7 @@
     "message": "Nếu phát hiện biểu mẫu đăng nhập, thực hiện tự động điền khi trang web tải xong."
   },
   "experimentalFeature": {
-    "message": "Compromised or untrusted websites can exploit auto-fill on page load."
+    "message": "Các trang web bị xâm phạm hoặc không đáng tin cậy có thể khai thác tính năng tự động điền khi tải trang."
   },
   "learnMoreAboutAutofill": {
     "message": "Tìm hiểu thêm về tự động điền"
@@ -1065,7 +1065,7 @@
     "message": "Hiển thị biểu tượng bộ đếm"
   },
   "badgeCounterDesc": {
-    "message": "Indicate how many logins you have for the current web page."
+    "message": "Cho biết bạn có bao nhiêu lần đăng nhập cho trang web hiện tại."
   },
   "cardholderName": {
     "message": "Tên chủ thẻ"
@@ -1465,13 +1465,13 @@
     "message": "Đặt mật khẩu chính"
   },
   "currentMasterPass": {
-    "message": "Current master password"
+    "message": "Mật khẩu chính hiện tại"
   },
   "newMasterPass": {
-    "message": "New master password"
+    "message": "Mật khẩu chính mới"
   },
   "confirmNewMasterPass": {
-    "message": "Confirm new master password"
+    "message": "Xác nhận mật khẩu chính mới"
   },
   "masterPasswordPolicyInEffect": {
     "message": "Tổ chức của bạn yêu cầu mật khẩu chính của bạn phải đáp ứng các yêu cầu sau:"
@@ -1543,28 +1543,28 @@
     "message": "Tích hợp trình duyệt chưa được kích hoạt"
   },
   "desktopIntegrationDisabledDesc": {
-    "message": "Browser integration is not set up in the Bitwarden desktop application. Please set it up in the settings within the desktop application."
+    "message": "Tích hợp trình duyệt không được thiết lập trong ứng dụng máy tính để bàn Bitwarden. Vui lòng thiết lập nó trong cài đặt trong ứng dụng máy tính để bàn."
   },
   "startDesktopTitle": {
     "message": "Mở ứng dụng Bitwarden trên máy tính"
   },
   "startDesktopDesc": {
-    "message": "The Bitwarden desktop application needs to be started before unlock with biometrics can be used."
+    "message": "Ứng dụng máy tính để bàn Bitwarden cần được khởi động trước khi có thể sử dụng tính năng mở khóa bằng sinh trắc học."
   },
   "errorEnableBiometricTitle": {
     "message": "Không thể bật nhận dạng sinh trắc học"
   },
   "errorEnableBiometricDesc": {
-    "message": "Action was canceled by the desktop application"
+    "message": "Hành động đã bị hủy bởi ứng dụng máy tính để bàn"
   },
   "nativeMessagingInvalidEncryptionDesc": {
-    "message": "Desktop application invalidated the secure communication channel. Please retry this operation"
+    "message": "Ứng dụng máy tính để bàn đã vô hiệu hóa kênh liên lạc an toàn. Vui lòng thử lại thao tác này"
   },
   "nativeMessagingInvalidEncryptionTitle": {
-    "message": "Desktop communication interrupted"
+    "message": "Giao tiếp máy tính để bàn bị gián đoạn"
   },
   "nativeMessagingWrongUserDesc": {
-    "message": "The desktop application is logged into a different account. Please ensure both applications are logged into the same account."
+    "message": "Ứng dụng máy tính để bàn được đăng nhập vào một tài khoản khác. Hãy đảm bảo cả hai ứng dụng được đăng nhập vào cùng một tài khoản."
   },
   "nativeMessagingWrongUserTitle": {
     "message": "Tài khoản không đúng"
@@ -1585,25 +1585,25 @@
     "message": "Quyền chưa được cấp"
   },
   "nativeMessaginPermissionErrorDesc": {
-    "message": "Without permission to communicate with the Bitwarden Desktop Application we cannot provide biometrics in the browser extension. Please try again."
+    "message": "Nếu không được phép giao tiếp với Ứng dụng máy tính để bàn Bitwarden, chúng tôi không thể cung cấp sinh trắc học trong tiện ích mở rộng trình duyệt. Vui lòng thử lại."
   },
   "nativeMessaginPermissionSidebarTitle": {
     "message": "Lỗi yêu cầu quyền"
   },
   "nativeMessaginPermissionSidebarDesc": {
-    "message": "This action cannot be done in the sidebar, please retry the action in the popup or popout."
+    "message": "Không thể thực hiện hành động này trong thanh bên, vui lòng thử lại hành động trong cửa sổ bật lên hoặc cửa sổ bật ra."
   },
   "personalOwnershipSubmitError": {
-    "message": "Due to an Enterprise Policy, you are restricted from saving items to your personal vault. Change the Ownership option to an organization and choose from available collections."
+    "message": "Do Chính sách doanh nghiệp, bạn bị hạn chế lưu các mục vào kho tiền cá nhân của mình. Thay đổi tùy chọn Quyền sở hữu thành một tổ chức và chọn từ các bộ sưu tập có sẵn."
   },
   "personalOwnershipPolicyInEffect": {
-    "message": "An organization policy is affecting your ownership options."
+    "message": "Chính sách của tổ chức đang ảnh hưởng đến các tùy chọn quyền sở hữu của bạn."
   },
   "excludedDomains": {
     "message": "Tên miền đã loại trừ"
   },
   "excludedDomainsDesc": {
-    "message": "Bitwarden will not ask to save login details for these domains. You must refresh the page for changes to take effect."
+    "message": "Bitwarden sẽ không yêu cầu lưu thông tin đăng nhập cho các miền này. Bạn phải làm mới trang để các thay đổi có hiệu lực."
   },
   "excludedDomainsInvalidDomain": {
     "message": "$DOMAIN$ không phải là tên miền hợp lệ",
@@ -1637,7 +1637,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "maxAccessCountReached": {
-    "message": "Max access count reached",
+    "message": "Đã đạt đến số lượng truy cập tối đa",
     "description": "This text will be displayed after a Send has been accessed the maximum amount of times."
   },
   "expired": {
@@ -1736,7 +1736,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendPasswordDesc": {
-    "message": "Optionally require a password for users to access this Send.",
+    "message": "Tùy chọn yêu cầu mật khẩu để người dùng truy cập Gửi này.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendNotesDesc": {
