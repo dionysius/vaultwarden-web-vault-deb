@@ -1393,7 +1393,7 @@
     "message": "Windows Hello ilə kilidi aç"
   },
   "additionalWindowsHelloSettings": {
-    "message": "Additional Windows Hello settings"
+    "message": "Əlavə Windows Hello tənzimləmələri"
   },
   "windowsHelloConsentMessage": {
     "message": "Bitwarden üçün təsdiqlə."
@@ -1402,7 +1402,7 @@
     "message": "Touch ID kilidini aç"
   },
   "additionalTouchIdSettings": {
-    "message": "Additional Touch ID settings"
+    "message": "Əlavə Touch ID tənzimləmələri"
   },
   "touchIdConsentMessage": {
     "message": "anbarınızın kilidini açın"
@@ -1414,10 +1414,10 @@
     "message": "Açılışda Touch ID-ni soruşun"
   },
   "requirePasswordOnStart": {
-    "message": "Require password or PIN on app start"
+    "message": "Tətbiq başladılanda parolu və ya PIN-i tələb et"
   },
   "recommendedForSecurity": {
-    "message": "Recommended for security."
+    "message": "Güvənlik üçün tövsiyə olunur."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Yenidən başladılanda ana parol ilə kilidlə"
@@ -1540,7 +1540,7 @@
     "message": "SSO ilə giriş prosesini tamamlamaq üçün zəhmət olmasa anbarınıza müraciət etmək və onu qorumaq üçün bir ana parol tənzimləyin."
   },
   "currentMasterPass": {
-    "message": "Current master password"
+    "message": "Hazırkı ana parol"
   },
   "newMasterPass": {
     "message": "Yeni ana parol"
@@ -1859,7 +1859,7 @@
     "message": "Ana parolunuz təzəlikcə təşkilatınızdakı bir administrator tərəfindən dəyişdirildi. Anbara müraciət üçün indi güncəlləməlisiniz. Davam etsəniz, hazırkı seansdan çıxış etmiş və təkrar giriş etməli olacaqsınız. Digər cihazlardakı aktiv seanslar bir saata qədər aktiv qalmağa davam edə bilər."
   },
   "updateWeakMasterPasswordWarning": {
-    "message": "Your master password does not meet one or more of your organization policies. In order to access the vault, you must update your master password now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
+    "message": "Ana parolunuz təşkilatınızdakı siyasətlərdən birinə və ya bir neçəsinə uyğun gəlmir. Anbara müraciət üçün ana parolunuzu indi güncəlləməlisiniz. Davam etsəniz, hazırkı seansdan çıxış etmiş və təkrar giriş etməli olacaqsınız. Digər cihazlardakı aktiv seanslar bir saata qədər aktiv qalmağa davam edə bilər."
   },
   "hours": {
     "message": "Saat"
@@ -2247,17 +2247,17 @@
     }
   },
   "windowsBiometricUpdateWarning": {
-    "message": "Bitwarden recommends updating your biometric settings to require your master password (or PIN) on the first unlock. Would you like to update your settings now?"
+    "message": "Bitwarden, kilidi ilk açanda ana parolunuzu (və ya PIN-inizi) tələb edəcək biometrik tənzimləmələri güncəlləməyi tövsiyə edir. Tənzimləmələrinizi indi güncəlləmək istəyirsiniz?"
   },
   "windowsBiometricUpdateWarningTitle": {
-    "message": "Recommended Settings Update"
+    "message": "Tövsiyə edilən Tənzimləmələr Güncəlləməsi"
   },
   "windows8SoonDeprecated": {
-    "message": "The operating system you are using will no longer be supported after the 2023.5.0 release. Upgrade to a supported operating system. Continuing without updating your operating system may result in unexpected behavior or security risks.",
+    "message": "İstifadə etdiyiniz əməliyyat sistemi, 2023.5.0 buraxılışından etibarən dəstəklənməyəcək. Dəstəklənən bir əməliyyat sisteminə yüksəldin. Əməliyyat sisteminizi güncəlləmədən davam etmək, gözlənilməz davranışlar və ya güvənlik riskləri ilə nəticələnə bilər.",
     "description": "Windows 8, 8.1 and Server 2012 R2 are no longer supported by Electron & Chromium. Show a notice on the login and lock screen while 2023.4.0 is the active version."
   },
   "windows8Deprecated": {
-    "message": "The operating system you are using is no longer supported. Continuing without updating your operating system may result in unexpected behavior.",
+    "message": "İstifadə etdiyiniz əməliyyat sistemi artıq dəstəklənmir. Əməliyyat sisteminizi güncəlləmədən davam etmək, gözlənilməz davranışlarla nəticələnə bilər.",
     "description": "Windows 8, 8.1 and Server 2012 R2 are no longer supported by Electron & Chromium. Show a notice on the login and lock screen after 2023.5.0 is released."
   }
 }

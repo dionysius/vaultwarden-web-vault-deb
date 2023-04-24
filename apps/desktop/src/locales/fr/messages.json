@@ -1393,7 +1393,7 @@
     "message": "Déverrouiller avec Windows Hello"
   },
   "additionalWindowsHelloSettings": {
-    "message": "Additional Windows Hello settings"
+    "message": "Paramètres supplémentaires de Windows Hello"
   },
   "windowsHelloConsentMessage": {
     "message": "Vérifier pour Bitwarden."
@@ -1402,7 +1402,7 @@
     "message": "Déverrouiller avec Touch ID"
   },
   "additionalTouchIdSettings": {
-    "message": "Additional Touch ID settings"
+    "message": "Paramètres supplémentaires de Touch ID"
   },
   "touchIdConsentMessage": {
     "message": "déverouiller votre coffre"
@@ -1414,10 +1414,10 @@
     "message": "Demander à Touch ID au démarrage"
   },
   "requirePasswordOnStart": {
-    "message": "Require password or PIN on app start"
+    "message": "Exiger un mot de passe ou un code PIN au démarrage de Bitwarden"
   },
   "recommendedForSecurity": {
-    "message": "Recommended for security."
+    "message": "Recommandé pour la sécurité."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Verrouiller avec le mot de passe principal au redémarrage"
@@ -2250,7 +2250,7 @@
     "message": "Bitwarden recommends updating your biometric settings to require your master password (or PIN) on the first unlock. Would you like to update your settings now?"
   },
   "windowsBiometricUpdateWarningTitle": {
-    "message": "Recommended Settings Update"
+    "message": "Une mise à jour des paramètres est recommandée"
   },
   "windows8SoonDeprecated": {
     "message": "Le système d'exploitation que vous utilisez actuellement ne sera plus pris en charge après la version 2023.5.0. Mettez à niveau vers un système d'exploitation pris en charge. En poursuivant sans mettre à jour votre système d'exploitation, cela peut entraîner un comportement inattendu ou des risques pour la sécurité.",
