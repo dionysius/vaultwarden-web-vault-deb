@@ -1,5 +1,5 @@
 <form [formGroup]="formGroup" [bitSubmit]="submit">
-  <bit-dialog [disablePadding]="!loading">
+  <bit-dialog [disablePadding]="!loading" dialogSize="large">
     <span bitDialogTitle>
       {{ title }}
       <span class="tw-text-sm tw-normal-case tw-text-muted" *ngIf="!loading && params.name">{{

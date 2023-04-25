@@ -19,18 +19,22 @@ export class DialogComponent {
     return this._disablePadding;
   }
 
-  @HostBinding("class") classes = ["tw-flex", "tw-flex-col", "tw-py-4", "tw-max-h-screen"];
+  @HostBinding("class") get classes() {
+    return ["tw-flex", "tw-flex-col", "tw-max-h-screen", "tw-w-screen", "tw-p-4"].concat(
+      this.width
+    );
+  }
 
   get width() {
     switch (this.dialogSize) {
       case "small": {
-        return "tw-w-96";
+        return "tw-max-w-sm";
       }
       case "large": {
-        return "tw-w-75vw";
+        return "tw-max-w-3xl";
       }
       default: {
-        return "tw-w-50vw";
+        return "tw-max-w-xl";
       }
     }
   }
