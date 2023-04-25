@@ -246,11 +246,19 @@ export class LoginComponent extends CaptchaProtectedComponent implements OnInit 
       // so that autofill can work properly
       this.formGroup.controls.masterPassword.reset();
     } else {
+      // Mark MP as untouched so that, when users enter email and hit enter,
+      // the MP field doesn't load with validation errors
+      this.formGroup.controls.masterPassword.markAsUntouched();
+
       // When email is validated, focus on master password after
       // waiting for input to be rendered
-      this.ngZone.onStable
-        .pipe(take(1))
-        .subscribe(() => this.masterPasswordInput?.nativeElement?.focus());
+      if (this.ngZone.isStable) {
+        this.masterPasswordInput?.nativeElement?.focus();
+      } else {
+        this.ngZone.onStable.pipe(take(1)).subscribe(() => {
+          this.masterPasswordInput?.nativeElement?.focus();
+        });
+      }
     }
   }
 
