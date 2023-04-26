@@ -6,7 +6,7 @@ import { GenerateResponse } from "./generate-response";
 import { SuccessStatusResponse } from "./success-status-response";
 import { UserStatusErrorResponse } from "./user-status-error-response";
 
-export type EncyptedMessageResponse =
+export type MessageResponseData =
   | AccountStatusResponse[]
   | CannotDecryptErrorResponse
   | CipherResponse[]
