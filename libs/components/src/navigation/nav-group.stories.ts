@@ -57,18 +57,18 @@ export const Tree: Story<NavGroupComponent> = (args) => ({
   template: `
     <bit-nav-group text="Tree example" icon="bwi-collection" [open]="true">
       <bit-nav-group text="Level 1 - with children (empty)" route="#" icon="bwi-collection" variant="tree"></bit-nav-group>
-      <bit-nav-item text="Level 1 - no childen" route="#" icon="bwi-collection" variant="tree"></bit-nav-item>
+      <bit-nav-item text="Level 1 - no children" route="#" icon="bwi-collection" variant="tree"></bit-nav-item>
       <bit-nav-group text="Level 1 - with children" route="#" icon="bwi-collection" variant="tree" [open]="true">
         <bit-nav-group text="Level 2 - with children" route="#" icon="bwi-collection" variant="tree" [open]="true">
-          <bit-nav-item text="Level 3 - no childen, no icon" route="#" variant="tree"></bit-nav-item>
+          <bit-nav-item text="Level 3 - no children, no icon" route="#" variant="tree"></bit-nav-item>
           <bit-nav-group text="Level 3 - with children" route="#" icon="bwi-collection" variant="tree" [open]="true">
-            <bit-nav-item text="Level 4 - no childen, no icon" route="#" variant="tree"></bit-nav-item>
+            <bit-nav-item text="Level 4 - no children, no icon" route="#" variant="tree"></bit-nav-item>
           </bit-nav-group>
         </bit-nav-group>
         <bit-nav-group text="Level 2 - with children (empty)" route="#" icon="bwi-collection" variant="tree" [open]="true"></bit-nav-group>
-        <bit-nav-item text="Level 2 - no childen" route="#" icon="bwi-collection" variant="tree"></bit-nav-item>
+        <bit-nav-item text="Level 2 - no children" route="#" icon="bwi-collection" variant="tree"></bit-nav-item>
       </bit-nav-group>
-      <bit-nav-item text="Level 1 - no childen" route="#" icon="bwi-collection" variant="tree"></bit-nav-item>
+      <bit-nav-item text="Level 1 - no children" route="#" icon="bwi-collection" variant="tree"></bit-nav-item>
     </bit-nav-group>
   `,
 });

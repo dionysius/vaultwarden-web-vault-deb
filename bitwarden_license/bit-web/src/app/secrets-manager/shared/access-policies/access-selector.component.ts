@@ -43,7 +43,7 @@ export class AccessSelectorComponent implements OnInit {
   static readonly projectIcon = "bwi-collection";
 
   /**
-   * Emits the selected itemss on submit.
+   * Emits the selected items on submit.
    */
   @Output() onCreateAccessPolicies = new EventEmitter<SelectItemView[]>();
   @Output() onDeleteAccessPolicy = new EventEmitter<AccessSelectorRowView>();

@@ -44,7 +44,7 @@ export default class AutofillField {
    */
   "label-top": string;
   /**
-   * The contatenated `innerText` or `textContent` of all elements that are HTML labels for the field
+   * The concatenated `innerText` or `textContent` of all elements that are HTML labels for the field
    */
   "label-tag": string;
   /**

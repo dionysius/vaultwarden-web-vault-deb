@@ -181,7 +181,7 @@ export class PeopleComponent
             if (response != null) {
               this.organization.hasPublicAndPrivateKeys =
                 response.publicKey != null && response.privateKey != null;
-              await this.syncService.fullSync(true); // Replace oganizations with new data
+              await this.syncService.fullSync(true); // Replace organizations with new data
             } else {
               throw new Error(this.i18nService.t("resetPasswordOrgKeysError"));
             }

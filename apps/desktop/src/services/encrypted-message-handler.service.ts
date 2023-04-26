@@ -44,7 +44,7 @@ export class EncryptedMessageHandlerService {
         return await this.statusCommandHandler();
       }
       case "bw-credential-retrieval": {
-        return await this.credentialretreivalCommandHandler(payload as CredentialRetrievePayload);
+        return await this.credentialRetrievalCommandHandler(payload as CredentialRetrievePayload);
       }
       case "bw-credential-create": {
         return await this.credentialCreateCommandHandler(payload as CredentialCreatePayload);
@@ -100,7 +100,7 @@ export class EncryptedMessageHandlerService {
     );
   }
 
-  private async credentialretreivalCommandHandler(
+  private async credentialRetrievalCommandHandler(
     payload: CredentialRetrievePayload
   ): Promise<CipherResponse[] | UserStatusErrorResponse> {
     if (payload.uri == null) {

@@ -90,7 +90,7 @@ const InlineTemplate: Story = (args) => ({
   props: args,
   template: `
     <span class="tw-text-main">
-      On the internet pargraphs often contain <a bitLink href="#">inline links</a>, but few know that <button bitLink>buttons</button> can be used for similar purposes.
+      On the internet paragraphs often contain <a bitLink href="#">inline links</a>, but few know that <button bitLink>buttons</button> can be used for similar purposes.
     </span>
   `,
 });

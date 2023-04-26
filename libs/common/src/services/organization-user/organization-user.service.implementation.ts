@@ -15,7 +15,7 @@ import {
   OrganizationUserBulkPublicKeyResponse,
   OrganizationUserBulkResponse,
   OrganizationUserDetailsResponse,
-  OrganizationUserResetPasswordDetailsReponse,
+  OrganizationUserResetPasswordDetailsResponse,
   OrganizationUserUserDetailsResponse,
 } from "../../abstractions/organization-user/responses";
 import { ListResponse } from "../../models/response/list.response";
@@ -88,7 +88,7 @@ export class OrganizationUserServiceImplementation implements OrganizationUserSe
   async getOrganizationUserResetPasswordDetails(
     organizationId: string,
     id: string
-  ): Promise<OrganizationUserResetPasswordDetailsReponse> {
+  ): Promise<OrganizationUserResetPasswordDetailsResponse> {
     const r = await this.apiService.send(
       "GET",
       "/organizations/" + organizationId + "/users/" + id + "/reset-password-details",
@@ -96,7 +96,7 @@ export class OrganizationUserServiceImplementation implements OrganizationUserSe
       true,
       true
     );
-    return new OrganizationUserResetPasswordDetailsReponse(r);
+    return new OrganizationUserResetPasswordDetailsResponse(r);
   }
 
   postOrganizationUserInvite(

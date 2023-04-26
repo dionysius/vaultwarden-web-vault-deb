@@ -145,7 +145,7 @@ $ng-dropdown-shadow: rgb(var(--color-secondary-100)) !default;
     &.ng-select-disabled {
       > .ng-select-container .ng-value-container .ng-value {
         background-color: $ng-select-disabled-text;
-        border: 0px solid $ng-select-border; // Removing border on slected value when disabled
+        border: 0px solid $ng-select-border; // Removing border on selected value when disabled
         .ng-value-label {
           padding: 0 5px;
         }

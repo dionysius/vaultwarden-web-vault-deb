@@ -128,7 +128,7 @@ export default class IPCService {
     this.getSocket().emit("message", message);
 
     try {
-      // Since we can not guarentee that a response message will ever be sent, we put a timeout
+      // Since we can not guarantee that a response message will ever be sent, we put a timeout
       // on messages
       return race({
         promise: deferred.getPromise(),

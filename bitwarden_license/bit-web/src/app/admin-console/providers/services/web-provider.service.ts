@@ -28,7 +28,7 @@ export class WebProviderService {
     return response;
   }
 
-  async detachOrganizastion(providerId: string, organizationId: string): Promise<any> {
+  async detachOrganization(providerId: string, organizationId: string): Promise<any> {
     await this.apiService.deleteProviderOrganization(providerId, organizationId);
     await this.syncService.fullSync(true);
   }

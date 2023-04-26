@@ -12,7 +12,7 @@ export default class VaultTimeoutService extends BaseVaultTimeoutService {
     }
   }
 
-  // This is a work-around to safari adding an arbitary delay to setTimeout and
+  // This is a work-around to safari adding an arbitrary delay to setTimeout and
   //  setIntervals. It works by calling the native extension which sleeps for 10s,
   //  efficiently replicating setInterval.
   async checkSafari() {

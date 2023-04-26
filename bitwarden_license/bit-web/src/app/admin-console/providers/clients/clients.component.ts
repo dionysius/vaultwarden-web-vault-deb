@@ -165,7 +165,7 @@ export class ClientsComponent implements OnInit {
       return false;
     }
 
-    this.actionPromise = this.webProviderService.detachOrganizastion(
+    this.actionPromise = this.webProviderService.detachOrganization(
       this.providerId,
       organization.id
     );

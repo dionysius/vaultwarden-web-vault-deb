@@ -26,7 +26,7 @@ export class VaultHeaderComponent {
    */
   @Input() loading: boolean;
 
-  /** Current active fitler */
+  /** Current active filter */
   @Input() filter: RoutedVaultFilterModel;
 
   /**

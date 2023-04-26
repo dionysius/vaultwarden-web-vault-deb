@@ -153,7 +153,7 @@ export class SendApiService implements SendApiServiceAbstraction {
     await this.sendService.upsert(data);
   }
 
-  // Send File Upload methoids
+  // Send File Upload methods
 
   private async upload(sendData: [Send, EncArrayBuffer]): Promise<SendResponse> {
     const request = new SendRequest(sendData[0], sendData[1]?.buffer.byteLength);

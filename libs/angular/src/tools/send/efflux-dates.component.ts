@@ -22,7 +22,7 @@ enum BrowserPath {
 
 enum DateField {
   DeletionDate = "deletion",
-  ExpriationDate = "expiration",
+  ExpirationDate = "expiration",
 }
 
 // Value = hours
@@ -135,10 +135,10 @@ export class EffluxDatesComponent implements OnInit {
         }
       default: {
         const now = new Date();
-        const miliseconds = now.setTime(
+        const milliseconds = now.setTime(
           now.getTime() + (this.selectedDeletionDatePreset.value as number) * 60 * 60 * 1000
         );
-        return new Date(miliseconds).toString();
+        return new Date(milliseconds).toString();
       }
     }
   }
@@ -166,10 +166,10 @@ export class EffluxDatesComponent implements OnInit {
         }
       default: {
         const now = new Date();
-        const miliseconds = now.setTime(
+        const milliseconds = now.setTime(
           now.getTime() + (this.selectedExpirationDatePreset.value as number) * 60 * 60 * 1000
         );
-        return new Date(miliseconds).toString();
+        return new Date(milliseconds).toString();
       }
     }
   }
@@ -180,7 +180,7 @@ export class EffluxDatesComponent implements OnInit {
   }
 
   get safariExpirationTimePresetOptions() {
-    return this.safariTimePresetOptions(DateField.ExpriationDate);
+    return this.safariTimePresetOptions(DateField.ExpirationDate);
   }
 
   private get nextWeek(): Date {
@@ -285,7 +285,7 @@ export class EffluxDatesComponent implements OnInit {
 
     // loop through each hour on a 12 hour system
     for (let h = 1; h <= 12; h++) {
-      // loop through each minute in the hour using the skip to incriment
+      // loop through each minute in the hour using the skip to increment
       for (let m = 0; m < 60; m += minuteIncrementer) {
         // init the final strings that will be added to the lists
         let hour = h.toString();
@@ -333,7 +333,7 @@ export class EffluxDatesComponent implements OnInit {
 
     // determine if an unsupported value already exists on the send & add that to the top of the option list
     // example: if the Send was created with a different client
-    if (field === DateField.ExpriationDate && this.initialExpirationDate != null && this.editMode) {
+    if (field === DateField.ExpirationDate && this.initialExpirationDate != null && this.editMode) {
       const previousValue: TimeOption = {
         twelveHour: this.datePipe.transform(this.initialExpirationDate, "hh:mm a"),
         twentyFourHour: this.datePipe.transform(this.initialExpirationDate, "HH:mm"),

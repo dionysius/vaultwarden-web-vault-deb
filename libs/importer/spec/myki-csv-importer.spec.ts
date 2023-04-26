@@ -133,7 +133,7 @@ function expectIdCard(cipher: CipherView) {
 function expectTaxNumber(cipher: CipherView) {
   expect(cipher.type).toBe(CipherType.Identity);
   expect(cipher.name).toBe("Tax number ID card");
-  expect(cipher.notes).toBe("Additinoal information text field");
+  expect(cipher.notes).toBe("Additional information text field");
 
   expect(cipher.identity.fullName).toBe("Joe M User");
   expect(cipher.identity.firstName).toBe("Joe");
@@ -405,7 +405,7 @@ function expectSoftwareLicense(cipher: CipherView) {
 function expectTourVisa(cipher: CipherView) {
   expect(cipher.type).toBe(CipherType.Identity);
   expect(cipher.name).toBe("Tour visa ID card");
-  expect(cipher.notes).toBe("Additional Informaion text");
+  expect(cipher.notes).toBe("Additional Information text");
 
   expect(cipher.identity.fullName).toBe("Joe M User");
   expect(cipher.identity.firstName).toBe("Joe");

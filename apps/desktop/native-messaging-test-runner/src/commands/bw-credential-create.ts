@@ -47,7 +47,7 @@ const { name } = argv;
   const response = await nativeMessageService.credentialCreation(handshakeResponse.sharedKey, {
     name: name,
     userName: "SuperAwesomeUser",
-    password: "dolhpin",
+    password: "dolphin",
     uri: "google.com",
     userId: activeUser.id,
   } as CredentialCreatePayload);

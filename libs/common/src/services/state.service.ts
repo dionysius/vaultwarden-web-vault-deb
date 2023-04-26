@@ -105,7 +105,7 @@ export class StateService<
           }
 
           // FIXME: This should be refactored into AuthService or a similar service,
-          //  as checking for the existance of the crypto key is a low level
+          //  as checking for the existence of the crypto key is a low level
           //  implementation detail.
           this.activeAccountUnlockedSubject.next((await this.getCryptoMasterKey()) != null);
         })
@@ -1555,7 +1555,7 @@ export class StateService<
 
   async setEnvironmentUrls(value: EnvironmentUrls, options?: StorageOptions): Promise<void> {
     // Global values are set on each change and the current global settings are passed to any newly authed accounts.
-    // This is to allow setting environement values before an account is active, while still allowing individual accounts to have their own environments.
+    // This is to allow setting environment values before an account is active, while still allowing individual accounts to have their own environments.
     const globals = await this.getGlobals(
       this.reconcileOptions(options, await this.defaultOnDiskOptions())
     );

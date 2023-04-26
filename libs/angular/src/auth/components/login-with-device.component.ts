@@ -74,7 +74,7 @@ export class LoginWithDeviceComponent
 
     //gets signalR push notification
     this.authService
-      .getPushNotifcationObs$()
+      .getPushNotificationObs$()
       .pipe(takeUntil(this.destroy$))
       .subscribe((id) => {
         this.confirmResponse(id);
@@ -126,7 +126,7 @@ export class LoginWithDeviceComponent
         return;
       }
 
-      const credentials = await this.buildLoginCredntials(requestId, response);
+      const credentials = await this.buildLoginCredentials(requestId, response);
       const loginResponse = await this.authService.logIn(credentials);
 
       if (loginResponse.requiresTwoFactor) {
@@ -189,7 +189,7 @@ export class LoginWithDeviceComponent
     );
   }
 
-  private async buildLoginCredntials(
+  private async buildLoginCredentials(
     requestId: string,
     response: AuthRequestResponse
   ): Promise<PasswordlessLogInCredentials> {

@@ -161,7 +161,7 @@ export class AccountSwitcherComponent implements OnInit, OnDestroy {
         continue;
       }
 
-      // environmentUrls are stored on disk and must be retrieved seperatly from the in memory state offered from subscribing to accounts
+      // environmentUrls are stored on disk and must be retrieved separately from the in memory state offered from subscribing to accounts
       baseAccounts[userId].settings.environmentUrls = await this.stateService.getEnvironmentUrls({
         userId: userId,
       });

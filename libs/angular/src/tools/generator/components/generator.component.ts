@@ -211,7 +211,7 @@ export class GeneratorComponent implements OnInit {
   }
 
   private normalizePasswordOptions() {
-    // Application level normalize options depedent on class variables
+    // Application level normalize options dependent on class variables
     this.passwordOptions.ambiguous = !this.avoidAmbiguous;
 
     if (

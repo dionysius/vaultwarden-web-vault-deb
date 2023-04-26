@@ -34,7 +34,7 @@ export class BitSubmitDirective implements OnInit, OnDestroy {
       .pipe(
         filter(() => !this.disabled),
         switchMap(() => {
-          // Calling functionToObservable exectues the sync part of the handler
+          // Calling functionToObservable executes the sync part of the handler
           // allowing the function to check form validity before it gets disabled.
           const awaitable = functionToObservable(this.handler);
 

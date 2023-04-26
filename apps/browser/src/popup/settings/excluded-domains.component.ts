@@ -80,7 +80,7 @@ export class ExcludedDomainsComponent implements OnInit, OnDestroy {
 
   async submit() {
     const savedDomains: { [name: string]: null } = {};
-    const newExcludedDomains = this.getNewlyAddedDomians(this.excludedDomains);
+    const newExcludedDomains = this.getNewlyAddedDomains(this.excludedDomains);
     for (const domain of this.excludedDomains) {
       const resp = newExcludedDomains.filter((e) => e.uri === domain.uri);
       if (resp.length === 0) {
@@ -109,7 +109,7 @@ export class ExcludedDomainsComponent implements OnInit, OnDestroy {
     return index;
   }
 
-  getNewlyAddedDomians(domain: ExcludedDomain[]): ExcludedDomain[] {
+  getNewlyAddedDomains(domain: ExcludedDomain[]): ExcludedDomain[] {
     const result = this.excludedDomains.filter(
       (newDomain) =>
         !this.existingExcludedDomains.some((oldDomain) => newDomain.uri === oldDomain.uri)

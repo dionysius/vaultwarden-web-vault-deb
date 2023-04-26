@@ -15,7 +15,7 @@ import {
   OrganizationUserBulkPublicKeyResponse,
   OrganizationUserBulkResponse,
   OrganizationUserDetailsResponse,
-  OrganizationUserResetPasswordDetailsReponse,
+  OrganizationUserResetPasswordDetailsResponse,
   OrganizationUserUserDetailsResponse,
 } from "./responses";
 
@@ -65,7 +65,7 @@ export abstract class OrganizationUserService {
   abstract getOrganizationUserResetPasswordDetails(
     organizationId: string,
     id: string
-  ): Promise<OrganizationUserResetPasswordDetailsReponse>;
+  ): Promise<OrganizationUserResetPasswordDetailsResponse>;
 
   /**
    * Create new organization user invite(s) for the specified organization

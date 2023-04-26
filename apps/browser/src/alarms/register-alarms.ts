@@ -5,7 +5,7 @@ export function registerAlarms() {
 }
 
 /**
- * Creates staggered alarms that periodically (1min) raise OnAlarm events. The staggering is calculated based on the numnber of alarms passed in.
+ * Creates staggered alarms that periodically (1min) raise OnAlarm events. The staggering is calculated based on the number of alarms passed in.
  * @param numberOfAlarms Number of named alarms, that shall be registered
  * @example
  * // alarmsToBeCreated(2) results in 2 alarms separated by 30 seconds

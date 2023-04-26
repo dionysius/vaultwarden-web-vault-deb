@@ -94,7 +94,7 @@ export class SendAddEditComponent extends BaseAddEditComponent {
   }
 
   async ngOnInit() {
-    // File visilibity
+    // File visibility
     this.isFirefox = this.platformUtilsService.isFirefox();
     this.inPopout = this.popupUtilsService.inPopout(window);
     this.inSidebar = this.popupUtilsService.inSidebar(window);

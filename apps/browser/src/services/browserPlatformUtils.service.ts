@@ -420,7 +420,7 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
       autofillCommand = (await browser.commands.getAll()).find(
         (c) => c.name === "autofill_login"
       ).shortcut;
-      // Firefox is returing Ctrl instead of Cmd for the modifier key on macOS if
+      // Firefox is returning Ctrl instead of Cmd for the modifier key on macOS if
       // the command is the default one set on installation.
       if (
         (await browser.runtime.getPlatformInfo()).os === "mac" &&

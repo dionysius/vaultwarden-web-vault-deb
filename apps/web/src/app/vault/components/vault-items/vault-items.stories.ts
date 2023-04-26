@@ -264,14 +264,14 @@ function createCipherView(i: number, deleted = false): CipherView {
 
   if (i === 0) {
     // Old attachment
-    const attachement = new AttachmentView();
+    const attachment = new AttachmentView();
     view.organizationId = null;
     view.collectionIds = [];
-    view.attachments = [attachement];
+    view.attachments = [attachment];
   } else if (i % 5 === 0) {
-    const attachement = new AttachmentView();
-    attachement.key = new SymmetricCryptoKey(new ArrayBuffer(32));
-    view.attachments = [attachement];
+    const attachment = new AttachmentView();
+    attachment.key = new SymmetricCryptoKey(new ArrayBuffer(32));
+    view.attachments = [attachment];
   }
 
   return view;

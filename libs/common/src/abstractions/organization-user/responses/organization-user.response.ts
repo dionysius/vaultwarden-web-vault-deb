@@ -63,7 +63,7 @@ export class OrganizationUserDetailsResponse extends OrganizationUserResponse {
   }
 }
 
-export class OrganizationUserResetPasswordDetailsReponse extends BaseResponse {
+export class OrganizationUserResetPasswordDetailsResponse extends BaseResponse {
   kdf: KdfType;
   kdfIterations: number;
   kdfMemory?: number;

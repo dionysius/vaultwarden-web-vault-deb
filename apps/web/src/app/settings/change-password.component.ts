@@ -294,7 +294,7 @@ export class ChangePasswordComponent extends BaseChangePasswordComponent {
       const response = await this.organizationApiService.getKeys(org.id);
       const publicKey = Utils.fromB64ToArray(response?.publicKey);
 
-      // Re-enroll - encrpyt user's encKey.key with organization public key
+      // Re-enroll - encrypt user's encKey.key with organization public key
       const encryptedKey = await this.cryptoService.rsaEncrypt(encKey.key, publicKey.buffer);
 
       // Create/Execute request
