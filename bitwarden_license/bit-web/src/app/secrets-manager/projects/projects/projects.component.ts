@@ -1,11 +1,17 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
-import { combineLatest, Observable, startWith, switchMap } from "rxjs";
+import { combineLatest, lastValueFrom, Observable, startWith, switchMap } from "rxjs";
 
 import { DialogService } from "@bitwarden/components";
 
 import { ProjectListView } from "../../models/view/project-list.view";
 import { AccessPolicyService } from "../../shared/access-policies/access-policy.service";
+import {
+  BulkConfirmationDetails,
+  BulkConfirmationDialogComponent,
+  BulkConfirmationResult,
+  BulkConfirmationStatus,
+} from "../../shared/dialogs/bulk-confirmation-dialog.component";
 import {
   ProjectDeleteDialogComponent,
   ProjectDeleteOperation,
@@ -70,11 +76,48 @@ export class ProjectsComponent implements OnInit {
     });
   }
 
-  openDeleteProjectDialog(event: ProjectListView[]) {
-    this.dialogService.open<unknown, ProjectDeleteOperation>(ProjectDeleteDialogComponent, {
-      data: {
-        projects: event,
-      },
+  async openDeleteProjectDialog(projects: ProjectListView[]) {
+    if (projects.some((project) => project.write == false)) {
+      const readOnlyProjects = projects.filter((project) => project.write == false);
+      const writeProjects = projects.filter((project) => project.write);
+
+      const dialogRef = this.dialogService.open<unknown, BulkConfirmationDetails>(
+        BulkConfirmationDialogComponent,
+        {
+          data: {
+            title: "deleteProjects",
+            columnTitle: "projectName",
+            message: "smProjectsDeleteBulkConfirmation",
+            details: this.getBulkConfirmationDetails(readOnlyProjects),
+          },
+        }
+      );
+
+      const result = await lastValueFrom(dialogRef.closed);
+
+      if (result == BulkConfirmationResult.Continue) {
+        this.dialogService.open<unknown, ProjectDeleteOperation>(ProjectDeleteDialogComponent, {
+          data: {
+            projects: writeProjects,
+          },
+        });
+      }
+    } else {
+      this.dialogService.open<unknown, ProjectDeleteOperation>(ProjectDeleteDialogComponent, {
+        data: {
+          projects,
+        },
+      });
+    }
+  }
+
+  private getBulkConfirmationDetails(projects: ProjectListView[]): BulkConfirmationStatus[] {
+    return projects.map((project) => {
+      return {
+        id: project.id,
+        name: project.name,
+        description: "smProjectDeleteAccessRestricted",
+      };
     });
   }
 }

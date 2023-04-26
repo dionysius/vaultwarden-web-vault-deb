@@ -4,9 +4,6 @@ export class ProjectView {
   name: string;
   creationDate: string;
   revisionDate: string;
-}
-
-export class ProjectPermissionDetailsView extends ProjectView {
   read: boolean;
   write: boolean;
 }

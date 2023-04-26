@@ -1,11 +1,12 @@
 import { Component } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
-import { combineLatestWith, filter, Observable, startWith, switchMap } from "rxjs";
+import { combineLatest, combineLatestWith, filter, Observable, startWith, switchMap } from "rxjs";
 
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { DialogService } from "@bitwarden/components";
 
+import { ProjectView } from "../../models/view/project.view";
 import { SecretListView } from "../../models/view/secret-list.view";
 import {
   SecretDeleteDialogComponent,
@@ -29,6 +30,7 @@ export class ProjectSecretsComponent {
 
   private organizationId: string;
   private projectId: string;
+  protected project$: Observable<ProjectView>;
 
   constructor(
     private route: ActivatedRoute,
@@ -44,6 +46,12 @@ export class ProjectSecretsComponent {
     const currentProjectEdited = this.projectService.project$.pipe(
       filter((p) => p?.id === this.projectId),
       startWith(null)
+    );
+
+    this.project$ = combineLatest([this.route.params, currentProjectEdited]).pipe(
+      switchMap(([params, _]) => {
+        return this.projectService.getByProjectId(params.projectId);
+      })
     );
 
     this.secrets$ = this.secretService.secret$.pipe(

@@ -233,10 +233,9 @@ export class SecretService {
       projects.map(async (s: SecretProjectResponse) => {
         const projectsMappedToSecretView = new SecretProjectView();
         projectsMappedToSecretView.id = s.id;
-        projectsMappedToSecretView.name = await this.encryptService.decryptToUtf8(
-          new EncString(s.name),
-          orgKey
-        );
+        projectsMappedToSecretView.name = s.name
+          ? await this.encryptService.decryptToUtf8(new EncString(s.name), orgKey)
+          : null;
         return projectsMappedToSecretView;
       })
     );

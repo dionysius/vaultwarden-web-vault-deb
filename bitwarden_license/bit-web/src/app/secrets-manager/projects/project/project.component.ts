@@ -4,7 +4,7 @@ import { combineLatest, filter, Observable, startWith, Subject, switchMap, takeU
 
 import { DialogService } from "@bitwarden/components";
 
-import { ProjectPermissionDetailsView } from "../../models/view/project.view";
+import { ProjectView } from "../../models/view/project.view";
 import {
   OperationType,
   ProjectDialogComponent,
@@ -17,7 +17,7 @@ import { ProjectService } from "../project.service";
   templateUrl: "./project.component.html",
 })
 export class ProjectComponent implements OnInit, OnDestroy {
-  protected project$: Observable<ProjectPermissionDetailsView>;
+  protected project$: Observable<ProjectView>;
 
   private organizationId: string;
   private projectId: string;

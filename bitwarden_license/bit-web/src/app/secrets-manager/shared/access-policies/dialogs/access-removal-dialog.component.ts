@@ -50,16 +50,21 @@ export class AccessRemovalDialogComponent implements OnInit {
       await this.accessPolicyService.updateAccessPolicy(
         AccessSelectorComponent.getBaseAccessPolicyView(this.data.policy)
       );
+      this.refreshPolicyChanges();
     }
     this.dialogRef.close();
   };
 
   cancel = () => {
+    this.refreshPolicyChanges();
+    this.dialogRef.close();
+  };
+
+  private refreshPolicyChanges() {
     if (this.data.type == "project") {
       this.accessPolicyService.refreshProjectAccessPolicyChanges();
     } else if (this.data.type == "service-account") {
       this.accessPolicyService.refreshServiceAccountAccessPolicyChanges();
     }
-    this.dialogRef.close();
-  };
+  }
 }

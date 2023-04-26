@@ -35,6 +35,7 @@
       <th bitCell bitSortable="revisionDate">{{ "lastEdited" | i18n }}</th>
       <th bitCell class="tw-w-0">
         <button
+          *ngIf="hasWriteAccessOnSelected$ | async"
           type="button"
           bitIconButton="bwi-ellipsis-v"
           buttonType="main"
@@ -74,7 +75,12 @@
         ></button>
       </td>
       <bit-menu #projectMenu>
-        <button type="button" bitMenuItem (click)="editProjectEvent.emit(project.id)">
+        <button
+          *ngIf="project.write"
+          type="button"
+          bitMenuItem
+          (click)="editProjectEvent.emit(project.id)"
+        >
           <i class="bwi bwi-fw bwi-pencil" aria-hidden="true"></i>
           {{ "editProject" | i18n }}
         </button>
@@ -82,7 +88,7 @@
           <i class="bwi bwi-fw bwi-eye" aria-hidden="true"></i>
           {{ "viewProject" | i18n }}
         </a>
-        <button type="button" bitMenuItem (click)="deleteProject(project.id)">
+        <button *ngIf="project.write" type="button" bitMenuItem (click)="deleteProject(project.id)">
           <i class="bwi bwi-fw bwi-trash tw-text-danger" aria-hidden="true"></i>
           <span class="tw-text-danger">{{ "deleteProject" | i18n }}</span>
         </button>
