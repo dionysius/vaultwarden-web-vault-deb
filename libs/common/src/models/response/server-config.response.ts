@@ -5,6 +5,7 @@ export class ServerConfigResponse extends BaseResponse {
   gitHash: string;
   server: ThirdPartyServerConfigResponse;
   environment: EnvironmentServerConfigResponse;
+  featureStates: { [key: string]: string } = {};
 
   constructor(response: any) {
     super(response);
@@ -17,6 +18,7 @@ export class ServerConfigResponse extends BaseResponse {
     this.gitHash = this.getResponseProperty("GitHash");
     this.server = new ThirdPartyServerConfigResponse(this.getResponseProperty("Server"));
     this.environment = new EnvironmentServerConfigResponse(this.getResponseProperty("Environment"));
+    this.featureStates = this.getResponseProperty("FeatureStates");
   }
 }
 

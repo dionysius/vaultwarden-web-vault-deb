@@ -16,6 +16,7 @@ import { firstValueFrom, Subject, takeUntil } from "rxjs";
 import { ModalRef } from "@bitwarden/angular/components/modal/modal.ref";
 import { ModalService } from "@bitwarden/angular/services/modal.service";
 import { BroadcasterService } from "@bitwarden/common/abstractions/broadcaster.service";
+import { ConfigServiceAbstraction } from "@bitwarden/common/abstractions/config/config.service.abstraction";
 import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
 import { EventUploadService } from "@bitwarden/common/abstractions/event/event-upload.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
@@ -133,7 +134,8 @@ export class AppComponent implements OnInit, OnDestroy {
     private eventUploadService: EventUploadService,
     private policyService: InternalPolicyService,
     private modalService: ModalService,
-    private keyConnectorService: KeyConnectorService
+    private keyConnectorService: KeyConnectorService,
+    private configService: ConfigServiceAbstraction
   ) {}
 
   ngOnInit() {
@@ -217,6 +219,7 @@ export class AppComponent implements OnInit, OnDestroy {
             break;
           case "syncCompleted":
             await this.updateAppMenu();
+            await this.configService.fetchServerConfig();
             break;
           case "openSettings":
             await this.openModal<SettingsComponent>(SettingsComponent, this.settingsRef);

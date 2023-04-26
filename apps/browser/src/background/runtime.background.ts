@@ -1,3 +1,4 @@
+import { ConfigServiceAbstraction } from "@bitwarden/common/abstractions/config/config.service.abstraction";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { MessagingService } from "@bitwarden/common/abstractions/messaging.service";
@@ -28,7 +29,8 @@ export default class RuntimeBackground {
     private systemService: SystemService,
     private environmentService: BrowserEnvironmentService,
     private messagingService: MessagingService,
-    private logService: LogService
+    private logService: LogService,
+    private configService: ConfigServiceAbstraction
   ) {
     // onInstalled listener must be wired up before anything else, so we do it in the ctor
     chrome.runtime.onInstalled.addListener((details: any) => {
@@ -94,6 +96,7 @@ export default class RuntimeBackground {
             await this.main.refreshMenu();
           }, 2000);
           this.main.avatarUpdateService.loadColorFromState();
+          this.configService.fetchServerConfig();
         }
         break;
       case "openPopup":

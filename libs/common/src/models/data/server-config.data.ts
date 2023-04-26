@@ -12,6 +12,7 @@ export class ServerConfigData {
   server?: ThirdPartyServerConfigData;
   environment?: EnvironmentServerConfigData;
   utcDate: string;
+  featureStates: { [key: string]: string } = {};
 
   constructor(serverConfigResponse: Partial<ServerConfigResponse>) {
     this.version = serverConfigResponse?.version;
@@ -23,6 +24,7 @@ export class ServerConfigData {
     this.environment = serverConfigResponse?.environment
       ? new EnvironmentServerConfigData(serverConfigResponse.environment)
       : null;
+    this.featureStates = serverConfigResponse?.featureStates;
   }
 
   static fromJSON(obj: Jsonify<ServerConfigData>): ServerConfigData {

@@ -615,7 +615,7 @@ import { AbstractThemingService } from "./theming/theming.service.abstraction";
     {
       provide: ConfigServiceAbstraction,
       useClass: ConfigService,
-      deps: [StateServiceAbstraction, ConfigApiServiceAbstraction],
+      deps: [StateServiceAbstraction, ConfigApiServiceAbstraction, AuthServiceAbstraction],
     },
     {
       provide: ConfigApiServiceAbstraction,

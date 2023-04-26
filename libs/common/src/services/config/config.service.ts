@@ -1,9 +1,12 @@
-import { BehaviorSubject, concatMap, map, switchMap, timer, EMPTY } from "rxjs";
+import { BehaviorSubject, concatMap, timer } from "rxjs";
 
 import { ConfigApiServiceAbstraction } from "../../abstractions/config/config-api.service.abstraction";
 import { ConfigServiceAbstraction } from "../../abstractions/config/config.service.abstraction";
 import { ServerConfig } from "../../abstractions/config/server-config";
 import { StateService } from "../../abstractions/state.service";
+import { AuthService } from "../../auth/abstractions/auth.service";
+import { AuthenticationStatus } from "../../auth/enums/authentication-status";
+import { FeatureFlag } from "../../enums/feature-flag.enum";
 import { ServerConfigData } from "../../models/data/server-config.data";
 
 export class ConfigService implements ConfigServiceAbstraction {
@@ -12,21 +15,14 @@ export class ConfigService implements ConfigServiceAbstraction {
 
   constructor(
     private stateService: StateService,
-    private configApiService: ConfigApiServiceAbstraction
+    private configApiService: ConfigApiServiceAbstraction,
+    private authService: AuthService
   ) {
-    this.stateService.activeAccountUnlocked$
+    // Re-fetch the server config every hour
+    timer(0, 1000 * 3600)
       .pipe(
-        switchMap((unlocked) => {
-          if (!unlocked) {
-            this._serverConfig.next(null);
-            return EMPTY;
-          }
-
-          // Re-fetch the server config every hour
-          return timer(0, 3600 * 1000).pipe(map(() => unlocked));
-        }),
-        concatMap(async (unlocked) => {
-          return unlocked ? await this.buildServerConfig() : null;
+        concatMap(async () => {
+          return await this.fetchServerConfig();
         })
       )
       .subscribe((serverConfig) => {
@@ -34,9 +30,51 @@ export class ConfigService implements ConfigServiceAbstraction {
       });
   }
 
+  async fetchServerConfig(): Promise<ServerConfig> {
+    try {
+      const response = await this.configApiService.get();
+
+      if (response != null) {
+        const data = new ServerConfigData(response);
+        const serverConfig = new ServerConfig(data);
+        this._serverConfig.next(serverConfig);
+        if ((await this.authService.getAuthStatus()) === AuthenticationStatus.LoggedOut) {
+          return serverConfig;
+        }
+        await this.stateService.setServerConfig(data);
+      }
+    } catch {
+      return null;
+    }
+  }
+
+  async getFeatureFlagBool(key: FeatureFlag, defaultValue = false): Promise<boolean> {
+    return await this.getFeatureFlag(key, defaultValue);
+  }
+
+  async getFeatureFlagString(key: FeatureFlag, defaultValue = ""): Promise<string> {
+    return await this.getFeatureFlag(key, defaultValue);
+  }
+
+  async getFeatureFlagNumber(key: FeatureFlag, defaultValue = 0): Promise<number> {
+    return await this.getFeatureFlag(key, defaultValue);
+  }
+
+  private async getFeatureFlag<T>(key: FeatureFlag, defaultValue: T): Promise<T> {
+    const serverConfig = await this.buildServerConfig();
+    if (
+      serverConfig == null ||
+      serverConfig.featureStates == null ||
+      serverConfig.featureStates[key] == null
+    ) {
+      return defaultValue;
+    }
+    return serverConfig.featureStates[key] as T;
+  }
+
   private async buildServerConfig(): Promise<ServerConfig> {
     const data = await this.stateService.getServerConfig();
-    const domain = data ? new ServerConfig(data) : null;
+    const domain = data ? new ServerConfig(data) : this._serverConfig.getValue();
 
     if (domain == null || !domain.isValid() || domain.expiresSoon()) {
       const value = await this.fetchServerConfig();
@@ -44,19 +82,5 @@ export class ConfigService implements ConfigServiceAbstraction {
     }
 
     return domain;
-  }
-
-  private async fetchServerConfig(): Promise<ServerConfig> {
-    try {
-      const response = await this.configApiService.get();
-
-      if (response != null) {
-        const data = new ServerConfigData(response);
-        await this.stateService.setServerConfig(data);
-        return new ServerConfig(data);
-      }
-    } catch {
-      return null;
-    }
   }
 }
