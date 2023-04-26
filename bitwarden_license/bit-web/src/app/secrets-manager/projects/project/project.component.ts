@@ -1,6 +1,15 @@
 import { Component, OnDestroy, OnInit } from "@angular/core";
-import { ActivatedRoute } from "@angular/router";
-import { combineLatest, filter, Observable, startWith, Subject, switchMap, takeUntil } from "rxjs";
+import { ActivatedRoute, Router } from "@angular/router";
+import {
+  catchError,
+  combineLatest,
+  filter,
+  Observable,
+  startWith,
+  Subject,
+  switchMap,
+  takeUntil,
+} from "rxjs";
 
 import { DialogService } from "@bitwarden/components";
 
@@ -27,7 +36,8 @@ export class ProjectComponent implements OnInit, OnDestroy {
   constructor(
     private route: ActivatedRoute,
     private projectService: ProjectService,
-    private dialogService: DialogService
+    private dialogService: DialogService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -40,7 +50,8 @@ export class ProjectComponent implements OnInit, OnDestroy {
     this.project$ = combineLatest([this.route.params, currentProjectEdited]).pipe(
       switchMap(([params, _]) => {
         return this.projectService.getByProjectId(params.projectId);
-      })
+      }),
+      catchError(async () => this.handleError())
     );
 
     this.route.params.pipe(takeUntil(this.destroy$)).subscribe((params) => {
@@ -48,6 +59,12 @@ export class ProjectComponent implements OnInit, OnDestroy {
       this.projectId = params.projectId;
     });
   }
+
+  handleError = () => {
+    const projectsListUrl = `/sm/${this.organizationId}/projects/`;
+    this.router.navigate([projectsListUrl]);
+    return new ProjectPermissionDetailsView();
+  };
 
   ngOnDestroy(): void {
     this.destroy$.next();
