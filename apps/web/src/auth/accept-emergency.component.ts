@@ -36,6 +36,7 @@ export class AcceptEmergencyComponent extends BaseAcceptComponent {
     request.token = qParams.token;
     this.actionPromise = this.apiService.postEmergencyAccessAccept(qParams.id, request);
     await this.actionPromise;
+    await this.stateService.setEmergencyAccessInvitation(null);
     this.platformUtilService.showToast(
       "success",
       this.i18nService.t("inviteAccepted"),
@@ -51,5 +52,8 @@ export class AcceptEmergencyComponent extends BaseAcceptComponent {
       // Fix URL encoding of space issue with Angular
       this.name = this.name.replace(/\+/g, " ");
     }
+
+    // save the invitation to state so sso logins can find it later
+    await this.stateService.setEmergencyAccessInvitation(qParams);
   }
 }

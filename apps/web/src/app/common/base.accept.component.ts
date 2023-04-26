@@ -1,6 +1,7 @@
 import { Directive, OnInit } from "@angular/core";
 import { ActivatedRoute, Params, Router } from "@angular/router";
-import { first } from "rxjs/operators";
+import { Subject } from "rxjs";
+import { first, switchMap, takeUntil } from "rxjs/operators";
 
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
@@ -17,6 +18,8 @@ export abstract class BaseAcceptComponent implements OnInit {
   protected failedShortMessage = "inviteAcceptFailedShort";
   protected failedMessage = "inviteAcceptFailed";
 
+  private destroy$ = new Subject<void>();
+
   constructor(
     protected router: Router,
     protected platformUtilService: PlatformUtilsService,
@@ -29,36 +32,43 @@ export abstract class BaseAcceptComponent implements OnInit {
   abstract unauthedHandler(qParams: Params): Promise<void>;
 
   ngOnInit() {
-    // eslint-disable-next-line rxjs/no-async-subscribe
-    this.route.queryParams.pipe(first()).subscribe(async (qParams) => {
-      let error = this.requiredParameters.some((e) => qParams?.[e] == null || qParams[e] === "");
-      let errorMessage: string = null;
-      if (!error) {
-        this.authed = await this.stateService.getIsAuthenticated();
-        this.email = qParams.email;
+    this.route.queryParams
+      .pipe(
+        first(),
+        switchMap(async (qParams) => {
+          let error = this.requiredParameters.some(
+            (e) => qParams?.[e] == null || qParams[e] === ""
+          );
+          let errorMessage: string = null;
+          if (!error) {
+            this.authed = await this.stateService.getIsAuthenticated();
+            this.email = qParams.email;
 
-        if (this.authed) {
-          try {
-            await this.authedHandler(qParams);
-          } catch (e) {
-            error = true;
-            errorMessage = e.message;
+            if (this.authed) {
+              try {
+                await this.authedHandler(qParams);
+              } catch (e) {
+                error = true;
+                errorMessage = e.message;
+              }
+            } else {
+              await this.unauthedHandler(qParams);
+            }
           }
-        } else {
-          await this.unauthedHandler(qParams);
-        }
-      }
 
-      if (error) {
-        const message =
-          errorMessage != null
-            ? this.i18nService.t(this.failedShortMessage, errorMessage)
-            : this.i18nService.t(this.failedMessage);
-        this.platformUtilService.showToast("error", null, message, { timeout: 10000 });
-        this.router.navigate(["/"]);
-      }
+          if (error) {
+            const message =
+              errorMessage != null
+                ? this.i18nService.t(this.failedShortMessage, errorMessage)
+                : this.i18nService.t(this.failedMessage);
+            this.platformUtilService.showToast("error", null, message, { timeout: 10000 });
+            this.router.navigate(["/"]);
+          }
 
-      this.loading = false;
-    });
+          this.loading = false;
+        }),
+        takeUntil(this.destroy$)
+      )
+      .subscribe();
   }
 }

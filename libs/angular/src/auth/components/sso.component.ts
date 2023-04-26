@@ -186,7 +186,7 @@ export class SsoComponent {
       const response = await this.formPromise;
       if (response.requiresTwoFactor) {
         if (this.onSuccessfulLoginTwoFactorNavigate != null) {
-          this.onSuccessfulLoginTwoFactorNavigate();
+          await this.onSuccessfulLoginTwoFactorNavigate();
         } else {
           this.router.navigate([this.twoFactorRoute], {
             queryParams: {
@@ -197,7 +197,7 @@ export class SsoComponent {
         }
       } else if (response.resetMasterPassword) {
         if (this.onSuccessfulLoginChangePasswordNavigate != null) {
-          this.onSuccessfulLoginChangePasswordNavigate();
+          await this.onSuccessfulLoginChangePasswordNavigate();
         } else {
           this.router.navigate([this.changePasswordRoute], {
             queryParams: {
@@ -207,7 +207,7 @@ export class SsoComponent {
         }
       } else if (response.forcePasswordReset !== ForceResetPasswordReason.None) {
         if (this.onSuccessfulLoginForceResetNavigate != null) {
-          this.onSuccessfulLoginForceResetNavigate();
+          await this.onSuccessfulLoginForceResetNavigate();
         } else {
           this.router.navigate([this.forcePasswordResetRoute]);
         }
@@ -215,10 +215,10 @@ export class SsoComponent {
         const disableFavicon = await this.stateService.getDisableFavicon();
         await this.stateService.setDisableFavicon(!!disableFavicon);
         if (this.onSuccessfulLogin != null) {
-          this.onSuccessfulLogin();
+          await this.onSuccessfulLogin();
         }
         if (this.onSuccessfulLoginNavigate != null) {
-          this.onSuccessfulLoginNavigate();
+          await this.onSuccessfulLoginNavigate();
         } else {
           this.router.navigate([this.successRoute]);
         }

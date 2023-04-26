@@ -61,6 +61,21 @@ export class SsoComponent extends BaseSsoComponent {
   async ngOnInit() {
     super.ngOnInit();
 
+    // if we have an emergency access invite, redirect to emergency access
+    const emergencyAccessInvite = await this.stateService.getEmergencyAccessInvitation();
+    if (emergencyAccessInvite != null) {
+      this.onSuccessfulLoginNavigate = async () => {
+        this.router.navigate(["/accept-emergency"], {
+          queryParams: {
+            id: emergencyAccessInvite.id,
+            name: emergencyAccessInvite.name,
+            email: emergencyAccessInvite.email,
+            token: emergencyAccessInvite.token,
+          },
+        });
+      };
+    }
+
     // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
     this.route.queryParams.pipe(first()).subscribe(async (qParams) => {
       if (qParams.identifier != null) {
