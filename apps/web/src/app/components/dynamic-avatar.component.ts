@@ -2,9 +2,14 @@ import { Component, Input, OnDestroy } from "@angular/core";
 import { Observable, Subject } from "rxjs";
 
 import { AvatarUpdateService } from "@bitwarden/common/abstractions/account/avatar-update.service";
+
+import { SharedModule } from "../shared";
+
 type SizeTypes = "xlarge" | "large" | "default" | "small" | "xsmall";
 @Component({
   selector: "dynamic-avatar",
+  standalone: true,
+  imports: [SharedModule],
   template: `<span [title]="title">
     <bit-avatar
       appStopClick

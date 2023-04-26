@@ -1,7 +1,7 @@
 import { Component, Injectable } from "@angular/core";
 import { RouterModule } from "@angular/router";
 import { Meta, Story, moduleMetadata, componentWrapperDecorator } from "@storybook/angular";
-import { BehaviorSubject } from "rxjs";
+import { BehaviorSubject, combineLatest, map } from "rxjs";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
 import { MessagingService } from "@bitwarden/common/abstractions/messaging.service";
@@ -22,7 +22,9 @@ import { PreloadedEnglishI18nModule } from "@bitwarden/web-vault/app/tests/prelo
 
 import { HeaderComponent } from "./header.component";
 
-@Injectable()
+@Injectable({
+  providedIn: "root",
+})
 class MockStateService {
   activeAccount$ = new BehaviorSubject("1").asObservable();
   accounts$ = new BehaviorSubject({ "1": { profile: { name: "Foo" } } }).asObservable();
@@ -39,6 +41,22 @@ class MockMessagingService implements MessagingService {
   template: `<button bitIconButton="bwi-filter"></button>`,
 })
 class MockProductSwitcher {}
+
+@Component({
+  selector: "dynamic-avatar",
+  template: `<bit-avatar [text]="name$ | async"></bit-avatar>`,
+})
+class MockDynamicAvatar {
+  protected name$ = combineLatest([
+    this.stateService.accounts$,
+    this.stateService.activeAccount$,
+  ]).pipe(
+    map(
+      ([accounts, activeAccount]) => accounts[activeAccount as keyof typeof accounts].profile.name
+    )
+  );
+  constructor(private stateService: MockStateService) {}
+}
 
 export default {
   title: "Web/Header",
@@ -71,7 +89,7 @@ export default {
         NavigationModule,
         PreloadedEnglishI18nModule,
       ],
-      declarations: [HeaderComponent, MockProductSwitcher],
+      declarations: [HeaderComponent, MockProductSwitcher, MockDynamicAvatar],
       providers: [
         { provide: StateService, useClass: MockStateService },
         {

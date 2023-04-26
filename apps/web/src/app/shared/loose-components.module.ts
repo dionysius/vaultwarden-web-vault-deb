@@ -121,6 +121,7 @@ import { SharedModule } from "./shared.module";
     RegisterFormModule,
     ProductSwitcherModule,
     ChangeKdfModule,
+    DynamicAvatarComponent,
   ],
   declarations: [
     PremiumBadgeComponent,
@@ -145,7 +146,6 @@ import { SharedModule } from "./shared.module";
     DeauthorizeSessionsComponent,
     DeleteAccountComponent,
     DomainRulesComponent,
-    DynamicAvatarComponent,
     EmergencyAccessAddEditComponent,
     EmergencyAccessAttachmentsComponent,
     EmergencyAccessComponent,
