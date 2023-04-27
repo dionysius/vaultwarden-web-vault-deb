@@ -111,7 +111,7 @@ export class SendReceiveCommand extends DownloadCommand {
   private getApiUrl(url: URL) {
     const urls = this.environmentService.getUrls();
     if (url.origin === "https://send.bitwarden.com") {
-      return "https://vault.bitwarden.com/api";
+      return "https://api.bitwarden.com";
     } else if (url.origin === urls.api) {
       return url.origin;
     } else if (this.platformUtilsService.isDev() && url.origin === urls.webVault) {
