@@ -67,11 +67,10 @@ export class ActionButtonsComponent {
       this.i18nService.t("valueCopied", this.i18nService.t(typeI18nKey))
     );
 
-    if (typeI18nKey === "password" || typeI18nKey === "verificationCodeTotp") {
-      this.eventCollectionService.collect(
-        EventType.Cipher_ClientToggledHiddenFieldVisible,
-        cipher.id
-      );
+    if (typeI18nKey === "password") {
+      this.eventCollectionService.collect(EventType.Cipher_ClientCopiedPassword, cipher.id);
+    } else if (typeI18nKey === "verificationCodeTotp") {
+      this.eventCollectionService.collect(EventType.Cipher_ClientCopiedHiddenField, cipher.id);
     } else if (typeI18nKey === "securityCode") {
       this.eventCollectionService.collect(EventType.Cipher_ClientCopiedCardCode, cipher.id);
     }
