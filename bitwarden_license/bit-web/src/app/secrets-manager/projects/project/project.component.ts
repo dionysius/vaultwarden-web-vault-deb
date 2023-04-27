@@ -63,7 +63,7 @@ export class ProjectComponent implements OnInit, OnDestroy {
   handleError = () => {
     const projectsListUrl = `/sm/${this.organizationId}/projects/`;
     this.router.navigate([projectsListUrl]);
-    return new ProjectPermissionDetailsView();
+    return new ProjectView();
   };
 
   ngOnDestroy(): void {
