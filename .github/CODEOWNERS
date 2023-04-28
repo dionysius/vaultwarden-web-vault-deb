@@ -20,8 +20,8 @@ libs/angular/src/auth @bitwarden/team-auth-dev
 libs/common/src/auth @bitwarden/team-auth-dev
 
 ## Tools team files ##
-apps/browser/src/app/tools @bitwarden/team-tools-dev
-apps/cli/src/app/tools @bitwarden/team-tools-dev
+apps/browser/src/tools @bitwarden/team-tools-dev
+apps/cli/src/tools @bitwarden/team-tools-dev
 apps/desktop/src/app/tools @bitwarden/team-tools-dev
 apps/web/src/app/tools @bitwarden/team-tools-dev
 libs/angular/src/tools @bitwarden/team-tools-dev
