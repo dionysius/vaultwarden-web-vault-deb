@@ -1465,13 +1465,13 @@
     "message": "Встановити головний пароль"
   },
   "currentMasterPass": {
-    "message": "Current master password"
+    "message": "Поточний головний пароль"
   },
   "newMasterPass": {
-    "message": "New master password"
+    "message": "Новий головний пароль"
   },
   "confirmNewMasterPass": {
-    "message": "Confirm new master password"
+    "message": "Підтвердьте новий головний пароль"
   },
   "masterPasswordPolicyInEffect": {
     "message": "Одна або декілька політик організації вимагають дотримання таких вимог для головного пароля:"
@@ -1854,7 +1854,7 @@
     "message": "Ваш головний пароль нещодавно був змінений адміністратором організації. Щоб отримати доступ до сховища, вам необхідно оновити його зараз. Продовживши, ви вийдете з поточного сеансу, після чого потрібно буде повторно виконати вхід. Сеанси на інших пристроях можуть залишатися активними протягом однієї години."
   },
   "updateWeakMasterPasswordWarning": {
-    "message": "Your master password does not meet one or more of your organization policies. In order to access the vault, you must update your master password now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
+    "message": "Ваш головний пароль не відповідає одній або більше політикам вашої організації. Щоб отримати доступ до сховища, вам необхідно оновити свій головний пароль зараз. Продовживши, ви вийдете з поточного сеансу, після чого потрібно буде повторно виконати вхід. Сеанси на інших пристроях можуть залишатися активними протягом однієї години."
   },
   "resetPasswordPolicyAutoEnroll": {
     "message": "Автоматичне розгортання"
@@ -1875,7 +1875,7 @@
     "message": "Хвилин"
   },
   "vaultTimeoutPolicyInEffect": {
-    "message": "Політики вашої організації впливають на час очікування сховища. Максимальний дозволений час очікування сховища $HOURS$ годин, $MINUTES$ хвилин",
+    "message": "Політикою вашої організації встановлено максимальний дозволений час очікування сховища $HOURS$ годин, $MINUTES$ хвилин.",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -1888,7 +1888,7 @@
     }
   },
   "vaultTimeoutPolicyWithActionInEffect": {
-    "message": "Your organization policies are affecting your vault timeout. Maximum allowed vault timeout is $HOURS$ hour(s) and $MINUTES$ minute(s). Your vault timeout action is set to $ACTION$.",
+    "message": "Політики вашої організації впливають на час очікування сховища. Максимальний дозволений час очікування сховища $HOURS$ годин, $MINUTES$ хвилин. Для часу очікування вашого сховища встановлена дія $ACTION$.",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -1905,7 +1905,7 @@
     }
   },
   "vaultTimeoutActionPolicyInEffect": {
-    "message": "Your organization policies have set your vault timeout action to $ACTION$.",
+    "message": "Політикою вашої організації встановлено дію для часу очікування сховища $ACTION$.",
     "placeholders": {
       "action": {
         "content": "$1",
@@ -2162,7 +2162,7 @@
     "message": "Як працює автозаповнення"
   },
   "autofillSelectInfoWithCommand": {
-    "message": "Виберіть елемент з цієї сторінки або використайте комбінацію клавіш: $COMMAND$",
+    "message": "Виберіть елемент із цієї сторінки або використайте комбінацію клавіш: $COMMAND$",
     "placeholders": {
       "command": {
         "content": "$1",
@@ -2171,7 +2171,7 @@
     }
   },
   "autofillSelectInfoWithoutCommand": {
-    "message": "Виберіть елемент з цієї сторінки або встановіть комбінацію клавіш у налаштуваннях."
+    "message": "Виберіть елемент із цієї сторінки або встановіть комбінацію клавіш у налаштуваннях."
   },
   "gotIt": {
     "message": "Зрозуміло"

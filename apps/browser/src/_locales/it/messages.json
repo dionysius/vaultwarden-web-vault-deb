@@ -3,11 +3,11 @@
     "message": "Bitwarden"
   },
   "extName": {
-    "message": "Bitwarden - Gestore di Password Gratuito",
+    "message": "Bitwarden - Gestore di Password Gratis",
     "description": "Extension name, MUST be less than 40 characters (Safari restriction)"
   },
   "extDesc": {
-    "message": "Un gestore di password sicuro e gratuito per tutti i tuoi dispositivi.",
+    "message": "Un gestore di password sicuro e gratis per tutti i tuoi dispositivi.",
     "description": "Extension description"
   },
   "loginOrCreateNewAccount": {
@@ -44,7 +44,7 @@
     "message": "Un suggerimento per la password principale può aiutarti a ricordarla se la dimentichi."
   },
   "reTypeMasterPass": {
-    "message": "Digita nuovamente la password"
+    "message": "Inserisci password principale di nuovo"
   },
   "masterPassHint": {
     "message": "Suggerimento per la password principale (facoltativo)"
@@ -507,7 +507,7 @@
     "message": "Puoi cambiare la tua password principale sulla cassaforte online di bitwarden.com. Vuoi visitare ora il sito?"
   },
   "twoStepLoginConfirmation": {
-    "message": "La verifica in due passaggi rende il tuo account più sicuro richiedendoti di verificare il tuo login usando un altro dispositivo come una chiave di sicurezza, applicazione di autenticazione, SMS, telefonata, o email. Può essere abilitata nella cassaforte web su bitwarden.com. Vuoi visitare il sito?"
+    "message": "La verifica in due passaggi rende il tuo account più sicuro richiedendoti di verificare il tuo login usando un altro dispositivo come una chiave di sicurezza, app di autenticazione, SMS, telefonata, o email. Può essere abilitata nella cassaforte web su bitwarden.com. Vuoi visitare il sito?"
   },
   "editedFolder": {
     "message": "Cartella salvata"
@@ -622,7 +622,7 @@
     "message": "Chiedi di aggiornare il login esistente"
   },
   "changedPasswordNotificationDesc": {
-    "message": "Chiedi di aggiornare la password di un login quando viene cambiata su un sito web."
+    "message": "Chiedi di aggiornare la password di un login quando rileviamo che è cambiata su un sito web."
   },
   "notificationChangeDesc": {
     "message": "Vuoi aggiornare questa password in Bitwarden?"
@@ -641,13 +641,13 @@
     "description": "Default URI match detection for auto-fill."
   },
   "defaultUriMatchDetectionDesc": {
-    "message": "Scegli il modo predefinito in cui il rilevamento della corrispondenza URI viene gestito per i login quando si eseguono azioni come il riempimento automatico."
+    "message": "Scegli il modo predefinito in cui il rilevamento della corrispondenza URI è gestito per i login quando si eseguono azioni come il riempimento automatico."
   },
   "theme": {
     "message": "Tema"
   },
   "themeDesc": {
-    "message": "Cambia lo schema di colori dell'applicazione."
+    "message": "Cambia lo schema di colori dell'app."
   },
   "dark": {
     "message": "Scuro",
@@ -841,7 +841,7 @@
     "message": "Passa a Premium per utilizzare questa funzionalità."
   },
   "enterVerificationCodeApp": {
-    "message": "Inserisci il codice di verifica a 6 cifre dalla tua applicazione di autenticazione."
+    "message": "Inserisci il codice di verifica a 6 cifre dalla tua app di autenticazione."
   },
   "enterVerificationCodeEmail": {
     "message": "Inserisci il codice di verifica a 6 cifre inviato a $EMAIL$.",
@@ -865,7 +865,7 @@
     "message": "Ricordami"
   },
   "sendVerificationCodeEmailAgain": {
-    "message": "Invia nuovamente l'email con il codice di verifica"
+    "message": "Invia email con codice di verifica di nuovo"
   },
   "useAnotherTwoStepMethod": {
     "message": "Usa un altro metodo di verifica in due passaggi"
@@ -892,7 +892,7 @@
     "message": "La verifica in due passaggi è abilitata per il tuo account, ma nessuno dei metodi configurati è supportato da questo browser."
   },
   "noTwoStepProviders2": {
-    "message": "Usa un browser web supportato (come Chrome) e/o aggiungi altri metodi che sono supportati meglio da tutti i browser web (come un'applicazione di autenticazione)."
+    "message": "Usa un browser web supportato (come Chrome) e/o aggiungi altri metodi che sono supportati meglio da tutti i browser web (come un'app di autenticazione)."
   },
   "twoStepOptions": {
     "message": "Opzioni di verifica in due passaggi"
@@ -904,10 +904,10 @@
     "message": "Codice di recupero"
   },
   "authenticatorAppTitle": {
-    "message": "Applicazione di autenticazione"
+    "message": "App di autenticazione"
   },
   "authenticatorAppDesc": {
-    "message": "Usa un'applicazione di autenticazione (come Authy o Google Authenticator) per generare codici di verifica basati sul tempo.",
+    "message": "Usa un'app di autenticazione (come Authy o Google Authenticator) per generare codici di verifica basati sul tempo.",
     "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
   },
   "yubiKeyTitle": {
@@ -917,11 +917,11 @@
     "message": "Usa YubiKey per accedere al tuo account. Funziona con YubiKey 4, 4 Nano, 4C, e dispositivi NEO."
   },
   "duoDesc": {
-    "message": "Verifica con Duo Security usando l'applicazione Duo Mobile, SMS, chiamata telefonica, o chiave di sicurezza U2F.",
+    "message": "Verifica con Duo Security usando l'app Duo Mobile, SMS, chiamata telefonica, o chiave di sicurezza U2F.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "duoOrganizationDesc": {
-    "message": "Verifica con Duo Security per la tua azienda usando l'applicazione Duo Mobile, SMS, chiamata telefonica, o chiave di sicurezza U2F.",
+    "message": "Verifica con Duo Security per la tua azienda usando l'app Duo Mobile, SMS, chiamata telefonica, o chiave di sicurezza U2F.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "webAuthnTitle": {
@@ -1382,7 +1382,7 @@
     "message": "Sblocca con PIN"
   },
   "setYourPinCode": {
-    "message": "Imposta il tuo codice PIN per sbloccare Bitwarden. Le tue impostazioni PIN saranno resettate se esci completamente dall'applicazione."
+    "message": "Imposta il tuo codice PIN per sbloccare Bitwarden. Le tue impostazioni PIN saranno resettate se esci completamente dall'app."
   },
   "pinRequired": {
     "message": "Codice PIN obbligatorio."
@@ -1397,7 +1397,7 @@
     "message": "In attesa di conferma dal desktop"
   },
   "awaitDesktopDesc": {
-    "message": "Conferma utilizzando l'autenticazione biometrica nell'applicazione Bitwarden Desktop per abilitare l'autenticazione biometrica per il browser."
+    "message": "Conferma utilizzando l'autenticazione biometrica nell'app Bitwarden Desktop per abilitare l'autenticazione biometrica per il browser."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Blocca con la password principale al riavvio del browser"
@@ -1519,7 +1519,7 @@
     "message": "Selezionando questa casella accetti quanto segue:"
   },
   "acceptPoliciesRequired": {
-    "message": "I termini di servizio e l'informativa sulla privacy non sono stati accettati."
+    "message": "I Termini di Servizio e l'Informativa sulla Privacy non sono stati accettati."
   },
   "termsOfService": {
     "message": "Termini di Servizio"
@@ -1537,34 +1537,34 @@
     "message": "Verifica sincronizzazione desktop"
   },
   "desktopIntegrationVerificationText": {
-    "message": "Verifica che l'applicazione desktop mostri questa impronta: "
+    "message": "Verifica che l'app desktop mostri questa impronta: "
   },
   "desktopIntegrationDisabledTitle": {
     "message": "L'integrazione del browser non è abilitata"
   },
   "desktopIntegrationDisabledDesc": {
-    "message": "L'integrazione del browser non è abilitata nell'applicazione Bitwarden Desktop. Attivala nelle impostazioni all'interno dell'applicazione desktop."
+    "message": "L'integrazione del browser non è abilitata nell'app Bitwarden Desktop. Attivala nelle impostazioni all'interno dell'app desktop."
   },
   "startDesktopTitle": {
-    "message": "Avvia l'applicazione desktop Bitwarden"
+    "message": "Avvia l'app desktop Bitwarden"
   },
   "startDesktopDesc": {
-    "message": "L'applicazione Bitwarden Desktop deve essere avviata prima che l'autenticazione biometrica possa essere usata."
+    "message": "L'app Bitwarden Desktop deve essere avviata prima che l'autenticazione biometrica possa essere usata."
   },
   "errorEnableBiometricTitle": {
     "message": "Impossibile abilitare autenticazione biometrica"
   },
   "errorEnableBiometricDesc": {
-    "message": "L'azione è stata annullata dall'applicazione desktop"
+    "message": "L'azione è stata annullata dall'app desktop"
   },
   "nativeMessagingInvalidEncryptionDesc": {
-    "message": "L'applicazione desktop ha invalidato il canale di comunicazione sicuro. Riprova di nuovo"
+    "message": "L'app desktop ha invalidato il canale di comunicazione sicuro. Riprova di nuovo"
   },
   "nativeMessagingInvalidEncryptionTitle": {
     "message": "Comunicazione desktop interrotta"
   },
   "nativeMessagingWrongUserDesc": {
-    "message": "L'applicazione desktop è collegata a un account diverso. Assicurati che entrambe le applicazioni siano collegate allo stesso account."
+    "message": "L'app desktop è collegata a un account diverso. Assicurati che entrambe le app siano collegate allo stesso account."
   },
   "nativeMessagingWrongUserTitle": {
     "message": "Account non corrispondono"
@@ -1585,7 +1585,7 @@
     "message": "Permesso non fornito"
   },
   "nativeMessaginPermissionErrorDesc": {
-    "message": "Senza l'autorizzazione per comunicare con l'applicazione Bitwarden Desktop non è possibile fornire l'autenticazione biometrica nell'estensione del browser. Riprova di nuovo."
+    "message": "Senza l'autorizzazione per comunicare con l'app desktop di Bitwarden non è possibile fornire l'autenticazione biometrica nell'estensione del browser. Riprova di nuovo."
   },
   "nativeMessaginPermissionSidebarTitle": {
     "message": "Errore richiesta di autorizzazione"
@@ -1650,7 +1650,7 @@
     "message": "Protetto da password"
   },
   "copySendLink": {
-    "message": "Copia collegamento del Send",
+    "message": "Copia link del Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "removePassword": {
@@ -2114,7 +2114,7 @@
     "message": "Assicurati che la tua cassaforte sia sbloccata e che la frase impronta corrisponda sull'altro dispositivo."
   },
   "resendNotification": {
-    "message": "Invia nuova notifica"
+    "message": "Invia notifica di nuovo"
   },
   "viewAllLoginOptions": {
     "message": "Visualizza tutte le opzioni di accesso"
