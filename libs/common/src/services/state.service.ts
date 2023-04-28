@@ -103,7 +103,6 @@ export class StateService<
           } else if (userId == null) {
             this.activeAccountUnlockedSubject.next(false);
           }
-
           // FIXME: This should be refactored into AuthService or a similar service,
           //  as checking for the existence of the crypto key is a low level
           //  implementation detail.
@@ -130,6 +129,7 @@ export class StateService<
       }
     });
     await this.initAccountState();
+
     this.hasBeenInited = true;
   }
 

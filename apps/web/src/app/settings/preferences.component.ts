@@ -6,6 +6,7 @@ import { AbstractThemingService } from "@bitwarden/angular/services/theming/them
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { MessagingService } from "@bitwarden/common/abstractions/messaging.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
+import { SettingsService } from "@bitwarden/common/abstractions/settings.service";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { VaultTimeoutSettingsService } from "@bitwarden/common/abstractions/vaultTimeout/vaultTimeoutSettings.service";
 import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
@@ -51,7 +52,8 @@ export class PreferencesComponent implements OnInit {
     private vaultTimeoutSettingsService: VaultTimeoutSettingsService,
     private platformUtilsService: PlatformUtilsService,
     private messagingService: MessagingService,
-    private themingService: AbstractThemingService
+    private themingService: AbstractThemingService,
+    private settingsService: SettingsService
   ) {
     this.vaultTimeoutOptions = [
       { name: i18nService.t("oneMinute"), value: 1 },
@@ -128,11 +130,10 @@ export class PreferencesComponent implements OnInit {
         takeUntil(this.destroy$)
       )
       .subscribe();
-
     const initialFormValues = {
       vaultTimeout: await this.vaultTimeoutSettingsService.getVaultTimeout(),
       vaultTimeoutAction: await this.vaultTimeoutSettingsService.getVaultTimeoutAction(),
-      enableFavicons: !(await this.stateService.getDisableFavicon()),
+      enableFavicons: !(await this.settingsService.getDisableFavicon()),
       enableFullWidth: await this.stateService.getEnableFullWidth(),
       theme: await this.stateService.getTheme(),
       locale: (await this.stateService.getLocale()) ?? null,
@@ -157,7 +158,7 @@ export class PreferencesComponent implements OnInit {
       values.vaultTimeout,
       values.vaultTimeoutAction
     );
-    await this.stateService.setDisableFavicon(!values.enableFavicons);
+    await this.settingsService.setDisableFavicon(!values.enableFavicons);
     await this.stateService.setEnableFullWidth(values.enableFullWidth);
     this.messagingService.send("setFullWidth");
     if (values.theme !== this.startingTheme) {

@@ -152,8 +152,6 @@ export class LoginComponent extends CaptchaProtectedComponent implements OnInit 
           this.router.navigate([this.forcePasswordResetRoute]);
         }
       } else {
-        const disableFavicon = await this.stateService.getDisableFavicon();
-        await this.stateService.setDisableFavicon(!!disableFavicon);
         if (this.onSuccessfulLogin != null) {
           this.onSuccessfulLogin();
         }

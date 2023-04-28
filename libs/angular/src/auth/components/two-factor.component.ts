@@ -197,8 +197,6 @@ export class TwoFactorComponent extends CaptchaProtectedComponent implements OnI
       this.captchaToken
     );
     const response: AuthResult = await this.formPromise;
-    const disableFavicon = await this.stateService.getDisableFavicon();
-    await this.stateService.setDisableFavicon(!!disableFavicon);
     if (this.handleCaptchaRequired(response)) {
       return;
     }

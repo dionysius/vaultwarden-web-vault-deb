@@ -145,7 +145,13 @@ export abstract class StateService<T extends Account = Account> {
   ) => Promise<void>;
   getDisableContextMenuItem: (options?: StorageOptions) => Promise<boolean>;
   setDisableContextMenuItem: (value: boolean, options?: StorageOptions) => Promise<void>;
+  /**
+   * @deprecated Do not call this, use SettingsService
+   */
   getDisableFavicon: (options?: StorageOptions) => Promise<boolean>;
+  /**
+   * @deprecated Do not call this, use SettingsService
+   */
   setDisableFavicon: (value: boolean, options?: StorageOptions) => Promise<void>;
   getDisableGa: (options?: StorageOptions) => Promise<boolean>;
   setDisableGa: (value: boolean, options?: StorageOptions) => Promise<void>;

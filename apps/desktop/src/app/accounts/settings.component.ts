@@ -9,10 +9,11 @@ import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { MessagingService } from "@bitwarden/common/abstractions/messaging.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
+import { SettingsService } from "@bitwarden/common/abstractions/settings.service";
 import { VaultTimeoutSettingsService } from "@bitwarden/common/abstractions/vaultTimeout/vaultTimeoutSettings.service";
 import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
 import { PolicyType } from "@bitwarden/common/admin-console/enums";
-import { DeviceType, ThemeType, StorageLocation, KeySuffixOptions } from "@bitwarden/common/enums";
+import { DeviceType, ThemeType, KeySuffixOptions } from "@bitwarden/common/enums";
 import { VaultTimeoutAction } from "@bitwarden/common/enums/vault-timeout-action.enum";
 import { Utils } from "@bitwarden/common/misc/utils";
 
@@ -107,7 +108,8 @@ export class SettingsComponent implements OnInit {
     private messagingService: MessagingService,
     private cryptoService: CryptoService,
     private modalService: ModalService,
-    private themingService: AbstractThemingService
+    private themingService: AbstractThemingService,
+    private settingsService: SettingsService
   ) {
     const isMac = this.platformUtilsService.getDevice() === DeviceType.MacOsDesktop;
 
@@ -437,10 +439,7 @@ export class SettingsComponent implements OnInit {
   }
 
   async saveFavicons() {
-    await this.stateService.setDisableFavicon(!this.form.value.enableFavicons);
-    await this.stateService.setDisableFavicon(!this.form.value.enableFavicons, {
-      storageLocation: StorageLocation.Disk,
-    });
+    await this.settingsService.setDisableFavicon(!this.form.value.enableFavicons);
     this.messagingService.send("refreshCiphers");
   }
 
