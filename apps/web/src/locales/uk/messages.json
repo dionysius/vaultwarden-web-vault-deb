@@ -4813,7 +4813,7 @@
     "message": "Ваш головний пароль не відповідає вимогам політики цієї організації. Щоб приєднатися до організації, необхідно оновити свій головний пароль зараз. Продовживши, ви вийдете з поточного сеансу, після чого потрібно буде повторно виконати вхід. Сеанси на інших пристроях можуть залишатися активними протягом однієї години."
   },
   "updateWeakMasterPasswordWarning": {
-    "message": "Your master password does not meet one or more of your organization policies. In order to access the vault, you must update your master password now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
+    "message": "Ваш головний пароль не відповідає одній або більше політикам вашої організації. Щоб отримати доступ до сховища, вам необхідно оновити свій головний пароль зараз. Продовживши, ви вийдете з поточного сеансу, після чого потрібно буде повторно виконати вхід. Сеанси на інших пристроях можуть залишатися активними протягом однієї години."
   },
   "maximumVaultTimeout": {
     "message": "Час очікування сховища"
@@ -5650,7 +5650,7 @@
     }
   },
   "inputMinValue": {
-    "message": "Input value must be at least $MIN$.",
+    "message": "Значення має бути принаймні $MIN$.",
     "placeholders": {
       "min": {
         "content": "$1",
@@ -5659,7 +5659,7 @@
     }
   },
   "inputMaxValue": {
-    "message": "Input value must not exceed $MAX$.",
+    "message": "Значення не може перевищувати $MAX$.",
     "placeholders": {
       "max": {
         "content": "$1",
@@ -6735,7 +6735,19 @@
   "notAvailableForFreeOrganization": {
     "message": "Ця функція недоступна для безплатних організацій. Зверніться до власника своєї організації для оновлення."
   },
+  "smProjectSecretsNoItemsNoAccess": {
+    "message": "Зверніться до адміністратора організації, щоб керувати секретами для цього проєкту.",
+    "description": "The message shown to the user under a project's secrets tab when the user only has read access to the project."
+  },
   "enforceOnLoginDesc": {
-    "message": "Require existing members to change their passwords"
+    "message": "Вимагати від наявних учасників змінювати паролі"
+  },
+  "smProjectDeleteAccessRestricted": {
+    "message": "У вас немає дозволу на видалення цього проєкту",
+    "description": "The individual description shown to the user when the user doesn't have access to delete a project."
+  },
+  "smProjectsDeleteBulkConfirmation": {
+    "message": "Неможливо видалити зазначені проєкти. Бажаєте продовжити?",
+    "description": "The message shown to the user when bulk deleting projects and the user doesn't have access to some projects."
   }
 }

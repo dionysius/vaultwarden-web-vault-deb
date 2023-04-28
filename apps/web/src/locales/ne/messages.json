@@ -6735,7 +6735,19 @@
   "notAvailableForFreeOrganization": {
     "message": "यो सुविधा नि:शुल्क संस्थाहरूको लागि उपलब्ध छैन। स्तरवृद्धि गर्न आफ्नो संस्थाको मालिकलाई सम्पर्क गर्नुहोस्।"
   },
+  "smProjectSecretsNoItemsNoAccess": {
+    "message": "Contact your organization's admin to manage secrets for this project.",
+    "description": "The message shown to the user under a project's secrets tab when the user only has read access to the project."
+  },
   "enforceOnLoginDesc": {
     "message": "Require existing members to change their passwords"
+  },
+  "smProjectDeleteAccessRestricted": {
+    "message": "You don't have permissions to delete this project",
+    "description": "The individual description shown to the user when the user doesn't have access to delete a project."
+  },
+  "smProjectsDeleteBulkConfirmation": {
+    "message": "The following projects can not be deleted. Would you like to continue?",
+    "description": "The message shown to the user when bulk deleting projects and the user doesn't have access to some projects."
   }
 }

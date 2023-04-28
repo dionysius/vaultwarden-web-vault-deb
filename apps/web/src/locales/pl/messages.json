@@ -6735,7 +6735,19 @@
   "notAvailableForFreeOrganization": {
     "message": "Ta funkcja nie jest dostępna dla darmowych organizacji. Skontaktuj się z właścicielem organizacji, aby ją ulepszyć."
   },
+  "smProjectSecretsNoItemsNoAccess": {
+    "message": "Skontaktuj się z administratorem organizacji, aby zarządzać sekretami dla tego projektu.",
+    "description": "The message shown to the user under a project's secrets tab when the user only has read access to the project."
+  },
   "enforceOnLoginDesc": {
     "message": "Wymagaj od istniejących członków zmiany haseł"
+  },
+  "smProjectDeleteAccessRestricted": {
+    "message": "Nie masz uprawnień do usunięcia tego projektu",
+    "description": "The individual description shown to the user when the user doesn't have access to delete a project."
+  },
+  "smProjectsDeleteBulkConfirmation": {
+    "message": "Następujące projekty nie mogą zostać usunięte. Czy chcesz kontynuować?",
+    "description": "The message shown to the user when bulk deleting projects and the user doesn't have access to some projects."
   }
 }

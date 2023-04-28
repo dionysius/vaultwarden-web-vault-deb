@@ -6735,7 +6735,19 @@
   "notAvailableForFreeOrganization": {
     "message": "免费组织不能使用此功能。请联系您的组织所有者寻求升级。"
   },
+  "smProjectSecretsNoItemsNoAccess": {
+    "message": "请联系您的组织的管理员来管理此项目的秘密。",
+    "description": "The message shown to the user under a project's secrets tab when the user only has read access to the project."
+  },
   "enforceOnLoginDesc": {
     "message": "要求现有成员更改他们的密码"
+  },
+  "smProjectDeleteAccessRestricted": {
+    "message": "您无权删除此项目",
+    "description": "The individual description shown to the user when the user doesn't have access to delete a project."
+  },
+  "smProjectsDeleteBulkConfirmation": {
+    "message": "无法删除下列项目。是否继续？",
+    "description": "The message shown to the user when bulk deleting projects and the user doesn't have access to some projects."
   }
 }

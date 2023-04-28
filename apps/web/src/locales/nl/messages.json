@@ -6735,7 +6735,19 @@
   "notAvailableForFreeOrganization": {
     "message": "This feature is not available for free organizations. Contact your organization owner to upgrade."
   },
+  "smProjectSecretsNoItemsNoAccess": {
+    "message": "Neem contact op met de beheerder van je organisatie om geheimen voor dit project te beheren.",
+    "description": "The message shown to the user under a project's secrets tab when the user only has read access to the project."
+  },
   "enforceOnLoginDesc": {
     "message": "Verplicht bestaande leden hun wachtwoord te wijzigen"
+  },
+  "smProjectDeleteAccessRestricted": {
+    "message": "Je hebt geen rechten om dit project te verwijderen",
+    "description": "The individual description shown to the user when the user doesn't have access to delete a project."
+  },
+  "smProjectsDeleteBulkConfirmation": {
+    "message": "De volgende projecten kunnen niet verwijderd worden. Wil je doorgaan?",
+    "description": "The message shown to the user when bulk deleting projects and the user doesn't have access to some projects."
   }
 }

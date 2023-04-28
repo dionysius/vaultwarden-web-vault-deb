@@ -10,7 +10,7 @@
     }
   },
   "whatTypeOfItem": {
-    "message": "Выберите тип элемента"
+    "message": "Какой это тип элемента?"
   },
   "name": {
     "message": "Имя"
@@ -3946,7 +3946,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "whatTypeOfSend": {
-    "message": "Выберите тип Send",
+    "message": "Какой это тип Send?",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "deletionDate": {
@@ -6735,7 +6735,19 @@
   "notAvailableForFreeOrganization": {
     "message": "Эта функция недоступна для организаций с бесплатным тарифом. Свяжитесь с владельцем вашей организации для перехода на другой тариф."
   },
+  "smProjectSecretsNoItemsNoAccess": {
+    "message": "Для управления секретами этого проекта свяжитесь с администратором своей организации.",
+    "description": "The message shown to the user under a project's secrets tab when the user only has read access to the project."
+  },
   "enforceOnLoginDesc": {
     "message": "Требовать от существующих пользователей смены паролей"
+  },
+  "smProjectDeleteAccessRestricted": {
+    "message": "У вас недостаточно прав для удаления этого проекта",
+    "description": "The individual description shown to the user when the user doesn't have access to delete a project."
+  },
+  "smProjectsDeleteBulkConfirmation": {
+    "message": "Следующие проекты не могут быть удалены. Продолжить?",
+    "description": "The message shown to the user when bulk deleting projects and the user doesn't have access to some projects."
   }
 }

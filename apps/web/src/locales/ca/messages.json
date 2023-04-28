@@ -6735,7 +6735,19 @@
   "notAvailableForFreeOrganization": {
     "message": "Aquesta característica no està disponible per a organitzacions gratuïtes. Poseu-vos en contacte amb el propietari de la vostra organització per actualitzar.-la."
   },
+  "smProjectSecretsNoItemsNoAccess": {
+    "message": "Contacta amb l'administrador de la teua organització per gestionar els secrets d'aquest projecte.",
+    "description": "The message shown to the user under a project's secrets tab when the user only has read access to the project."
+  },
   "enforceOnLoginDesc": {
     "message": "Exigeix que els membres existents canvien les seues contrasenyes"
+  },
+  "smProjectDeleteAccessRestricted": {
+    "message": "No teniu permisos per suprimir aquest projecte",
+    "description": "The individual description shown to the user when the user doesn't have access to delete a project."
+  },
+  "smProjectsDeleteBulkConfirmation": {
+    "message": "Els projectes següents no es poden suprimir. Voleu continuar?",
+    "description": "The message shown to the user when bulk deleting projects and the user doesn't have access to some projects."
   }
 }

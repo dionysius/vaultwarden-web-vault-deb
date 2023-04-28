@@ -6735,7 +6735,19 @@
   "notAvailableForFreeOrganization": {
     "message": "Denne funktion er ikke tilgængelig for gratis organisationer. Kontakt organisationsejeren for at opgradere."
   },
+  "smProjectSecretsNoItemsNoAccess": {
+    "message": "Kontakt organisationsadmin for at håndtere hemmeligheder for dette projekt.",
+    "description": "The message shown to the user under a project's secrets tab when the user only has read access to the project."
+  },
   "enforceOnLoginDesc": {
     "message": "Kræv, at eksisterende medlemmer ændrer deres adgangskoder"
+  },
+  "smProjectDeleteAccessRestricted": {
+    "message": "Ingen tilladelse til at slette dette objekt",
+    "description": "The individual description shown to the user when the user doesn't have access to delete a project."
+  },
+  "smProjectsDeleteBulkConfirmation": {
+    "message": "Flg. projekter kan ikke slettes. Fortsæt?",
+    "description": "The message shown to the user when bulk deleting projects and the user doesn't have access to some projects."
   }
 }

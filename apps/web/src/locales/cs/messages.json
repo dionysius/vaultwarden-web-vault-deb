@@ -6735,7 +6735,19 @@
   "notAvailableForFreeOrganization": {
     "message": "Tato funkce není dostupná pro bezplatné organizace. Pro upgrade kontaktujte vlastníka organizace."
   },
+  "smProjectSecretsNoItemsNoAccess": {
+    "message": "Obraťte se na správce Vaší organizace pro správu tajemství pro tento projekt.",
+    "description": "The message shown to the user under a project's secrets tab when the user only has read access to the project."
+  },
   "enforceOnLoginDesc": {
     "message": "Bude vyžadovat od stávajících členů, aby změnili svá hesla"
+  },
+  "smProjectDeleteAccessRestricted": {
+    "message": "Nemáte oprávnění tento projekt smazat",
+    "description": "The individual description shown to the user when the user doesn't have access to delete a project."
+  },
+  "smProjectsDeleteBulkConfirmation": {
+    "message": "Následující projekty nelze smazat. Chcete pokračovat?",
+    "description": "The message shown to the user when bulk deleting projects and the user doesn't have access to some projects."
   }
 }

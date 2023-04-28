@@ -5038,7 +5038,7 @@
     "message": "最大 6 人のプレミアム機能へのアクセス"
   },
   "sponsoredFamiliesSharedCollections": {
-    "message": "家族の秘密のための共有されたコレクション"
+    "message": "家族のシークレットのために共有されたコレクション"
   },
   "badToken": {
     "message": "リンクは無効になりました。スポンサーにオファーを再送信してもらってください。"
@@ -6076,7 +6076,7 @@
     "description": "Empty state to be displayed when there are no projects to display in the list."
   },
   "projectsNoItemsMessage": {
-    "message": "秘密を始めるために新しいプロジェクトを追加する。",
+    "message": "シークレットの管理を始めるには新しいプロジェクトを追加してください。",
     "description": "Message to be displayed when there are no projects to display in the list."
   },
   "smConfirmationRequired": {
@@ -6735,7 +6735,19 @@
   "notAvailableForFreeOrganization": {
     "message": "この機能は無料の組織では利用できません。アップグレードするには組織の所有者に連絡してください。"
   },
+  "smProjectSecretsNoItemsNoAccess": {
+    "message": "このプロジェクトのシークレットを管理するには、組織の管理者に連絡してください。",
+    "description": "The message shown to the user under a project's secrets tab when the user only has read access to the project."
+  },
   "enforceOnLoginDesc": {
     "message": "パスワードを変更するには、メンバーが存在しないといけません"
+  },
+  "smProjectDeleteAccessRestricted": {
+    "message": "このプロジェクトを削除する権限がありません",
+    "description": "The individual description shown to the user when the user doesn't have access to delete a project."
+  },
+  "smProjectsDeleteBulkConfirmation": {
+    "message": "次のプロジェクトは削除できません。続行しますか？",
+    "description": "The message shown to the user when bulk deleting projects and the user doesn't have access to some projects."
   }
 }

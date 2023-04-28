@@ -6735,7 +6735,19 @@
   "notAvailableForFreeOrganization": {
     "message": "Ez a funkció nem érhető el ingyenes szervezetek számára. Az áttéréshez a szervezet tulajdonosához kell fordulni."
   },
+  "smProjectSecretsNoItemsNoAccess": {
+    "message": "Lépjünk kapcsolatba a szervezet adminisztrátorával a projekt titkos kódjainak kezeléséhez.",
+    "description": "The message shown to the user under a project's secrets tab when the user only has read access to the project."
+  },
   "enforceOnLoginDesc": {
     "message": "A meglévő tagoknak meg kell változtatniuk jelszavaikat."
+  },
+  "smProjectDeleteAccessRestricted": {
+    "message": "Nincs jogosulltság ezen projekt törléséhez.",
+    "description": "The individual description shown to the user when the user doesn't have access to delete a project."
+  },
+  "smProjectsDeleteBulkConfirmation": {
+    "message": "A következő projektek nem törölhetők. Szeretnénk folytatni?",
+    "description": "The message shown to the user when bulk deleting projects and the user doesn't have access to some projects."
   }
 }

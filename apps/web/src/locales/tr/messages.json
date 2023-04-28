@@ -6735,7 +6735,19 @@
   "notAvailableForFreeOrganization": {
     "message": "Bu özellik ücretsiz kuruluşlar için mevcut değildir. Yükseltmek için kuruluşunuzun sahibiyle iletişime geçin."
   },
+  "smProjectSecretsNoItemsNoAccess": {
+    "message": "Bu projenin sırlarını yönetmek için kuruluş yöneticinize başvurun.",
+    "description": "The message shown to the user under a project's secrets tab when the user only has read access to the project."
+  },
   "enforceOnLoginDesc": {
     "message": "Mevcut üyelerin parolalarını değiştirmelerini zorunlu tut"
+  },
+  "smProjectDeleteAccessRestricted": {
+    "message": "Bu projeyi silme izniniz yok",
+    "description": "The individual description shown to the user when the user doesn't have access to delete a project."
+  },
+  "smProjectsDeleteBulkConfirmation": {
+    "message": "Aşağıdaki projeler silinemez. Devam etmek istiyor musunuz?",
+    "description": "The message shown to the user when bulk deleting projects and the user doesn't have access to some projects."
   }
 }

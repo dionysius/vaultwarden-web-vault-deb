@@ -664,7 +664,7 @@
     "message": "Un suggerimento per la password principale può aiutarti a ricordarla se la dimentichi."
   },
   "reTypeMasterPass": {
-    "message": "Digita nuovamente la password"
+    "message": "Inserisci password principale di nuovo"
   },
   "masterPassHint": {
     "message": "Suggerimento per la password principale (facoltativo)"
@@ -816,7 +816,7 @@
     "message": "Ricordami"
   },
   "sendVerificationCodeEmailAgain": {
-    "message": "Invia nuovamente l'email con il codice di verifica"
+    "message": "Invia email con codice di verifica di nuovo"
   },
   "useAnotherTwoStepMethod": {
     "message": "Usa un altro metodo di verifica in due passaggi"
@@ -859,11 +859,11 @@
     "message": "Utilizza una YubiKey per accedere al tuo account. Funziona con dispositivi YubiKey serie 4, serie 5 e NEO."
   },
   "duoDesc": {
-    "message": "Verifica con Duo Security usando l'applicazione Duo Mobile, SMS, chiamata telefonica, o chiave di sicurezza U2F.",
+    "message": "Verifica con Duo Security usando l'app Duo Mobile, SMS, chiamata telefonica, o chiave di sicurezza U2F.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "duoOrganizationDesc": {
-    "message": "Verifica con Duo Security per la tua organizzazione usando l'applicazione Duo Mobile, SMS, chiamata telefonica, o chiave di sicurezza U2F.",
+    "message": "Verifica con Duo Security per la tua organizzazione usando l'app Duo Mobile, SMS, chiamata telefonica, o chiave di sicurezza U2F.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc": {
@@ -1369,7 +1369,7 @@
     "message": "Nuovo dominio personalizzato"
   },
   "newCustomDomainDesc": {
-    "message": "Inserisci un elenco di domini separati da virgole. Sono permessi solo domini \"di base\". Non inserire sottodomini. Per esempio, inserisci \"google.com\" invece di \"www.google.com\". Puoi anche inserire \"androidapp://nome.package\" per associare un'applicazione Android con altri domini di siti web."
+    "message": "Inserisci un elenco di domini separati da virgole. Sono permessi solo domini \"di base\". Non inserire sottodomini. Per esempio, inserisci \"google.com\" invece di \"www.google.com\". Puoi anche inserire \"androidapp://nome.package\" per associare un'app Android con altri domini di siti web."
   },
   "customDomainX": {
     "message": "Dominio personalizzato $INDEX$",
@@ -1477,7 +1477,7 @@
     "message": "Dispositivi Windows"
   },
   "twoStepAuthenticatorAppsRecommended": {
-    "message": "Queste applicazioni sono consigliate, ma anche altre app di autenticazione andranno bene."
+    "message": "Queste app sono consigliate, ma anche altre app di autenticazione andranno bene."
   },
   "twoStepAuthenticatorScanCode": {
     "message": "Scansione questo codice QR con la tua app di autenticazione"
@@ -1516,10 +1516,10 @@
     "message": "A causa di limitazioni della piattaforma, YubiKey non può essere usato su tutte le app di Bitwarden. Abilita un altro metodo di verifica in due passaggi per poter accedere al tuo account anche quando YubiKey non può essere usato. Piattaforme supportate:"
   },
   "twoFactorYubikeySupportUsb": {
-    "message": "La cassaforte web, l'applicazione desktop, la CLI e tutte le estensioni per browser su un dispositivo con una porta USB in grado di accettare la tua YubiKey."
+    "message": "La cassaforte web, l'app desktop, la CLI e tutte le estensioni per browser su un dispositivo con una porta USB in grado di accettare la tua YubiKey."
   },
   "twoFactorYubikeySupportMobile": {
-    "message": "Le applicazioni su un dispositivo con NFC o una porta USB in grado di accettare la tua YubiKey."
+    "message": "Le app su un dispositivo con NFC o una porta USB in grado di accettare la tua YubiKey."
   },
   "yubikeyX": {
     "message": "YubiKey $INDEX$",
@@ -1630,7 +1630,7 @@
     "message": "Si è verificato un problema durante la lettura della chiave di sicurezza. Riprova."
   },
   "twoFactorWebAuthnWarning": {
-    "message": "A causa di limitazioni della piattaforma, WebAuthn non può essere utilizzato su tutte le applicazioni Bitwarden. Dovresti abilitare un altro metodo di verifica in due passaggi per accedere al tuo account anche quando WebAuthn non può essere usato. Piattaforme supportate:"
+    "message": "A causa di limitazioni della piattaforma, WebAuthn non può essere utilizzato su tutte le app Bitwarden. Dovresti abilitare un altro metodo di verifica in due passaggi per accedere al tuo account anche quando WebAuthn non può essere usato. Piattaforme supportate:"
   },
   "twoFactorWebAuthnSupportWeb": {
     "message": "Cassaforte Web ed estensione per il browser desktop/laptop con un browser abilitato per WebAuthn (Chrome, Opera, Vivaldi o Firefox con FIDO U2F abilitato)."
@@ -1960,7 +1960,7 @@
     "message": "# di GB aggiuntivi"
   },
   "additionalStorageIntervalDesc": {
-    "message": "Il tuo piano viene fornito con $SIZE$ di archiviazione cifrata. Puoi aggiungere ulteriore spazio di archiviazione per $PRICE$ per GB /$INTERVAL$.",
+    "message": "Il tuo piano include $SIZE$ di archiviazione criptata. Puoi aggiungere ulteriore spazio di archiviazione per $PRICE$ per GB /$INTERVAL$.",
     "placeholders": {
       "size": {
         "content": "$1",
@@ -1996,7 +1996,7 @@
     "description": "Short abbreviation for 'month'"
   },
   "paymentChargedAnnually": {
-    "message": "Il tuo metodo di pagamento verrà addebitato immediatamente e su base ricorrente ogni anno. È possibile annullare in qualsiasi momento."
+    "message": "Il tuo metodo di pagamento sarà addebitato immediatamente e su base ricorrente ogni anno. Puoi annullarlo in qualsiasi momento."
   },
   "paymentCharged": {
     "message": "Il tuo metodo di pagamento sarà addebitato immediatamente e poi su base ricorrente ogni $INTERVAL$. Puoi annullare in qualsiasi momento.",
@@ -2008,7 +2008,7 @@
     }
   },
   "paymentChargedWithTrial": {
-    "message": "Il tuo piano include una prova gratuita di 7 giorni. Il tuo metodo di pagamento non sarà addebitato fino alla fine del periodo di prova. Puoi cancellarlo in qualsiasi momento."
+    "message": "Il tuo piano include una prova gratis di 7 giorni. Il tuo metodo di pagamento non sarà addebitato fino alla fine del periodo di prova. Puoi cancellarlo in qualsiasi momento."
   },
   "paymentInformation": {
     "message": "Informazioni sul pagamento"
@@ -2017,7 +2017,7 @@
     "message": "Dati di fatturazione"
   },
   "billingTrialSubLabel": {
-    "message": "Il tuo metodo di pagamento non sarà addebitato durante i 7 giorni d prova gratuita."
+    "message": "Il tuo metodo di pagamento non sarà addebitato durante i 7 giorni di prova gratis."
   },
   "creditCard": {
     "message": "Carta di credito"
@@ -2252,7 +2252,7 @@
     "message": "Quanti slot utente ti servono? Puoi anche aggiungere slot in un secondo momento, se ti servono."
   },
   "planNameFree": {
-    "message": "Gratuito",
+    "message": "Gratis",
     "description": "Free as in 'free beer'."
   },
   "planDescFree": {
@@ -2370,7 +2370,7 @@
     "message": "Assistenza clienti prioritaria"
   },
   "xDayFreeTrial": {
-    "message": "$COUNT$ giorni di prova gratuita, annulla in qualsiasi momento",
+    "message": "$COUNT$ giorni di prova gratis, annulla in qualsiasi momento",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -2388,7 +2388,7 @@
     }
   },
   "trialPaidInfoMessage": {
-    "message": "Quando la tua prova gratuita di 7 giorni del piano $PLAN$ scade, sarà convertita in un abbonamento a pagamento.",
+    "message": "Quando la tua prova gratis di 7 giorni del piano $PLAN$ scade, sarà convertita in un abbonamento a pagamento.",
     "placeholders": {
       "plan": {
         "content": "$1",
@@ -2484,7 +2484,7 @@
     "message": "Sei sicuro di voler rimuovere questo utente?"
   },
   "removeOrgUserConfirmation": {
-    "message": "Quando un membro è rimosso, non ha più accesso ai dati dell'organizzazione e questa azione è irreversibile. Per aggiungere di nuovo il membro all'organizzazione, deve essere invitato e registrato nuovamente."
+    "message": "Quando un membro è rimosso, non ha più accesso ai dati dell'organizzazione e questa azione è irreversibile. Per aggiungere di nuovo il membro all'organizzazione, deve essere invitato e registrato di nuovo."
   },
   "revokeUserConfirmation": {
     "message": "Quando un membro è revocato, non ha più accesso ai dati dell'organizzazione. Per ripristinare rapidamente l'accesso dei membri, usa la scheda Revocati."
@@ -2583,7 +2583,7 @@
     "message": "Gestisci tutti gli aspetti della tua organizzazione, inclusi fatturazione e abbonamenti"
   },
   "clientOwnerDesc": {
-    "message": "Questo utente non dovrebbe dipendere dal fornitore. Se il fornitore viene rimosso dall'organizzazione, questo utente manterrà la proprietà dell'organizzazione."
+    "message": "Questo utente non dovrebbe dipendere dal fornitore. Se il fornitore è rimosso dall'organizzazione, questo utente manterrà la proprietà dell'organizzazione."
   },
   "admin": {
     "message": "Amministratore"
@@ -3042,7 +3042,7 @@
     "message": "Utenti invitati"
   },
   "resendInvitation": {
-    "message": "Invia nuovamente l'invito"
+    "message": "Invia invito di nuovo"
   },
   "resendEmail": {
     "message": "Invia email di nuovo"
@@ -3417,7 +3417,7 @@
     "message": "Siamo passati a chiavi di criptografia più grandi che forniscono più sicurezza e accesso alle funzionalità più recenti. Aggiornare la chiave di criptografia è semplice e veloce, basta inserire la password principale qui sotto. Questo aggiornamento diventerà obbligatorio in futuro."
   },
   "updateEncryptionKeyWarning": {
-    "message": "Dopo aver aggiornato la tua chiave di criptografia, devi uscire ed entrare di nuovo in tutte le applicazioni Bitwarden che stai usando (come l'app mobile o l'estensione del browser). Se non si esce e rientra (per scaricare la nuova chiave di criptografia) i dati della tua cassaforte potrebbero essere danneggiati. Cercheremo di farti uscire automaticamente, ma potrebbe esserci un ritardo."
+    "message": "Dopo aver aggiornato la tua chiave di criptografia, devi uscire ed entrare di nuovo in tutte le app Bitwarden che stai usando (come l'app mobile o l'estensione del browser). Se non si esce e rientra (per scaricare la nuova chiave di criptografia) i dati della tua cassaforte potrebbero essere danneggiati. Cercheremo di farti uscire automaticamente, ma potrebbe esserci un ritardo."
   },
   "updateEncryptionKeyExportWarning": {
     "message": "Anche le esportazioni criptate che hai salvato non saranno più valide."
@@ -3441,7 +3441,7 @@
     "message": "Crea organizzazione: Passo 1"
   },
   "createOrganizationCreatePersonalAccount": {
-    "message": "Prima di creare la tua organizzazione, devi innanzitutto creare un account personale gratuito."
+    "message": "Prima di creare la tua organizzazione, devi innanzitutto creare un account personale gratis."
   },
   "refunded": {
     "message": "Rimborsato"
@@ -3587,7 +3587,7 @@
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "free": {
-    "message": "Gratuito",
+    "message": "Gratis",
     "description": "Free, as in 'Free beer'"
   },
   "apiKey": {
@@ -3691,7 +3691,7 @@
     "message": "Contiene almeno un carattere minuscolo"
   },
   "policyInEffectNumbers": {
-    "message": "Contiene almeno una cifra"
+    "message": "Contiene uno o più numeri"
   },
   "policyInEffectSpecial": {
     "message": "Contiene almeno uno di questi caratteri speciali $CHARS$",
@@ -4086,7 +4086,7 @@
     "message": "Modifica contatto di emergenza"
   },
   "inviteEmergencyContactDesc": {
-    "message": "Invita un nuovo contatto di emergenza digitando il suo account email di Bitwarden. Se non ha ancora un account Bitwarden, gli verrà chiesto di crearne uno nuovo."
+    "message": "Invita un nuovo contatto di emergenza digitando il suo account email di Bitwarden. Se non ha ancora un account Bitwarden, gli sarà chiesto di crearne uno nuovo."
   },
   "emergencyAccessRecoveryInitiated": {
     "message": "Accesso di emergenza avviato"
@@ -4441,7 +4441,7 @@
     }
   },
   "viewSendHiddenEmailWarning": {
-    "message": "L'utente Bitwarden che ha creato questo Send ha nascosto il suo indirizzo email. Devi essere sicuro di fidarti della fonte di questo collegamento prima di usare o scaricare il suo contenuto.",
+    "message": "L'utente Bitwarden che ha creato questo Send ha nascosto il suo indirizzo email. Devi essere sicuro di fidarti della fonte di questo link prima di usare o scaricare il suo contenuto.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "expirationDateIsInvalid": {
@@ -4469,7 +4469,7 @@
     "message": "WebAuthn non è supportato da questo browser."
   },
   "webAuthnSuccess": {
-    "message": "WebAuthn verificato correttamente! Puoi chiudere questa scheda."
+    "message": "WebAuthn verificato! Puoi chiudere questa scheda."
   },
   "hintEqualsPassword": {
     "message": "Il suggerimento per la password non può essere uguale alla tua password."
@@ -4553,7 +4553,7 @@
     "message": "Una o più politiche dell'organizzazione richiedono che la tua password principale soddisfi questi requisiti:"
   },
   "resetPasswordSuccess": {
-    "message": "Password ripristinata correttamente!"
+    "message": "Password ripristinata!"
   },
   "resetPasswordEnrollmentWarning": {
     "message": "Iscriversi consentirà agli amministratori dell'organizzazione di cambiare la tua password principale"
@@ -4616,7 +4616,7 @@
     "message": "Sei sicuro di voler rimuovere i seguenti utenti? Il processo potrebbe richiedere alcuni secondi per essere completato e non può essere interrotto o annullato."
   },
   "removeOrgUsersConfirmation": {
-    "message": "Quando i membri sono rimossi, non hanno più accesso ai dati dell'organizzazione e questa azione è irreversibile. Per aggiungere di nuovo i membri all'organizzazione, devono essere invitati e registrati nuovamente.  Il processo può richiedere alcuni secondi e non può essere interrotto o annullato."
+    "message": "Quando i membri sono rimossi, non hanno più accesso ai dati dell'organizzazione e questa azione è irreversibile. Per aggiungere di nuovo i membri all'organizzazione, devono essere invitati e registrati di nuovo. Il processo può richiedere alcuni secondi e non può essere interrotto o annullato."
   },
   "revokeUsersWarning": {
     "message": "Quando i membri sono revocati, non hanno più accesso ai dati dell'organizzazione. Per ripristinare rapidamente l'accesso dei membri, accedi alla scheda Revocati. Il processo può richiedere alcuni secondi e non può essere interrotto o annullato."
@@ -5026,10 +5026,10 @@
     "message": "Bitwarden Families gratis"
   },
   "sponsoredFamiliesEligible": {
-    "message": "Tu e la tua famiglia siete idonei per Bitwarden Families gratuito. Riscatta con la tua email personale per mantenere i tuoi dati al sicuro anche quando non sei a lavoro."
+    "message": "Tu e la tua famiglia siete idonei per Bitwarden Families gratis. Riscatta con la tua email personale per mantenere i tuoi dati al sicuro anche quando non sei a lavoro."
   },
   "sponsoredFamiliesEligibleCard": {
-    "message": "Riscatta oggi il tuo piano Bitwarden per famiglie gratis per mantenere i tuoi dati al sicuro anche quando non sei al lavoro."
+    "message": "Riscatta oggi il tuo piano Bitwarden Families gratis per mantenere i tuoi dati al sicuro anche quando non sei al lavoro."
   },
   "sponsoredFamiliesInclude": {
     "message": "Il piano Bitwarden Families include"
@@ -5101,7 +5101,7 @@
     }
   },
   "resendEmailLabel": {
-    "message": "Invia nuovamente l'email sponsor allo sponsor $NAME$",
+    "message": "Invia l'email di sponsorizzazione allo sponsor $NAME$ di nuovo",
     "placeholders": {
       "name": {
         "content": "$1",
@@ -6735,7 +6735,19 @@
   "notAvailableForFreeOrganization": {
     "message": "Questa funzionalità non è disponibile per le organizzazioni gratis. Contatta il proprietario della tua organizzazione per aggiornare."
   },
+  "smProjectSecretsNoItemsNoAccess": {
+    "message": "Contatta l'amministratore della tua organizzazione per gestire i segreti per questo progetto.",
+    "description": "The message shown to the user under a project's secrets tab when the user only has read access to the project."
+  },
   "enforceOnLoginDesc": {
     "message": "Obbliga i membri esistenti a cambiare le loro password"
+  },
+  "smProjectDeleteAccessRestricted": {
+    "message": "Non hai l'autorizzazione per eliminare questo progetto",
+    "description": "The individual description shown to the user when the user doesn't have access to delete a project."
+  },
+  "smProjectsDeleteBulkConfirmation": {
+    "message": "Questi progetti non possono essere eliminati. Vuoi continuare?",
+    "description": "The message shown to the user when bulk deleting projects and the user doesn't have access to some projects."
   }
 }

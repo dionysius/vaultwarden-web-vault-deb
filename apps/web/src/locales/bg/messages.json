@@ -6735,7 +6735,19 @@
   "notAvailableForFreeOrganization": {
     "message": "Тази функционалност не е налична за организациите използващи безплатния план. Свържете се със собственика на организацията си, за да преминете към платен абонамент."
   },
+  "smProjectSecretsNoItemsNoAccess": {
+    "message": "Свържете се с администратора на организацията си, който може да управлява тайните за този проект.",
+    "description": "The message shown to the user under a project's secrets tab when the user only has read access to the project."
+  },
   "enforceOnLoginDesc": {
     "message": "Задължаване на текущите членове да сменят паролите си"
+  },
+  "smProjectDeleteAccessRestricted": {
+    "message": "Нямате право за изтриване на този проект",
+    "description": "The individual description shown to the user when the user doesn't have access to delete a project."
+  },
+  "smProjectsDeleteBulkConfirmation": {
+    "message": "Следните проекти не могат да бъдат изтрити. Искате ли да продължите?",
+    "description": "The message shown to the user when bulk deleting projects and the user doesn't have access to some projects."
   }
 }
