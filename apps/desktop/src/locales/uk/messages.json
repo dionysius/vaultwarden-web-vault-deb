@@ -1393,7 +1393,7 @@
     "message": "Розблокувати з Windows Hello"
   },
   "additionalWindowsHelloSettings": {
-    "message": "Additional Windows Hello settings"
+    "message": "Додаткові налаштування Windows Hello"
   },
   "windowsHelloConsentMessage": {
     "message": "Перевірити на Bitwarden."
@@ -1402,22 +1402,22 @@
     "message": "Розблокувати з Touch ID"
   },
   "additionalTouchIdSettings": {
-    "message": "Additional Touch ID settings"
+    "message": "Додаткові налаштування Touch ID"
   },
   "touchIdConsentMessage": {
     "message": "розблокувати сховище"
   },
   "autoPromptWindowsHello": {
-    "message": "Ініціювати Windows Hello під час запуску"
+    "message": "Запитувати Windows Hello під час запуску"
   },
   "autoPromptTouchId": {
-    "message": "Ініціювати Touch ID під час запуску"
+    "message": "Запитувати Touch ID під час запуску"
   },
   "requirePasswordOnStart": {
-    "message": "Require password or PIN on app start"
+    "message": "Вимагати пароль чи PIN під час запуску"
   },
   "recommendedForSecurity": {
-    "message": "Recommended for security."
+    "message": "Рекомендовано для безпеки."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Блокувати головним паролем при перезапуску"
@@ -1540,7 +1540,7 @@
     "message": "Щоб завершити налаштування входу з SSO, встановіть головний пароль для доступу і захисту сховища."
   },
   "currentMasterPass": {
-    "message": "Current master password"
+    "message": "Поточний головний пароль"
   },
   "newMasterPass": {
     "message": "Новий головний пароль"
@@ -1859,7 +1859,7 @@
     "message": "Ваш головний пароль нещодавно був змінений адміністратором організації. Щоб отримати доступ до сховища, вам необхідно оновити його зараз. Продовживши, ви вийдете з поточного сеансу, після чого потрібно буде повторно виконати вхід. Сеанси на інших пристроях можуть залишатися активними протягом однієї години."
   },
   "updateWeakMasterPasswordWarning": {
-    "message": "Your master password does not meet one or more of your organization policies. In order to access the vault, you must update your master password now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
+    "message": "Ваш головний пароль не відповідає одній або більше політикам вашої організації. Щоб отримати доступ до сховища, вам необхідно оновити свій головний пароль зараз. Продовживши, ви вийдете з поточного сеансу, після чого потрібно буде повторно виконати вхід. Сеанси на інших пристроях можуть залишатися активними протягом однієї години."
   },
   "hours": {
     "message": "Годин"
@@ -2247,17 +2247,17 @@
     }
   },
   "windowsBiometricUpdateWarning": {
-    "message": "Bitwarden recommends updating your biometric settings to require your master password (or PIN) on the first unlock. Would you like to update your settings now?"
+    "message": "Bitwarden рекомендує оновити ваші біометричні налаштування, щоб вимагати головний пароль (або PIN) під час першого розблокування. Чи бажаєте оновити налаштування зараз?"
   },
   "windowsBiometricUpdateWarningTitle": {
-    "message": "Recommended Settings Update"
+    "message": "Оновлення рекомендованих налаштувань"
   },
   "windows8SoonDeprecated": {
-    "message": "The operating system you are using will no longer be supported after the 2023.5.0 release. Upgrade to a supported operating system. Continuing without updating your operating system may result in unexpected behavior or security risks.",
+    "message": "Операційна система, якою ви користуєтесь, більше не підтримуватиметься після випуску версії 2023.5.0. Оновіть операційну систему. Якщо ви не оновите свою операційну систему, це може призвести до непередбаченої поведінки або ризиків безпеки.",
     "description": "Windows 8, 8.1 and Server 2012 R2 are no longer supported by Electron & Chromium. Show a notice on the login and lock screen while 2023.4.0 is the active version."
   },
   "windows8Deprecated": {
-    "message": "The operating system you are using is no longer supported. Continuing without updating your operating system may result in unexpected behavior.",
+    "message": "Операційна система, якою ви користуєтесь, більше не підтримується. Якщо ви не оновите свою операційну систему, це може призвести до непередбаченої поведінки.",
     "description": "Windows 8, 8.1 and Server 2012 R2 are no longer supported by Electron & Chromium. Show a notice on the login and lock screen after 2023.5.0 is released."
   }
 }

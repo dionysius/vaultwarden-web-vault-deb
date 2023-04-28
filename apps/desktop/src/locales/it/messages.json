@@ -512,7 +512,7 @@
     "message": "Un suggerimento per la password principale può aiutarti a ricordarla se la dimentichi."
   },
   "reTypeMasterPass": {
-    "message": "Digita nuovamente la password"
+    "message": "Inserisci password principale di nuovo"
   },
   "masterPassHint": {
     "message": "Suggerimento per la password principale (facoltativo)"
@@ -618,7 +618,7 @@
     "message": "Ricordami"
   },
   "sendVerificationCodeEmailAgain": {
-    "message": "Invia nuovamente l'email con il codice di verifica"
+    "message": "Invia email con codice di verifica di nuovo"
   },
   "useAnotherTwoStepMethod": {
     "message": "Usa un altro metodo di verifica in due passaggi"
@@ -649,11 +649,11 @@
     "message": "Usa YubiKey per accedere al tuo account. Compatibile con YubiKey 4, 4 Nano, 4C, e dispositivi NEO."
   },
   "duoDesc": {
-    "message": "Verifica con Duo Security usando l'applicazione Duo Mobile, SMS, chiamata telefonica, o chiave di sicurezza U2F.",
+    "message": "Verifica con Duo Security usando l'app Duo Mobile, SMS, chiamata telefonica, o chiave di sicurezza U2F.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "duoOrganizationDesc": {
-    "message": "Verifica con Duo Security per la tua organizzazione usando l'applicazione Duo Mobile, SMS, chiamata telefonica, o chiave di sicurezza U2F.",
+    "message": "Verifica con Duo Security per la tua organizzazione usando l'app Duo Mobile, SMS, chiamata telefonica, o chiave di sicurezza U2F.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "webAuthnTitle": {
@@ -840,7 +840,7 @@
     "message": "Password principale errata"
   },
   "twoStepLoginConfirmation": {
-    "message": "La verifica in due passaggi rende il tuo account più sicuro richiedendoti di verificare il tuo login usando un altro dispositivo come una chiave di sicurezza, applicazione di autenticazione, SMS, telefonata, o email. Può essere abilitata nella cassaforte web su bitwarden.com. Vuoi visitare il sito?"
+    "message": "La verifica in due passaggi rende il tuo account più sicuro richiedendoti di verificare il tuo login usando un altro dispositivo come una chiave di sicurezza, app di autenticazione, SMS, telefonata, o email. Può essere abilitata nella cassaforte web su bitwarden.com. Vuoi visitare il sito?"
   },
   "twoStepLogin": {
     "message": "Verifica in due passaggi"
@@ -986,7 +986,7 @@
     "message": "Tema"
   },
   "themeDesc": {
-    "message": "Cambia lo schema di colori dell'applicazione."
+    "message": "Cambia lo schema di colori dell'app."
   },
   "dark": {
     "message": "Scuro",

@@ -1393,7 +1393,7 @@
     "message": "فتح مع Windows Hello"
   },
   "additionalWindowsHelloSettings": {
-    "message": "Additional Windows Hello settings"
+    "message": "إعدادات Windows Hello إضافية"
   },
   "windowsHelloConsentMessage": {
     "message": "تحقق من Bitwarden."
@@ -1402,7 +1402,7 @@
     "message": "فتح بواسطة معرف اللمس"
   },
   "additionalTouchIdSettings": {
-    "message": "Additional Touch ID settings"
+    "message": "إعدادات معرف اللمس الإضافية"
   },
   "touchIdConsentMessage": {
     "message": "فتح خزنتك"
@@ -1414,7 +1414,7 @@
     "message": "اطلب معرف اللمس عند التشغيل"
   },
   "requirePasswordOnStart": {
-    "message": "Require password or PIN on app start"
+    "message": "يتطلب كلمة مرور أو رقم التعريف الشخصي عند بدء التطبيق"
   },
   "recommendedForSecurity": {
     "message": "موصى به للأمان."
@@ -1859,7 +1859,7 @@
     "message": "تم تغيير كلمة المرور الرئيسية الخاصة بك مؤخرًا من قبل مسؤول في مؤسستك. من أجل الوصول إلى الخزانة، يجب عليك تحديثها الآن. سيتم تسجيل خروجك من الجلسة الحالية، مما يتطلب منك تسجيل الدخول مرة أخرى. وقد تظل الجلسات النشطة على أجهزة أخرى نشطة لمدة تصل إلى ساعة واحدة."
   },
   "updateWeakMasterPasswordWarning": {
-    "message": "Your master password does not meet one or more of your organization policies. In order to access the vault, you must update your master password now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
+    "message": "كلمة المرور الرئيسية الخاصة بك لا تفي بواحدة أو أكثر من سياسات مؤسستك. من أجل الوصول إلى الخزنة، يجب عليك تحديث كلمة المرور الرئيسية الآن. سيتم تسجيل خروجك من الجلسة الحالية، مما يتطلب منك تسجيل الدخول مرة أخرى. وقد تظل الجلسات النشطة على أجهزة أخرى نشطة لمدة تصل إلى ساعة واحدة."
   },
   "hours": {
     "message": "ساعات"
@@ -1881,7 +1881,7 @@
     }
   },
   "vaultTimeoutPolicyWithActionInEffect": {
-    "message": "Your organization policies are affecting your vault timeout. Maximum allowed vault timeout is $HOURS$ hour(s) and $MINUTES$ minute(s). Your vault timeout action is set to $ACTION$.",
+    "message": "سياسات مؤسستك تؤثر على مهلة خزنتك. الحد الأقصى المسموح به لمهلة الخزنة هو $HOURS$ ساعة(ساعات) و $MINUTES$ دقيقة(دقائق). يتم تعيين إجراء مهلة المخزن الخاص بك إلى $ACTION$.",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -1898,7 +1898,7 @@
     }
   },
   "vaultTimeoutActionPolicyInEffect": {
-    "message": "Your organization policies have set your vault timeout action to $ACTION$.",
+    "message": "لقد حددت سياسات مؤسستك إجراء مهلة الخزنة الخاصة بك إلى $ACTION$.",
     "placeholders": {
       "action": {
         "content": "$1",
@@ -2247,17 +2247,17 @@
     }
   },
   "windowsBiometricUpdateWarning": {
-    "message": "Bitwarden recommends updating your biometric settings to require your master password (or PIN) on the first unlock. Would you like to update your settings now?"
+    "message": "يوصي Bitwarden بتحديث إعدادات القياسات الحيوية الخاصة بك لطلب كلمة المرور الرئيسية (أو PIN) عند فتح القفل الأول. هل ترغب في تحديث إعداداتك الآن؟"
   },
   "windowsBiometricUpdateWarningTitle": {
-    "message": "Recommended Settings Update"
+    "message": "تحديث الإعدادات الموصى بها"
   },
   "windows8SoonDeprecated": {
-    "message": "The operating system you are using will no longer be supported after the 2023.5.0 release. Upgrade to a supported operating system. Continuing without updating your operating system may result in unexpected behavior or security risks.",
+    "message": "نظام التشغيل الذي تستخدمه لن يتم دعمه بعد إصدار 2023.5.0. قم بالترقية إلى نظام تشغيل مدعوم. قد يؤدي الاستمرار دون تحديث نظام التشغيل الخاص بك إلى مخاطر سلوكية أو أمنية غير متوقعة.",
     "description": "Windows 8, 8.1 and Server 2012 R2 are no longer supported by Electron & Chromium. Show a notice on the login and lock screen while 2023.4.0 is the active version."
   },
   "windows8Deprecated": {
-    "message": "The operating system you are using is no longer supported. Continuing without updating your operating system may result in unexpected behavior.",
+    "message": "نظام التشغيل الذي تستخدمه لم يعد مدعوماً. الاستمرار دون تحديث نظام التشغيل الخاص بك قد يؤدي إلى سلوك غير متوقع.",
     "description": "Windows 8, 8.1 and Server 2012 R2 are no longer supported by Electron & Chromium. Show a notice on the login and lock screen after 2023.5.0 is released."
   }
 }
