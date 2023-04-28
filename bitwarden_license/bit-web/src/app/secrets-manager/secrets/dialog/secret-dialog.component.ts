@@ -144,7 +144,7 @@ export class SecretDialogComponent implements OnInit {
       this.formGroup.get("newProjectName").clearValidators();
     }
 
-    this.formGroup.updateValueAndValidity();
+    this.formGroup.get("newProjectName").updateValueAndValidity();
   }
 
   get title() {
