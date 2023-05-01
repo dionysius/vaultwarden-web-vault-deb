@@ -32,13 +32,13 @@
       ></sm-expiration-options>
     </div>
 
-    <div bitDialogFooter class="tw-flex tw-gap-2">
+    <ng-container bitDialogFooter>
       <button class="tw-normal-case" type="submit" bitButton buttonType="primary" bitFormButton>
         {{ "newAccessToken" | i18n }}
       </button>
       <button type="button" bitButton buttonType="secondary" bitFormButton bitDialogClose>
         {{ "cancel" | i18n }}
       </button>
-    </div>
+    </ng-container>
   </bit-dialog>
 </form>

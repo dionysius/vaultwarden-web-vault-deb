@@ -10,13 +10,13 @@
         <input formControlName="name" maxlength="1000" bitInput />
       </bit-form-field>
     </span>
-    <div bitDialogFooter class="tw-flex tw-gap-2">
+    <ng-container bitDialogFooter>
       <button type="submit" bitButton buttonType="primary" bitFormButton>
         {{ "save" | i18n }}
       </button>
       <button type="button" bitButton buttonType="secondary" bitFormButton bitDialogClose>
         {{ "cancel" | i18n }}
       </button>
-    </div>
+    </ng-container>
   </bit-dialog>
 </form>

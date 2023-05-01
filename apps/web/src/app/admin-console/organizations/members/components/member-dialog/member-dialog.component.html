@@ -325,7 +325,7 @@
         ></bit-tab>
       </bit-tab-group>
     </div>
-    <div bitDialogFooter class="tw-flex tw-flex-row tw-gap-2">
+    <ng-container bitDialogFooter>
       <button type="submit" bitButton bitFormButton buttonType="primary" [disabled]="loading">
         {{ "save" | i18n }}
       </button>
@@ -373,6 +373,6 @@
           [disabled]="loading"
         ></button>
       </div>
-    </div>
+    </ng-container>
   </bit-dialog>
 </form>

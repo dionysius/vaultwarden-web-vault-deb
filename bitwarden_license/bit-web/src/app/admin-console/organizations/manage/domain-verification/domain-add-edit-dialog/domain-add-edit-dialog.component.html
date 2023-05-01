@@ -49,7 +49,7 @@
         {{ "automaticDomainVerificationProcess" | i18n }}
       </bit-callout>
     </div>
-    <div bitDialogFooter class="tw-flex tw-flex-row tw-items-center tw-gap-2">
+    <ng-container bitDialogFooter>
       <button type="submit" bitButton bitFormButton buttonType="primary">
         <span *ngIf="!data?.orgDomain?.verifiedDate">{{ "verifyDomain" | i18n }}</span>
         <span *ngIf="data?.orgDomain?.verifiedDate">{{ "reverifyDomain" | i18n }}</span>
@@ -70,6 +70,6 @@
         type="submit"
         bitFormButton
       ></button>
-    </div>
+    </ng-container>
   </bit-dialog>
 </form>

@@ -23,10 +23,10 @@
     {{ data.expirationDate === null ? ("never" | i18n) : (data.expirationDate | date : "medium") }}
   </div>
 
-  <div bitDialogFooter class="tw-flex tw-gap-2">
+  <ng-container bitDialogFooter>
     <button type="button" bitButton buttonType="primary" (click)="copyAccessToken()">
       <i class="bwi bwi-clone" aria-hidden="true"></i>
       {{ "copyToken" | i18n }}
     </button>
-  </div>
+  </ng-container>
 </bit-dialog>

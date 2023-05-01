@@ -12,13 +12,13 @@
         </select>
       </bit-form-field>
     </span>
-    <div bitDialogFooter class="tw-flex tw-flex-row tw-gap-2">
+    <ng-container bitDialogFooter>
       <button bitButton bitFormButton type="submit" buttonType="primary">
         {{ "save" | i18n }}
       </button>
       <button bitButton bitFormButton type="button" buttonType="secondary" (click)="cancel()">
         {{ "cancel" | i18n }}
       </button>
-    </div>
+    </ng-container>
   </bit-dialog>
 </form>

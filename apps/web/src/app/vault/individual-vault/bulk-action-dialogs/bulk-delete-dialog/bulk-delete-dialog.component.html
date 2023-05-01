@@ -16,10 +16,10 @@
       {{ "permanentlyDeleteSelectedItemsDesc" | i18n : cipherIds.length }}
     </ng-container>
   </span>
-  <div bitDialogFooter class="tw-flex tw-flex-row tw-gap-2">
+  <ng-container bitDialogFooter>
     <button bitButton type="submit" buttonType="danger" [bitAction]="submit">
       {{ (permanent ? "permanentlyDelete" : "delete") | i18n }}
     </button>
     <button bitButton type="button" (click)="cancel()">{{ "cancel" | i18n }}</button>
-  </div>
+  </ng-container>
 </bit-simple-dialog>

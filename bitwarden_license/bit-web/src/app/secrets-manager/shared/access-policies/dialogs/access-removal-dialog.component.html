@@ -3,12 +3,12 @@
   <span bitDialogContent>
     {{ data.message | i18n }}
   </span>
-  <div bitDialogFooter class="tw-flex tw-flex-row tw-gap-2">
+  <ng-container bitDialogFooter>
     <button type="button" bitButton buttonType="danger" [bitAction]="removeAccess">
       {{ "removeAccess" | i18n }}
     </button>
     <button type="button" bitButton buttonType="secondary" [bitAction]="cancel">
       {{ "cancel" | i18n }}
     </button>
-  </div>
+  </ng-container>
 </bit-simple-dialog>
