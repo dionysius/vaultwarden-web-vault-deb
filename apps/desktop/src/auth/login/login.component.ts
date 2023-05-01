@@ -1,5 +1,3 @@
-import * as os from "os";
-
 import { Component, NgZone, OnDestroy, ViewChild, ViewContainerRef } from "@angular/core";
 import { FormBuilder } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
@@ -39,8 +37,6 @@ export class LoginComponent extends BaseLoginComponent implements OnDestroy {
   showingModal = false;
 
   private deferFocus: boolean = null;
-  protected oldOs = false;
-  protected deprecated = false;
 
   get loggedEmail() {
     return this.formGroup.value.email;
@@ -93,20 +89,6 @@ export class LoginComponent extends BaseLoginComponent implements OnDestroy {
     super.onSuccessfulLogin = () => {
       return syncService.fullSync(true);
     };
-
-    if (process.platform === "win32") {
-      try {
-        const release = os.release();
-        const majorVersion = parseInt(release.split(".")[0], 10);
-
-        this.oldOs = majorVersion < 10;
-        if (new Date() > new Date("2023-05-31")) {
-          this.deprecated = true;
-        }
-      } catch (e) {
-        this.logService.error(e);
-      }
-    }
   }
 
   async ngOnInit() {

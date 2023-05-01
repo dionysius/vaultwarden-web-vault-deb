@@ -1,5 +1,3 @@
-import * as os from "os";
-
 import { Component, NgZone } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import { ipcRenderer } from "electron";
@@ -33,8 +31,6 @@ const BroadcasterSubscriptionId = "LockComponent";
 export class LockComponent extends BaseLockComponent {
   private deferFocus: boolean = null;
   protected biometricReady = false;
-  protected oldOs = false;
-  protected deprecated = false;
 
   constructor(
     router: Router,
@@ -74,20 +70,6 @@ export class LockComponent extends BaseLockComponent {
       policyService,
       passwordGenerationService
     );
-
-    if (process.platform === "win32") {
-      try {
-        const release = os.release();
-        const majorVersion = parseInt(release.split(".")[0], 10);
-
-        this.oldOs = majorVersion < 10;
-        if (new Date() > new Date("2023-05-31")) {
-          this.deprecated = true;
-        }
-      } catch (e) {
-        this.logService.error(e);
-      }
-    }
   }
 
   async ngOnInit() {

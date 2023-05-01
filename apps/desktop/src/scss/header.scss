@@ -31,6 +31,9 @@
   }
 
   app-account-switcher {
+    // Electron will mark elements in the title bar as draggable so that the window can be moved. This
+    // disables the click events. To restore the click functionality, we mark this element as no-drag.
+    -webkit-app-region: no-drag;
     justify-self: end;
     height: 100%;
   }
