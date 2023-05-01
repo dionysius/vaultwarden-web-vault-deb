@@ -20,7 +20,6 @@ export interface ServiceAccountOperation {
 }
 
 @Component({
-  selector: "sm-service-account-dialog",
   templateUrl: "./service-account-dialog.component.html",
 })
 export class ServiceAccountDialogComponent {

@@ -59,7 +59,6 @@ export enum MemberDialogResult {
 }
 
 @Component({
-  selector: "app-member-dialog",
   templateUrl: "member-dialog.component.html",
 })
 export class MemberDialogComponent implements OnInit, OnDestroy {

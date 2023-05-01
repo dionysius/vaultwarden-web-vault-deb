@@ -18,7 +18,6 @@ export interface SecretDeleteOperation {
 }
 
 @Component({
-  selector: "sm-secret-delete-dialog",
   templateUrl: "./secret-delete.component.html",
 })
 export class SecretDeleteDialogComponent {

@@ -12,7 +12,6 @@ export interface SecretRestoreOperation {
 }
 
 @Component({
-  selector: "sm-secret-restore-dialog",
   templateUrl: "./secret-restore.component.html",
 })
 export class SecretRestoreDialogComponent {

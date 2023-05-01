@@ -24,7 +24,6 @@ export interface DomainAddEditDialogData {
 }
 
 @Component({
-  selector: "app-domain-add-edit-dialog",
   templateUrl: "domain-add-edit-dialog.component.html",
 })
 export class DomainAddEditDialogComponent implements OnInit, OnDestroy {

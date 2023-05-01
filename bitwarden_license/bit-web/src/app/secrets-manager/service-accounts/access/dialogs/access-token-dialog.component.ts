@@ -11,7 +11,6 @@ export interface AccessTokenDetails {
 }
 
 @Component({
-  selector: "sm-access-token-dialog",
   templateUrl: "./access-token-dialog.component.html",
 })
 export class AccessTokenDialogComponent implements OnInit {

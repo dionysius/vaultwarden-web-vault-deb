@@ -46,7 +46,6 @@ export enum CollectionDialogResult {
 }
 
 @Component({
-  selector: "app-collection-dialog",
   templateUrl: "collection-dialog.component.html",
 })
 export class CollectionDialogComponent implements OnInit, OnDestroy {

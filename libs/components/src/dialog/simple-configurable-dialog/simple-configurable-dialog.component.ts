@@ -25,7 +25,6 @@ const DEFAULT_COLOR: Record<SimpleDialogType, string> = {
 };
 
 @Component({
-  selector: "bit-simple-configurable-dialog",
   templateUrl: "./simple-configurable-dialog.component.html",
 })
 export class SimpleConfigurableDialogComponent {

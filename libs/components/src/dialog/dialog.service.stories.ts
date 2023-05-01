@@ -19,7 +19,6 @@ interface Animal {
 }
 
 @Component({
-  selector: "app-story-dialog",
   template: `<button bitButton (click)="openDialog()">Open Dialog</button>`,
 })
 class StoryDialogComponent {
@@ -35,7 +34,6 @@ class StoryDialogComponent {
 }
 
 @Component({
-  selector: "story-dialog-content",
   template: `
     <bit-dialog dialogSize="large">
       <span bitDialogTitle>Dialog Title</span>

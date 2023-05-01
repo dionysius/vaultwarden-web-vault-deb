@@ -12,7 +12,6 @@ export interface SecretHardDeleteOperation {
 }
 
 @Component({
-  selector: "sm-secret-hard-delete-dialog",
   templateUrl: "./secret-hard-delete.component.html",
 })
 export class SecretHardDeleteDialogComponent {

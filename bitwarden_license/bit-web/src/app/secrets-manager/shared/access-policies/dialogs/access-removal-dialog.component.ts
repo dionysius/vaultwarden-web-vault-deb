@@ -15,7 +15,6 @@ export interface AccessRemovalDetails {
 }
 
 @Component({
-  selector: "sm-access-removal-dialog",
   templateUrl: "./access-removal-dialog.component.html",
 })
 export class AccessRemovalDialogComponent implements OnInit {

@@ -35,7 +35,6 @@ export const openBulkMoveDialog = (
 };
 
 @Component({
-  selector: "vault-bulk-move-dialog",
   templateUrl: "bulk-move-dialog.component.html",
 })
 export class BulkMoveDialogComponent implements OnInit {

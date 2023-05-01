@@ -12,7 +12,6 @@ export interface ResultList {
 }
 
 @Component({
-  selector: "app-import-success-dialog",
   templateUrl: "./import-success-dialog.component.html",
 })
 export class ImportSuccessDialogComponent implements OnInit {

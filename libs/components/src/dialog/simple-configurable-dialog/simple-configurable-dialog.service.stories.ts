@@ -20,7 +20,6 @@ import { SimpleDialogOptions } from "./models/simple-dialog-options";
 import { SimpleDialogType } from "./models/simple-dialog-type.enum";
 
 @Component({
-  selector: "app-story-dialog",
   template: `
     <h2 class="tw-text-main">Dialog Type Examples:</h2>
     <div class="tw-mb-4 tw-flex tw-flex-row tw-gap-2">

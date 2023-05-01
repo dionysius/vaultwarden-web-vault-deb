@@ -25,7 +25,6 @@ export interface ServiceAccountDeleteOperation {
 }
 
 @Component({
-  selector: "sm-service-account-delete-dialog",
   templateUrl: "./service-account-delete-dialog.component.html",
 })
 export class ServiceAccountDeleteDialogComponent {

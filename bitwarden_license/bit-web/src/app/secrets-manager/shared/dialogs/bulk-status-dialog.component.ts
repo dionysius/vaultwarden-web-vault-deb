@@ -16,7 +16,6 @@ export class BulkOperationStatus {
 }
 
 @Component({
-  selector: "sm-bulk-status-dialog",
   templateUrl: "./bulk-status-dialog.component.html",
 })
 export class BulkStatusDialogComponent implements OnInit {

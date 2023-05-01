@@ -25,7 +25,6 @@ export interface ProjectDeleteOperation {
 }
 
 @Component({
-  selector: "sm-project-delete-dialog",
   templateUrl: "./project-delete-dialog.component.html",
 })
 export class ProjectDeleteDialogComponent implements OnInit {
