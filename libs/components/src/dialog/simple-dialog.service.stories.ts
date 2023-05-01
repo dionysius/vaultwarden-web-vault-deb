@@ -44,10 +44,10 @@ class StoryDialogComponent {
         <br />
         Animal: {{ animal }}
       </span>
-      <div bitDialogFooter class="tw-flex tw-flex-row tw-gap-2">
+      <ng-container bitDialogFooter>
         <button bitButton buttonType="primary" (click)="dialogRef.close()">Save</button>
         <button bitButton buttonType="secondary" bitDialogClose>Cancel</button>
-      </div>
+      </ng-container>
     </bit-simple-dialog>
   `,
 })

@@ -55,7 +55,7 @@ const Template: Story<DialogComponent> = (args: DialogComponent) => ({
   <bit-dialog [dialogSize]="dialogSize" [disablePadding]="disablePadding">
     <span bitDialogTitle>{{title}}</span>
     <span bitDialogContent>Dialog body text goes here.</span>
-    <div bitDialogFooter class="tw-flex tw-items-center tw-flex-row tw-gap-2">
+    <ng-container bitDialogFooter>
       <button bitButton buttonType="primary">Save</button>
       <button bitButton buttonType="secondary">Cancel</button>
       <button
@@ -65,7 +65,7 @@ const Template: Story<DialogComponent> = (args: DialogComponent) => ({
         size="default"
         title="Delete"
         aria-label="Delete"></button>
-    </div>
+    </ng-container>
   </bit-dialog>
   `,
 });
@@ -98,18 +98,18 @@ const TemplateScrolling: Story<DialogComponent> = (args: DialogComponent) => ({
   props: args,
   template: `
   <bit-dialog [dialogSize]="dialogSize" [disablePadding]="disablePadding">
-  <span bitDialogTitle>Scrolling Example</span>
-  <span bitDialogContent>
-    Dialog body text goes here.<br>
-    <ng-container *ngFor="let _ of [].constructor(100)">
-      repeating lines of characters <br>
+    <span bitDialogTitle>Scrolling Example</span>
+    <span bitDialogContent>
+      Dialog body text goes here.<br>
+      <ng-container *ngFor="let _ of [].constructor(100)">
+        repeating lines of characters <br>
+      </ng-container>
+      end of sequence!
+    </span>
+    <ng-container bitDialogFooter>
+      <button bitButton buttonType="primary">Save</button>
+      <button bitButton buttonType="secondary">Cancel</button>
     </ng-container>
-    end of sequence!
-  </span>
-  <div bitDialogFooter class="tw-flex tw-flex-row tw-gap-2">
-    <button bitButton buttonType="primary">Save</button>
-    <button bitButton buttonType="secondary">Cancel</button>
-  </div>
   </bit-dialog>
   `,
 });
@@ -123,18 +123,18 @@ const TemplateTabbed: Story<DialogComponent> = (args: DialogComponent) => ({
   props: args,
   template: `
   <bit-dialog [dialogSize]="dialogSize" [disablePadding]="disablePadding">
-  <span bitDialogTitle>Tab Content Example</span>
-  <span bitDialogContent>
-    <bit-tab-group>
-        <bit-tab label="First Tab">First Tab Content</bit-tab>
-        <bit-tab label="Second Tab">Second Tab Content</bit-tab>
-        <bit-tab label="Third Tab">Third Tab Content</bit-tab>
-    </bit-tab-group>
-  </span>
-  <div bitDialogFooter class="tw-flex tw-flex-row tw-gap-2">
-    <button bitButton buttonType="primary">Save</button>
-    <button bitButton buttonType="secondary">Cancel</button>
-  </div>
+    <span bitDialogTitle>Tab Content Example</span>
+    <span bitDialogContent>
+      <bit-tab-group>
+          <bit-tab label="First Tab">First Tab Content</bit-tab>
+          <bit-tab label="Second Tab">Second Tab Content</bit-tab>
+          <bit-tab label="Third Tab">Third Tab Content</bit-tab>
+      </bit-tab-group>
+    </span>
+    <ng-container bitDialogFooter>
+      <button bitButton buttonType="primary">Save</button>
+      <button bitButton buttonType="secondary">Cancel</button>
+    </ng-container>
   </bit-dialog>
   `,
 });

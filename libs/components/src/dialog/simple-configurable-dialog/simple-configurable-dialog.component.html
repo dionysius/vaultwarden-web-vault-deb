@@ -5,7 +5,7 @@
 
   <div bitDialogContent>{{ content }}</div>
 
-  <div bitDialogFooter class="tw-flex tw-flex-row tw-gap-2">
+  <ng-container bitDialogFooter>
     <button
       type="button"
       bitButton
@@ -24,5 +24,5 @@
     >
       {{ cancelButtonText }}
     </button>
-  </div>
+  </ng-container>
 </bit-simple-dialog>
