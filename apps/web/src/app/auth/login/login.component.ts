@@ -25,8 +25,8 @@ import { LoginService } from "@bitwarden/common/auth/abstractions/login.service"
 import { ListResponse } from "@bitwarden/common/models/response/list.response";
 import { PasswordGenerationServiceAbstraction } from "@bitwarden/common/tools/generator/password";
 
-import { RouterService, StateService } from "../../app/core";
-import { flagEnabled } from "../../utils/flags";
+import { flagEnabled } from "../../../utils/flags";
+import { RouterService, StateService } from "../../core";
 
 @Component({
   selector: "app-login",

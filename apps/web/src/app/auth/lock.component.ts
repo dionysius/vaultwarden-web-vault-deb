@@ -18,7 +18,7 @@ import { InternalPolicyService } from "@bitwarden/common/admin-console/abstracti
 import { KeyConnectorService } from "@bitwarden/common/auth/abstractions/key-connector.service";
 import { PasswordGenerationServiceAbstraction } from "@bitwarden/common/tools/generator/password";
 
-import { RouterService } from "../app/core";
+import { RouterService } from "../core";
 
 @Component({
   selector: "app-lock",

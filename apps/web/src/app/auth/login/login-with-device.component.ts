@@ -16,7 +16,7 @@ import { AuthService } from "@bitwarden/common/auth/abstractions/auth.service";
 import { LoginService } from "@bitwarden/common/auth/abstractions/login.service";
 import { PasswordGenerationServiceAbstraction } from "@bitwarden/common/tools/generator/password";
 
-import { StateService } from "../../app/core";
+import { StateService } from "../../core";
 
 @Component({
   selector: "app-login-with-device",

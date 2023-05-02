@@ -5,7 +5,7 @@ import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { KeyConnectorService } from "@bitwarden/common/auth/abstractions/key-connector.service";
 
-import { DeauthorizeSessionsComponent } from "../../auth/settings/deauthorize-sessions.component";
+import { DeauthorizeSessionsComponent } from "../auth/settings/deauthorize-sessions.component";
 
 import { DeleteAccountComponent } from "./delete-account.component";
 import { PurgeVaultComponent } from "./purge-vault.component";

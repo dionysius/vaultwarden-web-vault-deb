@@ -7,7 +7,7 @@ import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUti
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { EmergencyAccessAcceptRequest } from "@bitwarden/common/auth/models/request/emergency-access-accept.request";
 
-import { BaseAcceptComponent } from "../app/common/base.accept.component";
+import { BaseAcceptComponent } from "../common/base.accept.component";
 
 @Component({
   selector: "app-accept-emergency",

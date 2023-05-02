@@ -15,7 +15,7 @@ import { LoginService } from "@bitwarden/common/auth/abstractions/login.service"
 import { TwoFactorService } from "@bitwarden/common/auth/abstractions/two-factor.service";
 import { TwoFactorProviderType } from "@bitwarden/common/auth/enums/two-factor-provider-type";
 
-import { RouterService } from "../app/core";
+import { RouterService } from "../core";
 
 import { TwoFactorOptionsComponent } from "./two-factor-options.component";
 

@@ -4,8 +4,8 @@ import { NgModule } from "@angular/core";
 
 import { FormFieldModule } from "@bitwarden/components";
 
-import { RegisterFormModule } from "../../../auth/register-form/register-form.module";
 import { OrganizationCreateModule } from "../../admin-console/organizations/create/organization-create.module";
+import { RegisterFormModule } from "../../auth/register-form/register-form.module";
 import { BillingComponent } from "../../billing/accounts/trial-initiation/billing.component";
 import { LooseComponentsModule, SharedModule } from "../../shared";
 

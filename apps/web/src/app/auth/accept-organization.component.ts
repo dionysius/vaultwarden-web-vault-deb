@@ -19,7 +19,7 @@ import { Policy } from "@bitwarden/common/admin-console/models/domain/policy";
 import { OrganizationKeysRequest } from "@bitwarden/common/admin-console/models/request/organization-keys.request";
 import { Utils } from "@bitwarden/common/misc/utils";
 
-import { BaseAcceptComponent } from "../app/common/base.accept.component";
+import { BaseAcceptComponent } from "../common/base.accept.component";
 
 @Component({
   selector: "app-accept-organization",
