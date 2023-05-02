@@ -240,6 +240,7 @@ header {
     &[disabled] {
       opacity: 0.65;
       cursor: default !important;
+      background-color: inherit !important;
     }
 
     i + span {

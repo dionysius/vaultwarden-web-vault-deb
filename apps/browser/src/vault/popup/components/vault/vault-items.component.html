@@ -81,7 +81,7 @@
         *ngIf="showVaultFilter && !showGroupings()"
         (onVaultSelectionChanged)="changeVaultSelection()"
       ></app-vault-select>
-      <div class="no-items">
+      <div class="no-items" *ngIf="!nestedFolders?.length && !nestedCollections?.length">
         <i class="bwi bwi-spinner bwi-spin bwi-3x" *ngIf="!loaded" aria-hidden="true"></i>
         <ng-container *ngIf="loaded">
           <img class="no-items-image" aria-hidden="true" />
