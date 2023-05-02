@@ -2,26 +2,25 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:base",
-    "schedule:monthly",
-    ":maintainLockFilesMonthly",
-    ":preserveSemverRanges",
+    ":combinePatchMinorReleases",
+    ":dependencyDashboard",
+    ":maintainLockFilesWeekly",
+    ":pinAllExceptPeerDependencies",
     ":rebaseStalePrs",
-    ":disableMajorUpdates"
+    "schedule:weekends",
+    ":separateMajorReleases"
   ],
+  "prConcurrentLimit": 3,
   "enabledManagers": ["npm"],
   "packageRules": [
     {
-      "matchPackagePatterns": ["typescript"],
-      "enabled": false
-    },
-    {
-      "matchManagers": ["npm"],
-      "matchUpdateTypes": ["minor", "patch"],
-      "groupName": "npm"
+      "groupName": "{{manager}}",
+      "matchPackagePatterns": ["*"],
+      "matchUpdateTypes": ["minor", "patch"]
     },
     {
       "packageNames": ["typescript"],
-      "updateTypes": "patch"
+      "matchUpdateTypes": "patch"
     }
   ],
   "ignoreDeps": ["bootstrap", "electron-builder", "electron", "node-ipc", "regedit", "zone.js"]
