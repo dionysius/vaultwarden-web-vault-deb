@@ -28,3 +28,16 @@ summary.tw-list-none::-webkit-details-marker {
 .tw-text-unset {
   text-align: unset;
 }
+
+/**
+ * Bootstrap uses z-index: 1050 for modals, dialogs should appear above them.
+ * Remove once bootstrap is removed from our codebase.
+ * CL-XYZ
+ */
+.cdk-overlay-container,
+.cdk-global-overlay-wrapper,
+.cdk-overlay-connected-position-bounding-box,
+.cdk-overlay-backdrop,
+.cdk-overlay-pane {
+  z-index: 2000 !important;
+}

@@ -2,9 +2,9 @@ import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { combineLatestWith, Observable, startWith, switchMap } from "rxjs";
 
+import { DialogServiceAbstraction } from "@bitwarden/angular/services/dialog";
 import { ModalService } from "@bitwarden/angular/services/modal.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
-import { DialogService } from "@bitwarden/components";
 import { UserVerificationPromptComponent } from "@bitwarden/web-vault/app/components/user-verification-prompt.component";
 
 import { AccessTokenView } from "../models/view/access-token.view";
@@ -25,7 +25,7 @@ export class AccessTokenComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private accessService: AccessService,
-    private dialogService: DialogService,
+    private dialogService: DialogServiceAbstraction,
     private modalService: ModalService,
     private platformUtilsService: PlatformUtilsService
   ) {}

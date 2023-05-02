@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, ViewContainerRef } from "@angular/core";
 
 import { UserNamePipe } from "@bitwarden/angular/pipes/user-name.pipe";
+import { DialogServiceAbstraction, SimpleDialogType } from "@bitwarden/angular/services/dialog";
 import { ModalService } from "@bitwarden/angular/services/modal.service";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
@@ -54,7 +55,8 @@ export class EmergencyAccessComponent implements OnInit {
     private userNamePipe: UserNamePipe,
     private logService: LogService,
     private stateService: StateService,
-    private organizationService: OrganizationService
+    private organizationService: OrganizationService,
+    protected dialogService: DialogServiceAbstraction
   ) {}
 
   async ngOnInit() {
@@ -169,13 +171,12 @@ export class EmergencyAccessComponent implements OnInit {
   async remove(
     details: EmergencyAccessGranteeDetailsResponse | EmergencyAccessGrantorDetailsResponse
   ) {
-    const confirmed = await this.platformUtilsService.showDialog(
-      this.i18nService.t("removeUserConfirmation"),
-      this.userNamePipe.transform(details),
-      this.i18nService.t("yes"),
-      this.i18nService.t("no"),
-      "warning"
-    );
+    const confirmed = await this.dialogService.openSimpleDialog({
+      title: this.userNamePipe.transform(details),
+      content: { key: "removeUserConfirmation" },
+      type: SimpleDialogType.WARNING,
+    });
+
     if (!confirmed) {
       return false;
     }
@@ -199,13 +200,15 @@ export class EmergencyAccessComponent implements OnInit {
   }
 
   async requestAccess(details: EmergencyAccessGrantorDetailsResponse) {
-    const confirmed = await this.platformUtilsService.showDialog(
-      this.i18nService.t("requestAccessConfirmation", details.waitTimeDays.toString()),
-      this.userNamePipe.transform(details),
-      this.i18nService.t("requestAccess"),
-      this.i18nService.t("no"),
-      "warning"
-    );
+    const confirmed = await this.dialogService.openSimpleDialog({
+      title: this.userNamePipe.transform(details),
+      content: {
+        key: "requestAccessConfirmation",
+        placeholders: [details.waitTimeDays.toString()],
+      },
+      acceptButtonText: { key: "requestAccess" },
+      type: SimpleDialogType.WARNING,
+    });
 
     if (!confirmed) {
       return false;
@@ -226,13 +229,15 @@ export class EmergencyAccessComponent implements OnInit {
       details.type === EmergencyAccessType.View ? "view" : "takeover"
     );
 
-    const confirmed = await this.platformUtilsService.showDialog(
-      this.i18nService.t("approveAccessConfirmation", this.userNamePipe.transform(details), type),
-      this.userNamePipe.transform(details),
-      this.i18nService.t("approve"),
-      this.i18nService.t("no"),
-      "warning"
-    );
+    const confirmed = await this.dialogService.openSimpleDialog({
+      title: this.userNamePipe.transform(details),
+      content: {
+        key: "approveAccessConfirmation",
+        placeholders: [this.userNamePipe.transform(details), type],
+      },
+      acceptButtonText: { key: "approve" },
+      type: SimpleDialogType.WARNING,
+    });
 
     if (!confirmed) {
       return false;

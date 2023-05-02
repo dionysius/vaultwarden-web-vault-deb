@@ -3,6 +3,7 @@ import { Component } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { first } from "rxjs/operators";
 
+import { DialogServiceAbstraction } from "@bitwarden/angular/services/dialog";
 import { AttachmentsComponent as BaseAttachmentsComponent } from "@bitwarden/angular/vault/components/attachments.component";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
@@ -31,7 +32,8 @@ export class AttachmentsComponent extends BaseAttachmentsComponent {
     private route: ActivatedRoute,
     stateService: StateService,
     logService: LogService,
-    fileDownloadService: FileDownloadService
+    fileDownloadService: FileDownloadService,
+    dialogService: DialogServiceAbstraction
   ) {
     super(
       cipherService,
@@ -42,7 +44,8 @@ export class AttachmentsComponent extends BaseAttachmentsComponent {
       window,
       logService,
       stateService,
-      fileDownloadService
+      fileDownloadService,
+      dialogService
     );
   }
 

@@ -3,6 +3,7 @@ import { UntypedFormBuilder } from "@angular/forms";
 import { Router } from "@angular/router";
 
 import { RegisterComponent as BaseRegisterComponent } from "@bitwarden/angular/components/register.component";
+import { DialogServiceAbstraction } from "@bitwarden/angular/services/dialog";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { AuditService } from "@bitwarden/common/abstractions/audit.service";
 import { BroadcasterService } from "@bitwarden/common/abstractions/broadcaster.service";
@@ -38,7 +39,8 @@ export class RegisterComponent extends BaseRegisterComponent implements OnInit, 
     private broadcasterService: BroadcasterService,
     private ngZone: NgZone,
     logService: LogService,
-    auditService: AuditService
+    auditService: AuditService,
+    dialogService: DialogServiceAbstraction
   ) {
     super(
       formValidationErrorService,
@@ -53,7 +55,8 @@ export class RegisterComponent extends BaseRegisterComponent implements OnInit, 
       passwordGenerationService,
       environmentService,
       logService,
-      auditService
+      auditService,
+      dialogService
     );
   }
 

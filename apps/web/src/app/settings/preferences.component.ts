@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { FormBuilder } from "@angular/forms";
 import { concatMap, filter, map, Observable, Subject, takeUntil, tap } from "rxjs";
 
+import { DialogServiceAbstraction, SimpleDialogType } from "@bitwarden/angular/services/dialog";
 import { AbstractThemingService } from "@bitwarden/angular/services/theming/theming.service.abstraction";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { MessagingService } from "@bitwarden/common/abstractions/messaging.service";
@@ -53,7 +54,8 @@ export class PreferencesComponent implements OnInit {
     private platformUtilsService: PlatformUtilsService,
     private messagingService: MessagingService,
     private themingService: AbstractThemingService,
-    private settingsService: SettingsService
+    private settingsService: SettingsService,
+    private dialogService: DialogServiceAbstraction
   ) {
     this.vaultTimeoutOptions = [
       { name: i18nService.t("oneMinute"), value: 1 },
@@ -112,13 +114,12 @@ export class PreferencesComponent implements OnInit {
       .pipe(
         concatMap(async (action) => {
           if (action === VaultTimeoutAction.LogOut) {
-            const confirmed = await this.platformUtilsService.showDialog(
-              this.i18nService.t("vaultTimeoutLogOutConfirmation"),
-              this.i18nService.t("vaultTimeoutLogOutConfirmationTitle"),
-              this.i18nService.t("yes"),
-              this.i18nService.t("cancel"),
-              "warning"
-            );
+            const confirmed = await this.dialogService.openSimpleDialog({
+              title: { key: "vaultTimeoutLogOutConfirmationTitle" },
+              content: { key: "vaultTimeoutLogOutConfirmation" },
+              type: SimpleDialogType.WARNING,
+            });
+
             if (!confirmed) {
               this.form.controls.vaultTimeoutAction.patchValue(VaultTimeoutAction.Lock, {
                 emitEvent: false,

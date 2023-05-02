@@ -7,6 +7,7 @@ import {
   Output,
 } from "@angular/core";
 
+import { DialogServiceAbstraction } from "@bitwarden/angular/services/dialog";
 import { ViewComponent as BaseViewComponent } from "@bitwarden/angular/vault/components/view.component";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { AuditService } from "@bitwarden/common/abstractions/audit.service";
@@ -53,7 +54,8 @@ export class ViewComponent extends BaseViewComponent implements OnChanges {
     passwordRepromptService: PasswordRepromptService,
     logService: LogService,
     stateService: StateService,
-    fileDownloadService: FileDownloadService
+    fileDownloadService: FileDownloadService,
+    dialogService: DialogServiceAbstraction
   ) {
     super(
       cipherService,
@@ -73,7 +75,8 @@ export class ViewComponent extends BaseViewComponent implements OnChanges {
       passwordRepromptService,
       logService,
       stateService,
-      fileDownloadService
+      fileDownloadService,
+      dialogService
     );
   }
   ngOnInit() {

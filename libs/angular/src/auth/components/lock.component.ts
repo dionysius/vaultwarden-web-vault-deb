@@ -26,6 +26,8 @@ import { EncString } from "@bitwarden/common/models/domain/enc-string";
 import { SymmetricCryptoKey } from "@bitwarden/common/models/domain/symmetric-crypto-key";
 import { PasswordGenerationServiceAbstraction } from "@bitwarden/common/tools/generator/password";
 
+import { DialogServiceAbstraction, SimpleDialogType } from "../../services/dialog";
+
 @Directive()
 export class LockComponent implements OnInit, OnDestroy {
   masterPassword = "";
@@ -67,7 +69,8 @@ export class LockComponent implements OnInit, OnDestroy {
     protected ngZone: NgZone,
     protected policyApiService: PolicyApiServiceAbstraction,
     protected policyService: InternalPolicyService,
-    protected passwordGenerationService: PasswordGenerationServiceAbstraction
+    protected passwordGenerationService: PasswordGenerationServiceAbstraction,
+    protected dialogService: DialogServiceAbstraction
   ) {}
 
   async ngOnInit() {
@@ -95,12 +98,13 @@ export class LockComponent implements OnInit, OnDestroy {
   }
 
   async logOut() {
-    const confirmed = await this.platformUtilsService.showDialog(
-      this.i18nService.t("logOutConfirmation"),
-      this.i18nService.t("logOut"),
-      this.i18nService.t("logOut"),
-      this.i18nService.t("cancel")
-    );
+    const confirmed = await this.dialogService.openSimpleDialog({
+      title: { key: "logOut" },
+      content: { key: "logOutConfirmation" },
+      acceptButtonText: { key: "logOut" },
+      type: SimpleDialogType.WARNING,
+    });
+
     if (confirmed) {
       this.messagingService.send("logout");
     }

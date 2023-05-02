@@ -112,16 +112,6 @@ export class CliPlatformUtilsService implements PlatformUtilsService {
     throw new Error("Not implemented.");
   }
 
-  showDialog(
-    text: string,
-    title?: string,
-    confirmText?: string,
-    cancelText?: string,
-    type?: string
-  ): Promise<boolean> {
-    throw new Error("Not implemented.");
-  }
-
   isDev(): boolean {
     return process.env.BWCLI_ENV === "development";
   }

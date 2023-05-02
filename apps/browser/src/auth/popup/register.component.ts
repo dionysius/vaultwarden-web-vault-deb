@@ -3,6 +3,7 @@ import { UntypedFormBuilder } from "@angular/forms";
 import { Router } from "@angular/router";
 
 import { RegisterComponent as BaseRegisterComponent } from "@bitwarden/angular/components/register.component";
+import { DialogServiceAbstraction } from "@bitwarden/angular/services/dialog";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { AuditService } from "@bitwarden/common/abstractions/audit.service";
 import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
@@ -36,7 +37,8 @@ export class RegisterComponent extends BaseRegisterComponent {
     passwordGenerationService: PasswordGenerationServiceAbstraction,
     environmentService: EnvironmentService,
     logService: LogService,
-    auditService: AuditService
+    auditService: AuditService,
+    dialogService: DialogServiceAbstraction
   ) {
     super(
       formValidationErrorService,
@@ -51,7 +53,8 @@ export class RegisterComponent extends BaseRegisterComponent {
       passwordGenerationService,
       environmentService,
       logService,
-      auditService
+      auditService,
+      dialogService
     );
   }
 }

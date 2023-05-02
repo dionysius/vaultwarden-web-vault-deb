@@ -9,6 +9,8 @@ import { Organization } from "@bitwarden/common/admin-console/models/domain/orga
 import { KeyConnectorService } from "@bitwarden/common/auth/abstractions/key-connector.service";
 import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
 
+import { DialogServiceAbstraction, SimpleDialogType } from "../../services/dialog";
+
 @Directive()
 export class RemovePasswordComponent implements OnInit {
   actionPromise: Promise<void | boolean>;
@@ -26,7 +28,8 @@ export class RemovePasswordComponent implements OnInit {
     private platformUtilsService: PlatformUtilsService,
     private i18nService: I18nService,
     private keyConnectorService: KeyConnectorService,
-    private organizationApiService: OrganizationApiServiceAbstraction
+    private organizationApiService: OrganizationApiServiceAbstraction,
+    private dialogService: DialogServiceAbstraction
   ) {}
 
   async ngOnInit() {
@@ -55,13 +58,12 @@ export class RemovePasswordComponent implements OnInit {
   }
 
   async leave() {
-    const confirmed = await this.platformUtilsService.showDialog(
-      this.i18nService.t("leaveOrganizationConfirmation"),
-      this.organization.name,
-      this.i18nService.t("yes"),
-      this.i18nService.t("no"),
-      "warning"
-    );
+    const confirmed = await this.dialogService.openSimpleDialog({
+      title: this.organization.name,
+      content: { key: "leaveOrganizationConfirmation" },
+      type: SimpleDialogType.WARNING,
+    });
+
     if (!confirmed) {
       return false;
     }

@@ -19,6 +19,8 @@ import { SendView } from "@bitwarden/common/tools/send/models/view/send.view";
 import { SendApiService } from "@bitwarden/common/tools/send/services/send-api.service.abstraction";
 import { SendService } from "@bitwarden/common/tools/send/services/send.service.abstraction";
 
+import { DialogServiceAbstraction, SimpleDialogType } from "../../services/dialog";
+
 @Directive()
 export class AddEditComponent implements OnInit, OnDestroy {
   @Input() sendId: string;
@@ -60,7 +62,8 @@ export class AddEditComponent implements OnInit, OnDestroy {
     protected policyService: PolicyService,
     private logService: LogService,
     protected stateService: StateService,
-    protected sendApiService: SendApiService
+    protected sendApiService: SendApiService,
+    protected dialogService: DialogServiceAbstraction
   ) {
     this.typeOptions = [
       { name: i18nService.t("sendTypeFile"), value: SendType.File },
@@ -229,15 +232,13 @@ export class AddEditComponent implements OnInit, OnDestroy {
     if (this.deletePromise != null) {
       return false;
     }
-    const confirmed = await this.platformUtilsService.showDialog(
-      this.i18nService.t("deleteSendConfirmation"),
-      this.i18nService.t("deleteSend"),
-      this.i18nService.t("yes"),
-      this.i18nService.t("no"),
-      "warning",
-      false,
-      this.componentName != "" ? this.componentName + " .modal-content" : null
-    );
+
+    const confirmed = await this.dialogService.openSimpleDialog({
+      title: { key: "deleteSend" },
+      content: { key: "deleteSendConfirmation" },
+      type: SimpleDialogType.WARNING,
+    });
+
     if (!confirmed) {
       return false;
     }
@@ -308,14 +309,14 @@ export class AddEditComponent implements OnInit, OnDestroy {
         this.i18nService.t(this.editMode ? "editedSend" : "createdSend")
       );
     } else {
-      await this.platformUtilsService.showDialog(
-        this.i18nService.t(this.editMode ? "editedSend" : "createdSend"),
-        null,
-        this.i18nService.t("ok"),
-        null,
-        "success",
-        null
-      );
+      await this.dialogService.openSimpleDialog({
+        title: "",
+        content: { key: this.editMode ? "editedSend" : "createdSend" },
+        acceptButtonText: { key: "ok" },
+        cancelButtonText: null,
+        type: SimpleDialogType.SUCCESS,
+      });
+
       await this.copyLinkToClipboard(this.link);
     }
   }

@@ -6,6 +6,8 @@ import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 
+import { DialogServiceAbstraction, SimpleDialogType } from "../../services/dialog";
+
 @Directive()
 export class PremiumComponent implements OnInit {
   isPremium = false;
@@ -17,7 +19,8 @@ export class PremiumComponent implements OnInit {
     protected platformUtilsService: PlatformUtilsService,
     protected apiService: ApiService,
     private logService: LogService,
-    protected stateService: StateService
+    protected stateService: StateService,
+    protected dialogService: DialogServiceAbstraction
   ) {}
 
   async ngOnInit() {
@@ -36,24 +39,24 @@ export class PremiumComponent implements OnInit {
   }
 
   async purchase() {
-    const confirmed = await this.platformUtilsService.showDialog(
-      this.i18nService.t("premiumPurchaseAlert"),
-      this.i18nService.t("premiumPurchase"),
-      this.i18nService.t("yes"),
-      this.i18nService.t("cancel")
-    );
+    const confirmed = await this.dialogService.openSimpleDialog({
+      title: { key: "premiumPurchase" },
+      content: { key: "premiumPurchaseAlert" },
+      type: SimpleDialogType.INFO,
+    });
+
     if (confirmed) {
       this.platformUtilsService.launchUri("https://vault.bitwarden.com/#/?premium=purchase");
     }
   }
 
   async manage() {
-    const confirmed = await this.platformUtilsService.showDialog(
-      this.i18nService.t("premiumManageAlert"),
-      this.i18nService.t("premiumManage"),
-      this.i18nService.t("yes"),
-      this.i18nService.t("cancel")
-    );
+    const confirmed = await this.dialogService.openSimpleDialog({
+      title: { key: "premiumManage" },
+      content: { key: "premiumManageAlert" },
+      type: SimpleDialogType.INFO,
+    });
+
     if (confirmed) {
       this.platformUtilsService.launchUri("https://vault.bitwarden.com/#/?premium=manage");
     }

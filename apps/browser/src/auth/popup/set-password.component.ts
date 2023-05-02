@@ -2,6 +2,7 @@ import { Component } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 
 import { SetPasswordComponent as BaseSetPasswordComponent } from "@bitwarden/angular/components/set-password.component";
+import { DialogServiceAbstraction } from "@bitwarden/angular/services/dialog";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
@@ -34,7 +35,8 @@ export class SetPasswordComponent extends BaseSetPasswordComponent {
     syncService: SyncService,
     route: ActivatedRoute,
     organizationApiService: OrganizationApiServiceAbstraction,
-    organizationUserService: OrganizationUserService
+    organizationUserService: OrganizationUserService,
+    dialogService: DialogServiceAbstraction
   ) {
     super(
       i18nService,
@@ -50,7 +52,8 @@ export class SetPasswordComponent extends BaseSetPasswordComponent {
       route,
       stateService,
       organizationApiService,
-      organizationUserService
+      organizationUserService,
+      dialogService
     );
   }
 }

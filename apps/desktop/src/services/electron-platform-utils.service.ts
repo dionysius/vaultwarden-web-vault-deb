@@ -115,32 +115,6 @@ export class ElectronPlatformUtilsService implements PlatformUtilsService {
     });
   }
 
-  async showDialog(
-    text: string,
-    title?: string,
-    confirmText?: string,
-    cancelText?: string,
-    type?: string
-  ): Promise<boolean> {
-    const buttons = [confirmText == null ? this.i18nService.t("ok") : confirmText];
-    if (cancelText != null) {
-      buttons.push(cancelText);
-    }
-
-    const result = await ipcRenderer.invoke("showMessageBox", {
-      type: type,
-      title: title,
-      message: title,
-      detail: text,
-      buttons: buttons,
-      cancelId: buttons.length === 2 ? 1 : null,
-      defaultId: 0,
-      noLink: true,
-    });
-
-    return Promise.resolve(result.response === 0);
-  }
-
   isDev(): boolean {
     return isDev();
   }

@@ -8,9 +8,9 @@ import {
   AbstractControl,
 } from "@angular/forms";
 
+import { DialogServiceAbstraction } from "@bitwarden/angular/services/dialog";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
-import { DialogService } from "@bitwarden/components";
 
 import { ServiceAccountView } from "../../models/view/service-account.view";
 import {
@@ -38,7 +38,7 @@ export class ServiceAccountDeleteDialogComponent {
     private serviceAccountService: ServiceAccountService,
     private i18nService: I18nService,
     private platformUtilsService: PlatformUtilsService,
-    private dialogService: DialogService
+    private dialogService: DialogServiceAbstraction
   ) {}
 
   get title() {

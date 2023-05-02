@@ -2,9 +2,9 @@ import { Component } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { combineLatest, combineLatestWith, filter, Observable, startWith, switchMap } from "rxjs";
 
+import { DialogServiceAbstraction } from "@bitwarden/angular/services/dialog";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
-import { DialogService } from "@bitwarden/components";
 
 import { ProjectView } from "../../models/view/project.view";
 import { SecretListView } from "../../models/view/secret-list.view";
@@ -36,7 +36,7 @@ export class ProjectSecretsComponent {
     private route: ActivatedRoute,
     private projectService: ProjectService,
     private secretService: SecretService,
-    private dialogService: DialogService,
+    private dialogService: DialogServiceAbstraction,
     private platformUtilsService: PlatformUtilsService,
     private i18nService: I18nService
   ) {}

@@ -3,6 +3,7 @@ import { Component, Inject, OnDestroy, OnInit } from "@angular/core";
 import { FormBuilder, Validators } from "@angular/forms";
 import { combineLatest, of, shareReplay, Subject, switchMap, takeUntil } from "rxjs";
 
+import { DialogServiceAbstraction, SimpleDialogType } from "@bitwarden/angular/services/dialog";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { OrganizationUserService } from "@bitwarden/common/abstractions/organization-user/organization-user.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
@@ -14,7 +15,6 @@ import {
 import { PermissionsApi } from "@bitwarden/common/admin-console/models/api/permissions.api";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
 import { CollectionView } from "@bitwarden/common/admin-console/models/view/collection.view";
-import { DialogService } from "@bitwarden/components";
 
 import { flagEnabled } from "../../../../../../utils/flags";
 import {
@@ -130,7 +130,8 @@ export class MemberDialogComponent implements OnInit, OnDestroy {
     private collectionAdminService: CollectionAdminService,
     private groupService: GroupService,
     private userService: UserAdminService,
-    private organizationUserService: OrganizationUserService
+    private organizationUserService: OrganizationUserService,
+    private dialogService: DialogServiceAbstraction
   ) {}
 
   async ngOnInit() {
@@ -364,15 +365,13 @@ export class MemberDialogComponent implements OnInit, OnDestroy {
     const message = this.params.usesKeyConnector
       ? "removeUserConfirmationKeyConnector"
       : "removeOrgUserConfirmation";
-    const confirmed = await this.platformUtilsService.showDialog(
-      this.i18nService.t(message),
-      this.i18nService.t("removeUserIdAccess", this.params.name),
-      this.i18nService.t("yes"),
-      this.i18nService.t("no"),
-      "warning",
-      false,
-      "app-user-add-edit .modal-content"
-    );
+
+    const confirmed = await this.dialogService.openSimpleDialog({
+      title: { key: "removeUserIdAccess", placeholders: [this.params.name] },
+      content: { key: message },
+      type: SimpleDialogType.WARNING,
+    });
+
     if (!confirmed) {
       return false;
     }
@@ -395,15 +394,13 @@ export class MemberDialogComponent implements OnInit, OnDestroy {
       return;
     }
 
-    const confirmed = await this.platformUtilsService.showDialog(
-      this.i18nService.t("revokeUserConfirmation"),
-      this.i18nService.t("revokeUserId", this.params.name),
-      this.i18nService.t("revokeAccess"),
-      this.i18nService.t("cancel"),
-      "warning",
-      false,
-      "app-user-add-edit .modal-content"
-    );
+    const confirmed = await this.dialogService.openSimpleDialog({
+      title: { key: "revokeUserId", placeholders: [this.params.name] },
+      content: { key: "revokeUserConfirmation" },
+      acceptButtonText: { key: "revokeAccess" },
+      type: SimpleDialogType.WARNING,
+    });
+
     if (!confirmed) {
       return false;
     }
@@ -511,7 +508,7 @@ function mapToGroupAccessSelections(groups: string[]): AccessItemValue[] {
  * @param config Configuration for the dialog
  */
 export function openUserAddEditDialog(
-  dialogService: DialogService,
+  dialogService: DialogServiceAbstraction,
   config: DialogConfig<MemberDialogParams>
 ) {
   return dialogService.open<MemberDialogResult, MemberDialogParams>(MemberDialogComponent, config);

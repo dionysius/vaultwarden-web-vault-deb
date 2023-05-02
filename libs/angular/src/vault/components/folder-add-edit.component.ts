@@ -7,6 +7,8 @@ import { FolderApiServiceAbstraction } from "@bitwarden/common/vault/abstraction
 import { FolderService } from "@bitwarden/common/vault/abstractions/folder/folder.service.abstraction";
 import { FolderView } from "@bitwarden/common/vault/models/view/folder.view";
 
+import { DialogServiceAbstraction, SimpleDialogType } from "../../services/dialog";
+
 @Directive()
 export class FolderAddEditComponent implements OnInit {
   @Input() folderId: string;
@@ -25,7 +27,8 @@ export class FolderAddEditComponent implements OnInit {
     protected folderApiService: FolderApiServiceAbstraction,
     protected i18nService: I18nService,
     protected platformUtilsService: PlatformUtilsService,
-    private logService: LogService
+    private logService: LogService,
+    protected dialogService: DialogServiceAbstraction
   ) {}
 
   async ngOnInit() {
@@ -61,15 +64,12 @@ export class FolderAddEditComponent implements OnInit {
   }
 
   async delete(): Promise<boolean> {
-    const confirmed = await this.platformUtilsService.showDialog(
-      this.i18nService.t("deleteFolderConfirmation"),
-      this.i18nService.t("deleteFolder"),
-      this.i18nService.t("yes"),
-      this.i18nService.t("no"),
-      "warning",
-      false,
-      this.componentName != "" ? this.componentName + " .modal-content" : null
-    );
+    const confirmed = await this.dialogService.openSimpleDialog({
+      title: { key: "deleteFolder" },
+      content: { key: "deleteFolderConfirmation" },
+      type: SimpleDialogType.WARNING,
+    });
+
     if (!confirmed) {
       return false;
     }

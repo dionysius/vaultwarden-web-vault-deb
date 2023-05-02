@@ -13,6 +13,8 @@ import { SendView } from "@bitwarden/common/tools/send/models/view/send.view";
 import { SendApiService } from "@bitwarden/common/tools/send/services/send-api.service.abstraction";
 import { SendService } from "@bitwarden/common/tools/send/services/send.service.abstraction";
 
+import { DialogServiceAbstraction, SimpleDialogType } from "../../services/dialog";
+
 @Directive()
 export class SendComponent implements OnInit, OnDestroy {
   disableSend = false;
@@ -49,7 +51,8 @@ export class SendComponent implements OnInit, OnDestroy {
     protected searchService: SearchService,
     protected policyService: PolicyService,
     private logService: LogService,
-    protected sendApiService: SendApiService
+    protected sendApiService: SendApiService,
+    protected dialogService: DialogServiceAbstraction
   ) {}
 
   async ngOnInit() {
@@ -125,13 +128,13 @@ export class SendComponent implements OnInit, OnDestroy {
     if (this.actionPromise != null || s.password == null) {
       return;
     }
-    const confirmed = await this.platformUtilsService.showDialog(
-      this.i18nService.t("removePasswordConfirmation"),
-      this.i18nService.t("removePassword"),
-      this.i18nService.t("yes"),
-      this.i18nService.t("no"),
-      "warning"
-    );
+
+    const confirmed = await this.dialogService.openSimpleDialog({
+      title: { key: "removePassword" },
+      content: { key: "removePasswordConfirmation" },
+      type: SimpleDialogType.WARNING,
+    });
+
     if (!confirmed) {
       return false;
     }
@@ -156,13 +159,13 @@ export class SendComponent implements OnInit, OnDestroy {
     if (this.actionPromise != null) {
       return false;
     }
-    const confirmed = await this.platformUtilsService.showDialog(
-      this.i18nService.t("deleteSendConfirmation"),
-      this.i18nService.t("deleteSend"),
-      this.i18nService.t("yes"),
-      this.i18nService.t("no"),
-      "warning"
-    );
+
+    const confirmed = await this.dialogService.openSimpleDialog({
+      title: { key: "deleteSend" },
+      content: { key: "deleteSendConfirmation" },
+      type: SimpleDialogType.WARNING,
+    });
+
     if (!confirmed) {
       return false;
     }

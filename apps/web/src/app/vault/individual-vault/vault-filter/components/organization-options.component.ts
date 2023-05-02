@@ -1,6 +1,7 @@
 import { Component, Inject, OnDestroy, OnInit } from "@angular/core";
 import { map, Subject, takeUntil } from "rxjs";
 
+import { DialogServiceAbstraction, SimpleDialogType } from "@bitwarden/angular/services/dialog";
 import { ModalService } from "@bitwarden/angular/services/modal.service";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
@@ -40,7 +41,8 @@ export class OrganizationOptionsComponent implements OnInit, OnDestroy {
     private modalService: ModalService,
     private logService: LogService,
     private organizationApiService: OrganizationApiServiceAbstraction,
-    private organizationUserService: OrganizationUserService
+    private organizationUserService: OrganizationUserService,
+    private dialogService: DialogServiceAbstraction
   ) {}
 
   async ngOnInit() {
@@ -80,13 +82,12 @@ export class OrganizationOptionsComponent implements OnInit, OnDestroy {
   }
 
   async unlinkSso(org: Organization) {
-    const confirmed = await this.platformUtilsService.showDialog(
-      this.i18nService.t("unlinkSsoConfirmation"),
-      org.name,
-      this.i18nService.t("yes"),
-      this.i18nService.t("no"),
-      "warning"
-    );
+    const confirmed = await this.dialogService.openSimpleDialog({
+      title: org.name,
+      content: { key: "unlinkSsoConfirmation" },
+      type: SimpleDialogType.WARNING,
+    });
+
     if (!confirmed) {
       return false;
     }
@@ -103,13 +104,12 @@ export class OrganizationOptionsComponent implements OnInit, OnDestroy {
   }
 
   async leave(org: Organization) {
-    const confirmed = await this.platformUtilsService.showDialog(
-      this.i18nService.t("leaveOrganizationConfirmation"),
-      org.name,
-      this.i18nService.t("yes"),
-      this.i18nService.t("no"),
-      "warning"
-    );
+    const confirmed = await this.dialogService.openSimpleDialog({
+      title: org.name,
+      content: { key: "leaveOrganizationConfirmation" },
+      type: SimpleDialogType.WARNING,
+    });
+
     if (!confirmed) {
       return false;
     }

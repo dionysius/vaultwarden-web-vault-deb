@@ -15,6 +15,7 @@ import { EncString } from "@bitwarden/common/models/domain/enc-string";
 import { SymmetricCryptoKey } from "@bitwarden/common/models/domain/symmetric-crypto-key";
 import { PasswordGenerationServiceAbstraction } from "@bitwarden/common/tools/generator/password";
 
+import { DialogServiceAbstraction, SimpleDialogType } from "../../services/dialog";
 import { PasswordColorText } from "../../shared/components/password-strength/password-strength.component";
 
 @Directive()
@@ -42,7 +43,8 @@ export class ChangePasswordComponent implements OnInit, OnDestroy {
     protected passwordGenerationService: PasswordGenerationServiceAbstraction,
     protected platformUtilsService: PlatformUtilsService,
     protected policyService: PolicyService,
-    protected stateService: StateService
+    protected stateService: StateService,
+    protected dialogService: DialogServiceAbstraction
   ) {}
 
   async ngOnInit() {
@@ -157,37 +159,34 @@ export class ChangePasswordComponent implements OnInit, OnDestroy {
     const weakPassword = strengthResult != null && strengthResult.score < 3;
 
     if (weakPassword && this.leakedPassword) {
-      const result = await this.platformUtilsService.showDialog(
-        this.i18nService.t("weakAndBreachedMasterPasswordDesc"),
-        this.i18nService.t("weakAndExposedMasterPassword"),
-        this.i18nService.t("yes"),
-        this.i18nService.t("no"),
-        "warning"
-      );
+      const result = await this.dialogService.openSimpleDialog({
+        title: { key: "weakAndExposedMasterPassword" },
+        content: { key: "weakAndBreachedMasterPasswordDesc" },
+        type: SimpleDialogType.WARNING,
+      });
+
       if (!result) {
         return false;
       }
     } else {
       if (weakPassword) {
-        const result = await this.platformUtilsService.showDialog(
-          this.i18nService.t("weakMasterPasswordDesc"),
-          this.i18nService.t("weakMasterPassword"),
-          this.i18nService.t("yes"),
-          this.i18nService.t("no"),
-          "warning"
-        );
+        const result = await this.dialogService.openSimpleDialog({
+          title: { key: "weakMasterPassword" },
+          content: { key: "weakMasterPasswordDesc" },
+          type: SimpleDialogType.WARNING,
+        });
+
         if (!result) {
           return false;
         }
       }
       if (this.leakedPassword) {
-        const result = await this.platformUtilsService.showDialog(
-          this.i18nService.t("exposedMasterPasswordDesc"),
-          this.i18nService.t("exposedMasterPassword"),
-          this.i18nService.t("yes"),
-          this.i18nService.t("no"),
-          "warning"
-        );
+        const result = await this.dialogService.openSimpleDialog({
+          title: { key: "exposedMasterPassword" },
+          content: { key: "exposedMasterPasswordDesc" },
+          type: SimpleDialogType.WARNING,
+        });
+
         if (!result) {
           return false;
         }
@@ -198,12 +197,13 @@ export class ChangePasswordComponent implements OnInit, OnDestroy {
   }
 
   async logOut() {
-    const confirmed = await this.platformUtilsService.showDialog(
-      this.i18nService.t("logOutConfirmation"),
-      this.i18nService.t("logOut"),
-      this.i18nService.t("logOut"),
-      this.i18nService.t("cancel")
-    );
+    const confirmed = await this.dialogService.openSimpleDialog({
+      title: { key: "logOut" },
+      content: { key: "logOutConfirmation" },
+      acceptButtonText: { key: "logOut" },
+      type: SimpleDialogType.WARNING,
+    });
+
     if (confirmed) {
       this.messagingService.send("logout");
     }

@@ -11,7 +11,7 @@ import {
   takeUntil,
 } from "rxjs";
 
-import { DialogService } from "@bitwarden/components";
+import { DialogServiceAbstraction } from "@bitwarden/angular/services/dialog";
 
 import { ProjectView } from "../../models/view/project.view";
 import {
@@ -36,8 +36,8 @@ export class ProjectComponent implements OnInit, OnDestroy {
   constructor(
     private route: ActivatedRoute,
     private projectService: ProjectService,
-    private dialogService: DialogService,
-    private router: Router
+    private router: Router,
+    private dialogService: DialogServiceAbstraction
   ) {}
 
   ngOnInit(): void {

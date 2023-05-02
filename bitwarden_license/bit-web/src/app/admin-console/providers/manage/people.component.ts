@@ -4,6 +4,7 @@ import { first } from "rxjs/operators";
 
 import { SearchPipe } from "@bitwarden/angular/pipes/search.pipe";
 import { UserNamePipe } from "@bitwarden/angular/pipes/user-name.pipe";
+import { DialogServiceAbstraction } from "@bitwarden/angular/services/dialog";
 import { ModalService } from "@bitwarden/angular/services/modal.service";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
@@ -68,7 +69,8 @@ export class PeopleComponent
     searchPipe: SearchPipe,
     userNamePipe: UserNamePipe,
     stateService: StateService,
-    private providerService: ProviderService
+    private providerService: ProviderService,
+    dialogService: DialogServiceAbstraction
   ) {
     super(
       apiService,
@@ -81,7 +83,8 @@ export class PeopleComponent
       logService,
       searchPipe,
       userNamePipe,
-      stateService
+      stateService,
+      dialogService
     );
   }
 

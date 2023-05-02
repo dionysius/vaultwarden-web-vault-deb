@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild, ViewContainerRef } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { first } from "rxjs/operators";
 
+import { DialogServiceAbstraction, SimpleDialogType } from "@bitwarden/angular/services/dialog";
 import { ModalService } from "@bitwarden/angular/services/modal.service";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
@@ -61,7 +62,8 @@ export class ClientsComponent implements OnInit {
     private logService: LogService,
     private modalService: ModalService,
     private organizationService: OrganizationService,
-    private organizationApiService: OrganizationApiServiceAbstraction
+    private organizationApiService: OrganizationApiServiceAbstraction,
+    private dialogService: DialogServiceAbstraction
   ) {}
 
   async ngOnInit() {
@@ -153,13 +155,11 @@ export class ClientsComponent implements OnInit {
   }
 
   async remove(organization: ProviderOrganizationOrganizationDetailsResponse) {
-    const confirmed = await this.platformUtilsService.showDialog(
-      this.i18nService.t("detachOrganizationConfirmation"),
-      organization.organizationName,
-      this.i18nService.t("yes"),
-      this.i18nService.t("no"),
-      "warning"
-    );
+    const confirmed = await this.dialogService.openSimpleDialog({
+      title: organization.organizationName,
+      content: { key: "detachOrganizationConfirmation" },
+      type: SimpleDialogType.WARNING,
+    });
 
     if (!confirmed) {
       return false;

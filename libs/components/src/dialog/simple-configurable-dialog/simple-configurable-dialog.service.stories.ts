@@ -1,8 +1,8 @@
-import { DialogModule, DialogRef } from "@angular/cdk/dialog";
+import { DialogModule } from "@angular/cdk/dialog";
 import { Component } from "@angular/core";
 import { Meta, moduleMetadata, Story } from "@storybook/angular";
-import { firstValueFrom } from "rxjs";
 
+import { SimpleDialogType, SimpleDialogOptions } from "@bitwarden/angular/services/dialog";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 
 import { ButtonModule } from "../../button";
@@ -14,10 +14,6 @@ import { DialogService } from "../dialog.service";
 import { DialogCloseDirective } from "../directives/dialog-close.directive";
 import { DialogTitleContainerDirective } from "../directives/dialog-title-container.directive";
 import { SimpleDialogComponent } from "../simple-dialog/simple-dialog.component";
-
-import { SimpleDialogCloseType } from "./models/simple-dialog-close-type.enum";
-import { SimpleDialogOptions } from "./models/simple-dialog-options";
-import { SimpleDialogType } from "./models/simple-dialog-type.enum";
 
 @Component({
   template: `
@@ -114,8 +110,7 @@ import { SimpleDialogType } from "./models/simple-dialog-type.enum";
     </div>
 
     <bit-callout *ngIf="showCallout" [type]="calloutType" title="Dialog Close Result">
-      <span *ngIf="dialogCloseResult">{{ dialogCloseResult }}</span>
-      <span *ngIf="!dialogCloseResult">undefined</span>
+      {{ dialogCloseResult }}
     </bit-callout>
   `,
 })
@@ -189,22 +184,19 @@ class StoryDialogComponent {
 
   showCallout = false;
   calloutType = "info";
-  dialogCloseResult: undefined | SimpleDialogCloseType;
+  dialogCloseResult: boolean;
 
   constructor(public dialogService: DialogService, private i18nService: I18nService) {}
 
-  openSimpleConfigurableDialog(opts: SimpleDialogOptions) {
-    const dialogReference: DialogRef = this.dialogService.openSimpleDialog(opts);
+  async openSimpleConfigurableDialog(opts: SimpleDialogOptions) {
+    this.dialogCloseResult = await this.dialogService.openSimpleDialog(opts);
 
-    firstValueFrom(dialogReference.closed).then((result: SimpleDialogCloseType | undefined) => {
-      this.showCallout = true;
-      this.dialogCloseResult = result;
-      if (result && result === SimpleDialogCloseType.ACCEPT) {
-        this.calloutType = "success";
-      } else {
-        this.calloutType = "info";
-      }
-    });
+    this.showCallout = true;
+    if (this.dialogCloseResult) {
+      this.calloutType = "success";
+    } else {
+      this.calloutType = "info";
+    }
   }
 }
 

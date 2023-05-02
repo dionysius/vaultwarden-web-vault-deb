@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from "@angu
 import { takeUntil } from "rxjs";
 
 import { ChangePasswordComponent } from "@bitwarden/angular/auth/components/change-password.component";
+import { DialogServiceAbstraction } from "@bitwarden/angular/services/dialog";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
@@ -46,7 +47,8 @@ export class EmergencyAccessTakeoverComponent
     platformUtilsService: PlatformUtilsService,
     policyService: PolicyService,
     private apiService: ApiService,
-    private logService: LogService
+    private logService: LogService,
+    dialogService: DialogServiceAbstraction
   ) {
     super(
       i18nService,
@@ -55,7 +57,8 @@ export class EmergencyAccessTakeoverComponent
       passwordGenerationService,
       platformUtilsService,
       policyService,
-      stateService
+      stateService,
+      dialogService
     );
   }
 

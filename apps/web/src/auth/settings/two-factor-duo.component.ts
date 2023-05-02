@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
 
+import { DialogServiceAbstraction } from "@bitwarden/angular/services/dialog";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
@@ -30,9 +31,17 @@ export class TwoFactorDuoComponent extends TwoFactorBaseComponent {
     i18nService: I18nService,
     platformUtilsService: PlatformUtilsService,
     logService: LogService,
-    userVerificationService: UserVerificationService
+    userVerificationService: UserVerificationService,
+    dialogService: DialogServiceAbstraction
   ) {
-    super(apiService, i18nService, platformUtilsService, logService, userVerificationService);
+    super(
+      apiService,
+      i18nService,
+      platformUtilsService,
+      logService,
+      userVerificationService,
+      dialogService
+    );
   }
 
   auth(authResponse: AuthResponse<TwoFactorDuoResponse>) {

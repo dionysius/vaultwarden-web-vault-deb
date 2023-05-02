@@ -1,5 +1,6 @@
 import { Directive, EventEmitter, Output } from "@angular/core";
 
+import { DialogServiceAbstraction, SimpleDialogType } from "@bitwarden/angular/services/dialog";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
@@ -30,7 +31,8 @@ export abstract class TwoFactorBaseComponent {
     protected i18nService: I18nService,
     protected platformUtilsService: PlatformUtilsService,
     protected logService: LogService,
-    protected userVerificationService: UserVerificationService
+    protected userVerificationService: UserVerificationService,
+    protected dialogService: DialogServiceAbstraction
   ) {}
 
   protected auth(authResponse: AuthResponseBase) {
@@ -49,15 +51,12 @@ export abstract class TwoFactorBaseComponent {
   }
 
   protected async disable(promise: Promise<unknown>) {
-    const confirmed = await this.platformUtilsService.showDialog(
-      this.i18nService.t("twoStepDisableDesc"),
-      this.i18nService.t("disable"),
-      this.i18nService.t("yes"),
-      this.i18nService.t("no"),
-      "warning",
-      false,
-      this.componentName != "" ? this.componentName + " .modal-content" : null
-    );
+    const confirmed = await this.dialogService.openSimpleDialog({
+      title: { key: "disable" },
+      content: { key: "twoStepDisableDesc" },
+      type: SimpleDialogType.WARNING,
+    });
+
     if (!confirmed) {
       return;
     }

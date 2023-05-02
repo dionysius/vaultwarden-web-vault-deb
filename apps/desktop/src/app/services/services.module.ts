@@ -1,5 +1,6 @@
 import { APP_INITIALIZER, InjectionToken, NgModule } from "@angular/core";
 
+import { DialogServiceAbstraction } from "@bitwarden/angular/services/dialog";
 import {
   SECURE_STORAGE,
   STATE_FACTORY,
@@ -43,6 +44,7 @@ import { PasswordRepromptService as PasswordRepromptServiceAbstraction } from "@
 import { LoginGuard } from "../../auth/guards/login.guard";
 import { Account } from "../../models/account";
 import { ElectronCryptoService } from "../../services/electron-crypto.service";
+import { ElectronDialogService } from "../../services/electron-dialog.service";
 import { ElectronLogService } from "../../services/electron-log.service";
 import { ElectronPlatformUtilsService } from "../../services/electron-platform-utils.service";
 import { ElectronRendererMessagingService } from "../../services/electron-renderer-messaging.service";
@@ -175,6 +177,10 @@ const RELOAD_CALLBACK = new InjectionToken<() => any>("RELOAD_CALLBACK");
       provide: LoginServiceAbstraction,
       useClass: LoginService,
       deps: [StateServiceAbstraction],
+    },
+    {
+      provide: DialogServiceAbstraction,
+      useClass: ElectronDialogService,
     },
     {
       provide: CryptoServiceAbstraction,

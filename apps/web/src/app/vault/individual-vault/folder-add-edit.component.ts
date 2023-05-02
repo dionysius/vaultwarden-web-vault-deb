@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
 
+import { DialogServiceAbstraction } from "@bitwarden/angular/services/dialog";
 import { FolderAddEditComponent as BaseFolderAddEditComponent } from "@bitwarden/angular/vault/components/folder-add-edit.component";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
@@ -18,8 +19,16 @@ export class FolderAddEditComponent extends BaseFolderAddEditComponent {
     folderApiService: FolderApiServiceAbstraction,
     i18nService: I18nService,
     platformUtilsService: PlatformUtilsService,
-    logService: LogService
+    logService: LogService,
+    dialogService: DialogServiceAbstraction
   ) {
-    super(folderService, folderApiService, i18nService, platformUtilsService, logService);
+    super(
+      folderService,
+      folderApiService,
+      i18nService,
+      platformUtilsService,
+      logService,
+      dialogService
+    );
   }
 }

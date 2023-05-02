@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit } from "@angular/core";
 
+import { DialogServiceAbstraction } from "@bitwarden/angular/services/dialog";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
@@ -50,9 +51,17 @@ export class TwoFactorAuthenticatorComponent
     userVerificationService: UserVerificationService,
     platformUtilsService: PlatformUtilsService,
     logService: LogService,
-    private stateService: StateService
+    private stateService: StateService,
+    dialogService: DialogServiceAbstraction
   ) {
-    super(apiService, i18nService, platformUtilsService, logService, userVerificationService);
+    super(
+      apiService,
+      i18nService,
+      platformUtilsService,
+      logService,
+      userVerificationService,
+      dialogService
+    );
     this.qrScript = window.document.createElement("script");
     this.qrScript.src = "scripts/qrious.min.js";
     this.qrScript.async = true;

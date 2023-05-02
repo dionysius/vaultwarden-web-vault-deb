@@ -15,6 +15,7 @@ import {
 import { first } from "rxjs/operators";
 
 import { SearchPipe } from "@bitwarden/angular/pipes/search.pipe";
+import { DialogServiceAbstraction, SimpleDialogType } from "@bitwarden/angular/services/dialog";
 import { ModalService } from "@bitwarden/angular/services/modal.service";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
@@ -31,7 +32,6 @@ import {
 import { CollectionView } from "@bitwarden/common/admin-console/models/view/collection.view";
 import { Utils } from "@bitwarden/common/misc/utils";
 import { ListResponse } from "@bitwarden/common/models/response/list.response";
-import { DialogService } from "@bitwarden/components";
 
 import { GroupService, GroupView } from "../core";
 
@@ -127,7 +127,7 @@ export class GroupsComponent implements OnInit, OnDestroy {
     private route: ActivatedRoute,
     private i18nService: I18nService,
     private modalService: ModalService,
-    private dialogService: DialogService,
+    private dialogService: DialogServiceAbstraction,
     private platformUtilsService: PlatformUtilsService,
     private searchService: SearchService,
     private logService: LogService,
@@ -233,13 +233,11 @@ export class GroupsComponent implements OnInit, OnDestroy {
   }
 
   async delete(groupRow: GroupDetailsRow) {
-    const confirmed = await this.platformUtilsService.showDialog(
-      this.i18nService.t("deleteGroupConfirmation"),
-      groupRow.details.name,
-      this.i18nService.t("yes"),
-      this.i18nService.t("no"),
-      "warning"
-    );
+    const confirmed = await this.dialogService.openSimpleDialog({
+      title: groupRow.details.name,
+      content: { key: "deleteGroupConfirmation" },
+      type: SimpleDialogType.WARNING,
+    });
     if (!confirmed) {
       return false;
     }
@@ -265,13 +263,14 @@ export class GroupsComponent implements OnInit, OnDestroy {
     }
 
     const deleteMessage = groupsToDelete.map((g) => g.details.name).join(", ");
-    const confirmed = await this.platformUtilsService.showDialog(
-      deleteMessage,
-      this.i18nService.t("deleteMultipleGroupsConfirmation", groupsToDelete.length.toString()),
-      this.i18nService.t("yes"),
-      this.i18nService.t("no"),
-      "warning"
-    );
+    const confirmed = await this.dialogService.openSimpleDialog({
+      title: {
+        key: "deleteMultipleGroupsConfirmation",
+        placeholders: [groupsToDelete.length.toString()],
+      },
+      content: deleteMessage,
+      type: SimpleDialogType.WARNING,
+    });
     if (!confirmed) {
       return false;
     }

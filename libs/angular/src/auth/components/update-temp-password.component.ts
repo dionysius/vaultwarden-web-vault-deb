@@ -21,6 +21,8 @@ import { PasswordGenerationServiceAbstraction } from "@bitwarden/common/tools/ge
 import { Verification } from "@bitwarden/common/types/verification";
 import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
 
+import { DialogServiceAbstraction } from "../../services/dialog";
+
 import { ChangePasswordComponent as BaseChangePasswordComponent } from "./change-password.component";
 
 @Directive()
@@ -53,7 +55,8 @@ export class UpdateTempPasswordComponent extends BaseChangePasswordComponent {
     private syncService: SyncService,
     private logService: LogService,
     private userVerificationService: UserVerificationService,
-    private router: Router
+    private router: Router,
+    dialogService: DialogServiceAbstraction
   ) {
     super(
       i18nService,
@@ -62,7 +65,8 @@ export class UpdateTempPasswordComponent extends BaseChangePasswordComponent {
       passwordGenerationService,
       platformUtilsService,
       policyService,
-      stateService
+      stateService,
+      dialogService
     );
   }
 

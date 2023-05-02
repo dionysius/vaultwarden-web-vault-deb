@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 
+import { DialogServiceAbstraction, SimpleDialogType } from "@bitwarden/angular/services/dialog";
 import { ModalService } from "@bitwarden/angular/services/modal.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
@@ -8,7 +9,6 @@ import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUti
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
 import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
-import { DialogService } from "@bitwarden/components";
 import { ImportServiceAbstraction } from "@bitwarden/importer";
 
 import { ImportComponent } from "../../../../tools/import-export/import.component";
@@ -32,7 +32,7 @@ export class OrganizationImportComponent extends ImportComponent {
     logService: LogService,
     modalService: ModalService,
     syncService: SyncService,
-    dialogService: DialogService
+    dialogService: DialogServiceAbstraction
   ) {
     super(
       i18nService,
@@ -59,13 +59,12 @@ export class OrganizationImportComponent extends ImportComponent {
   }
 
   async submit() {
-    const confirmed = await this.platformUtilsService.showDialog(
-      this.i18nService.t("importWarning", this.organizationName),
-      this.i18nService.t("warning"),
-      this.i18nService.t("yes"),
-      this.i18nService.t("no"),
-      "warning"
-    );
+    const confirmed = await this.dialogService.openSimpleDialog({
+      title: { key: "warning" },
+      content: { key: "importWarning", placeholders: [this.organizationName] },
+      type: SimpleDialogType.WARNING,
+    });
+
     if (!confirmed) {
       return;
     }

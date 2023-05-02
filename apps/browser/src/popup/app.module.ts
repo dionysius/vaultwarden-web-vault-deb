@@ -1,14 +1,10 @@
 import { A11yModule } from "@angular/cdk/a11y";
+import { DialogModule } from "@angular/cdk/dialog";
 import { DragDropModule } from "@angular/cdk/drag-drop";
 import { LayoutModule } from "@angular/cdk/layout";
 import { OverlayModule } from "@angular/cdk/overlay";
 import { ScrollingModule } from "@angular/cdk/scrolling";
-// eslint-disable-next-line import/order
 import { CurrencyPipe, DatePipe } from "@angular/common";
-
-// Register the locales for the application
-import "./locales";
-
 import { NgModule } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { BrowserModule } from "@angular/platform-browser";
@@ -76,6 +72,9 @@ import { SyncComponent } from "./settings/sync.component";
 import { VaultTimeoutInputComponent } from "./settings/vault-timeout-input.component";
 import { TabsComponent } from "./tabs.component";
 
+// Register the locales for the application
+import "./locales";
+
 @NgModule({
   imports: [
     A11yModule,
@@ -96,6 +95,7 @@ import { TabsComponent } from "./tabs.component";
     ReactiveFormsModule,
     ScrollingModule,
     ServicesModule,
+    DialogModule,
   ],
   declarations: [
     ActionButtonsComponent,

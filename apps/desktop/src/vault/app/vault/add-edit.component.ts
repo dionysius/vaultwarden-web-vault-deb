@@ -1,6 +1,7 @@
 import { Component, NgZone, OnChanges, OnDestroy, ViewChild } from "@angular/core";
 import { NgForm } from "@angular/forms";
 
+import { DialogServiceAbstraction } from "@bitwarden/angular/services/dialog";
 import { AddEditComponent as BaseAddEditComponent } from "@bitwarden/angular/vault/components/add-edit.component";
 import { AuditService } from "@bitwarden/common/abstractions/audit.service";
 import { BroadcasterService } from "@bitwarden/common/abstractions/broadcaster.service";
@@ -43,7 +44,8 @@ export class AddEditComponent extends BaseAddEditComponent implements OnChanges,
     private ngZone: NgZone,
     logService: LogService,
     organizationService: OrganizationService,
-    sendApiService: SendApiService
+    sendApiService: SendApiService,
+    dialogService: DialogServiceAbstraction
   ) {
     super(
       cipherService,
@@ -59,7 +61,8 @@ export class AddEditComponent extends BaseAddEditComponent implements OnChanges,
       logService,
       passwordRepromptService,
       organizationService,
-      sendApiService
+      sendApiService,
+      dialogService
     );
   }
 

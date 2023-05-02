@@ -4,6 +4,7 @@ import { Router } from "@angular/router";
 import { concatMap, debounceTime, filter, map, Observable, Subject, takeUntil, tap } from "rxjs";
 import Swal from "sweetalert2";
 
+import { DialogServiceAbstraction, SimpleDialogType } from "@bitwarden/angular/services/dialog";
 import { ModalService } from "@bitwarden/angular/services/modal.service";
 import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
 import { EnvironmentService } from "@bitwarden/common/abstractions/environment.service";
@@ -82,7 +83,8 @@ export class SettingsComponent implements OnInit {
     private stateService: StateService,
     private popupUtilsService: PopupUtilsService,
     private modalService: ModalService,
-    private keyConnectorService: KeyConnectorService
+    private keyConnectorService: KeyConnectorService,
+    private dialogService: DialogServiceAbstraction
   ) {}
 
   async ngOnInit() {
@@ -185,13 +187,12 @@ export class SettingsComponent implements OnInit {
 
   async saveVaultTimeout(newValue: number) {
     if (newValue == null) {
-      const confirmed = await this.platformUtilsService.showDialog(
-        this.i18nService.t("neverLockWarning"),
-        null,
-        this.i18nService.t("yes"),
-        this.i18nService.t("cancel"),
-        "warning"
-      );
+      const confirmed = await this.dialogService.openSimpleDialog({
+        title: { key: "warning" },
+        content: { key: "neverLockWarning" },
+        type: SimpleDialogType.WARNING,
+      });
+
       if (!confirmed) {
         this.form.controls.vaultTimeout.setValue(this.previousVaultTimeout);
         return;
@@ -222,13 +223,12 @@ export class SettingsComponent implements OnInit {
 
   async saveVaultTimeoutAction(newValue: VaultTimeoutAction) {
     if (newValue === VaultTimeoutAction.LogOut) {
-      const confirmed = await this.platformUtilsService.showDialog(
-        this.i18nService.t("vaultTimeoutLogOutConfirmation"),
-        this.i18nService.t("vaultTimeoutLogOutConfirmationTitle"),
-        this.i18nService.t("yes"),
-        this.i18nService.t("cancel"),
-        "warning"
-      );
+      const confirmed = await this.dialogService.openSimpleDialog({
+        title: { key: "vaultTimeoutLogOutConfirmationTitle" },
+        content: { key: "vaultTimeoutLogOutConfirmation" },
+        type: SimpleDialogType.WARNING,
+      });
+
       if (!confirmed) {
         this.vaultTimeoutActionOptions.forEach((option: any, i) => {
           if (option.value === this.form.value.vaultTimeoutAction) {
@@ -284,24 +284,28 @@ export class SettingsComponent implements OnInit {
         console.error(e);
 
         if (this.platformUtilsService.isFirefox() && this.popupUtilsService.inSidebar(window)) {
-          await this.platformUtilsService.showDialog(
-            this.i18nService.t("nativeMessaginPermissionSidebarDesc"),
-            this.i18nService.t("nativeMessaginPermissionSidebarTitle"),
-            this.i18nService.t("ok"),
-            null
-          );
+          await this.dialogService.openSimpleDialog({
+            title: { key: "nativeMessaginPermissionSidebarTitle" },
+            content: { key: "nativeMessaginPermissionSidebarDesc" },
+            acceptButtonText: { key: "ok" },
+            cancelButtonText: null,
+            type: SimpleDialogType.INFO,
+          });
+
           this.form.controls.biometric.setValue(false);
           return;
         }
       }
 
       if (!granted) {
-        await this.platformUtilsService.showDialog(
-          this.i18nService.t("nativeMessaginPermissionErrorDesc"),
-          this.i18nService.t("nativeMessaginPermissionErrorTitle"),
-          this.i18nService.t("ok"),
-          null
-        );
+        await this.dialogService.openSimpleDialog({
+          title: { key: "nativeMessaginPermissionErrorTitle" },
+          content: { key: "nativeMessaginPermissionErrorDesc" },
+          acceptButtonText: { key: "ok" },
+          cancelButtonText: null,
+          type: SimpleDialogType.DANGER,
+        });
+
         this.form.controls.biometric.setValue(false);
         return;
       }
@@ -349,13 +353,13 @@ export class SettingsComponent implements OnInit {
 
             const error = BiometricErrors[e as BiometricErrorTypes];
 
-            this.platformUtilsService.showDialog(
-              this.i18nService.t(error.description),
-              this.i18nService.t(error.title),
-              this.i18nService.t("ok"),
-              null,
-              "error"
-            );
+            this.dialogService.openSimpleDialog({
+              title: { key: error.title },
+              content: { key: error.description },
+              acceptButtonText: { key: "ok" },
+              cancelButtonText: null,
+              type: SimpleDialogType.DANGER,
+            });
           }),
       ]);
     } else {
@@ -375,24 +379,23 @@ export class SettingsComponent implements OnInit {
   }
 
   async logOut() {
-    const confirmed = await this.platformUtilsService.showDialog(
-      this.i18nService.t("logOutConfirmation"),
-      this.i18nService.t(VaultTimeoutAction.LogOut),
-      this.i18nService.t("yes"),
-      this.i18nService.t("cancel")
-    );
+    const confirmed = await this.dialogService.openSimpleDialog({
+      title: { key: "logOut" },
+      content: { key: "logOutConfirmation" },
+      type: SimpleDialogType.INFO,
+    });
+
     if (confirmed) {
       this.messagingService.send("logout");
     }
   }
 
   async changePassword() {
-    const confirmed = await this.platformUtilsService.showDialog(
-      this.i18nService.t("changeMasterPasswordConfirmation"),
-      this.i18nService.t("changeMasterPassword"),
-      this.i18nService.t("yes"),
-      this.i18nService.t("cancel")
-    );
+    const confirmed = await this.dialogService.openSimpleDialog({
+      title: { key: "changeMasterPassword" },
+      content: { key: "changeMasterPasswordConfirmation" },
+      type: SimpleDialogType.INFO,
+    });
     if (confirmed) {
       BrowserApi.createNewTab(
         "https://bitwarden.com/help/master-password/#change-your-master-password"
@@ -401,24 +404,22 @@ export class SettingsComponent implements OnInit {
   }
 
   async twoStep() {
-    const confirmed = await this.platformUtilsService.showDialog(
-      this.i18nService.t("twoStepLoginConfirmation"),
-      this.i18nService.t("twoStepLogin"),
-      this.i18nService.t("yes"),
-      this.i18nService.t("cancel")
-    );
+    const confirmed = await this.dialogService.openSimpleDialog({
+      title: { key: "twoStepLogin" },
+      content: { key: "twoStepLoginConfirmation" },
+      type: SimpleDialogType.INFO,
+    });
     if (confirmed) {
       BrowserApi.createNewTab("https://bitwarden.com/help/setup-two-step-login/");
     }
   }
 
   async share() {
-    const confirmed = await this.platformUtilsService.showDialog(
-      this.i18nService.t("learnOrgConfirmation"),
-      this.i18nService.t("learnOrg"),
-      this.i18nService.t("yes"),
-      this.i18nService.t("cancel")
-    );
+    const confirmed = await this.dialogService.openSimpleDialog({
+      title: { key: "learnOrg" },
+      content: { key: "learnOrgConfirmation" },
+      type: SimpleDialogType.INFO,
+    });
     if (confirmed) {
       BrowserApi.createNewTab("https://bitwarden.com/help/about-organizations/");
     }

@@ -15,6 +15,12 @@ import {
 
 import { SearchPipe } from "@bitwarden/angular/pipes/search.pipe";
 import { UserNamePipe } from "@bitwarden/angular/pipes/user-name.pipe";
+import {
+  SimpleDialogType,
+  DialogServiceAbstraction,
+  SimpleDialogCloseType,
+  SimpleDialogOptions,
+} from "@bitwarden/angular/services/dialog";
 import { ModalService } from "@bitwarden/angular/services/modal.service";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
@@ -48,12 +54,6 @@ import { CollectionDetailsResponse } from "@bitwarden/common/admin-console/model
 import { ProductType } from "@bitwarden/common/enums";
 import { ListResponse } from "@bitwarden/common/models/response/list.response";
 import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
-import {
-  DialogService,
-  SimpleDialogCloseType,
-  SimpleDialogOptions,
-  SimpleDialogType,
-} from "@bitwarden/components";
 
 import { EntityEventsComponent } from "../../../admin-console/organizations/manage/entity-events.component";
 import { BasePeopleComponent } from "../../../common/base.people.component";
@@ -123,7 +123,7 @@ export class PeopleComponent
     private organizationService: OrganizationService,
     private organizationApiService: OrganizationApiServiceAbstraction,
     private organizationUserService: OrganizationUserService,
-    private dialogService: DialogService,
+    dialogService: DialogServiceAbstraction,
     private router: Router,
     private groupService: GroupService,
     private collectionService: CollectionService
@@ -139,7 +139,8 @@ export class PeopleComponent
       logService,
       searchPipe,
       userNamePipe,
-      stateService
+      stateService,
+      dialogService
     );
   }
 
@@ -362,7 +363,7 @@ export class PeopleComponent
       orgUpgradeSimpleDialogOpts.cancelButtonText = null; // hide secondary btn
     }
 
-    const simpleDialog = this.dialogService.openSimpleDialog(orgUpgradeSimpleDialogOpts);
+    const simpleDialog = this.dialogService.openSimpleDialogRef(orgUpgradeSimpleDialogOpts);
 
     firstValueFrom(simpleDialog.closed).then((result: SimpleDialogCloseType | undefined) => {
       if (!result) {
@@ -541,17 +542,18 @@ export class PeopleComponent
   }
 
   protected async removeUserConfirmationDialog(user: OrganizationUserView) {
-    const warningMessage = user.usesKeyConnector
-      ? this.i18nService.t("removeUserConfirmationKeyConnector")
-      : this.i18nService.t("removeOrgUserConfirmation");
+    const content = user.usesKeyConnector
+      ? "removeUserConfirmationKeyConnector"
+      : "removeOrgUserConfirmation";
 
-    return this.platformUtilsService.showDialog(
-      warningMessage,
-      this.i18nService.t("removeUserIdAccess", this.userNamePipe.transform(user)),
-      this.i18nService.t("yes"),
-      this.i18nService.t("no"),
-      "warning"
-    );
+    return await this.dialogService.openSimpleDialog({
+      title: {
+        key: "removeUserIdAccess",
+        placeholders: [this.userNamePipe.transform(user)],
+      },
+      content: { key: content },
+      type: SimpleDialogType.WARNING,
+    });
   }
 
   private async showBulkStatus(

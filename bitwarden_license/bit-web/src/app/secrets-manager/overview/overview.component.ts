@@ -13,11 +13,11 @@ import {
   share,
 } from "rxjs";
 
+import { DialogServiceAbstraction } from "@bitwarden/angular/services/dialog";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
-import { DialogService } from "@bitwarden/components";
 
 import { ProjectListView } from "../models/view/project-list.view";
 import { SecretListView } from "../models/view/secret-list.view";
@@ -84,7 +84,7 @@ export class OverviewComponent implements OnInit, OnDestroy {
     private projectService: ProjectService,
     private secretService: SecretService,
     private serviceAccountService: ServiceAccountService,
-    private dialogService: DialogService,
+    private dialogService: DialogServiceAbstraction,
     private organizationService: OrganizationService,
     private stateService: StateService,
     private platformUtilsService: PlatformUtilsService,

@@ -3,6 +3,7 @@ import { Component } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import { first } from "rxjs/operators";
 
+import { DialogServiceAbstraction } from "@bitwarden/angular/services/dialog";
 import { AddEditComponent as BaseAddEditComponent } from "@bitwarden/angular/vault/components/add-edit.component";
 import { AuditService } from "@bitwarden/common/abstractions/audit.service";
 import { EventCollectionService } from "@bitwarden/common/abstractions/event/event-collection.service";
@@ -53,7 +54,8 @@ export class AddEditComponent extends BaseAddEditComponent {
     organizationService: OrganizationService,
     passwordRepromptService: PasswordRepromptService,
     logService: LogService,
-    sendApiService: SendApiService
+    sendApiService: SendApiService,
+    dialogService: DialogServiceAbstraction
   ) {
     super(
       cipherService,
@@ -69,7 +71,8 @@ export class AddEditComponent extends BaseAddEditComponent {
       logService,
       passwordRepromptService,
       organizationService,
-      sendApiService
+      sendApiService,
+      dialogService
     );
   }
 

@@ -11,6 +11,7 @@ import { ActivatedRoute, Router } from "@angular/router";
 import { first } from "rxjs/operators";
 
 import { ModalRef } from "@bitwarden/angular/components/modal/modal.ref";
+import { DialogServiceAbstraction, SimpleDialogType } from "@bitwarden/angular/services/dialog";
 import { ModalService } from "@bitwarden/angular/services/modal.service";
 import { VaultFilter } from "@bitwarden/angular/vault/vault-filter/models/vault-filter.model";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
@@ -100,7 +101,8 @@ export class VaultComponent implements OnInit, OnDestroy {
     private passwordRepromptService: PasswordRepromptService,
     private stateService: StateService,
     private searchBarService: SearchBarService,
-    private apiService: ApiService
+    private apiService: ApiService,
+    private dialogService: DialogServiceAbstraction
   ) {}
 
   async ngOnInit() {
@@ -679,13 +681,11 @@ export class VaultComponent implements OnInit, OnDestroy {
   }
 
   private async wantsToSaveChanges(): Promise<boolean> {
-    const confirmed = await this.platformUtilsService.showDialog(
-      this.i18nService.t("unsavedChangesConfirmation"),
-      this.i18nService.t("unsavedChangesTitle"),
-      this.i18nService.t("yes"),
-      this.i18nService.t("no"),
-      "warning"
-    );
+    const confirmed = await this.dialogService.openSimpleDialog({
+      title: { key: "unsavedChangesTitle" },
+      content: { key: "unsavedChangesConfirmation" },
+      type: SimpleDialogType.WARNING,
+    });
     return !confirmed;
   }
 

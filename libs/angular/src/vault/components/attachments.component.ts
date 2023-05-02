@@ -14,6 +14,8 @@ import { Cipher } from "@bitwarden/common/vault/models/domain/cipher";
 import { AttachmentView } from "@bitwarden/common/vault/models/view/attachment.view";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 
+import { DialogServiceAbstraction, SimpleDialogType } from "../../services/dialog";
+
 @Directive()
 export class AttachmentsComponent implements OnInit {
   @Input() cipherId: string;
@@ -40,7 +42,8 @@ export class AttachmentsComponent implements OnInit {
     protected win: Window,
     protected logService: LogService,
     protected stateService: StateService,
-    protected fileDownloadService: FileDownloadService
+    protected fileDownloadService: FileDownloadService,
+    protected dialogService: DialogServiceAbstraction
   ) {}
 
   async ngOnInit() {
@@ -100,15 +103,12 @@ export class AttachmentsComponent implements OnInit {
       return;
     }
 
-    const confirmed = await this.platformUtilsService.showDialog(
-      this.i18nService.t("deleteAttachmentConfirmation"),
-      this.i18nService.t("deleteAttachment"),
-      this.i18nService.t("yes"),
-      this.i18nService.t("no"),
-      "warning",
-      false,
-      this.componentName != "" ? this.componentName + " .modal-content" : null
-    );
+    const confirmed = await this.dialogService.openSimpleDialog({
+      title: { key: "deleteAttachment" },
+      content: { key: "deleteAttachmentConfirmation" },
+      type: SimpleDialogType.WARNING,
+    });
+
     if (!confirmed) {
       return;
     }
@@ -197,23 +197,24 @@ export class AttachmentsComponent implements OnInit {
     this.canAccessAttachments = canAccessPremium || this.cipher.organizationId != null;
 
     if (!this.canAccessAttachments) {
-      const confirmed = await this.platformUtilsService.showDialog(
-        this.i18nService.t("premiumRequiredDesc"),
-        this.i18nService.t("premiumRequired"),
-        this.i18nService.t("learnMore"),
-        this.i18nService.t("cancel")
-      );
+      const confirmed = await this.dialogService.openSimpleDialog({
+        title: { key: "premiumRequired" },
+        content: { key: "premiumRequiredDesc" },
+        acceptButtonText: { key: "learnMore" },
+        type: SimpleDialogType.SUCCESS,
+      });
+
       if (confirmed) {
         this.platformUtilsService.launchUri("https://vault.bitwarden.com/#/?premium=purchase");
       }
     } else if (!this.hasUpdatedKey) {
-      const confirmed = await this.platformUtilsService.showDialog(
-        this.i18nService.t("updateKey"),
-        this.i18nService.t("featureUnavailable"),
-        this.i18nService.t("learnMore"),
-        this.i18nService.t("cancel"),
-        "warning"
-      );
+      const confirmed = await this.dialogService.openSimpleDialog({
+        title: { key: "featureUnavailable" },
+        content: { key: "updateKey" },
+        acceptButtonText: { key: "learnMore" },
+        type: SimpleDialogType.WARNING,
+      });
+
       if (confirmed) {
         this.platformUtilsService.launchUri(
           "https://bitwarden.com/help/account-encryption-key/#rotate-your-encryption-key"

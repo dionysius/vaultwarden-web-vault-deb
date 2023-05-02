@@ -2,7 +2,7 @@ import { Component } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { switchMap } from "rxjs";
 
-import { DialogService } from "@bitwarden/components";
+import { DialogServiceAbstraction } from "@bitwarden/angular/services/dialog";
 
 import { AccessTokenCreateDialogComponent } from "./access/dialogs/access-token-create-dialog.component";
 import { ServiceAccountService } from "./service-account.service";
@@ -32,7 +32,7 @@ export class ServiceAccountComponent {
   constructor(
     private route: ActivatedRoute,
     private serviceAccountService: ServiceAccountService,
-    private dialogService: DialogService
+    private dialogService: DialogServiceAbstraction
   ) {}
 
   protected openNewAccessTokenDialog() {

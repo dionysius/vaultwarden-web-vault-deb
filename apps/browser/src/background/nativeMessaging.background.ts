@@ -153,10 +153,11 @@ export class NativeMessagingBackground {
             this.connected = false;
 
             this.messagingService.send("showDialog", {
-              text: this.i18nService.t("nativeMessagingInvalidEncryptionDesc"),
-              title: this.i18nService.t("nativeMessagingInvalidEncryptionTitle"),
-              confirmText: this.i18nService.t("ok"),
-              type: "error",
+              title: { key: "nativeMessagingInvalidEncryptionTitle" },
+              content: { key: "nativeMessagingInvalidEncryptionDesc" },
+              acceptButtonText: { key: "ok" },
+              cancelButtonText: null,
+              type: "danger",
             });
             break;
           case "verifyFingerprint": {
@@ -199,10 +200,11 @@ export class NativeMessagingBackground {
 
   showWrongUserDialog() {
     this.messagingService.send("showDialog", {
-      text: this.i18nService.t("nativeMessagingWrongUserDesc"),
-      title: this.i18nService.t("nativeMessagingWrongUserTitle"),
-      confirmText: this.i18nService.t("ok"),
-      type: "error",
+      title: { key: "nativeMessagingWrongUserTitle" },
+      content: { key: "nativeMessagingWrongUserDesc" },
+      acceptButtonText: { key: "ok" },
+      cancelButtonText: null,
+      type: "danger",
     });
   }
 
@@ -258,10 +260,11 @@ export class NativeMessagingBackground {
       this.connected = false;
 
       this.messagingService.send("showDialog", {
-        text: this.i18nService.t("nativeMessagingInvalidEncryptionDesc"),
-        title: this.i18nService.t("nativeMessagingInvalidEncryptionTitle"),
-        confirmText: this.i18nService.t("ok"),
-        type: "error",
+        title: { key: "nativeMessagingInvalidEncryptionTitle" },
+        content: { key: "nativeMessagingInvalidEncryptionDesc" },
+        acceptButtonText: { key: "ok" },
+        cancelButtonText: null,
+        type: "danger",
       });
     }
   }
@@ -285,18 +288,20 @@ export class NativeMessagingBackground {
 
         if (message.response === "not enabled") {
           this.messagingService.send("showDialog", {
-            text: this.i18nService.t("biometricsNotEnabledDesc"),
-            title: this.i18nService.t("biometricsNotEnabledTitle"),
-            confirmText: this.i18nService.t("ok"),
-            type: "error",
+            title: { key: "biometricsNotEnabledTitle" },
+            content: { key: "biometricsNotEnabledDesc" },
+            acceptButtonText: { key: "ok" },
+            cancelButtonText: null,
+            type: "danger",
           });
           break;
         } else if (message.response === "not supported") {
           this.messagingService.send("showDialog", {
-            text: this.i18nService.t("biometricsNotSupportedDesc"),
-            title: this.i18nService.t("biometricsNotSupportedTitle"),
-            confirmText: this.i18nService.t("ok"),
-            type: "error",
+            title: { key: "biometricsNotSupportedTitle" },
+            content: { key: "biometricsNotSupportedDesc" },
+            acceptButtonText: { key: "ok" },
+            cancelButtonText: null,
+            type: "danger",
           });
           break;
         }
@@ -377,13 +382,8 @@ export class NativeMessagingBackground {
       await this.cryptoService.getFingerprint(await this.stateService.getUserId(), this.publicKey)
     ).join(" ");
 
-    this.messagingService.send("showDialog", {
-      html: `${this.i18nService.t(
-        "desktopIntegrationVerificationText"
-      )}<br><br><strong>${fingerprint}</strong>`,
-      title: this.i18nService.t("desktopSyncVerificationTitle"),
-      confirmText: this.i18nService.t("ok"),
-      type: "warning",
+    this.messagingService.send("showNativeMessagingFinterprintDialog", {
+      fingerprint: fingerprint,
     });
   }
 }

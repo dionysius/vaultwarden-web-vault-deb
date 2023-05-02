@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from "@angular/router";
 import { first } from "rxjs/operators";
 
 import { TwoFactorComponent as BaseTwoFactorComponent } from "@bitwarden/angular/auth/components/two-factor.component";
+import { DialogServiceAbstraction, SimpleDialogType } from "@bitwarden/angular/services/dialog";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { AppIdService } from "@bitwarden/common/abstractions/appId.service";
 import { BroadcasterService } from "@bitwarden/common/abstractions/broadcaster.service";
@@ -46,7 +47,8 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
     logService: LogService,
     twoFactorService: TwoFactorService,
     appIdService: AppIdService,
-    loginService: LoginService
+    loginService: LoginService,
+    private dialogService: DialogServiceAbstraction
   ) {
     super(
       authService,
@@ -102,12 +104,11 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
       this.selectedProviderType === TwoFactorProviderType.Email &&
       this.popupUtilsService.inPopup(window)
     ) {
-      const confirmed = await this.platformUtilsService.showDialog(
-        this.i18nService.t("popup2faCloseMessage"),
-        null,
-        this.i18nService.t("yes"),
-        this.i18nService.t("no")
-      );
+      const confirmed = await this.dialogService.openSimpleDialog({
+        title: { key: "warning" },
+        content: { key: "popup2faCloseMessage" },
+        type: SimpleDialogType.WARNING,
+      });
       if (confirmed) {
         this.popupUtilsService.popOut(window);
       }

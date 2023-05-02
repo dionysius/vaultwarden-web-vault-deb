@@ -1,5 +1,4 @@
 import { Injectable } from "@angular/core";
-import Swal, { SweetAlertIcon } from "sweetalert2";
 
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
@@ -131,66 +130,6 @@ export class WebPlatformUtilsService implements PlatformUtilsService {
       type: type,
       options: options,
     });
-  }
-
-  async showDialog(
-    body: string,
-    title?: string,
-    confirmText?: string,
-    cancelText?: string,
-    type?: string,
-    bodyIsHtml = false,
-    target?: string
-  ) {
-    let iconClasses: string = null;
-    if (type != null) {
-      // If you add custom types to this part, the type to SweetAlertIcon cast below needs to be changed.
-      switch (type) {
-        case "success":
-          iconClasses = "bwi-check text-success";
-          break;
-        case "warning":
-          iconClasses = "bwi-exclamation-triangle text-warning";
-          break;
-        case "error":
-          iconClasses = "bwi-error text-danger";
-          break;
-        case "info":
-          iconClasses = "bwi-info-circle text-info";
-          break;
-        default:
-          break;
-      }
-    }
-
-    const bootstrapModal = document.querySelector("div.modal");
-    if (bootstrapModal != null) {
-      bootstrapModal.removeAttribute("tabindex");
-    }
-
-    const iconHtmlStr =
-      iconClasses != null ? `<i class="swal-custom-icon bwi ${iconClasses}"></i>` : undefined;
-    const confirmed = await Swal.fire({
-      heightAuto: false,
-      buttonsStyling: false,
-      icon: type as SweetAlertIcon, // required to be any of the SweetAlertIcons to output the iconHtml.
-      iconHtml: iconHtmlStr,
-      text: bodyIsHtml ? null : body,
-      html: bodyIsHtml ? body : null,
-      titleText: title,
-      showCancelButton: cancelText != null,
-      cancelButtonText: cancelText,
-      showConfirmButton: true,
-      confirmButtonText: confirmText == null ? this.i18nService.t("ok") : confirmText,
-      target: target != null ? target : "body",
-      onOpen: () => Swal.getConfirmButton().focus(),
-    });
-
-    if (bootstrapModal != null) {
-      bootstrapModal.setAttribute("tabindex", "-1");
-    }
-
-    return confirmed.value;
   }
 
   isDev(): boolean {

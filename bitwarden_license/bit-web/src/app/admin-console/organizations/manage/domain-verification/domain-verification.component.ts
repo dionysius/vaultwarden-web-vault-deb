@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from "@angular/core";
 import { ActivatedRoute, Params } from "@angular/router";
 import { concatMap, Observable, Subject, take, takeUntil } from "rxjs";
 
+import { DialogServiceAbstraction, SimpleDialogType } from "@bitwarden/angular/services/dialog";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { OrgDomainApiServiceAbstraction } from "@bitwarden/common/abstractions/organization-domain/org-domain-api.service.abstraction";
 import { OrgDomainServiceAbstraction } from "@bitwarden/common/abstractions/organization-domain/org-domain.service.abstraction";
@@ -10,7 +11,6 @@ import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUti
 import { ValidationService } from "@bitwarden/common/abstractions/validation.service";
 import { HttpStatusCode } from "@bitwarden/common/enums";
 import { ErrorResponse } from "@bitwarden/common/models/response/error.response";
-import { DialogService } from "@bitwarden/components";
 
 import {
   DomainAddEditDialogComponent,
@@ -35,7 +35,7 @@ export class DomainVerificationComponent implements OnInit, OnDestroy {
     private i18nService: I18nService,
     private orgDomainApiService: OrgDomainApiServiceAbstraction,
     private orgDomainService: OrgDomainServiceAbstraction,
-    private dialogService: DialogService,
+    private dialogService: DialogServiceAbstraction,
     private validationService: ValidationService
   ) {}
 
@@ -154,13 +154,12 @@ export class DomainVerificationComponent implements OnInit, OnDestroy {
   }
 
   async deleteDomain(orgDomainId: string): Promise<void> {
-    const confirmed = await this.platformUtilsService.showDialog(
-      this.i18nService.t("removeDomainWarning"),
-      this.i18nService.t("removeDomain"),
-      this.i18nService.t("yes"),
-      this.i18nService.t("no"),
-      "warning"
-    );
+    const confirmed = await this.dialogService.openSimpleDialog({
+      title: { key: "removeDomain" },
+      content: { key: "removeDomainWarning" },
+      type: SimpleDialogType.WARNING,
+    });
+
     if (!confirmed) {
       return;
     }

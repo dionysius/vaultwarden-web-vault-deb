@@ -2,6 +2,7 @@ import { formatDate } from "@angular/common";
 import { Component, EventEmitter, Input, Output, OnInit } from "@angular/core";
 import { firstValueFrom } from "rxjs";
 
+import { DialogServiceAbstraction, SimpleDialogType } from "@bitwarden/angular/services/dialog";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
@@ -30,7 +31,8 @@ export class SponsoringOrgRowComponent implements OnInit {
     private apiService: ApiService,
     private i18nService: I18nService,
     private logService: LogService,
-    private platformUtilsService: PlatformUtilsService
+    private platformUtilsService: PlatformUtilsService,
+    private dialogService: DialogServiceAbstraction
   ) {}
 
   async ngOnInit() {
@@ -67,15 +69,14 @@ export class SponsoringOrgRowComponent implements OnInit {
   }
 
   private async doRevokeSponsorship() {
-    const isConfirmed = await this.platformUtilsService.showDialog(
-      this.i18nService.t("revokeSponsorshipConfirmation"),
-      `${this.i18nService.t("remove")} ${this.sponsoringOrg.familySponsorshipFriendlyName}?`,
-      this.i18nService.t("remove"),
-      this.i18nService.t("cancel"),
-      "warning"
-    );
+    const confirmed = await this.dialogService.openSimpleDialog({
+      title: `${this.i18nService.t("remove")} ${this.sponsoringOrg.familySponsorshipFriendlyName}?`,
+      content: { key: "revokeSponsorshipConfirmation" },
+      acceptButtonText: { key: "remove" },
+      type: SimpleDialogType.WARNING,
+    });
 
-    if (!isConfirmed) {
+    if (!confirmed) {
       return;
     }
 

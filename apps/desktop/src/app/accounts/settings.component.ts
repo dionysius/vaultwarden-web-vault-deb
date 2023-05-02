@@ -3,6 +3,7 @@ import { FormBuilder } from "@angular/forms";
 import { Observable, Subject } from "rxjs";
 import { concatMap, debounceTime, filter, map, takeUntil, tap } from "rxjs/operators";
 
+import { DialogServiceAbstraction, SimpleDialogType } from "@bitwarden/angular/services/dialog";
 import { ModalService } from "@bitwarden/angular/services/modal.service";
 import { AbstractThemingService } from "@bitwarden/angular/services/theming/theming.service.abstraction";
 import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
@@ -109,7 +110,8 @@ export class SettingsComponent implements OnInit {
     private cryptoService: CryptoService,
     private modalService: ModalService,
     private themingService: AbstractThemingService,
-    private settingsService: SettingsService
+    private settingsService: SettingsService,
+    private dialogService: DialogServiceAbstraction
   ) {
     const isMac = this.platformUtilsService.getDevice() === DeviceType.MacOsDesktop;
 
@@ -295,13 +297,12 @@ export class SettingsComponent implements OnInit {
 
   async saveVaultTimeout(newValue: number) {
     if (newValue == null) {
-      const confirmed = await this.platformUtilsService.showDialog(
-        this.i18nService.t("neverLockWarning"),
-        "",
-        this.i18nService.t("yes"),
-        this.i18nService.t("cancel"),
-        "warning"
-      );
+      const confirmed = await this.dialogService.openSimpleDialog({
+        title: { key: "warning" },
+        content: { key: "neverLockWarning" },
+        type: SimpleDialogType.WARNING,
+      });
+
       if (!confirmed) {
         this.form.controls.vaultTimeout.setValue(this.previousVaultTimeout);
         return;
@@ -332,13 +333,12 @@ export class SettingsComponent implements OnInit {
 
   async saveVaultTimeoutAction(newValue: VaultTimeoutAction) {
     if (newValue === "logOut") {
-      const confirmed = await this.platformUtilsService.showDialog(
-        this.i18nService.t("vaultTimeoutLogOutConfirmation"),
-        this.i18nService.t("vaultTimeoutLogOutConfirmationTitle"),
-        this.i18nService.t("yes"),
-        this.i18nService.t("cancel"),
-        "warning"
-      );
+      const confirmed = await this.dialogService.openSimpleDialog({
+        title: { key: "vaultTimeoutLogOutConfirmationTitle" },
+        content: { key: "vaultTimeoutLogOutConfirmation" },
+        type: SimpleDialogType.WARNING,
+      });
+
       if (!confirmed) {
         this.form.controls.vaultTimeoutAction.patchValue(VaultTimeoutAction.Lock, {
           emitEvent: false,
@@ -462,13 +462,11 @@ export class SettingsComponent implements OnInit {
       !this.form.value.enableTray &&
       (this.form.value.startToTray || this.form.value.enableCloseToTray)
     ) {
-      const confirm = await this.platformUtilsService.showDialog(
-        this.i18nService.t("confirmTrayDesc"),
-        this.i18nService.t("confirmTrayTitle"),
-        this.i18nService.t("yes"),
-        this.i18nService.t("no"),
-        "warning"
-      );
+      const confirm = await this.dialogService.openSimpleDialog({
+        title: { key: "confirmTrayTitle" },
+        content: { key: "confirmTrayDesc" },
+        type: SimpleDialogType.WARNING,
+      });
 
       if (confirm) {
         this.form.controls.startToTray.setValue(false, { emitEvent: false });
@@ -524,35 +522,35 @@ export class SettingsComponent implements OnInit {
 
   async saveBrowserIntegration() {
     if (process.platform === "darwin" && !this.platformUtilsService.isMacAppStore()) {
-      await this.platformUtilsService.showDialog(
-        this.i18nService.t("browserIntegrationMasOnlyDesc"),
-        this.i18nService.t("browserIntegrationUnsupportedTitle"),
-        this.i18nService.t("ok"),
-        null,
-        "warning"
-      );
+      await this.dialogService.openSimpleDialog({
+        title: { key: "browserIntegrationUnsupportedTitle" },
+        content: { key: "browserIntegrationMasOnlyDesc" },
+        acceptButtonText: { key: "ok" },
+        cancelButtonText: null,
+        type: SimpleDialogType.WARNING,
+      });
 
       this.form.controls.enableBrowserIntegration.setValue(false);
       return;
     } else if (isWindowsStore()) {
-      await this.platformUtilsService.showDialog(
-        this.i18nService.t("browserIntegrationWindowsStoreDesc"),
-        this.i18nService.t("browserIntegrationUnsupportedTitle"),
-        this.i18nService.t("ok"),
-        null,
-        "warning"
-      );
+      await this.dialogService.openSimpleDialog({
+        title: { key: "browserIntegrationUnsupportedTitle" },
+        content: { key: "browserIntegrationWindowsStoreDesc" },
+        acceptButtonText: { key: "ok" },
+        cancelButtonText: null,
+        type: SimpleDialogType.WARNING,
+      });
 
       this.form.controls.enableBrowserIntegration.setValue(false);
       return;
     } else if (process.platform == "linux") {
-      await this.platformUtilsService.showDialog(
-        this.i18nService.t("browserIntegrationLinuxDesc"),
-        this.i18nService.t("browserIntegrationUnsupportedTitle"),
-        this.i18nService.t("ok"),
-        null,
-        "warning"
-      );
+      await this.dialogService.openSimpleDialog({
+        title: { key: "browserIntegrationUnsupportedTitle" },
+        content: { key: "browserIntegrationLinuxDesc" },
+        acceptButtonText: { key: "ok" },
+        cancelButtonText: null,
+        type: SimpleDialogType.WARNING,
+      });
 
       this.form.controls.enableBrowserIntegration.setValue(false);
       return;

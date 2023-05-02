@@ -1,5 +1,6 @@
 import { Component, NgZone } from "@angular/core";
 
+import { DialogServiceAbstraction, SimpleDialogType } from "@bitwarden/angular/services/dialog";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
@@ -49,9 +50,17 @@ export class TwoFactorWebAuthnComponent extends TwoFactorBaseComponent {
     platformUtilsService: PlatformUtilsService,
     private ngZone: NgZone,
     logService: LogService,
-    userVerificationService: UserVerificationService
+    userVerificationService: UserVerificationService,
+    dialogService: DialogServiceAbstraction
   ) {
-    super(apiService, i18nService, platformUtilsService, logService, userVerificationService);
+    super(
+      apiService,
+      i18nService,
+      platformUtilsService,
+      logService,
+      userVerificationService,
+      dialogService
+    );
   }
 
   auth(authResponse: AuthResponse<TwoFactorWebAuthnResponse>) {
@@ -85,13 +94,13 @@ export class TwoFactorWebAuthnComponent extends TwoFactorBaseComponent {
       return;
     }
     const name = key.name != null ? key.name : this.i18nService.t("webAuthnkeyX", key.id as any);
-    const confirmed = await this.platformUtilsService.showDialog(
-      this.i18nService.t("removeU2fConfirmation"),
-      name,
-      this.i18nService.t("yes"),
-      this.i18nService.t("no"),
-      "warning"
-    );
+
+    const confirmed = await this.dialogService.openSimpleDialog({
+      title: name,
+      content: { key: "removeU2fConfirmation" },
+      type: SimpleDialogType.WARNING,
+    });
+
     if (!confirmed) {
       return;
     }

@@ -5,14 +5,7 @@ import { ClientType, DeviceType } from "@bitwarden/common/enums";
 import { BrowserApi } from "../browser/browserApi";
 import { SafariApp } from "../browser/safariApp";
 
-const DialogPromiseExpiration = 600000; // 10 minutes
-
 export default class BrowserPlatformUtilsService implements PlatformUtilsService {
-  private showDialogResolves = new Map<number, { resolve: (value: boolean) => void; date: Date }>();
-  private passwordDialogResolves = new Map<
-    number,
-    { tryResolve: (canceled: boolean, password: string) => Promise<boolean>; date: Date }
-  >();
   private static deviceCache: DeviceType = null;
 
   constructor(
@@ -215,29 +208,6 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
     });
   }
 
-  showDialog(
-    body: string,
-    title?: string,
-    confirmText?: string,
-    cancelText?: string,
-    type?: string,
-    bodyIsHtml = false
-  ) {
-    const dialogId = Math.floor(Math.random() * Number.MAX_SAFE_INTEGER);
-    this.messagingService.send("showDialog", {
-      text: bodyIsHtml ? null : body,
-      html: bodyIsHtml ? body : null,
-      title: title,
-      confirmText: confirmText,
-      cancelText: cancelText,
-      type: type,
-      dialogId: dialogId,
-    });
-    return new Promise<boolean>((resolve) => {
-      this.showDialogResolves.set(dialogId, { resolve: resolve, date: new Date() });
-    });
-  }
-
   isDev(): boolean {
     return process.env.ENV === "development";
   }
@@ -337,47 +307,6 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
       }
     }
     return null;
-  }
-
-  resolveDialogPromise(dialogId: number, confirmed: boolean) {
-    if (this.showDialogResolves.has(dialogId)) {
-      const resolveObj = this.showDialogResolves.get(dialogId);
-      resolveObj.resolve(confirmed);
-      this.showDialogResolves.delete(dialogId);
-    }
-
-    // Clean up old promises
-    this.showDialogResolves.forEach((val, key) => {
-      const age = new Date().getTime() - val.date.getTime();
-      if (age > DialogPromiseExpiration) {
-        this.showDialogResolves.delete(key);
-      }
-    });
-  }
-
-  async resolvePasswordDialogPromise(
-    dialogId: number,
-    canceled: boolean,
-    password: string
-  ): Promise<boolean> {
-    let result = false;
-    if (this.passwordDialogResolves.has(dialogId)) {
-      const resolveObj = this.passwordDialogResolves.get(dialogId);
-      if (await resolveObj.tryResolve(canceled, password)) {
-        this.passwordDialogResolves.delete(dialogId);
-        result = true;
-      }
-    }
-
-    // Clean up old promises
-    this.passwordDialogResolves.forEach((val, key) => {
-      const age = new Date().getTime() - val.date.getTime();
-      if (age > DialogPromiseExpiration) {
-        this.passwordDialogResolves.delete(key);
-      }
-    });
-
-    return result;
   }
 
   async supportsBiometric() {

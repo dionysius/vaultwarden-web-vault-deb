@@ -4,6 +4,7 @@ import * as JSZip from "jszip";
 import { firstValueFrom } from "rxjs";
 import Swal, { SweetAlertIcon } from "sweetalert2";
 
+import { DialogServiceAbstraction } from "@bitwarden/angular/services/dialog";
 import { ModalService } from "@bitwarden/angular/services/modal.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
@@ -11,7 +12,6 @@ import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUti
 import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
 import { PolicyType } from "@bitwarden/common/admin-console/enums";
 import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
-import { DialogService } from "@bitwarden/components";
 import {
   ImportOption,
   ImportType,
@@ -46,7 +46,7 @@ export class ImportComponent implements OnInit {
     private logService: LogService,
     protected modalService: ModalService,
     protected syncService: SyncService,
-    protected dialogService: DialogService
+    protected dialogService: DialogServiceAbstraction
   ) {}
 
   async ngOnInit() {

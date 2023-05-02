@@ -23,6 +23,7 @@ import { PasswordGenerationServiceAbstraction } from "@bitwarden/common/tools/ge
 import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
 
 import { ChangePasswordComponent as BaseChangePasswordComponent } from "../auth/components/change-password.component";
+import { DialogServiceAbstraction } from "../services/dialog";
 
 @Directive()
 export class SetPasswordComponent extends BaseChangePasswordComponent {
@@ -50,7 +51,8 @@ export class SetPasswordComponent extends BaseChangePasswordComponent {
     private route: ActivatedRoute,
     stateService: StateService,
     private organizationApiService: OrganizationApiServiceAbstraction,
-    private organizationUserService: OrganizationUserService
+    private organizationUserService: OrganizationUserService,
+    dialogService: DialogServiceAbstraction
   ) {
     super(
       i18nService,
@@ -59,7 +61,8 @@ export class SetPasswordComponent extends BaseChangePasswordComponent {
       passwordGenerationService,
       platformUtilsService,
       policyService,
-      stateService
+      stateService,
+      dialogService
     );
   }
 

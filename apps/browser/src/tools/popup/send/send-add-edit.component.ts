@@ -3,6 +3,7 @@ import { Component } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import { first } from "rxjs/operators";
 
+import { DialogServiceAbstraction } from "@bitwarden/angular/services/dialog";
 import { AddEditComponent as BaseAddEditComponent } from "@bitwarden/angular/tools/send/add-edit.component";
 import { EnvironmentService } from "@bitwarden/common/abstractions/environment.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
@@ -45,7 +46,8 @@ export class SendAddEditComponent extends BaseAddEditComponent {
     private location: Location,
     private popupUtilsService: PopupUtilsService,
     logService: LogService,
-    sendApiService: SendApiService
+    sendApiService: SendApiService,
+    dialogService: DialogServiceAbstraction
   ) {
     super(
       i18nService,
@@ -57,7 +59,8 @@ export class SendAddEditComponent extends BaseAddEditComponent {
       policyService,
       logService,
       stateService,
-      sendApiService
+      sendApiService,
+      dialogService
     );
   }
 

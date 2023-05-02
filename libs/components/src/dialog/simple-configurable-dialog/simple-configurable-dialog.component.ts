@@ -1,12 +1,13 @@
 import { DialogRef, DIALOG_DATA } from "@angular/cdk/dialog";
 import { Component, Inject } from "@angular/core";
 
+import {
+  SimpleDialogType,
+  SimpleDialogCloseType,
+  Translation,
+} from "@bitwarden/angular/services/dialog";
+import { SimpleDialogOptions } from "@bitwarden/angular/services/dialog/simple-dialog-options";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
-
-import { SimpleDialogCloseType } from "./models/simple-dialog-close-type.enum";
-import { SimpleDialogOptions } from "./models/simple-dialog-options";
-import { SimpleDialogType } from "./models/simple-dialog-type.enum";
-import { Translation } from "./models/translation";
 
 const DEFAULT_ICON: Record<SimpleDialogType, string> = {
   [SimpleDialogType.PRIMARY]: "bwi-business",
@@ -70,7 +71,7 @@ export class SimpleConfigurableDialogComponent {
   private translate(translation: string | Translation, defaultKey?: string): string {
     // Translation interface use implies we must localize.
     if (typeof translation === "object") {
-      return this.i18nService.t(translation.key, ...translation.placeholders);
+      return this.i18nService.t(translation.key, ...(translation.placeholders ?? []));
     }
 
     // Use string that is already translated or use default key post translate
