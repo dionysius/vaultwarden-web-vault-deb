@@ -5,8 +5,8 @@ import { ButtonModule } from "../button";
 import { IconButtonModule } from "../icon-button";
 import { SharedModule } from "../shared";
 
-import { DialogService } from "./dialog.service";
 import { DialogComponent } from "./dialog/dialog.component";
+import { DialogService } from "./dialog.service";
 import { DialogCloseDirective } from "./directives/dialog-close.directive";
 import { DialogTitleContainerDirective } from "./directives/dialog-title-container.directive";
 import { SimpleConfigurableDialogComponent } from "./simple-configurable-dialog/simple-configurable-dialog.component";

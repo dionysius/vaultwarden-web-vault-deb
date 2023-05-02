@@ -26,7 +26,7 @@ export class UpdateBadge {
   private authService: AuthService;
   private stateService: BrowserStateService;
   private cipherService: CipherService;
-  private badgeAction: typeof chrome.action;
+  private badgeAction: typeof chrome.action | typeof chrome.browserAction;
   private sidebarAction: OperaSidebarAction | FirefoxSidebarAction;
   private inited = false;
   private win: Window & typeof globalThis;

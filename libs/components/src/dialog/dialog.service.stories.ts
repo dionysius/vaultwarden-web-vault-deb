@@ -9,8 +9,8 @@ import { IconButtonModule } from "../icon-button";
 import { SharedModule } from "../shared";
 import { I18nMockService } from "../utils/i18n-mock.service";
 
-import { DialogService } from "./dialog.service";
 import { DialogComponent } from "./dialog/dialog.component";
+import { DialogService } from "./dialog.service";
 import { DialogCloseDirective } from "./directives/dialog-close.directive";
 import { DialogTitleContainerDirective } from "./directives/dialog-title-container.directive";
 
