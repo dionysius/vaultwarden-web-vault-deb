@@ -1,5 +1,3 @@
-<!-- Please remove this disable statement when editing this file! -->
-<!-- eslint-disable @angular-eslint/template/button-has-type -->
 <div [ngClass]="tabbedHeader ? 'tabbed-header' : 'page-header'">
   <h1 *ngIf="!organizationId">{{ "twoStepLogin" | i18n }}</h1>
   <h1 *ngIf="organizationId">{{ "twoStepLoginEnforcement" | i18n }}</h1>
@@ -16,7 +14,7 @@
 </ng-container>
 <bit-callout type="warning" *ngIf="!organizationId">
   <p>{{ "twoStepLoginRecoveryWarning" | i18n }}</p>
-  <button bitButton buttonType="secondary" (click)="recoveryCode()">
+  <button type="button" bitButton buttonType="secondary" (click)="recoveryCode()">
     {{ "viewRecoveryCode" | i18n }}
   </button>
 </bit-callout>
@@ -56,6 +54,7 @@
     </div>
     <div class="ml-auto">
       <button
+        type="button"
         bitButton
         buttonType="secondary"
         [disabled]="!canAccessPremium && p.premium"

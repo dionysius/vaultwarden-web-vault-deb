@@ -1,5 +1,3 @@
-<!-- Please remove this disable statement when editing this file! -->
-<!-- eslint-disable @angular-eslint/template/button-has-type -->
 <div class="modal fade" role="dialog" aria-modal="true" aria-labelledby="addTitle">
   <div class="modal-dialog modal-dialog-scrollable" role="document">
     <div class="modal-content">
@@ -32,6 +30,7 @@
               </td>
               <td>
                 <button
+                  type="button"
                   class="btn btn-outline-secondary pull-right"
                   (click)="add(o)"
                   [disabled]="formPromise"

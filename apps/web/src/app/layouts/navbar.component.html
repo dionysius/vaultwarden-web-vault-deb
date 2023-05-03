@@ -1,5 +1,3 @@
-<!-- Please remove this disable statement when editing this file! -->
-<!-- eslint-disable @angular-eslint/template/button-has-type -->
 <nav class="navbar navbar-expand navbar-dark" [ngClass]="{ 'nav-background-alt': selfHosted }">
   <div class="container">
     <a class="navbar-brand" routerLink="/" appA11yTitle="{{ 'pageTitle' | i18n : 'Bitwarden' }}">
@@ -44,6 +42,7 @@
     <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
       <li>
         <button
+          type="button"
           [bitMenuTriggerFor]="accountMenu"
           class="tw-border-0 tw-bg-transparent tw-text-alt2 tw-opacity-70 hover:tw-opacity-90"
         >

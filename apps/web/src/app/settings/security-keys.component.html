@@ -1,5 +1,3 @@
-<!-- Please remove this disable statement when editing this file! -->
-<!-- eslint-disable @angular-eslint/template/button-has-type -->
 <app-change-kdf *ngIf="showChangeKdf"></app-change-kdf>
 <div
   [ngClass]="{ 'tabbed-header': !showChangeKdf, 'secondary-header': showChangeKdf }"
@@ -10,10 +8,10 @@
 <p>
   {{ "userApiKeyDesc" | i18n }}
 </p>
-<button bitButton buttonType="secondary" (click)="viewUserApiKey()">
+<button type="button" bitButton buttonType="secondary" (click)="viewUserApiKey()">
   {{ "viewApiKey" | i18n }}
 </button>
-<button bitButton buttonType="secondary" (click)="rotateUserApiKey()">
+<button type="button" bitButton buttonType="secondary" (click)="rotateUserApiKey()">
   {{ "rotateApiKey" | i18n }}
 </button>
 <ng-template #viewUserApiKeyTemplate></ng-template>

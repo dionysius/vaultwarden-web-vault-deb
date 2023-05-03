@@ -1,9 +1,8 @@
-<!-- Please remove this disable statement when editing this file! -->
-<!-- eslint-disable @angular-eslint/template/button-has-type -->
 <ng-container *ngIf="!hide">
   <div class="filter-heading">
     <h2>
       <button
+        type="button"
         class="toggle-button"
         [attr.aria-expanded]="!isCollapsed(foldersGrouping)"
         aria-controls="folder-filters"
@@ -20,7 +19,12 @@
         &nbsp;{{ foldersGrouping.name | i18n }}
       </button>
     </h2>
-    <button class="add-button" (click)="addFolder()" appA11yTitle="{{ 'addFolder' | i18n }}">
+    <button
+      type="button"
+      class="add-button"
+      (click)="addFolder()"
+      appA11yTitle="{{ 'addFolder' | i18n }}"
+    >
       <i class="bwi bwi-plus bwi-fw" aria-hidden="true"></i>
     </button>
   </div>
@@ -35,6 +39,7 @@
       >
         <span class="filter-buttons">
           <button
+            type="button"
             class="toggle-button"
             *ngIf="f.children.length"
             (click)="toggleCollapse(f.node)"
@@ -52,6 +57,7 @@
             ></i>
           </button>
           <button
+            type="button"
             class="filter-button"
             (click)="applyFilter(f.node)"
             [attr.aria-pressed]="
@@ -62,6 +68,7 @@
             &nbsp;{{ f.node.name }}
           </button>
           <button
+            type="button"
             class="edit-button"
             *ngIf="f.node.id"
             (click)="editFolder(f.node)"

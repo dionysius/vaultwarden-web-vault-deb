@@ -1,5 +1,3 @@
-<!-- Please remove this disable statement when editing this file! -->
-<!-- eslint-disable @angular-eslint/template/button-has-type -->
 <div id="sends" class="vault">
   <div class="left-nav">
     <div class="vault-filters">
@@ -9,6 +7,7 @@
           <li class="filter-option" [ngClass]="{ active: selectedAll }">
             <span class="filter-buttons">
               <button
+                type="button"
                 class="filter-button"
                 (click)="selectAll()"
                 [attr.aria-pressed]="selectedAll === true"
@@ -29,6 +28,7 @@
           <li class="filter-option" [ngClass]="{ active: selectedType === sendType.Text }">
             <span class="filter-buttons">
               <button
+                type="button"
                 class="filter-button"
                 (click)="selectType(sendType.Text)"
                 [attr.aria-pressed]="selectedType === sendType.Text"
@@ -42,6 +42,7 @@
           <li class="filter-option" [ngClass]="{ active: selectedType === sendType.File }">
             <span class="filter-buttons">
               <button
+                type="button"
                 class="filter-button"
                 (click)="selectType(sendType.File)"
                 [attr.aria-pressed]="selectedType === sendType.File"
@@ -61,6 +62,7 @@
     <div class="content">
       <div class="list full-height" *ngIf="filteredSends.length">
         <button
+          type="button"
           *ngFor="let s of filteredSends"
           appStopClick
           (click)="selectSend(s.id)"

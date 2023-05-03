@@ -1,9 +1,8 @@
-<!-- Please remove this disable statement when editing this file! -->
-<!-- eslint-disable @angular-eslint/template/button-has-type -->
 <ng-container *ngIf="show">
   <div class="filter-heading">
     <h2>
       <button
+        type="button"
         class="no-btn"
         [attr.aria-expanded]="!isCollapsed(collectionsGrouping)"
         aria-controls="collection-filters"
@@ -30,6 +29,7 @@
       >
         <span class="filter-buttons">
           <button
+            type="button"
             *ngIf="c.children.length"
             class="toggle-button"
             [attr.aria-expanded]="!isCollapsed(c.node)"
@@ -47,6 +47,7 @@
             ></i>
           </button>
           <button
+            type="button"
             class="filter-button"
             (click)="applyFilter(c.node)"
             [attr.aria-pressed]="c.node.id === activeFilter.selectedCollectionId"

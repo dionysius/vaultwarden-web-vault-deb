@@ -1,10 +1,9 @@
-<!-- Please remove this disable statement when editing this file! -->
-<!-- eslint-disable @angular-eslint/template/button-has-type -->
 <div class="d-flex" [ngClass]="headerClass">
   <h1>
     {{ "paymentMethod" | i18n }}
   </h1>
   <button
+    type="button"
     bitButton
     buttonType="secondary"
     (click)="load()"
@@ -30,7 +29,13 @@
     <strong>{{ creditOrBalance | currency : "$" }}</strong>
   </p>
   <p>{{ "creditAppliedDesc" | i18n }}</p>
-  <button bitButton buttonType="secondary" (click)="addCredit()" *ngIf="!showAddCredit">
+  <button
+    type="button"
+    bitButton
+    buttonType="secondary"
+    (click)="addCredit()"
+    *ngIf="!showAddCredit"
+  >
     {{ "addCredit" | i18n }}
   </button>
   <app-add-credit
@@ -72,6 +77,7 @@
           <span bitPrefix>$0.</span>
         </bit-form-field>
         <button
+          type="button"
           bitButton
           buttonType="primary"
           type="submit"
@@ -89,7 +95,13 @@
       {{ paymentSource.description }}
     </p>
   </ng-container>
-  <button bitButton buttonType="secondary" (click)="changePayment()" *ngIf="!showAdjustPayment">
+  <button
+    type="button"
+    bitButton
+    buttonType="secondary"
+    (click)="changePayment()"
+    *ngIf="!showAdjustPayment"
+  >
     {{ (paymentSource ? "changePaymentMethod" : "addPaymentMethod") | i18n }}
   </button>
   <app-adjust-payment

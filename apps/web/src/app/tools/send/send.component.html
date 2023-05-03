@@ -1,5 +1,3 @@
-<!-- Please remove this disable statement when editing this file! -->
-<!-- eslint-disable @angular-eslint/template/button-has-type -->
 <div class="container page-content">
   <app-callout type="warning" title="{{ 'sendDisabled' | i18n }}" *ngIf="disableSend">
     <span>{{ "sendDisabledWarning" | i18n }}</span>
@@ -25,7 +23,7 @@
             <ul class="filter-options">
               <li class="filter-option" [ngClass]="{ active: selectedAll }">
                 <span class="filter-buttons">
-                  <button class="filter-button" appStopClick (click)="selectAll()">
+                  <button type="button" class="filter-button" appStopClick (click)="selectAll()">
                     <i class="bwi bwi-fw bwi-filter"></i>{{ "allSends" | i18n }}
                   </button>
                 </span>
@@ -39,14 +37,24 @@
             <ul class="filter-options">
               <li class="filter-option" [ngClass]="{ active: selectedType === sendType.Text }">
                 <span class="filter-buttons">
-                  <button class="filter-button" appStopClick (click)="selectType(sendType.Text)">
+                  <button
+                    type="button"
+                    class="filter-button"
+                    appStopClick
+                    (click)="selectType(sendType.Text)"
+                  >
                     <i class="bwi bwi-fw bwi-file-text"></i>{{ "sendTypeText" | i18n }}
                   </button>
                 </span>
               </li>
               <li class="filter-option" [ngClass]="{ active: selectedType === sendType.File }">
                 <span class="filter-buttons">
-                  <button class="filter-button" appStopClick (click)="selectType(sendType.File)">
+                  <button
+                    type="button"
+                    class="filter-button"
+                    appStopClick
+                    (click)="selectType(sendType.File)"
+                  >
                     <i class="bwi bwi-fw bwi-file"></i>{{ "sendTypeFile" | i18n }}
                   </button>
                 </span>
@@ -144,6 +152,7 @@
             </td>
             <td class="table-list-options">
               <button
+                type="button"
                 [bitMenuTriggerFor]="sendOptions"
                 class="tw-border-none tw-bg-transparent tw-text-main"
                 type="button"
@@ -152,15 +161,20 @@
                 <i class="bwi bwi-ellipsis-v bwi-lg" aria-hidden="true"></i>
               </button>
               <bit-menu #sendOptions>
-                <button bitMenuItem (click)="copy(s)">
+                <button type="button" bitMenuItem (click)="copy(s)">
                   <i class="bwi bwi-fw bwi-clone" aria-hidden="true"></i>
                   {{ "copySendLink" | i18n }}
                 </button>
-                <button bitMenuItem (click)="removePassword(s)" *ngIf="s.password && !disableSend">
+                <button
+                  type="button"
+                  bitMenuItem
+                  (click)="removePassword(s)"
+                  *ngIf="s.password && !disableSend"
+                >
                   <i class="bwi bwi-fw bwi-close" aria-hidden="true"></i>
                   {{ "removePassword" | i18n }}
                 </button>
-                <button bitMenuItem (click)="delete(s)">
+                <button type="button" bitMenuItem (click)="delete(s)">
                   <span class="tw-text-danger">
                     <i class="bwi bwi-fw bwi-trash" aria-hidden="true"></i>
                     {{ "delete" | i18n }}
@@ -183,7 +197,12 @@
         <ng-container *ngIf="loaded">
           <bit-icon [icon]="noItemIcon" aria-hidden="true"></bit-icon>
           <p>{{ "noSendsInList" | i18n }}</p>
-          <button (click)="addSend()" class="btn btn-outline-primary" [disabled]="disableSend">
+          <button
+            type="button"
+            (click)="addSend()"
+            class="btn btn-outline-primary"
+            [disabled]="disableSend"
+          >
             <i class="bwi bwi-plus bwi-fw"></i>{{ "createSend" | i18n }}
           </button>
         </ng-container>

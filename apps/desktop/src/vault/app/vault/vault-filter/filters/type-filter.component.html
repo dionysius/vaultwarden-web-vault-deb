@@ -1,8 +1,7 @@
-<!-- Please remove this disable statement when editing this file! -->
-<!-- eslint-disable @angular-eslint/template/button-has-type -->
 <div class="filter-heading">
   <h2>
     <button
+      type="button"
       class="no-btn"
       (click)="toggleCollapse()"
       [attr.aria-expanded]="!isCollapsed"
@@ -27,6 +26,7 @@
   >
     <span class="filter-buttons">
       <button
+        type="button"
         class="filter-button"
         (click)="applyFilter(cipherTypeEnum.Login)"
         [attr.aria-pressed]="activeFilter.cipherType === cipherTypeEnum.Login"
@@ -38,6 +38,7 @@
   <li class="filter-option" [ngClass]="{ active: activeFilter.cipherType === cipherTypeEnum.Card }">
     <span class="filter-buttons">
       <button
+        type="button"
         class="filter-button"
         (click)="applyFilter(cipherTypeEnum.Card)"
         [attr.aria-pressed]="activeFilter.cipherType === cipherTypeEnum.Card"
@@ -52,6 +53,7 @@
   >
     <span class="filter-buttons">
       <button
+        type="button"
         class="filter-button"
         (click)="applyFilter(cipherTypeEnum.Identity)"
         [attr.aria-pressed]="activeFilter.cipherType === cipherTypeEnum.Identity"
@@ -66,6 +68,7 @@
   >
     <span class="filter-buttons">
       <button
+        type="button"
         class="filter-button"
         (click)="applyFilter(cipherTypeEnum.SecureNote)"
         [attr.aria-pressed]="activeFilter.cipherType === cipherTypeEnum.SecureNote"
