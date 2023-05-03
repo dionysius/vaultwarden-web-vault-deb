@@ -157,7 +157,7 @@ export class Program {
             async () => await this.main.logout()
           );
           const response = await command.run(email, password, options);
-          this.processResponse(response);
+          this.processResponse(response, true);
         }
       });
 
