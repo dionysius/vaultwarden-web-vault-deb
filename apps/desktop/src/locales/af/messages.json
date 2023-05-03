@@ -1402,7 +1402,7 @@
     "message": "Ontgrendel met Touch ID"
   },
   "additionalTouchIdSettings": {
-    "message": "Additional Touch ID settings"
+    "message": "Bykomende Touch ID-instellings"
   },
   "touchIdConsentMessage": {
     "message": "ontgrendel u kluis"
@@ -1417,7 +1417,7 @@
     "message": "Require password or PIN on app start"
   },
   "recommendedForSecurity": {
-    "message": "Recommended for security."
+    "message": "Aanbeveel vir veiligheid."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Vergrendel by herbegin met hoofwagwoord"
@@ -1540,7 +1540,7 @@
     "message": "Om aantekening met SSO te voltooi moet u ’n hoofwagwoord instel vir toegang tot en beskerming van u kluis."
   },
   "currentMasterPass": {
-    "message": "Current master password"
+    "message": "Huidige hoofwagwoord"
   },
   "newMasterPass": {
     "message": "Nuwe hoofwagwoord"
@@ -2251,13 +2251,5 @@
   },
   "windowsBiometricUpdateWarningTitle": {
     "message": "Recommended Settings Update"
-  },
-  "windows8SoonDeprecated": {
-    "message": "The operating system you are using will no longer be supported after the 2023.5.0 release. Upgrade to a supported operating system. Continuing without updating your operating system may result in unexpected behavior or security risks.",
-    "description": "Windows 8, 8.1 and Server 2012 R2 are no longer supported by Electron & Chromium. Show a notice on the login and lock screen while 2023.4.0 is the active version."
-  },
-  "windows8Deprecated": {
-    "message": "The operating system you are using is no longer supported. Continuing without updating your operating system may result in unexpected behavior.",
-    "description": "Windows 8, 8.1 and Server 2012 R2 are no longer supported by Electron & Chromium. Show a notice on the login and lock screen after 2023.5.0 is released."
   }
 }

@@ -2251,13 +2251,5 @@
   },
   "windowsBiometricUpdateWarningTitle": {
     "message": "設定の更新を推奨"
-  },
-  "windows8SoonDeprecated": {
-    "message": "現在使用されている OS は、2023.5.0 のリリース後はサポートされなくなります。サポートされている OS にアップグレードしてください。 OS を更新せずに続けると、予期せぬ動作やセキュリティ上のリスクが生じる可能性があります。",
-    "description": "Windows 8, 8.1 and Server 2012 R2 are no longer supported by Electron & Chromium. Show a notice on the login and lock screen while 2023.4.0 is the active version."
-  },
-  "windows8Deprecated": {
-    "message": "現在使用されている OS はサポートされなくなりました。OS を更新せずに続行すると、予期しない動作が発生する可能性があります。",
-    "description": "Windows 8, 8.1 and Server 2012 R2 are no longer supported by Electron & Chromium. Show a notice on the login and lock screen after 2023.5.0 is released."
   }
 }

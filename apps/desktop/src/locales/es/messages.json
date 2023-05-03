@@ -2251,13 +2251,5 @@
   },
   "windowsBiometricUpdateWarningTitle": {
     "message": "Actualización de ajustes recomendados"
-  },
-  "windows8SoonDeprecated": {
-    "message": "El sistema operativo que está utilizando ya no será soportado después de la versión 2023.5.0. Actualice a un sistema operativo compatible. Continuar sin actualizar su sistema operativo puede resultar en riesgos inesperados de comportamiento o seguridad.",
-    "description": "Windows 8, 8.1 and Server 2012 R2 are no longer supported by Electron & Chromium. Show a notice on the login and lock screen while 2023.4.0 is the active version."
-  },
-  "windows8Deprecated": {
-    "message": "El sistema operativo que está utilizando ya no está soportado. Si sigue sin actualizar su sistema operativo puede resultar en un comportamiento inesperado.",
-    "description": "Windows 8, 8.1 and Server 2012 R2 are no longer supported by Electron & Chromium. Show a notice on the login and lock screen after 2023.5.0 is released."
   }
 }

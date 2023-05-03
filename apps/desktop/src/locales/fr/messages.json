@@ -2247,17 +2247,9 @@
     }
   },
   "windowsBiometricUpdateWarning": {
-    "message": "Bitwarden recommends updating your biometric settings to require your master password (or PIN) on the first unlock. Would you like to update your settings now?"
+    "message": "Bitwarden recommande de mettre à jour vos paramètres biométriques pour exiger votre mot de passe principal (ou votre code PIN) lors du premier déverrouillage. Voulez-vous mettre à jour vos paramètres maintenant ?"
   },
   "windowsBiometricUpdateWarningTitle": {
     "message": "Une mise à jour des paramètres est recommandée"
-  },
-  "windows8SoonDeprecated": {
-    "message": "Le système d'exploitation que vous utilisez actuellement ne sera plus pris en charge après la version 2023.5.0. Mettez à niveau vers un système d'exploitation pris en charge. En poursuivant sans mettre à jour votre système d'exploitation, cela peut entraîner un comportement inattendu ou des risques pour la sécurité.",
-    "description": "Windows 8, 8.1 and Server 2012 R2 are no longer supported by Electron & Chromium. Show a notice on the login and lock screen while 2023.4.0 is the active version."
-  },
-  "windows8Deprecated": {
-    "message": "Le système d'exploitation que vous utilisez n'est plus pris en charge. En poursuivant sans mettre à jour votre système d'exploitation, cela peut entraîner un comportement inattendu.",
-    "description": "Windows 8, 8.1 and Server 2012 R2 are no longer supported by Electron & Chromium. Show a notice on the login and lock screen after 2023.5.0 is released."
   }
 }

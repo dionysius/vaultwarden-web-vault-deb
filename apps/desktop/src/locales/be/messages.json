@@ -2251,13 +2251,5 @@
   },
   "windowsBiometricUpdateWarningTitle": {
     "message": "Рэкамендаваныя налады абнаўлення"
-  },
-  "windows8SoonDeprecated": {
-    "message": "Пасля выпуску 2023.5.0 аперацыйная сістэма, якую вы выкарыстоўваеце больш не будзе падтрымліваецца. Перайдзіце на актуальную версію аперацыйнай сістэмы. Далейшае выкарыстанне аперацыйнай сістэмы без абнаўлення можа прывесці да непрадказальных паводзін або пагрозе ў бяспецы.",
-    "description": "Windows 8, 8.1 and Server 2012 R2 are no longer supported by Electron & Chromium. Show a notice on the login and lock screen while 2023.4.0 is the active version."
-  },
-  "windows8Deprecated": {
-    "message": "Аперацыйная сістэма, якую вы выкарыстоўваеце больш не падтрымліваецца. Далейшае выкарыстанне аперацыйнай сістэмы без абнаўлення можа прывесці да непрадказальных паводзін.",
-    "description": "Windows 8, 8.1 and Server 2012 R2 are no longer supported by Electron & Chromium. Show a notice on the login and lock screen after 2023.5.0 is released."
   }
 }

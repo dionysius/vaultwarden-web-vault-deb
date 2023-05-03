@@ -2251,13 +2251,5 @@
   },
   "windowsBiometricUpdateWarningTitle": {
     "message": "Recommended Settings Update"
-  },
-  "windows8SoonDeprecated": {
-    "message": "Kasutatav operatsioonisüsteem ei ole enam versioon 2023.5.0 järel kasutatav. Palun uuenda operatsioonisüsteem toetatud versioonini. Uuendamata jätmisel võib Bitwardeni tarkvara probleemselt käituda ning samuti suureneb turvarisk.",
-    "description": "Windows 8, 8.1 and Server 2012 R2 are no longer supported by Electron & Chromium. Show a notice on the login and lock screen while 2023.4.0 is the active version."
-  },
-  "windows8Deprecated": {
-    "message": "Kasutatav operatsioonisüsteem ei ole enam toetatud. Kui jätkad selle versiooni kasutust, võib Bitwardeni rakendus probleemselt käituda.",
-    "description": "Windows 8, 8.1 and Server 2012 R2 are no longer supported by Electron & Chromium. Show a notice on the login and lock screen after 2023.5.0 is released."
   }
 }
