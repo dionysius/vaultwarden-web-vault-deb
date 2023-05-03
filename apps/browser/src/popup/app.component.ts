@@ -9,7 +9,7 @@ import {
 import { DomSanitizer } from "@angular/platform-browser";
 import { NavigationEnd, Router, RouterOutlet } from "@angular/router";
 import { IndividualConfig, ToastrService } from "ngx-toastr";
-import { Subject, takeUntil } from "rxjs";
+import { filter, concatMap, Subject, takeUntil } from "rxjs";
 import Swal from "sweetalert2";
 
 import { DialogServiceAbstraction, SimpleDialogOptions } from "@bitwarden/angular/services/dialog";
@@ -61,6 +61,16 @@ export class AppComponent implements OnInit, OnDestroy {
     this.stateService.activeAccount$.pipe(takeUntil(this.destroy$)).subscribe((userId) => {
       this.activeUserId = userId;
     });
+
+    this.stateService.activeAccountUnlocked$
+      .pipe(
+        filter((unlocked) => unlocked),
+        concatMap(async () => {
+          await this.recordActivity();
+        }),
+        takeUntil(this.destroy$)
+      )
+      .subscribe();
 
     this.ngZone.runOutsideAngular(() => {
       window.onmousedown = () => this.recordActivity();
