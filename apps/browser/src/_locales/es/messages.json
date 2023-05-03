@@ -1854,7 +1854,7 @@
     "message": "Su contraseña maestra ha sido cambiada recientemente por un administrador de su organización. Para acceder a la caja fuerte, debe actualizarla ahora. Proceder le desconectará de su sesión actual, requiriendo que vuelva a iniciar sesión. Las sesiones activas en otros dispositivos pueden seguir estando activas durante una hora."
   },
   "updateWeakMasterPasswordWarning": {
-    "message": "Your master password does not meet one or more of your organization policies. In order to access the vault, you must update your master password now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
+    "message": "Su contraseña maestra no cumple con una o más de las políticas de su organización. Para acceder a la caja fuerte, debe actualizar su contraseña maestra ahora. Proceder le desconectará de su sesión actual, requiriendo que vuelva a iniciar sesión. Las sesiones activas en otros dispositivos pueden seguir estando activas durante hasta una hora."
   },
   "resetPasswordPolicyAutoEnroll": {
     "message": "Inscripción automática"
@@ -1888,7 +1888,7 @@
     }
   },
   "vaultTimeoutPolicyWithActionInEffect": {
-    "message": "Your organization policies are affecting your vault timeout. Maximum allowed vault timeout is $HOURS$ hour(s) and $MINUTES$ minute(s). Your vault timeout action is set to $ACTION$.",
+    "message": "Las políticas de su organización están afectando al tiempo de espera de tu caja fuerte. El tiempo de espera de tu caja fuerte máximo permitido es de $HOURS$ hora(s) y $MINUTES$ minuto(s). La acción de tiempo de espera de tu caja fuerte está establecida en $ACTION$.",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -1905,7 +1905,7 @@
     }
   },
   "vaultTimeoutActionPolicyInEffect": {
-    "message": "Your organization policies have set your vault timeout action to $ACTION$.",
+    "message": "Las políticas de su organización han establecido su acción de tiempo de espera de tu caja fuerte en $ACTION$.",
     "placeholders": {
       "action": {
         "content": "$1",
