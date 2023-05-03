@@ -5428,6 +5428,15 @@
     "message": "Бягучая арганізацыя",
     "description": "This is used by screen readers to indicate the organization that is currently being shown to the user."
   },
+  "accountLoggedInAsName": {
+    "message": "Уліковы запіс: вы ўвайшлі як $NAME$",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
   "accountSettings": {
     "message": "Налады ўліковага запісу"
   },

@@ -5428,6 +5428,15 @@
     "message": "Aktuelle Organisation",
     "description": "This is used by screen readers to indicate the organization that is currently being shown to the user."
   },
+  "accountLoggedInAsName": {
+    "message": "Konto: Angemeldet als $NAME$",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
   "accountSettings": {
     "message": "Kontoeinstellungen"
   },
@@ -6743,7 +6752,7 @@
     "message": "Bestehende Mitglieder auffordern, ihre Passwörter zu ändern"
   },
   "smProjectDeleteAccessRestricted": {
-    "message": "Du hast nicht die Berechtigungen, dieses Projekt zu löschen",
+    "message": "Dir fehlen die Berechtigungen, dieses Projekt zu löschen.",
     "description": "The individual description shown to the user when the user doesn't have access to delete a project."
   },
   "smProjectsDeleteBulkConfirmation": {

@@ -643,7 +643,7 @@
     "message": "Submeter"
   },
   "emailAddressDesc": {
-    "message": "Vai utilizar o seu endereço de email para iniciar sessão."
+    "message": "Utilizará o seu endereço de e-mail para iniciar sessão."
   },
   "yourName": {
     "message": "O seu nome"
@@ -2307,7 +2307,7 @@
     }
   },
   "limitedUsers": {
-    "message": "Limitado a $COUNT$ utilizadores (incluindo você)",
+    "message": "Limite de $COUNT$ utilizadores (incluindo a si)",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -5427,6 +5427,15 @@
   "currentOrganization": {
     "message": "Current organization",
     "description": "This is used by screen readers to indicate the organization that is currently being shown to the user."
+  },
+  "accountLoggedInAsName": {
+    "message": "Account: Logged in as $NAME$",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
   },
   "accountSettings": {
     "message": "Account settings"

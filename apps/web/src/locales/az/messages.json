@@ -5428,6 +5428,15 @@
     "message": "Hazırkı təşkilat",
     "description": "This is used by screen readers to indicate the organization that is currently being shown to the user."
   },
+  "accountLoggedInAsName": {
+    "message": "Hesab: $NAME$ olaraq giriş edildi",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
   "accountSettings": {
     "message": "Hesab tənzimləmələri"
   },
@@ -6743,11 +6752,11 @@
     "message": "Mövcud üzvlərin öz parollarını dəyişdirməsini tələb et"
   },
   "smProjectDeleteAccessRestricted": {
-    "message": "You don't have permissions to delete this project",
+    "message": "Bu layihəni silmək icazəniz yoxdur",
     "description": "The individual description shown to the user when the user doesn't have access to delete a project."
   },
   "smProjectsDeleteBulkConfirmation": {
-    "message": "The following projects can not be deleted. Would you like to continue?",
+    "message": "Aşağıdakı layihələr silinə bilməz. Davam etmək istəyirsiniz?",
     "description": "The message shown to the user when bulk deleting projects and the user doesn't have access to some projects."
   }
 }

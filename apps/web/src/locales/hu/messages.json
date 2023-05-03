@@ -5428,6 +5428,15 @@
     "message": "Jelenlegi szervezet",
     "description": "This is used by screen readers to indicate the organization that is currently being shown to the user."
   },
+  "accountLoggedInAsName": {
+    "message": "Account: Logged in as $NAME$",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
   "accountSettings": {
     "message": "Fiókbeállítások"
   },
@@ -5937,7 +5946,7 @@
     }
   },
   "deleteServiceAccountToast": {
-    "message": "Service account deleted"
+    "message": "A szolgáltatás fiók törlésre került"
   },
   "deleteServiceAccountsToast": {
     "message": "A szolgáltatás fiókok törlésre kerültek."
@@ -6561,7 +6570,7 @@
     "message": "KDF beállítások megváltoztatása"
   },
   "changeKdfLoggedOutWarning": {
-    "message": "Proceeding will log you out of all active sessions. You will need to log back in and complete two-step login setup. We recommend exporting your vault before changing your encryption settings to prevent data loss."
+    "message": "A folytatással minden aktív munkamenetből kijelentkezik. Újra be kell jelentkeznie, és ki kell töltenie a kétlépcsős bejelentkezési beállításokat. Az adatvesztés elkerülése érdekében javasoljuk, hogy a titkosítási beállítások módosítása előtt exportálja a széfet."
   },
   "secretsManagerBeta": {
     "message": "Titkos kód kezelő béta"
