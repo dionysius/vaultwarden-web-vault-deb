@@ -223,6 +223,9 @@ describe("LogInStrategy", () => {
         TwoFactorProviders2: { 0: null },
         error: "invalid_grant",
         error_description: "Two factor required.",
+        // only sent for emailed 2FA
+        email: undefined,
+        ssoEmail2faSessionToken: undefined,
       });
 
       apiService.postIdentityToken.mockResolvedValue(tokenResponse);
@@ -235,6 +238,39 @@ describe("LogInStrategy", () => {
       const expected = new AuthResult();
       expected.twoFactorProviders = new Map<TwoFactorProviderType, { [key: string]: string }>();
       expected.twoFactorProviders.set(0, null);
+      expect(result).toEqual(expected);
+    });
+
+    it("rejects login if 2FA via email is required + maps required information", async () => {
+      // Sample response where Email 2FA required
+
+      const userEmail = "kyle@bitwarden.com";
+      const ssoEmail2FaSessionToken =
+        "BwSsoEmail2FaSessionToken_CfDJ8AMrVzKqBFpKqzzsahUx8ubIi9AhHm6aLHDLpCUYc3QV3qC14iuSVkNg57Q7-kGQUn1z87bGY1WP58jFMNJ6ndaurIgQWNfPNN4DG-dBhvzarOAZ0RKY5oKT5futWm6_k9NMMGd8PcGGHg5Pq1_koOIwRtiXO3IpD-bemB7m8oEvbj__JTQP3Mcz-UediFlCbYBKU3wyIiBL_tF8hW5D4RAUa5ZzXIuauJiiCdDS7QOzBcqcusVAPGFfKjfIdAwFfKSOYd5KmYrhK7Y7ymjweP_igPYKB5aMfcVaYr5ux-fdffeJTGqtJorwNjLUYNv7KA";
+
+      const tokenResponse = new IdentityTwoFactorResponse({
+        TwoFactorProviders: ["1"],
+        TwoFactorProviders2: { "1": { Email: "k***@bitwarden.com" } },
+        error: "invalid_grant",
+        error_description: "Two factor required.",
+        // only sent for emailed 2FA
+        email: userEmail,
+        ssoEmail2faSessionToken: ssoEmail2FaSessionToken,
+      });
+
+      apiService.postIdentityToken.mockResolvedValue(tokenResponse);
+
+      const result = await passwordLogInStrategy.logIn(credentials);
+
+      expect(stateService.addAccount).not.toHaveBeenCalled();
+      expect(messagingService.send).not.toHaveBeenCalled();
+
+      const expected = new AuthResult();
+      expected.twoFactorProviders = new Map<TwoFactorProviderType, { [key: string]: string }>();
+      expected.twoFactorProviders.set(1, { Email: "k***@bitwarden.com" });
+      expected.email = userEmail;
+      expected.ssoEmail2FaSessionToken = ssoEmail2FaSessionToken;
+
       expect(result).toEqual(expected);
     });
 

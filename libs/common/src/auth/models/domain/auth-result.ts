@@ -8,6 +8,8 @@ export class AuthResult {
   resetMasterPassword = false;
   forcePasswordReset: ForceResetPasswordReason = ForceResetPasswordReason.None;
   twoFactorProviders: Map<TwoFactorProviderType, { [key: string]: string }> = null;
+  ssoEmail2FaSessionToken?: string;
+  email: string;
 
   get requiresCaptcha() {
     return !Utils.isNullOrWhitespace(this.captchaSiteKey);

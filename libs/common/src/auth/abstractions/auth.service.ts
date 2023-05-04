@@ -18,6 +18,7 @@ export abstract class AuthService {
   email: string;
   accessCode: string;
   authRequestId: string;
+  ssoEmail2FaSessionToken: string;
 
   logIn: (
     credentials:

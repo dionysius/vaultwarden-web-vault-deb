@@ -163,6 +163,8 @@ export abstract class LogInStrategy {
 
     this.twoFactorService.setProviders(response);
     this.captchaBypassToken = response.captchaToken ?? null;
+    result.ssoEmail2FaSessionToken = response.ssoEmail2faSessionToken;
+    result.email = response.email;
     return result;
   }
 
