@@ -20,6 +20,11 @@
     },
     {
       "packageNames": ["typescript"],
+      "matchUpdateTypes": ["major", "minor"],
+      "enabled": false
+    },
+    {
+      "packageNames": ["typescript"],
       "matchUpdateTypes": "patch"
     }
   ],
