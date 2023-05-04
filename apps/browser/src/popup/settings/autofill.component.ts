@@ -63,10 +63,6 @@ export class AutofillComponent implements OnInit {
     await this.stateService.setDefaultUriMatch(this.defaultUriMatch);
   }
 
-  AboutAutofill() {
-    BrowserApi.createNewTab("https://bitwarden.com/help/auto-fill-browser/");
-  }
-
   private async setAutofillKeyboardHelperText(command: string) {
     if (command) {
       this.autofillKeyboardHelperText = this.i18nService.t("autofillShortcutText", command);

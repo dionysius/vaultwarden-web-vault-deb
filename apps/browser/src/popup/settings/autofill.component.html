@@ -28,7 +28,17 @@
       {{ "enableAutoFillOnPageLoadDesc" | i18n }}
       <b>{{ "warning" | i18n }}</b
       >: {{ "experimentalFeature" | i18n }}
-      <a (click)="AboutAutofill()">{{ "learnMoreAboutAutofill" | i18n }}</a>
+      <a
+        href="https://bitwarden.com/help/auto-fill-browser/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {{ "learnMoreAboutAutofill" | i18n }}.
+        <i
+          [attr.aria-label]="'opensInANewWindow' | i18n"
+          class="bwi bwi-external-link bwi-sm bwi-fw"
+        ></i>
+      </a>
     </div>
   </div>
   <div class="box">
