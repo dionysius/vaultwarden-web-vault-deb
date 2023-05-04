@@ -259,6 +259,7 @@ $ng-dropdown-shadow: rgb(var(--color-secondary-100)) !default;
 }
 
 .ng-dropdown-panel {
+  z-index: 2050 !important;
   background-color: $ng-select-dropdown-bg;
   border: 1px solid $ng-select-dropdown-border;
   box-shadow: 0 1px 0 $ng-dropdown-shadow;
