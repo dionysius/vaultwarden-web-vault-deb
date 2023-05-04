@@ -124,7 +124,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     }
   });
 
-  //#region Message Processing
+  // Message Processing
 
   // Listen for messages from the background script
   // Note: onMessage events are fired when a message is sent from either an extension process
@@ -182,7 +182,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
       return true;
     }
   }
-  //#endregion Message Processing
+  // End Message Processing
 
   /**
    * Observe the DOM for changes and collect page details if forms are added to the page
@@ -367,9 +367,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
     });
   }
 
-  //#endregion Page Detail Collection Methods
+  // End Page Detail Collection Methods
 
-  // #region Form Detection and Submission Handling
+  // Form Detection and Submission Handling
 
   /**
    * Iterates through the given array of forms and adds an event listener to each form.
@@ -825,9 +825,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
     }, 500);
   }
 
-  //#endregion Form Detection and Submission Handling
+  // End Form Detection and Submission Handling
 
-  //#region Notification Bar Functions (open, close, height adjustment, etc.)
+  // Notification Bar Functions (open, close, height adjustment, etc.)
   function closeExistingAndOpenBar(type: string, typeData: any) {
     const barQueryParams = {
       type,
@@ -924,9 +924,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
       el.style.height = heightStyle;
     }
   }
-  //#endregion Notification Bar Functions (open, close, height adjustment, etc.)
+  // End Notification Bar Functions (open, close, height adjustment, etc.)
 
-  //#region Helper Functions
+  // Helper Functions
   function sendPlatformMessage(msg: any) {
     chrome.runtime.sendMessage(msg);
   }
@@ -992,5 +992,5 @@ document.addEventListener("DOMContentLoaded", (event) => {
     return theEl === document;
   }
 
-  //#endregion Helper Functions
+  // End Helper Functions
 });

@@ -69,7 +69,7 @@ export class DomainAddEditDialogComponent implements OnInit, OnDestroy {
     private dialogService: DialogServiceAbstraction
   ) {}
 
-  //#region Angular Method Implementations
+  // Angular Method Implementations
 
   async ngOnInit(): Promise<void> {
     // If we have data.orgDomain, then editing, otherwise creating new domain
@@ -81,9 +81,9 @@ export class DomainAddEditDialogComponent implements OnInit, OnDestroy {
     this.componentDestroyed$.complete();
   }
 
-  //#endregion
+  // End Angular Method Implementations
 
-  //#region Form methods
+  // Form methods
 
   async populateForm(): Promise<void> {
     if (this.data.orgDomain) {
@@ -118,9 +118,9 @@ export class DomainAddEditDialogComponent implements OnInit, OnDestroy {
     this.orgDomainService.copyDnsTxt(this.txtCtrl.value);
   }
 
-  //#endregion
+  // End Form methods
 
-  //#region Async Form Actions
+  // Async Form Actions
   saveDomain = async (): Promise<void> => {
     if (this.domainForm.invalid) {
       this.platformUtilsService.showToast("error", null, this.i18nService.t("domainFormInvalid"));
@@ -266,5 +266,5 @@ export class DomainAddEditDialogComponent implements OnInit, OnDestroy {
     this.dialogRef.close();
   };
 
-  //#endregion
+  // End Async Form Actions
 }
