@@ -1,12 +1,14 @@
-import { mock, mockReset } from "jest-mock-extended";
+import { mock } from "jest-mock-extended";
 import { lastValueFrom } from "rxjs";
 
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
+import { OrganizationDomainSsoDetailsResponse } from "@bitwarden/common/abstractions/organization-domain/responses/organization-domain-sso-details.response";
 import { OrganizationDomainResponse } from "@bitwarden/common/abstractions/organization-domain/responses/organization-domain.response";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { OrgDomainApiService } from "@bitwarden/common/services/organization-domain/org-domain-api.service";
 import { OrgDomainService } from "@bitwarden/common/services/organization-domain/org-domain.service";
+import { OrganizationDomainSsoDetailsRequest } from "@bitwarden/common/services/organization-domain/requests/organization-domain-sso-details.request";
 
 const mockedGetAllByOrgIdResponse: any = {
   data: [
@@ -66,6 +68,18 @@ const mockedOrgDomainServerResponse = {
 
 const mockedOrgDomainResponse = new OrganizationDomainResponse(mockedOrgDomainServerResponse);
 
+const mockedOrganizationDomainSsoDetailsServerResponse = {
+  id: "fake-guid",
+  organizationIdentifier: "fake-org-identifier",
+  ssoAvailable: true,
+  domainName: "fake-domain-name",
+  verifiedDate: "2022-12-16T21:36:28.68Z",
+};
+
+const mockedOrganizationDomainSsoDetailsResponse = new OrganizationDomainSsoDetailsResponse(
+  mockedOrganizationDomainSsoDetailsServerResponse
+);
+
 describe("Org Domain API Service", () => {
   let orgDomainApiService: OrgDomainApiService;
 
@@ -78,7 +92,7 @@ describe("Org Domain API Service", () => {
 
   beforeEach(() => {
     orgDomainService = new OrgDomainService(platformUtilService, i18nService);
-    mockReset(apiService);
+    jest.resetAllMocks();
 
     orgDomainApiService = new OrgDomainApiService(orgDomainService, apiService);
   });
@@ -168,6 +182,20 @@ describe("Org Domain API Service", () => {
     });
   });
 
-  // TODO: add Get Domain SSO method: Retrieves SSO provider information given a domain name
-  // when added on back end
+  it("getClaimedOrgDomainByEmail should call ApiService.send with correct parameters and return response", async () => {
+    const email = "test@example.com";
+    apiService.send.mockResolvedValue(mockedOrganizationDomainSsoDetailsServerResponse);
+
+    const result = await orgDomainApiService.getClaimedOrgDomainByEmail(email);
+
+    expect(apiService.send).toHaveBeenCalledWith(
+      "POST",
+      "/organizations/domain/sso/details",
+      new OrganizationDomainSsoDetailsRequest(email),
+      false, //anonymous
+      true
+    );
+
+    expect(result).toEqual(mockedOrganizationDomainSsoDetailsResponse);
+  });
 });
