@@ -22,7 +22,7 @@
       class="tw-ml-3 tw-rounded tw-border tw-border-solid tw-border-danger-500 tw-text-danger"
       *ngIf="!activeOrganization.enabled"
     >
-      <div class="tw-py-2 tw-px-5">
+      <div class="tw-px-5 tw-py-2">
         <i class="bwi bwi-exclamation-triangle" aria-hidden="true"></i>
         {{ "organizationIsDisabled" | i18n }}
       </div>
@@ -31,7 +31,7 @@
       class="tw-ml-3 tw-rounded tw-border tw-border-solid tw-border-info-500 tw-text-info"
       *ngIf="activeOrganization.isProviderUser"
     >
-      <div class="tw-py-2 tw-px-5">
+      <div class="tw-px-5 tw-py-2">
         <i class="bwi bwi-exclamation-triangle" aria-hidden="true"></i>
         {{ "accessingUsingProvider" | i18n : activeOrganization.providerName }}
       </div>
