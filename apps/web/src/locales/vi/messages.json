@@ -6563,11 +6563,8 @@
   "lowKdfIterations": {
     "message": "Low KDF Iterations"
   },
-  "lowKdfIterationsDesc": {
-    "message": "Increase your KDF encryption settings to improve the security of your account."
-  },
-  "changeKdfSettings": {
-    "message": "Thay đổi cài đặt KDF"
+  "updateLowKdfIterationsDesc": {
+    "message": "Update your encryption settings to meet new security recommendations and improve account protection."
   },
   "changeKdfLoggedOutWarning": {
     "message": "Proceeding will log you out of all active sessions. You will need to log back in and complete two-step login setup. We recommend exporting your vault before changing your encryption settings to prevent data loss."
@@ -6758,5 +6755,8 @@
   "smProjectsDeleteBulkConfirmation": {
     "message": "The following projects can not be deleted. Would you like to continue?",
     "description": "The message shown to the user when bulk deleting projects and the user doesn't have access to some projects."
+  },
+  "updateKdfSettings": {
+    "message": "Update KDF settings"
   }
 }

@@ -6563,11 +6563,8 @@
   "lowKdfIterations": {
     "message": "Iteraciones KDF bajas"
   },
-  "lowKdfIterationsDesc": {
-    "message": "Aumente los ajustes de cifrado de KDF para mejorar la seguridad de su cuenta."
-  },
-  "changeKdfSettings": {
-    "message": "Cambiar ajustes de KDF"
+  "updateLowKdfIterationsDesc": {
+    "message": "Actualice sus ajustes de cifrado para cumplir con las nuevas recomendaciones de seguridad y mejorar la protección de la cuenta."
   },
   "changeKdfLoggedOutWarning": {
     "message": "Al continuar, saldrá de todas las sesiones activas. Deberá volver a iniciar sesión y completar la configuración de inicio de sesión en dos pasos. Le recomendamos que exporte su caja fuerte antes de cambiar la configuración de cifrado para evitar la pérdida de datos."
@@ -6758,5 +6755,8 @@
   "smProjectsDeleteBulkConfirmation": {
     "message": "Los siguientes proyectos no pueden ser eliminados. ¿Desea continuar?",
     "description": "The message shown to the user when bulk deleting projects and the user doesn't have access to some projects."
+  },
+  "updateKdfSettings": {
+    "message": "Actualizar ajustes de KDF"
   }
 }

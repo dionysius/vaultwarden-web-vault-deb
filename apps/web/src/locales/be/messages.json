@@ -6563,11 +6563,8 @@
   "lowKdfIterations": {
     "message": "Нізкае значэнне ітэрацыі KDF"
   },
-  "lowKdfIterationsDesc": {
-    "message": "Наладзьце ўзровень шыфравання KDF, каб удасканаліць бяспеку вашага ўліковага запісу."
-  },
-  "changeKdfSettings": {
-    "message": "Змяніце налады KDF"
+  "updateLowKdfIterationsDesc": {
+    "message": "Абнавіце свае налады шыфравання, каб адпавядаць новым рэкамендацыям бяспекі і палепшыць абарону ўліковага запісу."
   },
   "changeKdfLoggedOutWarning": {
     "message": "Калі вы працягніце, то гэта прывядзе да выхаду з усіх актыўных сеансаў. Вам неабходна будзе паўторна выканаць уваход і прайсці двухэтапную праверку. Перад зменай наладаў шыфравання мы рэкамендуем экспартаваць ваша сховішча, каб прадухіліць магчымую страту даных."
@@ -6758,5 +6755,8 @@
   "smProjectsDeleteBulkConfirmation": {
     "message": "Наступныя праекты не могуць быць выдалены. Вы сапраўды хочаце працягнуць?",
     "description": "The message shown to the user when bulk deleting projects and the user doesn't have access to some projects."
+  },
+  "updateKdfSettings": {
+    "message": "Абнавіце налады KDF"
   }
 }

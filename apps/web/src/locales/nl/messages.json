@@ -5429,7 +5429,7 @@
     "description": "This is used by screen readers to indicate the organization that is currently being shown to the user."
   },
   "accountLoggedInAsName": {
-    "message": "Account: Logged in as $NAME$",
+    "message": "Account: Ingelogd als $NAME$",
     "placeholders": {
       "name": {
         "content": "$1",
@@ -6563,11 +6563,8 @@
   "lowKdfIterations": {
     "message": "Weinig KDF-iteraties"
   },
-  "lowKdfIterationsDesc": {
-    "message": "Verhoog je KDF-versleutelingsinstellingen om je account beter te beveiligen."
-  },
-  "changeKdfSettings": {
-    "message": "KDF-instellingen wijzigen"
+  "updateLowKdfIterationsDesc": {
+    "message": "Werk je versleutelingsinstellingen bij om aan de nieuwe beveiligingsaanbevelingen te voldoen en de bescherming van je account te verbeteren."
   },
   "changeKdfLoggedOutWarning": {
     "message": "Proceeding will log you out of all active sessions. You will need to log back in and complete two-step login setup. We recommend exporting your vault before changing your encryption settings to prevent data loss."
@@ -6730,7 +6727,7 @@
     }
   },
   "masterPasswordMinimumlength": {
-    "message": "Master password must be at least $LENGTH$ characters long.",
+    "message": "Hoofdwachtwoord moet minstens $LENGTH$ karakters lang zijn.",
     "placeholders": {
       "length": {
         "content": "$1",
@@ -6742,7 +6739,7 @@
     "message": "Sluiten"
   },
   "notAvailableForFreeOrganization": {
-    "message": "This feature is not available for free organizations. Contact your organization owner to upgrade."
+    "message": "Deze functie is niet beschikbaar voor gratis organisaties. Contacteer uw organisatie-eigenaar om te upgraden."
   },
   "smProjectSecretsNoItemsNoAccess": {
     "message": "Neem contact op met de beheerder van je organisatie om geheimen voor dit project te beheren.",
@@ -6758,5 +6755,8 @@
   "smProjectsDeleteBulkConfirmation": {
     "message": "De volgende projecten kunnen niet verwijderd worden. Wil je doorgaan?",
     "description": "The message shown to the user when bulk deleting projects and the user doesn't have access to some projects."
+  },
+  "updateKdfSettings": {
+    "message": "KDF instellingen bijwerken"
   }
 }

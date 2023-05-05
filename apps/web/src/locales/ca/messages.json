@@ -6563,11 +6563,8 @@
   "lowKdfIterations": {
     "message": "Iteracions de KDF baixes"
   },
-  "lowKdfIterationsDesc": {
-    "message": "Augmenteu la configuració de xifratge KDF per millorar la seguretat del compte."
-  },
-  "changeKdfSettings": {
-    "message": "Canvia la configuració de KDF"
+  "updateLowKdfIterationsDesc": {
+    "message": "Update your encryption settings to meet new security recommendations and improve account protection."
   },
   "changeKdfLoggedOutWarning": {
     "message": "Si continueu, tancareu totes les sessions actives. Haureu de tornar a iniciar sessió i completar la configuració d'inici de sessió en dos passos. Recomanem que exporteu la caixa forta abans de canviar la configuració d'encriptació per evitar la pèrdua de dades."
@@ -6758,5 +6755,8 @@
   "smProjectsDeleteBulkConfirmation": {
     "message": "Els projectes següents no es poden suprimir. Voleu continuar?",
     "description": "The message shown to the user when bulk deleting projects and the user doesn't have access to some projects."
+  },
+  "updateKdfSettings": {
+    "message": "Update KDF settings"
   }
 }

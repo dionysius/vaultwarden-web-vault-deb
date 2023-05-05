@@ -6563,11 +6563,8 @@
   "lowKdfIterations": {
     "message": "Itérations KDF basses"
   },
-  "lowKdfIterationsDesc": {
-    "message": "Augmentez vos paramètres de chiffrement KDF pour améliorer la sécurité de votre compte."
-  },
-  "changeKdfSettings": {
-    "message": "Changer les paramètres KDF"
+  "updateLowKdfIterationsDesc": {
+    "message": "Mettez à jour vos paramètres de chiffrement pour répondre à de nouvelles recommandations de sécurité et améliorer la protection de votre compte."
   },
   "changeKdfLoggedOutWarning": {
     "message": "En poursuivant, vous serez déconnecté de toutes les sessions actives. Vous devrez vous reconnecter et terminer le paramétrage de l'authentification à deux facteurs. Nous vous recommandons d'exporter votre coffre avant de modifier vos paramètres de chiffrement afin d'éviter toute perte de données."
@@ -6758,5 +6755,8 @@
   "smProjectsDeleteBulkConfirmation": {
     "message": "Les projets suivants ne peuvent pas être supprimés. Voulez-vous continuer ?",
     "description": "The message shown to the user when bulk deleting projects and the user doesn't have access to some projects."
+  },
+  "updateKdfSettings": {
+    "message": "Mettre à jour les paramètres KDF"
   }
 }

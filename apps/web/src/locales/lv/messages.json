@@ -6563,11 +6563,8 @@
   "lowKdfIterations": {
     "message": "Zems KDF atkārtojumu skaits"
   },
-  "lowKdfIterationsDesc": {
-    "message": "Jāpaaugstina KDF šifrēšanas iestatījumi, lai uzlabotu konta drošību."
-  },
-  "changeKdfSettings": {
-    "message": "Mainīt KDF iestatījumus"
+  "updateLowKdfIterationsDesc": {
+    "message": "Jāatjaunina šifrēšanas iestatījumi, lai atbilstu jaunajiem drošības ieteikumiem un uzlabotu konta aizsardzību."
   },
   "changeKdfLoggedOutWarning": {
     "message": "Turpinot notiks atteikšanās no visām aktīvām sesijām. Jums būs atkārtoti jāpiesakās un jāveic divpakapāju autentifikācijas uzstādīšana. Mēs iesakām eksportēt savu glabātavu pirms šifrēšanas iestatījumu maiņas lai novērstu datu zudumu."
@@ -6758,5 +6755,8 @@
   "smProjectsDeleteBulkConfirmation": {
     "message": "Zemāk esošos projektus nevar izdzēst. Vai turpināt?",
     "description": "The message shown to the user when bulk deleting projects and the user doesn't have access to some projects."
+  },
+  "updateKdfSettings": {
+    "message": "Atjaunināt KDF iestatījumus"
   }
 }

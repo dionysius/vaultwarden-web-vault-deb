@@ -6563,11 +6563,8 @@
   "lowKdfIterations": {
     "message": "Низький показник KDF-ітерацій"
   },
-  "lowKdfIterationsDesc": {
-    "message": "Налаштуйте вищий рівень KDF-шифрування для вдосконалення безпеки облікового запису."
-  },
-  "changeKdfSettings": {
-    "message": "Змінити налаштування KDF"
+  "updateLowKdfIterationsDesc": {
+    "message": "Update your encryption settings to meet new security recommendations and improve account protection."
   },
   "changeKdfLoggedOutWarning": {
     "message": "Продовжуючи, ви вийдете з усіх активних сеансів. Необхідно буде повторно виконати вхід і пройти двоетапну перевірку. Перед зміною налаштувань шифрування ми рекомендуємо експортувати ваше сховище, щоб запобігти можливій втраті даних."
@@ -6758,5 +6755,8 @@
   "smProjectsDeleteBulkConfirmation": {
     "message": "Неможливо видалити зазначені проєкти. Бажаєте продовжити?",
     "description": "The message shown to the user when bulk deleting projects and the user doesn't have access to some projects."
+  },
+  "updateKdfSettings": {
+    "message": "Update KDF settings"
   }
 }

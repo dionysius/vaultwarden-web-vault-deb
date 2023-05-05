@@ -289,11 +289,11 @@
     "description": "Search Card type"
   },
   "searchIdentity": {
-    "message": "Search identities",
+    "message": "搜尋身分",
     "description": "Search Identity type"
   },
   "searchSecureNote": {
-    "message": "Search secure notes",
+    "message": "搜尋安全筆記",
     "description": "Search Secure Note type"
   },
   "searchVault": {
@@ -480,13 +480,13 @@
     "message": "篩選"
   },
   "moveSelectedToOrg": {
-    "message": "移動所選至組織"
+    "message": "移動選取的項目至組織"
   },
   "deleteSelected": {
-    "message": "刪除所選"
+    "message": "刪除選取的項目"
   },
   "moveSelected": {
-    "message": "移動所選"
+    "message": "移動選取的項目"
   },
   "selectAll": {
     "message": "全選"
@@ -697,7 +697,7 @@
     "message": "必須再次輸入主密碼。"
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least $VALUE$ characters long.",
+    "message": "主密碼至少需 $VALUE$ 個字元。",
     "description": "The Master Password must be at least a specific number of characters long.",
     "placeholders": {
       "value": {
@@ -756,7 +756,7 @@
     "message": "沒有可列出的項目。"
   },
   "noPermissionToViewAllCollectionItems": {
-    "message": "You do not have permission to view all items in this collection."
+    "message": "您沒有檢視此集合中所有項目的權限。"
   },
   "noCollectionsInList": {
     "message": "沒有可列出的集合。"
@@ -768,7 +768,7 @@
     "message": "沒有可列出的使用者。"
   },
   "noMembersInList": {
-    "message": "There are no members to list."
+    "message": "沒有可列出的成員。"
   },
   "noEventsInList": {
     "message": "沒有可列出的事件。"
@@ -915,7 +915,7 @@
     }
   },
   "deleteSelectedCollectionsDesc": {
-    "message": "$COUNT$ collection(s) will be permanently deleted.",
+    "message": "$COUNT$ 個集合將被永久刪除。",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -1001,7 +1001,7 @@
     "message": "確認檔案密碼"
   },
   "accountRestrictedOptionDescription": {
-    "message": "Use your account encryption key, derived from your account's username and Master Password, to encrypt the export and restrict import to only the current Bitwarden account."
+    "message": "使用衍生自您帳號的使用者名稱與主密碼的加密密鑰，加密此匯出檔案，並限制只能匯入到目前的 Bitwarden 帳號。"
   },
   "passwordProtectedOptionDescription": {
     "message": "設定一組密碼來加密匯出的資料，並使用此密碼解密以匯入至任意 Bitwarden 帳戶。"
@@ -1096,7 +1096,7 @@
     "message": "繼續操作將變更您的帳戶電子郵件位址。這不會變更用兩步驟登入的電子郵件地址。您可以在兩步驟登入設定中變更它。"
   },
   "newEmail": {
-    "message": "新的電子郵件"
+    "message": "新的電子郵件地址"
   },
   "code": {
     "message": "代碼"
@@ -1114,7 +1114,7 @@
     "message": "接下來會登出目前工作階段，並要求您重新登入帳戶。其他裝置上的工作階段最多會保持一個小時。"
   },
   "emailChanged": {
-    "message": "電子郵件已儲存"
+    "message": "已變更電子郵件地址"
   },
   "logBackIn": {
     "message": "請重新登入。"
@@ -1156,7 +1156,7 @@
     }
   },
   "kdfIterationsWarning": {
-    "message": "若將 KDF 迭代次數設定太高會導致在 CPU 較慢的裝置上登入（與解鎖）Bitwarden 時降低效能。我們建議您以 $INCREMENT$ 的增量值遞增並在所有的裝置上測試。",
+    "message": "若將 KDF 迭代次數設太高會導致在 CPU 較慢的裝置上登入 ( 與解鎖) Bitwarden 時降低效能。我們建議您增加 $INCREMENT$ 的值並且在所有的裝置上測試。",
     "placeholders": {
       "increment": {
         "content": "$1",
@@ -1169,13 +1169,13 @@
     "description": "Memory refers to computer memory (RAM). MB is short for megabytes."
   },
   "argon2Warning": {
-    "message": "Setting your KDF iterations, memory, and parallelism too high could result in poor performance when logging into (and unlocking) Bitwarden on slower or older devices. We recommend changing these individually in small increments and then test all of your devices."
+    "message": "若將 KDF 疊代次數、記憶體占用與平行數量設定太高，可能導致在老舊裝置上登入（以及解鎖）時的效能不佳。我們建議分別並小量更動這些設定並在您所有的裝置上測試。"
   },
   "kdfParallelism": {
     "message": "KDF 平行數量"
   },
   "argon2Desc": {
-    "message": "Higher KDF iterations, memory, and parallelism can help protect your master password from being brute forced by an attacker."
+    "message": "更高的 KDF 疊代次數、記憶體占用與平行數量可以避免您的主密碼遭到攻擊者的暴力破解。"
   },
   "changeKdf": {
     "message": "變更 KDF"
@@ -1256,7 +1256,7 @@
     "message": "資料匯入成功"
   },
   "importSuccessNumberOfItems": {
-    "message": "A total of $AMOUNT$ items were imported.",
+    "message": "一共匯入了 $AMOUNT$ 個項目。",
     "placeholders": {
       "amount": {
         "content": "$1",
@@ -1265,7 +1265,7 @@
     }
   },
   "dataExportSuccess": {
-    "message": "Data successfully exported"
+    "message": "資料匯出成功"
   },
   "importWarning": {
     "message": "即將匯入資料至 $ORGANIZATION$。您的資料可能會與該組織中的成員共用，確定要繼續嗎？",
@@ -1919,7 +1919,7 @@
     }
   },
   "premiumPriceWithFamilyPlan": {
-    "message": "Go premium for just $PRICE$ /year, or get premium accounts for $FAMILYPLANUSERCOUNT$ users and unlimited family sharing with a ",
+    "message": "升級到進階會員只需 $PRICE$/年，或是可為 $FAMILYPLANUSERCOUNT$ 個使用者取得進階會員與無限制的家庭共享只需： ",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -2029,7 +2029,7 @@
     "message": "取消訂閱"
   },
   "subscriptionExpiration": {
-    "message": "Subscription expiration"
+    "message": "訂閱到期時間"
   },
   "subscriptionCanceled": {
     "message": "已取消訂閱"
@@ -2077,7 +2077,7 @@
     "message": "管理訂閱"
   },
   "launchCloudSubscription": {
-    "message": "Launch Cloud Subscription"
+    "message": "啟動雲端訂閱"
   },
   "storage": {
     "message": "儲存空間"
@@ -2472,7 +2472,7 @@
     "message": "您確定要刪除這個群組？"
   },
   "deleteMultipleGroupsConfirmation": {
-    "message": "Are you sure you want to delete the following $QUANTITY$ group(s)?",
+    "message": "您確定要刪除如下 $QUANTITY$ 個群組嗎?",
     "placeholders": {
       "quantity": {
         "content": "$1",
@@ -2499,7 +2499,7 @@
     "message": "外部 ID 可用於參考，或將此資源與使用者目錄等外部系統連結起來。"
   },
   "nestCollectionUnder": {
-    "message": "Nest collection under"
+    "message": "將集合嵌套在"
   },
   "accessControl": {
     "message": "存取控制"
@@ -2532,7 +2532,7 @@
     "message": "編輯成員"
   },
   "fieldOnTabRequiresAttention": {
-    "message": "A field on the '$TAB$' tab requires your attention.",
+    "message": "「$TAB$」分頁的欄位需要您的注意。",
     "placeholders": {
       "tab": {
         "content": "$1",
@@ -2805,7 +2805,7 @@
     }
   },
   "deletedCollections": {
-    "message": "Deleted collections"
+    "message": "已刪除的集合"
   },
   "deletedCollectionId": {
     "message": "已刪除集合 $ID$。",
@@ -2853,7 +2853,7 @@
     }
   },
   "deletedManyGroups": {
-    "message": "Deleted $QUANTITY$ group(s).",
+    "message": "已刪除 $QUANTITY$ 個群組。",
     "placeholders": {
       "quantity": {
         "content": "$1",
@@ -6563,11 +6563,8 @@
   "lowKdfIterations": {
     "message": "Low KDF Iterations"
   },
-  "lowKdfIterationsDesc": {
-    "message": "Increase your KDF encryption settings to improve the security of your account."
-  },
-  "changeKdfSettings": {
-    "message": "變更 KDF 設定"
+  "updateLowKdfIterationsDesc": {
+    "message": "Update your encryption settings to meet new security recommendations and improve account protection."
   },
   "changeKdfLoggedOutWarning": {
     "message": "Proceeding will log you out of all active sessions. You will need to log back in and complete two-step login setup. We recommend exporting your vault before changing your encryption settings to prevent data loss."
@@ -6758,5 +6755,8 @@
   "smProjectsDeleteBulkConfirmation": {
     "message": "The following projects can not be deleted. Would you like to continue?",
     "description": "The message shown to the user when bulk deleting projects and the user doesn't have access to some projects."
+  },
+  "updateKdfSettings": {
+    "message": "Update KDF settings"
   }
 }

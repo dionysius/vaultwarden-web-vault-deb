@@ -6563,11 +6563,8 @@
   "lowKdfIterations": {
     "message": "Aşağı KDF iterasiyaları"
   },
-  "lowKdfIterationsDesc": {
-    "message": "Hesabınızın güvənliyini artırmaq üçün KDF şifrələmə tənzimləmələrinizi yüksəldin."
-  },
-  "changeKdfSettings": {
-    "message": "KDF tənzimləmələrini dəyişdir"
+  "updateLowKdfIterationsDesc": {
+    "message": "Yeni güvənlik tövsiyələrini qarşılamaq və hesab qorumasını təkmilləşdirmək üçün şifrələmə tənzimləmələrinizi güncəlləyin."
   },
   "changeKdfLoggedOutWarning": {
     "message": "Proses, bütün aktiv seanslardan çıxış etməyinizi təmin edəcək. Təkrar giriş etməyiniz və iki mərhələli giriş quraşdırmasını tamamlamağınız lazımdır. Məlumat itkisinin qarşısını almaq üçün şifrələmə tənzimləmələrinizi dəyişdirməzdən əvvəl anbarınızı xaricə köçürməyinizi tövsiyə edirik."
@@ -6758,5 +6755,8 @@
   "smProjectsDeleteBulkConfirmation": {
     "message": "Aşağıdakı layihələr silinə bilməz. Davam etmək istəyirsiniz?",
     "description": "The message shown to the user when bulk deleting projects and the user doesn't have access to some projects."
+  },
+  "updateKdfSettings": {
+    "message": "KDF tənzimləmələrini güncəllə"
   }
 }

@@ -5429,7 +5429,7 @@
     "description": "This is used by screen readers to indicate the organization that is currently being shown to the user."
   },
   "accountLoggedInAsName": {
-    "message": "Account: Logged in as $NAME$",
+    "message": "Fiók: Bejelentkezve mint $NAME$",
     "placeholders": {
       "name": {
         "content": "$1",
@@ -6563,11 +6563,8 @@
   "lowKdfIterations": {
     "message": "Alacsony KDF iterációk"
   },
-  "lowKdfIterationsDesc": {
-    "message": "Növeljük meg a KDF titkosítási beállításait a fiók biztonságának javítása érdekében."
-  },
-  "changeKdfSettings": {
-    "message": "KDF beállítások megváltoztatása"
+  "updateLowKdfIterationsDesc": {
+    "message": "Frissítsük a titkosítási beállításokat, hogy megfeleljünk az új biztonsági ajánlásoknak és javítsuk a fiókvédelmet."
   },
   "changeKdfLoggedOutWarning": {
     "message": "A folytatással minden aktív munkamenetből kijelentkezik. Újra be kell jelentkeznie, és ki kell töltenie a kétlépcsős bejelentkezési beállításokat. Az adatvesztés elkerülése érdekében javasoljuk, hogy a titkosítási beállítások módosítása előtt exportálja a széfet."
@@ -6758,5 +6755,8 @@
   "smProjectsDeleteBulkConfirmation": {
     "message": "A következő projektek nem törölhetők. Szeretnénk folytatni?",
     "description": "The message shown to the user when bulk deleting projects and the user doesn't have access to some projects."
+  },
+  "updateKdfSettings": {
+    "message": "KDF beállítások frissítése"
   }
 }

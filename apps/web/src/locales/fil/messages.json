@@ -6563,11 +6563,8 @@
   "lowKdfIterations": {
     "message": "Mababang KDF Iterations"
   },
-  "lowKdfIterationsDesc": {
-    "message": "Dagdagan ang iyong mga setting ng pag encrypt ng KDF upang mapabuti ang seguridad ng iyong account."
-  },
-  "changeKdfSettings": {
-    "message": "Baguhin ang mga setting ng KDF"
+  "updateLowKdfIterationsDesc": {
+    "message": "Update your encryption settings to meet new security recommendations and improve account protection."
   },
   "changeKdfLoggedOutWarning": {
     "message": "Proceeding will log you out of all active sessions. You will need to log back in and complete two-step login setup. We recommend exporting your vault before changing your encryption settings to prevent data loss."
@@ -6758,5 +6755,8 @@
   "smProjectsDeleteBulkConfirmation": {
     "message": "The following projects can not be deleted. Would you like to continue?",
     "description": "The message shown to the user when bulk deleting projects and the user doesn't have access to some projects."
+  },
+  "updateKdfSettings": {
+    "message": "Update KDF settings"
   }
 }

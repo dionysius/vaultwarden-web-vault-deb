@@ -697,7 +697,7 @@
     "message": "Повторното въвеждане на главната парола е задължително."
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least $VALUE$ characters long.",
+    "message": "Главната парола трябва да е дълга поне $VALUE$ знака.",
     "description": "The Master Password must be at least a specific number of characters long.",
     "placeholders": {
       "value": {
@@ -6563,11 +6563,8 @@
   "lowKdfIterations": {
     "message": "Малко повторения за KDF"
   },
-  "lowKdfIterationsDesc": {
-    "message": "Увеличете настройките си за шифроване чрез KDF, за да защитите по-добре регистрацията си."
-  },
-  "changeKdfSettings": {
-    "message": "Промяна на настройките за KDF"
+  "updateLowKdfIterationsDesc": {
+    "message": "Update your encryption settings to meet new security recommendations and improve account protection."
   },
   "changeKdfLoggedOutWarning": {
     "message": "Proceeding will log you out of all active sessions. You will need to log back in and complete two-step login setup. We recommend exporting your vault before changing your encryption settings to prevent data loss."
@@ -6758,5 +6755,8 @@
   "smProjectsDeleteBulkConfirmation": {
     "message": "Следните проекти не могат да бъдат изтрити. Искате ли да продължите?",
     "description": "The message shown to the user when bulk deleting projects and the user doesn't have access to some projects."
+  },
+  "updateKdfSettings": {
+    "message": "Update KDF settings"
   }
 }

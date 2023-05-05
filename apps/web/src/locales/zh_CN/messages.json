@@ -5429,7 +5429,7 @@
     "description": "This is used by screen readers to indicate the organization that is currently being shown to the user."
   },
   "accountLoggedInAsName": {
-    "message": "Account: Logged in as $NAME$",
+    "message": "账户: 以 $NAME$ 登录",
     "placeholders": {
       "name": {
         "content": "$1",
@@ -6563,11 +6563,8 @@
   "lowKdfIterations": {
     "message": "较低的 KDF 迭代"
   },
-  "lowKdfIterationsDesc": {
-    "message": "增加您的 KDF 加密设置，以提高您账户的安全性。"
-  },
-  "changeKdfSettings": {
-    "message": "更改 KDF 设置"
+  "updateLowKdfIterationsDesc": {
+    "message": "更新您的加密设置以满足新的安全建议以及增强账户保护。"
   },
   "changeKdfLoggedOutWarning": {
     "message": "接下来将会注销您所有的活动会话。您将需要重新登录并完成两步登录设置。我们建议在更改您的加密设置之前导出您的密码库，以防数据丢失。"
@@ -6758,5 +6755,8 @@
   "smProjectsDeleteBulkConfirmation": {
     "message": "无法删除下列项目。是否继续？",
     "description": "The message shown to the user when bulk deleting projects and the user doesn't have access to some projects."
+  },
+  "updateKdfSettings": {
+    "message": "更新 KDF 设置"
   }
 }

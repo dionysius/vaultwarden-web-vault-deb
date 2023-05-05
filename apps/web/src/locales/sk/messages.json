@@ -5429,7 +5429,7 @@
     "description": "This is used by screen readers to indicate the organization that is currently being shown to the user."
   },
   "accountLoggedInAsName": {
-    "message": "Account: Logged in as $NAME$",
+    "message": "Konto: Prihlásený ako $NAME$",
     "placeholders": {
       "name": {
         "content": "$1",
@@ -6563,11 +6563,8 @@
   "lowKdfIterations": {
     "message": "Nízky počet iterácií KDF"
   },
-  "lowKdfIterationsDesc": {
-    "message": "Zvýšte nastavenia šifrovania KDF, aby ste zvýšili bezpečnosť svojho účtu."
-  },
-  "changeKdfSettings": {
-    "message": "Zmeniť nastavenia KDF"
+  "updateLowKdfIterationsDesc": {
+    "message": "Aktualizujte vaše nastavenie šifrovania aby ste boli v súlade s bezpečnostnými odporúčaniami a vylepšili si tak ochranu vášho konta."
   },
   "changeKdfLoggedOutWarning": {
     "message": "Proceeding will log you out of all active sessions. You will need to log back in and complete two-step login setup. We recommend exporting your vault before changing your encryption settings to prevent data loss."
@@ -6758,5 +6755,8 @@
   "smProjectsDeleteBulkConfirmation": {
     "message": "Následujúce projekty na nedajú odstrániť. Chcete pokračovať?",
     "description": "The message shown to the user when bulk deleting projects and the user doesn't have access to some projects."
+  },
+  "updateKdfSettings": {
+    "message": "Aktualizovať nastavenia KDF"
   }
 }

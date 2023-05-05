@@ -6563,11 +6563,8 @@
   "lowKdfIterations": {
     "message": "Niska liczba iteracji KDF"
   },
-  "lowKdfIterationsDesc": {
-    "message": "Zwiększ ustawienia szyfrowania KDF, aby poprawić bezpieczeństwo swojego konta."
-  },
-  "changeKdfSettings": {
-    "message": "Zmień ustawienia KDF"
+  "updateLowKdfIterationsDesc": {
+    "message": "Zaktualizuj ustawienia szyfrowania, aby spełnić nowe zalecenia bezpieczeństwa i poprawić ochronę konta."
   },
   "changeKdfLoggedOutWarning": {
     "message": "Kontynuowanie spowoduje wylogowanie ze wszystkich aktywnych sesji. Będzie trzeba zalogować się ponownie i ukończyć konfigurację logowania dwuetapowego. Zalecamy wyeksportowanie sejfu przed zmianą ustawień szyfrowania, aby zapobiec utracie danych."
@@ -6758,5 +6755,8 @@
   "smProjectsDeleteBulkConfirmation": {
     "message": "Następujące projekty nie mogą zostać usunięte. Czy chcesz kontynuować?",
     "description": "The message shown to the user when bulk deleting projects and the user doesn't have access to some projects."
+  },
+  "updateKdfSettings": {
+    "message": "Zaktualizuj ustawienia KDF"
   }
 }
