@@ -2135,7 +2135,7 @@
     "message": "Slabé a odhalené hlavní heslo"
   },
   "weakAndBreachedMasterPasswordDesc": {
-    "message": "Slabeé heslo bylo nalezeno mezi odhalenými hesly. K zabezpečení Vašeho účtu používejte silné a jedinečné heslo. Opravdu chcete používat toto heslo?"
+    "message": "Slabé heslo bylo nalezeno mezi odhalenými hesly. K zabezpečení Vašeho účtu používejte silné a jedinečné heslo. Opravdu chcete používat toto heslo?"
   },
   "checkForBreaches": {
     "message": "Zkontrolovat heslo, zda nebylo odhaleno"
@@ -2202,5 +2202,8 @@
         "example": "CTRL+Shift+L"
       }
     }
+  },
+  "opensInANewWindow": {
+    "message": "Otevře se v novém okně"
   }
 }
