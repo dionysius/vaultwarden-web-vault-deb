@@ -26,8 +26,34 @@ index 5a650b3673..275c34f726 100644
 +    <div class="container footer text-muted content">Vaultwarden (unofficial Bitwarden&reg; server)</div>
    </body>
  </html>
+diff --git a/apps/web/src/app/admin-console/organizations/create/organization-information.component.html b/apps/web/src/app/admin-console/organizations/create/organization-information.component.html
+index 6029cfd833..04324b7d19 100644
+--- a/apps/web/src/app/admin-console/organizations/create/organization-information.component.html
++++ b/apps/web/src/app/admin-console/organizations/create/organization-information.component.html
+@@ -12,7 +12,7 @@
+       <input bitInput type="text" formControlName="name" />
+     </bit-form-field>
+     <bit-form-field class="tw-w-1/2">
+-      <bit-label>{{ "billingEmail" | i18n }}</bit-label>
++      <bit-label>{{ "email" | i18n }}</bit-label>
+       <input bitInput type="email" formControlName="billingEmail" />
+     </bit-form-field>
+     <bit-form-field class="tw-w-1/2" *ngIf="isProvider">
+diff --git a/apps/web/src/app/admin-console/organizations/settings/account.component.html b/apps/web/src/app/admin-console/organizations/settings/account.component.html
+index 096ae89015..d7f1b9356a 100644
+--- a/apps/web/src/app/admin-console/organizations/settings/account.component.html
++++ b/apps/web/src/app/admin-console/organizations/settings/account.component.html
+@@ -30,7 +30,7 @@
+         />
+       </div>
+       <div class="form-group">
+-        <label for="billingEmail">{{ "billingEmail" | i18n }}</label>
++        <label for="billingEmail">{{ "email" | i18n }}</label>
+         <input
+           id="billingEmail"
+           class="form-control"
 diff --git a/apps/web/src/app/app.component.ts b/apps/web/src/app/app.component.ts
-index d3b3e57e8d..6bc8d5dadc 100644
+index 6826da0467..5f5d1e964b 100644
 --- a/apps/web/src/app/app.component.ts
 +++ b/apps/web/src/app/app.component.ts
 @@ -172,6 +172,10 @@ export class AppComponent implements OnDestroy, OnInit {
@@ -41,6 +67,19 @@ index d3b3e57e8d..6bc8d5dadc 100644
              this.showToast(message);
              break;
            case "setFullWidth":
+diff --git a/apps/web/src/app/billing/organizations/organization-billing-history-view.component.ts b/apps/web/src/app/billing/organizations/organization-billing-history-view.component.ts
+index 22cea10acb..22bb116c1c 100644
+--- a/apps/web/src/app/billing/organizations/organization-billing-history-view.component.ts
++++ b/apps/web/src/app/billing/organizations/organization-billing-history-view.component.ts
+@@ -45,7 +45,7 @@ export class OrgBillingHistoryViewComponent implements OnInit, OnDestroy {
+       return;
+     }
+     this.loading = true;
+-    this.billing = await this.organizationApiService.getBilling(this.organizationId);
++    this.billing = null
+     this.loading = false;
+   }
+ }
 diff --git a/apps/web/src/app/core/init.service.ts b/apps/web/src/app/core/init.service.ts
 index 1ecd7d3fef..0dd5f049c7 100644
 --- a/apps/web/src/app/core/init.service.ts
@@ -85,10 +124,10 @@ index aa9041875a..6809363759 100644
          while (child.firstChild) {
            child = child.firstChild;
 diff --git a/apps/web/src/app/core/web-platform-utils.service.ts b/apps/web/src/app/core/web-platform-utils.service.ts
-index c8b95538da..67fe582be4 100644
+index 302d030217..64a59b47bd 100644
 --- a/apps/web/src/app/core/web-platform-utils.service.ts
 +++ b/apps/web/src/app/core/web-platform-utils.service.ts
-@@ -195,15 +195,15 @@ export class WebPlatformUtilsService implements PlatformUtilsService {
+@@ -194,15 +194,15 @@ export class WebPlatformUtilsService implements PlatformUtilsService {
    }
  
    isDev(): boolean {
@@ -108,7 +147,7 @@ index c8b95538da..67fe582be4 100644
  
    copyToClipboard(text: string, options?: any): void | boolean {
 diff --git a/apps/web/src/app/layouts/footer.component.html b/apps/web/src/app/layouts/footer.component.html
-index 98836bfd5d..1239167c43 100644
+index 8cacb4ceba..37d7cfb031 100644
 --- a/apps/web/src/app/layouts/footer.component.html
 +++ b/apps/web/src/app/layouts/footer.component.html
 @@ -1,6 +1,6 @@
@@ -118,9 +157,9 @@ index 98836bfd5d..1239167c43 100644
 +    <div class="col">Vaultwarden (unofficial Bitwarden&reg; server)</div>
      <div class="col text-center"></div>
      <div class="col text-right">
-       {{ "versionNumber" | i18n: version }}
+       {{ "versionNumber" | i18n : version }}
 diff --git a/apps/web/src/app/layouts/frontend-layout.component.html b/apps/web/src/app/layouts/frontend-layout.component.html
-index d737bc9f02..6a312c0b1f 100644
+index 0c9b1d1d57..22c632f4f5 100644
 --- a/apps/web/src/app/layouts/frontend-layout.component.html
 +++ b/apps/web/src/app/layouts/frontend-layout.component.html
 @@ -1,5 +1,5 @@
@@ -128,17 +167,17 @@ index d737bc9f02..6a312c0b1f 100644
  <div class="container my-5 text-muted text-center">
 -  &copy; {{ year }} Bitwarden Inc. <br />
 +  Vaultwarden (unofficial Bitwarden&reg; server)<br />
-   {{ "versionNumber" | i18n: version }}
+   {{ "versionNumber" | i18n : version }}
  </div>
 diff --git a/apps/web/src/app/layouts/navbar.component.html b/apps/web/src/app/layouts/navbar.component.html
-index 77c1416504..0e24b026e4 100644
+index a9e035d1ab..0e24b026e4 100644
 --- a/apps/web/src/app/layouts/navbar.component.html
 +++ b/apps/web/src/app/layouts/navbar.component.html
 @@ -2,7 +2,7 @@
  <!-- eslint-disable @angular-eslint/template/button-has-type -->
  <nav class="navbar navbar-expand navbar-dark" [ngClass]="{ 'nav-background-alt': selfHosted }">
    <div class="container">
--    <a class="navbar-brand" routerLink="/" appA11yTitle="{{ 'pageTitle' | i18n: 'Bitwarden' }}">
+-    <a class="navbar-brand" routerLink="/" appA11yTitle="{{ 'pageTitle' | i18n : 'Bitwarden' }}">
 +    <a class="navbar-brand" routerLink="/" appA11yTitle="{{ 'pageTitle' | i18n: 'Vaultwarden' }}">
        <i class="bwi bwi-shield" aria-hidden="true"></i>
      </a>
@@ -152,67 +191,8 @@ index 77c1416504..0e24b026e4 100644
                <i class="bwi bwi-fw bwi-question-circle" aria-hidden="true"></i>
                {{ "getHelp" | i18n }}
              </a>
-diff --git a/apps/web/src/app/organizations/create/organization-information.component.html b/apps/web/src/app/organizations/create/organization-information.component.html
-index 6029cfd833..04324b7d19 100644
---- a/apps/web/src/app/organizations/create/organization-information.component.html
-+++ b/apps/web/src/app/organizations/create/organization-information.component.html
-@@ -12,7 +12,7 @@
-       <input bitInput type="text" formControlName="name" />
-     </bit-form-field>
-     <bit-form-field class="tw-w-1/2">
--      <bit-label>{{ "billingEmail" | i18n }}</bit-label>
-+      <bit-label>{{ "email" | i18n }}</bit-label>
-       <input bitInput type="email" formControlName="billingEmail" />
-     </bit-form-field>
-     <bit-form-field class="tw-w-1/2" *ngIf="isProvider">
-diff --git a/apps/web/src/app/organizations/settings/account.component.html b/apps/web/src/app/organizations/settings/account.component.html
-index 1d11412bfb..c7911e418e 100644
---- a/apps/web/src/app/organizations/settings/account.component.html
-+++ b/apps/web/src/app/organizations/settings/account.component.html
-@@ -30,7 +30,7 @@
-         />
-       </div>
-       <div class="form-group">
--        <label for="billingEmail">{{ "billingEmail" | i18n }}</label>
-+        <label for="billingEmail">{{ "email" | i18n }}</label>
-         <input
-           id="billingEmail"
-           class="form-control"
-diff --git a/apps/web/src/app/send/access.component.html b/apps/web/src/app/send/access.component.html
-index 91ae288d3c..2310805cae 100644
---- a/apps/web/src/app/send/access.component.html
-+++ b/apps/web/src/app/send/access.component.html
-@@ -137,15 +137,6 @@
-     <div class="col-12 text-center mt-5 text-muted">
-       <p class="mb-0">
-         {{ "sendAccessTaglineProductDesc" | i18n }}<br />
--        {{ "sendAccessTaglineLearnMore" | i18n }}
--        <a href="https://www.bitwarden.com/products/send?source=web-vault" target="_blank"
--          >Bitwarden Send</a
--        >
--        {{ "sendAccessTaglineOr" | i18n }}
--        <a href="https://vault.bitwarden.com/#/register" target="_blank">{{
--          "sendAccessTaglineSignUp" | i18n
--        }}</a>
--        {{ "sendAccessTaglineTryToday" | i18n }}
-       </p>
-     </div>
-   </div>
-diff --git a/apps/web/src/app/settings/billing-history-view.component.ts b/apps/web/src/app/settings/billing-history-view.component.ts
-index 4a2ff349a1..c8090b08e5 100644
---- a/apps/web/src/app/settings/billing-history-view.component.ts
-+++ b/apps/web/src/app/settings/billing-history-view.component.ts
-@@ -34,7 +34,7 @@ export class BillingHistoryViewComponent implements OnInit {
-       return;
-     }
-     this.loading = true;
--    this.billing = await this.apiService.getUserBillingHistory();
-+    this.billing = null;
-     this.loading = false;
-   }
- }
 diff --git a/apps/web/src/app/settings/settings.component.ts b/apps/web/src/app/settings/settings.component.ts
-index d85ef54d96..a27c01489c 100644
+index c65f22b00d..7a01fd8f78 100644
 --- a/apps/web/src/app/settings/settings.component.ts
 +++ b/apps/web/src/app/settings/settings.component.ts
 @@ -55,10 +55,6 @@ export class SettingsComponent implements OnInit, OnDestroy {
@@ -240,28 +220,48 @@ index 22a99e03fa..423b022b8d 100644
        // Allow only valid email forwarders for self host
        this.forwardOptions = this.forwardOptions.filter((forwarder) => forwarder.validForSelfHosted);
      }
+diff --git a/apps/web/src/app/tools/send/access.component.html b/apps/web/src/app/tools/send/access.component.html
+index 634d0bbf40..0d4e97a2a9 100644
+--- a/apps/web/src/app/tools/send/access.component.html
++++ b/apps/web/src/app/tools/send/access.component.html
+@@ -137,15 +137,6 @@
+     <div class="col-12 text-center mt-5 text-muted">
+       <p class="mb-0">
+         {{ "sendAccessTaglineProductDesc" | i18n }}<br />
+-        {{ "sendAccessTaglineLearnMore" | i18n }}
+-        <a href="https://www.bitwarden.com/products/send?source=web-vault" target="_blank"
+-          >Bitwarden Send</a
+-        >
+-        {{ "sendAccessTaglineOr" | i18n }}
+-        <a href="https://vault.bitwarden.com/#/register" target="_blank">{{
+-          "sendAccessTaglineSignUp" | i18n
+-        }}</a>
+-        {{ "sendAccessTaglineTryToday" | i18n }}
+       </p>
+     </div>
+   </div>
 diff --git a/apps/web/src/app/vault/individual-vault/vault.component.ts b/apps/web/src/app/vault/individual-vault/vault.component.ts
-index 8286bbf460..ddf0d2dec1 100644
+index c779418009..25a3b04c88 100644
 --- a/apps/web/src/app/vault/individual-vault/vault.component.ts
 +++ b/apps/web/src/app/vault/individual-vault/vault.component.ts
-@@ -101,11 +101,7 @@ export class VaultComponent implements OnInit, OnDestroy {
+@@ -175,11 +175,7 @@ export class VaultComponent implements OnInit, OnDestroy {
+ 
+   async ngOnInit() {
      this.showBrowserOutdated = window.navigator.userAgent.indexOf("MSIE") !== -1;
-     // disable warning for March release -> add await this.isLowKdfIteration(); when ready
-     this.showLowKdf = false;
 -    this.trashCleanupWarning = this.i18nService.t(
 -      this.platformUtilsService.isSelfHost()
 -        ? "trashCleanupWarningSelfHosted"
 -        : "trashCleanupWarning"
 -    );
-+    this.trashCleanupWarning = this.i18nService.t("trashCleanupWarningSelfHosted");
++    this.trashCleanupWarning =this.i18nService.t("trashCleanupWarningSelfHosted");
  
-     this.route.queryParams
-       .pipe(
+     const firstSetup$ = this.route.queryParams.pipe(
+       first(),
 diff --git a/apps/web/src/app/vault/org-vault/vault.component.ts b/apps/web/src/app/vault/org-vault/vault.component.ts
-index 37104a9a72..af019cabea 100644
+index fce2097a58..26de4ef006 100644
 --- a/apps/web/src/app/vault/org-vault/vault.component.ts
 +++ b/apps/web/src/app/vault/org-vault/vault.component.ts
-@@ -81,11 +81,7 @@ export class VaultComponent implements OnInit, OnDestroy {
+@@ -165,11 +165,7 @@ export class VaultComponent implements OnInit, OnDestroy {
    ) {}
  
    async ngOnInit() {
@@ -272,13 +272,13 @@ index 37104a9a72..af019cabea 100644
 -    );
 +    this.trashCleanupWarning = this.i18nService.t("trashCleanupWarningSelfHosted");
  
-     this.route.parent.params.pipe(takeUntil(this.destroy$)).subscribe((params) => {
-       this.organization = this.organizationService.get(params.organizationId);
+     const filter$ = this.routedVaultFilterService.filter$;
+     const organizationId$ = filter$.pipe(
 diff --git a/apps/web/src/auth/settings/two-factor-authenticator.component.ts b/apps/web/src/auth/settings/two-factor-authenticator.component.ts
-index a82c54d346..af9aaf9a04 100644
+index 55f1840901..f99c4a8689 100644
 --- a/apps/web/src/auth/settings/two-factor-authenticator.component.ts
 +++ b/apps/web/src/auth/settings/two-factor-authenticator.component.ts
-@@ -99,11 +99,11 @@ export class TwoFactorAuthenticatorComponent
+@@ -100,11 +100,11 @@ export class TwoFactorAuthenticatorComponent
        new window.QRious({
          element: document.getElementById("qr"),
          value:
@@ -393,7 +393,7 @@ index 0003f521c7..32ecf5112e 100644
 +}
 +/**** END Vaultwarden CHANGES ****/
 diff --git a/libs/angular/src/components/register.component.ts b/libs/angular/src/components/register.component.ts
-index b694ac66be..591af4d945 100644
+index 2eb6d500ce..38a9a0b9ad 100644
 --- a/libs/angular/src/components/register.component.ts
 +++ b/libs/angular/src/components/register.component.ts
 @@ -36,7 +36,7 @@ export class RegisterComponent extends CaptchaProtectedComponent implements OnIn
