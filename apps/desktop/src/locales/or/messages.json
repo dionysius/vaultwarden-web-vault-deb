@@ -3,7 +3,7 @@
     "message": "Bitwarden"
   },
   "filters": {
-    "message": "Filters"
+    "message": "ଶୋଧକ"
   },
   "allItems": {
     "message": "All items"
@@ -21,16 +21,16 @@
     "message": "Card"
   },
   "typeIdentity": {
-    "message": "Identity"
+    "message": "ପରିଚୟ"
   },
   "typeSecureNote": {
     "message": "Secure note"
   },
   "folders": {
-    "message": "Folders"
+    "message": "ଫୋଲ୍ଡର୍"
   },
   "collections": {
-    "message": "Collections"
+    "message": "ସଂଗ୍ରହ"
   },
   "searchVault": {
     "message": "Search vault"
@@ -70,7 +70,7 @@
     "message": "View item"
   },
   "name": {
-    "message": "Name"
+    "message": "ନାମ"
   },
   "uri": {
     "message": "URI"
@@ -89,10 +89,10 @@
     "message": "New URI"
   },
   "username": {
-    "message": "Username"
+    "message": "ଉପଭୋକ୍ତା ନାମ"
   },
   "password": {
-    "message": "Password"
+    "message": "ପାସ୍‌ୱର୍ଡ଼"
   },
   "passphrase": {
     "message": "Passphrase"
@@ -139,7 +139,7 @@
     "message": "Cardholder name"
   },
   "number": {
-    "message": "Number"
+    "message": "ସଂଖ୍ୟା"
   },
   "brand": {
     "message": "Brand"
@@ -166,7 +166,7 @@
     "message": "License number"
   },
   "email": {
-    "message": "Email"
+    "message": "ଇମେଲ୍"
   },
   "phone": {
     "message": "Phone"
@@ -184,65 +184,65 @@
     "message": "An error has occurred."
   },
   "error": {
-    "message": "Error"
+    "message": "ତ୍ରୁଟି"
   },
   "january": {
-    "message": "January"
+    "message": "ଜାନୁଆରୀ"
   },
   "february": {
-    "message": "February"
+    "message": "ଫେବୃଆରୀ"
   },
   "march": {
-    "message": "March"
+    "message": "ମାର୍ଚ୍ଚ"
   },
   "april": {
-    "message": "April"
+    "message": "ଅପ୍ରେଲ"
   },
   "may": {
-    "message": "May"
+    "message": "ମଇ"
   },
   "june": {
-    "message": "June"
+    "message": "ଜୁନ"
   },
   "july": {
-    "message": "July"
+    "message": "ଜୁଲାଇ"
   },
   "august": {
-    "message": "August"
+    "message": "ଅଗଷ୍ଟ"
   },
   "september": {
-    "message": "September"
+    "message": "ସେପ୍ଟେମ୍ବର"
   },
   "october": {
-    "message": "October"
+    "message": "ଅକ୍ଟୋବର"
   },
   "november": {
-    "message": "November"
+    "message": "ନଵେମ୍ବର"
   },
   "december": {
-    "message": "December"
+    "message": "ଡିସେମ୍ବର"
   },
   "ex": {
-    "message": "ex.",
+    "message": "ଯଥା",
     "description": "Short abbreviation for 'example'."
   },
   "title": {
-    "message": "Title"
+    "message": "ଆଖ୍ୟା"
   },
   "mr": {
-    "message": "Mr"
+    "message": "ଶ୍ରୀମାନ୍"
   },
   "mrs": {
-    "message": "Mrs"
+    "message": "ଶ୍ରୀମତୀ"
   },
   "ms": {
-    "message": "Ms"
+    "message": "ସୁଶ୍ରୀ"
   },
   "mx": {
-    "message": "Mx"
+    "message": "ଶ୍ରୀ"
   },
   "dr": {
-    "message": "Dr"
+    "message": "ଡଃ"
   },
   "expirationMonth": {
     "message": "Expiration month"
@@ -254,34 +254,34 @@
     "message": "Select"
   },
   "other": {
-    "message": "Other"
+    "message": "ଅନ୍ୟ"
   },
   "generatePassword": {
     "message": "Generate password"
   },
   "type": {
-    "message": "Type"
+    "message": "ପ୍ରକାର"
   },
   "firstName": {
-    "message": "First name"
+    "message": "ପ୍ରଥମ ନାମ"
   },
   "middleName": {
-    "message": "Middle name"
+    "message": "ମଝି ନାମ"
   },
   "lastName": {
-    "message": "Last name"
+    "message": "ଶେଷ ନାମ"
   },
   "fullName": {
-    "message": "Full name"
+    "message": "ପୁରା ନାମ"
   },
   "address1": {
-    "message": "Address 1"
+    "message": "ଠିକଣା ୧"
   },
   "address2": {
-    "message": "Address 2"
+    "message": "ଠିକଣା ୨"
   },
   "address3": {
-    "message": "Address 3"
+    "message": "ଠିକଣା ୩"
   },
   "cityTown": {
     "message": "City / Town"
@@ -293,7 +293,7 @@
     "message": "Zip / Postal code"
   },
   "country": {
-    "message": "Country"
+    "message": "ଦେଶ"
   },
   "save": {
     "message": "Save"
@@ -308,13 +308,13 @@
     "message": "Favorite"
   },
   "edit": {
-    "message": "Edit"
+    "message": "ସମ୍ପାଦନା"
   },
   "authenticatorKeyTotp": {
     "message": "Authenticator key (TOTP)"
   },
   "folder": {
-    "message": "Folder"
+    "message": "ଫୋଲ୍ଡର୍"
   },
   "newCustomField": {
     "message": "New custom field"
@@ -346,7 +346,7 @@
     "message": "Remove"
   },
   "nameRequired": {
-    "message": "Name is required."
+    "message": "ନାଁ ଆଵଶ୍ୟକ ଅଟେ।"
   },
   "addedItem": {
     "message": "Item added"
