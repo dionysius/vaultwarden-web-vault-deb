@@ -13,59 +13,70 @@ import { ProjectsModule } from "./projects/projects.module";
 import { SecretsModule } from "./secrets/secrets.module";
 import { ServiceAccountsModule } from "./service-accounts/service-accounts.module";
 import { SettingsModule } from "./settings/settings.module";
-import { SMGuard } from "./sm.guard";
+import { canActivateSM } from "./sm.guard";
 import { TrashModule } from "./trash/trash.module";
 
 const routes: Routes = [
   buildFlaggedRoute("secretsManager", {
-    path: ":organizationId",
-    component: LayoutComponent,
-    canActivate: [AuthGuard, OrganizationPermissionsGuard, SMGuard],
-    data: {
-      organizationPermissions: (org: Organization) => org.canAccessSecretsManager,
-    },
+    path: "",
     children: [
       {
         path: "",
-        component: NavigationComponent,
-        outlet: "sidebar",
-      },
-      {
-        path: "secrets",
-        loadChildren: () => SecretsModule,
-        data: {
-          titleId: "secrets",
-        },
-      },
-      {
-        path: "projects",
-        loadChildren: () => ProjectsModule,
-        data: {
-          titleId: "projects",
-        },
-      },
-      {
-        path: "service-accounts",
-        loadChildren: () => ServiceAccountsModule,
-        data: {
-          titleId: "serviceAccounts",
-        },
-      },
-      {
-        path: "trash",
-        loadChildren: () => TrashModule,
-        data: {
-          titleId: "trash",
-        },
-      },
-      {
-        path: "settings",
-        loadChildren: () => SettingsModule,
-      },
-      {
-        path: "",
-        loadChildren: () => OverviewModule,
+        canActivate: [canActivateSM],
         pathMatch: "full",
+        children: [],
+      },
+      {
+        path: ":organizationId",
+        component: LayoutComponent,
+        canActivate: [AuthGuard, OrganizationPermissionsGuard],
+        data: {
+          organizationPermissions: (org: Organization) => org.canAccessSecretsManager,
+        },
+        children: [
+          {
+            path: "",
+            component: NavigationComponent,
+            outlet: "sidebar",
+          },
+          {
+            path: "secrets",
+            loadChildren: () => SecretsModule,
+            data: {
+              titleId: "secrets",
+            },
+          },
+          {
+            path: "projects",
+            loadChildren: () => ProjectsModule,
+            data: {
+              titleId: "projects",
+            },
+          },
+          {
+            path: "service-accounts",
+            loadChildren: () => ServiceAccountsModule,
+            data: {
+              titleId: "serviceAccounts",
+            },
+          },
+          {
+            path: "trash",
+            loadChildren: () => TrashModule,
+            data: {
+              titleId: "trash",
+            },
+          },
+          {
+            path: "settings",
+            loadChildren: () => SettingsModule,
+          },
+          {
+            path: "",
+            loadChildren: () => OverviewModule,
+            pathMatch: "full",
+          },
+        ],
       },
     ],
   }),
