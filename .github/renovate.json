@@ -11,7 +11,7 @@
     ":separateMajorReleases"
   ],
   "prConcurrentLimit": 3,
-  "enabledManagers": ["npm"],
+  "enabledManagers": ["cargo", "github-actions", "npm"],
   "packageRules": [
     {
       "groupName": "{{manager}}",
