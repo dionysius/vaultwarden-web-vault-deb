@@ -17,7 +17,9 @@ export function getNestedCollectionTree(
   // Collections need to be cloned because ServiceUtils.nestedTraverse actively
   // modifies the names of collections.
   // These changes risk affecting collections store in StateService.
-  const clonedCollections = collections.map(cloneCollection);
+  const clonedCollections = collections
+    .sort((a, b) => a.name.localeCompare(b.name))
+    .map(cloneCollection);
 
   const nodes: TreeNode<CollectionView | CollectionAdminView>[] = [];
   clonedCollections.forEach((collection) => {
