@@ -139,25 +139,41 @@ jobs:
         run: docker logout
 
 
-  cfpages-deploy:
-    name: Deploy Web Vault to CloudFlare Pages branch
+  ghpages-deploy:
+    name: Deploy to GitHub Pages
     runs-on: ubuntu-20.04
     needs:
       - setup
-      - self-host
     env:
       _RELEASE_VERSION: ${{ needs.setup.outputs.release_version }}
-      _TAG_VERSION: ${{ needs.setup.outputs.release_version }}
+      _TAG_VERSION: ${{ needs.setup.outputs.tag_version }}
+      _BRANCH: "v${{ needs.setup.outputs.release_version }}-deploy"
     steps:
-      - name: Checkout Repo
-        uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b  # v3.0.2
+      - name: Login to Azure - CI Subscription
+        uses: Azure/login@92a5484dfaf04ca78a94597f4f19fea633851fa2 # v1.4.6
+        with:
+          creds: ${{ secrets.AZURE_KV_CI_SERVICE_PRINCIPAL }}
+
+      - name: Retrieve bot secrets
+        id: retrieve-bot-secrets
+        uses: bitwarden/gh-actions/get-keyvault-secrets@34ecb67b2a357795dc893549df0795e7383ff50f
+        with:
+          keyvault: bitwarden-ci
+          secrets: "github-pat-bitwarden-devops-bot-repo-scope"
+
+      - name: Checkout GH pages repo
+        uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab # v3.5.2
+        with:
+          repository: bitwarden/web-vault-pages
+          path: ghpages-deployment
+          token: ${{ steps.retrieve-bot-secrets.outputs.github-pat-bitwarden-devops-bot-repo-scope }}
 
       - name: Download latest cloud asset
         if: ${{ github.event.inputs.release_type != 'Dry Run' }}
         uses: bitwarden/gh-actions/download-artifacts@850faad0cf6c02a8c0dc46eddde2363fbd6c373a
         with:
           workflow: build-web.yml
-          path: apps/web
+          path: assets
           workflow_conclusion: success
           branch: ${{ github.ref_name }}
           artifacts: web-*-cloud-COMMERCIAL.zip
@@ -167,56 +183,53 @@ jobs:
         uses: bitwarden/gh-actions/download-artifacts@850faad0cf6c02a8c0dc46eddde2363fbd6c373a
         with:
           workflow: build-web.yml
-          path: apps/web
+          path: assets
           workflow_conclusion: success
           branch: master
           artifacts: web-*-cloud-COMMERCIAL.zip
 
       - name: Unzip build asset
-        working-directory: apps/web
+        working-directory: assets
         run: unzip web-*-cloud-COMMERCIAL.zip
-
-      - name: Checkout Repo
-        uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b  # v3.0.2
-        with:
-          ref: cf-pages
-          path: deployment
-
-      - name: Setup git config
+  
+      - name: Create new branch
         run: |
-          git config --global user.name = "GitHub Action Bot"
-          git config --global user.email = "<>"
+          cd ${{ github.workspace }}/ghpages-deployment
+          git config user.name = "GitHub Action Bot"
+          git config user.email = "<>"
           git config --global url."https://github.com/".insteadOf ssh://git@github.com/
           git config --global url."https://".insteadOf ssh://
-
-      - name: Deploy CloudFlare Pages
+          git checkout -b ${_BRANCH}
+  
+      - name: Copy build files
         run: |
-          rm -rf ./*
-          cp -R ../apps/web/build/* .
-        working-directory: deployment
-
-      - name: Create cf-pages-deploy branch
+          rm -rf ${{ github.workspace }}/ghpages-deployment/*
+          cp -Rf ${{ github.workspace }}/assets/build/* ghpages-deployment/
+  
+      - name: Commit and push changes
+        working-directory: ghpages-deployment
         run: |
-          git switch -c cf-pages-deploy-$_TAG_VERSION
           git add .
-          git commit -m "Staging deploy ${{ needs.setup.outputs.release_version }}"
+          git commit -m "Deploy Web v${_RELEASE_VERSION} to GitHub Pages"
+          git push --set-upstream origin ${_BRANCH} --force
 
-          if [[ "${{ github.event.inputs.release_type }}" != "Dry Run" ]]; then
-            git push -u origin cf-pages-deploy-$_TAG_VERSION
-          fi
-        working-directory: deployment
-
-      - name: Create CloudFlare Pages Deploy PR
-        if: ${{ github.event.inputs.release_type != 'Dry Run' }}
+      - name: Create GitHub Pages Deploy PR
+        working-directory: ghpages-deployment
         env:
-          PR_BRANCH: cf-pages-deploy-${{ env._TAG_VERSION }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ steps.retrieve-bot-secrets.outputs.github-pat-bitwarden-devops-bot-repo-scope }}
         run: |
-          gh pr create --title "Deploy $_RELEASE_VERSION to CloudFlare Pages" \
-            --body "Deploying $_RELEASE_VERSION" \
-            --base cf-pages \
-            --head "$PR_BRANCH"
-
+          if [[ "${{ github.event.inputs.release_type }}" == "Dry Run" ]]; then
+            gh pr create --title "Deploy v${_RELEASE_VERSION} to GitHub Pages" \
+              --draft \
+              --body "Deploying v${_RELEASE_VERSION}" \
+              --base master \
+              --head "${_BRANCH}"
+          else
+            gh pr create --title "Deploy v${_RELEASE_VERSION} to GitHub Pages" \
+              --body "Deploying v${_RELEASE_VERSION}" \
+              --base master \
+              --head "${_BRANCH}"
+          fi
 
   release:
     name: Create GitHub Release
@@ -224,7 +237,7 @@ jobs:
     needs:
       - setup
       - self-host
-      - cfpages-deploy
+      - ghpages-deploy
     steps:
       - name: Create GitHub deployment
         if: ${{ github.event.inputs.release_type != 'Dry Run' }}
@@ -281,7 +294,7 @@ jobs:
 
       - name: Update deployment status to Success
         if: ${{ github.event.inputs.release_type != 'Dry Run' && success() }}
-        uses: chrnorm/deployment-status@07b3930847f65e71c9c6802ff5a402f6dfb46b86
+        uses: chrnorm/deployment-status@d42cde7132fcec920de534fffc3be83794335c00 # v2.0.5
         with:
           token: '${{ secrets.GITHUB_TOKEN }}'
           environment-url: http://vault.bitwarden.com
@@ -290,7 +303,7 @@ jobs:
 
       - name: Update deployment status to Failure
         if: ${{ github.event.inputs.release_type != 'Dry Run' && failure() }}
-        uses: chrnorm/deployment-status@07b3930847f65e71c9c6802ff5a402f6dfb46b86
+        uses: chrnorm/deployment-status@d42cde7132fcec920de534fffc3be83794335c00 # v2.0.5
         with:
           token: '${{ secrets.GITHUB_TOKEN }}'
           environment-url: http://vault.bitwarden.com
