@@ -6,13 +6,37 @@ import { Meta, Story, Source } from "@storybook/addon-docs";
 
 ## Overview
 
-All tables should have a visible horizontal header and label for each column.
+The table component provides a comprehensive way to display, sort and filter data. It consists of
+two portions, a UI component called `bit-table` and the underlying data source `TableDataSource`.
+This documentation will initially focus on the UI portion before covering the data source.
+
+## UI Component
+
+The UI component consists of a couple of elements.
+
+- `bit-table`: The main component that creates a native table element and applies the table styling.
+- `header`: A container for the table header.
+- `body`: A container for the table body.
+- `bitCell`: A cell within the table. Used for both headers and content.
+
+### Guidelines
+
+- Always include a row or column header with your table; this allows screen readers to better
+  contextualize the data
+- Avoid spanning data across cells.
+- Be sure to make repeating actions unique by associating them with the object they relate to.
+  Example: if there are multiple “Edit” buttons on a table, a screen reader should read “Edit,
+  Netflix” for an edit option for a Netflix item.
+- Use [Virtual Scrolling](#virtual-scrolling) for large data sets.
+
+### Example
 
 <Story id="component-library-table--default" />
 
-The below code is the absolute minimum required to create a table. However we strongly advise you to
-use the `dataSource` input to provide a data source for your table. This allows you to easily sort
-data.
+### Usage
+
+The below code is the minimum required to create a table. However we strongly advise you to use the
+`dataSource` input to provide a data source for your table. This allows you to easily sort data.
 
 ```html
 <bit-table>
@@ -36,9 +60,8 @@ data.
 ## Data Source
 
 Bitwarden provides a data source for tables that can be used in place of a traditional data array.
-The `TableDataSource` implements sorting and will in the future also support filtering. This allows
-the `bitTable` component to focus on rendering while offloading the data management to the data
-source.
+The `TableDataSource` implements sorting and filtering capabilities. This allows the `bitTable`
+component to focus on rendering while offloading the data management to the data source.
 
 ```ts
 // External data source
@@ -51,14 +74,31 @@ dataSource.data = data;
 We use the `dataSource` as an input to the `bit-table` component, and access the rows to render
 within the `ng-template`which provides access to the rows using `let-rows$`.
 
-<Source id="component-library-table--data-source" />
+```html
+<bit-table [dataSource]="dataSource">
+  <ng-container header>
+    <tr>
+      <th bitCell bitSortable="id" default>Id</th>
+      <th bitCell bitSortable="name">Name</th>
+      <th bitCell bitSortable="other" [fn]="sortFn">Other</th>
+    </tr>
+  </ng-container>
+  <ng-template body let-rows$>
+    <tr bitRow *ngFor="let r of rows$ | async">
+      <td bitCell>{{ r.id }}</td>
+      <td bitCell>{{ r.name }}</td>
+      <td bitCell>{{ r.other }}</td>
+    </tr>
+  </ng-template>
+</bit-table>
+```
 
-### Sortable
+### Sorting
 
 We provide a simple component for displaying sortable column headers. The `bitSortable` component
-wires up to the `TableDataSource` and will automatically sort the data when clicked and display
-an indicator for which column is currently sorted. The dafault sorting can be specified by setting
-the `default`.
+wires up to the `TableDataSource` and will automatically sort the data when clicked and display an
+indicator for which column is currently sorted. The dafault sorting can be specified by setting the
+`default`.
 
 ```html
 <th bitCell bitSortable="id" default>Id</th>
@@ -69,6 +109,16 @@ It's also possible to define a custom sorting function by setting the `fn` input
 
 ```ts
 const sortFn = (a: T, b: T) => (a.id > b.id ? 1 : -1);
+```
+
+### Filtering
+
+The `TableDataSource` supports a rudimentary filtering capability most commonly used to implement a
+search function. It works by converting each entry into a string of it's properties. The string is
+then compared against the filter value using a simple `indexOf`check.
+
+```ts
+dataSource.filter = "search value";
 ```
 
 ### Virtual Scrolling
@@ -97,8 +147,3 @@ specify a `itemSize`, set `scrollWindow` to `true` and replace `*ngFor` with `*c
   </bit-table>
 </cdk-virtual-scroll-viewport>
 ```
-
-## Accessibility
-
-- Always incude a row or column header with your table; this allows screen readers to better contextualize the data
-- Avoid spanning data across cells

@@ -95,18 +95,12 @@ const Template: Story<BitFormFieldComponent> = (args: BitFormFieldComponent) => 
     ...args,
   },
   template: `
-    <form [formGroup]="formObj" (ngSubmit)="submit()">
+    <form [formGroup]="formObj">
       <bit-form-field>
-        <bit-label>Name</bit-label>
+        <bit-label>Label</bit-label>
         <input bitInput formControlName="name" />
+        <bit-hint>Optional Hint</bit-hint>
       </bit-form-field>
-
-      <bit-form-field>
-        <bit-label>Email</bit-label>
-        <input bitInput formControlName="email" />
-      </bit-form-field>
-
-      <button type="submit" bitButton buttonType="primary">Submit</button>
     </form>
   `,
 });
