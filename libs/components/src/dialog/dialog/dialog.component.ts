@@ -9,15 +9,26 @@ import { fadeIn } from "../animations";
   animations: [fadeIn],
 })
 export class DialogComponent {
+  /**
+   * Dialog size, more complex dialogs should use large, otherwise default is fine.
+   */
   @Input() dialogSize: "small" | "default" | "large" = "default";
 
   private _disablePadding = false;
+  /**
+   * Disable the built-in padding on the dialog, for use with tabbed dialogs.
+   */
   @Input() set disablePadding(value: boolean | "") {
     this._disablePadding = coerceBooleanProperty(value);
   }
   get disablePadding() {
     return this._disablePadding;
   }
+
+  /**
+   * Mark the dialog as loading which replaces the content with a spinner.
+   */
+  @Input() loading = false;
 
   @HostBinding("class") get classes() {
     return ["tw-flex", "tw-flex-col", "tw-max-h-screen", "tw-w-screen", "tw-p-4"].concat(

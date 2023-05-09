@@ -20,8 +20,23 @@
     ></button>
   </div>
 
-  <div class="tw-overflow-y-auto tw-pb-8" [ngClass]="{ 'tw-p-4': !disablePadding }">
-    <ng-content select="[bitDialogContent]"></ng-content>
+  <div class="tw-relative tw-flex tw-flex-col tw-overflow-hidden">
+    <div
+      *ngIf="loading"
+      class="tw-absolute tw-flex tw-h-full tw-w-full tw-items-center tw-justify-center"
+    >
+      <i class="bwi bwi-spinner bwi-spin bwi-3x"></i>
+    </div>
+    <div
+      class="tw-pb-8"
+      [ngClass]="{
+        'tw-p-4': !disablePadding,
+        'tw-overflow-y-auto': !loading,
+        'tw-invisible tw-overflow-y-hidden': loading
+      }"
+    >
+      <ng-content select="[bitDialogContent]"></ng-content>
+    </div>
   </div>
 
   <div
