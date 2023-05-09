@@ -1,11 +1,11 @@
 import { mock, mockReset } from "jest-mock-extended";
 
-import { CryptoFunctionService } from "@bitwarden/common/abstractions/cryptoFunction.service";
-import { EncryptService } from "@bitwarden/common/abstractions/encrypt.service";
-import { LogService } from "@bitwarden/common/abstractions/log.service";
-import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
-import { StateService } from "@bitwarden/common/abstractions/state.service";
-import { CryptoService } from "@bitwarden/common/services/crypto.service";
+import { CryptoFunctionService } from "../abstractions/cryptoFunction.service";
+import { EncryptService } from "../abstractions/encrypt.service";
+import { LogService } from "../abstractions/log.service";
+import { PlatformUtilsService } from "../abstractions/platformUtils.service";
+import { StateService } from "../abstractions/state.service";
+import { CryptoService } from "../services/crypto.service";
 
 describe("cryptoService", () => {
   let cryptoService: CryptoService;

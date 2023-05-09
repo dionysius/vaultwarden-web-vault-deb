@@ -1,4 +1,4 @@
-import { makeStaticByteArray } from "../../../spec/utils";
+import { makeStaticByteArray } from "../../../spec";
 import { Utils } from "../../misc/utils";
 
 import { AccountKeys, EncryptionPair } from "./account";

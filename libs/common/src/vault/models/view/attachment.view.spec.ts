@@ -1,4 +1,4 @@
-import { mockFromJson } from "../../../../spec/utils";
+import { mockFromJson } from "../../../../spec";
 import { SymmetricCryptoKey } from "../../../models/domain/symmetric-crypto-key";
 
 import { AttachmentView } from "./attachment.view";

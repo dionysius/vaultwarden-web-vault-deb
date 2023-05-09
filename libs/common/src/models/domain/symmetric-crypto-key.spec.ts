@@ -1,7 +1,7 @@
-import { EncryptionType } from "@bitwarden/common/enums";
-import { SymmetricCryptoKey } from "@bitwarden/common/models/domain/symmetric-crypto-key";
+import { makeStaticByteArray } from "../../../spec";
+import { EncryptionType } from "../../enums";
 
-import { makeStaticByteArray } from "../../utils";
+import { SymmetricCryptoKey } from "./symmetric-crypto-key";
 
 describe("SymmetricCryptoKey", () => {
   it("errors if no key", () => {

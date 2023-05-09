@@ -1,4 +1,4 @@
-import { interceptConsole, restoreConsole } from "@bitwarden/common/spec/shared/interceptConsole";
+import { interceptConsole, restoreConsole } from "@bitwarden/common/spec";
 
 import { ConsoleLogService } from "./console-log.service";
 

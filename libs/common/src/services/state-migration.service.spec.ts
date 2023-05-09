@@ -2,12 +2,13 @@
 import { Substitute, SubstituteOf } from "@fluffy-spoon/substitute";
 import { MockProxy, any, mock } from "jest-mock-extended";
 
-import { AbstractStorageService } from "@bitwarden/common/abstractions/storage.service";
-import { StateVersion } from "@bitwarden/common/enums";
-import { StateFactory } from "@bitwarden/common/factories/stateFactory";
-import { Account } from "@bitwarden/common/models/domain/account";
-import { GlobalState } from "@bitwarden/common/models/domain/global-state";
-import { StateMigrationService } from "@bitwarden/common/services/stateMigration.service";
+import { AbstractStorageService } from "../abstractions/storage.service";
+import { StateVersion } from "../enums";
+import { StateFactory } from "../factories/stateFactory";
+import { Account } from "../models/domain/account";
+import { GlobalState } from "../models/domain/global-state";
+
+import { StateMigrationService } from "./stateMigration.service";
 
 const userId = "USER_ID";
 

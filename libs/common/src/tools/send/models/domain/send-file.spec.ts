@@ -1,4 +1,4 @@
-import { mockEnc } from "../../../../../spec/utils";
+import { mockEnc } from "../../../../../spec";
 import { SendFileData } from "../data/send-file.data";
 
 import { SendFile } from "./send-file";

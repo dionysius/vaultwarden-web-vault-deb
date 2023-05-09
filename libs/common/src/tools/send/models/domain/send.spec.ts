@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-restricted-imports
 import { Substitute, Arg, SubstituteOf } from "@fluffy-spoon/substitute";
 
-import { makeStaticByteArray, mockEnc } from "../../../../../spec/utils";
+import { makeStaticByteArray, mockEnc } from "../../../../../spec";
 import { CryptoService } from "../../../../abstractions/crypto.service";
 import { EncryptService } from "../../../../abstractions/encrypt.service";
 import { EncString } from "../../../../models/domain/enc-string";

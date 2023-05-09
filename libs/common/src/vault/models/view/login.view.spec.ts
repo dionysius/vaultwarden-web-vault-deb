@@ -1,4 +1,4 @@
-import { mockFromJson } from "../../../../spec/utils";
+import { mockFromJson } from "../../../../spec";
 
 import { LoginUriView } from "./login-uri.view";
 import { LoginView } from "./login.view";

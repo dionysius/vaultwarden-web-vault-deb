@@ -2,22 +2,23 @@
 import { Arg, Substitute, SubstituteOf } from "@fluffy-spoon/substitute";
 import { BehaviorSubject, firstValueFrom } from "rxjs";
 
-import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
-import { EncryptService } from "@bitwarden/common/abstractions/encrypt.service";
-import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
-import { OrganizationUserStatusType, PolicyType } from "@bitwarden/common/admin-console/enums";
-import { PermissionsApi } from "@bitwarden/common/admin-console/models/api/permissions.api";
-import { OrganizationData } from "@bitwarden/common/admin-console/models/data/organization.data";
-import { PolicyData } from "@bitwarden/common/admin-console/models/data/policy.data";
-import { MasterPasswordPolicyOptions } from "@bitwarden/common/admin-console/models/domain/master-password-policy-options";
-import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
-import { Policy } from "@bitwarden/common/admin-console/models/domain/policy";
-import { ResetPasswordPolicyOptions } from "@bitwarden/common/admin-console/models/domain/reset-password-policy-options";
-import { PolicyResponse } from "@bitwarden/common/admin-console/models/response/policy.response";
-import { PolicyService } from "@bitwarden/common/admin-console/services/policy/policy.service";
-import { ListResponse } from "@bitwarden/common/models/response/list.response";
-import { ContainerService } from "@bitwarden/common/services/container.service";
-import { StateService } from "@bitwarden/common/services/state.service";
+import { CryptoService } from "../abstractions/crypto.service";
+import { EncryptService } from "../abstractions/encrypt.service";
+import { OrganizationService } from "../admin-console/abstractions/organization/organization.service.abstraction";
+import { OrganizationUserStatusType, PolicyType } from "../admin-console/enums";
+import { PermissionsApi } from "../admin-console/models/api/permissions.api";
+import { OrganizationData } from "../admin-console/models/data/organization.data";
+import { PolicyData } from "../admin-console/models/data/policy.data";
+import { MasterPasswordPolicyOptions } from "../admin-console/models/domain/master-password-policy-options";
+import { Organization } from "../admin-console/models/domain/organization";
+import { Policy } from "../admin-console/models/domain/policy";
+import { ResetPasswordPolicyOptions } from "../admin-console/models/domain/reset-password-policy-options";
+import { PolicyResponse } from "../admin-console/models/response/policy.response";
+import { PolicyService } from "../admin-console/services/policy/policy.service";
+import { ListResponse } from "../models/response/list.response";
+
+import { ContainerService } from "./container.service";
+import { StateService } from "./state.service";
 
 describe("PolicyService", () => {
   let policyService: PolicyService;

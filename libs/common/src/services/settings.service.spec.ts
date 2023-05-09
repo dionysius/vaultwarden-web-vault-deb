@@ -2,11 +2,12 @@
 import { Arg, Substitute, SubstituteOf } from "@fluffy-spoon/substitute";
 import { BehaviorSubject, firstValueFrom } from "rxjs";
 
-import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
-import { EncryptService } from "@bitwarden/common/abstractions/encrypt.service";
-import { ContainerService } from "@bitwarden/common/services/container.service";
-import { SettingsService } from "@bitwarden/common/services/settings.service";
-import { StateService } from "@bitwarden/common/services/state.service";
+import { CryptoService } from "../abstractions/crypto.service";
+import { EncryptService } from "../abstractions/encrypt.service";
+
+import { ContainerService } from "./container.service";
+import { SettingsService } from "./settings.service";
+import { StateService } from "./state.service";
 
 describe("SettingsService", () => {
   let settingsService: SettingsService;

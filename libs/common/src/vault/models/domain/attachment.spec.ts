@@ -1,6 +1,6 @@
 import { mock, MockProxy } from "jest-mock-extended";
 
-import { makeStaticByteArray, mockEnc, mockFromJson } from "../../../../spec/utils";
+import { makeStaticByteArray, mockEnc, mockFromJson } from "../../../../spec";
 import { CryptoService } from "../../../abstractions/crypto.service";
 import { EncryptService } from "../../../abstractions/encrypt.service";
 import { EncString } from "../../../models/domain/enc-string";

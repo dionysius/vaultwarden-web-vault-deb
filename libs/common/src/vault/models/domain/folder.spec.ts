@@ -1,4 +1,4 @@
-import { mockEnc, mockFromJson } from "../../../../spec/utils";
+import { mockEnc, mockFromJson } from "../../../../spec";
 import { EncString } from "../../../models/domain/enc-string";
 import { FolderData } from "../../models/data/folder.data";
 import { Folder } from "../../models/domain/folder";

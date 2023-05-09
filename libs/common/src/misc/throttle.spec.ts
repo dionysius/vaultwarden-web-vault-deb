@@ -1,5 +1,5 @@
-import { sequentialize } from "@bitwarden/common/misc/sequentialize";
-import { throttle } from "@bitwarden/common/misc/throttle";
+import { sequentialize } from "./sequentialize";
+import { throttle } from "./throttle";
 
 describe("throttle decorator", () => {
   it("should call the function once at a time", async () => {

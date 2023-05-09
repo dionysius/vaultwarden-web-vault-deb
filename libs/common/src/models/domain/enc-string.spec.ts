@@ -2,12 +2,13 @@
 import { Substitute, Arg } from "@fluffy-spoon/substitute";
 import { mock, MockProxy } from "jest-mock-extended";
 
-import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
-import { EncryptService } from "@bitwarden/common/abstractions/encrypt.service";
-import { EncryptionType } from "@bitwarden/common/enums";
-import { EncString } from "@bitwarden/common/models/domain/enc-string";
-import { SymmetricCryptoKey } from "@bitwarden/common/models/domain/symmetric-crypto-key";
-import { ContainerService } from "@bitwarden/common/services/container.service";
+import { CryptoService } from "../../abstractions/crypto.service";
+import { EncryptService } from "../../abstractions/encrypt.service";
+import { EncryptionType } from "../../enums";
+import { ContainerService } from "../../services/container.service";
+
+import { EncString } from "./enc-string";
+import { SymmetricCryptoKey } from "./symmetric-crypto-key";
 
 describe("EncString", () => {
   afterEach(() => {

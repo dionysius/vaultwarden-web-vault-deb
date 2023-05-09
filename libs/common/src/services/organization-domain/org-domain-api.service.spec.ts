@@ -1,14 +1,15 @@
 import { mock } from "jest-mock-extended";
 import { lastValueFrom } from "rxjs";
 
-import { ApiService } from "@bitwarden/common/abstractions/api.service";
-import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
-import { OrganizationDomainSsoDetailsResponse } from "@bitwarden/common/abstractions/organization-domain/responses/organization-domain-sso-details.response";
-import { OrganizationDomainResponse } from "@bitwarden/common/abstractions/organization-domain/responses/organization-domain.response";
-import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
-import { OrgDomainApiService } from "@bitwarden/common/services/organization-domain/org-domain-api.service";
-import { OrgDomainService } from "@bitwarden/common/services/organization-domain/org-domain.service";
-import { OrganizationDomainSsoDetailsRequest } from "@bitwarden/common/services/organization-domain/requests/organization-domain-sso-details.request";
+import { ApiService } from "../../abstractions/api.service";
+import { I18nService } from "../../abstractions/i18n.service";
+import { OrganizationDomainSsoDetailsResponse } from "../../abstractions/organization-domain/responses/organization-domain-sso-details.response";
+import { OrganizationDomainResponse } from "../../abstractions/organization-domain/responses/organization-domain.response";
+import { PlatformUtilsService } from "../../abstractions/platformUtils.service";
+
+import { OrgDomainApiService } from "./org-domain-api.service";
+import { OrgDomainService } from "./org-domain.service";
+import { OrganizationDomainSsoDetailsRequest } from "./requests/organization-domain-sso-details.request";
 
 const mockedGetAllByOrgIdResponse: any = {
   data: [

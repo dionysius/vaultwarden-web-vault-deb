@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-restricted-imports
 import { Substitute, Arg } from "@fluffy-spoon/substitute";
 
-import { mockEnc } from "../../../../../spec/utils";
+import { mockEnc } from "../../../../../spec";
 import { SendType } from "../../enums/send-type";
 import { SendAccessResponse } from "../response/send-access.response";
 

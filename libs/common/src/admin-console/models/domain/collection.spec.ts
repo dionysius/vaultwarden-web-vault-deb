@@ -1,7 +1,7 @@
-import { CollectionData } from "@bitwarden/common/admin-console/models/data/collection.data";
-import { Collection } from "@bitwarden/common/admin-console/models/domain/collection";
+import { mockEnc } from "../../../../spec";
+import { CollectionData } from "../data/collection.data";
 
-import { mockEnc } from "../../utils";
+import { Collection } from "./collection";
 
 describe("Collection", () => {
   let data: CollectionData;

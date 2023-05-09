@@ -12,7 +12,7 @@
     "sourceMap": true,
     "baseUrl": ".",
     "paths": {
-      "@bitwarden/common/spec/*": ["../../libs/common/spec/*"],
+      "@bitwarden/common/spec": ["../../libs/common/spec"],
       "@bitwarden/common/*": ["../../libs/common/src/*"],
       "@bitwarden/importer": ["../../libs/importer/src"],
       "@bitwarden/exporter/*": ["../../libs/exporter/src/*"],

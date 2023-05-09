@@ -1,4 +1,4 @@
-import { mockEnc, mockFromJson } from "../../../../spec/utils";
+import { mockEnc, mockFromJson } from "../../../../spec";
 import { EncString } from "../../../models/domain/enc-string";
 import { PasswordHistoryData } from "../../models/data/password-history.data";
 import { Password } from "../../models/domain/password";

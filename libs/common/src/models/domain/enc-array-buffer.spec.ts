@@ -1,7 +1,7 @@
-import { EncryptionType } from "@bitwarden/common/enums";
-import { EncArrayBuffer } from "@bitwarden/common/models/domain/enc-array-buffer";
+import { makeStaticByteArray } from "../../../spec";
+import { EncryptionType } from "../../enums";
 
-import { makeStaticByteArray } from "../../utils";
+import { EncArrayBuffer } from "./enc-array-buffer";
 
 describe("encArrayBuffer", () => {
   describe("parses the buffer", () => {

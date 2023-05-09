@@ -1,4 +1,4 @@
-import { sequentialize } from "@bitwarden/common/misc/sequentialize";
+import { sequentialize } from "./sequentialize";
 
 describe("sequentialize decorator", () => {
   it("should call the function once", async () => {

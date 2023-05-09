@@ -20,7 +20,7 @@ import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 import { FolderView } from "@bitwarden/common/vault/models/view/folder.view";
 import { LoginView } from "@bitwarden/common/vault/models/view/login.view";
 
-import { BuildTestObject, GetUniqueString } from "../../../../common/spec/utils";
+import { BuildTestObject, GetUniqueString } from "../../../../common/spec";
 
 import { VaultExportService } from "./vault-export.service";
 

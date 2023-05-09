@@ -1,4 +1,4 @@
-import { mockFromJson } from "../../../../spec/utils";
+import { mockFromJson } from "../../../../spec";
 import { CipherType } from "../../enums/cipher-type";
 
 import { AttachmentView } from "./attachment.view";

@@ -1,4 +1,4 @@
-import { mockEnc, mockFromJson } from "../../../../spec/utils";
+import { mockEnc, mockFromJson } from "../../../../spec";
 import { FieldType } from "../../../enums";
 import { EncString } from "../../../models/domain/enc-string";
 import { FieldData } from "../../models/data/field.data";

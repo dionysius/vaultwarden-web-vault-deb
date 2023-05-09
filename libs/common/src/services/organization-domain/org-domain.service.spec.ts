@@ -1,10 +1,11 @@
 import { mock, mockReset } from "jest-mock-extended";
 import { lastValueFrom } from "rxjs";
 
-import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
-import { OrganizationDomainResponse } from "@bitwarden/common/abstractions/organization-domain/responses/organization-domain.response";
-import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
-import { OrgDomainService } from "@bitwarden/common/services/organization-domain/org-domain.service";
+import { I18nService } from "../../abstractions/i18n.service";
+import { OrganizationDomainResponse } from "../../abstractions/organization-domain/responses/organization-domain.response";
+import { PlatformUtilsService } from "../../abstractions/platformUtils.service";
+
+import { OrgDomainService } from "./org-domain.service";
 
 const mockedUnverifiedDomainServerResponse = {
   creationDate: "2022-12-13T23:16:43.7066667Z",

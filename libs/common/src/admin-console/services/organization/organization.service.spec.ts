@@ -1,9 +1,10 @@
 import { MockProxy, mock, any, mockClear } from "jest-mock-extended";
 import { BehaviorSubject, firstValueFrom } from "rxjs";
 
-import { StateService } from "@bitwarden/common/abstractions/state.service";
-import { OrganizationData } from "@bitwarden/common/admin-console/models/data/organization.data";
-import { OrganizationService } from "@bitwarden/common/admin-console/services/organization/organization.service";
+import { StateService } from "../../../abstractions/state.service";
+import { OrganizationData } from "../../models/data/organization.data";
+
+import { OrganizationService } from "./organization.service";
 
 describe("Organization Service", () => {
   let organizationService: OrganizationService;

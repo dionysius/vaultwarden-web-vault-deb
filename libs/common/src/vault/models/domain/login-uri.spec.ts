@@ -1,6 +1,6 @@
 import { Jsonify } from "type-fest";
 
-import { mockEnc, mockFromJson } from "../../../../spec/utils";
+import { mockEnc, mockFromJson } from "../../../../spec";
 import { UriMatchType } from "../../../enums";
 import { EncString } from "../../../models/domain/enc-string";
 import { LoginUriData } from "../data/login-uri.data";

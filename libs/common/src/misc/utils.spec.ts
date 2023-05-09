@@ -1,6 +1,6 @@
 import * as path from "path";
 
-import { Utils } from "@bitwarden/common/misc/utils";
+import { Utils } from "./utils";
 
 describe("Utils Service", () => {
   describe("getDomain", () => {
