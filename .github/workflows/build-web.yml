@@ -243,7 +243,7 @@ jobs:
       - name: Setup DCT
         if: ${{ env.is_publish_branch == 'true' }}
         id: setup-dct
-        uses: bitwarden/gh-actions/setup-docker-trust@ea03b38348a42e18ac63c17f97004697f65e0dc6
+        uses: bitwarden/gh-actions/setup-docker-trust@82bfda66185116020992660f6c73aa53277d081d
         with:
           azure-creds: ${{ secrets.AZURE_KV_CI_SERVICE_PRINCIPAL }}
           azure-keyvault-name: "bitwarden-ci"
