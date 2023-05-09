@@ -2751,6 +2751,24 @@
       }
     }
   },
+  "viewCollectionWithName": {
+    "message": "View collection - $NAME$",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Collection1"
+      }
+    }
+  },
+  "editItemWithName": {
+    "message": "Edit item - $NAME$",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Google Login"
+      }
+    }
+  },
   "copiedPasswordItemId": {
     "message": "Copied password for item $ID$.",
     "placeholders": {

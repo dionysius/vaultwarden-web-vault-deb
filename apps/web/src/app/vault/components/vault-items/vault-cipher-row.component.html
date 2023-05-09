@@ -24,7 +24,7 @@
       [routerLink]="[]"
       [queryParams]="{ itemId: cipher.id }"
       queryParamsHandling="merge"
-      title="{{ 'editItem' | i18n }}"
+      title="{{ 'editItemWithName' | i18n : cipher.name }}"
       type="button"
     >
       {{ cipher.name }}

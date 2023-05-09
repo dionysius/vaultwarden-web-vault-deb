@@ -21,6 +21,7 @@
     type="button"
     class="tw-w-full tw-overflow-hidden tw-text-ellipsis tw-text-start"
     linkType="secondary"
+    title="{{ 'viewCollectionWithName' | i18n : collection.name }}"
     [routerLink]="[]"
     [queryParams]="{ collectionId: collection.id }"
     queryParamsHandling="merge"
