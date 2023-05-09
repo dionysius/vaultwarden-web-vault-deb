@@ -41,7 +41,7 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout repo
-        uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3.3.0
+        uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab # v3.5.2
 
       - name: Set up cloc
         run: |
@@ -79,7 +79,7 @@ jobs:
         working-directory: apps/browser
     steps:
       - name: Checkout repo
-        uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3.3.0
+        uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab # v3.5.2
 
       - name: Testing locales - extName length
         run: |
@@ -119,10 +119,10 @@ jobs:
         working-directory: apps/browser
     steps:
       - name: Checkout repo
-        uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3.3.0
+        uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab # v3.5.2
 
       - name: Set up Node
-        uses: actions/setup-node@eeb10cff27034e7acf239c5d29f62154018672fd  # v3.3.0
+        uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c # v3.6.0
         with:
           cache: 'npm'
           cache-dependency-path: '**/package-lock.json'
@@ -173,56 +173,56 @@ jobs:
         working-directory: ./
 
       - name: Upload Opera artifact
-        uses: actions/upload-artifact@3cea5372237819ed00197afe530f5a7ea3e805c8 # v3.1.0
+        uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce # v3.1.2
         with:
           name: dist-opera-${{ env._BUILD_NUMBER }}.zip
           path: apps/browser/dist/dist-opera.zip
           if-no-files-found: error
 
       - name: Upload Opera MV3 artifact
-        uses: actions/upload-artifact@3cea5372237819ed00197afe530f5a7ea3e805c8 # v3.1.0
+        uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce # v3.1.2
         with:
           name: dist-opera-MV3-${{ env._BUILD_NUMBER }}.zip
           path: apps/browser/dist/dist-opera-mv3.zip
           if-no-files-found: error
 
       - name: Upload Chrome artifact
-        uses: actions/upload-artifact@3cea5372237819ed00197afe530f5a7ea3e805c8 # v3.1.0
+        uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce # v3.1.2
         with:
           name: dist-chrome-${{ env._BUILD_NUMBER }}.zip
           path: apps/browser/dist/dist-chrome.zip
           if-no-files-found: error
 
       - name: Upload Chrome MV3 artifact
-        uses: actions/upload-artifact@3cea5372237819ed00197afe530f5a7ea3e805c8 # v3.1.0
+        uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce # v3.1.2
         with:
           name: dist-chrome-MV3-${{ env._BUILD_NUMBER }}.zip
           path: apps/browser/dist/dist-chrome-mv3.zip
           if-no-files-found: error
 
       - name: Upload Firefox artifact
-        uses: actions/upload-artifact@3cea5372237819ed00197afe530f5a7ea3e805c8 # v3.1.0
+        uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce # v3.1.2
         with:
           name: dist-firefox-${{ env._BUILD_NUMBER }}.zip
           path: apps/browser/dist/dist-firefox.zip
           if-no-files-found: error
 
       - name: Upload Edge artifact
-        uses: actions/upload-artifact@3cea5372237819ed00197afe530f5a7ea3e805c8 # v3.1.0
+        uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce # v3.1.2
         with:
           name: dist-edge-${{ env._BUILD_NUMBER }}.zip
           path: apps/browser/dist/dist-edge.zip
           if-no-files-found: error
 
       - name: Upload Edge MV3 artifact
-        uses: actions/upload-artifact@3cea5372237819ed00197afe530f5a7ea3e805c8 # v3.1.0
+        uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce # v3.1.2
         with:
           name: dist-edge-MV3-${{ env._BUILD_NUMBER }}.zip
           path: apps/browser/dist/dist-edge-mv3.zip
           if-no-files-found: error
 
       - name: Upload browser source
-        uses: actions/upload-artifact@3cea5372237819ed00197afe530f5a7ea3e805c8 # v3.1.0
+        uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce # v3.1.2
         with:
           name: browser-source-${{ env._BUILD_NUMBER }}.zip
           path: browser-source.zip
@@ -230,7 +230,7 @@ jobs:
 
       - name: Upload coverage artifact
         if: false
-        uses: actions/upload-artifact@3cea5372237819ed00197afe530f5a7ea3e805c8 # v3.1.0
+        uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce # v3.1.2
         with:
           name: coverage-${{ env._BUILD_NUMBER }}.zip
           path: apps/browser/coverage/coverage-${{ env._BUILD_NUMBER }}.zip
@@ -246,10 +246,10 @@ jobs:
       _BUILD_NUMBER: ${{ needs.setup.outputs.adj_build_number }}
     steps:
       - name: Checkout repo
-        uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3.3.0
+        uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab # v3.5.2
 
       - name: Set up Node
-        uses: actions/setup-node@eeb10cff27034e7acf239c5d29f62154018672fd # v3.3.0
+        uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c # v3.6.0
         with:
           cache: 'npm'
           cache-dependency-path: '**/package-lock.json'
@@ -330,7 +330,7 @@ jobs:
           ls -la
 
       - name: Upload Safari artifact
-        uses: actions/upload-artifact@3cea5372237819ed00197afe530f5a7ea3e805c8 # v3.1.0
+        uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce # v3.1.2
         with:
           name: dist-safari-${{ env._BUILD_NUMBER }}.zip
           path: apps/browser/dist/dist-safari.zip
@@ -345,10 +345,10 @@ jobs:
       - build-safari
     steps:
       - name: Checkout repo
-        uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3.3.0
+        uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab # v3.5.2
 
       - name: Login to Azure
-        uses: Azure/login@92a5484dfaf04ca78a94597f4f19fea633851fa2 # v1.4.6
+        uses: Azure/login@92a5484dfaf04ca78a94597f4f19fea633851fa2 # v1.4.7
         with:
           creds: ${{ secrets.AZURE_KV_CI_SERVICE_PRINCIPAL }}
 
@@ -408,7 +408,7 @@ jobs:
           fi
 
       - name: Login to Azure - Prod Subscription
-        uses: Azure/login@92a5484dfaf04ca78a94597f4f19fea633851fa2 # v1.4.6
+        uses: Azure/login@92a5484dfaf04ca78a94597f4f19fea633851fa2 # v1.4.7
         if: failure()
         with:
           creds: ${{ secrets.AZURE_KV_CI_SERVICE_PRINCIPAL }}

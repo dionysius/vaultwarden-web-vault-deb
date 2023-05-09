@@ -20,7 +20,7 @@ jobs:
           description: 'Deployment from branch ${{ github.ref_name }}'
 
       - name: Checkout Repo
-        uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3.3.0
+        uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab # v3.5.2
 
       - name: Download latest cloud asset
         uses: bitwarden/gh-actions/download-artifacts@34ecb67b2a357795dc893549df0795e7383ff50f
@@ -36,7 +36,7 @@ jobs:
         run: unzip web-*-cloud-QA.zip
 
       - name: Checkout Repo
-        uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3.3.0
+        uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab # v3.5.2
         with:
           ref: cf-pages-qa
           path: deployment

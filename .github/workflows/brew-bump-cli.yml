@@ -17,7 +17,7 @@ jobs:
     runs-on: macos-11
     steps:
       - name: Login to Azure
-        uses: Azure/login@92a5484dfaf04ca78a94597f4f19fea633851fa2 # v1.4.6
+        uses: Azure/login@92a5484dfaf04ca78a94597f4f19fea633851fa2 # v1.4.7
         with:
           creds: ${{ secrets.AZURE_KV_CI_SERVICE_PRINCIPAL }}
 
@@ -29,7 +29,7 @@ jobs:
           secrets: "brew-bump-workflow-pat"
 
       - name: Update Homebrew formula
-        uses: dawidd6/action-homebrew-bump-formula@dd221ff435f42fa8102b5871bb1929af9d76476c # v3.8.0
+        uses: dawidd6/action-homebrew-bump-formula@d3667e5ae14df19579e4414897498e3e88f2f458 # v3.10.0
         with:
           # Required, custom GitHub access token with the 'public_repo' and 'workflow' scopes
           token: ${{ steps.retrieve-secrets.outputs.brew-bump-workflow-pat }}
