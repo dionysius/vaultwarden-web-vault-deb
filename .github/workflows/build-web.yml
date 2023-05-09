@@ -249,7 +249,7 @@ jobs:
           azure-keyvault-name: "bitwarden-ci"
 
       - name: Build Docker image
-        uses: docker/build-push-action@3b5e8027fcad23fda98b2e3ac259d8d67585f671 # v3.2.0
+        uses: docker/build-push-action@3b5e8027fcad23fda98b2e3ac259d8d67585f671 # v4.0.0
         with:
           context: apps/web
           file: apps/web/Dockerfile
@@ -297,7 +297,7 @@ jobs:
           secrets: "crowdin-api-token"
 
       - name: Upload Sources
-        uses: crowdin/github-action@ecd7eb0ef6f3cfa16293c79e9cbc4bc5b5fd9c49 # v1.4.9
+        uses: crowdin/github-action@3cabba4ddfd0579a1236b3fb68405236dc489ccc # v1.8.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           CROWDIN_API_TOKEN: ${{ steps.retrieve-secrets.outputs.crowdin-api-token }}

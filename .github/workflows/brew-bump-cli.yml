@@ -29,7 +29,7 @@ jobs:
           secrets: "brew-bump-workflow-pat"
 
       - name: Update Homebrew formula
-        uses: dawidd6/action-homebrew-bump-formula@dd221ff435f42fa8102b5871bb1929af9d76476c
+        uses: dawidd6/action-homebrew-bump-formula@dd221ff435f42fa8102b5871bb1929af9d76476c # v3.8.0
         with:
           # Required, custom GitHub access token with the 'public_repo' and 'workflow' scopes
           token: ${{ steps.retrieve-secrets.outputs.brew-bump-workflow-pat }}
