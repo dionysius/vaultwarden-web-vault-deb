@@ -5,7 +5,8 @@ name: Label Issue Pull Request
 
 on:
   pull_request:
-    types: [opened, edited] # Check when PR is opened or target branch is edited
+    types:
+      - opened # Check when PR is opened
     paths-ignore:
       - .github/workflows/** # We don't need QA on workflow changes
     branches:
