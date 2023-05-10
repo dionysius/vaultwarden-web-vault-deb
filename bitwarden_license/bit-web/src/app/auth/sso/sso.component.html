@@ -8,32 +8,24 @@
     title="{{ 'loading' | i18n }}"
     aria-hidden="true"
   ></i>
-  <span class="sr-only">{{ "loading" | i18n }}</span>
+  <span class="tw-sr-only">{{ "loading" | i18n }}</span>
 </ng-container>
 
-<form
-  #form
-  (ngSubmit)="submit()"
-  [formGroup]="ssoConfigForm"
-  [appApiAction]="formPromise"
-  *ngIf="!loading"
->
+<form [formGroup]="ssoConfigForm" [bitSubmit]="submit" *ngIf="!loading">
   <p>
     {{ "ssoPolicyHelpStart" | i18n }}
     <a routerLink="../policies">{{ "ssoPolicyHelpLink" | i18n }}</a>
     {{ "ssoPolicyHelpEnd" | i18n }}
     <br />
-    {{ "ssoPolicyHelpKeyConnector" | i18n }}
   </p>
 
   <!-- Root form -->
   <ng-container>
-    <app-input-checkbox
-      controlId="enabled"
-      formControlName="enabled"
-      [label]="'allowSso' | i18n"
-      [helperText]="'allowSsoDesc' | i18n"
-    ></app-input-checkbox>
+    <bit-form-control>
+      <bit-label>{{ "allowSso" | i18n }}</bit-label>
+      <input bitCheckbox type="checkbox" formControlName="enabled" id="enabled" />
+      <bit-hint>{{ "allowSsoDesc" | i18n }}</bit-hint>
+    </bit-form-control>
 
     <bit-form-field>
       <bit-label>{{ "ssoIdentifier" | i18n }}</bit-label>
@@ -43,31 +35,25 @@
 
     <hr />
 
-    <div class="form-group">
-      <label>{{ "memberDecryptionOption" | i18n }}</label>
-      <div class="form-check form-check-block">
-        <input
-          class="form-check-input"
-          type="radio"
-          id="memberDecryptionPass"
-          [value]="false"
-          formControlName="keyConnectorEnabled"
-        />
-        <label class="form-check-label" for="memberDecryptionPass">
-          {{ "masterPass" | i18n }}
-          <small>{{ "memberDecryptionPassDesc" | i18n }}</small>
-        </label>
-      </div>
-      <div class="form-check mt-2 form-check-block">
-        <input
-          class="form-check-input"
-          type="radio"
-          id="memberDecryptionKey"
-          [value]="true"
-          formControlName="keyConnectorEnabled"
-          [attr.disabled]="!organization.useKeyConnector || null"
-        />
-        <label class="form-check-label" for="memberDecryptionKey">
+    <bit-radio-group formControlName="memberDecryptionType">
+      <bit-label>{{ "memberDecryptionOption" | i18n }}</bit-label>
+
+      <bit-radio-button
+        class="tw-block"
+        id="memberDecryptionPass"
+        [value]="memberDecryptionType.MasterPassword"
+      >
+        <bit-label>{{ "masterPass" | i18n }}</bit-label>
+      </bit-radio-button>
+
+      <bit-radio-button
+        class="tw-block"
+        id="memberDecryptionKey"
+        [value]="memberDecryptionType.KeyConnector"
+        [disabled]="!organization.useKeyConnector || null"
+        *ngIf="showKeyConnectorOptions"
+      >
+        <bit-label>
           {{ "keyConnector" | i18n }}
           <a
             target="_blank"
@@ -77,13 +63,38 @@
           >
             <i class="bwi bwi-question-circle" aria-hidden="true"></i>
           </a>
-          <small>{{ "memberDecryptionKeyConnectorDesc" | i18n }}</small>
-        </label>
-      </div>
-    </div>
+        </bit-label>
+        <bit-hint>
+          {{ "memberDecryptionKeyConnectorDescStart" | i18n }}
+          <a routerLink="../policies">{{ "memberDecryptionKeyConnectorDescLink" | i18n }}</a>
+          {{ "memberDecryptionKeyConnectorDescEnd" | i18n }}
+        </bit-hint>
+      </bit-radio-button>
+
+      <bit-radio-button
+        class="tw-block"
+        id="memberDecryptionTde"
+        [value]="memberDecryptionType.TrustedDeviceEncryption"
+        *ngIf="showTdeOptions"
+      >
+        <bit-label>
+          {{ "trustedDeviceEncryption" | i18n }}
+        </bit-label>
+        <bit-hint>
+          {{ "memberDecryptionTdeDescStart" | i18n }}
+          <a routerLink="../policies">{{ "memberDecryptionTdeDescLink" | i18n }}</a>
+          {{ "memberDecryptionTdeDescEnd" | i18n }}
+        </bit-hint>
+      </bit-radio-button>
+    </bit-radio-group>
 
     <!-- Key Connector -->
-    <ng-container *ngIf="ssoConfigForm.get('keyConnectorEnabled').value">
+    <ng-container
+      *ngIf="
+        ssoConfigForm.value.memberDecryptionType === memberDecryptionType.KeyConnector &&
+        showKeyConnectorOptions
+      "
+    >
       <app-callout type="warning" [useAlertRole]="true">
         {{ "keyConnectorWarning" | i18n }}
       </app-callout>
@@ -205,11 +216,15 @@
         </select>
       </bit-form-field>
 
-      <app-input-checkbox
-        controlId="getClaimsFromUserInfoEndpoint"
-        formControlName="getClaimsFromUserInfoEndpoint"
-        [label]="'getClaimsFromUserInfoEndpoint' | i18n"
-      ></app-input-checkbox>
+      <bit-form-control>
+        <bit-label>{{ "getClaimsFromUserInfoEndpoint" | i18n }}</bit-label>
+        <input
+          bitCheckbox
+          type="checkbox"
+          formControlName="getClaimsFromUserInfoEndpoint"
+          id="getClaimsFromUserInfoEndpoint"
+        />
+      </bit-form-control>
 
       <!-- Optional customizations -->
       <div
@@ -381,17 +396,25 @@
         </select>
       </bit-form-field>
 
-      <app-input-checkbox
-        controlId="spWantAssertionsSigned"
-        formControlName="spWantAssertionsSigned"
-        [label]="'spWantAssertionsSigned' | i18n"
-      ></app-input-checkbox>
+      <bit-form-control>
+        <bit-label>{{ "spWantAssertionsSigned" | i18n }}</bit-label>
+        <input
+          bitCheckbox
+          type="checkbox"
+          formControlName="spWantAssertionsSigned"
+          id="spWantAssertionsSigned"
+        />
+      </bit-form-control>
 
-      <app-input-checkbox
-        controlId="spValidateCertificates"
-        formControlName="spValidateCertificates"
-        [label]="'spValidateCertificates' | i18n"
-      ></app-input-checkbox>
+      <bit-form-control>
+        <bit-label>{{ "spValidateCertificates" | i18n }}</bit-label>
+        <input
+          bitCheckbox
+          type="checkbox"
+          formControlName="spValidateCertificates"
+          id="spValidateCertificates"
+        />
+      </bit-form-control>
     </div>
 
     <!-- SAML2 IDP -->
@@ -462,21 +485,29 @@
         [label]="'idpAllowUnsolicitedAuthnResponse' | i18n"
       ></app-input-checkbox> -->
 
-      <app-input-checkbox
-        controlId="idpAllowOutboundLogoutRequests"
-        formControlName="idpAllowOutboundLogoutRequests"
-        [label]="'idpAllowOutboundLogoutRequests' | i18n"
-      ></app-input-checkbox>
+      <bit-form-control>
+        <bit-label>{{ "idpAllowOutboundLogoutRequests" | i18n }}</bit-label>
+        <input
+          bitCheckbox
+          type="checkbox"
+          formControlName="idpAllowOutboundLogoutRequests"
+          id="idpAllowOutboundLogoutRequests"
+        />
+      </bit-form-control>
 
-      <app-input-checkbox
-        controlId="idpWantAuthnRequestsSigned"
-        formControlName="idpWantAuthnRequestsSigned"
-        [label]="'idpSignAuthenticationRequests' | i18n"
-      ></app-input-checkbox>
+      <bit-form-control>
+        <bit-label>{{ "idpSignAuthenticationRequests" | i18n }}</bit-label>
+        <input
+          bitCheckbox
+          type="checkbox"
+          formControlName="idpWantAuthnRequestsSigned"
+          id="idpWantAuthnRequestsSigned"
+        />
+      </bit-form-control>
     </div>
   </div>
 
-  <button type="submit" buttonType="primary" bitButton [loading]="form.loading">
+  <button type="submit" buttonType="primary" bitButton bitFormButton>
     {{ "save" | i18n }}
   </button>
   <bit-error-summary [formGroup]="ssoConfigForm"></bit-error-summary>

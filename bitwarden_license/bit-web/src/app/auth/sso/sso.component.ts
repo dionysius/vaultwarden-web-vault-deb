@@ -12,12 +12,14 @@ import { concatMap, Subject, takeUntil } from "rxjs";
 import { SelectOptions } from "@bitwarden/angular/interfaces/selectOptions";
 import { ControlsOf } from "@bitwarden/angular/types/controls-of";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
+import { ConfigServiceAbstraction } from "@bitwarden/common/abstractions/config/config.service.abstraction";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { OrganizationApiServiceAbstraction } from "@bitwarden/common/admin-console/abstractions/organization/organization-api.service.abstraction";
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
 import {
+  MemberDecryptionType,
   OpenIdConnectRedirectBehavior,
   Saml2BindingType,
   Saml2NameIdFormat,
@@ -28,6 +30,7 @@ import { SsoConfigApi } from "@bitwarden/common/auth/models/api/sso-config.api";
 import { OrganizationSsoRequest } from "@bitwarden/common/auth/models/request/organization-sso.request";
 import { OrganizationSsoResponse } from "@bitwarden/common/auth/models/response/organization-sso.response";
 import { SsoConfigView } from "@bitwarden/common/auth/models/view/sso-config.view";
+import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
 import { Utils } from "@bitwarden/common/misc/utils";
 
 import { ssoTypeValidator } from "./sso-type.validator";
@@ -40,6 +43,7 @@ const defaultSigningAlgorithm = "http://www.w3.org/2001/04/xmldsig-more#rsa-sha2
 })
 export class SsoComponent implements OnInit, OnDestroy {
   readonly ssoType = SsoType;
+  readonly memberDecryptionType = MemberDecryptionType;
 
   readonly ssoTypeOptions: SelectOptions[] = [
     { name: this.i18nService.t("selectType"), value: SsoType.None, disabled: true },
@@ -83,6 +87,8 @@ export class SsoComponent implements OnInit, OnDestroy {
   ];
 
   private destroy$ = new Subject<void>();
+  showTdeOptions = false;
+  showKeyConnectorOptions = false;
 
   showOpenIdCustomizations = false;
 
@@ -90,7 +96,6 @@ export class SsoComponent implements OnInit, OnDestroy {
   haveTestedKeyConnector = false;
   organizationId: string;
   organization: Organization;
-  formPromise: Promise<OrganizationSsoResponse>;
 
   callbackPath: string;
   signedOutCallbackPath: string;
@@ -147,7 +152,7 @@ export class SsoComponent implements OnInit, OnDestroy {
 
   protected ssoConfigForm = this.formBuilder.group<ControlsOf<SsoConfigView>>({
     configType: new FormControl(SsoType.None),
-    keyConnectorEnabled: new FormControl(false),
+    memberDecryptionType: new FormControl(MemberDecryptionType.MasterPassword),
     keyConnectorUrl: new FormControl(""),
     openId: this.openIdForm,
     saml: this.samlForm,
@@ -174,7 +179,8 @@ export class SsoComponent implements OnInit, OnDestroy {
     private platformUtilsService: PlatformUtilsService,
     private i18nService: I18nService,
     private organizationService: OrganizationService,
-    private organizationApiService: OrganizationApiServiceAbstraction
+    private organizationApiService: OrganizationApiServiceAbstraction,
+    private configService: ConfigServiceAbstraction
   ) {}
 
   async ngOnInit() {
@@ -223,6 +229,15 @@ export class SsoComponent implements OnInit, OnDestroy {
         takeUntil(this.destroy$)
       )
       .subscribe();
+
+    const tdeFeatureFlag = await this.configService.getFeatureFlagBool(
+      FeatureFlag.TrustedDeviceEncryption
+    );
+
+    this.showTdeOptions = tdeFeatureFlag && !this.platformUtilsService.isSelfHost();
+    // If the tde flag is not enabled, continue showing the key connector options to keep the UI the same
+    // Once the flag is removed, we can rely on the platformUtilsService.isSelfHost() check alone
+    this.showKeyConnectorOptions = !tdeFeatureFlag || this.platformUtilsService.isSelfHost();
   }
 
   ngOnDestroy(): void {
@@ -244,10 +259,10 @@ export class SsoComponent implements OnInit, OnDestroy {
     this.loading = false;
   }
 
-  async submit() {
+  submit = async () => {
     this.updateFormValidationState(this.ssoConfigForm);
 
-    if (this.ssoConfigForm.value.keyConnectorEnabled) {
+    if (this.ssoConfigForm.value.memberDecryptionType === MemberDecryptionType.KeyConnector) {
       this.haveTestedKeyConnector = false;
       await this.validateKeyConnectorUrl();
     }
@@ -262,18 +277,11 @@ export class SsoComponent implements OnInit, OnDestroy {
     request.identifier = this.ssoIdentifierCtrl.value === "" ? null : this.ssoIdentifierCtrl.value;
     request.data = SsoConfigApi.fromView(this.ssoConfigForm.getRawValue());
 
-    this.formPromise = this.organizationApiService.updateSso(this.organizationId, request);
+    const response = await this.organizationApiService.updateSso(this.organizationId, request);
+    this.populateForm(response);
 
-    try {
-      const response = await this.formPromise;
-      this.populateForm(response);
-      this.platformUtilsService.showToast("success", null, this.i18nService.t("ssoSettingsSaved"));
-    } catch {
-      // Logged by appApiAction, do nothing
-    }
-
-    this.formPromise = null;
-  }
+    this.platformUtilsService.showToast("success", null, this.i18nService.t("ssoSettingsSaved"));
+  };
 
   async validateKeyConnectorUrl() {
     if (this.haveTestedKeyConnector) {
@@ -313,7 +321,7 @@ export class SsoComponent implements OnInit, OnDestroy {
 
   get enableTestKeyConnector() {
     return (
-      this.ssoConfigForm.get("keyConnectorEnabled").value &&
+      this.ssoConfigForm.value?.memberDecryptionType === MemberDecryptionType.KeyConnector &&
       !Utils.isNullOrWhitespace(this.keyConnectorUrl?.value)
     );
   }

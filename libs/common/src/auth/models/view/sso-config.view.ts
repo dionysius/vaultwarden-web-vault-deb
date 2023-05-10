@@ -1,5 +1,6 @@
 import { View } from "../../../models/view/view";
 import {
+  MemberDecryptionType,
   OpenIdConnectRedirectBehavior,
   Saml2BindingType,
   Saml2NameIdFormat,
@@ -14,7 +15,7 @@ export class SsoConfigView extends View {
 
   configType: SsoType;
 
-  keyConnectorEnabled: boolean;
+  memberDecryptionType: MemberDecryptionType;
   keyConnectorUrl: string;
 
   openId: {
@@ -66,8 +67,8 @@ export class SsoConfigView extends View {
     }
 
     this.configType = orgSsoResponse.data.configType;
+    this.memberDecryptionType = orgSsoResponse.data.memberDecryptionType;
 
-    this.keyConnectorEnabled = orgSsoResponse.data.keyConnectorEnabled;
     this.keyConnectorUrl = orgSsoResponse.data.keyConnectorUrl;
 
     if (this.configType === SsoType.OpenIdConnect) {

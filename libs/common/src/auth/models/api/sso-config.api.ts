@@ -1,5 +1,6 @@
 import { BaseResponse } from "../../../models/response/base.response";
 import {
+  MemberDecryptionType,
   OpenIdConnectRedirectBehavior,
   Saml2BindingType,
   Saml2NameIdFormat,
@@ -11,8 +12,8 @@ import { SsoConfigView } from "../view/sso-config.view";
 export class SsoConfigApi extends BaseResponse {
   static fromView(view: SsoConfigView, api = new SsoConfigApi()) {
     api.configType = view.configType;
+    api.memberDecryptionType = view.memberDecryptionType;
 
-    api.keyConnectorEnabled = view.keyConnectorEnabled;
     api.keyConnectorUrl = view.keyConnectorUrl;
 
     if (api.configType === SsoType.OpenIdConnect) {
@@ -52,8 +53,8 @@ export class SsoConfigApi extends BaseResponse {
     return api;
   }
   configType: SsoType;
+  memberDecryptionType: MemberDecryptionType;
 
-  keyConnectorEnabled: boolean;
   keyConnectorUrl: string;
 
   // OpenId
@@ -95,8 +96,8 @@ export class SsoConfigApi extends BaseResponse {
     }
 
     this.configType = this.getResponseProperty("ConfigType");
+    this.memberDecryptionType = this.getResponseProperty("MemberDecryptionType");
 
-    this.keyConnectorEnabled = this.getResponseProperty("KeyConnectorEnabled");
     this.keyConnectorUrl = this.getResponseProperty("KeyConnectorUrl");
 
     this.authority = this.getResponseProperty("Authority");

@@ -4,6 +4,12 @@ export enum SsoType {
   Saml2 = 2,
 }
 
+export enum MemberDecryptionType {
+  MasterPassword = 0,
+  KeyConnector = 1,
+  TrustedDeviceEncryption = 2,
+}
+
 export enum OpenIdConnectRedirectBehavior {
   RedirectGet = 0,
   FormPost = 1,
