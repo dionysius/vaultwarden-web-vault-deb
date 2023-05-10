@@ -1,5 +1,5 @@
 <form [formGroup]="formGroup" [bitSubmit]="submit">
-  <bit-dialog [disablePadding]="!loading">
+  <bit-dialog [disablePadding]="!loading" dialogSize="large">
     <span bitDialogTitle>
       <ng-container *ngIf="editMode">
         {{ "editCollection" | i18n }}
