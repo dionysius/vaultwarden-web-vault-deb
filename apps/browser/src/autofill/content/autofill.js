@@ -58,8 +58,8 @@
 
           /**
            * For a given element `el`, returns the value of the attribute `attrName`.
-           * @param {HTMLElement} el 
-           * @param {string} attrName 
+           * @param {HTMLElement} el
+           * @param {string} attrName
            * @returns {string} The value of the attribute
            */
           function getElementAttrValue(el, attrName) {
@@ -96,7 +96,7 @@
 
           /**
            * Returns the value of the given element.
-           * @param {HTMLElement} el 
+           * @param {HTMLElement} el
            * @returns {any} Value of the element
            */
           function getElementValue(el) {
@@ -124,7 +124,7 @@
 
           /**
            * If `el` is a `<select>` element, return an array of all of the options' `text` properties.
-           * @param {HTMLElement} el 
+           * @param {HTMLElement} el
            * @returns {string[]} An array of options for the given `<select>` element
            */
           function getSelectElementOptions(el) {
@@ -147,7 +147,7 @@
 
           /**
            * If `el` is in a data table, get the label in the row directly above it
-           * @param {HTMLElement} el 
+           * @param {HTMLElement} el
            * @returns {string} A string containing the label, or null if not found
            */
           function getLabelTop(el) {
@@ -187,7 +187,7 @@
 
           /**
            * Get the contents of the elements that are labels for `el`
-           * @param {HTMLElement} el 
+           * @param {HTMLElement} el
            * @returns {string} A string containing all of the `innerText` or `textContent` values for all elements that are labels for `el`
            */
           function getLabelTag(el) {
@@ -239,10 +239,10 @@
 
           /**
            * Add property `prop` with value `val` to the object `obj`
-           * @param {object} obj 
-           * @param {string} prop 
-           * @param {any} val 
-           * @param {*} d 
+           * @param {object} obj
+           * @param {string} prop
+           * @param {any} val
+           * @param {*} d
            */
           function addProp(obj, prop, val, d) {
               if (0 !== d && d === val || null === val || void 0 === val) {
@@ -254,7 +254,7 @@
 
           /**
            * Converts the string `s` to lowercase
-           * @param {string} s 
+           * @param {string} s
            * @returns Lowercase string
            */
           function toLowerString(s) {
@@ -263,8 +263,8 @@
 
           /**
            * Query the document `doc` for elements matching the selector `selector`
-           * @param {Document} doc 
-           * @param {string} query 
+           * @param {Document} doc
+           * @param {string} query
            * @returns {HTMLElement[]} An array of elements matching the selector
            */
           function queryDoc(doc, query) {
@@ -452,8 +452,8 @@
       /**
        * Do the event on the element.
        * @param {HTMLElement} kedol The element to do the event on
-       * @param {string} fonor The event name 
-       * @returns 
+       * @param {string} fonor The event name
+       * @returns
        */
       function doEventOnElement(kedol, fonor) {
           var quebo;
@@ -465,7 +465,7 @@
 
       /**
        * Clean up the string `s` to remove non-printable characters and whitespace.
-       * @param {string} s 
+       * @param {string} s
        * @returns {string} Clean text
        */
       function cleanText(s) {
@@ -477,7 +477,7 @@
       /**
        * If `el` is a text node, add the node's text to `arr`.
        * If `el` is an element node, add the element's `textContent or `innerText` to `arr`.
-       * @param {string[]} arr An array of `textContent` or `innerText` values 
+       * @param {string[]} arr An array of `textContent` or `innerText` values
        * @param {HTMLElement} el The element to push to the array
        */
       function checkNodeType(arr, el) {
@@ -511,9 +511,9 @@
 
       /**
        * Recursively gather all of the text values from the elements preceding `el` in the DOM
-       * @param {HTMLElement} el 
+       * @param {HTMLElement} el
        * @param {string[]} arr An array of `textContent` or `innerText` values
-       * @param {number} steps The number of steps to take up the DOM tree 
+       * @param {number} steps The number of steps to take up the DOM tree
        */
       function shiftForLeftLabel(el, arr, steps) {
           var sib;
@@ -544,7 +544,7 @@
       /**
        * Determine if the element is visible.
        * Visible is define as not having `display: none` or `visibility: hidden`.
-       * @param {HTMLElement} el 
+       * @param {HTMLElement} el
        * @returns {boolean} Returns `true` if the element is visible and `false` otherwise
        */
       function isElementVisible(el) {
@@ -576,7 +576,7 @@
       /**
        * Determine if the element is "viewable" on the screen.
        * "Viewable" is defined as being visible in the DOM and being within the confines of the viewport.
-       * @param {HTMLElement} el 
+       * @param {HTMLElement} el
        * @returns {boolean} Returns `true` if the element is viewable and `false` otherwise
        */
       function isElementViewable(el) {
@@ -615,7 +615,7 @@
           // If the right side of the bounding rectangle is outside the viewport, the x coordinate of the center point is the window width (minus offset) divided by 2.
           // If the right side of the bounding rectangle is inside the viewport, the x coordinate of the center point is the width of the bounding rectangle divided by 2.
           // If the bottom of the bounding rectangle is outside the viewport, the y coordinate of the center point is the window height (minus offset) divided by 2.
-          // If the bottom side of the bounding rectangle is inside the viewport, the y coordinate of the center point is the height of the bounding rectangle divided by 
+          // If the bottom side of the bounding rectangle is inside the viewport, the y coordinate of the center point is the height of the bounding rectangle divided by
           // We then use elementFromPoint to find the element at that point.
           for (var pointEl = el.ownerDocument.elementFromPoint(leftOffset + (rect.right > window.innerWidth ? (window.innerWidth - leftOffset) / 2 : rect.width / 2), topOffset + (rect.bottom > window.innerHeight ? (window.innerHeight - topOffset) / 2 : rect.height / 2)); pointEl && pointEl !== el && pointEl !== document;) {
              // If the element we found is a label, and the element we're checking has labels
@@ -637,7 +637,7 @@
 
       /**
        * Retrieve the element from the document with the specified `opid` property
-       * @param {number} opId 
+       * @param {number} opId
        * @returns {HTMLElement} The element with the specified `opiId`, or `null` if no such element exists
        */
       function getElementForOPID(opId) {
@@ -714,7 +714,7 @@
 
       /**
        * Focus the element `el` and optionally restore its original value
-       * @param {HTMLElement} el 
+       * @param {HTMLElement} el
        * @param {boolean} setVal Set the value of the element to its original value
        */
       function focusElement(el, setVal) {
@@ -741,14 +741,29 @@
 
       // Check if URL is not secure when the original saved one was
       function urlNotSecure(savedURLs) {
-          var passwordInputs = null;
-          if (!savedURLs) {
+          if (!savedURLs || !savedURLs.length) {
               return false;
           }
 
-          return savedURLs.some(url => url?.indexOf('https://') === 0) && 'http:' === document.location.protocol && (passwordInputs = document.querySelectorAll('input[type=password]'),
-              0 < passwordInputs.length && (confirmResult = confirm('Warning: This is an unsecured HTTP page, and any information you submit can potentially be seen and changed by others. This Login was originally saved on a secure (HTTPS) page.\n\nDo you still wish to fill this login?'),
-                  0 == confirmResult)) ? true : false;
+          const confirmationWarning = [
+              chrome.i18n.getMessage("insecurePageWarning"),
+              chrome.i18n.getMessage("insecurePageWarningFillPrompt", [window.location.hostname])
+          ].join('\n\n');
+
+          if (
+              // At least one of the `savedURLs` uses SSL
+              savedURLs.some(url => url.startsWith('https://')) &&
+              // The current page is not using SSL
+              document.location.protocol === 'http:' &&
+              // There are password inputs on the page
+              document.querySelectorAll('input[type=password]')?.length
+          ) {
+              // The user agrees the page is unsafe or not
+              return !confirm(confirmationWarning);
+          }
+
+          // The page is secure
+          return false;
       }
 
       // Detect if within an iframe, and the iframe is sandboxed
@@ -777,10 +792,13 @@
             // confirm() is blocked by sandboxed iframes, but we don't want to fill sandboxed iframes anyway.
             // If this occurs, confirm() returns false without displaying the dialog box, and autofill will be aborted.
             // The browser may print a message to the console, but this is not a standard error that we can handle.
-            var acceptedIframeWarning = confirm("The form is hosted by a different domain than the URI " +
-                "of your saved login. Choose OK to auto-fill anyway, or Cancel to stop. " +
-                "To prevent this warning in the future, save this URI, " +
-                window.location.hostname + ", to your login.");
+            const confirmationWarning = [
+              chrome.i18n.getMessage("autofillIframeWarning"),
+              chrome.i18n.getMessage("autofillIframeWarningTip", [window.location.hostname])
+            ].join('\n\n');
+
+            const acceptedIframeWarning = confirm(confirmationWarning);
+
             if (!acceptedIframeWarning) {
               return;
             }
@@ -883,8 +901,8 @@
 
       /**
        * Find all elements matching `query` and fill them using the value `op` from the fill script
-       * @param {string} query 
-       * @param {string} op 
+       * @param {string} query
+       * @param {string} op
        * @returns {HTMLElement}
        */
       function doFillByQuery(query, op) {
@@ -897,8 +915,8 @@
 
       /**
        * Assign `valueToSet` to all elements in the DOM that match `query`.
-       * @param {string} query 
-       * @param {string} valueToSet 
+       * @param {string} query
+       * @param {string} valueToSet
        * @returns {Array} Array of elements that were set.
        */
       function doSimpleSetByQuery(query, valueToSet) {
@@ -912,8 +930,8 @@
 
       /**
        * Do a a click and focus on the element with the given `opId`.
-       * @param {number} opId 
-       * @returns 
+       * @param {number} opId
+       * @returns
        */
       function doFocusByOpId(opId) {
           var el = getElementByOpId(opId)
@@ -927,8 +945,8 @@
 
       /**
        * Do a click on the element with the given `opId`.
-       * @param {number} opId 
-       * @returns 
+       * @param {number} opId
+       * @returns
        */
       function doClickByOpId(opId) {
           var el = getElementByOpId(opId);
@@ -936,9 +954,9 @@
       }
 
       /**
-       * Do a `click` and `focus` on all elements that match the query. 
-       * @param {string} query 
-       * @returns 
+       * Do a `click` and `focus` on all elements that match the query.
+       * @param {string} query
+       * @returns
        */
       function doClickByQuery(query) {
           query = selectAllFromDoc(query);
@@ -961,8 +979,8 @@
 
       /**
        * Fll an element `el` using the value `op` from the fill script
-       * @param {HTMLElement} el 
-       * @param {string} op 
+       * @param {HTMLElement} el
+       * @param {string} op
        */
       function fillTheElement(el, op) {
           var shouldCheck;
@@ -994,7 +1012,7 @@
 
       /**
        * Do all the fill operations needed on the element `el`.
-       * @param {HTMLElement} el 
+       * @param {HTMLElement} el
        * @param {*} afterValSetFunc The function to perform after the operations are complete.
        */
       function doAllFillOperations(el, afterValSetFunc) {
@@ -1018,8 +1036,8 @@
 
       /**
        * Normalize the event based on API support
-       * @param {HTMLElement} el 
-       * @param {string} eventName 
+       * @param {HTMLElement} el
+       * @param {string} eventName
        * @returns {Event} A normalized event
        */
       function normalizeEvent(el, eventName) {
@@ -1046,7 +1064,7 @@
       /**
        * Simulate the entry of a value into an element.
        * Clicks the element, focuses it, and then fires a keydown, keypress, and keyup event.
-       * @param {HTMLElement} el 
+       * @param {HTMLElement} el
        */
       function setValueForElement(el) {
           var valueToSet = el.value;
@@ -1061,7 +1079,7 @@
       /**
        * Simulate the entry of a value into an element by using events.
        * Dispatches a keydown, keypress, and keyup event, then fires the `input` and `change` events before removing focus.
-       * @param {HTMLElement} el 
+       * @param {HTMLElement} el
        */
       function setValueForElementByEvent(el) {
           var valueToSet = el.value,
@@ -1081,7 +1099,7 @@
 
       /**
        * Click on an element `el`
-       * @param {HTMLElement} el 
+       * @param {HTMLElement} el
        * @returns {boolean} Returns true if the element was clicked and false if it was not able to be clicked
        */
       function clickElement(el) {
@@ -1116,7 +1134,7 @@
 
       /**
        * Determine if we can apply styling to `el` to indicate that it was filled.
-       * @param {HTMLElement} el 
+       * @param {HTMLElement} el
        * @returns {boolean} Returns true if we can see the element to apply styling.
        */
       function canSeeElementToStyle(el) {
@@ -1149,7 +1167,7 @@
 
       /**
        * Find the element for the given `opid`.
-       * @param {number} theOpId 
+       * @param {number} theOpId
        * @returns {HTMLElement} The element for the given `opid`, or `null` if not found.
        */
       function getElementByOpId(theOpId) {
@@ -1181,8 +1199,8 @@
 
       /**
        * Helper for doc.querySelectorAll
-       * @param {string} theSelector 
-       * @returns 
+       * @param {string} theSelector
+       * @returns
        */
       function selectAllFromDoc(theSelector) {
           var d = document, elements = [];
@@ -1194,7 +1212,7 @@
 
       /**
        * Focus an element and optionally re-set its value after focusing
-       * @param {HTMLElement} el 
+       * @param {HTMLElement} el
        * @param {boolean} setValue Re-set the value after focusing
        */
       function doFocusElement(el, setValue) {
