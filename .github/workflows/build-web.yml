@@ -160,7 +160,7 @@ jobs:
 
       - name: Check Branch to Publish
         env:
-          PUBLISH_BRANCHES: "master,rc,hotfix-rc"
+          PUBLISH_BRANCHES: "master,rc,hotfix-rc-web"
         id: publish-branch-check
         run: |
           IFS="," read -a publish_branches <<< $PUBLISH_BRANCHES
