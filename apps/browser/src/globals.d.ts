@@ -105,24 +105,12 @@ type OperaSidebarAction = {
  *
  * @link https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/sidebarAction
  */
-type FirefoxSidebarAction = Omit<
-  OperaSidebarAction,
-  | "setBadgeText"
-  | "getBadgeText"
-  | "setBadgeBackgroundColor"
-  | "getBadgeBackgroundColor"
-  | "onFocus"
-  | "onBlur"
->;
+type FirefoxSidebarAction = typeof browser.sidebarAction;
 
 type Opera = {
   addons: OperaAddons;
   sidebarAction: OperaSidebarAction;
 };
-
-declare namespace chrome {
-  let sidebarAction: FirefoxSidebarAction | undefined;
-}
 
 interface Window {
   opr: Opera | undefined;

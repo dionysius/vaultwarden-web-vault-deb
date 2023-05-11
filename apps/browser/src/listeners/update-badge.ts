@@ -220,10 +220,12 @@ export class UpdateBadge {
       return;
     }
 
-    if (this.useSyncApiCalls) {
-      this.sidebarAction.setIcon(options);
+    if (this.isOperaSidebar(this.sidebarAction)) {
+      await new Promise<void>((resolve) =>
+        (this.sidebarAction as OperaSidebarAction).setIcon(options, () => resolve())
+      );
     } else {
-      await new Promise<void>((resolve) => this.sidebarAction.setIcon(options, () => resolve()));
+      await this.sidebarAction.setIcon(options);
     }
   }
 

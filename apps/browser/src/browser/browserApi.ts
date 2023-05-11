@@ -1,3 +1,5 @@
+import { DeviceType } from "@bitwarden/common/enums/device-type.enum";
+
 import BrowserPlatformUtilsService from "../services/browserPlatformUtils.service";
 import { TabMessage } from "../types/tab-messages";
 
@@ -217,7 +219,7 @@ export class BrowserApi {
   static reloadOpenWindows() {
     const views = chrome.extension.getViews() as Window[];
     views
-      .filter((w) => w.location.href != null)
+      .filter((w) => w.location.href != null && !w.location.href.includes("background.html"))
       .forEach((w) => {
         w.location.reload();
       });
@@ -253,11 +255,13 @@ export class BrowserApi {
     return BrowserApi.manifestVersion === 3 ? chrome.action : chrome.browserAction;
   }
 
-  static getSidebarAction(win: Window & typeof globalThis) {
-    return BrowserPlatformUtilsService.isSafari(win)
-      ? null
-      : typeof win.opr !== "undefined" && win.opr.sidebarAction
-      ? win.opr.sidebarAction
-      : win.chrome.sidebarAction;
+  static getSidebarAction(
+    win: Window & typeof globalThis
+  ): OperaSidebarAction | FirefoxSidebarAction | null {
+    const deviceType = BrowserPlatformUtilsService.getDevice(win);
+    if (deviceType !== DeviceType.FirefoxExtension && deviceType !== DeviceType.OperaExtension) {
+      return null;
+    }
+    return win.opr?.sidebarAction || browser.sidebarAction;
   }
 }

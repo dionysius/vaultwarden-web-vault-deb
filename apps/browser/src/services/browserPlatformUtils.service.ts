@@ -159,13 +159,12 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
       return false;
     }
 
-    const sidebarView = this.sidebarViewName();
-    const sidebarOpen =
-      sidebarView != null && chrome.extension.getViews({ type: sidebarView }).length > 0;
-    if (sidebarOpen) {
+    // Opera has "sidebar_panel" as a ViewType but doesn't currently work
+    if (this.isFirefox() && chrome.extension.getViews({ type: "sidebar" }).length > 0) {
       return true;
     }
 
+    // Opera sidebar has type of "tab" (will stick around for a while after closing sidebar)
     const tabOpen = chrome.extension.getViews({ type: "tab" }).length > 0;
     return tabOpen;
   }
@@ -324,16 +323,6 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
 
   authenticateBiometric() {
     return this.biometricCallback();
-  }
-
-  sidebarViewName(): string {
-    if (this.win.chrome.sidebarAction && this.isFirefox()) {
-      return "sidebar";
-    } else if (this.isOpera() && typeof opr !== "undefined" && opr.sidebarAction) {
-      return "sidebar_panel";
-    }
-
-    return null;
   }
 
   supportsSecureStorage(): boolean {
