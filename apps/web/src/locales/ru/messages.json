@@ -2750,6 +2750,24 @@
       }
     }
   },
+  "viewCollectionWithName": {
+    "message": "Просмотр коллекции - $NAME$",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Collection1"
+      }
+    }
+  },
+  "editItemWithName": {
+    "message": "Редактирование элемента - $NAME$",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Google Login"
+      }
+    }
+  },
   "copiedPasswordItemId": {
     "message": "Скопирован пароль элемента $ID$.",
     "placeholders": {
@@ -6172,6 +6190,10 @@
   "accessTokenRevoked": {
     "message": "Токены доступа отозваны",
     "description": "Toast message after deleting one or multiple access tokens."
+  },
+  "noAccessTokenSelected": {
+    "message": "Для отзыва не выбран токен доступа",
+    "description": "Toast error message after trying to delete access tokens but not selecting any access tokens."
   },
   "submenu": {
     "message": "Подменю"

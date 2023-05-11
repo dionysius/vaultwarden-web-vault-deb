@@ -2750,6 +2750,24 @@
       }
     }
   },
+  "viewCollectionWithName": {
+    "message": "Vis samling - $NAME$",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Collection1"
+      }
+    }
+  },
+  "editItemWithName": {
+    "message": "Redigér emne - $NAME$",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Google Login"
+      }
+    }
+  },
   "copiedPasswordItemId": {
     "message": "Kopierede adgangskode til element $ID$.",
     "placeholders": {
@@ -6173,6 +6191,10 @@
     "message": "Access tokens revoked",
     "description": "Toast message after deleting one or multiple access tokens."
   },
+  "noAccessTokenSelected": {
+    "message": "Ingen adgangstoken valgt til tilbagekaldelse",
+    "description": "Toast error message after trying to delete access tokens but not selecting any access tokens."
+  },
   "submenu": {
     "message": "Undermenu"
   },
@@ -6607,7 +6629,7 @@
     "message": "En fejl opstod under forsøget på at læse importfilen"
   },
   "accessedSecret": {
-    "message": "Accessed secret $SECRET_ID$.",
+    "message": "Tilgået hemmelighed $SECRET_ID$.",
     "placeholders": {
       "secret_id": {
         "content": "$1",
@@ -6736,7 +6758,7 @@
     }
   },
   "dismiss": {
-    "message": "Afvis"
+    "message": "Luk"
   },
   "notAvailableForFreeOrganization": {
     "message": "Denne funktion er ikke tilgængelig for gratis organisationer. Kontakt organisationsejeren for at opgradere."

@@ -2750,6 +2750,24 @@
       }
     }
   },
+  "viewCollectionWithName": {
+    "message": "Skatīt krājumu - $NAME$",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Collection1"
+      }
+    }
+  },
+  "editItemWithName": {
+    "message": "Labot vienumu - $NAME$",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Google Login"
+      }
+    }
+  },
   "copiedPasswordItemId": {
     "message": "Vienuma $ID$ parole ievietota starpliktuvē.",
     "placeholders": {
@@ -6172,6 +6190,10 @@
   "accessTokenRevoked": {
     "message": "Piekļuves pilnvaras ir atsauktas",
     "description": "Toast message after deleting one or multiple access tokens."
+  },
+  "noAccessTokenSelected": {
+    "message": "Nav atlasīta neviena piekļuves pilnvara, ko atsaukt",
+    "description": "Toast error message after trying to delete access tokens but not selecting any access tokens."
   },
   "submenu": {
     "message": "Apakšizvēlne"

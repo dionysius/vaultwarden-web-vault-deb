@@ -2750,6 +2750,24 @@
       }
     }
   },
+  "viewCollectionWithName": {
+    "message": "Sammlung anzeigen - $NAME$",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Collection1"
+      }
+    }
+  },
+  "editItemWithName": {
+    "message": "Eintrag bearbeiten - $NAME$",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Google Login"
+      }
+    }
+  },
   "copiedPasswordItemId": {
     "message": "Passwort für Eintrag $ID$ kopiert.",
     "placeholders": {
@@ -6172,6 +6190,10 @@
   "accessTokenRevoked": {
     "message": "Zugriffstokens widerrufen",
     "description": "Toast message after deleting one or multiple access tokens."
+  },
+  "noAccessTokenSelected": {
+    "message": "Kein Zugriffstoken zum Widerrufen ausgewählt",
+    "description": "Toast error message after trying to delete access tokens but not selecting any access tokens."
   },
   "submenu": {
     "message": "Untermenü"

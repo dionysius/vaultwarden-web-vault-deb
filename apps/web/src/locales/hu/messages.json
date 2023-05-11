@@ -2750,6 +2750,24 @@
       }
     }
   },
+  "viewCollectionWithName": {
+    "message": "Gyűjtemény megtekintése - $NAME$",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Collection1"
+      }
+    }
+  },
+  "editItemWithName": {
+    "message": "Elem szerkesztése - $NAME$",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Google Login"
+      }
+    }
+  },
   "copiedPasswordItemId": {
     "message": "$ID$ azonosítójú elem jelszava másolásra került.",
     "placeholders": {
@@ -6172,6 +6190,10 @@
   "accessTokenRevoked": {
     "message": "Az elérési vezérjel visszavonásra került.",
     "description": "Toast message after deleting one or multiple access tokens."
+  },
+  "noAccessTokenSelected": {
+    "message": "Nincs kiválasztva elérési vezérjel a visszavonáshoz.",
+    "description": "Toast error message after trying to delete access tokens but not selecting any access tokens."
   },
   "submenu": {
     "message": "Almenü"

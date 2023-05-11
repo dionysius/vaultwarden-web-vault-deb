@@ -1256,7 +1256,7 @@
     "message": "Os dados foram importados com sucesso para o seu cofre."
   },
   "importSuccessNumberOfItems": {
-    "message": "A total of $AMOUNT$ items were imported.",
+    "message": "Um total de $AMOUNT$ itens foram importados.",
     "placeholders": {
       "amount": {
         "content": "$1",
@@ -2747,6 +2747,24 @@
       "id": {
         "content": "$1",
         "example": "Google"
+      }
+    }
+  },
+  "viewCollectionWithName": {
+    "message": "View collection - $NAME$",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Collection1"
+      }
+    }
+  },
+  "editItemWithName": {
+    "message": "Edit item - $NAME$",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Google Login"
       }
     }
   },
@@ -4813,7 +4831,7 @@
     "message": "Sua Senha Mestra foi alterada recentemente por um administrador de sua organização. Para acessar o cofre, você precisa atualizar sua Senha Mestra agora. O processo desconectará você da sessão atual, exigindo que você inicie a sessão novamente. Sessões ativas em outros dispositivos podem continuar ativas por até uma hora."
   },
   "updateWeakMasterPasswordWarning": {
-    "message": "Your master password does not meet one or more of your organization policies. In order to access the vault, you must update your master password now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
+    "message": "A sua senha mestra não atende a uma ou mais das políticas da sua organização. Para acessar o cofre, você deve atualizar a sua senha mestra agora. O processo desconectará você da sessão atual, exigindo que você inicie a sessão novamente. Sessões ativas em outros dispositivos podem continuar ativas por até uma hora."
   },
   "maximumVaultTimeout": {
     "message": "Tempo Limite do Cofre"
@@ -5429,7 +5447,7 @@
     "description": "This is used by screen readers to indicate the organization that is currently being shown to the user."
   },
   "accountLoggedInAsName": {
-    "message": "Account: Logged in as $NAME$",
+    "message": "Conta: Conectado como $NAME$",
     "placeholders": {
       "name": {
         "content": "$1",
@@ -6172,6 +6190,10 @@
   "accessTokenRevoked": {
     "message": "Tokens de acesso revogados",
     "description": "Toast message after deleting one or multiple access tokens."
+  },
+  "noAccessTokenSelected": {
+    "message": "No access token selected to revoke",
+    "description": "Toast error message after trying to delete access tokens but not selecting any access tokens."
   },
   "submenu": {
     "message": "Submenu"

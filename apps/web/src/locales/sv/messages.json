@@ -2750,6 +2750,24 @@
       }
     }
   },
+  "viewCollectionWithName": {
+    "message": "Visa samling - $NAME$",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Collection1"
+      }
+    }
+  },
+  "editItemWithName": {
+    "message": "Redigera objekt - $NAME$",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Google Login"
+      }
+    }
+  },
   "copiedPasswordItemId": {
     "message": "Kopierade lösenord för objektet $ID$.",
     "placeholders": {
@@ -6173,6 +6191,10 @@
     "message": "Åtkomsttoken återkallades",
     "description": "Toast message after deleting one or multiple access tokens."
   },
+  "noAccessTokenSelected": {
+    "message": "No access token selected to revoke",
+    "description": "Toast error message after trying to delete access tokens but not selecting any access tokens."
+  },
   "submenu": {
     "message": "Submenu"
   },
@@ -6351,7 +6373,7 @@
     "message": "Last checked"
   },
   "editDomain": {
-    "message": "Edit domain"
+    "message": "Redigera domän"
   },
   "domainFormInvalid": {
     "message": "There are form errors that need your attention"
@@ -6471,7 +6493,7 @@
     "message": "Server"
   },
   "exportData": {
-    "message": "Export data"
+    "message": "Exportera data"
   },
   "exportingOrganizationSecretDataTitle": {
     "message": "Exporting Organization Secret Data"
@@ -6495,7 +6517,7 @@
     "message": "Copy & paste import contents:"
   },
   "or": {
-    "message": "or"
+    "message": "eller"
   },
   "licenseAndBillingManagement": {
     "message": "License and billing management"
@@ -6579,7 +6601,7 @@
     "message": "Denna användare har åtkomst till hemlighetshanteraren Beta"
   },
   "important": {
-    "message": "Important:"
+    "message": "Viktigt:"
   },
   "viewAll": {
     "message": "Visa alla"
@@ -6623,7 +6645,7 @@
     "message": "Skapa en hemlighet"
   },
   "createProject": {
-    "message": "Create a project"
+    "message": "Skapa ett projekt"
   },
   "createServiceAccount": {
     "message": "Skapa ett tjänstkonto"

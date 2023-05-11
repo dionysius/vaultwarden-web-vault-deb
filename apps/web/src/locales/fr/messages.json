@@ -1886,7 +1886,7 @@
     "message": "Vous avez mis à niveau vers Premium."
   },
   "premiumUpgradeUnlockFeatures": {
-    "message": "Mettez votre compte à niveau vers une adhésion Premium et débloquez de superbes fonctionnalités supplémentaires."
+    "message": "Mettez à niveau votre compte vers une adhésion Premium et débloquez de superbes fonctionnalités supplémentaires."
   },
   "premiumSignUpStorage": {
     "message": "1 Go de stockage chiffré pour les fichiers joints."
@@ -2747,6 +2747,24 @@
       "id": {
         "content": "$1",
         "example": "Google"
+      }
+    }
+  },
+  "viewCollectionWithName": {
+    "message": "Afficher la collection - $NAME$",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Collection1"
+      }
+    }
+  },
+  "editItemWithName": {
+    "message": "Éditer l'élément - $NAME$",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Google Login"
       }
     }
   },
@@ -6172,6 +6190,10 @@
   "accessTokenRevoked": {
     "message": "Jetons d'accès révoqués",
     "description": "Toast message after deleting one or multiple access tokens."
+  },
+  "noAccessTokenSelected": {
+    "message": "Aucun jeton d'accès sélectionné à révoquer",
+    "description": "Toast error message after trying to delete access tokens but not selecting any access tokens."
   },
   "submenu": {
     "message": "Sous-menu"

@@ -2750,6 +2750,24 @@
       }
     }
   },
+  "viewCollectionWithName": {
+    "message": "Преглед на колекция – $NAME$",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Collection1"
+      }
+    }
+  },
+  "editItemWithName": {
+    "message": "Редактиране на елемент – $NAME$",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Google Login"
+      }
+    }
+  },
   "copiedPasswordItemId": {
     "message": "Паролата на запис № $ID$ е копирана.",
     "placeholders": {
@@ -6173,6 +6191,10 @@
     "message": "Идентификаторите за достъп са анулирани",
     "description": "Toast message after deleting one or multiple access tokens."
   },
+  "noAccessTokenSelected": {
+    "message": "Няма избран идентификатор за премахване на достъпа",
+    "description": "Toast error message after trying to delete access tokens but not selecting any access tokens."
+  },
   "submenu": {
     "message": "Подменю"
   },
@@ -6564,7 +6586,7 @@
     "message": "Малко повторения за KDF"
   },
   "updateLowKdfIterationsDesc": {
-    "message": "Update your encryption settings to meet new security recommendations and improve account protection."
+    "message": "Променете настройките си за шифроване, така че да отговарят на новите препоръки за сигурността и да подобрите защитата на регистрацията си."
   },
   "changeKdfLoggedOutWarning": {
     "message": "Proceeding will log you out of all active sessions. You will need to log back in and complete two-step login setup. We recommend exporting your vault before changing your encryption settings to prevent data loss."
@@ -6757,6 +6779,6 @@
     "description": "The message shown to the user when bulk deleting projects and the user doesn't have access to some projects."
   },
   "updateKdfSettings": {
-    "message": "Update KDF settings"
+    "message": "Промяна на настройките за KDF"
   }
 }

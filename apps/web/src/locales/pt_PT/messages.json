@@ -777,7 +777,7 @@
     "message": "Nova organização"
   },
   "noOrganizationsList": {
-    "message": "Você não pertence a nenhuma organização. Organizações permitem-lhe partilhar itens em segurança com outros utilizadores."
+    "message": "Não pertence a nenhuma organização. As organizações permitem-lhe partilhar itens em segurança com outros utilizadores."
   },
   "notificationSentDevice": {
     "message": "Foi enviada uma notificação para o seu dispositivo."
@@ -2747,6 +2747,24 @@
       "id": {
         "content": "$1",
         "example": "Google"
+      }
+    }
+  },
+  "viewCollectionWithName": {
+    "message": "Ver coleção - $NAME$",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Collection1"
+      }
+    }
+  },
+  "editItemWithName": {
+    "message": "Editar item - $NAME$",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Google Login"
       }
     }
   },
@@ -6172,6 +6190,10 @@
   "accessTokenRevoked": {
     "message": "Access tokens revoked",
     "description": "Toast message after deleting one or multiple access tokens."
+  },
+  "noAccessTokenSelected": {
+    "message": "No access token selected to revoke",
+    "description": "Toast error message after trying to delete access tokens but not selecting any access tokens."
   },
   "submenu": {
     "message": "Submenu"

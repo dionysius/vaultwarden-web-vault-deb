@@ -2750,6 +2750,24 @@
       }
     }
   },
+  "viewCollectionWithName": {
+    "message": "Преглед колекције - $NAME$",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Collection1"
+      }
+    }
+  },
+  "editItemWithName": {
+    "message": "Уредити ставку - $NAME$",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Google Login"
+      }
+    }
+  },
   "copiedPasswordItemId": {
     "message": "Копирана лозинка за $ID$.",
     "placeholders": {
@@ -5429,7 +5447,7 @@
     "description": "This is used by screen readers to indicate the organization that is currently being shown to the user."
   },
   "accountLoggedInAsName": {
-    "message": "Account: Logged in as $NAME$",
+    "message": "Налог: Пријављено као $NAME$",
     "placeholders": {
       "name": {
         "content": "$1",
@@ -6173,6 +6191,10 @@
     "message": "Приступ токена опозван",
     "description": "Toast message after deleting one or multiple access tokens."
   },
+  "noAccessTokenSelected": {
+    "message": "Није изабран приступни токен за опозив",
+    "description": "Toast error message after trying to delete access tokens but not selecting any access tokens."
+  },
   "submenu": {
     "message": "Под-мени"
   },
@@ -6564,7 +6586,7 @@
     "message": "Ниска KDF понављања"
   },
   "updateLowKdfIterationsDesc": {
-    "message": "Update your encryption settings to meet new security recommendations and improve account protection."
+    "message": "Ажурирајте подешавања шифровања да бисте испунили нове безбедносне препоруке и побољшали заштиту налога."
   },
   "changeKdfLoggedOutWarning": {
     "message": "Ако наставите, одјавићете се са свих активних сесија. Мораћете поново да се пријавите и завршите подешавање пријаве у два корака. Препоручујемо да извезете трезор пре него што промените подешавања шифровања да бисте спречили губитак података."
@@ -6757,6 +6779,6 @@
     "description": "The message shown to the user when bulk deleting projects and the user doesn't have access to some projects."
   },
   "updateKdfSettings": {
-    "message": "Update KDF settings"
+    "message": "Ажурирати KDF подешавања"
   }
 }

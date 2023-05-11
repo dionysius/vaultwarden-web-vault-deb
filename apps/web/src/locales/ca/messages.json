@@ -2750,6 +2750,24 @@
       }
     }
   },
+  "viewCollectionWithName": {
+    "message": "Mostra la col·lecció - $NAME$",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Collection1"
+      }
+    }
+  },
+  "editItemWithName": {
+    "message": "Edita l'element - $NAME$",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Google Login"
+      }
+    }
+  },
   "copiedPasswordItemId": {
     "message": "S'ha copiat la contrasenya de l'element $ID$.",
     "placeholders": {
@@ -5429,7 +5447,7 @@
     "description": "This is used by screen readers to indicate the organization that is currently being shown to the user."
   },
   "accountLoggedInAsName": {
-    "message": "Account: Logged in as $NAME$",
+    "message": "Compte: Heu iniciat sessió com a $NAME$",
     "placeholders": {
       "name": {
         "content": "$1",
@@ -6173,6 +6191,10 @@
     "message": "S'han revocat tokens d'accés",
     "description": "Toast message after deleting one or multiple access tokens."
   },
+  "noAccessTokenSelected": {
+    "message": "No s'ha seleccionat cap token d'accés per revocar-lo",
+    "description": "Toast error message after trying to delete access tokens but not selecting any access tokens."
+  },
   "submenu": {
     "message": "Submenú"
   },
@@ -6564,7 +6586,7 @@
     "message": "Iteracions de KDF baixes"
   },
   "updateLowKdfIterationsDesc": {
-    "message": "Update your encryption settings to meet new security recommendations and improve account protection."
+    "message": "Actualitzeu la configuració d'encriptació per complir les noves recomanacions de seguretat i millorar la protecció del compte."
   },
   "changeKdfLoggedOutWarning": {
     "message": "Si continueu, tancareu totes les sessions actives. Haureu de tornar a iniciar sessió i completar la configuració d'inici de sessió en dos passos. Recomanem que exporteu la caixa forta abans de canviar la configuració d'encriptació per evitar la pèrdua de dades."
@@ -6757,6 +6779,6 @@
     "description": "The message shown to the user when bulk deleting projects and the user doesn't have access to some projects."
   },
   "updateKdfSettings": {
-    "message": "Update KDF settings"
+    "message": "Actualitza la configuració de KDF"
   }
 }
