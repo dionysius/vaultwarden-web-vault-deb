@@ -1461,6 +1461,24 @@
   "autoFillSuccess": {
     "message": "Automatikusan kitöltött elem"
   },
+  "insecurePageWarning": {
+    "message": "Figyelmeztetés: Ez egy nem biztonságos HTTP oldal és az elküldött információkat mások láthatják és módosíthatják. Ezt a bejelentkezést eredetileg egy biztonságos (HTTPS) oldalra mentették."
+  },
+  "insecurePageWarningFillPrompt": {
+    "message": "Még mindig ki szeretnénk tölteni ezt a bejelentkezést?"
+  },
+  "autofillIframeWarning": {
+    "message": "Az űrlapot egy másik domain tárolja, mint a mentett bejelentkezés URI-ja. Az automatikus kitöltéshez válasszuk az OK gombot, a leállításhoz pedig a Mégsem lehetőséget."
+  },
+  "autofillIframeWarningTip": {
+    "message": "Ennek a figyelmeztetésnek a jövőbeni elkerülése érdekében mentsük el ezt az URI-t - $HOSTNAME$ - a Bitwarden bejelentkezési elemébe ennél a webhelynél.",
+    "placeholders": {
+      "hostname": {
+        "content": "$1",
+        "example": "www.example.com"
+      }
+    }
+  },
   "setMasterPassword": {
     "message": "Mesterjelszó beállítása"
   },

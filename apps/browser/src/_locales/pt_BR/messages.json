@@ -1461,6 +1461,24 @@
   "autoFillSuccess": {
     "message": "Item Auto-Preenchido"
   },
+  "insecurePageWarning": {
+    "message": "Aviso: Esta é uma página HTTP não segura, e qualquer informação que você enviar poderá ser interceptada e modificada por outras pessoas. Este login foi originalmente salvo em uma página segura (HTTPS)."
+  },
+  "insecurePageWarningFillPrompt": {
+    "message": "Você ainda deseja preencher esse login?"
+  },
+  "autofillIframeWarning": {
+    "message": "O formulário está hospedado em um domínio diferente do URI do seu login salvo. Escolha OK para preencher automaticamente mesmo assim ou Cancelar para parar."
+  },
+  "autofillIframeWarningTip": {
+    "message": "Para evitar este aviso no futuro, salve este URI, $HOSTNAME$, no seu item de login no Bitwarden para este site.",
+    "placeholders": {
+      "hostname": {
+        "content": "$1",
+        "example": "www.example.com"
+      }
+    }
+  },
   "setMasterPassword": {
     "message": "Definir Senha Mestra"
   },

@@ -1461,6 +1461,24 @@
   "autoFillSuccess": {
     "message": "Kayıt otomatik dolduruldu "
   },
+  "insecurePageWarning": {
+    "message": "Uyarı: Bu güvenli olmayan bir HTTP sayfasıdır ve gönderdiğiniz herhangi bir bilgi potansiyel olarak başkaları tarafından görülebilir ve değiştirilebilir. Bu Oturum Açma orijinal olarak güvenli (HTTPS) bir sayfaya kaydedilmiştir."
+  },
+  "insecurePageWarningFillPrompt": {
+    "message": "Hala bu girişi doldurmak istiyor musunuz?"
+  },
+  "autofillIframeWarning": {
+    "message": "Form, kayıtlı girişinizin URI'sinden farklı bir etki alanı tarafından barındırılıyor. Yine de otomatik doldurmak için Tamam'ı veya durdurmak için İptal'i seçin."
+  },
+  "autofillIframeWarningTip": {
+    "message": "Gelecekte bu uyarıyı önlemek için $HOSTNAME$ URI'sini bu site için Bitwarden oturum açma öğenize kaydedin.",
+    "placeholders": {
+      "hostname": {
+        "content": "$1",
+        "example": "www.example.com"
+      }
+    }
+  },
   "setMasterPassword": {
     "message": "Ana parolayı belirle"
   },

@@ -1461,6 +1461,24 @@
   "autoFillSuccess": {
     "message": "Element emplenat automàticament "
   },
+  "insecurePageWarning": {
+    "message": "Avís: aquesta és una pàgina HTTP no segura i altres persones poden veure i canviar qualsevol informació que envieu. Aquest inici de sessió es va guardar originalment en una pàgina segura (HTTPS)."
+  },
+  "insecurePageWarningFillPrompt": {
+    "message": "Encara voleu omplir aquest inici de sessió?"
+  },
+  "autofillIframeWarning": {
+    "message": "El formulari està allotjat en un domini diferent de l'URI de l'inici de sessió guardat. Trieu D'acord per omplir -lo automàticament de totes maneres o Cancel·la per aturar-ho."
+  },
+  "autofillIframeWarningTip": {
+    "message": "Per evitar aquest avís en el futur, guardeu aquest URI, $HOSTNAME$, al vostre element d'inici de sessió de Bitwarden d'aquest lloc.",
+    "placeholders": {
+      "hostname": {
+        "content": "$1",
+        "example": "www.example.com"
+      }
+    }
+  },
   "setMasterPassword": {
     "message": "Estableix la contrasenya mestra"
   },
@@ -2204,6 +2222,6 @@
     }
   },
   "opensInANewWindow": {
-    "message": "Opens in a new window"
+    "message": "S'obri en una finestra nova"
   }
 }

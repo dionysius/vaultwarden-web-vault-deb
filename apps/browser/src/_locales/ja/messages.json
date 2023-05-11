@@ -1461,6 +1461,24 @@
   "autoFillSuccess": {
     "message": "アイテムを自動入力しました"
   },
+  "insecurePageWarning": {
+    "message": "警告: これはセキュリティ保護されていない HTTP ページであり、送信する情報は他の人によって見られ、変更される可能性があります。 このログイン情報はもともとセキュア (HTTPS) ページに保存されていました。"
+  },
+  "insecurePageWarningFillPrompt": {
+    "message": "このログイン情報を入力しますか？"
+  },
+  "autofillIframeWarning": {
+    "message": "フォームは保存したログイン情報の URI とは異なるドメインによってホストされています。無視して自動入力するなら OK を選択し、中止したければキャンセルを選択してください。"
+  },
+  "autofillIframeWarningTip": {
+    "message": "この警告を将来的に防ぐためには、この URI と $HOSTNAME$ をこのサイトの Bitwarden ログインアイテムに保存してください。",
+    "placeholders": {
+      "hostname": {
+        "content": "$1",
+        "example": "www.example.com"
+      }
+    }
+  },
   "setMasterPassword": {
     "message": "マスターパスワードを設定"
   },

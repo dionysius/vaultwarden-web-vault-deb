@@ -1461,6 +1461,24 @@
   "autoFillSuccess": {
     "message": "Autoudfyldte element"
   },
+  "insecurePageWarning": {
+    "message": "Advarsel: Dette er en ikke-sikret HTTP side, og alle indsendte oplysninger kan potentielt ses og ændres af andre. Dette login blev oprindeligt gemt på en sikker (HTTPS) side."
+  },
+  "insecurePageWarningFillPrompt": {
+    "message": "Do you still wish to fill this login?"
+  },
+  "autofillIframeWarning": {
+    "message": "Formularen hostes af et andet domæne end URI'en for det gemte login. Vælg OK for at autoudfylde alligevel, eller Afbryd for at stoppe."
+  },
+  "autofillIframeWarningTip": {
+    "message": "For at forhindre denne advarsel i fremtiden, så gem denne URI, $HOSTNAME$, til Bitwarden login-emnet for dette websted.",
+    "placeholders": {
+      "hostname": {
+        "content": "$1",
+        "example": "www.example.com"
+      }
+    }
+  },
   "setMasterPassword": {
     "message": "Indstil hovedadgangskode"
   },

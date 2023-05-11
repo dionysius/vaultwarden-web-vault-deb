@@ -118,58 +118,57 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Name" xml:space="preserve">
-    <value>Bitwarden – Free Password Manager</value>
+    <value>Bitwarden - brezplačni upravljalnik gesel</value>
   </data>
   <data name="Summary" xml:space="preserve">
-    <value>A secure and free password manager for all of your devices</value>
+    <value>Varen in brezplačen upravljalnik gesel za vse vaše naprave</value>
   </data>
   <data name="Description" xml:space="preserve">
-    <value>Bitwarden, Inc. is the parent company of 8bit Solutions LLC.
+    <value>Bitwarden, Inc. je matično podjetje podjetja 8bit Solutions LLC.
 
-NAMED BEST PASSWORD MANAGER BY THE VERGE, U.S. NEWS &amp; WORLD REPORT, CNET, AND MORE.
+NAJBOŠJI UPRAVLJALNIK GESEL PO MNEJU THE VERGE, U.S. NEWS &amp; WORLD REPORT, CNET IN DRUGIH.
 
-Manage, store, secure, and share unlimited passwords across unlimited devices from anywhere. Bitwarden delivers open source password management solutions to everyone, whether at  home, at work, or on the go.
+Upravljajte, shranjujte, varujte in delite neomejeno število gesel na neomejenem številu naprav, kjerkoli. Bitwarden ponuja odprtokodne rešitve za upravljanje gesel vsem, tako doma kot v službi ali na poti.
 
-Generate strong, unique, and random passwords based on security requirements for every website you frequent.
+Ustvarite močna, edinstvena in naključna gesla, skladna z varnostnimi zahtevami za vsako spletno mesto, ki ga obiščete.
 
-Bitwarden Send quickly transmits encrypted information --- files and plaintext -- directly to anyone.
+Z Bitwarden Send hitro prenesite šifrirane informacije --- datoteke in navadno besedilo -- neposredno komurkoli.
 
-Bitwarden offers Teams and Enterprise plans for companies so you can securely share passwords with colleagues.
+Bitwarden ponuja storitvi za organizacije Teams in Enterprise, s katerima lahko gesla varno delite s sodelavci.
 
-Why Choose Bitwarden:
+Zakaj izbrati Bitwarden:
 
-World-Class Encryption
-Passwords are protected with advanced end-to-end encryption (AES-256 bit, salted hashing, and PBKDF2 SHA-256) so your data stays secure and private.
+Vrhunsko šifriranje
+Gesla so zaščitena z naprednim šifriranjem (AES-256, soljene hash-vrednosti in PBKDF2 SHA-256), tako da vaši podatki ostanejo varni in zasebni.
 
-Built-in Password Generator
-Generate strong, unique, and random passwords based on security requirements for every website you frequent.
+Vgrajeni generator gesel
+Ustvarite močna, edinstvena in naključna gesla v skladu z varnostnimi zahtevami za vsako spletno mesto, ki ga obiščete.
 
-Global Translations 
-Bitwarden translations exist in 40 languages and are growing, thanks to our global community.
+Prevodi za ves svet
+Bitwarden je preveden že v 40 jezikov, naša globalna skupnost pa ves čas posodabljan in ustvarja nove prevede.
 
-Cross-Platform Applications 
-Secure and share sensitive data within your Bitwarden Vault from any browser, mobile device, or desktop OS, and more.
-</value>
+Deluje na vseh platformah
+Varujte in delite svoje občutljive podatke znotraj vašega Bitwarden trezorja v katerem koli brskalniku, mobilni napravi, namiznem računalniku in drugje.</value>
   </data>
   <data name="AssetTitle" xml:space="preserve">
-    <value>A secure and free password manager for all of your devices</value>
+    <value>Varen in brezplačen upravljalnik gesel za vse vaše naprave</value>
   </data>
   <data name="ScreenshotSync" xml:space="preserve">
-    <value>Sync and access your vault from multiple devices</value>
+    <value>Sinhronizirajte svoj trezor gesel in dostopajte do njega z več naprav</value>
   </data>
   <data name="ScreenshotVault" xml:space="preserve">
-    <value>Manage all your logins and passwords from a secure vault</value>
+    <value>Upravljajte s svojimi gesli in prijavami v varnem trezorju</value>
   </data>
   <data name="ScreenshotAutofill" xml:space="preserve">
-    <value>Quickly auto-fill your login credentials into any website that you visit</value>
+    <value>Uporabite samodejno izpolnitev prijavnih obrazcev za hitro prijavo na spletnih straneh</value>
   </data>
   <data name="ScreenshotMenu" xml:space="preserve">
-    <value>Your vault is also conveniently accessible from the right-click menu</value>
+    <value>Do svojega trezorja lahko hitro dostopate tudi prek menija na desnem kliku</value>
   </data>
   <data name="ScreenshotPassword" xml:space="preserve">
-    <value>Automatically generate strong, random, and secure passwords</value>
+    <value>Samodejno generirajte močna, naključna in varna gesla</value>
   </data>
   <data name="ScreenshotEdit" xml:space="preserve">
-    <value>Your information is managed securely using AES-256 bit encryption</value>
+    <value>Vaši podatki so varno shranjeni z uporabo 256-bitnega šifriranja AES</value>
   </data>
 </root>

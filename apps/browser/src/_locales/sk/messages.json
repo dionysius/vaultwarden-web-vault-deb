@@ -1461,6 +1461,24 @@
   "autoFillSuccess": {
     "message": "Automaticky vyplnené"
   },
+  "insecurePageWarning": {
+    "message": "Upozornenie: Toto je nezabezpečená HTTP stránka a akékoľvek informácie, ktoré odošlete, môžu potenciálne vidieť a zmeniť ostatní. Toto prihlásenie bolo pôvodne uložené na zabezpečenej stránke (HTTPS)."
+  },
+  "insecurePageWarningFillPrompt": {
+    "message": "Prajete si napriek tomu vyplniť prihlasovacie údaje?"
+  },
+  "autofillIframeWarning": {
+    "message": "Formulár je hosťovaný inou doménou ako má URI uložených prihlasovacích údajov. Zvoľte OK ak chcete aj tak automaticky vyplniť údaje, alebo Zrušiť pre zastavenie."
+  },
+  "autofillIframeWarningTip": {
+    "message": "Ak chcete tomuto upozorneniu v budúcnosti zabrániť, uložte URI, $HOSTNAME$, do položky prihlásenia Bitwardenu pre túto stránku.",
+    "placeholders": {
+      "hostname": {
+        "content": "$1",
+        "example": "www.example.com"
+      }
+    }
+  },
   "setMasterPassword": {
     "message": "Nastaviť hlavné heslo"
   },

@@ -1461,6 +1461,24 @@
   "autoFillSuccess": {
     "message": "Element został automatycznie uzupełniony"
   },
+  "insecurePageWarning": {
+    "message": "Ostrzeżenie: Jest to niezabezpieczona strona HTTP i wszelkie przekazane informacje mogą być potencjalnie widoczne i zmienione przez innych. Ten login został pierwotnie zapisany na stronie bezpiecznej (HTTPS)."
+  },
+  "insecurePageWarningFillPrompt": {
+    "message": "Nadal chcesz uzupełnić ten login?"
+  },
+  "autofillIframeWarning": {
+    "message": "Formularz jest hostowany przez inną domenę niż zapisany adres URI dla tego loginu. Wybierz OK, aby i tak automatycznie wypełnić lub anuluj aby zatrzymać."
+  },
+  "autofillIframeWarningTip": {
+    "message": "To prevent this warning in the future, save this URI, $HOSTNAME$, to your Bitwarden login item for this site.",
+    "placeholders": {
+      "hostname": {
+        "content": "$1",
+        "example": "www.example.com"
+      }
+    }
+  },
   "setMasterPassword": {
     "message": "Ustaw hasło główne"
   },

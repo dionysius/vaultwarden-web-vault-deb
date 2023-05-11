@@ -1461,6 +1461,24 @@
   "autoFillSuccess": {
     "message": "Objeto autorellenado"
   },
+  "insecurePageWarning": {
+    "message": "Atención: Esta es una página HTTP no segura, y cualquier información que envíes puede ser vista y cambiada por otros. Este inicio de sesión fue guardado originalmente en una página segura (HTTPS)."
+  },
+  "insecurePageWarningFillPrompt": {
+    "message": "¿Sigue deseando rellenar este inicio de sesión?"
+  },
+  "autofillIframeWarning": {
+    "message": "El formulario está alojado por un dominio diferente al URI de su registro guardado. Elija OK para autorrellenar de todos modos, o Cancelar para parar."
+  },
+  "autofillIframeWarningTip": {
+    "message": "Para prevenir esta advertencia en el futuro, guarde esta URI, $HOSTNAME$, en su elemento de inicio de sesión de Bitwarden para este sitio.",
+    "placeholders": {
+      "hostname": {
+        "content": "$1",
+        "example": "www.example.com"
+      }
+    }
+  },
   "setMasterPassword": {
     "message": "Establecer contraseña maestra"
   },

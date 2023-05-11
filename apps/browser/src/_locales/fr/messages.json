@@ -1461,6 +1461,24 @@
   "autoFillSuccess": {
     "message": "Élément saisi automatiquement"
   },
+  "insecurePageWarning": {
+    "message": "Avertissement : il s'agit d'une page HTTP non sécurisée, et toute information que vous soumettez peut potentiellement être vue et modifiée par d'autres. À l'origine, cet identifiant a été enregistré sur une page sécurisée (HTTPS)."
+  },
+  "insecurePageWarningFillPrompt": {
+    "message": "Voulez-vous toujours saisir automatiquement cet identifiant ?"
+  },
+  "autofillIframeWarning": {
+    "message": "Le formulaire est hébergé par un domaine différent de l'URI d'enregistrement de votre identifiant. Choisissez OK pour poursuivre la saisie automatique, ou Annuler pour arrêter."
+  },
+  "autofillIframeWarningTip": {
+    "message": "À l'avenir, pour éviter cet avertissement, enregistrez cet URI, $HOSTNAME$, dans votre élément de connexion Bitwarden pour ce site.",
+    "placeholders": {
+      "hostname": {
+        "content": "$1",
+        "example": "www.example.com"
+      }
+    }
+  },
   "setMasterPassword": {
     "message": "Définir le mot de passe principal"
   },

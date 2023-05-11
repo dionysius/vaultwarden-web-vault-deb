@@ -1461,6 +1461,24 @@
   "autoFillSuccess": {
     "message": "Ставка ауто-попуњена"
   },
+  "insecurePageWarning": {
+    "message": "Упозорење: ово је необезбеђена ХТТП страница и све информације које пошаљете потенцијално могу други да виде и промене. Ова пријава је првобитно била сачувана на безбедној (ХТТПС) страници."
+  },
+  "insecurePageWarningFillPrompt": {
+    "message": "Да ли и даље желите да попуните ову пријаву?"
+  },
+  "autofillIframeWarning": {
+    "message": "Образац је хостован на другом домену од УРЛ-а ваше сачуване пријаве. Изаберите ОК да бисте ипак аутоматски попунили или Откажи да бисте зауставили."
+  },
+  "autofillIframeWarningTip": {
+    "message": "Да бисте спречили ово упозорење у будућности, сачувајте ову УРЛ, $HOSTNAME$, у Bitwarden пријавју за овај сајт.",
+    "placeholders": {
+      "hostname": {
+        "content": "$1",
+        "example": "www.example.com"
+      }
+    }
+  },
   "setMasterPassword": {
     "message": "Постави Главну Лозинку"
   },
@@ -2204,6 +2222,6 @@
     }
   },
   "opensInANewWindow": {
-    "message": "Opens in a new window"
+    "message": "Отвара се у новом прозору"
   }
 }

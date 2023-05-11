@@ -634,7 +634,7 @@
     "message": "Kontextmenüoptionen anzeigen"
   },
   "contextMenuItemDesc": {
-    "message": "Verwende einen zweiten Klick, um auf die Erstellung von Passwörtern und passende Zugangsdaten für die Webseite zuzugreifen. "
+    "message": "Greife über einen Rechtsklick auf die Erstellung von Passwörtern und passende Zugangsdaten für die Website zu."
   },
   "defaultUriMatchDetection": {
     "message": "Standard URI-Übereinstimmungserkennung",
@@ -1460,6 +1460,24 @@
   },
   "autoFillSuccess": {
     "message": "Eintrag automatisch ausgefüllt "
+  },
+  "insecurePageWarning": {
+    "message": "Warnung: Dies ist eine ungesicherte HTTP-Seite und alle Informationen, die du absendest, können möglicherweise von anderen gesehen und geändert werden. Diese Zugangsdaten wurden ursprünglich auf einer sicheren (HTTPS-)Seite gespeichert."
+  },
+  "insecurePageWarningFillPrompt": {
+    "message": "Möchtest du diese Zugangsdaten trotzdem ausfüllen?"
+  },
+  "autofillIframeWarning": {
+    "message": "Das Formular wird von einer anderen Domain als der URI deines gespeicherten Logins gehostet. Wähle OK, um trotzdem automatisch auszufüllen, oder Abbrechen, um aufzuhören."
+  },
+  "autofillIframeWarningTip": {
+    "message": "Um diese Warnung in Zukunft zu verhindern, speichere diese URI, $HOSTNAME$, in deinem Bitwarden Zugangsdaten-Eintrag für diese Seite.",
+    "placeholders": {
+      "hostname": {
+        "content": "$1",
+        "example": "www.example.com"
+      }
+    }
   },
   "setMasterPassword": {
     "message": "Master-Passwort festlegen"

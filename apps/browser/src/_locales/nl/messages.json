@@ -1461,6 +1461,24 @@
   "autoFillSuccess": {
     "message": "Automatisch gevuld item"
   },
+  "insecurePageWarning": {
+    "message": "Waarschuwing: Dit is een onbeveiligde HTTP-pagina waardoor anderen alle informatie die je verstuurt kunnen zien en wijzigen. Deze login is oorspronkelijk opgeslagen op een beveiligde (HTTPS) pagina."
+  },
+  "insecurePageWarningFillPrompt": {
+    "message": "Wil je je inloggegevens nog steeds invullen?"
+  },
+  "autofillIframeWarning": {
+    "message": "Dit formulier wordt door een ander domein gehost dan de URI van jouw opgeslagen login. Kies OK voor toch automatisch invullen, of Annuleren om te stoppen."
+  },
+  "autofillIframeWarningTip": {
+    "message": "Om deze waarschuwing in de toekomst te voorkomen, bewaar je deze URI, $HOSTNAME$, bij je Bitwarden-login voor deze site.",
+    "placeholders": {
+      "hostname": {
+        "content": "$1",
+        "example": "www.example.com"
+      }
+    }
+  },
   "setMasterPassword": {
     "message": "Hoofdwachtwoord instellen"
   },
