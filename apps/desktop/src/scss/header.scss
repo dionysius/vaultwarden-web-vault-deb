@@ -73,6 +73,14 @@
         color: themed("headerInputColor");
       }
 
+      &::selection {
+        @include themify($themes) {
+          // explicitly set text selection to invert foreground/background
+          background-color: themed("headerInputColor");
+          color: themed("headerInputBackgroundColor");
+        }
+      }
+
       &:focus {
         border-radius: $border-radius;
         outline: none;
