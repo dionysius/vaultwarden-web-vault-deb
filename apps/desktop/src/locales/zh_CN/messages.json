@@ -1393,7 +1393,7 @@
     "message": "使用 Windows Hello 解锁"
   },
   "additionalWindowsHelloSettings": {
-    "message": "Additional Windows Hello settings"
+    "message": "额外的 Windows Hello 设置"
   },
   "windowsHelloConsentMessage": {
     "message": "验证 Bitwarden。"
@@ -1402,22 +1402,22 @@
     "message": "使用触控 ID 解锁"
   },
   "additionalTouchIdSettings": {
-    "message": "Additional Touch ID settings"
+    "message": "额外的触控 ID 设置"
   },
   "touchIdConsentMessage": {
     "message": "解锁您的密码库"
   },
   "autoPromptWindowsHello": {
-    "message": "启动时要求 Windows Hello"
+    "message": "应用程序启动时要求使用 Windows Hello"
   },
   "autoPromptTouchId": {
-    "message": "启动时要求触控 ID"
+    "message": "应用程序启动时要求使用触控 ID"
   },
   "requirePasswordOnStart": {
-    "message": "Require password or PIN on app start"
+    "message": "应用程序启动时要求输入密码或 PIN"
   },
   "recommendedForSecurity": {
-    "message": "Recommended for security."
+    "message": "安全起见，推荐设置。"
   },
   "lockWithMasterPassOnRestart": {
     "message": "重启后使用主密码锁定"
@@ -1859,7 +1859,7 @@
     "message": "您的主密码最近被您组织的管理员更改过。要访问密码库，您必须立即更新它。继续操作将使您退出当前会话并要求您重新登录。其他设备上的活动会话可能会继续保持活动状态长达一小时。"
   },
   "updateWeakMasterPasswordWarning": {
-    "message": "您的主密码不符合您的组织策略要求。要访问密码库，必须立即更新您的主密码。继续操作将使您退出当前会话，要求您重新登录。其他设备上的活动会话可能会继续保持活动状态长达一小时。"
+    "message": "您的主密码不符合某一项或多项组织策略要求。要访问密码库，必须立即更新您的主密码。继续操作将使您退出当前会话，并要求您重新登录。其他设备上的活动会话可能会继续保持活动状态长达一小时。"
   },
   "hours": {
     "message": "小时"
@@ -2247,9 +2247,9 @@
     }
   },
   "windowsBiometricUpdateWarning": {
-    "message": "Bitwarden recommends updating your biometric settings to require your master password (or PIN) on the first unlock. Would you like to update your settings now?"
+    "message": "Bitwarden 建议更新您的生物识别设置，以在首次解锁时要求输入您的主密码（或 PIN）。现在要更新您的设置吗？"
   },
   "windowsBiometricUpdateWarningTitle": {
-    "message": "Recommended Settings Update"
+    "message": "推荐的设置更新"
   }
 }
