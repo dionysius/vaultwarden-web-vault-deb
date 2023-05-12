@@ -5217,9 +5217,6 @@
     "message": "para requerir que todos los miembros inicien sesión con SSO.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Use the require single-sign-on authentication policy to require all members to log in with SSO.'"
   },
-  "ssoPolicyHelpKeyConnector": {
-    "message": "Se requieren políticas de autenticación de SSO y de una Única Organización para configurar el descifrado del Conector de Claves."
-  },
   "memberDecryptionOption": {
     "message": "Opciones de descifrado de miembros"
   },
@@ -5229,8 +5226,17 @@
   "keyConnector": {
     "message": "Conector de claves"
   },
-  "memberDecryptionKeyConnectorDesc": {
-    "message": "Conecte el inicio de sesión con SSO a su servidor de claves de descifrado autoalojado. Usando esta opción, los miembros no necesitarán usar sus contraseñas maestras para descifrar datos de la caja fuerte. Póngase en contacto con el soporte de Bitwarden para asistencia en la configuración."
+  "memberDecryptionKeyConnectorDescStart": {
+    "message": "Connect login with SSO to your self-hosted decryption key server. Using this option, members won’t need to use their master passwords to decrypt vault data. The",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Connect login with SSO to your self-hosted decryption key server. Using this option, members won’t need to use their master passwords to decrypt vault data. The require SSO authentication and single organization policies are required to set up Key Connector decryption. Contact Bitwarden Support for set up assistance.'"
+  },
+  "memberDecryptionKeyConnectorDescLink": {
+    "message": "require SSO authentication and single organization policies",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Connect login with SSO to your self-hosted decryption key server. Using this option, members won’t need to use their master passwords to decrypt vault data. The require SSO authentication and single organization policies are required to set up Key Connector decryption. Contact Bitwarden Support for set up assistance.'"
+  },
+  "memberDecryptionKeyConnectorDescEnd": {
+    "message": "are required to set up Key Connector decryption. Contact Bitwarden Support for set up assistance.",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Connect login with SSO to your self-hosted decryption key server. Using this option, members won’t need to use their master passwords to decrypt vault data. The require SSO authentication and single organization policies are required to set up Key Connector decryption. Contact Bitwarden Support for set up assistance.'"
   },
   "keyConnectorPolicyRestriction": {
     "message": "Está habilitado \"Iniciar sesión con SSO y el descifrado del Conectore de claves\" Esta política sólo se aplicará a propietarios y administradores."
@@ -5534,7 +5540,7 @@
   },
   "lastSync": {
     "message": "Última sincronización",
-    "Description": "Used as a prefix to indicate the last time a sync occured. Example \"Last sync 1968-11-16 00:00:00\""
+    "description": "Used as a prefix to indicate the last time a sync occured. Example \"Last sync 1968-11-16 00:00:00\""
   },
   "sponsorshipsSynced": {
     "message": "Los patrocinios autohospedados están sincronizados."
@@ -6780,5 +6786,20 @@
   },
   "updateKdfSettings": {
     "message": "Actualizar ajustes de KDF"
+  },
+  "trustedDeviceEncryption": {
+    "message": "Cifrado de dispositivo de confianza"
+  },
+  "memberDecryptionTdeDescStart": {
+    "message": "Una vez autenticados, los miembros descifrarán los datos de la caja fuerte usando una clave almacenada en su dispositivo. El",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The master password reset policy with automatic enrollment will turn on when this option is used.'"
+  },
+  "memberDecryptionTdeDescLink": {
+    "message": "política de restablecimiento de contraseña maestra",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The master password reset policy with automatic enrollment will turn on when this option is used.'"
+  },
+  "memberDecryptionTdeDescEnd": {
+    "message": "with automatic enrollment will turn on when this option is used.",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The master password reset policy with automatic enrollment will turn on when this option is used.'"
   }
 }
