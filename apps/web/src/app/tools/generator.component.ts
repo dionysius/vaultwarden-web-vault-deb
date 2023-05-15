@@ -1,7 +1,7 @@
-import { Component, ViewChild, ViewContainerRef } from "@angular/core";
+import { Component } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 
-import { ModalService } from "@bitwarden/angular/services/modal.service";
+import { DialogServiceAbstraction } from "@bitwarden/angular/services/dialog";
 import { GeneratorComponent as BaseGeneratorComponent } from "@bitwarden/angular/tools/generator/components/generator.component";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
@@ -17,9 +17,6 @@ import { PasswordGeneratorHistoryComponent } from "./password-generator-history.
   templateUrl: "generator.component.html",
 })
 export class GeneratorComponent extends BaseGeneratorComponent {
-  @ViewChild("historyTemplate", { read: ViewContainerRef, static: true })
-  historyModalRef: ViewContainerRef;
-
   constructor(
     passwordGenerationService: PasswordGenerationServiceAbstraction,
     usernameGenerationService: UsernameGenerationServiceAbstraction,
@@ -28,7 +25,7 @@ export class GeneratorComponent extends BaseGeneratorComponent {
     i18nService: I18nService,
     logService: LogService,
     route: ActivatedRoute,
-    private modalService: ModalService
+    private dialogService: DialogServiceAbstraction
   ) {
     super(
       passwordGenerationService,
@@ -47,7 +44,7 @@ export class GeneratorComponent extends BaseGeneratorComponent {
   }
 
   async history() {
-    await this.modalService.openViewRef(PasswordGeneratorHistoryComponent, this.historyModalRef);
+    this.dialogService.open(PasswordGeneratorHistoryComponent);
   }
 
   lengthChanged() {

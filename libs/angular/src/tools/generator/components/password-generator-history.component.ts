@@ -22,10 +22,10 @@ export class PasswordGeneratorHistoryComponent implements OnInit {
     this.history = await this.passwordGenerationService.getHistory();
   }
 
-  clear() {
+  clear = async () => {
     this.history = [];
-    this.passwordGenerationService.clear();
-  }
+    await this.passwordGenerationService.clear();
+  };
 
   copy(password: string) {
     const copyOptions = this.win != null ? { window: this.win } : null;
