@@ -1,2 +1,4 @@
 # due to flexibility in backporting, can't fullfill every state of distros
 vaultwarden-web-vault source: newer-standards-version
+# patched in binary files are stored in debian/patches/resources, which is unusual but to me a good place
+vaultwarden-web-vault source: patch-file-present-but-not-mentioned-in-series
