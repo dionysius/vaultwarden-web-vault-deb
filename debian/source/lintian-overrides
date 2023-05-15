@@ -2,3 +2,5 @@
 vaultwarden-web-vault source: newer-standards-version
 # patched in binary files are stored in debian/patches/resources, which is unusual but to me a good place
 vaultwarden-web-vault source: patch-file-present-but-not-mentioned-in-series
+# "It is a feature not a bug", https://lintian.debian.org/tags/source-is-missing
+vaultwarden-web-vault source: source-is-missing * line length is * characters
