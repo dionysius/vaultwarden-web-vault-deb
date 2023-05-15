@@ -129,24 +129,27 @@ export class BrowserApi {
     return Promise.resolve(chrome.extension.getViews({ type: "popup" }).length > 0);
   }
 
-  static createNewTab(url: string, active = true, openerTab?: chrome.tabs.Tab) {
-    chrome.tabs.create({ url: url, active: active, openerTabId: openerTab?.id });
+  static createNewTab(url: string, active = true): Promise<chrome.tabs.Tab> {
+    return new Promise((resolve) =>
+      chrome.tabs.create({ url: url, active: active }, (tab) => resolve(tab))
+    );
   }
 
-  static openBitwardenExtensionTab(
-    relativeUrl: string,
-    active = true,
-    openerTab?: chrome.tabs.Tab
-  ) {
-    if (relativeUrl.includes("uilocation=tab")) {
-      this.createNewTab(relativeUrl, active, openerTab);
-      return;
+  static async focusWindow(windowId: number) {
+    await chrome.windows.update(windowId, { focused: true });
+  }
+
+  static async openBitwardenExtensionTab(relativeUrl: string, active = true) {
+    let url = relativeUrl;
+    if (!relativeUrl.includes("uilocation=tab")) {
+      const fullUrl = chrome.extension.getURL(relativeUrl);
+      const parsedUrl = new URL(fullUrl);
+      parsedUrl.searchParams.set("uilocation", "tab");
+      url = parsedUrl.toString();
     }
 
-    const fullUrl = chrome.extension.getURL(relativeUrl);
-    const parsedUrl = new URL(fullUrl);
-    parsedUrl.searchParams.set("uilocation", "tab");
-    this.createNewTab(parsedUrl.toString(), active, openerTab);
+    const createdTab = await this.createNewTab(url, active);
+    this.focusWindow(createdTab.windowId);
   }
 
   static async closeBitwardenExtensionTab() {
@@ -163,10 +166,6 @@ export class BrowserApi {
 
     const tabToClose = tabs[tabs.length - 1];
     chrome.tabs.remove(tabToClose.id);
-
-    if (tabToClose.openerTabId) {
-      this.focusTab(tabToClose.openerTabId);
-    }
   }
 
   static messageListener(

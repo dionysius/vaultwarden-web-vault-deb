@@ -75,6 +75,8 @@ export default class RuntimeBackground {
         this.systemService.cancelProcessReload();
 
         if (item) {
+          await BrowserApi.focusWindow(item.commandToRetry.sender.tab.windowId);
+          await BrowserApi.focusTab(item.commandToRetry.sender.tab.id);
           await BrowserApi.tabSendMessageData(
             item.commandToRetry.sender.tab,
             "unlockCompleted",
@@ -103,7 +105,7 @@ export default class RuntimeBackground {
         await this.main.openPopup();
         break;
       case "promptForLogin":
-        BrowserApi.openBitwardenExtensionTab("popup/index.html", true, sender.tab);
+        BrowserApi.openBitwardenExtensionTab("popup/index.html", true);
         break;
       case "openAddEditCipher": {
         const addEditCipherUrl =
@@ -111,7 +113,7 @@ export default class RuntimeBackground {
             ? "popup/index.html#/edit-cipher"
             : "popup/index.html#/edit-cipher?cipherId=" + msg.data.cipherId;
 
-        BrowserApi.openBitwardenExtensionTab(addEditCipherUrl, true, sender.tab);
+        BrowserApi.openBitwardenExtensionTab(addEditCipherUrl, true);
         break;
       }
       case "closeTab":
