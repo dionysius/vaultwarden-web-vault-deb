@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from "@angular/core";
 import { FormControl, FormGroup } from "@angular/forms";
 import { ActivatedRoute } from "@angular/router";
-import { concatMap, takeUntil, Subject } from "rxjs";
+import { concatMap, Subject, takeUntil } from "rxjs";
 
 import { ModalConfig, ModalService } from "@bitwarden/angular/services/modal.service";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
@@ -14,7 +14,7 @@ import { OrganizationConnectionType } from "@bitwarden/common/admin-console/enum
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
 import { OrganizationConnectionResponse } from "@bitwarden/common/admin-console/models/response/organization-connection.response";
 import { BillingSyncConfigApi } from "@bitwarden/common/billing/models/api/billing-sync-config.api";
-import { OrganizationSubscriptionResponse } from "@bitwarden/common/billing/models/response/organization-subscription.response";
+import { SelfHostedOrganizationSubscriptionView } from "@bitwarden/common/billing/models/view/self-hosted-organization-subscription.view";
 
 import {
   BillingSyncKeyComponent,
@@ -31,7 +31,7 @@ enum LicenseOptions {
   templateUrl: "organization-subscription-selfhost.component.html",
 })
 export class OrganizationSubscriptionSelfhostComponent implements OnInit, OnDestroy {
-  sub: OrganizationSubscriptionResponse;
+  subscription: SelfHostedOrganizationSubscriptionView;
   organizationId: string;
   userOrg: Organization;
 
@@ -63,6 +63,15 @@ export class OrganizationSubscriptionSelfhostComponent implements OnInit, OnDest
 
   get billingSyncEnabled() {
     return this.existingBillingSyncConnection?.enabled;
+  }
+
+  /**
+   * Render the subscription as expired.
+   */
+  get showAsExpired() {
+    return this.subscription.hasSeparateGracePeriod
+      ? this.subscription.isExpiredWithoutGracePeriod
+      : this.subscription.isExpiredAndOutsideGracePeriod;
   }
 
   constructor(
@@ -102,7 +111,10 @@ export class OrganizationSubscriptionSelfhostComponent implements OnInit, OnDest
     this.loading = true;
     this.userOrg = this.organizationService.get(this.organizationId);
     if (this.userOrg.canViewSubscription) {
-      this.sub = await this.organizationApiService.getSubscription(this.organizationId);
+      const subscriptionResponse = await this.organizationApiService.getSubscription(
+        this.organizationId
+      );
+      this.subscription = new SelfHostedOrganizationSubscriptionView(subscriptionResponse);
     }
 
     this.loading = false;
@@ -157,10 +169,6 @@ export class OrganizationSubscriptionSelfhostComponent implements OnInit, OnDest
 
   get billingSyncSetUp() {
     return this.existingBillingSyncConnection?.id != null;
-  }
-
-  get isExpired() {
-    return this.sub?.expiration != null && new Date(this.sub.expiration) < new Date();
   }
 
   get updateMethod() {

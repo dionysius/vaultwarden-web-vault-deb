@@ -22,25 +22,45 @@
   [providerName]="userOrg.providerName"
 ></app-org-subscription-hidden>
 
-<ng-container *ngIf="sub && firstLoaded">
+<ng-container *ngIf="subscription && firstLoaded">
   <dl>
     <dt>{{ "billingPlan" | i18n }}</dt>
-    <dd>{{ sub.plan.name }}</dd>
-    <dt>{{ "expiration" | i18n }}</dt>
-    <dd *ngIf="sub.expiration">
-      {{ sub.expiration | date : "mediumDate" }}
-      <span *ngIf="isExpired" class="text-danger ml-2">
-        <i class="bwi bwi-exclamation-triangle" aria-hidden="true"></i>
-        {{ "licenseIsExpired" | i18n }}
-      </span>
-    </dd>
-    <dd *ngIf="!sub.expiration">{{ "neverExpires" | i18n }}</dd>
+    <dd>{{ subscription.planName }}</dd>
     <ng-container *ngIf="billingSyncSetUp">
       <dt>{{ "lastLicenseSync" | i18n }}</dt>
       <dd>
         {{ lastLicenseSync != null ? (lastLicenseSync | date : "medium") : ("never" | i18n) }}
       </dd>
     </ng-container>
+    <dt>
+      <span [ngClass]="{ 'tw-text-danger': showAsExpired }">{{
+        "subscriptionExpiration" | i18n
+      }}</span>
+      <a
+        href="https://bitwarden.com/help/licensing-on-premise/#update-a-renewed-organization-license "
+        target="_blank"
+        [appA11yTitle]="'licensePaidFeaturesHelp' | i18n"
+        rel="noopener"
+      >
+        <i class="bwi bwi-question-circle" aria-hidden="true"></i>
+        <span class="sr-only">{{ "licensePaidFeaturesHelp" | i18n }}</span>
+      </a>
+    </dt>
+    <dd *ngIf="subscription.hasExpiration" [ngClass]="{ 'tw-text-danger': showAsExpired }">
+      {{
+        (subscription.hasSeparateGracePeriod
+          ? subscription.expirationWithoutGracePeriod
+          : subscription.expirationWithGracePeriod
+        ) | date : "mediumDate"
+      }}
+      <div *ngIf="subscription.hasSeparateGracePeriod" class="tw-text-muted">
+        {{
+          "selfHostGracePeriodHelp"
+            | i18n : (subscription.expirationWithGracePeriod | date : "mediumDate")
+        }}
+      </div>
+    </dd>
+    <dd *ngIf="!subscription.hasExpiration">{{ "neverExpires" | i18n }}</dd>
   </dl>
 
   <a

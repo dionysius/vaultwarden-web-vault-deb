@@ -11,6 +11,7 @@ export class OrganizationSubscriptionResponse extends OrganizationResponse {
   subscription: BillingSubscriptionResponse;
   upcomingInvoice: BillingSubscriptionUpcomingInvoiceResponse;
   expiration: string;
+  expirationWithoutGracePeriod: string;
 
   constructor(response: any) {
     super(response);
@@ -24,5 +25,6 @@ export class OrganizationSubscriptionResponse extends OrganizationResponse {
         ? null
         : new BillingSubscriptionUpcomingInvoiceResponse(upcomingInvoice);
     this.expiration = this.getResponseProperty("Expiration");
+    this.expirationWithoutGracePeriod = this.getResponseProperty("ExpirationWithoutGracePeriod");
   }
 }
