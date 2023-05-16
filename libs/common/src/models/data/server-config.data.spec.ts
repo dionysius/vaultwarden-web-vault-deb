@@ -7,7 +7,7 @@ import {
 describe("ServerConfigData", () => {
   describe("fromJSON", () => {
     it("should create a ServerConfigData from a JSON object", () => {
-      const serverConfigData = ServerConfigData.fromJSON({
+      const json = {
         version: "1.0.0",
         gitHash: "1234567890",
         server: {
@@ -22,18 +22,11 @@ describe("ServerConfigData", () => {
           sso: "https://sso.com",
         },
         utcDate: "2020-01-01T00:00:00.000Z",
-      });
+        featureStates: { feature: "state" },
+      };
+      const serverConfigData = ServerConfigData.fromJSON(json);
 
-      expect(serverConfigData.version).toEqual("1.0.0");
-      expect(serverConfigData.gitHash).toEqual("1234567890");
-      expect(serverConfigData.server.name).toEqual("test");
-      expect(serverConfigData.server.url).toEqual("https://test.com");
-      expect(serverConfigData.environment.vault).toEqual("https://vault.com");
-      expect(serverConfigData.environment.api).toEqual("https://api.com");
-      expect(serverConfigData.environment.identity).toEqual("https://identity.com");
-      expect(serverConfigData.environment.notifications).toEqual("https://notifications.com");
-      expect(serverConfigData.environment.sso).toEqual("https://sso.com");
-      expect(serverConfigData.utcDate).toEqual("2020-01-01T00:00:00.000Z");
+      expect(serverConfigData).toEqual(json);
     });
 
     it("should be an instance of ServerConfigData", () => {

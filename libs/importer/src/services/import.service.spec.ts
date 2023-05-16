@@ -62,8 +62,9 @@ describe("ImportService", () => {
       });
 
       it("has the promptForPassword_callback set", async () => {
-        expect(importer.promptForPassword_callback).not.toBeNull();
-        expect(await importer.promptForPassword_callback()).toEqual(password);
+        // Cast to any to access private property. Note: assumes instance of BitwardenPasswordProtectedImporter
+        expect((importer as any).promptForPassword_callback).not.toBeNull();
+        expect(await (importer as any).promptForPassword_callback()).toEqual(password);
       });
 
       it("has the appropriate organization Id", () => {
