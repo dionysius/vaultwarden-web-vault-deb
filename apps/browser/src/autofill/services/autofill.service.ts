@@ -373,12 +373,6 @@ export default class AutofillService implements AutofillServiceInterface {
 
     fillScript.untrustedIframe = this.inUntrustedIframe(pageDetails.url, options);
 
-    if (!login.password || login.password === "") {
-      // No password for this login. Maybe they just wanted to auto-fill some custom fields?
-      fillScript = AutofillService.setFillScriptForFocus(filledFields, fillScript);
-      return fillScript;
-    }
-
     let passwordFields = AutofillService.loadPasswordFields(
       pageDetails,
       false,
