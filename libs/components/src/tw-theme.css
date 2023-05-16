@@ -79,3 +79,5 @@
 
   --tw-ring-offset-color: #1f242e;
 }
+
+@import "./search/search.component.css";
