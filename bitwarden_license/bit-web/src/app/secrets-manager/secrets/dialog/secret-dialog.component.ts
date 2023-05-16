@@ -68,6 +68,9 @@ export class SecretDialogComponent implements OnInit {
       throw new Error(`The secret dialog was not called with the appropriate operation values.`);
     } else if (this.data.operation == OperationType.Add) {
       await this.loadProjects(true);
+      if (this.data.projectId == null || this.data.projectId == "") {
+        this.addNewProjectOptionToProjectsDropDown();
+      }
     }
 
     if (this.data.projectId) {
@@ -77,10 +80,6 @@ export class SecretDialogComponent implements OnInit {
     if (this.organizationService.get(this.data.organizationId)?.isAdmin) {
       this.formGroup.get("project").removeValidators(Validators.required);
       this.formGroup.get("project").updateValueAndValidity();
-    }
-
-    if (this.data.projectId == null || this.data.projectId == "") {
-      this.addNewProjectOptionToProjectsDropDown();
     }
   }
 
