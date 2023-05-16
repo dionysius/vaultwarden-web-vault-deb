@@ -63,7 +63,7 @@ export class ThemingService implements AbstractThemingService {
 
   protected monitorSystemThemeChanges(): void {
     fromEvent<MediaQueryListEvent>(
-      this.window.matchMedia("(prefers-color-scheme: dark)"),
+      window.matchMedia("(prefers-color-scheme: dark)"),
       "change"
     ).subscribe((event) => {
       this.updateSystemTheme(event.matches ? ThemeType.Dark : ThemeType.Light);

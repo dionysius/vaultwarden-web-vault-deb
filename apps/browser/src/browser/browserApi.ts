@@ -168,15 +168,27 @@ export class BrowserApi {
     chrome.tabs.remove(tabToClose.id);
   }
 
+  private static registeredMessageListeners: any[] = [];
+
   static messageListener(
     name: string,
     callback: (message: any, sender: chrome.runtime.MessageSender, response: any) => void
   ) {
-    chrome.runtime.onMessage.addListener(
-      (msg: any, sender: chrome.runtime.MessageSender, response: any) => {
-        callback(msg, sender, response);
-      }
-    );
+    chrome.runtime.onMessage.addListener(callback);
+
+    // Keep track of all the events registered in a Safari popup so we can remove
+    // them when the popup gets unloaded, otherwise we cause a memory leak
+    if (BrowserApi.isSafariApi && !BrowserApi.isBackgroundPage(window)) {
+      BrowserApi.registeredMessageListeners.push(callback);
+
+      // The MDN recommend using 'visibilitychange' but that event is fired any time the popup window is obscured as well
+      // 'pagehide' works just like 'unload' but is compatible with the back/forward cache, so we prefer using that one
+      window.onpagehide = () => {
+        for (const callback of BrowserApi.registeredMessageListeners) {
+          chrome.runtime.onMessage.removeListener(callback);
+        }
+      };
+    }
   }
 
   static sendMessage(subscriber: string, arg: any = {}) {
