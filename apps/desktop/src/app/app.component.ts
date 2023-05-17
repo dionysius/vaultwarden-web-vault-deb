@@ -156,6 +156,12 @@ export class AppComponent implements OnInit, OnDestroy {
       window.onkeypress = () => this.recordActivity();
     });
 
+    /// ############ DEPRECATED ############
+    /// Please do not use the AppComponent to send events between services.
+    ///
+    /// Services that depends on other services, should do so through Dependency Injection
+    /// and subscribe to events through that service observable.
+    ///
     this.broadcasterService.subscribe(BroadcasterSubscriptionId, async (message: any) => {
       this.ngZone.run(async () => {
         switch (message.command) {
