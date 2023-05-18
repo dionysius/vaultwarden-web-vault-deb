@@ -14,8 +14,10 @@ if (process.env.NODE_ENV == null) {
 }
 const ENV = (process.env.ENV = process.env.NODE_ENV);
 const manifestVersion = process.env.MANIFEST_VERSION == 3 ? 3 : 2;
+const autofillVersion = process.env.AUTOFILL_VERSION == 2 ? 2 : 1;
 
 console.log(`Building Manifest Version ${manifestVersion} app`);
+console.log(`Using Autofill v${autofillVersion}`);
 const envConfig = configurator.load(ENV);
 configurator.log(envConfig);
 
@@ -141,7 +143,6 @@ const mainConfig = {
   entry: {
     "popup/polyfills": "./src/popup/polyfills.ts",
     "popup/main": "./src/popup/main.ts",
-    "content/autofill": "./src/autofill/content/autofill.js",
     "content/autofiller": "./src/autofill/content/autofiller.ts",
     "content/notificationBar": "./src/autofill/content/notification-bar.ts",
     "content/contextMenuHandler": "./src/autofill/content/context-menu-handler.ts",
@@ -299,6 +300,14 @@ if (manifestVersion == 2) {
 
   configs.push(mainConfig);
   configs.push(backgroundConfig);
+}
+
+if (autofillVersion == 2) {
+  // Typescript refactors (WIP)
+  mainConfig.entry["content/autofill"] = "./src/autofill/content/autofillv2.ts";
+} else {
+  // Javascript (used in production)
+  mainConfig.entry["content/autofill"] = "./src/autofill/content/autofill.js";
 }
 
 module.exports = configs;
