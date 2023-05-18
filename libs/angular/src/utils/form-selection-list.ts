@@ -198,4 +198,18 @@ export class FormSelectionList<
       this.selectItem(selectedItem.id, selectedItem);
     }
   }
+
+  /**
+   * Helper method to iterate over each "selected" form control and its corresponding item
+   * @param fn - The function to call for each form control and its corresponding item
+   */
+  forEachControlItem(
+    fn: (control: AbstractControl<Partial<TControlValue>, TControlValue>, value: TItem) => void
+  ) {
+    for (let i = 0; i < this.formArray.length; i++) {
+      // The selectedItems array and formArray are explicitly kept in sync,
+      // so we can safely assume the index of the form control and item are the same
+      fn(this.formArray.at(i), this.selectedItems[i]);
+    }
+  }
 }

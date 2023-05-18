@@ -1,7 +1,14 @@
 import { Component, forwardRef, Input, OnDestroy, OnInit } from "@angular/core";
-import { ControlValueAccessor, FormBuilder, NG_VALUE_ACCESSOR } from "@angular/forms";
+import {
+  ControlValueAccessor,
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  NG_VALUE_ACCESSOR,
+} from "@angular/forms";
 import { Subject, takeUntil } from "rxjs";
 
+import { ControlsOf } from "@bitwarden/angular/types/controls-of";
 import { FormSelectionList } from "@bitwarden/angular/utils/form-selection-list";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { SelectItemView } from "@bitwarden/components/src/multi-select/models/select-item-view";
@@ -48,6 +55,40 @@ export class AccessSelectorComponent implements ControlValueAccessor, OnInit, On
   private pauseChangeNotification: boolean;
 
   /**
+   * Updates the enabled/disabled state of provided row form group based on the item's readonly state.
+   * If a row is enabled, it also updates the enabled/disabled state of the permission control
+   * based on the item's accessAllItems state and the current value of `permissionMode`.
+   * @param controlRow - The form group for the row to update
+   * @param item - The access item that is represented by the row
+   */
+  private updateRowControlDisableState = (
+    controlRow: FormGroup<ControlsOf<AccessItemValue>>,
+    item: AccessItemView
+  ) => {
+    // Disable entire row form group if readonly
+    if (item.readonly) {
+      controlRow.disable();
+    } else {
+      controlRow.enable();
+
+      // The enable() above also enables the permission control, so we need to disable it again
+      // Disable permission control if accessAllItems is enabled or not in Edit mode
+      if (item.accessAllItems || this.permissionMode != PermissionMode.Edit) {
+        controlRow.controls.permission.disable();
+      }
+    }
+  };
+
+  /**
+   * Updates the enabled/disabled state of ALL row form groups based on each item's readonly state.
+   */
+  private updateAllRowControlDisableStates = () => {
+    this.selectionList.forEachControlItem((controlRow, item) => {
+      this.updateRowControlDisableState(controlRow as FormGroup<ControlsOf<AccessItemValue>>, item);
+    });
+  };
+
+  /**
    * The internal selection list that tracks the value of this form control / component.
    * It's responsible for keeping items sorted and synced with the rendered form controls
    * @protected
@@ -55,21 +96,13 @@ export class AccessSelectorComponent implements ControlValueAccessor, OnInit, On
   protected selectionList = new FormSelectionList<AccessItemView, AccessItemValue>((item) => {
     const permissionControl = this.formBuilder.control(this.initialPermission);
 
-    const fg = this.formBuilder.group({
-      id: item.id,
-      type: item.type,
+    const fg = this.formBuilder.group<ControlsOf<AccessItemValue>>({
+      id: new FormControl(item.id),
+      type: new FormControl(item.type),
       permission: permissionControl,
     });
 
-    // Disable entire row form group if readonly
-    if (item.readonly) {
-      fg.disable();
-    }
-
-    // Disable permission control if accessAllItems is enabled
-    if (item.accessAllItems || this.permissionMode != PermissionMode.Edit) {
-      permissionControl.disable();
-    }
+    this.updateRowControlDisableState(fg, item);
 
     return fg;
   }, this._itemComparator.bind(this));
@@ -124,14 +157,8 @@ export class AccessSelectorComponent implements ControlValueAccessor, OnInit, On
 
   set permissionMode(value: PermissionMode) {
     this._permissionMode = value;
-    // Toggle any internal permission controls
-    for (const control of this.selectionList.formArray.controls) {
-      if (value == PermissionMode.Edit) {
-        control.get("permission").enable();
-      } else {
-        control.get("permission").disable();
-      }
-    }
+    // Update any internal permission controls
+    this.updateAllRowControlDisableStates();
   }
   private _permissionMode: PermissionMode = PermissionMode.Hidden;
 
@@ -189,6 +216,10 @@ export class AccessSelectorComponent implements ControlValueAccessor, OnInit, On
       this.formGroup.disable();
     } else {
       this.formGroup.enable();
+
+      // The enable() above automatically enables all the row controls,
+      // so we need to disable the readonly ones again
+      this.updateAllRowControlDisableStates();
     }
   }
 
