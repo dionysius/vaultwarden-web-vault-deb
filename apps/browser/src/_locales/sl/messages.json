@@ -519,10 +519,10 @@
     "message": "Mapa izbrisana"
   },
   "gettingStartedTutorial": {
-    "message": "Getting started tutorial"
+    "message": "Vodič za začetnike"
   },
   "gettingStartedTutorialVideo": {
-    "message": "Watch our getting started tutorial to learn how to get the most out of the browser extension."
+    "message": "Naš vodič za začtenike vam pokaže, kako najbolje izkoristiti Bitwardnovo razširitev za brskalnik."
   },
   "syncingComplete": {
     "message": "Sinhronizacija končana"
@@ -634,7 +634,7 @@
     "message": "Prikaži možnosti kontekstnega menuja"
   },
   "contextMenuItemDesc": {
-    "message": "Use a secondary click to access password generation and matching logins for the website. "
+    "message": "Z desnim klikom se vam prikažejo možnosti generiranja gesel in shranjenih prijav za spletno stran, na kateri ste."
   },
   "defaultUriMatchDetection": {
     "message": "Privzet način preverjanja ujemanja URI-ja",
@@ -832,7 +832,7 @@
     "message": "Če za prijavo uporabljate avtentikacijski ključ, se verifikacijska koda TOTP samodejno kopira v odložišče, kadar uporabite samodejno izpolnjevanje."
   },
   "enableAutoBiometricsPrompt": {
-    "message": "Ask for biometrics on launch"
+    "message": "Ob zagonu zahtevaj biometrično preverjanje"
   },
   "premiumRequired": {
     "message": "Potrebno je premium članstvo"
@@ -853,7 +853,7 @@
     }
   },
   "verificationCodeEmailSent": {
-    "message": "Verification email sent to $EMAIL$.",
+    "message": "Potrditveno sporočilo poslano na $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -892,7 +892,7 @@
     "message": "Ta račun ima omogočemo prijavo v dveh korakih, ampak, nobena izmed konfiguriranih prijav v dveh korakih ni podprta v teb spletnem brskalniku."
   },
   "noTwoStepProviders2": {
-    "message": "Please use a supported web browser (such as Chrome) and/or add additional providers that are better supported across web browsers (such as an authenticator app)."
+    "message": "Uporabite enega izmed podprtih spletnih brskalnikov (npr. Chrome) in/ali dodajte ponudnika, ki je bolje podprt na različnih brskalnikih (npr. aplikacija za avtentikacijo)."
   },
   "twoStepOptions": {
     "message": "Možnosti dvostopenjske prijave"
@@ -907,14 +907,14 @@
     "message": "Aplikacija za avtentikacijo"
   },
   "authenticatorAppDesc": {
-    "message": "Use an authenticator app (such as Authy or Google Authenticator) to generate time-based verification codes.",
+    "message": "Uporabite aplikacijo za avtentikacijo (npr. Authy ali Google Authenticator), ki za vas ustvarja časovno spremenljive kode.",
     "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
   },
   "yubiKeyTitle": {
-    "message": "YubiKey OTP Security Key"
+    "message": "Varnostni ključ YubiKey za enkratna gesla"
   },
   "yubiKeyDesc": {
-    "message": "Use a YubiKey to access your account. Works with YubiKey 4, 4 Nano, 4C, and NEO devices."
+    "message": "Za dostop do svojega računa uporabite YubiKey. Podprti so YubiKey 4, 4 Nano, 4C in naprave NEO."
   },
   "duoDesc": {
     "message": "Verify with Duo Security using the Duo Mobile app, SMS, phone call, or U2F security key.",
@@ -1030,7 +1030,7 @@
     "message": "Novo polje po meri"
   },
   "dragToSort": {
-    "message": "Drag to sort"
+    "message": "Sortirajte z vlečenjem"
   },
   "cfTypeText": {
     "message": "Besedilo"
@@ -1143,7 +1143,7 @@
     "message": "Dr."
   },
   "mx": {
-    "message": "Mx"
+    "message": "Gx"
   },
   "firstName": {
     "message": "Ime"
@@ -1531,13 +1531,13 @@
     }
   },
   "masterPasswordPolicyRequirementsNotMet": {
-    "message": "Your new master password does not meet the policy requirements."
+    "message": "Vaše novo glavno geslo ne ustreza zahtevam."
   },
   "acceptPolicies": {
-    "message": "By checking this box you agree to the following:"
+    "message": "Strinjam se z naslednjim:"
   },
   "acceptPoliciesRequired": {
-    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+    "message": "Niste sprejeli Pogojev uporabe in Pravilnika o zasebnosti."
   },
   "termsOfService": {
     "message": "Pogoji uporabe"
@@ -1546,7 +1546,7 @@
     "message": "Pravilnik o zasebnosti"
   },
   "hintEqualsPassword": {
-    "message": "Your password hint cannot be the same as your password."
+    "message": "Namig za geslo ne sme biti enak geslu."
   },
   "ok": {
     "message": "V redu"
@@ -1600,13 +1600,13 @@
     "message": "Browser biometrics is not supported on this device."
   },
   "nativeMessaginPermissionErrorTitle": {
-    "message": "Permission not provided"
+    "message": "Dovoljenje manjka"
   },
   "nativeMessaginPermissionErrorDesc": {
-    "message": "Without permission to communicate with the Bitwarden Desktop Application we cannot provide biometrics in the browser extension. Please try again."
+    "message": "Brez dovoljenja za komunikacijo z Bitwardnovo namizno aplikacijo ni mogoče uporabljati bimetričnega preverjanja v razširitvi brskalnika. Prosimo, poskusite ponovno."
   },
   "nativeMessaginPermissionSidebarTitle": {
-    "message": "Permission request error"
+    "message": "Napaka pri zahtevku za dovoljenje"
   },
   "nativeMessaginPermissionSidebarDesc": {
     "message": "This action cannot be done in the sidebar, please retry the action in the popup or popout."
@@ -1672,13 +1672,13 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "removePassword": {
-    "message": "Remove Password"
+    "message": "Odstrani geslo"
   },
   "delete": {
     "message": "Izbriši"
   },
   "removedPassword": {
-    "message": "Password removed"
+    "message": "Geslo odstranjeno"
   },
   "deletedSend": {
     "message": "Pošiljka izbrisana",
@@ -1692,7 +1692,7 @@
     "message": "Onemogočeno"
   },
   "removePasswordConfirmation": {
-    "message": "Are you sure you want to remove the password?"
+    "message": "Ste prepričani, da želite odstraniti geslo?"
   },
   "deleteSend": {
     "message": "Izbriši pošiljko",
@@ -1718,14 +1718,14 @@
     "message": "Datoteka, ki jo želite poslati"
   },
   "deletionDate": {
-    "message": "Deletion date"
+    "message": "Datum izbrisa"
   },
   "deletionDateDesc": {
     "message": "Pošiljka bo trajno izbrisana ob izbranem času.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "expirationDate": {
-    "message": "Expiration date"
+    "message": "Datum poteka"
   },
   "expirationDateDesc": {
     "message": "Če to nastavite, bo pošiljka potekla ob izbranem času.",
@@ -1747,7 +1747,7 @@
     "message": "Po meri"
   },
   "maximumAccessCount": {
-    "message": "Maximum Access Count"
+    "message": "Največje dovoljeno število dostopov"
   },
   "maximumAccessCountDesc": {
     "message": "Če to nastavite, uporabniki po določenem številu dostopov ne bodo mogli več dostopati do pošiljke.",
@@ -1777,14 +1777,14 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "currentAccessCount": {
-    "message": "Current access count"
+    "message": "Trenutno število dstopov"
   },
   "createSend": {
     "message": "Nova pošiljka",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "newPassword": {
-    "message": "New password"
+    "message": "Novo geslo"
   },
   "sendDisabled": {
     "message": "Pošiljka odstranjena",
@@ -1812,37 +1812,37 @@
     "message": "In order to choose a file using Safari, pop out to a new window by clicking this banner."
   },
   "sendFileCalloutHeader": {
-    "message": "Before you start"
+    "message": "Preden pričnete"
   },
   "sendFirefoxCustomDatePopoutMessage1": {
-    "message": "To use a calendar style date picker",
+    "message": "Za vnos datuma s pomočjo koledarčka",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read '**To use a calendar style date picker ** click here to pop out your window.'"
   },
   "sendFirefoxCustomDatePopoutMessage2": {
-    "message": "click here",
+    "message": "kliknite tukaj",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To use a calendar style date picker **click here** to pop out your window.'"
   },
   "sendFirefoxCustomDatePopoutMessage3": {
-    "message": "to pop out your window.",
+    "message": "za prikaz v lastnem oknu.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To use a calendar style date picker click here **to pop out your window.**'"
   },
   "expirationDateIsInvalid": {
-    "message": "The expiration date provided is not valid."
+    "message": "Datum poteka ni veljaven."
   },
   "deletionDateIsInvalid": {
-    "message": "The deletion date provided is not valid."
+    "message": "Datum izbrisa ni veljaven."
   },
   "expirationDateAndTimeRequired": {
-    "message": "An expiration date and time are required."
+    "message": "Datum in čas poteka sta obvezna."
   },
   "deletionDateAndTimeRequired": {
-    "message": "A deletion date and time are required."
+    "message": "Datum in čas izbrisa sta obvezna."
   },
   "dateParsingError": {
-    "message": "There was an error saving your deletion and expiration dates."
+    "message": "Pri shranjevanju datumov poteka in izbrisa je prišlo do napake."
   },
   "hideEmail": {
-    "message": "Hide my email address from recipients."
+    "message": "Skrij moj e-naslov pred prejemniki."
   },
   "sendOptionsPolicyInEffect": {
     "message": "Nekatere nastavitve organizacije vplivajo na možnosti, ki jih imate v zvezi s pošiljkami."
@@ -1851,19 +1851,19 @@
     "message": "Ponovno zahtevaj glavno geslo"
   },
   "passwordConfirmation": {
-    "message": "Master password confirmation"
+    "message": "Potrditev glavnega gesla"
   },
   "passwordConfirmationDesc": {
-    "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
+    "message": "To dejanje je zaščiteno. Za nadaljevanje vpišite svoje glavno geslo, da potrdite svojo istovetnost."
   },
   "emailVerificationRequired": {
-    "message": "Email verification required"
+    "message": "Potrebna je potrditev e-naslova"
   },
   "emailVerificationRequiredDesc": {
-    "message": "You must verify your email to use this feature. You can verify your email in the web vault."
+    "message": "Za uporabo te funkcionalnosti morate potrditi svoj e-naslov. To lahko storite v spletnem trezorju."
   },
   "updatedMasterPassword": {
-    "message": "Updated master password"
+    "message": "Posodobi glavno geslo"
   },
   "updateMasterPassword": {
     "message": "Spremeni glavno geslo"

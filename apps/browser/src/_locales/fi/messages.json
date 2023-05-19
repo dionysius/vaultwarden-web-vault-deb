@@ -1462,16 +1462,16 @@
     "message": "Kohde täytettiin automaattisesti"
   },
   "insecurePageWarning": {
-    "message": "Warning: This is an unsecured HTTP page, and any information you submit can potentially be seen and changed by others. This Login was originally saved on a secure (HTTPS) page."
+    "message": "Varoitus: Tämä on suojaamaton HTTP-sivu, eli ulkopuolisten tahojen voi olla mahdollista tarkastella ja muuttaa lähettämiäsi tietoja. Tämä kirjautumistieto on alun perin tallennettu suojatulle HTTPS-sivulle."
   },
   "insecurePageWarningFillPrompt": {
-    "message": "Do you still wish to fill this login?"
+    "message": "Haluatko silti täyttää kirjautumistiedot?"
   },
   "autofillIframeWarning": {
-    "message": "The form is hosted by a different domain than the URI of your saved login. Choose OK to auto-fill anyway, or Cancel to stop."
+    "message": "Lomakkeen URI-osoite poikkeaa kirjautumistietoon tallennetusta osoitteesta. Täytä se siitä huolimatta valitsemalla OK tai peru täyttö valitsemalla Peruuta."
   },
   "autofillIframeWarningTip": {
-    "message": "To prevent this warning in the future, save this URI, $HOSTNAME$, to your Bitwarden login item for this site.",
+    "message": "Välttyäksesi varoitukselta jatkossa, tallenna URI $HOSTNAME$ sivustolle tallennettuun Bitwarden-kirjautumistietoosi.",
     "placeholders": {
       "hostname": {
         "content": "$1",

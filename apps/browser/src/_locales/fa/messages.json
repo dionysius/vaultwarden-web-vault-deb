@@ -1462,16 +1462,16 @@
     "message": "مورد خودکار پر شد"
   },
   "insecurePageWarning": {
-    "message": "Warning: This is an unsecured HTTP page, and any information you submit can potentially be seen and changed by others. This Login was originally saved on a secure (HTTPS) page."
+    "message": "هشدار: این یک صفحه HTTP ناامن است و هر اطلاعاتی که ارسال می‌کنید می‌تواند توسط دیگران دیده شود و تغییر کند. این ورود در ابتدا در یک صفحه امن (HTTPS) ذخیره شد."
   },
   "insecurePageWarningFillPrompt": {
-    "message": "Do you still wish to fill this login?"
+    "message": "آیا هنوز می‌خواهید این ورود را پر کنید؟"
   },
   "autofillIframeWarning": {
-    "message": "The form is hosted by a different domain than the URI of your saved login. Choose OK to auto-fill anyway, or Cancel to stop."
+    "message": "فرم توسط دامنه ای متفاوت از نشانی اینترنتی ورود به سیستم ذخیره شده شما میزبانی می‌شود. به هر حال برای پر کردن خودکار، تأیید را انتخاب کنید یا برای توقف، لغو را انتخاب کنید."
   },
   "autofillIframeWarningTip": {
-    "message": "To prevent this warning in the future, save this URI, $HOSTNAME$, to your Bitwarden login item for this site.",
+    "message": "برای جلوگیری از این هشدار در آینده، این نشانی اینترنتی، $HOSTNAME$، را در مورد ورود Bitwarden خود برای این سایت ذخیره کنید.",
     "placeholders": {
       "hostname": {
         "content": "$1",
@@ -1483,13 +1483,13 @@
     "message": "تنظیم کلمه عبور اصلی"
   },
   "currentMasterPass": {
-    "message": "Current master password"
+    "message": "کلمه عبور اصلی فعلی"
   },
   "newMasterPass": {
-    "message": "New master password"
+    "message": "کلمه عبور اصلی جدید"
   },
   "confirmNewMasterPass": {
-    "message": "Confirm new master password"
+    "message": "تأیید کلمه عبور اصلی جدید"
   },
   "masterPasswordPolicyInEffect": {
     "message": "یک یا چند سیاست سازمانی برای تأمین شرایط زیر به کلمه عبور اصلی شما احتیاج دارد:"
@@ -1872,7 +1872,7 @@
     "message": "کلمه عبور اصلی شما اخیراً توسط سرپرست سازمان‌تان تغییر کرده است. برای دسترسی به گاوصندوق، باید همین حالا کلمه عبور اصلی خود را به‌روز کنید. در صورت ادامه، شما از نشست فعلی خود خارج می‌شوید و باید دوباره وارد سیستم شوید. نشست فعال در دستگاه های دیگر ممکن است تا یک ساعت همچنان فعال باقی بمانند."
   },
   "updateWeakMasterPasswordWarning": {
-    "message": "Your master password does not meet one or more of your organization policies. In order to access the vault, you must update your master password now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
+    "message": "کلمه عبور اصلی شما با یک یا چند سیاست سازمان‌تان مطابقت ندارد. برای دسترسی به گاوصندوق، باید همین حالا کلمه عبور اصلی خود را به‌روز کنید. در صورت ادامه، شما از نشست فعلی خود خارج می‌شوید و باید دوباره وارد سیستم شوید. نشست فعال در دستگاه های دیگر ممکن است تا یک ساعت همچنان فعال باقی بمانند."
   },
   "resetPasswordPolicyAutoEnroll": {
     "message": "ثبت نام خودکار"
@@ -1906,7 +1906,7 @@
     }
   },
   "vaultTimeoutPolicyWithActionInEffect": {
-    "message": "Your organization policies are affecting your vault timeout. Maximum allowed vault timeout is $HOURS$ hour(s) and $MINUTES$ minute(s). Your vault timeout action is set to $ACTION$.",
+    "message": "سیاست‌های سازمانتان بر مهلت زمانی گاوصندوق شما تأثیر می‌گذارد. حداکثر زمان مجاز گاوصندوق $HOURS$ ساعت و $MINUTES$ دقیقه است. عملگر مهلت زمانی گاوصندوق شما روی $ACTION$ تنظیم شده است.",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -1923,7 +1923,7 @@
     }
   },
   "vaultTimeoutActionPolicyInEffect": {
-    "message": "Your organization policies have set your vault timeout action to $ACTION$.",
+    "message": "سباست‌های سازمان شما، عملگر زمان‌بندی گاوصندوق شما را روی $ACTION$ تنظیم کرده است.",
     "placeholders": {
       "action": {
         "content": "$1",
@@ -2222,6 +2222,6 @@
     }
   },
   "opensInANewWindow": {
-    "message": "Opens in a new window"
+    "message": "در پنجره جدید باز می‌شود"
   }
 }

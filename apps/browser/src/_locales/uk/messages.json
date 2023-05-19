@@ -1462,16 +1462,16 @@
     "message": "Запис заповнено"
   },
   "insecurePageWarning": {
-    "message": "Warning: This is an unsecured HTTP page, and any information you submit can potentially be seen and changed by others. This Login was originally saved on a secure (HTTPS) page."
+    "message": "Попередження: це незахищена сторінка HTTP, тому будь-яка інформація, яку ви передаєте, потенційно може бути переглянута чи змінена сторонніми. Ці облікові дані було збережено на безпечній сторінці (HTTPS)."
   },
   "insecurePageWarningFillPrompt": {
-    "message": "Do you still wish to fill this login?"
+    "message": "Ви все ще бажаєте заповнити поля для входу?"
   },
   "autofillIframeWarning": {
-    "message": "The form is hosted by a different domain than the URI of your saved login. Choose OK to auto-fill anyway, or Cancel to stop."
+    "message": "Домен форми входу відрізняється від URL-адреси, за якою його було збережено. Оберіть OK, якщо ви все одно хочете її заповнити, або Скасувати для зупинки."
   },
   "autofillIframeWarningTip": {
-    "message": "To prevent this warning in the future, save this URI, $HOSTNAME$, to your Bitwarden login item for this site.",
+    "message": "Щоб надалі не бачити таке попередження, збережіть цей URI, $HOSTNAME$ у записі входу Bitwarden для цього сайту.",
     "placeholders": {
       "hostname": {
         "content": "$1",
@@ -2222,6 +2222,6 @@
     }
   },
   "opensInANewWindow": {
-    "message": "Opens in a new window"
+    "message": "Відкривається у новому вікні"
   }
 }
