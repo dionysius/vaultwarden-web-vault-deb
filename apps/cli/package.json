@@ -17,7 +17,7 @@
   },
   "license": "GPL-3.0-only",
   "scripts": {
-    "clean": "rimraf dist/**/*",
+    "clean": "rimraf dist",
     "build": "webpack",
     "build:debug": "npm run build && node --inspect ./build/bw.js",
     "build:watch": "webpack --watch",
