@@ -36,6 +36,11 @@
     {
       "packageNames": ["typescript"],
       "matchUpdateTypes": "patch"
+    },
+    {
+      "groupName": "jest",
+      "packageNames": ["@types/jest", "jest", "ts-jest", "jest-preset-angular"],
+      "matchUpdateTypes": "major"
     }
   ],
   "ignoreDeps": [
