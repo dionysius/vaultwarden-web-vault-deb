@@ -771,7 +771,7 @@
     "message": "تماس با ما"
   },
   "helpAndFeedback": {
-    "message": "Help and feedback"
+    "message": "کمک و باز خورد"
   },
   "getHelp": {
     "message": "کمک گرفتن"
@@ -1393,7 +1393,7 @@
     "message": "باز کردن با Windows Hello"
   },
   "additionalWindowsHelloSettings": {
-    "message": "Additional Windows Hello settings"
+    "message": "تنظیمات اضافی Windows Hello"
   },
   "windowsHelloConsentMessage": {
     "message": "تأیید برای Bitwarden."
@@ -1402,7 +1402,7 @@
     "message": "باز کردن با Touch ID"
   },
   "additionalTouchIdSettings": {
-    "message": "Additional Touch ID settings"
+    "message": "تنظیمات اضافی Touch ID"
   },
   "touchIdConsentMessage": {
     "message": "قفل گاوصندوق خود را باز کنید"
@@ -1414,10 +1414,10 @@
     "message": "درخواست Touch ID در هنگام راه اندازی"
   },
   "requirePasswordOnStart": {
-    "message": "Require password or PIN on app start"
+    "message": "هنگام شروع برنامه، رمز عبور یا پین مورد نیاز است"
   },
   "recommendedForSecurity": {
-    "message": "Recommended for security."
+    "message": "برای امنیت توصیه می‌شود."
   },
   "lockWithMasterPassOnRestart": {
     "message": "در زمان شروع مجدد، با کلمه عبور اصلی قفل کن"
@@ -1540,7 +1540,7 @@
     "message": "برای پر کردن ورود به سیستم با SSO، لطفاً یک کلمه عبور اصلی برای دسترسی و محافظت از گاوصندوق خود تنظیم کنید."
   },
   "currentMasterPass": {
-    "message": "Current master password"
+    "message": "کلمه عبور اصلی فعلی"
   },
   "newMasterPass": {
     "message": "کلمه عبور اصلی جدید"
@@ -1859,7 +1859,7 @@
     "message": "کلمه عبور اصلی شما اخیراً توسط سرپرست سازمان‌تان تغییر کرده است. برای دسترسی به گاوصندوق، باید همین حالا کلمه عبور اصلی خود را به‌روز کنید. در صورت ادامه، شما از نشست فعلی خود خارج می‌شوید و باید دوباره وارد سیستم شوید. نشست فعال در دستگاه های دیگر ممکن است تا یک ساعت همچنان فعال باقی بمانند."
   },
   "updateWeakMasterPasswordWarning": {
-    "message": "Your master password does not meet one or more of your organization policies. In order to access the vault, you must update your master password now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
+    "message": "کلمه عبور اصلی شما با یک یا چند سیاست سازمان‌تان مطابقت ندارد. برای دسترسی به گاوصندوق، باید همین حالا کلمه عبور اصلی خود را به‌روز کنید. در صورت ادامه، شما از نشست فعلی خود خارج می‌شوید و باید دوباره وارد سیستم شوید. نشست فعال در دستگاه های دیگر ممکن است تا یک ساعت همچنان فعال باقی بمانند."
   },
   "hours": {
     "message": "ساعت"
@@ -1881,7 +1881,7 @@
     }
   },
   "vaultTimeoutPolicyWithActionInEffect": {
-    "message": "Your organization policies are affecting your vault timeout. Maximum allowed vault timeout is $HOURS$ hour(s) and $MINUTES$ minute(s). Your vault timeout action is set to $ACTION$.",
+    "message": "سیاست‌های سازمانتان بر مهلت زمانی گاوصندوق شما تأثیر می‌گذارد. حداکثر زمان مجاز گاوصندوق $HOURS$ ساعت و $MINUTES$ دقیقه است. عملگر مهلت زمانی گاوصندوق شما روی $ACTION$ تنظیم شده است.",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -1898,7 +1898,7 @@
     }
   },
   "vaultTimeoutActionPolicyInEffect": {
-    "message": "Your organization policies have set your vault timeout action to $ACTION$.",
+    "message": "سباست‌های سازمان شما، عملگر زمان‌بندی گاوصندوق شما را روی $ACTION$ تنظیم کرده است.",
     "placeholders": {
       "action": {
         "content": "$1",
@@ -2247,9 +2247,9 @@
     }
   },
   "windowsBiometricUpdateWarning": {
-    "message": "Bitwarden recommends updating your biometric settings to require your master password (or PIN) on the first unlock. Would you like to update your settings now?"
+    "message": "Bitwarden توصیه می‌کند که تنظیمات بیومتریک خود را به‌روزرسانی کنید تا در اولین باز کردن قفل، به رمز عبور اصلی (یا پین) نیاز داشته باشید. آیا می‌خواهید تنظیمات خود را اکنون به‌روز کنید؟"
   },
   "windowsBiometricUpdateWarningTitle": {
-    "message": "Recommended Settings Update"
+    "message": "به‌روز رسانی تنظیمات توصیه شده"
   }
 }

@@ -771,7 +771,7 @@
     "message": "Kontakta oss"
   },
   "helpAndFeedback": {
-    "message": "Help and feedback"
+    "message": "Hjälp & Feedback"
   },
   "getHelp": {
     "message": "Få hjälp"
@@ -1393,7 +1393,7 @@
     "message": "Lås upp med Windows Hello"
   },
   "additionalWindowsHelloSettings": {
-    "message": "Additional Windows Hello settings"
+    "message": "Ytterligare inställningar för Windows Hello"
   },
   "windowsHelloConsentMessage": {
     "message": "Bekräfta för Bitwarden."
@@ -1402,22 +1402,22 @@
     "message": "Lås upp med Touch ID"
   },
   "additionalTouchIdSettings": {
-    "message": "Additional Touch ID settings"
+    "message": "Ytterligare Touch ID-inställningar"
   },
   "touchIdConsentMessage": {
     "message": "lås upp ditt valv"
   },
   "autoPromptWindowsHello": {
-    "message": "Be om Windows Hello vid uppstart"
+    "message": "Be om Windows Hello vid appstart"
   },
   "autoPromptTouchId": {
-    "message": "Be om Touch ID vid uppstart"
+    "message": "Be om Touch ID vid appstart"
   },
   "requirePasswordOnStart": {
-    "message": "Require password or PIN on app start"
+    "message": "Kräv lösenord eller PIN-kod vid appstart"
   },
   "recommendedForSecurity": {
-    "message": "Recommended for security."
+    "message": "Rekommenderas för säkerhet."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Lås med huvudlösenordet vid omstart"
