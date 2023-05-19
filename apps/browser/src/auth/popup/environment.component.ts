@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 
 import { EnvironmentComponent as BaseEnvironmentComponent } from "@bitwarden/angular/components/environment.component";
+import { ModalService } from "@bitwarden/angular/services/modal.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 
@@ -18,9 +19,10 @@ export class EnvironmentComponent extends BaseEnvironmentComponent implements On
     platformUtilsService: PlatformUtilsService,
     public environmentService: BrowserEnvironmentService,
     i18nService: I18nService,
-    private router: Router
+    private router: Router,
+    modalService: ModalService
   ) {
-    super(platformUtilsService, environmentService, i18nService);
+    super(platformUtilsService, environmentService, i18nService, modalService);
     this.showCustom = true;
   }
 

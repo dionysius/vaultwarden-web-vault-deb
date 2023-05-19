@@ -1,16 +1,4 @@
-<div id="login-page">
-  <div class="login-header">
-    <button
-      type="button"
-      appStopClick
-      (click)="settings()"
-      class="environment-urls-settings-icon"
-      attr.aria-label="{{ 'settings' | i18n }}"
-    >
-      <i class="bwi bwi-cog bwi-lg" aria-hidden="true"></i>
-      {{ "settings" | i18n }}
-    </button>
-  </div>
+<div id="login-page" class="page-top-padding">
   <form
     id="login-page"
     #form
@@ -19,7 +7,7 @@
     [formGroup]="formGroup"
     attr.aria-hidden="{{ showingModal }}"
   >
-    <div id="content" class="content">
+    <div id="content" class="content" style="padding-top: 50px">
       <img class="logo-image" alt="Bitwarden" />
       <p class="lead">{{ "loginOrCreateNewAccount" | i18n }}</p>
       <!-- start email -->
@@ -37,9 +25,7 @@
               />
             </div>
           </div>
-          <div class="box-footer" *ngIf="selfHostedDomain">
-            {{ "loggingInTo" | i18n : selfHostedDomain }}
-          </div>
+          <environment-selector></environment-selector>
         </div>
         <div class="checkbox remember-email">
           <label for="rememberEmail">

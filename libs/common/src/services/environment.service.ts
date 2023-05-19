@@ -218,6 +218,8 @@ export class EnvironmentService implements EnvironmentServiceAbstraction {
     return ![
       "http://vault.bitwarden.com",
       "https://vault.bitwarden.com",
+      "http://vault.bitwarden.eu",
+      "https://vault.bitwarden.eu",
       "http://vault.qa.bitwarden.pw",
       "https://vault.qa.bitwarden.pw",
     ].includes(this.getWebVaultUrl());

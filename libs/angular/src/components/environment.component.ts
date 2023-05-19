@@ -4,6 +4,8 @@ import { EnvironmentService } from "@bitwarden/common/abstractions/environment.s
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 
+import { ModalService } from "../services/modal.service";
+
 @Directive()
 export class EnvironmentComponent {
   @Output() onSaved = new EventEmitter();
@@ -19,7 +21,8 @@ export class EnvironmentComponent {
   constructor(
     protected platformUtilsService: PlatformUtilsService,
     protected environmentService: EnvironmentService,
-    protected i18nService: I18nService
+    protected i18nService: I18nService,
+    private modalService: ModalService
   ) {
     const urls = this.environmentService.getUrls();
 
@@ -59,5 +62,6 @@ export class EnvironmentComponent {
 
   protected saved() {
     this.onSaved.emit();
+    this.modalService.closeAll();
   }
 }

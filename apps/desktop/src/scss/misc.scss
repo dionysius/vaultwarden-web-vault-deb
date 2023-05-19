@@ -421,6 +421,10 @@ app-root > #loading,
   }
 }
 
+.page-top-padding {
+  padding-top: 50px;
+}
+
 .logo-image {
   @include themify($themes) {
     content: url("../images/logo-" + themed("logoSuffix") + "@2x.png");

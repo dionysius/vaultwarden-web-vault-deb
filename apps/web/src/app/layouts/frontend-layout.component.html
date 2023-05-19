@@ -1,5 +1,34 @@
 <router-outlet></router-outlet>
 <div class="container my-5 text-muted text-center">
+  <div class="tw-mb-1">
+    <bit-menu #environmentOptions>
+      <a bitMenuItem href="https://vault.bitwarden.com" class="pr-4">
+        <i
+          class="bwi bwi-fw bwi-sm bwi-check pb-1"
+          aria-hidden="true"
+          [style.visibility]="isEuServer ? 'hidden' : 'visible'"
+        ></i>
+        <img src="../../images/us_flag.png" alt="" class="pb-1 mr-1" />
+        {{ "us" | i18n }}
+      </a>
+      <a bitMenuItem href="https://vault.bitwarden.eu" class="pr-4" *ngIf="euServerFlagEnabled">
+        <i
+          class="bwi bwi-fw bwi-sm bwi-check pb-1"
+          aria-hidden="true"
+          [style.visibility]="isEuServer ? 'visible' : 'hidden'"
+        ></i>
+        <img src="../../images/eu_flag.png" alt="" class="pb-1 mr-1" />
+        {{ "eu" | i18n }}
+      </a>
+    </bit-menu>
+    {{ "region" | i18n }}:
+    <a [routerLink]="[]" [bitMenuTriggerFor]="environmentOptions">
+      <b>{{ isEuServer ? ("eu" | i18n) : ("us" | i18n) }}</b
+      ><i class="bwi bwi-fw bwi-sm bwi-angle-down" aria-hidden="true"></i>
+    </a>
+    <br />
+  </div>
+
   &copy; {{ year }} Bitwarden Inc. <br />
   {{ "versionNumber" | i18n : version }}
 </div>

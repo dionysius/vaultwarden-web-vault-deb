@@ -1,7 +1,9 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnDestroy, OnInit, ViewChild } from "@angular/core";
 import { FormBuilder, Validators } from "@angular/forms";
-import { ActivatedRoute, Router } from "@angular/router";
+import { Router } from "@angular/router";
+import { Subject, takeUntil } from "rxjs";
 
+import { EnvironmentSelectorComponent } from "@bitwarden/angular/auth/components/environment-selector.component";
 import { EnvironmentService } from "@bitwarden/common/abstractions/environment.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
@@ -12,9 +14,12 @@ import { LoginService } from "@bitwarden/common/auth/abstractions/login.service"
   selector: "app-home",
   templateUrl: "home.component.html",
 })
-export class HomeComponent implements OnInit {
-  loginInitiated = false;
+export class HomeComponent implements OnInit, OnDestroy {
+  @ViewChild(EnvironmentSelectorComponent, { static: true })
+  environmentSelector!: EnvironmentSelectorComponent;
+  private destroyed$: Subject<void> = new Subject();
 
+  loginInitiated = false;
   formGroup = this.formBuilder.group({
     email: ["", [Validators.required, Validators.email]],
     rememberEmail: [false],
@@ -27,9 +32,9 @@ export class HomeComponent implements OnInit {
     private router: Router,
     private i18nService: I18nService,
     private environmentService: EnvironmentService,
-    private route: ActivatedRoute,
     private loginService: LoginService
   ) {}
+
   async ngOnInit(): Promise<void> {
     let savedEmail = this.loginService.getEmail();
     const rememberEmail = this.loginService.getRememberEmail();
@@ -48,6 +53,18 @@ export class HomeComponent implements OnInit {
         });
       }
     }
+
+    this.environmentSelector.onOpenSelfHostedSettings
+      .pipe(takeUntil(this.destroyed$))
+      .subscribe(() => {
+        this.setFormValues();
+        this.router.navigate(["environment"]);
+      });
+  }
+
+  ngOnDestroy(): void {
+    this.destroyed$.next();
+    this.destroyed$.complete();
   }
 
   submit() {
