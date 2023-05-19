@@ -32,13 +32,13 @@ jobs:
 
       - name: Retrieve secrets
         id: retrieve-secrets
-        uses: bitwarden/gh-actions/get-keyvault-secrets@34ecb67b2a357795dc893549df0795e7383ff50f
+        uses: bitwarden/gh-actions/get-keyvault-secrets@f07c58ae6d120bcfbb01f695074aff45c41e7627
         with:
           keyvault: "bitwarden-ci"
           secrets: "crowdin-api-token, github-gpg-private-key, github-gpg-private-key-passphrase"
 
       - name: Download translations
-        uses: bitwarden/gh-actions/crowdin@34ecb67b2a357795dc893549df0795e7383ff50f
+        uses: bitwarden/gh-actions/crowdin@f07c58ae6d120bcfbb01f695074aff45c41e7627
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           CROWDIN_API_TOKEN: ${{ steps.retrieve-secrets.outputs.crowdin-api-token }}
