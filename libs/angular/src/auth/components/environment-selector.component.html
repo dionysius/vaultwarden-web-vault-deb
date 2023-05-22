@@ -48,6 +48,7 @@
         type="button"
         class="environment-selector-dialog-item"
         (click)="toggle(ServerEnvironmentType.EU)"
+        *ngIf="euServerFlagEnabled"
       >
         <i
           class="bwi bwi-fw bwi-sm bwi-check"
@@ -60,7 +61,7 @@
         <img class="img-eu" alt="" />
         <span>{{ "eu" | i18n }}</span>
       </button>
-      <br />
+      <br *ngIf="euServerFlagEnabled" />
       <button
         type="button"
         class="environment-selector-dialog-item"
