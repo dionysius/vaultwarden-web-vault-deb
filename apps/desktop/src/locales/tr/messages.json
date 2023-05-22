@@ -2251,5 +2251,19 @@
   },
   "windowsBiometricUpdateWarningTitle": {
     "message": "Önerilen Ayarlar Güncellemesi"
+  },
+  "region": {
+    "message": "Bölge"
+  },
+  "eu": {
+    "message": "AB",
+    "description": "European Union"
+  },
+  "us": {
+    "message": "ABD",
+    "description": "United States"
+  },
+  "selfHosted": {
+    "message": "Barındırılan"
   }
 }

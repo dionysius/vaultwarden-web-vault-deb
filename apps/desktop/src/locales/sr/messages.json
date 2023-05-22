@@ -2251,5 +2251,19 @@
   },
   "windowsBiometricUpdateWarningTitle": {
     "message": "Препоручено ажурирање поставки"
+  },
+  "region": {
+    "message": "Регион"
+  },
+  "eu": {
+    "message": "EU",
+    "description": "European Union"
+  },
+  "us": {
+    "message": "US",
+    "description": "United States"
+  },
+  "selfHosted": {
+    "message": "Личан хостинг"
   }
 }

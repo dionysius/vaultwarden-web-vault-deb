@@ -2251,5 +2251,19 @@
   },
   "windowsBiometricUpdateWarningTitle": {
     "message": "推荐的设置更新"
+  },
+  "region": {
+    "message": "区域"
+  },
+  "eu": {
+    "message": "欧盟",
+    "description": "European Union"
+  },
+  "us": {
+    "message": "美国",
+    "description": "United States"
+  },
+  "selfHosted": {
+    "message": "自托管"
   }
 }

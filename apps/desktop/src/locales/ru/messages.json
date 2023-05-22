@@ -2251,5 +2251,19 @@
   },
   "windowsBiometricUpdateWarningTitle": {
     "message": "Рекомендуемое обновление настроек"
+  },
+  "region": {
+    "message": "Регион"
+  },
+  "eu": {
+    "message": "Европа",
+    "description": "European Union"
+  },
+  "us": {
+    "message": "США",
+    "description": "United States"
+  },
+  "selfHosted": {
+    "message": "Собственный хостинг"
   }
 }

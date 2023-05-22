@@ -570,7 +570,7 @@
     "message": "Não existem itens para listar."
   },
   "sendVerificationCode": {
-    "message": "Envie um código de verificação para o seu e-mail"
+    "message": "Enviar um código de verificação para o seu e-mail"
   },
   "sendCode": {
     "message": "Enviar o código"
@@ -1684,7 +1684,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "myVault": {
-    "message": "O meu Cofre"
+    "message": "O meu cofre"
   },
   "text": {
     "message": "Texto"
@@ -2052,7 +2052,7 @@
     "message": "Procurar Organização"
   },
   "searchMyVault": {
-    "message": "Procurar no meu Cofre"
+    "message": "Procurar no meu cofre"
   },
   "forwardedEmail": {
     "message": "Forwarded email alias"
@@ -2251,5 +2251,19 @@
   },
   "windowsBiometricUpdateWarningTitle": {
     "message": "Recommended Settings Update"
+  },
+  "region": {
+    "message": "Região"
+  },
+  "eu": {
+    "message": "UE",
+    "description": "European Union"
+  },
+  "us": {
+    "message": "EUA",
+    "description": "United States"
+  },
+  "selfHosted": {
+    "message": "Auto-hospedado"
   }
 }

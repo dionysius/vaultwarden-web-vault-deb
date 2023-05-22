@@ -2251,5 +2251,19 @@
   },
   "windowsBiometricUpdateWarningTitle": {
     "message": "Препоръчителна промяна на настройките"
+  },
+  "region": {
+    "message": "Регион"
+  },
+  "eu": {
+    "message": "ЕС",
+    "description": "European Union"
+  },
+  "us": {
+    "message": "САЩ",
+    "description": "United States"
+  },
+  "selfHosted": {
+    "message": "Собствен хостинг"
   }
 }
