@@ -2,8 +2,9 @@ const { pathsToModuleNameMapper } = require("ts-jest");
 
 const { compilerOptions } = require("../shared/tsconfig.libs");
 
-const sharedConfig = require("../shared/jest.config.base");
+const sharedConfig = require("../shared/jest.config.ts");
 
+/** @type {import('jest').Config} */
 module.exports = {
   ...sharedConfig,
   displayName: "libs/common tests",
