@@ -2221,7 +2221,18 @@
       }
     }
   },
+  "region": {
+    "message": "区域"
+  },
   "opensInANewWindow": {
     "message": "在新窗口中打开"
+  },
+  "eu": {
+    "message": "欧盟",
+    "description": "European Union"
+  },
+  "us": {
+    "message": "美国",
+    "description": "United States"
   }
 }

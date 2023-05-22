@@ -2221,7 +2221,18 @@
       }
     }
   },
+  "region": {
+    "message": "Bölge"
+  },
   "opensInANewWindow": {
     "message": "Yeni pencerede açılır"
+  },
+  "eu": {
+    "message": "AB",
+    "description": "European Union"
+  },
+  "us": {
+    "message": "ABD",
+    "description": "United States"
   }
 }

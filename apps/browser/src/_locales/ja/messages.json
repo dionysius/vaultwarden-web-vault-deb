@@ -2221,7 +2221,18 @@
       }
     }
   },
+  "region": {
+    "message": "リージョン"
+  },
   "opensInANewWindow": {
     "message": "新しいウィンドウで開く"
+  },
+  "eu": {
+    "message": "EU",
+    "description": "European Union"
+  },
+  "us": {
+    "message": "米国",
+    "description": "United States"
   }
 }

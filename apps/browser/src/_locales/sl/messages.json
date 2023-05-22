@@ -2180,7 +2180,7 @@
     "message": "Kako uporabljati samodejno izpolnjevanje"
   },
   "autofillSelectInfoWithCommand": {
-    "message": "Izberite element na tej strani ali pa uporabite bližnjico $COMMAND$",
+    "message": "Izberite element na tej strani ali pa uporabite bližnjico $COMMAND$.",
     "placeholders": {
       "command": {
         "content": "$1",
@@ -2221,7 +2221,18 @@
       }
     }
   },
+  "region": {
+    "message": "Region"
+  },
   "opensInANewWindow": {
     "message": "Odpre se v novem oknu"
+  },
+  "eu": {
+    "message": "EU",
+    "description": "European Union"
+  },
+  "us": {
+    "message": "US",
+    "description": "United States"
   }
 }

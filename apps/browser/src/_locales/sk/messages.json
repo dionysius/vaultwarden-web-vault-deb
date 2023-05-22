@@ -2221,7 +2221,18 @@
       }
     }
   },
+  "region": {
+    "message": "Región"
+  },
   "opensInANewWindow": {
     "message": "Otvárať v novom okne"
+  },
+  "eu": {
+    "message": "EÚ",
+    "description": "European Union"
+  },
+  "us": {
+    "message": "USA",
+    "description": "United States"
   }
 }

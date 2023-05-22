@@ -2221,7 +2221,18 @@
       }
     }
   },
+  "region": {
+    "message": "Piirkond"
+  },
   "opensInANewWindow": {
     "message": "Avaneb uues aknas"
+  },
+  "eu": {
+    "message": "EL",
+    "description": "European Union"
+  },
+  "us": {
+    "message": "USA",
+    "description": "United States"
   }
 }

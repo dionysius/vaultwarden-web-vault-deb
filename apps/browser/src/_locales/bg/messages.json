@@ -2221,7 +2221,18 @@
       }
     }
   },
+  "region": {
+    "message": "Регион"
+  },
   "opensInANewWindow": {
     "message": "Отваря се в нов прозорец"
+  },
+  "eu": {
+    "message": "ЕС",
+    "description": "European Union"
+  },
+  "us": {
+    "message": "САЩ",
+    "description": "United States"
   }
 }

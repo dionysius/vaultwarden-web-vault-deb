@@ -56,7 +56,7 @@
     "message": "Cofre"
   },
   "myVault": {
-    "message": "O meu Cofre"
+    "message": "O meu cofre"
   },
   "allVaults": {
     "message": "Todos os Cofres"
@@ -128,7 +128,7 @@
     "message": "Continuar"
   },
   "sendVerificationCode": {
-    "message": "Envie um código de verificação para o seu e-mail"
+    "message": "Enviar um código de verificação para o seu e-mail"
   },
   "sendCode": {
     "message": "Enviar o código"
@@ -1744,7 +1744,7 @@
     }
   },
   "custom": {
-    "message": "Custom"
+    "message": "Personalizado"
   },
   "maximumAccessCount": {
     "message": "Maximum Access Count"
@@ -2221,7 +2221,18 @@
       }
     }
   },
+  "region": {
+    "message": "Região"
+  },
   "opensInANewWindow": {
     "message": "Opens in a new window"
+  },
+  "eu": {
+    "message": "UE",
+    "description": "European Union"
+  },
+  "us": {
+    "message": "EUA",
+    "description": "United States"
   }
 }
