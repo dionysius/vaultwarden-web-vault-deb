@@ -202,7 +202,9 @@ export class TwoFactorComponent extends CaptchaProtectedComponent implements OnI
     }
     if (this.onSuccessfulLogin != null) {
       this.loginService.clearValues();
-      await this.onSuccessfulLogin();
+      // Note: awaiting this will currently cause a hang on desktop & browser as they will wait for a full sync to complete
+      // before nagivating to the success route.
+      this.onSuccessfulLogin();
     }
     if (response.resetMasterPassword) {
       this.successRoute = "set-password";
