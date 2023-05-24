@@ -63,7 +63,7 @@ jobs:
         uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab # v3.5.2
 
       - name: Download latest cloud asset
-        uses: bitwarden/gh-actions/download-artifacts@f07c58ae6d120bcfbb01f695074aff45c41e7627
+        uses: bitwarden/gh-actions/download-artifacts@c86ced0dc8c9daeecf057a6333e6f318db9c5a2b
         with:
           workflow: build-web.yml
           path: apps/web
