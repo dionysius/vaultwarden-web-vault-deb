@@ -1,4 +1,5 @@
-import { BehaviorSubject, concatMap, from, timer } from "rxjs";
+import { Injectable, OnDestroy } from "@angular/core";
+import { BehaviorSubject, Subject, concatMap, from, takeUntil, timer } from "rxjs";
 
 import { ConfigApiServiceAbstraction } from "../../abstractions/config/config-api.service.abstraction";
 import { ConfigServiceAbstraction } from "../../abstractions/config/config.service.abstraction";
@@ -10,9 +11,11 @@ import { AuthenticationStatus } from "../../auth/enums/authentication-status";
 import { FeatureFlag } from "../../enums/feature-flag.enum";
 import { ServerConfigData } from "../../models/data/server-config.data";
 
-export class ConfigService implements ConfigServiceAbstraction {
+@Injectable()
+export class ConfigService implements ConfigServiceAbstraction, OnDestroy {
   protected _serverConfig = new BehaviorSubject<ServerConfig | null>(null);
   serverConfig$ = this._serverConfig.asObservable();
+  private destroy$ = new Subject<void>();
 
   constructor(
     private stateService: StateService,
@@ -27,11 +30,14 @@ export class ConfigService implements ConfigServiceAbstraction {
         this._serverConfig.next(serverConfig);
       });
 
-    this.environmentService.urls
-      .pipe(concatMap(() => from(this.fetchServerConfig())))
-      .subscribe((serverConfig) => {
-        this._serverConfig.next(serverConfig);
-      });
+    this.environmentService.urls.pipe(takeUntil(this.destroy$)).subscribe(() => {
+      this.fetchServerConfig();
+    });
+  }
+
+  ngOnDestroy(): void {
+    this.destroy$.next();
+    this.destroy$.complete();
   }
 
   async fetchServerConfig(): Promise<ServerConfig> {
