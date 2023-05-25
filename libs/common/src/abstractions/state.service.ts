@@ -17,7 +17,7 @@ import { ServerConfigData } from "../models/data/server-config.data";
 import { Account, AccountSettingsSettings } from "../models/domain/account";
 import { EncString } from "../models/domain/enc-string";
 import { StorageOptions } from "../models/domain/storage-options";
-import { SymmetricCryptoKey } from "../models/domain/symmetric-crypto-key";
+import { DeviceKey, SymmetricCryptoKey } from "../models/domain/symmetric-crypto-key";
 import { WindowState } from "../models/domain/window-state";
 import { GeneratedPasswordHistory } from "../tools/generator/password";
 import { SendData } from "../tools/send/models/data/send.data";
@@ -163,6 +163,8 @@ export abstract class StateService<T extends Account = Account> {
   setDontShowIdentitiesCurrentTab: (value: boolean, options?: StorageOptions) => Promise<void>;
   getDuckDuckGoSharedKey: (options?: StorageOptions) => Promise<string>;
   setDuckDuckGoSharedKey: (value: string, options?: StorageOptions) => Promise<void>;
+  getDeviceKey: (options?: StorageOptions) => Promise<DeviceKey | null>;
+  setDeviceKey: (value: DeviceKey, options?: StorageOptions) => Promise<void>;
   getEmail: (options?: StorageOptions) => Promise<string>;
   setEmail: (value: string, options?: StorageOptions) => Promise<void>;
   getEmailVerified: (options?: StorageOptions) => Promise<boolean>;

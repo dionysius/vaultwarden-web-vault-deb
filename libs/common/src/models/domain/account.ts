@@ -23,7 +23,7 @@ import { EventData } from "../data/event.data";
 import { ServerConfigData } from "../data/server-config.data";
 
 import { EncString } from "./enc-string";
-import { SymmetricCryptoKey } from "./symmetric-crypto-key";
+import { DeviceKey, SymmetricCryptoKey } from "./symmetric-crypto-key";
 
 export class EncryptionPair<TEncrypted, TDecrypted> {
   encrypted?: TEncrypted;
@@ -107,6 +107,7 @@ export class AccountKeys {
     string,
     SymmetricCryptoKey
   >();
+  deviceKey?: DeviceKey;
   organizationKeys?: EncryptionPair<
     { [orgId: string]: EncryptedOrganizationKeyData },
     Record<string, SymmetricCryptoKey>

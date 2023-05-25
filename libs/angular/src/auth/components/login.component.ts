@@ -3,9 +3,9 @@ import { FormBuilder, Validators } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
 import { take } from "rxjs/operators";
 
-import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { AppIdService } from "@bitwarden/common/abstractions/appId.service";
 import { CryptoFunctionService } from "@bitwarden/common/abstractions/cryptoFunction.service";
+import { DevicesApiServiceAbstraction } from "@bitwarden/common/abstractions/devices/devices-api.service.abstraction";
 import { EnvironmentService } from "@bitwarden/common/abstractions/environment.service";
 import {
   AllValidationErrors,
@@ -55,7 +55,7 @@ export class LoginComponent extends CaptchaProtectedComponent implements OnInit 
   }
 
   constructor(
-    protected apiService: ApiService,
+    protected devicesApiService: DevicesApiServiceAbstraction,
     protected appIdService: AppIdService,
     protected authService: AuthService,
     protected router: Router,
@@ -295,7 +295,7 @@ export class LoginComponent extends CaptchaProtectedComponent implements OnInit 
   async getLoginWithDevice(email: string) {
     try {
       const deviceIdentifier = await this.appIdService.getAppId();
-      const res = await this.apiService.getKnownDevice(email, deviceIdentifier);
+      const res = await this.devicesApiService.getKnownDevice(email, deviceIdentifier);
       //ensure the application is not self-hosted
       this.showLoginWithDevice = res && !this.selfHosted;
     } catch (e) {
