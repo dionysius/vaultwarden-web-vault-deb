@@ -15,7 +15,7 @@ import { PolicyService } from "@bitwarden/common/admin-console/abstractions/poli
 import { EncryptedExportType } from "@bitwarden/common/enums";
 import { VaultExportServiceAbstraction } from "@bitwarden/exporter/vault-export";
 
-import { UserVerificationPromptComponent } from "../../components/user-verification-prompt.component";
+import { UserVerificationPromptComponent } from "../../shared/components/user-verification";
 
 @Component({
   selector: "app-export",

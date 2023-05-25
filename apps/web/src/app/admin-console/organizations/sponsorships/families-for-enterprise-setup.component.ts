@@ -1,9 +1,9 @@
-import { Component, OnDestroy, OnInit, ViewChild, ViewContainerRef } from "@angular/core";
+import { Component, OnDestroy, OnInit, ViewChild } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
-import { Observable, Subject } from "rxjs";
+import { lastValueFrom, Observable, Subject } from "rxjs";
 import { first, map, takeUntil } from "rxjs/operators";
 
-import { ModalService } from "@bitwarden/angular/services/modal.service";
+import { DialogServiceAbstraction } from "@bitwarden/angular/services/dialog";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
@@ -11,12 +11,15 @@ import { ValidationService } from "@bitwarden/common/abstractions/validation.ser
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
 import { OrganizationSponsorshipRedeemRequest } from "@bitwarden/common/admin-console/models/request/organization/organization-sponsorship-redeem.request";
-import { PlanType, PlanSponsorshipType } from "@bitwarden/common/billing/enums";
+import { PlanSponsorshipType, PlanType } from "@bitwarden/common/billing/enums";
 import { ProductType } from "@bitwarden/common/enums";
 import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
 
 import { OrganizationPlansComponent } from "../../../billing/settings/organization-plans.component";
-import { DeleteOrganizationComponent } from "../../organizations/settings";
+import {
+  DeleteOrganizationDialogResult,
+  openDeleteOrganizationDialog,
+} from "../settings/components";
 
 @Component({
   selector: "families-for-enterprise-setup",
@@ -35,9 +38,6 @@ export class FamiliesForEnterpriseSetupComponent implements OnInit, OnDestroy {
     // eslint-disable-next-line rxjs-angular/prefer-takeuntil
     value.onSuccess.subscribe(this.onOrganizationCreateSuccess.bind(this));
   }
-
-  @ViewChild("deleteOrganizationTemplate", { read: ViewContainerRef, static: true })
-  deleteModalRef: ViewContainerRef;
 
   loading = true;
   badToken = false;
@@ -62,7 +62,7 @@ export class FamiliesForEnterpriseSetupComponent implements OnInit, OnDestroy {
     private syncService: SyncService,
     private validationService: ValidationService,
     private organizationService: OrganizationService,
-    private modalService: ModalService
+    private dialogService: DialogServiceAbstraction
   ) {}
 
   async ngOnInit() {
@@ -136,18 +136,18 @@ export class FamiliesForEnterpriseSetupComponent implements OnInit, OnDestroy {
       this.router.navigate(["/"]);
     } catch (e) {
       if (this.showNewOrganization) {
-        await this.modalService.openViewRef(
-          DeleteOrganizationComponent,
-          this.deleteModalRef,
-          (comp) => {
-            comp.organizationId = organizationId;
-            comp.deleteOrganizationRequestType = "InvalidFamiliesForEnterprise";
-            // eslint-disable-next-line rxjs-angular/prefer-takeuntil
-            comp.onSuccess.subscribe(() => {
-              this.router.navigate(["/"]);
-            });
-          }
-        );
+        const dialog = openDeleteOrganizationDialog(this.dialogService, {
+          data: {
+            organizationId: organizationId,
+            requestType: "InvalidFamiliesForEnterprise",
+          },
+        });
+
+        const result = await lastValueFrom(dialog.closed);
+
+        if (result === DeleteOrganizationDialogResult.Deleted) {
+          this.router.navigate(["/"]);
+        }
       }
       this.validationService.showError(this.i18nService.t("sponsorshipTokenHasExpired"));
     }

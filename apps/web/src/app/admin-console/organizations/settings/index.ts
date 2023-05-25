@@ -1,2 +1,2 @@
 export * from "./organization-settings.module";
-export { DeleteOrganizationComponent } from "./delete-organization.component";
+export { DeleteOrganizationDialogComponent } from "./components/delete-organization-dialog.component";

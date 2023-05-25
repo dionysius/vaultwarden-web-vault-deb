@@ -9,7 +9,6 @@ import { SubscriptionRoutingModule } from "../app/billing/settings/subscription-
 import { flagEnabled, Flags } from "../utils/flags";
 
 import { TrialInitiationComponent } from "./accounts/trial-initiation/trial-initiation.component";
-import { OrganizationModule } from "./admin-console/organizations/organization.module";
 import { AcceptFamilySponsorshipComponent } from "./admin-console/organizations/sponsorships/accept-family-sponsorship.component";
 import { FamiliesForEnterpriseSetupComponent } from "./admin-console/organizations/sponsorships/families-for-enterprise-setup.component";
 import { CreateOrganizationComponent } from "./admin-console/settings/create-organization.component";
@@ -249,7 +248,8 @@ const routes: Routes = [
   },
   {
     path: "organizations",
-    loadChildren: () => OrganizationModule,
+    loadChildren: () =>
+      import("./admin-console/organizations/organization.module").then((m) => m.OrganizationModule),
   },
 ];
 

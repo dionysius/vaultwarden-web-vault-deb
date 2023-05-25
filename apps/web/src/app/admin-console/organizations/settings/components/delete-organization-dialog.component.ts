@@ -1,16 +1,24 @@
-import { Component, EventEmitter, OnInit, Output } from "@angular/core";
+import { DIALOG_DATA, DialogConfig, DialogRef } from "@angular/cdk/dialog";
+import { Component, Inject, OnDestroy, OnInit } from "@angular/core";
+import { FormBuilder, FormControl, Validators } from "@angular/forms";
+import { combineLatest, Subject, takeUntil } from "rxjs";
 
+import { DialogServiceAbstraction } from "@bitwarden/angular/services/dialog";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { UserVerificationService } from "@bitwarden/common/abstractions/userVerification/userVerification.service.abstraction";
 import { OrganizationApiServiceAbstraction } from "@bitwarden/common/admin-console/abstractions/organization/organization-api.service.abstraction";
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
+import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
 import { Utils } from "@bitwarden/common/misc/utils";
 import { Verification } from "@bitwarden/common/types/verification";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
 import { CipherType } from "@bitwarden/common/vault/enums/cipher-type";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
+
+import { UserVerificationModule } from "../../../../shared/components/user-verification";
+import { SharedModule } from "../../../../shared/shared.module";
 
 class CountBasedLocalizationKey {
   singular: string;
@@ -43,63 +51,90 @@ class OrganizationContentSummary {
   itemCountByType: OrganizationContentSummaryItem[] = [];
 }
 
+export interface DeleteOrganizationDialogParams {
+  organizationId: string;
+
+  requestType: "InvalidFamiliesForEnterprise" | "RegularDelete";
+}
+
+export enum DeleteOrganizationDialogResult {
+  Deleted = "deleted",
+  Canceled = "canceled",
+}
+
 @Component({
   selector: "app-delete-organization",
-  templateUrl: "delete-organization.component.html",
+  standalone: true,
+  imports: [SharedModule, UserVerificationModule],
+  templateUrl: "delete-organization-dialog.component.html",
 })
-export class DeleteOrganizationComponent implements OnInit {
-  organizationId: string;
+export class DeleteOrganizationDialogComponent implements OnInit, OnDestroy {
+  private destroy$ = new Subject<void>();
+
   loaded: boolean;
   deleteOrganizationRequestType: "InvalidFamiliesForEnterprise" | "RegularDelete" = "RegularDelete";
-  organizationName: string;
+  organization: Organization;
   organizationContentSummary: OrganizationContentSummary = new OrganizationContentSummary();
-  @Output() onSuccess: EventEmitter<void> = new EventEmitter();
+  secret: Verification;
 
-  masterPassword: Verification;
+  protected formGroup = this.formBuilder.group({
+    secret: new FormControl<Verification>(null, [Validators.required]),
+  });
   formPromise: Promise<void>;
 
   constructor(
+    @Inject(DIALOG_DATA) private params: DeleteOrganizationDialogParams,
+    private dialogRef: DialogRef<DeleteOrganizationDialogResult>,
     private i18nService: I18nService,
     private platformUtilsService: PlatformUtilsService,
     private userVerificationService: UserVerificationService,
     private logService: LogService,
     private cipherService: CipherService,
     private organizationService: OrganizationService,
-    private organizationApiService: OrganizationApiServiceAbstraction
+    private organizationApiService: OrganizationApiServiceAbstraction,
+    private formBuilder: FormBuilder
   ) {}
 
-  async ngOnInit(): Promise<void> {
-    await this.load();
+  ngOnDestroy(): void {
+    this.destroy$.next();
+    this.destroy$.complete();
   }
 
-  async submit() {
+  async ngOnInit(): Promise<void> {
+    this.deleteOrganizationRequestType = this.params.requestType;
+
+    combineLatest([
+      this.organizationService.get$(this.params.organizationId),
+      this.cipherService.getAllFromApiForOrganization(this.params.organizationId),
+    ])
+      .pipe(takeUntil(this.destroy$))
+      .subscribe(([organization, ciphers]) => {
+        this.organization = organization;
+        this.organizationContentSummary = this.buildOrganizationContentSummary(ciphers);
+        this.loaded = true;
+      });
+  }
+
+  protected submit = async () => {
     try {
       this.formPromise = this.userVerificationService
-        .buildRequest(this.masterPassword)
-        .then((request) => this.organizationApiService.delete(this.organizationId, request));
+        .buildRequest(this.formGroup.value.secret)
+        .then((request) => this.organizationApiService.delete(this.organization.id, request));
       await this.formPromise;
       this.platformUtilsService.showToast(
         "success",
         this.i18nService.t("organizationDeleted"),
         this.i18nService.t("organizationDeletedDesc")
       );
-      this.onSuccess.emit();
+      this.dialogRef.close(DeleteOrganizationDialogResult.Deleted);
     } catch (e) {
       this.logService.error(e);
     }
-  }
+  };
 
-  private async load() {
-    this.organizationName = (await this.organizationService.get(this.organizationId)).name;
-    this.organizationContentSummary = await this.buildOrganizationContentSummary();
-    this.loaded = true;
-  }
-
-  private async buildOrganizationContentSummary(): Promise<OrganizationContentSummary> {
+  private buildOrganizationContentSummary(ciphers: CipherView[]): OrganizationContentSummary {
     const organizationContentSummary = new OrganizationContentSummary();
-    const organizationItems = (
-      await this.cipherService.getAllFromApiForOrganization(this.organizationId)
-    ).filter((item) => item.deletedDate == null);
+    const organizationItems = ciphers.filter((item) => item.deletedDate == null);
 
     if (organizationItems.length < 1) {
       return organizationContentSummary;
@@ -128,4 +163,19 @@ export class DeleteOrganizationComponent implements OnInit {
   private getOrganizationItemLocalizationKeysByType(type: string): CountBasedLocalizationKey {
     return new CountBasedLocalizationKey(`type${type}`, `type${type}Plural`);
   }
+}
+
+/**
+ * Strongly typed helper to open a Delete Organization dialog
+ * @param dialogService Instance of the dialog service that will be used to open the dialog
+ * @param config Configuration for the dialog
+ */
+export function openDeleteOrganizationDialog(
+  dialogService: DialogServiceAbstraction,
+  config: DialogConfig<DeleteOrganizationDialogParams>
+) {
+  return dialogService.open<DeleteOrganizationDialogResult, DeleteOrganizationDialogParams>(
+    DeleteOrganizationDialogComponent,
+    config
+  );
 }

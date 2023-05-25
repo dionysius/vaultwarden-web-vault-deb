@@ -6,7 +6,7 @@ import { DialogServiceAbstraction } from "@bitwarden/angular/services/dialog";
 import { ModalService } from "@bitwarden/angular/services/modal.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
-import { UserVerificationPromptComponent } from "@bitwarden/web-vault/app/components/user-verification-prompt.component";
+import { UserVerificationPromptComponent } from "@bitwarden/web-vault/app/shared/components/user-verification";
 
 import { AccessTokenView } from "../models/view/access-token.view";
 
