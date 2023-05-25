@@ -489,7 +489,12 @@ function getBgService<T>(service: keyof MainBackground) {
     {
       provide: ConfigServiceAbstraction,
       useClass: BrowserConfigService,
-      deps: [StateServiceAbstraction, ConfigApiServiceAbstraction],
+      deps: [
+        StateServiceAbstraction,
+        ConfigApiServiceAbstraction,
+        AuthServiceAbstraction,
+        EnvironmentService,
+      ],
     },
     {
       provide: DialogServiceAbstraction,
