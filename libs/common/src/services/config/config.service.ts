@@ -1,8 +1,9 @@
-import { BehaviorSubject, concatMap, timer } from "rxjs";
+import { BehaviorSubject, concatMap, from, timer } from "rxjs";
 
 import { ConfigApiServiceAbstraction } from "../../abstractions/config/config-api.service.abstraction";
 import { ConfigServiceAbstraction } from "../../abstractions/config/config.service.abstraction";
 import { ServerConfig } from "../../abstractions/config/server-config";
+import { EnvironmentService } from "../../abstractions/environment.service";
 import { StateService } from "../../abstractions/state.service";
 import { AuthService } from "../../auth/abstractions/auth.service";
 import { AuthenticationStatus } from "../../auth/enums/authentication-status";
@@ -16,15 +17,18 @@ export class ConfigService implements ConfigServiceAbstraction {
   constructor(
     private stateService: StateService,
     private configApiService: ConfigApiServiceAbstraction,
-    private authService: AuthService
+    private authService: AuthService,
+    private environmentService: EnvironmentService
   ) {
     // Re-fetch the server config every hour
     timer(0, 1000 * 3600)
-      .pipe(
-        concatMap(async () => {
-          return await this.fetchServerConfig();
-        })
-      )
+      .pipe(concatMap(() => from(this.fetchServerConfig())))
+      .subscribe((serverConfig) => {
+        this._serverConfig.next(serverConfig);
+      });
+
+    this.environmentService.urls
+      .pipe(concatMap(() => from(this.fetchServerConfig())))
       .subscribe((serverConfig) => {
         this._serverConfig.next(serverConfig);
       });

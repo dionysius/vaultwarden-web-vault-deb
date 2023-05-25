@@ -501,7 +501,8 @@ export default class MainBackground {
     this.configService = new ConfigService(
       this.stateService,
       this.configApiService,
-      this.authService
+      this.authService,
+      this.environmentService
     );
 
     const systemUtilsServiceReloadCallback = () => {

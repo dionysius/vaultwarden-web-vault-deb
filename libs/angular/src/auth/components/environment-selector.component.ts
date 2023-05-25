@@ -2,7 +2,7 @@ import { animate, state, style, transition, trigger } from "@angular/animations"
 import { ConnectedPosition } from "@angular/cdk/overlay";
 import { Component, EventEmitter, OnDestroy, OnInit, Output } from "@angular/core";
 import { Router } from "@angular/router";
-import { Subject } from "rxjs";
+import { Subject, takeUntil } from "rxjs";
 
 import { ConfigServiceAbstraction } from "@bitwarden/common/abstractions/config/config.service.abstraction";
 import { EnvironmentService } from "@bitwarden/common/abstractions/environment.service";
@@ -34,11 +34,11 @@ import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
 })
 export class EnvironmentSelectorComponent implements OnInit, OnDestroy {
   @Output() onOpenSelfHostedSettings = new EventEmitter();
+  euServerFlagEnabled: boolean;
   isOpen = false;
   showingModal = false;
   selectedEnvironment: ServerEnvironment;
   ServerEnvironmentType = ServerEnvironment;
-  euServerFlagEnabled: boolean;
   overlayPostition: ConnectedPosition[] = [
     {
       originX: "start",
@@ -56,9 +56,9 @@ export class EnvironmentSelectorComponent implements OnInit, OnDestroy {
   ) {}
 
   async ngOnInit() {
-    this.euServerFlagEnabled = await this.configService.getFeatureFlagBool(
-      FeatureFlag.DisplayEuEnvironmentFlag
-    );
+    this.configService.serverConfig$.pipe(takeUntil(this.componentDestroyed$)).subscribe(() => {
+      this.updateEnvironmentInfo();
+    });
     this.updateEnvironmentInfo();
   }
 
@@ -69,6 +69,9 @@ export class EnvironmentSelectorComponent implements OnInit, OnDestroy {
 
   async toggle(option: ServerEnvironment) {
     this.isOpen = !this.isOpen;
+    if (option === null) {
+      return;
+    }
     if (option === ServerEnvironment.EU) {
       await this.environmentService.setUrls({ base: "https://vault.bitwarden.eu" });
     } else if (option === ServerEnvironment.US) {
@@ -79,7 +82,10 @@ export class EnvironmentSelectorComponent implements OnInit, OnDestroy {
     this.updateEnvironmentInfo();
   }
 
-  updateEnvironmentInfo() {
+  async updateEnvironmentInfo() {
+    this.euServerFlagEnabled = await this.configService.getFeatureFlagBool(
+      FeatureFlag.DisplayEuEnvironmentFlag
+    );
     const webvaultUrl = this.environmentService.getWebVaultUrl();
     if (this.environmentService.isSelfHosted()) {
       this.selectedEnvironment = ServerEnvironment.SelfHosted;
