@@ -2751,7 +2751,7 @@
     }
   },
   "viewCollectionWithName": {
-    "message": "View collection - $NAME$",
+    "message": "Переглянути збірку - $NAME$",
     "placeholders": {
       "name": {
         "content": "$1",
@@ -2760,7 +2760,7 @@
     }
   },
   "editItemWithName": {
-    "message": "Edit item - $NAME$",
+    "message": "Редагувати елемент - $NAME$",
     "placeholders": {
       "name": {
         "content": "$1",
@@ -5227,15 +5227,15 @@
     "message": "Key Connector"
   },
   "memberDecryptionKeyConnectorDescStart": {
-    "message": "Connect login with SSO to your self-hosted decryption key server. Using this option, members won’t need to use their master passwords to decrypt vault data. The",
+    "message": "Під'єднайте вхід з SSO до свого власного сервера ключів розшифрування. Скориставшись цією можливістю, учасникам не потрібен буде головний пароль для розшифрування даних сховища.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Connect login with SSO to your self-hosted decryption key server. Using this option, members won’t need to use their master passwords to decrypt vault data. The require SSO authentication and single organization policies are required to set up Key Connector decryption. Contact Bitwarden Support for set up assistance.'"
   },
   "memberDecryptionKeyConnectorDescLink": {
-    "message": "require SSO authentication and single organization policies",
+    "message": "Вимога SSO автентифікації та політик єдиної організації",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Connect login with SSO to your self-hosted decryption key server. Using this option, members won’t need to use their master passwords to decrypt vault data. The require SSO authentication and single organization policies are required to set up Key Connector decryption. Contact Bitwarden Support for set up assistance.'"
   },
   "memberDecryptionKeyConnectorDescEnd": {
-    "message": "are required to set up Key Connector decryption. Contact Bitwarden Support for set up assistance.",
+    "message": "є обов'язковими для налаштування розшифрування за допомогою Key Connector. Зверніться до служби підтримки Bitwarden для отримання допомоги з налаштуванням.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Connect login with SSO to your self-hosted decryption key server. Using this option, members won’t need to use their master passwords to decrypt vault data. The require SSO authentication and single organization policies are required to set up Key Connector decryption. Contact Bitwarden Support for set up assistance.'"
   },
   "keyConnectorPolicyRestriction": {
@@ -5453,7 +5453,7 @@
     "description": "This is used by screen readers to indicate the organization that is currently being shown to the user."
   },
   "accountLoggedInAsName": {
-    "message": "Account: Logged in as $NAME$",
+    "message": "Обліковий запис: Вхід виконано як $NAME$",
     "placeholders": {
       "name": {
         "content": "$1",
@@ -6198,7 +6198,7 @@
     "description": "Toast message after deleting one or multiple access tokens."
   },
   "noAccessTokenSelected": {
-    "message": "No access token selected to revoke",
+    "message": "Не вибрано токенів доступу для відкликання",
     "description": "Toast error message after trying to delete access tokens but not selecting any access tokens."
   },
   "submenu": {
@@ -6552,6 +6552,18 @@
   "billingSyncHelp": {
     "message": "Допомога з платіжною синхронізацією"
   },
+  "licensePaidFeaturesHelp": {
+    "message": "Довідка щодо платних можливостей ліцензії"
+  },
+  "selfHostGracePeriodHelp": {
+    "message": "Після завершення передплати ви матимете 60 днів, щоб застосувати оновлений файл ліцензії для організації. Пільговий період завершується $GRACE_PERIOD_END_DATE$.",
+    "placeholders": {
+      "GRACE_PERIOD_END_DATE": {
+        "content": "$1",
+        "example": "May 12, 2024"
+      }
+    }
+  },
   "uploadLicense": {
     "message": "Вивантажити ліцензію"
   },
@@ -6592,7 +6604,7 @@
     "message": "Низький показник KDF-ітерацій"
   },
   "updateLowKdfIterationsDesc": {
-    "message": "Update your encryption settings to meet new security recommendations and improve account protection."
+    "message": "Оновіть свої налаштування шифрування згідно з новими рекомендаціями щодо безпеки для вдосконалення захисту облікового запису."
   },
   "changeKdfLoggedOutWarning": {
     "message": "Продовжуючи, ви вийдете з усіх активних сеансів. Необхідно буде повторно виконати вхід і пройти двоетапну перевірку. Перед зміною налаштувань шифрування ми рекомендуємо експортувати ваше сховище, щоб запобігти можливій втраті даних."
@@ -6776,6 +6788,17 @@
   "enforceOnLoginDesc": {
     "message": "Вимагати від наявних учасників змінювати паролі"
   },
+  "region": {
+    "message": "Регіон"
+  },
+  "eu": {
+    "message": "ЄС",
+    "description": "European Union"
+  },
+  "us": {
+    "message": "США",
+    "description": "United States"
+  },
   "smProjectDeleteAccessRestricted": {
     "message": "У вас немає дозволу на видалення цього проєкту",
     "description": "The individual description shown to the user when the user doesn't have access to delete a project."
@@ -6785,21 +6808,21 @@
     "description": "The message shown to the user when bulk deleting projects and the user doesn't have access to some projects."
   },
   "updateKdfSettings": {
-    "message": "Update KDF settings"
+    "message": "Оновити налаштування KDF"
   },
   "trustedDeviceEncryption": {
-    "message": "Trusted device encryption"
+    "message": "Шифрування досвіреного пристрою"
   },
   "memberDecryptionTdeDescStart": {
-    "message": "Once authenticated, members will decrypt vault data using a key stored on their device. The",
+    "message": "Після авторизації учасники розшифровуватимуть дані сховища з використанням ключа, збереженого на їхньому пристрої.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The master password reset policy with automatic enrollment will turn on when this option is used.'"
   },
   "memberDecryptionTdeDescLink": {
-    "message": "master password reset policy",
+    "message": "Політика скидання головного пароля",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The master password reset policy with automatic enrollment will turn on when this option is used.'"
   },
   "memberDecryptionTdeDescEnd": {
-    "message": "with automatic enrollment will turn on when this option is used.",
+    "message": "з автоматичним розгортанням увімкнеться, якщо використовується ця опція.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The master password reset policy with automatic enrollment will turn on when this option is used.'"
   }
 }

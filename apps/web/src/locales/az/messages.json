@@ -2751,7 +2751,7 @@
     }
   },
   "viewCollectionWithName": {
-    "message": "View collection - $NAME$",
+    "message": "Kolleksiyaya bax - $NAME$",
     "placeholders": {
       "name": {
         "content": "$1",
@@ -2760,7 +2760,7 @@
     }
   },
   "editItemWithName": {
-    "message": "Edit item - $NAME$",
+    "message": "Elementə düzəliş et - $NAME$",
     "placeholders": {
       "name": {
         "content": "$1",
@@ -5227,15 +5227,15 @@
     "message": "Açar Bağlayıcı"
   },
   "memberDecryptionKeyConnectorDescStart": {
-    "message": "Connect login with SSO to your self-hosted decryption key server. Using this option, members won’t need to use their master passwords to decrypt vault data. The",
+    "message": "SSO ilə Giriş etməni, öz-özünə sahiblik edən şifrə açma açar serverinizə bağlayın. Bu seçimi istifadə edərək, üzvlərin anbar verilənlərinin şifrəsini açmaq üçün Ana Parollarını istifadə etməsinə ehtiyac qalmayacaq.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Connect login with SSO to your self-hosted decryption key server. Using this option, members won’t need to use their master passwords to decrypt vault data. The require SSO authentication and single organization policies are required to set up Key Connector decryption. Contact Bitwarden Support for set up assistance.'"
   },
   "memberDecryptionKeyConnectorDescLink": {
-    "message": "require SSO authentication and single organization policies",
+    "message": "SSO kimlik təsdiqləməsi və tək təşkilat siyasətləri tələb olunur",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Connect login with SSO to your self-hosted decryption key server. Using this option, members won’t need to use their master passwords to decrypt vault data. The require SSO authentication and single organization policies are required to set up Key Connector decryption. Contact Bitwarden Support for set up assistance.'"
   },
   "memberDecryptionKeyConnectorDescEnd": {
-    "message": "are required to set up Key Connector decryption. Contact Bitwarden Support for set up assistance.",
+    "message": "Açar Bağlayıcı şifrə açmanı quraşdırmaq üçün tələb olunur. Quraşdırma üzrə kömək üçün Bitwarden Dəstək ilə əlaqə saxlayın.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Connect login with SSO to your self-hosted decryption key server. Using this option, members won’t need to use their master passwords to decrypt vault data. The require SSO authentication and single organization policies are required to set up Key Connector decryption. Contact Bitwarden Support for set up assistance.'"
   },
   "keyConnectorPolicyRestriction": {
@@ -6552,6 +6552,18 @@
   "billingSyncHelp": {
     "message": "Faktura Sinxronlaşdırma köməyi"
   },
+  "licensePaidFeaturesHelp": {
+    "message": "Lisenziyalı ödənişli özəlliklər üzrə kömək"
+  },
+  "selfHostGracePeriodHelp": {
+    "message": "Abunəliyiniz bitdikdən sonra, güncəllənmiş lisenziya faylını təşkilatınıza tətbiq etmək üçün 60 gününüz var. Güzəşt müddəti $GRACE_PERIOD_END_DATE$ bitir.",
+    "placeholders": {
+      "GRACE_PERIOD_END_DATE": {
+        "content": "$1",
+        "example": "May 12, 2024"
+      }
+    }
+  },
   "uploadLicense": {
     "message": "Lisenziyanı yüklə"
   },
@@ -6776,6 +6788,17 @@
   "enforceOnLoginDesc": {
     "message": "Mövcud üzvlərin öz parollarını dəyişdirməsini tələb et"
   },
+  "region": {
+    "message": "Bölgə"
+  },
+  "eu": {
+    "message": "AB",
+    "description": "European Union"
+  },
+  "us": {
+    "message": "ABŞ",
+    "description": "United States"
+  },
   "smProjectDeleteAccessRestricted": {
     "message": "Bu layihəni silmək icazəniz yoxdur",
     "description": "The individual description shown to the user when the user doesn't have access to delete a project."
@@ -6788,18 +6811,18 @@
     "message": "KDF tənzimləmələrini güncəllə"
   },
   "trustedDeviceEncryption": {
-    "message": "Trusted device encryption"
+    "message": "Güvənli cihaz şifrələməsi"
   },
   "memberDecryptionTdeDescStart": {
-    "message": "Once authenticated, members will decrypt vault data using a key stored on their device. The",
+    "message": "Kimlik təsdiqləndikdən sonra üzvlər, cihazlarından saxlanılan açarı istifadə edərək anbar verilənlərinin şifrələrini aça biləcək.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The master password reset policy with automatic enrollment will turn on when this option is used.'"
   },
   "memberDecryptionTdeDescLink": {
-    "message": "master password reset policy",
+    "message": "ana parol sıfırlama siyasəti",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The master password reset policy with automatic enrollment will turn on when this option is used.'"
   },
   "memberDecryptionTdeDescEnd": {
-    "message": "with automatic enrollment will turn on when this option is used.",
+    "message": "Bu seçim istifadə edildikdə avto-qeydiyyat ilə işə salınacaq.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The master password reset policy with automatic enrollment will turn on when this option is used.'"
   }
 }

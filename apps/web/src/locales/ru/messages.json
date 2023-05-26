@@ -6552,6 +6552,18 @@
   "billingSyncHelp": {
     "message": "Справка по синхронизации биллинга"
   },
+  "licensePaidFeaturesHelp": {
+    "message": "Справка по платным лицензионным функциям"
+  },
+  "selfHostGracePeriodHelp": {
+    "message": "После истечения срока действия подписки у вас есть 60 дней, чтобы применить обновленный файл лицензии к вашей организации. Льготный период заканчивается: $GRACE_PERIOD_END_DATE$.",
+    "placeholders": {
+      "GRACE_PERIOD_END_DATE": {
+        "content": "$1",
+        "example": "May 12, 2024"
+      }
+    }
+  },
   "uploadLicense": {
     "message": "Загрузить лицензию"
   },
@@ -6775,6 +6787,17 @@
   },
   "enforceOnLoginDesc": {
     "message": "Требовать от существующих пользователей смены паролей"
+  },
+  "region": {
+    "message": "Регион"
+  },
+  "eu": {
+    "message": "Европа",
+    "description": "European Union"
+  },
+  "us": {
+    "message": "США",
+    "description": "United States"
   },
   "smProjectDeleteAccessRestricted": {
     "message": "У вас недостаточно прав для удаления этого проекта",

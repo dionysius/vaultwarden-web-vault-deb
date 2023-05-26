@@ -6552,6 +6552,18 @@
   "billingSyncHelp": {
     "message": "Aiuto per la sincronizzazione della fatturazione"
   },
+  "licensePaidFeaturesHelp": {
+    "message": "Guida alle funzionalità a pagamento con licenza"
+  },
+  "selfHostGracePeriodHelp": {
+    "message": "Dopo che il tuo abbonamento scade, hai 60 giorni per applicare un file di licenza aggiornato alla tua organizzazione. Il periodo di grazia termina il $GRACE_PERIOD_END_DATE$.",
+    "placeholders": {
+      "GRACE_PERIOD_END_DATE": {
+        "content": "$1",
+        "example": "May 12, 2024"
+      }
+    }
+  },
   "uploadLicense": {
     "message": "Carica licenza"
   },
@@ -6775,6 +6787,17 @@
   },
   "enforceOnLoginDesc": {
     "message": "Obbliga i membri esistenti a cambiare le loro password"
+  },
+  "region": {
+    "message": "Regione"
+  },
+  "eu": {
+    "message": "UE",
+    "description": "European Union"
+  },
+  "us": {
+    "message": "US",
+    "description": "United States"
   },
   "smProjectDeleteAccessRestricted": {
     "message": "Non hai l'autorizzazione per eliminare questo progetto",

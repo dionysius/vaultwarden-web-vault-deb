@@ -5227,7 +5227,7 @@
     "message": "Key Connector"
   },
   "memberDecryptionKeyConnectorDescStart": {
-    "message": "Connect login with SSO to your self-hosted decryption key server. Using this option, members won’t need to use their master passwords to decrypt vault data. The",
+    "message": "Połącz logowanie za pomocą SSO z Twoim serwerem kluczy odszyfrowania. Używając tej opcji, użytkownicy nie będą musieli używać swoich haseł głównych, aby odszyfrować dane sejfu.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Connect login with SSO to your self-hosted decryption key server. Using this option, members won’t need to use their master passwords to decrypt vault data. The require SSO authentication and single organization policies are required to set up Key Connector decryption. Contact Bitwarden Support for set up assistance.'"
   },
   "memberDecryptionKeyConnectorDescLink": {
@@ -5235,7 +5235,7 @@
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Connect login with SSO to your self-hosted decryption key server. Using this option, members won’t need to use their master passwords to decrypt vault data. The require SSO authentication and single organization policies are required to set up Key Connector decryption. Contact Bitwarden Support for set up assistance.'"
   },
   "memberDecryptionKeyConnectorDescEnd": {
-    "message": "are required to set up Key Connector decryption. Contact Bitwarden Support for set up assistance.",
+    "message": "są wymagane do skonfigurowania deszyfrowania Key Connector. Skontaktuj się z pomocą Bitwarden, aby uzyskać pomoc.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Connect login with SSO to your self-hosted decryption key server. Using this option, members won’t need to use their master passwords to decrypt vault data. The require SSO authentication and single organization policies are required to set up Key Connector decryption. Contact Bitwarden Support for set up assistance.'"
   },
   "keyConnectorPolicyRestriction": {
@@ -6552,6 +6552,18 @@
   "billingSyncHelp": {
     "message": "Pomoc synchronizacji płatności"
   },
+  "licensePaidFeaturesHelp": {
+    "message": "Pomoc w zakresie płatnych funkcji licencyjnych"
+  },
+  "selfHostGracePeriodHelp": {
+    "message": "Po wygaśnięciu subskrypcji masz 60 dni na dodanie zaktualizowanego pliku licencji dla Twojej organizacji. Okres karencji kończy się $GRACE_PERIOD_END_DATE$.",
+    "placeholders": {
+      "GRACE_PERIOD_END_DATE": {
+        "content": "$1",
+        "example": "May 12, 2024"
+      }
+    }
+  },
   "uploadLicense": {
     "message": "Prześlij licencję"
   },
@@ -6776,6 +6788,17 @@
   "enforceOnLoginDesc": {
     "message": "Wymagaj od istniejących członków zmiany haseł"
   },
+  "region": {
+    "message": "Region"
+  },
+  "eu": {
+    "message": "UE",
+    "description": "European Union"
+  },
+  "us": {
+    "message": "US",
+    "description": "United States"
+  },
   "smProjectDeleteAccessRestricted": {
     "message": "Nie masz uprawnień do usunięcia tego projektu",
     "description": "The individual description shown to the user when the user doesn't have access to delete a project."
@@ -6788,18 +6811,18 @@
     "message": "Zaktualizuj ustawienia KDF"
   },
   "trustedDeviceEncryption": {
-    "message": "Trusted device encryption"
+    "message": "Szyfrowanie zaufanego urządzenia"
   },
   "memberDecryptionTdeDescStart": {
-    "message": "Once authenticated, members will decrypt vault data using a key stored on their device. The",
+    "message": "Po uwierzytelnieniu użytkownicy odszyfrowają dane sejfu przy użyciu klucza zapisanego na ich urządzeniu.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The master password reset policy with automatic enrollment will turn on when this option is used.'"
   },
   "memberDecryptionTdeDescLink": {
-    "message": "master password reset policy",
+    "message": "Zasady resetowania hasła głównego",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The master password reset policy with automatic enrollment will turn on when this option is used.'"
   },
   "memberDecryptionTdeDescEnd": {
-    "message": "with automatic enrollment will turn on when this option is used.",
+    "message": "z automatycznym zapisem włączy się, gdy ta opcja jest używana.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The master password reset policy with automatic enrollment will turn on when this option is used.'"
   }
 }

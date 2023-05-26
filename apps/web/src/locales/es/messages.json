@@ -6552,6 +6552,18 @@
   "billingSyncHelp": {
     "message": "Ayuda de sincronización de facturación"
   },
+  "licensePaidFeaturesHelp": {
+    "message": "Ayuda a las funciones por licencia premium"
+  },
+  "selfHostGracePeriodHelp": {
+    "message": "Después de que caduque su suscripción, tiene 60 días para aplicar un archivo de licencia actualizado a su organización. El periodo de gracia termina $GRACE_PERIOD_END_DATE$.",
+    "placeholders": {
+      "GRACE_PERIOD_END_DATE": {
+        "content": "$1",
+        "example": "May 12, 2024"
+      }
+    }
+  },
   "uploadLicense": {
     "message": "Subir licencia"
   },
@@ -6775,6 +6787,17 @@
   },
   "enforceOnLoginDesc": {
     "message": "Requiere que los miembros existentes cambien sus contraseñas"
+  },
+  "region": {
+    "message": "Región"
+  },
+  "eu": {
+    "message": "EU",
+    "description": "European Union"
+  },
+  "us": {
+    "message": "EEUU",
+    "description": "United States"
   },
   "smProjectDeleteAccessRestricted": {
     "message": "No tiene permisos para eliminar este proyecto",

@@ -6552,6 +6552,18 @@
   "billingSyncHelp": {
     "message": "Hulp bij facturatiesynchronisatie"
   },
+  "licensePaidFeaturesHelp": {
+    "message": "Licentiehulp betaalde functionaliteit"
+  },
+  "selfHostGracePeriodHelp": {
+    "message": "Als je abonnement is verlopen, heb je 60 dagen voor het toepassen van een bijgewerkt licentiebestand op je organisatie. De gratieperiode eindigt $GRACE_PERIOD_END_DATE$.",
+    "placeholders": {
+      "GRACE_PERIOD_END_DATE": {
+        "content": "$1",
+        "example": "May 12, 2024"
+      }
+    }
+  },
   "uploadLicense": {
     "message": "Licentie uploaden"
   },
@@ -6775,6 +6787,17 @@
   },
   "enforceOnLoginDesc": {
     "message": "Verplicht bestaande leden hun wachtwoord te wijzigen"
+  },
+  "region": {
+    "message": "Region"
+  },
+  "eu": {
+    "message": "EU",
+    "description": "European Union"
+  },
+  "us": {
+    "message": "US",
+    "description": "United States"
   },
   "smProjectDeleteAccessRestricted": {
     "message": "Je hebt geen rechten om dit project te verwijderen",

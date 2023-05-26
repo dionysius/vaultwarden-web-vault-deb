@@ -5227,7 +5227,7 @@
     "message": "Key Connector"
   },
   "memberDecryptionKeyConnectorDescStart": {
-    "message": "Connect login with SSO to your self-hosted decryption key server. Using this option, members won’t need to use their master passwords to decrypt vault data. The",
+    "message": "Verbinde die Anmeldung über SSO mit deinem selbst gehosteten Entschlüsselungsschlüssel-Server. Mit dieser Option müssen Mitglieder ihre Master-Passwörter nicht verwenden, um Tresordaten zu entschlüsseln.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Connect login with SSO to your self-hosted decryption key server. Using this option, members won’t need to use their master passwords to decrypt vault data. The require SSO authentication and single organization policies are required to set up Key Connector decryption. Contact Bitwarden Support for set up assistance.'"
   },
   "memberDecryptionKeyConnectorDescLink": {
@@ -6552,6 +6552,18 @@
   "billingSyncHelp": {
     "message": "Hilfe zur Rechnungssynchronisation"
   },
+  "licensePaidFeaturesHelp": {
+    "message": "Hilfe zur Lizenzierung von bezahlten Funktionen"
+  },
+  "selfHostGracePeriodHelp": {
+    "message": "Nachdem dein Abonnement abgelaufen ist, hast du 60 Tage Zeit, um eine aktualisierte Lizenzdatei für deine Organisation anzuwenden. Die Nachfrist endet am $GRACE_PERIOD_END_DATE$.",
+    "placeholders": {
+      "GRACE_PERIOD_END_DATE": {
+        "content": "$1",
+        "example": "May 12, 2024"
+      }
+    }
+  },
   "uploadLicense": {
     "message": "Lizenz hochladen"
   },
@@ -6776,6 +6788,17 @@
   "enforceOnLoginDesc": {
     "message": "Bestehende Mitglieder auffordern, ihre Passwörter zu ändern"
   },
+  "region": {
+    "message": "Region"
+  },
+  "eu": {
+    "message": "EU",
+    "description": "European Union"
+  },
+  "us": {
+    "message": "US",
+    "description": "United States"
+  },
   "smProjectDeleteAccessRestricted": {
     "message": "Dir fehlen die Berechtigungen, dieses Projekt zu löschen.",
     "description": "The individual description shown to the user when the user doesn't have access to delete a project."
@@ -6788,7 +6811,7 @@
     "message": "KDF-Einstellungen aktualisieren"
   },
   "trustedDeviceEncryption": {
-    "message": "Trusted device encryption"
+    "message": "Vertrauenswürdige Geräteverschlüsselung"
   },
   "memberDecryptionTdeDescStart": {
     "message": "Once authenticated, members will decrypt vault data using a key stored on their device. The",

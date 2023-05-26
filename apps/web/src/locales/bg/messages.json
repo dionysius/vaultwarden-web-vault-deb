@@ -5227,15 +5227,15 @@
     "message": "Конектор за ключове"
   },
   "memberDecryptionKeyConnectorDescStart": {
-    "message": "Connect login with SSO to your self-hosted decryption key server. Using this option, members won’t need to use their master passwords to decrypt vault data. The",
+    "message": "Свържете вписването чрез еднократно удостоверяване със своя собствен сървър за ключове за дешифриране. Така няма да има нужда членовете да използват главната си парола, за да дешифрират данните от трезора си.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Connect login with SSO to your self-hosted decryption key server. Using this option, members won’t need to use their master passwords to decrypt vault data. The require SSO authentication and single organization policies are required to set up Key Connector decryption. Contact Bitwarden Support for set up assistance.'"
   },
   "memberDecryptionKeyConnectorDescLink": {
-    "message": "require SSO authentication and single organization policies",
+    "message": "Политиките за еднократно удостоверяване и една организация",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Connect login with SSO to your self-hosted decryption key server. Using this option, members won’t need to use their master passwords to decrypt vault data. The require SSO authentication and single organization policies are required to set up Key Connector decryption. Contact Bitwarden Support for set up assistance.'"
   },
   "memberDecryptionKeyConnectorDescEnd": {
-    "message": "are required to set up Key Connector decryption. Contact Bitwarden Support for set up assistance.",
+    "message": "са необходими, за да бъде настроено шифроването чрез конектор за ключове. Свържете се с поддръжката на Битуорден, ако имате нужда от помощ с настройката.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Connect login with SSO to your self-hosted decryption key server. Using this option, members won’t need to use their master passwords to decrypt vault data. The require SSO authentication and single organization policies are required to set up Key Connector decryption. Contact Bitwarden Support for set up assistance.'"
   },
   "keyConnectorPolicyRestriction": {
@@ -6552,6 +6552,18 @@
   "billingSyncHelp": {
     "message": "Помощ относно синхронизирането на лицензи"
   },
+  "licensePaidFeaturesHelp": {
+    "message": "Помощ относно платените функционалности в лиценза"
+  },
+  "selfHostGracePeriodHelp": {
+    "message": "След като изтече абонаментът Ви, имате 60 дни да приложите актуализиран лицензионен файл към организацията си. Този период приключва на $GRACE_PERIOD_END_DATE$.",
+    "placeholders": {
+      "GRACE_PERIOD_END_DATE": {
+        "content": "$1",
+        "example": "May 12, 2024"
+      }
+    }
+  },
   "uploadLicense": {
     "message": "Качване на лиценз"
   },
@@ -6776,6 +6788,17 @@
   "enforceOnLoginDesc": {
     "message": "Задължаване на текущите членове да сменят паролите си"
   },
+  "region": {
+    "message": "Регион"
+  },
+  "eu": {
+    "message": "ЕС",
+    "description": "European Union"
+  },
+  "us": {
+    "message": "САЩ",
+    "description": "United States"
+  },
   "smProjectDeleteAccessRestricted": {
     "message": "Нямате право за изтриване на този проект",
     "description": "The individual description shown to the user when the user doesn't have access to delete a project."
@@ -6788,18 +6811,18 @@
     "message": "Промяна на настройките за KDF"
   },
   "trustedDeviceEncryption": {
-    "message": "Trusted device encryption"
+    "message": "Шифроване чрез доверено устройство"
   },
   "memberDecryptionTdeDescStart": {
-    "message": "Once authenticated, members will decrypt vault data using a key stored on their device. The",
+    "message": "След вписване, членовете ще дешифрират данните от трезорите си чрез ключ, който се съхранява на устройство.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The master password reset policy with automatic enrollment will turn on when this option is used.'"
   },
   "memberDecryptionTdeDescLink": {
-    "message": "master password reset policy",
+    "message": "Политиката за смяна на главната парола",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The master password reset policy with automatic enrollment will turn on when this option is used.'"
   },
   "memberDecryptionTdeDescEnd": {
-    "message": "with automatic enrollment will turn on when this option is used.",
+    "message": "с автоматично включване ще бъде активирана при използването на тази настройка.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The master password reset policy with automatic enrollment will turn on when this option is used.'"
   }
 }

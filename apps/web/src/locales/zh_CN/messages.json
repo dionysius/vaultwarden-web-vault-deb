@@ -6198,7 +6198,7 @@
     "description": "Toast message after deleting one or multiple access tokens."
   },
   "noAccessTokenSelected": {
-    "message": "未选择要撤销的访问令牌",
+    "message": "未选中任何要撤销的访问令牌",
     "description": "Toast error message after trying to delete access tokens but not selecting any access tokens."
   },
   "submenu": {
@@ -6552,6 +6552,18 @@
   "billingSyncHelp": {
     "message": "计费同步帮助"
   },
+  "licensePaidFeaturesHelp": {
+    "message": "License paid features help"
+  },
+  "selfHostGracePeriodHelp": {
+    "message": "订阅到期后，您有 60 天时间为您的组织应用更新后的许可证文件。宽限期结束于 $GRACE_PERIOD_END_DATE$。",
+    "placeholders": {
+      "GRACE_PERIOD_END_DATE": {
+        "content": "$1",
+        "example": "May 12, 2024"
+      }
+    }
+  },
   "uploadLicense": {
     "message": "上传许可证"
   },
@@ -6775,6 +6787,17 @@
   },
   "enforceOnLoginDesc": {
     "message": "要求现有成员更改他们的密码"
+  },
+  "region": {
+    "message": "区域"
+  },
+  "eu": {
+    "message": "欧盟",
+    "description": "European Union"
+  },
+  "us": {
+    "message": "美国",
+    "description": "United States"
   },
   "smProjectDeleteAccessRestricted": {
     "message": "您无权删除此项目",

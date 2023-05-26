@@ -1111,7 +1111,7 @@
     }
   },
   "loggedOutWarning": {
-    "message": "Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
+    "message": "Po tem dejanju boste odjavljeni in se boste morali prijaviti ponovno. Prijave na drugih napravah bodo ostale aktivne še največ eno uro."
   },
   "emailChanged": {
     "message": "E-poštni naslov spremenjen"
@@ -6552,6 +6552,18 @@
   "billingSyncHelp": {
     "message": "Billing Sync help"
   },
+  "licensePaidFeaturesHelp": {
+    "message": "License paid features help"
+  },
+  "selfHostGracePeriodHelp": {
+    "message": "After your subscription expires, you have 60 days to apply an updated license file to your organization. Grace period ends $GRACE_PERIOD_END_DATE$.",
+    "placeholders": {
+      "GRACE_PERIOD_END_DATE": {
+        "content": "$1",
+        "example": "May 12, 2024"
+      }
+    }
+  },
   "uploadLicense": {
     "message": "Upload license"
   },
@@ -6595,7 +6607,7 @@
     "message": "Update your encryption settings to meet new security recommendations and improve account protection."
   },
   "changeKdfLoggedOutWarning": {
-    "message": "Proceeding will log you out of all active sessions. You will need to log back in and complete two-step login setup. We recommend exporting your vault before changing your encryption settings to prevent data loss."
+    "message": "Po tem dejanju boste odjavljeni iz vseh aktivnih sej (na vseh napravah). Prijaviti se boste morali ponovno in zaključiti nastavitev dvostopenjske prijave. Priporočamo vam, da pred tem izvozite svoje podatke, da jih v tem procesu ne bi izgubili."
   },
   "secretsManagerBeta": {
     "message": "Secrets Manager Beta"
@@ -6775,6 +6787,17 @@
   },
   "enforceOnLoginDesc": {
     "message": "Require existing members to change their passwords"
+  },
+  "region": {
+    "message": "Region"
+  },
+  "eu": {
+    "message": "EU",
+    "description": "European Union"
+  },
+  "us": {
+    "message": "US",
+    "description": "United States"
   },
   "smProjectDeleteAccessRestricted": {
     "message": "You don't have permissions to delete this project",

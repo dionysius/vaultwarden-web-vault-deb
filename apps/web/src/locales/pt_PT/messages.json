@@ -180,7 +180,7 @@
     "message": "Não atribuido"
   },
   "noneFolder": {
-    "message": "Nenhuma pasta",
+    "message": "Em nenhuma pasta",
     "description": "This is the folder for uncategorized items"
   },
   "addFolder": {
@@ -297,10 +297,10 @@
     "description": "Search Secure Note type"
   },
   "searchVault": {
-    "message": "Pesquisar cofre"
+    "message": "Procurar no cofre"
   },
   "searchMyVault": {
-    "message": "Search my vault"
+    "message": "Procurar no meu cofre"
   },
   "searchOrganization": {
     "message": "Search organization"
@@ -360,7 +360,7 @@
     "message": "Apelido"
   },
   "fullName": {
-    "message": "Nome Completo"
+    "message": "Nome completo"
   },
   "address1": {
     "message": "Endereço 1"
@@ -405,7 +405,7 @@
     "message": "Ver item"
   },
   "new": {
-    "message": "New",
+    "message": "Novo",
     "description": "for adding new items"
   },
   "item": {
@@ -462,7 +462,7 @@
     "message": "Eu"
   },
   "myVault": {
-    "message": "O meu Cofre"
+    "message": "O meu cofre"
   },
   "allVaults": {
     "message": "Todos os Cofres"
@@ -628,7 +628,7 @@
     "message": "Criar conta"
   },
   "newAroundHere": {
-    "message": "Novo por aqui?"
+    "message": "É novo por cá?"
   },
   "startTrial": {
     "message": "Iniciar avaliação"
@@ -658,10 +658,10 @@
     "message": "A palavra-passe mestra é a palavra-passe que utiliza para aceder ao seu cofre. É muito importante que não se esqueça da sua palavra-passe mestra. Não existe maneira de recuperar a palavra-passe no caso de a esquecer."
   },
   "masterPassImportant": {
-    "message": "As palavras-passe mestras não podem ser recuperadas se as esquecer!"
+    "message": "A palavras-passe mestra não pode ser recuperada se a esquecer!"
   },
   "masterPassHintDesc": {
-    "message": "Uma dica da palavra-passe mestra pode ajudar a lembrar-se da sua palavra-passe se a esquecer."
+    "message": "Uma dica da palavra-passe mestra pode ajudá-lo a lembrar-se da sua palavra-passe, caso se esqueça dela."
   },
   "reTypeMasterPass": {
     "message": "Reescreva a palavra-passe mestra"
@@ -691,13 +691,13 @@
     "message": "Endereço de email inválido."
   },
   "masterPasswordRequired": {
-    "message": "A palavra-passe mestra é necessária."
+    "message": "É necessária a palavra-passe mestra."
   },
   "confirmMasterPasswordRequired": {
     "message": "É necessário reescrever a palavra-passe mestra."
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least $VALUE$ characters long.",
+    "message": "A palavra-passe mestra deve ter pelo menos $VALUE$ caracteres.",
     "description": "The Master Password must be at least a specific number of characters long.",
     "placeholders": {
       "value": {
@@ -819,7 +819,7 @@
     "message": "Enviar email com o código de confirmação novamente"
   },
   "useAnotherTwoStepMethod": {
-    "message": "Utilizar outro método de início de sessão de dois passos"
+    "message": "Utilizar outro método de verificação de dois passos"
   },
   "insertYubiKey": {
     "message": "Introduza a sua YubiKey na porta USB do seu computador, depois toque no botão da mesma."
@@ -831,13 +831,13 @@
     "message": "Início de sessão indisponível"
   },
   "noTwoStepProviders": {
-    "message": "Esta conta tem o início de sessão de dois passos ativado, no entanto, nenhum dos provedores de início de sessão de dois passos configurados são suportados por este navegador web."
+    "message": "Esta conta tem a verificação de dois passos configurada, no entanto, nenhum dos fornecedores de dois passos configurados é suportado por este navegador web."
   },
   "noTwoStepProviders2": {
     "message": "Por favor utilize um navegador web suportado (tal como o Chrome) e/ou adicione provedores adicionais que são melhor suportados entre navegadores web (tal como uma aplicação de autenticador)."
   },
   "twoStepOptions": {
-    "message": "Opções de início de sessão de dois passos"
+    "message": "Opções de verificação de dois passos"
   },
   "recoveryCodeDesc": {
     "message": "Perdeu o acesso a todos os seus provedores de dois passos? Utilize o seu código de recuperação para desativar todos os provedores de dois passos da sua conta."
@@ -1292,7 +1292,7 @@
     "message": "Selecione o ficheiro a importar"
   },
   "chooseFile": {
-    "message": "Escolher Ficheiro"
+    "message": "Escolher ficheiro"
   },
   "noFileChosen": {
     "message": "Nenhum ficheiro escolhido"
@@ -1384,7 +1384,7 @@
     "message": "Domínios atualizados"
   },
   "twoStepLogin": {
-    "message": "Início de sessão de dois passos"
+    "message": "Verificação de dois passos"
   },
   "twoStepLoginEnforcement": {
     "message": "Aplicação do Início de Sessão de Dois Passos"
@@ -1412,7 +1412,7 @@
     "message": "Ver código de recuperação"
   },
   "providers": {
-    "message": "Provedores",
+    "message": "Fornecedores",
     "description": "Two-step login providers such as YubiKey, Duo, Authenticator apps, Email, etc."
   },
   "enable": {
@@ -1441,7 +1441,7 @@
     "message": "Tem acesso premium"
   },
   "alreadyPremiumFromOrg": {
-    "message": "Já tem acesso às funcionalidades premium por causa de uma organização da qual é um membro."
+    "message": "Já tem acesso a funcionalidades Premium devido a uma organização de que é membro."
   },
   "manage": {
     "message": "Gerir"
@@ -1653,7 +1653,7 @@
     "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization vault."
   },
   "orgsReportsDesc": {
-    "message": "Identifique e feche lacunas de segurança nas contas da sua organização ao clicar nos relatórios abaixo.",
+    "message": "Identifique e elimine as lacunas de segurança nas contas da sua organização ao clicar nos relatórios abaixo.",
     "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization vault."
   },
   "unsecuredWebsitesReport": {
@@ -1892,7 +1892,7 @@
     "message": "1 GB de armazenamento encriptado para anexos de ficheiros."
   },
   "premiumSignUpTwoStep": {
-    "message": "Opções adicionais de início de sessão de dois passos, como YubiKey, FIDO U2F, e Duo."
+    "message": "Opções adicionais de verificação de dois passos, como YubiKey, FIDO U2F e Duo."
   },
   "premiumSignUpEmergency": {
     "message": "Acesso de emergência"
@@ -2307,7 +2307,7 @@
     }
   },
   "limitedUsers": {
-    "message": "Limite de $COUNT$ utilizadores (incluindo a si)",
+    "message": "Limite de $COUNT$ utilizadores (incluindo o próprio)",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -2490,7 +2490,7 @@
     "message": "Quando um membro é revogado, já não terá acesso aos dados da organização. Para restaurar rapidamente o acesso ao membro vá para a aba Revogada."
   },
   "removeUserConfirmationKeyConnector": {
-    "message": "Atenção! Este utilizador necessita do Key Connector para gerir a sua encriptação. A remoção deste utilizador da sua organização desativará permanentemente a sua conta. Esta ação não pode ser desfeita. Deseja prosseguir?"
+    "message": "Atenção! Este utilizador necessita do Key Connector para gerir a sua encriptação. Ao remover este utilizador da sua organização desativará permanentemente a sua conta. Esta ação não pode ser desfeita. Deseja prosseguir?"
   },
   "externalId": {
     "message": "Id externa"
@@ -2643,7 +2643,7 @@
     "message": "Palavra-passe da conta alterada."
   },
   "enabledUpdated2fa": {
-    "message": "Início de sessão em dois passos ativado/atualizado."
+    "message": "Verificação de dois passos guardada"
   },
   "disabled2fa": {
     "message": "Início de sessão de dois passos desativado."
@@ -2796,7 +2796,7 @@
     }
   },
   "autofilledItemId": {
-    "message": "Item $ID$ auto-preenchido.",
+    "message": "Item $ID$ preenchido automaticamente.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -3186,13 +3186,13 @@
     "message": "Minha organização"
   },
   "organizationInfo": {
-    "message": "Informações da Organização"
+    "message": "Informações da organização"
   },
   "deleteOrganization": {
     "message": "Eliminar organização"
   },
   "deletingOrganizationContentWarning": {
-    "message": "Digite a senha mestra para confirmar a exclusão de $ORGANIZATION$ e todos os dados associados. Os dados do cofre no $ORGANIZATION$ incluem:",
+    "message": "Introduza a palavra-passe mestra para confirmar a eliminação de $ORGANIZATION$ e de todos os dados associados. Os dados do cofre em $ORGANIZATION$ incluem:",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -3345,7 +3345,7 @@
     "message": "Assinatura atualizada"
   },
   "additionalOptions": {
-    "message": "Opções Adicionais"
+    "message": "Opções adicionais"
   },
   "additionalOptionsDesc": {
     "message": "Para ajuda adicional no gerenciamento da sua assinatura, entre em contato com o suporte ao cliente."
@@ -4207,7 +4207,7 @@
     "message": "Acesso de emergência rejeitado"
   },
   "passwordResetFor": {
-    "message": "Redefinição da palavra-passe para $USER$. Pode agora iniciar sessão utilizando a nova palavra-passe.",
+    "message": "Palavra-passe de $USER$ redefinida. Pode agora iniciar sessão utilizando a nova palavra-passe.",
     "placeholders": {
       "user": {
         "content": "$1",
@@ -4915,16 +4915,16 @@
     "message": "Uma ou mais políticas da organização impedem que exporte o seu cofre pessoal."
   },
   "activateAutofill": {
-    "message": "Activate auto-fill"
+    "message": "Ativar o preenchimento automático"
   },
   "activateAutofillPolicyDesc": {
-    "message": "Activate the auto-fill on page load setting on the browser extension for all existing and new members."
+    "message": "Ative a definição do preenchimento automático no carregamento da página na extensão do navegador para todos os membros existentes e novos."
   },
   "experimentalFeature": {
-    "message": "Compromised or untrusted websites can exploit auto-fill on page load."
+    "message": "Os sites comprometidos ou não fiáveis podem explorar o preenchimento automático no carregamento da página."
   },
   "learnMoreAboutAutofill": {
-    "message": "Learn more about auto-fill"
+    "message": "Saber mais sobre o preenchimento automático"
   },
   "selectType": {
     "message": "Selecionar tipo de SSO"
@@ -5161,7 +5161,7 @@
     "message": "Key Connector URL"
   },
   "sendVerificationCode": {
-    "message": "Send a verification code to your email"
+    "message": "Enviar um código de verificação para o seu e-mail"
   },
   "sendCode": {
     "message": "Enviar código"
@@ -5356,7 +5356,7 @@
     "message": "Requested"
   },
   "formErrorSummaryPlural": {
-    "message": "$COUNT$ campos acima necessitam da sua atenção.",
+    "message": "Os $COUNT$ campos acima precisam da sua atenção.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -5365,7 +5365,7 @@
     }
   },
   "formErrorSummarySingle": {
-    "message": "1 campo acima necessita da sua atenção."
+    "message": "1 campo acima precisa da sua atenção."
   },
   "fieldRequiredError": {
     "message": "$FIELDNAME$ é necessário.",
@@ -5392,7 +5392,7 @@
     "message": "Necessário se o ID da Entidade não for um URL."
   },
   "openIdOptionalCustomizations": {
-    "message": "Personalizações Opcionais"
+    "message": "Personalizações opcionais"
   },
   "openIdAuthorityRequired": {
     "message": "Required if Authority is not valid."
@@ -5404,13 +5404,13 @@
     "message": "A sua sessão expirou. Por favor, volte atrás e tente iniciar sessão novamente."
   },
   "exportingPersonalVaultTitle": {
-    "message": "A Exportar Cofre Pessoal"
+    "message": "A exportar cofre pessoal"
   },
   "exportingOrganizationVaultTitle": {
-    "message": "A Exportar Cofre da Organização"
+    "message": "A exportar cofre da organização"
   },
   "exportingPersonalVaultDescription": {
-    "message": "Apenas os itens do cofre pessoal associado ao $EMAIL$ serão exportados. Os itens do cofre da organização não serão incluídos.",
+    "message": "Apenas os itens do cofre pessoal associado a $EMAIL$ serão exportados. Os itens do cofre da organização não serão incluídos.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -5468,7 +5468,7 @@
     "message": "Generator"
   },
   "whatWouldYouLikeToGenerate": {
-    "message": "What would you like to generate?"
+    "message": "O que é que gostaria de gerar?"
   },
   "passwordType": {
     "message": "Password type"
@@ -5572,16 +5572,16 @@
     "message": "API access token"
   },
   "deviceVerification": {
-    "message": "Verificação do Dispositivo"
+    "message": "Verificação do dispositivo"
   },
   "enableDeviceVerification": {
-    "message": "Ativar a Verificação do Dispositivo"
+    "message": "Ativar a verificação do dispositivo"
   },
   "deviceVerificationDesc": {
     "message": "Quando ativada, são enviados códigos de verificação para o seu endereço de e-mail ao iniciar sessão a partir de um dispositivo não reconhecido"
   },
   "updatedDeviceVerification": {
-    "message": "Verificação do Dispositivo Atualizada"
+    "message": "Verificação do dispositivo atualizada"
   },
   "areYouSureYouWantToEnableDeviceVerificationTheVerificationCodeEmailsWillArriveAtX": {
     "message": "Tem a certeza de que deseja ativar a Verificação do Dispositivo? Os e-mails com os códigos de verificação serão enviados para: $EMAIL$",
@@ -5785,7 +5785,7 @@
     "message": "-- Select --"
   },
   "multiSelectPlaceholder": {
-    "message": "-- Escreva para Filtrar --"
+    "message": "-- Escreva para filtrar --"
   },
   "multiSelectLoading": {
     "message": "A recuperar opções..."
@@ -6552,6 +6552,18 @@
   "billingSyncHelp": {
     "message": "Billing Sync help"
   },
+  "licensePaidFeaturesHelp": {
+    "message": "License paid features help"
+  },
+  "selfHostGracePeriodHelp": {
+    "message": "After your subscription expires, you have 60 days to apply an updated license file to your organization. Grace period ends $GRACE_PERIOD_END_DATE$.",
+    "placeholders": {
+      "GRACE_PERIOD_END_DATE": {
+        "content": "$1",
+        "example": "May 12, 2024"
+      }
+    }
+  },
   "uploadLicense": {
     "message": "Upload license"
   },
@@ -6755,7 +6767,7 @@
     }
   },
   "masterPasswordMinimumlength": {
-    "message": "Master password must be at least $LENGTH$ characters long.",
+    "message": "A palavra-passe mestra deve ter pelo menos $LENGTH$ caracteres.",
     "placeholders": {
       "length": {
         "content": "$1",
@@ -6775,6 +6787,17 @@
   },
   "enforceOnLoginDesc": {
     "message": "Require existing members to change their passwords"
+  },
+  "region": {
+    "message": "Região"
+  },
+  "eu": {
+    "message": "UE",
+    "description": "European Union"
+  },
+  "us": {
+    "message": "EUA",
+    "description": "United States"
   },
   "smProjectDeleteAccessRestricted": {
     "message": "You don't have permissions to delete this project",

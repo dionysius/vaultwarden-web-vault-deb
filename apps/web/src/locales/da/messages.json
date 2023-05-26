@@ -6552,6 +6552,18 @@
   "billingSyncHelp": {
     "message": "Hjælp til faktureringssynk"
   },
+  "licensePaidFeaturesHelp": {
+    "message": "Hjælp til licensbetalte funktioner"
+  },
+  "selfHostGracePeriodHelp": {
+    "message": "Ved abonnementsudløb kan der indenfor 60 dage føjes en opdateret licensfil til organisationen. Henstandsperioden udløber pr. $GRACE_PERIOD_END_DATE$.",
+    "placeholders": {
+      "GRACE_PERIOD_END_DATE": {
+        "content": "$1",
+        "example": "May 12, 2024"
+      }
+    }
+  },
   "uploadLicense": {
     "message": "Upload licens"
   },
@@ -6775,6 +6787,17 @@
   },
   "enforceOnLoginDesc": {
     "message": "Kræv, at eksisterende medlemmer ændrer deres adgangskoder"
+  },
+  "region": {
+    "message": "Region"
+  },
+  "eu": {
+    "message": "EU",
+    "description": "European Union"
+  },
+  "us": {
+    "message": "US",
+    "description": "United States"
   },
   "smProjectDeleteAccessRestricted": {
     "message": "Ingen tilladelse til at slette dette objekt",

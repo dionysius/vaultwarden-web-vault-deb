@@ -5227,15 +5227,15 @@
     "message": "Connector de claus"
   },
   "memberDecryptionKeyConnectorDescStart": {
-    "message": "Connect login with SSO to your self-hosted decryption key server. Using this option, members won’t need to use their master passwords to decrypt vault data. The",
+    "message": "Connecteu l'inici de sessió amb SSO al vostre servidor de claus de desxifrat autoallotjat. Amb aquesta opció, els membres no hauran d'utilitzar les seves contrasenyes mestres per desxifrar les dades de la caixa forta. El",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Connect login with SSO to your self-hosted decryption key server. Using this option, members won’t need to use their master passwords to decrypt vault data. The require SSO authentication and single organization policies are required to set up Key Connector decryption. Contact Bitwarden Support for set up assistance.'"
   },
   "memberDecryptionKeyConnectorDescLink": {
-    "message": "require SSO authentication and single organization policies",
+    "message": "requereix autenticació SSO i polítiques d'organització única",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Connect login with SSO to your self-hosted decryption key server. Using this option, members won’t need to use their master passwords to decrypt vault data. The require SSO authentication and single organization policies are required to set up Key Connector decryption. Contact Bitwarden Support for set up assistance.'"
   },
   "memberDecryptionKeyConnectorDescEnd": {
-    "message": "are required to set up Key Connector decryption. Contact Bitwarden Support for set up assistance.",
+    "message": "són necessaris per configurar el desxifrat del connector de claus. Contacteu amb l'assistència de Bitwarden per obtenir ajuda per a la configuració.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Connect login with SSO to your self-hosted decryption key server. Using this option, members won’t need to use their master passwords to decrypt vault data. The require SSO authentication and single organization policies are required to set up Key Connector decryption. Contact Bitwarden Support for set up assistance.'"
   },
   "keyConnectorPolicyRestriction": {
@@ -6552,6 +6552,18 @@
   "billingSyncHelp": {
     "message": "Ajuda de sincronització de facturació"
   },
+  "licensePaidFeaturesHelp": {
+    "message": "Ajuda a les característiques de pagament de la llicència"
+  },
+  "selfHostGracePeriodHelp": {
+    "message": "Després de que caduque la vostra subscripció, teniu 60 dies per aplicar un fitxer de llicència actualitzat a la vostra organització. El període de gràcia acaba el $GRACE_PERIOD_END_DATE$.",
+    "placeholders": {
+      "GRACE_PERIOD_END_DATE": {
+        "content": "$1",
+        "example": "May 12, 2024"
+      }
+    }
+  },
   "uploadLicense": {
     "message": "Puja la llicència"
   },
@@ -6776,6 +6788,17 @@
   "enforceOnLoginDesc": {
     "message": "Exigeix que els membres existents canvien les seues contrasenyes"
   },
+  "region": {
+    "message": "Regió"
+  },
+  "eu": {
+    "message": "UE",
+    "description": "European Union"
+  },
+  "us": {
+    "message": "EUA",
+    "description": "United States"
+  },
   "smProjectDeleteAccessRestricted": {
     "message": "No teniu permisos per suprimir aquest projecte",
     "description": "The individual description shown to the user when the user doesn't have access to delete a project."
@@ -6788,18 +6811,18 @@
     "message": "Actualitza la configuració de KDF"
   },
   "trustedDeviceEncryption": {
-    "message": "Trusted device encryption"
+    "message": "Encriptació de dispositius de confiança"
   },
   "memberDecryptionTdeDescStart": {
-    "message": "Once authenticated, members will decrypt vault data using a key stored on their device. The",
+    "message": "Una vegada autenticats, els membres desxifraran les dades de la caixa forta mitjançant una clau emmagatzemada al seu dispositiu. El",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The master password reset policy with automatic enrollment will turn on when this option is used.'"
   },
   "memberDecryptionTdeDescLink": {
-    "message": "master password reset policy",
+    "message": "política de restabliment de la contrasenya mestra",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The master password reset policy with automatic enrollment will turn on when this option is used.'"
   },
   "memberDecryptionTdeDescEnd": {
-    "message": "with automatic enrollment will turn on when this option is used.",
+    "message": "amb inscripció automàtica s'activarà quan s'utilitze aquesta opció.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The master password reset policy with automatic enrollment will turn on when this option is used.'"
   }
 }

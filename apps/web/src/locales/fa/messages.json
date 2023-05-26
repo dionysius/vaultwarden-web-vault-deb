@@ -1256,7 +1256,7 @@
     "message": "داده‌ها با موفقیت درون ریزی شد"
   },
   "importSuccessNumberOfItems": {
-    "message": "A total of $AMOUNT$ items were imported.",
+    "message": "تعداد $AMOUNT$ مورد وارد شده است.",
     "placeholders": {
       "amount": {
         "content": "$1",
@@ -2029,7 +2029,7 @@
     "message": "لغو اشتراک"
   },
   "subscriptionExpiration": {
-    "message": "Subscription expiration"
+    "message": "انقضای اشتراک"
   },
   "subscriptionCanceled": {
     "message": "اشتراک شما لغو گردید."
@@ -2751,7 +2751,7 @@
     }
   },
   "viewCollectionWithName": {
-    "message": "View collection - $NAME$",
+    "message": "مشاهده مجموعه - $NAME$",
     "placeholders": {
       "name": {
         "content": "$1",
@@ -2760,7 +2760,7 @@
     }
   },
   "editItemWithName": {
-    "message": "Edit item - $NAME$",
+    "message": "ویرایش مجموعه - $NAME$",
     "placeholders": {
       "name": {
         "content": "$1",
@@ -3144,7 +3144,7 @@
     "message": "زمانی که یک سرپرست عضویت شما را تأیید کرد، می‌توانید به این سازمان دسترسی داشته باشید. زمانی که این اتفاق بیفتد، یک ایمیل برای شما ارسال خواهیم کرد."
   },
   "inviteInitAcceptedDesc": {
-    "message": "You can now access this organization."
+    "message": "اکنون می‌توانید به این سازمان دسترسی داشته باشید."
   },
   "inviteAcceptFailed": {
     "message": "قادر به پذیرش دعوت نیست. از مدیر سازمان بخواهید دعوتنامه جدیدی ارسال کند."
@@ -4831,7 +4831,7 @@
     "message": "کلمه عبور اصلی شما الزامات سیاست این سازمان را برآورده نمی‌کند. برای پیوستن به سازمان، باید کلمه عبور اصلی خود را هم اکنون به‌روز کنید. ادامه، شما را از نشست فعلی خود خارج می‌کند و از شما می‌خواهد دوباره وارد سیستم شوید. نشست‌های فعال در دستگاه‌های دیگر ممکن است تا یک ساعت فعال بمانند."
   },
   "updateWeakMasterPasswordWarning": {
-    "message": "Your master password does not meet one or more of your organization policies. In order to access the vault, you must update your master password now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
+    "message": "کلمه عبور اصلی شما با یک یا چند سیاست سازمان‌تان مطابقت ندارد. برای دسترسی به گاوصندوق، باید همین حالا کلمه عبور اصلی خود را به‌روز کنید. در صورت ادامه، شما از نشست فعلی خود خارج می‌شوید و باید دوباره وارد سیستم شوید. نشست فعال در دستگاه های دیگر ممکن است تا یک ساعت همچنان فعال باقی بمانند."
   },
   "maximumVaultTimeout": {
     "message": "متوقف شدن گاو‌صندوق"
@@ -4865,7 +4865,7 @@
     }
   },
   "vaultTimeoutPolicyWithActionInEffect": {
-    "message": "Your organization policies are affecting your vault timeout. Maximum allowed vault timeout is $HOURS$ hour(s) and $MINUTES$ minute(s). Your vault timeout action is set to $ACTION$.",
+    "message": "سیاست‌های سازمانتان بر مهلت زمانی گاوصندوق شما تأثیر می‌گذارد. حداکثر زمان مجاز گاوصندوق $HOURS$ ساعت و $MINUTES$ دقیقه است. عملگر مهلت زمانی گاوصندوق شما روی $ACTION$ تنظیم شده است.",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -4882,7 +4882,7 @@
     }
   },
   "vaultTimeoutActionPolicyInEffect": {
-    "message": "Your organization policies have set your vault timeout action to $ACTION$.",
+    "message": "سباست‌های سازمان شما، عملگر زمان‌بندی گاوصندوق شما را روی $ACTION$ تنظیم کرده است.",
     "placeholders": {
       "action": {
         "content": "$1",
@@ -4918,7 +4918,7 @@
     "message": "پر کردن خودکار را فعال کنید"
   },
   "activateAutofillPolicyDesc": {
-    "message": "Activate the auto-fill on page load setting on the browser extension for all existing and new members."
+    "message": "تنظیم پر کردن خودکار در بارگذاری صفحه را در افزونه مرورگر برای همه اعضای موجود و جدید فعال کنید."
   },
   "experimentalFeature": {
     "message": "وب‌سایت‌های در معرض خطر یا نامعتبر می‌توانند از پر کردن خودکار در بارگذاری صفحه سوء استفاده کنند."
@@ -5227,15 +5227,15 @@
     "message": "رابط کلید"
   },
   "memberDecryptionKeyConnectorDescStart": {
-    "message": "Connect login with SSO to your self-hosted decryption key server. Using this option, members won’t need to use their master passwords to decrypt vault data. The",
+    "message": "ورود به سیستم با SSO را به سرور کلید رمزگشایی خود میزبانی شده متصل کنید. با استفاده از این گزینه، اعضا نیازی به استفاده از کلمه عبور اصلی خود برای رمزگشایی داده‌های گاوصندوق ندارند. ",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Connect login with SSO to your self-hosted decryption key server. Using this option, members won’t need to use their master passwords to decrypt vault data. The require SSO authentication and single organization policies are required to set up Key Connector decryption. Contact Bitwarden Support for set up assistance.'"
   },
   "memberDecryptionKeyConnectorDescLink": {
-    "message": "require SSO authentication and single organization policies",
+    "message": "به احراز هویت SSO و سیاست‌های سازمانی واحد نیاز دارد",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Connect login with SSO to your self-hosted decryption key server. Using this option, members won’t need to use their master passwords to decrypt vault data. The require SSO authentication and single organization policies are required to set up Key Connector decryption. Contact Bitwarden Support for set up assistance.'"
   },
   "memberDecryptionKeyConnectorDescEnd": {
-    "message": "are required to set up Key Connector decryption. Contact Bitwarden Support for set up assistance.",
+    "message": "برای راه اندازی رمزگشایی Key Connector مورد نیاز است. برای راهنمایی راه اندازی با پشتیبانی Bitwarden تماس بگیرید.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Connect login with SSO to your self-hosted decryption key server. Using this option, members won’t need to use their master passwords to decrypt vault data. The require SSO authentication and single organization policies are required to set up Key Connector decryption. Contact Bitwarden Support for set up assistance.'"
   },
   "keyConnectorPolicyRestriction": {
@@ -5453,7 +5453,7 @@
     "description": "This is used by screen readers to indicate the organization that is currently being shown to the user."
   },
   "accountLoggedInAsName": {
-    "message": "Account: Logged in as $NAME$",
+    "message": "حساب کاربری: با نام $NAME$ وارد شده‌اید",
     "placeholders": {
       "name": {
         "content": "$1",
@@ -5683,7 +5683,7 @@
     }
   },
   "inputMinValue": {
-    "message": "Input value must be at least $MIN$.",
+    "message": "مقدار ورودی باید حداقل $MIN$ باشد.",
     "placeholders": {
       "min": {
         "content": "$1",
@@ -5692,7 +5692,7 @@
     }
   },
   "inputMaxValue": {
-    "message": "Input value must not exceed $MAX$.",
+    "message": "مقدار ورودی نباید از $MAX$ تجاوز کند.",
     "placeholders": {
       "max": {
         "content": "$1",
@@ -5970,7 +5970,7 @@
     }
   },
   "deleteServiceAccountToast": {
-    "message": "Service account deleted"
+    "message": "حساب سرویس حذف شد"
   },
   "deleteServiceAccountsToast": {
     "message": "حساب‌های سرویس حذف شد"
@@ -6132,7 +6132,7 @@
     "description": "Title for the section displaying access tokens."
   },
   "newAccessToken": {
-    "message": "New access token",
+    "message": "توکن دسترسی جدید",
     "description": "Button label for creating a new access token."
   },
   "expires": {
@@ -6198,7 +6198,7 @@
     "description": "Toast message after deleting one or multiple access tokens."
   },
   "noAccessTokenSelected": {
-    "message": "No access token selected to revoke",
+    "message": "هیچ توکن دسترسی برای لغو انتخاب نشده است",
     "description": "Toast error message after trying to delete access tokens but not selecting any access tokens."
   },
   "submenu": {
@@ -6552,6 +6552,18 @@
   "billingSyncHelp": {
     "message": "راهنمای همگام‌سازی صورتحساب"
   },
+  "licensePaidFeaturesHelp": {
+    "message": "ویژگی‌های پولی مجوز کمک می‌کند"
+  },
+  "selfHostGracePeriodHelp": {
+    "message": "پس از انقضای اشتراک شما، 60 روز فرصت دارید تا فایل مجوز به روز شده را در سازمان خود اعمال کنید. پایان دوره مهلت $GRACE_PERIOD_END_DATE$.",
+    "placeholders": {
+      "GRACE_PERIOD_END_DATE": {
+        "content": "$1",
+        "example": "May 12, 2024"
+      }
+    }
+  },
   "uploadLicense": {
     "message": "بارگذاری مجوز"
   },
@@ -6592,10 +6604,10 @@
     "message": "تکرار KDF کم"
   },
   "updateLowKdfIterationsDesc": {
-    "message": "Update your encryption settings to meet new security recommendations and improve account protection."
+    "message": "تنظیمات رمزگذاری خود را برای رعایت توصیه‌های امنیتی جدید و بهبود حفاظت از حساب به‌روزرسانی کنید."
   },
   "changeKdfLoggedOutWarning": {
-    "message": "Proceeding will log you out of all active sessions. You will need to log back in and complete two-step login setup. We recommend exporting your vault before changing your encryption settings to prevent data loss."
+    "message": "ادامه، شما را از تمام نشست‌های فعال خارج می‌کند. شما باید دوباره وارد شوید و راه اندازی دو مرحله ای ورود را تکمیل کنید. توصیه می‌کنیم قبل از تغییر در تنظیمات رمزگذاری برای جلوگیری از، از دست رفتن داده‌ها، گاوصندوق خود را برون ریزی کنید."
   },
   "secretsManagerBeta": {
     "message": "بتا مدیر اسرار"
@@ -6767,39 +6779,50 @@
     "message": "نادیده گرفتن"
   },
   "notAvailableForFreeOrganization": {
-    "message": "This feature is not available for free organizations. Contact your organization owner to upgrade."
+    "message": "این ویژگی برای سازمان‌های رایگان در دسترس نیست. برای ارتقا با مالک سازمان خود تماس بگیرید."
   },
   "smProjectSecretsNoItemsNoAccess": {
-    "message": "Contact your organization's admin to manage secrets for this project.",
+    "message": "برای مدیریت اسرار این پروژه با سرپرست سازمان خود تماس بگیرید.",
     "description": "The message shown to the user under a project's secrets tab when the user only has read access to the project."
   },
   "enforceOnLoginDesc": {
-    "message": "Require existing members to change their passwords"
+    "message": "از اعضای موجود بخواهید کلمه‌های عبور خود را تغییر دهند"
+  },
+  "region": {
+    "message": "Region"
+  },
+  "eu": {
+    "message": "EU",
+    "description": "European Union"
+  },
+  "us": {
+    "message": "US",
+    "description": "United States"
   },
   "smProjectDeleteAccessRestricted": {
-    "message": "You don't have permissions to delete this project",
+    "message": "شما مجوز حذف این پروژه را ندارید",
     "description": "The individual description shown to the user when the user doesn't have access to delete a project."
   },
   "smProjectsDeleteBulkConfirmation": {
-    "message": "The following projects can not be deleted. Would you like to continue?",
+    "message": "پروژه‌های زیر قابل حذف نیستند. آیا می‌خواهید ادامه دهید؟",
     "description": "The message shown to the user when bulk deleting projects and the user doesn't have access to some projects."
   },
   "updateKdfSettings": {
-    "message": "Update KDF settings"
+    "message": "تنظیمات KDF را به‌روز کنید"
   },
   "trustedDeviceEncryption": {
-    "message": "Trusted device encryption"
+    "message": "رمزگذاری دستگاه مورد اعتماد"
   },
   "memberDecryptionTdeDescStart": {
-    "message": "Once authenticated, members will decrypt vault data using a key stored on their device. The",
+    "message": "پس از احراز هویت، اعضا با استفاده از کلید ذخیره شده در دستگاه خود، داده‌های گاوصندوق را رمزگشایی می‌کنند.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The master password reset policy with automatic enrollment will turn on when this option is used.'"
   },
   "memberDecryptionTdeDescLink": {
-    "message": "master password reset policy",
+    "message": "سیاست بازنشانی کلمه عبور اصلی",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The master password reset policy with automatic enrollment will turn on when this option is used.'"
   },
   "memberDecryptionTdeDescEnd": {
-    "message": "with automatic enrollment will turn on when this option is used.",
+    "message": "با ثبت نام خودکار زمانی که از این گزینه استفاده می‌شود روشن می‌شود.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The master password reset policy with automatic enrollment will turn on when this option is used.'"
   }
 }

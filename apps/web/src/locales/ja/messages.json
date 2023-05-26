@@ -5227,15 +5227,15 @@
     "message": "キーコネクター"
   },
   "memberDecryptionKeyConnectorDescStart": {
-    "message": "Connect login with SSO to your self-hosted decryption key server. Using this option, members won’t need to use their master passwords to decrypt vault data. The",
+    "message": "SSO でログインして自己ホスト型の復号キーサーバーに接続します。このオプションを使用すると、メンバーは保管庫のデータを復号するためにマスターパスワードを使用する必要はありません。",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Connect login with SSO to your self-hosted decryption key server. Using this option, members won’t need to use their master passwords to decrypt vault data. The require SSO authentication and single organization policies are required to set up Key Connector decryption. Contact Bitwarden Support for set up assistance.'"
   },
   "memberDecryptionKeyConnectorDescLink": {
-    "message": "require SSO authentication and single organization policies",
+    "message": "SSO 認証と単一の組織ポリシーが必要です",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Connect login with SSO to your self-hosted decryption key server. Using this option, members won’t need to use their master passwords to decrypt vault data. The require SSO authentication and single organization policies are required to set up Key Connector decryption. Contact Bitwarden Support for set up assistance.'"
   },
   "memberDecryptionKeyConnectorDescEnd": {
-    "message": "are required to set up Key Connector decryption. Contact Bitwarden Support for set up assistance.",
+    "message": "キーコネクターの復号のセットアップに必要です。Bitwarden サポートにお問い合わせください。",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Connect login with SSO to your self-hosted decryption key server. Using this option, members won’t need to use their master passwords to decrypt vault data. The require SSO authentication and single organization policies are required to set up Key Connector decryption. Contact Bitwarden Support for set up assistance.'"
   },
   "keyConnectorPolicyRestriction": {
@@ -6552,6 +6552,18 @@
   "billingSyncHelp": {
     "message": "請求同期のヘルプ"
   },
+  "licensePaidFeaturesHelp": {
+    "message": "有料機能ライセンスのヘルプ"
+  },
+  "selfHostGracePeriodHelp": {
+    "message": "サブスクリプションの有効期限が切れた後、60日以内なら期限を更新したライセンスファイルを組織に適用できます。猶予期間は $GRACE_PERIOD_END_DATE$ までです。",
+    "placeholders": {
+      "GRACE_PERIOD_END_DATE": {
+        "content": "$1",
+        "example": "May 12, 2024"
+      }
+    }
+  },
   "uploadLicense": {
     "message": "ライセンスをアップロード"
   },
@@ -6776,6 +6788,17 @@
   "enforceOnLoginDesc": {
     "message": "パスワードを変更するには、メンバーが存在しないといけません"
   },
+  "region": {
+    "message": "リージョン"
+  },
+  "eu": {
+    "message": "EU",
+    "description": "European Union"
+  },
+  "us": {
+    "message": "米国",
+    "description": "United States"
+  },
   "smProjectDeleteAccessRestricted": {
     "message": "このプロジェクトを削除する権限がありません",
     "description": "The individual description shown to the user when the user doesn't have access to delete a project."
@@ -6788,18 +6811,18 @@
     "message": "KDF の設定を更新する"
   },
   "trustedDeviceEncryption": {
-    "message": "Trusted device encryption"
+    "message": "信頼できるデバイスの暗号化"
   },
   "memberDecryptionTdeDescStart": {
-    "message": "Once authenticated, members will decrypt vault data using a key stored on their device. The",
+    "message": "認証が完了すると、メンバーはデバイスに保存されているキーを使用して保管庫のデータを復号します。",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The master password reset policy with automatic enrollment will turn on when this option is used.'"
   },
   "memberDecryptionTdeDescLink": {
-    "message": "master password reset policy",
+    "message": "マスターパスワードのリセットポリシー",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The master password reset policy with automatic enrollment will turn on when this option is used.'"
   },
   "memberDecryptionTdeDescEnd": {
-    "message": "with automatic enrollment will turn on when this option is used.",
+    "message": "このオプションを使用すると、自動登録が有効になります。",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The master password reset policy with automatic enrollment will turn on when this option is used.'"
   }
 }

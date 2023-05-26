@@ -2029,7 +2029,7 @@
     "message": "Irtisano tilaus"
   },
   "subscriptionExpiration": {
-    "message": "Tilauksen päättyminen"
+    "message": "Tilaus päättyy"
   },
   "subscriptionCanceled": {
     "message": "Tilaus irtisanottiin."
@@ -2445,7 +2445,7 @@
     "message": "Tapahtumalokit"
   },
   "people": {
-    "message": "Ihmiset"
+    "message": "Henkilöt"
   },
   "policies": {
     "message": "Käytännöt"
@@ -5227,15 +5227,15 @@
     "message": "Key Connector"
   },
   "memberDecryptionKeyConnectorDescStart": {
-    "message": "Connect login with SSO to your self-hosted decryption key server. Using this option, members won’t need to use their master passwords to decrypt vault data. The",
+    "message": "Liitä kertakirjautuminen itse ylläpitämääsi salauksenpurun avainpalvelimeen. Tätä valintaa käyttämällä jäsenten ei tarvitse käyttää pääsalasanojaan holvin salauksen purkuun.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Connect login with SSO to your self-hosted decryption key server. Using this option, members won’t need to use their master passwords to decrypt vault data. The require SSO authentication and single organization policies are required to set up Key Connector decryption. Contact Bitwarden Support for set up assistance.'"
   },
   "memberDecryptionKeyConnectorDescLink": {
-    "message": "require SSO authentication and single organization policies",
+    "message": "\"Vaadi todennus kertakirjautumisella\" ja \"Yksittäinen organisaatio\" -käytännöt",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Connect login with SSO to your self-hosted decryption key server. Using this option, members won’t need to use their master passwords to decrypt vault data. The require SSO authentication and single organization policies are required to set up Key Connector decryption. Contact Bitwarden Support for set up assistance.'"
   },
   "memberDecryptionKeyConnectorDescEnd": {
-    "message": "are required to set up Key Connector decryption. Contact Bitwarden Support for set up assistance.",
+    "message": "vaaditaan Key Connector -salauksenpurun käyttöönottoon. Ole yhteydessä Bitwardenin asiakaspalveluun saadaksesi apua määritykseen.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Connect login with SSO to your self-hosted decryption key server. Using this option, members won’t need to use their master passwords to decrypt vault data. The require SSO authentication and single organization policies are required to set up Key Connector decryption. Contact Bitwarden Support for set up assistance.'"
   },
   "keyConnectorPolicyRestriction": {
@@ -6198,7 +6198,7 @@
     "description": "Toast message after deleting one or multiple access tokens."
   },
   "noAccessTokenSelected": {
-    "message": "Käyttötunnistetta ei ole valittu kumottavaksi",
+    "message": "Mitätöitäviä käyttötunnisteita ei valittu",
     "description": "Toast error message after trying to delete access tokens but not selecting any access tokens."
   },
   "submenu": {
@@ -6552,6 +6552,18 @@
   "billingSyncHelp": {
     "message": "Laskutuksen synkronoinnin ohje"
   },
+  "licensePaidFeaturesHelp": {
+    "message": "Maksullisen lisenssin oiminaisuusopas"
+  },
+  "selfHostGracePeriodHelp": {
+    "message": "Kun tilauksesi päättyy, sinulla on 60 päivää aikaa päivittää organisaatiosi lisenssitiedosto ajan tasalle. Varoaika päättyy $GRACE_PERIOD_END_DATE$.",
+    "placeholders": {
+      "GRACE_PERIOD_END_DATE": {
+        "content": "$1",
+        "example": "May 12, 2024"
+      }
+    }
+  },
   "uploadLicense": {
     "message": "Tallenna lisenssi"
   },
@@ -6635,7 +6647,7 @@
     "message": "Tuontitiedostoa luettaessa tapahtui virhe."
   },
   "accessedSecret": {
-    "message": "Salaisuus avattiin $SECRET_ID$.",
+    "message": "Avasi salaisuuden $SECRET_ID$.",
     "placeholders": {
       "secret_id": {
         "content": "$1",
@@ -6776,6 +6788,17 @@
   "enforceOnLoginDesc": {
     "message": "Vaadi nykyisiä jäseniä vaihtamaan salasanansa"
   },
+  "region": {
+    "message": "Alue"
+  },
+  "eu": {
+    "message": "EU",
+    "description": "European Union"
+  },
+  "us": {
+    "message": "US",
+    "description": "United States"
+  },
   "smProjectDeleteAccessRestricted": {
     "message": "Käyttöoikeutesi eivät salli tämän projektin poistamista",
     "description": "The individual description shown to the user when the user doesn't have access to delete a project."
@@ -6788,18 +6811,18 @@
     "message": "Päivitä KDF-asetukset"
   },
   "trustedDeviceEncryption": {
-    "message": "Trusted device encryption"
+    "message": "Luotettu laitesalaus"
   },
   "memberDecryptionTdeDescStart": {
-    "message": "Once authenticated, members will decrypt vault data using a key stored on their device. The",
+    "message": "Kun jäsenet on todennettu, he voivat purkaa holvin salauksen heidän laitteillaan säilytettävällä avaimella.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The master password reset policy with automatic enrollment will turn on when this option is used.'"
   },
   "memberDecryptionTdeDescLink": {
-    "message": "master password reset policy",
+    "message": "Pääsalasanan palautuskäytäntö",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The master password reset policy with automatic enrollment will turn on when this option is used.'"
   },
   "memberDecryptionTdeDescEnd": {
-    "message": "with automatic enrollment will turn on when this option is used.",
+    "message": "automaattisella liitoksella otetaan käyttöön tätä valintaa käytettäessä.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The master password reset policy with automatic enrollment will turn on when this option is used.'"
   }
 }
