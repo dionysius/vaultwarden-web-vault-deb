@@ -3,7 +3,7 @@
     "message": "Bitwarden"
   },
   "extName": {
-    "message": "Bitwarden",
+    "message": "Bitwarden - Gestor de palavras-passe gratuito",
     "description": "Extension name, MUST be less than 40 characters (Safari restriction)"
   },
   "extDesc": {
@@ -38,10 +38,10 @@
     "message": "Palavra-passe Mestra"
   },
   "masterPassDesc": {
-    "message": "A palavra-passe mestra é a palavra-passe que utiliza para aceder ao seu cofre. É muito importante que não se esqueça da sua palavra-passe mestra. Não existe maneira de recuperar a palavra-passe no caso de a esquecer."
+    "message": "A palavra-passe mestra é a palavra-passe que utiliza para aceder ao seu cofre. É muito importante que não se esqueça da sua palavra-passe mestra. Não há forma de recuperar a palavra-passe no caso de a esquecer."
   },
   "masterPassHintDesc": {
-    "message": "Uma dica da palavra-passe mestra pode ajudar a lembrar-se da sua palavra-passe se a esquecer."
+    "message": "Uma dica da palavra-passe mestra pode ajudá-lo a lembrar-se da sua palavra-passe, caso se esqueça dela."
   },
   "reTypeMasterPass": {
     "message": "Re-digite a palavra-passe mestra"
@@ -59,7 +59,7 @@
     "message": "O meu cofre"
   },
   "allVaults": {
-    "message": "Todos os Cofres"
+    "message": "Todos os cofres"
   },
   "tools": {
     "message": "Ferramentas"
@@ -89,7 +89,7 @@
     "message": "Copiar código de segurança"
   },
   "autoFill": {
-    "message": "Auto-preencher"
+    "message": "Preenchimento automático"
   },
   "generatePasswordCopied": {
     "message": "Gerar Palavra-passe (copiada)"
@@ -157,7 +157,7 @@
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "twoStepLogin": {
-    "message": "Início de Sessão de Dois Passos"
+    "message": "Verificação de dois passos"
   },
   "logOut": {
     "message": "Terminar Sessão"
@@ -196,7 +196,7 @@
     "message": "Ajuda e feedback"
   },
   "helpCenter": {
-    "message": "Centrro de ajuda do Bitwarden"
+    "message": "Centro de ajuda do Bitwarden"
   },
   "communityForums": {
     "message": "Explorar os fóruns da comunidade do Bitwarden"
@@ -279,7 +279,7 @@
     "message": "Evitar caracteres ambíguos"
   },
   "searchVault": {
-    "message": "Pesquisar cofre"
+    "message": "Procurar no cofre"
   },
   "edit": {
     "message": "Editar"
@@ -348,7 +348,7 @@
     "message": "O seu navegador web não suporta cópia fácil da área de transferência. Em alternativa, copie manualmente."
   },
   "verifyIdentity": {
-    "message": "Verificar Identidade"
+    "message": "Verificar identidade"
   },
   "yourVaultIsLocked": {
     "message": "O seu cofre está bloqueado. Verifique a sua palavra-passe mestra para continuar."
@@ -433,7 +433,7 @@
     "message": "Endereço de email inválido."
   },
   "masterPasswordRequired": {
-    "message": "A palavra-passe mestra é necessária."
+    "message": "É necessária a palavra-passe mestra."
   },
   "confirmMasterPasswordRequired": {
     "message": "É necessário reescrever a palavra-passe mestra."
@@ -507,7 +507,7 @@
     "message": "Pode alterar a sua palavra-passe mestra no cofre web bitwarden.com. Pretende visitar o website agora?"
   },
   "twoStepLoginConfirmation": {
-    "message": "O início de sessão de dois passos torna a sua conta mais segura ao requerer que verifique o seu início de sessão com outro dispositivo como uma chave de segurança, aplicação de autenticação, SMS, chamada telefónica, ou email. O início de sessão de dois passos pode ser ativado no cofre web bitwarden.com. Pretende visitar o website agora?"
+    "message": "A verificação de dois passos torna a sua conta mais segura, exigindo que verifique o seu início de sessão com outro dispositivo, como uma chave de segurança, aplicação de autenticação, SMS, chamada telefónica ou e-mail. A verificação de dois passos pode ser configurada em bitwarden.com. Pretende visitar o site agora?"
   },
   "editedFolder": {
     "message": "Pasta editada"
@@ -583,7 +583,7 @@
     "message": "Pesquisar tipo"
   },
   "noneFolder": {
-    "message": "Nenhuma pasta",
+    "message": "Em nenhuma pasta",
     "description": "This is the folder for uncategorized items"
   },
   "enableAddLoginNotification": {
@@ -787,7 +787,7 @@
     "message": "1 GB de armazenamento encriptado para anexos de ficheiros."
   },
   "ppremiumSignUpTwoStep": {
-    "message": "Opções de início de sessão de dois passos adicionais como YubiKey, FIDO U2F, e Duo."
+    "message": "Opções adicionais de verificação de dois passos, como YubiKey, FIDO U2F e Duo."
   },
   "ppremiumSignUpReports": {
     "message": "Higiene de palavras-passe, saúde das contas, e relatórios de brechas de dados para manter o seu cofre seguro."
@@ -868,7 +868,7 @@
     "message": "Enviar código de verificação novamente"
   },
   "useAnotherTwoStepMethod": {
-    "message": "Utilizar outro método de início de sessão de dois passos"
+    "message": "Utilizar outro método de verificação de dois passos"
   },
   "insertYubiKey": {
     "message": "Introduza a sua YubiKey na porta USB do seu computador, depois toque no botão da mesma."
@@ -889,13 +889,13 @@
     "message": "Início de sessão indisponível"
   },
   "noTwoStepProviders": {
-    "message": "Esta conta tem o início de sessão de dois passos ativado, no entanto, nenhum dos provedores de início de sessão de dois passos configurados são suportados por este navegador web."
+    "message": "Esta conta tem a verificação de dois passos configurada, no entanto, nenhum dos fornecedores de dois passos configurados é suportado por este navegador web."
   },
   "noTwoStepProviders2": {
     "message": "Por favor utilize um navegador web suportado (tal como o Chrome) e/ou adicione provedores adicionais que são melhor suportados entre navegadores web (tal como uma aplicação de autenticador)."
   },
   "twoStepOptions": {
-    "message": "Opções de início de sessão de dois passos"
+    "message": "Opções de verificação de dois passos"
   },
   "recoveryCodeDesc": {
     "message": "Perdeu o acesso a todos os seus provedores de dois passos? Utilize o seu código de recuperação para desativar todos os provedores de dois passos da sua conta."
@@ -1155,7 +1155,7 @@
     "message": "Último nome"
   },
   "fullName": {
-    "message": "Nome Completo"
+    "message": "Nome completo"
   },
   "identityName": {
     "message": "Nome de identidade"
@@ -1274,7 +1274,7 @@
     "description": "Domain name. Ex. website.com"
   },
   "domainName": {
-    "message": "Nome do Domínio",
+    "message": "Nome do domínio",
     "description": "Domain name. Ex. website.com"
   },
   "host": {
@@ -1863,7 +1863,7 @@
     "message": "You must verify your email to use this feature. You can verify your email in the web vault."
   },
   "updatedMasterPassword": {
-    "message": "Palavra-passe Mestra Atualizada"
+    "message": "Palavra-passe mestra atualizada"
   },
   "updateMasterPassword": {
     "message": "Atualizar Senha Mestra"
@@ -1977,10 +1977,10 @@
     "message": "A sua sessão expirou. Por favor, volte atrás e tente iniciar sessão novamente."
   },
   "exportingPersonalVaultTitle": {
-    "message": "A Exportar Cofre Pessoal"
+    "message": "A exportar cofre pessoal"
   },
   "exportingPersonalVaultDescription": {
-    "message": "Apenas os itens do cofre pessoal associado ao $EMAIL$ serão exportados. Os itens do cofre da organização não serão incluídos.",
+    "message": "Apenas os itens do cofre pessoal associado a $EMAIL$ serão exportados. Os itens do cofre da organização não serão incluídos.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -2017,16 +2017,16 @@
     "message": "Aleatório"
   },
   "randomWord": {
-    "message": "Palavra Aleatória"
+    "message": "Palavra aleatória"
   },
   "websiteName": {
-    "message": "Nome do Site"
+    "message": "Nome do site"
   },
   "whatWouldYouLikeToGenerate": {
-    "message": "O que desejaria de gerar?"
+    "message": "O que é que gostaria de gerar?"
   },
   "passwordType": {
-    "message": "Tipo de Palavra-passe"
+    "message": "Tipo de palavra-passe"
   },
   "service": {
     "message": "Serviço"
@@ -2114,10 +2114,10 @@
     "message": "Utilizador incorreto?"
   },
   "newAroundHere": {
-    "message": "Novo por aqui?"
+    "message": "É novo por cá?"
   },
   "rememberEmail": {
-    "message": "Relembrar e-mail"
+    "message": "Lembrar e-mail"
   },
   "loginWithDevice": {
     "message": "Log in with device"

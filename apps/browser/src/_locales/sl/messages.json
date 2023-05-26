@@ -11,7 +11,7 @@
     "description": "Extension description"
   },
   "loginOrCreateNewAccount": {
-    "message": "Prijavite se ali ustvarite nov račun za dostop do vašega varnega trezorja."
+    "message": "Prijavite se ali ustvarite nov račun za dostop do svojega varnega trezorja."
   },
   "createAccount": {
     "message": "Ustvari račun"
@@ -38,10 +38,10 @@
     "message": "Glavno geslo"
   },
   "masterPassDesc": {
-    "message": "Glavno geslo je geslo, ki ga uporabljate za dostop do vašega trezorja. Zelo pomembno je, da ne pozabite vaše glavno geslo. Gesla ni mogoče obnoviti v primeru, če ga pozabite."
+    "message": "Glavno geslo je geslo, ki ga uporabljate za dostop do svojega trezorja. Zelo pomembno je, da ga ne pozabite. Če pozabite glavno geslo, ga ne bo mogoče obnoviti."
   },
   "masterPassHintDesc": {
-    "message": "Namig glavnega gesla vam lahko pomaga, da se spomnite vašega gesla, če ga pozabite."
+    "message": "Če pozabite glavno geslo, boste prejeli ta namig, da bi se gesla laže spomnili."
   },
   "reTypeMasterPass": {
     "message": "Ponovno vnesite glavno geslo"
@@ -678,13 +678,13 @@
     "message": "Ta datoteka z izvoženimi podatki vsebuje podatke iz vašega trezorja v nešifrirani obliki. Ne shranjujte in ne pošiljajte je po nezavarovanih kanalih, kot je elektronska pošta. Po uporabi jo takoj izbrišite."
   },
   "encExportKeyWarningDesc": {
-    "message": "Ta izvoz šifrira vaše podatke z uporabo ključa za šifriranje. Če boste kdaj zamenjali ključ za šifriranje, je potrebno, da ponovno naredite izvoz, ker ne boste mogli dešifrirati to izvoženo datoteko."
+    "message": "Ta izvoz šifrira vaše podatke z uporabo ključa za šifriranje. Če boste kdaj zamenjali ključ za šifriranje, boste morali podatke izvoziti ponovno, saj pričujočega izvoza ne boste mogli več dešifrirati."
   },
   "encExportAccountWarningDesc": {
     "message": "Ključ za šifriranje je edinstven za vsak Bitwarden račun, zato ni mogoče da se uvozi šifrirana datoteka v drugi račun."
   },
   "exportMasterPassword": {
-    "message": "Vnesite vaše glavno geslo za izvoz podatkov iz vašega trezorja."
+    "message": "Za izvoz podatkov iz trezorja vnesite svoje glavno geslo."
   },
   "shared": {
     "message": "V skupni rabi"
@@ -763,7 +763,7 @@
     "message": "Funkcija ni na voljo."
   },
   "updateKey": {
-    "message": "Ne morete koristiti to funkcijo dokler ne posodobite vaš ključ za šifriranje."
+    "message": "To funkcijo lahko uporabite šele, ko posodobite svoj šifrirni ključ."
   },
   "premiumMembership": {
     "message": "Premium članstvo"
@@ -841,7 +841,7 @@
     "message": "Premium članstvo je potrebno za uporabo te funkcije."
   },
   "enterVerificationCodeApp": {
-    "message": "Vnesite 6-mestno verifikacijsko kodo iz vaše verifikacijske aplikacije."
+    "message": "Vnesite 6-mestno verifikacijsko kodo iz svoje aplikacije za avtentikacijo."
   },
   "enterVerificationCodeEmail": {
     "message": "Vnesite 6-mestno verifikacijsko kodo, ki vam je bila poslana na $EMAIL$.",
@@ -898,7 +898,7 @@
     "message": "Možnosti dvostopenjske prijave"
   },
   "recoveryCodeDesc": {
-    "message": "Ste izgubili dostop do vseh vaših ponudnikov dvostopenjske prijave? Uporabite svojo kodo za obnovitev in tako onemogočite dvostopenjsko prijavo v svoj račun."
+    "message": "Ste izgubili dostop do vseh ponudnikov dvostopenjske prijave? Uporabite svojo kodo za obnovitev in tako onemogočite dvostopenjsko prijavo v svoj račun."
   },
   "recoveryCodeTitle": {
     "message": "Koda za obnovitev"
@@ -1050,7 +1050,7 @@
     "description": "This describes a value that is 'linked' (tied) to another value."
   },
   "popup2faCloseMessage": {
-    "message": "Če kliknete izven pojavnega okna, da preverite vašo epošto za vašo verifikacijsko kodo, bo to povročilo, da se je pojavno okno zapre. Želite odpreti to pojavno okno v novem oknu, tako, da se ne bo zaprlo?"
+    "message": "Če kliknete izven tega pojavnega okna, da bi preverili pošto, se to pojavno okno zaprlo. Želite odpreti to pojavno okno v novem oknu, da se ne bo zaprlo?"
   },
   "popupU2fCloseMessage": {
     "message": "Ta spletni brskalnik ne more obdelati U2F zahteve v tem pojavnem oknu. Želite odpreti to pojavno okno v novem oknu, tako, da se lahko prijavite z U2F?"
