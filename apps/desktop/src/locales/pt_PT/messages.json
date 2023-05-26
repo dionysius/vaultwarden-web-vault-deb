@@ -33,7 +33,7 @@
     "message": "Coleções"
   },
   "searchVault": {
-    "message": "Pesquisar cofre"
+    "message": "Procurar no cofre"
   },
   "addItem": {
     "message": "Adicionar item"
@@ -272,7 +272,7 @@
     "message": "Último nome"
   },
   "fullName": {
-    "message": "Nome Completo"
+    "message": "Nome completo"
   },
   "address1": {
     "message": "Endereço 1"
@@ -379,7 +379,7 @@
     "message": "Tem a certeza de que deseja sobrescrever o nome de utilizador atual?"
   },
   "noneFolder": {
-    "message": "Nenhuma pasta",
+    "message": "Em nenhuma pasta",
     "description": "This is the folder for uncategorized items"
   },
   "addFolder": {
@@ -413,7 +413,7 @@
     "message": "Números (0-9)"
   },
   "specialCharacters": {
-    "message": "Caracteres Especiais (!@#$%^&*)"
+    "message": "Caracteres especiais (!@#$%^&*)"
   },
   "numWords": {
     "message": "Número de palavras"
@@ -509,7 +509,7 @@
     "message": "A palavra-passe mestra é a palavra-passe que utiliza para aceder ao seu cofre. É muito importante que não se esqueça da sua palavra-passe mestra. Não existe maneira de recuperar a palavra-passe no caso de a esquecer."
   },
   "masterPassHintDesc": {
-    "message": "Uma dica da palavra-passe mestra pode ajudar a lembrar-se da sua palavra-passe se a esquecer."
+    "message": "Uma dica da palavra-passe mestra pode ajudá-lo a lembrar-se da sua palavra-passe, caso se esqueça dela."
   },
   "reTypeMasterPass": {
     "message": "Reescreva a palavra-passe mestra"
@@ -536,7 +536,7 @@
     "message": "Endereço de email inválido."
   },
   "masterPasswordRequired": {
-    "message": "A palavra-passe mestra é necessária."
+    "message": "É necessária a palavra-passe mestra."
   },
   "confirmMasterPasswordRequired": {
     "message": "É necessário reescrever a palavra-passe mestra."
@@ -621,7 +621,7 @@
     "message": "Enviar código de verificação novamente"
   },
   "useAnotherTwoStepMethod": {
-    "message": "Utilizar outro método de início de sessão de dois passos"
+    "message": "Utilizar outro método de verificação de dois passos"
   },
   "insertYubiKey": {
     "message": "Introduza a sua YubiKey na porta USB do seu computador, depois toque no botão da mesma."
@@ -672,13 +672,13 @@
     "message": "Início de sessão indisponível"
   },
   "noTwoStepProviders": {
-    "message": "Esta conta tem o início de sessão de dois passos ativado, no entanto, nenhum dos provedores de início de sessão de dois passos configurados são suportados por este dispositivo."
+    "message": "Esta conta tem a verificação de dois passos configurada, no entanto, nenhum dos fornecedores de dois passos configurados é suportado por este dispositivo."
   },
   "noTwoStepProviders2": {
     "message": "Por favor adicione provedores adicionais que são melhor suportados entre dispositivos (como uma aplicação de autenticador)."
   },
   "twoStepOptions": {
-    "message": "Opções de início de sessão de dois passos"
+    "message": "Opções de verificação de dois passos"
   },
   "selfHostedEnvironment": {
     "message": "Ambiente auto-hospedado"
@@ -750,7 +750,7 @@
     "message": "Adicionar novo item"
   },
   "addNewFolder": {
-    "message": "Adicionar nova pasta"
+    "message": "Nova pasta"
   },
   "view": {
     "message": "Ver"
@@ -762,7 +762,7 @@
     "message": "A carregar..."
   },
   "lockVault": {
-    "message": "Bloquear Cofre"
+    "message": "Bloquear cofre"
   },
   "passwordGenerator": {
     "message": "Gerador de palavras-passe"
@@ -774,7 +774,7 @@
     "message": "Help and feedback"
   },
   "getHelp": {
-    "message": "Obter Ajuda"
+    "message": "Obter ajuda"
   },
   "fileBugReport": {
     "message": "Submeter um relatório de bug"
@@ -840,10 +840,10 @@
     "message": "Palavra-passe mestra inválida"
   },
   "twoStepLoginConfirmation": {
-    "message": "O início de sessão de dois passos torna a sua conta mais segura ao requerer que verifique o seu início de sessão com outro dispositivo como uma chave de segurança, aplicação de autenticação, SMS, chamada telefónica, ou email. O início de sessão de dois passos pode ser ativado no cofre web bitwarden.com. Pretende visitar o website agora?"
+    "message": "A verificação de dois passos torna a sua conta mais segura, exigindo que verifique o seu início de sessão com outro dispositivo, como uma chave de segurança, aplicação de autenticação, SMS, chamada telefónica ou e-mail. A verificação de dois passos pode ser configurada em bitwarden.com. Pretende visitar o site agora?"
   },
   "twoStepLogin": {
-    "message": "Início de sessão de dois passos"
+    "message": "Verificação de dois passos"
   },
   "vaultTimeout": {
     "message": "Expiração do cofre"
@@ -1078,7 +1078,7 @@
     "message": "1 GB de armazenamento encriptado para anexos de ficheiros."
   },
   "premiumSignUpTwoStep": {
-    "message": "Opções de início de sessão de dois passos adicionais como YubiKey, FIDO U2F, e Duo."
+    "message": "Opções adicionais de verificação de dois passos, como YubiKey, FIDO U2F e Duo."
   },
   "premiumSignUpReports": {
     "message": "Higiene de palavras-passe, saúde das contas, e relatórios de brechas de dados para manter o seu cofre seguro."
@@ -1453,7 +1453,7 @@
     "message": "Tem de selecionar pelo menos uma coleção."
   },
   "premiumUpdated": {
-    "message": "Atualizou para o premium."
+    "message": "Atualizou para o Premium."
   },
   "restore": {
     "message": "Restaurar"
@@ -1618,7 +1618,7 @@
     "message": "Unfortunately browser integration is currently not supported in the Microsoft Store version."
   },
   "browserIntegrationLinuxDesc": {
-    "message": "Infelizmente, a integração com o navegador não é, atualmente, suportada para a versão linux."
+    "message": "Infelizmente, a integração com o navegador não é atualmente suportada na versão Linux."
   },
   "enableBrowserIntegrationFingerprint": {
     "message": "Require verification for browser integration"
@@ -1697,7 +1697,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "expirationDate": {
-    "message": "Data de Expiração"
+    "message": "Data de expiração"
   },
   "expirationDateDesc": {
     "message": "If set, access to this Send will expire on the specified date and time.",
@@ -1850,7 +1850,7 @@
     "message": "Esta ação está protegida. Para continuar, por favor reinsira a sua palavra-passe mestra para verificarmos a sua identidade."
   },
   "updatedMasterPassword": {
-    "message": "Palavra-passe Mestra Atualizada"
+    "message": "Palavra-passe mestra atualizada"
   },
   "updateMasterPassword": {
     "message": "Atualizar palavra-passe mestra"
@@ -1922,7 +1922,7 @@
     "message": "Uma ou mais políticas da organização impedem que exporte o seu cofre pessoal."
   },
   "addAccount": {
-    "message": "Adicionar Conta"
+    "message": "Adicionar conta"
   },
   "removeMasterPassword": {
     "message": "Remover palavra-passe mestra"
@@ -1952,16 +1952,16 @@
     "message": "Key connector error: make sure key connector is available and working correctly."
   },
   "lockAllVaults": {
-    "message": "Bloquear Todos os Cofres"
+    "message": "Bloquear todos os cofres"
   },
   "accountLimitReached": {
-    "message": "Não é possível iniciar sessão com mais de 5 contas ao mesmo tempo."
+    "message": "Não é possível ter a sessão iniciada com mais de 5 contas ao mesmo tempo."
   },
   "accountPreferences": {
     "message": "Preferências"
   },
   "appPreferences": {
-    "message": "Definições da Aplicação (Todas as Contas)"
+    "message": "Definições da aplicação (todas as contas)"
   },
   "accountSwitcherLimitReached": {
     "message": "Limite de contas atingido. Termine a sessão de uma das contas para adicionar outra."
@@ -1976,7 +1976,7 @@
     }
   },
   "switchAccount": {
-    "message": "Mudar de Conta"
+    "message": "Mudar de conta"
   },
   "options": {
     "message": "Opções"
@@ -1985,10 +1985,10 @@
     "message": "A sua sessão expirou. Por favor, volte atrás e tente iniciar sessão novamente."
   },
   "exportingPersonalVaultTitle": {
-    "message": "A Exportar Cofre Pessoal"
+    "message": "A exportar cofre pessoal"
   },
   "exportingPersonalVaultDescription": {
-    "message": "Apenas os itens do cofre pessoal associado ao $EMAIL$ serão exportados. Os itens do cofre da organização não serão incluídos.",
+    "message": "Apenas os itens do cofre pessoal associado a $EMAIL$ serão exportados. Os itens do cofre da organização não serão incluídos.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -2006,7 +2006,7 @@
     "message": "Generator"
   },
   "whatWouldYouLikeToGenerate": {
-    "message": "What would you like to generate?"
+    "message": "O que é que gostaria de gerar?"
   },
   "passwordType": {
     "message": "Password type"
@@ -2049,7 +2049,7 @@
     "message": "Todos os cofres"
   },
   "searchOrganization": {
-    "message": "Procurar Organização"
+    "message": "Procurar organização"
   },
   "searchMyVault": {
     "message": "Procurar no meu cofre"
@@ -2092,13 +2092,13 @@
     "message": "A iniciar sessão como"
   },
   "rememberEmail": {
-    "message": "Relembrar e-mail"
+    "message": "Lembrar e-mail"
   },
   "notYou": {
     "message": "Utilizador incorreto?"
   },
   "newAroundHere": {
-    "message": "Novo por aqui?"
+    "message": "É novo por cá?"
   },
   "loggingInTo": {
     "message": "A iniciar sessão em $DOMAIN$",
