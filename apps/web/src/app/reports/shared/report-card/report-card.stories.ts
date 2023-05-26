@@ -1,5 +1,6 @@
+import { importProvidersFrom } from "@angular/core";
 import { RouterTestingModule } from "@angular/router/testing";
-import { Meta, Story, moduleMetadata } from "@storybook/angular";
+import { Meta, Story, applicationConfig, moduleMetadata } from "@storybook/angular";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
 import { BadgeModule, IconModule } from "@bitwarden/components";
@@ -15,14 +16,11 @@ export default {
   component: ReportCardComponent,
   decorators: [
     moduleMetadata({
-      imports: [
-        JslibModule,
-        BadgeModule,
-        IconModule,
-        RouterTestingModule,
-        PreloadedEnglishI18nModule,
-      ],
+      imports: [JslibModule, BadgeModule, IconModule, RouterTestingModule],
       declarations: [PremiumBadgeComponent],
+    }),
+    applicationConfig({
+      providers: [importProvidersFrom(PreloadedEnglishI18nModule)],
     }),
   ],
   args: {

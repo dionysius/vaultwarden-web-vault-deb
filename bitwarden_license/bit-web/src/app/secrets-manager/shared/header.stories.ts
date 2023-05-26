@@ -1,6 +1,12 @@
-import { Component, Injectable } from "@angular/core";
+import { Component, Injectable, importProvidersFrom } from "@angular/core";
 import { RouterModule } from "@angular/router";
-import { Meta, Story, moduleMetadata, componentWrapperDecorator } from "@storybook/angular";
+import {
+  Meta,
+  Story,
+  moduleMetadata,
+  componentWrapperDecorator,
+  applicationConfig,
+} from "@storybook/angular";
 import { BehaviorSubject, combineLatest, map } from "rxjs";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
@@ -16,8 +22,8 @@ import {
   NavigationModule,
   TabsModule,
   TypographyModule,
+  InputModule,
 } from "@bitwarden/components";
-import { InputModule } from "@bitwarden/components/src/input/input.module";
 import { PreloadedEnglishI18nModule } from "@bitwarden/web-vault/app/tests/preloaded-english-i18n.module";
 
 import { HeaderComponent } from "./header.component";
@@ -68,15 +74,7 @@ export default {
     moduleMetadata({
       imports: [
         JslibModule,
-        RouterModule.forRoot(
-          [
-            {
-              path: "",
-              component: HeaderComponent,
-            },
-          ],
-          { useHash: true }
-        ),
+        RouterModule,
         AvatarModule,
         BreadcrumbsModule,
         ButtonModule,
@@ -87,7 +85,6 @@ export default {
         TabsModule,
         TypographyModule,
         NavigationModule,
-        PreloadedEnglishI18nModule,
       ],
       declarations: [HeaderComponent, MockProductSwitcher, MockDynamicAvatar],
       providers: [
@@ -98,6 +95,12 @@ export default {
             return new MockMessagingService();
           },
         },
+      ],
+    }),
+    applicationConfig({
+      providers: [
+        importProvidersFrom(RouterModule.forRoot([], { useHash: true })),
+        importProvidersFrom(PreloadedEnglishI18nModule),
       ],
     }),
   ],

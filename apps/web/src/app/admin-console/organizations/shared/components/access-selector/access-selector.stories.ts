@@ -1,6 +1,7 @@
+import { importProvidersFrom } from "@angular/core";
 import { FormBuilder, FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { action } from "@storybook/addon-actions";
-import { Meta, moduleMetadata, Story } from "@storybook/angular";
+import { applicationConfig, Meta, moduleMetadata, Story } from "@storybook/angular";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
 import {
@@ -39,11 +40,13 @@ export default {
         FormsModule,
         TabsModule,
         TableModule,
-        PreloadedEnglishI18nModule,
         JslibModule,
         IconButtonModule,
       ],
       providers: [],
+    }),
+    applicationConfig({
+      providers: [importProvidersFrom(PreloadedEnglishI18nModule)],
     }),
   ],
   parameters: {},

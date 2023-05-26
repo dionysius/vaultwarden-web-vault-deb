@@ -1,6 +1,6 @@
-import { Component } from "@angular/core";
+import { Component, importProvidersFrom } from "@angular/core";
 import { RouterModule } from "@angular/router";
-import { Meta, Story, moduleMetadata } from "@storybook/angular";
+import { Meta, Story, applicationConfig, moduleMetadata } from "@storybook/angular";
 import { BehaviorSubject } from "rxjs";
 
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
@@ -28,42 +28,45 @@ export default {
   component: LayoutComponent,
   decorators: [
     moduleMetadata({
-      imports: [
-        RouterModule.forRoot(
-          [
-            {
-              path: "",
-              component: LayoutComponent,
-              children: [
-                {
-                  path: "",
-                  redirectTo: "secrets",
-                  pathMatch: "full",
-                },
-                {
-                  path: "secrets",
-                  component: StoryContentComponent,
-                  data: {
-                    title: "secrets",
-                    searchTitle: "searchSecrets",
-                  },
-                },
-                {
-                  outlet: "sidebar",
-                  path: "",
-                  component: NavigationComponent,
-                },
-              ],
-            },
-          ],
-          { useHash: true }
-        ),
-        LayoutModule,
-        IconModule,
-        PreloadedEnglishI18nModule,
-      ],
+      imports: [RouterModule, LayoutModule, IconModule],
       declarations: [StoryContentComponent],
       providers: [{ provide: OrganizationService, useClass: MockOrganizationService }],
+    }),
+    applicationConfig({
+      providers: [
+        importProvidersFrom(
+          RouterModule.forRoot(
+            [
+              {
+                path: "",
+                component: LayoutComponent,
+                children: [
+                  {
+                    path: "",
+                    redirectTo: "secrets",
+                    pathMatch: "full",
+                  },
+                  {
+                    path: "secrets",
+                    component: StoryContentComponent,
+                    data: {
+                      title: "secrets",
+                      searchTitle: "searchSecrets",
+                    },
+                  },
+                  {
+                    outlet: "sidebar",
+                    path: "",
+                    component: NavigationComponent,
+                  },
+                ],
+              },
+            ],
+            { useHash: true }
+          )
+        ),
+        importProvidersFrom(PreloadedEnglishI18nModule),
+      ],
     }),
   ],
 } as Meta;

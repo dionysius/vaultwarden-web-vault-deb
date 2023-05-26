@@ -1,4 +1,4 @@
-import { Meta, Story } from "@storybook/angular";
+import { Meta, StoryObj } from "@storybook/angular";
 
 import { ProgressComponent } from "./progress.component";
 
@@ -18,22 +18,23 @@ export default {
   },
 } as Meta;
 
-const Template: Story<ProgressComponent> = (args: ProgressComponent) => ({
-  props: args,
-});
+type Story = StoryObj<ProgressComponent>;
 
-export const Empty = Template.bind({});
-Empty.args = {
-  barWidth: 0,
+export const Empty: Story = {
+  args: {
+    barWidth: 0,
+  },
 };
 
-export const Full = Template.bind({});
-Full.args = {
-  barWidth: 100,
+export const Full: Story = {
+  args: {
+    barWidth: 100,
+  },
 };
 
-export const CustomText = Template.bind({});
-CustomText.args = {
-  barWidth: 25,
-  text: "Loading...",
+export const CustomText: Story = {
+  args: {
+    barWidth: 25,
+    text: "Loading...",
+  },
 };

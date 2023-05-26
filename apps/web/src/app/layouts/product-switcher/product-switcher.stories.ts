@@ -1,6 +1,6 @@
-import { Component, Directive, Input } from "@angular/core";
+import { Component, Directive, Input, importProvidersFrom } from "@angular/core";
 import { RouterModule } from "@angular/router";
-import { Meta, Story, moduleMetadata } from "@storybook/angular";
+import { Meta, Story, applicationConfig, moduleMetadata } from "@storybook/angular";
 import { BehaviorSubject } from "rxjs";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
@@ -49,36 +49,7 @@ export default {
         StoryLayoutComponent,
         StoryContentComponent,
       ],
-      imports: [
-        JslibModule,
-        MenuModule,
-        IconButtonModule,
-        LinkModule,
-        RouterModule.forRoot(
-          [
-            {
-              path: "",
-              component: StoryLayoutComponent,
-              children: [
-                {
-                  path: "",
-                  redirectTo: "vault",
-                  pathMatch: "full",
-                },
-                {
-                  path: "sm/:organizationId",
-                  component: StoryContentComponent,
-                },
-                {
-                  path: "vault",
-                  component: StoryContentComponent,
-                },
-              ],
-            },
-          ],
-          { useHash: true }
-        ),
-      ],
+      imports: [JslibModule, MenuModule, IconButtonModule, LinkModule, RouterModule],
       providers: [
         { provide: OrganizationService, useClass: MockOrganizationService },
         MockOrganizationService,
@@ -91,6 +62,36 @@ export default {
             });
           },
         },
+      ],
+    }),
+    applicationConfig({
+      providers: [
+        importProvidersFrom(
+          RouterModule.forRoot(
+            [
+              {
+                path: "",
+                component: StoryLayoutComponent,
+                children: [
+                  {
+                    path: "",
+                    redirectTo: "vault",
+                    pathMatch: "full",
+                  },
+                  {
+                    path: "sm/:organizationId",
+                    component: StoryContentComponent,
+                  },
+                  {
+                    path: "vault",
+                    component: StoryContentComponent,
+                  },
+                ],
+              },
+            ],
+            { useHash: true }
+          )
+        ),
       ],
     }),
   ],

@@ -12,6 +12,7 @@ export * from "./dialog";
 export * from "./form-field";
 export * from "./icon-button";
 export * from "./icon";
+export * from "./input";
 export * from "./link";
 export * from "./menu";
 export * from "./multi-select";

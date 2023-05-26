@@ -1,4 +1,4 @@
-import { Meta, Story } from "@storybook/angular";
+import { Meta, StoryObj } from "@storybook/angular";
 
 import { AvatarComponent } from "./avatar.component";
 
@@ -18,41 +18,46 @@ export default {
   },
 } as Meta;
 
-const Template: Story<AvatarComponent> = (args: AvatarComponent) => ({
-  props: args,
-});
+type Story = StoryObj<AvatarComponent>;
 
-export const Default = Template.bind({});
-Default.args = {
-  color: "#175ddc",
+export const Default: Story = {
+  args: {
+    color: "#175ddc",
+  },
 };
 
-export const Large = Template.bind({});
-Large.args = {
-  size: "large",
+export const Large: Story = {
+  args: {
+    size: "large",
+  },
 };
 
-export const Small = Template.bind({});
-Small.args = {
-  size: "small",
+export const Small: Story = {
+  args: {
+    size: "small",
+  },
 };
 
-export const LightBackground = Template.bind({});
-LightBackground.args = {
-  color: "#d2ffcf",
+export const LightBackground: Story = {
+  args: {
+    color: "#d2ffcf",
+  },
 };
 
-export const Border = Template.bind({});
-Border.args = {
-  border: true,
+export const Border: Story = {
+  args: {
+    border: true,
+  },
 };
 
-export const ColorByID = Template.bind({});
-ColorByID.args = {
-  id: 236478,
+export const ColorByID: Story = {
+  args: {
+    id: "236478",
+  },
 };
 
-export const ColorByText = Template.bind({});
-ColorByText.args = {
-  text: "Jason Doe",
+export const ColorByText: Story = {
+  args: {
+    text: "Jason Doe",
+  },
 };

@@ -135,20 +135,25 @@
             }
           },
           "defaultConfiguration": "development"
-        }
-      }
-    },
-    "storybook": {
-      "projectType": "application",
-      "root": "libs/components",
-      "sourceRoot": "libs/components/src",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+        },
+        "storybook": {
+          "builder": "@storybook/angular:start-storybook",
           "options": {
-            "tsConfig": ".storybook/tsconfig.json",
-            "styles": ["libs/components/src/styles.scss", "libs/components/src/styles.css"],
-            "scripts": []
+            "configDir": ".storybook",
+            "browserTarget": "components:build",
+            "compodoc": true,
+            "compodocArgs": ["-p", "./tsconfig.json", "-e", "json", "-d", "."],
+            "port": 6006
+          }
+        },
+        "build-storybook": {
+          "builder": "@storybook/angular:build-storybook",
+          "options": {
+            "configDir": ".storybook",
+            "browserTarget": "components:build",
+            "compodoc": true,
+            "compodocArgs": ["-e", "json", "-d", "."],
+            "outputDir": "storybook-static"
           }
         }
       }

@@ -1,6 +1,6 @@
 import { Component, Input } from "@angular/core";
 import { FormsModule, ReactiveFormsModule, FormBuilder, Validators } from "@angular/forms";
-import { Meta, moduleMetadata, Story } from "@storybook/angular";
+import { Meta, StoryObj, moduleMetadata } from "@storybook/angular";
 
 import { I18nService } from "@bitwarden/common/src/abstractions/i18n.service";
 
@@ -69,43 +69,44 @@ export default {
   },
 } as Meta;
 
-const DefaultTemplate: Story<ExampleComponent> = (args: ExampleComponent) => ({
-  props: args,
-  template: `<app-example [checked]="checked" [disabled]="disabled"></app-example>`,
-});
+type Story = StoryObj<ExampleComponent>;
 
-export const Default = DefaultTemplate.bind({});
-Default.parameters = {
-  docs: {
-    source: {
-      code: template,
+export const Default: Story = {
+  render: (args) => ({
+    props: args,
+    template: `<app-example [checked]="checked" [disabled]="disabled"></app-example>`,
+  }),
+  parameters: {
+    docs: {
+      source: {
+        code: template,
+      },
     },
   },
-};
-Default.args = {
-  checked: false,
-  disabled: false,
+  args: {
+    checked: false,
+    disabled: false,
+  },
 };
 
-const CustomTemplate: Story = (args) => ({
-  props: args,
-  template: `
-    <div class="tw-flex tw-flex-col tw-w-32">
-      <label class="tw-text-main tw-flex tw-bg-secondary-300 tw-p-2 tw-items-baseline">
-        A-Z
-        <input class="tw-ml-auto focus-visible:tw-ring-offset-secondary-300" type="checkbox" bitCheckbox>
-      </label>
-      <label class="tw-text-main tw-flex tw-bg-secondary-300 tw-p-2 tw-items-baseline">
-        a-z
-        <input class="tw-ml-auto focus-visible:tw-ring-offset-secondary-300" type="checkbox" bitCheckbox>
-      </label>
-      <label class="tw-text-main tw-flex tw-bg-secondary-300 tw-p-2 tw-items-baseline">
-        0-9
-        <input class="tw-ml-auto focus-visible:tw-ring-offset-secondary-300" type="checkbox" bitCheckbox>
-      </label>
-    </div>
-  `,
-});
-CustomTemplate.args = {};
-
-export const Custom = CustomTemplate.bind({});
+export const Custom: Story = {
+  render: (args) => ({
+    props: args,
+    template: `
+      <div class="tw-flex tw-flex-col tw-w-32">
+        <label class="tw-text-main tw-flex tw-bg-secondary-300 tw-p-2 tw-items-baseline">
+          A-Z
+          <input class="tw-ml-auto focus-visible:tw-ring-offset-secondary-300" type="checkbox" bitCheckbox>
+        </label>
+        <label class="tw-text-main tw-flex tw-bg-secondary-300 tw-p-2 tw-items-baseline">
+          a-z
+          <input class="tw-ml-auto focus-visible:tw-ring-offset-secondary-300" type="checkbox" bitCheckbox>
+        </label>
+        <label class="tw-text-main tw-flex tw-bg-secondary-300 tw-p-2 tw-items-baseline">
+          0-9
+          <input class="tw-ml-auto focus-visible:tw-ring-offset-secondary-300" type="checkbox" bitCheckbox>
+        </label>
+      </div>
+    `,
+  }),
+};

@@ -1,14 +1,18 @@
-import { Meta, Story, Source } from "@storybook/addon-docs";
+import { Meta, Story, Source, Primary, Controls } from "@storybook/addon-docs";
 
-<Meta title="Documentation/Table" />
+import * as stories from "./table.stories";
+
+<Meta of={stories} />
 
 # Table
-
-## Overview
 
 The table component provides a comprehensive way to display, sort and filter data. It consists of
 two portions, a UI component called `bit-table` and the underlying data source `TableDataSource`.
 This documentation will initially focus on the UI portion before covering the data source.
+
+<Primary />
+
+<Controls />
 
 ## UI Component
 
@@ -28,10 +32,6 @@ The UI component consists of a couple of elements.
   Example: if there are multiple “Edit” buttons on a table, a screen reader should read “Edit,
   Netflix” for an edit option for a Netflix item.
 - Use [Virtual Scrolling](#virtual-scrolling) for large data sets.
-
-### Example
-
-<Story id="component-library-table--default" />
 
 ### Usage
 

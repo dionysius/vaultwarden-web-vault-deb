@@ -1,4 +1,4 @@
-import { Meta, Story } from "@storybook/angular";
+import { Meta, StoryObj } from "@storybook/angular";
 
 import { ColorPasswordComponent } from "./color-password.component";
 
@@ -19,34 +19,40 @@ export default {
   },
 } as Meta;
 
-const Template: Story<ColorPasswordComponent> = (args: ColorPasswordComponent) => ({
-  props: args,
-  template: `
-  <bit-color-password class="tw-text-base" [password]="password" [showCount]="showCount"></bit-color-password>
-  `,
-});
+type Story = StoryObj<ColorPasswordComponent>;
 
-const WrappedTemplate: Story<ColorPasswordComponent> = (args: ColorPasswordComponent) => ({
-  props: args,
-  template: `
-  <div class="tw-max-w-32">
-    <bit-color-password class="tw-text-base" [password]="password" [showCount]="showCount"></bit-color-password>
-  </div>
-  `,
-});
-
-export const ColorPassword = Template.bind({});
-
-export const WrappedColorPassword = WrappedTemplate.bind({});
-
-export const ColorPasswordCount = Template.bind({});
-ColorPasswordCount.args = {
-  password: examplePassword,
-  showCount: true,
+export const ColorPassword: Story = {
+  render: (args) => ({
+    props: args,
+    template: `
+      <bit-color-password class="tw-text-base" [password]="password" [showCount]="showCount"></bit-color-password>
+    `,
+  }),
 };
 
-export const WrappedColorPasswordCount = WrappedTemplate.bind({});
-WrappedColorPasswordCount.args = {
-  password: examplePassword,
-  showCount: true,
+export const WrappedColorPassword: Story = {
+  render: (args) => ({
+    props: args,
+    template: `
+      <div class="tw-max-w-32">
+        <bit-color-password class="tw-text-base" [password]="password" [showCount]="showCount"></bit-color-password>
+      </div>
+    `,
+  }),
+};
+
+export const ColorPasswordCount: Story = {
+  ...ColorPassword,
+  args: {
+    password: examplePassword,
+    showCount: true,
+  },
+};
+
+export const WrappedColorPasswordCount: Story = {
+  ...WrappedColorPassword,
+  args: {
+    password: examplePassword,
+    showCount: true,
+  },
 };

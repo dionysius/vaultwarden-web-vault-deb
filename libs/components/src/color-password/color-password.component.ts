@@ -23,7 +23,7 @@ enum CharacterType {
   preserveWhitespaces: false,
 })
 export class ColorPasswordComponent {
-  @Input() private password: string = null;
+  @Input() password: string = null;
   @Input() showCount = false;
 
   characterStyles: Record<CharacterType, string[]> = {

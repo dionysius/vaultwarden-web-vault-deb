@@ -1,4 +1,4 @@
-import { Meta, Story } from "@storybook/angular";
+import { Meta, StoryObj } from "@storybook/angular";
 
 import { BitIconComponent } from "./icon.component";
 
@@ -10,18 +10,22 @@ export default {
   },
 } as Meta;
 
-const Template: Story<BitIconComponent> = (args: BitIconComponent) => ({
-  props: args,
-  template: `
-  <div class="tw-bg-primary-500 tw-p-5">
-    <bit-icon [icon]="icon" class="tw-text-primary-300"></bit-icon>
-  </div>
-  `,
-});
+type Story = StoryObj<BitIconComponent>;
 
-export const ReportExposedPasswords = Template.bind({});
+export const ReportExposedPasswords: Story = {
+  render: (args) => ({
+    props: args,
+    template: `
+    <div class="tw-bg-primary-500 tw-p-5">
+      <bit-icon [icon]="icon" class="tw-text-primary-300"></bit-icon>
+    </div>
+    `,
+  }),
+};
 
-export const UnknownIcon = Template.bind({});
-UnknownIcon.args = {
-  icon: "unknown",
+export const UnknownIcon: Story = {
+  ...ReportExposedPasswords,
+  args: {
+    icon: "unknown" as any,
+  },
 };

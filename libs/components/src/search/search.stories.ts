@@ -1,5 +1,5 @@
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { Meta, moduleMetadata, Story } from "@storybook/angular";
+import { Meta, StoryObj, moduleMetadata } from "@storybook/angular";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
@@ -29,12 +29,14 @@ export default {
   ],
 } as Meta;
 
-const Template: Story<SearchComponent> = (args: SearchComponent) => ({
-  props: args,
-  template: `
-    <bit-search [(ngModel)]="searchText" [placeholder]="placeholder" [disabled]="disabled"></bit-search>
-  `,
-});
+type Story = StoryObj<SearchComponent>;
 
-export const Default = Template.bind({});
-Default.args = {};
+export const Default: Story = {
+  render: (args: SearchComponent) => ({
+    props: args,
+    template: `
+      <bit-search [(ngModel)]="searchText" [placeholder]="placeholder" [disabled]="disabled"></bit-search>
+    `,
+  }),
+  args: {},
+};

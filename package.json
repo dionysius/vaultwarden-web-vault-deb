@@ -23,9 +23,9 @@
     "test:watch:all": "jest --watchAll",
     "test:types": "node ./scripts/test-types.js",
     "docs:json": "compodoc -p ./tsconfig.json -e json -d .",
-    "storybook": "npm run docs:json && start-storybook -p 6006",
-    "build-storybook": "npm run docs:json && build-storybook",
-    "chromatic": "chromatic --exit-zero-on-changes"
+    "storybook": "ng run components:storybook",
+    "build-storybook": "ng run components:build-storybook",
+    "build-storybook:ci": "ng run components:build-storybook --webpack-stats-json"
   },
   "workspaces": [
     "apps/*",
@@ -45,13 +45,11 @@
     "@electron/rebuild": "3.2.13",
     "@fluffy-spoon/substitute": "1.208.0",
     "@ngtools/webpack": "15.2.8",
-    "@storybook/addon-a11y": "6.5.16",
-    "@storybook/addon-actions": "6.5.16",
-    "@storybook/addon-essentials": "6.5.16",
-    "@storybook/addon-links": "6.5.16",
-    "@storybook/angular": "6.5.16",
-    "@storybook/builder-webpack5": "6.5.16",
-    "@storybook/manager-webpack5": "6.5.16",
+    "@storybook/addon-a11y": "7.0.11",
+    "@storybook/addon-actions": "7.0.11",
+    "@storybook/addon-essentials": "7.0.11",
+    "@storybook/addon-links": "7.0.11",
+    "@storybook/angular": "7.0.11",
     "@types/argon2-browser": "1.18.1",
     "@types/chrome": "0.0.236",
     "@types/duo_web_sdk": "2.7.1",
@@ -73,6 +71,7 @@
     "@types/node-ipc": "9.2.0",
     "@types/papaparse": "5.3.7",
     "@types/proper-lockfile": "4.1.2",
+    "@types/react": "16.14.41",
     "@types/retry": "0.12.2",
     "@types/zxcvbn": "4.4.1",
     "@typescript-eslint/eslint-plugin": "5.59.7",
@@ -122,11 +121,14 @@
     "prettier": "2.8.8",
     "prettier-plugin-tailwindcss": "0.3.0",
     "process": "0.11.10",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
     "regedit": "^3.0.3",
+    "remark-gfm": "^3.0.1",
     "rimraf": "5.0.1",
     "sass": "1.62.1",
     "sass-loader": "13.3.0",
-    "storybook-addon-designs": "6.3.1",
+    "storybook": "7.0.11",
     "style-loader": "3.3.3",
     "tailwindcss": "3.3.2",
     "ts-jest": "29.1.0",
@@ -199,10 +201,12 @@
   },
   "overrides": {
     "tailwindcss": "$tailwindcss",
-    "react": "18.2.0",
     "@storybook/angular": {
       "zone.js": "0.12.0"
     }
+  },
+  "resolutions": {
+    "@types/react": "18.2.0"
   },
   "lint-staged": {
     "*": "prettier --cache --ignore-unknown --write",

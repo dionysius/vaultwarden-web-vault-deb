@@ -1,4 +1,4 @@
-import { Meta, Story } from "@storybook/angular";
+import { Meta, StoryObj } from "@storybook/angular";
 
 import { TypographyDirective } from "./typography.directive";
 
@@ -10,61 +10,81 @@ export default {
   },
 } as Meta;
 
-const Template: Story = (args) => ({
-  props: args,
-  template: `<span [bitTypography]="bitTypography" class="tw-text-main">{{text}}</span>`,
-});
+type Story = StoryObj<TypographyDirective & { text: string }>;
 
-export const H1 = Template.bind({});
-H1.args = {
-  bitTypography: "h1",
-  text: "h1. Page Title",
+export const H1: Story = {
+  render: (args) => ({
+    props: args,
+    template: `<span [bitTypography]="bitTypography" class="tw-text-main">{{text}}</span>`,
+  }),
+  args: {
+    bitTypography: "h1",
+    text: "h1. Page Title",
+  },
 };
 
-export const H2 = Template.bind({});
-H2.args = {
-  bitTypography: "h2",
-  text: "h2. Page Section",
+export const H2: Story = {
+  ...H1,
+  args: {
+    bitTypography: "h2",
+    text: "h2. Page Section",
+  },
 };
 
-export const H3 = Template.bind({});
-H3.args = {
-  bitTypography: "h3",
-  text: "h3. Page Section",
+export const H3: Story = {
+  ...H1,
+  args: {
+    bitTypography: "h3",
+    text: "h3. Page Section",
+  },
 };
 
-export const H4 = Template.bind({});
-H4.args = {
-  bitTypography: "h4",
-  text: "h4. Page Section",
+export const H4: Story = {
+  ...H1,
+  args: {
+    bitTypography: "h4",
+    text: "h4. Page Section",
+  },
 };
 
-export const H5 = Template.bind({});
-H5.args = {
-  bitTypography: "h5",
-  text: "h5. Page Section",
+export const H5: Story = {
+  ...H1,
+
+  args: {
+    bitTypography: "h5",
+    text: "h5. Page Section",
+  },
 };
 
-export const H6 = Template.bind({});
-H6.args = {
-  bitTypography: "h6",
-  text: "h6. Page Section",
+export const H6: Story = {
+  ...H1,
+
+  args: {
+    bitTypography: "h6",
+    text: "h6. Page Section",
+  },
 };
 
-export const Body1 = Template.bind({});
-Body1.args = {
-  bitTypography: "body1",
-  text: "Body 1",
+export const Body1: Story = {
+  ...H1,
+  args: {
+    bitTypography: "body1",
+    text: "Body 1",
+  },
 };
 
-export const Body2 = Template.bind({});
-Body2.args = {
-  bitTypography: "body2",
-  text: "Body 2",
+export const Body2: Story = {
+  ...H1,
+  args: {
+    bitTypography: "body2",
+    text: "Body 2",
+  },
 };
 
-export const Helper = Template.bind({});
-Helper.args = {
-  bitTypography: "helper",
-  text: "Helper Text",
+export const Helper: Story = {
+  ...H1,
+  args: {
+    bitTypography: "helper",
+    text: "Helper Text",
+  },
 };

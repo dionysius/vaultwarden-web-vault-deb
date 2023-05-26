@@ -1,4 +1,4 @@
-import { Meta, moduleMetadata, Story } from "@storybook/angular";
+import { Meta, StoryObj, moduleMetadata } from "@storybook/angular";
 
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 
@@ -37,22 +37,26 @@ export default {
   },
 } as Meta;
 
-const DefaultTemplate: Story<MultiSelectComponent> = (args: MultiSelectComponent) => ({
-  props: {
-    ...args,
+type Story = StoryObj<MultiSelectComponent>;
+
+export const Default: Story = {
+  render: (args) => ({
+    props: {
+      ...args,
+    },
+    template: `<bit-select [disabled]="disabled">
+        <bit-option value="value1" label="Value 1" icon="bwi-collection"></bit-option>
+        <bit-option value="value2" label="Value 2" icon="bwi-collection"></bit-option>
+        <bit-option value="value3" label="Value 3" icon="bwi-collection"></bit-option>
+        <bit-option value="value4" label="Value 4" icon="bwi-collection" disabled></bit-option>
+      </bit-select>`,
+  }),
+  args: {},
+};
+
+export const Disabled: Story = {
+  ...Default,
+  args: {
+    disabled: true,
   },
-  template: `<bit-select [disabled]="disabled">
-      <bit-option value="value1" label="Value 1" icon="bwi-collection"></bit-option>
-      <bit-option value="value2" label="Value 2" icon="bwi-collection"></bit-option>
-      <bit-option value="value3" label="Value 3" icon="bwi-collection"></bit-option>
-      <bit-option value="value4" label="Value 4" icon="bwi-collection" disabled></bit-option>
-    </bit-select>`,
-});
-
-export const Default = DefaultTemplate.bind({});
-Default.args = {};
-
-export const Disabled = DefaultTemplate.bind({});
-Disabled.args = {
-  disabled: true,
 };

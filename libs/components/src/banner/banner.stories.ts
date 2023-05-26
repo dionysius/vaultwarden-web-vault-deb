@@ -1,4 +1,4 @@
-import { Meta, moduleMetadata, Story } from "@storybook/angular";
+import { Meta, moduleMetadata, StoryObj } from "@storybook/angular";
 
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 
@@ -39,34 +39,46 @@ export default {
   argTypes: {
     onClose: { action: "onClose" },
   },
-} as Meta;
+} as Meta<BannerComponent>;
 
-const Template: Story<BannerComponent> = (args: BannerComponent) => ({
-  props: args,
-  template: `
-    <bit-banner [bannerType]="bannerType" (onClose)="onClose($event)">
+type Story = StoryObj<BannerComponent>;
+
+export const Premium: Story = {
+  args: {
+    bannerType: "premium",
+  },
+  render: (args: BannerComponent) => ({
+    props: args,
+    template: `
+      <bit-banner [bannerType]="bannerType" (onClose)="onClose($event)">
         Content Really Long Text Lorem Ipsum Ipsum Ipsum
         <button bitLink linkType="contrast">Button</button>
-    </bit-banner>
-  `,
-});
+      </bit-banner>
+      `,
+  }),
+};
 
-export const Premium = Template.bind({});
 Premium.args = {
   bannerType: "premium",
 };
 
-export const Info = Template.bind({});
-Info.args = {
-  bannerType: "info",
+export const Info: Story = {
+  ...Premium,
+  args: {
+    bannerType: "info",
+  },
 };
 
-export const Warning = Template.bind({});
-Warning.args = {
-  bannerType: "warning",
+export const Warning: Story = {
+  ...Premium,
+  args: {
+    bannerType: "warning",
+  },
 };
 
-export const Danger = Template.bind({});
-Danger.args = {
-  bannerType: "danger",
+export const Danger: Story = {
+  ...Premium,
+  args: {
+    bannerType: "danger",
+  },
 };

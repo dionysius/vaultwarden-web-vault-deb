@@ -1,6 +1,6 @@
-import { Component } from "@angular/core";
+import { Component, importProvidersFrom } from "@angular/core";
 import { RouterModule } from "@angular/router";
-import { Meta, Story, moduleMetadata } from "@storybook/angular";
+import { Meta, StoryObj, applicationConfig, moduleMetadata } from "@storybook/angular";
 
 import { IconButtonModule } from "../icon-button";
 import { LinkModule } from "../link";
@@ -26,16 +26,19 @@ export default {
   decorators: [
     moduleMetadata({
       declarations: [BreadcrumbComponent],
-      imports: [
-        LinkModule,
-        MenuModule,
-        IconButtonModule,
-        RouterModule.forRoot([{ path: "**", component: EmptyComponent }], { useHash: true }),
+      imports: [LinkModule, MenuModule, IconButtonModule, RouterModule],
+    }),
+    applicationConfig({
+      providers: [
+        importProvidersFrom(
+          RouterModule.forRoot([{ path: "**", component: EmptyComponent }], { useHash: true })
+        ),
       ],
     }),
   ],
   args: {
     items: [],
+    show: 3,
   },
   argTypes: {
     breadcrumbs: {
@@ -45,47 +48,54 @@ export default {
   },
 } as Meta;
 
-const Template: Story<BreadcrumbsComponent> = (args: BreadcrumbsComponent) => ({
-  props: args,
-  template: `
-    <h3 class="tw-text-main">Router links</h3>
-    <p>
-      <bit-breadcrumbs [show]="show">
-        <bit-breadcrumb *ngFor="let item of items" [icon]="item.icon" [route]="[item.route]">{{item.name}}</bit-breadcrumb>
-      </bit-breadcrumbs>
-    </p>
+type Story = StoryObj<BreadcrumbsComponent & { items: Breadcrumb[] }>;
 
-    <h3 class="tw-text-main">Click emit</h3>
-    <p>
-      <bit-breadcrumbs [show]="show">
-        <bit-breadcrumb *ngFor="let item of items" [icon]="item.icon" (click)="click($event)">{{item.name}}</bit-breadcrumb>
-      </bit-breadcrumbs>
-    </p>
-  `,
-});
+export const TopLevel: Story = {
+  render: (args) => ({
+    props: args,
+    template: `
+      <h3 class="tw-text-main">Router links</h3>
+      <p>
+        <bit-breadcrumbs [show]="show">
+          <bit-breadcrumb *ngFor="let item of items" [icon]="item.icon" [route]="[item.route]">{{item.name}}</bit-breadcrumb>
+        </bit-breadcrumbs>
+      </p>
+  
+      <h3 class="tw-text-main">Click emit</h3>
+      <p>
+        <bit-breadcrumbs [show]="show">
+          <bit-breadcrumb *ngFor="let item of items" [icon]="item.icon" (click)="click($event)">{{item.name}}</bit-breadcrumb>
+        </bit-breadcrumbs>
+      </p>
+    `,
+  }),
 
-export const TopLevel = Template.bind({});
-TopLevel.args = {
-  items: [{ icon: "bwi-star", name: "Top Level" }] as Breadcrumb[],
+  args: {
+    items: [{ icon: "bwi-star", name: "Top Level" }] as Breadcrumb[],
+  },
 };
 
-export const SecondLevel = Template.bind({});
-SecondLevel.args = {
-  items: [
-    { name: "Acme Vault", route: "/" },
-    { icon: "bwi-collection", name: "Collection", route: "collection" },
-  ] as Breadcrumb[],
+export const SecondLevel: Story = {
+  ...TopLevel,
+  args: {
+    items: [
+      { name: "Acme Vault", route: "/" },
+      { icon: "bwi-collection", name: "Collection", route: "collection" },
+    ] as Breadcrumb[],
+  },
 };
 
-export const Overflow = Template.bind({});
-Overflow.args = {
-  items: [
-    { name: "Acme Vault", route: "" },
-    { icon: "bwi-collection", name: "Collection", route: "collection" },
-    { icon: "bwi-collection", name: "Middle-Collection 1", route: "middle-collection-1" },
-    { icon: "bwi-collection", name: "Middle-Collection 2", route: "middle-collection-2" },
-    { icon: "bwi-collection", name: "Middle-Collection 3", route: "middle-collection-3" },
-    { icon: "bwi-collection", name: "Middle-Collection 4", route: "middle-collection-4" },
-    { icon: "bwi-collection", name: "End Collection", route: "end-collection" },
-  ] as Breadcrumb[],
+export const Overflow: Story = {
+  ...TopLevel,
+  args: {
+    items: [
+      { name: "Acme Vault", route: "" },
+      { icon: "bwi-collection", name: "Collection", route: "collection" },
+      { icon: "bwi-collection", name: "Middle-Collection 1", route: "middle-collection-1" },
+      { icon: "bwi-collection", name: "Middle-Collection 2", route: "middle-collection-2" },
+      { icon: "bwi-collection", name: "Middle-Collection 3", route: "middle-collection-3" },
+      { icon: "bwi-collection", name: "Middle-Collection 4", route: "middle-collection-4" },
+      { icon: "bwi-collection", name: "End Collection", route: "end-collection" },
+    ] as Breadcrumb[],
+  },
 };

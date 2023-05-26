@@ -1,6 +1,8 @@
-import { Meta, Story } from "@storybook/addon-docs";
+import { Meta, Story, Controls, Canvas, Primary } from "@storybook/addon-docs";
 
-<Meta title="Documentation/Banner" />
+import * as stories from "./banner.stories";
+
+<Meta of={stories} />
 
 # Banner
 
@@ -15,6 +17,10 @@ persist across all pages a user navigates to.
 - Avoid stacking multiple banners.
 - Banners support a button link (text button).
 
+<Primary />
+
+<Controls />
+
 ## Types
 
 Icons should remain consistent across these types. Do not change the icon without consulting
@@ -24,25 +30,25 @@ Use the following guidelines to help choose the correct type of banner.
 
 ### Premium
 
-<Story id="component-library-banner--premium" />
+<Story of={stories.Premium} />
 
 Used primarily to encourage user to upgrade to premium.
 
 ### Info
 
-<Story id="component-library-banner--info" />
+<Story of={stories.Info} />
 
 Used to communicate release notes, server maintenance or other informative event.
 
 ### Warning
 
-<Story id="component-library-banner--warning" />
+<Story of={stories.Warning} />
 
 Used to alert the user of outdated info or versions.
 
 ### Danger
 
-<Story id="component-library-banner--danger" />
+<Story of={stories.Danger} />
 
 Rarely used, but may be used to alert users over critical messages or very outdated versions.
 

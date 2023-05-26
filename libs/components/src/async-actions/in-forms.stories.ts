@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 import { FormsModule, ReactiveFormsModule, Validators, FormBuilder } from "@angular/forms";
 import { action } from "@storybook/addon-actions";
-import { Meta, moduleMetadata, Story } from "@storybook/angular";
+import { Meta, moduleMetadata, StoryObj } from "@storybook/angular";
 import { delay, of } from "rxjs";
 
 import { ValidationService } from "@bitwarden/common/abstractions/validation.service";
@@ -145,16 +145,18 @@ export default {
   ],
 } as Meta;
 
-const PromiseTemplate: Story<PromiseExampleComponent> = (args: PromiseExampleComponent) => ({
-  props: args,
-  template: `<app-promise-example></app-promise-example>`,
-});
+type Story = StoryObj<PromiseExampleComponent>;
 
-export const UsingPromise = PromiseTemplate.bind({});
+export const UsingPromise: Story = {
+  render: (args) => ({
+    props: args,
+    template: `<app-promise-example></app-promise-example>`,
+  }),
+};
 
-const ObservableTemplate: Story<PromiseExampleComponent> = (args: PromiseExampleComponent) => ({
-  props: args,
-  template: `<app-observable-example></app-observable-example>`,
-});
-
-export const UsingObservable = ObservableTemplate.bind({});
+export const UsingObservable: Story = {
+  render: (args) => ({
+    props: args,
+    template: `<app-observable-example></app-observable-example>`,
+  }),
+};

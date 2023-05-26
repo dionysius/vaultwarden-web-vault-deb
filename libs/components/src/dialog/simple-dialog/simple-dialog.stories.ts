@@ -1,4 +1,4 @@
-import { Meta, moduleMetadata, Story } from "@storybook/angular";
+import { Meta, StoryObj, moduleMetadata } from "@storybook/angular";
 
 import { ButtonModule } from "../../button";
 import { DialogTitleContainerDirective } from "../directives/dialog-title-container.directive";
@@ -22,61 +22,63 @@ export default {
   },
 } as Meta;
 
-const Template: Story<SimpleDialogComponent> = (args: SimpleDialogComponent) => ({
-  props: args,
-  template: `
-  <bit-simple-dialog>
-    <span bitDialogTitle>Alert Dialog</span>
-    <span bitDialogContent>Message Content</span>
-    <ng-container bitDialogFooter>
-      <button bitButton buttonType="primary">Yes</button>
-      <button bitButton buttonType="secondary">No</button>
-    </ng-container>
-  </bit-simple-dialog>
-  `,
-});
+type Story = StoryObj<SimpleDialogComponent & { useDefaultIcon: boolean }>;
 
-export const Default = Template.bind({});
+export const Default: Story = {
+  render: (args) => ({
+    props: args,
+    template: `
+      <bit-simple-dialog>
+        <span bitDialogTitle>Alert Dialog</span>
+        <span bitDialogContent>Message Content</span>
+        <ng-container bitDialogFooter>
+          <button bitButton buttonType="primary">Yes</button>
+          <button bitButton buttonType="secondary">No</button>
+        </ng-container>
+      </bit-simple-dialog>
+    `,
+  }),
+};
 
-const TemplateWithIcon: Story<SimpleDialogComponent> = (args: SimpleDialogComponent) => ({
-  props: args,
-  template: `
-  <bit-simple-dialog>
-    <i bitDialogIcon class="bwi bwi-star tw-text-3xl tw-text-success" aria-hidden="true"></i>
-    <span bitDialogTitle>Premium Subscription Available</span>
-    <span bitDialogContent> Message Content</span>
-    <ng-container bitDialogFooter>
-      <button bitButton buttonType="primary">Yes</button>
-      <button bitButton buttonType="secondary">No</button>
-    </ng-container>
-  </bit-simple-dialog>
-  `,
-});
+export const CustomIcon: Story = {
+  render: (args) => ({
+    props: args,
+    template: `
+      <bit-simple-dialog>
+        <i bitDialogIcon class="bwi bwi-star tw-text-3xl tw-text-success" aria-hidden="true"></i>
+        <span bitDialogTitle>Premium Subscription Available</span>
+        <span bitDialogContent> Message Content</span>
+        <ng-container bitDialogFooter>
+          <button bitButton buttonType="primary">Yes</button>
+          <button bitButton buttonType="secondary">No</button>
+        </ng-container>
+      </bit-simple-dialog>
+    `,
+  }),
+};
 
-export const CustomIcon = TemplateWithIcon.bind({});
-
-const TemplateScroll: Story<SimpleDialogComponent> = (args: SimpleDialogComponent) => ({
-  props: args,
-  template: `
-  <bit-simple-dialog>
-    <span bitDialogTitle>Alert Dialog</span>
-    <span bitDialogContent>
-      Message Content
-      Message text goes here.<br>
-      <ng-container *ngFor="let _ of [].constructor(100)">
-        repeating lines of characters <br>
-      </ng-container>
-      end of sequence!
-    </span>
-    <ng-container bitDialogFooter>
-      <button bitButton buttonType="primary">Yes</button>
-      <button bitButton buttonType="secondary">No</button>
-    </ng-container>
-  </bit-simple-dialog>
-  `,
-});
-
-export const ScrollingContent = TemplateScroll.bind({});
-ScrollingContent.args = {
-  useDefaultIcon: true,
+export const ScrollingContent: Story = {
+  render: (args: SimpleDialogComponent) => ({
+    props: args,
+    template: `
+      <bit-simple-dialog>
+        <span bitDialogTitle>Alert Dialog</span>
+        <span bitDialogContent>
+          Message Content
+          Message text goes here.<br>
+          <ng-container *ngFor="let _ of [].constructor(100)">
+            repeating lines of characters <br>
+          </ng-container>
+          end of sequence!
+        </span>
+        <ng-container bitDialogFooter>
+          <button bitButton buttonType="primary">Yes</button>
+          <button bitButton buttonType="secondary">No</button>
+        </ng-container>
+      </bit-simple-dialog>
+    `,
+  }),
+  args: {
+    useDefaultIcon: true,
+  },
 };

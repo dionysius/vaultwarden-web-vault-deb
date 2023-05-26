@@ -1,11 +1,17 @@
-import { Meta, Story } from "@storybook/addon-docs";
+import { Meta, Story, Primary, Controls } from "@storybook/addon-docs";
 
-<Meta title="Documentation/Button" />
+import * as stories from "./button.stories";
+
+<Meta of={stories} />
 
 # Button
 
 Buttons are interactive elements that can be triggered using a mouse, keyboard, or touch. They are
 used to indicate actions that can be performed by a user such as submitting a form.
+
+<Primary />
+
+<Controls />
 
 ## Guidelines
 
@@ -50,7 +56,7 @@ Both submit and async action buttons use a loading button state while an action 
 button is preforming a long running task in the background like a server API call, be sure to review
 the [Async Actions Directive](?path=/story/component-library-async-actions-overview--page).
 
-<Story id="component-library-button--loading" />
+<Story of={stories.Loading} />
 
 ## Styles
 
@@ -58,14 +64,14 @@ There are 3 main styles for the button: Primary, Secondary, and Danger.
 
 ### Primary
 
-<Story id="component-library-button--primary" />
+<Story of={stories.Primary} />
 
 Use the primary button styling for all Primary call to actions. An action is "primary" if it relates
 to the main purpose of a page. There should never be 2 primary styled buttons next to each other.
 
 ### Secondary
 
-<Story id="component-library-button--secondary" />
+<Story of={stories.Secondary} />
 
 The secondary styling should be used for secondary calls to action. An action is "secondary" if it
 relates indirectly to the purpose of a page. There may be multiple secondary buttons next to each
@@ -73,7 +79,7 @@ other; however, generally there should only be 1 or 2 calls to action per page.
 
 ### Danger
 
-<Story id="component-library-button--danger" />
+<Story of={stories.Danger} />
 
 Use the danger styling only in settings when the user may preform a permanent action.
 
@@ -82,11 +88,11 @@ Use the danger styling only in settings when the user may preform a permanent ac
 Both the disabled and loading states use the default state’s color with a 60% opacity or
 `tw-opacity-60`.
 
-<Story id="component-library-button--disabled" />
+<Story of={stories.Disabled} />
 
 ## Block
 
 Typically button widths expand with their text. In some causes though buttons may need to be block
 where the width is fixed and the text wraps to 2 lines if exceeding the button’s width.
 
-<Story id="component-library-button--block" />
+<Story of={stories.Block} />
