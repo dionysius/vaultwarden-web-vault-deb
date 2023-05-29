@@ -227,10 +227,12 @@ export class BrowserApi {
     }
   }
 
-  static reloadOpenWindows() {
+  static reloadOpenWindows(exemptCurrentHref = false) {
+    const currentHref = window.location.href;
     const views = chrome.extension.getViews() as Window[];
     views
       .filter((w) => w.location.href != null && !w.location.href.includes("background.html"))
+      .filter((w) => !exemptCurrentHref || w.location.href !== currentHref)
       .forEach((w) => {
         w.location.reload();
       });
