@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { Router } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 
 import { TwoFactorOptionsComponent as BaseTwoFactorOptionsComponent } from "@bitwarden/angular/auth/components/two-factor-options.component";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
@@ -15,14 +15,33 @@ export class TwoFactorOptionsComponent extends BaseTwoFactorOptionsComponent {
     twoFactorService: TwoFactorService,
     router: Router,
     i18nService: I18nService,
-    platformUtilsService: PlatformUtilsService
+    platformUtilsService: PlatformUtilsService,
+    private activatedRoute: ActivatedRoute
   ) {
     super(twoFactorService, router, i18nService, platformUtilsService, window);
+  }
+
+  close() {
+    this.navigateTo2FA();
   }
 
   choose(p: any) {
     super.choose(p);
     this.twoFactorService.setSelectedProvider(p.type);
-    this.router.navigate(["2fa"]);
+
+    this.navigateTo2FA();
+  }
+
+  navigateTo2FA() {
+    const sso = this.activatedRoute.snapshot.queryParamMap.get("sso") === "true";
+
+    if (sso) {
+      // Persist SSO flag back to the 2FA comp if it exists
+      // in order for successful login logic to work properly for
+      // SSO + 2FA in browser extension
+      this.router.navigate(["2fa"], { queryParams: { sso: true } });
+    } else {
+      this.router.navigate(["2fa"]);
+    }
   }
 }

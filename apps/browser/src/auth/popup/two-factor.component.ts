@@ -147,7 +147,15 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
   }
 
   anotherMethod() {
-    this.router.navigate(["2fa-options"]);
+    const sso = this.route.snapshot.queryParamMap.get("sso") === "true";
+
+    if (sso) {
+      // We must persist this so when the user returns to the 2FA comp, the
+      // proper onSuccessfulLogin logic is executed.
+      this.router.navigate(["2fa-options"], { queryParams: { sso: true } });
+    } else {
+      this.router.navigate(["2fa-options"]);
+    }
   }
 
   async isLinux() {
