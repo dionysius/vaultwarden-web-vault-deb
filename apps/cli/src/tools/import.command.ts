@@ -2,6 +2,7 @@ import * as program from "commander";
 import * as inquirer from "inquirer";
 
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
+import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
 import { ImportServiceAbstraction, ImportType } from "@bitwarden/importer";
 
 import { Response } from "../models/response";
@@ -11,7 +12,8 @@ import { CliUtils } from "../utils";
 export class ImportCommand {
   constructor(
     private importService: ImportServiceAbstraction,
-    private organizationService: OrganizationService
+    private organizationService: OrganizationService,
+    private syncService: SyncService
   ) {}
 
   async run(
@@ -76,6 +78,7 @@ export class ImportCommand {
 
       const response = await this.importService.import(importer, contents, organizationId);
       if (response.success) {
+        this.syncService.fullSync(true);
         return Response.success(new MessageResponse("Imported " + filepath, null));
       }
     } catch (err) {
