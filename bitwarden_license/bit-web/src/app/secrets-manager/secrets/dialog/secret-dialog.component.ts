@@ -8,6 +8,7 @@ import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 import { Utils } from "@bitwarden/common/misc/utils";
+import { BitValidators } from "@bitwarden/components";
 
 import { ProjectListView } from "../../models/view/project-list.view";
 import { ProjectView } from "../../models/view/project.view";
@@ -36,11 +37,20 @@ export interface SecretOperation {
 })
 export class SecretDialogComponent implements OnInit {
   protected formGroup = new FormGroup({
-    name: new FormControl("", [Validators.required]),
+    name: new FormControl("", {
+      validators: [Validators.required, BitValidators.trimValidator],
+      updateOn: "submit",
+    }),
     value: new FormControl("", [Validators.required]),
-    notes: new FormControl(""),
+    notes: new FormControl("", {
+      validators: [BitValidators.trimValidator],
+      updateOn: "submit",
+    }),
     project: new FormControl("", [Validators.required]),
-    newProjectName: new FormControl(""),
+    newProjectName: new FormControl("", {
+      validators: [BitValidators.trimValidator],
+      updateOn: "submit",
+    }),
   });
 
   private destroy$ = new Subject<void>();

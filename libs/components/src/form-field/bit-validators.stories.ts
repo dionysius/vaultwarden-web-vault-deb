@@ -8,6 +8,7 @@ import { InputModule } from "../input/input.module";
 import { I18nMockService } from "../utils/i18n-mock.service";
 
 import { forbiddenCharacters } from "./bit-validators/forbidden-characters.validator";
+import { trimValidator } from "./bit-validators/trim.validator";
 import { BitFormFieldComponent } from "./form-field.component";
 import { FormFieldModule } from "./form-field.module";
 
@@ -24,6 +25,7 @@ export default {
             return new I18nMockService({
               inputForbiddenCharacters: (chars) =>
                 `The following characters are not allowed: ${chars}`,
+              inputTrimValidator: "Input must not contain only whitespace.",
             });
           },
         },
@@ -51,6 +53,23 @@ export const ForbiddenCharacters: StoryObj<BitFormFieldComponent> = {
     props: {
       formObj: new FormBuilder().group({
         name: ["", forbiddenCharacters(["\\", "/", "@", "#", "$", "%", "^", "&", "*", "(", ")"])],
+      }),
+    },
+    template,
+  }),
+};
+
+export const TrimValidator: StoryObj<BitFormFieldComponent> = {
+  render: (args: BitFormFieldComponent) => ({
+    props: {
+      formObj: new FormBuilder().group({
+        name: [
+          "",
+          {
+            updateOn: "submit",
+            validators: [trimValidator],
+          },
+        ],
       }),
     },
     template,

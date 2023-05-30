@@ -6776,6 +6776,10 @@
       }
     }
   },
+  "inputTrimValidator": {
+    "message": "Input must not contain only whitespace.",
+    "description": "Notification to inform the user that a form's input can't contain only whitespace."
+  },
   "dismiss": {
     "message": "Dismiss"
   },

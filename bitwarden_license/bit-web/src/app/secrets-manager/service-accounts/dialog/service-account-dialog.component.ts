@@ -4,6 +4,7 @@ import { FormControl, FormGroup, Validators } from "@angular/forms";
 
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
+import { BitValidators } from "@bitwarden/components";
 
 import { ServiceAccountView } from "../../models/view/service-account.view";
 import { ServiceAccountService } from "../service-account.service";
@@ -23,9 +24,15 @@ export interface ServiceAccountOperation {
   templateUrl: "./service-account-dialog.component.html",
 })
 export class ServiceAccountDialogComponent {
-  protected formGroup = new FormGroup({
-    name: new FormControl("", [Validators.required]),
-  });
+  protected formGroup = new FormGroup(
+    {
+      name: new FormControl("", {
+        validators: [Validators.required, BitValidators.trimValidator],
+        updateOn: "submit",
+      }),
+    },
+    {}
+  );
 
   protected loading = false;
 

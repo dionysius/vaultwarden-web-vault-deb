@@ -5,6 +5,7 @@ import { Router } from "@angular/router";
 
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
+import { BitValidators } from "@bitwarden/components";
 
 import { ProjectView } from "../../models/view/project.view";
 import { ProjectService } from "../../projects/project.service";
@@ -25,7 +26,10 @@ export interface ProjectOperation {
 })
 export class ProjectDialogComponent implements OnInit {
   protected formGroup = new FormGroup({
-    name: new FormControl("", [Validators.required]),
+    name: new FormControl("", {
+      validators: [Validators.required, BitValidators.trimValidator],
+      updateOn: "submit",
+    }),
   });
   protected loading = false;
 
