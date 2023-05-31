@@ -82,7 +82,7 @@ export class SecretsManagerExportComponent implements OnInit, OnDestroy {
 
   private async doExport() {
     const fileExtension = this.exportFormats[this.formGroup.get("format").value].fileExtension;
-    const exportData = await this.secretsManagerApiService.export(this.orgId, fileExtension);
+    const exportData = await this.secretsManagerApiService.export(this.orgId);
 
     await this.downloadFile(exportData, fileExtension);
     this.platformUtilsService.showToast("success", null, this.i18nService.t("dataExportSuccess"));

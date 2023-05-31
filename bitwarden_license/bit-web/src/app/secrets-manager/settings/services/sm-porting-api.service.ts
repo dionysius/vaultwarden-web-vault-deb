@@ -29,10 +29,10 @@ export class SecretsManagerPortingApiService {
     private i18nService: I18nService
   ) {}
 
-  async export(organizationId: string, exportFormat = "json"): Promise<string> {
+  async export(organizationId: string): Promise<string> {
     const response = await this.apiService.send(
       "GET",
-      "/sm/" + organizationId + "/export?format=" + exportFormat,
+      "/sm/" + organizationId + "/export",
       null,
       true,
       true
