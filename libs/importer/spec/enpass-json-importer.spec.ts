@@ -100,7 +100,7 @@ describe("Enpass JSON Importer", () => {
     expect(cipher.card.brand).toEqual("Amex");
     expect(cipher.card.code).toEqual("1234");
     expect(cipher.card.expMonth).toEqual("3");
-    expect(cipher.card.expYear).toEqual("23");
+    expect(cipher.card.expYear).toEqual("2023");
 
     // remaining fields as custom fields
     expect(cipher.fields.length).toEqual(9);

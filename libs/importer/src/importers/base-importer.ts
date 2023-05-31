@@ -305,29 +305,26 @@ export abstract class BaseImporter {
   }
 
   protected setCardExpiration(cipher: CipherView, expiration: string): boolean {
-    if (!this.isNullOrWhitespace(expiration)) {
-      expiration = expiration.replace(/\s/g, "");
-      const parts = expiration.split("/");
-      if (parts.length === 2) {
-        let month: string = null;
-        let year: string = null;
-        if (parts[0].length === 1 || parts[0].length === 2) {
-          month = parts[0];
-          if (month.length === 2 && month[0] === "0") {
-            month = month.substr(1, 1);
-          }
-        }
-        if (parts[1].length === 2 || parts[1].length === 4) {
-          year = month.length === 2 ? "20" + parts[1] : parts[1];
-        }
-        if (month != null && year != null) {
-          cipher.card.expMonth = month;
-          cipher.card.expYear = year;
-          return true;
-        }
-      }
+    if (this.isNullOrWhitespace(expiration)) {
+      return false;
     }
-    return false;
+
+    expiration = expiration.replace(/\s/g, "");
+
+    const monthRegex = "0?(?<month>[1-9]|1[0-2])";
+    const yearRegex = "(?<year>(?:[1-2][0-9])?[0-9]{2})";
+    const expiryRegex = new RegExp(`^${monthRegex}/${yearRegex}$`);
+
+    const expiryMatch = expiration.match(expiryRegex);
+
+    if (!expiryMatch) {
+      return false;
+    }
+
+    cipher.card.expMonth = expiryMatch.groups.month;
+    const year: string = expiryMatch.groups.year;
+    cipher.card.expYear = year.length === 2 ? "20" + year : year;
+    return true;
   }
 
   protected moveFoldersToCollections(result: ImportResult) {
