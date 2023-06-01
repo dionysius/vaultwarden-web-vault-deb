@@ -1,0 +1,11 @@
+{
+  "urls": {
+    "icons": "https://icons.eudevtest.bitwarden.pw",
+    "notifications": "https://notifications.eudevtest.bitwarden.pw",
+    "scim": "https://scim.eudevtest.bitwarden.pw"
+  },
+  "flags": {
+    "secretsManager": true,
+    "showPasswordless": true
+  }
+}

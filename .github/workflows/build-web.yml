@@ -84,6 +84,8 @@ jobs:
             npm_command: "build:bit:poc"
           - name: "ee"
             npm_command: "build:bit:ee"
+          - name: "eudevtest"
+            npm_command: "build:bit:eudevtest"
 
     steps:
       - name: Checkout repo
