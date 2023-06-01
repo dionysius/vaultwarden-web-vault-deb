@@ -1,3 +1,12 @@
+vaultwarden-web-vault (2023.4.2-1) unstable; urgency=medium
+
+  * fixup little mistakes in changelog
+  * lintian-override regarding patched in binary resources
+  * lintian-override regarding "feature" that exceeding line-length is considered missing-file
+  * add github actions apt upload, no package changes
+
+ -- dionysius <dragon.dionysius@gmail.com>  Thu, 01 Jun 2023 17:33:31 +0200
+
 vaultwarden-web-vault (2023.4.2-0) unstable; urgency=medium
 
   * update web-vault upstream to 2023.4.2
