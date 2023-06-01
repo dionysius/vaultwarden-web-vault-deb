@@ -75,7 +75,7 @@ export class EventService {
         msg = humanReadableMsg = this.i18nService.t("exportedVault");
         break;
       case EventType.User_UpdatedTempPassword:
-        msg = humanReadableMsg = this.i18nService.t("updatedMasterPassword");
+        msg = humanReadableMsg = this.i18nService.t("updatedTempPassword");
         break;
       case EventType.User_MigratedKeyToKeyConnector:
         msg = humanReadableMsg = this.i18nService.t("migratedKeyConnector");
@@ -259,16 +259,16 @@ export class EventService {
         );
         break;
       case EventType.OrganizationUser_ResetPassword_Enroll:
-        msg = this.i18nService.t("eventEnrollPasswordReset", this.formatOrgUserId(ev));
+        msg = this.i18nService.t("eventEnrollAccountRecovery", this.formatOrgUserId(ev));
         humanReadableMsg = this.i18nService.t(
-          "eventEnrollPasswordReset",
+          "eventEnrollAccountRecovery",
           this.getShortId(ev.organizationUserId)
         );
         break;
       case EventType.OrganizationUser_ResetPassword_Withdraw:
-        msg = this.i18nService.t("eventWithdrawPasswordReset", this.formatOrgUserId(ev));
+        msg = this.i18nService.t("eventWithdrawAccountRecovery", this.formatOrgUserId(ev));
         humanReadableMsg = this.i18nService.t(
-          "eventWithdrawPasswordReset",
+          "eventWithdrawAccountRecovery",
           this.getShortId(ev.organizationUserId)
         );
         break;

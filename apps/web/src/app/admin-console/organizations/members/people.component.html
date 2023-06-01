@@ -214,10 +214,10 @@
               <ng-container *ngIf="showEnrolledStatus($any(u))">
                 <i
                   class="bwi bwi-key"
-                  title="{{ 'enrolledPasswordReset' | i18n }}"
+                  title="{{ 'enrolledAccountRecovery' | i18n }}"
                   aria-hidden="true"
                 ></i>
-                <span class="tw-sr-only">{{ "enrolledPasswordReset" | i18n }}</span>
+                <span class="tw-sr-only">{{ "enrolledAccountRecovery" | i18n }}</span>
               </ng-container>
             </td>
             <td bitCell>
@@ -283,7 +283,7 @@
                   (click)="resetPassword(u)"
                   *ngIf="allowResetPassword(u)"
                 >
-                  <i aria-hidden="true" class="bwi bwi-key"></i> {{ "resetPassword" | i18n }}
+                  <i aria-hidden="true" class="bwi bwi-key"></i> {{ "recoverAccount" | i18n }}
                 </button>
                 <button
                   type="button"

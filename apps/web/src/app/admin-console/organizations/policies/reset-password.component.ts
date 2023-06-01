@@ -8,8 +8,8 @@ import { Organization } from "@bitwarden/common/admin-console/models/domain/orga
 import { BasePolicy, BasePolicyComponent } from "./base-policy.component";
 
 export class ResetPasswordPolicy extends BasePolicy {
-  name = "resetPasswordPolicy";
-  description = "resetPasswordPolicyDescription";
+  name = "accountRecoveryPolicy";
+  description = "accountRecoveryPolicyDescription";
   type = PolicyType.ResetPassword;
   component = ResetPasswordPolicyComponent;
 

@@ -18,7 +18,7 @@
     (click)="toggleResetPasswordEnrollment(organization)"
   >
     <i class="bwi bwi-fw bwi-key" aria-hidden="true"></i>
-    {{ "enrollPasswordReset" | i18n }}
+    {{ "enrollAccountRecovery" | i18n }}
   </button>
   <button
     type="button"
@@ -27,7 +27,7 @@
     (click)="toggleResetPasswordEnrollment(organization)"
   >
     <i class="bwi bwi-fw bwi-undo" aria-hidden="true"></i>
-    {{ "withdrawPasswordReset" | i18n }}
+    {{ "withdrawAccountRecovery" | i18n }}
   </button>
   <ng-container *ngIf="organization.useSso && organization.identifier">
     <button
