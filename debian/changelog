@@ -1,3 +1,11 @@
+vaultwarden-web-vault (2023.5.0-0) unstable; urgency=medium
+
+  * apt provider done, remove todo from readme
+  * update to v2023.5.0
+  * copyright fixes: update year and path correction for patch resources
+
+ -- dionysius <dragon.dionysius@gmail.com>  Sun, 04 Jun 2023 22:44:57 +0200
+
 vaultwarden-web-vault (2023.4.2-1) unstable; urgency=medium
 
   * fixup little mistakes in changelog
