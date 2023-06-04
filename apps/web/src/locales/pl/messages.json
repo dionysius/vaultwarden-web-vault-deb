@@ -4492,14 +4492,14 @@
   "hintEqualsPassword": {
     "message": "Podpowiedź do hasła nie może być taka sama jak hasło."
   },
-  "enrollPasswordReset": {
-    "message": "Zarejestruj do resetowania hasła"
+  "enrollAccountRecovery": {
+    "message": "Przystąp do odzyskiwania konta"
   },
-  "enrolledPasswordReset": {
-    "message": "Użytkownik został zarejestrowany do resetowania hasła"
+  "enrolledAccountRecovery": {
+    "message": "Dołączono do odzyskiwania konta"
   },
-  "withdrawPasswordReset": {
-    "message": "Wyrejestruj z resetowania hasła"
+  "withdrawAccountRecovery": {
+    "message": "Wycofaj z odzyskiwania konta"
   },
   "enrollPasswordResetSuccess": {
     "message": "Użytkownik został zarejestrowany!"
@@ -4507,8 +4507,8 @@
   "withdrawPasswordResetSuccess": {
     "message": "Użytkownik został wyrejestrowany!"
   },
-  "eventEnrollPasswordReset": {
-    "message": "Użytkownik $ID$ został zarejestrowany do resetowania hasła.",
+  "eventEnrollAccountRecovery": {
+    "message": "Użytkownik $ID$ przystapił do odzyskiwania konta.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -4516,8 +4516,8 @@
       }
     }
   },
-  "eventWithdrawPasswordReset": {
-    "message": "Użytkownik $ID$ został wyrejestrowany z resetowania hasła.",
+  "eventWithdrawAccountRecovery": {
+    "message": "Użytkownik $ID$ wycofał się z odzyskania konta.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -4576,11 +4576,11 @@
   "resetPasswordEnrollmentWarning": {
     "message": "Rejestracja zezwala administratorom organizacji na zmianę Twojego hasła głównego. Czy na pewno chcesz się zarejestrować?"
   },
-  "resetPasswordPolicy": {
-    "message": "Zresetowanie hasła głównego"
+  "accountRecoveryPolicy": {
+    "message": "Administracja odzyskiwaniem konta"
   },
-  "resetPasswordPolicyDescription": {
-    "message": "Zezwalaj administratorom organizacji na resetowanie hasła głównego użytkowników."
+  "accountRecoveryPolicyDescription": {
+    "message": "Odzyskaj konta użytkowików, gdy utracą hasło główne lub zaufane urządzenia. Procesy odzyskiwania opierają się na metodzie szyfrowania konta."
   },
   "resetPasswordPolicyWarning": {
     "message": "Użytkownicy w organizacji muszą samodzielnie zarejestrować się do resetowania hasła przez administratorów."
@@ -6775,6 +6775,10 @@
       }
     }
   },
+  "inputTrimValidator": {
+    "message": "Tekst nie może zawierać tylko spacji.",
+    "description": "Notification to inform the user that a form's input can't contain only whitespace."
+  },
   "dismiss": {
     "message": "Odrzuć"
   },
@@ -6813,16 +6817,22 @@
   "trustedDeviceEncryption": {
     "message": "Szyfrowanie zaufanego urządzenia"
   },
-  "memberDecryptionTdeDescStart": {
+  "memberDecryptionTdeDescriptionStart": {
     "message": "Po uwierzytelnieniu użytkownicy odszyfrowają dane sejfu przy użyciu klucza zapisanego na ich urządzeniu.",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The master password reset policy with automatic enrollment will turn on when this option is used.'"
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
-  "memberDecryptionTdeDescLink": {
-    "message": "Zasady resetowania hasła głównego",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The master password reset policy with automatic enrollment will turn on when this option is used.'"
+  "memberDecryptionTdeDescriptionLink": {
+    "message": "polityka zarządzania odzyskiwaniem konta",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
-  "memberDecryptionTdeDescEnd": {
+  "memberDecryptionTdeDescriptionEnd": {
     "message": "z automatycznym zapisem włączy się, gdy ta opcja jest używana.",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The master password reset policy with automatic enrollment will turn on when this option is used.'"
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The account recovery administration policy with automatic enrollment will turn on when this option is used.'"
+  },
+  "recoverAccount": {
+    "message": "Odzyskaj konto"
+  },
+  "updatedTempPassword": {
+    "message": "Użytkownik zaktualizował hasło wydane poprzez odzyskiwanie konta."
   }
 }

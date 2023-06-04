@@ -4492,14 +4492,14 @@
   "hintEqualsPassword": {
     "message": "Votre indice de mot de passe ne peut pas être identique à votre mot de passe."
   },
-  "enrollPasswordReset": {
-    "message": "S'inscrire à la réinitialisation du mot de passe"
+  "enrollAccountRecovery": {
+    "message": "S'inscrire à la récupération du compte"
   },
-  "enrolledPasswordReset": {
-    "message": "Inscrit à la réinitialisation du mot de passe"
+  "enrolledAccountRecovery": {
+    "message": "Inscrit à la récupération du compte"
   },
-  "withdrawPasswordReset": {
-    "message": "Se retirer de la réinitialisation du mot de passe"
+  "withdrawAccountRecovery": {
+    "message": "Retirer de la récupération du compte"
   },
   "enrollPasswordResetSuccess": {
     "message": "Inscription réussie !"
@@ -4507,8 +4507,8 @@
   "withdrawPasswordResetSuccess": {
     "message": "Retrait réussi !"
   },
-  "eventEnrollPasswordReset": {
-    "message": "L'utilisateur $ID$ s'est inscrit à l'aide de réinitialisation du mot de passe.",
+  "eventEnrollAccountRecovery": {
+    "message": "L'utilisateur $ID$ est inscrit à la récupération du compte.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -4516,8 +4516,8 @@
       }
     }
   },
-  "eventWithdrawPasswordReset": {
-    "message": "L'utilisateur $ID$ s'est retiré de l'aide à la réinitialisation du mot de passe.",
+  "eventWithdrawAccountRecovery": {
+    "message": "L'utilisateur $ID$ a été retiré de la récupération du compte.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -4576,11 +4576,11 @@
   "resetPasswordEnrollmentWarning": {
     "message": "L'inscription permettra aux administrateurs de l'organisation de changer votre mot de passe principal"
   },
-  "resetPasswordPolicy": {
-    "message": "Réinitialisation du mot de passe principal"
+  "accountRecoveryPolicy": {
+    "message": "Administration de récupération du compte"
   },
-  "resetPasswordPolicyDescription": {
-    "message": "Autoriser les administrateurs à réinitialiser les mots de passe principaux pour les membres."
+  "accountRecoveryPolicyDescription": {
+    "message": "Récupérer les comptes des membres lorsque le mot de passe principal ou les appareils de confiance sont oubliés ou perdus. Les processus de récupération sont basés sur la méthode de chiffrement du compte."
   },
   "resetPasswordPolicyWarning": {
     "message": "Les membres de l'organisation devront s'inscrire eux-mêmes ou être inscrits automatiquement avant que les administrateurs puissent réinitialiser leur mot de passe principal."
@@ -6775,6 +6775,10 @@
       }
     }
   },
+  "inputTrimValidator": {
+    "message": "L'entrée ne doit pas contenir seulement des espaces.",
+    "description": "Notification to inform the user that a form's input can't contain only whitespace."
+  },
   "dismiss": {
     "message": "Rejeter"
   },
@@ -6813,16 +6817,22 @@
   "trustedDeviceEncryption": {
     "message": "Chiffrement de l'appareil de confiance"
   },
-  "memberDecryptionTdeDescStart": {
-    "message": "Une fois authentifiés, les membres déchiffreront leur coffre de données en utilisant une clé enregistrée sur leu appareil. La",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The master password reset policy with automatic enrollment will turn on when this option is used.'"
+  "memberDecryptionTdeDescriptionStart": {
+    "message": "Une fois authentifiés, les membres déchiffreront les données du coffre à l'aide d'une clé enregistrée sur leur appareil. La",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
-  "memberDecryptionTdeDescLink": {
-    "message": "politique de sécurité de la restauration du mot de passe principal",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The master password reset policy with automatic enrollment will turn on when this option is used.'"
+  "memberDecryptionTdeDescriptionLink": {
+    "message": "politique d'administration de la restauration du compte",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
-  "memberDecryptionTdeDescEnd": {
-    "message": "avec l'inscription automatique s'active lorsque cette option est utilisée.",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The master password reset policy with automatic enrollment will turn on when this option is used.'"
+  "memberDecryptionTdeDescriptionEnd": {
+    "message": "par inscription automatique s'active lorsque cette option est utilisée.",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The account recovery administration policy with automatic enrollment will turn on when this option is used.'"
+  },
+  "recoverAccount": {
+    "message": "Récupérer le compte"
+  },
+  "updatedTempPassword": {
+    "message": "L'utilisateur a mis à jour un mot de passe émis lors de la récupération du compte."
   }
 }

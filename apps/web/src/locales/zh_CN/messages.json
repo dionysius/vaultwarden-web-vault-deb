@@ -4492,14 +4492,14 @@
   "hintEqualsPassword": {
     "message": "密码提示不能与密码相同。"
   },
-  "enrollPasswordReset": {
-    "message": "注册密码重置"
+  "enrollAccountRecovery": {
+    "message": "注册账户恢复"
   },
-  "enrolledPasswordReset": {
-    "message": "已注册密码重置"
+  "enrolledAccountRecovery": {
+    "message": "注册了账户恢复"
   },
-  "withdrawPasswordReset": {
-    "message": "撤销密码重置"
+  "withdrawAccountRecovery": {
+    "message": "撤销账户恢复"
   },
   "enrollPasswordResetSuccess": {
     "message": "注册成功！"
@@ -4507,8 +4507,8 @@
   "withdrawPasswordResetSuccess": {
     "message": "撤销成功！"
   },
-  "eventEnrollPasswordReset": {
-    "message": "用户 $ID$ 注册了密码重置。",
+  "eventEnrollAccountRecovery": {
+    "message": "用户 $ID$ 注册了账户恢复。",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -4516,8 +4516,8 @@
       }
     }
   },
-  "eventWithdrawPasswordReset": {
-    "message": "用户 $ID$ 撤销了密码重置。",
+  "eventWithdrawAccountRecovery": {
+    "message": "用户 $ID$ 撤销了账户恢复。",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -4576,11 +4576,11 @@
   "resetPasswordEnrollmentWarning": {
     "message": "注册后将允许组织管理员更改您的主密码"
   },
-  "resetPasswordPolicy": {
-    "message": "主密码重置"
+  "accountRecoveryPolicy": {
+    "message": "账户恢复管理"
   },
-  "resetPasswordPolicyDescription": {
-    "message": "允许管理员重置成员的主密码。"
+  "accountRecoveryPolicyDescription": {
+    "message": "当主密码或受信任设备忘记或丢失时恢复成员账户。此恢复过程基于账户加密方法。"
   },
   "resetPasswordPolicyWarning": {
     "message": "组织中的成员自行注册或被自动注册后，管理员才能重置他们的主密码。"
@@ -6775,6 +6775,10 @@
       }
     }
   },
+  "inputTrimValidator": {
+    "message": "输入不能只包含空格。",
+    "description": "Notification to inform the user that a form's input can't contain only whitespace."
+  },
   "dismiss": {
     "message": "取消"
   },
@@ -6811,18 +6815,24 @@
     "message": "更新 KDF 设置"
   },
   "trustedDeviceEncryption": {
-    "message": "Trusted device encryption"
+    "message": "受信任的设备加密"
   },
-  "memberDecryptionTdeDescStart": {
+  "memberDecryptionTdeDescriptionStart": {
     "message": "Once authenticated, members will decrypt vault data using a key stored on their device. The",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The master password reset policy with automatic enrollment will turn on when this option is used.'"
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
-  "memberDecryptionTdeDescLink": {
-    "message": "主密码重置策略",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The master password reset policy with automatic enrollment will turn on when this option is used.'"
+  "memberDecryptionTdeDescriptionLink": {
+    "message": "账户恢复管理策略",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
-  "memberDecryptionTdeDescEnd": {
+  "memberDecryptionTdeDescriptionEnd": {
     "message": "with automatic enrollment will turn on when this option is used.",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The master password reset policy with automatic enrollment will turn on when this option is used.'"
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The account recovery administration policy with automatic enrollment will turn on when this option is used.'"
+  },
+  "recoverAccount": {
+    "message": "恢复账户"
+  },
+  "updatedTempPassword": {
+    "message": "User updated a password issued through account recovery."
   }
 }

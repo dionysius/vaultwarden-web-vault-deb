@@ -4492,14 +4492,14 @@
   "hintEqualsPassword": {
     "message": "El vostre suggeriment de contrasenya no pot ser el mateix que la vostra contrasenya."
   },
-  "enrollPasswordReset": {
-    "message": "Inscriviu-vos al restabliment de contrasenya"
+  "enrollAccountRecovery": {
+    "message": "Inscriu-te en la recuperació del compte"
   },
-  "enrolledPasswordReset": {
-    "message": "Inscrit al restabliment de contrasenya"
+  "enrolledAccountRecovery": {
+    "message": "Inscrit en la recuperació del compte"
   },
-  "withdrawPasswordReset": {
-    "message": "Retireu-vos del restabliment de contrasenya"
+  "withdrawAccountRecovery": {
+    "message": "Retirar-se de la recuperació del compte"
   },
   "enrollPasswordResetSuccess": {
     "message": "Inscrit correctament!"
@@ -4507,8 +4507,8 @@
   "withdrawPasswordResetSuccess": {
     "message": "Retirat correctament!"
   },
-  "eventEnrollPasswordReset": {
-    "message": "L'usuari $ID$ està inscrit a l'assistència per restablir la contrasenya.",
+  "eventEnrollAccountRecovery": {
+    "message": "Usuari $ID$ registrat en la recuperació del compte.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -4516,8 +4516,8 @@
       }
     }
   },
-  "eventWithdrawPasswordReset": {
-    "message": "L'usuari $ID$ s'ha retirat de l'assistència per restablir la contrasenya.",
+  "eventWithdrawAccountRecovery": {
+    "message": "L'usuari $ID$ s'ha retirat de la recuperació del compte.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -4576,11 +4576,11 @@
   "resetPasswordEnrollmentWarning": {
     "message": "La inscripció permetrà als administradors de l’organització canviar la vostra contrasenya mestra. Esteu segur que voleu inscriure-vos?"
   },
-  "resetPasswordPolicy": {
-    "message": "Restabliment de la contrasenya mestra"
+  "accountRecoveryPolicy": {
+    "message": "Administració de recuperació de comptes"
   },
-  "resetPasswordPolicyDescription": {
-    "message": "Permetre als administradors de l'organització restablir la contrasenya mestra dels seus usuaris."
+  "accountRecoveryPolicyDescription": {
+    "message": "Recupereu els comptes dels membres quan s'obliden o perden la contrasenya mestra o els dispositius de confiança. El procés de recuperació es basa en el mètode de xifratge del compte."
   },
   "resetPasswordPolicyWarning": {
     "message": "Els usuaris de l’organització hauran de registrar-se o ser registrats abans que els administradors puguen restablir la seua contrasenya mestra."
@@ -6775,6 +6775,10 @@
       }
     }
   },
+  "inputTrimValidator": {
+    "message": "L'entrada no ha de contenir només espais en blanc.",
+    "description": "Notification to inform the user that a form's input can't contain only whitespace."
+  },
   "dismiss": {
     "message": "Descarta"
   },
@@ -6813,16 +6817,22 @@
   "trustedDeviceEncryption": {
     "message": "Encriptació de dispositius de confiança"
   },
-  "memberDecryptionTdeDescStart": {
+  "memberDecryptionTdeDescriptionStart": {
     "message": "Una vegada autenticats, els membres desxifraran les dades de la caixa forta mitjançant una clau emmagatzemada al seu dispositiu. El",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The master password reset policy with automatic enrollment will turn on when this option is used.'"
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
-  "memberDecryptionTdeDescLink": {
-    "message": "política de restabliment de la contrasenya mestra",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The master password reset policy with automatic enrollment will turn on when this option is used.'"
+  "memberDecryptionTdeDescriptionLink": {
+    "message": "política d'administració de recuperació de comptes",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
-  "memberDecryptionTdeDescEnd": {
+  "memberDecryptionTdeDescriptionEnd": {
     "message": "amb inscripció automàtica s'activarà quan s'utilitze aquesta opció.",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The master password reset policy with automatic enrollment will turn on when this option is used.'"
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The account recovery administration policy with automatic enrollment will turn on when this option is used.'"
+  },
+  "recoverAccount": {
+    "message": "Recupera el compte"
+  },
+  "updatedTempPassword": {
+    "message": "L'usuari ha actualitzat una contrasenya emesa mitjançant la recuperació del compte."
   }
 }

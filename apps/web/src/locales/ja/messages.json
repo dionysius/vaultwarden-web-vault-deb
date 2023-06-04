@@ -4492,14 +4492,14 @@
   "hintEqualsPassword": {
     "message": "パスワードのヒントをパスワードと同じにすることはできません。"
   },
-  "enrollPasswordReset": {
-    "message": "パスワードリセットに登録"
+  "enrollAccountRecovery": {
+    "message": "アカウント回復に登録する"
   },
-  "enrolledPasswordReset": {
-    "message": "パスワードリセットに登録済み"
+  "enrolledAccountRecovery": {
+    "message": "アカウント回復に登録しました"
   },
-  "withdrawPasswordReset": {
-    "message": "パスワードリセットから退出"
+  "withdrawAccountRecovery": {
+    "message": "アカウント回復から登録解除する"
   },
   "enrollPasswordResetSuccess": {
     "message": "登録に成功しました！"
@@ -4507,8 +4507,8 @@
   "withdrawPasswordResetSuccess": {
     "message": "正常に退出しました！"
   },
-  "eventEnrollPasswordReset": {
-    "message": "ユーザー $ID$ がパスワードリセットの案内に登録しました。",
+  "eventEnrollAccountRecovery": {
+    "message": "ユーザー $ID$ をアカウント回復に登録しました。",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -4516,8 +4516,8 @@
       }
     }
   },
-  "eventWithdrawPasswordReset": {
-    "message": "ユーザー $ID$ がパスワードリセットの案内から退出しました。",
+  "eventWithdrawAccountRecovery": {
+    "message": "ユーザー $ID$ をアカウント回復から登録解除しました。",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -4576,11 +4576,11 @@
   "resetPasswordEnrollmentWarning": {
     "message": "登録すると、組織管理者はマスターパスワードを変更できます。登録してもよろしいですか？"
   },
-  "resetPasswordPolicy": {
-    "message": "マスターパスワードのリセット"
+  "accountRecoveryPolicy": {
+    "message": "アカウント回復の管理"
   },
-  "resetPasswordPolicyDescription": {
-    "message": "組織内の管理者に組織ユーザーのマスターパスワードのリセットを許可します。"
+  "accountRecoveryPolicyDescription": {
+    "message": "マスターパスワードまたは信頼できるデバイスを忘れた、または紛失した場合にメンバーアカウントを回復できます。回復プロセスはアカウントの暗号化方式に基づきます。"
   },
   "resetPasswordPolicyWarning": {
     "message": "管理者がマスターパスワードをリセットするには、組織内のユーザーは自己登録または自動登録する必要があります。"
@@ -6775,6 +6775,10 @@
       }
     }
   },
+  "inputTrimValidator": {
+    "message": "値を空白のみにしないでください。",
+    "description": "Notification to inform the user that a form's input can't contain only whitespace."
+  },
   "dismiss": {
     "message": "表示しない"
   },
@@ -6813,16 +6817,22 @@
   "trustedDeviceEncryption": {
     "message": "信頼できるデバイスの暗号化"
   },
-  "memberDecryptionTdeDescStart": {
+  "memberDecryptionTdeDescriptionStart": {
     "message": "認証が完了すると、メンバーはデバイスに保存されているキーを使用して保管庫のデータを復号します。",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The master password reset policy with automatic enrollment will turn on when this option is used.'"
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
-  "memberDecryptionTdeDescLink": {
-    "message": "マスターパスワードのリセットポリシー",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The master password reset policy with automatic enrollment will turn on when this option is used.'"
+  "memberDecryptionTdeDescriptionLink": {
+    "message": "アカウント回復管理ポリシー",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
-  "memberDecryptionTdeDescEnd": {
+  "memberDecryptionTdeDescriptionEnd": {
     "message": "このオプションを使用すると、自動登録が有効になります。",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The master password reset policy with automatic enrollment will turn on when this option is used.'"
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The account recovery administration policy with automatic enrollment will turn on when this option is used.'"
+  },
+  "recoverAccount": {
+    "message": "アカウント回復"
+  },
+  "updatedTempPassword": {
+    "message": "ユーザーはアカウント回復で発行されたパスワードを更新しました。"
   }
 }

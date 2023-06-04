@@ -4492,14 +4492,14 @@
   "hintEqualsPassword": {
     "message": "A jelszavas tipp nem lehet azonos a jelszóval."
   },
-  "enrollPasswordReset": {
-    "message": "Bejelentkezés a Jelszó alaphelyzetbe állításba"
+  "enrollAccountRecovery": {
+    "message": "Regisztráció fiók helyreállításra"
   },
-  "enrolledPasswordReset": {
-    "message": "A bejelentkezés megtörtént a Jelszó alaphelyzetbe állításba"
+  "enrolledAccountRecovery": {
+    "message": "Megtörtént a regisztráció fiók helyreállításra."
   },
-  "withdrawPasswordReset": {
-    "message": "Kijelentkezés a Jelszó alaphelyzetbe állításból"
+  "withdrawAccountRecovery": {
+    "message": "Kilépés a fiók helyreállításból"
   },
   "enrollPasswordResetSuccess": {
     "message": "A bejelentkezés sikeres."
@@ -4507,8 +4507,8 @@
   "withdrawPasswordResetSuccess": {
     "message": "A kijelentkezés sikeres."
   },
-  "eventEnrollPasswordReset": {
-    "message": "$ID$ felhasználó bejelentkezett a jelszó alaphelyzetbe állítás támogatáshoz.",
+  "eventEnrollAccountRecovery": {
+    "message": "$ID$ felhasználó regisztrált a fiók helyreállításra.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -4516,8 +4516,8 @@
       }
     }
   },
-  "eventWithdrawPasswordReset": {
-    "message": "$ID$ felhasználó kijelentkezett a jelszó alaphelyzetbe állítás támogatásból.",
+  "eventWithdrawAccountRecovery": {
+    "message": "$ID$ felhasználó kilépett a fiók helyreállításból.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -4576,11 +4576,11 @@
   "resetPasswordEnrollmentWarning": {
     "message": "A regisztráció lehetővé teszi a szervezet adminisztrátorainak a saját mesterjelszó megváltoztatását. Biztosan feliratkozunk?"
   },
-  "resetPasswordPolicy": {
-    "message": "Mesterjelszó alaphelyzetbe állítás"
+  "accountRecoveryPolicy": {
+    "message": "Fiók-helyreállítási adminisztráció"
   },
-  "resetPasswordPolicyDescription": {
-    "message": "A szervezet adminisztrátorai alaphelyzetbe állíthatják a szervezet mesterjelszavát."
+  "accountRecoveryPolicyDescription": {
+    "message": "Tagsági fiókok helyreállítása, ha a mesterjelszó vagy a megbízható eszközök elfelejtésére vagy elvesztésére. A helyreállítási folyamatok a fióktitkosítási módszeren alapulnak."
   },
   "resetPasswordPolicyWarning": {
     "message": "A szervezet felhasználóinak regisztrálniuk kell magukat vagy automatikus regisztrálás szükséges mielőtt az adminisztrátorok alaphelyzetbe állíthatják a mesterjelszavukat."
@@ -6775,6 +6775,10 @@
       }
     }
   },
+  "inputTrimValidator": {
+    "message": "A bevitel nem tartalmazhat csak fehérszóköz karaktert.",
+    "description": "Notification to inform the user that a form's input can't contain only whitespace."
+  },
   "dismiss": {
     "message": "Elvetés"
   },
@@ -6813,16 +6817,22 @@
   "trustedDeviceEncryption": {
     "message": "Megbízható eszköztitkosítás"
   },
-  "memberDecryptionTdeDescStart": {
-    "message": "A hitelesítés után a tagok az eszközükön tárolt kulccsal visszafejtik a tároló adatait.",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The master password reset policy with automatic enrollment will turn on when this option is used.'"
+  "memberDecryptionTdeDescriptionStart": {
+    "message": "A hitelesítés után a tagok az eszközükön tárolt kulccsal visszafejtik a tároló adatait. A",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
-  "memberDecryptionTdeDescLink": {
-    "message": "mesterjelszó alaphelyzetbe állítási szabályzat",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The master password reset policy with automatic enrollment will turn on when this option is used.'"
+  "memberDecryptionTdeDescriptionLink": {
+    "message": "fiók helyreállítási adminisztrációs szabályzat",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
-  "memberDecryptionTdeDescEnd": {
-    "message": "automatikus regisztrációval bekapcsolásra kerül ezen opció használatával.",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The master password reset policy with automatic enrollment will turn on when this option is used.'"
+  "memberDecryptionTdeDescriptionEnd": {
+    "message": "automatikus regisztrációval bekapcsol, ha ez az opció van használatban.",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The account recovery administration policy with automatic enrollment will turn on when this option is used.'"
+  },
+  "recoverAccount": {
+    "message": "Fiók helyreállítás"
+  },
+  "updatedTempPassword": {
+    "message": "A felhasználó frissítette a fiók helyreállítás során kiadott jelszót."
   }
 }

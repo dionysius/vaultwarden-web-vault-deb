@@ -4492,14 +4492,14 @@
   "hintEqualsPassword": {
     "message": "Adgangskodetip og adgangskode må ikke være identiske."
   },
-  "enrollPasswordReset": {
-    "message": "Tilmeld Adgangskodenulstilling"
+  "enrollAccountRecovery": {
+    "message": "Indrullér i kontogendannelse"
   },
-  "enrolledPasswordReset": {
-    "message": "Tilmeldt Adgangskodenulstilling"
+  "enrolledAccountRecovery": {
+    "message": "Indrulleret i kontogendannelse"
   },
-  "withdrawPasswordReset": {
-    "message": "Afmeld fra Adgangskodenulstilling"
+  "withdrawAccountRecovery": {
+    "message": "Afmeld fra kontogendannelse"
   },
   "enrollPasswordResetSuccess": {
     "message": "Tilmelding lykkedes!"
@@ -4507,8 +4507,8 @@
   "withdrawPasswordResetSuccess": {
     "message": "Afmelding lykkedes!"
   },
-  "eventEnrollPasswordReset": {
-    "message": "Bruger $ID$ tilmeldt adgangskodenulstilling.",
+  "eventEnrollAccountRecovery": {
+    "message": "Bruger $ID$ indrulleret i kontogendannelse.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -4516,8 +4516,8 @@
       }
     }
   },
-  "eventWithdrawPasswordReset": {
-    "message": "Bruger $ID$ afmeldt adgangskodenulstilling.",
+  "eventWithdrawAccountRecovery": {
+    "message": "Bruger $ID$ afmeldt fra kontogendannelse.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -4576,11 +4576,11 @@
   "resetPasswordEnrollmentWarning": {
     "message": "Indrullering vil tillade organisationsadministratorer at ændre din hovedadgangskode"
   },
-  "resetPasswordPolicy": {
-    "message": "Nulstilling af hovedadgangskode"
+  "accountRecoveryPolicy": {
+    "message": "Kontogendannelseshåndtering"
   },
-  "resetPasswordPolicyDescription": {
-    "message": "Tillad admins at nulstille hovedadgangskoder for medlemmer."
+  "accountRecoveryPolicyDescription": {
+    "message": "Gendan medlemskonti, når hovedadgangskode eller betroede enheder er glemt eller tabt. Gendannelsesprocesser er baseret på kontokrypteringsmetoden."
   },
   "resetPasswordPolicyWarning": {
     "message": "Organisationsmedlemmer skal selvindrullere eller være auto-indrulleret, før admins kan nulstille deres hovedadgangskode."
@@ -6775,6 +6775,10 @@
       }
     }
   },
+  "inputTrimValidator": {
+    "message": "Input må ikke indeholde mellemrum.",
+    "description": "Notification to inform the user that a form's input can't contain only whitespace."
+  },
   "dismiss": {
     "message": "Luk"
   },
@@ -6813,16 +6817,22 @@
   "trustedDeviceEncryption": {
     "message": "Betroet enhed-kryptering"
   },
-  "memberDecryptionTdeDescStart": {
-    "message": "Når godkendt, dekrypterer medlemmet boksdata vha. hovedadgangskoden. ",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The master password reset policy with automatic enrollment will turn on when this option is used.'"
+  "memberDecryptionTdeDescriptionStart": {
+    "message": "Når godkendt, dekrypterer medlemmet boksdata vha. en nøgle gemt på enheden.",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
-  "memberDecryptionTdeDescLink": {
-    "message": "Hovedadgangskodenulstillingspolitikken",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The master password reset policy with automatic enrollment will turn on when this option is used.'"
+  "memberDecryptionTdeDescriptionLink": {
+    "message": "Kontogendannelseshåndteringspolitikken",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
-  "memberDecryptionTdeDescEnd": {
+  "memberDecryptionTdeDescriptionEnd": {
     "message": "med automatisk indrullering aktiveres ved brug af denne indstilling.",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The master password reset policy with automatic enrollment will turn on when this option is used.'"
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The account recovery administration policy with automatic enrollment will turn on when this option is used.'"
+  },
+  "recoverAccount": {
+    "message": "Gendan konto"
+  },
+  "updatedTempPassword": {
+    "message": "Bruger har opdateret en adgangskode udstedt via kontogendannelse."
   }
 }

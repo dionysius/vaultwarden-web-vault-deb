@@ -897,7 +897,7 @@
     "message": "Organizações"
   },
   "moveToOrgDesc": {
-    "message": "Escolha uma organização para a qual deseja mover este item. A mudança para uma organização transfere a propriedade do item para essa organização. Deixará de ser o proprietário directo deste item uma vez que tenha sido movido."
+    "message": "Escolha uma organização para a qual pretende mover este item. Mover para uma organização transfere a propriedade do item para essa organização. Deixará de ser o proprietário directo deste item depois de este ter sido movido."
   },
   "moveManyToOrgDesc": {
     "message": "Escolha uma organização para a qual deseja mover este item. A mudança para uma organização transfere a propriedade do item para essa organização. Deixará de ser o proprietário directo deste item uma vez que tenha sido movido."
@@ -968,10 +968,10 @@
     "message": "Esta exportação contém os seus dados do cofre num formato desencriptado. Não deve armazenar ou enviar o ficheiro exportado através de canais inseguros (como email). Elimine-o imediatamente após o utilizar."
   },
   "encExportKeyWarningDesc": {
-    "message": "Esta exportação criptografa seus dados usando a chave de criptografia da sua conta. Se alguma vez mudar a chave de criptografia da sua conta, deve exportar novamente, já que não será capaz de descriptografar este arquivo de exportação."
+    "message": "Esta exportação encripta os seus dados utilizando a chave de encriptação da sua conta. Se alguma vez mudar a chave de encriptação da sua conta, deve exportar novamente, uma vez que não conseguirá desencriptar este ficheiro de exportação."
   },
   "encExportAccountWarningDesc": {
-    "message": "As chaves de encriptação de conta são únicas para cada conta de utilizador Bitwarden, pelo que não se pode importar uma exportação encriptada para uma conta diferente."
+    "message": "As chaves de encriptação da conta são únicas para cada conta de utilizador Bitwarden, pelo que não é possível importar uma exportação encriptada para uma conta diferente."
   },
   "export": {
     "message": "Exportar"
@@ -3159,7 +3159,7 @@
     }
   },
   "rememberEmail": {
-    "message": "Memorizar email"
+    "message": "Memorizar e-mail"
   },
   "recoverAccountTwoStepDesc": {
     "message": "Se não conseguir aceder à sua conta através dos seus métodos normais de início de sessão de dois passos, pode utilizar o seu código de recuperação de dois passos para desativar todos os provedores de início de sessão de dois passos da sua conta."
@@ -3471,10 +3471,10 @@
     "message": "Ao marcar esta caixa concorda com o seguinte:"
   },
   "acceptPoliciesRequired": {
-    "message": "Os Termos de Serviço e a Política de Privacidade não foram reconhecidos."
+    "message": "Os Termos de utilização e a Política de privacidade não foram aceites."
   },
   "termsOfService": {
-    "message": "Termos de serviço"
+    "message": "Termos de utilização"
   },
   "privacyPolicy": {
     "message": "Política de privacidade"
@@ -3514,7 +3514,7 @@
     "description": "ex. Date this item was updated"
   },
   "dateCreated": {
-    "message": "Criado",
+    "message": "Criado a",
     "description": "ex. Date this item was created"
   },
   "datePasswordUpdated": {
@@ -3971,7 +3971,7 @@
     "message": "Data de eliminação"
   },
   "deletionDateDesc": {
-    "message": "O envio será eliminado permanentemente na data e hora especificadas.",
+    "message": "O Send será permanentemente eliminado na data e hora especificadas.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "expirationDate": {
@@ -4466,16 +4466,16 @@
     "message": "A data de validade fornecida não é válida."
   },
   "deletionDateIsInvalid": {
-    "message": "A data de exclusão fornecida não é válida."
+    "message": "A data de eliminação fornecida não é válida."
   },
   "expirationDateAndTimeRequired": {
     "message": "Uma data e hora de expiração é necessária."
   },
   "deletionDateAndTimeRequired": {
-    "message": "É necessária uma data e hora de exclusão."
+    "message": "São necessárias uma data e uma hora de eliminação."
   },
   "dateParsingError": {
-    "message": "Ocorreu um erro ao gravar a sua data de exclusão e de validade."
+    "message": "Ocorreu um erro ao guardar as suas datas de eliminação e expiração."
   },
   "webAuthnFallbackMsg": {
     "message": "Para verificar seu 2FA por favor, clique no botão abaixo."
@@ -4492,14 +4492,14 @@
   "hintEqualsPassword": {
     "message": "A dica da sua senha não pode ser a mesma que a sua senha."
   },
-  "enrollPasswordReset": {
-    "message": "Registar redefinição de senha"
+  "enrollAccountRecovery": {
+    "message": "Inscrever-se na recuperação de conta"
   },
-  "enrolledPasswordReset": {
-    "message": "Registada a redefinição de senha"
+  "enrolledAccountRecovery": {
+    "message": "Inscrito na recuperação de conta"
   },
-  "withdrawPasswordReset": {
-    "message": "Sair da Redefinição de Senha"
+  "withdrawAccountRecovery": {
+    "message": "Retirar-se da recuperação de conta"
   },
   "enrollPasswordResetSuccess": {
     "message": "Registado com sucesso!"
@@ -4507,8 +4507,8 @@
   "withdrawPasswordResetSuccess": {
     "message": "Saída com sucesso!"
   },
-  "eventEnrollPasswordReset": {
-    "message": "Utilizador $ID$ registado na ajuda para redefinir senha.",
+  "eventEnrollAccountRecovery": {
+    "message": "Utilizador $ID$ inscrito na recuperação de conta.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -4516,8 +4516,8 @@
       }
     }
   },
-  "eventWithdrawPasswordReset": {
-    "message": "Utilizador $ID$ removeu-se da ajuda para redefinir senha.",
+  "eventWithdrawAccountRecovery": {
+    "message": "Utilizador $ID$ retirado da recuperação de conta.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -4576,11 +4576,11 @@
   "resetPasswordEnrollmentWarning": {
     "message": "Enrollment will allow organization administrators to change your master password"
   },
-  "resetPasswordPolicy": {
-    "message": "Redefinir Senha Mestra"
+  "accountRecoveryPolicy": {
+    "message": "Gestão da recuperação de contas"
   },
-  "resetPasswordPolicyDescription": {
-    "message": "Permitir que administradores redefinam senhas mestres dos membros."
+  "accountRecoveryPolicyDescription": {
+    "message": "Recuperar contas de membros quando a palavra-passe mestra ou dispositivos de confiança são esquecidos ou perdidos. O processo de recuperação baseia-se no método de encriptação da conta."
   },
   "resetPasswordPolicyWarning": {
     "message": "Members in the organization will need to self-enroll or be auto-enrolled before administrators can reset their master password."
@@ -4822,7 +4822,7 @@
     "message": "Senha Mestra Atualizada"
   },
   "updateMasterPassword": {
-    "message": "Atualizar Senha Mestra"
+    "message": "Atualizar palavra-passe mestra"
   },
   "updateMasterPasswordWarning": {
     "message": "Sua senha mestra foi alterada recentemente por um administrador da sua organização. Para aceder ao cofre, precisa atualizar a sua senha mestra agora. O processo irá desconectá-lo da sessão atual, exigindo que inicie a novamente a sessão. Sessões ativas em outros dispositivos podem continuar ativas por até uma hora."
@@ -5593,7 +5593,7 @@
     }
   },
   "premiumSubcriptionRequired": {
-    "message": "Subscrição premium necessária"
+    "message": "É necessária uma subscrição Premium"
   },
   "scim": {
     "message": "Provisionamento de SCIM",
@@ -6775,6 +6775,10 @@
       }
     }
   },
+  "inputTrimValidator": {
+    "message": "A entrada não deve conter apenas espaços em branco.",
+    "description": "Notification to inform the user that a form's input can't contain only whitespace."
+  },
   "dismiss": {
     "message": "Dispensar"
   },
@@ -6813,16 +6817,22 @@
   "trustedDeviceEncryption": {
     "message": "Trusted device encryption"
   },
-  "memberDecryptionTdeDescStart": {
-    "message": "Once authenticated, members will decrypt vault data using a key stored on their device. The",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The master password reset policy with automatic enrollment will turn on when this option is used.'"
+  "memberDecryptionTdeDescriptionStart": {
+    "message": "Uma vez autenticados, os membros desencriptam os dados do cofre utilizando uma chave armazenada no seu dispositivo. A",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
-  "memberDecryptionTdeDescLink": {
-    "message": "master password reset policy",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The master password reset policy with automatic enrollment will turn on when this option is used.'"
+  "memberDecryptionTdeDescriptionLink": {
+    "message": "política de gestão da recuperação de contas",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
-  "memberDecryptionTdeDescEnd": {
-    "message": "with automatic enrollment will turn on when this option is used.",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The master password reset policy with automatic enrollment will turn on when this option is used.'"
+  "memberDecryptionTdeDescriptionEnd": {
+    "message": "com inscrição automática será ativada quando esta opção for utilizada.",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The account recovery administration policy with automatic enrollment will turn on when this option is used.'"
+  },
+  "recoverAccount": {
+    "message": "Recuperar conta"
+  },
+  "updatedTempPassword": {
+    "message": "O utilizador atualizou uma palavra-passe emitida através da recuperação de conta."
   }
 }
