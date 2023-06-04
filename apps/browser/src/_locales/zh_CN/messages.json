@@ -1462,7 +1462,7 @@
     "message": "项目已自动填充 "
   },
   "insecurePageWarning": {
-    "message": "警告：这是一个不安全的 HTTP 页面，您提交的任何信息都可能被其他人看到和更改。此登录最初保存在安全 (HTTPS) 页面上。"
+    "message": "警告：这是一个不安全的 HTTP 页面，您提交的任何信息都可能被其他人看到和更改。此登录信息最初保存在安全 (HTTPS) 页面上。"
   },
   "insecurePageWarningFillPrompt": {
     "message": "您仍然想要填充此登录信息吗？"
@@ -1471,7 +1471,7 @@
     "message": "该表单由不同于您保存的登录的 URI 域名托管。选择「确定」以自动填充，或选择「取消」停止填充。"
   },
   "autofillIframeWarningTip": {
-    "message": "要防止以后再次出现此警告，请将此站点的 URI $HOSTNAME$ 保存到您的 Bitwarden 登录项目中。",
+    "message": "要防止以后出现此警告，请将此站点的 URI $HOSTNAME$ 保存到您的 Bitwarden 登录项目中。",
     "placeholders": {
       "hostname": {
         "content": "$1",
