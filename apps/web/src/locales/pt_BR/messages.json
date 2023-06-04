@@ -2029,7 +2029,7 @@
     "message": "Cancelar Assinatura"
   },
   "subscriptionExpiration": {
-    "message": "Subscription expiration"
+    "message": "Sua assinatura expirou"
   },
   "subscriptionCanceled": {
     "message": "A assinatura foi cancelada."
@@ -2760,7 +2760,7 @@
     }
   },
   "editItemWithName": {
-    "message": "Edit item - $NAME$",
+    "message": "Editar item - $NAME$",
     "placeholders": {
       "name": {
         "content": "$1",
@@ -3144,7 +3144,7 @@
     "message": "Você pode acessar essa organização quando um administrador confirmar sua associação. Enviaremos um e-mail quando isso acontecer."
   },
   "inviteInitAcceptedDesc": {
-    "message": "You can now access this organization."
+    "message": "Você agora pode acessar esta organização."
   },
   "inviteAcceptFailed": {
     "message": "Não é possível aceitar o convite. Peça a um administrador da organização para enviar um novo convite."
@@ -4577,10 +4577,10 @@
     "message": "A inscrição permitirá que os administradores da organização alterem sua senha mestra. Tem certeza que deseja se inscrever?"
   },
   "accountRecoveryPolicy": {
-    "message": "Account recovery administration"
+    "message": "Gerenciar recuperação de conta"
   },
   "accountRecoveryPolicyDescription": {
-    "message": "Recover member accounts when master password or trusted devices are forgotten or lost. The recovery processes is based on the account encryption method."
+    "message": "Recuperar contas de membros quando a senha mestra ou dispositivos confiáveis são esquecidos ou perdidos. Os processos de recuperação baseiam-se no método de criptografia da conta."
   },
   "resetPasswordPolicyWarning": {
     "message": "Os usuários da organização terão de se inscrever automaticamente ou serem inscritos automaticamente para que os administradores possam redefinir sua senha mestra."
@@ -4865,7 +4865,7 @@
     }
   },
   "vaultTimeoutPolicyWithActionInEffect": {
-    "message": "Your organization policies are affecting your vault timeout. Maximum allowed vault timeout is $HOURS$ hour(s) and $MINUTES$ minute(s). Your vault timeout action is set to $ACTION$.",
+    "message": "As políticas da sua organização estão afetando o tempo limite do seu cofre. O Tempo Limite Máximo permitido do Cofre é {0} hora(s) e {1} minuto(s). Seu tempo limite do cofre está definido em {2}.",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -4882,7 +4882,7 @@
     }
   },
   "vaultTimeoutActionPolicyInEffect": {
-    "message": "Your organization policies have set your vault timeout action to $ACTION$.",
+    "message": "As políticas da sua organização definiram a ação tempo limite do seu cofre para $ACTION$.",
     "placeholders": {
       "action": {
         "content": "$1",
@@ -5231,7 +5231,7 @@
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Connect login with SSO to your self-hosted decryption key server. Using this option, members won’t need to use their master passwords to decrypt vault data. The require SSO authentication and single organization policies are required to set up Key Connector decryption. Contact Bitwarden Support for set up assistance.'"
   },
   "memberDecryptionKeyConnectorDescLink": {
-    "message": "require SSO authentication and single organization policies",
+    "message": "requer autenticação SSO e políticas de organização única",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Connect login with SSO to your self-hosted decryption key server. Using this option, members won’t need to use their master passwords to decrypt vault data. The require SSO authentication and single organization policies are required to set up Key Connector decryption. Contact Bitwarden Support for set up assistance.'"
   },
   "memberDecryptionKeyConnectorDescEnd": {
@@ -5683,7 +5683,7 @@
     }
   },
   "inputMinValue": {
-    "message": "Input value must be at least $MIN$.",
+    "message": "O valor de entrada deve ser pelo menos $MIN$.",
     "placeholders": {
       "min": {
         "content": "$1",
@@ -5692,7 +5692,7 @@
     }
   },
   "inputMaxValue": {
-    "message": "Input value must not exceed $MAX$.",
+    "message": "O valor de entrada não deve exceder $MAX$.",
     "placeholders": {
       "max": {
         "content": "$1",
@@ -6198,7 +6198,7 @@
     "description": "Toast message after deleting one or multiple access tokens."
   },
   "noAccessTokenSelected": {
-    "message": "No access token selected to revoke",
+    "message": "Nenhum token de acesso selecionado para revogar",
     "description": "Toast error message after trying to delete access tokens but not selecting any access tokens."
   },
   "submenu": {
@@ -6283,22 +6283,22 @@
     "message": "Grupo"
   },
   "groupAccessAll": {
-    "message": "This group can access and modify all items."
+    "message": "Este grupo pode acessar e modificar todos os itens."
   },
   "memberAccessAll": {
-    "message": "This member can access and modify all items."
+    "message": "Este usuário pode acessar e modificar todos os itens."
   },
   "domainVerification": {
-    "message": "Domain verification"
+    "message": "Verificação de Domínio"
   },
   "newDomain": {
     "message": "Novo domínio"
   },
   "noDomains": {
-    "message": "No domains"
+    "message": "Sem domínio"
   },
   "noDomainsSubText": {
-    "message": "Connecting a domain allows members to skip the SSO identifier field during Login with SSO."
+    "message": "Conectar um domínio permite que os membros pulem o campo identificador SSO durante o Login com SSO."
   },
   "verifyDomain": {
     "message": "Verificar domínio"
@@ -6307,31 +6307,31 @@
     "message": "Reverificar domínio"
   },
   "copyDnsTxtRecord": {
-    "message": "Copy DNS TXT record"
+    "message": "Copiar registro do DNS TXT"
   },
   "dnsTxtRecord": {
     "message": "Registro DNS TXT"
   },
   "dnsTxtRecordInputHint": {
-    "message": "Copy and paste the TXT record into your DNS Provider."
+    "message": "Copie e cole o registro TXT no seu provedor de DNS."
   },
   "domainNameInputHint": {
-    "message": "Example: mydomain.com. Subdomains require separate entries to be verified."
+    "message": "Exemplo: meudominio.com. Subdomínios requerem entradas separadas para serem verificadas."
   },
   "automaticDomainVerification": {
-    "message": "Automatic Domain Verification"
+    "message": "Verificação de domínio automática"
   },
   "automaticDomainVerificationProcess": {
-    "message": "Bitwarden will attempt to verify the domain 3 times during the first 72 hours. If the domain can’t be verified, check the DNS record in your host and manually verify. The domain will be removed from your organization in 7 days if it is not verified"
+    "message": "O Bitwarden tentará verificar o domínio 3 vezes durante as primeiras 72 horas. Se o domínio não puder ser verificado, cheque o registro DNS no seu host e o verifique manualmente. O domínio será removido da sua organização em 7 dias se não for verificado"
   },
   "invalidDomainNameMessage": {
-    "message": "Input is not a valid format. Format: mydomain.com. Subdomains require separate entries to be verified."
+    "message": "A entrada não está em um formato válido. Formato: meudominio.com. Subdomínios requerem entradas separadas a serem verificadas."
   },
   "removeDomain": {
     "message": "Remover domínio"
   },
   "removeDomainWarning": {
-    "message": "Removing a domain cannot be undone. Are you sure you want to continue?"
+    "message": "A remoção de um domínio não pode ser desfeita. Tem certeza de que deseja continuar?"
   },
   "domainRemoved": {
     "message": "Domínio removido"
@@ -6343,10 +6343,10 @@
     "message": "Domínio verificado"
   },
   "duplicateDomainError": {
-    "message": "You can't claim the same domain twice."
+    "message": "Você não pode reivindicar o mesmo domínio duas vezes."
   },
   "domainNotAvailable": {
-    "message": "Someone else is using $DOMAIN$. Use a different domain to continue.",
+    "message": "$DOMAIN$ já está sendo usado. Use um domínio diferente para continuar.",
     "placeholders": {
       "DOMAIN": {
         "content": "$1",
@@ -6355,7 +6355,7 @@
     }
   },
   "domainNotVerified": {
-    "message": "$DOMAIN$ not verified. Check your DNS record.",
+    "message": "$DOMAIN$ não verificado. Verifique seu registro DNS.",
     "placeholders": {
       "DOMAIN": {
         "content": "$1",
@@ -6376,16 +6376,16 @@
     "message": "Status"
   },
   "lastChecked": {
-    "message": "Last checked"
+    "message": "Última verificação:"
   },
   "editDomain": {
-    "message": "Edit domain"
+    "message": "Editar domínio"
   },
   "domainFormInvalid": {
-    "message": "There are form errors that need your attention"
+    "message": "Há erros de formulário que precisam da sua atenção"
   },
   "addedDomain": {
-    "message": "Added domain $DOMAIN$",
+    "message": "Domínio $DOMAIN$ adicionado",
     "placeholders": {
       "DOMAIN": {
         "content": "$1",
@@ -6394,7 +6394,7 @@
     }
   },
   "removedDomain": {
-    "message": "Removed domain $DOMAIN$",
+    "message": "Domínio $DOMAIN$ removido",
     "placeholders": {
       "DOMAIN": {
         "content": "$1",
@@ -6403,7 +6403,7 @@
     }
   },
   "domainVerifiedEvent": {
-    "message": "$DOMAIN$ verified",
+    "message": "$DOMAIN$ verificado",
     "placeholders": {
       "DOMAIN": {
         "content": "$1",
@@ -6412,7 +6412,7 @@
     }
   },
   "domainNotVerifiedEvent": {
-    "message": "$DOMAIN$ not verified",
+    "message": "$DOMAIN$ não verificado",
     "placeholders": {
       "DOMAIN": {
         "content": "$1",
@@ -6421,28 +6421,28 @@
     }
   },
   "membersColumnHeader": {
-    "message": "Member/Group"
+    "message": "Membro/Grupo"
   },
   "groupAndMemberColumnHeader": {
-    "message": "Member"
+    "message": "Membro"
   },
   "selectGroupsAndMembers": {
-    "message": "Select groups and members"
+    "message": "Selecione grupos e membros"
   },
   "selectGroups": {
-    "message": "Select groups"
+    "message": "Selecione grupos"
   },
   "userPermissionOverrideHelper": {
-    "message": "Permissions set for a member will replace permissions set by that member's group"
+    "message": "Permissões definidas para um membro substituirão as permissões definidas pelo grupo desse membro"
   },
   "noMembersOrGroupsAdded": {
-    "message": "No members or groups added"
+    "message": "Nenhum membro ou grupo adicionado"
   },
   "deleted": {
-    "message": "Deleted"
+    "message": "Excluído"
   },
   "memberStatusFilter": {
-    "message": "Member status filter"
+    "message": "Filtro de status de membros"
   },
   "inviteMember": {
     "message": "Invite member"

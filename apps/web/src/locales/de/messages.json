@@ -4493,13 +4493,13 @@
     "message": "Dein Passwort-Hinweis darf nicht identisch mit deinem Passwort sein."
   },
   "enrollAccountRecovery": {
-    "message": "Enroll in account recovery"
+    "message": "Für Kontowiederherstellung registrieren"
   },
   "enrolledAccountRecovery": {
-    "message": "Enrolled in account recovery"
+    "message": "Für Kontowiederherstellung registriert"
   },
   "withdrawAccountRecovery": {
-    "message": "Withdraw from account recovery"
+    "message": "Von Kontowiederherstellung abmelden"
   },
   "enrollPasswordResetSuccess": {
     "message": "Registrierung erfolgreich!"
@@ -4508,7 +4508,7 @@
     "message": "Abmeldung erfolgreich!"
   },
   "eventEnrollAccountRecovery": {
-    "message": "User $ID$ enrolled in account recovery.",
+    "message": "Der Benutzer $ID$ hat sich für die Kontowiederherstellung registriert.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -4517,7 +4517,7 @@
     }
   },
   "eventWithdrawAccountRecovery": {
-    "message": "User $ID$ withdrew from account recovery.",
+    "message": "Der Benutzer $ID$ hat sich von der Kontowiederherstellung abgemeldet.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -4577,10 +4577,10 @@
     "message": "Die Registrierung erlaubt Administratoren der Organisation, dein Master-Passwort zu ändern. Bist du sicher, dass du dich registrieren möchtest?"
   },
   "accountRecoveryPolicy": {
-    "message": "Account recovery administration"
+    "message": "Kontowiederherstellungsverwaltung"
   },
   "accountRecoveryPolicyDescription": {
-    "message": "Recover member accounts when master password or trusted devices are forgotten or lost. The recovery processes is based on the account encryption method."
+    "message": "Mitgliederkonten wiederherstellen, falls das Master-Passwort oder vertrauenswürdige Geräte vergessen werden oder verloren gehen. Der Wiederherstellungsprozess basiert auf der Verschlüsselungsmethode des Kontos."
   },
   "resetPasswordPolicyWarning": {
     "message": "Benutzer in der Organisation müssen sich selbst registrieren oder automatisch registriert sein, bevor Administratoren deren Master-Passwort zurücksetzen können."
@@ -5227,15 +5227,15 @@
     "message": "Key Connector"
   },
   "memberDecryptionKeyConnectorDescStart": {
-    "message": "Verbinde die Anmeldung über SSO mit deinem selbst gehosteten Entschlüsselungsschlüssel-Server. Mit dieser Option müssen Mitglieder ihre Master-Passwörter nicht verwenden, um Tresordaten zu entschlüsseln.",
+    "message": "Verbinde die Anmeldung über SSO mit deinem selbst gehosteten Entschlüsselungsschlüssel-Server. Mit dieser Option müssen Mitglieder ihre Master-Passwörter nicht verwenden, um Tresordaten zu entschlüsseln. Die",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Connect login with SSO to your self-hosted decryption key server. Using this option, members won’t need to use their master passwords to decrypt vault data. The require SSO authentication and single organization policies are required to set up Key Connector decryption. Contact Bitwarden Support for set up assistance.'"
   },
   "memberDecryptionKeyConnectorDescLink": {
-    "message": "require SSO authentication and single organization policies",
+    "message": "Richtlinien zum Verlangen einer SSO-Authentifizierung und für einzelne Organisationen",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Connect login with SSO to your self-hosted decryption key server. Using this option, members won’t need to use their master passwords to decrypt vault data. The require SSO authentication and single organization policies are required to set up Key Connector decryption. Contact Bitwarden Support for set up assistance.'"
   },
   "memberDecryptionKeyConnectorDescEnd": {
-    "message": "are required to set up Key Connector decryption. Contact Bitwarden Support for set up assistance.",
+    "message": "werden benötigt, um die Key Connector Entschlüsselung einzurichten. Kontaktiere den Bitwarden Support für Hilfe beim Einrichten.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Connect login with SSO to your self-hosted decryption key server. Using this option, members won’t need to use their master passwords to decrypt vault data. The require SSO authentication and single organization policies are required to set up Key Connector decryption. Contact Bitwarden Support for set up assistance.'"
   },
   "keyConnectorPolicyRestriction": {
@@ -6804,7 +6804,7 @@
     "description": "United States"
   },
   "smProjectDeleteAccessRestricted": {
-    "message": "Dir fehlen die Berechtigungen, dieses Projekt zu löschen.",
+    "message": "Dir fehlen die Berechtigungen, dieses Projekt zu löschen",
     "description": "The individual description shown to the user when the user doesn't have access to delete a project."
   },
   "smProjectsDeleteBulkConfirmation": {
@@ -6818,21 +6818,21 @@
     "message": "Vertrauenswürdige Geräteverschlüsselung"
   },
   "memberDecryptionTdeDescriptionStart": {
-    "message": "Once authenticated, members will decrypt vault data using a key stored on their device. The",
+    "message": "Einmal authentifiziert, entschlüsseln Mitglieder Tresordaten mit einem Schlüssel auf ihrem Gerät. Die",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
   "memberDecryptionTdeDescriptionLink": {
-    "message": "account recovery administration policy",
+    "message": "Verwaltungsrichtlinie zur Kontowiederherstellung",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
   "memberDecryptionTdeDescriptionEnd": {
-    "message": "with automatic enrollment will turn on when this option is used.",
+    "message": "mit automatischer Registrierung wird aktiviert, wenn diese Option verwendet wird.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
   "recoverAccount": {
-    "message": "Recover account"
+    "message": "Konto wiederherstellen"
   },
   "updatedTempPassword": {
-    "message": "User updated a password issued through account recovery."
+    "message": "Der Benutzer hat ein Passwort aktualisiert, das durch die Kontowiederherstellung ausgestellt wurde."
   }
 }

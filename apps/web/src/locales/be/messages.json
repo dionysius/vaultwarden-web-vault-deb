@@ -6796,11 +6796,11 @@
     "message": "Region"
   },
   "eu": {
-    "message": "EU",
+    "message": "ЕС",
     "description": "European Union"
   },
   "us": {
-    "message": "US",
+    "message": "ЗША",
     "description": "United States"
   },
   "smProjectDeleteAccessRestricted": {
@@ -6818,7 +6818,7 @@
     "message": "Шыфраванне даверанай прылады"
   },
   "memberDecryptionTdeDescriptionStart": {
-    "message": "Once authenticated, members will decrypt vault data using a key stored on their device. The",
+    "message": "Пасля аўтэнтыфікацыі ўдзельнікі расшыфроўваюць даныя сховішча з выкарыстаннем ключа, якія захоўваецца на іх прыладах",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
   "memberDecryptionTdeDescriptionLink": {

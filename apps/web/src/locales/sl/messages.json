@@ -1141,13 +1141,13 @@
     "message": "Nastavitve kodirnega ključa"
   },
   "kdfAlgorithm": {
-    "message": "KDF algoritem"
+    "message": "Algoritem KDF"
   },
   "kdfIterations": {
-    "message": "KDF iteracije"
+    "message": "Ponovitev KDF"
   },
   "kdfIterationsDesc": {
-    "message": "Higher KDF iterations can help protect your master password from being brute forced by an attacker. We recommend a value of $VALUE$ or more.",
+    "message": "Višje število ponovitev KDF lahko pomaga pri zaščiti vašega glavnega gesla pred napadi z grobo silo. Priporočamo vsaj $VALUE$ ponovitev.",
     "placeholders": {
       "value": {
         "content": "$1",
@@ -1156,7 +1156,7 @@
     }
   },
   "kdfIterationsWarning": {
-    "message": "Setting your KDF iterations too high could result in poor performance when logging into (and unlocking) Bitwarden on slower or older devices. We recommend that you increase the value in increments of $INCREMENT$ and then test all of your devices.",
+    "message": "Če nastavite previsoko število ponovitev KDF, bo Bitwarden morda postal počasen pri prijavi (in odklepanju) na starejših in počasnejših napravah. Priporočamo, da to vrednost povečujete v korakih po $INCREMENT$ in vsakič preskusite vse naprave.",
     "placeholders": {
       "increment": {
         "content": "$1",
@@ -2089,7 +2089,7 @@
     "message": "Odstrani hrambo"
   },
   "subscriptionStorage": {
-    "message": "Your subscription has a total of $MAX_STORAGE$ GB of encrypted file storage. You are currently using $USED_STORAGE$.",
+    "message": "Vaša naročnina vam omogoča hrambo $MAX_STORAGE$ GB šifriranih podatkov. Trenutno uporabljate $USED_STORAGE$.",
     "placeholders": {
       "max_storage": {
         "content": "$1",
@@ -2152,7 +2152,7 @@
     }
   },
   "gbStorageAdd": {
-    "message": "GB of storage to add"
+    "message": "Povečaj hrambo za toliko GB:"
   },
   "gbStorageRemove": {
     "message": "GB of storage to remove"
@@ -3621,7 +3621,7 @@
     "message": "Your API key has full access to the organization. It should be kept secret."
   },
   "userApiKeyDesc": {
-    "message": "Your API key can be used to authenticate in the Bitwarden CLI."
+    "message": "Svoj API-ključ lahko uoprabljate za prijavo pri uporabi ukazne vrstice (CLI)."
   },
   "userApiKeyWarning": {
     "message": "Your API key is an alternative authentication mechanism. It should be kept secret."
@@ -6601,10 +6601,10 @@
     "message": "Group/User"
   },
   "lowKdfIterations": {
-    "message": "Low KDF Iterations"
+    "message": "Nizko število ponovitev KDF"
   },
   "updateLowKdfIterationsDesc": {
-    "message": "Update your encryption settings to meet new security recommendations and improve account protection."
+    "message": "Popravite svoje nastavitve šifriranja, da bodo v skladu z novimi priporočili za varnost, in izboljšajte zaščito svojega računa."
   },
   "changeKdfLoggedOutWarning": {
     "message": "Po tem dejanju boste odjavljeni iz vseh aktivnih sej (na vseh napravah). Prijaviti se boste morali ponovno in zaključiti nastavitev dvostopenjske prijave. Priporočamo vam, da pred tem izvozite svoje podatke, da jih v tem procesu ne bi izgubili."
@@ -6812,7 +6812,7 @@
     "description": "The message shown to the user when bulk deleting projects and the user doesn't have access to some projects."
   },
   "updateKdfSettings": {
-    "message": "Update KDF settings"
+    "message": "Spremeni nastavitve KDF"
   },
   "trustedDeviceEncryption": {
     "message": "Trusted device encryption"

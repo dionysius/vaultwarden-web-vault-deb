@@ -4493,13 +4493,13 @@
     "message": "Paroles norāde nedrīkst būt tāda pati kā parole."
   },
   "enrollAccountRecovery": {
-    "message": "Enroll in account recovery"
+    "message": "Pieteikties konta atkopšanai"
   },
   "enrolledAccountRecovery": {
-    "message": "Enrolled in account recovery"
+    "message": "Pieteicies konta atkopšanai"
   },
   "withdrawAccountRecovery": {
-    "message": "Withdraw from account recovery"
+    "message": "Atsaukt konta atkopšanu"
   },
   "enrollPasswordResetSuccess": {
     "message": "Pievienošana bija veiksmīga."
@@ -4508,7 +4508,7 @@
     "message": "Izņemšana bija veiksmīga."
   },
   "eventEnrollAccountRecovery": {
-    "message": "User $ID$ enrolled in account recovery.",
+    "message": "Lietotājs $ID$ pieteicās konta atkopšanai.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -4517,7 +4517,7 @@
     }
   },
   "eventWithdrawAccountRecovery": {
-    "message": "User $ID$ withdrew from account recovery.",
+    "message": "Lietotājs $ID$ atsauca konta atkopšanu.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -4577,10 +4577,10 @@
     "message": "Ievietošana sarakstā ļaus apvienības pārvaldniekiem mainīt galveno paroli. Vai tiešām ievietot sarakstā?"
   },
   "accountRecoveryPolicy": {
-    "message": "Account recovery administration"
+    "message": "Kontu atkopšanas pārvaldība"
   },
   "accountRecoveryPolicyDescription": {
-    "message": "Recover member accounts when master password or trusted devices are forgotten or lost. The recovery processes is based on the account encryption method."
+    "message": "Atkopj dalībnieku kontus, kad galvenā parole vai uzticamās ierīces ir aizmirstas vai pazaudētas. Atkopšanas pamatā ir konta šifrēšanas veids."
   },
   "resetPasswordPolicyWarning": {
     "message": "Apvienības lietotājiem pašiem būs sevi jāievieto sarakstā vai viņiem jābūt automātiski ievietotiem sarakstā, pirms pārvaldnieki var atiestatīt galveno paroli."
@@ -6818,21 +6818,21 @@
     "message": "Uzticamo ierīču šifrēšana"
   },
   "memberDecryptionTdeDescriptionStart": {
-    "message": "Once authenticated, members will decrypt vault data using a key stored on their device. The",
+    "message": "Pēc pieteikšanās dalībnieki atšifrēs glabātavas saturu ar ierīcē glabātu atslēgu.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
   "memberDecryptionTdeDescriptionLink": {
-    "message": "account recovery administration policy",
+    "message": "Kontu atkopšanas pārvaldības nosacījumi",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
   "memberDecryptionTdeDescriptionEnd": {
-    "message": "with automatic enrollment will turn on when this option is used.",
+    "message": "ar automātisku ievietošanu sarakstā tiks ieslēgts, kad šī iespēja tiek izmantota.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
   "recoverAccount": {
-    "message": "Recover account"
+    "message": "Atkopt kontu"
   },
   "updatedTempPassword": {
-    "message": "User updated a password issued through account recovery."
+    "message": "Lietotājs atjaunināja konta atkopšanas izsniegtu paroli."
   }
 }

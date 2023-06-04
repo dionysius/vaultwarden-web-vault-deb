@@ -2111,7 +2111,7 @@
     "message": "添加付款方式"
   },
   "changePaymentMethod": {
-    "message": "更改支付方式"
+    "message": "更改付款方式"
   },
   "invoices": {
     "message": "账单"
@@ -2176,7 +2176,7 @@
     "message": "联系客户支持"
   },
   "updatedPaymentMethod": {
-    "message": "付款方式已更新"
+    "message": "已更新付款方式。"
   },
   "purchasePremium": {
     "message": "购买高级会员"
@@ -3144,7 +3144,7 @@
     "message": "管理员确认您的成员资格后，您将能访问此组织。到时我们将向您发送电子邮件通知。"
   },
   "inviteInitAcceptedDesc": {
-    "message": "您现在可以访问此组织。"
+    "message": "您现在可以访问这个组织了。"
   },
   "inviteAcceptFailed": {
     "message": "无法接受邀请。请向组织管理员请求发送新的邀请。"
@@ -4580,7 +4580,7 @@
     "message": "账户恢复管理"
   },
   "accountRecoveryPolicyDescription": {
-    "message": "当主密码或受信任设备忘记或丢失时恢复成员账户。此恢复过程基于账户加密方法。"
+    "message": "当主密码或受信任设备忘记或丢失时恢复成员账户。此恢复过程基于账户加密方式。"
   },
   "resetPasswordPolicyWarning": {
     "message": "组织中的成员自行注册或被自动注册后，管理员才能重置他们的主密码。"
@@ -5453,7 +5453,7 @@
     "description": "This is used by screen readers to indicate the organization that is currently being shown to the user."
   },
   "accountLoggedInAsName": {
-    "message": "账户: 以 $NAME$ 登录",
+    "message": "账户：登录为 $NAME$",
     "placeholders": {
       "name": {
         "content": "$1",
@@ -6448,7 +6448,7 @@
     "message": "邀请成员"
   },
   "needsConfirmation": {
-    "message": "需确认"
+    "message": "需要确认"
   },
   "memberRole": {
     "message": "成员角色"
@@ -6553,7 +6553,7 @@
     "message": "计费同步帮助"
   },
   "licensePaidFeaturesHelp": {
-    "message": "License paid features help"
+    "message": "许可证付费功能帮助"
   },
   "selfHostGracePeriodHelp": {
     "message": "订阅到期后，您有 60 天时间为您的组织应用更新后的许可证文件。宽限期结束于 $GRACE_PERIOD_END_DATE$。",
@@ -6713,7 +6713,7 @@
     "message": "机密已恢复"
   },
   "selectionIsRequired": {
-    "message": "必须选择"
+    "message": "必须选择。"
   },
   "secretsManagerSubscriptionDesc": {
     "message": "在 Beta 计划期间，开启组织对机密管理器的访问是免费的。成员中的用户会被授予对 Beta 版的访问权限。"
@@ -6786,7 +6786,7 @@
     "message": "免费组织不能使用此功能。请联系您的组织所有者寻求升级。"
   },
   "smProjectSecretsNoItemsNoAccess": {
-    "message": "请联系您的组织的管理员来管理此项目的秘密。",
+    "message": "请联系您的组织的管理员来管理此工程的机密。",
     "description": "The message shown to the user under a project's secrets tab when the user only has read access to the project."
   },
   "enforceOnLoginDesc": {
@@ -6804,11 +6804,11 @@
     "description": "United States"
   },
   "smProjectDeleteAccessRestricted": {
-    "message": "您无权删除此项目",
+    "message": "您无权删除此工程",
     "description": "The individual description shown to the user when the user doesn't have access to delete a project."
   },
   "smProjectsDeleteBulkConfirmation": {
-    "message": "无法删除下列项目。是否继续？",
+    "message": "无法删除下列工程。是否继续？",
     "description": "The message shown to the user when bulk deleting projects and the user doesn't have access to some projects."
   },
   "updateKdfSettings": {
@@ -6822,7 +6822,7 @@
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
   "memberDecryptionTdeDescriptionLink": {
-    "message": "账户恢复管理策略",
+    "message": "account recovery administration policy",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
   "memberDecryptionTdeDescriptionEnd": {
@@ -6833,6 +6833,6 @@
     "message": "恢复账户"
   },
   "updatedTempPassword": {
-    "message": "User updated a password issued through account recovery."
+    "message": "用户更新了通过账户恢复发布的密码。"
   }
 }

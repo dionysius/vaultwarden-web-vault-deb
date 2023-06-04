@@ -4493,13 +4493,13 @@
     "message": "Підказка для пароля не може бути такою самою, як ваш пароль."
   },
   "enrollAccountRecovery": {
-    "message": "Enroll in account recovery"
+    "message": "Розгорнути на відновлення облікового запису"
   },
   "enrolledAccountRecovery": {
-    "message": "Enrolled in account recovery"
+    "message": "Розгорнуто на відновлення облікового запису"
   },
   "withdrawAccountRecovery": {
-    "message": "Withdraw from account recovery"
+    "message": "Відкликати відновлення облікового запису"
   },
   "enrollPasswordResetSuccess": {
     "message": "Запит успішно подано!"
@@ -4508,7 +4508,7 @@
     "message": "Відмову успішно прийнято!"
   },
   "eventEnrollAccountRecovery": {
-    "message": "User $ID$ enrolled in account recovery.",
+    "message": "Користувача $ID$ розгорнуто на відновлення облікового запису.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -4517,7 +4517,7 @@
     }
   },
   "eventWithdrawAccountRecovery": {
-    "message": "User $ID$ withdrew from account recovery.",
+    "message": "Для користувача $ID$ відкликано відновлення облікового запису.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -4577,10 +4577,10 @@
     "message": "Розгортання дозволить адміністраторам організації змінювати ваш головний пароль"
   },
   "accountRecoveryPolicy": {
-    "message": "Account recovery administration"
+    "message": "Адміністрування відновлення облікового запису"
   },
   "accountRecoveryPolicyDescription": {
-    "message": "Recover member accounts when master password or trusted devices are forgotten or lost. The recovery processes is based on the account encryption method."
+    "message": "Відновлення облікових записів учасників у разі втрати головного пароля або довірених пристроїв. Процес відновлення базується на методі шифрування облікового запису."
   },
   "resetPasswordPolicyWarning": {
     "message": "Учасники організації мають подати запит самостійно, або отримати автоматичне подання запиту, перш ніж адміністратори зможуть скинути їхній пароль."
@@ -6776,7 +6776,7 @@
     }
   },
   "inputTrimValidator": {
-    "message": "Input must not contain only whitespace.",
+    "message": "Введене значення не повинно містити лише пробіл.",
     "description": "Notification to inform the user that a form's input can't contain only whitespace."
   },
   "dismiss": {
@@ -6818,21 +6818,21 @@
     "message": "Шифрування досвіреного пристрою"
   },
   "memberDecryptionTdeDescriptionStart": {
-    "message": "Once authenticated, members will decrypt vault data using a key stored on their device. The",
+    "message": "Після авторизації учасники розшифровуватимуть дані сховища з використанням ключа, збереженого на їхньому пристрої.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
   "memberDecryptionTdeDescriptionLink": {
-    "message": "account recovery administration policy",
+    "message": "Політика адміністрування відновлення облікових записів",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
   "memberDecryptionTdeDescriptionEnd": {
-    "message": "with automatic enrollment will turn on when this option is used.",
+    "message": "з автоматичним розгортанням активується, якщо використовується ця опція.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
   "recoverAccount": {
-    "message": "Recover account"
+    "message": "Відновити обліковий запис"
   },
   "updatedTempPassword": {
-    "message": "User updated a password issued through account recovery."
+    "message": "Користувач оновив пароль під час відновлення облікового запису."
   }
 }

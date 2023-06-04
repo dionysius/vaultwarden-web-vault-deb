@@ -1,6 +1,6 @@
 {
   "pageTitle": {
-    "message": "Cofre Web $APP_NAME$",
+    "message": "Cofre web $APP_NAME$",
     "description": "The title of the website in the browser window.",
     "placeholders": {
       "app_name": {
@@ -41,7 +41,7 @@
     "message": "Nova palavra-passe"
   },
   "passphrase": {
-    "message": "Frase-passe"
+    "message": "Frase de acesso"
   },
   "notes": {
     "message": "Notas"
@@ -80,7 +80,7 @@
     "message": "Número da licença"
   },
   "email": {
-    "message": "Email"
+    "message": "E-mail"
   },
   "phone": {
     "message": "Telefone"
@@ -125,19 +125,19 @@
     "message": "Título"
   },
   "mr": {
-    "message": "Sr"
+    "message": "Sr."
   },
   "mrs": {
-    "message": "Sra"
+    "message": "Sra."
   },
   "ms": {
-    "message": "Sra"
+    "message": "Sra."
   },
   "mx": {
     "message": "Mx"
   },
   "dr": {
-    "message": "Dr"
+    "message": "Dr."
   },
   "expirationMonth": {
     "message": "Mês de expiração"
@@ -164,7 +164,7 @@
     "message": "Texto"
   },
   "cfTypeHidden": {
-    "message": "Ocultado"
+    "message": "Oculto"
   },
   "cfTypeBoolean": {
     "message": "Booleano"
@@ -177,7 +177,7 @@
     "message": "Remover"
   },
   "unassigned": {
-    "message": "Não atribuido"
+    "message": "Não atribuído"
   },
   "noneFolder": {
     "message": "Em nenhuma pasta",
@@ -233,10 +233,10 @@
     "message": "Gerar palavra-passe"
   },
   "checkPassword": {
-    "message": "Verifica se a palavra-passe foi exposta."
+    "message": "Verificar se a palavra-passe foi exposta."
   },
   "passwordExposed": {
-    "message": "Esta palavra-passe foi exposta $VALUE$ vez(es) em brechas de dados. Deve alterá-la.",
+    "message": "Esta palavra-passe foi exposta $VALUE$ vez(es) em violações de dados. Deve alterá-la.",
     "placeholders": {
       "value": {
         "content": "$1",
@@ -245,7 +245,7 @@
     }
   },
   "passwordSafe": {
-    "message": "Esta palavra-passe não foi encontrada em nenhuma brecha de dados conhecida. Esta deve ser segura de utilizar."
+    "message": "Esta palavra-passe não foi encontrada em nenhuma violação de dados conhecida. A sua utilização deve ser segura."
   },
   "save": {
     "message": "Guardar"
@@ -278,7 +278,7 @@
     "message": "Pesquisar Pasta"
   },
   "searchFavorites": {
-    "message": "Pesquisar favoritos"
+    "message": "Procurar nos favoritos"
   },
   "searchLogin": {
     "message": "Search logins",
@@ -303,7 +303,7 @@
     "message": "Procurar no meu cofre"
   },
   "searchOrganization": {
-    "message": "Search organization"
+    "message": "Procurar na organização"
   },
   "searchMembers": {
     "message": "Search members"
@@ -321,7 +321,7 @@
     "message": "Tipos"
   },
   "typeLogin": {
-    "message": "Credencial"
+    "message": "Início de sessão"
   },
   "typeCard": {
     "message": "Cartão"
@@ -354,7 +354,7 @@
     "message": "Nome Próprio"
   },
   "middleName": {
-    "message": "Segundo Nome"
+    "message": "Segundo nome"
   },
   "lastName": {
     "message": "Apelido"
@@ -363,19 +363,19 @@
     "message": "Nome completo"
   },
   "address1": {
-    "message": "Endereço 1"
+    "message": "1.ª morada"
   },
   "address2": {
-    "message": "Endereço 2"
+    "message": "2.ª morada"
   },
   "address3": {
-    "message": "Endereço 3"
+    "message": "3.ª morada"
   },
   "cityTown": {
-    "message": "Cidade / localidade"
+    "message": "Cidade / Localidade"
   },
   "stateProvince": {
-    "message": "Estado / província"
+    "message": "Estado / Província"
   },
   "zipPostalCode": {
     "message": "Código postal"
@@ -562,16 +562,16 @@
     "message": "Tem a certeza de que pretende eliminar este item?"
   },
   "deletedItem": {
-    "message": "Item enviado para o lixo"
+    "message": "Item movido para o lixo"
   },
   "deletedItems": {
-    "message": "Itens enviado para o lixo"
+    "message": "Item movido para o lixo"
   },
   "movedItems": {
     "message": "Itens movidos"
   },
   "overwritePasswordConfirmation": {
-    "message": "Tem a certeza de que pretende sobrescrever a palavra-passe atual?"
+    "message": "Tem a certeza de que pretende substituir a palavra-passe atual?"
   },
   "editedFolder": {
     "message": "Pasta alterada"
@@ -598,7 +598,7 @@
     "message": "A sua sessão expirou."
   },
   "logOutConfirmation": {
-    "message": "Tem a certeza de que pretende terminar a sessão?"
+    "message": "Tem a certeza de que pretende terminar sessão?"
   },
   "logOut": {
     "message": "Terminar sessão"
@@ -616,7 +616,7 @@
     "message": "Inicie sessão ou crie uma nova conta para aceder ao seu cofre seguro."
   },
   "loginWithDevice": {
-    "message": "Iniciar sessão com dispositivo"
+    "message": "Iniciar sessão com o dispositivo"
   },
   "loginWithDeviceEnabledInfo": {
     "message": "O início de sessão com o dispositivo deve ser ativado nas definições da aplicação móvel do Bitwarden. Necessita de outra opção?"
@@ -649,16 +649,16 @@
     "message": "O seu nome"
   },
   "yourNameDesc": {
-    "message": "Como deveremos chamá-lo?"
+    "message": "Como é que lhe devemos chamar?"
   },
   "masterPass": {
     "message": "Palavra-passe mestra"
   },
   "masterPassDesc": {
-    "message": "A palavra-passe mestra é a palavra-passe que utiliza para aceder ao seu cofre. É muito importante que não se esqueça da sua palavra-passe mestra. Não existe maneira de recuperar a palavra-passe no caso de a esquecer."
+    "message": "A palavra-passe mestra é a palavra-passe que utiliza para aceder ao seu cofre. É muito importante que não se esqueça da sua palavra-passe mestra. Não há forma de recuperar a palavra-passe no caso de a esquecer."
   },
   "masterPassImportant": {
-    "message": "A palavras-passe mestra não pode ser recuperada se a esquecer!"
+    "message": "A sua palavra-passe mestra não pode ser recuperada se a esquecer!"
   },
   "masterPassHintDesc": {
     "message": "Uma dica da palavra-passe mestra pode ajudá-lo a lembrar-se da sua palavra-passe, caso se esqueça dela."
@@ -831,7 +831,7 @@
     "message": "Início de sessão indisponível"
   },
   "noTwoStepProviders": {
-    "message": "Esta conta tem a verificação de dois passos configurada, no entanto, nenhum dos fornecedores de dois passos configurados é suportado por este navegador web."
+    "message": "Esta conta tem a verificação de dois passos configurada, no entanto, nenhum dos fornecedores da verificação de dois passos configurada é suportado por este navegador web."
   },
   "noTwoStepProviders2": {
     "message": "Por favor utilize um navegador web suportado (tal como o Chrome) e/ou adicione provedores adicionais que são melhor suportados entre navegadores web (tal como uma aplicação de autenticador)."
@@ -859,11 +859,11 @@
     "message": "Utilize uma YubiKey para aceder à sua conta. Funciona com YubiKey série 4, série 5, e dispositivos NEO."
   },
   "duoDesc": {
-    "message": "Verifique com Duo Security utilizando a aplicação Duo Mobile, SMS, chamada telefónica, ou chave de segurança U2F.",
+    "message": "Verifique com a Duo Security utilizando a aplicação Duo Mobile, SMS, chamada telefónica ou chave de segurança U2F.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "duoOrganizationDesc": {
-    "message": "Verifique com Duo Security para a sua organização utilizando a aplicação Duo Mobile, SMS, chamada telefónica, ou chave de segurança U2F.",
+    "message": "Verifique com a Duo Security para a sua organização utilizando a aplicação Duo Mobile, SMS, chamada telefónica, ou chave de segurança U2F.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc": {
@@ -885,7 +885,7 @@
     "message": "Email"
   },
   "emailDesc": {
-    "message": "Os códigos de verificação vão ser enviados por email para si."
+    "message": "Os códigos de verificação ser-lhe-ão enviados por e-mail."
   },
   "continue": {
     "message": "Continuar"
@@ -906,7 +906,7 @@
     "message": "Edite as coleções em que este item está a ser partilhado. Apenas utilizadores da organização com acesso a estas coleções podem ver este item."
   },
   "deleteSelectedItemsDesc": {
-    "message": "Selecionou $COUNT$ item(s) para eliminar. Tem a certeza de que pretende eliminar todos estes itens?",
+    "message": "Serão movidos $COUNT$ item(ns) para o lixo.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -1135,7 +1135,7 @@
     "message": "Nova palavra-passe mestra"
   },
   "confirmNewMasterPass": {
-    "message": "Confirmar nova palavra-passe"
+    "message": "Confirmar a nova palavra-passe mestra"
   },
   "encKeySettings": {
     "message": "Definições da chave de encriptação"
@@ -2685,7 +2685,7 @@
     }
   },
   "deletedItemId": {
-    "message": "Item $ID$ enviado para o lixo.",
+    "message": "Item $ID$ movido para o lixo.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -3120,10 +3120,10 @@
     "message": "Não foi possível verificar o seu email. Tente enviar um novo email de verificação."
   },
   "emailVerificationRequired": {
-    "message": "Verificação de Email Necessária"
+    "message": "Verificação de e-mail necessária"
   },
   "emailVerificationRequiredDesc": {
-    "message": "Precisa verificar o seu email para usar esta funcionalidade."
+    "message": "É necessário verificar o seu e-mail para utilizar esta funcionalidade."
   },
   "updateBrowser": {
     "message": "Atualizar navegador"
@@ -3204,7 +3204,7 @@
     "message": "As contas de utilizadores permanecerão ativas após a exclusão, mas não estarão mais associadas a essa organização."
   },
   "deletingOrganizationIsPermanentWarning": {
-    "message": "A exclusão de $ORGANIZATION$ é permanente e irreversível.",
+    "message": "A eliminação de $ORGANIZATION$ é permanente e irreversível.",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -3736,10 +3736,10 @@
     "message": "Ação de expiração do cofre"
   },
   "vaultTimeoutActionLockDesc": {
-    "message": "Um cofre bloqueado requer que reintroduza a sua palavra-passe mestra para aceder novamente."
+    "message": "É necessária uma palavra-passe mestra ou outro método de desbloqueio para aceder novamente ao seu cofre."
   },
   "vaultTimeoutActionLogOutDesc": {
-    "message": "Um cofre com sessão terminada requer que se volte a autenticar para o poder aceder novamente."
+    "message": "É necessária uma nova autenticação para aceder novamente ao seu cofre."
   },
   "lock": {
     "message": "Bloquear",
@@ -3852,7 +3852,7 @@
     "message": "Definir palavra-passe mestra"
   },
   "ssoCompleteRegistration": {
-    "message": "Para concluir o início de sessão com SSO, por favor defina uma palavra-passe mestra para aceder e proteger o seu cofre."
+    "message": "Para concluir o início de sessão com SSO, por favor, defina uma palavra-passe mestra para aceder e proteger o seu cofre."
   },
   "identifier": {
     "message": "Identificador"
@@ -4023,7 +4023,7 @@
     "message": "Tem a certeza que pretende remover a senha?"
   },
   "hideEmail": {
-    "message": "Ocultar o meu endereço de correio eletrónico dos destinatários."
+    "message": "Ocultar o meu endereço de e-mail dos destinatários."
   },
   "disableThisSend": {
     "message": "Desabilite este envio para que ninguém possa aceder.",
@@ -4242,7 +4242,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendDisabledWarning": {
-    "message": "Due to an Enterprise policy, you are only able to delete an existing Send.",
+    "message": "Devido a uma política da empresa, só é possível eliminar um Send existente.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendOptions": {
@@ -4396,7 +4396,7 @@
     "message": "O ficheiro que deseja enviar."
   },
   "copySendLinkOnSave": {
-    "message": "Copie o link para o partilhar para a área de transferências ao guardar."
+    "message": "Copiar o link para partilhar este Send para a minha área de transferência ao guardar."
   },
   "sendLinkLabel": {
     "message": "Enviar link",
@@ -4450,7 +4450,7 @@
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Learn more about Bitwarden Send or sign up to **try it today.**'"
   },
   "sendCreatorIdentifier": {
-    "message": "O utilizador do Bitwarden $USER_IDENTIFIER$ compartilhou o seguinte consigo",
+    "message": "O utilizador $USER_IDENTIFIER$ do Bitwarden partilhou o seguinte consigo",
     "placeholders": {
       "user_identifier": {
         "content": "$1",
@@ -4613,13 +4613,13 @@
     "message": "Items that have been in trash for a while will be automatically deleted."
   },
   "passwordPrompt": {
-    "message": "Redefinir senha mestra"
+    "message": "Pedir novamente a palavra-passe mestra"
   },
   "passwordConfirmation": {
-    "message": "Confirmação da senha mestra"
+    "message": "Confirmação da palavra-passe mestra"
   },
   "passwordConfirmationDesc": {
-    "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
+    "message": "Esta ação está protegida. Para continuar, por favor, reintroduza a sua palavra-passe mestra para verificar a sua identidade."
   },
   "reinviteSelected": {
     "message": "Reenviar convites"
@@ -4819,19 +4819,19 @@
     "message": "Adicionar"
   },
   "updatedMasterPassword": {
-    "message": "Senha Mestra Atualizada"
+    "message": "Palavra-passe mestra guardada"
   },
   "updateMasterPassword": {
     "message": "Atualizar palavra-passe mestra"
   },
   "updateMasterPasswordWarning": {
-    "message": "Sua senha mestra foi alterada recentemente por um administrador da sua organização. Para aceder ao cofre, precisa atualizar a sua senha mestra agora. O processo irá desconectá-lo da sessão atual, exigindo que inicie a novamente a sessão. Sessões ativas em outros dispositivos podem continuar ativas por até uma hora."
+    "message": "A sua palavra-passe mestra foi recentemente alterada por um administrador da sua organização. Para aceder ao cofre, tem de atualizar a sua palavra-passe mestra agora. Se prosseguir, sairá da sua sessão atual e terá de iniciar sessão novamente. As sessões ativas noutros dispositivos poderão continuar ativas até uma hora."
   },
   "masterPasswordInvalidWarning": {
-    "message": "Your master password does not meet the policy requirements of this organization. In order to join the organization, you must update your master password now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
+    "message": "A sua palavra-passe mestra não cumpre os requisitos da política desta organização. Para se juntar à organização, tem de atualizar a sua palavra-passe mestra agora. Se prosseguir, sairá da sua sessão atual e terá de voltar a iniciar sessão. As sessões ativas noutros dispositivos poderão continuar ativas até uma hora."
   },
   "updateWeakMasterPasswordWarning": {
-    "message": "Your master password does not meet one or more of your organization policies. In order to access the vault, you must update your master password now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
+    "message": "A sua palavra-passe mestra não cumpre uma ou mais políticas da sua organização. Para aceder ao cofre, tem de atualizar a sua palavra-passe mestra agora. Se prosseguir, sairá da sua sessão atual e terá de iniciar sessão novamente. As sessões ativas noutros dispositivos poderão continuar ativas até uma hora."
   },
   "maximumVaultTimeout": {
     "message": "Expiração do cofre"
@@ -4909,10 +4909,10 @@
     "message": "Do not allow members to export their individual vault data."
   },
   "vaultExportDisabled": {
-    "message": "Exportação de cofre desabilitada"
+    "message": "Exportação do cofre removida"
   },
   "personalVaultExportPolicyInEffect": {
-    "message": "Uma ou mais políticas da organização impedem que exporte o seu cofre pessoal."
+    "message": "Uma ou mais políticas da organização impedem-no de exportar o seu cofre pessoal."
   },
   "activateAutofill": {
     "message": "Ativar o preenchimento automático"
@@ -5404,7 +5404,7 @@
     "message": "A sua sessão expirou. Por favor, volte atrás e tente iniciar sessão novamente."
   },
   "exportingPersonalVaultTitle": {
-    "message": "A exportar cofre pessoal"
+    "message": "A exportar o cofre pessoal"
   },
   "exportingOrganizationVaultTitle": {
     "message": "A exportar cofre da organização"
@@ -5419,7 +5419,7 @@
     }
   },
   "exportingOrganizationVaultDescription": {
-    "message": "Apenas o cofre da organização associado ao(à) $ORGANIZATION$ serão exportados. Os itens do cofre pessoal e os de outras organizações não serão incluídos.",
+    "message": "Apenas o cofre da organização associado a $ORGANIZATION$ serão exportados. Os itens do cofre pessoal e os de outras organizações não serão incluídos.",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -5474,7 +5474,7 @@
     "message": "Password type"
   },
   "regenerateUsername": {
-    "message": "Regerar nome de utilizador"
+    "message": "Regenerar nome de utilizador"
   },
   "generateUsername": {
     "message": "Gerar nome de utilizador"
