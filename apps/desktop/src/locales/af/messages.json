@@ -464,13 +464,13 @@
     "message": "Is u seker u wil hierdie aanhegsel skrap?"
   },
   "attachmentSaved": {
-    "message": "Die aanhegsel is bewaar."
+    "message": "Aanhegsel is bewaar"
   },
   "file": {
     "message": "Lêer"
   },
   "selectFile": {
-    "message": "Kies ’n lêer."
+    "message": "Kies ’n lêer"
   },
   "maxFileSize": {
     "message": "Maksimumlêergrootte is 500 MB."
@@ -711,7 +711,7 @@
     "message": "Ikoonbedienerbronadres"
   },
   "environmentSaved": {
-    "message": "Die omgewingbronadresse is bewaar."
+    "message": "Die omgewingbronadresse is bewaar"
   },
   "ok": {
     "message": "Goed"
@@ -1001,7 +1001,7 @@
     "description": "Copy to clipboard"
   },
   "checkForUpdates": {
-    "message": "Gaan na vir bywerkings"
+    "message": "Gaan na vir bywerkings…"
   },
   "version": {
     "message": "Weergawe $VERSION_NUM$",
@@ -1393,7 +1393,7 @@
     "message": "Ontgrendel met Windows Hello"
   },
   "additionalWindowsHelloSettings": {
-    "message": "Additional Windows Hello settings"
+    "message": "Bykomende Windows Hello-instellings"
   },
   "windowsHelloConsentMessage": {
     "message": "Bevestig vir Bitwarden."
@@ -1414,7 +1414,7 @@
     "message": "Vra vir Touch ID by lansering"
   },
   "requirePasswordOnStart": {
-    "message": "Require password or PIN on app start"
+    "message": "Vereis wagwoord of PIN wanneer toep geopen word"
   },
   "recommendedForSecurity": {
     "message": "Aanbeveel vir veiligheid."
@@ -1859,7 +1859,7 @@
     "message": "U hoofwagwoord is onlangs deur ’n administrateur in u organisasie verander. Om toegang tot u kluis te verkry moet u dit nóú bywerk. Deur voort te gaan word u uit u huidige sessie geteken, waarna u weer sal moet aanteken. Aktiewe sessies op ander toestelle kan vir tot ’n uur steeds aktief bly."
   },
   "updateWeakMasterPasswordWarning": {
-    "message": "Your master password does not meet one or more of your organization policies. In order to access the vault, you must update your master password now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
+    "message": "U hoofwagwoord voldoen nie aan een of meer van die organisasiebeleide nie. Om toegang tot die kluis te kry, moet u nou u hoofwagwoord bywerk. Deur voort te gaan sal u van u huidige sessie afgeteken word, en u sal weer moet aanteken. Aktiewe sessies op ander toestelle kan vir tot een uur aktief bly."
   },
   "hours": {
     "message": "Uur"
@@ -1928,7 +1928,7 @@
     "message": "Verwyder hoofwagwoord"
   },
   "removedMasterPassword": {
-    "message": "Hoofwagwoord is verwyder."
+    "message": "Hoofwagwoord is verwyder"
   },
   "convertOrganizationEncryptionDesc": {
     "message": "$ORGANIZATION$ gebruik SSO met ’n sleutelbediener op ’n eie gasheer. ’n Hoofwagwoord word nie meer vereis vir aantekening vir lede van hierdie organisasie nie.",
@@ -2074,7 +2074,7 @@
     "message": "Premie-intekening word vereis"
   },
   "organizationIsDisabled": {
-    "message": "Organisasie is gedeaktiveer."
+    "message": "Organisasie is gedeaktiveer"
   },
   "disabledOrganizationFilterError": {
     "message": "Items in gedeaktiveerde organisasies is ontoeganklik. Kontak u organisasie-eienaar vir bystand."
@@ -2247,23 +2247,23 @@
     }
   },
   "windowsBiometricUpdateWarning": {
-    "message": "Bitwarden recommends updating your biometric settings to require your master password (or PIN) on the first unlock. Would you like to update your settings now?"
+    "message": "Bitwarden beveel aan dat u u biometriese instellings bywerk om u hoofwagwoord (of PIN) by eerste ontgrendeling te vereis. Wil u nou u instellings bywerk?"
   },
   "windowsBiometricUpdateWarningTitle": {
-    "message": "Recommended Settings Update"
+    "message": "Aanbevole bywerking van instellings"
   },
   "region": {
-    "message": "Region"
+    "message": "Streek"
   },
   "eu": {
     "message": "EU",
     "description": "European Union"
   },
   "us": {
-    "message": "US",
+    "message": "VS",
     "description": "United States"
   },
   "selfHosted": {
-    "message": "Self-hosted"
+    "message": "Selghehuisves"
   }
 }

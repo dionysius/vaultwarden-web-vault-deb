@@ -12,7 +12,7 @@
     "message": "Priljubljene"
   },
   "types": {
-    "message": "Tipi"
+    "message": "Vrste"
   },
   "typeLogin": {
     "message": "Prijava"
@@ -36,7 +36,7 @@
     "message": "Išči v trezorju"
   },
   "addItem": {
-    "message": "Dodaj vnos"
+    "message": "Dodaj element"
   },
   "shared": {
     "message": "Deljeno"
@@ -67,7 +67,7 @@
     "message": "Priloge"
   },
   "viewItem": {
-    "message": "Ogled vnosa"
+    "message": "Prikaži element"
   },
   "name": {
     "message": "Naziv"
@@ -98,7 +98,7 @@
     "message": "Večbesedno geslo"
   },
   "editItem": {
-    "message": "Uredi vnos"
+    "message": "Uredi element"
   },
   "emailAddress": {
     "message": "E-poštni naslov"
@@ -349,13 +349,13 @@
     "message": "Ime je obvezen podatek."
   },
   "addedItem": {
-    "message": "Vnos dodan"
+    "message": "Element dodan"
   },
   "editedItem": {
-    "message": "Vnos urejen"
+    "message": "Element urejen"
   },
   "deleteItem": {
-    "message": "Vnos odstranjen"
+    "message": "Element odstranjen"
   },
   "deleteFolder": {
     "message": "Izbriši mapo"
@@ -367,7 +367,7 @@
     "message": "Ali res želite poslati v koš?"
   },
   "deletedItem": {
-    "message": "Pošlji vnos v smeti"
+    "message": "Pošlji element v smeti"
   },
   "overwritePasswordConfirmation": {
     "message": "Ali ste prepričani, da želite prepisati vaše trenutno geslo?"
@@ -564,10 +564,10 @@
     "message": "An unexpected error has occurred."
   },
   "itemInformation": {
-    "message": "Informacije o vnosu"
+    "message": "Informacije o elementu"
   },
   "noItemsInList": {
-    "message": "Ni vnosov za prikaz."
+    "message": "Ni elementov za prikaz."
   },
   "sendVerificationCode": {
     "message": "Pošlji verifikacijsko kodo po e-pošti"
@@ -1353,7 +1353,7 @@
     "message": "Lastništvo"
   },
   "whoOwnsThisItem": {
-    "message": "Kdo je lastnik tega vnosa?"
+    "message": "Kdo je lastnik tega elementa?"
   },
   "strong": {
     "message": "Močno",
@@ -1922,7 +1922,7 @@
     "message": "One or more organization policies prevents you from exporting your personal vault."
   },
   "addAccount": {
-    "message": "Add account"
+    "message": "Dodaj račun"
   },
   "removeMasterPassword": {
     "message": "Odstranite glavno geslo"

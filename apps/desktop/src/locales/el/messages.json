@@ -542,7 +542,7 @@
     "message": "Απαιτείται επιβεβαίωση του κύριου κωδικού."
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least $VALUE$ characters long.",
+    "message": "Ο κύριος κωδικός πρέπει να έχει τουλάχιστον $VALUE$ χαρακτήρες μήκος.",
     "description": "The Master Password must be at least a specific number of characters long.",
     "placeholders": {
       "value": {
@@ -771,7 +771,7 @@
     "message": "Επικοινωνία"
   },
   "helpAndFeedback": {
-    "message": "Help and feedback"
+    "message": "Βοήθεια και σχόλια"
   },
   "getHelp": {
     "message": "Ζητήστε Βοήθεια"
@@ -1417,7 +1417,7 @@
     "message": "Require password or PIN on app start"
   },
   "recommendedForSecurity": {
-    "message": "Recommended for security."
+    "message": "Συνίσταται για ασφάλεια."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Κλείδωμα με τον κύριο κωδικό πρόσβασης κατά την επανεκκίνηση"
@@ -1540,7 +1540,7 @@
     "message": "Για να ολοκληρώσετε τη σύνδεση με SSO, ορίστε έναν κύριο κωδικό πρόσβασης για πρόσβαση και προστασία του vault σας."
   },
   "currentMasterPass": {
-    "message": "Current master password"
+    "message": "Τρέχων κύριος κωδικός"
   },
   "newMasterPass": {
     "message": "Νέος Κύριος Κωδικός"
@@ -2250,17 +2250,17 @@
     "message": "Bitwarden recommends updating your biometric settings to require your master password (or PIN) on the first unlock. Would you like to update your settings now?"
   },
   "windowsBiometricUpdateWarningTitle": {
-    "message": "Recommended Settings Update"
+    "message": "Ενημέρωση Προτεινόμενων Ρυθμίσεων"
   },
   "region": {
-    "message": "Region"
+    "message": "Περιοχή"
   },
   "eu": {
-    "message": "EU",
+    "message": "ΕΕ",
     "description": "European Union"
   },
   "us": {
-    "message": "US",
+    "message": "ΗΠΑ",
     "description": "United States"
   },
   "selfHosted": {
