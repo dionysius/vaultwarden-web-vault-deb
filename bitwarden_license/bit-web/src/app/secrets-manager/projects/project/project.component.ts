@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from "@angular/router";
 import {
   catchError,
   combineLatest,
+  EMPTY,
   filter,
   Observable,
   startWith,
@@ -12,6 +13,8 @@ import {
 } from "rxjs";
 
 import { DialogServiceAbstraction } from "@bitwarden/angular/services/dialog";
+import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
+import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 
 import { ProjectView } from "../../models/view/project.view";
 import {
@@ -37,7 +40,9 @@ export class ProjectComponent implements OnInit, OnDestroy {
     private route: ActivatedRoute,
     private projectService: ProjectService,
     private router: Router,
-    private dialogService: DialogServiceAbstraction
+    private dialogService: DialogServiceAbstraction,
+    private platformUtilsService: PlatformUtilsService,
+    private i18nService: I18nService
   ) {}
 
   ngOnInit(): void {
@@ -48,10 +53,17 @@ export class ProjectComponent implements OnInit, OnDestroy {
     );
 
     this.project$ = combineLatest([this.route.params, currentProjectEdited]).pipe(
-      switchMap(([params, _]) => {
-        return this.projectService.getByProjectId(params.projectId);
-      }),
-      catchError(async () => this.handleError())
+      switchMap(([params, _]) => this.projectService.getByProjectId(params.projectId)),
+      catchError(() => {
+        this.router.navigate(["/sm", this.organizationId, "projects"]).then(() => {
+          this.platformUtilsService.showToast(
+            "error",
+            null,
+            this.i18nService.t("notFound", this.i18nService.t("project"))
+          );
+        });
+        return EMPTY;
+      })
     );
 
     this.route.params.pipe(takeUntil(this.destroy$)).subscribe((params) => {
@@ -59,12 +71,6 @@ export class ProjectComponent implements OnInit, OnDestroy {
       this.projectId = params.projectId;
     });
   }
-
-  handleError = () => {
-    const projectsListUrl = `/sm/${this.organizationId}/projects/`;
-    this.router.navigate([projectsListUrl]);
-    return new ProjectView();
-  };
 
   ngOnDestroy(): void {
     this.destroy$.next();
