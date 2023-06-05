@@ -1,6 +1,7 @@
 import { NgModule } from "@angular/core";
 
 import { LooseComponentsModule, SharedModule } from "../../shared";
+import { UserVerificationModule } from "../../shared/components/user-verification";
 
 import { AdjustSubscription } from "./adjust-subscription.component";
 import { BillingSyncApiKeyComponent } from "./billing-sync-api-key.component";
@@ -15,7 +16,12 @@ import { SecretsManagerEnrollComponent } from "./secrets-manager/enroll.componen
 import { SubscriptionHiddenComponent } from "./subscription-hidden.component";
 
 @NgModule({
-  imports: [SharedModule, LooseComponentsModule, OrganizationBillingRoutingModule],
+  imports: [
+    SharedModule,
+    LooseComponentsModule,
+    OrganizationBillingRoutingModule,
+    UserVerificationModule,
+  ],
   declarations: [
     AdjustSubscription,
     BillingSyncApiKeyComponent,
