@@ -51,6 +51,7 @@
             class="filter-button"
             (click)="applyFilter(c.node)"
             [attr.aria-pressed]="c.node.id === activeFilter.selectedCollectionId"
+            [title]="c.node.name"
           >
             <i
               *ngIf="c.children.length === 0"
