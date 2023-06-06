@@ -1,19 +1,17 @@
-import { DialogModule } from "@angular/cdk/dialog";
 import { Component } from "@angular/core";
-import { Meta, StoryObj, moduleMetadata } from "@storybook/angular";
+import { Meta, StoryObj, applicationConfig, moduleMetadata } from "@storybook/angular";
 
-import { SimpleDialogType, SimpleDialogOptions } from "@bitwarden/angular/services/dialog";
+import {
+  SimpleDialogType,
+  SimpleDialogOptions,
+  DialogServiceAbstraction,
+} from "@bitwarden/angular/services/dialog";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 
 import { ButtonModule } from "../../button";
 import { CalloutModule } from "../../callout";
-import { IconButtonModule } from "../../icon-button";
-import { SharedModule } from "../../shared/shared.module";
 import { I18nMockService } from "../../utils/i18n-mock.service";
-import { DialogService } from "../dialog.service";
-import { DialogCloseDirective } from "../directives/dialog-close.directive";
-import { DialogTitleContainerDirective } from "../directives/dialog-title-container.directive";
-import { SimpleDialogComponent } from "../simple-dialog/simple-dialog.component";
+import { DialogModule } from "../dialog.module";
 
 @Component({
   template: `
@@ -186,7 +184,7 @@ class StoryDialogComponent {
   calloutType = "info";
   dialogCloseResult: boolean;
 
-  constructor(public dialogService: DialogService, private i18nService: I18nService) {}
+  constructor(public dialogService: DialogServiceAbstraction, private i18nService: I18nService) {}
 
   async openSimpleConfigurableDialog(opts: SimpleDialogOptions) {
     this.dialogCloseResult = await this.dialogService.openSimpleDialog(opts);
@@ -205,10 +203,10 @@ export default {
   component: StoryDialogComponent,
   decorators: [
     moduleMetadata({
-      declarations: [DialogCloseDirective, DialogTitleContainerDirective, SimpleDialogComponent],
-      imports: [SharedModule, IconButtonModule, ButtonModule, DialogModule, CalloutModule],
+      imports: [ButtonModule, DialogModule, CalloutModule],
+    }),
+    applicationConfig({
       providers: [
-        DialogService,
         {
           provide: I18nService,
           useFactory: () => {
