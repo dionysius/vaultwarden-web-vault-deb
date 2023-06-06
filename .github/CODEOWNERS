@@ -52,3 +52,6 @@ libs/common/src/admin-console @bitwarden/team-admin-console-dev
 apps/web/src/app/billing @bitwarden/team-billing-dev
 libs/angular/src/billing @bitwarden/team-billing-dev
 libs/common/src/billing @bitwarden/team-billing-dev
+
+## Platform team files ##
+libs/components @bitwarden/team-platform-dev
