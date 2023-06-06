@@ -1,13 +1,13 @@
 import { ApiService } from "../../../abstractions/api.service";
+import { ErrorResponse } from "../../../models/response/error.response";
 import {
   FileUploadApiMethods,
   FileUploadService,
-} from "../../../abstractions/file-upload/file-upload.service";
-import { Utils } from "../../../misc/utils";
-import { EncArrayBuffer } from "../../../models/domain/enc-array-buffer";
-import { EncString } from "../../../models/domain/enc-string";
-import { SymmetricCryptoKey } from "../../../models/domain/symmetric-crypto-key";
-import { ErrorResponse } from "../../../models/response/error.response";
+} from "../../../platform/abstractions/file-upload/file-upload.service";
+import { Utils } from "../../../platform/misc/utils";
+import { EncArrayBuffer } from "../../../platform/models/domain/enc-array-buffer";
+import { EncString } from "../../../platform/models/domain/enc-string";
+import { SymmetricCryptoKey } from "../../../platform/models/domain/symmetric-crypto-key";
 import { CipherFileUploadService as CipherFileUploadServiceAbstraction } from "../../abstractions/file-upload/cipher-file-upload.service";
 import { Cipher } from "../../models/domain/cipher";
 import { AttachmentRequest } from "../../models/request/attachment.request";

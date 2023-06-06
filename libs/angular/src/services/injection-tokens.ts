@@ -3,8 +3,8 @@ import { InjectionToken } from "@angular/core";
 import {
   AbstractMemoryStorageService,
   AbstractStorageService,
-} from "@bitwarden/common/abstractions/storage.service";
-import { StateFactory } from "@bitwarden/common/factories/stateFactory";
+} from "@bitwarden/common/platform/abstractions/storage.service";
+import { StateFactory } from "@bitwarden/common/platform/factories/state-factory";
 
 export const WINDOW = new InjectionToken<Window>("WINDOW");
 export const MEMORY_STORAGE = new InjectionToken<AbstractMemoryStorageService>("MEMORY_STORAGE");

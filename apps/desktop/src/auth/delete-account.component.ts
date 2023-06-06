@@ -1,10 +1,10 @@
 import { Component } from "@angular/core";
 import { FormBuilder } from "@angular/forms";
 
-import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
-import { LogService } from "@bitwarden/common/abstractions/log.service";
-import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { AccountApiService } from "@bitwarden/common/auth/abstractions/account-api.service";
+import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
+import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
+import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { Verification } from "@bitwarden/common/types/verification";
 
 @Component({

@@ -1,8 +1,8 @@
 import { Jsonify } from "type-fest";
 
-import Domain from "../../../../models/domain/domain-base";
-import { EncString } from "../../../../models/domain/enc-string";
-import { SymmetricCryptoKey } from "../../../../models/domain/symmetric-crypto-key";
+import Domain from "../../../../platform/models/domain/domain-base";
+import { EncString } from "../../../../platform/models/domain/enc-string";
+import { SymmetricCryptoKey } from "../../../../platform/models/domain/symmetric-crypto-key";
 import { SendTextData } from "../data/send-text.data";
 import { SendTextView } from "../view/send-text.view";
 

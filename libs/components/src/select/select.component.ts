@@ -11,7 +11,7 @@ import {
 import { ControlValueAccessor, NgControl, Validators } from "@angular/forms";
 import { NgSelectComponent } from "@ng-select/ng-select";
 
-import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
+import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 
 import { BitFormFieldControl } from "../form-field";
 

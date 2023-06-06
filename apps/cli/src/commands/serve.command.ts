@@ -6,7 +6,7 @@ import * as koaBodyParser from "koa-bodyparser";
 import * as koaJson from "koa-json";
 
 import { KeySuffixOptions } from "@bitwarden/common/enums";
-import { Utils } from "@bitwarden/common/misc/utils";
+import { Utils } from "@bitwarden/common/platform/misc/utils";
 
 import { ConfirmCommand } from "../admin-console/commands/confirm.command";
 import { ShareCommand } from "../admin-console/commands/share.command";

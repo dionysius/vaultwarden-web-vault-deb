@@ -7,7 +7,7 @@ import {
   Translation,
 } from "@bitwarden/angular/services/dialog";
 import { SimpleDialogOptions } from "@bitwarden/angular/services/dialog/simple-dialog-options";
-import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
+import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 
 const DEFAULT_ICON: Record<SimpleDialogType, string> = {
   [SimpleDialogType.PRIMARY]: "bwi-business",

@@ -1,4 +1,4 @@
-import { Utils } from "../../misc/utils";
+import { Utils } from "../../platform/misc/utils";
 
 import { BaseResponse } from "./base.response";
 

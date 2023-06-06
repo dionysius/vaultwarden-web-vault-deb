@@ -74,7 +74,7 @@ import { VaultTimeoutInputComponent } from "./settings/vault-timeout-input.compo
 import { TabsComponent } from "./tabs.component";
 
 // Register the locales for the application
-import "./locales";
+import "../platform/popup/locales";
 
 @NgModule({
   imports: [

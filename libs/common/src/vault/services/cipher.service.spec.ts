@@ -2,15 +2,15 @@
 import { Arg, Substitute, SubstituteOf } from "@fluffy-spoon/substitute";
 
 import { ApiService } from "../../abstractions/api.service";
-import { CryptoService } from "../../abstractions/crypto.service";
-import { EncryptService } from "../../abstractions/encrypt.service";
-import { I18nService } from "../../abstractions/i18n.service";
 import { SearchService } from "../../abstractions/search.service";
 import { SettingsService } from "../../abstractions/settings.service";
-import { StateService } from "../../abstractions/state.service";
-import { EncArrayBuffer } from "../../models/domain/enc-array-buffer";
-import { EncString } from "../../models/domain/enc-string";
-import { SymmetricCryptoKey } from "../../models/domain/symmetric-crypto-key";
+import { CryptoService } from "../../platform/abstractions/crypto.service";
+import { EncryptService } from "../../platform/abstractions/encrypt.service";
+import { I18nService } from "../../platform/abstractions/i18n.service";
+import { StateService } from "../../platform/abstractions/state.service";
+import { EncArrayBuffer } from "../../platform/models/domain/enc-array-buffer";
+import { EncString } from "../../platform/models/domain/enc-string";
+import { SymmetricCryptoKey } from "../../platform/models/domain/symmetric-crypto-key";
 import { CipherFileUploadService } from "../abstractions/file-upload/cipher-file-upload.service";
 import { Cipher } from "../models/domain/cipher";
 

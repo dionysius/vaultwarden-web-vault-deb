@@ -1,7 +1,7 @@
 import {
   Account as BaseAccount,
   AccountSettings as BaseAccountSettings,
-} from "@bitwarden/common/models/domain/account";
+} from "@bitwarden/common/platform/models/domain/account";
 
 export class AccountSettings extends BaseAccountSettings {
   vaultTimeout: number = process.env.NODE_ENV === "development" ? null : 15;

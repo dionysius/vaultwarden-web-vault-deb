@@ -2,7 +2,7 @@ import { formatDate } from "@angular/common";
 import { Injectable } from "@angular/core";
 import { firstValueFrom } from "rxjs";
 
-import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
+import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 
 @Injectable({
   providedIn: "root",

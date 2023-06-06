@@ -9,7 +9,7 @@ import { Overlay, OverlayContainer } from "@angular/cdk/overlay";
 import { ComponentType } from "@angular/cdk/portal";
 import { Inject, Injectable, Injector, Optional, SkipSelf, TemplateRef } from "@angular/core";
 
-import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
+import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 
 import { DialogServiceAbstraction } from "./dialog.service.abstraction";
 import { SimpleDialogOptions } from "./simple-dialog-options";

@@ -1,5 +1,5 @@
 import { UriMatchType } from "../../../enums";
-import { Utils } from "../../../misc/utils";
+import { Utils } from "../../../platform/misc/utils";
 
 import { LoginUriView } from "./login-uri.view";
 

@@ -7,7 +7,7 @@ import * as util from "util";
 import { ipcMain } from "electron";
 import * as ipc from "node-ipc";
 
-import { LogService } from "@bitwarden/common/abstractions/log.service";
+import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 
 import { getIpcSocketRoot } from "../proxy/ipc";
 

@@ -1,6 +1,6 @@
 import { AbstractControl, UntypedFormGroup, ValidatorFn } from "@angular/forms";
 
-import { FormGroupControls } from "@bitwarden/common/abstractions/formValidationErrors.service";
+import { FormGroupControls } from "@bitwarden/common/platform/abstractions/form-validation-errors.service";
 
 export class InputsFieldMatch {
   //check to ensure two fields do not have the same value

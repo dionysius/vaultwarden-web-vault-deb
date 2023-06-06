@@ -2,7 +2,7 @@ import { NotificationsService } from "@bitwarden/common/abstractions/notificatio
 import { VaultTimeoutService } from "@bitwarden/common/abstractions/vaultTimeout/vaultTimeout.service";
 import { VaultTimeoutAction } from "@bitwarden/common/enums/vault-timeout-action.enum";
 
-import { BrowserStateService } from "../services/abstractions/browser-state.service";
+import { BrowserStateService } from "../platform/services/abstractions/browser-state.service";
 
 const IdleInterval = 60 * 5; // 5 minutes
 

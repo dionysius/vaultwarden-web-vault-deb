@@ -5,7 +5,7 @@ import { PolicyType } from "@bitwarden/common/admin-console/enums";
 import { AuthService } from "@bitwarden/common/auth/abstractions/auth.service";
 import { AuthenticationStatus } from "@bitwarden/common/auth/enums/authentication-status";
 import { ThemeType } from "@bitwarden/common/enums";
-import { Utils } from "@bitwarden/common/misc/utils";
+import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
 import { FolderService } from "@bitwarden/common/vault/abstractions/folder/folder.service.abstraction";
 import { CipherType } from "@bitwarden/common/vault/enums/cipher-type";
@@ -17,8 +17,8 @@ import AddLoginRuntimeMessage from "../../background/models/addLoginRuntimeMessa
 import ChangePasswordRuntimeMessage from "../../background/models/changePasswordRuntimeMessage";
 import LockedVaultPendingNotificationsItem from "../../background/models/lockedVaultPendingNotificationsItem";
 import { NotificationQueueMessageType } from "../../background/models/notificationQueueMessageType";
-import { BrowserApi } from "../../browser/browserApi";
-import { BrowserStateService } from "../../services/abstractions/browser-state.service";
+import { BrowserApi } from "../../platform/browser/browser-api";
+import { BrowserStateService } from "../../platform/services/abstractions/browser-state.service";
 import { AutofillService } from "../services/abstractions/autofill.service";
 
 export default class NotificationBackground {

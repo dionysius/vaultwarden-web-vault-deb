@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { fromEvent, Subscription } from "rxjs";
 
-import { BrowserApi } from "../../browser/browserApi";
+import { BrowserApi } from "../../platform/browser/browser-api";
 
 @Injectable()
 export class PopupUtilsService {

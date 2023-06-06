@@ -1,4 +1,4 @@
-import { I18nService as BaseI18nService } from "@bitwarden/common/services/i18n.service";
+import { I18nService as BaseI18nService } from "@bitwarden/common/platform/services/i18n.service";
 
 import { SupportedTranslationLocales } from "../../translation-constants";
 

@@ -1,5 +1,5 @@
 import { mockEnc, mockFromJson } from "../../../../spec";
-import { EncString } from "../../../models/domain/enc-string";
+import { EncString } from "../../../platform/models/domain/enc-string";
 import { FolderData } from "../../models/data/folder.data";
 import { Folder } from "../../models/domain/folder";
 
@@ -40,7 +40,7 @@ describe("Folder", () => {
   });
 
   describe("fromJSON", () => {
-    jest.mock("../../../models/domain/enc-string");
+    jest.mock("../../../platform/models/domain/enc-string");
     jest.spyOn(EncString, "fromJSON").mockImplementation(mockFromJson);
 
     it("initializes nested objects", () => {

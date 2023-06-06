@@ -5,24 +5,24 @@ import {
 import {
   EventCollectionServiceInitOptions,
   eventCollectionServiceFactory,
-} from "../../../background/service_factories/event-collection-service.factory";
+} from "../../../background/service-factories/event-collection-service.factory";
+import {
+  settingsServiceFactory,
+  SettingsServiceInitOptions,
+} from "../../../background/service-factories/settings-service.factory";
 import {
   CachedServices,
   factory,
   FactoryOptions,
-} from "../../../background/service_factories/factory-options";
+} from "../../../platform/background/service-factories/factory-options";
 import {
   logServiceFactory,
   LogServiceInitOptions,
-} from "../../../background/service_factories/log-service.factory";
-import {
-  settingsServiceFactory,
-  SettingsServiceInitOptions,
-} from "../../../background/service_factories/settings-service.factory";
+} from "../../../platform/background/service-factories/log-service.factory";
 import {
   stateServiceFactory,
   StateServiceInitOptions,
-} from "../../../background/service_factories/state-service.factory";
+} from "../../../platform/background/service-factories/state-service.factory";
 import {
   cipherServiceFactory,
   CipherServiceInitOptions,

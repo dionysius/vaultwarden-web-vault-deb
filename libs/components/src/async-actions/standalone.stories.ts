@@ -3,8 +3,8 @@ import { action } from "@storybook/addon-actions";
 import { Meta, StoryObj, moduleMetadata } from "@storybook/angular";
 import { delay, of } from "rxjs";
 
-import { LogService } from "@bitwarden/common/abstractions/log.service";
-import { ValidationService } from "@bitwarden/common/abstractions/validation.service";
+import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
+import { ValidationService } from "@bitwarden/common/platform/abstractions/validation.service";
 
 import { ButtonModule } from "../button";
 import { IconButtonModule } from "../icon-button";

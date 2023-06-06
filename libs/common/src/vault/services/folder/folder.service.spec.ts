@@ -2,12 +2,12 @@
 import { Arg, Substitute, SubstituteOf } from "@fluffy-spoon/substitute";
 import { BehaviorSubject, firstValueFrom } from "rxjs";
 
-import { CryptoService } from "../../../abstractions/crypto.service";
-import { EncryptService } from "../../../abstractions/encrypt.service";
-import { I18nService } from "../../../abstractions/i18n.service";
-import { EncString } from "../../../models/domain/enc-string";
-import { ContainerService } from "../../../services/container.service";
-import { StateService } from "../../../services/state.service";
+import { CryptoService } from "../../../platform/abstractions/crypto.service";
+import { EncryptService } from "../../../platform/abstractions/encrypt.service";
+import { I18nService } from "../../../platform/abstractions/i18n.service";
+import { EncString } from "../../../platform/models/domain/enc-string";
+import { ContainerService } from "../../../platform/services/container.service";
+import { StateService } from "../../../platform/services/state.service";
 import { CipherService } from "../../abstractions/cipher.service";
 import { FolderData } from "../../models/data/folder.data";
 import { FolderView } from "../../models/view/folder.view";

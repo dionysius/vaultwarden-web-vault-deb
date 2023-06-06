@@ -1,8 +1,8 @@
 import { Jsonify } from "type-fest";
 
-import Domain from "../../../models/domain/domain-base";
-import { EncString } from "../../../models/domain/enc-string";
-import { SymmetricCryptoKey } from "../../../models/domain/symmetric-crypto-key";
+import Domain from "../../../platform/models/domain/domain-base";
+import { EncString } from "../../../platform/models/domain/enc-string";
+import { SymmetricCryptoKey } from "../../../platform/models/domain/symmetric-crypto-key";
 import { IdentityData } from "../data/identity.data";
 import { IdentityView } from "../view/identity.view";
 

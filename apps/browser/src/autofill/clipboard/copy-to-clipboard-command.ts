@@ -1,4 +1,4 @@
-import { BrowserApi } from "../../browser/browserApi";
+import { BrowserApi } from "../../platform/browser/browser-api";
 
 /**
  * Copies text to the clipboard in a MV3 safe way.

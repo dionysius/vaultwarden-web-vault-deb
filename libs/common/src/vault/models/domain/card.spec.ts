@@ -1,5 +1,5 @@
 import { mockEnc, mockFromJson } from "../../../../spec";
-import { EncString } from "../../../models/domain/enc-string";
+import { EncString } from "../../../platform/models/domain/enc-string";
 import { CardData } from "../../../vault/models/data/card.data";
 import { Card } from "../../models/domain/card";
 

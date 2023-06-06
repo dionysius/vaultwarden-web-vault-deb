@@ -1,8 +1,8 @@
 import * as inquirer from "inquirer";
 
-import { EnvironmentService } from "@bitwarden/common/abstractions/environment.service";
 import { OrganizationApiServiceAbstraction } from "@bitwarden/common/admin-console/abstractions/organization/organization-api.service.abstraction";
 import { KeyConnectorService } from "@bitwarden/common/auth/abstractions/key-connector.service";
+import { EnvironmentService } from "@bitwarden/common/platform/abstractions/environment.service";
 import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
 
 import { Response } from "../models/response";

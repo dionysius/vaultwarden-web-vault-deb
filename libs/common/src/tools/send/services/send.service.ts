@@ -1,14 +1,14 @@
 import { BehaviorSubject, concatMap } from "rxjs";
 
-import { CryptoService } from "../../../abstractions/crypto.service";
-import { CryptoFunctionService } from "../../../abstractions/cryptoFunction.service";
-import { I18nService } from "../../../abstractions/i18n.service";
-import { StateService } from "../../../abstractions/state.service";
 import { SEND_KDF_ITERATIONS } from "../../../enums";
-import { Utils } from "../../../misc/utils";
-import { EncArrayBuffer } from "../../../models/domain/enc-array-buffer";
-import { EncString } from "../../../models/domain/enc-string";
-import { SymmetricCryptoKey } from "../../../models/domain/symmetric-crypto-key";
+import { CryptoFunctionService } from "../../../platform/abstractions/crypto-function.service";
+import { CryptoService } from "../../../platform/abstractions/crypto.service";
+import { I18nService } from "../../../platform/abstractions/i18n.service";
+import { StateService } from "../../../platform/abstractions/state.service";
+import { Utils } from "../../../platform/misc/utils";
+import { EncArrayBuffer } from "../../../platform/models/domain/enc-array-buffer";
+import { EncString } from "../../../platform/models/domain/enc-string";
+import { SymmetricCryptoKey } from "../../../platform/models/domain/symmetric-crypto-key";
 import { SendType } from "../enums/send-type";
 import { SendData } from "../models/data/send.data";
 import { Send } from "../models/domain/send";

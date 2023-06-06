@@ -1,5 +1,5 @@
 import { ClientType } from "../../../../enums";
-import { Utils } from "../../../../misc/utils";
+import { Utils } from "../../../../platform/misc/utils";
 import { CaptchaProtectedRequest } from "../captcha-protected.request";
 
 import { DeviceRequest } from "./device.request";

@@ -1,11 +1,11 @@
 import { Component } from "@angular/core";
 import { Observable } from "rxjs";
 
-import { ConfigServiceAbstraction } from "@bitwarden/common/abstractions/config/config.service.abstraction";
-import { ServerConfig } from "@bitwarden/common/abstractions/config/server-config";
-import { EnvironmentService } from "@bitwarden/common/abstractions/environment.service";
+import { ConfigServiceAbstraction } from "@bitwarden/common/platform/abstractions/config/config.service.abstraction";
+import { ServerConfig } from "@bitwarden/common/platform/abstractions/config/server-config";
+import { EnvironmentService } from "@bitwarden/common/platform/abstractions/environment.service";
 
-import { BrowserApi } from "../../browser/browserApi";
+import { BrowserApi } from "../../platform/browser/browser-api";
 
 @Component({
   selector: "app-about",

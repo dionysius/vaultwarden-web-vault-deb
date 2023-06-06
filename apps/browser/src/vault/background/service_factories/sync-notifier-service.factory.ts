@@ -5,7 +5,7 @@ import {
   FactoryOptions,
   CachedServices,
   factory,
-} from "../../../background/service_factories/factory-options";
+} from "../../../platform/background/service-factories/factory-options";
 
 type SyncNotifierServiceFactoryOptions = FactoryOptions;
 

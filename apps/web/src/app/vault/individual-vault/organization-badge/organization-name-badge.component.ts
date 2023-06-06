@@ -1,9 +1,9 @@
 import { Component, Input, OnChanges } from "@angular/core";
 
 import { AvatarUpdateService } from "@bitwarden/common/abstractions/account/avatar-update.service";
-import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { TokenService } from "@bitwarden/common/auth/abstractions/token.service";
-import { Utils } from "@bitwarden/common/misc/utils";
+import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
+import { Utils } from "@bitwarden/common/platform/misc/utils";
 
 import { Unassigned } from "../vault-filter/shared/models/routed-vault-filter.model";
 

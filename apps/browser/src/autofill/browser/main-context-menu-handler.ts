@@ -1,26 +1,26 @@
-import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
-import { LogService } from "@bitwarden/common/abstractions/log.service";
-import { StateFactory } from "@bitwarden/common/factories/stateFactory";
-import { Utils } from "@bitwarden/common/misc/utils";
-import { GlobalState } from "@bitwarden/common/models/domain/global-state";
+import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
+import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
+import { StateFactory } from "@bitwarden/common/platform/factories/state-factory";
+import { Utils } from "@bitwarden/common/platform/misc/utils";
+import { GlobalState } from "@bitwarden/common/platform/models/domain/global-state";
 import { CipherType } from "@bitwarden/common/vault/enums/cipher-type";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 
-import { CachedServices } from "../../background/service_factories/factory-options";
+import { Account } from "../../models/account";
+import { CachedServices } from "../../platform/background/service-factories/factory-options";
 import {
   i18nServiceFactory,
   I18nServiceInitOptions,
-} from "../../background/service_factories/i18n-service.factory";
+} from "../../platform/background/service-factories/i18n-service.factory";
 import {
   logServiceFactory,
   LogServiceInitOptions,
-} from "../../background/service_factories/log-service.factory";
+} from "../../platform/background/service-factories/log-service.factory";
 import {
   stateServiceFactory,
   StateServiceInitOptions,
-} from "../../background/service_factories/state-service.factory";
-import { Account } from "../../models/account";
-import { BrowserStateService } from "../../services/abstractions/browser-state.service";
+} from "../../platform/background/service-factories/state-service.factory";
+import { BrowserStateService } from "../../platform/services/abstractions/browser-state.service";
 
 export const ROOT_ID = "root";
 

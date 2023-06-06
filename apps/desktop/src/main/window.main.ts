@@ -3,9 +3,9 @@ import * as url from "url";
 
 import { app, BrowserWindow, screen } from "electron";
 
-import { LogService } from "@bitwarden/common/abstractions/log.service";
-import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { WindowState } from "@bitwarden/common/models/domain/window-state";
+import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
+import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
 
 import { cleanUserAgent, isDev, isMacAppStore, isSnapStore } from "../utils";
 

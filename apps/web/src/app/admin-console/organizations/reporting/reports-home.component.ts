@@ -2,8 +2,8 @@ import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, NavigationEnd, Router } from "@angular/router";
 import { filter, map, Observable, startWith } from "rxjs";
 
-import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
+import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
 
 import { ReportVariant, reports, ReportType, ReportEntry } from "../../../reports";
 

@@ -2,8 +2,6 @@
 import { Arg, Substitute, SubstituteOf } from "@fluffy-spoon/substitute";
 import { BehaviorSubject, firstValueFrom } from "rxjs";
 
-import { CryptoService } from "../abstractions/crypto.service";
-import { EncryptService } from "../abstractions/encrypt.service";
 import { OrganizationService } from "../admin-console/abstractions/organization/organization.service.abstraction";
 import { OrganizationUserStatusType, PolicyType } from "../admin-console/enums";
 import { PermissionsApi } from "../admin-console/models/api/permissions.api";
@@ -16,9 +14,10 @@ import { ResetPasswordPolicyOptions } from "../admin-console/models/domain/reset
 import { PolicyResponse } from "../admin-console/models/response/policy.response";
 import { PolicyService } from "../admin-console/services/policy/policy.service";
 import { ListResponse } from "../models/response/list.response";
-
-import { ContainerService } from "./container.service";
-import { StateService } from "./state.service";
+import { CryptoService } from "../platform/abstractions/crypto.service";
+import { EncryptService } from "../platform/abstractions/encrypt.service";
+import { ContainerService } from "../platform/services/container.service";
+import { StateService } from "../platform/services/state.service";
 
 describe("PolicyService", () => {
   let policyService: PolicyService;

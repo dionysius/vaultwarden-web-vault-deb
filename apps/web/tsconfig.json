@@ -22,6 +22,6 @@
     "src/connectors/*.ts",
     "src/**/*.stories.ts",
     "src/**/*.spec.ts",
-    "../../libs/common/src/services/**/*.worker.ts"
+    "../../libs/common/src/platform/services/**/*.worker.ts"
   ]
 }

@@ -1,12 +1,12 @@
-import { AppIdService } from "../abstractions/appId.service";
-import { CryptoService } from "../abstractions/crypto.service";
-import { CryptoFunctionService } from "../abstractions/cryptoFunction.service";
 import { DeviceCryptoServiceAbstraction } from "../abstractions/device-crypto.service.abstraction";
 import { DevicesApiServiceAbstraction } from "../abstractions/devices/devices-api.service.abstraction";
 import { DeviceResponse } from "../abstractions/devices/responses/device.response";
-import { EncryptService } from "../abstractions/encrypt.service";
-import { StateService } from "../abstractions/state.service";
-import { DeviceKey, SymmetricCryptoKey } from "../models/domain/symmetric-crypto-key";
+import { AppIdService } from "../platform/abstractions/app-id.service";
+import { CryptoFunctionService } from "../platform/abstractions/crypto-function.service";
+import { CryptoService } from "../platform/abstractions/crypto.service";
+import { EncryptService } from "../platform/abstractions/encrypt.service";
+import { StateService } from "../platform/abstractions/state.service";
+import { SymmetricCryptoKey, DeviceKey } from "../platform/models/domain/symmetric-crypto-key";
 import { CsprngArray } from "../types/csprng";
 
 export class DeviceCryptoService implements DeviceCryptoServiceAbstraction {

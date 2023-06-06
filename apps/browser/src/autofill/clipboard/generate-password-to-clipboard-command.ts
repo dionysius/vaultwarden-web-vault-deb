@@ -1,7 +1,7 @@
 import { PasswordGenerationServiceAbstraction } from "@bitwarden/common/tools/generator/password";
 
-import { setAlarmTime } from "../../alarms/alarm-state";
-import { BrowserStateService } from "../../services/abstractions/browser-state.service";
+import { setAlarmTime } from "../../platform/alarms/alarm-state";
+import { BrowserStateService } from "../../platform/services/abstractions/browser-state.service";
 
 import { clearClipboardAlarmName } from "./clear-clipboard";
 import { copyToClipboard } from "./copy-to-clipboard-command";

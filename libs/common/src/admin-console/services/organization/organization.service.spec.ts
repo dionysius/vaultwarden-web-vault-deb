@@ -1,7 +1,7 @@
 import { MockProxy, mock, any, mockClear } from "jest-mock-extended";
 import { BehaviorSubject, firstValueFrom } from "rxjs";
 
-import { StateService } from "../../../abstractions/state.service";
+import { StateService } from "../../../platform/abstractions/state.service";
 import { OrganizationData } from "../../models/data/organization.data";
 
 import { OrganizationService } from "./organization.service";

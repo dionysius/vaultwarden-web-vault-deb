@@ -1,7 +1,7 @@
-import { CryptoService } from "../../../abstractions/crypto.service";
-import { I18nService } from "../../../abstractions/i18n.service";
 import { UserVerificationApiServiceAbstraction } from "../../../abstractions/userVerification/userVerification-api.service.abstraction";
 import { UserVerificationService as UserVerificationServiceAbstraction } from "../../../abstractions/userVerification/userVerification.service.abstraction";
+import { CryptoService } from "../../../platform/abstractions/crypto.service";
+import { I18nService } from "../../../platform/abstractions/i18n.service";
 import { Verification } from "../../../types/verification";
 import { VerificationType } from "../../enums/verification-type";
 import { SecretVerificationRequest } from "../../models/request/secret-verification.request";

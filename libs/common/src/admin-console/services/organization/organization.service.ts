@@ -1,6 +1,6 @@
 import { BehaviorSubject, concatMap, map, Observable } from "rxjs";
 
-import { StateService } from "../../../abstractions/state.service";
+import { StateService } from "../../../platform/abstractions/state.service";
 import {
   InternalOrganizationService as InternalOrganizationServiceAbstraction,
   isMember,

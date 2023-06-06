@@ -4,13 +4,13 @@ import { Component, OnDestroy, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 import { concatMap, Subject, takeUntil } from "rxjs";
 
-import { MessagingService } from "@bitwarden/common/abstractions/messaging.service";
-import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { AuthService } from "@bitwarden/common/auth/abstractions/auth.service";
 import { TokenService } from "@bitwarden/common/auth/abstractions/token.service";
 import { AuthenticationStatus } from "@bitwarden/common/auth/enums/authentication-status";
-import { Utils } from "@bitwarden/common/misc/utils";
-import { Account } from "@bitwarden/common/models/domain/account";
+import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
+import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
+import { Utils } from "@bitwarden/common/platform/misc/utils";
+import { Account } from "@bitwarden/common/platform/models/domain/account";
 
 type ActiveAccount = {
   id: string;

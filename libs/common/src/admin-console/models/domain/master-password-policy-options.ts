@@ -1,5 +1,5 @@
 import { MasterPasswordPolicyResponse } from "../../../auth/models/response/master-password-policy.response";
-import Domain from "../../../models/domain/domain-base";
+import Domain from "../../../platform/models/domain/domain-base";
 
 export class MasterPasswordPolicyOptions extends Domain {
   minComplexity = 0;

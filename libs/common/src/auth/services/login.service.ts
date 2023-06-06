@@ -1,4 +1,4 @@
-import { StateService } from "../../abstractions/state.service";
+import { StateService } from "../../platform/abstractions/state.service";
 import { LoginService as LoginServiceAbstraction } from "../abstractions/login.service";
 
 export class LoginService implements LoginServiceAbstraction {

@@ -1,7 +1,7 @@
 import { ApiService } from "../../../abstractions/api.service";
-import { CryptoService } from "../../../abstractions/crypto.service";
-import { StateService } from "../../../abstractions/state.service";
-import { EFFLongWordList } from "../../../misc/wordlist";
+import { CryptoService } from "../../../platform/abstractions/crypto.service";
+import { StateService } from "../../../platform/abstractions/state.service";
+import { EFFLongWordList } from "../../../platform/misc/wordlist";
 
 import {
   AnonAddyForwarder,

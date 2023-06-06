@@ -1,7 +1,7 @@
 import { Pipe, PipeTransform } from "@angular/core";
 
-import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { OrganizationUserType } from "@bitwarden/common/admin-console/enums";
+import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 
 @Pipe({
   name: "userType",

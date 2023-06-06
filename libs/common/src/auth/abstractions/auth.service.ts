@@ -1,7 +1,7 @@
 import { Observable } from "rxjs";
 
-import { SymmetricCryptoKey } from "../../models/domain/symmetric-crypto-key";
 import { AuthRequestPushNotification } from "../../models/response/notification.response";
+import { SymmetricCryptoKey } from "../../platform/models/domain/symmetric-crypto-key";
 import { AuthenticationStatus } from "../enums/authentication-status";
 import { AuthResult } from "../models/domain/auth-result";
 import {

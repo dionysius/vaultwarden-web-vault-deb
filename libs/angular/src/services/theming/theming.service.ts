@@ -2,8 +2,8 @@ import { DOCUMENT } from "@angular/common";
 import { Inject, Injectable } from "@angular/core";
 import { BehaviorSubject, filter, fromEvent, Observable } from "rxjs";
 
-import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { ThemeType } from "@bitwarden/common/enums";
+import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
 
 import { WINDOW } from "../injection-tokens";
 

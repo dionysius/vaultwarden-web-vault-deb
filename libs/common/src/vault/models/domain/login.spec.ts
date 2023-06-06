@@ -3,7 +3,7 @@ import { Substitute, Arg } from "@fluffy-spoon/substitute";
 
 import { mockEnc, mockFromJson } from "../../../../spec";
 import { UriMatchType } from "../../../enums";
-import { EncString } from "../../../models/domain/enc-string";
+import { EncString } from "../../../platform/models/domain/enc-string";
 import { LoginData } from "../../models/data/login.data";
 import { Login } from "../../models/domain/login";
 import { LoginUri } from "../../models/domain/login-uri";

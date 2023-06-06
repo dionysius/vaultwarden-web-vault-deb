@@ -1,4 +1,4 @@
-import Domain from "../../../models/domain/domain-base";
+import Domain from "../../../platform/models/domain/domain-base";
 import { PolicyType } from "../../enums";
 import { PolicyData } from "../data/policy.data";
 

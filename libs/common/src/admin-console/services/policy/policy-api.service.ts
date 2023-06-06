@@ -1,9 +1,9 @@
 import { firstValueFrom } from "rxjs";
 
 import { ApiService } from "../../../abstractions/api.service";
-import { StateService } from "../../../abstractions/state.service";
-import { Utils } from "../../../misc/utils";
 import { ListResponse } from "../../../models/response/list.response";
+import { StateService } from "../../../platform/abstractions/state.service";
+import { Utils } from "../../../platform/misc/utils";
 import { PolicyApiServiceAbstraction } from "../../abstractions/policy/policy-api.service.abstraction";
 import { InternalPolicyService } from "../../abstractions/policy/policy.service.abstraction";
 import { PolicyType } from "../../enums";

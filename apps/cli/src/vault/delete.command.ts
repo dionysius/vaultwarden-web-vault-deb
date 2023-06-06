@@ -1,6 +1,6 @@
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
-import { StateService } from "@bitwarden/common/abstractions/state.service";
-import { Utils } from "@bitwarden/common/misc/utils";
+import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
+import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
 import { FolderApiServiceAbstraction } from "@bitwarden/common/vault/abstractions/folder/folder-api.service.abstraction";
 import { FolderService } from "@bitwarden/common/vault/abstractions/folder/folder.service.abstraction";

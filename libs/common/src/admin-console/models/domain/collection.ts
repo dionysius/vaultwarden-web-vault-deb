@@ -1,5 +1,5 @@
-import Domain from "../../../models/domain/domain-base";
-import { EncString } from "../../../models/domain/enc-string";
+import Domain from "../../../platform/models/domain/domain-base";
+import { EncString } from "../../../platform/models/domain/enc-string";
 import { CollectionData } from "../data/collection.data";
 import { CollectionView } from "../view/collection.view";
 

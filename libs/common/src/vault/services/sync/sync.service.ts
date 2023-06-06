@@ -1,9 +1,5 @@
 import { ApiService } from "../../../abstractions/api.service";
-import { CryptoService } from "../../../abstractions/crypto.service";
-import { LogService } from "../../../abstractions/log.service";
-import { MessagingService } from "../../../abstractions/messaging.service";
 import { SettingsService } from "../../../abstractions/settings.service";
-import { StateService } from "../../../abstractions/state.service";
 import { CollectionService } from "../../../admin-console/abstractions/collection.service";
 import { InternalOrganizationService } from "../../../admin-console/abstractions/organization/organization.service.abstraction";
 import { InternalPolicyService } from "../../../admin-console/abstractions/policy/policy.service.abstraction";
@@ -16,7 +12,6 @@ import { CollectionDetailsResponse } from "../../../admin-console/models/respons
 import { PolicyResponse } from "../../../admin-console/models/response/policy.response";
 import { KeyConnectorService } from "../../../auth/abstractions/key-connector.service";
 import { ForceResetPasswordReason } from "../../../auth/models/domain/force-reset-password-reason";
-import { sequentialize } from "../../../misc/sequentialize";
 import { DomainsResponse } from "../../../models/response/domains.response";
 import {
   SyncCipherNotification,
@@ -24,6 +19,11 @@ import {
   SyncSendNotification,
 } from "../../../models/response/notification.response";
 import { ProfileResponse } from "../../../models/response/profile.response";
+import { CryptoService } from "../../../platform/abstractions/crypto.service";
+import { LogService } from "../../../platform/abstractions/log.service";
+import { MessagingService } from "../../../platform/abstractions/messaging.service";
+import { StateService } from "../../../platform/abstractions/state.service";
+import { sequentialize } from "../../../platform/misc/sequentialize";
 import { SendData } from "../../../tools/send/models/data/send.data";
 import { SendResponse } from "../../../tools/send/models/response/send.response";
 import { SendApiService } from "../../../tools/send/services/send-api.service.abstraction";

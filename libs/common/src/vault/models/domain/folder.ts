@@ -1,7 +1,7 @@
 import { Jsonify } from "type-fest";
 
-import Domain from "../../../models/domain/domain-base";
-import { EncString } from "../../../models/domain/enc-string";
+import Domain from "../../../platform/models/domain/domain-base";
+import { EncString } from "../../../platform/models/domain/enc-string";
 import { FolderData } from "../data/folder.data";
 import { FolderView } from "../view/folder.view";
 

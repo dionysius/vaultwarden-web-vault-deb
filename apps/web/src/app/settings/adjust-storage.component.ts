@@ -2,12 +2,12 @@ import { Component, EventEmitter, Input, Output, ViewChild } from "@angular/core
 import { ActivatedRoute, Router } from "@angular/router";
 
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
-import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
-import { LogService } from "@bitwarden/common/abstractions/log.service";
-import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { OrganizationApiServiceAbstraction } from "@bitwarden/common/admin-console/abstractions/organization/organization-api.service.abstraction";
 import { PaymentResponse } from "@bitwarden/common/billing/models/response/payment.response";
 import { StorageRequest } from "@bitwarden/common/models/request/storage.request";
+import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
+import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
+import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 
 import { PaymentComponent } from "../billing/settings/payment.component";
 

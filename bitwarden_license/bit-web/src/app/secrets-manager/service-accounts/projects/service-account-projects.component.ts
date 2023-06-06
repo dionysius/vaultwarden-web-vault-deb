@@ -2,7 +2,7 @@ import { Component } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { combineLatestWith, map, Observable, startWith, Subject, switchMap, takeUntil } from "rxjs";
 
-import { ValidationService } from "@bitwarden/common/abstractions/validation.service";
+import { ValidationService } from "@bitwarden/common/platform/abstractions/validation.service";
 import { SelectItemView } from "@bitwarden/components/src/multi-select/models/select-item-view";
 
 import { ServiceAccountProjectAccessPolicyView } from "../../models/view/access-policy.view";

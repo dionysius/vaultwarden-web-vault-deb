@@ -10,7 +10,7 @@ import {
   Output,
 } from "@angular/core";
 
-import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
+import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 
 import { BitIconButtonComponent } from "../icon-button/icon-button.component";
 

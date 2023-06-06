@@ -2,7 +2,7 @@ import { Component, Input } from "@angular/core";
 import { FormsModule, ReactiveFormsModule, FormBuilder, Validators } from "@angular/forms";
 import { Meta, StoryObj, moduleMetadata } from "@storybook/angular";
 
-import { I18nService } from "@bitwarden/common/src/abstractions/i18n.service";
+import { I18nService } from "@bitwarden/common/src/platform/abstractions/i18n.service";
 
 import { FormControlModule } from "../form-control";
 import { I18nMockService } from "../utils/i18n-mock.service";

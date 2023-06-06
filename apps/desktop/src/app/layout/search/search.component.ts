@@ -2,7 +2,7 @@ import { Component, OnDestroy, OnInit } from "@angular/core";
 import { UntypedFormControl } from "@angular/forms";
 import { Subscription } from "rxjs";
 
-import { StateService } from "@bitwarden/common/abstractions/state.service";
+import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
 
 import { SearchBarService, SearchBarState } from "./search-bar.service";
 

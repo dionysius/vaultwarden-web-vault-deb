@@ -6,7 +6,7 @@ import {
   SimpleDialogOptions,
   DialogServiceAbstraction,
 } from "@bitwarden/angular/services/dialog";
-import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
+import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 
 import { ButtonModule } from "../../button";
 import { CalloutModule } from "../../callout";

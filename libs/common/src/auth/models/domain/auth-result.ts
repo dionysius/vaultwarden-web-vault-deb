@@ -1,4 +1,4 @@
-import { Utils } from "../../../misc/utils";
+import { Utils } from "../../../platform/misc/utils";
 import { TwoFactorProviderType } from "../../enums/two-factor-provider-type";
 
 import { ForceResetPasswordReason } from "./force-reset-password-reason";

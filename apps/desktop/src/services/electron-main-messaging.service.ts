@@ -2,8 +2,8 @@ import * as path from "path";
 
 import { app, dialog, ipcMain, Menu, MenuItem, nativeTheme, session, Notification } from "electron";
 
-import { MessagingService } from "@bitwarden/common/abstractions/messaging.service";
 import { ThemeType } from "@bitwarden/common/enums";
+import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
 
 import { WindowMain } from "../main/window.main";
 import { RendererMenuItem } from "../utils";

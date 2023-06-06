@@ -1,7 +1,7 @@
 import { enableProdMode } from "@angular/core";
 import { platformBrowserDynamic } from "@angular/platform-browser-dynamic";
 
-import BrowserPlatformUtilsService from "../services/browserPlatformUtils.service";
+import BrowserPlatformUtilsService from "../platform/services/browser-platform-utils.service";
 
 require("./scss/popup.scss");
 

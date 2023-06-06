@@ -1,7 +1,7 @@
-import { CryptoFunctionService } from "../abstractions/cryptoFunction.service";
-import { LogService } from "../abstractions/log.service";
 import { TotpService as TotpServiceAbstraction } from "../abstractions/totp.service";
-import { Utils } from "../misc/utils";
+import { CryptoFunctionService } from "../platform/abstractions/crypto-function.service";
+import { LogService } from "../platform/abstractions/log.service";
+import { Utils } from "../platform/misc/utils";
 
 const B32Chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ234567";
 const SteamChars = "23456789BCDFGHJKMNPQRTVWXY";

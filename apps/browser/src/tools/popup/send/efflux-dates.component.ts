@@ -3,8 +3,8 @@ import { Component, EventEmitter, Input, Output } from "@angular/core";
 import { ControlContainer, NgForm } from "@angular/forms";
 
 import { EffluxDatesComponent as BaseEffluxDatesComponent } from "@bitwarden/angular/tools/send/efflux-dates.component";
-import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
-import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
+import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
+import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 
 @Component({
   selector: "app-send-efflux-dates",

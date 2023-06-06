@@ -2,8 +2,8 @@ import { Component, ViewChild, ViewContainerRef } from "@angular/core";
 
 import { ModalService } from "@bitwarden/angular/services/modal.service";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
-import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { KeyConnectorService } from "@bitwarden/common/auth/abstractions/key-connector.service";
+import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
 
 import { DeauthorizeSessionsComponent } from "../auth/settings/deauthorize-sessions.component";
 

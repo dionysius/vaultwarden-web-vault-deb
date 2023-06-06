@@ -2,8 +2,8 @@ import { DatePipe } from "@angular/common";
 import { Directive, EventEmitter, Input, OnInit, Output } from "@angular/core";
 import { UntypedFormControl, UntypedFormGroup } from "@angular/forms";
 
-import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
-import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
+import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
+import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 
 // Different BrowserPath = different controls.
 enum BrowserPath {

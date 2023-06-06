@@ -1,4 +1,4 @@
-import { BrowserApi } from "../../browser/browserApi";
+import { BrowserApi } from "../../platform/browser/browser-api";
 
 import { ClearClipboard } from "./clear-clipboard";
 

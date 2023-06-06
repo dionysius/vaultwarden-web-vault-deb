@@ -20,5 +20,5 @@
     "strictTemplates": true,
     "preserveWhitespaces": true
   },
-  "include": ["src", "../../libs/common/src/services/**/*.worker.ts"]
+  "include": ["src", "../../libs/common/src/platform/services/**/*.worker.ts"]
 }

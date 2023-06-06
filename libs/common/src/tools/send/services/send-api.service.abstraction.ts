@@ -1,5 +1,5 @@
-import { EncArrayBuffer } from "../../../models/domain/enc-array-buffer";
 import { ListResponse } from "../../../models/response/list.response";
+import { EncArrayBuffer } from "../../../platform/models/domain/enc-array-buffer";
 import { Send } from "../models/domain/send";
 import { SendAccessRequest } from "../models/request/send-access.request";
 import { SendRequest } from "../models/request/send.request";

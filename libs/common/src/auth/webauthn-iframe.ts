@@ -1,5 +1,5 @@
-import { I18nService } from "../abstractions/i18n.service";
-import { PlatformUtilsService } from "../abstractions/platformUtils.service";
+import { I18nService } from "../platform/abstractions/i18n.service";
+import { PlatformUtilsService } from "../platform/abstractions/platform-utils.service";
 
 export class WebAuthnIFrame {
   private iframe: HTMLIFrameElement = null;

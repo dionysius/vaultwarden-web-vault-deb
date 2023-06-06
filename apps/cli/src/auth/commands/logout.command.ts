@@ -1,5 +1,5 @@
-import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { AuthService } from "@bitwarden/common/auth/abstractions/auth.service";
+import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 
 import { Response } from "../../models/response";
 import { MessageResponse } from "../../models/response/message.response";

@@ -1,10 +1,10 @@
-import { CryptoService } from "../../abstractions/crypto.service";
-import { StateService } from "../../abstractions/state.service";
 import { VaultTimeoutSettingsService as VaultTimeoutSettingsServiceAbstraction } from "../../abstractions/vaultTimeout/vaultTimeoutSettings.service";
 import { PolicyService } from "../../admin-console/abstractions/policy/policy.service.abstraction";
 import { PolicyType } from "../../admin-console/enums";
 import { TokenService } from "../../auth/abstractions/token.service";
 import { VaultTimeoutAction } from "../../enums/vault-timeout-action.enum";
+import { CryptoService } from "../../platform/abstractions/crypto.service";
+import { StateService } from "../../platform/abstractions/state.service";
 
 export class VaultTimeoutSettingsService implements VaultTimeoutSettingsServiceAbstraction {
   constructor(

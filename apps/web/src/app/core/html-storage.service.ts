@@ -1,8 +1,8 @@
 import { Injectable } from "@angular/core";
 
-import { AbstractStorageService } from "@bitwarden/common/abstractions/storage.service";
 import { HtmlStorageLocation } from "@bitwarden/common/enums";
-import { StorageOptions } from "@bitwarden/common/models/domain/storage-options";
+import { AbstractStorageService } from "@bitwarden/common/platform/abstractions/storage.service";
+import { StorageOptions } from "@bitwarden/common/platform/models/domain/storage-options";
 
 @Injectable()
 export class HtmlStorageService implements AbstractStorageService {

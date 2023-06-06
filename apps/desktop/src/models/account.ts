@@ -4,8 +4,8 @@ import {
   Account as BaseAccount,
   AccountSettings as BaseAccountSettings,
   AccountKeys as BaseAccountKeys,
-} from "@bitwarden/common/models/domain/account";
-import { EncString } from "@bitwarden/common/models/domain/enc-string";
+} from "@bitwarden/common/platform/models/domain/account";
+import { EncString } from "@bitwarden/common/platform/models/domain/enc-string";
 
 export class AccountSettings extends BaseAccountSettings {
   vaultTimeout = -1; // On Restart

@@ -1,5 +1,5 @@
-import { I18nService } from "../abstractions/i18n.service";
 import { IFrameComponent } from "../misc/iframe_component";
+import { I18nService } from "../platform/abstractions/i18n.service";
 
 export class CaptchaIFrame extends IFrameComponent {
   constructor(

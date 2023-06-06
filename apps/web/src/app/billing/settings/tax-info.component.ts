@@ -2,12 +2,12 @@ import { Component, EventEmitter, Input, Output } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
-import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { OrganizationApiServiceAbstraction } from "@bitwarden/common/admin-console/abstractions/organization/organization-api.service.abstraction";
 import { OrganizationTaxInfoUpdateRequest } from "@bitwarden/common/billing/models/request/organization-tax-info-update.request";
 import { TaxInfoUpdateRequest } from "@bitwarden/common/billing/models/request/tax-info-update.request";
 import { TaxInfoResponse } from "@bitwarden/common/billing/models/response/tax-info.response";
 import { TaxRateResponse } from "@bitwarden/common/billing/models/response/tax-rate.response";
+import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 
 type TaxInfoView = Omit<TaxInfoResponse, "taxIdType"> & {
   includeTaxId: boolean;

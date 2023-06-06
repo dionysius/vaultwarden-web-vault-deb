@@ -1,9 +1,9 @@
 import { mockFromJson } from "../../../../spec";
-import { SymmetricCryptoKey } from "../../../models/domain/symmetric-crypto-key";
+import { SymmetricCryptoKey } from "../../../platform/models/domain/symmetric-crypto-key";
 
 import { AttachmentView } from "./attachment.view";
 
-jest.mock("../../../models/domain/symmetric-crypto-key");
+jest.mock("../../../platform/models/domain/symmetric-crypto-key");
 
 describe("AttachmentView", () => {
   it("fromJSON initializes nested objects", () => {

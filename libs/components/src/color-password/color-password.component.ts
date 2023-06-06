@@ -1,6 +1,6 @@
 import { Component, HostBinding, Input } from "@angular/core";
 
-import { Utils } from "@bitwarden/common/misc/utils";
+import { Utils } from "@bitwarden/common/platform/misc/utils";
 
 enum CharacterType {
   Letter,

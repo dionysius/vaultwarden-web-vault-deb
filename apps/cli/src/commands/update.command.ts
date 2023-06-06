@@ -1,6 +1,6 @@
 import * as fetch from "node-fetch";
 
-import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
+import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 
 import { Response } from "../models/response";
 import { MessageResponse } from "../models/response/message.response";

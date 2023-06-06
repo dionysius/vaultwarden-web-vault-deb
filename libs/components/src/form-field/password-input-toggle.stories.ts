@@ -1,7 +1,7 @@
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { Meta, StoryObj, moduleMetadata } from "@storybook/angular";
 
-import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
+import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 
 import { IconButtonModule } from "../icon-button";
 import { InputModule } from "../input/input.module";

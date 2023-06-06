@@ -2,8 +2,8 @@ import { Directive, Input, OnDestroy, OnInit, Optional } from "@angular/core";
 import { FormGroupDirective } from "@angular/forms";
 import { BehaviorSubject, catchError, filter, of, Subject, switchMap, takeUntil } from "rxjs";
 
-import { LogService } from "@bitwarden/common/abstractions/log.service";
-import { ValidationService } from "@bitwarden/common/abstractions/validation.service";
+import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
+import { ValidationService } from "@bitwarden/common/platform/abstractions/validation.service";
 
 import { FunctionReturningAwaitable, functionToObservable } from "../utils/function-to-observable";
 

@@ -1,6 +1,6 @@
 import { ApiService } from "../../abstractions/api.service";
-import { LogService } from "../../abstractions/log.service";
 import { UserVerificationService } from "../../abstractions/userVerification/userVerification.service.abstraction";
+import { LogService } from "../../platform/abstractions/log.service";
 import { Verification } from "../../types/verification";
 import { AccountApiService } from "../abstractions/account-api.service";
 import { InternalAccountService } from "../abstractions/account.service";

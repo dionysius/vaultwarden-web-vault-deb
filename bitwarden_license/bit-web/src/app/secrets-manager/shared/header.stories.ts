@@ -4,14 +4,14 @@ import {
   Meta,
   Story,
   moduleMetadata,
-  componentWrapperDecorator,
   applicationConfig,
+  componentWrapperDecorator,
 } from "@storybook/angular";
 import { BehaviorSubject, combineLatest, map } from "rxjs";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
-import { MessagingService } from "@bitwarden/common/abstractions/messaging.service";
-import { StateService } from "@bitwarden/common/abstractions/state.service";
+import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
+import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
 import {
   AvatarModule,
   BreadcrumbsModule,
@@ -24,7 +24,7 @@ import {
   TypographyModule,
   InputModule,
 } from "@bitwarden/components";
-import { PreloadedEnglishI18nModule } from "@bitwarden/web-vault/app/tests/preloaded-english-i18n.module";
+import { PreloadedEnglishI18nModule } from "@bitwarden/web-vault/app/core/tests";
 
 import { HeaderComponent } from "./header.component";
 

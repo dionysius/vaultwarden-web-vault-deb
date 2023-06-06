@@ -1,7 +1,7 @@
 import "zone.js";
 
 // Register the locales for the application
-import "./locales";
+import "../platform/app/locales";
 
 import { DialogModule } from "@angular/cdk/dialog";
 import { NgModule } from "@angular/core";

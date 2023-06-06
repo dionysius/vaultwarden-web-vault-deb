@@ -2,42 +2,42 @@ import { CipherService as AbstractCipherService } from "@bitwarden/common/vault/
 import { CipherService } from "@bitwarden/common/vault/services/cipher.service";
 
 import {
-  apiServiceFactory,
-  ApiServiceInitOptions,
-} from "../../../background/service_factories/api-service.factory";
-import {
   CipherFileUploadServiceInitOptions,
   cipherFileUploadServiceFactory,
-} from "../../../background/service_factories/cipher-file-upload-service.factory";
+} from "../../../background/service-factories/cipher-file-upload-service.factory";
 import {
-  cryptoServiceFactory,
+  searchServiceFactory,
+  SearchServiceInitOptions,
+} from "../../../background/service-factories/search-service.factory";
+import {
+  SettingsServiceInitOptions,
+  settingsServiceFactory,
+} from "../../../background/service-factories/settings-service.factory";
+import {
+  apiServiceFactory,
+  ApiServiceInitOptions,
+} from "../../../platform/background/service-factories/api-service.factory";
+import {
   CryptoServiceInitOptions,
-} from "../../../background/service_factories/crypto-service.factory";
+  cryptoServiceFactory,
+} from "../../../platform/background/service-factories/crypto-service.factory";
 import {
-  encryptServiceFactory,
   EncryptServiceInitOptions,
-} from "../../../background/service_factories/encrypt-service.factory";
+  encryptServiceFactory,
+} from "../../../platform/background/service-factories/encrypt-service.factory";
 import {
   CachedServices,
   factory,
   FactoryOptions,
-} from "../../../background/service_factories/factory-options";
+} from "../../../platform/background/service-factories/factory-options";
 import {
   i18nServiceFactory,
   I18nServiceInitOptions,
-} from "../../../background/service_factories/i18n-service.factory";
-import {
-  searchServiceFactory,
-  SearchServiceInitOptions,
-} from "../../../background/service_factories/search-service.factory";
-import {
-  SettingsServiceInitOptions,
-  settingsServiceFactory,
-} from "../../../background/service_factories/settings-service.factory";
+} from "../../../platform/background/service-factories/i18n-service.factory";
 import {
   stateServiceFactory,
   StateServiceInitOptions,
-} from "../../../background/service_factories/state-service.factory";
+} from "../../../platform/background/service-factories/state-service.factory";
 
 type CipherServiceFactoryOptions = FactoryOptions;
 

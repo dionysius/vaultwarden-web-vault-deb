@@ -4,20 +4,20 @@ import { CollectionService } from "@bitwarden/common/admin-console/services/coll
 import {
   cryptoServiceFactory,
   CryptoServiceInitOptions,
-} from "../../../background/service_factories/crypto-service.factory";
+} from "../../../platform/background/service-factories/crypto-service.factory";
 import {
   CachedServices,
   factory,
   FactoryOptions,
-} from "../../../background/service_factories/factory-options";
+} from "../../../platform/background/service-factories/factory-options";
 import {
   i18nServiceFactory,
   I18nServiceInitOptions,
-} from "../../../background/service_factories/i18n-service.factory";
+} from "../../../platform/background/service-factories/i18n-service.factory";
 import {
   stateServiceFactory as stateServiceFactory,
   StateServiceInitOptions,
-} from "../../../background/service_factories/state-service.factory";
+} from "../../../platform/background/service-factories/state-service.factory";
 
 type CollectionServiceFactoryOptions = FactoryOptions;
 

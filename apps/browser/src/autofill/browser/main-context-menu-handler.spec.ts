@@ -1,12 +1,12 @@
 import { mock, MockProxy } from "jest-mock-extended";
 
-import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
-import { LogService } from "@bitwarden/common/abstractions/log.service";
+import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
+import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { CipherType } from "@bitwarden/common/vault/enums/cipher-type";
 import { Cipher } from "@bitwarden/common/vault/models/domain/cipher";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 
-import { BrowserStateService } from "../../services/abstractions/browser-state.service";
+import { BrowserStateService } from "../../platform/services/abstractions/browser-state.service";
 
 import { MainContextMenuHandler } from "./main-context-menu-handler";
 

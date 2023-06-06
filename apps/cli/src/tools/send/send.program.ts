@@ -4,7 +4,7 @@ import * as path from "path";
 import * as chalk from "chalk";
 import * as program from "commander";
 
-import { Utils } from "@bitwarden/common/misc/utils";
+import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { SendType } from "@bitwarden/common/tools/send/enums/send-type";
 
 import { Main } from "../../bw";

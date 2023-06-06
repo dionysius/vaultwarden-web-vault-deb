@@ -1,10 +1,10 @@
 import { Component, NgZone, OnDestroy, OnInit } from "@angular/core";
 
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
-import { BroadcasterService } from "@bitwarden/common/abstractions/broadcaster.service";
-import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 import { TokenService } from "@bitwarden/common/auth/abstractions/token.service";
+import { BroadcasterService } from "@bitwarden/common/platform/abstractions/broadcaster.service";
+import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 
 import { StateService } from "../core";
 

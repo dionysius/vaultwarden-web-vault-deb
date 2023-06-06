@@ -1,7 +1,7 @@
 import { Directive, ElementRef, Input, NgZone } from "@angular/core";
 import { take } from "rxjs/operators";
 
-import { Utils } from "@bitwarden/common/misc/utils";
+import { Utils } from "@bitwarden/common/platform/misc/utils";
 
 @Directive({
   selector: "[appAutofocus]",

@@ -1,7 +1,7 @@
 import { UriMatchType } from "../../enums";
+import { EncString } from "../../platform/models/domain/enc-string";
 import { LoginUri as LoginUriDomain } from "../../vault/models/domain/login-uri";
 import { LoginUriView } from "../../vault/models/view/login-uri.view";
-import { EncString } from "../domain/enc-string";
 
 export class LoginUriExport {
   static template(): LoginUriExport {

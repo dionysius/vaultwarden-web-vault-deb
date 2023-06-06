@@ -54,4 +54,23 @@ libs/angular/src/billing @bitwarden/team-billing-dev
 libs/common/src/billing @bitwarden/team-billing-dev
 
 ## Platform team files ##
+apps/browser/src/platform @bitwarden/team-platform-dev
+apps/cli/src/platform @bitwarden/team-platform-dev
+apps/desktop/src/platform @bitwarden/team-platform-dev
+apps/web/src/app/platform @bitwarden/team-platform-dev
+libs/angular/src/platform @bitwarden/team-platform-dev
+libs/common/src/platform @bitwarden/team-platform-dev
+# Node-specifc platform files
+libs/node @bitwarden/team-platform-dev
+# Web utils used across app and connectors
+apps/web/src/utils/ @bitwarden/team-platform-dev
+# Web core and shared files
+apps/web/src/app/core @bitwarden/team-platform-dev
+apps/web/src/app/shared @bitwarden/team-platform-dev
+apps/web/src/translation-constants.ts @bitwarden/team-platform-dev
+
+## Component Library ##
 libs/components @bitwarden/team-platform-dev
+
+## Desktop native module ##
+apps/desktop/desktop_native @bitwarden/team-platform-dev

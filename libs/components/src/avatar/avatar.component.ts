@@ -1,7 +1,7 @@
 import { Component, Input, OnChanges } from "@angular/core";
 import { DomSanitizer, SafeResourceUrl } from "@angular/platform-browser";
 
-import { Utils } from "@bitwarden/common/misc/utils";
+import { Utils } from "@bitwarden/common/platform/misc/utils";
 
 type SizeTypes = "xlarge" | "large" | "default" | "small" | "xsmall";
 

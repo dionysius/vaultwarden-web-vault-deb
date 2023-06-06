@@ -1,7 +1,7 @@
 import { Observable } from "rxjs";
 
-import { EncArrayBuffer } from "../../../models/domain/enc-array-buffer";
-import { SymmetricCryptoKey } from "../../../models/domain/symmetric-crypto-key";
+import { EncArrayBuffer } from "../../../platform/models/domain/enc-array-buffer";
+import { SymmetricCryptoKey } from "../../../platform/models/domain/symmetric-crypto-key";
 import { SendData } from "../models/data/send.data";
 import { Send } from "../models/domain/send";
 import { SendView } from "../models/view/send.view";

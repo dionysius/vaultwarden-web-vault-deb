@@ -1,13 +1,13 @@
 import { BehaviorSubject, filter, map, Observable, switchMap, tap } from "rxjs";
 import { Jsonify } from "type-fest";
 
-import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 import { PolicyType } from "@bitwarden/common/admin-console/enums";
 import { Policy } from "@bitwarden/common/admin-console/models/domain/policy";
 import { PolicyService } from "@bitwarden/common/admin-console/services/policy/policy.service";
+import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
 
-import { browserSession, sessionSync } from "../../decorators/session-sync-observable";
+import { browserSession, sessionSync } from "../../platform/decorators/session-sync-observable";
 
 @browserSession
 export class BrowserPolicyService extends PolicyService {

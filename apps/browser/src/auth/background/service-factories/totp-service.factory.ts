@@ -4,16 +4,16 @@ import { TotpService } from "@bitwarden/common/services/totp.service";
 import {
   CryptoFunctionServiceInitOptions,
   cryptoFunctionServiceFactory,
-} from "../../../background/service_factories/crypto-function-service.factory";
+} from "../../../platform/background/service-factories/crypto-function-service.factory";
 import {
   FactoryOptions,
   CachedServices,
   factory,
-} from "../../../background/service_factories/factory-options";
+} from "../../../platform/background/service-factories/factory-options";
 import {
   LogServiceInitOptions,
   logServiceFactory,
-} from "../../../background/service_factories/log-service.factory";
+} from "../../../platform/background/service-factories/log-service.factory";
 
 type TotpServiceOptions = FactoryOptions;
 

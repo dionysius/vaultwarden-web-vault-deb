@@ -1,6 +1,6 @@
-import { Utils } from "../../../../misc/utils";
-import { SymmetricCryptoKey } from "../../../../models/domain/symmetric-crypto-key";
 import { View } from "../../../../models/view/view";
+import { Utils } from "../../../../platform/misc/utils";
+import { SymmetricCryptoKey } from "../../../../platform/models/domain/symmetric-crypto-key";
 import { DeepJsonify } from "../../../../types/deep-jsonify";
 import { SendType } from "../../enums/send-type";
 import { Send } from "../domain/send";

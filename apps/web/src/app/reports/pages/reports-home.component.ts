@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 
-import { StateService } from "@bitwarden/common/abstractions/state.service";
+import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
 
 import { reports, ReportType } from "../reports";
 import { ReportEntry, ReportVariant } from "../shared";

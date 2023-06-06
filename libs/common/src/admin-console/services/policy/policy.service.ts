@@ -1,8 +1,8 @@
 import { BehaviorSubject, concatMap, map, Observable, of } from "rxjs";
 
-import { StateService } from "../../../abstractions/state.service";
-import { Utils } from "../../../misc/utils";
 import { ListResponse } from "../../../models/response/list.response";
+import { StateService } from "../../../platform/abstractions/state.service";
+import { Utils } from "../../../platform/misc/utils";
 import { OrganizationService } from "../../abstractions/organization/organization.service.abstraction";
 import { InternalPolicyService as InternalPolicyServiceAbstraction } from "../../abstractions/policy/policy.service.abstraction";
 import { OrganizationUserStatusType, OrganizationUserType, PolicyType } from "../../enums";

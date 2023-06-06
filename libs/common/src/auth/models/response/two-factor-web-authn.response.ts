@@ -1,5 +1,5 @@
-import { Utils } from "../../../misc/utils";
 import { BaseResponse } from "../../../models/response/base.response";
+import { Utils } from "../../../platform/misc/utils";
 
 export class TwoFactorWebAuthnResponse extends BaseResponse {
   enabled: boolean;

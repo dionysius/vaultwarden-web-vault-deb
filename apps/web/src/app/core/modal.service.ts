@@ -4,8 +4,8 @@ import { first } from "rxjs/operators";
 
 import { ModalRef } from "@bitwarden/angular/components/modal/modal.ref";
 import { ModalService as BaseModalService } from "@bitwarden/angular/services/modal.service";
-import { MessagingService } from "@bitwarden/common/abstractions/messaging.service";
-import { Utils } from "@bitwarden/common/misc/utils";
+import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
+import { Utils } from "@bitwarden/common/platform/misc/utils";
 
 @Injectable()
 export class ModalService extends BaseModalService {

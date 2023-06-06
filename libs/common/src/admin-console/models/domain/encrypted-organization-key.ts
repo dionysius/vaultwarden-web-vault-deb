@@ -1,6 +1,6 @@
-import { CryptoService } from "../../../abstractions/crypto.service";
-import { EncString } from "../../../models/domain/enc-string";
-import { SymmetricCryptoKey } from "../../../models/domain/symmetric-crypto-key";
+import { CryptoService } from "../../../platform/abstractions/crypto.service";
+import { EncString } from "../../../platform/models/domain/enc-string";
+import { SymmetricCryptoKey } from "../../../platform/models/domain/symmetric-crypto-key";
 import { EncryptedOrganizationKeyData } from "../data/encrypted-organization-key.data";
 
 export abstract class BaseEncryptedOrganizationKey {

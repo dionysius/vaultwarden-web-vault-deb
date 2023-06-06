@@ -1,5 +1,5 @@
-import { StateService } from "../../abstractions/state.service";
 import { Provider } from "../../models/domain/provider";
+import { StateService } from "../../platform/abstractions/state.service";
 import { ProviderService as ProviderServiceAbstraction } from "../abstractions/provider.service";
 import { ProviderData } from "../models/data/provider.data";
 

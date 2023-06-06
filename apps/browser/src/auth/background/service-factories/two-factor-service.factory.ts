@@ -5,15 +5,15 @@ import {
   FactoryOptions,
   CachedServices,
   factory,
-} from "../../../background/service_factories/factory-options";
+} from "../../../platform/background/service-factories/factory-options";
 import {
   I18nServiceInitOptions,
   i18nServiceFactory,
-} from "../../../background/service_factories/i18n-service.factory";
+} from "../../../platform/background/service-factories/i18n-service.factory";
 import {
   PlatformUtilsServiceInitOptions,
   platformUtilsServiceFactory,
-} from "../../../background/service_factories/platform-utils-service.factory";
+} from "../../../platform/background/service-factories/platform-utils-service.factory";
 
 type TwoFactorServiceFactoryOptions = FactoryOptions;
 

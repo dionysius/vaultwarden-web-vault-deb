@@ -1,15 +1,15 @@
 import { mock, mockReset } from "jest-mock-extended";
 
-import { AppIdService } from "../abstractions/appId.service";
-import { CryptoFunctionService } from "../abstractions/cryptoFunction.service";
 import { DevicesApiServiceAbstraction } from "../abstractions/devices/devices-api.service.abstraction";
 import { DeviceResponse } from "../abstractions/devices/responses/device.response";
-import { EncryptService } from "../abstractions/encrypt.service";
-import { StateService } from "../abstractions/state.service";
 import { EncryptionType } from "../enums/encryption-type.enum";
-import { EncString } from "../models/domain/enc-string";
-import { DeviceKey, SymmetricCryptoKey } from "../models/domain/symmetric-crypto-key";
-import { CryptoService } from "../services/crypto.service";
+import { AppIdService } from "../platform/abstractions/app-id.service";
+import { CryptoFunctionService } from "../platform/abstractions/crypto-function.service";
+import { EncryptService } from "../platform/abstractions/encrypt.service";
+import { StateService } from "../platform/abstractions/state.service";
+import { EncString } from "../platform/models/domain/enc-string";
+import { SymmetricCryptoKey, DeviceKey } from "../platform/models/domain/symmetric-crypto-key";
+import { CryptoService } from "../platform/services/crypto.service";
 import { CsprngArray } from "../types/csprng";
 
 import { DeviceCryptoService } from "./device-crypto.service.implementation";

@@ -1,5 +1,5 @@
-import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
-import { ConsoleLogService } from "@bitwarden/common/services/consoleLog.service";
+import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
+import { ConsoleLogService } from "@bitwarden/common/platform/services/console-log.service";
 import { SearchService } from "@bitwarden/common/services/search.service";
 
 export class PopupSearchService extends SearchService {

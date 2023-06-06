@@ -2,10 +2,10 @@ import { mock } from "jest-mock-extended";
 import { lastValueFrom } from "rxjs";
 
 import { ApiService } from "../../abstractions/api.service";
-import { I18nService } from "../../abstractions/i18n.service";
 import { OrganizationDomainSsoDetailsResponse } from "../../abstractions/organization-domain/responses/organization-domain-sso-details.response";
 import { OrganizationDomainResponse } from "../../abstractions/organization-domain/responses/organization-domain.response";
-import { PlatformUtilsService } from "../../abstractions/platformUtils.service";
+import { I18nService } from "../../platform/abstractions/i18n.service";
+import { PlatformUtilsService } from "../../platform/abstractions/platform-utils.service";
 
 import { OrgDomainApiService } from "./org-domain-api.service";
 import { OrgDomainService } from "./org-domain.service";

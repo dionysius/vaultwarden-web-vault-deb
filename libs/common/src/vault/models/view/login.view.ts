@@ -2,7 +2,7 @@ import { Jsonify } from "type-fest";
 
 import { LoginLinkedId as LinkedId, UriMatchType } from "../../../enums";
 import { linkedFieldOption } from "../../../misc/linkedFieldOption.decorator";
-import { Utils } from "../../../misc/utils";
+import { Utils } from "../../../platform/misc/utils";
 import { Login } from "../domain/login";
 
 import { ItemView } from "./item.view";

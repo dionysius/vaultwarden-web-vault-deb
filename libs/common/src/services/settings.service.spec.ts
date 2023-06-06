@@ -2,12 +2,12 @@
 import { Arg, Substitute, SubstituteOf } from "@fluffy-spoon/substitute";
 import { BehaviorSubject, firstValueFrom } from "rxjs";
 
-import { CryptoService } from "../abstractions/crypto.service";
-import { EncryptService } from "../abstractions/encrypt.service";
+import { CryptoService } from "../platform/abstractions/crypto.service";
+import { EncryptService } from "../platform/abstractions/encrypt.service";
+import { ContainerService } from "../platform/services/container.service";
+import { StateService } from "../platform/services/state.service";
 
-import { ContainerService } from "./container.service";
 import { SettingsService } from "./settings.service";
-import { StateService } from "./state.service";
 
 describe("SettingsService", () => {
   let settingsService: SettingsService;

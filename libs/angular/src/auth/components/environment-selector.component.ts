@@ -4,9 +4,9 @@ import { Component, EventEmitter, OnDestroy, OnInit, Output } from "@angular/cor
 import { Router } from "@angular/router";
 import { Subject, takeUntil } from "rxjs";
 
-import { ConfigServiceAbstraction } from "@bitwarden/common/abstractions/config/config.service.abstraction";
-import { EnvironmentService } from "@bitwarden/common/abstractions/environment.service";
 import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
+import { ConfigServiceAbstraction } from "@bitwarden/common/platform/abstractions/config/config.service.abstraction";
+import { EnvironmentService } from "@bitwarden/common/platform/abstractions/environment.service";
 
 @Component({
   selector: "environment-selector",

@@ -2,7 +2,7 @@ import { Component, OnDestroy, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { map, Observable, startWith, Subject, switchMap, takeUntil } from "rxjs";
 
-import { ValidationService } from "@bitwarden/common/abstractions/validation.service";
+import { ValidationService } from "@bitwarden/common/platform/abstractions/validation.service";
 import { SelectItemView } from "@bitwarden/components";
 
 import {

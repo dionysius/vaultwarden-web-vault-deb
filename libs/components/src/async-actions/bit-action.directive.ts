@@ -1,8 +1,8 @@
 import { Directive, HostListener, Input, OnDestroy, Optional } from "@angular/core";
 import { BehaviorSubject, finalize, Subject, takeUntil, tap } from "rxjs";
 
-import { LogService } from "@bitwarden/common/abstractions/log.service";
-import { ValidationService } from "@bitwarden/common/abstractions/validation.service";
+import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
+import { ValidationService } from "@bitwarden/common/platform/abstractions/validation.service";
 
 import { ButtonLikeAbstraction } from "../shared/button-like.abstraction";
 import { FunctionReturningAwaitable, functionToObservable } from "../utils/function-to-observable";

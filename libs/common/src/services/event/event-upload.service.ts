@@ -1,8 +1,8 @@
 import { ApiService } from "../../abstractions/api.service";
 import { EventUploadService as EventUploadServiceAbstraction } from "../../abstractions/event/event-upload.service";
-import { LogService } from "../../abstractions/log.service";
-import { StateService } from "../../abstractions/state.service";
 import { EventRequest } from "../../models/request/event.request";
+import { LogService } from "../../platform/abstractions/log.service";
+import { StateService } from "../../platform/abstractions/state.service";
 
 export class EventUploadService implements EventUploadServiceAbstraction {
   private inited = false;
