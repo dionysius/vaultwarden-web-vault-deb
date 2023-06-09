@@ -50,7 +50,7 @@ export class TrueKeyCsvImporter extends BaseImporter implements Importer {
         cipher.card = new CardView();
         cipher.card.cardholderName = this.getValueOrDefault(value.cardholder);
         cipher.card.number = this.getValueOrDefault(value.number);
-        cipher.card.brand = this.getCardBrand(cipher.card.number);
+        cipher.card.brand = CardView.getCardBrandByPatterns(cipher.card.number);
         if (!this.isNullOrWhitespace(value.expiryDate)) {
           try {
             const expDate = new Date(value.expiryDate);

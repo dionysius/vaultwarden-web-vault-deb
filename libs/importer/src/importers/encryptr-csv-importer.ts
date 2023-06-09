@@ -38,7 +38,7 @@ export class EncryptrCsvImporter extends BaseImporter implements Importer {
         cipher.card = new CardView();
         cipher.card.cardholderName = this.getValueOrDefault(value["Name on card"]);
         cipher.card.number = this.getValueOrDefault(value["Card Number"]);
-        cipher.card.brand = this.getCardBrand(cipher.card.number);
+        cipher.card.brand = CardView.getCardBrandByPatterns(cipher.card.number);
         cipher.card.code = this.getValueOrDefault(value.CVV);
         const expiry = this.getValueOrDefault(value.Expiry);
         if (!this.isNullOrWhitespace(expiry)) {

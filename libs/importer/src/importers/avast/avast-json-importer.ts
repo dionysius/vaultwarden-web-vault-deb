@@ -1,5 +1,6 @@
 import { SecureNoteType } from "@bitwarden/common/enums";
 import { CipherType } from "@bitwarden/common/vault/enums/cipher-type";
+import { CardView } from "@bitwarden/common/vault/models/view/card.view";
 
 import { ImportResult } from "../../models/import-result";
 import { BaseImporter } from "../base-importer";
@@ -48,7 +49,7 @@ export class AvastJsonImporter extends BaseImporter implements Importer {
         cipher.card.cardholderName = this.getValueOrDefault(value.holderName);
         cipher.card.number = this.getValueOrDefault(value.cardNumber);
         cipher.card.code = this.getValueOrDefault(value.cvv);
-        cipher.card.brand = this.getCardBrand(cipher.card.number);
+        cipher.card.brand = CardView.getCardBrandByPatterns(cipher.card.number);
         if (value.expirationDate != null) {
           if (value.expirationDate.month != null) {
             cipher.card.expMonth = value.expirationDate.month + "";

@@ -31,7 +31,7 @@ export class RememBearCsvImporter extends BaseImporter implements Importer {
         cipher.card = new CardView();
         cipher.card.cardholderName = this.getValueOrDefault(value.cardholder);
         cipher.card.number = this.getValueOrDefault(value.number);
-        cipher.card.brand = this.getCardBrand(cipher.card.number);
+        cipher.card.brand = CardView.getCardBrandByPatterns(cipher.card.number);
         cipher.card.code = this.getValueOrDefault(value.verification);
 
         try {

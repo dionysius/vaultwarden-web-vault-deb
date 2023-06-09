@@ -368,6 +368,10 @@ export class AddEditComponent implements OnInit, OnDestroy {
     }
   }
 
+  onCardNumberChange(): void {
+    this.cipher.card.brand = CardView.getCardBrandByPatterns(this.cipher.card.number);
+  }
+
   getCardExpMonthDisplay() {
     return this.cardExpMonthOptions.find((x) => x.value == this.cipher.card.expMonth)?.name;
   }

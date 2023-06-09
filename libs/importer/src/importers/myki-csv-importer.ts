@@ -72,7 +72,7 @@ export class MykiCsvImporter extends BaseImporter implements Importer {
         cipher.type = CipherType.Card;
         cipher.card.cardholderName = this.getValueOrDefault(value.cardName);
         cipher.card.number = this.getValueOrDefault(value.cardNumber);
-        cipher.card.brand = this.getCardBrand(cipher.card.number);
+        cipher.card.brand = CardView.getCardBrandByPatterns(cipher.card.number);
         cipher.card.expMonth = this.getValueOrDefault(value.exp_month);
         cipher.card.expYear = this.getValueOrDefault(value.exp_year);
         cipher.card.code = this.getValueOrDefault(value.cvv);

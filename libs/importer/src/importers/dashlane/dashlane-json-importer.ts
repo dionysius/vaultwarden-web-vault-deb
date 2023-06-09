@@ -134,7 +134,7 @@ export class DashlaneJsonImporter extends BaseImporter implements Importer {
       cipher.type = CipherType.Card;
       cipher.name = this.getValueOrDefault(obj.bank);
       cipher.card.number = this.getValueOrDefault(obj.cardNumber);
-      cipher.card.brand = this.getCardBrand(cipher.card.number);
+      cipher.card.brand = CardView.getCardBrandByPatterns(cipher.card.number);
       cipher.card.cardholderName = this.getValueOrDefault(obj.owner);
       if (!this.isNullOrWhitespace(cipher.card.brand)) {
         if (this.isNullOrWhitespace(cipher.name)) {

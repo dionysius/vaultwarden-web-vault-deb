@@ -126,7 +126,7 @@ export class EnpassJsonImporter extends BaseImporter implements Importer {
         cipher.card.cardholderName = field.value;
       } else if (field.type === "ccNumber" && this.isNullOrWhitespace(cipher.card.number)) {
         cipher.card.number = field.value;
-        cipher.card.brand = this.getCardBrand(cipher.card.number);
+        cipher.card.brand = CardView.getCardBrandByPatterns(cipher.card.number);
       } else if (field.type === "ccCvc" && this.isNullOrWhitespace(cipher.card.code)) {
         cipher.card.code = field.value;
       } else if (field.type === "ccExpiry" && this.isNullOrWhitespace(cipher.card.expYear)) {

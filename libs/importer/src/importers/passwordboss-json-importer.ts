@@ -75,7 +75,7 @@ export class PasswordBossJsonImporter extends BaseImporter implements Importer {
         if (cipher.type === CipherType.Card) {
           if (property === "cardNumber") {
             cipher.card.number = val;
-            cipher.card.brand = this.getCardBrand(val);
+            cipher.card.brand = CardView.getCardBrandByPatterns(cipher.card.number);
             continue;
           } else if (property === "nameOnCard") {
             cipher.card.cardholderName = val;

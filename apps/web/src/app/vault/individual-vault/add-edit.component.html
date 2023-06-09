@@ -440,6 +440,7 @@
                   class="form-control text-monospace"
                   type="{{ showCardNumber ? 'text' : 'password' }}"
                   name="Card.Number"
+                  (input)="onCardNumberChange()"
                   [(ngModel)]="cipher.card.number"
                   appInputVerbatim
                   autocomplete="new-password"
