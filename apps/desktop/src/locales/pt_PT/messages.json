@@ -15,7 +15,7 @@
     "message": "Tipos"
   },
   "typeLogin": {
-    "message": "Início de sessão"
+    "message": "Credencial"
   },
   "typeCard": {
     "message": "Cartão"
@@ -61,7 +61,7 @@
     }
   },
   "moveToOrgDesc": {
-    "message": "Escolha uma organização para a qual pretende mover este item. Mover para uma organização transfere a propriedade do item para essa organização. Deixará de ser o proprietário directo deste item depois de este ter sido movido."
+    "message": "Escolha uma organização para a qual pretende mover este item. Mover para uma organização transfere a propriedade do item para essa organização. Deixará de ser o proprietário direto deste item depois de este ter sido movido."
   },
   "attachments": {
     "message": "Anexos"
@@ -172,7 +172,7 @@
     "message": "Telefone"
   },
   "address": {
-    "message": "Morada"
+    "message": "Endereço"
   },
   "premiumRequired": {
     "message": "É necessária uma subscrição Premium"
@@ -263,7 +263,7 @@
     "message": "Tipo"
   },
   "firstName": {
-    "message": "Primeiro nome"
+    "message": "Nome próprio"
   },
   "middleName": {
     "message": "Segundo nome"
@@ -275,13 +275,13 @@
     "message": "Nome completo"
   },
   "address1": {
-    "message": "1.ª morada"
+    "message": "Endereço 1"
   },
   "address2": {
-    "message": "2.ª morada"
+    "message": "Endereço 2"
   },
   "address3": {
-    "message": "3.ª morada"
+    "message": "Endereço 3"
   },
   "cityTown": {
     "message": "Cidade / Localidade"
@@ -379,7 +379,7 @@
     "message": "Tem a certeza de que pretende substituir o nome de utilizador atual?"
   },
   "noneFolder": {
-    "message": "Em nenhuma pasta",
+    "message": "Sem pasta",
     "description": "This is the folder for uncategorized items"
   },
   "addFolder": {
@@ -398,7 +398,7 @@
     "message": "Copiar URI"
   },
   "copyVerificationCodeTotp": {
-    "message": "Copy verification code (TOTP)"
+    "message": "Copiar código de verificação (TOTP)"
   },
   "length": {
     "message": "Comprimento"
@@ -618,7 +618,7 @@
     "message": "Memorizar-me"
   },
   "sendVerificationCodeEmailAgain": {
-    "message": "Enviar código de verificação novamente"
+    "message": "Enviar e-mail com o código de verificação novamente"
   },
   "useAnotherTwoStepMethod": {
     "message": "Utilizar outro método de verificação de dois passos"
@@ -744,7 +744,7 @@
     "message": "Terminar sessão"
   },
   "addNewLogin": {
-    "message": "Novo início de sessão"
+    "message": "Nova credencial"
   },
   "addNewItem": {
     "message": "Novo item"
@@ -771,7 +771,7 @@
     "message": "Contacte-nos"
   },
   "helpAndFeedback": {
-    "message": "Help and feedback"
+    "message": "Ajuda e feedback"
   },
   "getHelp": {
     "message": "Obter ajuda"
@@ -1423,19 +1423,19 @@
     "message": "Bloquear com a palavra-passe mestra ao reiniciar"
   },
   "deleteAccount": {
-    "message": "Delete account"
+    "message": "Eliminar conta"
   },
   "deleteAccountDesc": {
-    "message": "Proceed below to delete your account and all vault data."
+    "message": "Proceda da seguinte forma para eliminar a sua conta e todos os dados do cofre."
   },
   "deleteAccountWarning": {
-    "message": "Deleting your account is permanent. It cannot be undone."
+    "message": "A eliminação da sua conta é permanente. Não pode ser desfeita."
   },
   "accountDeleted": {
-    "message": "Account deleted"
+    "message": "Conta eliminada"
   },
   "accountDeletedDesc": {
-    "message": "Your account has been closed and all associated data has been deleted."
+    "message": "A sua conta foi encerrada e todos os dados associados foram eliminados."
   },
   "preferences": {
     "message": "Preferências"
@@ -1478,7 +1478,7 @@
     "message": "Alterações por guardar"
   },
   "clone": {
-    "message": "Clonar"
+    "message": "Duplicar"
   },
   "passwordGeneratorPolicyInEffect": {
     "message": "Uma ou mais políticas da organização estão a afetar as suas definições do gerador."
@@ -1507,7 +1507,7 @@
     "message": "Eliminar item permanentemente"
   },
   "permanentlyDeleteItemConfirmation": {
-    "message": "Tem a certeza de que pretende eliminar este item permanentemente?"
+    "message": "Tem a certeza de que pretende eliminar permanentemente este item?"
   },
   "permanentlyDeletedItem": {
     "message": "Item eliminado permanentemente"
@@ -1739,15 +1739,15 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createdSend": {
-    "message": "Send added",
+    "message": "Send criado",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editedSend": {
-    "message": "Send saved",
+    "message": "Send editado",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "deletedSend": {
-    "message": "Send deleted",
+    "message": "Send eliminado",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "newPassword": {
@@ -1856,10 +1856,10 @@
     "message": "Atualizar palavra-passe mestra"
   },
   "updateMasterPasswordWarning": {
-    "message": "A sua palavra-passe mestra foi recentemente alterada por um administrador da sua organização. Para aceder ao cofre, tem de atualizar a sua palavra-passe mestra agora. Se prosseguir, sairá da sua sessão atual e terá de iniciar sessão novamente. As sessões ativas noutros dispositivos poderão continuar ativas até uma hora."
+    "message": "A sua palavra-passe mestra foi recentemente alterada por um administrador da sua organização. Para aceder ao cofre, tem de atualizar a sua palavra-passe mestra agora. Ao prosseguir, terminará a sua sessão atual e terá de iniciar sessão novamente. As sessões ativas noutros dispositivos poderão continuar ativas até uma hora."
   },
   "updateWeakMasterPasswordWarning": {
-    "message": "A sua palavra-passe mestra não cumpre uma ou mais políticas da sua organização. Para aceder ao cofre, tem de atualizar a sua palavra-passe mestra agora. Se prosseguir, sairá da sua sessão atual e terá de iniciar sessão novamente. As sessões ativas noutros dispositivos poderão continuar ativas até uma hora."
+    "message": "A sua palavra-passe mestra não cumpre uma ou mais políticas da sua organização. Para aceder ao cofre, tem de atualizar a sua palavra-passe mestra agora. Ao prosseguir, terminará a sua sessão atual e terá de iniciar sessão novamente. As sessões ativas noutros dispositivos poderão continuar ativas até uma hora."
   },
   "hours": {
     "message": "Horas"
@@ -2040,7 +2040,7 @@
     "message": "Random word"
   },
   "websiteName": {
-    "message": "Website name"
+    "message": "Nome do site"
   },
   "service": {
     "message": "Service"
@@ -2153,7 +2153,7 @@
     "message": "Device Type"
   },
   "ipAddress": {
-    "message": "IP Address"
+    "message": "Endereço IP"
   },
   "time": {
     "message": "Time"
