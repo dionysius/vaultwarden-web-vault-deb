@@ -5,27 +5,23 @@
   {{ "personalOwnershipPolicyInEffectImports" | i18n }}
 </app-callout>
 <form #form (ngSubmit)="submit()" ngNativeValidate>
-  <div class="row">
-    <div class="col-6">
-      <div class="form-group">
-        <label for="type">1. {{ "selectFormat" | i18n }}</label>
-        <select
-          id="type"
-          name="Format"
-          [(ngModel)]="format"
-          class="form-control"
-          [disabled]="importBlockedByPolicy"
-          required
-        >
-          <option *ngFor="let o of featuredImportOptions" [ngValue]="o.id">{{ o.name }}</option>
-          <ng-container *ngIf="importOptions && importOptions.length">
-            <option value="-" disabled></option>
-            <option *ngFor="let o of importOptions" [ngValue]="o.id">{{ o.name }}</option>
-          </ng-container>
-        </select>
-      </div>
-    </div>
-  </div>
+  <bit-form-field class="tw-w-1/2">
+    <bit-label for="type">1. {{ "selectFormat" | i18n }}</bit-label>
+    <bit-select
+      id="type"
+      name="Format"
+      bitInput
+      [(ngModel)]="format"
+      [disabled]="importBlockedByPolicy"
+      required
+    >
+      <bit-option *ngFor="let o of featuredImportOptions" [value]="o.id" [label]="o.name" />
+      <ng-container *ngIf="importOptions && importOptions.length">
+        <bit-option value="-" disabled />
+        <bit-option *ngFor="let o of importOptions" [value]="o.id" [label]="o.name" />
+      </ng-container>
+    </bit-select>
+  </bit-form-field>
   <app-callout type="info" title="{{ getFormatInstructionTitle() }}" *ngIf="format">
     <ng-container *ngIf="format === 'bitwardencsv' || format === 'bitwardenjson'">
       See detailed instructions on our help site at
