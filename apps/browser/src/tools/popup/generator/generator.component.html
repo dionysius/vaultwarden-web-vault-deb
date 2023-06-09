@@ -405,6 +405,28 @@
             />
           </div>
         </ng-container>
+        <ng-container *ngIf="usernameOptions.forwardedService === 'forwardemail'">
+          <div class="box-content-row" appBoxRow>
+            <label for="forwardemail-accessToken">{{ "apiAccessToken" | i18n }}</label>
+            <input
+              id="forwardemail-accessToken"
+              type="password"
+              name="ForwardEmailAccessToken"
+              [(ngModel)]="usernameOptions.forwardedForwardEmailApiToken"
+              (blur)="saveUsernameOptions()"
+            />
+          </div>
+          <div class="box-content-row" appBoxRow>
+            <label for="forwardemail-domain">{{ "domainName" | i18n }}</label>
+            <input
+              id="forwardemail-domain"
+              type="text"
+              name="ForwardEmailDomain"
+              [(ngModel)]="usernameOptions.forwardedForwardEmailDomain"
+              (blur)="saveUsernameOptions()"
+            />
+          </div>
+        </ng-container>
       </div>
     </div>
     <div class="box" *ngIf="usernameOptions.type === 'subaddress'">

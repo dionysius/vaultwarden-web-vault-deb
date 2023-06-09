@@ -8,6 +8,7 @@ import {
   DuckDuckGoForwarder,
   FastmailForwarder,
   FirefoxRelayForwarder,
+  ForwardEmailForwarder,
   Forwarder,
   ForwarderOptions,
   SimpleLoginForwarder,
@@ -22,6 +23,7 @@ const DefaultOptions = {
   catchallType: "random",
   forwardedService: "",
   forwardedAnonAddyDomain: "anonaddy.me",
+  forwardedForwardEmailDomain: "hideaddress.net",
 };
 
 export class UsernameGenerationService implements UsernameGenerationServiceAbstraction {
@@ -137,6 +139,10 @@ export class UsernameGenerationService implements UsernameGenerationServiceAbstr
     } else if (o.forwardedService === "duckduckgo") {
       forwarder = new DuckDuckGoForwarder();
       forwarderOptions.apiKey = o.forwardedDuckDuckGoToken;
+    } else if (o.forwardedService === "forwardemail") {
+      forwarder = new ForwardEmailForwarder();
+      forwarderOptions.apiKey = o.forwardedForwardEmailApiToken;
+      forwarderOptions.forwardemail.domain = o.forwardedForwardEmailDomain;
     }
 
     if (forwarder == null) {

@@ -242,6 +242,7 @@ export class GeneratorComponent implements OnInit {
       { name: "Fastmail", value: "fastmail", validForSelfHosted: true },
       { name: "Firefox Relay", value: "firefoxrelay", validForSelfHosted: false },
       { name: "SimpleLogin", value: "simplelogin", validForSelfHosted: true },
+      { name: "Forward Email", value: "forwardemail", validForSelfHosted: true },
     ];
 
     this.usernameOptions = await this.usernameGenerationService.getOptions();
