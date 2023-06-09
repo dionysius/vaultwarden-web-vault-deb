@@ -1,5 +1,5 @@
 import { ApiService } from "../../../../abstractions/api.service";
-import { Utils } from "../../../../misc/utils";
+import { Utils } from "../../../../platform/misc/utils";
 
 import { Forwarder } from "./forwarder";
 import { ForwarderOptions } from "./forwarder-options";
