@@ -4493,13 +4493,13 @@
     "message": "Падказка для пароля не можа супадаць з паролем."
   },
   "enrollAccountRecovery": {
-    "message": "Enroll in account recovery"
+    "message": "Зарэгістравацца на аднаўленне ўліковага запісу"
   },
   "enrolledAccountRecovery": {
-    "message": "Enrolled in account recovery"
+    "message": "Зарэгістравацца на аднаўленне ўліковага запісу"
   },
   "withdrawAccountRecovery": {
-    "message": "Withdraw from account recovery"
+    "message": "Адклікаць аднаўленне ўліковага запісу"
   },
   "enrollPasswordResetSuccess": {
     "message": "Паспяховая рэгістрацыя!"
@@ -4508,7 +4508,7 @@
     "message": "Адмова паспяхова ўжыта!"
   },
   "eventEnrollAccountRecovery": {
-    "message": "User $ID$ enrolled in account recovery.",
+    "message": "Карыстальнік $ID$ зарэгістраваўся на аднаўленне ўліковага запісу.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -4517,7 +4517,7 @@
     }
   },
   "eventWithdrawAccountRecovery": {
-    "message": "User $ID$ withdrew from account recovery.",
+    "message": "Карыстальнік $ID$ адклікаў аднаўленне ўліковага запісу.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -4577,10 +4577,10 @@
     "message": "Рэгістрацыя дазволіць адміністратарам арганізацыі змяняць ваш асноўны пароль"
   },
   "accountRecoveryPolicy": {
-    "message": "Account recovery administration"
+    "message": "Адміністраванне аднаўлення ўліковага запісу"
   },
   "accountRecoveryPolicyDescription": {
-    "message": "Recover member accounts when master password or trusted devices are forgotten or lost. The recovery processes is based on the account encryption method."
+    "message": "Аднаўленне ўліковага запісу ўдзельніка, калі асноўны пароль забыты або давераная прылада страчана. Працэс аднаўлення заснаваны на метадзе шыфравання ўліковага запісу."
   },
   "resetPasswordPolicyWarning": {
     "message": "Карыстальнікі арганізацыі павінны зарэгістравацца самастойна або быць зарэгістраванымі аўтаматычна, каб адміністратары маглі скінуць іх асноўны пароль."
@@ -5231,11 +5231,11 @@
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Connect login with SSO to your self-hosted decryption key server. Using this option, members won’t need to use their master passwords to decrypt vault data. The require SSO authentication and single organization policies are required to set up Key Connector decryption. Contact Bitwarden Support for set up assistance.'"
   },
   "memberDecryptionKeyConnectorDescLink": {
-    "message": "Для наладжвання расшыфроўкі Key Connector патрабуецца аўтэнтыфікацыя SSO",
+    "message": "Патрабуецца аўтэнтыфікацыя SSO і палітыкі адзінай арганізацыі",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Connect login with SSO to your self-hosted decryption key server. Using this option, members won’t need to use their master passwords to decrypt vault data. The require SSO authentication and single organization policies are required to set up Key Connector decryption. Contact Bitwarden Support for set up assistance.'"
   },
   "memberDecryptionKeyConnectorDescEnd": {
-    "message": "are required to set up Key Connector decryption. Contact Bitwarden Support for set up assistance.",
+    "message": "для наладжвання шыфравання з дапамогай Key Connector. Звярніцеся ў службу падтрымкі Bitwarden, каб атрымаць дапамогу пры наладжванні.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Connect login with SSO to your self-hosted decryption key server. Using this option, members won’t need to use their master passwords to decrypt vault data. The require SSO authentication and single organization policies are required to set up Key Connector decryption. Contact Bitwarden Support for set up assistance.'"
   },
   "keyConnectorPolicyRestriction": {
@@ -6776,7 +6776,7 @@
     }
   },
   "inputTrimValidator": {
-    "message": "Input must not contain only whitespace.",
+    "message": "Уведзенае значэнне не павінна змяшчаць толькі прабелы.",
     "description": "Notification to inform the user that a form's input can't contain only whitespace."
   },
   "dismiss": {
@@ -6793,7 +6793,7 @@
     "message": "Патрабаваць ад існуючых удзельнікаў змены пароляў"
   },
   "region": {
-    "message": "Region"
+    "message": "Рэгіён"
   },
   "eu": {
     "message": "ЕС",
@@ -6822,17 +6822,26 @@
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
   "memberDecryptionTdeDescriptionLink": {
-    "message": "account recovery administration policy",
+    "message": "Палітыка адміністравання аднаўлення ўліковых запісаў",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
   "memberDecryptionTdeDescriptionEnd": {
-    "message": "with automatic enrollment will turn on when this option is used.",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The account recovery administration policy with automatic enrollment will turn on when this option is used.'"
+    "message": "з аўтаматычнай рэгістрацыяй уключаецца пры выкарыстанні гэтага параметра.",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The master password reset policy with automatic enrollment will turn on when this option is used.'"
+  },
+  "notFound": {
+    "message": "$RESOURCE$ не знойдзены",
+    "placeholders": {
+      "resource": {
+        "content": "$1",
+        "example": "Service Account"
+      }
+    }
   },
   "recoverAccount": {
-    "message": "Recover account"
+    "message": "Аднавіць уліковы запіс"
   },
   "updatedTempPassword": {
-    "message": "User updated a password issued through account recovery."
+    "message": "Карыстальнік абнавіў пароль пры аднаўленні ўліковага запісу."
   }
 }

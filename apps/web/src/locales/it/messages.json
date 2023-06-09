@@ -4493,13 +4493,13 @@
     "message": "Il suggerimento per la password non può essere uguale alla tua password."
   },
   "enrollAccountRecovery": {
-    "message": "Enroll in account recovery"
+    "message": "Iscriviti al recupero dell'account"
   },
   "enrolledAccountRecovery": {
-    "message": "Enrolled in account recovery"
+    "message": "Iscritto al recupero dell'account"
   },
   "withdrawAccountRecovery": {
-    "message": "Withdraw from account recovery"
+    "message": "Rifiuta il recupero dell'account"
   },
   "enrollPasswordResetSuccess": {
     "message": "Iscrizione riuscita!"
@@ -4508,7 +4508,7 @@
     "message": "Rinuncia riuscita!"
   },
   "eventEnrollAccountRecovery": {
-    "message": "User $ID$ enrolled in account recovery.",
+    "message": "Utente $ID$ si è iscritto al recupero dell'account.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -4517,7 +4517,7 @@
     }
   },
   "eventWithdrawAccountRecovery": {
-    "message": "User $ID$ withdrew from account recovery.",
+    "message": "Utente $ID$ ha rifiutato il recupero dell'account.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -4577,10 +4577,10 @@
     "message": "Iscriversi consentirà agli amministratori dell'organizzazione di cambiare la tua password principale"
   },
   "accountRecoveryPolicy": {
-    "message": "Account recovery administration"
+    "message": "Amministrazione del recupero dell'account"
   },
   "accountRecoveryPolicyDescription": {
-    "message": "Recover member accounts when master password or trusted devices are forgotten or lost. The recovery processes is based on the account encryption method."
+    "message": "Recupera gli account dei membri quando la password principale o i dispositivi fidati sono dimenticati o persi. I processi di recupero sono basati sul metodo di criptografia dell'account."
   },
   "resetPasswordPolicyWarning": {
     "message": "I membri dell'organizzazione dovranno iscriversi o essere iscritti automaticamente prima che gli amministratori possano ripristinare la loro password principale."
@@ -6776,7 +6776,7 @@
     }
   },
   "inputTrimValidator": {
-    "message": "Input must not contain only whitespace.",
+    "message": "L'input non deve contenere solo spazi.",
     "description": "Notification to inform the user that a form's input can't contain only whitespace."
   },
   "dismiss": {
@@ -6818,21 +6818,30 @@
     "message": "Criptografia dispositivo fidato"
   },
   "memberDecryptionTdeDescriptionStart": {
-    "message": "Once authenticated, members will decrypt vault data using a key stored on their device. The",
+    "message": "Una volta autenticati, i membri decriptograferanno i dati della cassaforte usando una chiave memorizzata sul proprio dispositivo. La",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
   "memberDecryptionTdeDescriptionLink": {
-    "message": "account recovery administration policy",
+    "message": "politica di amministrazione del recupero dell'account",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
   "memberDecryptionTdeDescriptionEnd": {
-    "message": "with automatic enrollment will turn on when this option is used.",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The account recovery administration policy with automatic enrollment will turn on when this option is used.'"
+    "message": "con registrazione automatica si attiverà quando questa opzione è usata.",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The master password reset policy with automatic enrollment will turn on when this option is used.'"
+  },
+  "notFound": {
+    "message": "$RESOURCE$ non trovato",
+    "placeholders": {
+      "resource": {
+        "content": "$1",
+        "example": "Service Account"
+      }
+    }
   },
   "recoverAccount": {
-    "message": "Recover account"
+    "message": "Recupera account"
   },
   "updatedTempPassword": {
-    "message": "User updated a password issued through account recovery."
+    "message": "L'utente ha aggiornato una password emessa tramite il recupero dell'account."
   }
 }

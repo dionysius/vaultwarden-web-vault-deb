@@ -4493,22 +4493,22 @@
     "message": "Подсказка для пароля не может совпадать с паролем."
   },
   "enrollAccountRecovery": {
-    "message": "Enroll in account recovery"
+    "message": "Зарегистрироваться на восстановление аккаунта"
   },
   "enrolledAccountRecovery": {
-    "message": "Enrolled in account recovery"
+    "message": "Зарегистрирован на восстановление аккаунта"
   },
   "withdrawAccountRecovery": {
-    "message": "Withdraw from account recovery"
+    "message": "Сняться с восстановления аккаунта"
   },
   "enrollPasswordResetSuccess": {
-    "message": "Записано успешно!"
+    "message": "Регистрация успешна!"
   },
   "withdrawPasswordResetSuccess": {
     "message": "Запись успешно отменена!"
   },
   "eventEnrollAccountRecovery": {
-    "message": "User $ID$ enrolled in account recovery.",
+    "message": "Пользователь $ID$ зарегистрирован на восстановление аккаунта.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -4517,7 +4517,7 @@
     }
   },
   "eventWithdrawAccountRecovery": {
-    "message": "User $ID$ withdrew from account recovery.",
+    "message": "Пользователь $ID$ снялся с восстановления аккаунта.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -4577,10 +4577,10 @@
     "message": "Регистрация позволит администраторам организации изменять ваш мастер-пароль"
   },
   "accountRecoveryPolicy": {
-    "message": "Account recovery administration"
+    "message": "Управление восстановлением аккаунта"
   },
   "accountRecoveryPolicyDescription": {
-    "message": "Recover member accounts when master password or trusted devices are forgotten or lost. The recovery processes is based on the account encryption method."
+    "message": "Восстановление аккаунтов пользователей при утере мастер-пароля или доверенных устройств. Восстановление осуществляется на основе метода шифрования аккаунта."
   },
   "resetPasswordPolicyWarning": {
     "message": "Пользователи организации должны зарегистрироваться самостоятельно или быть зарегистрированными автоматически, чтобы администраторы могли сбросить их мастер-пароль."
@@ -6776,7 +6776,7 @@
     }
   },
   "inputTrimValidator": {
-    "message": "Input must not contain only whitespace.",
+    "message": "Введенные данные не должны содержать только пробелы.",
     "description": "Notification to inform the user that a form's input can't contain only whitespace."
   },
   "dismiss": {
@@ -6818,21 +6818,30 @@
     "message": "Шифрование доверенного устройства"
   },
   "memberDecryptionTdeDescriptionStart": {
-    "message": "Once authenticated, members will decrypt vault data using a key stored on their device. The",
+    "message": "После аутентификации участники расшифровывают данные хранилища с помощью ключа, хранящегося на их устройстве.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
   "memberDecryptionTdeDescriptionLink": {
-    "message": "account recovery administration policy",
+    "message": "Политика администрирования восстановления аккаунтов",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
   "memberDecryptionTdeDescriptionEnd": {
-    "message": "with automatic enrollment will turn on when this option is used.",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The account recovery administration policy with automatic enrollment will turn on when this option is used.'"
+    "message": "с автоматической регистрацией включается при использовании этой опции.",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The master password reset policy with automatic enrollment will turn on when this option is used.'"
+  },
+  "notFound": {
+    "message": "$RESOURCE$ не найден",
+    "placeholders": {
+      "resource": {
+        "content": "$1",
+        "example": "Service Account"
+      }
+    }
   },
   "recoverAccount": {
-    "message": "Recover account"
+    "message": "Восстановить аккаунт"
   },
   "updatedTempPassword": {
-    "message": "User updated a password issued through account recovery."
+    "message": "Пользователь обновил пароль, выданный через восстановление аккаунта."
   }
 }
