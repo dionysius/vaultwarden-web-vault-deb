@@ -98,7 +98,7 @@
     "message": "Copiar nome do campo personalizado"
   },
   "noMatchingLogins": {
-    "message": "Sem inícios de sessão correspondentes"
+    "message": "Sem credenciais correspondentes"
   },
   "unlockVaultMenu": {
     "message": "Desbloqueie o seu cofre"
@@ -107,10 +107,10 @@
     "message": "Inicie sessão para abrir o seu cofre"
   },
   "autoFillInfo": {
-    "message": "Não existem inícios de sessão disponíveis para preenchimento automático no separador atual do navegador."
+    "message": "Não existem credenciais disponíveis para preenchimento automático no separador atual do navegador."
   },
   "addLogin": {
-    "message": "Adicionar um início de sessão"
+    "message": "Adicionar uma credencial"
   },
   "addItem": {
     "message": "Adicionar item"
@@ -221,7 +221,7 @@
     "description": "Short for 'Password Generator'."
   },
   "passGenInfo": {
-    "message": "Gera automaticamente palavras-passe fortes e únicas para os seus inícios de sessão."
+    "message": "Gera automaticamente palavras-passe fortes e únicas para as suas credenciais."
   },
   "bitWebVault": {
     "message": "Cofre web Bitwarden"
@@ -415,7 +415,7 @@
     "message": "No bloqueio do sistema"
   },
   "onRestart": {
-    "message": "Ao reiniciar o sistema"
+    "message": "Ao reiniciar o navegador"
   },
   "never": {
     "message": "Nunca"
@@ -583,7 +583,7 @@
     "message": "Procurar no tipo"
   },
   "noneFolder": {
-    "message": "Em nenhuma pasta",
+    "message": "Sem pasta",
     "description": "This is the folder for uncategorized items"
   },
   "enableAddLoginNotification": {
@@ -641,7 +641,7 @@
     "description": "Default URI match detection for auto-fill."
   },
   "defaultUriMatchDetectionDesc": {
-    "message": "Escolha a forma predefinida como a deteção de correspondência de URI é tratada para inícios de sessão ao executar ações como o preenchimento automático."
+    "message": "Escolha a forma predefinida como a deteção de correspondência de URI é tratada para credenciais ao executar ações como o preenchimento automático."
   },
   "theme": {
     "message": "Tema"
@@ -793,7 +793,7 @@
     "message": "Higiene de palavras-passe, saúde da conta e relatórios de violação de dados para manter o seu cofre seguro."
   },
   "ppremiumSignUpTotp": {
-    "message": "Gerador de código de verificação TOTP (2FA) para inícios de sessão no seu cofre."
+    "message": "Gerador de códigos de verificação TOTP (2FA) para credenciais no seu cofre."
   },
   "ppremiumSignUpSupport": {
     "message": "Prioridade no apoio ao cliente."
@@ -829,7 +829,7 @@
     "message": "Copy TOTP automatically"
   },
   "disableAutoTotpCopyDesc": {
-    "message": "Se um início de sessão tiver uma chave de autenticação, copie o código de verificação TOTP para a sua área de transferência quando preencher automaticamente o início de sessão."
+    "message": "Se uma credencial tiver uma chave de autenticação, copie o código de verificação TOTP para a sua área de transferência quando preencher automaticamente o início de sessão."
   },
   "enableAutoBiometricsPrompt": {
     "message": "Ask for biometrics on launch"
@@ -865,7 +865,7 @@
     "message": "Memorizar-me"
   },
   "sendVerificationCodeEmailAgain": {
-    "message": "Enviar código de verificação novamente"
+    "message": "Enviar e-mail com o código de verificação novamente"
   },
   "useAnotherTwoStepMethod": {
     "message": "Utilizar outro método de verificação de dois passos"
@@ -892,7 +892,7 @@
     "message": "Esta conta tem a verificação de dois passos configurada, no entanto, nenhum dos fornecedores da verificação de dois passos configurada é suportado por este navegador web."
   },
   "noTwoStepProviders2": {
-    "message": "Utilize um navegador web suportado (como o Chrome) e/ou adicione fornecedores adicionais que sejam mais bem suportados nos navegadores web (como uma aplicação de autenticação)."
+    "message": "Por favor, utilize um navegador web suportado (como o Chrome) e/ou adicione fornecedores adicionais que sejam mais bem suportados nos navegadores web (como uma aplicação de autenticação)."
   },
   "twoStepOptions": {
     "message": "Opções de verificação de dois passos"
@@ -1146,7 +1146,7 @@
     "message": "Mx"
   },
   "firstName": {
-    "message": "Primeiro nome"
+    "message": "Nome próprio"
   },
   "middleName": {
     "message": "Segundo nome"
@@ -1179,16 +1179,16 @@
     "message": "Telefone"
   },
   "address": {
-    "message": "Morada"
+    "message": "Endereço"
   },
   "address1": {
-    "message": "1.ª morada"
+    "message": "Endereço 1"
   },
   "address2": {
-    "message": "2.ª morada"
+    "message": "Endereço 2"
   },
   "address3": {
-    "message": "3.ª morada"
+    "message": "Endereço 3"
   },
   "cityTown": {
     "message": "Cidade / Localidade"
@@ -1206,10 +1206,10 @@
     "message": "Tipo"
   },
   "typeLogin": {
-    "message": "Início de sessão"
+    "message": "Credencial"
   },
   "typeLogins": {
-    "message": "Inícios de sessão"
+    "message": "Credenciais"
   },
   "typeSecureNote": {
     "message": "Nota segura"
@@ -1245,7 +1245,7 @@
     "message": "Identidades"
   },
   "logins": {
-    "message": "Inícios de sessão"
+    "message": "Credenciais"
   },
   "secureNotes": {
     "message": "Notas seguras"
@@ -1406,10 +1406,10 @@
     "message": "Deve selecionar pelo menos uma coleção."
   },
   "cloneItem": {
-    "message": "Clonar item"
+    "message": "Duplicar item"
   },
   "clone": {
-    "message": "Clonar"
+    "message": "Duplicar"
   },
   "passwordGeneratorPolicyInEffect": {
     "message": "Uma ou mais políticas da organização estão a afetar as suas definições do gerador."
@@ -1432,7 +1432,7 @@
     "message": "Eliminar item permanentemente"
   },
   "permanentlyDeleteItemConfirmation": {
-    "message": "Tem a certeza de que pretende eliminar este item permanentemente?"
+    "message": "Tem a certeza de que pretende eliminar permanentemente este item?"
   },
   "permanentlyDeletedItem": {
     "message": "Item eliminado permanentemente"
@@ -1799,7 +1799,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editedSend": {
-    "message": "Send saved",
+    "message": "Send editado",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLinuxChromiumFileWarning": {
@@ -1869,10 +1869,10 @@
     "message": "Atualizar palavra-passe mestra"
   },
   "updateMasterPasswordWarning": {
-    "message": "A sua palavra-passe mestra foi recentemente alterada por um administrador da sua organização. Para aceder ao cofre, tem de atualizar a sua palavra-passe mestra agora. Se prosseguir, sairá da sua sessão atual e terá de iniciar sessão novamente. As sessões ativas noutros dispositivos poderão continuar ativas até uma hora."
+    "message": "A sua palavra-passe mestra foi recentemente alterada por um administrador da sua organização. Para aceder ao cofre, tem de atualizar a sua palavra-passe mestra agora. Ao prosseguir, terminará a sua sessão atual e terá de iniciar sessão novamente. As sessões ativas noutros dispositivos poderão continuar ativas até uma hora."
   },
   "updateWeakMasterPasswordWarning": {
-    "message": "A sua palavra-passe mestra não cumpre uma ou mais políticas da sua organização. Para aceder ao cofre, tem de atualizar a sua palavra-passe mestra agora. Se prosseguir, sairá da sua sessão atual e terá de iniciar sessão novamente. As sessões ativas noutros dispositivos poderão continuar ativas até uma hora."
+    "message": "A sua palavra-passe mestra não cumpre uma ou mais políticas da sua organização. Para aceder ao cofre, tem de atualizar a sua palavra-passe mestra agora. Ao prosseguir, terminará a sua sessão atual e terá de iniciar sessão novamente. As sessões ativas noutros dispositivos poderão continuar ativas até uma hora."
   },
   "resetPasswordPolicyAutoEnroll": {
     "message": "Inscrição automática"

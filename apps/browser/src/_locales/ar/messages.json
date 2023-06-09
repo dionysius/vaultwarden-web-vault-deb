@@ -1412,13 +1412,13 @@
     "message": "استنساخ"
   },
   "passwordGeneratorPolicyInEffect": {
-    "message": "One or more organization policies are affecting your generator settings."
+    "message": "واحدة أو أكثر من سياسات المؤسسة تؤثر على إعدادات المولدات الخاصة بك."
   },
   "vaultTimeoutAction": {
-    "message": "Vault timeout action"
+    "message": "إجراء مهلة المخزن"
   },
   "lock": {
-    "message": "Lock",
+    "message": "قفل",
     "description": "Verb form: to make secure or inaccesible by"
   },
   "trash": {
@@ -1426,7 +1426,7 @@
     "description": "Noun: a special folder to hold deleted items"
   },
   "searchTrash": {
-    "message": "Search trash"
+    "message": "البحث عن سلة المهملات"
   },
   "permanentlyDeleteItem": {
     "message": "حذف العنصر بشكل دائم"
@@ -1435,13 +1435,13 @@
     "message": "هل أنت متأكد من أنك تريد حذف هذا العنصر بشكل دائم؟"
   },
   "permanentlyDeletedItem": {
-    "message": "Item permanently deleted"
+    "message": "تم حذف العنصر بشكل دائم"
   },
   "restoreItem": {
     "message": "استعادة العنصر"
   },
   "restoreItemConfirmation": {
-    "message": "Are you sure you want to restore this item?"
+    "message": "هل أنت متأكد من أنك تريد استعادة هذا العنصر؟"
   },
   "restoredItem": {
     "message": "Item restored"
