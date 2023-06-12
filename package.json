@@ -25,7 +25,8 @@
     "docs:json": "compodoc -p ./tsconfig.json -e json -d .",
     "storybook": "ng run components:storybook",
     "build-storybook": "ng run components:build-storybook",
-    "build-storybook:ci": "ng run components:build-storybook --webpack-stats-json"
+    "build-storybook:ci": "ng run components:build-storybook --webpack-stats-json",
+    "postinstall": "patch-package"
   },
   "workspaces": [
     "apps/*",
@@ -189,6 +190,7 @@
     "nord": "0.2.1",
     "open": "8.4.2",
     "papaparse": "5.4.1",
+    "patch-package": "6.5.1",
     "popper.js": "1.16.1",
     "proper-lockfile": "4.1.2",
     "qrious": "4.0.2",
