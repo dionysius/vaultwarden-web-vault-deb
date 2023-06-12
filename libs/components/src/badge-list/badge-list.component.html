@@ -1,8 +1,10 @@
 <div class="tw-inline-flex tw-gap-2">
-  <span *ngFor="let item of filteredItems; let last = last" bitBadge [badgeType]="badgeType">
-    {{ item }}
+  <ng-container *ngFor="let item of filteredItems; let last = last">
+    <span bitBadge [badgeType]="badgeType" [truncate]="truncate">
+      {{ item }}
+    </span>
     <span class="tw-sr-only" *ngIf="!last || isFiltered">, </span>
-  </span>
+  </ng-container>
   <span *ngIf="isFiltered" bitBadge [badgeType]="badgeType">
     {{ "plusNMore" | i18n : (items.length - filteredItems.length).toString() }}
   </span>

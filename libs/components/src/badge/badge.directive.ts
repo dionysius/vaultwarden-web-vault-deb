@@ -26,11 +26,12 @@ const hoverStyles: Record<BadgeTypes, string[]> = {
 export class BadgeDirective {
   @HostBinding("class") get classList() {
     return [
-      "tw-inline",
+      "tw-inline-block",
       "tw-py-0.5",
       "tw-px-1.5",
       "tw-font-bold",
       "tw-text-center",
+      "tw-align-text-top",
       "!tw-text-contrast",
       "tw-rounded",
       "tw-border-none",
@@ -44,14 +45,19 @@ export class BadgeDirective {
       "focus:tw-ring-primary-700",
     ]
       .concat(styles[this.badgeType])
-      .concat(this.hasHoverEffects ? hoverStyles[this.badgeType] : []);
+      .concat(this.hasHoverEffects ? hoverStyles[this.badgeType] : [])
+      .concat(this.truncate ? ["tw-truncate", "tw-max-w-40"] : []);
+  }
+  @HostBinding("attr.title") get title() {
+    return this.truncate ? this.el.nativeElement.textContent.trim() : null;
   }
 
   @Input() badgeType: BadgeTypes = "primary";
+  @Input() truncate = true;
 
   private hasHoverEffects = false;
 
-  constructor(el: ElementRef<Element>) {
+  constructor(private el: ElementRef<HTMLElement>) {
     this.hasHoverEffects = el?.nativeElement?.nodeName != "SPAN";
   }
 }
