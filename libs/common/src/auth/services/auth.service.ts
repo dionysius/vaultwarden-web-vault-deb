@@ -17,7 +17,7 @@ import { PlatformUtilsService } from "../../platform/abstractions/platform-utils
 import { StateService } from "../../platform/abstractions/state.service";
 import { Utils } from "../../platform/misc/utils";
 import { SymmetricCryptoKey } from "../../platform/models/domain/symmetric-crypto-key";
-import { PasswordGenerationServiceAbstraction } from "../../tools/generator/password";
+import { PasswordStrengthServiceAbstraction } from "../../tools/password-strength";
 import { AuthService as AuthServiceAbstraction } from "../abstractions/auth.service";
 import { KeyConnectorService } from "../abstractions/key-connector.service";
 import { TokenService } from "../abstractions/token.service";
@@ -102,7 +102,7 @@ export class AuthService implements AuthServiceAbstraction {
     protected twoFactorService: TwoFactorService,
     protected i18nService: I18nService,
     protected encryptService: EncryptService,
-    protected passwordGenerationService: PasswordGenerationServiceAbstraction,
+    protected passwordStrengthService: PasswordStrengthServiceAbstraction,
     protected policyService: PolicyService
   ) {}
 
@@ -133,7 +133,7 @@ export class AuthService implements AuthServiceAbstraction {
           this.logService,
           this.stateService,
           this.twoFactorService,
-          this.passwordGenerationService,
+          this.passwordStrengthService,
           this.policyService,
           this
         );

@@ -9,7 +9,7 @@ import { MessagingService } from "../../platform/abstractions/messaging.service"
 import { PlatformUtilsService } from "../../platform/abstractions/platform-utils.service";
 import { StateService } from "../../platform/abstractions/state.service";
 import { SymmetricCryptoKey } from "../../platform/models/domain/symmetric-crypto-key";
-import { PasswordGenerationServiceAbstraction } from "../../tools/generator/password";
+import { PasswordStrengthServiceAbstraction } from "../../tools/password-strength";
 import { AuthService } from "../abstractions/auth.service";
 import { TokenService } from "../abstractions/token.service";
 import { TwoFactorService } from "../abstractions/two-factor.service";
@@ -54,7 +54,7 @@ export class PasswordLogInStrategy extends LogInStrategy {
     logService: LogService,
     protected stateService: StateService,
     twoFactorService: TwoFactorService,
-    private passwordGenerationService: PasswordGenerationServiceAbstraction,
+    private passwordStrengthService: PasswordStrengthServiceAbstraction,
     private policyService: PolicyService,
     private authService: AuthService
   ) {
@@ -158,7 +158,7 @@ export class PasswordLogInStrategy extends LogInStrategy {
     { masterPassword, email }: PasswordLogInCredentials,
     options: MasterPasswordPolicyOptions
   ): boolean {
-    const passwordStrength = this.passwordGenerationService.passwordStrength(
+    const passwordStrength = this.passwordStrengthService.getPasswordStrength(
       masterPassword,
       email
     )?.score;

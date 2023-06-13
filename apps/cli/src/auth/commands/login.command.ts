@@ -35,6 +35,7 @@ import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { EncString } from "@bitwarden/common/platform/models/domain/enc-string";
 import { SymmetricCryptoKey } from "@bitwarden/common/platform/models/domain/symmetric-crypto-key";
 import { PasswordGenerationServiceAbstraction } from "@bitwarden/common/tools/generator/password";
+import { PasswordStrengthServiceAbstraction } from "@bitwarden/common/tools/password-strength";
 import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
 
 import { Response } from "../../models/response";
@@ -54,6 +55,7 @@ export class LoginCommand {
     protected cryptoFunctionService: CryptoFunctionService,
     protected environmentService: EnvironmentService,
     protected passwordGenerationService: PasswordGenerationServiceAbstraction,
+    protected passwordStrengthService: PasswordStrengthServiceAbstraction,
     protected platformUtilsService: PlatformUtilsService,
     protected stateService: StateService,
     protected cryptoService: CryptoService,
@@ -505,7 +507,7 @@ export class LoginCommand {
     }
 
     // Strength & Policy Validation
-    const strengthResult = this.passwordGenerationService.passwordStrength(
+    const strengthResult = this.passwordStrengthService.getPasswordStrength(
       masterPassword,
       this.email
     );

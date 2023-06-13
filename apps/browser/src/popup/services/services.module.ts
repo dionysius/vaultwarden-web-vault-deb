@@ -63,6 +63,7 @@ import { ContainerService } from "@bitwarden/common/platform/services/container.
 import { SearchService } from "@bitwarden/common/services/search.service";
 import { PasswordGenerationServiceAbstraction } from "@bitwarden/common/tools/generator/password";
 import { UsernameGenerationServiceAbstraction } from "@bitwarden/common/tools/generator/username";
+import { PasswordStrengthServiceAbstraction } from "@bitwarden/common/tools/password-strength";
 import { SendApiService } from "@bitwarden/common/tools/send/services/send-api.service";
 import { SendApiService as SendApiServiceAbstraction } from "@bitwarden/common/tools/send/services/send-api.service.abstraction";
 import {
@@ -285,6 +286,11 @@ function getBgService<T>(service: keyof MainBackground) {
     {
       provide: PlatformUtilsService,
       useFactory: getBgService<PlatformUtilsService>("platformUtilsService"),
+      deps: [],
+    },
+    {
+      provide: PasswordStrengthServiceAbstraction,
+      useFactory: getBgService<PasswordStrengthServiceAbstraction>("passwordStrengthService"),
       deps: [],
     },
     {

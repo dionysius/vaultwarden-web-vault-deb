@@ -75,6 +75,10 @@ import {
   UsernameGenerationService,
   UsernameGenerationServiceAbstraction,
 } from "@bitwarden/common/tools/generator/username";
+import {
+  PasswordStrengthService,
+  PasswordStrengthServiceAbstraction,
+} from "@bitwarden/common/tools/password-strength";
 import { SendApiService } from "@bitwarden/common/tools/send/services/send-api.service";
 import { SendApiService as SendApiServiceAbstraction } from "@bitwarden/common/tools/send/services/send-api.service.abstraction";
 import { InternalSendService as InternalSendServiceAbstraction } from "@bitwarden/common/tools/send/services/send.service.abstraction";
@@ -155,6 +159,7 @@ export default class MainBackground {
   vaultTimeoutSettingsService: VaultTimeoutSettingsServiceAbstraction;
   syncService: SyncServiceAbstraction;
   passwordGenerationService: PasswordGenerationServiceAbstraction;
+  passwordStrengthService: PasswordStrengthServiceAbstraction;
   totpService: TotpServiceAbstraction;
   autofillService: AutofillServiceAbstraction;
   containerService: ContainerService;
@@ -360,6 +365,9 @@ export default class MainBackground {
       this.collectionService,
       this.policyService
     );
+
+    this.passwordStrengthService = new PasswordStrengthService();
+
     this.passwordGenerationService = new PasswordGenerationService(
       this.cryptoService,
       this.policyService,
@@ -391,7 +399,7 @@ export default class MainBackground {
       this.twoFactorService,
       this.i18nService,
       this.encryptService,
-      this.passwordGenerationService,
+      this.passwordStrengthService,
       this.policyService
     );
 

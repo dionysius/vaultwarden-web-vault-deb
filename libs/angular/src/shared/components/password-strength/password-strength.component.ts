@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnChanges, Output } from "@angular/core";
 
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
-import { PasswordGenerationServiceAbstraction } from "@bitwarden/common/tools/generator/password";
+import { PasswordStrengthServiceAbstraction } from "@bitwarden/common/tools/password-strength";
 
 export interface PasswordColorText {
   color: string;
@@ -59,7 +59,7 @@ export class PasswordStrengthComponent implements OnChanges {
 
   constructor(
     private i18nService: I18nService,
-    private passwordGenerationService: PasswordGenerationServiceAbstraction
+    private passwordStrengthService: PasswordStrengthServiceAbstraction
   ) {}
 
   ngOnChanges(): void {
@@ -96,7 +96,7 @@ export class PasswordStrengthComponent implements OnChanges {
       clearTimeout(this.masterPasswordStrengthTimeout);
     }
 
-    const strengthResult = this.passwordGenerationService.passwordStrength(
+    const strengthResult = this.passwordStrengthService.getPasswordStrength(
       masterPassword,
       this.email,
       this.name?.trim().toLowerCase().split(" ")

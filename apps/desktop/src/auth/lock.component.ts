@@ -18,7 +18,7 @@ import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.servic
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
-import { PasswordGenerationServiceAbstraction } from "@bitwarden/common/tools/generator/password";
+import { PasswordStrengthServiceAbstraction } from "@bitwarden/common/tools/password-strength";
 
 import { ElectronStateService } from "../platform/services/electron-state.service.abstraction";
 import { BiometricStorageAction, BiometricMessage } from "../types/biometric-message";
@@ -49,7 +49,7 @@ export class LockComponent extends BaseLockComponent {
     ngZone: NgZone,
     policyApiService: PolicyApiServiceAbstraction,
     policyService: InternalPolicyService,
-    passwordGenerationService: PasswordGenerationServiceAbstraction,
+    passwordStrengthService: PasswordStrengthServiceAbstraction,
     logService: LogService,
     keyConnectorService: KeyConnectorService,
     dialogService: DialogServiceAbstraction
@@ -70,7 +70,7 @@ export class LockComponent extends BaseLockComponent {
       ngZone,
       policyApiService,
       policyService,
-      passwordGenerationService,
+      passwordStrengthService,
       dialogService
     );
   }

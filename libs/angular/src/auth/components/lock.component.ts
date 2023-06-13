@@ -24,7 +24,7 @@ import { StateService } from "@bitwarden/common/platform/abstractions/state.serv
 import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { EncString } from "@bitwarden/common/platform/models/domain/enc-string";
 import { SymmetricCryptoKey } from "@bitwarden/common/platform/models/domain/symmetric-crypto-key";
-import { PasswordGenerationServiceAbstraction } from "@bitwarden/common/tools/generator/password";
+import { PasswordStrengthServiceAbstraction } from "@bitwarden/common/tools/password-strength";
 
 import { DialogServiceAbstraction, SimpleDialogType } from "../../services/dialog";
 
@@ -69,7 +69,7 @@ export class LockComponent implements OnInit, OnDestroy {
     protected ngZone: NgZone,
     protected policyApiService: PolicyApiServiceAbstraction,
     protected policyService: InternalPolicyService,
-    protected passwordGenerationService: PasswordGenerationServiceAbstraction,
+    protected passwordStrengthService: PasswordStrengthServiceAbstraction,
     protected dialogService: DialogServiceAbstraction
   ) {}
 
@@ -333,7 +333,7 @@ export class LockComponent implements OnInit, OnDestroy {
       return false;
     }
 
-    const passwordStrength = this.passwordGenerationService.passwordStrength(
+    const passwordStrength = this.passwordStrengthService.getPasswordStrength(
       this.masterPassword,
       this.email
     )?.score;

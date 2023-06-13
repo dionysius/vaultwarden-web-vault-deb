@@ -16,11 +16,11 @@ import {
 import { totpServiceFactory } from "../../auth/background/service-factories/totp-service.factory";
 import LockedVaultPendingNotificationsItem from "../../background/models/lockedVaultPendingNotificationsItem";
 import { eventCollectionServiceFactory } from "../../background/service-factories/event-collection-service.factory";
-import { passwordGenerationServiceFactory } from "../../background/service-factories/password-generation-service.factory";
 import { Account } from "../../models/account";
 import { CachedServices } from "../../platform/background/service-factories/factory-options";
 import { stateServiceFactory } from "../../platform/background/service-factories/state-service.factory";
 import { BrowserApi } from "../../platform/browser/browser-api";
+import { passwordGenerationServiceFactory } from "../../tools/background/service_factories/password-generation-service.factory";
 import {
   cipherServiceFactory,
   CipherServiceInitOptions,

@@ -118,6 +118,10 @@ import {
   UsernameGenerationService,
   UsernameGenerationServiceAbstraction,
 } from "@bitwarden/common/tools/generator/username";
+import {
+  PasswordStrengthService,
+  PasswordStrengthServiceAbstraction,
+} from "@bitwarden/common/tools/password-strength";
 import { SendApiService } from "@bitwarden/common/tools/send/services/send-api.service";
 import { SendApiService as SendApiServiceAbstraction } from "@bitwarden/common/tools/send/services/send-api.service.abstraction";
 import { SendService } from "@bitwarden/common/tools/send/services/send.service";
@@ -239,7 +243,7 @@ import { AbstractThemingService } from "./theming/theming.service.abstraction";
         TwoFactorServiceAbstraction,
         I18nServiceAbstraction,
         EncryptService,
-        PasswordGenerationServiceAbstraction,
+        PasswordStrengthServiceAbstraction,
         PolicyServiceAbstraction,
       ],
     },
@@ -358,6 +362,11 @@ import { AbstractThemingService } from "./theming/theming.service.abstraction";
         AppIdServiceAbstraction,
         DevicesApiServiceAbstraction,
       ],
+    },
+    {
+      provide: PasswordStrengthServiceAbstraction,
+      useClass: PasswordStrengthService,
+      deps: [],
     },
     {
       provide: PasswordGenerationServiceAbstraction,

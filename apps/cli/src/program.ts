@@ -145,6 +145,7 @@ export class Program {
             this.main.cryptoFunctionService,
             this.main.environmentService,
             this.main.passwordGenerationService,
+            this.main.passwordStrengthService,
             this.main.platformUtilsService,
             this.main.stateService,
             this.main.cryptoService,

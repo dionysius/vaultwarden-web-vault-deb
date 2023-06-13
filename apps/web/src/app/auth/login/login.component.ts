@@ -24,6 +24,7 @@ import { LogService } from "@bitwarden/common/platform/abstractions/log.service"
 import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { PasswordGenerationServiceAbstraction } from "@bitwarden/common/tools/generator/password";
+import { PasswordStrengthServiceAbstraction } from "@bitwarden/common/tools/password-strength";
 
 import { flagEnabled } from "../../../utils/flags";
 import { RouterService, StateService } from "../../core";
@@ -50,6 +51,7 @@ export class LoginComponent extends BaseLoginComponent implements OnInit, OnDest
     platformUtilsService: PlatformUtilsService,
     environmentService: EnvironmentService,
     passwordGenerationService: PasswordGenerationServiceAbstraction,
+    private passwordStrengthService: PasswordStrengthServiceAbstraction,
     cryptoFunctionService: CryptoFunctionService,
     private policyApiService: PolicyApiServiceAbstraction,
     private policyService: InternalPolicyService,
@@ -153,7 +155,7 @@ export class LoginComponent extends BaseLoginComponent implements OnInit, OnDest
 
     // Check master password against policy
     if (this.enforcedPasswordPolicyOptions != null) {
-      const strengthResult = this.passwordGenerationService.passwordStrength(
+      const strengthResult = this.passwordStrengthService.getPasswordStrength(
         masterPassword,
         this.formGroup.value.email
       );

@@ -45,6 +45,10 @@ import {
   PasswordGenerationService,
   PasswordGenerationServiceAbstraction,
 } from "@bitwarden/common/tools/generator/password";
+import {
+  PasswordStrengthService,
+  PasswordStrengthServiceAbstraction,
+} from "@bitwarden/common/tools/password-strength";
 import { SendApiService } from "@bitwarden/common/tools/send/services/send-api.service";
 import { SendService } from "@bitwarden/common/tools/send/services/send.service";
 import { InternalFolderService } from "@bitwarden/common/vault/abstractions/folder/folder.service.abstraction";
@@ -103,6 +107,7 @@ export class Main {
   vaultTimeoutSettingsService: VaultTimeoutSettingsService;
   syncService: SyncService;
   passwordGenerationService: PasswordGenerationServiceAbstraction;
+  passwordStrengthService: PasswordStrengthServiceAbstraction;
   totpService: TotpService;
   containerService: ContainerService;
   auditService: AuditService;
@@ -302,6 +307,8 @@ export class Main {
 
     this.twoFactorService = new TwoFactorService(this.i18nService, this.platformUtilsService);
 
+    this.passwordStrengthService = new PasswordStrengthService();
+
     this.passwordGenerationService = new PasswordGenerationService(
       this.cryptoService,
       this.policyService,
@@ -322,7 +329,7 @@ export class Main {
       this.twoFactorService,
       this.i18nService,
       this.encryptService,
-      this.passwordGenerationService,
+      this.passwordStrengthService,
       this.policyService
     );
 

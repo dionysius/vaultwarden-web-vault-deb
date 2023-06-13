@@ -1,5 +1,3 @@
-import * as zxcvbn from "zxcvbn";
-
 import { PasswordGeneratorPolicyOptions } from "../../../admin-console/models/domain/password-generator-policy-options";
 
 import { GeneratedPasswordHistory } from "./generated-password-history";
@@ -17,11 +15,6 @@ export abstract class PasswordGenerationServiceAbstraction {
   getHistory: () => Promise<GeneratedPasswordHistory[]>;
   addHistory: (password: string) => Promise<void>;
   clear: (userId?: string) => Promise<void>;
-  passwordStrength: (
-    password: string,
-    email?: string,
-    userInputs?: string[]
-  ) => zxcvbn.ZXCVBNResult;
   normalizeOptions: (
     options: PasswordGeneratorOptions,
     enforcedPolicyOptions: PasswordGeneratorPolicyOptions
