@@ -1,4 +1,3 @@
-import { Injectable } from "@angular/core";
 import {
   HttpTransportType,
   HubConnection,
@@ -17,7 +16,6 @@ import {
   NotificationResponse,
 } from "./../models/response/notification.response";
 
-@Injectable()
 export class AnonymousHubService implements AnonymousHubServiceAbstraction {
   private anonHubConnection: HubConnection;
   private url: string;

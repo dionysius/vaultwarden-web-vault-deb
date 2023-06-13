@@ -90,22 +90,21 @@
           "error",
           {
             "zones": [
-              // Do not allow angular/node code to be imported into common
               {
+                // avoid specific frameworks or large dependencies in common
                 "target": "./libs/common/**/*",
-                "from": "./libs/angular/**/*"
-              },
-              {
-                "target": "./libs/common/**/*",
-                "from": "./libs/node/**/*"
-              },
-              {
-                "target": "./libs/common/**/*",
-                "from": "./libs/importer/**/*"
-              },
-              {
-                "target": "./libs/common/**/*",
-                "from": "./libs/exporter/**/*"
+                "from": [
+                  // Angular
+                  "./libs/angular/**/*",
+                  "./node_modules/@angular*/**/*",
+
+                  // Node
+                  "./libs/node/**/*",
+
+                  // Import/export
+                  "./libs/importer/**/*",
+                  "./libs/exporter/**/*"
+                ]
               }
             ]
           }
