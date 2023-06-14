@@ -18,6 +18,7 @@ export class AnonAddyForwarder implements Forwarder {
       headers: new Headers({
         Authorization: "Bearer " + options.apiKey,
         "Content-Type": "application/json",
+        "X-Requested-With": "XMLHttpRequest",
       }),
     };
     const url = "https://app.anonaddy.com/api/v1/aliases";
