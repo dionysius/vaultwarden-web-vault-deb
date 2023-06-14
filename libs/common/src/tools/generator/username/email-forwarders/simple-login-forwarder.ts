@@ -35,13 +35,9 @@ export class SimpleLoginForwarder implements Forwarder {
     if (response.status === 401) {
       throw "Invalid SimpleLogin API key.";
     }
-    try {
-      const json = await response.json();
-      if (json?.error != null) {
-        throw "SimpleLogin error:" + json.error;
-      }
-    } catch {
-      // Do nothing...
+    const json = await response.json();
+    if (json?.error != null) {
+      throw "SimpleLogin error:" + json.error;
     }
     throw "Unknown SimpleLogin error occurred.";
   }
