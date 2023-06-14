@@ -8,8 +8,8 @@ import {
 import { StateService } from "../abstractions/state.service";
 
 export class EnvironmentService implements EnvironmentServiceAbstraction {
-  private readonly urlsSubject = new Subject<Urls>();
-  urls: Observable<Urls> = this.urlsSubject;
+  private readonly urlsSubject = new Subject<void>();
+  urls: Observable<void> = this.urlsSubject.asObservable();
 
   protected baseUrl: string;
   protected webVaultUrl: string;
@@ -139,6 +139,8 @@ export class EnvironmentService implements EnvironmentServiceAbstraction {
     this.eventsUrl = envUrls.events = urls.events;
     this.keyConnectorUrl = urls.keyConnector;
     // scimUrl is not saved to storage
+
+    this.urlsSubject.next();
   }
 
   async setUrls(urls: Urls): Promise<Urls> {
@@ -176,7 +178,7 @@ export class EnvironmentService implements EnvironmentServiceAbstraction {
     this.keyConnectorUrl = urls.keyConnector;
     this.scimUrl = urls.scim;
 
-    this.urlsSubject.next(urls);
+    this.urlsSubject.next();
 
     return urls;
   }
