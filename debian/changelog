@@ -1,3 +1,9 @@
+vaultwarden-web-vault (2023.5.0-1) unstable; urgency=medium
+
+  * new debian stable bookworm released, trigger CI to build package for it
+
+ -- dionysius <dragon.dionysius@gmail.com>  Wed, 14 Jun 2023 12:48:48 +0200
+
 vaultwarden-web-vault (2023.5.0-0) unstable; urgency=medium
 
   * apt provider done, remove todo from readme
