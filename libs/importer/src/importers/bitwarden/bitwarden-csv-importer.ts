@@ -1,8 +1,8 @@
-import { CollectionView } from "@bitwarden/common/admin-console/models/view/collection.view";
 import { FieldType, SecureNoteType } from "@bitwarden/common/enums";
 import { CipherRepromptType } from "@bitwarden/common/vault/enums/cipher-reprompt-type";
 import { CipherType } from "@bitwarden/common/vault/enums/cipher-type";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
+import { CollectionView } from "@bitwarden/common/vault/models/view/collection.view";
 import { FieldView } from "@bitwarden/common/vault/models/view/field.view";
 import { LoginView } from "@bitwarden/common/vault/models/view/login.view";
 import { SecureNoteView } from "@bitwarden/common/vault/models/view/secure-note.view";

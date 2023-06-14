@@ -2,7 +2,6 @@ import * as fs from "fs";
 import * as path from "path";
 
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
-import { CollectionRequest } from "@bitwarden/common/admin-console/models/request/collection.request";
 import { SelectionReadOnlyRequest } from "@bitwarden/common/admin-console/models/request/selection-read-only.request";
 import { CipherExport } from "@bitwarden/common/models/export/cipher.export";
 import { CollectionExport } from "@bitwarden/common/models/export/collection.export";
@@ -13,6 +12,7 @@ import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
 import { FolderApiServiceAbstraction } from "@bitwarden/common/vault/abstractions/folder/folder-api.service.abstraction";
 import { FolderService } from "@bitwarden/common/vault/abstractions/folder/folder.service.abstraction";
+import { CollectionRequest } from "@bitwarden/common/vault/models/request/collection.request";
 
 import { OrganizationCollectionRequest } from "../admin-console/models/request/organization-collection.request";
 import { OrganizationCollectionResponse } from "../admin-console/models/response/organization-collection.response";

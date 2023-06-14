@@ -1,5 +1,5 @@
-import { CollectionWithIdRequest } from "../../admin-console/models/request/collection-with-id.request";
 import { CipherRequest } from "../../vault/models/request/cipher.request";
+import { CollectionWithIdRequest } from "../../vault/models/request/collection-with-id.request";
 
 import { KvpRequest } from "./kvp.request";
 

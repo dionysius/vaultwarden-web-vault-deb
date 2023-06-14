@@ -1,6 +1,6 @@
 import { Component, Input } from "@angular/core";
 
-import { CollectionView } from "@bitwarden/common/admin-console/models/view/collection.view";
+import { CollectionView } from "@bitwarden/common/vault/models/view/collection.view";
 
 @Component({
   selector: "app-collection-badge",

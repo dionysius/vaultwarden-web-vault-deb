@@ -11,29 +11,11 @@ import { GroupRequest } from "./requests/group.request";
 import { OrganizationGroupBulkRequest } from "./requests/organization-group-bulk.request";
 import { GroupDetailsResponse, GroupResponse } from "./responses/group.response";
 
-@Injectable({ providedIn: CoreOrganizationModule })
+@Injectable({
+  providedIn: "root",
+})
 export class GroupService {
-  constructor(private apiService: ApiService) {}
-
-  async delete(orgId: string, groupId: string): Promise<void> {
-    await this.apiService.send(
-      "DELETE",
-      "/organizations/" + orgId + "/groups/" + groupId,
-      null,
-      true,
-      false
-    );
-  }
-
-  async deleteMany(orgId: string, groupIds: string[]): Promise<void> {
-    await this.apiService.send(
-      "DELETE",
-      "/organizations/" + orgId + "/groups",
-      new OrganizationGroupBulkRequest(groupIds),
-      true,
-      true
-    );
-  }
+  constructor(protected apiService: ApiService) {}
 
   async get(orgId: string, groupId: string): Promise<GroupView> {
     const r = await this.apiService.send(
@@ -59,6 +41,33 @@ export class GroupService {
     const listResponse = new ListResponse(r, GroupDetailsResponse);
 
     return listResponse.data?.map((gr) => GroupView.fromResponse(gr)) ?? [];
+  }
+}
+
+@Injectable({ providedIn: CoreOrganizationModule })
+export class InternalGroupService extends GroupService {
+  constructor(protected apiService: ApiService) {
+    super(apiService);
+  }
+
+  async delete(orgId: string, groupId: string): Promise<void> {
+    await this.apiService.send(
+      "DELETE",
+      "/organizations/" + orgId + "/groups/" + groupId,
+      null,
+      true,
+      false
+    );
+  }
+
+  async deleteMany(orgId: string, groupIds: string[]): Promise<void> {
+    await this.apiService.send(
+      "DELETE",
+      "/organizations/" + orgId + "/groups",
+      new OrganizationGroupBulkRequest(groupIds),
+      true,
+      true
+    );
   }
 
   async save(group: GroupView): Promise<GroupView> {

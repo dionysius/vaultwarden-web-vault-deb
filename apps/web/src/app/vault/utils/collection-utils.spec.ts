@@ -1,4 +1,4 @@
-import { CollectionView } from "@bitwarden/common/admin-console/models/view/collection.view";
+import { CollectionView } from "@bitwarden/common/vault/models/view/collection.view";
 
 import { getNestedCollectionTree } from "./collection-utils";
 

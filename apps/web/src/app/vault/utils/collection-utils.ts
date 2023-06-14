@@ -1,11 +1,11 @@
+import { ServiceUtils } from "@bitwarden/common/misc/serviceUtils";
+import { TreeNode } from "@bitwarden/common/models/domain/tree-node";
 import {
   CollectionView,
   NestingDelimiter,
-} from "@bitwarden/common/admin-console/models/view/collection.view";
-import { ServiceUtils } from "@bitwarden/common/misc/serviceUtils";
-import { TreeNode } from "@bitwarden/common/models/domain/tree-node";
+} from "@bitwarden/common/vault/models/view/collection.view";
 
-import { CollectionAdminView } from "../../admin-console/organizations/core";
+import { CollectionAdminView } from "../../vault/core/views/collection-admin.view";
 
 export function getNestedCollectionTree(
   collections: CollectionAdminView[]

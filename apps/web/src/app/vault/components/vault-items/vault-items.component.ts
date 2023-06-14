@@ -2,11 +2,12 @@ import { SelectionModel } from "@angular/cdk/collections";
 import { Component, EventEmitter, Input, Output } from "@angular/core";
 
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
-import { CollectionView } from "@bitwarden/common/admin-console/models/view/collection.view";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
+import { CollectionView } from "@bitwarden/common/vault/models/view/collection.view";
 import { TableDataSource } from "@bitwarden/components";
 
-import { CollectionAdminView, GroupView } from "../../../admin-console/organizations/core";
+import { GroupView } from "../../../admin-console/organizations/core";
+import { CollectionAdminView } from "../../core/views/collection-admin.view";
 import { Unassigned } from "../../individual-vault/vault-filter/shared/models/routed-vault-filter.model";
 
 import { VaultItem } from "./vault-item";

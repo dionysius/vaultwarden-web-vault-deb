@@ -8,25 +8,22 @@ import { OrganizationUserService } from "@bitwarden/common/abstractions/organiza
 import { OrganizationUserUserDetailsResponse } from "@bitwarden/common/abstractions/organization-user/responses";
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
-import { CollectionView } from "@bitwarden/common/admin-console/models/view/collection.view";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
+import { CollectionView } from "@bitwarden/common/vault/models/view/collection.view";
 import { BitValidators } from "@bitwarden/components";
 
+import { GroupService, GroupView } from "../../../admin-console/organizations/core";
+import { PermissionMode } from "../../../admin-console/organizations/shared/components/access-selector/access-selector.component";
 import {
-  CollectionAdminService,
-  CollectionAdminView,
-  GroupService,
-  GroupView,
-} from "../../../core";
-import {
-  AccessItemType,
-  AccessItemValue,
   AccessItemView,
-  convertToPermission,
+  AccessItemValue,
+  AccessItemType,
   convertToSelectionView,
-  PermissionMode,
-} from "../access-selector";
+  convertToPermission,
+} from "../../../admin-console/organizations/shared/components/access-selector/access-selector.models";
+import { CollectionAdminService } from "../../core/collection-admin.service";
+import { CollectionAdminView } from "../../core/views/collection-admin.view";
 
 export enum CollectionDialogTabType {
   Info = 0,

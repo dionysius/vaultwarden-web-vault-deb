@@ -28,6 +28,7 @@ import { PolicyListService } from "../admin-console/core/policy-list.service";
 import { HtmlStorageService } from "../core/html-storage.service";
 import { I18nService } from "../core/i18n.service";
 import { StateMigrationService } from "../core/state-migration.service";
+import { CollectionAdminService } from "../vault/core/collection-admin.service";
 import { PasswordRepromptService } from "../vault/core/password-reprompt.service";
 
 import { BroadcasterMessagingService } from "./broadcaster-messaging.service";
@@ -106,6 +107,7 @@ import { WebPlatformUtilsService } from "./web-platform-utils.service";
       useClass: LoginService,
       deps: [StateService],
     },
+    CollectionAdminService,
   ],
 })
 export class CoreModule {

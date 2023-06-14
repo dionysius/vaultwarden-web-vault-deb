@@ -38,7 +38,6 @@ import { SearchService } from "@bitwarden/common/abstractions/search.service";
 import { TotpService } from "@bitwarden/common/abstractions/totp.service";
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
-import { CollectionView } from "@bitwarden/common/admin-console/models/view/collection.view";
 import { EventType } from "@bitwarden/common/enums";
 import { ServiceUtils } from "@bitwarden/common/misc/serviceUtils";
 import { TreeNode } from "@bitwarden/common/models/domain/tree-node";
@@ -53,23 +52,21 @@ import { PasswordRepromptService } from "@bitwarden/common/vault/abstractions/pa
 import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
 import { CipherRepromptType } from "@bitwarden/common/vault/enums/cipher-reprompt-type";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
+import { CollectionView } from "@bitwarden/common/vault/models/view/collection.view";
 import { Icons } from "@bitwarden/components";
 
-import {
-  CollectionAdminService,
-  CollectionAdminView,
-  GroupService,
-  GroupView,
-} from "../../admin-console/organizations/core";
+import { GroupService, GroupView } from "../../admin-console/organizations/core";
 import { EntityEventsComponent } from "../../admin-console/organizations/manage/entity-events.component";
+import { VaultFilterService } from "../../vault/individual-vault/vault-filter/services/abstractions/vault-filter.service";
+import { VaultFilter } from "../../vault/individual-vault/vault-filter/shared/models/vault-filter.model";
 import {
   CollectionDialogResult,
   CollectionDialogTabType,
   openCollectionDialog,
-} from "../../admin-console/organizations/shared";
-import { VaultFilterService } from "../../vault/individual-vault/vault-filter/services/abstractions/vault-filter.service";
-import { VaultFilter } from "../../vault/individual-vault/vault-filter/shared/models/vault-filter.model";
+} from "../components/collection-dialog";
 import { VaultItemEvent } from "../components/vault-items/vault-item-event";
+import { CollectionAdminService } from "../core/collection-admin.service";
+import { CollectionAdminView } from "../core/views/collection-admin.view";
 import {
   BulkDeleteDialogResult,
   openBulkDeleteDialog,

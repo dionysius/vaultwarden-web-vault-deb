@@ -5,11 +5,10 @@ import { SearchModule } from "@bitwarden/components";
 import { SharedModule } from "../../../shared/shared.module";
 
 import { AccessSelectorModule } from "./components/access-selector/access-selector.module";
-import { CollectionDialogModule } from "./components/collection-dialog";
 
 @NgModule({
-  imports: [SharedModule, CollectionDialogModule, AccessSelectorModule, SearchModule],
+  imports: [SharedModule, AccessSelectorModule, SearchModule],
   declarations: [],
-  exports: [SharedModule, CollectionDialogModule, AccessSelectorModule, SearchModule],
+  exports: [SharedModule, AccessSelectorModule, SearchModule],
 })
 export class SharedOrganizationModule {}

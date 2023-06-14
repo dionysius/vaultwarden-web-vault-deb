@@ -1,5 +1,6 @@
 import { Collection } from "../domain/collection";
-import { CollectionRequest } from "../request/collection.request";
+
+import { CollectionRequest } from "./collection.request";
 
 export class CollectionWithIdRequest extends CollectionRequest {
   id: string;

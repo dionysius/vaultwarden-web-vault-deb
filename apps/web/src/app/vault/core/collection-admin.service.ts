@@ -1,19 +1,18 @@
 import { Injectable } from "@angular/core";
 
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
-import { CollectionRequest } from "@bitwarden/common/admin-console/models/request/collection.request";
 import { SelectionReadOnlyRequest } from "@bitwarden/common/admin-console/models/request/selection-read-only.request";
+import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
+import { EncString } from "@bitwarden/common/platform/models/domain/enc-string";
+import { CollectionRequest } from "@bitwarden/common/vault/models/request/collection.request";
 import {
   CollectionAccessDetailsResponse,
   CollectionResponse,
-} from "@bitwarden/common/admin-console/models/response/collection.response";
-import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
-import { EncString } from "@bitwarden/common/platform/models/domain/enc-string";
+} from "@bitwarden/common/vault/models/response/collection.response";
 
-import { CoreOrganizationModule } from "../core-organization.module";
-import { CollectionAdminView } from "../views/collection-admin.view";
+import { CollectionAdminView } from "./views/collection-admin.view";
 
-@Injectable({ providedIn: CoreOrganizationModule })
+@Injectable()
 export class CollectionAdminService {
   constructor(private apiService: ApiService, private cryptoService: CryptoService) {}
 

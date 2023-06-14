@@ -1,12 +1,10 @@
 import { Observable } from "rxjs";
 
-import { CollectionData } from "../../admin-console/models/data/collection.data";
 import { EncryptedOrganizationKeyData } from "../../admin-console/models/data/encrypted-organization-key.data";
 import { OrganizationData } from "../../admin-console/models/data/organization.data";
 import { PolicyData } from "../../admin-console/models/data/policy.data";
 import { ProviderData } from "../../admin-console/models/data/provider.data";
 import { Policy } from "../../admin-console/models/domain/policy";
-import { CollectionView } from "../../admin-console/models/view/collection.view";
 import { EnvironmentUrls } from "../../auth/models/domain/environment-urls";
 import { ForceResetPasswordReason } from "../../auth/models/domain/force-reset-password-reason";
 import { KdfConfig } from "../../auth/models/domain/kdf-config";
@@ -18,9 +16,11 @@ import { GeneratedPasswordHistory } from "../../tools/generator/password";
 import { SendData } from "../../tools/send/models/data/send.data";
 import { SendView } from "../../tools/send/models/view/send.view";
 import { CipherData } from "../../vault/models/data/cipher.data";
+import { CollectionData } from "../../vault/models/data/collection.data";
 import { FolderData } from "../../vault/models/data/folder.data";
 import { LocalData } from "../../vault/models/data/local.data";
 import { CipherView } from "../../vault/models/view/cipher.view";
+import { CollectionView } from "../../vault/models/view/collection.view";
 import { AddEditCipherInfo } from "../../vault/types/add-edit-cipher-info";
 import { ServerConfigData } from "../models/data/server-config.data";
 import { Account, AccountSettingsSettings } from "../models/domain/account";

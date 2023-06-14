@@ -1,7 +1,7 @@
 import { Observable } from "rxjs";
 
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
-import { CollectionView } from "@bitwarden/common/admin-console/models/view/collection.view";
+import { CollectionView } from "@bitwarden/common/vault/models/view/collection.view";
 import { FolderView } from "@bitwarden/common/vault/models/view/folder.view";
 
 import { DynamicTreeNode } from "../vault-filter/models/dynamic-tree-node.model";

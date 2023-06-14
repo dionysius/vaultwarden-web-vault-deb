@@ -1,14 +1,11 @@
 import { ApiService } from "../../../abstractions/api.service";
 import { SettingsService } from "../../../abstractions/settings.service";
-import { CollectionService } from "../../../admin-console/abstractions/collection.service";
 import { InternalOrganizationService } from "../../../admin-console/abstractions/organization/organization.service.abstraction";
 import { InternalPolicyService } from "../../../admin-console/abstractions/policy/policy.service.abstraction";
 import { ProviderService } from "../../../admin-console/abstractions/provider.service";
-import { CollectionData } from "../../../admin-console/models/data/collection.data";
 import { OrganizationData } from "../../../admin-console/models/data/organization.data";
 import { PolicyData } from "../../../admin-console/models/data/policy.data";
 import { ProviderData } from "../../../admin-console/models/data/provider.data";
-import { CollectionDetailsResponse } from "../../../admin-console/models/response/collection.response";
 import { PolicyResponse } from "../../../admin-console/models/response/policy.response";
 import { KeyConnectorService } from "../../../auth/abstractions/key-connector.service";
 import { ForceResetPasswordReason } from "../../../auth/models/domain/force-reset-password-reason";
@@ -36,6 +33,9 @@ import { CipherData } from "../../../vault/models/data/cipher.data";
 import { FolderData } from "../../../vault/models/data/folder.data";
 import { CipherResponse } from "../../../vault/models/response/cipher.response";
 import { FolderResponse } from "../../../vault/models/response/folder.response";
+import { CollectionService } from "../../abstractions/collection.service";
+import { CollectionData } from "../../models/data/collection.data";
+import { CollectionDetailsResponse } from "../../models/response/collection.response";
 
 export class SyncService implements SyncServiceAbstraction {
   syncInProgress = false;

@@ -1,5 +1,4 @@
 import { OrganizationConnectionType } from "../admin-console/enums";
-import { CollectionRequest } from "../admin-console/models/request/collection.request";
 import { OrganizationSponsorshipCreateRequest } from "../admin-console/models/request/organization/organization-sponsorship-create.request";
 import { OrganizationSponsorshipRedeemRequest } from "../admin-console/models/request/organization/organization-sponsorship-redeem.request";
 import { OrganizationConnectionRequest } from "../admin-console/models/request/organization-connection.request";
@@ -14,10 +13,6 @@ import { ProviderUserConfirmRequest } from "../admin-console/models/request/prov
 import { ProviderUserInviteRequest } from "../admin-console/models/request/provider/provider-user-invite.request";
 import { ProviderUserUpdateRequest } from "../admin-console/models/request/provider/provider-user-update.request";
 import { SelectionReadOnlyRequest } from "../admin-console/models/request/selection-read-only.request";
-import {
-  CollectionAccessDetailsResponse,
-  CollectionResponse,
-} from "../admin-console/models/response/collection.response";
 import {
   OrganizationConnectionConfigApis,
   OrganizationConnectionResponse,
@@ -135,9 +130,14 @@ import { CipherCreateRequest } from "../vault/models/request/cipher-create.reque
 import { CipherPartialRequest } from "../vault/models/request/cipher-partial.request";
 import { CipherShareRequest } from "../vault/models/request/cipher-share.request";
 import { CipherRequest } from "../vault/models/request/cipher.request";
+import { CollectionRequest } from "../vault/models/request/collection.request";
 import { AttachmentUploadDataResponse } from "../vault/models/response/attachment-upload-data.response";
 import { AttachmentResponse } from "../vault/models/response/attachment.response";
 import { CipherResponse } from "../vault/models/response/cipher.response";
+import {
+  CollectionAccessDetailsResponse,
+  CollectionResponse,
+} from "../vault/models/response/collection.response";
 import { SyncResponse } from "../vault/models/response/sync.response";
 
 /**

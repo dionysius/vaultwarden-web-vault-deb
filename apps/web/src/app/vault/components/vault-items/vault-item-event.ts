@@ -1,4 +1,4 @@
-import { CollectionView } from "@bitwarden/common/src/admin-console/models/view/collection.view";
+import { CollectionView } from "@bitwarden/common/src/vault/models/view/collection.view";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 
 import { VaultItem } from "./vault-item";
