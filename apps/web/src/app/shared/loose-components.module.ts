@@ -3,7 +3,6 @@ import { NgModule } from "@angular/core";
 import { OrganizationSwitcherComponent } from "../admin-console/components/organization-switcher.component";
 import { OrganizationCreateModule } from "../admin-console/organizations/create/organization-create.module";
 import { OrganizationLayoutComponent } from "../admin-console/organizations/layouts/organization-layout.component";
-import { EntityEventsComponent as OrgEntityEventsComponent } from "../admin-console/organizations/manage/entity-events.component";
 import { EventsComponent as OrgEventsComponent } from "../admin-console/organizations/manage/events.component";
 import { UserConfirmComponent as OrgUserConfirmComponent } from "../admin-console/organizations/manage/user-confirm.component";
 import { AcceptFamilySponsorshipComponent } from "../admin-console/organizations/sponsorships/accept-family-sponsorship.component";
@@ -166,7 +165,6 @@ import { SharedModule } from "./shared.module";
     OrganizationPlansComponent,
     OrgAttachmentsComponent,
     OrgCollectionsComponent,
-    OrgEntityEventsComponent,
     OrgEventsComponent,
     OrgExposedPasswordsReportComponent,
     OrgInactiveTwoFactorReportComponent,
@@ -271,7 +269,6 @@ import { SharedModule } from "./shared.module";
     OrganizationPlansComponent,
     OrgAttachmentsComponent,
     OrgCollectionsComponent,
-    OrgEntityEventsComponent,
     OrgEventsComponent,
     OrgExposedPasswordsReportComponent,
     OrgInactiveTwoFactorReportComponent,
