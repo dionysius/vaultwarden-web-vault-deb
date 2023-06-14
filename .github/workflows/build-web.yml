@@ -84,7 +84,7 @@ jobs:
             npm_command: "build:bit:poc"
           - name: "ee"
             npm_command: "build:bit:ee"
-          - name: "eudevtest"
+          - name: "cloud-eudevtest"
             npm_command: "build:bit:eudevtest"
 
     steps:
