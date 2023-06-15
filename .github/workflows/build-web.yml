@@ -80,12 +80,10 @@ jobs:
             npm_command: "dist:bit:selfhost"
           - name: "cloud-QA"
             npm_command: "build:bit:qa"
-          - name: "cloud-POC2"
-            npm_command: "build:bit:poc"
           - name: "ee"
             npm_command: "build:bit:ee"
-          - name: "cloud-eudevtest"
-            npm_command: "build:bit:eudevtest"
+          - name: "cloud-euprd"
+            npm_command: "build:bit:euprd"
 
     steps:
       - name: Checkout repo

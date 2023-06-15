@@ -1,0 +1,11 @@
+{
+  "urls": {
+    "icons": "https://icons.bitwarden.net",
+    "notifications": "https://notifications.bitwarden.net",
+    "scim": "https://scim.bitwarden.net"
+  },
+  "flags": {
+    "secretsManager": true,
+    "showPasswordless": true
+  }
+}
