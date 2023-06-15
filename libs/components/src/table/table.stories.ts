@@ -1,5 +1,5 @@
 import { ScrollingModule } from "@angular/cdk/scrolling";
-import { Meta, StoryObj, moduleMetadata } from "@storybook/angular";
+import { Meta, moduleMetadata, StoryObj } from "@storybook/angular";
 
 import { countries } from "../form/countries";
 
@@ -62,7 +62,7 @@ export const Default: Story = {
     `,
   }),
   args: {
-    alignRowContent: "baseline",
+    alignRowContent: "middle",
   },
 };
 

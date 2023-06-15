@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, Input } from "@angular/core";
 
 import { Icons } from "..";
 
@@ -10,5 +10,5 @@ import { Icons } from "..";
   templateUrl: "./no-items.component.html",
 })
 export class NoItemsComponent {
-  protected icon = Icons.Search;
+  @Input() icon = Icons.Search;
 }

@@ -11,6 +11,7 @@ import { AutofocusDirective } from "./directives/autofocus.directive";
 import { BoxRowDirective } from "./directives/box-row.directive";
 import { CopyClickDirective } from "./directives/copy-click.directive";
 import { FallbackSrcDirective } from "./directives/fallback-src.directive";
+import { IfFeatureDirective } from "./directives/if-feature.directive";
 import { InputStripSpacesDirective } from "./directives/input-strip-spaces.directive";
 import { InputVerbatimDirective } from "./directives/input-verbatim.directive";
 import { LaunchClickDirective } from "./directives/launch-click.directive";
@@ -25,6 +26,7 @@ import { SearchPipe } from "./pipes/search.pipe";
 import { UserNamePipe } from "./pipes/user-name.pipe";
 import { UserTypePipe } from "./pipes/user-type.pipe";
 import { EllipsisPipe } from "./platform/pipes/ellipsis.pipe";
+import { FingerprintPipe } from "./platform/pipes/fingerprint.pipe";
 import { I18nPipe } from "./platform/pipes/i18n.pipe";
 import { PasswordStrengthComponent } from "./shared/components/password-strength/password-strength.component";
 import { ExportScopeCalloutComponent } from "./tools/export/components/export-scope-callout.component";
@@ -68,6 +70,8 @@ import { IconComponent } from "./vault/components/icon.component";
     UserNamePipe,
     PasswordStrengthComponent,
     UserTypePipe,
+    IfFeatureDirective,
+    FingerprintPipe,
   ],
   exports: [
     A11yInvalidDirective,
@@ -97,7 +101,17 @@ import { IconComponent } from "./vault/components/icon.component";
     UserNamePipe,
     PasswordStrengthComponent,
     UserTypePipe,
+    IfFeatureDirective,
+    FingerprintPipe,
   ],
-  providers: [CreditCardNumberPipe, DatePipe, I18nPipe, SearchPipe, UserNamePipe, UserTypePipe],
+  providers: [
+    CreditCardNumberPipe,
+    DatePipe,
+    I18nPipe,
+    SearchPipe,
+    UserNamePipe,
+    UserTypePipe,
+    FingerprintPipe,
+  ],
 })
 export class JslibModule {}

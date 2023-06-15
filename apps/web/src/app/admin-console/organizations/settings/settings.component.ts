@@ -4,6 +4,7 @@ import { Observable, switchMap } from "rxjs";
 
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
+import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
 
 @Component({
   selector: "app-org-settings",
@@ -11,6 +12,7 @@ import { Organization } from "@bitwarden/common/admin-console/models/domain/orga
 })
 export class SettingsComponent implements OnInit {
   organization$: Observable<Organization>;
+  FeatureFlag = FeatureFlag;
 
   constructor(private route: ActivatedRoute, private organizationService: OrganizationService) {}
 
