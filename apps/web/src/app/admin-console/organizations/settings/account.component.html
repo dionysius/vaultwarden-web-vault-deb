@@ -1,95 +1,66 @@
-<div class="page-header">
-  <h1>{{ "organizationInfo" | i18n }}</h1>
-</div>
+<h1 bitTypography="h1" class="tw-pb-2.5">{{ "organizationInfo" | i18n }}</h1>
 <div *ngIf="loading">
   <i
     class="bwi bwi-spinner bwi-spin text-muted"
     title="{{ 'loading' | i18n }}"
     aria-hidden="true"
   ></i>
-  <span class="sr-only">{{ "loading" | i18n }}</span>
+  <span class="tw-sr-only">{{ "loading" | i18n }}</span>
 </div>
-<form
-  *ngIf="org && !loading"
-  #form
-  (ngSubmit)="submit()"
-  [appApiAction]="formPromise"
-  ngNativeValidate
->
-  <div class="row">
-    <div class="col-6">
-      <div class="form-group">
-        <label for="name">{{ "organizationName" | i18n }}</label>
-        <input
-          id="name"
-          class="form-control"
-          type="text"
-          name="Name"
-          [(ngModel)]="org.name"
-          [disabled]="selfHosted"
-        />
-      </div>
-      <div class="form-group">
-        <label for="billingEmail">{{ "billingEmail" | i18n }}</label>
-        <input
-          id="billingEmail"
-          class="form-control"
-          type="text"
-          name="BillingEmail"
-          [(ngModel)]="org.billingEmail"
-          [disabled]="selfHosted || !canEditSubscription"
-        />
-      </div>
-      <div class="form-group">
-        <label for="businessName">{{ "businessName" | i18n }}</label>
-        <input
-          id="businessName"
-          class="form-control"
-          type="text"
-          name="BusinessName"
-          [(ngModel)]="org.businessName"
-          [disabled]="selfHosted || !canEditSubscription"
-        />
-      </div>
+<form *ngIf="org && !loading" #form [bitSubmit]="submit" [formGroup]="formGroup">
+  <div class="tw-grid tw-grid-cols-2 tw-gap-5">
+    <div>
+      <bit-form-field>
+        <bit-label>{{ "organizationName" | i18n }}</bit-label>
+        <input bitInput id="orgName" type="text" formControlName="orgName" />
+      </bit-form-field>
+      <bit-form-field>
+        <bit-label>{{ "billingEmail" | i18n }}</bit-label>
+        <input bitInput id="billingEmail" formControlName="billingEmail" type="email" />
+      </bit-form-field>
+      <bit-form-field>
+        <bit-label>{{ "businessName" | i18n }}</bit-label>
+        <input bitInput id="businessName" formControlName="businessName" type="text" />
+      </bit-form-field>
     </div>
-    <div class="col-6">
+    <div>
       <bit-avatar [text]="org.name" [id]="org.id" size="large"></bit-avatar>
+      <app-account-fingerprint
+        [fingerprintMaterial]="organizationId"
+        [publicKeyBuffer]="publicKeyBuffer"
+        fingerprintLabel="{{ 'yourOrganizationsFingerprint' | i18n }}"
+      >
+      </app-account-fingerprint>
     </div>
   </div>
-  <button type="submit" buttonType="primary" bitButton [loading]="form.loading">
+  <button type="submit" bitButton bitFormButton buttonType="primary">
     {{ "save" | i18n }}
   </button>
 </form>
 <ng-container *ngIf="canUseApi">
-  <div class="secondary-header border-0 mb-0">
-    <h1>{{ "apiKey" | i18n }}</h1>
-  </div>
+  <h1 bitTypography="h1" class="tw-mt-16 tw-pb-2.5">{{ "apiKey" | i18n }}</h1>
   <p>
     {{ "apiKeyDesc" | i18n }}
     <a href="https://docs.bitwarden.com" target="_blank" rel="noopener">
       {{ "learnMore" | i18n }}
     </a>
   </p>
-  <button type="button" class="btn btn-outline-secondary" (click)="viewApiKey()">
+  <button type="button" bitButton buttonType="secondary" (click)="viewApiKey()">
     {{ "viewApiKey" | i18n }}
   </button>
-  <button type="button" class="btn btn-outline-secondary" (click)="rotateApiKey()">
+  <button type="button" bitButton buttonType="secondary" (click)="rotateApiKey()">
     {{ "rotateApiKey" | i18n }}
   </button>
 </ng-container>
-<div class="secondary-header text-danger border-0 mb-0">
-  <h1>{{ "dangerZone" | i18n }}</h1>
-</div>
-<div class="card border-danger">
-  <div class="card-body">
-    <p>{{ "dangerZoneDesc" | i18n }}</p>
-    <button type="button" class="btn btn-outline-danger" (click)="deleteOrganization()">
-      {{ "deleteOrganization" | i18n }}
-    </button>
-    <button type="button" class="btn btn-outline-danger" (click)="purgeVault()">
-      {{ "purgeVault" | i18n }}
-    </button>
-  </div>
+<h1 bitTypography="h1" class="tw-mt-16 tw-pb-2.5 !tw-text-danger">{{ "dangerZone" | i18n }}</h1>
+<div class="tw-rounded tw-border tw-border-solid tw-border-danger-500 tw-bg-background tw-p-5">
+  <p>{{ "dangerZoneDesc" | i18n }}</p>
+  <button type="button" bitButton buttonType="danger" (click)="deleteOrganization()">
+    {{ "deleteOrganization" | i18n }}
+  </button>
+  <button type="button" bitButton buttonType="danger" (click)="purgeVault()">
+    {{ "purgeVault" | i18n }}
+  </button>
 </div>
 <ng-template #purgeOrganizationTemplate></ng-template>
 <ng-template #apiKeyTemplate></ng-template>

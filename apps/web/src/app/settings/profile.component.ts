@@ -3,10 +3,8 @@ import { Subject, takeUntil } from "rxjs";
 
 import { ModalService } from "@bitwarden/angular/services/modal.service";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
-import { KeyConnectorService } from "@bitwarden/common/auth/abstractions/key-connector.service";
 import { UpdateProfileRequest } from "@bitwarden/common/auth/models/request/update-profile.request";
 import { ProfileResponse } from "@bitwarden/common/models/response/profile.response";
-import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
@@ -21,7 +19,7 @@ import { ChangeAvatarComponent } from "./change-avatar.component";
 export class ProfileComponent implements OnInit, OnDestroy {
   loading = true;
   profile: ProfileResponse;
-  fingerprint: string;
+  fingerprintMaterial: string;
 
   formPromise: Promise<any>;
   @ViewChild("avatarModalTemplate", { read: ViewContainerRef, static: true })
@@ -32,9 +30,7 @@ export class ProfileComponent implements OnInit, OnDestroy {
     private apiService: ApiService,
     private i18nService: I18nService,
     private platformUtilsService: PlatformUtilsService,
-    private cryptoService: CryptoService,
     private logService: LogService,
-    private keyConnectorService: KeyConnectorService,
     private stateService: StateService,
     private modalService: ModalService
   ) {}
@@ -42,12 +38,7 @@ export class ProfileComponent implements OnInit, OnDestroy {
   async ngOnInit() {
     this.profile = await this.apiService.getProfile();
     this.loading = false;
-    const fingerprint = await this.cryptoService.getFingerprint(
-      await this.stateService.getUserId()
-    );
-    if (fingerprint != null) {
-      this.fingerprint = fingerprint.join("-");
-    }
+    this.fingerprintMaterial = await this.stateService.getUserId();
   }
 
   async ngOnDestroy() {

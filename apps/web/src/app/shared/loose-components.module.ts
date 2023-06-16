@@ -107,6 +107,7 @@ import { AddEditComponent as OrgAddEditComponent } from "../vault/org-vault/add-
 import { AttachmentsComponent as OrgAttachmentsComponent } from "../vault/org-vault/attachments.component";
 import { CollectionsComponent as OrgCollectionsComponent } from "../vault/org-vault/collections.component";
 
+import { AccountFingerprintComponent } from "./components/account-fingerprint/account-fingerprint.component";
 import { UserVerificationModule } from "./components/user-verification";
 import { SharedModule } from "./shared.module";
 
@@ -121,6 +122,7 @@ import { SharedModule } from "./shared.module";
     UserVerificationModule,
     ChangeKdfModule,
     DynamicAvatarComponent,
+    AccountFingerprintComponent,
   ],
   declarations: [
     PremiumBadgeComponent,

@@ -204,7 +204,7 @@ export class CryptoService implements CryptoServiceAbstraction {
     return privateKey;
   }
 
-  async getFingerprint(userId: string, publicKey?: ArrayBuffer): Promise<string[]> {
+  async getFingerprint(fingerprintMaterial: string, publicKey?: ArrayBuffer): Promise<string[]> {
     if (publicKey == null) {
       publicKey = await this.getPublicKey();
     }
@@ -214,7 +214,7 @@ export class CryptoService implements CryptoServiceAbstraction {
     const keyFingerprint = await this.cryptoFunctionService.hash(publicKey, "sha256");
     const userFingerprint = await this.cryptoFunctionService.hkdfExpand(
       keyFingerprint,
-      userId,
+      fingerprintMaterial,
       32,
       "sha256"
     );

@@ -6845,6 +6845,10 @@
   "updatedTempPassword": {
     "message": "User updated a password issued through account recovery."
   },
+  "yourOrganizationsFingerprint": {
+    "message": "Your organization's fingerprint phrase",
+    "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their organization's public key with another user, for the purposes of sharing."
+  },
   "deviceApprovals": {
     "message": "Device approvals"
   },
