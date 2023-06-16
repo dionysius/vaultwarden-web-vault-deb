@@ -151,6 +151,7 @@ export class LoginComponent extends BaseLoginComponent implements OnDestroy {
     // eslint-disable-next-line rxjs/no-async-subscribe
     childComponent.onSaved.pipe(takeUntil(this.componentDestroyed$)).subscribe(async () => {
       modal.close();
+      this.environmentSelector.updateEnvironmentInfo();
       await this.getLoginWithDevice(this.loggedEmail);
     });
   }

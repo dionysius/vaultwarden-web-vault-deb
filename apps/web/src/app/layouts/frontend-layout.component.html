@@ -1,6 +1,6 @@
 <router-outlet></router-outlet>
 <div class="container my-5 text-muted text-center">
-  <div class="tw-mb-1">
+  <div class="tw-mb-1" *ngIf="!isSelfHosted">
     <bit-menu #environmentOptions>
       <a bitMenuItem href="https://vault.bitwarden.com" class="pr-4">
         <i

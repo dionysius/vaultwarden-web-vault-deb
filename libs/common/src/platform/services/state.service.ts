@@ -1598,6 +1598,28 @@ export class StateService<
     );
   }
 
+  async getRegion(options?: StorageOptions): Promise<string> {
+    if ((await this.state())?.activeUserId == null) {
+      options = this.reconcileOptions(options, await this.defaultOnDiskOptions());
+      return (await this.getGlobals(options)).region ?? null;
+    }
+    options = this.reconcileOptions(options, await this.defaultOnDiskOptions());
+    return (await this.getAccount(options))?.settings?.region ?? null;
+  }
+
+  async setRegion(value: string, options?: StorageOptions): Promise<void> {
+    // Global values are set on each change and the current global settings are passed to any newly authed accounts.
+    // This is to allow setting region values before an account is active, while still allowing individual accounts to have their own region.
+    const globals = await this.getGlobals(
+      this.reconcileOptions(options, await this.defaultOnDiskOptions())
+    );
+    globals.region = value;
+    await this.saveGlobals(
+      globals,
+      this.reconcileOptions(options, await this.defaultOnDiskOptions())
+    );
+  }
+
   async getEquivalentDomains(options?: StorageOptions): Promise<string[][]> {
     return (
       await this.getAccount(this.reconcileOptions(options, await this.defaultOnDiskOptions()))

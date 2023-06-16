@@ -11,9 +11,10 @@ import { Utils } from "@bitwarden/common/platform/misc/utils";
 })
 export class FrontendLayoutComponent implements OnInit, OnDestroy {
   version: string;
+  isSelfHosted: boolean;
+  euServerFlagEnabled: boolean;
   year = "2015";
   isEuServer = true;
-  euServerFlagEnabled: boolean;
 
   constructor(
     private platformUtilsService: PlatformUtilsService,
@@ -23,6 +24,7 @@ export class FrontendLayoutComponent implements OnInit, OnDestroy {
   async ngOnInit() {
     this.year = new Date().getFullYear().toString();
     this.version = await this.platformUtilsService.getApplicationVersion();
+    this.isSelfHosted = this.platformUtilsService.isSelfHost();
     this.euServerFlagEnabled = await this.configService.getFeatureFlagBool(
       FeatureFlag.DisplayEuEnvironmentFlag
     );
