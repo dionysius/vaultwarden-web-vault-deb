@@ -14,6 +14,7 @@ export class OrganizationUserResponse extends BaseResponse {
   accessSecretsManager: boolean;
   permissions: PermissionsApi;
   resetPasswordEnrolled: boolean;
+  hasMasterPassword: boolean;
   collections: SelectionReadOnlyResponse[] = [];
   groups: string[] = [];
 
@@ -28,6 +29,7 @@ export class OrganizationUserResponse extends BaseResponse {
     this.accessAll = this.getResponseProperty("AccessAll");
     this.accessSecretsManager = this.getResponseProperty("AccessSecretsManager");
     this.resetPasswordEnrolled = this.getResponseProperty("ResetPasswordEnrolled");
+    this.hasMasterPassword = this.getResponseProperty("HasMasterPassword");
 
     const collections = this.getResponseProperty("Collections");
     if (collections != null) {

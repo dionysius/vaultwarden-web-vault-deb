@@ -20,6 +20,7 @@ export class OrganizationUserView {
   avatarColor: string;
   twoFactorEnabled: boolean;
   usesKeyConnector: boolean;
+  hasMasterPassword: boolean;
 
   collections: CollectionAccessSelectionView[] = [];
   groups: string[] = [];

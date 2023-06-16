@@ -12,13 +12,23 @@ import { BulkUserDetails } from "./bulk-status.component";
 })
 export class BulkRemoveComponent {
   @Input() organizationId: string;
-  @Input() users: BulkUserDetails[];
+  @Input() set users(value: BulkUserDetails[]) {
+    this._users = value;
+    this.showNoMasterPasswordWarning = this._users.some((u) => u.hasMasterPassword === false);
+  }
+
+  get users(): BulkUserDetails[] {
+    return this._users;
+  }
+
+  private _users: BulkUserDetails[];
 
   statuses: Map<string, string> = new Map();
 
   loading = false;
   done = false;
   error: string;
+  showNoMasterPasswordWarning = false;
 
   constructor(
     protected apiService: ApiService,

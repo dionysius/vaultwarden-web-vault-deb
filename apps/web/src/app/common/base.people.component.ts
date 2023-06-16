@@ -247,13 +247,17 @@ export abstract class BasePeopleComponent<
     this.actionPromise = null;
   }
 
-  async revoke(user: UserType) {
-    const confirmed = await this.dialogService.openSimpleDialog({
+  protected async revokeUserConfirmationDialog(user: UserType) {
+    return this.dialogService.openSimpleDialog({
       title: { key: "revokeAccess", placeholders: [this.userNamePipe.transform(user)] },
       content: this.revokeWarningMessage(),
       acceptButtonText: { key: "revokeAccess" },
       type: SimpleDialogType.WARNING,
     });
+  }
+
+  async revoke(user: UserType) {
+    const confirmed = await this.revokeUserConfirmationDialog(user);
 
     if (!confirmed) {
       return false;

@@ -23,12 +23,16 @@
         </app-callout>
         <ng-container *ngIf="!done">
           <app-callout type="warning" *ngIf="users.length > 0 && !error">
-            {{ removeUsersWarning }}
+            <p>{{ removeUsersWarning }}</p>
+            <p *ngIf="this.showNoMasterPasswordWarning">
+              {{ "removeMembersWithoutMasterPasswordWarning" | i18n }}
+            </p>
           </app-callout>
           <table class="table table-hover table-list">
             <thead>
               <tr>
                 <th colspan="2">{{ "user" | i18n }}</th>
+                <th *ngIf="this.showNoMasterPasswordWarning">{{ "details" | i18n }}</th>
               </tr>
             </thead>
             <tr *ngFor="let user of users">
@@ -38,6 +42,15 @@
               <td>
                 {{ user.email }}
                 <small class="text-muted d-block" *ngIf="user.name">{{ user.name }}</small>
+              </td>
+              <td *ngIf="this.showNoMasterPasswordWarning">
+                <span class="text-muted d-block tw-lowercase">
+                  <ng-container *ngIf="user.hasMasterPassword === true"> - </ng-container>
+                  <ng-container *ngIf="user.hasMasterPassword === false">
+                    <i class="bwi bwi-exclamation-triangle" aria-hidden="true"></i>
+                    {{ "noMasterPassword" | i18n }}
+                  </ng-container>
+                </span>
               </td>
             </tr>
           </table>
