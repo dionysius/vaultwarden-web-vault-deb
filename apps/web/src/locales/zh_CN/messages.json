@@ -2029,7 +2029,7 @@
     "message": "取消订阅"
   },
   "subscriptionExpiration": {
-    "message": "订阅过期"
+    "message": "订阅过期时间"
   },
   "subscriptionCanceled": {
     "message": "您的订阅已取消。"
@@ -3525,7 +3525,7 @@
     "message": "组织已停用"
   },
   "disabledOrganizationFilterError": {
-    "message": "无法访问已暂停组织中的项目。请联系您的组织所有者获取帮助。"
+    "message": "无法访问已停用组织中的项目。请联系您的组织所有者获取协助。"
   },
   "licenseIsExpired": {
     "message": "授权已过期"
@@ -6156,11 +6156,11 @@
     "description": "Message to be displayed before closing an access token, reminding the user to download or copy it."
   },
   "expiresOnAccessToken": {
-    "message": "有效期至：",
+    "message": "过期时间：",
     "description": "Label for the expiration date of an access token."
   },
   "accessTokenCallOutTitle": {
-    "message": "访问令牌未存储，无法获取",
+    "message": "访问令牌不会被存储并且以后无法获取",
     "description": "Notification to inform the user that access tokens are only displayed once and cannot be retrieved again."
   },
   "copyToken": {
@@ -6843,5 +6843,63 @@
   },
   "updatedTempPassword": {
     "message": "用户更新了通过账户恢复发布的密码。"
+  },
+  "yourOrganizationsFingerprint": {
+    "message": "您组织的指纹短语",
+    "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their organization's public key with another user, for the purposes of sharing."
+  },
+  "deviceApprovals": {
+    "message": "设备批准"
+  },
+  "deviceApprovalsDesc": {
+    "message": "在下面批准登录请求以允许请求的成员完成登录。未批准的请求将在 1 周后过期。请在批准前验证成员的信息。"
+  },
+  "deviceInfo": {
+    "message": "设备信息"
+  },
+  "time": {
+    "message": "时间"
+  },
+  "denyAllRequests": {
+    "message": "拒绝所有请求"
+  },
+  "denyRequest": {
+    "message": "拒绝请求"
+  },
+  "approveRequest": {
+    "message": "批准请求"
+  },
+  "noDeviceRequests": {
+    "message": "没有设备请求"
+  },
+  "noDeviceRequestsDesc": {
+    "message": "成员的设备批准请求将显示在这里"
+  },
+  "loginRequestDenied": {
+    "message": "登录请求被拒绝"
+  },
+  "allLoginRequestsDenied": {
+    "message": "所有登录请求被拒绝"
+  },
+  "loginRequestApproved": {
+    "message": "登录请求已批准"
+  },
+  "removeOrgUserNoMasterPasswordTitle": {
+    "message": "账户没有主密码"
+  },
+  "removeOrgUserNoMasterPasswordDesc": {
+    "message": "移除没有为其设置主密码的 $USER$ 可能会限制对他们的完整账户的的访问权限。 您确定要继续吗？",
+    "placeholders": {
+      "user": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "noMasterPassword": {
+    "message": "无主密码"
+  },
+  "removeMembersWithoutMasterPasswordWarning": {
+    "message": "移除没有为其设置主密码的成员可能会限制对他们的完整账户的的访问权限。"
   }
 }

@@ -6843,5 +6843,63 @@
   },
   "updatedTempPassword": {
     "message": "L'utilisateur a mis à jour un mot de passe émis lors de la récupération du compte."
+  },
+  "yourOrganizationsFingerprint": {
+    "message": "Phrase d'empreinte de votre organisation",
+    "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their organization's public key with another user, for the purposes of sharing."
+  },
+  "deviceApprovals": {
+    "message": "Approbations de l'appareil"
+  },
+  "deviceApprovalsDesc": {
+    "message": "Approuver les demandes de connexion ci-dessous pour permettre au membre requérant de terminer la connexion. Les demandes non approuvées expirent après 1 semaine. Vérifiez les informations du membre avant d'approuver."
+  },
+  "deviceInfo": {
+    "message": "Informations sur l'appareil"
+  },
+  "time": {
+    "message": "Temps"
+  },
+  "denyAllRequests": {
+    "message": "Refuser toutes les demandes"
+  },
+  "denyRequest": {
+    "message": "Refuser la demande"
+  },
+  "approveRequest": {
+    "message": "Approuver la demande"
+  },
+  "noDeviceRequests": {
+    "message": "Aucune demande de l'appareil"
+  },
+  "noDeviceRequestsDesc": {
+    "message": "Les demandes d'approbation de l'appareil du membre apparaîtront ici"
+  },
+  "loginRequestDenied": {
+    "message": "Demande de connexion refusée"
+  },
+  "allLoginRequestsDenied": {
+    "message": "Toutes demandes de connexion refusées"
+  },
+  "loginRequestApproved": {
+    "message": "Demande de connexion approuvée"
+  },
+  "removeOrgUserNoMasterPasswordTitle": {
+    "message": "Le compte n'a pas de mot de passe principal"
+  },
+  "removeOrgUserNoMasterPasswordDesc": {
+    "message": "La suppression de $USER$ sans lui définir un mot de passe principal, peut restreindre l'accès à son compte dans son intégralité. Êtes-vous sûr de vouloir continuer ?",
+    "placeholders": {
+      "user": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "noMasterPassword": {
+    "message": "Aucun mot de passe principal"
+  },
+  "removeMembersWithoutMasterPasswordWarning": {
+    "message": "La suppression des membres qui n'ont pas de mot de passe principal sans leur en définir un, peut restreindre l'accès à leur compte dans soin intégralité."
   }
 }

@@ -6843,5 +6843,63 @@
   },
   "updatedTempPassword": {
     "message": "Bruger har opdateret en adgangskode udstedt via kontogendannelse."
+  },
+  "yourOrganizationsFingerprint": {
+    "message": "Din organisations fingeraftrykssætning",
+    "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their organization's public key with another user, for the purposes of sharing."
+  },
+  "deviceApprovals": {
+    "message": "Enhedsgodkendelser"
+  },
+  "deviceApprovalsDesc": {
+    "message": "Godkend login-anmodninger nedenfor, så anmodende medlemmer kan fuldføre login-processen. Ikke-godkendte anmodninger udløber efter 1 uge. Bekræft medlemmets oplysninger før godkendelse."
+  },
+  "deviceInfo": {
+    "message": "Enhedsinfo"
+  },
+  "time": {
+    "message": "Tid"
+  },
+  "denyAllRequests": {
+    "message": "Afvis alle anmodninger"
+  },
+  "denyRequest": {
+    "message": "Afvis anmodning"
+  },
+  "approveRequest": {
+    "message": "Godkend anmodning"
+  },
+  "noDeviceRequests": {
+    "message": "Ingen enhedsanmodninger"
+  },
+  "noDeviceRequestsDesc": {
+    "message": "Medlemmers enhedsgodkendelsesanmodninger vil fremgå her"
+  },
+  "loginRequestDenied": {
+    "message": "Login-anmodning afvist"
+  },
+  "allLoginRequestsDenied": {
+    "message": "Alle login-anmodninger afvist"
+  },
+  "loginRequestApproved": {
+    "message": "Login-anmodning godkendt"
+  },
+  "removeOrgUserNoMasterPasswordTitle": {
+    "message": "Konto har ikke hovedadgangskode"
+  },
+  "removeOrgUserNoMasterPasswordDesc": {
+    "message": "Fjernelse af $USER$ uden opsætning af en hovedadgangskode for brugeren kan begrænse den fulde kontoadgang. Fortsæt alligevel?",
+    "placeholders": {
+      "user": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "noMasterPassword": {
+    "message": "Ingen hovedadgangskode"
+  },
+  "removeMembersWithoutMasterPasswordWarning": {
+    "message": "Fjernelse af medlemmer uden hovedadgangskoder uden at opsætte én for dem, kan begrænse den fulde kontoadgang."
   }
 }

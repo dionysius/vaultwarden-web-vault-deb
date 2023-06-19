@@ -4493,13 +4493,13 @@
     "message": "Ваша помоћ за лозинку не може да буде иста као лозинка."
   },
   "enrollAccountRecovery": {
-    "message": "Enroll in account recovery"
+    "message": "Пријавите се за опоравак налога"
   },
   "enrolledAccountRecovery": {
-    "message": "Enrolled in account recovery"
+    "message": "Уписан/а у опоравак налога"
   },
   "withdrawAccountRecovery": {
-    "message": "Withdraw from account recovery"
+    "message": "Повуците са опоравка налога"
   },
   "enrollPasswordResetSuccess": {
     "message": "Успешно уписвање!"
@@ -4508,7 +4508,7 @@
     "message": "Успешно отписивање!"
   },
   "eventEnrollAccountRecovery": {
-    "message": "User $ID$ enrolled in account recovery.",
+    "message": "Корисник $ID$ уписан у опоравак налога.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -4517,7 +4517,7 @@
     }
   },
   "eventWithdrawAccountRecovery": {
-    "message": "User $ID$ withdrew from account recovery.",
+    "message": "Корисник $ID$ исписан из опоравка налога.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -4577,10 +4577,10 @@
     "message": "Упис ће омогућити администраторима организације да промене вашу главну лозинку. Јесте ли сигурни да желите да се упишете?"
   },
   "accountRecoveryPolicy": {
-    "message": "Account recovery administration"
+    "message": "Администрација опоравка налога"
   },
   "accountRecoveryPolicyDescription": {
-    "message": "Recover member accounts when master password or trusted devices are forgotten or lost. The recovery processes is based on the account encryption method."
+    "message": "Опоравите налоге чланова када су главна лозинка или поуздани уређаји заборављени или изгубљени. Процеси опоравка су засновани на методи шифровања налога."
   },
   "resetPasswordPolicyWarning": {
     "message": "Корисници у организацији ће се морати само-уписати или се аутоматски уписати пре него што администратори могу да ресетују њихову главну лозинку."
@@ -6776,7 +6776,7 @@
     }
   },
   "inputTrimValidator": {
-    "message": "Input must not contain only whitespace.",
+    "message": "Унос не сме да садржи само размак.",
     "description": "Notification to inform the user that a form's input can't contain only whitespace."
   },
   "dismiss": {
@@ -6818,19 +6818,19 @@
     "message": "Шифровање поузданог уређаја"
   },
   "memberDecryptionTdeDescriptionStart": {
-    "message": "Once authenticated, members will decrypt vault data using a key stored on their device. The",
+    "message": "Када се аутентификују, чланови ће дешифровати податке из сефљ користећи кључ сачуван на њиховом уређају",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
   "memberDecryptionTdeDescriptionLink": {
-    "message": "account recovery administration policy",
+    "message": "политика администрације за опоравак налога",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
   "memberDecryptionTdeDescriptionEnd": {
-    "message": "with automatic enrollment will turn on when this option is used.",
+    "message": "са аутоматским уписом ће се укључити када се користи ова опција.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The master password reset policy with automatic enrollment will turn on when this option is used.'"
   },
   "notFound": {
-    "message": "$RESOURCE$ not found",
+    "message": "$RESOURCE$ није нађено/а",
     "placeholders": {
       "resource": {
         "content": "$1",
@@ -6839,9 +6839,67 @@
     }
   },
   "recoverAccount": {
-    "message": "Recover account"
+    "message": "Опоравак налога"
   },
   "updatedTempPassword": {
-    "message": "User updated a password issued through account recovery."
+    "message": "Корисник је ажурирао лозинку издату путем опоравка налога."
+  },
+  "yourOrganizationsFingerprint": {
+    "message": "Ваша Сигурносна Фраза организације",
+    "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their organization's public key with another user, for the purposes of sharing."
+  },
+  "deviceApprovals": {
+    "message": "Одобрења уређаја"
+  },
+  "deviceApprovalsDesc": {
+    "message": "Дозволите пријављивање чланова тако што ћете одобрити њихове захтеве за пријаву испод. Неодобрени захтеви истичу после 1 недељу. Проверите информације о члану пре него што одобрите."
+  },
+  "deviceInfo": {
+    "message": "Информације о уређају"
+  },
+  "time": {
+    "message": "Време"
+  },
+  "denyAllRequests": {
+    "message": "Одбиј све захтеве"
+  },
+  "denyRequest": {
+    "message": "Одбиј захтев"
+  },
+  "approveRequest": {
+    "message": "Одобри захтев"
+  },
+  "noDeviceRequests": {
+    "message": "Нема захтева уређаја"
+  },
+  "noDeviceRequestsDesc": {
+    "message": "Захтеви за одобрење уређаја чланова ће се појавити овде"
+  },
+  "loginRequestDenied": {
+    "message": "Захтев за пријаву је одбијен"
+  },
+  "allLoginRequestsDenied": {
+    "message": "Сви захтеви за пријаву су одбијени"
+  },
+  "loginRequestApproved": {
+    "message": "Захтев за пријаву је одобрен"
+  },
+  "removeOrgUserNoMasterPasswordTitle": {
+    "message": "Налог нема главну лозинку"
+  },
+  "removeOrgUserNoMasterPasswordDesc": {
+    "message": "Уклањање $USER$ без постављања главне лозинке за њих може ограничити приступ њиховом пуном налогу. Да ли сте сигурни да желите да наставите?",
+    "placeholders": {
+      "user": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "noMasterPassword": {
+    "message": "Без главне лозинке"
+  },
+  "removeMembersWithoutMasterPasswordWarning": {
+    "message": "Уклањање чланова који немају главну лозинку без постављања једне за њих може ограничити приступ њиховом пуном налогу."
   }
 }

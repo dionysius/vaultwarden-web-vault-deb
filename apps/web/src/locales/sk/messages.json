@@ -6843,5 +6843,63 @@
   },
   "updatedTempPassword": {
     "message": "Použivateľ aktualizoval heslo ktoré bolo vydané pri obnove konta."
+  },
+  "yourOrganizationsFingerprint": {
+    "message": "Fráza odtlačku vašej organizácie",
+    "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their organization's public key with another user, for the purposes of sharing."
+  },
+  "deviceApprovals": {
+    "message": "Povolenia zariadení"
+  },
+  "deviceApprovalsDesc": {
+    "message": "Povoľte žiadosť o prihlásenie nižšie ak chcete povoliť členovi dokončiť prihlásenie. Nepovolené žiadosti expirujú po týždni čakania. Overte informácie o členovi pred povolením."
+  },
+  "deviceInfo": {
+    "message": "Informácie o zariadení"
+  },
+  "time": {
+    "message": "Čas"
+  },
+  "denyAllRequests": {
+    "message": "Zamietnuť všetky žiadosti"
+  },
+  "denyRequest": {
+    "message": "Zamietnuť žiadosť"
+  },
+  "approveRequest": {
+    "message": "Schváliť žiadosť"
+  },
+  "noDeviceRequests": {
+    "message": "Žiadne žiadosti pre zariadenia"
+  },
+  "noDeviceRequestsDesc": {
+    "message": "Žiadosti členov pre povolenie zariadení sa zobrazia tu"
+  },
+  "loginRequestDenied": {
+    "message": "Žiadosť o prihlásenie zamietnutá"
+  },
+  "allLoginRequestsDenied": {
+    "message": "Všetky žiadosti o prihlásenie zamietnuté"
+  },
+  "loginRequestApproved": {
+    "message": "Žiadosť o prihlásenie schválená"
+  },
+  "removeOrgUserNoMasterPasswordTitle": {
+    "message": "Account does not have master password"
+  },
+  "removeOrgUserNoMasterPasswordDesc": {
+    "message": "Removing $USER$ without setting a master password for them may restrict access to their full account. Are you sure you want to continue?",
+    "placeholders": {
+      "user": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "noMasterPassword": {
+    "message": "No master password"
+  },
+  "removeMembersWithoutMasterPasswordWarning": {
+    "message": "Removing members who do not have master passwords without setting one for them may restrict access to their full account."
   }
 }

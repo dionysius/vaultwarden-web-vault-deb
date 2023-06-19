@@ -6843,5 +6843,63 @@
   },
   "updatedTempPassword": {
     "message": "Карыстальнік абнавіў пароль пры аднаўленні ўліковага запісу."
+  },
+  "yourOrganizationsFingerprint": {
+    "message": "Фраза адбітку пальца вашай арганізацыі",
+    "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their organization's public key with another user, for the purposes of sharing."
+  },
+  "deviceApprovals": {
+    "message": "Зацвярджэнне прылады"
+  },
+  "deviceApprovalsDesc": {
+    "message": "Зацвердзіце запыт уваходу ніжэй, каб дазволіць удзельнікам завяршыць уваход. Тэрмін дзеяння не зацверджаных уваходаў міне праз 1 тыдзень. Праверце звесткі ўдзельнікаў перад тым, як зацвярджаць іх."
+  },
+  "deviceInfo": {
+    "message": "Звесткі аб прыладзе"
+  },
+  "time": {
+    "message": "Час"
+  },
+  "denyAllRequests": {
+    "message": "Адхіліць усе запыты"
+  },
+  "denyRequest": {
+    "message": "Адхіліць запыты"
+  },
+  "approveRequest": {
+    "message": "Ухваліць запыт"
+  },
+  "noDeviceRequests": {
+    "message": "Няма запытаў ад прылады"
+  },
+  "noDeviceRequestsDesc": {
+    "message": "Тут будуць адлюстроўвацца запыты на ўхваленне прылады ўдзельніка"
+  },
+  "loginRequestDenied": {
+    "message": "Запыт на ўваход адхілены"
+  },
+  "allLoginRequestsDenied": {
+    "message": "Усе запыты на ўваход адхілены"
+  },
+  "loginRequestApproved": {
+    "message": "Запыт на ўваход ухвалены"
+  },
+  "removeOrgUserNoMasterPasswordTitle": {
+    "message": "Уліковы запіс не мае асноўнага пароля"
+  },
+  "removeOrgUserNoMasterPasswordDesc": {
+    "message": "Выдаленне $USER$ без прызначэння галоўнага пароля можа стаць прычынай абмежавання доступу да яго ўліковага запісу. Вы ўпэўнены, што хочаце працягнуць?",
+    "placeholders": {
+      "user": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "noMasterPassword": {
+    "message": "Без асноўнага пароля"
+  },
+  "removeMembersWithoutMasterPasswordWarning": {
+    "message": "Выдаленне ўдзельнікаў у якіх адсутнічае асноўны пароль і для якіх ён не быў прызначаны папярэдне можа стаць прычынай абмежавання доступу да іх уліковага запісу."
   }
 }

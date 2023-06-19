@@ -6843,5 +6843,63 @@
   },
   "updatedTempPassword": {
     "message": "Der Benutzer hat ein Passwort aktualisiert, das durch die Kontowiederherstellung ausgestellt wurde."
+  },
+  "yourOrganizationsFingerprint": {
+    "message": "Fingerabdruck-Phrase deiner Organisation",
+    "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their organization's public key with another user, for the purposes of sharing."
+  },
+  "deviceApprovals": {
+    "message": "Geräte-Genehmigungen"
+  },
+  "deviceApprovalsDesc": {
+    "message": "Bestätige die Anmeldeanfragen unten, damit das anfragende Mitglied die Anmeldung abschließen kann. Nicht genehmigte Anfragen laufen nach einer Woche ab. Überprüfe die Informationen des Mitglieds vor der Genehmigung."
+  },
+  "deviceInfo": {
+    "message": "Geräteinformation"
+  },
+  "time": {
+    "message": "Zeit"
+  },
+  "denyAllRequests": {
+    "message": "Alle Anfragen ablehnen"
+  },
+  "denyRequest": {
+    "message": "Anfrage ablehnen"
+  },
+  "approveRequest": {
+    "message": "Anfrage genehmigen"
+  },
+  "noDeviceRequests": {
+    "message": "Keine Geräteanfragen"
+  },
+  "noDeviceRequestsDesc": {
+    "message": "Geräte-Genehmigungsanfragen von Mitgliedern werden hier erscheinen"
+  },
+  "loginRequestDenied": {
+    "message": "Anmeldeanfrage abgelehnt"
+  },
+  "allLoginRequestsDenied": {
+    "message": "Alle Anmeldeanfragen abgelehnt"
+  },
+  "loginRequestApproved": {
+    "message": "Anmeldeanfrage genehmigt"
+  },
+  "removeOrgUserNoMasterPasswordTitle": {
+    "message": "Konto hat kein Master-Passwort"
+  },
+  "removeOrgUserNoMasterPasswordDesc": {
+    "message": "$USER$ zu entfernen, ohne ein Master-Passwort zu setzen, könnte den Zugang zum vollen Konto einschränken. Bist du sicher, dass du fortfahren möchtest?",
+    "placeholders": {
+      "user": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "noMasterPassword": {
+    "message": "Kein Master-Passwort"
+  },
+  "removeMembersWithoutMasterPasswordWarning": {
+    "message": "Mitglieder ohne Master-Passwort zu entfernen, ohne ein solches zu setzen, kann den Zugang zu deren vollem Konto einschränken."
   }
 }

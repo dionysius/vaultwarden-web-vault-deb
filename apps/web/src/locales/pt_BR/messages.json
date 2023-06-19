@@ -38,7 +38,7 @@
     "message": "Senha"
   },
   "newPassword": {
-    "message": "Nova Senha"
+    "message": "Nova senha"
   },
   "passphrase": {
     "message": "Frase Secreta"
@@ -50,7 +50,7 @@
     "message": "Campos Personalizados"
   },
   "cardholderName": {
-    "message": "Titular do Cartão"
+    "message": "Nome do titular do cartão"
   },
   "number": {
     "message": "Número"
@@ -2751,7 +2751,7 @@
     }
   },
   "viewCollectionWithName": {
-    "message": "View collection - $NAME$",
+    "message": "Ver coleção - $NAME$",
     "placeholders": {
       "name": {
         "content": "$1",
@@ -4493,10 +4493,10 @@
     "message": "Sua dica de senha senha não pode ser a mesma que a sua senha."
   },
   "enrollAccountRecovery": {
-    "message": "Enroll in account recovery"
+    "message": "Inscrever-se na recuperação de conta"
   },
   "enrolledAccountRecovery": {
-    "message": "Enrolled in account recovery"
+    "message": "Inscrito na recuperação de conta"
   },
   "withdrawAccountRecovery": {
     "message": "Withdraw from account recovery"
@@ -6445,7 +6445,7 @@
     "message": "Filtro de status de membros"
   },
   "inviteMember": {
-    "message": "Invite member"
+    "message": "Convidar membro"
   },
   "needsConfirmation": {
     "message": "Needs confirmation"
@@ -6496,7 +6496,7 @@
     }
   },
   "server": {
-    "message": "Server"
+    "message": "Servidor"
   },
   "exportData": {
     "message": "Exportar dados"
@@ -6514,40 +6514,40 @@
     }
   },
   "fileUpload": {
-    "message": "File upload"
+    "message": "Enviar de arquivo"
   },
   "acceptedFormats": {
     "message": "Formatos Aceitos:"
   },
   "copyPasteImportContents": {
-    "message": "Copy & paste import contents:"
+    "message": "Copiar e colar conteúdo para importação:"
   },
   "or": {
     "message": "ou"
   },
   "licenseAndBillingManagement": {
-    "message": "License and billing management"
+    "message": "Gerenciamento da licença e faturamento"
   },
   "automaticSync": {
-    "message": "Automatic sync"
+    "message": "Sincronização automática"
   },
   "manualUpload": {
-    "message": "Manual upload"
+    "message": "Upload manual"
   },
   "manualUploadDesc": {
     "message": "If you do not want to opt into billing sync, manually upload your license here."
   },
   "syncLicense": {
-    "message": "Sync license"
+    "message": "Sincronizar licença"
   },
   "licenseSyncSuccess": {
-    "message": "Successfully synced license"
+    "message": "Licença sincronizada com sucesso"
   },
   "licenseUploadSuccess": {
-    "message": "Successfully uploaded license"
+    "message": "Licença enviada com sucesso"
   },
   "lastLicenseSync": {
-    "message": "Last license sync"
+    "message": "Última sincronização de licença"
   },
   "billingSyncHelp": {
     "message": "Billing Sync help"
@@ -6565,7 +6565,7 @@
     }
   },
   "uploadLicense": {
-    "message": "Upload license"
+    "message": "Enviar licença"
   },
   "projectPeopleDescription": {
     "message": "Grant groups or people access to this project."
@@ -6583,7 +6583,7 @@
     "message": "Add people or groups to start collaborating"
   },
   "projectEmptyServiceAccountAccessPolicies": {
-    "message": "Add service accounts to grant access"
+    "message": "Adicione contas de serviço para conceder acesso"
   },
   "serviceAccountPeopleDescription": {
     "message": "Grant groups or people access to this service account."
@@ -6592,13 +6592,13 @@
     "message": "Assign projects to this service account. "
   },
   "serviceAccountEmptyProjectAccesspolicies": {
-    "message": "Add projects to grant access"
+    "message": "Adicionar projetos para conceder acesso"
   },
   "canReadWrite": {
-    "message": "Can read, write"
+    "message": "Pode ler e gravar"
   },
   "groupSlashUser": {
-    "message": "Group/User"
+    "message": "Grupo/Usuário"
   },
   "lowKdfIterations": {
     "message": "Low KDF Iterations"
@@ -6728,10 +6728,10 @@
     "message": "Removing people from a service account does not remove the access tokens they created. For security best practice, it is recommended to revoke access tokens created by people removed from a service account."
   },
   "smAccessRemovalWarningProjectTitle": {
-    "message": "Remove access to this project"
+    "message": "Remover acesso para esse projeto"
   },
   "smAccessRemovalWarningProjectMessage": {
-    "message": "This action will remove your access to the project."
+    "message": "Esta ação removerá seu acesso ao projeto."
   },
   "smAccessRemovalWarningSaTitle": {
     "message": "Remove access to this service account"
@@ -6740,13 +6740,13 @@
     "message": "This action will remove your access to the service account."
   },
   "removeAccess": {
-    "message": "Remove access"
+    "message": "Remover acesso"
   },
   "checkForBreaches": {
-    "message": "Check known data breaches for this password"
+    "message": "Verificar se essa senha aparece em vazamento de dados conhecidos"
   },
   "exposedMasterPassword": {
-    "message": "Exposed Master Password"
+    "message": "Senha mestre exposta"
   },
   "exposedMasterPasswordDesc": {
     "message": "Password found in a data breach. Use a unique password to protect your account. Are you sure you want to use an exposed password?"
@@ -6776,11 +6776,11 @@
     }
   },
   "inputTrimValidator": {
-    "message": "Input must not contain only whitespace.",
+    "message": "A entrada não pode conter somente espaços em branco.",
     "description": "Notification to inform the user that a form's input can't contain only whitespace."
   },
   "dismiss": {
-    "message": "Dismiss"
+    "message": "Descartar"
   },
   "notAvailableForFreeOrganization": {
     "message": "This feature is not available for free organizations. Contact your organization owner to upgrade."
@@ -6793,7 +6793,7 @@
     "message": "Require existing members to change their passwords"
   },
   "region": {
-    "message": "Region"
+    "message": "Região"
   },
   "eu": {
     "message": "EU",
@@ -6843,5 +6843,63 @@
   },
   "updatedTempPassword": {
     "message": "User updated a password issued through account recovery."
+  },
+  "yourOrganizationsFingerprint": {
+    "message": "Your organization's fingerprint phrase",
+    "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their organization's public key with another user, for the purposes of sharing."
+  },
+  "deviceApprovals": {
+    "message": "Device approvals"
+  },
+  "deviceApprovalsDesc": {
+    "message": "Approve login requests below to allow the requesting member to finish logging in. Unapproved requests expire after 1 week. Verify the member’s information before approving."
+  },
+  "deviceInfo": {
+    "message": "Device info"
+  },
+  "time": {
+    "message": "Time"
+  },
+  "denyAllRequests": {
+    "message": "Deny all requests"
+  },
+  "denyRequest": {
+    "message": "Deny request"
+  },
+  "approveRequest": {
+    "message": "Approve request"
+  },
+  "noDeviceRequests": {
+    "message": "No device requests"
+  },
+  "noDeviceRequestsDesc": {
+    "message": "Member device approval requests will appear here"
+  },
+  "loginRequestDenied": {
+    "message": "Login request denied"
+  },
+  "allLoginRequestsDenied": {
+    "message": "All login requests denied"
+  },
+  "loginRequestApproved": {
+    "message": "Login request approved"
+  },
+  "removeOrgUserNoMasterPasswordTitle": {
+    "message": "A conta não tem uma senha mestre"
+  },
+  "removeOrgUserNoMasterPasswordDesc": {
+    "message": "Removing $USER$ without setting a master password for them may restrict access to their full account. Are you sure you want to continue?",
+    "placeholders": {
+      "user": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "noMasterPassword": {
+    "message": "Nenhuma senha mestre"
+  },
+  "removeMembersWithoutMasterPasswordWarning": {
+    "message": "Removing members who do not have master passwords without setting one for them may restrict access to their full account."
   }
 }

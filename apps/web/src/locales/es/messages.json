@@ -6843,5 +6843,63 @@
   },
   "updatedTempPassword": {
     "message": "El usuario actualizó una contraseña solicitada a través de la recuperación de la cuenta."
+  },
+  "yourOrganizationsFingerprint": {
+    "message": "Frase de la huella digital de su organización",
+    "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their organization's public key with another user, for the purposes of sharing."
+  },
+  "deviceApprovals": {
+    "message": "Aprobaciones de dispositivo"
+  },
+  "deviceApprovalsDesc": {
+    "message": "Aprobar las solicitudes de inicio de sesión a continuación para permitir que el miembro solicitante termine de iniciar sesión. Las solicitudes no aprobadas caducan después de 1 semana. Verifique la información del miembro antes de aprobar."
+  },
+  "deviceInfo": {
+    "message": "Información del dispositivo"
+  },
+  "time": {
+    "message": "Hora"
+  },
+  "denyAllRequests": {
+    "message": "Rechazar todas las solicitudes"
+  },
+  "denyRequest": {
+    "message": "Rechazar solicitud"
+  },
+  "approveRequest": {
+    "message": "Aprobar solicitud"
+  },
+  "noDeviceRequests": {
+    "message": "No hay solicitudes de dispositivo"
+  },
+  "noDeviceRequestsDesc": {
+    "message": "Las solicitudes de aprobación del dispositivo de los miembros aparecerán aquí"
+  },
+  "loginRequestDenied": {
+    "message": "Solicitud de inicio de sesión denegada"
+  },
+  "allLoginRequestsDenied": {
+    "message": "Todas las solicitudes de inicio de sesión denegadas"
+  },
+  "loginRequestApproved": {
+    "message": "Solicitud de inicio de sesión aprobada"
+  },
+  "removeOrgUserNoMasterPasswordTitle": {
+    "message": "La cuenta no tiene contraseña maestra"
+  },
+  "removeOrgUserNoMasterPasswordDesc": {
+    "message": "Eliminar $USER$ sin establecer una contraseña maestra puede restringir el acceso a su cuenta completa. ¿Está seguro de que desea continuar?",
+    "placeholders": {
+      "user": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "noMasterPassword": {
+    "message": "Sin contraseña maestra"
+  },
+  "removeMembersWithoutMasterPasswordWarning": {
+    "message": "Quitar miembros que no tengan contraseñas maestras sin establecer una para ellos puede restringir el acceso a su cuenta completa."
   }
 }

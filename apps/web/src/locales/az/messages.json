@@ -6843,5 +6843,63 @@
   },
   "updatedTempPassword": {
     "message": "İstifadəçi, hesab bərpası vasitəsilə verilən bir parolu güncəllədi."
+  },
+  "yourOrganizationsFingerprint": {
+    "message": "Təşkilatınızın barmaq izi ifadəsi",
+    "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their organization's public key with another user, for the purposes of sharing."
+  },
+  "deviceApprovals": {
+    "message": "Device approvals"
+  },
+  "deviceApprovalsDesc": {
+    "message": "Approve login requests below to allow the requesting member to finish logging in. Unapproved requests expire after 1 week. Verify the member’s information before approving."
+  },
+  "deviceInfo": {
+    "message": "Device info"
+  },
+  "time": {
+    "message": "Time"
+  },
+  "denyAllRequests": {
+    "message": "Deny all requests"
+  },
+  "denyRequest": {
+    "message": "Deny request"
+  },
+  "approveRequest": {
+    "message": "Approve request"
+  },
+  "noDeviceRequests": {
+    "message": "No device requests"
+  },
+  "noDeviceRequestsDesc": {
+    "message": "Member device approval requests will appear here"
+  },
+  "loginRequestDenied": {
+    "message": "Login request denied"
+  },
+  "allLoginRequestsDenied": {
+    "message": "All login requests denied"
+  },
+  "loginRequestApproved": {
+    "message": "Login request approved"
+  },
+  "removeOrgUserNoMasterPasswordTitle": {
+    "message": "Hesabın ana parolu yoxdur"
+  },
+  "removeOrgUserNoMasterPasswordDesc": {
+    "message": "Onlar üçün ana parol tənzimləmədən $USER$ silinməsi, tam hesablarına müraciəti məhdudlaşdıra bilər. Davam etmək istədiyinizə əminsiniz?",
+    "placeholders": {
+      "user": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "noMasterPassword": {
+    "message": "Ana parol yoxdur"
+  },
+  "removeMembersWithoutMasterPasswordWarning": {
+    "message": "Ana parolu olmayan üzvləri onlar üçün parol tənzimləmədən silmək, tam hesablarına müraciəti məhdudlaşdıra bilər."
   }
 }

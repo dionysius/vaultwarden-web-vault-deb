@@ -6843,5 +6843,63 @@
   },
   "updatedTempPassword": {
     "message": "ユーザーはアカウント回復で発行されたパスワードを更新しました。"
+  },
+  "yourOrganizationsFingerprint": {
+    "message": "組織のフィンガープリントフレーズ",
+    "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their organization's public key with another user, for the purposes of sharing."
+  },
+  "deviceApprovals": {
+    "message": "デバイスの承認"
+  },
+  "deviceApprovalsDesc": {
+    "message": "リクエストしたメンバーがログインを完了できるようにするには、以下のログインリクエストを承認してください。未承認のリクエストは1週間後に失効します。承認する前にメンバーの情報を確認してください。"
+  },
+  "deviceInfo": {
+    "message": "デバイス情報"
+  },
+  "time": {
+    "message": "時間"
+  },
+  "denyAllRequests": {
+    "message": "すべてのリクエストを拒否"
+  },
+  "denyRequest": {
+    "message": "リクエストを拒否"
+  },
+  "approveRequest": {
+    "message": "リクエストを承認"
+  },
+  "noDeviceRequests": {
+    "message": "デバイスリクエストはありません"
+  },
+  "noDeviceRequestsDesc": {
+    "message": "メンバーデバイスの承認リクエストがここに表示されます"
+  },
+  "loginRequestDenied": {
+    "message": "ログイン要求を拒否しました"
+  },
+  "allLoginRequestsDenied": {
+    "message": "すべてのログイン要求を拒否しました"
+  },
+  "loginRequestApproved": {
+    "message": "ログインリクエストを承認しました"
+  },
+  "removeOrgUserNoMasterPasswordTitle": {
+    "message": "アカウントにマスターパスワードがありません"
+  },
+  "removeOrgUserNoMasterPasswordDesc": {
+    "message": "マスターパスワードを設定せずに $USER$ を削除すると、フルアカウントへのアクセスが制限される可能性があります。続行してもよろしいですか？",
+    "placeholders": {
+      "user": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "noMasterPassword": {
+    "message": "マスターパスワードがありません"
+  },
+  "removeMembersWithoutMasterPasswordWarning": {
+    "message": "マスターパスワードを設定せずにマスターパスワードを持たないメンバーを削除すると、フルアカウントへのアクセスが制限される可能性があります。"
   }
 }

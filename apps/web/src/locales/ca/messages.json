@@ -6843,5 +6843,63 @@
   },
   "updatedTempPassword": {
     "message": "L'usuari ha actualitzat una contrasenya emesa mitjançant la recuperació del compte."
+  },
+  "yourOrganizationsFingerprint": {
+    "message": "Frase d'empremta digital de l'organització",
+    "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their organization's public key with another user, for the purposes of sharing."
+  },
+  "deviceApprovals": {
+    "message": "Aprovacions de dispositius"
+  },
+  "deviceApprovalsDesc": {
+    "message": "Aprova les sol·licituds d'inici de sessió a continuació per permetre que el membre sol·licitant acabe d'iniciar la sessió. Les sol·licituds no aprovades caduquen al cap d'una setmana. Verifiqueu la informació del membre abans d'aprovar-les."
+  },
+  "deviceInfo": {
+    "message": "Informació del dispositiu"
+  },
+  "time": {
+    "message": "Hora"
+  },
+  "denyAllRequests": {
+    "message": "Denega totes les sol·licituds"
+  },
+  "denyRequest": {
+    "message": "Denega la sol·licitud"
+  },
+  "approveRequest": {
+    "message": "Aprova la sol·licitud"
+  },
+  "noDeviceRequests": {
+    "message": "No hi ha sol·licituds de dispositiu"
+  },
+  "noDeviceRequestsDesc": {
+    "message": "Les sol·licituds d'aprovació del dispositiu dels membres es mostraran ací"
+  },
+  "loginRequestDenied": {
+    "message": "S'ha denegat la sol·licitud d'inici de sessió"
+  },
+  "allLoginRequestsDenied": {
+    "message": "S'han denegat totes les sol·licituds d'inici de sessió"
+  },
+  "loginRequestApproved": {
+    "message": "S'ha aprovat la sol·licitud d'inici de sessió"
+  },
+  "removeOrgUserNoMasterPasswordTitle": {
+    "message": "El compte no té contrasenya mestra"
+  },
+  "removeOrgUserNoMasterPasswordDesc": {
+    "message": "La supressió de l'usuari/a $USER$ sense establir-li una contrasenya mestra pot restringir l'accés al seu compte complet. Esteu segur que voleu continuar?",
+    "placeholders": {
+      "user": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "noMasterPassword": {
+    "message": "Sense contrasenya mestra"
+  },
+  "removeMembersWithoutMasterPasswordWarning": {
+    "message": "La supressió de membres que no tenen contrasenyes mestres sense establir-ne una pot restringir l'accés al seu compte complet."
   }
 }

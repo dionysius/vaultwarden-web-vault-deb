@@ -6843,5 +6843,63 @@
   },
   "updatedTempPassword": {
     "message": "Uživatel aktualizoval heslo vydané prostřednictvím obnovení účtu."
+  },
+  "yourOrganizationsFingerprint": {
+    "message": "Fráze otisku prstu Vaší organizace",
+    "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their organization's public key with another user, for the purposes of sharing."
+  },
+  "deviceApprovals": {
+    "message": "Schválení zařízení"
+  },
+  "deviceApprovalsDesc": {
+    "message": "Abyste umožnili žádajícímu členovi dokončit přihlášení, schvalte níže uvedené žádosti o přihlášení. Platnost neschválených žádostí vyprší po 1 týdnu. Před schválením ověřte údaje člena."
+  },
+  "deviceInfo": {
+    "message": "Informace o zařízení"
+  },
+  "time": {
+    "message": "Čas"
+  },
+  "denyAllRequests": {
+    "message": "Odmítnout všechny žádosti"
+  },
+  "denyRequest": {
+    "message": "Odmítnout žádost"
+  },
+  "approveRequest": {
+    "message": "Schválit žádost"
+  },
+  "noDeviceRequests": {
+    "message": "Žádné žádosti ze zařízení"
+  },
+  "noDeviceRequestsDesc": {
+    "message": "Zde se zobrazí žádosti o schválení zařízení člena"
+  },
+  "loginRequestDenied": {
+    "message": "Žádost o přihlášení zamítnuta"
+  },
+  "allLoginRequestsDenied": {
+    "message": "Všechny žádosti o přihlášení zamítnuty"
+  },
+  "loginRequestApproved": {
+    "message": "Žádost o přihlášení schválena"
+  },
+  "removeOrgUserNoMasterPasswordTitle": {
+    "message": "Účet nemá hlavní heslo"
+  },
+  "removeOrgUserNoMasterPasswordDesc": {
+    "message": "Odebrání $USER$ bez nastavení hlavního hesla může uživateli omezit přístup k jeho celému účtu. Opravdu chcete pokračovat?",
+    "placeholders": {
+      "user": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "noMasterPassword": {
+    "message": "Žádné hlavní heslo"
+  },
+  "removeMembersWithoutMasterPasswordWarning": {
+    "message": "Odebrání členů bez nastavení jejich hlavních hesel jim může omezit přístup k jejich celým účtům."
   }
 }

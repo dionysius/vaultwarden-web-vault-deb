@@ -6843,5 +6843,63 @@
   },
   "updatedTempPassword": {
     "message": "Gebruiker heeft een via accountherstel uitgegeven wachtwoord bijgewerkt."
+  },
+  "yourOrganizationsFingerprint": {
+    "message": "De vingerafdrukzin van je organisatie",
+    "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their organization's public key with another user, for the purposes of sharing."
+  },
+  "deviceApprovals": {
+    "message": "Apparaat goedkeuringen"
+  },
+  "deviceApprovalsDesc": {
+    "message": "Met het goedkeuren van onderstaande inlogverzoeken kan het verzoekende lid inloggen. Afgewezen verzoeken verlopen na 1 week. Controleer de informatie van het lid voordat je goedkeuring geeft."
+  },
+  "deviceInfo": {
+    "message": "Apparaatinformatie"
+  },
+  "time": {
+    "message": "Tijd"
+  },
+  "denyAllRequests": {
+    "message": "Alle aanvragen afwijzen"
+  },
+  "denyRequest": {
+    "message": "Aanvraag afwijzen"
+  },
+  "approveRequest": {
+    "message": "Aanvraag goedkeuren"
+  },
+  "noDeviceRequests": {
+    "message": "Geen apparaatverzoeken"
+  },
+  "noDeviceRequestsDesc": {
+    "message": "Hier verschijnen verzoeken van leden tot het goedkeuren van apparaten"
+  },
+  "loginRequestDenied": {
+    "message": "Inlogverzoek afgewezen"
+  },
+  "allLoginRequestsDenied": {
+    "message": "Alle inlogverzoeken afgewezen"
+  },
+  "loginRequestApproved": {
+    "message": "Inlogverzoek goedgekeurd"
+  },
+  "removeOrgUserNoMasterPasswordTitle": {
+    "message": "Account heeft geen hoofdwachtwoord"
+  },
+  "removeOrgUserNoMasterPasswordDesc": {
+    "message": "Het verwijderen van $USER$ zonder een hoofdwachtwoord in te stellen kan de toegang tot hun volledige account beperken. Weet u zeker dat u wilt doorgaan?",
+    "placeholders": {
+      "user": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "noMasterPassword": {
+    "message": "Geen hoofdwachtwoord"
+  },
+  "removeMembersWithoutMasterPasswordWarning": {
+    "message": "Het verwijderen van leden die geen hoofdwachtwoorden hebben zonder er een in te stellen, kan de toegang tot hun volledige account beperken."
   }
 }

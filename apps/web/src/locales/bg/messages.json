@@ -6843,5 +6843,63 @@
   },
   "updatedTempPassword": {
     "message": "Потребителят промени парола издадена чрез възстановяването на профили."
+  },
+  "yourOrganizationsFingerprint": {
+    "message": "Уникална фраза, идентифицираща организацията ви",
+    "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their organization's public key with another user, for the purposes of sharing."
+  },
+  "deviceApprovals": {
+    "message": "Одобрение на устройства"
+  },
+  "deviceApprovalsDesc": {
+    "message": "Одобрете заявките за вписване по-долу, за да разрешите на съответния член да завърши вписването си. Неодобрените заявки се премахват след 1 седмица. Потвърдете информацията за члена, преди да одобрите заявката му."
+  },
+  "deviceInfo": {
+    "message": "Информация за устройството"
+  },
+  "time": {
+    "message": "Време"
+  },
+  "denyAllRequests": {
+    "message": "Отхвърляне на всички заявки"
+  },
+  "denyRequest": {
+    "message": "Отхвърляне на заявката"
+  },
+  "approveRequest": {
+    "message": "Одобряване на заявката"
+  },
+  "noDeviceRequests": {
+    "message": "Няма заявки от устройства"
+  },
+  "noDeviceRequestsDesc": {
+    "message": "Тук се показват заявките за одобрение на устройства от членовете"
+  },
+  "loginRequestDenied": {
+    "message": "Заявката за вписване е отказана"
+  },
+  "allLoginRequestsDenied": {
+    "message": "Всички заявки за вписване са отказани"
+  },
+  "loginRequestApproved": {
+    "message": "Заявката за вписване е одобрена"
+  },
+  "removeOrgUserNoMasterPasswordTitle": {
+    "message": "Потребителят няма главна парола"
+  },
+  "removeOrgUserNoMasterPasswordDesc": {
+    "message": "Ако премахнете $USER$ без да настроите главна парола, този потребител може да загуби пълния достъп до регистрацията си. Наистина ли искате да продължите?",
+    "placeholders": {
+      "user": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "noMasterPassword": {
+    "message": "Няма главна парола"
+  },
+  "removeMembersWithoutMasterPasswordWarning": {
+    "message": "Ако премахвате членове без да настроите главни пароли за тях, те може да загубят пълния достъп до регистрациите си."
   }
 }

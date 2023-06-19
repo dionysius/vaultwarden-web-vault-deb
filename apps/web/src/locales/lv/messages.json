@@ -6843,5 +6843,63 @@
   },
   "updatedTempPassword": {
     "message": "Lietotājs atjaunināja konta atkopšanas izsniegtu paroli."
+  },
+  "yourOrganizationsFingerprint": {
+    "message": "Apvienības atpazīšanas vārdkopa",
+    "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their organization's public key with another user, for the purposes of sharing."
+  },
+  "deviceApprovals": {
+    "message": "Ierīču apstiprinājumi"
+  },
+  "deviceApprovalsDesc": {
+    "message": "Zemāk var apstiprināt pieteikšanās pieprasījumus, lai ļautu dalībniekam pabeigt pieteikšanos. Neapstiprināti pieprasījumi izbeidzas pēc 1 nedēļas. Pirms apstiprināšanas jāpārskata dalībnieka informācija."
+  },
+  "deviceInfo": {
+    "message": "Ierīces informācija"
+  },
+  "time": {
+    "message": "Laiks"
+  },
+  "denyAllRequests": {
+    "message": "Noraidīt visus pieprasījumus"
+  },
+  "denyRequest": {
+    "message": "Noraidīt pieprasījumu"
+  },
+  "approveRequest": {
+    "message": "Apstiprināt pieprasījumu"
+  },
+  "noDeviceRequests": {
+    "message": "Nav ierīču pieprasījumu"
+  },
+  "noDeviceRequestsDesc": {
+    "message": "Šeit parādīsies dalībnieku ierīču apstiprinājuma pieprasījumi"
+  },
+  "loginRequestDenied": {
+    "message": "Pieteikšanās pieprasījums ir atteikts"
+  },
+  "allLoginRequestsDenied": {
+    "message": "Visi pieteikšanās pieprasījumi ir atteikti"
+  },
+  "loginRequestApproved": {
+    "message": "Pieteikšanās pieprasījums ir apstiprināts"
+  },
+  "removeOrgUserNoMasterPasswordTitle": {
+    "message": "Kontam nav galvenās paroles"
+  },
+  "removeOrgUserNoMasterPasswordDesc": {
+    "message": "$USER$ noņemšana bez galvenās paroles iestatīšanas var ierobežot piekļuvi lietotāja kontam. Vai tiešām turpināt?",
+    "placeholders": {
+      "user": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "noMasterPassword": {
+    "message": "Nav galvenās paroles"
+  },
+  "removeMembersWithoutMasterPasswordWarning": {
+    "message": "Dalībnieku, kuriem nav galvenās paroles, noņemšana bez tās iestatīšanas var ierobežot piekļuvi to kontam."
   }
 }

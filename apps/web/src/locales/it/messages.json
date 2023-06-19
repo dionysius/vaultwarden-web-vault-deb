@@ -6843,5 +6843,63 @@
   },
   "updatedTempPassword": {
     "message": "L'utente ha aggiornato una password emessa tramite il recupero dell'account."
+  },
+  "yourOrganizationsFingerprint": {
+    "message": "Frase impronta della tua organizzazione",
+    "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their organization's public key with another user, for the purposes of sharing."
+  },
+  "deviceApprovals": {
+    "message": "Approvazioni dispositivi"
+  },
+  "deviceApprovalsDesc": {
+    "message": "Approva le richieste di accesso qui sotto per consentire ai membri di completare l'accesso. Le richieste non approvate scadono dopo 1 settimana. Verifica le informazioni del membro prima di approvare."
+  },
+  "deviceInfo": {
+    "message": "Informazioni dispositivo"
+  },
+  "time": {
+    "message": "Ora"
+  },
+  "denyAllRequests": {
+    "message": "Nega tutte le richieste"
+  },
+  "denyRequest": {
+    "message": "Nega richiesta"
+  },
+  "approveRequest": {
+    "message": "Approva richiesta"
+  },
+  "noDeviceRequests": {
+    "message": "Nessuna richiesta dispositivo"
+  },
+  "noDeviceRequestsDesc": {
+    "message": "Le richieste di approvazione dei dispositivi dei membri appariranno qui"
+  },
+  "loginRequestDenied": {
+    "message": "Richiesta di accesso negata"
+  },
+  "allLoginRequestsDenied": {
+    "message": "Tutte le richieste di accesso negate"
+  },
+  "loginRequestApproved": {
+    "message": "Richiesta di accesso approvata"
+  },
+  "removeOrgUserNoMasterPasswordTitle": {
+    "message": "L'account non ha una password principale"
+  },
+  "removeOrgUserNoMasterPasswordDesc": {
+    "message": "Rimuovere $USER$ senza impostare una password principale per lui potrebbe limitare l'accesso al suo account completo. Sei sicuro di voler continuare?",
+    "placeholders": {
+      "user": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "noMasterPassword": {
+    "message": "Nessuna password principale"
+  },
+  "removeMembersWithoutMasterPasswordWarning": {
+    "message": "Rimuovere membri che non hanno una password principali senza impostarne una per loro potrebbe limitare l'accesso al loro account completo."
   }
 }

@@ -2760,7 +2760,7 @@
     }
   },
   "editItemWithName": {
-    "message": "Öğeyi düzenle - $NAME$",
+    "message": "Kaydı düzenle - $NAME$",
     "placeholders": {
       "name": {
         "content": "$1",
@@ -5032,7 +5032,7 @@
     "message": "İstenmeyen kimlik doğrulama yanıtına izin ver"
   },
   "idpAllowOutboundLogoutRequests": {
-    "message": "Çıkış isteklerine izin ver"
+    "message": "Allow outbound logout requests"
   },
   "idpSignAuthenticationRequests": {
     "message": "Kimlik doğrulama isteklerini imzala"
@@ -6843,5 +6843,63 @@
   },
   "updatedTempPassword": {
     "message": "Kullanıcı, hesap kurtarma yoluyla verilen bir parolayı güncelledi."
+  },
+  "yourOrganizationsFingerprint": {
+    "message": "Kuruluşunuzun parmak izi ifadesi",
+    "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their organization's public key with another user, for the purposes of sharing."
+  },
+  "deviceApprovals": {
+    "message": "Cihaz onayları"
+  },
+  "deviceApprovalsDesc": {
+    "message": "Aşağıdaki giriş isteklerini onaylayarak istekte bulunan üyelerin giriş yapmasına izin verebilirsiniz. Onaylanmayan isteklerin süresi 1 hafta sonra dolar. Onaylamadan önce üyenin bilgilerini kontrol edin."
+  },
+  "deviceInfo": {
+    "message": "Cihaz bilgileri"
+  },
+  "time": {
+    "message": "Tarih"
+  },
+  "denyAllRequests": {
+    "message": "Tüm istekleri reddet"
+  },
+  "denyRequest": {
+    "message": "İsteği reddet"
+  },
+  "approveRequest": {
+    "message": "İsteği onayla"
+  },
+  "noDeviceRequests": {
+    "message": "Cihaz isteği yok"
+  },
+  "noDeviceRequestsDesc": {
+    "message": "Üye cihaz onay istekleri burada görünecek"
+  },
+  "loginRequestDenied": {
+    "message": "Giriş isteği reddedildi"
+  },
+  "allLoginRequestsDenied": {
+    "message": "Tüm giriş istekleri reddedildi"
+  },
+  "loginRequestApproved": {
+    "message": "Giriş isteği onaylandı"
+  },
+  "removeOrgUserNoMasterPasswordTitle": {
+    "message": "Hesabın ana parolası yok"
+  },
+  "removeOrgUserNoMasterPasswordDesc": {
+    "message": "Removing $USER$ without setting a master password for them may restrict access to their full account. Are you sure you want to continue?",
+    "placeholders": {
+      "user": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "noMasterPassword": {
+    "message": "Ana parola yok"
+  },
+  "removeMembersWithoutMasterPasswordWarning": {
+    "message": "Removing members who do not have master passwords without setting one for them may restrict access to their full account."
   }
 }

@@ -6843,5 +6843,63 @@
   },
   "updatedTempPassword": {
     "message": "Пользователь обновил пароль, выданный через восстановление аккаунта."
+  },
+  "yourOrganizationsFingerprint": {
+    "message": "Фраза отпечатка вашей организации",
+    "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their organization's public key with another user, for the purposes of sharing."
+  },
+  "deviceApprovals": {
+    "message": "Одобрения устройств"
+  },
+  "deviceApprovalsDesc": {
+    "message": "Для завершения авторизации участника одобрите запросы на вход ниже. Срок действия неутвержденных запросов истекает через 1 неделю. Проверьте информацию участника перед одобрением."
+  },
+  "deviceInfo": {
+    "message": "Сведения об устройстве"
+  },
+  "time": {
+    "message": "Время"
+  },
+  "denyAllRequests": {
+    "message": "Deny all requests"
+  },
+  "denyRequest": {
+    "message": "Отклонить запрос"
+  },
+  "approveRequest": {
+    "message": "Одобрить запрос"
+  },
+  "noDeviceRequests": {
+    "message": "Нет запросов устройств"
+  },
+  "noDeviceRequestsDesc": {
+    "message": "Здесь будут отображаться запросы на одобрение устройств участника"
+  },
+  "loginRequestDenied": {
+    "message": "Запрос на вход отклонен"
+  },
+  "allLoginRequestsDenied": {
+    "message": "Все запросы на вход отклонены"
+  },
+  "loginRequestApproved": {
+    "message": "Запрос на вход одобрен"
+  },
+  "removeOrgUserNoMasterPasswordTitle": {
+    "message": "Аккаунт не имеет мастер-пароля"
+  },
+  "removeOrgUserNoMasterPasswordDesc": {
+    "message": "Удаление $USER$ без установки мастер-пароля может ограничить для него доступ к основному аккаунту. Вы уверены, что хотите продолжить?",
+    "placeholders": {
+      "user": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "noMasterPassword": {
+    "message": "Нет мастер-пароля"
+  },
+  "removeMembersWithoutMasterPasswordWarning": {
+    "message": "Удаление участников у которых не установлен мастер-пароль может ограничить доступ к их основным аккаунтам."
   }
 }

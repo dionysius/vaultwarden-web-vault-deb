@@ -6843,5 +6843,63 @@
   },
   "updatedTempPassword": {
     "message": "Użytkownik zaktualizował hasło wydane poprzez odzyskiwanie konta."
+  },
+  "yourOrganizationsFingerprint": {
+    "message": "Unikalny identyfikator Twojej organizacji",
+    "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their organization's public key with another user, for the purposes of sharing."
+  },
+  "deviceApprovals": {
+    "message": "Zatwierdzone urządzenia"
+  },
+  "deviceApprovalsDesc": {
+    "message": "Zatwierdź poniższe prośby o zalogowanie, aby umożliwić dokończenie procesu wnioskującemu użytkownikowi. Niezatwierdzone prośby wygasają po 1 tygodniu. Zweryfikuj informacje użytkownika przed zatwierdzeniem."
+  },
+  "deviceInfo": {
+    "message": "Informacje o urządzeniu"
+  },
+  "time": {
+    "message": "Czas"
+  },
+  "denyAllRequests": {
+    "message": "Odrzuć wszystkie prośby"
+  },
+  "denyRequest": {
+    "message": "Odrzuć prośbę"
+  },
+  "approveRequest": {
+    "message": "Zatwierdź prośbę"
+  },
+  "noDeviceRequests": {
+    "message": "Brak urządzeń do zatwierdzenia"
+  },
+  "noDeviceRequestsDesc": {
+    "message": "Tutaj pojawią się prośby o zatwierdzenie urządzenia"
+  },
+  "loginRequestDenied": {
+    "message": "Odrzucono prośbę o zalogowanie"
+  },
+  "allLoginRequestsDenied": {
+    "message": "Wszystkie prośby o zalogowanie zostały odrzucone"
+  },
+  "loginRequestApproved": {
+    "message": "Prośba o logowanie została zatwierdzona"
+  },
+  "removeOrgUserNoMasterPasswordTitle": {
+    "message": "Konto nie posiada hasła głównego"
+  },
+  "removeOrgUserNoMasterPasswordDesc": {
+    "message": "Usunięcie użytkownika $USER$ bez ustawienia mu hasła głównego może ograniczyć dostęp do jego pełnego konta. Czy na pewno chcesz kontynuować?",
+    "placeholders": {
+      "user": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "noMasterPassword": {
+    "message": "Brak hasła głównego"
+  },
+  "removeMembersWithoutMasterPasswordWarning": {
+    "message": "Usuwanie użytkowników, którzy nie mają hasła głównego bez ustawienia go, może ograniczyć dostęp do ich pełnych kont."
   }
 }

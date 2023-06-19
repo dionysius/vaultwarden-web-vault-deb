@@ -6826,7 +6826,7 @@
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
   "memberDecryptionTdeDescriptionEnd": {
-    "message": "automaattisella liitoksella otetaan tämän asetuksen yhteydessä käyttöön.",
+    "message": "automaattisella liitoksella otetaan tämän asetuksen käyttöönoton yhteydessä käyttöön.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The master password reset policy with automatic enrollment will turn on when this option is used.'"
   },
   "notFound": {
@@ -6843,5 +6843,63 @@
   },
   "updatedTempPassword": {
     "message": "Käyttäjä vaihtoi tilin palautusavun määrittämän salasanan."
+  },
+  "yourOrganizationsFingerprint": {
+    "message": "Organisaatiosi tunnistelauseke",
+    "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their organization's public key with another user, for the purposes of sharing."
+  },
+  "deviceApprovals": {
+    "message": "Laitteiden hyväksynnät"
+  },
+  "deviceApprovalsDesc": {
+    "message": "Salli jäsenien kirjautuminen hyväksymällä heidän kirjautumispyyntönsä alta. Hyväksymättömät pyynnöt erääntyvät viikon kuluttua. Vahvista jäsenen tiedot ennen hyväksymistä."
+  },
+  "deviceInfo": {
+    "message": "Laitteen tiedot"
+  },
+  "time": {
+    "message": "Aika"
+  },
+  "denyAllRequests": {
+    "message": "Hylkää kaikki pyynnöt"
+  },
+  "denyRequest": {
+    "message": "Hylkää pyyntö"
+  },
+  "approveRequest": {
+    "message": "Hyväksy pyyntö"
+  },
+  "noDeviceRequests": {
+    "message": "Laitepyyntöjä ei ole"
+  },
+  "noDeviceRequestsDesc": {
+    "message": "Jäsenien laitteiden hyväksyntäpyynnöt löytyvät täältä."
+  },
+  "loginRequestDenied": {
+    "message": "Kirjautumispyyntö hylättiin"
+  },
+  "allLoginRequestsDenied": {
+    "message": "Kaikki kirjautumispyynnöt hylättiin"
+  },
+  "loginRequestApproved": {
+    "message": "Kirjautumispyyntö hyväksyttiin"
+  },
+  "removeOrgUserNoMasterPasswordTitle": {
+    "message": "Tilille ei ole asetettu pääsalasanaa"
+  },
+  "removeOrgUserNoMasterPasswordDesc": {
+    "message": "Käyttäjän $USER$ poistaminen asettamatta hänen tililleen pääsalasanaa voi estää häntä kirjautumasta hänen omalle tililleen. Haluatko varmasti jatkaa?",
+    "placeholders": {
+      "user": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "noMasterPassword": {
+    "message": "Ei pääsalasanaa"
+  },
+  "removeMembersWithoutMasterPasswordWarning": {
+    "message": "Jäsenien, joiden tileille ei ole asetettu pääsalasanoja, poistaminen voi estää heitä kirjautumasta heidän omille tileilleen."
   }
 }

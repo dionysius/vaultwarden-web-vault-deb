@@ -6843,5 +6843,63 @@
   },
   "updatedTempPassword": {
     "message": "A felhasználó frissítette a fiók helyreállítás során kiadott jelszót."
+  },
+  "yourOrganizationsFingerprint": {
+    "message": "A szervezet ujjnyomat kifejezése",
+    "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their organization's public key with another user, for the purposes of sharing."
+  },
+  "deviceApprovals": {
+    "message": "Device approvals"
+  },
+  "deviceApprovalsDesc": {
+    "message": "Approve login requests below to allow the requesting member to finish logging in. Unapproved requests expire after 1 week. Verify the member’s information before approving."
+  },
+  "deviceInfo": {
+    "message": "Device info"
+  },
+  "time": {
+    "message": "Time"
+  },
+  "denyAllRequests": {
+    "message": "Deny all requests"
+  },
+  "denyRequest": {
+    "message": "Deny request"
+  },
+  "approveRequest": {
+    "message": "Approve request"
+  },
+  "noDeviceRequests": {
+    "message": "No device requests"
+  },
+  "noDeviceRequestsDesc": {
+    "message": "Member device approval requests will appear here"
+  },
+  "loginRequestDenied": {
+    "message": "Login request denied"
+  },
+  "allLoginRequestsDenied": {
+    "message": "All login requests denied"
+  },
+  "loginRequestApproved": {
+    "message": "Login request approved"
+  },
+  "removeOrgUserNoMasterPasswordTitle": {
+    "message": "A fióknak nincs mesterjelszava."
+  },
+  "removeOrgUserNoMasterPasswordDesc": {
+    "message": "Ha eltávolítjuk $USER$ mesterjelszavát anélkül, hogy beállítanánk a mesterjelszót, korlátozhatjuk a hozzáférést a teljes fiókhoz. Biztosan folytatni akarjuk?",
+    "placeholders": {
+      "user": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "noMasterPassword": {
+    "message": "Nincs mesterjelszó."
+  },
+  "removeMembersWithoutMasterPasswordWarning": {
+    "message": "A mesterjelszavakkal nem rendelkező tagok eltávolítása anélkül, hogy beállítanánk egyet, korlátozhatjuk a hozzáférést a teljes fiókhoz."
   }
 }
