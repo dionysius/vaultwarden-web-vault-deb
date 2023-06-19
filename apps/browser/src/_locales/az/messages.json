@@ -1462,16 +1462,16 @@
     "message": "Element avto-dolduruldu"
   },
   "insecurePageWarning": {
-    "message": "Warning: This is an unsecured HTTP page, and any information you submit can potentially be seen and changed by others. This Login was originally saved on a secure (HTTPS) page."
+    "message": "Xəbərdarlıq: Bu, güvənli olmayan bir HTTP səhifəsidir və göndərdiyiniz istənilən məlumat başqaları tərəfindən görünə və dəyişdirilə bilər. Bu Giriş, orijinal olaraq güvənli (HTTPS) bir səhifədə saxlanılmışdır."
   },
   "insecurePageWarningFillPrompt": {
-    "message": "Do you still wish to fill this login?"
+    "message": "Hələ də bu girişi doldurmaq istəyirsiniz?"
   },
   "autofillIframeWarning": {
-    "message": "The form is hosted by a different domain than the URI of your saved login. Choose OK to auto-fill anyway, or Cancel to stop."
+    "message": "Form sahibliyi, saxlanılmış girişinizin URI-ından fərqli bir domen tərəfindən həyata keçirilir. Yenə də avto-doldurmaq üçün \"Oldu\"ya, dayandırmaq üçün \"İmtina\"ya basın."
   },
   "autofillIframeWarningTip": {
-    "message": "To prevent this warning in the future, save this URI, $HOSTNAME$, to your Bitwarden login item for this site.",
+    "message": "Gələcəkdə bu xəbərdarlığın qarşısını almaq üçün, $HOSTNAME$ URI-nı bu sayt üçün Bitwarden giriş elementinizdə saxlayın.",
     "placeholders": {
       "hostname": {
         "content": "$1",
@@ -2234,5 +2234,8 @@
   "us": {
     "message": "ABŞ",
     "description": "United States"
+  },
+  "accessDenied": {
+    "message": "Müraciət rədd edildi. Bu səhifəyə baxmaq üçün icazəniz yoxdur."
   }
 }

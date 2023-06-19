@@ -1042,11 +1042,11 @@
     "message": "Logična vrednost"
   },
   "cfTypeLinked": {
-    "message": "Linked",
+    "message": "Povezano polje",
     "description": "This describes a field that is 'linked' (tied) to another field."
   },
   "linkedValue": {
-    "message": "Linked value",
+    "message": "Povezana vrednost",
     "description": "This describes a value that is 'linked' (tied) to another value."
   },
   "popup2faCloseMessage": {
@@ -1762,18 +1762,18 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendDisableDesc": {
-    "message": "Onemogoči to pošiljko, da nihče ne more dostopati do nje",
+    "message": "Onemogoči to pošiljko, da nihče ne more dostopati do nje.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendShareDesc": {
-    "message": "Kopiraj povezavo te pošiljke v odložišče po shranjevanju",
+    "message": "Kopiraj povezavo te pošiljke v odložišče, ko shranim.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendTextDesc": {
     "message": "Besedilo, ki ga želite poslati"
   },
   "sendHideText": {
-    "message": "Privzeto skrij besedilo te pošiljke",
+    "message": "Privzeto skrij besedilo te pošiljke.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "currentAccessCount": {
@@ -2234,5 +2234,8 @@
   "us": {
     "message": "US",
     "description": "United States"
+  },
+  "accessDenied": {
+    "message": "Access denied. You do not have permission to view this page."
   }
 }

@@ -2234,5 +2234,8 @@
   "us": {
     "message": "US",
     "description": "United States"
+  },
+  "accessDenied": {
+    "message": "Accesso negato. Non hai i permessi necessari per visualizzare questa pagina."
   }
 }

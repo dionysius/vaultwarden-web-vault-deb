@@ -2234,5 +2234,8 @@
   "us": {
     "message": "US",
     "description": "United States"
+  },
+  "accessDenied": {
+    "message": "Přístup byl odepřen. Nemáte oprávnění k zobrazení této stránky."
   }
 }

@@ -1462,16 +1462,16 @@
     "message": "Kirje täideti"
   },
   "insecurePageWarning": {
-    "message": "Warning: This is an unsecured HTTP page, and any information you submit can potentially be seen and changed by others. This Login was originally saved on a secure (HTTPS) page."
+    "message": "Hoiatus: See on ebaturvaline HTTP lehekülg. Teised osapooled võivad sinu sisestatud infot potentsiaalselt näha ja muuta. Algselt oli see kirje salvestatud turvalise (HTTPS) lehe jaoks."
   },
   "insecurePageWarningFillPrompt": {
-    "message": "Do you still wish to fill this login?"
+    "message": "Soovid kirje automaattäita?"
   },
   "autofillIframeWarning": {
-    "message": "The form is hosted by a different domain than the URI of your saved login. Choose OK to auto-fill anyway, or Cancel to stop."
+    "message": "See vorm on majutatud teistsugusel domeenil kui sinu salvestatud URI. Vajuta OK, et automaattäita või Tühista, et täitmine peatada."
   },
   "autofillIframeWarningTip": {
-    "message": "To prevent this warning in the future, save this URI, $HOSTNAME$, to your Bitwarden login item for this site.",
+    "message": "Selleks, et antud teavitust edaspidi ei kuvataks, salvesta see URI $HOSTNAME$ Bitwardeni kirjesse.",
     "placeholders": {
       "hostname": {
         "content": "$1",
@@ -2234,5 +2234,8 @@
   "us": {
     "message": "USA",
     "description": "United States"
+  },
+  "accessDenied": {
+    "message": "Access denied. You do not have permission to view this page."
   }
 }

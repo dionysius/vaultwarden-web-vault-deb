@@ -1462,16 +1462,16 @@
     "message": "Аўтазапоўнены элемент"
   },
   "insecurePageWarning": {
-    "message": "Warning: This is an unsecured HTTP page, and any information you submit can potentially be seen and changed by others. This Login was originally saved on a secure (HTTPS) page."
+    "message": "Папярэджанне: гэта старонка HTTP не абаронена. Любая інфармацыя, якую вы адпраўляеце тэарэтычна можа перахоплена і зменена любым карыстальнікам. Гэты лагін першапачаткова захаваны на абароненай старонцы (HTTPS)."
   },
   "insecurePageWarningFillPrompt": {
-    "message": "Do you still wish to fill this login?"
+    "message": "Вы ўсё яшчэ хочаце запоўніць гэты лагін?"
   },
   "autofillIframeWarning": {
-    "message": "The form is hosted by a different domain than the URI of your saved login. Choose OK to auto-fill anyway, or Cancel to stop."
+    "message": "Форма размешчана на іншым дамене, які адрозніваецца ад URI вашага захаванага лагіна. Націсніце \"Добра\", каб усё роўна запоўніць або \"Скасаваць\" для спынення."
   },
   "autofillIframeWarningTip": {
-    "message": "To prevent this warning in the future, save this URI, $HOSTNAME$, to your Bitwarden login item for this site.",
+    "message": "Каб больш не атрымліваць гэта папярэджанне, захавайце гэты URI, $HOSTNAME$ у свае элементы ўваходу Bitwarden для гэтага сайта.",
     "placeholders": {
       "hostname": {
         "content": "$1",
@@ -2222,17 +2222,20 @@
     }
   },
   "region": {
-    "message": "Region"
+    "message": "Рэгіён"
   },
   "opensInANewWindow": {
     "message": "Адкрываць у новым акне"
   },
   "eu": {
-    "message": "EU",
+    "message": "ЕС",
     "description": "European Union"
   },
   "us": {
-    "message": "US",
+    "message": "ЗША",
     "description": "United States"
+  },
+  "accessDenied": {
+    "message": "Доступ забаронены. У вас не дастаткова правоў для прагляду гэтай старонкі."
   }
 }

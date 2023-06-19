@@ -202,7 +202,7 @@
     "message": "Explore os fóruns da comunidade"
   },
   "contactSupport": {
-    "message": "Contact Bitwarden support"
+    "message": "Contate o suporte Bitwarden"
   },
   "sync": {
     "message": "Sincronizar"
@@ -1489,7 +1489,7 @@
     "message": "New master password"
   },
   "confirmNewMasterPass": {
-    "message": "Confirm new master password"
+    "message": "Confirme a nova senha mestre"
   },
   "masterPasswordPolicyInEffect": {
     "message": "Uma ou mais políticas da organização exigem que a sua senha mestra cumpra aos seguintes requisitos:"
@@ -2189,7 +2189,7 @@
     }
   },
   "autofillSelectInfoWithoutCommand": {
-    "message": "Select an item from this page or set a shortcut in settings."
+    "message": "Selecione um item desta página ou defina um atalho nas configurações."
   },
   "gotIt": {
     "message": "Entendi"
@@ -2222,10 +2222,10 @@
     }
   },
   "region": {
-    "message": "Region"
+    "message": "Região"
   },
   "opensInANewWindow": {
-    "message": "Opens in a new window"
+    "message": "Abrir em uma nova janela"
   },
   "eu": {
     "message": "EU",
@@ -2234,5 +2234,8 @@
   "us": {
     "message": "US",
     "description": "United States"
+  },
+  "accessDenied": {
+    "message": "Acesso negado. Você não tem permissão para ver esta página."
   }
 }

@@ -2054,10 +2054,10 @@
     "message": "需要高级版订阅"
   },
   "organizationIsDisabled": {
-    "message": "组织已暂停。"
+    "message": "组织已停用。"
   },
   "disabledOrganizationFilterError": {
-    "message": "无法访问已暂停组织中的项目。请联系您的组织所有者获取帮助。"
+    "message": "无法访问已停用组织中的项目。请联系您的组织所有者获取协助。"
   },
   "loggingInTo": {
     "message": "正在登录到 $DOMAIN$",
@@ -2234,5 +2234,8 @@
   "us": {
     "message": "美国",
     "description": "United States"
+  },
+  "accessDenied": {
+    "message": "访问被拒绝。您没有权限查看此页面。"
   }
 }
