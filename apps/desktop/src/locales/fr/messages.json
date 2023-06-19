@@ -129,7 +129,7 @@
     "message": "Réduire l'application lors de la copie des données d'un élément dans le presse-papiers."
   },
   "toggleVisibility": {
-    "message": "Afficher/Masquer"
+    "message": "Afficher/masquer la visibilité"
   },
   "toggleCollapse": {
     "message": "Déplier ou replier",
@@ -151,7 +151,7 @@
     "message": "Code de sécurité"
   },
   "identityName": {
-    "message": "identityName"
+    "message": "Nom d'identité"
   },
   "company": {
     "message": "Société"
@@ -269,7 +269,7 @@
     "message": "Deuxième prénom"
   },
   "lastName": {
-    "message": "Nom"
+    "message": "Nom de famille"
   },
   "fullName": {
     "message": "Nom complet"
@@ -352,7 +352,7 @@
     "message": "Élément ajouté"
   },
   "editedItem": {
-    "message": "Élément modifié"
+    "message": "Élément enregistré"
   },
   "deleteItem": {
     "message": "Supprimer l'élément"
@@ -367,7 +367,7 @@
     "message": "Êtes-vous sûr de vouloir envoyer cet élément vers la corbeille ?"
   },
   "deletedItem": {
-    "message": "L'élément a été envoyé à la corbeille"
+    "message": "Élément envoyé à la corbeille"
   },
   "overwritePasswordConfirmation": {
     "message": "Êtes-vous sûr de vouloir écraser le mot de passe actuel ?"
@@ -379,7 +379,7 @@
     "message": "Êtes-vous sûr de vouloir remplacer le mot de passe actuel ?"
   },
   "noneFolder": {
-    "message": "Pas de dossier",
+    "message": "Aucun dossier",
     "description": "This is the folder for uncategorized items"
   },
   "addFolder": {
@@ -464,7 +464,7 @@
     "message": "Êtes-vous sûr de vouloir supprimer cette pièce jointe ?"
   },
   "attachmentSaved": {
-    "message": "La pièce jointe a été enregistrée."
+    "message": "Pièce jointe enregistrée"
   },
   "file": {
     "message": "Fichier"
@@ -479,7 +479,7 @@
     "message": "Vous ne pouvez pas utiliser cette fonctionnalité tant que vous ne mettez pas à jour votre clé de chiffrement."
   },
   "editedFolder": {
-    "message": "Dossier modifié"
+    "message": "Dossier enregistré"
   },
   "addedFolder": {
     "message": "Dossier ajouté"
@@ -497,7 +497,7 @@
     "message": "Créer un compte"
   },
   "logIn": {
-    "message": "S'identifier"
+    "message": "Se connecter"
   },
   "submit": {
     "message": "Soumettre"
@@ -1269,7 +1269,7 @@
     "description": "Text for a button that toggles the visibility of the window. Shows the window when it is hidden or hides the window if it is currently open."
   },
   "hideToTray": {
-    "message": "Masquer"
+    "message": "Masquer dans la barre des tâches"
   },
   "alwaysOnTop": {
     "message": "Toujours au premier plan",
@@ -1472,10 +1472,10 @@
     "message": "Politique de confidentialité"
   },
   "unsavedChangesConfirmation": {
-    "message": "Êtes-vous sûr de vouloir quitter ? Si vous le faites maintenant, vos informations actuelles ne seront pas sauvegardées."
+    "message": "Êtes-vous sûr de vouloir quitter ? Si vous quittez maintenant, vos informations actuelles ne seront pas enregistrées."
   },
   "unsavedChangesTitle": {
-    "message": "Il y a des modifications non enregistrées"
+    "message": "Modifications non enregistrées"
   },
   "clone": {
     "message": "Cloner"
@@ -1490,7 +1490,7 @@
     "message": "Un mot de passe principal ou une autre méthode de déverrouillage est nécessaire pour accéder à nouveau à votre coffre."
   },
   "vaultTimeoutActionLogOutDesc": {
-    "message": "Un coffre déconnecté nécessite que vous vous ré-authentifiez pour y accéder de nouveau."
+    "message": "Une nouvelle authentification est requise pour accéder à nouveau à votre coffre."
   },
   "lock": {
     "message": "Verrouiller",
@@ -1528,7 +1528,7 @@
     "message": "La déconnexion supprimera tout accès à votre coffre et nécessitera une authentification en ligne après la période d'expiration. Êtes-vous sûr de vouloir utiliser ce paramètre ?"
   },
   "vaultTimeoutLogOutConfirmationTitle": {
-    "message": "Confirmation de l'action lors de l'expiration du délai"
+    "message": "Confirmation de l'action après délai d'expiration"
   },
   "enterpriseSingleSignOn": {
     "message": "Portail de connexion unique d'entreprise"
@@ -2265,5 +2265,8 @@
   },
   "selfHosted": {
     "message": "Auto-hébergé"
+  },
+  "accessDenied": {
+    "message": "Accès refusé. Vous n'avez pas l'autorisation de voir cette page."
   }
 }

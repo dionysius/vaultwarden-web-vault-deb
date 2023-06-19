@@ -2265,5 +2265,8 @@
   },
   "selfHosted": {
     "message": "Saját kiszolgáló"
+  },
+  "accessDenied": {
+    "message": "A hozzáférés megtagadásra került. Nincs jogosultság az oldal megtekintésére."
   }
 }

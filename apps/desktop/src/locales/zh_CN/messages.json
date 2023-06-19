@@ -2074,10 +2074,10 @@
     "message": "需要高级版订阅"
   },
   "organizationIsDisabled": {
-    "message": "组织已暂停"
+    "message": "组织已停用"
   },
   "disabledOrganizationFilterError": {
-    "message": "无法访问已暂停组织中的项目。请联系您的组织所有者获取帮助。"
+    "message": "无法访问已停用组织中的项目。请联系您的组织所有者获取协助。"
   },
   "neverLockWarning": {
     "message": "确定要使用「从不」选项吗？将锁定选项设置为「从不」会将密码库的加密密钥存储在您的设备上。如果使用此选项，应确保您的设备得到妥善的保护。"
@@ -2265,5 +2265,8 @@
   },
   "selfHosted": {
     "message": "自托管"
+  },
+  "accessDenied": {
+    "message": "访问被拒绝。您没有权限查看此页面。"
   }
 }

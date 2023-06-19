@@ -2265,5 +2265,8 @@
   },
   "selfHosted": {
     "message": "Vlastní hosting"
+  },
+  "accessDenied": {
+    "message": "Přístup byl odepřen. Nemáte oprávnění k zobrazení této stránky."
   }
 }
