@@ -28,6 +28,7 @@ export abstract class EnvironmentService {
   usUrls: Urls;
   euUrls: Urls;
   selectedRegion?: Region;
+  initialized = true;
 
   hasBaseUrl: () => boolean;
   getNotificationsUrl: () => string;

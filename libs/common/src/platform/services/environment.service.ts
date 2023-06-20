@@ -12,6 +12,7 @@ export class EnvironmentService implements EnvironmentServiceAbstraction {
   private readonly urlsSubject = new Subject<void>();
   urls: Observable<void> = this.urlsSubject.asObservable();
   selectedRegion?: Region;
+  initialized = true;
 
   protected baseUrl: string;
   protected webVaultUrl: string;
@@ -49,6 +50,9 @@ export class EnvironmentService implements EnvironmentServiceAbstraction {
     this.stateService.activeAccount$
       .pipe(
         concatMap(async () => {
+          if (!this.initialized) {
+            return;
+          }
           await this.setUrlsFromStorage();
         })
       )
@@ -157,22 +161,23 @@ export class EnvironmentService implements EnvironmentServiceAbstraction {
 
     // fix environment urls for old users
     if (savedUrls.base === "https://vault.bitwarden.com") {
-      this.setRegion(Region.US);
+      await this.setRegion(Region.US);
       return;
     }
     if (savedUrls.base === "https://vault.bitwarden.eu") {
-      this.setRegion(Region.EU);
+      await this.setRegion(Region.EU);
       return;
     }
 
     switch (region) {
       case Region.EU:
-        this.setRegion(Region.EU);
+        await this.setRegion(Region.EU);
         return;
       case Region.US:
-        this.setRegion(Region.US);
+        await this.setRegion(Region.US);
         return;
       case Region.SelfHosted:
+      case null:
       default:
         this.baseUrl = envUrls.base = savedUrls.base;
         this.webVaultUrl = savedUrls.webVault;
@@ -182,9 +187,9 @@ export class EnvironmentService implements EnvironmentServiceAbstraction {
         this.notificationsUrl = savedUrls.notifications;
         this.eventsUrl = envUrls.events = savedUrls.events;
         this.keyConnectorUrl = savedUrls.keyConnector;
+        await this.setRegion(Region.SelfHosted);
         // scimUrl is not saved to storage
         this.urlsSubject.next();
-        this.setRegion(Region.SelfHosted);
         break;
     }
   }
@@ -270,7 +275,7 @@ export class EnvironmentService implements EnvironmentServiceAbstraction {
       case Region.SelfHosted:
         // if user saves with empty fields, default to US
         if (this.isEmpty()) {
-          this.setRegion(Region.US);
+          await this.setRegion(Region.US);
         }
         break;
     }

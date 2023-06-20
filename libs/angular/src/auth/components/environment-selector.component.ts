@@ -88,11 +88,10 @@ export class EnvironmentSelectorComponent implements OnInit, OnDestroy {
   }
 
   async updateEnvironmentInfo() {
+    this.selectedEnvironment = this.environmentService.selectedRegion;
     this.euServerFlagEnabled = await this.configService.getFeatureFlagBool(
       FeatureFlag.DisplayEuEnvironmentFlag
     );
-
-    this.selectedEnvironment = this.environmentService.selectedRegion;
   }
 
   close() {
