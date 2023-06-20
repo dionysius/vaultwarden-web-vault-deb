@@ -35,6 +35,7 @@ import {
 } from "../../../shared/components/access-selector";
 
 import { commaSeparatedEmails } from "./validators/comma-separated-emails.validator";
+import { freeOrgSeatLimitReachedValidator } from "./validators/free-org-inv-limit-reached.validator";
 
 export enum MemberDialogTab {
   Role = 0,
@@ -46,6 +47,7 @@ export interface MemberDialogParams {
   name: string;
   organizationId: string;
   organizationUserId: string;
+  allOrganizationUserEmails: string[];
   usesKeyConnector: boolean;
   initialTab?: MemberDialogTab;
 }
@@ -79,7 +81,7 @@ export class MemberDialogComponent implements OnInit, OnDestroy {
   protected groupAccessItems: AccessItemView[] = [];
   protected tabIndex: MemberDialogTab;
   protected formGroup = this.formBuilder.group({
-    emails: ["", [Validators.required, commaSeparatedEmails]],
+    emails: ["", { updateOn: "blur" }],
     type: OrganizationUserType.User,
     externalId: this.formBuilder.control({ value: "", disabled: true }),
     accessAllCollections: false,
@@ -166,6 +168,20 @@ export class MemberDialogComponent implements OnInit, OnDestroy {
         this.organization = organization;
         this.canUseCustomPermissions = organization.useCustomPermissions;
         this.canUseSecretsManager = organization.useSecretsManager && flagEnabled("secretsManager");
+
+        const emailsControlValidators = [
+          Validators.required,
+          commaSeparatedEmails,
+          freeOrgSeatLimitReachedValidator(
+            this.organization,
+            this.params.allOrganizationUserEmails,
+            this.i18nService.t("subscriptionFreePlan", organization.seats)
+          ),
+        ];
+
+        const emailsControl = this.formGroup.get("emails");
+        emailsControl.setValidators(emailsControlValidators);
+        emailsControl.updateValueAndValidity();
 
         this.collectionAccessItems = [].concat(
           collections.map((c) => mapCollectionToAccessItemView(c))
