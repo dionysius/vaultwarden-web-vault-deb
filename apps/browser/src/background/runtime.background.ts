@@ -224,6 +224,7 @@ export default class RuntimeBackground {
       cipher: this.main.loginToAutoFill,
       pageDetails: this.pageDetailsToAutoFill,
       fillNewPassword: true,
+      allowTotpAutofill: true,
     });
 
     if (totpCode != null) {

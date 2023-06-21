@@ -32,6 +32,7 @@ export interface GenerateFillScriptOptions {
   onlyEmptyFields: boolean;
   onlyVisibleFields: boolean;
   fillNewPassword: boolean;
+  allowTotpAutofill: boolean;
   cipher: CipherView;
   tabUrl: string;
   defaultUriMatch: UriMatchType;
@@ -127,69 +128,72 @@ export default class AutofillService implements AutofillServiceInterface {
     const defaultUriMatch = (await this.stateService.getDefaultUriMatch()) ?? UriMatchType.Domain;
 
     let didAutofill = false;
-    options.pageDetails.forEach((pd) => {
-      // make sure we're still on correct tab
-      if (pd.tab.id !== tab.id || pd.tab.url !== tab.url) {
-        return;
-      }
-
-      const fillScript = this.generateFillScript(pd.details, {
-        skipUsernameOnlyFill: options.skipUsernameOnlyFill || false,
-        onlyEmptyFields: options.onlyEmptyFields || false,
-        onlyVisibleFields: options.onlyVisibleFields || false,
-        fillNewPassword: options.fillNewPassword || false,
-        cipher: options.cipher,
-        tabUrl: tab.url,
-        defaultUriMatch: defaultUriMatch,
-      });
-
-      if (!fillScript || !fillScript.script || !fillScript.script.length) {
-        return;
-      }
-
-      if (
-        fillScript.untrustedIframe &&
-        options.allowUntrustedIframe != undefined &&
-        !options.allowUntrustedIframe
-      ) {
-        this.logService.info("Auto-fill on page load was blocked due to an untrusted iframe.");
-        return;
-      }
-
-      // Add a small delay between operations
-      fillScript.properties.delay_between_operations = 20;
-
-      didAutofill = true;
-      if (!options.skipLastUsed) {
-        this.cipherService.updateLastUsedDate(options.cipher.id);
-      }
-
-      BrowserApi.tabSendMessage(
-        tab,
-        {
-          command: "fillForm",
-          fillScript: fillScript,
-          url: tab.url,
-        },
-        { frameId: pd.frameId }
-      );
-
-      if (
-        options.cipher.type !== CipherType.Login ||
-        totpPromise ||
-        !options.cipher.login.totp ||
-        (!canAccessPremium && !options.cipher.organizationUseTotp)
-      ) {
-        return;
-      }
-
-      totpPromise = this.stateService.getDisableAutoTotpCopy().then((disabled) => {
-        if (!disabled) {
-          return this.totpService.getCode(options.cipher.login.totp);
+    await Promise.all(
+      options.pageDetails.map(async (pd) => {
+        // make sure we're still on correct tab
+        if (pd.tab.id !== tab.id || pd.tab.url !== tab.url) {
+          return;
         }
-        return null;
-      });
-    });
+
+        const fillScript = await this.generateFillScript(pd.details, {
+          skipUsernameOnlyFill: options.skipUsernameOnlyFill || false,
+          onlyEmptyFields: options.onlyEmptyFields || false,
+          onlyVisibleFields: options.onlyVisibleFields || false,
+          fillNewPassword: options.fillNewPassword || false,
+          allowTotpAutofill: options.allowTotpAutofill || false,
+          cipher: options.cipher,
+          tabUrl: tab.url,
+          defaultUriMatch: defaultUriMatch,
+        });
+
+        if (!fillScript || !fillScript.script || !fillScript.script.length) {
+          return;
+        }
+
+        if (
+          fillScript.untrustedIframe &&
+          options.allowUntrustedIframe != undefined &&
+          !options.allowUntrustedIframe
+        ) {
+          this.logService.info("Auto-fill on page load was blocked due to an untrusted iframe.");
+          return;
+        }
+
+        // Add a small delay between operations
+        fillScript.properties.delay_between_operations = 20;
+
+        didAutofill = true;
+        if (!options.skipLastUsed) {
+          this.cipherService.updateLastUsedDate(options.cipher.id);
+        }
+
+        BrowserApi.tabSendMessage(
+          tab,
+          {
+            command: "fillForm",
+            fillScript: fillScript,
+            url: tab.url,
+          },
+          { frameId: pd.frameId }
+        );
+
+        if (
+          options.cipher.type !== CipherType.Login ||
+          totpPromise ||
+          !options.cipher.login.totp ||
+          (!canAccessPremium && !options.cipher.organizationUseTotp)
+        ) {
+          return;
+        }
+
+        totpPromise = this.stateService.getDisableAutoTotpCopy().then((disabled) => {
+          if (!disabled) {
+            return this.totpService.getCode(options.cipher.login.totp);
+          }
+          return null;
+        });
+      })
+    );
 
     if (didAutofill) {
       this.eventCollectionService.collect(EventType.Cipher_ClientAutofilled, options.cipher.id);
@@ -244,6 +248,7 @@ export default class AutofillService implements AutofillServiceInterface {
       onlyVisibleFields: !fromCommand,
       fillNewPassword: fromCommand,
       allowUntrustedIframe: fromCommand,
+      allowTotpAutofill: fromCommand,
     });
 
     // Update last used index as autofill has succeed
@@ -280,10 +285,10 @@ export default class AutofillService implements AutofillServiceInterface {
     return tab;
   }
 
-  private generateFillScript(
+  private async generateFillScript(
     pageDetails: AutofillPageDetails,
     options: GenerateFillScriptOptions
-  ): AutofillScript {
+  ): Promise<AutofillScript> {
     if (!pageDetails || !options.cipher) {
       return null;
     }
@@ -333,7 +338,12 @@ export default class AutofillService implements AutofillServiceInterface {
 
     switch (options.cipher.type) {
       case CipherType.Login:
-        fillScript = this.generateLoginFillScript(fillScript, pageDetails, filledFields, options);
+        fillScript = await this.generateLoginFillScript(
+          fillScript,
+          pageDetails,
+          filledFields,
+          options
+        );
         break;
       case CipherType.Card:
         fillScript = this.generateCardFillScript(fillScript, pageDetails, filledFields, options);
@@ -353,20 +363,22 @@ export default class AutofillService implements AutofillServiceInterface {
     return fillScript;
   }
 
-  private generateLoginFillScript(
+  private async generateLoginFillScript(
     fillScript: AutofillScript,
     pageDetails: AutofillPageDetails,
     filledFields: { [id: string]: AutofillField },
     options: GenerateFillScriptOptions
-  ): AutofillScript {
+  ): Promise<AutofillScript> {
     if (!options.cipher.login) {
       return null;
     }
 
     const passwords: AutofillField[] = [];
     const usernames: AutofillField[] = [];
+    const totps: AutofillField[] = [];
     let pf: AutofillField = null;
     let username: AutofillField = null;
+    let totp: AutofillField = null;
     const login = options.cipher.login;
     fillScript.savedUrls =
       login?.uris?.filter((u) => u.match != UriMatchType.Never).map((u) => u.uri) ?? [];
@@ -420,6 +432,19 @@ export default class AutofillService implements AutofillServiceInterface {
             usernames.push(username);
           }
         }
+
+        if (options.allowTotpAutofill && login.totp) {
+          totp = this.findTotpField(pageDetails, pf, false, false, false);
+
+          if (!totp && !options.onlyVisibleFields) {
+            // not able to find any viewable totp fields. maybe there are some "hidden" ones?
+            totp = this.findTotpField(pageDetails, pf, true, true, true);
+          }
+
+          if (totp) {
+            totps.push(totp);
+          }
+        }
       });
     }
 
@@ -442,17 +467,41 @@ export default class AutofillService implements AutofillServiceInterface {
           usernames.push(username);
         }
       }
+
+      if (options.allowTotpAutofill && login.totp && pf.elementNumber > 0) {
+        totp = this.findTotpField(pageDetails, pf, false, false, true);
+
+        if (!totp && !options.onlyVisibleFields) {
+          // not able to find any viewable username fields. maybe there are some "hidden" ones?
+          totp = this.findTotpField(pageDetails, pf, true, true, true);
+        }
+
+        if (totp) {
+          totps.push(totp);
+        }
+      }
     }
 
-    if (!passwordFields.length && !options.skipUsernameOnlyFill) {
+    if (!passwordFields.length) {
       // No password fields on this page. Let's try to just fuzzy fill the username.
       pageDetails.fields.forEach((f) => {
         if (
+          !options.skipUsernameOnlyFill &&
           f.viewable &&
           (f.type === "text" || f.type === "email" || f.type === "tel") &&
           AutofillService.fieldIsFuzzyMatch(f, AutoFillConstants.UsernameFieldNames)
         ) {
           usernames.push(f);
+        }
+
+        if (
+          options.allowTotpAutofill &&
+          f.viewable &&
+          (f.type === "text" || f.type === "number") &&
+          (AutofillService.fieldIsFuzzyMatch(f, AutoFillConstants.TotpFieldNames) ||
+            f.autoCompleteType === "one-time-code")
+        ) {
+          totps.push(f);
         }
       });
     }
@@ -476,6 +525,20 @@ export default class AutofillService implements AutofillServiceInterface {
       filledFields[p.opid] = p;
       AutofillService.fillByOpid(fillScript, p, login.password);
     });
+
+    if (options.allowTotpAutofill) {
+      await Promise.all(
+        totps.map(async (t) => {
+          if (Object.prototype.hasOwnProperty.call(filledFields, t.opid)) {
+            return;
+          }
+
+          filledFields[t.opid] = t;
+          const totpValue = await this.totpService.getCode(login.totp);
+          AutofillService.fillByOpid(fillScript, t, totpValue);
+        })
+      );
+    }
 
     fillScript = AutofillService.setFillScriptForFocus(filledFields, fillScript);
     return fillScript;
@@ -1258,6 +1321,42 @@ export default class AutofillService implements AutofillServiceInterface {
     return usernameField;
   }
 
+  private findTotpField(
+    pageDetails: AutofillPageDetails,
+    passwordField: AutofillField,
+    canBeHidden: boolean,
+    canBeReadOnly: boolean,
+    withoutForm: boolean
+  ) {
+    let totpField: AutofillField = null;
+    for (let i = 0; i < pageDetails.fields.length; i++) {
+      const f = pageDetails.fields[i];
+      if (AutofillService.forCustomFieldsOnly(f)) {
+        continue;
+      }
+
+      if (
+        !f.disabled &&
+        (canBeReadOnly || !f.readonly) &&
+        (withoutForm || f.form === passwordField.form) &&
+        (canBeHidden || f.viewable) &&
+        (f.type === "text" || f.type === "number")
+      ) {
+        totpField = f;
+
+        if (
+          this.findMatchingFieldIndex(f, AutoFillConstants.TotpFieldNames) > -1 ||
+          f.autoCompleteType === "one-time-code"
+        ) {
+          // We found an exact match. No need to keep looking.
+          break;
+        }
+      }
+    }
+
+    return totpField;
+  }
+
   private findMatchingFieldIndex(field: AutofillField, names: string[]): number {
     for (let i = 0; i < names.length; i++) {
       if (names[i].indexOf("=") > -1) {
@@ -1265,6 +1364,12 @@ export default class AutofillService implements AutofillServiceInterface {
           return i;
         }
         if (this.fieldPropertyIsPrefixMatch(field, "htmlName", names[i], "name")) {
+          return i;
+        }
+        if (this.fieldPropertyIsPrefixMatch(field, "label-left", names[i], "label")) {
+          return i;
+        }
+        if (this.fieldPropertyIsPrefixMatch(field, "label-right", names[i], "label")) {
           return i;
         }
         if (this.fieldPropertyIsPrefixMatch(field, "label-tag", names[i], "label")) {
@@ -1282,6 +1387,12 @@ export default class AutofillService implements AutofillServiceInterface {
         return i;
       }
       if (this.fieldPropertyIsMatch(field, "htmlName", names[i])) {
+        return i;
+      }
+      if (this.fieldPropertyIsMatch(field, "label-left", names[i])) {
+        return i;
+      }
+      if (this.fieldPropertyIsMatch(field, "label-right", names[i])) {
         return i;
       }
       if (this.fieldPropertyIsMatch(field, "label-tag", names[i])) {

@@ -21,6 +21,7 @@ export interface AutoFillOptions {
   fillNewPassword?: boolean;
   skipLastUsed?: boolean;
   allowUntrustedIframe?: boolean;
+  allowTotpAutofill?: boolean;
 }
 
 export interface FormData {

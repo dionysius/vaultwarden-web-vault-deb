@@ -20,6 +20,17 @@ export class AutoFillConstants {
     "benutzer id",
   ];
 
+  static readonly TotpFieldNames: string[] = [
+    "totp",
+    "2fa",
+    "mfa",
+    "totpcode",
+    "2facode",
+    "mfacode",
+    "twofactor",
+    "twofactorcode",
+  ];
+
   static readonly PasswordFieldIgnoreList: string[] = [
     "onetimepassword",
     "captcha",

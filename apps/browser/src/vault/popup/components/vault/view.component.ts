@@ -288,6 +288,7 @@ export class ViewComponent extends BaseViewComponent {
         pageDetails: this.pageDetails,
         doc: window.document,
         fillNewPassword: true,
+        allowTotpAutofill: true,
       });
       if (this.totpCode != null) {
         this.platformUtilsService.copyToClipboard(this.totpCode, { window: window });

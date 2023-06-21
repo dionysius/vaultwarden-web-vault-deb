@@ -46,6 +46,7 @@ export class AutofillTabCommand {
       onlyEmptyFields: false,
       onlyVisibleFields: false,
       fillNewPassword: true,
+      allowTotpAutofill: true,
     });
   }
 
