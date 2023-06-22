@@ -1,8 +1,14 @@
 ---
-name: Deploy Web - EU Prod
+name: Deploy Web to EU-PRD Cloud
 
 on:
   workflow_dispatch:
+    inputs:
+      tag:
+        description: "Branch name to deploy (examples: 'master', 'feature/sm')"
+        required: true
+        type: string
+        default: master
 
 jobs:
   azure-deploy:
@@ -29,7 +35,7 @@ jobs:
           workflow: build-web.yml
           path: apps/web
           workflow_conclusion: success
-          branch: ${{ github.ref_name }}
+          branch: ${{ github.event.inputs.tag }}
           artifacts: ${{ env._WEB_ARTIFACT }}
 
       - name: Unzip build asset
