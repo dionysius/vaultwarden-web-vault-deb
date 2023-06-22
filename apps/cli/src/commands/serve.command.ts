@@ -245,6 +245,10 @@ export class ServeCommand {
     });
 
     router.post("/unlock", async (ctx, next) => {
+      // Do not allow guessing password location through serve command
+      delete ctx.request.query.passwordFile;
+      delete ctx.request.query.passwordEnv;
+
       const response = await this.unlockCommand.run(
         ctx.request.body.password == null ? null : (ctx.request.body.password as string),
         ctx.request.query
