@@ -368,5 +368,5 @@ jobs:
       - name: Push to Chocolatey
         if: ${{ github.event.inputs.release_type != 'Dry Run' }}
         shell: pwsh
-        run: choco push
+        run: choco push --source=https://push.chocolatey.org/
         working-directory: apps/desktop/dist
