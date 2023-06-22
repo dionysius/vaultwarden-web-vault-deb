@@ -404,7 +404,7 @@ jobs:
       - name: Retrieve secrets
         id: retrieve-secrets
         if: failure()
-        uses: bitwarden/gh-actions/get-keyvault-secrets@72594be690a4e7bfa87b1402b2aedc75acdbff12
+        uses: bitwarden/gh-actions/get-keyvault-secrets@37ffa14164a7308bc273829edfe75c97cd562375
         with:
           keyvault: "bitwarden-ci"
           secrets: "devops-alerts-slack-webhook-url"
