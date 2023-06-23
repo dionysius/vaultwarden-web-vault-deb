@@ -1,8 +1,8 @@
 {
   "urls": {
     "icons": "https://icons.bitwarden.net",
-    "notifications": "https://notifications.bitwarden.net",
-    "scim": "https://scim.bitwarden.net"
+    "notifications": "https://notifications.beta.bitwarden.net",
+    "scim": "https://scim.beta.bitwarden.net"
   },
   "flags": {
     "secretsManager": true,
