@@ -658,7 +658,7 @@
     "message": "Hovedadgangskoden er den adgangskode, du bruger, når du tilgår din boks. Det er meget vigtigt, at hovedadgangskoden ikke glemmes, da der ikke er nogen måde, hvorpå den kan genoprettes."
   },
   "masterPassImportant": {
-    "message": "Hovedadgangskoder kan ikke gendannes, hvis du glemmer dem!"
+    "message": "Hovedadgangskoden kan ikke gendannes, hvis den glemmes!"
   },
   "masterPassHintDesc": {
     "message": "Et hovedadgangskodetip kan bidrage til at komme i tanke om adgangskoden, hvis den glemmes."
@@ -5231,7 +5231,7 @@
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Connect login with SSO to your self-hosted decryption key server. Using this option, members won’t need to use their master passwords to decrypt vault data. The require SSO authentication and single organization policies are required to set up Key Connector decryption. Contact Bitwarden Support for set up assistance.'"
   },
   "memberDecryptionKeyConnectorDescLink": {
-    "message": "require SSO authentication and single organization policies",
+    "message": "kræver SSO-godkendelse samt enkeltorganisationspolitikker",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Connect login with SSO to your self-hosted decryption key server. Using this option, members won’t need to use their master passwords to decrypt vault data. The require SSO authentication and single organization policies are required to set up Key Connector decryption. Contact Bitwarden Support for set up assistance.'"
   },
   "memberDecryptionKeyConnectorDescEnd": {

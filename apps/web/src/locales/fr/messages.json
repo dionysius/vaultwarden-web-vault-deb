@@ -574,7 +574,7 @@
     "message": "Êtes-vous sûr de vouloir écraser le mot de passe actuel ?"
   },
   "editedFolder": {
-    "message": "Dossier modifié"
+    "message": "Dossier enregistré"
   },
   "addedFolder": {
     "message": "Dossier ajouté"
@@ -634,7 +634,7 @@
     "message": "Commencer la Période d'Essai"
   },
   "logIn": {
-    "message": "S'identifier"
+    "message": "Se connecter"
   },
   "logInInitiated": {
     "message": "Connexion initiée"
@@ -676,7 +676,7 @@
     "message": "Paramètres"
   },
   "passwordHint": {
-    "message": "Indice du mot de passe"
+    "message": "Indice de mot de passe"
   },
   "enterEmailToGetHint": {
     "message": "Saisissez l'adresse électronique de votre compte pour recevoir l'indice de votre mot de passe principal."
@@ -6900,6 +6900,6 @@
     "message": "Aucun mot de passe principal"
   },
   "removeMembersWithoutMasterPasswordWarning": {
-    "message": "La suppression des membres qui n'ont pas de mot de passe principal sans leur en définir un, peut restreindre l'accès à leur compte dans soin intégralité."
+    "message": "La suppression des membres qui n'ont pas de mot de passe principal sans leur en définir un, peut restreindre l'accès à leur compte dans son intégralité."
   }
 }

@@ -1001,7 +1001,7 @@
     "message": "Confirmar a palavra-passe do ficheiro"
   },
   "accountRestrictedOptionDescription": {
-    "message": "Use your account encryption key, derived from your account's username and Master Password, to encrypt the export and restrict import to only the current Bitwarden account."
+    "message": "Utilize a chave de encriptação da sua conta, derivada do nome de utilizador e da palavra-passe mestra da sua conta, para encriptar a exportação e restringir a importação apenas à conta Bitwarden atual."
   },
   "passwordProtectedOptionDescription": {
     "message": "Defina uma palavra-passe do ficheiro para encriptar a exportação e importe-a para qualquer conta Bitwarden utilizando a palavra-passe de desencriptação."
@@ -1256,7 +1256,7 @@
     "message": "Dados importados com sucesso"
   },
   "importSuccessNumberOfItems": {
-    "message": "A total of $AMOUNT$ items were imported.",
+    "message": "Foi importado um total de $AMOUNT$ itens.",
     "placeholders": {
       "amount": {
         "content": "$1",
@@ -1919,7 +1919,7 @@
     }
   },
   "premiumPriceWithFamilyPlan": {
-    "message": "Go premium for just $PRICE$ /year, or get premium accounts for $FAMILYPLANUSERCOUNT$ users and unlimited family sharing with a ",
+    "message": "Adquira uma conta Premium por apenas $PRICE$ /ano, ou obtenha contas Premium para $FAMILYPLANUSERCOUNT$ utilizadores e partilha familiar ilimitada com um ",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -1932,7 +1932,7 @@
     }
   },
   "bitwardenFamiliesPlan": {
-    "message": "Bitwarden Families plan."
+    "message": "plano Familiar do Bitwarden."
   },
   "addons": {
     "message": "Addons"
@@ -2029,7 +2029,7 @@
     "message": "Cancelar subscrição"
   },
   "subscriptionExpiration": {
-    "message": "Subscription expiration"
+    "message": "Validade da subscrição"
   },
   "subscriptionCanceled": {
     "message": "A subscrição foi cancelada."
@@ -2265,7 +2265,7 @@
     }
   },
   "planNameFamilies": {
-    "message": "Famílias"
+    "message": "Familiar"
   },
   "planDescFamilies": {
     "message": "Para uso pessoal, para partilhar com a família e amigos."
@@ -2472,7 +2472,7 @@
     "message": "Tem a certeza de que pretende eliminar este grupo?"
   },
   "deleteMultipleGroupsConfirmation": {
-    "message": "Are you sure you want to delete the following $QUANTITY$ group(s)?",
+    "message": "Tem a certeza de que pretende eliminar o(s) seguinte(s) $QUANTITY$ grupo(s)?",
     "placeholders": {
       "quantity": {
         "content": "$1",
@@ -2532,7 +2532,7 @@
     "message": "Editar membro"
   },
   "fieldOnTabRequiresAttention": {
-    "message": "A field on the '$TAB$' tab requires your attention.",
+    "message": "Um campo no separador '$TAB$' precisa da sua atenção.",
     "placeholders": {
       "tab": {
         "content": "$1",
@@ -2823,7 +2823,7 @@
     }
   },
   "deletedCollections": {
-    "message": "Deleted collections"
+    "message": "Coleções eliminadas"
   },
   "deletedCollectionId": {
     "message": "Coleção $ID$ eliminada.",
@@ -2871,7 +2871,7 @@
     }
   },
   "deletedManyGroups": {
-    "message": "Deleted $QUANTITY$ group(s).",
+    "message": "$QUANTITY$ grupo(s) eliminados.",
     "placeholders": {
       "quantity": {
         "content": "$1",
@@ -3363,7 +3363,7 @@
     }
   },
   "subscriptionFreePlan": {
-    "message": "You cannot invite more than $COUNT$ members without upgrading your plan.",
+    "message": "Não pode convidar mais do que $COUNT$ membros sem atualizar o seu plano.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -3372,7 +3372,7 @@
     }
   },
   "subscriptionFamiliesPlan": {
-    "message": "You cannot invite more than $COUNT$ members without upgrading your plan. Please contact Customer Support to upgrade.",
+    "message": "Não pode convidar mais do que $COUNT$ membros sem atualizar o seu plano. Contacte o Apoio ao cliente para atualizar.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -3381,7 +3381,7 @@
     }
   },
   "subscriptionSponsoredFamiliesPlan": {
-    "message": "Your subscription allows for a total of $COUNT$ members. Your plan is sponsored and billed to an external organization.",
+    "message": "A sua subscrição permite um total de $COUNT$ membros. O seu plano é patrocinado e faturado por uma organização externa.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -5443,7 +5443,7 @@
     "message": "Histórico de faturação"
   },
   "backToReports": {
-    "message": "Back to reports"
+    "message": "Voltar aos relatórios"
   },
   "organizationPicker": {
     "message": "Organization picker"
@@ -5503,7 +5503,7 @@
     "message": "Palavra aleatória"
   },
   "service": {
-    "message": "Service"
+    "message": "Serviço"
   },
   "unknownCipher": {
     "message": "Item desconhecido, poderá ser necessário pedir autorização para aceder a este item."
@@ -5961,7 +5961,7 @@
     "message": "A eliminação de contas de serviço é permanente e irreversível."
   },
   "deleteServiceAccountsConfirmMessage": {
-    "message": "Delete $COUNT$ service accounts",
+    "message": "Eliminar $COUNT$ contas de serviço",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -5970,13 +5970,13 @@
     }
   },
   "deleteServiceAccountToast": {
-    "message": "Service account deleted"
+    "message": "Conta de serviço eliminada"
   },
   "deleteServiceAccountsToast": {
-    "message": "Service accounts deleted"
+    "message": "Contas de serviço eliminadas"
   },
   "searchServiceAccounts": {
-    "message": "Search service accounts",
+    "message": "Procurar contas de serviço",
     "description": "Placeholder text for searching service accounts."
   },
   "editServiceAccount": {
@@ -6071,7 +6071,7 @@
     }
   },
   "deleteProjectInputLabel": {
-    "message": "Type \"$CONFIRM$\" to continue",
+    "message": "Escreva \"$CONFIRM$\" para continuar",
     "description": "Users are prompted to type 'confirm' to delete a project",
     "placeholders": {
       "confirm": {
@@ -6081,7 +6081,7 @@
     }
   },
   "deleteProjectConfirmMessage": {
-    "message": "Delete $PROJECT$",
+    "message": "Eliminar $PROJECT$",
     "description": "Confirmation prompt to delete a specific project, where '$PROJECT$' is a placeholder for the name of the project.",
     "placeholders": {
       "project": {
@@ -6091,7 +6091,7 @@
     }
   },
   "deleteProjectsConfirmMessage": {
-    "message": "Delete $COUNT$ Projects",
+    "message": "Eliminar $COUNT$ projetos",
     "description": "Confirmation prompt to delete multiple projects, where '$COUNT$' is a placeholder for the number of projects to be deleted.",
     "placeholders": {
       "count": {
@@ -6113,22 +6113,22 @@
     "description": "Message to be displayed when there are no projects to display in the list."
   },
   "smConfirmationRequired": {
-    "message": "Confirmation required",
+    "message": "Confirmação necessária",
     "description": "Indicates that user confirmation is required for an action to proceed."
   },
   "bulkDeleteProjectsErrorMessage": {
-    "message": "The following projects could not be deleted:",
+    "message": "Os seguintes projetos não puderam ser eliminados:",
     "description": "Message to be displayed when there is an error during bulk project deletion."
   },
   "softDeleteSuccessToast": {
-    "message": "Secret sent to trash",
+    "message": "Segredo movido para o lixo",
     "description": "Notification to be displayed when a secret is successfully sent to the trash."
   },
   "hardDeleteSuccessToast": {
-    "message": "Secret permanently deleted"
+    "message": "Segredo eliminado permanentemente"
   },
   "accessTokens": {
-    "message": "Access tokens",
+    "message": "Tokens de acesso",
     "description": "Title for the section displaying access tokens."
   },
   "newAccessToken": {
@@ -6136,7 +6136,7 @@
     "description": "Button label for creating a new access token."
   },
   "expires": {
-    "message": "Expires",
+    "message": "Expira a",
     "description": "Label for the expiration date of an access token."
   },
   "canRead": {
@@ -6144,11 +6144,11 @@
     "description": "Label for the access level of an access token (Read only)."
   },
   "accessTokensNoItemsTitle": {
-    "message": "No access tokens to show",
+    "message": "Sem tokens de acesso para mostrar",
     "description": "Title to be displayed when there are no access tokens to display in the list."
   },
   "accessTokensNoItemsDesc": {
-    "message": "To get started, create an access token",
+    "message": "Para começar, crie um token de acesso",
     "description": "Message to be displayed when there are no access tokens to display in the list."
   },
   "downloadAccessToken": {
@@ -6156,7 +6156,7 @@
     "description": "Message to be displayed before closing an access token, reminding the user to download or copy it."
   },
   "expiresOnAccessToken": {
-    "message": "Expires on:",
+    "message": "Expira a:",
     "description": "Label for the expiration date of an access token."
   },
   "accessTokenCallOutTitle": {
@@ -6164,15 +6164,15 @@
     "description": "Notification to inform the user that access tokens are only displayed once and cannot be retrieved again."
   },
   "copyToken": {
-    "message": "Copy token",
+    "message": "Copiar token",
     "description": "Copies the generated access token to the user's clipboard."
   },
   "accessToken": {
-    "message": "Access token",
+    "message": "Token de acesso",
     "description": "A unique string that gives a client application (eg. CLI) access to a secret or set of secrets."
   },
   "accessTokenExpirationRequired": {
-    "message": "Expiration date required",
+    "message": "Data de validade necessária",
     "description": "Error message indicating that an expiration date for the access token must be set."
   },
   "accessTokenCreatedAndCopied": {
@@ -6226,7 +6226,7 @@
     }
   },
   "groupInfo": {
-    "message": "Group info"
+    "message": "Informações do grupo"
   },
   "editGroupMembersDesc": {
     "message": "Grant members access to the group's assigned collections."
@@ -6241,22 +6241,22 @@
     "message": "If checked, this will replace all other collection permissions."
   },
   "selectMembers": {
-    "message": "Select members"
+    "message": "Selecionar membros"
   },
   "selectCollections": {
-    "message": "Select collections"
+    "message": "Selecionar coleções"
   },
   "role": {
     "message": "Função"
   },
   "removeMember": {
-    "message": "Remove member"
+    "message": "Remover membro"
   },
   "collection": {
-    "message": "Collection"
+    "message": "Coleção"
   },
   "noCollection": {
-    "message": "No collection"
+    "message": "Sem coleções"
   },
   "canView": {
     "message": "Pode ver"
@@ -6271,7 +6271,7 @@
     "message": "Pode editar, excepto palavras-passe"
   },
   "noCollectionsAdded": {
-    "message": "No collections added"
+    "message": "Sem coleções adicionadas"
   },
   "noMembersAdded": {
     "message": "No members added"
@@ -6364,28 +6364,28 @@
     }
   },
   "domainStatusVerified": {
-    "message": "Verified"
+    "message": "Verificado"
   },
   "domainStatusUnverified": {
-    "message": "Unverified"
+    "message": "Não verificado"
   },
   "domainNameTh": {
-    "message": "Name"
+    "message": "Nome"
   },
   "domainStatusTh": {
-    "message": "Status"
+    "message": "Estado"
   },
   "lastChecked": {
     "message": "Last checked"
   },
   "editDomain": {
-    "message": "Edit domain"
+    "message": "Editar domínio"
   },
   "domainFormInvalid": {
     "message": "There are form errors that need your attention"
   },
   "addedDomain": {
-    "message": "Added domain $DOMAIN$",
+    "message": "Domínio $DOMAIN$ adicionado",
     "placeholders": {
       "DOMAIN": {
         "content": "$1",
@@ -6421,16 +6421,16 @@
     }
   },
   "membersColumnHeader": {
-    "message": "Member/Group"
+    "message": "Membro/Grupo"
   },
   "groupAndMemberColumnHeader": {
-    "message": "Member"
+    "message": "Membro"
   },
   "selectGroupsAndMembers": {
-    "message": "Select groups and members"
+    "message": "Selecionar grupos e membros"
   },
   "selectGroups": {
-    "message": "Select groups"
+    "message": "Selecionar grupos"
   },
   "userPermissionOverrideHelper": {
     "message": "Permissions set for a member will replace permissions set by that member's group"
@@ -6439,13 +6439,13 @@
     "message": "No members or groups added"
   },
   "deleted": {
-    "message": "Deleted"
+    "message": "Eliminado"
   },
   "memberStatusFilter": {
     "message": "Member status filter"
   },
   "inviteMember": {
-    "message": "Invite member"
+    "message": "Convidar membro"
   },
   "needsConfirmation": {
     "message": "Needs confirmation"
@@ -6496,10 +6496,10 @@
     }
   },
   "server": {
-    "message": "Server"
+    "message": "Servidor"
   },
   "exportData": {
-    "message": "Export data"
+    "message": "Exportar dados"
   },
   "exportingOrganizationSecretDataTitle": {
     "message": "Exporting Organization Secret Data"
@@ -6619,13 +6619,13 @@
     "message": "This user can access the Secrets Manager Beta"
   },
   "important": {
-    "message": "Important:"
+    "message": "Importante:"
   },
   "viewAll": {
-    "message": "View all"
+    "message": "Ver tudo"
   },
   "showingPortionOfTotal": {
-    "message": "Showing $PORTION$ of $TOTAL$",
+    "message": "A mostrar $PORTION$ de $TOTAL$",
     "placeholders": {
       "portion": {
         "content": "$1",
@@ -6638,16 +6638,16 @@
     }
   },
   "resolveTheErrorsBelowAndTryAgain": {
-    "message": "Resolve the errors below and try again."
+    "message": "Resolva os erros abaixo e tente novamente."
   },
   "description": {
-    "message": "Description"
+    "message": "Descrição"
   },
   "errorReadingImportFile": {
-    "message": "An error occurred when trying to read the import file"
+    "message": "Ocorreu um erro ao tentar ler o ficheiro de importação"
   },
   "accessedSecret": {
-    "message": "Accessed secret $SECRET_ID$.",
+    "message": "Segredo $SECRET_ID$ acedido.",
     "placeholders": {
       "secret_id": {
         "content": "$1",
@@ -6660,29 +6660,29 @@
     "description": "Software Development Kit"
   },
   "createSecret": {
-    "message": "Create a secret"
+    "message": "Criar um segredo"
   },
   "createProject": {
-    "message": "Create a project"
+    "message": "Criar um projeto"
   },
   "createServiceAccount": {
-    "message": "Create a service account"
+    "message": "Criar uma conta de serviço"
   },
   "downloadThe": {
-    "message": "Download the",
+    "message": "Descarregar o",
     "description": "Link to a downloadable resource. This will be used as part of a larger phrase. Example: Download the Secrets Manager CLI"
   },
   "smCLI": {
-    "message": "Secrets Manager CLI"
+    "message": "gestor de segredos CLI"
   },
   "importSecrets": {
-    "message": "Import secrets"
+    "message": "Importar segredos"
   },
   "getStarted": {
-    "message": "Get started"
+    "message": "Começar"
   },
   "complete": {
-    "message": "$COMPLETED$/$TOTAL$ Complete",
+    "message": "$COMPLETED$/$TOTAL$ concluídos",
     "placeholders": {
       "COMPLETED": {
         "content": "$1",
@@ -6695,25 +6695,25 @@
     }
   },
   "restoreSecret": {
-    "message": "Restore secret"
+    "message": "Restaurar segredo"
   },
   "restoreSecrets": {
-    "message": "Restore secrets"
+    "message": "Restaurar segredos"
   },
   "restoreSecretPrompt": {
-    "message": "Are you sure you want to restore this secret?"
+    "message": "Tem a certeza de que quer recuperar este segredo?"
   },
   "restoreSecretsPrompt": {
-    "message": "Are you sure you want to restore these secrets?"
+    "message": "Tem a certeza de que quer recuperar estes segredos?"
   },
   "secretRestoredSuccessToast": {
-    "message": "Secret restored"
+    "message": "Segredo restaurado"
   },
   "secretsRestoredSuccessToast": {
-    "message": "Secrets restored"
+    "message": "Segredos restaurados"
   },
   "selectionIsRequired": {
-    "message": "Selection is required."
+    "message": "É necessária uma seleção."
   },
   "secretsManagerSubscriptionDesc": {
     "message": "Turn on organization access to the Secrets Manager at no charge during the Beta program. Users can be granted access to the Beta in Members."
@@ -6740,25 +6740,25 @@
     "message": "This action will remove your access to the service account."
   },
   "removeAccess": {
-    "message": "Remove access"
+    "message": "Remover acesso"
   },
   "checkForBreaches": {
-    "message": "Check known data breaches for this password"
+    "message": "Verificar violações de dados conhecidas para esta palavra-passe"
   },
   "exposedMasterPassword": {
-    "message": "Exposed Master Password"
+    "message": "Palavra-passe mestra exposta"
   },
   "exposedMasterPasswordDesc": {
-    "message": "Password found in a data breach. Use a unique password to protect your account. Are you sure you want to use an exposed password?"
+    "message": "Palavra-passe encontrada numa violação de dados. Utilize uma palavra-passe única para proteger a sua conta. Tem a certeza de que pretende utilizar uma palavra-passe exposta?"
   },
   "weakAndExposedMasterPassword": {
-    "message": "Weak and Exposed Master Password"
+    "message": "Palavra-passe mestra fraca e exposta"
   },
   "weakAndBreachedMasterPasswordDesc": {
-    "message": "Weak password identified and found in a data breach. Use a strong and unique password to protect your account. Are you sure you want to use this password?"
+    "message": "Palavra-passe fraca identificada e encontrada numa violação de dados. Utilize uma palavra-passe forte e única para proteger a sua conta. Tem a certeza de que pretende utilizar esta palavra-passe?"
   },
   "characterMinimum": {
-    "message": "$LENGTH$ character minimum",
+    "message": "$LENGTH$ caracteres no mínimo",
     "placeholders": {
       "length": {
         "content": "$1",
@@ -6783,14 +6783,14 @@
     "message": "Dispensar"
   },
   "notAvailableForFreeOrganization": {
-    "message": "This feature is not available for free organizations. Contact your organization owner to upgrade."
+    "message": "Esta funcionalidade não está disponível para organizações gratuitas. Contacte o proprietário da organização para atualizar."
   },
   "smProjectSecretsNoItemsNoAccess": {
-    "message": "Contact your organization's admin to manage secrets for this project.",
+    "message": "Contacte o administrador da sua organização para gerir os segredos deste projeto.",
     "description": "The message shown to the user under a project's secrets tab when the user only has read access to the project."
   },
   "enforceOnLoginDesc": {
-    "message": "Require existing members to change their passwords"
+    "message": "Exigir que os membros existentes alterem as suas palavras-passe"
   },
   "region": {
     "message": "Região"
@@ -6804,18 +6804,18 @@
     "description": "United States"
   },
   "smProjectDeleteAccessRestricted": {
-    "message": "You don't have permissions to delete this project",
+    "message": "Não tem permissões para eliminar este projeto",
     "description": "The individual description shown to the user when the user doesn't have access to delete a project."
   },
   "smProjectsDeleteBulkConfirmation": {
-    "message": "The following projects can not be deleted. Would you like to continue?",
+    "message": "Os seguintes projetos não podem ser eliminados. Gostaria de continuar?",
     "description": "The message shown to the user when bulk deleting projects and the user doesn't have access to some projects."
   },
   "updateKdfSettings": {
-    "message": "Update KDF settings"
+    "message": "Atualizar definições KDF"
   },
   "trustedDeviceEncryption": {
-    "message": "Trusted device encryption"
+    "message": "Encriptação de dispositivo de confiança"
   },
   "memberDecryptionTdeDescriptionStart": {
     "message": "Uma vez autenticados, os membros desencriptam os dados do cofre utilizando uma chave armazenada no seu dispositivo. A",

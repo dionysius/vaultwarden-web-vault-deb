@@ -6849,7 +6849,7 @@
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their organization's public key with another user, for the purposes of sharing."
   },
   "deviceApprovals": {
-    "message": "Approvazioni dispositivi"
+    "message": "Approva dispositivi"
   },
   "deviceApprovalsDesc": {
     "message": "Approva le richieste di accesso qui sotto per consentire ai membri di completare l'accesso. Le richieste non approvate scadono dopo 1 settimana. Verifica le informazioni del membro prima di approvare."
@@ -6870,7 +6870,7 @@
     "message": "Approva richiesta"
   },
   "noDeviceRequests": {
-    "message": "Nessuna richiesta dispositivo"
+    "message": "Nessuna richiesta da approvare"
   },
   "noDeviceRequestsDesc": {
     "message": "Le richieste di approvazione dei dispositivi dei membri appariranno qui"
