@@ -6,13 +6,13 @@
     "message": "Filtriloj"
   },
   "allItems": {
-    "message": "All items"
+    "message": "Ĉiuj Eroj"
   },
   "favorites": {
-    "message": "Favorites"
+    "message": "Plej ŝatataj"
   },
   "types": {
-    "message": "Types"
+    "message": "Tipoj"
   },
   "typeLogin": {
     "message": "Saluto"
@@ -21,7 +21,7 @@
     "message": "Karto"
   },
   "typeIdentity": {
-    "message": "Identity"
+    "message": "Idento"
   },
   "typeSecureNote": {
     "message": "Sekura noto"
@@ -30,10 +30,10 @@
     "message": "Dosierujoj"
   },
   "collections": {
-    "message": "Collections"
+    "message": "Kolektoj"
   },
   "searchVault": {
-    "message": "Search vault"
+    "message": "Traserĉu trezorejon"
   },
   "addItem": {
     "message": "Aldoni elementon"
@@ -45,10 +45,10 @@
     "message": "Kundividi"
   },
   "moveToOrganization": {
-    "message": "Move to organization"
+    "message": "Movu al organizo"
   },
   "movedItemToOrg": {
-    "message": "$ITEMNAME$ moved to $ORGNAME$",
+    "message": "$ITEMNAME$ moviĝis al $ORGNAME$",
     "placeholders": {
       "itemname": {
         "content": "$1",
@@ -61,7 +61,7 @@
     }
   },
   "moveToOrgDesc": {
-    "message": "Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved."
+    "message": "Elektu organizon kun kiu vi volas dividi ĉi tiun eron. Dividado transdonas posedon de la ero al la organizo. Vi ne plu estos la rekta posedanto de ĉi tiu ero post kiam ĝi estos dividita."
   },
   "attachments": {
     "message": "Aldonaĵoj"
@@ -104,10 +104,10 @@
     "message": "Retpoŝta adreso"
   },
   "verificationCodeTotp": {
-    "message": "Verification code (TOTP)"
+    "message": "Kontrola kodo (TOTP)"
   },
   "website": {
-    "message": "Website"
+    "message": "Retejo"
   },
   "notes": {
     "message": "Notoj"
@@ -116,10 +116,10 @@
     "message": "Propraj kampoj"
   },
   "launch": {
-    "message": "Launch"
+    "message": "Lanĉo"
   },
   "copyValue": {
-    "message": "Copy value",
+    "message": "Kopii valoron",
     "description": "Copy value to clipboard"
   },
   "minimizeOnCopyToClipboard": {
