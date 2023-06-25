@@ -1,3 +1,9 @@
+vaultwarden-web-vault (2023.5.0-2) unstable; urgency=medium
+
+  * use upstream version in vw-version.json so it doesn't show package suffix
+
+ -- dionysius <dragon.dionysius@gmail.com>  Sun, 25 Jun 2023 23:30:56 +0200
+
 vaultwarden-web-vault (2023.5.0-1) unstable; urgency=medium
 
   * new debian stable bookworm released, trigger CI to build package for it
