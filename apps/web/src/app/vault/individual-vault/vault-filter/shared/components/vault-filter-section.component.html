@@ -34,16 +34,6 @@
     <h3 *ngIf="!headerInfo.isSelectable" class="filter-title">
       &nbsp;{{ headerNode.node.name | i18n }}
     </h3>
-
-    <button
-      type="button"
-      *ngIf="showAddButton"
-      (click)="onAdd()"
-      class="text-muted ml-auto add-button"
-      appA11yTitle="{{ addInfo.text | i18n }}"
-    >
-      <i class="bwi bwi-plus bwi-fw" aria-hidden="true"></i>
-    </button>
   </div>
   <ul
     id="{{ headerNode.node.name }}-filters"

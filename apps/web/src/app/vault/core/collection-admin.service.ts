@@ -46,7 +46,7 @@ export class CollectionAdminService {
     return view;
   }
 
-  async save(collection: CollectionAdminView): Promise<unknown> {
+  async save(collection: CollectionAdminView): Promise<CollectionResponse> {
     const request = await this.encrypt(collection);
 
     let response: CollectionResponse;
@@ -61,9 +61,7 @@ export class CollectionAdminService {
       );
     }
 
-    // TODO: Implement upsert when in PS-1083: Collection Service refactors
-    // await this.collectionService.upsert(data);
-    return;
+    return response;
   }
 
   async delete(organizationId: string, collectionId: string): Promise<void> {

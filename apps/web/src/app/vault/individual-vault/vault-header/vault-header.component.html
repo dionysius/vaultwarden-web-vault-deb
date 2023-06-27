@@ -40,9 +40,31 @@
   </div>
 
   <div *ngIf="filter.type !== 'trash'" class="tw-shrink-0">
-    <button type="button" bitButton buttonType="primary" (click)="addCipher()">
-      <i class="bwi bwi-plus bwi-fw" aria-hidden="true"></i>
-      {{ "newItem" | i18n }}
-    </button>
+    <div appListDropdown>
+      <button
+        bitButton
+        buttonType="primary"
+        type="button"
+        [bitMenuTriggerFor]="addOptions"
+        id="newItemDropdown"
+        appA11yTitle="{{ 'new' | i18n }}"
+      >
+        {{ "new" | i18n }}<i class="bwi bwi-angle-down tw-ml-2" aria-hidden="true"></i>
+      </button>
+      <bit-menu #addOptions aria-labelledby="newItemDropdown">
+        <button type="button" bitMenuItem (click)="addCipher()">
+          <i class="bwi bwi-fw bwi-globe" aria-hidden="true"></i>
+          {{ "item" | i18n }}
+        </button>
+        <button type="button" bitMenuItem (click)="addFolder()">
+          <i class="bwi bwi-fw bwi-folder" aria-hidden="true"></i>
+          {{ "folder" | i18n }}
+        </button>
+        <button *ngIf="canCreateCollections" type="button" bitMenuItem (click)="addCollection()">
+          <i class="bwi bwi-fw bwi-collection" aria-hidden="true"></i>
+          {{ "collection" | i18n }}
+        </button>
+      </bit-menu>
+    </div>
   </div>
 </div>

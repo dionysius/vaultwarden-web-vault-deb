@@ -9,7 +9,6 @@
               [activeFilter]="activeFilter"
               [searchText]="currentSearchText$ | async"
               (searchTextChanged)="filterSearchText($event)"
-              (onAddFolder)="addFolder()"
               (onEditFolder)="editFolder($event)"
             ></app-vault-filter>
           </div>
@@ -21,8 +20,11 @@
         [filter]="filter"
         [loading]="refreshing && !performingInitialLoad"
         [organizations]="allOrganizations"
+        [canCreateCollections]="canCreateCollections"
         [collection]="selectedCollection"
         (onAddCipher)="addCipher()"
+        (onAddCollection)="addCollection()"
+        (onAddFolder)="addFolder()"
       ></app-vault-header>
       <app-callout type="warning" *ngIf="activeFilter.isDeleted" icon="bwi-exclamation-triangle">
         {{ trashCleanupWarning }}

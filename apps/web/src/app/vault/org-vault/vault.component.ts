@@ -60,7 +60,7 @@ import { openEntityEventsDialog } from "../../admin-console/organizations/manage
 import { VaultFilterService } from "../../vault/individual-vault/vault-filter/services/abstractions/vault-filter.service";
 import { VaultFilter } from "../../vault/individual-vault/vault-filter/shared/models/vault-filter.model";
 import {
-  CollectionDialogResult,
+  CollectionDialogAction,
   CollectionDialogTabType,
   openCollectionDialog,
 } from "../components/collection-dialog";
@@ -866,7 +866,10 @@ export class VaultComponent implements OnInit, OnDestroy {
     });
 
     const result = await lastValueFrom(dialog.closed);
-    if (result === CollectionDialogResult.Saved || result === CollectionDialogResult.Deleted) {
+    if (
+      result.action === CollectionDialogAction.Saved ||
+      result.action === CollectionDialogAction.Deleted
+    ) {
       this.refresh();
     }
   }
@@ -877,7 +880,10 @@ export class VaultComponent implements OnInit, OnDestroy {
     });
 
     const result = await lastValueFrom(dialog.closed);
-    if (result === CollectionDialogResult.Saved || result === CollectionDialogResult.Deleted) {
+    if (
+      result.action === CollectionDialogAction.Saved ||
+      result.action === CollectionDialogAction.Deleted
+    ) {
       this.refresh();
     }
   }

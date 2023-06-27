@@ -32,7 +32,6 @@ import { OrganizationOptionsComponent } from "./organization-options.component";
 export class VaultFilterComponent implements OnInit, OnDestroy {
   filters?: VaultFilterList;
   @Input() activeFilter: VaultFilter = new VaultFilter();
-  @Output() onAddFolder = new EventEmitter<never>();
   @Output() onEditFolder = new EventEmitter<FolderFilter>();
 
   @Input() searchText = "";
@@ -142,10 +141,6 @@ export class VaultFilterComponent implements OnInit, OnDestroy {
     filter.selectedCollectionNode = collectionNode;
   };
 
-  addFolder = async (): Promise<void> => {
-    this.onAddFolder.emit();
-  };
-
   editFolder = async (folder: FolderFilter): Promise<void> => {
     this.onEditFolder.emit(folder);
   };
@@ -248,10 +243,6 @@ export class VaultFilterComponent implements OnInit, OnDestroy {
       edit: {
         text: "editFolder",
         action: this.editFolder,
-      },
-      add: {
-        text: "Add Folder",
-        action: this.addFolder,
       },
     };
     return folderFilterSection;

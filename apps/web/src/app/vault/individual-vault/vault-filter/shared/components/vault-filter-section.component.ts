@@ -87,10 +87,6 @@ export class VaultFilterSectionComponent implements OnInit, OnDestroy {
     return this.section.add;
   }
 
-  get showAddButton() {
-    return this.section.add && !this.section.add.route;
-  }
-
   get showAddLink() {
     return this.section.add && this.section.add.route;
   }
