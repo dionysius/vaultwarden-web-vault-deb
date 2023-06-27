@@ -1,0 +1,55 @@
+import { Meta, Story, Primary, Controls } from "@storybook/addon-docs";
+
+import * as stories from "./icon-button.stories";
+
+<Meta of={stories} />
+
+# Icon Button
+
+Icon buttons are used when no text accompanies the button. It consists of an icon that may be
+updated to any icon in the `bwi-font`, a `title` attribute, and an `aria-label`.
+
+There are 3 common styles for button main, contrast, and danger. The main style is used on the
+theme’s main `background`; and the contrast style is used on a theme’s colored or contrasting
+backgrounds; danger is used for “trash” actions throughout the experience. The other styles are used
+sparingly.
+
+The most common use of the icon button is in the banner, toast, and modal components as a close
+button. It can also be found in tables as the 3 dot option menu, or on navigation list items when
+there are options that need to be collapsed into a menu.
+
+Similar to the main button components, spacing between icon buttons should be .5rem.
+
+<Primary />
+<Controls />
+
+**Note:** Main and contrast styles appear on backgrounds where using `primary-700` as a focus
+indicator does not meet WCAG graphic contrast guidelines.
+
+## Sizes
+
+There are 2 sizes for the icon button: `small` and `default`.
+
+Default is typically used for most instances. Small is used if the implementation needs a variant
+with less padding around the icon, such as in the navigation component.
+
+## Usage
+
+Icon buttons can be found in other components such as: the
+[banner](?path=/docs/component-library-banner--docs)
+[dialog](?path=/docs/component-library-dialogs--docs), and
+[table](?path=/docs/component-library-table--docs).
+
+<Story id="component-library-banner--premium" />
+
+## Accessibility
+
+Follow guidelines outlined in the [Button docs](?path=/docs/component-library-button--doc)
+
+Always use the `appA11yTitle` directive set to a string that describes the action of the
+icon-button. This will auto assign the same string to the `title` and `aria-label` attributes.
+
+`aria-label` allows assistive technology to announce the action the button takes to the users.
+
+`title` attribute provides a user with the browser tool tip if they do not understand what the icon
+is indicating.

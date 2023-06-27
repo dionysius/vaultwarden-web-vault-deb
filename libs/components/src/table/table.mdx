@@ -26,12 +26,18 @@ The UI component consists of a couple of elements.
 ### Guidelines
 
 - Always include a row or column header with your table; this allows screen readers to better
-  contextualize the data
+  contextualize the data.
 - Avoid spanning data across cells.
 - Be sure to make repeating actions unique by associating them with the object they relate to.
   Example: if there are multiple “Edit” buttons on a table, a screen reader should read “Edit,
   Netflix” for an edit option for a Netflix item.
 - Use [Virtual Scrolling](#virtual-scrolling) for large data sets.
+- For bulk menu options, display a 3 dot menu in the header. When multiple items are selected, the
+  bulk menu will contain actions that can be completed in bulk for the selected items.
+  - Note, this may result in some menu actions being hidden at times if they are not applicable to
+    the selected item
+  - Clicking on a row’s 3 dot menu will continue to result in actions specific to just that row's
+    item
 
 ### Usage
 
@@ -147,3 +153,12 @@ specify a `itemSize`, set `scrollWindow` to `true` and replace `*ngFor` with `*c
   </bit-table>
 </cdk-virtual-scroll-viewport>
 ```
+
+## Accessibility
+
+- Always include a row or column header with your table; this allows assistive technology to better
+  contextualize the data
+- Avoid spanning data across cells
+- Be sure to make repeating actions unique by associating them with the object they relate to
+  - **Example:** if there are multiple “Edit” buttons on a table, a screen reader should read “Edit,
+    Netflix” for an edit option for a Netflix item.

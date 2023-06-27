@@ -1,0 +1,39 @@
+import { Meta, Story, Primary, Controls } from "@storybook/addon-docs";
+
+import * as stories from "./link.stories";
+
+<Meta of={stories} />
+
+# Link / Text button
+
+Text Links and Buttons use the `primary-500` color and can use either the `<a>` or `<button>` tags.
+Choose which based on the action the button takes:
+
+- if navigating to a new page, use a `<a>`
+- if taking an action on the current page use a `<button>`
+
+Text buttons or links are most commonly used in paragraphs of text or in forms to customize actions
+or show/hide additional form options.
+
+<Primary />
+<Controls />
+
+## Sizes
+
+There are 2 sizes for the component: default and small.
+
+Default uses `text-base` and small uses `text-xs`
+
+## With icons
+
+Text Links/buttons can have icons on left or the right.
+
+To indicate a new or add action, the <i class="bwi bwi-plus-circle"></i> icon on is used on the
+left.
+
+An angle icon, <i class="bwi bwi-angle-right"></i>, is used on the left to indicate an expand to
+show/hide additional content.
+
+## Accessibility
+
+Make sure to only use the Link on backgrounds that maintain the WCAG color contrast ratios.

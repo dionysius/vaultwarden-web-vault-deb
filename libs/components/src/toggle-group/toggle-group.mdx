@@ -1,0 +1,36 @@
+import { Meta, Story, Primary, Controls } from "@storybook/addon-docs";
+
+import * as stories from "./toggle-group.stories";
+
+<Meta of={stories} />
+
+# Toggle Group
+
+Toggle groups are used for quick filters for a data set. **Example:** the Member’s page of the Admin
+Console uses a toggle group to filter members by their organization status: all, invited, needs
+confirmation, revoked.
+
+Toggle groups function as radio buttons and a radio group under the hood.
+
+A button in a toggle group can have a badge counter added to show the number of items existing
+within that filter.
+
+For focus states, use `focus-visible`.
+
+<Primary />
+<Controls />
+
+## Accessibility
+
+- Follow contrast rules for the main button styles.
+- Focus:
+  - Implement as a radio group with button styling and a context label (context label can be screen
+    reader only depending on use case).
+  - Since only 1 button can be selected at a time to filter the toggle group acts similarly to a
+    radio group.
+  - When moving focus to a button group, the focus should always move to the selected button. The
+    screen reader should then announce the button group: example “[context label], [button content]
+    selected, of [# of buttons]”), the number of buttons and the currently selected button. The user
+    may navigate the options then via left/right arrow keys.
+
+See WCAG for more: https://www.w3.org/WAI/ARIA/apg/patterns/radio/
