@@ -100,9 +100,9 @@ export class SecretsManagerExportComponent implements OnInit, OnDestroy {
   private verifyUser() {
     const ref = openUserVerificationPrompt(this.dialogService, {
       data: {
-        confirmDescription: "exportWarningDesc",
-        confirmButtonText: "exportVault",
-        modalTitle: "confirmVaultExport",
+        confirmDescription: "exportSecretsWarningDesc",
+        confirmButtonText: "exportSecrets",
+        modalTitle: "confirmSecretsExport",
       },
     });
 
