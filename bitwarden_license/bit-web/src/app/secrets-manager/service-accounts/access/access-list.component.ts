@@ -39,8 +39,4 @@ export class AccessListComponent {
     const selected = this.tokens.filter((s) => this.selection.selected.includes(s.id));
     this.revokeAccessTokensEvent.emit(selected);
   }
-
-  protected permission(token: AccessTokenView) {
-    return "canRead";
-  }
 }

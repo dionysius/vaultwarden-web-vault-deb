@@ -32,7 +32,6 @@
         </label>
       </th>
       <th bitCell>{{ "name" | i18n }}</th>
-      <th bitCell>{{ "permissions" | i18n }}</th>
       <th bitCell>{{ "expires" | i18n }}</th>
       <th bitCell>{{ "lastEdited" | i18n }}</th>
       <th bitCell class="tw-w-0">
@@ -57,7 +56,6 @@
         />
       </td>
       <td bitCell>{{ token.name }}</td>
-      <td bitCell>{{ permission(token) | i18n }}</td>
       <td bitCell>
         {{ token.expireAt === null ? ("never" | i18n) : (token.expireAt | date : "medium") }}
       </td>

@@ -1,6 +1,14 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnDestroy, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
-import { combineLatestWith, firstValueFrom, Observable, startWith, switchMap } from "rxjs";
+import {
+  combineLatestWith,
+  firstValueFrom,
+  Observable,
+  startWith,
+  Subject,
+  switchMap,
+  takeUntil,
+} from "rxjs";
 
 import { DialogServiceAbstraction } from "@bitwarden/angular/services/dialog";
 import { ModalService } from "@bitwarden/angular/services/modal.service";
@@ -8,7 +16,9 @@ import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.servic
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { openUserVerificationPrompt } from "@bitwarden/web-vault/app/auth/shared/components/user-verification";
 
+import { ServiceAccountView } from "../../models/view/service-account.view";
 import { AccessTokenView } from "../models/view/access-token.view";
+import { ServiceAccountService } from "../service-account.service";
 
 import { AccessService } from "./access.service";
 import { AccessTokenCreateDialogComponent } from "./dialogs/access-token-create-dialog.component";
@@ -17,11 +27,11 @@ import { AccessTokenCreateDialogComponent } from "./dialogs/access-token-create-
   selector: "sm-access-tokens",
   templateUrl: "./access-tokens.component.html",
 })
-export class AccessTokenComponent implements OnInit {
+export class AccessTokenComponent implements OnInit, OnDestroy {
   accessTokens$: Observable<AccessTokenView[]>;
 
-  private serviceAccountId: string;
-  private organizationId: string;
+  private destroy$ = new Subject<void>();
+  private serviceAccountView: ServiceAccountView;
 
   constructor(
     private route: ActivatedRoute,
@@ -29,19 +39,39 @@ export class AccessTokenComponent implements OnInit {
     private dialogService: DialogServiceAbstraction,
     private modalService: ModalService,
     private platformUtilsService: PlatformUtilsService,
-    private i18nService: I18nService
+    private i18nService: I18nService,
+    private serviceAccountService: ServiceAccountService
   ) {}
 
   ngOnInit() {
     this.accessTokens$ = this.accessService.accessToken$.pipe(
       startWith(null),
       combineLatestWith(this.route.params),
-      switchMap(async ([_, params]) => {
-        this.organizationId = params.organizationId;
-        this.serviceAccountId = params.serviceAccountId;
-        return await this.getAccessTokens();
-      })
+      switchMap(async ([_, params]) =>
+        this.accessService.getAccessTokens(params.organizationId, params.serviceAccountId)
+      )
     );
+
+    this.serviceAccountService.serviceAccount$
+      .pipe(
+        startWith(null),
+        combineLatestWith(this.route.params),
+        switchMap(([_, params]) =>
+          this.serviceAccountService.getByServiceAccountId(
+            params.serviceAccountId,
+            params.organizationId
+          )
+        ),
+        takeUntil(this.destroy$)
+      )
+      .subscribe((serviceAccountView) => {
+        this.serviceAccountView = serviceAccountView;
+      });
+  }
+
+  ngOnDestroy(): void {
+    this.destroy$.next();
+    this.destroy$.complete();
   }
 
   protected async revoke(tokens: AccessTokenView[]) {
@@ -59,7 +89,7 @@ export class AccessTokenComponent implements OnInit {
     }
 
     await this.accessService.revokeAccessTokens(
-      this.serviceAccountId,
+      this.serviceAccountView.id,
       tokens.map((t) => t.id)
     );
 
@@ -69,8 +99,7 @@ export class AccessTokenComponent implements OnInit {
   protected openNewAccessTokenDialog() {
     AccessTokenCreateDialogComponent.openNewAccessTokenDialog(
       this.dialogService,
-      this.serviceAccountId,
-      this.organizationId
+      this.serviceAccountView
     );
   }
 
@@ -88,9 +117,5 @@ export class AccessTokenComponent implements OnInit {
     }
 
     return firstValueFrom(ref.closed);
-  }
-
-  private async getAccessTokens(): Promise<AccessTokenView[]> {
-    return await this.accessService.getAccessTokens(this.organizationId, this.serviceAccountId);
   }
 }

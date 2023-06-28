@@ -15,6 +15,8 @@ import { DialogServiceAbstraction } from "@bitwarden/angular/services/dialog";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 
+import { ServiceAccountView } from "../models/view/service-account.view";
+
 import { AccessTokenCreateDialogComponent } from "./access/dialogs/access-token-create-dialog.component";
 import { ServiceAccountService } from "./service-account.service";
 
@@ -32,6 +34,7 @@ export class ServiceAccountComponent implements OnInit, OnDestroy {
     startWith(null)
   );
 
+  private serviceAccountView: ServiceAccountView;
   protected serviceAccount$ = combineLatest([this.route.params, this.onChange$]).pipe(
     switchMap(([params, _]) =>
       this.serviceAccountService.getByServiceAccountId(
@@ -61,9 +64,8 @@ export class ServiceAccountComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
-    this.route.params.pipe(takeUntil(this.destroy$)).subscribe((params) => {
-      this.serviceAccountId = params.serviceAccountId;
-      this.organizationId = params.organizationId;
+    this.serviceAccount$.pipe(takeUntil(this.destroy$)).subscribe((serviceAccountView) => {
+      this.serviceAccountView = serviceAccountView;
     });
   }
 
@@ -75,8 +77,7 @@ export class ServiceAccountComponent implements OnInit, OnDestroy {
   protected openNewAccessTokenDialog() {
     AccessTokenCreateDialogComponent.openNewAccessTokenDialog(
       this.dialogService,
-      this.serviceAccountId,
-      this.organizationId
+      this.serviceAccountView
     );
   }
 }

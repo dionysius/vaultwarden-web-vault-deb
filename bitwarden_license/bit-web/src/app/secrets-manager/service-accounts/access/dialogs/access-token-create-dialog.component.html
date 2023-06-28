@@ -12,19 +12,6 @@
         <bit-label>{{ "name" | i18n }}</bit-label>
         <input bitInput formControlName="name" />
       </bit-form-field>
-      <div class="tw-mb-6">
-        <bit-form-field class="tw-mb-0">
-          <bit-label>{{ "permissions" | i18n }}</bit-label>
-          <select bitInput disabled>
-            <option selected value="canRead">
-              {{ "canRead" | i18n }}
-            </option>
-          </select>
-        </bit-form-field>
-        <span class="tw-text-sm tw-text-muted">
-          {{ "accessTokenPermissionsBetaNotification" | i18n }}
-        </span>
-      </div>
       <sm-expiration-options
         formControlName="expirationDateControl"
         [expirationDayOptions]="expirationDayOptions"
