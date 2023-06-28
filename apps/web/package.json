@@ -11,7 +11,6 @@
     "build:bit:dev:watch": "cross-env ENV=development npm run build:bit:watch",
     "build:bit:qa": "cross-env NODE_ENV=production ENV=qa npm run build:bit",
     "build:bit:euprd": "cross-env NODE_ENV=production ENV=euprd npm run build:bit",
-    "build:bit:eudevtest": "cross-env NODE_ENV=production ENV=eudevtest npm run build:bit",
     "build:bit:cloud": "cross-env NODE_ENV=production ENV=cloud npm run build:bit",
     "build:oss:selfhost:watch": "cross-env ENV=selfhosted npm run build:oss:watch",
     "build:bit:selfhost:watch": "cross-env ENV=selfhosted npm run build:bit:watch",

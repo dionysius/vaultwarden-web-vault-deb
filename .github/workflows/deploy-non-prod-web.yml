@@ -12,8 +12,6 @@ on:
         type: choice
         options:
           - QA
-          - POC2
-          - eudevtest
 
 
 jobs:
