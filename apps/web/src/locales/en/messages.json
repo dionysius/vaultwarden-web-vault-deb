@@ -2658,6 +2658,12 @@
   "failedLogin2fa": {
     "message": "Login attempt failed with incorrect two-step login."
   },
+  "incorrectPassword": {
+    "message": "Incorrect password"
+  },
+  "incorrectCode": {
+    "message": "Incorrect code"
+  },
   "exportedVault": {
     "message": "Vault exported"
   },

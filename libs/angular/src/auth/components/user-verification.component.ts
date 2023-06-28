@@ -1,9 +1,11 @@
-import { Directive, OnInit } from "@angular/core";
-import { ControlValueAccessor, FormControl } from "@angular/forms";
+import { Directive, EventEmitter, Input, OnDestroy, OnInit, Output } from "@angular/core";
+import { ControlValueAccessor, FormControl, Validators } from "@angular/forms";
+import { Subject, takeUntil } from "rxjs";
 
-import { UserVerificationService } from "@bitwarden/common/abstractions/userVerification/userVerification.service.abstraction";
 import { KeyConnectorService } from "@bitwarden/common/auth/abstractions/key-connector.service";
+import { UserVerificationService } from "@bitwarden/common/auth/abstractions/user-verification/user-verification.service.abstraction";
 import { VerificationType } from "@bitwarden/common/auth/enums/verification-type";
+import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { Verification } from "@bitwarden/common/types/verification";
 
@@ -17,29 +19,65 @@ import { Verification } from "@bitwarden/common/types/verification";
   selector: "app-user-verification",
 })
 // eslint-disable-next-line rxjs-angular/prefer-takeuntil
-export class UserVerificationComponent implements ControlValueAccessor, OnInit {
-  usesKeyConnector = false;
+export class UserVerificationComponent implements ControlValueAccessor, OnInit, OnDestroy {
+  private _invalidSecret = false;
+  @Input()
+  get invalidSecret() {
+    return this._invalidSecret;
+  }
+  set invalidSecret(value: boolean) {
+    this._invalidSecret = value;
+    this.invalidSecretChange.emit(value);
+
+    // ISSUE: This is pretty hacky but unfortunately there is no way of knowing if the parent
+    // control has been marked as touched, see: https://github.com/angular/angular/issues/10887
+    // When that functionality has been added we should also look into forwarding reactive form
+    // controls errors so that we don't need a separate input/output `invalidSecret`.
+    if (value) {
+      this.secret.markAsTouched();
+    }
+    this.secret.updateValueAndValidity({ emitEvent: false });
+  }
+  @Output() invalidSecretChange = new EventEmitter<boolean>();
+
+  usesKeyConnector = true;
   disableRequestOTP = false;
   sentCode = false;
 
-  secret = new FormControl("");
+  secret = new FormControl("", [
+    Validators.required,
+    () => {
+      if (this.invalidSecret) {
+        return {
+          invalidSecret: {
+            message: this.usesKeyConnector
+              ? this.i18nService.t("incorrectCode")
+              : this.i18nService.t("incorrectPassword"),
+          },
+        };
+      }
+    },
+  ]);
 
   private onChange: (value: Verification) => void;
+  private destroy$ = new Subject<void>();
 
   constructor(
     private keyConnectorService: KeyConnectorService,
-    private userVerificationService: UserVerificationService
+    private userVerificationService: UserVerificationService,
+    private i18nService: I18nService
   ) {}
 
   async ngOnInit() {
     this.usesKeyConnector = await this.keyConnectorService.getUsesKeyConnector();
     this.processChanges(this.secret.value);
 
-    // eslint-disable-next-line rxjs-angular/prefer-takeuntil
-    this.secret.valueChanges.subscribe((secret: string) => this.processChanges(secret));
+    this.secret.valueChanges
+      .pipe(takeUntil(this.destroy$))
+      .subscribe((secret: string) => this.processChanges(secret));
   }
 
-  async requestOTP() {
+  requestOTP = async () => {
     if (this.usesKeyConnector) {
       this.disableRequestOTP = true;
       try {
@@ -49,7 +87,7 @@ export class UserVerificationComponent implements ControlValueAccessor, OnInit {
         this.disableRequestOTP = false;
       }
     }
-  }
+  };
 
   writeValue(obj: any): void {
     this.secret.setValue(obj);
@@ -72,7 +110,14 @@ export class UserVerificationComponent implements ControlValueAccessor, OnInit {
     }
   }
 
-  private processChanges(secret: string) {
+  ngOnDestroy(): void {
+    this.destroy$.next();
+    this.destroy$.complete();
+  }
+
+  protected processChanges(secret: string) {
+    this.invalidSecret = false;
+
     if (this.onChange == null) {
       return;
     }

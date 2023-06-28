@@ -3,10 +3,9 @@ import { UntypedFormBuilder } from "@angular/forms";
 import { ActivatedRoute } from "@angular/router";
 
 import { DialogServiceAbstraction } from "@bitwarden/angular/services/dialog";
-import { ModalService } from "@bitwarden/angular/services/modal.service";
 import { EventCollectionService } from "@bitwarden/common/abstractions/event/event-collection.service";
-import { UserVerificationService } from "@bitwarden/common/abstractions/userVerification/userVerification.service.abstraction";
 import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
+import { UserVerificationService } from "@bitwarden/common/auth/abstractions/user-verification/user-verification.service.abstraction";
 import { EventType } from "@bitwarden/common/enums";
 import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
 import { FileDownloadService } from "@bitwarden/common/platform/abstractions/file-download/file-download.service";
@@ -35,7 +34,6 @@ export class OrganizationExportComponent extends ExportComponent {
     userVerificationService: UserVerificationService,
     formBuilder: UntypedFormBuilder,
     fileDownloadService: FileDownloadService,
-    modalService: ModalService,
     dialogService: DialogServiceAbstraction
   ) {
     super(
@@ -49,7 +47,6 @@ export class OrganizationExportComponent extends ExportComponent {
       userVerificationService,
       formBuilder,
       fileDownloadService,
-      modalService,
       dialogService
     );
   }

@@ -1,5 +1,5 @@
-import { SecretVerificationRequest } from "../../auth/models/request/secret-verification.request";
-import { Verification } from "../../types/verification";
+import { Verification } from "../../../types/verification";
+import { SecretVerificationRequest } from "../../models/request/secret-verification.request";
 
 export abstract class UserVerificationService {
   buildRequest: <T extends SecretVerificationRequest>(

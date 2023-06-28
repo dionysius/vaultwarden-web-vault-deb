@@ -1,7 +1,7 @@
 import { NgModule } from "@angular/core";
 
+import { UserVerificationModule } from "../../auth/shared/components/user-verification";
 import { LooseComponentsModule, SharedModule } from "../../shared";
-import { UserVerificationModule } from "../../shared/components/user-verification";
 
 import { AdjustSubscription } from "./adjust-subscription.component";
 import { BillingSyncApiKeyComponent } from "./billing-sync-api-key.component";

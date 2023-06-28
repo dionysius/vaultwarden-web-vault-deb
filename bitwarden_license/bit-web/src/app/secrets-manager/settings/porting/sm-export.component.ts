@@ -1,15 +1,15 @@
 import { Component, OnDestroy, OnInit } from "@angular/core";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { ActivatedRoute } from "@angular/router";
-import { Subject, switchMap, takeUntil } from "rxjs";
+import { firstValueFrom, Subject, switchMap, takeUntil } from "rxjs";
 
-import { ModalService } from "@bitwarden/angular/services/modal.service";
+import { DialogServiceAbstraction } from "@bitwarden/angular/services/dialog";
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 import { FileDownloadService } from "@bitwarden/common/platform/abstractions/file-download/file-download.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
-import { UserVerificationPromptComponent } from "@bitwarden/web-vault/app/shared/components/user-verification";
+import { openUserVerificationPrompt } from "@bitwarden/web-vault/app/auth/shared/components/user-verification";
 
 import { SecretsManagerPortingApiService } from "../services/sm-porting-api.service";
 import { SecretsManagerPortingService } from "../services/sm-porting.service";
@@ -42,7 +42,7 @@ export class SecretsManagerExportComponent implements OnInit, OnDestroy {
     private smPortingService: SecretsManagerPortingService,
     private fileDownloadService: FileDownloadService,
     private logService: LogService,
-    private modalService: ModalService,
+    private dialogService: DialogServiceAbstraction,
     private secretsManagerApiService: SecretsManagerPortingApiService
   ) {}
 
@@ -98,8 +98,7 @@ export class SecretsManagerExportComponent implements OnInit, OnDestroy {
   }
 
   private verifyUser() {
-    const ref = this.modalService.open(UserVerificationPromptComponent, {
-      allowMultipleModals: true,
+    const ref = openUserVerificationPrompt(this.dialogService, {
       data: {
         confirmDescription: "exportWarningDesc",
         confirmButtonText: "exportVault",
@@ -111,6 +110,6 @@ export class SecretsManagerExportComponent implements OnInit, OnDestroy {
       return;
     }
 
-    return ref.onClosedPromise();
+    return firstValueFrom(ref.closed);
   }
 }

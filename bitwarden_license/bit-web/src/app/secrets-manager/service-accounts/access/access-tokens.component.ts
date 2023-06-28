@@ -1,12 +1,12 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
-import { combineLatestWith, Observable, startWith, switchMap } from "rxjs";
+import { combineLatestWith, firstValueFrom, Observable, startWith, switchMap } from "rxjs";
 
 import { DialogServiceAbstraction } from "@bitwarden/angular/services/dialog";
 import { ModalService } from "@bitwarden/angular/services/modal.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
-import { UserVerificationPromptComponent } from "@bitwarden/web-vault/app/shared/components/user-verification";
+import { openUserVerificationPrompt } from "@bitwarden/web-vault/app/auth/shared/components/user-verification";
 
 import { AccessTokenView } from "../models/view/access-token.view";
 
@@ -75,8 +75,7 @@ export class AccessTokenComponent implements OnInit {
   }
 
   private verifyUser() {
-    const ref = this.modalService.open(UserVerificationPromptComponent, {
-      allowMultipleModals: true,
+    const ref = openUserVerificationPrompt(this.dialogService, {
       data: {
         confirmDescription: "revokeAccessTokenDesc",
         confirmButtonText: "revokeAccessToken",
@@ -88,7 +87,7 @@ export class AccessTokenComponent implements OnInit {
       return;
     }
 
-    return ref.onClosedPromise();
+    return firstValueFrom(ref.closed);
   }
 
   private async getAccessTokens(): Promise<AccessTokenView[]> {

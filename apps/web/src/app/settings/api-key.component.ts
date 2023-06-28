@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 
-import { UserVerificationService } from "@bitwarden/common/abstractions/userVerification/userVerification.service.abstraction";
+import { UserVerificationService } from "@bitwarden/common/auth/abstractions/user-verification/user-verification.service.abstraction";
 import { SecretVerificationRequest } from "@bitwarden/common/auth/models/request/secret-verification.request";
 import { ApiKeyResponse } from "@bitwarden/common/auth/models/response/api-key.response";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";

@@ -1,12 +1,12 @@
 import { Component } from "@angular/core";
 import { UntypedFormBuilder } from "@angular/forms";
+import { firstValueFrom } from "rxjs";
 
 import { DialogServiceAbstraction } from "@bitwarden/angular/services/dialog";
-import { ModalService } from "@bitwarden/angular/services/modal.service";
 import { ExportComponent as BaseExportComponent } from "@bitwarden/angular/tools/export/components/export.component";
 import { EventCollectionService } from "@bitwarden/common/abstractions/event/event-collection.service";
-import { UserVerificationService } from "@bitwarden/common/abstractions/userVerification/userVerification.service.abstraction";
 import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
+import { UserVerificationService } from "@bitwarden/common/auth/abstractions/user-verification/user-verification.service.abstraction";
 import { EncryptedExportType } from "@bitwarden/common/enums";
 import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
 import { FileDownloadService } from "@bitwarden/common/platform/abstractions/file-download/file-download.service";
@@ -15,7 +15,7 @@ import { LogService } from "@bitwarden/common/platform/abstractions/log.service"
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { VaultExportServiceAbstraction } from "@bitwarden/exporter/vault-export";
 
-import { UserVerificationPromptComponent } from "../../shared/components/user-verification";
+import { openUserVerificationPrompt } from "../../auth/shared/components/user-verification";
 
 @Component({
   selector: "app-export",
@@ -37,7 +37,6 @@ export class ExportComponent extends BaseExportComponent {
     userVerificationService: UserVerificationService,
     formBuilder: UntypedFormBuilder,
     fileDownloadService: FileDownloadService,
-    private modalService: ModalService,
     dialogService: DialogServiceAbstraction
   ) {
     super(
@@ -101,8 +100,7 @@ export class ExportComponent extends BaseExportComponent {
       confirmDescription = "encExportKeyWarningDesc";
     }
 
-    const ref = this.modalService.open(UserVerificationPromptComponent, {
-      allowMultipleModals: true,
+    const ref = openUserVerificationPrompt(this.dialogService, {
       data: {
         confirmDescription: confirmDescription,
         confirmButtonText: "exportVault",
@@ -114,7 +112,7 @@ export class ExportComponent extends BaseExportComponent {
       return;
     }
 
-    return ref.onClosedPromise();
+    return firstValueFrom(ref.closed);
   }
 
   get isFileEncryptedExport() {

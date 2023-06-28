@@ -1,9 +1,9 @@
 import { ApiService } from "../../abstractions/api.service";
-import { UserVerificationService } from "../../abstractions/userVerification/userVerification.service.abstraction";
 import { LogService } from "../../platform/abstractions/log.service";
 import { Verification } from "../../types/verification";
 import { AccountApiService } from "../abstractions/account-api.service";
 import { InternalAccountService } from "../abstractions/account.service";
+import { UserVerificationService } from "../abstractions/user-verification/user-verification.service.abstraction";
 
 export class AccountApiServiceImplementation implements AccountApiService {
   constructor(

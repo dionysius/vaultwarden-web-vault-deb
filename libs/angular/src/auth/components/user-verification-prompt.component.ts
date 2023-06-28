@@ -1,9 +1,10 @@
 import { Directive } from "@angular/core";
-import { FormBuilder, FormControl } from "@angular/forms";
+import { FormBuilder } from "@angular/forms";
 
-import { UserVerificationService } from "@bitwarden/common/abstractions/userVerification/userVerification.service.abstraction";
+import { UserVerificationService } from "@bitwarden/common/auth/abstractions/user-verification/user-verification.service.abstraction";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
+import { Verification } from "@bitwarden/common/types/verification";
 
 import { ModalRef } from "../../components/modal/modal.ref";
 import { ModalConfig } from "../../services/modal.service";
@@ -16,7 +17,12 @@ export class UserVerificationPromptComponent {
   confirmDescription = this.config.data.confirmDescription;
   confirmButtonText = this.config.data.confirmButtonText;
   modalTitle = this.config.data.modalTitle;
-  secret = new FormControl();
+
+  formGroup = this.formBuilder.group({
+    secret: this.formBuilder.control<Verification | null>(null),
+  });
+
+  protected invalidSecret = false;
 
   constructor(
     private modalRef: ModalRef,
@@ -27,19 +33,31 @@ export class UserVerificationPromptComponent {
     private i18nService: I18nService
   ) {}
 
-  async submit() {
-    try {
-      //Incorrect secret will throw an invalid password error.
-      await this.userVerificationService.verifyUser(this.secret.value);
-    } catch (e) {
-      this.platformUtilsService.showToast(
-        "error",
-        this.i18nService.t("error"),
-        this.i18nService.t("invalidMasterPassword")
-      );
+  get secret() {
+    return this.formGroup.controls.secret;
+  }
+
+  submit = async () => {
+    this.formGroup.markAllAsTouched();
+
+    if (this.formGroup.invalid) {
       return;
     }
 
-    this.modalRef.close(true);
+    try {
+      //Incorrect secret will throw an invalid password error.
+      await this.userVerificationService.verifyUser(this.secret.value);
+      this.invalidSecret = false;
+    } catch (e) {
+      this.invalidSecret = true;
+      this.platformUtilsService.showToast("error", this.i18nService.t("error"), e.message);
+      return;
+    }
+
+    this.close(true);
+  };
+
+  close(success: boolean) {
+    this.modalRef.close(success);
   }
 }

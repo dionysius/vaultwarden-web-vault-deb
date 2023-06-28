@@ -1,5 +1,5 @@
 import { ApiService } from "../../../abstractions/api.service";
-import { UserVerificationApiServiceAbstraction } from "../../../abstractions/userVerification/userVerification-api.service.abstraction";
+import { UserVerificationApiServiceAbstraction } from "../../abstractions/user-verification/user-verification-api.service.abstraction";
 import { VerifyOTPRequest } from "../../models/request/verify-otp.request";
 
 export class UserVerificationApiService implements UserVerificationApiServiceAbstraction {

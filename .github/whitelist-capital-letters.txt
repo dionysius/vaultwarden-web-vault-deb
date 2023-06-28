@@ -4,7 +4,6 @@
 ./apps/browser/src/safari/desktop/Base.lproj
 ./apps/browser/src/services/vaultTimeout
 ./apps/browser/store/windows/Assets
-./libs/common/src/abstractions/userVerification
 ./libs/common/src/abstractions/vaultTimeout
 ./libs/common/src/services/vaultTimeout
 ./bitwarden_license/README.md
@@ -26,8 +25,6 @@
 ./libs/common/src/misc/linkedFieldOption.decorator.ts
 ./libs/common/src/misc/serviceUtils.ts
 ./libs/common/src/misc/serviceUtils.spec.ts
-./libs/common/src/abstractions/userVerification/userVerification.service.abstraction.ts
-./libs/common/src/abstractions/userVerification/userVerification-api.service.abstraction.ts
 ./libs/common/src/abstractions/vaultTimeout/vaultTimeoutSettings.service.ts
 ./libs/common/src/abstractions/vaultTimeout/vaultTimeout.service.ts
 ./libs/common/src/abstractions/anonymousHub.service.ts
