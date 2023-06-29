@@ -6,7 +6,6 @@ on:
     branches:
       - 'master'
       - 'rc'
-      - 'DEVOPS-1421_auto-branch-updater-test'
     paths:
       - 'apps/web/**'
       - 'libs/**'
@@ -27,16 +26,17 @@ jobs:
     steps:
       - name: Setup
         id: setup
-        run: echo "branch=${GITHUB_REF#/refs/heads/}" >> $GITHUB_OUTPUT
+        run: echo "branch=${GITHUB_REF#refs/heads/}" >> $GITHUB_OUTPUT
 
       - name: Checkout repo
         uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3.5.3
         with:
           ref: 'eu-web-${{ steps.setup.outputs.branch }}'
+          fetch-depth: 0
 
       - name: Merge ${{ steps.setup.outputs.branch }}
         run: |
           git config --local user.email "${{ env._BOT_EMAIL }}"
           git config --local user.name "${{ env._BOT_NAME }}"
-          git merge ${{ steps.setup.outputs.branch }}
+          git merge origin/${{ steps.setup.outputs.branch }}
           git push
