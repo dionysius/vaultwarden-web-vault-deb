@@ -62,6 +62,10 @@ export class BitwardenPasswordProtectedImporter extends BitwardenJsonImporter im
     jdoc: BitwardenPasswordProtectedFileFormat,
     password: string
   ): Promise<boolean> {
+    if (this.isNullOrWhitespace(password)) {
+      return false;
+    }
+
     this.key = await this.cryptoService.makePinKey(
       password,
       jdoc.salt,
