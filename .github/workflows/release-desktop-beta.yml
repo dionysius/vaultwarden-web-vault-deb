@@ -23,7 +23,7 @@ jobs:
       build_number: ${{ steps.increment-version.outputs.build_number }}
     steps:
       - name: Checkout repo
-        uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab # v3.5.2
+        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3.5.3
 
       - name: Branch check
         run: |
@@ -115,7 +115,7 @@ jobs:
         working-directory: apps/desktop
     steps:
       - name: Checkout repo
-        uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab # v3.5.2
+        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3.5.3
         with:
           ref: ${{ needs.setup.outputs.branch-name }}
 
@@ -211,7 +211,7 @@ jobs:
       _PACKAGE_VERSION: ${{ needs.setup.outputs.release-version }}
     steps:
       - name: Checkout repo
-        uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab # v3.5.2
+        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3.5.3
         with:
           ref: ${{ needs.setup.outputs.branch-name }}
 
@@ -406,7 +406,7 @@ jobs:
         working-directory: apps/desktop
     steps:
       - name: Checkout repo
-        uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab # v3.5.2
+        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3.5.3
         with:
           ref: ${{ needs.setup.outputs.branch-name }}
 
@@ -535,7 +535,7 @@ jobs:
         working-directory: apps/desktop
     steps:
       - name: Checkout repo
-        uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab # v3.5.2
+        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3.5.3
         with:
           ref: ${{ needs.setup.outputs.branch-name }}
 
@@ -737,7 +737,7 @@ jobs:
         working-directory: apps/desktop
     steps:
       - name: Checkout repo
-        uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab # v3.5.2
+        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3.5.3
         with:
           ref: ${{ needs.setup.outputs.branch-name }}
 
@@ -1011,7 +1011,7 @@ jobs:
       - release
     steps:
       - name: Checkout repo
-        uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab # v3.5.2
+        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3.5.3
 
       - name: Setup git config
         run: |

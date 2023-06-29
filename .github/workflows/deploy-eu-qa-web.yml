@@ -18,7 +18,7 @@ jobs:
       _WEB_ARTIFACT: "web-*-cloud-euqa.zip"
     steps:
       - name: Login to Azure - EU Subscription
-        uses: Azure/login@92a5484dfaf04ca78a94597f4f19fea633851fa2 # v1.4.6
+        uses: Azure/login@92a5484dfaf04ca78a94597f4f19fea633851fa2 # v1.4.7
         with:
           creds: ${{ secrets.AZURE_KV_EU_QA_SERVICE_PRINCIPAL }}
 
