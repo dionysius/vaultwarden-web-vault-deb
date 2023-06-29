@@ -7,6 +7,7 @@ import {
   from,
   lastValueFrom,
   map,
+  Observable,
   shareReplay,
   Subject,
   switchMap,
@@ -55,12 +56,14 @@ import { CollectionData } from "@bitwarden/common/vault/models/data/collection.d
 import { Collection } from "@bitwarden/common/vault/models/domain/collection";
 import { CollectionDetailsResponse } from "@bitwarden/common/vault/models/response/collection.response";
 
+import { flagEnabled } from "../../../../utils/flags";
 import { openEntityEventsDialog } from "../../../admin-console/organizations/manage/entity-events.component";
 import { BasePeopleComponent } from "../../../common/base.people.component";
 import { GroupService } from "../core";
 import { OrganizationUserView } from "../core/views/organization-user.view";
 
 import { BulkConfirmComponent } from "./components/bulk/bulk-confirm.component";
+import { BulkEnableSecretsManagerDialogComponent } from "./components/bulk/bulk-enable-sm-dialog.component";
 import { BulkRemoveComponent } from "./components/bulk/bulk-remove.component";
 import { BulkRestoreRevokeComponent } from "./components/bulk/bulk-restore-revoke.component";
 import { BulkStatusComponent } from "./components/bulk/bulk-status.component";
@@ -100,6 +103,7 @@ export class PeopleComponent
   status: OrganizationUserStatusType = null;
   orgResetPasswordPolicyEnabled = false;
 
+  protected canUseSecretsManager$: Observable<boolean>;
   private destroy$ = new Subject<void>();
 
   constructor(
@@ -146,6 +150,10 @@ export class PeopleComponent
     const organization$ = this.route.params.pipe(
       map((params) => this.organizationService.get(params.organizationId)),
       shareReplay({ refCount: true, bufferSize: 1 })
+    );
+
+    this.canUseSecretsManager$ = organization$.pipe(
+      map((org) => org.useSecretsManager && flagEnabled("secretsManager"))
     );
 
     const policies$ = organization$.pipe(
@@ -509,6 +517,26 @@ export class PeopleComponent
 
     await modal.onClosedPromise();
     await this.load();
+  }
+
+  async bulkEnableSM() {
+    const users = this.getCheckedUsers();
+    if (users.length === 0) {
+      this.platformUtilsService.showToast(
+        "error",
+        this.i18nService.t("errorOccurred"),
+        this.i18nService.t("noSelectedUsersApplicable")
+      );
+      return;
+    }
+
+    const dialogRef = BulkEnableSecretsManagerDialogComponent.open(this.dialogService, {
+      orgId: this.organization.id,
+      users,
+    });
+
+    await lastValueFrom(dialogRef.closed);
+    this.selectAll(false);
   }
 
   async events(user: OrganizationUserView) {

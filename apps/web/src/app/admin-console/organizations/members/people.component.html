@@ -99,6 +99,12 @@
               ></button>
 
               <bit-menu #headerMenu>
+                <ng-container *ngIf="canUseSecretsManager$ | async">
+                  <button type="button" bitMenuItem (click)="bulkEnableSM()">
+                    {{ "enableSecretsManager" | i18n }}
+                  </button>
+                  <bit-menu-divider></bit-menu-divider>
+                </ng-container>
                 <button type="button" bitMenuItem (click)="bulkReinvite()">
                   <i class="bwi bwi-fw bwi-envelope" aria-hidden="true"></i>
                   {{ "reinviteSelected" | i18n }}

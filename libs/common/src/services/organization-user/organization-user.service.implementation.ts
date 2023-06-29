@@ -206,6 +206,20 @@ export class OrganizationUserServiceImplementation implements OrganizationUserSe
     return new ListResponse(r, OrganizationUserBulkResponse);
   }
 
+  async putOrganizationUserBulkEnableSecretsManager(
+    organizationId: string,
+    ids: string[]
+  ): Promise<ListResponse<OrganizationUserBulkResponse>> {
+    const r = await this.apiService.send(
+      "PUT",
+      "/organizations/" + organizationId + "/users/enable-secrets-manager",
+      new OrganizationUserBulkRequest(ids),
+      true,
+      true
+    );
+    return new ListResponse(r, OrganizationUserBulkResponse);
+  }
+
   putOrganizationUser(
     organizationId: string,
     id: string,

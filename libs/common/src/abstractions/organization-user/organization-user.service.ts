@@ -202,6 +202,17 @@ export abstract class OrganizationUserService {
   ): Promise<void>;
 
   /**
+   * Enable Secrets Manager for many users
+   * @param organizationId - Identifier for the organization the user belongs to
+   * @param ids - List of organization user identifiers to enable
+   * @return List of user ids, including both those that were successfully enabled and those that had an error
+   */
+  abstract putOrganizationUserBulkEnableSecretsManager(
+    organizationId: string,
+    ids: string[]
+  ): Promise<ListResponse<OrganizationUserBulkResponse>>;
+
+  /**
    * Delete an organization user
    * @param organizationId - Identifier for the organization the user belongs to
    * @param id - Organization user identifier
