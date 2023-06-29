@@ -1,0 +1,42 @@
+---
+name: Auto Update Branch
+
+on:
+  push:
+    branches:
+      - 'master'
+      - 'rc'
+      - 'DEVOPS-1421_auto-branch-updater-test'
+    paths:
+      - 'apps/web/**'
+      - 'libs/**'
+      - '*'
+      - '!*.md'
+      - '!*.txt'
+      - '.github/workflows/build-web.yml'
+  workflow_dispatch:
+    inputs: {}
+
+jobs:
+  update:
+    name: Update Branch
+    runs-on: ubuntu-22.04
+    env:
+      _BOT_EMAIL: 106330231+bitwarden-devops-bot@users.noreply.github.com
+      _BOT_NAME: bitwarden-devops-bot
+    steps:
+      - name: Setup
+        id: setup
+        run: echo "branch=${GITHUB_REF#/refs/heads/}" >> $GITHUB_OUTPUT
+
+      - name: Checkout repo
+        uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab # v3.5.2
+        with:
+          ref: 'eu-web-${{ steps.setup.outputs.branch }}'
+
+      - name: Merge ${{ steps.setup.outputs.branch }}
+        run: |
+          git config --local user.email "${{ env._BOT_EMAIL }}"
+          git config --local user.name "${{ env._BOT_NAME }}"
+          git merge ${{ steps.setup.outputs.branch }}
+          git push
