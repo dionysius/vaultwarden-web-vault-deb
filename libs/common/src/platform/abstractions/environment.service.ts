@@ -23,6 +23,12 @@ export enum Region {
   SelfHosted = "Self-hosted",
 }
 
+export enum RegionDomain {
+  US = "bitwarden.com",
+  EU = "bitwarden.eu",
+  USQA = "bitwarden.pw",
+}
+
 export abstract class EnvironmentService {
   urls: Observable<void>;
   usUrls: Urls;

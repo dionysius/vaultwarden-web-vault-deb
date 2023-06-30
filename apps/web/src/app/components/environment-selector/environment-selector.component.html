@@ -1,0 +1,55 @@
+<div class="tw-mb-1" *ngIf="showRegionSelector">
+  <bit-menu #environmentOptions>
+    <a
+      bitMenuItem
+      [attr.href]="isUsServer ? 'javascript:void(0)' : 'https://vault.bitwarden.com'"
+      class="pr-4"
+    >
+      <i
+        class="bwi bwi-fw bwi-sm bwi-check pb-1"
+        aria-hidden="true"
+        [style.visibility]="isUsServer ? 'visible' : 'hidden'"
+      ></i>
+      <img src="../../images/us_flag.png" alt="{{ 'usFlag' | i18n }}" class="pb-1 mr-1" />
+      {{ "us" | i18n }}
+    </a>
+    <a
+      bitMenuItem
+      [attr.href]="isEuServer ? 'javascript:void(0)' : 'https://vault.bitwarden.eu'"
+      class="pr-4"
+      *ngIf="euServerFlagEnabled"
+    >
+      <i
+        class="bwi bwi-fw bwi-sm bwi-check pb-1"
+        aria-hidden="true"
+        [style.visibility]="isEuServer ? 'visible' : 'hidden'"
+      ></i>
+      <img src="../../images/eu_flag.png" alt="{{ 'euFlag' | i18n }}" class="pb-1 mr-1" />
+      {{ "eu" | i18n }}
+    </a>
+  </bit-menu>
+  <span *ngIf="hasFlags" class="!tw-inline-block !tw-w-52 !tw-min-w-52">
+    <label>{{ "region" | i18n }}:</label>
+    <a
+      [routerLink]="[]"
+      [bitMenuTriggerFor]="environmentOptions"
+      class="tw-rounded-md tw-border tw-border-solid tw-border-secondary-300 tw-bg-background tw-p-2"
+    >
+      <img
+        [src]="'../../images/' + selectedRegionImageName + '.png'"
+        alt="{{ 'selectedRegionFlag' | i18n }}"
+        class="pb-1 mr-1 tw-ml-1"
+      /><label class="tw-cursor-pointer !tw-font-normal"
+        >{{ isEuServer ? ("eu" | i18n) : ("us" | i18n) }}
+        <i class="bwi bwi-fw bwi-sm bwi-angle-down" aria-hidden="true"></i
+      ></label>
+    </a>
+  </span>
+  <div *ngIf="!hasFlags">
+    {{ "region" | i18n }}:
+    <a [routerLink]="[]" [bitMenuTriggerFor]="environmentOptions">
+      <b>{{ isEuServer ? ("eu" | i18n) : ("us" | i18n) }}</b
+      ><i class="bwi bwi-fw bwi-sm bwi-angle-down" aria-hidden="true"></i>
+    </a>
+  </div>
+</div>

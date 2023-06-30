@@ -6930,5 +6930,26 @@
   },
   "removeMembersWithoutMasterPasswordWarning": {
     "message": "Removing members who do not have master passwords without setting one for them may restrict access to their full account."
+  },
+  "startYour7DayFreeTrialOfBitwardenFor": {
+    "message": "Start your 7-Day free trial of Bitwarden for $ORG$",
+    "placeholders": {
+      "org": {
+        "content": "$1",
+        "example": "Organization name"
+      }
+    }
+  },
+  "next": {
+    "message": "Next"
+  },
+  "usFlag": {
+    "message": "US flag"
+  },
+  "euFlag": {
+    "message": "EU flag"
+  },
+  "selectedRegionFlag": {
+    "message": "Selected region flag"
   }
 }

@@ -58,10 +58,14 @@
       </div>
       <div class="tw-pt-44" *ngIf="useTrialStepper">
         <div class="tw-rounded tw-border tw-border-solid tw-border-secondary-300 tw-bg-background">
-          <div class="tw-flex tw-h-12 tw-w-full tw-items-center tw-rounded-t tw-bg-secondary-100">
-            <h2 class="tw-mb-0 tw-pl-4 tw-text-base tw-font-bold tw-uppercase">
-              Start your 7-Day free trial of Bitwarden for {{ org }}
+          <div class="tw-flex tw-h-auto tw-w-full tw-rounded-t tw-bg-secondary-100">
+            <h2 class="tw-pb-4 tw-pl-4 tw-pt-5 tw-text-base tw-font-bold tw-uppercase">
+              {{ "startYour7DayFreeTrialOfBitwardenFor" | i18n : org }}
             </h2>
+            <environment-selector
+              [hasFlags]="true"
+              class="tw-mr-4 tw-mt-6 tw-text-end"
+            ></environment-selector>
           </div>
           <app-vertical-stepper #stepper linear (selectionChange)="stepSelectionChange($event)">
             <app-vertical-step label="Create Account" [editable]="false" [subLabel]="email">
@@ -80,7 +84,7 @@
                 [disabled]="orgInfoFormGroup.get('name').invalid"
                 cdkStepperNext
               >
-                Next
+                {{ "next" | i18n }}
               </button>
             </app-vertical-step>
             <app-vertical-step label="Billing" [subLabel]="billingSubLabel">
@@ -100,7 +104,7 @@
               ></app-trial-confirmation-details>
               <div class="tw-mb-3 tw-flex">
                 <button type="button" bitButton buttonType="primary" (click)="navigateToOrgVault()">
-                  Get Started
+                  {{ "getStarted" | i18n | titlecase }}
                 </button>
                 <button
                   type="button"
@@ -109,7 +113,7 @@
                   (click)="navigateToOrgInvite()"
                   class="tw-ml-3 tw-inline-flex tw-items-center tw-px-3"
                 >
-                  Invite Users
+                  {{ "inviteUsers" | i18n }}
                 </button>
               </div>
             </app-vertical-step>
