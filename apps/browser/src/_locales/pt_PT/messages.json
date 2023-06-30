@@ -678,7 +678,7 @@
     "message": "Esta exportação contém os dados do seu cofre num formato não encriptado. Não deve armazenar ou enviar o ficheiro exportado através de canais não seguros (como o e-mail). Elimine-o imediatamente após terminar a sua utilização."
   },
   "encExportKeyWarningDesc": {
-    "message": "Esta exportação encripta os seus dados utilizando a chave de encriptação da sua conta. Se alguma vez alterar a chave de encriptação da sua conta, deve exportar novamente, uma vez que não conseguirá desencriptar este ficheiro de exportação."
+    "message": "Esta exportação encripta os seus dados utilizando a chave de encriptação da sua conta. Se alguma vez regenerar a chave de encriptação da sua conta, deve exportar novamente, uma vez que não conseguirá desencriptar este ficheiro de exportação."
   },
   "encExportAccountWarningDesc": {
     "message": "As chaves de encriptação da conta são únicas para cada conta de utilizador Bitwarden, pelo que não é possível importar uma exportação encriptada para uma conta diferente."
@@ -1137,7 +1137,7 @@
     "message": "Sra."
   },
   "ms": {
-    "message": "Sra."
+    "message": "Menina"
   },
   "dr": {
     "message": "Dr."
@@ -2001,17 +2001,17 @@
     "message": "Tipo de nome de utilizador"
   },
   "plusAddressedEmail": {
-    "message": "Plus addressed email",
+    "message": "E-mail com subendereço",
     "description": "Username generator option that appends a random sub-address to the username. For example: address+subaddress@email.com"
   },
   "plusAddressedEmailDesc": {
-    "message": "Use your email provider's sub-addressing capabilities."
+    "message": "Utilize as capacidades de subendereçamento do seu provedor de e-mail."
   },
   "catchallEmail": {
-    "message": "Catch-all email"
+    "message": "E-mail de captura geral"
   },
   "catchallEmailDesc": {
-    "message": "Use your domain's configured catch-all inbox."
+    "message": "Utilize a caixa de entrada de captura geral configurada para o seu domínio."
   },
   "random": {
     "message": "Aleatório"
