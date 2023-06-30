@@ -964,8 +964,14 @@
   "confirmVaultExport": {
     "message": "Подтвердить экспорт хранилища"
   },
+  "confirmSecretsExport": {
+    "message": "Подтвердить экспорт секретов"
+  },
   "exportWarningDesc": {
     "message": "Экспортируемый файл содержит данные вашего хранилища в незашифрованном формате. Его не следует хранить или отправлять по небезопасным каналам (например по электронной почте). Удалите его сразу после использования."
+  },
+  "exportSecretsWarningDesc": {
+    "message": "Экспортируемый файл содержит данные ваших секретов в незашифрованном формате. Его не следует хранить или отправлять по небезопасным каналам (например по электронной почте). Удалите его сразу после использования."
   },
   "encExportKeyWarningDesc": {
     "message": "При экспорте данные шифруются при помощи ключа шифрования учетной записи. Если вы решите сменить ключ шифрования, вам следует экспортировать данные повторно, поскольку вы не сможете расшифровать этот файл экспорта."
@@ -978,6 +984,9 @@
   },
   "exportVault": {
     "message": "Экспортировать хранилище"
+  },
+  "exportSecrets": {
+    "message": "Экспорт секретов"
   },
   "fileFormat": {
     "message": "Формат файла"
@@ -2656,6 +2665,12 @@
   },
   "failedLogin2fa": {
     "message": "Ошибка входа из-за некорректной двухэтапной аутентификации."
+  },
+  "incorrectPassword": {
+    "message": "Неверный пароль"
+  },
+  "incorrectCode": {
+    "message": "Неверный код"
   },
   "exportedVault": {
     "message": "Хранилище экспортировано."
@@ -6179,10 +6194,6 @@
     "message": "Токен доступа создан и скопирован в буфер обмена",
     "description": "Notification to inform the user that the access token has been created and copied to the clipboard."
   },
-  "accessTokenPermissionsBetaNotification": {
-    "message": "Управление разрешениями недоступно в бета-версии.",
-    "description": "Notification to inform the user that the feature for managing access token permissions is not available in the beta version."
-  },
   "revokeAccessToken": {
     "message": "Отозвать токен доступа",
     "description": "Invalidates / cancels an access token and as such removes access to secrets for the client application."
@@ -6612,11 +6623,14 @@
   "secretsManagerBeta": {
     "message": "Менеджер секретов Beta"
   },
-  "secretsManagerBetaDesc": {
-    "message": "Возможность бесплатного доступа пользователей к Менеджеру секретов во время программы бета-тестирования."
+  "secretsManager": {
+    "message": "Менеджер секретов"
   },
-  "userAccessSecretsManager": {
-    "message": "Этот пользователь может получить доступ к Менеджеру секретов Beta"
+  "secretsManagerAccessDesc": {
+    "message": "Включить доступ пользователей к менеджеру секретов."
+  },
+  "userAccessSecretsManagerGA": {
+    "message": "Этот пользователь может получить доступ к менеджеру секретов"
   },
   "important": {
     "message": "Важно:"
@@ -6843,6 +6857,20 @@
   },
   "updatedTempPassword": {
     "message": "Пользователь обновил пароль, выданный через восстановление аккаунта."
+  },
+  "enabledAccessToSecretsManager": {
+    "message": "Включить доступ к менеджеру секретов",
+    "description": "Confirmation message that one or more users gained access to Secrets Manager"
+  },
+  "enableAccess": {
+    "message": "Включить доступ"
+  },
+  "bulkEnableSecretsManagerDescription": {
+    "message": "Предоставить следующим пользователям доступ к менеджеру секретов. Роль, предоставленная в менеджере паролей, будет применяться и к менеджеру секретов.",
+    "description": "This description is shown to an admin when they are attempting to add more users to Secrets Manager."
+  },
+  "enableSecretsManager": {
+    "message": "Включить менеджер секретов"
   },
   "yourOrganizationsFingerprint": {
     "message": "Фраза отпечатка вашей организации",

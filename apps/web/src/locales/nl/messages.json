@@ -47,7 +47,7 @@
     "message": "Notities"
   },
   "customFields": {
-    "message": "Aangepaste velden"
+    "message": "Extra velden"
   },
   "cardholderName": {
     "message": "Naam kaarthouder"
@@ -77,7 +77,7 @@
     "message": "Paspoortnummer"
   },
   "licenseNumber": {
-    "message": "Rijbewijsnummer"
+    "message": "Licentienummer"
   },
   "email": {
     "message": "E-mailadres"
@@ -152,7 +152,7 @@
     "message": "Map"
   },
   "newCustomField": {
-    "message": "Nieuw aangepast veld"
+    "message": "Nieuw extra veld"
   },
   "value": {
     "message": "Waarde"
@@ -964,8 +964,14 @@
   "confirmVaultExport": {
     "message": "Kluisexport bevestigen"
   },
+  "confirmSecretsExport": {
+    "message": "Geheimen exporteren bevestigen"
+  },
   "exportWarningDesc": {
     "message": "Deze export bevat jouw kluisgegevens in een niet-versleutelde opmaak. Je moet het geëxporteerde bestand niet opslaan of verzenden over onbeveiligde kanalen (zoals e-mail). Verwijder het exportbestand direct na gebruik."
+  },
+  "exportSecretsWarningDesc": {
+    "message": "Deze export bevat je niet-versleutelde kluisgegevens. Je moet het geëxporteerde bestand niet opslaan of verzenden over onbeveiligde kanalen (zoals e-mail). Verwijder het exportbestand direct na gebruik."
   },
   "encExportKeyWarningDesc": {
     "message": "Deze export versleutelt je gegevens met de encryptiesleutel van je account. Als je je encryptiesleutel verandert moet je opnieuw exporteren, omdat je deze export dan niet meer kunt ontcijferen."
@@ -978,6 +984,9 @@
   },
   "exportVault": {
     "message": "Kluis exporteren"
+  },
+  "exportSecrets": {
+    "message": "Geheimen exporteren"
   },
   "fileFormat": {
     "message": "Bestandsindeling"
@@ -1256,7 +1265,7 @@
     "message": "De gegevens zijn in je kluis geïmporteerd."
   },
   "importSuccessNumberOfItems": {
-    "message": "A total of $AMOUNT$ items were imported.",
+    "message": "Een totaal van $AMOUNT$ items zijn geïmporteerd.",
     "placeholders": {
       "amount": {
         "content": "$1",
@@ -2029,7 +2038,7 @@
     "message": "Abonnement opzeggen"
   },
   "subscriptionExpiration": {
-    "message": "Subscription expiration"
+    "message": "Abonnement vervaldatum"
   },
   "subscriptionCanceled": {
     "message": "Het abonnement is opgezegd."
@@ -2656,6 +2665,12 @@
   },
   "failedLogin2fa": {
     "message": "Inlogpoging met onjuiste tweestapsaanmelding mislukt."
+  },
+  "incorrectPassword": {
+    "message": "Onjuist wachtwoord"
+  },
+  "incorrectCode": {
+    "message": "Onjuiste code"
   },
   "exportedVault": {
     "message": "Kluis geëxporteerd."
@@ -6179,10 +6194,6 @@
     "message": "Toegangstoken aangemaakt en gekopieerd naar klembord",
     "description": "Notification to inform the user that the access token has been created and copied to the clipboard."
   },
-  "accessTokenPermissionsBetaNotification": {
-    "message": "Beheer van machtigingen is niet beschikbaar in deze beta.",
-    "description": "Notification to inform the user that the feature for managing access token permissions is not available in the beta version."
-  },
   "revokeAccessToken": {
     "message": "Toegangstoken intrekken",
     "description": "Invalidates / cancels an access token and as such removes access to secrets for the client application."
@@ -6612,11 +6623,14 @@
   "secretsManagerBeta": {
     "message": "Secrets Manager Bèta"
   },
-  "secretsManagerBetaDesc": {
-    "message": "Gebruikerstoegang tot de Secrets Manager inschakelen is gratis tijdens het bètaprogramma."
+  "secretsManager": {
+    "message": "Secrets Manager"
   },
-  "userAccessSecretsManager": {
-    "message": "Deze gebruiker heeft toegang tot de Secrets Manager Bèta"
+  "secretsManagerAccessDesc": {
+    "message": "Gebruikerstoegang tot Secrets Manager inschakelen."
+  },
+  "userAccessSecretsManagerGA": {
+    "message": "Deze gebruiker heeft toegang tot Secrets Manager"
   },
   "important": {
     "message": "Belangrijk:"
@@ -6746,7 +6760,7 @@
     "message": "Controleer bekende datalekken voor dit wachtwoord"
   },
   "exposedMasterPassword": {
-    "message": "Exposed Master Password"
+    "message": "Gelekt hoofdwachtwoord"
   },
   "exposedMasterPasswordDesc": {
     "message": "Password found in a data breach. Use a unique password to protect your account. Are you sure you want to use an exposed password?"
@@ -6755,10 +6769,10 @@
     "message": "Weak and Exposed Master Password"
   },
   "weakAndBreachedMasterPasswordDesc": {
-    "message": "Weak password identified and found in a data breach. Use a strong and unique password to protect your account. Are you sure you want to use this password?"
+    "message": "Zwak wachtwoord geïdentificeerd en gevonden in een datalek. Gebruik een sterk en uniek wachtwoord om je account te beschermen. Weet je zeker dat je dit wachtwoord wilt gebruiken?"
   },
   "characterMinimum": {
-    "message": "$LENGTH$ character minimum",
+    "message": "$LENGTH$ tekens minimaal",
     "placeholders": {
       "length": {
         "content": "$1",
@@ -6793,14 +6807,14 @@
     "message": "Verplicht bestaande leden hun wachtwoord te wijzigen"
   },
   "region": {
-    "message": "Region"
+    "message": "Regio"
   },
   "eu": {
     "message": "EU",
     "description": "European Union"
   },
   "us": {
-    "message": "US",
+    "message": "VS",
     "description": "United States"
   },
   "smProjectDeleteAccessRestricted": {
@@ -6815,7 +6829,7 @@
     "message": "KDF instellingen bijwerken"
   },
   "trustedDeviceEncryption": {
-    "message": "Trusted device encryption"
+    "message": "Vertrouwde apparaat encryptie"
   },
   "memberDecryptionTdeDescriptionStart": {
     "message": "Eenmaal ingelogd, ontsleutelen leden kluisgegevens met een op hun apparaat opgeslagen sleutel. Schakelt",
@@ -6830,7 +6844,7 @@
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The master password reset policy with automatic enrollment will turn on when this option is used.'"
   },
   "notFound": {
-    "message": "$RESOURCE$ not found",
+    "message": "$RESOURCE$ niet gevonden",
     "placeholders": {
       "resource": {
         "content": "$1",
@@ -6843,6 +6857,20 @@
   },
   "updatedTempPassword": {
     "message": "Gebruiker heeft een via accountherstel uitgegeven wachtwoord bijgewerkt."
+  },
+  "enabledAccessToSecretsManager": {
+    "message": "Toegang tot Secrets Manager ingeschakeld",
+    "description": "Confirmation message that one or more users gained access to Secrets Manager"
+  },
+  "enableAccess": {
+    "message": "Toegang inschakelen"
+  },
+  "bulkEnableSecretsManagerDescription": {
+    "message": "Geef de volgende leden toegang tot de Secrets Manager. De rol die is toegekend in de Password Manager zal van toepassing zijn op de Secrets Manager.",
+    "description": "This description is shown to an admin when they are attempting to add more users to Secrets Manager."
+  },
+  "enableSecretsManager": {
+    "message": "Secrets Manager inschakelen"
   },
   "yourOrganizationsFingerprint": {
     "message": "De vingerafdrukzin van je organisatie",

@@ -964,8 +964,14 @@
   "confirmVaultExport": {
     "message": "Confirmar la exportación de la bóveda"
   },
+  "confirmSecretsExport": {
+    "message": "Confirmar exportación de secretos"
+  },
   "exportWarningDesc": {
     "message": "Esta exportación contiene los datos de tu caja fuerte en un formato no cifrado. No deberías almacenar o enviar el archivo exportado por canales no seguros (como el correo electrónico). Elimínalo inmediatamente cuando termines de utilizarlo."
+  },
+  "exportSecretsWarningDesc": {
+    "message": "Ésta exportación contiene sus datos de secretos en un formato no cifrado. No debería almacenar o enviar el archivo exportado por canales no seguros (como el correo electrónico). Elimínelo inmediatamente cuando termine de utilizarlo."
   },
   "encExportKeyWarningDesc": {
     "message": "Esta exportación encripta sus datos usando la clave de cifrado de su cuenta. Si alguna vez gira la clave de cifrado de su cuenta debe volver a exportar, ya que no podrá descifrar este archivo de exportación."
@@ -978,6 +984,9 @@
   },
   "exportVault": {
     "message": "Exportar caja fuerte"
+  },
+  "exportSecrets": {
+    "message": "Exportar secretos"
   },
   "fileFormat": {
     "message": "Formato de archivo"
@@ -2656,6 +2665,12 @@
   },
   "failedLogin2fa": {
     "message": "Intento de acceso fallido con autenticación en dos pasos incorrecta."
+  },
+  "incorrectPassword": {
+    "message": "Contraseña incorrecta"
+  },
+  "incorrectCode": {
+    "message": "Código incorrecto"
   },
   "exportedVault": {
     "message": "Caja fuerte exportada."
@@ -4493,13 +4508,13 @@
     "message": "La pista de su contraseña no puede ser la misma que la contraseña."
   },
   "enrollAccountRecovery": {
-    "message": "Enroll in account recovery"
+    "message": "Inscribirse en la recuperación de la cuenta"
   },
   "enrolledAccountRecovery": {
-    "message": "Enrolled in account recovery"
+    "message": "Inscrito en la recuperación de la cuenta"
   },
   "withdrawAccountRecovery": {
-    "message": "Withdraw from account recovery"
+    "message": "Retirarse de la recuperación de la cuenta"
   },
   "enrollPasswordResetSuccess": {
     "message": "Inscripción exitosa!"
@@ -4508,7 +4523,7 @@
     "message": "¡Retiro exitoso!"
   },
   "eventEnrollAccountRecovery": {
-    "message": "User $ID$ enrolled in account recovery.",
+    "message": "Usuario $ID$ inscrito en la recuperación de la cuenta.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -4517,7 +4532,7 @@
     }
   },
   "eventWithdrawAccountRecovery": {
-    "message": "User $ID$ withdrew from account recovery.",
+    "message": "El usuario $ID$ se retiró de la recuperación de la cuenta.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -4577,10 +4592,10 @@
     "message": "La inscripción permitirá a los administradores de la organización cambiar su contraseña maestra. ¿Está seguro de que desea inscribirse?"
   },
   "accountRecoveryPolicy": {
-    "message": "Account recovery administration"
+    "message": "Administración de recuperación de cuenta"
   },
   "accountRecoveryPolicyDescription": {
-    "message": "Recover member accounts when master password or trusted devices are forgotten or lost. The recovery processes is based on the account encryption method."
+    "message": "Recupera las cuentas de los miembros cuando se olvide o se pierda la contraseña maestra o los dispositivos de confianza. Los procesos de recuperación se basan en el método de cifrado de cuenta."
   },
   "resetPasswordPolicyWarning": {
     "message": "Los usuarios de la organización tendrán que autoinscribirse o estar inscritos antes de que los administradores puedan restablecer su contraseña maestra."
@@ -6179,10 +6194,6 @@
     "message": "Token de acceso creado y copiado al portapapeles",
     "description": "Notification to inform the user that the access token has been created and copied to the clipboard."
   },
-  "accessTokenPermissionsBetaNotification": {
-    "message": "La administración de permisos no está disponible para la versión beta.",
-    "description": "Notification to inform the user that the feature for managing access token permissions is not available in the beta version."
-  },
   "revokeAccessToken": {
     "message": "Revocar token de acceso",
     "description": "Invalidates / cancels an access token and as such removes access to secrets for the client application."
@@ -6612,11 +6623,14 @@
   "secretsManagerBeta": {
     "message": "Administrador de secretos Beta"
   },
-  "secretsManagerBetaDesc": {
-    "message": "Habilitar el acceso de usuario al Administrador de Secretos sin costo alguno durante el programa Beta."
+  "secretsManager": {
+    "message": "Administrador de secretos"
   },
-  "userAccessSecretsManager": {
-    "message": "Este usuario puede acceder al Administrador Secretos Beta"
+  "secretsManagerAccessDesc": {
+    "message": "Habilitar el acceso de usuario al Administrador de Secretos."
+  },
+  "userAccessSecretsManagerGA": {
+    "message": "Este usuario puede acceder al Administrador Secretos"
   },
   "important": {
     "message": "Importante:"
@@ -6818,15 +6832,15 @@
     "message": "Cifrado de dispositivo de confianza"
   },
   "memberDecryptionTdeDescriptionStart": {
-    "message": "Once authenticated, members will decrypt vault data using a key stored on their device. The",
+    "message": "Una vez autenticados, los miembros descifrarán los datos de la caja fuerte utilizando una clave almacenada en su dispositivo. La",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
   "memberDecryptionTdeDescriptionLink": {
-    "message": "account recovery administration policy",
+    "message": "política de administración de recuperación de cuenta",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
   "memberDecryptionTdeDescriptionEnd": {
-    "message": "with automatic enrollment will turn on when this option is used.",
+    "message": "con inscripción automática se activará cuando se utilice esta opción.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The master password reset policy with automatic enrollment will turn on when this option is used.'"
   },
   "notFound": {
@@ -6843,6 +6857,20 @@
   },
   "updatedTempPassword": {
     "message": "El usuario actualizó una contraseña solicitada a través de la recuperación de la cuenta."
+  },
+  "enabledAccessToSecretsManager": {
+    "message": "Acceso habilitado al Administrador de Secretos",
+    "description": "Confirmation message that one or more users gained access to Secrets Manager"
+  },
+  "enableAccess": {
+    "message": "Activar acceso"
+  },
+  "bulkEnableSecretsManagerDescription": {
+    "message": "Otorgar a los siguientes miembros acceso al Administrador de Secretos. El rol otorgado en el Administrador de contraseñas se aplicará al Administrador de Secretos.",
+    "description": "This description is shown to an admin when they are attempting to add more users to Secrets Manager."
+  },
+  "enableSecretsManager": {
+    "message": "Habilitar Administrador de secretos"
   },
   "yourOrganizationsFingerprint": {
     "message": "Frase de la huella digital de su organización",

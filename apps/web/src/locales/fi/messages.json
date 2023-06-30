@@ -964,8 +964,14 @@
   "confirmVaultExport": {
     "message": "Vahvista holvin vienti"
   },
+  "confirmSecretsExport": {
+    "message": "Vahvista salaisuuksien vienti"
+  },
   "exportWarningDesc": {
     "message": "Vienti sisältää holvisi tiedot salaamattomassa muodossa. Sinun ei tulisi säilyttää tai lähettää vietyä tiedostoa suojaamattomien kanavien (kuten sähköpostin) välityksellä. Poista se välittömästi kun sille ei enää ole käyttöä."
+  },
+  "exportSecretsWarningDesc": {
+    "message": "Vienti sisältää sailaisuuksiesi tiedot salaamattomassa muodossa. Sinun ei tulisi säilyttää tai lähettää vietyä tiedostoa suojaamattomien kanavien (kuten sähköpostin) välityksellä. Poista se välittömästi kun sille ei enää ole käyttöä."
   },
   "encExportKeyWarningDesc": {
     "message": "Vienti salaa tietosi käyttäen tilisi salausavainta. Jos joskus uudistat tilisi salausavaimen, tulisi vienti suorittaa uudelleen, koska et voi enää purkaa nyt viedyn tiedoston salausta."
@@ -978,6 +984,9 @@
   },
   "exportVault": {
     "message": "Vie holvi"
+  },
+  "exportSecrets": {
+    "message": "Vie salaisuudet"
   },
   "fileFormat": {
     "message": "Tiedostomuoto"
@@ -2656,6 +2665,12 @@
   },
   "failedLogin2fa": {
     "message": "Kirjautuminen epäonnistui virheellisen kaksivaiheisen kirjautumisen todennuksen vuoksi."
+  },
+  "incorrectPassword": {
+    "message": "Virheellinen salasana"
+  },
+  "incorrectCode": {
+    "message": "Virheellinen koodi"
   },
   "exportedVault": {
     "message": "Holvi vietiin"
@@ -6179,10 +6194,6 @@
     "message": "Käyttötunniste luotiin ja kopioitiin leikepöydälle",
     "description": "Notification to inform the user that the access token has been created and copied to the clipboard."
   },
-  "accessTokenPermissionsBetaNotification": {
-    "message": "Käyttöoikeushallinta ei ole käytettävissä beta-vaiheessa.",
-    "description": "Notification to inform the user that the feature for managing access token permissions is not available in the beta version."
-  },
   "revokeAccessToken": {
     "message": "Mitätöi käyttötunniste",
     "description": "Invalidates / cancels an access token and as such removes access to secrets for the client application."
@@ -6612,11 +6623,14 @@
   "secretsManagerBeta": {
     "message": "Salaisuushallinta Beta"
   },
-  "secretsManagerBetaDesc": {
-    "message": "Myönnä käyttäjille Salaisuushallinnan käyttöoikeudet veloituksetta sen beta-vaiheen ajan."
+  "secretsManager": {
+    "message": "Salaisuushallinta"
   },
-  "userAccessSecretsManager": {
-    "message": "Käyttäjä voi käyttää Salaisuushallinnan Beta-versiota"
+  "secretsManagerAccessDesc": {
+    "message": "Aktivoi Salaisuushallinnan käyttöoikeus."
+  },
+  "userAccessSecretsManagerGA": {
+    "message": "Käyttäjällä on Salaisuushallinnan käyttöoikeus"
   },
   "important": {
     "message": "Tärkeää:"
@@ -6843,6 +6857,20 @@
   },
   "updatedTempPassword": {
     "message": "Käyttäjä vaihtoi tilin palautusavun määrittämän salasanan."
+  },
+  "enabledAccessToSecretsManager": {
+    "message": "Aktivoi Salaisuushallinnan käyttöoikeuden",
+    "description": "Confirmation message that one or more users gained access to Secrets Manager"
+  },
+  "enableAccess": {
+    "message": "Ota käyttöön"
+  },
+  "bulkEnableSecretsManagerDescription": {
+    "message": "Myönnä seuraaville jäsenille Salaisuushallinnan käyttöoikeus. Salasananhallinnassa myönnetty rooli pätee myös Salaisuushallinnassa.",
+    "description": "This description is shown to an admin when they are attempting to add more users to Secrets Manager."
+  },
+  "enableSecretsManager": {
+    "message": "Käytä Salaisuushallintaa"
   },
   "yourOrganizationsFingerprint": {
     "message": "Organisaatiosi tunnistelauseke",

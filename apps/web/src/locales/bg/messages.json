@@ -964,8 +964,14 @@
   "confirmVaultExport": {
     "message": "Потвърждаване на изнасянето на трезора"
   },
+  "confirmSecretsExport": {
+    "message": "Потвърждаване на изнасянето на тайните"
+  },
   "exportWarningDesc": {
     "message": "Данните от трезора ви ще се изнесат в незащитен формат. Не го пращайте по незащитени канали като електронна поща. Изтрийте файла незабавно след като свършите работата си с него."
+  },
+  "exportSecretsWarningDesc": {
+    "message": "Изнесеният файл ще съдържа тайните, в незащитен формат. Не го пращайте по незащитени канали (напр. е-поща). Изтрийте файла незабавно след като свършите работата си с него."
   },
   "encExportKeyWarningDesc": {
     "message": "При изнасяне данните се шифрират с ключа ви. Ако го смените, ще трябва наново да ги изнесете, защото няма да може да дешифрирате настоящия файл."
@@ -978,6 +984,9 @@
   },
   "exportVault": {
     "message": "Изнасяне на трезора"
+  },
+  "exportSecrets": {
+    "message": "Изнасяне на тайните"
   },
   "fileFormat": {
     "message": "Формат на файла"
@@ -2656,6 +2665,12 @@
   },
   "failedLogin2fa": {
     "message": "Неуспешно вписване заради неуспешно двустепенно удостоверяване."
+  },
+  "incorrectPassword": {
+    "message": "Неправилна парола"
+  },
+  "incorrectCode": {
+    "message": "Неправилен код"
   },
   "exportedVault": {
     "message": "Трезорът е изнесен."
@@ -6179,10 +6194,6 @@
     "message": "Идентификаторът за достъп е създаден и копиран в буфера",
     "description": "Notification to inform the user that the access token has been created and copied to the clipboard."
   },
-  "accessTokenPermissionsBetaNotification": {
-    "message": "Управлението на разрешенията не е възможно в бета-версията.",
-    "description": "Notification to inform the user that the feature for managing access token permissions is not available in the beta version."
-  },
   "revokeAccessToken": {
     "message": "Анулиране на идентификатора за достъп",
     "description": "Invalidates / cancels an access token and as such removes access to secrets for the client application."
@@ -6612,11 +6623,14 @@
   "secretsManagerBeta": {
     "message": "Управление на тайни (Бета)"
   },
-  "secretsManagerBetaDesc": {
-    "message": "Дайте достъп на потребителите до Управлението на тайни безплатно докато все още е в бета-версия."
+  "secretsManager": {
+    "message": "Secrets Manager"
   },
-  "userAccessSecretsManager": {
-    "message": "Този потребител има достъп до Управлението на тайни (Бета)"
+  "secretsManagerAccessDesc": {
+    "message": "Enable user access to Secrets Manager."
+  },
+  "userAccessSecretsManagerGA": {
+    "message": "This user can access Secrets Manager"
   },
   "important": {
     "message": "Важно:"
@@ -6843,6 +6857,20 @@
   },
   "updatedTempPassword": {
     "message": "Потребителят промени парола издадена чрез възстановяването на профили."
+  },
+  "enabledAccessToSecretsManager": {
+    "message": "Enabled access to Secrets Manager",
+    "description": "Confirmation message that one or more users gained access to Secrets Manager"
+  },
+  "enableAccess": {
+    "message": "Enable access"
+  },
+  "bulkEnableSecretsManagerDescription": {
+    "message": "Grant the following members access to Secrets Manager. The role granted in the Password Manager will apply to Secrets Manager.",
+    "description": "This description is shown to an admin when they are attempting to add more users to Secrets Manager."
+  },
+  "enableSecretsManager": {
+    "message": "Enable Secrets Manager"
   },
   "yourOrganizationsFingerprint": {
     "message": "Уникална фраза, идентифицираща организацията ви",

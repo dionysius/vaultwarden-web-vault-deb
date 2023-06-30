@@ -964,8 +964,14 @@
   "confirmVaultExport": {
     "message": "Confirmer l'export du coffre"
   },
+  "confirmSecretsExport": {
+    "message": "Confirmer l'export des secrets"
+  },
   "exportWarningDesc": {
     "message": "Cet export contient vos données de coffre dans un format non chiffré. Vous ne devriez pas stocker ou envoyer le fichier exporté par des canaux non sécurisés (comme le courriel). Supprimez-le immédiatement dès que vous avez fini de l'utiliser."
+  },
+  "exportSecretsWarningDesc": {
+    "message": "Cet export contient vos données secrètes dans un format non chiffré. Vous ne devriez pas stocker ou envoyer le fichier exporté par des canaux non sécurisés (comme le courriel). Supprimez-le immédiatement dès que vous avez fini de l'utiliser."
   },
   "encExportKeyWarningDesc": {
     "message": "Cet export chiffre vos données en utilisant la clé de chiffrement de votre compte. Si jamais vous modifiez la clé de chiffrement de votre compte, vous devriez exporter à nouveau car vous ne pourrez pas déchiffrer ce fichier."
@@ -978,6 +984,9 @@
   },
   "exportVault": {
     "message": "Exporter le coffre"
+  },
+  "exportSecrets": {
+    "message": "Exporter les secrets"
   },
   "fileFormat": {
     "message": "Format de fichier"
@@ -2656,6 +2665,12 @@
   },
   "failedLogin2fa": {
     "message": "Tentative de connexion échouée avec une authentification à deux facteurs incorrecte."
+  },
+  "incorrectPassword": {
+    "message": "Mot de passe incorrect"
+  },
+  "incorrectCode": {
+    "message": "Code incorrect"
   },
   "exportedVault": {
     "message": "Le coffre a été exporté."
@@ -5836,7 +5851,7 @@
     "description": "Action to delete a single secret from the system."
   },
   "deleteSecrets": {
-    "message": "Supprimer les Secrets",
+    "message": "Supprimer les secrets",
     "description": "The action to delete multiple secrets from the system."
   },
   "hardDeleteSecret": {
@@ -5882,7 +5897,7 @@
     "description": "Label for a secret (key/value pair)"
   },
   "serviceAccount": {
-    "message": "Compte de Service",
+    "message": "Compte de service",
     "description": "A machine user which can be used to automate processes and access secrets in the system."
   },
   "serviceAccounts": {
@@ -5894,7 +5909,7 @@
     "description": "The title for the section of the application that deals with secrets."
   },
   "nameValuePair": {
-    "message": "Nom/Paire de Valeur",
+    "message": "Nom/Paire de valeur",
     "description": "Title for a name/ value pair. Secrets typically consist of a name and value pair."
   },
   "secretEdited": {
@@ -5933,7 +5948,7 @@
     "description": "Title to indicate that there are no service accounts to display."
   },
   "searchSecrets": {
-    "message": "Rechercher des Secrets",
+    "message": "Rechercher des secrets",
     "description": "Placeholder text for searching secrets."
   },
   "deleteServiceAccounts": {
@@ -6045,11 +6060,11 @@
     "description": "Notifies that a service account has been updated"
   },
   "newSaSelectAccess": {
-    "message": "Tapez ou Sélectionnez des Projets ou des Secrets",
+    "message": "Saisir ou sélectionner des projets ou des secrets",
     "description": "Instructions for selecting projects or secrets for a new service account"
   },
   "newSaTypeToFilter": {
-    "message": "Tapez pour Filtrer",
+    "message": "Saisir pour filtrer",
     "description": "Instructions for filtering a list of projects or secrets"
   },
   "deleteProjectsToast": {
@@ -6057,7 +6072,7 @@
     "description": "Notifies that the selected projects have been deleted"
   },
   "deleteProjectToast": {
-    "message": "Le projet et tous les secrets associés ont été supprimés",
+    "message": "Projet supprimé",
     "description": "Notifies that a project has been deleted"
   },
   "deleteProjectDialogMessage": {
@@ -6178,10 +6193,6 @@
   "accessTokenCreatedAndCopied": {
     "message": "Jeton d'accès créé et copié dans le presse-papiers",
     "description": "Notification to inform the user that the access token has been created and copied to the clipboard."
-  },
-  "accessTokenPermissionsBetaNotification": {
-    "message": "La gestion des permissions n'est pas disponible pour la bêta.",
-    "description": "Notification to inform the user that the feature for managing access token permissions is not available in the beta version."
   },
   "revokeAccessToken": {
     "message": "Révoquer le jeton d'accès",
@@ -6505,7 +6516,7 @@
     "message": "Exportation des Données Secrètes de l'Organisation"
   },
   "exportingOrganizationSecretDataDescription": {
-    "message": "Seules les données du Gestionnaire de Secrets associées à $ORGANIZATION$ seront exportées. Les articles d'autres produits ou d'autres organisations ne seront pas inclus.",
+    "message": "Seules les données du Secrets Manager associées à $ORGANIZATION$ seront exportées. Les éléments d'autres produits ou d'autres organisations ne seront pas inclus.",
     "placeholders": {
       "ORGANIZATION": {
         "content": "$1",
@@ -6610,13 +6621,16 @@
     "message": "En poursuivant, vous serez déconnecté de toutes les sessions actives. Vous devrez vous reconnecter et terminer le paramétrage de l'authentification à deux facteurs. Nous vous recommandons d'exporter votre coffre avant de modifier vos paramètres de chiffrement afin d'éviter toute perte de données."
   },
   "secretsManagerBeta": {
-    "message": "Gestionnaire de secrets bêta"
+    "message": "Bêta du Secrets Manager"
   },
-  "secretsManagerBetaDesc": {
-    "message": "Permettre à l'utilisateur un accès gratuit au gestionnaire de secrets pendant le programme bêta."
+  "secretsManager": {
+    "message": "Secrets Manager"
   },
-  "userAccessSecretsManager": {
-    "message": "Cet utilisateur peut accéder au gestionnaire de secrets bêta"
+  "secretsManagerAccessDesc": {
+    "message": "Activer l'accès utilisateur au Secrets Manager."
+  },
+  "userAccessSecretsManagerGA": {
+    "message": "Cet utilisateur peut accéder au Secrets Manager"
   },
   "important": {
     "message": "Important :"
@@ -6673,7 +6687,7 @@
     "description": "Link to a downloadable resource. This will be used as part of a larger phrase. Example: Download the Secrets Manager CLI"
   },
   "smCLI": {
-    "message": "CLI du Gestionnaire de Secrets"
+    "message": "Secrets Manager CLI"
   },
   "importSecrets": {
     "message": "Importer des secrets"
@@ -6716,10 +6730,10 @@
     "message": "Une sélection est requise."
   },
   "secretsManagerSubscriptionDesc": {
-    "message": "Activez l'accès de l'organisation au gestionnaire de secrets sans frais pendant le programme bêta. Les utilisateurs peuvent se voir accorder l'accès à la bêta dans Membres."
+    "message": "Activez l'accès de l'organisation au Secrets Manager sans frais pendant le programme bêta. Les utilisateurs peuvent se voir accorder l'accès à la bêta dans Membres."
   },
   "secretsManagerEnable": {
-    "message": "Activer le gestionnaire de secrets bêta"
+    "message": "Activer la bêta de Secrets Manager"
   },
   "saPeopleWarningTitle": {
     "message": "Jetons d'accès encore disponibles"
@@ -6843,6 +6857,20 @@
   },
   "updatedTempPassword": {
     "message": "L'utilisateur a mis à jour un mot de passe émis lors de la récupération du compte."
+  },
+  "enabledAccessToSecretsManager": {
+    "message": "Accès au Secrets Manager activé",
+    "description": "Confirmation message that one or more users gained access to Secrets Manager"
+  },
+  "enableAccess": {
+    "message": "Activer l'accès"
+  },
+  "bulkEnableSecretsManagerDescription": {
+    "message": "Accorder aux membres suivants l'accès au Secrets Manager. Le rôle accordé dans le gestionnaire de mots de passe s'appliquera au Secrets Manager.",
+    "description": "This description is shown to an admin when they are attempting to add more users to Secrets Manager."
+  },
+  "enableSecretsManager": {
+    "message": "Activer Secrets Manager"
   },
   "yourOrganizationsFingerprint": {
     "message": "Phrase d'empreinte de votre organisation",

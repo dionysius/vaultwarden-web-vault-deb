@@ -964,8 +964,14 @@
   "confirmVaultExport": {
     "message": "Potwierdź eksportowanie sejfu"
   },
+  "confirmSecretsExport": {
+    "message": "Potwierdź eksportowanie sekretów"
+  },
   "exportWarningDesc": {
     "message": "Plik zawiera dane sejfu w niezaszyfrowanym formacie. Nie powinieneś go przechowywać, ani przesyłać poprzez niezabezpieczone kanały (takie jak poczta e-mail). Skasuj go natychmiast po użyciu."
+  },
+  "exportSecretsWarningDesc": {
+    "message": "Plik zawiera sekrety w niezaszyfrowanym formacie. Nie powinieneś go przechowywać, ani przesyłać poprzez niezabezpieczone kanały (takie jak poczta e-mail). Skasuj go natychmiast po użyciu."
   },
   "encExportKeyWarningDesc": {
     "message": "Dane eksportu zostaną zaszyfrowane za pomocą klucza szyfrowania konta. Jeśli kiedykolwiek zmienisz ten klucz, wyeksportuj dane ponownie, ponieważ nie będziesz w stanie odszyfrować tego pliku."
@@ -978,6 +984,9 @@
   },
   "exportVault": {
     "message": "Eksportuj sejf"
+  },
+  "exportSecrets": {
+    "message": "Eksportuj sekrety"
   },
   "fileFormat": {
     "message": "Format pliku"
@@ -2656,6 +2665,12 @@
   },
   "failedLogin2fa": {
     "message": "Logowanie nie powiodło się z powodu nieprawidłowego logowania dwustopniowego."
+  },
+  "incorrectPassword": {
+    "message": "Błędne hasło"
+  },
+  "incorrectCode": {
+    "message": "Błędny kod"
   },
   "exportedVault": {
     "message": "Sejf został wyeksportowany"
@@ -5231,7 +5246,7 @@
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Connect login with SSO to your self-hosted decryption key server. Using this option, members won’t need to use their master passwords to decrypt vault data. The require SSO authentication and single organization policies are required to set up Key Connector decryption. Contact Bitwarden Support for set up assistance.'"
   },
   "memberDecryptionKeyConnectorDescLink": {
-    "message": "require SSO authentication and single organization policies",
+    "message": "Wymaga uwierzytelniania SSO i polityki jednej organizacji",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Connect login with SSO to your self-hosted decryption key server. Using this option, members won’t need to use their master passwords to decrypt vault data. The require SSO authentication and single organization policies are required to set up Key Connector decryption. Contact Bitwarden Support for set up assistance.'"
   },
   "memberDecryptionKeyConnectorDescEnd": {
@@ -6179,10 +6194,6 @@
     "message": "Token dostępu został utworzony i skopiowany do schowka",
     "description": "Notification to inform the user that the access token has been created and copied to the clipboard."
   },
-  "accessTokenPermissionsBetaNotification": {
-    "message": "Zarządzanie uprawnieniami jest niedostępne w wersji beta.",
-    "description": "Notification to inform the user that the feature for managing access token permissions is not available in the beta version."
-  },
   "revokeAccessToken": {
     "message": "Unieważnij token dostępu",
     "description": "Invalidates / cancels an access token and as such removes access to secrets for the client application."
@@ -6612,11 +6623,14 @@
   "secretsManagerBeta": {
     "message": "Menedżer sekretów beta"
   },
-  "secretsManagerBetaDesc": {
-    "message": "Włącz dostęp użytkownikom do menedżera sekretów bez żadnych opłat podczas programu beta."
+  "secretsManager": {
+    "message": "Menedżer sekretów"
   },
-  "userAccessSecretsManager": {
-    "message": "Ten użytkownik może uzyskać dostęp do menedżera sekretów beta"
+  "secretsManagerAccessDesc": {
+    "message": "Włącz dostęp użytkownikom do menedżera sekretów."
+  },
+  "userAccessSecretsManagerGA": {
+    "message": "Ten użytkownik może uzyskać dostęp do menedżera sekretów"
   },
   "important": {
     "message": "Ważne:"
@@ -6843,6 +6857,20 @@
   },
   "updatedTempPassword": {
     "message": "Użytkownik zaktualizował hasło wydane poprzez odzyskiwanie konta."
+  },
+  "enabledAccessToSecretsManager": {
+    "message": "Włączono dostęp do menedżera sekretów",
+    "description": "Confirmation message that one or more users gained access to Secrets Manager"
+  },
+  "enableAccess": {
+    "message": "Włącz dostęp"
+  },
+  "bulkEnableSecretsManagerDescription": {
+    "message": "Udziel następującym członkom dostępu do menedżera sekretów. Rola przyznana w menedżerze haseł będzie miała zastosowanie do menedżera sekretów.",
+    "description": "This description is shown to an admin when they are attempting to add more users to Secrets Manager."
+  },
+  "enableSecretsManager": {
+    "message": "Włącz menedżer sekretów"
   },
   "yourOrganizationsFingerprint": {
     "message": "Unikalny identyfikator Twojej organizacji",

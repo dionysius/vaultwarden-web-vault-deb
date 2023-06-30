@@ -964,8 +964,14 @@
   "confirmVaultExport": {
     "message": "Potvrdit export trezoru"
   },
+  "confirmSecretsExport": {
+    "message": "Potvrdit export tajných klíčů"
+  },
   "exportWarningDesc": {
     "message": "Tento export obsahuje data Vašeho trezoru v nezašifrovaném formátu. Soubor s exportem byste neměli ukládat ani odesílat přes nezabezpečené kanály (např. e-mailem). Smažte jej okamžitě po jeho použití."
+  },
+  "exportSecretsWarningDesc": {
+    "message": "Tento export obsahuje data Vašich tajných klíčů v nezašifrovaném formátu. Soubor s exportem byste neměli ukládat ani odesílat přes nezabezpečené kanály (např. e-mailem). Smažte jej okamžitě po jeho použití."
   },
   "encExportKeyWarningDesc": {
     "message": "Tento export zašifruje Vaše data pomocí šifrovacího klíče Vašeho účtu. Pokud někdy změníte šifrovací klíč Vašeho účtu, měli by jste vyexportovat data znovu, protože tento exportovaný soubor nebudete moci dešifrovat."
@@ -978,6 +984,9 @@
   },
   "exportVault": {
     "message": "Exportovat trezor"
+  },
+  "exportSecrets": {
+    "message": "Exportovat tajné klíče"
   },
   "fileFormat": {
     "message": "Formát souboru"
@@ -2656,6 +2665,12 @@
   },
   "failedLogin2fa": {
     "message": "Pokus o přihlášení selhal kvůli nesprávnému dvoufázovému přihlášení."
+  },
+  "incorrectPassword": {
+    "message": "Nesprávné heslo"
+  },
+  "incorrectCode": {
+    "message": "Nesprávný kód"
   },
   "exportedVault": {
     "message": "Trezor byl exportován"
@@ -6179,10 +6194,6 @@
     "message": "Přístupový token byl vytvořen a zkopírován do schránky",
     "description": "Notification to inform the user that the access token has been created and copied to the clipboard."
   },
-  "accessTokenPermissionsBetaNotification": {
-    "message": "Správa oprávnění není k dispozici pro beta.",
-    "description": "Notification to inform the user that the feature for managing access token permissions is not available in the beta version."
-  },
   "revokeAccessToken": {
     "message": "Odvolat přístupový token",
     "description": "Invalidates / cancels an access token and as such removes access to secrets for the client application."
@@ -6612,11 +6623,14 @@
   "secretsManagerBeta": {
     "message": "Správce tajných klíčů v programu Beta"
   },
-  "secretsManagerBetaDesc": {
-    "message": "Povolí přístup uživatele ke správě tajných klíčů zdarma v rámci programu Beta."
+  "secretsManager": {
+    "message": "Správce tajných klíčů"
   },
-  "userAccessSecretsManager": {
-    "message": "Tento uživatel může přistupovat ke správci tajných klíčů v rámci programu Beta"
+  "secretsManagerAccessDesc": {
+    "message": "Povolí přístup uživatele ke správci tajných klíčů."
+  },
+  "userAccessSecretsManagerGA": {
+    "message": "Tento uživatel může přistupovat ke správci tajných klíčů"
   },
   "important": {
     "message": "Důležité:"
@@ -6843,6 +6857,20 @@
   },
   "updatedTempPassword": {
     "message": "Uživatel aktualizoval heslo vydané prostřednictvím obnovení účtu."
+  },
+  "enabledAccessToSecretsManager": {
+    "message": "Povolen přístup uživatele ke správci tajných klíčů",
+    "description": "Confirmation message that one or more users gained access to Secrets Manager"
+  },
+  "enableAccess": {
+    "message": "Povolit přístup"
+  },
+  "bulkEnableSecretsManagerDescription": {
+    "message": "Udělte následujícím členům přístup ke správci tajných klíčů. Role udělená ve správci hesel se bude vztahovat na správce tajných klíčů.",
+    "description": "This description is shown to an admin when they are attempting to add more users to Secrets Manager."
+  },
+  "enableSecretsManager": {
+    "message": "Povolit správce tajných klíčů"
   },
   "yourOrganizationsFingerprint": {
     "message": "Fráze otisku prstu Vaší organizace",

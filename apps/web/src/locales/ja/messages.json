@@ -964,8 +964,14 @@
   "confirmVaultExport": {
     "message": "保管庫のエクスポートの確認"
   },
+  "confirmSecretsExport": {
+    "message": "シークレットのエクスポート確認"
+  },
   "exportWarningDesc": {
     "message": "このエクスポートデータは暗号化されていない形式の保管庫データを含んでいます。メールなどのセキュリティ保護されていない方法で共有したり保管したりしないでください。使用した後はすぐに削除してください。"
+  },
+  "exportSecretsWarningDesc": {
+    "message": "このエクスポートデータは暗号化されていない形式のシークレットデータを含んでいます。メールなどのセキュリティ保護されていない方法で共有したり保管したりしないでください。使用した後はすぐに削除してください。"
   },
   "encExportKeyWarningDesc": {
     "message": "このエクスポートは、アカウントの暗号化キーを使用してデータを暗号化します。 暗号化キーをローテーションした場合は、このエクスポートファイルを復号することはできなくなるため、もう一度エクスポートする必要があります。"
@@ -978,6 +984,9 @@
   },
   "exportVault": {
     "message": "保管庫のエクスポート"
+  },
+  "exportSecrets": {
+    "message": "シークレットのエクスポート"
   },
   "fileFormat": {
     "message": "ファイル形式"
@@ -2656,6 +2665,12 @@
   },
   "failedLogin2fa": {
     "message": "二段階認証時の誤りによるログインの失敗"
+  },
+  "incorrectPassword": {
+    "message": "パスワードが違います"
+  },
+  "incorrectCode": {
+    "message": "コードが違います"
   },
   "exportedVault": {
     "message": "保管庫をエクスポートしました。"
@@ -6179,10 +6194,6 @@
     "message": "アクセストークンが作成され、クリップボードにコピーされました",
     "description": "Notification to inform the user that the access token has been created and copied to the clipboard."
   },
-  "accessTokenPermissionsBetaNotification": {
-    "message": "ベータ版では権限管理が利用できません。",
-    "description": "Notification to inform the user that the feature for managing access token permissions is not available in the beta version."
-  },
   "revokeAccessToken": {
     "message": "アクセストークンの取り消し",
     "description": "Invalidates / cancels an access token and as such removes access to secrets for the client application."
@@ -6612,11 +6623,14 @@
   "secretsManagerBeta": {
     "message": "ベータ版シークレットマネージャー"
   },
-  "secretsManagerBetaDesc": {
-    "message": "ベータプログラム中、シークレットマネージャーへのユーザーアクセスを無償で有効にします。"
+  "secretsManager": {
+    "message": "Secrets Manager"
   },
-  "userAccessSecretsManager": {
-    "message": "このユーザーはベータ版シークレットマネージャーにアクセスできます"
+  "secretsManagerAccessDesc": {
+    "message": "Enable user access to Secrets Manager."
+  },
+  "userAccessSecretsManagerGA": {
+    "message": "This user can access Secrets Manager"
   },
   "important": {
     "message": "重要"
@@ -6843,6 +6857,20 @@
   },
   "updatedTempPassword": {
     "message": "ユーザーはアカウント回復で発行されたパスワードを更新しました。"
+  },
+  "enabledAccessToSecretsManager": {
+    "message": "Enabled access to Secrets Manager",
+    "description": "Confirmation message that one or more users gained access to Secrets Manager"
+  },
+  "enableAccess": {
+    "message": "Enable access"
+  },
+  "bulkEnableSecretsManagerDescription": {
+    "message": "Grant the following members access to Secrets Manager. The role granted in the Password Manager will apply to Secrets Manager.",
+    "description": "This description is shown to an admin when they are attempting to add more users to Secrets Manager."
+  },
+  "enableSecretsManager": {
+    "message": "Enable Secrets Manager"
   },
   "yourOrganizationsFingerprint": {
     "message": "組織のフィンガープリントフレーズ",

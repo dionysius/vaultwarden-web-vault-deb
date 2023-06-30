@@ -964,8 +964,14 @@
   "confirmVaultExport": {
     "message": "Kasayı dışa aktarmayı onaylayın"
   },
+  "confirmSecretsExport": {
+    "message": "Confirm secrets export"
+  },
   "exportWarningDesc": {
     "message": "Dışa aktarılan dosyadaki verileriniz şifrelenmemiş olacak. Bu dosyayı güvensiz yöntemlerle (örn. e-posta) göndermemeli ve saklamamalısınız. İşiniz bittikten sonra dosyayı hemen silin."
+  },
+  "exportSecretsWarningDesc": {
+    "message": "This export contains your secrets data in an unencrypted format. You should not store or send the exported file over unsecure channels (such as email). Delete it immediately after you are done using it."
   },
   "encExportKeyWarningDesc": {
     "message": "Dışa aktardığınız bu dosyadaki verileriniz, hesabınızın şifreleme anahtarıyla şifrelenir. Hesabınızın şifreleme anahtarını değiştirirseniz bu dosyanın şifresi çözülemez hale gelir, dolayısıyla dosyayı yeniden dışa aktarmanız gerekir."
@@ -978,6 +984,9 @@
   },
   "exportVault": {
     "message": "Kasayı dışa aktar"
+  },
+  "exportSecrets": {
+    "message": "Sırları dışa aktar"
   },
   "fileFormat": {
     "message": "Dosya biçimi"
@@ -2656,6 +2665,12 @@
   },
   "failedLogin2fa": {
     "message": "Hatalı iki aşamalı doğrulama sebebiyle oturum açma başarısız oldu."
+  },
+  "incorrectPassword": {
+    "message": "Yanlış parola"
+  },
+  "incorrectCode": {
+    "message": "Yanlış kod"
   },
   "exportedVault": {
     "message": "Kasa dışa aktarıldı"
@@ -6179,10 +6194,6 @@
     "message": "Erişim anahtarı oluşturuldu ve panoya kopyalandı",
     "description": "Notification to inform the user that the access token has been created and copied to the clipboard."
   },
-  "accessTokenPermissionsBetaNotification": {
-    "message": "İzin yönetimi beta sürümünde kullanılamıyor.",
-    "description": "Notification to inform the user that the feature for managing access token permissions is not available in the beta version."
-  },
   "revokeAccessToken": {
     "message": "Erişim anahtarını İptal Et",
     "description": "Invalidates / cancels an access token and as such removes access to secrets for the client application."
@@ -6612,11 +6623,14 @@
   "secretsManagerBeta": {
     "message": "Sır Yöneticisi Beta"
   },
-  "secretsManagerBetaDesc": {
-    "message": "Beta programı sırasında Secrets Manager'a kullanıcı erişimini ücretsiz olarak etkinleştirin."
+  "secretsManager": {
+    "message": "Sır Yöneticisi"
   },
-  "userAccessSecretsManager": {
-    "message": "Bu kullanıcı Secrets Manager Beta'ya erişebilir"
+  "secretsManagerAccessDesc": {
+    "message": "Enable user access to Secrets Manager."
+  },
+  "userAccessSecretsManagerGA": {
+    "message": "This user can access Secrets Manager"
   },
   "important": {
     "message": "Önemli:"
@@ -6843,6 +6857,20 @@
   },
   "updatedTempPassword": {
     "message": "Kullanıcı, hesap kurtarma yoluyla verilen bir parolayı güncelledi."
+  },
+  "enabledAccessToSecretsManager": {
+    "message": "Enabled access to Secrets Manager",
+    "description": "Confirmation message that one or more users gained access to Secrets Manager"
+  },
+  "enableAccess": {
+    "message": "Erişimi etkinleştir"
+  },
+  "bulkEnableSecretsManagerDescription": {
+    "message": "Grant the following members access to Secrets Manager. The role granted in the Password Manager will apply to Secrets Manager.",
+    "description": "This description is shown to an admin when they are attempting to add more users to Secrets Manager."
+  },
+  "enableSecretsManager": {
+    "message": "Enable Secrets Manager"
   },
   "yourOrganizationsFingerprint": {
     "message": "Kuruluşunuzun parmak izi ifadesi",

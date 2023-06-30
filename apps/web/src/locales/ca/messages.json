@@ -964,8 +964,14 @@
   "confirmVaultExport": {
     "message": "Confirma l'exportació de la Caixa forta"
   },
+  "confirmSecretsExport": {
+    "message": "Confirma l'exportació de secrets"
+  },
   "exportWarningDesc": {
     "message": "Aquesta exportació conté les dades de la vostra caixa forta en un format no xifrat. No hauríeu d'emmagatzemar o enviar el fitxer exportat a través de canals no segurs (com ara el correu electrònic). Elimineu-lo immediatament després d'haver acabat d'usar-lo."
+  },
+  "exportSecretsWarningDesc": {
+    "message": "Aquesta exportació conté les vostres dades secretes en un format sense xifrar. No hauríeu d'emmagatzemar ni enviar el fitxer exportat per canals no segurs (com ara el correu electrònic). Elimineu-lo immediatament després d'haver-lo acabat d'utilitzar."
   },
   "encExportKeyWarningDesc": {
     "message": "Aquesta exportació xifra les vostres dades mitjançant la vostra clau de xifratge. Si alguna vegada gireu eixa clau, hauríeu d'exportar de nou, ja que no podreu desxifrar aquest fitxer d'exportació."
@@ -978,6 +984,9 @@
   },
   "exportVault": {
     "message": "Exporta la caixa forta"
+  },
+  "exportSecrets": {
+    "message": "Exporta secrets"
   },
   "fileFormat": {
     "message": "Format de fitxer"
@@ -2656,6 +2665,12 @@
   },
   "failedLogin2fa": {
     "message": "S'ha produït un error amb un inici de sessió en dues passes incorrecte."
+  },
+  "incorrectPassword": {
+    "message": "Contrasenya incorrecta"
+  },
+  "incorrectCode": {
+    "message": "Codi incorrecte"
   },
   "exportedVault": {
     "message": "S'ha exportat la caixa forta"
@@ -6179,10 +6194,6 @@
     "message": "Token d'accés creat i copiat al porta-retalls",
     "description": "Notification to inform the user that the access token has been created and copied to the clipboard."
   },
-  "accessTokenPermissionsBetaNotification": {
-    "message": "La gestió de permisos no està disponible per a la versió beta.",
-    "description": "Notification to inform the user that the feature for managing access token permissions is not available in the beta version."
-  },
   "revokeAccessToken": {
     "message": "Revoca el token d'accés",
     "description": "Invalidates / cancels an access token and as such removes access to secrets for the client application."
@@ -6612,11 +6623,14 @@
   "secretsManagerBeta": {
     "message": "Administrador de secrets Beta"
   },
-  "secretsManagerBetaDesc": {
-    "message": "Activa l'accés dels usuaris a l'administrador de secrets sense cap càrrec durant el programa beta."
+  "secretsManager": {
+    "message": "Administrador de secrets"
   },
-  "userAccessSecretsManager": {
-    "message": "Aquest usuari pot accedir a la beta de l'administrador de secrets"
+  "secretsManagerAccessDesc": {
+    "message": "Habilita l'accés dels usuaris a l'administrador de secrets."
+  },
+  "userAccessSecretsManagerGA": {
+    "message": "Aquest usuari pot accedir a l'administrador de secrets"
   },
   "important": {
     "message": "Important:"
@@ -6843,6 +6857,20 @@
   },
   "updatedTempPassword": {
     "message": "L'usuari ha actualitzat una contrasenya emesa mitjançant la recuperació del compte."
+  },
+  "enabledAccessToSecretsManager": {
+    "message": "Habilita l'accés a l'administrador de secrets",
+    "description": "Confirmation message that one or more users gained access to Secrets Manager"
+  },
+  "enableAccess": {
+    "message": "Habilita l'accés"
+  },
+  "bulkEnableSecretsManagerDescription": {
+    "message": "Concedeix als membres següents accés a l'administrador de secrets. El rol concedit l'administrador de contrasenyes s'aplicarà a l'administrador de secrets.",
+    "description": "This description is shown to an admin when they are attempting to add more users to Secrets Manager."
+  },
+  "enableSecretsManager": {
+    "message": "Habilita l'administrador de secrets"
   },
   "yourOrganizationsFingerprint": {
     "message": "Frase d'empremta digital de l'organització",

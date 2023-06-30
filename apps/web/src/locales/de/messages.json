@@ -964,8 +964,14 @@
   "confirmVaultExport": {
     "message": "Tresor-Export bestätigen"
   },
+  "confirmSecretsExport": {
+    "message": "Geheimnis-Export bestätigen"
+  },
   "exportWarningDesc": {
     "message": "Dieser Export enthält deine Tresor-Daten in einem unverschlüsseltem Format. Du solltest die Datei daher nicht über unsichere Kanäle (z.B. E-Mail) versenden oder speichern. Lösche die Datei sofort nach ihrer Verwendung."
+  },
+  "exportSecretsWarningDesc": {
+    "message": "Dieser Export enthält deine Geheimnis-Daten in einem unverschlüsseltem Format. Du solltest die Datei daher nicht über unsichere Kanäle (z.B. E-Mail) versenden oder speichern. Lösche die Datei sofort nach ihrer Verwendung."
   },
   "encExportKeyWarningDesc": {
     "message": "Dieser Export verschlüsselt deine Daten mit dem Verschlüsselungscode deines Kontos. Falls du deinen Verschlüsselungscode erneuerst, solltest du den Export erneut durchführen, da du die zuvor erstellte Datei ansonsten nicht mehr entschlüsseln kannst."
@@ -978,6 +984,9 @@
   },
   "exportVault": {
     "message": "Tresor exportieren"
+  },
+  "exportSecrets": {
+    "message": "Geheimnisse exportieren"
   },
   "fileFormat": {
     "message": "Dateiformat"
@@ -2656,6 +2665,12 @@
   },
   "failedLogin2fa": {
     "message": "Anmeldeversuch mit falscher Zwei-Faktor-Anmeldung fehlgeschlagen."
+  },
+  "incorrectPassword": {
+    "message": "Falsches Passwort"
+  },
+  "incorrectCode": {
+    "message": "Falscher Code"
   },
   "exportedVault": {
     "message": "Tresor exportiert."
@@ -5296,7 +5311,7 @@
     "message": "Rechnungssynchronisations-Token generieren"
   },
   "copyPasteBillingSync": {
-    "message": "Kopiere dieses Token und füge es in die Rechnungssynchronisations-Einstellungen deiner selbst gehosteten Organisation ein."
+    "message": "Kopiere diesen Token und füge ihn in die Rechnungssynchronisations-Einstellungen deiner selbst gehosteten Organisation ein."
   },
   "billingSyncCanAccess": {
     "message": "Dein Rechnungssynchronisations-Token kann auf die Abonnement-Einstellungen dieser Organisation zugreifen und diese bearbeiten."
@@ -5317,7 +5332,7 @@
     "message": "Wenn du fortfährt, musst du die Rechnungssynchronisation auf deinem selbst gehosteten Server neu einrichten."
   },
   "rotateBillingSyncTokenTitle": {
-    "message": "Durch Erneuerung des Rechnungssynchronisierungs-Tokens wird der vorherige Token ungültig."
+    "message": "Durch Erneuerung des Rechnungssynchronisierungs-Token wird der vorherige Token ungültig."
   },
   "selfHostingTitle": {
     "message": "Selbst gehostet"
@@ -6128,7 +6143,7 @@
     "message": "Geheimnis dauerhaft gelöscht"
   },
   "accessTokens": {
-    "message": "Zugriffstokens",
+    "message": "Zugriffstoken",
     "description": "Title for the section displaying access tokens."
   },
   "newAccessToken": {
@@ -6148,7 +6163,7 @@
     "description": "Title to be displayed when there are no access tokens to display in the list."
   },
   "accessTokensNoItemsDesc": {
-    "message": "Um loszulegen, erstelle ein Zugriffstoken",
+    "message": "Um loszulegen, erstelle einen Zugriffstoken",
     "description": "Message to be displayed when there are no access tokens to display in the list."
   },
   "downloadAccessToken": {
@@ -6179,22 +6194,18 @@
     "message": "Zugriffstoken erstellt und in Zwischenablage kopiert",
     "description": "Notification to inform the user that the access token has been created and copied to the clipboard."
   },
-  "accessTokenPermissionsBetaNotification": {
-    "message": "Die Berechtigungsverwaltung ist in der Beta nicht verfügbar.",
-    "description": "Notification to inform the user that the feature for managing access token permissions is not available in the beta version."
-  },
   "revokeAccessToken": {
     "message": "Zugriffstoken widerrufen",
     "description": "Invalidates / cancels an access token and as such removes access to secrets for the client application."
   },
   "revokeAccessTokens": {
-    "message": "Zugriffstokens widerrufen"
+    "message": "Zugriffstoken widerrufen"
   },
   "revokeAccessTokenDesc": {
-    "message": "Das Widerrufen von Zugriffstokens ist dauerhaft und unwiderruflich."
+    "message": "Das Widerrufen von Zugriffstoken ist dauerhaft und unwiderruflich."
   },
   "accessTokenRevoked": {
-    "message": "Zugriffstokens widerrufen",
+    "message": "Zugriffstoken widerrufen",
     "description": "Toast message after deleting one or multiple access tokens."
   },
   "noAccessTokenSelected": {
@@ -6612,11 +6623,14 @@
   "secretsManagerBeta": {
     "message": "Secrets Manager Beta"
   },
-  "secretsManagerBetaDesc": {
-    "message": "Aktiviere kostenlosen Benutzerzugriff auf den Secrets Manager während des Beta-Programms."
+  "secretsManager": {
+    "message": "Secrets Manager"
   },
-  "userAccessSecretsManager": {
-    "message": "Dieser Benutzer kann auf die Secrets Manager Beta zugreifen"
+  "secretsManagerAccessDesc": {
+    "message": "Benutzerzugriff auf Secrets Manager aktivieren."
+  },
+  "userAccessSecretsManagerGA": {
+    "message": "Dieser Benutzer kann auf Secrets Manager zugreifen"
   },
   "important": {
     "message": "Wichtig:"
@@ -6722,7 +6736,7 @@
     "message": "Secrets Manager Beta aktivieren"
   },
   "saPeopleWarningTitle": {
-    "message": "Zugriffstokens weiterhin verfügbar"
+    "message": "Zugriffstoken weiterhin verfügbar"
   },
   "saPeopleWarningMessage": {
     "message": "Das Entfernen von Personen aus einem Dienstkonto entfernt nicht die von ihnen erstellten Zugriffstoken. Aus Sicherheitsgründen wird empfohlen, Zugriffstoken zu widerrufen, die von Personen erstellt wurden, die aus einem Dienstkonto entfernt wurden."
@@ -6844,6 +6858,20 @@
   "updatedTempPassword": {
     "message": "Der Benutzer hat ein Passwort aktualisiert, das durch die Kontowiederherstellung ausgestellt wurde."
   },
+  "enabledAccessToSecretsManager": {
+    "message": "Zugriff auf Secrets Manager aktiviert",
+    "description": "Confirmation message that one or more users gained access to Secrets Manager"
+  },
+  "enableAccess": {
+    "message": "Zugriff aktivieren"
+  },
+  "bulkEnableSecretsManagerDescription": {
+    "message": "Den folgenden Mitgliedern Zugriff auf Secrets Manager gewähren. Die im Passwort-Manager zugewiesene Rolle wird auf Secrets Manager angewendet.",
+    "description": "This description is shown to an admin when they are attempting to add more users to Secrets Manager."
+  },
+  "enableSecretsManager": {
+    "message": "Secrets Manager aktivieren"
+  },
   "yourOrganizationsFingerprint": {
     "message": "Fingerabdruck-Phrase deiner Organisation",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their organization's public key with another user, for the purposes of sharing."
@@ -6888,7 +6916,7 @@
     "message": "Konto hat kein Master-Passwort"
   },
   "removeOrgUserNoMasterPasswordDesc": {
-    "message": "$USER$ zu entfernen, ohne ein Master-Passwort zu setzen, könnte den Zugang zum vollen Konto einschränken. Bist du sicher, dass du fortfahren möchtest?",
+    "message": "$USER$ zu entfernen, ohne ein Master-Passwort zu setzen, könnte den Zugang zum gesamten Konto einschränken. Bist du sicher, dass du fortfahren möchtest?",
     "placeholders": {
       "user": {
         "content": "$1",
@@ -6900,6 +6928,6 @@
     "message": "Kein Master-Passwort"
   },
   "removeMembersWithoutMasterPasswordWarning": {
-    "message": "Mitglieder ohne Master-Passwort zu entfernen, ohne ein solches zu setzen, kann den Zugang zu deren vollem Konto einschränken."
+    "message": "Mitglieder ohne Master-Passwort zu entfernen, ohne ein solches zu setzen, kann den Zugang zu deren gesamtem Konto einschränken."
   }
 }

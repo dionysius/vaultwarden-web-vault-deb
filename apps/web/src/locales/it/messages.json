@@ -964,8 +964,14 @@
   "confirmVaultExport": {
     "message": "Conferma esportazione della cassaforte"
   },
+  "confirmSecretsExport": {
+    "message": "Conferma esportazione dei segreti"
+  },
   "exportWarningDesc": {
     "message": "Questa esportazione contiene i dati della tua cassaforte in un formato non criptato. Non salvare o inviare il file esportato attraverso canali non protetti (come le email). Eliminalo immediatamente dopo l'utilizzo."
+  },
+  "exportSecretsWarningDesc": {
+    "message": "Questa esportazione contiene i dati dei tuoi segreti in un formato non criptato. Non salvare o inviare il file esportato attraverso canali non protetti (come le email). Eliminalo immediatamente dopo l'utilizzo."
   },
   "encExportKeyWarningDesc": {
     "message": "Questa esportazione cripta i tuoi dati usando la chiave di criptografia del tuo account. Se cambi la chiave di criptografia del tuo account, non potrai più decifrare il file esportato e dovrai eseguire una nuova esportazione."
@@ -978,6 +984,9 @@
   },
   "exportVault": {
     "message": "Esporta cassaforte"
+  },
+  "exportSecrets": {
+    "message": "Esporta segreti"
   },
   "fileFormat": {
     "message": "Formato file"
@@ -2656,6 +2665,12 @@
   },
   "failedLogin2fa": {
     "message": "Tentativo di accesso fallito con verifica in due passaggi errata."
+  },
+  "incorrectPassword": {
+    "message": "Password errata"
+  },
+  "incorrectCode": {
+    "message": "Codice errato"
   },
   "exportedVault": {
     "message": "Cassaforte esportata"
@@ -6179,10 +6194,6 @@
     "message": "Token di accesso creato e copiato negli appunti",
     "description": "Notification to inform the user that the access token has been created and copied to the clipboard."
   },
-  "accessTokenPermissionsBetaNotification": {
-    "message": "La gestione delle autorizzazioni non è disponibile nella beta.",
-    "description": "Notification to inform the user that the feature for managing access token permissions is not available in the beta version."
-  },
   "revokeAccessToken": {
     "message": "Revoca token di accesso",
     "description": "Invalidates / cancels an access token and as such removes access to secrets for the client application."
@@ -6612,11 +6623,14 @@
   "secretsManagerBeta": {
     "message": "Beta del Gestore dei Segreti"
   },
-  "secretsManagerBetaDesc": {
-    "message": "Abilita l'accesso degli utenti al Gestore dei Segreti gratis durante il programma beta."
+  "secretsManager": {
+    "message": "Gestore dei Segreti"
   },
-  "userAccessSecretsManager": {
-    "message": "Questo utente può accedere alla beta del Gestore dei Segreti"
+  "secretsManagerAccessDesc": {
+    "message": "Abilita l'accesso utente al Gestore dei Segreti."
+  },
+  "userAccessSecretsManagerGA": {
+    "message": "Questo utente può accedere al Gestore dei Segreti"
   },
   "important": {
     "message": "Importante:"
@@ -6843,6 +6857,20 @@
   },
   "updatedTempPassword": {
     "message": "L'utente ha aggiornato una password emessa tramite il recupero dell'account."
+  },
+  "enabledAccessToSecretsManager": {
+    "message": "Accesso al Gestore dei Segreti abilitato",
+    "description": "Confirmation message that one or more users gained access to Secrets Manager"
+  },
+  "enableAccess": {
+    "message": "Abilita accesso"
+  },
+  "bulkEnableSecretsManagerDescription": {
+    "message": "Concedi ai seguenti membri l'accesso al Gestore dei Segreti. Il ruolo concesso nel gestore di password si applicherà al Gestore dei Segreti.",
+    "description": "This description is shown to an admin when they are attempting to add more users to Secrets Manager."
+  },
+  "enableSecretsManager": {
+    "message": "Abilita Gestore dei Segreti"
   },
   "yourOrganizationsFingerprint": {
     "message": "Frase impronta della tua organizzazione",

@@ -964,8 +964,14 @@
   "confirmVaultExport": {
     "message": "确认密码库导出"
   },
+  "confirmSecretsExport": {
+    "message": "确认机密导出"
+  },
   "exportWarningDesc": {
     "message": "导出的密码库数据包含未加密格式。您不应该通过不安全的渠道（例如电子邮件）来存储或发送导出的文件。用完后请立即将其删除。"
+  },
+  "exportSecretsWarningDesc": {
+    "message": "导出的机密数据包含未加密格式。您不应该通过不安全的渠道（例如电子邮件）来存储或发送导出的文件。用完后请立即将其删除。"
   },
   "encExportKeyWarningDesc": {
     "message": "此导出使用您账户的加密密钥来加密您的数据。如果您曾经轮换过账户的加密密钥，您应将其重新导出，否则您将无法解密导出的文件。"
@@ -978,6 +984,9 @@
   },
   "exportVault": {
     "message": "导出密码库"
+  },
+  "exportSecrets": {
+    "message": "导出机密"
   },
   "fileFormat": {
     "message": "文件格式"
@@ -2656,6 +2665,12 @@
   },
   "failedLogin2fa": {
     "message": "登录失败，两步登录不正确。"
+  },
+  "incorrectPassword": {
+    "message": "密码错误"
+  },
+  "incorrectCode": {
+    "message": "验证码错误"
   },
   "exportedVault": {
     "message": "导出了密码库"
@@ -6179,10 +6194,6 @@
     "message": "访问令牌已创建且已复制到剪贴板",
     "description": "Notification to inform the user that the access token has been created and copied to the clipboard."
   },
-  "accessTokenPermissionsBetaNotification": {
-    "message": "权限管理在 Beat 版中不可用。",
-    "description": "Notification to inform the user that the feature for managing access token permissions is not available in the beta version."
-  },
   "revokeAccessToken": {
     "message": "吊销访问令牌",
     "description": "Invalidates / cancels an access token and as such removes access to secrets for the client application."
@@ -6612,11 +6623,14 @@
   "secretsManagerBeta": {
     "message": "机密管理器 Beta 版"
   },
-  "secretsManagerBetaDesc": {
-    "message": "在 Beta 计划期间，启用用户对机密管理器的访问是免费的。"
+  "secretsManager": {
+    "message": "Secrets Manager"
   },
-  "userAccessSecretsManager": {
-    "message": "此用户可以访问机密管理器 Beta 版"
+  "secretsManagerAccessDesc": {
+    "message": "Enable user access to Secrets Manager."
+  },
+  "userAccessSecretsManagerGA": {
+    "message": "This user can access Secrets Manager"
   },
   "important": {
     "message": "重要："
@@ -6844,6 +6858,20 @@
   "updatedTempPassword": {
     "message": "用户更新了通过账户恢复发布的密码。"
   },
+  "enabledAccessToSecretsManager": {
+    "message": "Enabled access to Secrets Manager",
+    "description": "Confirmation message that one or more users gained access to Secrets Manager"
+  },
+  "enableAccess": {
+    "message": "Enable access"
+  },
+  "bulkEnableSecretsManagerDescription": {
+    "message": "Grant the following members access to Secrets Manager. The role granted in the Password Manager will apply to Secrets Manager.",
+    "description": "This description is shown to an admin when they are attempting to add more users to Secrets Manager."
+  },
+  "enableSecretsManager": {
+    "message": "Enable Secrets Manager"
+  },
   "yourOrganizationsFingerprint": {
     "message": "您组织的指纹短语",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their organization's public key with another user, for the purposes of sharing."
@@ -6870,7 +6898,7 @@
     "message": "批准请求"
   },
   "noDeviceRequests": {
-    "message": "没有设备请求"
+    "message": "无设备请求"
   },
   "noDeviceRequestsDesc": {
     "message": "成员的设备批准请求将显示在这里"
