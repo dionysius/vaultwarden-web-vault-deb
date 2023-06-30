@@ -39,10 +39,20 @@ export class ProjectServiceAccountsComponent implements OnInit, OnDestroy {
           read: policy.read,
           write: policy.write,
           icon: AccessSelectorComponent.serviceAccountIcon,
-          static: true,
+          static: false,
         }))
       )
     );
+
+  protected async handleUpdateAccessPolicy(policy: AccessSelectorRowView) {
+    try {
+      return await this.accessPolicyService.updateAccessPolicy(
+        AccessSelectorComponent.getBaseAccessPolicyView(policy)
+      );
+    } catch (e) {
+      this.validationService.showError(e);
+    }
+  }
 
   protected handleCreateAccessPolicies(selected: SelectItemView[]) {
     const projectAccessPoliciesView = new ProjectAccessPoliciesView();
