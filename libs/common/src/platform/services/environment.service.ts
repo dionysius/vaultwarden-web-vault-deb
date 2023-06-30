@@ -159,13 +159,12 @@ export class EnvironmentService implements EnvironmentServiceAbstraction {
     const savedUrls = await this.stateService.getEnvironmentUrls();
     const envUrls = new EnvironmentUrls();
 
-    // fix environment urls for old users
-    if (savedUrls.base === "https://vault.bitwarden.com") {
+    // In release `2023.5.0`, we set the `base` property of the environment URLs to the US web vault URL when a user clicked the "US" region.
+    // This check will detect these cases and convert them to the proper region instead.
+    // We are detecting this by checking for the presence of the web vault URL in the `base` and the absence of the `notifications` property.
+    // This is because the `notifications` will not be `null` in the web vault, and we don't want to migrate the URLs in that case.
+    if (savedUrls.base === "https://vault.bitwarden.com" && savedUrls.notifications == null) {
       await this.setRegion(Region.US);
-      return;
-    }
-    if (savedUrls.base === "https://vault.bitwarden.eu") {
-      await this.setRegion(Region.EU);
       return;
     }
 
