@@ -21,7 +21,7 @@
       >
         <i *ngIf="!showGeneral" class="bwi bwi-angle-right bwi-sm icon" aria-hidden="true"></i>
         <i *ngIf="showGeneral" class="bwi bwi-angle-down bwi-sm icon" aria-hidden="true"></i>
-        General
+        {{ "general" | i18n }}
       </button>
     </h2>
   </div>
@@ -122,7 +122,7 @@
       >
         <i *ngIf="!showDisplay" class="bwi bwi-angle-right bwi-sm icon" aria-hidden="true"></i>
         <i *ngIf="showDisplay" class="bwi bwi-angle-down bwi-sm icon" aria-hidden="true"></i>
-        Display
+        {{ "display" | i18n }}
       </button>
     </h2>
   </div>
