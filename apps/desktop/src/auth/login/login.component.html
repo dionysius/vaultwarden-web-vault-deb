@@ -25,7 +25,8 @@
               />
             </div>
           </div>
-          <environment-selector></environment-selector>
+          <environment-selector #environmentSelector (onOpenSelfHostedSettings)="settings()">
+          </environment-selector>
         </div>
         <div class="checkbox remember-email">
           <label for="rememberEmail">
