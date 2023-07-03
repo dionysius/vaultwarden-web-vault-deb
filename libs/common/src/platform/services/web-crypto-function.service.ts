@@ -69,6 +69,7 @@ export class WebCryptoFunctionService implements CryptoFunctionService {
       hashLen: 32,
       type: argon2.ArgonType.Argon2id,
     });
+    argon2.unloadRuntime();
     return result.hash;
   }
 
