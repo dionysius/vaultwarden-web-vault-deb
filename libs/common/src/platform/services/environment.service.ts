@@ -23,6 +23,7 @@ export class EnvironmentService implements EnvironmentServiceAbstraction {
   protected eventsUrl: string;
   private keyConnectorUrl: string;
   private scimUrl: string = null;
+  private cloudWebVaultUrl: string;
 
   readonly usUrls: Urls = {
     base: null,
@@ -84,6 +85,26 @@ export class EnvironmentService implements EnvironmentServiceAbstraction {
       return this.baseUrl;
     }
     return "https://vault.bitwarden.com";
+  }
+
+  getCloudWebVaultUrl() {
+    if (this.cloudWebVaultUrl != null) {
+      return this.cloudWebVaultUrl;
+    }
+
+    return this.usUrls.webVault;
+  }
+
+  setCloudWebVaultUrl(region: Region) {
+    switch (region) {
+      case Region.EU:
+        this.cloudWebVaultUrl = this.euUrls.webVault;
+        break;
+      case Region.US:
+      default:
+        this.cloudWebVaultUrl = this.usUrls.webVault;
+        break;
+    }
   }
 
   getSendUrl() {
@@ -239,6 +260,7 @@ export class EnvironmentService implements EnvironmentServiceAbstraction {
     return {
       base: this.baseUrl,
       webVault: this.webVaultUrl,
+      cloudWebVault: this.cloudWebVaultUrl,
       api: this.apiUrl,
       identity: this.identityUrl,
       icons: this.iconsUrl,
