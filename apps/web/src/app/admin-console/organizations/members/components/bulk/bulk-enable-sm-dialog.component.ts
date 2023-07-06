@@ -39,7 +39,7 @@ export class BulkEnableSecretsManagerDialogComponent implements OnInit {
     this.platformUtilsService.showToast(
       "success",
       null,
-      this.i18nService.t("enabledAccessToSecretsManager")
+      this.i18nService.t("activatedAccessToSecretsManager")
     );
     this.dialogRef.close();
   };

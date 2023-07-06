@@ -1,5 +1,5 @@
 <bit-dialog dialogSize="large">
-  <span bitDialogTitle>{{ "enableSecretsManager" | i18n }}</span>
+  <span bitDialogTitle>{{ "activateSecretsManager" | i18n }}</span>
   <span bitDialogContent>
     <p>{{ "bulkEnableSecretsManagerDescription" | i18n }}</p>
     <bit-table [dataSource]="dataSource">
@@ -37,7 +37,7 @@
   </span>
   <ng-container bitDialogFooter>
     <button type="button" bitButton buttonType="primary" [bitAction]="submit">
-      {{ "enableAccess" | i18n }}
+      {{ "activateAccess" | i18n }}
     </button>
     <button type="button" bitButton buttonType="secondary" bitDialogClose>
       {{ "close" | i18n }}

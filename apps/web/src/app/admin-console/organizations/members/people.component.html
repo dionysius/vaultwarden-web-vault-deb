@@ -101,7 +101,7 @@
               <bit-menu #headerMenu>
                 <ng-container *ngIf="canUseSecretsManager$ | async">
                   <button type="button" bitMenuItem (click)="bulkEnableSM()">
-                    {{ "enableSecretsManager" | i18n }}
+                    {{ "activateSecretsManager" | i18n }}
                   </button>
                   <bit-menu-divider></bit-menu-divider>
                 </ng-container>
