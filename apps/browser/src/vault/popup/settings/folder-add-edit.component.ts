@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { FormBuilder } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
 import { first } from "rxjs/operators";
 
@@ -24,7 +25,8 @@ export class FolderAddEditComponent extends BaseFolderAddEditComponent {
     private router: Router,
     private route: ActivatedRoute,
     logService: LogService,
-    dialogService: DialogServiceAbstraction
+    dialogService: DialogServiceAbstraction,
+    formBuilder: FormBuilder
   ) {
     super(
       folderService,
@@ -32,7 +34,8 @@ export class FolderAddEditComponent extends BaseFolderAddEditComponent {
       i18nService,
       platformUtilsService,
       logService,
-      dialogService
+      dialogService,
+      formBuilder
     );
   }
 

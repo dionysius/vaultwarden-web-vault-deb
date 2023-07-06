@@ -1,4 +1,4 @@
-<form #form (ngSubmit)="submit()" [appApiAction]="formPromise">
+<form #form (ngSubmit)="submit()" [appApiAction]="formPromise" [formGroup]="formGroup">
   <header>
     <div class="left">
       <button type="button" routerLink="/folders">{{ "cancel" | i18n }}</button>
@@ -18,13 +18,7 @@
       <div class="box-content">
         <div class="box-content-row" appBoxRow>
           <label for="name">{{ "name" | i18n }}</label>
-          <input
-            id="name"
-            type="text"
-            name="Name"
-            [(ngModel)]="folder.name"
-            [appAutofocus]="!editMode"
-          />
+          <input id="name" type="text" formControlName="name" [appAutofocus]="!editMode" />
         </div>
       </div>
     </div>

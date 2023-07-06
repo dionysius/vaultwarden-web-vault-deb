@@ -33,11 +33,11 @@ import { ShareComponent } from "../vault/popup/components/vault/share.component"
 import { VaultFilterComponent } from "../vault/popup/components/vault/vault-filter.component";
 import { VaultItemsComponent } from "../vault/popup/components/vault/vault-items.component";
 import { ViewComponent } from "../vault/popup/components/vault/view.component";
+import { FolderAddEditComponent } from "../vault/popup/settings/folder-add-edit.component";
 
 import { DebounceNavigationService } from "./services/debounceNavigationService";
 import { AutofillComponent } from "./settings/autofill.component";
 import { ExcludedDomainsComponent } from "./settings/excluded-domains.component";
-import { FolderAddEditComponent } from "./settings/folder-add-edit.component";
 import { FoldersComponent } from "./settings/folders.component";
 import { HelpAndFeedbackComponent } from "./settings/help-and-feedback.component";
 import { OptionsComponent } from "./settings/options.component";

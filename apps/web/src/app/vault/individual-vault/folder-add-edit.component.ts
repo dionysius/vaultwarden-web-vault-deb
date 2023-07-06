@@ -1,6 +1,8 @@
-import { Component } from "@angular/core";
+import { DIALOG_DATA, DialogConfig, DialogRef } from "@angular/cdk/dialog";
+import { Component, Inject } from "@angular/core";
+import { FormBuilder } from "@angular/forms";
 
-import { DialogServiceAbstraction } from "@bitwarden/angular/services/dialog";
+import { DialogServiceAbstraction, SimpleDialogType } from "@bitwarden/angular/services/dialog";
 import { FolderAddEditComponent as BaseFolderAddEditComponent } from "@bitwarden/angular/vault/components/folder-add-edit.component";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
@@ -20,7 +22,10 @@ export class FolderAddEditComponent extends BaseFolderAddEditComponent {
     i18nService: I18nService,
     platformUtilsService: PlatformUtilsService,
     logService: LogService,
-    dialogService: DialogServiceAbstraction
+    dialogService: DialogServiceAbstraction,
+    formBuilder: FormBuilder,
+    protected dialogRef: DialogRef<FolderAddEditDialogResult>,
+    @Inject(DIALOG_DATA) params: FolderAddEditDialogParams
   ) {
     super(
       folderService,
@@ -28,7 +33,81 @@ export class FolderAddEditComponent extends BaseFolderAddEditComponent {
       i18nService,
       platformUtilsService,
       logService,
-      dialogService
+      dialogService,
+      formBuilder
     );
+    params?.folderId ? (this.folderId = params.folderId) : null;
   }
+
+  deleteAndClose = async () => {
+    const confirmed = await this.dialogService.openSimpleDialog({
+      title: { key: "deleteFolder" },
+      content: { key: "deleteFolderConfirmation" },
+      type: SimpleDialogType.WARNING,
+    });
+
+    if (!confirmed) {
+      return;
+    }
+
+    try {
+      this.deletePromise = this.folderApiService.delete(this.folder.id);
+      await this.deletePromise;
+      this.platformUtilsService.showToast("success", null, this.i18nService.t("deletedFolder"));
+      this.onDeletedFolder.emit(this.folder);
+    } catch (e) {
+      this.logService.error(e);
+    }
+
+    this.dialogRef.close(FolderAddEditDialogResult.Deleted);
+  };
+
+  submitAndClose = async () => {
+    this.folder.name = this.formGroup.controls.name.value;
+    if (this.folder.name == null || this.folder.name === "") {
+      this.formGroup.controls.name.markAsTouched();
+      return;
+    }
+
+    try {
+      const folder = await this.folderService.encrypt(this.folder);
+      this.formPromise = this.folderApiService.save(folder);
+      await this.formPromise;
+      this.platformUtilsService.showToast(
+        "success",
+        null,
+        this.i18nService.t(this.editMode ? "editedFolder" : "addedFolder")
+      );
+      this.onSavedFolder.emit(this.folder);
+      this.dialogRef.close(FolderAddEditDialogResult.Saved);
+    } catch (e) {
+      this.logService.error(e);
+    }
+    return;
+  };
+}
+
+export interface FolderAddEditDialogParams {
+  folderId: string;
+}
+
+export enum FolderAddEditDialogResult {
+  Deleted = "deleted",
+  Canceled = "canceled",
+  Saved = "saved",
+}
+
+/**
+ * Strongly typed helper to open a FolderAddEdit dialog
+ * @param dialogService Instance of the dialog service that will be used to open the dialog
+ * @param config Optional configuration for the dialog
+ */
+export function openFolderAddEditDialog(
+  dialogService: DialogServiceAbstraction,
+  config?: DialogConfig<FolderAddEditDialogParams>
+) {
+  return dialogService.open<FolderAddEditDialogResult, FolderAddEditDialogParams>(
+    FolderAddEditComponent,
+    config
+  );
 }
