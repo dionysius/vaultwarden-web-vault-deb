@@ -316,16 +316,16 @@ export class ViewComponent implements OnDestroy, OnInit {
     this.platformUtilsService.launchUri(uri.launchUri);
   }
 
-  async copy(value: string, typeI18nKey: string, aType: string) {
+  async copy(value: string, typeI18nKey: string, aType: string): Promise<boolean> {
     if (value == null) {
-      return;
+      return false;
     }
 
     if (
       this.passwordRepromptService.protectedFields().includes(aType) &&
       !(await this.promptPassword())
     ) {
-      return;
+      return false;
     }
 
     const copyOptions = this.win != null ? { window: this.win } : null;
@@ -343,6 +343,8 @@ export class ViewComponent implements OnDestroy, OnInit {
     } else if (aType === "H_Field") {
       this.eventCollectionService.collect(EventType.Cipher_ClientCopiedHiddenField, this.cipherId);
     }
+
+    return true;
   }
 
   setTextDataOnDrag(event: DragEvent, data: string) {

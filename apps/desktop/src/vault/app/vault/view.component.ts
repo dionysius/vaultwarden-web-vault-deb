@@ -106,9 +106,13 @@ export class ViewComponent extends BaseViewComponent implements OnChanges {
     this.onViewCipherPasswordHistory.emit(this.cipher);
   }
 
-  async copy(value: string, typeI18nKey: string, aType: string) {
-    super.copy(value, typeI18nKey, aType);
-    this.messagingService.send("minimizeOnCopy");
+  async copy(value: string, typeI18nKey: string, aType: string): Promise<boolean> {
+    const hasCopied = await super.copy(value, typeI18nKey, aType);
+    if (hasCopied) {
+      this.messagingService.send("minimizeOnCopy");
+    }
+
+    return hasCopied;
   }
 
   onWindowHidden() {
