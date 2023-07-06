@@ -35,8 +35,7 @@ jobs:
           token: ${{ steps.retrieve-secrets.outputs.brew-bump-workflow-pat }}
           org: bitwarden
           tap: Homebrew/homebrew-core
-          cask: bitwarden-cli
+          formula: bitwarden-cli
           tag: ${{ github.ref }}
           revision: ${{ github.sha }}
           force: false
-          dryrun: true
