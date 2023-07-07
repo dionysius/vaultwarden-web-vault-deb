@@ -24,7 +24,7 @@
     "message": "זהות"
   },
   "typeSecureNote": {
-    "message": "תזכורת מאובטחת"
+    "message": "פתק מאובטח"
   },
   "folders": {
     "message": "תיקיות"
@@ -36,7 +36,7 @@
     "message": "חיפוש בכספת"
   },
   "addItem": {
-    "message": "הוספת פריט"
+    "message": "הוסף פריט"
   },
   "shared": {
     "message": "משותף"
@@ -45,10 +45,10 @@
     "message": "שתף"
   },
   "moveToOrganization": {
-    "message": "העברה לארגון"
+    "message": "העבר לארגון"
   },
   "movedItemToOrg": {
-    "message": "$ITEMNAME$ הועבר ל־$ORGNAME$",
+    "message": "$ITEMNAME$ הועבר ל$ORGNAME$",
     "placeholders": {
       "itemname": {
         "content": "$1",
@@ -61,13 +61,13 @@
     }
   },
   "moveToOrgDesc": {
-    "message": "בחר ארגון שאליו ברצונך להעביר פריט זה. ההעברה לארגון מעבירה את הבעלות על הפריט לאותו ארגון. לאחר העברת פריט זה לא תוכל עוד לקבוע באופן ישיר הבעלות."
+    "message": "בחר ארגון שאליו תרצה להעביר פריט זה. העברה לארגון מעבירה את הבעלות על הפריט לאותו ארגון. לאחר העברת פריט זה לא תהיה יותר הבעלים הישיר."
   },
   "attachments": {
     "message": "קבצים מצורפים"
   },
   "viewItem": {
-    "message": "צפה בפריט"
+    "message": "הצג פריט"
   },
   "name": {
     "message": "שם"
@@ -126,13 +126,13 @@
     "message": "מזעור בעת העתקה ללוח"
   },
   "minimizeOnCopyToClipboardDesc": {
-    "message": "מזער את החלון בזמן העתקה של מידע מפריט ללוח."
+    "message": "מזער את החלון בזמן העתקת מידע ללוח."
   },
   "toggleVisibility": {
     "message": "הצג או הסתר"
   },
   "toggleCollapse": {
-    "message": "הצג או הסתר",
+    "message": "פתח או סגור",
     "description": "Toggling an expand/collapse state."
   },
   "cardholderName": {
@@ -151,7 +151,7 @@
     "message": "קוד אבטחה"
   },
   "identityName": {
-    "message": "שם זהות"
+    "message": "שם הזהות"
   },
   "company": {
     "message": "חברה"
@@ -352,7 +352,7 @@
     "message": "פריט שהתווסף"
   },
   "editedItem": {
-    "message": "פריט שנערך"
+    "message": "פריט נשמר"
   },
   "deleteItem": {
     "message": "מחק פריט"
@@ -373,7 +373,7 @@
     "message": "האם אתה בטוח שברצונך לדרוס את הסיסמה הנוכחית?"
   },
   "overwriteUsername": {
-    "message": "כתוב מחדש את שם המשתמש"
+    "message": "דרוס את שם המשתמש"
   },
   "overwriteUsernameConfirmation": {
     "message": "האם אתה בטוח שברצונך לדרוס את שם המשתמש הנוכחי?"
@@ -404,7 +404,7 @@
     "message": "אורך"
   },
   "uppercase": {
-    "message": "אותיות רישיות (A-Z)"
+    "message": "אותיות גדולות (A-Z)"
   },
   "lowercase": {
     "message": "אותיות קטנות (a-z)"
@@ -416,7 +416,7 @@
     "message": "תווים מיוחדים (!@#$%^&*)"
   },
   "numWords": {
-    "message": "מספר מילים"
+    "message": "כמות מילים"
   },
   "wordSeparator": {
     "message": "מפריד מילים"
@@ -458,19 +458,19 @@
     "message": "צרף קובץ חדש"
   },
   "deletedAttachment": {
-    "message": "קובץ מצורף שנמחק"
+    "message": "הקובץ המצורף נמחק"
   },
   "deleteAttachmentConfirmation": {
     "message": "האם אתה בטוח שברצונך למחוק קובץ מצורף זה?"
   },
   "attachmentSaved": {
-    "message": "הקובץ המצורף נשמר."
+    "message": "הקובץ המצורף נשמר"
   },
   "file": {
     "message": "קובץ"
   },
   "selectFile": {
-    "message": "בחירת קובץ."
+    "message": "בחר קובץ"
   },
   "maxFileSize": {
     "message": "גודל הקובץ המירבי הוא 500 מגה."
@@ -479,7 +479,7 @@
     "message": "לא ניתן להשתמש ביכולת זו עד שתעדכן את מפתח ההצפנה שלך."
   },
   "editedFolder": {
-    "message": "תיקיה שנערכה"
+    "message": "תיקייה שנשמרה"
   },
   "addedFolder": {
     "message": "תיקיה שנוספה"
@@ -488,7 +488,7 @@
     "message": "האם אתה בטוח שברצונך למחוק את התיקייה?"
   },
   "deletedFolder": {
-    "message": "תיקיה שנמחקה"
+    "message": "תיקייה נמחקה"
   },
   "loginOrCreateNewAccount": {
     "message": "היכנס או צור חשבון חדש כדי לגשת לכספת המאובטחת שלך."
@@ -536,13 +536,13 @@
     "message": "כתובת אימייל לא תקינה."
   },
   "masterPasswordRequired": {
-    "message": "הסיסמה הראשית נדרשת."
+    "message": "יש להזין את הסיסמה הראשית."
   },
   "confirmMasterPasswordRequired": {
-    "message": "נדרשת חזרה על הסיסמה הראשית."
+    "message": "יש להזין את הסיסמה הראשית שוב."
   },
   "masterPasswordMinlength": {
-    "message": "סיסמאת המאסטר חייבת להיות באורך $VALUE$ תווים.",
+    "message": "הסיסמת הראשית חייבת להכיל $VALUE$ תווים לפחות.",
     "description": "The Master Password must be at least a specific number of characters long.",
     "placeholders": {
       "value": {
@@ -570,10 +570,10 @@
     "message": "אין פריטים להצגה ברשימה."
   },
   "sendVerificationCode": {
-    "message": "שליחת קוד אימות לדוא״ל שלך"
+    "message": "שלח קוד אימות לאימייל שלך"
   },
   "sendCode": {
-    "message": "שליחת קוד"
+    "message": "שלח קוד"
   },
   "codeSent": {
     "message": "קוד נשלח"
@@ -582,7 +582,7 @@
     "message": "קוד אימות"
   },
   "confirmIdentity": {
-    "message": "יש לאשר את זהותך כדי להמשיך."
+    "message": "אשר את זהותך כדי להמשיך."
   },
   "verificationCodeRequired": {
     "message": "נדרש קוד אימות."
@@ -630,7 +630,7 @@
     "message": "הכנס את מפתח האבטחה שלך אל כניסת ה-USB במחשבך. אם יש לו כפתור, גע בו."
   },
   "recoveryCodeDesc": {
-    "message": "איבדת גישה לכל ספקי האימות הדו-שלבי שלך? השתמש בקוד האימות כדי לבטל את הספקים הקיימים מתוך החשבון שלך."
+    "message": "איבדת גישה לכל ספקי האימות הדו-שלבי שלך? השתמש בקוד שחזור כדי לבטל את כל הספקים הקיימים בחשבונך."
   },
   "recoveryCodeTitle": {
     "message": "קוד שחזור"
@@ -660,7 +660,7 @@
     "message": "FIDO2 WebAuthn"
   },
   "webAuthnDesc": {
-    "message": "השתמש בכל מפתח אבטחה המותאם ל- WebAuthn כדי לגשת לחשבונך."
+    "message": "השתמש במפתח אבטחה התומך בWebAuthn כדי לגשת לחשבונך."
   },
   "emailTitle": {
     "message": "אימייל"
@@ -672,7 +672,7 @@
     "message": "פרטי כניסה לא זמינים"
   },
   "noTwoStepProviders": {
-    "message": "כניסה דו-שלבית פעילה בחשבון זה, אך אף אחד מספקי הכניסה הדו-שלבית לא נתמכים במכשיר זה."
+    "message": "בחשבון זה כניסה דו-שלבית מאופשרת, אך כל ספקי הכניסה שהוגדרו, לא נתמכים במכשיר זה."
   },
   "noTwoStepProviders2": {
     "message": "אנא הוסף ספקים אחרים שיש להם תמיכה במכשירים נוספים (לדוגמא - אפליקציית אימות)."
@@ -711,7 +711,7 @@
     "message": "כתובת שרת אייקונים"
   },
   "environmentSaved": {
-    "message": "כתובות הסביבה נשמרו."
+    "message": "כתובות הסביבה נשמרו"
   },
   "ok": {
     "message": "אישור"
@@ -744,13 +744,13 @@
     "message": "התנתק"
   },
   "addNewLogin": {
-    "message": "הוסף פרטי כניסה חדשה"
+    "message": "פרטי התחברות חדשים"
   },
   "addNewItem": {
-    "message": "הוספת פריט חדש"
+    "message": "פריט חדש"
   },
   "addNewFolder": {
-    "message": "הוספת תיקייה חדשה"
+    "message": "תיקייה חדשה"
   },
   "view": {
     "message": "הצג"
@@ -762,19 +762,19 @@
     "message": "טוען..."
   },
   "lockVault": {
-    "message": "נעילת כספת"
+    "message": "נעל את הכספת"
   },
   "passwordGenerator": {
     "message": "יוצר הסיסמאות"
   },
   "contactUs": {
-    "message": "יצירת קשר אתנו"
+    "message": "צור קשר"
   },
   "helpAndFeedback": {
     "message": "עזרה ומשוב"
   },
   "getHelp": {
-    "message": "קבלת עזרה"
+    "message": "קבל עזרה"
   },
   "fileBugReport": {
     "message": "דווח על באג"
@@ -786,7 +786,7 @@
     "message": "עקוב אחרינו"
   },
   "syncVault": {
-    "message": "סנכרן כספת"
+    "message": "סנכרון כספת"
   },
   "changeMasterPass": {
     "message": "החלף סיסמה ראשית"
@@ -818,7 +818,7 @@
     "message": "הסינכרון נכשל"
   },
   "yourVaultIsLocked": {
-    "message": "הכספת שלך נעולה. הזן את הסיסמה הראשית שלך כדי להמשיך."
+    "message": "הכספת שלך נעולה. אמת את זהותך כדי להמשיך."
   },
   "unlock": {
     "message": "בטל נעילה"
@@ -840,13 +840,13 @@
     "message": "סיסמה ראשית שגויה"
   },
   "twoStepLoginConfirmation": {
-    "message": "התחברות בשני-שלבים הופכת את החשבון שלך למאובטח יותר בכך שאתה נדרש לוודא בכל כניסה בעזרת מכשיר אחר כדוגמת מפתח אבטחה, תוכנת אימות, SMS, שיחת טלפון, או אימייל. ניתן להפעיל את \"התחברות בשני-שלבים\" בכספת שבאתר bitwarden.com. האם ברצונך לפתוח את האתר כעת?"
+    "message": "אימות דו שלבי הופך את החשבון שלך למאובטח יותר בכך שתצטרך לאשר התחברות בעזרת מפתח אבטחה, תוכנת אימות, SMS, שיחת טלפון, או אימייל. ניתן להפעיל את \"אימות דו שלבי\" בכספת שבאתר bitwarden.com. האם ברצונך לפתוח את האתר כעת?"
   },
   "twoStepLogin": {
-    "message": "התחברות בשני-שלבים"
+    "message": "אימות דו שלבי להתחברות"
   },
   "vaultTimeout": {
-    "message": "משך זמן מירבי עבור חיבור לכספת"
+    "message": "סגירת כספת אוטומטית"
   },
   "vaultTimeoutDesc": {
     "message": "בחר כמה זמן יעבור כדי שהכספת תסגר לאחר חוסר פעילות ותבצע את הפעולה שנבחרה."
@@ -914,7 +914,7 @@
     "message": "הצג סמלים של אתרי האינטרננט"
   },
   "faviconDesc": {
-    "message": "בכל נסיון התחברות הצג תמונה לזיהוי."
+    "message": "הצג תמונה מוכרת בכל נסיון התחברות."
   },
   "enableMinToTray": {
     "message": "מזער למגש המערכת"
@@ -923,10 +923,10 @@
     "message": "בלחיצה על מזעור החלון, יופיע אייקון במגש המערכת (לרוב, ליד השעון)."
   },
   "enableMinToMenuBar": {
-    "message": "מזער למגש המערכת"
+    "message": "מזער לשורת התפריטים"
   },
   "enableMinToMenuBarDesc": {
-    "message": "במזעור חלון, הצג סמל במגש המערכת."
+    "message": "בלחיצה על מזעור החלון, יופיע אייקון בשורת התפריטים."
   },
   "enableCloseToTray": {
     "message": "סגור למגש המערכת"
@@ -935,10 +935,10 @@
     "message": "בלחיצה על סגירת החלון, יופיע אייקון במגש המערכת (לרוב, ליד השעון)."
   },
   "enableCloseToMenuBar": {
-    "message": "סגור למגש המערכת"
+    "message": "סגור לשורת התפריטים"
   },
   "enableCloseToMenuBarDesc": {
-    "message": "בעת סגירת חלון, הצג סמל במגש המערכת."
+    "message": "בעת סגירת חלון, הצג סמל בשורת התפריטים."
   },
   "enableTray": {
     "message": "אפשר אייקון במגש המערכת"
@@ -1272,7 +1272,7 @@
     "message": "הסתר למגש המערכת"
   },
   "alwaysOnTop": {
-    "message": "תמיד מעל כל החלונות",
+    "message": "תמיד עליון",
     "description": "Application window should always stay on top of other windows"
   },
   "dateUpdated": {
@@ -1291,28 +1291,28 @@
     "message": "יצוא כספת"
   },
   "fileFormat": {
-    "message": "פורמט קובץ"
+    "message": "תבנית קובץ"
   },
   "hCaptchaUrl": {
     "message": "כתובת אתר hCaptcha",
     "description": "hCaptcha is the name of a website, should not be translated"
   },
   "loadAccessibilityCookie": {
-    "message": "טען עוגיות נגישות Cookie"
+    "message": "טען עוגיית נגישות"
   },
   "registerAccessibilityUser": {
     "message": "הירשם כמשתמש נגישות ב-",
     "description": "ex. Register as an accessibility user at hcaptcha.com"
   },
   "copyPasteLink": {
-    "message": "Copy והדבק את הקישור sent ל-email שלך למטה"
+    "message": "העתק והדבק את הקישור שנשלח לאימייל שלך"
   },
   "enterhCaptchaUrl": {
-    "message": "הזן את כתובת האתר לטעינת קובץ Cookie של נגישות עבור hCaptcha",
+    "message": "הזן את כתובת האתר לטעינת עוגיית נגישות עבור hCaptcha",
     "description": "hCaptcha is the name of a website, should not be translated"
   },
   "hCaptchaUrlRequired": {
-    "message": "נדרשת כתובת אתר hCaptcha",
+    "message": "יש להזין את כתובת האתר hCaptcha",
     "description": "hCaptcha is the name of a website, should not be translated"
   },
   "invalidUrl": {
@@ -1322,10 +1322,10 @@
     "message": "בוצע"
   },
   "accessibilityCookieSaved": {
-    "message": "קובץ Cookie הנגישות נשמר!"
+    "message": "עוגיית הנגישות נשמרה!"
   },
   "noAccessibilityCookieSaved": {
-    "message": "לא נשמרה קובץ Cookie של נגישות"
+    "message": "עוגיית הנגישות לא נשמרה"
   },
   "warning": {
     "message": "אזהרה",
@@ -1338,7 +1338,7 @@
     "message": "הקובץ מכיל את פרטי הכספת שלך בפורמט לא מוצפן. מומלץ להעביר את הקובץ רק בדרכים מוצפנות, ומאוד לא מומלץ לשמור או לשלוח את הקובץ הזה בדרכים לא מוצפנות (כדוגמת סתם אימייל). מחק את הקובץ מיד לאחר שסיימת את השימוש בו."
   },
   "encExportKeyWarningDesc": {
-    "message": "ייצוא זה מצפין את הנתונים שלך באמצעות מפתח ההצפנה של חשבונך. אם אי פעם תחדש את מפתח ההצפנה עבור חשבונך, יהיה עליך לייצא שוב מכיוון שלא תוכל לפענח מקובץ ייצוא זה."
+    "message": "יצוא זה מצפין את המידע שלך בעזרת מפתח ההצפנה הנוכחי שלך. אם תחליף (rotate) את מפתחות ההצפנה של החשבון שלך, עליך לבצע ייצוא חדש משום שלא תוכל לפענח את הקובץ הקיים."
   },
   "encExportAccountWarningDesc": {
     "message": "מפתחות הצפנת חשבון ייחודיים לכל חשבון משתמש של Bitwarden, כך שלא ניתן לייבא ייצוא מוצפן לחשבון אחר."
@@ -1408,10 +1408,10 @@
     "message": "פתח את הכספת שלך"
   },
   "autoPromptWindowsHello": {
-    "message": "הצג בקשה של Windows Hello בעת האתחול"
+    "message": "הצג את Windows Hello בפתיחת האפליקציה"
   },
   "autoPromptTouchId": {
-    "message": "הצג בקשה של Touch ID בעת האתחול"
+    "message": "הצג בקשה של Touch ID בפתיחת האפליקציה"
   },
   "requirePasswordOnStart": {
     "message": "Require password or PIN on app start"
@@ -1426,10 +1426,10 @@
     "message": "מחק חשבון"
   },
   "deleteAccountDesc": {
-    "message": "המשך למטה כדי למחוק את חשבונך ואת כל נתוני הכספת."
+    "message": "המשך כאן בכדי למחוק את החשבון שלך וכל המידע שבכספת."
   },
   "deleteAccountWarning": {
-    "message": "מחיקת החשבון שלך היא לצמיתות. אי אפשר לבטל את זה."
+    "message": "מחיקת חשבון היא פעולה בלתי הפיכה."
   },
   "accountDeleted": {
     "message": "החשבון נמחק"
@@ -1441,13 +1441,13 @@
     "message": "העדפות"
   },
   "enableMenuBar": {
-    "message": "אפשר אייקון בתפריט"
+    "message": "הצג אייקון בשורת התפריטים"
   },
   "enableMenuBarDesc": {
     "message": "הצג תמיד אייקון בתפריט."
   },
   "hideToMenuBar": {
-    "message": "הסתר לתפריט"
+    "message": "הסתר לשורת התפריטים"
   },
   "selectOneCollection": {
     "message": "עליך לבחור לפחות אוסף אחד."
@@ -1487,10 +1487,10 @@
     "message": "פעולה לביצוע בכספת בתום זמן החיבור"
   },
   "vaultTimeoutActionLockDesc": {
-    "message": "כספת נעולה דורשת שתזין את הסיסמה הראשית בכדי לגשת לפרטים שבתוכה."
+    "message": "יש להשתמש בסיסמה הראשית או בשיטת פתיחה אחרת כדי לגשת לכספת שוב."
   },
   "vaultTimeoutActionLogOutDesc": {
-    "message": "בכדי לקבל גישה לכספת שיצאו ממנה, יש לבצע אימות מחדש."
+    "message": "יש לבצע אימות מחדש כדי לגשת לכספת שוב."
   },
   "lock": {
     "message": "נעילה",

@@ -594,10 +594,10 @@
     "message": "Turpināt"
   },
   "enterVerificationCodeApp": {
-    "message": "Ievadi 6 ciparu apstiprinājuma kodu no autentificētāja lietotnes!"
+    "message": "Jāievada 6 ciparu apstiprinājuma kods no autentificētāja lietotnes."
   },
   "enterVerificationCodeEmail": {
-    "message": "Ievadi 6 ciparu apstiprinājuma kodu, kas tika nosūtīts uz $EMAIL$!",
+    "message": "Jāievada 6 ciparu apstiprinājuma kods, kas tika nosūtīts uz $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -2095,7 +2095,7 @@
     "message": "Atcerēties e-pasta adresi"
   },
   "notYou": {
-    "message": "Tas neesat Jūs?"
+    "message": "Tas neesi Tu?"
   },
   "newAroundHere": {
     "message": "Jauns šeit?"

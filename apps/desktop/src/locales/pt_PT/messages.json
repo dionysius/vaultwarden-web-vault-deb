@@ -233,7 +233,7 @@
     "message": "Sr."
   },
   "mrs": {
-    "message": "Sra."
+    "message": "Sr.ª"
   },
   "ms": {
     "message": "Menina"
@@ -2021,17 +2021,17 @@
     "message": "Tipo de nome de utilizador"
   },
   "plusAddressedEmail": {
-    "message": "Plus addressed email",
+    "message": "E-mail com subendereço",
     "description": "Username generator option that appends a random sub-address to the username. For example: address+subaddress@email.com"
   },
   "plusAddressedEmailDesc": {
-    "message": "Use your email provider's sub-addressing capabilities."
+    "message": "Utilize as capacidades de subendereçamento do seu fornecedor de e-mail."
   },
   "catchallEmail": {
-    "message": "Catch-all email"
+    "message": "E-mail de captura geral"
   },
   "catchallEmailDesc": {
-    "message": "Use your domain's configured catch-all inbox."
+    "message": "Utilize a caixa de entrada de captura geral configurada para o seu domínio."
   },
   "random": {
     "message": "Aleatório"
