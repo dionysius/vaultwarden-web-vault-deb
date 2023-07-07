@@ -6624,13 +6624,13 @@
     "message": "ベータ版シークレットマネージャー"
   },
   "secretsManager": {
-    "message": "Secrets Manager"
+    "message": "シークレットマネージャー"
   },
-  "secretsManagerAccessDesc": {
-    "message": "Enable user access to Secrets Manager."
+  "secretsManagerAccessDescription": {
+    "message": "シークレットマネージャーへのユーザーのアクセスを有効にします。"
   },
   "userAccessSecretsManagerGA": {
-    "message": "This user can access Secrets Manager"
+    "message": "このユーザーはシークレットマネージャーにアクセスできます"
   },
   "important": {
     "message": "重要"
@@ -6858,19 +6858,19 @@
   "updatedTempPassword": {
     "message": "ユーザーはアカウント回復で発行されたパスワードを更新しました。"
   },
-  "enabledAccessToSecretsManager": {
-    "message": "Enabled access to Secrets Manager",
+  "activatedAccessToSecretsManager": {
+    "message": "シークレットマネージャーへのアクセスを有効にしました",
     "description": "Confirmation message that one or more users gained access to Secrets Manager"
   },
-  "enableAccess": {
-    "message": "Enable access"
+  "activateAccess": {
+    "message": "アクセスを有効化"
   },
   "bulkEnableSecretsManagerDescription": {
-    "message": "Grant the following members access to Secrets Manager. The role granted in the Password Manager will apply to Secrets Manager.",
+    "message": "次のメンバーへシークレットマネージャーへのアクセスを許可します。パスワードマネージャーに与えられた役割はシークレットマネージャーに適用されます。",
     "description": "This description is shown to an admin when they are attempting to add more users to Secrets Manager."
   },
-  "enableSecretsManager": {
-    "message": "Enable Secrets Manager"
+  "activateSecretsManager": {
+    "message": "シークレットマネージャーを有効化"
   },
   "yourOrganizationsFingerprint": {
     "message": "組織のフィンガープリントフレーズ",
@@ -6929,5 +6929,26 @@
   },
   "removeMembersWithoutMasterPasswordWarning": {
     "message": "マスターパスワードを設定せずにマスターパスワードを持たないメンバーを削除すると、フルアカウントへのアクセスが制限される可能性があります。"
+  },
+  "startYour7DayFreeTrialOfBitwardenFor": {
+    "message": "$ORG$ 向けの Bitwarden 7日間無料トライアルを開始",
+    "placeholders": {
+      "org": {
+        "content": "$1",
+        "example": "Organization name"
+      }
+    }
+  },
+  "next": {
+    "message": "次へ"
+  },
+  "usFlag": {
+    "message": "アメリカ"
+  },
+  "euFlag": {
+    "message": "EU"
+  },
+  "selectedRegionFlag": {
+    "message": "リージョン選択"
   }
 }

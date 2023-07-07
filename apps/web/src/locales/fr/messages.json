@@ -6626,7 +6626,7 @@
   "secretsManager": {
     "message": "Secrets Manager"
   },
-  "secretsManagerAccessDesc": {
+  "secretsManagerAccessDescription": {
     "message": "Activer l'accès utilisateur au Secrets Manager."
   },
   "userAccessSecretsManagerGA": {
@@ -6858,18 +6858,18 @@
   "updatedTempPassword": {
     "message": "L'utilisateur a mis à jour un mot de passe émis lors de la récupération du compte."
   },
-  "enabledAccessToSecretsManager": {
+  "activatedAccessToSecretsManager": {
     "message": "Accès au Secrets Manager activé",
     "description": "Confirmation message that one or more users gained access to Secrets Manager"
   },
-  "enableAccess": {
-    "message": "Activer l'accès"
+  "activateAccess": {
+    "message": "Activer l’accès"
   },
   "bulkEnableSecretsManagerDescription": {
     "message": "Accorder aux membres suivants l'accès au Secrets Manager. Le rôle accordé dans le gestionnaire de mots de passe s'appliquera au Secrets Manager.",
     "description": "This description is shown to an admin when they are attempting to add more users to Secrets Manager."
   },
-  "enableSecretsManager": {
+  "activateSecretsManager": {
     "message": "Activer Secrets Manager"
   },
   "yourOrganizationsFingerprint": {
@@ -6929,5 +6929,26 @@
   },
   "removeMembersWithoutMasterPasswordWarning": {
     "message": "La suppression des membres qui n'ont pas de mot de passe principal sans leur en définir un, peut restreindre l'accès à leur compte dans son intégralité."
+  },
+  "startYour7DayFreeTrialOfBitwardenFor": {
+    "message": "Commencez votre essai gratuit de 7 jours de Bitwarden pour $ORG$",
+    "placeholders": {
+      "org": {
+        "content": "$1",
+        "example": "Organization name"
+      }
+    }
+  },
+  "next": {
+    "message": "Suivant"
+  },
+  "usFlag": {
+    "message": "Drapeau des États-Unis"
+  },
+  "euFlag": {
+    "message": "Drapeau de l'Union Européenne"
+  },
+  "selectedRegionFlag": {
+    "message": "Drapeau de la région sélectionnée"
   }
 }

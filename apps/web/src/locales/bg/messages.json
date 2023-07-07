@@ -6624,13 +6624,13 @@
     "message": "Управление на тайни (Бета)"
   },
   "secretsManager": {
-    "message": "Secrets Manager"
+    "message": "Управление на тайни"
   },
-  "secretsManagerAccessDesc": {
-    "message": "Enable user access to Secrets Manager."
+  "secretsManagerAccessDescription": {
+    "message": "Activate user access to Secrets Manager."
   },
   "userAccessSecretsManagerGA": {
-    "message": "This user can access Secrets Manager"
+    "message": "Този потребител има достъп до Управлението на тайни"
   },
   "important": {
     "message": "Важно:"
@@ -6858,19 +6858,19 @@
   "updatedTempPassword": {
     "message": "Потребителят промени парола издадена чрез възстановяването на профили."
   },
-  "enabledAccessToSecretsManager": {
-    "message": "Enabled access to Secrets Manager",
+  "activatedAccessToSecretsManager": {
+    "message": "Activated access to Secrets Manager",
     "description": "Confirmation message that one or more users gained access to Secrets Manager"
   },
-  "enableAccess": {
-    "message": "Enable access"
+  "activateAccess": {
+    "message": "Activate access"
   },
   "bulkEnableSecretsManagerDescription": {
-    "message": "Grant the following members access to Secrets Manager. The role granted in the Password Manager will apply to Secrets Manager.",
+    "message": "Дайте на следните членове достъп до Управлението на тайни. Ролята, която всеки от тях има в Управителя на пароли, ще се приложи и в Управлението на тайни.",
     "description": "This description is shown to an admin when they are attempting to add more users to Secrets Manager."
   },
-  "enableSecretsManager": {
-    "message": "Enable Secrets Manager"
+  "activateSecretsManager": {
+    "message": "Activate Secrets Manager"
   },
   "yourOrganizationsFingerprint": {
     "message": "Уникална фраза, идентифицираща организацията ви",
@@ -6929,5 +6929,26 @@
   },
   "removeMembersWithoutMasterPasswordWarning": {
     "message": "Ако премахвате членове без да настроите главни пароли за тях, те може да загубят пълния достъп до регистрациите си."
+  },
+  "startYour7DayFreeTrialOfBitwardenFor": {
+    "message": "Започнете свой безплатен 7-дневен пробен период на Битуорден за $ORG$",
+    "placeholders": {
+      "org": {
+        "content": "$1",
+        "example": "Organization name"
+      }
+    }
+  },
+  "next": {
+    "message": "Next"
+  },
+  "usFlag": {
+    "message": "Знаме на САЩ"
+  },
+  "euFlag": {
+    "message": "Знаме на ЕС"
+  },
+  "selectedRegionFlag": {
+    "message": "Знаме на избрания регион"
   }
 }

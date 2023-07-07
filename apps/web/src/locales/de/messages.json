@@ -6626,11 +6626,11 @@
   "secretsManager": {
     "message": "Secrets Manager"
   },
-  "secretsManagerAccessDesc": {
-    "message": "Benutzerzugriff auf Secrets Manager aktivieren."
+  "secretsManagerAccessDescription": {
+    "message": "Activate user access to Secrets Manager."
   },
   "userAccessSecretsManagerGA": {
-    "message": "Dieser Benutzer kann auf Secrets Manager zugreifen"
+    "message": "Dieser Benutzer kann auf Secrets Manager zugreifen."
   },
   "important": {
     "message": "Wichtig:"
@@ -6858,19 +6858,19 @@
   "updatedTempPassword": {
     "message": "Der Benutzer hat ein Passwort aktualisiert, das durch die Kontowiederherstellung ausgestellt wurde."
   },
-  "enabledAccessToSecretsManager": {
-    "message": "Zugriff auf Secrets Manager aktiviert",
+  "activatedAccessToSecretsManager": {
+    "message": "Activated access to Secrets Manager",
     "description": "Confirmation message that one or more users gained access to Secrets Manager"
   },
-  "enableAccess": {
-    "message": "Zugriff aktivieren"
+  "activateAccess": {
+    "message": "Activate access"
   },
   "bulkEnableSecretsManagerDescription": {
     "message": "Den folgenden Mitgliedern Zugriff auf Secrets Manager gewähren. Die im Passwort-Manager zugewiesene Rolle wird auf Secrets Manager angewendet.",
     "description": "This description is shown to an admin when they are attempting to add more users to Secrets Manager."
   },
-  "enableSecretsManager": {
-    "message": "Secrets Manager aktivieren"
+  "activateSecretsManager": {
+    "message": "Activate Secrets Manager"
   },
   "yourOrganizationsFingerprint": {
     "message": "Fingerabdruck-Phrase deiner Organisation",
@@ -6929,5 +6929,26 @@
   },
   "removeMembersWithoutMasterPasswordWarning": {
     "message": "Mitglieder ohne Master-Passwort zu entfernen, ohne ein solches zu setzen, kann den Zugang zu deren gesamtem Konto einschränken."
+  },
+  "startYour7DayFreeTrialOfBitwardenFor": {
+    "message": "Starte deine 7-tägige kostenlose Testversion von Bitwarden für $ORG$",
+    "placeholders": {
+      "org": {
+        "content": "$1",
+        "example": "Organization name"
+      }
+    }
+  },
+  "next": {
+    "message": "Weiter"
+  },
+  "usFlag": {
+    "message": "US-Flagge"
+  },
+  "euFlag": {
+    "message": "EU-Flagge"
+  },
+  "selectedRegionFlag": {
+    "message": "Flagge der ausgewählten Region"
   }
 }

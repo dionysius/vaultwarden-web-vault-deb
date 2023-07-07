@@ -6626,11 +6626,11 @@
   "secretsManager": {
     "message": "Secrets Manager"
   },
-  "secretsManagerAccessDesc": {
-    "message": "Enable user access to Secrets Manager."
+  "secretsManagerAccessDescription": {
+    "message": "Activate user access to Secrets Manager."
   },
   "userAccessSecretsManagerGA": {
-    "message": "This user can access Secrets Manager"
+    "message": "Tento používateľ má prístup k Secrets Manager"
   },
   "important": {
     "message": "Dôležité:"
@@ -6858,19 +6858,19 @@
   "updatedTempPassword": {
     "message": "Použivateľ aktualizoval heslo ktoré bolo vydané pri obnove konta."
   },
-  "enabledAccessToSecretsManager": {
-    "message": "Enabled access to Secrets Manager",
+  "activatedAccessToSecretsManager": {
+    "message": "Activated access to Secrets Manager",
     "description": "Confirmation message that one or more users gained access to Secrets Manager"
   },
-  "enableAccess": {
-    "message": "Enable access"
+  "activateAccess": {
+    "message": "Activate access"
   },
   "bulkEnableSecretsManagerDescription": {
-    "message": "Grant the following members access to Secrets Manager. The role granted in the Password Manager will apply to Secrets Manager.",
+    "message": "Povoliť následujúcim členom prístup k Secrets Manager. Rola udelená v správcovi hesiel bude aplikovaná aj na Secrets Manager.",
     "description": "This description is shown to an admin when they are attempting to add more users to Secrets Manager."
   },
-  "enableSecretsManager": {
-    "message": "Enable Secrets Manager"
+  "activateSecretsManager": {
+    "message": "Activate Secrets Manager"
   },
   "yourOrganizationsFingerprint": {
     "message": "Fráza odtlačku vašej organizácie",
@@ -6929,5 +6929,26 @@
   },
   "removeMembersWithoutMasterPasswordWarning": {
     "message": "Removing members who do not have master passwords without setting one for them may restrict access to their full account."
+  },
+  "startYour7DayFreeTrialOfBitwardenFor": {
+    "message": "Začnite 7-dňovú skúšobnú dobu Bitwardenu zadarmo pre $ORG$",
+    "placeholders": {
+      "org": {
+        "content": "$1",
+        "example": "Organization name"
+      }
+    }
+  },
+  "next": {
+    "message": "Ďalej"
+  },
+  "usFlag": {
+    "message": "Vlajka USA"
+  },
+  "euFlag": {
+    "message": "Vlajka EU"
+  },
+  "selectedRegionFlag": {
+    "message": "Selected region flag"
   }
 }

@@ -6626,8 +6626,8 @@
   "secretsManager": {
     "message": "Secrets Manager"
   },
-  "secretsManagerAccessDesc": {
-    "message": "Gebruikerstoegang tot Secrets Manager inschakelen."
+  "secretsManagerAccessDescription": {
+    "message": "Activate user access to Secrets Manager."
   },
   "userAccessSecretsManagerGA": {
     "message": "Deze gebruiker heeft toegang tot Secrets Manager"
@@ -6858,19 +6858,19 @@
   "updatedTempPassword": {
     "message": "Gebruiker heeft een via accountherstel uitgegeven wachtwoord bijgewerkt."
   },
-  "enabledAccessToSecretsManager": {
-    "message": "Toegang tot Secrets Manager ingeschakeld",
+  "activatedAccessToSecretsManager": {
+    "message": "Activated access to Secrets Manager",
     "description": "Confirmation message that one or more users gained access to Secrets Manager"
   },
-  "enableAccess": {
-    "message": "Toegang inschakelen"
+  "activateAccess": {
+    "message": "Activate access"
   },
   "bulkEnableSecretsManagerDescription": {
     "message": "Geef de volgende leden toegang tot de Secrets Manager. De rol die is toegekend in de Password Manager zal van toepassing zijn op de Secrets Manager.",
     "description": "This description is shown to an admin when they are attempting to add more users to Secrets Manager."
   },
-  "enableSecretsManager": {
-    "message": "Secrets Manager inschakelen"
+  "activateSecretsManager": {
+    "message": "Activate Secrets Manager"
   },
   "yourOrganizationsFingerprint": {
     "message": "De vingerafdrukzin van je organisatie",
@@ -6929,5 +6929,26 @@
   },
   "removeMembersWithoutMasterPasswordWarning": {
     "message": "Het verwijderen van leden die geen hoofdwachtwoorden hebben zonder er een in te stellen, kan de toegang tot hun volledige account beperken."
+  },
+  "startYour7DayFreeTrialOfBitwardenFor": {
+    "message": "Begin je 7-daagse gratis Bitwarden-proefperiode voor $ORG$",
+    "placeholders": {
+      "org": {
+        "content": "$1",
+        "example": "Organization name"
+      }
+    }
+  },
+  "next": {
+    "message": "Volgende"
+  },
+  "usFlag": {
+    "message": "VS-vlag"
+  },
+  "euFlag": {
+    "message": "EU-vlag"
+  },
+  "selectedRegionFlag": {
+    "message": "Geselecteerde regionale vlag"
   }
 }

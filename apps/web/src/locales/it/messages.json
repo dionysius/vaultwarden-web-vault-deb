@@ -6626,8 +6626,8 @@
   "secretsManager": {
     "message": "Gestore dei Segreti"
   },
-  "secretsManagerAccessDesc": {
-    "message": "Abilita l'accesso utente al Gestore dei Segreti."
+  "secretsManagerAccessDescription": {
+    "message": "Activate user access to Secrets Manager."
   },
   "userAccessSecretsManagerGA": {
     "message": "Questo utente può accedere al Gestore dei Segreti"
@@ -6858,19 +6858,19 @@
   "updatedTempPassword": {
     "message": "L'utente ha aggiornato una password emessa tramite il recupero dell'account."
   },
-  "enabledAccessToSecretsManager": {
-    "message": "Accesso al Gestore dei Segreti abilitato",
+  "activatedAccessToSecretsManager": {
+    "message": "Activated access to Secrets Manager",
     "description": "Confirmation message that one or more users gained access to Secrets Manager"
   },
-  "enableAccess": {
-    "message": "Abilita accesso"
+  "activateAccess": {
+    "message": "Activate access"
   },
   "bulkEnableSecretsManagerDescription": {
     "message": "Concedi ai seguenti membri l'accesso al Gestore dei Segreti. Il ruolo concesso nel gestore di password si applicherà al Gestore dei Segreti.",
     "description": "This description is shown to an admin when they are attempting to add more users to Secrets Manager."
   },
-  "enableSecretsManager": {
-    "message": "Abilita Gestore dei Segreti"
+  "activateSecretsManager": {
+    "message": "Activate Secrets Manager"
   },
   "yourOrganizationsFingerprint": {
     "message": "Frase impronta della tua organizzazione",
@@ -6929,5 +6929,26 @@
   },
   "removeMembersWithoutMasterPasswordWarning": {
     "message": "Rimuovere membri che non hanno una password principali senza impostarne una per loro potrebbe limitare l'accesso al loro account completo."
+  },
+  "startYour7DayFreeTrialOfBitwardenFor": {
+    "message": "Inizia la tua prova gratis di 7 giorni di Bitwarden per $ORG$",
+    "placeholders": {
+      "org": {
+        "content": "$1",
+        "example": "Organization name"
+      }
+    }
+  },
+  "next": {
+    "message": "Avanti"
+  },
+  "usFlag": {
+    "message": "Bandiera degli Stati Uniti"
+  },
+  "euFlag": {
+    "message": "Bandiera dell'Europa"
+  },
+  "selectedRegionFlag": {
+    "message": "Bandiera della regione selezionata"
   }
 }

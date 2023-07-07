@@ -965,13 +965,13 @@
     "message": "Пацвердзіць экспартаванне сховішча"
   },
   "confirmSecretsExport": {
-    "message": "Confirm secrets export"
+    "message": "Пацвердзіць экспартаванне сакрэтаў"
   },
   "exportWarningDesc": {
     "message": "Пры экспартаванні файл утрымлівае даныя вашага сховішча ў незашыфраваным фармаце. Яго не варта захоўваць або адпраўляць па неабароненых каналах (напрыклад, па электроннай пошце). Выдаліце яго адразу пасля выкарыстання."
   },
   "exportSecretsWarningDesc": {
-    "message": "This export contains your secrets data in an unencrypted format. You should not store or send the exported file over unsecure channels (such as email). Delete it immediately after you are done using it."
+    "message": "Пры экспартаванні файл утрымлівае даныя вашых сакрэтаў у незашыфраваным фармаце. Іх не варта захоўваць або адпраўляць па неабароненых каналах (напрыклад, па электроннай пошце). Выдаліце іх адразу пасля выкарыстання."
   },
   "encExportKeyWarningDesc": {
     "message": "Пры экспартаванні даныя шыфруюцца з дапамогай ключа шыфравання ўліковага запісу. Калі вы калі-небудзь зменіце ключ шыфравання ўліковага запісу, вам неабходна будзе экспартаваць даныя паўторна, паколькі вы не зможаце расшыфраваць гэты файл экспартавання."
@@ -986,7 +986,7 @@
     "message": "Экспартаваць сховішча"
   },
   "exportSecrets": {
-    "message": "Export secrets"
+    "message": "Экспартаванне сакрэтаў"
   },
   "fileFormat": {
     "message": "Фармат файла"
@@ -6624,13 +6624,13 @@
     "message": "Менеджар сакрэтаў (бэта-версія)"
   },
   "secretsManager": {
-    "message": "Secrets Manager"
+    "message": "Менеджар сакрэтаў"
   },
-  "secretsManagerAccessDesc": {
-    "message": "Enable user access to Secrets Manager."
+  "secretsManagerAccessDescription": {
+    "message": "Activate user access to Secrets Manager."
   },
   "userAccessSecretsManagerGA": {
-    "message": "This user can access Secrets Manager"
+    "message": "Гэты карыстальнік можа атрымаць доступ да менеджара сакрэтаў"
   },
   "important": {
     "message": "Важна:"
@@ -6858,19 +6858,19 @@
   "updatedTempPassword": {
     "message": "Карыстальнік абнавіў пароль пры аднаўленні ўліковага запісу."
   },
-  "enabledAccessToSecretsManager": {
-    "message": "Enabled access to Secrets Manager",
+  "activatedAccessToSecretsManager": {
+    "message": "Activated access to Secrets Manager",
     "description": "Confirmation message that one or more users gained access to Secrets Manager"
   },
-  "enableAccess": {
-    "message": "Enable access"
+  "activateAccess": {
+    "message": "Activate access"
   },
   "bulkEnableSecretsManagerDescription": {
-    "message": "Grant the following members access to Secrets Manager. The role granted in the Password Manager will apply to Secrets Manager.",
+    "message": "Забяспечце доступ наступным удзельнікам да менеджара сакрэтаў. Роля, якая забяспечана ў менеджары пароляў будзе ўжывацца і да менеджара сакрэтаў.",
     "description": "This description is shown to an admin when they are attempting to add more users to Secrets Manager."
   },
-  "enableSecretsManager": {
-    "message": "Enable Secrets Manager"
+  "activateSecretsManager": {
+    "message": "Activate Secrets Manager"
   },
   "yourOrganizationsFingerprint": {
     "message": "Фраза адбітку пальца вашай арганізацыі",
@@ -6929,5 +6929,26 @@
   },
   "removeMembersWithoutMasterPasswordWarning": {
     "message": "Выдаленне ўдзельнікаў у якіх адсутнічае асноўны пароль і для якіх ён не быў прызначаны папярэдне можа стаць прычынай абмежавання доступу да іх уліковага запісу."
+  },
+  "startYour7DayFreeTrialOfBitwardenFor": {
+    "message": "Пачніце 7-дзённую бясплатную пробную версію для $ORG$",
+    "placeholders": {
+      "org": {
+        "content": "$1",
+        "example": "Organization name"
+      }
+    }
+  },
+  "next": {
+    "message": "Далей"
+  },
+  "usFlag": {
+    "message": "Сцяг ЗША"
+  },
+  "euFlag": {
+    "message": "Сцяг ЕС"
+  },
+  "selectedRegionFlag": {
+    "message": "Сцяг выбранага рэгіёна"
   }
 }

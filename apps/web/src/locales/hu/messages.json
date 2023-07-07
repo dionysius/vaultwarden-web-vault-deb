@@ -2667,10 +2667,10 @@
     "message": "A bejelentkezés meghiúsult hibás kétlépcsős bejelentkezés miatt."
   },
   "incorrectPassword": {
-    "message": "Incorrect password"
+    "message": "Helytelen jelszó"
   },
   "incorrectCode": {
-    "message": "Incorrect code"
+    "message": "Helytelen kód"
   },
   "exportedVault": {
     "message": "A széf exportálásra került."
@@ -6626,8 +6626,8 @@
   "secretsManager": {
     "message": "Titkos kód kezelő"
   },
-  "secretsManagerAccessDesc": {
-    "message": "A felhasználói hozzáférés engedélyezése a Titkos kód kezelőhöz."
+  "secretsManagerAccessDescription": {
+    "message": "Activate user access to Secrets Manager."
   },
   "userAccessSecretsManagerGA": {
     "message": "Ez a felhasználó elérheti a Titkos kód kezelőt"
@@ -6858,59 +6858,59 @@
   "updatedTempPassword": {
     "message": "A felhasználó frissítette a fiók helyreállítás során kiadott jelszót."
   },
-  "enabledAccessToSecretsManager": {
-    "message": "Hozzáférés engedélyezése a Titkós kód kezelőhöz",
+  "activatedAccessToSecretsManager": {
+    "message": "Activated access to Secrets Manager",
     "description": "Confirmation message that one or more users gained access to Secrets Manager"
   },
-  "enableAccess": {
-    "message": "Hozzáférés engedélyezése"
+  "activateAccess": {
+    "message": "Activate access"
   },
   "bulkEnableSecretsManagerDescription": {
     "message": "Hozzáférés kiosztása a következő tagoknak a Titkos kód kezelőhöz.. A Jelszókezelőben megadott szerepkör a Titkos kód kezelőre vonatkozik.",
     "description": "This description is shown to an admin when they are attempting to add more users to Secrets Manager."
   },
-  "enableSecretsManager": {
-    "message": "Titkos kód kezelő engedélyezése"
+  "activateSecretsManager": {
+    "message": "Activate Secrets Manager"
   },
   "yourOrganizationsFingerprint": {
     "message": "A szervezet ujjnyomat kifejezése",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their organization's public key with another user, for the purposes of sharing."
   },
   "deviceApprovals": {
-    "message": "Device approvals"
+    "message": "Eszköz jóváhagyása"
   },
   "deviceApprovalsDesc": {
-    "message": "Approve login requests below to allow the requesting member to finish logging in. Unapproved requests expire after 1 week. Verify the member’s information before approving."
+    "message": "Az alábbiakban hagyja jóvá a bejelentkezési kérelmeket, hogy a kérelmező tag befejezhesse a bejelentkezést. A jóvá nem hagyott kérelmek 1 hét után lejárnak. A jóváhagyás előtt ellenőrizze a tag adatait."
   },
   "deviceInfo": {
-    "message": "Device info"
+    "message": "Eszközadatok"
   },
   "time": {
-    "message": "Time"
+    "message": "Idő"
   },
   "denyAllRequests": {
-    "message": "Deny all requests"
+    "message": "Összes kérés elutasítása"
   },
   "denyRequest": {
-    "message": "Deny request"
+    "message": "Kérés elutasítása"
   },
   "approveRequest": {
-    "message": "Approve request"
+    "message": "Kérelem megerősítése"
   },
   "noDeviceRequests": {
-    "message": "No device requests"
+    "message": "Nincs eszközkérelem"
   },
   "noDeviceRequestsDesc": {
-    "message": "Member device approval requests will appear here"
+    "message": "A tagok eszköz-jóváhagyási kérelmei itt jelennek meg"
   },
   "loginRequestDenied": {
-    "message": "Login request denied"
+    "message": "Bejelentkezési kérelem elutasítva"
   },
   "allLoginRequestsDenied": {
-    "message": "All login requests denied"
+    "message": "Minden bejelentkezési kérelem elutasítva"
   },
   "loginRequestApproved": {
-    "message": "Login request approved"
+    "message": "Bejelentkezési kérelem jóváhagyva"
   },
   "removeOrgUserNoMasterPasswordTitle": {
     "message": "A fióknak nincs mesterjelszava."
@@ -6929,5 +6929,26 @@
   },
   "removeMembersWithoutMasterPasswordWarning": {
     "message": "A mesterjelszavakkal nem rendelkező tagok eltávolítása anélkül, hogy beállítanánk egyet, korlátozhatjuk a hozzáférést a teljes fiókhoz."
+  },
+  "startYour7DayFreeTrialOfBitwardenFor": {
+    "message": "Kezdjük el a Bitwarden 7 napos ingyenes próbaverzió használatát $ORG$ áron",
+    "placeholders": {
+      "org": {
+        "content": "$1",
+        "example": "Organization name"
+      }
+    }
+  },
+  "next": {
+    "message": "Következő"
+  },
+  "usFlag": {
+    "message": "USA zászló"
+  },
+  "euFlag": {
+    "message": "EU zászló"
+  },
+  "selectedRegionFlag": {
+    "message": "Kiválasztott régió zászló"
   }
 }

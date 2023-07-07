@@ -6626,8 +6626,8 @@
   "secretsManager": {
     "message": "Administrador de secrets"
   },
-  "secretsManagerAccessDesc": {
-    "message": "Habilita l'accés dels usuaris a l'administrador de secrets."
+  "secretsManagerAccessDescription": {
+    "message": "Activate user access to Secrets Manager."
   },
   "userAccessSecretsManagerGA": {
     "message": "Aquest usuari pot accedir a l'administrador de secrets"
@@ -6858,19 +6858,19 @@
   "updatedTempPassword": {
     "message": "L'usuari ha actualitzat una contrasenya emesa mitjançant la recuperació del compte."
   },
-  "enabledAccessToSecretsManager": {
-    "message": "Habilita l'accés a l'administrador de secrets",
+  "activatedAccessToSecretsManager": {
+    "message": "Activated access to Secrets Manager",
     "description": "Confirmation message that one or more users gained access to Secrets Manager"
   },
-  "enableAccess": {
-    "message": "Habilita l'accés"
+  "activateAccess": {
+    "message": "Activate access"
   },
   "bulkEnableSecretsManagerDescription": {
     "message": "Concedeix als membres següents accés a l'administrador de secrets. El rol concedit l'administrador de contrasenyes s'aplicarà a l'administrador de secrets.",
     "description": "This description is shown to an admin when they are attempting to add more users to Secrets Manager."
   },
-  "enableSecretsManager": {
-    "message": "Habilita l'administrador de secrets"
+  "activateSecretsManager": {
+    "message": "Activate Secrets Manager"
   },
   "yourOrganizationsFingerprint": {
     "message": "Frase d'empremta digital de l'organització",
@@ -6929,5 +6929,26 @@
   },
   "removeMembersWithoutMasterPasswordWarning": {
     "message": "La supressió de membres que no tenen contrasenyes mestres sense establir-ne una pot restringir l'accés al seu compte complet."
+  },
+  "startYour7DayFreeTrialOfBitwardenFor": {
+    "message": "Start your 7-Day free trial of Bitwarden for $ORG$",
+    "placeholders": {
+      "org": {
+        "content": "$1",
+        "example": "Organization name"
+      }
+    }
+  },
+  "next": {
+    "message": "Next"
+  },
+  "usFlag": {
+    "message": "US flag"
+  },
+  "euFlag": {
+    "message": "EU flag"
+  },
+  "selectedRegionFlag": {
+    "message": "Selected region flag"
   }
 }

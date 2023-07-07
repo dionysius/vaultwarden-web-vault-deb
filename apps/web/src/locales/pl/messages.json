@@ -6626,8 +6626,8 @@
   "secretsManager": {
     "message": "Menedżer sekretów"
   },
-  "secretsManagerAccessDesc": {
-    "message": "Włącz dostęp użytkownikom do menedżera sekretów."
+  "secretsManagerAccessDescription": {
+    "message": "Activate user access to Secrets Manager."
   },
   "userAccessSecretsManagerGA": {
     "message": "Ten użytkownik może uzyskać dostęp do menedżera sekretów"
@@ -6858,19 +6858,19 @@
   "updatedTempPassword": {
     "message": "Użytkownik zaktualizował hasło wydane poprzez odzyskiwanie konta."
   },
-  "enabledAccessToSecretsManager": {
-    "message": "Włączono dostęp do menedżera sekretów",
+  "activatedAccessToSecretsManager": {
+    "message": "Activated access to Secrets Manager",
     "description": "Confirmation message that one or more users gained access to Secrets Manager"
   },
-  "enableAccess": {
-    "message": "Włącz dostęp"
+  "activateAccess": {
+    "message": "Activate access"
   },
   "bulkEnableSecretsManagerDescription": {
     "message": "Udziel następującym członkom dostępu do menedżera sekretów. Rola przyznana w menedżerze haseł będzie miała zastosowanie do menedżera sekretów.",
     "description": "This description is shown to an admin when they are attempting to add more users to Secrets Manager."
   },
-  "enableSecretsManager": {
-    "message": "Włącz menedżer sekretów"
+  "activateSecretsManager": {
+    "message": "Activate Secrets Manager"
   },
   "yourOrganizationsFingerprint": {
     "message": "Unikalny identyfikator Twojej organizacji",
@@ -6929,5 +6929,26 @@
   },
   "removeMembersWithoutMasterPasswordWarning": {
     "message": "Usuwanie użytkowników, którzy nie mają hasła głównego bez ustawienia go, może ograniczyć dostęp do ich pełnych kont."
+  },
+  "startYour7DayFreeTrialOfBitwardenFor": {
+    "message": "Rozpocznij 7-dniowy darmowy okres próbny Bitwarden dla $ORG$",
+    "placeholders": {
+      "org": {
+        "content": "$1",
+        "example": "Organization name"
+      }
+    }
+  },
+  "next": {
+    "message": "Dalej"
+  },
+  "usFlag": {
+    "message": "Flaga USA"
+  },
+  "euFlag": {
+    "message": "Flaga UE"
+  },
+  "selectedRegionFlag": {
+    "message": "Flaga wybranego regionu"
   }
 }

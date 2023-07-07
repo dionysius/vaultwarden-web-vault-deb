@@ -6626,8 +6626,8 @@
   "secretsManager": {
     "message": "Менеджер секретов"
   },
-  "secretsManagerAccessDesc": {
-    "message": "Включить доступ пользователей к менеджеру секретов."
+  "secretsManagerAccessDescription": {
+    "message": "Activate user access to Secrets Manager."
   },
   "userAccessSecretsManagerGA": {
     "message": "Этот пользователь может получить доступ к менеджеру секретов"
@@ -6858,19 +6858,19 @@
   "updatedTempPassword": {
     "message": "Пользователь обновил пароль, выданный через восстановление аккаунта."
   },
-  "enabledAccessToSecretsManager": {
-    "message": "Включить доступ к менеджеру секретов",
+  "activatedAccessToSecretsManager": {
+    "message": "Activated access to Secrets Manager",
     "description": "Confirmation message that one or more users gained access to Secrets Manager"
   },
-  "enableAccess": {
-    "message": "Включить доступ"
+  "activateAccess": {
+    "message": "Activate access"
   },
   "bulkEnableSecretsManagerDescription": {
     "message": "Предоставить следующим пользователям доступ к менеджеру секретов. Роль, предоставленная в менеджере паролей, будет применяться и к менеджеру секретов.",
     "description": "This description is shown to an admin when they are attempting to add more users to Secrets Manager."
   },
-  "enableSecretsManager": {
-    "message": "Включить менеджер секретов"
+  "activateSecretsManager": {
+    "message": "Activate Secrets Manager"
   },
   "yourOrganizationsFingerprint": {
     "message": "Фраза отпечатка вашей организации",
@@ -6929,5 +6929,26 @@
   },
   "removeMembersWithoutMasterPasswordWarning": {
     "message": "Удаление участников у которых не установлен мастер-пароль может ограничить доступ к их основным аккаунтам."
+  },
+  "startYour7DayFreeTrialOfBitwardenFor": {
+    "message": "Начните 7-дневную бесплатную пробную версию Bitwarden для $ORG$",
+    "placeholders": {
+      "org": {
+        "content": "$1",
+        "example": "Organization name"
+      }
+    }
+  },
+  "next": {
+    "message": "Далее"
+  },
+  "usFlag": {
+    "message": "Флаг США"
+  },
+  "euFlag": {
+    "message": "Флаг ЕС"
+  },
+  "selectedRegionFlag": {
+    "message": "Флаг выбранного региона"
   }
 }

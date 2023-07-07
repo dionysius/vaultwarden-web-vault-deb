@@ -6626,8 +6626,8 @@
   "secretsManager": {
     "message": "Salaisuushallinta"
   },
-  "secretsManagerAccessDesc": {
-    "message": "Aktivoi Salaisuushallinnan käyttöoikeus."
+  "secretsManagerAccessDescription": {
+    "message": "Activate user access to Secrets Manager."
   },
   "userAccessSecretsManagerGA": {
     "message": "Käyttäjällä on Salaisuushallinnan käyttöoikeus"
@@ -6858,19 +6858,19 @@
   "updatedTempPassword": {
     "message": "Käyttäjä vaihtoi tilin palautusavun määrittämän salasanan."
   },
-  "enabledAccessToSecretsManager": {
-    "message": "Aktivoi Salaisuushallinnan käyttöoikeuden",
+  "activatedAccessToSecretsManager": {
+    "message": "Activated access to Secrets Manager",
     "description": "Confirmation message that one or more users gained access to Secrets Manager"
   },
-  "enableAccess": {
-    "message": "Ota käyttöön"
+  "activateAccess": {
+    "message": "Activate access"
   },
   "bulkEnableSecretsManagerDescription": {
     "message": "Myönnä seuraaville jäsenille Salaisuushallinnan käyttöoikeus. Salasananhallinnassa myönnetty rooli pätee myös Salaisuushallinnassa.",
     "description": "This description is shown to an admin when they are attempting to add more users to Secrets Manager."
   },
-  "enableSecretsManager": {
-    "message": "Käytä Salaisuushallintaa"
+  "activateSecretsManager": {
+    "message": "Activate Secrets Manager"
   },
   "yourOrganizationsFingerprint": {
     "message": "Organisaatiosi tunnistelauseke",
@@ -6929,5 +6929,26 @@
   },
   "removeMembersWithoutMasterPasswordWarning": {
     "message": "Jäsenien, joiden tileille ei ole asetettu pääsalasanoja, poistaminen voi estää heitä kirjautumasta heidän omille tileilleen."
+  },
+  "startYour7DayFreeTrialOfBitwardenFor": {
+    "message": "Aloita seitsemän päivän ilmainen Bitwarden-kokeilu organisaatiolle $ORG$",
+    "placeholders": {
+      "org": {
+        "content": "$1",
+        "example": "Organization name"
+      }
+    }
+  },
+  "next": {
+    "message": "Seuraava"
+  },
+  "usFlag": {
+    "message": "Yhdysvaltain lippu"
+  },
+  "euFlag": {
+    "message": "EU:n lippu"
+  },
+  "selectedRegionFlag": {
+    "message": "Valittu alueen lippu"
   }
 }

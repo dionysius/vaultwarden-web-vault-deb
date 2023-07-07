@@ -6626,8 +6626,8 @@
   "secretsManager": {
     "message": "Správce tajných klíčů"
   },
-  "secretsManagerAccessDesc": {
-    "message": "Povolí přístup uživatele ke správci tajných klíčů."
+  "secretsManagerAccessDescription": {
+    "message": "Activate user access to Secrets Manager."
   },
   "userAccessSecretsManagerGA": {
     "message": "Tento uživatel může přistupovat ke správci tajných klíčů"
@@ -6858,19 +6858,19 @@
   "updatedTempPassword": {
     "message": "Uživatel aktualizoval heslo vydané prostřednictvím obnovení účtu."
   },
-  "enabledAccessToSecretsManager": {
-    "message": "Povolen přístup uživatele ke správci tajných klíčů",
+  "activatedAccessToSecretsManager": {
+    "message": "Activated access to Secrets Manager",
     "description": "Confirmation message that one or more users gained access to Secrets Manager"
   },
-  "enableAccess": {
-    "message": "Povolit přístup"
+  "activateAccess": {
+    "message": "Activate access"
   },
   "bulkEnableSecretsManagerDescription": {
     "message": "Udělte následujícím členům přístup ke správci tajných klíčů. Role udělená ve správci hesel se bude vztahovat na správce tajných klíčů.",
     "description": "This description is shown to an admin when they are attempting to add more users to Secrets Manager."
   },
-  "enableSecretsManager": {
-    "message": "Povolit správce tajných klíčů"
+  "activateSecretsManager": {
+    "message": "Activate Secrets Manager"
   },
   "yourOrganizationsFingerprint": {
     "message": "Fráze otisku prstu Vaší organizace",
@@ -6929,5 +6929,26 @@
   },
   "removeMembersWithoutMasterPasswordWarning": {
     "message": "Odebrání členů bez nastavení jejich hlavních hesel jim může omezit přístup k jejich celým účtům."
+  },
+  "startYour7DayFreeTrialOfBitwardenFor": {
+    "message": "Začněte 7denní bezplatnou zkušební verzi Bitwardenu pro $ORG$",
+    "placeholders": {
+      "org": {
+        "content": "$1",
+        "example": "Organization name"
+      }
+    }
+  },
+  "next": {
+    "message": "Další"
+  },
+  "usFlag": {
+    "message": "Americká vlajka"
+  },
+  "euFlag": {
+    "message": "Evropská vlajka"
+  },
+  "selectedRegionFlag": {
+    "message": "Vlajka zvoleného regionu"
   }
 }

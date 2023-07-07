@@ -6626,8 +6626,8 @@
   "secretsManager": {
     "message": "Administrador de secretos"
   },
-  "secretsManagerAccessDesc": {
-    "message": "Habilitar el acceso de usuario al Administrador de Secretos."
+  "secretsManagerAccessDescription": {
+    "message": "Activar el acceso de usuario al Administrador Secretario."
   },
   "userAccessSecretsManagerGA": {
     "message": "Este usuario puede acceder al Administrador Secretos"
@@ -6858,19 +6858,19 @@
   "updatedTempPassword": {
     "message": "El usuario actualizó una contraseña solicitada a través de la recuperación de la cuenta."
   },
-  "enabledAccessToSecretsManager": {
-    "message": "Acceso habilitado al Administrador de Secretos",
+  "activatedAccessToSecretsManager": {
+    "message": "Acceso activado al Administrador de Secretos",
     "description": "Confirmation message that one or more users gained access to Secrets Manager"
   },
-  "enableAccess": {
+  "activateAccess": {
     "message": "Activar acceso"
   },
   "bulkEnableSecretsManagerDescription": {
     "message": "Otorgar a los siguientes miembros acceso al Administrador de Secretos. El rol otorgado en el Administrador de contraseñas se aplicará al Administrador de Secretos.",
     "description": "This description is shown to an admin when they are attempting to add more users to Secrets Manager."
   },
-  "enableSecretsManager": {
-    "message": "Habilitar Administrador de secretos"
+  "activateSecretsManager": {
+    "message": "Activar Administrador Secrets"
   },
   "yourOrganizationsFingerprint": {
     "message": "Frase de la huella digital de su organización",
@@ -6929,5 +6929,26 @@
   },
   "removeMembersWithoutMasterPasswordWarning": {
     "message": "Quitar miembros que no tengan contraseñas maestras sin establecer una para ellos puede restringir el acceso a su cuenta completa."
+  },
+  "startYour7DayFreeTrialOfBitwardenFor": {
+    "message": "Comienza tu prueba gratuita de 7 días de Bitwarden durante $ORG$",
+    "placeholders": {
+      "org": {
+        "content": "$1",
+        "example": "Organization name"
+      }
+    }
+  },
+  "next": {
+    "message": "Siguiente"
+  },
+  "usFlag": {
+    "message": "Bandera de EE.UU."
+  },
+  "euFlag": {
+    "message": "Bandera de EU"
+  },
+  "selectedRegionFlag": {
+    "message": "Región seleccionada"
   }
 }

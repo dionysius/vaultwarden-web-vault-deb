@@ -792,10 +792,10 @@
     }
   },
   "enterVerificationCodeApp": {
-    "message": "Ievadiet 6 ciparu verifikācijas kodu no savas autentifikācijas lietotnes."
+    "message": "Jāievada 6 ciparu apstiprinājuma kods no autentificētāja lietotnes."
   },
   "enterVerificationCodeEmail": {
-    "message": "Ievadi 6 ciparu apstiprinājuma kodu, kas tika nosūtīts uz $EMAIL$!",
+    "message": "Jāievada 6 ciparu apstiprinājuma kods, kas tika nosūtīts uz $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -1495,7 +1495,7 @@
     "message": "Atslēga"
   },
   "twoStepAuthenticatorEnterCode": {
-    "message": "Ievadīt lietotnes izveidoto 6 ciparu apstiprināšanas kodu"
+    "message": "Jāievada lietotnes izveidotais 6 ciparu apstiprināšanas kods"
   },
   "twoStepAuthenticatorReaddDesc": {
     "message": "Ja ir vajadzība pievienot citās ierīcēs, zemāk ir kvadrātkods (vai atslēga), kas ir izmantojams autentificētāja lietotnē."
@@ -1591,7 +1591,7 @@
     "message": "Ievadīt e-pasta adresi, uz kuru saņemt apstiprināšanas kodus"
   },
   "twoFactorEmailEnterCode": {
-    "message": "Ievadīt e-pastā saņemto 6 ciparu apstiprinājuma kodu"
+    "message": "Jāievada e-pastā saņemtais 6 ciparu apstiprinājuma kods"
   },
   "sendEmail": {
     "message": "Nosūtīt e-pastu"
@@ -5755,7 +5755,7 @@
     "message": "Piesakās kā"
   },
   "notYou": {
-    "message": "Tas neesat Jūs?"
+    "message": "Tas neesi Tu?"
   },
   "pickAnAvatarColor": {
     "message": "Izvēlēties iemiesojuma krāsu"
@@ -6624,13 +6624,13 @@
     "message": "Noslēpumu pārvaldnieks Beta"
   },
   "secretsManager": {
-    "message": "Secrets Manager"
+    "message": "Noslēpumu pārvaldnieks"
   },
-  "secretsManagerAccessDesc": {
-    "message": "Enable user access to Secrets Manager."
+  "secretsManagerAccessDescription": {
+    "message": "Activate user access to Secrets Manager."
   },
   "userAccessSecretsManagerGA": {
-    "message": "This user can access Secrets Manager"
+    "message": "Šis lietotājs var piekļūt Noslēpumu pārvaldniekam"
   },
   "important": {
     "message": "Svarīgi:"
@@ -6858,19 +6858,19 @@
   "updatedTempPassword": {
     "message": "Lietotājs atjaunināja konta atkopšanas izsniegtu paroli."
   },
-  "enabledAccessToSecretsManager": {
-    "message": "Enabled access to Secrets Manager",
+  "activatedAccessToSecretsManager": {
+    "message": "Activated access to Secrets Manager",
     "description": "Confirmation message that one or more users gained access to Secrets Manager"
   },
-  "enableAccess": {
-    "message": "Enable access"
+  "activateAccess": {
+    "message": "Activate access"
   },
   "bulkEnableSecretsManagerDescription": {
-    "message": "Grant the following members access to Secrets Manager. The role granted in the Password Manager will apply to Secrets Manager.",
+    "message": "Nodrošināt zemāk uzskaitītajiem dalībniekiem piekļuvi Noslēpumu pārvaldniekam. Paroļu pārvaldniekā piešķirtā loma attiecas arī uz Noslēpumu pārvaldnieku.",
     "description": "This description is shown to an admin when they are attempting to add more users to Secrets Manager."
   },
-  "enableSecretsManager": {
-    "message": "Enable Secrets Manager"
+  "activateSecretsManager": {
+    "message": "Activate Secrets Manager"
   },
   "yourOrganizationsFingerprint": {
     "message": "Apvienības atpazīšanas vārdkopa",
@@ -6929,5 +6929,26 @@
   },
   "removeMembersWithoutMasterPasswordWarning": {
     "message": "Dalībnieku, kuriem nav galvenās paroles, noņemšana bez tās iestatīšanas var ierobežot piekļuvi to kontam."
+  },
+  "startYour7DayFreeTrialOfBitwardenFor": {
+    "message": "Uzsāc savu 7 dienu bezmaksas Bitwarden izmēģinājumu $ORG$!",
+    "placeholders": {
+      "org": {
+        "content": "$1",
+        "example": "Organization name"
+      }
+    }
+  },
+  "next": {
+    "message": "Turpināt"
+  },
+  "usFlag": {
+    "message": "ASV karogs"
+  },
+  "euFlag": {
+    "message": "ES karogs"
+  },
+  "selectedRegionFlag": {
+    "message": "Atlasītā apgabala karogs"
   }
 }
