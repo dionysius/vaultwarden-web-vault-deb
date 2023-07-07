@@ -464,7 +464,7 @@
     "message": "Neveljavna koda za preverjanje"
   },
   "valueCopied": {
-    "message": "$VALUE$ kopirano",
+    "message": "$VALUE$ kopirana",
     "description": "Value has been copied to the clipboard.",
     "placeholders": {
       "value": {
@@ -2237,5 +2237,11 @@
   },
   "accessDenied": {
     "message": "Access denied. You do not have permission to view this page."
+  },
+  "general": {
+    "message": "General"
+  },
+  "display": {
+    "message": "Display"
   }
 }

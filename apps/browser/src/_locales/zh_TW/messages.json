@@ -976,7 +976,7 @@
     "message": "網頁載入時如果偵測到登入表單，則執行自動填入。"
   },
   "experimentalFeature": {
-    "message": "被竊取或不可信任的網站可以利用自動填入功能在網頁載入時竊取資訊。"
+    "message": "被入侵或不可信任的網站可以利用自動填入功能在網頁載入時竊取資訊。"
   },
   "learnMoreAboutAutofill": {
     "message": "進一步瞭解「自動填入」功能"
@@ -1462,16 +1462,16 @@
     "message": "項目已自動填入"
   },
   "insecurePageWarning": {
-    "message": "Warning: This is an unsecured HTTP page, and any information you submit can potentially be seen and changed by others. This Login was originally saved on a secure (HTTPS) page."
+    "message": "警告：這是不安全的 HTTP 頁面，任何您送出的資訊均可能被其他人看見和更改。此登入資訊原先是在安全的 (HTTPS) 頁面儲存的。"
   },
   "insecurePageWarningFillPrompt": {
-    "message": "Do you still wish to fill this login?"
+    "message": "您依然想要填充此登入資訊嗎？"
   },
   "autofillIframeWarning": {
-    "message": "The form is hosted by a different domain than the URI of your saved login. Choose OK to auto-fill anyway, or Cancel to stop."
+    "message": "這個表單寄放在不同的網域，而非您儲存登入資訊的 URI。選擇「確認」則依然自動填入，「取消」則停止本動作。"
   },
   "autofillIframeWarningTip": {
-    "message": "To prevent this warning in the future, save this URI, $HOSTNAME$, to your Bitwarden login item for this site.",
+    "message": "若以後不想再跳出這個警告，請儲存 URI「$HOSTNAME$」到您這個網站的 Bitwarden 登入項目。",
     "placeholders": {
       "hostname": {
         "content": "$1",
@@ -1483,13 +1483,13 @@
     "message": "設定主密碼"
   },
   "currentMasterPass": {
-    "message": "Current master password"
+    "message": "目前的主密碼"
   },
   "newMasterPass": {
-    "message": "New master password"
+    "message": "新的主密碼"
   },
   "confirmNewMasterPass": {
-    "message": "Confirm new master password"
+    "message": "確認新主密碼"
   },
   "masterPasswordPolicyInEffect": {
     "message": "一個或多個組織原則要求您的主密碼須符合下列條件："
@@ -1872,7 +1872,7 @@
     "message": "您的主密碼最近被您的組織管理者變更過。若要存取密碼庫，您必須立即更新主密碼。繼續操作會登出目前的登入階段，並要求您重新登入。其他裝置上的活動登入階段最多會保持一個小時。"
   },
   "updateWeakMasterPasswordWarning": {
-    "message": "Your master password does not meet one or more of your organization policies. In order to access the vault, you must update your master password now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
+    "message": "您的主密碼不符合您的組織政策之一或多個要求。您必須立即更新您的主密碼以存取密碼庫。進行此操作將登出您目前的工作階段，需要您重新登入。其他裝置上的工作階段可能繼續長達一小時。"
   },
   "resetPasswordPolicyAutoEnroll": {
     "message": "自動註冊"
@@ -1906,7 +1906,7 @@
     }
   },
   "vaultTimeoutPolicyWithActionInEffect": {
-    "message": "Your organization policies are affecting your vault timeout. Maximum allowed vault timeout is $HOURS$ hour(s) and $MINUTES$ minute(s). Your vault timeout action is set to $ACTION$.",
+    "message": "您的組織原則正在影響您的密碼庫逾時時間。密碼庫逾時時間最多可以設定到 $HOURS$ 小時 $MINUTES$ 分鐘。您密碼庫的逾時動作是設為 $ACTION$。",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -1923,7 +1923,7 @@
     }
   },
   "vaultTimeoutActionPolicyInEffect": {
-    "message": "Your organization policies have set your vault timeout action to $ACTION$.",
+    "message": "您的組織原則已將密碼庫逾時動作設為 $ACTION$。",
     "placeholders": {
       "action": {
         "content": "$1",
@@ -2222,20 +2222,26 @@
     }
   },
   "region": {
-    "message": "Region"
+    "message": "區域"
   },
   "opensInANewWindow": {
-    "message": "Opens in a new window"
+    "message": "在新視窗開啟"
   },
   "eu": {
-    "message": "EU",
+    "message": "歐洲 (EU)",
     "description": "European Union"
   },
   "us": {
-    "message": "US",
+    "message": "美國 (US)",
     "description": "United States"
   },
   "accessDenied": {
-    "message": "Access denied. You do not have permission to view this page."
+    "message": "拒絕存取。您沒有檢視此頁面的權限。"
+  },
+  "general": {
+    "message": "一般"
+  },
+  "display": {
+    "message": "顯示"
   }
 }

@@ -3,7 +3,7 @@
     "message": "Bitwarden"
   },
   "extName": {
-    "message": "Bitwarden - gestor de palavras-passe",
+    "message": "Bitwarden - Gestor de Palavras-passe",
     "description": "Extension name, MUST be less than 40 characters (Safari restriction)"
   },
   "extDesc": {
@@ -464,7 +464,7 @@
     "message": "Código de verificação inválido"
   },
   "valueCopied": {
-    "message": "$VALUE$ copiado(a)",
+    "message": "$VALUE$ copiado",
     "description": "Value has been copied to the clipboard.",
     "placeholders": {
       "value": {
@@ -658,7 +658,7 @@
     "description": "Light color"
   },
   "solarizedDark": {
-    "message": "Solarized Dark",
+    "message": "Solarized (escuro)",
     "description": "'Solarized' is a noun and the name of a color scheme. It should not be translated."
   },
   "exportVault": {
@@ -1134,7 +1134,7 @@
     "message": "Sr."
   },
   "mrs": {
-    "message": "Sra."
+    "message": "Sr.ª"
   },
   "ms": {
     "message": "Menina"
@@ -2005,7 +2005,7 @@
     "description": "Username generator option that appends a random sub-address to the username. For example: address+subaddress@email.com"
   },
   "plusAddressedEmailDesc": {
-    "message": "Utilize as capacidades de subendereçamento do seu provedor de e-mail."
+    "message": "Utilize as capacidades de subendereçamento do seu fornecedor de e-mail."
   },
   "catchallEmail": {
     "message": "E-mail de captura geral"
@@ -2237,5 +2237,11 @@
   },
   "accessDenied": {
     "message": "Acesso negado. Não tem permissão para visualizar esta página."
+  },
+  "general": {
+    "message": "Geral"
+  },
+  "display": {
+    "message": "Display"
   }
 }
