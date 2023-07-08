@@ -29,6 +29,7 @@ export class SecretsListComponent implements OnDestroy {
 
   @Input()
   set search(search: string) {
+    this.selection.clear();
     this.dataSource.filter = search;
   }
 
@@ -61,15 +62,20 @@ export class SecretsListComponent implements OnDestroy {
   }
 
   isAllSelected() {
-    const numSelected = this.selection.selected.length;
-    const numRows = this.secrets.length;
-    return numSelected === numRows;
+    if (this.selection.selected?.length > 0) {
+      const numSelected = this.selection.selected.length;
+      const numRows = this.dataSource.filteredData.length;
+      return numSelected === numRows;
+    }
+    return false;
   }
 
   toggleAll() {
-    this.isAllSelected()
-      ? this.selection.clear()
-      : this.selection.select(...this.secrets.map((s) => s.id));
+    if (this.isAllSelected()) {
+      this.selection.clear();
+    } else {
+      this.selection.select(...this.dataSource.filteredData.map((s) => s.id));
+    }
   }
 
   bulkDeleteSecrets() {

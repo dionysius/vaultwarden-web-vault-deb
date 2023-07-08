@@ -17,8 +17,15 @@ export class TableDataSource<T> extends DataSource<T> {
   private readonly _sort: BehaviorSubject<Sort>;
   private readonly _filter = new BehaviorSubject<string>("");
   private readonly _renderData = new BehaviorSubject<T[]>([]);
-
   private _renderChangesSubscription: Subscription | null = null;
+
+  /**
+   * The filtered set of data that has been matched by the filter string, or all the data if there
+   * is no filter. Useful for knowing the set of data the table represents.
+   * For example, a 'selectAll()' function would likely want to select the set of filtered data
+   * shown to the user rather than all the data.
+   */
+  filteredData: T[];
 
   constructor() {
     super();
@@ -31,7 +38,13 @@ export class TableDataSource<T> extends DataSource<T> {
   }
 
   set data(data: T[]) {
-    this._data.next(data ? [...data] : []);
+    data = Array.isArray(data) ? data : [];
+    this._data.next(data);
+    // Normally the `filteredData` is updated by the re-render
+    // subscription, but that won't happen if it's inactive.
+    if (!this._renderChangesSubscription) {
+      this.filterData(data);
+    }
   }
 
   set sort(sort: Sort) {
@@ -48,6 +61,11 @@ export class TableDataSource<T> extends DataSource<T> {
 
   set filter(filter: string) {
     this._filter.next(filter);
+    // Normally the `filteredData` is updated by the re-render
+    // subscription, but that won't happen if it's inactive.
+    if (!this._renderChangesSubscription) {
+      this.filterData(this.data);
+    }
   }
 
   connect(): Observable<readonly T[]> {
@@ -65,7 +83,7 @@ export class TableDataSource<T> extends DataSource<T> {
 
   private updateChangeSubscription() {
     const filteredData = combineLatest([this._data, this._filter]).pipe(
-      map(([data, filter]) => this.filterData(data, filter))
+      map(([data]) => this.filterData(data))
     );
 
     const orderedData = combineLatest([filteredData, this._sort]).pipe(
@@ -76,12 +94,13 @@ export class TableDataSource<T> extends DataSource<T> {
     this._renderChangesSubscription = orderedData.subscribe((data) => this._renderData.next(data));
   }
 
-  private filterData(data: T[], filter: string): T[] {
-    if (filter == null || filter == "") {
-      return data;
-    }
+  private filterData(data: T[]): T[] {
+    this.filteredData =
+      this.filter == null || this.filter === ""
+        ? data
+        : data.filter((obj) => this.filterPredicate(obj, this.filter));
 
-    return data.filter((obj) => this.filterPredicate(obj, filter));
+    return this.filteredData;
   }
 
   private orderData(data: T[], sort: Sort): T[] {
