@@ -16,6 +16,7 @@ apps/desktop/src/auth @bitwarden/team-auth-dev
 apps/web/src/auth @bitwarden/team-auth-dev
 # web connectors used for auth
 apps/web/src/connectors @bitwarden/team-auth-dev
+bitwarden_license/bit-web/src/app/auth @bitwarden/team-auth-dev
 libs/angular/src/auth @bitwarden/team-auth-dev
 libs/common/src/auth @bitwarden/team-auth-dev
 
