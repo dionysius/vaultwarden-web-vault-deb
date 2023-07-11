@@ -68,8 +68,8 @@ apps/web/src/app/core @bitwarden/team-platform-dev
 apps/web/src/app/shared @bitwarden/team-platform-dev
 apps/web/src/translation-constants.ts @bitwarden/team-platform-dev
 
-## Client Integrations team files ##
-apps/browser/src/autofill @bitwarden/team-client-integrations-dev
+## Autofill team files ##
+apps/browser/src/autofill @bitwarden/team-autofill-dev
 
 ## Component Library ##
 libs/components @bitwarden/team-platform-dev
