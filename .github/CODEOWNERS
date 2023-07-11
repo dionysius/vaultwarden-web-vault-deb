@@ -80,6 +80,11 @@ apps/desktop/desktop_native @bitwarden/team-platform-dev
 ## Multiple file owners ##
 /apps/web/config
 /apps/web/package.json
+## Locales ## 
+apps/browser/src/_locales/en/messages.json
+apps/cli/src/locales/en/messages.json
+apps/desktop/src/locales/en/messages.json
+apps/web/src/locales/en/messages.json
 
 ## DevOps team files ##
 /.github/workflows @bitwarden/dept-devops
