@@ -45,7 +45,7 @@ export class InitService {
 
       const urls = process.env.URLS as Urls;
       urls.base ??= this.win.location.origin;
-      this.environmentService.setUrls(urls);
+      await this.environmentService.setUrls(urls);
       this.environmentService.initialized = true;
 
       setTimeout(() => this.notificationsService.init(), 3000);
