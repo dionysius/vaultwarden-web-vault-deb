@@ -286,19 +286,19 @@ export class EnvironmentService implements EnvironmentServiceAbstraction {
   async setRegion(region: Region) {
     this.selectedRegion = region;
     await this.stateService.setRegion(region);
-    switch (region) {
-      case Region.EU:
+    if (region === Region.SelfHosted) {
+      // If user saves a self-hosted region with empty fields, default to US
+      if (this.isEmpty()) {
+        await this.setRegion(Region.US);
+      }
+    } else {
+      // If we are setting the region to EU or US, clear the self-hosted URLs
+      this.stateService.setEnvironmentUrls(new EnvironmentUrls());
+      if (region === Region.EU) {
         this.setUrlsInternal(this.euUrls);
-        break;
-      case Region.US:
+      } else if (region === Region.US) {
         this.setUrlsInternal(this.usUrls);
-        break;
-      case Region.SelfHosted:
-        // if user saves with empty fields, default to US
-        if (this.isEmpty()) {
-          await this.setRegion(Region.US);
-        }
-        break;
+      }
     }
   }
 
