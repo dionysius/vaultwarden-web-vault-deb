@@ -293,7 +293,7 @@ export class EnvironmentService implements EnvironmentServiceAbstraction {
       }
     } else {
       // If we are setting the region to EU or US, clear the self-hosted URLs
-      this.stateService.setEnvironmentUrls(new EnvironmentUrls());
+      await this.stateService.setEnvironmentUrls(new EnvironmentUrls());
       if (region === Region.EU) {
         this.setUrlsInternal(this.euUrls);
       } else if (region === Region.US) {
