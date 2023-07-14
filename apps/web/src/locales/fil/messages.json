@@ -618,8 +618,8 @@
   "loginWithDevice": {
     "message": "Mag-log in gamit ang device"
   },
-  "loginWithDeviceEnabledInfo": {
-    "message": "Dapat nakahanda ang pagla-log in gamit ang device sa mga setting ng mobile app ng Bitwarden. Kailangan ng higit pang opsyon?"
+  "loginWithDeviceEnabledNote": {
+    "message": "Log in with device must be set up in the settings of the Bitwarden app. Need another option?"
   },
   "loginWithMasterPassword": {
     "message": "Mag-log in gamit ang master password"

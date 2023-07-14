@@ -618,8 +618,8 @@
   "loginWithDevice": {
     "message": "Hasi saioa gailuarekin"
   },
-  "loginWithDeviceEnabledInfo": {
-    "message": "Bitwarden mugikorreko aplikazioaren konfigurazioan, gailuarekin saioa hastea gaituta egon behar du. Beste aukerarik behar duzu?"
+  "loginWithDeviceEnabledNote": {
+    "message": "Log in with device must be set up in the settings of the Bitwarden app. Need another option?"
   },
   "loginWithMasterPassword": {
     "message": "Hasi saioa pasahitz nagusiarekin"

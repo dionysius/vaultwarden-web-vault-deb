@@ -618,8 +618,8 @@
   "loginWithDevice": {
     "message": "Inloggen met apparaat"
   },
-  "loginWithDeviceEnabledInfo": {
-    "message": "Inloggen met apparaat moet zijn ingeschakeld in de instellingen van de mobiele Bitwarden-app. Een andere optie nodig?"
+  "loginWithDeviceEnabledNote": {
+    "message": "Je moet Inloggen met apparaat instellen in de instellingen van de Bitwarden-app. Behoefte aan een andere mogelijkheid?"
   },
   "loginWithMasterPassword": {
     "message": "Inloggen met je hoofdwachtwoord"
@@ -6627,7 +6627,7 @@
     "message": "Secrets Manager"
   },
   "secretsManagerAccessDescription": {
-    "message": "Activate user access to Secrets Manager."
+    "message": "Gebruikerstoegang tot Secrets Manager inschakelen."
   },
   "userAccessSecretsManagerGA": {
     "message": "Deze gebruiker heeft toegang tot Secrets Manager"
@@ -6859,18 +6859,18 @@
     "message": "Gebruiker heeft een via accountherstel uitgegeven wachtwoord bijgewerkt."
   },
   "activatedAccessToSecretsManager": {
-    "message": "Activated access to Secrets Manager",
+    "message": "Toegang tot Secrets Manager ingeschakeld",
     "description": "Confirmation message that one or more users gained access to Secrets Manager"
   },
   "activateAccess": {
-    "message": "Activate access"
+    "message": "Toegang inschakelen"
   },
   "bulkEnableSecretsManagerDescription": {
     "message": "Geef de volgende leden toegang tot de Secrets Manager. De rol die is toegekend in de Password Manager zal van toepassing zijn op de Secrets Manager.",
     "description": "This description is shown to an admin when they are attempting to add more users to Secrets Manager."
   },
   "activateSecretsManager": {
-    "message": "Activate Secrets Manager"
+    "message": "Secrets Manager inschakelen"
   },
   "yourOrganizationsFingerprint": {
     "message": "De vingerafdrukzin van je organisatie",

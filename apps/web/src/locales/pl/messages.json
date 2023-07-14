@@ -618,8 +618,8 @@
   "loginWithDevice": {
     "message": "Zaloguj się za pomocą urządzenia"
   },
-  "loginWithDeviceEnabledInfo": {
-    "message": "Logowanie za pomocą urządzenia musi być włączone w ustawieniach aplikacji mobilnej Bitwarden. Potrzebujesz innej opcji?"
+  "loginWithDeviceEnabledNote": {
+    "message": "Logowanie za pomocą urządzenia musi być włączone w ustawieniach aplikacji Bitwarden. Potrzebujesz innej opcji?"
   },
   "loginWithMasterPassword": {
     "message": "Logowanie hasłem głównym"

@@ -618,8 +618,8 @@
   "loginWithDevice": {
     "message": "デバイスでログイン"
   },
-  "loginWithDeviceEnabledInfo": {
-    "message": "Bitwarden モバイルアプリの設定で有効化する必要があります。別のオプションが必要ですか？"
+  "loginWithDeviceEnabledNote": {
+    "message": "Bitwarden アプリで「デバイスでログイン」の設定をする必要があります。別のオプションが必要ですか？"
   },
   "loginWithMasterPassword": {
     "message": "マスターパスワードでログイン"

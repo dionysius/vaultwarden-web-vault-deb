@@ -618,8 +618,8 @@
   "loginWithDevice": {
     "message": "تسجيل الدخول باستخدام جهاز"
   },
-  "loginWithDeviceEnabledInfo": {
-    "message": "تسجيل الدخول باستخدام الجهاز يجب أن يكون مفعلاً في إعدادات تطبيق بيتواردن على هاتفك. هل تحتاج إلى خِيار آخر؟"
+  "loginWithDeviceEnabledNote": {
+    "message": "Log in with device must be set up in the settings of the Bitwarden app. Need another option?"
   },
   "loginWithMasterPassword": {
     "message": "تسجيل الدخول باستخدام كلمة المرور الرئيسية"

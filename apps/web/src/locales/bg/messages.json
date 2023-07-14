@@ -618,8 +618,8 @@
   "loginWithDevice": {
     "message": "Вписване с устройство"
   },
-  "loginWithDeviceEnabledInfo": {
-    "message": "Вписването с устройство трябва да е включено в настройките на мобилното приложение на Битуорден. Друга настройка ли търсите?"
+  "loginWithDeviceEnabledNote": {
+    "message": "Вписването с устройство трябва да е включено в настройките на приложението на Битуорден. Друга настройка ли търсите?"
   },
   "loginWithMasterPassword": {
     "message": "Вписване с главната парола"
@@ -6627,7 +6627,7 @@
     "message": "Управление на тайни"
   },
   "secretsManagerAccessDescription": {
-    "message": "Activate user access to Secrets Manager."
+    "message": "Включване на достъпа на потребителите до Управлението на тайни."
   },
   "userAccessSecretsManagerGA": {
     "message": "Този потребител има достъп до Управлението на тайни"
@@ -6859,18 +6859,18 @@
     "message": "Потребителят промени парола издадена чрез възстановяването на профили."
   },
   "activatedAccessToSecretsManager": {
-    "message": "Activated access to Secrets Manager",
+    "message": "Достъпът до Управлението на тайни е включен",
     "description": "Confirmation message that one or more users gained access to Secrets Manager"
   },
   "activateAccess": {
-    "message": "Activate access"
+    "message": "Включване на достъпа"
   },
   "bulkEnableSecretsManagerDescription": {
     "message": "Дайте на следните членове достъп до Управлението на тайни. Ролята, която всеки от тях има в Управителя на пароли, ще се приложи и в Управлението на тайни.",
     "description": "This description is shown to an admin when they are attempting to add more users to Secrets Manager."
   },
   "activateSecretsManager": {
-    "message": "Activate Secrets Manager"
+    "message": "Включване на Управлението на тайни"
   },
   "yourOrganizationsFingerprint": {
     "message": "Уникална фраза, идентифицираща организацията ви",

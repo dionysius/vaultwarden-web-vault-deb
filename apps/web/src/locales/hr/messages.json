@@ -618,8 +618,8 @@
   "loginWithDevice": {
     "message": "Prijava uređajem"
   },
-  "loginWithDeviceEnabledInfo": {
-    "message": "Prijava uređajem mora biti namještena u postavka Bitwarden mobilne aplikacije. Trebaš drugu opciju?"
+  "loginWithDeviceEnabledNote": {
+    "message": "Log in with device must be set up in the settings of the Bitwarden app. Need another option?"
   },
   "loginWithMasterPassword": {
     "message": "Prijava glavnom lozinkom"

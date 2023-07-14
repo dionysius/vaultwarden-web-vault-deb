@@ -618,8 +618,8 @@
   "loginWithDevice": {
     "message": "Přihlásit se zařízením"
   },
-  "loginWithDeviceEnabledInfo": {
-    "message": "Přihlášení zařízením musí být nastaveno v mobilní aplikaci Bitwarden. Potřebujete další volby?"
+  "loginWithDeviceEnabledNote": {
+    "message": "Přihlášení zařízením musí být nastaveno v aplikaci Bitwarden. Potřebujete další volby?"
   },
   "loginWithMasterPassword": {
     "message": "Přihlásit se pomocí hlavního hesla"
@@ -6627,7 +6627,7 @@
     "message": "Správce tajných klíčů"
   },
   "secretsManagerAccessDescription": {
-    "message": "Activate user access to Secrets Manager."
+    "message": "Aktivuje přístup uživatele ke správci tajných klíčů."
   },
   "userAccessSecretsManagerGA": {
     "message": "Tento uživatel může přistupovat ke správci tajných klíčů"
@@ -6859,18 +6859,18 @@
     "message": "Uživatel aktualizoval heslo vydané prostřednictvím obnovení účtu."
   },
   "activatedAccessToSecretsManager": {
-    "message": "Activated access to Secrets Manager",
+    "message": "Aktivován přístup uživatele ke správci tajných klíčů",
     "description": "Confirmation message that one or more users gained access to Secrets Manager"
   },
   "activateAccess": {
-    "message": "Activate access"
+    "message": "Aktivovat přístup"
   },
   "bulkEnableSecretsManagerDescription": {
     "message": "Udělte následujícím členům přístup ke správci tajných klíčů. Role udělená ve správci hesel se bude vztahovat na správce tajných klíčů.",
     "description": "This description is shown to an admin when they are attempting to add more users to Secrets Manager."
   },
   "activateSecretsManager": {
-    "message": "Activate Secrets Manager"
+    "message": "Aktivovat správce tajných klíčů"
   },
   "yourOrganizationsFingerprint": {
     "message": "Fráze otisku prstu Vaší organizace",

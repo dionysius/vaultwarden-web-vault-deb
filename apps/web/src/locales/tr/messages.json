@@ -618,7 +618,7 @@
   "loginWithDevice": {
     "message": "Cihazla giriş yap"
   },
-  "loginWithDeviceEnabledInfo": {
+  "loginWithDeviceEnabledNote": {
     "message": "Cihazla girişi Bitwarden mobil uygulamasının ayarlarından etkinleştirmelisiniz. Başka bir seçeneğe mi ihtiyacınız var?"
   },
   "loginWithMasterPassword": {
@@ -5233,10 +5233,10 @@
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Use the require single-sign-on authentication policy to require all members to log in with SSO.'"
   },
   "memberDecryptionOption": {
-    "message": "Üye Şifre Çözme Seçenekleri"
+    "message": "Üye deşifre seçenekleri"
   },
   "memberDecryptionPassDesc": {
-    "message": "Kimlik doğrulamanın ardından üyeler ana parolalarını kullanarak kasadaki verilere erişebilecekler."
+    "message": "Kimlik doğrulamanın ardından üyeler ana parolalarını kullanarak kasadaki verileri deşifre edebilecek."
   },
   "keyConnector": {
     "message": "Key Connector"
@@ -6863,7 +6863,7 @@
     "description": "Confirmation message that one or more users gained access to Secrets Manager"
   },
   "activateAccess": {
-    "message": "Activate access"
+    "message": "Erişimi etkinleştir"
   },
   "bulkEnableSecretsManagerDescription": {
     "message": "Grant the following members access to Secrets Manager. The role granted in the Password Manager will apply to Secrets Manager.",

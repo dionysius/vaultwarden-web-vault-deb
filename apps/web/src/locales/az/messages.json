@@ -618,8 +618,8 @@
   "loginWithDevice": {
     "message": "Cihazla giriş et"
   },
-  "loginWithDeviceEnabledInfo": {
-    "message": "Cihazla giriş etmə, Bitwarden mobil tətbiqinin tənzimləmələrində fəallaşdırılmalıdır. Başqa bir seçimə ehtiyacınız var?"
+  "loginWithDeviceEnabledNote": {
+    "message": "Log in with device must be set up in the settings of the Bitwarden app. Need another option?"
   },
   "loginWithMasterPassword": {
     "message": "Ana parolla giriş et"
@@ -6627,7 +6627,7 @@
     "message": "Secrets Manager"
   },
   "secretsManagerAccessDescription": {
-    "message": "Activate user access to Secrets Manager."
+    "message": "\"Secrets Manager\"ə istifadəçi müraciətini aktivləşdir."
   },
   "userAccessSecretsManagerGA": {
     "message": "This user can access Secrets Manager"
@@ -6859,18 +6859,18 @@
     "message": "İstifadəçi, hesab bərpası vasitəsilə verilən bir parolu güncəllədi."
   },
   "activatedAccessToSecretsManager": {
-    "message": "Activated access to Secrets Manager",
+    "message": "\"Secrets Manager\"ə müraciət aktivləşdirildi",
     "description": "Confirmation message that one or more users gained access to Secrets Manager"
   },
   "activateAccess": {
-    "message": "Activate access"
+    "message": "Müraciəti aktivləşdir"
   },
   "bulkEnableSecretsManagerDescription": {
     "message": "Grant the following members access to Secrets Manager. The role granted in the Password Manager will apply to Secrets Manager.",
     "description": "This description is shown to an admin when they are attempting to add more users to Secrets Manager."
   },
   "activateSecretsManager": {
-    "message": "Activate Secrets Manager"
+    "message": "\"Secrets Manager\"i aktivləşdir"
   },
   "yourOrganizationsFingerprint": {
     "message": "Təşkilatınızın barmaq izi ifadəsi",

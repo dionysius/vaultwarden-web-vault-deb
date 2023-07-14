@@ -618,8 +618,8 @@
   "loginWithDevice": {
     "message": "使用裝置登入"
   },
-  "loginWithDeviceEnabledInfo": {
-    "message": "裝置登入必須在 Bitwarden 行動應用程式的設定中啟用。需要其他選項嗎？"
+  "loginWithDeviceEnabledNote": {
+    "message": "必須先在 Bitwarden 應用程式設定中開啟後，才可以使用裝置登入。要改用其他選項嗎？"
   },
   "loginWithMasterPassword": {
     "message": "使用主密碼登入"

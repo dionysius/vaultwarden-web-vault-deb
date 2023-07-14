@@ -618,7 +618,7 @@
   "loginWithDevice": {
     "message": "Accedi con dispositivo"
   },
-  "loginWithDeviceEnabledInfo": {
+  "loginWithDeviceEnabledNote": {
     "message": "L'accesso con dispositivo deve essere abilitato nelle impostazioni dell'app Bitwarden. Ti serve un'altra opzione?"
   },
   "loginWithMasterPassword": {
@@ -6627,7 +6627,7 @@
     "message": "Gestore dei Segreti"
   },
   "secretsManagerAccessDescription": {
-    "message": "Activate user access to Secrets Manager."
+    "message": "Attiva l'accesso dell'utente al Gestore dei Segreti."
   },
   "userAccessSecretsManagerGA": {
     "message": "Questo utente può accedere al Gestore dei Segreti"
@@ -6859,18 +6859,18 @@
     "message": "L'utente ha aggiornato una password emessa tramite il recupero dell'account."
   },
   "activatedAccessToSecretsManager": {
-    "message": "Activated access to Secrets Manager",
+    "message": "Accesso attivato al Gestore dei Segreti",
     "description": "Confirmation message that one or more users gained access to Secrets Manager"
   },
   "activateAccess": {
-    "message": "Activate access"
+    "message": "Attiva accesso"
   },
   "bulkEnableSecretsManagerDescription": {
     "message": "Concedi ai seguenti membri l'accesso al Gestore dei Segreti. Il ruolo concesso nel gestore di password si applicherà al Gestore dei Segreti.",
     "description": "This description is shown to an admin when they are attempting to add more users to Secrets Manager."
   },
   "activateSecretsManager": {
-    "message": "Activate Secrets Manager"
+    "message": "Attiva Gestore dei Segreti"
   },
   "yourOrganizationsFingerprint": {
     "message": "Frase impronta della tua organizzazione",

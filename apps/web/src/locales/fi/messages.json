@@ -618,8 +618,8 @@
   "loginWithDevice": {
     "message": "Laitteella kirjautuminen"
   },
-  "loginWithDeviceEnabledInfo": {
-    "message": "Laitteella kirjautuminen on määritettävä Bitwarden-mobiilisovelluksen asetuksista. Tarvitsetko eri vaihtoehdon?"
+  "loginWithDeviceEnabledNote": {
+    "message": "Laitteella kirjautuminen on määritettävä Bitwarden-sovelluksen asetuksista. Tarvitsetko eri vaihtoehdon?"
   },
   "loginWithMasterPassword": {
     "message": "Kirjaudu pääsalasanalla"
@@ -6627,7 +6627,7 @@
     "message": "Salaisuushallinta"
   },
   "secretsManagerAccessDescription": {
-    "message": "Activate user access to Secrets Manager."
+    "message": "Myönnä käyttäjälle Salaisuushallinnan käyttöoikeus."
   },
   "userAccessSecretsManagerGA": {
     "message": "Käyttäjällä on Salaisuushallinnan käyttöoikeus"
@@ -6859,18 +6859,18 @@
     "message": "Käyttäjä vaihtoi tilin palautusavun määrittämän salasanan."
   },
   "activatedAccessToSecretsManager": {
-    "message": "Activated access to Secrets Manager",
+    "message": "Aktivoi Salaisuushallinnan",
     "description": "Confirmation message that one or more users gained access to Secrets Manager"
   },
   "activateAccess": {
-    "message": "Activate access"
+    "message": "Aktivoi"
   },
   "bulkEnableSecretsManagerDescription": {
     "message": "Myönnä seuraaville jäsenille Salaisuushallinnan käyttöoikeus. Salasananhallinnassa myönnetty rooli pätee myös Salaisuushallinnassa.",
     "description": "This description is shown to an admin when they are attempting to add more users to Secrets Manager."
   },
   "activateSecretsManager": {
-    "message": "Activate Secrets Manager"
+    "message": "Aktivoi Salaisuushallinta"
   },
   "yourOrganizationsFingerprint": {
     "message": "Organisaatiosi tunnistelauseke",

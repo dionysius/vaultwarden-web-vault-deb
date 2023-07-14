@@ -618,8 +618,8 @@
   "loginWithDevice": {
     "message": "设备登录"
   },
-  "loginWithDeviceEnabledInfo": {
-    "message": "必须在 Bitwarden 移动应用程序的设置中启用设备登录。需要其他选项吗？"
+  "loginWithDeviceEnabledNote": {
+    "message": "设备登录必须在 Bitwarden 应用程序的设置中设启用。需要其他选项吗？"
   },
   "loginWithMasterPassword": {
     "message": "使用主密码登录"
@@ -4969,7 +4969,7 @@
     "message": "客户 ID"
   },
   "clientSecret": {
-    "message": "客户机密"
+    "message": "客户端机密"
   },
   "metadataAddress": {
     "message": "元数据地址"
@@ -6856,7 +6856,7 @@
     "message": "恢复账户"
   },
   "updatedTempPassword": {
-    "message": "用户更新了通过账户恢复发布的密码。"
+    "message": "用户更新了通过账户恢复颁发的密码。"
   },
   "activatedAccessToSecretsManager": {
     "message": "已激活对机密管理器的访问权限",
@@ -6886,7 +6886,7 @@
     "message": "设备信息"
   },
   "time": {
-    "message": "时间"
+    "message": "Time"
   },
   "denyAllRequests": {
     "message": "拒绝所有请求"
@@ -6916,7 +6916,7 @@
     "message": "账户没有主密码"
   },
   "removeOrgUserNoMasterPasswordDesc": {
-    "message": "移除没有为其设置主密码的 $USER$ 可能会限制对他们的完整账户的的访问权限。确定要继续吗？",
+    "message": "移除没有为其设置主密码的 $USER$ 可能会限制对他们的完整账户的访问权限。确定要继续吗？",
     "placeholders": {
       "user": {
         "content": "$1",
@@ -6928,10 +6928,10 @@
     "message": "无主密码"
   },
   "removeMembersWithoutMasterPasswordWarning": {
-    "message": "移除没有为其设置主密码的成员可能会限制对他们的完整账户的的访问权限。"
+    "message": "移除没有为其设置主密码的成员可能会限制对他们的完整账户的访问权限。"
   },
   "startYour7DayFreeTrialOfBitwardenFor": {
-    "message": "开始您的 Bitwarden $ORG$ 7 天免费试用",
+    "message": "为 $ORG$ 开始您的 Bitwarden 7 天免费试用",
     "placeholders": {
       "org": {
         "content": "$1",
@@ -6949,6 +6949,6 @@
     "message": "EU flag"
   },
   "selectedRegionFlag": {
-    "message": "选择的区域标志"
+    "message": "Selected region flag"
   }
 }

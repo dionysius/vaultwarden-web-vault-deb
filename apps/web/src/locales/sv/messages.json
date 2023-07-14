@@ -618,8 +618,8 @@
   "loginWithDevice": {
     "message": "Logga in med enhet"
   },
-  "loginWithDeviceEnabledInfo": {
-    "message": "\"Logga in med enhet\" måste ställas in i inställningarna i Bitwardens mobilapp. Behöver du ett annat alternativ?"
+  "loginWithDeviceEnabledNote": {
+    "message": "Log in with device must be set up in the settings of the Bitwarden app. Need another option?"
   },
   "loginWithMasterPassword": {
     "message": "Logga in med huvudlösenord"

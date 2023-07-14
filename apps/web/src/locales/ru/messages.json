@@ -618,7 +618,7 @@
   "loginWithDevice": {
     "message": "Войти с помощью устройства"
   },
-  "loginWithDeviceEnabledInfo": {
+  "loginWithDeviceEnabledNote": {
     "message": "Вход с устройства должен быть настроен в настройках мобильного приложения Bitwarden. Нужен другой вариант?"
   },
   "loginWithMasterPassword": {
@@ -5263,10 +5263,10 @@
     "message": "SSO отключен"
   },
   "enabledKeyConnector": {
-    "message": "Соединитель ключей включен"
+    "message": "Соединитель ключей активирован"
   },
   "disabledKeyConnector": {
-    "message": "Соединитель ключей отключен"
+    "message": "Соединитель ключей деактивирован"
   },
   "keyConnectorWarning": {
     "message": "После того как участники начнут использовать соединитель ключей, ваша организация не сможет вернуться к расшифровке посредством мастер-пароля. Продолжайте только в том случае, если вам удобно развертывать и управлять сервером ключей."
@@ -5623,7 +5623,7 @@
     "description": "the text, 'SCIM', is an acronymn and should not be translated."
   },
   "scimEnabledCheckboxDescHelpText": {
-    "message": "Установите предпочтительного поставщика идентификационных данных, настроив URL и ключ API SCIM",
+    "message": "Установить предпочтительного поставщика идентификационных данных, настроив URL и ключ API SCIM",
     "description": "the text, 'SCIM', is an acronymn and should not be translated."
   },
   "scimApiKeyHelperText": {
@@ -6627,7 +6627,7 @@
     "message": "Менеджер секретов"
   },
   "secretsManagerAccessDescription": {
-    "message": "Activate user access to Secrets Manager."
+    "message": "Активировать доступ пользователей к менеджеру секретов."
   },
   "userAccessSecretsManagerGA": {
     "message": "Этот пользователь может получить доступ к менеджеру секретов"
@@ -6859,18 +6859,18 @@
     "message": "Пользователь обновил пароль, выданный через восстановление аккаунта."
   },
   "activatedAccessToSecretsManager": {
-    "message": "Activated access to Secrets Manager",
+    "message": "Активирован доступ к менеджеру секретов",
     "description": "Confirmation message that one or more users gained access to Secrets Manager"
   },
   "activateAccess": {
-    "message": "Activate access"
+    "message": "Активировать доступ"
   },
   "bulkEnableSecretsManagerDescription": {
     "message": "Предоставить следующим пользователям доступ к менеджеру секретов. Роль, предоставленная в менеджере паролей, будет применяться и к менеджеру секретов.",
     "description": "This description is shown to an admin when they are attempting to add more users to Secrets Manager."
   },
   "activateSecretsManager": {
-    "message": "Activate Secrets Manager"
+    "message": "Активировать менеджер секретов"
   },
   "yourOrganizationsFingerprint": {
     "message": "Фраза отпечатка вашей организации",

@@ -618,8 +618,8 @@
   "loginWithDevice": {
     "message": "Bejelentkezés eszközzel"
   },
-  "loginWithDeviceEnabledInfo": {
-    "message": "Az eszközzel történő bejelentkezést engedélyezni kell a Biwarden mobilalkalmazás beállításaiban. Másik opcióra van szükség?"
+  "loginWithDeviceEnabledNote": {
+    "message": "Az eszközzel történő bejelentkezést be kell állítani a Bitwarden alkalmazás beállításaiban. Más opcióra van szükség?"
   },
   "loginWithMasterPassword": {
     "message": "Bejelentkezés mesterjelszóval"
@@ -6627,7 +6627,7 @@
     "message": "Titkos kód kezelő"
   },
   "secretsManagerAccessDescription": {
-    "message": "Activate user access to Secrets Manager."
+    "message": "A felhasználói hozzáférés bekapcsolása a Titkos kód kezelőhöz."
   },
   "userAccessSecretsManagerGA": {
     "message": "Ez a felhasználó elérheti a Titkos kód kezelőt"
@@ -6859,18 +6859,18 @@
     "message": "A felhasználó frissítette a fiók helyreállítás során kiadott jelszót."
   },
   "activatedAccessToSecretsManager": {
-    "message": "Activated access to Secrets Manager",
+    "message": "A hozzáférés engedélyezése a Titkos kód kezelőhöz",
     "description": "Confirmation message that one or more users gained access to Secrets Manager"
   },
   "activateAccess": {
-    "message": "Activate access"
+    "message": "Hozzáférés bekapcsolása"
   },
   "bulkEnableSecretsManagerDescription": {
     "message": "Hozzáférés kiosztása a következő tagoknak a Titkos kód kezelőhöz.. A Jelszókezelőben megadott szerepkör a Titkos kód kezelőre vonatkozik.",
     "description": "This description is shown to an admin when they are attempting to add more users to Secrets Manager."
   },
   "activateSecretsManager": {
-    "message": "Activate Secrets Manager"
+    "message": "Titkos kód kezelő bekapcsolása"
   },
   "yourOrganizationsFingerprint": {
     "message": "A szervezet ujjnyomat kifejezése",

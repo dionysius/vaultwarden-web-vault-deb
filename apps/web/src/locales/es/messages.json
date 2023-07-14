@@ -618,8 +618,8 @@
   "loginWithDevice": {
     "message": "Iniciar sesión con el dispositivo"
   },
-  "loginWithDeviceEnabledInfo": {
-    "message": "Iniciar sesión con el dispositivo debe estar habilitado en los ajustes de la aplicación móvil Bitwarden. ¿Necesitas otra opción?"
+  "loginWithDeviceEnabledNote": {
+    "message": "Iniciar sesión con el dispositivo debe configurarse en los ajustes de la aplicación Bitwarden. ¿Necesitas otra opción?"
   },
   "loginWithMasterPassword": {
     "message": "Iniciar sesión con contraseña maestra"

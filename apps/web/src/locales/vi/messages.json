@@ -618,8 +618,8 @@
   "loginWithDevice": {
     "message": "Đăng nhập bằng thiết bị"
   },
-  "loginWithDeviceEnabledInfo": {
-    "message": "Đăng nhập bằng thiết bị phải được thiết lập trong cài đặt của ứng dụng di động Bitwarden. Cần một lựa chọn khác?"
+  "loginWithDeviceEnabledNote": {
+    "message": "Log in with device must be set up in the settings of the Bitwarden app. Need another option?"
   },
   "loginWithMasterPassword": {
     "message": "Đăng nhập bằng mật khẩu chính"
@@ -697,7 +697,7 @@
     "message": "Yêu cầu nhập lại mật khẩu chính."
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least $VALUE$ characters long.",
+    "message": "Mật khẩu chính phải có ít nhất $VALUE$ kí tự.",
     "description": "The Master Password must be at least a specific number of characters long.",
     "placeholders": {
       "value": {
@@ -876,7 +876,7 @@
     "message": "FIDO2 WebAuthn"
   },
   "webAuthnDesc": {
-    "message": "Use any WebAuthn compatible security key to access your account."
+    "message": "Sử dụng bất kỳ khóa bảo mật tương thích với WebAuthn nào để truy cập vào tài khoản của bạn."
   },
   "webAuthnMigrated": {
     "message": "(Migrated from FIDO)"
@@ -965,7 +965,7 @@
     "message": "Xác nhận xuất kho lưu trữ"
   },
   "confirmSecretsExport": {
-    "message": "Confirm secrets export"
+    "message": "Xác nhận xuất kho lưu trữ"
   },
   "exportWarningDesc": {
     "message": "Bản trích xuất này chứa dữ liệu kho bạn và không được mã hóa. Bạn không nên lưu trữ hay gửi tập tin trích xuất thông qua phương thức không an toàn (như email). Vui lòng xóa nó ngay lập tức khi bạn đã sử dụng xong."

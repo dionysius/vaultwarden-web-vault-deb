@@ -618,8 +618,8 @@
   "loginWithDevice": {
     "message": "기기로 로그인"
   },
-  "loginWithDeviceEnabledInfo": {
-    "message": "기기로 로그인하려면 Bitwarden 모바일 앱 설정에서 설정해야 합니다. 다른 방식이 필요하신가요?"
+  "loginWithDeviceEnabledNote": {
+    "message": "Log in with device must be set up in the settings of the Bitwarden app. Need another option?"
   },
   "loginWithMasterPassword": {
     "message": "마스터 비밀번호로 로그인"

@@ -618,8 +618,8 @@
   "loginWithDevice": {
     "message": "ورود با دستگاه"
   },
-  "loginWithDeviceEnabledInfo": {
-    "message": "ورود به سیستم با دستگاه باید در تنظیمات برنامه‌ی موبایل Bitwarden تنظیم شود. به گزینه دیگری نیاز دارید؟"
+  "loginWithDeviceEnabledNote": {
+    "message": "Log in with device must be set up in the settings of the Bitwarden app. Need another option?"
   },
   "loginWithMasterPassword": {
     "message": "با کلمه عبور اصلی وارد شوید"

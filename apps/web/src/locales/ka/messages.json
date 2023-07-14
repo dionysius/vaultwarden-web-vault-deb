@@ -618,8 +618,8 @@
   "loginWithDevice": {
     "message": "შესვლა მოწყობილობით"
   },
-  "loginWithDeviceEnabledInfo": {
-    "message": "შესვლა მოწყობილობით უნდა იყოს გამართული Bitwarden-ის მობილური აპლიკაციის პარამეტრებში. სხვა ვარიანთი გჭირდებათ?"
+  "loginWithDeviceEnabledNote": {
+    "message": "Log in with device must be set up in the settings of the Bitwarden app. Need another option?"
   },
   "loginWithMasterPassword": {
     "message": "ავტორიზაცია მთავარი პაროლით"

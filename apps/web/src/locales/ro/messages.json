@@ -618,8 +618,8 @@
   "loginWithDevice": {
     "message": "Autentificați-vă cu dispozitivul"
   },
-  "loginWithDeviceEnabledInfo": {
-    "message": "Autentificarea cu dispozitivul trebuie să fie configurată în setările aplicației mobile Bitwarden. Aveți nevoie de o altă opțiune?"
+  "loginWithDeviceEnabledNote": {
+    "message": "Log in with device must be set up in the settings of the Bitwarden app. Need another option?"
   },
   "loginWithMasterPassword": {
     "message": "Autentificați-vă cu parola principală"

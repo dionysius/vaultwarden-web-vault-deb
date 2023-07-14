@@ -618,8 +618,8 @@
   "loginWithDevice": {
     "message": "Inici de sessió amb dispositiu"
   },
-  "loginWithDeviceEnabledInfo": {
-    "message": "L'inici de sessió amb el dispositiu ha d'estar activat a la configuració de l'aplicació mòbil Bitwarden. Necessiteu una altra opció?"
+  "loginWithDeviceEnabledNote": {
+    "message": "L'inici de sessió amb el dispositiu ha d'estar activat a la configuració de l'aplicació Bitwarden. Necessiteu una altra opció?"
   },
   "loginWithMasterPassword": {
     "message": "Inici de sessió amb contrasenya mestra"
@@ -6627,7 +6627,7 @@
     "message": "Administrador de secrets"
   },
   "secretsManagerAccessDescription": {
-    "message": "Activate user access to Secrets Manager."
+    "message": "Activa l'accés dels usuaris a l'administrador de secrets."
   },
   "userAccessSecretsManagerGA": {
     "message": "Aquest usuari pot accedir a l'administrador de secrets"
@@ -6859,18 +6859,18 @@
     "message": "L'usuari ha actualitzat una contrasenya emesa mitjançant la recuperació del compte."
   },
   "activatedAccessToSecretsManager": {
-    "message": "Activated access to Secrets Manager",
+    "message": "Activa l'accés a l'administrador de secrets",
     "description": "Confirmation message that one or more users gained access to Secrets Manager"
   },
   "activateAccess": {
-    "message": "Activate access"
+    "message": "Activa l'accés"
   },
   "bulkEnableSecretsManagerDescription": {
     "message": "Concedeix als membres següents accés a l'administrador de secrets. El rol concedit l'administrador de contrasenyes s'aplicarà a l'administrador de secrets.",
     "description": "This description is shown to an admin when they are attempting to add more users to Secrets Manager."
   },
   "activateSecretsManager": {
-    "message": "Activate Secrets Manager"
+    "message": "Activa l'administrador de secrets"
   },
   "yourOrganizationsFingerprint": {
     "message": "Frase d'empremta digital de l'organització",
@@ -6931,7 +6931,7 @@
     "message": "La supressió de membres que no tenen contrasenyes mestres sense establir-ne una pot restringir l'accés al seu compte complet."
   },
   "startYour7DayFreeTrialOfBitwardenFor": {
-    "message": "Start your 7-Day free trial of Bitwarden for $ORG$",
+    "message": "Inicieu la vostra prova gratuïta de 7 dies de Bitwarden per a $ORG$",
     "placeholders": {
       "org": {
         "content": "$1",
@@ -6940,15 +6940,15 @@
     }
   },
   "next": {
-    "message": "Next"
+    "message": "Següent"
   },
   "usFlag": {
-    "message": "US flag"
+    "message": "Bandera EUA"
   },
   "euFlag": {
-    "message": "EU flag"
+    "message": "Bandera UE"
   },
   "selectedRegionFlag": {
-    "message": "Selected region flag"
+    "message": "Bandera de la regió seleccionada"
   }
 }

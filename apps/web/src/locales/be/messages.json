@@ -618,8 +618,8 @@
   "loginWithDevice": {
     "message": "Увайсці з прыладай"
   },
-  "loginWithDeviceEnabledInfo": {
-    "message": "Неабходна ўключыць уваход з прыладай у наладах мабільнай праграмы Bitwarden. Неабходны іншы варыянт?"
+  "loginWithDeviceEnabledNote": {
+    "message": "Log in with device must be set up in the settings of the Bitwarden app. Need another option?"
   },
   "loginWithMasterPassword": {
     "message": "Увайсці з асноўным паролем"
@@ -6627,7 +6627,7 @@
     "message": "Менеджар сакрэтаў"
   },
   "secretsManagerAccessDescription": {
-    "message": "Activate user access to Secrets Manager."
+    "message": "Актываваць доступ карыстальнікаў да менеджара сакрэтаў."
   },
   "userAccessSecretsManagerGA": {
     "message": "Гэты карыстальнік можа атрымаць доступ да менеджара сакрэтаў"
@@ -6859,18 +6859,18 @@
     "message": "Карыстальнік абнавіў пароль пры аднаўленні ўліковага запісу."
   },
   "activatedAccessToSecretsManager": {
-    "message": "Activated access to Secrets Manager",
+    "message": "Доступ карыстальнікаў да менеджара сакрэтаў актываваны",
     "description": "Confirmation message that one or more users gained access to Secrets Manager"
   },
   "activateAccess": {
-    "message": "Activate access"
+    "message": "Актываваць доступ"
   },
   "bulkEnableSecretsManagerDescription": {
     "message": "Забяспечце доступ наступным удзельнікам да менеджара сакрэтаў. Роля, якая забяспечана ў менеджары пароляў будзе ўжывацца і да менеджара сакрэтаў.",
     "description": "This description is shown to an admin when they are attempting to add more users to Secrets Manager."
   },
   "activateSecretsManager": {
-    "message": "Activate Secrets Manager"
+    "message": "Актываваць менеджар сакрэтаў"
   },
   "yourOrganizationsFingerprint": {
     "message": "Фраза адбітку пальца вашай арганізацыі",

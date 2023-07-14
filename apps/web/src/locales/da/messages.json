@@ -618,8 +618,8 @@
   "loginWithDevice": {
     "message": "Log ind med enhed"
   },
-  "loginWithDeviceEnabledInfo": {
-    "message": "Log ind med enhed skal være opsat i indstillingerne i Bitwarden mobil-appen. Behov for en anden mulighed?"
+  "loginWithDeviceEnabledNote": {
+    "message": "Log ind med enhed skal være opsat i indstillingerne i Bitwarden-appen. Brug for en anden mulighed?"
   },
   "loginWithMasterPassword": {
     "message": "Log ind med hovedadgangskode"
@@ -6627,7 +6627,7 @@
     "message": "Hemmelighedshåndtering"
   },
   "secretsManagerAccessDescription": {
-    "message": "Activate user access to Secrets Manager."
+    "message": "Aktivér brugeradgang til Hemmelighedshåndtering."
   },
   "userAccessSecretsManagerGA": {
     "message": "Denne bruger kan tilgå Hemmelighedshåndtering"
@@ -6859,18 +6859,18 @@
     "message": "Bruger har opdateret en adgangskode udstedt via kontogendannelse."
   },
   "activatedAccessToSecretsManager": {
-    "message": "Activated access to Secrets Manager",
+    "message": "Aktivér adgang til Hemmelighedshåndtering",
     "description": "Confirmation message that one or more users gained access to Secrets Manager"
   },
   "activateAccess": {
-    "message": "Activate access"
+    "message": "Aktivere adgang"
   },
   "bulkEnableSecretsManagerDescription": {
     "message": "Tildel flg. medlemmers adgang til Hemmelighedshåndtering. Den i Adgangskodehåndtering tildelte rolle vil gælde for Hemmelighedshåndtering.",
     "description": "This description is shown to an admin when they are attempting to add more users to Secrets Manager."
   },
   "activateSecretsManager": {
-    "message": "Activate Secrets Manager"
+    "message": "Aktivere Hemmelighedshåndtering"
   },
   "yourOrganizationsFingerprint": {
     "message": "Din organisations fingeraftrykssætning",

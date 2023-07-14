@@ -618,8 +618,8 @@
   "loginWithDevice": {
     "message": "Увійти з пристроєм"
   },
-  "loginWithDeviceEnabledInfo": {
-    "message": "Потрібно увімкнути схвалення запитів на вхід у налаштуваннях мобільної програми Bitwarden. Потрібен інший варіант?"
+  "loginWithDeviceEnabledNote": {
+    "message": "Log in with device must be set up in the settings of the Bitwarden app. Need another option?"
   },
   "loginWithMasterPassword": {
     "message": "Увійти з головним паролем"
@@ -965,13 +965,13 @@
     "message": "Підтвердити експорт сховища"
   },
   "confirmSecretsExport": {
-    "message": "Confirm secrets export"
+    "message": "Підтвердити експорт секретів"
   },
   "exportWarningDesc": {
     "message": "Експортовані дані вашого сховища знаходяться в незашифрованому вигляді. Вам не слід зберігати чи надсилати їх через незахищені канали (наприклад, е-поштою). Після використання негайно видаліть їх."
   },
   "exportSecretsWarningDesc": {
-    "message": "This export contains your secrets data in an unencrypted format. You should not store or send the exported file over unsecure channels (such as email). Delete it immediately after you are done using it."
+    "message": "Ваші експортовані секрети незашифровані. Не зберігайте і не надсилайте їх незахищеними каналами (як-от електронна пошта). Після використання негайно видаліть їх."
   },
   "encExportKeyWarningDesc": {
     "message": "Цей експорт шифрує ваші дані за допомогою ключа шифрування облікового запису. Якщо ви коли-небудь оновите ключ шифрування облікового запису, необхідно виконати експорт знову, оскільки не зможете розшифрувати цей файл експорту."
@@ -986,7 +986,7 @@
     "message": "Експортувати сховище"
   },
   "exportSecrets": {
-    "message": "Export secrets"
+    "message": "Експортувати секрети"
   },
   "fileFormat": {
     "message": "Формат файлу"
@@ -6624,13 +6624,13 @@
     "message": "Керування секретами (бета-версія)"
   },
   "secretsManager": {
-    "message": "Secrets Manager"
+    "message": "Керування секретами"
   },
   "secretsManagerAccessDescription": {
-    "message": "Activate user access to Secrets Manager."
+    "message": "Активувати доступ користувача до керування секретами."
   },
   "userAccessSecretsManagerGA": {
-    "message": "This user can access Secrets Manager"
+    "message": "Цей користувач має доступ до керування секретами"
   },
   "important": {
     "message": "Важливо:"
@@ -6859,18 +6859,18 @@
     "message": "Користувач оновив пароль під час відновлення облікового запису."
   },
   "activatedAccessToSecretsManager": {
-    "message": "Activated access to Secrets Manager",
+    "message": "Активовано доступ до керування секретами",
     "description": "Confirmation message that one or more users gained access to Secrets Manager"
   },
   "activateAccess": {
-    "message": "Activate access"
+    "message": "Активувати доступ"
   },
   "bulkEnableSecretsManagerDescription": {
-    "message": "Grant the following members access to Secrets Manager. The role granted in the Password Manager will apply to Secrets Manager.",
+    "message": "Надати зазначеним учасникам доступ до керування секретами. Роль, надана в менеджері паролів, буде застосована до керування секретами.",
     "description": "This description is shown to an admin when they are attempting to add more users to Secrets Manager."
   },
   "activateSecretsManager": {
-    "message": "Activate Secrets Manager"
+    "message": "Активувати керування секретами"
   },
   "yourOrganizationsFingerprint": {
     "message": "Фраза відбитка вашої організації",
@@ -6931,7 +6931,7 @@
     "message": "Вилучення учасників, які не мають головного пароля, попередньо не встановивши його для них, може призвести до обмеження доступу до їхніх облікових записів."
   },
   "startYour7DayFreeTrialOfBitwardenFor": {
-    "message": "Start your 7-Day free trial of Bitwarden for $ORG$",
+    "message": "Розпочніть 7-денний пробний період Bitwarden для $ORG$",
     "placeholders": {
       "org": {
         "content": "$1",
@@ -6940,15 +6940,15 @@
     }
   },
   "next": {
-    "message": "Next"
+    "message": "Далі"
   },
   "usFlag": {
-    "message": "US flag"
+    "message": "Прапор США"
   },
   "euFlag": {
-    "message": "EU flag"
+    "message": "Прапор ЄС"
   },
   "selectedRegionFlag": {
-    "message": "Selected region flag"
+    "message": "Прапор вибраного регіону"
   }
 }

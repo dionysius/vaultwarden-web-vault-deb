@@ -618,8 +618,8 @@
   "loginWithDevice": {
     "message": "Se connecter avec l'appareil"
   },
-  "loginWithDeviceEnabledInfo": {
-    "message": "La connexion avec l'appareil doit être activée dans les paramètres de l'application mobile Bitwarden. Avez-vous besoin d'une autre option?"
+  "loginWithDeviceEnabledNote": {
+    "message": "La connexion avec l'appareil doit être configurée dans les paramètres de l'application Bitwarden. Besoin d'une autre option ?"
   },
   "loginWithMasterPassword": {
     "message": "Se connecter avec le mot de passe principal"
