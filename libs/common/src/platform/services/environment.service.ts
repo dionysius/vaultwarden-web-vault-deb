@@ -12,7 +12,7 @@ export class EnvironmentService implements EnvironmentServiceAbstraction {
   private readonly urlsSubject = new Subject<void>();
   urls: Observable<void> = this.urlsSubject.asObservable();
   selectedRegion?: Region;
-  initialized = true;
+  initialized = false;
 
   protected baseUrl: string;
   protected webVaultUrl: string;
@@ -286,6 +286,7 @@ export class EnvironmentService implements EnvironmentServiceAbstraction {
   async setRegion(region: Region) {
     this.selectedRegion = region;
     await this.stateService.setRegion(region);
+
     if (region === Region.SelfHosted) {
       // If user saves a self-hosted region with empty fields, default to US
       if (this.isEmpty()) {
