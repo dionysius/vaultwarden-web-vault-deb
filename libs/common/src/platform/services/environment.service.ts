@@ -33,7 +33,7 @@ export class EnvironmentService implements EnvironmentServiceAbstraction {
     webVault: "https://vault.bitwarden.com",
     notifications: "https://notifications.bitwarden.com",
     events: "https://events.bitwarden.com",
-    scim: "https://scim.bitwarden.com/v2",
+    scim: "https://scim.bitwarden.com",
   };
 
   readonly euUrls: Urls = {
@@ -44,7 +44,7 @@ export class EnvironmentService implements EnvironmentServiceAbstraction {
     webVault: "https://vault.bitwarden.eu",
     notifications: "https://notifications.bitwarden.eu",
     events: "https://events.bitwarden.eu",
-    scim: "https://scim.bitwarden.eu/v2",
+    scim: "https://scim.bitwarden.eu",
   };
 
   constructor(private stateService: StateService) {
