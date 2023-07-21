@@ -4594,20 +4594,17 @@
   "accountRecoveryPolicy": {
     "message": "Gerenciar recuperação de conta"
   },
-  "accountRecoveryPolicyDescription": {
-    "message": "Recuperar contas de membros quando a senha mestra ou dispositivos confiáveis são esquecidos ou perdidos. Os processos de recuperação baseiam-se no método de criptografia da conta."
+  "accountRecoveryPolicyDesc": {
+    "message": "Baseado no método de criptografia, recupere contas quando senhas mestras ou dispositivos confiáveis forem esquecidos ou perdidos."
   },
-  "resetPasswordPolicyWarning": {
-    "message": "Os usuários da organização terão de se inscrever automaticamente ou serem inscritos automaticamente para que os administradores possam redefinir sua senha mestra."
+  "accountRecoveryPolicyWarning": {
+    "message": "Contas existentes com senhas mestras exigirá que os membros se inscrevam antes que os administradores possam recuperar suas contas. A inscrição automática irá ativar a recuperação de conta para novos membros."
+  },
+  "accountRecoverySingleOrgRequirementDesc": {
+    "message": "A política empresarial de organização única deve ser ativada antes de ativar esta política."
   },
   "resetPasswordPolicyAutoEnroll": {
     "message": "Inscrição Automática"
-  },
-  "resetPasswordPolicyAutoEnrollDescription": {
-    "message": "Todos os usuários serão inscritos automaticamente na redefinição de senha assim que o convite for aceito."
-  },
-  "resetPasswordPolicyAutoEnrollWarning": {
-    "message": "Os usuários que já estão na organização não serão inscritos retroativamente na redefinição de senha. Eles precisarão se inscrever para que os administradores possam redefinir sua senha mestra."
   },
   "resetPasswordPolicyAutoEnrollCheckbox": {
     "message": "Inscrever automaticamente novos usuários"
@@ -5224,8 +5221,8 @@
     "message": "Ativar o",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Use the require single-sign-on authentication policy to require all members to log in with SSO.'"
   },
-  "ssoPolicyHelpLink": {
-    "message": "Política de SSO",
+  "ssoPolicyHelpAnchor": {
+    "message": "requer política de autenticação de logon único",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Use the require single-sign-on authentication policy to require all members to log in with SSO.'"
   },
   "ssoPolicyHelpEnd": {
@@ -6831,17 +6828,25 @@
   "trustedDeviceEncryption": {
     "message": "Trusted device encryption"
   },
-  "memberDecryptionTdeDescriptionStart": {
-    "message": "Once authenticated, members will decrypt vault data using a key stored on their device. The",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The account recovery administration policy with automatic enrollment will turn on when this option is used.'"
+  "memberDecryptionTdeDescriptionPartOne": {
+    "message": "Uma vez autenticados, os membros descriptografarão os dados do cofre usando uma chave armazenada no seu dispositivo.",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The single organization policy and account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
-  "memberDecryptionTdeDescriptionLink": {
-    "message": "account recovery administration policy",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The account recovery administration policy with automatic enrollment will turn on when this option is used.'"
+  "memberDecryptionTdeDescriptionLinkOne": {
+    "message": "Organização única",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The single organization policy and account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
-  "memberDecryptionTdeDescriptionEnd": {
-    "message": "with automatic enrollment will turn on when this option is used.",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The master password reset policy with automatic enrollment will turn on when this option is used.'"
+  "memberDecryptionTdeDescriptionPartTwo": {
+    "message": "política e ",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The single organization policy and account recovery administration policy with automatic enrollment will turn on when this option is used.'"
+  },
+  "memberDecryptionTdeDescriptionLinkTwo": {
+    "message": "Gerenciar recuperação de conta",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The single organization policy and account recovery administration policy with automatic enrollment will turn on when this option is used.'"
+  },
+  "memberDecryptionTdeDescriptionPartThree": {
+    "message": "política com inscrição automática será ativada quando esta opção for utilizada.",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The single organization policy and account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
   "notFound": {
     "message": "$RESOURCE$ não encontrado",
