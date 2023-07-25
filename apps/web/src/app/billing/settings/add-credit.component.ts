@@ -43,6 +43,7 @@ export class AddCreditComponent implements OnInit {
   private userId: string;
   private name: string;
   private email: string;
+  private region: string;
 
   constructor(
     private stateService: StateService,
@@ -76,7 +77,9 @@ export class AddCreditComponent implements OnInit {
       this.email = this.subject;
       this.ppButtonCustomField = "user_id:" + this.userId;
     }
+    this.region = await this.stateService.getRegion();
     this.ppButtonCustomField += ",account_credit:1";
+    this.ppButtonCustomField += `,region:${this.region}`;
     this.returnUrl = window.location.href;
   }
 
