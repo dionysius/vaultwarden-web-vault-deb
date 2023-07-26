@@ -4378,8 +4378,8 @@
   "manageUsers": {
     "message": "Manage users"
   },
-  "manageResetPassword": {
-    "message": "Manage password reset"
+  "manageAccountRecovery": {
+    "message": "Manage account recovery"
   },
   "disableRequiredError": {
     "message": "You must manually turn the $POLICYNAME$ policy before this policy can be turned off.",
