@@ -3,39 +3,39 @@
     "message": "Bitwarden"
   },
   "extName": {
-    "message": "Bitwarden - Free Password Manager",
+    "message": "Bitwarden - विनामूल्य पासवर्ड व्यवस्थापक",
     "description": "Extension name, MUST be less than 40 characters (Safari restriction)"
   },
   "extDesc": {
-    "message": "A secure and free password manager for all of your devices.",
+    "message": "तुमच्या सर्व उपकरणांसाठी एक सुरक्षित व विनामूल्य पासवर्ड व्यवस्थापक.",
     "description": "Extension description"
   },
   "loginOrCreateNewAccount": {
-    "message": "Log in or create a new account to access your secure vault."
+    "message": "तुमच्या सुरक्षित तिजोरीत पोहचण्यासाठी लॉग इन करा किंवा नवीन खाते उघडा."
   },
   "createAccount": {
-    "message": "Create account"
+    "message": "खाते तयार करा"
   },
   "login": {
-    "message": "Log in"
+    "message": "प्रवेश करा"
   },
   "enterpriseSingleSignOn": {
     "message": "Enterprise single sign-on"
   },
   "cancel": {
-    "message": "Cancel"
+    "message": "रद्द"
   },
   "close": {
-    "message": "Close"
+    "message": "मिटवा"
   },
   "submit": {
-    "message": "Submit"
+    "message": "पाठवा"
   },
   "emailAddress": {
-    "message": "Email address"
+    "message": "ईमेल पत्ता"
   },
   "masterPass": {
-    "message": "Master password"
+    "message": "मुख्य पासवर्ड"
   },
   "masterPassDesc": {
     "message": "The master password is the password you use to access your vault. It is very important that you do not forget your master password. There is no way to recover the password in the event that you forget it."
@@ -47,49 +47,49 @@
     "message": "Re-type master password"
   },
   "masterPassHint": {
-    "message": "Master password hint (optional)"
+    "message": "मुख्य पासवर्डचा संकेत (पर्यायी)"
   },
   "tab": {
-    "message": "Tab"
+    "message": "टॅब"
   },
   "vault": {
-    "message": "Vault"
+    "message": "तिजोरी"
   },
   "myVault": {
-    "message": "My vault"
+    "message": "माझी तिजोरी"
   },
   "allVaults": {
-    "message": "All vaults"
+    "message": "सर्व तिजोऱ्या"
   },
   "tools": {
-    "message": "Tools"
+    "message": "साधने"
   },
   "settings": {
-    "message": "Settings"
+    "message": "मांडणी"
   },
   "currentTab": {
-    "message": "Current tab"
+    "message": "वर्तमान टॅब"
   },
   "copyPassword": {
-    "message": "Copy password"
+    "message": "पासवर्ड कॉपी करा"
   },
   "copyNote": {
-    "message": "Copy note"
+    "message": "टीप कॉपी करा"
   },
   "copyUri": {
-    "message": "Copy URI"
+    "message": "URI कॉपी करा"
   },
   "copyUsername": {
-    "message": "Copy username"
+    "message": "वापरकर्तानाव कॉपी करा"
   },
   "copyNumber": {
-    "message": "Copy number"
+    "message": "क्रमांक कॉपी करा"
   },
   "copySecurityCode": {
-    "message": "Copy security code"
+    "message": "सुरक्षा कोड कॉपी करा"
   },
   "autoFill": {
-    "message": "Auto-fill"
+    "message": "स्वयंभरण"
   },
   "generatePasswordCopied": {
     "message": "Generate password (copied)"
@@ -101,90 +101,90 @@
     "message": "No matching logins"
   },
   "unlockVaultMenu": {
-    "message": "Unlock your vault"
+    "message": "तिजोरी उघडा"
   },
   "loginToVaultMenu": {
-    "message": "Log in to your vault"
+    "message": "तिजोरीत प्रवेश करा"
   },
   "autoFillInfo": {
     "message": "There are no logins available to auto-fill for the current browser tab."
   },
   "addLogin": {
-    "message": "Add a login"
+    "message": "लॉगिन जोडा"
   },
   "addItem": {
-    "message": "Add item"
+    "message": "वस्तू जोडा"
   },
   "passwordHint": {
-    "message": "Password hint"
+    "message": "पासवर्ड संकेत"
   },
   "enterEmailToGetHint": {
     "message": "Enter your account email address to receive your master password hint."
   },
   "getMasterPasswordHint": {
-    "message": "Get master password hint"
+    "message": "मुख्य पासवर्ड संकेत मिळवा"
   },
   "continue": {
-    "message": "Continue"
+    "message": "पुढे"
   },
   "sendVerificationCode": {
-    "message": "Send a verification code to your email"
+    "message": "तुमच्या ईमेलवर एक सत्यापन कोड पाठवा"
   },
   "sendCode": {
-    "message": "Send code"
+    "message": "कोड पाठवा"
   },
   "codeSent": {
-    "message": "Code sent"
+    "message": "कोड पाठवला"
   },
   "verificationCode": {
-    "message": "Verification code"
+    "message": "सत्यापन कोड"
   },
   "confirmIdentity": {
-    "message": "Confirm your identity to continue."
+    "message": "पुढे जाण्यासाठी तुमच्या ओळखीची पुष्टी करा."
   },
   "account": {
-    "message": "Account"
+    "message": "खाते"
   },
   "changeMasterPassword": {
-    "message": "Change master password"
+    "message": "मुख्य पासवर्ड बदला"
   },
   "fingerprintPhrase": {
-    "message": "Fingerprint phrase",
+    "message": "अंगुलिमुद्रा वाक्यांश",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "yourAccountsFingerprint": {
-    "message": "Your account's fingerprint phrase",
+    "message": "तुमच्या खात्याचा अंगुलिमुद्रा वाक्यांश",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "twoStepLogin": {
-    "message": "Two-step login"
+    "message": "दोन टप्प्यात लॉगिन"
   },
   "logOut": {
-    "message": "Log out"
+    "message": "बाहेर पडा"
   },
   "about": {
-    "message": "About"
+    "message": "आमच्या विषयी"
   },
   "version": {
-    "message": "Version"
+    "message": "आवृत्ती"
   },
   "save": {
-    "message": "Save"
+    "message": "साठवा"
   },
   "move": {
-    "message": "Move"
+    "message": "हलवा"
   },
   "addFolder": {
-    "message": "Add folder"
+    "message": "फोल्डर जोडा"
   },
   "name": {
-    "message": "Name"
+    "message": "नाव"
   },
   "editFolder": {
-    "message": "Edit folder"
+    "message": "फोल्डर संपादित करा"
   },
   "deleteFolder": {
-    "message": "Delete folder"
+    "message": "फोल्डर खोडून टाका"
   },
   "folders": {
     "message": "Folders"
@@ -205,7 +205,7 @@
     "message": "Contact Bitwarden support"
   },
   "sync": {
-    "message": "Sync"
+    "message": "संकालन"
   },
   "syncVaultNow": {
     "message": "Sync vault now"
@@ -214,10 +214,10 @@
     "message": "Last sync:"
   },
   "passGen": {
-    "message": "Password generator"
+    "message": "पासवर्ड जनित्र"
   },
   "generator": {
-    "message": "Generator",
+    "message": "जनित्र",
     "description": "Short for 'Password Generator'."
   },
   "passGenInfo": {
@@ -227,7 +227,7 @@
     "message": "Bitwarden web vault"
   },
   "importItems": {
-    "message": "Import items"
+    "message": "वस्तू आयात करा"
   },
   "select": {
     "message": "Select"
@@ -236,13 +236,13 @@
     "message": "Generate password"
   },
   "regeneratePassword": {
-    "message": "Regenerate password"
+    "message": "पासवर्ड पुनर्जनित करा"
   },
   "options": {
-    "message": "Options"
+    "message": "पर्याय"
   },
   "length": {
-    "message": "Length"
+    "message": "लांबी"
   },
   "uppercase": {
     "message": "Uppercase (A-Z)"
@@ -300,61 +300,61 @@
     "message": "Password"
   },
   "passphrase": {
-    "message": "Passphrase"
+    "message": "वाक्यांश"
   },
   "favorite": {
-    "message": "Favorite"
+    "message": "आवडते"
   },
   "notes": {
-    "message": "Notes"
+    "message": "टिप"
   },
   "note": {
     "message": "Note"
   },
   "editItem": {
-    "message": "Edit item"
+    "message": "वस्तू संपादित करा"
   },
   "folder": {
-    "message": "Folder"
+    "message": "फोल्डर"
   },
   "deleteItem": {
-    "message": "Delete item"
+    "message": "वस्तू खोडून टाका"
   },
   "viewItem": {
-    "message": "View item"
+    "message": "वस्तू बघा"
   },
   "launch": {
-    "message": "Launch"
+    "message": "उघडा"
   },
   "website": {
-    "message": "Website"
+    "message": "संकेतस्थळ"
   },
   "toggleVisibility": {
-    "message": "Toggle visibility"
+    "message": "दृश्यात उलटवा"
   },
   "manage": {
-    "message": "Manage"
+    "message": "व्यवस्थापन"
   },
   "other": {
-    "message": "Other"
+    "message": "इतर"
   },
   "rateExtension": {
-    "message": "Rate the extension"
+    "message": "विस्तारकाचे मूल्यांकन करा"
   },
   "rateExtensionDesc": {
-    "message": "Please consider helping us out with a good review!"
+    "message": "चांगला अभिप्राय देऊन आम्हाला मदत करा!"
   },
   "browserNotSupportClipboard": {
     "message": "Your web browser does not support easy clipboard copying. Copy it manually instead."
   },
   "verifyIdentity": {
-    "message": "Verify identity"
+    "message": "ओळख सत्यापित करा"
   },
   "yourVaultIsLocked": {
-    "message": "Your vault is locked. Verify your identity to continue."
+    "message": "तुमची तिजोरीला कुलूप लावले आहे. पुढे जाण्यासाठी तुमची ओळख सत्यापित करा."
   },
   "unlock": {
-    "message": "Unlock"
+    "message": "कुलूप उघडा"
   },
   "loggedInAsOn": {
     "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
@@ -370,7 +370,7 @@
     }
   },
   "invalidMasterPassword": {
-    "message": "Invalid master password"
+    "message": "अवैध मुख्य पासवर्ड"
   },
   "vaultTimeout": {
     "message": "Vault timeout"
