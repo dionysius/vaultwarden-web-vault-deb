@@ -5,6 +5,7 @@ import { PolicyType } from "@bitwarden/common/admin-console/enums";
 import { AuthService } from "@bitwarden/common/auth/abstractions/auth.service";
 import { AuthenticationStatus } from "@bitwarden/common/auth/enums/authentication-status";
 import { ThemeType } from "@bitwarden/common/enums";
+import { EnvironmentService } from "@bitwarden/common/platform/abstractions/environment.service";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
 import { FolderService } from "@bitwarden/common/vault/abstractions/folder/folder.service.abstraction";
@@ -30,7 +31,8 @@ export default class NotificationBackground {
     private authService: AuthService,
     private policyService: PolicyService,
     private folderService: FolderService,
-    private stateService: BrowserStateService
+    private stateService: BrowserStateService,
+    private environmentService: EnvironmentService
   ) {}
 
   async init() {
@@ -167,6 +169,7 @@ export default class NotificationBackground {
             isVaultLocked: this.notificationQueue[i].wasVaultLocked,
             theme: await this.getCurrentTheme(),
             removeIndividualVault: await this.removeIndividualVault(),
+            webVaultURL: await this.environmentService.getWebVaultUrl(),
           },
         });
       } else if (this.notificationQueue[i].type === NotificationQueueMessageType.ChangePassword) {
@@ -175,6 +178,7 @@ export default class NotificationBackground {
           typeData: {
             isVaultLocked: this.notificationQueue[i].wasVaultLocked,
             theme: await this.getCurrentTheme(),
+            webVaultURL: await this.environmentService.getWebVaultUrl(),
           },
         });
       }

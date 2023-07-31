@@ -570,7 +570,8 @@ export default class MainBackground {
       this.authService,
       this.policyService,
       this.folderService,
-      this.stateService
+      this.stateService,
+      this.environmentService
     );
 
     this.tabsBackground = new TabsBackground(this, this.notificationBackground);
