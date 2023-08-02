@@ -740,10 +740,11 @@ export class CipherService implements CipherServiceAbstraction {
   }
 
   async deleteManyWithServer(ids: string[], asAdmin = false): Promise<any> {
+    const request = new CipherBulkDeleteRequest(ids);
     if (asAdmin) {
-      await this.apiService.deleteManyCiphersAdmin(new CipherBulkDeleteRequest(ids));
+      await this.apiService.deleteManyCiphersAdmin(request);
     } else {
-      await this.apiService.deleteManyCiphers(new CipherBulkDeleteRequest(ids));
+      await this.apiService.deleteManyCiphers(request);
     }
     await this.delete(ids);
   }
@@ -879,10 +880,11 @@ export class CipherService implements CipherServiceAbstraction {
   }
 
   async softDeleteManyWithServer(ids: string[], asAdmin = false): Promise<any> {
+    const request = new CipherBulkDeleteRequest(ids);
     if (asAdmin) {
-      await this.apiService.putDeleteManyCiphersAdmin(new CipherBulkDeleteRequest(ids));
+      await this.apiService.putDeleteManyCiphersAdmin(request);
     } else {
-      await this.apiService.putDeleteManyCiphers(new CipherBulkDeleteRequest(ids));
+      await this.apiService.putDeleteManyCiphers(request);
     }
 
     await this.softDelete(ids);
@@ -915,14 +917,30 @@ export class CipherService implements CipherServiceAbstraction {
   }
 
   async restoreWithServer(id: string, asAdmin = false): Promise<any> {
-    const response = asAdmin
-      ? await this.apiService.putRestoreCipherAdmin(id)
-      : await this.apiService.putRestoreCipher(id);
+    let response;
+    if (asAdmin) {
+      response = await this.apiService.putRestoreCipherAdmin(id);
+    } else {
+      response = await this.apiService.putRestoreCipher(id);
+    }
+
     await this.restore({ id: id, revisionDate: response.revisionDate });
   }
 
-  async restoreManyWithServer(ids: string[]): Promise<any> {
-    const response = await this.apiService.putRestoreManyCiphers(new CipherBulkRestoreRequest(ids));
+  async restoreManyWithServer(
+    ids: string[],
+    organizationId: string = null,
+    asAdmin = false
+  ): Promise<void> {
+    let response;
+    if (asAdmin) {
+      const request = new CipherBulkRestoreRequest(ids, organizationId);
+      response = await this.apiService.putRestoreManyCiphersAdmin(request);
+    } else {
+      const request = new CipherBulkRestoreRequest(ids);
+      response = await this.apiService.putRestoreManyCiphers(request);
+    }
+
     const restores: { id: string; revisionDate: string }[] = [];
     for (const cipher of response.data) {
       restores.push({ id: cipher.id, revisionDate: cipher.revisionDate });
