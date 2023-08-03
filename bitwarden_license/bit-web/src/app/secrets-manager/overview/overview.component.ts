@@ -130,7 +130,7 @@ export class OverviewComponent implements OnInit, OnDestroy {
       orgId$,
       this.serviceAccountService.serviceAccount$.pipe(startWith(null)),
     ]).pipe(
-      switchMap(([orgId]) => this.serviceAccountService.getServiceAccounts(orgId)),
+      switchMap(([orgId]) => this.serviceAccountService.getServiceAccounts(orgId, false)),
       share()
     );
 
