@@ -59,6 +59,9 @@ export default {
             return new I18nMockService({
               moreFromBitwarden: "More from Bitwarden",
               switchProducts: "Switch Products",
+              passwordManager: "Password Manager",
+              secretsManager: "Secrets Manager",
+              organizations: "Organizations",
             });
           },
         },
