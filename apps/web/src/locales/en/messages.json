@@ -6811,16 +6811,11 @@
   "enforceOnLoginDesc": {
     "message": "Require existing members to change their passwords"
   },
-  "region": {
-    "message": "Region"
+  "usDomain": {
+    "message": "bitwarden.com"
   },
-  "eu": {
-    "message": "EU",
-    "description": "European Union"
-  },
-  "us": {
-    "message": "US",
-    "description": "United States"
+  "euDomain": {
+    "message": "bitwarden.eu"
   },
   "smProjectDeleteAccessRestricted": {
     "message": "You don't have permissions to delete this project",
