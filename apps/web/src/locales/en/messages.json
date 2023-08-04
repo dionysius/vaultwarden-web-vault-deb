@@ -711,6 +711,9 @@
   "unexpectedError": {
     "message": "An unexpected error has occurred."
   },
+  "expirationDateError" : {
+    "message":"Please select an expiration date that is in the future."
+  },
   "emailAddress": {
     "message": "Email address"
   },
