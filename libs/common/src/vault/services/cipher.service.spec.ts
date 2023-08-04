@@ -59,7 +59,7 @@ describe("Cipher Service", () => {
   it("attachments upload encrypted file contents", async () => {
     const fileName = "filename";
     const fileData = new Uint8Array(10).buffer;
-    cryptoService.getOrgKey(Arg.any()).resolves(new SymmetricCryptoKey(new Uint8Array(32).buffer));
+    cryptoService.getOrgKey(Arg.any()).resolves(new SymmetricCryptoKey(new Uint8Array(32)));
 
     await cipherService.saveAttachmentRawWithServer(new Cipher(), fileName, fileData);
 

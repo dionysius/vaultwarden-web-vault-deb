@@ -637,7 +637,7 @@ export class CipherService implements CipherServiceAbstraction {
     const encFileName = await this.cryptoService.encrypt(filename, key);
 
     const dataEncKey = await this.cryptoService.makeEncKey(key);
-    const encData = await this.cryptoService.encryptToBytes(data, dataEncKey[0]);
+    const encData = await this.cryptoService.encryptToBytes(new Uint8Array(data), dataEncKey[0]);
 
     const response = await this.cipherFileUploadService.upload(
       cipher,
