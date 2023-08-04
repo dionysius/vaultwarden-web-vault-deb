@@ -86,6 +86,7 @@ export abstract class OrganizationService {
   hasOrganizations: () => boolean;
 }
 
-export abstract class InternalOrganizationService extends OrganizationService {
+export abstract class InternalOrganizationServiceAbstraction extends OrganizationService {
   replace: (organizations: { [id: string]: OrganizationData }) => Promise<void>;
+  upsert: (OrganizationData: OrganizationData | OrganizationData[]) => Promise<void>;
 }
