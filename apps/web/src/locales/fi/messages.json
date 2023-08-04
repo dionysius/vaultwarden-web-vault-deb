@@ -1959,7 +1959,7 @@
     "message": "Gigatavujen määrä"
   },
   "additionalStorageIntervalDesc": {
-    "message": "Tilaukseesi sisältyy $SIZE$ salattua tallennustilaa. Voit hankkia lisää hintaan $PRICE$/Gt/$INTERVAL$.",
+    "message": "Tilaukseesi sisältyy $SIZE$ salattua tallennustilaa ja voit hankkia lisää hintaan $PRICE$/Gt/$INTERVAL$.",
     "placeholders": {
       "size": {
         "content": "$1",
@@ -2235,7 +2235,7 @@
     "message": "Käyttäjäpaikkojen määrä"
   },
   "userSeatsAdditionalDesc": {
-    "message": "Tilaukseesi kuuluu $BASE_SEATS$ käyttäjäpaikkaa. Voit hankkia lisää hintaan $SEAT_PRICE$/käyttäjä/kuukausi.",
+    "message": "Tilaukseesi sisältyy $BASE_SEATS$ käyttäjäpaikkaa ja voit hankkia lisää hintaan $SEAT_PRICE$/käyttäjä/kuukausi.",
     "placeholders": {
       "base_seats": {
         "content": "$1",
@@ -2248,7 +2248,7 @@
     }
   },
   "userSeatsHowManyDesc": {
-    "message": "Kuinka monta käyttäjäpaikkaa tarvitset? Voit myös hankkia paikkoja tarvittaessa lisää myöhemmin."
+    "message": "Miten monta käyttäjäpaikkaa tarvitset? Voit myös hankkia paikkoja tarvittaessa lisää myöhemmin."
   },
   "planNameFree": {
     "message": "Ilmainen",
@@ -3338,7 +3338,7 @@
     "description": "Seat = User Seat"
   },
   "subscriptionDesc": {
-    "message": "Tilausmuutokset aiheuttavat muutoksia laskutukseesi. Jos hiljattain kutsuttujen käyttäjien määrä ylittää tilauksesi käyttäjäpaikkojen enimmäismäärän, veloitetaan suhteutettu hinta uusista käyttäjistä välittömästi."
+    "message": "Tilausmuutokset aiheuttavat suhteutettuja laskutusmuutoksia. Jos hiljattain kutsuttujen käyttäjien määrä ylittää tilauksesi käyttäjäpaikkojen enimmäismäärän, veloitetaan suhteutettu hinta uusista käyttäjistä välittömästi."
   },
   "subscriptionUserSeats": {
     "message": "Tilaukseesi sisältyy $COUNT$ jäsenpaikkaa.",
@@ -3365,10 +3365,10 @@
     "message": "Jos tarvitset tilauksesi hallinnassa apua, ole yhteydessä asiakaspalveluun."
   },
   "subscriptionUserSeatsUnlimitedAutoscale": {
-    "message": "Tilausmuutokset aiheuttavat suhteutettuja laskutusmuutoksia. Jos hiljattain kutsuttujen jäsenten määrä ylittää tilauksesi jäsenpaikkojen enimmäismäärän, veloitetaan suhteutettu hinta uusista jäsenistä välittömästi."
+    "message": "Tilausmuutokset aiheuttavat suhteutettuja laskutusmuutoksia. Jos hiljattain kutsuttujen jäsenien määrä ylittää tilauksesi jäsenpaikkojen enimmäismäärän, veloitetaan suhteutettu hinta uusista jäsenistä välittömästi."
   },
   "subscriptionUserSeatsLimitedAutoscale": {
-    "message": "Tilausmuutokset aiheuttavat suhteutettuja laskutusmuutoksia. Jos hiljattain kutsuttujen jäsenten määrä ylittää tilauksesi jäsenpaikkojen enimmäismäärän, veloitetaan suhteutettu hinta uusista jäsenistä välittömästi, kunnes $MAX$ paikan enimmäismäärä täyttyy.",
+    "message": "Tilausmuutokset aiheuttavat suhteutettuja laskutusmuutoksia. Jos hiljattain kutsuttujen jäsenien määrä ylittää tilauksesi jäsenpaikkojen enimmäismäärän, veloitetaan suhteutettu hinta uusista jäsenistä välittömästi, kunnes $MAX$ paikan enimmäismäärä täyttyy.",
     "placeholders": {
       "max": {
         "content": "$1",
@@ -4375,7 +4375,7 @@
     "message": "Käyttäjien hallinta"
   },
   "manageAccountRecovery": {
-    "message": "Hallitse tilinpalautusapua"
+    "message": "Hallitse tilin palautusapua"
   },
   "disableRequiredError": {
     "message": "Käytäntö $POLICYNAME$ on poistettava käytöstä manuaalisesti ennen tämän käytännön käytöstä poistoa.",
@@ -4704,8 +4704,8 @@
   "error": {
     "message": "Virhe"
   },
-  "resetPasswordManageUsers": {
-    "message": "Myös \"Käyttäjien hallinta\" -oikeuden on oltava käytössä \"Salasanan palautusavun hallinta\" -oikeuden kanssa"
+  "accountRecoveryManageUsers": {
+    "message": "Manage users must also be granted with the manage account recovery permission"
   },
   "setupProvider": {
     "message": "Toimittajan määritys"
@@ -6824,8 +6824,8 @@
   "updateKdfSettings": {
     "message": "Päivitä KDF-asetukset"
   },
-  "trustedDeviceEncryption": {
-    "message": "Luotettu laitesalaus"
+  "trustedDevices": {
+    "message": "Trusted devices"
   },
   "memberDecryptionTdeDescriptionPartOne": {
     "message": "Kun jäsenet on todennettu, he voivat purkaa holvin salauksen heidän laitteellaan säilytettävällä avaimella.",
@@ -6955,6 +6955,14 @@
   "selectedRegionFlag": {
     "message": "Valitun alueen lippu"
   },
+  "sendsNoItemsTitle": {
+    "message": "Aktiivisia Sendejä ei ole",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendsNoItemsMessage": {
+    "message": "Sendeillä voit jakaa salattuja tietoja turvallisesti kenelle tahansa.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
   "inviteUsers": {
     "message": "Kutsu käyttäjiä"
   },
@@ -7010,13 +7018,13 @@
     "message": "Lisää Salaisuushallinta"
   },
   "addSecretsManagerUpgradeDesc": {
-    "message": "Lisää Salaisuushallinta päivitettyyn tilaukseesi säilyttääksesi aiemmalla tilauksellasi luotujen salaisuuksien käyttöoikeuden."
+    "message": "Lisää Salaisuushallinta myös päivitettyyn tilaukseesi, jottet menetä pääsyä aiemmalla tilauksellasi luotuihin salaisuuksiin."
   },
   "additionalServiceAccounts": {
-    "message": "Lisätyt palvelutilit"
+    "message": "Lisättävät palvelutilit"
   },
   "additionalServiceAccountsDesc": {
-    "message": "Tilaukseesi sisältyy $COUNT$ palvelutiliä. Voit lisätä palvelutilejä $COST$ kuukausihintaan.",
+    "message": "Tilaukseesi sisältyy $COUNT$ palvelutiliä ja voit hankkia lisää hintaan $COST$/palvelutili/kuukausi.",
     "placeholders": {
       "count": {
         "content": "$1",

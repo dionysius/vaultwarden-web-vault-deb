@@ -3320,7 +3320,7 @@
     "message": "Defina um limite de lugares para a sua subscrição. Quando este limite for atingido, não será possível convidar novos membros."
   },
   "limitSmSubscriptionDesc": {
-    "message": "Set a seat limit for your Secrets Manger subscription. Once this limit is reached, you will not be able to invite new members."
+    "message": "Defina um limite de lugares para o seu Gestor de Segredos. Quando este limite for atingido, não será possível convidar novos membros."
   },
   "maxSeatLimit": {
     "message": "Limite de lugares (opcional)",
@@ -4704,8 +4704,8 @@
   "error": {
     "message": "Erro"
   },
-  "resetPasswordManageUsers": {
-    "message": "A permissão para gerir utilizadores deve também ser concedida com a permissão para gerir a reposição da palavra-passe"
+  "accountRecoveryManageUsers": {
+    "message": "A permissão para gerir utilizadores deve também ser concedida com a permissão para gerir a recuperação da conta"
   },
   "setupProvider": {
     "message": "Configuração do fornecedor"
@@ -6824,8 +6824,8 @@
   "updateKdfSettings": {
     "message": "Atualizar as definições do KDF"
   },
-  "trustedDeviceEncryption": {
-    "message": "Encriptação de dispositivo de confiança"
+  "trustedDevices": {
+    "message": "Dispositivos de confiança"
   },
   "memberDecryptionTdeDescriptionPartOne": {
     "message": "Uma vez autenticados, os membros desencriptam os dados do cofre utilizando uma chave armazenada no seu dispositivo. A",
@@ -6955,11 +6955,19 @@
   "selectedRegionFlag": {
     "message": "Bandeira da região selecionada"
   },
+  "sendsNoItemsTitle": {
+    "message": "Sem Sends ativos",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendsNoItemsMessage": {
+    "message": "Utilize o Send para partilhar de forma segura informações encriptadas com qualquer pessoa.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
   "inviteUsers": {
     "message": "Convidar utilizadores"
   },
   "secretsManagerForPlan": {
-    "message": "Secrets Manager for $PLAN$",
+    "message": "Gestor de Segredos para $PLAN$",
     "placeholders": {
       "plan": {
         "content": "$1",
@@ -6968,19 +6976,19 @@
     }
   },
   "secretsManagerForPlanDesc": {
-    "message": "For engineering and DevOps teams to manage secrets throughout the software development lifecycle."
+    "message": "Para as equipas de engenharia e DevOps gerirem os segredos ao longo do ciclo de vida do desenvolvimento de software."
   },
   "free2PersonOrganization": {
-    "message": "Free 2-person Organizations"
+    "message": "Organizações gratuitas de 2 pessoas"
   },
   "unlimitedSecrets": {
-    "message": "Unlimited secrets"
+    "message": "Segredos ilimitados"
   },
   "unlimitedProjects": {
-    "message": "Unlimited projects"
+    "message": "Projetos ilimitados"
   },
   "projectsIncluded": {
-    "message": "$COUNT$ projects included",
+    "message": "$COUNT$ projetos incluídos",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -6989,7 +6997,7 @@
     }
   },
   "serviceAccountsIncluded": {
-    "message": "$COUNT$ service accounts included",
+    "message": "$COUNT$ contas de serviço incluídas",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -6998,7 +7006,7 @@
     }
   },
   "additionalServiceAccountCost": {
-    "message": "$COST$ per month for additional service accounts",
+    "message": "$COST$ por mês para contas de serviço adicionais",
     "placeholders": {
       "cost": {
         "content": "$1",
@@ -7007,16 +7015,16 @@
     }
   },
   "addSecretsManager": {
-    "message": "Add Secrets Manager"
+    "message": "Adicionar Gestor de Segredos"
   },
   "addSecretsManagerUpgradeDesc": {
-    "message": "Add Secrets Manager to your upgraded plan to maintain access to any secrets created with your previous plan."
+    "message": "Adicione o Gestor de Segredos ao seu plano atualizado para manter o acesso a quaisquer segredos criados com o seu plano anterior."
   },
   "additionalServiceAccounts": {
-    "message": "Additional service accounts"
+    "message": "Contas de serviço adicionais"
   },
   "additionalServiceAccountsDesc": {
-    "message": "Your plan comes with $COUNT$ service accounts. You can add additional service accounts for $COST$ per month.",
+    "message": "O seu plano é fornecido com $COUNT$ contas de serviço. Pode adicionar contas de serviço adicionais por $COST$ por mês.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -7029,27 +7037,27 @@
     }
   },
   "passwordManagerPlanPrice": {
-    "message": "Password Manager plan price"
+    "message": "Preço do plano do Gestor de Palavras-passe"
   },
   "secretsManagerPlanPrice": {
-    "message": "Secrets Manager plan price"
+    "message": "Preço do plano do Gestor de Segredos"
   },
   "passwordManager": {
-    "message": "Password Manager"
+    "message": "Gestor de Palavras-passe"
   },
   "freeOrganization": {
-    "message": "Free Organization"
+    "message": "Organização gratuita"
   },
   "limitServiceAccounts": {
-    "message": "Limit service accounts (optional)"
+    "message": "Limitar contas de serviço (opcional)"
   },
   "limitServiceAccountsDesc": {
-    "message": "Set a limit for your service accounts. Once this limit is reached, you will not be able to create new service accounts."
+    "message": "Defina um limite para as suas contas de serviço. Quando este limite for atingido, não será possível criar novas contas de serviço."
   },
   "serviceAccountLimit": {
-    "message": "Service account limit (optional)"
+    "message": "Limite de contas de serviço (opcional)"
   },
   "maxServiceAccountCost": {
-    "message": "Max potential service account cost"
+    "message": "Custo máximo potencial da conta de serviço"
   }
 }

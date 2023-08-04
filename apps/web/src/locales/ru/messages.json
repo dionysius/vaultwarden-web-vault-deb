@@ -3320,7 +3320,7 @@
     "message": "Установите лимит мест для вашей подписки. По достижении этого лимита вы не сможете приглашать новых членов."
   },
   "limitSmSubscriptionDesc": {
-    "message": "Set a seat limit for your Secrets Manger subscription. Once this limit is reached, you will not be able to invite new members."
+    "message": "Установите лимит мест для вашей подписки на Менеджер секретов. По достижении этого лимита вы не сможете приглашать новых членов."
   },
   "maxSeatLimit": {
     "message": "Предел мест (необязательно)",
@@ -4704,8 +4704,8 @@
   "error": {
     "message": "Ошибка"
   },
-  "resetPasswordManageUsers": {
-    "message": "Для управления пользователями необходимо также предоставить разрешение на управление сбросом пароля"
+  "accountRecoveryManageUsers": {
+    "message": "Manage users must also be granted with the manage account recovery permission"
   },
   "setupProvider": {
     "message": "Настройка поставщика"
@@ -6824,8 +6824,8 @@
   "updateKdfSettings": {
     "message": "Обновить параметры KDF"
   },
-  "trustedDeviceEncryption": {
-    "message": "Шифрование доверенного устройства"
+  "trustedDevices": {
+    "message": "Trusted devices"
   },
   "memberDecryptionTdeDescriptionPartOne": {
     "message": "После аутентификации участники расшифровывают данные хранилища с помощью ключа, хранящегося на их устройстве.",
@@ -6955,11 +6955,19 @@
   "selectedRegionFlag": {
     "message": "Флаг выбранного региона"
   },
+  "sendsNoItemsTitle": {
+    "message": "Нет активных Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendsNoItemsMessage": {
+    "message": "Используйте Send для безопасного обмена зашифрованной информацией с кем угодно.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
   "inviteUsers": {
     "message": "Пригласить пользователей"
   },
   "secretsManagerForPlan": {
-    "message": "Secrets Manager for $PLAN$",
+    "message": "Менеджер секретов для $PLAN$",
     "placeholders": {
       "plan": {
         "content": "$1",
@@ -6968,19 +6976,19 @@
     }
   },
   "secretsManagerForPlanDesc": {
-    "message": "For engineering and DevOps teams to manage secrets throughout the software development lifecycle."
+    "message": "Командам инженеров и DevOps для управления секретами на протяжении всего жизненного цикла разработки ПО."
   },
   "free2PersonOrganization": {
-    "message": "Free 2-person Organizations"
+    "message": "Бесплатные организации из 2 человек"
   },
   "unlimitedSecrets": {
-    "message": "Unlimited secrets"
+    "message": "Неограниченные секреты"
   },
   "unlimitedProjects": {
-    "message": "Unlimited projects"
+    "message": "Неограниченные проекты"
   },
   "projectsIncluded": {
-    "message": "$COUNT$ projects included",
+    "message": "Включено $COUNT$ проектов",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -6989,7 +6997,7 @@
     }
   },
   "serviceAccountsIncluded": {
-    "message": "$COUNT$ service accounts included",
+    "message": "Включено $COUNT$ сервисных аккаунтов",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -6998,7 +7006,7 @@
     }
   },
   "additionalServiceAccountCost": {
-    "message": "$COST$ per month for additional service accounts",
+    "message": "$COST$ в месяц за дополнительные сервисные аккаунты",
     "placeholders": {
       "cost": {
         "content": "$1",
@@ -7010,13 +7018,13 @@
     "message": "Добавить Менеджер секретов"
   },
   "addSecretsManagerUpgradeDesc": {
-    "message": "Add Secrets Manager to your upgraded plan to maintain access to any secrets created with your previous plan."
+    "message": "Добавить Менеджер секретов к этому тарифному плану, чтобы сохранить доступ к секретам, созданным ранее."
   },
   "additionalServiceAccounts": {
-    "message": "Additional service accounts"
+    "message": "Дополнительные сервисные аккаунты"
   },
   "additionalServiceAccountsDesc": {
-    "message": "Your plan comes with $COUNT$ service accounts. You can add additional service accounts for $COST$ per month.",
+    "message": "Ваш тарифный план включает в себя $COUNT$ сервисных аккаунтов. Вы можете добавить дополнительные сервисные аккаунты за $COST$ в месяц.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -7029,10 +7037,10 @@
     }
   },
   "passwordManagerPlanPrice": {
-    "message": "Password Manager plan price"
+    "message": "Стоимость плана Менеджер паролей"
   },
   "secretsManagerPlanPrice": {
-    "message": "Secrets Manager plan price"
+    "message": "Стоимость плана Менеджер секретов"
   },
   "passwordManager": {
     "message": "Менеджер паролей"
@@ -7041,15 +7049,15 @@
     "message": "Бесплатная организация"
   },
   "limitServiceAccounts": {
-    "message": "Limit service accounts (optional)"
+    "message": "Лимит сервисных аккаунтов (опционально)"
   },
   "limitServiceAccountsDesc": {
-    "message": "Set a limit for your service accounts. Once this limit is reached, you will not be able to create new service accounts."
+    "message": "Установите лимит для сервисных аккаунтов. По достижении этого лимита создание новых сервисных аккаунтов будет невозможным."
   },
   "serviceAccountLimit": {
-    "message": "Service account limit (optional)"
+    "message": "Лимит сервисного аккаунта (опционально)"
   },
   "maxServiceAccountCost": {
-    "message": "Max potential service account cost"
+    "message": "Максимальная потенциальная стоимость сервисного аккаунта"
   }
 }

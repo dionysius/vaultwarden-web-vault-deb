@@ -1069,7 +1069,7 @@
     "message": "单词分隔符"
   },
   "capitalize": {
-    "message": "大写",
+    "message": "首字母大写",
     "description": "Make the first letter of a word uppercase."
   },
   "includeNumber": {
@@ -1386,7 +1386,7 @@
     "message": "两步登录"
   },
   "twoStepLoginEnforcement": {
-    "message": "两步登录实施"
+    "message": "强制两步登录"
   },
   "twoStepLoginDesc": {
     "message": "在登录时要求使用额外的步骤来保护您的账户。"
@@ -2642,7 +2642,7 @@
     "message": "Bitwarden 机密管理器"
   },
   "loggedIn": {
-    "message": "已登录"
+    "message": "登录了"
   },
   "changedPassword": {
     "message": "更改了帐户密码"
@@ -3717,7 +3717,7 @@
     }
   },
   "policyInEffectUppercase": {
-    "message": "至少包含一个大写字母"
+    "message": "至少包含一个大写字符"
   },
   "policyInEffectLowercase": {
     "message": "至少包含一个小写字母"
@@ -4249,7 +4249,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "disableSendExemption": {
-    "message": "可以管理组织策略的组织成员豁免此策略的执行。"
+    "message": "可以管理组织策略的组织成员豁免此策略。"
   },
   "sendDisabled": {
     "message": "Send 已禁用",
@@ -4268,7 +4268,7 @@
     "description": "'Sends' is a plural noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendOptionsExemption": {
-    "message": "可以管理组织策略的组织成员豁免此策略的执行。"
+    "message": "可以管理组织策略的组织成员豁免此策略。"
   },
   "disableHideEmail": {
     "message": "在创建或编辑 Send 时，始终向收件人显示成员的电子邮件地址。",
@@ -4704,8 +4704,8 @@
   "error": {
     "message": "错误"
   },
-  "resetPasswordManageUsers": {
-    "message": "管理用户也必须获得管理密码重置权限"
+  "accountRecoveryManageUsers": {
+    "message": "Manage users must also be granted with the manage account recovery permission"
   },
   "setupProvider": {
     "message": "提供商设置"
@@ -5217,15 +5217,15 @@
     "message": "设置后，您的配置将被保存，成员将能够使用他们的身份提供程序凭据进行身份验证。"
   },
   "ssoPolicyHelpStart": {
-    "message": "Use the",
+    "message": "使用",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Use the require single-sign-on authentication policy to require all members to log in with SSO.'"
   },
   "ssoPolicyHelpAnchor": {
-    "message": "require single sign-on authentication policy",
+    "message": "要求单点登录身份验证策略",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Use the require single-sign-on authentication policy to require all members to log in with SSO.'"
   },
   "ssoPolicyHelpEnd": {
-    "message": "to require all members to log in with SSO.",
+    "message": "以要求所有成员使用 SSO 登录。",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Use the require single-sign-on authentication policy to require all members to log in with SSO.'"
   },
   "memberDecryptionOption": {
@@ -5238,15 +5238,15 @@
     "message": "Key Connector"
   },
   "memberDecryptionKeyConnectorDescStart": {
-    "message": "Connect login with SSO to your self-hosted decryption key server. Using this option, members won’t need to use their master passwords to decrypt vault data. The",
+    "message": "连接 SSO 登录到您的自托管解密密钥服务器。使用此选项后，成员将不再需要使用主密码解密密码库数据。",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Connect login with SSO to your self-hosted decryption key server. Using this option, members won’t need to use their master passwords to decrypt vault data. The require SSO authentication and single organization policies are required to set up Key Connector decryption. Contact Bitwarden Support for set up assistance.'"
   },
   "memberDecryptionKeyConnectorDescLink": {
-    "message": "require SSO authentication and single organization policies",
+    "message": "要求 SSO 身份验证和单一组织策略",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Connect login with SSO to your self-hosted decryption key server. Using this option, members won’t need to use their master passwords to decrypt vault data. The require SSO authentication and single organization policies are required to set up Key Connector decryption. Contact Bitwarden Support for set up assistance.'"
   },
   "memberDecryptionKeyConnectorDescEnd": {
-    "message": "are required to set up Key Connector decryption. Contact Bitwarden Support for set up assistance.",
+    "message": "被用于设置 Key Connector 解密。请联系 Bitwarden 支持获取协助。",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Connect login with SSO to your self-hosted decryption key server. Using this option, members won’t need to use their master passwords to decrypt vault data. The require SSO authentication and single organization policies are required to set up Key Connector decryption. Contact Bitwarden Support for set up assistance.'"
   },
   "keyConnectorPolicyRestriction": {
@@ -5403,7 +5403,7 @@
     "message": "如果实体 ID 不是一个 URL，则必填。"
   },
   "openIdOptionalCustomizations": {
-    "message": "可选定制"
+    "message": "定制（可选）"
   },
   "openIdAuthorityRequired": {
     "message": "如果授权无效，则必填。"
@@ -6824,27 +6824,27 @@
   "updateKdfSettings": {
     "message": "更新 KDF 设置"
   },
-  "trustedDeviceEncryption": {
-    "message": "受信任的设备加密"
+  "trustedDevices": {
+    "message": "受信任的设备"
   },
   "memberDecryptionTdeDescriptionPartOne": {
-    "message": "Once authenticated, members will decrypt vault data using a key stored on their device. The",
+    "message": "验证后，成员将使用存储在他们的设备上的密钥解密密码库数据。使用此选项后，",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The single organization policy and account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
   "memberDecryptionTdeDescriptionLinkOne": {
-    "message": "single organization",
+    "message": "单一组织",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The single organization policy and account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
   "memberDecryptionTdeDescriptionPartTwo": {
-    "message": "policy and ",
+    "message": "策略和具有自动注册的",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The single organization policy and account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
   "memberDecryptionTdeDescriptionLinkTwo": {
-    "message": "account recovery administration",
+    "message": "账户恢复管理",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The single organization policy and account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
   "memberDecryptionTdeDescriptionPartThree": {
-    "message": "policy with automatic enrollment will turn on when this option is used.",
+    "message": "策略将被开启。",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The single organization policy and account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
   "notFound": {
@@ -6955,6 +6955,14 @@
   "selectedRegionFlag": {
     "message": "选定的区域标志"
   },
+  "sendsNoItemsTitle": {
+    "message": "没有活跃的 Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendsNoItemsMessage": {
+    "message": "使用 Send 与任何人安全地分享加密信息。",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
   "inviteUsers": {
     "message": "邀请用户"
   },
@@ -6998,7 +7006,7 @@
     }
   },
   "additionalServiceAccountCost": {
-    "message": "附加服务账户每月 $COST$",
+    "message": "附加服务账户 $COST$ 每月",
     "placeholders": {
       "cost": {
         "content": "$1",

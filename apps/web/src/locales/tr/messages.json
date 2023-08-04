@@ -961,7 +961,7 @@
     "message": "Dışa aktarılan dosyadaki verileriniz şifrelenmemiş olacak. Bu dosyayı güvensiz yöntemlerle (örn. e-posta) göndermemeli ve saklamamalısınız. İşiniz bittikten sonra dosyayı hemen silin."
   },
   "exportSecretsWarningDesc": {
-    "message": "This export contains your secrets data in an unencrypted format. You should not store or send the exported file over unsecure channels (such as email). Delete it immediately after you are done using it."
+    "message": "Dışa aktarılan dosyada, gizli verileriniz şifrelenmemiş halde bulunmaktadır. Bu dosyayı güvensiz yöntemlerle (örn. e-posta) göndermemeli ve saklamamalısınız. İşiniz bittikten sonra dosyayı hemen silin."
   },
   "encExportKeyWarningDesc": {
     "message": "Dışa aktardığınız bu dosyadaki verileriniz, hesabınızın şifreleme anahtarıyla şifrelenir. Hesabınızın şifreleme anahtarını değiştirirseniz bu dosyanın şifresi çözülemez hale gelir, dolayısıyla dosyayı yeniden dışa aktarmanız gerekir."
@@ -4704,8 +4704,8 @@
   "error": {
     "message": "Hata"
   },
-  "resetPasswordManageUsers": {
-    "message": "\"Parola sıfırlamayı yönet\" izniyle birlikte \"Kullanıcıları yönet\" izni de verilmelidir"
+  "accountRecoveryManageUsers": {
+    "message": "Manage users must also be granted with the manage account recovery permission"
   },
   "setupProvider": {
     "message": "Sağlayıcı kurulumu"
@@ -5580,7 +5580,7 @@
     "description": "Part of a URL."
   },
   "apiAccessToken": {
-    "message": "API erişim anahtarı"
+    "message": "API erişim token'ı"
   },
   "deviceVerification": {
     "message": "Cihaz doğrulama"
@@ -5589,7 +5589,7 @@
     "message": "Cihaz doğrulamasını aç"
   },
   "deviceVerificationDesc": {
-    "message": "Etkinleştirildiğinde, tanınmayan bir cihazdan oturum açarken e-posta adresinize doğrulama kodları gönderilir"
+    "message": "Verification codes are sent to your email address when logging in from an unrecognized device"
   },
   "updatedDeviceVerification": {
     "message": "Cihaz doğrulaması güncellendi"
@@ -6139,11 +6139,11 @@
     "message": "Sır kalıcı olarak silindi"
   },
   "accessTokens": {
-    "message": "Erişim anahtarları",
+    "message": "Erişim token'ları",
     "description": "Title for the section displaying access tokens."
   },
   "newAccessToken": {
-    "message": "Yeni erişim belirteci",
+    "message": "Yeni erişim token'ı",
     "description": "Button label for creating a new access token."
   },
   "expires": {
@@ -6155,11 +6155,11 @@
     "description": "Label for the access level of an access token (Read only)."
   },
   "accessTokensNoItemsTitle": {
-    "message": "Gösterilecek erişim anahtarları yok",
+    "message": "Gösterilecek erişim token'ı yok",
     "description": "Title to be displayed when there are no access tokens to display in the list."
   },
   "accessTokensNoItemsDesc": {
-    "message": "Başlamak için bir erişim anahtarı oluşturun",
+    "message": "Başlamak için bir erişim token'ı oluşturun",
     "description": "Message to be displayed when there are no access tokens to display in the list."
   },
   "downloadAccessToken": {
@@ -6171,15 +6171,15 @@
     "description": "Label for the expiration date of an access token."
   },
   "accessTokenCallOutTitle": {
-    "message": "Erişim anahtarları saklanmaz ve geri alınamaz",
+    "message": "Erişim token'ları saklanmaz ve geri getirilemez",
     "description": "Notification to inform the user that access tokens are only displayed once and cannot be retrieved again."
   },
   "copyToken": {
-    "message": "Erişim anahtarını kopyala",
+    "message": "Token'ı kopyala",
     "description": "Copies the generated access token to the user's clipboard."
   },
   "accessToken": {
-    "message": "Erişim anahtarı",
+    "message": "Erişim token'ı",
     "description": "A unique string that gives a client application (eg. CLI) access to a secret or set of secrets."
   },
   "accessTokenExpirationRequired": {
@@ -6191,7 +6191,7 @@
     "description": "Notification to inform the user that the access token has been created and copied to the clipboard."
   },
   "revokeAccessToken": {
-    "message": "Erişim anahtarını İptal Et",
+    "message": "Erişim token'ını iptal et",
     "description": "Invalidates / cancels an access token and as such removes access to secrets for the client application."
   },
   "revokeAccessTokens": {
@@ -6248,10 +6248,10 @@
     "message": "İşaretlenirse bu, diğer tüm koleksiyon izinlerinin yerini alacaktır."
   },
   "selectMembers": {
-    "message": "Üyeleri seç"
+    "message": "Üyeleri seçin"
   },
   "selectCollections": {
-    "message": "Koleksiyonları seç"
+    "message": "Koleksiyonları seçin"
   },
   "role": {
     "message": "Rol"
@@ -6323,10 +6323,10 @@
     "message": "TXT kaydını kopyalayıp DNS sağlayıcınıza yapıştırın."
   },
   "domainNameInputHint": {
-    "message": "Örnek: mydomain.com. Alt alan adlarının doğrulanması için ayrı girişler gerekir."
+    "message": "Örnek: mydomain.com. Alt alan adlarının doğrulanması için ayrı kayıtlar gerekir."
   },
   "automaticDomainVerification": {
-    "message": "Otomatik Alan Doğrulaması"
+    "message": "Otomatik Alan Adı Doğrulaması"
   },
   "automaticDomainVerificationProcess": {
     "message": "Bitwarden, ilk 72 saat içinde etki alanını 3 kez doğrulamaya çalışacak. Alan doğrulanamıyorsa barındırıcınızdaki DNS kaydını kontrol edin ve manuel olarak doğrulayın. Alan adı, doğrulanmamışsa kuruluşunuzdan 7 gün içinde kaldırılacaktır"
@@ -6434,10 +6434,10 @@
     "message": "Üye"
   },
   "selectGroupsAndMembers": {
-    "message": "Grupları ve üyeleri seç"
+    "message": "Grupları ve üyeleri seçin"
   },
   "selectGroups": {
-    "message": "Grupları seç"
+    "message": "Grupları seçin"
   },
   "userPermissionOverrideHelper": {
     "message": "Bir üye için ayarlanan izinler, o üyenin grubu tarafından ayarlanan izinlerin yerini alacak"
@@ -6614,7 +6614,7 @@
     "message": "Yeni güvenlik önerilerini karşılamak ve hesap korumasını iyileştirmek için şifreleme ayarlarınızı güncelleyin."
   },
   "changeKdfLoggedOutWarning": {
-    "message": "İşlem, tüm aktif oturumlardan çıkış yapmanızı sağlayacaktır. Tekrar oturum açmanız ve iki adımlı oturum açma kurulumunu tamamlamanız gerekecek. Veri kaybını önlemek için şifreleme ayarlarınızı değiştirmeden önce kasanızı dışa aktarmanızı öneririz."
+    "message": "Devam ettiğinizde tüm aktif oturumlarınız kapatılacaktır. Tekrar giriş yapmanız ve iki aşamalı giriş kurulumunu tamamlamanız gerekecektir. Veri kaybını önlemek için, şifreleme ayarlarınızı değiştirmeden önce kasanızı dışa aktarmanızı öneririz."
   },
   "secretsManager": {
     "message": "Sır Yöneticisi"
@@ -6824,8 +6824,8 @@
   "updateKdfSettings": {
     "message": "KDF ayarlarını güncelle"
   },
-  "trustedDeviceEncryption": {
-    "message": "Güvenilir cihaz şifrelemesi"
+  "trustedDevices": {
+    "message": "Güvenilen cihazlar"
   },
   "memberDecryptionTdeDescriptionPartOne": {
     "message": "Once authenticated, members will decrypt vault data using a key stored on their device. The",
@@ -6954,6 +6954,14 @@
   },
   "selectedRegionFlag": {
     "message": "Seçilen bölgenin bayrağı"
+  },
+  "sendsNoItemsTitle": {
+    "message": "Aktif Send yok",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendsNoItemsMessage": {
+    "message": "Şifrelenmiş bilgileri güvenle paylaşmak için Send'i kullanabilirsiniz.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "inviteUsers": {
     "message": "Kullanıcıları davet et"

@@ -4704,8 +4704,8 @@
   "error": {
     "message": "錯誤"
   },
-  "resetPasswordManageUsers": {
-    "message": "必須啟用管理密碼重設權限後才能啟用管理使用者權限"
+  "accountRecoveryManageUsers": {
+    "message": "Manage users must also be granted with the manage account recovery permission"
   },
   "setupProvider": {
     "message": "提供者設定"
@@ -6824,8 +6824,8 @@
   "updateKdfSettings": {
     "message": "更新 KDF 設定"
   },
-  "trustedDeviceEncryption": {
-    "message": "Trusted device encryption"
+  "trustedDevices": {
+    "message": "Trusted devices"
   },
   "memberDecryptionTdeDescriptionPartOne": {
     "message": "通過驗證以後，成員將使用儲存在裝置的金鑰來解密密碼庫資料。開啟此選項後，將開啟",
@@ -6954,6 +6954,14 @@
   },
   "selectedRegionFlag": {
     "message": "Selected region flag"
+  },
+  "sendsNoItemsTitle": {
+    "message": "No active Sends",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendsNoItemsMessage": {
+    "message": "Use Send to securely share encrypted information with anyone.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "inviteUsers": {
     "message": "Invite Users"

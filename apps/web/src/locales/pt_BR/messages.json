@@ -4704,8 +4704,8 @@
   "error": {
     "message": "Erro"
   },
-  "resetPasswordManageUsers": {
-    "message": "Gerenciar Usuários também deve ser habilitado com a permissão para Gerenciar a Redefinição de Senha"
+  "accountRecoveryManageUsers": {
+    "message": "Manage users must also be granted with the manage account recovery permission"
   },
   "setupProvider": {
     "message": "Configuração do Provedor"
@@ -6824,8 +6824,8 @@
   "updateKdfSettings": {
     "message": "Update KDF settings"
   },
-  "trustedDeviceEncryption": {
-    "message": "Trusted device encryption"
+  "trustedDevices": {
+    "message": "Trusted devices"
   },
   "memberDecryptionTdeDescriptionPartOne": {
     "message": "Uma vez autenticados, os membros descriptografarão os dados do cofre usando uma chave armazenada no seu dispositivo.",
@@ -6954,6 +6954,14 @@
   },
   "selectedRegionFlag": {
     "message": "Sinalização de região selecionada"
+  },
+  "sendsNoItemsTitle": {
+    "message": "Não há Envios ativos",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendsNoItemsMessage": {
+    "message": "Use Enviar para compartilhar informações criptografadas de forma segura com qualquer pessoa.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "inviteUsers": {
     "message": "Convidar usuários"

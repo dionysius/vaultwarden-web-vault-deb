@@ -2636,7 +2636,7 @@
     "message": "Web-boks"
   },
   "bitWebVault": {
-    "message": "Bitwarden Web vault"
+    "message": "Bitwarden Web-boks"
   },
   "bitSecretsManager": {
     "message": "Bitwarden Secrets Manager"
@@ -4375,7 +4375,7 @@
     "message": "Håndtér brugere"
   },
   "manageAccountRecovery": {
-    "message": "Manage account recovery"
+    "message": "Håndtér kontogendannelse"
   },
   "disableRequiredError": {
     "message": "$POLICYNAME$-politikken skal deaktiveres manuelt, før denne politik kan deaktiveres.",
@@ -4704,8 +4704,8 @@
   "error": {
     "message": "Fejl"
   },
-  "resetPasswordManageUsers": {
-    "message": "\"Håndtér brugere\" skal også tildeles med tilladelsen \"Håndtér adgangskodenulstilling\""
+  "accountRecoveryManageUsers": {
+    "message": "Håndtér brugere skal også tildeles med tilladelsen håndtér kontogendannelse"
   },
   "setupProvider": {
     "message": "Udbyderopsætning"
@@ -6824,8 +6824,8 @@
   "updateKdfSettings": {
     "message": "Opdatér KDF-indstillinger"
   },
-  "trustedDeviceEncryption": {
-    "message": "Betroet enhed-kryptering"
+  "trustedDevices": {
+    "message": "Betroede enheder"
   },
   "memberDecryptionTdeDescriptionPartOne": {
     "message": "Når godkendt, dekrypterer medlemmet boksdata vha. en nøgle gemt på deres enhed. ",
@@ -6954,6 +6954,14 @@
   },
   "selectedRegionFlag": {
     "message": "Valgte områdeflag"
+  },
+  "sendsNoItemsTitle": {
+    "message": "Ingen aktive Sends",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendsNoItemsMessage": {
+    "message": "Brug Send til at dele krypterede oplysninger sikkert med nogen.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "inviteUsers": {
     "message": "Invitér bruger"

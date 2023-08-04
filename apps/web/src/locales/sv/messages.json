@@ -1788,7 +1788,7 @@
     "message": "Rapport om dataintrång"
   },
   "breachDesc": {
-    "message": "Ett \"intrång\" är en incident där data olovligen har stulits från en webbplats av hackare och sedan släppts till allmänheten. Gå igenom och granska informationen som äventyrats (e-postadresser, lösenord, kreditkort osv.) och vidta lämpliga åtgärder, t.ex. att ändra lösenord."
+    "message": "Hackade konton kan avslöja din personliga information. Skydda konton med tvåfaktorsautentisering eller starkare lösenord."
   },
   "breachCheckUsernameEmail": {
     "message": "Kontrollera alla användarnamn eller e-postadresser som du använder."
@@ -4704,8 +4704,8 @@
   "error": {
     "message": "Fel"
   },
-  "resetPasswordManageUsers": {
-    "message": "Hantera användare måste också aktiveras med rättigheten Hantera lösenordsåterställning"
+  "accountRecoveryManageUsers": {
+    "message": "Manage users must also be granted with the manage account recovery permission"
   },
   "setupProvider": {
     "message": "Provider setup"
@@ -6824,8 +6824,8 @@
   "updateKdfSettings": {
     "message": "Update KDF settings"
   },
-  "trustedDeviceEncryption": {
-    "message": "Trusted device encryption"
+  "trustedDevices": {
+    "message": "Betrodda enheter"
   },
   "memberDecryptionTdeDescriptionPartOne": {
     "message": "Once authenticated, members will decrypt vault data using a key stored on their device. The",
@@ -6954,6 +6954,14 @@
   },
   "selectedRegionFlag": {
     "message": "Selected region flag"
+  },
+  "sendsNoItemsTitle": {
+    "message": "No active Sends",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendsNoItemsMessage": {
+    "message": "Use Send to securely share encrypted information with anyone.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "inviteUsers": {
     "message": "Bjud in användare"

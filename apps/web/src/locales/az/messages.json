@@ -4375,7 +4375,7 @@
     "message": "İstifadəçiləri idarə et"
   },
   "manageAccountRecovery": {
-    "message": "Manage account recovery"
+    "message": "Hesab bərpasını idarə et"
   },
   "disableRequiredError": {
     "message": "Bu siyasətin sıradan çıxarıla bilməsi üçün $POLICYNAME$ siyasətini əllə sıradan çıxartmalısınız.",
@@ -4704,8 +4704,8 @@
   "error": {
     "message": "Xəta"
   },
-  "resetPasswordManageUsers": {
-    "message": "\"İstifadəçiləri idarə et\", \"Parol sıfırlanmasını idarə et\" icazəsi ilə də fəallaşdırılmalıdır"
+  "accountRecoveryManageUsers": {
+    "message": "Manage users must also be granted with the manage account recovery permission"
   },
   "setupProvider": {
     "message": "Provayder quraşdırması"
@@ -6824,8 +6824,8 @@
   "updateKdfSettings": {
     "message": "KDF tənzimləmələrini güncəllə"
   },
-  "trustedDeviceEncryption": {
-    "message": "Güvənli cihaz şifrələməsi"
+  "trustedDevices": {
+    "message": "Trusted devices"
   },
   "memberDecryptionTdeDescriptionPartOne": {
     "message": "Kimlik təsdiqləndikdən sonra üzvlər, cihazlarından saxlanılan açarı istifadə edərək anbar verilənlərinin şifrələrini aça biləcək",
@@ -6954,6 +6954,14 @@
   },
   "selectedRegionFlag": {
     "message": "Selected region flag"
+  },
+  "sendsNoItemsTitle": {
+    "message": "Aktiv \"Send\" yoxdur",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendsNoItemsMessage": {
+    "message": "Şifrələnmiş məlumatları hər kəslə güvənli şəkildə paylaşmaq üçün \"Send\"i istifadə edin.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "inviteUsers": {
     "message": "İstifadəçiləri dəvət et"

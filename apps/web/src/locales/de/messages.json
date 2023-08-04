@@ -3320,7 +3320,7 @@
     "message": "Lege ein Benutzerplatzlimit für dein Abonnement fest. Sobald dieses Limit erreicht ist, kannst du keine neuen Benutzer mehr einladen."
   },
   "limitSmSubscriptionDesc": {
-    "message": "Set a seat limit for your Secrets Manger subscription. Once this limit is reached, you will not be able to invite new members."
+    "message": "Lege ein Benutzerplätze-Limit für dein Secrets Manager Abonnement fest. Sobald dieses Limit erreicht ist, kannst du keine neuen Mitglieder mehr einladen."
   },
   "maxSeatLimit": {
     "message": "Benutzerplatzlimit (optional)",
@@ -4704,8 +4704,8 @@
   "error": {
     "message": "Fehler"
   },
-  "resetPasswordManageUsers": {
-    "message": "\"Benutzer verwalten\" muss ebenfalls mit der \"Passwort zurücksetzen\"-Berechtigung aktiviert werden"
+  "accountRecoveryManageUsers": {
+    "message": "Manage users must also be granted with the manage account recovery permission"
   },
   "setupProvider": {
     "message": "Anbieter-Einrichtung"
@@ -6824,8 +6824,8 @@
   "updateKdfSettings": {
     "message": "KDF-Einstellungen aktualisieren"
   },
-  "trustedDeviceEncryption": {
-    "message": "Vertrauenswürdige Geräteverschlüsselung"
+  "trustedDevices": {
+    "message": "Vertrauenswürdige Geräte"
   },
   "memberDecryptionTdeDescriptionPartOne": {
     "message": "Einmal authentifiziert, entschlüsseln Mitglieder Tresordaten mit einem Schlüssel auf ihrem Gerät. Die",
@@ -6955,6 +6955,14 @@
   "selectedRegionFlag": {
     "message": "Flagge der ausgewählten Region"
   },
+  "sendsNoItemsTitle": {
+    "message": "Keine aktiven Sends",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendsNoItemsMessage": {
+    "message": "Verwende Send, um verschlüsselte Informationen sicher mit anderen zu teilen.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
   "inviteUsers": {
     "message": "Benutzer einladen"
   },
@@ -6968,7 +6976,7 @@
     }
   },
   "secretsManagerForPlanDesc": {
-    "message": "For engineering and DevOps teams to manage secrets throughout the software development lifecycle."
+    "message": "Für Entwicklungs- und DevOps-Teams zur Verwaltung von Geheimnissen während des gesamten Softwareentwicklungszyklus."
   },
   "free2PersonOrganization": {
     "message": "Free 2-person Organizations"
@@ -7010,13 +7018,13 @@
     "message": "Secrets Manager hinzufügen"
   },
   "addSecretsManagerUpgradeDesc": {
-    "message": "Add Secrets Manager to your upgraded plan to maintain access to any secrets created with your previous plan."
+    "message": "Füge den Secrets Manager zu deinem aktualisierten Abonnement hinzu, um den Zugriff auf alle Geheimnisse zu erhalten, die mit deinem vorherigen Abonnement erstellt wurden."
   },
   "additionalServiceAccounts": {
     "message": "Zusätzliche Dienstkonten"
   },
   "additionalServiceAccountsDesc": {
-    "message": "Your plan comes with $COUNT$ service accounts. You can add additional service accounts for $COST$ per month.",
+    "message": "Dein Abonnement enthält $COUNT$ Dienstkonten. Du kannst zusätzliche Dienstkonten für $COST$ pro Monat hinzufügen.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -7044,12 +7052,12 @@
     "message": "Dienstkonten beschränken (optional)"
   },
   "limitServiceAccountsDesc": {
-    "message": "Set a limit for your service accounts. Once this limit is reached, you will not be able to create new service accounts."
+    "message": "Lege ein Limit für deine Dienstkonten fest. Sobald dieses Limit erreicht ist, kannst du keine neuen Dienstkonten mehr erstellen."
   },
   "serviceAccountLimit": {
     "message": "Dienstkontenlimit (optional)"
   },
   "maxServiceAccountCost": {
-    "message": "Max potential service account cost"
+    "message": "Maximale potentielle Kosten für Dienstkonten"
   }
 }

@@ -2636,10 +2636,10 @@
     "message": "Caixa forta web"
   },
   "bitWebVault": {
-    "message": "Bitwarden Web vault"
+    "message": "Caixa forta web de Bitwarden"
   },
   "bitSecretsManager": {
-    "message": "Bitwarden Secrets Manager"
+    "message": "Administrador de secrets de Bitwarden"
   },
   "loggedIn": {
     "message": "Heu iniciat sessió."
@@ -4375,7 +4375,7 @@
     "message": "Administra usuaris"
   },
   "manageAccountRecovery": {
-    "message": "Manage account recovery"
+    "message": "Administra la recuperació del compte"
   },
   "disableRequiredError": {
     "message": "Heu de desactivar manualment la política $POLICYNAME$ abans que aquesta política es puga desactivar.",
@@ -4704,8 +4704,8 @@
   "error": {
     "message": "Error"
   },
-  "resetPasswordManageUsers": {
-    "message": "L'administració d'usuaris també ha d'estar habilitada amb el permís de l'administració de restabliment de contrasenyes"
+  "accountRecoveryManageUsers": {
+    "message": "Manage users must also be granted with the manage account recovery permission"
   },
   "setupProvider": {
     "message": "Configuració del proveïdor"
@@ -6824,8 +6824,8 @@
   "updateKdfSettings": {
     "message": "Actualitza la configuració de KDF"
   },
-  "trustedDeviceEncryption": {
-    "message": "Encriptació de dispositius de confiança"
+  "trustedDevices": {
+    "message": "Trusted devices"
   },
   "memberDecryptionTdeDescriptionPartOne": {
     "message": "Una vegada autenticats, els membres desxifraran les dades de la caixa forta mitjançant una clau emmagatzemada al seu dispositiu. La",
@@ -6955,8 +6955,16 @@
   "selectedRegionFlag": {
     "message": "Bandera de la regió seleccionada"
   },
+  "sendsNoItemsTitle": {
+    "message": "No hi ha Sends actius",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendsNoItemsMessage": {
+    "message": "Utilitzeu Send per compartir informació xifrada de manera segura amb qualsevol persona.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
   "inviteUsers": {
-    "message": "Invite Users"
+    "message": "Convida usuaris"
   },
   "secretsManagerForPlan": {
     "message": "Administrador de secrets per a $PLAN$",
@@ -6980,7 +6988,7 @@
     "message": "Projectes il·limitats"
   },
   "projectsIncluded": {
-    "message": "$COUNT$ projects included",
+    "message": "$COUNT$ projectes inclosos",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -6989,7 +6997,7 @@
     }
   },
   "serviceAccountsIncluded": {
-    "message": "$COUNT$ service accounts included",
+    "message": "$COUNT$ comptes de servei inclosos",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -6998,7 +7006,7 @@
     }
   },
   "additionalServiceAccountCost": {
-    "message": "$COST$ per month for additional service accounts",
+    "message": "$COST$ al mes per a comptes de servei addicionals",
     "placeholders": {
       "cost": {
         "content": "$1",
@@ -7007,16 +7015,16 @@
     }
   },
   "addSecretsManager": {
-    "message": "Add Secrets Manager"
+    "message": "Afig administrador de secrets"
   },
   "addSecretsManagerUpgradeDesc": {
-    "message": "Add Secrets Manager to your upgraded plan to maintain access to any secrets created with your previous plan."
+    "message": "Afegiu administrador de secrets al vostre pla actualitzat per mantindre l'accés a tots els secrets creats amb el vostre pla anterior."
   },
   "additionalServiceAccounts": {
-    "message": "Additional service accounts"
+    "message": "Comptes de serveis addicionals"
   },
   "additionalServiceAccountsDesc": {
-    "message": "Your plan comes with $COUNT$ service accounts. You can add additional service accounts for $COST$ per month.",
+    "message": "El vostre pla inclou $COUNT$ comptes de servei. Podeu afegir comptes de servei addicionals per $COST$ al mes.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -7029,27 +7037,27 @@
     }
   },
   "passwordManagerPlanPrice": {
-    "message": "Password Manager plan price"
+    "message": "Preu del pla Administrador de contrasenyes"
   },
   "secretsManagerPlanPrice": {
-    "message": "Secrets Manager plan price"
+    "message": "Preu del pla Administrador de secrets"
   },
   "passwordManager": {
-    "message": "Password Manager"
+    "message": "Administrador de contrasenyes"
   },
   "freeOrganization": {
-    "message": "Free Organization"
+    "message": "Organització gratuïta"
   },
   "limitServiceAccounts": {
-    "message": "Limit service accounts (optional)"
+    "message": "Limita els comptes de servei (opcional)"
   },
   "limitServiceAccountsDesc": {
-    "message": "Set a limit for your service accounts. Once this limit is reached, you will not be able to create new service accounts."
+    "message": "Estableix un límit pels comptes de servei. Una vegada assolit aquest límit, no podreu crear nous comptes de servei."
   },
   "serviceAccountLimit": {
-    "message": "Service account limit (optional)"
+    "message": "Límit del compte de servei (opcional)"
   },
   "maxServiceAccountCost": {
-    "message": "Max potential service account cost"
+    "message": "Cost potencial màxim del compte de servei"
   }
 }

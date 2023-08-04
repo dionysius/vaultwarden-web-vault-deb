@@ -2636,7 +2636,7 @@
     "message": "Caja fuerte Web"
   },
   "bitWebVault": {
-    "message": "Bitwarden Web vault"
+    "message": "Bitwarden bóveda web"
   },
   "bitSecretsManager": {
     "message": "Bitwarden Secrets Manager"
@@ -4704,8 +4704,8 @@
   "error": {
     "message": "Error"
   },
-  "resetPasswordManageUsers": {
-    "message": "Administrar usuarios también debe estar habilitado con el permiso de Gestionar Contraseña Restablecer"
+  "accountRecoveryManageUsers": {
+    "message": "Manage users must also be granted with the manage account recovery permission"
   },
   "setupProvider": {
     "message": "Configurador del proveedor"
@@ -6824,8 +6824,8 @@
   "updateKdfSettings": {
     "message": "Actualizar ajustes de KDF"
   },
-  "trustedDeviceEncryption": {
-    "message": "Cifrado de dispositivo de confianza"
+  "trustedDevices": {
+    "message": "Trusted devices"
   },
   "memberDecryptionTdeDescriptionPartOne": {
     "message": "Once authenticated, members will decrypt vault data using a key stored on their device. The",
@@ -6955,6 +6955,14 @@
   "selectedRegionFlag": {
     "message": "Región seleccionada"
   },
+  "sendsNoItemsTitle": {
+    "message": "No active Sends",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendsNoItemsMessage": {
+    "message": "Use Send to securely share encrypted information with anyone.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
   "inviteUsers": {
     "message": "Invitar usuarios"
   },
@@ -7035,7 +7043,7 @@
     "message": "Secrets Manager plan price"
   },
   "passwordManager": {
-    "message": "Password Manager"
+    "message": "Administrador de contraseñas"
   },
   "freeOrganization": {
     "message": "Free Organization"

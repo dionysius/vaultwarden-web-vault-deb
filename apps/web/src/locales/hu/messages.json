@@ -4704,8 +4704,8 @@
   "error": {
     "message": "Hiba"
   },
-  "resetPasswordManageUsers": {
-    "message": "A felhasználók kezelését engedélyezni kell a Jelszó visszaállításának kezelése jogosultsággal is."
+  "accountRecoveryManageUsers": {
+    "message": "Manage users must also be granted with the manage account recovery permission"
   },
   "setupProvider": {
     "message": "Szolgáltató beállítása"
@@ -6824,8 +6824,8 @@
   "updateKdfSettings": {
     "message": "KDF beállítások frissítése"
   },
-  "trustedDeviceEncryption": {
-    "message": "Megbízható eszköztitkosítás"
+  "trustedDevices": {
+    "message": "Megbízható eszközök"
   },
   "memberDecryptionTdeDescriptionPartOne": {
     "message": "A hitelesítés után a tagok az eszközükön tárolt kulccsal visszafejtik a tároló adatait. A",
@@ -6954,6 +6954,14 @@
   },
   "selectedRegionFlag": {
     "message": "Kiválasztott régió zászló"
+  },
+  "sendsNoItemsTitle": {
+    "message": "Nincsenek natív Send elemek.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendsNoItemsMessage": {
+    "message": "A Send használatával biztonságosan megoszthatjuk a titkosított információkat bárkivel.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "inviteUsers": {
     "message": "Felhasználók meghívása"

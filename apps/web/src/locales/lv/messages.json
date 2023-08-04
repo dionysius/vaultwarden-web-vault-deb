@@ -3485,7 +3485,7 @@
     "message": "Atzīmējot šo rūtiņu, Tu piekrīti sekojošajam:"
   },
   "acceptPoliciesRequired": {
-    "message": "Nav apstiprināti izmantošanas nosacījumi un privātuma politika."
+    "message": "Nav apstiprināti izmantošanas noteikumi un privātuma nosacījumi."
   },
   "termsOfService": {
     "message": "Izmantošanas nosacījumi"
@@ -4704,8 +4704,8 @@
   "error": {
     "message": "Kļūda"
   },
-  "resetPasswordManageUsers": {
-    "message": "Lietotāju pārvaldīšanai ir jābūt iespējotai arī ar paroļu atiestatīšanas pārvaldīšanas atļauju"
+  "accountRecoveryManageUsers": {
+    "message": "Manage users must also be granted with the manage account recovery permission"
   },
   "setupProvider": {
     "message": "Sniedzēja iestatīšana"
@@ -6824,8 +6824,8 @@
   "updateKdfSettings": {
     "message": "Atjaunināt KDF iestatījumus"
   },
-  "trustedDeviceEncryption": {
-    "message": "Uzticamo ierīču šifrēšana"
+  "trustedDevices": {
+    "message": "Trusted devices"
   },
   "memberDecryptionTdeDescriptionPartOne": {
     "message": "Pēc pieteikšanās dalībnieki atšifrēs glabātavas saturu ar ierīcē glabātu atslēgu. ",
@@ -6954,6 +6954,14 @@
   },
   "selectedRegionFlag": {
     "message": "Atlasītā apgabala karogs"
+  },
+  "sendsNoItemsTitle": {
+    "message": "Nav spēkā esošu Sūtījumu",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendsNoItemsMessage": {
+    "message": "Sūtījumi ir izmantojami, lai ar ikvienu droši kopīgotu šifrētu informāciju.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "inviteUsers": {
     "message": "Uzaicināt lietotājus"

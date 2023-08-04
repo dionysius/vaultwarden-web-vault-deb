@@ -2636,7 +2636,7 @@
     "message": "Coffre web"
   },
   "bitWebVault": {
-    "message": "Coffre en ligne de Bitwarden"
+    "message": "Coffre web de Bitwarden"
   },
   "bitSecretsManager": {
     "message": "Secrets Manager de Bitwarden"
@@ -4704,8 +4704,8 @@
   "error": {
     "message": "Erreur"
   },
-  "resetPasswordManageUsers": {
-    "message": "La permission \"Gérer la réinitialisation du mot de passe\" requiert l'activation de la permission \"Gérer les utilisateurs\""
+  "accountRecoveryManageUsers": {
+    "message": "Gérer les utilisateurs exige également d'avoir l'autorisation de gérer la restauration de compte"
   },
   "setupProvider": {
     "message": "Configuration du fournisseur"
@@ -6824,8 +6824,8 @@
   "updateKdfSettings": {
     "message": "Mettre à jour les paramètres KDF"
   },
-  "trustedDeviceEncryption": {
-    "message": "Chiffrement de l'appareil de confiance"
+  "trustedDevices": {
+    "message": "Appareils de confiance"
   },
   "memberDecryptionTdeDescriptionPartOne": {
     "message": "Once authenticated, members will decrypt vault data using a key stored on their device. The",
@@ -6954,6 +6954,14 @@
   },
   "selectedRegionFlag": {
     "message": "Drapeau de la région sélectionnée"
+  },
+  "sendsNoItemsTitle": {
+    "message": "Aucun Send actif",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendsNoItemsMessage": {
+    "message": "Utiliser Send pour partager des informations chiffrées de façon sécuritaire.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "inviteUsers": {
     "message": "Inviter des utilisateurs"

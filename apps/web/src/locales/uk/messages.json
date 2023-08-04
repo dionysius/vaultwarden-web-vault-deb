@@ -2636,10 +2636,10 @@
     "message": "Веб сховище"
   },
   "bitWebVault": {
-    "message": "Bitwarden Web vault"
+    "message": "Веб сховище Bitwarden"
   },
   "bitSecretsManager": {
-    "message": "Bitwarden Secrets Manager"
+    "message": "Менеджер секретів Bitwarden"
   },
   "loggedIn": {
     "message": "Вхід виконано"
@@ -4375,7 +4375,7 @@
     "message": "Керувати користувачами"
   },
   "manageAccountRecovery": {
-    "message": "Manage account recovery"
+    "message": "Керувати відновленням облікового запису"
   },
   "disableRequiredError": {
     "message": "Перш ніж вимкнути цю політику, вам необхідно вручну вимкнути політику $POLICYNAME$.",
@@ -4704,8 +4704,8 @@
   "error": {
     "message": "Помилка"
   },
-  "resetPasswordManageUsers": {
-    "message": "Разом із дозволом на керування скиданням пароля також необхідно надати дозвіл на керування користувачами"
+  "accountRecoveryManageUsers": {
+    "message": "Manage users must also be granted with the manage account recovery permission"
   },
   "setupProvider": {
     "message": "Налаштування постачальника"
@@ -6824,8 +6824,8 @@
   "updateKdfSettings": {
     "message": "Оновити налаштування KDF"
   },
-  "trustedDeviceEncryption": {
-    "message": "Шифрування досвіреного пристрою"
+  "trustedDevices": {
+    "message": "Trusted devices"
   },
   "memberDecryptionTdeDescriptionPartOne": {
     "message": "Після авторизації учасники розшифровуватимуть дані сховища з використанням ключа, збереженого на їхньому пристрої.",
@@ -6955,8 +6955,16 @@
   "selectedRegionFlag": {
     "message": "Прапор вибраного регіону"
   },
+  "sendsNoItemsTitle": {
+    "message": "Немає активних відправлень",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendsNoItemsMessage": {
+    "message": "Використовуйте відправлення, щоб безпечно надавати доступ іншим до зашифрованої інформації.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
   "inviteUsers": {
-    "message": "Invite Users"
+    "message": "Запросити користувачів"
   },
   "secretsManagerForPlan": {
     "message": "Менеджер секретів для $PLAN$",

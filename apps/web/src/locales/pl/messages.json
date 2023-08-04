@@ -4704,8 +4704,8 @@
   "error": {
     "message": "Błąd"
   },
-  "resetPasswordManageUsers": {
-    "message": "Zasada \"Zarządzaj użytkownikami\" musi być włączona wraz z uprawnieniem \"Zarządzaj resetowaniem hasła\""
+  "accountRecoveryManageUsers": {
+    "message": "Zarządzanie użytkownikami musi być również przyznane z uprawnieniem do zarządzania odzyskiwaniem kont"
   },
   "setupProvider": {
     "message": "Ustawienia dostawcy"
@@ -5221,7 +5221,7 @@
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Use the require single-sign-on authentication policy to require all members to log in with SSO.'"
   },
   "ssoPolicyHelpAnchor": {
-    "message": "require single sign-on authentication policy",
+    "message": "zasadę uwierzytelniania wymagającą logowania jednokrotnego",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Use the require single-sign-on authentication policy to require all members to log in with SSO.'"
   },
   "ssoPolicyHelpEnd": {
@@ -6824,8 +6824,8 @@
   "updateKdfSettings": {
     "message": "Zaktualizuj ustawienia KDF"
   },
-  "trustedDeviceEncryption": {
-    "message": "Szyfrowanie zaufanego urządzenia"
+  "trustedDevices": {
+    "message": "Zaufane urządzenia"
   },
   "memberDecryptionTdeDescriptionPartOne": {
     "message": "Po uwierzytelnieniu użytkownicy odszyfrowają dane sejfu przy użyciu klucza zapisanego na ich urządzeniu.",
@@ -6954,6 +6954,14 @@
   },
   "selectedRegionFlag": {
     "message": "Flaga wybranego regionu"
+  },
+  "sendsNoItemsTitle": {
+    "message": "Brak aktywnych wysyłek",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendsNoItemsMessage": {
+    "message": "Użyj wysyłki, aby bezpiecznie dzielić się zaszyfrowanymi informacjami ze wszystkimi.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "inviteUsers": {
     "message": "Zaproś użytkowników"

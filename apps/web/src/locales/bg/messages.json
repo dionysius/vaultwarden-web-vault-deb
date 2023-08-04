@@ -949,7 +949,7 @@
     "message": "Копиране на кода за потвърждаване"
   },
   "warning": {
-    "message": "ВНИМАНИЕ"
+    "message": "Внимание"
   },
   "confirmVaultExport": {
     "message": "Потвърждаване на изнасянето на трезора"
@@ -4704,8 +4704,8 @@
   "error": {
     "message": "Грешка"
   },
-  "resetPasswordManageUsers": {
-    "message": "Управлението на потребителите трябва също да бъде включено с разрешението за „Управление на помощта при смяната на паролата“"
+  "accountRecoveryManageUsers": {
+    "message": "Manage users must also be granted with the manage account recovery permission"
   },
   "setupProvider": {
     "message": "Настройка на доставчика"
@@ -6824,8 +6824,8 @@
   "updateKdfSettings": {
     "message": "Промяна на настройките за KDF"
   },
-  "trustedDeviceEncryption": {
-    "message": "Шифроване чрез доверено устройство"
+  "trustedDevices": {
+    "message": "Доверени устройства"
   },
   "memberDecryptionTdeDescriptionPartOne": {
     "message": "След вписване, членовете ще дешифрират данните от трезорите си чрез ключ, който се съхранява на устройство. Политиката за",
@@ -6954,6 +6954,14 @@
   },
   "selectedRegionFlag": {
     "message": "Знаме на избрания регион"
+  },
+  "sendsNoItemsTitle": {
+    "message": "Няма активни Изпращания",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendsNoItemsMessage": {
+    "message": "Използвайте Изпращане, за да споделите безопасно шифрована информация с някого.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "inviteUsers": {
     "message": "Канене на потребители"

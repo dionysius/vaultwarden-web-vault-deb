@@ -4704,8 +4704,8 @@
   "error": {
     "message": "Памылка"
   },
-  "resetPasswordManageUsers": {
-    "message": "Для кіравання карыстальнікамі неабходна даць дазвол на кіраванне скідання пароля"
+  "accountRecoveryManageUsers": {
+    "message": "Manage users must also be granted with the manage account recovery permission"
   },
   "setupProvider": {
     "message": "Налады пастаўшчыка"
@@ -6824,8 +6824,8 @@
   "updateKdfSettings": {
     "message": "Абнавіце налады KDF"
   },
-  "trustedDeviceEncryption": {
-    "message": "Шыфраванне даверанай прылады"
+  "trustedDevices": {
+    "message": "Trusted devices"
   },
   "memberDecryptionTdeDescriptionPartOne": {
     "message": "Пасля аўтэнтыфікацыі ўдзельнікі расшыфроўваюць даныя сховішча з выкарыстаннем ключа, які захоўваецца на іх прыладах",
@@ -6955,6 +6955,14 @@
   "selectedRegionFlag": {
     "message": "Сцяг выбранага рэгіёна"
   },
+  "sendsNoItemsTitle": {
+    "message": "No active Sends",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendsNoItemsMessage": {
+    "message": "Use Send to securely share encrypted information with anyone.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
   "inviteUsers": {
     "message": "Запрасіць карыстальнікаў"
   },
@@ -7013,10 +7021,10 @@
     "message": "Дадаць менеджар сакрэтаў у ваш абноўлены тарыфны план, каб падтрымліваць доступ да любых сакрэтаў, якія былі створаны з дапамогай вашых папярэдніх тарыфных планаў."
   },
   "additionalServiceAccounts": {
-    "message": "Additional service accounts"
+    "message": "Дадатковыя сэрвісныя ўліковыя запісы"
   },
   "additionalServiceAccountsDesc": {
-    "message": "Your plan comes with $COUNT$ service accounts. You can add additional service accounts for $COST$ per month.",
+    "message": "Ваш тарыфны план мае наступную колькасць сэрвісных уліковых запісаў: $COUNT$. Вы можаце дадаць дадатковую колькасць сэрвісных уліковых запісаў за $COST$ у месяц.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -7029,27 +7037,27 @@
     }
   },
   "passwordManagerPlanPrice": {
-    "message": "Password Manager plan price"
+    "message": "Кошт тарыфнага плана менеджар пароляў"
   },
   "secretsManagerPlanPrice": {
-    "message": "Secrets Manager plan price"
+    "message": "Кошт тарыфнага плана менеджар сакрэтаў"
   },
   "passwordManager": {
-    "message": "Password Manager"
+    "message": "Мэнэджар пароляў"
   },
   "freeOrganization": {
-    "message": "Free Organization"
+    "message": "Бясплатная арганізацыя"
   },
   "limitServiceAccounts": {
-    "message": "Limit service accounts (optional)"
+    "message": "Абмежаванне сэрвісных уліковых запісаў (неабавязкова)"
   },
   "limitServiceAccountsDesc": {
-    "message": "Set a limit for your service accounts. Once this limit is reached, you will not be able to create new service accounts."
+    "message": "Прызначыць абмежаванне для вашых сэрвісных уліковых запісаў. Пасля дасягнення абмежавання, вы не зможаце ствараць новыя сэрвісныя ўліковыя запісы."
   },
   "serviceAccountLimit": {
-    "message": "Service account limit (optional)"
+    "message": "Абмежаванне сэрвісных уліковых запісаў (неабавязкова)"
   },
   "maxServiceAccountCost": {
-    "message": "Max potential service account cost"
+    "message": "Максімальны патэнцыйны кошт сэрвісных уліковых запісаў"
   }
 }
