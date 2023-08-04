@@ -3590,8 +3590,8 @@
   "attachmentsNeedFix": {
     "message": "This item has old file attachments that need to be fixed."
   },
-  "attachmentFixDesc": {
-    "message": "This is an old file attachment the needs to be fixed. Click to learn more."
+  "attachmentFixDescription": {
+    "message": "This attachment uses outdated encryption. Select 'Fix' to download, re-encrypt, and re-upload the attachment."
   },
   "fix": {
     "message": "Fix",
