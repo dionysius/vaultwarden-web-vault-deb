@@ -290,6 +290,10 @@ export class OverviewComponent implements OnInit, OnDestroy {
     );
   }
 
+  copySecretUuid(id: string) {
+    SecretsListComponent.copySecretUuid(id, this.platformUtilsService, this.i18nService);
+  }
+
   protected hideOnboarding() {
     this.showOnboarding = false;
     this.saveCompletedTasks(this.organizationId, {

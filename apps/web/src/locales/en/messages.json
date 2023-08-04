@@ -717,6 +717,9 @@
   "yourVaultIsLocked": {
     "message": "Your vault is locked. Verify your master password to continue."
   },
+  "uuid":{
+    "message" : "UUID"
+  },
   "unlock": {
     "message": "Unlock"
   },
@@ -947,6 +950,9 @@
   },
   "copyVerificationCode": {
     "message": "Copy verification code"
+  },
+  "copyUuid": {
+    "message": "Copy UUID"
   },
   "warning": {
     "message": "Warning"
