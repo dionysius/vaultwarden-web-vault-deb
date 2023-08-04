@@ -519,9 +519,12 @@ export class CipherService implements CipherServiceAbstraction {
     await this.stateService.setNeverDomains(domains);
   }
 
-  async createWithServer(cipher: Cipher): Promise<any> {
+  async createWithServer(cipher: Cipher, orgAdmin?: boolean): Promise<any> {
     let response: CipherResponse;
-    if (cipher.collectionIds != null) {
+    if (orgAdmin) {
+      const request = new CipherCreateRequest(cipher);
+      response = await this.apiService.postCipherAdmin(request);
+    } else if (cipher.collectionIds != null) {
       const request = new CipherCreateRequest(cipher);
       response = await this.apiService.postCipherCreate(request);
     } else {
@@ -534,9 +537,12 @@ export class CipherService implements CipherServiceAbstraction {
     await this.upsert(data);
   }
 
-  async updateWithServer(cipher: Cipher): Promise<any> {
+  async updateWithServer(cipher: Cipher, orgAdmin?: boolean, isNotClone?: boolean): Promise<any> {
     let response: CipherResponse;
-    if (cipher.edit) {
+    if (orgAdmin && isNotClone) {
+      const request = new CipherRequest(cipher);
+      response = await this.apiService.putCipherAdmin(cipher.id, request);
+    } else if (cipher.edit) {
       const request = new CipherRequest(cipher);
       response = await this.apiService.putCipher(cipher.id, request);
     } else {
