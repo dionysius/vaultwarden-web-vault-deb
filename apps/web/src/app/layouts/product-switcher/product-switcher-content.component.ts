@@ -57,21 +57,21 @@ export class ProductSwitcherContentComponent {
        */
       const products: Record<"pm" | "sm" | "orgs", ProductSwitcherItem> = {
         pm: {
-          name: "passwordManager",
+          name: "Password Manager",
           icon: "bwi-lock",
           appRoute: "/vault",
           marketingRoute: "https://bitwarden.com/products/personal/",
           isActive: !this.router.url.includes("/sm/"),
         },
         sm: {
-          name: "secretsManager",
+          name: "Secrets Manager",
           icon: "bwi-cli",
           appRoute: ["/sm", smOrg?.id],
           marketingRoute: "https://bitwarden.com/products/secrets-manager/",
           isActive: this.router.url.includes("/sm/"),
         },
         orgs: {
-          name: "organizations",
+          name: "Organizations",
           icon: "bwi-business",
           marketingRoute: "https://bitwarden.com/products/business/",
         },
