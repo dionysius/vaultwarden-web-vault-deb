@@ -15,7 +15,8 @@ export function canAccessSettingsTab(org: Organization): boolean {
     org.canManagePolicies ||
     org.canManageSso ||
     org.canManageScim ||
-    org.canAccessImportExport
+    org.canAccessImportExport ||
+    org.canManageDeviceApprovals
   );
 }
 
