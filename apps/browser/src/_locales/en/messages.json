@@ -630,6 +630,12 @@
   "notificationChangeSave": {
     "message": "Update"
   },
+  "notificationUnlockDesc": {
+    "message": "Unlock your Bitwarden vault to complete the auto-fill request."
+  },
+  "notificationUnlock": {
+    "message": "Unlock"
+  },
   "enableContextMenuItem": {
     "message": "Show context menu options"
   },

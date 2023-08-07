@@ -12,6 +12,7 @@ import { FolderService } from "@bitwarden/common/vault/abstractions/folder/folde
 import { CipherType } from "@bitwarden/common/vault/enums/cipher-type";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 
+import AddUnlockVaultQueueMessage from "../../background/models/add-unlock-vault-queue-message";
 import AddChangePasswordQueueMessage from "../../background/models/addChangePasswordQueueMessage";
 import AddLoginQueueMessage from "../../background/models/addLoginQueueMessage";
 import AddLoginRuntimeMessage from "../../background/models/addLoginRuntimeMessage";
@@ -23,7 +24,11 @@ import { BrowserStateService } from "../../platform/services/abstractions/browse
 import { AutofillService } from "../services/abstractions/autofill.service";
 
 export default class NotificationBackground {
-  private notificationQueue: (AddLoginQueueMessage | AddChangePasswordQueueMessage)[] = [];
+  private notificationQueue: (
+    | AddLoginQueueMessage
+    | AddChangePasswordQueueMessage
+    | AddUnlockVaultQueueMessage
+  )[] = [];
 
   constructor(
     private autofillService: AutofillService,
@@ -53,10 +58,7 @@ export default class NotificationBackground {
   async processMessage(msg: any, sender: chrome.runtime.MessageSender) {
     switch (msg.command) {
       case "unlockCompleted":
-        if (msg.data.target !== "notification.background") {
-          return;
-        }
-        await this.processMessage(msg.data.commandToRetry.msg, msg.data.commandToRetry.sender);
+        await this.handleUnlockCompleted(msg.data, sender);
         break;
       case "bgGetDataForTab":
         await this.getDataForTab(sender.tab, msg.responseCommand);
@@ -82,7 +84,9 @@ export default class NotificationBackground {
         if ((await this.authService.getAuthStatus()) < AuthenticationStatus.Unlocked) {
           const retryMessage: LockedVaultPendingNotificationsItem = {
             commandToRetry: {
-              msg: msg,
+              msg: {
+                command: msg,
+              },
               sender: sender,
             },
             target: "notification.background",
@@ -113,6 +117,9 @@ export default class NotificationBackground {
           default:
             break;
         }
+        break;
+      case "promptForLogin":
+        await this.unlockVault(sender.tab);
         break;
       default:
         break;
@@ -179,6 +186,14 @@ export default class NotificationBackground {
             isVaultLocked: this.notificationQueue[i].wasVaultLocked,
             theme: await this.getCurrentTheme(),
             webVaultURL: await this.environmentService.getWebVaultUrl(),
+          },
+        });
+      } else if (this.notificationQueue[i].type === NotificationQueueMessageType.UnlockVault) {
+        BrowserApi.tabSendMessageData(tab, "openNotificationBar", {
+          type: "unlock",
+          typeData: {
+            isVaultLocked: this.notificationQueue[i].wasVaultLocked,
+            theme: await this.getCurrentTheme(),
           },
         });
       }
@@ -305,6 +320,20 @@ export default class NotificationBackground {
     }
   }
 
+  private async unlockVault(tab: chrome.tabs.Tab) {
+    const currentAuthStatus = await this.authService.getAuthStatus();
+    if (currentAuthStatus !== AuthenticationStatus.Locked || this.notificationQueue.length) {
+      return;
+    }
+
+    const loginDomain = Utils.getDomain(tab.url);
+    if (!loginDomain) {
+      return;
+    }
+
+    this.pushUnlockVaultToQueue(loginDomain, tab);
+  }
+
   private async pushChangePasswordToQueue(
     cipherId: string,
     loginDomain: string,
@@ -325,6 +354,20 @@ export default class NotificationBackground {
     };
     this.notificationQueue.push(message);
     await this.checkNotificationQueue(tab);
+  }
+
+  private async pushUnlockVaultToQueue(loginDomain: string, tab: chrome.tabs.Tab) {
+    this.removeTabFromNotificationQueue(tab);
+    const message: AddUnlockVaultQueueMessage = {
+      type: NotificationQueueMessageType.UnlockVault,
+      domain: loginDomain,
+      tabId: tab.id,
+      expires: new Date(new Date().getTime() + 0.5 * 60000), // 30 seconds
+      wasVaultLocked: true,
+    };
+    this.notificationQueue.push(message);
+    await this.checkNotificationQueue(tab);
+    this.removeTabFromNotificationQueue(tab);
   }
 
   private async saveOrUpdateCredentials(tab: chrome.tabs.Tab, edit: boolean, folderId?: string) {
@@ -461,6 +504,24 @@ export default class NotificationBackground {
   private async removeIndividualVault(): Promise<boolean> {
     return await firstValueFrom(
       this.policyService.policyAppliesToActiveUser$(PolicyType.PersonalOwnership)
+    );
+  }
+
+  private async handleUnlockCompleted(
+    messageData: LockedVaultPendingNotificationsItem,
+    sender: chrome.runtime.MessageSender
+  ): Promise<void> {
+    if (messageData.commandToRetry.msg.command === "autofill_login") {
+      await BrowserApi.tabSendMessageData(sender.tab, "closeNotificationBar");
+    }
+
+    if (messageData.target !== "notification.background") {
+      return;
+    }
+
+    await this.processMessage(
+      messageData.commandToRetry.msg.command,
+      messageData.commandToRetry.sender
     );
   }
 }
