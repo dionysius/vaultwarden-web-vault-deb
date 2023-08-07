@@ -19,7 +19,7 @@ jobs:
       DEBFULLNAME: dionysius (github-actions)
       DEBEMAIL: dragon.dionysius+gha@gmail.com
       before_build_deps_install: |
-        curl -sL https://deb.nodesource.com/setup_16.x | bash -
+        curl -sL https://deb.nodesource.com/setup_18.x | bash -
         apt-get install -y nodejs
     secrets:
       GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
