@@ -1,6 +1,7 @@
 import { Directive, OnInit } from "@angular/core";
 
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
+import { EnvironmentService } from "@bitwarden/common/platform/abstractions/environment.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
@@ -13,6 +14,7 @@ export class PremiumComponent implements OnInit {
   isPremium = false;
   price = 10;
   refreshPromise: Promise<any>;
+  cloudWebVaultUrl: string;
 
   constructor(
     protected i18nService: I18nService,
@@ -20,8 +22,11 @@ export class PremiumComponent implements OnInit {
     protected apiService: ApiService,
     private logService: LogService,
     protected stateService: StateService,
-    protected dialogService: DialogServiceAbstraction
-  ) {}
+    protected dialogService: DialogServiceAbstraction,
+    private environmentService: EnvironmentService
+  ) {
+    this.cloudWebVaultUrl = this.environmentService.getCloudWebVaultUrl();
+  }
 
   async ngOnInit() {
     this.isPremium = await this.stateService.getCanAccessPremium();
@@ -46,7 +51,7 @@ export class PremiumComponent implements OnInit {
     });
 
     if (confirmed) {
-      this.platformUtilsService.launchUri("https://vault.bitwarden.com/#/?premium=purchase");
+      this.platformUtilsService.launchUri(`${this.cloudWebVaultUrl}/#/?premium=purchase`);
     }
   }
 
@@ -58,7 +63,7 @@ export class PremiumComponent implements OnInit {
     });
 
     if (confirmed) {
-      this.platformUtilsService.launchUri("https://vault.bitwarden.com/#/?premium=manage");
+      this.platformUtilsService.launchUri(`${this.cloudWebVaultUrl}/#/?premium=manage`);
     }
   }
 }

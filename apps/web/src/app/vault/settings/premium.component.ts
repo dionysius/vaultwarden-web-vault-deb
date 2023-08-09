@@ -3,6 +3,7 @@ import { Router } from "@angular/router";
 
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { TokenService } from "@bitwarden/common/auth/abstractions/token.service";
+import { EnvironmentService } from "@bitwarden/common/platform/abstractions/environment.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
@@ -10,8 +11,8 @@ import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/pl
 import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
 import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
 
-import { PaymentComponent } from "../billing/settings/payment.component";
-import { TaxInfoComponent } from "../billing/settings/tax-info.component";
+import { PaymentComponent } from "../../billing/settings/payment.component";
+import { TaxInfoComponent } from "../../billing/settings/tax-info.component";
 
 @Component({
   selector: "app-premium",
@@ -27,6 +28,7 @@ export class PremiumComponent implements OnInit {
   familyPlanMaxUserCount = 6;
   storageGbPrice = 4;
   additionalStorage = 0;
+  cloudWebVaultUrl: string;
 
   formPromise: Promise<any>;
 
@@ -39,9 +41,11 @@ export class PremiumComponent implements OnInit {
     private messagingService: MessagingService,
     private syncService: SyncService,
     private logService: LogService,
-    private stateService: StateService
+    private stateService: StateService,
+    private environmentService: EnvironmentService
   ) {
     this.selfHosted = platformUtilsService.isSelfHost();
+    this.cloudWebVaultUrl = this.environmentService.getCloudWebVaultUrl();
   }
 
   async ngOnInit() {

@@ -81,7 +81,6 @@ import { DeleteAccountComponent } from "../settings/delete-account.component";
 import { DomainRulesComponent } from "../settings/domain-rules.component";
 import { LowKdfComponent } from "../settings/low-kdf.component";
 import { PreferencesComponent } from "../settings/preferences.component";
-import { PremiumComponent } from "../settings/premium.component";
 import { ProfileComponent } from "../settings/profile.component";
 import { PurgeVaultComponent } from "../settings/purge-vault.component";
 import { SecurityKeysComponent } from "../settings/security-keys.component";
@@ -107,6 +106,7 @@ import { ShareComponent } from "../vault/individual-vault/share.component";
 import { AddEditComponent as OrgAddEditComponent } from "../vault/org-vault/add-edit.component";
 import { AttachmentsComponent as OrgAttachmentsComponent } from "../vault/org-vault/attachments.component";
 import { CollectionsComponent as OrgCollectionsComponent } from "../vault/org-vault/collections.component";
+import { PremiumComponent } from "../vault/settings/premium.component";
 
 import { EnvironmentSelectorModule } from "./../components/environment-selector/environment-selector.module";
 import { AccountFingerprintComponent } from "./components/account-fingerprint/account-fingerprint.component";
