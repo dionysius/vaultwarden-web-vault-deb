@@ -498,6 +498,11 @@ export class VaultComponent implements OnInit, OnDestroy {
   }
 
   async editCipherAttachments(cipher: CipherView) {
+    if (cipher?.reprompt !== 0 && !(await this.passwordRepromptService.showPasswordPrompt())) {
+      this.go({ cipherId: null, itemId: null });
+      return;
+    }
+
     const canAccessPremium = await this.stateService.getCanAccessPremium();
     if (cipher.organizationId == null && !canAccessPremium) {
       this.messagingService.send("premiumRequired");
@@ -539,6 +544,10 @@ export class VaultComponent implements OnInit, OnDestroy {
   }
 
   async shareCipher(cipher: CipherView) {
+    if (cipher?.reprompt !== 0 && !(await this.passwordRepromptService.showPasswordPrompt())) {
+      this.go({ cipherId: null, itemId: null });
+      return;
+    }
     const [modal] = await this.modalService.openViewRef(
       ShareComponent,
       this.shareModalRef,
@@ -595,11 +604,9 @@ export class VaultComponent implements OnInit, OnDestroy {
 
   async editCipherId(id: string) {
     const cipher = await this.cipherService.get(id);
-    if (cipher != null && cipher.reprompt != 0) {
-      if (!(await this.passwordRepromptService.showPasswordPrompt())) {
-        this.go({ cipherId: null, itemId: null });
-        return;
-      }
+    if (cipher?.reprompt !== 0 && !(await this.passwordRepromptService.showPasswordPrompt())) {
+      this.go({ cipherId: null, itemId: null });
+      return;
     }
 
     const [modal, childComponent] = await this.modalService.openViewRef(
