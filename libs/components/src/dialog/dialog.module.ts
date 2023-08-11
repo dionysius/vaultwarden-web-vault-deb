@@ -1,8 +1,10 @@
 import { DialogModule as CdkDialogModule } from "@angular/cdk/dialog";
 import { NgModule } from "@angular/core";
+import { ReactiveFormsModule } from "@angular/forms";
 
 import { DialogServiceAbstraction } from "@bitwarden/angular/services/dialog";
 
+import { AsyncActionsModule } from "../async-actions";
 import { ButtonModule } from "../button";
 import { IconButtonModule } from "../icon-button";
 import { SharedModule } from "../shared";
@@ -15,7 +17,14 @@ import { SimpleConfigurableDialogComponent } from "./simple-configurable-dialog/
 import { IconDirective, SimpleDialogComponent } from "./simple-dialog/simple-dialog.component";
 
 @NgModule({
-  imports: [SharedModule, IconButtonModule, CdkDialogModule, ButtonModule],
+  imports: [
+    SharedModule,
+    AsyncActionsModule,
+    ButtonModule,
+    CdkDialogModule,
+    IconButtonModule,
+    ReactiveFormsModule,
+  ],
   declarations: [
     DialogCloseDirective,
     DialogTitleContainerDirective,
