@@ -1,5 +1,5 @@
 diff --git a/apps/web/src/404.html b/apps/web/src/404.html
-index 5a650b3673..275c34f726 100644
+index 5a650b367..275c34f72 100644
 --- a/apps/web/src/404.html
 +++ b/apps/web/src/404.html
 @@ -28,7 +28,7 @@
@@ -27,7 +27,7 @@ index 5a650b3673..275c34f726 100644
    </body>
  </html>
 diff --git a/apps/web/src/app/admin-console/organizations/create/organization-information.component.html b/apps/web/src/app/admin-console/organizations/create/organization-information.component.html
-index 6029cfd833..04324b7d19 100644
+index 6029cfd83..04324b7d1 100644
 --- a/apps/web/src/app/admin-console/organizations/create/organization-information.component.html
 +++ b/apps/web/src/app/admin-console/organizations/create/organization-information.component.html
 @@ -12,7 +12,7 @@
@@ -40,35 +40,53 @@ index 6029cfd833..04324b7d19 100644
      </bit-form-field>
      <bit-form-field class="tw-w-1/2" *ngIf="isProvider">
 diff --git a/apps/web/src/app/admin-console/organizations/settings/account.component.html b/apps/web/src/app/admin-console/organizations/settings/account.component.html
-index 096ae89015..d7f1b9356a 100644
+index c7ac9910a..e03c8fedc 100644
 --- a/apps/web/src/app/admin-console/organizations/settings/account.component.html
 +++ b/apps/web/src/app/admin-console/organizations/settings/account.component.html
-@@ -30,7 +30,7 @@
-         />
-       </div>
-       <div class="form-group">
--        <label for="billingEmail">{{ "billingEmail" | i18n }}</label>
-+        <label for="billingEmail">{{ "email" | i18n }}</label>
-         <input
-           id="billingEmail"
-           class="form-control"
+@@ -15,7 +15,7 @@
+         <input bitInput id="orgName" type="text" formControlName="orgName" />
+       </bit-form-field>
+       <bit-form-field>
+-        <bit-label>{{ "billingEmail" | i18n }}</bit-label>
++        <bit-label>{{ "email" | i18n }}</bit-label>
+         <input bitInput id="billingEmail" formControlName="billingEmail" type="email" />
+       </bit-form-field>
+       <bit-form-field>
 diff --git a/apps/web/src/app/app.component.ts b/apps/web/src/app/app.component.ts
-index 6826da0467..5f5d1e964b 100644
+index 9a22ea20b..4ce7fd4d8 100644
 --- a/apps/web/src/app/app.component.ts
 +++ b/apps/web/src/app/app.component.ts
-@@ -172,6 +172,10 @@ export class AppComponent implements OnDestroy, OnInit {
+@@ -184,6 +184,10 @@ export class AppComponent implements OnDestroy, OnInit {
              break;
            }
            case "showToast":
 +            if (typeof message.text === "string" && typeof crypto.subtle === 'undefined') {
-+              message.title="This browser requires HTTPS to use the web vault";
-+              message.text="Check the Vaultwarden wiki for details on how to enable it";
++              message.title = "This browser requires HTTPS to use the web vault";
++              message.text = "Check the Vaultwarden wiki for details on how to enable it";
 +            }
              this.showToast(message);
              break;
            case "setFullWidth":
+diff --git a/apps/web/src/app/auth/settings/two-factor-authenticator.component.ts b/apps/web/src/app/auth/settings/two-factor-authenticator.component.ts
+index 29cc6df15..3dbbfbd85 100644
+--- a/apps/web/src/app/auth/settings/two-factor-authenticator.component.ts
++++ b/apps/web/src/app/auth/settings/two-factor-authenticator.component.ts
+@@ -109,11 +109,11 @@ export class TwoFactorAuthenticatorComponent
+       new window.QRious({
+         element: document.getElementById("qr"),
+         value:
+-          "otpauth://totp/Bitwarden:" +
++          "otpauth://totp/Vaultwarden:" +
+           Utils.encodeRFC3986URIComponent(email) +
+           "?secret=" +
+           encodeURIComponent(this.key) +
+-          "&issuer=Bitwarden",
++          "&issuer=Vaultwarden",
+         size: 160,
+       });
+     }, 100);
 diff --git a/apps/web/src/app/billing/organizations/organization-billing-history-view.component.ts b/apps/web/src/app/billing/organizations/organization-billing-history-view.component.ts
-index 22cea10acb..22bb116c1c 100644
+index 22cea10ac..747f534bc 100644
 --- a/apps/web/src/app/billing/organizations/organization-billing-history-view.component.ts
 +++ b/apps/web/src/app/billing/organizations/organization-billing-history-view.component.ts
 @@ -45,7 +45,7 @@ export class OrgBillingHistoryViewComponent implements OnInit, OnDestroy {
@@ -76,15 +94,28 @@ index 22cea10acb..22bb116c1c 100644
      }
      this.loading = true;
 -    this.billing = await this.organizationApiService.getBilling(this.organizationId);
-+    this.billing = null
++    this.billing = null;
      this.loading = false;
    }
  }
+diff --git a/apps/web/src/app/components/environment-selector/environment-selector.component.ts b/apps/web/src/app/components/environment-selector/environment-selector.component.ts
+index 9f736a72e..ee4832958 100644
+--- a/apps/web/src/app/components/environment-selector/environment-selector.component.ts
++++ b/apps/web/src/app/components/environment-selector/environment-selector.component.ts
+@@ -30,7 +30,7 @@ export class EnvironmentSelectorComponent implements OnInit {
+     this.isEuServer = domain.includes(RegionDomain.EU);
+     this.isUsServer = domain.includes(RegionDomain.US) || domain.includes(RegionDomain.USQA);
+     this.selectedRegionImageName = this.getRegionImage();
+-    this.showRegionSelector = !this.platformUtilsService.isSelfHost();
++    this.showRegionSelector = false;
+   }
+ 
+   getRegionImage(): string {
 diff --git a/apps/web/src/app/core/init.service.ts b/apps/web/src/app/core/init.service.ts
-index 1ecd7d3fef..0dd5f049c7 100644
+index 4a2ef2f49..b9d6d90a7 100644
 --- a/apps/web/src/app/core/init.service.ts
 +++ b/apps/web/src/app/core/init.service.ts
-@@ -37,11 +37,23 @@ export class InitService {
+@@ -37,14 +37,26 @@ export class InitService {
    ) {}
  
    init() {
@@ -102,16 +133,19 @@ index 1ecd7d3fef..0dd5f049c7 100644
 +      return baseUrl;
 +    }
      return async () => {
+       // Workaround to ignore stateService.activeAccount until process.env.URLS are set
+       // TODO: Remove this when implementing ticket PM-2637
+       this.environmentService.initialized = false;
        await this.stateService.init();
  
 -      const urls = process.env.URLS as Urls;
 -      urls.base ??= this.win.location.origin;
-+      const urls = {base: getBaseUrl()};
++      const urls = { base: getBaseUrl() };
        this.environmentService.setUrls(urls);
+       this.environmentService.initialized = true;
  
-       setTimeout(() => this.notificationsService.init(), 3000);
 diff --git a/apps/web/src/app/core/router.service.ts b/apps/web/src/app/core/router.service.ts
-index aa9041875a..6809363759 100644
+index 279b94d4e..6667b7b3b 100644
 --- a/apps/web/src/app/core/router.service.ts
 +++ b/apps/web/src/app/core/router.service.ts
 @@ -23,7 +23,7 @@ export class RouterService {
@@ -124,10 +158,10 @@ index aa9041875a..6809363759 100644
          while (child.firstChild) {
            child = child.firstChild;
 diff --git a/apps/web/src/app/core/web-platform-utils.service.ts b/apps/web/src/app/core/web-platform-utils.service.ts
-index 302d030217..64a59b47bd 100644
+index ec829d71f..f3a362d0e 100644
 --- a/apps/web/src/app/core/web-platform-utils.service.ts
 +++ b/apps/web/src/app/core/web-platform-utils.service.ts
-@@ -194,15 +194,15 @@ export class WebPlatformUtilsService implements PlatformUtilsService {
+@@ -133,15 +133,15 @@ export class WebPlatformUtilsService implements PlatformUtilsService {
    }
  
    isDev(): boolean {
@@ -147,55 +181,31 @@ index 302d030217..64a59b47bd 100644
  
    copyToClipboard(text: string, options?: any): void | boolean {
 diff --git a/apps/web/src/app/layouts/footer.component.html b/apps/web/src/app/layouts/footer.component.html
-index 8cacb4ceb..37d7cfb03 100644
+index 8cacb4ceb..eee272822 100644
 --- a/apps/web/src/app/layouts/footer.component.html
 +++ b/apps/web/src/app/layouts/footer.component.html
-@@ -1,6 +1,6 @@
+@@ -1,8 +1,9 @@
  <div class="container footer text-muted">
    <div class="row">
 -    <div class="col">&copy; {{ year }} Bitwarden Inc.</div>
 +    <div class="col">Vaultwarden (unofficial Bitwarden&reg; server)</div>
      <div class="col text-center"></div>
      <div class="col text-right">
++      ({{ "webVault" | i18n }})
        {{ "versionNumber" | i18n : version }}
+     </div>
+   </div>
 diff --git a/apps/web/src/app/layouts/frontend-layout.component.html b/apps/web/src/app/layouts/frontend-layout.component.html
-index bd26ed943..fb59dba5d 100644
+index 531e49dad..a4b679278 100644
 --- a/apps/web/src/app/layouts/frontend-layout.component.html
 +++ b/apps/web/src/app/layouts/frontend-layout.component.html
-@@ -1,34 +1,5 @@
+@@ -1,6 +1,7 @@
  <router-outlet></router-outlet>
  <div class="container my-5 text-muted text-center">
--  <div class="tw-mb-1">
--    <bit-menu #environmentOptions>
--      <a bitMenuItem href="https://vault.bitwarden.com" class="pr-4">
--        <i
--          class="bwi bwi-fw bwi-sm bwi-check pb-1"
--          aria-hidden="true"
--          [style.visibility]="isEuServer ? 'hidden' : 'visible'"
--        ></i>
--        <img src="../../images/us_flag.png" alt="" class="pb-1 mr-1" />
--        {{ "us" | i18n }}
--      </a>
--      <a bitMenuItem href="https://vault.bitwarden.eu" class="pr-4" *ngIf="euServerFlagEnabled">
--        <i
--          class="bwi bwi-fw bwi-sm bwi-check pb-1"
--          aria-hidden="true"
--          [style.visibility]="isEuServer ? 'visible' : 'hidden'"
--        ></i>
--        <img src="../../images/eu_flag.png" alt="" class="pb-1 mr-1" />
--        {{ "eu" | i18n }}
--      </a>
--    </bit-menu>
--    {{ "region" | i18n }}:
--    <a [routerLink]="[]" [bitMenuTriggerFor]="environmentOptions">
--      <b>{{ isEuServer ? ("eu" | i18n) : ("us" | i18n) }}</b
--      ><i class="bwi bwi-fw bwi-sm bwi-angle-down" aria-hidden="true"></i>
--    </a>
--    <br />
--  </div>
--
+   <environment-selector [hasFlags]="false"></environment-selector>
 -  &copy; {{ year }} Bitwarden Inc. <br />
 +  Vaultwarden (unofficial Bitwarden&reg; server)<br />
++  ({{ "webVault" | i18n }})
    {{ "versionNumber" | i18n : version }}
  </div>
 diff --git a/apps/web/src/app/layouts/navbar.component.html b/apps/web/src/app/layouts/navbar.component.html
@@ -220,7 +230,7 @@ index 0f13d7dde..88698b00e 100644
                {{ "getHelp" | i18n }}
              </a>
 diff --git a/apps/web/src/app/settings/settings.component.ts b/apps/web/src/app/settings/settings.component.ts
-index c65f22b00d..7a01fd8f78 100644
+index 60e81b17e..aed159139 100644
 --- a/apps/web/src/app/settings/settings.component.ts
 +++ b/apps/web/src/app/settings/settings.component.ts
 @@ -55,10 +55,6 @@ export class SettingsComponent implements OnInit, OnDestroy {
@@ -236,10 +246,10 @@ index c65f22b00d..7a01fd8f78 100644
    }
  }
 diff --git a/apps/web/src/app/tools/generator.component.ts b/apps/web/src/app/tools/generator.component.ts
-index 22a99e03fa..423b022b8d 100644
+index 425f5cca2..c386d2613 100644
 --- a/apps/web/src/app/tools/generator.component.ts
 +++ b/apps/web/src/app/tools/generator.component.ts
-@@ -40,7 +40,7 @@ export class GeneratorComponent extends BaseGeneratorComponent {
+@@ -37,7 +37,7 @@ export class GeneratorComponent extends BaseGeneratorComponent {
        route,
        window
      );
@@ -249,7 +259,7 @@ index 22a99e03fa..423b022b8d 100644
        this.forwardOptions = this.forwardOptions.filter((forwarder) => forwarder.validForSelfHosted);
      }
 diff --git a/apps/web/src/app/tools/send/access.component.html b/apps/web/src/app/tools/send/access.component.html
-index 634d0bbf40..0d4e97a2a9 100644
+index 634d0bbf4..0d4e97a2a 100644
 --- a/apps/web/src/app/tools/send/access.component.html
 +++ b/apps/web/src/app/tools/send/access.component.html
 @@ -137,15 +137,6 @@
@@ -269,10 +279,10 @@ index 634d0bbf40..0d4e97a2a9 100644
      </div>
    </div>
 diff --git a/apps/web/src/app/vault/individual-vault/vault.component.ts b/apps/web/src/app/vault/individual-vault/vault.component.ts
-index c779418009..25a3b04c88 100644
+index 7e5366dfd..7fa8d8c6f 100644
 --- a/apps/web/src/app/vault/individual-vault/vault.component.ts
 +++ b/apps/web/src/app/vault/individual-vault/vault.component.ts
-@@ -175,11 +175,7 @@ export class VaultComponent implements OnInit, OnDestroy {
+@@ -182,11 +182,7 @@ export class VaultComponent implements OnInit, OnDestroy {
  
    async ngOnInit() {
      this.showBrowserOutdated = window.navigator.userAgent.indexOf("MSIE") !== -1;
@@ -286,10 +296,10 @@ index c779418009..25a3b04c88 100644
      const firstSetup$ = this.route.queryParams.pipe(
        first(),
 diff --git a/apps/web/src/app/vault/org-vault/vault.component.ts b/apps/web/src/app/vault/org-vault/vault.component.ts
-index fce2097a58..26de4ef006 100644
+index 106d8f9ff..6634ad208 100644
 --- a/apps/web/src/app/vault/org-vault/vault.component.ts
 +++ b/apps/web/src/app/vault/org-vault/vault.component.ts
-@@ -165,11 +165,7 @@ export class VaultComponent implements OnInit, OnDestroy {
+@@ -161,11 +161,7 @@ export class VaultComponent implements OnInit, OnDestroy {
    ) {}
  
    async ngOnInit() {
@@ -298,30 +308,12 @@ index fce2097a58..26de4ef006 100644
 -        ? "trashCleanupWarningSelfHosted"
 -        : "trashCleanupWarning"
 -    );
-+    this.trashCleanupWarning = this.i18nService.t("trashCleanupWarningSelfHosted");
++    this.trashCleanupWarning =this.i18nService.t("trashCleanupWarningSelfHosted");
  
      const filter$ = this.routedVaultFilterService.filter$;
      const organizationId$ = filter$.pipe(
-diff --git a/apps/web/src/app/auth/settings/two-factor-authenticator.component.ts b/apps/web/src/app/auth/settings/two-factor-authenticator.component.ts
-index a75d2ebd2..65813f2ed 100644
---- a/apps/web/src/app/auth/settings/two-factor-authenticator.component.ts
-+++ b/apps/web/src/app/auth/settings/two-factor-authenticator.component.ts
-@@ -109,11 +109,11 @@ export class TwoFactorAuthenticatorComponent
-       new window.QRious({
-         element: document.getElementById("qr"),
-         value:
--          "otpauth://totp/Bitwarden:" +
-+          "otpauth://totp/Vaultwarden:" +
-           Utils.encodeRFC3986URIComponent(email) +
-           "?secret=" +
-           encodeURIComponent(this.key) +
--          "&issuer=Bitwarden",
-+          "&issuer=Vaultwarden",
-         size: 160,
-       });
-     }, 100);
 diff --git a/apps/web/src/index.html b/apps/web/src/index.html
-index 63d4e72c09..68b6ada007 100644
+index 63d4e72c0..13263ffa6 100644
 --- a/apps/web/src/index.html
 +++ b/apps/web/src/index.html
 @@ -5,7 +5,7 @@
@@ -333,8 +325,17 @@ index 63d4e72c09..68b6ada007 100644
  
      <link rel="apple-touch-icon" sizes="180x180" href="images/icons/apple-touch-icon.png" />
      <link rel="icon" type="image/png" sizes="32x32" href="images/icons/favicon-32x32.png" />
+@@ -17,7 +17,7 @@
+     <app-root>
+       <div class="mt-5 d-flex justify-content-center">
+         <div>
+-          <img class="mb-4 logo logo-themed" alt="Bitwarden" />
++          <img class="mb-4 logo logo-themed" alt="Vaultwarden logo" />
+           <p class="text-center">
+             <i
+               class="bwi bwi-spinner bwi-spin bwi-2x text-muted"
 diff --git a/apps/web/src/manifest.json b/apps/web/src/manifest.json
-index 92a1204c60..5a10dc9ae9 100644
+index 92a1204c6..95be6762d 100644
 --- a/apps/web/src/manifest.json
 +++ b/apps/web/src/manifest.json
 @@ -1,5 +1,5 @@
@@ -350,17 +351,19 @@ index 92a1204c60..5a10dc9ae9 100644
    ],
 -  "theme_color": "#175DDC",
 -  "background_color": "#175DDC"
-+  "theme_color": "#ffffff",
-+  "background_color": "#ffffff"
++  "theme_color": "#FFFFFF",
++  "background_color": "#FFFFFF"
  }
 diff --git a/apps/web/src/scss/styles.scss b/apps/web/src/scss/styles.scss
-index 0003f521c7..32ecf5112e 100644
+index 0003f521c..5a049329d 100644
 --- a/apps/web/src/scss/styles.scss
 +++ b/apps/web/src/scss/styles.scss
-@@ -58,3 +58,62 @@
+@@ -58,3 +58,60 @@
  @import "./tables";
  @import "./toasts";
  @import "./vault-filters";
++
++
 +
 +/**** START Vaultwarden CHANGES ****/
 +/* This combines all selectors extending it into one */
@@ -391,15 +394,11 @@ index 0003f521c7..32ecf5112e 100644
 +/* Hide the `This account is owned by a business` checkbox and label */
 +#ownedBusiness, label[for^=ownedBusiness] { @extend %vw-hide; }
 +
-+/* Hide External Id field for Collections */
-+app-collection-add-edit form div.form-group:nth-child(2) { @extend %vw-hide; }
-+
 +/* Hide the radio button and label for the `Custom` org user type */
 +#userTypeCustom, label[for^=userTypeCustom] { @extend %vw-hide; }
 +
-+/* Hide Business Name and Identifier */
-+app-org-account form div.form-group:nth-child(3) { @extend %vw-hide; }
-+app-org-account form div.form-group:nth-child(4) { @extend %vw-hide; }
++/* Hide Business Name */
++app-org-account form div bit-form-field.tw-block:nth-child(3) { @extend %vw-hide; }
 +
 +/* Hide Tax Info and Form in Organization settings */
 +app-org-account > div.secondary-header:nth-child(3) { @extend %vw-hide; }
@@ -421,7 +420,7 @@ index 0003f521c7..32ecf5112e 100644
 +}
 +/**** END Vaultwarden CHANGES ****/
 diff --git a/libs/angular/src/components/register.component.ts b/libs/angular/src/components/register.component.ts
-index cb5ba243d..2fd685f13 100644
+index 510da6160..40d1cc3f6 100644
 --- a/libs/angular/src/components/register.component.ts
 +++ b/libs/angular/src/components/register.component.ts
 @@ -37,7 +37,7 @@ export class RegisterComponent extends CaptchaProtectedComponent implements OnIn
@@ -446,19 +445,19 @@ index cb5ba243d..2fd685f13 100644
    }
  
    async submit(showToast = true) {
-+      if (typeof crypto.subtle === 'undefined') {
-+        this.platformUtilsService.showToast(
-+          "error",
-+          "This browser requires HTTPS to use the web vault",
-+          "Check the Vaultwarden wiki for details on how to enable it"
-+        );
-+        return;
-+      }
++    if (typeof crypto.subtle === 'undefined') {
++      this.platformUtilsService.showToast(
++        "error",
++        "This browser requires HTTPS to use the web vault",
++        "Check the Vaultwarden wiki for details on how to enable it"
++      );
++      return;
++    }
      let email = this.formGroup.value.email;
      email = email.trim().toLowerCase();
      let name = this.formGroup.value.name;
 diff --git a/libs/components/src/menu/menu.component.html b/libs/components/src/menu/menu.component.html
-index d175a3fe3b..9f3150c3f6 100644
+index d175a3fe3..9f3150c3f 100644
 --- a/libs/components/src/menu/menu.component.html
 +++ b/libs/components/src/menu/menu.component.html
 @@ -1,7 +1,7 @@
