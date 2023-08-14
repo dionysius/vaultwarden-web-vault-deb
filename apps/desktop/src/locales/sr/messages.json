@@ -2252,16 +2252,14 @@
   "windowsBiometricUpdateWarningTitle": {
     "message": "Препоручено ажурирање поставки"
   },
-  "region": {
-    "message": "Регион"
+  "loggingInOn": {
+    "message": "Пријављено на"
   },
-  "eu": {
-    "message": "EU",
-    "description": "European Union"
+  "usDomain": {
+    "message": "bitwarden.com"
   },
-  "us": {
-    "message": "US",
-    "description": "United States"
+  "euDomain": {
+    "message": "bitwarden.eu"
   },
   "selfHosted": {
     "message": "Личан хостинг"

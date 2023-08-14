@@ -2252,16 +2252,14 @@
   "windowsBiometricUpdateWarningTitle": {
     "message": "Aanbevole bywerking van instellings"
   },
-  "region": {
-    "message": "Streek"
+  "loggingInOn": {
+    "message": "Logging in on"
   },
-  "eu": {
-    "message": "EU",
-    "description": "European Union"
+  "usDomain": {
+    "message": "bitwarden.com"
   },
-  "us": {
-    "message": "VS",
-    "description": "United States"
+  "euDomain": {
+    "message": "bitwarden.eu"
   },
   "selfHosted": {
     "message": "Selghehuisves"

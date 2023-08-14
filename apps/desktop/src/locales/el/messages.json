@@ -2252,16 +2252,14 @@
   "windowsBiometricUpdateWarningTitle": {
     "message": "Ενημέρωση Προτεινόμενων Ρυθμίσεων"
   },
-  "region": {
-    "message": "Περιοχή"
+  "loggingInOn": {
+    "message": "Logging in on"
   },
-  "eu": {
-    "message": "ΕΕ",
-    "description": "European Union"
+  "usDomain": {
+    "message": "bitwarden.com"
   },
-  "us": {
-    "message": "ΗΠΑ",
-    "description": "United States"
+  "euDomain": {
+    "message": "bitwarden.eu"
   },
   "selfHosted": {
     "message": "Self-hosted"

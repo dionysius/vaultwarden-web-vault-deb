@@ -2252,21 +2252,19 @@
   "windowsBiometricUpdateWarningTitle": {
     "message": "تحديث الإعدادات الموصى بها"
   },
-  "region": {
-    "message": "المنطقة"
+  "loggingInOn": {
+    "message": "جارٍ تسجيل الدخول"
   },
-  "eu": {
-    "message": "الاتحاد الأوروبي",
-    "description": "European Union"
+  "usDomain": {
+    "message": "bitwarden.com"
   },
-  "us": {
-    "message": "الولايات المتحدة",
-    "description": "United States"
+  "euDomain": {
+    "message": "bitwarden.eu"
   },
   "selfHosted": {
     "message": "استضافة ذاتية"
   },
   "accessDenied": {
-    "message": "Access denied. You do not have permission to view this page."
+    "message": "غير مسموح بالدخول. ليس لديك الصلاحية لعرض هذه الصفحة."
   }
 }

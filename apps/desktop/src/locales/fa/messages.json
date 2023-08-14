@@ -2252,16 +2252,14 @@
   "windowsBiometricUpdateWarningTitle": {
     "message": "به‌روز رسانی تنظیمات توصیه شده"
   },
-  "region": {
-    "message": "منطقه"
+  "loggingInOn": {
+    "message": "Logging in on"
   },
-  "eu": {
-    "message": "اروپا",
-    "description": "European Union"
+  "usDomain": {
+    "message": "bitwarden.com"
   },
-  "us": {
-    "message": "امریکا",
-    "description": "United States"
+  "euDomain": {
+    "message": "bitwarden.eu"
   },
   "selfHosted": {
     "message": "خود میزبان"

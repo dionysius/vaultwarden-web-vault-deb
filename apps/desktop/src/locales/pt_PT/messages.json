@@ -2252,16 +2252,14 @@
   "windowsBiometricUpdateWarningTitle": {
     "message": "Atualização de definições recomendadas"
   },
-  "region": {
-    "message": "Região"
+  "loggingInOn": {
+    "message": "A iniciar sessão em"
   },
-  "eu": {
-    "message": "UE",
-    "description": "European Union"
+  "usDomain": {
+    "message": "bitwarden.com"
   },
-  "us": {
-    "message": "EUA",
-    "description": "United States"
+  "euDomain": {
+    "message": "bitwarden.eu"
   },
   "selfHosted": {
     "message": "Auto-hospedado"

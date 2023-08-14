@@ -491,7 +491,7 @@
     "message": "Ordner gelöscht"
   },
   "loginOrCreateNewAccount": {
-    "message": "Einloggen oder einen neuen Account erstellen, um auf den Tresor zuzugreifen."
+    "message": "Melde dich an oder erstelle ein neues Konto, um auf deinen Tresor zuzugreifen."
   },
   "createAccount": {
     "message": "Konto erstellen"
@@ -615,7 +615,7 @@
     }
   },
   "rememberMe": {
-    "message": "Eingeloggt bleiben"
+    "message": "Angemeldet bleiben"
   },
   "sendVerificationCodeEmailAgain": {
     "message": "E-Mail mit Bestätigungscode erneut versenden"
@@ -824,7 +824,7 @@
     "message": "Entsperren"
   },
   "loggedInAsOn": {
-    "message": "Eingeloggt als $EMAIL$ auf $HOSTNAME$.",
+    "message": "Angemeldet als $EMAIL$ auf $HOSTNAME$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -2252,16 +2252,14 @@
   "windowsBiometricUpdateWarningTitle": {
     "message": "Empfohlene Aktualisierung der Einstellungen"
   },
-  "region": {
-    "message": "Region"
+  "loggingInOn": {
+    "message": "Anmelden bei"
   },
-  "eu": {
-    "message": "EU",
-    "description": "European Union"
+  "usDomain": {
+    "message": "bitwarden.com"
   },
-  "us": {
-    "message": "US",
-    "description": "United States"
+  "euDomain": {
+    "message": "bitwarden.eu"
   },
   "selfHosted": {
     "message": "Selbst gehostet"

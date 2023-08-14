@@ -2252,16 +2252,14 @@
   "windowsBiometricUpdateWarningTitle": {
     "message": "Suositeltava asetusmuutos"
   },
-  "region": {
-    "message": "Alue"
+  "loggingInOn": {
+    "message": "Kirjaudutaan sijaintiin"
   },
-  "eu": {
-    "message": "EU",
-    "description": "European Union"
+  "usDomain": {
+    "message": "bitwarden.com"
   },
-  "us": {
-    "message": "US",
-    "description": "United States"
+  "euDomain": {
+    "message": "bitwarden.eu"
   },
   "selfHosted": {
     "message": "Itse ylläpidetty"

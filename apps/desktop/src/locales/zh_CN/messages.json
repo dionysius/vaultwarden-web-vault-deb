@@ -2252,16 +2252,14 @@
   "windowsBiometricUpdateWarningTitle": {
     "message": "推荐的设置更新"
   },
-  "region": {
-    "message": "区域"
+  "loggingInOn": {
+    "message": "登录到"
   },
-  "eu": {
-    "message": "欧盟",
-    "description": "European Union"
+  "usDomain": {
+    "message": "bitwarden.com"
   },
-  "us": {
-    "message": "美国",
-    "description": "United States"
+  "euDomain": {
+    "message": "bitwarden.eu"
   },
   "selfHosted": {
     "message": "自托管"
