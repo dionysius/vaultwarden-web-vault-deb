@@ -1,3 +1,11 @@
+vaultwarden-web-vault (2023.7.1-0) unstable; urgency=medium
+
+  * use node 18.x for builds
+  * define default export dir to parent (see #1)
+  * update patch for 2023.7.1
+
+ -- dionysius <dragon.dionysius@gmail.com>  Mon, 14 Aug 2023 09:37:33 +0200
+
 vaultwarden-web-vault (2023.5.0-2) unstable; urgency=medium
 
   * use upstream version in vw-version.json so it doesn't show package suffix
