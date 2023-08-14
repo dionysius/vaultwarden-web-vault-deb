@@ -630,6 +630,12 @@
   "notificationChangeSave": {
     "message": "今すぐ更新する"
   },
+  "notificationUnlockDesc": {
+    "message": "Bitwarden 保管庫をロック解除して自動入力リクエストを完了してください。"
+  },
+  "notificationUnlock": {
+    "message": "ロック解除"
+  },
   "enableContextMenuItem": {
     "message": "コンテキストメニューオプションを表示"
   },
@@ -2221,19 +2227,17 @@
       }
     }
   },
-  "region": {
-    "message": "リージョン"
+  "loggingInOn": {
+    "message": "ログイン先"
   },
   "opensInANewWindow": {
     "message": "新しいウィンドウで開く"
   },
-  "eu": {
-    "message": "EU",
-    "description": "European Union"
+  "usDomain": {
+    "message": "bitwarden.com"
   },
-  "us": {
-    "message": "米国",
-    "description": "United States"
+  "euDomain": {
+    "message": "bitwarden.eu"
   },
   "accessDenied": {
     "message": "アクセスが拒否されました。このページを表示する権限がありません。"

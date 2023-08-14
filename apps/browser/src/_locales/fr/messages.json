@@ -630,6 +630,12 @@
   "notificationChangeSave": {
     "message": "Mettre à jour"
   },
+  "notificationUnlockDesc": {
+    "message": "Unlock your Bitwarden vault to complete the auto-fill request."
+  },
+  "notificationUnlock": {
+    "message": "Déverrouiller"
+  },
   "enableContextMenuItem": {
     "message": "Afficher les options du menu contextuel"
   },
@@ -2221,19 +2227,17 @@
       }
     }
   },
-  "region": {
-    "message": "Région"
+  "loggingInOn": {
+    "message": "Connexion sur"
   },
   "opensInANewWindow": {
     "message": "S'ouvre dans une nouvelle fenêtre"
   },
-  "eu": {
-    "message": "EU",
-    "description": "European Union"
+  "usDomain": {
+    "message": "bitwarden.com"
   },
-  "us": {
-    "message": "US",
-    "description": "United States"
+  "euDomain": {
+    "message": "bitwarden.eu"
   },
   "accessDenied": {
     "message": "Accès refusé. Vous n'avez pas l'autorisation de voir cette page."

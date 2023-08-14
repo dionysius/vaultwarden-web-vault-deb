@@ -630,6 +630,12 @@
   "notificationChangeSave": {
     "message": "Atualizar"
   },
+  "notificationUnlockDesc": {
+    "message": "Desbloqueie o seu cofre Bitwarden para completar o pedido de preenchimento automático."
+  },
+  "notificationUnlock": {
+    "message": "Desbloquear"
+  },
   "enableContextMenuItem": {
     "message": "Mostrar opções do menu de contexto"
   },
@@ -2221,19 +2227,17 @@
       }
     }
   },
-  "region": {
-    "message": "Região"
+  "loggingInOn": {
+    "message": "A iniciar sessão em"
   },
   "opensInANewWindow": {
     "message": "Abrir numa nova janela"
   },
-  "eu": {
-    "message": "UE",
-    "description": "European Union"
+  "usDomain": {
+    "message": "bitwarden.com"
   },
-  "us": {
-    "message": "EUA",
-    "description": "United States"
+  "euDomain": {
+    "message": "bitwarden.eu"
   },
   "accessDenied": {
     "message": "Acesso negado. Não tem permissão para visualizar esta página."

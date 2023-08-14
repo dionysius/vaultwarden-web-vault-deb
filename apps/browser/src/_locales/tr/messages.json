@@ -630,6 +630,12 @@
   "notificationChangeSave": {
     "message": "Güncelle"
   },
+  "notificationUnlockDesc": {
+    "message": "Otomatik doldurma isteğini tamamlamak için Bitwarden kasanızın kilidini açın."
+  },
+  "notificationUnlock": {
+    "message": "Kilidi aç"
+  },
   "enableContextMenuItem": {
     "message": "Bağlam menüsü seçeneklerini göster"
   },
@@ -2221,19 +2227,17 @@
       }
     }
   },
-  "region": {
-    "message": "Bölge"
+  "loggingInOn": {
+    "message": "Giriş yapılan konum"
   },
   "opensInANewWindow": {
     "message": "Yeni pencerede açılır"
   },
-  "eu": {
-    "message": "AB",
-    "description": "European Union"
+  "usDomain": {
+    "message": "bitwarden.com"
   },
-  "us": {
-    "message": "ABD",
-    "description": "United States"
+  "euDomain": {
+    "message": "bitwarden.eu"
   },
   "accessDenied": {
     "message": "Erişim engellendi. Bu sayfayı görüntüleme iznine sahip değilsiniz."

@@ -630,6 +630,12 @@
   "notificationChangeSave": {
     "message": "Zaktualizuj"
   },
+  "notificationUnlockDesc": {
+    "message": "Odblokuj swój sejf Bitwarden, aby ukończyć żądanie autouzupełniania."
+  },
+  "notificationUnlock": {
+    "message": "Odblokuj"
+  },
   "enableContextMenuItem": {
     "message": "Pokaż opcje menu kontekstowego"
   },
@@ -2221,19 +2227,17 @@
       }
     }
   },
-  "region": {
-    "message": "Region"
+  "loggingInOn": {
+    "message": "Logowanie do"
   },
   "opensInANewWindow": {
     "message": "Otwiera w nowym oknie"
   },
-  "eu": {
-    "message": "UE",
-    "description": "European Union"
+  "usDomain": {
+    "message": "bitwarden.com"
   },
-  "us": {
-    "message": "US",
-    "description": "United States"
+  "euDomain": {
+    "message": "bitwarden.eu"
   },
   "accessDenied": {
     "message": "Odmowa dostępu. Nie masz uprawnień do przeglądania tej strony."

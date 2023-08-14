@@ -11,7 +11,7 @@
     "description": "Extension description"
   },
   "loginOrCreateNewAccount": {
-    "message": "Du musst dich anmelden oder einen neuen Account erstellen, um auf den Tresor zugreifen zu können."
+    "message": "Melde dich an oder erstelle ein neues Konto, um auf deinen Tresor zuzugreifen."
   },
   "createAccount": {
     "message": "Konto erstellen"
@@ -294,7 +294,7 @@
     "message": "Eintragsinformationen"
   },
   "username": {
-    "message": "Nutzername"
+    "message": "Benutzername"
   },
   "password": {
     "message": "Passwort"
@@ -357,7 +357,7 @@
     "message": "Entsperren"
   },
   "loggedInAsOn": {
-    "message": "Eingeloggt als $EMAIL$ auf $HOSTNAME$.",
+    "message": "Angemeldet als $EMAIL$ auf $HOSTNAME$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -409,7 +409,7 @@
     "message": "1 Stunde"
   },
   "fourHours": {
-    "message": "4 Stunde"
+    "message": "4 Stunden"
   },
   "onLocked": {
     "message": "Wenn System gesperrt"
@@ -629,6 +629,12 @@
   },
   "notificationChangeSave": {
     "message": "Aktualisieren"
+  },
+  "notificationUnlockDesc": {
+    "message": "Entsperre deinen Bitwarden Tresor, um die Auto-Ausfüllen-Anfrage abzuschließen."
+  },
+  "notificationUnlock": {
+    "message": "Entsperren"
   },
   "enableContextMenuItem": {
     "message": "Kontextmenüoptionen anzeigen"
@@ -1582,7 +1588,7 @@
     "message": "Desktop-Kommunikation unterbrochen"
   },
   "nativeMessagingWrongUserDesc": {
-    "message": "Die Desktop-Anwendung ist in ein anderes Konto eingeloggt. Bitte stelle sicher, dass beide Anwendungen mit demselben Konto angemeldet sind."
+    "message": "Die Desktop-Anwendung ist in einem anderen Konto angemeldet. Bitte stelle sicher, dass beide Anwendungen mit demselben Konto angemeldet sind."
   },
   "nativeMessagingWrongUserTitle": {
     "message": "Konten stimmen nicht überein"
@@ -2221,19 +2227,17 @@
       }
     }
   },
-  "region": {
-    "message": "Region"
+  "loggingInOn": {
+    "message": "Anmelden bei"
   },
   "opensInANewWindow": {
     "message": "Wird in einem neuen Fenster geöffnet"
   },
-  "eu": {
-    "message": "EU",
-    "description": "European Union"
+  "usDomain": {
+    "message": "bitwarden.com"
   },
-  "us": {
-    "message": "US",
-    "description": "United States"
+  "euDomain": {
+    "message": "bitwarden.eu"
   },
   "accessDenied": {
     "message": "Zugriff verweigert. Du hast keine Berechtigung, diese Seite anzuzeigen."

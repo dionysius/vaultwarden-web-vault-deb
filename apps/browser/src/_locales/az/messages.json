@@ -630,6 +630,12 @@
   "notificationChangeSave": {
     "message": "Güncəllə"
   },
+  "notificationUnlockDesc": {
+    "message": "Avto-doldurma tələblərini tamamlamaq üçün Bitwarden anbarınızın kilidini açın."
+  },
+  "notificationUnlock": {
+    "message": "Kilidi aç"
+  },
   "enableContextMenuItem": {
     "message": "Konteks menyu seçimlərini göstər"
   },
@@ -2221,27 +2227,25 @@
       }
     }
   },
-  "region": {
-    "message": "Bölgə"
+  "loggingInOn": {
+    "message": "Giriş edilir"
   },
   "opensInANewWindow": {
     "message": "Yeni bir pəncərədə açılır"
   },
-  "eu": {
-    "message": "AB",
-    "description": "European Union"
+  "usDomain": {
+    "message": "bitwarden.com"
   },
-  "us": {
-    "message": "ABŞ",
-    "description": "United States"
+  "euDomain": {
+    "message": "bitwarden.eu"
   },
   "accessDenied": {
     "message": "Müraciət rədd edildi. Bu səhifəyə baxmaq üçün icazəniz yoxdur."
   },
   "general": {
-    "message": "General"
+    "message": "Ümumi"
   },
   "display": {
-    "message": "Display"
+    "message": "Ekran"
   }
 }

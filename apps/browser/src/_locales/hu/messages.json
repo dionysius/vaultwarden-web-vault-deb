@@ -630,6 +630,12 @@
   "notificationChangeSave": {
     "message": "Frissítés"
   },
+  "notificationUnlockDesc": {
+    "message": "A Bitwarden széf feloldása az automatikus kitöltési kérés teljesítéséhez."
+  },
+  "notificationUnlock": {
+    "message": "Feloldás"
+  },
   "enableContextMenuItem": {
     "message": "Helyi menü opciók megjelenítése"
   },
@@ -2221,19 +2227,17 @@
       }
     }
   },
-  "region": {
-    "message": "Régió"
+  "loggingInOn": {
+    "message": "Bejelentkezés:"
   },
   "opensInANewWindow": {
     "message": "Megnyitás új ablakban"
   },
-  "eu": {
-    "message": "EU",
-    "description": "European Union"
+  "usDomain": {
+    "message": "bitwarden.com"
   },
-  "us": {
-    "message": "US",
-    "description": "United States"
+  "euDomain": {
+    "message": "bitwarden.eu"
   },
   "accessDenied": {
     "message": "A hozzáférés megtagadásra került. Nincs jogosultság az oldal megtekintésére."

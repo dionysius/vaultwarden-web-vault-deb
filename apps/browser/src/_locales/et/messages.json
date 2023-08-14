@@ -630,6 +630,12 @@
   "notificationChangeSave": {
     "message": "Jah, uuenda"
   },
+  "notificationUnlockDesc": {
+    "message": "Ava Bitwardeni hoidla, et automaattäide lõpuni viia."
+  },
+  "notificationUnlock": {
+    "message": "Lukusta lahti"
+  },
   "enableContextMenuItem": {
     "message": "Kuva parema kliki menüü valikud"
   },
@@ -2221,19 +2227,17 @@
       }
     }
   },
-  "region": {
-    "message": "Piirkond"
+  "loggingInOn": {
+    "message": "Sisselogimas kui"
   },
   "opensInANewWindow": {
     "message": "Avaneb uues aknas"
   },
-  "eu": {
-    "message": "EL",
-    "description": "European Union"
+  "usDomain": {
+    "message": "bitwarden.com"
   },
-  "us": {
-    "message": "USA",
-    "description": "United States"
+  "euDomain": {
+    "message": "bitwarden.eu"
   },
   "accessDenied": {
     "message": "Ligipääs keelatud. Sul pole lubatud seda lehekülge vaadata."

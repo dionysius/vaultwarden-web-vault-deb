@@ -630,6 +630,12 @@
   "notificationChangeSave": {
     "message": "Jā, atjaunināt"
   },
+  "notificationUnlockDesc": {
+    "message": "Jāatslēdz Bitwarden glabātava, lai pabeigtu automātiskās aizpildīšanas pieprasījumu."
+  },
+  "notificationUnlock": {
+    "message": "Atslēgt"
+  },
   "enableContextMenuItem": {
     "message": "Rādīt konteksta izvēlnes iespējas"
   },
@@ -2221,19 +2227,17 @@
       }
     }
   },
-  "region": {
-    "message": "Apgabals"
+  "loggingInOn": {
+    "message": "Piesakās"
   },
   "opensInANewWindow": {
     "message": "Atver jaunā logā"
   },
-  "eu": {
-    "message": "ES",
-    "description": "European Union"
+  "usDomain": {
+    "message": "bitwarden.com"
   },
-  "us": {
-    "message": "ASV",
-    "description": "United States"
+  "euDomain": {
+    "message": "bitwarden.eu"
   },
   "accessDenied": {
     "message": "Piekļuve liegta. Nav nepieciešamo atļauju, lai skatītu šo lapu."

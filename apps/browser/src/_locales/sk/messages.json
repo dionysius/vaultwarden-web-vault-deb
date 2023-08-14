@@ -630,6 +630,12 @@
   "notificationChangeSave": {
     "message": "Aktualizovať"
   },
+  "notificationUnlockDesc": {
+    "message": "Odomknite svoj Bitwarden trezor a dokončite žiadosť o automatické vyplnenie."
+  },
+  "notificationUnlock": {
+    "message": "Odomknúť"
+  },
   "enableContextMenuItem": {
     "message": "Zobraziť možnosti kontextovej ponuky"
   },
@@ -2221,19 +2227,17 @@
       }
     }
   },
-  "region": {
-    "message": "Región"
+  "loggingInOn": {
+    "message": "Prihlásenie na"
   },
   "opensInANewWindow": {
     "message": "Otvárať v novom okne"
   },
-  "eu": {
-    "message": "EÚ",
-    "description": "European Union"
+  "usDomain": {
+    "message": "bitwarden.com"
   },
-  "us": {
-    "message": "USA",
-    "description": "United States"
+  "euDomain": {
+    "message": "bitwarden.eu"
   },
   "accessDenied": {
     "message": "Prístup zamietnutý. Nemáte oprávnenie na zobrazenie tejto stránky."

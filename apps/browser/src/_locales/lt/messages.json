@@ -630,6 +630,12 @@
   "notificationChangeSave": {
     "message": "Atnaujinti"
   },
+  "notificationUnlockDesc": {
+    "message": "Atrakink savo Bitwarden saugyklą, kad užpildytum automatinio užpildymo užklausą."
+  },
+  "notificationUnlock": {
+    "message": "Atrakinti"
+  },
   "enableContextMenuItem": {
     "message": "Rodyti kontekstinio meniu pasririnkimus"
   },
@@ -1537,7 +1543,7 @@
     "message": "By checking this box you agree to the following:"
   },
   "acceptPoliciesRequired": {
-    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+    "message": "Paslaugų teikimo sąlygos ir privatumo politika nebuvo pripažinti."
   },
   "termsOfService": {
     "message": "Paslaugų teikimo paslaugos"
@@ -1552,13 +1558,13 @@
     "message": "Gerai"
   },
   "desktopSyncVerificationTitle": {
-    "message": "Desktop sync verification"
+    "message": "Darbalaukio sinchronizavimo verifikavimas"
   },
   "desktopIntegrationVerificationText": {
-    "message": "Please verify that the desktop application shows this fingerprint: "
+    "message": "Patikrink, ar darbalaukio programoje rodomas šis pirštų atspaudas: "
   },
   "desktopIntegrationDisabledTitle": {
-    "message": "Browser integration is not set up"
+    "message": "Naršyklės integracija nėra nustatyta"
   },
   "desktopIntegrationDisabledDesc": {
     "message": "Browser integration is not set up in the Bitwarden desktop application. Please set it up in the settings within the desktop application."
@@ -2221,19 +2227,17 @@
       }
     }
   },
-  "region": {
-    "message": "Region"
+  "loggingInOn": {
+    "message": "Logging in on"
   },
   "opensInANewWindow": {
     "message": "Opens in a new window"
   },
-  "eu": {
-    "message": "ES",
-    "description": "European Union"
+  "usDomain": {
+    "message": "bitwarden.com"
   },
-  "us": {
-    "message": "JAV",
-    "description": "United States"
+  "euDomain": {
+    "message": "bitwarden.eu"
   },
   "accessDenied": {
     "message": "Prieiga uždrausta. Neturi teisės peržiūrėti šį puslapį."

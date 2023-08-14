@@ -630,6 +630,12 @@
   "notificationChangeSave": {
     "message": "Обновить"
   },
+  "notificationUnlockDesc": {
+    "message": "Разблокируйте свое хранилище Bitwarden для завершения запроса автозаполнения."
+  },
+  "notificationUnlock": {
+    "message": "Разблокировать"
+  },
   "enableContextMenuItem": {
     "message": "Показать опции контекстного меню"
   },
@@ -2221,19 +2227,17 @@
       }
     }
   },
-  "region": {
-    "message": "Регион"
+  "loggingInOn": {
+    "message": "Войти на"
   },
   "opensInANewWindow": {
     "message": "Откроется в новом окне"
   },
-  "eu": {
-    "message": "Европа",
-    "description": "European Union"
+  "usDomain": {
+    "message": "bitwarden.com"
   },
-  "us": {
-    "message": "США",
-    "description": "United States"
+  "euDomain": {
+    "message": "bitwarden.eu"
   },
   "accessDenied": {
     "message": "Доступ запрещен. У вас нет разрешения на просмотр этой страницы."

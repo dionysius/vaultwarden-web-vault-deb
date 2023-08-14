@@ -630,6 +630,12 @@
   "notificationChangeSave": {
     "message": "Ja, nu bijwerken"
   },
+  "notificationUnlockDesc": {
+    "message": "Ontgrendel je Bitwarden-kluis om het auto-invulverzoek te voltooien."
+  },
+  "notificationUnlock": {
+    "message": "Ontgrendelen"
+  },
   "enableContextMenuItem": {
     "message": "Contextmenu-opties weergeven"
   },
@@ -2221,19 +2227,17 @@
       }
     }
   },
-  "region": {
-    "message": "Regio"
+  "loggingInOn": {
+    "message": "Inloggen op"
   },
   "opensInANewWindow": {
     "message": "Opent in een nieuw venster"
   },
-  "eu": {
-    "message": "EU",
-    "description": "European Union"
+  "usDomain": {
+    "message": "bitwarden.com"
   },
-  "us": {
-    "message": "US",
-    "description": "United States"
+  "euDomain": {
+    "message": "bitwarden.eu"
   },
   "accessDenied": {
     "message": "Toegang geweigerd. Je hebt geen toestemming om deze pagina te bekijken."
