@@ -20,7 +20,8 @@
         "plugin:import/recommended",
         "plugin:import/typescript",
         "prettier",
-        "plugin:rxjs/recommended"
+        "plugin:rxjs/recommended",
+        "plugin:storybook/recommended"
       ],
       "settings": {
         "import/parsers": {
