@@ -209,16 +209,6 @@ export class ViewComponent implements OnDestroy, OnInit {
       return false;
     }
 
-    const confirmed = await this.dialogService.openSimpleDialog({
-      title: { key: "restoreItem" },
-      content: { key: "restoreItemConfirmation" },
-      type: SimpleDialogType.WARNING,
-    });
-
-    if (!confirmed) {
-      return false;
-    }
-
     try {
       await this.restoreCipher();
       this.platformUtilsService.showToast("success", null, this.i18nService.t("restoredItem"));

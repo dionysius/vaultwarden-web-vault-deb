@@ -433,16 +433,6 @@ export class AddEditComponent implements OnInit, OnDestroy {
       return false;
     }
 
-    const confirmed = await this.dialogService.openSimpleDialog({
-      title: { key: "restoreItem" },
-      content: { key: "restoreItemConfirmation" },
-      type: SimpleDialogType.WARNING,
-    });
-
-    if (!confirmed) {
-      return false;
-    }
-
     try {
       this.restorePromise = this.restoreCipher();
       await this.restorePromise;
