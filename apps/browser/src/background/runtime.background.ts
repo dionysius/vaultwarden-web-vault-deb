@@ -61,6 +61,8 @@ export default class RuntimeBackground {
   }
 
   async processMessage(msg: any, sender: chrome.runtime.MessageSender, sendResponse: any) {
+    const cipherId = msg.data?.cipherId;
+
     switch (msg.command) {
       case "loggedIn":
       case "unlocked": {
@@ -68,7 +70,7 @@ export default class RuntimeBackground {
 
         if (this.lockedVaultPendingNotifications?.length > 0) {
           item = this.lockedVaultPendingNotifications.pop();
-          await this.browserPopoutWindowService.closeLoginPrompt();
+          await this.browserPopoutWindowService.closeUnlockPrompt();
         }
 
         await this.main.refreshBadge();
@@ -108,13 +110,22 @@ export default class RuntimeBackground {
         break;
       case "promptForLogin":
       case "bgReopenPromptForLogin":
-        await this.browserPopoutWindowService.openLoginPrompt(sender.tab?.windowId);
+        await this.browserPopoutWindowService.openUnlockPrompt(sender.tab?.windowId);
+        break;
+      case "passwordReprompt":
+        if (cipherId) {
+          await this.browserPopoutWindowService.openPasswordRepromptPrompt(sender.tab?.windowId, {
+            cipherId: cipherId,
+            senderTabId: sender.tab.id,
+            action: msg.data?.action,
+          });
+        }
         break;
       case "openAddEditCipher": {
         const addEditCipherUrl =
-          msg.data?.cipherId == null
+          cipherId == null
             ? "popup/index.html#/edit-cipher"
-            : "popup/index.html#/edit-cipher?cipherId=" + msg.data.cipherId;
+            : "popup/index.html#/edit-cipher?cipherId=" + cipherId;
 
         BrowserApi.openBitwardenExtensionTab(addEditCipherUrl, true);
         break;

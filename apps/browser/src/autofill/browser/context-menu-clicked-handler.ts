@@ -203,17 +203,45 @@ export class ContextMenuClickedHandler {
         if (tab == null) {
           return;
         }
-        await this.autofillAction(tab, cipher);
+
+        if (cipher.reprompt !== CipherRepromptType.None) {
+          await BrowserApi.tabSendMessageData(tab, "passwordReprompt", {
+            cipherId: cipher.id,
+            action: AUTOFILL_ID,
+          });
+        } else {
+          await this.autofillAction(tab, cipher);
+        }
+
         break;
       case COPY_USERNAME_ID:
         this.copyToClipboard({ text: cipher.login.username, tab: tab });
         break;
       case COPY_PASSWORD_ID:
-        this.copyToClipboard({ text: cipher.login.password, tab: tab });
-        this.eventCollectionService.collect(EventType.Cipher_ClientCopiedPassword, cipher.id);
+        if (cipher.reprompt !== CipherRepromptType.None) {
+          await BrowserApi.tabSendMessageData(tab, "passwordReprompt", {
+            cipherId: cipher.id,
+            action: COPY_PASSWORD_ID,
+          });
+        } else {
+          this.copyToClipboard({ text: cipher.login.password, tab: tab });
+          this.eventCollectionService.collect(EventType.Cipher_ClientCopiedPassword, cipher.id);
+        }
+
         break;
       case COPY_VERIFICATIONCODE_ID:
-        this.copyToClipboard({ text: await this.totpService.getCode(cipher.login.totp), tab: tab });
+        if (cipher.reprompt !== CipherRepromptType.None) {
+          await BrowserApi.tabSendMessageData(tab, "passwordReprompt", {
+            cipherId: cipher.id,
+            action: COPY_VERIFICATIONCODE_ID,
+          });
+        } else {
+          this.copyToClipboard({
+            text: await this.totpService.getCode(cipher.login.totp),
+            tab: tab,
+          });
+        }
+
         break;
     }
   }

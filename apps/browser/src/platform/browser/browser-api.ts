@@ -42,11 +42,20 @@ export class BrowserApi {
     });
   }
 
-  static async getTab(tabId: number) {
-    if (tabId == null) {
+  static async getTab(tabId: number): Promise<chrome.tabs.Tab> | null {
+    if (!tabId) {
       return null;
     }
-    return await chrome.tabs.get(tabId);
+
+    if (BrowserApi.manifestVersion === 3) {
+      return await chrome.tabs.get(tabId);
+    }
+
+    return new Promise((resolve) =>
+      chrome.tabs.get(tabId, (tab) => {
+        resolve(tab);
+      })
+    );
   }
 
   static async getTabFromCurrentWindow(): Promise<chrome.tabs.Tab> | null {

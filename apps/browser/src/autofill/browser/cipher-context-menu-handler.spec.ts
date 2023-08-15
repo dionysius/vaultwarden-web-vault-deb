@@ -96,7 +96,7 @@ describe("CipherContextMenuHandler", () => {
 
       expect(cipherService.getAllDecryptedForUrl).toHaveBeenCalledWith("https://test.com");
 
-      expect(mainContextMenuHandler.loadOptions).toHaveBeenCalledTimes(1);
+      expect(mainContextMenuHandler.loadOptions).toHaveBeenCalledTimes(2);
 
       expect(mainContextMenuHandler.loadOptions).toHaveBeenCalledWith(
         "Test Cipher (Test Username)",

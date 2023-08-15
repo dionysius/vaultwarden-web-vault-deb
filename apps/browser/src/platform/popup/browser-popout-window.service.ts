@@ -11,20 +11,48 @@ class BrowserPopoutWindowService implements BrowserPopupWindowServiceInterface {
     height: 800,
   };
 
-  async openLoginPrompt(senderWindowId: number) {
-    await this.closeLoginPrompt();
-    await this.openPopoutWindow(
+  async openUnlockPrompt(senderWindowId: number) {
+    await this.closeUnlockPrompt();
+    await this.openSingleActionPopout(
       senderWindowId,
       "popup/index.html?uilocation=popout",
-      "loginPrompt"
+      "unlockPrompt"
     );
   }
 
-  async closeLoginPrompt() {
-    await this.closeSingleActionPopout("loginPrompt");
+  async closeUnlockPrompt() {
+    await this.closeSingleActionPopout("unlockPrompt");
   }
 
-  private async openPopoutWindow(
+  async openPasswordRepromptPrompt(
+    senderWindowId: number,
+    {
+      cipherId,
+      senderTabId,
+      action,
+    }: {
+      cipherId: string;
+      senderTabId: number;
+      action: string;
+    }
+  ) {
+    await this.closePasswordRepromptPrompt();
+
+    const promptWindowPath =
+      "popup/index.html#/view-cipher" +
+      "?uilocation=popout" +
+      `&cipherId=${cipherId}` +
+      `&senderTabId=${senderTabId}` +
+      `&action=${action}`;
+
+    await this.openSingleActionPopout(senderWindowId, promptWindowPath, "passwordReprompt");
+  }
+
+  async closePasswordRepromptPrompt() {
+    await this.closeSingleActionPopout("passwordReprompt");
+  }
+
+  private async openSingleActionPopout(
     senderWindowId: number,
     popupWindowURL: string,
     singleActionPopoutKey: string
