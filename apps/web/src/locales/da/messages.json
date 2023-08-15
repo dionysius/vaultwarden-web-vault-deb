@@ -711,11 +711,17 @@
   "unexpectedError": {
     "message": "En uventet fejl opstod."
   },
+  "expirationDateError": {
+    "message": "Udløbsdato skal være i fremtiden."
+  },
   "emailAddress": {
     "message": "E-mailadresse"
   },
   "yourVaultIsLocked": {
     "message": "Din boks er låst. Bekræft din hovedadgangskode for at fortsætte."
+  },
+  "uuid": {
+    "message": "UUID"
   },
   "unlock": {
     "message": "Oplås"
@@ -947,6 +953,9 @@
   },
   "copyVerificationCode": {
     "message": "Kopiér bekræftelseskoden"
+  },
+  "copyUuid": {
+    "message": "Kopiér UUID"
   },
   "warning": {
     "message": "Advarsel"
@@ -1283,6 +1292,31 @@
   },
   "importEncKeyError": {
     "message": "Fejl under dekryptering af den eksporterede fil. Krypteringsnøglen matcher ikke den til dataeksporten anvendte krypteringsnøgle."
+  },
+  "importDestination": {
+    "message": "Importér destination"
+  },
+  "learnAboutImportOptions": {
+    "message": "Læs om importmuligheder"
+  },
+  "selectImportFolder": {
+    "message": "Vælg en mappe"
+  },
+  "selectImportCollection": {
+    "message": "Vælg en samling"
+  },
+  "importTargetHint": {
+    "message": "Vælg denne indstilling, hvis importeret filindhold skal flyttet til en $DESTINATION$",
+    "description": "Located as a hint under the import target. Will be appended by either folder or collection, depending if the user is importing into an individual or an organizational vault.",
+    "placeholders": {
+      "destination": {
+        "content": "$1",
+        "example": "folder or collection"
+      }
+    }
+  },
+  "importUnassignedItemsError": {
+    "message": "Filen indeholder ikke-tildelte emner."
   },
   "selectFormat": {
     "message": "Vælg formatet for importfilen"
@@ -3590,8 +3624,8 @@
   "attachmentsNeedFix": {
     "message": "Dette element har gamle filvedhæftninger, der skal repareres."
   },
-  "attachmentFixDesc": {
-    "message": "Dette er en gammel filvedhæftning, der skal repareres. Klik for at lære mere."
+  "attachmentFixDescription": {
+    "message": "Denne vedhæftning har forældet kryptering. Vælg 'Korrigér' for at downloade, gen-kryptere og gen-uploade vedhæftningen."
   },
   "fix": {
     "message": "Reparér",
@@ -5429,8 +5463,8 @@
       }
     }
   },
-  "exportingOrganizationVaultDescription": {
-    "message": "Kun organisationsboksen tilknyttet $ORGANIZATION$ eksporteres. Individuelle boksemner, samt emner fra andre organisationer, medtages ikke.",
+  "exportingOrganizationVaultDesc": {
+    "message": "Kun organisationsboksen tilknyttet $ORGANIZATION$ eksporteres. Emner i individuelle bokse eller andre organisationer medtages ikke.",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -6802,16 +6836,11 @@
   "enforceOnLoginDesc": {
     "message": "Kræv, at eksisterende medlemmer ændrer deres adgangskoder"
   },
-  "region": {
-    "message": "Region"
+  "usDomain": {
+    "message": "bitwarden.com"
   },
-  "eu": {
-    "message": "EU",
-    "description": "European Union"
-  },
-  "us": {
-    "message": "US",
-    "description": "United States"
+  "euDomain": {
+    "message": "bitwarden.eu"
   },
   "smProjectDeleteAccessRestricted": {
     "message": "Ingen tilladelse til at slette dette objekt",
@@ -7023,15 +7052,20 @@
   "additionalServiceAccounts": {
     "message": "Yderligere tjenestekonti"
   },
-  "additionalServiceAccountsDesc": {
-    "message": "Abonnementstypen inkluderer $COUNT$ tjenestekonti. Yderligere tjenestekonti kan tilføjes for $COST$ pr. måned.",
+  "includedServiceAccounts": {
+    "message": "Abonnementstypen er inkl. $COUNT$ tjenestekonti.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "50"
-      },
+      }
+    }
+  },
+  "addAdditionalServiceAccounts": {
+    "message": "Yderligere tjenestekonti kan tilføjes for $COST$ pr. måned.",
+    "placeholders": {
       "cost": {
-        "content": "$2",
+        "content": "$1",
         "example": "$0.50"
       }
     }
@@ -7059,5 +7093,24 @@
   },
   "maxServiceAccountCost": {
     "message": "Maks. potentiel tjenestekontomkostning"
+  },
+  "smBetaEndedDesc": {
+    "message": "Secrets Manager Beta ophørte $BETA_ENDING_DATE$. Der er $DAYS$ dage tilbage til at føje Secrets Manager til dit betalte abonnement og bevare adgangen til Secrets Manager-data. Kontakt Customer Success for at føje Secrets Manager til abonnementet.",
+    "placeholders": {
+      "beta_ending_date": {
+        "content": "$1",
+        "example": "August 1, 2023"
+      },
+      "days": {
+        "content": "$2",
+        "example": "11"
+      }
+    }
+  },
+  "betaEnding": {
+    "message": "Beta ophører"
+  },
+  "beta": {
+    "message": "Beta"
   }
 }

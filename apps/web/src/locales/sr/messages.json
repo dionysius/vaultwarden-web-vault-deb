@@ -711,11 +711,17 @@
   "unexpectedError": {
     "message": "Дошло је до неочекиване грешке."
   },
+  "expirationDateError": {
+    "message": "Изаберите датум истека који је у будућности."
+  },
   "emailAddress": {
     "message": "Имејл"
   },
   "yourVaultIsLocked": {
     "message": "Сеф је блокиран. Унесите главну лозинку за наставак."
+  },
+  "uuid": {
+    "message": "UUID"
   },
   "unlock": {
     "message": "Откључај"
@@ -947,6 +953,9 @@
   },
   "copyVerificationCode": {
     "message": "Копирај верификациони код"
+  },
+  "copyUuid": {
+    "message": "Copy UUID"
   },
   "warning": {
     "message": "Упозорење"
@@ -1283,6 +1292,31 @@
   },
   "importEncKeyError": {
     "message": "Грешка у дешифрирању извозне датотеке. Ваш кључ за шифровање не одговара кључу који се користио за извоз података."
+  },
+  "importDestination": {
+    "message": "Смештај увоза"
+  },
+  "learnAboutImportOptions": {
+    "message": "Сазнајте више о опцијама увоза"
+  },
+  "selectImportFolder": {
+    "message": "Изабери фасциклу"
+  },
+  "selectImportCollection": {
+    "message": "Изабери колекцију"
+  },
+  "importTargetHint": {
+    "message": "Изаберите ову опцију ако желите да се садржај увезене датотеке премести у $DESTINATION$",
+    "description": "Located as a hint under the import target. Will be appended by either folder or collection, depending if the user is importing into an individual or an organizational vault.",
+    "placeholders": {
+      "destination": {
+        "content": "$1",
+        "example": "folder or collection"
+      }
+    }
+  },
+  "importUnassignedItemsError": {
+    "message": "Датотека садржи недодељене ставке."
   },
   "selectFormat": {
     "message": "Одабрати формат датотеке за увоз"
@@ -2636,10 +2670,10 @@
     "message": "Интернет Сеф"
   },
   "bitWebVault": {
-    "message": "Bitwarden Web vault"
+    "message": "Bitwarden Интернет Сеф"
   },
   "bitSecretsManager": {
-    "message": "Bitwarden Secrets Manager"
+    "message": "Bitwarden Менаџер Тајности"
   },
   "loggedIn": {
     "message": "Пријављено."
@@ -3320,7 +3354,7 @@
     "message": "Поставите ограничење лиценце за своју претплату. Једном када се достигне ова граница, нећете моћи да позовете нове кориснике."
   },
   "limitSmSubscriptionDesc": {
-    "message": "Set a seat limit for your Secrets Manger subscription. Once this limit is reached, you will not be able to invite new members."
+    "message": "Поставите ограничење лиценце за своју претплату менаџера тајни. Једном када се достигне ова граница, нећете моћи да позовете нове чланове."
   },
   "maxSeatLimit": {
     "message": "Максимална граница лиценце (опционо)",
@@ -3590,8 +3624,8 @@
   "attachmentsNeedFix": {
     "message": "Ова ставка има старе прилоге које треба поправити."
   },
-  "attachmentFixDesc": {
-    "message": "Ово је стари прилог који треба поправити. Кликните да бисте сазнали више."
+  "attachmentFixDescription": {
+    "message": "Овај прилог користи застарело шифровање. Изаберите „Поправи“ да бисте преузели, поново шифровали и поново отпремили прилог."
   },
   "fix": {
     "message": "Фиксирај",
@@ -4375,7 +4409,7 @@
     "message": "Управљај корисницима"
   },
   "manageAccountRecovery": {
-    "message": "Manage account recovery"
+    "message": "Управљајте опоравком налога"
   },
   "disableRequiredError": {
     "message": "Морате ручно да онемогућите $POLICYNAME$ пријаву пре него што ова политика може да се онемогући.",
@@ -4705,7 +4739,7 @@
     "message": "Грешка"
   },
   "accountRecoveryManageUsers": {
-    "message": "Manage users must also be granted with the manage account recovery permission"
+    "message": "Корисницима за управљање такође мора бити додељена дозвола за опоравак налога за управљање"
   },
   "setupProvider": {
     "message": "Подешавање првајдера"
@@ -5429,8 +5463,8 @@
       }
     }
   },
-  "exportingOrganizationVaultDescription": {
-    "message": "Only the organization vault associated with $ORGANIZATION$ will be exported. Individual vault items and items from other organizations will not be included.",
+  "exportingOrganizationVaultDesc": {
+    "message": "Биће извезен само сеф организације повезан са $ORGANIZATION$. Ставке у појединачним сефовима или другим организацијама неће бити укључене.",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -6802,16 +6836,11 @@
   "enforceOnLoginDesc": {
     "message": "Захтевајте од постојећих чланова да промене њихове лозинке"
   },
-  "region": {
-    "message": "Регион"
+  "usDomain": {
+    "message": "bitwarden.com"
   },
-  "eu": {
-    "message": "EU",
-    "description": "European Union"
-  },
-  "us": {
-    "message": "US",
-    "description": "United States"
+  "euDomain": {
+    "message": "bitwarden.eu"
   },
   "smProjectDeleteAccessRestricted": {
     "message": "Немате дозволе да избришете овај пројекат",
@@ -6825,7 +6854,7 @@
     "message": "Ажурирати KDF подешавања"
   },
   "trustedDevices": {
-    "message": "Trusted devices"
+    "message": "Поуздани уређаји"
   },
   "memberDecryptionTdeDescriptionPartOne": {
     "message": "Када се аутентификују, чланови ће дешифровати податке из сефљ користећи кључ сачуван на њиховом уређају",
@@ -6956,15 +6985,15 @@
     "message": "Одабрана застава"
   },
   "sendsNoItemsTitle": {
-    "message": "No active Sends",
+    "message": "Нема активних Sends",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendsNoItemsMessage": {
-    "message": "Use Send to securely share encrypted information with anyone.",
+    "message": "Употребите Send да безбедно делите шифроване информације са било ким.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "inviteUsers": {
-    "message": "Invite Users"
+    "message": "Позови кориснике"
   },
   "secretsManagerForPlan": {
     "message": "Secrets Manager for $PLAN$",
@@ -7023,15 +7052,20 @@
   "additionalServiceAccounts": {
     "message": "Additional service accounts"
   },
-  "additionalServiceAccountsDesc": {
-    "message": "Your plan comes with $COUNT$ service accounts. You can add additional service accounts for $COST$ per month.",
+  "includedServiceAccounts": {
+    "message": "Ваш план долази са $COUNT$ налога сервиса.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "50"
-      },
+      }
+    }
+  },
+  "addAdditionalServiceAccounts": {
+    "message": "Можете додати још сервисних налога за $COST$ месечно.",
+    "placeholders": {
       "cost": {
-        "content": "$2",
+        "content": "$1",
         "example": "$0.50"
       }
     }
@@ -7043,7 +7077,7 @@
     "message": "Secrets Manager plan price"
   },
   "passwordManager": {
-    "message": "Password Manager"
+    "message": "Менаџер лозинки"
   },
   "freeOrganization": {
     "message": "Free Organization"
@@ -7059,5 +7093,24 @@
   },
   "maxServiceAccountCost": {
     "message": "Max potential service account cost"
+  },
+  "smBetaEndedDesc": {
+    "message": "Бета менаџера тајни се завршио $BETA_ENDING_DATE$. Остало вам је $DAYS$ дана да додате Менаџер тајни у вашу претплату и да задржите приступ подацима Манагера тајни. Контактирајте подршку да додате Менаџер тајни у своју претплату.",
+    "placeholders": {
+      "beta_ending_date": {
+        "content": "$1",
+        "example": "August 1, 2023"
+      },
+      "days": {
+        "content": "$2",
+        "example": "11"
+      }
+    }
+  },
+  "betaEnding": {
+    "message": "Крај бета"
+  },
+  "beta": {
+    "message": "Бета"
   }
 }

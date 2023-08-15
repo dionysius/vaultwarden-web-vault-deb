@@ -711,11 +711,17 @@
   "unexpectedError": {
     "message": "Ein unerwarteter Fehler ist aufgetreten."
   },
+  "expirationDateError": {
+    "message": "Bitte wähle ein Ablaufdatum aus, das in der Zukunft liegt."
+  },
   "emailAddress": {
     "message": "E-Mail-Adresse"
   },
   "yourVaultIsLocked": {
     "message": "Dein Tresor ist gesperrt. Überprüfe dein Master-Passwort, um fortzufahren."
+  },
+  "uuid": {
+    "message": "UUID"
   },
   "unlock": {
     "message": "Entsperren"
@@ -948,6 +954,9 @@
   "copyVerificationCode": {
     "message": "Verifizierungscode kopieren"
   },
+  "copyUuid": {
+    "message": "UUID kopieren"
+  },
   "warning": {
     "message": "Warnung"
   },
@@ -1155,7 +1164,7 @@
     }
   },
   "kdfIterationsWarning": {
-    "message": "Wenn du die Anzahl der KDF-Iterationen zu hoch setzt, kann es sein, dass das Einloggen in (und Entsperren von) Bitwarden auf langsameren Geräten länger dauert. Wir empfehlen, dass du den Wert wiederholt um $INCREMENT$ anhebst und auf all deinen Geräten testest.",
+    "message": "Wenn du die Anzahl der KDF-Iterationen zu hoch setzt, kann es sein, dass das Anmelden in (und Entsperren von) Bitwarden auf langsameren Geräten länger dauert. Wir empfehlen, dass du den Wert wiederholt um $INCREMENT$ anhebst und auf all deinen Geräten testest.",
     "placeholders": {
       "increment": {
         "content": "$1",
@@ -1283,6 +1292,31 @@
   },
   "importEncKeyError": {
     "message": "Fehler beim Entschlüsseln der exportierten Datei. Dein Verschlüsselungsschlüssel stimmt nicht mit dem beim Export verwendeten Verschlüsselungsschlüssel überein."
+  },
+  "importDestination": {
+    "message": "Import-Ziel"
+  },
+  "learnAboutImportOptions": {
+    "message": "Erfahre mehr über deine Importoptionen"
+  },
+  "selectImportFolder": {
+    "message": "Ordner auswählen"
+  },
+  "selectImportCollection": {
+    "message": "Sammlung auswählen"
+  },
+  "importTargetHint": {
+    "message": "Wähle diese Option, wenn der importierte Dateiinhalt in eine(n) $DESTINATION$ verschoben werden soll",
+    "description": "Located as a hint under the import target. Will be appended by either folder or collection, depending if the user is importing into an individual or an organizational vault.",
+    "placeholders": {
+      "destination": {
+        "content": "$1",
+        "example": "folder or collection"
+      }
+    }
+  },
+  "importUnassignedItemsError": {
+    "message": "Die Datei enthält nicht zugewiesene Einträge."
   },
   "selectFormat": {
     "message": "Wählen Sie das Format Ihrer Import-Datei"
@@ -3590,8 +3624,8 @@
   "attachmentsNeedFix": {
     "message": "Dieser Eintrag hat Anhänge, die repariert werden müssen."
   },
-  "attachmentFixDesc": {
-    "message": "Dieser Dateianhang muss aufgrund ihres Alters aktualisiert werden. Klicke hier, um mehr zu erfahren."
+  "attachmentFixDescription": {
+    "message": "Dieser Anhang verwendet eine veraltete Verschlüsselung. Wähle \"Reparieren\", um den Anhang herunterzuladen, erneut zu verschlüsseln und erneut hochzuladen."
   },
   "fix": {
     "message": "Reparieren",
@@ -4157,7 +4191,7 @@
     "message": "Benutzer eingeladen."
   },
   "acceptEmergencyAccess": {
-    "message": "Du wurdest eingeladen, ein Notfallkontakt für den oben genannten Benutzer zu werden. Um die Einladung anzunehmen, musst du dich einloggen oder ein neues Bitwarden-Konto erstellen."
+    "message": "Du wurdest eingeladen, ein Notfallkontakt für den oben genannten Benutzer zu werden. Um die Einladung anzunehmen, musst du dich anmelden oder ein neues Bitwarden-Konto erstellen."
   },
   "emergencyInviteAcceptFailed": {
     "message": "Die Einladung konnte nicht angenommen werden. Bitte den Benutzer, eine neue Einladung zu versenden."
@@ -4570,7 +4604,7 @@
     "message": "Passwort zurücksetzen"
   },
   "resetPasswordLoggedOutWarning": {
-    "message": "Wenn du fortfährst, wird $NAME$ aus seiner aktuellen Sitzung ausgeloggt und muss sich erneut einloggen. Aktive Sitzungen auf anderen Geräten können bis zu einer Stunde weiterhin aktiv bleiben.",
+    "message": "Wenn du fortfährst, wird $NAME$ aus seiner aktuellen Sitzung abgemeldet und muss sich erneut anmelden. Aktive Sitzungen auf anderen Geräten können bis zu einer Stunde weiterhin aktiv bleiben.",
     "placeholders": {
       "name": {
         "content": "$1",
@@ -5094,7 +5128,7 @@
     "message": "Angebot für eine bestehende Organisation akzeptieren oder eine neue Families-Organisation erstellen."
   },
   "setupSponsoredFamiliesLoginDesc": {
-    "message": "Dir wurde ein kostenloser Bitwarden Families-Organisationstarif angeboten. Um fortzufahren, musst du dich in das Konto einloggen, das das Angebot erhalten hat."
+    "message": "Dir wurde ein kostenloser Bitwarden Families-Organisationstarif angeboten. Um fortzufahren, musst du dich bei dem Konto anmelden, das das Angebot erhalten hat."
   },
   "sponsoredFamiliesAcceptFailed": {
     "message": "Angebot kann nicht angenommen werden. Bitte sende die Angebotsmail von deinem Unternehmenskonto erneut und versuche es noch einmal."
@@ -5429,8 +5463,8 @@
       }
     }
   },
-  "exportingOrganizationVaultDescription": {
-    "message": "Nur der mit $ORGANIZATION$ verbundene Tresor der Organisation wird exportiert. Persönliche Tresoreinträge und Einträge anderer Organisationen werden nicht berücksichtigt.",
+  "exportingOrganizationVaultDesc": {
+    "message": "Nur der mit $ORGANIZATION$ verbundene Organisationstresor wird exportiert. Einträge in persönlichen Tresoren oder anderen Organisationen werden nicht berücksichtigt.",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -5589,7 +5623,7 @@
     "message": "Geräteverifizierung aktivieren"
   },
   "deviceVerificationDesc": {
-    "message": "Verifizierungscodes werden an deine E-Mail-Adresse gesendet, wenn du dich von einem unbekannten Gerät einloggst"
+    "message": "Verifizierungscodes werden an deine E-Mail-Adresse gesendet, wenn du dich von einem unbekannten Gerät anmeldest"
   },
   "updatedDeviceVerification": {
     "message": "Geräteverifizierung aktualisiert"
@@ -6802,16 +6836,11 @@
   "enforceOnLoginDesc": {
     "message": "Bestehende Mitglieder auffordern, ihre Passwörter zu ändern"
   },
-  "region": {
-    "message": "Region"
+  "usDomain": {
+    "message": "bitwarden.com"
   },
-  "eu": {
-    "message": "EU",
-    "description": "European Union"
-  },
-  "us": {
-    "message": "US",
-    "description": "United States"
+  "euDomain": {
+    "message": "bitwarden.eu"
   },
   "smProjectDeleteAccessRestricted": {
     "message": "Dir fehlen die Berechtigungen, dieses Projekt zu löschen",
@@ -7023,15 +7052,20 @@
   "additionalServiceAccounts": {
     "message": "Zusätzliche Dienstkonten"
   },
-  "additionalServiceAccountsDesc": {
-    "message": "Dein Abonnement enthält $COUNT$ Dienstkonten. Du kannst zusätzliche Dienstkonten für $COST$ pro Monat hinzufügen.",
+  "includedServiceAccounts": {
+    "message": "Dein Tarif enthält $COUNT$ Dienstkonten.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "50"
-      },
+      }
+    }
+  },
+  "addAdditionalServiceAccounts": {
+    "message": "Du kannst zusätzliche Dienstkonten für $COST$ pro Monat hinzufügen.",
+    "placeholders": {
       "cost": {
-        "content": "$2",
+        "content": "$1",
         "example": "$0.50"
       }
     }
@@ -7059,5 +7093,24 @@
   },
   "maxServiceAccountCost": {
     "message": "Maximale potentielle Kosten für Dienstkonten"
+  },
+  "smBetaEndedDesc": {
+    "message": "Die Secrets Manager Beta endete am $BETA_ENDING_DATE$. Du hast $DAYS$ Tage Zeit, um den Secrets Manager zu deinem kostenpflichtigen Abonnement hinzuzufügen und den Zugriff auf die Daten des Secrets Manager zu erhalten. Kontaktiere den Kundensupport, um den Secrets Manager zu deinem Abonnement hinzuzufügen.",
+    "placeholders": {
+      "beta_ending_date": {
+        "content": "$1",
+        "example": "August 1, 2023"
+      },
+      "days": {
+        "content": "$2",
+        "example": "11"
+      }
+    }
+  },
+  "betaEnding": {
+    "message": "Beta-Ende"
+  },
+  "beta": {
+    "message": "Beta"
   }
 }

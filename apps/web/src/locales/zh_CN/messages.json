@@ -711,11 +711,17 @@
   "unexpectedError": {
     "message": "发生意外错误。"
   },
+  "expirationDateError": {
+    "message": "请选择一个过期日期（必须是将来的某个日期）。"
+  },
   "emailAddress": {
     "message": "电子邮件地址"
   },
   "yourVaultIsLocked": {
     "message": "您的密码库已锁定，请验证您的主密码以继续。"
+  },
+  "uuid": {
+    "message": "UUID"
   },
   "unlock": {
     "message": "解锁​​​​"
@@ -948,6 +954,9 @@
   "copyVerificationCode": {
     "message": "复制验证码"
   },
+  "copyUuid": {
+    "message": "复制 UUID"
+  },
   "warning": {
     "message": "警告"
   },
@@ -1000,7 +1009,7 @@
     "message": "确认文件密码"
   },
   "accountRestrictedOptionDescription": {
-    "message": "使用衍生自您账户的用户名和主密码的加密密钥，以加密此导出并限制只能导入到当前的 Bitwarden 帐户。"
+    "message": "使用衍生自您账户的用户名和主密码的加密密钥，以加密此导出并限制只能导入到当前的 Bitwarden 账户。"
   },
   "passwordProtectedOptionDescription": {
     "message": "设置一个密码用来加密导出的数据，并使用此密码解密以导入到任意 Bitwarden 账户。"
@@ -1283,6 +1292,31 @@
   },
   "importEncKeyError": {
     "message": "解密导出的文件时出错。您的加密密钥与导出数据时使用的加密密钥不匹配。"
+  },
+  "importDestination": {
+    "message": "导入目的地"
+  },
+  "learnAboutImportOptions": {
+    "message": "了解您的导入选项"
+  },
+  "selectImportFolder": {
+    "message": "选择一个文件夹"
+  },
+  "selectImportCollection": {
+    "message": "选择一个集合"
+  },
+  "importTargetHint": {
+    "message": "如果您希望将导入的文件内容移至 $DESTINATION$，请选中此选项",
+    "description": "Located as a hint under the import target. Will be appended by either folder or collection, depending if the user is importing into an individual or an organizational vault.",
+    "placeholders": {
+      "destination": {
+        "content": "$1",
+        "example": "folder or collection"
+      }
+    }
+  },
+  "importUnassignedItemsError": {
+    "message": "文件包含未分配项目。"
   },
   "selectFormat": {
     "message": "选择导入文件的格式"
@@ -1959,7 +1993,7 @@
     "message": "# GB 附加存储"
   },
   "additionalStorageIntervalDesc": {
-    "message": "您的计划附带 $SIZE$ 的加密存储空间。您也可以以 $PRICE$ 每 GB 每 $INTERVAL$ 购买附加存储。",
+    "message": "您的计划包含 $SIZE$ 的加密存储空间。您也可以以 $PRICE$ 每 GB 每 $INTERVAL$ 购买附加存储。",
     "placeholders": {
       "size": {
         "content": "$1",
@@ -3590,15 +3624,15 @@
   "attachmentsNeedFix": {
     "message": "此项目有需要修复的旧文件附件。"
   },
-  "attachmentFixDesc": {
-    "message": "这是一个需要修复的旧文件附件。点击了解更多。"
+  "attachmentFixDescription": {
+    "message": "此附件使用了过时的加密方式。选择「修复」以下载、重新加密，然后重新上传此附件。"
   },
   "fix": {
     "message": "修复",
     "description": "This is a verb. ex. 'Fix The Car'"
   },
   "oldAttachmentsNeedFixDesc": {
-    "message": "需要先修复密码库中的旧文件附件，然后才能轮换账户的加密密钥。"
+    "message": "需要先修复您的密码库中的旧文件附件，然后才能轮换您账户的加密密钥。"
   },
   "yourAccountsFingerprint": {
     "message": "您的账户的指纹短语",
@@ -4705,7 +4739,7 @@
     "message": "错误"
   },
   "accountRecoveryManageUsers": {
-    "message": "Manage users must also be granted with the manage account recovery permission"
+    "message": "管理用户也必须被授予管理账户恢复的权限"
   },
   "setupProvider": {
     "message": "提供商设置"
@@ -5238,7 +5272,7 @@
     "message": "Key Connector"
   },
   "memberDecryptionKeyConnectorDescStart": {
-    "message": "连接 SSO 登录到您的自托管解密密钥服务器。使用此选项后，成员将不再需要使用主密码解密密码库数据。",
+    "message": "连接 SSO 登录到您的自托管解密密钥服务器。使用此选项后，成员将不再需要使用主密码解密密码库数据。需要",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Connect login with SSO to your self-hosted decryption key server. Using this option, members won’t need to use their master passwords to decrypt vault data. The require SSO authentication and single organization policies are required to set up Key Connector decryption. Contact Bitwarden Support for set up assistance.'"
   },
   "memberDecryptionKeyConnectorDescLink": {
@@ -5246,7 +5280,7 @@
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Connect login with SSO to your self-hosted decryption key server. Using this option, members won’t need to use their master passwords to decrypt vault data. The require SSO authentication and single organization policies are required to set up Key Connector decryption. Contact Bitwarden Support for set up assistance.'"
   },
   "memberDecryptionKeyConnectorDescEnd": {
-    "message": "被用于设置 Key Connector 解密。请联系 Bitwarden 支持获取协助。",
+    "message": "以用于设置 Key Connector 解密。请联系 Bitwarden 支持获取协助。",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Connect login with SSO to your self-hosted decryption key server. Using this option, members won’t need to use their master passwords to decrypt vault data. The require SSO authentication and single organization policies are required to set up Key Connector decryption. Contact Bitwarden Support for set up assistance.'"
   },
   "keyConnectorPolicyRestriction": {
@@ -5325,7 +5359,7 @@
     "message": "轮换令牌"
   },
   "rotateBillingSyncTokenWarning": {
-    "message": "要继续，您需要重新设置您的自托管服务器上的计费同步功能。"
+    "message": "继续的话，您需要重新设置您的自托管服务器上的计费同步功能。"
   },
   "rotateBillingSyncTokenTitle": {
     "message": "轮换计费同步令牌将使之前的令牌失效。"
@@ -5421,7 +5455,7 @@
     "message": "正在导出组织密码库"
   },
   "exportingPersonalVaultDescription": {
-    "message": "仅会导出与 $EMAIL$ 关联的个人密码库项目，不包括组织密码库的项目。仅会导出密码库项目信息，不包括关联的密码历史记录或附件。",
+    "message": "仅会导出与 $EMAIL$ 关联的个人密码库项目，不包括组织密码库的项目。仅会导出密码库项目信息，不包括关联的密码历史记录和附件。",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -5429,8 +5463,8 @@
       }
     }
   },
-  "exportingOrganizationVaultDescription": {
-    "message": "仅会导出与 $ORGANIZATION$ 关联的组织密码库。个人或其他组织的密码库项目不会导出。",
+  "exportingOrganizationVaultDesc": {
+    "message": "仅会导出与 $ORGANIZATION$ 关联的组织密码库数据。不包括个人密码库和其他组织中的项目。",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -6512,7 +6546,7 @@
     "message": "正在导出组织机密数据"
   },
   "exportingOrganizationSecretDataDescription": {
-    "message": "仅会导出与 $ORGANIZATION$ 关联的机密管理器数据。不包括其他产品中的项目或来自其他组织的项目。",
+    "message": "仅会导出与 $ORGANIZATION$ 关联的机密管理器数据。不包括其他产品中的项目和来自其他组织的项目。",
     "placeholders": {
       "ORGANIZATION": {
         "content": "$1",
@@ -6802,16 +6836,11 @@
   "enforceOnLoginDesc": {
     "message": "要求现有成员更改他们的密码"
   },
-  "region": {
-    "message": "区域"
+  "usDomain": {
+    "message": "bitwarden.com"
   },
-  "eu": {
-    "message": "欧盟",
-    "description": "European Union"
-  },
-  "us": {
-    "message": "美国",
-    "description": "United States"
+  "euDomain": {
+    "message": "bitwarden.eu"
   },
   "smProjectDeleteAccessRestricted": {
     "message": "您无权删除此工程",
@@ -6828,7 +6857,7 @@
     "message": "受信任的设备"
   },
   "memberDecryptionTdeDescriptionPartOne": {
-    "message": "验证后，成员将使用存储在他们的设备上的密钥解密密码库数据。使用此选项后，",
+    "message": "验证后，成员将使用存储在他们设备上的密钥解密密码库数据。使用此选项后，",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The single organization policy and account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
   "memberDecryptionTdeDescriptionLinkOne": {
@@ -6967,7 +6996,7 @@
     "message": "邀请用户"
   },
   "secretsManagerForPlan": {
-    "message": "用于 $PLAN$ 的机密管理器",
+    "message": "适用于 $PLAN$ 的机密管理器",
     "placeholders": {
       "plan": {
         "content": "$1",
@@ -7023,15 +7052,20 @@
   "additionalServiceAccounts": {
     "message": "附加服务账户"
   },
-  "additionalServiceAccountsDesc": {
-    "message": "您的计划包含 $COUNT$ 个服务账户。您也可以以 $COST$ 每月购买附加服务账户。",
+  "includedServiceAccounts": {
+    "message": "您的计划包含 $COUNT$ 个服务账户。",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "50"
-      },
+      }
+    }
+  },
+  "addAdditionalServiceAccounts": {
+    "message": "您可以以 $COST$ 每月购买附加服务账户。",
+    "placeholders": {
       "cost": {
-        "content": "$2",
+        "content": "$1",
         "example": "$0.50"
       }
     }
@@ -7059,5 +7093,24 @@
   },
   "maxServiceAccountCost": {
     "message": "最大潜在服务账户费用"
+  },
+  "smBetaEndedDesc": {
+    "message": "机密管理器 Beta 版已于 $BETA_ENDING_DATE$ 结束。您还剩余 $DAYS$ 天时间将机密管理器添加到您的付费订阅中，以保持对其数据的访问权限。联系客户成功团队将机密管理器添加到您的订阅中。",
+    "placeholders": {
+      "beta_ending_date": {
+        "content": "$1",
+        "example": "August 1, 2023"
+      },
+      "days": {
+        "content": "$2",
+        "example": "11"
+      }
+    }
+  },
+  "betaEnding": {
+    "message": "Beta 版即将结束"
+  },
+  "beta": {
+    "message": "Beta"
   }
 }

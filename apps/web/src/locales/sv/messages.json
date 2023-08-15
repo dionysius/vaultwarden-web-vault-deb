@@ -711,11 +711,17 @@
   "unexpectedError": {
     "message": "Ett oväntat fel har inträffat."
   },
+  "expirationDateError": {
+    "message": "Please select an expiration date that is in the future."
+  },
   "emailAddress": {
     "message": "E-postadress"
   },
   "yourVaultIsLocked": {
     "message": "Valvet är låst. Bekräfta ditt huvudlösenord för att fortsätta."
+  },
+  "uuid": {
+    "message": "UUID"
   },
   "unlock": {
     "message": "Lås upp"
@@ -947,6 +953,9 @@
   },
   "copyVerificationCode": {
     "message": "Kopiera verifieringskod"
+  },
+  "copyUuid": {
+    "message": "Kopiera UUID"
   },
   "warning": {
     "message": "Varning"
@@ -1283,6 +1292,31 @@
   },
   "importEncKeyError": {
     "message": "Ett fel uppstod vid dekryptering av den exporterade filen. Din krypteringsnyckel matchar inte krypteringsnyckeln som användes för att exportera datan."
+  },
+  "importDestination": {
+    "message": "Importdestination"
+  },
+  "learnAboutImportOptions": {
+    "message": "Läs mer om dina importalternativ"
+  },
+  "selectImportFolder": {
+    "message": "Välj en mapp"
+  },
+  "selectImportCollection": {
+    "message": "Välj en samling"
+  },
+  "importTargetHint": {
+    "message": "Select this option if you want the imported file contents moved to a $DESTINATION$",
+    "description": "Located as a hint under the import target. Will be appended by either folder or collection, depending if the user is importing into an individual or an organizational vault.",
+    "placeholders": {
+      "destination": {
+        "content": "$1",
+        "example": "folder or collection"
+      }
+    }
+  },
+  "importUnassignedItemsError": {
+    "message": "Filen innehåller otilldelade objekt."
   },
   "selectFormat": {
     "message": "Välj importfilens format"
@@ -3590,8 +3624,8 @@
   "attachmentsNeedFix": {
     "message": "Detta objekt har gamla bilagor som behöver åtgärdas."
   },
-  "attachmentFixDesc": {
-    "message": "Detta är en gammal bilaga som behöver åtgärdas. Klicka för att läsa mer."
+  "attachmentFixDescription": {
+    "message": "This attachment uses outdated encryption. Select 'Fix' to download, re-encrypt, and re-upload the attachment."
   },
   "fix": {
     "message": "Åtgärda",
@@ -5429,8 +5463,8 @@
       }
     }
   },
-  "exportingOrganizationVaultDescription": {
-    "message": "Only the organization vault associated with $ORGANIZATION$ will be exported. Individual vault items and items from other organizations will not be included.",
+  "exportingOrganizationVaultDesc": {
+    "message": "Only the organization vault associated with $ORGANIZATION$ will be exported. Items in individual vaults or other organizations will not be included.",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -5491,7 +5525,7 @@
     "message": "Generera användarnamn"
   },
   "usernameType": {
-    "message": "Username type"
+    "message": "Användarnamnstyp"
   },
   "plusAddressedEmail": {
     "message": "Plus addressed email",
@@ -5805,7 +5839,7 @@
     "message": "Inga objekt hittades"
   },
   "multiSelectClearAll": {
-    "message": "Clear all"
+    "message": "Rensa alla"
   },
   "toggleCharacterCount": {
     "message": "Toggle character count",
@@ -5999,11 +6033,11 @@
     "description": "Title for creating a new project."
   },
   "projectEdited": {
-    "message": "Project edited",
+    "message": "Projekt har redigerats",
     "description": "Notification for the successful editing of a project."
   },
   "projectSaved": {
-    "message": "Project saved",
+    "message": "Projekt har sparats",
     "description": "Notification for the successful saving of a project."
   },
   "projectCreated": {
@@ -6545,7 +6579,7 @@
     "message": "If you do not want to opt into billing sync, manually upload your license here."
   },
   "syncLicense": {
-    "message": "Sync license"
+    "message": "Synkronisera licens"
   },
   "licenseSyncSuccess": {
     "message": "Successfully synced license"
@@ -6605,7 +6639,7 @@
     "message": "Can read, write"
   },
   "groupSlashUser": {
-    "message": "Group/User"
+    "message": "Grupp/Användare"
   },
   "lowKdfIterations": {
     "message": "Low KDF Iterations"
@@ -6802,16 +6836,11 @@
   "enforceOnLoginDesc": {
     "message": "Require existing members to change their passwords"
   },
-  "region": {
-    "message": "Region"
+  "usDomain": {
+    "message": "bitwarden.com"
   },
-  "eu": {
-    "message": "EU",
-    "description": "European Union"
-  },
-  "us": {
-    "message": "US",
-    "description": "United States"
+  "euDomain": {
+    "message": "bitwarden.eu"
   },
   "smProjectDeleteAccessRestricted": {
     "message": "You don't have permissions to delete this project",
@@ -7023,15 +7052,20 @@
   "additionalServiceAccounts": {
     "message": "Additional service accounts"
   },
-  "additionalServiceAccountsDesc": {
-    "message": "Your plan comes with $COUNT$ service accounts. You can add additional service accounts for $COST$ per month.",
+  "includedServiceAccounts": {
+    "message": "Your plan comes with $COUNT$ service accounts.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "50"
-      },
+      }
+    }
+  },
+  "addAdditionalServiceAccounts": {
+    "message": "You can add additional service accounts for $COST$ per month.",
+    "placeholders": {
       "cost": {
-        "content": "$2",
+        "content": "$1",
         "example": "$0.50"
       }
     }
@@ -7059,5 +7093,24 @@
   },
   "maxServiceAccountCost": {
     "message": "Max potential service account cost"
+  },
+  "smBetaEndedDesc": {
+    "message": "The Secrets Manager Beta ended $BETA_ENDING_DATE$. You have $DAYS$ days left to add Secrets Manager to your paid subscription and maintain access to Secrets Manager data. Contact Customer Success to add Secrets Manager to your subscription.",
+    "placeholders": {
+      "beta_ending_date": {
+        "content": "$1",
+        "example": "August 1, 2023"
+      },
+      "days": {
+        "content": "$2",
+        "example": "11"
+      }
+    }
+  },
+  "betaEnding": {
+    "message": "Beta Ending"
+  },
+  "beta": {
+    "message": "Beta"
   }
 }

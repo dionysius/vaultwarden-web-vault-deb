@@ -711,11 +711,17 @@
   "unexpectedError": {
     "message": "Сталася неочікувана помилка."
   },
+  "expirationDateError": {
+    "message": "Please select an expiration date that is in the future."
+  },
   "emailAddress": {
     "message": "Адреса е-пошти"
   },
   "yourVaultIsLocked": {
     "message": "Сховище заблоковано. Введіть головний пароль для продовження."
+  },
+  "uuid": {
+    "message": "UUID"
   },
   "unlock": {
     "message": "Розблокувати"
@@ -947,6 +953,9 @@
   },
   "copyVerificationCode": {
     "message": "Копіювати код підтвердження"
+  },
+  "copyUuid": {
+    "message": "Copy UUID"
   },
   "warning": {
     "message": "Попередження"
@@ -1283,6 +1292,31 @@
   },
   "importEncKeyError": {
     "message": "Помилка розшифрування експортованого файлу. Ваш ключ шифрування відрізняється від ключа, використаного для експортування даних."
+  },
+  "importDestination": {
+    "message": "Import destination"
+  },
+  "learnAboutImportOptions": {
+    "message": "Learn about your import options"
+  },
+  "selectImportFolder": {
+    "message": "Select a folder"
+  },
+  "selectImportCollection": {
+    "message": "Select a collection"
+  },
+  "importTargetHint": {
+    "message": "Select this option if you want the imported file contents moved to a $DESTINATION$",
+    "description": "Located as a hint under the import target. Will be appended by either folder or collection, depending if the user is importing into an individual or an organizational vault.",
+    "placeholders": {
+      "destination": {
+        "content": "$1",
+        "example": "folder or collection"
+      }
+    }
+  },
+  "importUnassignedItemsError": {
+    "message": "File contains unassigned items."
   },
   "selectFormat": {
     "message": "Оберіть формат імпортованого файлу"
@@ -3590,8 +3624,8 @@
   "attachmentsNeedFix": {
     "message": "Цей елемент має старі вкладені файли, які необхідно виправити."
   },
-  "attachmentFixDesc": {
-    "message": "Цей старий вкладений файл необхідно виправити. Натисніть, щоб дізнатися більше."
+  "attachmentFixDescription": {
+    "message": "This attachment uses outdated encryption. Select 'Fix' to download, re-encrypt, and re-upload the attachment."
   },
   "fix": {
     "message": "Виправити",
@@ -4705,7 +4739,7 @@
     "message": "Помилка"
   },
   "accountRecoveryManageUsers": {
-    "message": "Manage users must also be granted with the manage account recovery permission"
+    "message": "Разом із дозволом на керування відновленням облікового запису також необхідно надати дозвіл на керування користувачами"
   },
   "setupProvider": {
     "message": "Налаштування постачальника"
@@ -5429,8 +5463,8 @@
       }
     }
   },
-  "exportingOrganizationVaultDescription": {
-    "message": "Будуть експортовані лише записи сховища організації, пов'язані з $ORGANIZATION$. Записи особистого сховища та записи з інших організацій не буде включено.",
+  "exportingOrganizationVaultDesc": {
+    "message": "Only the organization vault associated with $ORGANIZATION$ will be exported. Items in individual vaults or other organizations will not be included.",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -6802,16 +6836,11 @@
   "enforceOnLoginDesc": {
     "message": "Вимагати від наявних учасників змінювати паролі"
   },
-  "region": {
-    "message": "Регіон"
+  "usDomain": {
+    "message": "bitwarden.com"
   },
-  "eu": {
-    "message": "ЄС",
-    "description": "European Union"
-  },
-  "us": {
-    "message": "США",
-    "description": "United States"
+  "euDomain": {
+    "message": "bitwarden.eu"
   },
   "smProjectDeleteAccessRestricted": {
     "message": "У вас немає дозволу на видалення цього проєкту",
@@ -6825,7 +6854,7 @@
     "message": "Оновити налаштування KDF"
   },
   "trustedDevices": {
-    "message": "Trusted devices"
+    "message": "Довірені пристрої"
   },
   "memberDecryptionTdeDescriptionPartOne": {
     "message": "Після авторизації учасники розшифровуватимуть дані сховища з використанням ключа, збереженого на їхньому пристрої.",
@@ -7023,15 +7052,20 @@
   "additionalServiceAccounts": {
     "message": "Додаткові службові облікові записи"
   },
-  "additionalServiceAccountsDesc": {
-    "message": "Ваш план включає $COUNT$ службових облікових записів. Ви можете додати більше службових облікових записів за $COST$ на місяць.",
+  "includedServiceAccounts": {
+    "message": "Your plan comes with $COUNT$ service accounts.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "50"
-      },
+      }
+    }
+  },
+  "addAdditionalServiceAccounts": {
+    "message": "You can add additional service accounts for $COST$ per month.",
+    "placeholders": {
       "cost": {
-        "content": "$2",
+        "content": "$1",
         "example": "$0.50"
       }
     }
@@ -7059,5 +7093,24 @@
   },
   "maxServiceAccountCost": {
     "message": "Потенційна максимальна вартість службового облікового запису"
+  },
+  "smBetaEndedDesc": {
+    "message": "The Secrets Manager Beta ended $BETA_ENDING_DATE$. You have $DAYS$ days left to add Secrets Manager to your paid subscription and maintain access to Secrets Manager data. Contact Customer Success to add Secrets Manager to your subscription.",
+    "placeholders": {
+      "beta_ending_date": {
+        "content": "$1",
+        "example": "August 1, 2023"
+      },
+      "days": {
+        "content": "$2",
+        "example": "11"
+      }
+    }
+  },
+  "betaEnding": {
+    "message": "Beta Ending"
+  },
+  "beta": {
+    "message": "Beta"
   }
 }

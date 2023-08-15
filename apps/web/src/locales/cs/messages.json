@@ -711,11 +711,17 @@
   "unexpectedError": {
     "message": "Vyskytla se neočekávaná chyba."
   },
+  "expirationDateError": {
+    "message": "Zvolte datum vypršení platnosti, které bude v budoucnu."
+  },
   "emailAddress": {
     "message": "E-mailová adresa"
   },
   "yourVaultIsLocked": {
     "message": "Váš trezor je uzamčen. Pro pokračování musíte zadat hlavní heslo."
+  },
+  "uuid": {
+    "message": "UUID"
   },
   "unlock": {
     "message": "Odemknout"
@@ -947,6 +953,9 @@
   },
   "copyVerificationCode": {
     "message": "Kopírovat ověřovací kód"
+  },
+  "copyUuid": {
+    "message": "Kopírovat UUID"
   },
   "warning": {
     "message": "Varování"
@@ -1283,6 +1292,31 @@
   },
   "importEncKeyError": {
     "message": "Chyba při dešifrování exportovaného souboru. Váš šifrovací klíč se neshoduje s klíčem použitým během exportu dat."
+  },
+  "importDestination": {
+    "message": "Cíl importu"
+  },
+  "learnAboutImportOptions": {
+    "message": "Více o volbách importu"
+  },
+  "selectImportFolder": {
+    "message": "Zvolte složku"
+  },
+  "selectImportCollection": {
+    "message": "Zvolte kolekci"
+  },
+  "importTargetHint": {
+    "message": "Pokud chcete obsah importovaného souboru přesunout do složky $DESTINATION$, vyberte tuto volbu",
+    "description": "Located as a hint under the import target. Will be appended by either folder or collection, depending if the user is importing into an individual or an organizational vault.",
+    "placeholders": {
+      "destination": {
+        "content": "$1",
+        "example": "folder or collection"
+      }
+    }
+  },
+  "importUnassignedItemsError": {
+    "message": "Soubor obsahuje nepřiřazené položky."
   },
   "selectFormat": {
     "message": "Vyberte formát importovaného souboru"
@@ -3590,8 +3624,8 @@
   "attachmentsNeedFix": {
     "message": "Tato položka obsahuje staré přílohy, které vyžadují opravu."
   },
-  "attachmentFixDesc": {
-    "message": "Tato stará příloha vyžaduje opravu. Klepněte pro více informací."
+  "attachmentFixDescription": {
+    "message": "Tato příloha používá zastaralé šifrování. Zvolte \"Opravit\" pro stažení, přešifrování a opětovné nahrání přílohy."
   },
   "fix": {
     "message": "Opravit",
@@ -5429,7 +5463,7 @@
       }
     }
   },
-  "exportingOrganizationVaultDescription": {
+  "exportingOrganizationVaultDesc": {
     "message": "Exportován bude jen trezor organizace přidružený k položce $ORGANIZATION$. Osobní položky trezoru a položky z jiných organizací nebudou zahrnuty.",
     "placeholders": {
       "organization": {
@@ -6802,16 +6836,11 @@
   "enforceOnLoginDesc": {
     "message": "Bude vyžadovat od stávajících členů, aby změnili svá hesla"
   },
-  "region": {
-    "message": "Region"
+  "usDomain": {
+    "message": "bitwarden.com"
   },
-  "eu": {
-    "message": "EU",
-    "description": "European Union"
-  },
-  "us": {
-    "message": "US",
-    "description": "United States"
+  "euDomain": {
+    "message": "bitwarden.eu"
   },
   "smProjectDeleteAccessRestricted": {
     "message": "Nemáte oprávnění tento projekt smazat",
@@ -7023,15 +7052,20 @@
   "additionalServiceAccounts": {
     "message": "Další účty služby"
   },
-  "additionalServiceAccountsDesc": {
-    "message": "Vaše předplatné obsahuje $COUNT$ účtů služby. Další účty služby můžete přidat za $COST$ měsíčně.",
+  "includedServiceAccounts": {
+    "message": "Váš plán již obsahuje $COUNT$ účtů služeb.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "50"
-      },
+      }
+    }
+  },
+  "addAdditionalServiceAccounts": {
+    "message": "Za $COST$ měsíčně můžete přidat další účty služeb.",
+    "placeholders": {
       "cost": {
-        "content": "$2",
+        "content": "$1",
         "example": "$0.50"
       }
     }
@@ -7059,5 +7093,24 @@
   },
   "maxServiceAccountCost": {
     "message": "Max. potenciální náklady na účet služby"
+  },
+  "smBetaEndedDesc": {
+    "message": "Správce klíčů beta skončil $BETA_ENDING_DATE$. Zbývá $DAYS$ dní na to, abyste si přidali aplikaci správce klíčů k placenému předplatnému a zachovali si přístup k datům správce klíčů. Kontaktujte oddělení Customer Success a přidejte si aplikaci správce klíčů do svého předplatného.",
+    "placeholders": {
+      "beta_ending_date": {
+        "content": "$1",
+        "example": "August 1, 2023"
+      },
+      "days": {
+        "content": "$2",
+        "example": "11"
+      }
+    }
+  },
+  "betaEnding": {
+    "message": "Beta končí"
+  },
+  "beta": {
+    "message": "Beta"
   }
 }

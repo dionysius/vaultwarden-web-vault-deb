@@ -711,11 +711,17 @@
   "unexpectedError": {
     "message": "Ir radusies neparedzēta kļūda."
   },
+  "expirationDateError": {
+    "message": "Lūgums atlasīt beigu datumu, kas ir nākotnē."
+  },
   "emailAddress": {
     "message": "E-pasta adrese"
   },
   "yourVaultIsLocked": {
     "message": "Tava glabātuve ir bloķēta. Lai turpinātu, pārbaudi savu galveno paroli."
+  },
+  "uuid": {
+    "message": "UUID"
   },
   "unlock": {
     "message": "Atslēgt"
@@ -947,6 +953,9 @@
   },
   "copyVerificationCode": {
     "message": "Ievietot apstiprinājuma kodu starpliktuvē"
+  },
+  "copyUuid": {
+    "message": "Ievietot UUID starpliktuvē"
   },
   "warning": {
     "message": "Brīdinājums"
@@ -1283,6 +1292,31 @@
   },
   "importEncKeyError": {
     "message": "Atšifrējot eksportēto failu, radās kļūda. Jūsu šifrēšanas atslēga neatbilst datu eksportēšanai izmantotajai šifrēšanas atslēgai."
+  },
+  "importDestination": {
+    "message": "Ievietošanas galamērķis"
+  },
+  "learnAboutImportOptions": {
+    "message": "Uzzināt par ievietošanas iespējām"
+  },
+  "selectImportFolder": {
+    "message": "Atlasīt mapi"
+  },
+  "selectImportCollection": {
+    "message": "Atlasīt krājumu"
+  },
+  "importTargetHint": {
+    "message": "Šī iespēja jāatlasa, ja ir vēlēšanās ievietotās datnes saturu pārvietot uz $DESTINATION$",
+    "description": "Located as a hint under the import target. Will be appended by either folder or collection, depending if the user is importing into an individual or an organizational vault.",
+    "placeholders": {
+      "destination": {
+        "content": "$1",
+        "example": "folder or collection"
+      }
+    }
+  },
+  "importUnassignedItemsError": {
+    "message": "Datne satur nepiešķirtus vienumus."
   },
   "selectFormat": {
     "message": "Atlasīt ievietošanas datnes veidolu"
@@ -3590,8 +3624,8 @@
   "attachmentsNeedFix": {
     "message": "Šim vienumam ir veci datņu pielikumi, kas ir jāsalabo."
   },
-  "attachmentFixDesc": {
-    "message": "Šis ir vecs datnes pielikums, kas ir jāsalabo. Klikšķināt, lai uzzinātu vairāk."
+  "attachmentFixDescription": {
+    "message": "Šis pielikumam ir novecojusi šifrēšana. Jāatlasa 'Salabot', lai lejupielādētu, atkārtoti šifrētu un augšupielādētu pielikumu."
   },
   "fix": {
     "message": "Salabot",
@@ -4705,7 +4739,7 @@
     "message": "Kļūda"
   },
   "accountRecoveryManageUsers": {
-    "message": "Manage users must also be granted with the manage account recovery permission"
+    "message": "Lietotāju pārvaldīšanai ir jābūt iespējotai arī ar konta atkopšanas pārvaldīšanas atļauju"
   },
   "setupProvider": {
     "message": "Sniedzēja iestatīšana"
@@ -5429,8 +5463,8 @@
       }
     }
   },
-  "exportingOrganizationVaultDescription": {
-    "message": "Tiks izdota tikai apvienības glabātava, kas ir saistīta ar $ORGANIZATION$. Personīgie glabātavas vienumi un vienumi no citām apvienībām netiks iekļauti.",
+  "exportingOrganizationVaultDesc": {
+    "message": "Tiks izdota tikai apvienības glabātava, kas ir saistīta ar $ORGANIZATION$. Atsevišķu glabātavu vai citu apvienību vienumi netiks iekļauti.",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -6802,16 +6836,11 @@
   "enforceOnLoginDesc": {
     "message": "Pieprasīt esošajiem dalībniekiem nomainīt to paroles"
   },
-  "region": {
-    "message": "Apgabals"
+  "usDomain": {
+    "message": "bitwarden.com"
   },
-  "eu": {
-    "message": "ES",
-    "description": "European Union"
-  },
-  "us": {
-    "message": "ASV",
-    "description": "United States"
+  "euDomain": {
+    "message": "bitwarden.eu"
   },
   "smProjectDeleteAccessRestricted": {
     "message": "Nav nepieciešamo atļauju, lai izdzēstu šo projektu",
@@ -6825,7 +6854,7 @@
     "message": "Atjaunināt KDF iestatījumus"
   },
   "trustedDevices": {
-    "message": "Trusted devices"
+    "message": "Uzticamās ierīces"
   },
   "memberDecryptionTdeDescriptionPartOne": {
     "message": "Pēc pieteikšanās dalībnieki atšifrēs glabātavas saturu ar ierīcē glabātu atslēgu. ",
@@ -7023,15 +7052,20 @@
   "additionalServiceAccounts": {
     "message": "Papildu pakalpojumu konti"
   },
-  "additionalServiceAccountsDesc": {
-    "message": "Plānā ir iekļauti $COUNT$ pakalpojumu konti. Papildu pakalpojumu kontus var pievienot par $COST$ mēnesī.",
+  "includedServiceAccounts": {
+    "message": "Plānā ir iekļauti $COUNT$ pakalpojumu konti.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "50"
-      },
+      }
+    }
+  },
+  "addAdditionalServiceAccounts": {
+    "message": "Papildu pakalpojumu kontus var pievienot par $COST$ mēnesī.",
+    "placeholders": {
       "cost": {
-        "content": "$2",
+        "content": "$1",
         "example": "$0.50"
       }
     }
@@ -7059,5 +7093,24 @@
   },
   "maxServiceAccountCost": {
     "message": "Lielākās iespējamās pakalpojumu kontu izmaksas"
+  },
+  "smBetaEndedDesc": {
+    "message": "Noslēpumu pārvaldnieka beta beidzās $BETA_ENDING_DATE$. Ir atlikušas $DAYS$ dienas, lai pievienotu Noslēpumu pārvaldnieku apmaksātajam abonementam un saglabātu piekļuvu Noslēpumu pārvaldnieka datiem. Jāsazināš ar klientu atbalstu, lai abonementam pievienotu Noslēpumu pārvaldnieku.",
+    "placeholders": {
+      "beta_ending_date": {
+        "content": "$1",
+        "example": "August 1, 2023"
+      },
+      "days": {
+        "content": "$2",
+        "example": "11"
+      }
+    }
+  },
+  "betaEnding": {
+    "message": "Beta ir beidzies"
+  },
+  "beta": {
+    "message": "Beta"
   }
 }

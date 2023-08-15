@@ -711,11 +711,17 @@
   "unexpectedError": {
     "message": "發生了未預期的錯誤。"
   },
+  "expirationDateError": {
+    "message": "Please select an expiration date that is in the future."
+  },
   "emailAddress": {
     "message": "電子郵件地址"
   },
   "yourVaultIsLocked": {
     "message": "密碼庫已鎖定。請驗證主密碼以繼續。"
+  },
+  "uuid": {
+    "message": "UUID"
   },
   "unlock": {
     "message": "解鎖"
@@ -947,6 +953,9 @@
   },
   "copyVerificationCode": {
     "message": "複製驗證碼"
+  },
+  "copyUuid": {
+    "message": "Copy UUID"
   },
   "warning": {
     "message": "警告"
@@ -1283,6 +1292,31 @@
   },
   "importEncKeyError": {
     "message": "解密匯出的檔案時發生錯誤，您的加密金鑰與匯出資料時使用的金鑰不同。"
+  },
+  "importDestination": {
+    "message": "Import destination"
+  },
+  "learnAboutImportOptions": {
+    "message": "Learn about your import options"
+  },
+  "selectImportFolder": {
+    "message": "Select a folder"
+  },
+  "selectImportCollection": {
+    "message": "Select a collection"
+  },
+  "importTargetHint": {
+    "message": "Select this option if you want the imported file contents moved to a $DESTINATION$",
+    "description": "Located as a hint under the import target. Will be appended by either folder or collection, depending if the user is importing into an individual or an organizational vault.",
+    "placeholders": {
+      "destination": {
+        "content": "$1",
+        "example": "folder or collection"
+      }
+    }
+  },
+  "importUnassignedItemsError": {
+    "message": "File contains unassigned items."
   },
   "selectFormat": {
     "message": "選擇匯入檔案的格式"
@@ -3590,8 +3624,8 @@
   "attachmentsNeedFix": {
     "message": "此項目包含需要修正的舊檔案附件。"
   },
-  "attachmentFixDesc": {
-    "message": "這是一個需要修正的舊檔案附件。點選此處以深入了解。"
+  "attachmentFixDescription": {
+    "message": "This attachment uses outdated encryption. Select 'Fix' to download, re-encrypt, and re-upload the attachment."
   },
   "fix": {
     "message": "修正",
@@ -5429,8 +5463,8 @@
       }
     }
   },
-  "exportingOrganizationVaultDescription": {
-    "message": "只會匯出與 $ORGANIZATION$ 關聯的組織密碼庫。個人密碼庫和其他組織的項目不包含在內。",
+  "exportingOrganizationVaultDesc": {
+    "message": "Only the organization vault associated with $ORGANIZATION$ will be exported. Items in individual vaults or other organizations will not be included.",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -6802,16 +6836,11 @@
   "enforceOnLoginDesc": {
     "message": "Require existing members to change their passwords"
   },
-  "region": {
-    "message": "區域"
+  "usDomain": {
+    "message": "bitwarden.com"
   },
-  "eu": {
-    "message": "歐盟",
-    "description": "European Union"
-  },
-  "us": {
-    "message": "美國",
-    "description": "United States"
+  "euDomain": {
+    "message": "bitwarden.eu"
   },
   "smProjectDeleteAccessRestricted": {
     "message": "You don't have permissions to delete this project",
@@ -7023,15 +7052,20 @@
   "additionalServiceAccounts": {
     "message": "新增服務帳號"
   },
-  "additionalServiceAccountsDesc": {
-    "message": "您的方案內含 $COUNT$ 組服務帳號，可再以每月 $COST$ 費用新增更多服務帳號。",
+  "includedServiceAccounts": {
+    "message": "Your plan comes with $COUNT$ service accounts.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "50"
-      },
+      }
+    }
+  },
+  "addAdditionalServiceAccounts": {
+    "message": "You can add additional service accounts for $COST$ per month.",
+    "placeholders": {
       "cost": {
-        "content": "$2",
+        "content": "$1",
         "example": "$0.50"
       }
     }
@@ -7059,5 +7093,24 @@
   },
   "maxServiceAccountCost": {
     "message": "可能的最大服務帳號成本"
+  },
+  "smBetaEndedDesc": {
+    "message": "The Secrets Manager Beta ended $BETA_ENDING_DATE$. You have $DAYS$ days left to add Secrets Manager to your paid subscription and maintain access to Secrets Manager data. Contact Customer Success to add Secrets Manager to your subscription.",
+    "placeholders": {
+      "beta_ending_date": {
+        "content": "$1",
+        "example": "August 1, 2023"
+      },
+      "days": {
+        "content": "$2",
+        "example": "11"
+      }
+    }
+  },
+  "betaEnding": {
+    "message": "Beta Ending"
+  },
+  "beta": {
+    "message": "Beta"
   }
 }

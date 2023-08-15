@@ -711,11 +711,17 @@
   "unexpectedError": {
     "message": "Váratlan hiba történt."
   },
+  "expirationDateError": {
+    "message": "Válasszunk jövőbeni lejárati dátumot."
+  },
   "emailAddress": {
     "message": "Email cím"
   },
   "yourVaultIsLocked": {
     "message": "A széf zárolásra került. A folytatáshoz meg kell adni a mesterjelszót."
+  },
+  "uuid": {
+    "message": "UUID"
   },
   "unlock": {
     "message": "Feloldás"
@@ -947,6 +953,9 @@
   },
   "copyVerificationCode": {
     "message": "Copy Verification Code"
+  },
+  "copyUuid": {
+    "message": "UUID másolása"
   },
   "warning": {
     "message": "Figyelmeztetés"
@@ -1283,6 +1292,31 @@
   },
   "importEncKeyError": {
     "message": "Hiba történt az exportált fájl visszafejtése során. A titkosítási kulcs nem egyezik meg az adatok exportálásához használt titkosítási kulccsal."
+  },
+  "importDestination": {
+    "message": "Import destination"
+  },
+  "learnAboutImportOptions": {
+    "message": "Learn about your import options"
+  },
+  "selectImportFolder": {
+    "message": "Select a folder"
+  },
+  "selectImportCollection": {
+    "message": "Select a collection"
+  },
+  "importTargetHint": {
+    "message": "Select this option if you want the imported file contents moved to a $DESTINATION$",
+    "description": "Located as a hint under the import target. Will be appended by either folder or collection, depending if the user is importing into an individual or an organizational vault.",
+    "placeholders": {
+      "destination": {
+        "content": "$1",
+        "example": "folder or collection"
+      }
+    }
+  },
+  "importUnassignedItemsError": {
+    "message": "File contains unassigned items."
   },
   "selectFormat": {
     "message": "Válasszuk ki az import fájl formátumát."
@@ -3590,8 +3624,8 @@
   "attachmentsNeedFix": {
     "message": "Ennek az elemnek régi fájl mellékletei vannak, amelyeket javítani kell."
   },
-  "attachmentFixDesc": {
-    "message": "Ez egy régi melléklet, amelyet javítani kell. Kattintás több információért."
+  "attachmentFixDescription": {
+    "message": "Ez a melléklet elavult titkosítást használ. Válasszuk a  'Javítás' lehetőséget a melléklet letöltéséhez, ismételt titkosításához és újbóli feltöltéséhez."
   },
   "fix": {
     "message": "Javítás",
@@ -4705,7 +4739,7 @@
     "message": "Hiba"
   },
   "accountRecoveryManageUsers": {
-    "message": "Manage users must also be granted with the manage account recovery permission"
+    "message": "A felhasználók kezelését engedélyezni kell a Jelszó visszaállításának kezelése jogosultsággal is."
   },
   "setupProvider": {
     "message": "Szolgáltató beállítása"
@@ -5429,7 +5463,7 @@
       }
     }
   },
-  "exportingOrganizationVaultDescription": {
+  "exportingOrganizationVaultDesc": {
     "message": "Csak$ORGANIZATION$ névvel társított szervezeti széf elemek kerülnek exportálásra. Ebbe nem kerülnek be a személyes és más szervezeti széf elemek.",
     "placeholders": {
       "organization": {
@@ -6802,16 +6836,11 @@
   "enforceOnLoginDesc": {
     "message": "A meglévő tagoknak meg kell változtatniuk jelszavaikat."
   },
-  "region": {
-    "message": "Régió"
+  "usDomain": {
+    "message": "bitwarden.com"
   },
-  "eu": {
-    "message": "EU",
-    "description": "European Union"
-  },
-  "us": {
-    "message": "US",
-    "description": "United States"
+  "euDomain": {
+    "message": "bitwarden.eu"
   },
   "smProjectDeleteAccessRestricted": {
     "message": "Nincs jogosulltság ezen projekt törléséhez.",
@@ -7023,15 +7052,20 @@
   "additionalServiceAccounts": {
     "message": "Kiegészítő szolgáltatás fiókok"
   },
-  "additionalServiceAccountsDesc": {
-    "message": "A csomag $COUNT$ szolgáltatás fiókot tartalmaz. További szolgáltatási fiókokat vehetünk fel havi $COST$ áron.",
+  "includedServiceAccounts": {
+    "message": "Your plan comes with $COUNT$ service accounts.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "50"
-      },
+      }
+    }
+  },
+  "addAdditionalServiceAccounts": {
+    "message": "You can add additional service accounts for $COST$ per month.",
+    "placeholders": {
       "cost": {
-        "content": "$2",
+        "content": "$1",
         "example": "$0.50"
       }
     }
@@ -7059,5 +7093,24 @@
   },
   "maxServiceAccountCost": {
     "message": "Maximális lehetséges szolgáltatás fiókköltség"
+  },
+  "smBetaEndedDesc": {
+    "message": "The Secrets Manager Beta ended $BETA_ENDING_DATE$. You have $DAYS$ days left to add Secrets Manager to your paid subscription and maintain access to Secrets Manager data. Contact Customer Success to add Secrets Manager to your subscription.",
+    "placeholders": {
+      "beta_ending_date": {
+        "content": "$1",
+        "example": "August 1, 2023"
+      },
+      "days": {
+        "content": "$2",
+        "example": "11"
+      }
+    }
+  },
+  "betaEnding": {
+    "message": "Beta Ending"
+  },
+  "beta": {
+    "message": "Beta"
   }
 }

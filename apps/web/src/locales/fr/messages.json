@@ -711,11 +711,17 @@
   "unexpectedError": {
     "message": "Une erreur inattendue est survenue."
   },
+  "expirationDateError": {
+    "message": "Veuillez sélectionner une date d'expiration qui est dans le futur."
+  },
   "emailAddress": {
     "message": "Adresse électronique"
   },
   "yourVaultIsLocked": {
     "message": "Votre coffre est verrouillé. Vérifiez votre mot de passe principal pour continuer."
+  },
+  "uuid": {
+    "message": "UUID"
   },
   "unlock": {
     "message": "Déverrouiller"
@@ -947,6 +953,9 @@
   },
   "copyVerificationCode": {
     "message": "Copier le code de vérification"
+  },
+  "copyUuid": {
+    "message": "Copier l'UUID"
   },
   "warning": {
     "message": "Attention"
@@ -1283,6 +1292,31 @@
   },
   "importEncKeyError": {
     "message": "Erreur lors du déchiffrement du fichier exporté. Votre clé de chiffrement ne correspond pas à la clé de chiffrement utilisée pour exporter les données."
+  },
+  "importDestination": {
+    "message": "Destination de l'import"
+  },
+  "learnAboutImportOptions": {
+    "message": "En savoir plus sur vos options d'importation"
+  },
+  "selectImportFolder": {
+    "message": "Choisir un dossier"
+  },
+  "selectImportCollection": {
+    "message": "Sélectionnez une collection"
+  },
+  "importTargetHint": {
+    "message": "Sélectionnez cette option si vous voulez que le contenu du fichier importé soit déplacé vers un(e) $DESTINATION$",
+    "description": "Located as a hint under the import target. Will be appended by either folder or collection, depending if the user is importing into an individual or an organizational vault.",
+    "placeholders": {
+      "destination": {
+        "content": "$1",
+        "example": "folder or collection"
+      }
+    }
+  },
+  "importUnassignedItemsError": {
+    "message": "Le fichier contient des éléments non assignés."
   },
   "selectFormat": {
     "message": "Sélectionnez le format du fichier à importer"
@@ -3590,8 +3624,8 @@
   "attachmentsNeedFix": {
     "message": "Cet élément a d'anciennes pièces jointes qui doivent être réparées."
   },
-  "attachmentFixDesc": {
-    "message": "Il s'agit d'une ancienne pièce jointe qui doit être réparée. Cliquez pour en savoir plus."
+  "attachmentFixDescription": {
+    "message": "Cette pièce jointe utilise un chiffrement obsolète. Choisissez 'Réparer' pour télécharger, chiffrer à nouveau et téléverser à nouveau la pièce jointe."
   },
   "fix": {
     "message": "Réparer",
@@ -5429,8 +5463,8 @@
       }
     }
   },
-  "exportingOrganizationVaultDescription": {
-    "message": "Seul le coffre de l'organisation associé à $ORGANIZATION$ sera exporté. Les éléments du coffre personnel et les éléments d'autres organisations ne seront pas inclus.",
+  "exportingOrganizationVaultDesc": {
+    "message": "Seul le coffre d'organisation associé à $ORGANIZATION$ sera exporté. Les éléments dans les coffres individuels ou d'autres organisations ne seront pas inclus.",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -6802,16 +6836,11 @@
   "enforceOnLoginDesc": {
     "message": "Exiger que les membres existants changent leurs mots de passe"
   },
-  "region": {
-    "message": "Région"
+  "usDomain": {
+    "message": "bitwarden.com"
   },
-  "eu": {
-    "message": "EU",
-    "description": "European Union"
-  },
-  "us": {
-    "message": "US",
-    "description": "United States"
+  "euDomain": {
+    "message": "bitwarden.eu"
   },
   "smProjectDeleteAccessRestricted": {
     "message": "Vous n'avez pas les droits pour supprimer ce projet",
@@ -7023,15 +7052,20 @@
   "additionalServiceAccounts": {
     "message": "Comptes de service supplémentaires"
   },
-  "additionalServiceAccountsDesc": {
-    "message": "Votre plan inclut $COUNT$ comptes de service. Vous pouvez ajouter des comptes de service supplémentaires pour $COST$ par mois.",
+  "includedServiceAccounts": {
+    "message": "Votre forfait inclut $COUNT$ comptes de service.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "50"
-      },
+      }
+    }
+  },
+  "addAdditionalServiceAccounts": {
+    "message": "Vous pouvez ajouter des comptes de service supplémentaires pour $COST$ par mois.",
+    "placeholders": {
       "cost": {
-        "content": "$2",
+        "content": "$1",
         "example": "$0.50"
       }
     }
@@ -7059,5 +7093,24 @@
   },
   "maxServiceAccountCost": {
     "message": "Coût potentiel maximum du compte de service"
+  },
+  "smBetaEndedDesc": {
+    "message": "Le Secrets Manager Beta s'est terminé le $BETA_ENDING_DATE$.  Il vous reste $DAYS$ jours pour ajouter Secrets Manager à votre forfait payant et conserver votre accès à vos données de Secrets Manager.  Contactez Customer Success pour ajouter Secrets Manager à votre forfait.",
+    "placeholders": {
+      "beta_ending_date": {
+        "content": "$1",
+        "example": "August 1, 2023"
+      },
+      "days": {
+        "content": "$2",
+        "example": "11"
+      }
+    }
+  },
+  "betaEnding": {
+    "message": "Fin de la beta"
+  },
+  "beta": {
+    "message": "Beta"
   }
 }

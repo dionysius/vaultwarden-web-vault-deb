@@ -711,11 +711,17 @@
   "unexpectedError": {
     "message": "Възникна неочаквана грешка."
   },
+  "expirationDateError": {
+    "message": "Моля, изберете дата на давност, която е в бъдещето."
+  },
   "emailAddress": {
     "message": "Адрес на електронната поща"
   },
   "yourVaultIsLocked": {
     "message": "Трезорът е заключен — въведете главната си парола, за да продължите."
+  },
+  "uuid": {
+    "message": "UUID"
   },
   "unlock": {
     "message": "Отключване"
@@ -947,6 +953,9 @@
   },
   "copyVerificationCode": {
     "message": "Копиране на кода за потвърждаване"
+  },
+  "copyUuid": {
+    "message": "Copy UUID"
   },
   "warning": {
     "message": "Внимание"
@@ -1283,6 +1292,31 @@
   },
   "importEncKeyError": {
     "message": "Грешка при дешифрирането на изнесения файл. Ключът за шифриране не отговаря на този, който е използван за изнасянето на данните."
+  },
+  "importDestination": {
+    "message": "Място на внасяне"
+  },
+  "learnAboutImportOptions": {
+    "message": "Научете повече относно възможностите за внасяне"
+  },
+  "selectImportFolder": {
+    "message": "Изберете папка"
+  },
+  "selectImportCollection": {
+    "message": "Изберете колекция"
+  },
+  "importTargetHint": {
+    "message": "Изберете тази опция, ако искате съдържанието на внесения файл да бъде преместено в $DESTINATION$",
+    "description": "Located as a hint under the import target. Will be appended by either folder or collection, depending if the user is importing into an individual or an organizational vault.",
+    "placeholders": {
+      "destination": {
+        "content": "$1",
+        "example": "folder or collection"
+      }
+    }
+  },
+  "importUnassignedItemsError": {
+    "message": "Файлът съдържа невъзложени елементи."
   },
   "selectFormat": {
     "message": "Избор на форма̀та на файла за внасяне"
@@ -3590,8 +3624,8 @@
   "attachmentsNeedFix": {
     "message": "Този запис съдържа стар, прикачен файл, който трябва да бъде поправен. Натиснете, за да научите повече."
   },
-  "attachmentFixDesc": {
-    "message": "Този прикачен файл е стар и трябва да бъде поправен. Натиснете, за да научите повече."
+  "attachmentFixDescription": {
+    "message": "Този прикачен файл използва остарял метод на шифроване. Избирете „Поправяне“ за да го свалите, пре-шифровате и качите отново."
   },
   "fix": {
     "message": "Поправяне",
@@ -4705,7 +4739,7 @@
     "message": "Грешка"
   },
   "accountRecoveryManageUsers": {
-    "message": "Manage users must also be granted with the manage account recovery permission"
+    "message": "Управлението на потребителите трябва да бъде дадено заедно с разрешението за Управление на възстановяването на регистрации"
   },
   "setupProvider": {
     "message": "Настройка на доставчика"
@@ -5429,8 +5463,8 @@
       }
     }
   },
-  "exportingOrganizationVaultDescription": {
-    "message": "Ще бъдат изнесени само записите от трезора свързан с $ORGANIZATION$. Записите в личния трезор и тези в други организации няма да бъдат включени.",
+  "exportingOrganizationVaultDesc": {
+    "message": "Ще бъдат изнесени само записите от трезора свързан с $ORGANIZATION$. Записите в отделните лични трезори и тези в други организации няма да бъдат включени.",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -6802,16 +6836,11 @@
   "enforceOnLoginDesc": {
     "message": "Задължаване на текущите членове да сменят паролите си"
   },
-  "region": {
-    "message": "Регион"
+  "usDomain": {
+    "message": "bitwarden.com"
   },
-  "eu": {
-    "message": "ЕС",
-    "description": "European Union"
-  },
-  "us": {
-    "message": "САЩ",
-    "description": "United States"
+  "euDomain": {
+    "message": "bitwarden.eu"
   },
   "smProjectDeleteAccessRestricted": {
     "message": "Нямате право за изтриване на този проект",
@@ -7023,15 +7052,20 @@
   "additionalServiceAccounts": {
     "message": "Допълнителни сервизни акаунти"
   },
-  "additionalServiceAccountsDesc": {
-    "message": "Планът Ви включва $COUNT$ сервизни акаунта. Можете да добавите още за $COST$ на месец.",
+  "includedServiceAccounts": {
+    "message": "В плана Ви са включени $COUNT$ сервизни акаунта.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "50"
-      },
+      }
+    }
+  },
+  "addAdditionalServiceAccounts": {
+    "message": "Може да добавите още сервизни акаунти за $COST$ на месец.",
+    "placeholders": {
       "cost": {
-        "content": "$2",
+        "content": "$1",
         "example": "$0.50"
       }
     }
@@ -7059,5 +7093,24 @@
   },
   "maxServiceAccountCost": {
     "message": "Максимална възможна цена за сервизни акаунти"
+  },
+  "smBetaEndedDesc": {
+    "message": "Бета-версията на Управлението на тайни приключи на $BETA_ENDING_DATE$. Остават $DAYS$ дни да добавите Управлението на тайни към своя платен абонамент, за да запазите достъпа си до създадените данни. Свържете се с поддръжката, ако искате да добавите Управлението на тайни към абонамента си.",
+    "placeholders": {
+      "beta_ending_date": {
+        "content": "$1",
+        "example": "August 1, 2023"
+      },
+      "days": {
+        "content": "$2",
+        "example": "11"
+      }
+    }
+  },
+  "betaEnding": {
+    "message": "Бета-версията приключва"
+  },
+  "beta": {
+    "message": "Бета"
   }
 }

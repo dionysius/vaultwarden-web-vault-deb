@@ -711,11 +711,17 @@
   "unexpectedError": {
     "message": "Er is een onverwachte fout opgetreden."
   },
+  "expirationDateError": {
+    "message": "Kies een vervaldatum in de toekomst."
+  },
   "emailAddress": {
     "message": "E-mailadres"
   },
   "yourVaultIsLocked": {
     "message": "Je kluis is vergrendeld. Voer je hoofdwachtwoord in om door te gaan."
+  },
+  "uuid": {
+    "message": "UUID"
   },
   "unlock": {
     "message": "Ontgrendelen"
@@ -947,6 +953,9 @@
   },
   "copyVerificationCode": {
     "message": "Verificatiecode kopiëren"
+  },
+  "copyUuid": {
+    "message": "UUID kopiëren"
   },
   "warning": {
     "message": "Waarschuwing"
@@ -1283,6 +1292,31 @@
   },
   "importEncKeyError": {
     "message": "Fout bij het decoderen van het geëxporteerde bestand. Je encryptiesleutel komt niet overeen met de gebruikte sleutel waarmee de gegevens zijn geëxporteerd."
+  },
+  "importDestination": {
+    "message": "Importbestemming"
+  },
+  "learnAboutImportOptions": {
+    "message": "Leer meer over je importopties"
+  },
+  "selectImportFolder": {
+    "message": "Map selecteren"
+  },
+  "selectImportCollection": {
+    "message": "Collectie selecteren"
+  },
+  "importTargetHint": {
+    "message": "Kies deze optie als je de geïmporteerde bestandsinhoud wilt verplaatsen naar een $DESTINATION$",
+    "description": "Located as a hint under the import target. Will be appended by either folder or collection, depending if the user is importing into an individual or an organizational vault.",
+    "placeholders": {
+      "destination": {
+        "content": "$1",
+        "example": "folder or collection"
+      }
+    }
+  },
+  "importUnassignedItemsError": {
+    "message": "Bestand bevat niet-toegewezen items."
   },
   "selectFormat": {
     "message": "Selecteer het formaat van het importbestand"
@@ -3590,8 +3624,8 @@
   "attachmentsNeedFix": {
     "message": "Dit item heeft oude bestandsbijlagen die aangepast moeten worden."
   },
-  "attachmentFixDesc": {
-    "message": "Dit is een oude bestandsbijlage die moet worden aangepast. Klik voor meer informatie."
+  "attachmentFixDescription": {
+    "message": "This attachment uses outdated encryption. Select 'Fix' to download, re-encrypt, and re-upload the attachment."
   },
   "fix": {
     "message": "Oplossen",
@@ -5429,7 +5463,7 @@
       }
     }
   },
-  "exportingOrganizationVaultDescription": {
+  "exportingOrganizationVaultDesc": {
     "message": "Exporteert alleen de organisatiekluis van $ORGANIZATION$. Geen persoonlijke kluis-items of items van andere organisaties.",
     "placeholders": {
       "organization": {
@@ -6802,16 +6836,11 @@
   "enforceOnLoginDesc": {
     "message": "Verplicht bestaande leden hun wachtwoord te wijzigen"
   },
-  "region": {
-    "message": "Regio"
+  "usDomain": {
+    "message": "bitwarden.com"
   },
-  "eu": {
-    "message": "EU",
-    "description": "European Union"
-  },
-  "us": {
-    "message": "VS",
-    "description": "United States"
+  "euDomain": {
+    "message": "bitwarden.eu"
   },
   "smProjectDeleteAccessRestricted": {
     "message": "Je hebt geen rechten om dit project te verwijderen",
@@ -7023,15 +7052,20 @@
   "additionalServiceAccounts": {
     "message": "Extra service accounts"
   },
-  "additionalServiceAccountsDesc": {
-    "message": "Bij je abonnement zijn $COUNT$ service accounts ingegrepen. Je kunt meer service accounts toevoegen voor $COST$ per maand.",
+  "includedServiceAccounts": {
+    "message": "Bij je abonnement horen $COUNT$ serviceaccounts.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "50"
-      },
+      }
+    }
+  },
+  "addAdditionalServiceAccounts": {
+    "message": "Je kunt extra serviceaccounts toevoegen voor $COST$ per maand.",
+    "placeholders": {
       "cost": {
-        "content": "$2",
+        "content": "$1",
         "example": "$0.50"
       }
     }
@@ -7059,5 +7093,24 @@
   },
   "maxServiceAccountCost": {
     "message": "Max potential service account cost"
+  },
+  "smBetaEndedDesc": {
+    "message": "De Secrets Manager Beta eindigde $BETA_ENDING_DATE$. Je hebt nog $DAYS$ dagen over voor het toevoegen van Secrets Manager aan je betaalde abonnement en toegang te houden tot de gegevens in Secrets Manager. Neem contact op met Customer Success voor het toevoegen van Secrets Manager aan je abonnement.",
+    "placeholders": {
+      "beta_ending_date": {
+        "content": "$1",
+        "example": "August 1, 2023"
+      },
+      "days": {
+        "content": "$2",
+        "example": "11"
+      }
+    }
+  },
+  "betaEnding": {
+    "message": "Beta beëindigd"
+  },
+  "beta": {
+    "message": "Beta"
   }
 }

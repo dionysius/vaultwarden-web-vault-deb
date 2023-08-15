@@ -711,11 +711,17 @@
   "unexpectedError": {
     "message": "Wystąpił nieoczekiwany błąd."
   },
+  "expirationDateError": {
+    "message": "Wybierz datę wygaśnięcia, która przypada w przyszłości."
+  },
   "emailAddress": {
     "message": "Adres e-mail"
   },
   "yourVaultIsLocked": {
     "message": "Sejf jest zablokowany. Wpisz hasło główne, aby kontynuować."
+  },
+  "uuid": {
+    "message": "UUID"
   },
   "unlock": {
     "message": "Odblokuj"
@@ -947,6 +953,9 @@
   },
   "copyVerificationCode": {
     "message": "Kopiuj kod weryfikacyjny"
+  },
+  "copyUuid": {
+    "message": "Skopiuj UUID"
   },
   "warning": {
     "message": "Ostrzeżenie"
@@ -1283,6 +1292,31 @@
   },
   "importEncKeyError": {
     "message": "Wystąpił błąd podczas odszyfrowywania pliku. Klucz szyfrowania nie pasuje do klucza użytego podczas eksportowania danych."
+  },
+  "importDestination": {
+    "message": "Miejsce docelowe importu"
+  },
+  "learnAboutImportOptions": {
+    "message": "Dowiedz się o opcjach importu"
+  },
+  "selectImportFolder": {
+    "message": "Wybierz folder"
+  },
+  "selectImportCollection": {
+    "message": "Wybierz kolekcję"
+  },
+  "importTargetHint": {
+    "message": "Wybierz tę opcję, jeśli chcesz, aby zawartość zaimportowanego pliku została przeniesiona do $DESTINATION$",
+    "description": "Located as a hint under the import target. Will be appended by either folder or collection, depending if the user is importing into an individual or an organizational vault.",
+    "placeholders": {
+      "destination": {
+        "content": "$1",
+        "example": "folder or collection"
+      }
+    }
+  },
+  "importUnassignedItemsError": {
+    "message": "Plik zawiera nieprzypisane elementy."
   },
   "selectFormat": {
     "message": "Wybierz format importowanego pliku"
@@ -3590,8 +3624,8 @@
   "attachmentsNeedFix": {
     "message": "Ten element posiada stare załączniki, które muszą zostać naprawione."
   },
-  "attachmentFixDesc": {
-    "message": "To jest stary załącznik, który musi zostać naprawiony. Kliknij, aby dowiedzieć się więcej."
+  "attachmentFixDescription": {
+    "message": "Ten załącznik używa przestarzałego szyfrowania. Wybierz 'Napraw', aby pobrać, ponownie zaszyfrować i ponownie przesłać załącznik."
   },
   "fix": {
     "message": "Napraw",
@@ -5429,8 +5463,8 @@
       }
     }
   },
-  "exportingOrganizationVaultDescription": {
-    "message": "Tylko sejf organizacji powiązany z organizacją $ORGANIZATION$ zostanie wyeksportowany. Osobiste elementy sejfu i elementy innych organizacji nie będą uwzględnione.",
+  "exportingOrganizationVaultDesc": {
+    "message": "Tylko sejf organizacji powiązany z $ORGANIZATION$ zostanie wyeksportowany. Pozycje w poszczególnych sejfach lub innych organizacji nie będą uwzględnione.",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -6802,16 +6836,11 @@
   "enforceOnLoginDesc": {
     "message": "Wymagaj od istniejących członków zmiany haseł"
   },
-  "region": {
-    "message": "Region"
+  "usDomain": {
+    "message": "bitwarden.com"
   },
-  "eu": {
-    "message": "UE",
-    "description": "European Union"
-  },
-  "us": {
-    "message": "US",
-    "description": "United States"
+  "euDomain": {
+    "message": "bitwarden.eu"
   },
   "smProjectDeleteAccessRestricted": {
     "message": "Nie masz uprawnień do usunięcia tego projektu",
@@ -7023,15 +7052,20 @@
   "additionalServiceAccounts": {
     "message": "Dodatkowe konto serwisowe"
   },
-  "additionalServiceAccountsDesc": {
-    "message": "W twoim planie możesz mieć $COUNT$ kont(a) serwisowe. Możesz dodać dodatkowe konta serwisowe za $COST$ miesięcznie.",
+  "includedServiceAccounts": {
+    "message": "Twój plan obejmuje $COUNT$ kont serwisowych.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "50"
-      },
+      }
+    }
+  },
+  "addAdditionalServiceAccounts": {
+    "message": "Możesz dodać dodatkowe konta serwisowe za $COST$ miesięcznie.",
+    "placeholders": {
       "cost": {
-        "content": "$2",
+        "content": "$1",
         "example": "$0.50"
       }
     }
@@ -7059,5 +7093,24 @@
   },
   "maxServiceAccountCost": {
     "message": "Maksymalny potencjalny koszt kont serwisowych"
+  },
+  "smBetaEndedDesc": {
+    "message": "Wersja beta menedżera sekretów zakończyła się dnia $BETA_ENDING_DATE$. Pozostało Ci $DAYS$ dni, aby dodać menedżera sekretów do swojej płatnej subskrypcji i zachować dostęp do danych menedżera sekretów. Skontaktuj się z obsługą klienta, aby dodać menedżera sekretów do swojej subskrypcji.",
+    "placeholders": {
+      "beta_ending_date": {
+        "content": "$1",
+        "example": "August 1, 2023"
+      },
+      "days": {
+        "content": "$2",
+        "example": "11"
+      }
+    }
+  },
+  "betaEnding": {
+    "message": "Zakończenie testowania bety"
+  },
+  "beta": {
+    "message": "Wersja beta"
   }
 }
