@@ -326,7 +326,15 @@ export class ImportComponent implements OnInit, OnDestroy {
 
   private getFileContents(file: File): Promise<string> {
     if (this.format === "1password1pux") {
-      return this.extract1PuxContent(file);
+      return this.extractZipContent(file, "export.data");
+    }
+    if (
+      this.format === "protonpass" &&
+      (file.type === "application/zip" ||
+        file.type == "application/x-zip-compressed" ||
+        file.name.endsWith(".zip"))
+    ) {
+      return this.extractZipContent(file, "Proton Pass/data.json");
     }
 
     return new Promise((resolve, reject) => {
@@ -353,11 +361,11 @@ export class ImportComponent implements OnInit, OnDestroy {
     });
   }
 
-  private extract1PuxContent(file: File): Promise<string> {
+  private extractZipContent(zipFile: File, contentFilePath: string): Promise<string> {
     return new JSZip()
-      .loadAsync(file)
+      .loadAsync(zipFile)
       .then((zip) => {
-        return zip.file("export.data").async("string");
+        return zip.file(contentFilePath).async("string");
       })
       .then(
         function success(content) {

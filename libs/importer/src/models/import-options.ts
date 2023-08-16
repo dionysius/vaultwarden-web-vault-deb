@@ -27,6 +27,7 @@ export const regularImportOptions = [
   // { id: "keeperjson", name: "Keeper (json)" },
   { id: "enpasscsv", name: "Enpass (csv)" },
   { id: "enpassjson", name: "Enpass (json)" },
+  { id: "protonpass", name: "ProtonPass (zip/json)" },
   { id: "safeincloudxml", name: "SafeInCloud (xml)" },
   { id: "pwsafexml", name: "Password Safe (xml)" },
   { id: "stickypasswordxml", name: "Sticky Password (xml)" },
