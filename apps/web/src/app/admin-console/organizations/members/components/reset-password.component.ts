@@ -10,7 +10,6 @@ import {
 import { Subject, takeUntil } from "rxjs";
 import zxcvbn from "zxcvbn";
 
-import { DialogServiceAbstraction, SimpleDialogType } from "@bitwarden/angular/services/dialog";
 import { PasswordStrengthComponent } from "@bitwarden/angular/shared/components/password-strength/password-strength.component";
 import { OrganizationUserService } from "@bitwarden/common/abstractions/organization-user/organization-user.service";
 import { OrganizationUserResetPasswordRequest } from "@bitwarden/common/abstractions/organization-user/requests";
@@ -25,6 +24,7 @@ import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { EncString } from "@bitwarden/common/platform/models/domain/enc-string";
 import { SymmetricCryptoKey } from "@bitwarden/common/platform/models/domain/symmetric-crypto-key";
 import { PasswordGenerationServiceAbstraction } from "@bitwarden/common/tools/generator/password";
+import { DialogService } from "@bitwarden/components";
 
 @Component({
   selector: "app-reset-password",
@@ -54,7 +54,7 @@ export class ResetPasswordComponent implements OnInit, OnDestroy {
     private cryptoService: CryptoService,
     private logService: LogService,
     private organizationUserService: OrganizationUserService,
-    private dialogService: DialogServiceAbstraction
+    private dialogService: DialogService
   ) {}
 
   async ngOnInit() {
@@ -140,7 +140,7 @@ export class ResetPasswordComponent implements OnInit, OnDestroy {
       const result = await this.dialogService.openSimpleDialog({
         title: { key: "weakMasterPassword" },
         content: { key: "weakMasterPasswordDesc" },
-        type: SimpleDialogType.WARNING,
+        type: "warning",
       });
 
       if (!result) {

@@ -3,7 +3,6 @@ import { Router } from "@angular/router";
 import { firstValueFrom } from "rxjs";
 
 import { ChangePasswordComponent as BaseChangePasswordComponent } from "@bitwarden/angular/auth/components/change-password.component";
-import { DialogServiceAbstraction, SimpleDialogType } from "@bitwarden/angular/services/dialog";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { AuditService } from "@bitwarden/common/abstractions/audit.service";
 import { OrganizationUserService } from "@bitwarden/common/abstractions/organization-user/organization-user.service";
@@ -32,6 +31,7 @@ import { FolderService } from "@bitwarden/common/vault/abstractions/folder/folde
 import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
 import { CipherWithIdRequest } from "@bitwarden/common/vault/models/request/cipher-with-id.request";
 import { FolderWithIdRequest } from "@bitwarden/common/vault/models/request/folder-with-id.request";
+import { DialogService } from "@bitwarden/components";
 
 @Component({
   selector: "app-change-password",
@@ -63,7 +63,7 @@ export class ChangePasswordComponent extends BaseChangePasswordComponent {
     private router: Router,
     private organizationApiService: OrganizationApiServiceAbstraction,
     private organizationUserService: OrganizationUserService,
-    dialogService: DialogServiceAbstraction
+    dialogService: DialogService
   ) {
     super(
       i18nService,
@@ -107,7 +107,7 @@ export class ChangePasswordComponent extends BaseChangePasswordComponent {
           content: { key: "oldAttachmentsNeedFixDesc" },
           acceptButtonText: { key: "learnMore" },
           cancelButtonText: { key: "close" },
-          type: SimpleDialogType.WARNING,
+          type: "warning",
         });
 
         if (learnMore) {
@@ -127,7 +127,7 @@ export class ChangePasswordComponent extends BaseChangePasswordComponent {
           this.i18nService.t("updateEncryptionKeyExportWarning") +
           " " +
           this.i18nService.t("rotateEncKeyConfirmation"),
-        type: SimpleDialogType.WARNING,
+        type: "warning",
       });
 
       if (!result) {

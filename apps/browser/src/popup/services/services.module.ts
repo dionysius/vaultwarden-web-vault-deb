@@ -2,7 +2,6 @@ import { APP_INITIALIZER, LOCALE_ID, NgModule } from "@angular/core";
 
 import { LockGuard as BaseLockGuardService } from "@bitwarden/angular/auth/guards/lock.guard";
 import { UnauthGuard as BaseUnauthGuardService } from "@bitwarden/angular/auth/guards/unauth.guard";
-import { DialogServiceAbstraction } from "@bitwarden/angular/services/dialog";
 import { MEMORY_STORAGE, SECURE_STORAGE } from "@bitwarden/angular/services/injection-tokens";
 import { JslibServicesModule } from "@bitwarden/angular/services/jslib-services.module";
 import { ThemingService } from "@bitwarden/angular/services/theming/theming.service";
@@ -80,6 +79,7 @@ import {
 import { PasswordRepromptService as PasswordRepromptServiceAbstraction } from "@bitwarden/common/vault/abstractions/password-reprompt.service";
 import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
 import { FolderApiService } from "@bitwarden/common/vault/services/folder/folder-api.service";
+import { DialogService } from "@bitwarden/components";
 import { VaultExportServiceAbstraction } from "@bitwarden/exporter/vault-export";
 
 import { BrowserOrganizationService } from "../../admin-console/services/browser-organization.service";
@@ -103,7 +103,6 @@ import { PasswordRepromptService } from "../../vault/popup/services/password-rep
 import { BrowserFolderService } from "../../vault/services/browser-folder.service";
 import { VaultFilterService } from "../../vault/services/vault-filter.service";
 
-import { BrowserDialogService } from "./browser-dialog.service";
 import { DebounceNavigationService } from "./debounceNavigationService";
 import { InitService } from "./init.service";
 import { PopupSearchService } from "./popup-search.service";
@@ -133,6 +132,7 @@ function getBgService<T>(service: keyof MainBackground) {
   providers: [
     InitService,
     DebounceNavigationService,
+    DialogService,
     {
       provide: LOCALE_ID,
       useFactory: () => getBgService<I18nServiceAbstraction>("i18nService")().translationLocale,
@@ -501,10 +501,6 @@ function getBgService<T>(service: keyof MainBackground) {
         AuthServiceAbstraction,
         EnvironmentService,
       ],
-    },
-    {
-      provide: DialogServiceAbstraction,
-      useClass: BrowserDialogService,
     },
   ],
 })

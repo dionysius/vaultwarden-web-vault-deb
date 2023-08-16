@@ -5,6 +5,7 @@
       "@bitwarden/angular/*": ["../angular/src/*"],
       "@bitwarden/auth": ["../auth/src/*"],
       "@bitwarden/common/*": ["../common/src/*"],
+      "@bitwarden/components": ["../components/src"],
       "@bitwarden/exporter/*": ["../exporter/src/*"],
       "@bitwarden/importer": ["../importer/src"],
       "@bitwarden/node/*": ["../node/src/*"]

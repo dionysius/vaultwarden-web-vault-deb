@@ -3,7 +3,6 @@ import { Component, OnDestroy, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { concatMap, Subject, takeUntil } from "rxjs";
 
-import { DialogServiceAbstraction, SimpleDialogType } from "@bitwarden/angular/services/dialog";
 import { ModalConfig, ModalService } from "@bitwarden/angular/services/modal.service";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { OrganizationApiServiceAbstraction } from "@bitwarden/common/admin-console/abstractions/organization/organization-api.service.abstraction";
@@ -19,6 +18,7 @@ import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.servic
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
+import { DialogService } from "@bitwarden/components";
 
 import {
   BillingSyncApiKeyComponent,
@@ -61,7 +61,7 @@ export class OrganizationSubscriptionCloudComponent implements OnInit, OnDestroy
     private organizationService: OrganizationService,
     private organizationApiService: OrganizationApiServiceAbstraction,
     private route: ActivatedRoute,
-    private dialogService: DialogServiceAbstraction,
+    private dialogService: DialogService,
     private configService: ConfigServiceAbstraction,
     private datePipe: DatePipe
   ) {}
@@ -279,7 +279,7 @@ export class OrganizationSubscriptionCloudComponent implements OnInit, OnDestroy
     const confirmed = await this.dialogService.openSimpleDialog({
       title: { key: "cancelSubscription" },
       content: { key: "cancelConfirmation" },
-      type: SimpleDialogType.WARNING,
+      type: "warning",
     });
 
     if (!confirmed) {
@@ -307,7 +307,7 @@ export class OrganizationSubscriptionCloudComponent implements OnInit, OnDestroy
     const confirmed = await this.dialogService.openSimpleDialog({
       title: { key: "reinstateSubscription" },
       content: { key: "reinstateConfirmation" },
-      type: SimpleDialogType.WARNING,
+      type: "warning",
     });
 
     if (!confirmed) {
@@ -379,7 +379,7 @@ export class OrganizationSubscriptionCloudComponent implements OnInit, OnDestroy
       title: { key: "removeSponsorship" },
       content: { key: "removeSponsorshipConfirmation" },
       acceptButtonText: { key: "remove" },
-      type: SimpleDialogType.WARNING,
+      type: "warning",
     });
 
     if (!confirmed) {

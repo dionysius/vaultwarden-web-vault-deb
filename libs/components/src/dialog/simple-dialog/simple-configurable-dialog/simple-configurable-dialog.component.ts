@@ -2,37 +2,30 @@ import { DialogRef, DIALOG_DATA } from "@angular/cdk/dialog";
 import { Component, Inject } from "@angular/core";
 import { FormGroup } from "@angular/forms";
 
-import {
-  SimpleDialogType,
-  SimpleDialogCloseType,
-  Translation,
-} from "@bitwarden/angular/services/dialog";
-import { SimpleDialogOptions } from "@bitwarden/angular/services/dialog/simple-dialog-options";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 
+import { SimpleDialogOptions, SimpleDialogType, Translation } from "../..";
+
 const DEFAULT_ICON: Record<SimpleDialogType, string> = {
-  [SimpleDialogType.PRIMARY]: "bwi-business",
-  [SimpleDialogType.SUCCESS]: "bwi-star",
-  [SimpleDialogType.INFO]: "bwi-info-circle",
-  [SimpleDialogType.WARNING]: "bwi-exclamation-triangle",
-  [SimpleDialogType.DANGER]: "bwi-error",
+  primary: "bwi-business",
+  success: "bwi-star",
+  info: "bwi-info-circle",
+  warning: "bwi-exclamation-triangle",
+  danger: "bwi-error",
 };
 
 const DEFAULT_COLOR: Record<SimpleDialogType, string> = {
-  [SimpleDialogType.PRIMARY]: "tw-text-primary-500",
-  [SimpleDialogType.SUCCESS]: "tw-text-success",
-  [SimpleDialogType.INFO]: "tw-text-info",
-  [SimpleDialogType.WARNING]: "tw-text-warning",
-  [SimpleDialogType.DANGER]: "tw-text-danger",
+  primary: "tw-text-primary-500",
+  success: "tw-text-success",
+  info: "tw-text-info",
+  warning: "tw-text-warning",
+  danger: "tw-text-danger",
 };
 
 @Component({
   templateUrl: "./simple-configurable-dialog.component.html",
 })
 export class SimpleConfigurableDialogComponent {
-  protected SimpleDialogType = SimpleDialogType;
-  protected SimpleDialogCloseType = SimpleDialogCloseType;
-
   get iconClasses() {
     return [
       this.simpleDialogOpts.icon ?? DEFAULT_ICON[this.simpleDialogOpts.type],
@@ -61,7 +54,7 @@ export class SimpleConfigurableDialogComponent {
       await this.simpleDialogOpts.acceptAction();
     }
 
-    this.dialogRef.close(SimpleDialogCloseType.ACCEPT);
+    this.dialogRef.close(true);
   };
 
   private localizeText() {

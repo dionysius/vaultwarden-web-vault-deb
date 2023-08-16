@@ -1,5 +1,7 @@
-import { SimpleDialogType } from "./simple-dialog-type.enum";
-import { Translation } from "./translation";
+export interface Translation {
+  key: string;
+  placeholders?: Array<string | number>;
+}
 
 // Using type lets devs skip optional params w/out having to pass undefined.
 /**
@@ -55,3 +57,5 @@ export type SimpleDialogOptions = {
    */
   acceptAction?: () => Promise<void>;
 };
+
+export type SimpleDialogType = "primary" | "success" | "info" | "warning" | "danger";

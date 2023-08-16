@@ -3,7 +3,6 @@ import { ActivatedRoute, Router } from "@angular/router";
 import { ipcRenderer } from "electron";
 
 import { LockComponent as BaseLockComponent } from "@bitwarden/angular/auth/components/lock.component";
-import { DialogServiceAbstraction, SimpleDialogType } from "@bitwarden/angular/services/dialog";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { VaultTimeoutService } from "@bitwarden/common/abstractions/vaultTimeout/vaultTimeout.service";
 import { VaultTimeoutSettingsService } from "@bitwarden/common/abstractions/vaultTimeout/vaultTimeoutSettings.service";
@@ -19,6 +18,7 @@ import { LogService } from "@bitwarden/common/platform/abstractions/log.service"
 import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { PasswordStrengthServiceAbstraction } from "@bitwarden/common/tools/password-strength";
+import { DialogService } from "@bitwarden/components";
 
 import { ElectronStateService } from "../platform/services/electron-state.service.abstraction";
 import { BiometricStorageAction, BiometricMessage } from "../types/biometric-message";
@@ -52,7 +52,7 @@ export class LockComponent extends BaseLockComponent {
     passwordStrengthService: PasswordStrengthServiceAbstraction,
     logService: LogService,
     keyConnectorService: KeyConnectorService,
-    dialogService: DialogServiceAbstraction
+    dialogService: DialogService
   ) {
     super(
       router,
@@ -155,7 +155,7 @@ export class LockComponent extends BaseLockComponent {
       const response = await this.dialogService.openSimpleDialog({
         title: { key: "windowsBiometricUpdateWarningTitle" },
         content: { key: "windowsBiometricUpdateWarning" },
-        type: SimpleDialogType.WARNING,
+        type: "warning",
       });
 
       await this.stateService.setBiometricRequirePasswordOnStart(response);

@@ -4,15 +4,15 @@ import { Meta, StoryObj, moduleMetadata } from "@storybook/angular";
 
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 
-import { ButtonModule } from "../button";
-import { IconButtonModule } from "../icon-button";
-import { SharedModule } from "../shared/shared.module";
-import { I18nMockService } from "../utils/i18n-mock.service";
+import { ButtonModule } from "../../button";
+import { IconButtonModule } from "../../icon-button";
+import { SharedModule } from "../../shared/shared.module";
+import { I18nMockService } from "../../utils/i18n-mock.service";
+import { DialogService } from "../dialog.service";
+import { DialogCloseDirective } from "../directives/dialog-close.directive";
+import { DialogTitleContainerDirective } from "../directives/dialog-title-container.directive";
 
-import { DialogService } from "./dialog.service";
-import { DialogCloseDirective } from "./directives/dialog-close.directive";
-import { DialogTitleContainerDirective } from "./directives/dialog-title-container.directive";
-import { SimpleDialogComponent } from "./simple-dialog/simple-dialog.component";
+import { SimpleDialogComponent } from "./simple-dialog.component";
 
 interface Animal {
   animal: string;

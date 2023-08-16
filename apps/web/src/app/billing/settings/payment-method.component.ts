@@ -2,7 +2,6 @@ import { Component, OnInit, ViewChild } from "@angular/core";
 import { FormBuilder, FormControl, Validators } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
 
-import { DialogServiceAbstraction, SimpleDialogType } from "@bitwarden/angular/services/dialog";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { OrganizationApiServiceAbstraction } from "@bitwarden/common/admin-console/abstractions/organization/organization-api.service.abstraction";
 import { OrganizationResponse } from "@bitwarden/common/admin-console/models/response/organization.response";
@@ -12,6 +11,7 @@ import { VerifyBankRequest } from "@bitwarden/common/models/request/verify-bank.
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
+import { DialogService } from "@bitwarden/components";
 
 import { TaxInfoComponent } from "./tax-info.component";
 
@@ -57,7 +57,7 @@ export class PaymentMethodComponent implements OnInit {
     private logService: LogService,
     private route: ActivatedRoute,
     private formBuilder: FormBuilder,
-    private dialogService: DialogServiceAbstraction
+    private dialogService: DialogService
   ) {}
 
   async ngOnInit() {
@@ -100,7 +100,7 @@ export class PaymentMethodComponent implements OnInit {
         content: { key: "cannotPerformInAppPurchase" },
         acceptButtonText: { key: "ok" },
         cancelButtonText: null,
-        type: SimpleDialogType.WARNING,
+        type: "warning",
       });
 
       return;
@@ -122,7 +122,7 @@ export class PaymentMethodComponent implements OnInit {
         content: { key: "cannotPerformInAppPurchase" },
         acceptButtonText: { key: "ok" },
         cancelButtonText: null,
-        type: SimpleDialogType.WARNING,
+        type: "warning",
       });
 
       return;

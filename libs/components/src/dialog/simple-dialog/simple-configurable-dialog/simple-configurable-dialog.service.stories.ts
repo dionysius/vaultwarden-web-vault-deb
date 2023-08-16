@@ -1,17 +1,13 @@
 import { Component } from "@angular/core";
 import { Meta, StoryObj, applicationConfig, moduleMetadata } from "@storybook/angular";
 
-import {
-  SimpleDialogType,
-  SimpleDialogOptions,
-  DialogServiceAbstraction,
-} from "@bitwarden/angular/services/dialog";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 
-import { ButtonModule } from "../../button";
-import { CalloutModule } from "../../callout";
-import { I18nMockService } from "../../utils/i18n-mock.service";
-import { DialogModule } from "../dialog.module";
+import { SimpleDialogOptions, DialogService } from "../..";
+import { ButtonModule } from "../../../button";
+import { CalloutModule } from "../../../callout";
+import { I18nMockService } from "../../../utils/i18n-mock.service";
+import { DialogModule } from "../../dialog.module";
 
 @Component({
   template: `
@@ -41,27 +37,27 @@ class StoryDialogComponent {
         {
           title: this.i18nService.t("primaryTypeSimpleDialog"),
           content: this.i18nService.t("dialogContent"),
-          type: SimpleDialogType.PRIMARY,
+          type: "primary",
         },
         {
           title: this.i18nService.t("successTypeSimpleDialog"),
           content: this.i18nService.t("dialogContent"),
-          type: SimpleDialogType.SUCCESS,
+          type: "success",
         },
         {
           title: this.i18nService.t("infoTypeSimpleDialog"),
           content: this.i18nService.t("dialogContent"),
-          type: SimpleDialogType.INFO,
+          type: "info",
         },
         {
           title: this.i18nService.t("warningTypeSimpleDialog"),
           content: this.i18nService.t("dialogContent"),
-          type: SimpleDialogType.WARNING,
+          type: "warning",
         },
         {
           title: this.i18nService.t("dangerTypeSimpleDialog"),
           content: this.i18nService.t("dialogContent"),
-          type: SimpleDialogType.DANGER,
+          type: "danger",
         },
       ],
     },
@@ -71,21 +67,21 @@ class StoryDialogComponent {
         {
           title: this.i18nService.t("primaryTypeSimpleDialog"),
           content: this.i18nService.t("dialogContent"),
-          type: SimpleDialogType.PRIMARY,
+          type: "primary",
           acceptButtonText: "Ok",
           cancelButtonText: null,
         },
         {
           title: this.i18nService.t("primaryTypeSimpleDialog"),
           content: this.i18nService.t("dialogContent"),
-          type: SimpleDialogType.PRIMARY,
+          type: "primary",
           acceptButtonText: this.i18nService.t("accept"),
           cancelButtonText: this.i18nService.t("decline"),
         },
         {
           title: this.i18nService.t("primaryTypeSimpleDialog"),
           content: this.i18nService.t("dialogContent"),
-          type: SimpleDialogType.PRIMARY,
+          type: "primary",
           acceptButtonText: "Ok",
         },
       ],
@@ -96,7 +92,7 @@ class StoryDialogComponent {
         {
           title: this.i18nService.t("primaryTypeSimpleDialog"),
           content: this.i18nService.t("dialogContent"),
-          type: SimpleDialogType.PRIMARY,
+          type: "primary",
           icon: "bwi-family",
         },
       ],
@@ -107,7 +103,7 @@ class StoryDialogComponent {
         {
           title: this.i18nService.t("primaryTypeSimpleDialog"),
           content: this.i18nService.t("dialogContent"),
-          type: SimpleDialogType.PRIMARY,
+          type: "primary",
           disableClose: true,
         },
         {
@@ -116,7 +112,7 @@ class StoryDialogComponent {
           acceptAction: () => {
             return new Promise((resolve) => setTimeout(resolve, 10000));
           },
-          type: SimpleDialogType.PRIMARY,
+          type: "primary",
         },
       ],
     },
@@ -126,7 +122,7 @@ class StoryDialogComponent {
   calloutType = "info";
   dialogCloseResult: boolean;
 
-  constructor(public dialogService: DialogServiceAbstraction, private i18nService: I18nService) {}
+  constructor(public dialogService: DialogService, private i18nService: I18nService) {}
 
   async openSimpleConfigurableDialog(opts: SimpleDialogOptions) {
     this.dialogCloseResult = await this.dialogService.openSimpleDialog(opts);

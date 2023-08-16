@@ -18,8 +18,7 @@ import { SendTextView } from "@bitwarden/common/tools/send/models/view/send-text
 import { SendView } from "@bitwarden/common/tools/send/models/view/send.view";
 import { SendApiService } from "@bitwarden/common/tools/send/services/send-api.service.abstraction";
 import { SendService } from "@bitwarden/common/tools/send/services/send.service.abstraction";
-
-import { DialogServiceAbstraction, SimpleDialogType } from "../../services/dialog";
+import { DialogService } from "@bitwarden/components";
 
 @Directive()
 export class AddEditComponent implements OnInit, OnDestroy {
@@ -63,7 +62,7 @@ export class AddEditComponent implements OnInit, OnDestroy {
     private logService: LogService,
     protected stateService: StateService,
     protected sendApiService: SendApiService,
-    protected dialogService: DialogServiceAbstraction
+    protected dialogService: DialogService
   ) {
     this.typeOptions = [
       { name: i18nService.t("sendTypeFile"), value: SendType.File },
@@ -236,7 +235,7 @@ export class AddEditComponent implements OnInit, OnDestroy {
     const confirmed = await this.dialogService.openSimpleDialog({
       title: { key: "deleteSend" },
       content: { key: "deleteSendConfirmation" },
-      type: SimpleDialogType.WARNING,
+      type: "warning",
     });
 
     if (!confirmed) {
@@ -314,7 +313,7 @@ export class AddEditComponent implements OnInit, OnDestroy {
         content: { key: this.editMode ? "editedSend" : "createdSend" },
         acceptButtonText: { key: "ok" },
         cancelButtonText: null,
-        type: SimpleDialogType.SUCCESS,
+        type: "success",
       });
 
       await this.copyLinkToClipboard(this.link);

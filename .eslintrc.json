@@ -156,7 +156,10 @@
     {
       "files": ["libs/components/src/**/*.ts"],
       "rules": {
-        "no-restricted-imports": ["error", { "patterns": ["@bitwarden/components/*", "src/**/*"] }]
+        "no-restricted-imports": [
+          "error",
+          { "patterns": ["@bitwarden/components/*", "src/**/*", "@bitwarden/angular/*"] }
+        ]
       }
     },
     {

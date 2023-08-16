@@ -6,8 +6,7 @@ import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.servic
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
-
-import { DialogServiceAbstraction, SimpleDialogType } from "../../services/dialog";
+import { DialogService } from "@bitwarden/components";
 
 @Directive()
 export class PremiumComponent implements OnInit {
@@ -22,7 +21,7 @@ export class PremiumComponent implements OnInit {
     protected apiService: ApiService,
     private logService: LogService,
     protected stateService: StateService,
-    protected dialogService: DialogServiceAbstraction,
+    protected dialogService: DialogService,
     private environmentService: EnvironmentService
   ) {
     this.cloudWebVaultUrl = this.environmentService.getCloudWebVaultUrl();
@@ -47,7 +46,7 @@ export class PremiumComponent implements OnInit {
     const confirmed = await this.dialogService.openSimpleDialog({
       title: { key: "premiumPurchase" },
       content: { key: "premiumPurchaseAlert" },
-      type: SimpleDialogType.INFO,
+      type: "info",
     });
 
     if (confirmed) {
@@ -59,7 +58,7 @@ export class PremiumComponent implements OnInit {
     const confirmed = await this.dialogService.openSimpleDialog({
       title: { key: "premiumManage" },
       content: { key: "premiumManageAlert" },
-      type: SimpleDialogType.INFO,
+      type: "info",
     });
 
     if (confirmed) {
