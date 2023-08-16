@@ -18,7 +18,7 @@ on:
 jobs:
   setup:
     name: Setup
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     outputs:
       release_version: ${{ steps.version.outputs.version }}
       tag_version: ${{ steps.version.outputs.tag }}
@@ -49,7 +49,7 @@ jobs:
 
   self-host:
     name: Release self-host docker
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     needs: setup
     env:
       _BRANCH_NAME: ${{ github.ref_name }}
@@ -140,10 +140,9 @@ jobs:
 
 
   ghpages-deploy:
-    name: Deploy to GitHub Pages
-    runs-on: ubuntu-20.04
-    needs:
-      - setup
+    name: Create Deploy PR for GitHub Pages
+    runs-on: ubuntu-22.04
+    needs: setup
     env:
       _RELEASE_VERSION: ${{ needs.setup.outputs.release_version }}
       _TAG_VERSION: ${{ needs.setup.outputs.tag_version }}
@@ -233,7 +232,7 @@ jobs:
 
   release:
     name: Create GitHub Release
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     needs:
       - setup
       - self-host
