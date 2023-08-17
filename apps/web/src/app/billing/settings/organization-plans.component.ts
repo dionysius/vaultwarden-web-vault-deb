@@ -314,16 +314,11 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
       return 0;
     }
 
-    let subTotal = plan.basePrice;
-    if (plan.hasAdditionalSeatsOption && formValues.userSeats) {
-      subTotal += this.seatTotal(plan, formValues.userSeats);
-    }
-
-    if (plan.hasAdditionalStorageOption && formValues.additionalServiceAccounts) {
-      subTotal += this.additionalServiceAccountTotal(this.selectedPlan);
-    }
-
-    return subTotal;
+    return (
+      plan.basePrice +
+      this.seatTotal(plan, formValues.userSeats) +
+      this.additionalServiceAccountTotal(plan)
+    );
   }
 
   get freeTrial() {
