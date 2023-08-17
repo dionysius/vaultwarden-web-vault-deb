@@ -47,8 +47,8 @@ export class OrganizationSubscriptionCloudComponent implements OnInit, OnDestroy
   firstLoaded = false;
   loading: boolean;
 
-  private readonly _smBetaEndingDate = new Date(2023, 7, 25);
-  private readonly _smGracePeriodEndingDate = new Date(2023, 9, 24);
+  private readonly _smBetaEndingDate = new Date(2023, 7, 15);
+  private readonly _smGracePeriodEndingDate = new Date(2023, 10, 14);
 
   private destroy$ = new Subject<void>();
 
