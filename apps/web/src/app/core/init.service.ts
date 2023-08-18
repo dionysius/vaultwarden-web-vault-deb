@@ -4,7 +4,6 @@ import { WINDOW } from "@bitwarden/angular/services/injection-tokens";
 import { AbstractThemingService } from "@bitwarden/angular/services/theming/theming.service.abstraction";
 import { EventUploadService as EventUploadServiceAbstraction } from "@bitwarden/common/abstractions/event/event-upload.service";
 import { NotificationsService as NotificationsServiceAbstraction } from "@bitwarden/common/abstractions/notifications.service";
-import { VaultTimeoutService as VaultTimeoutServiceAbstraction } from "@bitwarden/common/abstractions/vaultTimeout/vaultTimeout.service";
 import { TwoFactorService as TwoFactorServiceAbstraction } from "@bitwarden/common/auth/abstractions/two-factor.service";
 import { CryptoService as CryptoServiceAbstraction } from "@bitwarden/common/platform/abstractions/crypto.service";
 import { EncryptService } from "@bitwarden/common/platform/abstractions/encrypt.service";
@@ -16,7 +15,7 @@ import { I18nService as I18nServiceAbstraction } from "@bitwarden/common/platfor
 import { StateService as StateServiceAbstraction } from "@bitwarden/common/platform/abstractions/state.service";
 import { ContainerService } from "@bitwarden/common/platform/services/container.service";
 import { EventUploadService } from "@bitwarden/common/services/event/event-upload.service";
-import { VaultTimeoutService as VaultTimeoutService } from "@bitwarden/common/services/vaultTimeout/vaultTimeout.service";
+import { VaultTimeoutService } from "@bitwarden/common/services/vault-timeout/vault-timeout.service";
 
 import { I18nService } from "../core/i18n.service";
 
@@ -26,7 +25,7 @@ export class InitService {
     @Inject(WINDOW) private win: Window,
     private environmentService: EnvironmentServiceAbstraction,
     private notificationsService: NotificationsServiceAbstraction,
-    private vaultTimeoutService: VaultTimeoutServiceAbstraction,
+    private vaultTimeoutService: VaultTimeoutService,
     private i18nService: I18nServiceAbstraction,
     private eventUploadService: EventUploadServiceAbstraction,
     private twoFactorService: TwoFactorServiceAbstraction,
@@ -48,7 +47,7 @@ export class InitService {
       this.environmentService.initialized = true;
 
       setTimeout(() => this.notificationsService.init(), 3000);
-      (this.vaultTimeoutService as VaultTimeoutService).init(true);
+      await this.vaultTimeoutService.init(true);
       const locale = await this.stateService.getLocale();
       await (this.i18nService as I18nService).init(locale);
       (this.eventUploadService as EventUploadService).init(true);

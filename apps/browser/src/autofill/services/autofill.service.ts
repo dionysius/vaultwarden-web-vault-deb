@@ -1,6 +1,7 @@
 import { EventCollectionService } from "@bitwarden/common/abstractions/event/event-collection.service";
 import { SettingsService } from "@bitwarden/common/abstractions/settings.service";
 import { TotpService } from "@bitwarden/common/abstractions/totp.service";
+import { UserVerificationService } from "@bitwarden/common/auth/abstractions/user-verification/user-verification.service.abstraction";
 import { EventType, FieldType, UriMatchType } from "@bitwarden/common/enums";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
@@ -45,7 +46,8 @@ export default class AutofillService implements AutofillServiceInterface {
     private totpService: TotpService,
     private eventCollectionService: EventCollectionService,
     private logService: LogService,
-    private settingsService: SettingsService
+    private settingsService: SettingsService,
+    private userVerificationService: UserVerificationService
   ) {}
 
   getFormsWithPasswordFields(pageDetails: AutofillPageDetails): FormData[] {
@@ -238,7 +240,10 @@ export default class AutofillService implements AutofillServiceInterface {
       return null;
     }
 
-    if (cipher.reprompt !== CipherRepromptType.None) {
+    if (
+      cipher.reprompt !== CipherRepromptType.None &&
+      (await this.userVerificationService.hasMasterPasswordAndMasterKeyHash())
+    ) {
       await BrowserApi.tabSendMessageData(tab, "passwordReprompt", {
         cipherId: cipher.id,
         action: "autofill",

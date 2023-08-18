@@ -14,7 +14,7 @@ import { MessagingService } from "@bitwarden/common/platform/abstractions/messag
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
 import { EncString } from "@bitwarden/common/platform/models/domain/enc-string";
-import { SymmetricCryptoKey } from "@bitwarden/common/platform/models/domain/symmetric-crypto-key";
+import { MasterKey, UserKey } from "@bitwarden/common/platform/models/domain/symmetric-crypto-key";
 import { PasswordGenerationServiceAbstraction } from "@bitwarden/common/tools/generator/password";
 import { Verification } from "@bitwarden/common/types/verification";
 import { DialogService } from "@bitwarden/components";
@@ -94,19 +94,19 @@ export class UpdatePasswordComponent extends BaseChangePasswordComponent {
   }
 
   async performSubmitActions(
-    masterPasswordHash: string,
-    key: SymmetricCryptoKey,
-    encKey: [SymmetricCryptoKey, EncString]
+    newMasterKeyHash: string,
+    newMasterKey: MasterKey,
+    newUserKey: [UserKey, EncString]
   ) {
     try {
       // Create Request
       const request = new PasswordRequest();
-      request.masterPasswordHash = await this.cryptoService.hashPassword(
+      request.masterPasswordHash = await this.cryptoService.hashMasterKey(
         this.currentMasterPassword,
-        null
+        await this.cryptoService.getOrDeriveMasterKey(this.currentMasterPassword)
       );
-      request.newMasterPasswordHash = masterPasswordHash;
-      request.key = encKey[1].encryptedString;
+      request.newMasterPasswordHash = newMasterKeyHash;
+      request.key = newUserKey[1].encryptedString;
 
       // Update user's password
       this.apiService.postPassword(request);

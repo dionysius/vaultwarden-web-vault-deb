@@ -36,6 +36,7 @@ import { TotpService } from "@bitwarden/common/abstractions/totp.service";
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
 import { TokenService } from "@bitwarden/common/auth/abstractions/token.service";
+import { UserVerificationService } from "@bitwarden/common/auth/abstractions/user-verification/user-verification.service.abstraction";
 import { DEFAULT_PBKDF2_ITERATIONS, EventType, KdfType } from "@bitwarden/common/enums";
 import { ServiceUtils } from "@bitwarden/common/misc/serviceUtils";
 import { TreeNode } from "@bitwarden/common/models/domain/tree-node";
@@ -172,7 +173,8 @@ export class VaultComponent implements OnInit, OnDestroy {
     private eventCollectionService: EventCollectionService,
     private searchService: SearchService,
     private searchPipe: SearchPipe,
-    private configService: ConfigServiceAbstraction
+    private configService: ConfigServiceAbstraction,
+    private userVerificationService: UserVerificationService
   ) {}
 
   async ngOnInit() {
@@ -187,13 +189,15 @@ export class VaultComponent implements OnInit, OnDestroy {
       first(),
       switchMap(async (params: Params) => {
         this.showVerifyEmail = !(await this.tokenService.getEmailVerified());
-        this.showLowKdf = await this.isLowKdfIteration();
+        this.showLowKdf = (await this.userVerificationService.hasMasterPassword())
+          ? await this.isLowKdfIteration()
+          : false;
         await this.syncService.fullSync(false);
 
         const canAccessPremium = await this.stateService.getCanAccessPremium();
         this.showPremiumCallout =
           !this.showVerifyEmail && !canAccessPremium && !this.platformUtilsService.isSelfHost();
-        this.showUpdateKey = !(await this.cryptoService.hasEncKey());
+        this.showUpdateKey = !(await this.cryptoService.hasUserKey());
 
         const cipherId = getCipherIdFromParams(params);
         if (!cipherId) {

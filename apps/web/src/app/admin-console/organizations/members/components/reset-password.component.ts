@@ -22,7 +22,10 @@ import { LogService } from "@bitwarden/common/platform/abstractions/log.service"
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { EncString } from "@bitwarden/common/platform/models/domain/enc-string";
-import { SymmetricCryptoKey } from "@bitwarden/common/platform/models/domain/symmetric-crypto-key";
+import {
+  SymmetricCryptoKey,
+  UserKey,
+} from "@bitwarden/common/platform/models/domain/symmetric-crypto-key";
 import { PasswordGenerationServiceAbstraction } from "@bitwarden/common/tools/generator/password";
 import { DialogService } from "@bitwarden/components";
 
@@ -171,26 +174,32 @@ export class ResetPasswordComponent implements OnInit, OnDestroy {
             orgSymKey
           );
 
-          // Decrypt User's Reset Password Key to get EncKey
+          // Decrypt User's Reset Password Key to get UserKey
           const decValue = await this.cryptoService.rsaDecrypt(resetPasswordKey, decPrivateKey);
-          const userEncKey = new SymmetricCryptoKey(decValue);
+          const existingUserKey = new SymmetricCryptoKey(decValue) as UserKey;
 
-          // Create new key and hash new password
-          const newKey = await this.cryptoService.makeKey(
+          // Create new master key and hash new password
+          const newMasterKey = await this.cryptoService.makeMasterKey(
             this.newPassword,
             this.email.trim().toLowerCase(),
             kdfType,
             new KdfConfig(kdfIterations, kdfMemory, kdfParallelism)
           );
-          const newPasswordHash = await this.cryptoService.hashPassword(this.newPassword, newKey);
+          const newMasterKeyHash = await this.cryptoService.hashMasterKey(
+            this.newPassword,
+            newMasterKey
+          );
 
-          // Create new encKey for the User
-          const newEncKey = await this.cryptoService.remakeEncKey(newKey, userEncKey);
+          // Create new encrypted user key for the User
+          const newUserKey = await this.cryptoService.encryptUserKeyWithMasterKey(
+            newMasterKey,
+            existingUserKey
+          );
 
           // Create request
           const request = new OrganizationUserResetPasswordRequest();
-          request.key = newEncKey[1].encryptedString;
-          request.newMasterPasswordHash = newPasswordHash;
+          request.key = newUserKey[1].encryptedString;
+          request.newMasterPasswordHash = newMasterKeyHash;
 
           // Change user's password
           return this.organizationUserService.putOrganizationUserResetPassword(

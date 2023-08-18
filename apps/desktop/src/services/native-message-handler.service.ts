@@ -8,7 +8,7 @@ import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.se
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
-import { EncString } from "@bitwarden/common/platform/models/domain/enc-string";
+import { EncryptedString, EncString } from "@bitwarden/common/platform/models/domain/enc-string";
 import { SymmetricCryptoKey } from "@bitwarden/common/platform/models/domain/symmetric-crypto-key";
 import { StateService } from "@bitwarden/common/platform/services/state.service";
 
@@ -144,7 +144,9 @@ export class NativeMessageHandlerService {
   }
 
   private async handleEncryptedMessage(message: EncryptedMessage) {
-    message.encryptedCommand = EncString.fromJSON(message.encryptedCommand.toString());
+    message.encryptedCommand = EncString.fromJSON(
+      message.encryptedCommand.toString() as EncryptedString
+    );
     const decryptedCommandData = await this.decryptPayload(message);
     const { command } = decryptedCommandData;
 

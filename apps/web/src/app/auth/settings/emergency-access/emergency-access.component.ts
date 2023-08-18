@@ -300,9 +300,12 @@ export class EmergencyAccessComponent implements OnInit {
     }
   }
 
-  // Encrypt the master password hash using the grantees public key, and send it to bitwarden for escrow.
+  // Encrypt the user key with the grantees public key, and send it to bitwarden for escrow.
   private async doConfirmation(details: EmergencyAccessGranteeDetailsResponse) {
-    const encKey = await this.cryptoService.getEncKey();
+    const userKey = await this.cryptoService.getUserKey();
+    if (!userKey) {
+      throw new Error("No user key found");
+    }
     const publicKeyResponse = await this.apiService.getUserPublicKey(details.granteeId);
     const publicKey = Utils.fromB64ToArray(publicKeyResponse.publicKey);
 
@@ -315,7 +318,7 @@ export class EmergencyAccessComponent implements OnInit {
       // Ignore errors since it's just a debug message
     }
 
-    const encryptedKey = await this.cryptoService.rsaEncrypt(encKey.key, publicKey);
+    const encryptedKey = await this.cryptoService.rsaEncrypt(userKey.key, publicKey);
     const request = new EmergencyAccessConfirmRequest();
     request.key = encryptedKey.encryptedString;
     await this.apiService.postEmergencyAccessConfirm(details.id, request);

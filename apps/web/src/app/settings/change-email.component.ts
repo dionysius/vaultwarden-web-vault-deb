@@ -42,8 +42,8 @@ export class ChangeEmailComponent implements OnInit {
   }
 
   async submit() {
-    const hasEncKey = await this.cryptoService.hasEncKey();
-    if (!hasEncKey) {
+    const hasUserKey = await this.cryptoService.hasUserKey();
+    if (!hasUserKey) {
       this.platformUtilsService.showToast("error", null, this.i18nService.t("updateKey"));
       return;
     }
@@ -52,7 +52,10 @@ export class ChangeEmailComponent implements OnInit {
     if (!this.tokenSent) {
       const request = new EmailTokenRequest();
       request.newEmail = this.newEmail;
-      request.masterPasswordHash = await this.cryptoService.hashPassword(this.masterPassword, null);
+      request.masterPasswordHash = await this.cryptoService.hashMasterKey(
+        this.masterPassword,
+        await this.cryptoService.getOrDeriveMasterKey(this.masterPassword)
+      );
       try {
         this.formPromise = this.apiService.postEmailToken(request);
         await this.formPromise;
@@ -64,21 +67,24 @@ export class ChangeEmailComponent implements OnInit {
       const request = new EmailRequest();
       request.token = this.token;
       request.newEmail = this.newEmail;
-      request.masterPasswordHash = await this.cryptoService.hashPassword(this.masterPassword, null);
+      request.masterPasswordHash = await this.cryptoService.hashMasterKey(
+        this.masterPassword,
+        await this.cryptoService.getOrDeriveMasterKey(this.masterPassword)
+      );
       const kdf = await this.stateService.getKdfType();
       const kdfConfig = await this.stateService.getKdfConfig();
-      const newKey = await this.cryptoService.makeKey(
+      const newMasterKey = await this.cryptoService.makeMasterKey(
         this.masterPassword,
         this.newEmail,
         kdf,
         kdfConfig
       );
-      request.newMasterPasswordHash = await this.cryptoService.hashPassword(
+      request.newMasterPasswordHash = await this.cryptoService.hashMasterKey(
         this.masterPassword,
-        newKey
+        newMasterKey
       );
-      const newEncKey = await this.cryptoService.remakeEncKey(newKey);
-      request.key = newEncKey[1].encryptedString;
+      const newUserKey = await this.cryptoService.encryptUserKeyWithMasterKey(newMasterKey);
+      request.key = newUserKey[1].encryptedString;
       try {
         this.formPromise = this.apiService.postEmail(request);
         await this.formPromise;

@@ -41,7 +41,8 @@ describe("Browser State Service", () => {
     logService = mock();
     stateMigrationService = mock();
     stateFactory = mock();
-    useAccountCache = true;
+    // turn off account cache for tests
+    useAccountCache = false;
 
     state = new State(new GlobalState());
     state.accounts[userId] = new Account({

@@ -1,10 +1,9 @@
 import { firstValueFrom } from "rxjs";
 
 import { SearchService } from "../../abstractions/search.service";
-import { VaultTimeoutService as VaultTimeoutServiceAbstraction } from "../../abstractions/vaultTimeout/vaultTimeout.service";
-import { VaultTimeoutSettingsService } from "../../abstractions/vaultTimeout/vaultTimeoutSettings.service";
+import { VaultTimeoutSettingsService } from "../../abstractions/vault-timeout/vault-timeout-settings.service";
+import { VaultTimeoutService as VaultTimeoutServiceAbstraction } from "../../abstractions/vault-timeout/vault-timeout.service";
 import { AuthService } from "../../auth/abstractions/auth.service";
-import { KeyConnectorService } from "../../auth/abstractions/key-connector.service";
 import { AuthenticationStatus } from "../../auth/enums/authentication-status";
 import { VaultTimeoutAction } from "../../enums/vault-timeout-action.enum";
 import { CryptoService } from "../../platform/abstractions/crypto.service";
@@ -26,7 +25,6 @@ export class VaultTimeoutService implements VaultTimeoutServiceAbstraction {
     protected platformUtilsService: PlatformUtilsService,
     private messagingService: MessagingService,
     private searchService: SearchService,
-    private keyConnectorService: KeyConnectorService,
     private stateService: StateService,
     private authService: AuthService,
     private vaultTimeoutSettingsService: VaultTimeoutSettingsService,
@@ -34,10 +32,12 @@ export class VaultTimeoutService implements VaultTimeoutServiceAbstraction {
     private loggedOutCallback: (expired: boolean, userId?: string) => Promise<void> = null
   ) {}
 
-  init(checkOnInterval: boolean) {
+  async init(checkOnInterval: boolean) {
     if (this.inited) {
       return;
     }
+    // TODO: Remove after 2023.10 release (https://bitwarden.atlassian.net/browse/PM-3483)
+    await this.migrateKeyForNeverLockIfNeeded();
 
     this.inited = true;
     if (checkOnInterval) {
@@ -69,14 +69,12 @@ export class VaultTimeoutService implements VaultTimeoutServiceAbstraction {
       return;
     }
 
-    if (await this.keyConnectorService.getUsesKeyConnector()) {
-      const pinSet = await this.vaultTimeoutSettingsService.isPinLockSet();
-      const pinLock =
-        (pinSet[0] && (await this.stateService.getDecryptedPinProtected()) != null) || pinSet[1];
-
-      if (!pinLock && !(await this.vaultTimeoutSettingsService.isBiometricLockSet())) {
-        await this.logOut(userId);
-      }
+    const availableActions = await firstValueFrom(
+      this.vaultTimeoutSettingsService.availableVaultTimeoutActions$()
+    );
+    const supportsLock = availableActions.includes(VaultTimeoutAction.Lock);
+    if (!supportsLock) {
+      await this.logOut(userId);
     }
 
     if (userId == null || userId === (await this.stateService.getUserId())) {
@@ -85,12 +83,13 @@ export class VaultTimeoutService implements VaultTimeoutServiceAbstraction {
     }
 
     await this.stateService.setEverBeenUnlocked(true, { userId: userId });
+    await this.stateService.setUserKeyAutoUnlock(null, { userId: userId });
     await this.stateService.setCryptoMasterKeyAuto(null, { userId: userId });
 
-    await this.cryptoService.clearKey(false, userId);
+    await this.cryptoService.clearUserKey(false, userId);
+    await this.cryptoService.clearMasterKey(userId);
     await this.cryptoService.clearOrgKeys(true, userId);
     await this.cryptoService.clearKeyPair(true, userId);
-    await this.cryptoService.clearEncKey(true, userId);
 
     await this.cipherService.clearCache(userId);
     await this.collectionService.clearCache(userId);
@@ -133,9 +132,20 @@ export class VaultTimeoutService implements VaultTimeoutServiceAbstraction {
   }
 
   private async executeTimeoutAction(userId: string): Promise<void> {
-    const timeoutAction = await this.vaultTimeoutSettingsService.getVaultTimeoutAction(userId);
+    const timeoutAction = await firstValueFrom(
+      this.vaultTimeoutSettingsService.vaultTimeoutAction$(userId)
+    );
     timeoutAction === VaultTimeoutAction.LogOut
       ? await this.logOut(userId)
       : await this.lock(userId);
+  }
+
+  private async migrateKeyForNeverLockIfNeeded(): Promise<void> {
+    const accounts = await firstValueFrom(this.stateService.accounts$);
+    for (const userId in accounts) {
+      if (userId != null) {
+        await this.cryptoService.migrateAutoKeyIfNeeded(userId);
+      }
+    }
   }
 }

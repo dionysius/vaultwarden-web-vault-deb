@@ -9,7 +9,7 @@ import { CryptoService } from "../../platform/abstractions/crypto.service";
 import { EncryptService } from "../../platform/abstractions/encrypt.service";
 import { I18nService } from "../../platform/abstractions/i18n.service";
 import { StateService } from "../../platform/abstractions/state.service";
-import { SymmetricCryptoKey } from "../../platform/models/domain/symmetric-crypto-key";
+import { OrgKey, SymmetricCryptoKey } from "../../platform/models/domain/symmetric-crypto-key";
 import { CipherFileUploadService } from "../abstractions/file-upload/cipher-file-upload.service";
 import { CipherRepromptType } from "../enums/cipher-reprompt-type";
 import { CipherType } from "../enums/cipher-type";
@@ -118,11 +118,11 @@ describe("Cipher Service", () => {
   describe("saveAttachmentRawWithServer()", () => {
     it("should upload encrypted file contents with save attachments", async () => {
       const fileName = "filename";
-      const fileData = new Uint8Array(10).buffer;
+      const fileData = new Uint8Array(10);
       cryptoService.getOrgKey.mockReturnValue(
-        Promise.resolve<any>(new SymmetricCryptoKey(new Uint8Array(32)))
+        Promise.resolve<any>(new SymmetricCryptoKey(new Uint8Array(32)) as OrgKey)
       );
-      cryptoService.makeEncKey.mockReturnValue(
+      cryptoService.makeDataEncKey.mockReturnValue(
         Promise.resolve<any>(new SymmetricCryptoKey(new Uint8Array(32)))
       );
       const spy = jest.spyOn(cipherFileUploadService, "upload");

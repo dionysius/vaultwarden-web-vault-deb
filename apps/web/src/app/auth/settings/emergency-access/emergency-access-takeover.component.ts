@@ -16,7 +16,10 @@ import { LogService } from "@bitwarden/common/platform/abstractions/log.service"
 import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
-import { SymmetricCryptoKey } from "@bitwarden/common/platform/models/domain/symmetric-crypto-key";
+import {
+  SymmetricCryptoKey,
+  UserKey,
+} from "@bitwarden/common/platform/models/domain/symmetric-crypto-key";
 import { PasswordGenerationServiceAbstraction } from "@bitwarden/common/tools/generator/password";
 import { DialogService } from "@bitwarden/components";
 
@@ -91,9 +94,9 @@ export class EmergencyAccessTakeoverComponent
     );
 
     const oldKeyBuffer = await this.cryptoService.rsaDecrypt(takeoverResponse.keyEncrypted);
-    const oldEncKey = new SymmetricCryptoKey(oldKeyBuffer);
+    const oldUserKey = new SymmetricCryptoKey(oldKeyBuffer) as UserKey;
 
-    if (oldEncKey == null) {
+    if (oldUserKey == null) {
       this.platformUtilsService.showToast(
         "error",
         this.i18nService.t("errorOccurred"),
@@ -102,7 +105,7 @@ export class EmergencyAccessTakeoverComponent
       return;
     }
 
-    const key = await this.cryptoService.makeKey(
+    const masterKey = await this.cryptoService.makeMasterKey(
       this.masterPassword,
       this.email,
       takeoverResponse.kdf,
@@ -112,12 +115,12 @@ export class EmergencyAccessTakeoverComponent
         takeoverResponse.kdfParallelism
       )
     );
-    const masterPasswordHash = await this.cryptoService.hashPassword(this.masterPassword, key);
+    const masterKeyHash = await this.cryptoService.hashMasterKey(this.masterPassword, masterKey);
 
-    const encKey = await this.cryptoService.remakeEncKey(key, oldEncKey);
+    const encKey = await this.cryptoService.encryptUserKeyWithMasterKey(masterKey, oldUserKey);
 
     const request = new EmergencyAccessPasswordRequest();
-    request.newMasterPasswordHash = masterPasswordHash;
+    request.newMasterPasswordHash = masterKeyHash;
     request.key = encKey[1].encryptedString;
 
     this.apiService.postEmergencyAccessPassword(this.emergencyAccessId, request);

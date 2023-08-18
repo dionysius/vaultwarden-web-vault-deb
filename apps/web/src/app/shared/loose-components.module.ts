@@ -26,6 +26,7 @@ import { RecoverTwoFactorComponent } from "../auth/recover-two-factor.component"
 import { RegisterFormModule } from "../auth/register-form/register-form.module";
 import { RemovePasswordComponent } from "../auth/remove-password.component";
 import { SetPasswordComponent } from "../auth/set-password.component";
+import { ChangePasswordComponent } from "../auth/settings/change-password.component";
 import { DeauthorizeSessionsComponent } from "../auth/settings/deauthorize-sessions.component";
 import { EmergencyAccessAddEditComponent } from "../auth/settings/emergency-access/emergency-access-add-edit.component";
 import { EmergencyAccessAttachmentsComponent } from "../auth/settings/emergency-access/emergency-access-attachments.component";
@@ -76,7 +77,6 @@ import { ApiKeyComponent } from "../settings/api-key.component";
 import { ChangeAvatarComponent } from "../settings/change-avatar.component";
 import { ChangeEmailComponent } from "../settings/change-email.component";
 import { ChangeKdfModule } from "../settings/change-kdf/change-kdf.module";
-import { ChangePasswordComponent } from "../settings/change-password.component";
 import { DeleteAccountComponent } from "../settings/delete-account.component";
 import { DomainRulesComponent } from "../settings/domain-rules.component";
 import { LowKdfComponent } from "../settings/low-kdf.component";

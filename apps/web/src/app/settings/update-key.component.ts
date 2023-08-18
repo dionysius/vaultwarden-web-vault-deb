@@ -36,8 +36,8 @@ export class UpdateKeyComponent {
   ) {}
 
   async submit() {
-    const hasEncKey = await this.cryptoService.hasEncKey();
-    if (hasEncKey) {
+    const hasUserKey = await this.cryptoService.hasUserKey();
+    if (hasUserKey) {
       return;
     }
 
@@ -68,17 +68,20 @@ export class UpdateKeyComponent {
   }
 
   private async makeRequest(): Promise<UpdateKeyRequest> {
-    const key = await this.cryptoService.getKey();
-    const encKey = await this.cryptoService.makeEncKey(key);
+    const masterKey = await this.cryptoService.getMasterKey();
+    const newUserKey = await this.cryptoService.makeUserKey(masterKey);
     const privateKey = await this.cryptoService.getPrivateKey();
     let encPrivateKey: EncString = null;
     if (privateKey != null) {
-      encPrivateKey = await this.cryptoService.encrypt(privateKey, encKey[0]);
+      encPrivateKey = await this.cryptoService.encrypt(privateKey, newUserKey[0]);
     }
     const request = new UpdateKeyRequest();
     request.privateKey = encPrivateKey != null ? encPrivateKey.encryptedString : null;
-    request.key = encKey[1].encryptedString;
-    request.masterPasswordHash = await this.cryptoService.hashPassword(this.masterPassword, null);
+    request.key = newUserKey[1].encryptedString;
+    request.masterPasswordHash = await this.cryptoService.hashMasterKey(
+      this.masterPassword,
+      await this.cryptoService.getOrDeriveMasterKey(this.masterPassword)
+    );
 
     await this.syncService.fullSync(true);
 
@@ -87,7 +90,7 @@ export class UpdateKeyComponent {
       if (folders[i].id == null) {
         continue;
       }
-      const folder = await this.folderService.encrypt(folders[i], encKey[0]);
+      const folder = await this.folderService.encrypt(folders[i], newUserKey[0]);
       request.folders.push(new FolderWithIdRequest(folder));
     }
 
@@ -96,7 +99,7 @@ export class UpdateKeyComponent {
       if (ciphers[i].organizationId != null) {
         continue;
       }
-      const cipher = await this.cipherService.encrypt(ciphers[i], encKey[0]);
+      const cipher = await this.cipherService.encrypt(ciphers[i], newUserKey[0]);
       request.ciphers.push(new CipherWithIdRequest(cipher));
     }
 

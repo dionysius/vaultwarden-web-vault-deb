@@ -4,11 +4,12 @@ import { ipcRenderer } from "electron";
 
 import { LockComponent as BaseLockComponent } from "@bitwarden/angular/auth/components/lock.component";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
-import { VaultTimeoutService } from "@bitwarden/common/abstractions/vaultTimeout/vaultTimeout.service";
-import { VaultTimeoutSettingsService } from "@bitwarden/common/abstractions/vaultTimeout/vaultTimeoutSettings.service";
+import { VaultTimeoutSettingsService } from "@bitwarden/common/abstractions/vault-timeout/vault-timeout-settings.service";
+import { VaultTimeoutService } from "@bitwarden/common/abstractions/vault-timeout/vault-timeout.service";
 import { PolicyApiServiceAbstraction } from "@bitwarden/common/admin-console/abstractions/policy/policy-api.service.abstraction";
 import { InternalPolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
-import { KeyConnectorService } from "@bitwarden/common/auth/abstractions/key-connector.service";
+import { DeviceTrustCryptoServiceAbstraction } from "@bitwarden/common/auth/abstractions/device-trust-crypto.service.abstraction";
+import { UserVerificationService } from "@bitwarden/common/auth/abstractions/user-verification/user-verification.service.abstraction";
 import { DeviceType, KeySuffixOptions } from "@bitwarden/common/enums";
 import { BroadcasterService } from "@bitwarden/common/platform/abstractions/broadcaster.service";
 import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
@@ -51,8 +52,9 @@ export class LockComponent extends BaseLockComponent {
     policyService: InternalPolicyService,
     passwordStrengthService: PasswordStrengthServiceAbstraction,
     logService: LogService,
-    keyConnectorService: KeyConnectorService,
-    dialogService: DialogService
+    dialogService: DialogService,
+    deviceTrustCryptoService: DeviceTrustCryptoServiceAbstraction,
+    userVerificationService: UserVerificationService
   ) {
     super(
       router,
@@ -66,12 +68,13 @@ export class LockComponent extends BaseLockComponent {
       stateService,
       apiService,
       logService,
-      keyConnectorService,
       ngZone,
       policyApiService,
       policyService,
       passwordStrengthService,
-      dialogService
+      dialogService,
+      deviceTrustCryptoService,
+      userVerificationService
     );
   }
 
@@ -131,7 +134,7 @@ export class LockComponent extends BaseLockComponent {
     const userId = await this.stateService.getUserId();
     const val = await ipcRenderer.invoke("biometric", {
       action: BiometricStorageAction.EnabledForUser,
-      key: `${userId}_masterkey_biometric`,
+      key: `${userId}_user_biometric`,
       keySuffix: KeySuffixOptions.Biometric,
       userId: userId,
     } as BiometricMessage);
@@ -139,7 +142,7 @@ export class LockComponent extends BaseLockComponent {
   }
 
   private focusInput() {
-    document.getElementById(this.pinLock ? "pin" : "masterPassword").focus();
+    document.getElementById(this.pinEnabled ? "pin" : "masterPassword")?.focus();
   }
 
   private async displayBiometricUpdateWarning(): Promise<void> {
