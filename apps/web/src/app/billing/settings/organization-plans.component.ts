@@ -31,7 +31,10 @@ import { LogService } from "@bitwarden/common/platform/abstractions/log.service"
 import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { EncString } from "@bitwarden/common/platform/models/domain/enc-string";
-import { SymmetricCryptoKey } from "@bitwarden/common/platform/models/domain/symmetric-crypto-key";
+import {
+  OrgKey,
+  SymmetricCryptoKey,
+} from "@bitwarden/common/platform/models/domain/symmetric-crypto-key";
 import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
 
 import { secretsManagerSubscribeFormFactory } from "../organizations/secrets-manager/sm-subscribe.component";
@@ -415,19 +418,19 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
       const doSubmit = async (): Promise<string> => {
         let orgId: string = null;
         if (this.createOrganization) {
-          const shareKey = await this.cryptoService.makeShareKey();
-          const key = shareKey[0].encryptedString;
+          const orgKey = await this.cryptoService.makeOrgKey<OrgKey>();
+          const key = orgKey[0].encryptedString;
           const collection = await this.cryptoService.encrypt(
             this.i18nService.t("defaultCollection"),
-            shareKey[1]
+            orgKey[1]
           );
           const collectionCt = collection.encryptedString;
-          const orgKeys = await this.cryptoService.makeKeyPair(shareKey[1]);
+          const orgKeys = await this.cryptoService.makeKeyPair(orgKey[1]);
 
           if (this.selfHosted) {
             orgId = await this.createSelfHosted(key, collectionCt, orgKeys);
           } else {
-            orgId = await this.createCloudHosted(key, collectionCt, orgKeys, shareKey[1]);
+            orgId = await this.createCloudHosted(key, collectionCt, orgKeys, orgKey[1]);
           }
 
           this.platformUtilsService.showToast(

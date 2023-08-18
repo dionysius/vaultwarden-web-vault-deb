@@ -1,10 +1,16 @@
 import { ApiService } from "../../abstractions/api.service";
+import { AuthRequestResponse } from "../../auth/models/response/auth-request.response";
+import { HttpStatusCode } from "../../enums";
+import { ErrorResponse } from "../../models/response/error.response";
 import { AppIdService } from "../../platform/abstractions/app-id.service";
 import { CryptoService } from "../../platform/abstractions/crypto.service";
+import { I18nService } from "../../platform/abstractions/i18n.service";
 import { LogService } from "../../platform/abstractions/log.service";
 import { MessagingService } from "../../platform/abstractions/messaging.service";
 import { PlatformUtilsService } from "../../platform/abstractions/platform-utils.service";
 import { StateService } from "../../platform/abstractions/state.service";
+import { AuthRequestCryptoServiceAbstraction } from "../abstractions/auth-request-crypto.service.abstraction";
+import { DeviceTrustCryptoServiceAbstraction } from "../abstractions/device-trust-crypto.service.abstraction";
 import { KeyConnectorService } from "../abstractions/key-connector.service";
 import { TokenService } from "../abstractions/token.service";
 import { TwoFactorService } from "../abstractions/two-factor.service";
@@ -34,7 +40,10 @@ export class SsoLogInStrategy extends LogInStrategy {
     logService: LogService,
     stateService: StateService,
     twoFactorService: TwoFactorService,
-    private keyConnectorService: KeyConnectorService
+    private keyConnectorService: KeyConnectorService,
+    private deviceTrustCryptoService: DeviceTrustCryptoServiceAbstraction,
+    private authReqCryptoService: AuthRequestCryptoServiceAbstraction,
+    private i18nService: I18nService
   ) {
     super(
       cryptoService,
@@ -47,18 +56,6 @@ export class SsoLogInStrategy extends LogInStrategy {
       stateService,
       twoFactorService
     );
-  }
-
-  async setUserKey(tokenResponse: IdentityTokenResponse) {
-    const newSsoUser = tokenResponse.key == null;
-
-    if (tokenResponse.keyConnectorUrl != null) {
-      if (!newSsoUser) {
-        await this.keyConnectorService.getAndSetKey(tokenResponse.keyConnectorUrl);
-      } else {
-        await this.keyConnectorService.convertNewSsoUserToKeyConnector(tokenResponse, this.orgId);
-      }
-    }
   }
 
   async logIn(credentials: SsoLogInCredentials) {
@@ -77,5 +74,156 @@ export class SsoLogInStrategy extends LogInStrategy {
     this.ssoEmail2FaSessionToken = ssoAuthResult.ssoEmail2FaSessionToken;
 
     return ssoAuthResult;
+  }
+
+  protected override async setMasterKey(tokenResponse: IdentityTokenResponse) {
+    // TODO: discuss how this is no longer true with TDE
+    // eventually we’ll need to support migration of existing TDE users to Key Connector
+    const newSsoUser = tokenResponse.key == null;
+
+    if (tokenResponse.keyConnectorUrl != null) {
+      if (!newSsoUser) {
+        await this.keyConnectorService.setMasterKeyFromUrl(tokenResponse.keyConnectorUrl);
+      } else {
+        await this.keyConnectorService.convertNewSsoUserToKeyConnector(tokenResponse, this.orgId);
+      }
+    }
+  }
+
+  // TODO: future passkey login strategy will need to support setting user key (decrypting via TDE or admin approval request)
+  // so might be worth moving this logic to a common place (base login strategy or a separate service?)
+  protected override async setUserKey(tokenResponse: IdentityTokenResponse): Promise<void> {
+    const masterKeyEncryptedUserKey = tokenResponse.key;
+
+    // Note: masterKeyEncryptedUserKey is undefined for SSO JIT provisioned users
+    // on account creation and subsequent logins (confirmed or unconfirmed)
+    // but that is fine for TDE so we cannot return if it is undefined
+
+    if (masterKeyEncryptedUserKey) {
+      // set the master key encrypted user key if it exists
+      await this.cryptoService.setMasterKeyEncryptedUserKey(masterKeyEncryptedUserKey);
+    }
+
+    const userDecryptionOptions = tokenResponse?.userDecryptionOptions;
+
+    // Note: TDE and key connector are mutually exclusive
+    if (userDecryptionOptions?.trustedDeviceOption) {
+      await this.trySetUserKeyWithApprovedAdminRequestIfExists();
+
+      const hasUserKey = await this.cryptoService.hasUserKey();
+
+      // Only try to set user key with device key if admin approval request was not successful
+      if (!hasUserKey) {
+        await this.trySetUserKeyWithDeviceKey(tokenResponse);
+      }
+    } else if (
+      // TODO: remove tokenResponse.keyConnectorUrl when it's deprecated
+      masterKeyEncryptedUserKey != null &&
+      (tokenResponse.keyConnectorUrl || userDecryptionOptions?.keyConnectorOption?.keyConnectorUrl)
+    ) {
+      // Key connector enabled for user
+      await this.trySetUserKeyWithMasterKey();
+    }
+
+    // Note: In the traditional SSO flow with MP without key connector, the lock component
+    // is responsible for deriving master key from MP entry and then decrypting the user key
+  }
+
+  private async trySetUserKeyWithApprovedAdminRequestIfExists(): Promise<void> {
+    // At this point a user could have an admin auth request that has been approved
+    const adminAuthReqStorable = await this.stateService.getAdminAuthRequest();
+
+    if (!adminAuthReqStorable) {
+      return;
+    }
+
+    // Call server to see if admin auth request has been approved
+    let adminAuthReqResponse: AuthRequestResponse;
+
+    try {
+      adminAuthReqResponse = await this.apiService.getAuthRequest(adminAuthReqStorable.id);
+    } catch (error) {
+      if (error instanceof ErrorResponse && error.statusCode === HttpStatusCode.NotFound) {
+        // if we get a 404, it means the auth request has been deleted so clear it from storage
+        await this.stateService.setAdminAuthRequest(null);
+      }
+
+      // Always return on an error here as we don't want to block the user from logging in
+      return;
+    }
+
+    if (adminAuthReqResponse?.requestApproved) {
+      // if masterPasswordHash has a value, we will always receive authReqResponse.key
+      // as authRequestPublicKey(masterKey) + authRequestPublicKey(masterPasswordHash)
+      if (adminAuthReqResponse.masterPasswordHash) {
+        await this.authReqCryptoService.setKeysAfterDecryptingSharedMasterKeyAndHash(
+          adminAuthReqResponse,
+          adminAuthReqStorable.privateKey
+        );
+      } else {
+        // if masterPasswordHash is null, we will always receive authReqResponse.key
+        // as authRequestPublicKey(userKey)
+        await this.authReqCryptoService.setUserKeyAfterDecryptingSharedUserKey(
+          adminAuthReqResponse,
+          adminAuthReqStorable.privateKey
+        );
+      }
+
+      if (await this.cryptoService.hasUserKey()) {
+        // Now that we have a decrypted user key in memory, we can check if we
+        // need to establish trust on the current device
+        await this.deviceTrustCryptoService.trustDeviceIfRequired();
+
+        // if we successfully decrypted the user key, we can delete the admin auth request out of state
+        // TODO: eventually we post and clean up DB as well once consumed on client
+        await this.stateService.setAdminAuthRequest(null);
+
+        this.platformUtilsService.showToast("success", null, this.i18nService.t("loginApproved"));
+      }
+    }
+  }
+
+  private async trySetUserKeyWithDeviceKey(tokenResponse: IdentityTokenResponse): Promise<void> {
+    const trustedDeviceOption = tokenResponse.userDecryptionOptions?.trustedDeviceOption;
+
+    const deviceKey = await this.deviceTrustCryptoService.getDeviceKey();
+    const encDevicePrivateKey = trustedDeviceOption?.encryptedPrivateKey;
+    const encUserKey = trustedDeviceOption?.encryptedUserKey;
+
+    if (!deviceKey || !encDevicePrivateKey || !encUserKey) {
+      return;
+    }
+
+    const userKey = await this.deviceTrustCryptoService.decryptUserKeyWithDeviceKey(
+      encDevicePrivateKey,
+      encUserKey,
+      deviceKey
+    );
+
+    if (userKey) {
+      await this.cryptoService.setUserKey(userKey);
+    }
+  }
+
+  private async trySetUserKeyWithMasterKey(): Promise<void> {
+    const masterKey = await this.cryptoService.getMasterKey();
+
+    if (!masterKey) {
+      throw new Error("Master key not found");
+    }
+
+    const userKey = await this.cryptoService.decryptUserKeyWithMasterKey(masterKey);
+
+    await this.cryptoService.setUserKey(userKey);
+  }
+
+  protected override async setPrivateKey(tokenResponse: IdentityTokenResponse): Promise<void> {
+    const newSsoUser = tokenResponse.key == null;
+
+    if (!newSsoUser) {
+      await this.cryptoService.setPrivateKey(
+        tokenResponse.privateKey ?? (await this.createKeyPairForOldAccount())
+      );
+    }
   }
 }

@@ -6,8 +6,12 @@ import { PolicyData } from "../../../admin-console/models/data/policy.data";
 import { ProviderData } from "../../../admin-console/models/data/provider.data";
 import { Policy } from "../../../admin-console/models/domain/policy";
 import { AuthenticationStatus } from "../../../auth/enums/authentication-status";
+import { AdminAuthRequestStorable } from "../../../auth/models/domain/admin-auth-req-storable";
 import { EnvironmentUrls } from "../../../auth/models/domain/environment-urls";
 import { ForceResetPasswordReason } from "../../../auth/models/domain/force-reset-password-reason";
+import { KeyConnectorUserDecryptionOption } from "../../../auth/models/domain/user-decryption-options/key-connector-user-decryption-option";
+import { TrustedDeviceUserDecryptionOption } from "../../../auth/models/domain/user-decryption-options/trusted-device-user-decryption-option";
+import { UserDecryptionOptionsResponse } from "../../../auth/models/response/user-decryption-options/user-decryption-options.response";
 import { KdfType, UriMatchType } from "../../../enums";
 import { EventData } from "../../../models/data/event.data";
 import { GeneratedPasswordHistory } from "../../../tools/generator/password";
@@ -22,8 +26,8 @@ import { CollectionView } from "../../../vault/models/view/collection.view";
 import { Utils } from "../../misc/utils";
 import { ServerConfigData } from "../../models/data/server-config.data";
 
-import { EncString } from "./enc-string";
-import { DeviceKey, SymmetricCryptoKey } from "./symmetric-crypto-key";
+import { EncryptedString, EncString } from "./enc-string";
+import { MasterKey, SymmetricCryptoKey, UserKey } from "./symmetric-crypto-key";
 
 export class EncryptionPair<TEncrypted, TDecrypted> {
   encrypted?: TEncrypted;
@@ -99,15 +103,10 @@ export class AccountData {
 }
 
 export class AccountKeys {
-  cryptoMasterKey?: SymmetricCryptoKey;
-  cryptoMasterKeyAuto?: string;
-  cryptoMasterKeyB64?: string;
-  cryptoMasterKeyBiometric?: string;
-  cryptoSymmetricKey?: EncryptionPair<string, SymmetricCryptoKey> = new EncryptionPair<
-    string,
-    SymmetricCryptoKey
-  >();
-  deviceKey?: DeviceKey;
+  userKey?: UserKey;
+  masterKey?: MasterKey;
+  masterKeyEncryptedUserKey?: string;
+  deviceKey?: ReturnType<SymmetricCryptoKey["toJSON"]>;
   organizationKeys?: EncryptionPair<
     { [orgId: string]: EncryptedOrganizationKeyData },
     Record<string, SymmetricCryptoKey>
@@ -123,6 +122,18 @@ export class AccountKeys {
   publicKey?: Uint8Array;
   apiKeyClientSecret?: string;
 
+  /** @deprecated July 2023, left for migration purposes*/
+  cryptoMasterKey?: SymmetricCryptoKey;
+  /** @deprecated July 2023, left for migration purposes*/
+  cryptoMasterKeyAuto?: string;
+  /** @deprecated July 2023, left for migration purposes*/
+  cryptoMasterKeyBiometric?: string;
+  /** @deprecated July 2023, left for migration purposes*/
+  cryptoSymmetricKey?: EncryptionPair<string, SymmetricCryptoKey> = new EncryptionPair<
+    string,
+    SymmetricCryptoKey
+  >();
+
   toJSON() {
     return Utils.merge(this, {
       publicKey: Utils.fromBufferToByteString(this.publicKey),
@@ -135,6 +146,9 @@ export class AccountKeys {
     }
 
     return Object.assign(new AccountKeys(), {
+      userKey: SymmetricCryptoKey.fromJSON(obj?.userKey),
+      masterKey: SymmetricCryptoKey.fromJSON(obj?.masterKey),
+      deviceKey: obj?.deviceKey,
       cryptoMasterKey: SymmetricCryptoKey.fromJSON(obj?.cryptoMasterKey),
       cryptoSymmetricKey: EncryptionPair.fromJSON(
         obj?.cryptoSymmetricKey,
@@ -173,6 +187,7 @@ export class AccountProfile {
   emailVerified?: boolean;
   entityId?: string;
   entityType?: string;
+  everHadUserKey?: boolean;
   everBeenUnlocked?: boolean;
   forcePasswordResetReason?: ForceResetPasswordReason;
   hasPremiumPersonally?: boolean;
@@ -223,7 +238,8 @@ export class AccountSettings {
   passwordGenerationOptions?: any;
   usernameGenerationOptions?: any;
   generatorOptions?: any;
-  pinProtected?: EncryptionPair<string, EncString> = new EncryptionPair<string, EncString>();
+  pinKeyEncryptedUserKey?: EncryptedString;
+  pinKeyEncryptedUserKeyEphemeral?: EncryptedString;
   protectedPin?: string;
   settings?: AccountSettingsSettings; // TODO: Merge whatever is going on here into the AccountSettings model properly
   vaultTimeout?: number;
@@ -234,6 +250,10 @@ export class AccountSettings {
   activateAutoFillOnPageLoadFromPolicy?: boolean;
   region?: string;
   smOnboardingTasks?: Record<string, Record<string, boolean>>;
+  trustDeviceChoiceForDecryption?: boolean;
+
+  /** @deprecated July 2023, left for migration purposes*/
+  pinProtected?: EncryptionPair<string, EncString> = new EncryptionPair<string, EncString>();
 
   static fromJSON(obj: Jsonify<AccountSettings>): AccountSettings {
     if (obj == null) {
@@ -269,12 +289,106 @@ export class AccountTokens {
   }
 }
 
+export class AccountDecryptionOptions {
+  hasMasterPassword: boolean;
+  trustedDeviceOption?: TrustedDeviceUserDecryptionOption;
+  keyConnectorOption?: KeyConnectorUserDecryptionOption;
+
+  constructor(init?: Partial<AccountDecryptionOptions>) {
+    if (init) {
+      Object.assign(this, init);
+    }
+  }
+
+  // TODO: these nice getters don't work because the Account object is not properly being deserialized out of
+  // JSON (the Account static fromJSON method is not running) so these getters don't exist on the
+  // account decryptions options object when pulled out of state.  This is a bug that needs to be fixed later on
+  // get hasTrustedDeviceOption(): boolean {
+  //   return this.trustedDeviceOption !== null && this.trustedDeviceOption !== undefined;
+  // }
+
+  // get hasKeyConnectorOption(): boolean {
+  //   return this.keyConnectorOption !== null && this.keyConnectorOption !== undefined;
+  // }
+
+  static fromResponse(response: UserDecryptionOptionsResponse): AccountDecryptionOptions {
+    if (response == null) {
+      return null;
+    }
+
+    const accountDecryptionOptions = new AccountDecryptionOptions();
+    accountDecryptionOptions.hasMasterPassword = response.hasMasterPassword;
+
+    if (response.trustedDeviceOption) {
+      accountDecryptionOptions.trustedDeviceOption = new TrustedDeviceUserDecryptionOption(
+        response.trustedDeviceOption.hasAdminApproval,
+        response.trustedDeviceOption.hasLoginApprovingDevice,
+        response.trustedDeviceOption.hasManageResetPasswordPermission
+      );
+    }
+
+    if (response.keyConnectorOption) {
+      accountDecryptionOptions.keyConnectorOption = new KeyConnectorUserDecryptionOption(
+        response.keyConnectorOption.keyConnectorUrl
+      );
+    }
+
+    return accountDecryptionOptions;
+  }
+
+  static fromJSON(obj: Jsonify<AccountDecryptionOptions>): AccountDecryptionOptions {
+    if (obj == null) {
+      return null;
+    }
+
+    const accountDecryptionOptions = Object.assign(new AccountDecryptionOptions(), obj);
+
+    if (obj.trustedDeviceOption) {
+      accountDecryptionOptions.trustedDeviceOption = new TrustedDeviceUserDecryptionOption(
+        obj.trustedDeviceOption.hasAdminApproval,
+        obj.trustedDeviceOption.hasLoginApprovingDevice,
+        obj.trustedDeviceOption.hasManageResetPasswordPermission
+      );
+    }
+
+    if (obj.keyConnectorOption) {
+      accountDecryptionOptions.keyConnectorOption = new KeyConnectorUserDecryptionOption(
+        obj.keyConnectorOption.keyConnectorUrl
+      );
+    }
+
+    return accountDecryptionOptions;
+  }
+}
+
+export class LoginState {
+  ssoOrganizationIdentifier?: string;
+
+  constructor(init?: Partial<LoginState>) {
+    if (init) {
+      Object.assign(this, init);
+    }
+  }
+
+  static fromJSON(obj: Jsonify<LoginState>): LoginState {
+    if (obj == null) {
+      return null;
+    }
+
+    const loginState = Object.assign(new LoginState(), obj);
+    return loginState;
+  }
+}
+
 export class Account {
   data?: AccountData = new AccountData();
   keys?: AccountKeys = new AccountKeys();
   profile?: AccountProfile = new AccountProfile();
   settings?: AccountSettings = new AccountSettings();
   tokens?: AccountTokens = new AccountTokens();
+  decryptionOptions?: AccountDecryptionOptions = new AccountDecryptionOptions();
+  loginState?: LoginState = new LoginState();
+  adminAuthRequest?: Jsonify<AdminAuthRequestStorable> = null;
 
   constructor(init: Partial<Account>) {
     Object.assign(this, {
@@ -298,6 +412,15 @@ export class Account {
         ...new AccountTokens(),
         ...init?.tokens,
       },
+      decryptionOptions: {
+        ...new AccountDecryptionOptions(),
+        ...init?.decryptionOptions,
+      },
+      loginState: {
+        ...new LoginState(),
+        ...init?.loginState,
+      },
+      adminAuthRequest: init?.adminAuthRequest,
     });
   }
 
@@ -311,6 +434,9 @@ export class Account {
       profile: AccountProfile.fromJSON(json?.profile),
       settings: AccountSettings.fromJSON(json?.settings),
       tokens: AccountTokens.fromJSON(json?.tokens),
+      decryptionOptions: AccountDecryptionOptions.fromJSON(json?.decryptionOptions),
+      loginState: LoginState.fromJSON(json?.loginState),
+      adminAuthRequest: AdminAuthRequestStorable.fromJSON(json?.adminAuthRequest),
     });
   }
 }

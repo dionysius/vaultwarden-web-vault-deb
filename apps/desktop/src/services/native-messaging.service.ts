@@ -136,14 +136,23 @@ export class NativeMessagingService {
           });
         }
 
-        const key = await this.cryptoService.getKeyFromStorage(
+        const userKey = await this.cryptoService.getUserKeyFromStorage(
           KeySuffixOptions.Biometric,
           message.userId
         );
+        const masterKey = await this.cryptoService.getMasterKey(message.userId);
 
-        if (key != null) {
+        if (userKey != null) {
+          // we send the master key still for backwards compatibility
+          // with older browser extensions
+          // TODO: Remove after 2023.10 release (https://bitwarden.atlassian.net/browse/PM-3472)
           this.send(
-            { command: "biometricUnlock", response: "unlocked", keyB64: key.keyB64 },
+            {
+              command: "biometricUnlock",
+              response: "unlocked",
+              keyB64: masterKey?.keyB64,
+              userKeyB64: userKey.keyB64,
+            },
             appId
           );
         } else {

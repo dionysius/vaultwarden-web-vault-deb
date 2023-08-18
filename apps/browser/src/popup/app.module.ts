@@ -20,6 +20,7 @@ import { EnvironmentComponent } from "../auth/popup/environment.component";
 import { HintComponent } from "../auth/popup/hint.component";
 import { HomeComponent } from "../auth/popup/home.component";
 import { LockComponent } from "../auth/popup/lock.component";
+import { LoginDecryptionOptionsComponent } from "../auth/popup/login-decryption-options/login-decryption-options.component";
 import { LoginWithDeviceComponent } from "../auth/popup/login-with-device.component";
 import { LoginComponent } from "../auth/popup/login.component";
 import { RegisterComponent } from "../auth/popup/register.component";
@@ -121,6 +122,7 @@ import "../platform/popup/locales";
     LockComponent,
     LoginComponent,
     LoginWithDeviceComponent,
+    LoginDecryptionOptionsComponent,
     OptionsComponent,
     GeneratorComponent,
     PasswordGeneratorHistoryComponent,

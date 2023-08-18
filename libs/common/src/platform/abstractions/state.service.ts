@@ -5,6 +5,7 @@ import { OrganizationData } from "../../admin-console/models/data/organization.d
 import { PolicyData } from "../../admin-console/models/data/policy.data";
 import { ProviderData } from "../../admin-console/models/data/provider.data";
 import { Policy } from "../../admin-console/models/domain/policy";
+import { AdminAuthRequestStorable } from "../../auth/models/domain/admin-auth-req-storable";
 import { EnvironmentUrls } from "../../auth/models/domain/environment-urls";
 import { ForceResetPasswordReason } from "../../auth/models/domain/force-reset-password-reason";
 import { KdfConfig } from "../../auth/models/domain/kdf-config";
@@ -23,10 +24,19 @@ import { CipherView } from "../../vault/models/view/cipher.view";
 import { CollectionView } from "../../vault/models/view/collection.view";
 import { AddEditCipherInfo } from "../../vault/types/add-edit-cipher-info";
 import { ServerConfigData } from "../models/data/server-config.data";
-import { Account, AccountSettingsSettings } from "../models/domain/account";
+import {
+  Account,
+  AccountDecryptionOptions,
+  AccountSettingsSettings,
+} from "../models/domain/account";
 import { EncString } from "../models/domain/enc-string";
 import { StorageOptions } from "../models/domain/storage-options";
-import { DeviceKey, SymmetricCryptoKey } from "../models/domain/symmetric-crypto-key";
+import {
+  DeviceKey,
+  MasterKey,
+  SymmetricCryptoKey,
+  UserKey,
+} from "../models/domain/symmetric-crypto-key";
 
 export abstract class StateService<T extends Account = Account> {
   accounts$: Observable<{ [userId: string]: T }>;
@@ -71,24 +81,106 @@ export abstract class StateService<T extends Account = Account> {
   setCollapsedGroupings: (value: string[], options?: StorageOptions) => Promise<void>;
   getConvertAccountToKeyConnector: (options?: StorageOptions) => Promise<boolean>;
   setConvertAccountToKeyConnector: (value: boolean, options?: StorageOptions) => Promise<void>;
+  /**
+   * gets the user key
+   */
+  getUserKey: (options?: StorageOptions) => Promise<UserKey>;
+  /**
+   * Sets the user key
+   */
+  setUserKey: (value: UserKey, options?: StorageOptions) => Promise<void>;
+  /**
+   * Gets the user's master key
+   */
+  getMasterKey: (options?: StorageOptions) => Promise<MasterKey>;
+  /**
+   * Sets the user's master key
+   */
+  setMasterKey: (value: MasterKey, options?: StorageOptions) => Promise<void>;
+  /**
+   * Gets the user key encrypted by the master key
+   */
+  getMasterKeyEncryptedUserKey: (options?: StorageOptions) => Promise<string>;
+  /**
+   * Sets the user key encrypted by the master key
+   */
+  setMasterKeyEncryptedUserKey: (value: string, options?: StorageOptions) => Promise<void>;
+  /**
+   * Gets the user's auto key
+   */
+  getUserKeyAutoUnlock: (options?: StorageOptions) => Promise<string>;
+  /**
+   * Sets the user's auto key
+   */
+  setUserKeyAutoUnlock: (value: string, options?: StorageOptions) => Promise<void>;
+  /**
+   * Gets the user's biometric key
+   */
+  getUserKeyBiometric: (options?: StorageOptions) => Promise<string>;
+  /**
+   * Checks if the user has a biometric key available
+   */
+  hasUserKeyBiometric: (options?: StorageOptions) => Promise<boolean>;
+  /**
+   * Sets the user's biometric key
+   */
+  setUserKeyBiometric: (value: BiometricKey, options?: StorageOptions) => Promise<void>;
+  /**
+   * Gets the user key encrypted by the Pin key.
+   * Used when Lock with MP on Restart is disabled
+   */
+  getPinKeyEncryptedUserKey: (options?: StorageOptions) => Promise<EncString>;
+  /**
+   * Sets the user key encrypted by the Pin key.
+   * Used when Lock with MP on Restart is disabled
+   */
+  setPinKeyEncryptedUserKey: (value: EncString, options?: StorageOptions) => Promise<void>;
+  /**
+   * Gets the ephemeral version of the user key encrypted by the Pin key.
+   * Used when Lock with MP on Restart is enabled
+   */
+  getPinKeyEncryptedUserKeyEphemeral: (options?: StorageOptions) => Promise<EncString>;
+  /**
+   * Sets the ephemeral version of the user key encrypted by the Pin key.
+   * Used when Lock with MP on Restart is enabled
+   */
+  setPinKeyEncryptedUserKeyEphemeral: (value: EncString, options?: StorageOptions) => Promise<void>;
+  /**
+   * @deprecated For migration purposes only, use getUserKeyMasterKey instead
+   */
+  getEncryptedCryptoSymmetricKey: (options?: StorageOptions) => Promise<string>;
+  /**
+   * @deprecated For migration purposes only, use setUserKeyMasterKey instead
+   */
+  setEncryptedCryptoSymmetricKey: (value: string, options?: StorageOptions) => Promise<void>;
+  /**
+   * @deprecated For legacy purposes only, use getMasterKey instead
+   */
   getCryptoMasterKey: (options?: StorageOptions) => Promise<SymmetricCryptoKey>;
-  setCryptoMasterKey: (value: SymmetricCryptoKey, options?: StorageOptions) => Promise<void>;
+  /**
+   * @deprecated For migration purposes only, use getUserKeyAuto instead
+   */
   getCryptoMasterKeyAuto: (options?: StorageOptions) => Promise<string>;
+  /**
+   * @deprecated For migration purposes only, use setUserKeyAuto instead
+   */
   setCryptoMasterKeyAuto: (value: string, options?: StorageOptions) => Promise<void>;
-  getCryptoMasterKeyB64: (options?: StorageOptions) => Promise<string>;
-  setCryptoMasterKeyB64: (value: string, options?: StorageOptions) => Promise<void>;
+  /**
+   * @deprecated For migration purposes only, use getUserKeyBiometric instead
+   */
   getCryptoMasterKeyBiometric: (options?: StorageOptions) => Promise<string>;
+  /**
+   * @deprecated For migration purposes only, use hasUserKeyBiometric instead
+   */
   hasCryptoMasterKeyBiometric: (options?: StorageOptions) => Promise<boolean>;
+  /**
+   * @deprecated For migration purposes only, use setUserKeyBiometric instead
+   */
   setCryptoMasterKeyBiometric: (value: BiometricKey, options?: StorageOptions) => Promise<void>;
   getDecryptedCiphers: (options?: StorageOptions) => Promise<CipherView[]>;
   setDecryptedCiphers: (value: CipherView[], options?: StorageOptions) => Promise<void>;
   getDecryptedCollections: (options?: StorageOptions) => Promise<CollectionView[]>;
   setDecryptedCollections: (value: CollectionView[], options?: StorageOptions) => Promise<void>;
-  getDecryptedCryptoSymmetricKey: (options?: StorageOptions) => Promise<SymmetricCryptoKey>;
-  setDecryptedCryptoSymmetricKey: (
-    value: SymmetricCryptoKey,
-    options?: StorageOptions
-  ) => Promise<void>;
   getDecryptedOrganizationKeys: (
     options?: StorageOptions
   ) => Promise<Map<string, SymmetricCryptoKey>>;
@@ -103,7 +195,13 @@ export abstract class StateService<T extends Account = Account> {
     value: GeneratedPasswordHistory[],
     options?: StorageOptions
   ) => Promise<void>;
+  /**
+   * @deprecated For migration purposes only, use getDecryptedUserKeyPin instead
+   */
   getDecryptedPinProtected: (options?: StorageOptions) => Promise<EncString>;
+  /**
+   * @deprecated For migration purposes only, use setDecryptedUserKeyPin instead
+   */
   setDecryptedPinProtected: (value: EncString, options?: StorageOptions) => Promise<void>;
   /**
    * @deprecated Do not call this, use PolicyService
@@ -164,7 +262,21 @@ export abstract class StateService<T extends Account = Account> {
   getDuckDuckGoSharedKey: (options?: StorageOptions) => Promise<string>;
   setDuckDuckGoSharedKey: (value: string, options?: StorageOptions) => Promise<void>;
   getDeviceKey: (options?: StorageOptions) => Promise<DeviceKey | null>;
-  setDeviceKey: (value: DeviceKey, options?: StorageOptions) => Promise<void>;
+  setDeviceKey: (value: DeviceKey | null, options?: StorageOptions) => Promise<void>;
+  getAdminAuthRequest: (options?: StorageOptions) => Promise<AdminAuthRequestStorable | null>;
+  setAdminAuthRequest: (
+    adminAuthRequest: AdminAuthRequestStorable,
+    options?: StorageOptions
+  ) => Promise<void>;
+  getShouldTrustDevice: (options?: StorageOptions) => Promise<boolean | null>;
+  setShouldTrustDevice: (value: boolean, options?: StorageOptions) => Promise<void>;
+  getAccountDecryptionOptions: (
+    options?: StorageOptions
+  ) => Promise<AccountDecryptionOptions | null>;
+  setAccountDecryptionOptions: (
+    value: AccountDecryptionOptions,
+    options?: StorageOptions
+  ) => Promise<void>;
   getEmail: (options?: StorageOptions) => Promise<string>;
   setEmail: (value: string, options?: StorageOptions) => Promise<void>;
   getEmailVerified: (options?: StorageOptions) => Promise<boolean>;
@@ -205,8 +317,6 @@ export abstract class StateService<T extends Account = Account> {
     value: { [id: string]: CollectionData },
     options?: StorageOptions
   ) => Promise<void>;
-  getEncryptedCryptoSymmetricKey: (options?: StorageOptions) => Promise<string>;
-  setEncryptedCryptoSymmetricKey: (value: string, options?: StorageOptions) => Promise<void>;
   /**
    * @deprecated Do not call this directly, use FolderService
    */
@@ -232,7 +342,13 @@ export abstract class StateService<T extends Account = Account> {
     value: GeneratedPasswordHistory[],
     options?: StorageOptions
   ) => Promise<void>;
+  /**
+   * @deprecated For migration purposes only, use getEncryptedUserKeyPin instead
+   */
   getEncryptedPinProtected: (options?: StorageOptions) => Promise<string>;
+  /**
+   * @deprecated For migration purposes only, use setEncryptedUserKeyPin instead
+   */
   setEncryptedPinProtected: (value: string, options?: StorageOptions) => Promise<void>;
   /**
    * @deprecated Do not call this directly, use PolicyService
@@ -269,6 +385,8 @@ export abstract class StateService<T extends Account = Account> {
   setEquivalentDomains: (value: string, options?: StorageOptions) => Promise<void>;
   getEventCollection: (options?: StorageOptions) => Promise<EventData[]>;
   setEventCollection: (value: EventData[], options?: StorageOptions) => Promise<void>;
+  getEverHadUserKey: (options?: StorageOptions) => Promise<boolean>;
+  setEverHadUserKey: (value: boolean, options?: StorageOptions) => Promise<void>;
   getEverBeenUnlocked: (options?: StorageOptions) => Promise<boolean>;
   setEverBeenUnlocked: (value: boolean, options?: StorageOptions) => Promise<void>;
   getForcePasswordResetReason: (options?: StorageOptions) => Promise<ForceResetPasswordReason>;
@@ -327,7 +445,13 @@ export abstract class StateService<T extends Account = Account> {
   setUsernameGenerationOptions: (value: any, options?: StorageOptions) => Promise<void>;
   getGeneratorOptions: (options?: StorageOptions) => Promise<any>;
   setGeneratorOptions: (value: any, options?: StorageOptions) => Promise<void>;
+  /**
+   * Gets the user's Pin, encrypted by the user key
+   */
   getProtectedPin: (options?: StorageOptions) => Promise<string>;
+  /**
+   * Sets the user's Pin, encrypted by the user key
+   */
   setProtectedPin: (value: string, options?: StorageOptions) => Promise<void>;
   getProviders: (options?: StorageOptions) => Promise<{ [id: string]: ProviderData }>;
   setProviders: (value: { [id: string]: ProviderData }, options?: StorageOptions) => Promise<void>;
@@ -353,6 +477,11 @@ export abstract class StateService<T extends Account = Account> {
   setSsoOrganizationIdentifier: (value: string, options?: StorageOptions) => Promise<void>;
   getSsoState: (options?: StorageOptions) => Promise<string>;
   setSsoState: (value: string, options?: StorageOptions) => Promise<void>;
+  getUserSsoOrganizationIdentifier: (options?: StorageOptions) => Promise<string>;
+  setUserSsoOrganizationIdentifier: (
+    value: string | null,
+    options?: StorageOptions
+  ) => Promise<void>;
   getTheme: (options?: StorageOptions) => Promise<ThemeType>;
   setTheme: (value: ThemeType, options?: StorageOptions) => Promise<void>;
   getTwoFactorToken: (options?: StorageOptions) => Promise<string>;

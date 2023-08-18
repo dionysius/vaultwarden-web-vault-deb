@@ -2,7 +2,6 @@ import * as chalk from "chalk";
 import * as program from "commander";
 
 import { AuthenticationStatus } from "@bitwarden/common/auth/enums/authentication-status";
-import { KeySuffixOptions } from "@bitwarden/common/enums";
 
 import { LockCommand } from "./auth/commands/lock.command";
 import { LoginCommand } from "./auth/commands/login.command";
@@ -597,11 +596,8 @@ export class Program {
 
   protected async exitIfLocked() {
     await this.exitIfNotAuthed();
-    if (await this.main.cryptoService.hasKeyInMemory()) {
+    if (await this.main.cryptoService.hasUserKey()) {
       return;
-    } else if (await this.main.cryptoService.hasKeyStored(KeySuffixOptions.Auto)) {
-      // load key into memory
-      await this.main.cryptoService.getKey();
     } else if (process.env.BW_NOINTERACTION !== "true") {
       // must unlock
       if (await this.main.keyConnectorService.getUsesKeyConnector()) {
