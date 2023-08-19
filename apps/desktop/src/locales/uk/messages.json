@@ -1512,12 +1512,6 @@
   "permanentlyDeletedItem": {
     "message": "Запис остаточно видалено"
   },
-  "restoreItem": {
-    "message": "Відновити запис"
-  },
-  "restoreItemConfirmation": {
-    "message": "Ви дійсно хочете відновити цей запис?"
-  },
   "restoredItem": {
     "message": "Запис відновлено"
   },
@@ -2253,7 +2247,7 @@
     "message": "Оновлення рекомендованих налаштувань"
   },
   "loggingInOn": {
-    "message": "Logging in on"
+    "message": "Увійти на"
   },
   "usDomain": {
     "message": "bitwarden.com"

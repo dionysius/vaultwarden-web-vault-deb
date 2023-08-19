@@ -1393,7 +1393,7 @@
     "message": "Ξεκλειδώστε με το Windows Hello"
   },
   "additionalWindowsHelloSettings": {
-    "message": "Additional Windows Hello settings"
+    "message": "Πρόσθετες ρυθμίσεις του Windows Hello"
   },
   "windowsHelloConsentMessage": {
     "message": "Επαληθεύστε για το Bitwarden."
@@ -1408,13 +1408,13 @@
     "message": "Ξεκλειδώστε το vault σας"
   },
   "autoPromptWindowsHello": {
-    "message": "Ζητήστε από τα Windows Γεια σας κατά την έναρξη"
+    "message": "Εμφάνιση Windows Hello κατά την εκκίνηση της εφαρμογής"
   },
   "autoPromptTouchId": {
     "message": "Ερώτηση για το Touch ID κατά την εκκίνηση"
   },
   "requirePasswordOnStart": {
-    "message": "Require password or PIN on app start"
+    "message": "Να απαιτείται κωδικός πρόσβασης ή PIN κατά την εκκίνηση της εφαρμογής"
   },
   "recommendedForSecurity": {
     "message": "Συνίσταται για ασφάλεια."
@@ -1511,12 +1511,6 @@
   },
   "permanentlyDeletedItem": {
     "message": "Μόνιμα Διεγραμμένο Στοιχείο"
-  },
-  "restoreItem": {
-    "message": "Ανάκτηση Στοιχείου"
-  },
-  "restoreItemConfirmation": {
-    "message": "Είστε βέβαιοι ότι θέλετε να ανακτήσετε αυτό το στοιχείο;"
   },
   "restoredItem": {
     "message": "Στοιχείο που έχει Ανακτηθεί"
