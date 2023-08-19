@@ -5,11 +5,17 @@
 
 .toast-container {
   .toast-close-button {
+    @include themify($themes) {
+      color: themed("toastTextColor");
+    }
     font-size: 18px;
     margin-right: 4px;
   }
 
   .ngx-toastr {
+    @include themify($themes) {
+      color: themed("toastTextColor");
+    }
     align-items: center;
     background-image: none !important;
     border-radius: $border-radius;
