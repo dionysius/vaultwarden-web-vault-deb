@@ -11,7 +11,7 @@
     "description": "Extension description"
   },
   "loginOrCreateNewAccount": {
-    "message": "Logga in eller skapa ett nytt konto för att komma åt dina lösenord."
+    "message": "Logga in eller skapa ett nytt konto för att komma åt ditt säkra valv."
   },
   "createAccount": {
     "message": "Skapa konto"
@@ -342,7 +342,7 @@
     "message": "Betygsätt tillägget"
   },
   "rateExtensionDesc": {
-    "message": "Överväg gärna att hjälpa oss genom att ge oss en bra recension!"
+    "message": "Överväg gärna att skriva en recension om oss!"
   },
   "browserNotSupportClipboard": {
     "message": "Din webbläsare har inte stöd för att enkelt kopiera till urklipp. Kopiera till urklipp manuellt istället."
@@ -370,7 +370,7 @@
     }
   },
   "invalidMasterPassword": {
-    "message": "Felaktigt huvudlösenord"
+    "message": "Ogiltigt huvudlösenord"
   },
   "vaultTimeout": {
     "message": "Valvets tidsgräns"
@@ -736,7 +736,7 @@
     "message": "Kopiera verifieringskod"
   },
   "attachments": {
-    "message": "Bifogade filer"
+    "message": "Bilagor"
   },
   "deleteAttachment": {
     "message": "Radera bilaga"
@@ -1445,9 +1445,6 @@
   },
   "restoreItem": {
     "message": "Återställ objekt"
-  },
-  "restoreItemConfirmation": {
-    "message": "Är du säker på att du vill återställa detta objekt?"
   },
   "restoredItem": {
     "message": "Återställde objekt"

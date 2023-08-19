@@ -631,10 +631,10 @@
     "message": "Оновити"
   },
   "notificationUnlockDesc": {
-    "message": "Unlock your Bitwarden vault to complete the auto-fill request."
+    "message": "Розблокуйте своє сховище Bitwarden, щоб завершити запит автозаповнення."
   },
   "notificationUnlock": {
-    "message": "Unlock"
+    "message": "Розблокувати"
   },
   "enableContextMenuItem": {
     "message": "Показувати в контекстному меню"
@@ -1446,9 +1446,6 @@
   "restoreItem": {
     "message": "Відновити запис"
   },
-  "restoreItemConfirmation": {
-    "message": "Ви дійсно хочете відновити цей запис?"
-  },
   "restoredItem": {
     "message": "Запис відновлено"
   },
@@ -2228,7 +2225,7 @@
     }
   },
   "loggingInOn": {
-    "message": "Logging in on"
+    "message": "Увійти на"
   },
   "opensInANewWindow": {
     "message": "Відкривається у новому вікні"

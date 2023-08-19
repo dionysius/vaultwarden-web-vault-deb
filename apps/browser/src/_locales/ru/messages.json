@@ -631,7 +631,7 @@
     "message": "Обновить"
   },
   "notificationUnlockDesc": {
-    "message": "Разблокируйте свое хранилище Bitwarden для завершения запроса автозаполнения."
+    "message": "Разблокируйте свое хранилище Bitwarden чтобы выполнить автозаполнение."
   },
   "notificationUnlock": {
     "message": "Разблокировать"
@@ -1445,9 +1445,6 @@
   },
   "restoreItem": {
     "message": "Восстановить элемент"
-  },
-  "restoreItemConfirmation": {
-    "message": "Вы уверены, что хотите восстановить этот элемент?"
   },
   "restoredItem": {
     "message": "Элемент восстановлен"
