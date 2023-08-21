@@ -3842,29 +3842,11 @@
   "restoreSelected": {
     "message": "Selectie herstellen"
   },
-  "restoreItem": {
-    "message": "Item herstellen"
-  },
   "restoredItem": {
     "message": "Hersteld item"
   },
   "restoredItems": {
     "message": "Herstelde items"
-  },
-  "restoreItemConfirmation": {
-    "message": "Weet je zeker dat je dit item wilt herstellen?"
-  },
-  "restoreItems": {
-    "message": "Items herstellen"
-  },
-  "restoreSelectedItemsDesc": {
-    "message": "Je hebt $COUNT$ item(s) geselecteerd voor herstel. Weet je zeker dat je al deze items wilt herstellen?",
-    "placeholders": {
-      "count": {
-        "content": "$1",
-        "example": "150"
-      }
-    }
   },
   "restoredItemId": {
     "message": "Hersteld item $ID$.",
@@ -4950,8 +4932,8 @@
   "disablePersonalVaultExport": {
     "message": "Persoonlijke kluis exporteren uitschakelen"
   },
-  "disablePersonalVaultExportDesc": {
-    "message": "Verbiedt gebruikers om hun privékluisgegevens te exporteren."
+  "disablePersonalVaultExportDescription": {
+    "message": "Exporteren van gegevens uit hun individuele kluis niet toestaan."
   },
   "vaultExportDisabled": {
     "message": "Kluis exporteren uitgeschakeld"
@@ -5454,8 +5436,8 @@
   "exportingOrganizationVaultTitle": {
     "message": "Organisatiekluis exporteren"
   },
-  "exportingPersonalVaultDescription": {
-    "message": "Exporteert alleen de persoonlijke kluis-items gerelateerd aan $EMAIL$. Geen kluis-items van de organisatie.",
+  "exportingIndividualVaultDescription": {
+    "message": "Alleen de individuele kluisitems geassocieerd met $EMAIL$ worden geëxporteerd. Kluisitems van de organisatie worden niet meegenomen. Alleen informatie over kluisitem wordt geëxporteerd en bevat geen bijlagen.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -7112,5 +7094,8 @@
   },
   "beta": {
     "message": "Beta"
+  },
+  "alreadyHaveAccount": {
+    "message": "Already have an account?"
   }
 }

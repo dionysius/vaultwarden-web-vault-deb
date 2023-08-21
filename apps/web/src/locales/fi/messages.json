@@ -3842,29 +3842,11 @@
   "restoreSelected": {
     "message": "Palauta valitut"
   },
-  "restoreItem": {
-    "message": "Palauta kohde"
-  },
   "restoredItem": {
     "message": "Kohde palautettiin"
   },
   "restoredItems": {
     "message": "Kohteet palautettiin"
-  },
-  "restoreItemConfirmation": {
-    "message": "Haluatko varmasti palauttaa kohteen?"
-  },
-  "restoreItems": {
-    "message": "Palauta kohteet"
-  },
-  "restoreSelectedItemsDesc": {
-    "message": "Olet valinnut palautettavaksi $COUNT$ kohdetta. Haluatko varmasti palauttaa ne?",
-    "placeholders": {
-      "count": {
-        "content": "$1",
-        "example": "150"
-      }
-    }
   },
   "restoredItemId": {
     "message": "$ID$ palautettiin",
@@ -4950,8 +4932,8 @@
   "disablePersonalVaultExport": {
     "message": "Estä yksityisen holvin vienti"
   },
-  "disablePersonalVaultExportDesc": {
-    "message": "Älä salli jäseniä viemästä yksityisten holviensa tietoja."
+  "disablePersonalVaultExportDescription": {
+    "message": "Älä salli jäsenten viedä henkilökohtaisten holviensa tietoja."
   },
   "vaultExportDisabled": {
     "message": "Holvin vienti poistettiin"
@@ -5454,8 +5436,8 @@
   "exportingOrganizationVaultTitle": {
     "message": "Organisaation holvin vienti"
   },
-  "exportingPersonalVaultDescription": {
-    "message": "Vain tunnukseen $EMAIL$ liitetyt yksityisen holvin kohteet viedään. Organisaation holvin kohteita ei sisällytetä. Vain holvin kohteiden tiedot viedään ilman niihin liittyviä salasanojen historiatietoja tai liitteitä.",
+  "exportingIndividualVaultDescription": {
+    "message": "Vain tunnukseen $EMAIL$ liitetyt yksityisen holvin kohteet viedään. Organisaation holvin kohteita ei sisällytetä. Vain holvin kohteiden tiedot viedään ilman niihin liittyviä liitteitä.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -6989,7 +6971,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendsNoItemsMessage": {
-    "message": "Sendeillä voit jakaa salattuja tietoja turvallisesti kenelle tahansa.",
+    "message": "Sendillä voit jakaa salattuja tietoja turvallisesti kenelle tahansa.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "inviteUsers": {
@@ -7112,5 +7094,8 @@
   },
   "beta": {
     "message": "Beta"
+  },
+  "alreadyHaveAccount": {
+    "message": "Onko sinulla jo tili?"
   }
 }

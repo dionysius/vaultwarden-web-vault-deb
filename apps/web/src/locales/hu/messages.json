@@ -3842,29 +3842,11 @@
   "restoreSelected": {
     "message": "Kiválasztottak visszaállítása"
   },
-  "restoreItem": {
-    "message": "Elem visszaállítása"
-  },
   "restoredItem": {
     "message": "Az elem visszaállításra került."
   },
   "restoredItems": {
     "message": "Az elemek visszaállításra kerültek."
-  },
-  "restoreItemConfirmation": {
-    "message": "Biztosan visszaállításra kerüljön ez az elem?"
-  },
-  "restoreItems": {
-    "message": "Elemek visszaállítása"
-  },
-  "restoreSelectedItemsDesc": {
-    "message": "$COUNT$ elem lett kiválasztva visszaállításra. Biztosan visszaállításra kerüljön az összes elem?",
-    "placeholders": {
-      "count": {
-        "content": "$1",
-        "example": "150"
-      }
-    }
   },
   "restoredItemId": {
     "message": "$ID$ azonosítójú elem visszaállításra került.",
@@ -4950,8 +4932,8 @@
   "disablePersonalVaultExport": {
     "message": "A személyes széf exportálás eltávolítása"
   },
-  "disablePersonalVaultExportDesc": {
-    "message": "A tagok nem exportálhatnak személyes széf adatokat."
+  "disablePersonalVaultExportDescription": {
+    "message": "Ne engedjük meg a tagoknak, hogy adatokat exportáljanak a saját széfből."
   },
   "vaultExportDisabled": {
     "message": "A széf exportálás nem engedélyezett."
@@ -5454,8 +5436,8 @@
   "exportingOrganizationVaultTitle": {
     "message": "Szervezeti széf exportálása"
   },
-  "exportingPersonalVaultDescription": {
-    "message": "Csak $EMAIL$ email címmel társított személyes széf elemek kerülnek exportálásra. Ebbe nem kerülnek be a szervezeti széf elemek.",
+  "exportingIndividualVaultDescription": {
+    "message": "$EMAIL$ e-mail címhez társított egyedi széfek kerülnek csak exportálásra. A szervezeti széf elemei nem lesznek benne. Csak a széf információk kerülnek exportálásra és nem tartalmazzák a kapcsolódó mellékleteket.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -7112,5 +7094,8 @@
   },
   "beta": {
     "message": "Beta"
+  },
+  "alreadyHaveAccount": {
+    "message": "Van már saját fiók?"
   }
 }

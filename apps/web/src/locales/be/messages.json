@@ -712,7 +712,7 @@
     "message": "Адбылася нечаканая памылка."
   },
   "expirationDateError": {
-    "message": "Please select an expiration date that is in the future."
+    "message": "Выберыце дату завяршэння тэрміну дзеяння ў будучым."
   },
   "emailAddress": {
     "message": "Адрас электроннай пошты"
@@ -955,7 +955,7 @@
     "message": "Скапіяваць праверачны код"
   },
   "copyUuid": {
-    "message": "Copy UUID"
+    "message": "Скапіяваць UUID"
   },
   "warning": {
     "message": "Папярэджанне"
@@ -1294,19 +1294,19 @@
     "message": "Памылка дэшыфроўкі экспартаванага файла. Ваш ключ шыфравання не супадае з ключом шыфравання, які выкарыстоўваецца для экспартавання даных."
   },
   "importDestination": {
-    "message": "Import destination"
+    "message": "Імпартаванне прызначэння"
   },
   "learnAboutImportOptions": {
-    "message": "Learn about your import options"
+    "message": "Даведацца пра параметры імпартавання"
   },
   "selectImportFolder": {
-    "message": "Select a folder"
+    "message": "Выбраць папку"
   },
   "selectImportCollection": {
-    "message": "Select a collection"
+    "message": "Выбраць калекцыю"
   },
   "importTargetHint": {
-    "message": "Select this option if you want the imported file contents moved to a $DESTINATION$",
+    "message": "Выберыце гэты параметр, калі вы хочаце, каб змесціва імпартаванага файла было перамешчанага ў $DESTINATION$",
     "description": "Located as a hint under the import target. Will be appended by either folder or collection, depending if the user is importing into an individual or an organizational vault.",
     "placeholders": {
       "destination": {
@@ -1316,7 +1316,7 @@
     }
   },
   "importUnassignedItemsError": {
-    "message": "File contains unassigned items."
+    "message": "Файл змяшчае непадпісаныя элементы."
   },
   "selectFormat": {
     "message": "Выберыце фармат файла імпартавання"
@@ -3625,7 +3625,7 @@
     "message": "Гэты элемент мае старыя далучаныя файлы, якія неабходна выправіць."
   },
   "attachmentFixDescription": {
-    "message": "This attachment uses outdated encryption. Select 'Fix' to download, re-encrypt, and re-upload the attachment."
+    "message": "Гэта далучэнне выкарыстоўвае састарэлае шыфраванне. Выберыце \"Выправіць\", каб спампаваць, паўторна зашыфраваць і запампаваць гэта далучэнне."
   },
   "fix": {
     "message": "Выправіць",
@@ -3842,29 +3842,11 @@
   "restoreSelected": {
     "message": "Аднавіць выбранае"
   },
-  "restoreItem": {
-    "message": "Аднавіць элемент"
-  },
   "restoredItem": {
     "message": "Элемент адноўлены"
   },
   "restoredItems": {
     "message": "Адноўленыя элементы"
-  },
-  "restoreItemConfirmation": {
-    "message": "Вы сапраўды хочаце аднавіць гэты элемент?"
-  },
-  "restoreItems": {
-    "message": "Аднавіць элементы"
-  },
-  "restoreSelectedItemsDesc": {
-    "message": "Вы выбралі наступную колькасць элементаў для аднаўлення: $COUNT$. Вы сапраўды хочаце аднавіць іх?",
-    "placeholders": {
-      "count": {
-        "content": "$1",
-        "example": "150"
-      }
-    }
   },
   "restoredItemId": {
     "message": "Адноўлены элемент $ID$.",
@@ -4739,7 +4721,7 @@
     "message": "Памылка"
   },
   "accountRecoveryManageUsers": {
-    "message": "Manage users must also be granted with the manage account recovery permission"
+    "message": "Для кіравання карыстальнікамі неабходна даць дазвол на кіраванне аднаўленнем уліковым запісам"
   },
   "setupProvider": {
     "message": "Налады пастаўшчыка"
@@ -4950,8 +4932,8 @@
   "disablePersonalVaultExport": {
     "message": "Выдаліць экспартаванне асабістага сховішча"
   },
-  "disablePersonalVaultExportDesc": {
-    "message": "Не дазваляць удзельнікам экспартаваць іх індывідуальнае сховішча."
+  "disablePersonalVaultExportDescription": {
+    "message": "Не дазваляць удзельнікам экспартаваць даныя з іх індывідуальнага сховішча."
   },
   "vaultExportDisabled": {
     "message": "Экспартаванне сховішча адключана"
@@ -5454,8 +5436,8 @@
   "exportingOrganizationVaultTitle": {
     "message": "Экспартаванне сховішча арганізацыі"
   },
-  "exportingPersonalVaultDescription": {
-    "message": "Будуць экспартаваны толькі асабістыя элементы сховішча, якія звязаны з $EMAIL$. Элементы сховішча арганізацыі не будуць уключаны.",
+  "exportingIndividualVaultDescription": {
+    "message": "Будуць экспартаваны толькі індывідуальныя элементы сховішча, якія звязаны з $EMAIL$. Элементы сховішча арганізацыі не будуць уключаны. Толькі звесткі элемента сховішча будуць экспартаваны і яны не будуць уключаць звязаныя далучэнні.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -5464,7 +5446,7 @@
     }
   },
   "exportingOrganizationVaultDesc": {
-    "message": "Only the organization vault associated with $ORGANIZATION$ will be exported. Items in individual vaults or other organizations will not be included.",
+    "message": "Толькі сховішча арганізацыі, якія звязаны з $ORGANIZATION$ будуць экспартаваны. Элементы асабістага сховішча і элементы з іншых арганізацый не будуць уключаны.",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -6854,7 +6836,7 @@
     "message": "Абнавіце налады KDF"
   },
   "trustedDevices": {
-    "message": "Trusted devices"
+    "message": "Давераныя прылады"
   },
   "memberDecryptionTdeDescriptionPartOne": {
     "message": "Пасля аўтэнтыфікацыі ўдзельнікі расшыфроўваюць даныя сховішча з выкарыстаннем ключа, які захоўваецца на іх прыладах",
@@ -6985,11 +6967,11 @@
     "message": "Сцяг выбранага рэгіёна"
   },
   "sendsNoItemsTitle": {
-    "message": "No active Sends",
+    "message": "Няма актыўных Send'аў",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendsNoItemsMessage": {
-    "message": "Use Send to securely share encrypted information with anyone.",
+    "message": "Выкарыстоўвайце Send'ы, каб бяспечна абагуляць зашыфраваную інфармацыю з іншымі.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "inviteUsers": {
@@ -7053,7 +7035,7 @@
     "message": "Дадатковыя сэрвісныя ўліковыя запісы"
   },
   "includedServiceAccounts": {
-    "message": "Your plan comes with $COUNT$ service accounts.",
+    "message": "Ваш тарыфны план мае наступную колькасць сэрвісных уліковых запісаў: $COUNT$.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -7062,7 +7044,7 @@
     }
   },
   "addAdditionalServiceAccounts": {
-    "message": "You can add additional service accounts for $COST$ per month.",
+    "message": "Вы можаце дадаць дадатковую колькасць сэрвісных уліковых запісаў за $COST$ у месяц.",
     "placeholders": {
       "cost": {
         "content": "$1",
@@ -7095,7 +7077,7 @@
     "message": "Максімальны патэнцыйны кошт сэрвісных уліковых запісаў"
   },
   "smBetaEndedDesc": {
-    "message": "The Secrets Manager Beta ended $BETA_ENDING_DATE$. You have $DAYS$ days left to add Secrets Manager to your paid subscription and maintain access to Secrets Manager data. Contact Customer Success to add Secrets Manager to your subscription.",
+    "message": "Перыяд бэта-тэсціравання менеджара сакрэтаў завершыцца $BETA_ENDING_DATE$. Дадайце менеджар сакрэтаў у сваю платную падпіску і захавайце доступ да даных (засталося дзён: $DAYS$). Звяжыцеся з нашай службай падтрымкі, каб дадаць менеджар сакрэтаў у сваю платную падпіску.",
     "placeholders": {
       "beta_ending_date": {
         "content": "$1",
@@ -7108,9 +7090,12 @@
     }
   },
   "betaEnding": {
-    "message": "Beta Ending"
+    "message": "Завяршэнне бэта-версіі"
   },
   "beta": {
-    "message": "Beta"
+    "message": "Бэта"
+  },
+  "alreadyHaveAccount": {
+    "message": "Already have an account?"
   }
 }

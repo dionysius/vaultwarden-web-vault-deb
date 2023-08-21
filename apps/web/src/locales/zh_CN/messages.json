@@ -712,7 +712,7 @@
     "message": "发生意外错误。"
   },
   "expirationDateError": {
-    "message": "请选择一个过期日期（必须是将来的某个日期）。"
+    "message": "请选择一个将来的过期日期。"
   },
   "emailAddress": {
     "message": "电子邮件地址"
@@ -1018,7 +1018,7 @@
     "message": "导出类型"
   },
   "accountRestricted": {
-    "message": "账户受限"
+    "message": "账户限制"
   },
   "passwordProtected": {
     "message": "密码保护"
@@ -3842,29 +3842,11 @@
   "restoreSelected": {
     "message": "恢复所选"
   },
-  "restoreItem": {
-    "message": "恢复项目"
-  },
   "restoredItem": {
     "message": "项目已恢复"
   },
   "restoredItems": {
     "message": "项目已恢复"
-  },
-  "restoreItemConfirmation": {
-    "message": "确定要恢复此项目吗？"
-  },
-  "restoreItems": {
-    "message": "恢复项目"
-  },
-  "restoreSelectedItemsDesc": {
-    "message": "您选择了要恢复 $COUNT$ 个项目。确定要恢复这些项目吗？",
-    "placeholders": {
-      "count": {
-        "content": "$1",
-        "example": "150"
-      }
-    }
   },
   "restoredItemId": {
     "message": "恢复了项目 $ID$",
@@ -4950,8 +4932,8 @@
   "disablePersonalVaultExport": {
     "message": "禁用个人密码库导出"
   },
-  "disablePersonalVaultExportDesc": {
-    "message": "不允许成员导出他们的个人密码库数据。"
+  "disablePersonalVaultExportDescription": {
+    "message": "不允许成员从个人密码库导出数据。"
   },
   "vaultExportDisabled": {
     "message": "密码库导出已禁用"
@@ -5454,8 +5436,8 @@
   "exportingOrganizationVaultTitle": {
     "message": "正在导出组织密码库"
   },
-  "exportingPersonalVaultDescription": {
-    "message": "仅会导出与 $EMAIL$ 关联的个人密码库项目，不包括组织密码库的项目。仅会导出密码库项目信息，不包括关联的密码历史记录和附件。",
+  "exportingIndividualVaultDescription": {
+    "message": "仅会导出与 $EMAIL$ 关联的个人密码库项目，不包括组织密码库项目。仅会导出密码库项目信息，不包括关联的附件。",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -6354,7 +6336,7 @@
     "message": "DNS TXT 记录"
   },
   "dnsTxtRecordInputHint": {
-    "message": "复制并粘贴 TXT 记录到您的 DNS 供应商。"
+    "message": "复制并粘贴 TXT 记录到您的 DNS 提供商。"
   },
   "domainNameInputHint": {
     "message": "例如：mydomain.com。子域需要单独的条目进行验证。"
@@ -6976,10 +6958,10 @@
     "message": "Next"
   },
   "usFlag": {
-    "message": "US flag"
+    "message": "US 标志"
   },
   "euFlag": {
-    "message": "EU flag"
+    "message": "EU 标志"
   },
   "selectedRegionFlag": {
     "message": "选定的区域标志"
@@ -7095,7 +7077,7 @@
     "message": "最大潜在服务账户费用"
   },
   "smBetaEndedDesc": {
-    "message": "机密管理器 Beta 版已于 $BETA_ENDING_DATE$ 结束。您还剩余 $DAYS$ 天时间将机密管理器添加到您的付费订阅中，以保持对其数据的访问权限。联系客户成功团队将机密管理器添加到您的订阅中。",
+    "message": "机密管理器 Beta 版将于 $BETA_ENDING_DATE$ 结束。您还剩余 $DAYS$ 天时间将机密管理器添加到您的付费订阅中，以保持对其数据的访问权限。联系客户成功团队将机密管理器添加到您的订阅中。",
     "placeholders": {
       "beta_ending_date": {
         "content": "$1",
@@ -7112,5 +7094,8 @@
   },
   "beta": {
     "message": "Beta"
+  },
+  "alreadyHaveAccount": {
+    "message": "已经有一个账户？"
   }
 }

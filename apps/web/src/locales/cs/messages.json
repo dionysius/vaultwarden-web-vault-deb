@@ -3842,29 +3842,11 @@
   "restoreSelected": {
     "message": "Obnovit vybrané"
   },
-  "restoreItem": {
-    "message": "Obnovit položku"
-  },
   "restoredItem": {
     "message": "Položka byla obnovena"
   },
   "restoredItems": {
     "message": "Položky byly obnoveny"
-  },
-  "restoreItemConfirmation": {
-    "message": "Opravdu chcete tuto položku obnovit?"
-  },
-  "restoreItems": {
-    "message": "Obnovit položky"
-  },
-  "restoreSelectedItemsDesc": {
-    "message": "Vybrali jste $COUNT$ položek pro obnovení. Opravdu chcete obnovit všechny vybrané položky?",
-    "placeholders": {
-      "count": {
-        "content": "$1",
-        "example": "150"
-      }
-    }
   },
   "restoredItemId": {
     "message": "Položka $ID$ byla obnovena",
@@ -4950,7 +4932,7 @@
   "disablePersonalVaultExport": {
     "message": "Odebrat osobní export trezoru"
   },
-  "disablePersonalVaultExportDesc": {
+  "disablePersonalVaultExportDescription": {
     "message": "Nedovolí, aby členové exportovali svá osobní data trezoru."
   },
   "vaultExportDisabled": {
@@ -5454,8 +5436,8 @@
   "exportingOrganizationVaultTitle": {
     "message": "Exportování trezoru organizace"
   },
-  "exportingPersonalVaultDescription": {
-    "message": "Budou exportovány jen osobní položky trezoru spojené s $EMAIL$. Položky trezoru organizace nebudou zahrnuty. Budou exportovány jen informace o položkách trezoru a nebudou zahrnuty související historie hesel ani přílohy.",
+  "exportingIndividualVaultDescription": {
+    "message": "Budou exportovány jen osobní položky trezoru spojené s $EMAIL$. Položky trezoru organizace nebudou zahrnuty. Budou exportovány jen informace o položkách trezoru a nebudou zahrnuty související přílohy.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -7112,5 +7094,8 @@
   },
   "beta": {
     "message": "Beta"
+  },
+  "alreadyHaveAccount": {
+    "message": "Už máte účet?"
   }
 }

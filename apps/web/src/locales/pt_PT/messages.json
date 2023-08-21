@@ -609,7 +609,7 @@
     "message": "Iniciar sessão com o dispositivo"
   },
   "loginWithDeviceEnabledNote": {
-    "message": "O início de sessão com o dispositivo deve ser ativado nas definições da aplicação Bitwarden. Necessita de outra opção?"
+    "message": "O início de sessão com o dispositivo deve ser ativado nas definições da aplicação Bitwarden. Precisa de outra opção?"
   },
   "loginWithMasterPassword": {
     "message": "Iniciar sessão com a palavra-passe mestra"
@@ -3842,29 +3842,11 @@
   "restoreSelected": {
     "message": "Restaurar selecionados"
   },
-  "restoreItem": {
-    "message": "Restaurar item"
-  },
   "restoredItem": {
     "message": "Item restaurado"
   },
   "restoredItems": {
     "message": "Itens restaurados"
-  },
-  "restoreItemConfirmation": {
-    "message": "Tem a certeza de que pretende restaurar este item?"
-  },
-  "restoreItems": {
-    "message": "Restaurar itens"
-  },
-  "restoreSelectedItemsDesc": {
-    "message": "Selecionou $COUNT$ item(ns) para restaurar. Tem a certeza de que pretende restaurar estes itens?",
-    "placeholders": {
-      "count": {
-        "content": "$1",
-        "example": "150"
-      }
-    }
   },
   "restoredItemId": {
     "message": "Item $ID$ restaurado",
@@ -4950,8 +4932,8 @@
   "disablePersonalVaultExport": {
     "message": "Remover a exportação do cofre individual"
   },
-  "disablePersonalVaultExportDesc": {
-    "message": "Não permitir que os membros exportem os seus dados do cofre individual."
+  "disablePersonalVaultExportDescription": {
+    "message": "Do not allow members to export data from their individual vault."
   },
   "vaultExportDisabled": {
     "message": "Exportação do cofre removida"
@@ -5454,8 +5436,8 @@
   "exportingOrganizationVaultTitle": {
     "message": "A exportar o cofre da organização"
   },
-  "exportingPersonalVaultDescription": {
-    "message": "Apenas os itens do cofre pessoal associado a $EMAIL$ serão exportados. Os itens do cofre da organização não serão incluídos.",
+  "exportingIndividualVaultDescription": {
+    "message": "Apenas os itens de cofre individuais associados a $EMAIL$ serão exportados. Os itens do cofre da organização não serão incluídos. Apenas serão exportadas as informações do item do cofre e não serão incluídos os anexos associados.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -7112,5 +7094,8 @@
   },
   "beta": {
     "message": "Beta"
+  },
+  "alreadyHaveAccount": {
+    "message": "Já tem uma conta?"
   }
 }

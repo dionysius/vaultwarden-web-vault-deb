@@ -3842,29 +3842,11 @@
   "restoreSelected": {
     "message": "Restarigi elektitajn"
   },
-  "restoreItem": {
-    "message": "Restarigi Artikolon"
-  },
   "restoredItem": {
     "message": "Restarigita elemento"
   },
   "restoredItems": {
     "message": "Restarigitaj Eroj"
-  },
-  "restoreItemConfirmation": {
-    "message": "Ĉu vi certe volas restarigi ĉi tiun eron?"
-  },
-  "restoreItems": {
-    "message": "Restarigi erojn"
-  },
-  "restoreSelectedItemsDesc": {
-    "message": "Vi elektis $COUNT$ eron (j) por restarigi. Ĉu vi certe volas restarigi ĉiujn ĉi tiujn erojn?",
-    "placeholders": {
-      "count": {
-        "content": "$1",
-        "example": "150"
-      }
-    }
   },
   "restoredItemId": {
     "message": "Restariĝis ero $ID$.",
@@ -4950,8 +4932,8 @@
   "disablePersonalVaultExport": {
     "message": "Remove individual vault export"
   },
-  "disablePersonalVaultExportDesc": {
-    "message": "Do not allow members to export their individual vault data."
+  "disablePersonalVaultExportDescription": {
+    "message": "Do not allow members to export data from their individual vault."
   },
   "vaultExportDisabled": {
     "message": "Vault export removed"
@@ -5454,8 +5436,8 @@
   "exportingOrganizationVaultTitle": {
     "message": "Exporting organization vault"
   },
-  "exportingPersonalVaultDescription": {
-    "message": "Only the individual vault items associated with $EMAIL$ will be exported. Organization vault items will not be included. Only vault item information will be exported and will not include associated password history or attachments.",
+  "exportingIndividualVaultDescription": {
+    "message": "Only the individual vault items associated with $EMAIL$ will be exported. Organization vault items will not be included. Only vault item information will be exported and will not include associated attachments.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -7112,5 +7094,8 @@
   },
   "beta": {
     "message": "Beta"
+  },
+  "alreadyHaveAccount": {
+    "message": "Already have an account?"
   }
 }

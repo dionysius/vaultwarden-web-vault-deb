@@ -3,7 +3,7 @@
     "message": "Какой это тип элемента?"
   },
   "name": {
-    "message": "Имя"
+    "message": "Название"
   },
   "uri": {
     "message": "URI"
@@ -697,7 +697,7 @@
     }
   },
   "masterPassDoesntMatch": {
-    "message": "Мастер-пароли не совпадают."
+    "message": "Мастер-пароль не совпадает."
   },
   "newAccountCreated": {
     "message": "Ваш аккаунт создан! Теперь вы можете войти в систему."
@@ -1316,7 +1316,7 @@
     }
   },
   "importUnassignedItemsError": {
-    "message": "File contains unassigned items."
+    "message": "Файл содержит неназначенные элементы."
   },
   "selectFormat": {
     "message": "Выберите формат файла импорта"
@@ -3842,29 +3842,11 @@
   "restoreSelected": {
     "message": "Восстановить выбранные"
   },
-  "restoreItem": {
-    "message": "Восстановить элемент"
-  },
   "restoredItem": {
     "message": "Элемент восстановлен"
   },
   "restoredItems": {
     "message": "Элементы восстановлены"
-  },
-  "restoreItemConfirmation": {
-    "message": "Вы уверены, что хотите восстановить этот элемент?"
-  },
-  "restoreItems": {
-    "message": "Восстановить элементы"
-  },
-  "restoreSelectedItemsDesc": {
-    "message": "Выбрано элементов для восстановления: $COUNT$. Вы действительно хотите восстановить эти элементы?",
-    "placeholders": {
-      "count": {
-        "content": "$1",
-        "example": "150"
-      }
-    }
   },
   "restoredItemId": {
     "message": "Элемент $ID$ восстановлен.",
@@ -4950,8 +4932,8 @@
   "disablePersonalVaultExport": {
     "message": "Удалить экспорт личного хранилища"
   },
-  "disablePersonalVaultExportDesc": {
-    "message": "Не разрешать пользователям экспортировать данные своего личного хранилища."
+  "disablePersonalVaultExportDescription": {
+    "message": "Запретить пользователям экспортировать данные из их собственного хранилища."
   },
   "vaultExportDisabled": {
     "message": "Экспорт хранилища отключен"
@@ -5454,8 +5436,8 @@
   "exportingOrganizationVaultTitle": {
     "message": "Экспорт хранилища организации"
   },
-  "exportingPersonalVaultDescription": {
-    "message": "Будут экспортированы только отдельные элементы хранилища, связанные с $EMAIL$. Элементы хранилища организации включены не будут. Экспортируется только информация об элементах хранилища, не включая связанную историю паролей или вложений.",
+  "exportingIndividualVaultDescription": {
+    "message": "Будут экспортированы только отдельные элементы хранилища, связанные с $EMAIL$. Элементы хранилища организации включены не будут. Экспортируется только информация об элементах хранилища, не включая связанные вложения.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -7112,5 +7094,8 @@
   },
   "beta": {
     "message": "Beta"
+  },
+  "alreadyHaveAccount": {
+    "message": "Уже зарегистрированы?"
   }
 }

@@ -3842,29 +3842,11 @@
   "restoreSelected": {
     "message": "Restaurare selecție"
   },
-  "restoreItem": {
-    "message": "Restaurare articol"
-  },
   "restoredItem": {
     "message": "Articol restaurat"
   },
   "restoredItems": {
     "message": "Articole restaurate"
-  },
-  "restoreItemConfirmation": {
-    "message": "Sigur doriți să restabiliți acest articol?"
-  },
-  "restoreItems": {
-    "message": "Restabilire articole"
-  },
-  "restoreSelectedItemsDesc": {
-    "message": "Ați selectat $COUNT$ articol(e) pentru restabilire. Sigur vreți să restabiliți toate aceste articole?",
-    "placeholders": {
-      "count": {
-        "content": "$1",
-        "example": "150"
-      }
-    }
   },
   "restoredItemId": {
     "message": "Articolul $ID$ restaurat",
@@ -4950,8 +4932,8 @@
   "disablePersonalVaultExport": {
     "message": "Înlăturați exportul de seif individual"
   },
-  "disablePersonalVaultExportDesc": {
-    "message": "Nu permite membrilor să-și exporte datele individuale din seif."
+  "disablePersonalVaultExportDescription": {
+    "message": "Do not allow members to export data from their individual vault."
   },
   "vaultExportDisabled": {
     "message": "Export de seif înlăturat"
@@ -5454,8 +5436,8 @@
   "exportingOrganizationVaultTitle": {
     "message": "Exportul seifului organizației"
   },
-  "exportingPersonalVaultDescription": {
-    "message": "Numai articolele de seif individuale asociate cu $EMAIL$ vor fi exportate. Articolele de seif ale organizației nu vor fi incluse.",
+  "exportingIndividualVaultDescription": {
+    "message": "Only the individual vault items associated with $EMAIL$ will be exported. Organization vault items will not be included. Only vault item information will be exported and will not include associated attachments.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -7112,5 +7094,8 @@
   },
   "beta": {
     "message": "Beta"
+  },
+  "alreadyHaveAccount": {
+    "message": "Already have an account?"
   }
 }

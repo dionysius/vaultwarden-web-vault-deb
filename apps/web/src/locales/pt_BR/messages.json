@@ -3842,29 +3842,11 @@
   "restoreSelected": {
     "message": "Restaurar Selecionados"
   },
-  "restoreItem": {
-    "message": "Restaurar Item"
-  },
   "restoredItem": {
     "message": "Item Restaurado"
   },
   "restoredItems": {
     "message": "Itens Restaurados"
-  },
-  "restoreItemConfirmation": {
-    "message": "Você tem certeza que deseja restaurar esse item?"
-  },
-  "restoreItems": {
-    "message": "Restaurar itens"
-  },
-  "restoreSelectedItemsDesc": {
-    "message": "Você selecionou $COUNT$ item(ns) para restaurar. Tem certeza que deseja restaurar todos esses itens?",
-    "placeholders": {
-      "count": {
-        "content": "$1",
-        "example": "150"
-      }
-    }
   },
   "restoredItemId": {
     "message": "Item $ID$ restaurado.",
@@ -4950,8 +4932,8 @@
   "disablePersonalVaultExport": {
     "message": "Desabilitar Exportação de Cofre Pessoal"
   },
-  "disablePersonalVaultExportDesc": {
-    "message": "Proíbe os usuários de exportar seus dados de cofre privados."
+  "disablePersonalVaultExportDescription": {
+    "message": "Não permita que os membros exportem dados do seu cofre individual."
   },
   "vaultExportDisabled": {
     "message": "Exportação de Cofre Desabilitada"
@@ -5454,8 +5436,8 @@
   "exportingOrganizationVaultTitle": {
     "message": "Exportando o Cofre da Organização"
   },
-  "exportingPersonalVaultDescription": {
-    "message": "Apenas os itens pessoais do cofre associados com $EMAIL$ serão exportados. Os itens do cofre da organização não serão incluídos.",
+  "exportingIndividualVaultDescription": {
+    "message": "Apenas os itens individuais do cofre associados a $EMAIL$ serão exportados. Os itens do cofre da organização não serão incluídos. Apenas as informações de item do cofre serão exportadas e não incluirão anexos associados.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -7112,5 +7094,8 @@
   },
   "beta": {
     "message": "Beta"
+  },
+  "alreadyHaveAccount": {
+    "message": "Já tem uma conta?"
   }
 }

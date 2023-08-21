@@ -3842,29 +3842,11 @@
   "restoreSelected": {
     "message": "選択したものをリストア"
   },
-  "restoreItem": {
-    "message": "アイテムをリストア"
-  },
   "restoredItem": {
     "message": "リストアされたアイテム"
   },
   "restoredItems": {
     "message": "リストアされたアイテム"
-  },
-  "restoreItemConfirmation": {
-    "message": "このアイテムをリストアしますか？"
-  },
-  "restoreItems": {
-    "message": "アイテムをリストア"
-  },
-  "restoreSelectedItemsDesc": {
-    "message": "$COUNT$個のアイテムをリストアしようとしています。本当にこれらのアイテムをリストアしますか？",
-    "placeholders": {
-      "count": {
-        "content": "$1",
-        "example": "150"
-      }
-    }
   },
   "restoredItemId": {
     "message": "アイテム $ID$ をリストアしました。",
@@ -4950,8 +4932,8 @@
   "disablePersonalVaultExport": {
     "message": "個別の保管庫のエクスポートを削除"
   },
-  "disablePersonalVaultExportDesc": {
-    "message": "メンバーが個別の保管庫データをエクスポートすることを許可しない。"
+  "disablePersonalVaultExportDescription": {
+    "message": "メンバーが個人の保管庫からデータをエクスポートすることを許可しません。"
   },
   "vaultExportDisabled": {
     "message": "保管庫のエクスポートが無効化されました"
@@ -5454,8 +5436,8 @@
   "exportingOrganizationVaultTitle": {
     "message": "組織保管庫のエクスポート"
   },
-  "exportingPersonalVaultDescription": {
-    "message": "$EMAIL$ に関連付けられた個人用保管庫アイテムのみがエクスポートされます。組織用保管庫アイテムは含まれません。",
+  "exportingIndividualVaultDescription": {
+    "message": "$EMAIL$ に関連付けられた個人の保管庫アイテムのみがエクスポートされます。組織の保管庫アイテムは含まれません。 保管庫アイテム情報のみがエクスポートされ、関連する添付ファイルはエクスポートされません。",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -7112,5 +7094,8 @@
   },
   "beta": {
     "message": "ベータ"
+  },
+  "alreadyHaveAccount": {
+    "message": "既にアカウントをお持ちですか？"
   }
 }

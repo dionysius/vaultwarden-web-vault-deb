@@ -2517,7 +2517,7 @@
     "message": "Är du säker på att du vill ta bort denna användare?"
   },
   "removeOrgUserConfirmation": {
-    "message": "When a member is removed, they no longer have access to organization data and this action is irreversible. To add the member back to the organization, they must be invited and onboarded again."
+    "message": "När en medlem tas bort har de inte längre tillgång till organisationsdata och denna åtgärd är oåterkallelig. För att lägga tillbaka medlemmen till organisationen måste de bjudas in och bekräftas igen."
   },
   "revokeUserConfirmation": {
     "message": "When a member is revoked, they no longer have access to organization data. To quickly restore member access, go to the Revoked tab."
@@ -3842,29 +3842,11 @@
   "restoreSelected": {
     "message": "Återställ markerade"
   },
-  "restoreItem": {
-    "message": "Återställ objekt"
-  },
   "restoredItem": {
     "message": "Återställde objekt"
   },
   "restoredItems": {
     "message": "Återställde objekt"
-  },
-  "restoreItemConfirmation": {
-    "message": "Är du säker på att du vill återställa detta objekt?"
-  },
-  "restoreItems": {
-    "message": "Återställ objekt"
-  },
-  "restoreSelectedItemsDesc": {
-    "message": "Du har markerat $COUNT$ objekt att återställa. Är du säker på att du vill återställa alla dessa objekt?",
-    "placeholders": {
-      "count": {
-        "content": "$1",
-        "example": "150"
-      }
-    }
   },
   "restoredItemId": {
     "message": "Återställde objektet $ID$",
@@ -4950,8 +4932,8 @@
   "disablePersonalVaultExport": {
     "message": "Remove individual vault export"
   },
-  "disablePersonalVaultExportDesc": {
-    "message": "Do not allow members to export their individual vault data."
+  "disablePersonalVaultExportDescription": {
+    "message": "Tillåt inte medlemmar att exportera data från sina individuella valv."
   },
   "vaultExportDisabled": {
     "message": "Vault export removed"
@@ -5454,8 +5436,8 @@
   "exportingOrganizationVaultTitle": {
     "message": "Exporting organization vault"
   },
-  "exportingPersonalVaultDescription": {
-    "message": "Only the individual vault items associated with $EMAIL$ will be exported. Organization vault items will not be included. Only vault item information will be exported and will not include associated password history or attachments.",
+  "exportingIndividualVaultDescription": {
+    "message": "Only the individual vault items associated with $EMAIL$ will be exported. Organization vault items will not be included. Only vault item information will be exported and will not include associated attachments.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -7112,5 +7094,8 @@
   },
   "beta": {
     "message": "Beta"
+  },
+  "alreadyHaveAccount": {
+    "message": "Har du redan ett konto?"
   }
 }

@@ -3842,29 +3842,11 @@
   "restoreSelected": {
     "message": "Seçilenleri geri yükle"
   },
-  "restoreItem": {
-    "message": "Kaydı geri yükle"
-  },
   "restoredItem": {
     "message": "Kayıt geri yüklendi"
   },
   "restoredItems": {
     "message": "Kayıtlar geri yüklendi"
-  },
-  "restoreItemConfirmation": {
-    "message": "Bu kayıtları geri yüklemek istediğinizden emin misiniz?"
-  },
-  "restoreItems": {
-    "message": "Kayıtları geri yükle"
-  },
-  "restoreSelectedItemsDesc": {
-    "message": "Geri yüklenmesi için $COUNT$ kayıt seçtiniz. Bu kayıtları geri yüklemek istediğinizden emin misiniz?",
-    "placeholders": {
-      "count": {
-        "content": "$1",
-        "example": "150"
-      }
-    }
   },
   "restoredItemId": {
     "message": "$ID$ kaydı geri yüklendi",
@@ -4950,8 +4932,8 @@
   "disablePersonalVaultExport": {
     "message": "Kişisel kasayı dışa aktarmayı kaldır"
   },
-  "disablePersonalVaultExportDesc": {
-    "message": "Kullanıcıların kişisel kasa verilerini dışa aktarmasına izin verme."
+  "disablePersonalVaultExportDescription": {
+    "message": "Do not allow members to export data from their individual vault."
   },
   "vaultExportDisabled": {
     "message": "Kasayı dışa aktarma kaldırıldı"
@@ -5454,8 +5436,8 @@
   "exportingOrganizationVaultTitle": {
     "message": "Kuruluş Kasasını Dışa Aktarma"
   },
-  "exportingPersonalVaultDescription": {
-    "message": "Sadece $EMAIL$ ile ilişkili kişisel kasa ögeleri dışarı aktarılacak. Kuruluş kasasındaki ögeler dahil edilmeyecek.",
+  "exportingIndividualVaultDescription": {
+    "message": "Yalnızca $EMAIL$ ile ilişkili kasa öğeleri dışa aktarılacaktır. Kuruluş kasası öğeleri dahil edilmeyecektir. Yalnızca kasa öğesi bilgileri dışa aktarılacak ve ilişkili ekleri içermeyecektir.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -7112,5 +7094,8 @@
   },
   "beta": {
     "message": "Beta"
+  },
+  "alreadyHaveAccount": {
+    "message": "Zaten hesabınız var mı?"
   }
 }

@@ -3842,29 +3842,11 @@
   "restoreSelected": {
     "message": "Restaurer la sélection"
   },
-  "restoreItem": {
-    "message": "Restaurer l'élément"
-  },
   "restoredItem": {
     "message": "Élément restauré"
   },
   "restoredItems": {
     "message": "Éléments restaurés"
-  },
-  "restoreItemConfirmation": {
-    "message": "Êtes-vous sûr de vouloir restaurer cet élément ?"
-  },
-  "restoreItems": {
-    "message": "Restaurer les éléments"
-  },
-  "restoreSelectedItemsDesc": {
-    "message": "Vous avez sélectionné $COUNT$ élément(s) à restaurer. Êtes-vous sûr de vouloir restaurer tous ces éléments ?",
-    "placeholders": {
-      "count": {
-        "content": "$1",
-        "example": "150"
-      }
-    }
   },
   "restoredItemId": {
     "message": "Élément $ID$ restauré.",
@@ -4950,8 +4932,8 @@
   "disablePersonalVaultExport": {
     "message": "Supprimer l'exportation individuelle du coffre"
   },
-  "disablePersonalVaultExportDesc": {
-    "message": "Empêche les utilisateurs d'exporter les données de leur coffre privé."
+  "disablePersonalVaultExportDescription": {
+    "message": "Ne pas autoriser les membres à exporter des données de leur coffre individuel."
   },
   "vaultExportDisabled": {
     "message": "Export du coffre supprimé"
@@ -5454,8 +5436,8 @@
   "exportingOrganizationVaultTitle": {
     "message": "Export du coffre de l'organisation"
   },
-  "exportingPersonalVaultDescription": {
-    "message": "Seuls les éléments individuels du coffre associés à $EMAIL$ seront exportés. Les éléments du coffre de l'organisation ne seront pas inclus. Seules les informations sur les éléments du coffre seront exportées et n'incluront pas l'historique des mots de passe associés ou pièces jointes.",
+  "exportingIndividualVaultDescription": {
+    "message": "Seuls les éléments individuels du coffre associés à $EMAIL$ seront exportés. Les éléments du coffre de l'organisation ne seront pas inclus. Seules les informations sur les éléments du coffre seront exportées et n'incluront pas les pièces jointes associées.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -7112,5 +7094,8 @@
   },
   "beta": {
     "message": "Beta"
+  },
+  "alreadyHaveAccount": {
+    "message": "Vous avez déjà un compte ?"
   }
 }

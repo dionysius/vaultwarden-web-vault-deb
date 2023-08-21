@@ -3842,29 +3842,11 @@
   "restoreSelected": {
     "message": "Atjaunot atlasīto"
   },
-  "restoreItem": {
-    "message": "Atjaunot vienumu"
-  },
   "restoredItem": {
     "message": "Vienums atjaunots"
   },
   "restoredItems": {
     "message": "Vienumi atjaunoti"
-  },
-  "restoreItemConfirmation": {
-    "message": "Vai tiešām atjaunot šo vienumu?"
-  },
-  "restoreItems": {
-    "message": "Atjaunot vienumus"
-  },
-  "restoreSelectedItemsDesc": {
-    "message": "Atjaunošanai ir atlasīts(i) $COUNT$ vienums(i). Vai tiešām atjaunot tos visus?",
-    "placeholders": {
-      "count": {
-        "content": "$1",
-        "example": "150"
-      }
-    }
   },
   "restoredItemId": {
     "message": "Vienums $ID$ atjaunots.",
@@ -4950,8 +4932,8 @@
   "disablePersonalVaultExport": {
     "message": "Atspējot personīgās glabātavas izgūšanu"
   },
-  "disablePersonalVaultExportDesc": {
-    "message": "Aizliedz lietotājiem izgūt viņu personīgo glabātavu saturu."
+  "disablePersonalVaultExportDescription": {
+    "message": "Neļaut dalībniekiem izgūt datus no viņu glabātavas."
   },
   "vaultExportDisabled": {
     "message": "Glabātavas izgūšana ir atspējota"
@@ -5454,8 +5436,8 @@
   "exportingOrganizationVaultTitle": {
     "message": "Izdod apvienības glabātavu"
   },
-  "exportingPersonalVaultDescription": {
-    "message": "Tiks izdoti tikai personīgie glabātavas vienumi, kas ir saistīti ar $EMAIL$. Apvienības glabātavas vienumi netiks iekļauti.",
+  "exportingIndividualVaultDescription": {
+    "message": "Tiks izgūti tikai atsevišķi glabātavas vienumi, kas ir saistīti ar $EMAIL$. Apvienīgas glabātavas vienumi netiks iekļauti. Tiks izgūta tikai glabātavas vienuma informācija, un saistītie pielikumi netiks iekļauti.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -7112,5 +7094,8 @@
   },
   "beta": {
     "message": "Beta"
+  },
+  "alreadyHaveAccount": {
+    "message": "Already have an account?"
   }
 }

@@ -3842,29 +3842,11 @@
   "restoreSelected": {
     "message": "Przywróć zaznaczone"
   },
-  "restoreItem": {
-    "message": "Przywróć element"
-  },
   "restoredItem": {
     "message": "Element został przywrócony"
   },
   "restoredItems": {
     "message": "Elementy zostały przywrócone"
-  },
-  "restoreItemConfirmation": {
-    "message": "Czy na pewno chcesz przywrócić ten element?"
-  },
-  "restoreItems": {
-    "message": "Przywróć elementy"
-  },
-  "restoreSelectedItemsDesc": {
-    "message": "Wybrano $COUNT$ elementy(-ów) do przywrócenia. Czy na pewno chcesz przywrócić te elementy?",
-    "placeholders": {
-      "count": {
-        "content": "$1",
-        "example": "150"
-      }
-    }
   },
   "restoredItemId": {
     "message": "Element $ID$ został przywrócony",
@@ -4950,8 +4932,8 @@
   "disablePersonalVaultExport": {
     "message": "Wyłącz eksportowanie osobistego sejfu"
   },
-  "disablePersonalVaultExportDesc": {
-    "message": "Zabrania użytkownikom eksportowania ich prywatnych danych sejfu."
+  "disablePersonalVaultExportDescription": {
+    "message": "Nie zezwalaj użytkownikom na eksport danych z ich indywidualnego sejfu."
   },
   "vaultExportDisabled": {
     "message": "Eksportowanie sejfu zostało wyłączone"
@@ -5454,8 +5436,8 @@
   "exportingOrganizationVaultTitle": {
     "message": "Eksportowanie sejfu organizacji"
   },
-  "exportingPersonalVaultDescription": {
-    "message": "Tylko osobiste elementy sejfu powiązane z adresem $EMAIL$ zostaną wyeksportowane. Elementy sejfu należące do organizacji nie będą uwzględnione.",
+  "exportingIndividualVaultDescription": {
+    "message": "Z sejfu zostaną wyeksportowane tylko elementy powiązane z $EMAIL$. Elementy z sejfu organizacji nie będą uwzględnione. Tylko informacje o elemencie zostaną wyeksportowane i nie będą zawierać powiązanych załączników.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -7112,5 +7094,8 @@
   },
   "beta": {
     "message": "Wersja beta"
+  },
+  "alreadyHaveAccount": {
+    "message": "Masz już konto?"
   }
 }

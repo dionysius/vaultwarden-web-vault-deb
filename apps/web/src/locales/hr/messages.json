@@ -3842,29 +3842,11 @@
   "restoreSelected": {
     "message": "Vrati odabrano"
   },
-  "restoreItem": {
-    "message": "Vrati stavku"
-  },
   "restoredItem": {
     "message": "Stavka vraćena"
   },
   "restoredItems": {
     "message": "Stavke vraćene"
-  },
-  "restoreItemConfirmation": {
-    "message": "Želiš li sigurno vratiti ovu stavku?"
-  },
-  "restoreItems": {
-    "message": "Vrati stavke"
-  },
-  "restoreSelectedItemsDesc": {
-    "message": "Odabrano je $COUNT$ stavka/i za vraćanje. Sigurno želiš vratiti sve ove stavke?",
-    "placeholders": {
-      "count": {
-        "content": "$1",
-        "example": "150"
-      }
-    }
   },
   "restoredItemId": {
     "message": "Stavka $ID$ vraćena",
@@ -4950,8 +4932,8 @@
   "disablePersonalVaultExport": {
     "message": "Onemogući izvoz osobnog trezora"
   },
-  "disablePersonalVaultExportDesc": {
-    "message": "Onemogućuje korisnike da izvezu svoj osobni trezor."
+  "disablePersonalVaultExportDescription": {
+    "message": "Do not allow members to export data from their individual vault."
   },
   "vaultExportDisabled": {
     "message": "Izvoz trezora onemogućen"
@@ -5454,8 +5436,8 @@
   "exportingOrganizationVaultTitle": {
     "message": "Izvoz organizacijskog trezora"
   },
-  "exportingPersonalVaultDescription": {
-    "message": "Izvest će se samo stavke osobnog trezora povezanog s $EMAIL$. Stavke organizacijskog trezora neće biti uključene. Izvest će se samo informacija o stavci trezora bez pripadajućih podataka o povijesti lozinki i privitaka.",
+  "exportingIndividualVaultDescription": {
+    "message": "Only the individual vault items associated with $EMAIL$ will be exported. Organization vault items will not be included. Only vault item information will be exported and will not include associated attachments.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -7112,5 +7094,8 @@
   },
   "beta": {
     "message": "Beta"
+  },
+  "alreadyHaveAccount": {
+    "message": "Already have an account?"
   }
 }

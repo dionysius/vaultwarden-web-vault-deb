@@ -3842,29 +3842,11 @@
   "restoreSelected": {
     "message": "Възстановяване на избраните"
   },
-  "restoreItem": {
-    "message": "Възстановяване на запис"
-  },
   "restoredItem": {
     "message": "Записът е възстановен"
   },
   "restoredItems": {
     "message": "Записите са възстановени"
-  },
-  "restoreItemConfirmation": {
-    "message": "Сигурни ли сте, че искате да възстановите записа?"
-  },
-  "restoreItems": {
-    "message": "Възстановяване на записи"
-  },
-  "restoreSelectedItemsDesc": {
-    "message": "За възстановяване сте избрали $COUNT$ запис/а. Сигурни ли сте, че искате да ги възстановите?",
-    "placeholders": {
-      "count": {
-        "content": "$1",
-        "example": "150"
-      }
-    }
   },
   "restoredItemId": {
     "message": "Запис № $ID$ е възстановен.",
@@ -4950,8 +4932,8 @@
   "disablePersonalVaultExport": {
     "message": "Забраняване на изнасянето на личния трезор"
   },
-  "disablePersonalVaultExportDesc": {
-    "message": "Забранява на потребителите да изнасят данните от своя личен трезор."
+  "disablePersonalVaultExportDescription": {
+    "message": "Да не се разрешава на членовете да изнасят данните от собствените си трезори."
   },
   "vaultExportDisabled": {
     "message": "Изнасянето на трезора е изключено"
@@ -5454,8 +5436,8 @@
   "exportingOrganizationVaultTitle": {
     "message": "Изнасяне на трезора на организацията"
   },
-  "exportingPersonalVaultDescription": {
-    "message": "Ще бъдат изнесени само записите от личния трезор свързан с $EMAIL$. Записите в трезора на организацията няма да бъдат включени.",
+  "exportingIndividualVaultDescription": {
+    "message": "Ще бъдат изнесени само отделните записи в трезора, които са свързани с $EMAIL$. Записите от трезора на организацията няма да бъдат включени. Ще бъде изнесена само информацията за записите от трезора, а свързаните прикачени елементи няма да бъдат включени.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -7112,5 +7094,8 @@
   },
   "beta": {
     "message": "Бета"
+  },
+  "alreadyHaveAccount": {
+    "message": "Вече имате регистрация?"
   }
 }

@@ -3842,29 +3842,11 @@
   "restoreSelected": {
     "message": "Stel gekose terug"
   },
-  "restoreItem": {
-    "message": "Stel item terug"
-  },
   "restoredItem": {
     "message": "Teruggestelde item"
   },
   "restoredItems": {
     "message": "Teruggestelde items"
-  },
-  "restoreItemConfirmation": {
-    "message": "Is u seker u wil hierdie item terugstel?"
-  },
-  "restoreItems": {
-    "message": "Stel items terug"
-  },
-  "restoreSelectedItemsDesc": {
-    "message": "U het $COUNT$ item(s) gekies om terug te stel. Is u seker u wil al hierdie items terugstel?",
-    "placeholders": {
-      "count": {
-        "content": "$1",
-        "example": "150"
-      }
-    }
   },
   "restoredItemId": {
     "message": "Item $ID$ teruggestel.",
@@ -4950,8 +4932,8 @@
   "disablePersonalVaultExport": {
     "message": "Deaktiveer uitstuur van persoonlike kluis"
   },
-  "disablePersonalVaultExportDesc": {
-    "message": "Verbied gebruikers om hul privaatkluisdata uit te stuur."
+  "disablePersonalVaultExportDescription": {
+    "message": "Do not allow members to export data from their individual vault."
   },
   "vaultExportDisabled": {
     "message": "Kluisuitstuur gedeaktiveer"
@@ -5454,8 +5436,8 @@
   "exportingOrganizationVaultTitle": {
     "message": "Stuur tans organisasiekluis uit"
   },
-  "exportingPersonalVaultDescription": {
-    "message": "Slegs die persoonlike kluisitems wat met $EMAIL$ verbind word, word uitgestuur. Organisasiekluisitems word nie ingesluit nie.",
+  "exportingIndividualVaultDescription": {
+    "message": "Only the individual vault items associated with $EMAIL$ will be exported. Organization vault items will not be included. Only vault item information will be exported and will not include associated attachments.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -7112,5 +7094,8 @@
   },
   "beta": {
     "message": "Beta"
+  },
+  "alreadyHaveAccount": {
+    "message": "Already have an account?"
   }
 }

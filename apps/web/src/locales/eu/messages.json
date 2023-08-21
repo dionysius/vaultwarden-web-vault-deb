@@ -3842,29 +3842,11 @@
   "restoreSelected": {
     "message": "Hautatuak berreskuratu"
   },
-  "restoreItem": {
-    "message": "Berreskuratu elementua"
-  },
   "restoredItem": {
     "message": "Elementua berreskuratua"
   },
   "restoredItems": {
     "message": "Elementuak berreskuratuak"
-  },
-  "restoreItemConfirmation": {
-    "message": "Ziur al zaude elementu hau berreskuratu nahi duzula?"
-  },
-  "restoreItems": {
-    "message": "Berreskuratu elementuak"
-  },
-  "restoreSelectedItemsDesc": {
-    "message": "$COUNT$ elementu hautatu dituzu berreskuratzeko. Ziur al zaude elementu horiek guztiak berreskuratu nahi dituzula?",
-    "placeholders": {
-      "count": {
-        "content": "$1",
-        "example": "150"
-      }
-    }
   },
   "restoredItemId": {
     "message": "$ID$ elementua berreskuratua.",
@@ -4950,8 +4932,8 @@
   "disablePersonalVaultExport": {
     "message": "Desgaitu kutxa gotor pertsonalaren esportazioa"
   },
-  "disablePersonalVaultExportDesc": {
-    "message": "Ez utzi kideei kutxa gotor pertsonaleko datuak esportatzen."
+  "disablePersonalVaultExportDescription": {
+    "message": "Do not allow members to export data from their individual vault."
   },
   "vaultExportDisabled": {
     "message": "Kutxa gotorreko esportazioa desgaituta"
@@ -5454,8 +5436,8 @@
   "exportingOrganizationVaultTitle": {
     "message": "Erakundeko kutxa gotorra esportatzen"
   },
-  "exportingPersonalVaultDescription": {
-    "message": "$EMAIL$-ekin lotutako kutxa gotor pertsonaleko elementuak bakarrik esportatuko dira. Erakundeko kutxa gotorraren elementuak ez dira sartuko.",
+  "exportingIndividualVaultDescription": {
+    "message": "Only the individual vault items associated with $EMAIL$ will be exported. Organization vault items will not be included. Only vault item information will be exported and will not include associated attachments.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -7112,5 +7094,8 @@
   },
   "beta": {
     "message": "Beta"
+  },
+  "alreadyHaveAccount": {
+    "message": "Already have an account?"
   }
 }

@@ -3842,29 +3842,11 @@
   "restoreSelected": {
     "message": "Restaurar seleccionados"
   },
-  "restoreItem": {
-    "message": "Restaurar elemento"
-  },
   "restoredItem": {
     "message": "Elemento restaurado"
   },
   "restoredItems": {
     "message": "Elementos restaurados"
-  },
-  "restoreItemConfirmation": {
-    "message": "¿Estás seguro de que quieres restaurar este elemento?"
-  },
-  "restoreItems": {
-    "message": "Restaurar elementos"
-  },
-  "restoreSelectedItemsDesc": {
-    "message": "Has seleccionado $COUNT$ elemento(s) para restaurar. ¿Estás seguro de que quieres restaurar todos estos elementos?",
-    "placeholders": {
-      "count": {
-        "content": "$1",
-        "example": "150"
-      }
-    }
   },
   "restoredItemId": {
     "message": "Elemento $ID$ restaurado.",
@@ -4950,8 +4932,8 @@
   "disablePersonalVaultExport": {
     "message": "Desactivar exportación de la caja fuerte personal"
   },
-  "disablePersonalVaultExportDesc": {
-    "message": "Prohíbe a los usuarios exportar sus datos privados de su \ncaja fuerte."
+  "disablePersonalVaultExportDescription": {
+    "message": "No permita a los miembros exportar datos de su caja fuerte individual."
   },
   "vaultExportDisabled": {
     "message": "Exportación de caja fuerte desactivada"
@@ -5454,8 +5436,8 @@
   "exportingOrganizationVaultTitle": {
     "message": "Exportando caja fuerte de la organización"
   },
-  "exportingPersonalVaultDescription": {
-    "message": "Solo se exportarán los elementos de la caja fuerte personal asociados con $EMAIL$. Los elementos de la caja fuerte de la organización no se incluirán.",
+  "exportingIndividualVaultDescription": {
+    "message": "Solo se exportarán los elementos individuales de la caja fuerte asociados con $EMAIL$. Los elementos de la bóveda de la organización no se incluirán. Solo la información de la caja fuerte será exportada y no incluirá adjuntos asociados.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -7112,5 +7094,8 @@
   },
   "beta": {
     "message": "Beta"
+  },
+  "alreadyHaveAccount": {
+    "message": "¿Ya tienes una cuenta?"
   }
 }

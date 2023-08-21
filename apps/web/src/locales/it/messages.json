@@ -875,7 +875,7 @@
     "message": "Usa qualsiasi chiave di sicurezza abilitata WebAuthn per accedere al tuo account."
   },
   "webAuthnMigrated": {
-    "message": "(Migrati da FIDO)"
+    "message": "(Trasferito da FIDO)"
   },
   "emailTitle": {
     "message": "Email"
@@ -1306,7 +1306,7 @@
     "message": "Seleziona una raccolta"
   },
   "importTargetHint": {
-    "message": "Seleziona questa opzione se vuoi che i contenuti del file di importazione siamo spostati in una $DESTINATION$",
+    "message": "Seleziona questa opzione se vuoi che i contenuti del file di importazione siano spostati in una $DESTINATION$",
     "description": "Located as a hint under the import target. Will be appended by either folder or collection, depending if the user is importing into an individual or an organizational vault.",
     "placeholders": {
       "destination": {
@@ -3842,29 +3842,11 @@
   "restoreSelected": {
     "message": "Ripristina selezionati"
   },
-  "restoreItem": {
-    "message": "Ripristina elemento"
-  },
   "restoredItem": {
     "message": "Elemento ripristinato"
   },
   "restoredItems": {
     "message": "Elementi ripristinati"
-  },
-  "restoreItemConfirmation": {
-    "message": "Sei sicuro di voler ripristinare questo elemento?"
-  },
-  "restoreItems": {
-    "message": "Ripristina elementi"
-  },
-  "restoreSelectedItemsDesc": {
-    "message": "Hai selezionato $COUNT$ elementi da ripristinare. Sei sicuro di voler ripristinare questi elementi?",
-    "placeholders": {
-      "count": {
-        "content": "$1",
-        "example": "150"
-      }
-    }
   },
   "restoredItemId": {
     "message": "$ID$ ripristinato",
@@ -4634,7 +4616,7 @@
     "message": "Gli account esistenti con password principali richiederanno ai membri di registrarsi autonomamente prima che gli amministratori possano recuperare i loro account. L'iscrizione automatica attiverà il recupero dell'account per i nuovi membri."
   },
   "accountRecoverySingleOrgRequirementDesc": {
-    "message": "La politica aziendale per l'organizzazione unica deve essere attivata prima di attivare questo politica."
+    "message": "La politica aziendale per l'organizzazione unica deve essere attivata prima di attivare questa politica."
   },
   "resetPasswordPolicyAutoEnroll": {
     "message": "Iscrizione automatica"
@@ -4950,8 +4932,8 @@
   "disablePersonalVaultExport": {
     "message": "Rimuovi esportazione cassaforte individuale"
   },
-  "disablePersonalVaultExportDesc": {
-    "message": "Non consentire ai membri di esportare la loro cassaforte individuale."
+  "disablePersonalVaultExportDescription": {
+    "message": "Non consentire ai membri di esportare i dati dalla loro cassaforte individuale."
   },
   "vaultExportDisabled": {
     "message": "Esportazione cassaforte rimossa"
@@ -5454,8 +5436,8 @@
   "exportingOrganizationVaultTitle": {
     "message": "Esportando cassaforte dell'organizzazione"
   },
-  "exportingPersonalVaultDescription": {
-    "message": "Solo gli elementi della cassaforte personale associati a $EMAIL$ saranno esportati. Gli elementi della cassaforte dell'organizzazione non saranno inclusi. Solo le informazioni sugli elementi della cassaforte saranno esportate e non includeranno la cronologia delle password o gli allegati.",
+  "exportingIndividualVaultDescription": {
+    "message": "Solo gli elementi della cassaforte personale associati a $EMAIL$ saranno esportati. Gli elementi della cassaforte dell'organizzazione non saranno inclusi. Solo le informazioni sugli elementi della cassaforte saranno esportate e non includeranno gli allegati.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -7005,7 +6987,7 @@
     }
   },
   "secretsManagerForPlanDesc": {
-    "message": "Per i team di ingegneria e DevOps per gestire i segreti durante l'intero ciclo di vita dello sviluppo del software."
+    "message": "Per gestire i segreti dei team di software engineering e DevOps durante l'intero ciclo di sviluppo del software."
   },
   "free2PersonOrganization": {
     "message": "Organizzazioni gratis per 2 persone"
@@ -7112,5 +7094,8 @@
   },
   "beta": {
     "message": "Beta"
+  },
+  "alreadyHaveAccount": {
+    "message": "Hai già un account?"
   }
 }

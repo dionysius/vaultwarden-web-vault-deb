@@ -3842,29 +3842,11 @@
   "restoreSelected": {
     "message": "還原所選"
   },
-  "restoreItem": {
-    "message": "還原項目"
-  },
   "restoredItem": {
     "message": "項目已還原"
   },
   "restoredItems": {
     "message": "項目已還原"
-  },
-  "restoreItemConfirmation": {
-    "message": "您確定要還原此項目嗎？"
-  },
-  "restoreItems": {
-    "message": "還原項目"
-  },
-  "restoreSelectedItemsDesc": {
-    "message": "您已經選取了 $COUNT$ 個項目要還原。確定要還原這些項目嗎？",
-    "placeholders": {
-      "count": {
-        "content": "$1",
-        "example": "150"
-      }
-    }
   },
   "restoredItemId": {
     "message": "已還原項目 $ID$",
@@ -4950,8 +4932,8 @@
   "disablePersonalVaultExport": {
     "message": "停用個人密碼庫匯出"
   },
-  "disablePersonalVaultExportDesc": {
-    "message": "禁止成員匯出個人密碼庫資料。"
+  "disablePersonalVaultExportDescription": {
+    "message": "Do not allow members to export data from their individual vault."
   },
   "vaultExportDisabled": {
     "message": "已停用密碼庫匯出"
@@ -5454,8 +5436,8 @@
   "exportingOrganizationVaultTitle": {
     "message": "正匯出組織密碼庫"
   },
-  "exportingPersonalVaultDescription": {
-    "message": "只會匯出與 $EMAIL$ 關聯的個人密碼庫。組織密碼庫的項目不包含在內。",
+  "exportingIndividualVaultDescription": {
+    "message": "Only the individual vault items associated with $EMAIL$ will be exported. Organization vault items will not be included. Only vault item information will be exported and will not include associated attachments.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -7112,5 +7094,8 @@
   },
   "beta": {
     "message": "Beta"
+  },
+  "alreadyHaveAccount": {
+    "message": "Already have an account?"
   }
 }

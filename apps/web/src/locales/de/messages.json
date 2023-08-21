@@ -3842,29 +3842,11 @@
   "restoreSelected": {
     "message": "Auswahl wiederherstellen"
   },
-  "restoreItem": {
-    "message": "Eintrag wiederherstellen"
-  },
   "restoredItem": {
     "message": "Eintrag wiederhergestellt"
   },
   "restoredItems": {
     "message": "Einträge wiederhergestellt"
-  },
-  "restoreItemConfirmation": {
-    "message": "Soll dieser Eintrag wirklich wiederhergestellt werden?"
-  },
-  "restoreItems": {
-    "message": "Einträge wiederherstellen"
-  },
-  "restoreSelectedItemsDesc": {
-    "message": "Du hast $COUNT$ Eintrag/Einträge zum Wiederherstellen ausgewählt. Bist du sicher, dass du diese(n) Eintrag/Einträge dauerhaft löschen möchtest?",
-    "placeholders": {
-      "count": {
-        "content": "$1",
-        "example": "150"
-      }
-    }
   },
   "restoredItemId": {
     "message": "Eintrag $ID$ wiederhergestellt",
@@ -4950,8 +4932,8 @@
   "disablePersonalVaultExport": {
     "message": "Persönlichen Tresor-Export deaktivieren"
   },
-  "disablePersonalVaultExportDesc": {
-    "message": "Benutzern den Export ihrer privaten Tresor-Daten verbieten."
+  "disablePersonalVaultExportDescription": {
+    "message": "Mitgliedern nicht erlauben, Daten aus ihrem persönlichen Tresor zu exportieren."
   },
   "vaultExportDisabled": {
     "message": "Tresor-Export entfernt"
@@ -5454,8 +5436,8 @@
   "exportingOrganizationVaultTitle": {
     "message": "Tresor der Organisation wird exportiert"
   },
-  "exportingPersonalVaultDescription": {
-    "message": "Es werden nur persönliche Tresoreinträge exportiert, die mit $EMAIL$ verbunden sind. Tresoreinträge der Organisation werden nicht berücksichtigt. Es werden nur Informationen der Tresoreinträge exportiert. Diese enthalten nicht den zugehörigen Passwortverlauf oder Anhänge.",
+  "exportingIndividualVaultDescription": {
+    "message": "Es werden nur persönliche Tresoreinträge exportiert, die mit $EMAIL$ verbunden sind. Tresoreinträge der Organisation werden nicht berücksichtigt. Es werden nur Informationen der Tresoreinträge exportiert. Diese enthalten nicht die zugehörigen Anhänge.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -7112,5 +7094,8 @@
   },
   "beta": {
     "message": "Beta"
+  },
+  "alreadyHaveAccount": {
+    "message": "Hast du bereits ein Konto?"
   }
 }

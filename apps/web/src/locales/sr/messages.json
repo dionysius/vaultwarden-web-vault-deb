@@ -3842,29 +3842,11 @@
   "restoreSelected": {
     "message": "Врати изабрано"
   },
-  "restoreItem": {
-    "message": "Врати ставку"
-  },
   "restoredItem": {
     "message": "Ставка враћена"
   },
   "restoredItems": {
     "message": "Ставке враћене"
-  },
-  "restoreItemConfirmation": {
-    "message": "Да ли сте сигурни да желите да вратите ову ставку?"
-  },
-  "restoreItems": {
-    "message": "Врати ставке"
-  },
-  "restoreSelectedItemsDesc": {
-    "message": "Одабрали сте $COUNT$ ставке за повраћај. Да ли сте сигурни да желите да повратите све ове ставке?",
-    "placeholders": {
-      "count": {
-        "content": "$1",
-        "example": "150"
-      }
-    }
   },
   "restoredItemId": {
     "message": "Ставка $ID$ повраћена.",
@@ -4950,8 +4932,8 @@
   "disablePersonalVaultExport": {
     "message": "Онемогућите извоз личног сефа"
   },
-  "disablePersonalVaultExportDesc": {
-    "message": "Забрањује корисницима да извозе своје приватне податке из сефа."
+  "disablePersonalVaultExportDescription": {
+    "message": "Do not allow members to export data from their individual vault."
   },
   "vaultExportDisabled": {
     "message": "Извоз сефа онемогућен"
@@ -5454,8 +5436,8 @@
   "exportingOrganizationVaultTitle": {
     "message": "Извоз сефа организације"
   },
-  "exportingPersonalVaultDescription": {
-    "message": "Само предмети личног сефа повезани са $EMAIL$ биће извезени. Ставке организационог сефа неће бити укључене.",
+  "exportingIndividualVaultDescription": {
+    "message": "Only the individual vault items associated with $EMAIL$ will be exported. Organization vault items will not be included. Only vault item information will be exported and will not include associated attachments.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -7112,5 +7094,8 @@
   },
   "beta": {
     "message": "Бета"
+  },
+  "alreadyHaveAccount": {
+    "message": "Already have an account?"
   }
 }

@@ -3842,29 +3842,11 @@
   "restoreSelected": {
     "message": "ಆಯ್ಕೆಮಾಡಿ ಮರುಸ್ಥಾಪಿಸಿ"
   },
-  "restoreItem": {
-    "message": "ಐಟಂ ಅನ್ನು ಮರುಸ್ಥಾಪಿಸಿ"
-  },
   "restoredItem": {
     "message": "ಐಟಂ ಅನ್ನು ಮರುಸ್ಥಾಪಿಸಲಾಗಿದೆ"
   },
   "restoredItems": {
     "message": "ವಸ್ತುಗಳನ್ನು ಮರುಸ್ಥಾಪಿಸಲಾಗಿದೆ"
-  },
-  "restoreItemConfirmation": {
-    "message": "ಈ ಐಟಂ ಅನ್ನು ಮರುಸ್ಥಾಪಿಸಲು ನೀವು ಖಚಿತವಾಗಿ ಬಯಸುವಿರಾ?"
-  },
-  "restoreItems": {
-    "message": "ವಸ್ತುಗಳನ್ನು ಮರುಸ್ಥಾಪಿಸಿ"
-  },
-  "restoreSelectedItemsDesc": {
-    "message": "ಪುನಃಸ್ಥಾಪಿಸಲು ನೀವು $COUNT$ ಐಟಂ (ಗಳನ್ನು) ಆಯ್ಕೆ ಮಾಡಿದ್ದೀರಿ. ಈ ಎಲ್ಲಾ ವಸ್ತುಗಳನ್ನು ಪುನಃಸ್ಥಾಪಿಸಲು ನೀವು ಖಚಿತವಾಗಿ ಬಯಸುವಿರಾ?",
-    "placeholders": {
-      "count": {
-        "content": "$1",
-        "example": "150"
-      }
-    }
   },
   "restoredItemId": {
     "message": "ಐಟಂ $ID$ ಅನ್ನು ಮರುಸ್ಥಾಪಿಸಲಾಗಿದೆ.",
@@ -4950,8 +4932,8 @@
   "disablePersonalVaultExport": {
     "message": "Remove individual vault export"
   },
-  "disablePersonalVaultExportDesc": {
-    "message": "Do not allow members to export their individual vault data."
+  "disablePersonalVaultExportDescription": {
+    "message": "Do not allow members to export data from their individual vault."
   },
   "vaultExportDisabled": {
     "message": "Vault export removed"
@@ -5454,8 +5436,8 @@
   "exportingOrganizationVaultTitle": {
     "message": "Exporting organization vault"
   },
-  "exportingPersonalVaultDescription": {
-    "message": "Only the individual vault items associated with $EMAIL$ will be exported. Organization vault items will not be included. Only vault item information will be exported and will not include associated password history or attachments.",
+  "exportingIndividualVaultDescription": {
+    "message": "Only the individual vault items associated with $EMAIL$ will be exported. Organization vault items will not be included. Only vault item information will be exported and will not include associated attachments.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -7112,5 +7094,8 @@
   },
   "beta": {
     "message": "Beta"
+  },
+  "alreadyHaveAccount": {
+    "message": "Already have an account?"
   }
 }
