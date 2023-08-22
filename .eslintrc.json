@@ -179,6 +179,12 @@
       "rules": {
         "no-restricted-imports": ["error", { "patterns": ["@bitwarden/node/*", "src/**/*"] }]
       }
+    },
+    {
+      "files": ["libs/vault/src/**/*.ts"],
+      "rules": {
+        "no-restricted-imports": ["error", { "patterns": ["@bitwarden/vault/*", "src/**/*"] }]
+      }
     }
   ]
 }
