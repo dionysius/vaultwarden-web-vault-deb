@@ -452,35 +452,7 @@ import { AbstractThemingService } from "./theming/theming.service.abstraction";
     },
     {
       provide: VaultTimeoutService,
-      useFactory: (
-        cipherService: CipherServiceAbstraction,
-        folderService: FolderServiceAbstraction,
-        collectionService: CollectionServiceAbstraction,
-        cryptoService: CryptoServiceAbstraction,
-        platformUtilsService: PlatformUtilsServiceAbstraction,
-        messagingService: MessagingServiceAbstraction,
-        searchService: SearchServiceAbstraction,
-        stateService: StateServiceAbstraction,
-        authService: AuthServiceAbstraction,
-        vaultTimeoutSettingsService: VaultTimeoutSettingsServiceAbstraction,
-        lockedCallback: (userId?: string) => Promise<void>,
-        logoutCallback: (expired: boolean, userId?: string) => Promise<void>
-      ) => {
-        return new VaultTimeoutService(
-          cipherService,
-          folderService,
-          collectionService,
-          cryptoService,
-          platformUtilsService,
-          messagingService,
-          searchService,
-          stateService,
-          authService,
-          vaultTimeoutSettingsService,
-          lockedCallback,
-          logoutCallback
-        );
-      },
+      useClass: VaultTimeoutService,
       deps: [
         CipherServiceAbstraction,
         FolderServiceAbstraction,
