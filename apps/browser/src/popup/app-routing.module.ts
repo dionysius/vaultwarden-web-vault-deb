@@ -58,7 +58,7 @@ const routes: Routes = [
     path: "",
     pathMatch: "full",
     children: [], // Children lets us have an empty component.
-    canActivate: [redirectGuard({ loggedIn: "/tabs/vault", loggedOut: "/home", locked: "/lock" })],
+    canActivate: [redirectGuard({ loggedIn: "/tabs/tabs", loggedOut: "/home", locked: "/lock" })],
   },
   {
     path: "vault",
