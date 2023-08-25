@@ -293,7 +293,7 @@ jobs:
 
   snap:
     name: Build Snap
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     needs: [setup, cli]
     env:
       _PACKAGE_VERSION: ${{ needs.setup.outputs.package_version }}
@@ -322,7 +322,7 @@ jobs:
           ls -alth
 
       - name: Build snap
-        uses: snapcore/action-build@3457752ec9b1c79a8290b5167fce2d14df0997c1 # v1.1.2
+        uses: snapcore/action-build@2ee46bc29d163c9c836f2820cc46b39664bf0de2 # v1.1.3
         with:
           path: apps/cli/dist/snap
 
