@@ -10,7 +10,11 @@
         aria-hidden="true"
         [style.visibility]="isUsServer ? 'visible' : 'hidden'"
       ></i>
-      <img src="../../images/us_flag.png" alt="{{ 'usFlag' | i18n }}" class="pb-1 mr-1" />
+      <img
+        src="../../images/flag-us.svg"
+        alt="{{ 'usFlag' | i18n }}"
+        class="tw-mr-1 tw-w-6 tw-pb-1"
+      />
       {{ "usDomain" | i18n }}
     </a>
     <a
@@ -24,7 +28,11 @@
         aria-hidden="true"
         [style.visibility]="isEuServer ? 'visible' : 'hidden'"
       ></i>
-      <img src="../../images/eu_flag.png" alt="{{ 'euFlag' | i18n }}" class="pb-1 mr-1" />
+      <img
+        src="../../images/flag-eu.svg"
+        alt="{{ 'euFlag' | i18n }}"
+        class="tw-mr-1 tw-w-6 tw-pb-1"
+      />
       {{ "euDomain" | i18n }}
     </a>
   </bit-menu>
@@ -36,9 +44,9 @@
       class="tw-rounded-md tw-border tw-border-solid tw-border-secondary-300 tw-bg-background tw-p-2"
     >
       <img
-        [src]="'../../images/' + selectedRegionImageName + '.png'"
+        [src]="'../../images/' + selectedRegionImageName + '.svg'"
         alt="{{ 'selectedRegionFlag' | i18n }}"
-        class="pb-1 mr-1 tw-ml-1"
+        class="tw-mx-1 tw-pb-1"
       /><label class="tw-cursor-pointer !tw-font-normal"
         >{{ isEuServer ? ("euDomain" | i18n) : ("usDomain" | i18n) }}
         <i class="bwi bwi-fw bwi-sm bwi-angle-down" aria-hidden="true"></i

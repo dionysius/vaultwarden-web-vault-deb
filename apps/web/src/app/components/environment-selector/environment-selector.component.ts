@@ -35,9 +35,9 @@ export class EnvironmentSelectorComponent implements OnInit {
 
   getRegionImage(): string {
     if (this.isEuServer) {
-      return "eu_flag";
+      return "flag-eu";
     } else {
-      return "us_flag";
+      return "flag-us";
     }
   }
 }
