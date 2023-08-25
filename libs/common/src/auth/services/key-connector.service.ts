@@ -24,7 +24,7 @@ export class KeyConnectorService implements KeyConnectorServiceAbstraction {
     private logService: LogService,
     private organizationService: OrganizationService,
     private cryptoFunctionService: CryptoFunctionService,
-    private logoutCallback: (expired: boolean, userId?: string) => void
+    private logoutCallback: (expired: boolean, userId?: string) => Promise<void>
   ) {}
 
   setUsesKeyConnector(usesKeyConnector: boolean) {
@@ -84,7 +84,15 @@ export class KeyConnectorService implements KeyConnectorServiceAbstraction {
   }
 
   async convertNewSsoUserToKeyConnector(tokenResponse: IdentityTokenResponse, orgId: string) {
-    const { kdf, kdfIterations, kdfMemory, kdfParallelism, keyConnectorUrl } = tokenResponse;
+    // TODO: Remove after tokenResponse.keyConnectorUrl is deprecated in 2023.10 release (https://bitwarden.atlassian.net/browse/PM-3537)
+    const {
+      kdf,
+      kdfIterations,
+      kdfMemory,
+      kdfParallelism,
+      keyConnectorUrl: legacyKeyConnectorUrl,
+      userDecryptionOptions,
+    } = tokenResponse;
     const password = await this.cryptoFunctionService.randomBytes(64);
     const kdfConfig = new KdfConfig(kdfIterations, kdfMemory, kdfParallelism);
 
@@ -104,6 +112,8 @@ export class KeyConnectorService implements KeyConnectorServiceAbstraction {
     const [pubKey, privKey] = await this.cryptoService.makeKeyPair();
 
     try {
+      const keyConnectorUrl =
+        legacyKeyConnectorUrl ?? userDecryptionOptions?.keyConnectorOption?.keyConnectorUrl;
       await this.apiService.postUserKeyToKeyConnector(keyConnectorUrl, keyConnectorRequest);
     } catch (e) {
       this.handleKeyConnectorError(e);

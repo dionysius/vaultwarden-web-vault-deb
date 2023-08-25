@@ -266,11 +266,11 @@ describe("SsoLogInStrategy", () => {
   describe("Key Connector", () => {
     let tokenResponse: IdentityTokenResponse;
     beforeEach(() => {
-      tokenResponse = identityTokenResponseFactory();
+      tokenResponse = identityTokenResponseFactory(null, { HasMasterPassword: false });
       tokenResponse.keyConnectorUrl = keyConnectorUrl;
     });
 
-    it("gets and sets the master key if Key Connector is enabled", async () => {
+    it("gets and sets the master key if Key Connector is enabled and the user doesn't have a master password", async () => {
       const masterKey = new SymmetricCryptoKey(
         new Uint8Array(64).buffer as CsprngArray
       ) as MasterKey;
@@ -283,7 +283,7 @@ describe("SsoLogInStrategy", () => {
       expect(keyConnectorService.setMasterKeyFromUrl).toHaveBeenCalledWith(keyConnectorUrl);
     });
 
-    it("converts new SSO user to Key Connector on first login", async () => {
+    it("converts new SSO user with no master password to Key Connector on first login", async () => {
       tokenResponse.key = null;
 
       apiService.postIdentityToken.mockResolvedValue(tokenResponse);
@@ -296,7 +296,7 @@ describe("SsoLogInStrategy", () => {
       );
     });
 
-    it("decrypts and sets the user key if Key Connector is enabled", async () => {
+    it("decrypts and sets the user key if Key Connector is enabled and the user doesn't have a master password", async () => {
       const userKey = new SymmetricCryptoKey(new Uint8Array(64).buffer as CsprngArray) as UserKey;
       const masterKey = new SymmetricCryptoKey(
         new Uint8Array(64).buffer as CsprngArray
