@@ -338,6 +338,9 @@
   "other": {
     "message": "Ostatné"
   },
+  "unlockMethodNeededToChangeTimeoutActionDesc": {
+    "message": "Nastavte metódu odomknutia, aby ste zmenili akciu pri vypršaní času trezoru."
+  },
   "rateExtension": {
     "message": "Ohodnotiť rozšírenie"
   },
@@ -1602,6 +1605,12 @@
   "biometricsNotSupportedDesc": {
     "message": "Biometria v prehliadači nie je podporovaná na tomto zariadení."
   },
+  "biometricsFailedTitle": {
+    "message": "Biometria zlyhala"
+  },
+  "biometricsFailedDesc": {
+    "message": "Biometria nebola vykonaná. Zvážte použitie hlavného hesla, alebo sa odhláste. Ak tento problém pretrváva, kontaktujte podporu Bitwarden."
+  },
   "nativeMessaginPermissionErrorTitle": {
     "message": "Povolenie nebolo udelené"
   },
@@ -2143,7 +2152,7 @@
   "notificationSentDevice": {
     "message": "Do vášho zariadenia bolo odoslané upozornenie."
   },
-  "logInInitiated": {
+  "loginInitiated": {
     "message": "Iniciované prihlásenie"
   },
   "exposedMasterPassword": {
@@ -2230,6 +2239,31 @@
   "opensInANewWindow": {
     "message": "Otvárať v novom okne"
   },
+  "deviceApprovalRequired": {
+    "message": "Vyžaduje sa schválenie zariadenia. Vyberte možnosť schválenia nižšie:"
+  },
+  "rememberThisDevice": {
+    "message": "Zapamätať si toto zariadenie"
+  },
+  "uncheckIfPublicDevice": {
+    "message": "Odčiarknite, ak používate verejné zariadenie"
+  },
+  "approveFromYourOtherDevice": {
+    "message": "Schváliť z iného zariadenia"
+  },
+  "requestAdminApproval": {
+    "message": "Žiadosť o schválenie správcom"
+  },
+  "approveWithMasterPassword": {
+    "message": "Schváliť pomocou hlavného hesla"
+  },
+  "ssoIdentifierRequired": {
+    "message": "Pole identifikátora SSO je povinné."
+  },
+  "eu": {
+    "message": "EÚ",
+    "description": "European Union"
+  },
   "usDomain": {
     "message": "bitwarden.com"
   },
@@ -2244,5 +2278,133 @@
   },
   "display": {
     "message": "Zobrazenie"
+  },
+  "accountSuccessfullyCreated": {
+    "message": "Účet bol úspešne vytvorený!"
+  },
+  "adminApprovalRequested": {
+    "message": "Vyžaduje sa schválenie správcom"
+  },
+  "adminApprovalRequestSentToAdmins": {
+    "message": "Vaša žiadosť bola odoslaná správcovi."
+  },
+  "youWillBeNotifiedOnceApproved": {
+    "message": "Po schválení budete informovaný."
+  },
+  "troubleLoggingIn": {
+    "message": "Máte problémy s prihlásením?"
+  },
+  "loginApproved": {
+    "message": "Schválené prihlásenie"
+  },
+  "userEmailMissing": {
+    "message": "Chýba e-mail používateľa"
+  },
+  "deviceTrusted": {
+    "message": "Dôveryhodné zariadenie"
+  },
+  "inputRequired": {
+    "message": "Vstup je povinný."
+  },
+  "required": {
+    "message": "povinné"
+  },
+  "search": {
+    "message": "Hladať"
+  },
+  "inputMinLength": {
+    "message": "Vstup musí mať aspoň $COUNT$ znakov.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "8"
+      }
+    }
+  },
+  "inputMaxLength": {
+    "message": "Nemôžete zadať viac než $COUNT$ znakov.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "20"
+      }
+    }
+  },
+  "inputForbiddenCharacters": {
+    "message": "Tieto znaky nie sú povolené: $CHARACTERS$",
+    "placeholders": {
+      "characters": {
+        "content": "$1",
+        "example": "@, #, $, %"
+      }
+    }
+  },
+  "inputMinValue": {
+    "message": "Hodnota musí byť aspoň $MIN$.",
+    "placeholders": {
+      "min": {
+        "content": "$1",
+        "example": "8"
+      }
+    }
+  },
+  "inputMaxValue": {
+    "message": "Zadaná hodnota nesmie prekročiť $MAX$.",
+    "placeholders": {
+      "max": {
+        "content": "$1",
+        "example": "100"
+      }
+    }
+  },
+  "multipleInputEmails": {
+    "message": "1 alebo viac e-mailov je neplatných"
+  },
+  "inputTrimValidator": {
+    "message": "Vstup nesmie obsahovať iba prázdne znaky.",
+    "description": "Notification to inform the user that a form's input can't contain only whitespace."
+  },
+  "inputEmail": {
+    "message": "Vstupom nie je e-mailová adresa."
+  },
+  "fieldsNeedAttention": {
+    "message": "Niektoré polia ($COUNT$) vyžadujú vašu pozornosť.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
+      }
+    }
+  },
+  "selectPlaceholder": {
+    "message": "-- Vyberte --"
+  },
+  "multiSelectPlaceholder": {
+    "message": "-- Začnite písať na filtrovanie --"
+  },
+  "multiSelectLoading": {
+    "message": "Načítavajú sa možnosti..."
+  },
+  "multiSelectNotFound": {
+    "message": "Nenašli sa žiadne položky"
+  },
+  "multiSelectClearAll": {
+    "message": "Vyčistiť všetko"
+  },
+  "plusNMore": {
+    "message": "+ $QUANTITY$ ďalších",
+    "placeholders": {
+      "quantity": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
+  "submenu": {
+    "message": "Podponuka"
+  },
+  "toggleCollapse": {
+    "message": "Prepnúť zbalenie",
+    "description": "Toggling an expand/collapse state."
   }
 }

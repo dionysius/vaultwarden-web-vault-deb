@@ -338,6 +338,9 @@
   "other": {
     "message": "其他"
   },
+  "unlockMethodNeededToChangeTimeoutActionDesc": {
+    "message": "设置一个解锁方式以更改您的密码库超时动作。"
+  },
   "rateExtension": {
     "message": "为本扩展打分"
   },
@@ -1602,6 +1605,12 @@
   "biometricsNotSupportedDesc": {
     "message": "此设备不支持浏览器生物识别。"
   },
+  "biometricsFailedTitle": {
+    "message": "生物识别失败"
+  },
+  "biometricsFailedDesc": {
+    "message": "生物识别无法完成，请尝试使用主密码或注销。如果仍无法解决，请联系 Bitwarden 支持。"
+  },
   "nativeMessaginPermissionErrorTitle": {
     "message": "未提供权限"
   },
@@ -2143,7 +2152,7 @@
   "notificationSentDevice": {
     "message": "通知已发送到您的设备。"
   },
-  "logInInitiated": {
+  "loginInitiated": {
     "message": "登录已发起"
   },
   "exposedMasterPassword": {
@@ -2230,6 +2239,31 @@
   "opensInANewWindow": {
     "message": "在新窗口中打开"
   },
+  "deviceApprovalRequired": {
+    "message": "需要设备批准。请在下面选择一个批准选项："
+  },
+  "rememberThisDevice": {
+    "message": "记住此设备"
+  },
+  "uncheckIfPublicDevice": {
+    "message": "若使用公共设备，请取消勾选"
+  },
+  "approveFromYourOtherDevice": {
+    "message": "从您的其他设备批准"
+  },
+  "requestAdminApproval": {
+    "message": "请求管理员批准"
+  },
+  "approveWithMasterPassword": {
+    "message": "使用主密码批准"
+  },
+  "ssoIdentifierRequired": {
+    "message": "必须填写组织 SSO 标识符。"
+  },
+  "eu": {
+    "message": "欧盟",
+    "description": "European Union"
+  },
   "usDomain": {
     "message": "bitwarden.com"
   },
@@ -2244,5 +2278,133 @@
   },
   "display": {
     "message": "显示"
+  },
+  "accountSuccessfullyCreated": {
+    "message": "账户已成功创建！"
+  },
+  "adminApprovalRequested": {
+    "message": "已请求管理员批准"
+  },
+  "adminApprovalRequestSentToAdmins": {
+    "message": "您的请求已发送给您的管理员。"
+  },
+  "youWillBeNotifiedOnceApproved": {
+    "message": "批准后，您将收到通知。"
+  },
+  "troubleLoggingIn": {
+    "message": "登录遇到问题？"
+  },
+  "loginApproved": {
+    "message": "登录已批准"
+  },
+  "userEmailMissing": {
+    "message": "缺少用户电子邮件"
+  },
+  "deviceTrusted": {
+    "message": "设备已信任"
+  },
+  "inputRequired": {
+    "message": "必须输入内容。"
+  },
+  "required": {
+    "message": "必填"
+  },
+  "search": {
+    "message": "搜索"
+  },
+  "inputMinLength": {
+    "message": "至少输入 $COUNT$ 个字符。",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "8"
+      }
+    }
+  },
+  "inputMaxLength": {
+    "message": "输入长度不能超过 $COUNT$ 个字符。",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "20"
+      }
+    }
+  },
+  "inputForbiddenCharacters": {
+    "message": "以下字符不被允许：$CHARACTERS$",
+    "placeholders": {
+      "characters": {
+        "content": "$1",
+        "example": "@, #, $, %"
+      }
+    }
+  },
+  "inputMinValue": {
+    "message": "输入的值不能低于 $MIN$。",
+    "placeholders": {
+      "min": {
+        "content": "$1",
+        "example": "8"
+      }
+    }
+  },
+  "inputMaxValue": {
+    "message": "输入的值不能超过 $MAX$。",
+    "placeholders": {
+      "max": {
+        "content": "$1",
+        "example": "100"
+      }
+    }
+  },
+  "multipleInputEmails": {
+    "message": "一个或多个电子邮件地址无效"
+  },
+  "inputTrimValidator": {
+    "message": "输入不能只包含空格。",
+    "description": "Notification to inform the user that a form's input can't contain only whitespace."
+  },
+  "inputEmail": {
+    "message": "输入的不是电子邮件地址。"
+  },
+  "fieldsNeedAttention": {
+    "message": "上面的 $COUNT$ 个字段需要您注意。",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
+      }
+    }
+  },
+  "selectPlaceholder": {
+    "message": "-- 选择 --"
+  },
+  "multiSelectPlaceholder": {
+    "message": "-- 输入以筛选 --"
+  },
+  "multiSelectLoading": {
+    "message": "正在获取选项..."
+  },
+  "multiSelectNotFound": {
+    "message": "未找到任何条目"
+  },
+  "multiSelectClearAll": {
+    "message": "清除全部"
+  },
+  "plusNMore": {
+    "message": "+ $QUANTITY$ more",
+    "placeholders": {
+      "quantity": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
+  "submenu": {
+    "message": "子菜单"
+  },
+  "toggleCollapse": {
+    "message": "切换折叠",
+    "description": "Toggling an expand/collapse state."
   }
 }

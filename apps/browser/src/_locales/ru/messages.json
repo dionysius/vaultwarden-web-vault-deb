@@ -338,6 +338,9 @@
   "other": {
     "message": "Прочее"
   },
+  "unlockMethodNeededToChangeTimeoutActionDesc": {
+    "message": "Настройте способ разблокировки для изменения действия по тайм-ауту хранилища."
+  },
   "rateExtension": {
     "message": "Оценить расширение"
   },
@@ -1602,6 +1605,12 @@
   "biometricsNotSupportedDesc": {
     "message": "Биометрия в браузере не поддерживается этом устройстве."
   },
+  "biometricsFailedTitle": {
+    "message": "Сбой биометрии"
+  },
+  "biometricsFailedDesc": {
+    "message": "Не удалось выполнить биометрическую идентификацию, попробуйте использовать мастер-пароль или выполнить выход. Если ситуация не изменится, обратитесь в службу поддержки Bitwarden."
+  },
   "nativeMessaginPermissionErrorTitle": {
     "message": "Разрешение не представлено"
   },
@@ -1875,7 +1884,7 @@
     "message": "Мастер-пароль недавно был изменен администратором вашей организации. Чтобы получить доступ к хранилищу, вы должны обновить его сейчас. В результате текущий сеанс будет завершен, потребуется повторный вход. Сеансы на других устройствах могут оставаться активными в течение одного часа."
   },
   "updateWeakMasterPasswordWarning": {
-    "message": "Ваш мастер-пароль не соответствует требованиям политики вашей организации. Для доступа к хранилищу вы должны обновить свой мастер-пароль прямо сейчас. При этом текущая сессия будет завершена и потребуется повторная авторизация. Сессии на других устройствах могут оставаться активными в течение часа."
+    "message": "Ваш мастер-пароль не соответствует требованиям политики вашей организации. Для доступа к хранилищу вы должны обновить свой мастер-пароль прямо сейчас. При этом текущий сеанс будет завершен и потребуется повторная авторизация. Сеансы на других устройствах могут оставаться активными в течение часа."
   },
   "resetPasswordPolicyAutoEnroll": {
     "message": "Автоматическое развертывание"
@@ -2143,7 +2152,7 @@
   "notificationSentDevice": {
     "message": "На ваше устройство отправлено уведомление."
   },
-  "logInInitiated": {
+  "loginInitiated": {
     "message": "Вход инициирован"
   },
   "exposedMasterPassword": {
@@ -2230,6 +2239,31 @@
   "opensInANewWindow": {
     "message": "Откроется в новом окне"
   },
+  "deviceApprovalRequired": {
+    "message": "Требуется одобрение устройства. Выберите вариант ниже:"
+  },
+  "rememberThisDevice": {
+    "message": "Запомнить это устройство"
+  },
+  "uncheckIfPublicDevice": {
+    "message": "Снимите флажок, если используете общедоступное устройство"
+  },
+  "approveFromYourOtherDevice": {
+    "message": "Одобрить с другого устройства"
+  },
+  "requestAdminApproval": {
+    "message": "Запросить одобрение администратора"
+  },
+  "approveWithMasterPassword": {
+    "message": "Одобрить с мастер-паролем"
+  },
+  "ssoIdentifierRequired": {
+    "message": "Требуется идентификатор SSO организации."
+  },
+  "eu": {
+    "message": "Европа",
+    "description": "European Union"
+  },
   "usDomain": {
     "message": "bitwarden.com"
   },
@@ -2244,5 +2278,133 @@
   },
   "display": {
     "message": "Отображение"
+  },
+  "accountSuccessfullyCreated": {
+    "message": "Аккаунт успешно создан!"
+  },
+  "adminApprovalRequested": {
+    "message": "Запрошено одобрение администратора"
+  },
+  "adminApprovalRequestSentToAdmins": {
+    "message": "Ваш запрос был отправлен администратору."
+  },
+  "youWillBeNotifiedOnceApproved": {
+    "message": "Вас уведомят об одобрении."
+  },
+  "troubleLoggingIn": {
+    "message": "Не удалось войти?"
+  },
+  "loginApproved": {
+    "message": "Вход одобрен"
+  },
+  "userEmailMissing": {
+    "message": "Отсутствует email пользователя"
+  },
+  "deviceTrusted": {
+    "message": "Доверенное устройство"
+  },
+  "inputRequired": {
+    "message": "Необходимо ввести данные."
+  },
+  "required": {
+    "message": "обязательно"
+  },
+  "search": {
+    "message": "Поиск"
+  },
+  "inputMinLength": {
+    "message": "Вводимые данные должны содержать не менее $COUNT$ символов.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "8"
+      }
+    }
+  },
+  "inputMaxLength": {
+    "message": "Длина вводимых данных не должна превышать $COUNT$ символов.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "20"
+      }
+    }
+  },
+  "inputForbiddenCharacters": {
+    "message": "Не допускаются следующие символы: $CHARACTERS$",
+    "placeholders": {
+      "characters": {
+        "content": "$1",
+        "example": "@, #, $, %"
+      }
+    }
+  },
+  "inputMinValue": {
+    "message": "Вводимое значение должно быть не менее $MIN$.",
+    "placeholders": {
+      "min": {
+        "content": "$1",
+        "example": "8"
+      }
+    }
+  },
+  "inputMaxValue": {
+    "message": "Вводимое значение не должно превышать $MAX$.",
+    "placeholders": {
+      "max": {
+        "content": "$1",
+        "example": "100"
+      }
+    }
+  },
+  "multipleInputEmails": {
+    "message": "Один или несколько адресов email недействительны"
+  },
+  "inputTrimValidator": {
+    "message": "Введенные данные не должны содержать только пробелы.",
+    "description": "Notification to inform the user that a form's input can't contain only whitespace."
+  },
+  "inputEmail": {
+    "message": "Введенные данные не являются адресом email."
+  },
+  "fieldsNeedAttention": {
+    "message": "$COUNT$ поля(ей) выше требуют вашего внимания.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
+      }
+    }
+  },
+  "selectPlaceholder": {
+    "message": "-- Выбрать --"
+  },
+  "multiSelectPlaceholder": {
+    "message": "-- Введите для фильтрации --"
+  },
+  "multiSelectLoading": {
+    "message": "Получение параметров..."
+  },
+  "multiSelectNotFound": {
+    "message": "Элементов не найдено"
+  },
+  "multiSelectClearAll": {
+    "message": "Очистить все"
+  },
+  "plusNMore": {
+    "message": "еще + $QUANTITY$",
+    "placeholders": {
+      "quantity": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
+  "submenu": {
+    "message": "Подменю"
+  },
+  "toggleCollapse": {
+    "message": "Свернуть/развернуть",
+    "description": "Toggling an expand/collapse state."
   }
 }

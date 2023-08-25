@@ -338,6 +338,9 @@
   "other": {
     "message": "Muu"
   },
+  "unlockMethodNeededToChangeTimeoutActionDesc": {
+    "message": "Hoidla ajalõpu tegevuse muutmiseks vali esmalt lahtilukustamise meetod."
+  },
   "rateExtension": {
     "message": "Hinda seda laiendust"
   },
@@ -1602,6 +1605,12 @@
   "biometricsNotSupportedDesc": {
     "message": "Brauseri biomeetria ei ole selles seadmes toetatud"
   },
+  "biometricsFailedTitle": {
+    "message": "Biomeetria nurjus"
+  },
+  "biometricsFailedDesc": {
+    "message": "Biomeetriaga kinnitamine ebaõnnestus. Kasuta ülemparooli või logi välja. Kui probleem püsib, võta ühendust Bitwardeni toega."
+  },
   "nativeMessaginPermissionErrorTitle": {
     "message": "Luba puudub"
   },
@@ -2143,7 +2152,7 @@
   "notificationSentDevice": {
     "message": "Sinu seadmesse saadeti teavitus."
   },
-  "logInInitiated": {
+  "loginInitiated": {
     "message": "Sisselogimine on käivitatud"
   },
   "exposedMasterPassword": {
@@ -2230,6 +2239,31 @@
   "opensInANewWindow": {
     "message": "Avaneb uues aknas"
   },
+  "deviceApprovalRequired": {
+    "message": "Nõutav on seadme kinnitamine. Vali kinnitamise meetod alt:"
+  },
+  "rememberThisDevice": {
+    "message": "Mäleta seda seadet"
+  },
+  "uncheckIfPublicDevice": {
+    "message": "Eemalda märgistus, kui oled avalikus seadmes"
+  },
+  "approveFromYourOtherDevice": {
+    "message": "Kinnita teises seadmes"
+  },
+  "requestAdminApproval": {
+    "message": "Küsi admini kinnitust"
+  },
+  "approveWithMasterPassword": {
+    "message": "Kinnita ülemparooliga"
+  },
+  "ssoIdentifierRequired": {
+    "message": "Nõutav on organisatsiooni SSO identifikaator."
+  },
+  "eu": {
+    "message": "EL",
+    "description": "European Union"
+  },
   "usDomain": {
     "message": "bitwarden.com"
   },
@@ -2244,5 +2278,133 @@
   },
   "display": {
     "message": "Kuvamine"
+  },
+  "accountSuccessfullyCreated": {
+    "message": "Konto edukalt loodud!"
+  },
+  "adminApprovalRequested": {
+    "message": "Päring on saadetud"
+  },
+  "adminApprovalRequestSentToAdmins": {
+    "message": "Kinnituspäring saadeti adminile."
+  },
+  "youWillBeNotifiedOnceApproved": {
+    "message": "Kinnitamise järel saad selle kohta teavituse."
+  },
+  "troubleLoggingIn": {
+    "message": "Kas sisselogimisel on probleeme?"
+  },
+  "loginApproved": {
+    "message": "Sisselogimine on kinnitatud"
+  },
+  "userEmailMissing": {
+    "message": "Kasutaja e-post on puudulik"
+  },
+  "deviceTrusted": {
+    "message": "Seade on usaldusväärne"
+  },
+  "inputRequired": {
+    "message": "Sisestus on nõutav."
+  },
+  "required": {
+    "message": "nõutav"
+  },
+  "search": {
+    "message": "Otsi"
+  },
+  "inputMinLength": {
+    "message": "Sisend peab olema vähemalt $COUNT$ tähemärki pikk.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "8"
+      }
+    }
+  },
+  "inputMaxLength": {
+    "message": "Sisend ei tohi olla üle $COUNT$ tähemärgi pikkune.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "20"
+      }
+    }
+  },
+  "inputForbiddenCharacters": {
+    "message": "Järgnevad kirjamärgid pole lubatud: $CHARACTERS$",
+    "placeholders": {
+      "characters": {
+        "content": "$1",
+        "example": "@, #, $, %"
+      }
+    }
+  },
+  "inputMinValue": {
+    "message": "Sisend peab olema vähemalt $MIN$.",
+    "placeholders": {
+      "min": {
+        "content": "$1",
+        "example": "8"
+      }
+    }
+  },
+  "inputMaxValue": {
+    "message": "Sisend ei tohi ületada $MAX$.",
+    "placeholders": {
+      "max": {
+        "content": "$1",
+        "example": "100"
+      }
+    }
+  },
+  "multipleInputEmails": {
+    "message": "Üks või rohkem e-posti on kehtetud"
+  },
+  "inputTrimValidator": {
+    "message": "Sisend ei tohi koosneda ainult tühikutest.",
+    "description": "Notification to inform the user that a form's input can't contain only whitespace."
+  },
+  "inputEmail": {
+    "message": "Sisend pole e-posti aadress."
+  },
+  "fieldsNeedAttention": {
+    "message": "$COUNT$ välja nõuab tähelepanu.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
+      }
+    }
+  },
+  "selectPlaceholder": {
+    "message": "-- Vali --"
+  },
+  "multiSelectPlaceholder": {
+    "message": "-- Filtreeritav tüüp --"
+  },
+  "multiSelectLoading": {
+    "message": "Valikute hankimine..."
+  },
+  "multiSelectNotFound": {
+    "message": "Ühtki kirjet ei leitud"
+  },
+  "multiSelectClearAll": {
+    "message": "Tühjenda kõik"
+  },
+  "plusNMore": {
+    "message": "+ $QUANTITY$ veel",
+    "placeholders": {
+      "quantity": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
+  "submenu": {
+    "message": "Alammenüü"
+  },
+  "toggleCollapse": {
+    "message": "Peida",
+    "description": "Toggling an expand/collapse state."
   }
 }

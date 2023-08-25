@@ -338,6 +338,9 @@
   "other": {
     "message": "Altres"
   },
+  "unlockMethodNeededToChangeTimeoutActionDesc": {
+    "message": "Set up an unlock method to change your vault timeout action."
+  },
   "rateExtension": {
     "message": "Valora aquesta extensió"
   },
@@ -1602,6 +1605,12 @@
   "biometricsNotSupportedDesc": {
     "message": "La biometria del navegador no és compatible amb aquest dispositiu."
   },
+  "biometricsFailedTitle": {
+    "message": "Biometrics failed"
+  },
+  "biometricsFailedDesc": {
+    "message": "Biometrics cannot be completed, consider using a master password or logging out. If this persists, please contact Bitwarden support."
+  },
   "nativeMessaginPermissionErrorTitle": {
     "message": "No s'ha proporcionat el permís"
   },
@@ -2143,8 +2152,8 @@
   "notificationSentDevice": {
     "message": "S'ha enviat una notificació al vostre dispositiu."
   },
-  "logInInitiated": {
-    "message": "S'ha iniciat la sessió"
+  "loginInitiated": {
+    "message": "Login initiated"
   },
   "exposedMasterPassword": {
     "message": "Contrasenya mestra exposada"
@@ -2230,6 +2239,31 @@
   "opensInANewWindow": {
     "message": "S'obri en una finestra nova"
   },
+  "deviceApprovalRequired": {
+    "message": "Device approval required. Select an approval option below:"
+  },
+  "rememberThisDevice": {
+    "message": "Remember this device"
+  },
+  "uncheckIfPublicDevice": {
+    "message": "Uncheck if using a public device"
+  },
+  "approveFromYourOtherDevice": {
+    "message": "Approve from your other device"
+  },
+  "requestAdminApproval": {
+    "message": "Request admin approval"
+  },
+  "approveWithMasterPassword": {
+    "message": "Approve with master password"
+  },
+  "ssoIdentifierRequired": {
+    "message": "Organization SSO identifier is required."
+  },
+  "eu": {
+    "message": "EU",
+    "description": "European Union"
+  },
   "usDomain": {
     "message": "bitwarden.com"
   },
@@ -2244,5 +2278,133 @@
   },
   "display": {
     "message": "Mostra"
+  },
+  "accountSuccessfullyCreated": {
+    "message": "Account successfully created!"
+  },
+  "adminApprovalRequested": {
+    "message": "Admin approval requested"
+  },
+  "adminApprovalRequestSentToAdmins": {
+    "message": "Your request has been sent to your admin."
+  },
+  "youWillBeNotifiedOnceApproved": {
+    "message": "You will be notified once approved."
+  },
+  "troubleLoggingIn": {
+    "message": "Trouble logging in?"
+  },
+  "loginApproved": {
+    "message": "Login approved"
+  },
+  "userEmailMissing": {
+    "message": "User email missing"
+  },
+  "deviceTrusted": {
+    "message": "Device trusted"
+  },
+  "inputRequired": {
+    "message": "L'entrada és obligatòria."
+  },
+  "required": {
+    "message": "obligatori"
+  },
+  "search": {
+    "message": "Cerca"
+  },
+  "inputMinLength": {
+    "message": "L'entrada ha de tenir com a mínim $COUNT$ caràcters.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "8"
+      }
+    }
+  },
+  "inputMaxLength": {
+    "message": "L'entrada no ha de superar $COUNT$ caràcters de longitud.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "20"
+      }
+    }
+  },
+  "inputForbiddenCharacters": {
+    "message": "Els següents caràcters no estan permesos:\n$CHARACTERS$",
+    "placeholders": {
+      "characters": {
+        "content": "$1",
+        "example": "@, #, $, %"
+      }
+    }
+  },
+  "inputMinValue": {
+    "message": "El valor d'entrada ha de ser com a mínim $MIN$.",
+    "placeholders": {
+      "min": {
+        "content": "$1",
+        "example": "8"
+      }
+    }
+  },
+  "inputMaxValue": {
+    "message": "El valor d'entrada no ha de ser superior a $MAX$.",
+    "placeholders": {
+      "max": {
+        "content": "$1",
+        "example": "100"
+      }
+    }
+  },
+  "multipleInputEmails": {
+    "message": "1 o més correus no són vàlids"
+  },
+  "inputTrimValidator": {
+    "message": "L'entrada no ha de contenir només espais en blanc.",
+    "description": "Notification to inform the user that a form's input can't contain only whitespace."
+  },
+  "inputEmail": {
+    "message": "L'entrada no és una adreça de correu electrònic."
+  },
+  "fieldsNeedAttention": {
+    "message": "$COUNT$ camp(s) de dalt necessiten la vostra atenció.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
+      }
+    }
+  },
+  "selectPlaceholder": {
+    "message": "-- Selecciona --"
+  },
+  "multiSelectPlaceholder": {
+    "message": "-- Escriviu per filtrar --"
+  },
+  "multiSelectLoading": {
+    "message": "Obtenint opcions..."
+  },
+  "multiSelectNotFound": {
+    "message": "No s'ha trobat cap element"
+  },
+  "multiSelectClearAll": {
+    "message": "Esborra-ho tot"
+  },
+  "plusNMore": {
+    "message": "+ $QUANTITY$ més",
+    "placeholders": {
+      "quantity": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
+  "submenu": {
+    "message": "Submenú"
+  },
+  "toggleCollapse": {
+    "message": "Redueix/Amplia",
+    "description": "Toggling an expand/collapse state."
   }
 }

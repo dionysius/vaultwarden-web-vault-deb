@@ -338,6 +338,9 @@
   "other": {
     "message": "Andre"
   },
+  "unlockMethodNeededToChangeTimeoutActionDesc": {
+    "message": "Opsæt en oplåsningsmetode til at ændre bokstimeouthandlingen."
+  },
   "rateExtension": {
     "message": "Bedøm udvidelsen"
   },
@@ -1602,6 +1605,12 @@
   "biometricsNotSupportedDesc": {
     "message": "Browserbiometri understøttes ikke på denne enhed."
   },
+  "biometricsFailedTitle": {
+    "message": "Biometri mislykkedes"
+  },
+  "biometricsFailedDesc": {
+    "message": "Biometri kan ikke fuldføres, overvej at bruge en hovedadgangskode eller logge ud og ind igen. Fortsætter problemet, kontakt Bitwarden-supporten."
+  },
   "nativeMessaginPermissionErrorTitle": {
     "message": "Tilladelse ikke givet"
   },
@@ -2143,7 +2152,7 @@
   "notificationSentDevice": {
     "message": "En notifikation er sendt til din enhed."
   },
-  "logInInitiated": {
+  "loginInitiated": {
     "message": "Indlogning påbegyndt"
   },
   "exposedMasterPassword": {
@@ -2230,6 +2239,31 @@
   "opensInANewWindow": {
     "message": "Åbnes i et nyt vindue"
   },
+  "deviceApprovalRequired": {
+    "message": "Enhedsgodkendelse kræves. Vælg en godkendelsesmulighed nedenfor:"
+  },
+  "rememberThisDevice": {
+    "message": "Husk denne enhed"
+  },
+  "uncheckIfPublicDevice": {
+    "message": "Slå fra, hvis en offentlig enhed benyttes"
+  },
+  "approveFromYourOtherDevice": {
+    "message": "Godkend med min anden enhed"
+  },
+  "requestAdminApproval": {
+    "message": "Anmod om admin-godkendelse"
+  },
+  "approveWithMasterPassword": {
+    "message": "Godkend med hovedadgangskode"
+  },
+  "ssoIdentifierRequired": {
+    "message": "Organisations SSO-identifikator kræves."
+  },
+  "eu": {
+    "message": "EU",
+    "description": "European Union"
+  },
   "usDomain": {
     "message": "bitwarden.com"
   },
@@ -2244,5 +2278,133 @@
   },
   "display": {
     "message": "Display"
+  },
+  "accountSuccessfullyCreated": {
+    "message": "Konto oprettet!"
+  },
+  "adminApprovalRequested": {
+    "message": "Admin-godkendelse udbedt"
+  },
+  "adminApprovalRequestSentToAdmins": {
+    "message": "Anmodningen er sendt til din admin."
+  },
+  "youWillBeNotifiedOnceApproved": {
+    "message": "Du underrettes, når godkendelse foreligger."
+  },
+  "troubleLoggingIn": {
+    "message": "Problemer med at logge ind?"
+  },
+  "loginApproved": {
+    "message": "Indlogning godkendt"
+  },
+  "userEmailMissing": {
+    "message": "Brugers e-mail mangler"
+  },
+  "deviceTrusted": {
+    "message": "Enhed betroet"
+  },
+  "inputRequired": {
+    "message": "Input obligatorisk."
+  },
+  "required": {
+    "message": "obligatorisk"
+  },
+  "search": {
+    "message": "Søg"
+  },
+  "inputMinLength": {
+    "message": "Input skal udgøre minimum $COUNT$ tegn.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "8"
+      }
+    }
+  },
+  "inputMaxLength": {
+    "message": "Input må maksimalt udgøre $COUNT$ tegn.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "20"
+      }
+    }
+  },
+  "inputForbiddenCharacters": {
+    "message": "Flg. tegn er ikke tilladt: $CHARACTERS$",
+    "placeholders": {
+      "characters": {
+        "content": "$1",
+        "example": "@, #, $, %"
+      }
+    }
+  },
+  "inputMinValue": {
+    "message": "Inputværdi skal være mindst $MIN$.",
+    "placeholders": {
+      "min": {
+        "content": "$1",
+        "example": "8"
+      }
+    }
+  },
+  "inputMaxValue": {
+    "message": "Inputværdi må ikke overstige $MAX$.",
+    "placeholders": {
+      "max": {
+        "content": "$1",
+        "example": "100"
+      }
+    }
+  },
+  "multipleInputEmails": {
+    "message": "1 eller flere e-mails er ugyldige"
+  },
+  "inputTrimValidator": {
+    "message": "Input må ikke indeholde kun mellemrum.",
+    "description": "Notification to inform the user that a form's input can't contain only whitespace."
+  },
+  "inputEmail": {
+    "message": "Input er ikke en e-mailadresse."
+  },
+  "fieldsNeedAttention": {
+    "message": "$COUNT$ felt(er) ovenfor kræver opmærksomhed.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
+      }
+    }
+  },
+  "selectPlaceholder": {
+    "message": "-- Vælg --"
+  },
+  "multiSelectPlaceholder": {
+    "message": "-- Skriv for at filtrere --"
+  },
+  "multiSelectLoading": {
+    "message": "Henter indstillinger…"
+  },
+  "multiSelectNotFound": {
+    "message": "Ingen emner fundet"
+  },
+  "multiSelectClearAll": {
+    "message": "Ryd alt"
+  },
+  "plusNMore": {
+    "message": "+ $QUANTITY$ flere",
+    "placeholders": {
+      "quantity": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
+  "submenu": {
+    "message": "Undermenu"
+  },
+  "toggleCollapse": {
+    "message": "Fold sammen/ud",
+    "description": "Toggling an expand/collapse state."
   }
 }
