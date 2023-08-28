@@ -47,7 +47,7 @@ defaults:
 jobs:
   setup:
     name: Setup
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     outputs:
       release-version: ${{ steps.version.outputs.version }}
       release-channel: ${{ steps.release-channel.outputs.channel }}
@@ -247,7 +247,7 @@ jobs:
 
   snap:
     name: Deploy Snap
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     needs: setup
     if: inputs.snap_publish
     env:
