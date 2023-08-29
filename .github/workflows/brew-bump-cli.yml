@@ -38,4 +38,4 @@ jobs:
           formula: bitwarden-cli
           tag: ${{ github.ref }}
           revision: ${{ github.sha }}
-          force: false
+          force: true

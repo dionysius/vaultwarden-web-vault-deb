@@ -38,5 +38,5 @@ jobs:
           cask: bitwarden
           tag: ${{ github.ref }}
           revision: ${{ github.sha }}
-          force: false
+          force: true
           dryrun: true

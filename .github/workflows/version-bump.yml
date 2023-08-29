@@ -26,9 +26,6 @@ on:
       client:
         required: true
         type: string
-    secrets:
-      AZURE_PROD_KV_CREDENTIALS:
-        required: true
 
 defaults:
   run:
