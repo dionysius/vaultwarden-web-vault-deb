@@ -76,14 +76,17 @@ export class VaultTimeoutInputComponent
       }
     });
 
-    // Assign the previous value to the custom fields
+    // Assign the current value to the custom fields
+    // so that if the user goes from a numeric value to custom
+    // we can initialize the custom fields with the current value
+    // ex: user picks 5 min, goes to custom, we want to show 0 hr, 5 min in the custom fields
     this.form.controls.vaultTimeout.valueChanges
       .pipe(
         filter((value) => value !== VaultTimeoutInputComponent.CUSTOM_VALUE),
         takeUntil(this.destroy$)
       )
-      .subscribe((_) => {
-        const current = Math.max(this.form.value.vaultTimeout, 0);
+      .subscribe((value) => {
+        const current = Math.max(value, 0);
         this.form.patchValue({
           custom: {
             hours: Math.floor(current / 60),
