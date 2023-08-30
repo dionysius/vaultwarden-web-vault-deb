@@ -1,7 +1,6 @@
 import { BehaviorSubject } from "rxjs";
 
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
-import { StateMigrationService } from "@bitwarden/common/platform/abstractions/state-migration.service";
 import {
   AbstractStorageService,
   AbstractMemoryStorageService,
@@ -41,7 +40,6 @@ export class BrowserStateService
     secureStorageService: AbstractStorageService,
     memoryStorageService: AbstractMemoryStorageService,
     logService: LogService,
-    stateMigrationService: StateMigrationService,
     stateFactory: StateFactory<GlobalState, Account>,
     useAccountCache = true
   ) {
@@ -50,7 +48,6 @@ export class BrowserStateService
       secureStorageService,
       memoryStorageService,
       logService,
-      stateMigrationService,
       stateFactory,
       useAccountCache
     );
