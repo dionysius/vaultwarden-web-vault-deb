@@ -12,7 +12,6 @@ class BrowserPopoutWindowService implements BrowserPopupWindowServiceInterface {
   };
 
   async openUnlockPrompt(senderWindowId: number) {
-    await this.closeUnlockPrompt();
     await this.openSingleActionPopout(
       senderWindowId,
       "popup/index.html?uilocation=popout",
@@ -36,8 +35,6 @@ class BrowserPopoutWindowService implements BrowserPopupWindowServiceInterface {
       action: string;
     }
   ) {
-    await this.closePasswordRepromptPrompt();
-
     const promptWindowPath =
       "popup/index.html#/view-cipher" +
       "?uilocation=popout" +
@@ -73,18 +70,16 @@ class BrowserPopoutWindowService implements BrowserPopupWindowServiceInterface {
 
     const popupWindow = await BrowserApi.createWindow(windowOptions);
 
-    if (!singleActionPopoutKey) {
-      return;
-    }
+    await this.closeSingleActionPopout(singleActionPopoutKey);
     this.singleActionPopoutTabIds[singleActionPopoutKey] = popupWindow?.tabs[0].id;
   }
 
   private async closeSingleActionPopout(popoutKey: string) {
     const tabId = this.singleActionPopoutTabIds[popoutKey];
-    if (!tabId) {
-      return;
+
+    if (tabId) {
+      await BrowserApi.removeTab(tabId);
     }
-    await BrowserApi.removeTab(tabId);
     this.singleActionPopoutTabIds[popoutKey] = null;
   }
 }
