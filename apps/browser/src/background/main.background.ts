@@ -635,7 +635,8 @@ export default class MainBackground {
         this.authService,
         this.cipherService,
         this.totpService,
-        this.eventCollectionService
+        this.eventCollectionService,
+        this.userVerificationService
       );
 
       this.contextMenusBackground = new ContextMenusBackground(contextMenuClickedHandler);
@@ -670,8 +671,7 @@ export default class MainBackground {
       this.cipherContextMenuHandler = new CipherContextMenuHandler(
         this.mainContextMenuHandler,
         this.authService,
-        this.cipherService,
-        this.userVerificationService
+        this.cipherService
       );
     }
   }
