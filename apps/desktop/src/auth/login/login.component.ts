@@ -182,6 +182,6 @@ export class LoginComponent extends BaseLoginComponent implements OnDestroy {
 
   private focusInput() {
     const email = this.loggedEmail;
-    document.getElementById(email == null || email === "" ? "email" : "masterPassword").focus();
+    document.getElementById(email == null || email === "" ? "email" : "masterPassword")?.focus();
   }
 }
