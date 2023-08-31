@@ -22,7 +22,6 @@ override_dh_auto_configure:
 override_dh_auto_build:
 # install dependencies
 	npm ci
-	npm audit fix || true
 
 # Build the web-vault
 	cd apps/web; npm run dist:oss:selfhost
