@@ -1924,8 +1924,8 @@
   "premiumSignUpStorage": {
     "message": "1 GB krypteret lager til vedhæftede filer."
   },
-  "premiumSignUpTwoStep": {
-    "message": "Yderligere totrins login-muligheder, såsom YubiKey, FIDO U2F og Duo."
+  "premiumSignUpTwoStepOptions": {
+    "message": "Proprietære totrins-login muligheder, såsom YubiKey og Duo."
   },
   "premiumSignUpEmergency": {
     "message": "Nødadgang"
@@ -2039,6 +2039,9 @@
         "example": "month or year"
       }
     }
+  },
+  "paymentChargedWithUnpaidSubscription": {
+    "message": "Der vil ske opkrævning for evt. ubetalte abonnementer via betalingsmetoden."
   },
   "paymentChargedWithTrial": {
     "message": "Dit abonnement indeholder en gratis 7-dages prøveperiode. Din betalingsmetode vil ikke blive debiteret, før prøveperioden er slut. Du kan til enhver tid annullere."

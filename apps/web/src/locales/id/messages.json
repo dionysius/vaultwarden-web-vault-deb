@@ -1924,8 +1924,8 @@
   "premiumSignUpStorage": {
     "message": "Penyimpanan terenkripsi 1 GB untuk lampiran file."
   },
-  "premiumSignUpTwoStep": {
-    "message": "Opsi login dua langkah tambahan seperti YubiKey, FIDO U2F, dan Duo."
+  "premiumSignUpTwoStepOptions": {
+    "message": "Proprietary two-step login options such as YubiKey and Duo."
   },
   "premiumSignUpEmergency": {
     "message": "Akses darurat"
@@ -2039,6 +2039,9 @@
         "example": "month or year"
       }
     }
+  },
+  "paymentChargedWithUnpaidSubscription": {
+    "message": "Your payment method will be charged for any unpaid subscriptions."
   },
   "paymentChargedWithTrial": {
     "message": "Paket Anda dilengkapi dengan uji coba gratis selama 7 hari. Metode pembayaran Anda tidak akan ditagih hingga uji coba berakhir. Penagihan akan dilakukan secara berulang setiap $INTERVAL$. Anda dapat membatalkannya kapan saja."

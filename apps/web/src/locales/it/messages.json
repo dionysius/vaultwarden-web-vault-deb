@@ -1924,8 +1924,8 @@
   "premiumSignUpStorage": {
     "message": "1 GB di spazio di archiviazione criptato per gli allegati."
   },
-  "premiumSignUpTwoStep": {
-    "message": "Più opzioni di verifica in due passaggi come YubiKey, FIDO U2F, e Duo."
+  "premiumSignUpTwoStepOptions": {
+    "message": "Proprietary two-step login options such as YubiKey and Duo."
   },
   "premiumSignUpEmergency": {
     "message": "Accesso di emergenza"
@@ -2039,6 +2039,9 @@
         "example": "month or year"
       }
     }
+  },
+  "paymentChargedWithUnpaidSubscription": {
+    "message": "Eventuali abbonamenti non pagati saranno addebitati sul tuo metodo di pagamento."
   },
   "paymentChargedWithTrial": {
     "message": "Il tuo piano include una prova gratis di 7 giorni. Il tuo metodo di pagamento non sarà addebitato fino alla fine del periodo di prova. Puoi cancellarlo in qualsiasi momento."
@@ -7160,7 +7163,7 @@
     "message": "Accesso effettuato!"
   },
   "smBetaEndedDesc": {
-    "message": "La beta del Gestore dei Segreti è terminata in $BETA_ENDING_DATE$. Ti rimangono $DAYS$ giorni per aggiungere il Gestore dei Segreti al tuo abbonamento a pagamento e mantenere l'accesso ai dati del Gestore dei Segreti. Contatta il Successo del Cliente per aggiungere il Gestore dei Segreti al tuo abbonamento.",
+    "message": "La beta del Gestore dei Segreti è terminata in $BETA_ENDING_DATE$. Ti rimangono $DAYS$ giorni per aggiungere il Gestore dei Segreti al tuo abbonamento a pagamento e mantenere l'accesso ai dati del Gestore dei Segreti. Contatta l'assistenza per aggiungere il Gestore dei Segreti al tuo abbonamento.",
     "placeholders": {
       "beta_ending_date": {
         "content": "$1",

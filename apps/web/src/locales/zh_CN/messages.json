@@ -606,7 +606,7 @@
     "message": "登录或者创建一个账户来访问您的安全密码库。"
   },
   "loginWithDevice": {
-    "message": "设备登录"
+    "message": "使用设备登录"
   },
   "loginWithDeviceEnabledNote": {
     "message": "设备登录必须在 Bitwarden 应用程序的设置中设启用。需要其他选项吗？"
@@ -1924,8 +1924,8 @@
   "premiumSignUpStorage": {
     "message": "1 GB 文件附件加密存储。"
   },
-  "premiumSignUpTwoStep": {
-    "message": "额外的两步登录选项，如 YubiKey、FIDO U2F 和 Duo。"
+  "premiumSignUpTwoStepOptions": {
+    "message": "Proprietary two-step login options such as YubiKey and Duo."
   },
   "premiumSignUpEmergency": {
     "message": "紧急访问"
@@ -2039,6 +2039,9 @@
         "example": "month or year"
       }
     }
+  },
+  "paymentChargedWithUnpaidSubscription": {
+    "message": "任何未付费订阅都将通过您的付款方式收取费用。"
   },
   "paymentChargedWithTrial": {
     "message": "您的计划包含了 7 天的免费试用期。在试用期结束前，不会从您的付款方式中扣款。您可以随时取消。"
@@ -2448,7 +2451,7 @@
     "message": "组织已创建"
   },
   "organizationReadyToGo": {
-    "message": "你的组织准备好了！"
+    "message": "您的新组织已准备就绪！"
   },
   "organizationUpgraded": {
     "message": "组织已升级"
@@ -6936,7 +6939,7 @@
     "message": "设备信息"
   },
   "time": {
-    "message": "Time"
+    "message": "时间"
   },
   "denyAllRequests": {
     "message": "拒绝所有请求"

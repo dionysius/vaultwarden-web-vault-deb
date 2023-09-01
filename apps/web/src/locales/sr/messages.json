@@ -955,7 +955,7 @@
     "message": "Копирај верификациони код"
   },
   "copyUuid": {
-    "message": "Copy UUID"
+    "message": "Копирај UUID"
   },
   "warning": {
     "message": "Упозорење"
@@ -1365,7 +1365,7 @@
     "message": "Прикажи иконе сајтова"
   },
   "faviconDesc": {
-    "message": "Прикажи препознатљиву слику поред сваке ставке за пријаву."
+    "message": "Прикажи препознатљиву иконицу поред сваке ставке за пријаву."
   },
   "enableFullWidth": {
     "message": "Упали пуни ширину распореда",
@@ -1924,8 +1924,8 @@
   "premiumSignUpStorage": {
     "message": "1ГБ шифровано складиште за прилоге."
   },
-  "premiumSignUpTwoStep": {
-    "message": "Додатне опције пријаве у два корака као што су YubiKey, FIDO U2F, и Duo."
+  "premiumSignUpTwoStepOptions": {
+    "message": "Proprietary two-step login options such as YubiKey and Duo."
   },
   "premiumSignUpEmergency": {
     "message": "Улаз у хитним случајевима"
@@ -2039,6 +2039,9 @@
         "example": "month or year"
       }
     }
+  },
+  "paymentChargedWithUnpaidSubscription": {
+    "message": "Your payment method will be charged for any unpaid subscriptions."
   },
   "paymentChargedWithTrial": {
     "message": "Ваш план долази са бесплатним 7-дневним пробним периодом. Начин плаћања неће бити наплаћен док се пробно време не заврши. Наплата ће се вршити периодично, сваки $INTERVAL$. Можете отказати било када."
@@ -3537,7 +3540,7 @@
     "message": "Изаберите када ће сеф истећи и да изврши одабрану радњу."
   },
   "vaultTimeoutLogoutDesc": {
-    "message": "Choose when your vault will be logged out."
+    "message": "Одаберите када ће ваш сеф бити одјављен."
   },
   "oneMinute": {
     "message": "1 минут"
@@ -4936,7 +4939,7 @@
     "message": "Онемогућите извоз личног сефа"
   },
   "disablePersonalVaultExportDescription": {
-    "message": "Do not allow members to export data from their individual vault."
+    "message": "Не дозволи члановима да извозе податке из свог индивидуалног сефа."
   },
   "vaultExportDisabled": {
     "message": "Извоз сефа онемогућен"
@@ -5440,7 +5443,7 @@
     "message": "Извоз сефа организације"
   },
   "exportingIndividualVaultDescription": {
-    "message": "Only the individual vault items associated with $EMAIL$ will be exported. Organization vault items will not be included. Only vault item information will be exported and will not include associated attachments.",
+    "message": "Само појединачне ставке сефа повезане са $EMAIL$ ће бити извењене. Ставке организационог сефа неће бити укључене. Само информације о ставкама из сефа ће бити извезене и неће укључивати повезане прилоге.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -6839,58 +6842,58 @@
     "message": "Ажурирати KDF подешавања"
   },
   "loginInitiated": {
-    "message": "Login initiated"
+    "message": "Пријава је покренута"
   },
   "deviceApprovalRequired": {
-    "message": "Device approval required. Select an approval option below:"
+    "message": "Потребно је одобрење уређаја. Изаберите опцију одобрења испод:"
   },
   "rememberThisDevice": {
-    "message": "Remember this device"
+    "message": "Запамти овај уређај"
   },
   "uncheckIfPublicDevice": {
-    "message": "Uncheck if using a public device"
+    "message": "Искључите ако се користи јавни уређај"
   },
   "approveFromYourOtherDevice": {
-    "message": "Approve from your other device"
+    "message": "Одобри са мојим другим уређајем"
   },
   "requestAdminApproval": {
-    "message": "Request admin approval"
+    "message": "Затражити одобрење администратора"
   },
   "approveWithMasterPassword": {
-    "message": "Approve with master password"
+    "message": "Одобрити са главном лозинком"
   },
   "trustedDeviceEncryption": {
-    "message": "Trusted device encryption"
+    "message": "Шифровање поузданог уређаја"
   },
   "trustedDevices": {
     "message": "Поуздани уређаји"
   },
   "memberDecryptionOptionTdeDescriptionPartOne": {
-    "message": "Once authenticated, members will decrypt vault data using a key stored on their device. The",
+    "message": "Када се аутентификују, чланови ће дешифровати податке из сефљ користећи кључ сачуван на њиховом уређају",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The single organization policy, SSO Required policy, and account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
   "memberDecryptionOptionTdeDescriptionLinkOne": {
-    "message": "single organization",
+    "message": "јединствена организација",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The single organization policy, SSO required policy, and account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
   "memberDecryptionOptionTdeDescriptionPartTwo": {
-    "message": "policy,",
+    "message": "полиса,",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The single organization policy, SSO required policy, and account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
   "memberDecryptionOptionTdeDescriptionLinkTwo": {
-    "message": "SSO required",
+    "message": "SSO потребан",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The single organization policy, SSO required policy, and account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
   "memberDecryptionOptionTdeDescriptionPartThree": {
-    "message": "policy, and",
+    "message": "полиса, и",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The single organization policy, SSO required policy, and account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
   "memberDecryptionOptionTdeDescriptionLinkThree": {
-    "message": "account recovery administration",
+    "message": "администрација опоравка налога",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The single organization policy, SSO required policy, and account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
   "memberDecryptionOptionTdeDescriptionPartFour": {
-    "message": "policy with automatic enrollment will turn on when this option is used.",
+    "message": "полисе са аутоматским уписом ће се укључити када се користи ова опција.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The single organization policy, SSO required policy, and account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
   "notFound": {
@@ -6981,7 +6984,7 @@
     "message": "Уклањање чланова који немају главну лозинку без постављања једне за њих може ограничити приступ њиховом пуном налогу."
   },
   "approvedAuthRequest": {
-    "message": "Approved device for $ID$.",
+    "message": "Одобрен уређај за $ID$.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -6990,7 +6993,7 @@
     }
   },
   "rejectedAuthRequest": {
-    "message": "Denied device for $ID$.",
+    "message": "Одбијен уређај за $ID$.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -6999,7 +7002,7 @@
     }
   },
   "requestedDeviceApproval": {
-    "message": "Requested device approval."
+    "message": "Затражено је одобрење уређаја."
   },
   "startYour7DayFreeTrialOfBitwardenFor": {
     "message": "Започните своју 7-дневну бесплатну пробну Bitwarden-а за $ORG$",
@@ -7023,28 +7026,28 @@
     "message": "Одабрана застава"
   },
   "accountSuccessfullyCreated": {
-    "message": "Account successfully created!"
+    "message": "Налог је успешно креиран!"
   },
   "adminApprovalRequested": {
-    "message": "Admin approval requested"
+    "message": "Захтевано је одобрење администратора"
   },
   "adminApprovalRequestSentToAdmins": {
-    "message": "Your request has been sent to your admin."
+    "message": "Ваш захтев је послат вашем администратору."
   },
   "youWillBeNotifiedOnceApproved": {
-    "message": "You will be notified once approved."
+    "message": "Бићете обавештени када буде одобрено."
   },
   "troubleLoggingIn": {
-    "message": "Trouble logging in?"
+    "message": "Имате проблема са пријављивањем?"
   },
   "loginApproved": {
-    "message": "Login approved"
+    "message": "Пријава је одобрена"
   },
   "userEmailMissing": {
-    "message": "User email missing"
+    "message": "Недостаје имејл корисника"
   },
   "deviceTrusted": {
-    "message": "Device trusted"
+    "message": "Уређај поуздан"
   },
   "sendsNoItemsTitle": {
     "message": "Нема активних Sends",
@@ -7070,13 +7073,13 @@
     "message": "For engineering and DevOps teams to manage secrets throughout the software development lifecycle."
   },
   "free2PersonOrganization": {
-    "message": "Free 2-person Organizations"
+    "message": "Бесплатна организација за 2 особе"
   },
   "unlimitedSecrets": {
-    "message": "Unlimited secrets"
+    "message": "Неограничене тајне"
   },
   "unlimitedProjects": {
-    "message": "Unlimited projects"
+    "message": "Неограничени пројекти"
   },
   "projectsIncluded": {
     "message": "$COUNT$ projects included",
@@ -7106,13 +7109,13 @@
     }
   },
   "addSecretsManager": {
-    "message": "Add Secrets Manager"
+    "message": "Додати Менаџер Тајни"
   },
   "addSecretsManagerUpgradeDesc": {
     "message": "Add Secrets Manager to your upgraded plan to maintain access to any secrets created with your previous plan."
   },
   "additionalServiceAccounts": {
-    "message": "Additional service accounts"
+    "message": "Додатни сервисни налози"
   },
   "includedServiceAccounts": {
     "message": "Ваш план долази са $COUNT$ налога сервиса.",
@@ -7133,16 +7136,16 @@
     }
   },
   "passwordManagerPlanPrice": {
-    "message": "Password Manager plan price"
+    "message": "Цена плана менаџера лозинки"
   },
   "secretsManagerPlanPrice": {
-    "message": "Secrets Manager plan price"
+    "message": "Цена плана менаџера тајни"
   },
   "passwordManager": {
     "message": "Менаџер лозинки"
   },
   "freeOrganization": {
-    "message": "Free Organization"
+    "message": "Бесплатна организација"
   },
   "limitServiceAccounts": {
     "message": "Limit service accounts (optional)"
@@ -7157,7 +7160,7 @@
     "message": "Max potential service account cost"
   },
   "loggedInExclamation": {
-    "message": "Logged in!"
+    "message": "Пријављено!"
   },
   "smBetaEndedDesc": {
     "message": "Бета менаџера тајни се завршио $BETA_ENDING_DATE$. Остало вам је $DAYS$ дана да додате Менаџер тајни у вашу претплату и да задржите приступ подацима Манагера тајни. Контактирајте подршку да додате Менаџер тајни у своју претплату.",
@@ -7179,6 +7182,6 @@
     "message": "Бета"
   },
   "alreadyHaveAccount": {
-    "message": "Already have an account?"
+    "message": "Већ имате налог?"
   }
 }

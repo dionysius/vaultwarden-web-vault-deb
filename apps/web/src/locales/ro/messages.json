@@ -1924,8 +1924,8 @@
   "premiumSignUpStorage": {
     "message": "1 GB stocare criptată pentru fișiere atașate."
   },
-  "premiumSignUpTwoStep": {
-    "message": "Opțiuni suplimentare de conectare în două etape, cum ar fi YubiKey, FIDO U2F și Duo."
+  "premiumSignUpTwoStepOptions": {
+    "message": "Proprietary two-step login options such as YubiKey and Duo."
   },
   "premiumSignUpEmergency": {
     "message": "Acces de urgență"
@@ -2039,6 +2039,9 @@
         "example": "month or year"
       }
     }
+  },
+  "paymentChargedWithUnpaidSubscription": {
+    "message": "Your payment method will be charged for any unpaid subscriptions."
   },
   "paymentChargedWithTrial": {
     "message": "Planul dvs. vine cu o încercare gratuită de 7 zile. Metoda dvs. de plată nu va fi facturată până la sfârșitul perioadei de încercare. Puteți anula în orice moment."

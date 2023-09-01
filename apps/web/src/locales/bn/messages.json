@@ -1924,8 +1924,8 @@
   "premiumSignUpStorage": {
     "message": "ফাইল সংযুক্তির জন্য ১ জিবি এনক্রিপ্টেড স্থান।"
   },
-  "premiumSignUpTwoStep": {
-    "message": "YubiKey, FIDO U2F, ও Duo এর মতো অতিরিক্ত দ্বি-পদক্ষেপ লগইন বিকল্পগুলি।"
+  "premiumSignUpTwoStepOptions": {
+    "message": "Proprietary two-step login options such as YubiKey and Duo."
   },
   "premiumSignUpEmergency": {
     "message": "Emergency access"
@@ -2039,6 +2039,9 @@
         "example": "month or year"
       }
     }
+  },
+  "paymentChargedWithUnpaidSubscription": {
+    "message": "Your payment method will be charged for any unpaid subscriptions."
   },
   "paymentChargedWithTrial": {
     "message": "Your plan comes with a free 7 day trial. Your payment method will not be charged until the trial has ended. You may cancel at any time."

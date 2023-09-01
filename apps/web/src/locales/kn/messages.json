@@ -1924,8 +1924,8 @@
   "premiumSignUpStorage": {
     "message": "ಫೈಲ್ ಲಗತ್ತುಗಳಿಗಾಗಿ 1 ಜಿಬಿ ಎನ್‌ಕ್ರಿಪ್ಟ್ ಮಾಡಿದ ಸಂಗ್ರಹ."
   },
-  "premiumSignUpTwoStep": {
-    "message": "ಹೆಚ್ಚುವರಿ ಎರಡು-ಹಂತದ ಲಾಗಿನ್ ಆಯ್ಕೆಗಳಾದ ಯೂಬಿಕೆ, ಎಫ್‌ಐಡಿಒ ಯು 2 ಎಫ್, ಮತ್ತು ಡ್ಯುವೋ."
+  "premiumSignUpTwoStepOptions": {
+    "message": "Proprietary two-step login options such as YubiKey and Duo."
   },
   "premiumSignUpEmergency": {
     "message": "ತುರ್ತು ಪ್ರವೇಶ"
@@ -2039,6 +2039,9 @@
         "example": "month or year"
       }
     }
+  },
+  "paymentChargedWithUnpaidSubscription": {
+    "message": "Your payment method will be charged for any unpaid subscriptions."
   },
   "paymentChargedWithTrial": {
     "message": "ನಿಮ್ಮ ಯೋಜನೆ 7 ದಿನಗಳ ಉಚಿತ ಪ್ರಯೋಗದೊಂದಿಗೆ ಬರುತ್ತದೆ. ಪ್ರಯೋಗ ಮುಗಿಯುವವರೆಗೆ ನಿಮ್ಮ ಪಾವತಿ ವಿಧಾನಕ್ಕೆ ಶುಲ್ಕ ವಿಧಿಸಲಾಗುವುದಿಲ್ಲ. ಪ್ರತಿ $INTERVAL$ ಮರುಕಳಿಸುವ ಆಧಾರದ ಮೇಲೆ ಬಿಲ್ಲಿಂಗ್ ಸಂಭವಿಸುತ್ತದೆ. ನೀವು ಯಾವುದೇ ಸಮಯದಲ್ಲಿ ರದ್ದುಗೊಳಿಸಬಹುದು."

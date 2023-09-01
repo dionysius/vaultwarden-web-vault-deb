@@ -1924,8 +1924,8 @@
   "premiumSignUpStorage": {
     "message": "1GB na naka-encrypt na storage para sa mga file attachment."
   },
-  "premiumSignUpTwoStep": {
-    "message": "Karagdagang mga opsyon para sa dalawang-hakbang na pag-log in tulad ng YubiKey, FIDO U2F, at Duo."
+  "premiumSignUpTwoStepOptions": {
+    "message": "Proprietary two-step login options such as YubiKey and Duo."
   },
   "premiumSignUpEmergency": {
     "message": "Emergency access"
@@ -2039,6 +2039,9 @@
         "example": "month or year"
       }
     }
+  },
+  "paymentChargedWithUnpaidSubscription": {
+    "message": "Your payment method will be charged for any unpaid subscriptions."
   },
   "paymentChargedWithTrial": {
     "message": "May libreng 7 araw na trial ang plano mo. Hindi sisingilin ang paraan mo sa pagbabayad hanggang sa matapos ang libreng trial. Makakapagkansela ka kailanman."

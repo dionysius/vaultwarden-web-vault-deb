@@ -1924,8 +1924,8 @@
   "premiumSignUpStorage": {
     "message": "1 GB med kryptert fillagring."
   },
-  "premiumSignUpTwoStep": {
-    "message": "Ytterligere 2-trinnsinnloggingsmuligheter, slik som YubiKey, FIDO U2F, og Duo."
+  "premiumSignUpTwoStepOptions": {
+    "message": "Proprietary two-step login options such as YubiKey and Duo."
   },
   "premiumSignUpEmergency": {
     "message": "Nødtilgang"
@@ -2039,6 +2039,9 @@
         "example": "month or year"
       }
     }
+  },
+  "paymentChargedWithUnpaidSubscription": {
+    "message": "Your payment method will be charged for any unpaid subscriptions."
   },
   "paymentChargedWithTrial": {
     "message": "Funksjonsplanen din kommer med en gratis 7-dagersprøveperiode. Din betalingsmetode vil ikke bli trekt før prøveperiode har utløpt. Regningstrekk vil skje på en gjentakende basis hver(t) $INTERVAL$. Du kan avbryte når som helst."

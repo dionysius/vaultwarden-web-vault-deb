@@ -1924,8 +1924,8 @@
   "premiumSignUpStorage": {
     "message": "1 ג'יגה של מקום אחסון מוצפן עבור קבצים מצורפים."
   },
-  "premiumSignUpTwoStep": {
-    "message": "אפשרויות כניסה דו שלבית מתקדמות כמו YubiKey, FIDO U2F, וגם Duo."
+  "premiumSignUpTwoStepOptions": {
+    "message": "Proprietary two-step login options such as YubiKey and Duo."
   },
   "premiumSignUpEmergency": {
     "message": "Emergency access"
@@ -2039,6 +2039,9 @@
         "example": "month or year"
       }
     }
+  },
+  "paymentChargedWithUnpaidSubscription": {
+    "message": "Your payment method will be charged for any unpaid subscriptions."
   },
   "paymentChargedWithTrial": {
     "message": "התוכנית שבחרת מגיעה עם 7 ימי נסיון חינמי. שיטת התשלום שבחרת לא תחויב עד לתום תקופת הנסיון. ביצוע החשבון יתבצע על בסיס מתחדש בכל $INTERVAL$. באפשרותך לבטל בכל עת."

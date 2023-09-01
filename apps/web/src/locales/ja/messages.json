@@ -1924,8 +1924,8 @@
   "premiumSignUpStorage": {
     "message": "1GB の暗号化されたファイルストレージ"
   },
-  "premiumSignUpTwoStep": {
-    "message": "YubiKey、FIDO U2F、Duoなどの追加の2段階認証ログインオプション"
+  "premiumSignUpTwoStepOptions": {
+    "message": "YubiKey、Duo などのプロプライエタリな2段階認証オプション。"
   },
   "premiumSignUpEmergency": {
     "message": "緊急アクセス"
@@ -2039,6 +2039,9 @@
         "example": "month or year"
       }
     }
+  },
+  "paymentChargedWithUnpaidSubscription": {
+    "message": "未払いのサブスクリプションについては、指定した支払い方法へ請求されます。"
   },
   "paymentChargedWithTrial": {
     "message": "ご利用のプランでは、7日間の無料トライアルが可能です。トライアル期間が終わるまでは課金されません。トライアル終了後、$INTERVAL$毎に請求されます。いつでもキャンセルできます。"
