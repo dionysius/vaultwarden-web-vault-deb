@@ -1077,8 +1077,8 @@
   "premiumSignUpStorage": {
     "message": "用於檔案附件的 1 GB 的加密檔案儲存空間。"
   },
-  "premiumSignUpTwoStep": {
-    "message": "YubiKey、FIDO U2F 和 Duo 等額外的兩步驟登入選項。"
+  "premiumSignUpTwoStepOptions": {
+    "message": "Proprietary two-step login options such as YubiKey and Duo."
   },
   "premiumSignUpReports": {
     "message": "密碼健康度檢查、提供帳戶體檢以及資料外洩報告，以保障您的密碼庫安全。"
@@ -1414,7 +1414,7 @@
     "message": "啟動時詢問 Touch ID"
   },
   "requirePasswordOnStart": {
-    "message": "Require password or PIN on app start"
+    "message": "需要在啟動應用程式時輸入密碼或 PIN 碼。"
   },
   "recommendedForSecurity": {
     "message": "Recommended for security."
@@ -2110,7 +2110,7 @@
     "message": "使用其他裝置登入"
   },
   "loginInitiated": {
-    "message": "Login initiated"
+    "message": "登入已發起"
   },
   "notificationSentDevice": {
     "message": "已傳送通知至您的裝置。"
@@ -2181,7 +2181,7 @@
     "message": "You denied a login attempt from another device. If this really was you, try to log in with the device again."
   },
   "justNow": {
-    "message": "Just now"
+    "message": "剛剛"
   },
   "requestedXMinutesAgo": {
     "message": "Requested $MINUTES$ minutes ago",
@@ -2193,7 +2193,7 @@
     }
   },
   "loginRequestHasAlreadyExpired": {
-    "message": "Login request has already expired."
+    "message": "登入要求已逾期。"
   },
   "thisRequestIsNoLongerValid": {
     "message": "This request is no longer valid."
@@ -2202,7 +2202,7 @@
     "message": "Use this device to approve login requests made from other devices."
   },
   "confirmLoginAtemptForMail": {
-    "message": "Confirm login attempt for $EMAIL$",
+    "message": "確認 $EMAIL$ 的登入嘗試",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -2214,13 +2214,13 @@
     "message": "已要求登入"
   },
   "exposedMasterPassword": {
-    "message": "Exposed Master Password"
+    "message": "已暴露的主密碼"
   },
   "exposedMasterPasswordDesc": {
     "message": "Password found in a data breach. Use a unique password to protect your account. Are you sure you want to use an exposed password?"
   },
   "weakAndExposedMasterPassword": {
-    "message": "Weak and Exposed Master Password"
+    "message": "強度不足且已暴露的主密碼"
   },
   "weakAndBreachedMasterPasswordDesc": {
     "message": "Weak password identified and found in a data breach. Use a strong and unique password to protect your account. Are you sure you want to use this password?"
@@ -2253,7 +2253,7 @@
     "message": "Device approval required. Select an approval option below:"
   },
   "rememberThisDevice": {
-    "message": "Remember this device"
+    "message": "記住這個裝置"
   },
   "uncheckIfPublicDevice": {
     "message": "Uncheck if using a public device"
@@ -2268,7 +2268,7 @@
     "message": "Approve with master password"
   },
   "region": {
-    "message": "Region"
+    "message": "區域"
   },
   "ssoIdentifierRequired": {
     "message": "Organization SSO identifier is required."
@@ -2293,10 +2293,10 @@
     "message": "拒絕存取。您沒有檢視此頁面的權限。"
   },
   "accountSuccessfullyCreated": {
-    "message": "Account successfully created!"
+    "message": "成功建立帳號！"
   },
   "adminApprovalRequested": {
-    "message": "Admin approval requested"
+    "message": "需要管理員批准"
   },
   "adminApprovalRequestSentToAdmins": {
     "message": "Your request has been sent to your admin."
@@ -2305,7 +2305,7 @@
     "message": "You will be notified once approved."
   },
   "troubleLoggingIn": {
-    "message": "Trouble logging in?"
+    "message": "登入時遇到困難？"
   },
   "loginApproved": {
     "message": "Login approved"

@@ -1077,8 +1077,8 @@
   "premiumSignUpStorage": {
     "message": "1 ГБ зашифрованого сховища для файлів."
   },
-  "premiumSignUpTwoStep": {
-    "message": "Додаткові можливості двоетапної перевірки, наприклад, YubiKey, FIDO U2F та Duo."
+  "premiumSignUpTwoStepOptions": {
+    "message": "Proprietary two-step login options such as YubiKey and Duo."
   },
   "premiumSignUpReports": {
     "message": "Гігієна паролів, здоров'я облікового запису, а також звіти про вразливості даних, щоб зберігати ваше сховище в безпеці."
@@ -2317,16 +2317,16 @@
     "message": "Довірений пристрій"
   },
   "inputRequired": {
-    "message": "Input is required."
+    "message": "Необхідно ввести дані."
   },
   "required": {
-    "message": "required"
+    "message": "обов'язково"
   },
   "search": {
-    "message": "Search"
+    "message": "Пошук"
   },
   "inputMinLength": {
-    "message": "Input must be at least $COUNT$ characters long.",
+    "message": "Введені дані мають бути довжиною принаймні $COUNT$ символів.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -2335,7 +2335,7 @@
     }
   },
   "inputMaxLength": {
-    "message": "Input must not exceed $COUNT$ characters in length.",
+    "message": "Вхідне значення не повинно перевищувати $COUNT$ символів.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -2344,7 +2344,7 @@
     }
   },
   "inputForbiddenCharacters": {
-    "message": "The following characters are not allowed: $CHARACTERS$",
+    "message": "Вказані символи заборонені: $CHARACTERS$",
     "placeholders": {
       "characters": {
         "content": "$1",
@@ -2353,7 +2353,7 @@
     }
   },
   "inputMinValue": {
-    "message": "Input value must be at least $MIN$.",
+    "message": "Значення має бути принаймні $MIN$.",
     "placeholders": {
       "min": {
         "content": "$1",
@@ -2362,7 +2362,7 @@
     }
   },
   "inputMaxValue": {
-    "message": "Input value must not exceed $MAX$.",
+    "message": "Значення не може перевищувати $MAX$.",
     "placeholders": {
       "max": {
         "content": "$1",
@@ -2371,17 +2371,17 @@
     }
   },
   "multipleInputEmails": {
-    "message": "1 or more emails are invalid"
+    "message": "1 або більше адрес е-пошти недійсні"
   },
   "inputTrimValidator": {
-    "message": "Input must not contain only whitespace.",
+    "message": "Введене значення не повинно містити лише пробіл.",
     "description": "Notification to inform the user that a form's input can't contain only whitespace."
   },
   "inputEmail": {
-    "message": "Input is not an email address."
+    "message": "Введені дані не є адресою е-пошти."
   },
   "fieldsNeedAttention": {
-    "message": "$COUNT$ field(s) above need your attention.",
+    "message": "$COUNT$ поле (поля) вище потребують вашої уваги.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -2390,22 +2390,22 @@
     }
   },
   "selectPlaceholder": {
-    "message": "-- Select --"
+    "message": "-- Оберіть--"
   },
   "multiSelectPlaceholder": {
-    "message": "-- Type to filter --"
+    "message": "-- Введіть для фільтрування --"
   },
   "multiSelectLoading": {
-    "message": "Retrieving options..."
+    "message": "Параметри отримання..."
   },
   "multiSelectNotFound": {
-    "message": "No items found"
+    "message": "Нічого не знайдено"
   },
   "multiSelectClearAll": {
-    "message": "Clear all"
+    "message": "Очистити все"
   },
   "plusNMore": {
-    "message": "+ $QUANTITY$ more",
+    "message": "+ ще $QUANTITY$",
     "placeholders": {
       "quantity": {
         "content": "$1",
@@ -2414,6 +2414,6 @@
     }
   },
   "submenu": {
-    "message": "Submenu"
+    "message": "Підменю"
   }
 }

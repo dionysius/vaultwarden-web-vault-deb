@@ -1077,8 +1077,8 @@
   "premiumSignUpStorage": {
     "message": "1ГБ шифровано складиште за прилоге."
   },
-  "premiumSignUpTwoStep": {
-    "message": "Додатне опције пријаве у два корака као што су YubiKey, FIDO U2F, и Duo."
+  "premiumSignUpTwoStepOptions": {
+    "message": "Proprietary two-step login options such as YubiKey and Duo."
   },
   "premiumSignUpReports": {
     "message": "Извештаји о хигијени лозинки, здравственом стању налога и кршењу података да бисте заштитили сеф."
@@ -1493,7 +1493,7 @@
     "message": "Одјављени сеф захтева да поново потврдите идентитет да бисте му поново приступили."
   },
   "unlockMethodNeededToChangeTimeoutActionDesc": {
-    "message": "Set up an unlock method to change your vault timeout action."
+    "message": "Подесите метод откључавања да бисте променили радњу временског ограничења сефа."
   },
   "lock": {
     "message": "Закључај",
@@ -2110,7 +2110,7 @@
     "message": "Пријавите се са другим уређајем"
   },
   "loginInitiated": {
-    "message": "Login initiated"
+    "message": "Пријава је покренута"
   },
   "notificationSentDevice": {
     "message": "Обавештење је послато на ваш уређај."
@@ -2250,28 +2250,28 @@
     "message": "Препоручено ажурирање поставки"
   },
   "deviceApprovalRequired": {
-    "message": "Device approval required. Select an approval option below:"
+    "message": "Потребно је одобрење уређаја. Изаберите опцију одобрења испод:"
   },
   "rememberThisDevice": {
-    "message": "Remember this device"
+    "message": "Запамти овај уређај"
   },
   "uncheckIfPublicDevice": {
-    "message": "Uncheck if using a public device"
+    "message": "Искључите ако се користи јавни уређај"
   },
   "approveFromYourOtherDevice": {
-    "message": "Approve from your other device"
+    "message": "Одобри са мојим другим уређајем"
   },
   "requestAdminApproval": {
-    "message": "Request admin approval"
+    "message": "Затражити одобрење администратора"
   },
   "approveWithMasterPassword": {
-    "message": "Approve with master password"
+    "message": "Одобрити са главном лозинком"
   },
   "region": {
-    "message": "Region"
+    "message": "Регион"
   },
   "ssoIdentifierRequired": {
-    "message": "Organization SSO identifier is required."
+    "message": "Потребан је SSO идентификатор организације."
   },
   "eu": {
     "message": "EU",
@@ -2293,40 +2293,40 @@
     "message": "Одбијен приступ. Немате дозволу да видите ову страницу."
   },
   "accountSuccessfullyCreated": {
-    "message": "Account successfully created!"
+    "message": "Налог је успешно креиран!"
   },
   "adminApprovalRequested": {
-    "message": "Admin approval requested"
+    "message": "Захтевано је одобрење администратора"
   },
   "adminApprovalRequestSentToAdmins": {
-    "message": "Your request has been sent to your admin."
+    "message": "Ваш захтев је послат вашем администратору."
   },
   "youWillBeNotifiedOnceApproved": {
-    "message": "You will be notified once approved."
+    "message": "Бићете обавештени када буде одобрено."
   },
   "troubleLoggingIn": {
-    "message": "Trouble logging in?"
+    "message": "Имате проблема са пријављивањем?"
   },
   "loginApproved": {
-    "message": "Login approved"
+    "message": "Пријава је одобрена"
   },
   "userEmailMissing": {
-    "message": "User email missing"
+    "message": "Недостаје имејл корисника"
   },
   "deviceTrusted": {
-    "message": "Device trusted"
+    "message": "Уређај поуздан"
   },
   "inputRequired": {
-    "message": "Input is required."
+    "message": "Унос је потребан."
   },
   "required": {
-    "message": "required"
+    "message": "обавезно"
   },
   "search": {
-    "message": "Search"
+    "message": "Тражи"
   },
   "inputMinLength": {
-    "message": "Input must be at least $COUNT$ characters long.",
+    "message": "Унос трба имати најмање $COUNT$ слова.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -2335,7 +2335,7 @@
     }
   },
   "inputMaxLength": {
-    "message": "Input must not exceed $COUNT$ characters in length.",
+    "message": "Унос не сме бити већи од $COUNT$ карактера.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -2344,7 +2344,7 @@
     }
   },
   "inputForbiddenCharacters": {
-    "message": "The following characters are not allowed: $CHARACTERS$",
+    "message": "Следећи знакови нису дозвољени: $CHARACTERS$",
     "placeholders": {
       "characters": {
         "content": "$1",
@@ -2353,7 +2353,7 @@
     }
   },
   "inputMinValue": {
-    "message": "Input value must be at least $MIN$.",
+    "message": "Вредност мора бити најмање $MIN$.",
     "placeholders": {
       "min": {
         "content": "$1",
@@ -2362,7 +2362,7 @@
     }
   },
   "inputMaxValue": {
-    "message": "Input value must not exceed $MAX$.",
+    "message": "Вредност не сме бити већа од $MAX$.",
     "placeholders": {
       "max": {
         "content": "$1",
@@ -2371,17 +2371,17 @@
     }
   },
   "multipleInputEmails": {
-    "message": "1 or more emails are invalid"
+    "message": "1 или више имејлова су неважећи"
   },
   "inputTrimValidator": {
-    "message": "Input must not contain only whitespace.",
+    "message": "Унос не сме да садржи само размак.",
     "description": "Notification to inform the user that a form's input can't contain only whitespace."
   },
   "inputEmail": {
-    "message": "Input is not an email address."
+    "message": "Унос није имејл."
   },
   "fieldsNeedAttention": {
-    "message": "$COUNT$ field(s) above need your attention.",
+    "message": "$COUNT$ поље(а) изнад захтевај(у) вашу пажњу.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -2390,22 +2390,22 @@
     }
   },
   "selectPlaceholder": {
-    "message": "-- Select --"
+    "message": "-- Одабрати --"
   },
   "multiSelectPlaceholder": {
-    "message": "-- Type to filter --"
+    "message": "-- Тип за филтрирање --"
   },
   "multiSelectLoading": {
-    "message": "Retrieving options..."
+    "message": "Преузимање опција..."
   },
   "multiSelectNotFound": {
-    "message": "No items found"
+    "message": "Нема предмета"
   },
   "multiSelectClearAll": {
-    "message": "Clear all"
+    "message": "Обриши све"
   },
   "plusNMore": {
-    "message": "+ $QUANTITY$ more",
+    "message": "+ још $QUANTITY$",
     "placeholders": {
       "quantity": {
         "content": "$1",
@@ -2414,6 +2414,6 @@
     }
   },
   "submenu": {
-    "message": "Submenu"
+    "message": "Под-мени"
   }
 }
