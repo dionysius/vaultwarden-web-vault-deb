@@ -41,7 +41,9 @@ $button-color: lighten($text-color, 40%);
 $button-color-primary: darken($brand-primary, 8%);
 $button-color-danger: darken($brand-danger, 10%);
 
-$code-color: #e83e8c;
+$code-color: #c01176;
+$code-color-dark: #f08dc7;
+$code-color-nord: #dbb1d5;
 
 $themes: (
   light: (
@@ -158,7 +160,7 @@ $themes: (
     accountSwitcherTextColor: #ffffff,
     svgSuffix: "-dark.svg",
     hrColor: #bac0ce,
-    codeColor: $code-color,
+    codeColor: $code-color-dark,
   ),
   nord: (
     textColor: $nord5,
@@ -216,7 +218,7 @@ $themes: (
     accountSwitcherTextColor: $nord5,
     svgSuffix: "-dark.svg",
     hrColor: $nord4,
-    codeColor: $code-color,
+    codeColor: $code-color-nord,
   ),
 );
 
