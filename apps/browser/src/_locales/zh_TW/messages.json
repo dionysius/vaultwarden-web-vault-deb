@@ -795,8 +795,8 @@
   "ppremiumSignUpStorage": {
     "message": "用於檔案附件的 1 GB 加密儲存空間。"
   },
-  "ppremiumSignUpTwoStep": {
-    "message": "YubiKey、FIDO U2F 和 Duo 等額外的兩步驟登入選項。"
+  "premiumSignUpTwoStepOptions": {
+    "message": "Proprietary two-step login options such as YubiKey and Duo."
   },
   "ppremiumSignUpReports": {
     "message": "密碼健康度檢查、提供帳戶體檢以及資料外洩報告，以保障您的密碼庫安全。"

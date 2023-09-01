@@ -795,8 +795,8 @@
   "ppremiumSignUpStorage": {
     "message": "1 GB verschlüsselter Speicherplatz für Dateianhänge."
   },
-  "ppremiumSignUpTwoStep": {
-    "message": "Zusätzliche Zweifaktor-Anmeldung über YubiKey, FIDO U2F, und Duo."
+  "premiumSignUpTwoStepOptions": {
+    "message": "Proprietäre Optionen für die Zwei-Faktor Authentifizierung wie YubiKey und Duo."
   },
   "ppremiumSignUpReports": {
     "message": "Berichte über Kennworthygiene, Kontostatus und Datenschutzverletzungen, um deinen Tresor sicher zu halten."

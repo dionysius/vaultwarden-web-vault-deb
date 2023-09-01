@@ -795,8 +795,8 @@
   "ppremiumSignUpStorage": {
     "message": "1 Gt salattua tallennustilaa tiedostoliitteille."
   },
-  "ppremiumSignUpTwoStep": {
-    "message": "Muita kaksivaiheisen kirjautumisen todennusmenetelmiä kuten YubiKey, FIDO U2F ja Duo Security."
+  "premiumSignUpTwoStepOptions": {
+    "message": "Proprietary two-step login options such as YubiKey and Duo."
   },
   "ppremiumSignUpReports": {
     "message": "Salasanahygienian, tilin terveyden ja tietovuotojen raportointitoiminnot pitävät holvisi turvassa."
@@ -2310,7 +2310,7 @@
     "message": "pakollinen"
   },
   "search": {
-    "message": "Etsi"
+    "message": "Hae"
   },
   "inputMinLength": {
     "message": "Syötteen tulee sisältää ainakin $COUNT$ merkkiä.",

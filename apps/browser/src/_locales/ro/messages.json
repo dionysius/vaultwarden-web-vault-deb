@@ -196,13 +196,13 @@
     "message": "Ajutor și feedback"
   },
   "helpCenter": {
-    "message": "Bitwarden Help center"
+    "message": "Centrul de Ajutor Bitwarden"
   },
   "communityForums": {
-    "message": "Explore Bitwarden community forums"
+    "message": "Explorează forumurile comunității Bitwarden"
   },
   "contactSupport": {
-    "message": "Contact Bitwarden support"
+    "message": "Contactați asistența Bitwarden"
   },
   "sync": {
     "message": "Sincronizare"
@@ -442,7 +442,7 @@
     "message": "Este necesară rescrierea parolei principale."
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least $VALUE$ characters long.",
+    "message": "Parola principală trebuie să aibă cel puțin $VALUE$ caractere.",
     "description": "The Master Password must be at least a specific number of characters long.",
     "placeholders": {
       "value": {
@@ -634,10 +634,10 @@
     "message": "Actualizare"
   },
   "notificationUnlockDesc": {
-    "message": "Unlock your Bitwarden vault to complete the auto-fill request."
+    "message": "Deblochează seiful Bitwarden pentru a finaliza solicitarea de completare automată."
   },
   "notificationUnlock": {
-    "message": "Unlock"
+    "message": "Deblocare"
   },
   "enableContextMenuItem": {
     "message": "Afișați opțiunile meniului contextual"
@@ -795,8 +795,8 @@
   "ppremiumSignUpStorage": {
     "message": "1 GB spațiu de stocare criptat pentru atașamente de fișiere."
   },
-  "ppremiumSignUpTwoStep": {
-    "message": "Opțiuni adiționale de conectare în două etape, cum ar fi YubiKey, FIDO U2F și Duo."
+  "premiumSignUpTwoStepOptions": {
+    "message": "Proprietary two-step login options such as YubiKey and Duo."
   },
   "ppremiumSignUpReports": {
     "message": "Rapoarte privind igiena parolelor, sănătatea contului și breșele de date pentru a vă păstra seiful în siguranță."
@@ -985,7 +985,7 @@
     "message": "Dacă se detectează un formular de autentificare, completați-l automat la încărcarea paginii web."
   },
   "experimentalFeature": {
-    "message": "Compromised or untrusted websites can exploit auto-fill on page load."
+    "message": "Site-urile web compromise sau nesigure pot exploata funcția de autocompletare la încărcarea paginii."
   },
   "learnMoreAboutAutofill": {
     "message": "Learn more about auto-fill"
@@ -1468,7 +1468,7 @@
     "message": "Articolul s-a completat automat "
   },
   "insecurePageWarning": {
-    "message": "Warning: This is an unsecured HTTP page, and any information you submit can potentially be seen and changed by others. This Login was originally saved on a secure (HTTPS) page."
+    "message": "Avertisment: Aceasta este o pagină HTTP nesecurizată și orice informație pe care o trimiteți poate fi văzută și modificată de alte persoane. Această Parolă a fost salvată inițial pe o pagină securizată (HTTPS)."
   },
   "insecurePageWarningFillPrompt": {
     "message": "Do you still wish to fill this login?"

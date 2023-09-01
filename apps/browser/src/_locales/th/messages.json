@@ -795,8 +795,8 @@
   "ppremiumSignUpStorage": {
     "message": "1 GB of encrypted file storage."
   },
-  "ppremiumSignUpTwoStep": {
-    "message": "ตัวเลือกการเข้าสู่ระบบแบบสองขั้นตอนเพิ่มเติม เช่น YubiKey, FIDO U2F และ Duo"
+  "premiumSignUpTwoStepOptions": {
+    "message": "Proprietary two-step login options such as YubiKey and Duo."
   },
   "ppremiumSignUpReports": {
     "message": "สุขอนามัยของรหัสผ่าน ความสมบูรณ์ของบัญชี และรายงานการละเมิดข้อมูลเพื่อให้ตู้นิรภัยของคุณปลอดภัย"

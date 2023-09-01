@@ -795,8 +795,8 @@
   "ppremiumSignUpStorage": {
     "message": "1 GB encrypted storage for file attachments."
   },
-  "ppremiumSignUpTwoStep": {
-    "message": "Additional two-step login options such as YubiKey, FIDO U2F, and Duo."
+  "premiumSignUpTwoStepOptions": {
+    "message": "Proprietary two-step login options such as YubiKey and Duo."
   },
   "ppremiumSignUpReports": {
     "message": "Password hygiene, account health, and data breach reports to keep your vault safe."
