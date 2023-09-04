@@ -253,4 +253,20 @@ export class CliUtils {
   static convertBooleanOption(optionValue: any) {
     return optionValue || optionValue === "" ? true : false;
   }
+
+  static convertNumberOption(optionValue: any, defaultValue: number) {
+    try {
+      if (optionValue != null) {
+        const numVal = parseInt(optionValue);
+        return !Number.isNaN(numVal) ? numVal : defaultValue;
+      }
+      return defaultValue;
+    } catch {
+      return defaultValue;
+    }
+  }
+
+  static convertStringOption(optionValue: any, defaultValue: string) {
+    return optionValue != null ? String(optionValue) : defaultValue;
+  }
 }
