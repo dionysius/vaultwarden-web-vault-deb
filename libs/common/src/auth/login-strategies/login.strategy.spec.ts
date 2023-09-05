@@ -41,10 +41,7 @@ import { IdentityCaptchaResponse } from "../models/response/identity-captcha.res
 import { IdentityTokenResponse } from "../models/response/identity-token.response";
 import { IdentityTwoFactorResponse } from "../models/response/identity-two-factor.response";
 import { MasterPasswordPolicyResponse } from "../models/response/master-password-policy.response";
-import {
-  IUserDecryptionOptionsServerResponse,
-  UserDecryptionOptionsResponse,
-} from "../models/response/user-decryption-options/user-decryption-options.response";
+import { IUserDecryptionOptionsServerResponse } from "../models/response/user-decryption-options/user-decryption-options.response";
 
 import { PasswordLogInStrategy } from "./password-login.strategy";
 
@@ -65,10 +62,6 @@ const name = "NAME";
 const defaultUserDecryptionOptionsServerResponse: IUserDecryptionOptionsServerResponse = {
   HasMasterPassword: true,
 };
-const userDecryptionOptions = new UserDecryptionOptionsResponse(
-  defaultUserDecryptionOptionsServerResponse
-);
-const acctDecryptionOptions = AccountDecryptionOptions.fromResponse(userDecryptionOptions);
 
 const decodedToken = {
   sub: userId,
@@ -197,7 +190,7 @@ describe("LogInStrategy", () => {
             },
           },
           keys: new AccountKeys(),
-          decryptionOptions: acctDecryptionOptions,
+          decryptionOptions: AccountDecryptionOptions.fromResponse(idTokenResponse),
         })
       );
       expect(messagingService.send).toHaveBeenCalledWith("loggedIn");

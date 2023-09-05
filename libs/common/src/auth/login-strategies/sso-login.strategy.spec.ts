@@ -266,7 +266,61 @@ describe("SsoLogInStrategy", () => {
   describe("Key Connector", () => {
     let tokenResponse: IdentityTokenResponse;
     beforeEach(() => {
-      tokenResponse = identityTokenResponseFactory(null, { HasMasterPassword: false });
+      tokenResponse = identityTokenResponseFactory(null, {
+        HasMasterPassword: false,
+        KeyConnectorOption: { KeyConnectorUrl: keyConnectorUrl },
+      });
+      tokenResponse.keyConnectorUrl = keyConnectorUrl;
+    });
+
+    it("gets and sets the master key if Key Connector is enabled and the user doesn't have a master password", async () => {
+      const masterKey = new SymmetricCryptoKey(
+        new Uint8Array(64).buffer as CsprngArray
+      ) as MasterKey;
+
+      apiService.postIdentityToken.mockResolvedValue(tokenResponse);
+      cryptoService.getMasterKey.mockResolvedValue(masterKey);
+
+      await ssoLogInStrategy.logIn(credentials);
+
+      expect(keyConnectorService.setMasterKeyFromUrl).toHaveBeenCalledWith(keyConnectorUrl);
+    });
+
+    it("converts new SSO user with no master password to Key Connector on first login", async () => {
+      tokenResponse.key = null;
+
+      apiService.postIdentityToken.mockResolvedValue(tokenResponse);
+
+      await ssoLogInStrategy.logIn(credentials);
+
+      expect(keyConnectorService.convertNewSsoUserToKeyConnector).toHaveBeenCalledWith(
+        tokenResponse,
+        ssoOrgId
+      );
+    });
+
+    it("decrypts and sets the user key if Key Connector is enabled and the user doesn't have a master password", async () => {
+      const userKey = new SymmetricCryptoKey(new Uint8Array(64).buffer as CsprngArray) as UserKey;
+      const masterKey = new SymmetricCryptoKey(
+        new Uint8Array(64).buffer as CsprngArray
+      ) as MasterKey;
+
+      apiService.postIdentityToken.mockResolvedValue(tokenResponse);
+      cryptoService.getMasterKey.mockResolvedValue(masterKey);
+      cryptoService.decryptUserKeyWithMasterKey.mockResolvedValue(userKey);
+
+      await ssoLogInStrategy.logIn(credentials);
+
+      expect(cryptoService.decryptUserKeyWithMasterKey).toHaveBeenCalledWith(masterKey);
+      expect(cryptoService.setUserKey).toHaveBeenCalledWith(userKey);
+    });
+  });
+
+  describe("Key Connector Pre-TDE", () => {
+    let tokenResponse: IdentityTokenResponse;
+    beforeEach(() => {
+      tokenResponse = identityTokenResponseFactory();
+      tokenResponse.userDecryptionOptions = null;
       tokenResponse.keyConnectorUrl = keyConnectorUrl;
     });
 
