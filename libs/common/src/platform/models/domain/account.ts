@@ -14,7 +14,12 @@ import { TrustedDeviceUserDecryptionOption } from "../../../auth/models/domain/u
 import { IdentityTokenResponse } from "../../../auth/models/response/identity-token.response";
 import { KdfType, UriMatchType } from "../../../enums";
 import { EventData } from "../../../models/data/event.data";
-import { GeneratedPasswordHistory } from "../../../tools/generator/password";
+import { GeneratorOptions } from "../../../tools/generator/generator-options";
+import {
+  GeneratedPasswordHistory,
+  PasswordGeneratorOptions,
+} from "../../../tools/generator/password";
+import { UsernameGeneratorOptions } from "../../../tools/generator/username/username-generation-options";
 import { SendData } from "../../../tools/send/models/data/send.data";
 import { SendView } from "../../../tools/send/models/view/send.view";
 import { DeepJsonify } from "../../../types/deep-jsonify";
@@ -235,9 +240,9 @@ export class AccountSettings {
   equivalentDomains?: any;
   minimizeOnCopyToClipboard?: boolean;
   neverDomains?: { [id: string]: any };
-  passwordGenerationOptions?: any;
-  usernameGenerationOptions?: any;
-  generatorOptions?: any;
+  passwordGenerationOptions?: PasswordGeneratorOptions;
+  usernameGenerationOptions?: UsernameGeneratorOptions;
+  generatorOptions?: GeneratorOptions;
   pinKeyEncryptedUserKey?: EncryptedString;
   pinKeyEncryptedUserKeyEphemeral?: EncryptedString;
   protectedPin?: string;

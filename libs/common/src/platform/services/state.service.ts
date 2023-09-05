@@ -22,7 +22,9 @@ import { VaultTimeoutAction } from "../../enums/vault-timeout-action.enum";
 import { EventData } from "../../models/data/event.data";
 import { WindowState } from "../../models/domain/window-state";
 import { migrate } from "../../state-migrations";
-import { GeneratedPasswordHistory } from "../../tools/generator/password";
+import { GeneratorOptions } from "../../tools/generator/generator-options";
+import { GeneratedPasswordHistory, PasswordGeneratorOptions } from "../../tools/generator/password";
+import { UsernameGeneratorOptions } from "../../tools/generator/username";
 import { SendData } from "../../tools/send/models/data/send.data";
 import { SendView } from "../../tools/send/models/view/send.view";
 import { CipherData } from "../../vault/models/data/cipher.data";
@@ -2367,13 +2369,16 @@ export class StateService<
     );
   }
 
-  async getPasswordGenerationOptions(options?: StorageOptions): Promise<any> {
+  async getPasswordGenerationOptions(options?: StorageOptions): Promise<PasswordGeneratorOptions> {
     return (
       await this.getAccount(this.reconcileOptions(options, await this.defaultOnDiskLocalOptions()))
     )?.settings?.passwordGenerationOptions;
   }
 
-  async setPasswordGenerationOptions(value: any, options?: StorageOptions): Promise<void> {
+  async setPasswordGenerationOptions(
+    value: PasswordGeneratorOptions,
+    options?: StorageOptions
+  ): Promise<void> {
     const account = await this.getAccount(
       this.reconcileOptions(options, await this.defaultOnDiskLocalOptions())
     );
@@ -2384,13 +2389,16 @@ export class StateService<
     );
   }
 
-  async getUsernameGenerationOptions(options?: StorageOptions): Promise<any> {
+  async getUsernameGenerationOptions(options?: StorageOptions): Promise<UsernameGeneratorOptions> {
     return (
       await this.getAccount(this.reconcileOptions(options, await this.defaultOnDiskLocalOptions()))
     )?.settings?.usernameGenerationOptions;
   }
 
-  async setUsernameGenerationOptions(value: any, options?: StorageOptions): Promise<void> {
+  async setUsernameGenerationOptions(
+    value: UsernameGeneratorOptions,
+    options?: StorageOptions
+  ): Promise<void> {
     const account = await this.getAccount(
       this.reconcileOptions(options, await this.defaultOnDiskLocalOptions())
     );
@@ -2401,13 +2409,13 @@ export class StateService<
     );
   }
 
-  async getGeneratorOptions(options?: StorageOptions): Promise<any> {
+  async getGeneratorOptions(options?: StorageOptions): Promise<GeneratorOptions> {
     return (
       await this.getAccount(this.reconcileOptions(options, await this.defaultOnDiskLocalOptions()))
     )?.settings?.generatorOptions;
   }
 
-  async setGeneratorOptions(value: any, options?: StorageOptions): Promise<void> {
+  async setGeneratorOptions(value: GeneratorOptions, options?: StorageOptions): Promise<void> {
     const account = await this.getAccount(
       this.reconcileOptions(options, await this.defaultOnDiskLocalOptions())
     );
