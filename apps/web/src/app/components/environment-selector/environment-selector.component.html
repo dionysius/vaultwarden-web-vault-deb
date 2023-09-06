@@ -2,7 +2,9 @@
   <bit-menu #environmentOptions>
     <a
       bitMenuItem
-      [attr.href]="isUsServer ? 'javascript:void(0)' : 'https://vault.bitwarden.com'"
+      [attr.href]="
+        isUsServer ? 'javascript:void(0)' : 'https://vault.bitwarden.com' + routeAndParams
+      "
       class="pr-4"
     >
       <i
@@ -19,7 +21,9 @@
     </a>
     <a
       bitMenuItem
-      [attr.href]="isEuServer ? 'javascript:void(0)' : 'https://vault.bitwarden.eu'"
+      [attr.href]="
+        isEuServer ? 'javascript:void(0)' : 'https://vault.bitwarden.eu' + routeAndParams
+      "
       class="pr-4"
       *ngIf="euServerFlagEnabled"
     >
