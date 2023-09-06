@@ -42,7 +42,10 @@ export class LoginComponent extends CaptchaProtectedComponent implements OnInit 
 
   formGroup = this.formBuilder.group({
     email: ["", [Validators.required, Validators.email]],
-    masterPassword: ["", [Validators.required, Validators.minLength(8)]],
+    masterPassword: [
+      "",
+      [Validators.required, Validators.minLength(Utils.originalMinimumPasswordLength)],
+    ],
     rememberEmail: [false],
   });
 
@@ -278,6 +281,8 @@ export class LoginComponent extends CaptchaProtectedComponent implements OnInit 
       switch (error.errorName) {
         case "email":
           return this.i18nService.t("invalidEmail");
+        case "minlength":
+          return this.i18nService.t("masterPasswordMinlength", Utils.originalMinimumPasswordLength);
         default:
           return this.i18nService.t(this.errorTag(error));
       }
