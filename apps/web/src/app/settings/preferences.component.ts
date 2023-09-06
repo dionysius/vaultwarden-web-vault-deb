@@ -64,7 +64,7 @@ export class PreferencesComponent implements OnInit, OnDestroy {
     vaultTimeout: [null as VaultTimeout | null],
     vaultTimeoutAction: [VaultTimeoutAction.Lock],
     enableFavicons: true,
-    theme: [ThemeTypes.Light as Theme],
+    theme: [ThemeTypes.System as Theme],
     locale: [null as string | null],
   });
 
