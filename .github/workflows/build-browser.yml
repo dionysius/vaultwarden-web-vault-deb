@@ -38,7 +38,7 @@ defaults:
 jobs:
   cloc:
     name: CLOC
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout repo
         uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3.5.3
@@ -54,7 +54,7 @@ jobs:
 
   setup:
     name: Setup
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     outputs:
       repo_url: ${{ steps.gen_vars.outputs.repo_url }}
       adj_build_number: ${{ steps.gen_vars.outputs.adj_build_number }}
@@ -71,7 +71,7 @@ jobs:
 
   locales-test:
     name: Locales Test
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     needs:
       - setup
     defaults:
@@ -108,7 +108,7 @@ jobs:
 
   build:
     name: Build
-    runs-on: windows-2019
+    runs-on: ubuntu-22.04
     needs:
       - setup
       - locales-test
@@ -137,6 +137,7 @@ jobs:
         run: |
           node --version
           npm --version
+          node-gyp --version
 
       - name: NPM setup
         run: npm ci
@@ -152,24 +153,27 @@ jobs:
         run: gulp ci
 
       - name: Build sources for reviewers
-        shell: cmd
         run: |
-          REM Remove ".git" directory
-          rmdir /S /Q ".git"
+          # Include hidden files in glob copy
+          shopt -s dotglob
 
-          REM Copy root level files to source directory
+          # Remove ".git" directory
+          rm -r .git
+
+          # Copy root level files to source directory
           mkdir browser-source
-          copy * browser-source
+          FILES=$(find . -maxdepth 1 -type f)
+          for FILE in $FILES; do cp "$FILE" browser-source/; done
 
-          REM Copy apps\browser to Browser source directory
-          mkdir browser-source\apps\browser
-          xcopy apps\browser\* browser-source\apps\browser /E
+          # Copy apps/browser to Browser source directory
+          mkdir -p browser-source/apps/browser
+          cp -r apps/browser/* browser-source/apps/browser
 
-          REM Copy libs to Browser source directory
-          mkdir browser-source\libs
-          xcopy libs\* browser-source\libs /E
+          # Copy libs to Browser source directory
+          mkdir browser-source/libs
+          cp -r libs/* browser-source/libs
 
-          call 7z a browser-source.zip "browser-source\*"
+          zip -r browser-source.zip browser-source
         working-directory: ./
 
       - name: Upload Opera artifact
@@ -339,7 +343,7 @@ jobs:
   crowdin-push:
     name: Crowdin Push
     if: github.ref == 'refs/heads/master'
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     needs:
       - build
       - build-safari
@@ -354,7 +358,7 @@ jobs:
 
       - name: Retrieve secrets
         id: retrieve-secrets
-        uses: bitwarden/gh-actions/get-keyvault-secrets@67ab95d7a466bcefdedf3f93cbc10bcff436edfe
+        uses: bitwarden/gh-actions/get-keyvault-secrets@37ffa14164a7308bc273829edfe75c97cd562375
         with:
           keyvault: "bitwarden-ci"
           secrets: "crowdin-api-token"
@@ -374,7 +378,7 @@ jobs:
   check-failures:
     name: Check for failures
     if: always()
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     needs:
       - cloc
       - setup
@@ -416,7 +420,7 @@ jobs:
       - name: Retrieve secrets
         id: retrieve-secrets
         if: failure()
-        uses: bitwarden/gh-actions/get-keyvault-secrets@67ab95d7a466bcefdedf3f93cbc10bcff436edfe
+        uses: bitwarden/gh-actions/get-keyvault-secrets@37ffa14164a7308bc273829edfe75c97cd562375
         with:
           keyvault: "bitwarden-ci"
           secrets: "devops-alerts-slack-webhook-url"
