@@ -33,7 +33,7 @@
             </ng-container>
 
             <p class="text-center" *ngIf="!serverConfig.server">
-              {{ "serverVersion" | i18n }} <small>({{ "selfHosted" | i18n }})</small>:
+              {{ "serverVersion" | i18n }} <small>({{ "selfHostedServer" | i18n }})</small>:
               {{ this.serverConfig?.version }}
               <span *ngIf="!serverConfig.isValid()">
                 ({{ "lastSeenOn" | i18n : (serverConfig.utcDate | date : "mediumDate") }})

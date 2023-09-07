@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 
 import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
@@ -18,12 +18,10 @@ export class EnvironmentSelectorComponent implements OnInit {
     private router: Router
   ) {}
 
-  @Input() hasFlags: boolean;
   isEuServer: boolean;
   isUsServer: boolean;
   showRegionSelector = false;
   euServerFlagEnabled: boolean;
-  selectedRegionImageName: string;
   routeAndParams: string;
 
   async ngOnInit() {
@@ -33,16 +31,7 @@ export class EnvironmentSelectorComponent implements OnInit {
     const domain = Utils.getDomain(window.location.href);
     this.isEuServer = domain.includes(RegionDomain.EU);
     this.isUsServer = domain.includes(RegionDomain.US) || domain.includes(RegionDomain.USQA);
-    this.selectedRegionImageName = this.getRegionImage();
     this.showRegionSelector = !this.platformUtilsService.isSelfHost();
     this.routeAndParams = `/#${this.router.url}`;
-  }
-
-  getRegionImage(): string {
-    if (this.isEuServer) {
-      return "flag-eu";
-    } else {
-      return "flag-us";
-    }
   }
 }
