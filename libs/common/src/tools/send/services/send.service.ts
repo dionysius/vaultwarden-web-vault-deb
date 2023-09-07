@@ -70,7 +70,7 @@ export class SendService implements InternalSendServiceAbstraction {
     send.hideEmail = model.hideEmail;
     send.maxAccessCount = model.maxAccessCount;
     if (model.key == null) {
-      model.key = await this.cryptoFunctionService.randomBytes(16);
+      model.key = await this.cryptoFunctionService.aesGenerateKey(128);
       model.cryptoKey = await this.cryptoService.makeSendKey(model.key);
     }
     if (password != null) {

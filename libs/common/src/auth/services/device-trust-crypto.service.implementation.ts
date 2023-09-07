@@ -167,7 +167,7 @@ export class DeviceTrustCryptoService implements DeviceTrustCryptoServiceAbstrac
 
   private async makeDeviceKey(): Promise<DeviceKey> {
     // Create 512-bit device key
-    const randomBytes: CsprngArray = await this.cryptoFunctionService.randomBytes(64);
+    const randomBytes: CsprngArray = await this.cryptoFunctionService.aesGenerateKey(512);
     const deviceKey = new SymmetricCryptoKey(randomBytes) as DeviceKey;
 
     return deviceKey;

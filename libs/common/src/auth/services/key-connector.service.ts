@@ -93,7 +93,7 @@ export class KeyConnectorService implements KeyConnectorServiceAbstraction {
       keyConnectorUrl: legacyKeyConnectorUrl,
       userDecryptionOptions,
     } = tokenResponse;
-    const password = await this.cryptoFunctionService.randomBytes(64);
+    const password = await this.cryptoFunctionService.aesGenerateKey(512);
     const kdfConfig = new KdfConfig(kdfIterations, kdfMemory, kdfParallelism);
 
     const masterKey = await this.cryptoService.makeMasterKey(

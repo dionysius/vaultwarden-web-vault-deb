@@ -168,16 +168,16 @@ describe("deviceTrustCryptoService", () => {
       it("creates a new non-null 64 byte device key, securely stores it, and returns it", async () => {
         const mockRandomBytes = new Uint8Array(deviceKeyBytesLength) as CsprngArray;
 
-        const cryptoFuncSvcRandomBytesSpy = jest
-          .spyOn(cryptoFunctionService, "randomBytes")
+        const cryptoFuncSvcGenerateKeySpy = jest
+          .spyOn(cryptoFunctionService, "aesGenerateKey")
           .mockResolvedValue(mockRandomBytes);
 
         // TypeScript will allow calling private methods if the object is of type 'any'
         // This is a hacky workaround, but it allows for cleaner tests
         const deviceKey = await (deviceTrustCryptoService as any).makeDeviceKey();
 
-        expect(cryptoFuncSvcRandomBytesSpy).toHaveBeenCalledTimes(1);
-        expect(cryptoFuncSvcRandomBytesSpy).toHaveBeenCalledWith(deviceKeyBytesLength);
+        expect(cryptoFuncSvcGenerateKeySpy).toHaveBeenCalledTimes(1);
+        expect(cryptoFuncSvcGenerateKeySpy).toHaveBeenCalledWith(deviceKeyBytesLength * 8);
 
         expect(deviceKey).not.toBeNull();
         expect(deviceKey).toBeInstanceOf(SymmetricCryptoKey);

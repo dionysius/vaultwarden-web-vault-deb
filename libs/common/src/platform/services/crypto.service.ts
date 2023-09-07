@@ -119,7 +119,7 @@ export class CryptoService implements CryptoServiceAbstraction {
       throw new Error("No Master Key found.");
     }
 
-    const newUserKey = await this.cryptoFunctionService.randomBytes(64);
+    const newUserKey = await this.cryptoFunctionService.aesGenerateKey(512);
     return this.buildProtectedSymmetricKey(masterKey, newUserKey);
   }
 
@@ -367,7 +367,7 @@ export class CryptoService implements CryptoServiceAbstraction {
       throw new Error("No key provided");
     }
 
-    const newSymKey = await this.cryptoFunctionService.randomBytes(64);
+    const newSymKey = await this.cryptoFunctionService.aesGenerateKey(512);
     return this.buildProtectedSymmetricKey(key, newSymKey);
   }
 
@@ -458,7 +458,7 @@ export class CryptoService implements CryptoServiceAbstraction {
   }
 
   async makeOrgKey<T extends OrgKey | ProviderKey>(): Promise<[EncString, T]> {
-    const shareKey = await this.cryptoFunctionService.randomBytes(64);
+    const shareKey = await this.cryptoFunctionService.aesGenerateKey(512);
     const publicKey = await this.getPublicKey();
     const encShareKey = await this.rsaEncrypt(shareKey, publicKey);
     return [encShareKey, new SymmetricCryptoKey(shareKey) as T];
@@ -731,8 +731,8 @@ export class CryptoService implements CryptoServiceAbstraction {
     publicKey: string;
     privateKey: EncString;
   }> {
-    const randomBytes = await this.cryptoFunctionService.randomBytes(64);
-    const userKey = new SymmetricCryptoKey(randomBytes) as UserKey;
+    const rawKey = await this.cryptoFunctionService.aesGenerateKey(512);
+    const userKey = new SymmetricCryptoKey(rawKey) as UserKey;
     const [publicKey, privateKey] = await this.makeKeyPair(userKey);
     await this.setUserKey(userKey);
     await this.stateService.setEncryptedPrivateKey(privateKey.encryptedString);
