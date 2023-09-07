@@ -280,6 +280,10 @@ export default class AutofillService implements AutofillServiceInterface {
    * @returns The TOTP code of the successfully autofilled login, if any
    */
   async doAutoFillActiveTab(pageDetails: PageDetail[], fromCommand: boolean): Promise<string> {
+    if (!pageDetails[0]?.details?.fields?.length) {
+      return;
+    }
+
     const tab = await this.getActiveTab();
     if (!tab || !tab.url) {
       return;
