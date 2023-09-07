@@ -91,12 +91,10 @@ export class SendComponent extends BaseSendComponent implements OnInit, OnDestro
     this.searchBarService.setEnabled(false);
   }
 
-  addSend() {
+  async addSend() {
     this.action = Action.Add;
     if (this.addEditComponent != null) {
-      this.addEditComponent.sendId = null;
-      this.addEditComponent.send = null;
-      this.addEditComponent.load();
+      await this.addEditComponent.resetAndLoad();
     }
   }
 
