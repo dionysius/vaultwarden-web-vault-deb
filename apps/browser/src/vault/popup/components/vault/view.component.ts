@@ -302,11 +302,8 @@ export class ViewComponent extends BaseViewComponent {
   }
 
   close() {
-    if (this.senderTabId) {
+    if (this.inPopout && this.senderTabId) {
       BrowserApi.focusTab(this.senderTabId);
-    }
-
-    if (this.inPopout) {
       window.close();
       return;
     }
