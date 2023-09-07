@@ -1,4 +1,5 @@
 import { NotificationsService } from "@bitwarden/common/abstractions/notifications.service";
+import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
 import { ConfigServiceAbstraction } from "@bitwarden/common/platform/abstractions/config/config.service.abstraction";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
@@ -134,6 +135,12 @@ export default class RuntimeBackground {
         setTimeout(() => {
           BrowserApi.closeBitwardenExtensionTab();
         }, msg.delay ?? 0);
+        break;
+      case "triggerAutofillScriptInjection":
+        await this.autofillService.injectAutofillScripts(
+          sender,
+          await this.configService.getFeatureFlagBool(FeatureFlag.AutofillV2)
+        );
         break;
       case "bgCollectPageDetails":
         await this.main.collectPageDetailsForContentScript(sender.tab, msg.sender, sender.frameId);

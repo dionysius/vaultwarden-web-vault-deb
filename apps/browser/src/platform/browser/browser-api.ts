@@ -308,4 +308,31 @@ export class BrowserApi {
     }
     return win.opr?.sidebarAction || browser.sidebarAction;
   }
+
+  /**
+   * Extension API helper method used to execute a script in a tab.
+   * @see https://developer.chrome.com/docs/extensions/reference/tabs/#method-executeScript
+   * @param {number} tabId
+   * @param {chrome.tabs.InjectDetails} details
+   * @returns {Promise<unknown>}
+   */
+  static executeScriptInTab(tabId: number, details: chrome.tabs.InjectDetails) {
+    if (BrowserApi.manifestVersion === 3) {
+      return chrome.scripting.executeScript({
+        target: {
+          tabId: tabId,
+          allFrames: details.allFrames,
+          frameIds: details.frameId ? [details.frameId] : null,
+        },
+        files: details.file ? [details.file] : null,
+        injectImmediately: details.runAt === "document_start",
+      });
+    }
+
+    return new Promise((resolve) => {
+      chrome.tabs.executeScript(tabId, details, (result) => {
+        resolve(result);
+      });
+    });
+  }
 }
