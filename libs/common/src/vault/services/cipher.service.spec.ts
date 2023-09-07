@@ -134,12 +134,23 @@ describe("Cipher Service", () => {
   });
 
   describe("createWithServer()", () => {
-    it("should call apiService.postCipherAdmin when orgAdmin param is true", async () => {
+    it("should call apiService.postCipherAdmin when orgAdmin param is true and the cipher orgId != null", async () => {
       const spy = jest
         .spyOn(apiService, "postCipherAdmin")
         .mockImplementation(() => Promise.resolve<any>(cipherObj));
       cipherService.createWithServer(cipherObj, true);
       const expectedObj = new CipherCreateRequest(cipherObj);
+
+      expect(spy).toHaveBeenCalled();
+      expect(spy).toHaveBeenCalledWith(expectedObj);
+    });
+    it("should call apiService.postCipher when orgAdmin param is true and the cipher orgId is null", async () => {
+      cipherObj.organizationId = null;
+      const spy = jest
+        .spyOn(apiService, "postCipher")
+        .mockImplementation(() => Promise.resolve<any>(cipherObj));
+      cipherService.createWithServer(cipherObj, true);
+      const expectedObj = new CipherRequest(cipherObj);
 
       expect(spy).toHaveBeenCalled();
       expect(spy).toHaveBeenCalledWith(expectedObj);
