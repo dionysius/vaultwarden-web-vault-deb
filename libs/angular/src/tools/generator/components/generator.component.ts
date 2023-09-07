@@ -244,7 +244,7 @@ export class GeneratorComponent implements OnInit {
 
   private async initForwardOptions() {
     this.forwardOptions = [
-      { name: "AnonAddy", value: "anonaddy", validForSelfHosted: true },
+      { name: "addy.io", value: "anonaddy", validForSelfHosted: true },
       { name: "DuckDuckGo", value: "duckduckgo", validForSelfHosted: false },
       { name: "Fastmail", value: "fastmail", validForSelfHosted: true },
       { name: "Firefox Relay", value: "firefoxrelay", validForSelfHosted: false },
