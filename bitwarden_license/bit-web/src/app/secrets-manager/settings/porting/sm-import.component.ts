@@ -8,6 +8,7 @@ import { FileDownloadService } from "@bitwarden/common/platform/abstractions/fil
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
+import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { DialogService } from "@bitwarden/components";
 
 import {
@@ -72,6 +73,13 @@ export class SecretsManagerImportComponent implements OnInit, OnDestroy {
 
       if (error?.lines?.length > 0) {
         this.openImportErrorDialog(error);
+        return;
+      } else if (!Utils.isNullOrWhitespace(error?.message)) {
+        this.platformUtilsService.showToast(
+          "error",
+          this.i18nService.t("errorOccurred"),
+          error.message
+        );
         return;
       } else if (error != null) {
         this.platformUtilsService.showToast(
