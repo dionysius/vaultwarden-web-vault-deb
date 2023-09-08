@@ -339,7 +339,7 @@
     "message": "Altres"
   },
   "unlockMethodNeededToChangeTimeoutActionDesc": {
-    "message": "Set up an unlock method to change your vault timeout action."
+    "message": "Configura un mètode de desbloqueig per canviar l'acció del temps d'espera de la caixa forta."
   },
   "rateExtension": {
     "message": "Valora aquesta extensió"
@@ -634,10 +634,10 @@
     "message": "Actualitza"
   },
   "notificationUnlockDesc": {
-    "message": "Unlock your Bitwarden vault to complete the auto-fill request."
+    "message": "Desbloquegeu la vostra caixa forta de Bitwarden per completar la sol·licitud d'emplenament automàtic."
   },
   "notificationUnlock": {
-    "message": "Unlock"
+    "message": "Desbloqueja"
   },
   "enableContextMenuItem": {
     "message": "Mostra les opcions del menú contextual"
@@ -1606,10 +1606,10 @@
     "message": "La biometria del navegador no és compatible amb aquest dispositiu."
   },
   "biometricsFailedTitle": {
-    "message": "Biometrics failed"
+    "message": "La biometria ha fallat"
   },
   "biometricsFailedDesc": {
-    "message": "Biometrics cannot be completed, consider using a master password or logging out. If this persists, please contact Bitwarden support."
+    "message": "La biometria no es pot completar, considereu utilitzar una contrasenya mestra o tancar la sessió. Si això continua, poseu-vos en contacte amb el servei d'assistència de Bitwarden."
   },
   "nativeMessaginPermissionErrorTitle": {
     "message": "No s'ha proporcionat el permís"
@@ -2092,8 +2092,8 @@
   "serverVersion": {
     "message": "Versió del servidor"
   },
-  "selfHosted": {
-    "message": "Autoallotjat"
+  "selfHostedServer": {
+    "message": "self-hosted"
   },
   "thirdParty": {
     "message": "Tercers"
@@ -2153,7 +2153,7 @@
     "message": "S'ha enviat una notificació al vostre dispositiu."
   },
   "loginInitiated": {
-    "message": "Login initiated"
+    "message": "S'ha iniciat la sessió"
   },
   "exposedMasterPassword": {
     "message": "Contrasenya mestra exposada"
@@ -2234,34 +2234,34 @@
     }
   },
   "loggingInOn": {
-    "message": "Logging in on"
+    "message": "Inici de sessió en"
   },
   "opensInANewWindow": {
     "message": "S'obri en una finestra nova"
   },
   "deviceApprovalRequired": {
-    "message": "Device approval required. Select an approval option below:"
+    "message": "Cal l'aprovació del dispositiu. Seleccioneu una opció d'aprovació a continuació:"
   },
   "rememberThisDevice": {
-    "message": "Remember this device"
+    "message": "Recorda aquest dispositiu"
   },
   "uncheckIfPublicDevice": {
-    "message": "Uncheck if using a public device"
+    "message": "Desmarqueu si utilitzeu un dispositiu públic"
   },
   "approveFromYourOtherDevice": {
-    "message": "Approve from your other device"
+    "message": "Aproveu des d'un altre dispositiu vostre"
   },
   "requestAdminApproval": {
-    "message": "Request admin approval"
+    "message": "Sol·liciteu l'aprovació de l'administrador"
   },
   "approveWithMasterPassword": {
-    "message": "Approve with master password"
+    "message": "Aprova amb contrasenya mestra"
   },
   "ssoIdentifierRequired": {
-    "message": "Organization SSO identifier is required."
+    "message": "Es requereix un identificador SSO de l'organització."
   },
   "eu": {
-    "message": "EU",
+    "message": "UE",
     "description": "European Union"
   },
   "usDomain": {
@@ -2280,28 +2280,28 @@
     "message": "Mostra"
   },
   "accountSuccessfullyCreated": {
-    "message": "Account successfully created!"
+    "message": "Compte creat correctament!"
   },
   "adminApprovalRequested": {
-    "message": "Admin approval requested"
+    "message": "S'ha sol·licitat l'aprovació de l'administrador"
   },
   "adminApprovalRequestSentToAdmins": {
-    "message": "Your request has been sent to your admin."
+    "message": "La vostra sol·licitud s'ha enviat a l'administrador."
   },
   "youWillBeNotifiedOnceApproved": {
-    "message": "You will be notified once approved."
+    "message": "Se us notificarà una vegada aprovat."
   },
   "troubleLoggingIn": {
-    "message": "Trouble logging in?"
+    "message": "Teniu problemes per iniciar la sessió?"
   },
   "loginApproved": {
-    "message": "Login approved"
+    "message": "S'ha aprovat l'inici de sessió"
   },
   "userEmailMissing": {
-    "message": "User email missing"
+    "message": "Falta el correu electrònic de l'usuari"
   },
   "deviceTrusted": {
-    "message": "Device trusted"
+    "message": "Dispositiu de confiança"
   },
   "inputRequired": {
     "message": "L'entrada és obligatòria."

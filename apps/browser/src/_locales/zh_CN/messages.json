@@ -796,7 +796,7 @@
     "message": "1 GB 文件附件加密存储。"
   },
   "premiumSignUpTwoStepOptions": {
-    "message": "Proprietary two-step login options such as YubiKey and Duo."
+    "message": "专有的两步登录选项，如 YubiKey 和 Duo。"
   },
   "ppremiumSignUpReports": {
     "message": "密码健康、账户体检以及数据泄露报告，保障您的密码库安全。"
@@ -2092,8 +2092,8 @@
   "serverVersion": {
     "message": "服务器版本"
   },
-  "selfHosted": {
-    "message": "自托管"
+  "selfHostedServer": {
+    "message": "self-hosted"
   },
   "thirdParty": {
     "message": "第三方"
@@ -2135,7 +2135,7 @@
     "message": "设备登录"
   },
   "loginWithDeviceEnabledInfo": {
-    "message": "设备登录必须在 Bitwarden 应用程序的设置中设启用。需要其他选项吗？"
+    "message": "设备登录必须在 Bitwarden 应用程序的设置中启用。需要其他登录选项吗？"
   },
   "fingerprintPhraseHeader": {
     "message": "指纹短语"

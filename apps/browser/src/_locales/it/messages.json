@@ -796,7 +796,7 @@
     "message": "1 GB di spazio di archiviazione criptato per gli allegati."
   },
   "premiumSignUpTwoStepOptions": {
-    "message": "Proprietary two-step login options such as YubiKey and Duo."
+    "message": "Opzioni di verifica in due passaggi proprietarie come YubiKey e Duo."
   },
   "ppremiumSignUpReports": {
     "message": "Sicurezza delle password, integrità dell'account, e rapporti su violazioni di dati per mantenere sicura la tua cassaforte."
@@ -2092,8 +2092,8 @@
   "serverVersion": {
     "message": "Versione Server"
   },
-  "selfHosted": {
-    "message": "Self-hosted"
+  "selfHostedServer": {
+    "message": "self-hosted"
   },
   "thirdParty": {
     "message": "Terze parti"

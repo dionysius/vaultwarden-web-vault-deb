@@ -796,7 +796,7 @@
     "message": "1ГБ шифровано складиште за прилоге."
   },
   "premiumSignUpTwoStepOptions": {
-    "message": "Proprietary two-step login options such as YubiKey and Duo."
+    "message": "Приоритарне опције пријаве у два корака као што су YubiKey и Duo."
   },
   "ppremiumSignUpReports": {
     "message": "Извештаји о хигијени лозинки, здравственом стању налога и кршењу података да бисте заштитили сеф."
@@ -2092,8 +2092,8 @@
   "serverVersion": {
     "message": "Верзија сервера"
   },
-  "selfHosted": {
-    "message": "Личан хостинг"
+  "selfHostedServer": {
+    "message": "self-hosted"
   },
   "thirdParty": {
     "message": "Трећа страна"
