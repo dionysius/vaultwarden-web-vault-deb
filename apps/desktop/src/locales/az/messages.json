@@ -1078,7 +1078,7 @@
     "message": "Fayl qoşmaları üçün 1 GB şifrələnmiş saxlama sahəsi."
   },
   "premiumSignUpTwoStepOptions": {
-    "message": "Proprietary two-step login options such as YubiKey and Duo."
+    "message": "YubiKey və Duo kimi mülkiyyətçi iki addımlı giriş seçimləri."
   },
   "premiumSignUpReports": {
     "message": "Anbarınızın təhlükəsiyini təmin etmək üçün parol gigiyenası, hesab sağlamlığı və verilənlərin pozulması hesabatları."
@@ -2286,8 +2286,8 @@
   "euDomain": {
     "message": "bitwarden.eu"
   },
-  "selfHosted": {
-    "message": "Öz-özünə sahiblik edən"
+  "selfHostedServer": {
+    "message": "self-hosted"
   },
   "accessDenied": {
     "message": "Müraciət rədd edildi. Bu səhifəyə baxmaq üçün icazəniz yoxdur."

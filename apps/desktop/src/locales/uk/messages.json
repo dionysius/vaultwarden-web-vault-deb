@@ -67,7 +67,7 @@
     "message": "Вкладення"
   },
   "viewItem": {
-    "message": "Перегляд запису"
+    "message": "Переглянути запис"
   },
   "name": {
     "message": "Назва"
@@ -753,7 +753,7 @@
     "message": "Нова тека"
   },
   "view": {
-    "message": "Перегляд"
+    "message": "Переглянути"
   },
   "account": {
     "message": "Обліковий запис"
@@ -1078,7 +1078,7 @@
     "message": "1 ГБ зашифрованого сховища для файлів."
   },
   "premiumSignUpTwoStepOptions": {
-    "message": "Proprietary two-step login options such as YubiKey and Duo."
+    "message": "Додаткові можливості двоетапної авторизації, як-от YubiKey та Duo."
   },
   "premiumSignUpReports": {
     "message": "Гігієна паролів, здоров'я облікового запису, а також звіти про вразливості даних, щоб зберігати ваше сховище в безпеці."
@@ -2286,8 +2286,8 @@
   "euDomain": {
     "message": "bitwarden.eu"
   },
-  "selfHosted": {
-    "message": "Власне розміщення"
+  "selfHostedServer": {
+    "message": "self-hosted"
   },
   "accessDenied": {
     "message": "Доступ заборонено. У вас немає дозволу на перегляд цієї сторінки."

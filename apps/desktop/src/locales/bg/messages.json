@@ -542,7 +542,7 @@
     "message": "Повторното въвеждане на главната парола е задължително."
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least $VALUE$ characters long.",
+    "message": "Главната парола трябва да е дълга поне $VALUE$ знака.",
     "description": "The Master Password must be at least a specific number of characters long.",
     "placeholders": {
       "value": {
@@ -1078,7 +1078,7 @@
     "message": "1 ГБ пространство за файлове, които се шифроват."
   },
   "premiumSignUpTwoStepOptions": {
-    "message": "Proprietary two-step login options such as YubiKey and Duo."
+    "message": "Частно двустепенно удостоверяване чрез YubiKey и Duo."
   },
   "premiumSignUpReports": {
     "message": "Проверки в списъците с публикувани пароли, проверка на регистрациите и доклади за пробивите в сигурността, което спомага трезорът ви да е допълнително защитен."
@@ -2214,16 +2214,16 @@
     "message": "Направена е заявка за вписване"
   },
   "exposedMasterPassword": {
-    "message": "Exposed Master Password"
+    "message": "Разобличена главна парола"
   },
   "exposedMasterPasswordDesc": {
-    "message": "Password found in a data breach. Use a unique password to protect your account. Are you sure you want to use an exposed password?"
+    "message": "Паролата е намерена в пробив на данни. Използвайте уникална парола, за да защитите вашия акаунт. Наистина ли искате да използвате слаба парола?"
   },
   "weakAndExposedMasterPassword": {
-    "message": "Weak and Exposed Master Password"
+    "message": "Слаба и разобличена главна парола"
   },
   "weakAndBreachedMasterPasswordDesc": {
-    "message": "Weak password identified and found in a data breach. Use a strong and unique password to protect your account. Are you sure you want to use this password?"
+    "message": "Разпозната е слаба парола. Използвайте силна парола, за да защитете данните си. Наистина ли искате да използвате слаба парола?"
   },
   "checkForBreaches": {
     "message": "Проверяване в известните случаи на изтекли данни за тази парола"
@@ -2286,8 +2286,8 @@
   "euDomain": {
     "message": "bitwarden.eu"
   },
-  "selfHosted": {
-    "message": "Собствен хостинг"
+  "selfHostedServer": {
+    "message": "self-hosted"
   },
   "accessDenied": {
     "message": "Достъпът е отказан. Нямате право за преглед на тази страница."

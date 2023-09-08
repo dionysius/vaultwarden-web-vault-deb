@@ -1078,7 +1078,7 @@
     "message": "1 GB de armazenamento encriptado para anexos de ficheiros."
   },
   "premiumSignUpTwoStepOptions": {
-    "message": "Proprietary two-step login options such as YubiKey and Duo."
+    "message": "Opções proprietárias de verificação de dois passos, como YubiKey e Duo."
   },
   "premiumSignUpReports": {
     "message": "Higiene de palavras-passe, saúde da conta e relatórios de violação de dados para manter o seu cofre seguro."
@@ -2286,8 +2286,8 @@
   "euDomain": {
     "message": "bitwarden.eu"
   },
-  "selfHosted": {
-    "message": "Auto-hospedado"
+  "selfHostedServer": {
+    "message": "self-hosted"
   },
   "accessDenied": {
     "message": "Acesso negado. Não tem permissão para visualizar esta página."

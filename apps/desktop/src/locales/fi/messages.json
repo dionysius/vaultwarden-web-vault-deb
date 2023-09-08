@@ -1078,7 +1078,7 @@
     "message": "1 Gt salattua tallennustilaa tiedostoliitteille."
   },
   "premiumSignUpTwoStepOptions": {
-    "message": "Proprietary two-step login options such as YubiKey and Duo."
+    "message": "Omisteiset kaksivaiheisen kirjautumisen vaihtoehdot, kuten YubiKey ja Duo."
   },
   "premiumSignUpReports": {
     "message": "Salasanahygienian, tilin terveyden ja tietovuotojen raportointitoiminnot pitävät holvisi turvassa."
@@ -2256,7 +2256,7 @@
     "message": "Muista tämä laite"
   },
   "uncheckIfPublicDevice": {
-    "message": "Poista käytöstä julkisilla laitteilla"
+    "message": "Poista valinta julkisilla laitteilla"
   },
   "approveFromYourOtherDevice": {
     "message": "Hyväksy muilta laitteiltasi"
@@ -2286,8 +2286,8 @@
   "euDomain": {
     "message": "bitwarden.eu"
   },
-  "selfHosted": {
-    "message": "Itse ylläpidetty"
+  "selfHostedServer": {
+    "message": "self-hosted"
   },
   "accessDenied": {
     "message": "Pääsy estetty. Sinulla ei ole oikeutta avata sivua."
@@ -2299,7 +2299,7 @@
     "message": "Hyväksyntää pyydetty ylläpidolta"
   },
   "adminApprovalRequestSentToAdmins": {
-    "message": "Pyyntösi on välitetty ylläpidolle."
+    "message": "Pyyntösi on välitetty ylläpidollesi."
   },
   "youWillBeNotifiedOnceApproved": {
     "message": "Saat ilmoituksen kun se on hyväksytty."
@@ -2308,7 +2308,7 @@
     "message": "Ongelmia kirjautumisessa?"
   },
   "loginApproved": {
-    "message": "Kirjautuminen hyväksyttiin"
+    "message": "Kirjautuminen hyväksytty"
   },
   "userEmailMissing": {
     "message": "Käyttäjän sähköpostiosoite puuttuu"

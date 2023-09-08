@@ -1078,7 +1078,7 @@
     "message": "1 GB šifrovaného uložiště pro přílohy."
   },
   "premiumSignUpTwoStepOptions": {
-    "message": "Proprietary two-step login options such as YubiKey and Duo."
+    "message": "Volby proprietálních dvoufázových přihlášení jako je YubiKey a Duo."
   },
   "premiumSignUpReports": {
     "message": "Reporty o hygieně Vašich hesel, zdraví účtu a narušeních bezpečnosti."
@@ -2286,8 +2286,8 @@
   "euDomain": {
     "message": "bitwarden.eu"
   },
-  "selfHosted": {
-    "message": "Vlastní hosting"
+  "selfHostedServer": {
+    "message": "self-hosted"
   },
   "accessDenied": {
     "message": "Přístup byl odepřen. Nemáte oprávnění k zobrazení této stránky."

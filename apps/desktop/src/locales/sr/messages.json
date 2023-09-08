@@ -1078,7 +1078,7 @@
     "message": "1ГБ шифровано складиште за прилоге."
   },
   "premiumSignUpTwoStepOptions": {
-    "message": "Proprietary two-step login options such as YubiKey and Duo."
+    "message": "Приоритарне опције пријаве у два корака као што су YubiKey и Duo."
   },
   "premiumSignUpReports": {
     "message": "Извештаји о хигијени лозинки, здравственом стању налога и кршењу података да бисте заштитили сеф."
@@ -2286,8 +2286,8 @@
   "euDomain": {
     "message": "bitwarden.eu"
   },
-  "selfHosted": {
-    "message": "Личан хостинг"
+  "selfHostedServer": {
+    "message": "self-hosted"
   },
   "accessDenied": {
     "message": "Одбијен приступ. Немате дозволу да видите ову страницу."

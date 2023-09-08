@@ -1078,7 +1078,7 @@
     "message": "1 GB d'emmagatzematge xifrat per als fitxers adjunts."
   },
   "premiumSignUpTwoStepOptions": {
-    "message": "Proprietary two-step login options such as YubiKey and Duo."
+    "message": "Opcions propietàries de doble factor com ara YubiKey i Duo."
   },
   "premiumSignUpReports": {
     "message": "Requisits d'higiene de la contrasenya, salut del compte i informe d'infraccions de dades per mantenir la seguretat de la vostra caixa forta."
@@ -1493,7 +1493,7 @@
     "message": "Una caixa forta desconnectada requereix que torneu a autentificar-vos per accedir-hi de nou."
   },
   "unlockMethodNeededToChangeTimeoutActionDesc": {
-    "message": "Set up an unlock method to change your vault timeout action."
+    "message": "Configura un mètode de desbloqueig per canviar l'acció del temps d'espera de la caixa forta."
   },
   "lock": {
     "message": "Bloqueja",
@@ -2110,7 +2110,7 @@
     "message": "Inicia sessió amb un altre dispositiu"
   },
   "loginInitiated": {
-    "message": "Login initiated"
+    "message": "S'ha iniciat la sessió"
   },
   "notificationSentDevice": {
     "message": "S'ha enviat una notificació al vostre dispositiu."
@@ -2250,35 +2250,35 @@
     "message": "Actualització de configuració recomanada"
   },
   "deviceApprovalRequired": {
-    "message": "Device approval required. Select an approval option below:"
+    "message": "Cal l'aprovació del dispositiu. Seleccioneu una opció d'aprovació a continuació:"
   },
   "rememberThisDevice": {
-    "message": "Remember this device"
+    "message": "Recorda aquest dispositiu"
   },
   "uncheckIfPublicDevice": {
-    "message": "Uncheck if using a public device"
+    "message": "Desmarqueu si utilitzeu un dispositiu públic"
   },
   "approveFromYourOtherDevice": {
-    "message": "Approve from your other device"
+    "message": "Aproveu des d'un altre dispositiu vostre"
   },
   "requestAdminApproval": {
-    "message": "Request admin approval"
+    "message": "Sol·liciteu l'aprovació de l'administrador"
   },
   "approveWithMasterPassword": {
-    "message": "Approve with master password"
+    "message": "Aprova amb contrasenya mestra"
   },
   "region": {
-    "message": "Region"
+    "message": "Regió"
   },
   "ssoIdentifierRequired": {
-    "message": "Organization SSO identifier is required."
+    "message": "Es requereix un identificador SSO de l'organització."
   },
   "eu": {
-    "message": "EU",
+    "message": "UE",
     "description": "European Union"
   },
   "loggingInOn": {
-    "message": "Logging in on"
+    "message": "Inici de sessió en"
   },
   "usDomain": {
     "message": "bitwarden.com"
@@ -2286,47 +2286,47 @@
   "euDomain": {
     "message": "bitwarden.eu"
   },
-  "selfHosted": {
-    "message": "Autoallotjat"
+  "selfHostedServer": {
+    "message": "self-hosted"
   },
   "accessDenied": {
     "message": "Accés denegat. No teniu permís per veure aquesta pàgina."
   },
   "accountSuccessfullyCreated": {
-    "message": "Account successfully created!"
+    "message": "Compte creat correctament!"
   },
   "adminApprovalRequested": {
-    "message": "Admin approval requested"
+    "message": "S'ha sol·licitat l'aprovació de l'administrador"
   },
   "adminApprovalRequestSentToAdmins": {
-    "message": "Your request has been sent to your admin."
+    "message": "La vostra sol·licitud s'ha enviat a l'administrador."
   },
   "youWillBeNotifiedOnceApproved": {
-    "message": "You will be notified once approved."
+    "message": "Se us notificarà una vegada aprovat."
   },
   "troubleLoggingIn": {
-    "message": "Trouble logging in?"
+    "message": "Teniu problemes per iniciar la sessió?"
   },
   "loginApproved": {
-    "message": "Login approved"
+    "message": "S'ha aprovat l'inici de sessió"
   },
   "userEmailMissing": {
-    "message": "User email missing"
+    "message": "Falta el correu electrònic de l'usuari"
   },
   "deviceTrusted": {
-    "message": "Device trusted"
+    "message": "Dispositiu de confiança"
   },
   "inputRequired": {
-    "message": "Input is required."
+    "message": "L'entrada és obligatòria."
   },
   "required": {
-    "message": "required"
+    "message": "obligatori"
   },
   "search": {
-    "message": "Search"
+    "message": "Cerca"
   },
   "inputMinLength": {
-    "message": "Input must be at least $COUNT$ characters long.",
+    "message": "L'entrada ha de tenir com a mínim $COUNT$ caràcters.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -2335,7 +2335,7 @@
     }
   },
   "inputMaxLength": {
-    "message": "Input must not exceed $COUNT$ characters in length.",
+    "message": "L'entrada no ha de superar $COUNT$ caràcters de longitud.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -2344,7 +2344,7 @@
     }
   },
   "inputForbiddenCharacters": {
-    "message": "The following characters are not allowed: $CHARACTERS$",
+    "message": "Els següents caràcters no estan permesos:\n$CHARACTERS$",
     "placeholders": {
       "characters": {
         "content": "$1",
@@ -2353,7 +2353,7 @@
     }
   },
   "inputMinValue": {
-    "message": "Input value must be at least $MIN$.",
+    "message": "El valor d'entrada ha de ser com a mínim $MIN$.",
     "placeholders": {
       "min": {
         "content": "$1",
@@ -2362,7 +2362,7 @@
     }
   },
   "inputMaxValue": {
-    "message": "Input value must not exceed $MAX$.",
+    "message": "El valor d'entrada no ha de ser superior a $MAX$.",
     "placeholders": {
       "max": {
         "content": "$1",
@@ -2371,17 +2371,17 @@
     }
   },
   "multipleInputEmails": {
-    "message": "1 or more emails are invalid"
+    "message": "1 o més correus no són vàlids"
   },
   "inputTrimValidator": {
-    "message": "Input must not contain only whitespace.",
+    "message": "L'entrada no ha de contenir només espais en blanc.",
     "description": "Notification to inform the user that a form's input can't contain only whitespace."
   },
   "inputEmail": {
-    "message": "Input is not an email address."
+    "message": "L'entrada no és una adreça de correu electrònic."
   },
   "fieldsNeedAttention": {
-    "message": "$COUNT$ field(s) above need your attention.",
+    "message": "$COUNT$ camp(s) de dalt necessiten la vostra atenció.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -2390,22 +2390,22 @@
     }
   },
   "selectPlaceholder": {
-    "message": "-- Select --"
+    "message": "-- Selecciona --"
   },
   "multiSelectPlaceholder": {
-    "message": "-- Type to filter --"
+    "message": "-- Escriviu per filtrar --"
   },
   "multiSelectLoading": {
-    "message": "Retrieving options..."
+    "message": "Obtenint opcions..."
   },
   "multiSelectNotFound": {
-    "message": "No items found"
+    "message": "No s'ha trobat cap element"
   },
   "multiSelectClearAll": {
-    "message": "Clear all"
+    "message": "Esborra-ho tot"
   },
   "plusNMore": {
-    "message": "+ $QUANTITY$ more",
+    "message": "+ $QUANTITY$ més",
     "placeholders": {
       "quantity": {
         "content": "$1",
@@ -2414,6 +2414,6 @@
     }
   },
   "submenu": {
-    "message": "Submenu"
+    "message": "Submenú"
   }
 }

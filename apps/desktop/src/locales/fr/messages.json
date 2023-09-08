@@ -1493,7 +1493,7 @@
     "message": "Une nouvelle authentification est requise pour accéder à nouveau à votre coffre."
   },
   "unlockMethodNeededToChangeTimeoutActionDesc": {
-    "message": "Set up an unlock method to change your vault timeout action."
+    "message": "Configurez une méthode de déverrouillage pour changer le délai d'attente de votre coffre."
   },
   "lock": {
     "message": "Verrouiller",
@@ -2110,7 +2110,7 @@
     "message": "Connectez-vous avec un autre appareil"
   },
   "loginInitiated": {
-    "message": "Login initiated"
+    "message": "Connexion initiée"
   },
   "notificationSentDevice": {
     "message": "Une notification a été envoyée à votre appareil."
@@ -2250,28 +2250,28 @@
     "message": "Une mise à jour des paramètres est recommandée"
   },
   "deviceApprovalRequired": {
-    "message": "Device approval required. Select an approval option below:"
+    "message": "L'approbation de l'appareil est requise. Sélectionnez une option d'approbation ci-dessous:"
   },
   "rememberThisDevice": {
-    "message": "Remember this device"
+    "message": "Se souvenir de cet appareil"
   },
   "uncheckIfPublicDevice": {
-    "message": "Uncheck if using a public device"
+    "message": "Décocher si vous utilisez un appareil public"
   },
   "approveFromYourOtherDevice": {
-    "message": "Approve from your other device"
+    "message": "Approuver sur votre autre appareil"
   },
   "requestAdminApproval": {
-    "message": "Request admin approval"
+    "message": "Demander l'approbation de l'administrateur"
   },
   "approveWithMasterPassword": {
-    "message": "Approve with master password"
+    "message": "Approuver avec le mot de passe principal"
   },
   "region": {
-    "message": "Region"
+    "message": "Région"
   },
   "ssoIdentifierRequired": {
-    "message": "Organization SSO identifier is required."
+    "message": "Identifiant SSO de l'organisation requis."
   },
   "eu": {
     "message": "EU",
@@ -2286,47 +2286,47 @@
   "euDomain": {
     "message": "bitwarden.eu"
   },
-  "selfHosted": {
-    "message": "Auto-hébergé"
+  "selfHostedServer": {
+    "message": "self-hosted"
   },
   "accessDenied": {
     "message": "Accès refusé. Vous n'avez pas l'autorisation de voir cette page."
   },
   "accountSuccessfullyCreated": {
-    "message": "Account successfully created!"
+    "message": "Compte créé avec succès !"
   },
   "adminApprovalRequested": {
-    "message": "Admin approval requested"
+    "message": "Approbation d'un admin demandée"
   },
   "adminApprovalRequestSentToAdmins": {
-    "message": "Your request has been sent to your admin."
+    "message": "Votre demande a été envoyée à votre administrateur."
   },
   "youWillBeNotifiedOnceApproved": {
-    "message": "You will be notified once approved."
+    "message": "Vous serez notifié une fois approuvé."
   },
   "troubleLoggingIn": {
-    "message": "Trouble logging in?"
+    "message": "Problème pour vous connecter ?"
   },
   "loginApproved": {
-    "message": "Login approved"
+    "message": "Identifiant approuvée"
   },
   "userEmailMissing": {
-    "message": "User email missing"
+    "message": "E-mail de l'utilisateur manquant"
   },
   "deviceTrusted": {
-    "message": "Device trusted"
+    "message": "Appareil de confiance"
   },
   "inputRequired": {
-    "message": "Input is required."
+    "message": "Saisie requise."
   },
   "required": {
-    "message": "required"
+    "message": "requis"
   },
   "search": {
-    "message": "Search"
+    "message": "Rechercher"
   },
   "inputMinLength": {
-    "message": "Input must be at least $COUNT$ characters long.",
+    "message": "La saisie doit comporter au moins $COUNT$ caractères.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -2335,7 +2335,7 @@
     }
   },
   "inputMaxLength": {
-    "message": "Input must not exceed $COUNT$ characters in length.",
+    "message": "La saisie ne doit pas dépasser $COUNT$ caractères de long.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -2344,7 +2344,7 @@
     }
   },
   "inputForbiddenCharacters": {
-    "message": "The following characters are not allowed: $CHARACTERS$",
+    "message": "Les caractères suivants ne sont pas autorisés: $CHARACTERS$",
     "placeholders": {
       "characters": {
         "content": "$1",
@@ -2353,7 +2353,7 @@
     }
   },
   "inputMinValue": {
-    "message": "Input value must be at least $MIN$.",
+    "message": "La valeur d'entrée doit être au moins de $MIN$.",
     "placeholders": {
       "min": {
         "content": "$1",
@@ -2362,7 +2362,7 @@
     }
   },
   "inputMaxValue": {
-    "message": "Input value must not exceed $MAX$.",
+    "message": "La valeur d'entrée ne doit pas excéder $MAX$.",
     "placeholders": {
       "max": {
         "content": "$1",
@@ -2371,17 +2371,17 @@
     }
   },
   "multipleInputEmails": {
-    "message": "1 or more emails are invalid"
+    "message": "Un ou plusieurs adresses e-mail ne sont pas valides"
   },
   "inputTrimValidator": {
-    "message": "Input must not contain only whitespace.",
+    "message": "La saisie ne doit pas contenir que des espaces.",
     "description": "Notification to inform the user that a form's input can't contain only whitespace."
   },
   "inputEmail": {
-    "message": "Input is not an email address."
+    "message": "La saisie n'est pas une adresse e-mail."
   },
   "fieldsNeedAttention": {
-    "message": "$COUNT$ field(s) above need your attention.",
+    "message": "$COUNT$ champ(s) ci-dessus nécessitent votre attention.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -2390,22 +2390,22 @@
     }
   },
   "selectPlaceholder": {
-    "message": "-- Select --"
+    "message": "-- Sélectionner--"
   },
   "multiSelectPlaceholder": {
-    "message": "-- Type to filter --"
+    "message": "-- Tapez pour Filtrer --"
   },
   "multiSelectLoading": {
-    "message": "Retrieving options..."
+    "message": "Récupération des options..."
   },
   "multiSelectNotFound": {
-    "message": "No items found"
+    "message": "Aucun élément trouvé"
   },
   "multiSelectClearAll": {
-    "message": "Clear all"
+    "message": "Effacer tout"
   },
   "plusNMore": {
-    "message": "+ $QUANTITY$ more",
+    "message": "+ $QUANTITY$ de plus",
     "placeholders": {
       "quantity": {
         "content": "$1",
@@ -2414,6 +2414,6 @@
     }
   },
   "submenu": {
-    "message": "Submenu"
+    "message": "Sous-menu"
   }
 }
