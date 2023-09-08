@@ -103,7 +103,7 @@ export default class RuntimeBackground {
             await this.main.refreshMenu();
           }, 2000);
           this.main.avatarUpdateService.loadColorFromState();
-          this.configService.fetchServerConfig();
+          this.configService.triggerServerConfigFetch();
         }
         break;
       case "openPopup":
@@ -139,7 +139,7 @@ export default class RuntimeBackground {
       case "triggerAutofillScriptInjection":
         await this.autofillService.injectAutofillScripts(
           sender,
-          await this.configService.getFeatureFlagBool(FeatureFlag.AutofillV2)
+          await this.configService.getFeatureFlag<boolean>(FeatureFlag.AutofillV2)
         );
         break;
       case "bgCollectPageDetails":

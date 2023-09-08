@@ -169,7 +169,7 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
         this.singleOrgPolicyAppliesToActiveUser = policyAppliesToActiveUser;
       });
 
-    this.showSecretsManagerSubscribe = await this.configService.getFeatureFlagBool(
+    this.showSecretsManagerSubscribe = await this.configService.getFeatureFlag<boolean>(
       FeatureFlag.SecretsManagerBilling,
       false
     );

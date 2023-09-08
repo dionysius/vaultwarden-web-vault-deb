@@ -25,7 +25,7 @@ export class EnvironmentSelectorComponent implements OnInit {
   routeAndParams: string;
 
   async ngOnInit() {
-    this.euServerFlagEnabled = await this.configService.getFeatureFlagBool(
+    this.euServerFlagEnabled = await this.configService.getFeatureFlag<boolean>(
       FeatureFlag.DisplayEuEnvironmentFlag
     );
     const domain = Utils.getDomain(window.location.href);

@@ -242,7 +242,7 @@ export class SsoComponent {
   private async isTrustedDeviceEncEnabled(
     trustedDeviceOption: TrustedDeviceUserDecryptionOption
   ): Promise<boolean> {
-    const trustedDeviceEncryptionFeatureActive = await this.configService.getFeatureFlagBool(
+    const trustedDeviceEncryptionFeatureActive = await this.configService.getFeatureFlag<boolean>(
       FeatureFlag.TrustedDeviceEncryption
     );
 

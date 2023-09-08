@@ -232,7 +232,7 @@ export class AppComponent implements OnInit, OnDestroy {
             break;
           case "syncCompleted":
             await this.updateAppMenu();
-            await this.configService.fetchServerConfig();
+            this.configService.triggerServerConfigFetch();
             break;
           case "openSettings":
             await this.openModal<SettingsComponent>(SettingsComponent, this.settingsRef);

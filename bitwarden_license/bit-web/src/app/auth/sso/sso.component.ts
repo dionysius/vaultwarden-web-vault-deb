@@ -235,7 +235,7 @@ export class SsoComponent implements OnInit, OnDestroy {
       )
       .subscribe();
 
-    const tdeFeatureFlag = await this.configService.getFeatureFlagBool(
+    const tdeFeatureFlag = await this.configService.getFeatureFlag<boolean>(
       FeatureFlag.TrustedDeviceEncryption
     );
 

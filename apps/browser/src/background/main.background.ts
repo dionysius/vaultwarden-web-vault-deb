@@ -35,7 +35,6 @@ import { UserVerificationApiService } from "@bitwarden/common/auth/services/user
 import { UserVerificationService } from "@bitwarden/common/auth/services/user-verification/user-verification.service";
 import { AppIdService as AppIdServiceAbstraction } from "@bitwarden/common/platform/abstractions/app-id.service";
 import { ConfigApiServiceAbstraction } from "@bitwarden/common/platform/abstractions/config/config-api.service.abstraction";
-import { ConfigServiceAbstraction } from "@bitwarden/common/platform/abstractions/config/config.service.abstraction";
 import { CryptoFunctionService as CryptoFunctionServiceAbstraction } from "@bitwarden/common/platform/abstractions/crypto-function.service";
 import { CryptoService as CryptoServiceAbstraction } from "@bitwarden/common/platform/abstractions/crypto.service";
 import { EncryptService } from "@bitwarden/common/platform/abstractions/encrypt.service";
@@ -53,7 +52,6 @@ import { StateFactory } from "@bitwarden/common/platform/factories/state-factory
 import { GlobalState } from "@bitwarden/common/platform/models/domain/global-state";
 import { AppIdService } from "@bitwarden/common/platform/services/app-id.service";
 import { ConfigApiService } from "@bitwarden/common/platform/services/config/config-api.service";
-import { ConfigService } from "@bitwarden/common/platform/services/config/config.service";
 import { ConsoleLogService } from "@bitwarden/common/platform/services/console-log.service";
 import { ContainerService } from "@bitwarden/common/platform/services/container.service";
 import { EncryptServiceImplementation } from "@bitwarden/common/platform/services/cryptography/encrypt.service.implementation";
@@ -123,6 +121,7 @@ import { flagEnabled } from "../platform/flags";
 import { UpdateBadge } from "../platform/listeners/update-badge";
 import BrowserPopoutWindowService from "../platform/popup/browser-popout-window.service";
 import { BrowserStateService as StateServiceAbstraction } from "../platform/services/abstractions/browser-state.service";
+import { BrowserConfigService } from "../platform/services/browser-config.service";
 import { BrowserCryptoService } from "../platform/services/browser-crypto.service";
 import { BrowserEnvironmentService } from "../platform/services/browser-environment.service";
 import { BrowserI18nService } from "../platform/services/browser-i18n.service";
@@ -200,7 +199,7 @@ export default class MainBackground {
   avatarUpdateService: AvatarUpdateServiceAbstraction;
   mainContextMenuHandler: MainContextMenuHandler;
   cipherContextMenuHandler: CipherContextMenuHandler;
-  configService: ConfigServiceAbstraction;
+  configService: BrowserConfigService;
   configApiService: ConfigApiServiceAbstraction;
   devicesApiService: DevicesApiServiceAbstraction;
   devicesService: DevicesServiceAbstraction;
@@ -533,12 +532,15 @@ export default class MainBackground {
       this.authService,
       this.messagingService
     );
+
     this.configApiService = new ConfigApiService(this.apiService, this.authService);
-    this.configService = new ConfigService(
+
+    this.configService = new BrowserConfigService(
       this.stateService,
       this.configApiService,
       this.authService,
-      this.environmentService
+      this.environmentService,
+      true
     );
     this.browserPopoutWindowService = new BrowserPopoutWindowService();
 
@@ -682,6 +684,7 @@ export default class MainBackground {
     await this.notificationBackground.init();
     await this.commandsBackground.init();
 
+    this.configService.init();
     this.twoFactorService.init();
 
     await this.tabsBackground.init();

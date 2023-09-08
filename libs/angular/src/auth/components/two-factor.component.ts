@@ -257,7 +257,7 @@ export class TwoFactorComponent extends CaptchaProtectedComponent implements OnI
     trustedDeviceOption: TrustedDeviceUserDecryptionOption
   ): Promise<boolean> {
     const ssoTo2faFlowActive = this.route.snapshot.queryParamMap.get("sso") === "true";
-    const trustedDeviceEncryptionFeatureActive = await this.configService.getFeatureFlagBool(
+    const trustedDeviceEncryptionFeatureActive = await this.configService.getFeatureFlag<boolean>(
       FeatureFlag.TrustedDeviceEncryption
     );
 

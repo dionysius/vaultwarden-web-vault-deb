@@ -331,7 +331,7 @@ describe("SsoComponent", () => {
 
     describe("Trusted Device Encryption scenarios", () => {
       beforeEach(() => {
-        mockConfigService.getFeatureFlagBool.mockResolvedValue(true); // TDE enabled
+        mockConfigService.getFeatureFlag.mockResolvedValue(true); // TDE enabled
       });
 
       describe("Given Trusted Device Encryption is enabled and user needs to set a master password", () => {

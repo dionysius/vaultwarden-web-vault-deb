@@ -135,7 +135,7 @@ export class OrganizationSubscriptionCloudComponent implements OnInit, OnDestroy
     this.loading = false;
 
     // Remove the remaining lines when the sm-ga-billing flag is deleted
-    const smBillingEnabled = await this.configService.getFeatureFlagBool(
+    const smBillingEnabled = await this.configService.getFeatureFlag<boolean>(
       FeatureFlag.SecretsManagerBilling
     );
     this.showSecretsManagerSubscribe = this.showSecretsManagerSubscribe && smBillingEnabled;
