@@ -1425,7 +1425,10 @@
   "twoStepLoginDesc": {
     "message": "Допълнителна защита на абонамента чрез изискването на допълнително действие при вписване."
   },
-  "twoStepLoginOrganizationDescStart": {
+  "twoStepLoginTeamsDesc": {
+    "message": "Enable two-step login for your organization."
+  },
+  "twoStepLoginEnterpriseDescStart": {
     "message": "Enforce Bitwarden Two-step Login options for members by using the ",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enforce Bitwarden Two-step Login options for members by using the Two-step Login Policy.'"
   },
@@ -1925,7 +1928,7 @@
     "message": "1 GB пространство за файлове, които се шифрират."
   },
   "premiumSignUpTwoStepOptions": {
-    "message": "Proprietary two-step login options such as YubiKey and Duo."
+    "message": "Частно двустепенно удостоверяване чрез YubiKey и Duo."
   },
   "premiumSignUpEmergency": {
     "message": "Авариен достъп"
@@ -4758,10 +4761,10 @@
     "message": "Потребителят с най-големи права на достъп, който може да управлява всички настройки на доставчика, както и да има достъп до и да управлява клиентските организации."
   },
   "serviceUser": {
-    "message": "Service user"
+    "message": "Сервизен потребител"
   },
   "serviceUserDesc": {
-    "message": "Service users can access and manage all client organizations."
+    "message": "Сервизните потребители имат достъп до всички клиентски организации и могат да ги управляват."
   },
   "providerInviteUserDesc": {
     "message": "Може да поканите потребител към доставчика си, като попълните адреса му за електронна поща, с който е регистриран в Битуорден, по-долу. В случай, че потребителят не е регистриран, той автоматично ще получи покана и да се регистрира."
@@ -7015,12 +7018,6 @@
   },
   "next": {
     "message": "Next"
-  },
-  "usFlag": {
-    "message": "Знаме на САЩ"
-  },
-  "euFlag": {
-    "message": "Знаме на ЕС"
   },
   "selectedRegionFlag": {
     "message": "Знаме на избрания регион"

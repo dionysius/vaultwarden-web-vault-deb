@@ -1425,8 +1425,11 @@
   "twoStepLoginDesc": {
     "message": "ログイン時に追加の手順を必要としアカウントを保護します。"
   },
-  "twoStepLoginOrganizationDescStart": {
-    "message": "Bitwarden 2段階ログインの使用をメンバーに強制します",
+  "twoStepLoginTeamsDesc": {
+    "message": "組織の2段階認証を有効にする。"
+  },
+  "twoStepLoginEnterpriseDescStart": {
+    "message": "Bitwardenの2段階認証をメンバーに強制するには、次のようにします。 ",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enforce Bitwarden Two-step Login options for members by using the Two-step Login Policy.'"
   },
   "twoStepLoginPolicy": {
@@ -7015,12 +7018,6 @@
   },
   "next": {
     "message": "次へ"
-  },
-  "usFlag": {
-    "message": "アメリカ"
-  },
-  "euFlag": {
-    "message": "EU"
   },
   "selectedRegionFlag": {
     "message": "リージョン選択"

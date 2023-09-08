@@ -859,7 +859,7 @@
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "duoOrganizationDesc": {
-    "message": "Verificējiet ar savas organizācijas Duo Security, izmantojot Duo Mobile lietotni, SMS, tālruņa zvanu vai U2F drošības atslēgu.",
+    "message": "Apliecināšana ar savas apvienības Duo Security, izmantojot Duo Mobile lietotni, īsziņu, tālruņa zvanu vai U2F drošības atslēgu.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc": {
@@ -1425,7 +1425,10 @@
   "twoStepLoginDesc": {
     "message": "Nodrošināt kontu, pieprasot papildu darbību pieteikšanās brīdī."
   },
-  "twoStepLoginOrganizationDescStart": {
+  "twoStepLoginTeamsDesc": {
+    "message": "Iespējo divpakāpju pieteikšanaos savai apvienībai."
+  },
+  "twoStepLoginEnterpriseDescStart": {
     "message": "Piemērot Bitwarden divpakāpju pieteikšanās iespējas dalībniekiem ar ",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enforce Bitwarden Two-step Login options for members by using the Two-step Login Policy.'"
   },
@@ -7015,12 +7018,6 @@
   },
   "next": {
     "message": "Turpināt"
-  },
-  "usFlag": {
-    "message": "ASV karogs"
-  },
-  "euFlag": {
-    "message": "ES karogs"
   },
   "selectedRegionFlag": {
     "message": "Atlasītā apgabala karogs"

@@ -1425,7 +1425,10 @@
   "twoStepLoginDesc": {
     "message": "Zavarujte svoj račun z dodatno zaščito pri prijavi."
   },
-  "twoStepLoginOrganizationDescStart": {
+  "twoStepLoginTeamsDesc": {
+    "message": "Enable two-step login for your organization."
+  },
+  "twoStepLoginEnterpriseDescStart": {
     "message": "Enforce Bitwarden Two-step Login options for members by using the ",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enforce Bitwarden Two-step Login options for members by using the Two-step Login Policy.'"
   },
@@ -7015,12 +7018,6 @@
   },
   "next": {
     "message": "Next"
-  },
-  "usFlag": {
-    "message": "US flag"
-  },
-  "euFlag": {
-    "message": "EU flag"
   },
   "selectedRegionFlag": {
     "message": "Selected region flag"

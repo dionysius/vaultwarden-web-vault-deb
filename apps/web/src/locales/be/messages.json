@@ -1425,8 +1425,11 @@
   "twoStepLoginDesc": {
     "message": "Абараніце свой уліковы запіс з дапамогай дадатковага кроку праверкі падчас уваходу."
   },
-  "twoStepLoginOrganizationDescStart": {
-    "message": "Забяспечыць параметры двухэтапнага ўваходу Bitwarden для ўдзельнікаў выкарыстоўваючы ",
+  "twoStepLoginTeamsDesc": {
+    "message": "Enable two-step login for your organization."
+  },
+  "twoStepLoginEnterpriseDescStart": {
+    "message": "Enforce Bitwarden Two-step Login options for members by using the ",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enforce Bitwarden Two-step Login options for members by using the Two-step Login Policy.'"
   },
   "twoStepLoginPolicy": {
@@ -1925,7 +1928,7 @@
     "message": "1 ГБ зашыфраванага сховішча для далучаных файлаў."
   },
   "premiumSignUpTwoStepOptions": {
-    "message": "Proprietary two-step login options such as YubiKey and Duo."
+    "message": "Прапрыетарныя варыянты двухэтапнага ўваходу, такія як YubiKey, FIDO U2F і Duo."
   },
   "premiumSignUpEmergency": {
     "message": "Экстранны доступ"
@@ -2041,7 +2044,7 @@
     }
   },
   "paymentChargedWithUnpaidSubscription": {
-    "message": "Your payment method will be charged for any unpaid subscriptions."
+    "message": "Ваш метад аплаты будзе выкарыстаны для любых неаплачаных падпісак."
   },
   "paymentChargedWithTrial": {
     "message": "У ваш тарыфны план уключаны выпрабавальны перыяд на 7 дзён. У вас не будзе спагнана плата згодна з выбраным спосабам аплаты пакуль не завяршыцца выпрабавальны перыяд. Вы можаце скасаваць яго ў любы момант."
@@ -3540,7 +3543,7 @@
     "message": "Выберыце дзеянне, якое неабходна выканаць пасля завяршэння часу чакання сховішча."
   },
   "vaultTimeoutLogoutDesc": {
-    "message": "Choose when your vault will be logged out."
+    "message": "Выберыце дзеянне пры якім адбудзецца выхад са сховішча."
   },
   "oneMinute": {
     "message": "1 хвіліна"
@@ -6842,58 +6845,58 @@
     "message": "Абнавіце налады KDF"
   },
   "loginInitiated": {
-    "message": "Login initiated"
+    "message": "Ініцыяваны ўваход"
   },
   "deviceApprovalRequired": {
-    "message": "Device approval required. Select an approval option below:"
+    "message": "Патрабуецца ўхваленне прылады. Выберыце параметры ўхвалення ніжэй:"
   },
   "rememberThisDevice": {
-    "message": "Remember this device"
+    "message": "Запомніць гэту прыладу"
   },
   "uncheckIfPublicDevice": {
-    "message": "Uncheck if using a public device"
+    "message": "Здыміце пазнаку, калі выкарыстоўваеце агульнадаступную прыладу"
   },
   "approveFromYourOtherDevice": {
-    "message": "Approve from your other device"
+    "message": "Ухваліць з іншай вашай прылады"
   },
   "requestAdminApproval": {
-    "message": "Request admin approval"
+    "message": "Запытаць ухваленне адміністратара"
   },
   "approveWithMasterPassword": {
-    "message": "Approve with master password"
+    "message": "Ухваліць з дапамогай асноўнага пароля"
   },
   "trustedDeviceEncryption": {
-    "message": "Trusted device encryption"
+    "message": "Шыфраванне даверанай прылады"
   },
   "trustedDevices": {
     "message": "Давераныя прылады"
   },
   "memberDecryptionOptionTdeDescriptionPartOne": {
-    "message": "Once authenticated, members will decrypt vault data using a key stored on their device. The",
+    "message": "Пасля аўтэнтыфікацыі ўдзельнікі расшыфроўваюць даныя сховішча з выкарыстаннем ключа, які захоўваецца на іх прыладах.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The single organization policy, SSO Required policy, and account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
   "memberDecryptionOptionTdeDescriptionLinkOne": {
-    "message": "single organization",
+    "message": "адзіная арганізацыя",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The single organization policy, SSO required policy, and account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
   "memberDecryptionOptionTdeDescriptionPartTwo": {
-    "message": "policy,",
+    "message": "палітыка",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The single organization policy, SSO required policy, and account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
   "memberDecryptionOptionTdeDescriptionLinkTwo": {
-    "message": "SSO required",
+    "message": "патрабуецца SSO",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The single organization policy, SSO required policy, and account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
   "memberDecryptionOptionTdeDescriptionPartThree": {
-    "message": "policy, and",
+    "message": "палітыка і",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The single organization policy, SSO required policy, and account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
   "memberDecryptionOptionTdeDescriptionLinkThree": {
-    "message": "account recovery administration",
+    "message": "адміністраванне аднаўлення ўліковага запісу",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The single organization policy, SSO required policy, and account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
   "memberDecryptionOptionTdeDescriptionPartFour": {
-    "message": "policy with automatic enrollment will turn on when this option is used.",
+    "message": "палітыка з аўтаматычнай рэгістрацыяй уключаецца пры выкарыстанні гэтага параметра.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The single organization policy, SSO required policy, and account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
   "notFound": {
@@ -6984,7 +6987,7 @@
     "message": "Выдаленне ўдзельнікаў у якіх адсутнічае асноўны пароль і для якіх ён не быў прызначаны папярэдне можа стаць прычынай абмежавання доступу да іх уліковага запісу."
   },
   "approvedAuthRequest": {
-    "message": "Approved device for $ID$.",
+    "message": "Ухваленне прылады для $ID$.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -6993,7 +6996,7 @@
     }
   },
   "rejectedAuthRequest": {
-    "message": "Denied device for $ID$.",
+    "message": "Адхіленне прылады для $ID$.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -7002,7 +7005,7 @@
     }
   },
   "requestedDeviceApproval": {
-    "message": "Requested device approval."
+    "message": "Запыт ухвалення прылады."
   },
   "startYour7DayFreeTrialOfBitwardenFor": {
     "message": "Пачніце 7-дзённую бясплатную пробную версію для $ORG$",
@@ -7016,38 +7019,32 @@
   "next": {
     "message": "Далей"
   },
-  "usFlag": {
-    "message": "Сцяг ЗША"
-  },
-  "euFlag": {
-    "message": "Сцяг ЕС"
-  },
   "selectedRegionFlag": {
     "message": "Сцяг выбранага рэгіёна"
   },
   "accountSuccessfullyCreated": {
-    "message": "Account successfully created!"
+    "message": "Уліковы запіс паспяхова створаны!"
   },
   "adminApprovalRequested": {
-    "message": "Admin approval requested"
+    "message": "Патрабуецца ўхваленне адміністратара"
   },
   "adminApprovalRequestSentToAdmins": {
-    "message": "Your request has been sent to your admin."
+    "message": "Ваш запыт адпраўлены адміністратару."
   },
   "youWillBeNotifiedOnceApproved": {
-    "message": "You will be notified once approved."
+    "message": "Вы атрымаеце апавяшчэння пасля яго ўхвалення."
   },
   "troubleLoggingIn": {
-    "message": "Trouble logging in?"
+    "message": "Праблемы з уваходам?"
   },
   "loginApproved": {
-    "message": "Login approved"
+    "message": "Уваход ухвалены"
   },
   "userEmailMissing": {
-    "message": "User email missing"
+    "message": "Адсутнічае электронная пошта карыстальніка"
   },
   "deviceTrusted": {
-    "message": "Device trusted"
+    "message": "Давераная прылада"
   },
   "sendsNoItemsTitle": {
     "message": "Няма актыўных Send'аў",
@@ -7160,7 +7157,7 @@
     "message": "Максімальны патэнцыйны кошт сэрвісных уліковых запісаў"
   },
   "loggedInExclamation": {
-    "message": "Logged in!"
+    "message": "Вы ўвайшлі!"
   },
   "smBetaEndedDesc": {
     "message": "Перыяд бэта-тэсціравання менеджара сакрэтаў завершыцца $BETA_ENDING_DATE$. Дадайце менеджар сакрэтаў у сваю платную падпіску і захавайце доступ да даных (засталося дзён: $DAYS$). Звяжыцеся з нашай службай падтрымкі, каб дадаць менеджар сакрэтаў у сваю платную падпіску.",

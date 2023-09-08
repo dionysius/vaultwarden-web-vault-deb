@@ -1425,8 +1425,11 @@
   "twoStepLoginDesc": {
     "message": "Beveilig je account door een extra stap te vereisen bij het inloggen."
   },
-  "twoStepLoginOrganizationDescStart": {
-    "message": "Bitwarden tweestapsaanmeldingsopties afdwingen voor leden door gebruik te maken van de ",
+  "twoStepLoginTeamsDesc": {
+    "message": "Tweestapsaanmelding voor je organisatie activeren."
+  },
+  "twoStepLoginEnterpriseDescStart": {
+    "message": "Bitwarden-tweestapsaanmeldingsinstellingen afdwingen voor leden via het ",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enforce Bitwarden Two-step Login options for members by using the Two-step Login Policy.'"
   },
   "twoStepLoginPolicy": {
@@ -7015,12 +7018,6 @@
   },
   "next": {
     "message": "Volgende"
-  },
-  "usFlag": {
-    "message": "VS-vlag"
-  },
-  "euFlag": {
-    "message": "EU-vlag"
   },
   "selectedRegionFlag": {
     "message": "Geselecteerde regionale vlag"

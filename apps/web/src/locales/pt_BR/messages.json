@@ -1425,8 +1425,11 @@
   "twoStepLoginDesc": {
     "message": "Proteja a sua conta exigindo uma etapa adicional ao iniciar sessão."
   },
-  "twoStepLoginOrganizationDescStart": {
-    "message": "Requerer Login em Duas Etapas no Bitwarden para membros usando o ",
+  "twoStepLoginTeamsDesc": {
+    "message": "Enable two-step login for your organization."
+  },
+  "twoStepLoginEnterpriseDescStart": {
+    "message": "Enforce Bitwarden Two-step Login options for members by using the ",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enforce Bitwarden Two-step Login options for members by using the Two-step Login Policy.'"
   },
   "twoStepLoginPolicy": {
@@ -1925,7 +1928,7 @@
     "message": "1 GB de armazenamento de arquivos encriptados."
   },
   "premiumSignUpTwoStepOptions": {
-    "message": "Proprietary two-step login options such as YubiKey and Duo."
+    "message": "Opções adicionais de login em duas etapas, como YubiKey, FIDO U2F e Duo."
   },
   "premiumSignUpEmergency": {
     "message": "Acesso de Emergência"
@@ -7015,12 +7018,6 @@
   },
   "next": {
     "message": "Avançar"
-  },
-  "usFlag": {
-    "message": "Bandeira dos EUA"
-  },
-  "euFlag": {
-    "message": "Bandeira Europa"
   },
   "selectedRegionFlag": {
     "message": "Sinalização de região selecionada"

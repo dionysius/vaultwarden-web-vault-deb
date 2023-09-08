@@ -1425,8 +1425,11 @@
   "twoStepLoginDesc": {
     "message": "Proteja a sua conta exigindo um passo adicional ao iniciar sessão."
   },
-  "twoStepLoginOrganizationDescStart": {
-    "message": "Reforce as opções de verificação de dois passos do Bitwarden para os membros, utilizando as ",
+  "twoStepLoginTeamsDesc": {
+    "message": "Ativar verificação de dois passos para a sua organização."
+  },
+  "twoStepLoginEnterpriseDescStart": {
+    "message": "Aplicar as opções de verificação de dois passos do Bitwarden para os membros, utilizando as ",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enforce Bitwarden Two-step Login options for members by using the Two-step Login Policy.'"
   },
   "twoStepLoginPolicy": {
@@ -1925,7 +1928,7 @@
     "message": "1 GB de armazenamento encriptado para anexos de ficheiros."
   },
   "premiumSignUpTwoStepOptions": {
-    "message": "Proprietary two-step login options such as YubiKey and Duo."
+    "message": "Opções proprietárias de verificação de dois passos, como YubiKey e Duo."
   },
   "premiumSignUpEmergency": {
     "message": "Acesso de emergência"
@@ -3631,7 +3634,7 @@
     "message": "Este item tem anexos de ficheiros antigos que precisam de ser corrigidos."
   },
   "attachmentFixDescription": {
-    "message": "Este anexo utiliza uma encriptação desatualizada. Selecione \"Corrigir\" para transferir, voltar a encriptar e voltar a carregar o anexo."
+    "message": "Este anexo utiliza uma encriptação desatualizada. Selecione \"Corrigir\" para transferir, reencriptar e recarregar o anexo."
   },
   "fix": {
     "message": "Corrigir",
@@ -7016,12 +7019,6 @@
   "next": {
     "message": "Avançar"
   },
-  "usFlag": {
-    "message": "Bandeira dos EUA"
-  },
-  "euFlag": {
-    "message": "Bandeira da UE"
-  },
   "selectedRegionFlag": {
     "message": "Bandeira da região selecionada"
   },
@@ -7157,7 +7154,7 @@
     "message": "Limite de contas de serviço (opcional)"
   },
   "maxServiceAccountCost": {
-    "message": "Custo máximo potencial da conta de serviço"
+    "message": "Custo potencial máximo da conta de serviço"
   },
   "loggedInExclamation": {
     "message": "Sessão iniciada!"

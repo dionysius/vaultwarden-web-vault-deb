@@ -392,7 +392,7 @@
     "message": "Редагування"
   },
   "viewItem": {
-    "message": "Перегляд запису"
+    "message": "Переглянути запис"
   },
   "new": {
     "message": "Новий",
@@ -1425,8 +1425,11 @@
   "twoStepLoginDesc": {
     "message": "Захистіть обліковий запис, вимагаючи додатковий крок перевірки під час входу."
   },
-  "twoStepLoginOrganizationDescStart": {
-    "message": "Зобов'язувати учасників використовувати двоетапну перевірку Bitwarden за допомогою ",
+  "twoStepLoginTeamsDesc": {
+    "message": "Enable two-step login for your organization."
+  },
+  "twoStepLoginEnterpriseDescStart": {
+    "message": "Enforce Bitwarden Two-step Login options for members by using the ",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enforce Bitwarden Two-step Login options for members by using the Two-step Login Policy.'"
   },
   "twoStepLoginPolicy": {
@@ -1925,7 +1928,7 @@
     "message": "1 ГБ зашифрованого сховища для файлів."
   },
   "premiumSignUpTwoStepOptions": {
-    "message": "Proprietary two-step login options such as YubiKey and Duo."
+    "message": "Додаткові можливості двоетапної авторизації, як-от YubiKey та Duo."
   },
   "premiumSignUpEmergency": {
     "message": "Екстрений доступ"
@@ -2041,7 +2044,7 @@
     }
   },
   "paymentChargedWithUnpaidSubscription": {
-    "message": "Your payment method will be charged for any unpaid subscriptions."
+    "message": "Ваш спосіб оплати буди використано для платежів за будь-які несплачені передплати."
   },
   "paymentChargedWithTrial": {
     "message": "Ваш тарифний план має 7 днів безплатного пробного періоду. З вас не буде стягнуто плату до завершення цього періоду. Ви можете скасувати це в будь-який час."
@@ -3084,7 +3087,7 @@
     "message": "Пристрій"
   },
   "view": {
-    "message": "Перегляд"
+    "message": "Переглянути"
   },
   "invalidDateRange": {
     "message": "Недійсний проміжок часу."
@@ -7015,12 +7018,6 @@
   },
   "next": {
     "message": "Далі"
-  },
-  "usFlag": {
-    "message": "Прапор США"
-  },
-  "euFlag": {
-    "message": "Прапор ЄС"
   },
   "selectedRegionFlag": {
     "message": "Прапор вибраного регіону"

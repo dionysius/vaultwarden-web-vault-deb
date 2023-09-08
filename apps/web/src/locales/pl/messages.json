@@ -1425,7 +1425,10 @@
   "twoStepLoginDesc": {
     "message": "Zabezpiecz swoje konto poprzez wymóg wykonania dodatkowego kroku podczas logowania."
   },
-  "twoStepLoginOrganizationDescStart": {
+  "twoStepLoginTeamsDesc": {
+    "message": "Włącz dwustopniowe logowanie dla swojej organizacji."
+  },
+  "twoStepLoginEnterpriseDescStart": {
     "message": "Wymuszaj opcje logowania dwustopniowego Bitwarden dla użytkowników za pomocą ",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enforce Bitwarden Two-step Login options for members by using the Two-step Login Policy.'"
   },
@@ -7015,12 +7018,6 @@
   },
   "next": {
     "message": "Dalej"
-  },
-  "usFlag": {
-    "message": "Flaga USA"
-  },
-  "euFlag": {
-    "message": "Flaga UE"
   },
   "selectedRegionFlag": {
     "message": "Flaga wybranego regionu"

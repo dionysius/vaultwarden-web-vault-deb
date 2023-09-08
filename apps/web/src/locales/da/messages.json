@@ -1425,7 +1425,10 @@
   "twoStepLoginDesc": {
     "message": "Beskyt kontoen ved at kræve et ekstra trin under indlogning."
   },
-  "twoStepLoginOrganizationDescStart": {
+  "twoStepLoginTeamsDesc": {
+    "message": "Aktivér totrins-login for organisationen."
+  },
+  "twoStepLoginEnterpriseDescStart": {
     "message": "Håndhæv Bitwarden totrins-login indstillinger for medlemmer vha. ",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enforce Bitwarden Two-step Login options for members by using the Two-step Login Policy.'"
   },
@@ -7015,12 +7018,6 @@
   },
   "next": {
     "message": "Næste"
-  },
-  "usFlag": {
-    "message": "Amerikansk flag"
-  },
-  "euFlag": {
-    "message": "EU-flag"
   },
   "selectedRegionFlag": {
     "message": "Valgte områdeflag"

@@ -982,7 +982,7 @@
     "message": "Экспорт"
   },
   "exportVault": {
-    "message": "Экспортировать хранилище"
+    "message": "Экспорт хранилища"
   },
   "exportSecrets": {
     "message": "Экспорт секретов"
@@ -1319,10 +1319,10 @@
     "message": "Файл содержит неназначенные элементы."
   },
   "selectFormat": {
-    "message": "Выберите формат файла импорта"
+    "message": "Выберите формат импортируемого файла"
   },
   "selectImportFile": {
-    "message": "Выберите файл импорта"
+    "message": "Выберите импортируемый файл"
   },
   "chooseFile": {
     "message": "Выбрать файл"
@@ -1425,7 +1425,10 @@
   "twoStepLoginDesc": {
     "message": "Защитите свою учетную запись, при помощи дополнительного шага при авторизации."
   },
-  "twoStepLoginOrganizationDescStart": {
+  "twoStepLoginTeamsDesc": {
+    "message": "Включить двухэтапную аутентификацию для вашей организации."
+  },
+  "twoStepLoginEnterpriseDescStart": {
     "message": "Применить параметры двухэтапной аутентификации Bitwarden для пользователей, используя ",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enforce Bitwarden Two-step Login options for members by using the Two-step Login Policy.'"
   },
@@ -3649,7 +3652,7 @@
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "fingerprintMatchInfo": {
-    "message": "Убедитесь, что ваше хранилище разблокировано и фраза отпечатка пальца совпадает на другом устройстве."
+    "message": "Убедитесь, что ваше хранилище разблокировано и фраза отпечатка совпадает на другом устройстве."
   },
   "fingerprintPhraseHeader": {
     "message": "Фраза отпечатка"
@@ -6775,7 +6778,7 @@
     "message": "Удалить доступ"
   },
   "checkForBreaches": {
-    "message": "Проверьте известные случаи утечки данных для этого пароля"
+    "message": "Проверять известные случаи утечки данных для этого пароля"
   },
   "exposedMasterPassword": {
     "message": "Мастер-пароль скомпрометирован"
@@ -7015,12 +7018,6 @@
   },
   "next": {
     "message": "Далее"
-  },
-  "usFlag": {
-    "message": "Флаг США"
-  },
-  "euFlag": {
-    "message": "Флаг ЕС"
   },
   "selectedRegionFlag": {
     "message": "Флаг выбранного региона"
