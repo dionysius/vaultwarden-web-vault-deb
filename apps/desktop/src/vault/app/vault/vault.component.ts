@@ -207,7 +207,6 @@ export class VaultComponent implements OnInit, OnDestroy {
     if (!this.syncService.syncInProgress) {
       await this.load();
     }
-    document.body.classList.remove("layout_frontend");
 
     this.searchBarService.setEnabled(true);
     this.searchBarService.setPlaceholderText(this.i18nService.t("searchVault"));
@@ -226,7 +225,6 @@ export class VaultComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.searchBarService.setEnabled(false);
     this.broadcasterService.unsubscribe(BroadcasterSubscriptionId);
-    document.body.classList.add("layout_frontend");
   }
 
   async load() {
