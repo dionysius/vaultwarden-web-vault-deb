@@ -169,6 +169,7 @@ const RELOAD_CALLBACK = new InjectionToken<() => any>("RELOAD_CALLBACK");
         MessagingServiceAbstraction,
         I18nServiceAbstraction,
         EncryptedMessageHandlerService,
+        DialogService,
       ],
     },
     {

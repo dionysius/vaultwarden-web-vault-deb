@@ -9,8 +9,7 @@ import {
 import { DomSanitizer } from "@angular/platform-browser";
 import { NavigationEnd, Router, RouterOutlet } from "@angular/router";
 import { IndividualConfig, ToastrService } from "ngx-toastr";
-import { filter, concatMap, Subject, takeUntil } from "rxjs";
-import Swal from "sweetalert2";
+import { filter, concatMap, Subject, takeUntil, firstValueFrom } from "rxjs";
 
 import { AuthService } from "@bitwarden/common/auth/abstractions/auth.service";
 import { BroadcasterService } from "@bitwarden/common/platform/abstractions/broadcaster.service";
@@ -23,6 +22,7 @@ import { BrowserApi } from "../platform/browser/browser-api";
 import { BrowserStateService } from "../platform/services/abstractions/browser-state.service";
 
 import { routerTransition } from "./app-routing.animations";
+import { DesktopSyncVerificationDialogComponent } from "./components/desktop-sync-verification-dialog.component";
 
 @Component({
   selector: "app-root",
@@ -113,10 +113,10 @@ export class AppComponent implements OnInit, OnDestroy {
           });
         }
       } else if (msg.command === "showDialog") {
-        await this.showDialog(msg);
+        await this.ngZone.run(() => this.showDialog(msg));
       } else if (msg.command === "showNativeMessagingFinterprintDialog") {
         // TODO: Should be refactored to live in another service.
-        await this.showNativeMessagingFingerprintDialog(msg);
+        await this.ngZone.run(() => this.showNativeMessagingFingerprintDialog(msg));
       } else if (msg.command === "showToast") {
         this.ngZone.run(() => {
           this.showToast(msg);
@@ -242,19 +242,11 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   private async showNativeMessagingFingerprintDialog(msg: any) {
-    await Swal.fire({
-      heightAuto: false,
-      buttonsStyling: false,
-      icon: "warning",
-      iconHtml: '<i class="swal-custom-icon bwi bwi-exclamation-triangle text-warning"></i>',
-      html: `${this.i18nService.t("desktopIntegrationVerificationText")}<br><br><strong>${
-        msg.fingerprint
-      }</strong>`,
-      titleText: this.i18nService.t("desktopSyncVerificationTitle"),
-      showConfirmButton: true,
-      confirmButtonText: this.i18nService.t("ok"),
-      timer: 300000,
+    const dialogRef = DesktopSyncVerificationDialogComponent.open(this.dialogService, {
+      fingerprint: msg.fingerprint,
     });
+
+    return firstValueFrom(dialogRef.closed);
   }
 
   private async clearComponentStates() {

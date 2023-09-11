@@ -15,9 +15,9 @@ import {
   switchMap,
   takeUntil,
 } from "rxjs";
-import Swal from "sweetalert2";
 
 import { ModalService } from "@bitwarden/angular/services/modal.service";
+import { FingerprintDialogComponent } from "@bitwarden/auth";
 import { VaultTimeoutSettingsService } from "@bitwarden/common/abstractions/vault-timeout/vault-timeout-settings.service";
 import { VaultTimeoutService } from "@bitwarden/common/abstractions/vault-timeout/vault-timeout.service";
 import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
@@ -39,6 +39,7 @@ import { SetPinComponent } from "../components/set-pin.component";
 import { PopupUtilsService } from "../services/popup-utils.service";
 
 import { AboutComponent } from "./about.component";
+import { AwaitDesktopDialogComponent } from "./await-desktop-dialog.component";
 
 const RateUrls = {
   [DeviceType.ChromeExtension]:
@@ -361,25 +362,15 @@ export class SettingsComponent implements OnInit {
         return;
       }
 
-      const submitted = Swal.fire({
-        heightAuto: false,
-        buttonsStyling: false,
-        titleText: this.i18nService.t("awaitDesktop"),
-        text: this.i18nService.t("awaitDesktopDesc"),
-        icon: "info",
-        iconHtml: '<i class="swal-custom-icon bwi bwi-info-circle text-info"></i>',
-        showCancelButton: true,
-        cancelButtonText: this.i18nService.t("cancel"),
-        showConfirmButton: false,
-        allowOutsideClick: false,
-      });
+      const awaitDesktopDialogRef = AwaitDesktopDialogComponent.open(this.dialogService);
+      const awaitDesktopDialogClosed = firstValueFrom(awaitDesktopDialogRef.closed);
 
       await this.stateService.setBiometricAwaitingAcceptance(true);
       await this.cryptoService.refreshAdditionalKeys();
 
       await Promise.race([
-        submitted.then(async (result) => {
-          if (result.dismiss === Swal.DismissReason.cancel) {
+        awaitDesktopDialogClosed.then(async (result) => {
+          if (result) {
             this.form.controls.biometric.setValue(false);
             await this.stateService.setBiometricAwaitingAcceptance(null);
           }
@@ -388,8 +379,6 @@ export class SettingsComponent implements OnInit {
           .authenticateBiometric()
           .then((result) => {
             this.form.controls.biometric.setValue(result);
-
-            Swal.close();
             if (!result) {
               this.platformUtilsService.showToast(
                 "error",
@@ -411,6 +400,9 @@ export class SettingsComponent implements OnInit {
               cancelButtonText: null,
               type: "danger",
             });
+          })
+          .finally(() => {
+            awaitDesktopDialogRef.close(false);
           }),
       ]);
     } else {
@@ -497,27 +489,12 @@ export class SettingsComponent implements OnInit {
     const fingerprint = await this.cryptoService.getFingerprint(
       await this.stateService.getUserId()
     );
-    const p = document.createElement("p");
-    p.innerText = this.i18nService.t("yourAccountsFingerprint") + ":";
-    const p2 = document.createElement("p");
-    p2.innerText = fingerprint.join("-");
-    const div = document.createElement("div");
-    div.appendChild(p);
-    div.appendChild(p2);
 
-    const result = await Swal.fire({
-      heightAuto: false,
-      buttonsStyling: false,
-      html: div,
-      showCancelButton: true,
-      cancelButtonText: this.i18nService.t("close"),
-      showConfirmButton: true,
-      confirmButtonText: this.i18nService.t("learnMore"),
+    const dialogRef = FingerprintDialogComponent.open(this.dialogService, {
+      fingerprint,
     });
 
-    if (result.value) {
-      this.platformUtilsService.launchUri("https://bitwarden.com/help/fingerprint-phrase/");
-    }
+    return firstValueFrom(dialogRef.closed);
   }
 
   rate() {
