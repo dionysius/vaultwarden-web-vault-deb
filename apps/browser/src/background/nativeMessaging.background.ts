@@ -422,9 +422,10 @@ export class NativeMessagingBackground {
   }
 
   private async showFingerprintDialog() {
-    const fingerprint = (
-      await this.cryptoService.getFingerprint(await this.stateService.getUserId(), this.publicKey)
-    ).join(" ");
+    const fingerprint = await this.cryptoService.getFingerprint(
+      await this.stateService.getUserId(),
+      this.publicKey
+    );
 
     this.messagingService.send("showNativeMessagingFinterprintDialog", {
       fingerprint: fingerprint,
