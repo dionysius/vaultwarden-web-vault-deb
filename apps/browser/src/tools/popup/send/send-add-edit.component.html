@@ -27,7 +27,7 @@
       icon="bwi-external-link bwi-rotate-270 bwi-fw"
       [clickable]="true"
       title="{{ 'sendFileCalloutHeader' | i18n }}"
-      *ngIf="showFilePopoutMessage && send.type === sendType.File && !disableSend"
+      *ngIf="showFilePopoutMessage && type === sendType.File && !disableSend"
       (click)="popOutWindow()"
     >
       <div *ngIf="showChromiumFileWarning">{{ "sendLinuxChromiumFileWarning" | i18n }}</div>
