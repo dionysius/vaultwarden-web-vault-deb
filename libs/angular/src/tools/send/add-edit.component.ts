@@ -11,6 +11,7 @@ import { LogService } from "@bitwarden/common/platform/abstractions/log.service"
 import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
+import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { EncArrayBuffer } from "@bitwarden/common/platform/models/domain/enc-array-buffer";
 import { SendType } from "@bitwarden/common/tools/send/enums/send-type";
 import { Send } from "@bitwarden/common/tools/send/models/domain/send";
@@ -67,7 +68,6 @@ export class AddEditComponent implements OnInit, OnDestroy {
   disableHideEmail = false;
   send: SendView;
   hasPassword: boolean;
-  password: string;
   showPassword = false;
   formPromise: Promise<any>;
   deletePromise: Promise<any>;
@@ -252,7 +252,7 @@ export class AddEditComponent implements OnInit, OnDestroy {
     this.send.disabled = this.formGroup.controls.disabled.value;
     this.send.type = this.type;
 
-    if (this.send.name == null || this.send.name === "") {
+    if (Utils.isNullOrWhitespace(this.send.name)) {
       this.platformUtilsService.showToast(
         "error",
         this.i18nService.t("errorOccurred"),
@@ -286,11 +286,8 @@ export class AddEditComponent implements OnInit, OnDestroy {
       }
     }
 
-    if (
-      this.formGroup.controls.password.value != null &&
-      this.formGroup.controls.password.value.trim() === ""
-    ) {
-      this.password = null;
+    if (Utils.isNullOrWhitespace(this.send.password)) {
+      this.send.password = null;
     }
 
     this.formPromise = this.encryptSend(file).then(async (encSend) => {
@@ -379,12 +376,7 @@ export class AddEditComponent implements OnInit, OnDestroy {
   }
 
   protected async encryptSend(file: File): Promise<[Send, EncArrayBuffer]> {
-    const sendData = await this.sendService.encrypt(
-      this.send,
-      file,
-      this.formGroup.controls.password.value,
-      null
-    );
+    const sendData = await this.sendService.encrypt(this.send, file, this.send.password, null);
 
     // Parse dates
     try {
@@ -420,7 +412,7 @@ export class AddEditComponent implements OnInit, OnDestroy {
       hideEmail: this.send?.hideEmail ?? false,
       disabled: this.send?.disabled ?? false,
       type: this.send.type ?? this.type,
-      password: "",
+      password: null,
 
       selectedDeletionDatePreset: this.editMode ? DatePreset.Custom : DatePreset.SevenDays,
       selectedExpirationDatePreset: this.editMode ? DatePreset.Custom : DatePreset.Never,
