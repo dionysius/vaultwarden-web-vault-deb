@@ -339,7 +339,7 @@
     "message": "ساير"
   },
   "unlockMethodNeededToChangeTimeoutActionDesc": {
-    "message": "Set up an unlock method to change your vault timeout action."
+    "message": "یک روش بازگشایی برای پایان زمان مجاز تنظیم کنید."
   },
   "rateExtension": {
     "message": "به این افزونه امتیاز دهید"
@@ -634,10 +634,10 @@
     "message": "به‌روزرسانی"
   },
   "notificationUnlockDesc": {
-    "message": "Unlock your Bitwarden vault to complete the auto-fill request."
+    "message": "برای پر کردن خودکار گاوصندوق Bitwarden خود را باز کنید."
   },
   "notificationUnlock": {
-    "message": "Unlock"
+    "message": "بازگشایی"
   },
   "enableContextMenuItem": {
     "message": "نمایش گزینه‌های منوی زمینه"
@@ -796,7 +796,7 @@
     "message": "۱ گیگابایت فضای ذخیره سازی رمزگذاری شده برای پیوست های پرونده."
   },
   "premiumSignUpTwoStepOptions": {
-    "message": "Proprietary two-step login options such as YubiKey and Duo."
+    "message": "گزینه های ورود اضافی دو مرحله ای مانند YubiKey و Duo."
   },
   "ppremiumSignUpReports": {
     "message": "گزارش‌های بهداشت رمز عبور، سلامت حساب و نقض داده‌ها برای ایمن نگهداشتن گاوصندوق شما."
@@ -1606,10 +1606,10 @@
     "message": "بیومتریک مرورگر در این دستگاه پشتیبانی نمی‌شود."
   },
   "biometricsFailedTitle": {
-    "message": "Biometrics failed"
+    "message": "زیست‌سنجی ناتمام ماند"
   },
   "biometricsFailedDesc": {
-    "message": "Biometrics cannot be completed, consider using a master password or logging out. If this persists, please contact Bitwarden support."
+    "message": "زیست‌سنجی نمی تواند انجام شود، استفاده از کلمه عبور اصلی یا خروج را در نظر بگیرید. اگر این مشکل ادامه یافت لطفا با پشتیبانی Bitwarden تماس بگیرید."
   },
   "nativeMessaginPermissionErrorTitle": {
     "message": "مجوز ارائه نشده است"
@@ -1991,8 +1991,8 @@
   "exportingPersonalVaultTitle": {
     "message": "برون ریزی گاو‌صندوق شخصی"
   },
-  "exportingPersonalVaultDescription": {
-    "message": "فقط موارد گاو‌صندوق شخصی مرتبط با $EMAIL$ برون ریزی خواهد شد. موارد گاو‌صندوق سازمان شامل نخواهد شد.",
+  "exportingIndividualVaultDescription": {
+    "message": "Only the individual vault items associated with $EMAIL$ will be exported. Organization vault items will not be included. Only vault item information will be exported and will not include associated attachments.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -2093,7 +2093,7 @@
     "message": "نسخه سرور"
   },
   "selfHostedServer": {
-    "message": "self-hosted"
+    "message": "خود میزبان"
   },
   "thirdParty": {
     "message": "شخص ثالث"
@@ -2153,7 +2153,7 @@
     "message": "یک اعلان به دستگاه شما ارسال شده است."
   },
   "loginInitiated": {
-    "message": "Login initiated"
+    "message": "ورود به سیستم آغاز شد"
   },
   "exposedMasterPassword": {
     "message": "کلمه عبور اصلی افشا شده"
@@ -2234,34 +2234,34 @@
     }
   },
   "loggingInOn": {
-    "message": "Logging in on"
+    "message": "ورود به عنوان"
   },
   "opensInANewWindow": {
     "message": "در پنجره جدید باز می‌شود"
   },
   "deviceApprovalRequired": {
-    "message": "Device approval required. Select an approval option below:"
+    "message": "تایید دستگاه لازم است. یک روش تایید برگزینید:"
   },
   "rememberThisDevice": {
-    "message": "Remember this device"
+    "message": "این دستگاه را به خاطر بسپار"
   },
   "uncheckIfPublicDevice": {
-    "message": "Uncheck if using a public device"
+    "message": "بردارید اگر از دستگاه عمومی استفاده میکنید"
   },
   "approveFromYourOtherDevice": {
-    "message": "Approve from your other device"
+    "message": "تایید با دستگاه دیگرتان"
   },
   "requestAdminApproval": {
-    "message": "Request admin approval"
+    "message": "درخواست تایید مدیر"
   },
   "approveWithMasterPassword": {
-    "message": "Approve with master password"
+    "message": "تایید با کلمه عبور اصلی"
   },
   "ssoIdentifierRequired": {
-    "message": "Organization SSO identifier is required."
+    "message": "شناسه سازمان SSO مورد نیاز است."
   },
   "eu": {
-    "message": "EU",
+    "message": "اروپا",
     "description": "European Union"
   },
   "usDomain": {
@@ -2280,40 +2280,40 @@
     "message": "نمایش"
   },
   "accountSuccessfullyCreated": {
-    "message": "Account successfully created!"
+    "message": "حساب کاربری با موفقیت ایجاد شد!"
   },
   "adminApprovalRequested": {
-    "message": "Admin approval requested"
+    "message": "تایید مدیر در خواست شد"
   },
   "adminApprovalRequestSentToAdmins": {
-    "message": "Your request has been sent to your admin."
+    "message": "درخواست شما به مدیرتان فرستاده شد."
   },
   "youWillBeNotifiedOnceApproved": {
-    "message": "You will be notified once approved."
+    "message": "به محض تایید مطلع خواهید شد."
   },
   "troubleLoggingIn": {
-    "message": "Trouble logging in?"
+    "message": "در ورود مشکلی دارید؟"
   },
   "loginApproved": {
-    "message": "Login approved"
+    "message": "ورود تایید شد"
   },
   "userEmailMissing": {
-    "message": "User email missing"
+    "message": "رایانامه کاربر کم است"
   },
   "deviceTrusted": {
-    "message": "Device trusted"
+    "message": "دستگاه مورد اعتماد است"
   },
   "inputRequired": {
-    "message": "Input is required."
+    "message": "ورودی مورد نیاز است."
   },
   "required": {
-    "message": "required"
+    "message": "الزامی"
   },
   "search": {
-    "message": "Search"
+    "message": "جستجو"
   },
   "inputMinLength": {
-    "message": "Input must be at least $COUNT$ characters long.",
+    "message": "ورودی باید حداقل $COUNT$ نشانه داشته باشد.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -2322,7 +2322,7 @@
     }
   },
   "inputMaxLength": {
-    "message": "Input must not exceed $COUNT$ characters in length.",
+    "message": "اندازه ورودی نباید بیش از $COUNT$ نشانه باشد.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -2331,7 +2331,7 @@
     }
   },
   "inputForbiddenCharacters": {
-    "message": "The following characters are not allowed: $CHARACTERS$",
+    "message": "نشانه های زیر مجاز نیستند: $CHARACTERS$",
     "placeholders": {
       "characters": {
         "content": "$1",
@@ -2340,7 +2340,7 @@
     }
   },
   "inputMinValue": {
-    "message": "Input value must be at least $MIN$.",
+    "message": "مقدار ورودی باید دست کم $MIN$ باشد.",
     "placeholders": {
       "min": {
         "content": "$1",
@@ -2349,7 +2349,7 @@
     }
   },
   "inputMaxValue": {
-    "message": "Input value must not exceed $MAX$.",
+    "message": "مقدار ورودی نباید بیش از $MAX$ باشد.",
     "placeholders": {
       "max": {
         "content": "$1",
@@ -2358,17 +2358,17 @@
     }
   },
   "multipleInputEmails": {
-    "message": "1 or more emails are invalid"
+    "message": "یک یا چند رایانامه نامعتبر است"
   },
   "inputTrimValidator": {
-    "message": "Input must not contain only whitespace.",
+    "message": "ورودی نباید فقط فاصله باشد.",
     "description": "Notification to inform the user that a form's input can't contain only whitespace."
   },
   "inputEmail": {
-    "message": "Input is not an email address."
+    "message": "ورودی یک نشانی رایانامه نیست."
   },
   "fieldsNeedAttention": {
-    "message": "$COUNT$ field(s) above need your attention.",
+    "message": "بخش (های) $COUNT$ در بالا نیازمند توجه شما است.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -2377,22 +2377,22 @@
     }
   },
   "selectPlaceholder": {
-    "message": "-- Select --"
+    "message": "-- انتخاب --"
   },
   "multiSelectPlaceholder": {
-    "message": "-- Type to filter --"
+    "message": "-- برای گزینش چیزی بنویسید --"
   },
   "multiSelectLoading": {
-    "message": "Retrieving options..."
+    "message": "در حال بازیابی گزینه‌ها..."
   },
   "multiSelectNotFound": {
-    "message": "No items found"
+    "message": "موردی پیدا نشد"
   },
   "multiSelectClearAll": {
-    "message": "Clear all"
+    "message": "پاک کردن همه"
   },
   "plusNMore": {
-    "message": "+ $QUANTITY$ more",
+    "message": "+ $QUANTITY$ بیشتر",
     "placeholders": {
       "quantity": {
         "content": "$1",
@@ -2401,10 +2401,10 @@
     }
   },
   "submenu": {
-    "message": "Submenu"
+    "message": "زیرفهرست"
   },
   "toggleCollapse": {
-    "message": "Toggle collapse",
+    "message": "باز و بسته کردن",
     "description": "Toggling an expand/collapse state."
   }
 }

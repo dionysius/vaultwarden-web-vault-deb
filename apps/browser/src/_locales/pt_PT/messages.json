@@ -1991,8 +1991,8 @@
   "exportingPersonalVaultTitle": {
     "message": "A exportar o cofre pessoal"
   },
-  "exportingPersonalVaultDescription": {
-    "message": "Apenas os itens do cofre pessoal associado a $EMAIL$ serão exportados. Os itens do cofre da organização não serão incluídos.",
+  "exportingIndividualVaultDescription": {
+    "message": "Apenas os itens de cofre individuais associados a $EMAIL$ serão exportados. Os itens do cofre da organização não serão incluídos. Apenas serão exportadas as informações do item do cofre e não serão incluídos os anexos associados.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -2093,7 +2093,7 @@
     "message": "Versão do servidor"
   },
   "selfHostedServer": {
-    "message": "self-hosted"
+    "message": "auto-hospedado"
   },
   "thirdParty": {
     "message": "De terceiros"

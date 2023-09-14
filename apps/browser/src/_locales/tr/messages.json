@@ -1991,8 +1991,8 @@
   "exportingPersonalVaultTitle": {
     "message": "Kişisel kasa dışa aktarılıyor"
   },
-  "exportingPersonalVaultDescription": {
-    "message": "Yalnızca $EMAIL$ ile ilişkili kişisel kasadaki kayıtlar dışa aktarılacaktır. Kuruluş kasasındaki kayıtlar dahil edilmeyecektir.",
+  "exportingIndividualVaultDescription": {
+    "message": "Only the individual vault items associated with $EMAIL$ will be exported. Organization vault items will not be included. Only vault item information will be exported and will not include associated attachments.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -2093,7 +2093,7 @@
     "message": "Sunucu sürümü"
   },
   "selfHostedServer": {
-    "message": "self-hosted"
+    "message": "şirket içinde barındırılan"
   },
   "thirdParty": {
     "message": "Üçüncü taraf"

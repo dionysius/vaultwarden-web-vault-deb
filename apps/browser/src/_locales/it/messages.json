@@ -1991,8 +1991,8 @@
   "exportingPersonalVaultTitle": {
     "message": "Esportazione cassaforte personale"
   },
-  "exportingPersonalVaultDescription": {
-    "message": "Solo gli elementi della cassaforte personale associati a $EMAIL$ saranno esportati. Gli elementi della cassaforte dell'organizzazione non saranno inclusi.",
+  "exportingIndividualVaultDescription": {
+    "message": "Solo gli elementi della cassaforte personale associati a $EMAIL$ saranno esportati. Gli elementi della cassaforte dell'organizzazione non saranno inclusi. Solo le informazioni sugli elementi della cassaforte saranno esportate e non includeranno gli allegati.",
     "placeholders": {
       "email": {
         "content": "$1",

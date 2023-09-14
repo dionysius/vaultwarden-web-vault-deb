@@ -1991,8 +1991,8 @@
   "exportingPersonalVaultTitle": {
     "message": "Изнасяне на личния трезор"
   },
-  "exportingPersonalVaultDescription": {
-    "message": "Ще бъдат изнесени само записите от личния трезор свързан с $EMAIL$. Записите в трезора на организацията няма да бъдат включени.",
+  "exportingIndividualVaultDescription": {
+    "message": "Ще бъдат изнесени само отделните записи в трезора, които са свързани с $EMAIL$. Записите от трезора на организацията няма да бъдат включени. Ще бъде изнесена само информацията за записите от трезора, а свързаните прикачени елементи няма да бъдат включени.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -2093,7 +2093,7 @@
     "message": "Версия на сървъра"
   },
   "selfHostedServer": {
-    "message": "self-hosted"
+    "message": "собствен хостинг"
   },
   "thirdParty": {
     "message": "Third-party"

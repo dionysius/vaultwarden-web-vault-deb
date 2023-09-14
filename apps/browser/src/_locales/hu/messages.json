@@ -1991,8 +1991,8 @@
   "exportingPersonalVaultTitle": {
     "message": "Személyes széf exportálása"
   },
-  "exportingPersonalVaultDescription": {
-    "message": "Csak $EMAIL$ email címmel társított személyes széf elemek kerülnek exportálásra. Ebbe nem kerülnek be a szervezeti széf elemek.",
+  "exportingIndividualVaultDescription": {
+    "message": "$EMAIL$ email címhez társított egyedi széfek kerülnek csak exportálásra. A szervezeti széf elemei nem lesznek benne. Csak a széf információk kerülnek exportálásra és nem tartalmazzák a kapcsolódó mellékleteket.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -2093,7 +2093,7 @@
     "message": "Szerver verzió"
   },
   "selfHostedServer": {
-    "message": "self-hosted"
+    "message": "saját üzemeltetésű"
   },
   "thirdParty": {
     "message": "Harmadik fél"

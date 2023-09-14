@@ -637,7 +637,7 @@
     "message": "Unlock your Bitwarden vault to complete the auto-fill request."
   },
   "notificationUnlock": {
-    "message": "Unlock"
+    "message": "解鎖"
   },
   "enableContextMenuItem": {
     "message": "顯示內容選單選項"
@@ -985,7 +985,7 @@
     "message": "網頁載入時如果偵測到登入表單，則執行自動填入。"
   },
   "experimentalFeature": {
-    "message": "被入侵或不可信任的網站可以利用自動填入功能在網頁載入時竊取資訊。"
+    "message": "被入侵或不可信任的網站可以利用網頁載入時的自動填入功能。"
   },
   "learnMoreAboutAutofill": {
     "message": "進一步瞭解「自動填入」功能"
@@ -1264,10 +1264,10 @@
     "description": "To clear something out. example: To clear browser history."
   },
   "checkPassword": {
-    "message": "檢查密碼是否已外洩。"
+    "message": "檢查密碼是否已暴露。"
   },
   "passwordExposed": {
-    "message": "此密碼已外洩了 $VALUE$ 次，應立即變更密碼。",
+    "message": "此密碼在資料外洩事件中被暴露了 $VALUE$ 次，應立即變更它。",
     "placeholders": {
       "value": {
         "content": "$1",
@@ -1495,7 +1495,7 @@
     "message": "新的主密碼"
   },
   "confirmNewMasterPass": {
-    "message": "確認新主密碼"
+    "message": "確認新的主密碼"
   },
   "masterPasswordPolicyInEffect": {
     "message": "一個或多個組織原則要求您的主密碼須符合下列條件："
@@ -1991,8 +1991,8 @@
   "exportingPersonalVaultTitle": {
     "message": "正匯出個人密碼庫"
   },
-  "exportingPersonalVaultDescription": {
-    "message": "只會匯出與 $EMAIL$ 關聯的個人密碼庫項目。組織密碼庫的項目不包含在內。",
+  "exportingIndividualVaultDescription": {
+    "message": "Only the individual vault items associated with $EMAIL$ will be exported. Organization vault items will not be included. Only vault item information will be exported and will not include associated attachments.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -2153,13 +2153,13 @@
     "message": "已傳送通知至您的裝置。"
   },
   "loginInitiated": {
-    "message": "Login initiated"
+    "message": "登入已發起"
   },
   "exposedMasterPassword": {
     "message": "已暴露的主密碼"
   },
   "exposedMasterPasswordDesc": {
-    "message": "在其他資料庫中找到您的密碼。我們建議您使用一個獨特的密碼來保護您的帳號，您確定要用這個密碼嗎？"
+    "message": "在資料外洩事件中找到了密碼。我們建議您使用一個獨特的密碼來保護您的帳戶，您確定要使用已暴露的密碼嗎？"
   },
   "weakAndExposedMasterPassword": {
     "message": "強度不足且已暴露的主密碼"
@@ -2171,7 +2171,7 @@
     "message": "檢查外洩密碼資料庫中是否有此密碼"
   },
   "important": {
-    "message": "重要事項："
+    "message": "重要："
   },
   "masterPasswordHint": {
     "message": "如果您忘記主密碼，沒有復原的方法！"
@@ -2234,7 +2234,7 @@
     }
   },
   "loggingInOn": {
-    "message": "Logging in on"
+    "message": "正登入到"
   },
   "opensInANewWindow": {
     "message": "在新視窗開啟"
@@ -2280,7 +2280,7 @@
     "message": "顯示"
   },
   "accountSuccessfullyCreated": {
-    "message": "Account successfully created!"
+    "message": "已成功建立帳戶！"
   },
   "adminApprovalRequested": {
     "message": "Admin approval requested"
@@ -2310,10 +2310,10 @@
     "message": "required"
   },
   "search": {
-    "message": "Search"
+    "message": "搜尋"
   },
   "inputMinLength": {
-    "message": "Input must be at least $COUNT$ characters long.",
+    "message": "必須輸入至少 $COUNT$ 個字元。",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -2322,7 +2322,7 @@
     }
   },
   "inputMaxLength": {
-    "message": "Input must not exceed $COUNT$ characters in length.",
+    "message": "輸入的內容長度不得超過 $COUNT$ 字元。",
     "placeholders": {
       "count": {
         "content": "$1",
