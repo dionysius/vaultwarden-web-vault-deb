@@ -1426,10 +1426,10 @@
     "message": "Suojaa tilisi vaatimalla sisäänkirjautumiseen toinen todennusvaihe."
   },
   "twoStepLoginTeamsDesc": {
-    "message": "Enable two-step login for your organization."
+    "message": "Ota kaksivaiheinen kirjautuminen käyttöön organisaatiollesi."
   },
   "twoStepLoginEnterpriseDescStart": {
-    "message": "Enforce Bitwarden Two-step Login options for members by using the ",
+    "message": "Pakota jäsenille Bitwardenin kaksivaiheisen kirjautumisen valinnat käytännöllä: ",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enforce Bitwarden Two-step Login options for members by using the Two-step Login Policy.'"
   },
   "twoStepLoginPolicy": {
@@ -7157,7 +7157,7 @@
     "message": "Palvelutilin mahdollinen enimmäiskustannus"
   },
   "loggedInExclamation": {
-    "message": "Kirjautuminen onnistui!"
+    "message": "Kirjautuminen onnistui."
   },
   "smBetaEndedDesc": {
     "message": "Salaisuushallinnan beta päättyi $BETA_ENDING_DATE$. Sinulla on $DAYS$ päivää aikaa lisätä Salaisuushallinta maksulliseen tilaukseesi säilyttääksesi Salaisuushallinnassa olevien tietojesi käyttöoikeuden. Lisää Salaisuushallinta tilaukseesi olemalla yhteydessä asiakaspalveluun.",

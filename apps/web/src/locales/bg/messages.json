@@ -1426,14 +1426,14 @@
     "message": "Допълнителна защита на абонамента чрез изискването на допълнително действие при вписване."
   },
   "twoStepLoginTeamsDesc": {
-    "message": "Enable two-step login for your organization."
+    "message": "Включете двустепенното удостоверяване за организацията си."
   },
   "twoStepLoginEnterpriseDescStart": {
-    "message": "Enforce Bitwarden Two-step Login options for members by using the ",
+    "message": "Задължете членовете да използват вариантите за двустепенно удостоверяване в Битуорден, като използвате ",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enforce Bitwarden Two-step Login options for members by using the Two-step Login Policy.'"
   },
   "twoStepLoginPolicy": {
-    "message": "Two-step Login Policy"
+    "message": "Политика за двустепенно удостоверяване"
   },
   "twoStepLoginOrganizationDuoDesc": {
     "message": "За да направите двустепенното удостоверяване чрез Duo задължително, използвайте настройките по-долу."
@@ -1723,7 +1723,7 @@
     "message": "Открити са записи без двустепенна идентификация"
   },
   "inactive2faFoundDesc": {
-    "message": "We found $COUNT$ website(s) in your vault that may not be configured with two-step login (according to 2fa.directory). To further protect these accounts, you should set up two-step login.",
+    "message": "В трезора ви има $COUNT$ уебсайт(а), които е възможно да не са настроени за вписване чрез двустепенно удостоверяване (според сайта 2fa.directory). За да защитите тези регистрации, трябва да настроите двустепенното удостоверяване.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -6639,7 +6639,7 @@
     "message": "Променете настройките си за шифроване, така че да отговарят на новите препоръки за сигурността и да подобрите защитата на регистрацията си."
   },
   "changeKdfLoggedOutWarning": {
-    "message": "Proceeding will log you out of all active sessions. You will need to log back in and complete two-step login setup. We recommend exporting your vault before changing your encryption settings to prevent data loss."
+    "message": "Ако продължите, ще излезете от всички активни сесии. Ще трябва да се впишете отново и да завършите настройката на двустепенното удостоверяване. Препоръчително е да изнесете трезора си преди да променяте настройките за шифроване, за да избегнете загуба на данни."
   },
   "secretsManager": {
     "message": "Управление на тайни"

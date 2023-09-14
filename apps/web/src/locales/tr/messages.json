@@ -1426,14 +1426,14 @@
     "message": "Oturum açarken ek bir adım talep ederek hesabınızı güvenceye alabilirsiniz."
   },
   "twoStepLoginTeamsDesc": {
-    "message": "Kuruluşunuz için iki adımlı oturum açmayı etkinleştirin."
+    "message": "Kuruluşunuz için iki aşamalı girişi etkinleştirin."
   },
   "twoStepLoginEnterpriseDescStart": {
-    "message": "Bitwarden'ı kullanarak üyeler için İki Adımlı Giriş seçeneklerini zorunlu kılın ",
+    "message": "Üyeler için Bitwarden iki aşamalı giriş seçeneklerini zorunlu kılmak üzere ",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enforce Bitwarden Two-step Login options for members by using the Two-step Login Policy.'"
   },
   "twoStepLoginPolicy": {
-    "message": "iki aşamalı giriş ilkesi ile zorunlu tut"
+    "message": "iki aşamalı giriş ilkesini kullan"
   },
   "twoStepLoginOrganizationDuoDesc": {
     "message": "Duo ile iki aşamalı girişi zorunlu tutmak için aşağıdaki seçenekleri kullanın."
