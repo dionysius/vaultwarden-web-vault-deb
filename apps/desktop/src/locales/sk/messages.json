@@ -1984,8 +1984,8 @@
   "exportingPersonalVaultTitle": {
     "message": "Exportovanie osobného trezora"
   },
-  "exportingPersonalVaultDescription": {
-    "message": "Exportované budú iba položy osobného trezora spojené s $EMAIL$. Položky trezora organizácie nebudú zahrnuté.",
+  "exportingIndividualVaultDescription": {
+    "message": "Exportované budú iba položky súvisiace s $EMAIL$. Položky z trezora organizácie nebudú zahrnuté v exporte. Export bude obsahovať iba informácie z položiek v trezore, súvisiace prílohy nebudú súčasťou exportu.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -2287,7 +2287,7 @@
     "message": "bitwarden.eu"
   },
   "selfHostedServer": {
-    "message": "self-hosted"
+    "message": "vlastný hosting"
   },
   "accessDenied": {
     "message": "Prístup zamietnutý. Nemáte oprávnenie na zobrazenie tejto stránky."

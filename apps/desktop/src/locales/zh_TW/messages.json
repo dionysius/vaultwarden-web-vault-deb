@@ -1207,10 +1207,10 @@
     "message": "視窗"
   },
   "checkPassword": {
-    "message": "檢查密碼是否已外洩。"
+    "message": "檢查密碼是否已暴露。"
   },
   "passwordExposed": {
-    "message": "此密碼已外洩了 $VALUE$ 次，應立即變更密碼。",
+    "message": "此密碼在資料外洩事件中被暴露了 $VALUE$ 次，應立即變更它。",
     "placeholders": {
       "value": {
         "content": "$1",
@@ -1984,8 +1984,8 @@
   "exportingPersonalVaultTitle": {
     "message": "正匯出個人密碼庫"
   },
-  "exportingPersonalVaultDescription": {
-    "message": "只會匯出與 $EMAIL$ 關聯的個人密碼庫。組織密碼庫的項目不包含在內。",
+  "exportingIndividualVaultDescription": {
+    "message": "Only the individual vault items associated with $EMAIL$ will be exported. Organization vault items will not be included. Only vault item information will be exported and will not include associated attachments.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -2217,7 +2217,7 @@
     "message": "已暴露的主密碼"
   },
   "exposedMasterPasswordDesc": {
-    "message": "Password found in a data breach. Use a unique password to protect your account. Are you sure you want to use an exposed password?"
+    "message": "在資料外洩事件中找到了密碼。我們建議您使用一個獨特的密碼來保護您的帳戶，您確定要使用已暴露的密碼嗎？"
   },
   "weakAndExposedMasterPassword": {
     "message": "強度不足且已暴露的主密碼"
@@ -2293,7 +2293,7 @@
     "message": "拒絕存取。您沒有檢視此頁面的權限。"
   },
   "accountSuccessfullyCreated": {
-    "message": "成功建立帳號！"
+    "message": "已成功建立帳戶！"
   },
   "adminApprovalRequested": {
     "message": "需要管理員批准"

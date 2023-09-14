@@ -1984,8 +1984,8 @@
   "exportingPersonalVaultTitle": {
     "message": "개인 보관함을 내보내는 중"
   },
-  "exportingPersonalVaultDescription": {
-    "message": "$EMAIL$ 이메일과 관련이 있는 개인 보관함 항목만 내보내집니다. 조직의 보관함 항목은 포함되지 않습니다.",
+  "exportingIndividualVaultDescription": {
+    "message": "Only the individual vault items associated with $EMAIL$ will be exported. Organization vault items will not be included. Only vault item information will be exported and will not include associated attachments.",
     "placeholders": {
       "email": {
         "content": "$1",

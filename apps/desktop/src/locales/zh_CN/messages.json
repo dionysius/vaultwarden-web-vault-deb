@@ -509,7 +509,7 @@
     "message": "主密码是访问密码库的唯一密码。它非常重要，请您不要忘记。忘记主密码后，我们无法为您恢复或重置它。"
   },
   "masterPassHintDesc": {
-    "message": "主密码提示可以在你忘记密码时帮你回忆。"
+    "message": "主密码提示可以在您忘记密码时帮您回忆起来。"
   },
   "reTypeMasterPass": {
     "message": "再次输入主密码"
@@ -1429,7 +1429,7 @@
     "message": "接下来的操作会删除您的账户和所有密码库数据。"
   },
   "deleteAccountWarning": {
-    "message": "删除账户是永久性的。不能被撤消。"
+    "message": "删除账户是永久性操作，无法撤销！"
   },
   "accountDeleted": {
     "message": "账户已删除"
@@ -1654,7 +1654,7 @@
     "message": "需要先在桌面应用程序的设置中设置生物识别，才能使用浏览器中的生物识别。"
   },
   "personalOwnershipSubmitError": {
-    "message": "由于企业策略，您被限制为保存项目到您的个人密码库。将所有权选项更改为组织，然后从可用的集合中选择。"
+    "message": "由于某个企业策略，您不能将项目保存到您的个人密码库。将所有权选项更改为组织，并从可用的集合中选择。"
   },
   "hintEqualsPassword": {
     "message": "您的密码提示不能与您的密码相同。"
@@ -1795,7 +1795,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendDisabledWarning": {
-    "message": "由于企业策略，您只能删除现有的 Send。",
+    "message": "由于某个企业策略，您只能删除现有的 Send。",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "copyLink": {
@@ -1838,7 +1838,7 @@
     "message": "您必须验证您的电子邮件才能使用此功能。"
   },
   "passwordPrompt": {
-    "message": "重新询问主密码"
+    "message": "主密码重新提示"
   },
   "passwordConfirmation": {
     "message": "确认主密码"
@@ -1984,8 +1984,8 @@
   "exportingPersonalVaultTitle": {
     "message": "正在导出个人密码库"
   },
-  "exportingPersonalVaultDescription": {
-    "message": "仅会导出与 $EMAIL$ 关联的个人密码库项目。组织密码库的项目不会导出。",
+  "exportingIndividualVaultDescription": {
+    "message": "Only the individual vault items associated with $EMAIL$ will be exported. Organization vault items will not be included. Only vault item information will be exported and will not include associated attachments.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -2287,7 +2287,7 @@
     "message": "bitwarden.eu"
   },
   "selfHostedServer": {
-    "message": "self-hosted"
+    "message": "自托管"
   },
   "accessDenied": {
     "message": "访问被拒绝。您没有权限查看此页面。"
