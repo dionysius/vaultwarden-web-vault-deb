@@ -44,4 +44,4 @@ jobs:
           storybookBuildDir: ./storybook-static
           exitOnceUploaded: true
           onlyChanged: true
-          externals: "[\"libs/components/**/*.scss\", \"libs/components/tailwind.config*.js\"]"
+          externals: "[\"libs/components/**/*.scss\", \"libs/components/**/*.css\", \"libs/components/tailwind.config*.js\"]"
