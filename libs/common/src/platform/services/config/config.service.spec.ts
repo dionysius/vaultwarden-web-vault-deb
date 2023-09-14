@@ -6,6 +6,7 @@ import { AuthenticationStatus } from "../../../auth/enums/authentication-status"
 import { ConfigApiServiceAbstraction } from "../../abstractions/config/config-api.service.abstraction";
 import { ServerConfig } from "../../abstractions/config/server-config";
 import { EnvironmentService } from "../../abstractions/environment.service";
+import { LogService } from "../../abstractions/log.service";
 import { StateService } from "../../abstractions/state.service";
 import { ServerConfigData } from "../../models/data/server-config.data";
 import {
@@ -21,6 +22,7 @@ describe("ConfigService", () => {
   let configApiService: MockProxy<ConfigApiServiceAbstraction>;
   let authService: MockProxy<AuthService>;
   let environmentService: MockProxy<EnvironmentService>;
+  let logService: MockProxy<LogService>;
 
   let serverResponseCount: number; // increments to track distinct responses received from server
 
@@ -31,7 +33,8 @@ describe("ConfigService", () => {
       stateService,
       configApiService,
       authService,
-      environmentService
+      environmentService,
+      logService
     );
     configService.init();
     return configService;
@@ -42,6 +45,8 @@ describe("ConfigService", () => {
     configApiService = mock();
     authService = mock();
     environmentService = mock();
+    logService = mock();
+
     environmentService.urls = new ReplaySubject<void>(1);
 
     serverResponseCount = 1;
@@ -56,9 +61,11 @@ describe("ConfigService", () => {
     jest.useRealTimers();
   });
 
-  it("Loads config from storage", (done) => {
+  it("Uses storage as fallback", (done) => {
     const storedConfigData = serverConfigDataFactory("storedConfig");
     stateService.getServerConfig.mockResolvedValueOnce(storedConfigData);
+
+    configApiService.get.mockRejectedValueOnce(new Error("Unable to fetch"));
 
     const configService = configServiceFactory();
 
@@ -68,6 +75,30 @@ describe("ConfigService", () => {
       expect(stateService.setServerConfig).not.toHaveBeenCalled();
       done();
     });
+
+    configService.triggerServerConfigFetch();
+  });
+
+  it("Stream does not error out if fetch fails", (done) => {
+    const storedConfigData = serverConfigDataFactory("storedConfig");
+    stateService.getServerConfig.mockResolvedValueOnce(storedConfigData);
+
+    const configService = configServiceFactory();
+
+    configService.serverConfig$.pipe(skip(1), take(1)).subscribe((config) => {
+      try {
+        expect(config.gitHash).toEqual("server1");
+        done();
+      } catch (e) {
+        done(e);
+      }
+    });
+
+    configApiService.get.mockRejectedValueOnce(new Error("Unable to fetch"));
+    configService.triggerServerConfigFetch();
+
+    configApiService.get.mockResolvedValueOnce(serverConfigResponseFactory("server1"));
+    configService.triggerServerConfigFetch();
   });
 
   describe("Fetches config from server", () => {
@@ -80,8 +111,8 @@ describe("ConfigService", () => {
       (hours: number, done: jest.DoneCallback) => {
         const configService = configServiceFactory();
 
-        // skip initial load from storage, plus previous hours (if any)
-        configService.serverConfig$.pipe(skip(hours), take(1)).subscribe((config) => {
+        // skip previous hours (if any)
+        configService.serverConfig$.pipe(skip(hours - 1), take(1)).subscribe((config) => {
           try {
             expect(config.gitHash).toEqual("server" + hours);
             expect(configApiService.get).toHaveBeenCalledTimes(hours);
@@ -99,8 +130,7 @@ describe("ConfigService", () => {
     it("when environment URLs change", (done) => {
       const configService = configServiceFactory();
 
-      // skip initial load from storage
-      configService.serverConfig$.pipe(skip(1), take(1)).subscribe((config) => {
+      configService.serverConfig$.pipe(take(1)).subscribe((config) => {
         try {
           expect(config.gitHash).toEqual("server1");
           done();
@@ -115,8 +145,7 @@ describe("ConfigService", () => {
     it("when triggerServerConfigFetch() is called", (done) => {
       const configService = configServiceFactory();
 
-      // skip initial load from storage
-      configService.serverConfig$.pipe(skip(1), take(1)).subscribe((config) => {
+      configService.serverConfig$.pipe(take(1)).subscribe((config) => {
         try {
           expect(config.gitHash).toEqual("server1");
           done();
@@ -134,8 +163,7 @@ describe("ConfigService", () => {
     authService.getAuthStatus.mockResolvedValue(AuthenticationStatus.Locked);
     const configService = configServiceFactory();
 
-    // skip initial load from storage
-    configService.serverConfig$.pipe(skip(1), take(1)).subscribe(() => {
+    configService.serverConfig$.pipe(take(1)).subscribe(() => {
       try {
         expect(stateService.setServerConfig).toHaveBeenCalledWith(
           expect.objectContaining({ gitHash: "server1" })

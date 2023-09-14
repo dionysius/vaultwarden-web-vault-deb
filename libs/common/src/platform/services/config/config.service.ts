@@ -1,11 +1,11 @@
 import {
   ReplaySubject,
   Subject,
+  catchError,
   concatMap,
+  defer,
   delayWhen,
-  filter,
   firstValueFrom,
-  from,
   map,
   merge,
   timer,
@@ -18,6 +18,7 @@ import { ConfigApiServiceAbstraction } from "../../abstractions/config/config-ap
 import { ConfigServiceAbstraction } from "../../abstractions/config/config.service.abstraction";
 import { ServerConfig } from "../../abstractions/config/server-config";
 import { EnvironmentService, Region } from "../../abstractions/environment.service";
+import { LogService } from "../../abstractions/log.service";
 import { StateService } from "../../abstractions/state.service";
 import { ServerConfigData } from "../../models/data/server-config.data";
 
@@ -38,6 +39,7 @@ export class ConfigService implements ConfigServiceAbstraction {
     private configApiService: ConfigApiServiceAbstraction,
     private authService: AuthService,
     private environmentService: EnvironmentService,
+    private logService: LogService,
 
     // Used to avoid duplicate subscriptions, e.g. in browser between the background and popup
     private subscribe = true
@@ -48,14 +50,16 @@ export class ConfigService implements ConfigServiceAbstraction {
       return;
     }
 
-    // Get config from storage on initial load
-    const fromStorage = from(this.stateService.getServerConfig()).pipe(
-      map((data) => (data == null ? null : new ServerConfig(data)))
+    const latestServerConfig$ = defer(() => this.configApiService.get()).pipe(
+      map((response) => new ServerConfigData(response)),
+      delayWhen((data) => this.saveConfig(data)),
+      catchError((e: unknown) => {
+        // fall back to stored ServerConfig (if any)
+        this.logService.error("Unable to fetch ServerConfig: " + (e as Error)?.message);
+        return this.stateService.getServerConfig();
+      })
     );
 
-    fromStorage.subscribe((config) => this._serverConfig.next(config));
-
-    // Fetch config from server
     // If you need to fetch a new config when an event occurs, add an observable that emits on that event here
     merge(
       timer(ONE_HOUR_IN_MILLISECONDS, ONE_HOUR_IN_MILLISECONDS), // after 1 hour, then every hour
@@ -63,12 +67,8 @@ export class ConfigService implements ConfigServiceAbstraction {
       this._forceFetchConfig // manual
     )
       .pipe(
-        delayWhen(() => fromStorage), // wait until storage has emitted first to avoid a race condition
-        concatMap(() => this.configApiService.get()),
-        filter((response) => response != null),
-        map((response) => new ServerConfigData(response)),
-        delayWhen((data) => this.saveConfig(data)),
-        map((data) => new ServerConfig(data))
+        concatMap(() => latestServerConfig$),
+        map((data) => (data == null ? null : new ServerConfig(data)))
       )
       .subscribe((config) => this._serverConfig.next(config));
 
