@@ -339,7 +339,7 @@
     "message": "Ostalo"
   },
   "unlockMethodNeededToChangeTimeoutActionDesc": {
-    "message": "Set up an unlock method to change your vault timeout action."
+    "message": "Za promjenu vremena isteka trezora, odredi način otključavanja."
   },
   "rateExtension": {
     "message": "Ocijeni proširenje"
@@ -634,10 +634,10 @@
     "message": "Ažuriraj"
   },
   "notificationUnlockDesc": {
-    "message": "Unlock your Bitwarden vault to complete the auto-fill request."
+    "message": "Za dovršetak auto-ispune, otključaj svoj trezor."
   },
   "notificationUnlock": {
-    "message": "Unlock"
+    "message": "Otključaj"
   },
   "enableContextMenuItem": {
     "message": "Prikaži opcije kotekstualnog izbornika"
@@ -796,7 +796,7 @@
     "message": "1 GB šifriranog prostora za pohranu podataka."
   },
   "premiumSignUpTwoStepOptions": {
-    "message": "Proprietary two-step login options such as YubiKey and Duo."
+    "message": "Mogućnosti za prijavu u dva koraka kao što su YubiKey i Duo."
   },
   "ppremiumSignUpReports": {
     "message": "Higijenu lozinki, zdravlje računa i izvještaje o krađi podatak radi zaštite svojeg trezora."
@@ -1456,7 +1456,7 @@
     "message": "Odjava će ukloniti pristup tvom trezoru i zahtijevati mrežnu potvrdu identiteta nakon isteka vremenske neaktivnosti. Sigurno želiš koristiti ovu postavku?"
   },
   "vaultTimeoutLogOutConfirmationTitle": {
-    "message": "Potvrda akcije vremenske neaktivnosti"
+    "message": "Potvrda radnje nakon vremenske neaktivnosti"
   },
   "autoFillAndSave": {
     "message": "Auto-ispuni i spremi"
@@ -1468,16 +1468,16 @@
     "message": "Auto-ispunjena stavka"
   },
   "insecurePageWarning": {
-    "message": "Warning: This is an unsecured HTTP page, and any information you submit can potentially be seen and changed by others. This Login was originally saved on a secure (HTTPS) page."
+    "message": "Upozorenje: Ovo je nezaštićena HTTP stranica i svi podaci koje preko nje pošalješ drugi mogu vidjeti i izmijeniti. Ova prijava je prvotno bila spremljena za sigurnu (HTTPS) stranicu."
   },
   "insecurePageWarningFillPrompt": {
-    "message": "Do you still wish to fill this login?"
+    "message": "Želiš li i dalje ispuniti ove podatke za prijavu?"
   },
   "autofillIframeWarning": {
-    "message": "The form is hosted by a different domain than the URI of your saved login. Choose OK to auto-fill anyway, or Cancel to stop."
+    "message": "Obrazac je na poslužitelju koji se nalazi na drugačijoj domeni od URI-a za koji su spremljeni tvoji podaci za pristup. Odobri za auto-ispunu ili odustani za prekid."
   },
   "autofillIframeWarningTip": {
-    "message": "To prevent this warning in the future, save this URI, $HOSTNAME$, to your Bitwarden login item for this site.",
+    "message": "Kako se ovo upozorenje ubuduće ne bi prikazivalo, spremi ovaj URI ( $HOSTNAME$) u svoju stavku za prijavu.",
     "placeholders": {
       "hostname": {
         "content": "$1",
@@ -1489,13 +1489,13 @@
     "message": "Postavi glavnu lozinku"
   },
   "currentMasterPass": {
-    "message": "Current master password"
+    "message": "Trenutna glavna lozinka"
   },
   "newMasterPass": {
-    "message": "New master password"
+    "message": "Nova glavna lozinka"
   },
   "confirmNewMasterPass": {
-    "message": "Confirm new master password"
+    "message": "Potvrdi novu glavnu lozinku"
   },
   "masterPasswordPolicyInEffect": {
     "message": "Jedno ili više pravila organizacije zahtijeva da tvoja glavna lozinka ispunjava sljedeće uvjete:"
@@ -1606,10 +1606,10 @@
     "message": "Biometrija preglednika nije podržana na ovom uređaju."
   },
   "biometricsFailedTitle": {
-    "message": "Biometrics failed"
+    "message": "Biometrija neuspješna"
   },
   "biometricsFailedDesc": {
-    "message": "Biometrics cannot be completed, consider using a master password or logging out. If this persists, please contact Bitwarden support."
+    "message": "Biometrija se ne može dovršiti. Pokušaj glavnom lozinkom ili se odjavi i ponovno prijavi. Ako se ovo nastavi, obrati se Bitwarden podršci."
   },
   "nativeMessaginPermissionErrorTitle": {
     "message": "Dopuštenje nije dano"
@@ -1884,7 +1884,7 @@
     "message": "Tvoju glavnu lozinku je nedavno promijenio administrator tvoje organizacije. Za pristup trezoru, potrebno je ažurirati glavnu lozinku, što će te odjaviti iz trenutne sesije, te ćeš se morati ponovno prijaviti. Aktivne sesije na drugim uređajima mogu ostati aktivne još sat vremena."
   },
   "updateWeakMasterPasswordWarning": {
-    "message": "Your master password does not meet one or more of your organization policies. In order to access the vault, you must update your master password now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
+    "message": "Tvoja glavna lozinka ne zadovoljava pravila ove organizacije. Za pristup trezoru moraš odmah ažurirati svoju glavnu lozinku. Ako nastaviš, odjaviti ćeš se iz trenutne sesije te ćeš se morati ponovno prijaviti. Aktivne sesije na drugim uređajima mogu ostati aktivne do jedan sat."
   },
   "resetPasswordPolicyAutoEnroll": {
     "message": "Automatsko učlanjenje"
@@ -1905,7 +1905,7 @@
     "message": "minuta"
   },
   "vaultTimeoutPolicyInEffect": {
-    "message": "Pravilo tvoje organizacije utječe na istek trezora. Najveće dozvoljeno vrijeme isteka je $HOURS$:$MINUTES$ h.",
+    "message": "Pravilo tvoje organizacije podesilo je najveće dozvoljeno vrijeme isteka trezora na $HOURS$:$MINUTES$ h.",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -1918,7 +1918,7 @@
     }
   },
   "vaultTimeoutPolicyWithActionInEffect": {
-    "message": "Your organization policies are affecting your vault timeout. Maximum allowed vault timeout is $HOURS$ hour(s) and $MINUTES$ minute(s). Your vault timeout action is set to $ACTION$.",
+    "message": "Pravilo tvoje organizacije utječe na istek trezora. Najveće dozvoljeno vrijeme isteka je $HOURS$:$MINUTES$ h. Tvoja radnja nakon isteka trezora je: $ACTION$.",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -1935,7 +1935,7 @@
     }
   },
   "vaultTimeoutActionPolicyInEffect": {
-    "message": "Your organization policies have set your vault timeout action to $ACTION$.",
+    "message": "Pravilo tvoje organizacije podesilo je radnju nakon isteka trezora na: $ACTION$.",
     "placeholders": {
       "action": {
         "content": "$1",
@@ -1991,8 +1991,8 @@
   "exportingPersonalVaultTitle": {
     "message": "Izvoz osobnog trezora"
   },
-  "exportingPersonalVaultDescription": {
-    "message": "Izvest će se samo stavke osobnog trezora povezanog s $EMAIL$. Stavke organizacijskog trezora neće biti uključene.",
+  "exportingIndividualVaultDescription": {
+    "message": "Only the individual vault items associated with $EMAIL$ will be exported. Organization vault items will not be included. Only vault item information will be exported and will not include associated attachments.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -2093,7 +2093,7 @@
     "message": "Verzija poslužitelja"
   },
   "selfHostedServer": {
-    "message": "self-hosted"
+    "message": "vlastiti poslužitelj"
   },
   "thirdParty": {
     "message": "Third-party"
@@ -2153,7 +2153,7 @@
     "message": "Obavijest je poslana na tvoj uređaj."
   },
   "loginInitiated": {
-    "message": "Login initiated"
+    "message": "Prijava pokrenuta"
   },
   "exposedMasterPassword": {
     "message": "Ukradena glavna lozinka"
@@ -2234,31 +2234,31 @@
     }
   },
   "loggingInOn": {
-    "message": "Logging in on"
+    "message": "Prijava na"
   },
   "opensInANewWindow": {
-    "message": "Opens in a new window"
+    "message": "Otvara u novom prozoru"
   },
   "deviceApprovalRequired": {
-    "message": "Device approval required. Select an approval option below:"
+    "message": "Potrebno je odobriti uređaj. Odaberi metodu odobravanja:"
   },
   "rememberThisDevice": {
-    "message": "Remember this device"
+    "message": "Zapamti ovaj uređaj"
   },
   "uncheckIfPublicDevice": {
-    "message": "Uncheck if using a public device"
+    "message": "Odznači ako koristiš javni uređaj"
   },
   "approveFromYourOtherDevice": {
-    "message": "Approve from your other device"
+    "message": "Odobri drugim uređajem"
   },
   "requestAdminApproval": {
-    "message": "Request admin approval"
+    "message": "Zatraži odobrenje administratora"
   },
   "approveWithMasterPassword": {
-    "message": "Approve with master password"
+    "message": "Odobri glavnom lozinkom"
   },
   "ssoIdentifierRequired": {
-    "message": "Organization SSO identifier is required."
+    "message": "Potreban je identifikator organizacije."
   },
   "eu": {
     "message": "EU",
@@ -2271,49 +2271,49 @@
     "message": "bitwarden.eu"
   },
   "accessDenied": {
-    "message": "Access denied. You do not have permission to view this page."
+    "message": "Pristup odbijen. Nemaš prava vidjeti ovu stranicu."
   },
   "general": {
-    "message": "General"
+    "message": "Opće"
   },
   "display": {
-    "message": "Display"
+    "message": "Prikaz"
   },
   "accountSuccessfullyCreated": {
-    "message": "Account successfully created!"
+    "message": "Račun je uspješno stvoren!"
   },
   "adminApprovalRequested": {
-    "message": "Admin approval requested"
+    "message": "Zatraženo odobrenje administratora"
   },
   "adminApprovalRequestSentToAdmins": {
-    "message": "Your request has been sent to your admin."
+    "message": "Tvoj zahtjev je poslan administratoru."
   },
   "youWillBeNotifiedOnceApproved": {
-    "message": "You will be notified once approved."
+    "message": "Dobiti ćeš obavijest kada bude odobreno."
   },
   "troubleLoggingIn": {
-    "message": "Trouble logging in?"
+    "message": "Problem s prijavom?"
   },
   "loginApproved": {
-    "message": "Login approved"
+    "message": "Prijava odobrena"
   },
   "userEmailMissing": {
-    "message": "User email missing"
+    "message": "Nedostaje e-pošta korisnika"
   },
   "deviceTrusted": {
-    "message": "Device trusted"
+    "message": "Uređaj pouzdan"
   },
   "inputRequired": {
-    "message": "Input is required."
+    "message": "Potreban je unos."
   },
   "required": {
-    "message": "required"
+    "message": "obavezno"
   },
   "search": {
-    "message": "Search"
+    "message": "Traži"
   },
   "inputMinLength": {
-    "message": "Input must be at least $COUNT$ characters long.",
+    "message": "Unos mora sadržavati najmanje $COUNT$ znakova.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -2322,7 +2322,7 @@
     }
   },
   "inputMaxLength": {
-    "message": "Input must not exceed $COUNT$ characters in length.",
+    "message": "Unos ne smije imati više od $COUNT$ znakova.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -2331,7 +2331,7 @@
     }
   },
   "inputForbiddenCharacters": {
-    "message": "The following characters are not allowed: $CHARACTERS$",
+    "message": "Ovi znakovi nisu dozvoljeni: $CHARACTERS$",
     "placeholders": {
       "characters": {
         "content": "$1",
@@ -2340,7 +2340,7 @@
     }
   },
   "inputMinValue": {
-    "message": "Input value must be at least $MIN$.",
+    "message": "Unos mora biti najmanje $MIN$.",
     "placeholders": {
       "min": {
         "content": "$1",
@@ -2349,7 +2349,7 @@
     }
   },
   "inputMaxValue": {
-    "message": "Input value must not exceed $MAX$.",
+    "message": "Unos ne smije biti više od $MAX$.",
     "placeholders": {
       "max": {
         "content": "$1",
@@ -2358,17 +2358,17 @@
     }
   },
   "multipleInputEmails": {
-    "message": "1 or more emails are invalid"
+    "message": "Jedna ili više adresa e-pošte nije valjana"
   },
   "inputTrimValidator": {
-    "message": "Input must not contain only whitespace.",
+    "message": "Unos ne smije biti prazan.",
     "description": "Notification to inform the user that a form's input can't contain only whitespace."
   },
   "inputEmail": {
-    "message": "Input is not an email address."
+    "message": "Nije unesena adresa e-pošte."
   },
   "fieldsNeedAttention": {
-    "message": "$COUNT$ field(s) above need your attention.",
+    "message": "$COUNT$ polje/a treba tvoju pažnju.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -2377,22 +2377,22 @@
     }
   },
   "selectPlaceholder": {
-    "message": "-- Select --"
+    "message": "-- Odaberi --"
   },
   "multiSelectPlaceholder": {
-    "message": "-- Type to filter --"
+    "message": "-- Upiši za filtriranje --"
   },
   "multiSelectLoading": {
-    "message": "Retrieving options..."
+    "message": "Dohvaćanje opcija..."
   },
   "multiSelectNotFound": {
-    "message": "No items found"
+    "message": "Nije pronađena niti jedna stavka"
   },
   "multiSelectClearAll": {
-    "message": "Clear all"
+    "message": "Očisti sve"
   },
   "plusNMore": {
-    "message": "+ $QUANTITY$ more",
+    "message": "+ još $QUANTITY$",
     "placeholders": {
       "quantity": {
         "content": "$1",
@@ -2401,10 +2401,10 @@
     }
   },
   "submenu": {
-    "message": "Submenu"
+    "message": "Podizbornik"
   },
   "toggleCollapse": {
-    "message": "Toggle collapse",
+    "message": "Sažmi/Proširi",
     "description": "Toggling an expand/collapse state."
   }
 }

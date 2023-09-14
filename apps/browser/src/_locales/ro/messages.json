@@ -1991,8 +1991,8 @@
   "exportingPersonalVaultTitle": {
     "message": "Exportul seifului individual"
   },
-  "exportingPersonalVaultDescription": {
-    "message": "Numai articolele de seif individuale asociate cu $EMAIL$ vor fi exportate. Articolele de seif ale organizației nu vor fi incluse.",
+  "exportingIndividualVaultDescription": {
+    "message": "Only the individual vault items associated with $EMAIL$ will be exported. Organization vault items will not be included. Only vault item information will be exported and will not include associated attachments.",
     "placeholders": {
       "email": {
         "content": "$1",

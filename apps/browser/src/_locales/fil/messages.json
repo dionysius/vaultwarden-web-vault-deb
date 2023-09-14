@@ -1991,8 +1991,8 @@
   "exportingPersonalVaultTitle": {
     "message": "Nag-export ng indibidwal na vault"
   },
-  "exportingPersonalVaultDescription": {
-    "message": "Lamang ang mga item ng indibidwal na vault na nauugnay sa $EMAIL$ ang maie-export. Hindi kasama ang mga item ng vault ng organisasyon.",
+  "exportingIndividualVaultDescription": {
+    "message": "Only the individual vault items associated with $EMAIL$ will be exported. Organization vault items will not be included. Only vault item information will be exported and will not include associated attachments.",
     "placeholders": {
       "email": {
         "content": "$1",
