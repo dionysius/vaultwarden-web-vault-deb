@@ -1426,10 +1426,10 @@
     "message": "Захистіть обліковий запис, вимагаючи додатковий крок перевірки під час входу."
   },
   "twoStepLoginTeamsDesc": {
-    "message": "Enable two-step login for your organization."
+    "message": "Увімкніть двоетапну перевірку для вашої організації."
   },
   "twoStepLoginEnterpriseDescStart": {
-    "message": "Enforce Bitwarden Two-step Login options for members by using the ",
+    "message": "Зобов'язувати учасників використовувати двоетапну перевірку Bitwarden за допомогою ",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enforce Bitwarden Two-step Login options for members by using the Two-step Login Policy.'"
   },
   "twoStepLoginPolicy": {
