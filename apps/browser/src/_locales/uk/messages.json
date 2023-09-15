@@ -1992,7 +1992,7 @@
     "message": "Експортування особистого сховища"
   },
   "exportingIndividualVaultDescription": {
-    "message": "Only the individual vault items associated with $EMAIL$ will be exported. Organization vault items will not be included. Only vault item information will be exported and will not include associated attachments.",
+    "message": "Будуть експортовані лише записи особистого сховища, пов'язані з $EMAIL$. Записи сховища організації не буде включено. Експортуються лише дані записів сховища без пов'язаних вкладень.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -2093,7 +2093,7 @@
     "message": "Версія сервера"
   },
   "selfHostedServer": {
-    "message": "self-hosted"
+    "message": "власне розміщення"
   },
   "thirdParty": {
     "message": "Сторонній"
