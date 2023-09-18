@@ -1,5 +1,6 @@
 ---
 name: Version Bump
+run-name: Version Bump - ${{ github.ref_name }}
 
 on:
   workflow_dispatch:
@@ -96,6 +97,26 @@ jobs:
       ########################
 
       ### Browser
+      - name: Browser - Verify input version
+        if: ${{ inputs.bump_browser == true }}
+        env:
+          NEW_VERSION: ${{ inputs.version_number }}  
+        run: |
+          CURRENT_VERSION=$(cat package.json | jq -r '.version')
+
+          # Error if version has not changed.
+          if [[ "$NEW_VERSION" == "$CURRENT_VERSION" ]]; then
+            echo "Version has not changed."
+            exit 1
+          fi
+
+          # Check if version is newer.
+          printf '%s\n' "${CURRENT_VERSION}" "${NEW_VERSION}" | sort -C -V
+          if [ $? -eq 0 ]; then 
+            echo "Version check successful." 
+          fi
+        working-directory: apps/browser
+
       - name: Bump Browser Version
         if: ${{ inputs.bump_browser == true }}
         env:
@@ -124,6 +145,26 @@ jobs:
           prettier --write apps/browser/src/manifest.v3.json
 
       ### CLI
+      - name: CLI - Verify input version
+        if: ${{ inputs.bump_cli == true }}
+        env:
+          NEW_VERSION: ${{ inputs.version_number }}  
+        run: |
+          CURRENT_VERSION=$(cat package.json | jq -r '.version')
+
+          # Error if version has not changed.
+          if [[ "$NEW_VERSION" == "$CURRENT_VERSION" ]]; then
+            echo "Version has not changed."
+            exit 1
+          fi
+
+          # Check if version is newer.
+          printf '%s\n' "${CURRENT_VERSION}" "${NEW_VERSION}" | sort -C -V
+          if [ $? -eq 0 ]; then 
+            echo "Version check successful." 
+          fi
+        working-directory: apps/cli
+
       - name: Bump CLI Version
         if: ${{ inputs.bump_cli == true }}
         env:
@@ -131,6 +172,26 @@ jobs:
         run: npm version --workspace=@bitwarden/cli ${VERSION}
 
       ### Desktop
+      - name: Desktop - Verify input version
+        if: ${{ inputs.bump_desktop == true }}
+        env:
+          NEW_VERSION: ${{ inputs.version_number }}  
+        run: |
+          CURRENT_VERSION=$(cat package.json | jq -r '.version')
+
+          # Error if version has not changed.
+          if [[ "$NEW_VERSION" == "$CURRENT_VERSION" ]]; then
+            echo "Version has not changed."
+            exit 1
+          fi
+
+          # Check if version is newer.
+          printf '%s\n' "${CURRENT_VERSION}" "${NEW_VERSION}" | sort -C -V
+          if [ $? -eq 0 ]; then 
+            echo "Version check successful." 
+          fi
+        working-directory: apps/desktop
+
       - name: Bump Desktop Version - Root
         if: ${{ inputs.bump_desktop == true }}
         env:
@@ -145,6 +206,26 @@ jobs:
         working-directory: "apps/desktop/src"
 
       ### Web
+      - name: Web - Verify input version
+        if: ${{ inputs.bump_web == true }}
+        env:
+          NEW_VERSION: ${{ inputs.version_number }}  
+        run: |
+          CURRENT_VERSION=$(cat package.json | jq -r '.version')
+
+          # Error if version has not changed.
+          if [[ "$NEW_VERSION" == "$CURRENT_VERSION" ]]; then
+            echo "Version has not changed."
+            exit 1
+          fi
+
+          # Check if version is newer.
+          printf '%s\n' "${CURRENT_VERSION}" "${NEW_VERSION}" | sort -C -V
+          if [ $? -eq 0 ]; then 
+            echo "Version check successful." 
+          fi
+        working-directory: apps/web
+
       - name: Bump Web Version
         if: ${{ inputs.bump_web == true }}
         env:
@@ -176,13 +257,13 @@ jobs:
         run: git commit -m "Bumped ${CLIENT} version to ${VERSION}" -a
 
       - name: Push changes
-        if: ${{ steps.version-changed.outputs.changes_to_commit == 'TRUE' }}
+        if: ${{ (github.ref == 'refs/heads/master') && (steps.version-changed.outputs.changes_to_commit == 'TRUE') }}
         env:
           BRANCH: ${{ steps.branch.outputs.branch }}
         run: git push -u origin ${BRANCH}
 
       - name: Create Bump Version PR
-        if: ${{ steps.version-changed.outputs.changes_to_commit == 'TRUE' }}
+        if: ${{ (github.ref == 'refs/heads/master') && (steps.version-changed.outputs.changes_to_commit == 'TRUE') }}
         env:
           BASE_BRANCH: master
           BRANCH: ${{ steps.branch.outputs.branch }}
