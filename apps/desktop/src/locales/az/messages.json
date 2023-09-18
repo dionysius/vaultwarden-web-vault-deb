@@ -1985,7 +1985,7 @@
     "message": "Şəxsi anbarın ixracı"
   },
   "exportingIndividualVaultDescription": {
-    "message": "Only the individual vault items associated with $EMAIL$ will be exported. Organization vault items will not be included. Only vault item information will be exported and will not include associated attachments.",
+    "message": "Yalnız $EMAIL$ ilə əlaqələndirilmiş fərdi anbar elementləri xaricə köçürüləcək. Təşkilat anbar elementləri daxil edilməyəcək. Yalnız anbar element məlumatları xaricə köçürüləcək və əlaqələndirilmiş qoşmalar daxil edilməyəcək.",
     "placeholders": {
       "email": {
         "content": "$1",

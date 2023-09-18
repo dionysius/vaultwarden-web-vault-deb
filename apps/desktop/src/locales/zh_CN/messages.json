@@ -317,7 +317,7 @@
     "message": "文件夹"
   },
   "newCustomField": {
-    "message": "新建自定义字段"
+    "message": "新增自定义字段"
   },
   "value": {
     "message": "值"
@@ -555,7 +555,7 @@
     "message": "两次填写的主密码不一致。"
   },
   "newAccountCreated": {
-    "message": "已经为您建立了账户，您可以登录了。"
+    "message": "您的新账户已创建！您现在可以登录了。"
   },
   "masterPassSent": {
     "message": "我们已经为您发送了包含主密码提示的邮件。"
@@ -597,7 +597,7 @@
     "message": "请输入您的身份验证器应用中的 6 位验证码。"
   },
   "enterVerificationCodeEmail": {
-    "message": "请输入通过电子邮件发送给 $EMAIL$ 的 6 位验证码。",
+    "message": "请输入发送给电子邮件 $EMAIL$ 的 6 位数验证码。",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -618,7 +618,7 @@
     "message": "记住我"
   },
   "sendVerificationCodeEmailAgain": {
-    "message": "重发验证码电子邮件"
+    "message": "再次发送验证码电子邮件"
   },
   "useAnotherTwoStepMethod": {
     "message": "使用其他两步登录方式"
@@ -663,7 +663,7 @@
     "message": "使用任何 WebAuthn 兼容的安全钥匙访问您的帐户。"
   },
   "emailTitle": {
-    "message": "电子邮件地址"
+    "message": "电子邮件"
   },
   "emailDesc": {
     "message": "验证码将会发送到您的电子邮箱。"
@@ -744,13 +744,13 @@
     "message": "注销"
   },
   "addNewLogin": {
-    "message": "添加新登录"
+    "message": "新增登录"
   },
   "addNewItem": {
     "message": "新增项目"
   },
   "addNewFolder": {
-    "message": "添加文件夹"
+    "message": "新增文件夹"
   },
   "view": {
     "message": "查看"
@@ -1414,7 +1414,7 @@
     "message": "应用程序启动时要求使用触控 ID"
   },
   "requirePasswordOnStart": {
-    "message": "应用程序启动时要求输入密码或 PIN"
+    "message": "应用程序启动时要求输入密码或 PIN 码"
   },
   "recommendedForSecurity": {
     "message": "安全起见，推荐设置。"
@@ -1534,7 +1534,7 @@
     "message": "设置主密码"
   },
   "ssoCompleteRegistration": {
-    "message": "要完成 SSO 登陆配置，请设置一个主密码以访问和保护您的密码库。"
+    "message": "要完成 SSO 登录配置，请设置一个主密码以访问和保护您的密码库。"
   },
   "currentMasterPass": {
     "message": "当前主密码"
@@ -1979,13 +1979,13 @@
     "message": "选项"
   },
   "sessionTimeout": {
-    "message": "您的会话已超时。请返回并尝试重新登录。"
+    "message": "您的会话已超时。请返回然后尝试重新登录。"
   },
   "exportingPersonalVaultTitle": {
     "message": "正在导出个人密码库"
   },
   "exportingIndividualVaultDescription": {
-    "message": "Only the individual vault items associated with $EMAIL$ will be exported. Organization vault items will not be included. Only vault item information will be exported and will not include associated attachments.",
+    "message": "仅会导出与 $EMAIL$ 关联的个人密码库项目，不包括组织密码库项目。仅会导出密码库项目信息，不包括关联的附件。",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -2083,7 +2083,7 @@
     "message": "密码库"
   },
   "loginWithMasterPassword": {
-    "message": "使用主密码登录"
+    "message": "主密码登录"
   },
   "loggingInAs": {
     "message": "正登录为"
@@ -2244,7 +2244,7 @@
     }
   },
   "windowsBiometricUpdateWarning": {
-    "message": "Bitwarden 建议更新您的生物识别设置，以在首次解锁时要求输入您的主密码（或 PIN）。现在要更新您的设置吗？"
+    "message": "Bitwarden 建议更新您的生物识别设置，以在首次解锁时要求输入您的主密码（或 PIN 码）。现在要更新您的设置吗？"
   },
   "windowsBiometricUpdateWarningTitle": {
     "message": "推荐的设置更新"

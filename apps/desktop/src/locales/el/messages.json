@@ -929,7 +929,7 @@
     "message": "Όταν ελαχιστοποιείται το παράθυρο, εμφανίζεται ένα εικονίδιο στη γραμμή μενού."
   },
   "enableCloseToTray": {
-    "message": "Κλείσιμο στο Εικονίδιο Δίσκου"
+    "message": "Κλείσιμο σε εικονίδιο περιοχής ειδοποιήσεων"
   },
   "enableCloseToTrayDesc": {
     "message": "Κατά το κλείσιμο του παραθύρου, να εμφανίζεται ένα εικονίδιο στην περιοχή ειδοποιήσεων."
@@ -941,13 +941,13 @@
     "message": "Κατά το κλείσιμο του παραθύρου, εμφανίζεται ένα εικονίδιο στη γραμμή μενού."
   },
   "enableTray": {
-    "message": "Ενεργοποίηση Εικονιδίου Δίσκου"
+    "message": "Ενεργοποίηση εικονιδίου περιοχής ειδοποιήσεων"
   },
   "enableTrayDesc": {
     "message": "Να εμφανίζεται πάντα ένα εικονίδιο στην περιοχή ειδοποιήσεων."
   },
   "startToTray": {
-    "message": "Έναρξη στο εικονίδιο δίσκου"
+    "message": "Έναρξη σε εικονίδιο περιοχής ειδοποιήσεων"
   },
   "startToTrayDesc": {
     "message": "Όταν ξεκινάει για πρώτη φορά η εφαρμογή, να εμφανίζεται μόνο ένα εικονίδιο στην περιοχή ειδοποιήσεων."
@@ -1408,7 +1408,7 @@
     "message": "Ξεκλειδώστε το vault σας"
   },
   "autoPromptWindowsHello": {
-    "message": "Εμφάνιση Windows Hello κατά την εκκίνηση της εφαρμογής"
+    "message": "Να ζητείται Windows Hello κατά την εκκίνηση της εφαρμογής"
   },
   "autoPromptTouchId": {
     "message": "Ερώτηση για το Touch ID κατά την εκκίνηση"
@@ -2250,7 +2250,7 @@
     "message": "Ενημέρωση Προτεινόμενων Ρυθμίσεων"
   },
   "deviceApprovalRequired": {
-    "message": "Device approval required. Select an approval option below:"
+    "message": "Απαιτείται έγκριση συσκευής. Επιλέξτε μια επιλογή έγκρισης παρακάτω:"
   },
   "rememberThisDevice": {
     "message": "Remember this device"
@@ -2320,7 +2320,7 @@
     "message": "Input is required."
   },
   "required": {
-    "message": "required"
+    "message": "απαιτείται"
   },
   "search": {
     "message": "Search"
