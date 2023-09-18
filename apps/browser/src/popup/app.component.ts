@@ -86,31 +86,25 @@ export class AppComponent implements OnInit, OnDestroy {
       sendResponse: any
     ) => {
       if (msg.command === "doneLoggingOut") {
-        this.ngZone.run(async () => {
-          this.authService.logOut(async () => {
-            if (msg.expired) {
-              this.showToast({
-                type: "warning",
-                title: this.i18nService.t("loggedOut"),
-                text: this.i18nService.t("loginExpired"),
-              });
-            }
+        this.authService.logOut(async () => {
+          if (msg.expired) {
+            this.showToast({
+              type: "warning",
+              title: this.i18nService.t("loggedOut"),
+              text: this.i18nService.t("loginExpired"),
+            });
+          }
 
-            if (this.activeUserId === null) {
-              this.router.navigate(["home"]);
-            }
-          });
-          this.changeDetectorRef.detectChanges();
+          if (this.activeUserId === null) {
+            this.router.navigate(["home"]);
+          }
         });
+        this.changeDetectorRef.detectChanges();
       } else if (msg.command === "authBlocked") {
-        this.ngZone.run(() => {
-          this.router.navigate(["home"]);
-        });
+        this.router.navigate(["home"]);
       } else if (msg.command === "locked") {
         if (msg.userId == null || msg.userId === (await this.stateService.getUserId())) {
-          this.ngZone.run(() => {
-            this.router.navigate(["lock"]);
-          });
+          this.router.navigate(["lock"]);
         }
       } else if (msg.command === "showDialog") {
         await this.ngZone.run(() => this.showDialog(msg));
@@ -118,9 +112,7 @@ export class AppComponent implements OnInit, OnDestroy {
         // TODO: Should be refactored to live in another service.
         await this.ngZone.run(() => this.showNativeMessagingFingerprintDialog(msg));
       } else if (msg.command === "showToast") {
-        this.ngZone.run(() => {
-          this.showToast(msg);
-        });
+        this.showToast(msg);
       } else if (msg.command === "reloadProcess") {
         const forceWindowReload =
           this.platformUtilsService.isSafari() ||
@@ -132,13 +124,9 @@ export class AppComponent implements OnInit, OnDestroy {
           2000
         );
       } else if (msg.command === "reloadPopup") {
-        this.ngZone.run(() => {
-          this.router.navigate(["/"]);
-        });
+        this.router.navigate(["/"]);
       } else if (msg.command === "convertAccountToKeyConnector") {
-        this.ngZone.run(async () => {
-          this.router.navigate(["/remove-password"]);
-        });
+        this.router.navigate(["/remove-password"]);
       } else {
         msg.webExtSender = sender;
         this.broadcasterService.send(msg);
