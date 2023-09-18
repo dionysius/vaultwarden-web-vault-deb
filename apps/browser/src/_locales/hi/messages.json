@@ -1992,7 +1992,7 @@
     "message": "Exporting individual vault"
   },
   "exportingIndividualVaultDescription": {
-    "message": "Only the individual vault items associated with $EMAIL$ will be exported. Organization vault items will not be included. Only vault item information will be exported and will not include associated attachments.",
+    "message": "केवल $EMAIL$ से संबद्ध, व्यक्तिगत वॉल्ट वस्तुएँ निर्यात की जाएंगी. संगठन वॉल्ट वस्तुएँ शामिल नहीं की जाएंगी. केवल वॉल्ट वस्तुओं की जानकारी निर्यात की जाएगी और इसमें संबंधित अनुलग्नक शामिल नहीं होंगे.",
     "placeholders": {
       "email": {
         "content": "$1",

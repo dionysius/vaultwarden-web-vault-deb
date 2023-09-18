@@ -751,7 +751,7 @@
     "message": "附件已删除"
   },
   "newAttachment": {
-    "message": "添加新的附件"
+    "message": "添加新附件"
   },
   "noAttachments": {
     "message": "没有附件。"
@@ -853,7 +853,7 @@
     "message": "请输入您的验证器应用中的 6 位验证码。"
   },
   "enterVerificationCodeEmail": {
-    "message": "请输入通过电子邮件发送给 $EMAIL$ 的 6 位验证码。",
+    "message": "请输入发送给电子邮件 $EMAIL$ 的 6 位数验证码。",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -1036,7 +1036,7 @@
     "message": "值"
   },
   "newCustomField": {
-    "message": "新建自定义字段"
+    "message": "新增自定义字段"
   },
   "dragToSort": {
     "message": "拖动排序"
@@ -1059,7 +1059,7 @@
     "description": "This describes a value that is 'linked' (tied) to another value."
   },
   "popup2faCloseMessage": {
-    "message": "如果您点击弹窗外的任何区域，将导致弹窗关闭。您想在新窗口中打开此弹窗，以便它不会关闭吗？"
+    "message": "如果您点击弹窗外的区域以检查您的验证码电子邮件，将导致弹窗关闭。您想在新窗口中打开此弹窗，以便它不会关闭吗？"
   },
   "popupU2fCloseMessage": {
     "message": "此浏览器无法处理此弹出窗口中的 U2F 请求。您想要在新窗口中打开此弹出窗口吗？"
@@ -1182,7 +1182,7 @@
     "message": "许可证号码"
   },
   "email": {
-    "message": "Email"
+    "message": "电子邮件"
   },
   "phone": {
     "message": "电话"
@@ -1615,7 +1615,7 @@
     "message": "未提供权限"
   },
   "nativeMessaginPermissionErrorDesc": {
-    "message": "没有与 Bitwarden 桌面应用程序通信的权限，我们无法在浏览器扩展中提供生物识别。请再试一次。"
+    "message": "没有与 Bitwarden 桌面应用程序通信的权限，我们无法在浏览器扩展中提供生物识别。请重试。"
   },
   "nativeMessaginPermissionSidebarTitle": {
     "message": "权限请求错误"
@@ -1896,7 +1896,7 @@
     "message": "选择文件夹..."
   },
   "ssoCompleteRegistration": {
-    "message": "要完成 SSO 登陆配置，请设置一个主密码以访问和保护您的密码库。"
+    "message": "要完成 SSO 登录配置，请设置一个主密码以访问和保护您的密码库。"
   },
   "hours": {
     "message": "小时"
@@ -1986,13 +1986,13 @@
     "message": "字符计数开关"
   },
   "sessionTimeout": {
-    "message": "您的会话已超时。请返回并尝试重新登录。"
+    "message": "您的会话已超时。请返回然后尝试重新登录。"
   },
   "exportingPersonalVaultTitle": {
     "message": "导出个人密码库"
   },
   "exportingIndividualVaultDescription": {
-    "message": "Only the individual vault items associated with $EMAIL$ will be exported. Organization vault items will not be included. Only vault item information will be exported and will not include associated attachments.",
+    "message": "仅会导出与 $EMAIL$ 关联的个人密码库项目，不包括组织密码库项目。仅会导出密码库项目信息，不包括关联的附件。",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -2117,7 +2117,7 @@
     }
   },
   "loginWithMasterPassword": {
-    "message": "使用主密码登录"
+    "message": "主密码登录"
   },
   "loggingInAs": {
     "message": "正登录为"

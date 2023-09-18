@@ -1992,7 +1992,7 @@
     "message": "S'està exportant la caixa forta personal"
   },
   "exportingIndividualVaultDescription": {
-    "message": "Only the individual vault items associated with $EMAIL$ will be exported. Organization vault items will not be included. Only vault item information will be exported and will not include associated attachments.",
+    "message": "Només s'exportaran els elements de la caixa forta individuals associats a $EMAIL$. Els elements de la caixa de l'organització no s'inclouran. Només s'exportarà la informació de l'element de la caixa forta i no inclourà els fitxers adjunts associats.",
     "placeholders": {
       "email": {
         "content": "$1",
