@@ -482,7 +482,7 @@ export class SettingsComponent implements OnInit {
   }
 
   about() {
-    this.modalService.open(AboutComponent);
+    this.dialogService.open(AboutComponent);
   }
 
   async fingerprint() {
