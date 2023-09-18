@@ -154,8 +154,13 @@ export class AddEditComponent implements OnInit, OnDestroy {
       .policyAppliesToActiveUser$(PolicyType.SendOptions, (p) => p.data.disableHideEmail)
       .pipe(takeUntil(this.destroy$))
       .subscribe((policyAppliesToActiveUser) => {
-        if ((this.disableHideEmail = policyAppliesToActiveUser)) {
+        if (
+          (this.disableHideEmail = policyAppliesToActiveUser) &&
+          !this.formGroup.controls.hideEmail.value
+        ) {
           this.formGroup.controls.hideEmail.disable();
+        } else {
+          this.formGroup.controls.hideEmail.enable();
         }
       });
 
