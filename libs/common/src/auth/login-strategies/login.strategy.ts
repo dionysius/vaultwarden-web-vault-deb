@@ -153,6 +153,7 @@ export abstract class LogInStrategy {
     const result = new AuthResult();
     result.resetMasterPassword = response.resetMasterPassword;
 
+    // Convert boolean to enum
     if (response.forcePasswordReset) {
       result.forcePasswordReset = ForceResetPasswordReason.AdminForcePasswordReset;
     }

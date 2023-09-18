@@ -352,7 +352,7 @@ describe("SsoComponent", () => {
       describe("Given Trusted Device Encryption is enabled, user doesn't need to set a MP, and forcePasswordReset is required", () => {
         [
           ForceResetPasswordReason.AdminForcePasswordReset,
-          ForceResetPasswordReason.WeakMasterPassword,
+          // ForceResetPasswordReason.WeakMasterPassword, -- not possible in SSO flow as set client side
         ].forEach((forceResetPasswordReason) => {
           const reasonString = ForceResetPasswordReason[forceResetPasswordReason];
           let authResult;
@@ -449,7 +449,7 @@ describe("SsoComponent", () => {
     describe("Force Master Password Reset scenarios", () => {
       [
         ForceResetPasswordReason.AdminForcePasswordReset,
-        ForceResetPasswordReason.WeakMasterPassword,
+        // ForceResetPasswordReason.WeakMasterPassword, -- not possible in SSO flow as set client side
       ].forEach((forceResetPasswordReason) => {
         const reasonString = ForceResetPasswordReason[forceResetPasswordReason];
 

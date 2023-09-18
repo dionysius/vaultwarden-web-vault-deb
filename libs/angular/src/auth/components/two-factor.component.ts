@@ -282,8 +282,10 @@ export class TwoFactorComponent extends CaptchaProtectedComponent implements OnI
       return await this.handleChangePasswordRequired(orgIdentifier);
     }
 
-    // Users can be forced to reset their password via an admin or org policy
-    // disallowing weak passwords
+    // Users can be forced to reset their password via an admin or org policy disallowing weak passwords
+    // Note: this is different from SSO component login flow as a user can
+    // login with MP and then have to pass 2FA to finish login and we can actually
+    // evaluate if they have a weak password at this time.
     if (authResult.forcePasswordReset !== ForceResetPasswordReason.None) {
       return await this.handleForcePasswordReset(orgIdentifier);
     }
