@@ -189,7 +189,7 @@ export class ContextMenuClickedHandler {
       // we are actually unlocked we will do our best to find a good match of an item to autofill this is useful
       // in scenarios like unlock on autofill
       const ciphers = await this.cipherService.getAllDecryptedForUrl(tab.url);
-      cipher = ciphers.find((c) => c.reprompt === CipherRepromptType.None);
+      cipher = ciphers[0];
     } else {
       const ciphers = await this.cipherService.getAllDecrypted();
       cipher = ciphers.find((c) => c.id === id);
