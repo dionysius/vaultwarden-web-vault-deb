@@ -142,7 +142,7 @@
     "message": "文件夹"
   },
   "newCustomField": {
-    "message": "新建自定义字段"
+    "message": "新增自定义字段"
   },
   "value": {
     "message": "值"
@@ -606,13 +606,13 @@
     "message": "登录或者创建一个账户来访问您的安全密码库。"
   },
   "loginWithDevice": {
-    "message": "使用设备登录"
+    "message": "设备登录"
   },
   "loginWithDeviceEnabledNote": {
     "message": "设备登录必须在 Bitwarden 应用程序的设置中启用。需要其他登录选项吗？"
   },
   "loginWithMasterPassword": {
-    "message": "使用主密码登录"
+    "message": "主密码登录"
   },
   "createAccount": {
     "message": "创建账户"
@@ -791,7 +791,7 @@
     "message": "请输入验证器应用程序中的 6 位验证码。"
   },
   "enterVerificationCodeEmail": {
-    "message": "请输入发送给电子邮件 $EMAIL$ 的 6 位验证码。",
+    "message": "请输入发送给电子邮件 $EMAIL$ 的 6 位数验证码。",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -812,7 +812,7 @@
     "message": "记住我"
   },
   "sendVerificationCodeEmailAgain": {
-    "message": "重发验证码电子邮件"
+    "message": "再次发送验证码电子邮件"
   },
   "useAnotherTwoStepMethod": {
     "message": "使用其他两步登录方式"
@@ -1104,7 +1104,7 @@
     "message": "继续操作将更改您的账户电子邮件地址。这不会更改用于双重身份验证的电子邮件地址。您可以在两步登录设置中更改它。"
   },
   "newEmail": {
-    "message": "新电子邮件"
+    "message": "新电子邮件地址"
   },
   "code": {
     "message": "代码"
@@ -1663,7 +1663,7 @@
     "message": "单击下面的「保存」按钮，以启用此安全钥匙用于两步登录。"
   },
   "twoFactorU2fProblemReadingTryAgain": {
-    "message": "读取安全钥匙时出现问题，请再试一次。"
+    "message": "读取安全钥匙时出现问题，请重试。"
   },
   "twoFactorWebAuthnWarning": {
     "message": "由于平台限制，无法在所有 Bitwarden 应用程序中使用 WebAuthn。您应该启用另一个两步登录提供程序，以便在 WebAuthn 无法使用时可以访问您的账户。支持的平台有："
@@ -1968,7 +1968,7 @@
     }
   },
   "bitwardenFamiliesPlan": {
-    "message": "Bitwarden 家庭计划。"
+    "message": "Bitwarden 家庭版计划。"
   },
   "addons": {
     "message": "附加项目"
@@ -2304,7 +2304,7 @@
     }
   },
   "planNameFamilies": {
-    "message": "家庭"
+    "message": "家庭版"
   },
   "planDescFamilies": {
     "message": "适用于个人使用，与家人和朋友共享。"
@@ -2499,7 +2499,7 @@
     "message": "群组"
   },
   "newGroup": {
-    "message": "新建群组"
+    "message": "新增群组"
   },
   "addGroup": {
     "message": "添加群组"
@@ -2553,7 +2553,7 @@
     "message": "只读"
   },
   "newCollection": {
-    "message": "新建集合"
+    "message": "新增集合"
   },
   "addCollection": {
     "message": "添加集合"
@@ -4152,7 +4152,7 @@
     "message": "紧急访问已批准"
   },
   "viewDesc": {
-    "message": "可以查看您拥有的密码库中的所有项目。"
+    "message": "可以查看您的密码库中的所有项目。"
   },
   "takeover": {
     "message": "接管"
@@ -4646,7 +4646,7 @@
     "message": "回收站中超过 30 天的条目将会被自动删除。"
   },
   "trashCleanupWarningSelfHosted": {
-    "message": "回收站中超过一定时间的项目将会被自动删除。"
+    "message": "回收站中超过一定时间的条目将会被自动删除。"
   },
   "passwordPrompt": {
     "message": "主密码重新提示"
@@ -4730,7 +4730,7 @@
     "message": "错误"
   },
   "accountRecoveryManageUsers": {
-    "message": "管理用户也必须被授予管理账户恢复的权限"
+    "message": "授予「管理账户恢复」的权限，同时必须授予「管理用户」的权限"
   },
   "setupProvider": {
     "message": "提供商设置"
@@ -5080,7 +5080,7 @@
     "message": "免费 Bitwarden 家庭"
   },
   "sponsoredFamiliesEligible": {
-    "message": "您和您的家人可使用免费的 Bitwarden 家庭版计划。即使您不在公司上班，您也可以使用个人电子邮件兑换此计划，以保护您的数据安全。"
+    "message": "您和您的家人有资格享受免费的 Bitwarden 家庭版计划。即使您不在公司上班，您也可以使用个人电子邮件兑换此计划，以保护您的数据安全。"
   },
   "sponsoredFamiliesEligibleCard": {
     "message": "立即兑换免费的 Bitwarden 家庭版计划，即使您不在公司上班也能确保您的数据安全。"
@@ -5374,19 +5374,19 @@
     "message": "计费同步令牌"
   },
   "active": {
-    "message": "生效中"
+    "message": "已生效"
   },
   "inactive": {
     "message": "已失效"
   },
   "sentAwaitingSync": {
-    "message": "已发送（正在等待同步）"
+    "message": "已发送（等待同步）"
   },
   "sent": {
-    "message": "发送"
+    "message": "已发送"
   },
   "requestRemoved": {
-    "message": "已移除（正在等待同步）"
+    "message": "已移除（等待同步）"
   },
   "requested": {
     "message": "已请求"
@@ -5614,7 +5614,7 @@
     "message": "启用设备验证"
   },
   "deviceVerificationDesc": {
-    "message": "登录未识别的设备时，验证码会发送到您的电子邮件地址"
+    "message": "登录未识别的设备时，验证码会发送到您的电子邮箱"
   },
   "updatedDeviceVerification": {
     "message": "已更新设备验证"
@@ -6230,7 +6230,7 @@
     "description": "Toast message after deleting one or multiple access tokens."
   },
   "noAccessTokenSelected": {
-    "message": "未选中任何要撤销的访问令牌",
+    "message": "未选中任何要吊销的访问令牌",
     "description": "Toast error message after trying to delete access tokens but not selecting any access tokens."
   },
   "submenu": {
