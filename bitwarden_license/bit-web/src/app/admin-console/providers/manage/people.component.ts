@@ -50,6 +50,7 @@ export class PeopleComponent
 
   userType = ProviderUserType;
   userStatusType = ProviderUserStatusType;
+  status: ProviderUserStatusType = null;
   providerId: string;
   accessEvents = false;
 
