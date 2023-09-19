@@ -986,13 +986,18 @@
           styleTimeout = 200;
 
       /**
-       * Fll an element `el` using the value `op` from the fill script
+       * Fill an element `el` using the value `op` from the fill script
        * @param {HTMLElement} el
        * @param {string} op
        */
       function fillTheElement(el, op) {
           var shouldCheck;
           if (el && null !== op && void 0 !== op && !(el.disabled || el.a || el.readOnly)) {
+              const tabURLChanged = !fillScript.savedUrls?.some(url => url.startsWith(window.location.origin))
+              // Check to make sure the page location didn't change
+              if (tabURLChanged) {
+                return;
+              }
               switch (markTheFilling && el.form && !el.form.opfilled && (el.form.opfilled = true),
               el.type ? el.type.toLowerCase() : null) {
                   case 'checkbox':

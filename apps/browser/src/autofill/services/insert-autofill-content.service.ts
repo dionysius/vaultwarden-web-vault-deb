@@ -38,12 +38,23 @@ class InsertAutofillContentService implements InsertAutofillContentServiceInterf
       !fillScript.script?.length ||
       this.fillingWithinSandboxedIframe() ||
       this.userCancelledInsecureUrlAutofill(fillScript.savedUrls) ||
-      this.userCancelledUntrustedIframeAutofill(fillScript)
+      this.userCancelledUntrustedIframeAutofill(fillScript) ||
+      this.tabURLChanged(fillScript.savedUrls)
     ) {
       return;
     }
 
     fillScript.script.forEach(this.runFillScriptAction);
+  }
+
+  /**
+   * Determines if the page URL no longer matches one of the cipher's savedURL domains
+   * @param {string[] | null} savedUrls
+   * @returns {boolean}
+   * @private
+   */
+  private tabURLChanged(savedUrls?: AutofillScript["savedUrls"]): boolean {
+    return savedUrls && !savedUrls.some((url) => url.startsWith(window.location.origin));
   }
 
   /**
