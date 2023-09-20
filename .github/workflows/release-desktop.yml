@@ -56,7 +56,7 @@ jobs:
         uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3.5.3
 
       - name: Branch check
-        if: ${{ inputs.release_type != 'Dry Run' }}
+        if: ${{ github.event.inputs.release_type != 'Dry Run' }}
         run: |
           if [[ "$GITHUB_REF" != "refs/heads/rc" ]] && [[ "$GITHUB_REF" != "refs/heads/hotfix-rc-desktop" ]]; then
             echo "==================================="
@@ -93,7 +93,7 @@ jobs:
           esac
 
       - name: Create GitHub deployment
-        if: ${{ inputs.release_type != 'Dry Run' }}
+        if: ${{ github.event.inputs.release_type != 'Dry Run' }}
         uses: chrnorm/deployment-action@d42cde7132fcec920de534fffc3be83794335c00 # v2.0.5
         id: deployment
         with:
@@ -122,7 +122,7 @@ jobs:
             cf-prod-account"
 
       - name: Download all artifacts
-        if: ${{ inputs.release_type != 'Dry Run' }}
+        if: ${{ github.event.inputs.release_type != 'Dry Run' }}
         uses: bitwarden/gh-actions/download-artifacts@67ab95d7a466bcefdedf3f93cbc10bcff436edfe
         with:
           workflow: build-desktop.yml
@@ -131,7 +131,7 @@ jobs:
           path: apps/desktop/artifacts
 
       - name: Dry Run - Download all artifacts
-        if: ${{ inputs.release_type == 'Dry Run' }}
+        if: ${{ github.event.inputs.release_type == 'Dry Run' }}
         uses: bitwarden/gh-actions/download-artifacts@67ab95d7a466bcefdedf3f93cbc10bcff436edfe
         with:
           workflow: build-desktop.yml
@@ -146,7 +146,7 @@ jobs:
         run: mv Bitwarden-${{ env.PKG_VERSION }}-universal.pkg Bitwarden-${{ env.PKG_VERSION }}-universal.pkg.archive
 
       - name: Set staged rollout percentage
-        if: ${{ inputs.electron_publish == 'true' }}
+        if: ${{ github.event.inputs.electron_publish == 'true' }}
         env:
           RELEASE_CHANNEL: ${{ steps.release-channel.outputs.channel }}
           ROLLOUT_PCT: ${{ inputs.rollout_percentage }}
@@ -156,7 +156,7 @@ jobs:
           echo "stagingPercentage: ${ROLLOUT_PCT}" >> apps/desktop/artifacts/${RELEASE_CHANNEL}-mac.yml
 
       - name: Publish artifacts to S3
-        if: ${{ inputs.release_type != 'Dry Run' && inputs.electron_publish == 'true' }}
+        if: ${{ github.event.inputs.release_type != 'Dry Run' && github.event.inputs.electron_publish == 'true' }}
         env:
           AWS_ACCESS_KEY_ID: ${{ steps.retrieve-secrets.outputs.aws-electron-access-id }}
           AWS_SECRET_ACCESS_KEY: ${{ steps.retrieve-secrets.outputs.aws-electron-access-key }}
@@ -170,7 +170,7 @@ jobs:
           --quiet
 
       - name: Publish artifacts to R2
-        if: ${{ inputs.release_type != 'Dry Run' && inputs.electron_publish == 'true' }}
+        if: ${{ github.event.inputs.release_type != 'Dry Run' && github.event.inputs.electron_publish == 'true' }}
         env:
           AWS_ACCESS_KEY_ID: ${{ steps.retrieve-secrets.outputs.r2-electron-access-id }}
           AWS_SECRET_ACCESS_KEY: ${{ steps.retrieve-secrets.outputs.r2-electron-access-key }}
@@ -192,7 +192,7 @@ jobs:
 
       - name: Create Release
         uses: ncipollo/release-action@a2e71bdd4e7dab70ca26a852f29600c98b33153e # v1.12.0
-        if: ${{ steps.release-channel.outputs.channel == 'latest' && inputs.release_type != 'Dry Run' && inputs.github_release == 'true' }}
+        if: ${{ steps.release-channel.outputs.channel == 'latest' && github.event.inputs.release_type != 'Dry Run' && github.event.inputs.github_release == 'true' }}
         env:
           PKG_VERSION: ${{ steps.version.outputs.version }}
           RELEASE_CHANNEL: ${{ steps.release-channel.outputs.channel }}
@@ -230,7 +230,7 @@ jobs:
           draft: true
 
       - name: Update deployment status to Success
-        if: ${{ inputs.release_type != 'Dry Run' && success() }}
+        if: ${{ github.event.inputs.release_type != 'Dry Run' && success() }}
         uses: chrnorm/deployment-status@2afb7d27101260f4a764219439564d954d10b5b0 # v2.0.1
         with:
           token: '${{ secrets.GITHUB_TOKEN }}'
@@ -238,7 +238,7 @@ jobs:
           deployment-id: ${{ steps.deployment.outputs.deployment_id }}
 
       - name: Update deployment status to Failure
-        if: ${{ inputs.release_type != 'Dry Run' && failure() }}
+        if: ${{ github.event.inputs.release_type != 'Dry Run' && failure() }}
         uses: chrnorm/deployment-status@2afb7d27101260f4a764219439564d954d10b5b0 # v2.0.1
         with:
           token: '${{ secrets.GITHUB_TOKEN }}'
@@ -249,7 +249,7 @@ jobs:
     name: Deploy Snap
     runs-on: ubuntu-22.04
     needs: setup
-    if: ${{ inputs.snap_publish == 'true' }}
+    if: ${{ github.event.inputs.snap_publish == 'true' }}
     env:
       _PKG_VERSION: ${{ needs.setup.outputs.release-version }}
     steps:
@@ -278,7 +278,7 @@ jobs:
         working-directory: apps/desktop
 
       - name: Download Snap artifact
-        if: ${{ inputs.release_type != 'Dry Run' }}
+        if: ${{ github.event.inputs.release_type != 'Dry Run' }}
         uses: bitwarden/gh-actions/download-artifacts@67ab95d7a466bcefdedf3f93cbc10bcff436edfe
         with:
           workflow: build-desktop.yml
@@ -288,7 +288,7 @@ jobs:
           path: apps/desktop/dist
 
       - name: Dry Run - Download Snap artifact
-        if: ${{ inputs.release_type == 'Dry Run' }}
+        if: ${{ github.event.inputs.release_type == 'Dry Run' }}
         uses: bitwarden/gh-actions/download-artifacts@67ab95d7a466bcefdedf3f93cbc10bcff436edfe
         with:
           workflow: build-desktop.yml
@@ -298,7 +298,7 @@ jobs:
           path: apps/desktop/dist
 
       - name: Deploy to Snap Store
-        if: ${{ inputs.release_type != 'Dry Run' }}
+        if: ${{ github.event.inputs.release_type != 'Dry Run' }}
         env:
           SNAPCRAFT_STORE_CREDENTIALS: ${{ steps.retrieve-secrets.outputs.snapcraft-store-token }}
         run: |
@@ -310,7 +310,7 @@ jobs:
     name: Deploy Choco
     runs-on: windows-2019
     needs: setup
-    if: ${{ inputs.choco_publish == 'true' }}
+    if: ${{ github.event.inputs.choco_publish == 'true' }}
     env:
       _PKG_VERSION: ${{ needs.setup.outputs.release-version }}
     steps:
@@ -346,7 +346,7 @@ jobs:
         working-directory: apps/desktop
 
       - name: Download choco artifact
-        if: ${{ inputs.release_type != 'Dry Run' }}
+        if: ${{ github.event.inputs.release_type != 'Dry Run' }}
         uses: bitwarden/gh-actions/download-artifacts@67ab95d7a466bcefdedf3f93cbc10bcff436edfe
         with:
           workflow: build-desktop.yml
@@ -356,7 +356,7 @@ jobs:
           path: apps/desktop/dist
 
       - name: Dry Run - Download choco artifact
-        if: ${{ inputs.release_type == 'Dry Run' }}
+        if: ${{ github.event.inputs.release_type == 'Dry Run' }}
         uses: bitwarden/gh-actions/download-artifacts@67ab95d7a466bcefdedf3f93cbc10bcff436edfe
         with:
           workflow: build-desktop.yml
@@ -366,7 +366,7 @@ jobs:
           path: apps/desktop/dist
 
       - name: Push to Chocolatey
-        if: ${{ inputs.release_type != 'Dry Run' }}
+        if: ${{ github.event.inputs.release_type != 'Dry Run' }}
         shell: pwsh
         run: choco push --source=https://push.chocolatey.org/
         working-directory: apps/desktop/dist
