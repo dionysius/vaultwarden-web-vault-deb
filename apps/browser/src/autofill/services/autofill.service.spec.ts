@@ -75,7 +75,7 @@ describe("AutofillService", () => {
     const autofillV1Script = "autofill.js";
     const autofillV2Script = "autofill-init.js";
     const defaultAutofillScripts = ["autofiller.js", "notificationBar.js", "contextMenuHandler.js"];
-    const defaultExecuteScriptOptions = { allFrames: true, runAt: "document_start" };
+    const defaultExecuteScriptOptions = { runAt: "document_start" };
     let tabMock: chrome.tabs.Tab;
     let sender: chrome.runtime.MessageSender;
 
@@ -91,11 +91,13 @@ describe("AutofillService", () => {
       [autofillV1Script, ...defaultAutofillScripts].forEach((scriptName) => {
         expect(BrowserApi.executeScriptInTab).toHaveBeenCalledWith(tabMock.id, {
           file: `content/${scriptName}`,
+          frameId: sender.frameId,
           ...defaultExecuteScriptOptions,
         });
       });
       expect(BrowserApi.executeScriptInTab).not.toHaveBeenCalledWith(tabMock.id, {
         file: `content/${autofillV2Script}`,
+        frameId: sender.frameId,
         ...defaultExecuteScriptOptions,
       });
     });

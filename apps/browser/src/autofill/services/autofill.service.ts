@@ -62,7 +62,7 @@ export default class AutofillService implements AutofillServiceInterface {
     for (const injectedScript of injectedScripts) {
       await BrowserApi.executeScriptInTab(sender.tab.id, {
         file: `content/${injectedScript}`,
-        allFrames: true,
+        frameId: sender.frameId,
         runAt: "document_start",
       });
     }
