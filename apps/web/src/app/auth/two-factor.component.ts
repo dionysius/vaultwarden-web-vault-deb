@@ -9,6 +9,7 @@ import { AuthService } from "@bitwarden/common/auth/abstractions/auth.service";
 import { LoginService } from "@bitwarden/common/auth/abstractions/login.service";
 import { TwoFactorService } from "@bitwarden/common/auth/abstractions/two-factor.service";
 import { TwoFactorProviderType } from "@bitwarden/common/auth/enums/two-factor-provider-type";
+import { AuthResult } from "@bitwarden/common/auth/models/domain/auth-result";
 import { AppIdService } from "@bitwarden/common/platform/abstractions/app-id.service";
 import { ConfigServiceAbstraction } from "@bitwarden/common/platform/abstractions/config/config.service.abstraction";
 import { EnvironmentService } from "@bitwarden/common/platform/abstractions/environment.service";
@@ -84,6 +85,14 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
         });
       }
     );
+  }
+
+  protected override handleMigrateEncryptionKey(result: AuthResult): boolean {
+    if (!result.requiresEncryptionKeyMigration) {
+      return false;
+    }
+    this.router.navigate(["migrate-legacy-encryption"]);
+    return true;
   }
 
   goAfterLogIn = async () => {

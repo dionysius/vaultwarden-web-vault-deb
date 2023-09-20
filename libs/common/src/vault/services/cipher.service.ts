@@ -329,11 +329,6 @@ export class CipherService implements CipherServiceAbstraction {
       return await this.getDecryptedCipherCache();
     }
 
-    const hasKey = await this.cryptoService.hasUserKey();
-    if (!hasKey) {
-      throw new Error("No user key found.");
-    }
-
     const ciphers = await this.getAll();
     const orgKeys = await this.cryptoService.getOrgKeys();
     const userKey = await this.cryptoService.getUserKeyWithLegacySupport();

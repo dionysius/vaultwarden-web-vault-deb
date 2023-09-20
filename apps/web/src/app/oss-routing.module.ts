@@ -175,6 +175,13 @@ const routes: Routes = [
         canActivate: [AuthGuard],
         data: { titleId: "removeMasterPassword" },
       },
+      {
+        path: "migrate-legacy-encryption",
+        loadComponent: () =>
+          import("./auth/migrate-encryption/migrate-legacy-encryption.component").then(
+            (mod) => mod.MigrateFromLegacyEncryptionComponent
+          ),
+      },
     ],
   },
   {

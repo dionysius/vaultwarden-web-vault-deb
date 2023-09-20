@@ -17,6 +17,7 @@ export class AuthResult {
   twoFactorProviders: Map<TwoFactorProviderType, { [key: string]: string }> = null;
   ssoEmail2FaSessionToken?: string;
   email: string;
+  requiresEncryptionKeyMigration: boolean;
 
   get requiresCaptcha() {
     return !Utils.isNullOrWhitespace(this.captchaSiteKey);

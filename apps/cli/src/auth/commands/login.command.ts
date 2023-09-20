@@ -209,6 +209,11 @@ export class LoginCommand {
           new PasswordLogInCredentials(email, password, null, twoFactor)
         );
       }
+      if (response.requiresEncryptionKeyMigration) {
+        return Response.error(
+          "Encryption key migration required. Please login through the web vault to update your encryption key."
+        );
+      }
       if (response.captchaSiteKey) {
         const credentials = new PasswordLogInCredentials(email, password);
         const handledResponse = await this.handleCaptchaRequired(twoFactor, credentials);

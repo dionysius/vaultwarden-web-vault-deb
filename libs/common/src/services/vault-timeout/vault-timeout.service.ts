@@ -5,6 +5,7 @@ import { VaultTimeoutSettingsService } from "../../abstractions/vault-timeout/va
 import { VaultTimeoutService as VaultTimeoutServiceAbstraction } from "../../abstractions/vault-timeout/vault-timeout.service";
 import { AuthService } from "../../auth/abstractions/auth.service";
 import { AuthenticationStatus } from "../../auth/enums/authentication-status";
+import { ClientType } from "../../enums";
 import { VaultTimeoutAction } from "../../enums/vault-timeout-action.enum";
 import { CryptoService } from "../../platform/abstractions/crypto.service";
 import { MessagingService } from "../../platform/abstractions/messaging.service";
@@ -141,10 +142,18 @@ export class VaultTimeoutService implements VaultTimeoutServiceAbstraction {
   }
 
   private async migrateKeyForNeverLockIfNeeded(): Promise<void> {
+    // Web can't set vault timeout to never
+    if (this.platformUtilsService.getClientType() == ClientType.Web) {
+      return;
+    }
     const accounts = await firstValueFrom(this.stateService.accounts$);
     for (const userId in accounts) {
       if (userId != null) {
         await this.cryptoService.migrateAutoKeyIfNeeded(userId);
+        // Legacy users should be logged out since we're not on the web vault and can't migrate.
+        if (await this.cryptoService.isLegacyUser(null, userId)) {
+          await this.logOut(userId);
+        }
       }
     }
   }

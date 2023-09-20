@@ -42,6 +42,12 @@ export abstract class CryptoService {
    * @returns The user key
    */
   getUserKey: (userId?: string) => Promise<UserKey>;
+
+  /**
+   * Checks if the user is using an old encryption scheme that used the master key
+   * for encryption of data instead of the user key.
+   */
+  isLegacyUser: (masterKey?: MasterKey, userId?: string) => Promise<boolean>;
   /**
    * Use for encryption/decryption of data in order to support legacy
    * encryption models. It will return the user key if available,

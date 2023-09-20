@@ -77,6 +77,12 @@ export class CryptoService implements CryptoServiceAbstraction {
     }
   }
 
+  async isLegacyUser(masterKey?: MasterKey, userId?: string): Promise<boolean> {
+    return await this.validateUserKey(
+      (masterKey ?? (await this.getMasterKey(userId))) as unknown as UserKey
+    );
+  }
+
   async getUserKeyWithLegacySupport(userId?: string): Promise<UserKey> {
     const userKey = await this.getUserKey(userId);
     if (userKey) {
@@ -510,7 +516,8 @@ export class CryptoService implements CryptoServiceAbstraction {
   }
 
   async makeKeyPair(key?: SymmetricCryptoKey): Promise<[string, EncString]> {
-    key ||= await this.getUserKey();
+    // Default to user key
+    key ||= await this.getUserKeyWithLegacySupport();
 
     const keyPair = await this.cryptoFunctionService.rsaGenerateKeyPair(2048);
     const publicB64 = Utils.fromBufferToB64(keyPair[0]);
@@ -943,23 +950,30 @@ export class CryptoService implements CryptoServiceAbstraction {
 
   async migrateAutoKeyIfNeeded(userId?: string) {
     const oldAutoKey = await this.stateService.getCryptoMasterKeyAuto({ userId: userId });
-    if (oldAutoKey) {
-      // decrypt
-      const masterKey = new SymmetricCryptoKey(Utils.fromB64ToArray(oldAutoKey)) as MasterKey;
-      const encryptedUserKey = await this.stateService.getEncryptedCryptoSymmetricKey({
-        userId: userId,
-      });
-      const userKey = await this.decryptUserKeyWithMasterKey(
-        masterKey,
-        new EncString(encryptedUserKey),
-        userId
-      );
-      // migrate
-      await this.stateService.setUserKeyAutoUnlock(userKey.keyB64, { userId: userId });
-      await this.stateService.setCryptoMasterKeyAuto(null, { userId: userId });
-      // set encrypted user key in case user immediately locks without syncing
-      await this.setMasterKeyEncryptedUserKey(encryptedUserKey);
+    if (!oldAutoKey) {
+      return;
     }
+    // Decrypt
+    const masterKey = new SymmetricCryptoKey(Utils.fromB64ToArray(oldAutoKey)) as MasterKey;
+    if (await this.isLegacyUser(masterKey, userId)) {
+      // Legacy users don't have a user key, so no need to migrate.
+      // Instead, set the master key for additional isLegacyUser checks that will log the user out.
+      await this.setMasterKey(masterKey, userId);
+      return;
+    }
+    const encryptedUserKey = await this.stateService.getEncryptedCryptoSymmetricKey({
+      userId: userId,
+    });
+    const userKey = await this.decryptUserKeyWithMasterKey(
+      masterKey,
+      new EncString(encryptedUserKey),
+      userId
+    );
+    // Migrate
+    await this.stateService.setUserKeyAutoUnlock(userKey.keyB64, { userId: userId });
+    await this.stateService.setCryptoMasterKeyAuto(null, { userId: userId });
+    // Set encrypted user key in case user immediately locks without syncing
+    await this.setMasterKeyEncryptedUserKey(encryptedUserKey);
   }
 
   async decryptAndMigrateOldPinKey(

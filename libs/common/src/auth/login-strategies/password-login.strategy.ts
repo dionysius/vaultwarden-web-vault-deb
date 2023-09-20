@@ -147,6 +147,10 @@ export class PasswordLogInStrategy extends LogInStrategy {
   }
 
   protected override async setUserKey(response: IdentityTokenResponse): Promise<void> {
+    // If migration is required, we won't have a user key to set yet.
+    if (this.encryptionKeyMigrationRequired(response)) {
+      return;
+    }
     await this.cryptoService.setMasterKeyEncryptedUserKey(response.key);
 
     const masterKey = await this.cryptoService.getMasterKey();
@@ -160,6 +164,10 @@ export class PasswordLogInStrategy extends LogInStrategy {
     await this.cryptoService.setPrivateKey(
       response.privateKey ?? (await this.createKeyPairForOldAccount())
     );
+  }
+
+  protected override encryptionKeyMigrationRequired(response: IdentityTokenResponse): boolean {
+    return !response.key;
   }
 
   private getMasterPasswordPolicyOptionsFromResponse(
