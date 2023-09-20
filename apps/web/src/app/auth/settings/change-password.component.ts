@@ -145,12 +145,6 @@ export class ChangePasswordComponent extends BaseChangePasswordComponent {
   }
 
   async submit() {
-    const hasUserKey = await this.cryptoService.hasUserKey();
-    if (!hasUserKey) {
-      this.platformUtilsService.showToast("error", null, this.i18nService.t("updateKey"));
-      return;
-    }
-
     if (this.masterPasswordHint != null && this.masterPasswordHint == this.masterPassword) {
       this.platformUtilsService.showToast(
         "error",

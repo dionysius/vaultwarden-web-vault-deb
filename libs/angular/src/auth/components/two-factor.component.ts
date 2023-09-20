@@ -215,8 +215,23 @@ export class TwoFactorComponent extends CaptchaProtectedComponent implements OnI
     await this.handleLoginResponse(authResult);
   }
 
+  protected handleMigrateEncryptionKey(result: AuthResult): boolean {
+    if (!result.requiresEncryptionKeyMigration) {
+      return false;
+    }
+
+    this.platformUtilsService.showToast(
+      "error",
+      this.i18nService.t("errorOccured"),
+      this.i18nService.t("encryptionKeyMigrationRequired")
+    );
+    return true;
+  }
+
   private async handleLoginResponse(authResult: AuthResult) {
     if (this.handleCaptchaRequired(authResult)) {
+      return;
+    } else if (this.handleMigrateEncryptionKey(authResult)) {
       return;
     }
 
