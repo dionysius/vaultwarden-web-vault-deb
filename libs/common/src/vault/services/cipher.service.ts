@@ -398,14 +398,21 @@ export class CipherService implements CipherServiceAbstraction {
     defaultMatch ??= await this.stateService.getDefaultUriMatch();
 
     return ciphers.filter((cipher) => {
-      if (cipher.deletedDate != null) {
+      const cipherIsLogin = cipher.type === CipherType.Login && cipher.login !== null;
+
+      if (cipher.deletedDate !== null) {
         return false;
       }
-      if (includeOtherTypes != null && includeOtherTypes.indexOf(cipher.type) > -1) {
+
+      if (
+        Array.isArray(includeOtherTypes) &&
+        includeOtherTypes.includes(cipher.type) &&
+        !cipherIsLogin
+      ) {
         return true;
       }
 
-      if (cipher.type === CipherType.Login && cipher.login !== null) {
+      if (cipherIsLogin) {
         return cipher.login.matchesUri(url, equivalentDomains, defaultMatch);
       }
 
