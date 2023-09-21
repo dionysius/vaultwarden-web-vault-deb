@@ -82,7 +82,7 @@ class InsertAutofillContentService implements InsertAutofillContentServiceInterf
     if (
       !savedUrls?.some((url) => url.startsWith(`https://${window.location.hostname}`)) ||
       window.location.protocol !== "http:" ||
-      !document.querySelectorAll("input[type=password]")?.length
+      !this.isPasswordFieldWithinDocument()
     ) {
       return false;
     }
@@ -93,6 +93,22 @@ class InsertAutofillContentService implements InsertAutofillContentServiceInterf
     ].join("\n\n");
 
     return !confirm(confirmationWarning);
+  }
+
+  /**
+   * Checks if there is a password field within the current document. Includes
+   * password fields that are present within the shadow DOM.
+   * @returns {boolean}
+   * @private
+   */
+  private isPasswordFieldWithinDocument(): boolean {
+    return Boolean(
+      this.collectAutofillContentService.queryAllTreeWalkerNodes(
+        document.documentElement,
+        (node: Node) => node instanceof HTMLInputElement && node.type === "password",
+        false
+      )?.length
+    );
   }
 
   /**

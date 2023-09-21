@@ -2,6 +2,7 @@
  * Represents an HTML form whose elements can be autofilled
  */
 export default class AutofillForm {
+  [key: string]: any;
   /**
    * The unique identifier assigned to this field during collection of the page details
    */

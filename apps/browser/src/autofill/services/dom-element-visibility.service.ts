@@ -13,7 +13,6 @@ class DomElementVisibilityService implements domElementVisibilityServiceInterfac
    */
   async isFormFieldViewable(element: FormFieldElement): Promise<boolean> {
     const elementBoundingClientRect = element.getBoundingClientRect();
-
     if (
       this.isElementOutsideViewportBounds(element, elementBoundingClientRect) ||
       this.isElementHiddenByCss(element)
@@ -176,7 +175,10 @@ class DomElementVisibilityService implements domElementVisibilityServiceInterfac
   ): boolean {
     const elementBoundingClientRect =
       targetElementBoundingClientRect || targetElement.getBoundingClientRect();
-    const elementAtCenterPoint = targetElement.ownerDocument.elementFromPoint(
+    const elementRootNode = targetElement.getRootNode();
+    const rootElement =
+      elementRootNode instanceof ShadowRoot ? elementRootNode : targetElement.ownerDocument;
+    const elementAtCenterPoint = rootElement.elementFromPoint(
       elementBoundingClientRect.left + elementBoundingClientRect.width / 2,
       elementBoundingClientRect.top + elementBoundingClientRect.height / 2
     );
