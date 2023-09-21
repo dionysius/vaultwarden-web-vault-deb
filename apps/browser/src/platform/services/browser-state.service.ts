@@ -14,6 +14,7 @@ import { Account } from "../../models/account";
 import { BrowserComponentState } from "../../models/browserComponentState";
 import { BrowserGroupingsComponentState } from "../../models/browserGroupingsComponentState";
 import { BrowserSendComponentState } from "../../models/browserSendComponentState";
+import { BrowserApi } from "../browser/browser-api";
 import { browserSession, sessionSync } from "../decorators/session-sync-observable";
 
 import { BrowserStateService as StateServiceAbstraction } from "./abstractions/browser-state.service";
@@ -56,7 +57,7 @@ export class BrowserStateService
     // the background page that can get out of sync. We need to work out the
     // best way to handle caching with multiple instances of the state service.
     if (useAccountCache) {
-      chrome.storage.onChanged.addListener((changes, namespace) => {
+      BrowserApi.storageChangeListener((changes, namespace) => {
         if (namespace === "local") {
           for (const key of Object.keys(changes)) {
             if (key !== "accountActivity" && this.accountDiskCache.value[key]) {
