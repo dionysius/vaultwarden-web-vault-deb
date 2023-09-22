@@ -771,8 +771,8 @@
   "featureUnavailable": {
     "message": "Egenskapen er utilgjengelig"
   },
-  "updateKey": {
-    "message": "Du kan ikke bruke denne funksjonen før du oppdaterer krypteringsnøkkelen din."
+  "encryptionKeyMigrationRequired": {
+    "message": "Encryption key migration required. Please login through the web vault to update your encryption key."
   },
   "premiumMembership": {
     "message": "Premium-medlemskap"

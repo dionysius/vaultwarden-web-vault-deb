@@ -771,8 +771,8 @@
   "featureUnavailable": {
     "message": "Iespēja nav pieejama"
   },
-  "updateKey": {
-    "message": "Jūs nevarat izmantot šo funkciju līdz jūs atjaunojat savu šifrēšanas atslēgu."
+  "encryptionKeyMigrationRequired": {
+    "message": "Nepieciešama šifrēšanas atslēgas nomaiņa. Lūgums pieteikties tīmekļa glabātavā, lai atjauninātu savu šifrēšanas atslēgu."
   },
   "premiumMembership": {
     "message": "Premium dalība"

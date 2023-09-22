@@ -771,8 +771,8 @@
   "featureUnavailable": {
     "message": "Ez a funkció nem érhető el."
   },
-  "updateKey": {
-    "message": "Ez a funkció nem használható, amíg nem frissíted a titkosítási kulcsod."
+  "encryptionKeyMigrationRequired": {
+    "message": "Titkosítási kulcs migráció szükséges. Jelentkezzünk be a webes széfen keresztül a titkosítási kulcs frissítéséhez."
   },
   "premiumMembership": {
     "message": "Prémium tagság"

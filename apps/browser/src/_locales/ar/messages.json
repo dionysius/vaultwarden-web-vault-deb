@@ -771,8 +771,8 @@
   "featureUnavailable": {
     "message": "الميزة غير متوفرة"
   },
-  "updateKey": {
-    "message": "لا يمكنك استخدام هذه المِيزة حتى تحديث مفتاح التشفير الخاص بك."
+  "encryptionKeyMigrationRequired": {
+    "message": "Encryption key migration required. Please login through the web vault to update your encryption key."
   },
   "premiumMembership": {
     "message": "العضوية المميزة"

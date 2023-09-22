@@ -771,8 +771,8 @@
   "featureUnavailable": {
     "message": "サービスが利用できません"
   },
-  "updateKey": {
-    "message": "暗号キーを更新するまでこの機能は使用できません。"
+  "encryptionKeyMigrationRequired": {
+    "message": "暗号化キーの移行が必要です。暗号化キーを更新するには、ウェブ保管庫からログインしてください。"
   },
   "premiumMembership": {
     "message": "プレミアム会員"

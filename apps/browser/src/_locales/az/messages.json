@@ -771,8 +771,8 @@
   "featureUnavailable": {
     "message": "Özəllik əlçatmazdır"
   },
-  "updateKey": {
-    "message": "Şifrələmə açarınızı güncəlləyənə qədər bu özəlliyi istifadə edə bilməzsiniz."
+  "encryptionKeyMigrationRequired": {
+    "message": "Şifrələmə açarının daşınması tələb olunur. Şifrələmə açarınızı güncəlləmək üçün zəhmət olmasa veb anbar üzərindən giriş edin."
   },
   "premiumMembership": {
     "message": "Premium üzvlük"

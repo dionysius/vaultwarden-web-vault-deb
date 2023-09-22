@@ -771,8 +771,8 @@
   "featureUnavailable": {
     "message": "기능 사용할 수 없음"
   },
-  "updateKey": {
-    "message": "이 기능을 사용하려면 암호화 키를 업데이트해야 합니다."
+  "encryptionKeyMigrationRequired": {
+    "message": "Encryption key migration required. Please login through the web vault to update your encryption key."
   },
   "premiumMembership": {
     "message": "프리미엄 멤버십"

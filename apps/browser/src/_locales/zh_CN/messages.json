@@ -771,8 +771,8 @@
   "featureUnavailable": {
     "message": "功能不可用"
   },
-  "updateKey": {
-    "message": "在您更新加密密钥前，您不能使用此功能。"
+  "encryptionKeyMigrationRequired": {
+    "message": "需要迁移加密密钥。请登录网页版密码库来更新您的加密密钥。"
   },
   "premiumMembership": {
     "message": "高级会员"

@@ -771,8 +771,8 @@
   "featureUnavailable": {
     "message": "Funktion ikke tilgængelig"
   },
-  "updateKey": {
-    "message": "Du kan ikke bruge denne funktion, før du opdaterer din krypteringsnøgle."
+  "encryptionKeyMigrationRequired": {
+    "message": "Krypteringsnøglemigrering nødvendig. Log ind gennem web-boksen for at opdatere krypteringsnøglen."
   },
   "premiumMembership": {
     "message": "Premium-medlemskab"

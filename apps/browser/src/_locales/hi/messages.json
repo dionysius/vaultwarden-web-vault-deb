@@ -771,8 +771,8 @@
   "featureUnavailable": {
     "message": "Feature Unavailable"
   },
-  "updateKey": {
-    "message": "जब तक आप अपनी एन्क्रिप्शन कुंजी को अपडेट नहीं करते, तब तक आप इस सुविधा का उपयोग नहीं कर सकते हैं।"
+  "encryptionKeyMigrationRequired": {
+    "message": "Encryption key migration required. Please login through the web vault to update your encryption key."
   },
   "premiumMembership": {
     "message": "Premium Membership"

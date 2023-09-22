@@ -771,8 +771,8 @@
   "featureUnavailable": {
     "message": "功能不可用"
   },
-  "updateKey": {
-    "message": "更新加密金鑰前不能使用此功能。"
+  "encryptionKeyMigrationRequired": {
+    "message": "Encryption key migration required. Please login through the web vault to update your encryption key."
   },
   "premiumMembership": {
     "message": "進階會員"

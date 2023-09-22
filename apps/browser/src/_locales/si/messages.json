@@ -771,8 +771,8 @@
   "featureUnavailable": {
     "message": "විශේෂාංගය ලබාගත නොහැක"
   },
-  "updateKey": {
-    "message": "ඔබ ඔබේ සංකේතාංකන යතුර යාවත්කාලීන කරන තුරු ඔබට මෙම අංගය භාවිතා කළ නොහැක."
+  "encryptionKeyMigrationRequired": {
+    "message": "Encryption key migration required. Please login through the web vault to update your encryption key."
   },
   "premiumMembership": {
     "message": "වාරික සාමාජිකත්වය"

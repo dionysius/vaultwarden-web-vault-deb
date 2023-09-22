@@ -771,8 +771,8 @@
   "featureUnavailable": {
     "message": "Funkcja jest niedostępna"
   },
-  "updateKey": {
-    "message": "Nie możesz używać tej funkcji, dopóki nie zaktualizujesz klucza szyfrowania."
+  "encryptionKeyMigrationRequired": {
+    "message": "Wymagana jest migracja klucza szyfrowania. Zaloguj się przez sejf internetowy, aby zaktualizować klucz szyfrowania."
   },
   "premiumMembership": {
     "message": "Konto Premium"

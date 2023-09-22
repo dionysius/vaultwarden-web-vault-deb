@@ -771,8 +771,8 @@
   "featureUnavailable": {
     "message": "Funkce je nedostupná"
   },
-  "updateKey": {
-    "message": "Dokud neaktualizujete svůj šifrovací klíč, nemůžete tuto funkci použít."
+  "encryptionKeyMigrationRequired": {
+    "message": "Vyžaduje se migrace šifrovacího klíče. Pro aktualizaci šifrovacího klíče se přihlaste přes webový trezor."
   },
   "premiumMembership": {
     "message": "Prémiové členství"

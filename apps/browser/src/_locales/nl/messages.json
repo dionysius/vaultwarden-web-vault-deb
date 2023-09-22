@@ -771,8 +771,8 @@
   "featureUnavailable": {
     "message": "Functionaliteit niet beschikbaar"
   },
-  "updateKey": {
-    "message": "Je kunt deze functie pas gebruiken als je je encryptiesleutel bijwerkt."
+  "encryptionKeyMigrationRequired": {
+    "message": "Encryption key migration required. Please login through the web vault to update your encryption key."
   },
   "premiumMembership": {
     "message": "Premium-abonnement"

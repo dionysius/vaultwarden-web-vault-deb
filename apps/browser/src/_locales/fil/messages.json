@@ -771,8 +771,8 @@
   "featureUnavailable": {
     "message": "Hindi magagamit ang tampok"
   },
-  "updateKey": {
-    "message": "Hindi mo maari gamitin ang tampok na ito hanggang hindi mo iupdate ang iyong encryption key."
+  "encryptionKeyMigrationRequired": {
+    "message": "Encryption key migration required. Please login through the web vault to update your encryption key."
   },
   "premiumMembership": {
     "message": "Pagiging miyembro ng premium"

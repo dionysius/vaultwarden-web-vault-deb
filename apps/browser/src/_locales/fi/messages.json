@@ -771,8 +771,8 @@
   "featureUnavailable": {
     "message": "Ominaisuus ei ole käytettävissä"
   },
-  "updateKey": {
-    "message": "Et voi käyttää tätä toimintoa ennen kuin päivität salausavaimesi."
+  "encryptionKeyMigrationRequired": {
+    "message": "Salausavaimen siirto vaaditaan. Päivitä salausavaimesi kirjautumalla verkkoholviin."
   },
   "premiumMembership": {
     "message": "Premium-jäsenyys"

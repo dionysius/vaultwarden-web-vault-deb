@@ -771,8 +771,8 @@
   "featureUnavailable": {
     "message": "Функція недоступна"
   },
-  "updateKey": {
-    "message": "Ви не можете використовувати цю функцію доки не оновите свій ключ шифрування."
+  "encryptionKeyMigrationRequired": {
+    "message": "Потрібно перенести ключ шифрування. Увійдіть у вебсховище та оновіть свій ключ шифрування."
   },
   "premiumMembership": {
     "message": "Преміум статус"

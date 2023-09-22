@@ -771,8 +771,8 @@
   "featureUnavailable": {
     "message": "Ezaugarria ez dago erabilgarri"
   },
-  "updateKey": {
-    "message": "Ezin duzu ezaugarri hau erabili zifratze-gakoa eguneratu arte."
+  "encryptionKeyMigrationRequired": {
+    "message": "Encryption key migration required. Please login through the web vault to update your encryption key."
   },
   "premiumMembership": {
     "message": "Premium bazkidea"

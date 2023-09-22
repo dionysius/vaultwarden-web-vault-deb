@@ -771,8 +771,8 @@
   "featureUnavailable": {
     "message": "Funcție indisponibilă"
   },
-  "updateKey": {
-    "message": "Nu puteți utiliza această caracteristică înainte de a actualiza cheia de criptare."
+  "encryptionKeyMigrationRequired": {
+    "message": "Encryption key migration required. Please login through the web vault to update your encryption key."
   },
   "premiumMembership": {
     "message": "Abonament Premium"

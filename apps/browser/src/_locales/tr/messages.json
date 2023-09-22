@@ -771,8 +771,8 @@
   "featureUnavailable": {
     "message": "Özellik kullanılamıyor"
   },
-  "updateKey": {
-    "message": "Şifreleme anahtarınızı güncellemeden bu özelliği kullanamazsınız."
+  "encryptionKeyMigrationRequired": {
+    "message": "Şifreleme anahtarınızın güncellenmesi gerekiyor. Şifreleme anahtarınızı güncellemek için lütfen web kasasına giriş yapın."
   },
   "premiumMembership": {
     "message": "Premium üyelik"

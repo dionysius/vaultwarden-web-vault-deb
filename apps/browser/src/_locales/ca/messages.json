@@ -771,8 +771,8 @@
   "featureUnavailable": {
     "message": "Característica no disponible"
   },
-  "updateKey": {
-    "message": "No podeu utilitzar aquesta característica fins que actualitzeu la vostra clau de xifratge."
+  "encryptionKeyMigrationRequired": {
+    "message": "Encryption key migration required. Please login through the web vault to update your encryption key."
   },
   "premiumMembership": {
     "message": "Subscripció Premium"

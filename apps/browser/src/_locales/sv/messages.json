@@ -771,8 +771,8 @@
   "featureUnavailable": {
     "message": "Funktion ej tillgänglig"
   },
-  "updateKey": {
-    "message": "Du kan inte använda denna funktion förrän du uppdaterar din krypteringsnyckel."
+  "encryptionKeyMigrationRequired": {
+    "message": "Migrering av krypteringsnyckel krävs. Logga in på webbvalvet för att uppdatera din krypteringsnyckel."
   },
   "premiumMembership": {
     "message": "Premium-medlemskap"
