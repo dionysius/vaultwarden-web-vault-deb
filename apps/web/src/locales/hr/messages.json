@@ -508,9 +508,6 @@
   "maxFileSize": {
     "message": "Najveća veličina datoteke je 500 MB."
   },
-  "updateKey": {
-    "message": "Ne možeš koristiti ovu značajku prije nego ažuriraš ključ za šifriranje."
-  },
   "addedItem": {
     "message": "Stavka dodana"
   },
@@ -3476,17 +3473,11 @@
   "keyUpdated": {
     "message": "Ključ ažuriran"
   },
-  "updateKeyTitle": {
-    "message": "Ažuriraj ključ"
-  },
   "updateEncryptionKey": {
     "message": "Ažuriraj ključ za šifriranje"
   },
-  "updateEncryptionKeyShortDesc": {
-    "message": "Trenutno koristiš zastarjeli način šifriranja."
-  },
-  "updateEncryptionKeyDesc": {
-    "message": "Prešli smo na korištenje duljih ključeva za šifriranje koji pružaju bolju zaštitu kao i pristup novim uslugama. Ažuriranje ključa za šifriranje je brzo i jednostavno. Samo unesi svoju glavnu lozinku. Ova nadogradnja će uskoro postati obavezna."
+  "updateEncryptionSchemeDesc": {
+    "message": "We've changed the encryption scheme to provide better security. Update your encryption key now by entering your master password below."
   },
   "updateEncryptionKeyWarning": {
     "message": "Nakon ažuriranja svojeg ključa za šifriranje, obavezno se trebaš odjaviti i ponovno prijaviti u sve Bitwarden aplikacije koje trenutno koristiš (npr. mobilna aplikacija, proširenje preglednika, ...). Ako se ne odjaviš i ponovno prijaviš (čime se preuzima tvoj novi ključ za šifriranje) može doći do oštećenja spremljenih podataka. Pokušati ćemo te automatski odjaviti, no, to bi možda moglo potrajati."

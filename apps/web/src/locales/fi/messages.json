@@ -508,9 +508,6 @@
   "maxFileSize": {
     "message": "Tiedoston enimmäiskoko on 500 Mt."
   },
-  "updateKey": {
-    "message": "Et voi käyttää tätä toimintoa ennen kuin päivität salausavaimesi."
-  },
   "addedItem": {
     "message": "Kohde lisättiin"
   },
@@ -3476,17 +3473,11 @@
   "keyUpdated": {
     "message": "Avain päivitettiin"
   },
-  "updateKeyTitle": {
-    "message": "Päivitä avain"
-  },
   "updateEncryptionKey": {
     "message": "Päivitä salausavain"
   },
-  "updateEncryptionKeyShortDesc": {
-    "message": "Käytät tällä hetkellä vanhentunutta salausjärjestelmää."
-  },
-  "updateEncryptionKeyDesc": {
-    "message": "Olemme siirtyneet suurempiin salausavaimiin, jotka tarjoavat parempaa suojausta sekä uudempia toimintoja. Salausavaimesi päivitys on helppoa: syötä vain pääsalasanasi alle. Tästä päivityksestä tulee myöhemmin pakollinen."
+  "updateEncryptionSchemeDesc": {
+    "message": "Olemme muuttaneet salausmallia tarjotaksemme paremman tietoturvan. Päivitä salausavaimesi syöttämällä alle pääsalasanasi."
   },
   "updateEncryptionKeyWarning": {
     "message": "Salausavaimesi päivityksen jälkeen, sinun tulee kirjautua ulos ja sitten takaisin sisään kaikissa Bitwarden-sovelluksissa, jotka ovat käytössäsi (esim. mobiilisovellus ja selainlaajennukset). Uudelleenkirjautumisen (joka lataa uuden salausavaimen) suorittamatta jättäminen saattaa johtaa tietojen vaurioitumiseen. Yritämme kirjata sinut ulos autmaattisesti, mutta tämä voi tapahtua vasta jonkin ajan kuluttua."

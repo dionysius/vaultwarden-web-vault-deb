@@ -508,9 +508,6 @@
   "maxFileSize": {
     "message": "文件最大为 500 MB。"
   },
-  "updateKey": {
-    "message": "在您更新加密密钥前，您不能使用此功能。"
-  },
   "addedItem": {
     "message": "项目已添加"
   },
@@ -3476,17 +3473,11 @@
   "keyUpdated": {
     "message": "密钥已更新"
   },
-  "updateKeyTitle": {
-    "message": "更新密钥"
-  },
   "updateEncryptionKey": {
     "message": "更新加密密钥"
   },
-  "updateEncryptionKeyShortDesc": {
-    "message": "您目前使用的是过时的加密方案。"
-  },
-  "updateEncryptionKeyDesc": {
-    "message": "我们已经采用更强大的加密密钥，提供了更强的安全性和更新的功能。更新您的加密密钥非常简单快捷，只需要输入主密码。此次更新最终将强制执行。"
+  "updateEncryptionSchemeDesc": {
+    "message": "我们更改了加密方案以提供更好的安全性。请在下方输入您的主密码以立即更新您的加密密钥。"
   },
   "updateEncryptionKeyWarning": {
     "message": "更新加密密钥后，您需要注销所有正在使用的 Bitwarden 应用（比如手机版应用或者浏览器扩展）后重新登录。注销或者重新登录（这将下载新的加密密钥）失败可能会导致数据损坏。我们会尝试自动为您注销，但是，可能会有所延迟。"

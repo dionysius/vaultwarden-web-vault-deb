@@ -508,9 +508,6 @@
   "maxFileSize": {
     "message": "Maksimaalne faili suurus on 500 MB."
   },
-  "updateKey": {
-    "message": "Seda funktsiooni ei saa enne krüpteerimise võtme uuendamist kasutada."
-  },
   "addedItem": {
     "message": "Kirje on lisatud"
   },
@@ -3476,17 +3473,11 @@
   "keyUpdated": {
     "message": "Võti on uuendatud"
   },
-  "updateKeyTitle": {
-    "message": "Uuenda võtit"
-  },
   "updateEncryptionKey": {
     "message": "Uuenda krüpteerimisvõtit"
   },
-  "updateEncryptionKeyShortDesc": {
-    "message": "Kasutad hetkeseisuga aegunud krüpteerimise skeemi."
-  },
-  "updateEncryptionKeyDesc": {
-    "message": "Oleme kasutusele võtnud suuremad krüpteerimise võtmed, mis pakuvad paremat turvalisust ja uusi funktsioone. Krüpteerimisvõtmete uuendamine on lihtne ja kiire. Piisab ainult ülemparooli sisestamisest. See uuendus on möödapääsmatu ja tuleb ära teha."
+  "updateEncryptionSchemeDesc": {
+    "message": "We've changed the encryption scheme to provide better security. Update your encryption key now by entering your master password below."
   },
   "updateEncryptionKeyWarning": {
     "message": "Pärast krüpteerimisvõtme uuendamist pead kõikides seadmetes, kus Bitwardeni rakendust kasutad, oma kontosse uuesti sisse logima (nt nutitelefonis ja brauseris). Välja- ja sisselogimise (mis ühtlasi laadib ka uue krüpteerimisvõtme) nurjumine võib tingida andmete riknemise. Üritame sinu seadmetest ise välja logida, aga see võib võtta natukene aega."

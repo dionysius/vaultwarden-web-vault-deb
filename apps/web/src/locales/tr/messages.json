@@ -508,9 +508,6 @@
   "maxFileSize": {
     "message": "Maksimum dosya boyutu 500 MB'dir."
   },
-  "updateKey": {
-    "message": "Şifreleme anahtarınızı güncellemeden bu özelliği kullanamazsınız."
-  },
   "addedItem": {
     "message": "Kayıt eklendi"
   },
@@ -3476,17 +3473,11 @@
   "keyUpdated": {
     "message": "Anahtar güncellendi"
   },
-  "updateKeyTitle": {
-    "message": "Anahtarı güncelle"
-  },
   "updateEncryptionKey": {
     "message": "Şifreleme anahtarını güncelle"
   },
-  "updateEncryptionKeyShortDesc": {
-    "message": "Şu anda eski bir şifreleme modeli kullanıyorsunuz."
-  },
-  "updateEncryptionKeyDesc": {
-    "message": "Daha yüksek güvenlik ve daha yeni özelliklere erişim sağlayan daha büyük şifreleme anahtarlarına geçtik. Şifreleme anahtarınızı kolayca güncelleyebilirsiniz. Ana parolanızı aşağıya yazmanız yeterli. Bu güncelleme bir süre sonra zorunlu hale gelecektir."
+  "updateEncryptionSchemeDesc": {
+    "message": "Güvenliği daha da artırmak için şifreleme şemamızı değiştirdik. Aşağıya ana parolanızı yazarak şifreleme anahtarınızı güncelleyebilirsiniz."
   },
   "updateEncryptionKeyWarning": {
     "message": "Şifreleme anahtarınızı güncelledikten sonra, şu anda kullanmakta olduğunuz tüm Bitwarden uygulamalarında (mobil uygulama veya tarayıcı uzantıları gibi) oturumunuzu kapatıp tekrar açmanız gerekir. Yeni şifreleme anahtarınızı indirme için oturumu kapatıp tekrar açmamamız verilerin bozulmasına neden olabilir. Oturumunuzu otomatik olarak kapatmaya çalışacağız, ancak bu gecikebilir."

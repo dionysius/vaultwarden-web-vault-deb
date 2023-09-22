@@ -508,9 +508,6 @@
   "maxFileSize": {
     "message": "최대 파일 크기는 500MB입니다."
   },
-  "updateKey": {
-    "message": "이 기능을 사용하려면 암호화 키를 업데이트해야 합니다."
-  },
   "addedItem": {
     "message": "항목 추가함"
   },
@@ -3476,17 +3473,11 @@
   "keyUpdated": {
     "message": "키 업데이트됨"
   },
-  "updateKeyTitle": {
-    "message": "키 업데이트"
-  },
   "updateEncryptionKey": {
     "message": "암호화 키 업데이트"
   },
-  "updateEncryptionKeyShortDesc": {
-    "message": "현재 오래된 암호화 체계를 사용하고 있습니다."
-  },
-  "updateEncryptionKeyDesc": {
-    "message": "우리는 더 나은 보안 및 새로운 기능에 대한 액세스를 제공하는 더 큰 암호화 키로 이동했습니다. 암호화 키를 업데이트하는 것은 빠르고 쉽습니다. 그저 마스터 비밀번호를 입력하면 됩니다. 이 업데이트는 결국 필수사항이 될 것입니다."
+  "updateEncryptionSchemeDesc": {
+    "message": "We've changed the encryption scheme to provide better security. Update your encryption key now by entering your master password below."
   },
   "updateEncryptionKeyWarning": {
     "message": "암호화 키를 업데이트하고난 후 현재 사용 중인 모든 Bitwarden 애플리케이션(예. 모바일 앱 혹은 브라우저 확장 기능)에서 로그아웃 후 다시 로그인해야 합니다. 재로그인하지 않으면 (새 암호화 키를 다운로드받는 경우) 데이터 손실이 발생할 수 있습니다. 자동으로 로그아웃을 시도하지만 지연될 수 있습니다."

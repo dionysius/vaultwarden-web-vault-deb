@@ -508,9 +508,6 @@
   "maxFileSize": {
     "message": "Maks. filstørrelse er 500 MB."
   },
-  "updateKey": {
-    "message": "Denne funktion kan ikke bruges, før du opdaterer din krypteringsnøgle."
-  },
   "addedItem": {
     "message": "Emne tilføjet"
   },
@@ -3476,17 +3473,11 @@
   "keyUpdated": {
     "message": "Nøgle opdateret"
   },
-  "updateKeyTitle": {
-    "message": "Opdatér nøgle"
-  },
   "updateEncryptionKey": {
     "message": "Opdatér krypteringsnøgle"
   },
-  "updateEncryptionKeyShortDesc": {
-    "message": "Du bruger i øjeblikket en forældet krypteringsmetode."
-  },
-  "updateEncryptionKeyDesc": {
-    "message": "Vi har skiftet til større krypteringsnøgler, der giver bedre sikkerhed og adgang til nyere funktioner. Opdatering af din krypteringsnøgle er hurtig og nem. Indtast bare din hovedadgangskode nedenfor. Denne opdatering bliver obligatorisk på et senere tidspunkt."
+  "updateEncryptionSchemeDesc": {
+    "message": "Vi har ændret krypteringsmetoden mhp. bedre sikkerhed. Opdatér krypteringsnøglen nu ved at angive din hovedadgangskode nedenfor."
   },
   "updateEncryptionKeyWarning": {
     "message": "Efter opdatering af din krypteringsnøgle skal du logge ud og ind igen i alle Bitwarden-programmer, du bruger i øjeblikket (f.eks. mobilapp eller browserudvidelser). Hvis du ikke logger ud og ind (som downloader din nye krypteringsnøgle), kan det resultere i data korruption. Vi vil forsøge at logge dig ud automatisk, men det kan blive forsinket."

@@ -508,9 +508,6 @@
   "maxFileSize": {
     "message": "Maksimalna veličina datoteke je 500 MB."
   },
-  "updateKey": {
-    "message": "Ne možete koristiti ovu uslugu dok ne ažurirate Vaš enkripcioni ključ."
-  },
   "addedItem": {
     "message": "Stavka Dodata"
   },
@@ -3476,17 +3473,11 @@
   "keyUpdated": {
     "message": "Key updated"
   },
-  "updateKeyTitle": {
-    "message": "Update key"
-  },
   "updateEncryptionKey": {
     "message": "Update encryption key"
   },
-  "updateEncryptionKeyShortDesc": {
-    "message": "You are currently using an outdated encryption scheme."
-  },
-  "updateEncryptionKeyDesc": {
-    "message": "We've moved to larger encryption keys that provide better security and access to newer features. Updating your encryption key is quick and easy. Just type your master password below. This update will eventually become mandatory."
+  "updateEncryptionSchemeDesc": {
+    "message": "We've changed the encryption scheme to provide better security. Update your encryption key now by entering your master password below."
   },
   "updateEncryptionKeyWarning": {
     "message": "After updating your encryption key, you are required to log out and back in to all Bitwarden applications that you are currently using (such as the mobile app or browser extensions). Failure to log out and back in (which downloads your new encryption key) may result in data corruption. We will attempt to log you out automatically, however, it may be delayed."

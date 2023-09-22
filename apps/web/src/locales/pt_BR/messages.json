@@ -508,9 +508,6 @@
   "maxFileSize": {
     "message": "O tamanho máximo do arquivo é de 500 MB."
   },
-  "updateKey": {
-    "message": "Você não pode usar este recurso, até você atualizar sua chave de criptografia."
-  },
   "addedItem": {
     "message": "Item adicionado"
   },
@@ -3476,17 +3473,11 @@
   "keyUpdated": {
     "message": "Chave Atualizada"
   },
-  "updateKeyTitle": {
-    "message": "Atualizar Chave"
-  },
   "updateEncryptionKey": {
     "message": "Atualizar Chave de Criptografia"
   },
-  "updateEncryptionKeyShortDesc": {
-    "message": "Você está usando atualmente um esquema de criptografia desatualizado."
-  },
-  "updateEncryptionKeyDesc": {
-    "message": "Passamos para chaves de criptografia maiores, que oferecem melhor segurança e acesso a recursos mais recentes. Atualizar sua chave de criptografia é rápido e fácil. Basta inserir sua senha mestra abaixo. Esta atualização eventualmente se tornará obrigatória."
+  "updateEncryptionSchemeDesc": {
+    "message": "We've changed the encryption scheme to provide better security. Update your encryption key now by entering your master password below."
   },
   "updateEncryptionKeyWarning": {
     "message": "Depois de atualizar sua chave de criptografia, é necessário encerrar e iniciar a sessão em todos os aplicativos do Bitwarden que você está usando atualmente (como o aplicativo móvel ou as extensões do navegador). Não encerrar e iniciar sessão (que baixa sua nova chave de criptografia) pode resultar em corrupção de dados. Nós tentaremos desconectá-lo automaticamente, mas isso pode demorar um pouco."

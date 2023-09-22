@@ -508,9 +508,6 @@
   "maxFileSize": {
     "message": "Ukuran berkas maksimal adalah 500 MB."
   },
-  "updateKey": {
-    "message": "Anda tidak dapat menggunakan fitur ini sampai Anda memperbarui kunci enkripsi Anda."
-  },
   "addedItem": {
     "message": "Item yang Ditambahkan"
   },
@@ -3476,17 +3473,11 @@
   "keyUpdated": {
     "message": "Kunci Diperbarui"
   },
-  "updateKeyTitle": {
-    "message": "Perbarui Kunci"
-  },
   "updateEncryptionKey": {
     "message": "Perbarui Kunci Enkripsi"
   },
-  "updateEncryptionKeyShortDesc": {
-    "message": "Anda saat ini menggunakan skema enkripsi yang sudah ketinggalan zaman."
-  },
-  "updateEncryptionKeyDesc": {
-    "message": "Kami telah pindah ke kunci enkripsi yang lebih besar yang memberikan keamanan lebih baik dan akses ke fitur yang lebih baru. Memperbarui kunci enkripsi Anda dengan cepat dan mudah. Cukup ketikkan kata sandi utama Anda di bawah ini. Pembaruan ini pada akhirnya akan menjadi wajib."
+  "updateEncryptionSchemeDesc": {
+    "message": "We've changed the encryption scheme to provide better security. Update your encryption key now by entering your master password below."
   },
   "updateEncryptionKeyWarning": {
     "message": "Setelah memperbarui kunci enkripsi Anda, Anda diminta untuk keluar dan masuk kembali ke semua aplikasi Bitwarden yang saat ini Anda gunakan (seperti aplikasi seluler atau ekstensi browser). Kegagalan untuk keluar dan masuk kembali (yang mengunduh kunci enkripsi baru Anda) dapat menyebabkan kerusakan data. Kami akan mencoba mengeluarkan Anda secara otomatis, namun, hal itu mungkin tertunda."

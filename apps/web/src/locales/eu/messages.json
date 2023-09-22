@@ -508,9 +508,6 @@
   "maxFileSize": {
     "message": "Eranskinaren gehienezko tamaina 500MB."
   },
-  "updateKey": {
-    "message": "Ezin duzu ezaugarri hau erabili zifratze-gakoa eguneratu arte."
-  },
   "addedItem": {
     "message": "Gehitu elementua"
   },
@@ -3476,17 +3473,11 @@
   "keyUpdated": {
     "message": "Gakoa eguneratua"
   },
-  "updateKeyTitle": {
-    "message": "Eguneratu gakoa"
-  },
   "updateEncryptionKey": {
     "message": "Eguneratu zifratze-gakoa"
   },
-  "updateEncryptionKeyShortDesc": {
-    "message": "Une honetan, zifratze sistema zaharkitua erabiltzen ari zara."
-  },
-  "updateEncryptionKeyDesc": {
-    "message": "Zifratze-gako handiagoetara aldatu gara, segurtasun hobea eta ezaugarri berrietarako sarbidea ematen baitute. Zifratze-gakoa azkar eta erraz eguneratzen da. Idatzi zure pasahitz nagusia behean. Eguneratze hau nahitaezkoa izango da uneren batean."
+  "updateEncryptionSchemeDesc": {
+    "message": "We've changed the encryption scheme to provide better security. Update your encryption key now by entering your master password below."
   },
   "updateEncryptionKeyWarning": {
     "message": "Zifratze-gakoa eguneratu ondoren, saioa hasi eta erabiltzen ari zaren Bitwarden aplikazio guztietara itzuli behar duzu (adibidez, aplikazio mugikorra edo nabigatzailearen gehigarriak). Saioa berriro hasteak huts egiten badu (zifratze-gako berria deskargatzea dakar) datuen korrupzioa ekar lezake. Automatikoki saioa ixten saiatuko gara, baina atzeratu egin daiteke."

@@ -508,9 +508,6 @@
   "maxFileSize": {
     "message": "最大ファイルサイズは500MBです。"
   },
-  "updateKey": {
-    "message": "暗号キーを更新するまでこの機能は使用できません。"
-  },
   "addedItem": {
     "message": "追加されたアイテム"
   },
@@ -3476,17 +3473,11 @@
   "keyUpdated": {
     "message": "キーが更新されました"
   },
-  "updateKeyTitle": {
-    "message": "キーの更新"
-  },
   "updateEncryptionKey": {
     "message": "暗号化キーを更新します。"
   },
-  "updateEncryptionKeyShortDesc": {
-    "message": "古い暗号化方式が使用されています。"
-  },
-  "updateEncryptionKeyDesc": {
-    "message": "より良いセキュリティと新しい機能が利用できる強力な暗号化方式へ移行することにしました。暗号化キーの更新は迅速かつ簡単です。以下にマスターパスワードを入力して下さい。この更新はやがて必須になります。"
+  "updateEncryptionSchemeDesc": {
+    "message": "より良いセキュリティを提供するために暗号化方式を変更しました。以下にマスターパスワードを入力して、今すぐ暗号化キーを更新してください。"
   },
   "updateEncryptionKeyWarning": {
     "message": "暗号化キーの更新後は、モバイルアプリやブラウザ拡張機能など現在利用中のすべてのBitwardenアプリで再ログインが必要となります。再ログインしないと(新しい暗号化キーをダウンロードすると)データが破損する可能性があります。自動的にログアウトを試みますが、遅延することがあります。"

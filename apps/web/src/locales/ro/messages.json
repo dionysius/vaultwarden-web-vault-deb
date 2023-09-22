@@ -508,9 +508,6 @@
   "maxFileSize": {
     "message": "Mărimea maximă a fișierului este de 500 MB."
   },
-  "updateKey": {
-    "message": "Veți putea utiliza această caracteristică după ce veți actualiza cheia de criptare."
-  },
   "addedItem": {
     "message": "Articol adăugat"
   },
@@ -3476,17 +3473,11 @@
   "keyUpdated": {
     "message": "Cheie actualizată"
   },
-  "updateKeyTitle": {
-    "message": "Actualizare cheie"
-  },
   "updateEncryptionKey": {
     "message": "Actualizare cheie de criptare"
   },
-  "updateEncryptionKeyShortDesc": {
-    "message": "În prezent utilizați o schemă de criptare învechită."
-  },
-  "updateEncryptionKeyDesc": {
-    "message": "Ne-am mutat la chei mai mari de criptare care oferă o mai bună securitate și acces la funcții mai noi. Actualizarea cheii de criptare este rapidă și ușoară. Doar tastați parola principală mai jos. Această actualizare va deveni în cele din urmă obligatorie."
+  "updateEncryptionSchemeDesc": {
+    "message": "We've changed the encryption scheme to provide better security. Update your encryption key now by entering your master password below."
   },
   "updateEncryptionKeyWarning": {
     "message": "După actualizarea cheii de criptare, trebuie să vă reconectați în toate aplicațiile Bitwarden pe care le utilizați în prezent (cum ar fi aplicația mobilă sau extensiile browserului). Faptul de a nu vă deconecta și reconecta (care descarcă noua cheie de criptare) poate duce la corupția datelor. Vom încerca să vă deconectăm automat, însă ar putea fi întârziat."

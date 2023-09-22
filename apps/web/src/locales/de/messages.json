@@ -508,9 +508,6 @@
   "maxFileSize": {
     "message": "Die maximale Dateigröße beträgt 500 MB."
   },
-  "updateKey": {
-    "message": "Sie können diese Funktion nicht nutzen, bevor Sie Ihren Verschlüsselungscode aktualisiert haben."
-  },
   "addedItem": {
     "message": "Eintrag hinzugefügt"
   },
@@ -3476,17 +3473,11 @@
   "keyUpdated": {
     "message": "Schlüssel aktualisiert"
   },
-  "updateKeyTitle": {
-    "message": "Schlüssel aktualisieren"
-  },
   "updateEncryptionKey": {
     "message": "Verschlüsselungsschlüssel aktualisieren"
   },
-  "updateEncryptionKeyShortDesc": {
-    "message": "Sie verwenden derzeit ein veraltetes Verschlüsselungsschema."
-  },
-  "updateEncryptionKeyDesc": {
-    "message": "Wir sind auf größere Verschlüsselungscodes umgestiegen, welche bessere Sicherheit und Zugang zu neuen Features bieten. Das Update Ihres Verschlüsselungscodes ist schnell und einfach. Geben Sie einfach hier Ihr Master-Passwort ein. Das Update wird irgendwann verpflichtend."
+  "updateEncryptionSchemeDesc": {
+    "message": "We've changed the encryption scheme to provide better security. Update your encryption key now by entering your master password below."
   },
   "updateEncryptionKeyWarning": {
     "message": "Nach der Aktualisierung Ihres Verschlüsselungsschlüssels musst du dich bei allen Bitwarden-Anwendungen, die du momentan benutzt, erneut anmelden (wie z.B. die mobile App oder die Browser-Erweiterungen). Fehler bei Ab- und Anmeldung (die deinen neuen Verschlüsselungsschlüssel herunterlädt) könnte zu einer Beschädigung der Daten führen. Wir werden versuchen dich automatisch abzumelden, was jedoch verzögert geschehen kann."

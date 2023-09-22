@@ -508,9 +508,6 @@
   "maxFileSize": {
     "message": "גודל הקובץ המירבי הוא 500 מגה."
   },
-  "updateKey": {
-    "message": "לא ניתן להשתמש ביכולת זו עד שתעדכן את מפתח ההצפנה שלך."
-  },
   "addedItem": {
     "message": "פריט שהתווסף"
   },
@@ -3476,17 +3473,11 @@
   "keyUpdated": {
     "message": "המפתח עודכן"
   },
-  "updateKeyTitle": {
-    "message": "עדכן מפתח"
-  },
   "updateEncryptionKey": {
     "message": "עדכן מפתח הצפנה"
   },
-  "updateEncryptionKeyShortDesc": {
-    "message": "אתה משתמש בסכמת-הצפנה לא מעודכנת."
-  },
-  "updateEncryptionKeyDesc": {
-    "message": "התחלנו להשתמש במפתחות הצפנה גדולים יותר בכדי לספק אבטחה טובה יותר ולאפשר גישה ליכולות חדשות. תהליך עדכון מפתחות האבטחה שלך הוא קל ומהיר. פשוט הזן את הסיסמה הראשית שלך. שים לב שעדכון זה יהפוך להכרחי בסופו של דבר."
+  "updateEncryptionSchemeDesc": {
+    "message": "We've changed the encryption scheme to provide better security. Update your encryption key now by entering your master password below."
   },
   "updateEncryptionKeyWarning": {
     "message": "לאחר עדכון מפתחות ההצפנה שלך, תתבקש לצאת ולהכנס שוב בכל אפליקציות Bitwarden שאתה משתמש בהן (האפליקציה לפלאפון או ההרחבה לדפדפן). אם לא תצא ותכנס שוב (פעולת הכניסה מורידה את המפתח החדש), יתכן שתתקל במידע שגוי. אנו ננסה לגרום ליציאה אוטומטית, אך יתכן שהדבר לא יקרה מיידית."

@@ -508,9 +508,6 @@
   "maxFileSize": {
     "message": "El tamaño máximo de archivo es de 500MB."
   },
-  "updateKey": {
-    "message": "No puedes usar esta característica hasta que actualices tu clave de cifrado."
-  },
   "addedItem": {
     "message": "Elemento añadido"
   },
@@ -3476,17 +3473,11 @@
   "keyUpdated": {
     "message": "Clave actualizada"
   },
-  "updateKeyTitle": {
-    "message": "Actualizar clave"
-  },
   "updateEncryptionKey": {
     "message": "Actualizar clave de cifrado"
   },
-  "updateEncryptionKeyShortDesc": {
-    "message": "Actualmente utilizas un esquema de cifrado desactualizado."
-  },
-  "updateEncryptionKeyDesc": {
-    "message": "Hemos cambiado a unas claves de cifrado más grandes para ofrecer una mayor seguridad y acceso a nuevas características. Actualizar tu clave de cifrado actual es fácil y rápido. Solo necesitas escribir tu contraseña maestra debajo. Esta actualización en algún momento se volverá obligatoria."
+  "updateEncryptionSchemeDesc": {
+    "message": "Hemos cambiado el esquema de cifrado para proporcionar una mayor seguridad. Actualice su clave de cifrado ahora introduciendo su contraseña maestra a continuación."
   },
   "updateEncryptionKeyWarning": {
     "message": "Una vez actualices tu clave de cifrado, será necesario que cierres sesión y vuelvas a identificarte en todas las aplicaciones de Bitwarden que estés utilizando (como la aplicación móvil o la extensión de navegador). Si la reautenticación falla (la cual descargaría la nueva clave de cifrad) puede producirse corrupción de datos. Intentaremos cerrar tu sesión automáticamente, pero puede tardar un tiempo."

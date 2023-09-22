@@ -508,9 +508,6 @@
   "maxFileSize": {
     "message": "Maksymalny rozmiar pliku to 500 MB."
   },
-  "updateKey": {
-    "message": "Nie możesz używać tej funkcji, dopóki nie zaktualizujesz klucza szyfrowania."
-  },
   "addedItem": {
     "message": "Element został dodany"
   },
@@ -3476,17 +3473,11 @@
   "keyUpdated": {
     "message": "Klucz został zaktualizowany"
   },
-  "updateKeyTitle": {
-    "message": "Zaktualizuj klucz"
-  },
   "updateEncryptionKey": {
     "message": "Zaktualizuj klucz szyfrowania"
   },
-  "updateEncryptionKeyShortDesc": {
-    "message": "Używasz przestarzałej metody szyfrowania."
-  },
-  "updateEncryptionKeyDesc": {
-    "message": "Zdecydowaliśmy się na używanie silniejszych kluczy szyfrowania, które zapewniają lepsze bezpieczeństwo i dostęp do nowych funkcji. Zaktualizowanie klucza szyfrowania jest szybkie i łatwe. Wystarczy wpisać poniżej swoje hasło. Aktualizacja klucza stanie się wkrótce obowiązkowa."
+  "updateEncryptionSchemeDesc": {
+    "message": "Zmieniliśmy schemat szyfrowania, aby zapewnić lepsze bezpieczeństwo. Zaktualizuj swój klucz szyfrowania, wprowadzając hasło główne poniżej."
   },
   "updateEncryptionKeyWarning": {
     "message": "Po zaktualizowaniu klucza szyfrowania, musisz ponownie zalogować się do wszystkich aplikacji Bitwarden, z których obecnie korzystasz (na przykład aplikacje mobilne lub rozszerzenia przeglądarki). Niepowodzenie logowania (podczas którego pobierany jest nowy klucz szyfrowania) może spowodować uszkodzenie danych. Postaramy się wylogować Ciebie automatycznie, jednak może to chwilę potrwać."

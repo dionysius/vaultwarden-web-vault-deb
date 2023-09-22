@@ -508,9 +508,6 @@
   "maxFileSize": {
     "message": "Maximal filstorlek är 500 MB."
   },
-  "updateKey": {
-    "message": "Du kan inte använda denna funktion förrän du uppdaterar din krypteringsnyckel."
-  },
   "addedItem": {
     "message": "Nytt objekt skapat"
   },
@@ -3476,17 +3473,11 @@
   "keyUpdated": {
     "message": "Nyckeln uppdaterades"
   },
-  "updateKeyTitle": {
-    "message": "Uppdatera nyckel"
-  },
   "updateEncryptionKey": {
     "message": "Uppdatera krypteringsnyckel"
   },
-  "updateEncryptionKeyShortDesc": {
-    "message": "Du använder för närvarande ett föråldrat krypteringssystem."
-  },
-  "updateEncryptionKeyDesc": {
-    "message": "Vi har övergått till större krypteringsnycklar som ger bättre säkerhet och tillgång till nyare funktioner. Att uppdatera din krypteringsnyckel är snabbt och smidigt. Skriv bara in ditt huvudlösenord nedan. Denna uppdatering kommer så småningom bli obligatorisk."
+  "updateEncryptionSchemeDesc": {
+    "message": "We've changed the encryption scheme to provide better security. Update your encryption key now by entering your master password below."
   },
   "updateEncryptionKeyWarning": {
     "message": "Efter att ha uppdaterat din krypteringsnyckel, måste du logga ut och in igen i alla Bitwarden-program som du använder (t.ex. mobilappen och webbläsartillägget). Att inte logga ut och in igen (vilket hämtar din nya krypteringsnyckel) kan resultera i datakorruption. Vi kommer försöka logga ut dig automatiskt, men det kan vara fördröjt."

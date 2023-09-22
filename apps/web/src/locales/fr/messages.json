@@ -508,9 +508,6 @@
   "maxFileSize": {
     "message": "La taille maximale du fichier est de 500 Mo."
   },
-  "updateKey": {
-    "message": "Vous ne pouvez pas utiliser cette fonctionnalité avant de mettre à jour votre clé de chiffrement."
-  },
   "addedItem": {
     "message": "Élément ajouté"
   },
@@ -3476,17 +3473,11 @@
   "keyUpdated": {
     "message": "Clé mise à jour"
   },
-  "updateKeyTitle": {
-    "message": "Mettre à jour la clé"
-  },
   "updateEncryptionKey": {
     "message": "Mettre à jour la clé de chiffrement"
   },
-  "updateEncryptionKeyShortDesc": {
-    "message": "Vous utilisez actuellement un moyen de chiffrement obsolète."
-  },
-  "updateEncryptionKeyDesc": {
-    "message": "Nous sommes passés à des clés de chiffrement plus grandes qui offrent une meilleure sécurité et un accès à des fonctionnalités plus récentes. La mise à jour de votre clé de chiffrement est rapide et facile. Il suffit de saisir votre mot de passe principal ci-dessous. Cette mise à jour deviendra éventuellement obligatoire."
+  "updateEncryptionSchemeDesc": {
+    "message": "Nous avons modifié le schéma de chiffrement pour améliorer la sécurité. Mettez à jour votre clé de chiffrement maintenant en entrant votre mot de passe principal ci-dessous."
   },
   "updateEncryptionKeyWarning": {
     "message": "Après avoir mis à jour votre clé de chiffrement, vous devez vous déconnecter et vous reconnecter à toutes les applications Bitwarden que vous utilisez actuellement (comme l'application mobile ou les extensions de navigateur). Si vous ne vous déconnectez pas et ne vous reconnectez pas (ce qui télécharge votre nouvelle clé de chiffrement), cela peut entraîner une corruption des données. Nous tenterons de vous déconnecter automatiquement, mais cela peut être retardé."

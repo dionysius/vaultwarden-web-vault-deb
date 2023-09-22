@@ -508,9 +508,6 @@
   "maxFileSize": {
     "message": "Maksimuma dosiergrandeco estas 500 MB."
   },
-  "updateKey": {
-    "message": "Vi ne povas uzi ĉi tiun funkcion antaŭ ol vi ĝisdatigos vian ĉifran ŝlosilon."
-  },
   "addedItem": {
     "message": "Aldonita ero"
   },
@@ -3476,17 +3473,11 @@
   "keyUpdated": {
     "message": "Ŝlosilo ĝisdatigita"
   },
-  "updateKeyTitle": {
-    "message": "Ĝisdatiga Ŝlosilo"
-  },
   "updateEncryptionKey": {
     "message": "Ĝisdatigi Ĉifran Ŝlosilon"
   },
-  "updateEncryptionKeyShortDesc": {
-    "message": "Vi nun uzas malmodernan ĉifran skemon."
-  },
-  "updateEncryptionKeyDesc": {
-    "message": "Ni transloĝiĝis al pli grandaj ĉifraj ŝlosiloj, kiuj donas pli bonan sekurecon kaj aliron al pli novaj funkcioj. Ĝisdatigi vian ĉifran ŝlosilon estas rapide kaj facile. Simple tajpu vian ĉefan pasvorton sube. Ĉi tiu ĝisdatigo fine fariĝos deviga."
+  "updateEncryptionSchemeDesc": {
+    "message": "We've changed the encryption scheme to provide better security. Update your encryption key now by entering your master password below."
   },
   "updateEncryptionKeyWarning": {
     "message": "Post ĝisdatigi vian ĉifradan ŝlosilon, vi devas elsaluti kaj reeniri al ĉiuj Bitwarden-aplikaĵoj, kiujn vi nun uzas (kiel la poŝtelefona programo aŭ retumila etendaĵoj). Malsukceso elsaluti kaj reeniri (kiu elŝutas via nova ĉifra ŝlosilo) povas rezultigi korupton de datumoj. Ni provos elsaluti vin aŭtomate, tamen ĝi eble prokrastos. "

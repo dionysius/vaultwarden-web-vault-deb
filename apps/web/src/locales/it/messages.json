@@ -508,9 +508,6 @@
   "maxFileSize": {
     "message": "La dimensione massima del file è di 500 MB."
   },
-  "updateKey": {
-    "message": "Non puoi usare questa funzionalità finché non aggiorni la tua chiave di criptografia."
-  },
   "addedItem": {
     "message": "Elemento aggiunto"
   },
@@ -3476,17 +3473,11 @@
   "keyUpdated": {
     "message": "Chiave aggiornata"
   },
-  "updateKeyTitle": {
-    "message": "Aggiorna chiave"
-  },
   "updateEncryptionKey": {
     "message": "Aggiorna chiave di criptografia"
   },
-  "updateEncryptionKeyShortDesc": {
-    "message": "Stai utilizzando uno schema di criptografia obsoleto."
-  },
-  "updateEncryptionKeyDesc": {
-    "message": "Siamo passati a chiavi di criptografia più grandi che forniscono più sicurezza e accesso alle funzionalità più recenti. Aggiornare la chiave di criptografia è semplice e veloce, basta inserire la password principale qui sotto. Questo aggiornamento diventerà obbligatorio in futuro."
+  "updateEncryptionSchemeDesc": {
+    "message": "Abbiamo modificato lo schema di criptografia per fornire una maggiore sicurezza. Aggiorna la tua chiave di criptografia inserendo la tua password principale."
   },
   "updateEncryptionKeyWarning": {
     "message": "Dopo aver aggiornato la tua chiave di criptografia, devi uscire ed entrare di nuovo in tutte le app Bitwarden che stai usando (come l'app mobile o l'estensione del browser). Se non si esce e rientra (per scaricare la nuova chiave di criptografia) i dati della tua cassaforte potrebbero essere danneggiati. Cercheremo di farti uscire automaticamente, ma potrebbe esserci un ritardo."

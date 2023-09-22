@@ -508,9 +508,6 @@
   "maxFileSize": {
     "message": "A maximális fájl méret 500 MB."
   },
-  "updateKey": {
-    "message": "Ez a funkció nem használható a titkosítási kulcs frissítéséig."
-  },
   "addedItem": {
     "message": "Az elem hozzáadásra került."
   },
@@ -3476,17 +3473,11 @@
   "keyUpdated": {
     "message": "A kulcs frissítésre került."
   },
-  "updateKeyTitle": {
-    "message": "Kulcs frissítés"
-  },
   "updateEncryptionKey": {
     "message": "Titkosítási kulcs frissítés"
   },
-  "updateEncryptionKeyShortDesc": {
-    "message": "Jelenleg elavult titkosítási séma van használatban."
-  },
-  "updateEncryptionKeyDesc": {
-    "message": "Hosszabb titkosítókulcsok kerültek használatba, amelyek jobb biztonságot és hozzáférést biztosítanak új funkciókhoz. A titkosító kulcs frissítése könnyű és gyors. Csak meg kell adni a mesterjelszót. Ez a frissítés kötelezővé válik."
+  "updateEncryptionSchemeDesc": {
+    "message": "A titkosítási rendszer megváltozott, hogy nagyobb biztonságot nyújtson. Frissítsük a titkosítási kulcsot az mesterjelszó megadásával lentebb."
   },
   "updateEncryptionKeyWarning": {
     "message": "A titkosítási kulcs frissítése után ki kell jelentkezni és vissza kell jelentkezni az összes jelenleg használt Bitwarden alkalmazásba (például a mobilalkalmazás vagy a böngésző bővítmények). A kijelentkezés és a bejelentkezés elmulasztása (amely letölti az új titkosítási kulcsot) adatvesztést okozhat. Megkíséreljük az automatikusan kijelentkeztetést, azonban ez késhet."

@@ -508,9 +508,6 @@
   "maxFileSize": {
     "message": "Maksimal fayl həcmi 500 MB-dır."
   },
-  "updateKey": {
-    "message": "Şifrələmə açarınızı güncəlləyənə qədər bu özəlliyi istifadə edə bilməzsiniz."
-  },
   "addedItem": {
     "message": "Element əlavə edildi"
   },
@@ -3476,17 +3473,11 @@
   "keyUpdated": {
     "message": "Açar güncəlləndi"
   },
-  "updateKeyTitle": {
-    "message": "Açarı güncəllə"
-  },
   "updateEncryptionKey": {
     "message": "Şifrələmə açarını güncəllə"
   },
-  "updateEncryptionKeyShortDesc": {
-    "message": "Hal-hazırda köhnə bir şifrələmə sxemi istifadə edirsiniz."
-  },
-  "updateEncryptionKeyDesc": {
-    "message": "Daha yaxşı güvənlik və daha yeni özəlliklərə müraciəti təmin edən daha böyük şifrələmə açarlarına keçdik. Şifrələmə açarınızı güncəlləmək sürətli və asandır. Sadəcə aşağıda ana parolunuzu yazın. Bu güncəlləmə, nəticədə məcburi olacaq."
+  "updateEncryptionSchemeDesc": {
+    "message": "Daha yaxşı güvənlik təqdim etmək üçün şifrələmə sxemini dəyişdirdik. Ana parolunuzu aşağıda daxil edərək şifrələmə açarınızı güncəlləyin."
   },
   "updateEncryptionKeyWarning": {
     "message": "Şifrələmə açarını güncəllədikdən sonra, hazırda istifadə etdiyiniz (mobil tətbiq və ya brauzer genişləndirmələri kimi) bütün Bitwarden tətbiqlərində çıxış edib yenidən giriş etməlisiniz. Çıxış edib təkrar giriş etməmək (yeni şifrələmə açarının endirilməsi prosesi) verilənlərin zədələnməsi ilə nəticələnə bilər. Avtomatik olaraq çıxış etməyə çalışacağıq, bu gecikə bilər."
@@ -3634,7 +3625,7 @@
     "message": "Bu element, düzəldilməli köhnə fayl qoşmalarını ehtiva edir."
   },
   "attachmentFixDescription": {
-    "message": "This attachment uses outdated encryption. Select 'Fix' to download, re-encrypt, and re-upload the attachment."
+    "message": "Bu qoşma güncəl olmayan şifrələmə istifadə edir. Qoşmanı endirmək, təkrar şifrələmək və təkrar yükləmək üçün \"Düzəlt\"i seçin."
   },
   "fix": {
     "message": "Düzəlt",
@@ -4622,10 +4613,10 @@
     "message": "Şifrələmə üsuluna əsasən, ana parollar və güvənilən cihazlar unudulduqda və ya itirildikdə hesabları bərpa edin."
   },
   "accountRecoveryPolicyWarning": {
-    "message": "Existing accounts with master passwords will require members to self-enroll before administrators can recover their accounts. Automatic enrollment will turn on account recovery for new members."
+    "message": "Ana parolları olan mövcud hesablar, administratorların öz hesablarını bərpa edə bilməsindən əvvəl üzvlərin öz-özünə yazılmalarını tələb edəcək. Avto-yazılma, yeni üzvlər üçün hesab bərpasını işə salacaq."
   },
   "accountRecoverySingleOrgRequirementDesc": {
-    "message": "The single organization Enterprise policy must be turned on before activating this policy."
+    "message": "Bu siyasət aktivləşdirilməzdən əvvəl, \"Tək təşkilat\" Müəssisə siyasəti işə salınmalıdır."
   },
   "resetPasswordPolicyAutoEnroll": {
     "message": "Avtomatik qeydiyyat"
@@ -4730,7 +4721,7 @@
     "message": "Xəta"
   },
   "accountRecoveryManageUsers": {
-    "message": "Manage users must also be granted with the manage account recovery permission"
+    "message": "\"Hesab bərpasını idarə et\" icazəsi ilə birgə \"İstifadəçiləri idarə et\"ə icazə verilməlidir"
   },
   "setupProvider": {
     "message": "Provayder quraşdırması"
@@ -4942,7 +4933,7 @@
     "message": "Fərdi anbarın ixracını sıradan çıxart"
   },
   "disablePersonalVaultExportDescription": {
-    "message": "Do not allow members to export data from their individual vault."
+    "message": "Üzvlərin öz anbarlarından datanı xaricə köçürməsinə icazə verməyin."
   },
   "vaultExportDisabled": {
     "message": "Anbar ixracı sıradan çıxarıldı"
@@ -5246,7 +5237,7 @@
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Use the require single-sign-on authentication policy to require all members to log in with SSO.'"
   },
   "ssoPolicyHelpAnchor": {
-    "message": "require single sign-on authentication policy",
+    "message": "tək daxil olma kimlik təsdiqləmə siyasətini tələb et",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Use the require single-sign-on authentication policy to require all members to log in with SSO.'"
   },
   "ssoPolicyHelpEnd": {
@@ -5446,7 +5437,7 @@
     "message": "Təşkilat anbarının ixracı"
   },
   "exportingIndividualVaultDescription": {
-    "message": "Only the individual vault items associated with $EMAIL$ will be exported. Organization vault items will not be included. Only vault item information will be exported and will not include associated attachments.",
+    "message": "Yalnız $EMAIL$ ilə əlaqələndirilmiş fərdi anbar elementləri xaricə köçürüləcək. Təşkilat anbar elementləri daxil edilməyəcək. Yalnız anbar element məlumatları xaricə köçürüləcək və əlaqələndirilmiş qoşmalar daxil edilməyəcək.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -7179,6 +7170,6 @@
     "message": "Beta"
   },
   "alreadyHaveAccount": {
-    "message": "Already have an account?"
+    "message": "Artıq bir hesabınız var?"
   }
 }

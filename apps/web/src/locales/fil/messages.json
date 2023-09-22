@@ -508,9 +508,6 @@
   "maxFileSize": {
     "message": "Hanggang sa 500 MB lang dapat ang mga file."
   },
-  "updateKey": {
-    "message": "Hindi mo magagamit ang feature na ito hanggang sa i-update mo ang encryption key mo."
-  },
   "addedItem": {
     "message": "Naidagdag ang item"
   },
@@ -3476,17 +3473,11 @@
   "keyUpdated": {
     "message": "Na update ang Key"
   },
-  "updateKeyTitle": {
-    "message": "Update key"
-  },
   "updateEncryptionKey": {
     "message": "Na update ang encryption key"
   },
-  "updateEncryptionKeyShortDesc": {
-    "message": "Kasalukuyan kang gumagamit ng isang hindi napapanahong scheme ng pag encrypt."
-  },
-  "updateEncryptionKeyDesc": {
-    "message": "Lumipat kami sa mas malaking mga key ng pag encrypt na nagbibigay ng mas mahusay na seguridad at pag access sa mas bagong mga tampok. Ang pag update ng iyong key ng pag encrypt ay mabilis at madali. I type lamang ang iyong master password sa ibaba. Ang update na ito ay sa huli ay magiging sapilitan."
+  "updateEncryptionSchemeDesc": {
+    "message": "We've changed the encryption scheme to provide better security. Update your encryption key now by entering your master password below."
   },
   "updateEncryptionKeyWarning": {
     "message": "Matapos i update ang iyong key sa pag encrypt, kinakailangan kang mag log out at bumalik sa lahat ng mga application ng Bitwarden na kasalukuyang ginagamit mo (tulad ng mobile app o mga extension ng browser). Ang kabiguan na mag log out at bumalik sa (na nag download ng iyong bagong key ng pag encrypt) ay maaaring magresulta sa pagkasira ng data. Susubukan naming awtomatikong mag log out sa iyo, gayunpaman, maaari itong maantala."

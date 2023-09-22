@@ -508,9 +508,6 @@
   "maxFileSize": {
     "message": "Maximale bestandsgrootte is 500 MB."
   },
-  "updateKey": {
-    "message": "Je kunt deze functie pas gebruiken als je je encryptiesleutel bijwerkt."
-  },
   "addedItem": {
     "message": "Item is toegevoegd"
   },
@@ -3476,17 +3473,11 @@
   "keyUpdated": {
     "message": "Sleutel bijgewerkt"
   },
-  "updateKeyTitle": {
-    "message": "Sleutel bijwerken"
-  },
   "updateEncryptionKey": {
     "message": "Encryptiesleutel bijwerken"
   },
-  "updateEncryptionKeyShortDesc": {
-    "message": "Je gebruikt een oud versleutelingsschema."
-  },
-  "updateEncryptionKeyDesc": {
-    "message": "We zijn overgeschakeld naar langere encryptiesleutels die beter beveiligen en nieuwe functionaliteiten mogelijk maken. Het bijwerken van je encryptiesleutel gaat snel en eenvoudig. Typ gewoon je hoofdwachtwoord hieronder in. Deze wijziging zal uiteindelijk verplicht worden."
+  "updateEncryptionSchemeDesc": {
+    "message": "We've changed the encryption scheme to provide better security. Update your encryption key now by entering your master password below."
   },
   "updateEncryptionKeyWarning": {
     "message": "Na het bijwerken van je encryptiesleutel moet je je afmelden en weer aanmelden bij alle Bitwarden-applicaties die je gebruikt (zoals de mobiele app of browserextensies). Als je niet opnieuw inlogt (wat je nieuwe encryptiesleutel downloadt), kan dit gegevensbeschadiging tot gevolg hebben. We proberen je automatisch uit te loggen, maar het kan zijn dat dit met enige vertraging gebeurt."

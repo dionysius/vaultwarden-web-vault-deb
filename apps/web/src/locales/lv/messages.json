@@ -508,9 +508,6 @@
   "maxFileSize": {
     "message": "Lielākais pieļaujamais datnes izmērs ir 500 MB."
   },
-  "updateKey": {
-    "message": "Šo iespēju nevar izmantot, kamēr nav atjaunināta šifrēšanas atslēga."
-  },
   "addedItem": {
     "message": "Vienums pievienots"
   },
@@ -3476,17 +3473,11 @@
   "keyUpdated": {
     "message": "Atslēga atjaunināta"
   },
-  "updateKeyTitle": {
-    "message": "Atjaunināt atslēgu"
-  },
   "updateEncryptionKey": {
     "message": "Atjaunināt šifrēšanas atslēgu"
   },
-  "updateEncryptionKeyShortDesc": {
-    "message": "Pašreiz tiek izmantots novecojis šifrēšanas veids."
-  },
-  "updateEncryptionKeyDesc": {
-    "message": "Tiek izmantotas garākas šifrēšanas atslēgas, kas nodrošina labāku drošību un piekļuvi jaunākām iespējām. Šifrēšanas atslēgas atjaunināšana ir ātra un vienkārša. Zemāk ir tikai jāievada galvenā parole. Ar laiku šis atjauninājums kļūs nepieciešams."
+  "updateEncryptionSchemeDesc": {
+    "message": "Mēs esam mainījuši šifrēšanas veidu, lai nodrošinātu labāku drošību. Savu šifrēšanas atslēgu var atjaunināt tagad, zemāk ievadot savu galveno paroli."
   },
   "updateEncryptionKeyWarning": {
     "message": "Pēc šifrēšanas atslēgas atjaunināšanas ir nepieciešams atteikties un tad pieteikties visās Bitwarden lietotnēs, kas pašreiz tiek izmantotas (piemēram, tālruņa lietotnē vai pārlūku paplašinājumā). Ja tas netiks darīts (tā tiek lejupielādēta jaunā šifrēšanas atslēga), dati var tikt bojāti. Tiks veikts automātisks atteikšanās mēģinājums, tomēr tas var notikt ar aizkavi."

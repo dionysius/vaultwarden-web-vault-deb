@@ -508,9 +508,6 @@
   "maxFileSize": {
     "message": "Maximální velikost souboru je 500 MB."
   },
-  "updateKey": {
-    "message": "Dokud neaktualizujete svůj šifrovací klíč, nemůžete tuto funkci použít."
-  },
   "addedItem": {
     "message": "Položka byla přidána"
   },
@@ -3476,17 +3473,11 @@
   "keyUpdated": {
     "message": "Klíč byl aktualizován"
   },
-  "updateKeyTitle": {
-    "message": "Aktualizovat klíč"
-  },
   "updateEncryptionKey": {
     "message": "Aktualizovat šifrovací klíč"
   },
-  "updateEncryptionKeyShortDesc": {
-    "message": "Aktuálně používáte zastaralé šifrovací schéma."
-  },
-  "updateEncryptionKeyDesc": {
-    "message": "Přešli jsme na delší šifrovací klíče, které poskytují vyšší úroveň zabezpečení a přístup k novým funkcím. Aktualizace Vašeho šifrovacího klíče je rychlá a snadná. Stačí níže zadat Vaše hlavní heslo. Provedení této aktualizace může být v budoucnu povinné."
+  "updateEncryptionSchemeDesc": {
+    "message": "Změnili jsme šifrovací schéma pro zajištění větší bezpečnosti. Aktualizujte Váš šifrovací klíč nyní zadáním hlavního hesla níže."
   },
   "updateEncryptionKeyWarning": {
     "message": "Po aktualizace šifrovacího klíče dojde k odhlášení a budete se muset opětovně přihlásit do všech aplikací Bitwardenu, které aktuálně používáte (např. mobilní aplikace či rozšíření pro prohlížeč). Nezdaří-li se odhlášení a opětovné přihlášení (během něhož bude stažen nový šifrovací klíč), může dojít k poškození dat. Pokusíme se Vás automaticky odhlásit, nicméně, může to chvíli trvat."

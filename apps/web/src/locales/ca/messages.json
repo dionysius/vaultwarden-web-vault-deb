@@ -508,9 +508,6 @@
   "maxFileSize": {
     "message": "La mida màxima del fitxer és de 500 MB."
   },
-  "updateKey": {
-    "message": "No podeu utilitzar aquesta funció fins que actualitzeu la vostra clau de xifratge."
-  },
   "addedItem": {
     "message": "Element afegit"
   },
@@ -3476,17 +3473,11 @@
   "keyUpdated": {
     "message": "Clau actualitzada"
   },
-  "updateKeyTitle": {
-    "message": "Actualitza clau"
-  },
   "updateEncryptionKey": {
     "message": "Actualitza la clau de xifratge"
   },
-  "updateEncryptionKeyShortDesc": {
-    "message": "Esteu fent servir un esquema de xifrage antiquat."
-  },
-  "updateEncryptionKeyDesc": {
-    "message": "Hem canviat a claus de xifratge més grans que proporcionen una millor seguretat i accés a característiques més noves. L'actualització de la vostra clau de xifratge és ràpida i senzilla. Només cal que introduïu la vostra contrasenya mestra a continuació. Aquesta actualització es convertirà en obligatòria en qualsevol moment."
+  "updateEncryptionSchemeDesc": {
+    "message": "We've changed the encryption scheme to provide better security. Update your encryption key now by entering your master password below."
   },
   "updateEncryptionKeyWarning": {
     "message": "Després d'actualitzar la vostra clau de xifratge, heu de tancar la sessió i tornar a entrar a totes les aplicacions de Bitwarden que esteu utilitzant actualment (com ara l'aplicació mòbil o les extensions del navegador). Si no es tanca i torna a iniciar la sessió (la qual descarrega la vostra nova clau de xifratge) pot provocar corrupció en les dades. Intentarem registrar-vos automàticament, però, es pot retardar."
