@@ -96,9 +96,3 @@
     }
   }
 }
-
-date-input-polyfill {
-  &[data-open="true"] {
-    z-index: 10000 !important;
-  }
-}

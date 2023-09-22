@@ -8,6 +8,3 @@ if (process.env.NODE_ENV === "production") {
   Error["stackTraceLimit"] = Infinity;
   require("zone.js/dist/long-stack-trace-zone");
 }
-
-// Other polyfills
-require("date-input-polyfill");
