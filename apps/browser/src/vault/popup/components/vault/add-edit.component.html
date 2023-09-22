@@ -564,6 +564,7 @@
           <select
             id="autofillOnPageLoad"
             name="AutofillOnPageLoad"
+            [disabled]="reprompt"
             [(ngModel)]="cipher.login.autofillOnPageLoad"
           >
             <option *ngFor="let o of autofillOnPageLoadOptions" [ngValue]="o.value">
@@ -571,6 +572,9 @@
             </option>
           </select>
         </div>
+      </div>
+      <div class="box-footer !tw-mb-0 !tw-pb-0" *ngIf="reprompt">
+        {{ "turnOffMasterPasswordPromptToEditField" | i18n }}
       </div>
     </div>
     <div class="box">

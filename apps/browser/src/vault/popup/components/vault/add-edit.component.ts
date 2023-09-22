@@ -264,4 +264,27 @@ export class AddEditComponent extends BaseAddEditComponent {
       }
     }, 200);
   }
+
+  repromptChanged() {
+    super.repromptChanged();
+
+    if (!this.showAutoFillOnPageLoadOptions) {
+      return;
+    }
+
+    if (this.reprompt) {
+      this.platformUtilsService.showToast(
+        "info",
+        null,
+        this.i18nService.t("passwordRepromptDisabledAutofillOnPageLoad")
+      );
+      return;
+    }
+
+    this.platformUtilsService.showToast(
+      "info",
+      null,
+      this.i18nService.t("autofillOnPageLoadSetToDefault")
+    );
+  }
 }

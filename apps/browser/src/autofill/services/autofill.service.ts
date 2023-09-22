@@ -19,9 +19,9 @@ import AutofillScript from "../models/autofill-script";
 import {
   AutoFillOptions,
   AutofillService as AutofillServiceInterface,
-  PageDetail,
   FormData,
   GenerateFillScriptOptions,
+  PageDetail,
 } from "./abstractions/autofill.service";
 import {
   AutoFillConstants,
@@ -260,7 +260,7 @@ export default class AutofillService implements AutofillServiceInterface {
       }
     }
 
-    if (cipher == null) {
+    if (cipher == null || (cipher.reprompt === CipherRepromptType.Password && !fromCommand)) {
       return null;
     }
 

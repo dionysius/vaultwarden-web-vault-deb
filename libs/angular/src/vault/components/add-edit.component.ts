@@ -272,6 +272,9 @@ export class AddEditComponent implements OnInit, OnDestroy {
     }
     this.previousCipherId = this.cipherId;
     this.reprompt = this.cipher.reprompt !== CipherRepromptType.None;
+    if (this.reprompt) {
+      this.cipher.login.autofillOnPageLoad = this.autofillOnPageLoadOptions[2].value;
+    }
   }
 
   async submit(): Promise<boolean> {
@@ -570,8 +573,10 @@ export class AddEditComponent implements OnInit, OnDestroy {
     this.reprompt = !this.reprompt;
     if (this.reprompt) {
       this.cipher.reprompt = CipherRepromptType.Password;
+      this.cipher.login.autofillOnPageLoad = this.autofillOnPageLoadOptions[2].value;
     } else {
       this.cipher.reprompt = CipherRepromptType.None;
+      this.cipher.login.autofillOnPageLoad = this.autofillOnPageLoadOptions[0].value;
     }
   }
 
