@@ -475,8 +475,8 @@
   "maxFileSize": {
     "message": "Največja velikost datoteke je 500 MB."
   },
-  "updateKey": {
-    "message": "Te funkcije ne morete koristiti, dokler dokler ne posodobite vašega ključa za šifriranje."
+  "encryptionKeyMigrationRequired": {
+    "message": "Encryption key migration required. Please login through the web vault to update your encryption key."
   },
   "editedFolder": {
     "message": "Mapa je bila urejena"

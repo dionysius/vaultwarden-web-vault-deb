@@ -475,8 +475,8 @@
   "maxFileSize": {
     "message": "Maksimum dosya boyutu 500 MB'dir."
   },
-  "updateKey": {
-    "message": "Şifreleme anahtarınızı güncelleştirene kadar bu özelliği kullanamazsınız."
+  "encryptionKeyMigrationRequired": {
+    "message": "Şifreleme anahtarınızın güncellenmesi gerekiyor. Şifreleme anahtarınızı güncellemek için lütfen web kasasına giriş yapın."
   },
   "editedFolder": {
     "message": "Klasör kaydedildi"

@@ -475,8 +475,8 @@
   "maxFileSize": {
     "message": "檔案最大為 500MB。"
   },
-  "updateKey": {
-    "message": "更新加密金鑰前不能使用此功能。"
+  "encryptionKeyMigrationRequired": {
+    "message": "Encryption key migration required. Please login through the web vault to update your encryption key."
   },
   "editedFolder": {
     "message": "資料夾已儲存"

@@ -475,8 +475,8 @@
   "maxFileSize": {
     "message": "Den høgaste tillatne filstorleiken er 500 MB."
   },
-  "updateKey": {
-    "message": "Du kan ikkje bruke denne funksjonen, før du har oppdatert krypteringsnøkkelen din."
+  "encryptionKeyMigrationRequired": {
+    "message": "Encryption key migration required. Please login through the web vault to update your encryption key."
   },
   "editedFolder": {
     "message": "Mappe lagra"

@@ -475,8 +475,8 @@
   "maxFileSize": {
     "message": "La dimensione massima del file è 500 MB."
   },
-  "updateKey": {
-    "message": "Non puoi usare questa funzionalità finché non aggiorni la tua chiave di criptografia."
+  "encryptionKeyMigrationRequired": {
+    "message": "Migrazione della chiave di criptografia obbligatoria. Accedi tramite la cassaforte web per aggiornare la tua chiave di criptografia."
   },
   "editedFolder": {
     "message": "Cartella salvata"

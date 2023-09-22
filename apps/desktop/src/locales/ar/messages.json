@@ -475,8 +475,8 @@
   "maxFileSize": {
     "message": "الحجم الأقصى للملف هو 500 ميجابايت."
   },
-  "updateKey": {
-    "message": "لا يمكنك استخدام هذه الميزة حتى تقوم بتحديث مفتاح التشفير الخاص بك."
+  "encryptionKeyMigrationRequired": {
+    "message": "مطلوب ترحيل مفتاح التشفير. الرجاء تسجيل الدخول بواسطة مخزن الويب لتحديث مفتاح التشفير الخاص بك."
   },
   "editedFolder": {
     "message": "تم تعديل المجلد"
@@ -1078,7 +1078,7 @@
     "message": "1 جيغابايت وحدة تخزين مشفرة لمرفقات الملفات."
   },
   "premiumSignUpTwoStepOptions": {
-    "message": "Proprietary two-step login options such as YubiKey and Duo."
+    "message": "خيارات تسجيل الدخول بخطوتين المملوكة مثل YubiKey و Duo."
   },
   "premiumSignUpReports": {
     "message": "نظافة كلمة المرور، صحة الحساب، وتقارير خرق البيانات للحفاظ على سلامة خزنتك."
@@ -1493,7 +1493,7 @@
     "message": "تسجيل الخروج من الخزنة يتطلب إعادة المصادقة للوصول إليها مرة أخرى."
   },
   "unlockMethodNeededToChangeTimeoutActionDesc": {
-    "message": "Set up an unlock method to change your vault timeout action."
+    "message": "أعدنّ طريقة إلغاء القُفْل لتغيير إجراء مهلة المخزن الخاص بك."
   },
   "lock": {
     "message": "قفل",
@@ -1985,7 +1985,7 @@
     "message": "تصدير الخزنة الشخصية"
   },
   "exportingIndividualVaultDescription": {
-    "message": "Only the individual vault items associated with $EMAIL$ will be exported. Organization vault items will not be included. Only vault item information will be exported and will not include associated attachments.",
+    "message": "سيتم تصدير عناصر المخزن الفردية المرتبطة بـ $EMAIL$ فقط. لن يتم إدراج عناصر مخزن المؤسسة. سيتم تصدير معلومات المنتج فقط ولن تشمل المرفقات المرتبطة بها.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -2110,7 +2110,7 @@
     "message": "تسجيل الدخول باستخدام جهاز آخر"
   },
   "loginInitiated": {
-    "message": "Login initiated"
+    "message": "بَدْء تسجيل الدخول"
   },
   "notificationSentDevice": {
     "message": "تم إرسال إشعار إلى جهازك."
@@ -2250,31 +2250,31 @@
     "message": "تحديث الإعدادات الموصى بها"
   },
   "deviceApprovalRequired": {
-    "message": "Device approval required. Select an approval option below:"
+    "message": "موافقة الجهاز مطلوبة. حدد خيار الموافقة أدناه:"
   },
   "rememberThisDevice": {
-    "message": "Remember this device"
+    "message": "تذكر هذا الجهاز"
   },
   "uncheckIfPublicDevice": {
-    "message": "Uncheck if using a public device"
+    "message": "إلغاء تحديد عند استخدام جهاز عام"
   },
   "approveFromYourOtherDevice": {
-    "message": "Approve from your other device"
+    "message": "الموافقة من جهازك الآخر"
   },
   "requestAdminApproval": {
-    "message": "Request admin approval"
+    "message": "طلب موافقة المشرف"
   },
   "approveWithMasterPassword": {
-    "message": "Approve with master password"
+    "message": "الموافقة بواسطة كلمة المرور الرئيسية"
   },
   "region": {
-    "message": "Region"
+    "message": "المنطقة"
   },
   "ssoIdentifierRequired": {
-    "message": "Organization SSO identifier is required."
+    "message": "معرف الـSSO للمؤسسة مطلوب."
   },
   "eu": {
-    "message": "EU",
+    "message": "الاتحاد الأوروبي",
     "description": "European Union"
   },
   "loggingInOn": {
@@ -2287,46 +2287,46 @@
     "message": "bitwarden.eu"
   },
   "selfHostedServer": {
-    "message": "self-hosted"
+    "message": "استضافة ذاتية"
   },
   "accessDenied": {
     "message": "غير مسموح بالدخول. ليس لديك الصلاحية لعرض هذه الصفحة."
   },
   "accountSuccessfullyCreated": {
-    "message": "Account successfully created!"
+    "message": "تم إنشاء الحساب بنجاح!"
   },
   "adminApprovalRequested": {
-    "message": "Admin approval requested"
+    "message": "طلبت موافقة المسؤول"
   },
   "adminApprovalRequestSentToAdmins": {
-    "message": "Your request has been sent to your admin."
+    "message": "تم إرسال طلبك إلى المشرف الخاص بك."
   },
   "youWillBeNotifiedOnceApproved": {
-    "message": "You will be notified once approved."
+    "message": "سيتم إعلامك بمجرد الموافقة."
   },
   "troubleLoggingIn": {
-    "message": "Trouble logging in?"
+    "message": "مشكلة في تسجيل الدخول؟"
   },
   "loginApproved": {
-    "message": "Login approved"
+    "message": "تمت الموافقة على تسجيل الدخول"
   },
   "userEmailMissing": {
-    "message": "User email missing"
+    "message": "البريد الإلكتروني للمستخدم مفقود"
   },
   "deviceTrusted": {
-    "message": "Device trusted"
+    "message": "الجهاز موثوق به"
   },
   "inputRequired": {
-    "message": "Input is required."
+    "message": "الإدخال مطلوب."
   },
   "required": {
-    "message": "required"
+    "message": "مطلوب"
   },
   "search": {
-    "message": "Search"
+    "message": "بحث"
   },
   "inputMinLength": {
-    "message": "Input must be at least $COUNT$ characters long.",
+    "message": "الإدخال يجب أن يكون على الأقل $COUNT$ حرفاً.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -2335,7 +2335,7 @@
     }
   },
   "inputMaxLength": {
-    "message": "Input must not exceed $COUNT$ characters in length.",
+    "message": "الإدخال يجب أن لا يتجاوز أحرف $COUNT$ في الطول.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -2344,7 +2344,7 @@
     }
   },
   "inputForbiddenCharacters": {
-    "message": "The following characters are not allowed: $CHARACTERS$",
+    "message": "الأحرف التالية غير مسموح بها: $CHARACTERS$",
     "placeholders": {
       "characters": {
         "content": "$1",
@@ -2353,7 +2353,7 @@
     }
   },
   "inputMinValue": {
-    "message": "Input value must be at least $MIN$.",
+    "message": "يجب أن تكون قيمة الإدخال على الأقل $MIN$.",
     "placeholders": {
       "min": {
         "content": "$1",
@@ -2362,7 +2362,7 @@
     }
   },
   "inputMaxValue": {
-    "message": "Input value must not exceed $MAX$.",
+    "message": "يجب ألا تتجاوز قيمة الإدخال $MAX$.",
     "placeholders": {
       "max": {
         "content": "$1",
@@ -2371,17 +2371,17 @@
     }
   },
   "multipleInputEmails": {
-    "message": "1 or more emails are invalid"
+    "message": "1 أو أكثر من رسائل البريد الإلكتروني غير صالحة"
   },
   "inputTrimValidator": {
-    "message": "Input must not contain only whitespace.",
+    "message": "الإدخال يجب أن لا يحتوي على مساحة بيضاء فقط.",
     "description": "Notification to inform the user that a form's input can't contain only whitespace."
   },
   "inputEmail": {
-    "message": "Input is not an email address."
+    "message": "الإدخال ليس عنوان بريد إلكتروني."
   },
   "fieldsNeedAttention": {
-    "message": "$COUNT$ field(s) above need your attention.",
+    "message": "الحقل (الحقول) $COUNT$ أعلاه بحاجة إلى اهتمامك.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -2390,22 +2390,22 @@
     }
   },
   "selectPlaceholder": {
-    "message": "-- Select --"
+    "message": "-- اختيار --"
   },
   "multiSelectPlaceholder": {
-    "message": "-- Type to filter --"
+    "message": "-- اكتب للنصفية --"
   },
   "multiSelectLoading": {
-    "message": "Retrieving options..."
+    "message": "استرداد الخيارات..."
   },
   "multiSelectNotFound": {
-    "message": "No items found"
+    "message": "لم يتم العثور على عناصر"
   },
   "multiSelectClearAll": {
-    "message": "Clear all"
+    "message": "امسح الكل"
   },
   "plusNMore": {
-    "message": "+ $QUANTITY$ more",
+    "message": "+ $QUANTITY$ المزيد",
     "placeholders": {
       "quantity": {
         "content": "$1",
@@ -2414,6 +2414,6 @@
     }
   },
   "submenu": {
-    "message": "Submenu"
+    "message": "قائمة فرعية"
   }
 }

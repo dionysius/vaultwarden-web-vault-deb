@@ -475,8 +475,8 @@
   "maxFileSize": {
     "message": "Eranskinaren gehienezko tamaina 500MB."
   },
-  "updateKey": {
-    "message": "Ezin duzu ezaugarri hau erabili zifratze-gakoa eguneratu arte."
+  "encryptionKeyMigrationRequired": {
+    "message": "Encryption key migration required. Please login through the web vault to update your encryption key."
   },
   "editedFolder": {
     "message": "Karpeta editatuta"

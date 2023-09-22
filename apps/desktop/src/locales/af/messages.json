@@ -475,8 +475,8 @@
   "maxFileSize": {
     "message": "Maksimumlêergrootte is 500 MB."
   },
-  "updateKey": {
-    "message": "U kan nie hierdie funksie gebruik tot u u enkripsiesleutel bygewerk het nie."
+  "encryptionKeyMigrationRequired": {
+    "message": "Encryption key migration required. Please login through the web vault to update your encryption key."
   },
   "editedFolder": {
     "message": "Gewysigde vouer"

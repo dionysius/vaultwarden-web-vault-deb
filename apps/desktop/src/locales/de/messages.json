@@ -475,8 +475,8 @@
   "maxFileSize": {
     "message": "Die maximale Dateigröße beträgt 500 MB."
   },
-  "updateKey": {
-    "message": "Du kannst diese Funktion nicht nutzen, bevor du deinen Verschlüsselungsschlüssel aktualisiert hast."
+  "encryptionKeyMigrationRequired": {
+    "message": "Encryption key migration required. Please login through the web vault to update your encryption key."
   },
   "editedFolder": {
     "message": "Ordner gespeichert"

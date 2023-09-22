@@ -475,8 +475,8 @@
   "maxFileSize": {
     "message": "Ukuran berkas maksimal adalah 500 MB."
   },
-  "updateKey": {
-    "message": "Anda tidak dapat menggunakan fitur ini sampai Anda memperbarui kunci enkripsi Anda."
+  "encryptionKeyMigrationRequired": {
+    "message": "Encryption key migration required. Please login through the web vault to update your encryption key."
   },
   "editedFolder": {
     "message": "Folder yang di Edit"

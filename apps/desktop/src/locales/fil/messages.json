@@ -475,8 +475,8 @@
   "maxFileSize": {
     "message": "Maximum na laki ng file ay 500 MB."
   },
-  "updateKey": {
-    "message": "Hindi mo maari gamitin ang tampok na ito hanggang hindi mo iupdate ang iyong encryption key."
+  "encryptionKeyMigrationRequired": {
+    "message": "Encryption key migration required. Please login through the web vault to update your encryption key."
   },
   "editedFolder": {
     "message": "Nai-save na folder"

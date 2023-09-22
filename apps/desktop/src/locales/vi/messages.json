@@ -475,8 +475,8 @@
   "maxFileSize": {
     "message": "Kích thước tối đa của tệp tin là 500MB."
   },
-  "updateKey": {
-    "message": "Bạn không thể sử dụng tính năng này cho đến khi bạn cập nhật khoá mã hóa."
+  "encryptionKeyMigrationRequired": {
+    "message": "Encryption key migration required. Please login through the web vault to update your encryption key."
   },
   "editedFolder": {
     "message": "Đã chỉnh sửa thư mục"

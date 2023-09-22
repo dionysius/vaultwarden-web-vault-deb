@@ -475,8 +475,8 @@
   "maxFileSize": {
     "message": "ขนาดไฟล์สูงสุดคือ 500 MB"
   },
-  "updateKey": {
-    "message": "คุณไม่สามารถใช้คุณลักษณะนี้ได้จนกว่าคุณปรับปรุงคีย์การเข้ารหัสลับของคุณ"
+  "encryptionKeyMigrationRequired": {
+    "message": "Encryption key migration required. Please login through the web vault to update your encryption key."
   },
   "editedFolder": {
     "message": "แก้​ไข​โฟลเดอร์แล้ว"

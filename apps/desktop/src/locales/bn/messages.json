@@ -475,8 +475,8 @@
   "maxFileSize": {
     "message": "সর্বোচ্চ ফাইলের আকার ১০০ এমবি।"
   },
-  "updateKey": {
-    "message": "আপনি আপনার এনক্রিপশন কী হালনাগাদ না করা পর্যন্ত এই বৈশিষ্ট্যটি ব্যবহার করতে পারবেন না।"
+  "encryptionKeyMigrationRequired": {
+    "message": "Encryption key migration required. Please login through the web vault to update your encryption key."
   },
   "editedFolder": {
     "message": "ফোল্ডার সম্পাদিত"

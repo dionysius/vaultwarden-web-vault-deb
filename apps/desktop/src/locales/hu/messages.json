@@ -475,8 +475,8 @@
   "maxFileSize": {
     "message": "Maximális fájl méret 500 MB."
   },
-  "updateKey": {
-    "message": "Ez a funkció nem használható a titkosítási kulcs frissítéséig."
+  "encryptionKeyMigrationRequired": {
+    "message": "Titkosítási kulcs migráció szükséges. Jelentkezzünk be a webes széfen keresztül a titkosítási kulcs frissítéséhez."
   },
   "editedFolder": {
     "message": "A mappa mentésre került."

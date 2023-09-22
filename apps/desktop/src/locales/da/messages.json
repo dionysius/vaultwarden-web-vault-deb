@@ -475,8 +475,8 @@
   "maxFileSize": {
     "message": "Maksimum filstørrelse er 500 MB."
   },
-  "updateKey": {
-    "message": "Denne funktion kan ikke bruges, før din krypteringsnøgle opdateres."
+  "encryptionKeyMigrationRequired": {
+    "message": "Krypteringsnøglemigrering nødvendig. Log ind gennem web-boksen for at opdatere krypteringsnøglen."
   },
   "editedFolder": {
     "message": "Mappe gemt"

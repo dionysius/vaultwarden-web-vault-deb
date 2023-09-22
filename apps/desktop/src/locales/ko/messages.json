@@ -475,8 +475,8 @@
   "maxFileSize": {
     "message": "최대 파일 크기는 500MB입니다."
   },
-  "updateKey": {
-    "message": "이 기능을 사용하려면 암호화 키를 업데이트해야 합니다."
+  "encryptionKeyMigrationRequired": {
+    "message": "Encryption key migration required. Please login through the web vault to update your encryption key."
   },
   "editedFolder": {
     "message": "폴더 편집함"
