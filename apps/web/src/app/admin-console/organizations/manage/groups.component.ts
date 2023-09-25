@@ -15,7 +15,6 @@ import {
 import { first } from "rxjs/operators";
 
 import { SearchPipe } from "@bitwarden/angular/pipes/search.pipe";
-import { ModalService } from "@bitwarden/angular/services/modal.service";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { SearchService } from "@bitwarden/common/abstractions/search.service";
 import { ListResponse } from "@bitwarden/common/models/response/list.response";
@@ -126,7 +125,6 @@ export class GroupsComponent implements OnInit, OnDestroy {
     private groupService: GroupService,
     private route: ActivatedRoute,
     private i18nService: I18nService,
-    private modalService: ModalService,
     private dialogService: DialogService,
     private platformUtilsService: PlatformUtilsService,
     private searchService: SearchService,

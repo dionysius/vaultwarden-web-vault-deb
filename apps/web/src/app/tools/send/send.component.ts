@@ -1,7 +1,6 @@
 import { Component, NgZone, ViewChild, ViewContainerRef } from "@angular/core";
 import { lastValueFrom } from "rxjs";
 
-import { ModalService } from "@bitwarden/angular/services/modal.service";
 import { SendComponent as BaseSendComponent } from "@bitwarden/angular/tools/send/send.component";
 import { SearchService } from "@bitwarden/common/abstractions/search.service";
 import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
@@ -52,7 +51,6 @@ export class SendComponent extends BaseSendComponent {
     ngZone: NgZone,
     searchService: SearchService,
     policyService: PolicyService,
-    private modalService: ModalService,
     private broadcasterService: BroadcasterService,
     logService: LogService,
     sendApiService: SendApiService,

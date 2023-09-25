@@ -3,7 +3,6 @@ import { FormBuilder } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
 import { switchMap, takeUntil } from "rxjs/operators";
 
-import { ModalService } from "@bitwarden/angular/services/modal.service";
 import {
   canAccessVaultTab,
   OrganizationService,
@@ -42,7 +41,6 @@ export class OrganizationImportComponent extends ImportComponent {
     policyService: PolicyService,
     organizationService: OrganizationService,
     logService: LogService,
-    modalService: ModalService,
     syncService: SyncService,
     dialogService: DialogService,
     folderService: FolderService,
@@ -56,7 +54,6 @@ export class OrganizationImportComponent extends ImportComponent {
       platformUtilsService,
       policyService,
       logService,
-      modalService,
       syncService,
       dialogService,
       folderService,
