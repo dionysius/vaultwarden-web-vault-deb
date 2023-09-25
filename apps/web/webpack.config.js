@@ -272,6 +272,7 @@ const devServer =
                   https://api.2fa.directory/v3/totp.json
                   https://api.stripe.com
                   https://www.paypal.com
+                  https://api.sandbox.braintreegateway.com
                   https://api.braintreegateway.com
                   https://client-analytics.braintreegateway.com
                   https://*.braintree-api.com
