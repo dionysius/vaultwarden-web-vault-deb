@@ -280,7 +280,7 @@ const devServer =
                   http://127.0.0.1:10000
                   https://app.simplelogin.io/api/alias/random/new
                   https://quack.duckduckgo.com/api/email/addresses
-                  https://app.anonaddy.com/api/v1/aliases
+                  https://app.addy.io/api/v1/aliases
                   https://api.fastmail.com
                   https://api.forwardemail.net
                   http://localhost:5000

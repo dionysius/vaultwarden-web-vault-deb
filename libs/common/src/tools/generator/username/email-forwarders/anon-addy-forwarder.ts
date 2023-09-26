@@ -11,6 +11,10 @@ export class AnonAddyForwarder implements Forwarder {
     if (options.anonaddy?.domain == null || options.anonaddy.domain === "") {
       throw "Invalid addy.io domain.";
     }
+    if (options.anonaddy?.baseUrl == null || options.anonaddy.baseUrl === "") {
+      throw "Invalid addy.io url.";
+    }
+
     const requestInit: RequestInit = {
       redirect: "manual",
       cache: "no-store",
@@ -21,7 +25,7 @@ export class AnonAddyForwarder implements Forwarder {
         "X-Requested-With": "XMLHttpRequest",
       }),
     };
-    const url = "https://app.addy.io/api/v1/aliases";
+    const url = options.anonaddy.baseUrl + "/api/v1/aliases";
     requestInit.body = JSON.stringify({
       domain: options.anonaddy.domain,
       description:
@@ -36,6 +40,9 @@ export class AnonAddyForwarder implements Forwarder {
     }
     if (response.status === 401) {
       throw "Invalid addy.io API token.";
+    }
+    if (response?.statusText != null) {
+      throw "addy.io error:\n" + response.statusText;
     }
     throw "Unknown addy.io error occurred.";
   }

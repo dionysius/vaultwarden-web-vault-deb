@@ -24,6 +24,7 @@ const DefaultOptions: UsernameGeneratorOptions = {
   catchallType: "random",
   forwardedService: "",
   forwardedAnonAddyDomain: "anonaddy.me",
+  forwardedAnonAddyBaseUrl: "https://app.addy.io",
   forwardedForwardEmailDomain: "hideaddress.net",
 };
 
@@ -131,6 +132,7 @@ export class UsernameGenerationService implements UsernameGenerationServiceAbstr
       forwarder = new AnonAddyForwarder();
       forwarderOptions.apiKey = o.forwardedAnonAddyApiToken;
       forwarderOptions.anonaddy.domain = o.forwardedAnonAddyDomain;
+      forwarderOptions.anonaddy.baseUrl = o.forwardedAnonAddyBaseUrl;
     } else if (o.forwardedService === "firefoxrelay") {
       forwarder = new FirefoxRelayForwarder();
       forwarderOptions.apiKey = o.forwardedFirefoxApiToken;

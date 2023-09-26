@@ -43,6 +43,10 @@ export class GeneratorComponent extends BaseGeneratorComponent {
     }
   }
 
+  get isSelfHosted(): boolean {
+    return this.platformUtilsService.isSelfHost();
+  }
+
   async history() {
     this.dialogService.open(PasswordGeneratorHistoryComponent);
   }

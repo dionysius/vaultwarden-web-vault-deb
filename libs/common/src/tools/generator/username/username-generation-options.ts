@@ -10,6 +10,7 @@ export type UsernameGeneratorOptions = {
   forwardedService?: string;
   forwardedAnonAddyApiToken?: string;
   forwardedAnonAddyDomain?: string;
+  forwardedAnonAddyBaseUrl?: string;
   forwardedDuckDuckGoToken?: string;
   forwardedFirefoxApiToken?: string;
   forwardedFastmailApiToken?: string;

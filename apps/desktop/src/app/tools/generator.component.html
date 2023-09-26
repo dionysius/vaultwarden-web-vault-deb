@@ -405,12 +405,22 @@
                   />
                 </div>
                 <div class="box-content-row" appBoxRow>
-                  <label for="anonaddy-domain">{{ "domainName" | i18n }}</label>
+                  <label for="anonaddy-domain">{{ "aliasDomain" | i18n }}</label>
                   <input
                     id="anonaddy-domain"
                     type="text"
                     name="AnonAddyDomain"
                     [(ngModel)]="usernameOptions.forwardedAnonAddyDomain"
+                    (blur)="saveUsernameOptions()"
+                  />
+                </div>
+                <div class="box-content-row" appBoxRow>
+                  <label for="anonaddy-baseUrl">{{ "baseUrl" | i18n }}</label>
+                  <input
+                    id="anonaddy-baseUrl"
+                    type="text"
+                    name="AnonAddyDomain"
+                    [(ngModel)]="usernameOptions.forwardedAnonAddyBaseUrl"
                     (blur)="saveUsernameOptions()"
                   />
                 </div>
@@ -451,7 +461,7 @@
                   />
                 </div>
                 <div class="box-content-row" appBoxRow>
-                  <label for="forwardemail-domain">{{ "domainName" | i18n }}</label>
+                  <label for="forwardemail-domain">{{ "aliasDomain" | i18n }}</label>
                   <input
                     id="forwardemail-domain"
                     type="text"

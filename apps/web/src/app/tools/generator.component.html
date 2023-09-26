@@ -309,12 +309,23 @@
         />
       </div>
       <div class="form-group col-4">
-        <label for="anonaddy-domain">{{ "domainName" | i18n }}</label>
+        <label for="anonaddy-domain">{{ "aliasDomain" | i18n }}</label>
         <input
           id="anonaddy-domain"
           class="form-control"
           type="text"
           [(ngModel)]="usernameOptions.forwardedAnonAddyDomain"
+          (blur)="saveUsernameOptions()"
+        />
+      </div>
+      <div class="form-group col-4" *ngIf="isSelfHosted">
+        <label for="anonaddy-baseUrl">{{ "baseUrl" | i18n }}</label>
+        <input
+          id="anonaddy-baseUrl"
+          class="form-control"
+          type="text"
+          name="AnonAddyDomain"
+          [(ngModel)]="usernameOptions.forwardedAnonAddyBaseUrl"
           (blur)="saveUsernameOptions()"
         />
       </div>
@@ -355,7 +366,7 @@
         />
       </div>
       <div class="form-group col-4">
-        <label for="forwardemail-domain">{{ "domainName" | i18n }}</label>
+        <label for="forwardemail-domain">{{ "aliasDomain" | i18n }}</label>
         <input
           id="forwardemail-domain"
           class="form-control"
