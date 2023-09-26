@@ -47,6 +47,7 @@ export class AddOrganizationComponent implements OnInit {
   }
 
   async add(organization: Organization) {
+    // eslint-disable-next-line @typescript-eslint/no-misused-promises
     if (this.formPromise) {
       return;
     }

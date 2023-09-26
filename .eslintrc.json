@@ -34,20 +34,14 @@
         }
       },
       "rules": {
-        "@typescript-eslint/no-explicit-any": "off", // TODO: This should be re-enabled
-        "@typescript-eslint/no-unused-vars": ["error", { "args": "none" }],
         "@typescript-eslint/explicit-member-accessibility": [
           "error",
-          {
-            "accessibility": "no-public"
-          }
+          { "accessibility": "no-public" }
         ],
-        "@typescript-eslint/no-this-alias": [
-          "error",
-          {
-            "allowedNames": ["self"]
-          }
-        ],
+        "@typescript-eslint/no-explicit-any": "off", // TODO: This should be re-enabled
+        "@typescript-eslint/no-misused-promises": ["error", { "checksVoidReturn": false }],
+        "@typescript-eslint/no-this-alias": ["error", { "allowedNames": ["self"] }],
+        "@typescript-eslint/no-unused-vars": ["error", { "args": "none" }],
         "no-console": "error",
         "import/no-unresolved": "off", // TODO: Look into turning off once each package is an actual package.
         "import/order": [

@@ -53,6 +53,7 @@ export class UserSubscriptionComponent implements OnInit {
       return;
     }
 
+    // eslint-disable-next-line @typescript-eslint/no-misused-promises
     if (this.stateService.getHasPremiumPersonally()) {
       this.loading = true;
       this.sub = await this.apiService.getUserSubscription();

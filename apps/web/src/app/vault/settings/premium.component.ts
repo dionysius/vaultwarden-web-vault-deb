@@ -74,6 +74,7 @@ export class PremiumComponent implements OnInit {
 
     try {
       if (this.selfHosted) {
+        // eslint-disable-next-line @typescript-eslint/no-misused-promises
         if (!this.tokenService.getEmailVerified()) {
           this.platformUtilsService.showToast(
             "error",
