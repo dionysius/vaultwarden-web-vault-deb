@@ -125,14 +125,22 @@ export class TaxInfoComponent {
   getTaxInfoRequest(): TaxInfoUpdateRequest {
     if (this.organizationId) {
       const request = new OrganizationTaxInfoUpdateRequest();
-      request.taxId = this.taxInfo.taxId;
-      request.state = this.taxInfo.state;
-      request.line1 = this.taxInfo.line1;
-      request.line2 = this.taxInfo.line2;
-      request.city = this.taxInfo.city;
-      request.state = this.taxInfo.state;
-      request.postalCode = this.taxInfo.postalCode;
       request.country = this.taxInfo.country;
+      request.postalCode = this.taxInfo.postalCode;
+
+      if (this.taxInfo.includeTaxId) {
+        request.taxId = this.taxInfo.taxId;
+        request.line1 = this.taxInfo.line1;
+        request.line2 = this.taxInfo.line2;
+        request.city = this.taxInfo.city;
+        request.state = this.taxInfo.state;
+      } else {
+        request.taxId = null;
+        request.line1 = null;
+        request.line2 = null;
+        request.city = null;
+        request.state = null;
+      }
       return request;
     } else {
       const request = new TaxInfoUpdateRequest();
