@@ -203,6 +203,7 @@ export class ImportService implements ImportServiceAbstraction {
         return new BitwardenPasswordProtectedImporter(
           this.cryptoService,
           this.i18nService,
+          this.cipherService,
           promptForPassword_callback
         );
       case "lastpasscsv":

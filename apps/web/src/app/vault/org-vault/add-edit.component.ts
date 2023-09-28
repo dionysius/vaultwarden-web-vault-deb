@@ -110,7 +110,7 @@ export class AddEditComponent extends BaseAddEditComponent {
     if (!this.organization.canEditAnyCollection) {
       return super.encryptCipher();
     }
-    return this.cipherService.encrypt(this.cipher, null, this.originalCipher);
+    return this.cipherService.encrypt(this.cipher, null, null, this.originalCipher);
   }
 
   protected async deleteCipher() {

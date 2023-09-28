@@ -3,6 +3,7 @@
 export type SharedFlags = {
   multithreadDecryption: boolean;
   showPasswordless?: boolean;
+  enableCipherKeyEncryption?: boolean;
 };
 
 // required to avoid linting errors when there are no flags

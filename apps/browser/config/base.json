@@ -1,6 +1,7 @@
 {
   "dev_flags": {},
   "flags": {
-    "showPasswordless": true
+    "showPasswordless": true,
+    "enableCipherKeyEncryption": false
   }
 }

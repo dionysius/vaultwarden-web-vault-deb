@@ -6,6 +6,7 @@
     }
   },
   "flags": {
-    "showPasswordless": true
+    "showPasswordless": true,
+    "enableCipherKeyEncryption": false
   }
 }

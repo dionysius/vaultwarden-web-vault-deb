@@ -8,5 +8,5 @@ import { InitializerMetadata } from "./initializer-metadata.interface";
  * @example Cipher implements Decryptable<CipherView>
  */
 export interface Decryptable<TDecrypted extends InitializerMetadata> extends InitializerMetadata {
-  decrypt: (key?: SymmetricCryptoKey) => Promise<TDecrypted>;
+  decrypt: (key: SymmetricCryptoKey) => Promise<TDecrypted>;
 }

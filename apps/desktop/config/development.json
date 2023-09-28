@@ -1,6 +1,7 @@
 {
   "devFlags": {},
   "flags": {
-    "showDDGSetting": true
+    "showDDGSetting": true,
+    "enableCipherKeyEncryption": false
   }
 }

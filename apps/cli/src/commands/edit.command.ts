@@ -77,7 +77,9 @@ export class EditCommand {
       return Response.notFound();
     }
 
-    let cipherView = await cipher.decrypt();
+    let cipherView = await cipher.decrypt(
+      await this.cipherService.getKeyForCipherKeyDecryption(cipher)
+    );
     if (cipherView.isDeleted) {
       return Response.badRequest("You may not edit a deleted item. Use the restore command first.");
     }
@@ -86,7 +88,9 @@ export class EditCommand {
     try {
       await this.cipherService.updateWithServer(encCipher);
       const updatedCipher = await this.cipherService.get(cipher.id);
-      const decCipher = await updatedCipher.decrypt();
+      const decCipher = await updatedCipher.decrypt(
+        await this.cipherService.getKeyForCipherKeyDecryption(updatedCipher)
+      );
       const res = new CipherResponse(decCipher);
       return Response.success(res);
     } catch (e) {
@@ -109,7 +113,9 @@ export class EditCommand {
     try {
       await this.cipherService.saveCollectionsWithServer(cipher);
       const updatedCipher = await this.cipherService.get(cipher.id);
-      const decCipher = await updatedCipher.decrypt();
+      const decCipher = await updatedCipher.decrypt(
+        await this.cipherService.getKeyForCipherKeyDecryption(updatedCipher)
+      );
       const res = new CipherResponse(decCipher);
       return Response.success(res);
     } catch (e) {

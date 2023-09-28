@@ -66,7 +66,9 @@ export class ShareComponent implements OnInit, OnDestroy {
     });
 
     const cipherDomain = await this.cipherService.get(this.cipherId);
-    this.cipher = await cipherDomain.decrypt();
+    this.cipher = await cipherDomain.decrypt(
+      await this.cipherService.getKeyForCipherKeyDecryption(cipherDomain)
+    );
 
     this.filterCollections();
   }
@@ -94,7 +96,9 @@ export class ShareComponent implements OnInit, OnDestroy {
     }
 
     const cipherDomain = await this.cipherService.get(this.cipherId);
-    const cipherView = await cipherDomain.decrypt();
+    const cipherView = await cipherDomain.decrypt(
+      await this.cipherService.getKeyForCipherKeyDecryption(cipherDomain)
+    );
     const orgs = await firstValueFrom(this.organizations$);
     const orgName =
       orgs.find((o) => o.id === this.organizationId)?.name ?? this.i18nService.t("organization");

@@ -6,6 +6,7 @@ import {
 import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { EncString } from "@bitwarden/common/platform/models/domain/enc-string";
+import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
 import { CollectionView } from "@bitwarden/common/vault/models/view/collection.view";
 import { FolderView } from "@bitwarden/common/vault/models/view/folder.view";
 import {
@@ -25,7 +26,8 @@ export class BitwardenJsonImporter extends BaseImporter implements Importer {
 
   protected constructor(
     protected cryptoService: CryptoService,
-    protected i18nService: I18nService
+    protected i18nService: I18nService,
+    protected cipherService: CipherService
   ) {
     super();
   }
@@ -96,7 +98,9 @@ export class BitwardenJsonImporter extends BaseImporter implements Importer {
         });
       }
 
-      const view = await cipher.decrypt();
+      const view = await cipher.decrypt(
+        await this.cipherService.getKeyForCipherKeyDecryption(cipher)
+      );
       this.cleanupCipher(view);
       this.result.ciphers.push(view);
     }

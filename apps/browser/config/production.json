@@ -1,3 +1,5 @@
 {
-  "flags": {}
+  "flags": {
+    "enableCipherKeyEncryption": false
+  }
 }

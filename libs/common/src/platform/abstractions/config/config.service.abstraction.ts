@@ -1,4 +1,5 @@
 import { Observable } from "rxjs";
+import { SemVer } from "semver";
 
 import { FeatureFlag } from "../../../enums/feature-flag.enum";
 import { Region } from "../environment.service";
@@ -16,6 +17,9 @@ export abstract class ConfigServiceAbstraction {
     key: FeatureFlag,
     defaultValue?: T
   ) => Promise<T>;
+  checkServerMeetsVersionRequirement$: (
+    minimumRequiredServerVersion: SemVer
+  ) => Observable<boolean>;
 
   /**
    * Force ConfigService to fetch an updated config from the server and emit it from serverConfig$

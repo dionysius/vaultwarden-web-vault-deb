@@ -29,6 +29,7 @@ export class CipherRequest {
   attachments2: { [id: string]: AttachmentRequest };
   lastKnownRevisionDate: Date;
   reprompt: CipherRepromptType;
+  key: string;
 
   constructor(cipher: Cipher) {
     this.type = cipher.type;
@@ -39,6 +40,7 @@ export class CipherRequest {
     this.favorite = cipher.favorite;
     this.lastKnownRevisionDate = cipher.revisionDate;
     this.reprompt = cipher.reprompt;
+    this.key = cipher.key?.encryptedString;
 
     switch (this.type) {
       case CipherType.Login:

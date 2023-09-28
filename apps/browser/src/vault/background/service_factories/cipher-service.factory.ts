@@ -18,8 +18,12 @@ import {
   ApiServiceInitOptions,
 } from "../../../platform/background/service-factories/api-service.factory";
 import {
-  CryptoServiceInitOptions,
+  configServiceFactory,
+  ConfigServiceInitOptions,
+} from "../../../platform/background/service-factories/config-service.factory";
+import {
   cryptoServiceFactory,
+  CryptoServiceInitOptions,
 } from "../../../platform/background/service-factories/crypto-service.factory";
 import {
   EncryptServiceInitOptions,
@@ -49,7 +53,8 @@ export type CipherServiceInitOptions = CipherServiceFactoryOptions &
   I18nServiceInitOptions &
   SearchServiceInitOptions &
   StateServiceInitOptions &
-  EncryptServiceInitOptions;
+  EncryptServiceInitOptions &
+  ConfigServiceInitOptions;
 
 export function cipherServiceFactory(
   cache: { cipherService?: AbstractCipherService } & CachedServices,
@@ -68,7 +73,8 @@ export function cipherServiceFactory(
         await searchServiceFactory(cache, opts),
         await stateServiceFactory(cache, opts),
         await encryptServiceFactory(cache, opts),
-        await cipherFileUploadServiceFactory(cache, opts)
+        await cipherFileUploadServiceFactory(cache, opts),
+        await configServiceFactory(cache, opts)
       )
   );
 }

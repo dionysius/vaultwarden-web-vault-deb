@@ -37,7 +37,9 @@ export class CollectionsComponent implements OnInit {
   async load() {
     this.cipherDomain = await this.loadCipher();
     this.collectionIds = this.loadCipherCollections();
-    this.cipher = await this.cipherDomain.decrypt();
+    this.cipher = await this.cipherDomain.decrypt(
+      await this.cipherService.getKeyForCipherKeyDecryption(this.cipherDomain)
+    );
     this.collections = await this.loadCollections();
 
     this.collections.forEach((c) => ((c as any).checked = false));

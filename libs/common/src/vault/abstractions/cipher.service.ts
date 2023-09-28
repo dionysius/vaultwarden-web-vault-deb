@@ -11,7 +11,8 @@ export abstract class CipherService {
   clearCache: (userId?: string) => Promise<void>;
   encrypt: (
     model: CipherView,
-    key?: SymmetricCryptoKey,
+    keyForEncryption?: SymmetricCryptoKey,
+    keyForCipherKeyDecryption?: SymmetricCryptoKey,
     originalCipher?: Cipher
   ) => Promise<Cipher>;
   encryptFields: (fieldsModel: FieldView[], key: SymmetricCryptoKey) => Promise<Field[]>;
@@ -81,4 +82,5 @@ export abstract class CipherService {
     organizationId?: string,
     asAdmin?: boolean
   ) => Promise<void>;
+  getKeyForCipherKeyDecryption: (cipher: Cipher) => Promise<any>;
 }

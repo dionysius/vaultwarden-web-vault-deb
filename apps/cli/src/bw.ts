@@ -25,11 +25,13 @@ import { TwoFactorService } from "@bitwarden/common/auth/services/two-factor.ser
 import { UserVerificationApiService } from "@bitwarden/common/auth/services/user-verification/user-verification-api.service";
 import { UserVerificationService } from "@bitwarden/common/auth/services/user-verification/user-verification.service";
 import { ClientType, KeySuffixOptions, LogLevelType } from "@bitwarden/common/enums";
+import { ConfigApiServiceAbstraction } from "@bitwarden/common/platform/abstractions/config/config-api.service.abstraction";
 import { StateFactory } from "@bitwarden/common/platform/factories/state-factory";
 import { Account } from "@bitwarden/common/platform/models/domain/account";
 import { GlobalState } from "@bitwarden/common/platform/models/domain/global-state";
 import { AppIdService } from "@bitwarden/common/platform/services/app-id.service";
 import { BroadcasterService } from "@bitwarden/common/platform/services/broadcaster.service";
+import { ConfigApiService } from "@bitwarden/common/platform/services/config/config-api.service";
 import { ContainerService } from "@bitwarden/common/platform/services/container.service";
 import { CryptoService } from "@bitwarden/common/platform/services/crypto.service";
 import { EncryptServiceImplementation } from "@bitwarden/common/platform/services/cryptography/encrypt.service.implementation";
@@ -75,6 +77,7 @@ import {
 } from "@bitwarden/importer";
 import { NodeCryptoFunctionService } from "@bitwarden/node/services/node-crypto-function.service";
 
+import { CliConfigService } from "./platform/services/cli-config.service";
 import { CliPlatformUtilsService } from "./platform/services/cli-platform-utils.service";
 import { ConsoleLogService } from "./platform/services/console-log.service";
 import { I18nService } from "./platform/services/i18n.service";
@@ -147,6 +150,8 @@ export class Main {
   devicesApiService: DevicesApiServiceAbstraction;
   deviceTrustCryptoService: DeviceTrustCryptoServiceAbstraction;
   authRequestCryptoService: AuthRequestCryptoServiceAbstraction;
+  configApiService: ConfigApiServiceAbstraction;
+  configService: CliConfigService;
 
   constructor() {
     let p = null;
@@ -252,27 +257,7 @@ export class Main {
 
     this.searchService = new SearchService(this.logService, this.i18nService);
 
-    this.cipherService = new CipherService(
-      this.cryptoService,
-      this.settingsService,
-      this.apiService,
-      this.i18nService,
-      this.searchService,
-      this.stateService,
-      this.encryptService,
-      this.cipherFileUploadService
-    );
-
     this.broadcasterService = new BroadcasterService();
-
-    this.folderService = new FolderService(
-      this.cryptoService,
-      this.i18nService,
-      this.cipherService,
-      this.stateService
-    );
-
-    this.folderApiService = new FolderApiService(this.folderService, this.apiService);
 
     this.collectionService = new CollectionService(
       this.cryptoService,
@@ -348,6 +333,38 @@ export class Main {
       this.deviceTrustCryptoService,
       this.authRequestCryptoService
     );
+
+    this.configApiService = new ConfigApiService(this.apiService, this.authService);
+
+    this.configService = new CliConfigService(
+      this.stateService,
+      this.configApiService,
+      this.authService,
+      this.environmentService,
+      this.logService,
+      true
+    );
+
+    this.cipherService = new CipherService(
+      this.cryptoService,
+      this.settingsService,
+      this.apiService,
+      this.i18nService,
+      this.searchService,
+      this.stateService,
+      this.encryptService,
+      this.cipherFileUploadService,
+      this.configService
+    );
+
+    this.folderService = new FolderService(
+      this.cryptoService,
+      this.i18nService,
+      this.cipherService,
+      this.stateService
+    );
+
+    this.folderApiService = new FolderApiService(this.folderService, this.apiService);
 
     const lockedCallback = async (userId?: string) =>
       await this.cryptoService.clearStoredUserKey(KeySuffixOptions.Auto);
@@ -472,6 +489,7 @@ export class Main {
     const locale = await this.stateService.getLocale();
     await this.i18nService.init(locale);
     this.twoFactorService.init();
+    this.configService.init();
 
     const installedVersion = await this.stateService.getInstalledVersion();
     const currentVersion = await this.platformUtilsService.getApplicationVersion();

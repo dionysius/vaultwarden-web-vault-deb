@@ -4,6 +4,7 @@ import { KdfType } from "@bitwarden/common/enums";
 import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
+import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
 
 import {
   BitwardenPasswordProtectedImporter,
@@ -17,6 +18,7 @@ describe("BitwardenPasswordProtectedImporter", () => {
   let importer: BitwardenPasswordProtectedImporter;
   let cryptoService: MockProxy<CryptoService>;
   let i18nService: MockProxy<I18nService>;
+  let cipherService: MockProxy<CipherService>;
   const password = Utils.newGuid();
   const promptForPassword_callback = async () => {
     return password;
@@ -25,10 +27,12 @@ describe("BitwardenPasswordProtectedImporter", () => {
   beforeEach(() => {
     cryptoService = mock<CryptoService>();
     i18nService = mock<I18nService>();
+    cipherService = mock<CipherService>();
 
     importer = new BitwardenPasswordProtectedImporter(
       cryptoService,
       i18nService,
+      cipherService,
       promptForPassword_callback
     );
   });
