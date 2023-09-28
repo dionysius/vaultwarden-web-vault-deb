@@ -1,5 +1,7 @@
 import { NgModule } from "@angular/core";
 
+import { PasswordCalloutComponent } from "@bitwarden/auth";
+
 import { LooseComponentsModule } from "../../../shared";
 import { SharedOrganizationModule } from "../shared";
 
@@ -19,6 +21,7 @@ import { PeopleComponent } from "./people.component";
     LooseComponentsModule,
     MembersRoutingModule,
     UserDialogModule,
+    PasswordCalloutComponent,
   ],
   declarations: [
     BulkConfirmComponent,

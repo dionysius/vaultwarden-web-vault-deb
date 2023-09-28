@@ -23,12 +23,8 @@
       </div>
       <div class="modal-body">
         <app-callout type="warning">{{ "loggedOutWarning" | i18n }}</app-callout>
-        <app-callout
-          type="info"
-          [enforcedPolicyOptions]="enforcedPolicyOptions"
-          *ngIf="enforcedPolicyOptions"
-        >
-        </app-callout>
+        <auth-password-callout [policy]="enforcedPolicyOptions" *ngIf="enforcedPolicyOptions">
+        </auth-password-callout>
         <div class="row">
           <div class="col-6">
             <div class="form-group">
