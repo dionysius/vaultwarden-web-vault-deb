@@ -180,7 +180,7 @@
     "message": "Editar pasta"
   },
   "baseDomain": {
-    "message": "Domínio base",
+    "message": "Domínio de base",
     "description": "Domain name. Example: website.com"
   },
   "domainName": {
@@ -824,10 +824,10 @@
     "message": "Início de sessão indisponível"
   },
   "noTwoStepProviders": {
-    "message": "Esta conta tem a verificação de dois passos configurada, no entanto, nenhum dos fornecedores da verificação de dois passos configurada é suportado por este navegador Web."
+    "message": "Esta conta tem a verificação de dois passos configurada, no entanto, nenhum dos fornecedores da verificação de dois passos configurada é suportado por este navegador web."
   },
   "noTwoStepProviders2": {
-    "message": "Por favor, utilize um navegador Web suportado (como o Chrome) e/ou adicione fornecedores adicionais que sejam mais bem suportados nos navegadores web (como uma aplicação de autenticação)."
+    "message": "Por favor, utilize um navegador web suportado (como o Chrome) e/ou adicione fornecedores adicionais que sejam mais bem suportados nos navegadores web (como uma aplicação de autenticação)."
   },
   "twoStepOptions": {
     "message": "Opções de verificação de dois passos"
@@ -856,7 +856,7 @@
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "duoOrganizationDesc": {
-    "message": "Verifique com a Duo Security para a sua organização utilizando a aplicação Duo Mobile, SMS, chamada telefónica, ou chave de segurança U2F.",
+    "message": "Proteja a sua organização com a Duo Security utilizando a aplicação Duo Mobile, SMS, chamada telefónica ou uma chave de segurança U2F.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc": {
@@ -1347,7 +1347,7 @@
     "message": "Preferências"
   },
   "preferencesDesc": {
-    "message": "Personalize a sua experiência do cofre Web."
+    "message": "Personalize a sua experiência do cofre web."
   },
   "preferencesUpdated": {
     "message": "Preferências atualizadas"
@@ -1356,7 +1356,7 @@
     "message": "Idioma"
   },
   "languageDesc": {
-    "message": "Alterar o idioma utilizado pelo cofre Web."
+    "message": "Alterar o idioma utilizado pelo cofre web."
   },
   "enableFavicon": {
     "message": "Mostrar ícones do site"
@@ -1369,7 +1369,7 @@
     "description": "Allows scaling the web vault UI's width"
   },
   "enableFullWidthDesc": {
-    "message": "Permitir que o cofre Web expanda a largura total da janela do navegador."
+    "message": "Permitir que o cofre web expanda a largura total da janela do navegador."
   },
   "default": {
     "message": "Predefinido"
@@ -1433,7 +1433,7 @@
     "message": "Políticas da verificação de dois passos"
   },
   "twoStepLoginOrganizationDuoDesc": {
-    "message": "Para aplicar verificação de dois passos através do Duo, utilize as opções abaixo."
+    "message": "Para aplicar à verificação de dois passos através do Duo, utilize as opções abaixo."
   },
   "twoStepLoginOrganizationSsoDesc": {
     "message": "Se tiver a configuração SSO, ou planeia tê-la, a verificação de dois passos já pode ser aplicada pelo seu fornecedor de identidade."
@@ -1549,7 +1549,7 @@
     "message": "Devido a limitações da plataforma, as YubiKeys não podem ser utilizadas em todas as aplicações Bitwarden. Deverá configurar outro fornecedor de verificação de dois passos para que possa aceder à sua conta quando as YubiKeys não puderem ser utilizadas. Plataformas suportadas:"
   },
   "twoFactorYubikeySupportUsb": {
-    "message": "Cofre Web, aplicação para computador, CLI e todas as extensões do navegador num dispositivo com uma porta USB que possa aceitar a sua YubiKey."
+    "message": "Cofre web, aplicação para computador, CLI e todas as extensões do navegador num dispositivo com uma porta USB que possa aceitar a sua YubiKey."
   },
   "twoFactorYubikeySupportMobile": {
     "message": "Aplicações móveis num dispositivo com capacidades NFC ou uma porta de dados que possa aceitar a sua YubiKey."
@@ -1651,7 +1651,7 @@
     "message": "Devido a limitações da plataforma, o FIDO U2F não pode ser utilizado em todas as aplicações Bitwarden. Deve configurar outro fornecedor de verificação de dois passos para poder aceder à sua conta quando o FIDO U2F não puder ser utilizado. Plataformas suportadas:"
   },
   "twoFactorU2fSupportWeb": {
-    "message": "Cofre Web e extensões do navegador num computador de secretária/portátil com um navegador compatível com U2F (Chrome, Opera, Vivaldi ou Firefox com FIDO U2F ativado)."
+    "message": "Cofre web e extensões do navegador num computador de secretária/portátil com um navegador compatível com U2F (Chrome, Opera, Vivaldi ou Firefox com FIDO U2F ativado)."
   },
   "twoFactorU2fWaiting": {
     "message": "A aguardar que toque no botão da sua chave de segurança"
@@ -1666,7 +1666,7 @@
     "message": "Devido a limitações da plataforma, o WebAuthn não pode ser utilizado em todas as aplicações Bitwarden. Deve configurar outro fornecedor de verificação de dois passos para que possa aceder à sua conta quando o WebAuthn não puder ser utilizado. Plataformas suportadas:"
   },
   "twoFactorWebAuthnSupportWeb": {
-    "message": "Cofre Web e extensões do navegador num computador de secretária/portátil com um navegador compatível com WebAuthn (Chrome, Opera, Vivaldi ou Firefox com FIDO U2F ativado)."
+    "message": "Cofre web e extensões do navegador num computador de secretária/portátil com um navegador compatível com WebAuthn (Chrome, Opera, Vivaldi ou Firefox com FIDO U2F ativado)."
   },
   "twoFactorRecoveryYourCode": {
     "message": "O seu código Bitwarden de recuperação da verificação de dois passos"
@@ -2670,10 +2670,10 @@
     "description": "Desktop app"
   },
   "webVault": {
-    "message": "Cofre Web"
+    "message": "Cofre web"
   },
   "bitWebVault": {
-    "message": "Cofre Web Bitwarden"
+    "message": "Cofre web Bitwarden"
   },
   "bitSecretsManager": {
     "message": "Gestor de Segredos Bitwarden"
@@ -3177,7 +3177,7 @@
     "message": "Atualizar navegador"
   },
   "updateBrowserDesc": {
-    "message": "Está a utilizar um navegador web não suportado. O cofre Web pode não funcionar corretamente."
+    "message": "Está a utilizar um navegador web não suportado. O cofre web pode não funcionar corretamente."
   },
   "joinOrganization": {
     "message": "Aderir à organização"
@@ -4670,7 +4670,7 @@
     "message": "Tema"
   },
   "themeDesc": {
-    "message": "Escolha um tema para o seu cofre Web."
+    "message": "Escolha um tema para o seu cofre web."
   },
   "themeSystem": {
     "message": "Utilizar o tema do sistema"
@@ -7168,6 +7168,12 @@
   },
   "beta": {
     "message": "Beta"
+  },
+  "baseUrl": {
+    "message": "URL do servidor"
+  },
+  "aliasDomain": {
+    "message": "Alias de domínio"
   },
   "alreadyHaveAccount": {
     "message": "Já tem uma conta?"

@@ -3477,7 +3477,7 @@
     "message": "Ажурирајте кључ за шифровање"
   },
   "updateEncryptionSchemeDesc": {
-    "message": "We've changed the encryption scheme to provide better security. Update your encryption key now by entering your master password below."
+    "message": "Променили смо шему шифровања да бисмо пружили бољу безбедност. Ажурирајте кључ за шифровање сада тако што ћете унети испод главну лозинку."
   },
   "updateEncryptionKeyWarning": {
     "message": "Након ажурирања кључа за шифровање, мораћете да се одјавите и вратите у све Bitwarden апликације које тренутно користите (као што су мобилна апликација или додаци прегледача). Ако се не одјавите и поново пријавите (чиме се преузима ваш нови кључ за шифровање), може доћи до оштећења података. Покушаћемо аутоматски да се одјавимо, али може доћи до одлагања."
@@ -7168,6 +7168,12 @@
   },
   "beta": {
     "message": "Бета"
+  },
+  "baseUrl": {
+    "message": "Server URL"
+  },
+  "aliasDomain": {
+    "message": "Alias domain"
   },
   "alreadyHaveAccount": {
     "message": "Већ имате налог?"

@@ -3477,7 +3477,7 @@
     "message": "更新加密密钥"
   },
   "updateEncryptionSchemeDesc": {
-    "message": "我们更改了加密方案以提供更好的安全性。请在下方输入您的主密码以立即更新您的加密密钥。"
+    "message": "为了提高安全性，我们更改了加密方案。请在下方输入您的主密码以立即更新您的加密密钥。"
   },
   "updateEncryptionKeyWarning": {
     "message": "更新加密密钥后，您需要注销所有正在使用的 Bitwarden 应用（比如手机版应用或者浏览器扩展）后重新登录。注销或者重新登录（这将下载新的加密密钥）失败可能会导致数据损坏。我们会尝试自动为您注销，但是，可能会有所延迟。"
@@ -3625,7 +3625,7 @@
     "message": "此项目有需要修复的旧文件附件。"
   },
   "attachmentFixDescription": {
-    "message": "此附件使用了过时的加密方式。选择「修复」以下载、重新加密，然后重新上传此附件。"
+    "message": "此附件使用了过时的加密方式。选择「修复」将下载、重新加密并重新上传此附件。"
   },
   "fix": {
     "message": "修复",
@@ -4721,7 +4721,7 @@
     "message": "错误"
   },
   "accountRecoveryManageUsers": {
-    "message": "授予「管理账户恢复」的权限，同时必须授予「管理用户」的权限"
+    "message": "授予「管理账户恢复」权限时，必须同时授予「管理用户」权限"
   },
   "setupProvider": {
     "message": "提供商设置"
@@ -7168,6 +7168,12 @@
   },
   "beta": {
     "message": "Beta"
+  },
+  "baseUrl": {
+    "message": "服务器 URL"
+  },
+  "aliasDomain": {
+    "message": "别名域"
   },
   "alreadyHaveAccount": {
     "message": "已经有一个账户？"
