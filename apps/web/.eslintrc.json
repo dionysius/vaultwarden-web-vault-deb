@@ -13,7 +13,8 @@
           "**/organizations/settings/*",
           "**/organizations/policies/*",
           "@bitwarden/web-vault/*",
-          "src/**/*"
+          "src/**/*",
+          "bitwarden_license"
         ],
         "paths": ["@fluffy-spoon/substitute"]
       }
