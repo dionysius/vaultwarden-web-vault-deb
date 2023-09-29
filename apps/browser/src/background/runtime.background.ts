@@ -6,6 +6,7 @@ import { LogService } from "@bitwarden/common/platform/abstractions/log.service"
 import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
 import { SystemService } from "@bitwarden/common/platform/abstractions/system.service";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
+import { CipherType } from "@bitwarden/common/vault/enums/cipher-type";
 
 import { AutofillService } from "../autofill/services/abstractions/autofill.service";
 import { BrowserApi } from "../platform/browser/browser-api";
@@ -123,12 +124,28 @@ export default class RuntimeBackground {
         }
         break;
       case "openAddEditCipher": {
-        const addEditCipherUrl =
-          cipherId == null
-            ? "popup/index.html#/edit-cipher"
-            : "popup/index.html#/edit-cipher?cipherId=" + cipherId;
+        const isNewCipher = !cipherId;
+        const cipherType = msg.data?.cipherType;
+        const senderTab = sender.tab;
 
-        BrowserApi.openBitwardenExtensionTab(addEditCipherUrl, true);
+        if (!senderTab) {
+          break;
+        }
+
+        if (isNewCipher) {
+          await this.browserPopoutWindowService.openCipherCreation(senderTab.windowId, {
+            cipherType,
+            senderTabId: senderTab.id,
+            senderTabURI: senderTab.url,
+          });
+        } else {
+          await this.browserPopoutWindowService.openCipherEdit(senderTab.windowId, {
+            cipherId,
+            senderTabId: senderTab.id,
+            senderTabURI: senderTab.url,
+          });
+        }
+
         break;
       }
       case "closeTab":
@@ -172,6 +189,34 @@ export default class RuntimeBackground {
             if (totpCode != null) {
               this.platformUtilsService.copyToClipboard(totpCode, { window: window });
             }
+            break;
+          }
+          case "autofill_card": {
+            await this.autofillService.doAutoFillActiveTab(
+              [
+                {
+                  frameId: sender.frameId,
+                  tab: msg.tab,
+                  details: msg.details,
+                },
+              ],
+              false,
+              CipherType.Card
+            );
+            break;
+          }
+          case "autofill_identity": {
+            await this.autofillService.doAutoFillActiveTab(
+              [
+                {
+                  frameId: sender.frameId,
+                  tab: msg.tab,
+                  details: msg.details,
+                },
+              ],
+              false,
+              CipherType.Identity
+            );
             break;
           }
           case "contextMenu":

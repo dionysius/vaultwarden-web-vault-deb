@@ -11,19 +11,21 @@ import { Cipher } from "@bitwarden/common/vault/models/domain/cipher";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 
 import {
+  AUTOFILL_ID,
+  COPY_PASSWORD_ID,
+  COPY_USERNAME_ID,
+  COPY_VERIFICATIONCODE_ID,
+  GENERATE_PASSWORD_ID,
+  NOOP_COMMAND_SUFFIX,
+} from "../constants";
+
+import {
   CopyToClipboardAction,
   ContextMenuClickedHandler,
   CopyToClipboardOptions,
   GeneratePasswordToClipboardAction,
   AutofillAction,
 } from "./context-menu-clicked-handler";
-import {
-  AUTOFILL_ID,
-  COPY_PASSWORD_ID,
-  COPY_USERNAME_ID,
-  COPY_VERIFICATIONCODE_ID,
-  GENERATE_PASSWORD_ID,
-} from "./main-context-menu-handler";
 
 describe("ContextMenuClickedHandler", () => {
   const createData = (
@@ -51,6 +53,7 @@ describe("ContextMenuClickedHandler", () => {
         type: CipherType.Login,
       } as any)
     );
+
     cipherView.login.username = username ?? "USERNAME";
     cipherView.login.password = password ?? "PASSWORD";
     cipherView.login.totp = totp ?? "TOTP";
@@ -106,7 +109,7 @@ describe("ContextMenuClickedHandler", () => {
       const cipher = createCipher();
       cipherService.getAllDecrypted.mockResolvedValue([cipher]);
 
-      await sut.run(createData("T_1", AUTOFILL_ID), { id: 5 } as any);
+      await sut.run(createData(`${AUTOFILL_ID}_1`, AUTOFILL_ID), { id: 5 } as any);
 
       expect(autofill).toBeCalledTimes(1);
 
@@ -118,11 +121,16 @@ describe("ContextMenuClickedHandler", () => {
         createCipher({ username: "TEST_USERNAME" }),
       ]);
 
-      await sut.run(createData("T_1", COPY_USERNAME_ID));
+      await sut.run(createData(`${COPY_USERNAME_ID}_1`, COPY_USERNAME_ID), {
+        url: "https://test.com",
+      } as any);
 
       expect(copyToClipboard).toBeCalledTimes(1);
 
-      expect(copyToClipboard).toHaveBeenCalledWith({ text: "TEST_USERNAME", options: undefined });
+      expect(copyToClipboard).toHaveBeenCalledWith({
+        text: "TEST_USERNAME",
+        tab: { url: "https://test.com" },
+      });
     });
 
     it("copies password to clipboard", async () => {
@@ -130,11 +138,16 @@ describe("ContextMenuClickedHandler", () => {
         createCipher({ password: "TEST_PASSWORD" }),
       ]);
 
-      await sut.run(createData("T_1", COPY_PASSWORD_ID));
+      await sut.run(createData(`${COPY_PASSWORD_ID}_1`, COPY_PASSWORD_ID), {
+        url: "https://test.com",
+      } as any);
 
       expect(copyToClipboard).toBeCalledTimes(1);
 
-      expect(copyToClipboard).toHaveBeenCalledWith({ text: "TEST_PASSWORD", options: undefined });
+      expect(copyToClipboard).toHaveBeenCalledWith({
+        text: "TEST_PASSWORD",
+        tab: { url: "https://test.com" },
+      });
     });
 
     it("copies totp code to clipboard", async () => {
@@ -148,11 +161,16 @@ describe("ContextMenuClickedHandler", () => {
         return Promise.resolve("654321");
       });
 
-      await sut.run(createData("T_1", COPY_VERIFICATIONCODE_ID));
+      await sut.run(createData(`${COPY_VERIFICATIONCODE_ID}_1`, COPY_VERIFICATIONCODE_ID), {
+        url: "https://test.com",
+      } as any);
 
       expect(totpService.getCode).toHaveBeenCalledTimes(1);
 
-      expect(copyToClipboard).toHaveBeenCalledWith({ text: "123456" });
+      expect(copyToClipboard).toHaveBeenCalledWith({
+        text: "123456",
+        tab: { url: "https://test.com" },
+      });
     });
 
     it("attempts to find a cipher when noop but unlocked", async () => {
@@ -163,11 +181,13 @@ describe("ContextMenuClickedHandler", () => {
         } as any,
       ]);
 
-      await sut.run(createData("T_noop", COPY_USERNAME_ID), { url: "https://test.com" } as any);
+      await sut.run(createData(`${COPY_USERNAME_ID}_${NOOP_COMMAND_SUFFIX}`, COPY_USERNAME_ID), {
+        url: "https://test.com",
+      } as any);
 
       expect(cipherService.getAllDecryptedForUrl).toHaveBeenCalledTimes(1);
 
-      expect(cipherService.getAllDecryptedForUrl).toHaveBeenCalledWith("https://test.com");
+      expect(cipherService.getAllDecryptedForUrl).toHaveBeenCalledWith("https://test.com", []);
 
       expect(copyToClipboard).toHaveBeenCalledTimes(1);
 
@@ -185,11 +205,13 @@ describe("ContextMenuClickedHandler", () => {
         } as any,
       ]);
 
-      await sut.run(createData("T_noop", COPY_USERNAME_ID), { url: "https://test.com" } as any);
+      await sut.run(createData(`${COPY_USERNAME_ID}_${NOOP_COMMAND_SUFFIX}`, COPY_USERNAME_ID), {
+        url: "https://test.com",
+      } as any);
 
       expect(cipherService.getAllDecryptedForUrl).toHaveBeenCalledTimes(1);
 
-      expect(cipherService.getAllDecryptedForUrl).toHaveBeenCalledWith("https://test.com");
+      expect(cipherService.getAllDecryptedForUrl).toHaveBeenCalledWith("https://test.com", []);
     });
   });
 });

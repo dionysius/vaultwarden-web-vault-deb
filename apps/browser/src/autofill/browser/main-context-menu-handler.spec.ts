@@ -60,7 +60,7 @@ describe("context-menu", () => {
 
       const createdMenu = await sut.init();
       expect(createdMenu).toBeTruthy();
-      expect(createSpy).toHaveBeenCalledTimes(7);
+      expect(createSpy).toHaveBeenCalledTimes(10);
     });
 
     it("has menu enabled and has premium", async () => {
@@ -70,7 +70,7 @@ describe("context-menu", () => {
 
       const createdMenu = await sut.init();
       expect(createdMenu).toBeTruthy();
-      expect(createSpy).toHaveBeenCalledTimes(8);
+      expect(createSpy).toHaveBeenCalledTimes(11);
     });
   });
 
@@ -97,7 +97,7 @@ describe("context-menu", () => {
     };
 
     it("is not a login cipher", async () => {
-      await sut.loadOptions("TEST_TITLE", "1", "", {
+      await sut.loadOptions("TEST_TITLE", "1", {
         ...createCipher(),
         type: CipherType.SecureNote,
       } as any);
@@ -109,7 +109,6 @@ describe("context-menu", () => {
       await sut.loadOptions(
         "TEST_TITLE",
         "1",
-        "",
         createCipher({
           username: "",
           totp: "",
@@ -123,18 +122,18 @@ describe("context-menu", () => {
     it("create entry for each cipher piece", async () => {
       stateService.getCanAccessPremium.mockResolvedValue(true);
 
-      await sut.loadOptions("TEST_TITLE", "1", "", createCipher());
+      await sut.loadOptions("TEST_TITLE", "1", createCipher());
 
       // One for autofill, copy username, copy password, and copy totp code
       expect(createSpy).toHaveBeenCalledTimes(4);
     });
 
-    it("creates noop item for no cipher", async () => {
+    it("creates a login/unlock item for each context menu action option when user is not authenticated", async () => {
       stateService.getCanAccessPremium.mockResolvedValue(true);
 
-      await sut.loadOptions("TEST_TITLE", "NOOP", "");
+      await sut.loadOptions("TEST_TITLE", "NOOP");
 
-      expect(createSpy).toHaveBeenCalledTimes(4);
+      expect(createSpy).toHaveBeenCalledTimes(6);
     });
   });
 });

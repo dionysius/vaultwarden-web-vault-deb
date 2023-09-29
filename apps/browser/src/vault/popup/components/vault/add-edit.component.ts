@@ -35,6 +35,9 @@ export class AddEditComponent extends BaseAddEditComponent {
   showAttachments = true;
   openAttachmentsInPopup: boolean;
   showAutoFillOnPageLoadOptions: boolean;
+  senderTabId?: number;
+  uilocation?: "popout" | "popup" | "sidebar" | "tab";
+  inPopout = false;
 
   constructor(
     cipherService: CipherService,
@@ -81,6 +84,9 @@ export class AddEditComponent extends BaseAddEditComponent {
 
     // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
     this.route.queryParams.pipe(first()).subscribe(async (params) => {
+      this.senderTabId = parseInt(params?.senderTabId, 10) || undefined;
+      this.uilocation = params?.uilocation;
+
       if (params.cipherId) {
         this.cipherId = params.cipherId;
       }
@@ -128,6 +134,8 @@ export class AddEditComponent extends BaseAddEditComponent {
       this.openAttachmentsInPopup = this.popupUtilsService.inPopup(window);
     });
 
+    this.inPopout = this.uilocation === "popout" || this.popupUtilsService.inPopout(window);
+
     if (!this.editMode) {
       const tabs = await BrowserApi.tabsQuery({ windowType: "normal" });
       this.currentUris =
@@ -159,6 +167,11 @@ export class AddEditComponent extends BaseAddEditComponent {
     if (this.popupUtilsService.inTab(window)) {
       this.popupUtilsService.disableCloseTabWarning();
       this.messagingService.send("closeTab", { delay: 1000 });
+      return true;
+    }
+
+    if (this.senderTabId && this.inPopout) {
+      setTimeout(() => this.close(), 1000);
       return true;
     }
 
@@ -194,12 +207,25 @@ export class AddEditComponent extends BaseAddEditComponent {
   cancel() {
     super.cancel();
 
+    if (this.senderTabId && this.inPopout) {
+      this.close();
+      return;
+    }
+
     if (this.popupUtilsService.inTab(window)) {
       this.messagingService.send("closeTab");
       return;
     }
 
     this.location.back();
+  }
+
+  // Used for closing single-action views
+  close() {
+    BrowserApi.focusTab(this.senderTabId);
+    window.close();
+
+    return;
   }
 
   async generateUsername(): Promise<boolean> {

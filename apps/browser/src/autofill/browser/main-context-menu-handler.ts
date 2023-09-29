@@ -21,22 +21,24 @@ import {
   StateServiceInitOptions,
 } from "../../platform/background/service-factories/state-service.factory";
 import { BrowserStateService } from "../../platform/services/abstractions/browser-state.service";
-
-export const ROOT_ID = "root";
-
-export const AUTOFILL_ID = "autofill";
-export const COPY_USERNAME_ID = "copy-username";
-export const COPY_PASSWORD_ID = "copy-password";
-export const COPY_VERIFICATIONCODE_ID = "copy-totp";
-export const COPY_IDENTIFIER_ID = "copy-identifier";
-
-const SEPARATOR_ID = "separator";
-export const GENERATE_PASSWORD_ID = "generate-password";
-
-export const NOOP_COMMAND_SUFFIX = "noop";
+import {
+  AUTOFILL_CARD_ID,
+  AUTOFILL_ID,
+  AUTOFILL_IDENTITY_ID,
+  COPY_IDENTIFIER_ID,
+  COPY_PASSWORD_ID,
+  COPY_USERNAME_ID,
+  COPY_VERIFICATIONCODE_ID,
+  CREATE_CARD_ID,
+  CREATE_IDENTITY_ID,
+  CREATE_LOGIN_ID,
+  GENERATE_PASSWORD_ID,
+  NOOP_COMMAND_SUFFIX,
+  ROOT_ID,
+  SEPARATOR_ID,
+} from "../constants";
 
 export class MainContextMenuHandler {
-  //
   private initRunning = false;
 
   create: (options: chrome.contextMenus.CreateProperties) => Promise<void>;
@@ -120,7 +122,7 @@ export class MainContextMenuHandler {
       await create({
         id: AUTOFILL_ID,
         parentId: ROOT_ID,
-        title: this.i18nService.t("autoFill"),
+        title: this.i18nService.t("autoFillLogin"),
       });
 
       await create({
@@ -144,7 +146,25 @@ export class MainContextMenuHandler {
       }
 
       await create({
-        id: SEPARATOR_ID,
+        id: SEPARATOR_ID + 1,
+        type: "separator",
+        parentId: ROOT_ID,
+      });
+
+      await create({
+        id: AUTOFILL_IDENTITY_ID,
+        parentId: ROOT_ID,
+        title: this.i18nService.t("autoFillIdentity"),
+      });
+
+      await create({
+        id: AUTOFILL_CARD_ID,
+        parentId: ROOT_ID,
+        title: this.i18nService.t("autoFillCard"),
+      });
+
+      await create({
+        id: SEPARATOR_ID + 2,
         type: "separator",
         parentId: ROOT_ID,
       });
@@ -194,39 +214,51 @@ export class MainContextMenuHandler {
     });
   }
 
-  async loadOptions(title: string, id: string, url: string, cipher?: CipherView | undefined) {
-    if (cipher != null && cipher.type !== CipherType.Login) {
-      return;
-    }
-
+  async loadOptions(title: string, optionId: string, cipher?: CipherView) {
     try {
       const sanitizedTitle = MainContextMenuHandler.sanitizeContextMenuTitle(title);
 
-      const createChildItem = async (parent: string) => {
-        const menuItemId = `${parent}_${id}`;
+      const createChildItem = async (parentId: string) => {
+        const menuItemId = `${parentId}_${optionId}`;
+
         return await this.create({
           type: "normal",
           id: menuItemId,
-          parentId: parent,
+          parentId,
           title: sanitizedTitle,
           contexts: ["all"],
         });
       };
 
-      if (cipher == null || !Utils.isNullOrEmpty(cipher.login.password)) {
+      if (
+        !cipher ||
+        (cipher.type === CipherType.Login && !Utils.isNullOrEmpty(cipher.login?.password))
+      ) {
         await createChildItem(AUTOFILL_ID);
+
         if (cipher?.viewPassword ?? true) {
           await createChildItem(COPY_PASSWORD_ID);
         }
       }
 
-      if (cipher == null || !Utils.isNullOrEmpty(cipher.login.username)) {
+      if (
+        !cipher ||
+        (cipher.type === CipherType.Login && !Utils.isNullOrEmpty(cipher.login?.username))
+      ) {
         await createChildItem(COPY_USERNAME_ID);
       }
 
       const canAccessPremium = await this.stateService.getCanAccessPremium();
-      if (canAccessPremium && (cipher == null || !Utils.isNullOrEmpty(cipher.login.totp))) {
+      if (canAccessPremium && (!cipher || !Utils.isNullOrEmpty(cipher.login?.totp))) {
         await createChildItem(COPY_VERIFICATIONCODE_ID);
+      }
+
+      if ((!cipher || cipher.type === CipherType.Card) && optionId !== CREATE_LOGIN_ID) {
+        await createChildItem(AUTOFILL_CARD_ID);
+      }
+
+      if ((!cipher || cipher.type === CipherType.Identity) && optionId !== CREATE_LOGIN_ID) {
+        await createChildItem(AUTOFILL_IDENTITY_ID);
       }
     } catch (error) {
       this.logService.warning(error.message);
@@ -242,13 +274,72 @@ export class MainContextMenuHandler {
       const authed = await this.stateService.getIsAuthenticated();
       await this.loadOptions(
         this.i18nService.t(authed ? "unlockVaultMenu" : "loginToVaultMenu"),
-        NOOP_COMMAND_SUFFIX,
-        "<all_urls>"
+        NOOP_COMMAND_SUFFIX
       );
     }
   }
 
-  async noLogins(url: string) {
-    await this.loadOptions(this.i18nService.t("noMatchingLogins"), NOOP_COMMAND_SUFFIX, url);
+  async noCards() {
+    await this.create({
+      id: `${AUTOFILL_CARD_ID}_NOTICE`,
+      enabled: false,
+      parentId: AUTOFILL_CARD_ID,
+      title: this.i18nService.t("noCards"),
+      type: "normal",
+    });
+
+    await this.create({
+      id: `${AUTOFILL_CARD_ID}_${SEPARATOR_ID}`,
+      parentId: AUTOFILL_CARD_ID,
+      type: "separator",
+    });
+
+    await this.create({
+      id: `${AUTOFILL_CARD_ID}_${CREATE_CARD_ID}`,
+      parentId: AUTOFILL_CARD_ID,
+      title: this.i18nService.t("addCardMenu"),
+      type: "normal",
+    });
+  }
+
+  async noIdentities() {
+    await this.create({
+      id: `${AUTOFILL_IDENTITY_ID}_NOTICE`,
+      enabled: false,
+      parentId: AUTOFILL_IDENTITY_ID,
+      title: this.i18nService.t("noIdentities"),
+      type: "normal",
+    });
+
+    await this.create({
+      id: `${AUTOFILL_IDENTITY_ID}_${SEPARATOR_ID}`,
+      parentId: AUTOFILL_IDENTITY_ID,
+      type: "separator",
+    });
+
+    await this.create({
+      id: `${AUTOFILL_IDENTITY_ID}_${CREATE_IDENTITY_ID}`,
+      parentId: AUTOFILL_IDENTITY_ID,
+      title: this.i18nService.t("addIdentityMenu"),
+      type: "normal",
+    });
+  }
+
+  async noLogins() {
+    await this.create({
+      id: `${AUTOFILL_ID}_NOTICE`,
+      enabled: false,
+      parentId: AUTOFILL_ID,
+      title: this.i18nService.t("noMatchingLogins"),
+      type: "normal",
+    });
+
+    await this.create({
+      id: `${AUTOFILL_ID}_${SEPARATOR_ID}` + 1,
+      parentId: AUTOFILL_ID,
+      type: "separator",
+    });
+
+    await this.loadOptions(this.i18nService.t("addLoginMenu"), CREATE_LOGIN_ID);
   }
 }
