@@ -771,7 +771,7 @@
     "message": "Hubungi kami"
   },
   "helpAndFeedback": {
-    "message": "Help and feedback"
+    "message": "Bantuan dan masukan"
   },
   "getHelp": {
     "message": "Dapatkan bantuan"
@@ -1417,7 +1417,7 @@
     "message": "Require password or PIN on app start"
   },
   "recommendedForSecurity": {
-    "message": "Recommended for security."
+    "message": "Direkomendasikan untuk keamanan."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Kunci dengan kata sandi utama saat komputer dihidupkan ulang"
@@ -1537,7 +1537,7 @@
     "message": "Untuk menyelesaikan masuk dengan SSO, harap setel kata sandi utama untuk mengakses dan melindungi brankas Anda."
   },
   "currentMasterPass": {
-    "message": "Current master password"
+    "message": "Kata sandi utama saat ini"
   },
   "newMasterPass": {
     "message": "Kata Sandi Utama Baru"
@@ -1973,7 +1973,7 @@
     }
   },
   "switchAccount": {
-    "message": "Switch account"
+    "message": "Pindah akun"
   },
   "options": {
     "message": "Pilihan"
@@ -1982,7 +1982,7 @@
     "message": "Your session has timed out. Please go back and try logging in again."
   },
   "exportingPersonalVaultTitle": {
-    "message": "Exporting individual vault"
+    "message": "Mengekspor brankas individu"
   },
   "exportingIndividualVaultDescription": {
     "message": "Only the individual vault items associated with $EMAIL$ will be exported. Organization vault items will not be included. Only vault item information will be exported and will not include associated attachments.",
@@ -2000,22 +2000,22 @@
     "message": "Tidak terkunci"
   },
   "generator": {
-    "message": "Generator"
+    "message": "Pembuat Sandi"
   },
   "whatWouldYouLikeToGenerate": {
-    "message": "What would you like to generate?"
+    "message": "Apa yang ingin anda buat?"
   },
   "passwordType": {
-    "message": "Password type"
+    "message": "Jenis kata sandi"
   },
   "regenerateUsername": {
-    "message": "Regenerate username"
+    "message": "Buat nama pengguna baru"
   },
   "generateUsername": {
-    "message": "Generate username"
+    "message": "Buat nama pengguna baru"
   },
   "usernameType": {
-    "message": "Username type"
+    "message": "Jenis nama pengguna"
   },
   "plusAddressedEmail": {
     "message": "Plus addressed email",
@@ -2415,5 +2415,8 @@
   },
   "submenu": {
     "message": "Submenu"
+  },
+  "aliasDomain": {
+    "message": "Alias domain"
   }
 }

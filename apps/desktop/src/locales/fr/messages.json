@@ -1411,7 +1411,7 @@
     "message": "Demander à Windows Hello au démarrage"
   },
   "autoPromptTouchId": {
-    "message": "Demander à Touch ID au démarrage"
+    "message": "Demander Touch ID au démarrage de l'application"
   },
   "requirePasswordOnStart": {
     "message": "Exiger un mot de passe ou un code PIN au démarrage de Bitwarden"
@@ -2415,5 +2415,8 @@
   },
   "submenu": {
     "message": "Sous-menu"
+  },
+  "aliasDomain": {
+    "message": "Domaine de l'alias"
   }
 }

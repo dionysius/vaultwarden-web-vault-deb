@@ -476,7 +476,7 @@
     "message": "O tamanho máximo do ficheiro é de 500 MB."
   },
   "encryptionKeyMigrationRequired": {
-    "message": "É necessária a migração da chave de encriptação. Inicie sessão através do cofre Web para atualizar a sua chave de encriptação."
+    "message": "É necessária a migração da chave de encriptação. Inicie sessão através do cofre web para atualizar a sua chave de encriptação."
   },
   "editedFolder": {
     "message": "Pasta guardada"
@@ -653,7 +653,7 @@
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "duoOrganizationDesc": {
-    "message": "Verifique com a Duo Security para a sua organização utilizando a aplicação Duo Mobile, SMS, chamada telefónica, ou chave de segurança U2F.",
+    "message": "Proteja a sua organização com a Duo Security utilizando a aplicação Duo Mobile, SMS, chamada telefónica ou uma chave de segurança U2F.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "webAuthnTitle": {
@@ -699,7 +699,7 @@
     "message": "URL do servidor da API"
   },
   "webVaultUrl": {
-    "message": "URL do servidor do cofre Web"
+    "message": "URL do servidor do cofre web"
   },
   "identityUrl": {
     "message": "URL do servidor de identidade"
@@ -803,7 +803,7 @@
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "goToWebVault": {
-    "message": "Ir para o cofre Web"
+    "message": "Ir para o cofre web"
   },
   "getMobileApp": {
     "message": "Obter a aplicação móvel"
@@ -1063,7 +1063,7 @@
     "message": "Gerir subscrição"
   },
   "premiumManageAlert": {
-    "message": "Pode gerir a sua subscrição no cofre Web bitwarden.com. Pretende visitar o site agora?"
+    "message": "Pode gerir a sua subscrição no cofre web em bitwarden.com. Pretende visitar o site agora?"
   },
   "premiumRefresh": {
     "message": "Atualizar subscrição"
@@ -1096,7 +1096,7 @@
     "message": "Adquirir Premium"
   },
   "premiumPurchaseAlert": {
-    "message": "Pode adquirir uma subscrição Premium no cofre Web bitwarden.com. Pretende visitar o site agora?"
+    "message": "Pode adquirir uma subscrição Premium no cofre web em bitwarden.com. Pretende visitar o site agora?"
   },
   "premiumCurrentMember": {
     "message": "É um membro Premium!"
@@ -1222,7 +1222,7 @@
     "message": "Esta palavra-passe não foi encontrada em nenhuma violação de dados conhecida. A sua utilização deve ser segura."
   },
   "baseDomain": {
-    "message": "Domínio base",
+    "message": "Domínio de base",
     "description": "Domain name. Ex. website.com"
   },
   "domainName": {
@@ -2415,5 +2415,8 @@
   },
   "submenu": {
     "message": "Submenu"
+  },
+  "aliasDomain": {
+    "message": "Alias de domínio"
   }
 }

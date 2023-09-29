@@ -476,7 +476,7 @@
     "message": "Максимална величина је 500МБ."
   },
   "encryptionKeyMigrationRequired": {
-    "message": "Encryption key migration required. Please login through the web vault to update your encryption key."
+    "message": "Потребна је миграција кључа за шифровање. Пријавите се преко веб сефа да бисте ажурирали кључ за шифровање."
   },
   "editedFolder": {
     "message": "Фасцикла измењена"
@@ -2415,5 +2415,8 @@
   },
   "submenu": {
     "message": "Под-мени"
+  },
+  "aliasDomain": {
+    "message": "Alias domain"
   }
 }
