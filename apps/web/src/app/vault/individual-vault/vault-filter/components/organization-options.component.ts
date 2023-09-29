@@ -125,12 +125,7 @@ export class OrganizationOptionsComponent implements OnInit, OnDestroy {
 
   async toggleResetPasswordEnrollment(org: Organization) {
     if (!this.organization.resetPasswordEnrolled) {
-      this.modalService.open(EnrollMasterPasswordReset, {
-        allowMultipleModals: true,
-        data: {
-          organization: org,
-        },
-      });
+      EnrollMasterPasswordReset.open(this.dialogService, { organization: org });
     } else {
       // Remove reset password
       const request = new OrganizationUserResetPasswordEnrollmentRequest();

@@ -1,7 +1,7 @@
-import { Component } from "@angular/core";
+import { DIALOG_DATA, DialogRef } from "@angular/cdk/dialog";
+import { Component, Inject } from "@angular/core";
+import { FormControl, FormGroup, Validators } from "@angular/forms";
 
-import { ModalRef } from "@bitwarden/angular/components/modal/modal.ref";
-import { ModalConfig } from "@bitwarden/angular/services/modal.service";
 import { OrganizationUserService } from "@bitwarden/common/abstractions/organization-user/organization-user.service";
 import { OrganizationUserResetPasswordEnrollmentRequest } from "@bitwarden/common/abstractions/organization-user/requests";
 import { OrganizationApiServiceAbstraction } from "@bitwarden/common/admin-console/abstractions/organization/organization-api.service.abstraction";
@@ -14,71 +14,83 @@ import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/pl
 import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { Verification } from "@bitwarden/common/types/verification";
 import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
+import { DialogService } from "@bitwarden/components";
+
+interface EnrollMasterPasswordResetData {
+  organization: Organization;
+}
 
 @Component({
   selector: "app-enroll-master-password-reset",
   templateUrl: "enroll-master-password-reset.component.html",
 })
 export class EnrollMasterPasswordReset {
-  organization: Organization;
+  protected organization: Organization;
 
-  verification: Verification;
-  formPromise: Promise<void>;
+  protected formGroup = new FormGroup({
+    verification: new FormControl<Verification>(null, Validators.required),
+  });
 
   constructor(
+    private dialogRef: DialogRef,
+    @Inject(DIALOG_DATA) protected data: EnrollMasterPasswordResetData,
     private userVerificationService: UserVerificationService,
     private platformUtilsService: PlatformUtilsService,
     private i18nService: I18nService,
     private cryptoService: CryptoService,
     private syncService: SyncService,
     private logService: LogService,
-    private modalRef: ModalRef,
-    config: ModalConfig,
     private organizationApiService: OrganizationApiServiceAbstraction,
     private organizationUserService: OrganizationUserService
   ) {
-    this.organization = config.data.organization;
+    this.organization = data.organization;
   }
 
-  async submit() {
+  submit = async () => {
     let toastStringRef = "withdrawPasswordResetSuccess";
 
-    this.formPromise = this.userVerificationService
-      .buildRequest(this.verification, OrganizationUserResetPasswordEnrollmentRequest)
-      .then(async (request) => {
-        // Set variables
-        let keyString: string = null;
-
-        // Retrieve Public Key
-        const orgKeys = await this.organizationApiService.getKeys(this.organization.id);
-        if (orgKeys == null) {
-          throw new Error(this.i18nService.t("resetPasswordOrgKeysError"));
-        }
-
-        const publicKey = Utils.fromB64ToArray(orgKeys.publicKey);
-
-        // RSA Encrypt user's encKey.key with organization public key
-        const userKey = await this.cryptoService.getUserKey();
-        const encryptedKey = await this.cryptoService.rsaEncrypt(userKey.key, publicKey);
-        keyString = encryptedKey.encryptedString;
-        toastStringRef = "enrollPasswordResetSuccess";
-
-        // Create request and execute enrollment
-        request.resetPasswordKey = keyString;
-        await this.organizationUserService.putOrganizationUserResetPasswordEnrollment(
-          this.organization.id,
-          this.organization.userId,
-          request
-        );
-
-        await this.syncService.fullSync(true);
-      });
     try {
-      await this.formPromise;
+      await this.userVerificationService
+        .buildRequest(
+          this.formGroup.value.verification,
+          OrganizationUserResetPasswordEnrollmentRequest
+        )
+        .then(async (request) => {
+          // Set variables
+          let keyString: string = null;
+
+          // Retrieve Public Key
+          const orgKeys = await this.organizationApiService.getKeys(this.organization.id);
+          if (orgKeys == null) {
+            throw new Error(this.i18nService.t("resetPasswordOrgKeysError"));
+          }
+
+          const publicKey = Utils.fromB64ToArray(orgKeys.publicKey);
+
+          // RSA Encrypt user's encKey.key with organization public key
+          const userKey = await this.cryptoService.getUserKey();
+          const encryptedKey = await this.cryptoService.rsaEncrypt(userKey.key, publicKey);
+          keyString = encryptedKey.encryptedString;
+          toastStringRef = "enrollPasswordResetSuccess";
+
+          // Create request and execute enrollment
+          request.resetPasswordKey = keyString;
+          await this.organizationUserService.putOrganizationUserResetPasswordEnrollment(
+            this.organization.id,
+            this.organization.userId,
+            request
+          );
+
+          await this.syncService.fullSync(true);
+        });
       this.platformUtilsService.showToast("success", null, this.i18nService.t(toastStringRef));
-      this.modalRef.close();
+      this.dialogRef.close();
     } catch (e) {
       this.logService.error(e);
     }
+  };
+
+  static open(dialogService: DialogService, data: EnrollMasterPasswordResetData) {
+    return dialogService.open(EnrollMasterPasswordReset, { data });
   }
 }
