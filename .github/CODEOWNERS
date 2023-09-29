@@ -75,8 +75,8 @@ apps/web/src/translation-constants.ts @bitwarden/team-platform-dev
 apps/browser/src/autofill @bitwarden/team-autofill-dev
 
 ## Component Library ##
-.storybook @bitwarden/team-platform-dev
-libs/components @bitwarden/team-platform-dev
+.storybook @bitwarden/team-component-library
+libs/components @bitwarden/team-component-library
 
 ## Desktop native module ##
 apps/desktop/desktop_native @bitwarden/team-platform-dev
