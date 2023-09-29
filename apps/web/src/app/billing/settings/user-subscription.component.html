@@ -90,6 +90,17 @@
             </td>
             <td>{{ i.quantity * i.amount | currency : "$" }} /{{ i.interval | i18n }}</td>
           </tr>
+          <tr *ngIf="discount != null && discount.active">
+            <td colspan="2">
+              <small>
+                {{ "customBillingStart" | i18n }}
+                <a routerLink="/settings/subscription/billing-history">
+                  {{ "billingHistory" | i18n }}
+                </a>
+                {{ "customBillingEnd" | i18n }}
+              </small>
+            </td>
+          </tr>
         </tbody>
       </table>
     </div>

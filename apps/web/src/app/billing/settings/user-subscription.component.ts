@@ -206,6 +206,10 @@ export class UserSubscriptionComponent implements OnInit {
     return this.sub != null ? this.sub.upcomingInvoice : null;
   }
 
+  get discount() {
+    return this.sub != null ? this.sub.discount : null;
+  }
+
   get storagePercentage() {
     return this.sub != null && this.sub.maxStorageGb
       ? +(100 * (this.sub.storageGb / this.sub.maxStorageGb)).toFixed(2)

@@ -7,6 +7,7 @@ export class SubscriptionResponse extends BaseResponse {
   maxStorageGb: number;
   subscription: BillingSubscriptionResponse;
   upcomingInvoice: BillingSubscriptionUpcomingInvoiceResponse;
+  discount: BillingCustomerDiscount;
   license: any;
   expiration: string;
   usingInAppPurchase: boolean;
@@ -21,11 +22,13 @@ export class SubscriptionResponse extends BaseResponse {
     this.usingInAppPurchase = this.getResponseProperty("UsingInAppPurchase");
     const subscription = this.getResponseProperty("Subscription");
     const upcomingInvoice = this.getResponseProperty("UpcomingInvoice");
+    const discount = this.getResponseProperty("Discount");
     this.subscription = subscription == null ? null : new BillingSubscriptionResponse(subscription);
     this.upcomingInvoice =
       upcomingInvoice == null
         ? null
         : new BillingSubscriptionUpcomingInvoiceResponse(upcomingInvoice);
+    this.discount = discount == null ? null : new BillingCustomerDiscount(discount);
   }
 }
 
@@ -86,5 +89,16 @@ export class BillingSubscriptionUpcomingInvoiceResponse extends BaseResponse {
     super(response);
     this.date = this.getResponseProperty("Date");
     this.amount = this.getResponseProperty("Amount");
+  }
+}
+
+export class BillingCustomerDiscount extends BaseResponse {
+  id: string;
+  active: boolean;
+
+  constructor(response: any) {
+    super(response);
+    this.id = this.getResponseProperty("Id");
+    this.active = this.getResponseProperty("Active");
   }
 }

@@ -3,6 +3,7 @@ import { OrganizationResponse } from "../../../admin-console/models/response/org
 import {
   BillingSubscriptionResponse,
   BillingSubscriptionUpcomingInvoiceResponse,
+  BillingCustomerDiscount,
 } from "./subscription.response";
 
 export class OrganizationSubscriptionResponse extends OrganizationResponse {
@@ -10,6 +11,7 @@ export class OrganizationSubscriptionResponse extends OrganizationResponse {
   storageGb: number;
   subscription: BillingSubscriptionResponse;
   upcomingInvoice: BillingSubscriptionUpcomingInvoiceResponse;
+  discount: BillingCustomerDiscount;
   expiration: string;
   expirationWithoutGracePeriod: string;
   secretsManagerBeta: boolean;
@@ -25,6 +27,8 @@ export class OrganizationSubscriptionResponse extends OrganizationResponse {
       upcomingInvoice == null
         ? null
         : new BillingSubscriptionUpcomingInvoiceResponse(upcomingInvoice);
+    const discount = this.getResponseProperty("Discount");
+    this.discount = discount == null ? null : new BillingCustomerDiscount(discount);
     this.expiration = this.getResponseProperty("Expiration");
     this.expirationWithoutGracePeriod = this.getResponseProperty("ExpirationWithoutGracePeriod");
     this.secretsManagerBeta = this.getResponseProperty("SecretsManagerBeta");
