@@ -2406,5 +2406,20 @@
   "toggleCollapse": {
     "message": "Ein-/ausklappen",
     "description": "Toggling an expand/collapse state."
+  },
+  "aliasDomain": {
+    "message": "Alias-Domain"
+  },
+  "passwordRepromptDisabledAutofillOnPageLoad": {
+    "message": "Einträge, die eine erneuten Abfrage des Master-Passworts verlangen, können nicht beim Laden einer Seite automatisch ausgefüllt werden. Auto-Ausfüllen beim Laden einer Seite deaktiviert.",
+    "description": "Toast message for describing that master password re-prompt cannot be auto-filled on page load."
+  },
+  "autofillOnPageLoadSetToDefault": {
+    "message": "Auto-Ausfüllen beim Lader einer Seite wurde auf die Standardeinstellung gesetzt.",
+    "description": "Toast message for informing the user that auto-fill on page load has been set to the default setting."
+  },
+  "turnOffMasterPasswordPromptToEditField": {
+    "message": "Deaktiviere die erneute Abfrage des Master-Passworts, um dieses Feld zu bearbeiten",
+    "description": "Message appearing below the autofill on load message when master password reprompt is set for a vault item."
   }
 }

@@ -2406,5 +2406,20 @@
   "toggleCollapse": {
     "message": "切换折叠",
     "description": "Toggling an expand/collapse state."
+  },
+  "aliasDomain": {
+    "message": "别名域"
+  },
+  "passwordRepromptDisabledAutofillOnPageLoad": {
+    "message": "具有主密码重新提示的项目无法在页面加载时自动填充。页面加载时的自动填充功能已关闭。",
+    "description": "Toast message for describing that master password re-prompt cannot be auto-filled on page load."
+  },
+  "autofillOnPageLoadSetToDefault": {
+    "message": "页面加载时自动填充设置为默认设置。",
+    "description": "Toast message for informing the user that auto-fill on page load has been set to the default setting."
+  },
+  "turnOffMasterPasswordPromptToEditField": {
+    "message": "关闭主密码重新提示以编辑此字段",
+    "description": "Message appearing below the autofill on load message when master password reprompt is set for a vault item."
   }
 }

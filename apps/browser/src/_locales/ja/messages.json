@@ -2406,5 +2406,20 @@
   "toggleCollapse": {
     "message": "開く/閉じる",
     "description": "Toggling an expand/collapse state."
+  },
+  "aliasDomain": {
+    "message": "エイリアスドメイン"
+  },
+  "passwordRepromptDisabledAutofillOnPageLoad": {
+    "message": "マスターパスワードの再入力を促すアイテムは、ページ読み込み時に自動入力できません。ページ読み込み時の自動入力をオフにしました。",
+    "description": "Toast message for describing that master password re-prompt cannot be auto-filled on page load."
+  },
+  "autofillOnPageLoadSetToDefault": {
+    "message": "ページ読み込み時の自動入力はデフォルトの設定を使うよう設定しました。",
+    "description": "Toast message for informing the user that auto-fill on page load has been set to the default setting."
+  },
+  "turnOffMasterPasswordPromptToEditField": {
+    "message": "このフィールドを編集するには、マスターパスワードの再入力をオフにしてください",
+    "description": "Message appearing below the autofill on load message when master password reprompt is set for a vault item."
   }
 }

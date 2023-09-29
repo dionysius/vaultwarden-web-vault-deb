@@ -339,7 +339,7 @@
     "message": "Diğer"
   },
   "unlockMethodNeededToChangeTimeoutActionDesc": {
-    "message": "Set up an unlock method to change your vault timeout action."
+    "message": "Kasa zaman aşımı eyleminizi değiştirmek için kilit açma yönteminizi ayarlayın."
   },
   "rateExtension": {
     "message": "Uzantıyı değerlendirin"
@@ -2277,7 +2277,7 @@
     "message": "Genel"
   },
   "display": {
-    "message": "Display"
+    "message": "Görünüm"
   },
   "accountSuccessfullyCreated": {
     "message": "Hesap başarıyla oluşturuldu!"
@@ -2304,16 +2304,16 @@
     "message": "Cihaza güvenildi"
   },
   "inputRequired": {
-    "message": "Input is required."
+    "message": "Girdi gerekli."
   },
   "required": {
-    "message": "required"
+    "message": "gerekli"
   },
   "search": {
     "message": "Ara"
   },
   "inputMinLength": {
-    "message": "Input must be at least $COUNT$ characters long.",
+    "message": "Girdi en az $COUNT$ karakter uzunluğunda olmalıdır.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -2322,7 +2322,7 @@
     }
   },
   "inputMaxLength": {
-    "message": "Input must not exceed $COUNT$ characters in length.",
+    "message": "Girdi $COUNT$ karakter uzunluğunu geçmemelidir.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -2331,7 +2331,7 @@
     }
   },
   "inputForbiddenCharacters": {
-    "message": "The following characters are not allowed: $CHARACTERS$",
+    "message": "Şu karakterlere izin verilmez: $CHARACTERS$",
     "placeholders": {
       "characters": {
         "content": "$1",
@@ -2349,7 +2349,7 @@
     }
   },
   "inputMaxValue": {
-    "message": "Input value must not exceed $MAX$.",
+    "message": "Girdi değeri en fazla $MAX$ olmalı.",
     "placeholders": {
       "max": {
         "content": "$1",
@@ -2358,17 +2358,17 @@
     }
   },
   "multipleInputEmails": {
-    "message": "1 or more emails are invalid"
+    "message": "Bir veya daha fazla e-posta geçersiz"
   },
   "inputTrimValidator": {
-    "message": "Input must not contain only whitespace.",
+    "message": "Girdi yalnızca boşluktan ibaret olamaz.",
     "description": "Notification to inform the user that a form's input can't contain only whitespace."
   },
   "inputEmail": {
-    "message": "Input is not an email address."
+    "message": "Girdi bir e-posta adresi değil."
   },
   "fieldsNeedAttention": {
-    "message": "$COUNT$ field(s) above need your attention.",
+    "message": "Yukarıdaki $COUNT$ alanla ilgilenmeniz gerekiyor.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -2377,13 +2377,13 @@
     }
   },
   "selectPlaceholder": {
-    "message": "-- Select --"
+    "message": "-- Seçin --"
   },
   "multiSelectPlaceholder": {
-    "message": "-- Type to filter --"
+    "message": "-- Filtrelemek için yazın --"
   },
   "multiSelectLoading": {
-    "message": "Retrieving options..."
+    "message": "Seçenekler alınıyor..."
   },
   "multiSelectNotFound": {
     "message": "Hiç kayıt bulunamadı"
@@ -2392,7 +2392,7 @@
     "message": "Tümünü temizle"
   },
   "plusNMore": {
-    "message": "+ $QUANTITY$ more",
+    "message": "+ $QUANTITY$ tane daha",
     "placeholders": {
       "quantity": {
         "content": "$1",
@@ -2401,10 +2401,25 @@
     }
   },
   "submenu": {
-    "message": "Submenu"
+    "message": "Alt menü"
   },
   "toggleCollapse": {
-    "message": "Toggle collapse",
+    "message": "Daraltmayı aç/kapat",
     "description": "Toggling an expand/collapse state."
+  },
+  "aliasDomain": {
+    "message": "Alias alan adı"
+  },
+  "passwordRepromptDisabledAutofillOnPageLoad": {
+    "message": "Ana parolayı yeniden isteyen kayıtlar sayfa yüklendiğinde otomatik olarak doldurulamaz. Sayfa yüklendiğinde otomatik doldurma kapatıldı.",
+    "description": "Toast message for describing that master password re-prompt cannot be auto-filled on page load."
+  },
+  "autofillOnPageLoadSetToDefault": {
+    "message": "Sayfa yüklendiğinde otomatik doldurma, varsayılan ayarı kullanacak şekilde ayarlandı.",
+    "description": "Toast message for informing the user that auto-fill on page load has been set to the default setting."
+  },
+  "turnOffMasterPasswordPromptToEditField": {
+    "message": "Bu alanı düzenlemek için ana parolayı yeniden istemeyi kapatın",
+    "description": "Message appearing below the autofill on load message when master password reprompt is set for a vault item."
   }
 }

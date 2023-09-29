@@ -2406,5 +2406,20 @@
   "toggleCollapse": {
     "message": "Fold sammen/ud",
     "description": "Toggling an expand/collapse state."
+  },
+  "aliasDomain": {
+    "message": "Aliasdomæne"
+  },
+  "passwordRepromptDisabledAutofillOnPageLoad": {
+    "message": "Emner, hvor der anmodes om hovedadgangskode igen, kan ikke autoudfyldes ved sideindlæsning. Autoudfyldning ved sideindlæsning er slået fra.",
+    "description": "Toast message for describing that master password re-prompt cannot be auto-filled on page load."
+  },
+  "autofillOnPageLoadSetToDefault": {
+    "message": "Autoudfyldning ved sideindlæsning sat til standardindstillingen.",
+    "description": "Toast message for informing the user that auto-fill on page load has been set to the default setting."
+  },
+  "turnOffMasterPasswordPromptToEditField": {
+    "message": "Slå anmodning om hovedadgangskode igen fra for at redigere dette felt",
+    "description": "Message appearing below the autofill on load message when master password reprompt is set for a vault item."
   }
 }

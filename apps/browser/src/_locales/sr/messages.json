@@ -772,7 +772,7 @@
     "message": "Функција је недоступна"
   },
   "encryptionKeyMigrationRequired": {
-    "message": "Encryption key migration required. Please login through the web vault to update your encryption key."
+    "message": "Потребна је миграција кључа за шифровање. Пријавите се преко веб сефа да бисте ажурирали кључ за шифровање."
   },
   "premiumMembership": {
     "message": "Премијум чланство"
@@ -2406,5 +2406,20 @@
   "toggleCollapse": {
     "message": "Промени проширење",
     "description": "Toggling an expand/collapse state."
+  },
+  "aliasDomain": {
+    "message": "Alias domain"
+  },
+  "passwordRepromptDisabledAutofillOnPageLoad": {
+    "message": "Ставке са упитом за поновно постављање главне лозинке не могу се ауто-попунити при учитавању странице. Ауто-попуњавање при учитавању странице је искључено.",
+    "description": "Toast message for describing that master password re-prompt cannot be auto-filled on page load."
+  },
+  "autofillOnPageLoadSetToDefault": {
+    "message": "Ауто-попуњавање при учитавању странице је подешено да користи подразумевано подешавање.",
+    "description": "Toast message for informing the user that auto-fill on page load has been set to the default setting."
+  },
+  "turnOffMasterPasswordPromptToEditField": {
+    "message": "Искључите поновни упит главне лозинке да бисте уредили ово поље",
+    "description": "Message appearing below the autofill on load message when master password reprompt is set for a vault item."
   }
 }

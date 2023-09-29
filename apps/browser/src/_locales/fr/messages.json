@@ -339,7 +339,7 @@
     "message": "Autre"
   },
   "unlockMethodNeededToChangeTimeoutActionDesc": {
-    "message": "Set up an unlock method to change your vault timeout action."
+    "message": "Configurez une méthode de déverrouillage pour changer le délai d'attente de votre coffre."
   },
   "rateExtension": {
     "message": "Noter l'extension"
@@ -2406,5 +2406,20 @@
   "toggleCollapse": {
     "message": "Toggle collapse",
     "description": "Toggling an expand/collapse state."
+  },
+  "aliasDomain": {
+    "message": "Domaine de l'alias"
+  },
+  "passwordRepromptDisabledAutofillOnPageLoad": {
+    "message": "Items with master password re-prompt cannot be auto-filled on page load. Auto-fill on page load turned off.",
+    "description": "Toast message for describing that master password re-prompt cannot be auto-filled on page load."
+  },
+  "autofillOnPageLoadSetToDefault": {
+    "message": "Auto-fill on page load set to use default setting.",
+    "description": "Toast message for informing the user that auto-fill on page load has been set to the default setting."
+  },
+  "turnOffMasterPasswordPromptToEditField": {
+    "message": "Désactivez la resaisie du mot de passe maître pour éditer ce champ",
+    "description": "Message appearing below the autofill on load message when master password reprompt is set for a vault item."
   }
 }

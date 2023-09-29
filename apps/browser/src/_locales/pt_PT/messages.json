@@ -781,7 +781,7 @@
     "message": "Gerir subscrição"
   },
   "premiumManageAlert": {
-    "message": "Pode gerir a sua subscrição no cofre Web bitwarden.com. Pretende visitar o site agora?"
+    "message": "Pode gerir a sua subscrição no cofre web em bitwarden.com. Pretende visitar o site agora?"
   },
   "premiumRefresh": {
     "message": "Atualizar subscrição"
@@ -814,7 +814,7 @@
     "message": "Adquirir Premium"
   },
   "premiumPurchaseAlert": {
-    "message": "Pode adquirir uma subscrição Premium no cofre Web bitwarden.com. Pretende visitar o site agora?"
+    "message": "Pode adquirir uma subscrição Premium no cofre web em bitwarden.com. Pretende visitar o site agora?"
   },
   "premiumCurrentMember": {
     "message": "É um membro Premium!"
@@ -930,7 +930,7 @@
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "duoOrganizationDesc": {
-    "message": "Verifique com a Duo Security para a sua organização utilizando a aplicação Duo Mobile, SMS, chamada telefónica, ou chave de segurança U2F.",
+    "message": "Proteja a sua organização com a Duo Security utilizando a aplicação Duo Mobile, SMS, chamada telefónica ou uma chave de segurança U2F.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "webAuthnTitle": {
@@ -1279,7 +1279,7 @@
     "message": "Esta palavra-passe não foi encontrada em nenhuma violação de dados conhecida. A sua utilização deve ser segura."
   },
   "baseDomain": {
-    "message": "Domínio base",
+    "message": "Domínio de base",
     "description": "Domain name. Ex. website.com"
   },
   "domainName": {
@@ -2406,5 +2406,20 @@
   "toggleCollapse": {
     "message": "Alternar colapso",
     "description": "Toggling an expand/collapse state."
+  },
+  "aliasDomain": {
+    "message": "Alias de domínio"
+  },
+  "passwordRepromptDisabledAutofillOnPageLoad": {
+    "message": "Os itens que voltem a pedir a palavra-passe mestra não podem ser preenchidos automaticamente no carregamento da página. Preenchimento automático no carregamento da página desativado.",
+    "description": "Toast message for describing that master password re-prompt cannot be auto-filled on page load."
+  },
+  "autofillOnPageLoadSetToDefault": {
+    "message": "Preenchimento automático no carregamento da página definido para utilizar a predefinição.",
+    "description": "Toast message for informing the user that auto-fill on page load has been set to the default setting."
+  },
+  "turnOffMasterPasswordPromptToEditField": {
+    "message": "Desativar o pedido para reintroduzir a palavra-passe mestra para editar este campo",
+    "description": "Message appearing below the autofill on load message when master password reprompt is set for a vault item."
   }
 }

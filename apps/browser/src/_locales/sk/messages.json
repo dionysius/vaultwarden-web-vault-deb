@@ -2406,5 +2406,20 @@
   "toggleCollapse": {
     "message": "Prepnúť zbalenie",
     "description": "Toggling an expand/collapse state."
+  },
+  "aliasDomain": {
+    "message": "Alias doména"
+  },
+  "passwordRepromptDisabledAutofillOnPageLoad": {
+    "message": "Položky, ktoré vyžadujú opätovné zadanie hlavného hesla sa nedajú automaticky vyplniť pri načítaní stránky. Automatické vypĺňanie pri načítaní stránky je vypnuté.",
+    "description": "Toast message for describing that master password re-prompt cannot be auto-filled on page load."
+  },
+  "autofillOnPageLoadSetToDefault": {
+    "message": "Automatické vypĺňanie pri načítaní stránky nastavené na pôvodnú predvoľbu.",
+    "description": "Toast message for informing the user that auto-fill on page load has been set to the default setting."
+  },
+  "turnOffMasterPasswordPromptToEditField": {
+    "message": "Vypnite výzvu na opätovné zadanie hlavného hesla na úpravu tohto poľa",
+    "description": "Message appearing below the autofill on load message when master password reprompt is set for a vault item."
   }
 }

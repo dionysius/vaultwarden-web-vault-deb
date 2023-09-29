@@ -2406,5 +2406,20 @@
   "toggleCollapse": {
     "message": "Összezárás váltás",
     "description": "Toggling an expand/collapse state."
+  },
+  "aliasDomain": {
+    "message": "Áldomain"
+  },
+  "passwordRepromptDisabledAutofillOnPageLoad": {
+    "message": "A mesterjelszót újra bekérő elemeket nem lehet automatikusan kitölteni az oldal betöltésekor. Az automatikus kitöltés az oldal betöltésekor kikapcsolásra kerül.",
+    "description": "Toast message for describing that master password re-prompt cannot be auto-filled on page load."
+  },
+  "autofillOnPageLoadSetToDefault": {
+    "message": "Az automatikus kitöltés az oldal betöltésekor az alapértelmezett beállítás használatára lett beállítva.",
+    "description": "Toast message for informing the user that auto-fill on page load has been set to the default setting."
+  },
+  "turnOffMasterPasswordPromptToEditField": {
+    "message": "Kapcsoljuk ki a mesterjelszó újbóli bekérését a mező szerkesztéséhez.",
+    "description": "Message appearing below the autofill on load message when master password reprompt is set for a vault item."
   }
 }

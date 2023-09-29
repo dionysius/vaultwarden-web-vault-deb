@@ -199,7 +199,7 @@
     "message": "Centrul de Ajutor Bitwarden"
   },
   "communityForums": {
-    "message": "Explorează forumurile comunității Bitwarden"
+    "message": "Explorați forumurile comunității Bitwarden"
   },
   "contactSupport": {
     "message": "Contactați asistența Bitwarden"
@@ -339,7 +339,7 @@
     "message": "Altele"
   },
   "unlockMethodNeededToChangeTimeoutActionDesc": {
-    "message": "Set up an unlock method to change your vault timeout action."
+    "message": "Configurați metoda de deblocare care să schimbe acțiunea de expirare a seifului."
   },
   "rateExtension": {
     "message": "Evaluare extensie"
@@ -634,7 +634,7 @@
     "message": "Actualizare"
   },
   "notificationUnlockDesc": {
-    "message": "Deblochează seiful Bitwarden pentru a finaliza solicitarea de completare automată."
+    "message": "Deblocați seiful Bitwarden pentru a finaliza solicitarea de auto-completare."
   },
   "notificationUnlock": {
     "message": "Deblocare"
@@ -772,7 +772,7 @@
     "message": "Funcție indisponibilă"
   },
   "encryptionKeyMigrationRequired": {
-    "message": "Encryption key migration required. Please login through the web vault to update your encryption key."
+    "message": "Este necesară migrarea cheilor de criptare. Autentificați-vă prin intermediul seifului web pentru a vă actualiza cheia de criptare."
   },
   "premiumMembership": {
     "message": "Abonament Premium"
@@ -796,7 +796,7 @@
     "message": "1 GB spațiu de stocare criptat pentru atașamente de fișiere."
   },
   "premiumSignUpTwoStepOptions": {
-    "message": "Proprietary two-step login options such as YubiKey and Duo."
+    "message": "Opțiuni brevetate de conectare cu doi factori, cum ar fi YubiKey și Duo."
   },
   "ppremiumSignUpReports": {
     "message": "Rapoarte privind igiena parolelor, sănătatea contului și breșele de date pentru a vă păstra seiful în siguranță."
@@ -985,10 +985,10 @@
     "message": "Dacă se detectează un formular de autentificare, completați-l automat la încărcarea paginii web."
   },
   "experimentalFeature": {
-    "message": "Site-urile web compromise sau nesigure pot exploata funcția de autocompletare la încărcarea paginii."
+    "message": "Site-urile web compromise sau nesigure pot profita de auto-completarea la încărcare."
   },
   "learnMoreAboutAutofill": {
-    "message": "Learn more about auto-fill"
+    "message": "Mai multe informații despre auto-completare"
   },
   "defaultAutoFillOnPageLoad": {
     "message": "Setarea implicită de completare automată pentru articole de conectare"
@@ -1468,16 +1468,16 @@
     "message": "Articolul s-a completat automat "
   },
   "insecurePageWarning": {
-    "message": "Avertisment: Aceasta este o pagină HTTP nesecurizată și orice informație pe care o trimiteți poate fi văzută și modificată de alte persoane. Această Parolă a fost salvată inițial pe o pagină securizată (HTTPS)."
+    "message": "Avertisment: Acesta este un site HTTP nesecurizat. Orice informație transmisă poate fi vizualizată și modificată de alte persoane. Această autentificare a fost salvată inițial pe un site securizat (HTTPS)."
   },
   "insecurePageWarningFillPrompt": {
-    "message": "Do you still wish to fill this login?"
+    "message": "Încă mai doriți să completați acest login?"
   },
   "autofillIframeWarning": {
-    "message": "The form is hosted by a different domain than the URI of your saved login. Choose OK to auto-fill anyway, or Cancel to stop."
+    "message": "Formularul este găzduit pe un alt domeniu decât adresa URI de autentificare salvată. Alegeți OK pentru completarea automată oricum sau Anulare pentru a opri."
   },
   "autofillIframeWarningTip": {
-    "message": "To prevent this warning in the future, save this URI, $HOSTNAME$, to your Bitwarden login item for this site.",
+    "message": "Pe viitor, pentru a evita acest avertisment, înregistrați acest URI, $HOSTNAME$, în login-ul Bitwarden pentru acest site.",
     "placeholders": {
       "hostname": {
         "content": "$1",
@@ -1489,13 +1489,13 @@
     "message": "Setare parolă principală"
   },
   "currentMasterPass": {
-    "message": "Current master password"
+    "message": "Parola principală actuală"
   },
   "newMasterPass": {
-    "message": "New master password"
+    "message": "Noua parolă principală"
   },
   "confirmNewMasterPass": {
-    "message": "Confirm new master password"
+    "message": "Confirmați noua parolă principală"
   },
   "masterPasswordPolicyInEffect": {
     "message": "Una sau mai multe politici ale organizației necesită ca parola principală să îndeplinească următoarele cerințe:"
@@ -1606,10 +1606,10 @@
     "message": "Biometria browserului nu este acceptată pe acest dispozitiv."
   },
   "biometricsFailedTitle": {
-    "message": "Biometrics failed"
+    "message": "Biometrica a eșuat"
   },
   "biometricsFailedDesc": {
-    "message": "Biometrics cannot be completed, consider using a master password or logging out. If this persists, please contact Bitwarden support."
+    "message": "Verificarea biometrică nu poate fi finalizată. Încercați parola principală sau deconectați-vă. Dacă problema persistă, vă rugăm să contactați serviciul de asistență Bitwarden."
   },
   "nativeMessaginPermissionErrorTitle": {
     "message": "Permisiunea nu a fost furnizată"
@@ -1884,7 +1884,7 @@
     "message": "Parola principală a fost schimbată recent de către un administrator din organizație. Pentru a accesa seiful, trebuie să o actualizați acum. Continuarea vă va deconecta de la sesiunea curentă, cerându-vă să vă conectați din nou. Sesiunile active de pe alte dispozitive pot continua să rămână active timp de până la o oră."
   },
   "updateWeakMasterPasswordWarning": {
-    "message": "Your master password does not meet one or more of your organization policies. In order to access the vault, you must update your master password now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
+    "message": "Parola dvs. principală nu respectă una sau mai multe politici ale organizației. Pentru a accesa seiful, parola principală trebuie actualizată acum. În cazul în care continuați, veți fi deconectat din sesiunea curentă și va trebui să vă conectați din nou. Sesiunile active de pe alte dispozitive pot rămâne active timp de până la o oră."
   },
   "resetPasswordPolicyAutoEnroll": {
     "message": "Înscrierea automată"
@@ -1905,7 +1905,7 @@
     "message": "Minute"
   },
   "vaultTimeoutPolicyInEffect": {
-    "message": "Politicile organizației dvs vă afectează expirarea seifului. Timpul maxim permis de expirare a seifului este $HOURS$ oră (ore) și $MINUTES$ minut(e)",
+    "message": "Politicile organizației dvs. au stabilit timpul maxim de expirare permis pentru seif la $HOURS$ oră/ore și $MINUTES$ de minut(e).",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -1918,7 +1918,7 @@
     }
   },
   "vaultTimeoutPolicyWithActionInEffect": {
-    "message": "Your organization policies are affecting your vault timeout. Maximum allowed vault timeout is $HOURS$ hour(s) and $MINUTES$ minute(s). Your vault timeout action is set to $ACTION$.",
+    "message": "Politicile organizației dvs. afectează timpul de expirare al seifului. Timpul maxim de așteptare permis pentru seif este de $HOURS$ oră(e) și $MINUTES$ minut(e). Acțiunea de temporizare a seifului este setată la $ACTION$.",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -1935,7 +1935,7 @@
     }
   },
   "vaultTimeoutActionPolicyInEffect": {
-    "message": "Your organization policies have set your vault timeout action to $ACTION$.",
+    "message": "Politicile organizației dvs. au setat acțiunea de expirare a seifului la $ACTION$.",
     "placeholders": {
       "action": {
         "content": "$1",
@@ -1992,7 +1992,7 @@
     "message": "Exportul seifului individual"
   },
   "exportingIndividualVaultDescription": {
-    "message": "Only the individual vault items associated with $EMAIL$ will be exported. Organization vault items will not be included. Only vault item information will be exported and will not include associated attachments.",
+    "message": "Se exportă numai intrările din seiful personal asociate cu $EMAIL$. Nu sunt incluse intrările de seif ale organizației. Se exportă numai informațiile despre intrările din seif. Acestea nu includ atașamentele asociate.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -2093,7 +2093,7 @@
     "message": "Versiune server"
   },
   "selfHostedServer": {
-    "message": "self-hosted"
+    "message": "auto-găzduit"
   },
   "thirdParty": {
     "message": "Parte terță"
@@ -2132,52 +2132,52 @@
     "message": "Memorare e-mail"
   },
   "loginWithDevice": {
-    "message": "Log in with device"
+    "message": "Conectați-vă cu dispozitivul"
   },
   "loginWithDeviceEnabledInfo": {
-    "message": "Log in with device must be set up in the settings of the Bitwarden app. Need another option?"
+    "message": "Conectarea cu dispozitivul trebuie să fie configurată în setările aplicației Bitwarden. Aveți nevoie de o altă opțiune?"
   },
   "fingerprintPhraseHeader": {
-    "message": "Fingerprint phrase"
+    "message": "Fraza amprentă"
   },
   "fingerprintMatchInfo": {
-    "message": "Please make sure your vault is unlocked and the Fingerprint phrase matches on the other device."
+    "message": "Asigurați-vă că seiful este deblocat și că fraza amprentă se potrivește cu cea de pe celălalt dispozitiv."
   },
   "resendNotification": {
-    "message": "Resend notification"
+    "message": "Reîntoarceți notificarea"
   },
   "viewAllLoginOptions": {
-    "message": "View all log in options"
+    "message": "Afișați toate opțiunile de conectare"
   },
   "notificationSentDevice": {
-    "message": "A notification has been sent to your device."
+    "message": "O notificare a fost trimisă pe dispozitivul dvs."
   },
   "loginInitiated": {
-    "message": "Login initiated"
+    "message": "Conectare inițiată"
   },
   "exposedMasterPassword": {
-    "message": "Exposed Master Password"
+    "message": "Parolă principală compromisă"
   },
   "exposedMasterPasswordDesc": {
-    "message": "Password found in a data breach. Use a unique password to protect your account. Are you sure you want to use an exposed password?"
+    "message": "Parola găsită în scurgerea de date. Folosiți o parolă unică pentru a vă proteja contul. Sunteți sigur că doriți să folosiți o parolă compromisă?"
   },
   "weakAndExposedMasterPassword": {
-    "message": "Weak and Exposed Master Password"
+    "message": "Parolă principală slabă și compromisă"
   },
   "weakAndBreachedMasterPasswordDesc": {
-    "message": "Weak password identified and found in a data breach. Use a strong and unique password to protect your account. Are you sure you want to use this password?"
+    "message": "Parolă slabă identificată și găsită într-o scurgere de date. Folosiți o parolă puternică și unică pentru a vă proteja contul. Sunteți sigur că doriți să utilizați această parolă?"
   },
   "checkForBreaches": {
-    "message": "Check known data breaches for this password"
+    "message": "Verificați scurgerile de date cunoscute pentru această parolă"
   },
   "important": {
     "message": "Important:"
   },
   "masterPasswordHint": {
-    "message": "Your master password cannot be recovered if you forget it!"
+    "message": "Parola principală nu poate fi recuperată dacă este uitată!"
   },
   "characterMinimum": {
-    "message": "$LENGTH$ character minimum",
+    "message": "Minim $LENGTH$ caractere",
     "placeholders": {
       "length": {
         "content": "$1",
@@ -2186,13 +2186,13 @@
     }
   },
   "autofillPageLoadPolicyActivated": {
-    "message": "Your organization policies have turned on auto-fill on page load."
+    "message": "Politicile organizației dvs. au activat auto-completarea la încărcarea paginii."
   },
   "howToAutofill": {
-    "message": "How to auto-fill"
+    "message": "Instrucțiuni de auto-completare"
   },
   "autofillSelectInfoWithCommand": {
-    "message": "Select an item from this page or use the shortcut: $COMMAND$",
+    "message": "Selectați un element din această pagină sau utilizați comanda rapidă: $COMMAND$",
     "placeholders": {
       "command": {
         "content": "$1",
@@ -2201,22 +2201,22 @@
     }
   },
   "autofillSelectInfoWithoutCommand": {
-    "message": "Select an item from this page or set a shortcut in settings."
+    "message": "Selectați un element din această pagină sau setați o comandă rapidă în setări."
   },
   "gotIt": {
-    "message": "Got it"
+    "message": "Am înțeles"
   },
   "autofillSettings": {
-    "message": "Auto-fill settings"
+    "message": "Setări de auto-completare"
   },
   "autofillShortcut": {
-    "message": "Auto-fill keyboard shortcut"
+    "message": "Scurtătură de tastatură pentru auto-completare"
   },
   "autofillShortcutNotSet": {
-    "message": "The auto-fill shortcut is not set. Change this in the browser's settings."
+    "message": "Scurtătura de auto-completare nu este setată. Modificați acest lucru în setările browserului."
   },
   "autofillShortcutText": {
-    "message": "The auto-fill shortcut is: $COMMAND$. Change this in the browser's settings.",
+    "message": "Scurtătura de auto-completare este: $COMMAND$. Modificați acest lucru în setările browserului.",
     "placeholders": {
       "command": {
         "content": "$1",
@@ -2225,7 +2225,7 @@
     }
   },
   "autofillShortcutTextSafari": {
-    "message": "Default auto-fill shortcut: $COMMAND$.",
+    "message": "Scurtătură implicită de auto-completare: $COMMAND$.",
     "placeholders": {
       "command": {
         "content": "$1",
@@ -2234,31 +2234,31 @@
     }
   },
   "loggingInOn": {
-    "message": "Logging in on"
+    "message": "Conectare la"
   },
   "opensInANewWindow": {
-    "message": "Opens in a new window"
+    "message": "Se deschide într-o nouă fereastră"
   },
   "deviceApprovalRequired": {
-    "message": "Device approval required. Select an approval option below:"
+    "message": "Este necesară aprobarea dispozitivului. Selectați o opțiune de autorizare de mai jos:"
   },
   "rememberThisDevice": {
-    "message": "Remember this device"
+    "message": "Memorizează acest dispozitiv"
   },
   "uncheckIfPublicDevice": {
-    "message": "Uncheck if using a public device"
+    "message": "Debifați dacă utilizați un dispozitiv public"
   },
   "approveFromYourOtherDevice": {
-    "message": "Approve from your other device"
+    "message": "Aprobați de pe celălalt dispozitiv"
   },
   "requestAdminApproval": {
-    "message": "Request admin approval"
+    "message": "Cereți aprobarea administratorului"
   },
   "approveWithMasterPassword": {
-    "message": "Approve with master password"
+    "message": "Aprobați cu parola principală"
   },
   "ssoIdentifierRequired": {
-    "message": "Organization SSO identifier is required."
+    "message": "Identificatorul SSO al organizației este necesar."
   },
   "eu": {
     "message": "EU",
@@ -2271,49 +2271,49 @@
     "message": "bitwarden.eu"
   },
   "accessDenied": {
-    "message": "Access denied. You do not have permission to view this page."
+    "message": "Acces refuzat. Nu aveți permisiunea de a vizualiza această pagină."
   },
   "general": {
     "message": "General"
   },
   "display": {
-    "message": "Display"
+    "message": "Afișare"
   },
   "accountSuccessfullyCreated": {
-    "message": "Account successfully created!"
+    "message": "Cont creat cu succes!"
   },
   "adminApprovalRequested": {
-    "message": "Admin approval requested"
+    "message": "Autorizație administrativă solicitată"
   },
   "adminApprovalRequestSentToAdmins": {
-    "message": "Your request has been sent to your admin."
+    "message": "Cererea dvs. a fost trimisă administratorului."
   },
   "youWillBeNotifiedOnceApproved": {
-    "message": "You will be notified once approved."
+    "message": "Veți primi o notificare după aprobare."
   },
   "troubleLoggingIn": {
-    "message": "Trouble logging in?"
+    "message": "Aveți probleme la logare?"
   },
   "loginApproved": {
-    "message": "Login approved"
+    "message": "Autentificare aprobată"
   },
   "userEmailMissing": {
-    "message": "User email missing"
+    "message": "Lipsește e-mailul utilizatorului"
   },
   "deviceTrusted": {
-    "message": "Device trusted"
+    "message": "Dispozitiv de încredere"
   },
   "inputRequired": {
-    "message": "Input is required."
+    "message": "Este necesară o intrare."
   },
   "required": {
-    "message": "required"
+    "message": "necesar"
   },
   "search": {
-    "message": "Search"
+    "message": "Căutare"
   },
   "inputMinLength": {
-    "message": "Input must be at least $COUNT$ characters long.",
+    "message": "Intrarea trebuie să aibă o lungime de cel puțin $COUNT$ caractere.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -2322,7 +2322,7 @@
     }
   },
   "inputMaxLength": {
-    "message": "Input must not exceed $COUNT$ characters in length.",
+    "message": "Intrarea nu trebuie să fie mai lungă de $COUNT$ caractere.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -2331,7 +2331,7 @@
     }
   },
   "inputForbiddenCharacters": {
-    "message": "The following characters are not allowed: $CHARACTERS$",
+    "message": "Următoarele caractere nu sunt permise: $CHARACTERS$",
     "placeholders": {
       "characters": {
         "content": "$1",
@@ -2340,7 +2340,7 @@
     }
   },
   "inputMinValue": {
-    "message": "Input value must be at least $MIN$.",
+    "message": "Valoarea de intrare trebuie să fie cel puțin $MIN$.",
     "placeholders": {
       "min": {
         "content": "$1",
@@ -2349,7 +2349,7 @@
     }
   },
   "inputMaxValue": {
-    "message": "Input value must not exceed $MAX$.",
+    "message": "Valoarea de intrare nu trebuie să depășească $MAX$.",
     "placeholders": {
       "max": {
         "content": "$1",
@@ -2358,17 +2358,17 @@
     }
   },
   "multipleInputEmails": {
-    "message": "1 or more emails are invalid"
+    "message": "1 sau mai multe e-mailuri sunt invalide"
   },
   "inputTrimValidator": {
-    "message": "Input must not contain only whitespace.",
+    "message": "Datele introduse nu trebuie să conțină numai spații.",
     "description": "Notification to inform the user that a form's input can't contain only whitespace."
   },
   "inputEmail": {
-    "message": "Input is not an email address."
+    "message": "Intrarea nu este o adresă de e-mail."
   },
   "fieldsNeedAttention": {
-    "message": "$COUNT$ field(s) above need your attention.",
+    "message": "$COUNT$ câmp(uri) de mai sus necesită atenție.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -2377,22 +2377,22 @@
     }
   },
   "selectPlaceholder": {
-    "message": "-- Select --"
+    "message": "-- Selectați --"
   },
   "multiSelectPlaceholder": {
-    "message": "-- Type to filter --"
+    "message": "-- Scrieți pentru a filtra --"
   },
   "multiSelectLoading": {
-    "message": "Retrieving options..."
+    "message": "Recuperarea opțiunilor..."
   },
   "multiSelectNotFound": {
-    "message": "No items found"
+    "message": "Niciun element găsit"
   },
   "multiSelectClearAll": {
-    "message": "Clear all"
+    "message": "Ștergeți tot"
   },
   "plusNMore": {
-    "message": "+ $QUANTITY$ more",
+    "message": "+ $QUANTITY$ mai mult",
     "placeholders": {
       "quantity": {
         "content": "$1",
@@ -2401,10 +2401,25 @@
     }
   },
   "submenu": {
-    "message": "Submenu"
+    "message": "Submeniu"
   },
   "toggleCollapse": {
-    "message": "Toggle collapse",
+    "message": "Comutare restrângere",
     "description": "Toggling an expand/collapse state."
+  },
+  "aliasDomain": {
+    "message": "Alias domain"
+  },
+  "passwordRepromptDisabledAutofillOnPageLoad": {
+    "message": "Elementele în care parola principală este solicitată din nou nu pot fi completate automat la încărcarea paginii. Completarea automată la încărcarea paginii este dezactivată.",
+    "description": "Toast message for describing that master password re-prompt cannot be auto-filled on page load."
+  },
+  "autofillOnPageLoadSetToDefault": {
+    "message": "Completarea automată la încărcarea paginii este setată la valoarea implicită.",
+    "description": "Toast message for informing the user that auto-fill on page load has been set to the default setting."
+  },
+  "turnOffMasterPasswordPromptToEditField": {
+    "message": "Dezactivați reintroducerea parolei principale pentru a edita acest câmp",
+    "description": "Message appearing below the autofill on load message when master password reprompt is set for a vault item."
   }
 }

@@ -2406,5 +2406,20 @@
   "toggleCollapse": {
     "message": "Превключване на свиването",
     "description": "Toggling an expand/collapse state."
+  },
+  "aliasDomain": {
+    "message": "Псевдонимен домейн"
+  },
+  "passwordRepromptDisabledAutofillOnPageLoad": {
+    "message": "Записите с включено изискване за повторно въвеждане на главната парола не могат да бъдат попълвани автоматично при зареждане на страницата. Автоматичното попълване при зареждане на страницата е изключено.",
+    "description": "Toast message for describing that master password re-prompt cannot be auto-filled on page load."
+  },
+  "autofillOnPageLoadSetToDefault": {
+    "message": "Автоматичното попълване при зареждане на страницата използва настройката си по подразбиране.",
+    "description": "Toast message for informing the user that auto-fill on page load has been set to the default setting."
+  },
+  "turnOffMasterPasswordPromptToEditField": {
+    "message": "Изключете повторното въвеждане на главната парола, за да редактирате това поле",
+    "description": "Message appearing below the autofill on load message when master password reprompt is set for a vault item."
   }
 }

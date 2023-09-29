@@ -2406,5 +2406,20 @@
   "toggleCollapse": {
     "message": "Zwiń/rozwiń",
     "description": "Toggling an expand/collapse state."
+  },
+  "aliasDomain": {
+    "message": "Domena aliasu"
+  },
+  "passwordRepromptDisabledAutofillOnPageLoad": {
+    "message": "Elementy z pytaniem o hasło głównege nie mogą być automatycznie wypełniane przy wczytywaniu strony. Automatyczne wypełnianie po wczytywania strony zostało wyłączone.",
+    "description": "Toast message for describing that master password re-prompt cannot be auto-filled on page load."
+  },
+  "autofillOnPageLoadSetToDefault": {
+    "message": "Automatyczne wypełnianie przy wczytywaniu strony zostało ustawione, aby używać ustawień domyślnych.",
+    "description": "Toast message for informing the user that auto-fill on page load has been set to the default setting."
+  },
+  "turnOffMasterPasswordPromptToEditField": {
+    "message": "Wyłącz prośbę o podanie hasła głównego, aby edytować to pole",
+    "description": "Message appearing below the autofill on load message when master password reprompt is set for a vault item."
   }
 }

@@ -2406,5 +2406,20 @@
   "toggleCollapse": {
     "message": "Pārslēgt sakļaušanu",
     "description": "Toggling an expand/collapse state."
+  },
+  "aliasDomain": {
+    "message": "Aizstājdomēns"
+  },
+  "passwordRepromptDisabledAutofillOnPageLoad": {
+    "message": "Vienumus ar galvenās paroles pārvaicāšanu nevar automātiski aizpildīt lapas ielādes brīdī. Automātiskā aizpilde lapas ielādes brīdī ir izslēgta.",
+    "description": "Toast message for describing that master password re-prompt cannot be auto-filled on page load."
+  },
+  "autofillOnPageLoadSetToDefault": {
+    "message": "Automātiskā aizpilde lapas ielādes brīdī iestatīta izmantot noklusējuma iestatījumu.",
+    "description": "Toast message for informing the user that auto-fill on page load has been set to the default setting."
+  },
+  "turnOffMasterPasswordPromptToEditField": {
+    "message": "Jāizslēdz galvenās paroles pārvaicāšana, lai labotu šo lauku",
+    "description": "Message appearing below the autofill on load message when master password reprompt is set for a vault item."
   }
 }

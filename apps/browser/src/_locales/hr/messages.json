@@ -772,7 +772,7 @@
     "message": "Značajka nije dostupna"
   },
   "encryptionKeyMigrationRequired": {
-    "message": "Encryption key migration required. Please login through the web vault to update your encryption key."
+    "message": "Potrebna je migracija ključa za šifriranje. Prijavi se na web trezoru za ažuriranje ključa za šifriranje."
   },
   "premiumMembership": {
     "message": "Premium članstvo"
@@ -1992,7 +1992,7 @@
     "message": "Izvoz osobnog trezora"
   },
   "exportingIndividualVaultDescription": {
-    "message": "Only the individual vault items associated with $EMAIL$ will be exported. Organization vault items will not be included. Only vault item information will be exported and will not include associated attachments.",
+    "message": "Izvest će se samo stavke osobnog trezora povezanog s $EMAIL$. Stavke organizacijskog trezora neće biti uključene. Izvest će se samo informacija o stavci trezora bez pripadajućih podataka o povijesti lozinki i privitaka.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -2406,5 +2406,20 @@
   "toggleCollapse": {
     "message": "Sažmi/Proširi",
     "description": "Toggling an expand/collapse state."
+  },
+  "aliasDomain": {
+    "message": "Alias domene"
+  },
+  "passwordRepromptDisabledAutofillOnPageLoad": {
+    "message": "Stavke za koje je potrebna glavna lozinka neće se auto-ispuniti kod učitavanja stranice. Auto-ispuna pri učitavanju stranice je isključena.",
+    "description": "Toast message for describing that master password re-prompt cannot be auto-filled on page load."
+  },
+  "autofillOnPageLoadSetToDefault": {
+    "message": "Auto-ispuna kod učitavanja stranice koristi zadane postavke.",
+    "description": "Toast message for informing the user that auto-fill on page load has been set to the default setting."
+  },
+  "turnOffMasterPasswordPromptToEditField": {
+    "message": "Isključi traženje glavne lozinke za promjenu ovog polja",
+    "description": "Message appearing below the autofill on load message when master password reprompt is set for a vault item."
   }
 }

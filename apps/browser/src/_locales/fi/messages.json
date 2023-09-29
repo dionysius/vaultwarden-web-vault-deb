@@ -2406,5 +2406,20 @@
   "toggleCollapse": {
     "message": "Laajenna tai supista",
     "description": "Toggling an expand/collapse state."
+  },
+  "aliasDomain": {
+    "message": "Aliasverkkotunnus"
+  },
+  "passwordRepromptDisabledAutofillOnPageLoad": {
+    "message": "Kohteita, joille pääsalasanan uudelleenkysely on käytössä, ei voida täyttää automaattisesti sivujen avautuessa. Automaattinen täyttö sivujen avautuessa poistettiin käytöstä.",
+    "description": "Toast message for describing that master password re-prompt cannot be auto-filled on page load."
+  },
+  "autofillOnPageLoadSetToDefault": {
+    "message": "Automaattinen täyttö sivun avautuessa käyttää oletusasetusta.",
+    "description": "Toast message for informing the user that auto-fill on page load has been set to the default setting."
+  },
+  "turnOffMasterPasswordPromptToEditField": {
+    "message": "Poista pääsalasanan uudelleenkysely käytöstä muokataksesi kenttää",
+    "description": "Message appearing below the autofill on load message when master password reprompt is set for a vault item."
   }
 }
