@@ -314,6 +314,10 @@ export default class AutofillService implements AutofillServiceInterface {
     fromCommand: boolean,
     cipherType?: CipherType
   ): Promise<string | null> {
+    if (!pageDetails[0]?.details?.fields?.length) {
+      return null;
+    }
+
     const tab = await this.getActiveTab();
 
     if (!tab || !tab.url) {
