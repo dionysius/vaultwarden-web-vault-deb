@@ -2,6 +2,7 @@
 extern crate napi_derive;
 
 mod biometric;
+mod clipboard;
 mod crypto;
 mod error;
 mod password;
@@ -105,5 +106,19 @@ pub mod biometrics {
     pub struct OsDerivedKey {
         pub key_b64: String,
         pub iv_b64: String,
+    }
+}
+
+#[napi]
+pub mod clipboards {
+    #[napi]
+    pub async fn read() -> napi::Result<String> {
+        super::clipboard::read().map_err(|e| napi::Error::from_reason(e.to_string()))
+    }
+
+    #[napi]
+    pub async fn write(text: String, password: bool) -> napi::Result<()> {
+        super::clipboard::write(&text, password)
+            .map_err(|e| napi::Error::from_reason(e.to_string()))
     }
 }

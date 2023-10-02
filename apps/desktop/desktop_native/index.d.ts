@@ -37,3 +37,7 @@ export namespace biometrics {
     ivB64: string
   }
 }
+export namespace clipboards {
+  export function read(): Promise<string>
+  export function write(text: string, password: boolean): Promise<void>
+}

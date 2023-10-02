@@ -15,6 +15,7 @@ import { UpdaterMain } from "./main/updater.main";
 import { WindowMain } from "./main/window.main";
 import { Account } from "./models/account";
 import { BiometricsService, BiometricsServiceAbstraction } from "./platform/main/biometric/index";
+import { ClipboardMain } from "./platform/main/clipboard.main";
 import { DesktopCredentialStorageListener } from "./platform/main/desktop-credential-storage-listener";
 import { ElectronLogService } from "./platform/services/electron-log.service";
 import { ElectronStateService } from "./platform/services/electron-state.service";
@@ -39,6 +40,7 @@ export class Main {
   trayMain: TrayMain;
   biometricsService: BiometricsServiceAbstraction;
   nativeMessagingMain: NativeMessagingMain;
+  clipboardMain: ClipboardMain;
 
   constructor() {
     // Set paths for portable builds
@@ -138,6 +140,9 @@ export class Main {
       app.getPath("userData"),
       app.getPath("exe")
     );
+
+    this.clipboardMain = new ClipboardMain();
+    this.clipboardMain.init();
   }
 
   bootstrap() {

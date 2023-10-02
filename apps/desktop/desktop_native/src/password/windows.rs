@@ -95,7 +95,7 @@ pub fn set_password(service: &str, account: &str, password: &str) -> Result<()> 
     let credential = CREDENTIALW {
         Flags: CRED_FLAGS(CRED_FLAGS_NONE),
         Type: CRED_TYPE_GENERIC,
-        TargetName: PWSTR(unsafe { target_name.as_mut_ptr() }),
+        TargetName: PWSTR(target_name.as_mut_ptr()),
         Comment: PWSTR::null(),
         LastWritten: last_written,
         CredentialBlobSize: credential_len,
@@ -104,7 +104,7 @@ pub fn set_password(service: &str, account: &str, password: &str) -> Result<()> 
         AttributeCount: 0,
         Attributes: std::ptr::null_mut(),
         TargetAlias: PWSTR::null(),
-        UserName: PWSTR(unsafe { user_name.as_mut_ptr() }),
+        UserName: PWSTR(user_name.as_mut_ptr()),
     };
 
     let result = unsafe { CredWriteW(&credential, 0) };

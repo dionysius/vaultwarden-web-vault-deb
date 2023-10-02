@@ -18,7 +18,7 @@
   "scripts": {
     "postinstall": "electron-rebuild",
     "start": "cross-env ELECTRON_IS_DEV=0 ELECTRON_NO_UPDATER=1 electron ./build",
-    "build-native": "cargo build --manifest-path=./desktop_native/Cargo.toml",
+    "build-native": "cd desktop_native && npm run build",
     "build": "concurrently -n Main,Rend -c yellow,cyan \"npm run build:main\" \"npm run build:renderer\"",
     "build:dev": "concurrently -n Main,Rend -c yellow,cyan \"npm run build:main:dev\" \"npm run build:renderer:dev\"",
     "build:main": "cross-env NODE_ENV=production webpack --config webpack.main.js",

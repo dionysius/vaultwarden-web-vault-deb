@@ -4,6 +4,13 @@ interface ToastOptions {
   timeout?: number;
 }
 
+export type ClipboardOptions = {
+  allowHistory?: boolean;
+  clearing?: boolean;
+  clearMs?: number;
+  window?: Window;
+};
+
 export abstract class PlatformUtilsService {
   getDevice: () => DeviceType;
   getDeviceString: () => string;
@@ -29,8 +36,8 @@ export abstract class PlatformUtilsService {
   ) => void;
   isDev: () => boolean;
   isSelfHost: () => boolean;
-  copyToClipboard: (text: string, options?: any) => void | boolean;
-  readFromClipboard: (options?: any) => Promise<string>;
+  copyToClipboard: (text: string, options?: ClipboardOptions) => void | boolean;
+  readFromClipboard: () => Promise<string>;
   supportsBiometric: () => Promise<boolean>;
   authenticateBiometric: () => Promise<boolean>;
   supportsSecureStorage: () => boolean;
