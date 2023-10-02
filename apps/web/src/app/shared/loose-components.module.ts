@@ -63,6 +63,7 @@ import { BillingSyncKeyComponent } from "../billing/settings/billing-sync-key.co
 import { OrganizationPlansComponent } from "../billing/settings/organization-plans.component";
 import { PaymentMethodComponent } from "../billing/settings/payment-method.component";
 import { PaymentComponent } from "../billing/settings/payment.component";
+import { PremiumComponent } from "../billing/settings/premium.component";
 import { SubscriptionComponent } from "../billing/settings/subscription.component";
 import { TaxInfoComponent } from "../billing/settings/tax-info.component";
 import { UserSubscriptionComponent } from "../billing/settings/user-subscription.component";
@@ -106,7 +107,6 @@ import { ShareComponent } from "../vault/individual-vault/share.component";
 import { AddEditComponent as OrgAddEditComponent } from "../vault/org-vault/add-edit.component";
 import { AttachmentsComponent as OrgAttachmentsComponent } from "../vault/org-vault/attachments.component";
 import { CollectionsComponent as OrgCollectionsComponent } from "../vault/org-vault/collections.component";
-import { PremiumComponent } from "../vault/settings/premium.component";
 
 import { EnvironmentSelectorModule } from "./../components/environment-selector/environment-selector.module";
 import { AccountFingerprintComponent } from "./components/account-fingerprint/account-fingerprint.component";
