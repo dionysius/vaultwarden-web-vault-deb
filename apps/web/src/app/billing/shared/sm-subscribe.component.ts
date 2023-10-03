@@ -7,7 +7,7 @@ import { PlanResponse } from "@bitwarden/common/billing/models/response/plan.res
 import { ProductType } from "@bitwarden/common/enums";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 
-import { SecretsManagerLogo } from "../../../layouts/secrets-manager-logo";
+import { SecretsManagerLogo } from "../../layouts/secrets-manager-logo";
 
 export interface SecretsManagerSubscription {
   enabled: boolean;

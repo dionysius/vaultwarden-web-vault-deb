@@ -5,11 +5,13 @@ import { first } from "rxjs/operators";
 import { PlanType } from "@bitwarden/common/billing/enums";
 import { ProductType } from "@bitwarden/common/enums";
 
-import { OrganizationPlansComponent } from "../../billing/settings/organization-plans.component";
+import { OrganizationPlansComponent } from "../../billing";
+import { SharedModule } from "../../shared";
 
 @Component({
-  selector: "app-create-organization",
   templateUrl: "create-organization.component.html",
+  standalone: true,
+  imports: [SharedModule, OrganizationPlansComponent],
 })
 // eslint-disable-next-line rxjs-angular/prefer-takeuntil
 export class CreateOrganizationComponent implements OnInit {

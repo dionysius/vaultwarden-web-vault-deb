@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 
-import { OrganizationPlansComponent } from "@bitwarden/web-vault/app/billing/settings/organization-plans.component";
+import { OrganizationPlansComponent } from "@bitwarden/web-vault/app/billing";
 
 @Component({
   selector: "app-create-organization",

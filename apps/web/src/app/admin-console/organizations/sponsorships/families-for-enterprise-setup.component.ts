@@ -15,15 +15,17 @@ import { ValidationService } from "@bitwarden/common/platform/abstractions/valid
 import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
 import { DialogService } from "@bitwarden/components";
 
-import { OrganizationPlansComponent } from "../../../billing/settings/organization-plans.component";
+import { OrganizationPlansComponent } from "../../../billing";
+import { SharedModule } from "../../../shared";
 import {
   DeleteOrganizationDialogResult,
   openDeleteOrganizationDialog,
 } from "../settings/components";
 
 @Component({
-  selector: "families-for-enterprise-setup",
   templateUrl: "families-for-enterprise-setup.component.html",
+  standalone: true,
+  imports: [SharedModule, OrganizationPlansComponent],
 })
 export class FamiliesForEnterpriseSetupComponent implements OnInit, OnDestroy {
   @ViewChild(OrganizationPlansComponent, { static: false })

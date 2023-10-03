@@ -9,7 +9,7 @@ import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.servic
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 
-import { PaymentComponent } from "../billing/settings/payment.component";
+import { PaymentComponent } from "./payment.component";
 
 @Component({
   selector: "app-adjust-storage",

@@ -6,7 +6,6 @@ import { OrganizationService } from "@bitwarden/common/admin-console/abstraction
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 
 @Component({
-  selector: "app-org-billing-tab",
   templateUrl: "organization-billing-tab.component.html",
 })
 export class OrganizationBillingTabComponent implements OnInit {

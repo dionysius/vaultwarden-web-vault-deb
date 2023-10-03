@@ -4,7 +4,6 @@ import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/pl
 import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
 
 @Component({
-  selector: "app-subscription",
   templateUrl: "subscription.component.html",
 })
 export class SubscriptionComponent {

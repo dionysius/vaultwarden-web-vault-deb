@@ -6,7 +6,6 @@ import { OrganizationApiServiceAbstraction } from "@bitwarden/common/admin-conso
 import { BillingHistoryResponse } from "@bitwarden/common/billing/models/response/billing-history.response";
 
 @Component({
-  selector: "app-org-billing-history-view",
   templateUrl: "organization-billing-history-view.component.html",
 })
 export class OrgBillingHistoryViewComponent implements OnInit, OnDestroy {

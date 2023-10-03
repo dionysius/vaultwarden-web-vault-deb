@@ -10,7 +10,7 @@ import { PlanResponse } from "@bitwarden/common/billing/models/response/plan.res
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 
-import { secretsManagerSubscribeFormFactory } from "./sm-subscribe.component";
+import { secretsManagerSubscribeFormFactory } from "../shared";
 
 @Component({
   selector: "sm-subscribe-standalone",

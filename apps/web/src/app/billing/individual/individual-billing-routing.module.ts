@@ -1,12 +1,12 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 
-import { BillingHistoryViewComponent } from "../../billing/settings/billing-history-view.component";
-import { PaymentMethodComponent } from "../../billing/settings/payment-method.component";
-import { UserSubscriptionComponent } from "../../billing/settings/user-subscription.component";
-import { PremiumComponent } from "../settings/premium.component";
+import { PaymentMethodComponent } from "../shared";
 
+import { BillingHistoryViewComponent } from "./billing-history-view.component";
+import { PremiumComponent } from "./premium.component";
 import { SubscriptionComponent } from "./subscription.component";
+import { UserSubscriptionComponent } from "./user-subscription.component";
 
 const routes: Routes = [
   {
@@ -43,4 +43,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class SubscriptionRoutingModule {}
+export class IndividualBillingRoutingModule {}

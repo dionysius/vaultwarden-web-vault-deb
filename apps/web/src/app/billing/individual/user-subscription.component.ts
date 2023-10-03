@@ -12,7 +12,6 @@ import { StateService } from "@bitwarden/common/platform/abstractions/state.serv
 import { DialogService } from "@bitwarden/components";
 
 @Component({
-  selector: "app-user-subscription",
   templateUrl: "user-subscription.component.html",
 })
 export class UserSubscriptionComponent implements OnInit {

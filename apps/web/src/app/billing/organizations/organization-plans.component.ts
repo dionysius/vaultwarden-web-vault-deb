@@ -35,10 +35,10 @@ import {
 } from "@bitwarden/common/platform/models/domain/symmetric-crypto-key";
 import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
 
-import { secretsManagerSubscribeFormFactory } from "../organizations/secrets-manager/sm-subscribe.component";
-
-import { PaymentComponent } from "./payment.component";
-import { TaxInfoComponent } from "./tax-info.component";
+import { OrganizationCreateModule } from "../../admin-console/organizations/create/organization-create.module";
+import { BillingSharedModule, secretsManagerSubscribeFormFactory } from "../shared";
+import { PaymentComponent } from "../shared/payment.component";
+import { TaxInfoComponent } from "../shared/tax-info.component";
 
 interface OnSuccessArgs {
   organizationId: string;
@@ -47,6 +47,8 @@ interface OnSuccessArgs {
 @Component({
   selector: "app-organization-plans",
   templateUrl: "organization-plans.component.html",
+  standalone: true,
+  imports: [BillingSharedModule, OrganizationCreateModule],
 })
 export class OrganizationPlansComponent implements OnInit, OnDestroy {
   @ViewChild(PaymentComponent) paymentComponent: PaymentComponent;

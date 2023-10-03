@@ -9,6 +9,8 @@ import { TaxInfoResponse } from "@bitwarden/common/billing/models/response/tax-i
 import { TaxRateResponse } from "@bitwarden/common/billing/models/response/tax-rate.response";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 
+import { SharedModule } from "../../shared";
+
 type TaxInfoView = Omit<TaxInfoResponse, "taxIdType"> & {
   includeTaxId: boolean;
   [key: string]: unknown;
@@ -17,6 +19,8 @@ type TaxInfoView = Omit<TaxInfoResponse, "taxIdType"> & {
 @Component({
   selector: "app-tax-info",
   templateUrl: "tax-info.component.html",
+  standalone: true,
+  imports: [SharedModule],
 })
 // eslint-disable-next-line rxjs-angular/prefer-takeuntil
 export class TaxInfoComponent {

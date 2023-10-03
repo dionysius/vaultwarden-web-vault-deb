@@ -18,7 +18,6 @@ export interface BillingSyncKeyModalData {
 }
 
 @Component({
-  selector: "app-billing-sync-key",
   templateUrl: "billing-sync-key.component.html",
 })
 export class BillingSyncKeyComponent {

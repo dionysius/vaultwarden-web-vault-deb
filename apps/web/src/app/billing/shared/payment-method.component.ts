@@ -17,7 +17,6 @@ import { DialogService } from "@bitwarden/components";
 import { TaxInfoComponent } from "./tax-info.component";
 
 @Component({
-  selector: "app-payment-method",
   templateUrl: "payment-method.component.html",
 })
 // eslint-disable-next-line rxjs-angular/prefer-takeuntil

@@ -6,7 +6,6 @@ import { BillingHistoryResponse } from "@bitwarden/common/billing/models/respons
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 
 @Component({
-  selector: "app-billing-history-view",
   templateUrl: "billing-history-view.component.html",
 })
 export class BillingHistoryViewComponent implements OnInit {
