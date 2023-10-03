@@ -6,6 +6,7 @@ export class CollectionData {
   name: string;
   externalId: string;
   readOnly: boolean;
+  hidePasswords: boolean;
 
   constructor(response: CollectionDetailsResponse) {
     this.id = response.id;
@@ -13,5 +14,6 @@ export class CollectionData {
     this.name = response.name;
     this.externalId = response.externalId;
     this.readOnly = response.readOnly;
+    this.hidePasswords = response.hidePasswords;
   }
 }

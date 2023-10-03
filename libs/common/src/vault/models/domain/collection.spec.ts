@@ -13,6 +13,7 @@ describe("Collection", () => {
       name: "encName",
       externalId: "extId",
       readOnly: true,
+      hidePasswords: true,
     };
   });
 
@@ -39,7 +40,7 @@ describe("Collection", () => {
       name: { encryptedString: "encName", encryptionType: 0 },
       externalId: "extId",
       readOnly: true,
-      hidePasswords: null,
+      hidePasswords: true,
     });
   });
 

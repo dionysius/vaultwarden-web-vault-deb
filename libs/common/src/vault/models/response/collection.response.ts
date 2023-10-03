@@ -18,10 +18,12 @@ export class CollectionResponse extends BaseResponse {
 
 export class CollectionDetailsResponse extends CollectionResponse {
   readOnly: boolean;
+  hidePasswords: boolean;
 
   constructor(response: any) {
     super(response);
     this.readOnly = this.getResponseProperty("ReadOnly") || false;
+    this.hidePasswords = this.getResponseProperty("HidePasswords") || false;
   }
 }
 
