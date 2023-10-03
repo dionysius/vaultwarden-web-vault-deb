@@ -85,6 +85,7 @@ import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.serv
 import { FolderApiService } from "@bitwarden/common/vault/services/folder/folder-api.service";
 import { DialogService } from "@bitwarden/components";
 import { VaultExportServiceAbstraction } from "@bitwarden/exporter/vault-export";
+import { ImportServiceAbstraction } from "@bitwarden/importer";
 
 import { BrowserOrganizationService } from "../../admin-console/services/browser-organization.service";
 import { BrowserPolicyService } from "../../admin-console/services/browser-policy.service";
@@ -366,6 +367,11 @@ function getBgService<T>(service: keyof MainBackground) {
     {
       provide: AutofillService,
       useFactory: getBgService<AutofillService>("autofillService"),
+      deps: [],
+    },
+    {
+      provide: ImportServiceAbstraction,
+      useFactory: getBgService<ImportServiceAbstraction>("importService"),
       deps: [],
     },
     {

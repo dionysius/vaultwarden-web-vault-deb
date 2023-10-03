@@ -3,6 +3,7 @@ export enum FeatureFlag {
   DisplayLowKdfIterationWarningFlag = "display-kdf-iteration-warning",
   TrustedDeviceEncryption = "trusted-device-encryption",
   AutofillV2 = "autofill-v2",
+  BrowserFilelessImport = "browser-fileless-import",
 }
 
 // Replace this with a type safe lookup of the feature flag values in PM-2282
