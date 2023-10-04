@@ -235,6 +235,11 @@ export class TwoFactorComponent extends CaptchaProtectedComponent implements OnI
       return;
     }
 
+    // Save off the OrgSsoIdentifier for use in the TDE flows
+    // - TDE login decryption options component
+    // - Browser SSO on extension open
+    await this.stateService.setUserSsoOrganizationIdentifier(this.orgIdentifier);
+
     this.loginService.clearValues();
 
     const acctDecryptionOpts: AccountDecryptionOptions =

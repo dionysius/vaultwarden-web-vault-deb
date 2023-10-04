@@ -76,12 +76,8 @@ export class SsoComponent {
           state != null &&
           this.checkState(state, qParams.state)
         ) {
-          // We are not using a query param to pass org identifier around specifically
-          // for the browser SSO case when it needs it on extension open after SSO success
-          // on the TDE login decryption options component
           const ssoOrganizationIdentifier = this.getOrgIdentifierFromState(qParams.state);
           await this.logIn(qParams.code, codeVerifier, ssoOrganizationIdentifier);
-          await this.stateService.setUserSsoOrganizationIdentifier(ssoOrganizationIdentifier);
         }
       } else if (
         qParams.clientId != null &&
@@ -183,14 +179,14 @@ export class SsoComponent {
     return authorizeUrl;
   }
 
-  private async logIn(code: string, codeVerifier: string, orgIdentifier: string) {
+  private async logIn(code: string, codeVerifier: string, orgSsoIdentifier: string): Promise<void> {
     this.loggingIn = true;
     try {
       const credentials = new SsoLogInCredentials(
         code,
         codeVerifier,
         this.redirectUri,
-        orgIdentifier
+        orgSsoIdentifier
       );
       this.formPromise = this.authService.logIn(credentials);
       const authResult = await this.formPromise;
@@ -199,8 +195,17 @@ export class SsoComponent {
         await this.stateService.getAccountDecryptionOptions();
 
       if (authResult.requiresTwoFactor) {
-        return await this.handleTwoFactorRequired(orgIdentifier);
+        return await this.handleTwoFactorRequired(orgSsoIdentifier);
       }
+
+      // Everything after the 2FA check is considered a successful login
+      // Just have to figure out where to send the user
+
+      // Save off the OrgSsoIdentifier for use in the TDE flows
+      // - TDE login decryption options component
+      // - Browser SSO on extension open
+      // Note: you cannot set this in state before 2FA b/c there won't be an account in state.
+      await this.stateService.setUserSsoOrganizationIdentifier(orgSsoIdentifier);
 
       const tdeEnabled = await this.isTrustedDeviceEncEnabled(
         acctDecryptionOpts.trustedDeviceOption
@@ -209,7 +214,7 @@ export class SsoComponent {
       if (tdeEnabled) {
         return await this.handleTrustedDeviceEncryptionEnabled(
           authResult,
-          orgIdentifier,
+          orgSsoIdentifier,
           acctDecryptionOpts
         );
       }
@@ -223,13 +228,13 @@ export class SsoComponent {
 
       if (requireSetPassword || authResult.resetMasterPassword) {
         // Change implies going no password -> password in this case
-        return await this.handleChangePasswordRequired(orgIdentifier);
+        return await this.handleChangePasswordRequired(orgSsoIdentifier);
       }
 
       // Users enrolled in admin acct recovery can be forced to set a new password after
       // having the admin set a temp password for them
       if (authResult.forcePasswordReset == ForceResetPasswordReason.AdminForcePasswordReset) {
-        return await this.handleForcePasswordReset(orgIdentifier);
+        return await this.handleForcePasswordReset(orgSsoIdentifier);
       }
 
       // Standard SSO login success case
