@@ -38,12 +38,19 @@ jobs:
             > tmp.txt
           diff <(sort .github/whitelist-capital-letters.txt) <(sort tmp.txt)
 
+      - name: Get Node Version
+        id: retrieve-node-version
+        run: |
+          NODE_NVMRC=$(cat .nvmrc)
+          NODE_VERSION=${NODE_NVMRC/v/''}
+          echo "node_version=$NODE_VERSION" >> $GITHUB_OUTPUT
+
       - name: Set up Node
         uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c # v3.6.0
         with:
           cache: 'npm'
           cache-dependency-path: '**/package-lock.json'
-          node-version: '18'
+          node-version: ${{ steps.retrieve-node-version.outputs.node_version }}
 
       - name: Run linter
         run: |

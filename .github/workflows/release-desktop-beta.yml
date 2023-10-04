@@ -21,6 +21,7 @@ jobs:
       release-channel: ${{ steps.release-channel.outputs.channel }}
       branch-name: ${{ steps.branch.outputs.branch-name }}
       build_number: ${{ steps.increment-version.outputs.build_number }}
+      node_version: ${{ steps.retrieve-node-version.outputs.node_version }}
     steps:
       - name: Checkout repo
         uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3.5.3
@@ -104,12 +105,20 @@ jobs:
 
           echo "branch-name=$branch_name" >> $GITHUB_OUTPUT
 
+      - name: Get Node Version
+        id: retrieve-node-version
+        run: |
+          NODE_NVMRC=$(cat .nvmrc)
+          NODE_VERSION=${NODE_NVMRC/v/''}
+          echo "node_version=$NODE_VERSION" >> $GITHUB_OUTPUT
+
   linux:
     name: Linux Build
     runs-on: ubuntu-20.04
     needs: setup
     env:
       _PACKAGE_VERSION: ${{ needs.setup.outputs.release-version }}
+      _NODE_VERSION: ${{ needs.setup.outputs.node_version }}
     defaults:
       run:
         working-directory: apps/desktop
@@ -124,7 +133,7 @@ jobs:
         with:
           cache: 'npm'
           cache-dependency-path: '**/package-lock.json'
-          node-version: '18'
+          node-version: ${{ env._NODE_VERSION }}
 
       - name: Set Node options
         run: echo "NODE_OPTIONS=--max_old_space_size=4096" >> $GITHUB_ENV
@@ -209,6 +218,7 @@ jobs:
         working-directory: apps/desktop
     env:
       _PACKAGE_VERSION: ${{ needs.setup.outputs.release-version }}
+      _NODE_VERSION: ${{ needs.setup.outputs.node_version }}
     steps:
       - name: Checkout repo
         uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3.5.3
@@ -220,7 +230,7 @@ jobs:
         with:
           cache: 'npm'
           cache-dependency-path: '**/package-lock.json'
-          node-version: '18'
+          node-version: ${{ env._NODE_VERSION }}
 
       - name: Set Node options
         run: echo "NODE_OPTIONS=--max_old_space_size=4096" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
@@ -401,6 +411,7 @@ jobs:
     needs: setup
     env:
       _PACKAGE_VERSION: ${{ needs.setup.outputs.release-version }}
+      _NODE_VERSION: ${{ needs.setup.outputs.node_version }}
     defaults:
       run:
         working-directory: apps/desktop
@@ -415,7 +426,7 @@ jobs:
         with:
           cache: 'npm'
           cache-dependency-path: '**/package-lock.json'
-          node-version: '18'
+          node-version: ${{ env._NODE_VERSION }}
 
       - name: Set Node options
         run: echo "NODE_OPTIONS=--max_old_space_size=4096" >> $GITHUB_ENV
@@ -530,6 +541,7 @@ jobs:
       - macos-build
     env:
       _PACKAGE_VERSION: ${{ needs.setup.outputs.release-version }}
+      _NODE_VERSION: ${{ needs.setup.outputs.node_version }}
     defaults:
       run:
         working-directory: apps/desktop
@@ -544,7 +556,7 @@ jobs:
         with:
           cache: 'npm'
           cache-dependency-path: '**/package-lock.json'
-          node-version: '18'
+          node-version: ${{ env._NODE_VERSION }}
 
       - name: Set Node options
         run: echo "NODE_OPTIONS=--max_old_space_size=4096" >> $GITHUB_ENV
@@ -732,6 +744,7 @@ jobs:
       - macos-build
     env:
       _PACKAGE_VERSION: ${{ needs.setup.outputs.release-version }}
+      _NODE_VERSION: ${{ needs.setup.outputs.node_version }}
     defaults:
       run:
         working-directory: apps/desktop
@@ -746,7 +759,7 @@ jobs:
         with:
           cache: 'npm'
           cache-dependency-path: '**/package-lock.json'
-          node-version: '18'
+          node-version: ${{ env._NODE_VERSION }}
 
       - name: Set Node options
         run: echo "NODE_OPTIONS=--max_old_space_size=4096" >> $GITHUB_ENV

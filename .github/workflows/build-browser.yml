@@ -58,7 +58,11 @@ jobs:
     outputs:
       repo_url: ${{ steps.gen_vars.outputs.repo_url }}
       adj_build_number: ${{ steps.gen_vars.outputs.adj_build_number }}
+      node_version: ${{ steps.retrieve-node-version.outputs.node_version }}
     steps:
+      - name: Checkout repo
+        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3.5.3
+
       - name: Get Package Version
         id: gen_vars
         run: |
@@ -67,6 +71,14 @@ jobs:
 
           echo "repo_url=$repo_url" >> $GITHUB_OUTPUT
           echo "adj_build_number=$adj_build_num" >> $GITHUB_OUTPUT
+
+      - name: Get Node Version
+        id: retrieve-node-version
+        working-directory: ./
+        run: |
+          NODE_NVMRC=$(cat .nvmrc)
+          NODE_VERSION=${NODE_NVMRC/v/''}
+          echo "node_version=$NODE_VERSION" >> $GITHUB_OUTPUT
 
 
   locales-test:
@@ -114,6 +126,7 @@ jobs:
       - locales-test
     env:
       _BUILD_NUMBER: ${{ needs.setup.outputs.adj_build_number }}
+      _NODE_VERSION: ${{ needs.setup.outputs.node_version }}
     steps:
       - name: Checkout repo
         uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3.5.3
@@ -123,7 +136,7 @@ jobs:
         with:
           cache: 'npm'
           cache-dependency-path: '**/package-lock.json'
-          node-version: '18'
+          node-version: ${{ env._NODE_VERSION }}
 
       - name: Install node-gyp
         run: |
@@ -251,6 +264,7 @@ jobs:
       - locales-test
     env:
       _BUILD_NUMBER: ${{ needs.setup.outputs.adj_build_number }}
+      _NODE_VERSION: ${{ needs.setup.outputs.node_version }}
     steps:
       - name: Checkout repo
         uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3.5.3
@@ -260,7 +274,7 @@ jobs:
         with:
           cache: 'npm'
           cache-dependency-path: '**/package-lock.json'
-          node-version: '18'
+          node-version: ${{ env._NODE_VERSION }}
 
       - name: Print environment
         run: |
