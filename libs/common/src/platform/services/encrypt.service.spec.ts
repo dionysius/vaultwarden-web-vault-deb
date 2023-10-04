@@ -115,7 +115,8 @@ describe("EncryptService", () => {
       expect(cryptoFunctionService.aesDecrypt).toBeCalledWith(
         expect.toEqualBuffer(encBuffer.dataBytes),
         expect.toEqualBuffer(encBuffer.ivBytes),
-        expect.toEqualBuffer(key.encKey)
+        expect.toEqualBuffer(key.encKey),
+        "cbc"
       );
 
       expect(actual).toEqualBuffer(decryptedBytes);

@@ -3,6 +3,7 @@ import { Substitute } from "@fluffy-spoon/substitute";
 
 import { Utils } from "../../platform/misc/utils";
 import { PlatformUtilsService } from "../abstractions/platform-utils.service";
+import { DecryptParameters } from "../models/domain/decrypt-parameters";
 import { SymmetricCryptoKey } from "../models/domain/symmetric-crypto-key";
 
 import { WebCryptoFunctionService } from "./web-crypto-function.service";
@@ -233,7 +234,7 @@ describe("WebCrypto Function Service", () => {
     });
   });
 
-  describe("aesEncrypt", () => {
+  describe("aesEncrypt CBC mode", () => {
     it("should successfully encrypt data", async () => {
       const cryptoFunctionService = getWebCryptoFunctionService();
       const iv = makeStaticByteArray(16);
@@ -254,7 +255,7 @@ describe("WebCrypto Function Service", () => {
       const b64Iv = Utils.fromBufferToB64(iv);
       const symKey = new SymmetricCryptoKey(key);
       const params = cryptoFunctionService.aesDecryptFastParameters(encData, b64Iv, null, symKey);
-      const decValue = await cryptoFunctionService.aesDecryptFast(params);
+      const decValue = await cryptoFunctionService.aesDecryptFast(params, "cbc");
       expect(decValue).toBe(value);
     });
 
@@ -265,30 +266,53 @@ describe("WebCrypto Function Service", () => {
       const value = "EncryptMe!";
       const data = Utils.fromUtf8ToArray(value);
       const encValue = new Uint8Array(await cryptoFunctionService.aesEncrypt(data, iv, key));
-      const decValue = await cryptoFunctionService.aesDecrypt(encValue, iv, key);
+      const decValue = await cryptoFunctionService.aesDecrypt(encValue, iv, key, "cbc");
       expect(Utils.fromBufferToUtf8(decValue)).toBe(value);
     });
   });
 
-  describe("aesDecryptFast", () => {
+  describe("aesDecryptFast CBC mode", () => {
     it("should successfully decrypt data", async () => {
       const cryptoFunctionService = getWebCryptoFunctionService();
       const iv = Utils.fromBufferToB64(makeStaticByteArray(16));
       const symKey = new SymmetricCryptoKey(makeStaticByteArray(32));
       const data = "ByUF8vhyX4ddU9gcooznwA==";
       const params = cryptoFunctionService.aesDecryptFastParameters(data, iv, null, symKey);
-      const decValue = await cryptoFunctionService.aesDecryptFast(params);
+      const decValue = await cryptoFunctionService.aesDecryptFast(params, "cbc");
       expect(decValue).toBe("EncryptMe!");
     });
   });
 
-  describe("aesDecrypt", () => {
+  describe("aesDecryptFast ECB mode", () => {
+    it("should successfully decrypt data", async () => {
+      const cryptoFunctionService = getWebCryptoFunctionService();
+      const key = makeStaticByteArray(32);
+      const data = Utils.fromB64ToArray("z5q2XSxYCdQFdI+qK2yLlw==");
+      const params = new DecryptParameters<string>();
+      params.encKey = Utils.fromBufferToByteString(key);
+      params.data = Utils.fromBufferToByteString(data);
+      const decValue = await cryptoFunctionService.aesDecryptFast(params, "ecb");
+      expect(decValue).toBe("EncryptMe!");
+    });
+  });
+
+  describe("aesDecrypt CBC mode", () => {
     it("should successfully decrypt data", async () => {
       const cryptoFunctionService = getWebCryptoFunctionService();
       const iv = makeStaticByteArray(16);
       const key = makeStaticByteArray(32);
       const data = Utils.fromB64ToArray("ByUF8vhyX4ddU9gcooznwA==");
-      const decValue = await cryptoFunctionService.aesDecrypt(data, iv, key);
+      const decValue = await cryptoFunctionService.aesDecrypt(data, iv, key, "cbc");
+      expect(Utils.fromBufferToUtf8(decValue)).toBe("EncryptMe!");
+    });
+  });
+
+  describe("aesDecrypt ECB mode", () => {
+    it("should successfully decrypt data", async () => {
+      const cryptoFunctionService = getWebCryptoFunctionService();
+      const key = makeStaticByteArray(32);
+      const data = Utils.fromB64ToArray("z5q2XSxYCdQFdI+qK2yLlw==");
+      const decValue = await cryptoFunctionService.aesDecrypt(data, null, key, "ecb");
       expect(Utils.fromBufferToUtf8(decValue)).toBe("EncryptMe!");
     });
   });

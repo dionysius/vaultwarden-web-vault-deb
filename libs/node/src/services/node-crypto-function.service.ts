@@ -189,16 +189,24 @@ export class NodeCryptoFunctionService implements CryptoFunctionService {
     return p;
   }
 
-  async aesDecryptFast(parameters: DecryptParameters<Uint8Array>): Promise<string> {
-    const decBuf = await this.aesDecrypt(parameters.data, parameters.iv, parameters.encKey);
+  async aesDecryptFast(
+    parameters: DecryptParameters<Uint8Array>,
+    mode: "cbc" | "ecb"
+  ): Promise<string> {
+    const decBuf = await this.aesDecrypt(parameters.data, parameters.iv, parameters.encKey, mode);
     return Utils.fromBufferToUtf8(decBuf);
   }
 
-  aesDecrypt(data: Uint8Array, iv: Uint8Array, key: Uint8Array): Promise<Uint8Array> {
+  aesDecrypt(
+    data: Uint8Array,
+    iv: Uint8Array,
+    key: Uint8Array,
+    mode: "cbc" | "ecb"
+  ): Promise<Uint8Array> {
     const nodeData = this.toNodeBuffer(data);
-    const nodeIv = this.toNodeBuffer(iv);
+    const nodeIv = mode === "ecb" ? null : this.toNodeBuffer(iv);
     const nodeKey = this.toNodeBuffer(key);
-    const decipher = crypto.createDecipheriv("aes-256-cbc", nodeKey, nodeIv);
+    const decipher = crypto.createDecipheriv(this.toNodeCryptoAesMode(mode), nodeKey, nodeIv);
     const decBuf = Buffer.concat([decipher.update(nodeData), decipher.final()]);
     return Promise.resolve(this.toUint8Buffer(decBuf));
   }
@@ -325,5 +333,9 @@ export class NodeCryptoFunctionService implements CryptoFunctionService {
     const asn1 = forge.asn1.fromDer(byteString);
     const publicKey = forge.pki.publicKeyFromAsn1(asn1);
     return forge.pki.publicKeyToPem(publicKey);
+  }
+
+  private toNodeCryptoAesMode(mode: "cbc" | "ecb"): string {
+    return mode === "cbc" ? "aes-256-cbc" : "aes-256-ecb";
   }
 }

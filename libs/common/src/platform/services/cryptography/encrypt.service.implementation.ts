@@ -99,7 +99,7 @@ export class EncryptServiceImplementation implements EncryptService {
       }
     }
 
-    return await this.cryptoFunctionService.aesDecryptFast(fastParams);
+    return await this.cryptoFunctionService.aesDecryptFast(fastParams, "cbc");
   }
 
   async decryptToBytes(encThing: Encrypted, key: SymmetricCryptoKey): Promise<Uint8Array> {
@@ -140,7 +140,8 @@ export class EncryptServiceImplementation implements EncryptService {
     const result = await this.cryptoFunctionService.aesDecrypt(
       encThing.dataBytes,
       encThing.ivBytes,
-      key.encKey
+      key.encKey,
+      "cbc"
     );
 
     return result ?? null;

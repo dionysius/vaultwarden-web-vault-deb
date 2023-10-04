@@ -52,8 +52,16 @@ export abstract class CryptoFunctionService {
     mac: string,
     key: SymmetricCryptoKey
   ) => DecryptParameters<Uint8Array | string>;
-  aesDecryptFast: (parameters: DecryptParameters<Uint8Array | string>) => Promise<string>;
-  aesDecrypt: (data: Uint8Array, iv: Uint8Array, key: Uint8Array) => Promise<Uint8Array>;
+  aesDecryptFast: (
+    parameters: DecryptParameters<Uint8Array | string>,
+    mode: "cbc" | "ecb"
+  ) => Promise<string>;
+  aesDecrypt: (
+    data: Uint8Array,
+    iv: Uint8Array,
+    key: Uint8Array,
+    mode: "cbc" | "ecb"
+  ) => Promise<Uint8Array>;
   rsaEncrypt: (
     data: Uint8Array,
     publicKey: Uint8Array,
