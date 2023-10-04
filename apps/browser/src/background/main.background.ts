@@ -595,6 +595,7 @@ export default class MainBackground {
       this.platformUtilsService as BrowserPlatformUtilsService,
       this.i18nService,
       this.notificationsService,
+      this.stateService,
       this.systemService,
       this.environmentService,
       this.messagingService,
@@ -655,6 +656,7 @@ export default class MainBackground {
         },
         this.authService,
         this.cipherService,
+        this.stateService,
         this.totpService,
         this.eventCollectionService,
         this.userVerificationService

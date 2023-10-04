@@ -4,6 +4,7 @@ import { AuthService } from "@bitwarden/common/auth/abstractions/auth.service";
 import { UserVerificationService } from "@bitwarden/common/auth/abstractions/user-verification/user-verification.service.abstraction";
 import { AuthenticationStatus } from "@bitwarden/common/auth/enums/authentication-status";
 import { EventType } from "@bitwarden/common/enums";
+import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
 import { StateFactory } from "@bitwarden/common/platform/factories/state-factory";
 import { GlobalState } from "@bitwarden/common/platform/models/domain/global-state";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
@@ -63,6 +64,7 @@ export class ContextMenuClickedHandler {
     private autofillAction: AutofillAction,
     private authService: AuthService,
     private cipherService: CipherService,
+    private stateService: StateService,
     private totpService: TotpService,
     private eventCollectionService: EventCollectionService,
     private userVerificationService: UserVerificationService
@@ -114,6 +116,7 @@ export class ContextMenuClickedHandler {
       (tab, cipher) => autofillCommand.doAutofillTabWithCipherCommand(tab, cipher),
       await authServiceFactory(cachedServices, serviceOptions),
       await cipherServiceFactory(cachedServices, serviceOptions),
+      await stateServiceFactory(cachedServices, serviceOptions),
       await totpServiceFactory(cachedServices, serviceOptions),
       await eventCollectionServiceFactory(cachedServices, serviceOptions),
       await userVerificationServiceFactory(cachedServices, serviceOptions)
@@ -224,6 +227,7 @@ export class ContextMenuClickedHandler {
       return;
     }
 
+    this.stateService.setLastActive(new Date().getTime());
     switch (info.parentMenuItemId) {
       case AUTOFILL_ID:
       case AUTOFILL_IDENTITY_ID:

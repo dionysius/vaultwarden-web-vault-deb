@@ -11,6 +11,7 @@ import { CipherType } from "@bitwarden/common/vault/enums/cipher-type";
 import { AutofillService } from "../autofill/services/abstractions/autofill.service";
 import { BrowserApi } from "../platform/browser/browser-api";
 import { BrowserPopoutWindowService } from "../platform/popup/abstractions/browser-popout-window.service";
+import { BrowserStateService } from "../platform/services/abstractions/browser-state.service";
 import { BrowserEnvironmentService } from "../platform/services/browser-environment.service";
 import BrowserPlatformUtilsService from "../platform/services/browser-platform-utils.service";
 
@@ -29,6 +30,7 @@ export default class RuntimeBackground {
     private platformUtilsService: BrowserPlatformUtilsService,
     private i18nService: I18nService,
     private notificationsService: NotificationsService,
+    private stateService: BrowserStateService,
     private systemService: SystemService,
     private environmentService: BrowserEnvironmentService,
     private messagingService: MessagingService,
@@ -176,6 +178,7 @@ export default class RuntimeBackground {
         switch (msg.sender) {
           case "autofiller":
           case "autofill_cmd": {
+            this.stateService.setLastActive(new Date().getTime());
             const totpCode = await this.autofillService.doAutoFillActiveTab(
               [
                 {
