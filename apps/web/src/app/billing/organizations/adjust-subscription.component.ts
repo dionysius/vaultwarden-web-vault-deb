@@ -38,8 +38,10 @@ export class AdjustSubscription {
 
   async submit() {
     try {
-      const seatAdjustment = this.newSeatCount - this.currentSeatCount;
-      const request = new OrganizationSubscriptionUpdateRequest(seatAdjustment, this.newMaxSeats);
+      const request = new OrganizationSubscriptionUpdateRequest(
+        this.additionalSeatCount,
+        this.newMaxSeats
+      );
       this.formPromise = this.organizationApiService.updatePasswordManagerSeats(
         this.organizationId,
         request
@@ -64,11 +66,19 @@ export class AdjustSubscription {
     }
   }
 
+  get additionalSeatCount(): number {
+    return this.newSeatCount ? this.newSeatCount - this.currentSeatCount : 0;
+  }
+
+  get additionalMaxSeatCount(): number {
+    return this.newMaxSeats ? this.newMaxSeats - this.currentSeatCount : 0;
+  }
+
   get adjustedSeatTotal(): number {
-    return this.newSeatCount * this.seatPrice;
+    return this.additionalSeatCount * this.seatPrice;
   }
 
   get maxSeatTotal(): number {
-    return this.newMaxSeats * this.seatPrice;
+    return this.additionalMaxSeatCount * this.seatPrice;
   }
 }
