@@ -141,10 +141,7 @@ export class VaultHeaderComponent {
     }
 
     // Otherwise, check if we can edit the specified collection
-    return (
-      this.organization.canEditAnyCollection ||
-      (this.organization.canEditAssignedCollections && this.collection?.node.assigned)
-    );
+    return this.collection.node.canEdit(this.organization);
   }
 
   addCipher() {
@@ -174,10 +171,7 @@ export class VaultHeaderComponent {
     }
 
     // Otherwise, check if we can delete the specified collection
-    return (
-      this.organization?.canDeleteAnyCollection ||
-      (this.organization?.canDeleteAssignedCollections && this.collection.node.assigned)
-    );
+    return this.collection.node.canDelete(this.organization);
   }
 
   deleteCollection() {

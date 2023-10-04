@@ -7,7 +7,6 @@ import { CollectionView } from "@bitwarden/common/vault/models/view/collection.v
 import { TableDataSource } from "@bitwarden/components";
 
 import { GroupView } from "../../../admin-console/organizations/core";
-import { CollectionAdminView } from "../../core/views/collection-admin.view";
 import { Unassigned } from "../../individual-vault/vault-filter/shared/models/routed-vault-filter.model";
 
 import { VaultItem } from "./vault-item";
@@ -33,7 +32,6 @@ export class VaultItemsComponent {
   @Input() showCollections: boolean;
   @Input() showGroups: boolean;
   @Input() useEvents: boolean;
-  @Input() editableCollections: boolean;
   @Input() cloneableOrganizationCiphers: boolean;
   @Input() showPremiumFeatures: boolean;
   @Input() showBulkMove: boolean;
@@ -80,44 +78,30 @@ export class VaultItemsComponent {
     return this.dataSource.data.length === 0;
   }
 
-  protected canEditCollection(collection: CollectionView): boolean {
-    // We currently don't support editing collections from individual vault
-    if (!(collection instanceof CollectionAdminView)) {
-      return false;
-    }
-
-    // Only allow allow deletion if collection editing is enabled and not deleting "Unassigned"
-    if (!this.editableCollections || collection.id === Unassigned) {
-      return false;
-    }
-
-    const organization = this.allOrganizations.find((o) => o.id === collection.organizationId);
-
-    // Otherwise, check if we can edit the specified collection
+  get bulkMoveAllowed() {
     return (
-      organization?.canEditAnyCollection ||
-      (organization?.canEditAssignedCollections && collection.assigned)
+      this.showBulkMove && this.selection.selected.filter((item) => item.collection).length === 0
     );
   }
 
-  protected canDeleteCollection(collection: CollectionView): boolean {
-    // We currently don't support editing collections from individual vault
-    if (!(collection instanceof CollectionAdminView)) {
-      return false;
-    }
-
+  protected canEditCollection(collection: CollectionView): boolean {
     // Only allow allow deletion if collection editing is enabled and not deleting "Unassigned"
-    if (!this.editableCollections || collection.id === Unassigned) {
+    if (collection.id === Unassigned) {
       return false;
     }
 
     const organization = this.allOrganizations.find((o) => o.id === collection.organizationId);
+    return collection.canEdit(organization);
+  }
 
-    // Otherwise, check if we can delete the specified collection
-    return (
-      organization?.canDeleteAnyCollection ||
-      (organization?.canDeleteAssignedCollections && collection.assigned)
-    );
+  protected canDeleteCollection(collection: CollectionView): boolean {
+    // Only allow allow deletion if collection editing is enabled and not deleting "Unassigned"
+    if (collection.id === Unassigned) {
+      return false;
+    }
+
+    const organization = this.allOrganizations.find((o) => o.id === collection.organizationId);
+    return collection.canDelete(organization);
   }
 
   protected toggleAll() {

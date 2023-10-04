@@ -5,6 +5,7 @@ import { TreeNode } from "@bitwarden/common/models/domain/tree-node";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { CollectionView } from "@bitwarden/common/vault/models/view/collection.view";
 
+import { CollectionDialogTabType } from "../../components/collection-dialog";
 import {
   All,
   RoutedVaultFilterModel,
@@ -19,6 +20,7 @@ import {
 export class VaultHeaderComponent {
   protected Unassigned = Unassigned;
   protected All = All;
+  protected CollectionDialogTabType = CollectionDialogTabType;
 
   /**
    * Boolean to determine the loading state of the header.
@@ -29,35 +31,29 @@ export class VaultHeaderComponent {
   /** Current active filter */
   @Input() filter: RoutedVaultFilterModel;
 
-  /**
-   * All organizations that can be shown
-   */
+  /** All organizations that can be shown */
   @Input() organizations: Organization[] = [];
 
-  /**
-   * Currently selected collection
-   */
+  /** Currently selected collection */
   @Input() collection?: TreeNode<CollectionView>;
 
-  /**
-   * Whether 'Collection' option is shown in the 'New' dropdown
-   */
+  /** Whether 'Collection' option is shown in the 'New' dropdown */
   @Input() canCreateCollections: boolean;
 
-  /**
-   * Emits an event when the new item button is clicked in the header
-   */
+  /** Emits an event when the new item button is clicked in the header */
   @Output() onAddCipher = new EventEmitter<void>();
 
-  /**
-   * Emits an event when the new collection button is clicked in the 'New' dropdown menu
-   */
+  /** Emits an event when the new collection button is clicked in the 'New' dropdown menu */
   @Output() onAddCollection = new EventEmitter<null>();
 
-  /**
-   * Emits an event when the new folder button is clicked in the 'New' dropdown menu
-   */
+  /** Emits an event when the new folder button is clicked in the 'New' dropdown menu */
   @Output() onAddFolder = new EventEmitter<null>();
+
+  /** Emits an event when the edit collection button is clicked in the header */
+  @Output() onEditCollection = new EventEmitter<{ tab: CollectionDialogTabType }>();
+
+  /** Emits an event when the delete collection button is clicked in the header */
+  @Output() onDeleteCollection = new EventEmitter<void>();
 
   constructor(private i18nService: I18nService) {}
 
@@ -125,6 +121,40 @@ export class VaultHeaderComponent {
       .slice(1)
       .reverse()
       .map((treeNode) => treeNode.node);
+  }
+
+  get canEditCollection(): boolean {
+    // Only edit collections if not editing "Unassigned"
+    if (this.collection === undefined) {
+      return false;
+    }
+
+    // Otherwise, check if we can edit the specified collection
+    const organization = this.organizations.find(
+      (o) => o.id === this.collection?.node.organizationId
+    );
+    return this.collection.node.canEdit(organization);
+  }
+
+  async editCollection(tab: CollectionDialogTabType): Promise<void> {
+    this.onEditCollection.emit({ tab });
+  }
+
+  get canDeleteCollection(): boolean {
+    // Only delete collections if not deleting "Unassigned"
+    if (this.collection === undefined) {
+      return false;
+    }
+
+    // Otherwise, check if we can edit the specified collection
+    const organization = this.organizations.find(
+      (o) => o.id === this.collection?.node.organizationId
+    );
+    return this.collection.node.canDelete(organization);
+  }
+
+  deleteCollection() {
+    this.onDeleteCollection.emit();
   }
 
   protected addCipher() {

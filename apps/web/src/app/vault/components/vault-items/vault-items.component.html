@@ -30,12 +30,12 @@
             appA11yTitle="{{ 'options' | i18n }}"
           ></button>
           <bit-menu #headerMenu>
-            <button *ngIf="showBulkMove" type="button" bitMenuItem (click)="bulkMoveToFolder()">
+            <button *ngIf="bulkMoveAllowed" type="button" bitMenuItem (click)="bulkMoveToFolder()">
               <i class="bwi bwi-fw bwi-folder" aria-hidden="true"></i>
               {{ "moveSelected" | i18n }}
             </button>
             <button
-              *ngIf="showBulkMove"
+              *ngIf="bulkMoveAllowed"
               type="button"
               bitMenuItem
               (click)="bulkMoveToOrganization()"

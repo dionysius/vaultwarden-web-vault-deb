@@ -60,11 +60,11 @@ export class VaultCollectionRowComponent {
   }
 
   protected edit() {
-    this.onEvent.next({ type: "edit", item: this.collection });
+    this.onEvent.next({ type: "editCollection", item: this.collection });
   }
 
   protected access() {
-    this.onEvent.next({ type: "viewAccess", item: this.collection });
+    this.onEvent.next({ type: "viewCollectionAccess", item: this.collection });
   }
 
   protected deleteCollection() {

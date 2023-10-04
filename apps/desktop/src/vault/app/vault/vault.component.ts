@@ -33,10 +33,10 @@ import { DialogService } from "@bitwarden/components";
 import { SearchBarService } from "../../../app/layout/search/search-bar.service";
 import { GeneratorComponent } from "../../../app/tools/generator.component";
 import { invokeMenu, RendererMenuItem } from "../../../utils";
-import { CollectionsComponent } from "../../../vault/app/vault/collections.component";
 
 import { AddEditComponent } from "./add-edit.component";
 import { AttachmentsComponent } from "./attachments.component";
+import { CollectionsComponent } from "./collections.component";
 import { FolderAddEditComponent } from "./folder-add-edit.component";
 import { PasswordHistoryComponent } from "./password-history.component";
 import { ShareComponent } from "./share.component";

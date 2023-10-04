@@ -25,6 +25,8 @@
         (onAddCipher)="addCipher()"
         (onAddCollection)="addCollection()"
         (onAddFolder)="addFolder()"
+        (onEditCollection)="editCollection(selectedCollection.node, $event.tab)"
+        (onDeleteCollection)="deleteCollection(selectedCollection.node)"
       ></app-vault-header>
       <app-callout type="warning" *ngIf="activeFilter.isDeleted" icon="bwi-exclamation-triangle">
         {{ trashCleanupWarning }}
@@ -42,7 +44,6 @@
         [showBulkMove]="showBulkMove"
         [showBulkTrashOptions]="filter.type === 'trash'"
         [useEvents]="false"
-        [editableCollections]="false"
         [cloneableOrganizationCiphers]="false"
         (onEvent)="onVaultItemsEvent($event)"
       >

@@ -125,7 +125,6 @@ Individual.args = {
   showBulkMove: true,
   showBulkTrashOptions: false,
   useEvents: false,
-  editableCollections: false,
   cloneableOrganizationCiphers: false,
 };
 
@@ -141,7 +140,6 @@ IndividualDisabled.args = {
   showBulkMove: true,
   showBulkTrashOptions: false,
   useEvents: false,
-  editableCollections: false,
   cloneableOrganizationCiphers: false,
 };
 
@@ -156,7 +154,6 @@ IndividualTrash.args = {
   showBulkMove: false,
   showBulkTrashOptions: true,
   useEvents: false,
-  editableCollections: false,
   cloneableOrganizationCiphers: false,
 };
 
@@ -171,7 +168,6 @@ IndividualTopLevelCollection.args = {
   showBulkMove: false,
   showBulkTrashOptions: false,
   useEvents: false,
-  editableCollections: false,
   cloneableOrganizationCiphers: false,
 };
 
@@ -186,7 +182,6 @@ IndividualSecondLevelCollection.args = {
   showBulkMove: true,
   showBulkTrashOptions: false,
   useEvents: false,
-  editableCollections: false,
   cloneableOrganizationCiphers: false,
 };
 
@@ -201,7 +196,6 @@ OrganizationVault.args = {
   showBulkMove: false,
   showBulkTrashOptions: false,
   useEvents: true,
-  editableCollections: true,
   cloneableOrganizationCiphers: true,
 };
 
@@ -216,7 +210,6 @@ OrganizationTrash.args = {
   showBulkMove: false,
   showBulkTrashOptions: true,
   useEvents: true,
-  editableCollections: true,
   cloneableOrganizationCiphers: true,
 };
 
@@ -234,7 +227,6 @@ OrganizationTopLevelCollection.args = {
   showBulkMove: false,
   showBulkTrashOptions: false,
   useEvents: true,
-  editableCollections: true,
   cloneableOrganizationCiphers: true,
 };
 
@@ -249,7 +241,6 @@ OrganizationSecondLevelCollection.args = {
   showBulkMove: false,
   showBulkTrashOptions: false,
   useEvents: true,
-  editableCollections: true,
   cloneableOrganizationCiphers: true,
 };
 
