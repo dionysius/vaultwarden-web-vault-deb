@@ -6,9 +6,9 @@ import { OrganizationService } from "@bitwarden/common/admin-console/abstraction
 import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
 import { PasswordStrengthServiceAbstraction } from "@bitwarden/common/tools/password-strength";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
-import { PasswordRepromptService } from "@bitwarden/common/vault/abstractions/password-reprompt.service";
 import { Cipher } from "@bitwarden/common/vault/models/domain/cipher";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
+import { PasswordRepromptService } from "@bitwarden/vault";
 
 // eslint-disable-next-line no-restricted-imports
 import { WeakPasswordsReportComponent as BaseWeakPasswordsReportComponent } from "../../../reports/pages/weak-passwords-report.component";

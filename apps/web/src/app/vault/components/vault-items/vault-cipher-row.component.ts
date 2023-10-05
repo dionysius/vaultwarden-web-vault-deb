@@ -55,7 +55,7 @@ export class VaultCipherRowComponent {
   @HostListener("click")
   protected click() {
     this.router.navigate([], {
-      queryParams: { cipherId: this.cipher.id },
+      queryParams: { itemId: this.cipher.id },
       queryParamsHandling: "merge",
     });
   }

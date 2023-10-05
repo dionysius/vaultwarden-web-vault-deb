@@ -1,9 +1,9 @@
 import { Injectable } from "@angular/core";
+import { lastValueFrom } from "rxjs";
 
 import { UserVerificationService } from "@bitwarden/common/auth/abstractions/user-verification/user-verification.service.abstraction";
-import { PasswordRepromptService as PasswordRepromptServiceAbstraction } from "@bitwarden/common/vault/abstractions/password-reprompt.service";
+import { DialogService } from "@bitwarden/components";
 
-import { ModalService } from "../../services/modal.service";
 import { PasswordRepromptComponent } from "../components/password-reprompt.component";
 
 /**
@@ -11,11 +11,9 @@ import { PasswordRepromptComponent } from "../components/password-reprompt.compo
  * See UserVerificationService for any other situation where you need to verify the user's identity.
  */
 @Injectable()
-export class PasswordRepromptService implements PasswordRepromptServiceAbstraction {
-  protected component = PasswordRepromptComponent;
-
+export class PasswordRepromptService {
   constructor(
-    private modalService: ModalService,
+    private dialogService: DialogService,
     private userVerificationService: UserVerificationService
   ) {}
 
@@ -28,13 +26,12 @@ export class PasswordRepromptService implements PasswordRepromptServiceAbstracti
       return true;
     }
 
-    const ref = this.modalService.open(this.component, { allowMultipleModals: true });
+    const dialog = this.dialogService.open<boolean>(PasswordRepromptComponent, {
+      ariaModal: true,
+    });
 
-    if (ref == null) {
-      return false;
-    }
+    const result = await lastValueFrom(dialog.closed);
 
-    const result = await ref.onClosedPromise();
     return result === true;
   }
 

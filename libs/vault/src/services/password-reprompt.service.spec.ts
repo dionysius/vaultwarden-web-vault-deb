@@ -1,8 +1,7 @@
 import { MockProxy, mock } from "jest-mock-extended";
 
-import { UserVerificationService } from "@bitwarden/common/auth/abstractions/user-verification/user-verification.service.abstraction";
-
-import { ModalService } from "../../services/modal.service";
+import { UserVerificationService } from "@bitwarden/common/src/auth/abstractions/user-verification/user-verification.service.abstraction";
+import { DialogService } from "@bitwarden/components";
 
 import { PasswordRepromptService } from "./password-reprompt.service";
 
@@ -10,13 +9,13 @@ describe("PasswordRepromptService", () => {
   let passwordRepromptService: PasswordRepromptService;
 
   let userVerificationService: MockProxy<UserVerificationService>;
-  let modalService: MockProxy<ModalService>;
+  let dialogService: MockProxy<DialogService>;
 
   beforeEach(() => {
-    modalService = mock<ModalService>();
+    dialogService = mock<DialogService>();
     userVerificationService = mock<UserVerificationService>();
 
-    passwordRepromptService = new PasswordRepromptService(modalService, userVerificationService);
+    passwordRepromptService = new PasswordRepromptService(dialogService, userVerificationService);
   });
 
   describe("enabled()", () => {

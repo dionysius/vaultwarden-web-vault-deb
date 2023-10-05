@@ -6,8 +6,8 @@ import { OrganizationService } from "@bitwarden/common/admin-console/abstraction
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
-import { PasswordRepromptService } from "@bitwarden/common/vault/abstractions/password-reprompt.service";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
+import { PasswordRepromptService } from "@bitwarden/vault";
 
 // eslint-disable-next-line no-restricted-imports
 import { InactiveTwoFactorReportComponent as BaseInactiveTwoFactorReportComponent } from "../../../reports/pages/inactive-two-factor-report.component";

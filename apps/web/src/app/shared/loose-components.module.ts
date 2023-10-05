@@ -79,7 +79,6 @@ import { PasswordGeneratorHistoryComponent } from "../tools/password-generator-h
 import { AccessComponent } from "../tools/send/access.component";
 import { AddEditComponent as SendAddEditComponent } from "../tools/send/add-edit.component";
 import { ToolsComponent } from "../tools/tools.component";
-import { PasswordRepromptComponent } from "../vault/components/password-reprompt.component";
 import { PremiumBadgeComponent } from "../vault/components/premium-badge.component";
 import { AddEditCustomFieldsComponent } from "../vault/individual-vault/add-edit-custom-fields.component";
 import { AddEditComponent } from "../vault/individual-vault/add-edit.component";
@@ -159,7 +158,6 @@ import { SharedModule } from "./shared.module";
     OrgWeakPasswordsReportComponent,
     GeneratorComponent,
     PasswordGeneratorHistoryComponent,
-    PasswordRepromptComponent,
     PreferencesComponent,
     PremiumBadgeComponent,
     ProfileComponent,
@@ -246,7 +244,6 @@ import { SharedModule } from "./shared.module";
     OrgWeakPasswordsReportComponent,
     GeneratorComponent,
     PasswordGeneratorHistoryComponent,
-    PasswordRepromptComponent,
     PreferencesComponent,
     PremiumBadgeComponent,
     ProfileComponent,
