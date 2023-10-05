@@ -157,8 +157,6 @@ jobs:
 
       - name: Install Snap
         uses: samuelmeuli/action-snapcraft@d33c176a9b784876d966f80fb1b461808edc0641  # v2.1.1
-        with:
-          snapcraft_token: ${{ steps.retrieve-secrets.outputs.snapcraft-store-token }}
 
       - name: Download artifacts
         if: ${{ github.event.inputs.release_type != 'Dry Run' }}
@@ -185,7 +183,7 @@ jobs:
         env:
           SNAPCRAFT_STORE_CREDENTIALS: ${{ steps.retrieve-secrets.outputs.snapcraft-store-token }}
         run: |
-          snapcraft push bw_${{ env._PKG_VERSION }}_amd64.snap --release stable
+          snapcraft upload bw_${{ env._PKG_VERSION }}_amd64.snap --release stable
           snapcraft logout
 
   choco:
