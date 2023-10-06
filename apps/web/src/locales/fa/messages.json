@@ -709,7 +709,7 @@
     "message": "یک خطای غیر منتظره رخ داده است."
   },
   "expirationDateError": {
-    "message": "Please select an expiration date that is in the future."
+    "message": "لطفاً تاریخ انقضایی را انتخاب کنید که در آینده است."
   },
   "emailAddress": {
     "message": "نشانی ایمیل"
@@ -952,7 +952,7 @@
     "message": "کپی کد تأیید"
   },
   "copyUuid": {
-    "message": "Copy UUID"
+    "message": "کپی UUID"
   },
   "warning": {
     "message": "هشدار"
@@ -1291,19 +1291,19 @@
     "message": "خطا در رمزگشایی پرونده‌ی درون ریزی شده. کلید رمزگذاری شما با کلید رمزگذاری استفاده شده برای درون ریزی داده‌ها مطابقت ندارد."
   },
   "importDestination": {
-    "message": "Import destination"
+    "message": "مقصد برون ریزی"
   },
   "learnAboutImportOptions": {
-    "message": "Learn about your import options"
+    "message": "درباره گزینه‌های برون ریزی خود بیاموزید"
   },
   "selectImportFolder": {
-    "message": "Select a folder"
+    "message": "یک پوشه انتخاب کنید"
   },
   "selectImportCollection": {
-    "message": "Select a collection"
+    "message": "انتخاب یک مجموعه"
   },
   "importTargetHint": {
-    "message": "Select this option if you want the imported file contents moved to a $DESTINATION$",
+    "message": "اگر می‌خواهید محتوای فایل وارد شده به $DESTINATION$ منتقل شود، این گزینه را انتخاب کنید",
     "description": "Located as a hint under the import target. Will be appended by either folder or collection, depending if the user is importing into an individual or an organizational vault.",
     "placeholders": {
       "destination": {
@@ -1313,7 +1313,7 @@
     }
   },
   "importUnassignedItemsError": {
-    "message": "File contains unassigned items."
+    "message": "فایل حاوی موارد اختصاص نیافته است."
   },
   "selectFormat": {
     "message": "فرمت پرونده‌ی درون ریزی را انتخاب کنید"
@@ -1423,10 +1423,10 @@
     "message": "با درخواست یک مرحله اضافی هنگام ورود، حساب خود را ایمن کنید."
   },
   "twoStepLoginTeamsDesc": {
-    "message": "Enable two-step login for your organization."
+    "message": "ورود دو مرحله ای را برای سازمان خود فعال کنید."
   },
   "twoStepLoginEnterpriseDescStart": {
-    "message": "Enforce Bitwarden Two-step Login options for members by using the ",
+    "message": "گزینه‌های ورود دو مرحله ای Bitwarden را برای اعضا اعمال کنید با استفاده از ",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enforce Bitwarden Two-step Login options for members by using the Two-step Login Policy.'"
   },
   "twoStepLoginPolicy": {
@@ -1925,7 +1925,7 @@
     "message": "۱ گیگابایت فضای ذخیره‌سازی رمزنگاری شده برای پرونده‌های پیوست."
   },
   "premiumSignUpTwoStepOptions": {
-    "message": "Proprietary two-step login options such as YubiKey and Duo."
+    "message": "گزینه های ورود اضافی دو مرحله ای مانند YubiKey و Duo."
   },
   "premiumSignUpEmergency": {
     "message": "دسترسی اضطراری"
@@ -2041,7 +2041,7 @@
     }
   },
   "paymentChargedWithUnpaidSubscription": {
-    "message": "Your payment method will be charged for any unpaid subscriptions."
+    "message": "روش پرداخت شما برای هرگونه اشتراک پرداخت نشده شارژ خواهد شد."
   },
   "paymentChargedWithTrial": {
     "message": "طرح شما با یک دوره آزمایشی رایگان ۷ روزه همراه است. تا پایان دوره آزمایشی از روش پرداخت شما هزینه ای کسر نمی‌شود. هر زمان که مایل بودید می‌توانید آن را لغو کنید."
@@ -3477,7 +3477,7 @@
     "message": "کلید رمزگذاری را به‌روز کنید"
   },
   "updateEncryptionSchemeDesc": {
-    "message": "We've changed the encryption scheme to provide better security. Update your encryption key now by entering your master password below."
+    "message": "ما طرح رمزگذاری را برای ارائه امنیت بهتر تغییر داده‌ایم. کلید رمزگذاری خود را اکنون با وارد کردن کلمه اصلی خود در زیر به روز کنید."
   },
   "updateEncryptionKeyWarning": {
     "message": "پس از به‌روزرسانی کلید رمزگذاری، باید از سیستم خارج شوید و دوباره به همه برنامه‌های Bitwarden که در حال حاضر استفاده می‌کنید (مانند برنامه تلفن همراه یا برنامه‌های افزودنی مرورگر) وارد شوید. عدم خروج و ورود مجدد (که کلید رمزگذاری جدید شما را دانلود می‌کند) ممکن است منجر به خراب شدن داده‌ها شود. ما سعی خواهیم کرد شما را به طور خودکار از سیستم خارج کنیم، اما ممکن است با تأخیر انجام شود."
@@ -3534,7 +3534,7 @@
     "message": "انتخاب کنید که گاو‌صندوق شما چه زمانی عمل توقف زمانی گاوصندوق را انجام دهد."
   },
   "vaultTimeoutLogoutDesc": {
-    "message": "Choose when your vault will be logged out."
+    "message": "انتخاب کنید که گاوصندوق شما چه زمانی از سیستم خارج می‌شود."
   },
   "oneMinute": {
     "message": "۱ دقیقه"
@@ -3625,7 +3625,7 @@
     "message": "این مورد دارای پرونده های پیوست قدیمی است که باید اصلاح شوند."
   },
   "attachmentFixDescription": {
-    "message": "This attachment uses outdated encryption. Select 'Fix' to download, re-encrypt, and re-upload the attachment."
+    "message": "این پیوست از رمزگذاری قدیمی استفاده می‌کند. برای دانلود، رمزگذاری مجدد، و بارگذاری مجدد پیوست، «اصلاح» را انتخاب کنید."
   },
   "fix": {
     "message": "اصلاح",
@@ -4721,7 +4721,7 @@
     "message": "خطا"
   },
   "accountRecoveryManageUsers": {
-    "message": "Manage users must also be granted with the manage account recovery permission"
+    "message": "مدیر کاربران همچنین باید مجوز مدیریت بازیابی حساب کاربری را داشته باشد"
   },
   "setupProvider": {
     "message": "راه اندازی ارائه دهنده"
@@ -4933,7 +4933,7 @@
     "message": "حذف برون ریزی گاوصندوق شخصی"
   },
   "disablePersonalVaultExportDescription": {
-    "message": "Do not allow members to export data from their individual vault."
+    "message": "به اعضا اجازه ندهید که داده‌های گاوصندوق شخصی خود را برون ریزی کنند."
   },
   "vaultExportDisabled": {
     "message": "برون ریزی گاوصندوق غیرفعال شده است"
@@ -5437,7 +5437,7 @@
     "message": "در حال برون ریزی گاوصندوق سازمان"
   },
   "exportingIndividualVaultDescription": {
-    "message": "Only the individual vault items associated with $EMAIL$ will be exported. Organization vault items will not be included. Only vault item information will be exported and will not include associated attachments.",
+    "message": "فقط موارد شخصی گاوصندوق مرتبط با $EMAIL$ برون ریزی خواهند شد. موارد گاوصندوق سازمان شامل نخواهد شد. فقط اطلاعات مورد گاوصندوق برون ریزی خواهد شد و شامل تاریخچه کلمه عبور مرتبط یا پیوست نمی‌شود.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -5446,7 +5446,7 @@
     }
   },
   "exportingOrganizationVaultDesc": {
-    "message": "Only the organization vault associated with $ORGANIZATION$ will be exported. Items in individual vaults or other organizations will not be included.",
+    "message": "فقط گاوصدوق سازمان مرتبط با $ORGANIZATION$ برون ریزی خواهد شد. موارد موجود در گاوصندوق‌های فردی یا سایر سازمان‌ها شامل نمی‌شوند.",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -6836,58 +6836,58 @@
     "message": "تنظیمات KDF را به‌روز کنید"
   },
   "loginInitiated": {
-    "message": "Login initiated"
+    "message": "ورود به سیستم آغاز شد"
   },
   "deviceApprovalRequired": {
-    "message": "Device approval required. Select an approval option below:"
+    "message": "تأیید دستگاه لازم است. یک روش تأیید انتخاب کنید:"
   },
   "rememberThisDevice": {
-    "message": "Remember this device"
+    "message": "این دستگاه را به خاطر بسپار"
   },
   "uncheckIfPublicDevice": {
-    "message": "Uncheck if using a public device"
+    "message": "اگر از دستگاه عمومی استفاده می‌کنید علامت را بردارید"
   },
   "approveFromYourOtherDevice": {
-    "message": "Approve from your other device"
+    "message": "تأیید با دستگاه دیگرتان"
   },
   "requestAdminApproval": {
-    "message": "Request admin approval"
+    "message": "درخواست تأیید مدیر"
   },
   "approveWithMasterPassword": {
-    "message": "Approve with master password"
+    "message": "تأیید با کلمه عبور اصلی"
   },
   "trustedDeviceEncryption": {
-    "message": "Trusted device encryption"
+    "message": "رمزگذاری دستگاه مورد اعتماد"
   },
   "trustedDevices": {
-    "message": "Trusted devices"
+    "message": "دستگاه‌های مورد اعتماد"
   },
   "memberDecryptionOptionTdeDescriptionPartOne": {
-    "message": "Once authenticated, members will decrypt vault data using a key stored on their device. The",
+    "message": "پس از احراز هویت، اعضا با استفاده از کلید ذخیره شده در دستگاه خود، داده‌های گاوصندوق را رمزگشایی می‌کنند.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The single organization policy, SSO Required policy, and account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
   "memberDecryptionOptionTdeDescriptionLinkOne": {
-    "message": "single organization",
+    "message": "سازمان واحد",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The single organization policy, SSO required policy, and account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
   "memberDecryptionOptionTdeDescriptionPartTwo": {
-    "message": "policy,",
+    "message": "سیاست‌ها",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The single organization policy, SSO required policy, and account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
   "memberDecryptionOptionTdeDescriptionLinkTwo": {
-    "message": "SSO required",
+    "message": "SSO الزامی است",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The single organization policy, SSO required policy, and account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
   "memberDecryptionOptionTdeDescriptionPartThree": {
-    "message": "policy, and",
+    "message": "سیاست‌ها و",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The single organization policy, SSO required policy, and account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
   "memberDecryptionOptionTdeDescriptionLinkThree": {
-    "message": "account recovery administration",
+    "message": "مدیریت بازیابی حساب کاربری",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The single organization policy, SSO required policy, and account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
   "memberDecryptionOptionTdeDescriptionPartFour": {
-    "message": "policy with automatic enrollment will turn on when this option is used.",
+    "message": "سیاست‌ها با ثبت نام خودکار زمانی که از این گزینه استفاده می‌شود روشن می‌شود.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The single organization policy, SSO required policy, and account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
   "notFound": {
@@ -6978,7 +6978,7 @@
     "message": "حذف اعضایی که کلمه عبور اصلی ندارند بدون تعیین کلمه عبور برای آنها ممکن است دسترسی به حساب کامل آن‌ها را محدود کند."
   },
   "approvedAuthRequest": {
-    "message": "Approved device for $ID$.",
+    "message": "دستگاه تأیید شده برای $ID$.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -6987,7 +6987,7 @@
     }
   },
   "rejectedAuthRequest": {
-    "message": "Denied device for $ID$.",
+    "message": "دستگاه رد شده برای $ID$.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -6996,7 +6996,7 @@
     }
   },
   "requestedDeviceApproval": {
-    "message": "Requested device approval."
+    "message": "تأیید دستگاه درخواست."
   },
   "startYour7DayFreeTrialOfBitwardenFor": {
     "message": "نسخه آزمایشی رایگان ۷ روزه Bitwarden را با $ORG$ شروع کنید",
@@ -7014,28 +7014,28 @@
     "message": "پرچم منطقه انتخاب شد"
   },
   "accountSuccessfullyCreated": {
-    "message": "Account successfully created!"
+    "message": "حساب کاربری با موفقیت ایجاد شد!"
   },
   "adminApprovalRequested": {
-    "message": "Admin approval requested"
+    "message": "تأیید مدیر درخواست شد"
   },
   "adminApprovalRequestSentToAdmins": {
-    "message": "Your request has been sent to your admin."
+    "message": "درخواست شما به مدیرتان فرستاده شد."
   },
   "youWillBeNotifiedOnceApproved": {
-    "message": "You will be notified once approved."
+    "message": "به محض تأیید مطلع خواهید شد."
   },
   "troubleLoggingIn": {
-    "message": "Trouble logging in?"
+    "message": "در ورود مشکلی دارید؟"
   },
   "loginApproved": {
-    "message": "Login approved"
+    "message": "ورود تأیید شد"
   },
   "userEmailMissing": {
-    "message": "User email missing"
+    "message": "ایمیل کاربر وجود ندارد"
   },
   "deviceTrusted": {
-    "message": "Device trusted"
+    "message": "دستگاه مورد اعتماد است"
   },
   "sendsNoItemsTitle": {
     "message": "ارسال‌های فعالی نیست",
@@ -7106,7 +7106,7 @@
     "message": "حساب‌های خدمات اضافی"
   },
   "includedServiceAccounts": {
-    "message": "Your plan comes with $COUNT$ service accounts.",
+    "message": "طرح شما با حساب خدمات $COUNT$ همراه است.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -7115,7 +7115,7 @@
     }
   },
   "addAdditionalServiceAccounts": {
-    "message": "You can add additional service accounts for $COST$ per month.",
+    "message": "می‌توانید سرویس اضافی حساب‌ها را با $COST$ در ماه اضافه کنید.",
     "placeholders": {
       "cost": {
         "content": "$1",
@@ -7148,10 +7148,10 @@
     "message": "حداکثر هزینه حساب خدمات بالقوه"
   },
   "loggedInExclamation": {
-    "message": "Logged in!"
+    "message": "وارد شده!"
   },
   "smBetaEndedDesc": {
-    "message": "The Secrets Manager Beta ended $BETA_ENDING_DATE$. You have $DAYS$ days left to add Secrets Manager to your paid subscription and maintain access to Secrets Manager data. Contact Customer Success to add Secrets Manager to your subscription.",
+    "message": "بتای مدیر اسرار $BETA_ENDING_DATE$ به پایان رسید. $DAYS$ روز فرصت دارید تا بتا مدیر اسرار را به اشتراک پولی خود اضافه کنید و دسترسی به داده‌های مدیر اسرار را حفظ کنید. برای افزودن مدیر اسرار به اشتراک خود، با پشتیبانی مشتری تماس بگیرید.",
     "placeholders": {
       "beta_ending_date": {
         "content": "$1",
@@ -7164,18 +7164,24 @@
     }
   },
   "betaEnding": {
-    "message": "Beta Ending"
+    "message": "آزمایشی در حال اتمام است"
   },
   "beta": {
-    "message": "Beta"
+    "message": "آزمایشی"
   },
   "baseUrl": {
-    "message": "Server URL"
+    "message": "نشانی اینترنتی سرور"
   },
   "aliasDomain": {
-    "message": "Alias domain"
+    "message": "دامنه مستعار"
   },
   "alreadyHaveAccount": {
-    "message": "Already have an account?"
+    "message": "پیشتر حساب کاربری داشته اید؟"
+  },
+  "customBillingStart": {
+    "message": "صورتحساب سفارشی منعکس نمی‌شود. بازدید کنید "
+  },
+  "customBillingEnd": {
+    "message": " صفحه برای آخرین صورتحساب"
   }
 }

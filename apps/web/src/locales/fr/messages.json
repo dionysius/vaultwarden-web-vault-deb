@@ -2535,7 +2535,7 @@
     "message": "L’identifiant externe peut être utilisé comme référence ou pour lier cette ressource à un système externe tel qu’un répertoire utilisateur."
   },
   "nestCollectionUnder": {
-    "message": "Collection imbriquée dessous"
+    "message": "Collection imbriquée sous"
   },
   "accessControl": {
     "message": "Contrôle d’accès"
@@ -7177,5 +7177,11 @@
   },
   "alreadyHaveAccount": {
     "message": "Vous avez déjà un compte ?"
+  },
+  "customBillingStart": {
+    "message": "La facturation personnalisée n'apparaît pas. Visitez la page "
+  },
+  "customBillingEnd": {
+    "message": " pour la dernière facturation."
   }
 }

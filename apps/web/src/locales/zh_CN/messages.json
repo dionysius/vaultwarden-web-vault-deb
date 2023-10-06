@@ -603,13 +603,13 @@
     "message": "登录或者创建一个账户来访问您的安全密码库。"
   },
   "loginWithDevice": {
-    "message": "设备登录"
+    "message": "使用设备登录"
   },
   "loginWithDeviceEnabledNote": {
     "message": "设备登录必须在 Bitwarden 应用程序的设置中启用。需要其他登录选项吗？"
   },
   "loginWithMasterPassword": {
-    "message": "主密码登录"
+    "message": "使用主密码登录"
   },
   "createAccount": {
     "message": "创建账户"
@@ -785,7 +785,7 @@
     }
   },
   "enterVerificationCodeApp": {
-    "message": "请输入验证器应用程序中的 6 位验证码。"
+    "message": "请输入您的验证器应用中的 6 位数验证码。"
   },
   "enterVerificationCodeEmail": {
     "message": "请输入发送给电子邮件 $EMAIL$ 的 6 位数验证码。",
@@ -1519,7 +1519,7 @@
     "message": "密钥"
   },
   "twoStepAuthenticatorEnterCode": {
-    "message": "输入应用程序中的 6 位验证码"
+    "message": "输入应用程序中的 6 位数验证码"
   },
   "twoStepAuthenticatorReaddDesc": {
     "message": "如果您要把它添加到另一个设备，下面是您的验证器应用所需要的二维码（或密钥）。"
@@ -1615,7 +1615,7 @@
     "message": "输入您希望接收验证码的电子邮件"
   },
   "twoFactorEmailEnterCode": {
-    "message": "输入电子邮件中的 6 位验证码"
+    "message": "输入电子邮件中的 6 位数验证码"
   },
   "sendEmail": {
     "message": "发送电子邮件"
@@ -7177,5 +7177,11 @@
   },
   "alreadyHaveAccount": {
     "message": "已经有一个账户？"
+  },
+  "customBillingStart": {
+    "message": "未返回自定义费用记录。请访问 "
+  },
+  "customBillingEnd": {
+    "message": " 页面获取最新的账单。"
   }
 }

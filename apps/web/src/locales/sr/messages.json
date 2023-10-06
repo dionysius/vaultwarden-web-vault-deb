@@ -7170,12 +7170,18 @@
     "message": "Бета"
   },
   "baseUrl": {
-    "message": "Server URL"
+    "message": "УРЛ Сервера"
   },
   "aliasDomain": {
-    "message": "Alias domain"
+    "message": "Домен алијаса"
   },
   "alreadyHaveAccount": {
     "message": "Већ имате налог?"
+  },
+  "customBillingStart": {
+    "message": "Custom billing is not reflected. Visit the "
+  },
+  "customBillingEnd": {
+    "message": " page for latest invoicing."
   }
 }

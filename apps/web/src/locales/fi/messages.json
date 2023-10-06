@@ -1341,7 +1341,7 @@
     }
   },
   "options": {
-    "message": "Asetukset"
+    "message": "Valinnat"
   },
   "preferences": {
     "message": "Asetukset"
@@ -6591,13 +6591,13 @@
     "message": "Tallenna lisenssi"
   },
   "projectPeopleDescription": {
-    "message": "Myönnä ryhmille tai henkilöille tämän projektin käyttöoikeus."
+    "message": "Myönnä ryhmille tai henkilöille käyttöoikeus projektiin."
   },
   "projectPeopleSelectHint": {
     "message": "Syötä tai valitse henkilöitä tai ryhmiä"
   },
   "projectServiceAccountsDescription": {
-    "message": "Myönnä palvelutileille tämän projektin käyttöoikeus."
+    "message": "Myönnä palvelutileille käyttöoikeus projektiin."
   },
   "projectServiceAccountsSelectHint": {
     "message": "Syötä tai valitse palvelutilit"
@@ -7164,7 +7164,7 @@
     }
   },
   "betaEnding": {
-    "message": "Beta päättyy"
+    "message": "Beta on päättynyt"
   },
   "beta": {
     "message": "Beta"
@@ -7177,5 +7177,11 @@
   },
   "alreadyHaveAccount": {
     "message": "Onko sinulla jo tili?"
+  },
+  "customBillingStart": {
+    "message": "Mukautettu laskutus ei näy. Löydät viimeisimmän laskutuksen "
+  },
+  "customBillingEnd": {
+    "message": " -sivulta."
   }
 }

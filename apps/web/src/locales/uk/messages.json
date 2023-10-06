@@ -7170,12 +7170,18 @@
     "message": "Бета"
   },
   "baseUrl": {
-    "message": "Server URL"
+    "message": "URL-адреса сервера"
   },
   "aliasDomain": {
-    "message": "Alias domain"
+    "message": "Псевдонім домену"
   },
   "alreadyHaveAccount": {
     "message": "Вже маєте обліковий запис?"
+  },
+  "customBillingStart": {
+    "message": "Власний рахунок не відображений. Відвідайте "
+  },
+  "customBillingEnd": {
+    "message": " для отримання останнього рахунку."
   }
 }

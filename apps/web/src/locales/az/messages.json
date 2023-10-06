@@ -7170,12 +7170,18 @@
     "message": "Beta"
   },
   "baseUrl": {
-    "message": "Server URL"
+    "message": "Server URL-si"
   },
   "aliasDomain": {
-    "message": "Alias domain"
+    "message": "Domen ləqəbi"
   },
   "alreadyHaveAccount": {
     "message": "Artıq bir hesabınız var?"
+  },
+  "customBillingStart": {
+    "message": "Özəl faktura əks olunmur. Son faktura üçün "
+  },
+  "customBillingEnd": {
+    "message": " səhifəni ziyarət edin."
   }
 }
