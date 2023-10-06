@@ -476,7 +476,7 @@
     "message": "بیشترین حجم پرونده ۵۰۰ مگابایت است."
   },
   "encryptionKeyMigrationRequired": {
-    "message": "Encryption key migration required. Please login through the web vault to update your encryption key."
+    "message": "انتقال کلید رمزگذاری مورد نیاز است. لطفاً از طریق گاوصندوق وب وارد شوید تا کلید رمزگذاری خود را به روز کنید."
   },
   "editedFolder": {
     "message": "پوشه ذخیره شد"
@@ -1078,7 +1078,7 @@
     "message": "۱ گیگابایت فضای ذخیره‌سازی رمزنگاری شده برای پرونده‌های پیوست."
   },
   "premiumSignUpTwoStepOptions": {
-    "message": "Proprietary two-step login options such as YubiKey and Duo."
+    "message": "گزینه های ورود اضافی دو مرحله ای مانند YubiKey و Duo."
   },
   "premiumSignUpReports": {
     "message": "گزارش‌های بهداشت رمز عبور، سلامت حساب و نقض داده‌ها برای ایمن نگهداشتن گاوصندوق شما."
@@ -1493,7 +1493,7 @@
     "message": "یک گاوصندوق خارج شده درخواست احراز هویت مجدد را برای دسترسی آن می‌دهد."
   },
   "unlockMethodNeededToChangeTimeoutActionDesc": {
-    "message": "Set up an unlock method to change your vault timeout action."
+    "message": "یک روش بازگشایی برای پایان زمان مجاز تنظیم کنید."
   },
   "lock": {
     "message": "قفل",
@@ -1985,7 +1985,7 @@
     "message": "برون ریزی گاو‌صندوق شخصی"
   },
   "exportingIndividualVaultDescription": {
-    "message": "Only the individual vault items associated with $EMAIL$ will be exported. Organization vault items will not be included. Only vault item information will be exported and will not include associated attachments.",
+    "message": "فقط موارد شخصی گاوصندوق مرتبط با $EMAIL$ برون ریزی خواهند شد. موارد گاوصندوق سازمان شامل نخواهد شد. فقط اطلاعات مورد گاوصندوق برون ریزی خواهد شد و شامل تاریخچه کلمه عبور مرتبط یا پیوست نمی‌شود.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -2110,7 +2110,7 @@
     "message": "با دستگاه دیگری وارد شوید"
   },
   "loginInitiated": {
-    "message": "Login initiated"
+    "message": "ورود به سیستم آغاز شد"
   },
   "notificationSentDevice": {
     "message": "یک اعلان به دستگاه شما ارسال شده است."
@@ -2250,35 +2250,35 @@
     "message": "به‌روز رسانی تنظیمات توصیه شده"
   },
   "deviceApprovalRequired": {
-    "message": "Device approval required. Select an approval option below:"
+    "message": "تأیید دستگاه لازم است. یک روش تأیید انتخاب کنید:"
   },
   "rememberThisDevice": {
-    "message": "Remember this device"
+    "message": "این دستگاه را به خاطر بسپار"
   },
   "uncheckIfPublicDevice": {
-    "message": "Uncheck if using a public device"
+    "message": "اگر از دستگاه عمومی استفاده می‌کنید علامت را بردارید"
   },
   "approveFromYourOtherDevice": {
-    "message": "Approve from your other device"
+    "message": "تأیید با دستگاه دیگرتان"
   },
   "requestAdminApproval": {
-    "message": "Request admin approval"
+    "message": "درخواست تأیید مدیر"
   },
   "approveWithMasterPassword": {
-    "message": "Approve with master password"
+    "message": "تأیید با کلمه عبور اصلی"
   },
   "region": {
-    "message": "Region"
+    "message": "منطقه"
   },
   "ssoIdentifierRequired": {
-    "message": "Organization SSO identifier is required."
+    "message": "شناسه سازمان SSO مورد نیاز است."
   },
   "eu": {
-    "message": "EU",
+    "message": "اروپا",
     "description": "European Union"
   },
   "loggingInOn": {
-    "message": "Logging in on"
+    "message": "ورود با"
   },
   "usDomain": {
     "message": "bitwarden.com"
@@ -2287,46 +2287,46 @@
     "message": "bitwarden.eu"
   },
   "selfHostedServer": {
-    "message": "self-hosted"
+    "message": "خود میزبان"
   },
   "accessDenied": {
     "message": "دسترسی رد شد. شما اجازه مشاهده این صفحه را ندارید."
   },
   "accountSuccessfullyCreated": {
-    "message": "Account successfully created!"
+    "message": "حساب کاربری با موفقیت ایجاد شد!"
   },
   "adminApprovalRequested": {
-    "message": "Admin approval requested"
+    "message": "تأیید مدیر درخواست شد"
   },
   "adminApprovalRequestSentToAdmins": {
-    "message": "Your request has been sent to your admin."
+    "message": "درخواست شما به مدیرتان فرستاده شد."
   },
   "youWillBeNotifiedOnceApproved": {
-    "message": "You will be notified once approved."
+    "message": "به محض تأیید مطلع خواهید شد."
   },
   "troubleLoggingIn": {
-    "message": "Trouble logging in?"
+    "message": "در ورود مشکلی دارید؟"
   },
   "loginApproved": {
-    "message": "Login approved"
+    "message": "ورود تأیید شد"
   },
   "userEmailMissing": {
-    "message": "User email missing"
+    "message": "ایمیل کاربر وجود ندارد"
   },
   "deviceTrusted": {
-    "message": "Device trusted"
+    "message": "دستگاه مورد اعتماد است"
   },
   "inputRequired": {
-    "message": "Input is required."
+    "message": "ورودی ضروری است."
   },
   "required": {
-    "message": "required"
+    "message": "ضروری"
   },
   "search": {
-    "message": "Search"
+    "message": "جستجو"
   },
   "inputMinLength": {
-    "message": "Input must be at least $COUNT$ characters long.",
+    "message": "ورودی باید حداقل $COUNT$ کاراکتر داشته باشد.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -2335,7 +2335,7 @@
     }
   },
   "inputMaxLength": {
-    "message": "Input must not exceed $COUNT$ characters in length.",
+    "message": "طول ورودی نباید بیش از $COUNT$ کاراکتر باشد.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -2344,7 +2344,7 @@
     }
   },
   "inputForbiddenCharacters": {
-    "message": "The following characters are not allowed: $CHARACTERS$",
+    "message": "کاراکترهای زیر مجاز نیستند: $CHARACTERS$",
     "placeholders": {
       "characters": {
         "content": "$1",
@@ -2353,7 +2353,7 @@
     }
   },
   "inputMinValue": {
-    "message": "Input value must be at least $MIN$.",
+    "message": "مقدار ورودی باید حداقل $MIN$ باشد.",
     "placeholders": {
       "min": {
         "content": "$1",
@@ -2362,7 +2362,7 @@
     }
   },
   "inputMaxValue": {
-    "message": "Input value must not exceed $MAX$.",
+    "message": "مقدار ورودی نباید از $MAX$ تجاوز کند.",
     "placeholders": {
       "max": {
         "content": "$1",
@@ -2371,17 +2371,17 @@
     }
   },
   "multipleInputEmails": {
-    "message": "1 or more emails are invalid"
+    "message": "یک یا چند ایمیل نامعتبر است"
   },
   "inputTrimValidator": {
-    "message": "Input must not contain only whitespace.",
+    "message": "ورودی نباید فقط حاوی فضای خالی باشد.",
     "description": "Notification to inform the user that a form's input can't contain only whitespace."
   },
   "inputEmail": {
-    "message": "Input is not an email address."
+    "message": "ورودی یک نشانی ایمیل نیست."
   },
   "fieldsNeedAttention": {
-    "message": "$COUNT$ field(s) above need your attention.",
+    "message": "فیلد $COUNT$ در بالا به توجه شما نیاز دارد.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -2390,22 +2390,22 @@
     }
   },
   "selectPlaceholder": {
-    "message": "-- Select --"
+    "message": "-- انتخاب --"
   },
   "multiSelectPlaceholder": {
-    "message": "-- Type to filter --"
+    "message": "-- برای فیلتر تایپ کنید --"
   },
   "multiSelectLoading": {
-    "message": "Retrieving options..."
+    "message": "در حال بازیابی گزینه‌ها..."
   },
   "multiSelectNotFound": {
-    "message": "No items found"
+    "message": "موردی یافت نشد"
   },
   "multiSelectClearAll": {
-    "message": "Clear all"
+    "message": "پاک‌کردن همه"
   },
   "plusNMore": {
-    "message": "+ $QUANTITY$ more",
+    "message": "+ $QUANTITY$ بیشتر",
     "placeholders": {
       "quantity": {
         "content": "$1",
@@ -2414,9 +2414,9 @@
     }
   },
   "submenu": {
-    "message": "Submenu"
+    "message": "زیرمنو"
   },
   "aliasDomain": {
-    "message": "Alias domain"
+    "message": "دامنه مستعار"
   }
 }

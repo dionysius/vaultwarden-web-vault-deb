@@ -594,7 +594,7 @@
     "message": "继续"
   },
   "enterVerificationCodeApp": {
-    "message": "请输入您的身份验证器应用中的 6 位验证码。"
+    "message": "请输入您的验证器应用中的 6 位数验证码。"
   },
   "enterVerificationCodeEmail": {
     "message": "请输入发送给电子邮件 $EMAIL$ 的 6 位数验证码。",
@@ -2083,7 +2083,7 @@
     "message": "密码库"
   },
   "loginWithMasterPassword": {
-    "message": "主密码登录"
+    "message": "使用主密码登录"
   },
   "loggingInAs": {
     "message": "正登录为"
