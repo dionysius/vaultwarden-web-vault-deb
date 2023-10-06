@@ -91,6 +91,15 @@
   "autoFill": {
     "message": "Auto-invullen"
   },
+  "autoFillLogin": {
+    "message": "Login automatisch invullen"
+  },
+  "autoFillCard": {
+    "message": "Kaart automatisch invullen"
+  },
+  "autoFillIdentity": {
+    "message": "Identiteit automatisch invullen"
+  },
   "generatePasswordCopied": {
     "message": "Wachtwoord genereren (op klembord)"
   },
@@ -99,6 +108,21 @@
   },
   "noMatchingLogins": {
     "message": "Geen overeenkomstige logins."
+  },
+  "noCards": {
+    "message": "Geen kaarten"
+  },
+  "noIdentities": {
+    "message": "Geen identiteiten"
+  },
+  "addLoginMenu": {
+    "message": "Login toevoegen"
+  },
+  "addCardMenu": {
+    "message": "Kaart toevoegen"
+  },
+  "addIdentityMenu": {
+    "message": "Identiteit toevoegen"
   },
   "unlockVaultMenu": {
     "message": "Ontgrendel je kluis"
@@ -772,7 +796,7 @@
     "message": "Functionaliteit niet beschikbaar"
   },
   "encryptionKeyMigrationRequired": {
-    "message": "Encryption key migration required. Please login through the web vault to update your encryption key."
+    "message": "Migratie van de encryptiesleutel vereist. Login via de website om je sleutel te bij te werken."
   },
   "premiumMembership": {
     "message": "Premium-abonnement"

@@ -91,6 +91,15 @@
   "autoFill": {
     "message": "Saisie automatique"
   },
+  "autoFillLogin": {
+    "message": "Saisie automatique de l'identifiant"
+  },
+  "autoFillCard": {
+    "message": "Saisie automatique de la carte"
+  },
+  "autoFillIdentity": {
+    "message": "Saisie automatique de l'identité"
+  },
   "generatePasswordCopied": {
     "message": "Générer un mot de passe (copié)"
   },
@@ -99,6 +108,21 @@
   },
   "noMatchingLogins": {
     "message": "Aucun identifiant correspondant."
+  },
+  "noCards": {
+    "message": "Aucune carte"
+  },
+  "noIdentities": {
+    "message": "Aucune identité"
+  },
+  "addLoginMenu": {
+    "message": "Ajouter un identifiant"
+  },
+  "addCardMenu": {
+    "message": "Ajouter une carte"
+  },
+  "addIdentityMenu": {
+    "message": "Ajouter une identité"
   },
   "unlockVaultMenu": {
     "message": "Déverrouillez votre coffre"
@@ -634,7 +658,7 @@
     "message": "Mettre à jour"
   },
   "notificationUnlockDesc": {
-    "message": "Unlock your Bitwarden vault to complete the auto-fill request."
+    "message": "Déverrouillez votre coffre Bitwarden pour terminer la demande de saisie automatique."
   },
   "notificationUnlock": {
     "message": "Déverrouiller"

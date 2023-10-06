@@ -91,6 +91,15 @@
   "autoFill": {
     "message": "自動入力"
   },
+  "autoFillLogin": {
+    "message": "自動入力ログイン"
+  },
+  "autoFillCard": {
+    "message": "自動入力カード"
+  },
+  "autoFillIdentity": {
+    "message": "自動入力 ID"
+  },
   "generatePasswordCopied": {
     "message": "パスワードを生成 (コピー)"
   },
@@ -99,6 +108,21 @@
   },
   "noMatchingLogins": {
     "message": "一致するログインがありません。"
+  },
+  "noCards": {
+    "message": "カードなし"
+  },
+  "noIdentities": {
+    "message": "ID なし"
+  },
+  "addLoginMenu": {
+    "message": "ログイン情報を追加"
+  },
+  "addCardMenu": {
+    "message": "カードを追加"
+  },
+  "addIdentityMenu": {
+    "message": "ID を追加"
   },
   "unlockVaultMenu": {
     "message": "保管庫のロックを解除"

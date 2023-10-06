@@ -91,6 +91,15 @@
   "autoFill": {
     "message": "Riempimento automatico"
   },
+  "autoFillLogin": {
+    "message": "Riempi automaticamente login"
+  },
+  "autoFillCard": {
+    "message": "Riempi automaticamente carta"
+  },
+  "autoFillIdentity": {
+    "message": "Riempi automaticamente identità"
+  },
   "generatePasswordCopied": {
     "message": "Genera password e copiala"
   },
@@ -99,6 +108,21 @@
   },
   "noMatchingLogins": {
     "message": "Nessun login corrispondente"
+  },
+  "noCards": {
+    "message": "Nessuna carta"
+  },
+  "noIdentities": {
+    "message": "Nessuna identità"
+  },
+  "addLoginMenu": {
+    "message": "Aggiungi login"
+  },
+  "addCardMenu": {
+    "message": "Aggiungi carta"
+  },
+  "addIdentityMenu": {
+    "message": "Aggiungi identità"
   },
   "unlockVaultMenu": {
     "message": "Sblocca la tua cassaforte"

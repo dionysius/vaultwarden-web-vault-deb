@@ -91,6 +91,15 @@
   "autoFill": {
     "message": "Auto-Ausfüllen"
   },
+  "autoFillLogin": {
+    "message": "Zugangsdaten automatisch ausfüllen"
+  },
+  "autoFillCard": {
+    "message": "Karte automatisch ausfüllen"
+  },
+  "autoFillIdentity": {
+    "message": "Identität automatisch ausfüllen"
+  },
   "generatePasswordCopied": {
     "message": "Passwort generieren (kopiert)"
   },
@@ -99,6 +108,21 @@
   },
   "noMatchingLogins": {
     "message": "Keine passenden Zugangsdaten"
+  },
+  "noCards": {
+    "message": "Keine Karten"
+  },
+  "noIdentities": {
+    "message": "Keine Identitäten"
+  },
+  "addLoginMenu": {
+    "message": "Zugangsdaten hinzufügen"
+  },
+  "addCardMenu": {
+    "message": "Karte hinzufügen"
+  },
+  "addIdentityMenu": {
+    "message": "Identität hinzufügen"
   },
   "unlockVaultMenu": {
     "message": "Entsperre deinen Tresor"

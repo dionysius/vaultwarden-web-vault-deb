@@ -91,6 +91,15 @@
   "autoFill": {
     "message": "Preenchimento automático"
   },
+  "autoFillLogin": {
+    "message": "Preenchimento automático da credencial"
+  },
+  "autoFillCard": {
+    "message": "Preenchimento automático do cartão"
+  },
+  "autoFillIdentity": {
+    "message": "Preenchimento automático da identidade"
+  },
   "generatePasswordCopied": {
     "message": "Gerar palavra-passe (copiada)"
   },
@@ -99,6 +108,21 @@
   },
   "noMatchingLogins": {
     "message": "Sem credenciais correspondentes"
+  },
+  "noCards": {
+    "message": "Sem cartões"
+  },
+  "noIdentities": {
+    "message": "Sem identidades"
+  },
+  "addLoginMenu": {
+    "message": "Adicionar credencial"
+  },
+  "addCardMenu": {
+    "message": "Adicionar cartão"
+  },
+  "addIdentityMenu": {
+    "message": "Adicionar identidade"
   },
   "unlockVaultMenu": {
     "message": "Desbloquear o cofre"

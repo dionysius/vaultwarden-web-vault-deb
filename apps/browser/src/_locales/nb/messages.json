@@ -91,6 +91,15 @@
   "autoFill": {
     "message": "Auto-utfylling"
   },
+  "autoFillLogin": {
+    "message": "Auto-fill login"
+  },
+  "autoFillCard": {
+    "message": "Auto-fill card"
+  },
+  "autoFillIdentity": {
+    "message": "Auto-fill identity"
+  },
   "generatePasswordCopied": {
     "message": "Generer et passord (kopiert)"
   },
@@ -99,6 +108,21 @@
   },
   "noMatchingLogins": {
     "message": "Ingen samsvarende innlogginger."
+  },
+  "noCards": {
+    "message": "No cards"
+  },
+  "noIdentities": {
+    "message": "No identities"
+  },
+  "addLoginMenu": {
+    "message": "Add login"
+  },
+  "addCardMenu": {
+    "message": "Add card"
+  },
+  "addIdentityMenu": {
+    "message": "Add identity"
   },
   "unlockVaultMenu": {
     "message": "Lås opp hvelvet ditt"

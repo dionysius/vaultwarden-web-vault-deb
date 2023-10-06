@@ -91,6 +91,15 @@
   "autoFill": {
     "message": "Avto-doldurma"
   },
+  "autoFillLogin": {
+    "message": "Giriş avto-doldurma"
+  },
+  "autoFillCard": {
+    "message": "Kart avto-doldurma"
+  },
+  "autoFillIdentity": {
+    "message": "Kimlik avto-doldurma"
+  },
   "generatePasswordCopied": {
     "message": "Parol yarat (kopyalandı)"
   },
@@ -99,6 +108,21 @@
   },
   "noMatchingLogins": {
     "message": "Uyğun gələn hesab yoxdur."
+  },
+  "noCards": {
+    "message": "Kart yoxdur"
+  },
+  "noIdentities": {
+    "message": "Kimlik yoxdur"
+  },
+  "addLoginMenu": {
+    "message": "Giriş əlavə et"
+  },
+  "addCardMenu": {
+    "message": "Kart əlavə et"
+  },
+  "addIdentityMenu": {
+    "message": "Kimlik əlavə et"
   },
   "unlockVaultMenu": {
     "message": "Anbarın kilidini açın"
@@ -671,7 +695,7 @@
     "description": "'Solarized' is a noun and the name of a color scheme. It should not be translated."
   },
   "exportVault": {
-    "message": "Anbarı ixrac et"
+    "message": "Anbarı xaricə köçür"
   },
   "fileFormat": {
     "message": "Fayl formatı"
@@ -681,19 +705,19 @@
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "confirmVaultExport": {
-    "message": "Anbarın ixracını təsdiqləyin"
+    "message": "Anbarın xaricə köçürülməsini təsdiqləyin"
   },
   "exportWarningDesc": {
-    "message": "Bu ixrac faylındakı anbar verilənləriniz şifrələnməmiş formatdadır. İxrac edilən faylı, güvənli olmayan kanallar üzərində saxlamamalı və ya göndərməməlisiniz (e-poçt kimi). Bu faylı işiniz bitdikdən sonra dərhal silin."
+    "message": "Xaricə köçürdüyünüz bu fayldakı datanız şifrələnməmiş formatdadır. Bu faylı güvənli olmayan kanallar (e-poçt kimi) üzərində saxlamamalı və ya göndərməməlisiniz. İşiniz bitdikdən sonra faylı dərhal silin."
   },
   "encExportKeyWarningDesc": {
-    "message": "Bu ixrac faylı, hesabınızın şifrələmə açarını istifadə edərək verilənlərinizi şifrələyir. Hesabınızın şifrələmə açarını döndərsəniz, bu ixrac faylının şifrəsini aça bilməyəcəyiniz üçün yenidən ixrac etməli olacaqsınız."
+    "message": "Xaricə köçürdüyünüz bu fayldakı data, hesabınızın şifrələmə açarı istifadə edilərək şifrələnir. Hesabınızın şifrələmə açarını dəyişdirsəniz, bu faylın şifrəsini aça bilməyəcəksiniz və onu yenidən xaricə köçürməli olacaqsınız."
   },
   "encExportAccountWarningDesc": {
     "message": "Hesab şifrələmə açarları, hər Bitwarden istifadəçi hesabı üçün unikaldır, buna görə də şifrələnmiş bir ixracı, fərqli bir hesaba idxal edə bilməzsiniz."
   },
   "exportMasterPassword": {
-    "message": "Anbar verilənlərinizi ixrac etmək üçün ana parolunuzu daxil edin."
+    "message": "Anbar datanızı xaricə köçürmək üçün ana parolunuzu daxil edin."
   },
   "shared": {
     "message": "Paylaşılan"
@@ -799,7 +823,7 @@
     "message": "YubiKey və Duo kimi mülkiyyətçi iki addımlı giriş seçimləri."
   },
   "ppremiumSignUpReports": {
-    "message": "Anbarınızın təhlükəsiyini təmin etmək üçün parol gigiyenası, hesab sağlamlığı və verilənlərin pozulması hesabatları."
+    "message": "Anbarınızın təhlükəsizliyini təmin etmək üçün parol gigiyenası, hesab sağlamlığı və data pozuntusu hesabatları."
   },
   "ppremiumSignUpTotp": {
     "message": "Anbarınızdakı hesablar üçün TOTP təsdiqləmə kodu (2FA) yaradıcısı."
@@ -2408,18 +2432,18 @@
     "description": "Toggling an expand/collapse state."
   },
   "aliasDomain": {
-    "message": "Alias domain"
+    "message": "Domen ləqəbi"
   },
   "passwordRepromptDisabledAutofillOnPageLoad": {
-    "message": "Items with master password re-prompt cannot be auto-filled on page load. Auto-fill on page load turned off.",
+    "message": "\"Ana parolu təkrar soruş\" özəlliyi olan elementlər səhifə yüklənəndə avto-doldurulmur. \"Səhifə yüklənəndə avto-doldurma\" özəlliyi söndürülüb.",
     "description": "Toast message for describing that master password re-prompt cannot be auto-filled on page load."
   },
   "autofillOnPageLoadSetToDefault": {
-    "message": "Auto-fill on page load set to use default setting.",
+    "message": "\"Səhifə yüklənəndə avto-doldurma\" özəlliyi ilkin tənzimləməni istifadə etmək üzrə tənzimləndi.",
     "description": "Toast message for informing the user that auto-fill on page load has been set to the default setting."
   },
   "turnOffMasterPasswordPromptToEditField": {
-    "message": "Turn off master password re-prompt to edit this field",
+    "message": "Bu sahəyə düzəliş etmək üçün \"Ana parolu təkrar soruş\"u söndürün",
     "description": "Message appearing below the autofill on load message when master password reprompt is set for a vault item."
   }
 }

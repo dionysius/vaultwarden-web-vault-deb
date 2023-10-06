@@ -91,6 +91,15 @@
   "autoFill": {
     "message": "Auto-ispuna"
   },
+  "autoFillLogin": {
+    "message": "Auto-fill login"
+  },
+  "autoFillCard": {
+    "message": "Auto-fill card"
+  },
+  "autoFillIdentity": {
+    "message": "Auto-fill identity"
+  },
   "generatePasswordCopied": {
     "message": "Generiraj lozinku (i kopiraj)"
   },
@@ -99,6 +108,21 @@
   },
   "noMatchingLogins": {
     "message": "Nema podudarajućih prijava"
+  },
+  "noCards": {
+    "message": "No cards"
+  },
+  "noIdentities": {
+    "message": "No identities"
+  },
+  "addLoginMenu": {
+    "message": "Add login"
+  },
+  "addCardMenu": {
+    "message": "Add card"
+  },
+  "addIdentityMenu": {
+    "message": "Add identity"
   },
   "unlockVaultMenu": {
     "message": "Otključaj svoj trezor"

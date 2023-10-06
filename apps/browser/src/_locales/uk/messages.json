@@ -91,6 +91,15 @@
   "autoFill": {
     "message": "Автозаповнення"
   },
+  "autoFillLogin": {
+    "message": "Автозаповнення входу"
+  },
+  "autoFillCard": {
+    "message": "Автозаповнення картки"
+  },
+  "autoFillIdentity": {
+    "message": "Автозаповнення особистих даних"
+  },
   "generatePasswordCopied": {
     "message": "Генерувати пароль (з копіюванням)"
   },
@@ -99,6 +108,21 @@
   },
   "noMatchingLogins": {
     "message": "Немає відповідних записів"
+  },
+  "noCards": {
+    "message": "Немає карток"
+  },
+  "noIdentities": {
+    "message": "Немає особистих даних"
+  },
+  "addLoginMenu": {
+    "message": "Додати запис входу"
+  },
+  "addCardMenu": {
+    "message": "Додати картку"
+  },
+  "addIdentityMenu": {
+    "message": "Додати особисті дані"
   },
   "unlockVaultMenu": {
     "message": "Розблокуйте сховище"
@@ -2408,18 +2432,18 @@
     "description": "Toggling an expand/collapse state."
   },
   "aliasDomain": {
-    "message": "Alias domain"
+    "message": "Псевдонім домену"
   },
   "passwordRepromptDisabledAutofillOnPageLoad": {
-    "message": "Items with master password re-prompt cannot be auto-filled on page load. Auto-fill on page load turned off.",
+    "message": "Записи з повторним запитом головного пароля не можна автоматично заповнювати під час завантаження сторінки. Автозаповнення на сторінці вимкнено.",
     "description": "Toast message for describing that master password re-prompt cannot be auto-filled on page load."
   },
   "autofillOnPageLoadSetToDefault": {
-    "message": "Auto-fill on page load set to use default setting.",
+    "message": "Автозаповнення на сторінці налаштовано з типовими параметрами.",
     "description": "Toast message for informing the user that auto-fill on page load has been set to the default setting."
   },
   "turnOffMasterPasswordPromptToEditField": {
-    "message": "Turn off master password re-prompt to edit this field",
+    "message": "Вимкніть повторний запит головного пароля, щоб редагувати це поле",
     "description": "Message appearing below the autofill on load message when master password reprompt is set for a vault item."
   }
 }

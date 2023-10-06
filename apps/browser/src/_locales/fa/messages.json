@@ -91,6 +91,15 @@
   "autoFill": {
     "message": "پر کردن خودکار"
   },
+  "autoFillLogin": {
+    "message": "پر کردن خودکار ورود"
+  },
+  "autoFillCard": {
+    "message": "پر کردن خودکار کارت"
+  },
+  "autoFillIdentity": {
+    "message": "پر کردن خودکار هویت"
+  },
   "generatePasswordCopied": {
     "message": "ساخت کلمه عبور (کپی شد)"
   },
@@ -99,6 +108,21 @@
   },
   "noMatchingLogins": {
     "message": "ورودی‌ها منتطبق نیست"
+  },
+  "noCards": {
+    "message": "کارتی وجود ندارد"
+  },
+  "noIdentities": {
+    "message": "هویتی وجود ندارد"
+  },
+  "addLoginMenu": {
+    "message": "افزودن ورود"
+  },
+  "addCardMenu": {
+    "message": "افزودن کارت"
+  },
+  "addIdentityMenu": {
+    "message": "افزودن هویت"
   },
   "unlockVaultMenu": {
     "message": "قفل گاوصندوق خود را باز کنید"
@@ -637,7 +661,7 @@
     "message": "برای پر کردن خودکار گاوصندوق Bitwarden خود را باز کنید."
   },
   "notificationUnlock": {
-    "message": "بازگشایی"
+    "message": "باز کردن قفل"
   },
   "enableContextMenuItem": {
     "message": "نمایش گزینه‌های منوی زمینه"
@@ -772,7 +796,7 @@
     "message": "ویژگی موجود نیست"
   },
   "encryptionKeyMigrationRequired": {
-    "message": "Encryption key migration required. Please login through the web vault to update your encryption key."
+    "message": "انتقال کلید رمزگذاری مورد نیاز است. لطفاً از طریق گاوصندوق وب وارد شوید تا کلید رمزگذاری خود را به روز کنید."
   },
   "premiumMembership": {
     "message": "عضویت پرمیوم"
@@ -1606,10 +1630,10 @@
     "message": "بیومتریک مرورگر در این دستگاه پشتیبانی نمی‌شود."
   },
   "biometricsFailedTitle": {
-    "message": "زیست‌سنجی ناتمام ماند"
+    "message": "زیست‌سنجی ناموفق بود"
   },
   "biometricsFailedDesc": {
-    "message": "زیست‌سنجی نمی تواند انجام شود، استفاده از کلمه عبور اصلی یا خروج را در نظر بگیرید. اگر این مشکل ادامه یافت لطفا با پشتیبانی Bitwarden تماس بگیرید."
+    "message": "زیست‌سنجی نمی‌تواند انجام شود، استفاده از کلمه عبور اصلی یا خروج را در نظر بگیرید. اگر این مشکل ادامه یافت لطفاً با پشتیبانی Bitwarden تماس بگیرید."
   },
   "nativeMessaginPermissionErrorTitle": {
     "message": "مجوز ارائه نشده است"
@@ -1992,7 +2016,7 @@
     "message": "برون ریزی گاو‌صندوق شخصی"
   },
   "exportingIndividualVaultDescription": {
-    "message": "Only the individual vault items associated with $EMAIL$ will be exported. Organization vault items will not be included. Only vault item information will be exported and will not include associated attachments.",
+    "message": "فقط موارد شخصی گاوصندوق مرتبط با $EMAIL$ برون ریزی خواهند شد. موارد گاوصندوق سازمان شامل نخواهد شد. فقط اطلاعات مورد گاوصندوق برون ریزی خواهد شد و شامل تاریخچه کلمه عبور مرتبط یا پیوست نمی‌شود.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -2234,28 +2258,28 @@
     }
   },
   "loggingInOn": {
-    "message": "ورود به عنوان"
+    "message": "ورود با"
   },
   "opensInANewWindow": {
     "message": "در پنجره جدید باز می‌شود"
   },
   "deviceApprovalRequired": {
-    "message": "تایید دستگاه لازم است. یک روش تایید برگزینید:"
+    "message": "تأیید دستگاه لازم است. یک روش تأیید انتخاب کنید:"
   },
   "rememberThisDevice": {
     "message": "این دستگاه را به خاطر بسپار"
   },
   "uncheckIfPublicDevice": {
-    "message": "بردارید اگر از دستگاه عمومی استفاده میکنید"
+    "message": "اگر از دستگاه عمومی استفاده می‌کنید علامت را بردارید"
   },
   "approveFromYourOtherDevice": {
-    "message": "تایید با دستگاه دیگرتان"
+    "message": "تأیید با دستگاه دیگرتان"
   },
   "requestAdminApproval": {
-    "message": "درخواست تایید مدیر"
+    "message": "درخواست تأیید مدیر"
   },
   "approveWithMasterPassword": {
-    "message": "تایید با کلمه عبور اصلی"
+    "message": "تأیید با کلمه عبور اصلی"
   },
   "ssoIdentifierRequired": {
     "message": "شناسه سازمان SSO مورد نیاز است."
@@ -2283,37 +2307,37 @@
     "message": "حساب کاربری با موفقیت ایجاد شد!"
   },
   "adminApprovalRequested": {
-    "message": "تایید مدیر در خواست شد"
+    "message": "تأیید مدیر درخواست شد"
   },
   "adminApprovalRequestSentToAdmins": {
     "message": "درخواست شما به مدیرتان فرستاده شد."
   },
   "youWillBeNotifiedOnceApproved": {
-    "message": "به محض تایید مطلع خواهید شد."
+    "message": "به محض تأیید مطلع خواهید شد."
   },
   "troubleLoggingIn": {
     "message": "در ورود مشکلی دارید؟"
   },
   "loginApproved": {
-    "message": "ورود تایید شد"
+    "message": "ورود تأیید شد"
   },
   "userEmailMissing": {
-    "message": "رایانامه کاربر کم است"
+    "message": "ایمیل کاربر وجود ندارد"
   },
   "deviceTrusted": {
     "message": "دستگاه مورد اعتماد است"
   },
   "inputRequired": {
-    "message": "ورودی مورد نیاز است."
+    "message": "ورودی ضروری است."
   },
   "required": {
-    "message": "الزامی"
+    "message": "ضروری"
   },
   "search": {
     "message": "جستجو"
   },
   "inputMinLength": {
-    "message": "ورودی باید حداقل $COUNT$ نشانه داشته باشد.",
+    "message": "ورودی باید حداقل $COUNT$ کاراکتر داشته باشد.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -2322,7 +2346,7 @@
     }
   },
   "inputMaxLength": {
-    "message": "اندازه ورودی نباید بیش از $COUNT$ نشانه باشد.",
+    "message": "طول ورودی نباید بیش از $COUNT$ کاراکتر باشد.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -2331,7 +2355,7 @@
     }
   },
   "inputForbiddenCharacters": {
-    "message": "نشانه های زیر مجاز نیستند: $CHARACTERS$",
+    "message": "کاراکترهای زیر مجاز نیستند: $CHARACTERS$",
     "placeholders": {
       "characters": {
         "content": "$1",
@@ -2340,7 +2364,7 @@
     }
   },
   "inputMinValue": {
-    "message": "مقدار ورودی باید دست کم $MIN$ باشد.",
+    "message": "مقدار ورودی باید حداقل $MIN$ باشد.",
     "placeholders": {
       "min": {
         "content": "$1",
@@ -2349,7 +2373,7 @@
     }
   },
   "inputMaxValue": {
-    "message": "مقدار ورودی نباید بیش از $MAX$ باشد.",
+    "message": "مقدار ورودی نباید از $MAX$ تجاوز کند.",
     "placeholders": {
       "max": {
         "content": "$1",
@@ -2358,17 +2382,17 @@
     }
   },
   "multipleInputEmails": {
-    "message": "یک یا چند رایانامه نامعتبر است"
+    "message": "یک یا چند ایمیل نامعتبر است"
   },
   "inputTrimValidator": {
-    "message": "ورودی نباید فقط فاصله باشد.",
+    "message": "ورودی نباید فقط حاوی فضای خالی باشد.",
     "description": "Notification to inform the user that a form's input can't contain only whitespace."
   },
   "inputEmail": {
-    "message": "ورودی یک نشانی رایانامه نیست."
+    "message": "ورودی یک نشانی ایمیل نیست."
   },
   "fieldsNeedAttention": {
-    "message": "بخش (های) $COUNT$ در بالا نیازمند توجه شما است.",
+    "message": "فیلد $COUNT$ در بالا به توجه شما نیاز دارد.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -2380,16 +2404,16 @@
     "message": "-- انتخاب --"
   },
   "multiSelectPlaceholder": {
-    "message": "-- برای گزینش چیزی بنویسید --"
+    "message": "-- برای فیلتر تایپ کنید --"
   },
   "multiSelectLoading": {
     "message": "در حال بازیابی گزینه‌ها..."
   },
   "multiSelectNotFound": {
-    "message": "موردی پیدا نشد"
+    "message": "موردی یافت نشد"
   },
   "multiSelectClearAll": {
-    "message": "پاک کردن همه"
+    "message": "پاک‌کردن همه"
   },
   "plusNMore": {
     "message": "+ $QUANTITY$ بیشتر",
@@ -2401,25 +2425,25 @@
     }
   },
   "submenu": {
-    "message": "زیرفهرست"
+    "message": "زیرمنو"
   },
   "toggleCollapse": {
-    "message": "باز و بسته کردن",
+    "message": "دکمه بستن",
     "description": "Toggling an expand/collapse state."
   },
   "aliasDomain": {
-    "message": "Alias domain"
+    "message": "دامنه مستعار"
   },
   "passwordRepromptDisabledAutofillOnPageLoad": {
-    "message": "Items with master password re-prompt cannot be auto-filled on page load. Auto-fill on page load turned off.",
+    "message": "موارد با درخواست مجدد کلمه عبور اصلی را نمی‌توان در بارگذاری صفحه به‌صورت خودکار پر کرد. پر کردن خودکار در بارگیری صفحه خاموش شد.",
     "description": "Toast message for describing that master password re-prompt cannot be auto-filled on page load."
   },
   "autofillOnPageLoadSetToDefault": {
-    "message": "Auto-fill on page load set to use default setting.",
+    "message": "پر کردن خودکار در بارگیری صفحه برای استفاده از تنظیمات پیش‌فرض تنظیم شده است.",
     "description": "Toast message for informing the user that auto-fill on page load has been set to the default setting."
   },
   "turnOffMasterPasswordPromptToEditField": {
-    "message": "Turn off master password re-prompt to edit this field",
+    "message": "برای ویرایش این فیلد، درخواست مجدد کلمه عبور اصلی را خاموش کنید",
     "description": "Message appearing below the autofill on load message when master password reprompt is set for a vault item."
   }
 }

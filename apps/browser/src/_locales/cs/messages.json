@@ -91,6 +91,15 @@
   "autoFill": {
     "message": "Automatické vyplňování"
   },
+  "autoFillLogin": {
+    "message": "Automaticky vyplnit přihlášení"
+  },
+  "autoFillCard": {
+    "message": "Automaticky vyplnit kartu"
+  },
+  "autoFillIdentity": {
+    "message": "Automaticky vyplnit identitu"
+  },
   "generatePasswordCopied": {
     "message": "Vygenerovat heslo a zkopírovat do schránky"
   },
@@ -99,6 +108,21 @@
   },
   "noMatchingLogins": {
     "message": "Žádné odpovídající přihlašovací údaje"
+  },
+  "noCards": {
+    "message": "Žádné karty"
+  },
+  "noIdentities": {
+    "message": "Žádné identity"
+  },
+  "addLoginMenu": {
+    "message": "Přidat přihlašovací údaje"
+  },
+  "addCardMenu": {
+    "message": "Přidat kartu"
+  },
+  "addIdentityMenu": {
+    "message": "Přidat identitu"
   },
   "unlockVaultMenu": {
     "message": "Odemknout Váš trezor"

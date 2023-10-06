@@ -91,6 +91,15 @@
   "autoFill": {
     "message": "Otomatik doldur"
   },
+  "autoFillLogin": {
+    "message": "Hesabı otomatik doldur"
+  },
+  "autoFillCard": {
+    "message": "Kartı otomatik doldur"
+  },
+  "autoFillIdentity": {
+    "message": "Kimliği otomatik doldur"
+  },
   "generatePasswordCopied": {
     "message": "Parola oluştur (ve kopyala)"
   },
@@ -99,6 +108,21 @@
   },
   "noMatchingLogins": {
     "message": "Eşleşen hesap yok"
+  },
+  "noCards": {
+    "message": "Kart yok"
+  },
+  "noIdentities": {
+    "message": "Kimlik yok"
+  },
+  "addLoginMenu": {
+    "message": "Hesap ekle"
+  },
+  "addCardMenu": {
+    "message": "Kart ekle"
+  },
+  "addIdentityMenu": {
+    "message": "Kimlik ekle"
   },
   "unlockVaultMenu": {
     "message": "Kasanızın kilidini açın"
@@ -1609,7 +1633,7 @@
     "message": "Biyometri doğrulanamadı"
   },
   "biometricsFailedDesc": {
-    "message": "Biometrics cannot be completed, consider using a master password or logging out. If this persists, please contact Bitwarden support."
+    "message": "Biyometri doğrulaması tamamlanamadı. Ana parolanızı kullanabilir veya çıkış yapabilirsiniz. Sorun devam ederse Bitwarden destek ekibiyle iletişime geçin."
   },
   "nativeMessaginPermissionErrorTitle": {
     "message": "İzin verilmedi"

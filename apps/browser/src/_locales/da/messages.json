@@ -91,6 +91,15 @@
   "autoFill": {
     "message": "Auto-udfyld"
   },
+  "autoFillLogin": {
+    "message": "Autoudfyld login"
+  },
+  "autoFillCard": {
+    "message": "Autoudfyld kort"
+  },
+  "autoFillIdentity": {
+    "message": "Autoudfyld identitet"
+  },
   "generatePasswordCopied": {
     "message": "Generér adgangskode (kopieret)"
   },
@@ -99,6 +108,21 @@
   },
   "noMatchingLogins": {
     "message": "Ingen matchende logins"
+  },
+  "noCards": {
+    "message": "Ingen kort"
+  },
+  "noIdentities": {
+    "message": "Ingen identiteter"
+  },
+  "addLoginMenu": {
+    "message": "Tilføj login"
+  },
+  "addCardMenu": {
+    "message": "Tilføj kort"
+  },
+  "addIdentityMenu": {
+    "message": "Tilføj identitet"
   },
   "unlockVaultMenu": {
     "message": "Lås din boks op"

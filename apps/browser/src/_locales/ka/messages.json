@@ -91,6 +91,15 @@
   "autoFill": {
     "message": "თვითშევსება"
   },
+  "autoFillLogin": {
+    "message": "Auto-fill login"
+  },
+  "autoFillCard": {
+    "message": "Auto-fill card"
+  },
+  "autoFillIdentity": {
+    "message": "Auto-fill identity"
+  },
   "generatePasswordCopied": {
     "message": "Generate password (copied)"
   },
@@ -99,6 +108,21 @@
   },
   "noMatchingLogins": {
     "message": "No matching logins"
+  },
+  "noCards": {
+    "message": "No cards"
+  },
+  "noIdentities": {
+    "message": "No identities"
+  },
+  "addLoginMenu": {
+    "message": "Add login"
+  },
+  "addCardMenu": {
+    "message": "Add card"
+  },
+  "addIdentityMenu": {
+    "message": "Add identity"
   },
   "unlockVaultMenu": {
     "message": "Unlock your vault"

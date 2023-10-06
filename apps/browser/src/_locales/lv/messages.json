@@ -91,6 +91,15 @@
   "autoFill": {
     "message": "Automātiskā aizpildīšana"
   },
+  "autoFillLogin": {
+    "message": "Automātiski aizpildīt pieteikšanos"
+  },
+  "autoFillCard": {
+    "message": "Automātiski aizpildīt karti"
+  },
+  "autoFillIdentity": {
+    "message": "Automātiski aizpildīt identitāti"
+  },
   "generatePasswordCopied": {
     "message": "Izveidot paroli (tiks ievietota starpliktuvē)"
   },
@@ -99,6 +108,21 @@
   },
   "noMatchingLogins": {
     "message": "Nav atbilstošu pieteikšanās vienumu"
+  },
+  "noCards": {
+    "message": "Nav karšu"
+  },
+  "noIdentities": {
+    "message": "Nav identitāšu"
+  },
+  "addLoginMenu": {
+    "message": "Pievienot pieteikšanās vienumu"
+  },
+  "addCardMenu": {
+    "message": "Pievienot karti"
+  },
+  "addIdentityMenu": {
+    "message": "Pievienot identitāti"
   },
   "unlockVaultMenu": {
     "message": "Atslēgt glabātavu"

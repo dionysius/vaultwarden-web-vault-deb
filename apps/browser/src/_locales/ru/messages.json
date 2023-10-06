@@ -91,6 +91,15 @@
   "autoFill": {
     "message": "Автозаполнение"
   },
+  "autoFillLogin": {
+    "message": "Автозаполнение логина"
+  },
+  "autoFillCard": {
+    "message": "Автозаполнение карты"
+  },
+  "autoFillIdentity": {
+    "message": "Автозаполнение личности"
+  },
   "generatePasswordCopied": {
     "message": "Сгенерировать пароль (с копированием)"
   },
@@ -99,6 +108,21 @@
   },
   "noMatchingLogins": {
     "message": "Нет подходящих логинов."
+  },
+  "noCards": {
+    "message": "Нет карт"
+  },
+  "noIdentities": {
+    "message": "Нет личностей"
+  },
+  "addLoginMenu": {
+    "message": "Добавить логин"
+  },
+  "addCardMenu": {
+    "message": "Добавить карту"
+  },
+  "addIdentityMenu": {
+    "message": "Добавить личность"
   },
   "unlockVaultMenu": {
     "message": "Разблокировать хранилище"

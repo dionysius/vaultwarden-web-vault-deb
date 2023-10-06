@@ -91,6 +91,15 @@
   "autoFill": {
     "message": "Autouzupełnianie"
   },
+  "autoFillLogin": {
+    "message": "Autouzupełnianie logowania"
+  },
+  "autoFillCard": {
+    "message": "Autouzupełnianie karty"
+  },
+  "autoFillIdentity": {
+    "message": "Autouzupełnianie tożsamości"
+  },
   "generatePasswordCopied": {
     "message": "Wygeneruj hasło (do schowka)"
   },
@@ -99,6 +108,21 @@
   },
   "noMatchingLogins": {
     "message": "Brak pasujących danych logowania"
+  },
+  "noCards": {
+    "message": "Brak kart"
+  },
+  "noIdentities": {
+    "message": "Brak tożsamości"
+  },
+  "addLoginMenu": {
+    "message": "Dodaj dane logowania"
+  },
+  "addCardMenu": {
+    "message": "Dodaj kartę"
+  },
+  "addIdentityMenu": {
+    "message": "Dodaj tożsamość"
   },
   "unlockVaultMenu": {
     "message": "Odblokuj sejf"

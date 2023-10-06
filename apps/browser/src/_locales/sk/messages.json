@@ -91,6 +91,15 @@
   "autoFill": {
     "message": "Automatické vypĺňanie"
   },
+  "autoFillLogin": {
+    "message": "Automatické vyplnenie prihlasovacích údajov"
+  },
+  "autoFillCard": {
+    "message": "Automatické vyplnenie karty"
+  },
+  "autoFillIdentity": {
+    "message": "Automatické vyplnenie identity"
+  },
   "generatePasswordCopied": {
     "message": "Vygenerovať heslo (skopírované)"
   },
@@ -99,6 +108,21 @@
   },
   "noMatchingLogins": {
     "message": "Žiadne zodpovedajúce prihlasovacie údaje."
+  },
+  "noCards": {
+    "message": "Žiadne karty"
+  },
+  "noIdentities": {
+    "message": "Žiadne identity"
+  },
+  "addLoginMenu": {
+    "message": "Pridať prihlasovacie údaje"
+  },
+  "addCardMenu": {
+    "message": "Pridať kartu"
+  },
+  "addIdentityMenu": {
+    "message": "Pridať identitu"
   },
   "unlockVaultMenu": {
     "message": "Odomknúť trezor"

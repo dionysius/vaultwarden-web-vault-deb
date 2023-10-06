@@ -91,6 +91,15 @@
   "autoFill": {
     "message": "Automatikus kitöltés"
   },
+  "autoFillLogin": {
+    "message": "Automatikus kitöltés bejelentkezés"
+  },
+  "autoFillCard": {
+    "message": "Automatikus kitöltés kártya"
+  },
+  "autoFillIdentity": {
+    "message": "Automatikus kitöltés személyazonosság"
+  },
   "generatePasswordCopied": {
     "message": "Jelszó generálás (másolt)"
   },
@@ -99,6 +108,21 @@
   },
   "noMatchingLogins": {
     "message": "Nincsenek egyező bejelentkezések."
+  },
+  "noCards": {
+    "message": "Nincsenek kártyák"
+  },
+  "noIdentities": {
+    "message": "Nincsenek személyazonosságok"
+  },
+  "addLoginMenu": {
+    "message": "Bejelentkezés hozzáadása"
+  },
+  "addCardMenu": {
+    "message": "Kártya hozzáadása"
+  },
+  "addIdentityMenu": {
+    "message": "Személyazonossság hozzáadása"
   },
   "unlockVaultMenu": {
     "message": "Széf kinyitása"
@@ -143,7 +167,7 @@
     "message": "A folytatáshoz meg kell erősíteni a személyazonosságot."
   },
   "account": {
-    "message": "Felhasználó"
+    "message": "Fiók"
   },
   "changeMasterPassword": {
     "message": "Mesterjelszó módosítása"
@@ -513,7 +537,7 @@
     "message": "A kétlépcsős bejelentkezés biztonságosabbá teszi a fiókot azáltal, hogy ellenőrizni kell a bejelentkezést egy másik olyan eszközzel mint például biztonsági kulcs, hitelesítő alkalmazás, SMS, telefon hívás vagy email. A kétlépcsős bejelentkezést a bitwarden.com webes széfben lehet engedélyezni. Felkeressük a webhelyet most?"
   },
   "editedFolder": {
-    "message": "A mappa módosításra került."
+    "message": "A mappa mentésre került."
   },
   "deleteFolderConfirmation": {
     "message": "Biztos, hogy törölni akarod ezt a mappát?"
@@ -562,7 +586,7 @@
     "message": "Biztosan törlésre kerüljön ezt az elem?"
   },
   "deletedItem": {
-    "message": "Az elem törlésre került."
+    "message": "Az elem a lomtárba került."
   },
   "overwritePassword": {
     "message": "Jelszó felülírása"
@@ -769,7 +793,7 @@
     "message": "A naximális fájlméret 500 MB."
   },
   "featureUnavailable": {
-    "message": "Ez a funkció nem érhető el."
+    "message": "A funkció nem érhető el."
   },
   "encryptionKeyMigrationRequired": {
     "message": "Titkosítási kulcs migráció szükséges. Jelentkezzünk be a webes széfen keresztül a titkosítási kulcs frissítéséhez."
@@ -787,7 +811,7 @@
     "message": "Tagság frissítése"
   },
   "premiumNotCurrentMember": {
-    "message": "Jelenleg nincs prémium tagság."
+    "message": "Jelenleg nem vagyunk prémium tag."
   },
   "premiumSignUpAndGet": {
     "message": "Regisztráció a prémium tagságra az alábbi funkciókért:"
@@ -796,7 +820,7 @@
     "message": "1 GB titkosított tárhely a fájlmellékleteknek."
   },
   "premiumSignUpTwoStepOptions": {
-    "message": "Proprietary two-step login options such as YubiKey and Duo."
+    "message": "Saját kétlépcsős bejelentkezési lehetőségek mint a YubiKey és a Duo."
   },
   "ppremiumSignUpReports": {
     "message": "Jelszó higiénia, fiók biztonság és adatszivárgási jelentések a széf biztonsága érdekében."
@@ -817,7 +841,7 @@
     "message": "A prémium tagság megvásárolható a bitwarden.com webes széfben. Szeretnénk felkeresni a webhelyet most?"
   },
   "premiumCurrentMember": {
-    "message": "Jelenleg a prémium tagság érvényben van."
+    "message": "Prémium tag vagyunk!"
   },
   "premiumCurrentMemberThanks": {
     "message": "Köszönjük a Bitwarden támogatását."
@@ -994,7 +1018,7 @@
     "message": "Alapértelmezett beállítások bejelentkezési elemekhez"
   },
   "defaultAutoFillOnPageLoadDesc": {
-    "message": "Az Automatikus kitöltés engedélyezése az oldalbetöltéskor engedélyezheti vagy letilthatja a funkciót az egyes bejelentkezési elemeknél. Ez az alapértelmezett beállítás a bejelentkezési elemeknéll, amelyek nincsenek külön konfigurálva."
+    "message": "Az egyes bejelentkezési elemeknél kikapcsolhatjuk oldalbetöltéskor az automatikus kitöltést az elem Szerkesztés nézetében."
   },
   "itemAutoFillOnPageLoad": {
     "message": "Automatikus kitöltés oldal betöltésnél (Ha engedélyezett az opcióknál)"
@@ -1905,7 +1929,7 @@
     "message": "Perc"
   },
   "vaultTimeoutPolicyInEffect": {
-    "message": "A szervezeti házirendek hatással vannak a széf időkorlátjára. A széf időkorlátja legfeljebb $HOURS$ óra és $MINUTES$ perc lehet.",
+    "message": "A szervezeti szabályzata $HOURS$ órára és $MINUTES$ percre állította be a maximálisan megengedett széf időtúllépést.",
     "placeholders": {
       "hours": {
         "content": "$1",

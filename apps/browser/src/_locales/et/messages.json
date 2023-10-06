@@ -91,6 +91,15 @@
   "autoFill": {
     "message": "Automaatne täitmine"
   },
+  "autoFillLogin": {
+    "message": "Täida konto andmed"
+  },
+  "autoFillCard": {
+    "message": "Täida kaardi andmed"
+  },
+  "autoFillIdentity": {
+    "message": "Täida identiteet"
+  },
   "generatePasswordCopied": {
     "message": "Genereeri parool (kopeeritakse)"
   },
@@ -99,6 +108,21 @@
   },
   "noMatchingLogins": {
     "message": "Sobivaid kontoandmeid ei leitud."
+  },
+  "noCards": {
+    "message": "Kaardid puuduvad"
+  },
+  "noIdentities": {
+    "message": "Identiteedid puuduvad"
+  },
+  "addLoginMenu": {
+    "message": "Lisa konto andmed"
+  },
+  "addCardMenu": {
+    "message": "Lisa kaart"
+  },
+  "addIdentityMenu": {
+    "message": "Lisa identiteet"
   },
   "unlockVaultMenu": {
     "message": "Lukusta hoidla lahti"

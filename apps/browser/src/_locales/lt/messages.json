@@ -91,6 +91,15 @@
   "autoFill": {
     "message": "Automatinis užpildymas"
   },
+  "autoFillLogin": {
+    "message": "Automatinio užpildymo prisijungimas"
+  },
+  "autoFillCard": {
+    "message": "Automatinio užpildymo kortelė"
+  },
+  "autoFillIdentity": {
+    "message": "Automatinio užpildymo tapatybė"
+  },
   "generatePasswordCopied": {
     "message": "Kurti slaptažodį (paruoštas įterpti)"
   },
@@ -99,6 +108,21 @@
   },
   "noMatchingLogins": {
     "message": "Nėra atitinkančių prisijungimų."
+  },
+  "noCards": {
+    "message": "Nėra kortelių"
+  },
+  "noIdentities": {
+    "message": "Nėra tapatybių"
+  },
+  "addLoginMenu": {
+    "message": "Pridėti prisijungimą"
+  },
+  "addCardMenu": {
+    "message": "Pridėti kortelę"
+  },
+  "addIdentityMenu": {
+    "message": "Pridėti tapatybę"
   },
   "unlockVaultMenu": {
     "message": "Atrakinti saugyklą"

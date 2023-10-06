@@ -91,6 +91,15 @@
   "autoFill": {
     "message": "Automaattinen täyttö"
   },
+  "autoFillLogin": {
+    "message": "Täytä kirjautumistieto automaattisesti"
+  },
+  "autoFillCard": {
+    "message": "Täytä kortti automaattisesti"
+  },
+  "autoFillIdentity": {
+    "message": "Täytä identiteetti automaattisesti"
+  },
   "generatePasswordCopied": {
     "message": "Luo salasana (leikepöydälle)"
   },
@@ -99,6 +108,21 @@
   },
   "noMatchingLogins": {
     "message": "Ei tunnistettuja kirjautumistietoja."
+  },
+  "noCards": {
+    "message": "Kortteja ei ole"
+  },
+  "noIdentities": {
+    "message": "Identiteettejä ei ole"
+  },
+  "addLoginMenu": {
+    "message": "Lisää kirjautumistieto"
+  },
+  "addCardMenu": {
+    "message": "Lisää kortti"
+  },
+  "addIdentityMenu": {
+    "message": "Lisää identiteetti"
   },
   "unlockVaultMenu": {
     "message": "Avaa holvisi"
