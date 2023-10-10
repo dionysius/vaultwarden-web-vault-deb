@@ -14,14 +14,14 @@ import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/pl
 import { DialogService } from "@bitwarden/components";
 import { VaultExportServiceAbstraction } from "@bitwarden/exporter/vault-export";
 
-import { ExportComponent } from "../../../../tools/import-export/export.component";
+import { ExportComponent } from "../../../../tools/vault-export/export.component";
 
 @Component({
   selector: "app-org-export",
-  templateUrl: "../../../../tools/import-export/export.component.html",
+  templateUrl: "../../../../tools/vault-export/export.component.html",
 })
 // eslint-disable-next-line rxjs-angular/prefer-takeuntil
-export class OrganizationExportComponent extends ExportComponent {
+export class OrganizationVaultExportComponent extends ExportComponent {
   constructor(
     cryptoService: CryptoService,
     i18nService: I18nService,

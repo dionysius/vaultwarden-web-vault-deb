@@ -15,13 +15,12 @@ import {
 
 import { LooseComponentsModule, SharedModule } from "../../../../shared";
 
-import { OrganizationExportComponent } from "./org-export.component";
-import { OrganizationImportExportRoutingModule } from "./org-import-export-routing.module";
+import { OrganizationImportRoutingModule } from "./org-import-routing.module";
 import { OrganizationImportComponent } from "./org-import.component";
 
 @NgModule({
-  imports: [SharedModule, LooseComponentsModule, OrganizationImportExportRoutingModule],
-  declarations: [OrganizationImportComponent, OrganizationExportComponent],
+  imports: [SharedModule, LooseComponentsModule, OrganizationImportRoutingModule],
+  declarations: [OrganizationImportComponent],
   providers: [
     {
       provide: ImportApiServiceAbstraction,
@@ -42,4 +41,4 @@ import { OrganizationImportComponent } from "./org-import.component";
     },
   ],
 })
-export class OrganizationImportExportModule {}
+export class OrganizationImportModule {}

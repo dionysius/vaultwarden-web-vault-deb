@@ -20,15 +20,13 @@ import {
   ImportSuccessDialogComponent,
   FilePasswordPromptComponent,
 } from "./dialog";
-import { ExportComponent } from "./export.component";
-import { ImportExportRoutingModule } from "./import-export-routing.module";
+import { ImportRoutingModule } from "./import-routing.module";
 import { ImportComponent } from "./import.component";
 
 @NgModule({
-  imports: [SharedModule, LooseComponentsModule, ImportExportRoutingModule],
+  imports: [SharedModule, LooseComponentsModule, ImportRoutingModule],
   declarations: [
     ImportComponent,
-    ExportComponent,
     FilePasswordPromptComponent,
     ImportErrorDialogComponent,
     ImportSuccessDialogComponent,
@@ -53,4 +51,4 @@ import { ImportComponent } from "./import.component";
     },
   ],
 })
-export class ImportExportModule {}
+export class ImportModule {}

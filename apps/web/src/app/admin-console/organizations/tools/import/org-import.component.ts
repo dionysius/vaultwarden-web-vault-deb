@@ -18,11 +18,11 @@ import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.serv
 import { DialogService } from "@bitwarden/components";
 import { ImportServiceAbstraction } from "@bitwarden/importer";
 
-import { ImportComponent } from "../../../../tools/import-export/import.component";
+import { ImportComponent } from "../../../../tools/import/import.component";
 
 @Component({
   selector: "app-org-import",
-  templateUrl: "../../../../tools/import-export/import.component.html",
+  templateUrl: "../../../../tools/import/import.component.html",
 })
 // eslint-disable-next-line rxjs-angular/prefer-takeuntil
 export class OrganizationImportComponent extends ImportComponent {

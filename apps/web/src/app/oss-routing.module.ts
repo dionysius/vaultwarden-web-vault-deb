@@ -254,11 +254,13 @@ const routes: Routes = [
         children: [
           { path: "", pathMatch: "full", redirectTo: "generator" },
           {
-            path: "",
+            path: "import",
+            loadChildren: () => import("./tools/import/import.module").then((m) => m.ImportModule),
+          },
+          {
+            path: "export",
             loadChildren: () =>
-              import("./tools/import-export/import-export.module").then(
-                (m) => m.ImportExportModule
-              ),
+              import("./tools/vault-export/export.module").then((m) => m.ExportModule),
           },
           {
             path: "generator",
