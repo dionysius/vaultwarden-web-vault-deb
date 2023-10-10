@@ -1,0 +1,71 @@
+<h2 bitTypography="h2">
+  {{ "loginWithPasskey" | i18n }}
+  <ng-container *ngIf="hasData">
+    <span *ngIf="hasCredentials" bitBadge badgeType="success" class="!tw-align-middle">{{
+      "on" | i18n
+    }}</span>
+    <span *ngIf="!hasCredentials" bitBadge badgeType="secondary" class="!tw-align-middle">{{
+      "off" | i18n
+    }}</span>
+  </ng-container>
+  <ng-container *ngIf="loading">
+    <i class="bwi bwi-spinner bwi-spin tw-ml-1" aria-hidden="true"></i>
+  </ng-container>
+</h2>
+<p bitTypography="body1">
+  {{ "loginWithPasskeyInfo" | i18n }}
+  <a bitLink href="https://bitwarden.com/help/login-with-passkeys">{{
+    "learnMoreAboutPasswordless" | i18n
+  }}</a>
+</p>
+
+<table *ngIf="hasCredentials" class="tw-mb-5">
+  <tr *ngFor="let credential of credentials">
+    <td class="tw-p-2 tw-pl-0 tw-font-semibold">{{ credential.name }}</td>
+    <td class="tw-p-2 tw-pr-0">
+      <ng-container *ngIf="credential.prfSupport">
+        <i class="bwi bwi-lock-encrypted"></i>
+        {{ "supportsEncryption" | i18n }}
+      </ng-container>
+      <span bitTypography="body1" class="tw-text-muted">
+        {{ "encryptionNotSupported" | i18n }}
+      </span>
+    </td>
+    <td class="tw-py-2 tw-pl-10 tw-pr-0">
+      <button
+        type="button"
+        bitLink
+        [disabled]="loading"
+        [attr.aria-label]="('remove' | i18n) + ' ' + credential.name"
+        (click)="deleteCredential(credential.id)"
+      >
+        {{ "remove" | i18n }}
+      </button>
+    </td>
+  </tr>
+</table>
+
+<p bitTypography="body2" *ngIf="limitReached">{{ "passkeyLimitReachedInfo" | i18n }}</p>
+
+<ng-container *ngIf="hasData && !limitReached">
+  <button
+    *ngIf="hasCredentials"
+    type="button"
+    bitButton
+    [disabled]="loading"
+    (click)="createCredential()"
+  >
+    {{ "newPasskey" | i18n }}
+  </button>
+
+  <button
+    *ngIf="!hasCredentials"
+    type="button"
+    bitButton
+    [attr.aria-label]="('enable' | i18n) + ' ' + ('loginWithPasskey' | i18n)"
+    [disabled]="loading"
+    (click)="createCredential()"
+  >
+    {{ "enable" | i18n }}
+  </button>
+</ng-container>

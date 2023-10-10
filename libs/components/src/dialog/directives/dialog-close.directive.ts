@@ -1,5 +1,5 @@
 import { DialogRef } from "@angular/cdk/dialog";
-import { Directive, HostListener, Input, Optional } from "@angular/core";
+import { Directive, HostBinding, HostListener, Input, Optional } from "@angular/core";
 
 @Directive({
   selector: "[bitDialogClose]",
@@ -9,7 +9,17 @@ export class DialogCloseDirective {
 
   constructor(@Optional() public dialogRef: DialogRef) {}
 
-  @HostListener("click") close(): void {
+  @HostBinding("attr.disabled")
+  get disableClose() {
+    return this.dialogRef?.disableClose ? true : null;
+  }
+
+  @HostListener("click")
+  close(): void {
+    if (this.disableClose) {
+      return;
+    }
+
     this.dialogRef.close(this.dialogResult);
   }
 }
