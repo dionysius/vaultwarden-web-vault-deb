@@ -208,6 +208,7 @@ export class BrowserApi {
     name: string,
     callback: (message: any, sender: chrome.runtime.MessageSender, response: any) => void
   ) {
+    // eslint-disable-next-line no-restricted-syntax
     chrome.runtime.onMessage.addListener(callback);
 
     if (BrowserApi.isSafariApi && !BrowserApi.isBackgroundPage(window)) {
@@ -219,6 +220,7 @@ export class BrowserApi {
   static storageChangeListener(
     callback: Parameters<typeof chrome.storage.onChanged.addListener>[0]
   ) {
+    // eslint-disable-next-line no-restricted-syntax
     chrome.storage.onChanged.addListener(callback);
 
     if (BrowserApi.isSafariApi && !BrowserApi.isBackgroundPage(window)) {

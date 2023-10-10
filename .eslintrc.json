@@ -179,6 +179,23 @@
       "rules": {
         "no-restricted-imports": ["error", { "patterns": ["@bitwarden/vault/*", "src/**/*"] }]
       }
+    },
+    {
+      "files": ["apps/browser/src/**/*.ts", "libs/**/*.ts"],
+      "excludedFiles": "apps/browser/src/autofill/{content,notification}/**/*.ts",
+      "rules": {
+        "no-restricted-syntax": [
+          "error",
+          {
+            "message": "Using addListener in the browser popup produces a memory leak in Safari, use `BrowserApi.messageListener` instead",
+            "selector": "CallExpression > [object.object.object.name='chrome'][object.object.property.name='runtime'][object.property.name='onMessage'][property.name='addListener']"
+          },
+          {
+            "message": "Using addListener in the browser popup produces a memory leak in Safari, use `BrowserApi.storageChangeListener` instead",
+            "selector": "CallExpression > [object.object.object.name='chrome'][object.object.property.name='storage'][object.property.name='onChanged'][property.name='addListener']"
+          }
+        ]
+      }
     }
   ]
 }
