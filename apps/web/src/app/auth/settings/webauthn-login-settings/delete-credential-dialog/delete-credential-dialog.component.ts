@@ -27,6 +27,7 @@ export class DeleteCredentialDialogComponent implements OnInit, OnDestroy {
     masterPassword: ["", [Validators.required]],
   });
   protected credential?: WebauthnCredentialView;
+  protected loading$ = this.webauthnService.loading$;
 
   constructor(
     @Inject(DIALOG_DATA) private params: DeleteCredentialDialogParams,

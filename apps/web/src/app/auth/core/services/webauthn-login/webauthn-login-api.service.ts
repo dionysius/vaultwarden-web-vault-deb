@@ -1,25 +1,20 @@
 import { Injectable } from "@angular/core";
 
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
-import { UserVerificationService } from "@bitwarden/common/auth/abstractions/user-verification/user-verification.service.abstraction";
+import { SecretVerificationRequest } from "@bitwarden/common/auth/models/request/secret-verification.request";
 import { ListResponse } from "@bitwarden/common/models/response/list.response";
-import { Verification } from "@bitwarden/common/types/verification";
 
 import { SaveCredentialRequest } from "./request/save-credential.request";
 import { WebauthnLoginCredentialCreateOptionsResponse } from "./response/webauthn-login-credential-create-options.response";
 import { WebauthnLoginCredentialResponse } from "./response/webauthn-login-credential.response";
 
-@Injectable()
+@Injectable({ providedIn: "root" })
 export class WebauthnLoginApiService {
-  constructor(
-    private apiService: ApiService,
-    private userVerificationService: UserVerificationService
-  ) {}
+  constructor(private apiService: ApiService) {}
 
   async getCredentialCreateOptions(
-    verification: Verification
+    request: SecretVerificationRequest
   ): Promise<WebauthnLoginCredentialCreateOptionsResponse> {
-    const request = await this.userVerificationService.buildRequest(verification);
     const response = await this.apiService.send("POST", "/webauthn/options", request, true, true);
     return new WebauthnLoginCredentialCreateOptionsResponse(response);
   }
@@ -33,8 +28,7 @@ export class WebauthnLoginApiService {
     return this.apiService.send("GET", "/webauthn", null, true, true);
   }
 
-  async deleteCredential(credentialId: string, verification: Verification): Promise<void> {
-    const request = await this.userVerificationService.buildRequest(verification);
+  async deleteCredential(credentialId: string, request: SecretVerificationRequest): Promise<void> {
     await this.apiService.send("POST", `/webauthn/${credentialId}/delete`, request, true, true);
   }
 }

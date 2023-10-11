@@ -22,7 +22,7 @@
 <table *ngIf="hasCredentials" class="tw-mb-5">
   <tr *ngFor="let credential of credentials">
     <td class="tw-p-2 tw-pl-0 tw-font-semibold">{{ credential.name }}</td>
-    <td class="tw-p-2 tw-pr-0">
+    <td class="tw-p-2 tw-pr-10">
       <ng-container *ngIf="credential.prfSupport">
         <i class="bwi bwi-lock-encrypted"></i>
         {{ "supportsEncryption" | i18n }}
@@ -31,7 +31,7 @@
         {{ "encryptionNotSupported" | i18n }}
       </span>
     </td>
-    <td class="tw-py-2 tw-pl-10 tw-pr-0">
+    <td class="tw-py-2">
       <button
         type="button"
         bitLink

@@ -11,6 +11,6 @@ import { WebauthnLoginSettingsModule } from "./webauthn-login-settings";
   imports: [SharedModule, WebauthnLoginSettingsModule, PasswordCalloutComponent],
   declarations: [ChangePasswordComponent],
   providers: [],
-  exports: [WebauthnLoginSettingsModule, ChangePasswordComponent],
+  exports: [ChangePasswordComponent],
 })
-export class SettingsModule {}
+export class AuthSettingsModule {}

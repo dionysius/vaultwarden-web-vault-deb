@@ -46,6 +46,7 @@ export class CreateCredentialDialogComponent implements OnInit {
   protected credentialOptions?: CredentialCreateOptionsView;
   protected deviceResponse?: PublicKeyCredential;
   protected hasPasskeys$?: Observable<boolean>;
+  protected loading$ = this.webauthnService.loading$;
 
   constructor(
     private formBuilder: FormBuilder,

@@ -19,7 +19,7 @@ import { openDeleteCredentialDialogComponent } from "./delete-credential-dialog/
 export class WebauthnLoginSettingsComponent implements OnInit, OnDestroy {
   private destroy$ = new Subject<void>();
 
-  protected readonly MaxCredentialCount = 5;
+  protected readonly MaxCredentialCount = WebauthnLoginService.MaxCredentialCount;
 
   protected credentials?: WebauthnCredentialView[];
   protected loading = true;

@@ -1,6 +1,7 @@
 import { Injectable, Optional } from "@angular/core";
 import { BehaviorSubject, filter, from, map, Observable, shareReplay, switchMap, tap } from "rxjs";
 
+import { UserVerificationService } from "@bitwarden/common/auth/abstractions/user-verification/user-verification.service.abstraction";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { Verification } from "@bitwarden/common/types/verification";
 
@@ -11,8 +12,10 @@ import { SaveCredentialRequest } from "./request/save-credential.request";
 import { WebauthnLoginAttestationResponseRequest } from "./request/webauthn-login-attestation-response.request";
 import { WebauthnLoginApiService } from "./webauthn-login-api.service";
 
-@Injectable()
+@Injectable({ providedIn: "root" })
 export class WebauthnLoginService {
+  static readonly MaxCredentialCount = 5;
+
   private navigatorCredentials: CredentialsContainer;
   private _refresh$ = new BehaviorSubject<void>(undefined);
   private _loading$ = new BehaviorSubject<boolean>(true);
@@ -27,6 +30,7 @@ export class WebauthnLoginService {
 
   constructor(
     private apiService: WebauthnLoginApiService,
+    private userVerificationService: UserVerificationService,
     @Optional() navigatorCredentials?: CredentialsContainer,
     @Optional() private logService?: LogService
   ) {
@@ -37,7 +41,8 @@ export class WebauthnLoginService {
   async getCredentialCreateOptions(
     verification: Verification
   ): Promise<CredentialCreateOptionsView> {
-    const response = await this.apiService.getCredentialCreateOptions(verification);
+    const request = await this.userVerificationService.buildRequest(verification);
+    const response = await this.apiService.getCredentialCreateOptions(request);
     return new CredentialCreateOptionsView(response.options, response.token);
   }
 
@@ -95,7 +100,8 @@ export class WebauthnLoginService {
   }
 
   async deleteCredential(credentialId: string, verification: Verification): Promise<void> {
-    await this.apiService.deleteCredential(credentialId, verification);
+    const request = await this.userVerificationService.buildRequest(verification);
+    await this.apiService.deleteCredential(credentialId, request);
     this.refresh();
   }
 
