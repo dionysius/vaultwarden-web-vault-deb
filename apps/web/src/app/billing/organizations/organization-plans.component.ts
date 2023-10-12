@@ -148,7 +148,7 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
       }
     }
 
-    if (this.providerId) {
+    if (this.hasProvider) {
       this.formGroup.controls.businessOwned.setValue(true);
       this.changedOwnedBusiness();
     }
@@ -176,7 +176,7 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
   }
 
   get singleOrgPolicyBlock() {
-    return this.singleOrgPolicyAppliesToActiveUser && this.providerId == null;
+    return this.singleOrgPolicyAppliesToActiveUser && !this.hasProvider;
   }
 
   get createOrganization() {
@@ -233,6 +233,10 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
       (plan) =>
         !plan.legacyYear && !plan.disabled && plan.product === this.formGroup.controls.product.value
     );
+  }
+
+  get hasProvider() {
+    return this.providerId != null;
   }
 
   additionalStoragePriceMonthly(selectedPlan: PlanResponse) {
@@ -540,7 +544,7 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
     // Secrets Manager
     this.buildSecretsManagerRequest(request);
 
-    if (this.providerId) {
+    if (this.hasProvider) {
       const providerRequest = new ProviderOrganizationCreateRequest(
         this.formGroup.controls.clientOwnerEmail.value,
         request
