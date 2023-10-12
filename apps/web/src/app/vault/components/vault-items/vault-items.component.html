@@ -58,7 +58,7 @@
       </tr>
     </ng-container>
     <ng-template body let-rows$>
-      <ng-container *cdkVirtualFor="let item of rows$">
+      <ng-container *cdkVirtualFor="let item of rows$; templateCacheSize: 0">
         <tr
           *ngIf="item.collection"
           bitRow
