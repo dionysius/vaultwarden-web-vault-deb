@@ -1,7 +1,11 @@
 import { enableProdMode } from "@angular/core";
 import { platformBrowserDynamic } from "@angular/platform-browser-dynamic";
 
+import { ipc } from "../preload";
 import { isDev } from "../utils";
+
+// Temporary polyfill for preload script
+(window as any).ipc = ipc;
 
 require("../scss/styles.scss");
 require("../scss/tailwind.css");

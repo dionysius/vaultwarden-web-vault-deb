@@ -9,31 +9,14 @@ import {
 } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 
 import { BiometricMessage, BiometricStorageAction } from "../../types/biometric-message";
-import { isDev, isMacAppStore } from "../../utils";
+import { isMacAppStore } from "../../utils";
 import { ClipboardWriteMessage } from "../types/clipboard";
 
 export class ElectronPlatformUtilsService implements PlatformUtilsService {
-  private deviceCache: DeviceType = null;
-
   constructor(protected i18nService: I18nService, private messagingService: MessagingService) {}
 
   getDevice(): DeviceType {
-    if (!this.deviceCache) {
-      switch (process.platform) {
-        case "win32":
-          this.deviceCache = DeviceType.WindowsDesktop;
-          break;
-        case "darwin":
-          this.deviceCache = DeviceType.MacOsDesktop;
-          break;
-        case "linux":
-        default:
-          this.deviceCache = DeviceType.LinuxDesktop;
-          break;
-      }
-    }
-
-    return this.deviceCache;
+    return ipc.platform.deviceType;
   }
 
   getDeviceString(): string {
@@ -82,7 +65,7 @@ export class ElectronPlatformUtilsService implements PlatformUtilsService {
   }
 
   getApplicationVersion(): Promise<string> {
-    return ipcRenderer.invoke("appVersion");
+    return ipc.platform.versions.app();
   }
 
   async getApplicationVersionNumber(): Promise<string> {
@@ -92,7 +75,7 @@ export class ElectronPlatformUtilsService implements PlatformUtilsService {
   // Temporarily restricted to only Windows until https://github.com/electron/electron/pull/28349
   // has been merged and an updated electron build is available.
   supportsWebAuthn(win: Window): boolean {
-    return process.platform === "win32";
+    return this.getDevice() === DeviceType.WindowsDesktop;
   }
 
   supportsDuo(): boolean {
@@ -114,7 +97,7 @@ export class ElectronPlatformUtilsService implements PlatformUtilsService {
   }
 
   isDev(): boolean {
-    return isDev();
+    return ipc.platform.isDev;
   }
 
   isSelfHost(): boolean {

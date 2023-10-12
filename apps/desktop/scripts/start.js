@@ -14,6 +14,11 @@ concurrently(
       prefixColor: "yellow",
     },
     {
+      name: "Prel",
+      command: "npm run build:preload:watch",
+      prefixColor: "magenta",
+    },
+    {
       name: "Rend",
       command: "npm run build:renderer:watch",
       prefixColor: "cyan",

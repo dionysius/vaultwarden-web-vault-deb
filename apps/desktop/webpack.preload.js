@@ -8,7 +8,7 @@ const { EnvironmentPlugin } = require("webpack");
 
 const NODE_ENV = process.env.NODE_ENV == null ? "development" : process.env.NODE_ENV;
 
-console.log("Main process config");
+console.log("Preload process config");
 const envConfig = configurator.load(NODE_ENV);
 configurator.log(envConfig);
 
@@ -47,43 +47,16 @@ const dev = {
 
 const main = {
   mode: NODE_ENV,
-  target: "electron-main",
+  target: "electron-preload",
   node: {
     __dirname: false,
     __filename: false,
   },
   entry: {
-    main: "./src/entry.ts",
+    preload: "./src/preload.ts",
   },
   optimization: {
     minimize: false,
-  },
-  module: {
-    rules: [
-      {
-        test: /\.node$/,
-        loader: "node-loader",
-      },
-    ],
-  },
-  plugins: [
-    new CopyWebpackPlugin({
-      patterns: [
-        "./src/package.json",
-        { from: "./src/images", to: "images" },
-        { from: "./src/locales", to: "locales" },
-        "../../node_modules/argon2-browser/dist/argon2.wasm",
-        "../../node_modules/argon2-browser/dist/argon2-simd.wasm",
-      ],
-    }),
-    new EnvironmentPlugin({
-      FLAGS: envConfig.flags,
-      DEV_FLAGS: NODE_ENV === "development" ? envConfig.devFlags : {},
-    }),
-  ],
-  externals: {
-    "electron-reload": "commonjs2 electron-reload",
-    "@bitwarden/desktop-native": "commonjs2 @bitwarden/desktop-native",
   },
 };
 

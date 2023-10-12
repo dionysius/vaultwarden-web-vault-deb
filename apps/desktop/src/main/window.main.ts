@@ -143,6 +143,7 @@ export class WindowMain {
       backgroundColor: await this.getBackgroundColor(),
       alwaysOnTop: this.enableAlwaysOnTop,
       webPreferences: {
+        // preload: path.join(__dirname, "preload.js"),
         spellcheck: false,
         nodeIntegration: true,
         backgroundThrottling: false,
