@@ -1,3 +1,5 @@
+import { DuoFactor, DuoStatus } from "../enums";
+
 // Adds Duo functionality to the module-specific Ui class.
 export abstract class DuoUi {
   // To cancel return null
@@ -6,19 +8,6 @@ export abstract class DuoUi {
   provideDuoPasscode: (device: DuoDevice) => string;
   // This updates the UI with the messages from the server.
   updateDuoStatus: (status: DuoStatus, text: string) => void;
-}
-
-export enum DuoFactor {
-  Push,
-  Call,
-  Passcode,
-  SendPasscodesBySms,
-}
-
-export enum DuoStatus {
-  Success,
-  Error,
-  Info,
 }
 
 export interface DuoChoice {

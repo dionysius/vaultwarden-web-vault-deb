@@ -6,7 +6,7 @@ export class CryptoUtils {
 
   async deriveKey(username: string, password: string, iterationCount: number) {
     if (iterationCount < 0) {
-      throw "Iteration count should be positive";
+      throw new Error("Iteration count should be positive");
     }
     if (iterationCount == 1) {
       return await this.cryptoFunctionService.hash(username + password, "sha256");
@@ -27,7 +27,7 @@ export class CryptoUtils {
 
   ExclusiveOr(arr1: Uint8Array, arr2: Uint8Array) {
     if (arr1.length !== arr2.length) {
-      throw "Arrays must be the same length.";
+      throw new Error("Arrays must be the same length.");
     }
     const result = new Uint8Array(arr1.length);
     for (let i = 0; i < arr1.length; i++) {

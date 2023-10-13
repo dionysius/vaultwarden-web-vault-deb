@@ -1,4 +1,4 @@
-import { Platform } from "./platform";
+import { Platform } from "../enums";
 
 export class ClientInfo {
   platform: Platform;

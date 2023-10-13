@@ -12,7 +12,7 @@ export class BinaryReader {
 
   readBytes(count: number): Uint8Array {
     if (this.position + count > this.arr.length) {
-      throw "End of array reached";
+      throw new Error("End of array reached");
     }
     const slice = this.arr.subarray(this.position, this.position + count);
     this.position += count;
@@ -62,10 +62,10 @@ export class BinaryReader {
   seekFromCurrentPosition(offset: number) {
     const newPosition = this.position + offset;
     if (newPosition < 0) {
-      throw "Position cannot be negative";
+      throw new Error("Position cannot be negative");
     }
     if (newPosition > this.arr.length) {
-      throw "Array not large enough to seek to this position";
+      throw new Error("Array not large enough to seek to this position");
     }
     this.position = newPosition;
   }

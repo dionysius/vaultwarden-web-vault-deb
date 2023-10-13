@@ -3,16 +3,16 @@ import { HttpStatusCode } from "@bitwarden/common/enums";
 import { CryptoFunctionService } from "@bitwarden/common/platform/abstractions/crypto-function.service";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
 
-import { Account } from "./account";
-import { Client } from "./client";
-import { ClientInfo } from "./client-info";
-import { CryptoUtils } from "./crypto-utils";
-import { FederatedUserContext } from "./federated-user-context";
-import { Parser } from "./parser";
-import { ParserOptions } from "./parser-options";
-import { RestClient } from "./rest-client";
+import { IdpProvider } from "./enums";
+import {
+  Account,
+  ClientInfo,
+  FederatedUserContext,
+  ParserOptions,
+  UserTypeContext,
+} from "./models";
+import { Client, CryptoUtils, Parser, RestClient } from "./services";
 import { Ui } from "./ui";
-import { Provider, UserTypeContext } from "./user-type-context";
 
 export class Vault {
   accounts: Account[];
@@ -47,7 +47,7 @@ export class Vault {
     parserOptions: ParserOptions = ParserOptions.default
   ): Promise<void> {
     if (federatedUser == null) {
-      throw "Federated user context is not set.";
+      throw new Error("Federated user context is not set.");
     }
     const k1 = await this.getK1(federatedUser);
     const k2 = await this.getK2(federatedUser);
@@ -77,32 +77,33 @@ export class Vault {
       this.userType.PkceEnabled = json.PkceEnabled;
       this.userType.Provider = json.Provider;
       this.userType.type = json.type;
+      return;
     }
-    throw "Cannot determine LastPass user type.";
+    throw new Error("Cannot determine LastPass user type.");
   }
 
   private async getK1(federatedUser: FederatedUserContext): Promise<Uint8Array> {
     if (this.userType == null) {
-      throw "User type is not set.";
+      throw new Error("User type is not set.");
     }
 
     if (!this.userType.isFederated()) {
-      throw "Cannot get k1 for LastPass user that is not federated.";
+      throw new Error("Cannot get k1 for LastPass user that is not federated.");
     }
 
     if (federatedUser == null) {
-      throw "Federated user is not set.";
+      throw new Error("Federated user is not set.");
     }
 
     let k1: Uint8Array = null;
     if (federatedUser.idpUserInfo?.LastPassK1 !== null) {
       return Utils.fromByteStringToArray(federatedUser.idpUserInfo.LastPassK1);
-    } else if (this.userType.Provider === Provider.Azure) {
+    } else if (this.userType.Provider === IdpProvider.Azure) {
       k1 = await this.getK1Azure(federatedUser);
-    } else if (this.userType.Provider === Provider.Google) {
+    } else if (this.userType.Provider === IdpProvider.Google) {
       k1 = await this.getK1Google(federatedUser);
     } else {
-      const b64Encoded = this.userType.Provider === Provider.PingOne;
+      const b64Encoded = this.userType.Provider === IdpProvider.PingOne;
       k1 = this.getK1FromAccessToken(federatedUser, b64Encoded);
     }
 
@@ -110,7 +111,7 @@ export class Vault {
       return k1;
     }
 
-    throw "Cannot get k1.";
+    throw new Error("Cannot get k1.");
   }
 
   private async getK1Azure(federatedUser: FederatedUserContext) {
@@ -175,11 +176,11 @@ export class Vault {
 
   private async getK2(federatedUser: FederatedUserContext): Promise<Uint8Array> {
     if (this.userType == null) {
-      throw "User type is not set.";
+      throw new Error("User type is not set.");
     }
 
     if (!this.userType.isFederated()) {
-      throw "Cannot get k2 for LastPass user that is not federated.";
+      throw new Error("Cannot get k2 for LastPass user that is not federated.");
     }
 
     const rest = new RestClient();
@@ -195,6 +196,6 @@ export class Vault {
         return Utils.fromB64ToArray(k2);
       }
     }
-    throw "Cannot get k2.";
+    throw new Error("Cannot get k2.");
   }
 }

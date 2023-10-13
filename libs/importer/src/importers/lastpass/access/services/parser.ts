@@ -1,12 +1,10 @@
 import { CryptoFunctionService } from "@bitwarden/common/platform/abstractions/crypto-function.service";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
 
-import { Account } from "./account";
+import { Account, Chunk, ParserOptions, SharedFolder } from "../models";
+
 import { BinaryReader } from "./binary-reader";
-import { Chunk } from "./chunk";
 import { CryptoUtils } from "./crypto-utils";
-import { ParserOptions } from "./parser-options";
-import { SharedFolder } from "./shared-folder";
 
 const AllowedSecureNoteTypes = new Set<string>([
   "Server",
@@ -285,7 +283,7 @@ export class Parser {
     const header = "LastPassPrivateKey<";
     const footer = ">LastPassPrivateKey";
     if (!decrypted.startsWith(header) || !decrypted.endsWith(footer)) {
-      throw "Failed to decrypt private key";
+      throw new Error("Failed to decrypt private key");
     }
 
     const parsedKey = decrypted.substring(header.length, decrypted.length - footer.length);
