@@ -611,6 +611,72 @@
   "loginWithMasterPassword": {
     "message": "Entrar com senha mestra"
   },
+  "loginWithPasskey": {
+    "message": "Iniciar sessão com a chave de acesso"
+  },
+  "loginWithPasskeyInfo": {
+    "message": "Use uma senha gerada que fará o login automaticamente sem uma senha. Biometrias como reconhecimento facial ou impressão digital, ou outro método de segurança FIDO2 verificarão sua identidade."
+  },
+  "newPasskey": {
+    "message": "Nova chave de acesso"
+  },
+  "learnMoreAboutPasswordless": {
+    "message": "Saiba mais sobre acesso sem senha"
+  },
+  "passkeyEnterMasterPassword": {
+    "message": "Digite sua senha mestra para modificar as configurações de login com chave de acesso."
+  },
+  "creatingPasskeyLoading": {
+    "message": "Criando chave de acesso..."
+  },
+  "creatingPasskeyLoadingInfo": {
+    "message": "Mantenha esta janela aberta e siga as instruções do seu navegador."
+  },
+  "errorCreatingPasskey": {
+    "message": "Erro ao criar chave de acesso"
+  },
+  "errorCreatingPasskeyInfo": {
+    "message": "Houve um problema ao criar sua chave de acesso."
+  },
+  "passkeySuccessfullyCreated": {
+    "message": "Chave de acesso criada com sucesso!"
+  },
+  "customName": {
+    "message": "Nome personalizado"
+  },
+  "customPasskeyNameInfo": {
+    "message": "Nomeie sua chave de acesso para ajudá-lo a identificá-la."
+  },
+  "encryptionNotSupported": {
+    "message": "Criptografia não suportada"
+  },
+  "loginWithPasskeyEnabled": {
+    "message": "Iniciar sessão com a chave de acesso ativada"
+  },
+  "passkeySaved": {
+    "message": "$NAME$ salvo",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Personal yubikey"
+      }
+    }
+  },
+  "passkeyRemoved": {
+    "message": "Chave de acesso removida"
+  },
+  "removePasskey": {
+    "message": "Remover chave de acesso"
+  },
+  "removePasskeyInfo": {
+    "message": "Se todas as chaves de acesso forem removidas, não será mais possível fazer login em novos dispositivos sem sua senha mestra."
+  },
+  "passkeyLimitReachedInfo": {
+    "message": "Limite de chaves de acesso atingido. Remova uma chave de acesso para adicionar outra."
+  },
+  "tryAgain": {
+    "message": "Tente Novamente"
+  },
   "createAccount": {
     "message": "Criar conta"
   },
@@ -5406,6 +5472,19 @@
   "required": {
     "message": "obrigatório"
   },
+  "charactersCurrentAndMaximum": {
+    "message": "$CURRENT$/$MAX$ caracteres no máximo",
+    "placeholders": {
+      "current": {
+        "content": "$1",
+        "example": "0"
+      },
+      "max": {
+        "content": "$2",
+        "example": "100"
+      }
+    }
+  },
   "characterMaximum": {
     "message": "máximo de $MAX$ caracteres",
     "placeholders": {
@@ -5753,6 +5832,9 @@
   },
   "on": {
     "message": "Ligado"
+  },
+  "off": {
+    "message": "Desligado"
   },
   "members": {
     "message": "Membros"
@@ -7096,8 +7178,8 @@
       }
     }
   },
-  "addSecretsManager": {
-    "message": "Add Secrets Manager"
+  "subscribeToSecretsManager": {
+    "message": "Assine o Gerenciador de Segredos"
   },
   "addSecretsManagerUpgradeDesc": {
     "message": "Add Secrets Manager to your upgraded plan to maintain access to any secrets created with your previous plan."

@@ -611,6 +611,72 @@
   "loginWithMasterPassword": {
     "message": "Ana parola ile giriş yap"
   },
+  "loginWithPasskey": {
+    "message": "Şifreyle giriş yapın"
+  },
+  "loginWithPasskeyInfo": {
+    "message": "Parola olmadan otomatik olarak oturum açmanızı sağlayacak oluşturulmuş bir geçiş anahtarı kullanın. Yüz tanıma veya parmak izi gibi biyometri veya başka bir FIDO2 güvenlik yöntemi kimliğinizi doğrulayacaktır."
+  },
+  "newPasskey": {
+    "message": "Yeni şifre"
+  },
+  "learnMoreAboutPasswordless": {
+    "message": "Learn more about passwordless"
+  },
+  "passkeyEnterMasterPassword": {
+    "message": "Şifre anahtarıyla oturum açma ayarlarını değiştirmek için ana şifrenizi girin."
+  },
+  "creatingPasskeyLoading": {
+    "message": "Creating passkey..."
+  },
+  "creatingPasskeyLoadingInfo": {
+    "message": "Bu pencereyi açık tutun ve tarayıcınızdan gelen talimatları izleyin."
+  },
+  "errorCreatingPasskey": {
+    "message": "Error creating passkey"
+  },
+  "errorCreatingPasskeyInfo": {
+    "message": "Şifreniz oluşturulurken bir sorun oluştu."
+  },
+  "passkeySuccessfullyCreated": {
+    "message": "Passkey successfully created!"
+  },
+  "customName": {
+    "message": "Custom name"
+  },
+  "customPasskeyNameInfo": {
+    "message": "Name your passkey to help you identify it."
+  },
+  "encryptionNotSupported": {
+    "message": "Encryption not supported"
+  },
+  "loginWithPasskeyEnabled": {
+    "message": "Log in with passkey turned on"
+  },
+  "passkeySaved": {
+    "message": "$NAME$ kaydedildi",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Personal yubikey"
+      }
+    }
+  },
+  "passkeyRemoved": {
+    "message": "Passkey removed"
+  },
+  "removePasskey": {
+    "message": "Remove passkey"
+  },
+  "removePasskeyInfo": {
+    "message": "If all passkeys are removed, you will be unable to log into new devices without your master password."
+  },
+  "passkeyLimitReachedInfo": {
+    "message": "Passkey limit reached. Remove a passkey to add another."
+  },
+  "tryAgain": {
+    "message": "Try again"
+  },
   "createAccount": {
     "message": "Hesap aç"
   },
@@ -5406,6 +5472,19 @@
   "required": {
     "message": "zorunlu"
   },
+  "charactersCurrentAndMaximum": {
+    "message": "$CURRENT$/$MAX$ character maximum",
+    "placeholders": {
+      "current": {
+        "content": "$1",
+        "example": "0"
+      },
+      "max": {
+        "content": "$2",
+        "example": "100"
+      }
+    }
+  },
   "characterMaximum": {
     "message": "en fazla $MAX$ karakter",
     "placeholders": {
@@ -5753,6 +5832,9 @@
   },
   "on": {
     "message": "Açık"
+  },
+  "off": {
+    "message": "Kapalı"
   },
   "members": {
     "message": "Üyeler"
@@ -7096,8 +7178,8 @@
       }
     }
   },
-  "addSecretsManager": {
-    "message": "Add Secrets Manager"
+  "subscribeToSecretsManager": {
+    "message": "Secrets Manager'a abone olun"
   },
   "addSecretsManagerUpgradeDesc": {
     "message": "Add Secrets Manager to your upgraded plan to maintain access to any secrets created with your previous plan."

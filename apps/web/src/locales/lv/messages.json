@@ -611,6 +611,72 @@
   "loginWithMasterPassword": {
     "message": "Pieteikties ar galveno paroli"
   },
+  "loginWithPasskey": {
+    "message": "Pieteikties ar piekļuves atslēgu"
+  },
+  "loginWithPasskeyInfo": {
+    "message": "Piekļuves atslēga ir izmantojama, lai automātiski pieteiktos bez paroles. Biometrija, piemēram, sejas atpazīšana vai pirkstu nospiedums, vai cits FIDO2 drošības veids apstiprinās identitāti."
+  },
+  "newPasskey": {
+    "message": "Jauna piekļuves atslēga"
+  },
+  "learnMoreAboutPasswordless": {
+    "message": "Uzzināt vairāk par bezparoles pieteikšanos"
+  },
+  "passkeyEnterMasterPassword": {
+    "message": "Jāievada galvenā parole, lai mainītu pieteikšanās ar piekļuves atslēgu iestatījumus."
+  },
+  "creatingPasskeyLoading": {
+    "message": "Izveido piekļuves atslēgu..."
+  },
+  "creatingPasskeyLoadingInfo": {
+    "message": "Šis logs ir jāpatur atvērts un jāseko uzvednēm pārlūkā."
+  },
+  "errorCreatingPasskey": {
+    "message": "Kļūda piekļuves atslēgas izveidošanā"
+  },
+  "errorCreatingPasskeyInfo": {
+    "message": "Atgadījās kļūda piekļuves atslēgas izveidošanas laikā."
+  },
+  "passkeySuccessfullyCreated": {
+    "message": "Piekļuves atslēga veiksmīģi izveidota."
+  },
+  "customName": {
+    "message": "Pielāgots nosaukums"
+  },
+  "customPasskeyNameInfo": {
+    "message": "Nosaukuma piešķiršana piekļuves atslēgai palīdz to atpazīt."
+  },
+  "encryptionNotSupported": {
+    "message": "Šifrēšana nav atbalstīta"
+  },
+  "loginWithPasskeyEnabled": {
+    "message": "Pieteikšanās ar piekūves atslēgu ieslēgta"
+  },
+  "passkeySaved": {
+    "message": "$NAME$ saglabāta",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Personal yubikey"
+      }
+    }
+  },
+  "passkeyRemoved": {
+    "message": "Piekļuves atslēga noņemta"
+  },
+  "removePasskey": {
+    "message": "Noņemt piekļuves atslēgu"
+  },
+  "removePasskeyInfo": {
+    "message": "Ja visas piekļuves atslēgas ir noņemtas, nebūs iespējams pieteikties jaunās ierīcēs bez galvenās paroles."
+  },
+  "passkeyLimitReachedInfo": {
+    "message": "Sasniegts piekļuves atslēgu ierobežojums. Jānoņem kāda piekļuves atslēga, lai pievienotu citu."
+  },
+  "tryAgain": {
+    "message": "Jāmēģina vēlreiz"
+  },
   "createAccount": {
     "message": "Izveidot kontu"
   },
@@ -5406,6 +5472,19 @@
   "required": {
     "message": "nepieciešams"
   },
+  "charactersCurrentAndMaximum": {
+    "message": "$CURRENT$/$MAX$ rakstzīmes",
+    "placeholders": {
+      "current": {
+        "content": "$1",
+        "example": "0"
+      },
+      "max": {
+        "content": "$2",
+        "example": "100"
+      }
+    }
+  },
   "characterMaximum": {
     "message": "Ne vairāk kā $MAX$ rakstzīmju",
     "placeholders": {
@@ -5753,6 +5832,9 @@
   },
   "on": {
     "message": "Ieslēgts"
+  },
+  "off": {
+    "message": "Izslēgts"
   },
   "members": {
     "message": "Dalībnieki"
@@ -7096,8 +7178,8 @@
       }
     }
   },
-  "addSecretsManager": {
-    "message": "Pievienot Noslēpumu pārvaldnieku"
+  "subscribeToSecretsManager": {
+    "message": "Abonēt Noslēpumu pārvaldnieku"
   },
   "addSecretsManagerUpgradeDesc": {
     "message": "Noslēpumu pārvaldnieks jāpievieno uzlabotajam plānam, lai saglabātu piekļuvi visiem noslēpumiem, kas tika izveidoti iepriekšējā plānā."

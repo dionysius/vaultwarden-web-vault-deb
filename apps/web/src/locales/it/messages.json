@@ -611,6 +611,72 @@
   "loginWithMasterPassword": {
     "message": "Accedi con password principale"
   },
+  "loginWithPasskey": {
+    "message": "Accedi con passkey"
+  },
+  "loginWithPasskeyInfo": {
+    "message": "Usa una passkey che ti farà accedere automaticamente senza una password. L'autenticazione biometrica, come il riconoscimento facciale o l'impronta digitale, o un altro metodo di sicurezza FIDO2 verificherà la tua identità."
+  },
+  "newPasskey": {
+    "message": "Nuova passkey"
+  },
+  "learnMoreAboutPasswordless": {
+    "message": "Ulteriori informazioni sull'autenticazione senza password"
+  },
+  "passkeyEnterMasterPassword": {
+    "message": "Inserisci la tua password principale per modificare le impostazioni di accesso con le passkey."
+  },
+  "creatingPasskeyLoading": {
+    "message": "Creando la passkey..."
+  },
+  "creatingPasskeyLoadingInfo": {
+    "message": "Mantieni questa finestra aperta e segui le istruzioni del tuo browser."
+  },
+  "errorCreatingPasskey": {
+    "message": "Errore durante la creazione della passkey"
+  },
+  "errorCreatingPasskeyInfo": {
+    "message": "Si è verificato un problema durante la creazione della tua passkey."
+  },
+  "passkeySuccessfullyCreated": {
+    "message": "Passkey creata!"
+  },
+  "customName": {
+    "message": "Nome personalizzato"
+  },
+  "customPasskeyNameInfo": {
+    "message": "Dai un nome alla tua passkey per aiutarti a riconoscerla."
+  },
+  "encryptionNotSupported": {
+    "message": "Criptografia non supportata"
+  },
+  "loginWithPasskeyEnabled": {
+    "message": "Accesso con passkey attivato"
+  },
+  "passkeySaved": {
+    "message": "$NAME$ salvato",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Personal yubikey"
+      }
+    }
+  },
+  "passkeyRemoved": {
+    "message": "Passkey rimossa"
+  },
+  "removePasskey": {
+    "message": "Rimuovi passkey"
+  },
+  "removePasskeyInfo": {
+    "message": "Se tutte le passkey sono rimosse, non potrai accedere a nuovi dispositivi senza la tua password principale."
+  },
+  "passkeyLimitReachedInfo": {
+    "message": "Limite di passkey raggiunto. Rimuovi una passkey per aggiungerne un'altra."
+  },
+  "tryAgain": {
+    "message": "Riprova"
+  },
   "createAccount": {
     "message": "Crea account"
   },
@@ -5406,6 +5472,19 @@
   "required": {
     "message": "obbligatorio"
   },
+  "charactersCurrentAndMaximum": {
+    "message": "$CURRENT$ caratteri su $MAX$",
+    "placeholders": {
+      "current": {
+        "content": "$1",
+        "example": "0"
+      },
+      "max": {
+        "content": "$2",
+        "example": "100"
+      }
+    }
+  },
   "characterMaximum": {
     "message": "Massimo $MAX$ caratteri",
     "placeholders": {
@@ -5753,6 +5832,9 @@
   },
   "on": {
     "message": "Attivo"
+  },
+  "off": {
+    "message": "No"
   },
   "members": {
     "message": "Membri"
@@ -7096,8 +7178,8 @@
       }
     }
   },
-  "addSecretsManager": {
-    "message": "Aggiungi Gestore dei Segreti"
+  "subscribeToSecretsManager": {
+    "message": "Iscriviti al Gestore dei Segreti"
   },
   "addSecretsManagerUpgradeDesc": {
     "message": "Aggiungi il Gestore dei Segreti al tuo piano aggiornato per mantenere l'accesso a tutti i secret creati con il tuo piano precedente."

@@ -611,6 +611,72 @@
   "loginWithMasterPassword": {
     "message": "Log ind med hovedadgangskode"
   },
+  "loginWithPasskey": {
+    "message": "Log ind med adgangsnøgle"
+  },
+  "loginWithPasskeyInfo": {
+    "message": "Brug en genereret adgangsnøgle, der automatisk logger dig ind uden en adgangskode. Biometri, såsom ansigtsgenkendelse eller fingeraftryk, eller en anden FIDO2-sikkerhedsmetode, vil bekræfte din identitet."
+  },
+  "newPasskey": {
+    "message": "Ny adgangsnøgle"
+  },
+  "learnMoreAboutPasswordless": {
+    "message": "Læs mere om adgangskodefrihed"
+  },
+  "passkeyEnterMasterPassword": {
+    "message": "Angiv hovedadgangskoden for at ændre loginindstillinger for adgangsnøgle."
+  },
+  "creatingPasskeyLoading": {
+    "message": "Opretter adgangsnøgle..."
+  },
+  "creatingPasskeyLoadingInfo": {
+    "message": "Hold dette vindue åbent, og følg prompterne fra webbrowseren."
+  },
+  "errorCreatingPasskey": {
+    "message": "Fejl ved oprettelse af adgangsnøgle"
+  },
+  "errorCreatingPasskeyInfo": {
+    "message": "Der opstod et problem med at oprette adgangsnøglen."
+  },
+  "passkeySuccessfullyCreated": {
+    "message": "Adgangsnøgle hermed oprettet!"
+  },
+  "customName": {
+    "message": "Tilpasset navn"
+  },
+  "customPasskeyNameInfo": {
+    "message": "Navngiv adgangsnøglen for at hjælpe dig med at identificere den."
+  },
+  "encryptionNotSupported": {
+    "message": "Kryptering ikke understøttet"
+  },
+  "loginWithPasskeyEnabled": {
+    "message": "Log ind med adgangsnøgle slået til"
+  },
+  "passkeySaved": {
+    "message": "$NAME$ gemt",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Personal yubikey"
+      }
+    }
+  },
+  "passkeyRemoved": {
+    "message": "Adgangsnøgle fjernet"
+  },
+  "removePasskey": {
+    "message": "Fjern adgangsnøgle"
+  },
+  "removePasskeyInfo": {
+    "message": "Fjernes alle adgangsnøgler, vil du ikke kunne logge ind på nye enheder uden hovedadgangskoden."
+  },
+  "passkeyLimitReachedInfo": {
+    "message": "Adgangsnøglekvote nået. Fjern en adgangsnøgle for at tilføje en anden."
+  },
+  "tryAgain": {
+    "message": "Forsøg igen"
+  },
   "createAccount": {
     "message": "Opret konto"
   },
@@ -5406,6 +5472,19 @@
   "required": {
     "message": "obligatorisk"
   },
+  "charactersCurrentAndMaximum": {
+    "message": "$CURRENT$/$MAX$ tegn maksimalt",
+    "placeholders": {
+      "current": {
+        "content": "$1",
+        "example": "0"
+      },
+      "max": {
+        "content": "$2",
+        "example": "100"
+      }
+    }
+  },
   "characterMaximum": {
     "message": "Maksimalt $MAX$ tegn",
     "placeholders": {
@@ -5753,6 +5832,9 @@
   },
   "on": {
     "message": "Til"
+  },
+  "off": {
+    "message": "Fra"
   },
   "members": {
     "message": "Medlemmer"
@@ -7096,8 +7178,8 @@
       }
     }
   },
-  "addSecretsManager": {
-    "message": "Tilføj Secrets Manager"
+  "subscribeToSecretsManager": {
+    "message": "Abonnér på Secrets Manager"
   },
   "addSecretsManagerUpgradeDesc": {
     "message": "Føj Secrets Manager til den opgraderede abonnementstype for at bibeholde adgang til alle hemmeligheder oprettet med det tidligere abonnement."

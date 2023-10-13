@@ -611,6 +611,72 @@
   "loginWithMasterPassword": {
     "message": "Войти с мастер-паролем"
   },
+  "loginWithPasskey": {
+    "message": "Войти с ключом доступа"
+  },
+  "loginWithPasskeyInfo": {
+    "message": "Используйте сгенерированный ключ доступа для автоматической авторизации без пароля. Ваша личность будет подтверждена биометрическими данными (распознаванием лица, отпечатком пальца или другим методом безопасности FIDO2)."
+  },
+  "newPasskey": {
+    "message": "Новый ключ доступа"
+  },
+  "learnMoreAboutPasswordless": {
+    "message": "Подробнее о беспарольном режиме"
+  },
+  "passkeyEnterMasterPassword": {
+    "message": "Для изменения параметров авторизации ключом доступа введите мастер-пароль."
+  },
+  "creatingPasskeyLoading": {
+    "message": "Создание ключа доступа..."
+  },
+  "creatingPasskeyLoadingInfo": {
+    "message": "Не закрывайте это окно и следуйте запросам браузера."
+  },
+  "errorCreatingPasskey": {
+    "message": "Ошибка создания ключа доступа"
+  },
+  "errorCreatingPasskeyInfo": {
+    "message": "При создании ключа доступа возникла проблема."
+  },
+  "passkeySuccessfullyCreated": {
+    "message": "Ключ доступа успешно создан!"
+  },
+  "customName": {
+    "message": "Имя"
+  },
+  "customPasskeyNameInfo": {
+    "message": "Назовите ключ доступа так, чтобы вы могли его идентифицировать."
+  },
+  "encryptionNotSupported": {
+    "message": "Шифрование не поддерживается"
+  },
+  "loginWithPasskeyEnabled": {
+    "message": "Авторизоваться с помощью ключа доступа"
+  },
+  "passkeySaved": {
+    "message": "$NAME$ сохранен",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Personal yubikey"
+      }
+    }
+  },
+  "passkeyRemoved": {
+    "message": "Ключ доступа удален"
+  },
+  "removePasskey": {
+    "message": "Удалить ключ доступа"
+  },
+  "removePasskeyInfo": {
+    "message": "Если будут удалены все ключи доступа, вы не сможете авторизоваться на новых устройствах без мастер-пароля."
+  },
+  "passkeyLimitReachedInfo": {
+    "message": "Достигнут предел ключей доступа. Удалите какой-нибудь ключ, чтобы добавить другой."
+  },
+  "tryAgain": {
+    "message": "Попробуйте снова"
+  },
   "createAccount": {
     "message": "Создать аккаунт"
   },
@@ -5406,6 +5472,19 @@
   "required": {
     "message": "обязательно"
   },
+  "charactersCurrentAndMaximum": {
+    "message": "$CURRENT$/$MAX$ симв. максимум",
+    "placeholders": {
+      "current": {
+        "content": "$1",
+        "example": "0"
+      },
+      "max": {
+        "content": "$2",
+        "example": "100"
+      }
+    }
+  },
   "characterMaximum": {
     "message": "Максимум символов $MAX$",
     "placeholders": {
@@ -5753,6 +5832,9 @@
   },
   "on": {
     "message": "Вкл"
+  },
+  "off": {
+    "message": "Выкл"
   },
   "members": {
     "message": "Участники"
@@ -7096,8 +7178,8 @@
       }
     }
   },
-  "addSecretsManager": {
-    "message": "Добавить Менеджер секретов"
+  "subscribeToSecretsManager": {
+    "message": "Подписаться на Менеджер секретов"
   },
   "addSecretsManagerUpgradeDesc": {
     "message": "Добавить Менеджер секретов к этому тарифному плану, чтобы сохранить доступ к секретам, созданным ранее."

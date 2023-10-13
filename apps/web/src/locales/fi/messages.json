@@ -611,6 +611,72 @@
   "loginWithMasterPassword": {
     "message": "Kirjaudu pääsalasanalla"
   },
+  "loginWithPasskey": {
+    "message": "Kirjaudu suojausavaimella"
+  },
+  "loginWithPasskeyInfo": {
+    "message": "Käytä generoitua suojausavainta, joka kirjaa sinut automaattisesti sisään ilman salasanaa. Henkilöllisyytesi vahvistetaan kasvojen tunnistuksen tai sormenjäljen kataisille biometrisillä tiedoilla, tai jollakin muulla FIDO2-suojausratkaisulla."
+  },
+  "newPasskey": {
+    "message": "Uusi suojausavain"
+  },
+  "learnMoreAboutPasswordless": {
+    "message": "Luo lisää salasanattomasta kirjautumisesta"
+  },
+  "passkeyEnterMasterPassword": {
+    "message": "Syötä pääsalasanasi muokataksesi suojausavaimella kirjautumisen asetuksia."
+  },
+  "creatingPasskeyLoading": {
+    "message": "Suojausavainta luodaan..."
+  },
+  "creatingPasskeyLoadingInfo": {
+    "message": "Pidä tämä ikkuna avoinna ja seuraa selaimesi opasteita."
+  },
+  "errorCreatingPasskey": {
+    "message": "Virhe suojausavaimen luonnissa"
+  },
+  "errorCreatingPasskeyInfo": {
+    "message": "Suojausavaimesi luonnissa kohdattiin ongelma."
+  },
+  "passkeySuccessfullyCreated": {
+    "message": "Suojausavain on luotu!"
+  },
+  "customName": {
+    "message": "Mukautettu nimi"
+  },
+  "customPasskeyNameInfo": {
+    "message": "Anna suojausavaimellesi nimi, josta tunnistat sen."
+  },
+  "encryptionNotSupported": {
+    "message": "Salausta ei tueta"
+  },
+  "loginWithPasskeyEnabled": {
+    "message": "Suojausavaimella kirjautuminen on käytössä"
+  },
+  "passkeySaved": {
+    "message": "$NAME$ tallennettiin",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Personal yubikey"
+      }
+    }
+  },
+  "passkeyRemoved": {
+    "message": "Suojausavain poistettiin"
+  },
+  "removePasskey": {
+    "message": "POista suojausavain"
+  },
+  "removePasskeyInfo": {
+    "message": "Jos kaikki suojausavaimet poistetaan, et voi kirjautua uusille laitteille ilman pääsalasanaasi."
+  },
+  "passkeyLimitReachedInfo": {
+    "message": "Suojausavianten enimmäismäärä on saavutettu. Lisää suojausavain poistamalla jokin nykyisistä avaimista."
+  },
+  "tryAgain": {
+    "message": "Yritä uudelleen"
+  },
   "createAccount": {
     "message": "Luo uusi tili"
   },
@@ -5406,6 +5472,19 @@
   "required": {
     "message": "pakollinen"
   },
+  "charactersCurrentAndMaximum": {
+    "message": "$CURRENT$ merkkiä (enimmäismäärä on $MAX$)",
+    "placeholders": {
+      "current": {
+        "content": "$1",
+        "example": "0"
+      },
+      "max": {
+        "content": "$2",
+        "example": "100"
+      }
+    }
+  },
   "characterMaximum": {
     "message": "Enintään $MAX$ merkkiä",
     "placeholders": {
@@ -5753,6 +5832,9 @@
   },
   "on": {
     "message": "Käytössä"
+  },
+  "off": {
+    "message": "Ei käytössä"
   },
   "members": {
     "message": "Jäsenet"
@@ -7096,8 +7178,8 @@
       }
     }
   },
-  "addSecretsManager": {
-    "message": "Lisää Salaisuushallinta"
+  "subscribeToSecretsManager": {
+    "message": "Tilaa Salaisuushallinta"
   },
   "addSecretsManagerUpgradeDesc": {
     "message": "Lisää Salaisuushallinta myös päivitettyyn tilaukseesi, jottet menetä pääsyä aiemmalla tilauksellasi luotuihin salaisuuksiin."

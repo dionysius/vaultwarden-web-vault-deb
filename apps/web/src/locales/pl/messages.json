@@ -611,6 +611,72 @@
   "loginWithMasterPassword": {
     "message": "Logowanie hasłem głównym"
   },
+  "loginWithPasskey": {
+    "message": "Zaloguj się za pomocą passkey"
+  },
+  "loginWithPasskeyInfo": {
+    "message": "Użyj wygenerowanego passkey'a, który automatycznie zaloguje Cię bez hasła. Biometrie, takie jak rozpoznawanie twarzy lub odcisk palca, lub inna metoda zabezpieczeń FIDO2, zweryfikują Twoją tożsamość."
+  },
+  "newPasskey": {
+    "message": "Nowy passkey"
+  },
+  "learnMoreAboutPasswordless": {
+    "message": "Dowiedz się więcej o rozwiązaniach bezhasłowych"
+  },
+  "passkeyEnterMasterPassword": {
+    "message": "Wprowadź hasło główne, aby zmodyfikować ustawienia logowania za pomocą passkey."
+  },
+  "creatingPasskeyLoading": {
+    "message": "Tworzenie passkey..."
+  },
+  "creatingPasskeyLoadingInfo": {
+    "message": "Pozostaw to okno otwarte i postępuj zgodnie z instrukcjami z przeglądarki."
+  },
+  "errorCreatingPasskey": {
+    "message": "Błąd podczas tworzenia passkey"
+  },
+  "errorCreatingPasskeyInfo": {
+    "message": "Podczas tworzenia passkey'a pojawił się problem."
+  },
+  "passkeySuccessfullyCreated": {
+    "message": "Pomyślnie utworzono passkey!"
+  },
+  "customName": {
+    "message": "Niestandardowa nazwa"
+  },
+  "customPasskeyNameInfo": {
+    "message": "Nazwij swój passkey, aby pomóc Ci go zidentyfikować."
+  },
+  "encryptionNotSupported": {
+    "message": "Szyfrowanie nie jest obsługiwane"
+  },
+  "loginWithPasskeyEnabled": {
+    "message": "Logowanie za pomocą passkey zostało włączone"
+  },
+  "passkeySaved": {
+    "message": "$NAME$ zapisany",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Personal yubikey"
+      }
+    }
+  },
+  "passkeyRemoved": {
+    "message": "Passkey został usunięty"
+  },
+  "removePasskey": {
+    "message": "Usuń passkey"
+  },
+  "removePasskeyInfo": {
+    "message": "Jeśli wszystkie passkey'e zostaną usunięte, nie będziesz mógł zalogować się na nowe urządzenia bez hasła głównego."
+  },
+  "passkeyLimitReachedInfo": {
+    "message": "Osiągnięto limit passkey'ów. Usuń passkey, aby dodać inny."
+  },
+  "tryAgain": {
+    "message": "Spróbuj ponownie"
+  },
   "createAccount": {
     "message": "Utwórz konto"
   },
@@ -5406,6 +5472,19 @@
   "required": {
     "message": "wymagane"
   },
+  "charactersCurrentAndMaximum": {
+    "message": "$CURRENT$/$MAX$ znaków",
+    "placeholders": {
+      "current": {
+        "content": "$1",
+        "example": "0"
+      },
+      "max": {
+        "content": "$2",
+        "example": "100"
+      }
+    }
+  },
   "characterMaximum": {
     "message": "$MAX$ znaków maksymalnie",
     "placeholders": {
@@ -5753,6 +5832,9 @@
   },
   "on": {
     "message": "Wł."
+  },
+  "off": {
+    "message": "Wyłączone"
   },
   "members": {
     "message": "Użytkownicy"
@@ -7096,8 +7178,8 @@
       }
     }
   },
-  "addSecretsManager": {
-    "message": "Dodaj menedżera sekretów"
+  "subscribeToSecretsManager": {
+    "message": "Zasubskrybuj się do menedżera sekretów"
   },
   "addSecretsManagerUpgradeDesc": {
     "message": "Dodaj menedżera sekretów do zaktualizowanego planu, aby zachować dostęp do wszelkich sekretów utworzonych w poprzednim planie."

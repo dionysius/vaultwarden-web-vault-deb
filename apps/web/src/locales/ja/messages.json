@@ -611,6 +611,72 @@
   "loginWithMasterPassword": {
     "message": "マスターパスワードでログイン"
   },
+  "loginWithPasskey": {
+    "message": "パスキー でログイン"
+  },
+  "loginWithPasskeyInfo": {
+    "message": "パスワードなしで自動的にログインできる、生成されたパスキーを使用します。顔や指紋などの生体認証、または他の FIDO2 認証方式で本人確認を行います。"
+  },
+  "newPasskey": {
+    "message": "新しいパスキー"
+  },
+  "learnMoreAboutPasswordless": {
+    "message": "パスワードレスの詳細"
+  },
+  "passkeyEnterMasterPassword": {
+    "message": "パスキー設定でのログインを変更するには、マスターパスワードを入力してください。"
+  },
+  "creatingPasskeyLoading": {
+    "message": "パスキーを作成中..."
+  },
+  "creatingPasskeyLoadingInfo": {
+    "message": "このウィンドウを開いたままにして、ブラウザの指示に従ってください。"
+  },
+  "errorCreatingPasskey": {
+    "message": "パスキーの作成に失敗しました"
+  },
+  "errorCreatingPasskeyInfo": {
+    "message": "パスキー作成中に問題が発生しました。"
+  },
+  "passkeySuccessfullyCreated": {
+    "message": "パスキーを作成しました！"
+  },
+  "customName": {
+    "message": "カスタム名"
+  },
+  "customPasskeyNameInfo": {
+    "message": "パスキーに名前を付けて、識別しやすいようにしましょう。"
+  },
+  "encryptionNotSupported": {
+    "message": "暗号化はサポートされていません"
+  },
+  "loginWithPasskeyEnabled": {
+    "message": "パスキーをオンにしてログイン"
+  },
+  "passkeySaved": {
+    "message": "$NAME$ を保存しました",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Personal yubikey"
+      }
+    }
+  },
+  "passkeyRemoved": {
+    "message": "パスキーを削除しました"
+  },
+  "removePasskey": {
+    "message": "パスキーを削除"
+  },
+  "removePasskeyInfo": {
+    "message": "すべてのパスキーを削除すると、マスターパスワードなしで新しいデバイスにログインすることはできません。"
+  },
+  "passkeyLimitReachedInfo": {
+    "message": "パスキーの上限に達しました。追加するにはまず既存のパスキーを削除してください。"
+  },
+  "tryAgain": {
+    "message": "再試行"
+  },
   "createAccount": {
     "message": "アカウントの作成"
   },
@@ -5406,6 +5472,19 @@
   "required": {
     "message": "必須"
   },
+  "charactersCurrentAndMaximum": {
+    "message": "$CURRENT$/$MAX$ 文字",
+    "placeholders": {
+      "current": {
+        "content": "$1",
+        "example": "0"
+      },
+      "max": {
+        "content": "$2",
+        "example": "100"
+      }
+    }
+  },
   "characterMaximum": {
     "message": "最大 $MAX$ 文字",
     "placeholders": {
@@ -5753,6 +5832,9 @@
   },
   "on": {
     "message": "オン"
+  },
+  "off": {
+    "message": "オフ"
   },
   "members": {
     "message": "メンバー"
@@ -7096,8 +7178,8 @@
       }
     }
   },
-  "addSecretsManager": {
-    "message": "シークレットマネージャーを追加"
+  "subscribeToSecretsManager": {
+    "message": "シークレットマネージャーに登録"
   },
   "addSecretsManagerUpgradeDesc": {
     "message": "アップグレードしたプランにシークレットマネージャーを追加して、以前のプランで作成されたシークレットへのアクセスを維持します。"

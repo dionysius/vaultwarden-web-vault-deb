@@ -611,6 +611,72 @@
   "loginWithMasterPassword": {
     "message": "با کلمه عبور اصلی وارد شوید"
   },
+  "loginWithPasskey": {
+    "message": "با کلید عبور وارد شوید"
+  },
+  "loginWithPasskeyInfo": {
+    "message": "از یک کلمه عبور ایجاد شده استفاده کنید که به طور خودکار بدون کلمه عبور شما را وارد می‌کند. بیومتریک‌ها، مانند تشخیص چهره یا اثر انگشت، یا سایر روش‌های امنیتی FIDO2 هویت شما را تأیید می‌کنند."
+  },
+  "newPasskey": {
+    "message": "کلمه عبور جدید"
+  },
+  "learnMoreAboutPasswordless": {
+    "message": "درباره بدون کلمه عبور بیشتر بدانید"
+  },
+  "passkeyEnterMasterPassword": {
+    "message": "کلمه عبور اصلی خود را برای تغییر ورود با تنظیمات کلید عبور وارد کنید."
+  },
+  "creatingPasskeyLoading": {
+    "message": "ایجاد کلید عبور..."
+  },
+  "creatingPasskeyLoadingInfo": {
+    "message": "این پنجره را باز نگه دارید و دستورهای مرورگر خود را دنبال کنید."
+  },
+  "errorCreatingPasskey": {
+    "message": "خطا در ایجاد کلید عبور"
+  },
+  "errorCreatingPasskeyInfo": {
+    "message": "مشکلی در ایجاد کلید عبور شما وجود داشت."
+  },
+  "passkeySuccessfullyCreated": {
+    "message": "کلید عبور با موفقیت ایجاد شد!"
+  },
+  "customName": {
+    "message": "نام سفارشی"
+  },
+  "customPasskeyNameInfo": {
+    "message": "کلید عبور خود را برای کمک به شناسایی آن نام ببرید."
+  },
+  "encryptionNotSupported": {
+    "message": "رمزگذاری پشتیبانی نمی‌شود"
+  },
+  "loginWithPasskeyEnabled": {
+    "message": "با فعال بودن کلید ورود وارد شوید"
+  },
+  "passkeySaved": {
+    "message": "$NAME$ ذخیره شد",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Personal yubikey"
+      }
+    }
+  },
+  "passkeyRemoved": {
+    "message": "کلید عبور حذف شد"
+  },
+  "removePasskey": {
+    "message": "حذف کلید عبور"
+  },
+  "removePasskeyInfo": {
+    "message": "اگر همه کلیدهای عبور حذف شوند، نمی‌توانید بدون کلمه عبور اصلی خود وارد دستگاه‌های جدید شوید."
+  },
+  "passkeyLimitReachedInfo": {
+    "message": "به حد مجاز کلید عبور رسیده است. برای افزودن کلید عبور دیگر، کلید عبور را حذف کنید."
+  },
+  "tryAgain": {
+    "message": "دوباره امتحان کن"
+  },
   "createAccount": {
     "message": "ایجاد حساب کاربری"
   },
@@ -5406,6 +5472,19 @@
   "required": {
     "message": "الزامی است"
   },
+  "charactersCurrentAndMaximum": {
+    "message": "حداکثر کاراکتر $CURRENT$/$MAX$",
+    "placeholders": {
+      "current": {
+        "content": "$1",
+        "example": "0"
+      },
+      "max": {
+        "content": "$2",
+        "example": "100"
+      }
+    }
+  },
   "characterMaximum": {
     "message": "حداکثر کاراکتر $MAX$",
     "placeholders": {
@@ -5753,6 +5832,9 @@
   },
   "on": {
     "message": "روشن"
+  },
+  "off": {
+    "message": "خاموش"
   },
   "members": {
     "message": "اعضا"
@@ -7096,8 +7178,8 @@
       }
     }
   },
-  "addSecretsManager": {
-    "message": "افزودن مدیر رازها"
+  "subscribeToSecretsManager": {
+    "message": "دنبال کردن مدیر اسرار"
   },
   "addSecretsManagerUpgradeDesc": {
     "message": "مدیر رازها را به برنامه ارتقا یافته خود اضافه کنید تا دسترسی به رازهای ایجاد شده با برنامه قبلی خود را حفظ کنید."

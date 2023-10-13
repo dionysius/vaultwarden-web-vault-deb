@@ -611,6 +611,72 @@
   "loginWithMasterPassword": {
     "message": "Se connecter avec le mot de passe principal"
   },
+  "loginWithPasskey": {
+    "message": "Se connecter avec la clé d'accès"
+  },
+  "loginWithPasskeyInfo": {
+    "message": "Utilisez une clé d'accès générée qui vous connectera automatiquement sans mot de passe. Les fonctions biométriques, comme la reconnaissance faciale, l'empreinte digitale, ou une autre méthode de sécurité FIDO2 vérifiera votre identité."
+  },
+  "newPasskey": {
+    "message": "Nouvelle clé d'accès"
+  },
+  "learnMoreAboutPasswordless": {
+    "message": "En savoir plus sur l'identification sans mots de passe"
+  },
+  "passkeyEnterMasterPassword": {
+    "message": "Entrez votre mot de passe maître pour modifier la connexion avec les paramètres de clé d'accès."
+  },
+  "creatingPasskeyLoading": {
+    "message": "Création de la clé d'accès..."
+  },
+  "creatingPasskeyLoadingInfo": {
+    "message": "Gardez cette fenêtre ouverte et suivez les instructions de votre navigateur."
+  },
+  "errorCreatingPasskey": {
+    "message": "Erreur de création de la clé d'accès"
+  },
+  "errorCreatingPasskeyInfo": {
+    "message": "Il y a eu un problème lors de la crétion de votre clé d'accès."
+  },
+  "passkeySuccessfullyCreated": {
+    "message": "Clé d'accès créée avec succès!"
+  },
+  "customName": {
+    "message": "Nom personnalisé"
+  },
+  "customPasskeyNameInfo": {
+    "message": "Nommez votre clé d'accès pour vous aider à l'identifier."
+  },
+  "encryptionNotSupported": {
+    "message": "Chiffrement non pris en charge"
+  },
+  "loginWithPasskeyEnabled": {
+    "message": "Se connecter avec la clé d'accès activée"
+  },
+  "passkeySaved": {
+    "message": "$NAME$ a été enregistrée",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Personal yubikey"
+      }
+    }
+  },
+  "passkeyRemoved": {
+    "message": "Clé d'accès supprimée"
+  },
+  "removePasskey": {
+    "message": "Supprimer la clé d'accès"
+  },
+  "removePasskeyInfo": {
+    "message": "Si toutes les clés d'accès sont supprimées, vous ne pourrez pas vous connecter à de nouveaux appareils sans votre mot de passe principal."
+  },
+  "passkeyLimitReachedInfo": {
+    "message": "Limite de clé d'accès atteinte. Supprimez une clé d'accès pour en ajouter une autre."
+  },
+  "tryAgain": {
+    "message": "Essayez de nouveau"
+  },
   "createAccount": {
     "message": "Créez un compte"
   },
@@ -5406,6 +5472,19 @@
   "required": {
     "message": "requis"
   },
+  "charactersCurrentAndMaximum": {
+    "message": "$CURRENT$/$MAX$ caractères maximum",
+    "placeholders": {
+      "current": {
+        "content": "$1",
+        "example": "0"
+      },
+      "max": {
+        "content": "$2",
+        "example": "100"
+      }
+    }
+  },
   "characterMaximum": {
     "message": "$MAX$ caractères maximum",
     "placeholders": {
@@ -5753,6 +5832,9 @@
   },
   "on": {
     "message": "Activé"
+  },
+  "off": {
+    "message": "Désactivée"
   },
   "members": {
     "message": "Membres"
@@ -7096,8 +7178,8 @@
       }
     }
   },
-  "addSecretsManager": {
-    "message": "Ajouter Secrets Manager"
+  "subscribeToSecretsManager": {
+    "message": "S'abonner au Secrets Manager"
   },
   "addSecretsManagerUpgradeDesc": {
     "message": "Ajoutez Secrets Manager à votre plan mis à niveau pour conserver l'accès à tous les secrets créés avec votre plan précédent."

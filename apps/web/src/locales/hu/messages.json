@@ -611,6 +611,72 @@
   "loginWithMasterPassword": {
     "message": "Bejelentkezés mesterjelszóval"
   },
+  "loginWithPasskey": {
+    "message": "Bejelentkezés jelszóval"
+  },
+  "loginWithPasskeyInfo": {
+    "message": "Használjunk generált jelszót, amely automatikusan, jelszó nélkül bejelentkeztet. A biometrikus adatok, például az arcfelismerés vagy az ujjlenyomat, vagy más FIDO2 biztonsági módszer igazolja személyazonosságot."
+  },
+  "newPasskey": {
+    "message": "Új jelszó"
+  },
+  "learnMoreAboutPasswordless": {
+    "message": "További információ a jelszó nélküli használatról"
+  },
+  "passkeyEnterMasterPassword": {
+    "message": "Adjuk meg a mesterjelszót a belépési jelszó beállításainak módosításához."
+  },
+  "creatingPasskeyLoading": {
+    "message": "Jelszó létrehozása..."
+  },
+  "creatingPasskeyLoadingInfo": {
+    "message": "Tartsuk nyitva ezt az ablakot és kövessük a böngésző utasításait."
+  },
+  "errorCreatingPasskey": {
+    "message": "Hiba történt a jelszó létrehozásakor."
+  },
+  "errorCreatingPasskeyInfo": {
+    "message": "Probléma merült fel a jelszó létrehozásakor."
+  },
+  "passkeySuccessfullyCreated": {
+    "message": "A jelszó sikeresen létrehozásra került!"
+  },
+  "customName": {
+    "message": "Egyedi név"
+  },
+  "customPasskeyNameInfo": {
+    "message": "Nevezzük el a jelszót a könnyebb azonosítshoz."
+  },
+  "encryptionNotSupported": {
+    "message": "A titkosítás nem támogatott."
+  },
+  "loginWithPasskeyEnabled": {
+    "message": "Jelentkezzünk be bekapcsolt jelszóval"
+  },
+  "passkeySaved": {
+    "message": "$NAME$ mentésre került.",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Personal yubikey"
+      }
+    }
+  },
+  "passkeyRemoved": {
+    "message": "A jelszó eltávolításra került."
+  },
+  "removePasskey": {
+    "message": "Jelszó eltávolítása"
+  },
+  "removePasskeyInfo": {
+    "message": "Ha az összes jelszót eltávolítjuk, nem tudunk bejelentkezni az új eszközökre a mesterjelszó nélkül."
+  },
+  "passkeyLimitReachedInfo": {
+    "message": "Elértük a jelszó korlátot. Távolítsunk el egy jelszót egy másik hozzáadásához."
+  },
+  "tryAgain": {
+    "message": "Próbáluk újra"
+  },
   "createAccount": {
     "message": "Fiók létrehozása"
   },
@@ -5406,6 +5472,19 @@
   "required": {
     "message": "kötelező"
   },
+  "charactersCurrentAndMaximum": {
+    "message": "Maximálisan $CURRENT$/$MAX$ karakter",
+    "placeholders": {
+      "current": {
+        "content": "$1",
+        "example": "0"
+      },
+      "max": {
+        "content": "$2",
+        "example": "100"
+      }
+    }
+  },
   "characterMaximum": {
     "message": "maximálisan $MAX$ karakter",
     "placeholders": {
@@ -5753,6 +5832,9 @@
   },
   "on": {
     "message": "Be"
+  },
+  "off": {
+    "message": "Ki"
   },
   "members": {
     "message": "Tagok"
@@ -7096,8 +7178,8 @@
       }
     }
   },
-  "addSecretsManager": {
-    "message": "Titkos kódkezelő hozzáadása"
+  "subscribeToSecretsManager": {
+    "message": "Feliratkozás a Titkos kód kezelés szolgáltatásra"
   },
   "addSecretsManagerUpgradeDesc": {
     "message": "Titkkos kód kezelő hozzáadása a felminősített csomaghoz, hogy az előző csomaggal létrehozott titkos kódok megtartásához."

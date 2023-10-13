@@ -611,6 +611,72 @@
   "loginWithMasterPassword": {
     "message": "Пријавите се са главном лозинком"
   },
+  "loginWithPasskey": {
+    "message": "Пријави се са passkey"
+  },
+  "loginWithPasskeyInfo": {
+    "message": "Користите генерисан passkey који ће вас аутоматски пријавити без лозинке. Биометрија, као што је препознавање лица или отисак прста, или неки други FIDO2 метод за проверу идентитета."
+  },
+  "newPasskey": {
+    "message": "Нов passkey"
+  },
+  "learnMoreAboutPasswordless": {
+    "message": "Сазнајте више о пријављивању без лозинке"
+  },
+  "passkeyEnterMasterPassword": {
+    "message": "Унесите главну лозинку да бисте изменили подешавања пријављивања са passkey."
+  },
+  "creatingPasskeyLoading": {
+    "message": "Креација passkey-а..."
+  },
+  "creatingPasskeyLoadingInfo": {
+    "message": "Држите овај прозор отворен и пратите упутства из прегледача."
+  },
+  "errorCreatingPasskey": {
+    "message": "Грешки у креацији passkey-а"
+  },
+  "errorCreatingPasskeyInfo": {
+    "message": "Дошло је до проблема приликом креирања вашег passkey-а."
+  },
+  "passkeySuccessfullyCreated": {
+    "message": "Passkey успешно креиран!"
+  },
+  "customName": {
+    "message": "Прилагоди име"
+  },
+  "customPasskeyNameInfo": {
+    "message": "Именујте Ваш passkey за лакшу идентификацију."
+  },
+  "encryptionNotSupported": {
+    "message": "Шифровање није подржано"
+  },
+  "loginWithPasskeyEnabled": {
+    "message": "Пријављивање са passkey је упаљено"
+  },
+  "passkeySaved": {
+    "message": "„$NAME$“ сачувано",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Personal yubikey"
+      }
+    }
+  },
+  "passkeyRemoved": {
+    "message": "Passkey уклоњен"
+  },
+  "removePasskey": {
+    "message": "Уклонити passkey"
+  },
+  "removePasskeyInfo": {
+    "message": "Ако су сви passkey уклоњени, нећете моћи да се пријавите на нове уређаје без ваше главне лозинке."
+  },
+  "passkeyLimitReachedInfo": {
+    "message": "Достугнут лимит Passkey-а. Уклонити један да би додали други."
+  },
+  "tryAgain": {
+    "message": "Покушај поново"
+  },
   "createAccount": {
     "message": "Креирај налог"
   },
@@ -5406,6 +5472,19 @@
   "required": {
     "message": "обавезно"
   },
+  "charactersCurrentAndMaximum": {
+    "message": "$CURRENT$ од макс $MAX$ карактера",
+    "placeholders": {
+      "current": {
+        "content": "$1",
+        "example": "0"
+      },
+      "max": {
+        "content": "$2",
+        "example": "100"
+      }
+    }
+  },
   "characterMaximum": {
     "message": "Максимум $MAX$ карактера",
     "placeholders": {
@@ -5753,6 +5832,9 @@
   },
   "on": {
     "message": "Укључено"
+  },
+  "off": {
+    "message": "Искључено"
   },
   "members": {
     "message": "Чланови"
@@ -7096,8 +7178,8 @@
       }
     }
   },
-  "addSecretsManager": {
-    "message": "Додати Менаџер Тајни"
+  "subscribeToSecretsManager": {
+    "message": "Пријави се на Secrets Manager"
   },
   "addSecretsManagerUpgradeDesc": {
     "message": "Add Secrets Manager to your upgraded plan to maintain access to any secrets created with your previous plan."
@@ -7179,9 +7261,9 @@
     "message": "Већ имате налог?"
   },
   "customBillingStart": {
-    "message": "Custom billing is not reflected. Visit the "
+    "message": "Прилагођени обрачун се не одражава. Посетите "
   },
   "customBillingEnd": {
-    "message": " page for latest invoicing."
+    "message": " страницу за најновије фактуре."
   }
 }

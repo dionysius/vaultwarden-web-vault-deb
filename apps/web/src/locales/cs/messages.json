@@ -611,6 +611,72 @@
   "loginWithMasterPassword": {
     "message": "Přihlásit se pomocí hlavního hesla"
   },
+  "loginWithPasskey": {
+    "message": "Přihlásit se pomocí přístupového klíče"
+  },
+  "loginWithPasskeyInfo": {
+    "message": "Použijte vygenerovaný přístupový klíč, který Vás automaticky přihlásí bez hesla. Biometriky, jako je rozpoznávání obličeje, otisky prstů nebo jiná bezpečnostní metoda FIDO2 ověří Vaši totožnost."
+  },
+  "newPasskey": {
+    "message": "Nové přístupový klíč"
+  },
+  "learnMoreAboutPasswordless": {
+    "message": "Další informace o přihlášení bez hesla"
+  },
+  "passkeyEnterMasterPassword": {
+    "message": "Zadejte Vaše hlavní heslo pro úpravu dvoufázového přihlášení."
+  },
+  "creatingPasskeyLoading": {
+    "message": "Vytváření přístupového klíče..."
+  },
+  "creatingPasskeyLoadingInfo": {
+    "message": "Ponechte toto okno otevřené a postupujte podle dotazů z Vašeho prohlížeče."
+  },
+  "errorCreatingPasskey": {
+    "message": "Chyba při vytváření přístupového klíče"
+  },
+  "errorCreatingPasskeyInfo": {
+    "message": "Vyskytl se problém při vytváření přístupového klíče."
+  },
+  "passkeySuccessfullyCreated": {
+    "message": "Přístupový klíč byl úspěšně vytvořen!"
+  },
+  "customName": {
+    "message": "Vlastní název"
+  },
+  "customPasskeyNameInfo": {
+    "message": "Pojmenujte Váš přístupový klíč, abyste jej mohli snáze identifikovat."
+  },
+  "encryptionNotSupported": {
+    "message": "Šifrování není podporováno"
+  },
+  "loginWithPasskeyEnabled": {
+    "message": "Přihlásit se se zapnutým přístupovým klíčem"
+  },
+  "passkeySaved": {
+    "message": "$NAME$ uloženo",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Personal yubikey"
+      }
+    }
+  },
+  "passkeyRemoved": {
+    "message": "Přístupový klíč byl odebrán"
+  },
+  "removePasskey": {
+    "message": "Odebrat přístupový klíč"
+  },
+  "removePasskeyInfo": {
+    "message": "Pokud budou odebrány všechny přístupové klíče, nebudete se moci přihlásit do nových zařízení bez hlavního hesla."
+  },
+  "passkeyLimitReachedInfo": {
+    "message": "Byl dosažen limit přístupového klíče. Chcete-li přidat další, odeberte nějaký."
+  },
+  "tryAgain": {
+    "message": "Zkusit znovu"
+  },
   "createAccount": {
     "message": "Vytvořit účet"
   },
@@ -5406,6 +5472,19 @@
   "required": {
     "message": "vyžadováno"
   },
+  "charactersCurrentAndMaximum": {
+    "message": "$CURRENT$/$MAX$ znaků maximálně",
+    "placeholders": {
+      "current": {
+        "content": "$1",
+        "example": "0"
+      },
+      "max": {
+        "content": "$2",
+        "example": "100"
+      }
+    }
+  },
   "characterMaximum": {
     "message": "Maximálně $MAX$ znaků",
     "placeholders": {
@@ -5753,6 +5832,9 @@
   },
   "on": {
     "message": "Zapnuto"
+  },
+  "off": {
+    "message": "VYP."
   },
   "members": {
     "message": "Členové"
@@ -7096,8 +7178,8 @@
       }
     }
   },
-  "addSecretsManager": {
-    "message": "Přidat správce tajných klíčů"
+  "subscribeToSecretsManager": {
+    "message": "Přihlásit se ke správci klíčů"
   },
   "addSecretsManagerUpgradeDesc": {
     "message": "Přidáním správce klíčů k aktualizovanému plánu si zachováte přístup ke všem klíčům vytvořeným v předchozím plánu."
