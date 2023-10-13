@@ -1,6 +1,6 @@
 import { ipcRenderer } from "electron";
 
-import { DeviceType } from "@bitwarden/common/enums/device-type.enum";
+import { DeviceType, ThemeType } from "@bitwarden/common/enums";
 
 import { isDev, isWindowsStore } from "../utils";
 
@@ -12,6 +12,11 @@ export default {
   isDev: isDev(),
   isWindowsStore: isWindowsStore(),
   reloadProcess: () => ipcRenderer.send("reload-process"),
+
+  getSystemTheme: (): Promise<ThemeType> => ipcRenderer.invoke("systemTheme"),
+  onSystemThemeUpdated: (callback: (theme: ThemeType) => void) => {
+    ipcRenderer.on("systemThemeUpdated", (_event, theme: ThemeType) => callback(theme));
+  },
 };
 
 function deviceType(): DeviceType {
