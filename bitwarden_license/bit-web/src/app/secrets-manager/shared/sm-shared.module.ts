@@ -17,6 +17,7 @@ import { BulkConfirmationDialogComponent } from "./dialogs/bulk-confirmation-dia
 import { BulkStatusDialogComponent } from "./dialogs/bulk-status-dialog.component";
 import { HeaderComponent } from "./header.component";
 import { NewMenuComponent } from "./new-menu.component";
+import { OrgSuspendedComponent } from "./org-suspended.component";
 import { ProjectsListComponent } from "./projects-list.component";
 import { SecretsListComponent } from "./secrets-list.component";
 
@@ -55,6 +56,7 @@ import { SecretsListComponent } from "./secrets-list.component";
     ProjectsListComponent,
     SecretsListComponent,
     AccessSelectorComponent,
+    OrgSuspendedComponent,
   ],
   providers: [],
   bootstrap: [],

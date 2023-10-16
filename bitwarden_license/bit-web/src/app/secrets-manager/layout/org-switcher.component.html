@@ -7,6 +7,11 @@
   [(open)]="open"
   [exactMatch]="true"
 >
+  <i
+    slot="end"
+    *ngIf="!activeOrganization.enabled"
+    class="bwi bwi-exclamation-triangle tw-my-auto !tw-text-danger"
+  ></i>
   <ng-container *ngIf="organizations$ | async as organizations">
     <bit-nav-item
       *ngFor="let org of organizations"
@@ -16,6 +21,11 @@
       (mainContentClicked)="toggle()"
       [hideActiveStyles]="true"
     >
+      <i
+        slot="end"
+        *ngIf="org.enabled == false"
+        class="bwi bwi-exclamation-triangle !tw-text-danger"
+      ></i>
     </bit-nav-item>
   </ng-container>
   <bit-nav-item

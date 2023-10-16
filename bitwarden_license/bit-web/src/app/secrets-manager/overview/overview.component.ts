@@ -70,6 +70,7 @@ export class OverviewComponent implements OnInit, OnDestroy {
   protected userIsAdmin: boolean;
   protected showOnboarding = false;
   protected loading = true;
+  protected organizationEnabled = false;
 
   protected view$: Observable<{
     allProjects: ProjectListView[];
@@ -107,6 +108,7 @@ export class OverviewComponent implements OnInit, OnDestroy {
         this.organizationName = org.name;
         this.userIsAdmin = org.isAdmin;
         this.loading = true;
+        this.organizationEnabled = org.enabled;
       });
 
     const projects$ = combineLatest([
@@ -208,6 +210,7 @@ export class OverviewComponent implements OnInit, OnDestroy {
       data: {
         organizationId: this.organizationId,
         operation: OperationType.Edit,
+        organizationEnabled: this.organizationEnabled,
         projectId: projectId,
       },
     });
@@ -218,6 +221,7 @@ export class OverviewComponent implements OnInit, OnDestroy {
       data: {
         organizationId: this.organizationId,
         operation: OperationType.Add,
+        organizationEnabled: this.organizationEnabled,
       },
     });
   }
@@ -227,6 +231,7 @@ export class OverviewComponent implements OnInit, OnDestroy {
       data: {
         organizationId: this.organizationId,
         operation: OperationType.Add,
+        organizationEnabled: this.organizationEnabled,
       },
     });
   }
@@ -246,6 +251,7 @@ export class OverviewComponent implements OnInit, OnDestroy {
       data: {
         organizationId: this.organizationId,
         operation: OperationType.Add,
+        organizationEnabled: this.organizationEnabled,
       },
     });
   }
@@ -256,6 +262,7 @@ export class OverviewComponent implements OnInit, OnDestroy {
         organizationId: this.organizationId,
         operation: OperationType.Edit,
         secretId: secretId,
+        organizationEnabled: this.organizationEnabled,
       },
     });
   }
@@ -273,6 +280,7 @@ export class OverviewComponent implements OnInit, OnDestroy {
       data: {
         organizationId: this.organizationId,
         operation: OperationType.Add,
+        organizationEnabled: this.organizationEnabled,
       },
     });
   }

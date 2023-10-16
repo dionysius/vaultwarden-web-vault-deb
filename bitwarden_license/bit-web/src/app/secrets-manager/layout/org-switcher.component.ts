@@ -12,8 +12,14 @@ import type { Organization } from "@bitwarden/common/admin-console/models/domain
 export class OrgSwitcherComponent {
   protected organizations$: Observable<Organization[]> =
     this.organizationService.organizations$.pipe(
-      map((orgs) => orgs.filter(this.filter).sort((a, b) => a.name.localeCompare(b.name)))
+      map((orgs) =>
+        orgs
+          .filter((org) => this.filter(org))
+          .sort((a, b) => a.name.localeCompare(b.name))
+          .sort((a, b) => (a.enabled ? -1 : 1))
+      )
     );
+
   protected activeOrganization$: Observable<Organization> = combineLatest([
     this.route.paramMap,
     this.organizations$,

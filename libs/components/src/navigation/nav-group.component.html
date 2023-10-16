@@ -17,7 +17,7 @@
       [bitIconButton]="
         open ? 'bwi-angle-up' : variant === 'tree' ? 'bwi-angle-right' : 'bwi-angle-down'
       "
-      [buttonType]="'main'"
+      [buttonType]="'light'"
       (click)="toggle($event)"
       size="small"
       [title]="'toggleCollapse' | i18n"
@@ -32,8 +32,11 @@
   <ng-container slot="start" *ngIf="variant === 'tree'">
     <ng-container *ngTemplateOutlet="button"></ng-container>
   </ng-container>
-  <ng-container slot="end" *ngIf="variant !== 'tree'">
-    <ng-container *ngTemplateOutlet="button"></ng-container>
+  <ng-container slot="end">
+    <ng-content select="[slot=end]"></ng-content>
+    <ng-container *ngIf="variant !== 'tree'">
+      <ng-container *ngTemplateOutlet="button"></ng-container>
+    </ng-container>
   </ng-container>
 </bit-nav-item>
 

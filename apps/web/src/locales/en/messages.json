@@ -3638,6 +3638,18 @@
   "organizationIsDisabled": {
     "message": "Organization suspended"
   },
+  "secretsAccessSuspended": {
+    "message": "Suspended organizations cannot be accessed. Please contact your organization owner for assistance."
+  },  
+  "secretsCannotCreate": {
+    "message": "Secrets cannot be created in suspended organizations. Please contact your organization owner for assistance."
+  },
+  "projectsCannotCreate": {
+    "message": "Projects cannot be created in suspended organizations. Please contact your organization owner for assistance."
+  },
+  "serviceAccountsCannotCreate": {
+    "message": "Service accounts cannot be created in suspended organizations. Please contact your organization owner for assistance."
+  },
   "disabledOrganizationFilterError": {
     "message": "Items in suspended organizations cannot be accessed. Contact your organization owner for assistance."
   },

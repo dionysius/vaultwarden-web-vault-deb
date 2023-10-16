@@ -131,5 +131,5 @@ OrgWithoutSecretsManager.args = {
 
 export const OrgWithSecretsManager = Template.bind({});
 OrgWithSecretsManager.args = {
-  mockOrgs: [{ id: "b", canAccessSecretsManager: true }],
+  mockOrgs: [{ id: "b", canAccessSecretsManager: true, enabled: true }],
 };

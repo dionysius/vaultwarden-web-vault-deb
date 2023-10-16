@@ -64,7 +64,7 @@ export const WithChildButtons: Story = {
           slot="start"
           class="tw-ml-auto"
           [bitIconButton]="'bwi-clone'"
-          [buttonType]="'contrast'"
+          [buttonType]="'light'"
           size="small"
           aria-label="option 1"
         ></button>
@@ -72,7 +72,7 @@ export const WithChildButtons: Story = {
           slot="end"
           class="tw-ml-auto"
           [bitIconButton]="'bwi-pencil-square'"
-          [buttonType]="'contrast'"
+          [buttonType]="'light'"
           size="small"
           aria-label="option 2"
         ></button>
@@ -80,7 +80,7 @@ export const WithChildButtons: Story = {
           slot="end"
           class="tw-ml-auto"
           [bitIconButton]="'bwi-check'"
-          [buttonType]="'contrast'"
+          [buttonType]="'light'"
           size="small"
           aria-label="option 3"
         ></button>

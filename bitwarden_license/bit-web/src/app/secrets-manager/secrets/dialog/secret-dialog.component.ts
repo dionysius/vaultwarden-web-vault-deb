@@ -29,6 +29,7 @@ export interface SecretOperation {
   operation: OperationType;
   projectId?: string;
   secretId?: string;
+  organizationEnabled: boolean;
 }
 
 @Component({
@@ -163,6 +164,11 @@ export class SecretDialogComponent implements OnInit {
   }
 
   submit = async () => {
+    if (!this.data.organizationEnabled) {
+      this.platformUtilsService.showToast("error", null, this.i18nService.t("secretsCannotCreate"));
+      return;
+    }
+
     this.formGroup.markAllAsTouched();
 
     if (this.formGroup.invalid) {

@@ -47,9 +47,10 @@ export class ProductSwitcherContentComponent {
     map(([orgs, paramMap]) => {
       const routeOrg = orgs.find((o) => o.id === paramMap.get("organizationId"));
       // If the active route org doesn't have access to SM, find the first org that does.
-      const smOrg = routeOrg?.canAccessSecretsManager
-        ? routeOrg
-        : orgs.find((o) => o.canAccessSecretsManager);
+      const smOrg =
+        routeOrg?.canAccessSecretsManager && routeOrg?.enabled == true
+          ? routeOrg
+          : orgs.find((o) => o.canAccessSecretsManager && o.enabled == true);
 
       /**
        * We can update this to the "satisfies" type upon upgrading to TypeScript 4.9
