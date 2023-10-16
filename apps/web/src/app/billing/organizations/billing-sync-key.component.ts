@@ -1,7 +1,7 @@
-import { Component } from "@angular/core";
+import { DIALOG_DATA, DialogRef } from "@angular/cdk/dialog";
+import { Component, Inject } from "@angular/core";
+import { FormControl, FormGroup, Validators } from "@angular/forms";
 
-import { ModalRef } from "@bitwarden/angular/components/modal/modal.ref";
-import { ModalConfig } from "@bitwarden/angular/services/modal.service";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { OrganizationConnectionType } from "@bitwarden/common/admin-console/enums";
 import { OrganizationConnectionRequest } from "@bitwarden/common/admin-console/models/request/organization-connection.request";
@@ -9,6 +9,7 @@ import { OrganizationConnectionResponse } from "@bitwarden/common/admin-console/
 import { BillingSyncConfigApi } from "@bitwarden/common/billing/models/api/billing-sync-config.api";
 import { BillingSyncConfigRequest } from "@bitwarden/common/billing/models/request/billing-sync-config.request";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
+import { DialogService } from "@bitwarden/components";
 
 export interface BillingSyncKeyModalData {
   entityId: string;
@@ -21,60 +22,65 @@ export interface BillingSyncKeyModalData {
   templateUrl: "billing-sync-key.component.html",
 })
 export class BillingSyncKeyComponent {
-  entityId: string;
-  existingConnectionId: string;
-  billingSyncKey: string;
-  setParentConnection: (connection: OrganizationConnectionResponse<BillingSyncConfigApi>) => void;
+  protected entityId: string;
+  protected existingConnectionId: string;
+  protected billingSyncKey: string;
+  protected setParentConnection: (
+    connection: OrganizationConnectionResponse<BillingSyncConfigApi>
+  ) => void;
 
-  formPromise: Promise<OrganizationConnectionResponse<BillingSyncConfigApi>> | Promise<void>;
+  protected formGroup: FormGroup;
 
   constructor(
+    private dialogRef: DialogRef,
+    @Inject(DIALOG_DATA) protected data: BillingSyncKeyModalData,
     private apiService: ApiService,
-    private logService: LogService,
-    protected modalRef: ModalRef,
-    config: ModalConfig<BillingSyncKeyModalData>
+    private logService: LogService
   ) {
-    this.entityId = config.data.entityId;
-    this.existingConnectionId = config.data.existingConnectionId;
-    this.billingSyncKey = config.data.billingSyncKey;
-    this.setParentConnection = config.data.setParentConnection;
+    this.entityId = data.entityId;
+    this.existingConnectionId = data.existingConnectionId;
+    this.billingSyncKey = data.billingSyncKey;
+    this.setParentConnection = data.setParentConnection;
+
+    this.formGroup = new FormGroup({
+      billingSyncKey: new FormControl<string>(this.billingSyncKey, Validators.required),
+    });
   }
 
-  async submit() {
+  submit = async () => {
     try {
       const request = new OrganizationConnectionRequest(
         this.entityId,
         OrganizationConnectionType.CloudBillingSync,
         true,
-        new BillingSyncConfigRequest(this.billingSyncKey)
+        new BillingSyncConfigRequest(this.formGroup.value.billingSyncKey)
       );
-      if (this.existingConnectionId == null) {
-        this.formPromise = this.apiService.createOrganizationConnection(
-          request,
-          BillingSyncConfigApi
-        );
-      } else {
-        this.formPromise = this.apiService.updateOrganizationConnection(
-          request,
-          BillingSyncConfigApi,
-          this.existingConnectionId
-        );
-      }
-      const response = (await this
-        .formPromise) as OrganizationConnectionResponse<BillingSyncConfigApi>;
+
+      const response =
+        this.existingConnectionId == null
+          ? await this.apiService.createOrganizationConnection(request, BillingSyncConfigApi)
+          : await this.apiService.updateOrganizationConnection(
+              request,
+              BillingSyncConfigApi,
+              this.existingConnectionId
+            );
+
       this.existingConnectionId = response?.id;
       this.billingSyncKey = response?.config?.billingSyncKey;
       this.setParentConnection(response);
-      this.modalRef.close();
+      this.dialogRef.close();
     } catch (e) {
       this.logService.error(e);
     }
-  }
+  };
 
-  async deleteConnection() {
-    this.formPromise = this.apiService.deleteOrganizationConnection(this.existingConnectionId);
-    await this.formPromise;
+  deleteConnection = async () => {
+    await this.apiService.deleteOrganizationConnection(this.existingConnectionId);
     this.setParentConnection(null);
-    this.modalRef.close();
+    this.dialogRef.close();
+  };
+
+  static open(dialogService: DialogService, data: BillingSyncKeyModalData) {
+    return dialogService.open(BillingSyncKeyComponent, { data });
   }
 }
