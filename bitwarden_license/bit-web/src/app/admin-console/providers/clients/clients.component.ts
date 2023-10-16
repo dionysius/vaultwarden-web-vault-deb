@@ -1,5 +1,6 @@
-import { Component, OnInit, ViewChild, ViewContainerRef } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
+import { firstValueFrom } from "rxjs";
 import { first } from "rxjs/operators";
 
 import { ModalService } from "@bitwarden/angular/services/modal.service";
@@ -33,8 +34,6 @@ const DisallowedPlanTypes = [
 })
 // eslint-disable-next-line rxjs-angular/prefer-takeuntil
 export class ClientsComponent implements OnInit {
-  @ViewChild("add", { read: ViewContainerRef, static: true }) addModalRef: ViewContainerRef;
-
   providerId: string;
   searchText: string;
   addableOrganizations: Organization[];
@@ -135,23 +134,14 @@ export class ClientsComponent implements OnInit {
   }
 
   async addExistingOrganization() {
-    const [modal] = await this.modalService.openViewRef(
-      AddOrganizationComponent,
-      this.addModalRef,
-      (comp) => {
-        comp.providerId = this.providerId;
-        comp.organizations = this.addableOrganizations;
-        // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
-        comp.onAddedOrganization.subscribe(async () => {
-          try {
-            await this.load();
-            modal.close();
-          } catch (e) {
-            this.logService.error(`Handled exception: ${e}`);
-          }
-        });
-      }
-    );
+    const dialogRef = AddOrganizationComponent.open(this.dialogService, {
+      providerId: this.providerId,
+      organizations: this.addableOrganizations,
+    });
+
+    if (await firstValueFrom(dialogRef.closed)) {
+      await this.load();
+    }
   }
 
   async remove(organization: ProviderOrganizationOrganizationDetailsResponse) {

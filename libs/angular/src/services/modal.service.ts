@@ -88,13 +88,6 @@ export class ModalService {
     return modalRef;
   }
 
-  registerComponentFactoryResolver<T>(
-    componentType: Type<T>,
-    componentFactoryResolver: ComponentFactoryResolver
-  ): void {
-    this.factoryResolvers.set(componentType, componentFactoryResolver);
-  }
-
   resolveComponentFactory<T>(componentType: Type<T>): ComponentFactory<T> {
     if (this.factoryResolvers.has(componentType)) {
       return this.factoryResolvers.get(componentType).resolveComponentFactory(componentType);

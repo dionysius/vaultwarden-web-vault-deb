@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
+import { DIALOG_DATA, DialogRef } from "@angular/cdk/dialog";
+import { Component, Inject, OnInit } from "@angular/core";
 
 import { ProviderService } from "@bitwarden/common/admin-console/abstractions/provider.service";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
@@ -10,20 +11,21 @@ import { DialogService } from "@bitwarden/components";
 
 import { WebProviderService } from "../services/web-provider.service";
 
+interface AddOrganizationDialogData {
+  providerId: string;
+  organizations: Organization[];
+}
+
 @Component({
-  selector: "provider-add-organization",
   templateUrl: "add-organization.component.html",
 })
 export class AddOrganizationComponent implements OnInit {
-  @Input() providerId: string;
-  @Input() organizations: Organization[];
-  @Output() onAddedOrganization = new EventEmitter();
-
-  provider: Provider;
-  formPromise: Promise<any>;
-  loading = true;
+  protected provider: Provider;
+  protected loading = true;
 
   constructor(
+    private dialogRef: DialogRef,
+    @Inject(DIALOG_DATA) protected data: AddOrganizationDialogData,
     private providerService: ProviderService,
     private webProviderService: WebProviderService,
     private i18nService: I18nService,
@@ -37,52 +39,53 @@ export class AddOrganizationComponent implements OnInit {
   }
 
   async load() {
-    if (this.providerId == null) {
+    if (this.data.providerId == null) {
       return;
     }
 
-    this.provider = await this.providerService.get(this.providerId);
+    this.provider = await this.providerService.get(this.data.providerId);
 
     this.loading = false;
   }
 
-  async add(organization: Organization) {
-    // eslint-disable-next-line @typescript-eslint/no-misused-promises
-    if (this.formPromise) {
-      return;
-    }
+  add(organization: Organization) {
+    return async () => {
+      const confirmed = await this.dialogService.openSimpleDialog({
+        title: organization.name,
+        content: {
+          key: "addOrganizationConfirmation",
+          placeholders: [organization.name, this.provider.name],
+        },
+        type: "warning",
+      });
 
-    const confirmed = await this.dialogService.openSimpleDialog({
-      title: organization.name,
-      content: {
-        key: "addOrganizationConfirmation",
-        placeholders: [organization.name, this.provider.name],
-      },
-      type: "warning",
-    });
+      if (!confirmed) {
+        return false;
+      }
 
-    if (!confirmed) {
-      return false;
-    }
+      try {
+        await this.webProviderService.addOrganizationToProvider(
+          this.data.providerId,
+          organization.id
+        );
+      } catch (e) {
+        this.validationService.showError(e);
+        return;
+      }
 
-    try {
-      this.formPromise = this.webProviderService.addOrganizationToProvider(
-        this.providerId,
-        organization.id
+      this.platformUtilsService.showToast(
+        "success",
+        null,
+        this.i18nService.t("organizationJoinedProvider")
       );
-      await this.formPromise;
-    } catch (e) {
-      this.validationService.showError(e);
-      return;
-    } finally {
-      this.formPromise = null;
-    }
 
-    this.platformUtilsService.showToast(
-      "success",
-      null,
-      this.i18nService.t("organizationJoinedProvider")
-    );
-    this.onAddedOrganization.emit();
+      this.dialogRef.close(true);
+    };
+  }
+
+  static open(dialogService: DialogService, data: AddOrganizationDialogData) {
+    return dialogService.open<boolean, AddOrganizationDialogData>(AddOrganizationComponent, {
+      data,
+    });
   }
 }
