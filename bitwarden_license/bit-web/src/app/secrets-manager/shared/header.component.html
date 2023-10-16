@@ -51,6 +51,13 @@
                 </div>
               </div>
 
+              <ng-container *ngIf="selfHosted">
+                <bit-menu-divider></bit-menu-divider>
+                <span class="tw-break-all tw-px-4 tw-py-1 tw-text-left tw-text-muted">
+                  {{ hostname }}
+                </span>
+              </ng-container>
+
               <bit-menu-divider></bit-menu-divider>
 
               <a bitMenuItem routerLink="/settings/account">
