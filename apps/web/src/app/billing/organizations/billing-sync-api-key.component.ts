@@ -1,6 +1,7 @@
-import { Component } from "@angular/core";
+import { DIALOG_DATA } from "@angular/cdk/dialog";
+import { Component, Inject } from "@angular/core";
+import { FormControl, FormGroup, Validators } from "@angular/forms";
 
-import { ModalConfig } from "@bitwarden/angular/services/modal.service";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { OrganizationApiServiceAbstraction } from "@bitwarden/common/admin-console/abstractions/organization/organization-api.service.abstraction";
 import { OrganizationApiKeyType } from "@bitwarden/common/admin-console/enums";
@@ -8,8 +9,10 @@ import { OrganizationApiKeyRequest } from "@bitwarden/common/admin-console/model
 import { UserVerificationService } from "@bitwarden/common/auth/abstractions/user-verification/user-verification.service.abstraction";
 import { ApiKeyResponse } from "@bitwarden/common/auth/models/response/api-key.response";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
+import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { Verification } from "@bitwarden/common/types/verification";
+import { DialogService } from "@bitwarden/components";
 
 export interface BillingSyncApiModalData {
   organizationId: string;
@@ -20,59 +23,66 @@ export interface BillingSyncApiModalData {
   templateUrl: "billing-sync-api-key.component.html",
 })
 export class BillingSyncApiKeyComponent {
-  organizationId: string;
-  hasBillingToken: boolean;
+  protected organizationId: string;
+  protected hasBillingToken: boolean;
+
+  protected formGroup = new FormGroup({
+    verification: new FormControl<Verification>(null, Validators.required),
+  });
 
   showRotateScreen: boolean;
-  masterPassword: Verification;
-  formPromise: Promise<ApiKeyResponse>;
   clientSecret?: string;
   keyRevisionDate?: Date;
-  lastSyncDate?: Date = null;
+  lastSyncDate?: Date;
 
   constructor(
+    @Inject(DIALOG_DATA) protected data: BillingSyncApiModalData,
     private userVerificationService: UserVerificationService,
     private apiService: ApiService,
     private platformUtilsService: PlatformUtilsService,
     private i18nService: I18nService,
     private organizationApiService: OrganizationApiServiceAbstraction,
-    modalConfig: ModalConfig<BillingSyncApiModalData>
+    private logService: LogService
   ) {
-    this.organizationId = modalConfig.data.organizationId;
-    this.hasBillingToken = modalConfig.data.hasBillingToken;
+    this.organizationId = data.organizationId;
+    this.hasBillingToken = data.hasBillingToken;
   }
 
   copy() {
     this.platformUtilsService.copyToClipboard(this.clientSecret);
   }
 
-  async submit() {
-    if (this.showRotateScreen) {
-      this.formPromise = this.userVerificationService
-        .buildRequest(this.masterPassword, OrganizationApiKeyRequest)
+  submit = async () => {
+    try {
+      const request = this.userVerificationService
+        .buildRequest(this.formGroup.value.verification, OrganizationApiKeyRequest)
         .then((request) => {
           request.type = OrganizationApiKeyType.BillingSync;
+          return request;
+        });
+
+      if (this.showRotateScreen) {
+        const response = await request.then((request) => {
           return this.organizationApiService.rotateApiKey(this.organizationId, request);
         });
-      const response = await this.formPromise;
-      await this.load(response);
-      this.showRotateScreen = false;
-      this.platformUtilsService.showToast(
-        "success",
-        null,
-        this.i18nService.t("billingSyncApiKeyRotated")
-      );
-    } else {
-      this.formPromise = this.userVerificationService
-        .buildRequest(this.masterPassword, OrganizationApiKeyRequest)
-        .then((request) => {
-          request.type = OrganizationApiKeyType.BillingSync;
+        await this.load(response);
+        this.showRotateScreen = false;
+        this.platformUtilsService.showToast(
+          "success",
+          null,
+          this.i18nService.t("billingSyncApiKeyRotated")
+        );
+      } else {
+        const response = await request.then((request) => {
           return this.organizationApiService.getOrCreateApiKey(this.organizationId, request);
         });
-      const response = await this.formPromise;
-      await this.load(response);
+        await this.load(response);
+      }
+    } catch (e) {
+      this.logService.error(e);
+      throw e;
     }
-  }
+  };
 
   async load(response: ApiKeyResponse) {
     this.clientSecret = response.apiKey;
@@ -115,5 +125,9 @@ export class BillingSyncApiKeyComponent {
 
   get daysBetween(): number {
     return this.dayDiff(this.keyRevisionDate, new Date());
+  }
+
+  static open(dialogService: DialogService, data: BillingSyncApiModalData) {
+    return dialogService.open(BillingSyncApiKeyComponent, { data });
   }
 }
