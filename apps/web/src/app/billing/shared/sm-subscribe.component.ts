@@ -79,26 +79,26 @@ export class SecretsManagerSubscribeComponent implements OnInit, OnDestroy {
   }
 
   get serviceAccountsIncluded() {
-    return this.selectedPlan.baseServiceAccount;
+    return this.selectedPlan.SecretsManager.baseServiceAccount;
   }
 
   get monthlyCostPerServiceAccount() {
     return this.selectedPlan.isAnnual
-      ? this.selectedPlan.additionalPricePerServiceAccount / 12
-      : this.selectedPlan.additionalPricePerServiceAccount;
+      ? this.selectedPlan.SecretsManager.additionalPricePerServiceAccount / 12
+      : this.selectedPlan.SecretsManager.additionalPricePerServiceAccount;
   }
 
   get maxUsers() {
-    return this.selectedPlan.maxUsers;
+    return this.selectedPlan.SecretsManager.maxSeats;
   }
 
   get maxProjects() {
-    return this.selectedPlan.maxProjects;
+    return this.selectedPlan.SecretsManager.maxProjects;
   }
 
   get monthlyCostPerUser() {
     return this.selectedPlan.isAnnual
-      ? this.selectedPlan.seatPrice / 12
-      : this.selectedPlan.seatPrice;
+      ? this.selectedPlan.SecretsManager.seatPrice / 12
+      : this.selectedPlan.SecretsManager.seatPrice;
   }
 }

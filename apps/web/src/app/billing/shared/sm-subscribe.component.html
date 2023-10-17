@@ -45,14 +45,14 @@
     </bit-form-control>
 
     <ng-container *ngIf="formGroup.value.enabled">
-      <div *ngIf="selectedPlan.hasAdditionalSeatsOption" class="tw-w-1/2">
+      <div *ngIf="selectedPlan.SecretsManager.hasAdditionalSeatsOption" class="tw-w-1/2">
         <bit-form-field>
           <bit-label>{{ "userSeats" | i18n }}</bit-label>
           <input bitInput formControlName="userSeats" type="number" />
           <bit-hint>{{ "userSeatsHowManyDesc" | i18n }}</bit-hint>
         </bit-form-field>
       </div>
-      <div *ngIf="selectedPlan.hasAdditionalServiceAccountOption" class="tw-w-1/2">
+      <div *ngIf="selectedPlan.SecretsManager.hasAdditionalServiceAccountOption" class="tw-w-1/2">
         <bit-form-field>
           <bit-label>{{ "additionalServiceAccounts" | i18n }}</bit-label>
           <input bitInput formControlName="additionalServiceAccounts" type="number" />

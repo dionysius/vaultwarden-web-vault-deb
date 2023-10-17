@@ -1,5 +1,4 @@
 import { BaseResponse } from "../../../models/response/base.response";
-import { BitwardenProductType } from "../../enums";
 
 export class SubscriptionResponse extends BaseResponse {
   storageName: string;
@@ -67,7 +66,7 @@ export class BillingSubscriptionItemResponse extends BaseResponse {
   interval: string;
   sponsoredSubscriptionItem: boolean;
   addonSubscriptionItem: boolean;
-  bitwardenProduct: BitwardenProductType;
+  productName: string;
 
   constructor(response: any) {
     super(response);
@@ -77,7 +76,6 @@ export class BillingSubscriptionItemResponse extends BaseResponse {
     this.interval = this.getResponseProperty("Interval");
     this.sponsoredSubscriptionItem = this.getResponseProperty("SponsoredSubscriptionItem");
     this.addonSubscriptionItem = this.getResponseProperty("AddonSubscriptionItem");
-    this.bitwardenProduct = this.getResponseProperty("BitwardenProduct");
   }
 }
 

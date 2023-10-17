@@ -71,9 +71,7 @@
           <ng-container *ngIf="subscription">
             <tr bitRow *ngFor="let i of lineItems">
               <td bitCell [ngClass]="{ 'tw-pl-20': i.addonSubscriptionItem }">
-                <span *ngIf="!i.addonSubscriptionItem"
-                  >{{ productName(i.bitwardenProduct) }} -</span
-                >
+                <span *ngIf="!i.addonSubscriptionItem">{{ i.productName }} -</span>
                 {{ i.name }} {{ i.quantity > 1 ? "&times;" + i.quantity : "" }} @
                 {{ i.amount | currency : "$" }}
               </td>
@@ -150,7 +148,7 @@
   <ng-container *ngIf="showSecretsManagerSubscribe">
     <div class="tw-mt-7">
       <sm-subscribe-standalone
-        [plan]="sub.secretsManagerPlan"
+        [plan]="sub.plan"
         [organization]="userOrg"
         (onSubscribe)="subscriptionAdjusted()"
       ></sm-subscribe-standalone>

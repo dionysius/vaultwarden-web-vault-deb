@@ -8,7 +8,7 @@ import { OrganizationApiServiceAbstraction } from "@bitwarden/common/admin-conso
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 import { OrganizationApiKeyType } from "@bitwarden/common/admin-console/enums";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
-import { BitwardenProductType, PlanType } from "@bitwarden/common/billing/enums";
+import { PlanType } from "@bitwarden/common/billing/enums";
 import { OrganizationSubscriptionResponse } from "@bitwarden/common/billing/models/response/organization-subscription.response";
 import { BillingSubscriptionItemResponse } from "@bitwarden/common/billing/models/response/subscription.response";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
@@ -74,17 +74,6 @@ export class OrganizationSubscriptionCloudComponent implements OnInit, OnDestroy
       .subscribe();
   }
 
-  productName(product: BitwardenProductType) {
-    switch (product) {
-      case BitwardenProductType.PasswordManager:
-        return this.i18nService.t("passwordManager");
-      case BitwardenProductType.SecretsManager:
-        return this.i18nService.t("secretsManager");
-      default:
-        return this.i18nService.t("passwordManager");
-    }
-  }
-
   ngOnDestroy() {
     this.destroy$.next();
     this.destroy$.complete();
@@ -98,7 +87,20 @@ export class OrganizationSubscriptionCloudComponent implements OnInit, OnDestroy
     this.userOrg = this.organizationService.get(this.organizationId);
     if (this.userOrg.canViewSubscription) {
       this.sub = await this.organizationApiService.getSubscription(this.organizationId);
-      this.lineItems = this.sub?.subscription?.items?.sort(sortSubscriptionItems) ?? [];
+      this.lineItems = this.sub?.subscription?.items;
+      if (this.lineItems && this.lineItems.length) {
+        this.lineItems = this.lineItems
+          .map((item) => {
+            const itemTotalAmount = item.amount * item.quantity;
+            const seatPriceTotal = this.sub.plan?.SecretsManager?.seatPrice * item.quantity;
+            item.productName =
+              itemTotalAmount === seatPriceTotal || item.name.includes("Service Accounts")
+                ? "SecretsManager"
+                : "PasswordManager";
+            return item;
+          })
+          .sort(sortSubscriptionItems);
+      }
     }
 
     const apiKeyResponse = await this.organizationApiService.getApiKeyInformation(
@@ -111,6 +113,7 @@ export class OrganizationSubscriptionCloudComponent implements OnInit, OnDestroy
     this.showSecretsManagerSubscribe =
       this.userOrg.canEditSubscription &&
       !this.userOrg.hasProvider &&
+      this.sub?.plan?.SecretsManager &&
       !this.userOrg.useSecretsManager &&
       !this.subscription?.cancelled &&
       !this.subscriptionMarkedForCancel;
@@ -119,7 +122,7 @@ export class OrganizationSubscriptionCloudComponent implements OnInit, OnDestroy
       this.userOrg.canEditSubscription &&
       this.userOrg.useSecretsManager &&
       this.subscription != null &&
-      this.sub.secretsManagerPlan?.hasAdditionalSeatsOption &&
+      this.sub.plan?.SecretsManager?.hasAdditionalSeatsOption &&
       !this.sub.secretsManagerBeta &&
       !this.subscription.cancelled &&
       !this.subscriptionMarkedForCancel;
@@ -165,11 +168,11 @@ export class OrganizationSubscriptionCloudComponent implements OnInit, OnDestroy
   }
 
   get storageGbPrice() {
-    return this.sub.plan.additionalStoragePricePerGb;
+    return this.sub.plan.PasswordManager.additionalStoragePricePerGb;
   }
 
   get seatPrice() {
-    return this.sub.plan.seatPrice;
+    return this.sub.plan.PasswordManager.seatPrice;
   }
 
   get seats() {
@@ -180,13 +183,13 @@ export class OrganizationSubscriptionCloudComponent implements OnInit, OnDestroy
     return {
       seatCount: this.sub.smSeats,
       maxAutoscaleSeats: this.sub.maxAutoscaleSmSeats,
-      seatPrice: this.sub.secretsManagerPlan.seatPrice,
+      seatPrice: this.sub.plan.SecretsManager.seatPrice,
       maxAutoscaleServiceAccounts: this.sub.maxAutoscaleSmServiceAccounts,
       additionalServiceAccounts:
-        this.sub.smServiceAccounts - this.sub.secretsManagerPlan.baseServiceAccount,
-      interval: this.sub.secretsManagerPlan.isAnnual ? "year" : "month",
-      additionalServiceAccountPrice: this.sub.secretsManagerPlan.additionalPricePerServiceAccount,
-      baseServiceAccountCount: this.sub.secretsManagerPlan.baseServiceAccount,
+        this.sub.smServiceAccounts - this.sub.plan.SecretsManager.baseServiceAccount,
+      interval: this.sub.plan.isAnnual ? "year" : "month",
+      additionalServiceAccountPrice: this.sub.plan.SecretsManager.additionalPricePerServiceAccount,
+      baseServiceAccountCount: this.sub.plan.SecretsManager.baseServiceAccount,
     };
   }
 
@@ -195,7 +198,7 @@ export class OrganizationSubscriptionCloudComponent implements OnInit, OnDestroy
   }
 
   get canAdjustSeats() {
-    return this.sub.plan.hasAdditionalSeatsOption;
+    return this.sub.plan.PasswordManager.hasAdditionalSeatsOption;
   }
 
   get isAdmin() {
@@ -391,7 +394,7 @@ function sortSubscriptionItems(
   a: BillingSubscriptionItemResponse,
   b: BillingSubscriptionItemResponse
 ) {
-  if (a.bitwardenProduct == b.bitwardenProduct) {
+  if (a.productName == b.productName) {
     if (a.addonSubscriptionItem == b.addonSubscriptionItem) {
       return 0;
     }
@@ -401,5 +404,5 @@ function sortSubscriptionItems(
     }
     return -1;
   }
-  return a.bitwardenProduct - b.bitwardenProduct;
+  return a.productName.localeCompare(b.productName);
 }

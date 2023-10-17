@@ -14,20 +14,48 @@
             formControlName="plan"
           />
           <ng-container *ngIf="selectablePlan.isAnnual">
-            {{ "annual" | i18n }} -
-            {{
-              (selectablePlan.basePrice === 0 ? selectablePlan.seatPrice : selectablePlan.basePrice)
-                | currency : "$"
-            }}
-            /{{ "yr" | i18n }}
+            <ng-container *ngIf="selectablePlan.PasswordManager">
+              {{ "annual" | i18n }} -
+              {{
+                (selectablePlan.PasswordManager.basePrice === 0
+                  ? selectablePlan.PasswordManager.seatPrice
+                  : selectablePlan.PasswordManager.basePrice
+                ) | currency : "$"
+              }}
+              /{{ "yr" | i18n }}
+            </ng-container>
+            <ng-container *ngIf="selectablePlan.SecretsManager">
+              {{ "annual" | i18n }} -
+              {{
+                (selectablePlan.SecretsManager.basePrice === 0
+                  ? selectablePlan.SecretsManager.seatPrice
+                  : selectablePlan.SecretsManager.basePrice
+                ) | currency : "$"
+              }}
+              /{{ "yr" | i18n }}
+            </ng-container>
           </ng-container>
           <ng-container *ngIf="!selectablePlan.isAnnual">
-            {{ "monthly" | i18n }} -
-            {{
-              (selectablePlan.basePrice === 0 ? selectablePlan.seatPrice : selectablePlan.basePrice)
-                | currency : "$"
-            }}
-            /{{ "monthAbbr" | i18n }}
+            <ng-container *ngIf="selectablePlan.PasswordManager">
+              {{ "monthly" | i18n }} -
+              {{
+                (selectablePlan.PasswordManager.basePrice === 0
+                  ? selectablePlan.PasswordManager.seatPrice
+                  : selectablePlan.PasswordManager.basePrice
+                ) | currency : "$"
+              }}
+              /{{ "monthAbbr" | i18n }}
+            </ng-container>
+            <ng-container *ngIf="selectablePlan.SecretsManager">
+              {{ "monthly" | i18n }} -
+              {{
+                (selectablePlan.SecretsManager.basePrice === 0
+                  ? selectablePlan.SecretsManager.seatPrice
+                  : selectablePlan.SecretsManager.basePrice
+                ) | currency : "$"
+              }}
+              /{{ "monthAbbr" | i18n }}
+            </ng-container>
           </ng-container>
         </label>
       </div>
