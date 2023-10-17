@@ -17,6 +17,16 @@ export default {
   onSystemThemeUpdated: (callback: (theme: ThemeType) => void) => {
     ipcRenderer.on("systemThemeUpdated", (_event, theme: ThemeType) => callback(theme));
   },
+
+  sendMessage: (message: { command: string } & any) =>
+    ipcRenderer.send("messagingService", message),
+  onMessage: (callback: (message: { command: string } & any) => void) => {
+    ipcRenderer.on("messagingService", (_event, message: any) => {
+      if (message.command) {
+        callback(message);
+      }
+    });
+  },
 };
 
 function deviceType(): DeviceType {
