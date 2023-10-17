@@ -1,5 +1,4 @@
-// eslint-disable-next-line no-restricted-imports
-import { Substitute, Arg } from "@fluffy-spoon/substitute";
+import { mock } from "jest-mock-extended";
 import { Jsonify } from "type-fest";
 
 import { makeStaticByteArray, mockEnc, mockFromJson } from "../../../../spec/utils";
@@ -219,15 +218,15 @@ describe("Cipher DTO", () => {
       loginView.username = "username";
       loginView.password = "password";
 
-      const login = Substitute.for<Login>();
-      login.decrypt(Arg.any(), Arg.any()).resolves(loginView);
+      const login = mock<Login>();
+      login.decrypt.mockResolvedValue(loginView);
       cipher.login = login;
 
-      const cryptoService = Substitute.for<CryptoService>();
-      const encryptService = Substitute.for<EncryptService>();
-      const cipherService = Substitute.for<CipherService>();
+      const cryptoService = mock<CryptoService>();
+      const encryptService = mock<EncryptService>();
+      const cipherService = mock<CipherService>();
 
-      encryptService.decryptToBytes(Arg.any(), Arg.any()).resolves(makeStaticByteArray(64));
+      encryptService.decryptToBytes.mockResolvedValue(makeStaticByteArray(64));
 
       (window as any).bitwardenContainerService = new ContainerService(
         cryptoService,
@@ -343,11 +342,11 @@ describe("Cipher DTO", () => {
       cipher.secureNote.type = SecureNoteType.Generic;
       cipher.key = mockEnc("EncKey");
 
-      const cryptoService = Substitute.for<CryptoService>();
-      const encryptService = Substitute.for<EncryptService>();
-      const cipherService = Substitute.for<CipherService>();
+      const cryptoService = mock<CryptoService>();
+      const encryptService = mock<EncryptService>();
+      const cipherService = mock<CipherService>();
 
-      encryptService.decryptToBytes(Arg.any(), Arg.any()).resolves(makeStaticByteArray(64));
+      encryptService.decryptToBytes.mockResolvedValue(makeStaticByteArray(64));
 
       (window as any).bitwardenContainerService = new ContainerService(
         cryptoService,
@@ -477,15 +476,15 @@ describe("Cipher DTO", () => {
       cardView.cardholderName = "cardholderName";
       cardView.number = "4111111111111111";
 
-      const card = Substitute.for<Card>();
-      card.decrypt(Arg.any(), Arg.any()).resolves(cardView);
+      const card = mock<Card>();
+      card.decrypt.mockResolvedValue(cardView);
       cipher.card = card;
 
-      const cryptoService = Substitute.for<CryptoService>();
-      const encryptService = Substitute.for<EncryptService>();
-      const cipherService = Substitute.for<CipherService>();
+      const cryptoService = mock<CryptoService>();
+      const encryptService = mock<EncryptService>();
+      const cipherService = mock<CipherService>();
 
-      encryptService.decryptToBytes(Arg.any(), Arg.any()).resolves(makeStaticByteArray(64));
+      encryptService.decryptToBytes.mockResolvedValue(makeStaticByteArray(64));
 
       (window as any).bitwardenContainerService = new ContainerService(
         cryptoService,
@@ -639,15 +638,15 @@ describe("Cipher DTO", () => {
       identityView.firstName = "firstName";
       identityView.lastName = "lastName";
 
-      const identity = Substitute.for<Identity>();
-      identity.decrypt(Arg.any(), Arg.any()).resolves(identityView);
+      const identity = mock<Identity>();
+      identity.decrypt.mockResolvedValue(identityView);
       cipher.identity = identity;
 
-      const cryptoService = Substitute.for<CryptoService>();
-      const encryptService = Substitute.for<EncryptService>();
-      const cipherService = Substitute.for<CipherService>();
+      const cryptoService = mock<CryptoService>();
+      const encryptService = mock<EncryptService>();
+      const cipherService = mock<CipherService>();
 
-      encryptService.decryptToBytes(Arg.any(), Arg.any()).resolves(makeStaticByteArray(64));
+      encryptService.decryptToBytes.mockResolvedValue(makeStaticByteArray(64));
 
       (window as any).bitwardenContainerService = new ContainerService(
         cryptoService,

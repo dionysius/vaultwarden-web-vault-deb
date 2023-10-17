@@ -1,5 +1,4 @@
-// eslint-disable-next-line no-restricted-imports
-import { Arg, Substitute, SubstituteOf } from "@fluffy-spoon/substitute";
+import { mock, MockProxy } from "jest-mock-extended";
 import { BehaviorSubject, firstValueFrom } from "rxjs";
 
 import { OrganizationService } from "../admin-console/abstractions/organization/organization.service.abstraction";
@@ -22,19 +21,19 @@ import { StateService } from "../platform/services/state.service";
 describe("PolicyService", () => {
   let policyService: PolicyService;
 
-  let cryptoService: SubstituteOf<CryptoService>;
-  let stateService: SubstituteOf<StateService>;
-  let organizationService: SubstituteOf<OrganizationService>;
-  let encryptService: SubstituteOf<EncryptService>;
+  let cryptoService: MockProxy<CryptoService>;
+  let stateService: MockProxy<StateService>;
+  let organizationService: MockProxy<OrganizationService>;
+  let encryptService: MockProxy<EncryptService>;
   let activeAccount: BehaviorSubject<string>;
   let activeAccountUnlocked: BehaviorSubject<boolean>;
 
   beforeEach(() => {
-    stateService = Substitute.for();
-    organizationService = Substitute.for();
-    organizationService
-      .getAll("user")
-      .resolves([
+    stateService = mock<StateService>();
+    organizationService = mock<OrganizationService>();
+    organizationService.getAll
+      .calledWith("user")
+      .mockResolvedValue([
         new Organization(
           organizationData(
             "test-organization",
@@ -45,24 +44,24 @@ describe("PolicyService", () => {
           )
         ),
       ]);
-    organizationService.getAll(undefined).resolves([]);
-    organizationService.getAll(null).resolves([]);
+    organizationService.getAll.calledWith(undefined).mockResolvedValue([]);
+    organizationService.getAll.calledWith(null).mockResolvedValue([]);
     activeAccount = new BehaviorSubject("123");
     activeAccountUnlocked = new BehaviorSubject(true);
-    stateService.getDecryptedPolicies({ userId: "user" }).resolves(null);
-    stateService.getEncryptedPolicies({ userId: "user" }).resolves({
+    stateService.getDecryptedPolicies.calledWith({ userId: "user" }).mockResolvedValue(null);
+    stateService.getEncryptedPolicies.calledWith({ userId: "user" }).mockResolvedValue({
       "1": policyData("1", "test-organization", PolicyType.MaximumVaultTimeout, true, {
         minutes: 14,
       }),
     });
-    stateService.getEncryptedPolicies().resolves({
+    stateService.getEncryptedPolicies.mockResolvedValue({
       "1": policyData("1", "test-organization", PolicyType.MaximumVaultTimeout, true, {
         minutes: 14,
       }),
     });
-    stateService.activeAccount$.returns(activeAccount);
-    stateService.activeAccountUnlocked$.returns(activeAccountUnlocked);
-    stateService.getUserId().resolves("user");
+    stateService.activeAccount$ = activeAccount;
+    stateService.activeAccountUnlocked$ = activeAccountUnlocked;
+    stateService.getUserId.mockResolvedValue("user");
     (window as any).bitwardenContainerService = new ContainerService(cryptoService, encryptService);
 
     policyService = new PolicyService(stateService, organizationService);
@@ -120,7 +119,7 @@ describe("PolicyService", () => {
     it("null userId", async () => {
       await policyService.clear();
 
-      stateService.received(1).setEncryptedPolicies(Arg.any(), Arg.any());
+      expect(stateService.setEncryptedPolicies).toBeCalledTimes(1);
 
       expect((await firstValueFrom(policyService.policies$)).length).toBe(0);
     });
@@ -128,7 +127,7 @@ describe("PolicyService", () => {
     it("matching userId", async () => {
       await policyService.clear("user");
 
-      stateService.received(1).setEncryptedPolicies(Arg.any(), Arg.any());
+      expect(stateService.setEncryptedPolicies).toBeCalledTimes(1);
 
       expect((await firstValueFrom(policyService.policies$)).length).toBe(0);
     });
@@ -136,7 +135,7 @@ describe("PolicyService", () => {
     it("mismatching userId", async () => {
       await policyService.clear("12");
 
-      stateService.received(1).setEncryptedPolicies(Arg.any(), Arg.any());
+      expect(stateService.setEncryptedPolicies).toBeCalledTimes(1);
 
       expect((await firstValueFrom(policyService.policies$)).length).toBe(1);
     });

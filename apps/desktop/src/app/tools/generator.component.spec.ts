@@ -1,8 +1,6 @@
 import { NO_ERRORS_SCHEMA } from "@angular/core";
 import { ComponentFixture, TestBed } from "@angular/core/testing";
 import { ActivatedRoute } from "@angular/router";
-// eslint-disable-next-line no-restricted-imports
-import { Substitute } from "@fluffy-spoon/substitute";
 import { mock, MockProxy } from "jest-mock-extended";
 
 import { I18nPipe } from "@bitwarden/angular/platform/pipes/i18n.pipe";
@@ -28,15 +26,15 @@ describe("GeneratorComponent", () => {
       providers: [
         {
           provide: PasswordGenerationServiceAbstraction,
-          useClass: Substitute.for<PasswordGenerationServiceAbstraction>(),
+          useValue: mock<PasswordGenerationServiceAbstraction>(),
         },
         {
           provide: UsernameGenerationServiceAbstraction,
-          useClass: Substitute.for<UsernameGenerationServiceAbstraction>(),
+          useValue: mock<UsernameGenerationServiceAbstraction>(),
         },
         {
           provide: StateService,
-          useClass: Substitute.for<StateService>(),
+          useValue: mock<StateService>(),
         },
         {
           provide: PlatformUtilsService,
@@ -44,15 +42,15 @@ describe("GeneratorComponent", () => {
         },
         {
           provide: I18nService,
-          useClass: Substitute.for<I18nService>(),
+          useValue: mock<I18nService>(),
         },
         {
           provide: ActivatedRoute,
-          useClass: Substitute.for<ActivatedRoute>(),
+          useValue: mock<ActivatedRoute>(),
         },
         {
           provide: LogService,
-          useClass: Substitute.for<LogService>(),
+          useValue: mock<LogService>(),
         },
       ],
       schemas: [NO_ERRORS_SCHEMA],

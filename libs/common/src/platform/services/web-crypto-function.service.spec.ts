@@ -1,5 +1,4 @@
-// eslint-disable-next-line no-restricted-imports
-import { Substitute } from "@fluffy-spoon/substitute";
+import { mock } from "jest-mock-extended";
 
 import { Utils } from "../../platform/misc/utils";
 import { PlatformUtilsService } from "../abstractions/platform-utils.service";
@@ -582,8 +581,8 @@ function testRsaGenerateKeyPair(length: 1024 | 2048 | 4096) {
 }
 
 function getWebCryptoFunctionService() {
-  const platformUtilsMock = Substitute.for<PlatformUtilsService>();
-  platformUtilsMock.isEdge().mimicks(() => navigator.userAgent.indexOf(" Edg/") !== -1);
+  const platformUtilsMock = mock<PlatformUtilsService>();
+  platformUtilsMock.isEdge.mockImplementation(() => navigator.userAgent.indexOf(" Edg/") !== -1);
 
   return new WebCryptoFunctionService(window);
 }

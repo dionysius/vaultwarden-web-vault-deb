@@ -1,5 +1,4 @@
-// eslint-disable-next-line no-restricted-imports
-import { Substitute, Arg } from "@fluffy-spoon/substitute";
+import { mock, MockProxy } from "jest-mock-extended";
 
 import { EncString } from "@bitwarden/common/platform/models/domain/enc-string";
 
@@ -22,11 +21,11 @@ export function BuildTestObject<T, K extends keyof T = keyof T>(
   return Object.assign(constructor === null ? {} : new constructor(), def) as T;
 }
 
-export function mockEnc(s: string): EncString {
-  const mock = Substitute.for<EncString>();
-  mock.decrypt(Arg.any(), Arg.any()).resolves(s);
+export function mockEnc(s: string): MockProxy<EncString> {
+  const mocked = mock<EncString>();
+  mocked.decrypt.mockResolvedValue(s);
 
-  return mock;
+  return mocked;
 }
 
 export function makeStaticByteArray(length: number, start = 0) {

@@ -1,5 +1,4 @@
-// eslint-disable-next-line no-restricted-imports
-import { Substitute, Arg } from "@fluffy-spoon/substitute";
+import { mock } from "jest-mock-extended";
 
 import { mockEnc } from "../../../../../spec";
 import { SendType } from "../../enums/send-type";
@@ -61,8 +60,8 @@ describe("SendAccess", () => {
     sendAccess.type = SendType.Text;
     sendAccess.name = mockEnc("name");
 
-    const text = Substitute.for<SendText>();
-    text.decrypt(Arg.any()).resolves({} as any);
+    const text = mock<SendText>();
+    text.decrypt.mockResolvedValue({} as any);
     sendAccess.text = text;
 
     sendAccess.expirationDate = new Date("2022-01-31T12:00:00.000Z");
@@ -70,7 +69,7 @@ describe("SendAccess", () => {
 
     const view = await sendAccess.decrypt(null);
 
-    text.received(1).decrypt(Arg.any());
+    expect(text.decrypt).toHaveBeenCalledTimes(1);
 
     expect(view).toEqual({
       id: "id",

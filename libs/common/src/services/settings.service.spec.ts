@@ -1,20 +1,19 @@
-// eslint-disable-next-line no-restricted-imports
-import { Arg, Substitute, SubstituteOf } from "@fluffy-spoon/substitute";
+import { mock, MockProxy } from "jest-mock-extended";
 import { BehaviorSubject, firstValueFrom } from "rxjs";
 
 import { CryptoService } from "../platform/abstractions/crypto.service";
 import { EncryptService } from "../platform/abstractions/encrypt.service";
+import { StateService } from "../platform/abstractions/state.service";
 import { ContainerService } from "../platform/services/container.service";
-import { StateService } from "../platform/services/state.service";
 
 import { SettingsService } from "./settings.service";
 
 describe("SettingsService", () => {
   let settingsService: SettingsService;
 
-  let cryptoService: SubstituteOf<CryptoService>;
-  let encryptService: SubstituteOf<EncryptService>;
-  let stateService: SubstituteOf<StateService>;
+  let cryptoService: MockProxy<CryptoService>;
+  let encryptService: MockProxy<EncryptService>;
+  let stateService: MockProxy<StateService>;
   let activeAccount: BehaviorSubject<string>;
   let activeAccountUnlocked: BehaviorSubject<boolean>;
 
@@ -25,15 +24,15 @@ describe("SettingsService", () => {
   ];
 
   beforeEach(() => {
-    cryptoService = Substitute.for();
-    encryptService = Substitute.for();
-    stateService = Substitute.for();
+    cryptoService = mock<CryptoService>();
+    encryptService = mock<EncryptService>();
+    stateService = mock<StateService>();
     activeAccount = new BehaviorSubject("123");
     activeAccountUnlocked = new BehaviorSubject(true);
 
-    stateService.getSettings().resolves({ equivalentDomains: mockEquivalentDomains });
-    stateService.activeAccount$.returns(activeAccount);
-    stateService.activeAccountUnlocked$.returns(activeAccountUnlocked);
+    stateService.getSettings.mockResolvedValue({ equivalentDomains: mockEquivalentDomains });
+    stateService.activeAccount$ = activeAccount;
+    stateService.activeAccountUnlocked$ = activeAccountUnlocked;
     (window as any).bitwardenContainerService = new ContainerService(cryptoService, encryptService);
 
     settingsService = new SettingsService(stateService);
@@ -66,7 +65,7 @@ describe("SettingsService", () => {
   it("setEquivalentDomains", async () => {
     await settingsService.setEquivalentDomains([["test2"], ["domains2"]]);
 
-    stateService.received(1).setSettings(Arg.any());
+    expect(stateService.setSettings).toBeCalledTimes(1);
 
     expect((await firstValueFrom(settingsService.settings$)).equivalentDomains).toEqual([
       ["test2"],
@@ -77,7 +76,7 @@ describe("SettingsService", () => {
   it("clear", async () => {
     await settingsService.clear();
 
-    stateService.received(1).setSettings(Arg.any(), Arg.any());
+    expect(stateService.setSettings).toBeCalledTimes(1);
 
     expect(await firstValueFrom(settingsService.settings$)).toEqual({});
   });

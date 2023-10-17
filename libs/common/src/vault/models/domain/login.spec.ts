@@ -1,5 +1,4 @@
-// eslint-disable-next-line no-restricted-imports
-import { Substitute, Arg } from "@fluffy-spoon/substitute";
+import { mock } from "jest-mock-extended";
 
 import { mockEnc, mockFromJson } from "../../../../spec";
 import { UriMatchType } from "../../../enums";
@@ -51,10 +50,10 @@ describe("Login DTO", () => {
   });
 
   it("Decrypts correctly", async () => {
-    const loginUri = Substitute.for<LoginUri>();
+    const loginUri = mock<LoginUri>();
     const loginUriView = new LoginUriView();
     loginUriView.uri = "decrypted uri";
-    loginUri.decrypt(Arg.any()).resolves(loginUriView);
+    loginUri.decrypt.mockResolvedValue(loginUriView);
 
     const login = new Login();
     login.uris = [loginUri];

@@ -15,8 +15,7 @@
           "@bitwarden/web-vault/*",
           "src/**/*",
           "bitwarden_license"
-        ],
-        "paths": ["@fluffy-spoon/substitute"]
+        ]
       }
     ]
   }
