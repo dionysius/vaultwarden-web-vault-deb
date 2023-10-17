@@ -106,7 +106,12 @@
   },
   "web_accessible_resources": [
     {
-      "resources": ["notification/bar.html", "images/icon38.png", "images/icon38_locked.png"],
+      "resources": [
+        "content/webauthn/page-script.js",
+        "notification/bar.html",
+        "images/icon38.png",
+        "images/icon38_locked.png"
+      ],
       "matches": ["<all_urls>"]
     }
   ],

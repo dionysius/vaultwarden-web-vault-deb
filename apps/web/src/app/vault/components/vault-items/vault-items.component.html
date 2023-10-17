@@ -89,10 +89,7 @@
           [showGroups]="showGroups"
           [showPremiumFeatures]="showPremiumFeatures"
           [useEvents]="useEvents"
-          [cloneable]="
-            (item.cipher.organizationId && cloneableOrganizationCiphers) ||
-            item.cipher.organizationId == null
-          "
+          [cloneable]="canClone(item)"
           [organizations]="allOrganizations"
           [collections]="allCollections"
           [checked]="selection.isSelected(item)"

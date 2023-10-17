@@ -6,6 +6,7 @@ import { SymmetricCryptoKey } from "../../../platform/models/domain/symmetric-cr
 import { LoginData } from "../data/login.data";
 import { LoginView } from "../view/login.view";
 
+import { Fido2Credential } from "./fido2-credential";
 import { LoginUri } from "./login-uri";
 
 export class Login extends Domain {
@@ -15,6 +16,7 @@ export class Login extends Domain {
   passwordRevisionDate?: Date;
   totp: EncString;
   autofillOnPageLoad: boolean;
+  fido2Credentials: Fido2Credential[];
 
   constructor(obj?: LoginData) {
     super();
@@ -42,6 +44,10 @@ export class Login extends Domain {
         this.uris.push(new LoginUri(u));
       });
     }
+
+    if (obj.fido2Credentials) {
+      this.fido2Credentials = obj.fido2Credentials.map((key) => new Fido2Credential(key));
+    }
   }
 
   async decrypt(orgId: string, encKey?: SymmetricCryptoKey): Promise<LoginView> {
@@ -62,6 +68,12 @@ export class Login extends Domain {
         const uri = await this.uris[i].decrypt(orgId, encKey);
         view.uris.push(uri);
       }
+    }
+
+    if (this.fido2Credentials != null) {
+      view.fido2Credentials = await Promise.all(
+        this.fido2Credentials.map((key) => key.decrypt(orgId, encKey))
+      );
     }
 
     return view;
@@ -85,6 +97,10 @@ export class Login extends Domain {
       });
     }
 
+    if (this.fido2Credentials != null && this.fido2Credentials.length > 0) {
+      l.fido2Credentials = this.fido2Credentials.map((key) => key.toFido2CredentialData());
+    }
+
     return l;
   }
 
@@ -99,13 +115,16 @@ export class Login extends Domain {
     const passwordRevisionDate =
       obj.passwordRevisionDate == null ? null : new Date(obj.passwordRevisionDate);
     const uris = obj.uris?.map((uri: any) => LoginUri.fromJSON(uri));
+    const fido2Credentials =
+      obj.fido2Credentials?.map((key) => Fido2Credential.fromJSON(key)) ?? [];
 
     return Object.assign(new Login(), obj, {
       username,
       password,
       totp,
-      passwordRevisionDate: passwordRevisionDate,
-      uris: uris,
+      passwordRevisionDate,
+      uris,
+      fido2Credentials,
     });
   }
 }

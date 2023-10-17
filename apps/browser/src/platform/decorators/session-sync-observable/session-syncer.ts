@@ -73,10 +73,9 @@ export class SessionSyncer {
 
   private listenForUpdates() {
     // This is an unawaited promise, but it will be executed asynchronously in the background.
-    BrowserApi.messageListener(
-      this.updateMessageCommand,
-      async (message) => await this.updateFromMessage(message)
-    );
+    BrowserApi.messageListener(this.updateMessageCommand, (message) => {
+      this.updateFromMessage(message);
+    });
   }
 
   async updateFromMessage(message: any) {

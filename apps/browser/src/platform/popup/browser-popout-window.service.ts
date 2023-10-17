@@ -95,29 +95,71 @@ class BrowserPopoutWindowService implements BrowserPopupWindowServiceInterface {
     await this.closeSingleActionPopout("passwordReprompt");
   }
 
+  async openFido2Popout(
+    senderWindow: chrome.tabs.Tab,
+    {
+      sessionId,
+      senderTabId,
+      fallbackSupported,
+    }: {
+      sessionId: string;
+      senderTabId: number;
+      fallbackSupported: boolean;
+    }
+  ): Promise<number> {
+    await this.closeFido2Popout();
+
+    const promptWindowPath =
+      "popup/index.html#/fido2" +
+      "?uilocation=popout" +
+      `&sessionId=${sessionId}` +
+      `&fallbackSupported=${fallbackSupported}` +
+      `&senderTabId=${senderTabId}` +
+      `&senderUrl=${encodeURIComponent(senderWindow.url)}`;
+
+    return await this.openSingleActionPopout(
+      senderWindow.windowId,
+      promptWindowPath,
+      "fido2Popout",
+      {
+        width: 200,
+        height: 500,
+      }
+    );
+  }
+
+  async closeFido2Popout(): Promise<void> {
+    await this.closeSingleActionPopout("fido2Popout");
+  }
+
   private async openSingleActionPopout(
     senderWindowId: number,
     popupWindowURL: string,
-    singleActionPopoutKey: string
-  ) {
+    singleActionPopoutKey: string,
+    options: chrome.windows.CreateData = {}
+  ): Promise<number> {
     const senderWindow = senderWindowId && (await BrowserApi.getWindow(senderWindowId));
     const url = chrome.extension.getURL(popupWindowURL);
     const offsetRight = 15;
     const offsetTop = 90;
-    const popupWidth = this.defaultPopoutWindowOptions.width;
+    /// Use overrides in `options` if provided, otherwise use default
+    const popupWidth = options?.width || this.defaultPopoutWindowOptions.width;
     const windowOptions = senderWindow
       ? {
           ...this.defaultPopoutWindowOptions,
-          url,
           left: senderWindow.left + senderWindow.width - popupWidth - offsetRight,
           top: senderWindow.top + offsetTop,
+          ...options,
+          url,
         }
-      : { ...this.defaultPopoutWindowOptions, url };
+      : { ...this.defaultPopoutWindowOptions, url, ...options };
 
     const popupWindow = await BrowserApi.createWindow(windowOptions);
 
     await this.closeSingleActionPopout(singleActionPopoutKey);
     this.singleActionPopoutTabIds[singleActionPopoutKey] = popupWindow?.tabs[0].id;
+
+    return popupWindow.id;
   }
 
   private async closeSingleActionPopout(popoutKey: string) {

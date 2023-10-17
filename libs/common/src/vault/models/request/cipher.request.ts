@@ -4,6 +4,7 @@ import { IdentityApi } from "../../../models/api/identity.api";
 import { LoginUriApi } from "../../../models/api/login-uri.api";
 import { LoginApi } from "../../../models/api/login.api";
 import { SecureNoteApi } from "../../../models/api/secure-note.api";
+import { Fido2CredentialApi } from "../../api/fido2-credential.api";
 import { CipherRepromptType } from "../../enums/cipher-reprompt-type";
 import { CipherType } from "../../enums/cipher-type";
 import { Cipher } from "../domain/cipher";
@@ -61,6 +62,31 @@ export class CipherRequest {
             uri.uri = u.uri != null ? u.uri.encryptedString : null;
             uri.match = u.match != null ? u.match : null;
             return uri;
+          });
+        }
+
+        if (cipher.login.fido2Credentials != null) {
+          this.login.fido2Credentials = cipher.login.fido2Credentials.map((key) => {
+            const keyApi = new Fido2CredentialApi();
+            keyApi.credentialId =
+              key.credentialId != null ? key.credentialId.encryptedString : null;
+            keyApi.keyType =
+              key.keyType != null ? (key.keyType.encryptedString as "public-key") : null;
+            keyApi.keyAlgorithm =
+              key.keyAlgorithm != null ? (key.keyAlgorithm.encryptedString as "ECDSA") : null;
+            keyApi.keyCurve =
+              key.keyCurve != null ? (key.keyCurve.encryptedString as "P-256") : null;
+            keyApi.keyValue = key.keyValue != null ? key.keyValue.encryptedString : null;
+            keyApi.rpId = key.rpId != null ? key.rpId.encryptedString : null;
+            keyApi.rpName = key.rpName != null ? key.rpName.encryptedString : null;
+            keyApi.counter = key.counter != null ? key.counter.encryptedString : null;
+            keyApi.userHandle = key.userHandle != null ? key.userHandle.encryptedString : null;
+            keyApi.userDisplayName =
+              key.userDisplayName != null ? key.userDisplayName.encryptedString : null;
+            keyApi.discoverable =
+              key.discoverable != null ? key.discoverable.encryptedString : null;
+            keyApi.creationDate = key.creationDate != null ? key.creationDate.toISOString() : null;
+            return keyApi;
           });
         }
         break;

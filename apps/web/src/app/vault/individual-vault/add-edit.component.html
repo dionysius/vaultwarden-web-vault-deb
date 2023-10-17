@@ -191,6 +191,25 @@
               </button>
             </div>
           </div>
+          <ng-container *ngIf="cipher.login.hasFido2Credentials">
+            <div class="row">
+              <div class="col-6 form-group">
+                <label for="loginFido2credential">{{ "typePasskey" | i18n }}</label>
+                <div class="input-group">
+                  <input
+                    id="loginFido2credential"
+                    class="form-control"
+                    type="text"
+                    name="Login.Fido2credential"
+                    [value]="fido2CredentialCreationDateValue"
+                    appInputVerbatim
+                    disabled
+                    readonly
+                  />
+                </div>
+              </div>
+            </div>
+          </ng-container>
           <div class="tw-flex tw-flex-row">
             <div class="tw-mb-4 tw-w-1/2">
               <label for="loginTotp">{{ "authenticatorKeyTotp" | i18n }}</label>

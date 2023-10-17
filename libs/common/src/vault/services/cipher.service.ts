@@ -30,6 +30,7 @@ import { CipherData } from "../models/data/cipher.data";
 import { Attachment } from "../models/domain/attachment";
 import { Card } from "../models/domain/card";
 import { Cipher } from "../models/domain/cipher";
+import { Fido2Credential } from "../models/domain/fido2-credential";
 import { Field } from "../models/domain/field";
 import { Identity } from "../models/domain/identity";
 import { Login } from "../models/domain/login";
@@ -1135,6 +1136,38 @@ export class CipherService implements CipherServiceAbstraction {
             );
             cipher.login.uris.push(loginUri);
           }
+        }
+
+        if (model.login.fido2Credentials != null) {
+          cipher.login.fido2Credentials = await Promise.all(
+            model.login.fido2Credentials.map(async (viewKey) => {
+              const domainKey = new Fido2Credential();
+              await this.encryptObjProperty(
+                viewKey,
+                domainKey,
+                {
+                  credentialId: null,
+                  keyType: null,
+                  keyAlgorithm: null,
+                  keyCurve: null,
+                  keyValue: null,
+                  rpId: null,
+                  rpName: null,
+                  userHandle: null,
+                  userDisplayName: null,
+                  origin: null,
+                },
+                key
+              );
+              domainKey.counter = await this.cryptoService.encrypt(String(viewKey.counter), key);
+              domainKey.discoverable = await this.cryptoService.encrypt(
+                String(viewKey.discoverable),
+                key
+              );
+              domainKey.creationDate = viewKey.creationDate;
+              return domainKey;
+            })
+          );
         }
         return;
       case CipherType.SecureNote:

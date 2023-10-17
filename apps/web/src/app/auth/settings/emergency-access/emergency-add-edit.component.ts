@@ -1,3 +1,4 @@
+import { DatePipe } from "@angular/common";
 import { Component } from "@angular/core";
 
 import { AuditService } from "@bitwarden/common/abstractions/audit.service";
@@ -47,7 +48,8 @@ export class EmergencyAddEditComponent extends BaseAddEditComponent {
     organizationService: OrganizationService,
     logService: LogService,
     sendApiService: SendApiService,
-    dialogService: DialogService
+    dialogService: DialogService,
+    datePipe: DatePipe
   ) {
     super(
       cipherService,
@@ -66,7 +68,8 @@ export class EmergencyAddEditComponent extends BaseAddEditComponent {
       logService,
       passwordRepromptService,
       sendApiService,
-      dialogService
+      dialogService,
+      datePipe
     );
   }
 

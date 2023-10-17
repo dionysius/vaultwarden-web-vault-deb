@@ -25,17 +25,11 @@ export default class CommandsBackground {
   }
 
   async init() {
-    BrowserApi.messageListener(
-      "commands.background",
-      async (msg: any, sender: chrome.runtime.MessageSender, sendResponse: any) => {
-        if (msg.command === "unlockCompleted" && msg.data.target === "commands.background") {
-          await this.processCommand(
-            msg.data.commandToRetry.msg.command,
-            msg.data.commandToRetry.sender
-          );
-        }
+    BrowserApi.messageListener("commands.background", (msg: any) => {
+      if (msg.command === "unlockCompleted" && msg.data.target === "commands.background") {
+        this.processCommand(msg.data.commandToRetry.msg.command, msg.data.commandToRetry.sender);
       }
-    );
+    });
 
     if (chrome && chrome.commands) {
       chrome.commands.onCommand.addListener(async (command: string) => {

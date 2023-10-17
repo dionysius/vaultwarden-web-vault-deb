@@ -80,11 +80,7 @@ export class AppComponent implements OnInit, OnDestroy {
       window.onkeypress = () => this.recordActivity();
     });
 
-    (window as any).bitwardenPopupMainMessageListener = async (
-      msg: any,
-      sender: any,
-      sendResponse: any
-    ) => {
+    const bitwardenPopupMainMessageListener = (msg: any, sender: any) => {
       if (msg.command === "doneLoggingOut") {
         this.authService.logOut(async () => {
           if (msg.expired) {
@@ -102,15 +98,13 @@ export class AppComponent implements OnInit, OnDestroy {
         this.changeDetectorRef.detectChanges();
       } else if (msg.command === "authBlocked") {
         this.router.navigate(["home"]);
-      } else if (msg.command === "locked") {
-        if (msg.userId == null || msg.userId === (await this.stateService.getUserId())) {
-          this.router.navigate(["lock"]);
-        }
+      } else if (msg.command === "locked" && msg.userId == null) {
+        this.router.navigate(["lock"]);
       } else if (msg.command === "showDialog") {
-        await this.ngZone.run(() => this.showDialog(msg));
+        this.showDialog(msg);
       } else if (msg.command === "showNativeMessagingFinterprintDialog") {
         // TODO: Should be refactored to live in another service.
-        await this.ngZone.run(() => this.showNativeMessagingFingerprintDialog(msg));
+        this.showNativeMessagingFingerprintDialog(msg);
       } else if (msg.command === "showToast") {
         this.showToast(msg);
       } else if (msg.command === "reloadProcess") {
@@ -133,7 +127,8 @@ export class AppComponent implements OnInit, OnDestroy {
       }
     };
 
-    BrowserApi.messageListener("app.component", (window as any).bitwardenPopupMainMessageListener);
+    (window as any).bitwardenPopupMainMessageListener = bitwardenPopupMainMessageListener;
+    BrowserApi.messageListener("app.component", bitwardenPopupMainMessageListener);
 
     // eslint-disable-next-line rxjs/no-async-subscribe
     this.router.events.pipe(takeUntil(this.destroy$)).subscribe(async (event) => {

@@ -22,6 +22,8 @@ import { PasswordStrengthServiceAbstraction } from "@bitwarden/common/tools/pass
 import { DialogService } from "@bitwarden/components";
 
 import { BiometricErrors, BiometricErrorTypes } from "../../models/biometricErrors";
+import { BrowserRouterService } from "../../platform/popup/services/browser-router.service";
+import { fido2PopoutSessionData$ } from "../../vault/fido2/browser-fido2-user-interface.service";
 
 @Component({
   selector: "app-lock",
@@ -32,6 +34,7 @@ export class LockComponent extends BaseLockComponent {
 
   biometricError: string;
   pendingBiometric = false;
+  fido2PopoutSessionData$ = fido2PopoutSessionData$();
 
   constructor(
     router: Router,
@@ -52,7 +55,8 @@ export class LockComponent extends BaseLockComponent {
     private authService: AuthService,
     dialogService: DialogService,
     deviceTrustCryptoService: DeviceTrustCryptoServiceAbstraction,
-    userVerificationService: UserVerificationService
+    userVerificationService: UserVerificationService,
+    private routerService: BrowserRouterService
   ) {
     super(
       router,
@@ -76,6 +80,15 @@ export class LockComponent extends BaseLockComponent {
     );
     this.successRoute = "/tabs/current";
     this.isInitialLockScreen = (window as any).previousPopupUrl == null;
+
+    super.onSuccessfulSubmit = async () => {
+      const previousUrl = this.routerService.getPreviousUrl();
+      if (previousUrl) {
+        this.router.navigateByUrl(previousUrl);
+      } else {
+        this.router.navigate([this.successRoute]);
+      }
+    };
   }
 
   async ngOnInit() {

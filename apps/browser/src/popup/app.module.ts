@@ -39,6 +39,9 @@ import { SendTypeComponent } from "../tools/popup/send/send-type.component";
 import { ExportComponent } from "../tools/popup/settings/export.component";
 import { ActionButtonsComponent } from "../vault/popup/components/action-buttons.component";
 import { CipherRowComponent } from "../vault/popup/components/cipher-row.component";
+import { Fido2CipherRowComponent } from "../vault/popup/components/fido2/fido2-cipher-row.component";
+import { Fido2UseBrowserLinkComponent } from "../vault/popup/components/fido2/fido2-use-browser-link.component";
+import { Fido2Component } from "../vault/popup/components/fido2/fido2.component";
 import { AddEditCustomFieldsComponent } from "../vault/popup/components/vault/add-edit-custom-fields.component";
 import { AddEditComponent } from "../vault/popup/components/vault/add-edit.component";
 import { AttachmentsComponent } from "../vault/popup/components/vault/attachments.component";
@@ -111,6 +114,8 @@ import "../platform/popup/locales";
     EnvironmentComponent,
     ExcludedDomainsComponent,
     ExportComponent,
+    Fido2CipherRowComponent,
+    Fido2UseBrowserLinkComponent,
     FolderAddEditComponent,
     FoldersComponent,
     VaultFilterComponent,
@@ -148,6 +153,7 @@ import "../platform/popup/locales";
     ViewCustomFieldsComponent,
     RemovePasswordComponent,
     VaultSelectComponent,
+    Fido2Component,
     HelpAndFeedbackComponent,
     AutofillComponent,
     EnvironmentSelectorComponent,

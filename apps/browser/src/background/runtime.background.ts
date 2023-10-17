@@ -14,6 +14,7 @@ import { BrowserPopoutWindowService } from "../platform/popup/abstractions/brows
 import { BrowserStateService } from "../platform/services/abstractions/browser-state.service";
 import { BrowserEnvironmentService } from "../platform/services/browser-environment.service";
 import BrowserPlatformUtilsService from "../platform/services/browser-platform-utils.service";
+import { AbortManager } from "../vault/background/abort-manager";
 
 import MainBackground from "./main.background";
 import LockedVaultPendingNotificationsItem from "./models/lockedVaultPendingNotificationsItem";
@@ -23,6 +24,7 @@ export default class RuntimeBackground {
   private pageDetailsToAutoFill: any[] = [];
   private onInstalledReason: string = null;
   private lockedVaultPendingNotifications: LockedVaultPendingNotificationsItem[] = [];
+  private abortManager = new AbortManager();
 
   constructor(
     private main: MainBackground,
@@ -50,12 +52,27 @@ export default class RuntimeBackground {
     }
 
     await this.checkOnInstalled();
-    const backgroundMessageListener = async (
+    const backgroundMessageListener = (
       msg: any,
       sender: chrome.runtime.MessageSender,
       sendResponse: any
     ) => {
-      await this.processMessage(msg, sender, sendResponse);
+      const messagesWithResponse = [
+        "checkFido2FeatureEnabled",
+        "fido2RegisterCredentialRequest",
+        "fido2GetCredentialRequest",
+      ];
+
+      if (messagesWithResponse.includes(msg.command)) {
+        this.processMessage(msg, sender).then(
+          (value) => sendResponse({ result: value }),
+          (error) => sendResponse({ error: { ...error, message: error.message } })
+        );
+        return true;
+      }
+
+      this.processMessage(msg, sender);
+      return false;
     };
 
     BrowserApi.messageListener("runtime.background", backgroundMessageListener);
@@ -64,7 +81,7 @@ export default class RuntimeBackground {
     }
   }
 
-  async processMessage(msg: any, sender: chrome.runtime.MessageSender, sendResponse: any) {
+  async processMessage(msg: any, sender: chrome.runtime.MessageSender) {
     const cipherId = msg.data?.cipherId;
 
     switch (msg.command) {
@@ -282,8 +299,19 @@ export default class RuntimeBackground {
       case "getClickedElementResponse":
         this.platformUtilsService.copyToClipboard(msg.identifier, { window: window });
         break;
-      default:
+      case "fido2AbortRequest":
+        this.abortManager.abort(msg.abortedRequestId);
         break;
+      case "checkFido2FeatureEnabled":
+        return await this.main.fido2ClientService.isFido2FeatureEnabled();
+      case "fido2RegisterCredentialRequest":
+        return await this.abortManager.runWithAbortController(msg.requestId, (abortController) =>
+          this.main.fido2ClientService.createCredential(msg.data, sender.tab, abortController)
+        );
+      case "fido2GetCredentialRequest":
+        return await this.abortManager.runWithAbortController(msg.requestId, (abortController) =>
+          this.main.fido2ClientService.assertCredential(msg.data, sender.tab, abortController)
+        );
     }
   }
 

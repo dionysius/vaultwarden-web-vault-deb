@@ -9,3 +9,4 @@ export { FolderExport } from "./folder.export";
 export { IdentityExport } from "./identity.export";
 export { LoginUriExport } from "./login-uri.export";
 export { SecureNoteExport } from "./secure-note.export";
+export { Fido2CredentialExport } from "./fido2-credential.export";

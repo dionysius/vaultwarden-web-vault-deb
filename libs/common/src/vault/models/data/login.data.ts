@@ -1,5 +1,6 @@
 import { LoginApi } from "../../../models/api/login.api";
 
+import { Fido2CredentialData } from "./fido2-credential.data";
 import { LoginUriData } from "./login-uri.data";
 
 export class LoginData {
@@ -9,6 +10,7 @@ export class LoginData {
   passwordRevisionDate: string;
   totp: string;
   autofillOnPageLoad: boolean;
+  fido2Credentials?: Fido2CredentialData[];
 
   constructor(data?: LoginApi) {
     if (data == null) {
@@ -23,6 +25,10 @@ export class LoginData {
 
     if (data.uris) {
       this.uris = data.uris.map((u) => new LoginUriData(u));
+    }
+
+    if (data.fido2Credentials) {
+      this.fido2Credentials = data.fido2Credentials?.map((key) => new Fido2CredentialData(key));
     }
   }
 }

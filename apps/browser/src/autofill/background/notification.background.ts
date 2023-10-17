@@ -47,8 +47,8 @@ export default class NotificationBackground {
 
     BrowserApi.messageListener(
       "notification.background",
-      async (msg: any, sender: chrome.runtime.MessageSender) => {
-        await this.processMessage(msg, sender);
+      (msg: any, sender: chrome.runtime.MessageSender) => {
+        this.processMessage(msg, sender);
       }
     );
 

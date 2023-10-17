@@ -17,7 +17,7 @@
   "content_scripts": [
     {
       "all_frames": true,
-      "js": ["content/trigger-autofill-script-injection.js"],
+      "js": ["content/trigger-autofill-script-injection.js", "content/fido2/content-script.js"],
       "matches": ["http://*/*", "https://*/*", "file:///*"],
       "run_at": "document_start"
     },
@@ -93,6 +93,7 @@
     }
   },
   "web_accessible_resources": [
+    "content/fido2/page-script.js",
     "notification/bar.html",
     "images/icon38.png",
     "images/icon38_locked.png"

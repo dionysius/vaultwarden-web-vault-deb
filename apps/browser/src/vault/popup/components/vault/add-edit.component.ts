@@ -1,6 +1,7 @@
 import { Location } from "@angular/common";
 import { Component } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
+import { firstValueFrom } from "rxjs";
 import { first } from "rxjs/operators";
 
 import { AddEditComponent as BaseAddEditComponent } from "@bitwarden/angular/vault/components/add-edit.component";
@@ -24,6 +25,10 @@ import { PasswordRepromptService } from "@bitwarden/vault";
 
 import { BrowserApi } from "../../../../platform/browser/browser-api";
 import { PopupUtilsService } from "../../../../popup/services/popup-utils.service";
+import {
+  BrowserFido2UserInterfaceSession,
+  fido2PopoutSessionData$,
+} from "../../../fido2/browser-fido2-user-interface.service";
 
 @Component({
   selector: "app-vault-add-edit",
@@ -38,6 +43,8 @@ export class AddEditComponent extends BaseAddEditComponent {
   senderTabId?: number;
   uilocation?: "popout" | "popup" | "sidebar" | "tab";
   inPopout = false;
+
+  private fido2PopoutSessionData$ = fido2PopoutSessionData$();
 
   constructor(
     cipherService: CipherService,
@@ -159,9 +166,31 @@ export class AddEditComponent extends BaseAddEditComponent {
   }
 
   async submit(): Promise<boolean> {
+    const fido2SessionData = await firstValueFrom(this.fido2PopoutSessionData$);
+    // Would be refactored after rework is done on the windows popout service
+    if (
+      this.inPopout &&
+      fido2SessionData.isFido2Session &&
+      !(await this.handleFido2UserVerification(
+        fido2SessionData.sessionId,
+        fido2SessionData.userVerification
+      ))
+    ) {
+      return false;
+    }
+
     const success = await super.submit();
     if (!success) {
       return false;
+    }
+
+    if (this.inPopout && fido2SessionData.isFido2Session) {
+      BrowserFido2UserInterfaceSession.confirmNewCredentialResponse(
+        fido2SessionData.sessionId,
+        this.cipher.id,
+        fido2SessionData.userVerification
+      );
+      return true;
     }
 
     if (this.popupUtilsService.inTab(window)) {
@@ -204,8 +233,15 @@ export class AddEditComponent extends BaseAddEditComponent {
     }
   }
 
-  cancel() {
+  async cancel() {
     super.cancel();
+
+    // Would be refactored after rework is done on the windows popout service
+    const sessionData = await firstValueFrom(this.fido2PopoutSessionData$);
+    if (this.inPopout && sessionData.isFido2Session) {
+      BrowserFido2UserInterfaceSession.abortPopout(sessionData.sessionId);
+      return;
+    }
 
     if (this.senderTabId && this.inPopout) {
       this.close();
@@ -289,6 +325,18 @@ export class AddEditComponent extends BaseAddEditComponent {
         document.getElementById("name").focus();
       }
     }, 200);
+  }
+
+  private async handleFido2UserVerification(
+    sessionId: string,
+    userVerification: boolean
+  ): Promise<boolean> {
+    if (userVerification && !(await this.passwordRepromptService.showPasswordPrompt())) {
+      BrowserFido2UserInterfaceSession.abortPopout(sessionId);
+      return false;
+    }
+
+    return true;
   }
 
   repromptChanged() {

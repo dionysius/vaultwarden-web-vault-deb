@@ -1,0 +1,5 @@
+<div class="useBrowserlink" *ngIf="(fido2PopoutSessionData$ | async).fallbackSupported">
+  <button appStopClick type="button" (click)="abort()">
+    {{ "useBrowserName" | i18n }}
+  </button>
+</div>

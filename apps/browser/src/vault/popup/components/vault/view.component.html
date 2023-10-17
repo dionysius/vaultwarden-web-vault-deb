@@ -142,6 +142,18 @@
             </button>
           </div>
         </div>
+
+        <!--Passkey-->
+        <div class="box" *ngIf="cipher.login.hasFido2Credentials">
+          <div class="box-content">
+            <div class="box-content-row text-muted">
+              <span class="row-label">{{ "typePasskey" | i18n }}</span>
+              {{ "dateCreated" | i18n }}
+              {{ cipher.login.fido2Credentials[0].creationDate | date : "short" }}
+            </div>
+          </div>
+        </div>
+
         <div
           class="box-content-row box-content-row-flex totp"
           [ngClass]="{ low: totpLow }"
@@ -190,7 +202,6 @@
             </button>
           </div>
         </div>
-
         <div class="box-content-row box-content-row-flex totp" *ngIf="showPremiumRequiredTotp">
           <div class="row-main">
             <span class="row-label">{{ "verificationCodeTotp" | i18n }}</span>
