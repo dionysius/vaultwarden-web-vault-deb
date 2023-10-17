@@ -43,13 +43,5 @@
       "matchUpdateTypes": "major"
     }
   ],
-  "ignoreDeps": [
-    "@types/koa-bodyparser",
-    "bootstrap",
-    "electron-builder",
-    "electron",
-    "node-ipc",
-    "regedit",
-    "zone.js"
-  ]
+  "ignoreDeps": ["@types/koa-bodyparser", "bootstrap", "node-ipc", "regedit", "zone.js"]
 }
