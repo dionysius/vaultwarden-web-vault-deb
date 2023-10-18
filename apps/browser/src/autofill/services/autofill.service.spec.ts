@@ -519,14 +519,27 @@ describe("AutofillService", () => {
     it("returns a TOTP value", async () => {
       const totpCode = "123456";
       autofillOptions.cipher.login.totp = "totp";
-      jest.spyOn(stateService, "getDisableAutoTotpCopy").mockResolvedValueOnce(false);
-      jest.spyOn(totpService, "getCode").mockReturnValueOnce(Promise.resolve(totpCode));
+      jest.spyOn(stateService, "getCanAccessPremium").mockResolvedValue(true);
+      jest.spyOn(stateService, "getDisableAutoTotpCopy").mockResolvedValue(false);
+      jest.spyOn(totpService, "getCode").mockResolvedValue(totpCode);
 
       const autofillResult = await autofillService.doAutoFill(autofillOptions);
 
       expect(stateService.getDisableAutoTotpCopy).toHaveBeenCalled();
       expect(totpService.getCode).toHaveBeenCalledWith(autofillOptions.cipher.login.totp);
       expect(autofillResult).toBe(totpCode);
+    });
+
+    it("does not return a TOTP value if the user does not have premium features", async () => {
+      autofillOptions.cipher.login.totp = "totp";
+      jest.spyOn(stateService, "getCanAccessPremium").mockResolvedValue(false);
+      jest.spyOn(stateService, "getDisableAutoTotpCopy").mockResolvedValue(false);
+
+      const autofillResult = await autofillService.doAutoFill(autofillOptions);
+
+      expect(stateService.getDisableAutoTotpCopy).not.toHaveBeenCalled();
+      expect(totpService.getCode).not.toHaveBeenCalled();
+      expect(autofillResult).toBeNull();
     });
 
     it("returns a null value if the cipher type is not for a Login", async () => {
@@ -563,11 +576,15 @@ describe("AutofillService", () => {
     it("returns a null value if the user has disabled `auto TOTP copy`", async () => {
       autofillOptions.cipher.login.totp = "totp";
       autofillOptions.cipher.organizationUseTotp = true;
-      jest.spyOn(stateService, "getCanAccessPremium").mockResolvedValueOnce(true);
-      jest.spyOn(stateService, "getDisableAutoTotpCopy").mockResolvedValueOnce(true);
+      jest.spyOn(stateService, "getCanAccessPremium").mockResolvedValue(true);
+      jest.spyOn(stateService, "getDisableAutoTotpCopy").mockResolvedValue(true);
+      jest.spyOn(totpService, "getCode");
 
       const autofillResult = await autofillService.doAutoFill(autofillOptions);
 
+      expect(stateService.getCanAccessPremium).toHaveBeenCalled();
+      expect(stateService.getDisableAutoTotpCopy).toHaveBeenCalled();
+      expect(totpService.getCode).not.toHaveBeenCalled();
       expect(autofillResult).toBeNull();
     });
   });

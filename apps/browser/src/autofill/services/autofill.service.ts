@@ -153,6 +153,10 @@ export default class AutofillService implements AutofillServiceInterface {
     const canAccessPremium = await this.stateService.getCanAccessPremium();
     const defaultUriMatch = (await this.stateService.getDefaultUriMatch()) ?? UriMatchType.Domain;
 
+    if (!canAccessPremium) {
+      options.cipher.login.totp = null;
+    }
+
     let didAutofill = false;
     await Promise.all(
       options.pageDetails.map(async (pd) => {
@@ -203,6 +207,7 @@ export default class AutofillService implements AutofillServiceInterface {
           { frameId: pd.frameId }
         );
 
+        // Skip getting the TOTP code for clipboard in these cases
         if (
           options.cipher.type !== CipherType.Login ||
           totp !== null ||
