@@ -217,7 +217,7 @@ export class Fido2Component implements OnInit, OnDestroy {
     });
   }
 
-  async submit() {
+  protected async submit() {
     const data = this.message$.value;
     if (data?.type === "PickCredentialRequest") {
       const userVerified = await this.handleUserVerification(data.userVerification, this.cipher);
@@ -254,7 +254,7 @@ export class Fido2Component implements OnInit, OnDestroy {
     this.loading = true;
   }
 
-  async saveNewLogin() {
+  protected async saveNewLogin() {
     const data = this.message$.value;
     if (data?.type === "ConfirmNewCredentialRequest") {
       let userVerified = false;

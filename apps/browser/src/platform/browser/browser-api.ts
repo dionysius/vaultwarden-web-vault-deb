@@ -235,6 +235,27 @@ export class BrowserApi {
     }
   }
 
+  static messageListener$() {
+    return new Observable<unknown>((subscriber) => {
+      const handler = (message: unknown) => {
+        subscriber.next(message);
+      };
+
+      BrowserApi.messageListener("message", handler);
+
+      return () => {
+        chrome.runtime.onMessage.removeListener(handler);
+
+        if (BrowserApi.isSafariApi) {
+          const index = BrowserApi.registeredMessageListeners.indexOf(handler);
+          if (index !== -1) {
+            BrowserApi.registeredMessageListeners.splice(index, 1);
+          }
+        }
+      };
+    });
+  }
+
   static storageChangeListener(
     callback: Parameters<typeof chrome.storage.onChanged.addListener>[0]
   ) {
@@ -260,27 +281,6 @@ export class BrowserApi {
         chrome.storage.onChanged.removeListener(callback);
       }
     };
-  }
-
-  static messageListener$() {
-    return new Observable<unknown>((subscriber) => {
-      const handler = (message: unknown) => {
-        subscriber.next(message);
-      };
-
-      BrowserApi.messageListener("message", handler);
-
-      return () => {
-        chrome.runtime.onMessage.removeListener(handler);
-
-        if (BrowserApi.isSafariApi) {
-          const index = BrowserApi.registeredMessageListeners.indexOf(handler);
-          if (index !== -1) {
-            BrowserApi.registeredMessageListeners.splice(index, 1);
-          }
-        }
-      };
-    });
   }
 
   static sendMessage(subscriber: string, arg: any = {}) {

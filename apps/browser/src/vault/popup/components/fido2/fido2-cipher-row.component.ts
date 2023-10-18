@@ -14,7 +14,7 @@ export class Fido2CipherRowComponent {
   @Input() isSearching: boolean;
   @Input() isSelected: boolean;
 
-  selectCipher(c: CipherView) {
+  protected selectCipher(c: CipherView) {
     this.onSelected.emit(c);
   }
 }

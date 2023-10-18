@@ -7,13 +7,13 @@
             <i class="bwi bwi-shield"></i>
           </div>
         </ng-container>
-        <ng-container *ngIf="data.message.type == 'PickCredentialRequest'">
+        <ng-container *ngIf="data.message.type === 'PickCredentialRequest'">
           <div class="logo">
             <i class="bwi bwi-shield"></i><span><strong>bit</strong>warden</span>
           </div>
         </ng-container>
       </div>
-      <ng-container *ngIf="data.message.type == 'ConfirmNewCredentialRequest'">
+      <ng-container *ngIf="data.message.type === 'ConfirmNewCredentialRequest'">
         <div class="search">
           <input
             type="{{ searchTypeSearch ? 'search' : 'text' }}"
@@ -100,7 +100,7 @@
           </ng-container>
         </div>
       </ng-container>
-      <ng-container *ngIf="data.message.type == 'InformExcludedCredentialRequest'">
+      <ng-container *ngIf="data.message.type === 'InformExcludedCredentialRequest'">
         <div class="auth-flow">
           <p class="subtitle">{{ "passkeyAlreadyExists" | i18n }}</p>
           <div class="box list">
@@ -120,7 +120,7 @@
           </button>
         </div>
       </ng-container>
-      <ng-container *ngIf="data.message.type == 'InformCredentialNotFoundRequest'">
+      <ng-container *ngIf="data.message.type === 'InformCredentialNotFoundRequest'">
         <div class="auth-flow">
           <p class="subtitle">{{ "noPasskeysFoundForThisApplication" | i18n }}</p>
         </div>
