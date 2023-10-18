@@ -39,7 +39,7 @@ export enum Fido2AlgorithmIdentifier {
   RS256 = -257,
 }
 
-export enum Fido2AutenticatorErrorCode {
+export enum Fido2AuthenticatorErrorCode {
   Unknown = "UnknownError",
   NotSupported = "NotSupportedError",
   InvalidState = "InvalidStateError",
@@ -47,8 +47,8 @@ export enum Fido2AutenticatorErrorCode {
   Constraint = "ConstraintError",
 }
 
-export class Fido2AutenticatorError extends Error {
-  constructor(readonly errorCode: Fido2AutenticatorErrorCode) {
+export class Fido2AuthenticatorError extends Error {
+  constructor(readonly errorCode: Fido2AuthenticatorErrorCode) {
     super(errorCode);
   }
 }

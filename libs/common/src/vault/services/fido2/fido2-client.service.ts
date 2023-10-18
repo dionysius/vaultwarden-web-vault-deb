@@ -7,8 +7,8 @@ import { ConfigServiceAbstraction } from "../../../platform/abstractions/config/
 import { LogService } from "../../../platform/abstractions/log.service";
 import { Utils } from "../../../platform/misc/utils";
 import {
-  Fido2AutenticatorError,
-  Fido2AutenticatorErrorCode,
+  Fido2AuthenticatorError,
+  Fido2AuthenticatorErrorCode,
   Fido2AuthenticatorGetAssertionParams,
   Fido2AuthenticatorMakeCredentialsParams,
   Fido2AuthenticatorService,
@@ -162,8 +162,8 @@ export class Fido2ClientService implements Fido2ClientServiceAbstraction {
       }
 
       if (
-        error instanceof Fido2AutenticatorError &&
-        error.errorCode === Fido2AutenticatorErrorCode.InvalidState
+        error instanceof Fido2AuthenticatorError &&
+        error.errorCode === Fido2AuthenticatorErrorCode.InvalidState
       ) {
         this.logService?.warning(`[Fido2Client] Unknown error: ${error}`);
         throw new DOMException("Unknown error occured.", "InvalidStateError");
@@ -268,8 +268,8 @@ export class Fido2ClientService implements Fido2ClientServiceAbstraction {
       }
 
       if (
-        error instanceof Fido2AutenticatorError &&
-        error.errorCode === Fido2AutenticatorErrorCode.InvalidState
+        error instanceof Fido2AuthenticatorError &&
+        error.errorCode === Fido2AuthenticatorErrorCode.InvalidState
       ) {
         this.logService?.warning(`[Fido2Client] Unknown error: ${error}`);
         throw new DOMException("Unknown error occured.", "InvalidStateError");

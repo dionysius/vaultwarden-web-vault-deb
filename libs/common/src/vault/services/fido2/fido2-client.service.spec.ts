@@ -5,8 +5,8 @@ import { AuthenticationStatus } from "../../../auth/enums/authentication-status"
 import { ConfigServiceAbstraction } from "../../../platform/abstractions/config/config.service.abstraction";
 import { Utils } from "../../../platform/misc/utils";
 import {
-  Fido2AutenticatorError,
-  Fido2AutenticatorErrorCode,
+  Fido2AuthenticatorError,
+  Fido2AuthenticatorErrorCode,
   Fido2AuthenticatorGetAssertionResult,
   Fido2AuthenticatorMakeCredentialResult,
 } from "../../abstractions/fido2/fido2-authenticator.service.abstraction";
@@ -181,7 +181,7 @@ describe("FidoAuthenticatorService", () => {
       it("should throw error if authenticator throws InvalidState", async () => {
         const params = createParams();
         authenticator.makeCredential.mockRejectedValue(
-          new Fido2AutenticatorError(Fido2AutenticatorErrorCode.InvalidState)
+          new Fido2AuthenticatorError(Fido2AuthenticatorErrorCode.InvalidState)
         );
 
         const result = async () => await client.createCredential(params, tab);
@@ -329,7 +329,7 @@ describe("FidoAuthenticatorService", () => {
       it("should throw error if authenticator throws InvalidState", async () => {
         const params = createParams();
         authenticator.getAssertion.mockRejectedValue(
-          new Fido2AutenticatorError(Fido2AutenticatorErrorCode.InvalidState)
+          new Fido2AuthenticatorError(Fido2AuthenticatorErrorCode.InvalidState)
         );
 
         const result = async () => await client.assertCredential(params, tab);
