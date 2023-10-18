@@ -30,7 +30,10 @@
     <bit-form-field>
       <bit-label>{{ "ssoIdentifier" | i18n }}</bit-label>
       <input bitInput type="text" formControlName="ssoIdentifier" />
-      <bit-hint>{{ "ssoIdentifierHint" | i18n }}</bit-hint>
+      <bit-hint>
+        {{ "ssoIdentifierHintPartOne" | i18n }}
+        <a routerLink="../domain-verification">{{ "domainVerification" | i18n }}</a>
+      </bit-hint>
     </bit-form-field>
 
     <hr />
