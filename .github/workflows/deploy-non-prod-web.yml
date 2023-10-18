@@ -41,11 +41,55 @@ jobs:
           echo "environment-branch=cf-pages-$ENV_NAME_LOWER" >> $GITHUB_OUTPUT
           echo "environment-artifact=web-*-cloud-${{ inputs.environment }}.zip" >> $GITHUB_OUTPUT
 
+  artifact-check:
+    name: Check if Web artifact is present
+    runs-on: ubuntu-22.04
+    needs: setup
+    env:
+      _ENVIRONMENT_ARTIFACT: ${{ needs.setup.outputs.environment-artifact }}
+    steps:
+      - name: Download latest cloud asset
+        uses: bitwarden/gh-actions/download-artifacts@f1125802b1ccae8c601d7c4f61ce39ea254b10c8
+        id: download-artifacts
+        continue-on-error: true
+        with:
+          workflow: build-web.yml
+          path: apps/web
+          workflow_conclusion: success
+          branch: ${{ github.ref_name }}
+          artifacts: ${{ env._ENVIRONMENT_ARTIFACT }}
+
+      - name: Login to Azure
+        if: ${{ steps.download-artifacts.outcome == 'failure' }}
+        uses: Azure/login@92a5484dfaf04ca78a94597f4f19fea633851fa2 # v1.4.7
+        with:
+          creds: ${{ secrets.AZURE_KV_CI_SERVICE_PRINCIPAL }}
+
+      - name: Retrieve secrets for Build trigger
+        if: ${{ steps.download-artifacts.outcome == 'failure' }}
+        id: retrieve-secret
+        uses: bitwarden/gh-actions/get-keyvault-secrets@f096207b7a2f31723165aee6ad03e91716686e78
+        with:
+          keyvault: "bitwarden-ci"
+          secrets: "github-pat-bitwarden-devops-bot-repo-scope"
+
+      - name: Build server missing branch
+        if: ${{ steps.download-artifacts.outcome == 'failure' }}
+        uses: convictional/trigger-workflow-and-wait@f69fa9eedd3c62a599220f4d5745230e237904be # v1.6.5
+        with:
+          owner: bitwarden
+          repo: clients
+          github_token: ${{ steps.retrieve-secret.outputs.github-pat-bitwarden-devops-bot-repo-scope }}
+          workflow_file_name: build-web.yml
+          ref: ${{ github.ref_name }}
+          wait_interval: 100
 
   cfpages-deploy:
     name: Deploy Web Vault to ${{ inputs.environment }} CloudFlare Pages branch
-    needs: setup
-    runs-on: ubuntu-20.04
+    needs:
+      - setup
+      - artifact-check
+    runs-on: ubuntu-22.04
     env:
       _ENVIRONMENT: ${{ needs.setup.outputs.environment }}
       _ENVIRONMENT_URL: ${{ needs.setup.outputs.environment-url }}
