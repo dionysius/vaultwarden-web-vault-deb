@@ -1,5 +1,5 @@
-import { DeviceType } from "../../../enums";
-import { View } from "../../../models/view/view";
+import { DeviceType } from "../../../../enums";
+import { View } from "../../../../models/view/view";
 import { DeviceResponse } from "../responses/device.response";
 
 export class DeviceView implements View {

@@ -1,6 +1,5 @@
 import { matches, mock } from "jest-mock-extended";
 
-import { DeviceResponse } from "../../abstractions/devices/responses/device.response";
 import { DeviceType } from "../../enums";
 import { EncryptionType } from "../../enums/encryption-type.enum";
 import { AppIdService } from "../../platform/abstractions/app-id.service";
@@ -17,6 +16,7 @@ import {
   UserKey,
 } from "../../platform/models/domain/symmetric-crypto-key";
 import { CsprngArray } from "../../types/csprng";
+import { DeviceResponse } from "../abstractions/devices/responses/device.response";
 import { DevicesApiServiceAbstraction } from "../abstractions/devices-api.service.abstraction";
 import { UpdateDevicesTrustRequest } from "../models/request/update-devices-trust.request";
 import { ProtectedDeviceResponse } from "../models/response/protected-device.response";

@@ -23,7 +23,7 @@ import { PasswordGenerationServiceAbstraction } from "@bitwarden/common/tools/ge
 import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
 import { DialogService } from "@bitwarden/components";
 
-import { ChangePasswordComponent as BaseChangePasswordComponent } from "../auth/components/change-password.component";
+import { ChangePasswordComponent as BaseChangePasswordComponent } from "./change-password.component";
 
 @Directive()
 export class SetPasswordComponent extends BaseChangePasswordComponent {

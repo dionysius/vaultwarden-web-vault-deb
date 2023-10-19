@@ -1,12 +1,13 @@
 import { ApiService } from "../../abstractions/api.service";
-import { DeviceResponse } from "../../abstractions/devices/responses/device.response";
 import { ListResponse } from "../../models/response/list.response";
 import { Utils } from "../../platform/misc/utils";
-import { TrustedDeviceKeysRequest } from "../../services/devices/requests/trusted-device-keys.request";
+import { DeviceResponse } from "../abstractions/devices/responses/device.response";
 import { DevicesApiServiceAbstraction } from "../abstractions/devices-api.service.abstraction";
 import { SecretVerificationRequest } from "../models/request/secret-verification.request";
 import { UpdateDevicesTrustRequest } from "../models/request/update-devices-trust.request";
 import { ProtectedDeviceResponse } from "../models/response/protected-device.response";
+
+import { TrustedDeviceKeysRequest } from "./devices/requests/trusted-device-keys.request";
 
 export class DevicesApiServiceImplementation implements DevicesApiServiceAbstraction {
   constructor(private apiService: ApiService) {}

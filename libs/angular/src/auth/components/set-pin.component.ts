@@ -6,7 +6,7 @@ import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.se
 import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
 
-import { ModalRef } from "./modal/modal.ref";
+import { ModalRef } from "../../components/modal/modal.ref";
 
 @Directive()
 export class SetPinComponent implements OnInit {

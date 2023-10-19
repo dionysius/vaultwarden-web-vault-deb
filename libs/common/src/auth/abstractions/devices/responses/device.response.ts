@@ -1,5 +1,5 @@
-import { DeviceType } from "../../../enums";
-import { BaseResponse } from "../../../models/response/base.response";
+import { DeviceType } from "../../../../enums";
+import { BaseResponse } from "../../../../models/response/base.response";
 
 export class DeviceResponse extends BaseResponse {
   id: string;

@@ -7,7 +7,7 @@ import {
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 
-import { ModalService } from "../services/modal.service";
+import { ModalService } from "../../services/modal.service";
 
 @Directive()
 export class EnvironmentComponent {

@@ -21,13 +21,14 @@ import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { PasswordGenerationServiceAbstraction } from "@bitwarden/common/tools/generator/password";
 import { DialogService } from "@bitwarden/components";
 
-import { CaptchaProtectedComponent } from "../auth/components/captcha-protected.component";
 import {
   AllValidationErrors,
   FormValidationErrorsService,
-} from "../platform/abstractions/form-validation-errors.service";
-import { PasswordColorText } from "../shared/components/password-strength/password-strength.component";
-import { InputsFieldMatch } from "../validators/inputsFieldMatch.validator";
+} from "../../platform/abstractions/form-validation-errors.service";
+import { PasswordColorText } from "../../shared/components/password-strength/password-strength.component";
+import { InputsFieldMatch } from "../../validators/inputsFieldMatch.validator";
+
+import { CaptchaProtectedComponent } from "./captcha-protected.component";
 
 @Directive()
 export class RegisterComponent extends CaptchaProtectedComponent implements OnInit {
