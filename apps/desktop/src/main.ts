@@ -2,6 +2,7 @@ import * as path from "path";
 
 import { app } from "electron";
 
+import { AccountServiceImplementation } from "@bitwarden/common/auth/services/account.service";
 import { StateFactory } from "@bitwarden/common/platform/factories/state-factory";
 import { GlobalState } from "@bitwarden/common/platform/models/domain/global-state";
 import { MemoryStorageService } from "@bitwarden/common/platform/services/memory-storage.service";
@@ -93,6 +94,7 @@ export class Main {
       this.memoryStorageService,
       this.logService,
       new StateFactory(GlobalState, Account),
+      new AccountServiceImplementation(null, this.logService), // will not broadcast logouts. This is a hack until we can remove messaging dependency
       false // Do not use disk caching because this will get out of sync with the renderer service
     );
 

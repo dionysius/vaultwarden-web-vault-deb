@@ -12,9 +12,11 @@ import { OrganizationService } from "@bitwarden/common/admin-console/services/or
 import { PolicyApiService } from "@bitwarden/common/admin-console/services/policy/policy-api.service";
 import { PolicyService } from "@bitwarden/common/admin-console/services/policy/policy.service";
 import { ProviderService } from "@bitwarden/common/admin-console/services/provider.service";
+import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
 import { AuthRequestCryptoServiceAbstraction } from "@bitwarden/common/auth/abstractions/auth-request-crypto.service.abstraction";
 import { DeviceTrustCryptoServiceAbstraction } from "@bitwarden/common/auth/abstractions/device-trust-crypto.service.abstraction";
 import { DevicesApiServiceAbstraction } from "@bitwarden/common/auth/abstractions/devices-api.service.abstraction";
+import { AccountServiceImplementation } from "@bitwarden/common/auth/services/account.service";
 import { AuthRequestCryptoServiceImplementation } from "@bitwarden/common/auth/services/auth-request-crypto.service.implementation";
 import { AuthService } from "@bitwarden/common/auth/services/auth.service";
 import { DeviceTrustCryptoService } from "@bitwarden/common/auth/services/device-trust-crypto.service.implementation";
@@ -152,6 +154,7 @@ export class Main {
   authRequestCryptoService: AuthRequestCryptoServiceAbstraction;
   configApiService: ConfigApiServiceAbstraction;
   configService: CliConfigService;
+  accountService: AccountService;
 
   constructor() {
     let p = null;
@@ -191,12 +194,15 @@ export class Main {
 
     this.memoryStorageService = new MemoryStorageService();
 
+    this.accountService = new AccountServiceImplementation(null, this.logService);
+
     this.stateService = new StateService(
       this.storageService,
       this.secureStorageService,
       this.memoryStorageService,
       this.logService,
-      new StateFactory(GlobalState, Account)
+      new StateFactory(GlobalState, Account),
+      this.accountService
     );
 
     this.cryptoService = new CryptoService(

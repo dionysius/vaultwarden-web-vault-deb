@@ -23,6 +23,7 @@ import {
 } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
 import { ProviderService } from "@bitwarden/common/admin-console/abstractions/provider.service";
 import { PolicyApiService } from "@bitwarden/common/admin-console/services/policy/policy-api.service";
+import { AccountService as AccountServiceAbstraction } from "@bitwarden/common/auth/abstractions/account.service";
 import { AuthRequestCryptoServiceAbstraction } from "@bitwarden/common/auth/abstractions/auth-request-crypto.service.abstraction";
 import { AuthService as AuthServiceAbstraction } from "@bitwarden/common/auth/abstractions/auth.service";
 import { DeviceTrustCryptoServiceAbstraction } from "@bitwarden/common/auth/abstractions/device-trust-crypto.service.abstraction";
@@ -453,17 +454,25 @@ function getBgService<T>(service: keyof MainBackground) {
         storageService: AbstractStorageService,
         secureStorageService: AbstractStorageService,
         memoryStorageService: AbstractMemoryStorageService,
-        logService: LogServiceAbstraction
+        logService: LogServiceAbstraction,
+        accountService: AccountServiceAbstraction
       ) => {
         return new BrowserStateService(
           storageService,
           secureStorageService,
           memoryStorageService,
           logService,
-          new StateFactory(GlobalState, Account)
+          new StateFactory(GlobalState, Account),
+          accountService
         );
       },
-      deps: [AbstractStorageService, SECURE_STORAGE, MEMORY_STORAGE, LogServiceAbstraction],
+      deps: [
+        AbstractStorageService,
+        SECURE_STORAGE,
+        MEMORY_STORAGE,
+        LogServiceAbstraction,
+        AccountServiceAbstraction,
+      ],
     },
     {
       provide: UsernameGenerationServiceAbstraction,
