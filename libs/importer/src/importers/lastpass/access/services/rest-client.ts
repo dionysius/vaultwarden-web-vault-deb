@@ -43,9 +43,6 @@ export class RestClient {
   ): Promise<Response> {
     const setBody = (requestInit: RequestInit, headerMap: Map<string, string>) => {
       if (body != null) {
-        if (headerMap == null) {
-          headerMap = new Map<string, string>();
-        }
         headerMap.set("Content-Type", "application/json; charset=utf-8");
         requestInit.body = JSON.stringify(body);
       }
@@ -63,6 +60,9 @@ export class RestClient {
       method: "POST",
       credentials: "include",
     };
+    if (headers == null) {
+      headers = new Map<string, string>();
+    }
     setBody(requestInit, headers);
     this.setHeaders(requestInit, headers, cookies);
     const request = new Request(this.baseUrl + "/" + endpoint, requestInit);

@@ -4,9 +4,9 @@ import { DuoUi } from "./duo-ui";
 
 export abstract class Ui extends DuoUi {
   // To cancel return OtpResult.Cancel, otherwise only valid data is expected.
-  provideGoogleAuthPasscode: () => OtpResult;
-  provideMicrosoftAuthPasscode: () => OtpResult;
-  provideYubikeyPasscode: () => OtpResult;
+  provideGoogleAuthPasscode: () => Promise<OtpResult>;
+  provideMicrosoftAuthPasscode: () => Promise<OtpResult>;
+  provideYubikeyPasscode: () => Promise<OtpResult>;
 
   /*
   The UI implementations should provide the following possibilities for the user:
@@ -23,7 +23,7 @@ export abstract class Ui extends DuoUi {
       passcode instead of performing an action in the app. In this case the UI should return
       OobResult.continueWithPasscode(passcode, rememberMe).
   */
-  approveLastPassAuth: () => OobResult;
-  approveDuo: () => OobResult;
-  approveSalesforceAuth: () => OobResult;
+  approveLastPassAuth: () => Promise<OobResult>;
+  approveDuo: () => Promise<OobResult>;
+  approveSalesforceAuth: () => Promise<OobResult>;
 }

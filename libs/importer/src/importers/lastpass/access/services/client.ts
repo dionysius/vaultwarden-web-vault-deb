@@ -229,13 +229,13 @@ export class Client {
     let passcode: OtpResult = null;
     switch (method) {
       case OtpMethod.GoogleAuth:
-        passcode = ui.provideGoogleAuthPasscode();
+        passcode = await ui.provideGoogleAuthPasscode();
         break;
       case OtpMethod.MicrosoftAuth:
-        passcode = ui.provideMicrosoftAuthPasscode();
+        passcode = await ui.provideMicrosoftAuthPasscode();
         break;
       case OtpMethod.Yubikey:
-        passcode = ui.provideYubikeyPasscode();
+        passcode = await ui.provideYubikeyPasscode();
         break;
       default:
         throw new Error("Invalid OTP method");
@@ -273,7 +273,7 @@ export class Client {
     ui: Ui,
     rest: RestClient
   ): Promise<Session> {
-    const answer = this.approveOob(username, parameters, ui, rest);
+    const answer = await this.approveOob(username, parameters, ui, rest);
     if (answer == OobResult.cancel) {
       throw new Error("Out of band step is canceled by the user");
     }
@@ -318,7 +318,12 @@ export class Client {
     return session;
   }
 
-  private approveOob(username: string, parameters: Map<string, string>, ui: Ui, rest: RestClient) {
+  private async approveOob(
+    username: string,
+    parameters: Map<string, string>,
+    ui: Ui,
+    rest: RestClient
+  ): Promise<OobResult> {
     const method = parameters.get("outofbandtype");
     if (method == null) {
       throw new Error("Out of band method is not specified");
@@ -335,12 +340,12 @@ export class Client {
     }
   }
 
-  private approveDuo(
+  private async approveDuo(
     username: string,
     parameters: Map<string, string>,
     ui: Ui,
     rest: RestClient
-  ): OobResult {
+  ): Promise<OobResult> {
     return parameters.get("preferduowebsdk") == "1"
       ? this.approveDuoWebSdk(username, parameters, ui, rest)
       : ui.approveDuo();
@@ -525,6 +530,7 @@ export class Client {
       switch (cause.value) {
         case "unknownemail":
           return "Invalid username";
+        case "password_invalid":
         case "unknownpassword":
           return "Invalid password";
         case "googleauthfailed":
