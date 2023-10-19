@@ -175,7 +175,7 @@ cdk-virtual-scroll-viewport::-webkit-scrollbar-thumb,
   }
 }
 
-header {
+header:not(bit-callout header) {
   min-height: 44px;
   max-height: 44px;
   display: flex;

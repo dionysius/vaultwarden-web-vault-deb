@@ -32,6 +32,7 @@ import { SendAddEditComponent } from "../tools/popup/send/send-add-edit.componen
 import { SendGroupingsComponent } from "../tools/popup/send/send-groupings.component";
 import { SendTypeComponent } from "../tools/popup/send/send-type.component";
 import { ExportComponent } from "../tools/popup/settings/export.component";
+import { ImportBrowserComponent } from "../tools/popup/settings/import/import-browser.component";
 import { Fido2Component } from "../vault/popup/components/fido2/fido2.component";
 import { AddEditComponent } from "../vault/popup/components/vault/add-edit.component";
 import { AttachmentsComponent } from "../vault/popup/components/vault/attachments.component";
@@ -221,6 +222,12 @@ const routes: Routes = [
     component: PasswordGeneratorHistoryComponent,
     canActivate: [AuthGuard],
     data: { state: "generator-history" },
+  },
+  {
+    path: "import",
+    component: ImportBrowserComponent,
+    canActivate: [AuthGuard],
+    data: { state: "import" },
   },
   {
     path: "export",
