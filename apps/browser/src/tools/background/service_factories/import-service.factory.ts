@@ -1,4 +1,4 @@
-import { ImportService, ImportServiceAbstraction } from "@bitwarden/importer";
+import { ImportService, ImportServiceAbstraction } from "@bitwarden/importer/core";
 
 import {
   cryptoServiceFactory,

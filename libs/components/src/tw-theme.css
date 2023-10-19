@@ -159,6 +159,7 @@
 }
 
 @import "./search/search.component.css";
+@import "./table/table.component.css";
 
 /** 
  * tw-break-words does not work with table cells:

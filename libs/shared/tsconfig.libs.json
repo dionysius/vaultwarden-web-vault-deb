@@ -7,7 +7,8 @@
       "@bitwarden/common/*": ["../common/src/*"],
       "@bitwarden/components": ["../components/src"],
       "@bitwarden/exporter/*": ["../exporter/src/*"],
-      "@bitwarden/importer": ["../importer/src"],
+      "@bitwarden/importer/core": ["../importer/src"],
+      "@bitwarden/importer/ui": ["../importer/src/components"],
       "@bitwarden/node/*": ["../node/src/*"],
       "@bitwarden/vault": ["../vault/src"]
     }

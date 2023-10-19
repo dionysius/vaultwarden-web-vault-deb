@@ -39,6 +39,8 @@ export class TableComponent implements OnDestroy, AfterContentChecked {
       "tw-w-full",
       "tw-leading-normal",
       "tw-text-main",
+      "tw-border-collapse",
+      "tw-text-start",
       this.layout === "auto" ? "tw-table-auto" : "tw-table-fixed",
     ];
   }

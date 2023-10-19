@@ -74,7 +74,7 @@ import {
   ImportApiServiceAbstraction,
   ImportService,
   ImportServiceAbstraction,
-} from "@bitwarden/importer";
+} from "@bitwarden/importer/core";
 import { NodeCryptoFunctionService } from "@bitwarden/node/services/node-crypto-function.service";
 
 import { CliConfigService } from "./platform/services/cli-config.service";

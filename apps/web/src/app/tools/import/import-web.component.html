@@ -1,0 +1,18 @@
+<h1 bitTypography="h1">{{ "importData" | i18n }}</h1>
+<tools-import
+  (formDisabled)="this.disabled = $event"
+  (formLoading)="this.loading = $event"
+  (onSuccessfulImport)="this.onSuccessfulImport($event)"
+  organizationId="{{ routeOrgId }}"
+></tools-import>
+<button
+  [disabled]="disabled"
+  [loading]="loading"
+  form="importForm"
+  bitButton
+  type="submit"
+  bitFormButton
+  buttonType="primary"
+>
+  {{ "importData" | i18n }}
+</button>

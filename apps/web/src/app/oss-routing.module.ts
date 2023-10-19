@@ -255,7 +255,11 @@ const routes: Routes = [
           { path: "", pathMatch: "full", redirectTo: "generator" },
           {
             path: "import",
-            loadChildren: () => import("./tools/import/import.module").then((m) => m.ImportModule),
+            loadComponent: () =>
+              import("./tools/import/import-web.component").then((mod) => mod.ImportWebComponent),
+            data: {
+              titleId: "importData",
+            },
           },
           {
             path: "export",

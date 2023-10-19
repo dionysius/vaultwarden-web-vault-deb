@@ -113,7 +113,7 @@ import {
   ImportApiService,
   ImportServiceAbstraction,
   ImportService,
-} from "@bitwarden/importer";
+} from "@bitwarden/importer/core";
 
 import { BrowserOrganizationService } from "../admin-console/services/browser-organization.service";
 import { BrowserPolicyService } from "../admin-console/services/browser-policy.service";

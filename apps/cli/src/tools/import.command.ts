@@ -3,7 +3,7 @@ import * as inquirer from "inquirer";
 
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
-import { ImportServiceAbstraction, ImportType } from "@bitwarden/importer";
+import { ImportServiceAbstraction, ImportType } from "@bitwarden/importer/core";
 
 import { Response } from "../models/response";
 import { MessageResponse } from "../models/response/message.response";

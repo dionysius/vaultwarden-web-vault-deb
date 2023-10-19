@@ -48,8 +48,15 @@ const routes: Routes = [
         children: [
           {
             path: "import",
-            loadChildren: () =>
-              import("../tools/import/org-import.module").then((m) => m.OrganizationImportModule),
+            loadComponent: () =>
+              import("../../../tools/import/import-web.component").then(
+                (mod) => mod.ImportWebComponent
+              ),
+            canActivate: [OrganizationPermissionsGuard],
+            data: {
+              titleId: "importData",
+              organizationPermissions: (org: Organization) => org.canAccessImportExport,
+            },
           },
           {
             path: "export",

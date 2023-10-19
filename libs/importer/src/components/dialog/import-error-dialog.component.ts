@@ -1,7 +1,9 @@
 import { DialogRef, DIALOG_DATA } from "@angular/cdk/dialog";
+import { CommonModule } from "@angular/common";
 import { Component, Inject, OnInit } from "@angular/core";
 
-import { TableDataSource } from "@bitwarden/components";
+import { JslibModule } from "@bitwarden/angular/jslib.module";
+import { ButtonModule, DialogModule, TableDataSource, TableModule } from "@bitwarden/components";
 
 export interface ErrorListItem {
   type: string;
@@ -9,8 +11,9 @@ export interface ErrorListItem {
 }
 
 @Component({
-  selector: "app-import-error-dialog",
   templateUrl: "./import-error-dialog.component.html",
+  standalone: true,
+  imports: [CommonModule, JslibModule, DialogModule, TableModule, ButtonModule],
 })
 export class ImportErrorDialogComponent implements OnInit {
   protected dataSource = new TableDataSource<ErrorListItem>();

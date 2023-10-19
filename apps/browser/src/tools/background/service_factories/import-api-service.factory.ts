@@ -1,4 +1,4 @@
-import { ImportApiService, ImportApiServiceAbstraction } from "@bitwarden/importer";
+import { ImportApiService, ImportApiServiceAbstraction } from "@bitwarden/importer/core";
 
 import {
   ApiServiceInitOptions,
