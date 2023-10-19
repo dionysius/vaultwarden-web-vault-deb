@@ -24,6 +24,7 @@ export class FileMenu extends FirstMenu implements IMenubarMenu {
       this.addNewFolder,
       this.separator,
       this.syncVault,
+      this.importVault,
       this.exportVault,
     ];
 
@@ -119,6 +120,15 @@ export class FileMenu extends FirstMenu implements IMenubarMenu {
       id: "syncVault",
       label: this.localize("syncVault"),
       click: () => this.sendMessage("syncVault"),
+      enabled: !this._isLocked,
+    };
+  }
+
+  private get importVault(): MenuItemConstructorOptions {
+    return {
+      id: "importVault",
+      label: this.localize("importData"),
+      click: () => this.sendMessage("importVault"),
       enabled: !this._isLocked,
     };
   }

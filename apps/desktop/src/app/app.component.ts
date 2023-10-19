@@ -55,6 +55,7 @@ import { FolderAddEditComponent } from "../vault/app/vault/folder-add-edit.compo
 import { SettingsComponent } from "./accounts/settings.component";
 import { ExportComponent } from "./tools/export/export.component";
 import { GeneratorComponent } from "./tools/generator.component";
+import { ImportDesktopComponent } from "./tools/import/import-desktop.component";
 import { PasswordGeneratorHistoryComponent } from "./tools/password-generator-history.component";
 
 const BroadcasterSubscriptionId = "AppComponent";
@@ -327,6 +328,9 @@ export class AppComponent implements OnInit, OnDestroy {
               this.logService.error(e);
             }
             this.messagingService.send("scheduleNextSync");
+            break;
+          case "importVault":
+            await this.dialogService.open(ImportDesktopComponent);
             break;
           case "exportVault":
             await this.openExportVault();
