@@ -25,10 +25,10 @@ index c7ac9910ac..e03c8fedcb 100644
        </bit-form-field>
        <bit-form-field>
 diff --git a/apps/web/src/app/app.component.ts b/apps/web/src/app/app.component.ts
-index cfac9d0693..fab4dc991a 100644
+index 97d065c689..7b07888eba 100644
 --- a/apps/web/src/app/app.component.ts
 +++ b/apps/web/src/app/app.component.ts
-@@ -184,6 +184,10 @@ export class AppComponent implements OnDestroy, OnInit {
+@@ -183,6 +183,10 @@ export class AppComponent implements OnDestroy, OnInit {
              break;
            }
            case "showToast":
@@ -40,7 +40,7 @@ index cfac9d0693..fab4dc991a 100644
              break;
            case "setFullWidth":
 diff --git a/apps/web/src/app/auth/settings/two-factor-authenticator.component.ts b/apps/web/src/app/auth/settings/two-factor-authenticator.component.ts
-index 29cc6df156..3dbbfbd858 100644
+index 1687f366ff..6870ce8b27 100644
 --- a/apps/web/src/app/auth/settings/two-factor-authenticator.component.ts
 +++ b/apps/web/src/app/auth/settings/two-factor-authenticator.component.ts
 @@ -109,11 +109,11 @@ export class TwoFactorAuthenticatorComponent
@@ -71,20 +71,20 @@ index 22cea10acb..747f534bcc 100644
    }
  }
 diff --git a/apps/web/src/app/components/environment-selector/environment-selector.component.ts b/apps/web/src/app/components/environment-selector/environment-selector.component.ts
-index 9f736a72e4..ee48329588 100644
+index 3c1c5a1973..418471459f 100644
 --- a/apps/web/src/app/components/environment-selector/environment-selector.component.ts
 +++ b/apps/web/src/app/components/environment-selector/environment-selector.component.ts
-@@ -30,7 +30,7 @@ export class EnvironmentSelectorComponent implements OnInit {
+@@ -31,7 +31,7 @@ export class EnvironmentSelectorComponent implements OnInit {
+     const domain = Utils.getDomain(window.location.href);
      this.isEuServer = domain.includes(RegionDomain.EU);
      this.isUsServer = domain.includes(RegionDomain.US) || domain.includes(RegionDomain.USQA);
-     this.selectedRegionImageName = this.getRegionImage();
 -    this.showRegionSelector = !this.platformUtilsService.isSelfHost();
 +    this.showRegionSelector = false;
+     this.routeAndParams = `/#${this.router.url}`;
    }
- 
-   getRegionImage(): string {
+ }
 diff --git a/apps/web/src/app/core/init.service.ts b/apps/web/src/app/core/init.service.ts
-index 3437c4f3e9..7337f2dcdc 100644
+index f171217d3c..4ff756e645 100644
 --- a/apps/web/src/app/core/init.service.ts
 +++ b/apps/web/src/app/core/init.service.ts
 @@ -7,10 +7,7 @@ import { NotificationsService as NotificationsServiceAbstraction } from "@bitwar
@@ -98,8 +98,8 @@ index 3437c4f3e9..7337f2dcdc 100644
 +import { EnvironmentService as EnvironmentServiceAbstraction } from "@bitwarden/common/platform/abstractions/environment.service";
  import { I18nService as I18nServiceAbstraction } from "@bitwarden/common/platform/abstractions/i18n.service";
  import { StateService as StateServiceAbstraction } from "@bitwarden/common/platform/abstractions/state.service";
- import { ContainerService } from "@bitwarden/common/platform/services/container.service";
-@@ -36,11 +33,23 @@ export class InitService {
+ import { ConfigService } from "@bitwarden/common/platform/services/config/config.service";
+@@ -38,11 +35,23 @@ export class InitService {
    ) {}
  
    init() {
@@ -178,13 +178,13 @@ index 8cacb4ceba..0504559697 100644
        {{ "versionNumber" | i18n : version }}
      </div>
 diff --git a/apps/web/src/app/layouts/frontend-layout.component.html b/apps/web/src/app/layouts/frontend-layout.component.html
-index 531e49dad4..de332c02dc 100644
+index a6988baf28..b6adbe94d5 100644
 --- a/apps/web/src/app/layouts/frontend-layout.component.html
 +++ b/apps/web/src/app/layouts/frontend-layout.component.html
 @@ -1,6 +1,12 @@
  <router-outlet></router-outlet>
  <div class="container my-5 text-muted text-center">
-   <environment-selector [hasFlags]="false"></environment-selector>
+   <environment-selector></environment-selector>
 -  &copy; {{ year }} Bitwarden Inc. <br />
 +  Vaultwarden Web<br />
    {{ "versionNumber" | i18n : version }}
@@ -240,7 +240,7 @@ index 60e81b17eb..8078db5df1 100644
    }
  }
 diff --git a/apps/web/src/app/tools/generator.component.ts b/apps/web/src/app/tools/generator.component.ts
-index 425f5cca2f..638859dc94 100644
+index 05c56141dc..39133e292e 100644
 --- a/apps/web/src/app/tools/generator.component.ts
 +++ b/apps/web/src/app/tools/generator.component.ts
 @@ -37,7 +37,7 @@ export class GeneratorComponent extends BaseGeneratorComponent {
@@ -277,10 +277,10 @@ index 634d0bbf40..f4a4ba64ff 100644
    </div>
  </form>
 diff --git a/apps/web/src/app/vault/individual-vault/vault.component.ts b/apps/web/src/app/vault/individual-vault/vault.component.ts
-index 07f93003b4..126cf8de07 100644
+index 35074c70d2..93d63b95f4 100644
 --- a/apps/web/src/app/vault/individual-vault/vault.component.ts
 +++ b/apps/web/src/app/vault/individual-vault/vault.component.ts
-@@ -184,11 +184,7 @@ export class VaultComponent implements OnInit, OnDestroy {
+@@ -175,11 +175,7 @@ export class VaultComponent implements OnInit, OnDestroy {
  
    async ngOnInit() {
      this.showBrowserOutdated = window.navigator.userAgent.indexOf("MSIE") !== -1;
@@ -294,10 +294,10 @@ index 07f93003b4..126cf8de07 100644
      const firstSetup$ = this.route.queryParams.pipe(
        first(),
 diff --git a/apps/web/src/app/vault/org-vault/vault.component.ts b/apps/web/src/app/vault/org-vault/vault.component.ts
-index 63f92e64ea..34b345e39b 100644
+index 1cb57e188a..010a37eb08 100644
 --- a/apps/web/src/app/vault/org-vault/vault.component.ts
 +++ b/apps/web/src/app/vault/org-vault/vault.component.ts
-@@ -161,11 +161,7 @@ export class VaultComponent implements OnInit, OnDestroy {
+@@ -156,11 +156,7 @@ export class VaultComponent implements OnInit, OnDestroy {
    ) {}
  
    async ngOnInit() {
@@ -353,10 +353,10 @@ index 92a1204c60..d9ff4771a3 100644
 +  "background_color": "#FFFFFF"
  }
 diff --git a/apps/web/src/scss/styles.scss b/apps/web/src/scss/styles.scss
-index 0003f521c7..1df2acb8dd 100644
+index 2c0f9c21fd..2ed7bab817 100644
 --- a/apps/web/src/scss/styles.scss
 +++ b/apps/web/src/scss/styles.scss
-@@ -58,3 +58,93 @@
+@@ -57,3 +57,93 @@
  @import "./tables";
  @import "./toasts";
  @import "./vault-filters";
@@ -451,7 +451,7 @@ index 0003f521c7..1df2acb8dd 100644
 +}
 +/**** END Vaultwarden CHANGES ****/
 diff --git a/apps/web/webpack.config.js b/apps/web/webpack.config.js
-index bfdc8ae90a..b7f399504a 100644
+index c7d2bcb5e0..ccecc5bda9 100644
 --- a/apps/web/webpack.config.js
 +++ b/apps/web/webpack.config.js
 @@ -136,8 +136,6 @@ const plugins = [
@@ -463,8 +463,23 @@ index bfdc8ae90a..b7f399504a 100644
        { from: "./src/images", to: "images" },
        { from: "./src/locales", to: "locales" },
        { from: "../../node_modules/qrious/dist/qrious.min.js", to: "scripts" },
+diff --git a/libs/angular/src/auth/components/two-factor-options.component.ts b/libs/angular/src/auth/components/two-factor-options.component.ts
+index 786a9d7bb5..3b7e72d647 100644
+--- a/libs/angular/src/auth/components/two-factor-options.component.ts
++++ b/libs/angular/src/auth/components/two-factor-options.component.ts
+@@ -30,7 +30,9 @@ export class TwoFactorOptionsComponent implements OnInit {
+   }
+ 
+   recover() {
+-    this.platformUtilsService.launchUri("https://vault.bitwarden.com/#/recover-2fa");
++    this.platformUtilsService.launchUri(
++      "https://bitwarden.com/help/two-step-recovery-code/#use-your-recovery-code"
++    );
+     this.onRecoverSelected.emit();
+   }
+ }
 diff --git a/libs/angular/src/components/register.component.ts b/libs/angular/src/components/register.component.ts
-index eb01a18781..a8e9430737 100644
+index 5363be3941..da1c9024b5 100644
 --- a/libs/angular/src/components/register.component.ts
 +++ b/libs/angular/src/components/register.component.ts
 @@ -37,7 +37,7 @@ export class RegisterComponent extends CaptchaProtectedComponent implements OnIn
@@ -477,7 +492,7 @@ index eb01a18781..a8e9430737 100644
    passwordStrengthResult: any;
    characterMinimumMessage: string;
 @@ -95,7 +95,7 @@ export class RegisterComponent extends CaptchaProtectedComponent implements OnIn
-     protected dialogService: DialogServiceAbstraction
+     protected dialogService: DialogService
    ) {
      super(environmentService, i18nService, platformUtilsService);
 -    this.showTerms = !platformUtilsService.isSelfHost();
