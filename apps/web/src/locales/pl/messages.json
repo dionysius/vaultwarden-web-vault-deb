@@ -3638,6 +3638,18 @@
   "organizationIsDisabled": {
     "message": "Organizacja została zawieszona"
   },
+  "secretsAccessSuspended": {
+    "message": "Nie można uzyskać dostępu do zawieszonych organizacji. Skontaktuj się z właścicielem organizacji, aby uzyskać pomoc."
+  },
+  "secretsCannotCreate": {
+    "message": "Sekrety nie mogą być tworzone w zawieszonych organizacjach. Skontaktuj się z właścicielem organizacji, aby uzyskać pomoc."
+  },
+  "projectsCannotCreate": {
+    "message": "Projekty nie mogą być tworzone w zawieszonych organizacjach. Skontaktuj się z właścicielem organizacji, aby uzyskać pomoc."
+  },
+  "serviceAccountsCannotCreate": {
+    "message": "Konta serwisowe nie mogą być tworzone w zawieszonych organizacjach. Skontaktuj się z właścicielem organizacji, aby uzyskać pomoc."
+  },
   "disabledOrganizationFilterError": {
     "message": "Nie można uzyskać dostępu do elementów w zawieszonych organizacjach. Skontaktuj się z właścicielem organizacji, aby uzyskać pomoc."
   },
@@ -3983,8 +3995,9 @@
   "ssoIdentifier": {
     "message": "Identyfikator SSO"
   },
-  "ssoIdentifierHint": {
-    "message": "Podaj ten identyfikator swoim użytkownikom, aby zalogować się za pomocą SSO."
+  "ssoIdentifierHintPartOne": {
+    "message": "Provide this ID to your members to login with SSO. To bypass this step, set up ",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Provide this ID to your members to login with SSO. To bypass this step, set up Domain verification'"
   },
   "unlinkSso": {
     "message": "Odłącz logowanie jednokrotne SSO"
@@ -7265,5 +7278,14 @@
   },
   "customBillingEnd": {
     "message": " page for latest invoicing."
+  },
+  "typePasskey": {
+    "message": "Passkey"
+  },
+  "passkeyNotCopied": {
+    "message": "Passkey nie zostanie skopiowany"
+  },
+  "passkeyNotCopiedAlert": {
+    "message": "Passkey nie zostanie skopiowane do sklonowanego elementu. Czy chcesz kontynuować klonowanie tego elementu?"
   }
 }

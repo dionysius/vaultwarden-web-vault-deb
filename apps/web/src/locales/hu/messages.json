@@ -3638,6 +3638,18 @@
   "organizationIsDisabled": {
     "message": "A szervezet letiltásra került."
   },
+  "secretsAccessSuspended": {
+    "message": "A felfüggesztett szervezetekhez nem lehet hozzáférni. Segítségért forduljunk a szervezet tulajdonosához."
+  },
+  "secretsCannotCreate": {
+    "message": "A felfüggesztett szervezetekben nem hozhatók létre titkos kódok. Segítségért forduljunk a szervezet tulajdonosához."
+  },
+  "projectsCannotCreate": {
+    "message": "A felfüggesztett szervezetekben nem hozhatók létre projektek. Segítségért forduljunk a szervezet tulajdonosához."
+  },
+  "serviceAccountsCannotCreate": {
+    "message": "A felfüggesztett szervezetekben nem hozhatók létre szolgáltatásfiókok. Segítségért forduljunk a szervezet tulajdonosához."
+  },
   "disabledOrganizationFilterError": {
     "message": "A letiltott szervezetek elemei nem érhetők el. Vegyük fel a kapcsolatot a szervezet tulajdonosával segítségért."
   },
@@ -3983,8 +3995,9 @@
   "ssoIdentifier": {
     "message": "Egyszeri azonosító"
   },
-  "ssoIdentifierHint": {
-    "message": "Adjuk meg ezt az azonosítót a tagoknak az egyszeri azonosítóval történő bejelentkezéshez."
+  "ssoIdentifierHintPartOne": {
+    "message": "Adjuk meg ezt az azonosítót a tagoknak a bejelentkezéshez SSO-val. A lépés megkerüléséhez üzemeljük be ",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Provide this ID to your members to login with SSO. To bypass this step, set up Domain verification'"
   },
   "unlinkSso": {
     "message": "SSO szétkapcsolása"
@@ -7265,5 +7278,14 @@
   },
   "customBillingEnd": {
     "message": " oldalt a legújabb számlázásért."
+  },
+  "typePasskey": {
+    "message": "Hozzáférési kulcs"
+  },
+  "passkeyNotCopied": {
+    "message": "A hozzáférési kulcs nem kerül másolásra."
+  },
+  "passkeyNotCopiedAlert": {
+    "message": "A hozzáférési kulcs nem kerül másolásra a klónozott elembe. Folytatjuk ennek az elemnek a klónozását?"
   }
 }

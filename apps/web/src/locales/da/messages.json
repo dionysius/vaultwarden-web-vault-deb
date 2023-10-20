@@ -3638,6 +3638,18 @@
   "organizationIsDisabled": {
     "message": "Organisation suspenderet"
   },
+  "secretsAccessSuspended": {
+    "message": "Suspenderede organisationer kan ikke tilgås. Kontakt organisationsejeren for assistance."
+  },
+  "secretsCannotCreate": {
+    "message": "Hemmeligheder kan ikke oprettes i suspenderede organisationer. Kontakt organisationsejeren for hjælp."
+  },
+  "projectsCannotCreate": {
+    "message": "Projekter kan ikke oprettes i suspenderede organisationer. Kontakt organisationsejeren for hjælp."
+  },
+  "serviceAccountsCannotCreate": {
+    "message": "Tjenestekonti kan ikke oprettes i suspenderede organisationer. Kontakt organisationsejeren for hjælp."
+  },
   "disabledOrganizationFilterError": {
     "message": "Emner i deaktiverede organisationer kan ikke tilgås. Kontakt oganisationsejeren for hjælp."
   },
@@ -3983,8 +3995,9 @@
   "ssoIdentifier": {
     "message": "SSO-identifikator"
   },
-  "ssoIdentifierHint": {
-    "message": "Oplys dette ID til medlemmerne til brug for indlogning med SSO."
+  "ssoIdentifierHintPartOne": {
+    "message": "Giv medlemmerne dette ID til indlogning med SSO. For at omgå dette trin, opsæt ",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Provide this ID to your members to login with SSO. To bypass this step, set up Domain verification'"
   },
   "unlinkSso": {
     "message": "Fjern SSO-tilknytning"
@@ -7265,5 +7278,14 @@
   },
   "customBillingEnd": {
     "message": " for seneste fakturering."
+  },
+  "typePasskey": {
+    "message": "Adgangsnøgle"
+  },
+  "passkeyNotCopied": {
+    "message": "Adgangsnøglen kopieres ikke"
+  },
+  "passkeyNotCopiedAlert": {
+    "message": "Adgangsnøglen kopieres ikke til det klonede emne. Fortsæt kloningen af emnet alligevel?"
   }
 }

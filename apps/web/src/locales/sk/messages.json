@@ -3638,6 +3638,18 @@
   "organizationIsDisabled": {
     "message": "Organizácia je vypnutá."
   },
+  "secretsAccessSuspended": {
+    "message": "K pozastaveným organizáciám nie je možné pristupovať. Požiadajte o pomoc vlastníka organizácie."
+  },
+  "secretsCannotCreate": {
+    "message": "V pozastavených organizáciám nie je možné pridávať položky. Požiadajte o pomoc vlastníka organizácie."
+  },
+  "projectsCannotCreate": {
+    "message": "V pozastavených organizáciám nie je možné vytvárať projekty. Požiadajte o pomoc vlastníka organizácie."
+  },
+  "serviceAccountsCannotCreate": {
+    "message": "V pozastavených organizáciám nie je možné vytvárať služobné kontá. Požiadajte o pomoc vlastníka organizácie."
+  },
   "disabledOrganizationFilterError": {
     "message": "K položkám vo vypnutej organizácii nie je možné pristupovať. Požiadajte o pomoc vlastníka organizácie."
   },
@@ -3983,8 +3995,9 @@
   "ssoIdentifier": {
     "message": "SSO identifikátor"
   },
-  "ssoIdentifierHint": {
-    "message": "Poskytnite toto ID vaším členom pre prihlásenie prostredníctvom SSO."
+  "ssoIdentifierHintPartOne": {
+    "message": "Provide this ID to your members to login with SSO. To bypass this step, set up ",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Provide this ID to your members to login with SSO. To bypass this step, set up Domain verification'"
   },
   "unlinkSso": {
     "message": "Odpojiť SSO"
@@ -7265,5 +7278,14 @@
   },
   "customBillingEnd": {
     "message": " page for latest invoicing."
+  },
+  "typePasskey": {
+    "message": "Passkey"
+  },
+  "passkeyNotCopied": {
+    "message": "Passkey will not be copied"
+  },
+  "passkeyNotCopiedAlert": {
+    "message": "The passkey will not be copied to the cloned item. Do you want to continue cloning this item?"
   }
 }

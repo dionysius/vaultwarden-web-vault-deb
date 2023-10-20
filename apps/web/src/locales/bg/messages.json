@@ -612,49 +612,49 @@
     "message": "Вписване с главната парола"
   },
   "loginWithPasskey": {
-    "message": "Log in with passkey"
+    "message": "Вписване със секретен ключ"
   },
   "loginWithPasskeyInfo": {
-    "message": "Use a generated passkey that will automatically log you in without a password. Biometrics, like facial recognition or fingerprint, or another FIDO2 security method will verify your identity."
+    "message": "Използвайте автоматично създаден секретен ключ, чрез който ще се вписвате без нуждата от парола. За удостоверяване на самоличността Ви, ще се ползват биометрични данни, лицево разпознаване, пръстов отпечатък или друг метод за защита от тип FIDO2."
   },
   "newPasskey": {
-    "message": "New passkey"
+    "message": "Нов секретен ключ"
   },
   "learnMoreAboutPasswordless": {
     "message": "Learn more about passwordless"
   },
   "passkeyEnterMasterPassword": {
-    "message": "Enter your master password to modify log in with passkey settings."
+    "message": "Въведете главната си парола, за да променяте настройките за вписване със секретен ключ."
   },
   "creatingPasskeyLoading": {
-    "message": "Creating passkey..."
+    "message": "Създаване на секретен ключ…"
   },
   "creatingPasskeyLoadingInfo": {
-    "message": "Keep this window open and follow prompts from your browser."
+    "message": "Оставете този прозорец отворен и следвайте насоките в браузъра си."
   },
   "errorCreatingPasskey": {
-    "message": "Error creating passkey"
+    "message": "Грешка при създаването на секретен ключ"
   },
   "errorCreatingPasskeyInfo": {
-    "message": "There was a problem creating your passkey."
+    "message": "Възникна проблем при създаването на секретния ключ."
   },
   "passkeySuccessfullyCreated": {
-    "message": "Passkey successfully created!"
+    "message": "Секретният ключ е създаден успешно!"
   },
   "customName": {
     "message": "Custom name"
   },
   "customPasskeyNameInfo": {
-    "message": "Name your passkey to help you identify it."
+    "message": "Изберете име за секретния си ключ, за да го разпознавате по-лесно."
   },
   "encryptionNotSupported": {
     "message": "Encryption not supported"
   },
   "loginWithPasskeyEnabled": {
-    "message": "Log in with passkey turned on"
+    "message": "Вписването със секретен ключ е включено"
   },
   "passkeySaved": {
-    "message": "$NAME$ saved",
+    "message": "Запазено: $NAME$",
     "placeholders": {
       "name": {
         "content": "$1",
@@ -663,16 +663,16 @@
     }
   },
   "passkeyRemoved": {
-    "message": "Passkey removed"
+    "message": "Секретният ключ е премахнат"
   },
   "removePasskey": {
-    "message": "Remove passkey"
+    "message": "Премахване на секретния ключ"
   },
   "removePasskeyInfo": {
-    "message": "If all passkeys are removed, you will be unable to log into new devices without your master password."
+    "message": "Ако всички секретни ключове бъдат премахнати, няма да можете да се впишете в нови устройства без главната си парола."
   },
   "passkeyLimitReachedInfo": {
-    "message": "Passkey limit reached. Remove a passkey to add another."
+    "message": "Достигнато е ограничението за броя на секретните ключове. Премахнете някой, за да може да добавите нов."
   },
   "tryAgain": {
     "message": "Нов опит"
@@ -3638,6 +3638,18 @@
   "organizationIsDisabled": {
     "message": "Организацията е изключена."
   },
+  "secretsAccessSuspended": {
+    "message": "Изключените организации са недостъпни. Свържете се със собственика на организацията си за помощ."
+  },
+  "secretsCannotCreate": {
+    "message": "В изключени организации не могат да се създават тайни. Свържете се със собственика на организацията си за помощ."
+  },
+  "projectsCannotCreate": {
+    "message": "В изключени организации не могат да се създават проекти. Свържете се със собственика на организацията си за помощ."
+  },
+  "serviceAccountsCannotCreate": {
+    "message": "В изключени организации не могат да се създават сервизни акаунти. Свържете се със собственика на организацията си за помощ."
+  },
   "disabledOrganizationFilterError": {
     "message": "Записите в изключени организации не са достъпни. Свържете се със собственика на организацията си за помощ."
   },
@@ -3983,8 +3995,9 @@
   "ssoIdentifier": {
     "message": "Идентификатор за еднократна идентификация"
   },
-  "ssoIdentifierHint": {
-    "message": "Дайте този идентификатор на членовете си, за да могат да се вписват чрез еднократна идентификация."
+  "ssoIdentifierHintPartOne": {
+    "message": "Дайте този идентификатор на членовете си, за да могат да се вписват чрез еднократно удостоверяване. Ако искате да пропуснете тази стъпка, настройте ",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Provide this ID to your members to login with SSO. To bypass this step, set up Domain verification'"
   },
   "unlinkSso": {
     "message": "Прекъсване на еднократна идентификация"
@@ -7265,5 +7278,14 @@
   },
   "customBillingEnd": {
     "message": " за последните фактури."
+  },
+  "typePasskey": {
+    "message": "Секретен ключ"
+  },
+  "passkeyNotCopied": {
+    "message": "Секретният ключ няма да бъде копиран"
+  },
+  "passkeyNotCopiedAlert": {
+    "message": "Секретният ключ няма да бъде копиран в клонирания елемент. Искате ли да продължите с клонирането на елемента?"
   }
 }

@@ -600,7 +600,7 @@
     "message": "خیر"
   },
   "loginOrCreateNewAccount": {
-    "message": "وارد شوید یا یک حساب کاربری بسازید تا به گاوصندوق امنتان دسترسی یابید."
+    "message": "وارد شوید یا یک حساب کاربری بسازید تا به گاوصندوق امن‌تان دسترسی یابید."
   },
   "loginWithDevice": {
     "message": "ورود با دستگاه"
@@ -681,7 +681,7 @@
     "message": "ایجاد حساب کاربری"
   },
   "newAroundHere": {
-    "message": "اینجا جدیده؟"
+    "message": "اینجا تازه واردی؟"
   },
   "startTrial": {
     "message": "شروع دوره آزمایشی"
@@ -3638,6 +3638,18 @@
   "organizationIsDisabled": {
     "message": "سازمان از کار افتاده است"
   },
+  "secretsAccessSuspended": {
+    "message": "سازمان‌های تعلیق شده قابل دسترسی نیستند. لطفاً برای کمک با مالک سازمان خود تماس بگیرید."
+  },
+  "secretsCannotCreate": {
+    "message": "در سازمان‌های معلق نمی‌توان اسرار ایجاد کرد. لطفاً برای کمک با مالک سازمان خود تماس بگیرید."
+  },
+  "projectsCannotCreate": {
+    "message": "پروژه‌ها را نمی‌توان در سازمان‌های معلق ایجاد کرد. لطفاً برای کمک با مالک سازمان خود تماس بگیرید."
+  },
+  "serviceAccountsCannotCreate": {
+    "message": "حساب‌های خدماتی را نمی‌توان در سازمان‌های معلق ایجاد کرد. لطفاً برای کمک با مالک سازمان خود تماس بگیرید."
+  },
   "disabledOrganizationFilterError": {
     "message": "موارد موجود در سازمان‌های غیرفعال، قابل دسترسی نیستند. برای دریافت کمک با مالک سازمان خود تماس بگیرید."
   },
@@ -3983,8 +3995,9 @@
   "ssoIdentifier": {
     "message": "شناسه SSO"
   },
-  "ssoIdentifierHint": {
-    "message": "این شناسه را در اختیار اعضای خود قرار دهید تا با SSO وارد شوند."
+  "ssoIdentifierHintPartOne": {
+    "message": "این شناسه را در اختیار اعضای خود قرار دهید تا با SSO وارد شوند. برای دور زدن این مرحله، راه‌اندازی کنید ",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Provide this ID to your members to login with SSO. To bypass this step, set up Domain verification'"
   },
   "unlinkSso": {
     "message": "لغو پیوند SSO"
@@ -7265,5 +7278,14 @@
   },
   "customBillingEnd": {
     "message": " صفحه برای آخرین صورتحساب"
+  },
+  "typePasskey": {
+    "message": "کلید عبور"
+  },
+  "passkeyNotCopied": {
+    "message": "کلید عبور کپی نمی‌شود"
+  },
+  "passkeyNotCopiedAlert": {
+    "message": "کلید عبور در مورد شبیه سازی شده کپی نمی‌شود. آیا می‌خواهید به شبیه سازی این مورد ادامه دهید؟"
   }
 }

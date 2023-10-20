@@ -3638,6 +3638,18 @@
   "organizationIsDisabled": {
     "message": "Təşkilat sıradan çıxarıldı."
   },
+  "secretsAccessSuspended": {
+    "message": "Dayandırılmış təşkilatlara müraciət edilə bilməz. Lütfən kömək üçün təşkilatınızın sahibi ilə əlaqə saxlayın."
+  },
+  "secretsCannotCreate": {
+    "message": "Secrets cannot be created in suspended organizations. Please contact your organization owner for assistance."
+  },
+  "projectsCannotCreate": {
+    "message": "Layihələr dayandırılmış təşkilatlarda yaradıla bilməz. Lütfən kömək üçün təşkilatınızın sahibi ilə əlaqə saxlayın."
+  },
+  "serviceAccountsCannotCreate": {
+    "message": "Xidmət hesabları dayandırılmış təşkilatlarda yaradıla bilməz. Lütfən kömək üçün təşkilatınızın sahibi ilə əlaqə saxlayın."
+  },
   "disabledOrganizationFilterError": {
     "message": "Sıradan çıxarılmış Təşkilatlardakı elementlərə müraciət edilə bilmir. Kömək üçün Təşkilatınızın sahibi ilə əlaqə saxlayın."
   },
@@ -3983,8 +3995,9 @@
   "ssoIdentifier": {
     "message": "SSO identifikatoru"
   },
-  "ssoIdentifierHint": {
-    "message": "SSO ilə giriş etmələri üçün bu kimliyi üzvlərinizə təqdim edin."
+  "ssoIdentifierHintPartOne": {
+    "message": "Provide this ID to your members to login with SSO. To bypass this step, set up ",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Provide this ID to your members to login with SSO. To bypass this step, set up Domain verification'"
   },
   "unlinkSso": {
     "message": "SSO əlaqəsini kəs"
@@ -7265,5 +7278,14 @@
   },
   "customBillingEnd": {
     "message": " səhifəni ziyarət edin."
+  },
+  "typePasskey": {
+    "message": "Keçid açarı"
+  },
+  "passkeyNotCopied": {
+    "message": "Keçid açarı kopyalanmır"
+  },
+  "passkeyNotCopiedAlert": {
+    "message": "Keçid açarı, klonlanmış elementə kopyalanmayacaq. Bu elementi klonlamağa davam etmək istəyirsiniz?"
   }
 }

@@ -1227,7 +1227,7 @@
     }
   },
   "kdfIterationsWarning": {
-    "message": "Definir as suas iterações KDF muito altas pode resultar em desempenho fraco ao iniciar sessão (e desbloquear) o Bitwarden em dispositivos com CPUs mais lentos. Recomendamos que aumente o valor em incrementos de $INCREMENT$ e depois teste todos os seus dispositivos.",
+    "message": "Definir as suas iterações KDF muito altas pode resultar em fraco desempenho ao iniciar sessão (e desbloquear) o Bitwarden em dispositivos com CPUs mais lentos. Recomendamos que aumente o valor em incrementos de $INCREMENT$ e depois teste todos os seus dispositivos.",
     "placeholders": {
       "increment": {
         "content": "$1",
@@ -1394,7 +1394,7 @@
     "message": "Nenhum ficheiro escolhido"
   },
   "orCopyPasteFileContents": {
-    "message": "ou copie/cole o seu conteúdo"
+    "message": "ou faça copiar/colar o conteúdo do ficheiro de importação"
   },
   "instructionsFor": {
     "message": "Instruções para $NAME$",
@@ -3638,6 +3638,18 @@
   "organizationIsDisabled": {
     "message": "Organização suspensa"
   },
+  "secretsAccessSuspended": {
+    "message": "Não é possível aceder a organizações suspensas. Contacte o proprietário da organização para obter assistência."
+  },
+  "secretsCannotCreate": {
+    "message": "Os segredos não podem ser criados em organizações suspensas. Contacte o proprietário da organização para obter assistência."
+  },
+  "projectsCannotCreate": {
+    "message": "Os projetos não podem ser criados em organizações suspensas. Contacte o proprietário da organização para obter assistência."
+  },
+  "serviceAccountsCannotCreate": {
+    "message": "As contas de serviço não podem ser criadas em organizações suspensas. Contacte o proprietário da organização para obter assistência."
+  },
   "disabledOrganizationFilterError": {
     "message": "Não é possível aceder aos itens de organizações suspensas. Contacte o proprietário da organização para obter assistência."
   },
@@ -3983,8 +3995,9 @@
   "ssoIdentifier": {
     "message": "Identificador SSO"
   },
-  "ssoIdentifierHint": {
-    "message": "Forneça este ID aos seus membros para iniciarem sessão com o SSO."
+  "ssoIdentifierHintPartOne": {
+    "message": "Forneça este ID aos seus membros para iniciarem sessão com o SSO. Para ignorar este passo, configure a ",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Provide this ID to your members to login with SSO. To bypass this step, set up Domain verification'"
   },
   "unlinkSso": {
     "message": "Desativar SSO"
@@ -7265,5 +7278,14 @@
   },
   "customBillingEnd": {
     "message": " página para a faturação mais recente."
+  },
+  "typePasskey": {
+    "message": "Chave de acesso"
+  },
+  "passkeyNotCopied": {
+    "message": "A chave de acesso não será copiada"
+  },
+  "passkeyNotCopiedAlert": {
+    "message": "A chave de acesso não será copiada para o item duplicado. Pretende ainda assim duplicar este item?"
   }
 }

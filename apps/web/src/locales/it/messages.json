@@ -1327,7 +1327,7 @@
     "message": "Dati importati"
   },
   "importSuccessNumberOfItems": {
-    "message": "Un totale di $AMOUNT$ elementi è stato importato.",
+    "message": "$AMOUNT$ elementi sono stati importati.",
     "placeholders": {
       "amount": {
         "content": "$1",
@@ -3638,6 +3638,18 @@
   "organizationIsDisabled": {
     "message": "Organizzazione disabilitata"
   },
+  "secretsAccessSuspended": {
+    "message": "Non è possibile accedere alle organizzazioni disabilitate. Contatta il proprietario della tua organizzazione per assistenza."
+  },
+  "secretsCannotCreate": {
+    "message": "Non è possibile creare segreti nelle organizzazioni disabilitate. Contatta il proprietario della tua organizzazione per assistenza."
+  },
+  "projectsCannotCreate": {
+    "message": "Non è possibile creare progetti nelle organizzazioni disabilitate. Contatta il proprietario della tua organizzazione per assistenza."
+  },
+  "serviceAccountsCannotCreate": {
+    "message": "Non è possibile creare account di servizio nelle organizzazioni disabilitate. Contatta il proprietario della tua organizzazione per assistenza."
+  },
   "disabledOrganizationFilterError": {
     "message": "Non è possibile accedere agli elementi nelle organizzazioni disabilitate. Contatta il proprietario della tua organizzazione per assistenza."
   },
@@ -3983,8 +3995,9 @@
   "ssoIdentifier": {
     "message": "Identificativo SSO"
   },
-  "ssoIdentifierHint": {
-    "message": "Fornisci questo ID ai tuoi membri per accedere con SSO."
+  "ssoIdentifierHintPartOne": {
+    "message": "Fornisci questo ID ai tuoi membri per accedere con SSO. Per saltare questo passaggio, configura la ",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Provide this ID to your members to login with SSO. To bypass this step, set up Domain verification'"
   },
   "unlinkSso": {
     "message": "Scollega SSO"
@@ -7265,5 +7278,14 @@
   },
   "customBillingEnd": {
     "message": " pagina per l'ultima fatturazione."
+  },
+  "typePasskey": {
+    "message": "Passkey"
+  },
+  "passkeyNotCopied": {
+    "message": "La passkey non sarà copiata"
+  },
+  "passkeyNotCopiedAlert": {
+    "message": "La passkey non sarà copiata nell'elemento clonato. Vuoi continuare a clonare questo elemento?"
   }
 }

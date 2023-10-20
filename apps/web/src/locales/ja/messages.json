@@ -3638,6 +3638,18 @@
   "organizationIsDisabled": {
     "message": "組織は無効です。"
   },
+  "secretsAccessSuspended": {
+    "message": "一時停止された組織にはアクセスできません。組織の所有者にお問い合わせください。"
+  },
+  "secretsCannotCreate": {
+    "message": "一時停止中の組織ではシークレットを作成できません。組織の所有者に問い合わせてください。"
+  },
+  "projectsCannotCreate": {
+    "message": "一時停止中の組織ではプロジェクトを作成できません。組織の所有者に問い合わせてください。"
+  },
+  "serviceAccountsCannotCreate": {
+    "message": "一時停止中の組織ではサービスアカウントを作成できません。組織の所有者に問い合わせてください。"
+  },
   "disabledOrganizationFilterError": {
     "message": "無効な組織のアイテムにアクセスすることはできません。組織の所有者に連絡してください。"
   },
@@ -3983,8 +3995,9 @@
   "ssoIdentifier": {
     "message": "SSO 識別子"
   },
-  "ssoIdentifierHint": {
-    "message": "SSO でログインするには、この ID をメンバーに提供してください。"
+  "ssoIdentifierHintPartOne": {
+    "message": "SSO でログインできるようこの ID をメンバーに提供してください。この手順をバイパスするには、以下の設定をしてください：",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Provide this ID to your members to login with SSO. To bypass this step, set up Domain verification'"
   },
   "unlinkSso": {
     "message": "SSO のリンクを解除"
@@ -7265,5 +7278,14 @@
   },
   "customBillingEnd": {
     "message": "のページで最新の請求書をご覧いただけます。"
+  },
+  "typePasskey": {
+    "message": "パスキー"
+  },
+  "passkeyNotCopied": {
+    "message": "パスキーはコピーされません"
+  },
+  "passkeyNotCopiedAlert": {
+    "message": "パスキーは複製されたアイテムにコピーされません。このアイテムを複製しますか？"
   }
 }

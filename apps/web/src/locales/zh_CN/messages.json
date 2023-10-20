@@ -615,7 +615,7 @@
     "message": "使用通行密钥登录"
   },
   "loginWithPasskeyInfo": {
-    "message": "使用已生成的通行密钥，无需密码即可自动登录。生物识别技术（例如面部识别或指纹）或其他 FIDO2 安全方法将用于验证您的身份。"
+    "message": "使用已生成的通行密钥，无需密码即可自动登录。生物识别（例如面部识别或指纹）或其他 FIDO2 安全方法将用于验证您的身份。"
   },
   "newPasskey": {
     "message": "新增通行密钥"
@@ -669,7 +669,7 @@
     "message": "移除通行密钥"
   },
   "removePasskeyInfo": {
-    "message": "如果移除了所有通行密钥，没有主密码您将无法登录新的设备。"
+    "message": "如果所有通行密钥被移除，不使用主密码您将无法登录新的设备。"
   },
   "passkeyLimitReachedInfo": {
     "message": "通行密钥已达上限。移除一个通行密钥以添加另一个。"
@@ -1339,7 +1339,7 @@
     "message": "数据导出成功"
   },
   "importWarning": {
-    "message": "您正在将数据导入到 $ORGANIZATION$。您的数据可能会与此组织中的成员共享。是否继续？",
+    "message": "您正在将数据导入到 $ORGANIZATION$。您的数据可能会与此组织中的成员共享。要继续吗？",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -1369,7 +1369,7 @@
     "message": "选择一个集合"
   },
   "importTargetHint": {
-    "message": "如果您希望将导入的文件内容移动到某个 $DESTINATION$，请选择此选项",
+    "message": "如果您希望将导入的文件内容移动到 $DESTINATION$，请选择此选项",
     "description": "Located as a hint under the import target. Will be appended by either folder or collection, depending if the user is importing into an individual or an organizational vault.",
     "placeholders": {
       "destination": {
@@ -3638,6 +3638,18 @@
   "organizationIsDisabled": {
     "message": "组织已停用"
   },
+  "secretsAccessSuspended": {
+    "message": "无法访问已停用的组织。请联系您的组织所有者获取协助。"
+  },
+  "secretsCannotCreate": {
+    "message": "无法在已停用的组织中创建机密。请联系您的组织所有者获取协助。"
+  },
+  "projectsCannotCreate": {
+    "message": "无法在已停用的组织中创建工程。请联系您的组织所有者获取协助。"
+  },
+  "serviceAccountsCannotCreate": {
+    "message": "无法在已停用的组织中创建服务账户。请联系您的组织所有者获取协助。"
+  },
   "disabledOrganizationFilterError": {
     "message": "无法访问已停用组织中的项目。请联系您的组织所有者获取协助。"
   },
@@ -3983,8 +3995,9 @@
   "ssoIdentifier": {
     "message": "SSO 标识符"
   },
-  "ssoIdentifierHint": {
-    "message": "提供此 ID 给您的成员以使用 SSO 登录。"
+  "ssoIdentifierHintPartOne": {
+    "message": "将此 ID 提供给您的成员以供 SSO 登录使用。要绕过此步骤，请设置 ",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Provide this ID to your members to login with SSO. To bypass this step, set up Domain verification'"
   },
   "unlinkSso": {
     "message": "取消链接 SSO"
@@ -5834,7 +5847,7 @@
     "message": "开启"
   },
   "off": {
-    "message": "Off"
+    "message": "关闭"
   },
   "members": {
     "message": "成员"
@@ -7265,5 +7278,14 @@
   },
   "customBillingEnd": {
     "message": " 页面获取最新的账单。"
+  },
+  "typePasskey": {
+    "message": "通行密钥"
+  },
+  "passkeyNotCopied": {
+    "message": "通行密钥不会被复制"
+  },
+  "passkeyNotCopiedAlert": {
+    "message": "通行密钥将不会被复制到克隆的项目。要继续克隆这个项目吗？"
   }
 }

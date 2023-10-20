@@ -675,7 +675,7 @@
     "message": "Passkey limit reached. Remove a passkey to add another."
   },
   "tryAgain": {
-    "message": "Try again"
+    "message": "Yeniden dene"
   },
   "createAccount": {
     "message": "Hesap aç"
@@ -3638,6 +3638,18 @@
   "organizationIsDisabled": {
     "message": "Kuruluş askıya alındı"
   },
+  "secretsAccessSuspended": {
+    "message": "Askıya alınan kuruluşlara erişilemez. Lütfen yardım için kuruluşunuzun sahibiyle iletişime geçin."
+  },
+  "secretsCannotCreate": {
+    "message": "Askıya alınan kuruluşlarda sır oluşturulamaz. Lütfen yardım için kuruluşunuzun sahibiyle iletişime geçin."
+  },
+  "projectsCannotCreate": {
+    "message": "Askıya alınan kuruluşlarda proje oluşturulamaz. Lütfen yardım için kuruluşunuzun sahibiyle iletişime geçin."
+  },
+  "serviceAccountsCannotCreate": {
+    "message": "Askıya alınan kuruluşlarda hizmet hesapları oluşturulamaz. Lütfen yardım için kuruluşunuzun sahibiyle iletişime geçin."
+  },
   "disabledOrganizationFilterError": {
     "message": "Askıya alınmış kuruluşlardaki kayıtlara erişilemez. Destek almak için kuruluş sahibinizle iletişime geçin."
   },
@@ -3983,8 +3995,9 @@
   "ssoIdentifier": {
     "message": "SSO tanımlayıcı"
   },
-  "ssoIdentifierHint": {
-    "message": "SSO ile giriş yapan üyelere bu kimliği bildirin."
+  "ssoIdentifierHintPartOne": {
+    "message": "SSO ile giriş yapmaları için bu kimliği üyelerinize sağlayın. Bu adımı atlamak için kurulum yapın ",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Provide this ID to your members to login with SSO. To bypass this step, set up Domain verification'"
   },
   "unlinkSso": {
     "message": "SSO bağlantısını kes"
@@ -7265,5 +7278,14 @@
   },
   "customBillingEnd": {
     "message": " ziyaret edin."
+  },
+  "typePasskey": {
+    "message": "Geçiş anahtarı"
+  },
+  "passkeyNotCopied": {
+    "message": "Passkey will not be copied"
+  },
+  "passkeyNotCopiedAlert": {
+    "message": "The passkey will not be copied to the cloned item. Do you want to continue cloning this item?"
   }
 }

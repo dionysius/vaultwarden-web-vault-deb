@@ -639,7 +639,7 @@
     "message": "Atgadījās kļūda piekļuves atslēgas izveidošanas laikā."
   },
   "passkeySuccessfullyCreated": {
-    "message": "Piekļuves atslēga veiksmīģi izveidota."
+    "message": "Piekļuves atslēga tika veiksmīgi izveidota."
   },
   "customName": {
     "message": "Pielāgots nosaukums"
@@ -1348,7 +1348,7 @@
     }
   },
   "importFormatError": {
-    "message": "Dati nav pareizi formatēti. Lūdzu, pārbaudiet importēšanas failu un mēģiniet vēlreiz."
+    "message": "Dati nav pareizi formatēti. Lūgums pārbaudīt ievietošanas datni un mēģināt vēlreiz."
   },
   "importNothingError": {
     "message": "Nekas netika ievietots."
@@ -1615,7 +1615,7 @@
     "message": "Platformas ierobežojumu dēļ YubiKey nevar izmantot visās Bitwarden lietotnēs. Ir ieteicams iespējot vēl kādu divpakāpju pieteikšanās nodrošinātāju, lai varētu piekļūt kontam, kad nevar izmantot YubiKey. Atbalstītās platformas:"
   },
   "twoFactorYubikeySupportUsb": {
-    "message": "Tīmekļa glabātava, darbvirsmas lietotne, CLI un visi pārlūku paplašinājums ierīcēs ar USB ligzdu, kas pieņem YubiKey."
+    "message": "Tīmekļa glabātava, darbvirsmas lietotne, CLI un visi pārlūku paplašinājumi ierīcēs ar USB ligzdu, kas pieņem YubiKey."
   },
   "twoFactorYubikeySupportMobile": {
     "message": "Tālruņa lietotnes ierīcē ar NFC iespējām vai datu ligzdu, kas pieņem YubiKey."
@@ -3243,7 +3243,7 @@
     "message": "Atjaunināt pārlūku"
   },
   "updateBrowserDesc": {
-    "message": "Tiek izmantots neatbalstīts tīmekļa pārlūks. Tīmekļa glabātava var darboties nepareizi."
+    "message": "Tiek izmantots neatbalstīts tīmekļa pārlūks. Tīmekļa glabātava var nedarboties pareizi."
   },
   "joinOrganization": {
     "message": "Pievienoties apvienībai"
@@ -3621,7 +3621,7 @@
     "message": "4 stundas"
   },
   "onRefresh": {
-    "message": "Pēc pārlūka pārlādes"
+    "message": "Pēc pārlūka atsvaidzināšanas"
   },
   "dateUpdated": {
     "message": "Atjaunināts",
@@ -3637,6 +3637,18 @@
   },
   "organizationIsDisabled": {
     "message": "Apvienība ir atspējota."
+  },
+  "secretsAccessSuspended": {
+    "message": "Apturētām apvienībām nav iespējams piekļūt. Lūgums vērsties pie savas apvienības īpašnieka pēc palīdzības."
+  },
+  "secretsCannotCreate": {
+    "message": "Noslēpumus nav iespējams izveidot apturētās apvienībās. Lūgums vērsties pie savas apvienības īpašnieka pēc palīdzības."
+  },
+  "projectsCannotCreate": {
+    "message": "Projektus nav iespējams izveidot apturētās apvienībās. Lūgums vērsties pie savas apvienības īpašnieka pēc palīdzības."
+  },
+  "serviceAccountsCannotCreate": {
+    "message": "Pakalpojumu kontus nav iespējams izveidot apturētās apvienībās. Lūgums vērsties pie savas apvienības īpašnieka pēc palīdzības."
   },
   "disabledOrganizationFilterError": {
     "message": "Atspējotu apvienību vienumiem nevar piekļūt. Jāsazinās ar apvienības īpašnieku, lai iegūtu palīdzību."
@@ -3983,8 +3995,9 @@
   "ssoIdentifier": {
     "message": "Vienotās pieteikšanās identifikators"
   },
-  "ssoIdentifierHint": {
-    "message": "Šis Id jāizsniedz dalībniekiem, lai pieteiktos ar vienoto pieteikšanos."
+  "ssoIdentifierHintPartOne": {
+    "message": "Šis Id ir sniedzams dalībniekiem, lai pieteiktos ar vienoto pieteikšanos. Lai apietu šo soli, jāuzstāda ",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Provide this ID to your members to login with SSO. To bypass this step, set up Domain verification'"
   },
   "unlinkSso": {
     "message": "Atsaistīt SSO"
@@ -4472,7 +4485,7 @@
     "message": "Apvienības nosacījumi ietekmē Tavas īpašumtiesību iespējas."
   },
   "personalOwnershipPolicyInEffectImports": {
-    "message": "Apvienības nosacījums neļauj ievietot ārējos vienumus personīgajā glabātavā."
+    "message": "Apvienības nosacījums neļauj ievietot ārējos vienumus savā personīgajā glabātavā."
   },
   "personalOwnershipCheckboxDesc": {
     "message": "Atspējot personīgās īpašumtiesības apvienības lietotājiem"
@@ -7265,5 +7278,14 @@
   },
   "customBillingEnd": {
     "message": " sadaļu, lai gūtu ieskatu par jaunākajiem rēķiniem."
+  },
+  "typePasskey": {
+    "message": "Piekļuves atslēga"
+  },
+  "passkeyNotCopied": {
+    "message": "Piekļuves atslēga netiks ievietota starpliktuvē"
+  },
+  "passkeyNotCopiedAlert": {
+    "message": "Piekļuves atslēga netiks ievietota klonētajā vienumā. Vai turpināt šī vienuma klonēšanu?"
   }
 }

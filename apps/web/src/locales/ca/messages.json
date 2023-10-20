@@ -612,49 +612,49 @@
     "message": "Inici de sessió amb contrasenya mestra"
   },
   "loginWithPasskey": {
-    "message": "Log in with passkey"
+    "message": "Inicieu sessió amb la clau de pas"
   },
   "loginWithPasskeyInfo": {
-    "message": "Use a generated passkey that will automatically log you in without a password. Biometrics, like facial recognition or fingerprint, or another FIDO2 security method will verify your identity."
+    "message": "Utilitzeu una contrasenya generada que us iniciarà automàticament sense contrasenya. La biometria, com ara el reconeixement facial o l'empremta digital, o un altre mètode de seguretat FIDO2 verificarà la vostra identitat."
   },
   "newPasskey": {
-    "message": "New passkey"
+    "message": "Nova clau de pas"
   },
   "learnMoreAboutPasswordless": {
-    "message": "Learn more about passwordless"
+    "message": "Més informació sobre sense contrasenyes"
   },
   "passkeyEnterMasterPassword": {
-    "message": "Enter your master password to modify log in with passkey settings."
+    "message": "Introduïu la vostra contrasenya mestra per modificar l'inici de sessió amb la configuració de la clau de pas."
   },
   "creatingPasskeyLoading": {
-    "message": "Creating passkey..."
+    "message": "S'està creant la clau de pas..."
   },
   "creatingPasskeyLoadingInfo": {
-    "message": "Keep this window open and follow prompts from your browser."
+    "message": "Manteniu aquesta finestra oberta i seguiu les indicacions del vostre navegador."
   },
   "errorCreatingPasskey": {
-    "message": "Error creating passkey"
+    "message": "S'ha produït un error en crear la clau de pas"
   },
   "errorCreatingPasskeyInfo": {
-    "message": "There was a problem creating your passkey."
+    "message": "Hi ha hagut un problema en crear la clau de pas."
   },
   "passkeySuccessfullyCreated": {
-    "message": "Passkey successfully created!"
+    "message": "Clau de pas creada correctament!"
   },
   "customName": {
-    "message": "Custom name"
+    "message": "Nom personalitzat"
   },
   "customPasskeyNameInfo": {
-    "message": "Name your passkey to help you identify it."
+    "message": "Poseu un nom a la vostra clau per ajudar-vos a identificar-la."
   },
   "encryptionNotSupported": {
-    "message": "Encryption not supported"
+    "message": "El xifratge no és compatible"
   },
   "loginWithPasskeyEnabled": {
-    "message": "Log in with passkey turned on"
+    "message": "Inicieu sessió amb la clau d'accés activada"
   },
   "passkeySaved": {
-    "message": "$NAME$ saved",
+    "message": "S'ha guardat $NAME$",
     "placeholders": {
       "name": {
         "content": "$1",
@@ -663,19 +663,19 @@
     }
   },
   "passkeyRemoved": {
-    "message": "Passkey removed"
+    "message": "Clau de pas suprimida"
   },
   "removePasskey": {
-    "message": "Remove passkey"
+    "message": "Suprimeix la clau de pas"
   },
   "removePasskeyInfo": {
-    "message": "If all passkeys are removed, you will be unable to log into new devices without your master password."
+    "message": "Si se suprimeixen totes les contrasenyes, no podreu iniciar sessió en dispositius nous sense la vostra contrasenya mestra."
   },
   "passkeyLimitReachedInfo": {
-    "message": "Passkey limit reached. Remove a passkey to add another."
+    "message": "S'ha assolit el límit de clau d'accés. Suprimeix una contrasenya per afegir-ne una altra."
   },
   "tryAgain": {
-    "message": "Try again"
+    "message": "Torneu-ho a provar"
   },
   "createAccount": {
     "message": "Crea un compte"
@@ -3543,7 +3543,7 @@
     "message": "Actualitza la clau de xifratge"
   },
   "updateEncryptionSchemeDesc": {
-    "message": "We've changed the encryption scheme to provide better security. Update your encryption key now by entering your master password below."
+    "message": "Hem canviat l'esquema de xifratge per oferir una millor seguretat. Actualitzeu ara la vostra clau de xifratge introduint la vostra contrasenya mestra a continuació."
   },
   "updateEncryptionKeyWarning": {
     "message": "Després d'actualitzar la vostra clau de xifratge, heu de tancar la sessió i tornar a entrar a totes les aplicacions de Bitwarden que esteu utilitzant actualment (com ara l'aplicació mòbil o les extensions del navegador). Si no es tanca i torna a iniciar la sessió (la qual descarrega la vostra nova clau de xifratge) pot provocar corrupció en les dades. Intentarem registrar-vos automàticament, però, es pot retardar."
@@ -3637,6 +3637,18 @@
   },
   "organizationIsDisabled": {
     "message": "L'organització està inhabilitada."
+  },
+  "secretsAccessSuspended": {
+    "message": "No es pot accedir a les organitzacions suspeses. Poseu-vos en contacte amb el propietari de la vostra organització per obtenir ajuda."
+  },
+  "secretsCannotCreate": {
+    "message": "No es poden crear secrets en organitzacions suspeses. Poseu-vos en contacte amb el propietari de la vostra organització per obtenir ajuda."
+  },
+  "projectsCannotCreate": {
+    "message": "No es poden crear projectes en organitzacions suspeses. Poseu-vos en contacte amb el propietari de la vostra organització per obtenir ajuda."
+  },
+  "serviceAccountsCannotCreate": {
+    "message": "No es poden crear comptes de servei en organitzacions suspeses. Poseu-vos en contacte amb el propietari de la vostra organització per obtenir ajuda."
   },
   "disabledOrganizationFilterError": {
     "message": "No es pot accedir als elements de les organitzacions inhabilitades. Poseu-vos en contacte amb el propietari de la vostra organització per obtenir ajuda."
@@ -3983,8 +3995,9 @@
   "ssoIdentifier": {
     "message": "Identificador SSO"
   },
-  "ssoIdentifierHint": {
-    "message": "Proporcioneu aquest identificador als vostres membres per iniciar sessió amb SSO."
+  "ssoIdentifierHintPartOne": {
+    "message": "Proporcioneu aquest identificador als vostres membres per iniciar sessió amb SSO. Per evitar aquest pas, configureu-ho ",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Provide this ID to your members to login with SSO. To bypass this step, set up Domain verification'"
   },
   "unlinkSso": {
     "message": "Desenllaça SSO"
@@ -5473,7 +5486,7 @@
     "message": "requerit"
   },
   "charactersCurrentAndMaximum": {
-    "message": "$CURRENT$/$MAX$ character maximum",
+    "message": "$CURRENT$/$MAX$ caràcters màxim",
     "placeholders": {
       "current": {
         "content": "$1",
@@ -5834,7 +5847,7 @@
     "message": "Activat"
   },
   "off": {
-    "message": "Off"
+    "message": "Desactivat"
   },
   "members": {
     "message": "Membres"
@@ -7179,7 +7192,7 @@
     }
   },
   "subscribeToSecretsManager": {
-    "message": "Subscribe to Secrets Manager"
+    "message": "Subscriu-te a l'administrador de Secrets"
   },
   "addSecretsManagerUpgradeDesc": {
     "message": "Afegiu administrador de secrets al vostre pla actualitzat per mantindre l'accés a tots els secrets creats amb el vostre pla anterior."
@@ -7252,18 +7265,27 @@
     "message": "Beta"
   },
   "baseUrl": {
-    "message": "Server URL"
+    "message": "URL del servidor"
   },
   "aliasDomain": {
-    "message": "Alias domain"
+    "message": "Alies de domini"
   },
   "alreadyHaveAccount": {
     "message": "Ja tens un compte?"
   },
   "customBillingStart": {
-    "message": "Custom billing is not reflected. Visit the "
+    "message": "La facturació personalitzada no es reflecteix. Visita la "
   },
   "customBillingEnd": {
-    "message": " page for latest invoicing."
+    "message": " pàgina per a la facturació més recent."
+  },
+  "typePasskey": {
+    "message": "Clau de pas"
+  },
+  "passkeyNotCopied": {
+    "message": "La clau de pas no es copiarà"
+  },
+  "passkeyNotCopiedAlert": {
+    "message": "La clau de pas no es copiarà a l'element clonat. Voleu continuar clonant aquest element?"
   }
 }

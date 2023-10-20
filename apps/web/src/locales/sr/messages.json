@@ -612,46 +612,46 @@
     "message": "Пријавите се са главном лозинком"
   },
   "loginWithPasskey": {
-    "message": "Пријави се са passkey"
+    "message": "Пријавите се са приступачним кључем"
   },
   "loginWithPasskeyInfo": {
     "message": "Користите генерисан passkey који ће вас аутоматски пријавити без лозинке. Биометрија, као што је препознавање лица или отисак прста, или неки други FIDO2 метод за проверу идентитета."
   },
   "newPasskey": {
-    "message": "Нов passkey"
+    "message": "Нов приступачни кључ"
   },
   "learnMoreAboutPasswordless": {
     "message": "Сазнајте више о пријављивању без лозинке"
   },
   "passkeyEnterMasterPassword": {
-    "message": "Унесите главну лозинку да бисте изменили подешавања пријављивања са passkey."
+    "message": "Унесите главну лозинку да бисте изменили подешавања пријављивања са приступачним кључом."
   },
   "creatingPasskeyLoading": {
-    "message": "Креација passkey-а..."
+    "message": "Прављење приступалном гључа..."
   },
   "creatingPasskeyLoadingInfo": {
     "message": "Држите овај прозор отворен и пратите упутства из прегледача."
   },
   "errorCreatingPasskey": {
-    "message": "Грешки у креацији passkey-а"
+    "message": "Грешка у креацији приступачног кључа"
   },
   "errorCreatingPasskeyInfo": {
-    "message": "Дошло је до проблема приликом креирања вашег passkey-а."
+    "message": "Дошло је до проблема приликом креирања вашег приступачниг кључа."
   },
   "passkeySuccessfullyCreated": {
-    "message": "Passkey успешно креиран!"
+    "message": "Приступачни кључ је успешно креиран!"
   },
   "customName": {
     "message": "Прилагоди име"
   },
   "customPasskeyNameInfo": {
-    "message": "Именујте Ваш passkey за лакшу идентификацију."
+    "message": "Именујте Ваш приступачни кључ за лакшу идентификацију."
   },
   "encryptionNotSupported": {
     "message": "Шифровање није подржано"
   },
   "loginWithPasskeyEnabled": {
-    "message": "Пријављивање са passkey је упаљено"
+    "message": "Пријављивање са упаљеним приступчним кључем"
   },
   "passkeySaved": {
     "message": "„$NAME$“ сачувано",
@@ -663,16 +663,16 @@
     }
   },
   "passkeyRemoved": {
-    "message": "Passkey уклоњен"
+    "message": "Приступачни кључ је уклоњен"
   },
   "removePasskey": {
-    "message": "Уклонити passkey"
+    "message": "Уклонити приступачни кључ"
   },
   "removePasskeyInfo": {
-    "message": "Ако су сви passkey уклоњени, нећете моћи да се пријавите на нове уређаје без ваше главне лозинке."
+    "message": "Ако су сви приступачни кључеви уклоњени, нећете моћи да се пријавите на нове уређаје без ваше главне лозинке."
   },
   "passkeyLimitReachedInfo": {
-    "message": "Достугнут лимит Passkey-а. Уклонити један да би додали други."
+    "message": "Достугнут лимит приступачног кључа. Уклонити један да би додали други."
   },
   "tryAgain": {
     "message": "Покушај поново"
@@ -3638,6 +3638,18 @@
   "organizationIsDisabled": {
     "message": "Организација је онемогућена."
   },
+  "secretsAccessSuspended": {
+    "message": "Суспендованим организацијама се не може приступити. За помоћ контактирајте власника своје организације."
+  },
+  "secretsCannotCreate": {
+    "message": "Тајне се не могу креирати у суспендованим организацијама. За помоћ контактирајте власника своје организације."
+  },
+  "projectsCannotCreate": {
+    "message": "Пројекти се не могу креирати у суспендованим организацијама. За помоћ контактирајте власника своје организације."
+  },
+  "serviceAccountsCannotCreate": {
+    "message": "Сервисни налози се не могу креирати у суспендованим организацијама. За помоћ контактирајте власника своје организације."
+  },
   "disabledOrganizationFilterError": {
     "message": "Није могуће приступити ставкама у онемогућене организације. Обратите се власнику организације за помоћ."
   },
@@ -3983,8 +3995,9 @@
   "ssoIdentifier": {
     "message": "SSO идентификација"
   },
-  "ssoIdentifierHint": {
-    "message": "Дајте овај ИД својим члановима за пријаву са SSO."
+  "ssoIdentifierHintPartOne": {
+    "message": "Provide this ID to your members to login with SSO. To bypass this step, set up ",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Provide this ID to your members to login with SSO. To bypass this step, set up Domain verification'"
   },
   "unlinkSso": {
     "message": "Откачи SSO"
@@ -7265,5 +7278,14 @@
   },
   "customBillingEnd": {
     "message": " страницу за најновије фактуре."
+  },
+  "typePasskey": {
+    "message": "Приступачни кључ"
+  },
+  "passkeyNotCopied": {
+    "message": "Приступачни кључ неће бити копиран"
+  },
+  "passkeyNotCopiedAlert": {
+    "message": "Приступачни кључ неће бити копиран на клонирану ставку. Да ли желите да наставите са клонирањем ставке?"
   }
 }

@@ -3638,6 +3638,18 @@
   "organizationIsDisabled": {
     "message": "Organisatsioon on välja lülitatud."
   },
+  "secretsAccessSuspended": {
+    "message": "Suspended organizations cannot be accessed. Please contact your organization owner for assistance."
+  },
+  "secretsCannotCreate": {
+    "message": "Secrets cannot be created in suspended organizations. Please contact your organization owner for assistance."
+  },
+  "projectsCannotCreate": {
+    "message": "Projects cannot be created in suspended organizations. Please contact your organization owner for assistance."
+  },
+  "serviceAccountsCannotCreate": {
+    "message": "Service accounts cannot be created in suspended organizations. Please contact your organization owner for assistance."
+  },
   "disabledOrganizationFilterError": {
     "message": "Organisatsiooni alla kuuluvatele kirjetele ei ole ligipääsu. Kontakteeru oma organisatsiooni omanikuga."
   },
@@ -3983,8 +3995,9 @@
   "ssoIdentifier": {
     "message": "SSO identifier"
   },
-  "ssoIdentifierHint": {
-    "message": "Provide this ID to your members to login with SSO."
+  "ssoIdentifierHintPartOne": {
+    "message": "Provide this ID to your members to login with SSO. To bypass this step, set up ",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Provide this ID to your members to login with SSO. To bypass this step, set up Domain verification'"
   },
   "unlinkSso": {
     "message": "Ühenda SSO lahti"
@@ -7265,5 +7278,14 @@
   },
   "customBillingEnd": {
     "message": " page for latest invoicing."
+  },
+  "typePasskey": {
+    "message": "Passkey"
+  },
+  "passkeyNotCopied": {
+    "message": "Passkey will not be copied"
+  },
+  "passkeyNotCopiedAlert": {
+    "message": "The passkey will not be copied to the cloned item. Do you want to continue cloning this item?"
   }
 }

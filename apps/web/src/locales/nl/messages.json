@@ -612,49 +612,49 @@
     "message": "Inloggen met je hoofdwachtwoord"
   },
   "loginWithPasskey": {
-    "message": "Log in with passkey"
+    "message": "Inloggen met passkey"
   },
   "loginWithPasskeyInfo": {
-    "message": "Use a generated passkey that will automatically log you in without a password. Biometrics, like facial recognition or fingerprint, or another FIDO2 security method will verify your identity."
+    "message": "Gebruik een gegenereerde passkey die je automatisch inlogt zonder wachtwoord. Biometrie, zoals gezichtsherkenning of vingerafdruk, of een andere FIDO2-beveiligingsmethode controleren je identiteit."
   },
   "newPasskey": {
-    "message": "New passkey"
+    "message": "Nieuwe passkey"
   },
   "learnMoreAboutPasswordless": {
-    "message": "Learn more about passwordless"
+    "message": "Meer lezen over wachtwoordloos"
   },
   "passkeyEnterMasterPassword": {
-    "message": "Enter your master password to modify log in with passkey settings."
+    "message": "Voer je hoofdwachtwoord in om je instellingen voor het inloggen met passkey te veranderen."
   },
   "creatingPasskeyLoading": {
-    "message": "Creating passkey..."
+    "message": "Passkey aanmaken..."
   },
   "creatingPasskeyLoadingInfo": {
-    "message": "Keep this window open and follow prompts from your browser."
+    "message": "Houd dit venster open en volg de aanwijzingen van je browser."
   },
   "errorCreatingPasskey": {
-    "message": "Error creating passkey"
+    "message": "Fout bij het aanmaken van passkey"
   },
   "errorCreatingPasskeyInfo": {
-    "message": "There was a problem creating your passkey."
+    "message": "Er ging iets mis met het aanmaken van je passkey."
   },
   "passkeySuccessfullyCreated": {
-    "message": "Passkey successfully created!"
+    "message": "Passkey succesvol aangemaakt!"
   },
   "customName": {
-    "message": "Custom name"
+    "message": "Aangepaste naam"
   },
   "customPasskeyNameInfo": {
-    "message": "Name your passkey to help you identify it."
+    "message": "Geef je passkey een naam om deze later te herkennen."
   },
   "encryptionNotSupported": {
-    "message": "Encryption not supported"
+    "message": "Encryptie niet ondersteund"
   },
   "loginWithPasskeyEnabled": {
-    "message": "Log in with passkey turned on"
+    "message": "Inloggen met passkey ingeschakeld"
   },
   "passkeySaved": {
-    "message": "$NAME$ saved",
+    "message": "$NAME$ opgeslagen",
     "placeholders": {
       "name": {
         "content": "$1",
@@ -663,19 +663,19 @@
     }
   },
   "passkeyRemoved": {
-    "message": "Passkey removed"
+    "message": "Passkey verwijderd"
   },
   "removePasskey": {
-    "message": "Remove passkey"
+    "message": "Passkey verwijderen"
   },
   "removePasskeyInfo": {
-    "message": "If all passkeys are removed, you will be unable to log into new devices without your master password."
+    "message": "Als je alle passkeys verwijdert, heb je je hoofdwachtwoord nodig om op nieuwe apparaten in te loggen."
   },
   "passkeyLimitReachedInfo": {
-    "message": "Passkey limit reached. Remove a passkey to add another."
+    "message": "Limiet van passkeys bereikt. Verwijder een passkey om een andere toe te voegen."
   },
   "tryAgain": {
-    "message": "Try again"
+    "message": "Opnieuw proberen"
   },
   "createAccount": {
     "message": "Account aanmaken"
@@ -3638,6 +3638,18 @@
   "organizationIsDisabled": {
     "message": "Organisatie uitgeschakeld."
   },
+  "secretsAccessSuspended": {
+    "message": "Opgeschorte organisaties zijn niet toegankelijk. Neem contact op met de eigenaar van je organisatie voor hulp."
+  },
+  "secretsCannotCreate": {
+    "message": "Je kunt geen secrets aanmaken in opgeschorte organisaties. Neem contact op met de eigenaar van je organisatie voor hulp."
+  },
+  "projectsCannotCreate": {
+    "message": "Je kunt geen projecten aanmaken in opgeschorte organisaties. Neem contact op met de eigenaar van je organisatie voor hulp."
+  },
+  "serviceAccountsCannotCreate": {
+    "message": "Je kunt geen service accounts aanmaken in opgeschorte organisaties. Neem contact op met de eigenaar van je organisatie voor hulp."
+  },
   "disabledOrganizationFilterError": {
     "message": "Je kunt uitgeschakelde items in een organisatie niet benaderen. Neem contact op met de eigenaar van je organisatie voor hulp."
   },
@@ -3983,8 +3995,9 @@
   "ssoIdentifier": {
     "message": "SSO Identifier"
   },
-  "ssoIdentifierHint": {
-    "message": "Geef dit ID aan je leden door voor het inloggen met SSO."
+  "ssoIdentifierHintPartOne": {
+    "message": "Geef dit ID aan je leden voor inloggen met SSO. Om deze stap te omzeilen, configureer je ",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Provide this ID to your members to login with SSO. To bypass this step, set up Domain verification'"
   },
   "unlinkSso": {
     "message": "SSO ontkoppelen"
@@ -5473,7 +5486,7 @@
     "message": "vereist"
   },
   "charactersCurrentAndMaximum": {
-    "message": "$CURRENT$/$MAX$ character maximum",
+    "message": "$CURRENT$/$MAX$ maximum aantal tekens",
     "placeholders": {
       "current": {
         "content": "$1",
@@ -5834,7 +5847,7 @@
     "message": "Aan"
   },
   "off": {
-    "message": "Off"
+    "message": "Uit"
   },
   "members": {
     "message": "Leden"
@@ -7265,5 +7278,14 @@
   },
   "customBillingEnd": {
     "message": " pagina voor laatste facturering."
+  },
+  "typePasskey": {
+    "message": "Passkey"
+  },
+  "passkeyNotCopied": {
+    "message": "Passkey wordt niet gekopieerd"
+  },
+  "passkeyNotCopiedAlert": {
+    "message": "De passkey wordt niet gekopieerd naar het gekloonde item. Wil je doorgaan met het klonen van dit item?"
   }
 }

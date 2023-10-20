@@ -621,7 +621,7 @@
     "message": "Neuer Passkey"
   },
   "learnMoreAboutPasswordless": {
-    "message": "Learn more about passwordless"
+    "message": "Erfahre mehr über die passwortlose Anmeldung"
   },
   "passkeyEnterMasterPassword": {
     "message": "Gib dein Master-Passwort ein, um die Einstellungen für die Anmeldung mit Passkeys zu ändern."
@@ -3638,6 +3638,18 @@
   "organizationIsDisabled": {
     "message": "Organisation ist deaktiviert"
   },
+  "secretsAccessSuspended": {
+    "message": "Auf deaktivierte Organisationen kann nicht zugegriffen werden. Bitte wende dich an deinen Organisationseigentümer."
+  },
+  "secretsCannotCreate": {
+    "message": "Geheimnisse können in deaktivierten Organisationen nicht erstellt werden. Bitte kontaktiere deinen Organisationseigentümer, um Unterstützung zu erhalten."
+  },
+  "projectsCannotCreate": {
+    "message": "Projekte können in deaktivierten Organisationen nicht erstellt werden. Bitte kontaktiere deinen Organisationseigentümer, um Unterstützung zu erhalten."
+  },
+  "serviceAccountsCannotCreate": {
+    "message": "Dienstkonten können in deaktivierten Organisationen nicht erstellt werden. Bitte kontaktiere deinen Organisationseigentümer, um Unterstützung zu erhalten."
+  },
   "disabledOrganizationFilterError": {
     "message": "Auf Einträge in deaktivierten Organisationen kann nicht zugegriffen werden. Kontaktiere deinen Organisationseigentümer für Unterstützung."
   },
@@ -3983,8 +3995,9 @@
   "ssoIdentifier": {
     "message": "SSO-Kennung"
   },
-  "ssoIdentifierHint": {
-    "message": "Gib diese Kennung an deine Mitglieder weiter, damit sie sich mit SSO anmelden können."
+  "ssoIdentifierHintPartOne": {
+    "message": "Gib diese ID deinen Mitgliedern zur Anmeldung über SSO. Um diesen Schritt zu umgehen, aktiviere die ",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Provide this ID to your members to login with SSO. To bypass this step, set up Domain verification'"
   },
   "unlinkSso": {
     "message": "SSO-Verknüpfung aufheben"
@@ -7265,5 +7278,14 @@
   },
   "customBillingEnd": {
     "message": " Seite für die aktuelle Rechnung."
+  },
+  "typePasskey": {
+    "message": "Passkey"
+  },
+  "passkeyNotCopied": {
+    "message": "Passkey wird nicht kopiert"
+  },
+  "passkeyNotCopiedAlert": {
+    "message": "Der Passkey wird nicht in den duplizierten Eintrag kopiert. Möchtest du mit dem Duplizieren dieses Eintrags fortfahren?"
   }
 }

@@ -1388,7 +1388,7 @@
     "message": "Sélectionnez le fichier à importer"
   },
   "chooseFile": {
-    "message": "Choisir le Fichier"
+    "message": "Choisir le fichier"
   },
   "noFileChosen": {
     "message": "Aucun fichier choisi"
@@ -3638,6 +3638,18 @@
   "organizationIsDisabled": {
     "message": "L'organisation est désactivée."
   },
+  "secretsAccessSuspended": {
+    "message": "Impossible d'accéder aux organisations suspendues. Veuillez contacter le propriétaire de votre organisation pour obtenir de l'aide."
+  },
+  "secretsCannotCreate": {
+    "message": "Les secrets ne peuvent pas être créés dans les organisations suspendues. Veuillez contacter le propriétaire de votre organisation pour obtenir de l'aide."
+  },
+  "projectsCannotCreate": {
+    "message": "Les projets ne peuvent pas être créés dans les organisations suspendues. Veuillez contacter le propriétaire de votre organisation pour obtenir de l'aide."
+  },
+  "serviceAccountsCannotCreate": {
+    "message": "Les comptes de service ne peuvent pas être créés dans les organisations suspendues. Veuillez contacter le propriétaire de votre organisation pour obtenir de l'aide."
+  },
   "disabledOrganizationFilterError": {
     "message": "Les éléments des Organisations désactivées ne sont pas accessibles. Contactez le propriétaire de votre Organisation pour obtenir de l'aide."
   },
@@ -3983,8 +3995,9 @@
   "ssoIdentifier": {
     "message": "Identifiant SSO"
   },
-  "ssoIdentifierHint": {
-    "message": "Fournissez cet ID à vos membres pour se connecter avec le SSO."
+  "ssoIdentifierHintPartOne": {
+    "message": "Fournir cet ID à vos membres pour se connecter avec SSO. Pour contourner cette étape, configurer ",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Provide this ID to your members to login with SSO. To bypass this step, set up Domain verification'"
   },
   "unlinkSso": {
     "message": "Délier SSO"
@@ -7265,5 +7278,14 @@
   },
   "customBillingEnd": {
     "message": " pour la dernière facturation."
+  },
+  "typePasskey": {
+    "message": "Passkey"
+  },
+  "passkeyNotCopied": {
+    "message": "La Passkey ne sera pas copiée"
+  },
+  "passkeyNotCopiedAlert": {
+    "message": "La passkey ne sera pas copiée à l'item cloné. Voulez-vous continuez à cloner cet élément?"
   }
 }
