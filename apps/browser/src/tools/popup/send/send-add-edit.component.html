@@ -22,18 +22,7 @@
       {{ "sendOptionsPolicyInEffect" | i18n }}
     </app-callout>
     <!-- File Warning -->
-    <app-callout
-      type="warning"
-      icon="bwi-external-link bwi-rotate-270 bwi-fw"
-      [clickable]="true"
-      title="{{ 'sendFileCalloutHeader' | i18n }}"
-      *ngIf="showFilePopoutMessage && type === sendType.File && !disableSend"
-      (click)="popOutWindow()"
-    >
-      <div *ngIf="showChromiumFileWarning">{{ "sendLinuxChromiumFileWarning" | i18n }}</div>
-      <div *ngIf="showFirefoxFileWarning">{{ "sendFirefoxFileWarning" | i18n }}</div>
-      <div *ngIf="showSafariFileWarning">{{ "sendSafariFileWarning" | i18n }}</div>
-    </app-callout>
+    <tools-file-popout-callout *ngIf="type === sendType.File && !disableSend" />
     <!-- Name -->
     <div class="box">
       <div class="box-content">

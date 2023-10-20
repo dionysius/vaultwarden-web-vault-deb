@@ -104,6 +104,7 @@ import BrowserMessagingService from "../../platform/services/browser-messaging.s
 import { BrowserStateService } from "../../platform/services/browser-state.service";
 import { BrowserSendService } from "../../services/browser-send.service";
 import { BrowserSettingsService } from "../../services/browser-settings.service";
+import { FilePopoutUtilsService } from "../../tools/popup/services/file-popout-utils.service";
 import { BrowserFolderService } from "../../vault/services/browser-folder.service";
 import { VaultFilterService } from "../../vault/services/vault-filter.service";
 
@@ -519,6 +520,16 @@ function getBgService<T>(service: keyof MainBackground) {
         EnvironmentService,
         LogService,
       ],
+    },
+    {
+      provide: FilePopoutUtilsService,
+      useFactory: (
+        platformUtilsService: PlatformUtilsService,
+        popupUtilsService: PopupUtilsService
+      ) => {
+        return new FilePopoutUtilsService(platformUtilsService, popupUtilsService);
+      },
+      deps: [PlatformUtilsService, PopupUtilsService],
     },
   ],
 })
