@@ -16,11 +16,9 @@
   </div>
 </header>
 <div tabindex="-1" class="tw-p-4">
-  <tools-file-popout-callout />
   <tools-import
     (formDisabled)="this.disabled = $event"
     (formLoading)="this.loading = $event"
     (onSuccessfulImport)="this.onSuccessfulImport($event)"
-    [hideFileSelector]="this.hideFileSelector"
   ></tools-import>
 </div>
