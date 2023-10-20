@@ -1662,6 +1662,9 @@
   "personalOwnershipPolicyInEffect": {
     "message": "Une politique d'organisation affecte vos options de propriété."
   },
+  "personalOwnershipPolicyInEffectImports": {
+    "message": "Une politique d'organisation a bloqué l'import d'éléments dans votre coffre personel."
+  },
   "allSends": {
     "message": "Tous les Sends",
     "description": "'Sends' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
@@ -2416,7 +2419,124 @@
   "submenu": {
     "message": "Sous-menu"
   },
+  "typePasskey": {
+    "message": "Clé d'accès"
+  },
+  "passkeyNotCopied": {
+    "message": "La clé d'accès ne sera pas copiée"
+  },
+  "passkeyNotCopiedAlert": {
+    "message": "La clé d'accès ne sera pas présente sur l'entrée clonée. Continuer quand même ?"
+  },
   "aliasDomain": {
     "message": "Domaine de l'alias"
+  },
+  "importData": {
+    "message": "Importer des données",
+    "description": "Used for the desktop menu item and the header of the import dialog"
+  },
+  "importError": {
+    "message": "Erreur lors de l'importation"
+  },
+  "importErrorDesc": {
+    "message": "Il y a eu un problème avec les données que vous avez essayé d'importer. Veuillez résoudre les erreurs listées ci-dessous dans votre fichier source et réessayer."
+  },
+  "resolveTheErrorsBelowAndTryAgain": {
+    "message": "Résolvez les erreurs ci-dessous et réessayez."
+  },
+  "description": {
+    "message": "Description"
+  },
+  "importSuccess": {
+    "message": "Données importées avec succès"
+  },
+  "importSuccessNumberOfItems": {
+    "message": "Un total de $AMOUNT$ élément(s) a été importé.",
+    "placeholders": {
+      "amount": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "total": {
+    "message": "Total"
+  },
+  "importWarning": {
+    "message": "Vous importez des données vers $ORGANIZATION$. Vos données pourraient être partagées avec les membres de cette organisation. Voulez-vous continuer ?",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "importFormatError": {
+    "message": "Les données ne sont pas correctement mises en forme. Veuillez vérifier le fichier importé et réessayer."
+  },
+  "importNothingError": {
+    "message": "Rien à importer."
+  },
+  "importEncKeyError": {
+    "message": "Erreur lors du déchiffrement du fichier exporté. Votre clé de chiffrement ne correspond pas à la clé de chiffrement utilisée pour exporter les données."
+  },
+  "importDestination": {
+    "message": "Destination de l'import"
+  },
+  "learnAboutImportOptions": {
+    "message": "En savoir plus sur vos options d'importation"
+  },
+  "selectImportFolder": {
+    "message": "Choisir un dossier"
+  },
+  "selectImportCollection": {
+    "message": "Sélectionnez une collection"
+  },
+  "importTargetHint": {
+    "message": "Sélectionnez cette option si vous voulez que le contenu du fichier importé soit déplacé vers un(e) $DESTINATION$",
+    "description": "Located as a hint under the import target. Will be appended by either folder or collection, depending if the user is importing into an individual or an organizational vault.",
+    "placeholders": {
+      "destination": {
+        "content": "$1",
+        "example": "folder or collection"
+      }
+    }
+  },
+  "importUnassignedItemsError": {
+    "message": "Le fichier contient des éléments non assignés."
+  },
+  "selectFormat": {
+    "message": "Sélectionnez le format du fichier à importer"
+  },
+  "selectImportFile": {
+    "message": "Sélectionnez le fichier à importer"
+  },
+  "chooseFile": {
+    "message": "Choisir le fichier"
+  },
+  "noFileChosen": {
+    "message": "Aucun fichier choisi"
+  },
+  "orCopyPasteFileContents": {
+    "message": "ou copiez/collez le contenu du fichier à importer"
+  },
+  "instructionsFor": {
+    "message": "Instructions $NAME$",
+    "description": "The title for the import tool instructions.",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "LastPass (csv)"
+      }
+    }
+  },
+  "confirmVaultImport": {
+    "message": "Confirmez l'import du coffre"
+  },
+  "confirmVaultImportDesc": {
+    "message": "Ce fichier est protégé par mot de passe. Veuillez entrer le mot de passe du fichier pour importer des données."
+  },
+  "confirmFilePassword": {
+    "message": "Confirmez le mot de passe du fichier"
   }
 }

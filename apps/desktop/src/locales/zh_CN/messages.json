@@ -1662,6 +1662,9 @@
   "personalOwnershipPolicyInEffect": {
     "message": "一个组织策略正影响您的所有权选项。"
   },
+  "personalOwnershipPolicyInEffectImports": {
+    "message": "组织策略已阻止将项目导入您的个人密码库。"
+  },
   "allSends": {
     "message": "所有的 Send",
     "description": "'Sends' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
@@ -2416,7 +2419,124 @@
   "submenu": {
     "message": "子菜单"
   },
+  "typePasskey": {
+    "message": "通行密钥"
+  },
+  "passkeyNotCopied": {
+    "message": "通行密钥不会被复制"
+  },
+  "passkeyNotCopiedAlert": {
+    "message": "通行密钥将不会被复制到克隆的项目。要继续克隆这个项目吗？"
+  },
   "aliasDomain": {
     "message": "别名域"
+  },
+  "importData": {
+    "message": "导入数据",
+    "description": "Used for the desktop menu item and the header of the import dialog"
+  },
+  "importError": {
+    "message": "导入出错"
+  },
+  "importErrorDesc": {
+    "message": "您尝试导入的数据有问题。请解决如下列出的源文件中的错误，然后重试。"
+  },
+  "resolveTheErrorsBelowAndTryAgain": {
+    "message": "解决下面的错误，然后重试。"
+  },
+  "description": {
+    "message": "描述"
+  },
+  "importSuccess": {
+    "message": "数据导入成功"
+  },
+  "importSuccessNumberOfItems": {
+    "message": "一共导入了 $AMOUNT$ 个项目。",
+    "placeholders": {
+      "amount": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "total": {
+    "message": "总计"
+  },
+  "importWarning": {
+    "message": "您正在将数据导入到 $ORGANIZATION$。您的数据可能会与此组织中的成员共享。要继续吗？",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "importFormatError": {
+    "message": "数据格式不正确。请检查您的导入文件后重试。"
+  },
+  "importNothingError": {
+    "message": "没有导入任何内容。"
+  },
+  "importEncKeyError": {
+    "message": "解密导出的文件时出错。您的加密密钥与导出数据时使用的加密密钥不匹配。"
+  },
+  "importDestination": {
+    "message": "导入目的地"
+  },
+  "learnAboutImportOptions": {
+    "message": "了解您的导入选项"
+  },
+  "selectImportFolder": {
+    "message": "选择一个文件夹"
+  },
+  "selectImportCollection": {
+    "message": "选择一个集合"
+  },
+  "importTargetHint": {
+    "message": "如果您希望将导入的文件内容移动到 $DESTINATION$，请选择此选项",
+    "description": "Located as a hint under the import target. Will be appended by either folder or collection, depending if the user is importing into an individual or an organizational vault.",
+    "placeholders": {
+      "destination": {
+        "content": "$1",
+        "example": "folder or collection"
+      }
+    }
+  },
+  "importUnassignedItemsError": {
+    "message": "文件包含未分配项目。"
+  },
+  "selectFormat": {
+    "message": "选择导入文件的格式"
+  },
+  "selectImportFile": {
+    "message": "选择要导入的文件"
+  },
+  "chooseFile": {
+    "message": "选择文件"
+  },
+  "noFileChosen": {
+    "message": "未选择文件"
+  },
+  "orCopyPasteFileContents": {
+    "message": "或复制/粘贴要导入的文件内容"
+  },
+  "instructionsFor": {
+    "message": "$NAME$ Instructions",
+    "description": "The title for the import tool instructions.",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "LastPass (csv)"
+      }
+    }
+  },
+  "confirmVaultImport": {
+    "message": "确认密码库导入"
+  },
+  "confirmVaultImportDesc": {
+    "message": "此文件受密码保护。请输入文件密码以导入数据。"
+  },
+  "confirmFilePassword": {
+    "message": "确认文件密码"
   }
 }

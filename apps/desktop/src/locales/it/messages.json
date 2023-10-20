@@ -1662,6 +1662,9 @@
   "personalOwnershipPolicyInEffect": {
     "message": "Una politica dell'organizzazione sta influenzando le tue opzioni di proprietà."
   },
+  "personalOwnershipPolicyInEffectImports": {
+    "message": "Una politica dell'organizzazione ti impedisce di importare elementi nella tua cassaforte individuale."
+  },
   "allSends": {
     "message": "Tutti i Send",
     "description": "'Sends' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
@@ -2416,7 +2419,124 @@
   "submenu": {
     "message": "Sottomenu"
   },
+  "typePasskey": {
+    "message": "Passkey"
+  },
+  "passkeyNotCopied": {
+    "message": "La passkey non sarà copiata"
+  },
+  "passkeyNotCopiedAlert": {
+    "message": "La passkey non sarà copiata nell'elemento clonato. Vuoi continuare a clonare questo elemento?"
+  },
   "aliasDomain": {
     "message": "Dominio alias"
+  },
+  "importData": {
+    "message": "Importa dati",
+    "description": "Used for the desktop menu item and the header of the import dialog"
+  },
+  "importError": {
+    "message": "Errore di importazione"
+  },
+  "importErrorDesc": {
+    "message": "Si è verificato un problema con i dati che hai provato a importare. Risolvi questi errori nel file e riprova."
+  },
+  "resolveTheErrorsBelowAndTryAgain": {
+    "message": "Correggi gli errori qui sotto e riprova."
+  },
+  "description": {
+    "message": "Descrizione"
+  },
+  "importSuccess": {
+    "message": "Dati importati"
+  },
+  "importSuccessNumberOfItems": {
+    "message": "$AMOUNT$ elementi sono stati importati.",
+    "placeholders": {
+      "amount": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "total": {
+    "message": "Totale"
+  },
+  "importWarning": {
+    "message": "Stai importando dati in $ORGANIZATION$. I tuoi dati potrebbero essere condivisi con i membri di questa organizzazione. Vuoi procedere?",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "importFormatError": {
+    "message": "I dati non sono formattati correttamente. Ricontrolla il file di importazione riprova."
+  },
+  "importNothingError": {
+    "message": "Non è stato importato niente."
+  },
+  "importEncKeyError": {
+    "message": "Errore durante la decriptografia del file esportato. La chiave di criptografia non corrisponde alla chiave di criptografia usata per esportare i dati."
+  },
+  "importDestination": {
+    "message": "Destinazione dell'importazione"
+  },
+  "learnAboutImportOptions": {
+    "message": "Ulteriori informazioni sulle tue opzioni di importazione"
+  },
+  "selectImportFolder": {
+    "message": "Seleziona una cartella"
+  },
+  "selectImportCollection": {
+    "message": "Seleziona una raccolta"
+  },
+  "importTargetHint": {
+    "message": "Seleziona questa opzione se vuoi che i contenuti del file di importazione siano spostati in una $DESTINATION$",
+    "description": "Located as a hint under the import target. Will be appended by either folder or collection, depending if the user is importing into an individual or an organizational vault.",
+    "placeholders": {
+      "destination": {
+        "content": "$1",
+        "example": "folder or collection"
+      }
+    }
+  },
+  "importUnassignedItemsError": {
+    "message": "Il file contiene elementi non assegnati."
+  },
+  "selectFormat": {
+    "message": "Seleziona il formato del file da importare"
+  },
+  "selectImportFile": {
+    "message": "Seleziona il file da importare"
+  },
+  "chooseFile": {
+    "message": "Seleziona file"
+  },
+  "noFileChosen": {
+    "message": "Nessun file selezionato"
+  },
+  "orCopyPasteFileContents": {
+    "message": "oppure copia e incolla il contenuto del file da importare"
+  },
+  "instructionsFor": {
+    "message": "Istruzioni per $NAME$",
+    "description": "The title for the import tool instructions.",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "LastPass (csv)"
+      }
+    }
+  },
+  "confirmVaultImport": {
+    "message": "Conferma importazione della cassaforte"
+  },
+  "confirmVaultImportDesc": {
+    "message": "Questo file è protetto da password. Inserisci la password del file per importare i dati."
+  },
+  "confirmFilePassword": {
+    "message": "Conferma password del file"
   }
 }

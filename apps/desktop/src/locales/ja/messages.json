@@ -1662,6 +1662,9 @@
   "personalOwnershipPolicyInEffect": {
     "message": "組織のポリシーは、所有者のオプションに影響を与えています。"
   },
+  "personalOwnershipPolicyInEffectImports": {
+    "message": "組織のポリシーにより、個々の保管庫へのアイテムのインポートがブロックされました。"
+  },
   "allSends": {
     "message": "すべての Send",
     "description": "'Sends' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
@@ -2416,7 +2419,124 @@
   "submenu": {
     "message": "サブメニュー"
   },
+  "typePasskey": {
+    "message": "パスキー"
+  },
+  "passkeyNotCopied": {
+    "message": "パスキーはコピーされません"
+  },
+  "passkeyNotCopiedAlert": {
+    "message": "パスキーは複製されたアイテムにコピーされません。このアイテムを複製しますか？"
+  },
   "aliasDomain": {
     "message": "エイリアスドメイン"
+  },
+  "importData": {
+    "message": "データのインポート",
+    "description": "Used for the desktop menu item and the header of the import dialog"
+  },
+  "importError": {
+    "message": "インポート エラー"
+  },
+  "importErrorDesc": {
+    "message": "インポートしようとしたデータに問題がありました。以下のエラーをソースファイルで解決し、もう一度やり直してください。"
+  },
+  "resolveTheErrorsBelowAndTryAgain": {
+    "message": "以下のエラーを解決してやり直してください。"
+  },
+  "description": {
+    "message": "説明"
+  },
+  "importSuccess": {
+    "message": "データをインポートしました"
+  },
+  "importSuccessNumberOfItems": {
+    "message": "合計 $AMOUNT$ 件のアイテムをインポートしました。",
+    "placeholders": {
+      "amount": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "total": {
+    "message": "合計"
+  },
+  "importWarning": {
+    "message": "$ORGANIZATION$にデータをインポートしています。データはこの組織のメンバーと共有される可能性があります。続行しますか？",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "importFormatError": {
+    "message": "データが正しい形式ではありません。インポートするファイルを確認してやり直してください。"
+  },
+  "importNothingError": {
+    "message": "何もインポートされませんでした。"
+  },
+  "importEncKeyError": {
+    "message": "エクスポートされたファイルの復号でエラーが発生しました。暗号化キーが、データをエクスポートするために使用された暗号化キーと一致しません。"
+  },
+  "importDestination": {
+    "message": "インポート先"
+  },
+  "learnAboutImportOptions": {
+    "message": "インポートオプションの詳細"
+  },
+  "selectImportFolder": {
+    "message": "フォルダーを選択"
+  },
+  "selectImportCollection": {
+    "message": "コレクションを選択"
+  },
+  "importTargetHint": {
+    "message": "インポートしたファイルコンテンツを $DESTINATION$ に移動したい場合は、このオプションを選択してください。",
+    "description": "Located as a hint under the import target. Will be appended by either folder or collection, depending if the user is importing into an individual or an organizational vault.",
+    "placeholders": {
+      "destination": {
+        "content": "$1",
+        "example": "folder or collection"
+      }
+    }
+  },
+  "importUnassignedItemsError": {
+    "message": "割り当てられていないアイテムがファイルに含まれています。"
+  },
+  "selectFormat": {
+    "message": "インポートするファイルの形式を選択"
+  },
+  "selectImportFile": {
+    "message": "インポートするファイルを選択"
+  },
+  "chooseFile": {
+    "message": "ファイルを選択"
+  },
+  "noFileChosen": {
+    "message": "ファイルが選択されていません"
+  },
+  "orCopyPasteFileContents": {
+    "message": "またはインポートするファイルの中身をコピーして貼り付け"
+  },
+  "instructionsFor": {
+    "message": "$NAME$ 向けの説明",
+    "description": "The title for the import tool instructions.",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "LastPass (csv)"
+      }
+    }
+  },
+  "confirmVaultImport": {
+    "message": "保管庫のインポートの確認"
+  },
+  "confirmVaultImportDesc": {
+    "message": "このファイルはパスワードで保護されています。インポートするファイルのパスワードを入力してください。"
+  },
+  "confirmFilePassword": {
+    "message": "ファイルパスワードの確認"
   }
 }

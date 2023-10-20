@@ -1662,6 +1662,9 @@
   "personalOwnershipPolicyInEffect": {
     "message": "Zasada organizacji ma wpływ na opcję własności elementów."
   },
+  "personalOwnershipPolicyInEffectImports": {
+    "message": "Polityka organizacji zablokowała importowanie elementów do Twojego sejfu."
+  },
   "allSends": {
     "message": "Wszystkie wysyłki",
     "description": "'Sends' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
@@ -2416,7 +2419,124 @@
   "submenu": {
     "message": "Podmenu"
   },
+  "typePasskey": {
+    "message": "Passkey"
+  },
+  "passkeyNotCopied": {
+    "message": "Passkey nie zostanie skopiowany"
+  },
+  "passkeyNotCopiedAlert": {
+    "message": "Passkey nie zostanie skopiowane do sklonowanego elementu. Czy chcesz kontynuować klonowanie tego elementu?"
+  },
   "aliasDomain": {
     "message": "Domena aliasu"
+  },
+  "importData": {
+    "message": "Importuj dane",
+    "description": "Used for the desktop menu item and the header of the import dialog"
+  },
+  "importError": {
+    "message": "Błąd importu"
+  },
+  "importErrorDesc": {
+    "message": "Wystąpił problem z danymi, które chcesz zaimportować. Rozwiąż poniższe problemy w Twoim pliku i spróbuj ponownie."
+  },
+  "resolveTheErrorsBelowAndTryAgain": {
+    "message": "Rozwiąż poniższe błędy i spróbuj ponownie."
+  },
+  "description": {
+    "message": "Opis"
+  },
+  "importSuccess": {
+    "message": "Importowanie danych zakończone sukcesem"
+  },
+  "importSuccessNumberOfItems": {
+    "message": "Zaimportowano elementów: $AMOUNT$.",
+    "placeholders": {
+      "amount": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "total": {
+    "message": "Łącznie"
+  },
+  "importWarning": {
+    "message": "Importujesz dane do organizacji $ORGANIZATION$. Dane mogą zostać udostępnione członkom organizacji. Czy chcesz kontynuować?",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "importFormatError": {
+    "message": "Dane nie są poprawnie sformatowane. Sprawdź importowany plik i spróbuj ponownie."
+  },
+  "importNothingError": {
+    "message": "Nic nie zostało zaimportowane."
+  },
+  "importEncKeyError": {
+    "message": "Wystąpił błąd podczas odszyfrowywania pliku. Klucz szyfrowania nie pasuje do klucza użytego podczas eksportowania danych."
+  },
+  "importDestination": {
+    "message": "Miejsce docelowe importu"
+  },
+  "learnAboutImportOptions": {
+    "message": "Dowiedz się więcej o opcjach importu"
+  },
+  "selectImportFolder": {
+    "message": "Wybierz folder"
+  },
+  "selectImportCollection": {
+    "message": "Wybierz kolekcję"
+  },
+  "importTargetHint": {
+    "message": "Wybierz tę opcję, jeśli chcesz, aby zawartość zaimportowanego pliku została przeniesiona do $DESTINATION$",
+    "description": "Located as a hint under the import target. Will be appended by either folder or collection, depending if the user is importing into an individual or an organizational vault.",
+    "placeholders": {
+      "destination": {
+        "content": "$1",
+        "example": "folder or collection"
+      }
+    }
+  },
+  "importUnassignedItemsError": {
+    "message": "Plik zawiera nieprzypisane elementy."
+  },
+  "selectFormat": {
+    "message": "Wybierz format importowanego pliku"
+  },
+  "selectImportFile": {
+    "message": "Wybierz plik do zaimportowania"
+  },
+  "chooseFile": {
+    "message": "Wybierz plik"
+  },
+  "noFileChosen": {
+    "message": "Nie wybrano pliku"
+  },
+  "orCopyPasteFileContents": {
+    "message": "lub skopiuj/wklej treść pliku"
+  },
+  "instructionsFor": {
+    "message": "Instrukcja dla $NAME$",
+    "description": "The title for the import tool instructions.",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "LastPass (csv)"
+      }
+    }
+  },
+  "confirmVaultImport": {
+    "message": "Potwierdź importowanie sejfu"
+  },
+  "confirmVaultImportDesc": {
+    "message": "Plik jest chroniony hasłem. Wprowadź hasło pliku, aby zaimportować dane."
+  },
+  "confirmFilePassword": {
+    "message": "Potwierdź hasło pliku"
   }
 }

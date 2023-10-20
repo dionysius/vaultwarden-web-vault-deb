@@ -395,7 +395,7 @@
     "message": "Ievietot paroli starpliktuvē"
   },
   "copyUri": {
-    "message": "Ievietot URI starpliktuvē"
+    "message": "Ievietot vietrādi starpliktuvē"
   },
   "copyVerificationCodeTotp": {
     "message": "Ievietot apstiprinājuma kodu (TOTP) starpliktuvē"
@@ -1597,7 +1597,7 @@
     "message": "Iespējot sasaistīšanu ar pārlūku"
   },
   "enableBrowserIntegrationDesc": {
-    "message": "Pārlūka saistīšana tiek izmantota pārlūka biometrijas nodrošināšanai."
+    "message": "Tiek izmantota biometrijai pārlūkā."
   },
   "enableDuckDuckGoBrowserIntegration": {
     "message": "Atļaut sasaistīšanu ar DuckDuckGo pārlūku"
@@ -1618,10 +1618,10 @@
     "message": "Diemžēl sasaistīšana ar pārlūku Linux laidienā pagaidām nav nodrošināta."
   },
   "enableBrowserIntegrationFingerprint": {
-    "message": "Pieprasīt apstiprinājumu sasaistīšanai ar pārlūku"
+    "message": "Pieprasīt apliecinājumu sasaistīšanai ar pārlūku"
   },
   "enableBrowserIntegrationFingerprintDesc": {
-    "message": "Iespējo papildu drošības slāni, pieprasot atpazīšanas vārdkopas pārbaudi, kad tiek izveidota saikne starp darbvirsmu un pārlūku. Ir nepieciešama lietotāja darbība un apstiprināšana katru reizi, kad tiek izveidots savienojums."
+    "message": "Iespējo papildu drošības slāni, pieprasot atpazīšanas vārdkopas pārbaudi, kad tiek izveidota saikne starp darbvirsmu un pārlūku. Ir nepieciešama lietotāja darbība un apliecināšana katru reizi, kad tiek izveidots savienojums."
   },
   "approve": {
     "message": "Apstiprināt"
@@ -1661,6 +1661,9 @@
   },
   "personalOwnershipPolicyInEffect": {
     "message": "Apvienības nosacījumi ietekmē Tavas īpašumtiesību iespējas."
+  },
+  "personalOwnershipPolicyInEffectImports": {
+    "message": "Apvienības nosacījums neļauj ievietot ārējos vienumus savā personīgajā glabātavā."
   },
   "allSends": {
     "message": "Visi Send",
@@ -2416,7 +2419,124 @@
   "submenu": {
     "message": "Apakšizvēlne"
   },
+  "typePasskey": {
+    "message": "Piekļuves atslēga"
+  },
+  "passkeyNotCopied": {
+    "message": "Piekļuves atslēga netiks ievietota starpliktuvē"
+  },
+  "passkeyNotCopiedAlert": {
+    "message": "Piekļuves atslēga netiks ievietota klonētajā vienumā. Vai turpināt šī vienuma klonēšanu?"
+  },
   "aliasDomain": {
     "message": "Aizstājdomēns"
+  },
+  "importData": {
+    "message": "Ievietot datus",
+    "description": "Used for the desktop menu item and the header of the import dialog"
+  },
+  "importError": {
+    "message": "Ievietošanas kļūda"
+  },
+  "importErrorDesc": {
+    "message": "Ir nepilnības ievietojamajos datos. Lūgums novērst zemāk uzskaitītās kļūdas avota datnē un mēģināt vēlreiz."
+  },
+  "resolveTheErrorsBelowAndTryAgain": {
+    "message": "Jāatrisina zemāk norādītās kļūdas un jāmēģina vēlreiz."
+  },
+  "description": {
+    "message": "Apraksts"
+  },
+  "importSuccess": {
+    "message": "Dati veiksmīgi ievietoti"
+  },
+  "importSuccessNumberOfItems": {
+    "message": "Kopumā tika ievietoti $AMOUNT$ vienumi.",
+    "placeholders": {
+      "amount": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "total": {
+    "message": "Kopā"
+  },
+  "importWarning": {
+    "message": "Tiek ievietoti dati apvienībā $ORGANIZATION$. Tie var tikt kopīgoti ar citiem apvienības dalībniekiem. Vai turpināt?",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "importFormatError": {
+    "message": "Dati nav pareizi formatēti. Lūgums pārbaudīt ievietošanas datni un mēģināt vēlreiz."
+  },
+  "importNothingError": {
+    "message": "Nekas netika ievietots."
+  },
+  "importEncKeyError": {
+    "message": "Kļūda izguves datnes atšifrēšanā. Izmantotā atslēga neatbilst tai, kas tika izmantota satura izgūšanai."
+  },
+  "importDestination": {
+    "message": "Ievietošanas galamērķis"
+  },
+  "learnAboutImportOptions": {
+    "message": "Uzzināt par ievietošanas iespējām"
+  },
+  "selectImportFolder": {
+    "message": "Atlasīt mapi"
+  },
+  "selectImportCollection": {
+    "message": "Atlasīt krājumu"
+  },
+  "importTargetHint": {
+    "message": "Šī iespēja jāatlasa, ja ir vēlēšanās ievietotās datnes saturu pārvietot uz $DESTINATION$",
+    "description": "Located as a hint under the import target. Will be appended by either folder or collection, depending if the user is importing into an individual or an organizational vault.",
+    "placeholders": {
+      "destination": {
+        "content": "$1",
+        "example": "folder or collection"
+      }
+    }
+  },
+  "importUnassignedItemsError": {
+    "message": "Datne satur nepiešķirtus vienumus."
+  },
+  "selectFormat": {
+    "message": "Atlasīt ievietošanas datnes veidolu"
+  },
+  "selectImportFile": {
+    "message": "Atlasīt ievietošanas datni"
+  },
+  "chooseFile": {
+    "message": "Izvēlēties datni"
+  },
+  "noFileChosen": {
+    "message": "Nav izvēlēta neviena datne"
+  },
+  "orCopyPasteFileContents": {
+    "message": "vai ievietot starpliktuvē un ielīmēt ievietošanas datnes saturu"
+  },
+  "instructionsFor": {
+    "message": "Norādījumi $NAME$",
+    "description": "The title for the import tool instructions.",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "LastPass (csv)"
+      }
+    }
+  },
+  "confirmVaultImport": {
+    "message": "Apstiprināt glabātavas satura ievietošanu"
+  },
+  "confirmVaultImportDesc": {
+    "message": "Šī datne ir aizsargāta ar paroli. Lūgums ievadīt datnes paroli, lai ievietotu datus."
+  },
+  "confirmFilePassword": {
+    "message": "Apstiprināt datnes paroli"
   }
 }

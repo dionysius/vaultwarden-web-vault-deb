@@ -1662,6 +1662,9 @@
   "personalOwnershipPolicyInEffect": {
     "message": "A szervezeti házirend befolyásolja a tulajdonosi opciókat."
   },
+  "personalOwnershipPolicyInEffectImports": {
+    "message": "A szervezeti politika blokkolta az elemek importálását az egyedi széfbe."
+  },
   "allSends": {
     "message": "Összes küldés",
     "description": "'Sends' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
@@ -2416,7 +2419,124 @@
   "submenu": {
     "message": "Almenü"
   },
+  "typePasskey": {
+    "message": "Hozzáférési kulcs"
+  },
+  "passkeyNotCopied": {
+    "message": "A hozzáférési kulcs nem kerül másolásra."
+  },
+  "passkeyNotCopiedAlert": {
+    "message": "A hozzáférési kulcs nem kerül másolásra a klónozott elembe. Folytatjuk ennek az elemnek a klónozását?"
+  },
   "aliasDomain": {
     "message": "Áldomain"
+  },
+  "importData": {
+    "message": "Adatok importálása",
+    "description": "Used for the desktop menu item and the header of the import dialog"
+  },
+  "importError": {
+    "message": "Importálási hiba"
+  },
+  "importErrorDesc": {
+    "message": "Probléma merült fel az importálni próbált adatokkal. Oldjuk fel a forrásfájlban alább felsorolt hibákat és próbáljuk újra."
+  },
+  "resolveTheErrorsBelowAndTryAgain": {
+    "message": "Oldjuk fel a hibákat lentebb és próbáljuk újra."
+  },
+  "description": {
+    "message": "Leírás"
+  },
+  "importSuccess": {
+    "message": "Az adatok sikeresen importálásra kerültek."
+  },
+  "importSuccessNumberOfItems": {
+    "message": "Összesen $AMOUNT$ elem lett importálva.",
+    "placeholders": {
+      "amount": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "total": {
+    "message": "Összesen"
+  },
+  "importWarning": {
+    "message": "Adatokat importálunk $ORGANIZATION$ fájlba. Az adatok megosztásra kerülhetnek a szervezet tagjaival. Folytatni akarjuk?",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "importFormatError": {
+    "message": "Az adatok nincsenek megfelelően formázva. Ellenőrizzük az importálás fájlt és próbáljuk újra."
+  },
+  "importNothingError": {
+    "message": "Semmi nem lett importálva."
+  },
+  "importEncKeyError": {
+    "message": "Hiba történt az exportált fájl visszafejtése során. A titkosítási kulcs nem egyezik meg az adatok exportálásához használt titkosítási kulccsal."
+  },
+  "importDestination": {
+    "message": "Importálás leírás"
+  },
+  "learnAboutImportOptions": {
+    "message": "Információ az importálási opciókról"
+  },
+  "selectImportFolder": {
+    "message": "Mappa kiválasztása"
+  },
+  "selectImportCollection": {
+    "message": "Gyűjtemény kiválasztása"
+  },
+  "importTargetHint": {
+    "message": "Válasszuk ezt a lehetőséget, ha azt akarjuk, hogy az importált fájl tartalma $DESTINATION$ helyre kerüljön",
+    "description": "Located as a hint under the import target. Will be appended by either folder or collection, depending if the user is importing into an individual or an organizational vault.",
+    "placeholders": {
+      "destination": {
+        "content": "$1",
+        "example": "folder or collection"
+      }
+    }
+  },
+  "importUnassignedItemsError": {
+    "message": "A fájl hozzá nem rendelt elemeket tartalmaz."
+  },
+  "selectFormat": {
+    "message": "Válasszuk ki az importáló fájl formátumát"
+  },
+  "selectImportFile": {
+    "message": "Válasszuk ki az import fájlt"
+  },
+  "chooseFile": {
+    "message": "Fájl kiválasztása"
+  },
+  "noFileChosen": {
+    "message": "Nincs kiválasztott fájl."
+  },
+  "orCopyPasteFileContents": {
+    "message": "vagy vágólapon vigyük be fájl tartalmat"
+  },
+  "instructionsFor": {
+    "message": "$NAME$ utasítások",
+    "description": "The title for the import tool instructions.",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "LastPass (csv)"
+      }
+    }
+  },
+  "confirmVaultImport": {
+    "message": "Széf importálás megerősítése"
+  },
+  "confirmVaultImportDesc": {
+    "message": "Ez a fájl jelszóval védett. Adjuk meg a fájl jelszót az adatok importálásához."
+  },
+  "confirmFilePassword": {
+    "message": "Fájl jelszó megerősítés"
   }
 }

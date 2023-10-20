@@ -1662,6 +1662,9 @@
   "personalOwnershipPolicyInEffect": {
     "message": "En organisationspolitik påvirker dine ejerskabsmuligheder."
   },
+  "personalOwnershipPolicyInEffectImports": {
+    "message": "En organisationspolitik hindrer import af emner til den personlige boks."
+  },
   "allSends": {
     "message": "Alle Send",
     "description": "'Sends' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
@@ -2416,7 +2419,124 @@
   "submenu": {
     "message": "Undermenu"
   },
+  "typePasskey": {
+    "message": "Adgangsnøgle"
+  },
+  "passkeyNotCopied": {
+    "message": "Adgangsnøglen kopieres ikke"
+  },
+  "passkeyNotCopiedAlert": {
+    "message": "Adgangsnøglen kopieres ikke til det klonede emne. Fortsæt kloningen af emnet alligevel?"
+  },
   "aliasDomain": {
     "message": "Aliasdomæne"
+  },
+  "importData": {
+    "message": "Dataimport",
+    "description": "Used for the desktop menu item and the header of the import dialog"
+  },
+  "importError": {
+    "message": "Importfejl"
+  },
+  "importErrorDesc": {
+    "message": "Der var et problem med de data, som blev forsøgt importeret. Ret nedenstående fejl i kildefilen, og forsøg igen."
+  },
+  "resolveTheErrorsBelowAndTryAgain": {
+    "message": "Ret fejlene nedenfor og forsøg igen."
+  },
+  "description": {
+    "message": "Beskriveslse"
+  },
+  "importSuccess": {
+    "message": "Data er hermed importeret"
+  },
+  "importSuccessNumberOfItems": {
+    "message": "I alt $AMOUNT$ emner blev importeret.",
+    "placeholders": {
+      "amount": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "total": {
+    "message": "I alt"
+  },
+  "importWarning": {
+    "message": "Data, som kan blive delt med organisationsmedlemmerne, er ved at blive importeret til $ORGANIZATION$. Fortsæt?",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "importFormatError": {
+    "message": "Data er ikke korrekt formateret. Tjek importfilen og forsøg igen."
+  },
+  "importNothingError": {
+    "message": "Intet blev importeret."
+  },
+  "importEncKeyError": {
+    "message": "Fejl under dekryptering af eksporteret fil. Krypteringsnøglen matcher ikke den til dataeksporten anvendte krypteringsnøgle."
+  },
+  "importDestination": {
+    "message": "Importdestination"
+  },
+  "learnAboutImportOptions": {
+    "message": "Læs om importmuligheder"
+  },
+  "selectImportFolder": {
+    "message": "Vælg en mappe"
+  },
+  "selectImportCollection": {
+    "message": "Vælg en samling"
+  },
+  "importTargetHint": {
+    "message": "Vælg denne indstilling, hvis importeret filindhold skal flyttet til en $DESTINATION$",
+    "description": "Located as a hint under the import target. Will be appended by either folder or collection, depending if the user is importing into an individual or an organizational vault.",
+    "placeholders": {
+      "destination": {
+        "content": "$1",
+        "example": "folder or collection"
+      }
+    }
+  },
+  "importUnassignedItemsError": {
+    "message": "Fil indeholder ikke-tildelte emner."
+  },
+  "selectFormat": {
+    "message": "Vælg formatet for importfilen"
+  },
+  "selectImportFile": {
+    "message": "Vælg importfil"
+  },
+  "chooseFile": {
+    "message": "Vælg fil"
+  },
+  "noFileChosen": {
+    "message": "Ingen fil valgt"
+  },
+  "orCopyPasteFileContents": {
+    "message": "eller kopiér/indsæt importfilens indhold"
+  },
+  "instructionsFor": {
+    "message": "$NAME$-vejledning",
+    "description": "The title for the import tool instructions.",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "LastPass (csv)"
+      }
+    }
+  },
+  "confirmVaultImport": {
+    "message": "Bekræft Boks-import"
+  },
+  "confirmVaultImportDesc": {
+    "message": "Denne fil er adgangskodebeskyttet. Angiv filadgangskoden for at importere data."
+  },
+  "confirmFilePassword": {
+    "message": "Bekræft filadgangskode"
   }
 }

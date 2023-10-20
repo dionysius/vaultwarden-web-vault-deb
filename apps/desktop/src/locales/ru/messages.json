@@ -1344,7 +1344,7 @@
     "message": "Ключи шифрования уникальны для каждой учетной записи Bitwarden, поэтому нельзя импортировать зашифрованное хранилище в другой аккаунт."
   },
   "noOrganizationsList": {
-    "message": "Вы не являетесь членом какой-либо организации. Организации позволяют безопасно обмениваться элементами с другими пользователями."
+    "message": "Вы не являетесь участником какой-либо организации. Организации позволяют безопасно обмениваться элементами с другими пользователями."
   },
   "noCollectionsInList": {
     "message": "Нет коллекций для отображения."
@@ -1662,6 +1662,9 @@
   "personalOwnershipPolicyInEffect": {
     "message": "Политика организации влияет на ваши варианты владения."
   },
+  "personalOwnershipPolicyInEffectImports": {
+    "message": "Импорт элементов в ваше личное хранилище отключен политикой организации."
+  },
   "allSends": {
     "message": "Все Send’ы",
     "description": "'Sends' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
@@ -1928,7 +1931,7 @@
     "message": "Мастер-пароль удален."
   },
   "convertOrganizationEncryptionDesc": {
-    "message": "$ORGANIZATION$ использует SSO с собственным сервером ключей. Для авторизации членам этой организации больше не требуется мастер-пароль.",
+    "message": "$ORGANIZATION$ использует SSO с собственным сервером ключей. Для авторизации пользователям этой организации больше не требуется мастер-пароль.",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -2416,7 +2419,124 @@
   "submenu": {
     "message": "Подменю"
   },
+  "typePasskey": {
+    "message": "Ключ доступа"
+  },
+  "passkeyNotCopied": {
+    "message": "Ключ доступа не будет скопирован"
+  },
+  "passkeyNotCopiedAlert": {
+    "message": "Ключ доступа не будет скопирован в клонированный элемент. Продолжить клонирование этого элемента?"
+  },
   "aliasDomain": {
     "message": "Псевдоним домена"
+  },
+  "importData": {
+    "message": "Импорт данных",
+    "description": "Used for the desktop menu item and the header of the import dialog"
+  },
+  "importError": {
+    "message": "Ошибка импорта"
+  },
+  "importErrorDesc": {
+    "message": "Возникла проблема с данными, которые вы пытались импортировать. Исправьте в исходном файле перечисленные ниже ошибки и попробуйте еще раз."
+  },
+  "resolveTheErrorsBelowAndTryAgain": {
+    "message": "Устраните указанные ниже ошибки и повторите попытку."
+  },
+  "description": {
+    "message": "Описание"
+  },
+  "importSuccess": {
+    "message": "Данные успешно импортированы"
+  },
+  "importSuccessNumberOfItems": {
+    "message": "Всего импортировано элементов: $AMOUNT$.",
+    "placeholders": {
+      "amount": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "total": {
+    "message": "Всего"
+  },
+  "importWarning": {
+    "message": "Вы импортируете данные в $ORGANIZATION$. Пользователи этой организации могут получить к ним доступ. Продолжить?",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "importFormatError": {
+    "message": "Формат данных некорректен. Проверьте файл импорта и повторите попытку."
+  },
+  "importNothingError": {
+    "message": "Ничего не импортировано."
+  },
+  "importEncKeyError": {
+    "message": "Ошибка при расшифровке экспортированного файла. Ваш ключ шифрования не совпадает с ключом шифрования, использованным при экспорте данных."
+  },
+  "importDestination": {
+    "message": "Цель импорта"
+  },
+  "learnAboutImportOptions": {
+    "message": "Узнайте о возможностях импорта"
+  },
+  "selectImportFolder": {
+    "message": "Выберите папку"
+  },
+  "selectImportCollection": {
+    "message": "Выберите коллекцию"
+  },
+  "importTargetHint": {
+    "message": "Выберите эту опцию, если хотите, чтобы содержимое импортированного файла было перемещено в $DESTINATION$",
+    "description": "Located as a hint under the import target. Will be appended by either folder or collection, depending if the user is importing into an individual or an organizational vault.",
+    "placeholders": {
+      "destination": {
+        "content": "$1",
+        "example": "folder or collection"
+      }
+    }
+  },
+  "importUnassignedItemsError": {
+    "message": "Файл содержит неназначенные элементы."
+  },
+  "selectFormat": {
+    "message": "Выберите формат файла импорта"
+  },
+  "selectImportFile": {
+    "message": "Выберите файл импорта"
+  },
+  "chooseFile": {
+    "message": "Выбрать файл"
+  },
+  "noFileChosen": {
+    "message": "Файл не выбран"
+  },
+  "orCopyPasteFileContents": {
+    "message": "или скопируйте и вставьте содержимое файла импорта"
+  },
+  "instructionsFor": {
+    "message": "Инструкции для $NAME$",
+    "description": "The title for the import tool instructions.",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "LastPass (csv)"
+      }
+    }
+  },
+  "confirmVaultImport": {
+    "message": "Подтвердите импорт хранилища"
+  },
+  "confirmVaultImportDesc": {
+    "message": "Этот файл защищен паролем. Введите пароль для импорта данных."
+  },
+  "confirmFilePassword": {
+    "message": "Подтвердите пароль к файлу"
   }
 }
