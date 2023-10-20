@@ -30,7 +30,7 @@ import { SecureNoteView } from "@bitwarden/common/vault/models/view/secure-note.
 import { DialogService } from "@bitwarden/components";
 import { PasswordRepromptService } from "@bitwarden/vault";
 
-import { BrowserApi } from "../../../../platform/browser/browser-api";
+import { ZonedMessageListenerService } from "../../../../platform/browser/zoned-message-listener.service";
 import {
   BrowserFido2Message,
   BrowserFido2UserInterfaceSession,
@@ -78,7 +78,8 @@ export class Fido2Component implements OnInit, OnDestroy {
     private settingsService: SettingsService,
     private searchService: SearchService,
     private logService: LogService,
-    private dialogService: DialogService
+    private dialogService: DialogService,
+    private browserMessagingApi: ZonedMessageListenerService
   ) {}
 
   ngOnInit() {
@@ -93,7 +94,10 @@ export class Fido2Component implements OnInit, OnDestroy {
       }))
     );
 
-    combineLatest([queryParams$, BrowserApi.messageListener$() as Observable<BrowserFido2Message>])
+    combineLatest([
+      queryParams$,
+      this.browserMessagingApi.messageListener$() as Observable<BrowserFido2Message>,
+    ])
       .pipe(
         concatMap(async ([queryParams, message]) => {
           this.sessionId = queryParams.sessionId;
