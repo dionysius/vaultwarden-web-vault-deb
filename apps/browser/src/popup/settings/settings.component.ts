@@ -474,10 +474,7 @@ export class SettingsComponent implements OnInit {
   }
 
   async import() {
-    await this.router.navigate(["/import"]);
-    if (await BrowserApi.isPopupOpen()) {
-      this.popupUtilsService.popOut(window);
-    }
+    this.router.navigate(["/import"]);
   }
 
   export() {

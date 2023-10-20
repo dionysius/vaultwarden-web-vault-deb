@@ -344,7 +344,7 @@
       and save the zip file.
     </ng-container>
   </bit-callout>
-  <bit-form-field>
+  <bit-form-field *ngIf="!hideFileSelector">
     <bit-label>{{ "selectImportFile" | i18n }}</bit-label>
     <div class="file-selector">
       <button bitButton type="button" buttonType="secondary" (click)="fileSelector.click()">
