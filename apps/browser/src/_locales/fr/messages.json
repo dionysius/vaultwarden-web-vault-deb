@@ -1253,6 +1253,9 @@
   "typeIdentity": {
     "message": "Identité"
   },
+  "typePasskey": {
+    "message": "Clé d'accès"
+  },
   "passwordHistory": {
     "message": "Historique des mots de passe"
   },
@@ -1652,6 +1655,9 @@
   },
   "personalOwnershipPolicyInEffect": {
     "message": "Une politique d'organisation affecte vos options de propriété."
+  },
+  "personalOwnershipPolicyInEffectImports": {
+    "message": "An organization policy has blocked importing items into your individual vault."
   },
   "excludedDomains": {
     "message": "Domaines exclus"
@@ -2445,5 +2451,164 @@
   "turnOffMasterPasswordPromptToEditField": {
     "message": "Désactivez la resaisie du mot de passe maître pour éditer ce champ",
     "description": "Message appearing below the autofill on load message when master password reprompt is set for a vault item."
+  },
+  "importData": {
+    "message": "Import data",
+    "description": "Used for the header of the import dialog, the import button and within the file-password-prompt"
+  },
+  "importError": {
+    "message": "Import error"
+  },
+  "importErrorDesc": {
+    "message": "There was a problem with the data you tried to import. Please resolve the errors listed below in your source file and try again."
+  },
+  "resolveTheErrorsBelowAndTryAgain": {
+    "message": "Resolve the errors below and try again."
+  },
+  "description": {
+    "message": "Description"
+  },
+  "importSuccess": {
+    "message": "Data successfully imported"
+  },
+  "importSuccessNumberOfItems": {
+    "message": "A total of $AMOUNT$ items were imported.",
+    "placeholders": {
+      "amount": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "total": {
+    "message": "Total"
+  },
+  "importWarning": {
+    "message": "You are importing data to $ORGANIZATION$. Your data may be shared with members of this organization. Do you want to proceed?",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "importFormatError": {
+    "message": "Data is not formatted correctly. Please check your import file and try again."
+  },
+  "importNothingError": {
+    "message": "Nothing was imported."
+  },
+  "importEncKeyError": {
+    "message": "Error decrypting the exported file. Your encryption key does not match the encryption key used export the data."
+  },
+  "importDestination": {
+    "message": "Import destination"
+  },
+  "learnAboutImportOptions": {
+    "message": "Learn about your import options"
+  },
+  "selectImportFolder": {
+    "message": "Select a folder"
+  },
+  "selectImportCollection": {
+    "message": "Select a collection"
+  },
+  "importTargetHint": {
+    "message": "Select this option if you want the imported file contents moved to a $DESTINATION$",
+    "description": "Located as a hint under the import target. Will be appended by either folder or collection, depending if the user is importing into an individual or an organizational vault.",
+    "placeholders": {
+      "destination": {
+        "content": "$1",
+        "example": "folder or collection"
+      }
+    }
+  },
+  "importUnassignedItemsError": {
+    "message": "File contains unassigned items."
+  },
+  "selectFormat": {
+    "message": "Select the format of the import file"
+  },
+  "selectImportFile": {
+    "message": "Select the import file"
+  },
+  "chooseFile": {
+    "message": "Choose File"
+  },
+  "noFileChosen": {
+    "message": "No file chosen"
+  },
+  "orCopyPasteFileContents": {
+    "message": "or copy/paste the import file contents"
+  },
+  "instructionsFor": {
+    "message": "$NAME$ Instructions",
+    "description": "The title for the import tool instructions.",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "LastPass (csv)"
+      }
+    }
+  },
+  "confirmVaultImport": {
+    "message": "Confirm vault import"
+  },
+  "confirmVaultImportDesc": {
+    "message": "This file is password-protected. Please enter the file password to import data."
+  },
+  "confirmFilePassword": {
+    "message": "Confirm file password"
+  },
+  "passkeyNotCopied": {
+    "message": "La clé d'accès ne sera pas copiée"
+  },
+  "passkeyNotCopiedAlert": {
+    "message": "La clé d'accès ne sera pas présente sur l'entrée clonée. Continuer quand même ?"
+  },
+  "passkeyFeatureIsNotImplementedForAccountsWithoutMasterPassword": {
+    "message": "Le site requiert une vérification qui n'est pas supportée pour les comptes sans mot de passe maître."
+  },
+  "logInWithPasskey": {
+    "message": "Se connecter avec une clé d'accès ?"
+  },
+  "passkeyAlreadyExists": {
+    "message": "Une clé d'accès existe déjà pour cette application."
+  },
+  "noPasskeysFoundForThisApplication": {
+    "message": "Aucune clé d'accès trouvée pour cette application."
+  },
+  "noMatchingPasskeyLogin": {
+    "message": "Vous n'avez aucun élément correspondant à ce site."
+  },
+  "confirm": {
+    "message": "Confirmer"
+  },
+  "savePasskey": {
+    "message": "Enregistrer la clé d'accès"
+  },
+  "savePasskeyNewLogin": {
+    "message": "Enregistrer comme nouvel élément"
+  },
+  "choosePasskey": {
+    "message": "Choisissez l'élément à associer à la clé d'accès"
+  },
+  "passkeyItem": {
+    "message": "Élément avec clé d'accès"
+  },
+  "overwritePasskey": {
+    "message": "Écraser la clé d'accès existante ?"
+  },
+  "overwritePasskeyAlert": {
+    "message": "Cet élément contient déjà une clé d'accès. Voulez-vous vraiment l'écraser ?"
+  },
+  "featureNotSupported": {
+    "message": "Fonctionnalité non supportée"
+  },
+  "yourPasskeyIsLocked": {
+    "message": "Authentification requise pour utiliser cette clé d'accès. Veuillez vérifier votre identité pour continuer."
+  },
+  "useBrowserName": {
+    "message": "Utiliser le navigateur"
   }
 }

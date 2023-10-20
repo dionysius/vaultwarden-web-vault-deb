@@ -1253,6 +1253,9 @@
   "typeIdentity": {
     "message": "Személyazonosság"
   },
+  "typePasskey": {
+    "message": "Hozzáférési kulcs"
+  },
   "passwordHistory": {
     "message": "Jelszó előzmények"
   },
@@ -1652,6 +1655,9 @@
   },
   "personalOwnershipPolicyInEffect": {
     "message": "A szervezeti házirend befolyásolja a tulajdonosi opciókat."
+  },
+  "personalOwnershipPolicyInEffectImports": {
+    "message": "An organization policy has blocked importing items into your individual vault."
   },
   "excludedDomains": {
     "message": "Kizárt domainek"
@@ -2445,5 +2451,164 @@
   "turnOffMasterPasswordPromptToEditField": {
     "message": "Kapcsoljuk ki a mesterjelszó újbóli bekérését a mező szerkesztéséhez.",
     "description": "Message appearing below the autofill on load message when master password reprompt is set for a vault item."
+  },
+  "importData": {
+    "message": "Import data",
+    "description": "Used for the header of the import dialog, the import button and within the file-password-prompt"
+  },
+  "importError": {
+    "message": "Import error"
+  },
+  "importErrorDesc": {
+    "message": "There was a problem with the data you tried to import. Please resolve the errors listed below in your source file and try again."
+  },
+  "resolveTheErrorsBelowAndTryAgain": {
+    "message": "Resolve the errors below and try again."
+  },
+  "description": {
+    "message": "Description"
+  },
+  "importSuccess": {
+    "message": "Data successfully imported"
+  },
+  "importSuccessNumberOfItems": {
+    "message": "A total of $AMOUNT$ items were imported.",
+    "placeholders": {
+      "amount": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "total": {
+    "message": "Total"
+  },
+  "importWarning": {
+    "message": "You are importing data to $ORGANIZATION$. Your data may be shared with members of this organization. Do you want to proceed?",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "importFormatError": {
+    "message": "Data is not formatted correctly. Please check your import file and try again."
+  },
+  "importNothingError": {
+    "message": "Nothing was imported."
+  },
+  "importEncKeyError": {
+    "message": "Error decrypting the exported file. Your encryption key does not match the encryption key used export the data."
+  },
+  "importDestination": {
+    "message": "Import destination"
+  },
+  "learnAboutImportOptions": {
+    "message": "Learn about your import options"
+  },
+  "selectImportFolder": {
+    "message": "Select a folder"
+  },
+  "selectImportCollection": {
+    "message": "Select a collection"
+  },
+  "importTargetHint": {
+    "message": "Select this option if you want the imported file contents moved to a $DESTINATION$",
+    "description": "Located as a hint under the import target. Will be appended by either folder or collection, depending if the user is importing into an individual or an organizational vault.",
+    "placeholders": {
+      "destination": {
+        "content": "$1",
+        "example": "folder or collection"
+      }
+    }
+  },
+  "importUnassignedItemsError": {
+    "message": "File contains unassigned items."
+  },
+  "selectFormat": {
+    "message": "Select the format of the import file"
+  },
+  "selectImportFile": {
+    "message": "Select the import file"
+  },
+  "chooseFile": {
+    "message": "Choose File"
+  },
+  "noFileChosen": {
+    "message": "No file chosen"
+  },
+  "orCopyPasteFileContents": {
+    "message": "or copy/paste the import file contents"
+  },
+  "instructionsFor": {
+    "message": "$NAME$ Instructions",
+    "description": "The title for the import tool instructions.",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "LastPass (csv)"
+      }
+    }
+  },
+  "confirmVaultImport": {
+    "message": "Confirm vault import"
+  },
+  "confirmVaultImportDesc": {
+    "message": "This file is password-protected. Please enter the file password to import data."
+  },
+  "confirmFilePassword": {
+    "message": "Confirm file password"
+  },
+  "passkeyNotCopied": {
+    "message": "A hozzáférési kulcs nem kerül másolásra."
+  },
+  "passkeyNotCopiedAlert": {
+    "message": "A hozzáférési kulcs nem kerül másolásra a klónozott elembe. Folytatjuk ennek az elemnek a klónozását?"
+  },
+  "passkeyFeatureIsNotImplementedForAccountsWithoutMasterPassword": {
+    "message": "A kezdeményező hely által megkövetelt ellenőrzés. Ez a szolgáltatás még nincs megvalósítva mesterjelszó nélküli fiókok esetén."
+  },
+  "logInWithPasskey": {
+    "message": "Bejelentkezés hozzáférési kulccsal?"
+  },
+  "passkeyAlreadyExists": {
+    "message": "Az alkalmazáshoz már létezik hozzáférési kulcs."
+  },
+  "noPasskeysFoundForThisApplication": {
+    "message": "Az alkalmazáshoz nem található hozzáférési kulcs."
+  },
+  "noMatchingPasskeyLogin": {
+    "message": "Nincs megfelelő bejelentkezés ehhez a webhelyhez."
+  },
+  "confirm": {
+    "message": "Megerősítés"
+  },
+  "savePasskey": {
+    "message": "Hozzáférési kulcs mentése"
+  },
+  "savePasskeyNewLogin": {
+    "message": "Hozzáférési kulcs mentése új bejelentkezésként"
+  },
+  "choosePasskey": {
+    "message": "Bejelentkezés választás a hozzáférési kulcs mentéséhez"
+  },
+  "passkeyItem": {
+    "message": "Hozzáférési kulcs elem"
+  },
+  "overwritePasskey": {
+    "message": "Bejelentkezési kulcs felülírása?"
+  },
+  "overwritePasskeyAlert": {
+    "message": "Ez az elem már tartalmaz egy hozzáférési kulcsot. Biztosan felülírásra kerüljön az aktuális hozzáférési kulcs?"
+  },
+  "featureNotSupported": {
+    "message": "Nem támogatott funkció"
+  },
+  "yourPasskeyIsLocked": {
+    "message": "A hozzáférési kulcs használatához hitelesítés szükséges. A személyazonosság ellenőrzése szükséges a folytatáshoz."
+  },
+  "useBrowserName": {
+    "message": "Böngésző használata"
   }
 }

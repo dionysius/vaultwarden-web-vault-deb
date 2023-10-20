@@ -1253,6 +1253,9 @@
   "typeIdentity": {
     "message": "身份"
   },
+  "typePasskey": {
+    "message": "通行密钥"
+  },
   "passwordHistory": {
     "message": "密码历史记录"
   },
@@ -1652,6 +1655,9 @@
   },
   "personalOwnershipPolicyInEffect": {
     "message": "一个组织策略正影响您的所有权选项。"
+  },
+  "personalOwnershipPolicyInEffectImports": {
+    "message": "组织策略已阻止将项目导入您的个人密码库。"
   },
   "excludedDomains": {
     "message": "排除域名"
@@ -2445,5 +2451,164 @@
   "turnOffMasterPasswordPromptToEditField": {
     "message": "关闭主密码重新提示以编辑此字段",
     "description": "Message appearing below the autofill on load message when master password reprompt is set for a vault item."
+  },
+  "importData": {
+    "message": "导入数据",
+    "description": "Used for the header of the import dialog, the import button and within the file-password-prompt"
+  },
+  "importError": {
+    "message": "导入出错"
+  },
+  "importErrorDesc": {
+    "message": "您尝试导入的数据有问题。请解决如下列出的源文件中的错误，然后重试。"
+  },
+  "resolveTheErrorsBelowAndTryAgain": {
+    "message": "解决下面的错误，然后重试。"
+  },
+  "description": {
+    "message": "描述"
+  },
+  "importSuccess": {
+    "message": "数据导入成功"
+  },
+  "importSuccessNumberOfItems": {
+    "message": "一共导入了 $AMOUNT$ 个项目。",
+    "placeholders": {
+      "amount": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "total": {
+    "message": "总计"
+  },
+  "importWarning": {
+    "message": "您正在将数据导入到 $ORGANIZATION$。您的数据可能会与此组织中的成员共享。要继续吗？",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "importFormatError": {
+    "message": "数据格式不正确。请检查您的导入文件后重试。"
+  },
+  "importNothingError": {
+    "message": "没有导入任何内容。"
+  },
+  "importEncKeyError": {
+    "message": "解密导出的文件时出错。您的加密密钥与导出数据时使用的加密密钥不匹配。"
+  },
+  "importDestination": {
+    "message": "导入目的地"
+  },
+  "learnAboutImportOptions": {
+    "message": "了解您的导入选项"
+  },
+  "selectImportFolder": {
+    "message": "选择一个文件夹"
+  },
+  "selectImportCollection": {
+    "message": "选择一个集合"
+  },
+  "importTargetHint": {
+    "message": "如果您希望将导入的文件内容移动到 $DESTINATION$，请选择此选项",
+    "description": "Located as a hint under the import target. Will be appended by either folder or collection, depending if the user is importing into an individual or an organizational vault.",
+    "placeholders": {
+      "destination": {
+        "content": "$1",
+        "example": "folder or collection"
+      }
+    }
+  },
+  "importUnassignedItemsError": {
+    "message": "文件包含未分配项目。"
+  },
+  "selectFormat": {
+    "message": "选择导入文件的格式"
+  },
+  "selectImportFile": {
+    "message": "选择要导入的文件"
+  },
+  "chooseFile": {
+    "message": "选择文件"
+  },
+  "noFileChosen": {
+    "message": "未选择文件"
+  },
+  "orCopyPasteFileContents": {
+    "message": "或复制/粘贴要导入的文件内容"
+  },
+  "instructionsFor": {
+    "message": "$NAME$ Instructions",
+    "description": "The title for the import tool instructions.",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "LastPass (csv)"
+      }
+    }
+  },
+  "confirmVaultImport": {
+    "message": "确认密码库导入"
+  },
+  "confirmVaultImportDesc": {
+    "message": "此文件受密码保护。请输入文件密码以导入数据。"
+  },
+  "confirmFilePassword": {
+    "message": "确认文件密码"
+  },
+  "passkeyNotCopied": {
+    "message": "通行密钥不会被复制"
+  },
+  "passkeyNotCopiedAlert": {
+    "message": "通行密钥将不会被复制到克隆的项目。要继续克隆这个项目吗？"
+  },
+  "passkeyFeatureIsNotImplementedForAccountsWithoutMasterPassword": {
+    "message": "启动站点需要验证。对于没有主密码的账户，此功能尚未实现。"
+  },
+  "logInWithPasskey": {
+    "message": "使用通行密钥登录吗？"
+  },
+  "passkeyAlreadyExists": {
+    "message": "此应用程序已存在一个通行密钥。"
+  },
+  "noPasskeysFoundForThisApplication": {
+    "message": "没有找到此应用程序的通行密钥。"
+  },
+  "noMatchingPasskeyLogin": {
+    "message": "不存在匹配此站点的登录项目。"
+  },
+  "confirm": {
+    "message": "确认"
+  },
+  "savePasskey": {
+    "message": "保存通行密钥"
+  },
+  "savePasskeyNewLogin": {
+    "message": "作为新的登录项目保存通行密钥"
+  },
+  "choosePasskey": {
+    "message": "选择一个用于保存此通行密钥的登录项目"
+  },
+  "passkeyItem": {
+    "message": "通行密钥项目"
+  },
+  "overwritePasskey": {
+    "message": "覆盖通行密钥吗？"
+  },
+  "overwritePasskeyAlert": {
+    "message": "此项目已包含一个通行密钥。您确定要覆盖当前的通行密钥吗？"
+  },
+  "featureNotSupported": {
+    "message": "功能尚不被支持"
+  },
+  "yourPasskeyIsLocked": {
+    "message": "使用通行密钥需要身份验证。请验证身份以继续。"
+  },
+  "useBrowserName": {
+    "message": "使用浏览器"
   }
 }

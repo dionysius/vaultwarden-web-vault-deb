@@ -92,13 +92,13 @@
     "message": "Emplenament automàtic"
   },
   "autoFillLogin": {
-    "message": "Auto-fill login"
+    "message": "Emplena automàticament l'inici de sessió"
   },
   "autoFillCard": {
-    "message": "Auto-fill card"
+    "message": "Emplena automàticament la targeta"
   },
   "autoFillIdentity": {
-    "message": "Auto-fill identity"
+    "message": "Emplena automàticament l'identitat"
   },
   "generatePasswordCopied": {
     "message": "Genera contrasenya (copiada)"
@@ -110,19 +110,19 @@
     "message": "No hi ha inicis de sessió coincidents."
   },
   "noCards": {
-    "message": "No cards"
+    "message": "Sense targetes"
   },
   "noIdentities": {
-    "message": "No identities"
+    "message": "Sense identitats"
   },
   "addLoginMenu": {
-    "message": "Add login"
+    "message": "Afig inici de sessió"
   },
   "addCardMenu": {
-    "message": "Add card"
+    "message": "Afig una targeta"
   },
   "addIdentityMenu": {
-    "message": "Add identity"
+    "message": "Afig identitat"
   },
   "unlockVaultMenu": {
     "message": "1. Desbloquegeu la caixa forta."
@@ -796,7 +796,7 @@
     "message": "Característica no disponible"
   },
   "encryptionKeyMigrationRequired": {
-    "message": "Encryption key migration required. Please login through the web vault to update your encryption key."
+    "message": "Cal migrar la clau de xifratge. Inicieu la sessió a la caixa forta web per actualitzar la clau de xifratge."
   },
   "premiumMembership": {
     "message": "Subscripció Premium"
@@ -1253,6 +1253,9 @@
   "typeIdentity": {
     "message": "Identitat"
   },
+  "typePasskey": {
+    "message": "Clau de pas"
+  },
   "passwordHistory": {
     "message": "Historial de les contrasenyes"
   },
@@ -1652,6 +1655,9 @@
   },
   "personalOwnershipPolicyInEffect": {
     "message": "Una política d’organització afecta les vostres opcions de propietat."
+  },
+  "personalOwnershipPolicyInEffectImports": {
+    "message": "Una política d'organització ha bloquejat la importació d'elements a la vostra caixa forta individual."
   },
   "excludedDomains": {
     "message": "Dominis exclosos"
@@ -2432,18 +2438,177 @@
     "description": "Toggling an expand/collapse state."
   },
   "aliasDomain": {
-    "message": "Alias domain"
+    "message": "Alies de domini"
   },
   "passwordRepromptDisabledAutofillOnPageLoad": {
-    "message": "Items with master password re-prompt cannot be auto-filled on page load. Auto-fill on page load turned off.",
+    "message": "Els elements amb una nova sol·licitud de contrasenya mestra no es poden omplir automàticament en carregar la pàgina. L'emplenament automàtic en carregar de la pàgina està desactivat.",
     "description": "Toast message for describing that master password re-prompt cannot be auto-filled on page load."
   },
   "autofillOnPageLoadSetToDefault": {
-    "message": "Auto-fill on page load set to use default setting.",
+    "message": "S'ha configurat l'emplenament automàtic en carregar la pàgina per que utilitze la configuració predeterminada.",
     "description": "Toast message for informing the user that auto-fill on page load has been set to the default setting."
   },
   "turnOffMasterPasswordPromptToEditField": {
-    "message": "Turn off master password re-prompt to edit this field",
+    "message": "Desactiveu la sol·licitud de nova contrasenya mestra per editar aquest camp",
     "description": "Message appearing below the autofill on load message when master password reprompt is set for a vault item."
+  },
+  "importData": {
+    "message": "Importa dades",
+    "description": "Used for the header of the import dialog, the import button and within the file-password-prompt"
+  },
+  "importError": {
+    "message": "Error d'importació"
+  },
+  "importErrorDesc": {
+    "message": "Hi ha hagut un problema amb les dades que heu intentat importar. Resoleu els errors que es mostren a continuació al fitxer font i torneu-ho a provar."
+  },
+  "resolveTheErrorsBelowAndTryAgain": {
+    "message": "Resoleu els errors següents i torneu-ho a provar."
+  },
+  "description": {
+    "message": "Descripció"
+  },
+  "importSuccess": {
+    "message": "Les dades s'han importat correctament"
+  },
+  "importSuccessNumberOfItems": {
+    "message": "S'han importat un total de $AMOUNT$ elements.",
+    "placeholders": {
+      "amount": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "total": {
+    "message": "Total"
+  },
+  "importWarning": {
+    "message": "Esteu important dades a $ORGANIZATION$. Les vostres dades es poden compartir amb membres d'aquesta organització. Voleu continuar?",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "importFormatError": {
+    "message": "Les dades no estan formatades correctament. Comproveu el fitxer d'importació i torneu-ho a provar."
+  },
+  "importNothingError": {
+    "message": "No s'ha importat res."
+  },
+  "importEncKeyError": {
+    "message": "Error en desxifrar el fitxer exportat. La vostra clau de xifratge no coincideix amb la clau de xifratge utilitzada per exportar les dades."
+  },
+  "importDestination": {
+    "message": "Destinació de la importació"
+  },
+  "learnAboutImportOptions": {
+    "message": "Obteniu informació sobre les opcions d'importació"
+  },
+  "selectImportFolder": {
+    "message": "Selecciona una carpeta"
+  },
+  "selectImportCollection": {
+    "message": "Selecciona una col·lecció"
+  },
+  "importTargetHint": {
+    "message": "Seleccioneu aquesta opció si voleu que el contingut del fitxer importat es desplace a $DESTINATION$",
+    "description": "Located as a hint under the import target. Will be appended by either folder or collection, depending if the user is importing into an individual or an organizational vault.",
+    "placeholders": {
+      "destination": {
+        "content": "$1",
+        "example": "folder or collection"
+      }
+    }
+  },
+  "importUnassignedItemsError": {
+    "message": "El fitxer conté elements no assignats."
+  },
+  "selectFormat": {
+    "message": "Seleccioneu el format del fitxer d'importació"
+  },
+  "selectImportFile": {
+    "message": "Seleccioneu el fitxer d'importació"
+  },
+  "chooseFile": {
+    "message": "Trieu fitxer"
+  },
+  "noFileChosen": {
+    "message": "No s'ha triat cap fitxer"
+  },
+  "orCopyPasteFileContents": {
+    "message": "o copieu/enganxeu el contingut dels fitxers d'importació"
+  },
+  "instructionsFor": {
+    "message": "Instruccions de $NAME$",
+    "description": "The title for the import tool instructions.",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "LastPass (csv)"
+      }
+    }
+  },
+  "confirmVaultImport": {
+    "message": "Confirma la importació de la Caixa forta"
+  },
+  "confirmVaultImportDesc": {
+    "message": "Aquest fitxer està protegit amb contrasenya. Introduïu-la per importar dades."
+  },
+  "confirmFilePassword": {
+    "message": "Confirma la contrasenya del fitxer"
+  },
+  "passkeyNotCopied": {
+    "message": "La clau de pas no es copiarà"
+  },
+  "passkeyNotCopiedAlert": {
+    "message": "La clau de pas no es copiarà a l'element clonat. Voleu continuar clonant aquest element?"
+  },
+  "passkeyFeatureIsNotImplementedForAccountsWithoutMasterPassword": {
+    "message": "Verificació requerida pel lloc iniciador. Aquesta funció encara no s'ha implementat per als comptes sense contrasenya mestra."
+  },
+  "logInWithPasskey": {
+    "message": "Inici de sessió amb clau de pas?"
+  },
+  "passkeyAlreadyExists": {
+    "message": "Ja hi ha una clau de pas per a aquesta aplicació."
+  },
+  "noPasskeysFoundForThisApplication": {
+    "message": "No s'han trobat claus de pas per a aquesta aplicació."
+  },
+  "noMatchingPasskeyLogin": {
+    "message": "No teniu cap inici de sessió que coincidisca amb el d'aquest lloc."
+  },
+  "confirm": {
+    "message": "Confirma-ho"
+  },
+  "savePasskey": {
+    "message": "Guarda la clau de pas"
+  },
+  "savePasskeyNewLogin": {
+    "message": "Guarda la clau de pas com a nou inici de sessió"
+  },
+  "choosePasskey": {
+    "message": "Trieu un inici de sessió per guardar aquesta clau de pas"
+  },
+  "passkeyItem": {
+    "message": "Element de clau de pas"
+  },
+  "overwritePasskey": {
+    "message": "Sobreescriure la clau de pas?"
+  },
+  "overwritePasskeyAlert": {
+    "message": "Aquest element ja conté una clau de pas. Esteu segur que voleu sobreescriure la actual?"
+  },
+  "featureNotSupported": {
+    "message": "La característica encara no és compatible"
+  },
+  "yourPasskeyIsLocked": {
+    "message": "Es requereix autenticació per utilitzar la clau de pas. Verifiqueu la vostra identitat per continuar."
+  },
+  "useBrowserName": {
+    "message": "Utilitza navegador"
   }
 }

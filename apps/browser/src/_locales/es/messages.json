@@ -17,7 +17,7 @@
     "message": "Crear cuenta"
   },
   "login": {
-    "message": "Identificarse"
+    "message": "Iniciar sesión"
   },
   "enterpriseSingleSignOn": {
     "message": "Inicio de sesión único empresarial"
@@ -92,13 +92,13 @@
     "message": "Autorellenar"
   },
   "autoFillLogin": {
-    "message": "Auto-fill login"
+    "message": "Autocompletar inicio de sesión"
   },
   "autoFillCard": {
-    "message": "Auto-fill card"
+    "message": "Autocompletar tarjeta"
   },
   "autoFillIdentity": {
-    "message": "Auto-fill identity"
+    "message": "Autocompletar identidad"
   },
   "generatePasswordCopied": {
     "message": "Generar contraseña (copiada)"
@@ -110,19 +110,19 @@
     "message": "Sin entradas coincidentes."
   },
   "noCards": {
-    "message": "No cards"
+    "message": "No hay tarjetas"
   },
   "noIdentities": {
-    "message": "No identities"
+    "message": "No hay identidades"
   },
   "addLoginMenu": {
-    "message": "Add login"
+    "message": "Agregar inicio de sesión"
   },
   "addCardMenu": {
-    "message": "Add card"
+    "message": "Agregar tarjeta"
   },
   "addIdentityMenu": {
-    "message": "Add identity"
+    "message": "Agregar identidad"
   },
   "unlockVaultMenu": {
     "message": "Desbloquea la caja fuerte"
@@ -363,7 +363,7 @@
     "message": "Otros"
   },
   "unlockMethodNeededToChangeTimeoutActionDesc": {
-    "message": "Set up an unlock method to change your vault timeout action."
+    "message": "Configura un método de desbloqueo para cambiar tu acción de cierre de la bóveda."
   },
   "rateExtension": {
     "message": "Valora la extensión"
@@ -658,7 +658,7 @@
     "message": "Actualizar"
   },
   "notificationUnlockDesc": {
-    "message": "Unlock your Bitwarden vault to complete the auto-fill request."
+    "message": "Desbloquea tu bóveda Bitwarden para completar la solicitud de autollenado."
   },
   "notificationUnlock": {
     "message": "Desbloquear"
@@ -820,7 +820,7 @@
     "message": "1 GB de espacio cifrado en disco para adjuntos."
   },
   "premiumSignUpTwoStepOptions": {
-    "message": "Proprietary two-step login options such as YubiKey and Duo."
+    "message": "Opciones de inicio de sesión con autenticación de dos pasos propietarios como YubiKey y Duo."
   },
   "ppremiumSignUpReports": {
     "message": "Higiene de contraseña, salud de la cuenta e informes de violaciones de datos para mantener su caja fuerte segura."
@@ -1253,6 +1253,9 @@
   "typeIdentity": {
     "message": "Identidad"
   },
+  "typePasskey": {
+    "message": "Clave de acceso"
+  },
   "passwordHistory": {
     "message": "Historial de contraseñas"
   },
@@ -1630,10 +1633,10 @@
     "message": "La biometría del navegador no es compatible con este dispositivo."
   },
   "biometricsFailedTitle": {
-    "message": "Biometrics failed"
+    "message": "Fallo de biométrica"
   },
   "biometricsFailedDesc": {
-    "message": "Biometrics cannot be completed, consider using a master password or logging out. If this persists, please contact Bitwarden support."
+    "message": "No se pueden completar la biométrica, considere usar una contraseña maestra o cerrar la sesión. Si esto persiste, póngase en contacto con el soporte de Bitwarden."
   },
   "nativeMessaginPermissionErrorTitle": {
     "message": "Permiso no proporcionado"
@@ -1652,6 +1655,9 @@
   },
   "personalOwnershipPolicyInEffect": {
     "message": "Una política de organización está afectando a sus opciones de propiedad."
+  },
+  "personalOwnershipPolicyInEffectImports": {
+    "message": "An organization policy has blocked importing items into your individual vault."
   },
   "excludedDomains": {
     "message": "Dominios excluidos"
@@ -2016,7 +2022,7 @@
     "message": "Exportando caja fuerte personal"
   },
   "exportingIndividualVaultDescription": {
-    "message": "Only the individual vault items associated with $EMAIL$ will be exported. Organization vault items will not be included. Only vault item information will be exported and will not include associated attachments.",
+    "message": "Solo se exportarán los elementos individuales de la caja fuerte asociados con $EMAIL$. Los elementos de la bóveda de la organización no se incluirán. Solo se exportará la información de los elementos individuales y no incluirá adjuntos asociados.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -2117,7 +2123,7 @@
     "message": "Versión del servidor"
   },
   "selfHostedServer": {
-    "message": "self-hosted"
+    "message": "autoalojado"
   },
   "thirdParty": {
     "message": "Aplicaciones de terceros"
@@ -2177,7 +2183,7 @@
     "message": "Se ha enviado una notificación a tu dispositivo."
   },
   "loginInitiated": {
-    "message": "Login initiated"
+    "message": "Inicio de sesión en proceso"
   },
   "exposedMasterPassword": {
     "message": "Contraseña maestra comprometida"
@@ -2258,34 +2264,34 @@
     }
   },
   "loggingInOn": {
-    "message": "Logging in on"
+    "message": "Iniciando sesión en"
   },
   "opensInANewWindow": {
     "message": "Abre en una nueva ventana"
   },
   "deviceApprovalRequired": {
-    "message": "Device approval required. Select an approval option below:"
+    "message": "Se requiere aprobación del dispositivo. Seleccione una opción de aprobación a continuación:"
   },
   "rememberThisDevice": {
-    "message": "Remember this device"
+    "message": "Recordar este dispositivo"
   },
   "uncheckIfPublicDevice": {
-    "message": "Uncheck if using a public device"
+    "message": "Desmarcar si se utiliza un dispositivo público"
   },
   "approveFromYourOtherDevice": {
-    "message": "Approve from your other device"
+    "message": "Apruebe desde otro dispositivo"
   },
   "requestAdminApproval": {
-    "message": "Request admin approval"
+    "message": "Solicitar aprobación del administrador"
   },
   "approveWithMasterPassword": {
-    "message": "Approve with master password"
+    "message": "Aprobar con contraseña maestra"
   },
   "ssoIdentifierRequired": {
-    "message": "Organization SSO identifier is required."
+    "message": "Se requiere un identificador único de inicio de sesión de la organización."
   },
   "eu": {
-    "message": "EU",
+    "message": "Unión Europea",
     "description": "European Union"
   },
   "usDomain": {
@@ -2304,40 +2310,40 @@
     "message": "Display"
   },
   "accountSuccessfullyCreated": {
-    "message": "Account successfully created!"
+    "message": "¡Cuenta creada con éxito!"
   },
   "adminApprovalRequested": {
-    "message": "Admin approval requested"
+    "message": "Aprobación del administrador solicitada"
   },
   "adminApprovalRequestSentToAdmins": {
-    "message": "Your request has been sent to your admin."
+    "message": "Su solicitud ha sido enviada a su administrador."
   },
   "youWillBeNotifiedOnceApproved": {
-    "message": "You will be notified once approved."
+    "message": "Se le notificará una vez aprobado."
   },
   "troubleLoggingIn": {
-    "message": "Trouble logging in?"
+    "message": "¿Problemas para iniciar sesión?"
   },
   "loginApproved": {
-    "message": "Login approved"
+    "message": "Inicio de sesión aprobado"
   },
   "userEmailMissing": {
-    "message": "User email missing"
+    "message": "Falta el correo electrónico del usuario"
   },
   "deviceTrusted": {
-    "message": "Device trusted"
+    "message": "Dispositivo de confianza"
   },
   "inputRequired": {
-    "message": "Input is required."
+    "message": "Entrada requerida."
   },
   "required": {
     "message": "required"
   },
   "search": {
-    "message": "Search"
+    "message": "Buscar"
   },
   "inputMinLength": {
-    "message": "Input must be at least $COUNT$ characters long.",
+    "message": "La entrada debe tener al menos $COUNT$ caracteres.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -2346,7 +2352,7 @@
     }
   },
   "inputMaxLength": {
-    "message": "Input must not exceed $COUNT$ characters in length.",
+    "message": "La entrada no debe exceder los $COUNT$ caracteres de longitud.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -2355,7 +2361,7 @@
     }
   },
   "inputForbiddenCharacters": {
-    "message": "The following characters are not allowed: $CHARACTERS$",
+    "message": "Los siguientes caracteres no están permitidos: $CHARACTERS$",
     "placeholders": {
       "characters": {
         "content": "$1",
@@ -2382,17 +2388,17 @@
     }
   },
   "multipleInputEmails": {
-    "message": "1 or more emails are invalid"
+    "message": "Una o más direcciones de correo electrónico no son válidas"
   },
   "inputTrimValidator": {
-    "message": "Input must not contain only whitespace.",
+    "message": "La entrada no debe contener únicamente espacios en blanco.",
     "description": "Notification to inform the user that a form's input can't contain only whitespace."
   },
   "inputEmail": {
-    "message": "Input is not an email address."
+    "message": "La entrada no es una dirección de correo electrónico."
   },
   "fieldsNeedAttention": {
-    "message": "$COUNT$ field(s) above need your attention.",
+    "message": "$COUNT$ campo(s) anteriores necesitan su atención.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -2401,19 +2407,19 @@
     }
   },
   "selectPlaceholder": {
-    "message": "-- Select --"
+    "message": "-- Seleccione --"
   },
   "multiSelectPlaceholder": {
-    "message": "-- Type to filter --"
+    "message": "-- Escriba para filtrar --"
   },
   "multiSelectLoading": {
-    "message": "Retrieving options..."
+    "message": "Recuperando opciones..."
   },
   "multiSelectNotFound": {
-    "message": "No items found"
+    "message": "No hay elementos"
   },
   "multiSelectClearAll": {
-    "message": "Clear all"
+    "message": "Borrar todo"
   },
   "plusNMore": {
     "message": "+ $QUANTITY$ more",
@@ -2425,25 +2431,184 @@
     }
   },
   "submenu": {
-    "message": "Submenu"
+    "message": "Submenú"
   },
   "toggleCollapse": {
-    "message": "Toggle collapse",
+    "message": "Colapsar/Expandir",
     "description": "Toggling an expand/collapse state."
   },
   "aliasDomain": {
-    "message": "Alias domain"
+    "message": "Seudónimo del dominio"
   },
   "passwordRepromptDisabledAutofillOnPageLoad": {
-    "message": "Items with master password re-prompt cannot be auto-filled on page load. Auto-fill on page load turned off.",
+    "message": "Los elementos que requieren la contraseña maestra no se pueden rellenar automáticamente al cargar la página. Se desactivó el autorrellenado de la página.",
     "description": "Toast message for describing that master password re-prompt cannot be auto-filled on page load."
   },
   "autofillOnPageLoadSetToDefault": {
-    "message": "Auto-fill on page load set to use default setting.",
+    "message": "El autorrellenado de la página está usando la configuración predeterminada.",
     "description": "Toast message for informing the user that auto-fill on page load has been set to the default setting."
   },
   "turnOffMasterPasswordPromptToEditField": {
     "message": "Turn off master password re-prompt to edit this field",
     "description": "Message appearing below the autofill on load message when master password reprompt is set for a vault item."
+  },
+  "importData": {
+    "message": "Import data",
+    "description": "Used for the header of the import dialog, the import button and within the file-password-prompt"
+  },
+  "importError": {
+    "message": "Import error"
+  },
+  "importErrorDesc": {
+    "message": "There was a problem with the data you tried to import. Please resolve the errors listed below in your source file and try again."
+  },
+  "resolveTheErrorsBelowAndTryAgain": {
+    "message": "Resolve the errors below and try again."
+  },
+  "description": {
+    "message": "Description"
+  },
+  "importSuccess": {
+    "message": "Data successfully imported"
+  },
+  "importSuccessNumberOfItems": {
+    "message": "A total of $AMOUNT$ items were imported.",
+    "placeholders": {
+      "amount": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "total": {
+    "message": "Total"
+  },
+  "importWarning": {
+    "message": "You are importing data to $ORGANIZATION$. Your data may be shared with members of this organization. Do you want to proceed?",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "importFormatError": {
+    "message": "Data is not formatted correctly. Please check your import file and try again."
+  },
+  "importNothingError": {
+    "message": "Nothing was imported."
+  },
+  "importEncKeyError": {
+    "message": "Error decrypting the exported file. Your encryption key does not match the encryption key used export the data."
+  },
+  "importDestination": {
+    "message": "Import destination"
+  },
+  "learnAboutImportOptions": {
+    "message": "Learn about your import options"
+  },
+  "selectImportFolder": {
+    "message": "Select a folder"
+  },
+  "selectImportCollection": {
+    "message": "Select a collection"
+  },
+  "importTargetHint": {
+    "message": "Select this option if you want the imported file contents moved to a $DESTINATION$",
+    "description": "Located as a hint under the import target. Will be appended by either folder or collection, depending if the user is importing into an individual or an organizational vault.",
+    "placeholders": {
+      "destination": {
+        "content": "$1",
+        "example": "folder or collection"
+      }
+    }
+  },
+  "importUnassignedItemsError": {
+    "message": "File contains unassigned items."
+  },
+  "selectFormat": {
+    "message": "Select the format of the import file"
+  },
+  "selectImportFile": {
+    "message": "Select the import file"
+  },
+  "chooseFile": {
+    "message": "Choose File"
+  },
+  "noFileChosen": {
+    "message": "No file chosen"
+  },
+  "orCopyPasteFileContents": {
+    "message": "or copy/paste the import file contents"
+  },
+  "instructionsFor": {
+    "message": "$NAME$ Instructions",
+    "description": "The title for the import tool instructions.",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "LastPass (csv)"
+      }
+    }
+  },
+  "confirmVaultImport": {
+    "message": "Confirm vault import"
+  },
+  "confirmVaultImportDesc": {
+    "message": "This file is password-protected. Please enter the file password to import data."
+  },
+  "confirmFilePassword": {
+    "message": "Confirm file password"
+  },
+  "passkeyNotCopied": {
+    "message": "La clave de acceso no se copiará"
+  },
+  "passkeyNotCopiedAlert": {
+    "message": "La clave de acceso no se copiará al elemento clonado. ¿Desea continuar clonando este elemento?"
+  },
+  "passkeyFeatureIsNotImplementedForAccountsWithoutMasterPassword": {
+    "message": "Verificación requerida por el sitio inicial. Esta característica aún no está implementada para cuentas sin contraseña maestra."
+  },
+  "logInWithPasskey": {
+    "message": "¿Iniciar sesión con contraseña?"
+  },
+  "passkeyAlreadyExists": {
+    "message": "Ya existe una clave de acceso para esta aplicación."
+  },
+  "noPasskeysFoundForThisApplication": {
+    "message": "No se encontraron contraseñas para esta aplicación."
+  },
+  "noMatchingPasskeyLogin": {
+    "message": "No tiene un inicio de sesión que coincida para este sitio."
+  },
+  "confirm": {
+    "message": "Confirme"
+  },
+  "savePasskey": {
+    "message": "Guardar clave"
+  },
+  "savePasskeyNewLogin": {
+    "message": "Guardar contraseña como nuevo inicio de sesión"
+  },
+  "choosePasskey": {
+    "message": "Elija un inicio de sesión para guardar esta clave de acceso"
+  },
+  "passkeyItem": {
+    "message": "Passkey Item"
+  },
+  "overwritePasskey": {
+    "message": "¿Sobrescribir contraseña?"
+  },
+  "overwritePasskeyAlert": {
+    "message": "Este elemento ya contiene una clave de acceso. ¿Está seguro de que desea sobrescribir la contraseña actual?"
+  },
+  "featureNotSupported": {
+    "message": "Función aún no implementada"
+  },
+  "yourPasskeyIsLocked": {
+    "message": "Autenticación requerida para usar la clave de acceso. Verifique su identidad para continuar."
+  },
+  "useBrowserName": {
+    "message": "Use un navegador web"
   }
 }

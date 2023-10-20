@@ -357,7 +357,7 @@
     "message": "Näytä tai piilota"
   },
   "manage": {
-    "message": "Hallinnoi"
+    "message": "Hallitse"
   },
   "other": {
     "message": "Muut"
@@ -658,7 +658,7 @@
     "message": "Päivitä"
   },
   "notificationUnlockDesc": {
-    "message": "Viimeistele automaattitäytön pyyntö avaamalla Bitwarden-holvisi lukitus."
+    "message": "Viimeistele automaattisen täytön pyyntö avaamalla Bitwarden-holvisi lukitus."
   },
   "notificationUnlock": {
     "message": "Avaa"
@@ -1253,6 +1253,9 @@
   "typeIdentity": {
     "message": "Henkilöllisyys"
   },
+  "typePasskey": {
+    "message": "Suojausavain"
+  },
   "passwordHistory": {
     "message": "Salasanahistoria"
   },
@@ -1652,6 +1655,9 @@
   },
   "personalOwnershipPolicyInEffect": {
     "message": "Organisaatiokäytäntö vaikuttaa omistajuusvalintoihisi."
+  },
+  "personalOwnershipPolicyInEffectImports": {
+    "message": "Organisaatiokäytäntö estää kohteiden tuonnin yksityiseen holviisi."
   },
   "excludedDomains": {
     "message": "Ohitettavat verkkotunnukset"
@@ -2445,5 +2451,164 @@
   "turnOffMasterPasswordPromptToEditField": {
     "message": "Poista pääsalasanan uudelleenkysely käytöstä muokataksesi kenttää",
     "description": "Message appearing below the autofill on load message when master password reprompt is set for a vault item."
+  },
+  "importData": {
+    "message": "Tuo tietoja",
+    "description": "Used for the header of the import dialog, the import button and within the file-password-prompt"
+  },
+  "importError": {
+    "message": "Tuontivirhe"
+  },
+  "importErrorDesc": {
+    "message": "Tiedoissa, joita yritit tuoda, havaittiin ongelma. Korjaa alla listatut virheet lähdetiedostosta ja yritä uudelleen."
+  },
+  "resolveTheErrorsBelowAndTryAgain": {
+    "message": "Korjaa seuraavat virheet ja yritä uudelleen."
+  },
+  "description": {
+    "message": "Kuvaus"
+  },
+  "importSuccess": {
+    "message": "Tietojen tuonti onnistui"
+  },
+  "importSuccessNumberOfItems": {
+    "message": "Kaikkiaan $AMOUNT$ kohdetta tuotiin.",
+    "placeholders": {
+      "amount": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "total": {
+    "message": "Yhteensä"
+  },
+  "importWarning": {
+    "message": "Olet tuomassa tietoja organisaatioon $ORGANIZATION$. Tietojasi saatetaan jakaa organisaation jäsenten kesken. Haluatko jatkaa?",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "importFormatError": {
+    "message": "Tietoja ei ole muotoiltu oikein. Tarkista tuotava tiedosto ja yritä uudelleen."
+  },
+  "importNothingError": {
+    "message": "Mitään ei tuotu."
+  },
+  "importEncKeyError": {
+    "message": "Virhe purettaessa viedyn tiedoston salausta. Salausavaimesi ei vastaa viennissä käytettyä salausavainta."
+  },
+  "importDestination": {
+    "message": "Tuontikohde"
+  },
+  "learnAboutImportOptions": {
+    "message": "Lue lisää tuontivaihtoehdoista"
+  },
+  "selectImportFolder": {
+    "message": "Valitse kansio"
+  },
+  "selectImportCollection": {
+    "message": "Valitse kokoelma"
+  },
+  "importTargetHint": {
+    "message": "Valitse tämä, jos haluat tuoda tiedoston sisällön kohteeseen \"$DESTINATION$\".",
+    "description": "Located as a hint under the import target. Will be appended by either folder or collection, depending if the user is importing into an individual or an organizational vault.",
+    "placeholders": {
+      "destination": {
+        "content": "$1",
+        "example": "folder or collection"
+      }
+    }
+  },
+  "importUnassignedItemsError": {
+    "message": "Tiedosto sisältää määrittämättömiä kohteita."
+  },
+  "selectFormat": {
+    "message": "Valitse tuotavan tiedoston muoto"
+  },
+  "selectImportFile": {
+    "message": "Valitse tuotava tiedosto"
+  },
+  "chooseFile": {
+    "message": "Valitse tiedosto"
+  },
+  "noFileChosen": {
+    "message": "Tiedostoa ei ole valittu"
+  },
+  "orCopyPasteFileContents": {
+    "message": "tai kopioi ja liitä tuotavan tiedoston sisältö"
+  },
+  "instructionsFor": {
+    "message": "$NAME$ -ohjeet",
+    "description": "The title for the import tool instructions.",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "LastPass (csv)"
+      }
+    }
+  },
+  "confirmVaultImport": {
+    "message": "Vahvista holvin tuonti"
+  },
+  "confirmVaultImportDesc": {
+    "message": "Tiedosto on salasanasuojattu. Jatka tuontia syöttämällä tiedoston salasana."
+  },
+  "confirmFilePassword": {
+    "message": "Vahvista tiedoston salasana"
+  },
+  "passkeyNotCopied": {
+    "message": "Suojausavainta ei kopioida"
+  },
+  "passkeyNotCopiedAlert": {
+    "message": "Suojausavain ei kopioidu kloonattuun kohteeseen. Haluatko jatkaa kloonausta?"
+  },
+  "passkeyFeatureIsNotImplementedForAccountsWithoutMasterPassword": {
+    "message": "Käynnistävä sivusto edellyttää todennusta. Ominaisuutta ei ole vielä toteutettu tileille, joilla ei ole pääsalasanaa."
+  },
+  "logInWithPasskey": {
+    "message": "Kirjaudutko suojausavaimella?"
+  },
+  "passkeyAlreadyExists": {
+    "message": "Tälle sovellukselle on jo tallennettu suojausavain."
+  },
+  "noPasskeysFoundForThisApplication": {
+    "message": "Tälle sovellukselle ei löytynyt suojausavaimia."
+  },
+  "noMatchingPasskeyLogin": {
+    "message": "Holvissasi ei ole tälle sivustolle sopivaa kirjautumistietoa."
+  },
+  "confirm": {
+    "message": "Vahvista"
+  },
+  "savePasskey": {
+    "message": "Tallenna suojausavain"
+  },
+  "savePasskeyNewLogin": {
+    "message": "Tallenna suojausavain uuteen kirjautumistietoon"
+  },
+  "choosePasskey": {
+    "message": "Valitse kirjautumistieto, johon suojausavain tallennetaan"
+  },
+  "passkeyItem": {
+    "message": "Suojausavaimen kohde"
+  },
+  "overwritePasskey": {
+    "message": "Korvataanko suojausavain?"
+  },
+  "overwritePasskeyAlert": {
+    "message": "Kohde sisältää jo suojausavaimen. Haluatko varmasti korvata nykyisen salasanan?"
+  },
+  "featureNotSupported": {
+    "message": "Ominaisuutta ei vielä tueta"
+  },
+  "yourPasskeyIsLocked": {
+    "message": "Salausavaimen käyttö edellyttää todennusta. Jatka vahvistamalla henkilöllisyytesi."
+  },
+  "useBrowserName": {
+    "message": "Käytä verkkoselainta"
   }
 }

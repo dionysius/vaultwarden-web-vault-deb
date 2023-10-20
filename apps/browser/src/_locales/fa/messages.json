@@ -11,7 +11,7 @@
     "description": "Extension description"
   },
   "loginOrCreateNewAccount": {
-    "message": "وارد شوید یا یک حساب کاربری بسازید تا به گاوصندوق امنتان دسترسی یابید."
+    "message": "وارد شوید یا یک حساب کاربری بسازید تا به گاوصندوق امن‌تان دسترسی یابید."
   },
   "createAccount": {
     "message": "ایجاد حساب کاربری"
@@ -1253,6 +1253,9 @@
   "typeIdentity": {
     "message": "هویت"
   },
+  "typePasskey": {
+    "message": "کلید عبور"
+  },
   "passwordHistory": {
     "message": "تاریخچه کلمه عبور"
   },
@@ -1652,6 +1655,9 @@
   },
   "personalOwnershipPolicyInEffect": {
     "message": "سیاست سازمانی بر تنظیمات مالکیت شما تأثیر می‌گذارد."
+  },
+  "personalOwnershipPolicyInEffectImports": {
+    "message": "An organization policy has blocked importing items into your individual vault."
   },
   "excludedDomains": {
     "message": "دامنه های مستثنی"
@@ -2150,7 +2156,7 @@
     "message": "شما نیستید؟"
   },
   "newAroundHere": {
-    "message": "اینجا جدیده؟"
+    "message": "اینجا تازه واردی؟"
   },
   "rememberEmail": {
     "message": "ایمیل را به خاطر بسپار"
@@ -2445,5 +2451,164 @@
   "turnOffMasterPasswordPromptToEditField": {
     "message": "برای ویرایش این فیلد، درخواست مجدد کلمه عبور اصلی را خاموش کنید",
     "description": "Message appearing below the autofill on load message when master password reprompt is set for a vault item."
+  },
+  "importData": {
+    "message": "Import data",
+    "description": "Used for the header of the import dialog, the import button and within the file-password-prompt"
+  },
+  "importError": {
+    "message": "Import error"
+  },
+  "importErrorDesc": {
+    "message": "There was a problem with the data you tried to import. Please resolve the errors listed below in your source file and try again."
+  },
+  "resolveTheErrorsBelowAndTryAgain": {
+    "message": "Resolve the errors below and try again."
+  },
+  "description": {
+    "message": "Description"
+  },
+  "importSuccess": {
+    "message": "Data successfully imported"
+  },
+  "importSuccessNumberOfItems": {
+    "message": "A total of $AMOUNT$ items were imported.",
+    "placeholders": {
+      "amount": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "total": {
+    "message": "Total"
+  },
+  "importWarning": {
+    "message": "You are importing data to $ORGANIZATION$. Your data may be shared with members of this organization. Do you want to proceed?",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "importFormatError": {
+    "message": "Data is not formatted correctly. Please check your import file and try again."
+  },
+  "importNothingError": {
+    "message": "Nothing was imported."
+  },
+  "importEncKeyError": {
+    "message": "Error decrypting the exported file. Your encryption key does not match the encryption key used export the data."
+  },
+  "importDestination": {
+    "message": "Import destination"
+  },
+  "learnAboutImportOptions": {
+    "message": "Learn about your import options"
+  },
+  "selectImportFolder": {
+    "message": "Select a folder"
+  },
+  "selectImportCollection": {
+    "message": "Select a collection"
+  },
+  "importTargetHint": {
+    "message": "Select this option if you want the imported file contents moved to a $DESTINATION$",
+    "description": "Located as a hint under the import target. Will be appended by either folder or collection, depending if the user is importing into an individual or an organizational vault.",
+    "placeholders": {
+      "destination": {
+        "content": "$1",
+        "example": "folder or collection"
+      }
+    }
+  },
+  "importUnassignedItemsError": {
+    "message": "File contains unassigned items."
+  },
+  "selectFormat": {
+    "message": "Select the format of the import file"
+  },
+  "selectImportFile": {
+    "message": "Select the import file"
+  },
+  "chooseFile": {
+    "message": "Choose File"
+  },
+  "noFileChosen": {
+    "message": "No file chosen"
+  },
+  "orCopyPasteFileContents": {
+    "message": "or copy/paste the import file contents"
+  },
+  "instructionsFor": {
+    "message": "$NAME$ Instructions",
+    "description": "The title for the import tool instructions.",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "LastPass (csv)"
+      }
+    }
+  },
+  "confirmVaultImport": {
+    "message": "Confirm vault import"
+  },
+  "confirmVaultImportDesc": {
+    "message": "This file is password-protected. Please enter the file password to import data."
+  },
+  "confirmFilePassword": {
+    "message": "Confirm file password"
+  },
+  "passkeyNotCopied": {
+    "message": "کلید عبور کپی نمی‌شود"
+  },
+  "passkeyNotCopiedAlert": {
+    "message": "کلید عبور در مورد شبیه سازی شده کپی نمی‌شود. آیا می‌خواهید به شبیه سازی این مورد ادامه دهید؟"
+  },
+  "passkeyFeatureIsNotImplementedForAccountsWithoutMasterPassword": {
+    "message": "تأیید توسط سایت آغازگر الزامی است. این ویژگی هنوز برای حساب‌های بدون کلمه عبور اصلی اجرا نشده است."
+  },
+  "logInWithPasskey": {
+    "message": "با کلید عبور وارد می‌شوید؟"
+  },
+  "passkeyAlreadyExists": {
+    "message": "یک کلید عبور از قبل برای این برنامه وجود دارد."
+  },
+  "noPasskeysFoundForThisApplication": {
+    "message": "هیچ کلمه عبوری برای این برنامه یافت نشد."
+  },
+  "noMatchingPasskeyLogin": {
+    "message": "شما هیچ ورود مشابهی برای این سایت ندارید."
+  },
+  "confirm": {
+    "message": "تأیید"
+  },
+  "savePasskey": {
+    "message": "ذخیره کلید عبور"
+  },
+  "savePasskeyNewLogin": {
+    "message": "کلید عبور را به عنوان ورود جدید ذخیره کن"
+  },
+  "choosePasskey": {
+    "message": "یک ورود برای ذخیره این کلید عبور انتخاب کنید"
+  },
+  "passkeyItem": {
+    "message": "مورد کلید عبور"
+  },
+  "overwritePasskey": {
+    "message": "بازنویسی کلید عبور؟"
+  },
+  "overwritePasskeyAlert": {
+    "message": "این مورد از قبل دارای یک کلید عبور است. آیا مطمئنید که می‌خواهید کلمه عبور فعلی را بازنویسی کنید؟"
+  },
+  "featureNotSupported": {
+    "message": "ویژگی هنوز پشتیبانی نمی‌شود"
+  },
+  "yourPasskeyIsLocked": {
+    "message": "برای استفاده از کلید عبور، احراز هویت لازم است. برای ادامه، هویت خود را تأیید کنید."
+  },
+  "useBrowserName": {
+    "message": "استفاده از مرورگر وب"
   }
 }

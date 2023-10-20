@@ -1253,6 +1253,9 @@
   "typeIdentity": {
     "message": "Самоличност"
   },
+  "typePasskey": {
+    "message": "Секретен ключ"
+  },
   "passwordHistory": {
     "message": "Хронология на паролата"
   },
@@ -1652,6 +1655,9 @@
   },
   "personalOwnershipPolicyInEffect": {
     "message": "Политика от някоя организация влияе на вариантите за собственост."
+  },
+  "personalOwnershipPolicyInEffectImports": {
+    "message": "An organization policy has blocked importing items into your individual vault."
   },
   "excludedDomains": {
     "message": "Изключени домейни"
@@ -2183,13 +2189,13 @@
     "message": "Exposed Master Password"
   },
   "exposedMasterPasswordDesc": {
-    "message": "Password found in a data breach. Use a unique password to protect your account. Are you sure you want to use an exposed password?"
+    "message": "Паролата е намерена в пробив на данни. Използвайте уникална парола, за да защитите вашия акаунт. Наистина ли искате да използвате слаба парола?"
   },
   "weakAndExposedMasterPassword": {
     "message": "Weak and Exposed Master Password"
   },
   "weakAndBreachedMasterPasswordDesc": {
-    "message": "Weak password identified and found in a data breach. Use a strong and unique password to protect your account. Are you sure you want to use this password?"
+    "message": "Разпозната е слаба парола, която присъства в известен случай на изтекли данни. Използвайте сложна и уникална парола, за да защитите данните си. Наистина ли искате да използвате тази парола?"
   },
   "checkForBreaches": {
     "message": "Проверяване в известните случаи на изтекли данни за тази парола"
@@ -2445,5 +2451,164 @@
   "turnOffMasterPasswordPromptToEditField": {
     "message": "Изключете повторното въвеждане на главната парола, за да редактирате това поле",
     "description": "Message appearing below the autofill on load message when master password reprompt is set for a vault item."
+  },
+  "importData": {
+    "message": "Import data",
+    "description": "Used for the header of the import dialog, the import button and within the file-password-prompt"
+  },
+  "importError": {
+    "message": "Import error"
+  },
+  "importErrorDesc": {
+    "message": "There was a problem with the data you tried to import. Please resolve the errors listed below in your source file and try again."
+  },
+  "resolveTheErrorsBelowAndTryAgain": {
+    "message": "Resolve the errors below and try again."
+  },
+  "description": {
+    "message": "Description"
+  },
+  "importSuccess": {
+    "message": "Data successfully imported"
+  },
+  "importSuccessNumberOfItems": {
+    "message": "A total of $AMOUNT$ items were imported.",
+    "placeholders": {
+      "amount": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "total": {
+    "message": "Total"
+  },
+  "importWarning": {
+    "message": "You are importing data to $ORGANIZATION$. Your data may be shared with members of this organization. Do you want to proceed?",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "importFormatError": {
+    "message": "Data is not formatted correctly. Please check your import file and try again."
+  },
+  "importNothingError": {
+    "message": "Nothing was imported."
+  },
+  "importEncKeyError": {
+    "message": "Error decrypting the exported file. Your encryption key does not match the encryption key used export the data."
+  },
+  "importDestination": {
+    "message": "Import destination"
+  },
+  "learnAboutImportOptions": {
+    "message": "Learn about your import options"
+  },
+  "selectImportFolder": {
+    "message": "Select a folder"
+  },
+  "selectImportCollection": {
+    "message": "Select a collection"
+  },
+  "importTargetHint": {
+    "message": "Select this option if you want the imported file contents moved to a $DESTINATION$",
+    "description": "Located as a hint under the import target. Will be appended by either folder or collection, depending if the user is importing into an individual or an organizational vault.",
+    "placeholders": {
+      "destination": {
+        "content": "$1",
+        "example": "folder or collection"
+      }
+    }
+  },
+  "importUnassignedItemsError": {
+    "message": "File contains unassigned items."
+  },
+  "selectFormat": {
+    "message": "Select the format of the import file"
+  },
+  "selectImportFile": {
+    "message": "Select the import file"
+  },
+  "chooseFile": {
+    "message": "Choose File"
+  },
+  "noFileChosen": {
+    "message": "No file chosen"
+  },
+  "orCopyPasteFileContents": {
+    "message": "or copy/paste the import file contents"
+  },
+  "instructionsFor": {
+    "message": "$NAME$ Instructions",
+    "description": "The title for the import tool instructions.",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "LastPass (csv)"
+      }
+    }
+  },
+  "confirmVaultImport": {
+    "message": "Confirm vault import"
+  },
+  "confirmVaultImportDesc": {
+    "message": "This file is password-protected. Please enter the file password to import data."
+  },
+  "confirmFilePassword": {
+    "message": "Confirm file password"
+  },
+  "passkeyNotCopied": {
+    "message": "Секретният ключ няма да бъде копиран"
+  },
+  "passkeyNotCopiedAlert": {
+    "message": "Секретният ключ няма да бъде копиран в клонирания елемент. Искате ли да продължите с клонирането на елемента?"
+  },
+  "passkeyFeatureIsNotImplementedForAccountsWithoutMasterPassword": {
+    "message": "Verification required by the initiating site. This feature is not yet implemented for accounts without master password."
+  },
+  "logInWithPasskey": {
+    "message": "Вписване със секретен ключ?"
+  },
+  "passkeyAlreadyExists": {
+    "message": "За това приложение вече съществува секретен ключ."
+  },
+  "noPasskeysFoundForThisApplication": {
+    "message": "Няма намерени секретни ключове за това приложение."
+  },
+  "noMatchingPasskeyLogin": {
+    "message": "Нямате елемент за вписване, подходящ за този уеб сайт."
+  },
+  "confirm": {
+    "message": "Потвърждаване"
+  },
+  "savePasskey": {
+    "message": "Запазване на секретния ключ"
+  },
+  "savePasskeyNewLogin": {
+    "message": "Запазване на секретния ключ като нов елемент за вписване"
+  },
+  "choosePasskey": {
+    "message": "Изберете елемент, в който да запазите този секретен ключ"
+  },
+  "passkeyItem": {
+    "message": "Passkey Item"
+  },
+  "overwritePasskey": {
+    "message": "Да се замени ли секретният ключ?"
+  },
+  "overwritePasskeyAlert": {
+    "message": "Този елемент вече съдържа секретен ключ. Наистина ли искате да замените текущия секретен ключ?"
+  },
+  "featureNotSupported": {
+    "message": "Тази функционалност все още не се поддържа"
+  },
+  "yourPasskeyIsLocked": {
+    "message": "За да се ползва секретният ключ, е необходимо удостоверяване. Потвърдете самоличността си, за да продължите."
+  },
+  "useBrowserName": {
+    "message": "Използване на браузъра"
   }
 }

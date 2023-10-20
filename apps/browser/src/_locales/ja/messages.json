@@ -1253,6 +1253,9 @@
   "typeIdentity": {
     "message": "ID"
   },
+  "typePasskey": {
+    "message": "パスキー"
+  },
   "passwordHistory": {
     "message": "パスワードの履歴"
   },
@@ -1652,6 +1655,9 @@
   },
   "personalOwnershipPolicyInEffect": {
     "message": "組織のポリシーが所有者のオプションに影響を与えています。"
+  },
+  "personalOwnershipPolicyInEffectImports": {
+    "message": "組織のポリシーにより、個々の保管庫へのアイテムのインポートがブロックされました。"
   },
   "excludedDomains": {
     "message": "除外するドメイン"
@@ -2445,5 +2451,164 @@
   "turnOffMasterPasswordPromptToEditField": {
     "message": "このフィールドを編集するには、マスターパスワードの再入力をオフにしてください",
     "description": "Message appearing below the autofill on load message when master password reprompt is set for a vault item."
+  },
+  "importData": {
+    "message": "データのインポート",
+    "description": "Used for the header of the import dialog, the import button and within the file-password-prompt"
+  },
+  "importError": {
+    "message": "インポート エラー"
+  },
+  "importErrorDesc": {
+    "message": "インポートしようとしたデータに問題がありました。以下のエラーをソースファイルで解決し、もう一度やり直してください。"
+  },
+  "resolveTheErrorsBelowAndTryAgain": {
+    "message": "以下のエラーを解決してやり直してください。"
+  },
+  "description": {
+    "message": "説明"
+  },
+  "importSuccess": {
+    "message": "データをインポートしました"
+  },
+  "importSuccessNumberOfItems": {
+    "message": "合計 $AMOUNT$ 件のアイテムをインポートしました。",
+    "placeholders": {
+      "amount": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "total": {
+    "message": "合計"
+  },
+  "importWarning": {
+    "message": "$ORGANIZATION$にデータをインポートしています。データはこの組織のメンバーと共有される可能性があります。続行しますか？",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "importFormatError": {
+    "message": "データが正しい形式ではありません。インポートするファイルを確認してやり直してください。"
+  },
+  "importNothingError": {
+    "message": "何もインポートされませんでした。"
+  },
+  "importEncKeyError": {
+    "message": "エクスポートされたファイルの復号でエラーが発生しました。暗号化キーが、データをエクスポートするために使用された暗号化キーと一致しません。"
+  },
+  "importDestination": {
+    "message": "インポート先"
+  },
+  "learnAboutImportOptions": {
+    "message": "インポートオプションの詳細"
+  },
+  "selectImportFolder": {
+    "message": "フォルダーを選択"
+  },
+  "selectImportCollection": {
+    "message": "コレクションを選択"
+  },
+  "importTargetHint": {
+    "message": "インポートしたファイルコンテンツを $DESTINATION$ に移動したい場合は、このオプションを選択してください。",
+    "description": "Located as a hint under the import target. Will be appended by either folder or collection, depending if the user is importing into an individual or an organizational vault.",
+    "placeholders": {
+      "destination": {
+        "content": "$1",
+        "example": "folder or collection"
+      }
+    }
+  },
+  "importUnassignedItemsError": {
+    "message": "割り当てられていないアイテムがファイルに含まれています。"
+  },
+  "selectFormat": {
+    "message": "インポートするファイルの形式を選択"
+  },
+  "selectImportFile": {
+    "message": "インポートするファイルを選択"
+  },
+  "chooseFile": {
+    "message": "ファイルを選択"
+  },
+  "noFileChosen": {
+    "message": "ファイルが選択されていません"
+  },
+  "orCopyPasteFileContents": {
+    "message": "またはインポートするファイルの中身をコピーして貼り付け"
+  },
+  "instructionsFor": {
+    "message": "$NAME$ 向けの説明",
+    "description": "The title for the import tool instructions.",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "LastPass (csv)"
+      }
+    }
+  },
+  "confirmVaultImport": {
+    "message": "保管庫のインポートの確認"
+  },
+  "confirmVaultImportDesc": {
+    "message": "このファイルはパスワードで保護されています。インポートするファイルのパスワードを入力してください。"
+  },
+  "confirmFilePassword": {
+    "message": "ファイルパスワードの確認"
+  },
+  "passkeyNotCopied": {
+    "message": "パスキーはコピーされません"
+  },
+  "passkeyNotCopiedAlert": {
+    "message": "パスキーは複製されたアイテムにコピーされません。このアイテムを複製しますか？"
+  },
+  "passkeyFeatureIsNotImplementedForAccountsWithoutMasterPassword": {
+    "message": "開始サイトでの認証が必要です。この機能はマスターパスワードのないアカウントではまだ対応していません。"
+  },
+  "logInWithPasskey": {
+    "message": "パスキーでログインしますか?"
+  },
+  "passkeyAlreadyExists": {
+    "message": "このアプリにはすでにパスキーが存在します。"
+  },
+  "noPasskeysFoundForThisApplication": {
+    "message": "このアプリにはパスキーがありません。"
+  },
+  "noMatchingPasskeyLogin": {
+    "message": "このサイトに一致するログイン情報がありません。"
+  },
+  "confirm": {
+    "message": "確認"
+  },
+  "savePasskey": {
+    "message": "パスキーを保存"
+  },
+  "savePasskeyNewLogin": {
+    "message": "パスキーを新しいログイン情報として保存"
+  },
+  "choosePasskey": {
+    "message": "このパスキーを保存するログイン情報を選択してください"
+  },
+  "passkeyItem": {
+    "message": "パスキーアイテム"
+  },
+  "overwritePasskey": {
+    "message": "パスキーを上書きしますか?"
+  },
+  "overwritePasskeyAlert": {
+    "message": "このアイテムにはすでにパスキーが含まれています。現在のパスキーを上書きしてもよろしいですか?"
+  },
+  "featureNotSupported": {
+    "message": "機能は未対応です"
+  },
+  "yourPasskeyIsLocked": {
+    "message": "パスキーを使用するには認証が必要です。続行するには本人確認を行ってください。"
+  },
+  "useBrowserName": {
+    "message": "ブラウザーを使用"
   }
 }
