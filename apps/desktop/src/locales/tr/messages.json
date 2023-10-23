@@ -1663,7 +1663,7 @@
     "message": "Bir kuruluş ilkesi sahiplik seçeneklerinizi etkiliyor."
   },
   "personalOwnershipPolicyInEffectImports": {
-    "message": "Bir kuruluş ilkesi, kayıtları kişisel kasanıza içe aktarmayı devre dışı bıraktı."
+    "message": "Bir kuruluş ilkesi, kayıtları kişisel kasanıza içe aktarmayı engelledi."
   },
   "allSends": {
     "message": "Tüm Send'ler",
@@ -2420,7 +2420,7 @@
     "message": "Alt menü"
   },
   "typePasskey": {
-    "message": "Şifre anahtarı"
+    "message": "Geçiş anahtarı"
   },
   "passkeyNotCopied": {
     "message": "Şifre anahtarı kopyalanmayacak"
@@ -2442,16 +2442,16 @@
     "message": "İçe aktarmaya çalıştığınız verilerle ilgili bir problem var. Lütfen kaynak dosyanızdaki aşağıda belirtilen hataları çözüp tekrar deneyin."
   },
   "resolveTheErrorsBelowAndTryAgain": {
-    "message": "Resolve the errors below and try again."
+    "message": "Aşağıdaki hataları düzeltip yeniden deneyin."
   },
   "description": {
-    "message": "Description"
+    "message": "Açıklama"
   },
   "importSuccess": {
-    "message": "Data successfully imported"
+    "message": "Veriler başarıyla içe aktarıldı"
   },
   "importSuccessNumberOfItems": {
-    "message": "A total of $AMOUNT$ items were imported.",
+    "message": "Toplam $AMOUNT$ kayıt içe aktarıldı.",
     "placeholders": {
       "amount": {
         "content": "$1",
@@ -2460,10 +2460,10 @@
     }
   },
   "total": {
-    "message": "Total"
+    "message": "Toplam"
   },
   "importWarning": {
-    "message": "You are importing data to $ORGANIZATION$. Your data may be shared with members of this organization. Do you want to proceed?",
+    "message": "$ORGANIZATION$ kuruluşuna veri aktarıyorsunuz. Verileriniz bu kuruluşun üyeleriyle paylaşılabilir. Devam etmek istiyor musunuz?",
     "placeholders": {
       "organization": {
         "content": "$1",

@@ -2432,11 +2432,11 @@
     "message": "Alias domain"
   },
   "importData": {
-    "message": "Import data",
+    "message": "匯入資料",
     "description": "Used for the desktop menu item and the header of the import dialog"
   },
   "importError": {
-    "message": "Import error"
+    "message": "匯入時發生錯誤"
   },
   "importErrorDesc": {
     "message": "There was a problem with the data you tried to import. Please resolve the errors listed below in your source file and try again."
@@ -2460,7 +2460,7 @@
     }
   },
   "total": {
-    "message": "Total"
+    "message": "總計"
   },
   "importWarning": {
     "message": "You are importing data to $ORGANIZATION$. Your data may be shared with members of this organization. Do you want to proceed?",
@@ -2481,16 +2481,16 @@
     "message": "Error decrypting the exported file. Your encryption key does not match the encryption key used export the data."
   },
   "importDestination": {
-    "message": "Import destination"
+    "message": "匯入目的地"
   },
   "learnAboutImportOptions": {
-    "message": "Learn about your import options"
+    "message": "瞭解更多匯入選項"
   },
   "selectImportFolder": {
-    "message": "Select a folder"
+    "message": "選擇一個資料夾"
   },
   "selectImportCollection": {
-    "message": "Select a collection"
+    "message": "選擇一個集合"
   },
   "importTargetHint": {
     "message": "Select this option if you want the imported file contents moved to a $DESTINATION$",
@@ -2512,10 +2512,10 @@
     "message": "Select the import file"
   },
   "chooseFile": {
-    "message": "Choose File"
+    "message": "選擇檔案"
   },
   "noFileChosen": {
-    "message": "No file chosen"
+    "message": "未選擇任何檔案"
   },
   "orCopyPasteFileContents": {
     "message": "or copy/paste the import file contents"

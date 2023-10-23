@@ -2472,7 +2472,7 @@
     }
   },
   "importFormatError": {
-    "message": "数据格式不正确。请检查您的导入文件后重试。"
+    "message": "数据格式不正确。请检查您的导入文件然后重试。"
   },
   "importNothingError": {
     "message": "没有导入任何内容。"
@@ -2521,7 +2521,7 @@
     "message": "或复制/粘贴要导入的文件内容"
   },
   "instructionsFor": {
-    "message": "$NAME$ Instructions",
+    "message": "$NAME$ 说明",
     "description": "The title for the import tool instructions.",
     "placeholders": {
       "name": {

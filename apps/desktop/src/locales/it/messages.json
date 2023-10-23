@@ -476,7 +476,7 @@
     "message": "La dimensione massima del file è 500 MB."
   },
   "encryptionKeyMigrationRequired": {
-    "message": "Migrazione della chiave di criptografia obbligatoria. Accedi tramite la cassaforte web per aggiornare la tua chiave di criptografia."
+    "message": "Migrazione della chiave di crittografia obbligatoria. Accedi tramite la cassaforte web per aggiornare la tua chiave di crittografia."
   },
   "editedFolder": {
     "message": "Cartella salvata"
@@ -1075,7 +1075,7 @@
     "message": "Passa a Premium e ottieni:"
   },
   "premiumSignUpStorage": {
-    "message": "1 GB di spazio di archiviazione criptato per gli allegati."
+    "message": "1 GB di spazio di archiviazione crittografato per gli allegati."
   },
   "premiumSignUpTwoStepOptions": {
     "message": "Opzioni di verifica in due passaggi proprietarie come YubiKey e Duo."
@@ -1335,13 +1335,13 @@
     "message": "Conferma esportazione della cassaforte"
   },
   "exportWarningDesc": {
-    "message": "Questa esportazione contiene i dati della tua cassaforte in un formato non criptato. Non salvare o inviare il file esportato attraverso canali non protetti (come le email). Eliminalo immediatamente dopo l'utilizzo."
+    "message": "Questa esportazione contiene i dati della tua cassaforte in un formato non crittografato. Non salvare o inviare il file esportato attraverso canali non protetti (come le email). Eliminalo immediatamente dopo l'utilizzo."
   },
   "encExportKeyWarningDesc": {
-    "message": "Questa esportazione cripta i tuoi dati usando la chiave di criptografia del tuo account. Se cambi la chiave di criptografia del tuo account, non potrai più decifrare il file esportato e dovrai eseguire una nuova esportazione."
+    "message": "Questa esportazione crittografa i tuoi dati usando la chiave di crittografia del tuo account. Se cambi la chiave di crittografia del tuo account, non potrai più decifrare il file esportato e dovrai eseguire una nuova esportazione."
   },
   "encExportAccountWarningDesc": {
-    "message": "Le chiavi di criptografia dell'account sono uniche per ogni account Bitwarden, quindi non puoi importare un file di esportazione criptato in un account diverso."
+    "message": "Le chiavi di crittografia dell'account sono uniche per ogni account Bitwarden, quindi non puoi importare un file di esportazione crittato in un account diverso."
   },
   "noOrganizationsList": {
     "message": "Non appartieni a nessuna organizzazione. Le organizzazioni ti consentono di condividere elementi con altri in modo sicuro."
@@ -2080,7 +2080,7 @@
     "message": "Non è possibile accedere agli elementi nelle organizzazioni disabilitate. Contatta il proprietario della tua organizzazione per assistenza."
   },
   "neverLockWarning": {
-    "message": "Sei sicuro di voler usare l'opzione \"Mai\"? Impostare le opzioni di blocco su \"Mai\" salverà la chiave di criptografia della cassaforte sul tuo dispositivo. Se utilizzi questa opzione, assicurati di mantenere il tuo dispositivo adeguatamente protetto."
+    "message": "Sei sicuro di voler usare l'opzione \"Mai\"? Impostare le opzioni di blocco su \"Mai\" salverà la chiave di crittografia della cassaforte sul tuo dispositivo. Se usi questa opzione, assicurati di mantenere il tuo dispositivo adeguatamente protetto."
   },
   "vault": {
     "message": "Cassaforte"
@@ -2472,13 +2472,13 @@
     }
   },
   "importFormatError": {
-    "message": "I dati non sono formattati correttamente. Ricontrolla il file di importazione riprova."
+    "message": "I dati non sono formattati correttamente. Controlla il file di importazione e riprova."
   },
   "importNothingError": {
     "message": "Non è stato importato niente."
   },
   "importEncKeyError": {
-    "message": "Errore durante la decriptografia del file esportato. La chiave di criptografia non corrisponde alla chiave di criptografia usata per esportare i dati."
+    "message": "Errore durante la decrittografia del file esportato. La chiave di crittografia non corrisponde alla chiave di crittografia usata per esportare i dati."
   },
   "importDestination": {
     "message": "Destinazione dell'importazione"
