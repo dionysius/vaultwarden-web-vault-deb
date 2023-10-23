@@ -1,10 +1,17 @@
-import { Component } from "@angular/core";
+import { DIALOG_DATA } from "@angular/cdk/dialog";
+import { Component, Inject } from "@angular/core";
 
-import { ModalConfig } from "@bitwarden/angular/services/modal.service";
 import { OrganizationUserService } from "@bitwarden/common/abstractions/organization-user/organization-user.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
+import { DialogService } from "@bitwarden/components";
 
 import { BulkUserDetails } from "./bulk-status.component";
+
+type BulkRestoreDialogParams = {
+  organizationId: string;
+  users: BulkUserDetails[];
+  isRevoking: boolean;
+};
 
 @Component({
   selector: "app-bulk-restore-revoke",
@@ -25,11 +32,11 @@ export class BulkRestoreRevokeComponent {
   constructor(
     protected i18nService: I18nService,
     private organizationUserService: OrganizationUserService,
-    config: ModalConfig
+    @Inject(DIALOG_DATA) protected data: BulkRestoreDialogParams
   ) {
-    this.isRevoking = config.data.isRevoking;
-    this.organizationId = config.data.organizationId;
-    this.users = config.data.users;
+    this.isRevoking = data.isRevoking;
+    this.organizationId = data.organizationId;
+    this.users = data.users;
     this.showNoMasterPasswordWarning = this.users.some((u) => u.hasMasterPassword === false);
   }
 
@@ -38,8 +45,7 @@ export class BulkRestoreRevokeComponent {
     return this.i18nService.t(titleKey);
   }
 
-  async submit() {
-    this.loading = true;
+  submit = async () => {
     try {
       const response = await this.performBulkUserAction();
 
@@ -52,9 +58,7 @@ export class BulkRestoreRevokeComponent {
     } catch (e) {
       this.error = e.message;
     }
-
-    this.loading = false;
-  }
+  };
 
   protected async performBulkUserAction() {
     const userIds = this.users.map((user) => user.id);
@@ -69,5 +73,9 @@ export class BulkRestoreRevokeComponent {
         userIds
       );
     }
+  }
+
+  static open(dialogService: DialogService, data: BulkRestoreDialogParams) {
+    return dialogService.open(BulkRestoreRevokeComponent, { data });
   }
 }

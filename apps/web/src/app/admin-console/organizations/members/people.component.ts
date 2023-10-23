@@ -449,16 +449,13 @@ export class PeopleComponent
       return;
     }
 
-    const ref = this.modalService.open(BulkRestoreRevokeComponent, {
-      allowMultipleModals: true,
-      data: {
-        organizationId: this.organization.id,
-        users: this.getCheckedUsers(),
-        isRevoking: isRevoking,
-      },
+    const ref = BulkRestoreRevokeComponent.open(this.dialogService, {
+      organizationId: this.organization.id,
+      users: this.getCheckedUsers(),
+      isRevoking: isRevoking,
     });
 
-    await ref.onClosedPromise();
+    await firstValueFrom(ref.closed);
     await this.load();
   }
 
