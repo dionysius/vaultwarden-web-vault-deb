@@ -1657,7 +1657,7 @@
     "message": "Політика організації впливає на ваші параметри власності."
   },
   "personalOwnershipPolicyInEffectImports": {
-    "message": "An organization policy has blocked importing items into your individual vault."
+    "message": "Політика організації заблокувала імпортування елементів до вашого особистого сховища."
   },
   "excludedDomains": {
     "message": "Виключені домени"
@@ -2453,26 +2453,26 @@
     "description": "Message appearing below the autofill on load message when master password reprompt is set for a vault item."
   },
   "importData": {
-    "message": "Import data",
+    "message": "Імпортувати дані",
     "description": "Used for the header of the import dialog, the import button and within the file-password-prompt"
   },
   "importError": {
-    "message": "Import error"
+    "message": "Помилка імпорту"
   },
   "importErrorDesc": {
-    "message": "There was a problem with the data you tried to import. Please resolve the errors listed below in your source file and try again."
+    "message": "Під час спроби імпортування ваших даних виникла проблема. Будь ласка, виправте вказані нижче помилки у вихідному файлі та спробуйте знову."
   },
   "resolveTheErrorsBelowAndTryAgain": {
-    "message": "Resolve the errors below and try again."
+    "message": "Розв'яжіть зазначені помилки та повторіть спробу."
   },
   "description": {
-    "message": "Description"
+    "message": "Опис"
   },
   "importSuccess": {
-    "message": "Data successfully imported"
+    "message": "Дані успішно імпортовано"
   },
   "importSuccessNumberOfItems": {
-    "message": "A total of $AMOUNT$ items were imported.",
+    "message": "Всього імпортовано $AMOUNT$ елементів.",
     "placeholders": {
       "amount": {
         "content": "$1",
@@ -2481,10 +2481,10 @@
     }
   },
   "total": {
-    "message": "Total"
+    "message": "Всього"
   },
   "importWarning": {
-    "message": "You are importing data to $ORGANIZATION$. Your data may be shared with members of this organization. Do you want to proceed?",
+    "message": "Ви імпортуєте дані до $ORGANIZATION$. Ваші дані можуть бути доступні учасникам цієї організації. Хочете продовжити?",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -2493,28 +2493,28 @@
     }
   },
   "importFormatError": {
-    "message": "Data is not formatted correctly. Please check your import file and try again."
+    "message": "Дані мають некоректне форматування. Перевірте файл імпорту і спробуйте знову."
   },
   "importNothingError": {
-    "message": "Nothing was imported."
+    "message": "Нічого не імпортовано."
   },
   "importEncKeyError": {
-    "message": "Error decrypting the exported file. Your encryption key does not match the encryption key used export the data."
+    "message": "Помилка розшифрування експортованого файлу. Ваш ключ шифрування відрізняється від ключа, використаного для експортування даних."
   },
   "importDestination": {
-    "message": "Import destination"
+    "message": "Призначення імпорту"
   },
   "learnAboutImportOptions": {
-    "message": "Learn about your import options"
+    "message": "Дізнайтеся про параметри імпорту"
   },
   "selectImportFolder": {
-    "message": "Select a folder"
+    "message": "Вибрати теку"
   },
   "selectImportCollection": {
-    "message": "Select a collection"
+    "message": "Вибрати збірку"
   },
   "importTargetHint": {
-    "message": "Select this option if you want the imported file contents moved to a $DESTINATION$",
+    "message": "Оберіть цю опцію, якщо ви хочете, щоб вміст імпортованого файлу було збережено в $DESTINATION$",
     "description": "Located as a hint under the import target. Will be appended by either folder or collection, depending if the user is importing into an individual or an organizational vault.",
     "placeholders": {
       "destination": {
@@ -2524,25 +2524,25 @@
     }
   },
   "importUnassignedItemsError": {
-    "message": "File contains unassigned items."
+    "message": "Файл містить непризначені елементи."
   },
   "selectFormat": {
-    "message": "Select the format of the import file"
+    "message": "Оберіть формат імпортованого файлу"
   },
   "selectImportFile": {
-    "message": "Select the import file"
+    "message": "Оберіть файл для імпорту"
   },
   "chooseFile": {
-    "message": "Choose File"
+    "message": "Вибрати файл"
   },
   "noFileChosen": {
-    "message": "No file chosen"
+    "message": "Файл не вибрано"
   },
   "orCopyPasteFileContents": {
-    "message": "or copy/paste the import file contents"
+    "message": "або скопіюйте і вставте вміст файлу для імпорту"
   },
   "instructionsFor": {
-    "message": "$NAME$ Instructions",
+    "message": "Інструкції для $NAME$",
     "description": "The title for the import tool instructions.",
     "placeholders": {
       "name": {
@@ -2552,13 +2552,13 @@
     }
   },
   "confirmVaultImport": {
-    "message": "Confirm vault import"
+    "message": "Підтвердити імпорт сховища"
   },
   "confirmVaultImportDesc": {
-    "message": "This file is password-protected. Please enter the file password to import data."
+    "message": "Цей файл захищений паролем. Будь ласка, введіть пароль для імпортування даних."
   },
   "confirmFilePassword": {
-    "message": "Confirm file password"
+    "message": "Підтвердьте пароль файлу"
   },
   "passkeyNotCopied": {
     "message": "Ключ доступу не буде скопійовано"

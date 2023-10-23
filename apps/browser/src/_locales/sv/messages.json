@@ -2453,20 +2453,20 @@
     "description": "Message appearing below the autofill on load message when master password reprompt is set for a vault item."
   },
   "importData": {
-    "message": "Import data",
+    "message": "Importera data",
     "description": "Used for the header of the import dialog, the import button and within the file-password-prompt"
   },
   "importError": {
     "message": "Import error"
   },
   "importErrorDesc": {
-    "message": "There was a problem with the data you tried to import. Please resolve the errors listed below in your source file and try again."
+    "message": "Det uppstod ett problem med den data du försökte importera. Åtgärda de fel som anges nedan i din källfil och försök igen."
   },
   "resolveTheErrorsBelowAndTryAgain": {
-    "message": "Resolve the errors below and try again."
+    "message": "Åtgärda felen nedan och försök igen."
   },
   "description": {
-    "message": "Description"
+    "message": "Beskrivning"
   },
   "importSuccess": {
     "message": "Data successfully imported"
@@ -2496,7 +2496,7 @@
     "message": "Data is not formatted correctly. Please check your import file and try again."
   },
   "importNothingError": {
-    "message": "Nothing was imported."
+    "message": "Ingenting har importerats."
   },
   "importEncKeyError": {
     "message": "Error decrypting the exported file. Your encryption key does not match the encryption key used export the data."
@@ -2508,10 +2508,10 @@
     "message": "Learn about your import options"
   },
   "selectImportFolder": {
-    "message": "Select a folder"
+    "message": "Välj en mapp"
   },
   "selectImportCollection": {
-    "message": "Select a collection"
+    "message": "Välj en samling"
   },
   "importTargetHint": {
     "message": "Select this option if you want the imported file contents moved to a $DESTINATION$",
@@ -2533,10 +2533,10 @@
     "message": "Select the import file"
   },
   "chooseFile": {
-    "message": "Choose File"
+    "message": "Välj fil"
   },
   "noFileChosen": {
-    "message": "No file chosen"
+    "message": "Ingen fil vald"
   },
   "orCopyPasteFileContents": {
     "message": "or copy/paste the import file contents"

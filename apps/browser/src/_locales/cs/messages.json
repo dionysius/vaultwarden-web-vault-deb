@@ -1657,7 +1657,7 @@
     "message": "Zásady organizace ovlivňují možnosti vlastnictví."
   },
   "personalOwnershipPolicyInEffectImports": {
-    "message": "An organization policy has blocked importing items into your individual vault."
+    "message": "Zásady organizace zablokovaly importování položek do Vašeho osobního trezoru."
   },
   "excludedDomains": {
     "message": "Vyloučené domény"
@@ -2453,26 +2453,26 @@
     "description": "Message appearing below the autofill on load message when master password reprompt is set for a vault item."
   },
   "importData": {
-    "message": "Import data",
+    "message": "Importovat data",
     "description": "Used for the header of the import dialog, the import button and within the file-password-prompt"
   },
   "importError": {
-    "message": "Import error"
+    "message": "Chyba importu"
   },
   "importErrorDesc": {
-    "message": "There was a problem with the data you tried to import. Please resolve the errors listed below in your source file and try again."
+    "message": "Vyskytl se problém s daty, které jste se pokusili importovat. Vyřešte níže uvedené chyby ve zdrojovém souboru a zkuste to znovu."
   },
   "resolveTheErrorsBelowAndTryAgain": {
-    "message": "Resolve the errors below and try again."
+    "message": "Vyřešte chyby níže a zkuste to znovu."
   },
   "description": {
-    "message": "Description"
+    "message": "Popis"
   },
   "importSuccess": {
-    "message": "Data successfully imported"
+    "message": "Data byla úspěšně importována"
   },
   "importSuccessNumberOfItems": {
-    "message": "A total of $AMOUNT$ items were imported.",
+    "message": "Bylo importováno celkem $AMOUNT$ položek.",
     "placeholders": {
       "amount": {
         "content": "$1",
@@ -2481,10 +2481,10 @@
     }
   },
   "total": {
-    "message": "Total"
+    "message": "Celkem"
   },
   "importWarning": {
-    "message": "You are importing data to $ORGANIZATION$. Your data may be shared with members of this organization. Do you want to proceed?",
+    "message": "Importujete data do organizace $ORGANIZATION$. Vaše data mohou být sdílena s členy této organizace. Chcete pokračovat?",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -2493,28 +2493,28 @@
     }
   },
   "importFormatError": {
-    "message": "Data is not formatted correctly. Please check your import file and try again."
+    "message": "Data nemají správný formát. Zkontrolujte importovaný soubor a zkuste to znovu."
   },
   "importNothingError": {
-    "message": "Nothing was imported."
+    "message": "Nebylo nic importováno."
   },
   "importEncKeyError": {
-    "message": "Error decrypting the exported file. Your encryption key does not match the encryption key used export the data."
+    "message": "Chyba při dešifrování exportovaného souboru. Váš šifrovací klíč se neshoduje s klíčem použitým během exportu dat."
   },
   "importDestination": {
-    "message": "Import destination"
+    "message": "Cíl importu"
   },
   "learnAboutImportOptions": {
-    "message": "Learn about your import options"
+    "message": "Více o volbách importu"
   },
   "selectImportFolder": {
-    "message": "Select a folder"
+    "message": "Zvolte složku"
   },
   "selectImportCollection": {
-    "message": "Select a collection"
+    "message": "Zvolte kolekci"
   },
   "importTargetHint": {
-    "message": "Select this option if you want the imported file contents moved to a $DESTINATION$",
+    "message": "Pokud chcete obsah importovaného souboru přesunout do složky $DESTINATION$, vyberte tuto volbu",
     "description": "Located as a hint under the import target. Will be appended by either folder or collection, depending if the user is importing into an individual or an organizational vault.",
     "placeholders": {
       "destination": {
@@ -2524,25 +2524,25 @@
     }
   },
   "importUnassignedItemsError": {
-    "message": "File contains unassigned items."
+    "message": "Soubor obsahuje nepřiřazené položky."
   },
   "selectFormat": {
-    "message": "Select the format of the import file"
+    "message": "Vyberte formát importovaného souboru"
   },
   "selectImportFile": {
-    "message": "Select the import file"
+    "message": "Vyberte soubor pro import"
   },
   "chooseFile": {
-    "message": "Choose File"
+    "message": "Vybrat soubor"
   },
   "noFileChosen": {
-    "message": "No file chosen"
+    "message": "Není vybrán žádný soubor"
   },
   "orCopyPasteFileContents": {
-    "message": "or copy/paste the import file contents"
+    "message": "nebo zkopírujte a vložte obsah souboru"
   },
   "instructionsFor": {
-    "message": "$NAME$ Instructions",
+    "message": "Instrukce pro $NAME$",
     "description": "The title for the import tool instructions.",
     "placeholders": {
       "name": {
@@ -2552,13 +2552,13 @@
     }
   },
   "confirmVaultImport": {
-    "message": "Confirm vault import"
+    "message": "Potvrdit import trezoru"
   },
   "confirmVaultImportDesc": {
-    "message": "This file is password-protected. Please enter the file password to import data."
+    "message": "Tento soubor je chráněn heslem. Zadejte heslo souboru pro import dat."
   },
   "confirmFilePassword": {
-    "message": "Confirm file password"
+    "message": "Potvrzení hesla souboru"
   },
   "passkeyNotCopied": {
     "message": "Přístupový klíč nebude zkopírován"

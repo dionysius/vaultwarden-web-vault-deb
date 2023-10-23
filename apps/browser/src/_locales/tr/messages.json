@@ -1657,7 +1657,7 @@
     "message": "Bir kuruluş ilkesi sahiplik seçeneklerinizi etkiliyor."
   },
   "personalOwnershipPolicyInEffectImports": {
-    "message": "An organization policy has blocked importing items into your individual vault."
+    "message": "Bir kuruluş ilkesi, kayıtları kişisel kasanıza içe aktarmayı engelledi."
   },
   "excludedDomains": {
     "message": "Hariç tutulan alan adları"
@@ -2453,26 +2453,26 @@
     "description": "Message appearing below the autofill on load message when master password reprompt is set for a vault item."
   },
   "importData": {
-    "message": "Import data",
+    "message": "Verileri içe aktar",
     "description": "Used for the header of the import dialog, the import button and within the file-password-prompt"
   },
   "importError": {
-    "message": "Import error"
+    "message": "İçe aktarma hatası"
   },
   "importErrorDesc": {
-    "message": "There was a problem with the data you tried to import. Please resolve the errors listed below in your source file and try again."
+    "message": "İçe aktarmaya çalıştığınız verilerle ilgili bir problem var. Lütfen kaynak dosyanızdaki aşağıda belirtilen hataları çözüp tekrar deneyin."
   },
   "resolveTheErrorsBelowAndTryAgain": {
-    "message": "Resolve the errors below and try again."
+    "message": "Aşağıdaki hataları düzeltip yeniden deneyin."
   },
   "description": {
-    "message": "Description"
+    "message": "Açıklama"
   },
   "importSuccess": {
-    "message": "Data successfully imported"
+    "message": "Veriler başarıyla içe aktarıldı"
   },
   "importSuccessNumberOfItems": {
-    "message": "A total of $AMOUNT$ items were imported.",
+    "message": "Toplam $AMOUNT$ kayıt içe aktarıldı.",
     "placeholders": {
       "amount": {
         "content": "$1",
@@ -2481,10 +2481,10 @@
     }
   },
   "total": {
-    "message": "Total"
+    "message": "Toplam"
   },
   "importWarning": {
-    "message": "You are importing data to $ORGANIZATION$. Your data may be shared with members of this organization. Do you want to proceed?",
+    "message": "$ORGANIZATION$ kuruluşuna veri aktarıyorsunuz. Verileriniz bu kuruluşun üyeleriyle paylaşılabilir. Devam etmek istiyor musunuz?",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -2493,25 +2493,25 @@
     }
   },
   "importFormatError": {
-    "message": "Data is not formatted correctly. Please check your import file and try again."
+    "message": "Veriler doğru biçimlendirilmemiş. Lütfen içe aktarma dosyanızı kontrol edin ve tekrar deneyin."
   },
   "importNothingError": {
-    "message": "Nothing was imported."
+    "message": "Hiçbir şey içe aktarılmadı."
   },
   "importEncKeyError": {
-    "message": "Error decrypting the exported file. Your encryption key does not match the encryption key used export the data."
+    "message": "Dışa aktarılmış dosya çözülemedi. Şifreleme anahtarınız, veriler dışa aktarılırken kullanılanla uyuşmuyor."
   },
   "importDestination": {
-    "message": "Import destination"
+    "message": "İçe aktarma hedefi"
   },
   "learnAboutImportOptions": {
-    "message": "Learn about your import options"
+    "message": "İçe aktarma seçeneklerinizi öğrenin"
   },
   "selectImportFolder": {
-    "message": "Select a folder"
+    "message": "Bir klasör seçin"
   },
   "selectImportCollection": {
-    "message": "Select a collection"
+    "message": "Bir koleksiyon seçin"
   },
   "importTargetHint": {
     "message": "Select this option if you want the imported file contents moved to a $DESTINATION$",
@@ -2524,25 +2524,25 @@
     }
   },
   "importUnassignedItemsError": {
-    "message": "File contains unassigned items."
+    "message": "Dosya atanmamış öğeler içeriyor."
   },
   "selectFormat": {
-    "message": "Select the format of the import file"
+    "message": "İçe aktarma dosyasının biçimini seçin"
   },
   "selectImportFile": {
-    "message": "Select the import file"
+    "message": "İçe aktarma dosyasını seçin"
   },
   "chooseFile": {
-    "message": "Choose File"
+    "message": "Dosya seçin"
   },
   "noFileChosen": {
-    "message": "No file chosen"
+    "message": "Dosya seçilmedi"
   },
   "orCopyPasteFileContents": {
-    "message": "or copy/paste the import file contents"
+    "message": "veya içe aktarma dosyasının içeriğini kopyalayıp yapıştırın"
   },
   "instructionsFor": {
-    "message": "$NAME$ Instructions",
+    "message": "$NAME$ Talimatları",
     "description": "The title for the import tool instructions.",
     "placeholders": {
       "name": {
@@ -2552,13 +2552,13 @@
     }
   },
   "confirmVaultImport": {
-    "message": "Confirm vault import"
+    "message": "Kasayı içe aktarmayı onaylayın"
   },
   "confirmVaultImportDesc": {
-    "message": "This file is password-protected. Please enter the file password to import data."
+    "message": "Bu dosya parola korumalıdır. Verileri içe aktarmak için lütfen dosya parolasını girin."
   },
   "confirmFilePassword": {
-    "message": "Confirm file password"
+    "message": "Dosya parolasını onaylayın"
   },
   "passkeyNotCopied": {
     "message": "Passkey will not be copied"
@@ -2570,10 +2570,10 @@
     "message": "Verification required by the initiating site. This feature is not yet implemented for accounts without master password."
   },
   "logInWithPasskey": {
-    "message": "Log in with passkey?"
+    "message": "Geçiş Anahtarı ile giriş yap?"
   },
   "passkeyAlreadyExists": {
-    "message": "A passkey already exists for this application."
+    "message": "Bu uygulama için bir Geçiş Anahtarı zaten bulunmakta."
   },
   "noPasskeysFoundForThisApplication": {
     "message": "No passkeys found for this application."

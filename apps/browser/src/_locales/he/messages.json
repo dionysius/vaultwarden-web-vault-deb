@@ -2453,11 +2453,11 @@
     "description": "Message appearing below the autofill on load message when master password reprompt is set for a vault item."
   },
   "importData": {
-    "message": "Import data",
+    "message": "ייבוא נתונים",
     "description": "Used for the header of the import dialog, the import button and within the file-password-prompt"
   },
   "importError": {
-    "message": "Import error"
+    "message": "שגיאת ייבוא"
   },
   "importErrorDesc": {
     "message": "There was a problem with the data you tried to import. Please resolve the errors listed below in your source file and try again."
@@ -2466,10 +2466,10 @@
     "message": "Resolve the errors below and try again."
   },
   "description": {
-    "message": "Description"
+    "message": "תיאור"
   },
   "importSuccess": {
-    "message": "Data successfully imported"
+    "message": "הנתונים יובאו בהצלחה"
   },
   "importSuccessNumberOfItems": {
     "message": "A total of $AMOUNT$ items were imported.",
@@ -2481,7 +2481,7 @@
     }
   },
   "total": {
-    "message": "Total"
+    "message": "סך הכול"
   },
   "importWarning": {
     "message": "You are importing data to $ORGANIZATION$. Your data may be shared with members of this organization. Do you want to proceed?",
@@ -2502,7 +2502,7 @@
     "message": "Error decrypting the exported file. Your encryption key does not match the encryption key used export the data."
   },
   "importDestination": {
-    "message": "Import destination"
+    "message": "יעד ייבוא"
   },
   "learnAboutImportOptions": {
     "message": "Learn about your import options"

@@ -708,13 +708,13 @@
     "message": "Conferma esportazione della cassaforte"
   },
   "exportWarningDesc": {
-    "message": "Questa esportazione contiene i dati della tua cassaforte in un formato non criptato. Non salvare o inviare il file esportato attraverso canali non protetti (come le email). Eliminalo immediatamente dopo l'utilizzo."
+    "message": "Questa esportazione contiene i dati della tua cassaforte in un formato non crittografato. Non salvare o inviare il file esportato attraverso canali non protetti (come le email). Eliminalo immediatamente dopo l'utilizzo."
   },
   "encExportKeyWarningDesc": {
-    "message": "Questa esportazione cripta i tuoi dati usando la chiave di criptografia del tuo account. Se cambi la chiave di criptografia del tuo account, non potrai più decifrare il file esportato e dovrai eseguire una nuova esportazione."
+    "message": "Questa esportazione crittografa i tuoi dati usando la chiave di crittografia del tuo account. Se cambi la chiave di crittografia del tuo account, non potrai più decifrare il file esportato e dovrai eseguire una nuova esportazione."
   },
   "encExportAccountWarningDesc": {
-    "message": "Le chiavi di criptografia dell'account sono uniche per ogni account Bitwarden, quindi non puoi importare un file di esportazione criptato in un account diverso."
+    "message": "Le chiavi di crittografia dell'account sono uniche per ogni account Bitwarden, quindi non puoi importare un file di esportazione crittato in un account diverso."
   },
   "exportMasterPassword": {
     "message": "Inserisci la tua password principale per esportare i dati della tua cassaforte."
@@ -796,7 +796,7 @@
     "message": "Funzionalità non disponibile"
   },
   "encryptionKeyMigrationRequired": {
-    "message": "Migrazione della chiave di criptografia obbligatoria. Accedi tramite la cassaforte web per aggiornare la tua chiave di criptografia."
+    "message": "Migrazione della chiave di crittografia obbligatoria. Accedi tramite la cassaforte web per aggiornare la tua chiave di crittografia."
   },
   "premiumMembership": {
     "message": "Abbonamento Premium"
@@ -817,7 +817,7 @@
     "message": "Passa a Premium e ottieni:"
   },
   "ppremiumSignUpStorage": {
-    "message": "1 GB di spazio di archiviazione criptato per gli allegati."
+    "message": "1 GB di spazio di archiviazione crittografato per gli allegati."
   },
   "premiumSignUpTwoStepOptions": {
     "message": "Opzioni di verifica in due passaggi proprietarie come YubiKey e Duo."
@@ -1378,7 +1378,7 @@
     "description": "ex. Date this password was updated"
   },
   "neverLockWarning": {
-    "message": "Sei sicuro di voler usare l'opzione \"Mai\"? Impostare le opzioni di blocco su \"Mai\" salverà la chiave di criptografia della cassaforte sul tuo dispositivo. Se utilizzi questa opzione, assicurati di mantenere il tuo dispositivo adeguatamente protetto."
+    "message": "Sei sicuro di voler usare l'opzione \"Mai\"? Impostare le opzioni di blocco su \"Mai\" salverà la chiave di crittografia della cassaforte sul tuo dispositivo. Se usi questa opzione, assicurati di mantenere il tuo dispositivo adeguatamente protetto."
   },
   "noOrganizationsList": {
     "message": "Non appartieni a nessuna organizzazione. Le organizzazioni ti consentono di condividere elementi con altri in modo sicuro."
@@ -1657,7 +1657,7 @@
     "message": "Una politica dell'organizzazione sta influenzando le tue opzioni di proprietà."
   },
   "personalOwnershipPolicyInEffectImports": {
-    "message": "An organization policy has blocked importing items into your individual vault."
+    "message": "Una politica dell'organizzazione ti impedisce di importare elementi nella tua cassaforte individuale."
   },
   "excludedDomains": {
     "message": "Domini esclusi"
@@ -2441,11 +2441,11 @@
     "message": "Dominio alias"
   },
   "passwordRepromptDisabledAutofillOnPageLoad": {
-    "message": "Gli elementi che richiedono di inserire la password principale di nuovo non possono essere riempiti automaticamente al caricamento della pagina.",
+    "message": "Gli elementi che richiedono di inserire di nuovo la password principale non possono essere riempiti automaticamente al caricamento della pagina.",
     "description": "Toast message for describing that master password re-prompt cannot be auto-filled on page load."
   },
   "autofillOnPageLoadSetToDefault": {
-    "message": "Il riempimento automatico al caricamento della pagina impostata per usare l'impostazione predefinita.",
+    "message": "Riempimento automatico al caricamento della pagina impostato con l'impostazione predefinita.",
     "description": "Toast message for informing the user that auto-fill on page load has been set to the default setting."
   },
   "turnOffMasterPasswordPromptToEditField": {
@@ -2453,26 +2453,26 @@
     "description": "Message appearing below the autofill on load message when master password reprompt is set for a vault item."
   },
   "importData": {
-    "message": "Import data",
+    "message": "Importa dati",
     "description": "Used for the header of the import dialog, the import button and within the file-password-prompt"
   },
   "importError": {
-    "message": "Import error"
+    "message": "Errore di importazione"
   },
   "importErrorDesc": {
-    "message": "There was a problem with the data you tried to import. Please resolve the errors listed below in your source file and try again."
+    "message": "Si è verificato un problema con i dati che hai provato a importare. Risolvi questi errori nel file e riprova."
   },
   "resolveTheErrorsBelowAndTryAgain": {
-    "message": "Resolve the errors below and try again."
+    "message": "Correggi gli errori qui sotto e riprova."
   },
   "description": {
-    "message": "Description"
+    "message": "Descrizione"
   },
   "importSuccess": {
-    "message": "Data successfully imported"
+    "message": "Dati importati"
   },
   "importSuccessNumberOfItems": {
-    "message": "A total of $AMOUNT$ items were imported.",
+    "message": "$AMOUNT$ elementi sono stati importati.",
     "placeholders": {
       "amount": {
         "content": "$1",
@@ -2481,10 +2481,10 @@
     }
   },
   "total": {
-    "message": "Total"
+    "message": "Totale"
   },
   "importWarning": {
-    "message": "You are importing data to $ORGANIZATION$. Your data may be shared with members of this organization. Do you want to proceed?",
+    "message": "Stai importando dati in $ORGANIZATION$. I tuoi dati potrebbero essere condivisi con i membri di questa organizzazione. Vuoi procedere?",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -2493,28 +2493,28 @@
     }
   },
   "importFormatError": {
-    "message": "Data is not formatted correctly. Please check your import file and try again."
+    "message": "I dati non sono formattati correttamente. Controlla il file di importazione e riprova."
   },
   "importNothingError": {
-    "message": "Nothing was imported."
+    "message": "Non è stato importato niente."
   },
   "importEncKeyError": {
-    "message": "Error decrypting the exported file. Your encryption key does not match the encryption key used export the data."
+    "message": "Errore durante la decrittografia del file esportato. La chiave di crittografia non corrisponde alla chiave di crittografia usata per esportare i dati."
   },
   "importDestination": {
-    "message": "Import destination"
+    "message": "Destinazione dell'importazione"
   },
   "learnAboutImportOptions": {
-    "message": "Learn about your import options"
+    "message": "Ulteriori informazioni sulle tue opzioni di importazione"
   },
   "selectImportFolder": {
-    "message": "Select a folder"
+    "message": "Seleziona una cartella"
   },
   "selectImportCollection": {
-    "message": "Select a collection"
+    "message": "Seleziona una raccolta"
   },
   "importTargetHint": {
-    "message": "Select this option if you want the imported file contents moved to a $DESTINATION$",
+    "message": "Seleziona questa opzione se vuoi che i contenuti del file di importazione siano spostati in una $DESTINATION$",
     "description": "Located as a hint under the import target. Will be appended by either folder or collection, depending if the user is importing into an individual or an organizational vault.",
     "placeholders": {
       "destination": {
@@ -2524,25 +2524,25 @@
     }
   },
   "importUnassignedItemsError": {
-    "message": "File contains unassigned items."
+    "message": "Il file contiene elementi non assegnati."
   },
   "selectFormat": {
-    "message": "Select the format of the import file"
+    "message": "Seleziona il formato del file da importare"
   },
   "selectImportFile": {
-    "message": "Select the import file"
+    "message": "Seleziona il file da importare"
   },
   "chooseFile": {
-    "message": "Choose File"
+    "message": "Seleziona file"
   },
   "noFileChosen": {
-    "message": "No file chosen"
+    "message": "Nessun file selezionato"
   },
   "orCopyPasteFileContents": {
-    "message": "or copy/paste the import file contents"
+    "message": "oppure copia e incolla il contenuto del file da importare"
   },
   "instructionsFor": {
-    "message": "$NAME$ Instructions",
+    "message": "Istruzioni per $NAME$",
     "description": "The title for the import tool instructions.",
     "placeholders": {
       "name": {
@@ -2552,13 +2552,13 @@
     }
   },
   "confirmVaultImport": {
-    "message": "Confirm vault import"
+    "message": "Conferma importazione della cassaforte"
   },
   "confirmVaultImportDesc": {
-    "message": "This file is password-protected. Please enter the file password to import data."
+    "message": "Questo file è protetto da password. Inserisci la password del file per importare i dati."
   },
   "confirmFilePassword": {
-    "message": "Confirm file password"
+    "message": "Conferma password del file"
   },
   "passkeyNotCopied": {
     "message": "La passkey non sarà copiata"
