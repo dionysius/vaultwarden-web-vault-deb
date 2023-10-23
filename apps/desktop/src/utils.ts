@@ -25,8 +25,16 @@ export function isDev() {
   return process.defaultApp || /node_modules[\\/]electron[\\/]/.test(process.execPath);
 }
 
+export function isLinux() {
+  return process.platform === "linux";
+}
+
 export function isAppImage() {
-  return process.platform === "linux" && "APPIMAGE" in process.env;
+  return isLinux() && "APPIMAGE" in process.env;
+}
+
+export function isSnapStore() {
+  return isLinux() && process.env.SNAP_USER_DATA != null;
 }
 
 export function isMac() {
@@ -37,25 +45,25 @@ export function isMacAppStore() {
   return isMac() && process.mas === true;
 }
 
+export function isWindows() {
+  return process.platform === "win32";
+}
+
 export function isWindowsStore() {
-  const isWindows = process.platform === "win32";
+  const windows = isWindows();
   let windowsStore = process.windowsStore;
   if (
-    isWindows &&
+    windows &&
     !windowsStore &&
     process.resourcesPath.indexOf("8bitSolutionsLLC.bitwardendesktop_") > -1
   ) {
     windowsStore = true;
   }
-  return isWindows && windowsStore === true;
-}
-
-export function isSnapStore() {
-  return process.platform === "linux" && process.env.SNAP_USER_DATA != null;
+  return windows && windowsStore === true;
 }
 
 export function isWindowsPortable() {
-  return process.platform === "win32" && process.env.PORTABLE_EXECUTABLE_DIR != null;
+  return isWindows() && process.env.PORTABLE_EXECUTABLE_DIR != null;
 }
 
 /**
