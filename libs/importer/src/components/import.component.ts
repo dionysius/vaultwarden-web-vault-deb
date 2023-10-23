@@ -10,8 +10,8 @@ import {
 } from "@angular/core";
 import { FormBuilder, ReactiveFormsModule, Validators } from "@angular/forms";
 import * as JSZip from "jszip";
-import { concat, Observable, Subject, lastValueFrom, combineLatest } from "rxjs";
-import { map, takeUntil } from "rxjs/operators";
+import { concat, Observable, Subject, lastValueFrom, combineLatest, firstValueFrom } from "rxjs";
+import { filter, map, takeUntil } from "rxjs/operators";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
@@ -22,6 +22,7 @@ import {
 import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
 import { PolicyType } from "@bitwarden/common/admin-console/enums";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
+import { ClientType } from "@bitwarden/common/enums";
 import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
@@ -41,6 +42,7 @@ import {
   DialogService,
   FormFieldModule,
   IconButtonModule,
+  RadioButtonModule,
   SelectModule,
 } from "@bitwarden/components";
 
@@ -57,6 +59,7 @@ import {
   ImportErrorDialogComponent,
   ImportSuccessDialogComponent,
 } from "./dialog";
+import { ImportLastPassComponent } from "./lastpass";
 
 @Component({
   selector: "tools-import",
@@ -72,6 +75,8 @@ import {
     SelectModule,
     CalloutModule,
     ReactiveFormsModule,
+    ImportLastPassComponent,
+    RadioButtonModule,
   ],
   providers: [
     {
@@ -137,6 +142,7 @@ export class ImportComponent implements OnInit, OnDestroy {
     format: [null as ImportType | null, [Validators.required]],
     fileContents: [],
     file: [],
+    lastPassType: ["direct" as "csv" | "direct"],
   });
 
   @ViewChild(BitSubmitDirective)
@@ -177,6 +183,16 @@ export class ImportComponent implements OnInit, OnDestroy {
 
   protected get importBlockedByPolicy(): boolean {
     return this._importBlockedByPolicy;
+  }
+
+  protected get showLastPassToggle(): boolean {
+    return (
+      this.format === "lastpasscsv" &&
+      this.platformUtilsService.getClientType() === ClientType.Desktop
+    );
+  }
+  protected get showLastPassOptions(): boolean {
+    return this.showLastPassToggle && this.formGroup.controls.lastPassType.value === "direct";
   }
 
   ngOnInit() {
@@ -243,6 +259,8 @@ export class ImportComponent implements OnInit, OnDestroy {
   }
 
   submit = async () => {
+    await this.asyncValidatorsFinished();
+
     if (this.formGroup.invalid) {
       this.formGroup.markAllAsTouched();
       return;
@@ -250,6 +268,14 @@ export class ImportComponent implements OnInit, OnDestroy {
 
     await this.performImport();
   };
+
+  private async asyncValidatorsFinished() {
+    if (this.formGroup.pending) {
+      await firstValueFrom(
+        this.formGroup.statusChanges.pipe(filter((status) => status !== "PENDING"))
+      );
+    }
+  }
 
   protected async performImport() {
     if (this.organization) {
@@ -292,7 +318,7 @@ export class ImportComponent implements OnInit, OnDestroy {
       return;
     }
 
-    const fileEl = document.getElementById("file") as HTMLInputElement;
+    const fileEl = document.getElementById("import_input_file") as HTMLInputElement;
     const files = fileEl.files;
     let fileContents = this.formGroup.controls.fileContents.value;
     if ((files == null || files.length === 0) && (fileContents == null || fileContents === "")) {

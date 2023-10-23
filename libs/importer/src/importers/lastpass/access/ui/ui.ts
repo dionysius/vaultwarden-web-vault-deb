@@ -1,8 +1,5 @@
 import { OobResult, OtpResult } from "../models";
-
-import { DuoUi } from "./duo-ui";
-
-export abstract class Ui extends DuoUi {
+export abstract class Ui {
   // To cancel return OtpResult.Cancel, otherwise only valid data is expected.
   provideGoogleAuthPasscode: () => Promise<OtpResult>;
   provideMicrosoftAuthPasscode: () => Promise<OtpResult>;
@@ -26,4 +23,7 @@ export abstract class Ui extends DuoUi {
   approveLastPassAuth: () => Promise<OobResult>;
   approveDuo: () => Promise<OobResult>;
   approveSalesforceAuth: () => Promise<OobResult>;
+
+  /** Close MFA dialog on import success or error */
+  closeMFADialog: () => void;
 }

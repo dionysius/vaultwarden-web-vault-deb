@@ -218,9 +218,16 @@ export class Main {
         const url = new URL(s);
         const code = url.searchParams.get("code");
         const receivedState = url.searchParams.get("state");
-        if (code != null && receivedState != null) {
-          this.messagingService.send("ssoCallback", { code: code, state: receivedState });
+
+        if (code == null || receivedState == null) {
+          return;
         }
+
+        const message =
+          s.indexOf("bitwarden://import-callback-lp") === 0
+            ? "importCallbackLastPass"
+            : "ssoCallback";
+        this.messagingService.send(message, { code: code, state: receivedState });
       });
   }
 }

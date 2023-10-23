@@ -1,7 +1,7 @@
 <bit-callout type="info" *ngIf="importBlockedByPolicy">
   {{ "personalOwnershipPolicyInEffectImports" | i18n }}
 </bit-callout>
-<form [formGroup]="formGroup" [bitSubmit]="submit" id="importForm">
+<form [formGroup]="formGroup" [bitSubmit]="submit" id="import_form_importForm">
   <bit-form-field>
     <bit-label
       >{{ "importDestination" | i18n }}
@@ -77,10 +77,20 @@
       >
     </ng-container>
     <ng-container *ngIf="format === 'lastpasscsv'">
-      See detailed instructions on our help site at
-      <a target="_blank" rel="noopener" href="https://bitwarden.com/help/import-from-lastpass/">
-        https://bitwarden.com/help/import-from-lastpass/</a
-      >
+      <p bitTypography="body1">
+        {{ "seeDetailedInstructions" | i18n }}
+        <a target="_blank" rel="noopener" href="https://bitwarden.com/help/import-from-lastpass/">
+          https://bitwarden.com/help/import-from-lastpass/</a
+        >
+      </p>
+      <bit-radio-group *ngIf="showLastPassToggle" formControlName="lastPassType">
+        <bit-radio-button class="tw-block" id="import_bit-radio-button_lp-direct" value="direct">
+          <bit-label>{{ "importDirectlyFromLastPass" | i18n }}</bit-label>
+        </bit-radio-button>
+        <bit-radio-button class="tw-block" id="import_bit-radio-button_lp-csv" value="csv">
+          <bit-label>{{ "importFromCSV" | i18n }}</bit-label>
+        </bit-radio-button>
+      </bit-radio-group>
     </ng-container>
     <ng-container *ngIf="format === 'keepassxcsv'">
       Using the KeePassX desktop application, navigate to "Database" &rarr; "Export to CSV file" and
@@ -344,33 +354,37 @@
       and save the zip file.
     </ng-container>
   </bit-callout>
-  <bit-form-field>
-    <bit-label>{{ "selectImportFile" | i18n }}</bit-label>
-    <div class="file-selector">
-      <button bitButton type="button" buttonType="secondary" (click)="fileSelector.click()">
-        {{ "chooseFile" | i18n }}
-      </button>
-      {{ this.fileSelected ? this.fileSelected.name : ("noFileChosen" | i18n) }}
-    </div>
-    <input
-      bitInput
-      #fileSelector
-      type="file"
-      id="file"
-      class="form-control-file"
-      name="file"
-      formControlName="file"
-      (change)="setSelectedFile($event)"
-      hidden
-    />
-  </bit-form-field>
-  <bit-form-field>
-    <bit-label>{{ "orCopyPasteFileContents" | i18n }}</bit-label>
-    <textarea
-      id="fileContents"
-      bitInput
-      name="FileContents"
-      formControlName="fileContents"
-    ></textarea>
-  </bit-form-field>
+  <import-lastpass
+    *ngIf="showLastPassOptions"
+    [formGroup]="formGroup"
+    (csvDataLoaded)="this.formGroup.controls.fileContents.setValue($event)"
+  ></import-lastpass>
+  <div [hidden]="showLastPassOptions">
+    <bit-form-field>
+      <bit-label>{{ "selectImportFile" | i18n }}</bit-label>
+      <div class="file-selector">
+        <button bitButton type="button" buttonType="secondary" (click)="fileSelector.click()">
+          {{ "chooseFile" | i18n }}
+        </button>
+        {{ this.fileSelected ? this.fileSelected.name : ("noFileChosen" | i18n) }}
+      </div>
+      <input
+        bitInput
+        #fileSelector
+        type="file"
+        id="import_input_file"
+        formControlName="file"
+        (change)="setSelectedFile($event)"
+        hidden
+      />
+    </bit-form-field>
+    <bit-form-field>
+      <bit-label>{{ "orCopyPasteFileContents" | i18n }}</bit-label>
+      <textarea
+        id="import_textarea_fileContents"
+        bitInput
+        formControlName="fileContents"
+      ></textarea>
+    </bit-form-field>
+  </div>
 </form>
