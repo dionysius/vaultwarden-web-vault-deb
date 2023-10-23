@@ -17,4 +17,5 @@ export type UsernameGeneratorOptions = {
   forwardedForwardEmailApiToken?: string;
   forwardedForwardEmailDomain?: string;
   forwardedSimpleLoginApiKey?: string;
+  forwardedSimpleLoginBaseUrl?: string;
 };

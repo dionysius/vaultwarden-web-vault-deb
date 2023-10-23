@@ -283,6 +283,17 @@
           (blur)="saveUsernameOptions()"
         />
       </div>
+      <div class="form-group col-4" *ngIf="isSelfHosted">
+        <label for="simplelogin-baseUrl">{{ "baseUrl" | i18n }}</label>
+        <input
+          id="simplelogin-baseUrl"
+          class="form-control"
+          type="text"
+          name="SimpleLoginDomain"
+          [(ngModel)]="usernameOptions.forwardedSimpleLoginBaseUrl"
+          (blur)="saveUsernameOptions()"
+        />
+      </div>
     </div>
     <div class="row" *ngIf="usernameOptions.forwardedService === 'duckduckgo'">
       <div class="form-group col-4">

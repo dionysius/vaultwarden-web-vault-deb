@@ -353,6 +353,16 @@
               (blur)="saveUsernameOptions()"
             />
           </div>
+          <div class="box-content-row" appBoxRow>
+            <label for="simplelogin-baseUrl">{{ "baseUrl" | i18n }}</label>
+            <input
+              id="simplelogin-baseUrl"
+              type="text"
+              name="SimpleLoginDomain"
+              [(ngModel)]="usernameOptions.forwardedSimpleLoginBaseUrl"
+              (blur)="saveUsernameOptions()"
+            />
+          </div>
         </ng-container>
         <ng-container *ngIf="usernameOptions.forwardedService === 'duckduckgo'">
           <div class="box-content-row" appBoxRow>

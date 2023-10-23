@@ -17,7 +17,7 @@ export class SimpleLoginForwarder implements Forwarder {
         "Content-Type": "application/json",
       }),
     };
-    let url = "https://app.simplelogin.io/api/alias/random/new";
+    let url = options.simplelogin.baseUrl + "/api/alias/random/new";
     if (options.website != null) {
       url += "?hostname=" + options.website;
     }
