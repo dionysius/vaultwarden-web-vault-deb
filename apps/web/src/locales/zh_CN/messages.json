@@ -732,7 +732,7 @@
     "message": "密码提示"
   },
   "enterEmailToGetHint": {
-    "message": "请输入您账户的电子邮件地址来接收主密码提示。"
+    "message": "输入您账户的电子邮件地址来接收主密码提示。"
   },
   "getMasterPasswordHint": {
     "message": "获取主密码提示"
@@ -1348,7 +1348,7 @@
     }
   },
   "importFormatError": {
-    "message": "数据格式不正确。请检查您的导入文件后重试。"
+    "message": "数据格式不正确。请检查您的导入文件然后重试。"
   },
   "importNothingError": {
     "message": "没有导入任何内容。"
@@ -1397,7 +1397,7 @@
     "message": "或复制/粘贴要导入的文件内容"
   },
   "instructionsFor": {
-    "message": "$NAME$ 文件说明",
+    "message": "$NAME$ 说明",
     "description": "The title for the import tool instructions.",
     "placeholders": {
       "name": {
@@ -1555,7 +1555,7 @@
     "message": "您的账户已启用此两步登录提供程序。"
   },
   "twoStepLoginAuthDesc": {
-    "message": "输入主密码以修改两步登录设置。"
+    "message": "输入您的主密码以修改两步登录设置。"
   },
   "twoStepAuthenticatorDesc": {
     "message": "按照以下步骤，使用验证器应用设置两步登录："

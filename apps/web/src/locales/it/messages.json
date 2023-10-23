@@ -648,7 +648,7 @@
     "message": "Dai un nome alla tua passkey per aiutarti a riconoscerla."
   },
   "encryptionNotSupported": {
-    "message": "Criptografia non supportata"
+    "message": "Crittografia non supportata"
   },
   "loginWithPasskeyEnabled": {
     "message": "Accesso con passkey attivato"
@@ -1030,16 +1030,16 @@
     "message": "Conferma esportazione dei segreti"
   },
   "exportWarningDesc": {
-    "message": "Questa esportazione contiene i dati della tua cassaforte in un formato non criptato. Non salvare o inviare il file esportato attraverso canali non protetti (come le email). Eliminalo immediatamente dopo l'utilizzo."
+    "message": "Questa esportazione contiene i dati della tua cassaforte in un formato non crittografato. Non salvare o inviare il file esportato attraverso canali non protetti (come le email). Eliminalo immediatamente dopo l'utilizzo."
   },
   "exportSecretsWarningDesc": {
-    "message": "Questa esportazione contiene i dati dei tuoi segreti in un formato non criptato. Non salvare o inviare il file esportato attraverso canali non protetti (come le email). Eliminalo immediatamente dopo l'utilizzo."
+    "message": "Questa esportazione contiene i dati dei tuoi segreti in un formato non crittografato. Non salvare o inviare il file esportato attraverso canali non protetti (come le email). Eliminalo immediatamente dopo l'utilizzo."
   },
   "encExportKeyWarningDesc": {
-    "message": "Questa esportazione cripta i tuoi dati usando la chiave di criptografia del tuo account. Se cambi la chiave di criptografia del tuo account, non potrai più decifrare il file esportato e dovrai eseguire una nuova esportazione."
+    "message": "Questa esportazione crittografa i tuoi dati usando la chiave di crittografia del tuo account. Se cambi la chiave di crittografia del tuo account, non potrai più decifrare il file esportato e dovrai eseguire una nuova esportazione."
   },
   "encExportAccountWarningDesc": {
-    "message": "Le chiavi di criptografia dell'account sono uniche per ogni account Bitwarden, quindi non puoi importare un file di esportazione criptato in un account diverso."
+    "message": "Le chiavi di cifratura dell'account sono uniche per ogni account utente Bitwarden, quindi non è possibile importare un'esportazione cifrata in un account diverso."
   },
   "export": {
     "message": "Esporta"
@@ -1072,10 +1072,10 @@
     "message": "Conferma password del file"
   },
   "accountRestrictedOptionDescription": {
-    "message": "Usa la chiave di criptografia dell'account, derivata dal nome utente e dalla password principale del tuo account, per criptare il file di esportazione e limitare l'importazione solo all'account Bitwarden corrente."
+    "message": "Usa la chiave di crittografia dell'account, derivata dal nome utente e dalla password principale del tuo account, per crittografare il file di esportazione e limitare l'importazione solo all'account Bitwarden corrente."
   },
   "passwordProtectedOptionDescription": {
-    "message": "Imposta una password del file per criptare il file esportato e importarlo in qualsiasi account Bitwarden usando la password per decriptarlo."
+    "message": "Imposta una password del file per crittografare il file esportato e importarlo in qualsiasi account Bitwarden usando la password per decrittografarlo."
   },
   "exportTypeHeading": {
     "message": "Tipo di esportazione"
@@ -1209,7 +1209,7 @@
     "message": "Conferma nuova password principale"
   },
   "encKeySettings": {
-    "message": "Impostazioni chiave di criptografia"
+    "message": "Impostazioni chiave di crittografia"
   },
   "kdfAlgorithm": {
     "message": "Algoritmo KDF"
@@ -1252,7 +1252,7 @@
     "message": "Cambia KDF"
   },
   "encKeySettingsChanged": {
-    "message": "Impostazioni chiave di criptografia salvate"
+    "message": "Impostazioni chiave di crittografia salvate"
   },
   "dangerZone": {
     "message": "Zona pericolosa"
@@ -1348,13 +1348,13 @@
     }
   },
   "importFormatError": {
-    "message": "I dati non sono formattati correttamente. Ricontrolla il file di importazione riprova."
+    "message": "I dati non sono formattati correttamente. Controlla il file di importazione e riprova."
   },
   "importNothingError": {
     "message": "Non è stato importato niente."
   },
   "importEncKeyError": {
-    "message": "Errore durante la decriptografia del file esportato. La chiave di criptografia non corrisponde alla chiave di criptografia usata per esportare i dati."
+    "message": "Errore durante la decrittografia del file esportato. La chiave di crittografia non corrisponde alla chiave di crittografia usata per esportare i dati."
   },
   "importDestination": {
     "message": "Destinazione dell'importazione"
@@ -1759,7 +1759,7 @@
     "message": "Siti web non sicuri"
   },
   "unsecuredWebsitesReportDesc": {
-    "message": "Gli indirizzi che cominciano con http:// non usano la migliore criptografia disponibile. Modifica gli URI di accesso per questi account usando https:// per più sicurezza."
+    "message": "Gli indirizzi che cominciano con http:// non usano la migliore crittografia disponibile. Modifica gli URI di accesso per questi account usando https:// per più sicurezza."
   },
   "unsecuredWebsitesFound": {
     "message": "Siti web non protetti trovati"
@@ -1988,7 +1988,7 @@
     "message": "Passa a Premium e sblocca alcune funzionalità utili."
   },
   "premiumSignUpStorage": {
-    "message": "1 GB di spazio di archiviazione criptato per gli allegati."
+    "message": "1 GB di spazio di archiviazione crittografato per gli allegati."
   },
   "premiumSignUpTwoStepOptions": {
     "message": "Opzioni di verifica in due passaggi proprietarie come YubiKey e Duo."
@@ -2059,7 +2059,7 @@
     "message": "# di GB aggiuntivi"
   },
   "additionalStorageIntervalDesc": {
-    "message": "Il tuo piano include $SIZE$ di archiviazione criptata. Puoi aggiungere ulteriore spazio di archiviazione per $PRICE$ per GB /$INTERVAL$.",
+    "message": "Il tuo piano include $SIZE$ di spazio archiviazione crittografato. Puoi aggiungere più spazio di archiviazione per $PRICE$ per GB /$INTERVAL$.",
     "placeholders": {
       "size": {
         "content": "$1",
@@ -2191,7 +2191,7 @@
     "message": "Rimuovi spazio di archiviazione"
   },
   "subscriptionStorage": {
-    "message": "Il tuo abbonamento ha un totale di $MAX_STORAGE$ GB di spazio di archiviazione cifrato. Stai usando $USED_STORAGE$ GB di spazio.",
+    "message": "Il tuo abbonamento ha un totale di $MAX_STORAGE$ GB di spazio di archiviazione crittografato. Stai usando $USED_STORAGE$ GB di spazio.",
     "placeholders": {
       "max_storage": {
         "content": "$1",
@@ -2442,7 +2442,7 @@
     "message": "Crea raccolte illimitate"
   },
   "gbEncryptedFileStorage": {
-    "message": "$SIZE$ di spazio di archiviazione criptato",
+    "message": "$SIZE$ di spazio di archiviazione crittografato",
     "placeholders": {
       "size": {
         "content": "$1",
@@ -2592,13 +2592,13 @@
     "message": "Quando un membro è revocato, non ha più accesso ai dati dell'organizzazione. Per ripristinare rapidamente l'accesso dei membri, usa la scheda Revocati."
   },
   "removeUserConfirmationKeyConnector": {
-    "message": "Attenzione! Questo utente richiede Key Connector per gestire la sua criptografia. Rimuovere questo utente dalla tua organizzazione disattiverà il suo account in modo irreversibile. Questa azione non può essere annullata. Vuoi procedere?"
+    "message": "Attenzione! Questo utente richiede Key Connector per gestire la sua crittografia. Rimuovere questo utente dalla tua organizzazione disattiverà il suo account in modo irreversibile. Questa azione non può essere annullata. Vuoi procedere?"
   },
   "externalId": {
     "message": "ID esterno"
   },
   "externalIdDesc": {
-    "message": "L'ID esterno è un riferimento non criptato usato da Bitwarden Directory Connector e API."
+    "message": "L'ID esterno è un riferimento non crittografato usato da Bitwarden Directory Connector e API."
   },
   "nestCollectionUnder": {
     "message": "Annida raccolta sotto"
@@ -3540,16 +3540,16 @@
     "message": "Chiave aggiornata"
   },
   "updateEncryptionKey": {
-    "message": "Aggiorna chiave di criptografia"
+    "message": "Aggiorna chiave di crittografia"
   },
   "updateEncryptionSchemeDesc": {
-    "message": "Abbiamo modificato lo schema di criptografia per fornire una maggiore sicurezza. Aggiorna la tua chiave di criptografia inserendo la tua password principale."
+    "message": "Abbiamo modificato lo schema di crittografia per fornire una maggiore sicurezza. Aggiorna la tua chiave di crittografia inserendo la tua password principale."
   },
   "updateEncryptionKeyWarning": {
-    "message": "Dopo aver aggiornato la tua chiave di criptografia, devi uscire ed entrare di nuovo in tutte le app Bitwarden che stai usando (come l'app mobile o l'estensione del browser). Se non si esce e rientra (per scaricare la nuova chiave di criptografia) i dati della tua cassaforte potrebbero essere danneggiati. Cercheremo di farti uscire automaticamente, ma potrebbe esserci un ritardo."
+    "message": "Dopo aver aggiornato la tua chiave di crittografia, devi uscire ed entrare di nuovo in tutte le app Bitwarden che stai usando (come l'app mobile o l'estensione del browser). Se non si esce e rientra (per scaricare la nuova chiave di crittografia) i dati della tua cassaforte potrebbero essere danneggiati. Cercheremo di farti uscire automaticamente, ma potrebbe esserci un ritardo."
   },
   "updateEncryptionKeyExportWarning": {
-    "message": "Anche le esportazioni criptate che hai salvato non saranno più valide."
+    "message": "Anche le esportazioni crittografate che hai salvato non saranno più valide."
   },
   "subscription": {
     "message": "Abbonamento"
@@ -3691,33 +3691,33 @@
     "message": "Password debole identificata. Usa una password forte per proteggere il tuo account. Sei sicuro di voler usare una password debole?"
   },
   "rotateAccountEncKey": {
-    "message": "Ruota anche la chiave di criptografia del mio account"
+    "message": "Ruota anche la chiave di crittografia del mio account"
   },
   "rotateEncKeyTitle": {
-    "message": "Ruota chiave di criptografia"
+    "message": "Ruota chiave di crittografia"
   },
   "rotateEncKeyConfirmation": {
-    "message": "Sei sicuro di voler ruotare la chiave di criptografia del tuo account?"
+    "message": "Sei sicuro di voler ruotare la chiave di crittografia del tuo account?"
   },
   "attachmentsNeedFix": {
     "message": "Questo elemento ha vecchi file allegati che devono essere corretti."
   },
   "attachmentFixDescription": {
-    "message": "Questo allegato usa una criptografia obsoleta. Seleziona \"Correggi\" per scaricare, criptografare di nuovo, e caricare di nuovo l'allegato."
+    "message": "Questo allegato usa una crittografia obsoleta. Seleziona \"Correggi\" per scaricare, crittografare di nuovo, e caricare di nuovo l'allegato."
   },
   "fix": {
     "message": "Correggi",
     "description": "This is a verb. ex. 'Fix The Car'"
   },
   "oldAttachmentsNeedFixDesc": {
-    "message": "Ci sono vecchi file allegati nella tua cassaforte che devono essere corretti prima di poter ruotare la chiave di criptografia del tuo account."
+    "message": "Ci sono vecchi file allegati nella tua cassaforte che devono essere corretti prima di poter ruotare la chiave di crittografia del tuo account."
   },
   "yourAccountsFingerprint": {
     "message": "Frase impronta del tuo account",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "fingerprintEnsureIntegrityVerify": {
-    "message": "Per garantire l'integrità delle tue chiavi di criptografia, verifica la frase impronta dell'utente prima di continuare.",
+    "message": "Per garantire l'integrità delle tue chiavi di crittografia, verifica la frase impronta dell'utente prima di continuare.",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "fingerprintMatchInfo": {
@@ -4689,7 +4689,7 @@
     "message": "Amministrazione del recupero dell'account"
   },
   "accountRecoveryPolicyDesc": {
-    "message": "In base al metodo di criptografia, recupera gli account quando le password principali o i dispositivi fidati sono dimenticati o persi."
+    "message": "In base al metodo di crittografia, recupera gli account quando le password principali o i dispositivi fidati sono dimenticati o persi."
   },
   "accountRecoveryPolicyWarning": {
     "message": "Gli account esistenti con password principali richiederanno ai membri di registrarsi autonomamente prima che gli amministratori possano recuperare i loro account. L'iscrizione automatica attiverà il recupero dell'account per i nuovi membri."
@@ -5324,16 +5324,16 @@
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Use the require single-sign-on authentication policy to require all members to log in with SSO.'"
   },
   "memberDecryptionOption": {
-    "message": "Opzioni di decriptografia membro"
+    "message": "Opzioni di decrittografia membro"
   },
   "memberDecryptionPassDesc": {
-    "message": "Una volta autenticati, i membri decriptograferanno i dati della cassaforte con le loro password principali."
+    "message": "Una volta autenticati, i membri decrittograferanno i dati della cassaforte con le loro password principali."
   },
   "keyConnector": {
     "message": "Key Connector"
   },
   "memberDecryptionKeyConnectorDescStart": {
-    "message": "Connetti la tua autenticazione con SSO al tuo server self-hosted di decriptografia. Usando questa opzione, i membri non avranno bisogno di inserire la loro password principale per decriptografare i dati della cassaforte. Le",
+    "message": "Connetti la tua autenticazione con SSO al tuo server self-hosted di decrittografia. Usando questa opzione, i membri non avranno bisogno di inserire la loro password principale per decrittografare i dati della cassaforte. Le",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Connect login with SSO to your self-hosted decryption key server. Using this option, members won’t need to use their master passwords to decrypt vault data. The require SSO authentication and single organization policies are required to set up Key Connector decryption. Contact Bitwarden Support for set up assistance.'"
   },
   "memberDecryptionKeyConnectorDescLink": {
@@ -5341,11 +5341,11 @@
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Connect login with SSO to your self-hosted decryption key server. Using this option, members won’t need to use their master passwords to decrypt vault data. The require SSO authentication and single organization policies are required to set up Key Connector decryption. Contact Bitwarden Support for set up assistance.'"
   },
   "memberDecryptionKeyConnectorDescEnd": {
-    "message": "sono necessarie per configurare la decriptografia del Key Connector. Contatta l'assistenza clienti per aiuto nella configurazione.",
+    "message": "sono necessarie per configurare la decrittografia del Key Connector. Contatta l'assistenza clienti per aiuto nella configurazione.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Connect login with SSO to your self-hosted decryption key server. Using this option, members won’t need to use their master passwords to decrypt vault data. The require SSO authentication and single organization policies are required to set up Key Connector decryption. Contact Bitwarden Support for set up assistance.'"
   },
   "keyConnectorPolicyRestriction": {
-    "message": "\"Autenticazione con SSO e decriptografia Key Connector\" è attivato. Questa politica sarà applicata solo ai proprietari e agli amministratori."
+    "message": "\"Autenticazione con SSO e decrittografia Key Connector\" è attivato. Questa politica sarà applicata solo ai proprietari e agli amministratori."
   },
   "enabledSso": {
     "message": "SSO attivato"
@@ -5360,7 +5360,7 @@
     "message": "Key Connector disattivato"
   },
   "keyConnectorWarning": {
-    "message": "Quando i membri iniziano a usare il Key Connector, la tua organizzazione non può tornare a usare la decriptografia della password principale. Procedi solo se sai come distribuire e gestire un server delle chiavi."
+    "message": "Quando i membri iniziano a usare il Key Connector, la tua organizzazione non può tornare a usare la decrittografia della password principale. Procedi solo se sai come distribuire e gestire un server delle chiavi."
   },
   "migratedKeyConnector": {
     "message": "Migrato al Key Connector"
@@ -6722,10 +6722,10 @@
     "message": "Iterazioni KDF basse"
   },
   "updateLowKdfIterationsDesc": {
-    "message": "Aggiorna le tue impostazioni di criptografia per soddisfare le nuove raccomandazioni sulla sicurezza e migliorare la protezione del tuo account."
+    "message": "Aggiorna le tue impostazioni di crittografia per soddisfare le nuove raccomandazioni sulla sicurezza e migliorare la protezione del tuo account."
   },
   "changeKdfLoggedOutWarning": {
-    "message": "Procedere ti farà uscire da tutte le sessioni attive. Dovrai accedere di nuovo e completare la configurazione della verifica in due passaggi. Ti consigliamo di esportare la tua cassaforte prima di cambiare le impostazioni di criptografia per prevenire perdite di dati."
+    "message": "Procedere ti farà uscire da tutte le sessioni attive. Dovrai accedere di nuovo e completare la configurazione della verifica in due passaggi. Ti consigliamo di esportare la tua cassaforte prima di cambiare le impostazioni di crittografia per prevenire perdite di dati."
   },
   "secretsManager": {
     "message": "Gestore dei Segreti"
@@ -6952,13 +6952,13 @@
     "message": "Approva con password principale"
   },
   "trustedDeviceEncryption": {
-    "message": "Criptografia dispositivo fidato"
+    "message": "Crittografia dispositivo fidato"
   },
   "trustedDevices": {
     "message": "Dispositivi fidati"
   },
   "memberDecryptionOptionTdeDescriptionPartOne": {
-    "message": "Una volta autenticati, i membri decriptograferanno i dati della cassaforte usando una chiave memorizzata sul proprio dispositivo. La",
+    "message": "Una volta autenticati, i membri decrittograferanno i dati della cassaforte usando una chiave memorizzata sul proprio dispositivo. La",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The single organization policy, SSO Required policy, and account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
   "memberDecryptionOptionTdeDescriptionLinkOne": {
@@ -7137,7 +7137,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendsNoItemsMessage": {
-    "message": "Usa Send per condividere informazioni criptate in modo sicuro con chiunque.",
+    "message": "Usa Send per condividere informazioni crittografate in modo sicuro con chiunque.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "inviteUsers": {
@@ -7274,7 +7274,7 @@
     "message": "Hai già un account?"
   },
   "customBillingStart": {
-    "message": "La fatturazione personalizzata non è riflessa. Visita la "
+    "message": "La fatturazione personalizzata non è contabilizzata. Visita la "
   },
   "customBillingEnd": {
     "message": " pagina per l'ultima fatturazione."
