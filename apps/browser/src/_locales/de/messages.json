@@ -1657,7 +1657,7 @@
     "message": "Eine Organisationsrichtlinie beeinflusst deine Eigentümer-Optionen."
   },
   "personalOwnershipPolicyInEffectImports": {
-    "message": "An organization policy has blocked importing items into your individual vault."
+    "message": "Eine Organisationsrichtlinie hat das Importieren von Einträgen in deinen persönlichen Tresor deaktiviert."
   },
   "excludedDomains": {
     "message": "Ausgeschlossene Domains"
@@ -2453,26 +2453,26 @@
     "description": "Message appearing below the autofill on load message when master password reprompt is set for a vault item."
   },
   "importData": {
-    "message": "Import data",
+    "message": "Daten importieren",
     "description": "Used for the header of the import dialog, the import button and within the file-password-prompt"
   },
   "importError": {
-    "message": "Import error"
+    "message": "Importfehler"
   },
   "importErrorDesc": {
-    "message": "There was a problem with the data you tried to import. Please resolve the errors listed below in your source file and try again."
+    "message": "Es gab ein Problem mit den Daten, die du importieren wolltest. Bitte behebe die unten aufgeführten Fehler in deiner Quelldatei und versuche es erneut."
   },
   "resolveTheErrorsBelowAndTryAgain": {
-    "message": "Resolve the errors below and try again."
+    "message": "Behebe die unten aufgeführten Fehler und versuche es erneut."
   },
   "description": {
-    "message": "Description"
+    "message": "Beschreibung"
   },
   "importSuccess": {
-    "message": "Data successfully imported"
+    "message": "Daten erfolgreich importiert"
   },
   "importSuccessNumberOfItems": {
-    "message": "A total of $AMOUNT$ items were imported.",
+    "message": "Insgesamt wurden $AMOUNT$ Einträge importiert.",
     "placeholders": {
       "amount": {
         "content": "$1",
@@ -2481,10 +2481,10 @@
     }
   },
   "total": {
-    "message": "Total"
+    "message": "Gesamt"
   },
   "importWarning": {
-    "message": "You are importing data to $ORGANIZATION$. Your data may be shared with members of this organization. Do you want to proceed?",
+    "message": "Du importierst Daten in $ORGANIZATION$. Deine Daten könnten mit Mitgliedern dieser Organisation geteilt werden. Möchtest du fortfahren?",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -2493,28 +2493,28 @@
     }
   },
   "importFormatError": {
-    "message": "Data is not formatted correctly. Please check your import file and try again."
+    "message": "Die Daten sind nicht richtig formatiert. Kontrollieren Sie bitte Ihre Import-Datei und versuchen Sie es erneut."
   },
   "importNothingError": {
-    "message": "Nothing was imported."
+    "message": "Es wurde nichts importiert."
   },
   "importEncKeyError": {
-    "message": "Error decrypting the exported file. Your encryption key does not match the encryption key used export the data."
+    "message": "Fehler beim Entschlüsseln der exportierten Datei. Dein Verschlüsselungsschlüssel stimmt nicht mit dem beim Export verwendeten Verschlüsselungsschlüssel überein."
   },
   "importDestination": {
-    "message": "Import destination"
+    "message": "Import-Ziel"
   },
   "learnAboutImportOptions": {
-    "message": "Learn about your import options"
+    "message": "Erfahre mehr über deine Importoptionen"
   },
   "selectImportFolder": {
-    "message": "Select a folder"
+    "message": "Ordner auswählen"
   },
   "selectImportCollection": {
-    "message": "Select a collection"
+    "message": "Sammlung auswählen"
   },
   "importTargetHint": {
-    "message": "Select this option if you want the imported file contents moved to a $DESTINATION$",
+    "message": "Wähle diese Option, wenn der importierte Dateiinhalt in eine(n) $DESTINATION$ verschoben werden soll",
     "description": "Located as a hint under the import target. Will be appended by either folder or collection, depending if the user is importing into an individual or an organizational vault.",
     "placeholders": {
       "destination": {
@@ -2524,25 +2524,25 @@
     }
   },
   "importUnassignedItemsError": {
-    "message": "File contains unassigned items."
+    "message": "Die Datei enthält nicht zugewiesene Einträge."
   },
   "selectFormat": {
-    "message": "Select the format of the import file"
+    "message": "Wählen Sie das Format Ihrer Import-Datei"
   },
   "selectImportFile": {
-    "message": "Select the import file"
+    "message": "Wählen Sie die Import-Datei"
   },
   "chooseFile": {
-    "message": "Choose File"
+    "message": "Datei auswählen"
   },
   "noFileChosen": {
-    "message": "No file chosen"
+    "message": "Keine Datei ausgewählt"
   },
   "orCopyPasteFileContents": {
-    "message": "or copy/paste the import file contents"
+    "message": "oder fügen Sie den Inhalt Ihrer Datei hier ein"
   },
   "instructionsFor": {
-    "message": "$NAME$ Instructions",
+    "message": "Anleitung für $NAME$",
     "description": "The title for the import tool instructions.",
     "placeholders": {
       "name": {
@@ -2552,13 +2552,13 @@
     }
   },
   "confirmVaultImport": {
-    "message": "Confirm vault import"
+    "message": "Tresor-Import bestätigen"
   },
   "confirmVaultImportDesc": {
-    "message": "This file is password-protected. Please enter the file password to import data."
+    "message": "Diese Datei ist passwortgeschützt. Bitte gib das Dateipasswort ein, um Daten zu importieren."
   },
   "confirmFilePassword": {
-    "message": "Confirm file password"
+    "message": "Dateipasswort bestätigen"
   },
   "passkeyNotCopied": {
     "message": "Passkey wird nicht kopiert"
