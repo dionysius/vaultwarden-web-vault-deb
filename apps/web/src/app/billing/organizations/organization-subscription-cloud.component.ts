@@ -134,12 +134,24 @@ export class OrganizationSubscriptionCloudComponent implements OnInit, OnDestroy
     return this.sub != null ? this.sub.subscription : null;
   }
 
+  get subscriptionLineItems() {
+    return this.lineItems.map((lineItem: BillingSubscriptionItemResponse) => ({
+      name: lineItem.name,
+      amount: this.discountPrice(lineItem.amount),
+      quantity: lineItem.quantity,
+      interval: lineItem.interval,
+      sponsoredSubscriptionItem: lineItem.sponsoredSubscriptionItem,
+      addonSubscriptionItem: lineItem.addonSubscriptionItem,
+      productName: lineItem.productName,
+    }));
+  }
+
   get nextInvoice() {
     return this.sub != null ? this.sub.upcomingInvoice : null;
   }
 
-  get discount() {
-    return this.sub != null ? this.sub.discount : null;
+  get customerDiscount() {
+    return this.sub != null ? this.sub.customerDiscount : null;
   }
 
   get isExpired() {
@@ -168,11 +180,11 @@ export class OrganizationSubscriptionCloudComponent implements OnInit, OnDestroy
   }
 
   get storageGbPrice() {
-    return this.sub.plan.PasswordManager.additionalStoragePricePerGb;
+    return this.discountPrice(this.sub.plan.PasswordManager.additionalStoragePricePerGb);
   }
 
   get seatPrice() {
-    return this.sub.plan.PasswordManager.seatPrice;
+    return this.discountPrice(this.sub.plan.PasswordManager.seatPrice);
   }
 
   get seats() {
@@ -183,12 +195,14 @@ export class OrganizationSubscriptionCloudComponent implements OnInit, OnDestroy
     return {
       seatCount: this.sub.smSeats,
       maxAutoscaleSeats: this.sub.maxAutoscaleSmSeats,
-      seatPrice: this.sub.plan.SecretsManager.seatPrice,
+      seatPrice: this.discountPrice(this.sub.plan.SecretsManager.seatPrice),
       maxAutoscaleServiceAccounts: this.sub.maxAutoscaleSmServiceAccounts,
       additionalServiceAccounts:
         this.sub.smServiceAccounts - this.sub.plan.SecretsManager.baseServiceAccount,
       interval: this.sub.plan.isAnnual ? "year" : "month",
-      additionalServiceAccountPrice: this.sub.plan.SecretsManager.additionalPricePerServiceAccount,
+      additionalServiceAccountPrice: this.discountPrice(
+        this.sub.plan.SecretsManager.additionalPricePerServiceAccount
+      ),
       baseServiceAccountCount: this.sub.plan.SecretsManager.baseServiceAccount,
     };
   }
@@ -380,6 +394,15 @@ export class OrganizationSubscriptionCloudComponent implements OnInit, OnDestroy
     } catch (e) {
       this.logService.error(e);
     }
+  };
+
+  discountPrice = (price: number) => {
+    const discount =
+      !!this.customerDiscount && this.customerDiscount.active
+        ? price * (this.customerDiscount.percentOff / 100)
+        : 0;
+
+    return price - discount;
   };
 
   get showChangePlanButton() {

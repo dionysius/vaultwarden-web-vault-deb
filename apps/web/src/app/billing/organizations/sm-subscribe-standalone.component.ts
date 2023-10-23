@@ -6,6 +6,7 @@ import { InternalOrganizationServiceAbstraction } from "@bitwarden/common/admin-
 import { OrganizationData } from "@bitwarden/common/admin-console/models/data/organization.data";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
 import { SecretsManagerSubscribeRequest } from "@bitwarden/common/billing/models/request/sm-subscribe.request";
+import { BillingCustomerDiscount } from "@bitwarden/common/billing/models/response/organization-subscription.response";
 import { PlanResponse } from "@bitwarden/common/billing/models/response/plan.response";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
@@ -19,6 +20,7 @@ import { secretsManagerSubscribeFormFactory } from "../shared";
 export class SecretsManagerSubscribeStandaloneComponent {
   @Input() plan: PlanResponse;
   @Input() organization: Organization;
+  @Input() customerDiscount: BillingCustomerDiscount;
   @Output() onSubscribe = new EventEmitter<void>();
 
   formGroup = secretsManagerSubscribeFormFactory(this.formBuilder);

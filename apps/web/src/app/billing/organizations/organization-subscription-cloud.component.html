@@ -69,7 +69,7 @@
       <bit-table>
         <ng-template body>
           <ng-container *ngIf="subscription">
-            <tr bitRow *ngFor="let i of lineItems">
+            <tr bitRow *ngFor="let i of subscriptionLineItems">
               <td bitCell [ngClass]="{ 'tw-pl-20': i.addonSubscriptionItem }">
                 <span *ngIf="!i.addonSubscriptionItem">{{ i.productName }} -</span>
                 {{ i.name }} {{ i.quantity > 1 ? "&times;" + i.quantity : "" }} @
@@ -77,17 +77,6 @@
               </td>
               <td bitCell class="tw-text-right">
                 {{ i.quantity * i.amount | currency : "$" }} /{{ i.interval | i18n }}
-              </td>
-            </tr>
-            <tr bitRow *ngIf="discount && discount.active">
-              <td bitCell colspan="2">
-                <small>
-                  {{ "customBillingStart" | i18n }}
-                  <a routerLink="/settings/subscription/billing-history">
-                    {{ "billingHistory" | i18n }}
-                  </a>
-                  {{ "customBillingEnd" | i18n }}
-                </small>
               </td>
             </tr>
           </ng-container>
@@ -150,6 +139,7 @@
       <sm-subscribe-standalone
         [plan]="sub.plan"
         [organization]="userOrg"
+        [customerDiscount]="customerDiscount"
         (onSubscribe)="subscriptionAdjusted()"
       ></sm-subscribe-standalone>
     </div>
