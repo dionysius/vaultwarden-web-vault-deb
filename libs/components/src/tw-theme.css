@@ -160,6 +160,7 @@
   --tw-ring-offset-color: #002b36;
 }
 
+@import "./popover/popover.component.css";
 @import "./search/search.component.css";
 
 /** 
