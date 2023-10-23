@@ -27,7 +27,7 @@ import {
   ],
 })
 export class FilePasswordPromptComponent {
-  formGroup = this.formBuilder.group({
+  protected formGroup = this.formBuilder.group({
     filePassword: ["", Validators.required],
   });
 

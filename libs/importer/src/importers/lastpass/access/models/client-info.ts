@@ -1,5 +1,3 @@
-import { Utils } from "@bitwarden/common/platform/misc/utils";
-
 import { Platform } from "../enums";
 
 export class ClientInfo {
@@ -7,7 +5,7 @@ export class ClientInfo {
   id: string;
   description: string;
 
-  static createClientInfo(): ClientInfo {
-    return { platform: Platform.Desktop, id: Utils.newGuid(), description: "Importer" };
+  static createClientInfo(id: string): ClientInfo {
+    return { platform: Platform.Desktop, id, description: "Importer" };
   }
 }
