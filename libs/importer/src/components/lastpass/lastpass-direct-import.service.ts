@@ -3,9 +3,11 @@ import { OidcClient } from "oidc-client-ts";
 import { Subject, firstValueFrom } from "rxjs";
 
 import { TokenService } from "@bitwarden/common/auth/abstractions/token.service";
+import { ClientType } from "@bitwarden/common/enums";
 import { AppIdService } from "@bitwarden/common/platform/abstractions/app-id.service";
 import { BroadcasterService } from "@bitwarden/common/platform/abstractions/broadcaster.service";
 import { CryptoFunctionService } from "@bitwarden/common/platform/abstractions/crypto-function.service";
+import { EnvironmentService } from "@bitwarden/common/platform/abstractions/environment.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { PasswordGenerationServiceAbstraction } from "@bitwarden/common/tools/generator/password";
@@ -32,13 +34,14 @@ export class LastPassDirectImportService {
   constructor(
     private tokenService: TokenService,
     private cryptoFunctionService: CryptoFunctionService,
+    private environmentService: EnvironmentService,
     private appIdService: AppIdService,
     private lastPassDirectImportUIService: LastPassDirectImportUIService,
+    private platformUtilsService: PlatformUtilsService,
     private passwordGenerationService: PasswordGenerationServiceAbstraction,
     private broadcasterService: BroadcasterService,
     private ngZone: NgZone,
-    private dialogService: DialogService,
-    private platformUtilsService: PlatformUtilsService
+    private dialogService: DialogService
   ) {
     this.vault = new Vault(this.cryptoFunctionService, this.tokenService);
 
@@ -110,8 +113,7 @@ export class LastPassDirectImportService {
     this.oidcClient = new OidcClient({
       authority: this.vault.userType.openIDConnectAuthorityBase,
       client_id: this.vault.userType.openIDConnectClientId,
-      // TODO: this is different per client
-      redirect_uri: "bitwarden://import-callback-lp",
+      redirect_uri: this.getOidcRedirectUrl(),
       response_type: "code",
       scope: this.vault.userType.oidcScope,
       response_mode: "query",
@@ -129,6 +131,25 @@ export class LastPassDirectImportService {
         number: true,
       }),
     });
+  }
+
+  private getOidcRedirectUrlWithParams(oidcCode: string, oidcState: string) {
+    const redirectUri = this.oidcClient.settings.redirect_uri;
+    const params = "code=" + oidcCode + "&state=" + oidcState;
+    if (redirectUri.indexOf("bitwarden://") === 0) {
+      return redirectUri + "/?" + params;
+    }
+
+    return redirectUri + "&" + params;
+  }
+
+  private getOidcRedirectUrl() {
+    const clientType = this.platformUtilsService.getClientType();
+    if (clientType === ClientType.Desktop) {
+      return "bitwarden://import-callback-lp";
+    }
+    const webUrl = this.environmentService.getWebVaultUrl();
+    return webUrl + "/sso-connector.html?lp=1";
   }
 
   private async handleStandardImport(
@@ -150,7 +171,7 @@ export class LastPassDirectImportService {
     includeSharedFolders: boolean
   ): Promise<string> {
     const response = await this.oidcClient.processSigninResponse(
-      this.oidcClient.settings.redirect_uri + "/?code=" + oidcCode + "&state=" + oidcState
+      this.getOidcRedirectUrlWithParams(oidcCode, oidcState)
     );
     const userState = response.userState as any;
 

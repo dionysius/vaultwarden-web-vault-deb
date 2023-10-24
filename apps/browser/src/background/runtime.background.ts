@@ -259,15 +259,22 @@ export default class RuntimeBackground {
           return;
         }
 
-        try {
-          BrowserApi.createNewTab(
-            "popup/index.html?uilocation=popout#/sso?code=" +
-              encodeURIComponent(msg.code) +
-              "&state=" +
-              encodeURIComponent(msg.state)
-          );
-        } catch {
-          this.logService.error("Unable to open sso popout tab");
+        if (msg.lastpass) {
+          this.messagingService.send("importCallbackLastPass", {
+            code: msg.code,
+            state: msg.state,
+          });
+        } else {
+          try {
+            BrowserApi.createNewTab(
+              "popup/index.html?uilocation=popout#/sso?code=" +
+                encodeURIComponent(msg.code) +
+                "&state=" +
+                encodeURIComponent(msg.state)
+            );
+          } catch {
+            this.logService.error("Unable to open sso popout tab");
+          }
         }
         break;
       }
