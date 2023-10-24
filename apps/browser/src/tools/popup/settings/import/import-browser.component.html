@@ -15,10 +15,12 @@
     </button>
   </div>
 </header>
-<div tabindex="-1" class="tw-p-4">
-  <tools-import
-    (formDisabled)="this.disabled = $event"
-    (formLoading)="this.loading = $event"
-    (onSuccessfulImport)="this.onSuccessfulImport($event)"
-  ></tools-import>
-</div>
+<main tabindex="-1">
+  <div class="tw-p-4">
+    <tools-import
+      (formDisabled)="this.disabled = $event"
+      (formLoading)="this.loading = $event"
+      (onSuccessfulImport)="this.onSuccessfulImport($event)"
+    ></tools-import>
+  </div>
+</main>
