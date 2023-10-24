@@ -105,3 +105,9 @@ apps/web/src/locales/en/messages.json
 
 ## DevOps team files ##
 /.github/workflows @bitwarden/dept-devops
+
+# DevOps for Docker changes.
+**/Dockerfile @bitwarden/dept-devops
+**/*.Dockerfile @bitwarden/dept-devops
+**/.dockerignore @bitwarden/dept-devops
+**/entrypoint.sh @bitwarden/dept-devops
