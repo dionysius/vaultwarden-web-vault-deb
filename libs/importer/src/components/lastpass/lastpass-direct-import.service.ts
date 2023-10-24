@@ -137,7 +137,9 @@ export class LastPassDirectImportService {
     includeSharedFolders: boolean
   ): Promise<string> {
     const clientInfo = await this.createClientInfo(email);
-    await this.vault.open(email, password, clientInfo, this.lastPassDirectImportUIService);
+    await this.vault.open(email, password, clientInfo, this.lastPassDirectImportUIService, {
+      parseSecureNotesToAccount: false,
+    });
 
     return this.vault.accountsToExportedCsvString(!includeSharedFolders);
   }
@@ -159,7 +161,9 @@ export class LastPassDirectImportService {
     federatedUser.username = userState.email;
 
     const clientInfo = await this.createClientInfo(federatedUser.username);
-    await this.vault.openFederated(federatedUser, clientInfo, this.lastPassDirectImportUIService);
+    await this.vault.openFederated(federatedUser, clientInfo, this.lastPassDirectImportUIService, {
+      parseSecureNotesToAccount: false,
+    });
 
     return this.vault.accountsToExportedCsvString(!includeSharedFolders);
   }
