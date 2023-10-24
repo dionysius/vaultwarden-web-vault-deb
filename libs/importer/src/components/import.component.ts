@@ -188,7 +188,8 @@ export class ImportComponent implements OnInit, OnDestroy {
   protected get showLastPassToggle(): boolean {
     return (
       this.format === "lastpasscsv" &&
-      this.platformUtilsService.getClientType() === ClientType.Desktop
+      (this.platformUtilsService.getClientType() === ClientType.Desktop ||
+        this.platformUtilsService.getClientType() === ClientType.Browser)
     );
   }
   protected get showLastPassOptions(): boolean {

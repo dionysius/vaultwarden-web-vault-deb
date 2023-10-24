@@ -5,9 +5,12 @@ require("./sso.scss");
 document.addEventListener("DOMContentLoaded", () => {
   const code = getQsParam("code");
   const state = getQsParam("state");
+  const lastpass = getQsParam("lp");
 
-  if (state != null && state.includes(":clientId=browser")) {
-    initiateBrowserSso(code, state);
+  if (lastpass === "1") {
+    initiateBrowserSso(code, state, true);
+  } else if (state != null && state.includes(":clientId=browser")) {
+    initiateBrowserSso(code, state, false);
   } else {
     window.location.href = window.location.origin + "/#/sso?code=" + code + "&state=" + state;
     // Match any characters between "_returnUri='" and the next "'"
@@ -20,8 +23,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-function initiateBrowserSso(code: string, state: string) {
-  window.postMessage({ command: "authResult", code: code, state: state }, "*");
+function initiateBrowserSso(code: string, state: string, lastpass: boolean) {
+  window.postMessage({ command: "authResult", code: code, state: state, lastpass: lastpass }, "*");
   const handOffMessage = ("; " + document.cookie)
     .split("; ssoHandOffMessage=")
     .pop()
