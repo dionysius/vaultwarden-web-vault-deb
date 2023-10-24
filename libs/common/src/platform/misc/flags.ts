@@ -8,7 +8,9 @@ export type SharedFlags = {
 
 // required to avoid linting errors when there are no flags
 /* eslint-disable @typescript-eslint/ban-types */
-export type SharedDevFlags = {};
+export type SharedDevFlags = {
+  noopNotifications: boolean;
+};
 
 function getFlags<T>(envFlags: string | T): T {
   if (typeof envFlags === "string") {

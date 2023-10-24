@@ -572,12 +572,12 @@ export default class MainBackground {
       this.stateService
     );
     this.notificationsService = new NotificationsService(
+      this.logService,
       this.syncService,
       this.appIdService,
       this.apiService,
       this.environmentService,
       logoutCallback,
-      this.logService,
       this.stateService,
       this.authService,
       this.messagingService

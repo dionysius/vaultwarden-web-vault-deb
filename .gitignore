@@ -42,3 +42,6 @@ junit.xml
 documentation.json
 .eslintcache
 storybook-static
+
+# Local app configuration
+apps/**/config/local.json

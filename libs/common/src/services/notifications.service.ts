@@ -28,12 +28,12 @@ export class NotificationsService implements NotificationsServiceAbstraction {
   private reconnectTimer: any = null;
 
   constructor(
+    private logService: LogService,
     private syncService: SyncService,
     private appIdService: AppIdService,
     private apiService: ApiService,
     private environmentService: EnvironmentService,
     private logoutCallback: (expired: boolean) => Promise<void>,
-    private logService: LogService,
     private stateService: StateService,
     private authService: AuthService,
     private messagingService: MessagingService
