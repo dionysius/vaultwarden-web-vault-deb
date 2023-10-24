@@ -21,12 +21,12 @@ import { DesktopCredentialStorageListener } from "./platform/main/desktop-creden
 import { ElectronLogService } from "./platform/services/electron-log.service";
 import { ElectronStateService } from "./platform/services/electron-state.service";
 import { ElectronStorageService } from "./platform/services/electron-storage.service";
-import { I18nService } from "./platform/services/i18n.service";
+import { I18nMainService } from "./platform/services/i18n.main.service";
 import { ElectronMainMessagingService } from "./services/electron-main-messaging.service";
 
 export class Main {
   logService: ElectronLogService;
-  i18nService: I18nService;
+  i18nService: I18nMainService;
   storageService: ElectronStorageService;
   memoryStorageService: MemoryStorageService;
   messagingService: ElectronMainMessagingService;
@@ -76,7 +76,7 @@ export class Main {
     }
 
     this.logService = new ElectronLogService(null, app.getPath("userData"));
-    this.i18nService = new I18nService("en", "./locales/");
+    this.i18nService = new I18nMainService("en", "./locales/");
 
     const storageDefaults: any = {};
     // Default vault timeout to "on restart", and action to "lock"

@@ -39,6 +39,9 @@ export default {
     ipcRenderer.on("systemThemeUpdated", (_event, theme: ThemeType) => callback(theme));
   },
 
+  getLanguageFile: (formattedLocale: string): Promise<object> =>
+    ipcRenderer.invoke("getLanguageFile", formattedLocale),
+
   sendMessage: (message: { command: string } & any) =>
     ipcRenderer.send("messagingService", message),
   onMessage: (callback: (message: { command: string } & any) => void) => {
