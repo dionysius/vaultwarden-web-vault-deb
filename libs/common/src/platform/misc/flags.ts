@@ -45,7 +45,7 @@ export function devFlagEnabled<DevFlags extends SharedDevFlags>(flag: keyof DevF
   }
 
   const devFlags = getFlags<DevFlags>(process.env.DEV_FLAGS);
-  return devFlags[flag] == null || !!devFlags[flag];
+  return devFlags?.[flag] == null ? false : !!devFlags[flag];
 }
 
 /**

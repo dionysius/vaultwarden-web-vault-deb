@@ -36,8 +36,13 @@ describe("devFlagEnabled", () => {
       process.env.ENV = "development";
     });
 
-    it("returns true by default", () => {
-      expect(devFlagEnabled<any>("nonExistentFlag")).toBe(true);
+    it("returns false by default", () => {
+      expect(devFlagEnabled<any>("nonExistentFlag")).toBe(false);
+    });
+
+    it("returns false if devFlags is not defined", () => {
+      delete process.env.DEV_FLAGS;
+      expect(devFlagEnabled<any>("nonExistentFlag")).toBe(false);
     });
 
     it("returns true if enabled", () => {
