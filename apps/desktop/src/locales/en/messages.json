@@ -2480,6 +2480,9 @@
   "importEncKeyError": {
     "message": "Error decrypting the exported file. Your encryption key does not match the encryption key used export the data."
   },
+  "invalidFilePassword": {
+    "message": "Invalid file password, please use the password you entered when you created the export file."
+  },
   "importDestination": {
     "message": "Import destination"
   },
