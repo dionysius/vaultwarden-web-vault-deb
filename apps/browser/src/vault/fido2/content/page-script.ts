@@ -94,6 +94,7 @@ navigator.credentials.create = async (
     return WebauthnUtils.mapCredentialRegistrationResult(response.result);
   } catch (error) {
     if (error && error.fallbackRequested && fallbackSupported) {
+      await waitForFocus();
       return await browserCredentials.create(options);
     }
 
@@ -132,9 +133,47 @@ navigator.credentials.get = async (
     return WebauthnUtils.mapCredentialAssertResult(response.result);
   } catch (error) {
     if (error && error.fallbackRequested && fallbackSupported) {
+      await waitForFocus();
       return await browserCredentials.get(options);
     }
 
     throw error;
   }
 };
+
+/**
+ * Wait for window to be focused.
+ * Safari doesn't allow scripts to trigger webauthn when window is not focused.
+ *
+ * @param timeout Maximum time to wait for focus in milliseconds. Defaults to 5 minutes.
+ * @returns Promise that resolves when window is focused, or rejects if timeout is reached.
+ */
+async function waitForFocus(timeout: number = 5 * 60 * 1000) {
+  if (document.hasFocus()) {
+    return;
+  }
+
+  let focusListener;
+  const focusPromise = new Promise<void>((resolve) => {
+    focusListener = () => resolve();
+    window.addEventListener("focus", focusListener, { once: true });
+  });
+
+  let timeoutId;
+  const timeoutPromise = new Promise<void>((_, reject) => {
+    timeoutId = window.setTimeout(
+      () =>
+        reject(
+          new DOMException("The operation either timed out or was not allowed.", "AbortError")
+        ),
+      timeout
+    );
+  });
+
+  try {
+    await Promise.race([focusPromise, timeoutPromise]);
+  } finally {
+    window.removeEventListener("focus", focusListener);
+    window.clearTimeout(timeoutId);
+  }
+}
