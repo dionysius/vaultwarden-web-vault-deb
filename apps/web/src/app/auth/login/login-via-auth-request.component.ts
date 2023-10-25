@@ -1,8 +1,7 @@
-import { Location } from "@angular/common";
 import { Component, OnDestroy, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 
-import { LoginWithDeviceComponent as BaseLoginWithDeviceComponent } from "@bitwarden/angular/auth/components/login-with-device.component";
+import { LoginViaAuthRequestComponent as BaseLoginWithDeviceComponent } from "@bitwarden/angular/auth/components/login-via-auth-request.component";
 import { AnonymousHubService } from "@bitwarden/common/abstractions/anonymousHub.service";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { AuthRequestCryptoServiceAbstraction } from "@bitwarden/common/auth/abstractions/auth-request-crypto.service.abstraction";
@@ -16,16 +15,16 @@ import { EnvironmentService } from "@bitwarden/common/platform/abstractions/envi
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
-import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
 import { ValidationService } from "@bitwarden/common/platform/abstractions/validation.service";
 import { PasswordGenerationServiceAbstraction } from "@bitwarden/common/tools/generator/password";
-import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
+
+import { StateService } from "../../core";
 
 @Component({
-  selector: "app-login-with-device",
-  templateUrl: "login-with-device.component.html",
+  selector: "app-login-via-auth-request",
+  templateUrl: "login-via-auth-request.component.html",
 })
-export class LoginWithDeviceComponent
+export class LoginViaAuthRequestComponent
   extends BaseLoginWithDeviceComponent
   implements OnInit, OnDestroy
 {
@@ -45,10 +44,8 @@ export class LoginWithDeviceComponent
     validationService: ValidationService,
     stateService: StateService,
     loginService: LoginService,
-    syncService: SyncService,
     deviceTrustCryptoService: DeviceTrustCryptoServiceAbstraction,
-    authReqCryptoService: AuthRequestCryptoServiceAbstraction,
-    private location: Location
+    authReqCryptoService: AuthRequestCryptoServiceAbstraction
   ) {
     super(
       router,
@@ -69,12 +66,5 @@ export class LoginWithDeviceComponent
       deviceTrustCryptoService,
       authReqCryptoService
     );
-    super.onSuccessfulLogin = async () => {
-      await syncService.fullSync(true);
-    };
-  }
-
-  protected back() {
-    this.location.back();
   }
 }

@@ -66,7 +66,7 @@
         <i class="bwi bwi-spinner bwi-lg bwi-spin" [hidden]="!form.loading" aria-hidden="true"></i>
       </button>
       <div class="tw-mb-3" *ngIf="showLoginWithDevice && showPasswordless">
-        <button type="button" class="btn block" (click)="startPasswordlessLogin()">
+        <button type="button" class="btn block" (click)="startAuthRequestLogin()">
           <span> <i class="bwi bwi-mobile"></i> {{ "loginWithDevice" | i18n }} </span>
         </button>
       </div>

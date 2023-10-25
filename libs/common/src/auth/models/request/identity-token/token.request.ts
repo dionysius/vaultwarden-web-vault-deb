@@ -3,7 +3,7 @@ import { TokenTwoFactorRequest } from "./token-two-factor.request";
 
 export abstract class TokenRequest {
   protected device?: DeviceRequest;
-  protected passwordlessAuthRequest: string;
+  protected authRequest: string;
 
   constructor(protected twoFactor: TokenTwoFactorRequest, device?: DeviceRequest) {
     this.device = device != null ? device : null;
@@ -18,8 +18,8 @@ export abstract class TokenRequest {
     this.twoFactor = twoFactor;
   }
 
-  setPasswordlessAccessCode(accessCode: string) {
-    this.passwordlessAuthRequest = accessCode;
+  setAuthRequestAccessCode(accessCode: string) {
+    this.authRequest = accessCode;
   }
 
   protected toIdentityToken(clientId: string) {
@@ -37,8 +37,8 @@ export abstract class TokenRequest {
     }
 
     //passswordless login
-    if (this.passwordlessAuthRequest) {
-      obj.authRequest = this.passwordlessAuthRequest;
+    if (this.authRequest) {
+      obj.authRequest = this.authRequest;
     }
 
     if (this.twoFactor) {

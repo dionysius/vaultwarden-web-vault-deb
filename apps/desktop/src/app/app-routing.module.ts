@@ -15,7 +15,7 @@ import { LoginGuard } from "../auth/guards/login.guard";
 import { HintComponent } from "../auth/hint.component";
 import { LockComponent } from "../auth/lock.component";
 import { LoginDecryptionOptionsComponent } from "../auth/login/login-decryption-options/login-decryption-options.component";
-import { LoginWithDeviceComponent } from "../auth/login/login-with-device.component";
+import { LoginViaAuthRequestComponent } from "../auth/login/login-via-auth-request.component";
 import { LoginComponent } from "../auth/login/login.component";
 import { RegisterComponent } from "../auth/register.component";
 import { RemovePasswordComponent } from "../auth/remove-password.component";
@@ -46,11 +46,11 @@ const routes: Routes = [
   },
   {
     path: "login-with-device",
-    component: LoginWithDeviceComponent,
+    component: LoginViaAuthRequestComponent,
   },
   {
     path: "admin-approval-requested",
-    component: LoginWithDeviceComponent,
+    component: LoginViaAuthRequestComponent,
   },
   { path: "2fa", component: TwoFactorComponent },
   {

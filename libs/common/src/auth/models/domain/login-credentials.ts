@@ -2,7 +2,7 @@ import { MasterKey, UserKey } from "../../../platform/models/domain/symmetric-cr
 import { AuthenticationType } from "../../enums/authentication-type";
 import { TokenTwoFactorRequest } from "../request/identity-token/token-two-factor.request";
 
-export class PasswordLogInCredentials {
+export class PasswordLoginCredentials {
   readonly type = AuthenticationType.Password;
 
   constructor(
@@ -13,7 +13,7 @@ export class PasswordLogInCredentials {
   ) {}
 }
 
-export class SsoLogInCredentials {
+export class SsoLoginCredentials {
   readonly type = AuthenticationType.Sso;
 
   constructor(
@@ -25,14 +25,14 @@ export class SsoLogInCredentials {
   ) {}
 }
 
-export class UserApiLogInCredentials {
+export class UserApiLoginCredentials {
   readonly type = AuthenticationType.UserApi;
 
   constructor(public clientId: string, public clientSecret: string) {}
 }
 
-export class PasswordlessLogInCredentials {
-  readonly type = AuthenticationType.Passwordless;
+export class AuthRequestLoginCredentials {
+  readonly type = AuthenticationType.AuthRequest;
 
   constructor(
     public email: string,

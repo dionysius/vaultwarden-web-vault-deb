@@ -1,6 +1,6 @@
 import { AuthRequestType } from "../../enums/auth-request-type";
 
-export class PasswordlessCreateAuthRequest {
+export class CreateAuthRequest {
   constructor(
     readonly email: string,
     readonly deviceIdentifier: string,

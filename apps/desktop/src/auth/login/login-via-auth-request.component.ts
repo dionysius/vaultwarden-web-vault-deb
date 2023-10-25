@@ -2,7 +2,7 @@ import { Location } from "@angular/common";
 import { Component, OnDestroy, OnInit, ViewChild, ViewContainerRef } from "@angular/core";
 import { Router } from "@angular/router";
 
-import { LoginWithDeviceComponent as BaseLoginWithDeviceComponent } from "@bitwarden/angular/auth/components/login-with-device.component";
+import { LoginViaAuthRequestComponent as BaseLoginWithDeviceComponent } from "@bitwarden/angular/auth/components/login-via-auth-request.component";
 import { ModalService } from "@bitwarden/angular/services/modal.service";
 import { AnonymousHubService } from "@bitwarden/common/abstractions/anonymousHub.service";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
@@ -25,10 +25,10 @@ import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.serv
 import { EnvironmentComponent } from "../environment.component";
 
 @Component({
-  selector: "app-login-with-device",
-  templateUrl: "login-with-device.component.html",
+  selector: "app-login-via-auth-request",
+  templateUrl: "login-via-auth-request.component.html",
 })
-export class LoginWithDeviceComponent
+export class LoginViaAuthRequestComponent
   extends BaseLoginWithDeviceComponent
   implements OnInit, OnDestroy
 {

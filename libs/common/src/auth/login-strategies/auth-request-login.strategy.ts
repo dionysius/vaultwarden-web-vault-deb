@@ -9,28 +9,28 @@ import { DeviceTrustCryptoServiceAbstraction } from "../abstractions/device-trus
 import { TokenService } from "../abstractions/token.service";
 import { TwoFactorService } from "../abstractions/two-factor.service";
 import { AuthResult } from "../models/domain/auth-result";
-import { PasswordlessLogInCredentials } from "../models/domain/log-in-credentials";
+import { AuthRequestLoginCredentials } from "../models/domain/login-credentials";
 import { PasswordTokenRequest } from "../models/request/identity-token/password-token.request";
 import { TokenTwoFactorRequest } from "../models/request/identity-token/token-two-factor.request";
 import { IdentityTokenResponse } from "../models/response/identity-token.response";
 
-import { LogInStrategy } from "./login.strategy";
+import { LoginStrategy } from "./login.strategy";
 
-export class PasswordlessLogInStrategy extends LogInStrategy {
+export class AuthRequestLoginStrategy extends LoginStrategy {
   get email() {
     return this.tokenRequest.email;
   }
 
   get accessCode() {
-    return this.passwordlessCredentials.accessCode;
+    return this.authRequestCredentials.accessCode;
   }
 
   get authRequestId() {
-    return this.passwordlessCredentials.authRequestId;
+    return this.authRequestCredentials.authRequestId;
   }
 
   tokenRequest: PasswordTokenRequest;
-  private passwordlessCredentials: PasswordlessLogInCredentials;
+  private authRequestCredentials: AuthRequestLoginCredentials;
 
   constructor(
     cryptoService: CryptoService,
@@ -57,8 +57,8 @@ export class PasswordlessLogInStrategy extends LogInStrategy {
     );
   }
 
-  override async logIn(credentials: PasswordlessLogInCredentials) {
-    this.passwordlessCredentials = credentials;
+  override async logIn(credentials: AuthRequestLoginCredentials) {
+    this.authRequestCredentials = credentials;
 
     this.tokenRequest = new PasswordTokenRequest(
       credentials.email,
@@ -68,7 +68,7 @@ export class PasswordlessLogInStrategy extends LogInStrategy {
       await this.buildDeviceRequest()
     );
 
-    this.tokenRequest.setPasswordlessAccessCode(credentials.authRequestId);
+    this.tokenRequest.setAuthRequestAccessCode(credentials.authRequestId);
     const [authResult] = await this.startLogIn();
     return authResult;
   }
@@ -83,13 +83,11 @@ export class PasswordlessLogInStrategy extends LogInStrategy {
 
   protected override async setMasterKey(response: IdentityTokenResponse) {
     if (
-      this.passwordlessCredentials.decryptedMasterKey &&
-      this.passwordlessCredentials.decryptedMasterKeyHash
+      this.authRequestCredentials.decryptedMasterKey &&
+      this.authRequestCredentials.decryptedMasterKeyHash
     ) {
-      await this.cryptoService.setMasterKey(this.passwordlessCredentials.decryptedMasterKey);
-      await this.cryptoService.setMasterKeyHash(
-        this.passwordlessCredentials.decryptedMasterKeyHash
-      );
+      await this.cryptoService.setMasterKey(this.authRequestCredentials.decryptedMasterKey);
+      await this.cryptoService.setMasterKeyHash(this.authRequestCredentials.decryptedMasterKeyHash);
     }
   }
 
@@ -98,8 +96,8 @@ export class PasswordlessLogInStrategy extends LogInStrategy {
     // but set the master key encrypted user key if it exists regardless
     await this.cryptoService.setMasterKeyEncryptedUserKey(response.key);
 
-    if (this.passwordlessCredentials.decryptedUserKey) {
-      await this.cryptoService.setUserKey(this.passwordlessCredentials.decryptedUserKey);
+    if (this.authRequestCredentials.decryptedUserKey) {
+      await this.cryptoService.setUserKey(this.authRequestCredentials.decryptedUserKey);
     } else {
       await this.trySetUserKeyWithMasterKey();
       // Establish trust if required after setting user key

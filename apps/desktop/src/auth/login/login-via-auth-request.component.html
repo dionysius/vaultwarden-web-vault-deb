@@ -21,7 +21,7 @@
             </div>
 
             <div class="section" *ngIf="showResendNotification">
-              <a [routerLink]="[]" disabled="true" (click)="startPasswordlessLogin()">{{
+              <a [routerLink]="[]" disabled="true" (click)="startAuthRequestLogin()">{{
                 "resendNotification" | i18n
               }}</a>
             </div>

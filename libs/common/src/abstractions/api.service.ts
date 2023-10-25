@@ -32,6 +32,7 @@ import {
 } from "../admin-console/models/response/provider/provider-user.response";
 import { ProviderResponse } from "../admin-console/models/response/provider/provider.response";
 import { SelectionReadOnlyResponse } from "../admin-console/models/response/selection-read-only.response";
+import { CreateAuthRequest } from "../auth/models/request/create-auth.request";
 import { DeviceVerificationRequest } from "../auth/models/request/device-verification.request";
 import { EmailTokenRequest } from "../auth/models/request/email-token.request";
 import { EmailRequest } from "../auth/models/request/email.request";
@@ -47,7 +48,6 @@ import { KeyConnectorUserKeyRequest } from "../auth/models/request/key-connector
 import { PasswordHintRequest } from "../auth/models/request/password-hint.request";
 import { PasswordRequest } from "../auth/models/request/password.request";
 import { PasswordlessAuthRequest } from "../auth/models/request/passwordless-auth.request";
-import { PasswordlessCreateAuthRequest } from "../auth/models/request/passwordless-create-auth.request";
 import { SecretVerificationRequest } from "../auth/models/request/secret-verification.request";
 import { SetKeyConnectorKeyRequest } from "../auth/models/request/set-key-connector-key.request";
 import { SetPasswordRequest } from "../auth/models/request/set-password.request";
@@ -199,8 +199,8 @@ export abstract class ApiService {
   putUpdateTempPassword: (request: UpdateTempPasswordRequest) => Promise<any>;
   postConvertToKeyConnector: () => Promise<void>;
   //passwordless
-  postAuthRequest: (request: PasswordlessCreateAuthRequest) => Promise<AuthRequestResponse>;
-  postAdminAuthRequest: (request: PasswordlessCreateAuthRequest) => Promise<AuthRequestResponse>;
+  postAuthRequest: (request: CreateAuthRequest) => Promise<AuthRequestResponse>;
+  postAdminAuthRequest: (request: CreateAuthRequest) => Promise<AuthRequestResponse>;
   getAuthResponse: (id: string, accessCode: string) => Promise<AuthRequestResponse>;
   getAuthRequest: (id: string) => Promise<AuthRequestResponse>;
   putAuthRequest: (id: string, request: PasswordlessAuthRequest) => Promise<AuthRequestResponse>;

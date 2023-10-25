@@ -32,7 +32,7 @@
         </div>
 
         <div class="tw-my-10" *ngIf="showResendNotification">
-          <a [routerLink]="[]" disabled="true" (click)="startPasswordlessLogin()">{{
+          <a [routerLink]="[]" disabled="true" (click)="startAuthRequestLogin()">{{
             "resendNotification" | i18n
           }}</a>
         </div>

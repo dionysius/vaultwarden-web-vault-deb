@@ -13,8 +13,8 @@ import { AuthenticationStatus } from "@bitwarden/common/auth/enums/authenticatio
 import { AdminAuthRequestStorable } from "@bitwarden/common/auth/models/domain/admin-auth-req-storable";
 import { AuthResult } from "@bitwarden/common/auth/models/domain/auth-result";
 import { ForceResetPasswordReason } from "@bitwarden/common/auth/models/domain/force-reset-password-reason";
-import { PasswordlessLogInCredentials } from "@bitwarden/common/auth/models/domain/log-in-credentials";
-import { PasswordlessCreateAuthRequest } from "@bitwarden/common/auth/models/request/passwordless-create-auth.request";
+import { AuthRequestLoginCredentials } from "@bitwarden/common/auth/models/domain/login-credentials";
+import { CreateAuthRequest } from "@bitwarden/common/auth/models/request/create-auth.request";
 import { AuthRequestResponse } from "@bitwarden/common/auth/models/response/auth-request.response";
 import { HttpStatusCode } from "@bitwarden/common/enums/http-status-code.enum";
 import { ErrorResponse } from "@bitwarden/common/models/response/error.response";
@@ -32,15 +32,13 @@ import { PasswordGenerationServiceAbstraction } from "@bitwarden/common/tools/ge
 
 import { CaptchaProtectedComponent } from "./captcha-protected.component";
 
-// TODO: consider renaming this component something like LoginViaAuthReqComponent
-
 enum State {
   StandardAuthRequest,
   AdminAuthRequest,
 }
 
 @Directive()
-export class LoginWithDeviceComponent
+export class LoginViaAuthRequestComponent
   extends CaptchaProtectedComponent
   implements OnInit, OnDestroy
 {
@@ -48,7 +46,7 @@ export class LoginWithDeviceComponent
   userAuthNStatus: AuthenticationStatus;
   email: string;
   showResendNotification = false;
-  passwordlessRequest: PasswordlessCreateAuthRequest;
+  authRequest: CreateAuthRequest;
   fingerprintPhrase: string;
   onSuccessfulLoginTwoFactorNavigate: () => Promise<any>;
   onSuccessfulLogin: () => Promise<any>;
@@ -140,7 +138,7 @@ export class LoginWithDeviceComponent
         await this.handleExistingAdminAuthRequest(adminAuthReqStorable);
       } else {
         // No existing admin auth request; so we need to create one
-        await this.startPasswordlessLogin();
+        await this.startAuthRequestLogin();
       }
     } else {
       // Standard auth request
@@ -153,7 +151,7 @@ export class LoginWithDeviceComponent
         return;
       }
 
-      await this.startPasswordlessLogin();
+      await this.startAuthRequestLogin();
     }
   }
 
@@ -214,7 +212,7 @@ export class LoginWithDeviceComponent
     await this.stateService.setAdminAuthRequest(null);
 
     // start new auth request
-    this.startPasswordlessLogin();
+    this.startAuthRequestLogin();
   }
 
   private async buildAuthRequest(authRequestType: AuthRequestType) {
@@ -233,7 +231,7 @@ export class LoginWithDeviceComponent
       await this.cryptoService.getFingerprint(this.email, this.authRequestKeyPair.publicKey)
     ).join("-");
 
-    this.passwordlessRequest = new PasswordlessCreateAuthRequest(
+    this.authRequest = new CreateAuthRequest(
       this.email,
       deviceIdentifier,
       publicKey,
@@ -242,7 +240,7 @@ export class LoginWithDeviceComponent
     );
   }
 
-  async startPasswordlessLogin() {
+  async startAuthRequestLogin() {
     this.showResendNotification = false;
 
     try {
@@ -250,7 +248,7 @@ export class LoginWithDeviceComponent
 
       if (this.state === State.AdminAuthRequest) {
         await this.buildAuthRequest(AuthRequestType.AdminApproval);
-        reqResponse = await this.apiService.postAdminAuthRequest(this.passwordlessRequest);
+        reqResponse = await this.apiService.postAdminAuthRequest(this.authRequest);
 
         const adminAuthReqStorable = new AdminAuthRequestStorable({
           id: reqResponse.id,
@@ -260,7 +258,7 @@ export class LoginWithDeviceComponent
         await this.stateService.setAdminAuthRequest(adminAuthReqStorable);
       } else {
         await this.buildAuthRequest(AuthRequestType.AuthenticateAndUnlock);
-        reqResponse = await this.apiService.postAuthRequest(this.passwordlessRequest);
+        reqResponse = await this.apiService.postAuthRequest(this.authRequest);
       }
 
       if (reqResponse.id) {
@@ -285,7 +283,7 @@ export class LoginWithDeviceComponent
           // Unauthed - access code required for user verification
           authReqResponse = await this.apiService.getAuthResponse(
             requestId,
-            this.passwordlessRequest.accessCode
+            this.authRequest.accessCode
           );
           break;
 
@@ -328,7 +326,7 @@ export class LoginWithDeviceComponent
       }
 
       // Flow 1 and 4:
-      const loginAuthResult = await this.loginViaPasswordlessStrategy(requestId, authReqResponse);
+      const loginAuthResult = await this.loginViaAuthRequestStrategy(requestId, authReqResponse);
       await this.handlePostLoginNavigation(loginAuthResult);
     } catch (error) {
       if (error instanceof ErrorResponse) {
@@ -384,10 +382,10 @@ export class LoginWithDeviceComponent
   }
 
   // Authentication helper
-  private async buildPasswordlessLoginCredentials(
+  private async buildAuthRequestLoginCredentials(
     requestId: string,
     response: AuthRequestResponse
-  ): Promise<PasswordlessLogInCredentials> {
+  ): Promise<AuthRequestLoginCredentials> {
     // if masterPasswordHash has a value, we will always receive key as authRequestPublicKey(masterKey) + authRequestPublicKey(masterPasswordHash)
     // if masterPasswordHash is null, we will always receive key as authRequestPublicKey(userKey)
     if (response.masterPasswordHash) {
@@ -398,9 +396,9 @@ export class LoginWithDeviceComponent
           this.authRequestKeyPair.privateKey
         );
 
-      return new PasswordlessLogInCredentials(
+      return new AuthRequestLoginCredentials(
         this.email,
-        this.passwordlessRequest.accessCode,
+        this.authRequest.accessCode,
         requestId,
         null, // no userKey
         masterKey,
@@ -411,9 +409,9 @@ export class LoginWithDeviceComponent
         response.key,
         this.authRequestKeyPair.privateKey
       );
-      return new PasswordlessLogInCredentials(
+      return new AuthRequestLoginCredentials(
         this.email,
-        this.passwordlessRequest.accessCode,
+        this.authRequest.accessCode,
         requestId,
         userKey,
         null, // no masterKey
@@ -422,14 +420,14 @@ export class LoginWithDeviceComponent
     }
   }
 
-  private async loginViaPasswordlessStrategy(
+  private async loginViaAuthRequestStrategy(
     requestId: string,
     authReqResponse: AuthRequestResponse
   ): Promise<AuthResult> {
     // Note: credentials change based on if the authReqResponse.key is a encryptedMasterKey or UserKey
-    const credentials = await this.buildPasswordlessLoginCredentials(requestId, authReqResponse);
+    const credentials = await this.buildAuthRequestLoginCredentials(requestId, authReqResponse);
 
-    // Note: keys are set by PasswordlessLogInStrategy success handling
+    // Note: keys are set by AuthRequestLoginStrategy success handling
     return await this.authService.logIn(credentials);
   }
 

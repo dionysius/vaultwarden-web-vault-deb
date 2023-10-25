@@ -5,7 +5,7 @@ import { Router } from "@angular/router";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { AuditService } from "@bitwarden/common/abstractions/audit.service";
 import { AuthService } from "@bitwarden/common/auth/abstractions/auth.service";
-import { PasswordLogInCredentials } from "@bitwarden/common/auth/models/domain/log-in-credentials";
+import { PasswordLoginCredentials } from "@bitwarden/common/auth/models/domain/login-credentials";
 import { RegisterResponse } from "@bitwarden/common/auth/models/response/register.response";
 import { DEFAULT_KDF_CONFIG, DEFAULT_KDF_TYPE } from "@bitwarden/common/enums";
 import { KeysRequest } from "@bitwarden/common/models/request/keys.request";
@@ -323,7 +323,7 @@ export class RegisterComponent extends CaptchaProtectedComponent implements OnIn
     masterPassword: string,
     captchaBypassToken: string
   ): Promise<{ captchaRequired: boolean }> {
-    const credentials = new PasswordLogInCredentials(
+    const credentials = new PasswordLoginCredentials(
       email,
       masterPassword,
       captchaBypassToken,

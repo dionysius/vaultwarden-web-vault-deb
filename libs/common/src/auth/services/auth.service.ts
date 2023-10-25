@@ -26,18 +26,18 @@ import { TokenService } from "../abstractions/token.service";
 import { TwoFactorService } from "../abstractions/two-factor.service";
 import { AuthenticationStatus } from "../enums/authentication-status";
 import { AuthenticationType } from "../enums/authentication-type";
-import { PasswordLogInStrategy } from "../login-strategies/password-login.strategy";
-import { PasswordlessLogInStrategy } from "../login-strategies/passwordless-login.strategy";
-import { SsoLogInStrategy } from "../login-strategies/sso-login.strategy";
-import { UserApiLogInStrategy } from "../login-strategies/user-api-login.strategy";
+import { AuthRequestLoginStrategy } from "../login-strategies/auth-request-login.strategy";
+import { PasswordLoginStrategy } from "../login-strategies/password-login.strategy";
+import { SsoLoginStrategy } from "../login-strategies/sso-login.strategy";
+import { UserApiLoginStrategy } from "../login-strategies/user-api-login.strategy";
 import { AuthResult } from "../models/domain/auth-result";
 import { KdfConfig } from "../models/domain/kdf-config";
 import {
-  PasswordlessLogInCredentials,
-  PasswordLogInCredentials,
-  SsoLogInCredentials,
-  UserApiLogInCredentials,
-} from "../models/domain/log-in-credentials";
+  AuthRequestLoginCredentials,
+  PasswordLoginCredentials,
+  SsoLoginCredentials,
+  UserApiLoginCredentials,
+} from "../models/domain/login-credentials";
 import { TokenTwoFactorRequest } from "../models/request/identity-token/token-two-factor.request";
 import { PasswordlessAuthRequest } from "../models/request/passwordless-auth.request";
 import { AuthRequestResponse } from "../models/response/auth-request.response";
@@ -47,9 +47,9 @@ const sessionTimeoutLength = 2 * 60 * 1000; // 2 minutes
 export class AuthService implements AuthServiceAbstraction {
   get email(): string {
     if (
-      this.logInStrategy instanceof PasswordLogInStrategy ||
-      this.logInStrategy instanceof PasswordlessLogInStrategy ||
-      this.logInStrategy instanceof SsoLogInStrategy
+      this.logInStrategy instanceof PasswordLoginStrategy ||
+      this.logInStrategy instanceof AuthRequestLoginStrategy ||
+      this.logInStrategy instanceof SsoLoginStrategy
     ) {
       return this.logInStrategy.email;
     }
@@ -58,34 +58,34 @@ export class AuthService implements AuthServiceAbstraction {
   }
 
   get masterPasswordHash(): string {
-    return this.logInStrategy instanceof PasswordLogInStrategy
+    return this.logInStrategy instanceof PasswordLoginStrategy
       ? this.logInStrategy.masterPasswordHash
       : null;
   }
 
   get accessCode(): string {
-    return this.logInStrategy instanceof PasswordlessLogInStrategy
+    return this.logInStrategy instanceof AuthRequestLoginStrategy
       ? this.logInStrategy.accessCode
       : null;
   }
 
   get authRequestId(): string {
-    return this.logInStrategy instanceof PasswordlessLogInStrategy
+    return this.logInStrategy instanceof AuthRequestLoginStrategy
       ? this.logInStrategy.authRequestId
       : null;
   }
 
   get ssoEmail2FaSessionToken(): string {
-    return this.logInStrategy instanceof SsoLogInStrategy
+    return this.logInStrategy instanceof SsoLoginStrategy
       ? this.logInStrategy.ssoEmail2FaSessionToken
       : null;
   }
 
   private logInStrategy:
-    | UserApiLogInStrategy
-    | PasswordLogInStrategy
-    | SsoLogInStrategy
-    | PasswordlessLogInStrategy;
+    | UserApiLoginStrategy
+    | PasswordLoginStrategy
+    | SsoLoginStrategy
+    | AuthRequestLoginStrategy;
   private sessionTimeout: any;
 
   private pushNotificationSubject = new Subject<string>();
@@ -112,22 +112,22 @@ export class AuthService implements AuthServiceAbstraction {
 
   async logIn(
     credentials:
-      | UserApiLogInCredentials
-      | PasswordLogInCredentials
-      | SsoLogInCredentials
-      | PasswordlessLogInCredentials
+      | UserApiLoginCredentials
+      | PasswordLoginCredentials
+      | SsoLoginCredentials
+      | AuthRequestLoginCredentials
   ): Promise<AuthResult> {
     this.clearState();
 
     let strategy:
-      | UserApiLogInStrategy
-      | PasswordLogInStrategy
-      | SsoLogInStrategy
-      | PasswordlessLogInStrategy;
+      | UserApiLoginStrategy
+      | PasswordLoginStrategy
+      | SsoLoginStrategy
+      | AuthRequestLoginStrategy;
 
     switch (credentials.type) {
       case AuthenticationType.Password:
-        strategy = new PasswordLogInStrategy(
+        strategy = new PasswordLoginStrategy(
           this.cryptoService,
           this.apiService,
           this.tokenService,
@@ -143,7 +143,7 @@ export class AuthService implements AuthServiceAbstraction {
         );
         break;
       case AuthenticationType.Sso:
-        strategy = new SsoLogInStrategy(
+        strategy = new SsoLoginStrategy(
           this.cryptoService,
           this.apiService,
           this.tokenService,
@@ -160,7 +160,7 @@ export class AuthService implements AuthServiceAbstraction {
         );
         break;
       case AuthenticationType.UserApi:
-        strategy = new UserApiLogInStrategy(
+        strategy = new UserApiLoginStrategy(
           this.cryptoService,
           this.apiService,
           this.tokenService,
@@ -174,8 +174,8 @@ export class AuthService implements AuthServiceAbstraction {
           this.keyConnectorService
         );
         break;
-      case AuthenticationType.Passwordless:
-        strategy = new PasswordlessLogInStrategy(
+      case AuthenticationType.AuthRequest:
+        strategy = new AuthRequestLoginStrategy(
           this.cryptoService,
           this.apiService,
           this.tokenService,
@@ -229,19 +229,19 @@ export class AuthService implements AuthServiceAbstraction {
   }
 
   authingWithUserApiKey(): boolean {
-    return this.logInStrategy instanceof UserApiLogInStrategy;
+    return this.logInStrategy instanceof UserApiLoginStrategy;
   }
 
   authingWithSso(): boolean {
-    return this.logInStrategy instanceof SsoLogInStrategy;
+    return this.logInStrategy instanceof SsoLoginStrategy;
   }
 
   authingWithPassword(): boolean {
-    return this.logInStrategy instanceof PasswordLogInStrategy;
+    return this.logInStrategy instanceof PasswordLoginStrategy;
   }
 
   authingWithPasswordless(): boolean {
-    return this.logInStrategy instanceof PasswordlessLogInStrategy;
+    return this.logInStrategy instanceof AuthRequestLoginStrategy;
   }
 
   async getAuthStatus(userId?: string): Promise<AuthenticationStatus> {
@@ -349,10 +349,10 @@ export class AuthService implements AuthServiceAbstraction {
 
   private saveState(
     strategy:
-      | UserApiLogInStrategy
-      | PasswordLogInStrategy
-      | SsoLogInStrategy
-      | PasswordlessLogInStrategy
+      | UserApiLoginStrategy
+      | PasswordLoginStrategy
+      | SsoLoginStrategy
+      | AuthRequestLoginStrategy
   ) {
     this.logInStrategy = strategy;
     this.startSessionTimeout();

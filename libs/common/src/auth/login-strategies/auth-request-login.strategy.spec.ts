@@ -17,13 +17,13 @@ import { CsprngArray } from "../../types/csprng";
 import { DeviceTrustCryptoServiceAbstraction } from "../abstractions/device-trust-crypto.service.abstraction";
 import { TokenService } from "../abstractions/token.service";
 import { TwoFactorService } from "../abstractions/two-factor.service";
-import { PasswordlessLogInCredentials } from "../models/domain/log-in-credentials";
+import { AuthRequestLoginCredentials } from "../models/domain/login-credentials";
 import { IdentityTokenResponse } from "../models/response/identity-token.response";
 
+import { AuthRequestLoginStrategy } from "./auth-request-login.strategy";
 import { identityTokenResponseFactory } from "./login.strategy.spec";
-import { PasswordlessLogInStrategy } from "./passwordless-login.strategy";
 
-describe("PasswordlessLogInStrategy", () => {
+describe("AuthRequestLoginStrategy", () => {
   let cryptoService: MockProxy<CryptoService>;
   let apiService: MockProxy<ApiService>;
   let tokenService: MockProxy<TokenService>;
@@ -35,8 +35,8 @@ describe("PasswordlessLogInStrategy", () => {
   let twoFactorService: MockProxy<TwoFactorService>;
   let deviceTrustCryptoService: MockProxy<DeviceTrustCryptoServiceAbstraction>;
 
-  let passwordlessLoginStrategy: PasswordlessLogInStrategy;
-  let credentials: PasswordlessLogInCredentials;
+  let authRequestLoginStrategy: AuthRequestLoginStrategy;
+  let credentials: AuthRequestLoginCredentials;
   let tokenResponse: IdentityTokenResponse;
 
   const deviceId = Utils.newGuid();
@@ -66,7 +66,7 @@ describe("PasswordlessLogInStrategy", () => {
     appIdService.getAppId.mockResolvedValue(deviceId);
     tokenService.decodeToken.mockResolvedValue({});
 
-    passwordlessLoginStrategy = new PasswordlessLogInStrategy(
+    authRequestLoginStrategy = new AuthRequestLoginStrategy(
       cryptoService,
       apiService,
       tokenService,
@@ -84,7 +84,7 @@ describe("PasswordlessLogInStrategy", () => {
   });
 
   it("sets keys after a successful authentication when masterKey and masterKeyHash provided in login credentials", async () => {
-    credentials = new PasswordlessLogInCredentials(
+    credentials = new AuthRequestLoginCredentials(
       email,
       accessCode,
       authRequestId,
@@ -99,7 +99,7 @@ describe("PasswordlessLogInStrategy", () => {
     cryptoService.getMasterKey.mockResolvedValue(masterKey);
     cryptoService.decryptUserKeyWithMasterKey.mockResolvedValue(userKey);
 
-    await passwordlessLoginStrategy.logIn(credentials);
+    await authRequestLoginStrategy.logIn(credentials);
 
     expect(cryptoService.setMasterKey).toHaveBeenCalledWith(masterKey);
     expect(cryptoService.setMasterKeyHash).toHaveBeenCalledWith(decMasterKeyHash);
@@ -111,7 +111,7 @@ describe("PasswordlessLogInStrategy", () => {
 
   it("sets keys after a successful authentication when only userKey provided in login credentials", async () => {
     // Initialize credentials with only userKey
-    credentials = new PasswordlessLogInCredentials(
+    credentials = new AuthRequestLoginCredentials(
       email,
       accessCode,
       authRequestId,
@@ -121,7 +121,7 @@ describe("PasswordlessLogInStrategy", () => {
     );
 
     // Call logIn
-    await passwordlessLoginStrategy.logIn(credentials);
+    await authRequestLoginStrategy.logIn(credentials);
 
     // setMasterKey and setMasterKeyHash should not be called
     expect(cryptoService.setMasterKey).not.toHaveBeenCalled();

@@ -6,7 +6,7 @@ import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { AuthService } from "@bitwarden/common/auth/abstractions/auth.service";
 import { AuthResult } from "@bitwarden/common/auth/models/domain/auth-result";
 import { ForceResetPasswordReason } from "@bitwarden/common/auth/models/domain/force-reset-password-reason";
-import { SsoLogInCredentials } from "@bitwarden/common/auth/models/domain/log-in-credentials";
+import { SsoLoginCredentials } from "@bitwarden/common/auth/models/domain/login-credentials";
 import { TrustedDeviceUserDecryptionOption } from "@bitwarden/common/auth/models/domain/user-decryption-options/trusted-device-user-decryption-option";
 import { SsoPreValidateResponse } from "@bitwarden/common/auth/models/response/sso-pre-validate.response";
 import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
@@ -182,7 +182,7 @@ export class SsoComponent {
   private async logIn(code: string, codeVerifier: string, orgSsoIdentifier: string): Promise<void> {
     this.loggingIn = true;
     try {
-      const credentials = new SsoLogInCredentials(
+      const credentials = new SsoLoginCredentials(
         code,
         codeVerifier,
         this.redirectUri,
