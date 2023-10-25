@@ -1,9 +1,9 @@
-<header>
+<app-header>
   <div class="left">
     <app-pop-out></app-pop-out>
   </div>
   <h1 class="sr-only">{{ "myVault" | i18n }}</h1>
-  <div class="search">
+  <div class="search center">
     <input
       type="{{ searchTypeSearch ? 'search' : 'text' }}"
       placeholder="{{ 'searchVault' | i18n }}"
@@ -21,7 +21,7 @@
       <i class="bwi bwi-plus bwi-lg bwi-fw" aria-hidden="true"></i>
     </button>
   </div>
-</header>
+</app-header>
 <main tabindex="-1" cdk-scrollable>
   <app-vault-select
     (onVaultSelectionChanged)="vaultFilterChanged()"

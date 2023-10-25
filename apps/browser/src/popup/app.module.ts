@@ -31,6 +31,7 @@ import { SsoComponent } from "../auth/popup/sso.component";
 import { TwoFactorOptionsComponent } from "../auth/popup/two-factor-options.component";
 import { TwoFactorComponent } from "../auth/popup/two-factor.component";
 import { UpdateTempPasswordComponent } from "../auth/popup/update-temp-password.component";
+import { HeaderComponent } from "../platform/popup/header.component";
 import { FilePopoutCalloutComponent } from "../tools/popup/components/file-popout-callout.component";
 import { GeneratorComponent } from "../tools/popup/generator/generator.component";
 import { PasswordGeneratorHistoryComponent } from "../tools/popup/generator/password-generator-history.component";
@@ -121,6 +122,7 @@ import "../platform/popup/locales";
     FolderAddEditComponent,
     FoldersComponent,
     VaultFilterComponent,
+    HeaderComponent,
     HintComponent,
     HomeComponent,
     LockComponent,

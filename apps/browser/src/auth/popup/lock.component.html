@@ -1,5 +1,5 @@
 <form (ngSubmit)="submit()">
-  <header>
+  <app-header>
     <div class="left"></div>
     <h1 class="center">
       <span class="title">{{ "verifyIdentity" | i18n }}</span>
@@ -9,7 +9,7 @@
         {{ "unlock" | i18n }}
       </button>
     </div>
-  </header>
+  </app-header>
   <main tabindex="-1">
     <ng-container *ngIf="fido2PopoutSessionData$ | async as fido2Data">
       <div class="box">
