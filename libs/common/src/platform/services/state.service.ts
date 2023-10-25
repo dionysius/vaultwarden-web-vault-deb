@@ -173,7 +173,18 @@ export class StateService<
       await this.pushAccounts();
       this.activeAccountSubject.next(state.activeUserId);
       // TODO: Temporary update to avoid routing all account status changes through account service for now.
+      // account service tracks logged out accounts, but State service does not, so we need to add the active account
+      // if it's not in the accounts list.
+      if (state.activeUserId != null && this.accountsSubject.value[state.activeUserId] == null) {
+        const activeDiskAccount = await this.getAccountFromDisk({ userId: state.activeUserId });
+        this.accountService.addAccount(state.activeUserId as UserId, {
+          name: activeDiskAccount.profile.name,
+          email: activeDiskAccount.profile.email,
+          status: AuthenticationStatus.LoggedOut,
+        });
+      }
       this.accountService.switchAccount(state.activeUserId as UserId);
+      // End TODO
 
       return state;
     });
