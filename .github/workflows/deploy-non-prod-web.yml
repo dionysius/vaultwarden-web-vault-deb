@@ -49,7 +49,7 @@ jobs:
       _ENVIRONMENT_ARTIFACT: ${{ needs.setup.outputs.environment-artifact }}
     steps:
       - name: Download latest cloud asset
-        uses: bitwarden/gh-actions/download-artifacts@f1125802b1ccae8c601d7c4f61ce39ea254b10c8
+        uses: bitwarden/gh-actions/download-artifacts@master
         id: download-artifacts
         continue-on-error: true
         with:
@@ -68,7 +68,7 @@ jobs:
       - name: Retrieve secrets for Build trigger
         if: ${{ steps.download-artifacts.outcome == 'failure' }}
         id: retrieve-secret
-        uses: bitwarden/gh-actions/get-keyvault-secrets@f096207b7a2f31723165aee6ad03e91716686e78
+        uses: bitwarden/gh-actions/get-keyvault-secrets@master
         with:
           keyvault: "bitwarden-ci"
           secrets: "github-pat-bitwarden-devops-bot-repo-scope"
@@ -111,7 +111,7 @@ jobs:
         uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3.5.3
 
       - name: Download latest cloud asset
-        uses: bitwarden/gh-actions/download-artifacts@c970b0fb89bd966749280e832928db62040812bf
+        uses: bitwarden/gh-actions/download-artifacts@master
         with:
           workflow: build-web.yml
           path: apps/web

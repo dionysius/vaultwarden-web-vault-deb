@@ -48,7 +48,7 @@ jobs:
 
       - name: Check Release Version
         id: version
-        uses: bitwarden/gh-actions/release-version-check@c970b0fb89bd966749280e832928db62040812bf
+        uses: bitwarden/gh-actions/release-version-check@master
         with:
           release-type: 'Initial Release'
           project-type: ts
@@ -241,7 +241,7 @@ jobs:
           node-gyp install $(node -v)
 
       - name: Install AST
-        uses: bitwarden/gh-actions/install-ast@c970b0fb89bd966749280e832928db62040812bf
+        uses: bitwarden/gh-actions/install-ast@master
 
       - name: Set up environment
         run: choco install checksum --no-progress
@@ -259,7 +259,7 @@ jobs:
 
       - name: Retrieve secrets
         id: retrieve-secrets
-        uses: bitwarden/gh-actions/get-keyvault-secrets@c970b0fb89bd966749280e832928db62040812bf
+        uses: bitwarden/gh-actions/get-keyvault-secrets@master
         with:
           keyvault: "bitwarden-ci"
           secrets: "code-signing-vault-url,
@@ -945,7 +945,7 @@ jobs:
 
       - name: Retrieve secrets
         id: retrieve-secrets
-        uses: bitwarden/gh-actions/get-keyvault-secrets@c970b0fb89bd966749280e832928db62040812bf
+        uses: bitwarden/gh-actions/get-keyvault-secrets@master
         with:
           keyvault: "bitwarden-ci"
           secrets: "aws-electron-access-id,
