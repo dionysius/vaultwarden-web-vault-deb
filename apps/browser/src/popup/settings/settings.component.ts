@@ -272,7 +272,7 @@ export class SettingsComponent implements OnInit {
 
     await this.vaultTimeoutSettingsService.setVaultTimeoutOptions(
       newValue,
-      this.form.value.vaultTimeoutAction
+      await firstValueFrom(this.vaultTimeoutSettingsService.vaultTimeoutAction$())
     );
     if (newValue == null) {
       this.messagingService.send("bgReseedStorage");
