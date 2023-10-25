@@ -1,4 +1,4 @@
-<form [formGroup]="formGroup" (keydown.enter)="$event.preventDefault()">
+<div [formGroup]="formGroup">
   <bit-form-field>
     <bit-label>{{ "lastPassEmail" | i18n }}</bit-label>
     <input bitInput type="text" formControlName="email" />
@@ -13,4 +13,4 @@
     />
     <bit-label>{{ "includeSharedFolders" | i18n }}</bit-label>
   </bit-form-control>
-</form>
+</div>
