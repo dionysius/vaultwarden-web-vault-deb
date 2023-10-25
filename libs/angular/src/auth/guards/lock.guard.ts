@@ -33,6 +33,11 @@ export function lockGuard(): CanActivateFn {
     const router = inject(Router);
     const userVerificationService = inject(UserVerificationService);
 
+    const authStatus = await authService.getAuthStatus();
+    if (authStatus !== AuthenticationStatus.Locked) {
+      return router.createUrlTree(["/"]);
+    }
+
     // If legacy user on web, redirect to migration page
     if (await cryptoService.isLegacyUser()) {
       if (platformUtilService.getClientType() === ClientType.Web) {
@@ -41,11 +46,6 @@ export function lockGuard(): CanActivateFn {
       // Log out legacy users on other clients
       messagingService.send("logout");
       return false;
-    }
-
-    const authStatus = await authService.getAuthStatus();
-    if (authStatus !== AuthenticationStatus.Locked) {
-      return router.createUrlTree(["/"]);
     }
 
     // User is authN and in locked state.
