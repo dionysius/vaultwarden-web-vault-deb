@@ -14,8 +14,10 @@ import {
   TypographyModule,
 } from "@bitwarden/components";
 
+export type LastPassMultifactorPromptVariant = "otp" | "oob" | "yubikey";
+
 type LastPassMultifactorPromptData = {
-  isOOB?: boolean;
+  variant: LastPassMultifactorPromptVariant;
 };
 
 @Component({
@@ -34,7 +36,19 @@ type LastPassMultifactorPromptData = {
   ],
 })
 export class LastPassMultifactorPromptComponent {
-  protected description = this.data?.isOOB ? "lastPassOOBDesc" : "lastPassMFADesc";
+  private variant = this.data.variant;
+
+  protected get descriptionI18nKey(): string {
+    switch (this.variant) {
+      case "oob":
+        return "lastPassOOBDesc";
+      case "yubikey":
+        return "lastPassYubikeyDesc";
+      case "otp":
+      default:
+        return "lastPassMFADesc";
+    }
+  }
 
   protected formGroup = new FormGroup({
     passcode: new FormControl("", {
@@ -56,7 +70,7 @@ export class LastPassMultifactorPromptComponent {
     this.dialogRef.close(this.formGroup.value.passcode);
   };
 
-  static open(dialogService: DialogService, data?: LastPassMultifactorPromptData) {
+  static open(dialogService: DialogService, data: LastPassMultifactorPromptData) {
     return dialogService.open<string>(LastPassMultifactorPromptComponent, { data });
   }
 }
