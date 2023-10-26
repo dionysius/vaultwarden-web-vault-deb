@@ -149,14 +149,14 @@ navigator.credentials.get = async (
  * @returns Promise that resolves when window is focused, or rejects if timeout is reached.
  */
 async function waitForFocus(timeout: number = 5 * 60 * 1000) {
-  if (document.hasFocus()) {
+  if (window.top.document.hasFocus()) {
     return;
   }
 
   let focusListener;
   const focusPromise = new Promise<void>((resolve) => {
     focusListener = () => resolve();
-    window.addEventListener("focus", focusListener, { once: true });
+    window.top.addEventListener("focus", focusListener, { once: true });
   });
 
   let timeoutId;
@@ -173,7 +173,7 @@ async function waitForFocus(timeout: number = 5 * 60 * 1000) {
   try {
     await Promise.race([focusPromise, timeoutPromise]);
   } finally {
-    window.removeEventListener("focus", focusListener);
+    window.top.removeEventListener("focus", focusListener);
     window.clearTimeout(timeoutId);
   }
 }
