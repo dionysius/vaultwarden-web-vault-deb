@@ -365,6 +365,7 @@ function mapToMakeCredentialParams({
 
   const requireUserVerification =
     params.authenticatorSelection?.userVerification === "required" ||
+    params.authenticatorSelection?.userVerification === "preferred" ||
     params.authenticatorSelection?.userVerification === undefined;
 
   return {
@@ -403,7 +404,9 @@ function mapToGetAssertionParams({
     }));
 
   const requireUserVerification =
-    params.userVerification === "required" || params.userVerification === undefined;
+    params.userVerification === "required" ||
+    params.userVerification === "preferred" ||
+    params.userVerification === undefined;
 
   return {
     rpId: params.rpId,
