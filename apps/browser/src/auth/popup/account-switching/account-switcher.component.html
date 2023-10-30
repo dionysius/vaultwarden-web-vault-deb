@@ -1,0 +1,7 @@
+<div *ngIf="accountOptions$ | async as accountOptions" class="box-content">
+  <div *ngFor="let accountOption of accountOptions" class="box-content-row box-content-row-flex">
+    <button type="button" (click)="selectAccount(accountOption.id)" class="row-main">
+      {{ accountOption.name }}
+    </button>
+  </div>
+</div>

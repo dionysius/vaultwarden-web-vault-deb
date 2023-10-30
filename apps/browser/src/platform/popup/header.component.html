@@ -6,8 +6,7 @@
     <div class="right">
       <ng-content select=".right"></ng-content>
       <ng-container *ngIf="authedAccounts$ | async">
-        TODO: Current Account
-        <!-- <app-current-account></app-current-account> -->
+        <app-current-account></app-current-account>
       </ng-container>
     </div>
   </div>

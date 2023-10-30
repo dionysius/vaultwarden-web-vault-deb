@@ -12,6 +12,7 @@ import { canAccessFeature } from "@bitwarden/angular/guard/feature-flag.guard";
 import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
 
 import { fido2AuthGuard } from "../auth/guards/fido2-auth.guard";
+import { AccountSwitcherComponent } from "../auth/popup/account-switching/account-switcher.component";
 import { EnvironmentComponent } from "../auth/popup/environment.component";
 import { HintComponent } from "../auth/popup/hint.component";
 import { HomeComponent } from "../auth/popup/home.component";
@@ -361,6 +362,11 @@ const routes: Routes = [
         data: { state: "tabs_send" },
       },
     ],
+  },
+  {
+    path: "account-switcher",
+    component: AccountSwitcherComponent,
+    data: { state: "account-switcher" },
   },
 ];
 
