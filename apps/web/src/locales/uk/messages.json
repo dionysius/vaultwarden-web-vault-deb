@@ -7273,12 +7273,6 @@
   "alreadyHaveAccount": {
     "message": "Вже маєте обліковий запис?"
   },
-  "customBillingStart": {
-    "message": "Власний рахунок не відображений. Відвідайте "
-  },
-  "customBillingEnd": {
-    "message": " для отримання останнього рахунку."
-  },
   "typePasskey": {
     "message": "Ключ доступу"
   },
@@ -7287,5 +7281,9 @@
   },
   "passkeyNotCopiedAlert": {
     "message": "Ключ доступу не буде скопійовано до клонованого запису. Хочете продовжити клонування цього запису?"
+  },
+  "seeDetailedInstructions": {
+    "message": "Перегляньте докладні інструкції на нашому довідковому сайті",
+    "description": "This is followed a by a hyperlink to the help website."
   }
 }

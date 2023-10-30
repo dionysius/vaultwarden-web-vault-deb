@@ -7273,12 +7273,6 @@
   "alreadyHaveAccount": {
     "message": "Vous avez déjà un compte ?"
   },
-  "customBillingStart": {
-    "message": "La facturation personnalisée n'apparaît pas. Visitez la page "
-  },
-  "customBillingEnd": {
-    "message": " pour la dernière facturation."
-  },
   "typePasskey": {
     "message": "Passkey"
   },
@@ -7287,5 +7281,9 @@
   },
   "passkeyNotCopiedAlert": {
     "message": "La passkey ne sera pas copiée à l'item cloné. Voulez-vous continuez à cloner cet élément?"
+  },
+  "seeDetailedInstructions": {
+    "message": "Consultez les instructions détaillées sur notre site d'aide à",
+    "description": "This is followed a by a hyperlink to the help website."
   }
 }

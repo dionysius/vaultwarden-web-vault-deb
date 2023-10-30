@@ -7273,12 +7273,6 @@
   "alreadyHaveAccount": {
     "message": "Hast du bereits ein Konto?"
   },
-  "customBillingStart": {
-    "message": "Eine individuelle Abrechnung wird nicht berücksichtigt. Besuche die "
-  },
-  "customBillingEnd": {
-    "message": " Seite für die aktuelle Rechnung."
-  },
   "typePasskey": {
     "message": "Passkey"
   },
@@ -7287,5 +7281,9 @@
   },
   "passkeyNotCopiedAlert": {
     "message": "Der Passkey wird nicht in den duplizierten Eintrag kopiert. Möchtest du mit dem Duplizieren dieses Eintrags fortfahren?"
+  },
+  "seeDetailedInstructions": {
+    "message": "Detaillierte Anleitungen auf unserer Hilfeseite unter",
+    "description": "This is followed a by a hyperlink to the help website."
   }
 }

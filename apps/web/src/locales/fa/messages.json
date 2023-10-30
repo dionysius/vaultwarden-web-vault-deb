@@ -7273,12 +7273,6 @@
   "alreadyHaveAccount": {
     "message": "پیشتر حساب کاربری داشته اید؟"
   },
-  "customBillingStart": {
-    "message": "صورتحساب سفارشی منعکس نمی‌شود. بازدید کنید "
-  },
-  "customBillingEnd": {
-    "message": " صفحه برای آخرین صورتحساب"
-  },
   "typePasskey": {
     "message": "کلید عبور"
   },
@@ -7287,5 +7281,9 @@
   },
   "passkeyNotCopiedAlert": {
     "message": "کلید عبور در مورد شبیه سازی شده کپی نمی‌شود. آیا می‌خواهید به شبیه سازی این مورد ادامه دهید؟"
+  },
+  "seeDetailedInstructions": {
+    "message": "See detailed instructions on our help site at",
+    "description": "This is followed a by a hyperlink to the help website."
   }
 }

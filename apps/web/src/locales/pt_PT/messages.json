@@ -7273,12 +7273,6 @@
   "alreadyHaveAccount": {
     "message": "Já tem uma conta?"
   },
-  "customBillingStart": {
-    "message": "A faturação personalizada não é refletida. Visite a "
-  },
-  "customBillingEnd": {
-    "message": " página para a faturação mais recente."
-  },
   "typePasskey": {
     "message": "Chave de acesso"
   },
@@ -7287,5 +7281,9 @@
   },
   "passkeyNotCopiedAlert": {
     "message": "A chave de acesso não será copiada para o item duplicado. Pretende ainda assim duplicar este item?"
+  },
+  "seeDetailedInstructions": {
+    "message": "Consulte as instruções detalhadas no nosso site de ajuda em",
+    "description": "This is followed a by a hyperlink to the help website."
   }
 }

@@ -7273,12 +7273,6 @@
   "alreadyHaveAccount": {
     "message": "Ja tens un compte?"
   },
-  "customBillingStart": {
-    "message": "La facturació personalitzada no es reflecteix. Visita la "
-  },
-  "customBillingEnd": {
-    "message": " pàgina per a la facturació més recent."
-  },
   "typePasskey": {
     "message": "Clau de pas"
   },
@@ -7287,5 +7281,9 @@
   },
   "passkeyNotCopiedAlert": {
     "message": "La clau de pas no es copiarà a l'element clonat. Voleu continuar clonant aquest element?"
+  },
+  "seeDetailedInstructions": {
+    "message": "Consulteu les instruccions detallades al nostre lloc d'ajuda a",
+    "description": "This is followed a by a hyperlink to the help website."
   }
 }

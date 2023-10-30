@@ -7273,12 +7273,6 @@
   "alreadyHaveAccount": {
     "message": "Onko sinulla jo tili?"
   },
-  "customBillingStart": {
-    "message": "Mukautettu laskutus ei näy. Löydät viimeisimmän laskutuksen "
-  },
-  "customBillingEnd": {
-    "message": " -sivulta."
-  },
   "typePasskey": {
     "message": "Suojausavain"
   },
@@ -7287,5 +7281,9 @@
   },
   "passkeyNotCopiedAlert": {
     "message": "Suojausavain ei kopioidu kloonattuun kohteeseen. Haluatko jatkaa kloonausta?"
+  },
+  "seeDetailedInstructions": {
+    "message": "See detailed instructions on our help site at",
+    "description": "This is followed a by a hyperlink to the help website."
   }
 }

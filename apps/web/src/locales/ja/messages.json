@@ -7273,12 +7273,6 @@
   "alreadyHaveAccount": {
     "message": "既にアカウントをお持ちですか？"
   },
-  "customBillingStart": {
-    "message": "カスタム請求は反映されていません。"
-  },
-  "customBillingEnd": {
-    "message": "のページで最新の請求書をご覧いただけます。"
-  },
   "typePasskey": {
     "message": "パスキー"
   },
@@ -7287,5 +7281,9 @@
   },
   "passkeyNotCopiedAlert": {
     "message": "パスキーは複製されたアイテムにコピーされません。このアイテムを複製しますか？"
+  },
+  "seeDetailedInstructions": {
+    "message": "詳細な手順はこちらをご覧ください：",
+    "description": "This is followed a by a hyperlink to the help website."
   }
 }

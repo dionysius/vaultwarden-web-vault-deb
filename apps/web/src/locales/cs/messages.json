@@ -7273,12 +7273,6 @@
   "alreadyHaveAccount": {
     "message": "Už máte účet?"
   },
-  "customBillingStart": {
-    "message": "Vlastní fakturace není zahrnuta. Navštivte stránku "
-  },
-  "customBillingEnd": {
-    "message": " pro nejnovější faktury."
-  },
   "typePasskey": {
     "message": "Přístupový klíč"
   },
@@ -7287,5 +7281,9 @@
   },
   "passkeyNotCopiedAlert": {
     "message": "Přístupový klíč nebude zkopírován do duplikované položky. Chete pokračovat v duplikování této položky?"
+  },
+  "seeDetailedInstructions": {
+    "message": "Podívejte se na podrobné pokyny na našem webu s nápovědou na",
+    "description": "This is followed a by a hyperlink to the help website."
   }
 }

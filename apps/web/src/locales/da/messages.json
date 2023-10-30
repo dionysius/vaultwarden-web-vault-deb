@@ -7273,12 +7273,6 @@
   "alreadyHaveAccount": {
     "message": "Har allerede en konto?"
   },
-  "customBillingStart": {
-    "message": "Tilpasset fakturering vises ikke. Besøg siden "
-  },
-  "customBillingEnd": {
-    "message": " for seneste fakturering."
-  },
   "typePasskey": {
     "message": "Adgangsnøgle"
   },
@@ -7287,5 +7281,9 @@
   },
   "passkeyNotCopiedAlert": {
     "message": "Adgangsnøglen kopieres ikke til det klonede emne. Fortsæt kloningen af emnet alligevel?"
+  },
+  "seeDetailedInstructions": {
+    "message": "See detailed instructions on our help site at",
+    "description": "This is followed a by a hyperlink to the help website."
   }
 }

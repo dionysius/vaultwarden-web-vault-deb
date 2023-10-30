@@ -7273,12 +7273,6 @@
   "alreadyHaveAccount": {
     "message": "Jau ir konts?"
   },
-  "customBillingStart": {
-    "message": "Pielāgotie norēķini nav atspoguļoti. Jāapmeklē "
-  },
-  "customBillingEnd": {
-    "message": " sadaļu, lai gūtu ieskatu par jaunākajiem rēķiniem."
-  },
   "typePasskey": {
     "message": "Piekļuves atslēga"
   },
@@ -7287,5 +7281,9 @@
   },
   "passkeyNotCopiedAlert": {
     "message": "Piekļuves atslēga netiks ievietota klonētajā vienumā. Vai turpināt šī vienuma klonēšanu?"
+  },
+  "seeDetailedInstructions": {
+    "message": "Izvērstas norādes ir aplūkojamas mūsu palīdzības vietnē",
+    "description": "This is followed a by a hyperlink to the help website."
   }
 }

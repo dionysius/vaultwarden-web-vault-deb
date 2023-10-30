@@ -7273,12 +7273,6 @@
   "alreadyHaveAccount": {
     "message": "Already have an account?"
   },
-  "customBillingStart": {
-    "message": "Aangepaste facturering is niet weergeven. Bezoek de "
-  },
-  "customBillingEnd": {
-    "message": " pagina voor laatste facturering."
-  },
   "typePasskey": {
     "message": "Passkey"
   },
@@ -7287,5 +7281,9 @@
   },
   "passkeyNotCopiedAlert": {
     "message": "De passkey wordt niet gekopieerd naar het gekloonde item. Wil je doorgaan met het klonen van dit item?"
+  },
+  "seeDetailedInstructions": {
+    "message": "See detailed instructions on our help site at",
+    "description": "This is followed a by a hyperlink to the help website."
   }
 }

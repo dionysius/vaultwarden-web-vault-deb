@@ -7273,12 +7273,6 @@
   "alreadyHaveAccount": {
     "message": "Вече имате регистрация?"
   },
-  "customBillingStart": {
-    "message": "Персонализираното таксуване не е отразено. Посетете страницата за "
-  },
-  "customBillingEnd": {
-    "message": " за последните фактури."
-  },
   "typePasskey": {
     "message": "Секретен ключ"
   },
@@ -7287,5 +7281,9 @@
   },
   "passkeyNotCopiedAlert": {
     "message": "Секретният ключ няма да бъде копиран в клонирания елемент. Искате ли да продължите с клонирането на елемента?"
+  },
+  "seeDetailedInstructions": {
+    "message": "Може да намерите подробни инструкции в помощния ни уеб сайт на адрес",
+    "description": "This is followed a by a hyperlink to the help website."
   }
 }

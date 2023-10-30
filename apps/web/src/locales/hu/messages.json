@@ -1357,19 +1357,19 @@
     "message": "Hiba történt az exportált fájl visszafejtése során. A titkosítási kulcs nem egyezik meg az adatok exportálásához használt titkosítási kulccsal."
   },
   "importDestination": {
-    "message": "Import destination"
+    "message": "Importálás leírás"
   },
   "learnAboutImportOptions": {
-    "message": "Learn about your import options"
+    "message": "Információ az importálási opciókról"
   },
   "selectImportFolder": {
-    "message": "Select a folder"
+    "message": "Mappa kiválasztása"
   },
   "selectImportCollection": {
-    "message": "Select a collection"
+    "message": "Gyűjtemény kiválasztása"
   },
   "importTargetHint": {
-    "message": "Select this option if you want the imported file contents moved to a $DESTINATION$",
+    "message": "Válasszuk ezt a lehetőséget, ha azt akarjuk, hogy az importált fájl tartalma $DESTINATION$ helyre kerüljön",
     "description": "Located as a hint under the import target. Will be appended by either folder or collection, depending if the user is importing into an individual or an organizational vault.",
     "placeholders": {
       "destination": {
@@ -1379,7 +1379,7 @@
     }
   },
   "importUnassignedItemsError": {
-    "message": "File contains unassigned items."
+    "message": "A fájl hozzá nem rendelt elemeket tartalmaz."
   },
   "selectFormat": {
     "message": "Válasszuk ki az import fájl formátumát."
@@ -1991,7 +1991,7 @@
     "message": "1 GB titkosított tárhely a fájlmellékleteknek."
   },
   "premiumSignUpTwoStepOptions": {
-    "message": "Proprietary two-step login options such as YubiKey and Duo."
+    "message": "Saját kétlépcsős bejelentkezési lehetőségek mint a YubiKey és a Duo."
   },
   "premiumSignUpEmergency": {
     "message": "Sürgősségi hozzáférés"
@@ -6725,7 +6725,7 @@
     "message": "Frissítsük a titkosítási beállításokat, hogy megfeleljünk az új biztonsági ajánlásoknak és javítsuk a fiókvédelmet."
   },
   "changeKdfLoggedOutWarning": {
-    "message": "A folytatással minden aktív munkamenetből kijelentkezik. Újra be kell jelentkeznie, és ki kell töltenie a kétlépcsős bejelentkezési beállításokat. Az adatvesztés elkerülése érdekében javasoljuk, hogy a titkosítási beállítások módosítása előtt exportálja a széfet."
+    "message": "A folytatással minden aktív munkamenetből kijelentkezünkk. Újra be kell jelentkezni és ki kell tölteni a kétlépcsős bejelentkezési beállításokat. Az adatvesztés elkerülése érdekében célszerű a titkosítási beállítások módosítása előtt a széf exportálása."
   },
   "secretsManager": {
     "message": "Titkos kód kezelő"
@@ -7022,13 +7022,13 @@
     "message": "Eszköz jóváhagyása"
   },
   "deviceApprovalsDesc": {
-    "message": "Az alábbiakban hagyja jóvá a bejelentkezési kérelmeket, hogy a kérelmező tag befejezhesse a bejelentkezést. A jóvá nem hagyott kérelmek 1 hét után lejárnak. A jóváhagyás előtt ellenőrizze a tag adatait."
+    "message": "Az alábbiakban hagyjuk jóvá a bejelentkezési kérelmeket, hogy a kérelmező tag befejezhesse a bejelentkezést. A jóvá nem hagyott kérelmek 1 hét után lejárnak. A jóváhagyás előtt ellenőrizzük a tag adatait."
   },
   "deviceInfo": {
-    "message": "Eszközadatok"
+    "message": "Eszköz információ"
   },
   "time": {
-    "message": "Idő"
+    "message": "Időpont"
   },
   "denyAllRequests": {
     "message": "Összes kérés elutasítása"
@@ -7037,22 +7037,22 @@
     "message": "Kérés elutasítása"
   },
   "approveRequest": {
-    "message": "Kérelem megerősítése"
+    "message": "Kérés megerősítése"
   },
   "noDeviceRequests": {
-    "message": "Nincs eszközkérelem"
+    "message": "Nincs eszköz kérés"
   },
   "noDeviceRequestsDesc": {
-    "message": "A tagok eszköz-jóváhagyási kérelmei itt jelennek meg"
+    "message": "A tagok eszköz jóváhagyási kérései itt jelennek meg"
   },
   "loginRequestDenied": {
-    "message": "Bejelentkezési kérelem elutasítva"
+    "message": "A bejelentkezési kérelem elutasításra került."
   },
   "allLoginRequestsDenied": {
-    "message": "Minden bejelentkezési kérelem elutasítva"
+    "message": "Az összes bejelentkezési kérés elutasításra került."
   },
   "loginRequestApproved": {
-    "message": "Bejelentkezési kérelem jóváhagyva"
+    "message": "A bejelentkezési kérés elutasításra került."
   },
   "removeOrgUserNoMasterPasswordTitle": {
     "message": "A fióknak nincs mesterjelszava."
@@ -7201,7 +7201,7 @@
     "message": "Kiegészítő szolgáltatás fiókok"
   },
   "includedServiceAccounts": {
-    "message": "Your plan comes with $COUNT$ service accounts.",
+    "message": "A csomag $COUNT$ szolgáltatás fiókot tartalmaz.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -7210,7 +7210,7 @@
     }
   },
   "addAdditionalServiceAccounts": {
-    "message": "You can add additional service accounts for $COST$ per month.",
+    "message": "További szolgáltatási fiókok adhatók hozzá havi $COST$ áron.",
     "placeholders": {
       "cost": {
         "content": "$1",
@@ -7246,7 +7246,7 @@
     "message": "Megtörtént a bejelentkezés."
   },
   "smBetaEndedDesc": {
-    "message": "The Secrets Manager Beta ended $BETA_ENDING_DATE$. You have $DAYS$ days left to add Secrets Manager to your paid subscription and maintain access to Secrets Manager data. Contact Customer Success to add Secrets Manager to your subscription.",
+    "message": "A Titkós kód kezelő bétaverziója $BETA_ENDING_DATE$ időpontban befejeződött. Még $DAYS$ napig lehetőség van a Titkos kód kezelő szolgáltatás hozzáadásához a fizetett előfizetéshez és a hozzáférés fenntartásához a Titkos kód kezelő adataihoz. Lépjünk kapcsolatba az Ügyfél szolgálattal aTitkos kód kezelő hozzáadásához az előfizetéshez.",
     "placeholders": {
       "beta_ending_date": {
         "content": "$1",
@@ -7259,10 +7259,10 @@
     }
   },
   "betaEnding": {
-    "message": "Beta Ending"
+    "message": "Béta vezió befejezés"
   },
   "beta": {
-    "message": "Beta"
+    "message": "Béta"
   },
   "baseUrl": {
     "message": "Szerver webcím"
@@ -7273,12 +7273,6 @@
   "alreadyHaveAccount": {
     "message": "Van már saját fiók?"
   },
-  "customBillingStart": {
-    "message": "Az egyedi számlázás nem jelenik meg. Kerssük fel "
-  },
-  "customBillingEnd": {
-    "message": " oldalt a legújabb számlázásért."
-  },
   "typePasskey": {
     "message": "Hozzáférési kulcs"
   },
@@ -7287,5 +7281,9 @@
   },
   "passkeyNotCopiedAlert": {
     "message": "A hozzáférési kulcs nem kerül másolásra a klónozott elembe. Folytatjuk ennek az elemnek a klónozását?"
+  },
+  "seeDetailedInstructions": {
+    "message": "Tekintsük meg a részletes utasításokat a súgó oldalon:",
+    "description": "This is followed a by a hyperlink to the help website."
   }
 }

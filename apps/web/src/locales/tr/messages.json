@@ -7273,12 +7273,6 @@
   "alreadyHaveAccount": {
     "message": "Zaten hesabınız var mı?"
   },
-  "customBillingStart": {
-    "message": "Özel faturalandırma yansıtılmıyor. Son fatura sayfasını "
-  },
-  "customBillingEnd": {
-    "message": " ziyaret edin."
-  },
   "typePasskey": {
     "message": "Geçiş anahtarı"
   },
@@ -7287,5 +7281,9 @@
   },
   "passkeyNotCopiedAlert": {
     "message": "The passkey will not be copied to the cloned item. Do you want to continue cloning this item?"
+  },
+  "seeDetailedInstructions": {
+    "message": "Ayrıntılı talimatları yardım sitemizde bulabilirsiniz:",
+    "description": "This is followed a by a hyperlink to the help website."
   }
 }
