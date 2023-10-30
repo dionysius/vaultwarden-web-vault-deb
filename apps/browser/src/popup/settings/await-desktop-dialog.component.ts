@@ -10,8 +10,6 @@ import { ButtonModule, DialogModule, DialogService } from "@bitwarden/components
 })
 export class AwaitDesktopDialogComponent {
   static open(dialogService: DialogService) {
-    return dialogService.open<boolean>(AwaitDesktopDialogComponent, {
-      disableClose: true,
-    });
+    return dialogService.open<boolean>(AwaitDesktopDialogComponent);
   }
 }
