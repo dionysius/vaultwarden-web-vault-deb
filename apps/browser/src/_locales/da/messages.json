@@ -2501,6 +2501,9 @@
   "importEncKeyError": {
     "message": "Fejl under dekryptering af eksporteret fil. Krypteringsnøglen matcher ikke den til dataeksporten anvendte krypteringsnøgle."
   },
+  "invalidFilePassword": {
+    "message": "Ugyldig filadgangskode. Brug samme adgangskode som under oprettelsen af eksportfilen."
+  },
   "importDestination": {
     "message": "Importdestination"
   },
@@ -2610,5 +2613,69 @@
   },
   "useBrowserName": {
     "message": "Benyt webbrowser"
+  },
+  "multifactorAuthenticationCancelled": {
+    "message": "Multifaktorgodkendelse afbrudt"
+  },
+  "noLastPassDataFound": {
+    "message": "Ingen LastPass-data fundet"
+  },
+  "incorrectUsernameOrPassword": {
+    "message": "Forkert brugernavn eller adgangskode"
+  },
+  "multifactorAuthenticationFailed": {
+    "message": "Multifaktorgodkendelse mislykkedes"
+  },
+  "includeSharedFolders": {
+    "message": "Medtag delte mapper"
+  },
+  "lastPassEmail": {
+    "message": "LastPass e-mail"
+  },
+  "importingYourAccount": {
+    "message": "Importerer kontoen..."
+  },
+  "lastPassMFARequired": {
+    "message": "LastPass-multifaktorgodkendelse kræves"
+  },
+  "lastPassMFADesc": {
+    "message": "Angiv engangskoden fra godkendelses-appen"
+  },
+  "lastPassOOBDesc": {
+    "message": "Godkend loginanmodningen i godkendelses-appen eller angiv en engangskode."
+  },
+  "passcode": {
+    "message": "Adgangskode"
+  },
+  "lastPassMasterPassword": {
+    "message": "LastPass-hovedadgangskode"
+  },
+  "lastPassAuthRequired": {
+    "message": "LastPass-godkendelse kræves"
+  },
+  "awaitingSSO": {
+    "message": "Afventer SSO-godkendelse"
+  },
+  "awaitingSSODesc": {
+    "message": "Fortsæt indlogningen med virksomhedslegitimationsoplysningerne."
+  },
+  "seeDetailedInstructions": {
+    "message": "Se detaljeret vejledning på vores hjælpeside på",
+    "description": "This is followed a by a hyperlink to the help website."
+  },
+  "importDirectlyFromLastPass": {
+    "message": "Import direkte fra LastPass"
+  },
+  "importFromCSV": {
+    "message": "Import fra CSV"
+  },
+  "lastPassTryAgainCheckEmail": {
+    "message": "Forsøg igen eller kig efter en e-mail fra LastPass for at bekræfte, at det er dig."
+  },
+  "collection": {
+    "message": "Samling"
+  },
+  "lastPassYubikeyDesc": {
+    "message": "Indsæt den til LastPass-kontoen tilknyttede YubiKey i computers USB-port, og tryk dernæst på dens knap."
   }
 }

@@ -2501,6 +2501,9 @@
   "importEncKeyError": {
     "message": "Errore durante la decrittografia del file esportato. La chiave di crittografia non corrisponde alla chiave di crittografia usata per esportare i dati."
   },
+  "invalidFilePassword": {
+    "message": "Password errata, usa la password che hai inserito alla creazione del file di esportazione."
+  },
   "importDestination": {
     "message": "Destinazione dell'importazione"
   },
@@ -2610,5 +2613,69 @@
   },
   "useBrowserName": {
     "message": "Usa browser"
+  },
+  "multifactorAuthenticationCancelled": {
+    "message": "Verifica in due passaggi annullata"
+  },
+  "noLastPassDataFound": {
+    "message": "Nessun dato di LastPass trovato"
+  },
+  "incorrectUsernameOrPassword": {
+    "message": "Nome utente o password errati"
+  },
+  "multifactorAuthenticationFailed": {
+    "message": "Verifica in due passaggi non riuscita"
+  },
+  "includeSharedFolders": {
+    "message": "Includi cartelle condivise"
+  },
+  "lastPassEmail": {
+    "message": "Email di LastPass"
+  },
+  "importingYourAccount": {
+    "message": "Importazione del tuo account..."
+  },
+  "lastPassMFARequired": {
+    "message": "Verifica in due passaggi di LastPass obbligatoria"
+  },
+  "lastPassMFADesc": {
+    "message": "Inserisci il codice di verifica dalla tua app di autenticazione"
+  },
+  "lastPassOOBDesc": {
+    "message": "Approva la richiesta di accesso nella tua app di autenticazione o inserisci un codice di accesso una tantum."
+  },
+  "passcode": {
+    "message": "Codice di verifica"
+  },
+  "lastPassMasterPassword": {
+    "message": "Password principale di LastPass"
+  },
+  "lastPassAuthRequired": {
+    "message": "Autenticazione di LastPass obbligatoria"
+  },
+  "awaitingSSO": {
+    "message": "In attesa di autenticazione SSO"
+  },
+  "awaitingSSODesc": {
+    "message": "Continua ad accedere utilizzando le tue credenziali aziendali."
+  },
+  "seeDetailedInstructions": {
+    "message": "Consulta le istruzioni dettagliate sul nostro sito di assistenza su",
+    "description": "This is followed a by a hyperlink to the help website."
+  },
+  "importDirectlyFromLastPass": {
+    "message": "Importa direttamente da LastPass"
+  },
+  "importFromCSV": {
+    "message": "Importa da CSV"
+  },
+  "lastPassTryAgainCheckEmail": {
+    "message": "Riprova o cerca un'email di LastPass per verificare la tua identità."
+  },
+  "collection": {
+    "message": "Raccolta"
+  },
+  "lastPassYubikeyDesc": {
+    "message": "Inserisci la tua YubiKey associata al tuo account LastPass nella porta USB del computer, poi premi il suo bottone."
   }
 }

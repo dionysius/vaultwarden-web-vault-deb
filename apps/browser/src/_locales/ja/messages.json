@@ -2501,6 +2501,9 @@
   "importEncKeyError": {
     "message": "エクスポートされたファイルの復号でエラーが発生しました。暗号化キーが、データをエクスポートするために使用された暗号化キーと一致しません。"
   },
+  "invalidFilePassword": {
+    "message": "無効なファイルパスワードです。エクスポートファイルを作成したときに入力したパスワードを使用してください。"
+  },
   "importDestination": {
     "message": "インポート先"
   },
@@ -2610,5 +2613,69 @@
   },
   "useBrowserName": {
     "message": "ブラウザーを使用"
+  },
+  "multifactorAuthenticationCancelled": {
+    "message": "多要素認証がキャンセルされました"
+  },
+  "noLastPassDataFound": {
+    "message": "LastPass データが見つかりません"
+  },
+  "incorrectUsernameOrPassword": {
+    "message": "ユーザー名またはパスワードが間違っています"
+  },
+  "multifactorAuthenticationFailed": {
+    "message": "多要素認証に失敗しました"
+  },
+  "includeSharedFolders": {
+    "message": "共有フォルダーを含める"
+  },
+  "lastPassEmail": {
+    "message": "LastPass メールアドレス"
+  },
+  "importingYourAccount": {
+    "message": "アカウントをインポートしています..."
+  },
+  "lastPassMFARequired": {
+    "message": "LastPass の多要素認証が必要です"
+  },
+  "lastPassMFADesc": {
+    "message": "認証アプリに表示されているワンタイムパスコードを入力してください"
+  },
+  "lastPassOOBDesc": {
+    "message": "認証アプリでログイン要求を承認するか、ワンタイムパスコードを入力してください。"
+  },
+  "passcode": {
+    "message": "パスコード"
+  },
+  "lastPassMasterPassword": {
+    "message": "LastPass マスターパスワード"
+  },
+  "lastPassAuthRequired": {
+    "message": "LastPass 認証が必要です"
+  },
+  "awaitingSSO": {
+    "message": "SSO 認証を待機中"
+  },
+  "awaitingSSODesc": {
+    "message": "会社の資格情報を使用してログインを続けてください。"
+  },
+  "seeDetailedInstructions": {
+    "message": "詳細な手順はこちらをご覧ください：",
+    "description": "This is followed a by a hyperlink to the help website."
+  },
+  "importDirectlyFromLastPass": {
+    "message": "LastPass から直接インポート"
+  },
+  "importFromCSV": {
+    "message": "CSV からインポート"
+  },
+  "lastPassTryAgainCheckEmail": {
+    "message": "もう一度お試しいただくか、LastPass からのメールを探して認証してください。"
+  },
+  "collection": {
+    "message": "コレクション"
+  },
+  "lastPassYubikeyDesc": {
+    "message": "LastPass アカウントに関連付けられた YubiKey を USB ポートに挿入し、ボタンをタッチしてください。"
   }
 }

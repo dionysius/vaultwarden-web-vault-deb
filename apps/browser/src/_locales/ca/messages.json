@@ -2501,6 +2501,9 @@
   "importEncKeyError": {
     "message": "Error en desxifrar el fitxer exportat. La vostra clau de xifratge no coincideix amb la clau de xifratge utilitzada per exportar les dades."
   },
+  "invalidFilePassword": {
+    "message": "La contrasenya del fitxer no és vàlida. Utilitzeu la contrasenya que vau introduir quan vau crear el fitxer d'exportació."
+  },
   "importDestination": {
     "message": "Destinació de la importació"
   },
@@ -2610,5 +2613,69 @@
   },
   "useBrowserName": {
     "message": "Utilitza navegador"
+  },
+  "multifactorAuthenticationCancelled": {
+    "message": "S'ha cancel·lat l'autenticació multifactor"
+  },
+  "noLastPassDataFound": {
+    "message": "No s'han trobat dades del LastPass"
+  },
+  "incorrectUsernameOrPassword": {
+    "message": "Nom d'usuari o contrasenya incorrectes"
+  },
+  "multifactorAuthenticationFailed": {
+    "message": "L'autenticació multifactor ha fallat"
+  },
+  "includeSharedFolders": {
+    "message": "Inclou les carpetes compartides"
+  },
+  "lastPassEmail": {
+    "message": "Adreça electrònica del LastPass"
+  },
+  "importingYourAccount": {
+    "message": "S'està important el compte..."
+  },
+  "lastPassMFARequired": {
+    "message": "L'autenticació multifactor del LastPass és obligatòria"
+  },
+  "lastPassMFADesc": {
+    "message": "Introduïu la vostra contrasenya única des de l'aplicació d'autenticació"
+  },
+  "lastPassOOBDesc": {
+    "message": "Aproveu la sol·licitud d'inici de sessió a l'aplicació d'autenticació o introduïu una contrasenya única."
+  },
+  "passcode": {
+    "message": "Clau d'accés"
+  },
+  "lastPassMasterPassword": {
+    "message": "Contrasenya mestra del LastPass"
+  },
+  "lastPassAuthRequired": {
+    "message": "L'autenticació del LastPass és obligatòria"
+  },
+  "awaitingSSO": {
+    "message": "S'està esperant l'autenticació SSO"
+  },
+  "awaitingSSODesc": {
+    "message": "Continueu iniciant la sessió amb les credencials de la vostra empresa."
+  },
+  "seeDetailedInstructions": {
+    "message": "Consulteu les instruccions detallades al nostre lloc d'ajuda a",
+    "description": "This is followed a by a hyperlink to the help website."
+  },
+  "importDirectlyFromLastPass": {
+    "message": "Importa directament des del LastPass"
+  },
+  "importFromCSV": {
+    "message": "Importa des de CSV"
+  },
+  "lastPassTryAgainCheckEmail": {
+    "message": "Torneu a provar-ho o cerqueu un correu electrònic del LastPass per verificar la vostra identitat."
+  },
+  "collection": {
+    "message": "Col·lecció"
+  },
+  "lastPassYubikeyDesc": {
+    "message": "Inseriu la YubiKey associada al compte del LastPass al port USB de l'ordinador i, després, toqueu-ne el botó."
   }
 }

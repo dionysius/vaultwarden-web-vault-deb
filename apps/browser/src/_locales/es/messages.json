@@ -2337,7 +2337,7 @@
     "message": "Entrada requerida."
   },
   "required": {
-    "message": "required"
+    "message": "requerido"
   },
   "search": {
     "message": "Buscar"
@@ -2370,7 +2370,7 @@
     }
   },
   "inputMinValue": {
-    "message": "Input value must be at least $MIN$.",
+    "message": "El valor de entrada debe ser por lo menos de $MIN$.",
     "placeholders": {
       "min": {
         "content": "$1",
@@ -2379,7 +2379,7 @@
     }
   },
   "inputMaxValue": {
-    "message": "Input value must not exceed $MAX$.",
+    "message": "El valor de entrada no debe exceder $MAX$.",
     "placeholders": {
       "max": {
         "content": "$1",
@@ -2501,6 +2501,9 @@
   "importEncKeyError": {
     "message": "Error al descifrar el archivo exportado. Su clave de cifrado no coincide con la clave de cifrado utilizada para exportar los datos."
   },
+  "invalidFilePassword": {
+    "message": "Contraseña de archivo no válida. Por favor utilice la contraseña que introdujo cuando creó el archivo de exportación."
+  },
   "importDestination": {
     "message": "Importar destino"
   },
@@ -2610,5 +2613,69 @@
   },
   "useBrowserName": {
     "message": "Use un navegador web"
+  },
+  "multifactorAuthenticationCancelled": {
+    "message": "Se canceló la autenticación multifactor"
+  },
+  "noLastPassDataFound": {
+    "message": "No se encontró ningún dato de LastPass"
+  },
+  "incorrectUsernameOrPassword": {
+    "message": "El nombre de usuario o la contraseña no son correctos"
+  },
+  "multifactorAuthenticationFailed": {
+    "message": "Falló la autenticación multifactor"
+  },
+  "includeSharedFolders": {
+    "message": "Incluir carpetas compartidas"
+  },
+  "lastPassEmail": {
+    "message": "Correo de LastPass"
+  },
+  "importingYourAccount": {
+    "message": "Importando su cuenta..."
+  },
+  "lastPassMFARequired": {
+    "message": "Se requiere autenticación multifactor LastPass"
+  },
+  "lastPassMFADesc": {
+    "message": "Introduzca el código de un solo uso de la aplicación para autenticar"
+  },
+  "lastPassOOBDesc": {
+    "message": "Apruebe la solicitud de acceso de la aplicación para autenticar o introduzca un código de un solo uso."
+  },
+  "passcode": {
+    "message": "Clave"
+  },
+  "lastPassMasterPassword": {
+    "message": "Contraseña maestra de LastPass"
+  },
+  "lastPassAuthRequired": {
+    "message": "Se requiere autenticación LastPass"
+  },
+  "awaitingSSO": {
+    "message": "Esperando autenticación SSO"
+  },
+  "awaitingSSODesc": {
+    "message": "Por favor, continúe iniciando sesión usando las credenciales de su empresa."
+  },
+  "seeDetailedInstructions": {
+    "message": "Vea instrucciones detalladas en nuestro sitio de ayuda en",
+    "description": "This is followed a by a hyperlink to the help website."
+  },
+  "importDirectlyFromLastPass": {
+    "message": "Importar directamente de LastPass"
+  },
+  "importFromCSV": {
+    "message": "Importar desde CSV"
+  },
+  "lastPassTryAgainCheckEmail": {
+    "message": "Intente nuevamente o busque un correo de LastPass para verificar su identidad."
+  },
+  "collection": {
+    "message": "Colección"
+  },
+  "lastPassYubikeyDesc": {
+    "message": "Insert the YubiKey associated with your LastPass account into your computer's USB port, then touch its button."
   }
 }
