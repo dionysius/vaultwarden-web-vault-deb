@@ -19,7 +19,6 @@ export class BrowserSyncVerificationDialogComponent {
   static open(dialogService: DialogService, data: BrowserSyncVerificationDialogParams) {
     return dialogService.open(BrowserSyncVerificationDialogComponent, {
       data,
-      disableClose: true,
     });
   }
 }
