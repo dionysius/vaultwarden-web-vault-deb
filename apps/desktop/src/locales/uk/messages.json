@@ -2480,6 +2480,9 @@
   "importEncKeyError": {
     "message": "Помилка розшифрування експортованого файлу. Ваш ключ шифрування відрізняється від ключа, використаного для експортування даних."
   },
+  "invalidFilePassword": {
+    "message": "Неправильний пароль файлу. Використайте пароль, який ви вводили під час створення експортованого файлу."
+  },
   "importDestination": {
     "message": "Призначення імпорту"
   },
@@ -2538,5 +2541,69 @@
   },
   "confirmFilePassword": {
     "message": "Підтвердьте пароль файлу"
+  },
+  "multifactorAuthenticationCancelled": {
+    "message": "Багатофакторну автентифікацію скасовано"
+  },
+  "noLastPassDataFound": {
+    "message": "Дані LastPass не знайдено"
+  },
+  "incorrectUsernameOrPassword": {
+    "message": "Неправильне ім'я користувача або пароль"
+  },
+  "multifactorAuthenticationFailed": {
+    "message": "Збій багатофакторної автентифікації"
+  },
+  "includeSharedFolders": {
+    "message": "Включити спільні теки"
+  },
+  "lastPassEmail": {
+    "message": "Електронна пошта LastPass"
+  },
+  "importingYourAccount": {
+    "message": "Ваш обліковий запис імпортується..."
+  },
+  "lastPassMFARequired": {
+    "message": "Необхідно пройти багатофакторну автентифікацію LastPass"
+  },
+  "lastPassMFADesc": {
+    "message": "Введіть одноразовий код з програми для автентифікації"
+  },
+  "lastPassOOBDesc": {
+    "message": "Схваліть запит входу в програмі для автентифікації або введіть одноразовий код."
+  },
+  "passcode": {
+    "message": "Код"
+  },
+  "lastPassMasterPassword": {
+    "message": "Головний пароль LastPass"
+  },
+  "lastPassAuthRequired": {
+    "message": "Необхідно пройти автентифікацію LastPass"
+  },
+  "awaitingSSO": {
+    "message": "Очікується автентифікація SSO"
+  },
+  "awaitingSSODesc": {
+    "message": "Увійдіть з використанням облікових даних вашої компанії."
+  },
+  "seeDetailedInstructions": {
+    "message": "Перегляньте докладні інструкції на нашому довідковому сайті",
+    "description": "This is followed a by a hyperlink to the help website."
+  },
+  "importDirectlyFromLastPass": {
+    "message": "Імпортувати безпосередньо з LastPass"
+  },
+  "importFromCSV": {
+    "message": "Імпортувати з файлу CSV"
+  },
+  "lastPassTryAgainCheckEmail": {
+    "message": "Спробуйте ще раз або перевірте електронну пошту від LastPass для підтвердження дії."
+  },
+  "collection": {
+    "message": "Collection"
+  },
+  "lastPassYubikeyDesc": {
+    "message": "Вставте YubiKey пов'язаний з обліковим записом LastPass в USB порт вашого комп'ютера, потім торкніться його кнопки."
   }
 }

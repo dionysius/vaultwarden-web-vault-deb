@@ -476,7 +476,7 @@
     "message": "Die maximale Dateigröße beträgt 500 MB."
   },
   "encryptionKeyMigrationRequired": {
-    "message": "Encryption key migration required. Please login through the web vault to update your encryption key."
+    "message": "Verschlüsselungscode-Migration erforderlich. Bitte melde dich über den Web-Tresor an, um deinen Verschlüsselungscode zu aktualisieren."
   },
   "editedFolder": {
     "message": "Ordner gespeichert"
@@ -2472,13 +2472,16 @@
     }
   },
   "importFormatError": {
-    "message": "Die Daten sind nicht richtig formatiert. Kontrollieren Sie bitte Ihre Import-Datei und versuchen Sie es erneut."
+    "message": "Die Daten sind nicht richtig formatiert. Kontrolliere bitte deine Import-Datei und versuche es erneut."
   },
   "importNothingError": {
     "message": "Es wurde nichts importiert."
   },
   "importEncKeyError": {
-    "message": "Fehler beim Entschlüsseln der exportierten Datei. Dein Verschlüsselungsschlüssel stimmt nicht mit dem beim Export verwendeten Verschlüsselungsschlüssel überein."
+    "message": "Fehler beim Entschlüsseln der exportierten Datei. Dein Verschlüsselungscode stimmt nicht mit dem beim Export verwendeten Verschlüsselungscode überein."
+  },
+  "invalidFilePassword": {
+    "message": "Ungültiges Dateipasswort. Bitte verwende das Passwort, das du beim Erstellen der Exportdatei eingegeben hast."
   },
   "importDestination": {
     "message": "Import-Ziel"
@@ -2506,10 +2509,10 @@
     "message": "Die Datei enthält nicht zugewiesene Einträge."
   },
   "selectFormat": {
-    "message": "Wählen Sie das Format Ihrer Import-Datei"
+    "message": "Wähle das Format der Import-Datei"
   },
   "selectImportFile": {
-    "message": "Wählen Sie die Import-Datei"
+    "message": "Wähle die Import-Datei aus"
   },
   "chooseFile": {
     "message": "Datei auswählen"
@@ -2518,7 +2521,7 @@
     "message": "Keine Datei ausgewählt"
   },
   "orCopyPasteFileContents": {
-    "message": "oder fügen Sie den Inhalt Ihrer Datei hier ein"
+    "message": "oder kopiere und füge den Inhalt der Import-Datei hier ein"
   },
   "instructionsFor": {
     "message": "Anleitung für $NAME$",
@@ -2538,5 +2541,69 @@
   },
   "confirmFilePassword": {
     "message": "Dateipasswort bestätigen"
+  },
+  "multifactorAuthenticationCancelled": {
+    "message": "Multifaktor-Authentifizierung abgebrochen"
+  },
+  "noLastPassDataFound": {
+    "message": "Keine LastPass Daten gefunden"
+  },
+  "incorrectUsernameOrPassword": {
+    "message": "Falscher Benutzername oder Passwort"
+  },
+  "multifactorAuthenticationFailed": {
+    "message": "Multifaktor-Authentifizierung fehlgeschlagen"
+  },
+  "includeSharedFolders": {
+    "message": "Geteilte Ordner mit einbeziehen"
+  },
+  "lastPassEmail": {
+    "message": "LastPass E-Mail-Adresse"
+  },
+  "importingYourAccount": {
+    "message": "Importiere dein Konto..."
+  },
+  "lastPassMFARequired": {
+    "message": "LastPass Multifaktor-Authentifizierung erforderlich"
+  },
+  "lastPassMFADesc": {
+    "message": "Gib deinen Einmal-Zugangscode aus deiner Authentifizierungs-App ein"
+  },
+  "lastPassOOBDesc": {
+    "message": "Bestätige die Anmeldeanfrage in deiner Authentifizierungs-App oder gib einen Einmal-Zugangscode ein."
+  },
+  "passcode": {
+    "message": "Zugangscode"
+  },
+  "lastPassMasterPassword": {
+    "message": "LastPass Master-Passwort"
+  },
+  "lastPassAuthRequired": {
+    "message": "LastPass Authentifizierung erforderlich"
+  },
+  "awaitingSSO": {
+    "message": "Warte auf SSO-Authentifizierung"
+  },
+  "awaitingSSODesc": {
+    "message": "Bitte melde dich weiterhin mit deinen Firmenzugangsdaten an."
+  },
+  "seeDetailedInstructions": {
+    "message": "Detaillierte Anleitungen auf unserer Hilfeseite unter",
+    "description": "This is followed a by a hyperlink to the help website."
+  },
+  "importDirectlyFromLastPass": {
+    "message": "Direkt aus LastPass importieren"
+  },
+  "importFromCSV": {
+    "message": "Aus CSV importieren"
+  },
+  "lastPassTryAgainCheckEmail": {
+    "message": "Versuche es erneut oder suche nach einer E-Mail von LastPass, um zu verifizieren, dass du es bist."
+  },
+  "collection": {
+    "message": "Sammlung"
+  },
+  "lastPassYubikeyDesc": {
+    "message": "Stecke den YubiKey, der mit deinem LastPass Konto verknüpft ist, in den USB-Port deines Computers und drücke dann den Knopf des YubiKey."
   }
 }

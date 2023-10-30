@@ -145,7 +145,7 @@
     "message": "品牌"
   },
   "expiration": {
-    "message": "过期日"
+    "message": "有效期"
   },
   "securityCode": {
     "message": "安全码"
@@ -594,7 +594,7 @@
     "message": "继续"
   },
   "enterVerificationCodeApp": {
-    "message": "请输入您的验证器应用中的 6 位数验证码。"
+    "message": "请输入您的验证器 App 中的 6 位数验证码。"
   },
   "enterVerificationCodeEmail": {
     "message": "请输入发送给电子邮件 $EMAIL$ 的 6 位数验证码。",
@@ -624,10 +624,10 @@
     "message": "使用其他两步登录方式"
   },
   "insertYubiKey": {
-    "message": "将您的 YubiKey 插入计算机的 USB 端口，然后按下按钮。"
+    "message": "将您的 YubiKey 插入计算机的 USB 端口，然后触摸其按钮。"
   },
   "insertU2f": {
-    "message": "将您的安全钥匙插入计算机的 USB 端口。如果它有按钮，请按下它。"
+    "message": "将您的安全钥匙插入计算机的 USB 端口。如果它有按钮，请触摸它。"
   },
   "recoveryCodeDesc": {
     "message": "无法访问您所有的双重身份提供程序吗？请使用您的恢复代码来停用您账户中所有的双重身份提供程序。"
@@ -636,10 +636,10 @@
     "message": "恢复代码"
   },
   "authenticatorAppTitle": {
-    "message": "验证器应用"
+    "message": "验证器 App"
   },
   "authenticatorAppDesc": {
-    "message": "使用身份验证器应用（例如 Authy 或 Google Authenticator）来生成基于时间的验证码。",
+    "message": "使用验证器 App（例如 Authy 或 Google Authenticator）来生成基于时间的验证码。",
     "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
   },
   "yubiKeyTitle": {
@@ -675,7 +675,7 @@
     "message": "此账户已设置两步登录，但此设备不支持任何已配置的两步登录提供程序。"
   },
   "noTwoStepProviders2": {
-    "message": "请添加能更好支持跨设备使用的提供程序（比如验证器应用）。"
+    "message": "请添加能更好支持跨设备使用的其他提供程序（例如验证器 App）。"
   },
   "twoStepOptions": {
     "message": "两步登录选项"
@@ -799,7 +799,7 @@
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "yourAccountsFingerprint": {
-    "message": "您的账户的指纹短语",
+    "message": "您的账户指纹短语",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "goToWebVault": {
@@ -840,7 +840,7 @@
     "message": "无效的主密码"
   },
   "twoStepLoginConfirmation": {
-    "message": "两步登录要求您从其他设备（例如安全钥匙、验证器应用、短信、电话或者电子邮件）来验证您的登录，这能使您的账户更加安全。两步登录需要在 bitwarden.com 网页版密码库中设置。现在访问此网站吗？"
+    "message": "两步登录要求您从其他设备（例如安全钥匙、验证器 App、短信、电话或者电子邮件）来验证您的登录，这能使您的账户更加安全。两步登录需要在 bitwarden.com 网页版密码库中设置。现在访问此网站吗？"
   },
   "twoStepLogin": {
     "message": "两步登录"
@@ -914,7 +914,7 @@
     "message": "显示网站图标"
   },
   "faviconDesc": {
-    "message": "在每个登录旁显示一个可识别的图像。"
+    "message": "在每个登录项目旁边显示一个可识别的图像。"
   },
   "enableMinToTray": {
     "message": "最小化到托盘图标"
@@ -2181,7 +2181,7 @@
     }
   },
   "youDeniedALogInAttemptFromAnotherDevice": {
-    "message": "您拒绝了一个来自其他设备的登录尝试。若确认是您自己，请尝试再次使用该设备登录。"
+    "message": "您拒绝了一个来自其他设备的登录尝试。若确实是您本人，请尝试再次发起设备登录。"
   },
   "justNow": {
     "message": "刚刚"
@@ -2480,6 +2480,9 @@
   "importEncKeyError": {
     "message": "解密导出的文件时出错。您的加密密钥与导出数据时使用的加密密钥不匹配。"
   },
+  "invalidFilePassword": {
+    "message": "无效的文件密码，请使用您创建导出文件时输入的密码。"
+  },
   "importDestination": {
     "message": "导入目的地"
   },
@@ -2538,5 +2541,69 @@
   },
   "confirmFilePassword": {
     "message": "确认文件密码"
+  },
+  "multifactorAuthenticationCancelled": {
+    "message": "多重身份验证已取消"
+  },
+  "noLastPassDataFound": {
+    "message": "未找到 LastPass 数据"
+  },
+  "incorrectUsernameOrPassword": {
+    "message": "用户名或密码不正确"
+  },
+  "multifactorAuthenticationFailed": {
+    "message": "多重身份验证失败"
+  },
+  "includeSharedFolders": {
+    "message": "包含已共享的文件夹"
+  },
+  "lastPassEmail": {
+    "message": "LastPass Email"
+  },
+  "importingYourAccount": {
+    "message": "正在导入您的账户..."
+  },
+  "lastPassMFARequired": {
+    "message": "需要 LastPass 多重身份验证"
+  },
+  "lastPassMFADesc": {
+    "message": "输入来自身份验证 App 的一次性通行代码"
+  },
+  "lastPassOOBDesc": {
+    "message": "在您的身份验证 App 中批准登录请求或输入一次性通行代码。"
+  },
+  "passcode": {
+    "message": "通行代码"
+  },
+  "lastPassMasterPassword": {
+    "message": "LastPass 主密码"
+  },
+  "lastPassAuthRequired": {
+    "message": "需要 LastPass 身份验证"
+  },
+  "awaitingSSO": {
+    "message": "等待 SSO 身份验证"
+  },
+  "awaitingSSODesc": {
+    "message": "请使用您的公司凭据继续登录。"
+  },
+  "seeDetailedInstructions": {
+    "message": "请参阅我们的帮助网站上的详细说明：",
+    "description": "This is followed a by a hyperlink to the help website."
+  },
+  "importDirectlyFromLastPass": {
+    "message": "从 LastPass 直接导入"
+  },
+  "importFromCSV": {
+    "message": "从 CSV 导入"
+  },
+  "lastPassTryAgainCheckEmail": {
+    "message": "请重试或查找来自 LastPass 的电子邮件以验证您的身份。"
+  },
+  "collection": {
+    "message": "集合"
+  },
+  "lastPassYubikeyDesc": {
+    "message": "将与您的 LastPass 账户关联的 YubiKey 插入计算机的 USB 端口，然后触摸其按钮。"
   }
 }

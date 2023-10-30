@@ -2480,6 +2480,9 @@
   "importEncKeyError": {
     "message": "Kļūda izguves datnes atšifrēšanā. Izmantotā atslēga neatbilst tai, kas tika izmantota satura izgūšanai."
   },
+  "invalidFilePassword": {
+    "message": "Nederīga datnes parole, lūgums izmantot to paroli, kas tika ievadīta izdošanas datnes izveidošanas brīdī."
+  },
   "importDestination": {
     "message": "Ievietošanas galamērķis"
   },
@@ -2538,5 +2541,69 @@
   },
   "confirmFilePassword": {
     "message": "Apstiprināt datnes paroli"
+  },
+  "multifactorAuthenticationCancelled": {
+    "message": "Daudzpakāpju pieteikšanās atcelta"
+  },
+  "noLastPassDataFound": {
+    "message": "Netika atrasti LastPass dati"
+  },
+  "incorrectUsernameOrPassword": {
+    "message": "Nepareizs lietotājvārds vai parole"
+  },
+  "multifactorAuthenticationFailed": {
+    "message": "Daudzpakāpju pieteikšanās neizdevās"
+  },
+  "includeSharedFolders": {
+    "message": "Iekļaut kopīgotās mapes"
+  },
+  "lastPassEmail": {
+    "message": "LastPass e-pasta adrese"
+  },
+  "importingYourAccount": {
+    "message": "Ievieto kontu..."
+  },
+  "lastPassMFARequired": {
+    "message": "Nepieciešama LastPass daudzpakāpju pieteikšanās"
+  },
+  "lastPassMFADesc": {
+    "message": "Jāievada vienreizējais piekļuves kods no autentificētāja lietotnes"
+  },
+  "lastPassOOBDesc": {
+    "message": "Jāapstiprina pieteikšanās pieprasījums autentificētāja lietotnē vai jāievada vienreizējs piekļuves kods."
+  },
+  "passcode": {
+    "message": "Piekļuves kods"
+  },
+  "lastPassMasterPassword": {
+    "message": "LastPass galvenā parole"
+  },
+  "lastPassAuthRequired": {
+    "message": "Nepieciešama pieteikšanās LastPass"
+  },
+  "awaitingSSO": {
+    "message": "Gaida vienoto pieteikšanos"
+  },
+  "awaitingSSODesc": {
+    "message": "Lūgums turpināt pieteikšanos ar savas apvienības pieteikšanās datiem."
+  },
+  "seeDetailedInstructions": {
+    "message": "Izvērstas norādes ir aplūkojamas mūsu palīdzības vietnē",
+    "description": "This is followed a by a hyperlink to the help website."
+  },
+  "importDirectlyFromLastPass": {
+    "message": "Ievietot tieši no LastPass"
+  },
+  "importFromCSV": {
+    "message": "Ievietot no CSV"
+  },
+  "lastPassTryAgainCheckEmail": {
+    "message": "Jāmēģina vēlreiz vai jālūko pēc e-pasta no LastPass, lai apliecinātu sevi."
+  },
+  "collection": {
+    "message": "Krājums"
+  },
+  "lastPassYubikeyDesc": {
+    "message": "Jāievieto ar LastPass kontu sasaistītā YubiKey datora USB ligzdā, tad jāpieskaras tās pogai."
   }
 }

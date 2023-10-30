@@ -2326,7 +2326,7 @@
     "message": "gerekli"
   },
   "search": {
-    "message": "Search"
+    "message": "Arama"
   },
   "inputMinLength": {
     "message": "Girdi en az $COUNT$ karakter uzunluğunda olmalıdır.",
@@ -2408,7 +2408,7 @@
     "message": "Tümünü temizle"
   },
   "plusNMore": {
-    "message": "+ $QUANTITY$ more",
+    "message": "+ $QUANTITY$ tane daha",
     "placeholders": {
       "quantity": {
         "content": "$1",
@@ -2472,25 +2472,28 @@
     }
   },
   "importFormatError": {
-    "message": "Data is not formatted correctly. Please check your import file and try again."
+    "message": "Veriler doğru biçimlendirilmemiş. Lütfen içe aktarma dosyanızı kontrol edin ve tekrar deneyin."
   },
   "importNothingError": {
-    "message": "Nothing was imported."
+    "message": "Hiçbir şey içe aktarılmadı."
   },
   "importEncKeyError": {
-    "message": "Error decrypting the exported file. Your encryption key does not match the encryption key used export the data."
+    "message": "Dışa aktarılmış dosya çözülemedi. Şifreleme anahtarınız, veriler dışa aktarılırken kullanılanla uyuşmuyor."
+  },
+  "invalidFilePassword": {
+    "message": "Geçersiz dosya parolası. Lütfen dışa aktardığınız dosyayı oluştururken girdiğiniz parolayı kullanın."
   },
   "importDestination": {
-    "message": "Import destination"
+    "message": "İçe aktarma hedefi"
   },
   "learnAboutImportOptions": {
-    "message": "Learn about your import options"
+    "message": "İçe aktarma seçeneklerinizi öğrenin"
   },
   "selectImportFolder": {
-    "message": "Select a folder"
+    "message": "Bir klasör seçin"
   },
   "selectImportCollection": {
-    "message": "Select a collection"
+    "message": "Bir koleksiyon seçin"
   },
   "importTargetHint": {
     "message": "Select this option if you want the imported file contents moved to a $DESTINATION$",
@@ -2503,25 +2506,25 @@
     }
   },
   "importUnassignedItemsError": {
-    "message": "File contains unassigned items."
+    "message": "Dosya atanmamış öğeler içeriyor."
   },
   "selectFormat": {
-    "message": "Select the format of the import file"
+    "message": "İçe aktarma dosyasının biçimini seçin"
   },
   "selectImportFile": {
-    "message": "Select the import file"
+    "message": "İçe aktarma dosyasını seçin"
   },
   "chooseFile": {
-    "message": "Choose File"
+    "message": "Dosya seçin"
   },
   "noFileChosen": {
-    "message": "No file chosen"
+    "message": "Dosya seçilmedi"
   },
   "orCopyPasteFileContents": {
-    "message": "or copy/paste the import file contents"
+    "message": "veya içe aktarma dosyasının içeriğini kopyalayıp yapıştırın"
   },
   "instructionsFor": {
-    "message": "$NAME$ Instructions",
+    "message": "$NAME$ Talimatları",
     "description": "The title for the import tool instructions.",
     "placeholders": {
       "name": {
@@ -2531,12 +2534,76 @@
     }
   },
   "confirmVaultImport": {
-    "message": "Confirm vault import"
+    "message": "Kasayı içe aktarmayı onaylayın"
   },
   "confirmVaultImportDesc": {
-    "message": "This file is password-protected. Please enter the file password to import data."
+    "message": "Bu dosya parola korumalıdır. Verileri içe aktarmak için lütfen dosya parolasını girin."
   },
   "confirmFilePassword": {
-    "message": "Confirm file password"
+    "message": "Dosya parolasını onaylayın"
+  },
+  "multifactorAuthenticationCancelled": {
+    "message": "Çok faktörlü kimlik doğrulama iptal edildi"
+  },
+  "noLastPassDataFound": {
+    "message": "LastPass verisi bulunamadı"
+  },
+  "incorrectUsernameOrPassword": {
+    "message": "Kullanıcı adı veya parola yanlış"
+  },
+  "multifactorAuthenticationFailed": {
+    "message": "Çok faktörlü kimlik doğrulama başarısız oldu"
+  },
+  "includeSharedFolders": {
+    "message": "Paylaşılan klasörleri dahil et"
+  },
+  "lastPassEmail": {
+    "message": "LastPass E-postası"
+  },
+  "importingYourAccount": {
+    "message": "Hesabınız içe aktarılıyor..."
+  },
+  "lastPassMFARequired": {
+    "message": "LastPass çok faktörlü kimlik doğrulaması gerekli"
+  },
+  "lastPassMFADesc": {
+    "message": "Kimlik doğrulama uygulamanızdaki tek kullanımlık kodu girin"
+  },
+  "lastPassOOBDesc": {
+    "message": "Kimlik doğrulama uygulamanızda oturum açma isteğini onaylayın veya tek kullanımlık kodu girin."
+  },
+  "passcode": {
+    "message": "Kod"
+  },
+  "lastPassMasterPassword": {
+    "message": "LastPass ana parolası"
+  },
+  "lastPassAuthRequired": {
+    "message": "LastPass kimlik doğrulaması gerekli"
+  },
+  "awaitingSSO": {
+    "message": "SSO kimlik doğrulaması bekleniyor"
+  },
+  "awaitingSSODesc": {
+    "message": "Lütfen şirket hesabınızla giriş yapmaya devam edin."
+  },
+  "seeDetailedInstructions": {
+    "message": "Ayrıntılı talimatları yardım sitemizde bulabilirsiniz:",
+    "description": "This is followed a by a hyperlink to the help website."
+  },
+  "importDirectlyFromLastPass": {
+    "message": "Doğrudan LastPass'ten içe aktar"
+  },
+  "importFromCSV": {
+    "message": "CSV'den içe aktar"
+  },
+  "lastPassTryAgainCheckEmail": {
+    "message": "Tekrar deneyin veya LastPass'ten gelecek kimlik doğrulama e-postasını kontrol edin."
+  },
+  "collection": {
+    "message": "Koleksiyon"
+  },
+  "lastPassYubikeyDesc": {
+    "message": "LastPass hesabınızla ilişkili YubiKey'i bilgisayarınızın USB bağlantı noktasına takın ve ardından düğmesine dokunun."
   }
 }

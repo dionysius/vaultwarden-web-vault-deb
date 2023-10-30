@@ -2480,6 +2480,9 @@
   "importEncKeyError": {
     "message": "Chyba při dešifrování exportovaného souboru. Váš šifrovací klíč se neshoduje s klíčem použitým během exportu dat."
   },
+  "invalidFilePassword": {
+    "message": "Neplatné heslo souboru, použijte heslo zadané při vytvoření souboru exportu."
+  },
   "importDestination": {
     "message": "Cíl importu"
   },
@@ -2538,5 +2541,69 @@
   },
   "confirmFilePassword": {
     "message": "Potvrzení hesla souboru"
+  },
+  "multifactorAuthenticationCancelled": {
+    "message": "Vícefázové ověření zrušeno"
+  },
+  "noLastPassDataFound": {
+    "message": "Nebyla nalezena žádná data LastPass"
+  },
+  "incorrectUsernameOrPassword": {
+    "message": "Nesprávné uživatelské jméno nebo heslo"
+  },
+  "multifactorAuthenticationFailed": {
+    "message": "Vícefaktorové ověření se nezdařilo"
+  },
+  "includeSharedFolders": {
+    "message": "Zahrnout sdílené složky"
+  },
+  "lastPassEmail": {
+    "message": "E-mail LastPass"
+  },
+  "importingYourAccount": {
+    "message": "Importování Vašeho účtu..."
+  },
+  "lastPassMFARequired": {
+    "message": "Je vyžadováno vícefaktorové ověření LastPass"
+  },
+  "lastPassMFADesc": {
+    "message": "Zadejte jednorázový kód z Vaší ověřovací aplikace"
+  },
+  "lastPassOOBDesc": {
+    "message": "Schvalte žádost o přihlášení ve Vaší ověřovací aplikaci nebo zadejte jednorázové heslo."
+  },
+  "passcode": {
+    "message": "Heslo"
+  },
+  "lastPassMasterPassword": {
+    "message": "Hlavní heslo LastPass"
+  },
+  "lastPassAuthRequired": {
+    "message": "Je vyžadováno ověření LastPass"
+  },
+  "awaitingSSO": {
+    "message": "Čeká se na ověření SSO"
+  },
+  "awaitingSSODesc": {
+    "message": "Pokračujte v přihlášení pomocí přihlašovacích údajů Vaší společnosti."
+  },
+  "seeDetailedInstructions": {
+    "message": "Podívejte se na podrobné pokyny na našem webu s nápovědou na",
+    "description": "This is followed a by a hyperlink to the help website."
+  },
+  "importDirectlyFromLastPass": {
+    "message": "Importovat přímo z LastPass"
+  },
+  "importFromCSV": {
+    "message": "Importovat z CSV"
+  },
+  "lastPassTryAgainCheckEmail": {
+    "message": "Zkuste to znovu nebo vyhledejte e-mail od LastPass pro ověření, že jste to Vy."
+  },
+  "collection": {
+    "message": "Kolekce"
+  },
+  "lastPassYubikeyDesc": {
+    "message": "Vložte YubiKey spojený s Vaším účtem LastPass do USB portu Vašeho počítače a stiskněte jeho tlačítko."
   }
 }

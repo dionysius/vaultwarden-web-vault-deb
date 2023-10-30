@@ -2480,6 +2480,9 @@
   "importEncKeyError": {
     "message": "Hiba történt az exportált fájl visszafejtése során. A titkosítási kulcs nem egyezik meg az adatok exportálásához használt titkosítási kulccsal."
   },
+  "invalidFilePassword": {
+    "message": "A fájl jelszó érvénytelen. Használjuk az exportfájl létrehozásakor megadott jelszót."
+  },
   "importDestination": {
     "message": "Importálás leírás"
   },
@@ -2538,5 +2541,69 @@
   },
   "confirmFilePassword": {
     "message": "Fájl jelszó megerősítés"
+  },
+  "multifactorAuthenticationCancelled": {
+    "message": "A többtényezős hitelesítés megszakításra került."
+  },
+  "noLastPassDataFound": {
+    "message": "Nem található LastPass adat."
+  },
+  "incorrectUsernameOrPassword": {
+    "message": "Helytelen felhasználónév vagy jelszó"
+  },
+  "multifactorAuthenticationFailed": {
+    "message": "A többtényezős hitelesítés sikertelen volt."
+  },
+  "includeSharedFolders": {
+    "message": "Megosztott mappák is"
+  },
+  "lastPassEmail": {
+    "message": "LastPass email cím"
+  },
+  "importingYourAccount": {
+    "message": "A iók importálása folyamatban van..."
+  },
+  "lastPassMFARequired": {
+    "message": "LastPass többtényezős hitelesítés szükséges"
+  },
+  "lastPassMFADesc": {
+    "message": "Adjuk meg az egyszeri jelszót a hitelesítő alkalmazásból"
+  },
+  "lastPassOOBDesc": {
+    "message": "Hagyjuk jóvá a bejelentkezési kérést a hitelesítő alkalmazásban vagy írjunk be egy egyszeri jelszót."
+  },
+  "passcode": {
+    "message": "Jelszó"
+  },
+  "lastPassMasterPassword": {
+    "message": "LastPass mesterjelszó"
+  },
+  "lastPassAuthRequired": {
+    "message": "LastPass hitelesítés szükséges"
+  },
+  "awaitingSSO": {
+    "message": "Várakozás SSO hitelesítésre"
+  },
+  "awaitingSSODesc": {
+    "message": "Folytassuk a bejelentkezést a cég hitelesítő adataival."
+  },
+  "seeDetailedInstructions": {
+    "message": "Tekintsük meg a részletes utasításokat a súgó oldalon:",
+    "description": "This is followed a by a hyperlink to the help website."
+  },
+  "importDirectlyFromLastPass": {
+    "message": "Importálás közvetlenül a LastPassból"
+  },
+  "importFromCSV": {
+    "message": "Importálás CSV-ből"
+  },
+  "lastPassTryAgainCheckEmail": {
+    "message": "Próbáljuk újra,vagy keressünk egy emailt a LastPasstól a személyazonosság igazolásához."
+  },
+  "collection": {
+    "message": "Gyűjtemény"
+  },
+  "lastPassYubikeyDesc": {
+    "message": "Insert the YubiKey associated with your LastPass account into your computer's USB port, then touch its button."
   }
 }
