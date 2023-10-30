@@ -1,4 +1,5 @@
-import { ApiService } from "../../abstractions/api.service";
+import { ApiService } from "../../../abstractions/api.service";
+import { ListResponse } from "../../../models/response/list.response";
 import { OrganizationUserService } from "../../abstractions/organization-user/organization-user.service";
 import {
   OrganizationUserAcceptInitRequest,
@@ -18,7 +19,6 @@ import {
   OrganizationUserResetPasswordDetailsResponse,
   OrganizationUserUserDetailsResponse,
 } from "../../abstractions/organization-user/responses";
-import { ListResponse } from "../../models/response/list.response";
 
 import { OrganizationUserBulkRequest } from "./requests";
 

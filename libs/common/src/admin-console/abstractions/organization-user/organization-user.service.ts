@@ -1,4 +1,4 @@
-import { ListResponse } from "../../models/response/list.response";
+import { ListResponse } from "../../../models/response/list.response";
 
 import {
   OrganizationUserAcceptInitRequest,

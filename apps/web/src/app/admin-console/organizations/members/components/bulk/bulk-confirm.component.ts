@@ -1,8 +1,8 @@
 import { Component, Input, OnInit } from "@angular/core";
 
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
-import { OrganizationUserService } from "@bitwarden/common/abstractions/organization-user/organization-user.service";
-import { OrganizationUserBulkConfirmRequest } from "@bitwarden/common/abstractions/organization-user/requests";
+import { OrganizationUserService } from "@bitwarden/common/admin-console/abstractions/organization-user/organization-user.service";
+import { OrganizationUserBulkConfirmRequest } from "@bitwarden/common/admin-console/abstractions/organization-user/requests";
 import { OrganizationUserStatusType } from "@bitwarden/common/admin-console/enums";
 import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";

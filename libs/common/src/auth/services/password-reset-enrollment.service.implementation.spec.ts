@@ -1,7 +1,7 @@
 import { mock, MockProxy } from "jest-mock-extended";
 
-import { OrganizationUserService } from "../../abstractions/organization-user/organization-user.service";
 import { OrganizationApiServiceAbstraction } from "../../admin-console/abstractions/organization/organization-api.service.abstraction";
+import { OrganizationUserService } from "../../admin-console/abstractions/organization-user/organization-user.service";
 import { OrganizationAutoEnrollStatusResponse } from "../../admin-console/models/response/organization-auto-enroll-status.response";
 import { CryptoService } from "../../platform/abstractions/crypto.service";
 import { I18nService } from "../../platform/abstractions/i18n.service";

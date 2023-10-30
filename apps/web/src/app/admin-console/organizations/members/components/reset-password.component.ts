@@ -11,8 +11,8 @@ import { Subject, takeUntil } from "rxjs";
 import zxcvbn from "zxcvbn";
 
 import { PasswordStrengthComponent } from "@bitwarden/angular/shared/components/password-strength/password-strength.component";
-import { OrganizationUserService } from "@bitwarden/common/abstractions/organization-user/organization-user.service";
-import { OrganizationUserResetPasswordRequest } from "@bitwarden/common/abstractions/organization-user/requests";
+import { OrganizationUserService } from "@bitwarden/common/admin-console/abstractions/organization-user/organization-user.service";
+import { OrganizationUserResetPasswordRequest } from "@bitwarden/common/admin-console/abstractions/organization-user/requests";
 import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
 import { MasterPasswordPolicyOptions } from "@bitwarden/common/admin-console/models/domain/master-password-policy-options";
 import { KdfConfig } from "@bitwarden/common/auth/models/domain/kdf-config";

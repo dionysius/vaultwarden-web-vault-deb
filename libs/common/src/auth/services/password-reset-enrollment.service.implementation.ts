@@ -1,6 +1,6 @@
-import { OrganizationUserService } from "../../abstractions/organization-user/organization-user.service";
-import { OrganizationUserResetPasswordEnrollmentRequest } from "../../abstractions/organization-user/requests";
 import { OrganizationApiServiceAbstraction } from "../../admin-console/abstractions/organization/organization-api.service.abstraction";
+import { OrganizationUserService } from "../../admin-console/abstractions/organization-user/organization-user.service";
+import { OrganizationUserResetPasswordEnrollmentRequest } from "../../admin-console/abstractions/organization-user/requests";
 import { CryptoService } from "../../platform/abstractions/crypto.service";
 import { I18nService } from "../../platform/abstractions/i18n.service";
 import { StateService } from "../../platform/abstractions/state.service";

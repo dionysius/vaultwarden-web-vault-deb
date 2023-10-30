@@ -22,8 +22,8 @@ import { ValidationService } from "@bitwarden/common/platform/abstractions/valid
 import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { DialogService } from "@bitwarden/components";
 
-import { OrganizationUserView } from "../admin-console/organizations/core/views/organization-user.view";
-import { UserConfirmComponent } from "../admin-console/organizations/manage/user-confirm.component";
+import { OrganizationUserView } from "../organizations/core/views/organization-user.view";
+import { UserConfirmComponent } from "../organizations/manage/user-confirm.component";
 
 type StatusType = OrganizationUserStatusType | ProviderUserStatusType;
 

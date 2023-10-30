@@ -8,8 +8,8 @@ import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.servic
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 
-import { EventService } from "../core";
-import { EventExportService } from "../tools/event-export";
+import { EventService } from "../../core";
+import { EventExportService } from "../../tools/event-export";
 
 @Directive()
 export abstract class BaseEventsComponent {
