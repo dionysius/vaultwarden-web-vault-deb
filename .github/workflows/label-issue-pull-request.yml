@@ -1,5 +1,5 @@
 # Runs creation of Pull Requests
-# If the PR destination branch is master, add a needs-qa label
+# If the PR destination branch is master, add a needs-qa label unless created by renovate[bot]
 ---
 name: Label Issue Pull Request
 
@@ -15,6 +15,7 @@ on:
 jobs:
   add-needs-qa-label:
     runs-on: ubuntu-latest
+    if: ${{ github.actor != 'renovate[bot]' }}
     steps:
       - name: Add label to pull request
         uses: andymckay/labeler@e6c4322d0397f3240f0e7e30a33b5c5df2d39e90 # 1.0.4

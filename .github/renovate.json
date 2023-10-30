@@ -253,5 +253,5 @@
       "reviewers": ["team:team-vault-dev"]
     }
   ],
-  "ignoreDeps": ["@types/koa-bodyparser", "bootstrap", "node-ipc", "regedit", "zone.js"]
+  "ignoreDeps": ["@types/koa-bodyparser", "bootstrap", "node-ipc", "npm", "regedit"]
 }
