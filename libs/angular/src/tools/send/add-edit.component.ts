@@ -118,8 +118,8 @@ export class AddEditComponent implements OnInit, OnDestroy {
     protected formBuilder: FormBuilder
   ) {
     this.typeOptions = [
-      { name: i18nService.t("sendTypeFile"), value: SendType.File },
-      { name: i18nService.t("sendTypeText"), value: SendType.Text },
+      { name: i18nService.t("sendTypeFile"), value: SendType.File, premium: true },
+      { name: i18nService.t("sendTypeText"), value: SendType.Text, premium: false },
     ];
     this.sendLinkBaseUrl = this.environmentService.getSendUrl();
   }

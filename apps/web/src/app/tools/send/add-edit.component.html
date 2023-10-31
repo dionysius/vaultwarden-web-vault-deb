@@ -32,8 +32,15 @@
             id="type_{{ o.value }}"
             class="tw-block"
             [value]="o.value"
+            [disabled]="!canAccessPremium && o.premium"
           >
-            <bit-label>{{ o.name }}</bit-label>
+            <bit-label>
+              {{ o.name }}
+              <app-premium-badge
+                class="tw-mx-1"
+                *ngIf="!canAccessPremium && o.premium"
+              ></app-premium-badge>
+            </bit-label>
           </bit-radio-button>
         </bit-radio-group>
       </div>
