@@ -13,6 +13,8 @@
   ],
   "prConcurrentLimit": 3,
   "enabledManagers": ["cargo", "github-actions", "npm"],
+  "commitMessagePrefix": "[deps]:",
+  "commitMessageTopic": "{{depName}}",
   "packageRules": [
     {
       "groupName": "cargo minor",
@@ -70,6 +72,7 @@
         "webpack-node-externals"
       ],
       "description": "Admin Console owned dependencies",
+      "commitMessagePrefix": "[deps] AC:",
       "reviewers": ["team:team-admin-console-dev"]
     },
     {
@@ -83,6 +86,7 @@
         "regedit"
       ],
       "description": "Auth owned dependencies",
+      "commitMessagePrefix": "[deps] Auth:",
       "reviewers": ["team:team-auth-dev"]
     },
     {
@@ -104,11 +108,13 @@
         "wait-on"
       ],
       "description": "Autofill owned dependencies",
+      "commitMessagePrefix": "[deps] Autofill:",
       "reviewers": ["team:team-autofill-dev"]
     },
     {
       "matchPackageNames": ["braintree-web-drop-in"],
       "description": "Billing owned dependencies",
+      "commitMessagePrefix": "[deps] Billing:",
       "reviewers": ["team:team-billing-dev"]
     },
     {
@@ -144,6 +150,7 @@
         "zone.js"
       ],
       "description": "Platform owned dependencies",
+      "commitMessagePrefix": "[deps] Platform:",
       "reviewers": ["team:team-platform-dev"]
     },
     {
@@ -167,6 +174,7 @@
         "tailwindcss"
       ],
       "description": "Component library owned dependencies",
+      "commitMessagePrefix": "[deps] Platform (CL):",
       "reviewers": ["team:team-platform-dev"]
     },
     {
@@ -192,7 +200,8 @@
         "lint-staged",
         "ts-jest"
       ],
-      "description": "SM owned dependencies",
+      "description": "Secrets Manager owned dependencies",
+      "commitMessagePrefix": "[deps] SM:",
       "reviewers": ["team:team-secrets-manager-dev"]
     },
     {
@@ -214,6 +223,7 @@
         "utf-8-validate"
       ],
       "description": "Tools owned dependencies",
+      "commitMessagePrefix": "[deps] Tools:",
       "reviewers": ["team:team-tools-dev"]
     },
     {
@@ -250,8 +260,9 @@
         "proper-lockfile"
       ],
       "description": "Vault owned dependencies",
+      "commitMessagePrefix": "[deps] Vault:",
       "reviewers": ["team:team-vault-dev"]
     }
   ],
-  "ignoreDeps": ["@types/koa-bodyparser", "bootstrap", "node-ipc", "npm", "regedit"]
+  "ignoreDeps": ["@types/koa-bodyparser", "bootstrap", "node-ipc", "node", "npm", "regedit"]
 }
