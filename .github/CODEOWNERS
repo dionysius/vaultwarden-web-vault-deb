@@ -32,6 +32,12 @@ libs/common/src/tools @bitwarden/team-tools-dev
 libs/exporter @bitwarden/team-tools-dev
 libs/importer @bitwarden/team-tools-dev
 
+## Localization/Crowdin (Tools team)
+apps/browser/src/_locales @bitwarden/team-tools-dev
+apps/cli/src/locales @bitwarden/team-tools-dev
+apps/desktop/src/locales @bitwarden/team-tools-dev
+apps/web/src/locales @bitwarden/team-tools-dev
+
 ## Vault team files ##
 apps/browser/src/vault @bitwarden/team-vault-dev
 apps/cli/src/vault @bitwarden/team-vault-dev
