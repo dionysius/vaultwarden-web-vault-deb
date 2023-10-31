@@ -6,9 +6,7 @@
   cdkOverlayOrigin
   #trigger="cdkOverlayOrigin"
   [hidden]="!showSwitcher"
-  aria-haspopup="menu"
-  aria-controls="cdk-overlay-container"
-  [attr.aria-expanded]="isOpen"
+  aria-haspopup="dialog"
 >
   <ng-container *ngIf="activeAccount?.email != null; else noActiveAccount">
     <app-avatar
@@ -22,7 +20,10 @@
       *ngIf="activeAccount.email != null"
       aria-hidden="true"
     ></app-avatar>
-    <span>{{ activeAccount.email }}</span>
+    <span
+      >{{ activeAccount.email
+      }}<span class="sr-only">&nbsp;({{ "switchAccount" | i18n }})</span></span
+    >
   </ng-container>
   <ng-template #noActiveAccount>
     <span>{{ "switchAccount" | i18n }}</span>
@@ -54,13 +55,7 @@
     aria-modal="true"
   >
     <div class="accounts" *ngIf="numberOfAccounts > 0">
-      <button
-        *ngFor="let a of accounts | keyvalue"
-        class="account"
-        (click)="switch(a.key)"
-        appA11yTitle="{{ 'loggedInAsOn' | i18n : a.value.profile.email : a.value.serverUrl }}"
-        attr.aria-label="{{ 'switchAccount' | i18n }}"
-      >
+      <button *ngFor="let a of accounts | keyvalue" class="account" (click)="switch(a.key)">
         <app-avatar
           [text]="a.value.profile.name ?? a.value.profile.email"
           [id]="a.value.profile.userId"
@@ -73,14 +68,20 @@
           aria-hidden="true"
         ></app-avatar>
         <div class="accountInfo">
-          <span class="email" aria-hidden="true">{{ a.value.profile.email }}</span>
-          <span class="server" aria-hidden="true" *ngIf="a.value.serverUrl != 'bitwarden.com'">{{
-            a.value.serverUrl
-          }}</span>
-          <span class="status" aria-hidden="true">{{
-            (a.value.profile.authenticationStatus === authStatus.Unlocked ? "unlocked" : "locked")
-              | i18n
-          }}</span>
+          <span class="sr-only">{{ "switchAccount" | i18n }}:&nbsp;</span>
+          <span class="email">{{ a.value.profile.email }}</span>
+          <span class="server" *ngIf="a.value.serverUrl != 'bitwarden.com'">
+            <span class="sr-only"> / </span>
+            {{ a.value.serverUrl }}
+          </span>
+          <span class="status">
+            <span class="sr-only">&nbsp;(</span>
+            {{
+              (a.value.profile.authenticationStatus === authStatus.Unlocked ? "unlocked" : "locked")
+                | i18n
+            }}
+            <span class="sr-only">)</span>
+          </span>
         </div>
         <i
           class="bwi bwi-2x text-muted"
