@@ -42,18 +42,16 @@ export class ProtonPassJsonImporter extends BaseImporter implements Importer {
         this.processFolder(result, vault.name);
 
         const cipher = this.initLoginCipher();
-        cipher.name = item.data.metadata.name;
-        cipher.notes = item.data.metadata.note;
+        cipher.name = this.getValueOrDefault(item.data.metadata.name, "--");
+        cipher.notes = this.getValueOrDefault(item.data.metadata.note);
 
         switch (item.data.type) {
           case "login": {
             const loginContent = item.data.content as ProtonPassLoginItemContent;
             cipher.login.uris = this.makeUriArray(loginContent.urls);
-            cipher.login.username = loginContent.username;
-            cipher.login.password = loginContent.password;
-            if (loginContent.totpUri != "") {
-              cipher.login.totp = new URL(loginContent.totpUri).searchParams.get("secret");
-            }
+            cipher.login.username = this.getValueOrDefault(loginContent.username);
+            cipher.login.password = this.getValueOrDefault(loginContent.password);
+            cipher.login.totp = this.getValueOrDefault(loginContent.totpUri);
             for (const extraField of item.data.extraFields) {
               this.processKvp(
                 cipher,
@@ -73,10 +71,10 @@ export class ProtonPassJsonImporter extends BaseImporter implements Importer {
             const creditCardContent = item.data.content as ProtonPassCreditCardItemContent;
             cipher.type = CipherType.Card;
             cipher.card = new CardView();
-            cipher.card.cardholderName = creditCardContent.cardholderName;
-            cipher.card.number = creditCardContent.number;
+            cipher.card.cardholderName = this.getValueOrDefault(creditCardContent.cardholderName);
+            cipher.card.number = this.getValueOrDefault(creditCardContent.number);
             cipher.card.brand = CardView.getCardBrandByPatterns(creditCardContent.number);
-            cipher.card.code = creditCardContent.verificationNumber;
+            cipher.card.code = this.getValueOrDefault(creditCardContent.verificationNumber);
 
             if (!this.isNullOrWhitespace(creditCardContent.expirationDate)) {
               cipher.card.expMonth = creditCardContent.expirationDate.substring(0, 2);

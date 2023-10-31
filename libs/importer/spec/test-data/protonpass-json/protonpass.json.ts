@@ -159,7 +159,7 @@ export const testData: ProtonPassJsonFile = {
               username: "other vault username",
               password: "other vault password",
               urls: [],
-              totpUri: "",
+              totpUri: "JBSWY3DPEHPK3PXP",
             },
           },
           state: 1,
