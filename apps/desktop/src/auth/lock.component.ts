@@ -22,7 +22,7 @@ import { PasswordStrengthServiceAbstraction } from "@bitwarden/common/tools/pass
 import { DialogService } from "@bitwarden/components";
 
 import { ElectronStateService } from "../platform/services/electron-state.service.abstraction";
-import { BiometricStorageAction, BiometricMessage } from "../types/biometric-message";
+import { BiometricAction, BiometricMessage } from "../types/biometric-message";
 
 const BroadcasterSubscriptionId = "LockComponent";
 
@@ -133,7 +133,7 @@ export class LockComponent extends BaseLockComponent {
   private async canUseBiometric() {
     const userId = await this.stateService.getUserId();
     const val = await ipcRenderer.invoke("biometric", {
-      action: BiometricStorageAction.EnabledForUser,
+      action: BiometricAction.EnabledForUser,
       key: `${userId}_user_biometric`,
       keySuffix: KeySuffixOptions.Biometric,
       userId: userId,

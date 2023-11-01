@@ -1,10 +1,11 @@
-export enum BiometricStorageAction {
+export enum BiometricAction {
   EnabledForUser = "enabled",
   OsSupported = "osSupported",
+  Authenticate = "authenticate",
 }
 
 export type BiometricMessage = {
-  action: BiometricStorageAction;
+  action: BiometricAction;
   keySuffix?: string;
   key?: string;
   userId?: string;

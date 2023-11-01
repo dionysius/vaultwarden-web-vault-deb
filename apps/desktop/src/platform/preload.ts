@@ -2,7 +2,10 @@ import { ipcRenderer } from "electron";
 
 import { DeviceType, ThemeType } from "@bitwarden/common/enums";
 
+import { BiometricMessage, BiometricAction } from "../types/biometric-message";
 import { isDev, isWindowsStore } from "../utils";
+
+import { ClipboardWriteMessage } from "./types/clipboard";
 
 const storage = {
   get: <T>(key: string): Promise<T> => ipcRenderer.invoke("storageService", { action: "get", key }),
@@ -23,6 +26,22 @@ const passwords = {
     ipcRenderer.invoke("keytar", { action: "setPassword", key, keySuffix, value }),
   delete: (key: string, keySuffix: string): Promise<void> =>
     ipcRenderer.invoke("keytar", { action: "deletePassword", key, keySuffix }),
+};
+
+const biometric = {
+  osSupported: (): Promise<boolean> =>
+    ipcRenderer.invoke("biometric", {
+      action: BiometricAction.OsSupported,
+    } satisfies BiometricMessage),
+  authenticate: (): Promise<boolean> =>
+    ipcRenderer.invoke("biometric", {
+      action: BiometricAction.Authenticate,
+    } satisfies BiometricMessage),
+};
+
+const clipboard = {
+  read: (): Promise<string> => ipcRenderer.invoke("clipboard.read"),
+  write: (message: ClipboardWriteMessage) => ipcRenderer.invoke("clipboard.write", message),
 };
 
 export default {
@@ -52,8 +71,12 @@ export default {
     });
   },
 
+  launchUri: (uri: string) => ipcRenderer.invoke("launchUri", uri),
+
   storage,
   passwords,
+  biometric,
+  clipboard,
 };
 
 function deviceType(): DeviceType {
