@@ -7,7 +7,7 @@
   ></i>
   <span class="tw-sr-only">{{ "loading" | i18n }}</span>
 </div>
-<form *ngIf="org && !loading" #form [bitSubmit]="submit" [formGroup]="formGroup">
+<form *ngIf="org && !loading" [bitSubmit]="submit" [formGroup]="formGroup">
   <div class="tw-grid tw-grid-cols-2 tw-gap-5">
     <div>
       <bit-form-field>
@@ -52,6 +52,27 @@
     {{ "rotateApiKey" | i18n }}
   </button>
 </ng-container>
+<form
+  *ngIf="org && !loading && (showCollectionManagementSettings$ | async)"
+  [bitSubmit]="submitCollectionManagement"
+  [formGroup]="collectionManagementFormGroup"
+>
+  <h1 bitTypography="h1" class="tw-mt-16 tw-pb-2.5">{{ "collectionManagement" | i18n }}</h1>
+  <p>{{ "collectionManagementDesc" | i18n }}</p>
+  <bit-form-control>
+    <bit-label>{{ "limitCollectionCreationDeletionDesc" | i18n }}</bit-label>
+    <input type="checkbox" bitCheckbox formControlName="limitCollectionCreationDeletion" />
+  </bit-form-control>
+  <button
+    type="submit"
+    bitButton
+    bitFormButton
+    buttonType="primary"
+    id="collectionManagementSubmitButton"
+  >
+    {{ "save" | i18n }}
+  </button>
+</form>
 <h1 bitTypography="h1" class="tw-mt-16 tw-pb-2.5 !tw-text-danger">{{ "dangerZone" | i18n }}</h1>
 <div class="tw-rounded tw-border tw-border-solid tw-border-danger-500 tw-bg-background tw-p-5">
   <p>{{ "dangerZoneDesc" | i18n }}</p>

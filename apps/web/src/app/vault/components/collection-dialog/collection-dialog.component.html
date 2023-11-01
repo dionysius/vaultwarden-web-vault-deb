@@ -64,6 +64,12 @@
           </bit-form-field>
         </bit-tab>
         <bit-tab label="{{ 'access' | i18n }}">
+          <div
+            class="tw-mb-3 tw-text-danger"
+            *ngIf="formGroup.controls.access.hasError('managePermissionRequired')"
+          >
+            <i class="bwi bwi-error"></i> {{ "managePermissionRequired" | i18n }}
+          </div>
           <bit-access-selector
             *ngIf="organization.useGroups"
             [permissionMode]="PermissionMode.Edit"
@@ -73,6 +79,7 @@
             [selectorLabelText]="'selectGroupsAndMembers' | i18n"
             [selectorHelpText]="'userPermissionOverrideHelper' | i18n"
             [emptySelectionText]="'noMembersOrGroupsAdded' | i18n"
+            [flexibleCollectionsEnabled]="flexibleCollectionsEnabled$ | async"
           ></bit-access-selector>
           <bit-access-selector
             *ngIf="!organization.useGroups"
@@ -82,6 +89,7 @@
             [columnHeader]="'memberColumnHeader' | i18n"
             [selectorLabelText]="'selectMembers' | i18n"
             [emptySelectionText]="'noMembersAdded' | i18n"
+            [flexibleCollectionsEnabled]="flexibleCollectionsEnabled$ | async"
           ></bit-access-selector>
         </bit-tab>
       </bit-tab-group>

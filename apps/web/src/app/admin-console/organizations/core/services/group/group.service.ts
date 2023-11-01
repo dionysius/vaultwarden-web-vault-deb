@@ -76,7 +76,7 @@ export class InternalGroupService extends GroupService {
     request.accessAll = group.accessAll;
     request.users = group.members;
     request.collections = group.collections.map(
-      (c) => new SelectionReadOnlyRequest(c.id, c.readOnly, c.hidePasswords)
+      (c) => new SelectionReadOnlyRequest(c.id, c.readOnly, c.hidePasswords, c.manage)
     );
 
     if (group.id == undefined) {

@@ -80,6 +80,7 @@ export class UserAdminService {
         id: c.id,
         hidePasswords: c.hidePasswords,
         readOnly: c.readOnly,
+        manage: c.manage,
       }));
       view.groups = u.groups;
       view.accessSecretsManager = u.accessSecretsManager;

@@ -39,6 +39,7 @@ import { Organization } from "@bitwarden/common/admin-console/models/domain/orga
 import { TokenService } from "@bitwarden/common/auth/abstractions/token.service";
 import { UserVerificationService } from "@bitwarden/common/auth/abstractions/user-verification/user-verification.service.abstraction";
 import { DEFAULT_PBKDF2_ITERATIONS, EventType, KdfType } from "@bitwarden/common/enums";
+import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
 import { ServiceUtils } from "@bitwarden/common/misc/serviceUtils";
 import { TreeNode } from "@bitwarden/common/models/domain/tree-node";
 import { BroadcasterService } from "@bitwarden/common/platform/abstractions/broadcaster.service";
@@ -143,6 +144,10 @@ export class VaultComponent implements OnInit, OnDestroy {
   protected selectedCollection: TreeNode<CollectionView> | undefined;
   protected canCreateCollections = false;
   protected currentSearchText$: Observable<string>;
+  protected showBulkCollectionAccess$ = this.configService.getFeatureFlag$(
+    FeatureFlag.BulkCollectionAccess,
+    false
+  );
 
   private searchText$ = new Subject<string>();
   private refresh$ = new BehaviorSubject<void>(null);

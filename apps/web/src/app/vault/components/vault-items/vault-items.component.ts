@@ -2,6 +2,8 @@ import { SelectionModel } from "@angular/cdk/collections";
 import { Component, EventEmitter, Input, Output } from "@angular/core";
 
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
+import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
+import { ConfigServiceAbstraction } from "@bitwarden/common/platform/abstractions/config/config.service.abstraction";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 import { CollectionView } from "@bitwarden/common/vault/models/view/collection.view";
 import { TableDataSource } from "@bitwarden/components";
@@ -27,6 +29,8 @@ const MaxSelectionCount = 500;
 export class VaultItemsComponent {
   protected RowHeight = RowHeight;
 
+  private flexibleCollectionsEnabled: boolean;
+
   @Input() disabled: boolean;
   @Input() showOwner: boolean;
   @Input() showCollections: boolean;
@@ -36,9 +40,12 @@ export class VaultItemsComponent {
   @Input() showPremiumFeatures: boolean;
   @Input() showBulkMove: boolean;
   @Input() showBulkTrashOptions: boolean;
+  // Encompasses functionality only available from the organization vault context
+  @Input() showAdminActions: boolean;
   @Input() allOrganizations: Organization[] = [];
   @Input() allCollections: CollectionView[] = [];
   @Input() allGroups: GroupView[] = [];
+  @Input() showBulkEditCollectionAccess = false;
 
   private _ciphers?: CipherView[] = [];
   @Input() get ciphers(): CipherView[] {
@@ -63,6 +70,14 @@ export class VaultItemsComponent {
   protected editableItems: VaultItem[] = [];
   protected dataSource = new TableDataSource<VaultItem>();
   protected selection = new SelectionModel<VaultItem>(true, [], true);
+
+  constructor(private configService: ConfigServiceAbstraction) {}
+
+  async ngOnInit() {
+    this.flexibleCollectionsEnabled = await this.configService.getFeatureFlag(
+      FeatureFlag.FlexibleCollections
+    );
+  }
 
   get showExtraColumn() {
     return this.showCollections || this.showGroups || this.showOwner;
@@ -101,7 +116,7 @@ export class VaultItemsComponent {
     }
 
     const organization = this.allOrganizations.find((o) => o.id === collection.organizationId);
-    return collection.canDelete(organization);
+    return collection.canDelete(organization, this.flexibleCollectionsEnabled);
   }
 
   protected toggleAll() {
@@ -167,5 +182,14 @@ export class VaultItemsComponent {
         (item.collection !== undefined && this.canDeleteCollection(item.collection))
     );
     this.dataSource.data = items;
+  }
+
+  protected bulkEditCollectionAccess() {
+    this.event({
+      type: "bulkEditCollectionAccess",
+      items: this.selection.selected
+        .filter((item) => item.collection !== undefined)
+        .map((item) => item.collection),
+    });
   }
 }

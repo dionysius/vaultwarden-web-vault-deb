@@ -21,6 +21,7 @@ import { ListResponse } from "../../../models/response/list.response";
 import { SyncService } from "../../../vault/abstractions/sync/sync.service.abstraction";
 import { OrganizationApiServiceAbstraction } from "../../abstractions/organization/organization-api.service.abstraction";
 import { OrganizationApiKeyType } from "../../enums";
+import { OrganizationCollectionManagementUpdateRequest } from "../../models/request/organization-collection-management-update.request";
 import { OrganizationCreateRequest } from "../../models/request/organization-create.request";
 import { OrganizationKeysRequest } from "../../models/request/organization-keys.request";
 import { OrganizationUpdateRequest } from "../../models/request/organization-update.request";
@@ -321,5 +322,21 @@ export class OrganizationApiService implements OrganizationApiServiceAbstraction
       true
     );
     return new ProfileOrganizationResponse(r);
+  }
+
+  async updateCollectionManagement(
+    id: string,
+    request: OrganizationCollectionManagementUpdateRequest
+  ): Promise<OrganizationResponse> {
+    const r = await this.apiService.send(
+      "PUT",
+      "/organizations/" + id + "/collection-management",
+      request,
+      true,
+      true
+    );
+    const data = new OrganizationResponse(r);
+    await this.syncService.fullSync(true);
+    return data;
   }
 }

@@ -289,6 +289,7 @@
             [columnHeader]="'groups' | i18n"
             [selectorLabelText]="'selectGroups' | i18n"
             [emptySelectionText]="'noGroupsAdded' | i18n"
+            [flexibleCollectionsEnabled]="flexibleCollectionsEnabled$ | async"
           ></bit-access-selector>
         </bit-tab>
         <bit-tab [label]="'collections' | i18n">
@@ -321,6 +322,7 @@
             [columnHeader]="'collection' | i18n"
             [selectorLabelText]="'selectCollections' | i18n"
             [emptySelectionText]="'noCollectionsAdded' | i18n"
+            [flexibleCollectionsEnabled]="flexibleCollectionsEnabled$ | async"
           ></bit-access-selector
         ></bit-tab>
       </bit-tab-group>

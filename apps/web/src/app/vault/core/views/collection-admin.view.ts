@@ -35,7 +35,11 @@ export class CollectionAdminView extends CollectionView {
     return org?.canEditAnyCollection || (org?.canEditAssignedCollections && this.assigned);
   }
 
-  override canDelete(org: Organization): boolean {
-    return org?.canDeleteAnyCollection || (org?.canDeleteAssignedCollections && this.assigned);
+  override canDelete(org: Organization, flexibleCollectionsEnabled: boolean): boolean {
+    if (flexibleCollectionsEnabled) {
+      return org?.canDeleteAnyCollection;
+    } else {
+      return org?.canDeleteAnyCollection || (org?.canDeleteAssignedCollections && this.assigned);
+    }
   }
 }

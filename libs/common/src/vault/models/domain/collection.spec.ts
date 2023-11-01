@@ -13,6 +13,7 @@ describe("Collection", () => {
       name: "encName",
       externalId: "extId",
       readOnly: true,
+      manage: true,
       hidePasswords: true,
     };
   });
@@ -28,6 +29,7 @@ describe("Collection", () => {
       name: null,
       organizationId: null,
       readOnly: null,
+      manage: null,
     });
   });
 
@@ -40,6 +42,7 @@ describe("Collection", () => {
       name: { encryptedString: "encName", encryptionType: 0 },
       externalId: "extId",
       readOnly: true,
+      manage: true,
       hidePasswords: true,
     });
   });
@@ -52,6 +55,7 @@ describe("Collection", () => {
     collection.externalId = "extId";
     collection.readOnly = false;
     collection.hidePasswords = false;
+    collection.manage = true;
 
     const view = await collection.decrypt();
 
@@ -62,6 +66,7 @@ describe("Collection", () => {
       name: "encName",
       organizationId: "orgId",
       readOnly: false,
+      manage: true,
     });
   });
 });

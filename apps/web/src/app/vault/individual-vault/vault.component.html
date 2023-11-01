@@ -45,7 +45,9 @@
         [showBulkTrashOptions]="filter.type === 'trash'"
         [useEvents]="false"
         [cloneableOrganizationCiphers]="false"
+        [showAdminActions]="false"
         (onEvent)="onVaultItemsEvent($event)"
+        [showBulkEditCollectionAccess]="showBulkCollectionAccess$ | async"
       >
       </app-vault-items>
       <div

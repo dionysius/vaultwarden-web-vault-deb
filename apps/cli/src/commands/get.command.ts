@@ -427,7 +427,9 @@ export class GetCommand extends DownloadCommand {
       const groups =
         response.groups == null
           ? null
-          : response.groups.map((g) => new SelectionReadOnly(g.id, g.readOnly, g.hidePasswords));
+          : response.groups.map(
+              (g) => new SelectionReadOnly(g.id, g.readOnly, g.hidePasswords, g.manage)
+            );
       const res = new OrganizationCollectionResponse(decCollection, groups);
       return Response.success(res);
     } catch (e) {

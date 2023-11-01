@@ -99,7 +99,6 @@ import { PlanResponse } from "../billing/models/response/plan.response";
 import { SubscriptionResponse } from "../billing/models/response/subscription.response";
 import { TaxInfoResponse } from "../billing/models/response/tax-info.response";
 import { TaxRateResponse } from "../billing/models/response/tax-rate.response";
-import { CollectionBulkDeleteRequest } from "../models/request/collection-bulk-delete.request";
 import { DeleteRecoverRequest } from "../models/request/delete-recover.request";
 import { EventRequest } from "../models/request/event.request";
 import { IapCheckRequest } from "../models/request/iap-check.request";
@@ -301,7 +300,7 @@ export abstract class ApiService {
     request: CollectionRequest
   ) => Promise<CollectionResponse>;
   deleteCollection: (organizationId: string, id: string) => Promise<any>;
-  deleteManyCollections: (request: CollectionBulkDeleteRequest) => Promise<any>;
+  deleteManyCollections: (organizationId: string, collectionIds: string[]) => Promise<any>;
   deleteCollectionUser: (
     organizationId: string,
     id: string,

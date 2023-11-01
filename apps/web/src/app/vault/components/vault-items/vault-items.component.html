@@ -35,6 +35,15 @@
               {{ "moveSelected" | i18n }}
             </button>
             <button
+              *ngIf="showAdminActions && showBulkEditCollectionAccess"
+              type="button"
+              bitMenuItem
+              (click)="bulkEditCollectionAccess()"
+            >
+              <i class="bwi bwi-fw bwi-users" aria-hidden="true"></i>
+              {{ "access" | i18n }}
+            </button>
+            <button
               *ngIf="bulkMoveAllowed"
               type="button"
               bitMenuItem

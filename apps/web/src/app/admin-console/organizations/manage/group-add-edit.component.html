@@ -40,6 +40,7 @@
             [columnHeader]="'member' | i18n"
             [selectorLabelText]="'selectMembers' | i18n"
             [emptySelectionText]="'noMembersAdded' | i18n"
+            [flexibleCollectionsEnabled]="flexibleCollectionsEnabled$ | async"
           ></bit-access-selector>
         </bit-tab>
 
@@ -60,6 +61,7 @@
               [columnHeader]="'collection' | i18n"
               [selectorLabelText]="'selectCollections' | i18n"
               [emptySelectionText]="'noCollectionsAdded' | i18n"
+              [flexibleCollectionsEnabled]="flexibleCollectionsEnabled$ | async"
             ></bit-access-selector>
           </ng-container>
         </bit-tab>

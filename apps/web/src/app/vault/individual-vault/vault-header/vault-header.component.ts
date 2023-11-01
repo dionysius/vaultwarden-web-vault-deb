@@ -1,7 +1,9 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from "@angular/core";
 
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
+import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
 import { TreeNode } from "@bitwarden/common/models/domain/tree-node";
+import { ConfigServiceAbstraction } from "@bitwarden/common/platform/abstractions/config/config.service.abstraction";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { CollectionView } from "@bitwarden/common/vault/models/view/collection.view";
 
@@ -21,6 +23,8 @@ export class VaultHeaderComponent {
   protected Unassigned = Unassigned;
   protected All = All;
   protected CollectionDialogTabType = CollectionDialogTabType;
+
+  private flexibleCollectionsEnabled: boolean;
 
   /**
    * Boolean to determine the loading state of the header.
@@ -55,7 +59,13 @@ export class VaultHeaderComponent {
   /** Emits an event when the delete collection button is clicked in the header */
   @Output() onDeleteCollection = new EventEmitter<void>();
 
-  constructor(private i18nService: I18nService) {}
+  constructor(private i18nService: I18nService, private configService: ConfigServiceAbstraction) {}
+
+  async ngOnInit() {
+    this.flexibleCollectionsEnabled = await this.configService.getFeatureFlag(
+      FeatureFlag.FlexibleCollections
+    );
+  }
 
   /**
    * The id of the organization that is currently being filtered on.
@@ -146,11 +156,12 @@ export class VaultHeaderComponent {
       return false;
     }
 
-    // Otherwise, check if we can edit the specified collection
+    // Otherwise, check if we can delete the specified collection
     const organization = this.organizations.find(
       (o) => o.id === this.collection?.node.organizationId
     );
-    return this.collection.node.canDelete(organization);
+
+    return this.collection.node.canDelete(organization, this.flexibleCollectionsEnabled);
   }
 
   deleteCollection() {

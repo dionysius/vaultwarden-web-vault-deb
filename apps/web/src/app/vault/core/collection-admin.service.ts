@@ -10,6 +10,9 @@ import {
   CollectionResponse,
 } from "@bitwarden/common/vault/models/response/collection.response";
 
+import { CollectionAccessSelectionView } from "../../admin-console/organizations/core";
+
+import { BulkCollectionAccessRequest } from "./bulk-collection-access.request";
 import { CollectionAdminView } from "./views/collection-admin.view";
 
 @Injectable()
@@ -68,6 +71,30 @@ export class CollectionAdminService {
     await this.apiService.deleteCollection(organizationId, collectionId);
   }
 
+  async bulkAssignAccess(
+    organizationId: string,
+    collectionIds: string[],
+    users: CollectionAccessSelectionView[],
+    groups: CollectionAccessSelectionView[]
+  ): Promise<void> {
+    const request = new BulkCollectionAccessRequest();
+    request.collectionIds = collectionIds;
+    request.users = users.map(
+      (u) => new SelectionReadOnlyRequest(u.id, u.readOnly, u.hidePasswords, u.manage)
+    );
+    request.groups = groups.map(
+      (g) => new SelectionReadOnlyRequest(g.id, g.readOnly, g.hidePasswords, g.manage)
+    );
+
+    await this.apiService.send(
+      "POST",
+      `organizations/${organizationId}/collections/bulk-access`,
+      request,
+      true,
+      false
+    );
+  }
+
   private async decryptMany(
     organizationId: string,
     collections: CollectionResponse[] | CollectionAccessDetailsResponse[]
@@ -105,10 +132,12 @@ export class CollectionAdminService {
     collection.externalId = model.externalId;
     collection.name = (await this.cryptoService.encrypt(model.name, key)).encryptedString;
     collection.groups = model.groups.map(
-      (group) => new SelectionReadOnlyRequest(group.id, group.readOnly, group.hidePasswords)
+      (group) =>
+        new SelectionReadOnlyRequest(group.id, group.readOnly, group.hidePasswords, group.manage)
     );
     collection.users = model.users.map(
-      (user) => new SelectionReadOnlyRequest(user.id, user.readOnly, user.hidePasswords)
+      (user) =>
+        new SelectionReadOnlyRequest(user.id, user.readOnly, user.hidePasswords, user.manage)
     );
     return collection;
   }

@@ -10,6 +10,7 @@ export class Collection extends Domain {
   externalId: string;
   readOnly: boolean;
   hidePasswords: boolean;
+  manage: boolean;
 
   constructor(obj?: CollectionData) {
     super();
@@ -27,8 +28,9 @@ export class Collection extends Domain {
         externalId: null,
         readOnly: null,
         hidePasswords: null,
+        manage: null,
       },
-      ["id", "organizationId", "externalId", "readOnly", "hidePasswords"]
+      ["id", "organizationId", "externalId", "readOnly", "hidePasswords", "manage"]
     );
   }
 
