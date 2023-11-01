@@ -13,6 +13,8 @@ import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.servic
 import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
+import { EncString } from "@bitwarden/common/platform/models/domain/enc-string";
+import { MasterKey, UserKey } from "@bitwarden/common/platform/models/domain/symmetric-crypto-key";
 import { PasswordGenerationServiceAbstraction } from "@bitwarden/common/tools/generator/password";
 import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
 import { DialogService } from "@bitwarden/components";
@@ -82,5 +84,14 @@ export class SetPasswordComponent extends BaseSetPasswordComponent implements On
 
   onWindowHidden() {
     this.showPassword = false;
+  }
+
+  protected async onSetPasswordSuccess(
+    masterKey: MasterKey,
+    userKey: [UserKey, EncString],
+    keyPair: [string, EncString]
+  ): Promise<void> {
+    await super.onSetPasswordSuccess(masterKey, userKey, keyPair);
+    this.messagingService.send("redrawMenu");
   }
 }

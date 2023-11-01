@@ -168,7 +168,7 @@ export class SetPasswordComponent extends BaseChangePasswordComponent {
     document.getElementById(confirmField ? "masterPasswordRetype" : "masterPassword").focus();
   }
 
-  private async onSetPasswordSuccess(
+  protected async onSetPasswordSuccess(
     masterKey: MasterKey,
     userKey: [UserKey, EncString],
     keyPair: [string, EncString]
