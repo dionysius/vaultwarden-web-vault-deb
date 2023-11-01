@@ -3,11 +3,11 @@ import { Component, OnInit } from "@angular/core";
 import { FormBuilder, Validators } from "@angular/forms";
 import { firstValueFrom, map, Observable } from "rxjs";
 
-import { VerificationType } from "@bitwarden/common/auth/enums/verification-type";
 import { ErrorResponse } from "@bitwarden/common/models/response/error.response";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
+import { Verification } from "@bitwarden/common/types/verification";
 import { DialogService } from "@bitwarden/components";
 
 import { WebauthnLoginService } from "../../../core";
@@ -35,9 +35,10 @@ export class CreateCredentialDialogComponent implements OnInit {
   protected readonly Icons = { CreatePasskeyIcon, CreatePasskeyFailedIcon };
 
   protected currentStep: Step = "userVerification";
+  protected invalidSecret = false;
   protected formGroup = this.formBuilder.group({
     userVerification: this.formBuilder.group({
-      masterPassword: ["", [Validators.required]],
+      secret: [null as Verification | null, Validators.required],
     }),
     credentialNaming: this.formBuilder.group({
       name: ["", Validators.maxLength(50)],
@@ -89,20 +90,19 @@ export class CreateCredentialDialogComponent implements OnInit {
     }
 
     try {
-      this.credentialOptions = await this.webauthnService.getCredentialCreateOptions({
-        type: VerificationType.MasterPassword,
-        secret: this.formGroup.value.userVerification.masterPassword,
-      });
+      this.credentialOptions = await this.webauthnService.getCredentialCreateOptions(
+        this.formGroup.value.userVerification.secret
+      );
     } catch (error) {
       if (error instanceof ErrorResponse && error.statusCode === 400) {
-        this.platformUtilsService.showToast(
-          "error",
-          this.i18nService.t("error"),
-          this.i18nService.t("invalidMasterPassword")
-        );
+        this.invalidSecret = true;
       } else {
         this.logService?.error(error);
-        this.platformUtilsService.showToast("error", null, this.i18nService.t("unexpectedError"));
+        this.platformUtilsService.showToast(
+          "error",
+          this.i18nService.t("unexpectedError"),
+          error.message
+        );
       }
       return;
     }
@@ -141,7 +141,11 @@ export class CreateCredentialDialogComponent implements OnInit {
       );
     } catch (error) {
       this.logService?.error(error);
-      this.platformUtilsService.showToast("error", null, this.i18nService.t("unexpectedError"));
+      this.platformUtilsService.showToast(
+        "error",
+        this.i18nService.t("unexpectedError"),
+        error.message
+      );
       return;
     }
 

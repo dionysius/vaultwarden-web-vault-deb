@@ -51,8 +51,8 @@ export class UserVerificationComponent implements ControlValueAccessor, OnInit, 
         return {
           invalidSecret: {
             message: this.hasMasterPassword
-              ? this.i18nService.t("incorrectCode")
-              : this.i18nService.t("incorrectPassword"),
+              ? this.i18nService.t("incorrectPassword")
+              : this.i18nService.t("incorrectCode"),
           },
         };
       }
