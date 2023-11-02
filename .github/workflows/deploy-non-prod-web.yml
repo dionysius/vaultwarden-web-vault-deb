@@ -170,3 +170,20 @@ jobs:
           environment-url: ${{ env._ENVIRONMENT_URL }}
           state: 'failure'
           deployment-id: ${{ steps.deployment.outputs.deployment_id }}
+
+  notify:
+    name: Notify Slack with result
+    runs-on: ubuntu-22.04
+    if: always()
+    needs:
+      - cfpages-deploy
+      - setup
+    steps:
+      - uses: bitwarden/gh-actions/report-deployment-status-to-slack@master
+        with:
+          project: Web
+          environment: US QA Cloud
+          tag: ${{ needs.setup.outputs.environment-branch }}
+          slack-channel: team-eng-qa-devops
+          failure: ${{ needs.cfpages-deploy.result == 'failure' }}
+          AZURE_KV_CI_SERVICE_PRINCIPAL: ${{ secrets.AZURE_KV_CI_SERVICE_PRINCIPAL }}

@@ -58,3 +58,18 @@ jobs:
             --connection-string "${{ steps.retrieve-secrets.outputs.sa-bitwarden-web-vault-dev-key-temp }}" \
             --overwrite \
             --no-progress
+
+  notify:
+    name: Notify Slack with result
+    runs-on: ubuntu-22.04
+    if: always()
+    needs: azure-deploy
+    steps:
+      - uses: bitwarden/gh-actions/report-deployment-status-to-slack@master
+        with:
+          project: Web
+          environment: EU QA Cloud
+          tag: ${{ github.event.inputs.tag }}
+          slack-channel: team-eng-qa-devops
+          failure: ${{ needs.azure-deploy.result == 'failure' }}
+          AZURE_KV_CI_SERVICE_PRINCIPAL: ${{ secrets.AZURE_KV_CI_SERVICE_PRINCIPAL }}
