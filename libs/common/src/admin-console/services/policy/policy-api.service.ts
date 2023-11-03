@@ -1,6 +1,8 @@
 import { firstValueFrom } from "rxjs";
 
 import { ApiService } from "../../../abstractions/api.service";
+import { HttpStatusCode } from "../../../enums";
+import { ErrorResponse } from "../../../models/response/error.response";
 import { ListResponse } from "../../../models/response/list.response";
 import { StateService } from "../../../platform/abstractions/state.service";
 import { Utils } from "../../../platform/misc/utils";
@@ -65,27 +67,47 @@ export class PolicyApiService implements PolicyApiServiceAbstraction {
     return new ListResponse(r, PolicyResponse);
   }
 
-  async getPoliciesByInvitedUser(
-    organizationId: string,
-    userId: string
-  ): Promise<ListResponse<PolicyResponse>> {
-    const r = await this.apiService.send(
+  private async getMasterPasswordPolicyResponseForOrgUser(
+    organizationId: string
+  ): Promise<PolicyResponse> {
+    const response = await this.apiService.send(
       "GET",
-      "/organizations/" + organizationId + "/policies/invited-user?" + "userId=" + userId,
+      "/organizations/" + organizationId + "/policies/master-password",
       null,
-      false,
+      true,
       true
     );
-    return new ListResponse(r, PolicyResponse);
+
+    return new PolicyResponse(response);
   }
 
-  async getMasterPasswordPoliciesForInvitedUsers(
+  async getMasterPasswordPolicyOptsForOrgUser(
     orgId: string
-  ): Promise<MasterPasswordPolicyOptions> {
-    const userId = await this.stateService.getUserId();
-    const response = await this.getPoliciesByInvitedUser(orgId, userId);
-    const policies = await this.policyService.mapPoliciesFromToken(response);
-    return await firstValueFrom(this.policyService.masterPasswordPolicyOptions$(policies));
+  ): Promise<MasterPasswordPolicyOptions | null> {
+    try {
+      const masterPasswordPolicyResponse = await this.getMasterPasswordPolicyResponseForOrgUser(
+        orgId
+      );
+
+      const masterPasswordPolicy = this.policyService.mapPolicyFromResponse(
+        masterPasswordPolicyResponse
+      );
+
+      if (!masterPasswordPolicy) {
+        return null;
+      }
+
+      return await firstValueFrom(
+        this.policyService.masterPasswordPolicyOptions$([masterPasswordPolicy])
+      );
+    } catch (error) {
+      // If policy not found, return null
+      if (error instanceof ErrorResponse && error.statusCode === HttpStatusCode.NotFound) {
+        return null;
+      }
+      // otherwise rethrow error
+      throw error;
+    }
   }
 
   async putPolicy(organizationId: string, type: PolicyType, request: PolicyRequest): Promise<any> {

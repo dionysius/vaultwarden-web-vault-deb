@@ -18,7 +18,7 @@ import { TokenService } from "../abstractions/token.service";
 import { TwoFactorService } from "../abstractions/two-factor.service";
 import { TwoFactorProviderType } from "../enums/two-factor-provider-type";
 import { AuthResult } from "../models/domain/auth-result";
-import { ForceResetPasswordReason } from "../models/domain/force-reset-password-reason";
+import { ForceSetPasswordReason } from "../models/domain/force-set-password-reason";
 import {
   AuthRequestLoginCredentials,
   PasswordLoginCredentials,
@@ -166,7 +166,7 @@ export abstract class LoginStrategy {
 
     // Convert boolean to enum
     if (response.forcePasswordReset) {
-      result.forcePasswordReset = ForceResetPasswordReason.AdminForcePasswordReset;
+      result.forcePasswordReset = ForceSetPasswordReason.AdminForcePasswordReset;
     }
 
     // Must come before setting keys, user key needs email to update additional keys

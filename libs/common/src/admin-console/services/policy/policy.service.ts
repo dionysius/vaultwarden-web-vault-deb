@@ -218,13 +218,17 @@ export class PolicyService implements InternalPolicyServiceAbstraction {
     return [resetPasswordPolicyOptions, policy?.enabled ?? false];
   }
 
+  mapPolicyFromResponse(policyResponse: PolicyResponse): Policy {
+    const policyData = new PolicyData(policyResponse);
+    return new Policy(policyData);
+  }
+
   mapPoliciesFromToken(policiesResponse: ListResponse<PolicyResponse>): Policy[] {
-    if (policiesResponse == null || policiesResponse.data == null) {
+    if (policiesResponse?.data == null) {
       return null;
     }
 
-    const policiesData = policiesResponse.data.map((p) => new PolicyData(p));
-    return policiesData.map((p) => new Policy(p));
+    return policiesResponse.data.map((response) => this.mapPolicyFromResponse(response));
   }
 
   async policyAppliesToUser(

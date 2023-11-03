@@ -8,7 +8,7 @@ import { Policy } from "../../../admin-console/models/domain/policy";
 import { AuthenticationStatus } from "../../../auth/enums/authentication-status";
 import { AdminAuthRequestStorable } from "../../../auth/models/domain/admin-auth-req-storable";
 import { EnvironmentUrls } from "../../../auth/models/domain/environment-urls";
-import { ForceResetPasswordReason } from "../../../auth/models/domain/force-reset-password-reason";
+import { ForceSetPasswordReason } from "../../../auth/models/domain/force-set-password-reason";
 import { KeyConnectorUserDecryptionOption } from "../../../auth/models/domain/user-decryption-options/key-connector-user-decryption-option";
 import { TrustedDeviceUserDecryptionOption } from "../../../auth/models/domain/user-decryption-options/trusted-device-user-decryption-option";
 import { IdentityTokenResponse } from "../../../auth/models/response/identity-token.response";
@@ -194,7 +194,7 @@ export class AccountProfile {
   entityType?: string;
   everHadUserKey?: boolean;
   everBeenUnlocked?: boolean;
-  forcePasswordResetReason?: ForceResetPasswordReason;
+  forceSetPasswordReason?: ForceSetPasswordReason;
   hasPremiumPersonally?: boolean;
   hasPremiumFromOrganization?: boolean;
   lastSync?: string;

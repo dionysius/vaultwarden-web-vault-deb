@@ -8,7 +8,7 @@ import { AuthService } from "@bitwarden/common/auth/abstractions/auth.service";
 import { DevicesApiServiceAbstraction } from "@bitwarden/common/auth/abstractions/devices-api.service.abstraction";
 import { LoginService } from "@bitwarden/common/auth/abstractions/login.service";
 import { AuthResult } from "@bitwarden/common/auth/models/domain/auth-result";
-import { ForceResetPasswordReason } from "@bitwarden/common/auth/models/domain/force-reset-password-reason";
+import { ForceSetPasswordReason } from "@bitwarden/common/auth/models/domain/force-set-password-reason";
 import { PasswordLoginCredentials } from "@bitwarden/common/auth/models/domain/login-credentials";
 import { AppIdService } from "@bitwarden/common/platform/abstractions/app-id.service";
 import { CryptoFunctionService } from "@bitwarden/common/platform/abstractions/crypto-function.service";
@@ -160,7 +160,7 @@ export class LoginComponent extends CaptchaProtectedComponent implements OnInit,
         } else {
           this.router.navigate([this.twoFactorRoute]);
         }
-      } else if (response.forcePasswordReset != ForceResetPasswordReason.None) {
+      } else if (response.forcePasswordReset != ForceSetPasswordReason.None) {
         if (this.onSuccessfulLoginForceResetNavigate != null) {
           this.onSuccessfulLoginForceResetNavigate();
         } else {

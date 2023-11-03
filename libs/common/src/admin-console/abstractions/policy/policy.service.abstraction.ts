@@ -30,6 +30,7 @@ export abstract class PolicyService {
     policies: Policy[],
     orgId: string
   ) => [ResetPasswordPolicyOptions, boolean];
+  mapPolicyFromResponse: (policyResponse: PolicyResponse) => Policy;
   mapPoliciesFromToken: (policiesResponse: ListResponse<PolicyResponse>) => Policy[];
   policyAppliesToUser: (
     policyType: PolicyType,

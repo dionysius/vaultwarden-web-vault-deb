@@ -14,7 +14,7 @@ import { KeyConnectorService } from "@bitwarden/common/auth/abstractions/key-con
 import { TwoFactorService } from "@bitwarden/common/auth/abstractions/two-factor.service";
 import { TwoFactorProviderType } from "@bitwarden/common/auth/enums/two-factor-provider-type";
 import { AuthResult } from "@bitwarden/common/auth/models/domain/auth-result";
-import { ForceResetPasswordReason } from "@bitwarden/common/auth/models/domain/force-reset-password-reason";
+import { ForceSetPasswordReason } from "@bitwarden/common/auth/models/domain/force-set-password-reason";
 import {
   PasswordLoginCredentials,
   SsoLoginCredentials,
@@ -326,13 +326,13 @@ export class LoginCommand {
 
       // Handle updating passwords if NOT using an API Key for authentication
       if (
-        response.forcePasswordReset != ForceResetPasswordReason.None &&
+        response.forcePasswordReset != ForceSetPasswordReason.None &&
         clientId == null &&
         clientSecret == null
       ) {
-        if (response.forcePasswordReset === ForceResetPasswordReason.AdminForcePasswordReset) {
+        if (response.forcePasswordReset === ForceSetPasswordReason.AdminForcePasswordReset) {
           return await this.updateTempPassword();
-        } else if (response.forcePasswordReset === ForceResetPasswordReason.WeakMasterPassword) {
+        } else if (response.forcePasswordReset === ForceSetPasswordReason.WeakMasterPassword) {
           return await this.updateWeakPassword(password);
         }
       }

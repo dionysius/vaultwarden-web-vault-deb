@@ -5,7 +5,7 @@ export class SetPasswordRequest {
   masterPasswordHash: string;
   key: string;
   masterPasswordHint: string;
-  keys: KeysRequest;
+  keys: KeysRequest | null;
   kdf: KdfType;
   kdfIterations: number;
   kdfMemory?: number;
@@ -17,7 +17,7 @@ export class SetPasswordRequest {
     key: string,
     masterPasswordHint: string,
     orgIdentifier: string,
-    keys: KeysRequest,
+    keys: KeysRequest | null,
     kdf: KdfType,
     kdfIterations: number,
     kdfMemory?: number,

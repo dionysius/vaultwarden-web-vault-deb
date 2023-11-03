@@ -33,7 +33,7 @@ import { TokenService } from "../abstractions/token.service";
 import { TwoFactorService } from "../abstractions/two-factor.service";
 import { TwoFactorProviderType } from "../enums/two-factor-provider-type";
 import { AuthResult } from "../models/domain/auth-result";
-import { ForceResetPasswordReason } from "../models/domain/force-reset-password-reason";
+import { ForceSetPasswordReason } from "../models/domain/force-set-password-reason";
 import { PasswordLoginCredentials } from "../models/domain/login-credentials";
 import { PasswordTokenRequest } from "../models/request/identity-token/password-token.request";
 import { TokenTwoFactorRequest } from "../models/request/identity-token/token-two-factor.request";
@@ -229,7 +229,7 @@ describe("LoginStrategy", () => {
       const result = await passwordLoginStrategy.logIn(credentials);
 
       expect(result).toEqual({
-        forcePasswordReset: ForceResetPasswordReason.AdminForcePasswordReset,
+        forcePasswordReset: ForceSetPasswordReason.AdminForcePasswordReset,
         resetMasterPassword: true,
         twoFactorProviders: null,
         captchaSiteKey: "",
