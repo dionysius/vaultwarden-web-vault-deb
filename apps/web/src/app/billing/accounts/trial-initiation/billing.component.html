@@ -24,7 +24,7 @@
               }}
               /{{ "yr" | i18n }}
             </ng-container>
-            <ng-container *ngIf="selectablePlan.SecretsManager">
+            <ng-container *ngIf="!selectablePlan.PasswordManager && selectablePlan.SecretsManager">
               {{ "annual" | i18n }} -
               {{
                 (selectablePlan.SecretsManager.basePrice === 0
@@ -46,7 +46,7 @@
               }}
               /{{ "monthAbbr" | i18n }}
             </ng-container>
-            <ng-container *ngIf="selectablePlan.SecretsManager">
+            <ng-container *ngIf="!selectablePlan.PasswordManager && selectablePlan.SecretsManager">
               {{ "monthly" | i18n }} -
               {{
                 (selectablePlan.SecretsManager.basePrice === 0

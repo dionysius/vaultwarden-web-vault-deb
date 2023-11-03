@@ -11,6 +11,7 @@ import { Organization } from "@bitwarden/common/admin-console/models/domain/orga
 import { PlanType } from "@bitwarden/common/billing/enums";
 import { OrganizationSubscriptionResponse } from "@bitwarden/common/billing/models/response/organization-subscription.response";
 import { BillingSubscriptionItemResponse } from "@bitwarden/common/billing/models/response/subscription.response";
+import { ProductType } from "@bitwarden/common/enums";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
@@ -42,6 +43,8 @@ export class OrganizationSubscriptionCloudComponent implements OnInit, OnDestroy
 
   private readonly _smBetaEndingDate = new Date(2023, 7, 15);
   private readonly _smGracePeriodEndingDate = new Date(2023, 10, 14);
+
+  protected readonly teamsStarter = ProductType.TeamsStarter;
 
   private destroy$ = new Subject<void>();
 
@@ -95,8 +98,8 @@ export class OrganizationSubscriptionCloudComponent implements OnInit, OnDestroy
             const seatPriceTotal = this.sub.plan?.SecretsManager?.seatPrice * item.quantity;
             item.productName =
               itemTotalAmount === seatPriceTotal || item.name.includes("Service Accounts")
-                ? "SecretsManager"
-                : "PasswordManager";
+                ? "secretsManager"
+                : "passwordManager";
             return item;
           })
           .sort(sortSubscriptionItems);
@@ -234,6 +237,8 @@ export class OrganizationSubscriptionCloudComponent implements OnInit, OnDestroy
     return (
       this.sub.planType === PlanType.EnterpriseAnnually ||
       this.sub.planType === PlanType.EnterpriseMonthly ||
+      this.sub.planType === PlanType.EnterpriseAnnually2020 ||
+      this.sub.planType === PlanType.EnterpriseMonthly2020 ||
       this.sub.planType === PlanType.EnterpriseAnnually2019 ||
       this.sub.planType === PlanType.EnterpriseMonthly2019
     );
@@ -253,6 +258,8 @@ export class OrganizationSubscriptionCloudComponent implements OnInit, OnDestroy
       }
     } else if (this.sub.maxAutoscaleSeats === this.sub.seats && this.sub.seats != null) {
       return this.i18nService.t("subscriptionMaxReached", this.sub.seats.toString());
+    } else if (this.userOrg.planProductType === ProductType.TeamsStarter) {
+      return this.i18nService.t("subscriptionUserSeatsWithoutAdditionalSeatsOption", 10);
     } else if (this.sub.maxAutoscaleSeats == null) {
       return this.i18nService.t("subscriptionUserSeatsUnlimitedAutoscale");
     } else {

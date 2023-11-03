@@ -4,13 +4,14 @@ import { Organization } from "@bitwarden/common/admin-console/models/domain/orga
 import { ProductType } from "@bitwarden/common/enums";
 
 /**
- * Checks if the limit of free organization seats has been reached when adding new users
+ * If the organization doesn't allow additional seat options, this checks if the seat limit has been reached when adding
+ * new users
  * @param organization An object representing the organization
  * @param allOrganizationUserEmails An array of strings with existing user email addresses
  * @param errorMessage A localized string to display if validation fails
  * @returns A function that validates an `AbstractControl` and returns `ValidationErrors` or `null`
  */
-export function freeOrgSeatLimitReachedValidator(
+export function orgWithoutAdditionalSeatLimitReachedWithUpgradePathValidator(
   organization: Organization,
   allOrganizationUserEmails: string[],
   errorMessage: string
@@ -20,13 +21,20 @@ export function freeOrgSeatLimitReachedValidator(
       return null;
     }
 
-    const newEmailsToAdd = control.value
-      .split(",")
-      .filter(
-        (newEmailToAdd: string) =>
-          newEmailToAdd &&
-          !allOrganizationUserEmails.some((existingEmail) => existingEmail === newEmailToAdd)
-      );
+    const newEmailsToAdd = Array.from(
+      new Set(
+        control.value
+          .split(",")
+          .filter(
+            (newEmailToAdd: string) =>
+              newEmailToAdd &&
+              newEmailToAdd.trim() !== "" &&
+              !allOrganizationUserEmails.some(
+                (existingEmail) => existingEmail === newEmailToAdd.trim()
+              )
+          )
+      )
+    );
 
     return organization.planProductType === ProductType.Free &&
       allOrganizationUserEmails.length + newEmailsToAdd.length > organization.seats

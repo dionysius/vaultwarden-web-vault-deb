@@ -10,6 +10,7 @@ import { LogService } from "@bitwarden/common/platform/abstractions/log.service"
 })
 export class ChangePlanComponent {
   @Input() organizationId: string;
+  @Input() currentProductType: ProductType;
   @Output() onChanged = new EventEmitter();
   @Output() onCanceled = new EventEmitter();
 

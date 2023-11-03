@@ -3,4 +3,5 @@ export enum ProductType {
   Families = 1,
   Teams = 2,
   Enterprise = 3,
+  TeamsStarter = 4,
 }

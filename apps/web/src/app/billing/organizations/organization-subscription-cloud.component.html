@@ -71,7 +71,7 @@
           <ng-container *ngIf="subscription">
             <tr bitRow *ngFor="let i of subscriptionLineItems">
               <td bitCell [ngClass]="{ 'tw-pl-20': i.addonSubscriptionItem }">
-                <span *ngIf="!i.addonSubscriptionItem">{{ i.productName }} -</span>
+                <span *ngIf="!i.addonSubscriptionItem">{{ i.productName | i18n }} -</span>
                 {{ i.name }} {{ i.quantity > 1 ? "&times;" + i.quantity : "" }} @
                 {{ i.amount | currency : "$" }}
               </td>
@@ -127,6 +127,7 @@
       </button>
       <app-change-plan
         [organizationId]="organizationId"
+        [currentProductType]="sub.plan.product"
         (onChanged)="closeChangePlan()"
         (onCanceled)="closeChangePlan()"
         *ngIf="showChangePlan"

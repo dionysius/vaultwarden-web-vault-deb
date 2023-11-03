@@ -345,38 +345,85 @@ export class PeopleComponent
     );
   }
 
-  private async showFreeOrgUpgradeDialog(): Promise<void> {
+  private getManageBillingText(): string {
+    return this.organization.canEditSubscription ? "ManageBilling" : "NoManageBilling";
+  }
+
+  private getProductKey(productType: ProductType): string {
+    let product = "";
+    switch (productType) {
+      case ProductType.Free:
+        product = "freeOrg";
+        break;
+      case ProductType.TeamsStarter:
+        product = "teamsStarterPlan";
+        break;
+      default:
+        throw new Error(`Unsupported product type: ${productType}`);
+    }
+    return `${product}InvLimitReached${this.getManageBillingText()}`;
+  }
+
+  private getDialogTitle(productType: ProductType): string {
+    switch (productType) {
+      case ProductType.Free:
+        return "upgrade";
+      case ProductType.TeamsStarter:
+        return "contactSupportShort";
+      default:
+        throw new Error(`Unsupported product type: ${productType}`);
+    }
+  }
+
+  private getDialogContent(): string {
+    return this.i18nService.t(
+      this.getProductKey(this.organization.planProductType),
+      this.organization.seats
+    );
+  }
+
+  private getAcceptButtonText(): string {
+    if (!this.organization.canEditSubscription) {
+      return this.i18nService.t("ok");
+    }
+
+    return this.i18nService.t(this.getDialogTitle(this.organization.planProductType));
+  }
+
+  private async handleDialogClose(result: boolean | undefined): Promise<void> {
+    if (!result || !this.organization.canEditSubscription) {
+      return;
+    }
+
+    switch (this.organization.planProductType) {
+      case ProductType.Free:
+        await this.router.navigate(
+          ["/organizations", this.organization.id, "billing", "subscription"],
+          { queryParams: { upgrade: true } }
+        );
+        break;
+      case ProductType.TeamsStarter:
+        window.open("https://bitwarden.com/contact/", "_blank");
+        break;
+      default:
+        throw new Error(`Unsupported product type: ${this.organization.planProductType}`);
+    }
+  }
+
+  private async showSeatLimitReachedDialog(): Promise<void> {
     const orgUpgradeSimpleDialogOpts: SimpleDialogOptions = {
       title: this.i18nService.t("upgradeOrganization"),
-      content: this.i18nService.t(
-        this.organization.canEditSubscription
-          ? "freeOrgInvLimitReachedManageBilling"
-          : "freeOrgInvLimitReachedNoManageBilling",
-        this.organization.seats
-      ),
+      content: this.getDialogContent(),
       type: "primary",
+      acceptButtonText: this.getAcceptButtonText(),
     };
 
-    if (this.organization.canEditSubscription) {
-      orgUpgradeSimpleDialogOpts.acceptButtonText = this.i18nService.t("upgrade");
-    } else {
-      orgUpgradeSimpleDialogOpts.acceptButtonText = this.i18nService.t("ok");
-      orgUpgradeSimpleDialogOpts.cancelButtonText = null; // hide secondary btn
+    if (!this.organization.canEditSubscription) {
+      orgUpgradeSimpleDialogOpts.cancelButtonText = null;
     }
 
     const simpleDialog = this.dialogService.openSimpleDialogRef(orgUpgradeSimpleDialogOpts);
-
-    firstValueFrom(simpleDialog.closed).then((result: boolean | undefined) => {
-      if (!result) {
-        return;
-      }
-
-      if (result && this.organization.canEditSubscription) {
-        this.router.navigate(["/organizations", this.organization.id, "billing", "subscription"], {
-          queryParams: { upgrade: true },
-        });
-      }
-    });
+    firstValueFrom(simpleDialog.closed).then(this.handleDialogClose.bind(this));
   }
 
   async edit(user: OrganizationUserView, initialTab: MemberDialogTab = MemberDialogTab.Role) {
@@ -384,13 +431,14 @@ export class PeopleComponent
     // Click on user email: Edit Flow
 
     // User attempting to invite new users in a free org with max users
-    if (
-      !user &&
-      this.organization.planProductType === ProductType.Free &&
-      this.allUsers.length === this.organization.seats
-    ) {
+    if (!user && this.allUsers.length === this.organization.seats) {
       // Show org upgrade modal
-      await this.showFreeOrgUpgradeDialog();
+      if (
+        this.organization.planProductType === ProductType.Free ||
+        this.organization.planProductType === ProductType.TeamsStarter
+      ) {
+        await this.showSeatLimitReachedDialog();
+      }
       return;
     }
 

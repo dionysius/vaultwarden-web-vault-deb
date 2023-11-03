@@ -51,7 +51,7 @@ export class PlanResponse extends BaseResponse {
     this.hasResetPassword = this.getResponseProperty("HasResetPassword");
     this.usersGetPremium = this.getResponseProperty("UsersGetPremium");
     this.upgradeSortOrder = this.getResponseProperty("UpgradeSortOrder");
-    this.displaySortOrder = this.getResponseProperty("SortOrder");
+    this.displaySortOrder = this.getResponseProperty("DisplaySortOrder");
     this.legacyYear = this.getResponseProperty("LegacyYear");
     this.disabled = this.getResponseProperty("Disabled");
     const passwordManager = this.getResponseProperty("PasswordManager");

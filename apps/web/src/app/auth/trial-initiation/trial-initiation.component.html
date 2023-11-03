@@ -28,6 +28,7 @@
         <app-teams-content *ngIf="layout === layouts.teams"></app-teams-content>
         <app-teams1-content *ngIf="layout === layouts.teams1"></app-teams1-content>
         <app-teams2-content *ngIf="layout === layouts.teams2"></app-teams2-content>
+        <app-teams3-content *ngIf="layout === layouts.teams3"></app-teams3-content>
         <app-enterprise-content *ngIf="layout === layouts.enterprise"></app-enterprise-content>
         <app-enterprise1-content *ngIf="layout === layouts.enterprise1"></app-enterprise1-content>
         <app-enterprise2-content *ngIf="layout === layouts.enterprise2"></app-enterprise2-content>
@@ -60,7 +61,7 @@
         <div class="tw-rounded tw-border tw-border-solid tw-border-secondary-300 tw-bg-background">
           <div class="tw-flex tw-h-auto tw-w-full tw-gap-5 tw-rounded-t tw-bg-secondary-100">
             <h2 class="tw-pb-4 tw-pl-4 tw-pt-5 tw-text-base tw-font-bold tw-uppercase">
-              {{ "startYour7DayFreeTrialOfBitwardenFor" | i18n : org }}
+              {{ "startYour7DayFreeTrialOfBitwardenFor" | i18n : orgDisplayName }}
             </h2>
             <environment-selector
               class="tw-mr-4 tw-mt-6 tw-flex-shrink-0 tw-text-end"

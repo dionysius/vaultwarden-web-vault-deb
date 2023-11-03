@@ -27,6 +27,7 @@ import { LogoUSNewsComponent } from "./content/logo-us-news.component";
 import { TeamsContentComponent } from "./content/teams-content.component";
 import { Teams1ContentComponent } from "./content/teams1-content.component";
 import { Teams2ContentComponent } from "./content/teams2-content.component";
+import { Teams3ContentComponent } from "./content/teams3-content.component";
 import { TrialInitiationComponent } from "./trial-initiation.component";
 import { VerticalStepperModule } from "./vertical-stepper/vertical-stepper.module";
 
@@ -55,6 +56,7 @@ import { VerticalStepperModule } from "./vertical-stepper/vertical-stepper.modul
     TeamsContentComponent,
     Teams1ContentComponent,
     Teams2ContentComponent,
+    Teams3ContentComponent,
     CnetEnterpriseContentComponent,
     CnetIndividualContentComponent,
     CnetTeamsContentComponent,

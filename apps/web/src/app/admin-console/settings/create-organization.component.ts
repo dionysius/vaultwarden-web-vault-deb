@@ -29,6 +29,9 @@ export class CreateOrganizationComponent implements OnInit {
       } else if (qParams.plan === "teams") {
         this.orgPlansComponent.plan = PlanType.TeamsAnnually;
         this.orgPlansComponent.product = ProductType.Teams;
+      } else if (qParams.plan === "teamsStarter") {
+        this.orgPlansComponent.plan = PlanType.TeamsStarter;
+        this.orgPlansComponent.product = ProductType.TeamsStarter;
       } else if (qParams.plan === "enterprise") {
         this.orgPlansComponent.plan = PlanType.EnterpriseAnnually;
         this.orgPlansComponent.product = ProductType.Enterprise;

@@ -23,7 +23,10 @@
             <bit-form-field>
               <bit-label>{{ "email" | i18n }}</bit-label>
               <input id="emails" type="text" appAutoFocus bitInput formControlName="emails" />
-              <bit-hint>{{ "inviteMultipleEmailDesc" | i18n : "20" }}</bit-hint>
+              <bit-hint>{{
+                "inviteMultipleEmailDesc"
+                  | i18n : (organization.planProductType === ProductType.TeamsStarter ? "10" : "20")
+              }}</bit-hint>
             </bit-form-field>
           </ng-container>
           <fieldset role="radiogroup" aria-labelledby="roleGroupLabel" class="tw-mb-6">
