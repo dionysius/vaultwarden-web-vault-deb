@@ -586,7 +586,8 @@ export default class MainBackground {
     this.browserPopoutWindowService = new BrowserPopoutWindowService();
 
     this.fido2UserInterfaceService = new BrowserFido2UserInterfaceService(
-      this.browserPopoutWindowService
+      this.browserPopoutWindowService,
+      this.authService
     );
     this.fido2AuthenticatorService = new Fido2AuthenticatorService(
       this.cipherService,
