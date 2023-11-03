@@ -358,7 +358,7 @@ export class BrowserFido2UserInterfaceSession implements Fido2UserInterfaceSessi
       )
       .subscribe(() => {
         this.close();
-        this.abort();
+        this.abort(true);
       });
 
     await connectPromise;
