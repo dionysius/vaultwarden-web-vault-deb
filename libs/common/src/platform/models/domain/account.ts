@@ -140,8 +140,11 @@ export class AccountKeys {
   >();
 
   toJSON() {
+    // If you pass undefined into fromBufferToByteString, you will get an empty string back
+    // which will cause all sorts of headaches down the line when you try to getPublicKey
+    // and expect a Uint8Array and get an empty string instead.
     return Utils.merge(this, {
-      publicKey: Utils.fromBufferToByteString(this.publicKey),
+      publicKey: this.publicKey ? Utils.fromBufferToByteString(this.publicKey) : undefined,
     });
   }
 
@@ -149,7 +152,6 @@ export class AccountKeys {
     if (obj == null) {
       return null;
     }
-
     return Object.assign(new AccountKeys(), {
       userKey: SymmetricCryptoKey.fromJSON(obj?.userKey),
       masterKey: SymmetricCryptoKey.fromJSON(obj?.masterKey),
