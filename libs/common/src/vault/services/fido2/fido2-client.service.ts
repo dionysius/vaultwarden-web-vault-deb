@@ -5,6 +5,7 @@ import { AuthenticationStatus } from "../../../auth/enums/authentication-status"
 import { FeatureFlag } from "../../../enums/feature-flag.enum";
 import { ConfigServiceAbstraction } from "../../../platform/abstractions/config/config.service.abstraction";
 import { LogService } from "../../../platform/abstractions/log.service";
+import { StateService } from "../../../platform/abstractions/state.service";
 import { Utils } from "../../../platform/misc/utils";
 import {
   Fido2AuthenticatorError,
@@ -40,6 +41,7 @@ export class Fido2ClientService implements Fido2ClientServiceAbstraction {
     private authenticator: Fido2AuthenticatorService,
     private configService: ConfigServiceAbstraction,
     private authService: AuthService,
+    private stateService: StateService,
     private logService?: LogService
   ) {}
 
@@ -83,6 +85,12 @@ export class Fido2ClientService implements Fido2ClientServiceAbstraction {
 
     const parsedOrigin = parse(params.origin, { allowPrivateDomains: true });
     params.rp.id = params.rp.id ?? parsedOrigin.hostname;
+
+    const neverDomains = await this.stateService.getNeverDomains();
+    if (neverDomains != null && parsedOrigin.hostname in neverDomains) {
+      this.logService?.warning(`[Fido2Client] Excluded domain`);
+      throw new FallbackRequestedError();
+    }
 
     if (parsedOrigin.hostname == undefined || !params.origin.startsWith("https://")) {
       this.logService?.warning(`[Fido2Client] Invalid https origin: ${params.origin}`);
@@ -211,14 +219,14 @@ export class Fido2ClientService implements Fido2ClientServiceAbstraction {
       throw new FallbackRequestedError();
     }
 
-    const { domain: effectiveDomain } = parse(params.origin, { allowPrivateDomains: true });
-    if (effectiveDomain == undefined) {
-      this.logService?.warning(`[Fido2Client] Invalid origin: ${params.origin}`);
-      throw new DOMException("'origin' is not a valid domain", "SecurityError");
-    }
-
     const parsedOrigin = parse(params.origin, { allowPrivateDomains: true });
     params.rpId = params.rpId ?? parsedOrigin.hostname;
+
+    const neverDomains = await this.stateService.getNeverDomains();
+    if (neverDomains != null && parsedOrigin.hostname in neverDomains) {
+      this.logService?.warning(`[Fido2Client] Excluded domain`);
+      throw new FallbackRequestedError();
+    }
 
     if (parsedOrigin.hostname == undefined || !params.origin.startsWith("https://")) {
       this.logService?.warning(`[Fido2Client] Invalid https origin: ${params.origin}`);

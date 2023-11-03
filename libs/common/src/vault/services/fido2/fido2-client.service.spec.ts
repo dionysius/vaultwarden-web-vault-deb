@@ -3,6 +3,7 @@ import { mock, MockProxy } from "jest-mock-extended";
 import { AuthService } from "../../../auth/abstractions/auth.service";
 import { AuthenticationStatus } from "../../../auth/enums/authentication-status";
 import { ConfigServiceAbstraction } from "../../../platform/abstractions/config/config.service.abstraction";
+import { StateService } from "../../../platform/abstractions/state.service";
 import { Utils } from "../../../platform/misc/utils";
 import {
   Fido2AuthenticatorError,
@@ -27,6 +28,7 @@ describe("FidoAuthenticatorService", () => {
   let authenticator!: MockProxy<Fido2AuthenticatorService>;
   let configService!: MockProxy<ConfigServiceAbstraction>;
   let authService!: MockProxy<AuthService>;
+  let stateService!: MockProxy<StateService>;
   let client!: Fido2ClientService;
   let tab!: chrome.tabs.Tab;
 
@@ -34,8 +36,9 @@ describe("FidoAuthenticatorService", () => {
     authenticator = mock<Fido2AuthenticatorService>();
     configService = mock<ConfigServiceAbstraction>();
     authService = mock<AuthService>();
+    stateService = mock<StateService>();
 
-    client = new Fido2ClientService(authenticator, configService, authService);
+    client = new Fido2ClientService(authenticator, configService, authService, stateService);
     configService.getFeatureFlag.mockResolvedValue(true);
     tab = { id: 123, windowId: 456 } as chrome.tabs.Tab;
   });
@@ -97,7 +100,7 @@ describe("FidoAuthenticatorService", () => {
       it("should throw error if rp.id is not valid for this origin", async () => {
         const params = createParams({
           origin: "https://passwordless.dev",
-          rp: { id: "bitwarden.com", name: "Bitwraden" },
+          rp: { id: "bitwarden.com", name: "Bitwarden" },
         });
 
         const result = async () => await client.createCredential(params, tab);
@@ -107,10 +110,22 @@ describe("FidoAuthenticatorService", () => {
         await rejects.toBeInstanceOf(DOMException);
       });
 
+      it("should fallback if origin hostname is found in neverDomains", async () => {
+        const params = createParams({
+          origin: "https://bitwarden.com",
+          rp: { id: "bitwarden.com", name: "Bitwarden" },
+        });
+        stateService.getNeverDomains.mockResolvedValue({ "bitwarden.com": null });
+
+        const result = async () => await client.createCredential(params, tab);
+
+        await expect(result).rejects.toThrow(FallbackRequestedError);
+      });
+
       it("should throw error if origin is not an https domain", async () => {
         const params = createParams({
           origin: "http://passwordless.dev",
-          rp: { id: "bitwarden.com", name: "Bitwraden" },
+          rp: { id: "bitwarden.com", name: "Bitwarden" },
         });
 
         const result = async () => await client.createCredential(params, tab);
@@ -293,6 +308,17 @@ describe("FidoAuthenticatorService", () => {
         const rejects = expect(result).rejects;
         await rejects.toMatchObject({ name: "SecurityError" });
         await rejects.toBeInstanceOf(DOMException);
+      });
+
+      it("should fallback if origin hostname is found in neverDomains", async () => {
+        const params = createParams({
+          origin: "https://bitwarden.com",
+        });
+        stateService.getNeverDomains.mockResolvedValue({ "bitwarden.com": null });
+
+        const result = async () => await client.assertCredential(params, tab);
+
+        await expect(result).rejects.toThrow(FallbackRequestedError);
       });
 
       it("should throw error if origin is not an http domain", async () => {
