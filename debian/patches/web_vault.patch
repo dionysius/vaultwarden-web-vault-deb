@@ -58,10 +58,10 @@ index 1687f366ff..6870ce8b27 100644
        });
      }, 100);
 diff --git a/apps/web/src/app/billing/organizations/organization-billing-history-view.component.ts b/apps/web/src/app/billing/organizations/organization-billing-history-view.component.ts
-index 22cea10acb..747f534bcc 100644
+index 7f13f5e08f..53a0f80e6e 100644
 --- a/apps/web/src/app/billing/organizations/organization-billing-history-view.component.ts
 +++ b/apps/web/src/app/billing/organizations/organization-billing-history-view.component.ts
-@@ -45,7 +45,7 @@ export class OrgBillingHistoryViewComponent implements OnInit, OnDestroy {
+@@ -44,7 +44,7 @@ export class OrgBillingHistoryViewComponent implements OnInit, OnDestroy {
        return;
      }
      this.loading = true;
@@ -70,6 +70,75 @@ index 22cea10acb..747f534bcc 100644
      this.loading = false;
    }
  }
+diff --git a/apps/web/src/app/billing/organizations/organization-plans.component.html b/apps/web/src/app/billing/organizations/organization-plans.component.html
+index 6dd97b1eec..8e01ba7a95 100644
+--- a/apps/web/src/app/billing/organizations/organization-plans.component.html
++++ b/apps/web/src/app/billing/organizations/organization-plans.component.html
+@@ -28,7 +28,7 @@
+   (ngSubmit)="submit()"
+   [appApiAction]="formPromise"
+   ngNativeValidate
+-  *ngIf="!loading && !selfHosted && this.passwordManagerPlans && this.secretsManagerPlans"
++  *ngIf="!loading"
+   class="tw-pt-6"
+ >
+   <app-org-info
+diff --git a/apps/web/src/app/billing/organizations/organization-plans.component.ts b/apps/web/src/app/billing/organizations/organization-plans.component.ts
+index 9af3296169..458f6efee4 100644
+--- a/apps/web/src/app/billing/organizations/organization-plans.component.ts
++++ b/apps/web/src/app/billing/organizations/organization-plans.component.ts
+@@ -134,6 +134,7 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
+   }
+ 
+   async ngOnInit() {
++    /*
+     if (!this.selfHosted) {
+       const plans = await this.apiService.getPlans();
+       this.passwordManagerPlans = plans.data.filter((plan) => !!plan.PasswordManager);
+@@ -143,6 +144,7 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
+         this.formGroup.controls.businessOwned.setValue(true);
+       }
+     }
++    */
+ 
+     if (this.hasProvider) {
+       this.formGroup.controls.businessOwned.setValue(true);
+@@ -196,6 +198,7 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
+   }
+ 
+   get selectableProducts() {
++    return null;
+     let validPlans = this.passwordManagerPlans.filter((plan) => plan.type !== PlanType.Custom);
+ 
+     if (this.formGroup.controls.businessOwned.value) {
+@@ -358,7 +361,7 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
+   }
+ 
+   get planOffersSecretsManager() {
+-    return this.selectedSecretsManagerPlan != null;
++    return false;
+   }
+ 
+   changedProduct() {
+@@ -521,7 +524,9 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
+     request.name = this.formGroup.controls.name.value;
+     request.billingEmail = this.formGroup.controls.billingEmail.value;
+     request.keys = new OrganizationKeysRequest(orgKeys[0], orgKeys[1].encryptedString);
++    request.planType = PlanType.Free;
+ 
++    /*
+     if (this.selectedPlan.type === PlanType.Free) {
+       request.planType = PlanType.Free;
+     } else {
+@@ -551,7 +556,7 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
+ 
+     // Secrets Manager
+     this.buildSecretsManagerRequest(request);
+-
++    */
+     if (this.hasProvider) {
+       const providerRequest = new ProviderOrganizationCreateRequest(
+         this.formGroup.controls.clientOwnerEmail.value,
 diff --git a/apps/web/src/app/components/environment-selector/environment-selector.component.ts b/apps/web/src/app/components/environment-selector/environment-selector.component.ts
 index 3c1c5a1973..418471459f 100644
 --- a/apps/web/src/app/components/environment-selector/environment-selector.component.ts
@@ -196,7 +265,7 @@ index a6988baf28..b6adbe94d5 100644
 +  </div>
  </div>
 diff --git a/apps/web/src/app/layouts/navbar.component.html b/apps/web/src/app/layouts/navbar.component.html
-index cecd5599ab..ef60e141ac 100644
+index cecd5599ab..fbe4d87581 100644
 --- a/apps/web/src/app/layouts/navbar.component.html
 +++ b/apps/web/src/app/layouts/navbar.component.html
 @@ -1,6 +1,6 @@
@@ -207,7 +276,15 @@ index cecd5599ab..ef60e141ac 100644
        <i class="bwi bwi-shield" aria-hidden="true"></i>
      </a>
      <div class="collapse navbar-collapse">
-@@ -75,7 +75,12 @@
+@@ -38,7 +38,6 @@
+         </ng-container>
+       </ul>
+     </div>
+-    <product-switcher buttonType="light"></product-switcher>
+     <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
+       <li>
+         <button
+@@ -75,7 +74,12 @@
                <i class="bwi bwi-fw bwi-user" aria-hidden="true"></i>
                {{ "accountSettings" | i18n }}
              </a>
@@ -240,7 +317,7 @@ index 60e81b17eb..8078db5df1 100644
    }
  }
 diff --git a/apps/web/src/app/tools/generator.component.ts b/apps/web/src/app/tools/generator.component.ts
-index 05c56141dc..39133e292e 100644
+index 7eb8d6cf23..de909d9c14 100644
 --- a/apps/web/src/app/tools/generator.component.ts
 +++ b/apps/web/src/app/tools/generator.component.ts
 @@ -37,7 +37,7 @@ export class GeneratorComponent extends BaseGeneratorComponent {
@@ -253,9 +330,18 @@ index 05c56141dc..39133e292e 100644
        this.forwardOptions = this.forwardOptions.filter((forwarder) => forwarder.validForSelfHosted);
      }
 diff --git a/apps/web/src/app/tools/send/access.component.html b/apps/web/src/app/tools/send/access.component.html
-index 634d0bbf40..f4a4ba64ff 100644
+index 634d0bbf40..5b012e9541 100644
 --- a/apps/web/src/app/tools/send/access.component.html
 +++ b/apps/web/src/app/tools/send/access.component.html
+@@ -1,7 +1,7 @@
+ <form #form (ngSubmit)="load()" [appApiAction]="formPromise" class="container" ngNativeValidate>
+   <div class="row justify-content-center mt-5">
+     <div class="col-12">
+-      <h1 class="lead text-center mb-4">Bitwarden Send</h1>
++      <h1 class="lead text-center mb-4">Vaultwarden Send</h1>
+     </div>
+     <div class="col-12 text-center" *ngIf="creatorIdentifier != null">
+       <p>{{ "sendCreatorIdentifier" | i18n : creatorIdentifier }}</p>
 @@ -135,18 +135,7 @@
        </div>
      </div>
@@ -277,10 +363,10 @@ index 634d0bbf40..f4a4ba64ff 100644
    </div>
  </form>
 diff --git a/apps/web/src/app/vault/individual-vault/vault.component.ts b/apps/web/src/app/vault/individual-vault/vault.component.ts
-index 35074c70d2..93d63b95f4 100644
+index aae45d27e2..2f796ed306 100644
 --- a/apps/web/src/app/vault/individual-vault/vault.component.ts
 +++ b/apps/web/src/app/vault/individual-vault/vault.component.ts
-@@ -175,11 +175,7 @@ export class VaultComponent implements OnInit, OnDestroy {
+@@ -182,11 +182,7 @@ export class VaultComponent implements OnInit, OnDestroy {
  
    async ngOnInit() {
      this.showBrowserOutdated = window.navigator.userAgent.indexOf("MSIE") !== -1;
@@ -294,7 +380,7 @@ index 35074c70d2..93d63b95f4 100644
      const firstSetup$ = this.route.queryParams.pipe(
        first(),
 diff --git a/apps/web/src/app/vault/org-vault/vault.component.ts b/apps/web/src/app/vault/org-vault/vault.component.ts
-index 1cb57e188a..010a37eb08 100644
+index 22aa277fc2..0fb6473cc6 100644
 --- a/apps/web/src/app/vault/org-vault/vault.component.ts
 +++ b/apps/web/src/app/vault/org-vault/vault.component.ts
 @@ -156,11 +156,7 @@ export class VaultComponent implements OnInit, OnDestroy {
@@ -353,7 +439,7 @@ index 92a1204c60..d9ff4771a3 100644
 +  "background_color": "#FFFFFF"
  }
 diff --git a/apps/web/src/scss/styles.scss b/apps/web/src/scss/styles.scss
-index 2c0f9c21fd..2ed7bab817 100644
+index 05cd9fef4e..60128014d7 100644
 --- a/apps/web/src/scss/styles.scss
 +++ b/apps/web/src/scss/styles.scss
 @@ -57,3 +57,93 @@
@@ -451,7 +537,7 @@ index 2c0f9c21fd..2ed7bab817 100644
 +}
 +/**** END Vaultwarden CHANGES ****/
 diff --git a/apps/web/webpack.config.js b/apps/web/webpack.config.js
-index c7d2bcb5e0..ccecc5bda9 100644
+index 0254636895..9a2ea1e8fb 100644
 --- a/apps/web/webpack.config.js
 +++ b/apps/web/webpack.config.js
 @@ -136,8 +136,6 @@ const plugins = [
@@ -463,6 +549,43 @@ index c7d2bcb5e0..ccecc5bda9 100644
        { from: "./src/images", to: "images" },
        { from: "./src/locales", to: "locales" },
        { from: "../../node_modules/qrious/dist/qrious.min.js", to: "scripts" },
+diff --git a/libs/angular/src/auth/components/register.component.ts b/libs/angular/src/auth/components/register.component.ts
+index 0a930ac90b..6b71d987d9 100644
+--- a/libs/angular/src/auth/components/register.component.ts
++++ b/libs/angular/src/auth/components/register.component.ts
+@@ -38,7 +38,7 @@ export class RegisterComponent extends CaptchaProtectedComponent implements OnIn
+   showPassword = false;
+   formPromise: Promise<RegisterResponse>;
+   referenceData: ReferenceEventRequest;
+-  showTerms = true;
++  showTerms = false;
+   showErrorSummary = false;
+   passwordStrengthResult: any;
+   characterMinimumMessage: string;
+@@ -96,7 +96,7 @@ export class RegisterComponent extends CaptchaProtectedComponent implements OnIn
+     protected dialogService: DialogService
+   ) {
+     super(environmentService, i18nService, platformUtilsService);
+-    this.showTerms = !platformUtilsService.isSelfHost();
++    this.showTerms = false;
+     this.characterMinimumMessage = this.i18nService.t("characterMinimum", this.minimumLength);
+   }
+ 
+@@ -105,6 +105,14 @@ export class RegisterComponent extends CaptchaProtectedComponent implements OnIn
+   }
+ 
+   async submit(showToast = true) {
++    if (typeof crypto.subtle === "undefined") {
++      this.platformUtilsService.showToast(
++        "error",
++        "This browser requires HTTPS to use the web vault",
++        "Check the Vaultwarden wiki for details on how to enable it"
++      );
++      return;
++    }
+     let email = this.formGroup.value.email;
+     email = email.trim().toLowerCase();
+     let name = this.formGroup.value.name;
 diff --git a/libs/angular/src/auth/components/two-factor-options.component.ts b/libs/angular/src/auth/components/two-factor-options.component.ts
 index 786a9d7bb5..3b7e72d647 100644
 --- a/libs/angular/src/auth/components/two-factor-options.component.ts
@@ -478,43 +601,6 @@ index 786a9d7bb5..3b7e72d647 100644
      this.onRecoverSelected.emit();
    }
  }
-diff --git a/libs/angular/src/components/register.component.ts b/libs/angular/src/components/register.component.ts
-index 5363be3941..da1c9024b5 100644
---- a/libs/angular/src/components/register.component.ts
-+++ b/libs/angular/src/components/register.component.ts
-@@ -37,7 +37,7 @@ export class RegisterComponent extends CaptchaProtectedComponent implements OnIn
-   showPassword = false;
-   formPromise: Promise<RegisterResponse>;
-   referenceData: ReferenceEventRequest;
--  showTerms = true;
-+  showTerms = false;
-   showErrorSummary = false;
-   passwordStrengthResult: any;
-   characterMinimumMessage: string;
-@@ -95,7 +95,7 @@ export class RegisterComponent extends CaptchaProtectedComponent implements OnIn
-     protected dialogService: DialogService
-   ) {
-     super(environmentService, i18nService, platformUtilsService);
--    this.showTerms = !platformUtilsService.isSelfHost();
-+    this.showTerms = false;
-     this.characterMinimumMessage = this.i18nService.t("characterMinimum", this.minimumLength);
-   }
- 
-@@ -104,6 +104,14 @@ export class RegisterComponent extends CaptchaProtectedComponent implements OnIn
-   }
- 
-   async submit(showToast = true) {
-+    if (typeof crypto.subtle === "undefined") {
-+      this.platformUtilsService.showToast(
-+        "error",
-+        "This browser requires HTTPS to use the web vault",
-+        "Check the Vaultwarden wiki for details on how to enable it"
-+      );
-+      return;
-+    }
-     let email = this.formGroup.value.email;
-     email = email.trim().toLowerCase();
-     let name = this.formGroup.value.name;
 diff --git a/libs/components/src/menu/menu.component.html b/libs/components/src/menu/menu.component.html
 index d175a3fe3b..ca3c420b73 100644
 --- a/libs/components/src/menu/menu.component.html
