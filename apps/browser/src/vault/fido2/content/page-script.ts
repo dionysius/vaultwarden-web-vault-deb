@@ -66,6 +66,10 @@ navigator.credentials.create = async (
   options?: CredentialCreationOptions,
   abortController?: AbortController
 ): Promise<Credential> => {
+  if (!isWebauthnCall(options)) {
+    return await browserCredentials.create(options);
+  }
+
   const fallbackSupported =
     (options?.publicKey?.authenticatorSelection.authenticatorAttachment === "platform" &&
       browserNativeWebauthnPlatformAuthenticatorSupport) ||
@@ -106,6 +110,10 @@ navigator.credentials.get = async (
   options?: CredentialRequestOptions,
   abortController?: AbortController
 ): Promise<Credential> => {
+  if (!isWebauthnCall(options)) {
+    return await browserCredentials.get(options);
+  }
+
   const fallbackSupported = browserNativeWebauthnSupport;
 
   try {
@@ -140,6 +148,10 @@ navigator.credentials.get = async (
     throw error;
   }
 };
+
+function isWebauthnCall(options?: CredentialCreationOptions | CredentialRequestOptions) {
+  return options && "publicKey" in options;
+}
 
 /**
  * Wait for window to be focused.
