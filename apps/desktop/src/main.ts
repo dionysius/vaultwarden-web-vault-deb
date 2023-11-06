@@ -76,6 +76,7 @@ export class Main {
     }
 
     this.logService = new ElectronLogService(null, app.getPath("userData"));
+    this.logService.init();
     this.i18nService = new I18nMainService("en", "./locales/");
 
     const storageDefaults: any = {};
