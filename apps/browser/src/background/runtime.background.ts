@@ -312,12 +312,36 @@ export default class RuntimeBackground {
       case "checkFido2FeatureEnabled":
         return await this.main.fido2ClientService.isFido2FeatureEnabled();
       case "fido2RegisterCredentialRequest":
-        return await this.abortManager.runWithAbortController(msg.requestId, (abortController) =>
-          this.main.fido2ClientService.createCredential(msg.data, sender.tab, abortController)
+        return await this.abortManager.runWithAbortController(
+          msg.requestId,
+          async (abortController) => {
+            try {
+              return await this.main.fido2ClientService.createCredential(
+                msg.data,
+                sender.tab,
+                abortController
+              );
+            } finally {
+              await BrowserApi.focusTab(sender.tab.id);
+              await BrowserApi.focusWindow(sender.tab.windowId);
+            }
+          }
         );
       case "fido2GetCredentialRequest":
-        return await this.abortManager.runWithAbortController(msg.requestId, (abortController) =>
-          this.main.fido2ClientService.assertCredential(msg.data, sender.tab, abortController)
+        return await this.abortManager.runWithAbortController(
+          msg.requestId,
+          async (abortController) => {
+            try {
+              return await this.main.fido2ClientService.assertCredential(
+                msg.data,
+                sender.tab,
+                abortController
+              );
+            } finally {
+              await BrowserApi.focusTab(sender.tab.id);
+              await BrowserApi.focusWindow(sender.tab.windowId);
+            }
+          }
         );
     }
   }
