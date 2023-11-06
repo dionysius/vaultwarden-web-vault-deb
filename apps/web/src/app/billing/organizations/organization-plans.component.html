@@ -52,7 +52,9 @@
     <label class="form-check-label" for="product{{ selectableProduct.product }}">
       {{ selectableProduct.nameLocalizationKey | i18n }}
       <small class="mb-1">{{ selectableProduct.descriptionLocalizationKey | i18n : "1" }}</small>
-      <ng-container *ngIf="selectableProduct.product === productTypes.Enterprise">
+      <ng-container
+        *ngIf="selectableProduct.product === productTypes.Enterprise; else nonEnterprisePlans"
+      >
         <small>• {{ "includeAllTeamsFeatures" | i18n }}</small>
         <small *ngIf="selectableProduct.hasSelfHost">• {{ "onPremHostingOptional" | i18n }}</small>
         <small *ngIf="selectableProduct.hasSso">• {{ "includeSsoAuthentication" | i18n }}</small>
@@ -64,69 +66,78 @@
           {{ "xDayFreeTrial" | i18n : selectableProduct.trialPeriodDays }}
         </small>
       </ng-container>
-      <ng-container
-        *ngIf="
-          teamsStarterPlanFeatureFlagIsEnabled && selectableProduct.product === productTypes.Teams;
-          else fullFeatureList
-        "
-      >
-        <small>• {{ "includeAllTeamsStarterFeatures" | i18n }}</small>
-        <small>• {{ "chooseMonthlyOrAnnualBilling" | i18n }}</small>
-        <small>• {{ "abilityToAddMoreThanNMembers" | i18n : 10 }}</small>
-        <small *ngIf="selectableProduct.trialPeriodDays && createOrganization">
-          • {{ "xDayFreeTrial" | i18n : selectableProduct.trialPeriodDays }}
-        </small>
-      </ng-container>
-      <ng-template #fullFeatureList>
-        <small *ngIf="selectableProduct.product == productTypes.Free"
-          >• {{ "limitedUsers" | i18n : selectableProduct.PasswordManager.maxSeats }}</small
-        >
-        <small
+      <ng-template #nonEnterprisePlans>
+        <ng-container
           *ngIf="
-            selectableProduct.product != productTypes.Free &&
-            selectableProduct.product != productTypes.TeamsStarter &&
-            selectableProduct.PasswordManager.maxSeats
+            teamsStarterPlanFeatureFlagIsEnabled &&
+              selectableProduct.product === productTypes.Teams;
+            else fullFeatureList
           "
-          >• {{ "addShareLimitedUsers" | i18n : selectableProduct.PasswordManager.maxSeats }}</small
         >
-        <small *ngIf="!selectableProduct.PasswordManager.maxSeats"
-          >• {{ "addShareUnlimitedUsers" | i18n }}</small
-        >
-        <small *ngIf="selectableProduct.PasswordManager.maxCollections"
-          >•
-          {{
-            "limitedCollections" | i18n : selectableProduct.PasswordManager.maxCollections
-          }}</small
-        >
-        <small *ngIf="selectableProduct.PasswordManager.maxAdditionalSeats"
-          >•
-          {{
-            "addShareLimitedUsers" | i18n : selectableProduct.PasswordManager.maxAdditionalSeats
-          }}</small
-        >
-        <small *ngIf="!selectableProduct.PasswordManager.maxCollections"
-          >• {{ "createUnlimitedCollections" | i18n }}</small
-        >
-        <small *ngIf="selectableProduct.PasswordManager.baseStorageGb"
-          >•
-          {{
-            "gbEncryptedFileStorage" | i18n : selectableProduct.PasswordManager.baseStorageGb + "GB"
-          }}</small
-        >
-        <small *ngIf="selectableProduct.hasGroups">• {{ "controlAccessWithGroups" | i18n }}</small>
-        <small *ngIf="selectableProduct.hasApi">• {{ "trackAuditLogs" | i18n }}</small>
-        <small *ngIf="selectableProduct.hasDirectory"
-          >• {{ "syncUsersFromDirectory" | i18n }}</small
-        >
-        <small *ngIf="selectableProduct.hasSelfHost">• {{ "onPremHostingOptional" | i18n }}</small>
-        <small *ngIf="selectableProduct.usersGetPremium">• {{ "usersGetPremium" | i18n }}</small>
-        <small *ngIf="selectableProduct.product != productTypes.Free"
-          >• {{ "priorityCustomerSupport" | i18n }}</small
-        >
-        <small *ngIf="selectableProduct.trialPeriodDays && createOrganization"
-          >•
-          {{ "xDayFreeTrial" | i18n : selectableProduct.trialPeriodDays }}
-        </small>
+          <small>• {{ "includeAllTeamsStarterFeatures" | i18n }}</small>
+          <small>• {{ "chooseMonthlyOrAnnualBilling" | i18n }}</small>
+          <small>• {{ "abilityToAddMoreThanNMembers" | i18n : 10 }}</small>
+          <small *ngIf="selectableProduct.trialPeriodDays && createOrganization">
+            • {{ "xDayFreeTrial" | i18n : selectableProduct.trialPeriodDays }}
+          </small>
+        </ng-container>
+        <ng-template #fullFeatureList>
+          <small *ngIf="selectableProduct.product == productTypes.Free"
+            >• {{ "limitedUsers" | i18n : selectableProduct.PasswordManager.maxSeats }}</small
+          >
+          <small
+            *ngIf="
+              selectableProduct.product != productTypes.Free &&
+              selectableProduct.product != productTypes.TeamsStarter &&
+              selectableProduct.PasswordManager.maxSeats
+            "
+            >•
+            {{ "addShareLimitedUsers" | i18n : selectableProduct.PasswordManager.maxSeats }}</small
+          >
+          <small *ngIf="!selectableProduct.PasswordManager.maxSeats"
+            >• {{ "addShareUnlimitedUsers" | i18n }}</small
+          >
+          <small *ngIf="selectableProduct.PasswordManager.maxCollections"
+            >•
+            {{
+              "limitedCollections" | i18n : selectableProduct.PasswordManager.maxCollections
+            }}</small
+          >
+          <small *ngIf="selectableProduct.PasswordManager.maxAdditionalSeats"
+            >•
+            {{
+              "addShareLimitedUsers" | i18n : selectableProduct.PasswordManager.maxAdditionalSeats
+            }}</small
+          >
+          <small *ngIf="!selectableProduct.PasswordManager.maxCollections"
+            >• {{ "createUnlimitedCollections" | i18n }}</small
+          >
+          <small *ngIf="selectableProduct.PasswordManager.baseStorageGb"
+            >•
+            {{
+              "gbEncryptedFileStorage"
+                | i18n : selectableProduct.PasswordManager.baseStorageGb + "GB"
+            }}</small
+          >
+          <small *ngIf="selectableProduct.hasGroups"
+            >• {{ "controlAccessWithGroups" | i18n }}</small
+          >
+          <small *ngIf="selectableProduct.hasApi">• {{ "trackAuditLogs" | i18n }}</small>
+          <small *ngIf="selectableProduct.hasDirectory"
+            >• {{ "syncUsersFromDirectory" | i18n }}</small
+          >
+          <small *ngIf="selectableProduct.hasSelfHost"
+            >• {{ "onPremHostingOptional" | i18n }}</small
+          >
+          <small *ngIf="selectableProduct.usersGetPremium">• {{ "usersGetPremium" | i18n }}</small>
+          <small *ngIf="selectableProduct.product != productTypes.Free"
+            >• {{ "priorityCustomerSupport" | i18n }}</small
+          >
+          <small *ngIf="selectableProduct.trialPeriodDays && createOrganization"
+            >•
+            {{ "xDayFreeTrial" | i18n : selectableProduct.trialPeriodDays }}
+          </small>
+        </ng-template>
       </ng-template>
       <span *ngIf="selectableProduct.product != productTypes.Free">
         <ng-container *ngIf="selectableProduct.PasswordManager.basePrice && !acceptingSponsorship">

@@ -139,7 +139,7 @@ export class TrialInitiationComponent implements OnInit, OnDestroy {
 
       if (this.trialFlowOrgs.includes(qParams.org)) {
         this.org = qParams.org;
-        this.orgLabel = this.titleCasePipe.transform(this.org);
+        this.orgLabel = this.titleCasePipe.transform(this.orgDisplayName);
         this.useTrialStepper = true;
         this.referenceData.flow = qParams.org;
 

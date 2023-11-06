@@ -431,14 +431,14 @@ export class PeopleComponent
     // Click on user email: Edit Flow
 
     // User attempting to invite new users in a free org with max users
-    if (!user && this.allUsers.length === this.organization.seats) {
+    if (
+      !user &&
+      this.allUsers.length === this.organization.seats &&
+      (this.organization.planProductType === ProductType.Free ||
+        this.organization.planProductType === ProductType.TeamsStarter)
+    ) {
       // Show org upgrade modal
-      if (
-        this.organization.planProductType === ProductType.Free ||
-        this.organization.planProductType === ProductType.TeamsStarter
-      ) {
-        await this.showSeatLimitReachedDialog();
-      }
+      await this.showSeatLimitReachedDialog();
       return;
     }
 
