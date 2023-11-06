@@ -2187,7 +2187,7 @@
     "message": "刚刚"
   },
   "requestedXMinutesAgo": {
-    "message": "在 $MINUTES$ 分钟前发出的请求",
+    "message": "$MINUTES$ 分钟前已发出请求",
     "placeholders": {
       "minutes": {
         "content": "$1",

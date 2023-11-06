@@ -132,7 +132,7 @@
     "message": "Afficher/masquer la visibilité"
   },
   "toggleCollapse": {
-    "message": "Déplier ou replier",
+    "message": "Déplier/Replier",
     "description": "Toggling an expand/collapse state."
   },
   "cardholderName": {
@@ -389,7 +389,7 @@
     "message": "Éditer le dossier"
   },
   "regeneratePassword": {
-    "message": "Re-générer un mot de passe"
+    "message": "Générer un nouveau mot de passe"
   },
   "copyPassword": {
     "message": "Copier le mot de passe"
@@ -426,7 +426,7 @@
     "description": "Make the first letter of a word uppercase."
   },
   "includeNumber": {
-    "message": "Inclure le numéro"
+    "message": "Inclure un chiffre"
   },
   "close": {
     "message": "Fermer"
@@ -448,7 +448,7 @@
     "message": "Rechercher dans un dossier"
   },
   "searchFavorites": {
-    "message": "Rechercher dans les favoris"
+    "message": "Rechercher parmi les favoris"
   },
   "searchType": {
     "message": "Recherche par type",
@@ -521,7 +521,7 @@
     "message": "Paramètres"
   },
   "passwordHint": {
-    "message": "Indice mot de passe"
+    "message": "Indice pour le mot de passe"
   },
   "enterEmailToGetHint": {
     "message": "Saisissez l'adresse électronique de votre compte pour recevoir l'indice de votre mot de passe principal."
@@ -2543,13 +2543,13 @@
     "message": "Confirmez le mot de passe du fichier"
   },
   "multifactorAuthenticationCancelled": {
-    "message": "Multifactor authentication cancelled"
+    "message": "Authentification multi-facteurs annulée"
   },
   "noLastPassDataFound": {
-    "message": "No LastPass data found"
+    "message": "Aucune donnée LastPass trouvée"
   },
   "incorrectUsernameOrPassword": {
-    "message": "Incorrect username or password"
+    "message": "Nom d'utilisateur ou mot de passe incorrect"
   },
   "multifactorAuthenticationFailed": {
     "message": "Multifactor authentication failed"

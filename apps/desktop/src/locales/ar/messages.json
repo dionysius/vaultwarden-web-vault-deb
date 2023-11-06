@@ -1663,7 +1663,7 @@
     "message": "تؤثر سياسة مؤسسة على خيارات الملكية الخاصة بك."
   },
   "personalOwnershipPolicyInEffectImports": {
-    "message": "An organization policy has blocked importing items into your individual vault."
+    "message": "لقد حالت سياسة المؤسسة دون استيراد العناصر إلى خزانتك الشخصية."
   },
   "allSends": {
     "message": "كل الإرسالات",
@@ -2420,38 +2420,38 @@
     "message": "قائمة فرعية"
   },
   "typePasskey": {
-    "message": "Passkey"
+    "message": "مفتاح المرور"
   },
   "passkeyNotCopied": {
-    "message": "Passkey will not be copied"
+    "message": "لن يتم نسخ مفتاح المرور"
   },
   "passkeyNotCopiedAlert": {
-    "message": "The passkey will not be copied to the cloned item. Do you want to continue cloning this item?"
+    "message": "لن يتم نسخ مفتاح المرور إلى العنصر المستنسخ. هل تريد الاستمرار في استنساخ هذا العنصر؟"
   },
   "aliasDomain": {
-    "message": "Alias domain"
+    "message": "الاسم البديل للنطاق"
   },
   "importData": {
-    "message": "Import data",
+    "message": "استيراد البيانات",
     "description": "Used for the desktop menu item and the header of the import dialog"
   },
   "importError": {
-    "message": "Import error"
+    "message": "خطأ في الاستيراد"
   },
   "importErrorDesc": {
-    "message": "There was a problem with the data you tried to import. Please resolve the errors listed below in your source file and try again."
+    "message": "حدثت مشكلة في البيانات التي حاولت استيرادها. الرجاء حل الأخطاء المدرجة أدناه في الملف المصدر الخاص بك وحاول مرة أخرى."
   },
   "resolveTheErrorsBelowAndTryAgain": {
-    "message": "Resolve the errors below and try again."
+    "message": "قم بحل الأخطاء أدناه ثم حاول مرة أخرى."
   },
   "description": {
-    "message": "Description"
+    "message": "الوصف"
   },
   "importSuccess": {
-    "message": "Data successfully imported"
+    "message": "تم استيراد البيانات بنجاح"
   },
   "importSuccessNumberOfItems": {
-    "message": "A total of $AMOUNT$ items were imported.",
+    "message": "تم استيراد مجموع العناصر $AMOUNT$.",
     "placeholders": {
       "amount": {
         "content": "$1",
@@ -2460,10 +2460,10 @@
     }
   },
   "total": {
-    "message": "Total"
+    "message": "المجموع"
   },
   "importWarning": {
-    "message": "You are importing data to $ORGANIZATION$. Your data may be shared with members of this organization. Do you want to proceed?",
+    "message": "أنت تستورد البيانات إلى $ORGANIZATION$. قد يتم مشاركة بياناتك مع أعضاء هذه المؤسسة. هل تريد المتابعة؟",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -2472,31 +2472,31 @@
     }
   },
   "importFormatError": {
-    "message": "Data is not formatted correctly. Please check your import file and try again."
+    "message": "لم يتم تنسيق البيانات بشكل صحيح. الرجاء التحقق من ملف الاستيراد الخاص بك وحاول مرة أخرى."
   },
   "importNothingError": {
-    "message": "Nothing was imported."
+    "message": "لم يتم استيراد أي شيء."
   },
   "importEncKeyError": {
-    "message": "Error decrypting the exported file. Your encryption key does not match the encryption key used export the data."
+    "message": "خطأ في فك تشفير الملف المصدر. مفتاح التشفير الخاص بك لا يتطابق مع مفتاح التشفير المستخدم عند تصدير البيانات."
   },
   "invalidFilePassword": {
-    "message": "Invalid file password, please use the password you entered when you created the export file."
+    "message": "كلمة مرور الملف غير صالحة، الرجاء استخدام كلمة المرور التي أدخلتها عند إنشاء ملف التصدير."
   },
   "importDestination": {
-    "message": "Import destination"
+    "message": "وجهة الاستيراد"
   },
   "learnAboutImportOptions": {
-    "message": "Learn about your import options"
+    "message": "تعرف على خيارات الاستيراد الخاصة بك"
   },
   "selectImportFolder": {
-    "message": "Select a folder"
+    "message": "تحديد المجلد"
   },
   "selectImportCollection": {
-    "message": "Select a collection"
+    "message": "اختر مجموعة"
   },
   "importTargetHint": {
-    "message": "Select this option if you want the imported file contents moved to a $DESTINATION$",
+    "message": "حدد هذا الخيار إذا كنت تريد نقل محتويات الملف المستورد إلى $DESTINATION$",
     "description": "Located as a hint under the import target. Will be appended by either folder or collection, depending if the user is importing into an individual or an organizational vault.",
     "placeholders": {
       "destination": {
@@ -2506,25 +2506,25 @@
     }
   },
   "importUnassignedItemsError": {
-    "message": "File contains unassigned items."
+    "message": "الملف يحتوي على عناصر غير معينة."
   },
   "selectFormat": {
-    "message": "Select the format of the import file"
+    "message": "حدد تنسيق ملف الاستيراد"
   },
   "selectImportFile": {
-    "message": "Select the import file"
+    "message": "حدد ملف الاستيراد"
   },
   "chooseFile": {
-    "message": "Choose File"
+    "message": "اختيار ملف"
   },
   "noFileChosen": {
-    "message": "No file chosen"
+    "message": "لم يتم اختيار ملف"
   },
   "orCopyPasteFileContents": {
-    "message": "or copy/paste the import file contents"
+    "message": "او قم بنسخ ولصق محتويات مِلَفّ الاستيراد"
   },
   "instructionsFor": {
-    "message": "$NAME$ Instructions",
+    "message": "تعليمات $NAME$",
     "description": "The title for the import tool instructions.",
     "placeholders": {
       "name": {
@@ -2534,65 +2534,65 @@
     }
   },
   "confirmVaultImport": {
-    "message": "Confirm vault import"
+    "message": "تأكيد تصدير الخزنة"
   },
   "confirmVaultImportDesc": {
-    "message": "This file is password-protected. Please enter the file password to import data."
+    "message": "هذا الملف محمي بكلمة مرور. الرجاء إدخال كلمة مرور الملف لاستيراد البيانات."
   },
   "confirmFilePassword": {
-    "message": "Confirm file password"
+    "message": "تأكيد كلمة مرور الملف"
   },
   "multifactorAuthenticationCancelled": {
-    "message": "Multifactor authentication cancelled"
+    "message": "تم إلغاء المصادقة المتعددة"
   },
   "noLastPassDataFound": {
-    "message": "No LastPass data found"
+    "message": "لم يتم العثور على بيانات LastPass"
   },
   "incorrectUsernameOrPassword": {
-    "message": "Incorrect username or password"
+    "message": "اسم المستخدم أو كلمة المرور غير صحيحة"
   },
   "multifactorAuthenticationFailed": {
-    "message": "Multifactor authentication failed"
+    "message": "فشلت المصادقة المتعددة العوامل"
   },
   "includeSharedFolders": {
-    "message": "Include shared folders"
+    "message": "تضمين المجلدات المشتركة"
   },
   "lastPassEmail": {
-    "message": "LastPass Email"
+    "message": "بريد LastPass الإلكتروني"
   },
   "importingYourAccount": {
-    "message": "Importing your account..."
+    "message": "استيراد حسابك..."
   },
   "lastPassMFARequired": {
-    "message": "LastPass multifactor authentication required"
+    "message": "مطلوب المصادقة متعددة العوامل من LastPass"
   },
   "lastPassMFADesc": {
-    "message": "Enter your one-time passcode from your authentication app"
+    "message": "أدخل رمز المرور الخاص بك لمرة واحدة من تطبيق المصادقة الخاص بك"
   },
   "lastPassOOBDesc": {
-    "message": "Approve the login request in your authentication app or enter a one-time passcode."
+    "message": "الموافقة على طلب تسجيل الدخول في تطبيق المصادقة الخاص بك أو إدخال رمز مرور لمرة واحدة."
   },
   "passcode": {
-    "message": "Passcode"
+    "message": "رمز المرور"
   },
   "lastPassMasterPassword": {
-    "message": "LastPass master password"
+    "message": "كلمة المرور الرئيسية لـ LastPass"
   },
   "lastPassAuthRequired": {
-    "message": "LastPass authentication required"
+    "message": "مطلوب مصادقة LastPass"
   },
   "awaitingSSO": {
-    "message": "Awaiting SSO authentication"
+    "message": "في انتظار مصادقة SSO"
   },
   "awaitingSSODesc": {
-    "message": "Please continue to log in using your company credentials."
+    "message": "الرجاء الاستمرار في تسجيل الدخول باستخدام بيانات اعتماد الشركة الخاصة بك."
   },
   "seeDetailedInstructions": {
-    "message": "See detailed instructions on our help site at",
+    "message": "راجع التعليمات المفصلة في موقع المساعدة الخاص بنا في",
     "description": "This is followed a by a hyperlink to the help website."
   },
   "importDirectlyFromLastPass": {
-    "message": "Import directly from LastPass"
+    "message": "استيراد مباشرة من LastPass"
   },
   "importFromCSV": {
     "message": "Import from CSV"
