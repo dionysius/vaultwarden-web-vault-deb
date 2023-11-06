@@ -1,6 +1,6 @@
 import { ipcRenderer } from "electron";
 
-import { DeviceType, ThemeType } from "@bitwarden/common/enums";
+import { DeviceType, ThemeType, KeySuffixOptions } from "@bitwarden/common/enums";
 
 import { BiometricMessage, BiometricAction } from "../types/biometric-message";
 import { isDev, isWindowsStore } from "../utils";
@@ -29,6 +29,13 @@ const passwords = {
 };
 
 const biometric = {
+  enabled: (userId: string): Promise<boolean> =>
+    ipcRenderer.invoke("biometric", {
+      action: BiometricAction.EnabledForUser,
+      key: `${userId}_user_biometric`,
+      keySuffix: KeySuffixOptions.Biometric,
+      userId: userId,
+    } satisfies BiometricMessage),
   osSupported: (): Promise<boolean> =>
     ipcRenderer.invoke("biometric", {
       action: BiometricAction.OsSupported,
@@ -57,6 +64,8 @@ export default {
   onSystemThemeUpdated: (callback: (theme: ThemeType) => void) => {
     ipcRenderer.on("systemThemeUpdated", (_event, theme: ThemeType) => callback(theme));
   },
+
+  isWindowVisible: (): Promise<boolean> => ipcRenderer.invoke("windowVisible"),
 
   getLanguageFile: (formattedLocale: string): Promise<object> =>
     ipcRenderer.invoke("getLanguageFile", formattedLocale),
