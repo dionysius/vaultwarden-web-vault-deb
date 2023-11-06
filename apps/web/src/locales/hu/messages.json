@@ -1545,6 +1545,9 @@
   "manage": {
     "message": "Kezelés"
   },
+  "canManage": {
+    "message": "Kezelhet"
+  },
   "disable": {
     "message": "Letiltás"
   },
@@ -3460,6 +3463,9 @@
   },
   "subscriptionUpdated": {
     "message": "Az előfizetés frissítésre került."
+  },
+  "subscribedToSecretsManager": {
+    "message": "Az előfizetés frissítésre került. Mostantól hozzáférés van a Tikos kód kezelőhöz."
   },
   "additionalOptions": {
     "message": "Kiegészítő opciók"
@@ -7218,6 +7224,18 @@
       }
     }
   },
+  "collectionManagement": {
+    "message": "Gyűjtemény kezelés"
+  },
+  "collectionManagementDesc": {
+    "message": "Gyűjtési viselkedést kezelhet a szervezetnek"
+  },
+  "limitCollectionCreationDeletionDesc": {
+    "message": "A gyűjtemény létrehozásának és törlésének korlátozása tulajdonosokra és adminisztrátorokra"
+  },
+  "collectionManagementUpdated": {
+    "message": "A gyűjtemény kezelési viselkedés mentésre került."
+  },
   "passwordManagerPlanPrice": {
     "message": "Jelszókezelő csomag ár"
   },
@@ -7264,6 +7282,12 @@
   "beta": {
     "message": "Béta"
   },
+  "assignCollectionAccess": {
+    "message": "Gyűjtemény elérés hozzárendelése"
+  },
+  "editedCollections": {
+    "message": "Szerkesztett gyűjtemények"
+  },
   "baseUrl": {
     "message": "Szerver webcím"
   },
@@ -7272,6 +7296,15 @@
   },
   "alreadyHaveAccount": {
     "message": "Van már saját fiók?"
+  },
+  "customBillingStart": {
+    "message": "Az egyedi számlázás nem jelenik meg. Keressük fel "
+  },
+  "customBillingEnd": {
+    "message": " oldalt a legújabb számlázásért."
+  },
+  "managePermissionRequired": {
+    "message": "Legalább egy tagnak vagy csoportnak rendelkeznie kell kezelési engedéllyel."
   },
   "typePasskey": {
     "message": "Hozzáférési kulcs"

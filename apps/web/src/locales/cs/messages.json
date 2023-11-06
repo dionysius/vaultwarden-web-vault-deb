@@ -1545,6 +1545,9 @@
   "manage": {
     "message": "Spravovat"
   },
+  "canManage": {
+    "message": "Může spravovat"
+  },
   "disable": {
     "message": "Vypnout"
   },
@@ -3460,6 +3463,9 @@
   },
   "subscriptionUpdated": {
     "message": "Předplatné bylo aktualizováno"
+  },
+  "subscribedToSecretsManager": {
+    "message": "Předplatné bylo aktualizováno. Nyní máte přístup ke správci tajných klíčů."
   },
   "additionalOptions": {
     "message": "Další volby"
@@ -7218,6 +7224,18 @@
       }
     }
   },
+  "collectionManagement": {
+    "message": "Správa kolekce"
+  },
+  "collectionManagementDesc": {
+    "message": "Spravuje chování kolekce pro organizaci"
+  },
+  "limitCollectionCreationDeletionDesc": {
+    "message": "Omezí vytváření a mazání kolekce na vlastníky a správce"
+  },
+  "collectionManagementUpdated": {
+    "message": "Chování správy kolekce bylo uloženo"
+  },
   "passwordManagerPlanPrice": {
     "message": "Cena předplatného správce hesel"
   },
@@ -7264,6 +7282,12 @@
   "beta": {
     "message": "Beta"
   },
+  "assignCollectionAccess": {
+    "message": "Přiřadit přístup ke kolekci"
+  },
+  "editedCollections": {
+    "message": "Upravené kolekce"
+  },
   "baseUrl": {
     "message": "URL serveru"
   },
@@ -7272,6 +7296,15 @@
   },
   "alreadyHaveAccount": {
     "message": "Už máte účet?"
+  },
+  "customBillingStart": {
+    "message": "Vlastní fakturace není zahrnuta. Navštivte stránku "
+  },
+  "customBillingEnd": {
+    "message": " pro nejnovější faktury."
+  },
+  "managePermissionRequired": {
+    "message": "Alespoň jeden člen nebo skupina musí mít možnost spravovat oprávnění."
   },
   "typePasskey": {
     "message": "Přístupový klíč"

@@ -1545,6 +1545,9 @@
   "manage": {
     "message": "Управљати"
   },
+  "canManage": {
+    "message": "Can manage"
+  },
   "disable": {
     "message": "Онемогући"
   },
@@ -3461,6 +3464,9 @@
   "subscriptionUpdated": {
     "message": "Претплата је ажурирана"
   },
+  "subscribedToSecretsManager": {
+    "message": "Subscription updated. You now have access to Secrets Manager."
+  },
   "additionalOptions": {
     "message": "Додатне опције"
   },
@@ -3996,7 +4002,7 @@
     "message": "SSO идентификација"
   },
   "ssoIdentifierHintPartOne": {
-    "message": "Provide this ID to your members to login with SSO. To bypass this step, set up ",
+    "message": "Дајте овај ИД својим члановима да се пријаве са ССО. Да бисте заобишли овај корак, подесите ",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Provide this ID to your members to login with SSO. To bypass this step, set up Domain verification'"
   },
   "unlinkSso": {
@@ -7218,6 +7224,18 @@
       }
     }
   },
+  "collectionManagement": {
+    "message": "Collection management"
+  },
+  "collectionManagementDesc": {
+    "message": "Manage the collection behavior for the organization"
+  },
+  "limitCollectionCreationDeletionDesc": {
+    "message": "Limit collection creation and deletion to owners and admins"
+  },
+  "collectionManagementUpdated": {
+    "message": "Collection management behavior saved"
+  },
   "passwordManagerPlanPrice": {
     "message": "Цена плана менаџера лозинки"
   },
@@ -7264,6 +7282,12 @@
   "beta": {
     "message": "Бета"
   },
+  "assignCollectionAccess": {
+    "message": "Assign collection access"
+  },
+  "editedCollections": {
+    "message": "Edited collections"
+  },
   "baseUrl": {
     "message": "УРЛ Сервера"
   },
@@ -7272,6 +7296,15 @@
   },
   "alreadyHaveAccount": {
     "message": "Већ имате налог?"
+  },
+  "customBillingStart": {
+    "message": "Custom billing is not reflected. Visit the "
+  },
+  "customBillingEnd": {
+    "message": " page for latest invoicing."
+  },
+  "managePermissionRequired": {
+    "message": "At least one member or group must have can manage permission."
   },
   "typePasskey": {
     "message": "Приступачни кључ"
@@ -7283,7 +7316,7 @@
     "message": "Приступачни кључ неће бити копиран на клонирану ставку. Да ли желите да наставите са клонирањем ставке?"
   },
   "seeDetailedInstructions": {
-    "message": "See detailed instructions on our help site at",
+    "message": "Погледајте детаљна упутства на нашој веб локацији за помоћ на",
     "description": "This is followed a by a hyperlink to the help website."
   }
 }

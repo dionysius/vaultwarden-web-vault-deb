@@ -612,43 +612,43 @@
     "message": "Ana parola ile giriş yap"
   },
   "loginWithPasskey": {
-    "message": "Şifreyle giriş yapın"
+    "message": "Geçiş anahtarıyla giriş yap"
   },
   "loginWithPasskeyInfo": {
-    "message": "Parola olmadan otomatik olarak oturum açmanızı sağlayacak oluşturulmuş bir geçiş anahtarı kullanın. Yüz tanıma veya parmak izi gibi biyometri veya başka bir FIDO2 güvenlik yöntemi kimliğinizi doğrulayacaktır."
+    "message": "Parola kullanmadan otomatik olarak giriş yapmanızı sağlayacak bir geçiş anahtarı kullanabilirsiniz. Kimliğinizi doğrulamak için yüz tanıma veya parmak izi gibi biyometri özellikleri ya da başka bir FIDO2 güvenlik yöntemi kullanılacaktır."
   },
   "newPasskey": {
-    "message": "Yeni şifre"
+    "message": "Yeni geçiş anahtarı"
   },
   "learnMoreAboutPasswordless": {
-    "message": "Şifresiz giriş hakkında daha fazla bilgi"
+    "message": "Parolasız giriş hakkında bilgi alın"
   },
   "passkeyEnterMasterPassword": {
-    "message": "Şifre anahtarıyla oturum açma ayarlarını değiştirmek için ana şifrenizi girin."
+    "message": "Parola anahtarıyla giriş ayarlarını değiştirmek için ana parolanızı girin."
   },
   "creatingPasskeyLoading": {
     "message": "Geçiş anahtarı oluşturuluyor..."
   },
   "creatingPasskeyLoadingInfo": {
-    "message": "Bu pencereyi açık tutun ve tarayıcınızdan gelen talimatları izleyin."
+    "message": "Bu pencereyi açık tutun ve tarayıcınızdan gelen talimatları uygulayın."
   },
   "errorCreatingPasskey": {
     "message": "Geçiş anahtarı oluşturulurken hata oluştu"
   },
   "errorCreatingPasskeyInfo": {
-    "message": "Şifreniz oluşturulurken bir sorun oluştu."
+    "message": "Geçiş anahtarınız oluşturulurken bir sorun oluştu."
   },
   "passkeySuccessfullyCreated": {
-    "message": "Geçiş anahtarı başarıyla oluşturuldu!"
+    "message": "Geçiş anahtarı başarıyla oluşturuldu."
   },
   "customName": {
-    "message": "Custom name"
+    "message": "Özel ad"
   },
   "customPasskeyNameInfo": {
     "message": "Name your passkey to help you identify it."
   },
   "encryptionNotSupported": {
-    "message": "Encryption not supported"
+    "message": "Şifreleme desteklenmiyor"
   },
   "loginWithPasskeyEnabled": {
     "message": "Log in with passkey turned on"
@@ -663,10 +663,10 @@
     }
   },
   "passkeyRemoved": {
-    "message": "Passkey removed"
+    "message": "Geçiş anahtarı kaldırıldı"
   },
   "removePasskey": {
-    "message": "Remove passkey"
+    "message": "Geçiş anahtarını kaldır"
   },
   "removePasskeyInfo": {
     "message": "If all passkeys are removed, you will be unable to log into new devices without your master password."
@@ -1379,7 +1379,7 @@
     }
   },
   "importUnassignedItemsError": {
-    "message": "File contains unassigned items."
+    "message": "Dosya atanmamış öğeler içeriyor."
   },
   "selectFormat": {
     "message": "İçe aktarma dosyasının biçimini seçin"
@@ -1544,6 +1544,9 @@
   },
   "manage": {
     "message": "Yönet"
+  },
+  "canManage": {
+    "message": "Yönetebilir"
   },
   "disable": {
     "message": "Kapat"
@@ -3460,6 +3463,9 @@
   },
   "subscriptionUpdated": {
     "message": "Abonelik güncellendi"
+  },
+  "subscribedToSecretsManager": {
+    "message": "Abonelik güncellendi. Artık Secrets Manager'a erişebilirsiniz."
   },
   "additionalOptions": {
     "message": "Ek seçenekler"
@@ -7091,7 +7097,7 @@
     }
   },
   "requestedDeviceApproval": {
-    "message": "Requested device approval."
+    "message": "Cihaz onayı istendi."
   },
   "startYour7DayFreeTrialOfBitwardenFor": {
     "message": "7 günlük ücretsiz $ORG$ için Bitwarden denemenizi başlatın",
@@ -7218,6 +7224,18 @@
       }
     }
   },
+  "collectionManagement": {
+    "message": "Collection management"
+  },
+  "collectionManagementDesc": {
+    "message": "Kuruluş için toplama davranışını yönetin"
+  },
+  "limitCollectionCreationDeletionDesc": {
+    "message": "Koleksiyon oluşturma ve silme işlemlerini sahipler ve yöneticilerle sınırlandırın"
+  },
+  "collectionManagementUpdated": {
+    "message": "Collection management behavior saved"
+  },
   "passwordManagerPlanPrice": {
     "message": "Password Manager plan price"
   },
@@ -7264,6 +7282,12 @@
   "beta": {
     "message": "Beta"
   },
+  "assignCollectionAccess": {
+    "message": "Assign collection access"
+  },
+  "editedCollections": {
+    "message": "Edited collections"
+  },
   "baseUrl": {
     "message": "Sunucu URL'si"
   },
@@ -7273,14 +7297,23 @@
   "alreadyHaveAccount": {
     "message": "Zaten hesabınız var mı?"
   },
+  "customBillingStart": {
+    "message": "Özel faturalandırma yansıtılmıyor. Ziyaret edin "
+  },
+  "customBillingEnd": {
+    "message": " en son faturalandırma sayfası."
+  },
+  "managePermissionRequired": {
+    "message": "En az bir üyenin veya grubun yönetebilme iznine sahip olması gerekir."
+  },
   "typePasskey": {
     "message": "Geçiş anahtarı"
   },
   "passkeyNotCopied": {
-    "message": "Passkey will not be copied"
+    "message": "Geçiş anahtarı kopyalanmayacak"
   },
   "passkeyNotCopiedAlert": {
-    "message": "The passkey will not be copied to the cloned item. Do you want to continue cloning this item?"
+    "message": "Geçiş anahtarı klonlanan öğeye kopyalanmayacaktır. Bu öğeyi klonlamaya devam etmek istiyor musunuz?"
   },
   "seeDetailedInstructions": {
     "message": "Ayrıntılı talimatları yardım sitemizde bulabilirsiniz:",

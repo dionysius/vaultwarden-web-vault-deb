@@ -1545,6 +1545,9 @@
   "manage": {
     "message": "مدیریت"
   },
+  "canManage": {
+    "message": "Can manage"
+  },
   "disable": {
     "message": "خاموش کردن"
   },
@@ -3460,6 +3463,9 @@
   },
   "subscriptionUpdated": {
     "message": "اشتراک به‌روز شد"
+  },
+  "subscribedToSecretsManager": {
+    "message": "Subscription updated. You now have access to Secrets Manager."
   },
   "additionalOptions": {
     "message": "گزینه‌های اضافی"
@@ -7218,6 +7224,18 @@
       }
     }
   },
+  "collectionManagement": {
+    "message": "Collection management"
+  },
+  "collectionManagementDesc": {
+    "message": "Manage the collection behavior for the organization"
+  },
+  "limitCollectionCreationDeletionDesc": {
+    "message": "Limit collection creation and deletion to owners and admins"
+  },
+  "collectionManagementUpdated": {
+    "message": "Collection management behavior saved"
+  },
   "passwordManagerPlanPrice": {
     "message": "قیمت طرح مدیریت کلمه عبور"
   },
@@ -7264,6 +7282,12 @@
   "beta": {
     "message": "آزمایشی"
   },
+  "assignCollectionAccess": {
+    "message": "Assign collection access"
+  },
+  "editedCollections": {
+    "message": "Edited collections"
+  },
   "baseUrl": {
     "message": "نشانی اینترنتی سرور"
   },
@@ -7272,6 +7296,15 @@
   },
   "alreadyHaveAccount": {
     "message": "پیشتر حساب کاربری داشته اید؟"
+  },
+  "customBillingStart": {
+    "message": "Custom billing is not reflected. Visit the "
+  },
+  "customBillingEnd": {
+    "message": " page for latest invoicing."
+  },
+  "managePermissionRequired": {
+    "message": "At least one member or group must have can manage permission."
   },
   "typePasskey": {
     "message": "کلید عبور"

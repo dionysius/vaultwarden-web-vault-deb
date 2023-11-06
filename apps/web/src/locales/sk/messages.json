@@ -1545,6 +1545,9 @@
   "manage": {
     "message": "Spravovať"
   },
+  "canManage": {
+    "message": "Môže spravovať"
+  },
   "disable": {
     "message": "Vypnúť"
   },
@@ -3460,6 +3463,9 @@
   },
   "subscriptionUpdated": {
     "message": "Predplatené bolo aktualizované"
+  },
+  "subscribedToSecretsManager": {
+    "message": "Predplatné aktualizované. Teraz máte prístup k Secrets Manager."
   },
   "additionalOptions": {
     "message": "Ďalšie možnosti"
@@ -7218,6 +7224,18 @@
       }
     }
   },
+  "collectionManagement": {
+    "message": "Správa zbierky"
+  },
+  "collectionManagementDesc": {
+    "message": "Spravovať správanie zbierky pre organizáciu"
+  },
+  "limitCollectionCreationDeletionDesc": {
+    "message": "Obmedziť vytváranie a vymazávanie zbierky len pre vlastníkov a administrátorov"
+  },
+  "collectionManagementUpdated": {
+    "message": "Nastavenie správy zbierky uložené"
+  },
   "passwordManagerPlanPrice": {
     "message": "Cena plánu Správcu Hesiel"
   },
@@ -7264,6 +7282,12 @@
   "beta": {
     "message": "Beta"
   },
+  "assignCollectionAccess": {
+    "message": "Udeliť prístup k zbierke"
+  },
+  "editedCollections": {
+    "message": "Zbierky upravené"
+  },
   "baseUrl": {
     "message": "URL servera"
   },
@@ -7272,6 +7296,15 @@
   },
   "alreadyHaveAccount": {
     "message": "Už máte účet?"
+  },
+  "customBillingStart": {
+    "message": "Vlastná fakturácia sa nezohľadňuje. Navštívte "
+  },
+  "customBillingEnd": {
+    "message": " stránku pre posledné faktúry."
+  },
+  "managePermissionRequired": {
+    "message": "Aspoň jeden člen alebo skupina musí mať povolenie pre správu."
   },
   "typePasskey": {
     "message": "Passkey"

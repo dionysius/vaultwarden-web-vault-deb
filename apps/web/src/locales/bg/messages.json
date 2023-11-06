@@ -1545,6 +1545,9 @@
   "manage": {
     "message": "Управление"
   },
+  "canManage": {
+    "message": "Може да управлява"
+  },
   "disable": {
     "message": "Изключване"
   },
@@ -3460,6 +3463,9 @@
   },
   "subscriptionUpdated": {
     "message": "Абонаментът е обновен"
+  },
+  "subscribedToSecretsManager": {
+    "message": "Абонаментът е обновен. Вече имате достъп до Управлението на тайни."
   },
   "additionalOptions": {
     "message": "Допълнителни настройки"
@@ -7218,6 +7224,18 @@
       }
     }
   },
+  "collectionManagement": {
+    "message": "Управление на колекциите"
+  },
+  "collectionManagementDesc": {
+    "message": "Управление на поведението на колекциите за организацията"
+  },
+  "limitCollectionCreationDeletionDesc": {
+    "message": "Ограничаване на създаването и изтриването на колекции, така че да може да се извършва само от собствениците и администраторите"
+  },
+  "collectionManagementUpdated": {
+    "message": "Поведението за управлението на колекциите е запазено"
+  },
   "passwordManagerPlanPrice": {
     "message": "Цена на плана за Управителя на пароли"
   },
@@ -7264,6 +7282,12 @@
   "beta": {
     "message": "Бета"
   },
+  "assignCollectionAccess": {
+    "message": "Задаване на достъп за колекциите"
+  },
+  "editedCollections": {
+    "message": "Редактирани колекции"
+  },
   "baseUrl": {
     "message": "Адрес на сървъра"
   },
@@ -7272,6 +7296,15 @@
   },
   "alreadyHaveAccount": {
     "message": "Вече имате регистрация?"
+  },
+  "customBillingStart": {
+    "message": "Персонализираното таксуване не е отразено. Посетете страницата за "
+  },
+  "customBillingEnd": {
+    "message": " за последните фактури."
+  },
+  "managePermissionRequired": {
+    "message": "Поне един член или група трябва да има правото за управление."
   },
   "typePasskey": {
     "message": "Секретен ключ"

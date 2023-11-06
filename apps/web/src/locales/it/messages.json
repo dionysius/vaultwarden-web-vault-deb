@@ -1545,6 +1545,9 @@
   "manage": {
     "message": "Gestisci"
   },
+  "canManage": {
+    "message": "Può gestire"
+  },
   "disable": {
     "message": "Disattiva"
   },
@@ -3460,6 +3463,9 @@
   },
   "subscriptionUpdated": {
     "message": "Abbonamento aggiornato"
+  },
+  "subscribedToSecretsManager": {
+    "message": "Abbonamento aggiornato. Ora hai accesso al Gestore dei Segreti."
   },
   "additionalOptions": {
     "message": "Opzioni aggiuntive"
@@ -7218,6 +7224,18 @@
       }
     }
   },
+  "collectionManagement": {
+    "message": "Gestione della raccolta"
+  },
+  "collectionManagementDesc": {
+    "message": "Gestisci il comportamento delle raccolte per l'organizzazione"
+  },
+  "limitCollectionCreationDeletionDesc": {
+    "message": "Limita la creazione e l'eliminazione delle raccolte a proprietari e amministratori"
+  },
+  "collectionManagementUpdated": {
+    "message": "Gestione del comportamento delle raccolte salvato"
+  },
   "passwordManagerPlanPrice": {
     "message": "Prezzo del piano del gestore di password"
   },
@@ -7264,6 +7282,12 @@
   "beta": {
     "message": "Beta"
   },
+  "assignCollectionAccess": {
+    "message": "Assegna accesso alla raccolta"
+  },
+  "editedCollections": {
+    "message": "Raccolte modificate"
+  },
   "baseUrl": {
     "message": "URL del server"
   },
@@ -7272,6 +7296,15 @@
   },
   "alreadyHaveAccount": {
     "message": "Hai già un account?"
+  },
+  "customBillingStart": {
+    "message": "La fatturazione personalizzata non è contabilizzata. Visita la "
+  },
+  "customBillingEnd": {
+    "message": " pagina per l'ultima fatturazione."
+  },
+  "managePermissionRequired": {
+    "message": "Almeno un membro o gruppo deve avere l'autorizzazione \"può gestire\"."
   },
   "typePasskey": {
     "message": "Passkey"

@@ -1545,6 +1545,9 @@
   "manage": {
     "message": "Hallitse"
   },
+  "canManage": {
+    "message": "Voi hallita"
+  },
   "disable": {
     "message": "Poista käytöstä"
   },
@@ -3460,6 +3463,9 @@
   },
   "subscriptionUpdated": {
     "message": "Tilaus päivitettiin"
+  },
+  "subscribedToSecretsManager": {
+    "message": "Tilauksesi on päivitetty. Voit nyt käyttää Salaisuushallintaa."
   },
   "additionalOptions": {
     "message": "Lisävalinnat"
@@ -7218,6 +7224,18 @@
       }
     }
   },
+  "collectionManagement": {
+    "message": "Kokoelmien hallinta"
+  },
+  "collectionManagementDesc": {
+    "message": "Hallinnoi organisaation kokoelmien käyttäytymistä."
+  },
+  "limitCollectionCreationDeletionDesc": {
+    "message": "Rajoita kokoelmien luonti ja poisto omistajille ja ylläpitäjille."
+  },
+  "collectionManagementUpdated": {
+    "message": "Kokoelmien hallintakäyttäytyminen tallennettiin"
+  },
   "passwordManagerPlanPrice": {
     "message": "Salasanahallinnan tilauksen hinta"
   },
@@ -7264,6 +7282,12 @@
   "beta": {
     "message": "Beta"
   },
+  "assignCollectionAccess": {
+    "message": "Määritä kokoelmien käyttöoikeus"
+  },
+  "editedCollections": {
+    "message": "Muokkasi kokoelmia"
+  },
   "baseUrl": {
     "message": "Palvelimen URL"
   },
@@ -7272,6 +7296,15 @@
   },
   "alreadyHaveAccount": {
     "message": "Onko sinulla jo tili?"
+  },
+  "customBillingStart": {
+    "message": "Mukautettua laskutusta ei ole huomioitu. Löydät viimeisimmän laskutuksen "
+  },
+  "customBillingEnd": {
+    "message": " -sivulta."
+  },
+  "managePermissionRequired": {
+    "message": "Ainakin yhdellä jäsenellä tai ryhmällä on oltava \"Voi hallita\" -oikeus."
   },
   "typePasskey": {
     "message": "Suojausavain"
@@ -7283,7 +7316,7 @@
     "message": "Suojausavain ei kopioidu kloonattuun kohteeseen. Haluatko jatkaa kloonausta?"
   },
   "seeDetailedInstructions": {
-    "message": "See detailed instructions on our help site at",
+    "message": "Katso tarkemmat ohjeet tukisivustoltamme osoitteesta",
     "description": "This is followed a by a hyperlink to the help website."
   }
 }

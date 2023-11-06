@@ -1545,6 +1545,9 @@
   "manage": {
     "message": "Beheren"
   },
+  "canManage": {
+    "message": "Kan beheren"
+  },
   "disable": {
     "message": "Uitschakelen"
   },
@@ -3460,6 +3463,9 @@
   },
   "subscriptionUpdated": {
     "message": "Abonnement bijgewerkt"
+  },
+  "subscribedToSecretsManager": {
+    "message": "Abonnement bijgewerkt. Je heb nu toegang tot Secrets Manager."
   },
   "additionalOptions": {
     "message": "Extra opties"
@@ -7218,6 +7224,18 @@
       }
     }
   },
+  "collectionManagement": {
+    "message": "Collectiebeheer"
+  },
+  "collectionManagementDesc": {
+    "message": "Het gedrag van de collectie beheren voor de organisatie"
+  },
+  "limitCollectionCreationDeletionDesc": {
+    "message": "Aanmaken en verwijderen van collecties tot eigenaren en managers beperken"
+  },
+  "collectionManagementUpdated": {
+    "message": "Collectiebeheergedrag opgeslagen"
+  },
   "passwordManagerPlanPrice": {
     "message": "Abonnementskosten wachtwoordbeheerder"
   },
@@ -7264,6 +7282,12 @@
   "beta": {
     "message": "Beta"
   },
+  "assignCollectionAccess": {
+    "message": "Toegang collectie toewijzen"
+  },
+  "editedCollections": {
+    "message": "Bewerkte collecties"
+  },
   "baseUrl": {
     "message": "Server-URL"
   },
@@ -7272,6 +7296,15 @@
   },
   "alreadyHaveAccount": {
     "message": "Already have an account?"
+  },
+  "customBillingStart": {
+    "message": "Aangepaste facturering is niet weergeven. Bezoek de "
+  },
+  "customBillingEnd": {
+    "message": " pagina voor de laatste factuur."
+  },
+  "managePermissionRequired": {
+    "message": "Minimaal één lid of groep moet permissies kunnen beheren."
   },
   "typePasskey": {
     "message": "Passkey"

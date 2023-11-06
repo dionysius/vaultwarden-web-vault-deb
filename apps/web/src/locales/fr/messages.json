@@ -1545,6 +1545,9 @@
   "manage": {
     "message": "Gérer"
   },
+  "canManage": {
+    "message": "Peut gérer"
+  },
   "disable": {
     "message": "Désactiver"
   },
@@ -3460,6 +3463,9 @@
   },
   "subscriptionUpdated": {
     "message": "Abonnement mis à jour"
+  },
+  "subscribedToSecretsManager": {
+    "message": "Abonnement mis à jour. Vous avez maintenant accès au Secrets Manager."
   },
   "additionalOptions": {
     "message": "Options supplémentaires"
@@ -7218,6 +7224,18 @@
       }
     }
   },
+  "collectionManagement": {
+    "message": "Gestion de la collection"
+  },
+  "collectionManagementDesc": {
+    "message": "Gérer le comportement de la collection pour l'organisation"
+  },
+  "limitCollectionCreationDeletionDesc": {
+    "message": "Limiter la création et la suppression de la collection aux propriétaires et administrateurs"
+  },
+  "collectionManagementUpdated": {
+    "message": "Comportement de gestion de la collection enregistré"
+  },
   "passwordManagerPlanPrice": {
     "message": "Prix du plan du Gestionnaire de Mots de Passe"
   },
@@ -7264,6 +7282,12 @@
   "beta": {
     "message": "Beta"
   },
+  "assignCollectionAccess": {
+    "message": "Assigner l'accès à la collection"
+  },
+  "editedCollections": {
+    "message": "Collections modifiées"
+  },
   "baseUrl": {
     "message": "URL du serveur"
   },
@@ -7272,6 +7296,15 @@
   },
   "alreadyHaveAccount": {
     "message": "Vous avez déjà un compte ?"
+  },
+  "customBillingStart": {
+    "message": "La facturation personnalisée n'est pas reflétée. Visitez la "
+  },
+  "customBillingEnd": {
+    "message": " page pour la dernière facturation."
+  },
+  "managePermissionRequired": {
+    "message": "Au moins un membre ou un groupe doit avoir la permission peut gérer."
   },
   "typePasskey": {
     "message": "Passkey"

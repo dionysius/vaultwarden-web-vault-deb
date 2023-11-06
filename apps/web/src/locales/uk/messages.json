@@ -1545,6 +1545,9 @@
   "manage": {
     "message": "Керувати"
   },
+  "canManage": {
+    "message": "Може керувати"
+  },
   "disable": {
     "message": "Вимкнути"
   },
@@ -3460,6 +3463,9 @@
   },
   "subscriptionUpdated": {
     "message": "Передплату оновлено"
+  },
+  "subscribedToSecretsManager": {
+    "message": "Передплату оновлено. Тепер ви маєте доступ до менеджера секретів."
   },
   "additionalOptions": {
     "message": "Додаткові налаштування"
@@ -7218,6 +7224,18 @@
       }
     }
   },
+  "collectionManagement": {
+    "message": "Керування збіркою"
+  },
+  "collectionManagementDesc": {
+    "message": "Керувати налаштуваннями збірок для організації"
+  },
+  "limitCollectionCreationDeletionDesc": {
+    "message": "Дозволити створення та видалення збірок лише власникам та адміністраторам"
+  },
+  "collectionManagementUpdated": {
+    "message": "Налаштування керування збірками збережено"
+  },
   "passwordManagerPlanPrice": {
     "message": "Ціна плану менеджера паролів"
   },
@@ -7264,6 +7282,12 @@
   "beta": {
     "message": "Бета"
   },
+  "assignCollectionAccess": {
+    "message": "Призначити доступ до збірки"
+  },
+  "editedCollections": {
+    "message": "Відредаговані збірки"
+  },
   "baseUrl": {
     "message": "URL-адреса сервера"
   },
@@ -7272,6 +7296,15 @@
   },
   "alreadyHaveAccount": {
     "message": "Вже маєте обліковий запис?"
+  },
+  "customBillingStart": {
+    "message": "Власний рахунок не відображений. Відвідайте "
+  },
+  "customBillingEnd": {
+    "message": " для отримання останнього рахунку."
+  },
+  "managePermissionRequired": {
+    "message": "Принаймні один учасник або група повинні мати можливість керувати дозволами."
   },
   "typePasskey": {
     "message": "Ключ доступу"

@@ -1545,6 +1545,9 @@
   "manage": {
     "message": "Pārvaldīt"
   },
+  "canManage": {
+    "message": "Var pārvaldīt"
+  },
   "disable": {
     "message": "Atspējot"
   },
@@ -3460,6 +3463,9 @@
   },
   "subscriptionUpdated": {
     "message": "Abonements atjaunināts"
+  },
+  "subscribedToSecretsManager": {
+    "message": "Abonements ir atjaunināts. Tagad ir piekļuve Noslēpumu pārvaldniekam."
   },
   "additionalOptions": {
     "message": "Papildu iespējas"
@@ -7218,6 +7224,18 @@
       }
     }
   },
+  "collectionManagement": {
+    "message": "Krājumu pārvaldība"
+  },
+  "collectionManagementDesc": {
+    "message": "Krājumu uzvedības pārvaldība apvienībā"
+  },
+  "limitCollectionCreationDeletionDesc": {
+    "message": "Ļaut krājumu izveidošanu un izdzēšanu tikai īpašniekiem un pārvaldniekiem"
+  },
+  "collectionManagementUpdated": {
+    "message": "Krājumu pārvaldības uzvedība saglabāta"
+  },
   "passwordManagerPlanPrice": {
     "message": "Paroļu pārvaldnieka plāna cena"
   },
@@ -7264,6 +7282,12 @@
   "beta": {
     "message": "Beta"
   },
+  "assignCollectionAccess": {
+    "message": "Piešķirt krājumu piekļuvi"
+  },
+  "editedCollections": {
+    "message": "Labotie krājumi"
+  },
   "baseUrl": {
     "message": "Servera URL"
   },
@@ -7272,6 +7296,15 @@
   },
   "alreadyHaveAccount": {
     "message": "Jau ir konts?"
+  },
+  "customBillingStart": {
+    "message": "Pielāgotie norēķini nav atspoguļoti. Jāapmeklē "
+  },
+  "customBillingEnd": {
+    "message": " sadaļu, lai gūtu ieskatu par jaunākajiem rēķiniem."
+  },
+  "managePermissionRequired": {
+    "message": "Vismaz vienam dalībniekam vai grupai ir jābūt atļaujai \"var pārvaldīt\"."
   },
   "typePasskey": {
     "message": "Piekļuves atslēga"

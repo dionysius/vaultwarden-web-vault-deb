@@ -1545,6 +1545,9 @@
   "manage": {
     "message": "Управление"
   },
+  "canManage": {
+    "message": "Может управлять"
+  },
   "disable": {
     "message": "Отключить"
   },
@@ -3460,6 +3463,9 @@
   },
   "subscriptionUpdated": {
     "message": "Подписка обновлена"
+  },
+  "subscribedToSecretsManager": {
+    "message": "Подписка обновлена. Теперь у вас есть доступ к Менеджеру секретов."
   },
   "additionalOptions": {
     "message": "Дополнительные настройки"
@@ -7218,6 +7224,18 @@
       }
     }
   },
+  "collectionManagement": {
+    "message": "Управление коллекцией"
+  },
+  "collectionManagementDesc": {
+    "message": "Управление настройками коллекций для организации"
+  },
+  "limitCollectionCreationDeletionDesc": {
+    "message": "Ограничить создание и удаление коллекций владельцам и администраторам"
+  },
+  "collectionManagementUpdated": {
+    "message": "Настройки управления коллекциями сохранены"
+  },
   "passwordManagerPlanPrice": {
     "message": "Стоимость плана Менеджер паролей"
   },
@@ -7264,6 +7282,12 @@
   "beta": {
     "message": "Beta"
   },
+  "assignCollectionAccess": {
+    "message": "Назначить доступ к коллекциям"
+  },
+  "editedCollections": {
+    "message": "Изменение коллекции"
+  },
   "baseUrl": {
     "message": "URL сервера"
   },
@@ -7272,6 +7296,15 @@
   },
   "alreadyHaveAccount": {
     "message": "Уже зарегистрированы?"
+  },
+  "customBillingStart": {
+    "message": "Пользовательские счета не отображаются. Посетите страницу "
+  },
+  "customBillingEnd": {
+    "message": " для получения последней информации о выставлении счетов."
+  },
+  "managePermissionRequired": {
+    "message": "Как минимум один участник или группа должны иметь разрешение 'Может управлять'."
   },
   "typePasskey": {
     "message": "Ключ доступа"

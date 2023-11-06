@@ -1545,6 +1545,9 @@
   "manage": {
     "message": "Zarządzaj"
   },
+  "canManage": {
+    "message": "Może zarządzać"
+  },
   "disable": {
     "message": "Wyłącz"
   },
@@ -3460,6 +3463,9 @@
   },
   "subscriptionUpdated": {
     "message": "Subskrypcja została zaktualizowana"
+  },
+  "subscribedToSecretsManager": {
+    "message": "Subskrypcja zaktualizowana. Masz teraz dostęp do Menedżera Sekretów."
   },
   "additionalOptions": {
     "message": "Dodatkowe opcje"
@@ -7218,6 +7224,18 @@
       }
     }
   },
+  "collectionManagement": {
+    "message": "Zarządzanie kolekcją"
+  },
+  "collectionManagementDesc": {
+    "message": "Zarządzaj zachowaniami kolekcji w organizacji"
+  },
+  "limitCollectionCreationDeletionDesc": {
+    "message": "Ogranicz tworzenie i usuwanie kolekcji dla właścicieli i administratorów"
+  },
+  "collectionManagementUpdated": {
+    "message": "Zachowanie zarządzania kolekcją zapisane"
+  },
   "passwordManagerPlanPrice": {
     "message": "Cennik menedżera haseł"
   },
@@ -7264,6 +7282,12 @@
   "beta": {
     "message": "Wersja beta"
   },
+  "assignCollectionAccess": {
+    "message": "Przypisz dostęp do kolekcji"
+  },
+  "editedCollections": {
+    "message": "Edytowane kolekcje"
+  },
   "baseUrl": {
     "message": "Adres URL serwera"
   },
@@ -7272,6 +7296,15 @@
   },
   "alreadyHaveAccount": {
     "message": "Masz już konto?"
+  },
+  "customBillingStart": {
+    "message": "Niestandardowe rozliczenie nie jest odzwierciedlone. Odwiedź "
+  },
+  "customBillingEnd": {
+    "message": " stronę po najnowsze faktury."
+  },
+  "managePermissionRequired": {
+    "message": "Co najmniej jeden członek lub grupa musi mieć możliwość zarządzania uprawnieniami."
   },
   "typePasskey": {
     "message": "Passkey"

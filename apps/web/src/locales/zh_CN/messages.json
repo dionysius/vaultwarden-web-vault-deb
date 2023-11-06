@@ -1545,6 +1545,9 @@
   "manage": {
     "message": "管理"
   },
+  "canManage": {
+    "message": "可以管理"
+  },
   "disable": {
     "message": "停用"
   },
@@ -3460,6 +3463,9 @@
   },
   "subscriptionUpdated": {
     "message": "订阅已更新"
+  },
+  "subscribedToSecretsManager": {
+    "message": "Subscription updated. You now have access to Secrets Manager."
   },
   "additionalOptions": {
     "message": "附加选项"
@@ -5486,7 +5492,7 @@
     "message": "必填"
   },
   "charactersCurrentAndMaximum": {
-    "message": "$CURRENT$ / 最大字符数 $MAX$",
+    "message": "$CURRENT$ / 最多字符数 $MAX$",
     "placeholders": {
       "current": {
         "content": "$1",
@@ -6551,7 +6557,7 @@
     "message": "选择群组"
   },
   "userPermissionOverrideHelper": {
-    "message": "用于成员的权限设置将替换该成员群组的权限设置"
+    "message": "为成员设置的权限将取代该成员所在群组设置的权限"
   },
   "noMembersOrGroupsAdded": {
     "message": "未添加任何成员或群组"
@@ -7218,6 +7224,18 @@
       }
     }
   },
+  "collectionManagement": {
+    "message": "集合管理"
+  },
+  "collectionManagementDesc": {
+    "message": "管理组织的集合行为"
+  },
+  "limitCollectionCreationDeletionDesc": {
+    "message": "对所有者和管理员限制集合的创建和删除"
+  },
+  "collectionManagementUpdated": {
+    "message": "集合管理行为已保存"
+  },
   "passwordManagerPlanPrice": {
     "message": "密码管理器计划价格"
   },
@@ -7264,6 +7282,12 @@
   "beta": {
     "message": "Beta"
   },
+  "assignCollectionAccess": {
+    "message": "分配集合访问权限"
+  },
+  "editedCollections": {
+    "message": "编辑了集合"
+  },
   "baseUrl": {
     "message": "服务器 URL"
   },
@@ -7272,6 +7296,15 @@
   },
   "alreadyHaveAccount": {
     "message": "已经有一个账户？"
+  },
+  "customBillingStart": {
+    "message": "Custom billing is not reflected. Visit the "
+  },
+  "customBillingEnd": {
+    "message": " page for latest invoicing."
+  },
+  "managePermissionRequired": {
+    "message": "必须至少有一个成员或群组拥有「可以管理」的权限。"
   },
   "typePasskey": {
     "message": "通行密钥"

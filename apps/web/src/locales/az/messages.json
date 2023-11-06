@@ -1545,6 +1545,9 @@
   "manage": {
     "message": "İdarə et"
   },
+  "canManage": {
+    "message": "İdarə edə bilər"
+  },
   "disable": {
     "message": "Sıradan çıxart"
   },
@@ -3460,6 +3463,9 @@
   },
   "subscriptionUpdated": {
     "message": "Abunəlik güncəlləndi"
+  },
+  "subscribedToSecretsManager": {
+    "message": "Subscription updated. You now have access to Secrets Manager."
   },
   "additionalOptions": {
     "message": "Əlavə seçimlər"
@@ -7218,6 +7224,18 @@
       }
     }
   },
+  "collectionManagement": {
+    "message": "Kolleksiya idarəetməsi"
+  },
+  "collectionManagementDesc": {
+    "message": "Təşkilat üçün kolleksiya davranışını idarə et"
+  },
+  "limitCollectionCreationDeletionDesc": {
+    "message": "Kolleksiya yaradılmasını və silinməsini sahibləri və adminləri ilə məhdudlaşdır"
+  },
+  "collectionManagementUpdated": {
+    "message": "Kolleksiya idarəetmə davranışı saxlanıldı"
+  },
   "passwordManagerPlanPrice": {
     "message": "Parol Meneceri plan qiyməti"
   },
@@ -7264,6 +7282,12 @@
   "beta": {
     "message": "Beta"
   },
+  "assignCollectionAccess": {
+    "message": "Kolleksiya müraciəti təyin et"
+  },
+  "editedCollections": {
+    "message": "Düzəliş edilən kolleksiyalar"
+  },
   "baseUrl": {
     "message": "Server URL-si"
   },
@@ -7272,6 +7296,15 @@
   },
   "alreadyHaveAccount": {
     "message": "Artıq bir hesabınız var?"
+  },
+  "customBillingStart": {
+    "message": "Özəl faktura əks olunmur. Son faktura üçün "
+  },
+  "customBillingEnd": {
+    "message": " səhifəni ziyarət edin."
+  },
+  "managePermissionRequired": {
+    "message": "Ən azı bir üzv və ya qrup idarə edə bilmə icazəsinə sahib olmalıdır."
   },
   "typePasskey": {
     "message": "Keçid açarı"
@@ -7283,7 +7316,7 @@
     "message": "Keçid açarı, klonlanmış elementə kopyalanmayacaq. Bu elementi klonlamağa davam etmək istəyirsiniz?"
   },
   "seeDetailedInstructions": {
-    "message": "See detailed instructions on our help site at",
+    "message": "Kömək saytımızda detallı təlimatlara baxın",
     "description": "This is followed a by a hyperlink to the help website."
   }
 }

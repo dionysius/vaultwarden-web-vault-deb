@@ -1545,6 +1545,9 @@
   "manage": {
     "message": "管理"
   },
+  "canManage": {
+    "message": "管理可能"
+  },
   "disable": {
     "message": "無効化"
   },
@@ -3460,6 +3463,9 @@
   },
   "subscriptionUpdated": {
     "message": "サブスクリプションが更新されました"
+  },
+  "subscribedToSecretsManager": {
+    "message": "サブスクリプションを更新しました。シークレットマネージャーにアクセスできるようになりました。"
   },
   "additionalOptions": {
     "message": "追加オプション"
@@ -7218,6 +7224,18 @@
       }
     }
   },
+  "collectionManagement": {
+    "message": "コレクション管理"
+  },
+  "collectionManagementDesc": {
+    "message": "組織のコレクションに関する挙動を管理します"
+  },
+  "limitCollectionCreationDeletionDesc": {
+    "message": "コレクションの作成・削除を所有者と管理者のみに制限"
+  },
+  "collectionManagementUpdated": {
+    "message": "コレクション管理の挙動を保存しました"
+  },
   "passwordManagerPlanPrice": {
     "message": "パスワードマネージャーのプラン価格"
   },
@@ -7264,6 +7282,12 @@
   "beta": {
     "message": "ベータ"
   },
+  "assignCollectionAccess": {
+    "message": "コレクションへのアクセスを割り当て"
+  },
+  "editedCollections": {
+    "message": "編集されたコレクション"
+  },
   "baseUrl": {
     "message": "サーバー URL"
   },
@@ -7272,6 +7296,15 @@
   },
   "alreadyHaveAccount": {
     "message": "既にアカウントをお持ちですか？"
+  },
+  "customBillingStart": {
+    "message": "カスタム請求は反映されていません。"
+  },
+  "customBillingEnd": {
+    "message": "のページで最新の請求書をご覧いただけます。"
+  },
+  "managePermissionRequired": {
+    "message": "少なくとも1人のメンバーまたはグループに「管理可能」権限を与えてください。"
   },
   "typePasskey": {
     "message": "パスキー"

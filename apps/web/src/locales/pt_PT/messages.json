@@ -1545,6 +1545,9 @@
   "manage": {
     "message": "Gerir"
   },
+  "canManage": {
+    "message": "Pode gerir"
+  },
   "disable": {
     "message": "Desativar"
   },
@@ -3461,6 +3464,9 @@
   "subscriptionUpdated": {
     "message": "Subscrição atualizada"
   },
+  "subscribedToSecretsManager": {
+    "message": "Subscrição atualizada. Tem agora acesso ao Gestor de Segredos."
+  },
   "additionalOptions": {
     "message": "Opções adicionais"
   },
@@ -5024,10 +5030,10 @@
     "message": "Ativar o preenchimento automático"
   },
   "activateAutofillPolicyDesc": {
-    "message": "Ative a definição do preenchimento automático no carregamento da página na extensão do navegador para todos os membros existentes e novos."
+    "message": "Ative a definição de preenchimento automático ao carregar a página na extensão do navegador para todos os membros existentes e novos."
   },
   "experimentalFeature": {
-    "message": "Os sites comprometidos ou não fiáveis podem explorar o preenchimento automático no carregamento da página."
+    "message": "Os sites comprometidos ou não fiáveis podem explorar o preenchimento automático ao carregar a página."
   },
   "learnMoreAboutAutofill": {
     "message": "Saber mais sobre o preenchimento automático"
@@ -7218,6 +7224,18 @@
       }
     }
   },
+  "collectionManagement": {
+    "message": "Gestão de coleções"
+  },
+  "collectionManagementDesc": {
+    "message": "Gerir o comportamento da coleção da organização"
+  },
+  "limitCollectionCreationDeletionDesc": {
+    "message": "Limitar a criação e eliminação de coleções aos proprietários e administradores"
+  },
+  "collectionManagementUpdated": {
+    "message": "Comportamento de gestão de coleções guardado"
+  },
   "passwordManagerPlanPrice": {
     "message": "Preço do plano do Gestor de Palavras-passe"
   },
@@ -7264,6 +7282,12 @@
   "beta": {
     "message": "Beta"
   },
+  "assignCollectionAccess": {
+    "message": "Atribuir acesso à coleção"
+  },
+  "editedCollections": {
+    "message": "Coleções editadas"
+  },
   "baseUrl": {
     "message": "URL do servidor"
   },
@@ -7272,6 +7296,15 @@
   },
   "alreadyHaveAccount": {
     "message": "Já tem uma conta?"
+  },
+  "customBillingStart": {
+    "message": "A faturação personalizada não é refletida. Visite a "
+  },
+  "customBillingEnd": {
+    "message": " página para a faturação mais recente."
+  },
+  "managePermissionRequired": {
+    "message": "Pelo menos um membro ou grupo tem de ter permissão para gerir."
   },
   "typePasskey": {
     "message": "Chave de acesso"
