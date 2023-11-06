@@ -2434,18 +2434,18 @@
     "message": "Sous-menu"
   },
   "toggleCollapse": {
-    "message": "Toggle collapse",
+    "message": "Déplier/Replier",
     "description": "Toggling an expand/collapse state."
   },
   "aliasDomain": {
     "message": "Domaine de l'alias"
   },
   "passwordRepromptDisabledAutofillOnPageLoad": {
-    "message": "Items with master password re-prompt cannot be auto-filled on page load. Auto-fill on page load turned off.",
+    "message": "Les éléments pour lesquels le mot de passe principal est redemandé ne peuvent pas être remplis automatiquement lors du chargement de la page. La saisie automatique au chargement de la page est désactivée.",
     "description": "Toast message for describing that master password re-prompt cannot be auto-filled on page load."
   },
   "autofillOnPageLoadSetToDefault": {
-    "message": "Auto-fill on page load set to use default setting.",
+    "message": "La saisie automatique au chargement de la page est configuré selon les paramètres par défaut.",
     "description": "Toast message for informing the user that auto-fill on page load has been set to the default setting."
   },
   "turnOffMasterPasswordPromptToEditField": {
@@ -2460,10 +2460,10 @@
     "message": "Import error"
   },
   "importErrorDesc": {
-    "message": "There was a problem with the data you tried to import. Please resolve the errors listed below in your source file and try again."
+    "message": "Il y a eu un problème avec les données que vous avez essayé d'importer. Veuillez résoudre les erreurs listées ci-dessous dans votre fichier source et réessayer."
   },
   "resolveTheErrorsBelowAndTryAgain": {
-    "message": "Resolve the errors below and try again."
+    "message": "Résolvez les erreurs ci-dessous et réessayez."
   },
   "description": {
     "message": "Description"
@@ -2484,7 +2484,7 @@
     "message": "Total"
   },
   "importWarning": {
-    "message": "You are importing data to $ORGANIZATION$. Your data may be shared with members of this organization. Do you want to proceed?",
+    "message": "Vous importez des données vers $ORGANIZATION$. Vos données pourraient être partagées avec les membres de cette organisation. Voulez-vous continuer ?",
     "placeholders": {
       "organization": {
         "content": "$1",

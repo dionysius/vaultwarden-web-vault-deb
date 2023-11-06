@@ -2502,7 +2502,7 @@
     "message": "Error decrypting the exported file. Your encryption key does not match the encryption key used export the data."
   },
   "invalidFilePassword": {
-    "message": "Invalid file password, please use the password you entered when you created the export file."
+    "message": "Yararsız fayl parolu, zəhmət olmasa xaricə köçürmə faylını yaradarkən daxil etdiyiniz parolu istifadə edin."
   },
   "importDestination": {
     "message": "Import destination"
@@ -2615,67 +2615,67 @@
     "message": "Use browser"
   },
   "multifactorAuthenticationCancelled": {
-    "message": "Multifactor authentication cancelled"
+    "message": "Çox faktorlu kimlik doğrulama ləğv edildi"
   },
   "noLastPassDataFound": {
-    "message": "No LastPass data found"
+    "message": "LastPass datası tapılmadı"
   },
   "incorrectUsernameOrPassword": {
-    "message": "Incorrect username or password"
+    "message": "Yanlış istifadəçi adı və ya parol"
   },
   "multifactorAuthenticationFailed": {
-    "message": "Multifactor authentication failed"
+    "message": "Çox faktorlu kimlik doğrulama uğursuz oldu"
   },
   "includeSharedFolders": {
-    "message": "Include shared folders"
+    "message": "Paylaşılan qovluqları daxil et"
   },
   "lastPassEmail": {
-    "message": "LastPass Email"
+    "message": "LastPass E-poçtu"
   },
   "importingYourAccount": {
-    "message": "Importing your account..."
+    "message": "Hesabınız daxilə köçürülür..."
   },
   "lastPassMFARequired": {
-    "message": "LastPass multifactor authentication required"
+    "message": "LastPass çox faktorlu kimlik doğrulama tələb olunur"
   },
   "lastPassMFADesc": {
-    "message": "Enter your one-time passcode from your authentication app"
+    "message": "Kimlik doğrulama tətbiqinizdəki təkistifadəlik kodu daxil edin"
   },
   "lastPassOOBDesc": {
-    "message": "Approve the login request in your authentication app or enter a one-time passcode."
+    "message": "Kimlik doğrulama tətbiqinizdəki giriş tələbini təsdiqləyin və ya təkistifadəlik kodu daxil edin."
   },
   "passcode": {
-    "message": "Passcode"
+    "message": "Kod"
   },
   "lastPassMasterPassword": {
-    "message": "LastPass master password"
+    "message": "LastPass ana parolu"
   },
   "lastPassAuthRequired": {
-    "message": "LastPass authentication required"
+    "message": "LastPass kimlik doğrulama tələb olunur"
   },
   "awaitingSSO": {
-    "message": "Awaiting SSO authentication"
+    "message": "SSO kimlik doğrulaması gözlənilir"
   },
   "awaitingSSODesc": {
-    "message": "Please continue to log in using your company credentials."
+    "message": "Lütfən şirkət kimlik məlumatlarınızı istifadə edərək giriş etməyə davam edin."
   },
   "seeDetailedInstructions": {
-    "message": "See detailed instructions on our help site at",
+    "message": "Kömək saytımızda detallı təlimatlara baxın",
     "description": "This is followed a by a hyperlink to the help website."
   },
   "importDirectlyFromLastPass": {
-    "message": "Import directly from LastPass"
+    "message": "Birbaşa \"LastPass\"dan daxilə köçür"
   },
   "importFromCSV": {
-    "message": "Import from CSV"
+    "message": "CSV-dən daxilə köçür"
   },
   "lastPassTryAgainCheckEmail": {
-    "message": "Try again or look for an email from LastPass to verify it's you."
+    "message": "Yenidən snayın və ya siz olduğunuzu doğrulamaq üçün \"LastPass\"dan gələcək e-poçtu yoxlayın."
   },
   "collection": {
-    "message": "Collection"
+    "message": "Kolleksiya"
   },
   "lastPassYubikeyDesc": {
-    "message": "Insert the YubiKey associated with your LastPass account into your computer's USB port, then touch its button."
+    "message": "LastPass hesabınızla əlaqələndirilmiş \"YubiKey\"i kompüterinizin USB yuvasına taxın, daha sonra düyməsinə basın."
   }
 }

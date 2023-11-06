@@ -1657,7 +1657,7 @@
     "message": "смернице организације утичу на ваше могућности власништва."
   },
   "personalOwnershipPolicyInEffectImports": {
-    "message": "An organization policy has blocked importing items into your individual vault."
+    "message": "Политика организације је блокирала увоз ставки у ваш појединачни сеф."
   },
   "excludedDomains": {
     "message": "Изузети домени"
@@ -2453,26 +2453,26 @@
     "description": "Message appearing below the autofill on load message when master password reprompt is set for a vault item."
   },
   "importData": {
-    "message": "Import data",
+    "message": "Увези податке",
     "description": "Used for the header of the import dialog, the import button and within the file-password-prompt"
   },
   "importError": {
-    "message": "Import error"
+    "message": "Грешка при увозу"
   },
   "importErrorDesc": {
-    "message": "There was a problem with the data you tried to import. Please resolve the errors listed below in your source file and try again."
+    "message": "Појавио се проблем са подацима које сте покушали да увезете. Решите проблеме у изворној датотеци наведене испод и покушајте поново."
   },
   "resolveTheErrorsBelowAndTryAgain": {
-    "message": "Resolve the errors below and try again."
+    "message": "Поправите грешке испод и покушајте поново."
   },
   "description": {
-    "message": "Description"
+    "message": "Опис"
   },
   "importSuccess": {
-    "message": "Data successfully imported"
+    "message": "Подаци су увезени"
   },
   "importSuccessNumberOfItems": {
-    "message": "A total of $AMOUNT$ items were imported.",
+    "message": "$AMOUNT$ ставке/и су увезене.",
     "placeholders": {
       "amount": {
         "content": "$1",
@@ -2481,10 +2481,10 @@
     }
   },
   "total": {
-    "message": "Total"
+    "message": "Збир"
   },
   "importWarning": {
-    "message": "You are importing data to $ORGANIZATION$. Your data may be shared with members of this organization. Do you want to proceed?",
+    "message": "Увозите податке у $ORGANIZATION$. Ваши подаци могу бити подељени са члановима ове организације. Да ли желите да наставите?",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -2493,31 +2493,31 @@
     }
   },
   "importFormatError": {
-    "message": "Data is not formatted correctly. Please check your import file and try again."
+    "message": "Подаци нису правилно форматирани. Проверите датотеку за увоз и покушајте поново."
   },
   "importNothingError": {
-    "message": "Nothing was imported."
+    "message": "Ништа није увежено."
   },
   "importEncKeyError": {
-    "message": "Error decrypting the exported file. Your encryption key does not match the encryption key used export the data."
+    "message": "Грешка у дешифрирању извозне датотеке. Ваш кључ за шифровање не одговара кључу који се користио за извоз података."
   },
   "invalidFilePassword": {
-    "message": "Invalid file password, please use the password you entered when you created the export file."
+    "message": "Неважећа лозинка за датотеку, користите лозинку коју сте унели када сте креирали датотеку за извоз."
   },
   "importDestination": {
-    "message": "Import destination"
+    "message": "Смештај увоза"
   },
   "learnAboutImportOptions": {
-    "message": "Learn about your import options"
+    "message": "Сазнајте више о опцијама увоза"
   },
   "selectImportFolder": {
-    "message": "Select a folder"
+    "message": "Изабери фасциклу"
   },
   "selectImportCollection": {
-    "message": "Select a collection"
+    "message": "Изабери колекцију"
   },
   "importTargetHint": {
-    "message": "Select this option if you want the imported file contents moved to a $DESTINATION$",
+    "message": "Изаберите ову опцију ако желите да се садржај увезене датотеке премести у $DESTINATION$",
     "description": "Located as a hint under the import target. Will be appended by either folder or collection, depending if the user is importing into an individual or an organizational vault.",
     "placeholders": {
       "destination": {
@@ -2527,25 +2527,25 @@
     }
   },
   "importUnassignedItemsError": {
-    "message": "File contains unassigned items."
+    "message": "Датотека садржи недодељене ставке."
   },
   "selectFormat": {
-    "message": "Select the format of the import file"
+    "message": "Одабрати формат датотеке за увоз"
   },
   "selectImportFile": {
-    "message": "Select the import file"
+    "message": "Одабрати датотеку за увоз"
   },
   "chooseFile": {
-    "message": "Choose File"
+    "message": "Изабери датотеку"
   },
   "noFileChosen": {
-    "message": "No file chosen"
+    "message": "Није изабрана ниједна датотека"
   },
   "orCopyPasteFileContents": {
-    "message": "or copy/paste the import file contents"
+    "message": "или копирајте/налепите садржај датотеке за увоз"
   },
   "instructionsFor": {
-    "message": "$NAME$ Instructions",
+    "message": "Инструкције за $NAME$",
     "description": "The title for the import tool instructions.",
     "placeholders": {
       "name": {
@@ -2555,13 +2555,13 @@
     }
   },
   "confirmVaultImport": {
-    "message": "Confirm vault import"
+    "message": "Потврдите увоз сефа"
   },
   "confirmVaultImportDesc": {
-    "message": "This file is password-protected. Please enter the file password to import data."
+    "message": "Ова датотека је заштићена лозинком. Унесите лозинку датотеке да бисте увезли податке."
   },
   "confirmFilePassword": {
-    "message": "Confirm file password"
+    "message": "Потврдити лозинку датотеке"
   },
   "passkeyNotCopied": {
     "message": "Приступачни кључ неће бити копиран"
@@ -2615,67 +2615,67 @@
     "message": "Користите претраживач"
   },
   "multifactorAuthenticationCancelled": {
-    "message": "Multifactor authentication cancelled"
+    "message": "Вишефакторска аутентификација је отказана"
   },
   "noLastPassDataFound": {
-    "message": "No LastPass data found"
+    "message": "Нема LastPass податке"
   },
   "incorrectUsernameOrPassword": {
-    "message": "Incorrect username or password"
+    "message": "Неважеће корисничко име или лозинка"
   },
   "multifactorAuthenticationFailed": {
-    "message": "Multifactor authentication failed"
+    "message": "Вишефакторска аутентификација је неуспешна"
   },
   "includeSharedFolders": {
-    "message": "Include shared folders"
+    "message": "Укључи дељене фасцикле"
   },
   "lastPassEmail": {
-    "message": "LastPass Email"
+    "message": "LastPass имејл"
   },
   "importingYourAccount": {
-    "message": "Importing your account..."
+    "message": "Увоз налога..."
   },
   "lastPassMFARequired": {
-    "message": "LastPass multifactor authentication required"
+    "message": "LastPass вишефакторска аутентификација је потребна"
   },
   "lastPassMFADesc": {
-    "message": "Enter your one-time passcode from your authentication app"
+    "message": "Унесите своју једнократну лозинку из апликације за аутентификацију"
   },
   "lastPassOOBDesc": {
-    "message": "Approve the login request in your authentication app or enter a one-time passcode."
+    "message": "Одобрите захтев за пријаву у апликацији за аутентификацију или унесите једнократну лозинку."
   },
   "passcode": {
-    "message": "Passcode"
+    "message": "Лозинка"
   },
   "lastPassMasterPassword": {
-    "message": "LastPass master password"
+    "message": "LastPass главна лозинка"
   },
   "lastPassAuthRequired": {
-    "message": "LastPass authentication required"
+    "message": "LastPass аутентификација је потребна"
   },
   "awaitingSSO": {
-    "message": "Awaiting SSO authentication"
+    "message": "Чекање SSO аутентификације"
   },
   "awaitingSSODesc": {
-    "message": "Please continue to log in using your company credentials."
+    "message": "Наставите да се пријављујете користећи акредитиве своје компаније."
   },
   "seeDetailedInstructions": {
-    "message": "See detailed instructions on our help site at",
+    "message": "Погледајте детаљна упутства на нашој веб локацији за помоћ на",
     "description": "This is followed a by a hyperlink to the help website."
   },
   "importDirectlyFromLastPass": {
-    "message": "Import directly from LastPass"
+    "message": "Директан увоз из LastPass-а"
   },
   "importFromCSV": {
-    "message": "Import from CSV"
+    "message": "Увоз из CSV"
   },
   "lastPassTryAgainCheckEmail": {
-    "message": "Try again or look for an email from LastPass to verify it's you."
+    "message": "Покушајте поново или потражите имејл од LastPass за потврду идентитета."
   },
   "collection": {
-    "message": "Collection"
+    "message": "Колекција"
   },
   "lastPassYubikeyDesc": {
-    "message": "Insert the YubiKey associated with your LastPass account into your computer's USB port, then touch its button."
+    "message": "Унети YubiKey који је асоциран са LastPass налогом у УСБ порт вашег рачунара, и затим додирните његово дугме."
   }
 }

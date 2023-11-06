@@ -89,16 +89,16 @@
     "message": "Copiar código de segurança"
   },
   "autoFill": {
-    "message": "Preenchimento automático"
+    "message": "Preencher automaticamente"
   },
   "autoFillLogin": {
-    "message": "Preenchimento automático da credencial"
+    "message": "Preencher automaticamente credencial"
   },
   "autoFillCard": {
-    "message": "Preenchimento automático do cartão"
+    "message": "Preencher automaticamente cartão"
   },
   "autoFillIdentity": {
-    "message": "Preenchimento automático da identidade"
+    "message": "Preencher automaticamente identidade"
   },
   "generatePasswordCopied": {
     "message": "Gerar palavra-passe (copiada)"
@@ -1021,7 +1021,7 @@
     "message": "Pode desativar o preenchimento automático ao carregar a página para itens de início de sessão individuais a partir da vista Editar do item."
   },
   "itemAutoFillOnPageLoad": {
-    "message": "Preenchimento automático ao carregar a página (se configurado nas Opções)"
+    "message": "Preencher automaticamente ao carregar a página (se configurado nas Opções)"
   },
   "autoFillOnPageLoadUseDefault": {
     "message": "Utilizar a predefinição"
@@ -1039,7 +1039,7 @@
     "message": "Abrir o cofre na barra lateral"
   },
   "commandAutofillDesc": {
-    "message": "Preencher automaticamente o último início de sessão utilizado no site atual"
+    "message": "Preencher automaticamente com a última credencial utilizada no site atual"
   },
   "commandGeneratePasswordDesc": {
     "message": "Gerar e copiar uma nova palavra-passe aleatória para a área de transferência"
@@ -2445,7 +2445,7 @@
     "description": "Toast message for describing that master password re-prompt cannot be auto-filled on page load."
   },
   "autofillOnPageLoadSetToDefault": {
-    "message": "Preenchimento automático no carregamento da página definido para utilizar a predefinição.",
+    "message": "Preencher automaticamente ao carregar a página definido para utilizar a predefinição.",
     "description": "Toast message for informing the user that auto-fill on page load has been set to the default setting."
   },
   "turnOffMasterPasswordPromptToEditField": {

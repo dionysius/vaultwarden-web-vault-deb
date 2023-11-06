@@ -2502,7 +2502,7 @@
     "message": "Virhe purettaessa viedyn tiedoston salausta. Salausavaimesi ei vastaa viennissä käytettyä salausavainta."
   },
   "invalidFilePassword": {
-    "message": "Invalid file password, please use the password you entered when you created the export file."
+    "message": "Tiedoston salasana on virheellinen. Käytä vientitiedoston luonnin yhteydessä syötettyä salasanaa."
   },
   "importDestination": {
     "message": "Tuontikohde"
@@ -2615,67 +2615,67 @@
     "message": "Käytä verkkoselainta"
   },
   "multifactorAuthenticationCancelled": {
-    "message": "Multifactor authentication cancelled"
+    "message": "Monivaiheinen todennus peruttiin"
   },
   "noLastPassDataFound": {
-    "message": "No LastPass data found"
+    "message": "LastPass-tietoja ei löytynyt"
   },
   "incorrectUsernameOrPassword": {
-    "message": "Incorrect username or password"
+    "message": "Virheellinen käyttäjätunnus tai salasana"
   },
   "multifactorAuthenticationFailed": {
-    "message": "Multifactor authentication failed"
+    "message": "Monivaiheinen todennus epäonnistui"
   },
   "includeSharedFolders": {
-    "message": "Include shared folders"
+    "message": "Sisällytä jaetut kansiot"
   },
   "lastPassEmail": {
-    "message": "LastPass Email"
+    "message": "LastPass-sähköpostiosoite"
   },
   "importingYourAccount": {
-    "message": "Importing your account..."
+    "message": "Tiliäsi tuodaan..."
   },
   "lastPassMFARequired": {
-    "message": "LastPass multifactor authentication required"
+    "message": "Monivaiheinen LastPass-todennus vaaditaan"
   },
   "lastPassMFADesc": {
-    "message": "Enter your one-time passcode from your authentication app"
+    "message": "Syötä kertakäyttökoodi todennussovelluksestasi."
   },
   "lastPassOOBDesc": {
-    "message": "Approve the login request in your authentication app or enter a one-time passcode."
+    "message": "Hyväksy kirjautumispyyntö todennussovelluksesta tai syötä kertakäyttökoodi."
   },
   "passcode": {
-    "message": "Passcode"
+    "message": "Suojakoodi"
   },
   "lastPassMasterPassword": {
-    "message": "LastPass master password"
+    "message": "LastPass-pääsalasana"
   },
   "lastPassAuthRequired": {
-    "message": "LastPass authentication required"
+    "message": "LastPass-todennus vaaditaan"
   },
   "awaitingSSO": {
-    "message": "Awaiting SSO authentication"
+    "message": "Odotetaan kertakirjautumista"
   },
   "awaitingSSODesc": {
-    "message": "Please continue to log in using your company credentials."
+    "message": "Jatka kirjautumista työtunnuksillasi."
   },
   "seeDetailedInstructions": {
-    "message": "See detailed instructions on our help site at",
+    "message": "Katso tarkemmat ohjeet tukisivustoltamme osoitteesta",
     "description": "This is followed a by a hyperlink to the help website."
   },
   "importDirectlyFromLastPass": {
-    "message": "Import directly from LastPass"
+    "message": "Tuo suoraan LastPassista"
   },
   "importFromCSV": {
-    "message": "Import from CSV"
+    "message": "Tuo CSV-tiedostosta"
   },
   "lastPassTryAgainCheckEmail": {
-    "message": "Try again or look for an email from LastPass to verify it's you."
+    "message": "Yritä uudelleen tai etsi LastPassin lähettämää sähköpostia, jolla vahvistat sen olleen sinä."
   },
   "collection": {
-    "message": "Collection"
+    "message": "Kokoelma"
   },
   "lastPassYubikeyDesc": {
-    "message": "Insert the YubiKey associated with your LastPass account into your computer's USB port, then touch its button."
+    "message": "Kytke LastPass-tiliisi liitetty YubiKey tietokoneen USB-porttiin ja kosketa sen painiketta."
   }
 }
