@@ -35,6 +35,7 @@ libs/tools @bitwarden/team-tools-dev
 
 ## Localization/Crowdin (Tools team)
 apps/browser/src/_locales @bitwarden/team-tools-dev
+apps/browser/store/locales @bitwarden/team-tools-dev
 apps/cli/src/locales @bitwarden/team-tools-dev
 apps/desktop/src/locales @bitwarden/team-tools-dev
 apps/web/src/locales @bitwarden/team-tools-dev
@@ -107,6 +108,7 @@ package-lock.json
 
 ## Locales ##
 apps/browser/src/_locales/en/messages.json
+apps/browser/store/locales/en
 apps/cli/src/locales/en/messages.json
 apps/desktop/src/locales/en/messages.json
 apps/web/src/locales/en/messages.json
