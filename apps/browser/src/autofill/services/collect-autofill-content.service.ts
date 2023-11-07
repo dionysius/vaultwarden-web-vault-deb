@@ -47,11 +47,7 @@ class CollectAutofillContentService implements CollectAutofillContentServiceInte
       return this.getFormattedPageDetails({}, []);
     }
 
-    if (
-      !this.domRecentlyMutated &&
-      this.autofillFormElements.size &&
-      this.autofillFieldElements.size
-    ) {
+    if (!this.domRecentlyMutated && this.autofillFieldElements.size) {
       return this.getFormattedPageDetails(
         this.getFormattedAutofillFormsData(),
         this.getFormattedAutofillFieldsData()
@@ -66,7 +62,7 @@ class CollectAutofillContentService implements CollectAutofillContentServiceInte
     );
     this.sortAutofillFieldElementsMap();
 
-    if (!Object.values(autofillFormsData).length || !autofillFieldsData.length) {
+    if (!autofillFieldsData.length) {
       this.noFieldsFound = true;
     }
 
