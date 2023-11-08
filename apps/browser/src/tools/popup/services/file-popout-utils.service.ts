@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 
-import { PopupUtilsService } from "../../../popup/services/popup-utils.service";
+import BrowserPopupUtils from "../../../platform/popup/browser-popup-utils";
 
 /**
  * Service for determining whether to display file popout callout messages.
@@ -12,10 +12,7 @@ export class FilePopoutUtilsService {
   /**
    * Creates an instance of FilePopoutUtilsService.
    */
-  constructor(
-    private platformUtilsService: PlatformUtilsService,
-    private popupUtilsService: PopupUtilsService
-  ) {}
+  constructor(private platformUtilsService: PlatformUtilsService) {}
 
   /**
    * Determines whether to show any file popout callout message in the current browser.
@@ -38,7 +35,7 @@ export class FilePopoutUtilsService {
   showFirefoxFileWarning(win: Window): boolean {
     return (
       this.platformUtilsService.isFirefox() &&
-      !(this.popupUtilsService.inSidebar(win) || this.popupUtilsService.inPopout(win))
+      !(BrowserPopupUtils.inSidebar(win) || BrowserPopupUtils.inPopout(win))
     );
   }
 
@@ -48,7 +45,7 @@ export class FilePopoutUtilsService {
    * @returns True if the extension is not in a popout; otherwise, false.
    */
   showSafariFileWarning(win: Window): boolean {
-    return this.platformUtilsService.isSafari() && !this.popupUtilsService.inPopout(win);
+    return this.platformUtilsService.isSafari() && !BrowserPopupUtils.inPopout(win);
   }
 
   /**
@@ -60,7 +57,7 @@ export class FilePopoutUtilsService {
     return (
       (this.isLinux(win) || this.isUnsupportedMac(win)) &&
       !this.platformUtilsService.isFirefox() &&
-      !(this.popupUtilsService.inSidebar(win) || this.popupUtilsService.inPopout(win))
+      !(BrowserPopupUtils.inSidebar(win) || BrowserPopupUtils.inPopout(win))
     );
   }
 

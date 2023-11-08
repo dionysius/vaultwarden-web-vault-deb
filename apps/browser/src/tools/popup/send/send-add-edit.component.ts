@@ -15,8 +15,8 @@ import { SendApiService } from "@bitwarden/common/tools/send/services/send-api.s
 import { SendService } from "@bitwarden/common/tools/send/services/send.service.abstraction";
 import { DialogService } from "@bitwarden/components";
 
+import BrowserPopupUtils from "../../../platform/popup/browser-popup-utils";
 import { BrowserStateService } from "../../../platform/services/abstractions/browser-state.service";
-import { PopupUtilsService } from "../../../popup/services/popup-utils.service";
 import { FilePopoutUtilsService } from "../services/file-popout-utils.service";
 
 @Component({
@@ -44,7 +44,6 @@ export class SendAddEditComponent extends BaseAddEditComponent {
     private route: ActivatedRoute,
     private router: Router,
     private location: Location,
-    private popupUtilsService: PopupUtilsService,
     logService: LogService,
     sendApiService: SendApiService,
     dialogService: DialogService,
@@ -68,14 +67,14 @@ export class SendAddEditComponent extends BaseAddEditComponent {
   }
 
   popOutWindow() {
-    this.popupUtilsService.popOut(window);
+    BrowserPopupUtils.openCurrentPagePopout(window);
   }
 
   async ngOnInit() {
     // File visibility
     this.showFileSelector =
       !this.editMode && !this.filePopoutUtilsService.showFilePopoutMessage(window);
-    this.inPopout = this.popupUtilsService.inPopout(window);
+    this.inPopout = BrowserPopupUtils.inPopout(window);
     this.isFirefox = this.platformUtilsService.isFirefox();
 
     // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe

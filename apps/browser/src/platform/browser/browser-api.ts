@@ -19,14 +19,33 @@ export class BrowserApi {
     return chrome.runtime.getManifest().manifest_version;
   }
 
-  static getWindow(windowId?: number): Promise<chrome.windows.Window> | void {
+  /**
+   * Gets the current window or the window with the given id.
+   *
+   * @param windowId - The id of the window to get. If not provided, the current window is returned.
+   */
+  static async getWindow(windowId?: number): Promise<chrome.windows.Window> {
     if (!windowId) {
-      return;
+      return BrowserApi.getCurrentWindow();
     }
 
-    return new Promise((resolve) =>
-      chrome.windows.get(windowId, { populate: true }, (window) => resolve(window))
-    );
+    return await BrowserApi.getWindowById(windowId);
+  }
+
+  /**
+   * Gets the currently active browser window.
+   */
+  static async getCurrentWindow(): Promise<chrome.windows.Window> {
+    return new Promise((resolve) => chrome.windows.getCurrent({ populate: true }, resolve));
+  }
+
+  /**
+   * Gets the window with the given id.
+   *
+   * @param windowId - The id of the window to get.
+   */
+  static async getWindowById(windowId: number): Promise<chrome.windows.Window> {
+    return new Promise((resolve) => chrome.windows.get(windowId, { populate: true }, resolve));
   }
 
   static async createWindow(options: chrome.windows.CreateData): Promise<chrome.windows.Window> {
@@ -37,8 +56,39 @@ export class BrowserApi {
     );
   }
 
-  static async removeWindow(windowId: number) {
-    await chrome.windows.remove(windowId);
+  /**
+   * Removes the window with the given id.
+   *
+   * @param windowId - The id of the window to remove.
+   */
+  static async removeWindow(windowId: number): Promise<void> {
+    return new Promise((resolve) => chrome.windows.remove(windowId, () => resolve()));
+  }
+
+  /**
+   * Updates the properties of the window with the given id.
+   *
+   * @param windowId - The id of the window to update.
+   * @param options - The window properties to update.
+   */
+  static async updateWindowProperties(
+    windowId: number,
+    options: chrome.windows.UpdateInfo
+  ): Promise<void> {
+    return new Promise((resolve) =>
+      chrome.windows.update(windowId, options, () => {
+        resolve();
+      })
+    );
+  }
+
+  /**
+   * Focuses the window with the given id.
+   *
+   * @param windowId - The id of the window to focus.
+   */
+  static async focusWindow(windowId: number) {
+    await BrowserApi.updateWindowProperties(windowId, { focused: true });
   }
 
   static async getTabFromCurrentWindowId(): Promise<chrome.tabs.Tab> | null {
@@ -138,10 +188,6 @@ export class BrowserApi {
     chrome.tabs.sendMessage<TabMessage, T>(tabId, message, options, responseCallback);
   }
 
-  static async removeTab(tabId: number) {
-    await chrome.tabs.remove(tabId);
-  }
-
   static async getPrivateModeWindows(): Promise<browser.windows.Window[]> {
     return (await browser.windows.getAll()).filter((win) => win.incognito);
   }
@@ -170,47 +216,6 @@ export class BrowserApi {
     return new Promise((resolve) =>
       chrome.tabs.create({ url: url, active: active }, (tab) => resolve(tab))
     );
-  }
-
-  static async focusWindow(windowId: number) {
-    await chrome.windows.update(windowId, { focused: true });
-  }
-
-  static async openBitwardenExtensionTab(relativeUrl: string, active = true) {
-    let url = relativeUrl;
-    if (!relativeUrl.includes("uilocation=tab")) {
-      const fullUrl = chrome.extension.getURL(relativeUrl);
-      const parsedUrl = new URL(fullUrl);
-      parsedUrl.searchParams.set("uilocation", "tab");
-      url = parsedUrl.toString();
-    }
-
-    const createdTab = await this.createNewTab(url, active);
-    this.focusWindow(createdTab.windowId);
-  }
-
-  static async closeBitwardenExtensionTab() {
-    const tabs = await BrowserApi.tabsQuery({
-      active: true,
-      title: "Bitwarden",
-      windowType: "normal",
-      currentWindow: true,
-    });
-
-    if (tabs.length === 0) {
-      return;
-    }
-
-    const tabToClose = tabs[tabs.length - 1];
-    BrowserApi.removeTab(tabToClose.id);
-  }
-
-  static createNewWindow(
-    url: string,
-    focused = true,
-    type: chrome.windows.createTypeEnum = "normal"
-  ) {
-    chrome.windows.create({ url, focused, type });
   }
 
   // Keep track of all the events registered in a Safari popup so we can remove

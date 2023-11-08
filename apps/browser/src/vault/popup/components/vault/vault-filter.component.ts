@@ -19,8 +19,8 @@ import { FolderView } from "@bitwarden/common/vault/models/view/folder.view";
 
 import { BrowserGroupingsComponentState } from "../../../../models/browserGroupingsComponentState";
 import { BrowserApi } from "../../../../platform/browser/browser-api";
+import BrowserPopupUtils from "../../../../platform/popup/browser-popup-utils";
 import { BrowserStateService } from "../../../../platform/services/abstractions/browser-state.service";
-import { PopupUtilsService } from "../../../../popup/services/popup-utils.service";
 import { VaultFilterService } from "../../../services/vault-filter.service";
 
 const ComponentId = "VaultComponent";
@@ -80,7 +80,6 @@ export class VaultFilterComponent implements OnInit, OnDestroy {
     private broadcasterService: BroadcasterService,
     private changeDetectorRef: ChangeDetectorRef,
     private route: ActivatedRoute,
-    private popupUtils: PopupUtilsService,
     private syncService: SyncService,
     private platformUtilsService: PlatformUtilsService,
     private searchService: SearchService,
@@ -94,7 +93,7 @@ export class VaultFilterComponent implements OnInit, OnDestroy {
   async ngOnInit() {
     this.searchTypeSearch = !this.platformUtilsService.isSafari();
     this.showLeftHeader = !(
-      this.popupUtils.inSidebar(window) && this.platformUtilsService.isFirefox()
+      BrowserPopupUtils.inSidebar(window) && this.platformUtilsService.isFirefox()
     );
     await this.browserStateService.setBrowserVaultItemsComponentState(null);
 
@@ -136,7 +135,7 @@ export class VaultFilterComponent implements OnInit, OnDestroy {
       }
 
       if (!this.syncService.syncInProgress || restoredScopeState) {
-        window.setTimeout(() => this.popupUtils.setContentScrollY(window, this.state?.scrollY), 0);
+        BrowserPopupUtils.setContentScrollY(window, this.state?.scrollY);
       }
     });
   }
@@ -265,7 +264,7 @@ export class VaultFilterComponent implements OnInit, OnDestroy {
     this.preventSelected = true;
     await this.cipherService.updateLastLaunchedDate(cipher.id);
     BrowserApi.createNewTab(cipher.login.launchUri);
-    if (this.popupUtils.inPopup(window)) {
+    if (BrowserPopupUtils.inPopup(window)) {
       BrowserApi.closePopup(window);
     }
   }
@@ -376,7 +375,7 @@ export class VaultFilterComponent implements OnInit, OnDestroy {
 
   private async saveState() {
     this.state = Object.assign(new BrowserGroupingsComponentState(), {
-      scrollY: this.popupUtils.getContentScrollY(window),
+      scrollY: BrowserPopupUtils.getContentScrollY(window),
       searchText: this.searchText,
       favoriteCiphers: this.favoriteCiphers,
       noFolderCiphers: this.noFolderCiphers,

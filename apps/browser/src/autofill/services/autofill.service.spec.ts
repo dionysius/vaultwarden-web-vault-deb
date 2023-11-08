@@ -752,13 +752,15 @@ describe("AutofillService", () => {
         jest
           .spyOn(userVerificationService, "hasMasterPasswordAndMasterKeyHash")
           .mockResolvedValueOnce(true);
-        jest.spyOn(BrowserApi, "tabSendMessageData").mockImplementation();
+        jest
+          .spyOn(autofillService as any, "openVaultItemPasswordRepromptPopout")
+          .mockImplementation();
 
         const result = await autofillService.doAutoFillOnTab(pageDetails, tab, true);
 
         expect(cipherService.getNextCipherForUrl).toHaveBeenCalledWith(tab.url);
         expect(userVerificationService.hasMasterPasswordAndMasterKeyHash).toHaveBeenCalled();
-        expect(BrowserApi.tabSendMessageData).toHaveBeenCalledWith(tab, "passwordReprompt", {
+        expect(autofillService["openVaultItemPasswordRepromptPopout"]).toHaveBeenCalledWith(tab, {
           cipherId: cipher.id,
           action: "autofill",
         });
@@ -4252,6 +4254,26 @@ describe("AutofillService", () => {
       const result = AutofillService.forCustomFieldsOnly(field);
 
       expect(result).toBe(false);
+    });
+  });
+
+  describe("isDebouncingPasswordRepromptPopout", () => {
+    it("returns false and sets up the debounce if a master password reprompt window is not currently opening", () => {
+      jest.spyOn(globalThis, "setTimeout");
+
+      const result = autofillService["isDebouncingPasswordRepromptPopout"]();
+
+      expect(result).toBe(false);
+      expect(globalThis.setTimeout).toHaveBeenCalledWith(expect.any(Function), 100);
+      expect(autofillService["currentlyOpeningPasswordRepromptPopout"]).toBe(true);
+    });
+
+    it("returns true if a master password reprompt window is currently opening", () => {
+      autofillService["currentlyOpeningPasswordRepromptPopout"] = true;
+
+      const result = autofillService["isDebouncingPasswordRepromptPopout"]();
+
+      expect(result).toBe(true);
     });
   });
 });

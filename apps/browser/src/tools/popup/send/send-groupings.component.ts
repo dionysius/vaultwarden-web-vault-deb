@@ -17,8 +17,8 @@ import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.serv
 import { DialogService } from "@bitwarden/components";
 
 import { BrowserSendComponentState } from "../../../models/browserSendComponentState";
+import BrowserPopupUtils from "../../../platform/popup/browser-popup-utils";
 import { BrowserStateService } from "../../../platform/services/abstractions/browser-state.service";
-import { PopupUtilsService } from "../../../popup/services/popup-utils.service";
 
 const ComponentId = "SendComponent";
 
@@ -43,7 +43,6 @@ export class SendGroupingsComponent extends BaseSendComponent {
     ngZone: NgZone,
     policyService: PolicyService,
     searchService: SearchService,
-    private popupUtils: PopupUtilsService,
     private stateService: BrowserStateService,
     private router: Router,
     private syncService: SyncService,
@@ -74,7 +73,7 @@ export class SendGroupingsComponent extends BaseSendComponent {
   async ngOnInit() {
     // Determine Header details
     this.showLeftHeader = !(
-      this.popupUtils.inSidebar(window) && this.platformUtilsService.isFirefox()
+      BrowserPopupUtils.inSidebar(window) && this.platformUtilsService.isFirefox()
     );
     // Clear state of Send Type Component
     await this.stateService.setBrowserSendTypeComponentState(null);
@@ -97,7 +96,7 @@ export class SendGroupingsComponent extends BaseSendComponent {
     }
 
     if (!this.syncService.syncInProgress || restoredScopeState) {
-      window.setTimeout(() => this.popupUtils.setContentScrollY(window, this.state?.scrollY), 0);
+      BrowserPopupUtils.setContentScrollY(window, this.state?.scrollY);
     }
 
     // Load all sends if sync completed in background
@@ -172,7 +171,7 @@ export class SendGroupingsComponent extends BaseSendComponent {
 
   private async saveState() {
     this.state = Object.assign(new BrowserSendComponentState(), {
-      scrollY: this.popupUtils.getContentScrollY(window),
+      scrollY: BrowserPopupUtils.getContentScrollY(window),
       searchText: this.searchText,
       sends: this.sends,
       typeCounts: this.typeCounts,

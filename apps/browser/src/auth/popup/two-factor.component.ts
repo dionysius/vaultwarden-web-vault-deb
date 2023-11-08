@@ -22,7 +22,9 @@ import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.serv
 import { DialogService } from "@bitwarden/components";
 
 import { BrowserApi } from "../../platform/browser/browser-api";
-import { PopupUtilsService } from "../../popup/services/popup-utils.service";
+import BrowserPopupUtils from "../../platform/popup/browser-popup-utils";
+
+import { closeTwoFactorAuthPopout } from "./utils/auth-popout-window";
 
 const BroadcasterSubscriptionId = "TwoFactorComponent";
 
@@ -31,8 +33,6 @@ const BroadcasterSubscriptionId = "TwoFactorComponent";
   templateUrl: "two-factor.component.html",
 })
 export class TwoFactorComponent extends BaseTwoFactorComponent {
-  showNewWindowMessage = false;
-
   constructor(
     authService: AuthService,
     router: Router,
@@ -42,7 +42,6 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
     private syncService: SyncService,
     environmentService: EnvironmentService,
     private broadcasterService: BroadcasterService,
-    private popupUtilsService: PopupUtilsService,
     stateService: StateService,
     route: ActivatedRoute,
     private messagingService: MessagingService,
@@ -115,7 +114,7 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
 
     if (
       this.selectedProviderType === TwoFactorProviderType.Email &&
-      this.popupUtilsService.inPopup(window)
+      BrowserPopupUtils.inPopup(window)
     ) {
       const confirmed = await this.dialogService.openSimpleDialog({
         title: { key: "warning" },
@@ -123,7 +122,7 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
         type: "warning",
       });
       if (confirmed) {
-        this.popupUtilsService.popOut(window);
+        BrowserPopupUtils.openCurrentPagePopout(window);
       }
     }
 
@@ -142,7 +141,7 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
 
           // We don't need this window anymore because the intent is for the user to be left
           // on the web vault screen which tells them to continue in the browser extension (sidebar or popup)
-          BrowserApi.closeBitwardenExtensionTab();
+          await closeTwoFactorAuthPopout();
         };
       }
     });
