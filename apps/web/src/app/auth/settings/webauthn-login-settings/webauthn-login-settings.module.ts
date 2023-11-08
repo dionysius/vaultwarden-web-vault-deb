@@ -1,6 +1,8 @@
 import { NgModule } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
+import { CheckboxModule } from "@bitwarden/components";
+
 import { SharedModule } from "../../../shared/shared.module";
 import { UserVerificationModule } from "../../shared/components/user-verification";
 
@@ -9,7 +11,7 @@ import { DeleteCredentialDialogComponent } from "./delete-credential-dialog/dele
 import { WebauthnLoginSettingsComponent } from "./webauthn-login-settings.component";
 
 @NgModule({
-  imports: [SharedModule, FormsModule, ReactiveFormsModule, UserVerificationModule],
+  imports: [SharedModule, FormsModule, ReactiveFormsModule, UserVerificationModule, CheckboxModule],
   declarations: [
     WebauthnLoginSettingsComponent,
     CreateCredentialDialogComponent,

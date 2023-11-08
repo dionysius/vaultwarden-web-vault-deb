@@ -1,1 +1,1 @@
-export * from "./webauthn-login.service";
+export * from "./webauthn-login-admin.service";

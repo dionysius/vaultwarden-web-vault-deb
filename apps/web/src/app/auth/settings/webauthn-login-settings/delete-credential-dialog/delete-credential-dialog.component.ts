@@ -10,8 +10,8 @@ import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/pl
 import { Verification } from "@bitwarden/common/types/verification";
 import { DialogService } from "@bitwarden/components";
 
-import { WebauthnLoginService } from "../../../core";
-import { WebauthnCredentialView } from "../../../core/views/webauth-credential.view";
+import { WebauthnLoginAdminService } from "../../../core";
+import { WebauthnLoginCredentialView } from "../../../core/views/webauthn-login-credential.view";
 
 export interface DeleteCredentialDialogParams {
   credentialId: string;
@@ -27,14 +27,14 @@ export class DeleteCredentialDialogComponent implements OnInit, OnDestroy {
   protected formGroup = this.formBuilder.group({
     secret: null as Verification | null,
   });
-  protected credential?: WebauthnCredentialView;
+  protected credential?: WebauthnLoginCredentialView;
   protected loading$ = this.webauthnService.loading$;
 
   constructor(
     @Inject(DIALOG_DATA) private params: DeleteCredentialDialogParams,
     private formBuilder: FormBuilder,
     private dialogRef: DialogRef,
-    private webauthnService: WebauthnLoginService,
+    private webauthnService: WebauthnLoginAdminService,
     private platformUtilsService: PlatformUtilsService,
     private i18nService: I18nService,
     private logService: LogService
