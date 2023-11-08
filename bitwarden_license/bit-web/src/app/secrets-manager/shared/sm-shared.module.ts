@@ -11,6 +11,7 @@ import { DynamicAvatarComponent } from "@bitwarden/web-vault/app/components/dyna
 import { ProductSwitcherModule } from "@bitwarden/web-vault/app/layouts/product-switcher/product-switcher.module";
 import { SharedModule } from "@bitwarden/web-vault/app/shared";
 
+import { AccessPolicySelectorComponent } from "./access-policies/access-policy-selector/access-policy-selector.component";
 import { AccessSelectorComponent } from "./access-policies/access-selector.component";
 import { AccessRemovalDialogComponent } from "./access-policies/dialogs/access-removal-dialog.component";
 import { BulkConfirmationDialogComponent } from "./dialogs/bulk-confirmation-dialog.component";
@@ -37,6 +38,7 @@ import { SecretsListComponent } from "./secrets-list.component";
     NoItemsModule,
     AccessRemovalDialogComponent,
     AccessSelectorComponent,
+    AccessPolicySelectorComponent,
     BulkStatusDialogComponent,
     BulkConfirmationDialogComponent,
     HeaderComponent,
@@ -57,6 +59,7 @@ import { SecretsListComponent } from "./secrets-list.component";
     SecretsListComponent,
     AccessSelectorComponent,
     OrgSuspendedComponent,
+    AccessPolicySelectorComponent,
   ],
   providers: [],
   bootstrap: [],
