@@ -24,13 +24,13 @@ jobs:
 
       - name: Retrieve Storage Account connection string
         id: retrieve-secrets
-        uses: bitwarden/gh-actions/get-keyvault-secrets@master
+        uses: bitwarden/gh-actions/get-keyvault-secrets@main
         with:
           keyvault: webvaulteu-westeurope-qa
           secrets: "sa-bitwarden-web-vault-dev-key-temp"
 
       - name: Download latest cloud asset
-        uses: bitwarden/gh-actions/download-artifacts@master
+        uses: bitwarden/gh-actions/download-artifacts@main
         with:
           workflow: build-web.yml
           path: apps/web
@@ -65,7 +65,7 @@ jobs:
     if: always()
     needs: azure-deploy
     steps:
-      - uses: bitwarden/gh-actions/report-deployment-status-to-slack@master
+      - uses: bitwarden/gh-actions/report-deployment-status-to-slack@main
         with:
           project: Web
           environment: EU QA Cloud
