@@ -1,12 +1,11 @@
 import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
 
-import { ApiService } from "@bitwarden/common/abstractions/api.service";
-import { EmergencyAccessType } from "@bitwarden/common/auth/enums/emergency-access-type";
-import { EmergencyAccessInviteRequest } from "@bitwarden/common/auth/models/request/emergency-access-invite.request";
-import { EmergencyAccessUpdateRequest } from "@bitwarden/common/auth/models/request/emergency-access-update.request";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
+
+import { EmergencyAccessService } from "../../emergency-access";
+import { EmergencyAccessType } from "../../emergency-access/enums/emergency-access-type";
 
 @Component({
   selector: "emergency-access-add-edit",
@@ -32,7 +31,7 @@ export class EmergencyAccessAddEditComponent implements OnInit {
   waitTime: number;
 
   constructor(
-    private apiService: ApiService,
+    private emergencyAccessService: EmergencyAccessService,
     private i18nService: I18nService,
     private platformUtilsService: PlatformUtilsService,
     private logService: LogService
@@ -54,7 +53,9 @@ export class EmergencyAccessAddEditComponent implements OnInit {
       this.editMode = true;
       this.title = this.i18nService.t("editEmergencyContact");
       try {
-        const emergencyAccess = await this.apiService.getEmergencyAccess(this.emergencyAccessId);
+        const emergencyAccess = await this.emergencyAccessService.getEmergencyAccess(
+          this.emergencyAccessId
+        );
         this.type = emergencyAccess.type;
         this.waitTime = emergencyAccess.waitTimeDays;
       } catch (e) {
@@ -71,18 +72,9 @@ export class EmergencyAccessAddEditComponent implements OnInit {
   async submit() {
     try {
       if (this.editMode) {
-        const request = new EmergencyAccessUpdateRequest();
-        request.type = this.type;
-        request.waitTimeDays = this.waitTime;
-
-        this.formPromise = this.apiService.putEmergencyAccess(this.emergencyAccessId, request);
+        await this.emergencyAccessService.update(this.emergencyAccessId, this.type, this.waitTime);
       } else {
-        const request = new EmergencyAccessInviteRequest();
-        request.email = this.email.trim();
-        request.type = this.type;
-        request.waitTimeDays = this.waitTime;
-
-        this.formPromise = this.apiService.postEmergencyAccessInvite(request);
+        await this.emergencyAccessService.invite(this.email, this.type, this.waitTime);
       }
 
       await this.formPromise;

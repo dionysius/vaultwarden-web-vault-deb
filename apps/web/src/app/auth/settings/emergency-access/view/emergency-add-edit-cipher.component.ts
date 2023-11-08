@@ -20,13 +20,13 @@ import { Cipher } from "@bitwarden/common/vault/models/domain/cipher";
 import { DialogService } from "@bitwarden/components";
 import { PasswordRepromptService } from "@bitwarden/vault";
 
-import { AddEditComponent as BaseAddEditComponent } from "../../../vault/individual-vault/add-edit.component";
+import { AddEditComponent as BaseAddEditComponent } from "../../../../vault/individual-vault/add-edit.component";
 
 @Component({
   selector: "app-org-vault-add-edit",
-  templateUrl: "../../../vault/individual-vault/add-edit.component.html",
+  templateUrl: "../../../../vault/individual-vault/add-edit.component.html",
 })
-export class EmergencyAddEditComponent extends BaseAddEditComponent {
+export class EmergencyAddEditCipherComponent extends BaseAddEditComponent {
   originalCipher: Cipher = null;
   viewOnly = true;
   protected override componentName = "app-org-vault-add-edit";

@@ -1,4 +1,4 @@
-import { EmergencyAccessType } from "../../enums/emergency-access-type";
+import { EmergencyAccessType } from "../enums/emergency-access-type";
 
 export class EmergencyAccessUpdateRequest {
   type: EmergencyAccessType;

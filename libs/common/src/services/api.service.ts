@@ -20,7 +20,6 @@ import {
 } from "../admin-console/models/response/organization-connection.response";
 import { OrganizationExportResponse } from "../admin-console/models/response/organization-export.response";
 import { OrganizationSponsorshipSyncStatusResponse } from "../admin-console/models/response/organization-sponsorship-sync-status.response";
-import { PolicyResponse } from "../admin-console/models/response/policy.response";
 import {
   ProviderOrganizationOrganizationDetailsResponse,
   ProviderOrganizationResponse,
@@ -38,11 +37,6 @@ import { CreateAuthRequest } from "../auth/models/request/create-auth.request";
 import { DeviceVerificationRequest } from "../auth/models/request/device-verification.request";
 import { EmailTokenRequest } from "../auth/models/request/email-token.request";
 import { EmailRequest } from "../auth/models/request/email.request";
-import { EmergencyAccessAcceptRequest } from "../auth/models/request/emergency-access-accept.request";
-import { EmergencyAccessConfirmRequest } from "../auth/models/request/emergency-access-confirm.request";
-import { EmergencyAccessInviteRequest } from "../auth/models/request/emergency-access-invite.request";
-import { EmergencyAccessPasswordRequest } from "../auth/models/request/emergency-access-password.request";
-import { EmergencyAccessUpdateRequest } from "../auth/models/request/emergency-access-update.request";
 import { DeviceRequest } from "../auth/models/request/identity-token/device.request";
 import { PasswordTokenRequest } from "../auth/models/request/identity-token/password-token.request";
 import { SsoTokenRequest } from "../auth/models/request/identity-token/sso-token.request";
@@ -69,12 +63,6 @@ import { UpdateTwoFactorYubioOtpRequest } from "../auth/models/request/update-tw
 import { ApiKeyResponse } from "../auth/models/response/api-key.response";
 import { AuthRequestResponse } from "../auth/models/response/auth-request.response";
 import { DeviceVerificationResponse } from "../auth/models/response/device-verification.response";
-import {
-  EmergencyAccessGranteeDetailsResponse,
-  EmergencyAccessGrantorDetailsResponse,
-  EmergencyAccessTakeoverResponse,
-  EmergencyAccessViewResponse,
-} from "../auth/models/response/emergency-access.response";
 import { IdentityCaptchaResponse } from "../auth/models/response/identity-captcha.response";
 import { IdentityTokenResponse } from "../auth/models/response/identity-token.response";
 import { IdentityTwoFactorResponse } from "../auth/models/response/identity-two-factor.response";
@@ -1121,81 +1109,6 @@ export class ApiService implements ApiServiceAbstraction {
       true
     );
     return new DeviceVerificationResponse(r);
-  }
-
-  // Emergency Access APIs
-
-  async getEmergencyAccessTrusted(): Promise<ListResponse<EmergencyAccessGranteeDetailsResponse>> {
-    const r = await this.send("GET", "/emergency-access/trusted", null, true, true);
-    return new ListResponse(r, EmergencyAccessGranteeDetailsResponse);
-  }
-
-  async getEmergencyAccessGranted(): Promise<ListResponse<EmergencyAccessGrantorDetailsResponse>> {
-    const r = await this.send("GET", "/emergency-access/granted", null, true, true);
-    return new ListResponse(r, EmergencyAccessGrantorDetailsResponse);
-  }
-
-  async getEmergencyAccess(id: string): Promise<EmergencyAccessGranteeDetailsResponse> {
-    const r = await this.send("GET", "/emergency-access/" + id, null, true, true);
-    return new EmergencyAccessGranteeDetailsResponse(r);
-  }
-
-  async getEmergencyGrantorPolicies(id: string): Promise<ListResponse<PolicyResponse>> {
-    const r = await this.send("GET", "/emergency-access/" + id + "/policies", null, true, true);
-    return new ListResponse(r, PolicyResponse);
-  }
-
-  putEmergencyAccess(id: string, request: EmergencyAccessUpdateRequest): Promise<any> {
-    return this.send("PUT", "/emergency-access/" + id, request, true, false);
-  }
-
-  deleteEmergencyAccess(id: string): Promise<any> {
-    return this.send("DELETE", "/emergency-access/" + id, null, true, false);
-  }
-
-  postEmergencyAccessInvite(request: EmergencyAccessInviteRequest): Promise<any> {
-    return this.send("POST", "/emergency-access/invite", request, true, false);
-  }
-
-  postEmergencyAccessReinvite(id: string): Promise<any> {
-    return this.send("POST", "/emergency-access/" + id + "/reinvite", null, true, false);
-  }
-
-  postEmergencyAccessAccept(id: string, request: EmergencyAccessAcceptRequest): Promise<any> {
-    return this.send("POST", "/emergency-access/" + id + "/accept", request, true, false);
-  }
-
-  postEmergencyAccessConfirm(id: string, request: EmergencyAccessConfirmRequest): Promise<any> {
-    return this.send("POST", "/emergency-access/" + id + "/confirm", request, true, false);
-  }
-
-  postEmergencyAccessInitiate(id: string): Promise<any> {
-    return this.send("POST", "/emergency-access/" + id + "/initiate", null, true, false);
-  }
-
-  postEmergencyAccessApprove(id: string): Promise<any> {
-    return this.send("POST", "/emergency-access/" + id + "/approve", null, true, false);
-  }
-
-  postEmergencyAccessReject(id: string): Promise<any> {
-    return this.send("POST", "/emergency-access/" + id + "/reject", null, true, false);
-  }
-
-  async postEmergencyAccessTakeover(id: string): Promise<EmergencyAccessTakeoverResponse> {
-    const r = await this.send("POST", "/emergency-access/" + id + "/takeover", null, true, true);
-    return new EmergencyAccessTakeoverResponse(r);
-  }
-
-  async postEmergencyAccessPassword(
-    id: string,
-    request: EmergencyAccessPasswordRequest
-  ): Promise<any> {
-    await this.send("POST", "/emergency-access/" + id + "/password", request, true, true);
-  }
-
-  async postEmergencyAccessView(id: string): Promise<EmergencyAccessViewResponse> {
-    const r = await this.send("POST", "/emergency-access/" + id + "/view", null, true, true);
-    return new EmergencyAccessViewResponse(r);
   }
 
   // Organization APIs

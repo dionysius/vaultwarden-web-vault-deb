@@ -14,7 +14,7 @@ import { DialogService } from "@bitwarden/components";
 
 @Component({
   selector: "emergency-access-attachments",
-  templateUrl: "../../../vault/individual-vault/attachments.component.html",
+  templateUrl: "../../../../vault/individual-vault/attachments.component.html",
 })
 export class EmergencyAccessAttachmentsComponent extends BaseAttachmentsComponent {
   viewOnly = true;

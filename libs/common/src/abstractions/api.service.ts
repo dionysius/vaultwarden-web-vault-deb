@@ -19,7 +19,6 @@ import {
 } from "../admin-console/models/response/organization-connection.response";
 import { OrganizationExportResponse } from "../admin-console/models/response/organization-export.response";
 import { OrganizationSponsorshipSyncStatusResponse } from "../admin-console/models/response/organization-sponsorship-sync-status.response";
-import { PolicyResponse } from "../admin-console/models/response/policy.response";
 import {
   ProviderOrganizationOrganizationDetailsResponse,
   ProviderOrganizationResponse,
@@ -36,11 +35,6 @@ import { CreateAuthRequest } from "../auth/models/request/create-auth.request";
 import { DeviceVerificationRequest } from "../auth/models/request/device-verification.request";
 import { EmailTokenRequest } from "../auth/models/request/email-token.request";
 import { EmailRequest } from "../auth/models/request/email.request";
-import { EmergencyAccessAcceptRequest } from "../auth/models/request/emergency-access-accept.request";
-import { EmergencyAccessConfirmRequest } from "../auth/models/request/emergency-access-confirm.request";
-import { EmergencyAccessInviteRequest } from "../auth/models/request/emergency-access-invite.request";
-import { EmergencyAccessPasswordRequest } from "../auth/models/request/emergency-access-password.request";
-import { EmergencyAccessUpdateRequest } from "../auth/models/request/emergency-access-update.request";
 import { PasswordTokenRequest } from "../auth/models/request/identity-token/password-token.request";
 import { SsoTokenRequest } from "../auth/models/request/identity-token/sso-token.request";
 import { UserApiTokenRequest } from "../auth/models/request/identity-token/user-api-token.request";
@@ -65,12 +59,6 @@ import { UpdateTwoFactorYubioOtpRequest } from "../auth/models/request/update-tw
 import { ApiKeyResponse } from "../auth/models/response/api-key.response";
 import { AuthRequestResponse } from "../auth/models/response/auth-request.response";
 import { DeviceVerificationResponse } from "../auth/models/response/device-verification.response";
-import {
-  EmergencyAccessGranteeDetailsResponse,
-  EmergencyAccessGrantorDetailsResponse,
-  EmergencyAccessTakeoverResponse,
-  EmergencyAccessViewResponse,
-} from "../auth/models/response/emergency-access.response";
 import { IdentityCaptchaResponse } from "../auth/models/response/identity-captcha.response";
 import { IdentityTokenResponse } from "../auth/models/response/identity-token.response";
 import { IdentityTwoFactorResponse } from "../auth/models/response/identity-two-factor.response";
@@ -365,25 +353,6 @@ export abstract class ApiService {
     request: DeviceVerificationRequest
   ) => Promise<DeviceVerificationResponse>;
 
-  getEmergencyAccessTrusted: () => Promise<ListResponse<EmergencyAccessGranteeDetailsResponse>>;
-  getEmergencyAccessGranted: () => Promise<ListResponse<EmergencyAccessGrantorDetailsResponse>>;
-  getEmergencyAccess: (id: string) => Promise<EmergencyAccessGranteeDetailsResponse>;
-  getEmergencyGrantorPolicies: (id: string) => Promise<ListResponse<PolicyResponse>>;
-  putEmergencyAccess: (id: string, request: EmergencyAccessUpdateRequest) => Promise<any>;
-  deleteEmergencyAccess: (id: string) => Promise<any>;
-  postEmergencyAccessInvite: (request: EmergencyAccessInviteRequest) => Promise<any>;
-  postEmergencyAccessReinvite: (id: string) => Promise<any>;
-  postEmergencyAccessAccept: (id: string, request: EmergencyAccessAcceptRequest) => Promise<any>;
-  postEmergencyAccessConfirm: (id: string, request: EmergencyAccessConfirmRequest) => Promise<any>;
-  postEmergencyAccessInitiate: (id: string) => Promise<any>;
-  postEmergencyAccessApprove: (id: string) => Promise<any>;
-  postEmergencyAccessReject: (id: string) => Promise<any>;
-  postEmergencyAccessTakeover: (id: string) => Promise<EmergencyAccessTakeoverResponse>;
-  postEmergencyAccessPassword: (
-    id: string,
-    request: EmergencyAccessPasswordRequest
-  ) => Promise<any>;
-  postEmergencyAccessView: (id: string) => Promise<EmergencyAccessViewResponse>;
   getCloudCommunicationsEnabled: () => Promise<boolean>;
   abstract getOrganizationConnection<TConfig extends OrganizationConnectionConfigApis>(
     id: string,

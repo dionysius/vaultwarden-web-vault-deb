@@ -16,7 +16,6 @@ import { WeakPasswordsReportComponent as OrgWeakPasswordsReportComponent } from 
 import { ProvidersComponent } from "../admin-console/providers/providers.component";
 import { SponsoredFamiliesComponent } from "../admin-console/settings/sponsored-families.component";
 import { SponsoringOrgRowComponent } from "../admin-console/settings/sponsoring-org-row.component";
-import { AcceptEmergencyComponent } from "../auth/accept-emergency.component";
 import { AcceptOrganizationComponent } from "../auth/accept-organization.component";
 import { HintComponent } from "../auth/hint.component";
 import { LockComponent } from "../auth/lock.component";
@@ -26,13 +25,13 @@ import { RegisterFormModule } from "../auth/register-form/register-form.module";
 import { RemovePasswordComponent } from "../auth/remove-password.component";
 import { SetPasswordComponent } from "../auth/set-password.component";
 import { DeauthorizeSessionsComponent } from "../auth/settings/deauthorize-sessions.component";
+import { EmergencyAccessAttachmentsComponent } from "../auth/settings/emergency-access/attachments/emergency-access-attachments.component";
+import { EmergencyAccessConfirmComponent } from "../auth/settings/emergency-access/confirm/emergency-access-confirm.component";
 import { EmergencyAccessAddEditComponent } from "../auth/settings/emergency-access/emergency-access-add-edit.component";
-import { EmergencyAccessAttachmentsComponent } from "../auth/settings/emergency-access/emergency-access-attachments.component";
-import { EmergencyAccessConfirmComponent } from "../auth/settings/emergency-access/emergency-access-confirm.component";
-import { EmergencyAccessTakeoverComponent } from "../auth/settings/emergency-access/emergency-access-takeover.component";
-import { EmergencyAccessViewComponent } from "../auth/settings/emergency-access/emergency-access-view.component";
 import { EmergencyAccessComponent } from "../auth/settings/emergency-access/emergency-access.component";
-import { EmergencyAddEditComponent } from "../auth/settings/emergency-access/emergency-add-edit.component";
+import { EmergencyAccessTakeoverComponent } from "../auth/settings/emergency-access/takeover/emergency-access-takeover.component";
+import { EmergencyAccessViewComponent } from "../auth/settings/emergency-access/view/emergency-access-view.component";
+import { EmergencyAddEditCipherComponent } from "../auth/settings/emergency-access/view/emergency-add-edit-cipher.component";
 import { TwoFactorAuthenticatorComponent } from "../auth/settings/two-factor-authenticator.component";
 import { TwoFactorDuoComponent } from "../auth/settings/two-factor-duo.component";
 import { TwoFactorEmailComponent } from "../auth/settings/two-factor-email.component";
@@ -107,7 +106,6 @@ import { SharedModule } from "./shared.module";
     PasswordCalloutComponent,
   ],
   declarations: [
-    AcceptEmergencyComponent,
     AcceptFamilySponsorshipComponent,
     AcceptOrganizationComponent,
     AccessComponent,
@@ -128,7 +126,7 @@ import { SharedModule } from "./shared.module";
     EmergencyAccessConfirmComponent,
     EmergencyAccessTakeoverComponent,
     EmergencyAccessViewComponent,
-    EmergencyAddEditComponent,
+    EmergencyAddEditCipherComponent,
     FolderAddEditComponent,
     FooterComponent,
     FrontendLayoutComponent,
@@ -192,7 +190,6 @@ import { SharedModule } from "./shared.module";
   exports: [
     UserVerificationModule,
     PremiumBadgeComponent,
-    AcceptEmergencyComponent,
     AcceptOrganizationComponent,
     AccessComponent,
     AccountComponent,
@@ -213,7 +210,7 @@ import { SharedModule } from "./shared.module";
     EmergencyAccessConfirmComponent,
     EmergencyAccessTakeoverComponent,
     EmergencyAccessViewComponent,
-    EmergencyAddEditComponent,
+    EmergencyAddEditCipherComponent,
     FolderAddEditComponent,
     FooterComponent,
     FrontendLayoutComponent,
