@@ -1,7 +1,9 @@
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
+import { EventCollectionService } from "@bitwarden/common/abstractions/event/event-collection.service";
 import { SearchService } from "@bitwarden/common/abstractions/search.service";
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 import { OrganizationUserService } from "@bitwarden/common/admin-console/abstractions/organization-user/organization-user.service";
+import { EventType } from "@bitwarden/common/enums";
 import { ListResponse as ApiListResponse } from "@bitwarden/common/models/response/list.response";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
@@ -32,7 +34,8 @@ export class ListCommand {
     private organizationService: OrganizationService,
     private searchService: SearchService,
     private organizationUserService: OrganizationUserService,
-    private apiService: ApiService
+    private apiService: ApiService,
+    private eventCollectionService: EventCollectionService
   ) {}
 
   async run(object: string, cmdOptions: Record<string, any>): Promise<Response> {
@@ -122,6 +125,17 @@ export class ListCommand {
     if (options.search != null && options.search.trim() !== "") {
       ciphers = this.searchService.searchCiphersBasic(ciphers, options.search, options.trash);
     }
+
+    ciphers.forEach((c, index) => {
+      // Set upload immediately on the last item in the ciphers collection to avoid the event collection
+      // service from uploading each time.
+      this.eventCollectionService.collect(
+        EventType.Cipher_ClientViewed,
+        c.id,
+        index === ciphers.length - 1,
+        c.organizationId
+      );
+    });
 
     const res = new ListResponse(ciphers.map((o) => new CipherResponse(o)));
     return Response.success(res);

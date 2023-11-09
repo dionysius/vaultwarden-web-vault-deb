@@ -486,6 +486,12 @@ export class EventService {
         return ["bwi-globe", this.i18nService.t("webVault") + " - IE"];
       case DeviceType.Server:
         return ["bwi-server", this.i18nService.t("server")];
+      case DeviceType.WindowsCLI:
+        return ["bwi-cli", this.i18nService.t("cli") + " - Windows"];
+      case DeviceType.MacOsCLI:
+        return ["bwi-cli", this.i18nService.t("cli") + " - macOS"];
+      case DeviceType.LinuxCLI:
+        return ["bwi-cli", this.i18nService.t("cli") + " - Linux"];
       case DeviceType.UnknownBrowser:
         return [
           "bwi-globe",

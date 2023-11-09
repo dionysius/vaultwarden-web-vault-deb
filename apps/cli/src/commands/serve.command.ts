@@ -66,7 +66,8 @@ export class ServeCommand {
       this.main.stateService,
       this.main.searchService,
       this.main.apiService,
-      this.main.organizationService
+      this.main.organizationService,
+      this.main.eventCollectionService
     );
     this.listCommand = new ListCommand(
       this.main.cipherService,
@@ -75,7 +76,8 @@ export class ServeCommand {
       this.main.organizationService,
       this.main.searchService,
       this.main.organizationUserService,
-      this.main.apiService
+      this.main.apiService,
+      this.main.eventCollectionService
     );
     this.createCommand = new CreateCommand(
       this.main.cipherService,

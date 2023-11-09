@@ -156,7 +156,8 @@ export class SendProgram extends Program {
           this.main.stateService,
           this.main.searchService,
           this.main.apiService,
-          this.main.organizationService
+          this.main.organizationService,
+          this.main.eventCollectionService
         );
         const response = await cmd.run("template", object, null);
         this.processResponse(response);

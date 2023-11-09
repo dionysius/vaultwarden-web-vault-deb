@@ -22,6 +22,9 @@ export enum DeviceType {
   SafariExtension = 20,
   SDK = 21,
   Server = 22,
+  WindowsCLI = 23,
+  MacOsCLI = 24,
+  LinuxCLI = 25,
 }
 
 export const MobileDeviceTypes: Set<DeviceType> = new Set([
@@ -35,4 +38,7 @@ export const DesktopDeviceTypes: Set<DeviceType> = new Set([
   DeviceType.MacOsDesktop,
   DeviceType.LinuxDesktop,
   DeviceType.UWP,
+  DeviceType.WindowsCLI,
+  DeviceType.MacOsCLI,
+  DeviceType.LinuxCLI,
 ]);

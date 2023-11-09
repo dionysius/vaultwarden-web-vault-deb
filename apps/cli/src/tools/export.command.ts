@@ -1,8 +1,10 @@
 import * as program from "commander";
 import * as inquirer from "inquirer";
 
+import { EventCollectionService } from "@bitwarden/common/abstractions/event/event-collection.service";
 import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
 import { PolicyType } from "@bitwarden/common/admin-console/enums";
+import { EventType } from "@bitwarden/common/enums";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
 import {
   ExportFormat,
@@ -16,7 +18,8 @@ import { CliUtils } from "../utils";
 export class ExportCommand {
   constructor(
     private exportService: VaultExportServiceAbstraction,
-    private policyService: PolicyService
+    private policyService: PolicyService,
+    private eventCollectionService: EventCollectionService
   ) {}
 
   async run(options: program.OptionValues): Promise<Response> {
@@ -48,6 +51,11 @@ export class ExportCommand {
         format === "encrypted_json"
           ? await this.getProtectedExport(options.password, options.organizationid)
           : await this.getUnprotectedExport(format, options.organizationid);
+
+      const eventType = options.organizationid
+        ? EventType.Organization_ClientExportedVault
+        : EventType.User_ClientExportedVault;
+      this.eventCollectionService.collect(eventType, null, true, options.organizationid);
     } catch (e) {
       return Response.error(e);
     }

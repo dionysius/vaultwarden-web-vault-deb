@@ -19,14 +19,14 @@ export class CliPlatformUtilsService implements PlatformUtilsService {
     if (!this.deviceCache) {
       switch (process.platform) {
         case "win32":
-          this.deviceCache = DeviceType.WindowsDesktop;
+          this.deviceCache = DeviceType.WindowsCLI;
           break;
         case "darwin":
-          this.deviceCache = DeviceType.MacOsDesktop;
+          this.deviceCache = DeviceType.MacOsCLI;
           break;
         case "linux":
         default:
-          this.deviceCache = DeviceType.LinuxDesktop;
+          this.deviceCache = DeviceType.LinuxCLI;
           break;
       }
     }
@@ -36,7 +36,7 @@ export class CliPlatformUtilsService implements PlatformUtilsService {
 
   getDeviceString(): string {
     const device = DeviceType[this.getDevice()].toLowerCase();
-    return device.replace("desktop", "");
+    return device.replace("cli", "");
   }
 
   getClientType() {
