@@ -5,10 +5,14 @@ import * as lowdb from "lowdb";
 import * as FileSync from "lowdb/adapters/FileSync";
 import * as lock from "proper-lockfile";
 import { OperationOptions } from "retry";
+import { Subject } from "rxjs";
 
 import { NodeUtils } from "@bitwarden/common/misc/nodeUtils";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
-import { AbstractStorageService } from "@bitwarden/common/platform/abstractions/storage.service";
+import {
+  AbstractStorageService,
+  StorageUpdate,
+} from "@bitwarden/common/platform/abstractions/storage.service";
 import { sequentialize } from "@bitwarden/common/platform/misc/sequentialize";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
 
@@ -24,6 +28,7 @@ export class LowdbStorageService implements AbstractStorageService {
   private db: lowdb.LowdbSync<any>;
   private defaults: any;
   private ready = false;
+  private updatesSubject = new Subject<StorageUpdate>();
 
   constructor(
     protected logService: LogService,
@@ -102,6 +107,10 @@ export class LowdbStorageService implements AbstractStorageService {
     this.ready = true;
   }
 
+  get updates$() {
+    return this.updatesSubject.asObservable();
+  }
+
   async get<T>(key: string): Promise<T> {
     await this.waitForReady();
     return this.lockDbFile(() => {
@@ -119,21 +128,23 @@ export class LowdbStorageService implements AbstractStorageService {
     return this.get(key).then((v) => v != null);
   }
 
-  async save(key: string, obj: any): Promise<any> {
+  async save(key: string, obj: any): Promise<void> {
     await this.waitForReady();
     return this.lockDbFile(() => {
       this.readForNoCache();
       this.db.set(key, obj).write();
+      this.updatesSubject.next({ key, value: obj, updateType: "save" });
       this.logService.debug(`Successfully wrote ${key} to db`);
       return;
     });
   }
 
-  async remove(key: string): Promise<any> {
+  async remove(key: string): Promise<void> {
     await this.waitForReady();
     return this.lockDbFile(() => {
       this.readForNoCache();
       this.db.unset(key).write();
+      this.updatesSubject.next({ key, value: null, updateType: "remove" });
       this.logService.debug(`Successfully removed ${key} from db`);
       return;
     });

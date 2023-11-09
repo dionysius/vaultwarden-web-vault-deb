@@ -8,6 +8,7 @@ const sharedConfig = require("../shared/jest.config.ts");
 module.exports = {
   ...sharedConfig,
   preset: "ts-jest",
+  testEnvironment: "node",
   setupFilesAfterEnv: ["<rootDir>/test.setup.ts"],
   moduleNameMapper: pathsToModuleNameMapper(compilerOptions?.paths || {}, {
     prefix: "<rootDir>/",

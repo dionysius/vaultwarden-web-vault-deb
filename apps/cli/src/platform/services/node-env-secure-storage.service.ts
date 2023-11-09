@@ -1,3 +1,5 @@
+import { throwError } from "rxjs";
+
 import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { AbstractStorageService } from "@bitwarden/common/platform/abstractions/storage.service";
@@ -12,6 +14,12 @@ export class NodeEnvSecureStorageService implements AbstractStorageService {
     private cryptoService: () => CryptoService
   ) {}
 
+  get updates$() {
+    return throwError(
+      () => new Error("Secure storage implementations cannot have their updates subscribed to.")
+    );
+  }
+
   async get<T>(key: string): Promise<T> {
     const value = await this.storageService.get<string>(this.makeProtectedStorageKey(key));
     if (value == null) {
@@ -25,7 +33,7 @@ export class NodeEnvSecureStorageService implements AbstractStorageService {
     return (await this.get(key)) != null;
   }
 
-  async save(key: string, obj: any): Promise<any> {
+  async save(key: string, obj: any): Promise<void> {
     if (obj == null) {
       return this.remove(key);
     }
@@ -37,8 +45,9 @@ export class NodeEnvSecureStorageService implements AbstractStorageService {
     await this.storageService.save(this.makeProtectedStorageKey(key), protectedObj);
   }
 
-  remove(key: string): Promise<any> {
-    return this.storageService.remove(this.makeProtectedStorageKey(key));
+  async remove(key: string): Promise<void> {
+    await this.storageService.remove(this.makeProtectedStorageKey(key));
+    return;
   }
 
   private async encrypt(plainValue: string): Promise<string> {

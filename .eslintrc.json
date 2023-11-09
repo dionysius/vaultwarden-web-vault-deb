@@ -100,6 +100,19 @@
                   "./libs/importer/**/*",
                   "./libs/exporter/**/*"
                 ]
+              },
+              {
+                // avoid import of unexported state objects
+                "target": [
+                  "!(libs)/**/*",
+                  "libs/!(common)/**/*",
+                  "libs/common/!(src)/**/*",
+                  "libs/common/src/!(platform)/**/*",
+                  "libs/common/src/platform/!(state)/**/*"
+                ],
+                "from": ["./libs/common/src/platform/state/**/*"],
+                // allow module index import
+                "except": ["**/state/index.ts"]
               }
             ]
           }
@@ -179,17 +192,23 @@
     },
     {
       "files": ["apps/browser/src/**/*.ts", "libs/**/*.ts"],
-      "excludedFiles": "apps/browser/src/autofill/{content,notification}/**/*.ts",
+      "excludedFiles": [
+        "apps/browser/src/autofill/{content,notification}/**/*.ts",
+        "apps/browser/src/**/background/**/*.ts", // It's okay to have long lived listeners in the background
+        "apps/browser/src/platform/background.ts"
+      ],
       "rules": {
         "no-restricted-syntax": [
           "error",
           {
-            "message": "Using addListener in the browser popup produces a memory leak in Safari, use `BrowserApi.messageListener` instead",
-            "selector": "CallExpression > [object.object.object.name='chrome'][object.object.property.name='runtime'][object.property.name='onMessage'][property.name='addListener']"
+            "message": "Using addListener in the browser popup produces a memory leak in Safari, use `BrowserApi.addListener` instead",
+            // This selector covers events like chrome.storage.onChange & chrome.runtime.onMessage
+            "selector": "CallExpression > [object.object.object.name='chrome'][property.name='addListener']"
           },
           {
-            "message": "Using addListener in the browser popup produces a memory leak in Safari, use `BrowserApi.storageChangeListener` instead",
-            "selector": "CallExpression > [object.object.object.name='chrome'][object.object.property.name='storage'][object.property.name='onChanged'][property.name='addListener']"
+            "message": "Using addListener in the browser popup produces a memory leak in Safari, use `BrowserApi.addListener` instead",
+            // This selector covers events like chrome.storage.local.onChange
+            "selector": "CallExpression > [object.object.object.object.name='chrome'][property.name='addListener']"
           }
         ]
       }

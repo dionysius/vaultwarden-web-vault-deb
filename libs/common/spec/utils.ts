@@ -69,12 +69,18 @@ export function trackEmissions<T>(observable: Observable<T>): T[] {
       case "boolean":
         emissions.push(value);
         break;
-      case "object":
-        emissions.push({ ...value });
-        break;
-      default:
-        emissions.push(JSON.parse(JSON.stringify(value)));
+      default: {
+        emissions.push(clone(value));
+      }
     }
   });
   return emissions;
+}
+
+function clone(value: any): any {
+  if (global.structuredClone != undefined) {
+    return structuredClone(value);
+  } else {
+    return JSON.parse(JSON.stringify(value));
+  }
 }

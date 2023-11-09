@@ -1,6 +1,17 @@
-import { AbstractStorageService } from "@bitwarden/common/platform/abstractions/storage.service";
+import { Subject } from "rxjs";
+
+import {
+  AbstractStorageService,
+  StorageUpdate,
+} from "@bitwarden/common/platform/abstractions/storage.service";
 
 export class ElectronRendererStorageService implements AbstractStorageService {
+  private updatesSubject = new Subject<StorageUpdate>();
+
+  get updates$() {
+    return this.updatesSubject.asObservable();
+  }
+
   get<T>(key: string): Promise<T> {
     return ipc.platform.storage.get(key);
   }
@@ -9,11 +20,13 @@ export class ElectronRendererStorageService implements AbstractStorageService {
     return ipc.platform.storage.has(key);
   }
 
-  save(key: string, obj: any): Promise<any> {
-    return ipc.platform.storage.save(key, obj);
+  async save<T>(key: string, obj: T): Promise<void> {
+    await ipc.platform.storage.save(key, obj);
+    this.updatesSubject.next({ key, value: obj, updateType: "save" });
   }
 
-  remove(key: string): Promise<any> {
-    return ipc.platform.storage.remove(key);
+  async remove(key: string): Promise<void> {
+    await ipc.platform.storage.remove(key);
+    this.updatesSubject.next({ key, value: null, updateType: "remove" });
   }
 }
