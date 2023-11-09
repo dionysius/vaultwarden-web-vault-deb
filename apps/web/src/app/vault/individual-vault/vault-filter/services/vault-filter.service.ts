@@ -11,10 +11,7 @@ import {
   switchMap,
 } from "rxjs";
 
-import {
-  isMember,
-  OrganizationService,
-} from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
+import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
 import { PolicyType } from "@bitwarden/common/admin-console/enums";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
@@ -48,7 +45,7 @@ export class VaultFilterService implements VaultFilterServiceAbstraction {
   );
 
   organizationTree$: Observable<TreeNode<OrganizationFilter>> =
-    this.organizationService.organizations$.pipe(
+    this.organizationService.memberOrganizations$.pipe(
       switchMap((orgs) => this.buildOrganizationTree(orgs))
     );
 
@@ -139,7 +136,7 @@ export class VaultFilterService implements VaultFilterServiceAbstraction {
     }
     if (orgs) {
       const orgNodes: TreeNode<OrganizationFilter>[] = [];
-      orgs.filter(isMember).forEach((org) => {
+      orgs.forEach((org) => {
         const orgCopy = org as OrganizationFilter;
         orgCopy.icon = "bwi-business";
         const node = new TreeNode<OrganizationFilter>(orgCopy, headNode, orgCopy.name);

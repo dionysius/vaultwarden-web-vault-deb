@@ -98,16 +98,11 @@
               class="org-options bwi bwi-fw bwi-exclamation-triangle text-danger"
               [attr.aria-label]="'organizationIsDisabled' | i18n"
               appA11yTitle="{{ 'organizationIsDisabled' | i18n }}"
-            ></i
-            ><ng-container *ngIf="optionsInfo && !f.node.hideOptions"
-              ><button type="button" [bitMenuTriggerFor]="optionsMenu" class="filter-options-icon">
-                <i class="bwi bwi-ellipsis-v" aria-hidden="true"></i>
-              </button>
-              <bit-menu class="filter-organization-options" #optionsMenu>
-                <ng-container
-                  *ngComponentOutlet="optionsInfo.component; injector: createInjector(f.node)"
-                ></ng-container>
-              </bit-menu>
+            ></i>
+            <ng-container *ngIf="optionsInfo && !f.node.hideOptions">
+              <ng-container
+                *ngComponentOutlet="optionsInfo.component; injector: createInjector(f.node)"
+              ></ng-container>
             </ng-container>
           </span>
         </span>

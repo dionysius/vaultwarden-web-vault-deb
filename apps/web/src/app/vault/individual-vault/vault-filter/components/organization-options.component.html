@@ -1,54 +1,60 @@
-<ng-container *ngIf="!loaded">
-  <i
-    class="bwi bwi-spinner bwi-spin text-muted tw-m-2"
-    title="{{ 'loading' | i18n }}"
-    aria-hidden="true"
-  ></i>
-  <span class="sr-only">{{ "loading" | i18n }}</span>
-</ng-container>
-<div
-  *ngIf="loaded"
-  class="tw-flex tw-min-w-[200px] tw-max-w-[300px] tw-flex-col"
-  [appApiAction]="actionPromise"
->
-  <button
-    type="button"
-    *ngIf="allowEnrollmentChanges(organization) && !organization.resetPasswordEnrolled"
-    class="tw-block tw-cursor-pointer tw-border-none tw-bg-background tw-px-4 tw-py-2 tw-text-left !tw-text-main hover:tw-bg-secondary-100 focus:tw-z-50 focus:tw-bg-secondary-100 focus:tw-outline-none focus:tw-ring focus:tw-ring-primary-700 focus:tw-ring-offset-2 active:!tw-ring-0 active:!tw-ring-offset-0"
-    (click)="toggleResetPasswordEnrollment(organization)"
-  >
-    <i class="bwi bwi-fw bwi-key" aria-hidden="true"></i>
-    {{ "enrollAccountRecovery" | i18n }}
+<ng-container *ngIf="!hideMenu">
+  <button type="button" [bitMenuTriggerFor]="optionsMenu" class="filter-options-icon">
+    <i class="bwi bwi-ellipsis-v" aria-hidden="true"></i>
   </button>
-  <button
-    type="button"
-    *ngIf="allowEnrollmentChanges(organization) && organization.resetPasswordEnrolled"
-    class="tw-block tw-cursor-pointer tw-border-none tw-bg-background tw-px-4 tw-py-2 tw-text-left !tw-text-main hover:tw-bg-secondary-100 focus:tw-z-50 focus:tw-bg-secondary-100 focus:tw-outline-none focus:tw-ring focus:tw-ring-primary-700 focus:tw-ring-offset-2 active:!tw-ring-0 active:!tw-ring-offset-0"
-    (click)="toggleResetPasswordEnrollment(organization)"
-  >
-    <i class="bwi bwi-fw bwi-undo" aria-hidden="true"></i>
-    {{ "withdrawAccountRecovery" | i18n }}
-  </button>
-  <ng-container *ngIf="organization.useSso && organization.identifier">
-    <button
-      type="button"
-      *ngIf="organization.ssoBound; else linkSso"
-      class="tw-block tw-cursor-pointer tw-border-none tw-bg-background tw-px-4 tw-py-2 tw-text-left !tw-text-main hover:tw-bg-secondary-100 focus:tw-z-50 focus:tw-bg-secondary-100 focus:tw-outline-none focus:tw-ring focus:tw-ring-primary-700 focus:tw-ring-offset-2 active:!tw-ring-0 active:!tw-ring-offset-0"
-      (click)="unlinkSso(organization)"
+  <bit-menu class="filter-organization-options" #optionsMenu>
+    <ng-container *ngIf="!loaded">
+      <i
+        class="bwi bwi-spinner bwi-spin tw-m-2 tw-text-muted"
+        title="{{ 'loading' | i18n }}"
+        aria-hidden="true"
+      ></i>
+      <span class="tw-sr-only">{{ "loading" | i18n }}</span>
+    </ng-container>
+    <div
+      *ngIf="loaded"
+      class="tw-flex tw-min-w-[200px] tw-max-w-[300px] tw-flex-col"
+      [appApiAction]="actionPromise"
     >
-      <i class="bwi bwi-fw bwi-chain-broken" aria-hidden="true"></i>
-      {{ "unlinkSso" | i18n }}
-    </button>
-    <ng-template #linkSso>
-      <app-link-sso [organization]="organization"> </app-link-sso>
-    </ng-template>
-  </ng-container>
-  <button
-    type="button"
-    class="text-danger tw-block tw-cursor-pointer tw-border-none tw-bg-background tw-px-4 tw-py-2 tw-text-left hover:tw-bg-secondary-100 focus:tw-z-50 focus:tw-bg-secondary-100 focus:tw-outline-none focus:tw-ring focus:tw-ring-primary-700 focus:tw-ring-offset-2 active:!tw-ring-0 active:!tw-ring-offset-0"
-    (click)="leave(organization)"
-  >
-    <i class="bwi bwi-fw bwi-sign-out" aria-hidden="true"></i>
-    {{ "leave" | i18n }}
-  </button>
-</div>
+      <button
+        type="button"
+        *ngIf="allowEnrollmentChanges(organization) && !organization.resetPasswordEnrolled"
+        bitMenuItem
+        (click)="toggleResetPasswordEnrollment(organization)"
+      >
+        <i class="bwi bwi-fw bwi-key" aria-hidden="true"></i>
+        {{ "enrollAccountRecovery" | i18n }}
+      </button>
+      <button
+        type="button"
+        *ngIf="allowEnrollmentChanges(organization) && organization.resetPasswordEnrolled"
+        bitMenuItem
+        (click)="toggleResetPasswordEnrollment(organization)"
+      >
+        <i class="bwi bwi-fw bwi-undo" aria-hidden="true"></i>
+        {{ "withdrawAccountRecovery" | i18n }}
+      </button>
+      <ng-container *ngIf="showSsoOptions(organization)">
+        <button
+          type="button"
+          *ngIf="organization.ssoBound; else linkSso"
+          bitMenuItem
+          (click)="unlinkSso(organization)"
+        >
+          <i class="bwi bwi-fw bwi-chain-broken" aria-hidden="true"></i>
+          {{ "unlinkSso" | i18n }}
+        </button>
+        <ng-template #linkSso>
+          <a href="#" bitMenuItem app-link-sso [organization]="organization">
+            <i class="bwi bwi-fw bwi-link" aria-hidden="true"></i>
+            {{ "linkSso" | i18n }}
+          </a>
+        </ng-template>
+      </ng-container>
+      <button *ngIf="showLeaveOrgOption" type="button" bitMenuItem (click)="leave(organization)">
+        <i class="bwi bwi-fw bwi-sign-out tw-text-danger" aria-hidden="true"></i>
+        <span class="tw-text-danger">{{ "leave" | i18n }}</span>
+      </button>
+    </div>
+  </bit-menu>
+</ng-container>

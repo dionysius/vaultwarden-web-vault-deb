@@ -1,4 +1,4 @@
-import { AfterContentInit, Component, Input } from "@angular/core";
+import { AfterContentInit, Directive, HostListener, Input } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 
 import { SsoComponent } from "@bitwarden/angular/auth/components/sso.component";
@@ -14,13 +14,18 @@ import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/pl
 import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
 import { PasswordGenerationServiceAbstraction } from "@bitwarden/common/tools/generator/password";
 
-@Component({
-  selector: "app-link-sso",
-  templateUrl: "link-sso.component.html",
+@Directive({
+  selector: "[app-link-sso]",
 })
-export class LinkSsoComponent extends SsoComponent implements AfterContentInit {
+export class LinkSsoDirective extends SsoComponent implements AfterContentInit {
   @Input() organization: Organization;
   returnUri = "/settings/organizations";
+
+  @HostListener("click", ["$event"])
+  async onClick($event: MouseEvent) {
+    $event.preventDefault();
+    await this.submit(this.returnUri, true);
+  }
 
   constructor(
     platformUtilsService: PlatformUtilsService,

@@ -39,7 +39,7 @@ describe("vault filter service", () => {
     organizations = new ReplaySubject<Organization[]>(1);
     folderViews = new ReplaySubject<FolderView[]>(1);
 
-    organizationService.organizations$ = organizations;
+    organizationService.memberOrganizations$ = organizations;
     folderService.folderViews$ = folderViews;
 
     vaultFilterService = new VaultFilterService(

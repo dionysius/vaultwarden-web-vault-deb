@@ -1,7 +1,6 @@
 import { Component, Inject, OnDestroy, OnInit } from "@angular/core";
-import { map, Subject, takeUntil } from "rxjs";
+import { combineLatest, map, Observable, Subject, takeUntil } from "rxjs";
 
-import { ModalService } from "@bitwarden/angular/services/modal.service";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { OrganizationApiServiceAbstraction } from "@bitwarden/common/admin-console/abstractions/organization/organization-api.service.abstraction";
 import { OrganizationUserService } from "@bitwarden/common/admin-console/abstractions/organization-user/organization-user.service";
@@ -13,6 +12,7 @@ import { Policy } from "@bitwarden/common/admin-console/models/domain/policy";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
+import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
 import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
 import { DialogService } from "@bitwarden/components";
 
@@ -25,34 +25,58 @@ import { OrganizationFilter } from "../shared/models/vault-filter.type";
   templateUrl: "organization-options.component.html",
 })
 export class OrganizationOptionsComponent implements OnInit, OnDestroy {
-  actionPromise: Promise<void | boolean>;
-  policies: Policy[];
-  loaded = false;
+  protected actionPromise: Promise<void | boolean>;
+  protected resetPasswordPolicy?: Policy | undefined;
+  protected loaded = false;
+  protected hideMenu = false;
+  protected showLeaveOrgOption = false;
+  protected organization: OrganizationFilter;
 
   private destroy$ = new Subject<void>();
 
   constructor(
-    @Inject(OptionsInput) protected organization: OrganizationFilter,
+    @Inject(OptionsInput) protected organization$: Observable<OrganizationFilter>,
     private platformUtilsService: PlatformUtilsService,
     private i18nService: I18nService,
     private apiService: ApiService,
     private syncService: SyncService,
     private policyService: PolicyService,
-    private modalService: ModalService,
     private logService: LogService,
     private organizationApiService: OrganizationApiServiceAbstraction,
     private organizationUserService: OrganizationUserService,
-    private dialogService: DialogService
+    private dialogService: DialogService,
+    private stateService: StateService
   ) {}
 
   async ngOnInit() {
-    this.policyService.policies$
-      .pipe(
-        map((policies) => policies.filter((policy) => policy.type === PolicyType.ResetPassword)),
-        takeUntil(this.destroy$)
-      )
-      .subscribe((policies) => {
-        this.policies = policies;
+    const resetPasswordPolicies$ = this.policyService.policies$.pipe(
+      map((policies) => policies.filter((policy) => policy.type === PolicyType.ResetPassword))
+    );
+
+    combineLatest([
+      this.organization$,
+      resetPasswordPolicies$,
+      this.stateService.getAccountDecryptionOptions(),
+    ])
+      .pipe(takeUntil(this.destroy$))
+      .subscribe(([organization, resetPasswordPolicies, decryptionOptions]) => {
+        this.organization = organization;
+        this.resetPasswordPolicy = resetPasswordPolicies.find(
+          (p) => p.organizationId === organization.id
+        );
+
+        // A user can leave an organization if they are NOT using TDE and Key Connector, or they have a master password.
+        this.showLeaveOrgOption =
+          (decryptionOptions.trustedDeviceOption == undefined &&
+            decryptionOptions.keyConnectorOption == undefined) ||
+          decryptionOptions.hasMasterPassword;
+
+        // Hide the 3 dot menu if the user has no available actions
+        this.hideMenu =
+          !this.showLeaveOrgOption &&
+          !this.showSsoOptions(this.organization) &&
+          !this.allowEnrollmentChanges(this.organization);
+
         this.loaded = true;
       });
   }
@@ -64,21 +88,16 @@ export class OrganizationOptionsComponent implements OnInit, OnDestroy {
 
   allowEnrollmentChanges(org: OrganizationFilter): boolean {
     if (org.usePolicies && org.useResetPassword && org.hasPublicAndPrivateKeys) {
-      const policy = this.policies.find((p) => p.organizationId === org.id);
-      if (policy != null && policy.enabled) {
-        return org.resetPasswordEnrolled && policy.data.autoEnrollEnabled ? false : true;
+      if (this.resetPasswordPolicy != undefined && this.resetPasswordPolicy.enabled) {
+        return !(org.resetPasswordEnrolled && this.resetPasswordPolicy.data.autoEnrollEnabled);
       }
     }
 
     return false;
   }
 
-  showEnrolledStatus(org: Organization): boolean {
-    return (
-      org.useResetPassword &&
-      org.resetPasswordEnrolled &&
-      this.policies.some((p) => p.organizationId === org.id && p.enabled)
-    );
+  showSsoOptions(org: OrganizationFilter) {
+    return org.useSso && org.identifier;
   }
 
   async unlinkSso(org: Organization) {
@@ -143,7 +162,7 @@ export class OrganizationOptionsComponent implements OnInit, OnDestroy {
           null,
           this.i18nService.t("withdrawPasswordResetSuccess")
         );
-        this.syncService.fullSync(true);
+        await this.syncService.fullSync(true);
       } catch (e) {
         this.logService.error(e);
       }

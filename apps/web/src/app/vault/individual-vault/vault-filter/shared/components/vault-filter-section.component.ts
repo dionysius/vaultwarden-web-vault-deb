@@ -1,5 +1,6 @@
 import { Component, InjectionToken, Injector, Input, OnDestroy, OnInit } from "@angular/core";
-import { Subject, takeUntil } from "rxjs";
+import { Observable, Subject, takeUntil } from "rxjs";
+import { map } from "rxjs/operators";
 
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
 import { ITreeNodeObject, TreeNode } from "@bitwarden/common/models/domain/tree-node";
@@ -120,9 +121,15 @@ export class VaultFilterSectionComponent implements OnInit, OnDestroy {
   // here we are creating a new injector for each filter that has options
   createInjector(data: VaultFilterType) {
     let inject = this.injectors.get(data.id);
+
     if (!inject) {
+      // Pass an observable to the component in order to update the component when the data changes
+      // as data binding does not work with dynamic components in Angular 15 (inputs are supported starting Angular 16)
+      const data$ = this.section.data$.pipe(
+        map((sectionNode) => sectionNode?.children?.find((node) => node.node.id === data.id)?.node)
+      );
       inject = Injector.create({
-        providers: [{ provide: OptionsInput, useValue: data }],
+        providers: [{ provide: OptionsInput, useValue: data$ }],
         parent: this.injector,
       });
       this.injectors.set(data.id, inject);
@@ -130,4 +137,4 @@ export class VaultFilterSectionComponent implements OnInit, OnDestroy {
     return inject;
   }
 }
-export const OptionsInput = new InjectionToken<VaultFilterType>("OptionsInput");
+export const OptionsInput = new InjectionToken<Observable<VaultFilterType>>("OptionsInput");
