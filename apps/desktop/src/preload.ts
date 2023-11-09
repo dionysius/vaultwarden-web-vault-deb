@@ -1,4 +1,5 @@
 // import { contextBridge } from "electron";
+import auth from "./auth/preload";
 import platform from "./platform/preload";
 
 /**
@@ -13,6 +14,7 @@ import platform from "./platform/preload";
 
 // Each team owns a subspace of the `ipc` global variable in the renderer.
 export const ipc = {
+  auth,
   platform,
 };
 

@@ -8,8 +8,6 @@ import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.servic
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
 
-import { getCookie } from "../utils";
-
 const BroadcasterSubscriptionId = "AccessibilityCookieComponent";
 
 @Component({
@@ -55,7 +53,7 @@ export class AccessibilityCookieComponent {
 
   async checkForCookie() {
     this.hCaptchaWindow.close();
-    const [cookie] = await getCookie("https://www.hcaptcha.com/", "hc_accessibility");
+    const [cookie] = await ipc.auth.getHcaptchaAccessibilityCookie();
     if (cookie) {
       this.onCookieSavedSuccess();
     } else {

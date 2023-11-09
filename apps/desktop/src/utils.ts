@@ -1,5 +1,3 @@
-import { ipcRenderer } from "electron";
-
 export type RendererMenuItem = {
   label?: string;
   type?: "normal" | "separator" | "submenu" | "checkbox" | "radio";
@@ -10,7 +8,7 @@ export function invokeMenu(menu: RendererMenuItem[]) {
   const menuWithoutClick = menu.map((m) => {
     return { label: m.label, type: m.type };
   });
-  ipcRenderer.invoke("openContextMenu", { menu: menuWithoutClick }).then((i: number) => {
+  ipc.platform.openContextMenu(menuWithoutClick).then((i: number) => {
     if (i !== -1) {
       menu[i].click();
     }
@@ -81,8 +79,4 @@ export function cleanUserAgent(userAgent: string): string {
     .replace(userAgentItem("(", ")"), systemInformation)
     .replace(userAgentItem("Bitwarden", " "), "")
     .replace(userAgentItem("Electron", " "), "");
-}
-
-export async function getCookie(url: string, name: string): Promise<Electron.Cookie[]> {
-  return await ipcRenderer.invoke("getCookie", { url: url, name: name });
 }

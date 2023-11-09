@@ -60,6 +60,13 @@ export default {
   isWindowsStore: isWindowsStore(),
   reloadProcess: () => ipcRenderer.send("reload-process"),
 
+  openContextMenu: (
+    menu: {
+      label?: string;
+      type?: "normal" | "separator" | "submenu" | "checkbox" | "radio";
+    }[]
+  ): Promise<number> => ipcRenderer.invoke("openContextMenu", { menu }),
+
   getSystemTheme: (): Promise<ThemeType> => ipcRenderer.invoke("systemTheme"),
   onSystemThemeUpdated: (callback: (theme: ThemeType) => void) => {
     ipcRenderer.on("systemThemeUpdated", (_event, theme: ThemeType) => callback(theme));
