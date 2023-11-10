@@ -6,7 +6,15 @@
   </h2>
 </div>
 <ul class="tw-mt-12 tw-flex tw-flex-col tw-gap-10 tw-text-2xl tw-text-main">
-  <li>Powerful security for up to 10 users</li>
+  <li>
+    Powerful security for up to 10 users
+    <div class="tw-mt-2 tw-text-base">
+      Have more than 10 users?
+      <a routerLink="/register" [queryParams]="{ org: 'teams', layout: 'teams1' }"
+        >Start a Teams trial</a
+      >
+    </div>
+  </li>
   <li>Collaborate and share securely</li>
   <li>Deploy and manage quickly and easily</li>
   <li>Access anywhere on any device</li>
