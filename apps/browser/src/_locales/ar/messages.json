@@ -92,13 +92,13 @@
     "message": "التعبئة التلقائية"
   },
   "autoFillLogin": {
-    "message": "Auto-fill login"
+    "message": "تسجيل الدخول إلى الملء التلقائي"
   },
   "autoFillCard": {
-    "message": "Auto-fill card"
+    "message": "بطاقة الملء التلقائي"
   },
   "autoFillIdentity": {
-    "message": "Auto-fill identity"
+    "message": "هوية التعبئة التلقائية"
   },
   "generatePasswordCopied": {
     "message": "إنشاء كلمة مرور (تم النسخ)"
@@ -110,19 +110,19 @@
     "message": "لا توجد تسجيلات دخول مطابقة."
   },
   "noCards": {
-    "message": "No cards"
+    "message": "لا توجد بطاقات"
   },
   "noIdentities": {
-    "message": "No identities"
+    "message": "لا توجد هويات"
   },
   "addLoginMenu": {
-    "message": "Add login"
+    "message": "إضافة تسجيل دخول جديد"
   },
   "addCardMenu": {
-    "message": "Add card"
+    "message": "إضافة بطاقة"
   },
   "addIdentityMenu": {
-    "message": "Add identity"
+    "message": "إضافة هوية"
   },
   "unlockVaultMenu": {
     "message": "افتح خزنتك"
@@ -363,7 +363,7 @@
     "message": "الأخرى"
   },
   "unlockMethodNeededToChangeTimeoutActionDesc": {
-    "message": "Set up an unlock method to change your vault timeout action."
+    "message": "أعدنّ طريقة إلغاء القُفْل لتغيير إجراء مهلة المخزن الخاص بك."
   },
   "rateExtension": {
     "message": "قيِّم هذه الإضافة"
@@ -658,10 +658,10 @@
     "message": "تحديث"
   },
   "notificationUnlockDesc": {
-    "message": "Unlock your Bitwarden vault to complete the auto-fill request."
+    "message": "افتح مخزن Bitwarden الخاص بك لإكمال طلب التعبئة التلقائية."
   },
   "notificationUnlock": {
-    "message": "Unlock"
+    "message": "إلغاء القفل"
   },
   "enableContextMenuItem": {
     "message": "إظهار خيارات قائمة السياق"
@@ -1925,8 +1925,13 @@
   "selectFolder": {
     "message": "Select folder..."
   },
-  "ssoCompleteRegistration": {
-    "message": "من أجل إكمال تسجيل الدخول باستخدام SSO، يرجى تعيين كلمة المرور الرئيسية للوصول لخزنتك وحمايتها."
+  "orgPermissionsUpdatedMustSetPassword": {
+    "message": "Your organization permissions were updated, requiring you to set a master password.",
+    "description": "Used as a card title description on the set password page to explain why the user is there"
+  },
+  "orgRequiresYouToSetPassword": {
+    "message": "Your organization requires you to set a master password.",
+    "description": "Used as a card title description on the set password page to explain why the user is there"
   },
   "hours": {
     "message": "ساعات"

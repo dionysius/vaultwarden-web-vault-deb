@@ -3,11 +3,11 @@
     "message": "Bitwarden"
   },
   "extName": {
-    "message": "Bitwarden - Gestore di Password Gratis",
+    "message": "Bitwarden - Password Manager Gratis",
     "description": "Extension name, MUST be less than 40 characters (Safari restriction)"
   },
   "extDesc": {
-    "message": "Un gestore di password sicuro e gratis per tutti i tuoi dispositivi.",
+    "message": "Un password manager sicuro e gratis per tutti i tuoi dispositivi.",
     "description": "Extension description"
   },
   "loginOrCreateNewAccount": {
@@ -1925,8 +1925,13 @@
   "selectFolder": {
     "message": "Seleziona cartella..."
   },
-  "ssoCompleteRegistration": {
-    "message": "Per completare l'accesso con SSO, imposta una password principale per accedere e proteggere la cassaforte."
+  "orgPermissionsUpdatedMustSetPassword": {
+    "message": "Le autorizzazioni della tua organizzazione sono state aggiornate, obbligandoti a impostare una password principale.",
+    "description": "Used as a card title description on the set password page to explain why the user is there"
+  },
+  "orgRequiresYouToSetPassword": {
+    "message": "La tua organizzazione ti obbliga di impostare di una password principale.",
+    "description": "Used as a card title description on the set password page to explain why the user is there"
   },
   "hours": {
     "message": "Ore"

@@ -1925,8 +1925,13 @@
   "selectFolder": {
     "message": "Wybierz folder..."
   },
-  "ssoCompleteRegistration": {
-    "message": "W celu zakończenia jednokrotnego logowania SSO, ustaw hasło główne, aby uzyskać dostęp do sejfu."
+  "orgPermissionsUpdatedMustSetPassword": {
+    "message": "Uprawnienia w Twojej organizacji zostały zaktualizowane, musisz teraz ustawić hasło główne.",
+    "description": "Used as a card title description on the set password page to explain why the user is there"
+  },
+  "orgRequiresYouToSetPassword": {
+    "message": "Twoja organizacja wymaga ustawienia hasła głównego.",
+    "description": "Used as a card title description on the set password page to explain why the user is there"
   },
   "hours": {
     "message": "Godziny"

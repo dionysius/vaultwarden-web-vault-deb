@@ -1925,8 +1925,13 @@
   "selectFolder": {
     "message": "Vælg mappe..."
   },
-  "ssoCompleteRegistration": {
-    "message": "For at fuldføre indlogning med SSO skal du opsætte en hovedadgangskode for at få adgang til samt beskytte din boks."
+  "orgPermissionsUpdatedMustSetPassword": {
+    "message": "Organisationstilladelserne er blevet opdateret, og der kræves nu oprettelse af en hovedadgangskode.",
+    "description": "Used as a card title description on the set password page to explain why the user is there"
+  },
+  "orgRequiresYouToSetPassword": {
+    "message": "Organisationen kræver, at der oprettes en hovedadgangskode.",
+    "description": "Used as a card title description on the set password page to explain why the user is there"
   },
   "hours": {
     "message": "Timer"

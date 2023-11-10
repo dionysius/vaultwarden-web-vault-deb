@@ -796,7 +796,7 @@
     "message": "Ominaisuus ei ole käytettävissä"
   },
   "encryptionKeyMigrationRequired": {
-    "message": "Salausavaimen siirto vaaditaan. Päivitä salausavaimesi kirjautumalla verkkoholviin."
+    "message": "Tarvitaan salausavaimen siirto. Kirjaudu verkkoholvin kautta päivittääksesi salausavaimesi."
   },
   "premiumMembership": {
     "message": "Premium-jäsenyys"
@@ -1925,8 +1925,13 @@
   "selectFolder": {
     "message": "Valitse kansio..."
   },
-  "ssoCompleteRegistration": {
-    "message": "Kirjautuaksesi sisään käyttäen kertakirjautumista (SSO), suojaa holvisi pääsalasanalla."
+  "orgPermissionsUpdatedMustSetPassword": {
+    "message": "Organisaatiosi käyttöoikeuksia muutettiin ja tämän seurauksena sinun on asetettava pääsalasana.",
+    "description": "Used as a card title description on the set password page to explain why the user is there"
+  },
+  "orgRequiresYouToSetPassword": {
+    "message": "Organisaatiosi edellyttää, että asetat pääsalasanan.",
+    "description": "Used as a card title description on the set password page to explain why the user is there"
   },
   "hours": {
     "message": "Tuntia"
@@ -2279,7 +2284,7 @@
     "message": "Poista valinta julkisilla laitteilla"
   },
   "approveFromYourOtherDevice": {
-    "message": "Hyväksy muilta laitteiltasi"
+    "message": "Hyväksy toiselta laitteiltasi"
   },
   "requestAdminApproval": {
     "message": "Pyydä hyväksyntää ylläpidolta"
@@ -2340,7 +2345,7 @@
     "message": "pakollinen"
   },
   "search": {
-    "message": "Hae"
+    "message": "Etsi"
   },
   "inputMinLength": {
     "message": "Syötteen tulee sisältää ainakin $COUNT$ merkkiä.",
@@ -2438,7 +2443,7 @@
     "description": "Toggling an expand/collapse state."
   },
   "aliasDomain": {
-    "message": "Aliasverkkotunnus"
+    "message": "Alias-verkkotunnus"
   },
   "passwordRepromptDisabledAutofillOnPageLoad": {
     "message": "Kohteita, joille pääsalasanan uudelleenkysely on käytössä, ei voida täyttää automaattisesti sivujen avautuessa. Automaattinen täyttö sivujen avautuessa poistettiin käytöstä.",
@@ -2573,7 +2578,7 @@
     "message": "Käynnistävä sivusto edellyttää todennusta. Ominaisuutta ei ole vielä toteutettu tileille, joilla ei ole pääsalasanaa."
   },
   "logInWithPasskey": {
-    "message": "Kirjaudutko suojausavaimella?"
+    "message": "Kirjaudu suojausavaimella?"
   },
   "passkeyAlreadyExists": {
     "message": "Tälle sovellukselle on jo tallennettu suojausavain."

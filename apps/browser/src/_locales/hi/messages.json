@@ -1925,8 +1925,13 @@
   "selectFolder": {
     "message": "फ़ोल्डर चुनें..."
   },
-  "ssoCompleteRegistration": {
-    "message": "SSO के साथ लॉग-इन पूर्ण करने के लिए, कृपया अपनी तिजोरी तक पहुँचने और सुरक्षित रखने के लिए एक मास्टर पासवर्ड सेट करें।"
+  "orgPermissionsUpdatedMustSetPassword": {
+    "message": "Your organization permissions were updated, requiring you to set a master password.",
+    "description": "Used as a card title description on the set password page to explain why the user is there"
+  },
+  "orgRequiresYouToSetPassword": {
+    "message": "Your organization requires you to set a master password.",
+    "description": "Used as a card title description on the set password page to explain why the user is there"
   },
   "hours": {
     "message": "घंटे"

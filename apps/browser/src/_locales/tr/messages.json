@@ -1925,8 +1925,13 @@
   "selectFolder": {
     "message": "Klasör seç..."
   },
-  "ssoCompleteRegistration": {
-    "message": "SSO ile girişinizi tamamlamak için lütfen kasanıza erişirken kullanacağınız ana parolayı belirleyin."
+  "orgPermissionsUpdatedMustSetPassword": {
+    "message": "Kuruluş izinleriniz güncellendi ve bir ana parola belirlemeniz gerekiyor.",
+    "description": "Used as a card title description on the set password page to explain why the user is there"
+  },
+  "orgRequiresYouToSetPassword": {
+    "message": "Kuruluşunuz bir ana parola belirlemenizi gerektiriyor.",
+    "description": "Used as a card title description on the set password page to explain why the user is there"
   },
   "hours": {
     "message": "Saat"

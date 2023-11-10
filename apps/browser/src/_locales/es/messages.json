@@ -1925,8 +1925,13 @@
   "selectFolder": {
     "message": "Seleccione carpeta..."
   },
-  "ssoCompleteRegistration": {
-    "message": "Para completar el inicio de sesión con SSO, por favor establezca una contraseña maestra para acceder y proteger su caja fuerte."
+  "orgPermissionsUpdatedMustSetPassword": {
+    "message": "Los permisos de la organización se han actualizado y se requiere el establecimiento de una contraseña maestra.",
+    "description": "Used as a card title description on the set password page to explain why the user is there"
+  },
+  "orgRequiresYouToSetPassword": {
+    "message": "Su organización requiere que establezca una contraseña maestra.",
+    "description": "Used as a card title description on the set password page to explain why the user is there"
   },
   "hours": {
     "message": "Horas"
@@ -2307,7 +2312,7 @@
     "message": "General"
   },
   "display": {
-    "message": "Display"
+    "message": "Visualización"
   },
   "accountSuccessfullyCreated": {
     "message": "¡Cuenta creada con éxito!"

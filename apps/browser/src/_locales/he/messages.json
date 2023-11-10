@@ -1925,8 +1925,13 @@
   "selectFolder": {
     "message": "Select folder..."
   },
-  "ssoCompleteRegistration": {
-    "message": "In order to complete logging in with SSO, please set a master password to access and protect your vault."
+  "orgPermissionsUpdatedMustSetPassword": {
+    "message": "הרשאות הארגון שלך עודכנו, מה שמאלץ אותך להגדיר סיסמה ראשית.",
+    "description": "Used as a card title description on the set password page to explain why the user is there"
+  },
+  "orgRequiresYouToSetPassword": {
+    "message": "הארגון שלך דורש ממך להגדיר סיסמה ראשית.",
+    "description": "Used as a card title description on the set password page to explain why the user is there"
   },
   "hours": {
     "message": "Hours"

@@ -1925,8 +1925,13 @@
   "selectFolder": {
     "message": "Seleccioneu la carpeta..."
   },
-  "ssoCompleteRegistration": {
-    "message": "Per completar la sessió amb SSO, configureu una contrasenya mestra per accedir i protegir la vostra caixa forta."
+  "orgPermissionsUpdatedMustSetPassword": {
+    "message": "Els permisos de la vostra organització s'han actualitzat, cal que establiu una contrasenya mestra.",
+    "description": "Used as a card title description on the set password page to explain why the user is there"
+  },
+  "orgRequiresYouToSetPassword": {
+    "message": "La vostra organització requereix que establiu una contrasenya mestra.",
+    "description": "Used as a card title description on the set password page to explain why the user is there"
   },
   "hours": {
     "message": "Hores"

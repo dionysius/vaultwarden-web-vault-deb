@@ -1925,8 +1925,13 @@
   "selectFolder": {
     "message": "Выберите папку..."
   },
-  "ssoCompleteRegistration": {
-    "message": "Для завершения процесса авторизации при помощи SSO, установите мастер-пароль для доступа к вашему хранилищу и его защиты."
+  "orgPermissionsUpdatedMustSetPassword": {
+    "message": "Права доступа организации были обновлены, требуется установить мастер-пароль.",
+    "description": "Used as a card title description on the set password page to explain why the user is there"
+  },
+  "orgRequiresYouToSetPassword": {
+    "message": "Необходимо установить мастер-пароль для организации.",
+    "description": "Used as a card title description on the set password page to explain why the user is there"
   },
   "hours": {
     "message": "Час."

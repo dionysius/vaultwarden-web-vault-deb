@@ -1925,8 +1925,13 @@
   "selectFolder": {
     "message": "選擇資料夾⋯"
   },
-  "ssoCompleteRegistration": {
-    "message": "要完成 SSO 登入設定，請設定一組主密碼以存取和保護您的密碼庫。"
+  "orgPermissionsUpdatedMustSetPassword": {
+    "message": "Your organization permissions were updated, requiring you to set a master password.",
+    "description": "Used as a card title description on the set password page to explain why the user is there"
+  },
+  "orgRequiresYouToSetPassword": {
+    "message": "Your organization requires you to set a master password.",
+    "description": "Used as a card title description on the set password page to explain why the user is there"
   },
   "hours": {
     "message": "小時"

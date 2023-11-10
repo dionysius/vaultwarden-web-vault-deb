@@ -1925,8 +1925,13 @@
   "selectFolder": {
     "message": "Vyberte složku..."
   },
-  "ssoCompleteRegistration": {
-    "message": "Chcete-li dokončit přihlášení pomocí SSO, nastavte hlavní přístupové heslo k Vašemu trezoru."
+  "orgPermissionsUpdatedMustSetPassword": {
+    "message": "Oprávnění Vaší organizace byla aktualizována. To vyžaduje nastavení hlavního hesla.",
+    "description": "Used as a card title description on the set password page to explain why the user is there"
+  },
+  "orgRequiresYouToSetPassword": {
+    "message": "Vaše organizace vyžaduje nastavení hlavního hesla.",
+    "description": "Used as a card title description on the set password page to explain why the user is there"
   },
   "hours": {
     "message": "hodin"
