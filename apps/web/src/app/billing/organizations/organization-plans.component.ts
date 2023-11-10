@@ -236,7 +236,8 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
           plan.product === ProductType.TeamsStarter) &&
         (this.currentProductType !== ProductType.TeamsStarter ||
           plan.product === ProductType.Teams ||
-          plan.product === ProductType.Enterprise)
+          plan.product === ProductType.Enterprise) &&
+        (!this.providerId || plan.product !== ProductType.TeamsStarter)
     );
 
     result.sort((planA, planB) => planA.displaySortOrder - planB.displaySortOrder);
