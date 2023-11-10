@@ -647,8 +647,23 @@
   "customPasskeyNameInfo": {
     "message": "Name your passkey to help you identify it."
   },
+  "useForVaultEncryption": {
+    "message": "Kasa şifrelemesinde kullan"
+  },
+  "useForVaultEncryptionInfo": {
+    "message": "Desteklenen cihazlarda ana parolanızı yazmadan giriş yapabilir ve kasa kilidini açabilirsiniz. Kurulumu tamamlamak için tarayıcınızdaki talimatları izleyin."
+  },
+  "useForVaultEncryptionErrorReadingPasskey": {
+    "message": "Geçiş anathtarı okunurken hata oluştu. Tekrar deneyin veya bu seçeneğin işaretini kaldırın."
+  },
   "encryptionNotSupported": {
     "message": "Şifreleme desteklenmiyor"
+  },
+  "encryptionNotEnabled": {
+    "message": "Şifreleme etkin değil"
+  },
+  "usedForEncryption": {
+    "message": "Şifreleme için kullanılır"
   },
   "loginWithPasskeyEnabled": {
     "message": "Log in with passkey turned on"
@@ -2280,6 +2295,9 @@
   "contactSupport": {
     "message": "Müşteri hizmetleriyle iletişime geçin"
   },
+  "contactSupportShort": {
+    "message": "Destek Ekibiyle İletişime Geç"
+  },
   "updatedPaymentMethod": {
     "message": "Ödeme yöntemi güncellendi."
   },
@@ -2380,6 +2398,9 @@
   },
   "planDescTeams": {
     "message": "İşletmeler ve diğer ekipler için."
+  },
+  "planNameTeamsStarter": {
+    "message": "Teams Starter"
   },
   "planNameEnterprise": {
     "message": "Kurumsal"
@@ -2740,6 +2761,9 @@
   },
   "webVault": {
     "message": "Web kasası"
+  },
+  "cli": {
+    "message": "CLI"
   },
   "bitWebVault": {
     "message": "Bitwarden web kasası"
@@ -3485,6 +3509,15 @@
       }
     }
   },
+  "subscriptionUserSeatsWithoutAdditionalSeatsOption": {
+    "message": "You can invite up to $COUNT$ members for no additional charge. Contact Customer Support to upgrade your plan and invite more members.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "10"
+      }
+    }
+  },
   "subscriptionFreePlan": {
     "message": "Paketinizi yükseltmeden $COUNT$ üyeden fazlasını davet edemezsiniz.",
     "placeholders": {
@@ -3965,9 +3998,6 @@
   "setMasterPassword": {
     "message": "Ana parolayı belirle"
   },
-  "ssoCompleteRegistration": {
-    "message": "SSO ile girişinizi tamamlamak için lütfen kasanıza erişirken kullanacağınız ana parolayı belirleyin."
-  },
   "identifier": {
     "message": "Tanımlayıcı"
   },
@@ -3985,6 +4015,21 @@
   },
   "includeAllTeamsFeatures": {
     "message": "Ekip paketi özelliklerinin yanı sıra:"
+  },
+  "includeAllTeamsStarterFeatures": {
+    "message": "All Teams Starter features, plus:"
+  },
+  "chooseMonthlyOrAnnualBilling": {
+    "message": "Aylık veya yıllık faturalandırmayı seçin"
+  },
+  "abilityToAddMoreThanNMembers": {
+    "message": "$COUNT$+ üye ekleme olanağı",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "10"
+      }
+    }
   },
   "includeSsoAuthentication": {
     "message": "SAML2.0 ve OpenID Connect ile SSO doğrulaması"
@@ -6601,6 +6646,24 @@
       }
     }
   },
+  "teamsStarterPlanInvLimitReachedManageBilling": {
+    "message": "Teams Starter plans may have up to $SEATCOUNT$ members. Contact Customer Support to upgrade your plan and invite more members.",
+    "placeholders": {
+      "seatcount": {
+        "content": "$1",
+        "example": "10"
+      }
+    }
+  },
+  "teamsStarterPlanInvLimitReachedNoManageBilling": {
+    "message": "Teams Starter plans may have up to $SEATCOUNT$ members. Contact your organization owner to upgrade your plan and invite more members.",
+    "placeholders": {
+      "seatcount": {
+        "content": "$1",
+        "example": "10"
+      }
+    }
+  },
   "freeOrgMaxCollectionReachedManageBilling": {
     "message": "Ücretsiz kuruluşların en fazla $COLLECTIONCOUNT$ koleksiyonu olabilir. Daha fazla koleksiyon eklemek için ücretli bir plana geçin.",
     "placeholders": {
@@ -6991,6 +7054,14 @@
     "message": "ilkesi otomatik kayıtla birlikte açılacaktır.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The single organization policy, SSO required policy, and account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
+  "orgPermissionsUpdatedMustSetPassword": {
+    "message": "Kuruluş izinleriniz güncellendi ve bir ana parola belirlemeniz gerekiyor.",
+    "description": "Used as a card title description on the set password page to explain why the user is there"
+  },
+  "orgRequiresYouToSetPassword": {
+    "message": "Kuruluşunuz bir ana parola belirlemenizi gerektiriyor.",
+    "description": "Used as a card title description on the set password page to explain why the user is there"
+  },
   "notFound": {
     "message": "$RESOURCE$ bulunamadı",
     "placeholders": {
@@ -7318,5 +7389,8 @@
   "seeDetailedInstructions": {
     "message": "Ayrıntılı talimatları yardım sitemizde bulabilirsiniz:",
     "description": "This is followed a by a hyperlink to the help website."
+  },
+  "projectAccessUpdated": {
+    "message": "Proje erişimi güncellendi"
   }
 }

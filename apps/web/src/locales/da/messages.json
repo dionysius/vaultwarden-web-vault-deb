@@ -647,8 +647,23 @@
   "customPasskeyNameInfo": {
     "message": "Navngiv adgangsnøglen for at hjælpe dig med at identificere den."
   },
+  "useForVaultEncryption": {
+    "message": "Brug til Bokskryptering"
+  },
+  "useForVaultEncryptionInfo": {
+    "message": "Log ind og oplås på understøttede enheder uden hovedadgangskoden. Følg anvisningerne fra browseren for at færdiggøre opsætningen."
+  },
+  "useForVaultEncryptionErrorReadingPasskey": {
+    "message": "Adgangsnøglelæsningsfejl. Prøv igen, eller afmarkér valgmuligheden."
+  },
   "encryptionNotSupported": {
     "message": "Kryptering ikke understøttet"
+  },
+  "encryptionNotEnabled": {
+    "message": "Kryptering ikke aktiveret"
+  },
+  "usedForEncryption": {
+    "message": "Bruges til kryptering"
   },
   "loginWithPasskeyEnabled": {
     "message": "Log ind med adgangsnøgle slået til"
@@ -2280,6 +2295,9 @@
   "contactSupport": {
     "message": "Kontakt kundesupport"
   },
+  "contactSupportShort": {
+    "message": "Kontakt Support"
+  },
   "updatedPaymentMethod": {
     "message": "Betalingsmetode opdateret."
   },
@@ -2380,6 +2398,9 @@
   },
   "planDescTeams": {
     "message": "Til virksomheder og andre organisationer med teams."
+  },
+  "planNameTeamsStarter": {
+    "message": "Teams Starter"
   },
   "planNameEnterprise": {
     "message": "Virksomhed"
@@ -2740,6 +2761,9 @@
   },
   "webVault": {
     "message": "Web-boks"
+  },
+  "cli": {
+    "message": "CLI"
   },
   "bitWebVault": {
     "message": "Bitwarden Web-boks"
@@ -3485,6 +3509,15 @@
       }
     }
   },
+  "subscriptionUserSeatsWithoutAdditionalSeatsOption": {
+    "message": "Der kan inviteres op til $COUNT$ medlemmer uden ekstra gebyr. Kontakt kundesupporten for at opgradere abonnementet og invitere flere medlemmer.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "10"
+      }
+    }
+  },
   "subscriptionFreePlan": {
     "message": "Der kan ikke inviteres flere end $COUNT$ brugere uden en abonnementsopgradering.",
     "placeholders": {
@@ -3965,9 +3998,6 @@
   "setMasterPassword": {
     "message": "Indstil hovedadgangskode"
   },
-  "ssoCompleteRegistration": {
-    "message": "For at fuldføre indlogning vha. SSO skal en hovedadgangskode opsættes for at tilgå og beskytte din boks."
-  },
   "identifier": {
     "message": "Identifikator"
   },
@@ -3985,6 +4015,21 @@
   },
   "includeAllTeamsFeatures": {
     "message": "Alle teamfunktioner, plus:"
+  },
+  "includeAllTeamsStarterFeatures": {
+    "message": "Alle Teams Starter-funktioner, plus:"
+  },
+  "chooseMonthlyOrAnnualBilling": {
+    "message": "Vælg månedlig eller årlig fakturering"
+  },
+  "abilityToAddMoreThanNMembers": {
+    "message": "Mulighed for at tilføje flere end $COUNT$ medlemmer",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "10"
+      }
+    }
   },
   "includeSsoAuthentication": {
     "message": "SSO-godkendelse via SAML2.0 og OpenID Connect"
@@ -6601,6 +6646,24 @@
       }
     }
   },
+  "teamsStarterPlanInvLimitReachedManageBilling": {
+    "message": "Teams Starter-abonnementer kan have op til $SEATCOUNT$ medlemmer. Kontakt kundesupporten for at opgradere abonnementet og invitere flere medlemmer.",
+    "placeholders": {
+      "seatcount": {
+        "content": "$1",
+        "example": "10"
+      }
+    }
+  },
+  "teamsStarterPlanInvLimitReachedNoManageBilling": {
+    "message": "Teams Starter-abonnementer kan have op til $SEATCOUNT$ medlemmer. Kontakt organisationsejeren for at opgradere abonnementet og invitere flere medlemmer.",
+    "placeholders": {
+      "seatcount": {
+        "content": "$1",
+        "example": "10"
+      }
+    }
+  },
   "freeOrgMaxCollectionReachedManageBilling": {
     "message": "Gratis organisationer kan have op til $COLLECTIONCOUNT$ samlinger. Opgradér til en betalt abonnementstype for at tilføje flere samlinger.",
     "placeholders": {
@@ -6991,6 +7054,14 @@
     "message": "med automatisk indrullering slås til ved brug af denne indstilling.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The single organization policy, SSO required policy, and account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
+  "orgPermissionsUpdatedMustSetPassword": {
+    "message": "Organisationstilladelserne er blevet opdateret, og der kræves nu oprettelse af en hovedadgangskode.",
+    "description": "Used as a card title description on the set password page to explain why the user is there"
+  },
+  "orgRequiresYouToSetPassword": {
+    "message": "Organisationen kræver, at der oprettes en hovedadgangskode.",
+    "description": "Used as a card title description on the set password page to explain why the user is there"
+  },
   "notFound": {
     "message": "$RESOURCE$ ikke fundet",
     "placeholders": {
@@ -7318,5 +7389,8 @@
   "seeDetailedInstructions": {
     "message": "See detailed instructions on our help site at",
     "description": "This is followed a by a hyperlink to the help website."
+  },
+  "projectAccessUpdated": {
+    "message": "Projektadgang opdateret"
   }
 }

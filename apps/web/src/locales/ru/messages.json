@@ -647,8 +647,23 @@
   "customPasskeyNameInfo": {
     "message": "Назовите ключ доступа так, чтобы вы могли его идентифицировать."
   },
+  "useForVaultEncryption": {
+    "message": "Использовать для шифрования хранилища"
+  },
+  "useForVaultEncryptionInfo": {
+    "message": "Авторизация и разблокировка на поддерживаемых устройствах без мастер-пароля. Для завершения настройки следуйте подсказкам браузера."
+  },
+  "useForVaultEncryptionErrorReadingPasskey": {
+    "message": "Ошибка чтения ключа доступа. Попробуйте еще раз или снимите флажок с этой опции."
+  },
   "encryptionNotSupported": {
     "message": "Шифрование не поддерживается"
+  },
+  "encryptionNotEnabled": {
+    "message": "Шифрование не включено"
+  },
+  "usedForEncryption": {
+    "message": "Используется для шифрования"
   },
   "loginWithPasskeyEnabled": {
     "message": "Авторизоваться с помощью ключа доступа"
@@ -2280,6 +2295,9 @@
   "contactSupport": {
     "message": "Связаться со службой поддержки"
   },
+  "contactSupportShort": {
+    "message": "Связаться с поддержкой"
+  },
   "updatedPaymentMethod": {
     "message": "Способ оплаты обновлен."
   },
@@ -2376,10 +2394,13 @@
     "message": "Для личного использования, чтобы поделиться с семьей и друзьями."
   },
   "planNameTeams": {
-    "message": "Команда"
+    "message": "Teams"
   },
   "planDescTeams": {
     "message": "Для компаний и других командных организаций."
+  },
+  "planNameTeamsStarter": {
+    "message": "Teams Starter"
   },
   "planNameEnterprise": {
     "message": "Предприятие"
@@ -2740,6 +2761,9 @@
   },
   "webVault": {
     "message": "Веб-хранилище"
+  },
+  "cli": {
+    "message": "CLI"
   },
   "bitWebVault": {
     "message": "Веб-хранилище Bitwarden"
@@ -3485,6 +3509,15 @@
       }
     }
   },
+  "subscriptionUserSeatsWithoutAdditionalSeatsOption": {
+    "message": "Вы можете пригласить до $COUNT$ участников без дополнительной оплаты. Свяжитесь с поддержкой, чтобы обновить тарифный план и пригласить больше участников.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "10"
+      }
+    }
+  },
   "subscriptionFreePlan": {
     "message": "Вы не можете пригласить более $COUNT$ пользователей без обновления вашего плана.",
     "placeholders": {
@@ -3965,9 +3998,6 @@
   "setMasterPassword": {
     "message": "Задать мастер-пароль"
   },
-  "ssoCompleteRegistration": {
-    "message": "Для завершения процесса авторизации при помощи SSO, установите мастер-пароль для доступа к вашему хранилищу и его защиты."
-  },
   "identifier": {
     "message": "Идентификатор"
   },
@@ -3984,7 +4014,22 @@
     "message": "Теперь вы можете закрыть эту вкладку и продолжить в расширении."
   },
   "includeAllTeamsFeatures": {
-    "message": "Все функции команд, плюс:"
+    "message": "Все возможности Teams, плюс:"
+  },
+  "includeAllTeamsStarterFeatures": {
+    "message": "Все возможности Teams Starter, плюс:"
+  },
+  "chooseMonthlyOrAnnualBilling": {
+    "message": "Выберите помесячную или годовую оплату"
+  },
+  "abilityToAddMoreThanNMembers": {
+    "message": "Возможность добавления более $COUNT$ участников",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "10"
+      }
+    }
   },
   "includeSsoAuthentication": {
     "message": "SSO аутентификация через SAML2.0 и OpenID Connect"
@@ -6601,6 +6646,24 @@
       }
     }
   },
+  "teamsStarterPlanInvLimitReachedManageBilling": {
+    "message": "На тарифных планах Teams Starter может быть до $SEATCOUNT$ участников. Обратитесь в службу поддержки клиентов, чтобы перейти на новый тарифный план и пригласить больше участников.",
+    "placeholders": {
+      "seatcount": {
+        "content": "$1",
+        "example": "10"
+      }
+    }
+  },
+  "teamsStarterPlanInvLimitReachedNoManageBilling": {
+    "message": "На тарифных планах Teams Starter может быть до $SEATCOUNT$ участников. Свяжитесь с владельцем организации, чтобы перейти на новый тарифный план и пригласить больше участников.",
+    "placeholders": {
+      "seatcount": {
+        "content": "$1",
+        "example": "10"
+      }
+    }
+  },
   "freeOrgMaxCollectionReachedManageBilling": {
     "message": "В бесплатных организациях может быть до $COLLECTIONCOUNT$ коллекций. Перейдите на платный план, чтобы добавить больше коллекций.",
     "placeholders": {
@@ -6991,6 +7054,14 @@
     "message": "с автоматической регистрацией.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The single organization policy, SSO required policy, and account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
+  "orgPermissionsUpdatedMustSetPassword": {
+    "message": "Права доступа организации были обновлены, требуется установить мастер-пароль.",
+    "description": "Used as a card title description on the set password page to explain why the user is there"
+  },
+  "orgRequiresYouToSetPassword": {
+    "message": "Необходимо установить мастер-пароль для организации.",
+    "description": "Used as a card title description on the set password page to explain why the user is there"
+  },
   "notFound": {
     "message": "$RESOURCE$ не найден",
     "placeholders": {
@@ -7018,7 +7089,7 @@
     "description": "This description is shown to an admin when they are attempting to add more users to Secrets Manager."
   },
   "activateSecretsManager": {
-    "message": "Активировать менеджер секретов"
+    "message": "Активировать Менеджер секретов"
   },
   "yourOrganizationsFingerprint": {
     "message": "Фраза отпечатка вашей организации",
@@ -7318,5 +7389,8 @@
   "seeDetailedInstructions": {
     "message": "Подробные инструкции см. на нашем справочном сайте по адресу",
     "description": "This is followed a by a hyperlink to the help website."
+  },
+  "projectAccessUpdated": {
+    "message": "Доступ к проекту обновлен"
   }
 }

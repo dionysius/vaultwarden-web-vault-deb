@@ -647,8 +647,23 @@
   "customPasskeyNameInfo": {
     "message": "Изберете име за секретния си ключ, за да го разпознавате по-лесно."
   },
+  "useForVaultEncryption": {
+    "message": "Използване за шифроване на трезора"
+  },
+  "useForVaultEncryptionInfo": {
+    "message": "Вписването и отключването са възможни на поддържаните устройства, без необходимостта от главна парола. Следвайте инструкциите в браузъра си, за да завършите настройката."
+  },
+  "useForVaultEncryptionErrorReadingPasskey": {
+    "message": "Грешка при прочитането на секретния ключ. Опитайте отново или махнете тази отметка."
+  },
   "encryptionNotSupported": {
     "message": "Encryption not supported"
+  },
+  "encryptionNotEnabled": {
+    "message": "Шифроването не е включено"
+  },
+  "usedForEncryption": {
+    "message": "Използва се за шифроване"
   },
   "loginWithPasskeyEnabled": {
     "message": "Вписването със секретен ключ е включено"
@@ -2280,6 +2295,9 @@
   "contactSupport": {
     "message": "Връзка с поддръжката на потребители"
   },
+  "contactSupportShort": {
+    "message": "Свържете се с поддръжката"
+  },
   "updatedPaymentMethod": {
     "message": "Обновен метод за плащане."
   },
@@ -2380,6 +2398,9 @@
   },
   "planDescTeams": {
     "message": "За компании и други екипни организации."
+  },
+  "planNameTeamsStarter": {
+    "message": "Стартов екипен"
   },
   "planNameEnterprise": {
     "message": "За големи организации"
@@ -2740,6 +2761,9 @@
   },
   "webVault": {
     "message": "Трезор по уеб"
+  },
+  "cli": {
+    "message": "CLI"
   },
   "bitWebVault": {
     "message": "Трезор по уеб"
@@ -3485,6 +3509,15 @@
       }
     }
   },
+  "subscriptionUserSeatsWithoutAdditionalSeatsOption": {
+    "message": "Можете да поканите до $COUNT$ членове без допълнителни такси. Свържете се с поддръжката, ако искате да надградите плана си и да каните повече членове.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "10"
+      }
+    }
+  },
   "subscriptionFreePlan": {
     "message": "Не можете да поканите повече от $COUNT$ потребители без да надградите плана си.",
     "placeholders": {
@@ -3965,9 +3998,6 @@
   "setMasterPassword": {
     "message": "Задаване на главна парола"
   },
-  "ssoCompleteRegistration": {
-    "message": "За да завършите настройките за еднократна идентификация, трябва да зададете главна парола за трезора."
-  },
   "identifier": {
     "message": "Идентификатор"
   },
@@ -3984,7 +4014,22 @@
     "message": "Вече може да затворите подпрозореца и да продължите в разширението."
   },
   "includeAllTeamsFeatures": {
-    "message": "Всички възможности в екип плюс:"
+    "message": "Всички възможности на Екипния план, плюс:"
+  },
+  "includeAllTeamsStarterFeatures": {
+    "message": "Всички възможности на Стартовия екипен план, плюс:"
+  },
+  "chooseMonthlyOrAnnualBilling": {
+    "message": "Изберете месечно или годишно таксуване"
+  },
+  "abilityToAddMoreThanNMembers": {
+    "message": "Възможност да добавяте повече от $COUNT$ членове",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "10"
+      }
+    }
   },
   "includeSsoAuthentication": {
     "message": "Еднократна идентификация чрез SAML2.0 и OpenID Connect"
@@ -6601,6 +6646,24 @@
       }
     }
   },
+  "teamsStarterPlanInvLimitReachedManageBilling": {
+    "message": "Стартовите екипни планове може да имат не повече от $SEATCOUNT$ членове. Свържете се с поддръжката, ако искате да надградите плана си и да каните повече членове.",
+    "placeholders": {
+      "seatcount": {
+        "content": "$1",
+        "example": "10"
+      }
+    }
+  },
+  "teamsStarterPlanInvLimitReachedNoManageBilling": {
+    "message": "Стартовите екипни планове може да имат не повече от $SEATCOUNT$ членове. Свържете се със собственика на организацията си, ако искате да надградите плана си и да каните повече членове.",
+    "placeholders": {
+      "seatcount": {
+        "content": "$1",
+        "example": "10"
+      }
+    }
+  },
   "freeOrgMaxCollectionReachedManageBilling": {
     "message": "Безплатните организации могат да имат не повече от $COLLECTIONCOUNT$ колекции. Надградете до платен план, ако искате да имате повече колекции.",
     "placeholders": {
@@ -6991,6 +7054,14 @@
     "message": "с автоматично включване ще бъдат активирани при използването на тази настройка.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The single organization policy, SSO required policy, and account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
+  "orgPermissionsUpdatedMustSetPassword": {
+    "message": "Правата Ви в организацията бяха променени, необходимо е да зададете главна парола.",
+    "description": "Used as a card title description on the set password page to explain why the user is there"
+  },
+  "orgRequiresYouToSetPassword": {
+    "message": "Организацията Ви изисква да зададете главна парола.",
+    "description": "Used as a card title description on the set password page to explain why the user is there"
+  },
   "notFound": {
     "message": "Няма намерен $RESOURCE$",
     "placeholders": {
@@ -7318,5 +7389,8 @@
   "seeDetailedInstructions": {
     "message": "Може да намерите подробни инструкции в помощния ни уеб сайт на адрес",
     "description": "This is followed a by a hyperlink to the help website."
+  },
+  "projectAccessUpdated": {
+    "message": "Достъпът до проекта е актуализиран"
   }
 }

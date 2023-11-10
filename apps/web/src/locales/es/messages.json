@@ -647,8 +647,23 @@
   "customPasskeyNameInfo": {
     "message": "Name your passkey to help you identify it."
   },
+  "useForVaultEncryption": {
+    "message": "Use for vault encryption"
+  },
+  "useForVaultEncryptionInfo": {
+    "message": "Log in and unlock on supported devices without your master password. Follow the prompts from your browser to finalize setup."
+  },
+  "useForVaultEncryptionErrorReadingPasskey": {
+    "message": "Error reading passkey. Try again or uncheck this option."
+  },
   "encryptionNotSupported": {
     "message": "Encryption not supported"
+  },
+  "encryptionNotEnabled": {
+    "message": "Encryption not enabled"
+  },
+  "usedForEncryption": {
+    "message": "Used for encryption"
   },
   "loginWithPasskeyEnabled": {
     "message": "Log in with passkey turned on"
@@ -2280,6 +2295,9 @@
   "contactSupport": {
     "message": "Póngase en contacto con el servicio de atención al cliente"
   },
+  "contactSupportShort": {
+    "message": "Contact Support"
+  },
   "updatedPaymentMethod": {
     "message": "Método de pago actualizado."
   },
@@ -2380,6 +2398,9 @@
   },
   "planDescTeams": {
     "message": "Para empresas u otros equipos organizados."
+  },
+  "planNameTeamsStarter": {
+    "message": "Teams Starter"
   },
   "planNameEnterprise": {
     "message": "Empresas"
@@ -2740,6 +2761,9 @@
   },
   "webVault": {
     "message": "Caja fuerte Web"
+  },
+  "cli": {
+    "message": "CLI"
   },
   "bitWebVault": {
     "message": "Bitwarden bóveda web"
@@ -3485,6 +3509,15 @@
       }
     }
   },
+  "subscriptionUserSeatsWithoutAdditionalSeatsOption": {
+    "message": "You can invite up to $COUNT$ members for no additional charge. Contact Customer Support to upgrade your plan and invite more members.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "10"
+      }
+    }
+  },
   "subscriptionFreePlan": {
     "message": "No puedes invitar a más de $COUNT$ usuarios sin actualizar tu plan.",
     "placeholders": {
@@ -3965,9 +3998,6 @@
   "setMasterPassword": {
     "message": "Establecer contraseña maestra"
   },
-  "ssoCompleteRegistration": {
-    "message": "Para completar el inicio de sesión con SSO, por favor establezca una contraseña maestra para acceder y proteger su caja fuerte."
-  },
   "identifier": {
     "message": "Identificador"
   },
@@ -3985,6 +4015,21 @@
   },
   "includeAllTeamsFeatures": {
     "message": "Todas las características de Equipos y además:"
+  },
+  "includeAllTeamsStarterFeatures": {
+    "message": "All Teams Starter features, plus:"
+  },
+  "chooseMonthlyOrAnnualBilling": {
+    "message": "Choose monthly or annual billing"
+  },
+  "abilityToAddMoreThanNMembers": {
+    "message": "Ability to add more than $COUNT$ members",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "10"
+      }
+    }
   },
   "includeSsoAuthentication": {
     "message": "Autenticación SSO vía SAML2.0 y OpenID Connect"
@@ -6601,6 +6646,24 @@
       }
     }
   },
+  "teamsStarterPlanInvLimitReachedManageBilling": {
+    "message": "Teams Starter plans may have up to $SEATCOUNT$ members. Contact Customer Support to upgrade your plan and invite more members.",
+    "placeholders": {
+      "seatcount": {
+        "content": "$1",
+        "example": "10"
+      }
+    }
+  },
+  "teamsStarterPlanInvLimitReachedNoManageBilling": {
+    "message": "Teams Starter plans may have up to $SEATCOUNT$ members. Contact your organization owner to upgrade your plan and invite more members.",
+    "placeholders": {
+      "seatcount": {
+        "content": "$1",
+        "example": "10"
+      }
+    }
+  },
   "freeOrgMaxCollectionReachedManageBilling": {
     "message": "Las organizaciones gratuitas pueden tener hasta $COLLECTIONCOUNT$ distribuciones. Actualiza a un plan de pago para añadir más distribuciones.",
     "placeholders": {
@@ -6991,6 +7054,14 @@
     "message": "policy with automatic enrollment will turn on when this option is used.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The single organization policy, SSO required policy, and account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
+  "orgPermissionsUpdatedMustSetPassword": {
+    "message": "Your organization permissions were updated, requiring you to set a master password.",
+    "description": "Used as a card title description on the set password page to explain why the user is there"
+  },
+  "orgRequiresYouToSetPassword": {
+    "message": "Your organization requires you to set a master password.",
+    "description": "Used as a card title description on the set password page to explain why the user is there"
+  },
   "notFound": {
     "message": "$RESOURCE$ no encontrado",
     "placeholders": {
@@ -7318,5 +7389,8 @@
   "seeDetailedInstructions": {
     "message": "Ver instrucciones detalladas en nuestro sitio de ayuda en",
     "description": "This is followed a by a hyperlink to the help website."
+  },
+  "projectAccessUpdated": {
+    "message": "Project access updated"
   }
 }

@@ -647,8 +647,23 @@
   "customPasskeyNameInfo": {
     "message": "Dê um nome à sua chave de acesso para o ajudar a identificá-la."
   },
+  "useForVaultEncryption": {
+    "message": "Utilização para encriptação de cofre"
+  },
+  "useForVaultEncryptionInfo": {
+    "message": "Inicie sessão e desbloqueie em dispositivos suportados sem a sua palavra-passe mestra. Siga as instruções do seu navegador para finalizar a configuração."
+  },
+  "useForVaultEncryptionErrorReadingPasskey": {
+    "message": "Erro ao ler a chave de acesso. Tente novamente ou desmarque esta opção."
+  },
   "encryptionNotSupported": {
     "message": "Encriptação não suportada"
+  },
+  "encryptionNotEnabled": {
+    "message": "Encriptação não ativada"
+  },
+  "usedForEncryption": {
+    "message": "Utilizado para encriptação"
   },
   "loginWithPasskeyEnabled": {
     "message": "Iniciar sessão com a chave de acesso ativada"
@@ -2280,6 +2295,9 @@
   "contactSupport": {
     "message": "Contactar o apoio ao cliente"
   },
+  "contactSupportShort": {
+    "message": "Contactar Apoio ao Cliente"
+  },
   "updatedPaymentMethod": {
     "message": "Método de pagamento atualizado."
   },
@@ -2380,6 +2398,9 @@
   },
   "planDescTeams": {
     "message": "Para empresas e outras organizações de equipas."
+  },
+  "planNameTeamsStarter": {
+    "message": "Teams Starter"
   },
   "planNameEnterprise": {
     "message": "Empresarial"
@@ -2740,6 +2761,9 @@
   },
   "webVault": {
     "message": "Cofre web"
+  },
+  "cli": {
+    "message": "CLI"
   },
   "bitWebVault": {
     "message": "Cofre web Bitwarden"
@@ -3485,6 +3509,15 @@
       }
     }
   },
+  "subscriptionUserSeatsWithoutAdditionalSeatsOption": {
+    "message": "Pode convidar até $COUNT$ membros sem custos adicionais. Contacte o Apoio ao Cliente para atualizar o seu plano e convidar mais membros.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "10"
+      }
+    }
+  },
   "subscriptionFreePlan": {
     "message": "Não pode convidar mais do que $COUNT$ membros sem atualizar o seu plano.",
     "placeholders": {
@@ -3965,9 +3998,6 @@
   "setMasterPassword": {
     "message": "Definir palavra-passe mestra"
   },
-  "ssoCompleteRegistration": {
-    "message": "Para concluir o início de sessão com SSO, por favor, defina uma palavra-passe mestra para aceder e proteger o seu cofre."
-  },
   "identifier": {
     "message": "Identificador"
   },
@@ -3985,6 +4015,21 @@
   },
   "includeAllTeamsFeatures": {
     "message": "Todas as funcionalidades de Equipas, mais:"
+  },
+  "includeAllTeamsStarterFeatures": {
+    "message": "Todas as funcionalidades do Teams Starter, mais:"
+  },
+  "chooseMonthlyOrAnnualBilling": {
+    "message": "Escolha a faturação mensal ou anual"
+  },
+  "abilityToAddMoreThanNMembers": {
+    "message": "Capacidade de adicionar mais de $COUNT$ membros",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "10"
+      }
+    }
   },
   "includeSsoAuthentication": {
     "message": "Autenticação SSO via SAML2.0 e OpenID Connect"
@@ -6601,6 +6646,24 @@
       }
     }
   },
+  "teamsStarterPlanInvLimitReachedManageBilling": {
+    "message": "Os planos Teams Starter podem ter até $SEATCOUNT$ membros. Contacte o Apoio ao Cliente para atualizar o seu plano e convidar mais membros.",
+    "placeholders": {
+      "seatcount": {
+        "content": "$1",
+        "example": "10"
+      }
+    }
+  },
+  "teamsStarterPlanInvLimitReachedNoManageBilling": {
+    "message": "Os planos Teams Starter podem ter até $SEATCOUNT$ membros. Contacte o proprietário da sua organização para atualizar o seu plano e convidar mais membros.",
+    "placeholders": {
+      "seatcount": {
+        "content": "$1",
+        "example": "10"
+      }
+    }
+  },
   "freeOrgMaxCollectionReachedManageBilling": {
     "message": "As organizações gratuitas podem ter até $COLLECTIONCOUNT$ coleções. Atualize para um plano pago para adicionar mais coleções.",
     "placeholders": {
@@ -6991,6 +7054,14 @@
     "message": "com inscrição automática será ativada quando esta opção for utilizada.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The single organization policy, SSO required policy, and account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
+  "orgPermissionsUpdatedMustSetPassword": {
+    "message": "As permissões da sua organização foram atualizadas, exigindo a definição de uma palavra-passe mestra.",
+    "description": "Used as a card title description on the set password page to explain why the user is there"
+  },
+  "orgRequiresYouToSetPassword": {
+    "message": "A sua organização exige a definição de uma palavra-passe mestra.",
+    "description": "Used as a card title description on the set password page to explain why the user is there"
+  },
   "notFound": {
     "message": "$RESOURCE$ não encontrado(a)",
     "placeholders": {
@@ -7318,5 +7389,8 @@
   "seeDetailedInstructions": {
     "message": "Consulte as instruções detalhadas no nosso site de ajuda em",
     "description": "This is followed a by a hyperlink to the help website."
+  },
+  "projectAccessUpdated": {
+    "message": "Acesso ao projeto atualizado"
   }
 }

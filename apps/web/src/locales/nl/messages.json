@@ -647,8 +647,23 @@
   "customPasskeyNameInfo": {
     "message": "Geef je passkey een naam om deze later te herkennen."
   },
+  "useForVaultEncryption": {
+    "message": "Use for vault encryption"
+  },
+  "useForVaultEncryptionInfo": {
+    "message": "Log in and unlock on supported devices without your master password. Follow the prompts from your browser to finalize setup."
+  },
+  "useForVaultEncryptionErrorReadingPasskey": {
+    "message": "Error reading passkey. Try again or uncheck this option."
+  },
   "encryptionNotSupported": {
     "message": "Encryptie niet ondersteund"
+  },
+  "encryptionNotEnabled": {
+    "message": "Encryption not enabled"
+  },
+  "usedForEncryption": {
+    "message": "Used for encryption"
   },
   "loginWithPasskeyEnabled": {
     "message": "Inloggen met passkey ingeschakeld"
@@ -2280,6 +2295,9 @@
   "contactSupport": {
     "message": "Neem contact op met de klantondersteuning"
   },
+  "contactSupportShort": {
+    "message": "Contact met ondersteuning"
+  },
   "updatedPaymentMethod": {
     "message": "Betaalmethode bijgewerkt."
   },
@@ -2380,6 +2398,9 @@
   },
   "planDescTeams": {
     "message": "Voor bedrijven en andere team-organisaties."
+  },
+  "planNameTeamsStarter": {
+    "message": "Teams Starter"
   },
   "planNameEnterprise": {
     "message": "Enterprise"
@@ -2740,6 +2761,9 @@
   },
   "webVault": {
     "message": "Webkluis"
+  },
+  "cli": {
+    "message": "CLI"
   },
   "bitWebVault": {
     "message": "Bitwarden Webkluis"
@@ -3485,6 +3509,15 @@
       }
     }
   },
+  "subscriptionUserSeatsWithoutAdditionalSeatsOption": {
+    "message": "Je kunt zonder extra kosten tot $COUNT$ leden uitnodigen. Neem contact op met de klantenondersteuning voor uitbreiding van je abonnement om meer leden uit te nodigen.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "10"
+      }
+    }
+  },
   "subscriptionFreePlan": {
     "message": "Je kunt niet meer dan $COUNT$ gebruikers uitnodigen zonder je abonnement te upgraden.",
     "placeholders": {
@@ -3965,9 +3998,6 @@
   "setMasterPassword": {
     "message": "Hoofdwachtwoord instellen"
   },
-  "ssoCompleteRegistration": {
-    "message": "Voor het inloggen met SSO moet je een hoofdwachtwoord instellen voor toegang tot en bescherming van je kluis."
-  },
   "identifier": {
     "message": "Identificatie"
   },
@@ -3985,6 +4015,21 @@
   },
   "includeAllTeamsFeatures": {
     "message": "Alle functionaliteit van Teams plus:"
+  },
+  "includeAllTeamsStarterFeatures": {
+    "message": "Alle functionaliteit van Teams Starter, plus:"
+  },
+  "chooseMonthlyOrAnnualBilling": {
+    "message": "Maandelijkse of jaarlijkse betaling kiezen"
+  },
+  "abilityToAddMoreThanNMembers": {
+    "message": "Mogelijkheid voor het toevoegen van meer dan $COUNT$ leden",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "10"
+      }
+    }
   },
   "includeSsoAuthentication": {
     "message": "SSO-authenticatie via SAML2.0 en OpenID Connect"
@@ -6601,6 +6646,24 @@
       }
     }
   },
+  "teamsStarterPlanInvLimitReachedManageBilling": {
+    "message": "Teams Starter-plannen gaan tot $SEATCOUNT$ leden. Neem contact op met de klantenondersteuning voor het uitbreiden van je abonnement voor het uitnodigen van meer leden.",
+    "placeholders": {
+      "seatcount": {
+        "content": "$1",
+        "example": "10"
+      }
+    }
+  },
+  "teamsStarterPlanInvLimitReachedNoManageBilling": {
+    "message": "Teams Starter-plannen gaan tot $SEATCOUNT$ leden. Neem contact op met de eigenaar van je organisatie voor het uitbreiden van je abonnement voor het uitnodigen van meer leden.",
+    "placeholders": {
+      "seatcount": {
+        "content": "$1",
+        "example": "10"
+      }
+    }
+  },
   "freeOrgMaxCollectionReachedManageBilling": {
     "message": "Gratis organisaties kunnen maximaal $COLLECTIONCOUNT$ collecties hebben. Upgrade naar een betaald abonnement voor het toevoegen van meer collecties.",
     "placeholders": {
@@ -6991,6 +7054,14 @@
     "message": "beleid met automatische inschrijving wordt ingeschakeld wanneer je deze optie gebruikt.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The single organization policy, SSO required policy, and account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
+  "orgPermissionsUpdatedMustSetPassword": {
+    "message": "De organisatierechten zijn bijgewerkt, je moet een hoofdwachtwoord instellen.",
+    "description": "Used as a card title description on the set password page to explain why the user is there"
+  },
+  "orgRequiresYouToSetPassword": {
+    "message": "Je organisatie vereist dat je een hoofdwachtwoord instelt.",
+    "description": "Used as a card title description on the set password page to explain why the user is there"
+  },
   "notFound": {
     "message": "$RESOURCE$ niet gevonden",
     "placeholders": {
@@ -7318,5 +7389,8 @@
   "seeDetailedInstructions": {
     "message": "See detailed instructions on our help site at",
     "description": "This is followed a by a hyperlink to the help website."
+  },
+  "projectAccessUpdated": {
+    "message": "Projecttoegang bijgewerkt"
   }
 }

@@ -612,7 +612,7 @@
     "message": "Kirjaudu pääsalasanalla"
   },
   "loginWithPasskey": {
-    "message": "Suojausavainkirjautuminen"
+    "message": "Kirjaudu suojausavaimella"
   },
   "loginWithPasskeyInfo": {
     "message": "Käytä generoitua suojausavainta, joka kirjaa sinut automaattisesti sisään ilman salasanaa. Henkilöllisyytesi vahvistetaan kasvojen tunnistuksen tai sormenjäljen kataisilla biometrisillä tiedoilla, tai jollakin muulla FIDO2-suojausratkaisulla."
@@ -647,11 +647,26 @@
   "customPasskeyNameInfo": {
     "message": "Anna suojausavaimellesi nimi, jolla tunnistat sen."
   },
+  "useForVaultEncryption": {
+    "message": "Käytä holvin salaukseen"
+  },
+  "useForVaultEncryptionInfo": {
+    "message": "Kirjaudu sisään ja avaa tuetut laitteet ilman pääsalasanaa. Viimeistele määritys seuraamalla selaimen ilmoituksia."
+  },
+  "useForVaultEncryptionErrorReadingPasskey": {
+    "message": "Suojausavaimen lukuvirhe. Yritä uudelleen tai poista asetus käytöstä."
+  },
   "encryptionNotSupported": {
     "message": "Salausta ei tueta"
   },
+  "encryptionNotEnabled": {
+    "message": "Salaus ei ole käytössä"
+  },
+  "usedForEncryption": {
+    "message": "Käytetään salaukseen"
+  },
   "loginWithPasskeyEnabled": {
-    "message": "Suojausavainkirjautuminen on käytössä"
+    "message": "Kirjautuminen suojausavaimella on käytössä"
   },
   "passkeySaved": {
     "message": "$NAME$ tallennettiin",
@@ -2021,7 +2036,7 @@
     }
   },
   "premiumPriceWithFamilyPlan": {
-    "message": "Hanki Premium vain $PRICE$ vuosihintaan tai vaihtoehtoisesti premium-tilit $FAMILYPLANUSERCOUNT$ käyttäjälle rajattomalla perhejaolla ",
+    "message": "Hanki Premium vain $PRICE$ vuosihintaan tai vaihtoehtoisesti Premium-tilit $FAMILYPLANUSERCOUNT$ käyttäjälle rajattomalla perhejaolla ",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -2280,6 +2295,9 @@
   "contactSupport": {
     "message": "Ota yhteyttä asiakaspalveluun"
   },
+  "contactSupportShort": {
+    "message": "Ota yhteyttä asiakaspalveluun"
+  },
   "updatedPaymentMethod": {
     "message": "Maksutapa päivitettiin"
   },
@@ -2380,6 +2398,9 @@
   },
   "planDescTeams": {
     "message": "Yrityksille ja muille pienille ryhmäorganisaatioille."
+  },
+  "planNameTeamsStarter": {
+    "message": "Tiimeille-aloitus"
   },
   "planNameEnterprise": {
     "message": "Yrityksille"
@@ -2740,6 +2761,9 @@
   },
   "webVault": {
     "message": "Verkkoholvi"
+  },
+  "cli": {
+    "message": "komentoliittymä"
   },
   "bitWebVault": {
     "message": "Bitwarden Verkkoholvi"
@@ -3485,6 +3509,15 @@
       }
     }
   },
+  "subscriptionUserSeatsWithoutAdditionalSeatsOption": {
+    "message": "Voit kutsua $COUNT$ jäsentä ilman lisäkustannuksia. Päivitä tilauksesi ja kutsu lisää jäseniä ottamalla yhteyttä asiakaspalveluun.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "10"
+      }
+    }
+  },
   "subscriptionFreePlan": {
     "message": "Voit kutsua enintään $COUNT$ jäsentä päivittämättä tilaustasi.",
     "placeholders": {
@@ -3965,9 +3998,6 @@
   "setMasterPassword": {
     "message": "Aseta pääsalasana"
   },
-  "ssoCompleteRegistration": {
-    "message": "Kirjautuaksesi sisään käyttäen kertakirjautumista, suojaa holvisi pääsalasanalla."
-  },
   "identifier": {
     "message": "Tunniste"
   },
@@ -3985,6 +4015,21 @@
   },
   "includeAllTeamsFeatures": {
     "message": "Kaikki Tiimeille-tilauksen ominaisuudet, sekä:"
+  },
+  "includeAllTeamsStarterFeatures": {
+    "message": "Kaikki Tiimeille-aloitus-tilauksen ominaisuudet, sekä:"
+  },
+  "chooseMonthlyOrAnnualBilling": {
+    "message": "Valitse kuukausi- tai vuosilaskutus"
+  },
+  "abilityToAddMoreThanNMembers": {
+    "message": "Mahdollisuus lisätä enemmän kuin $COUNT$ jäsentä",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "10"
+      }
+    }
   },
   "includeSsoAuthentication": {
     "message": "Kertakirjautumisen SAML 2.0 ja OpenID Connect -todennus"
@@ -6601,6 +6646,24 @@
       }
     }
   },
+  "teamsStarterPlanInvLimitReachedManageBilling": {
+    "message": "Tiimeille-aloitus-tilauksessa voi olla enintään $SEATCOUNT$ jäsentä. Päivitä tilauksesi ja kutsu lisää jäseniä ottamalla yhteyttä asiakaspalveluun.",
+    "placeholders": {
+      "seatcount": {
+        "content": "$1",
+        "example": "10"
+      }
+    }
+  },
+  "teamsStarterPlanInvLimitReachedNoManageBilling": {
+    "message": "Tiimeille-aloitus-tilauksessa voi olla enintään $SEATCOUNT$ jäsentä. Päivitä tilauksesi ja kutsu lisää jäseniä ottamalla yhteyttä organisaatiosi omistajaan.",
+    "placeholders": {
+      "seatcount": {
+        "content": "$1",
+        "example": "10"
+      }
+    }
+  },
   "freeOrgMaxCollectionReachedManageBilling": {
     "message": "Ilmaisilla organisaatioilla voi olla enintään $COLLECTIONCOUNT$ kokoelmaa. Päivitä maksulliseen tilaukseen lisätäksesi kokoelmia.",
     "placeholders": {
@@ -6991,6 +7054,14 @@
     "message": "-käytäntö automaattisella liitoksella otetaan käyttöön tämän valinnan käyttöönoton yhteydessä.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The single organization policy, SSO required policy, and account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
+  "orgPermissionsUpdatedMustSetPassword": {
+    "message": "Organisaatiosi käyttöoikeuksia muutettiin ja tämän seurauksena sinun on asetettava pääsalasana.",
+    "description": "Used as a card title description on the set password page to explain why the user is there"
+  },
+  "orgRequiresYouToSetPassword": {
+    "message": "Organisaatiosi edellyttää, että asetat pääsalasanan.",
+    "description": "Used as a card title description on the set password page to explain why the user is there"
+  },
   "notFound": {
     "message": "Resurssia $RESOURCE$ ei löytynyt",
     "placeholders": {
@@ -7318,5 +7389,8 @@
   "seeDetailedInstructions": {
     "message": "Katso tarkemmat ohjeet tukisivustoltamme osoitteesta",
     "description": "This is followed a by a hyperlink to the help website."
+  },
+  "projectAccessUpdated": {
+    "message": "Project access updated"
   }
 }

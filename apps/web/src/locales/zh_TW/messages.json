@@ -647,8 +647,23 @@
   "customPasskeyNameInfo": {
     "message": "命名您的密碼金輪以方便您辨識它。"
   },
+  "useForVaultEncryption": {
+    "message": "Use for vault encryption"
+  },
+  "useForVaultEncryptionInfo": {
+    "message": "Log in and unlock on supported devices without your master password. Follow the prompts from your browser to finalize setup."
+  },
+  "useForVaultEncryptionErrorReadingPasskey": {
+    "message": "Error reading passkey. Try again or uncheck this option."
+  },
   "encryptionNotSupported": {
     "message": "加密不支援"
+  },
+  "encryptionNotEnabled": {
+    "message": "Encryption not enabled"
+  },
+  "usedForEncryption": {
+    "message": "Used for encryption"
   },
   "loginWithPasskeyEnabled": {
     "message": "密碼金鑰登入已開啓"
@@ -2119,7 +2134,7 @@
     "message": "付款資訊"
   },
   "billingInformation": {
-    "message": "帳單資訊"
+    "message": "計費資訊"
   },
   "billingTrialSubLabel": {
     "message": "在 7 天的免費試用期間，不會從您的付款方式中扣款。"
@@ -2280,6 +2295,9 @@
   "contactSupport": {
     "message": "聯絡客戶支援部門"
   },
+  "contactSupportShort": {
+    "message": "聯絡支援部門"
+  },
   "updatedPaymentMethod": {
     "message": "已更新付款方式。"
   },
@@ -2320,7 +2338,7 @@
     "message": "此帳戶為企業所有。"
   },
   "billingEmail": {
-    "message": "帳單電子郵件"
+    "message": "計費電子郵件"
   },
   "businessName": {
     "message": "企業名稱"
@@ -2380,6 +2398,9 @@
   },
   "planDescTeams": {
     "message": "適用於企業和其他團隊組織。"
+  },
+  "planNameTeamsStarter": {
+    "message": "Teams Starter"
   },
   "planNameEnterprise": {
     "message": "企業"
@@ -2502,7 +2523,7 @@
     }
   },
   "trialConfirmationEmail": {
-    "message": "我們已經將確認信件傳送至團隊的帳單信箱："
+    "message": "我們已經將確認信件傳送至團隊的計費信箱： "
   },
   "monthly": {
     "message": "每月"
@@ -2685,7 +2706,7 @@
     "message": "擁有者"
   },
   "ownerDesc": {
-    "message": "可以管理組織所有方面且具有最高權限的使用者。"
+    "message": "管理組織的所有方面，包括計費和訂閱"
   },
   "clientOwnerDesc": {
     "message": "此使用者應獨立於提供者。若提供者與該組織解除關聯，此使用者將繼續保留組織的擁有權。"
@@ -2740,6 +2761,9 @@
   },
   "webVault": {
     "message": "網頁版密碼庫"
+  },
+  "cli": {
+    "message": "CLI"
   },
   "bitWebVault": {
     "message": "Bitwarden 網頁密碼庫"
@@ -3261,7 +3285,7 @@
     "message": "管理員確認您的成員身分後，您便可以存取此組織。到時我們會向您傳送電子郵件通知。"
   },
   "inviteInitAcceptedDesc": {
-    "message": "您現在可以存取此組織。"
+    "message": "您現在可以存取此組織了。"
   },
   "inviteAcceptFailed": {
     "message": "無法接受邀請。請要求組織管理員傳送新的邀請。"
@@ -3465,7 +3489,7 @@
     "message": "已更新訂閲"
   },
   "subscribedToSecretsManager": {
-    "message": "Subscription updated. You now have access to Secrets Manager."
+    "message": "訂閱已更新。您現在可以存取 Secrets Manager 了。"
   },
   "additionalOptions": {
     "message": "額外選項"
@@ -3482,6 +3506,15 @@
       "max": {
         "content": "$1",
         "example": "50"
+      }
+    }
+  },
+  "subscriptionUserSeatsWithoutAdditionalSeatsOption": {
+    "message": "您可以邀請最多 $COUNT$ 個成員，而無需額外付款。聯絡客戶支援團隊升級您的方案並邀請更多成員。",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "10"
       }
     }
   },
@@ -3654,7 +3687,7 @@
     "message": "無法在已停用組織中建立專案。請聯絡您組織的擁有者以獲取協助。"
   },
   "serviceAccountsCannotCreate": {
-    "message": "無法在已停用組織中新增服務賬戶。請聯絡您組織的擁有者以獲取協助。"
+    "message": "無法在已停用組織中新增服務帳戶。請聯絡您組織的擁有者以獲取協助。"
   },
   "disabledOrganizationFilterError": {
     "message": "無法存取已停用組織中的項目。請聯絡您組織的擁有者以獲取協助。"
@@ -3965,9 +3998,6 @@
   "setMasterPassword": {
     "message": "設定主密碼"
   },
-  "ssoCompleteRegistration": {
-    "message": "要完成 SSO 登入設定，請設定一組主密碼以存取和保護您的密碼庫。"
-  },
   "identifier": {
     "message": "識別碼"
   },
@@ -3985,6 +4015,21 @@
   },
   "includeAllTeamsFeatures": {
     "message": "包含所有團隊版功能"
+  },
+  "includeAllTeamsStarterFeatures": {
+    "message": "All Teams Starter features, plus:"
+  },
+  "chooseMonthlyOrAnnualBilling": {
+    "message": "選擇按月或按年計費"
+  },
+  "abilityToAddMoreThanNMembers": {
+    "message": "Ability to add more than $COUNT$ members",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "10"
+      }
+    }
   },
   "includeSsoAuthentication": {
     "message": "透過 SAML2.0 和 OpenID Connect 進行 SSO 驗證"
@@ -4404,7 +4449,7 @@
     "message": "為成員授予自訂權限"
   },
   "customDescNonEnterpriseStart": {
-    "message": "自訂角色為 ",
+    "message": "自訂角色是一項 ",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Custom roles is an enterprise feature. Contact our support team to upgrade your subscription'"
   },
   "customDescNonEnterpriseLink": {
@@ -5402,22 +5447,22 @@
     "message": "免費贊助"
   },
   "viewBillingSyncToken": {
-    "message": "檢視帳單同步權杖"
+    "message": "檢視計費同步權杖"
   },
   "generateBillingSyncToken": {
-    "message": "產生帳單同步權杖"
+    "message": "產生計費同步權杖"
   },
   "copyPasteBillingSync": {
-    "message": "請將本權杖複製後，貼至您自我裝載組織的「帳單同步」設定當中。"
+    "message": "請將本權杖複製後，貼至您自我裝載組織的「計費同步」設定當中。"
   },
   "billingSyncCanAccess": {
-    "message": "您的帳單同步權杖可以讀取及編輯此組織的訂閱設定。"
+    "message": "您的計費同步權杖可以讀取及編輯此組織的訂閱設定。"
   },
   "manageBillingSync": {
-    "message": "管理帳單同步"
+    "message": "管理計費同步"
   },
   "setUpBillingSync": {
-    "message": "設定帳單同步"
+    "message": "設定計費同步"
   },
   "generateToken": {
     "message": "產生權杖"
@@ -5426,28 +5471,28 @@
     "message": "輪換權杖"
   },
   "rotateBillingSyncTokenWarning": {
-    "message": "如果繼續，您需要重新在自我裝載伺服器上設定帳單同步。"
+    "message": "如果繼續，您需要重新在自我裝載伺服器上設定計費同步。"
   },
   "rotateBillingSyncTokenTitle": {
-    "message": "輪換「帳單同步權杖」會導致之前的權杖失效。"
+    "message": "輪換「計費同步權杖」會導致之前的權杖失效。"
   },
   "selfHostingTitle": {
     "message": "自我裝載"
   },
   "selfHostingEnterpriseOrganizationSectionCopy": {
-    "message": "若要在您自己的伺服器上設定組織，您需要上傳授權檔案。若要使您的自我裝載組織支援「免費家庭」方案及進階帳單功能，您需要設定帳單同步。"
+    "message": "若要在您自己的伺服器上設定組織，您需要上傳授權檔案。若要使您的自我裝載組織支援「免費家庭」方案及進階計費功能，您需要設定計費同步。"
   },
   "billingSyncApiKeyRotated": {
     "message": "權杖已輪換"
   },
   "billingSyncDesc": {
-    "message": "「帳單同步」解鎖家庭贊助並在您的伺服器上自動同步授權。在 Bitwarden 雲端伺服器上更新后，請選擇「同步授權」以應用變更。"
+    "message": "「計費同步」解鎖家庭贊助並在您的伺服器上自動同步授權。在 Bitwarden 雲端伺服器上更新后，請選擇「同步授權」以應用變更。"
   },
   "billingSyncKeyDesc": {
-    "message": "想要完成這個表單，需要您雲端組織訂閱設定中的「帳單同步權杖」。"
+    "message": "想要完成這個表單，需要您雲端組織訂閱設定中的「計費同步權杖」。"
   },
   "billingSyncKey": {
-    "message": "帳單同步權杖"
+    "message": "計費同步權杖"
   },
   "active": {
     "message": "生效中"
@@ -5565,7 +5610,7 @@
     "message": "金鑰"
   },
   "billingHistory": {
-    "message": "帳單歷史記錄"
+    "message": "計費歷史記錄"
   },
   "backToReports": {
     "message": "返回報告"
@@ -5646,7 +5691,7 @@
     }
   },
   "awaitingSyncSingular": {
-    "message": "權杖已在 $DAYS$ 天前輪換。請在您自我裝載組織的設定中，更新帳單同步權杖。",
+    "message": "權杖已在 $DAYS$ 天前輪換。請在您的自我裝載組織設定中，更新計費同步權杖。",
     "placeholders": {
       "days": {
         "content": "$1",
@@ -5655,7 +5700,7 @@
     }
   },
   "awaitingSyncPlural": {
-    "message": "權杖已在 $DAYS$ 天前輪換。請在您的自我裝載組織設定中，更新帳單同步權杖。",
+    "message": "權杖已在 $DAYS$ 天前輪換。請在您的自我裝載組織設定中，更新計費同步權杖。",
     "placeholders": {
       "days": {
         "content": "$1",
@@ -6584,7 +6629,7 @@
     "message": "切換產品"
   },
   "freeOrgInvLimitReachedManageBilling": {
-    "message": "免費組織最多擁有 $SEATCOUNT$ 個成員。升級到付費計劃以邀請更多成員。",
+    "message": "免費組織最多擁有 $SEATCOUNT$ 個成員。升級到方案計劃以邀請更多成員。",
     "placeholders": {
       "seatcount": {
         "content": "$1",
@@ -6593,7 +6638,7 @@
     }
   },
   "freeOrgInvLimitReachedNoManageBilling": {
-    "message": "免費組織最多擁有 $SEATCOUNT$ 個成員。請聯絡您的組織所有者升級。",
+    "message": "免費組織最多擁有 $SEATCOUNT$ 個成員。請聯絡您的組織擁有者升級。",
     "placeholders": {
       "seatcount": {
         "content": "$1",
@@ -6601,8 +6646,26 @@
       }
     }
   },
+  "teamsStarterPlanInvLimitReachedManageBilling": {
+    "message": "Teams Starter plans may have up to $SEATCOUNT$ members. Contact Customer Support to upgrade your plan and invite more members.",
+    "placeholders": {
+      "seatcount": {
+        "content": "$1",
+        "example": "10"
+      }
+    }
+  },
+  "teamsStarterPlanInvLimitReachedNoManageBilling": {
+    "message": "Teams Starter plans may have up to $SEATCOUNT$ members. Contact your organization owner to upgrade your plan and invite more members.",
+    "placeholders": {
+      "seatcount": {
+        "content": "$1",
+        "example": "10"
+      }
+    }
+  },
   "freeOrgMaxCollectionReachedManageBilling": {
-    "message": "免費組織最多擁有 $COLLECTIONCOUNT$ 個成員。升級到付費計劃以邀請更多成員。",
+    "message": "免費組織最多擁有 $COLLECTIONCOUNT$ 個集合。升級到付費方案以新增更多集合。",
     "placeholders": {
       "COLLECTIONCOUNT": {
         "content": "$1",
@@ -6611,7 +6674,7 @@
     }
   },
   "freeOrgMaxCollectionReachedNoManageBilling": {
-    "message": "免費組織最多擁有 $COLLECTIONCOUNT$ 個成員。請聯絡您的組織所有者升級。",
+    "message": "免費組織最多擁有 $COLLECTIONCOUNT$ 個集合。請聯絡您的組織擁有者升級。",
     "placeholders": {
       "COLLECTIONCOUNT": {
         "content": "$1",
@@ -6650,7 +6713,7 @@
     "message": "或"
   },
   "licenseAndBillingManagement": {
-    "message": "授權和帳單管理"
+    "message": "授權和計費管理"
   },
   "automaticSync": {
     "message": "自動同步"
@@ -6659,7 +6722,7 @@
     "message": "手動上傳"
   },
   "manualUploadDesc": {
-    "message": "如果您不想選擇帳單同步，請在這裏手動上傳您的授權証。"
+    "message": "如果您不想選擇計費同步，請在這裏手動上傳您的授權証。"
   },
   "syncLicense": {
     "message": "同步授權"
@@ -6674,7 +6737,7 @@
     "message": "最近授权同步"
   },
   "billingSyncHelp": {
-    "message": "帳單同步幫助"
+    "message": "計費同步幫助"
   },
   "licensePaidFeaturesHelp": {
     "message": "授權付費功能幫助"
@@ -6991,6 +7054,14 @@
     "message": "原則將被開啓。",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The single organization policy, SSO required policy, and account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
+  "orgPermissionsUpdatedMustSetPassword": {
+    "message": "您的組織權限已更新，要求您設定一個主密碼。",
+    "description": "Used as a card title description on the set password page to explain why the user is there"
+  },
+  "orgRequiresYouToSetPassword": {
+    "message": "您的組織要求您設定一個主密碼。",
+    "description": "Used as a card title description on the set password page to explain why the user is there"
+  },
   "notFound": {
     "message": "$RESOURCE$ 未找到",
     "placeholders": {
@@ -7189,7 +7260,7 @@
     }
   },
   "additionalServiceAccountCost": {
-    "message": "每新增一組服務帳號，每月收費 $COST$",
+    "message": "額外服務帳戶每月 $COST$",
     "placeholders": {
       "cost": {
         "content": "$1",
@@ -7318,5 +7389,8 @@
   "seeDetailedInstructions": {
     "message": "請參閱我們的幫助網站上的詳細說明：",
     "description": "This is followed a by a hyperlink to the help website."
+  },
+  "projectAccessUpdated": {
+    "message": "Project access updated"
   }
 }

@@ -647,8 +647,23 @@
   "customPasskeyNameInfo": {
     "message": "Dai un nome alla tua passkey per aiutarti a riconoscerla."
   },
+  "useForVaultEncryption": {
+    "message": "Usa per la crittografia della cassaforte"
+  },
+  "useForVaultEncryptionInfo": {
+    "message": "Accedi e sblocca sui dispositivi supportati senza la tua password principale. Segui le istruzioni del tuo browser per completare la configurazione."
+  },
+  "useForVaultEncryptionErrorReadingPasskey": {
+    "message": "Errore durante la lettura della passkey. Riprova o disattiva questa opzione."
+  },
   "encryptionNotSupported": {
     "message": "Crittografia non supportata"
+  },
+  "encryptionNotEnabled": {
+    "message": "Crittografia non attivata"
+  },
+  "usedForEncryption": {
+    "message": "Usata per la crittografia"
   },
   "loginWithPasskeyEnabled": {
     "message": "Accesso con passkey attivato"
@@ -2280,6 +2295,9 @@
   "contactSupport": {
     "message": "Contatta assistenza clienti"
   },
+  "contactSupportShort": {
+    "message": "Contatta l'assistenza"
+  },
   "updatedPaymentMethod": {
     "message": "Metodo di pagamento aggiornato."
   },
@@ -2380,6 +2398,9 @@
   },
   "planDescTeams": {
     "message": "Per le imprese e altre organizzazioni di gruppi."
+  },
+  "planNameTeamsStarter": {
+    "message": "Teams Starter"
   },
   "planNameEnterprise": {
     "message": "Enterprise"
@@ -2741,11 +2762,14 @@
   "webVault": {
     "message": "Cassaforte web"
   },
+  "cli": {
+    "message": "CLI"
+  },
   "bitWebVault": {
     "message": "Cassaforte web Bitwarden"
   },
   "bitSecretsManager": {
-    "message": "Gestore dei Segreti Bitwarden"
+    "message": "Bitwarden Secrets Manager"
   },
   "loggedIn": {
     "message": "Accesso effettuato"
@@ -3426,7 +3450,7 @@
     "message": "Imposta un limite di slot utenti per il tuo abbonamento. Una volta raggiunto questo limite, non potrai invitare nuovi membri."
   },
   "limitSmSubscriptionDesc": {
-    "message": "Imposta un limite di slot per il tuo abbonamento al Gestore dei Segreti. Una volta raggiunto questo limite, non potrai invitare nuovi membri."
+    "message": "Imposta un limite di slot per il tuo abbonamento al Secrets Manager. Una volta raggiunto questo limite, non potrai invitare nuovi membri."
   },
   "maxSeatLimit": {
     "message": "Numero massimo di slot (facoltativo)",
@@ -3465,7 +3489,7 @@
     "message": "Abbonamento aggiornato"
   },
   "subscribedToSecretsManager": {
-    "message": "Abbonamento aggiornato. Ora hai accesso al Gestore dei Segreti."
+    "message": "Abbonamento aggiornato. Ora hai accesso al Secrets Manager."
   },
   "additionalOptions": {
     "message": "Opzioni aggiuntive"
@@ -3482,6 +3506,15 @@
       "max": {
         "content": "$1",
         "example": "50"
+      }
+    }
+  },
+  "subscriptionUserSeatsWithoutAdditionalSeatsOption": {
+    "message": "Puoi invitare fino a $COUNT$ membri senza costi aggiuntivi. Contatta l'assistenza clienti per aggiornare il tuo piano e invitare più membri.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "10"
       }
     }
   },
@@ -3965,9 +3998,6 @@
   "setMasterPassword": {
     "message": "Imposta password principale"
   },
-  "ssoCompleteRegistration": {
-    "message": "Per completare l'accesso con SSO, imposta una password principale per accedere e proteggere la cassaforte."
-  },
   "identifier": {
     "message": "Identificativo"
   },
@@ -3985,6 +4015,21 @@
   },
   "includeAllTeamsFeatures": {
     "message": "Tutte le funzionalità Teams e in più:"
+  },
+  "includeAllTeamsStarterFeatures": {
+    "message": "Tutte le funzionalità Teams Starter e in più:"
+  },
+  "chooseMonthlyOrAnnualBilling": {
+    "message": "Scegli la fatturazione mensile o annuale"
+  },
+  "abilityToAddMoreThanNMembers": {
+    "message": "Possibilità di aggiungere più di $COUNT$ membri",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "10"
+      }
+    }
   },
   "includeSsoAuthentication": {
     "message": "Autenticazione SSO tramite SAML2.0 e OpenID Connect"
@@ -6601,6 +6646,24 @@
       }
     }
   },
+  "teamsStarterPlanInvLimitReachedManageBilling": {
+    "message": "I piani Teams Starter possono avere fino a $SEATCOUNT$ membri. Contatta l'assistenza clienti per aggiornare il tuo piano e invitare più membri.",
+    "placeholders": {
+      "seatcount": {
+        "content": "$1",
+        "example": "10"
+      }
+    }
+  },
+  "teamsStarterPlanInvLimitReachedNoManageBilling": {
+    "message": "I piani Teams Starter possono avere fino a $SEATCOUNT$ membri. Contatta il proprietario della tua organizzazione per aggiornare il tuo piano e invitare più membri.",
+    "placeholders": {
+      "seatcount": {
+        "content": "$1",
+        "example": "10"
+      }
+    }
+  },
   "freeOrgMaxCollectionReachedManageBilling": {
     "message": "Le organizzazioni gratis possono avere fino a $COLLECTIONCOUNT$ raccolte. Aggiorna a un piano a pagamento per creare più raccolte.",
     "placeholders": {
@@ -6629,7 +6692,7 @@
     "message": "Esportando dati segreti dell'organizzazione"
   },
   "exportingOrganizationSecretDataDescription": {
-    "message": "Solo i dati del Gestore dei Segreti associato a $ORGANIZATION$ saranno esportati. Gli elementi in altri prodotti o in altre organizzazioni non saranno inclusi.",
+    "message": "Solo i dati del Secrets Manager associato a $ORGANIZATION$ saranno esportati. Gli elementi in altri prodotti o in altre organizzazioni non saranno inclusi.",
     "placeholders": {
       "ORGANIZATION": {
         "content": "$1",
@@ -6734,16 +6797,16 @@
     "message": "Procedere ti farà uscire da tutte le sessioni attive. Dovrai accedere di nuovo e completare la configurazione della verifica in due passaggi. Ti consigliamo di esportare la tua cassaforte prima di cambiare le impostazioni di crittografia per prevenire perdite di dati."
   },
   "secretsManager": {
-    "message": "Gestore dei Segreti"
+    "message": "Secrets Manager"
   },
   "secretsManagerBeta": {
-    "message": "Beta del Gestore dei Segreti"
+    "message": "Secrets Manager Beta"
   },
   "secretsManagerAccessDescription": {
-    "message": "Attiva l'accesso dell'utente al Gestore dei Segreti."
+    "message": "Attiva l'accesso dell'utente al Secrets Manager."
   },
   "userAccessSecretsManagerGA": {
-    "message": "Questo utente può accedere al Gestore dei Segreti"
+    "message": "Questo utente può accedere al Secrets Manager"
   },
   "important": {
     "message": "Importante:"
@@ -6800,7 +6863,7 @@
     "description": "Link to a downloadable resource. This will be used as part of a larger phrase. Example: Download the Secrets Manager CLI"
   },
   "smCLI": {
-    "message": "CLI del Gestore dei Segreti"
+    "message": "CLI del Secrets Manager"
   },
   "importSecrets": {
     "message": "Importa segreti"
@@ -6843,10 +6906,10 @@
     "message": "Selezione obbligatoria."
   },
   "secretsManagerSubscriptionDesc": {
-    "message": "Abilita l'accesso degli utenti al Gestore dei Segreti gratis durante il programma beta. Puoi concedere agli utenti l'accesso alla beta da Membri."
+    "message": "Abilita l'accesso degli utenti al Secrets Manager gratis durante il programma beta. Puoi concedere agli utenti l'accesso alla beta da Membri."
   },
   "secretsManagerEnable": {
-    "message": "Abilita la beta del Gestore di Segreti"
+    "message": "Abilita la beta del Secrets Manager"
   },
   "saPeopleWarningTitle": {
     "message": "Token di accesso ancora disponibili"
@@ -6991,6 +7054,14 @@
     "message": "con registrazione automatica si attiverà quando questa opzione è usata.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The single organization policy, SSO required policy, and account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
+  "orgPermissionsUpdatedMustSetPassword": {
+    "message": "Le autorizzazioni della tua organizzazione sono state aggiornate, obbligandoti a impostare una password principale.",
+    "description": "Used as a card title description on the set password page to explain why the user is there"
+  },
+  "orgRequiresYouToSetPassword": {
+    "message": "La tua organizzazione ti obbliga di impostare di una password principale.",
+    "description": "Used as a card title description on the set password page to explain why the user is there"
+  },
   "notFound": {
     "message": "$RESOURCE$ non trovato",
     "placeholders": {
@@ -7007,18 +7078,18 @@
     "message": "L'utente ha aggiornato una password emessa tramite il recupero dell'account."
   },
   "activatedAccessToSecretsManager": {
-    "message": "Accesso al Gestore dei Segreti attivato",
+    "message": "Accesso al Secrets Manager attivato",
     "description": "Confirmation message that one or more users gained access to Secrets Manager"
   },
   "activateAccess": {
     "message": "Attiva accesso"
   },
   "bulkEnableSecretsManagerDescription": {
-    "message": "Concedi ai seguenti membri l'accesso al Gestore dei Segreti. Il ruolo concesso nel gestore di password si applicherà al Gestore dei Segreti.",
+    "message": "Concedi ai seguenti membri l'accesso al Secrets Manager. Il ruolo concesso nel password manager si applicherà al Secrets Manager.",
     "description": "This description is shown to an admin when they are attempting to add more users to Secrets Manager."
   },
   "activateSecretsManager": {
-    "message": "Attiva Gestore dei Segreti"
+    "message": "Attiva Secrets Manager"
   },
   "yourOrganizationsFingerprint": {
     "message": "Frase impronta della tua organizzazione",
@@ -7150,7 +7221,7 @@
     "message": "Invita utenti"
   },
   "secretsManagerForPlan": {
-    "message": "Gestore dei Segreti per $PLAN$",
+    "message": "Secrets Manager per $PLAN$",
     "placeholders": {
       "plan": {
         "content": "$1",
@@ -7198,10 +7269,10 @@
     }
   },
   "subscribeToSecretsManager": {
-    "message": "Iscriviti al Gestore dei Segreti"
+    "message": "Iscriviti al Secrets Manager"
   },
   "addSecretsManagerUpgradeDesc": {
-    "message": "Aggiungi il Gestore dei Segreti al tuo piano aggiornato per mantenere l'accesso a tutti i secret creati con il tuo piano precedente."
+    "message": "Aggiungi il Secrets Manager al tuo piano aggiornato per mantenere l'accesso a tutti i segreti creati con il tuo piano precedente."
   },
   "additionalServiceAccounts": {
     "message": "Account di servizio aggiuntivi"
@@ -7237,13 +7308,13 @@
     "message": "Gestione del comportamento delle raccolte salvato"
   },
   "passwordManagerPlanPrice": {
-    "message": "Prezzo del piano del gestore di password"
+    "message": "Prezzo del piano del Password Manager"
   },
   "secretsManagerPlanPrice": {
-    "message": "Prezzo del piano del Gestore dei Segreti"
+    "message": "Prezzo del piano del Secrets Manager"
   },
   "passwordManager": {
-    "message": "Gestore di password"
+    "message": "Password Manager"
   },
   "freeOrganization": {
     "message": "Organizzazione gratis"
@@ -7264,7 +7335,7 @@
     "message": "Accesso effettuato!"
   },
   "smBetaEndedDesc": {
-    "message": "La beta del Gestore dei Segreti è terminata in $BETA_ENDING_DATE$. Ti rimangono $DAYS$ giorni per aggiungere il Gestore dei Segreti al tuo abbonamento a pagamento e mantenere l'accesso ai dati del Gestore dei Segreti. Contatta l'assistenza per aggiungere il Gestore dei Segreti al tuo abbonamento.",
+    "message": "La beta del Secrets Manager è terminata in $BETA_ENDING_DATE$. Ti rimangono $DAYS$ giorni per aggiungere il Secrets Manager al tuo abbonamento a pagamento e mantenere l'accesso ai dati del Secrets Manager. Contatta l'assistenza per aggiungere il Secrets Manager al tuo abbonamento.",
     "placeholders": {
       "beta_ending_date": {
         "content": "$1",
@@ -7318,5 +7389,8 @@
   "seeDetailedInstructions": {
     "message": "Consulta le istruzioni dettagliate sul nostro sito di assistenza su",
     "description": "This is followed a by a hyperlink to the help website."
+  },
+  "projectAccessUpdated": {
+    "message": "Accesso al progetto aggiornato"
   }
 }

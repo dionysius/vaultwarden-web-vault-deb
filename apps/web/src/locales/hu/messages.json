@@ -647,8 +647,23 @@
   "customPasskeyNameInfo": {
     "message": "Nevezzük el a jelszót a könnyebb azonosítshoz."
   },
+  "useForVaultEncryption": {
+    "message": "Használat széf titkosításhoz"
+  },
+  "useForVaultEncryptionInfo": {
+    "message": "Jelentkezzünk be és oldjuk fel a támogatott eszközökön mesterjelszó nélkül. Kövessük a böngésző utasításait a beállítás befejezéséhez."
+  },
+  "useForVaultEncryptionErrorReadingPasskey": {
+    "message": "Hiba történt a jelszó olvasásakor. Próbáljuk újra vagy töröljük a jelölést ebből az opcióból."
+  },
   "encryptionNotSupported": {
     "message": "A titkosítás nem támogatott."
+  },
+  "encryptionNotEnabled": {
+    "message": "A titkosítás nem engedélyezett."
+  },
+  "usedForEncryption": {
+    "message": "Használat titkosításhoz"
   },
   "loginWithPasskeyEnabled": {
     "message": "Jelentkezzünk be bekapcsolt jelszóval"
@@ -2280,6 +2295,9 @@
   "contactSupport": {
     "message": "Ügyfélszolgálat elérése"
   },
+  "contactSupportShort": {
+    "message": "Kapcsolat támogatás"
+  },
   "updatedPaymentMethod": {
     "message": "A fizetési mód frissítésre került."
   },
@@ -2380,6 +2398,9 @@
   },
   "planDescTeams": {
     "message": "Vállalkozásoknak és más szervezeti csoportoknak."
+  },
+  "planNameTeamsStarter": {
+    "message": "Teams Starter"
   },
   "planNameEnterprise": {
     "message": "Vállalatok"
@@ -2740,6 +2761,9 @@
   },
   "webVault": {
     "message": "Webes széf"
+  },
+  "cli": {
+    "message": "CLI"
   },
   "bitWebVault": {
     "message": "Bitwarden webes széf"
@@ -3485,6 +3509,15 @@
       }
     }
   },
+  "subscriptionUserSeatsWithoutAdditionalSeatsOption": {
+    "message": "Maximum $COUNT$ tag hívható meg további díjak nélkül. Lépjünk kapcsolatba az ügyfélszolgálattal a csomag frissítéséhez és további tagok meghívásához.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "10"
+      }
+    }
+  },
   "subscriptionFreePlan": {
     "message": "$COUNT$ felhasználónál több nem hívható meg magasabb szintű előfizetés nélkül.",
     "placeholders": {
@@ -3965,9 +3998,6 @@
   "setMasterPassword": {
     "message": "Mesterjelszó beállítása"
   },
-  "ssoCompleteRegistration": {
-    "message": "Az SSO-val történő bejelentkezés befejezéséhez mesterjelszót kell beállítani a széf eléréséhez és védelméhez."
-  },
   "identifier": {
     "message": "Azonosító"
   },
@@ -3985,6 +4015,21 @@
   },
   "includeAllTeamsFeatures": {
     "message": "Összes Csapat funkció, továbbá:"
+  },
+  "includeAllTeamsStarterFeatures": {
+    "message": "Összes Teams Starter funkció, ezenkívük:"
+  },
+  "chooseMonthlyOrAnnualBilling": {
+    "message": "Havi vagy éves számlázás választása"
+  },
+  "abilityToAddMoreThanNMembers": {
+    "message": "Több, mint $COUNT$ tag hozzáadásának lehetősége",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "10"
+      }
+    }
   },
   "includeSsoAuthentication": {
     "message": "SSO hitelesítés SAML2.0 és OpenID Connect kapcsolaton keresztül"
@@ -6601,6 +6646,24 @@
       }
     }
   },
+  "teamsStarterPlanInvLimitReachedManageBilling": {
+    "message": "A Teams Starter csomagok legfeljebb $SEATCOUNT$ tagot tartalmazhatnak. Lépjünk kapcsolatba az ügyfélszolgálattal a csomag frissítéséhez és további tagok meghívásához.",
+    "placeholders": {
+      "seatcount": {
+        "content": "$1",
+        "example": "10"
+      }
+    }
+  },
+  "teamsStarterPlanInvLimitReachedNoManageBilling": {
+    "message": "A Teams Starter csomagok legfeljebb $SEATCOUNT$ tagot tartalmazhatnak. Lépjünk kapcsolatba a szervezet tulajdonosával a csomag frissítéséhez és további tagok meghívásához.",
+    "placeholders": {
+      "seatcount": {
+        "content": "$1",
+        "example": "10"
+      }
+    }
+  },
   "freeOrgMaxCollectionReachedManageBilling": {
     "message": "Az ingyenes szervezeteknek legfeljebb $COLLECTIONCOUNT$ gyűjteményei is lehetnek. Térjünk át egy fizetett csomagra további gyűjtemények hozzáadásához.",
     "placeholders": {
@@ -6991,6 +7054,14 @@
     "message": "automatikus regisztrációval rendelkező rendszabály kerül bekapcsolásra, ha ezt az opció van használatban.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The single organization policy, SSO required policy, and account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
+  "orgPermissionsUpdatedMustSetPassword": {
+    "message": "A szervezeti engedélyek frissítésre kerültek, ezért be kell állítani egy mesterjelszót.",
+    "description": "Used as a card title description on the set password page to explain why the user is there"
+  },
+  "orgRequiresYouToSetPassword": {
+    "message": "A szervezet megköveteli egy mesterjelszó beállítását.",
+    "description": "Used as a card title description on the set password page to explain why the user is there"
+  },
   "notFound": {
     "message": "$RESOURCE$ nem található.",
     "placeholders": {
@@ -7318,5 +7389,8 @@
   "seeDetailedInstructions": {
     "message": "Tekintsük meg a részletes utasításokat a súgó oldalon:",
     "description": "This is followed a by a hyperlink to the help website."
+  },
+  "projectAccessUpdated": {
+    "message": "A projekt elérés frissítésre került."
   }
 }

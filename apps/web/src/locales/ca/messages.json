@@ -647,8 +647,23 @@
   "customPasskeyNameInfo": {
     "message": "Poseu un nom a la vostra clau per ajudar-vos a identificar-la."
   },
+  "useForVaultEncryption": {
+    "message": "Utilitza'l per al xifratge de la caixa forta"
+  },
+  "useForVaultEncryptionInfo": {
+    "message": "Inicieu sessió i desbloquegeu els dispositius compatibles sense la contrasenya mestra. Seguiu les instruccions del navegador per finalitzar la configuració."
+  },
+  "useForVaultEncryptionErrorReadingPasskey": {
+    "message": "S'ha produït un error en llegir la clau de pas. Torneu a provar-ho o desmarqueu aquesta opció."
+  },
   "encryptionNotSupported": {
     "message": "El xifratge no és compatible"
+  },
+  "encryptionNotEnabled": {
+    "message": "Xifratge no habilitat"
+  },
+  "usedForEncryption": {
+    "message": "S'utilitza per al xifratge"
   },
   "loginWithPasskeyEnabled": {
     "message": "Inicieu sessió amb la clau d'accés activada"
@@ -2280,6 +2295,9 @@
   "contactSupport": {
     "message": "Contacteu amb atenció al client"
   },
+  "contactSupportShort": {
+    "message": "Contacta amb Assistència tècnica"
+  },
   "updatedPaymentMethod": {
     "message": "Mètode de pagament actualitzat."
   },
@@ -2380,6 +2398,9 @@
   },
   "planDescTeams": {
     "message": "Per a empreses i altres equips organitzats."
+  },
+  "planNameTeamsStarter": {
+    "message": "Teams Starter"
   },
   "planNameEnterprise": {
     "message": "Empresa"
@@ -2740,6 +2761,9 @@
   },
   "webVault": {
     "message": "Caixa forta web"
+  },
+  "cli": {
+    "message": "CLI"
   },
   "bitWebVault": {
     "message": "Caixa forta web de Bitwarden"
@@ -3465,7 +3489,7 @@
     "message": "S'ha actualitzat la subscripció"
   },
   "subscribedToSecretsManager": {
-    "message": "Subscription updated. You now have access to Secrets Manager."
+    "message": "Subscripció actualitzada. Ara teniu accés a l'administrador de secrets."
   },
   "additionalOptions": {
     "message": "Opcions addicionals"
@@ -3482,6 +3506,15 @@
       "max": {
         "content": "$1",
         "example": "50"
+      }
+    }
+  },
+  "subscriptionUserSeatsWithoutAdditionalSeatsOption": {
+    "message": "Podeu convidar fins a $COUNT$ membres sense cap càrrec addicional. Poseu-vos en contacte amb el servei d'atenció al client per actualitzar el vostre pla i convidar més membres.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "10"
       }
     }
   },
@@ -3965,9 +3998,6 @@
   "setMasterPassword": {
     "message": "Estableix la contrasenya mestra"
   },
-  "ssoCompleteRegistration": {
-    "message": "Per completar la sessió amb SSO, configureu una contrasenya mestra per accedir i protegir la vostra caixa forta."
-  },
   "identifier": {
     "message": "Identificador"
   },
@@ -3985,6 +4015,21 @@
   },
   "includeAllTeamsFeatures": {
     "message": "Característiques de tots els equips, a més de:"
+  },
+  "includeAllTeamsStarterFeatures": {
+    "message": "Totes les característiques de Teams Starter, a més de:"
+  },
+  "chooseMonthlyOrAnnualBilling": {
+    "message": "Trieu facturació mensual o anual"
+  },
+  "abilityToAddMoreThanNMembers": {
+    "message": "Possibilitat d'afegir més de $COUNT$ membres",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "10"
+      }
+    }
   },
   "includeSsoAuthentication": {
     "message": "Autenticació SSO mitjançant SAML2.0 i OpenID Connect"
@@ -6601,6 +6646,24 @@
       }
     }
   },
+  "teamsStarterPlanInvLimitReachedManageBilling": {
+    "message": "Els plans de Teams Starter poden tenir fins a $SEATCOUNT$ membres. Poseu-vos en contacte amb el servei d'atenció al client per actualitzar el vostre pla i convidar més membres.",
+    "placeholders": {
+      "seatcount": {
+        "content": "$1",
+        "example": "10"
+      }
+    }
+  },
+  "teamsStarterPlanInvLimitReachedNoManageBilling": {
+    "message": "Els plans de Teams Starter poden tenir fins a $SEATCOUNT$ membres. Contacteu amb el propietari de la vostra organització per actualitzar el vostre pla i convidar més membres.",
+    "placeholders": {
+      "seatcount": {
+        "content": "$1",
+        "example": "10"
+      }
+    }
+  },
   "freeOrgMaxCollectionReachedManageBilling": {
     "message": "Les organitzacions gratuïtes poden tindre fins a $COLLECTIONCOUNT$ col·leccions. Actualitza a un pla de pagament per afegir més col·leccions.",
     "placeholders": {
@@ -6991,6 +7054,14 @@
     "message": "amb inscripció automàtica s'activaran quan s'utilitze aquesta opció.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The single organization policy, SSO required policy, and account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
+  "orgPermissionsUpdatedMustSetPassword": {
+    "message": "Els permisos de la vostra organització s'han actualitzat, cal que establiu una contrasenya mestra.",
+    "description": "Used as a card title description on the set password page to explain why the user is there"
+  },
+  "orgRequiresYouToSetPassword": {
+    "message": "La vostra organització requereix que establiu una contrasenya mestra.",
+    "description": "Used as a card title description on the set password page to explain why the user is there"
+  },
   "notFound": {
     "message": "No s'ha trobat $RESOURCE$",
     "placeholders": {
@@ -7228,13 +7299,13 @@
     "message": "Gestió de col·lecció"
   },
   "collectionManagementDesc": {
-    "message": "Manage the collection behavior for the organization"
+    "message": "Administra el comportament de col·lecció per a l'organització"
   },
   "limitCollectionCreationDeletionDesc": {
-    "message": "Limit collection creation and deletion to owners and admins"
+    "message": "Limita la creació i la supressió de col·leccions als propietaris i administradors"
   },
   "collectionManagementUpdated": {
-    "message": "Collection management behavior saved"
+    "message": "S'ha guardat el comportament d'administració de la col·lecció"
   },
   "passwordManagerPlanPrice": {
     "message": "Preu del pla Administrador de contrasenyes"
@@ -7283,7 +7354,7 @@
     "message": "Beta"
   },
   "assignCollectionAccess": {
-    "message": "Assign collection access"
+    "message": "Assigna accés a la col·lecció"
   },
   "editedCollections": {
     "message": "Col·leccions editades"
@@ -7298,13 +7369,13 @@
     "message": "Ja tens un compte?"
   },
   "customBillingStart": {
-    "message": "Custom billing is not reflected. Visit the "
+    "message": "La facturació personalitzada no es reflecteix. Visita la "
   },
   "customBillingEnd": {
     "message": " pàgina per a la facturació més recent."
   },
   "managePermissionRequired": {
-    "message": "At least one member or group must have can manage permission."
+    "message": "Com a mínim un membre o grup ha de tindre permís de gestió."
   },
   "typePasskey": {
     "message": "Clau de pas"
@@ -7318,5 +7389,8 @@
   "seeDetailedInstructions": {
     "message": "Consulteu les instruccions detallades al nostre lloc d'ajuda a",
     "description": "This is followed a by a hyperlink to the help website."
+  },
+  "projectAccessUpdated": {
+    "message": "S'ha actualitzat l'accés al projecte"
   }
 }

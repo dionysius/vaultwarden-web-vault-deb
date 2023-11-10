@@ -647,8 +647,23 @@
   "customPasskeyNameInfo": {
     "message": "Назвіть свій ключ доступу для полегшення розпізнавання."
   },
+  "useForVaultEncryption": {
+    "message": "Використовувати для шифрування сховища"
+  },
+  "useForVaultEncryptionInfo": {
+    "message": "Виконуйте вхід і розблокування на підтримуваних пристроях без головного пароля. Дотримуйтесь підказок вашого браузера для завершення налаштування."
+  },
+  "useForVaultEncryptionErrorReadingPasskey": {
+    "message": "Помилка читання ключа доступу. Повторіть спробу або приберіть цю опцію."
+  },
   "encryptionNotSupported": {
     "message": "Шифрування не підтримується"
+  },
+  "encryptionNotEnabled": {
+    "message": "Шифрування не увімкнено"
+  },
+  "usedForEncryption": {
+    "message": "Використовується для шифрування"
   },
   "loginWithPasskeyEnabled": {
     "message": "Увійдіть з активованим ключем доступу"
@@ -2280,6 +2295,9 @@
   "contactSupport": {
     "message": "Звернутися до служби підтримки клієнтів"
   },
+  "contactSupportShort": {
+    "message": "Звернутися до служби підтримки"
+  },
   "updatedPaymentMethod": {
     "message": "Спосіб оплати оновлено."
   },
@@ -2380,6 +2398,9 @@
   },
   "planDescTeams": {
     "message": "Для компаній та інших командних організацій."
+  },
+  "planNameTeamsStarter": {
+    "message": "Teams Starter"
   },
   "planNameEnterprise": {
     "message": "Компанія"
@@ -2740,6 +2761,9 @@
   },
   "webVault": {
     "message": "Веб сховище"
+  },
+  "cli": {
+    "message": "CLI"
   },
   "bitWebVault": {
     "message": "Веб сховище Bitwarden"
@@ -3485,6 +3509,15 @@
       }
     }
   },
+  "subscriptionUserSeatsWithoutAdditionalSeatsOption": {
+    "message": "Ви можете запросити до $COUNT$ користувачів без додаткової оплати. Зверніться до служби підтримки, щоб підвищити рівень вашого тарифного плану та запросити більше учасників.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "10"
+      }
+    }
+  },
   "subscriptionFreePlan": {
     "message": "Ви не можете запросити більш як $COUNT$ учасників, не підвищивши свій тарифний план.",
     "placeholders": {
@@ -3965,9 +3998,6 @@
   "setMasterPassword": {
     "message": "Встановити головний пароль"
   },
-  "ssoCompleteRegistration": {
-    "message": "Щоб завершити налаштування входу з SSO, встановіть головний пароль для доступу і захисту сховища."
-  },
   "identifier": {
     "message": "Ідентифікатор"
   },
@@ -3985,6 +4015,21 @@
   },
   "includeAllTeamsFeatures": {
     "message": "Усі функції команд, плюс:"
+  },
+  "includeAllTeamsStarterFeatures": {
+    "message": "Усі функції Teams Starter, а також:"
+  },
+  "chooseMonthlyOrAnnualBilling": {
+    "message": "Виберіть місячну або річну оплату"
+  },
+  "abilityToAddMoreThanNMembers": {
+    "message": "Можливість додати понад $COUNT$ учасників",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "10"
+      }
+    }
   },
   "includeSsoAuthentication": {
     "message": "SSO автентифікація через SAML2.0 та OpenID Connect"
@@ -6601,6 +6646,24 @@
       }
     }
   },
+  "teamsStarterPlanInvLimitReachedManageBilling": {
+    "message": "Плани Teams Starter можуть мати до $SEATCOUNT$ учасників. Зверніться до служби підтримки, щоб підвищити рівень тарифного плану та запросити більше учасників.",
+    "placeholders": {
+      "seatcount": {
+        "content": "$1",
+        "example": "10"
+      }
+    }
+  },
+  "teamsStarterPlanInvLimitReachedNoManageBilling": {
+    "message": "Плани Teams Starter можуть мати до $SEATCOUNT$ учасників. Зверніться до власника вашої організації, щоб підвищити рівень тарифного плану та запросити більше учасників.",
+    "placeholders": {
+      "seatcount": {
+        "content": "$1",
+        "example": "10"
+      }
+    }
+  },
   "freeOrgMaxCollectionReachedManageBilling": {
     "message": "Безплатні організації можуть мати до $COLLECTIONCOUNT$ збірок. Передплатіть тарифний план, щоб додати більше збірок.",
     "placeholders": {
@@ -6991,6 +7054,14 @@
     "message": "запису з автоматичним розгортанням буде увімкнено, якщо використовується ця опція.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The single organization policy, SSO required policy, and account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
+  "orgPermissionsUpdatedMustSetPassword": {
+    "message": "Оновлено дозволи вашої організації – вимагається встановлення головного пароля.",
+    "description": "Used as a card title description on the set password page to explain why the user is there"
+  },
+  "orgRequiresYouToSetPassword": {
+    "message": "Ваша організація вимагає, щоб ви встановили головний пароль.",
+    "description": "Used as a card title description on the set password page to explain why the user is there"
+  },
   "notFound": {
     "message": "$RESOURCE$ не знайдено",
     "placeholders": {
@@ -7318,5 +7389,8 @@
   "seeDetailedInstructions": {
     "message": "Перегляньте докладні інструкції на нашому довідковому сайті",
     "description": "This is followed a by a hyperlink to the help website."
+  },
+  "projectAccessUpdated": {
+    "message": "Project access updated"
   }
 }

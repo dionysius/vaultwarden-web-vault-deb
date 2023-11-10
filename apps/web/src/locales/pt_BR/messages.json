@@ -647,8 +647,23 @@
   "customPasskeyNameInfo": {
     "message": "Nomeie sua chave de acesso para ajudá-lo a identificá-la."
   },
+  "useForVaultEncryption": {
+    "message": "Usar para criptografia do cofre"
+  },
+  "useForVaultEncryptionInfo": {
+    "message": "Faça login e desbloqueie em dispositivos suportados sem a sua senha mestra. Siga as instruções do seu navegador para finalizar a instalação."
+  },
+  "useForVaultEncryptionErrorReadingPasskey": {
+    "message": "Erro ao ler a senha. Tente novamente ou desmarque esta opção."
+  },
   "encryptionNotSupported": {
     "message": "Criptografia não suportada"
+  },
+  "encryptionNotEnabled": {
+    "message": "Criptografia não habilitada"
+  },
+  "usedForEncryption": {
+    "message": "Usado para criptografia"
   },
   "loginWithPasskeyEnabled": {
     "message": "Iniciar sessão com a chave de acesso ativada"
@@ -1546,7 +1561,7 @@
     "message": "Gerenciar"
   },
   "canManage": {
-    "message": "Can manage"
+    "message": "Pode gerenciar"
   },
   "disable": {
     "message": "Desabilitar"
@@ -2280,6 +2295,9 @@
   "contactSupport": {
     "message": "Contato com o Suporte ao Cliente"
   },
+  "contactSupportShort": {
+    "message": "Entrar em contato com Suporte"
+  },
   "updatedPaymentMethod": {
     "message": "Atualizar forma de pagamento."
   },
@@ -2380,6 +2398,9 @@
   },
   "planDescTeams": {
     "message": "Para empresas e outras organizações de equipe."
+  },
+  "planNameTeamsStarter": {
+    "message": "Equipes iniciates"
   },
   "planNameEnterprise": {
     "message": "Empresarial"
@@ -2740,6 +2761,9 @@
   },
   "webVault": {
     "message": "Cofre Web"
+  },
+  "cli": {
+    "message": "CLI"
   },
   "bitWebVault": {
     "message": "Bitwarden Web vault"
@@ -3465,7 +3489,7 @@
     "message": "Assinatura atualizada"
   },
   "subscribedToSecretsManager": {
-    "message": "Subscription updated. You now have access to Secrets Manager."
+    "message": "Assinatura atualizada. Agora você tem acesso ao Gerenciador de Segredos."
   },
   "additionalOptions": {
     "message": "Opções Adicionais"
@@ -3482,6 +3506,15 @@
       "max": {
         "content": "$1",
         "example": "50"
+      }
+    }
+  },
+  "subscriptionUserSeatsWithoutAdditionalSeatsOption": {
+    "message": "Você pode convidar até $COUNT$ membros sem custos adicionais. Entre em contato com o Suporte ao Cliente para melhorar seu plano e convidar mais membros.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "10"
       }
     }
   },
@@ -3965,9 +3998,6 @@
   "setMasterPassword": {
     "message": "Definir Senha Mestra"
   },
-  "ssoCompleteRegistration": {
-    "message": "Para concluir o login com o SSO, defina uma senha mestra para acessar e proteger o seu cofre."
-  },
   "identifier": {
     "message": "Identificador"
   },
@@ -3985,6 +4015,21 @@
   },
   "includeAllTeamsFeatures": {
     "message": "Recursos para Todas as Equipes, além de:"
+  },
+  "includeAllTeamsStarterFeatures": {
+    "message": "Recursos para todas as equipes iniciantes, além de:"
+  },
+  "chooseMonthlyOrAnnualBilling": {
+    "message": "Escolha faturamento mensal ou anual"
+  },
+  "abilityToAddMoreThanNMembers": {
+    "message": "Capacidade de adicionar mais que $COUNT$ membros",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "10"
+      }
+    }
   },
   "includeSsoAuthentication": {
     "message": "Autenticação SSO via SAML2.0 e OpenID Connect"
@@ -6601,6 +6646,24 @@
       }
     }
   },
+  "teamsStarterPlanInvLimitReachedManageBilling": {
+    "message": "Planos para Equipes Iniciantes podem ter até $SEATCOUNT$ membros. Entre em contato com o Suporte ao Cliente para melhorar o seu plano e convidar mais membros.",
+    "placeholders": {
+      "seatcount": {
+        "content": "$1",
+        "example": "10"
+      }
+    }
+  },
+  "teamsStarterPlanInvLimitReachedNoManageBilling": {
+    "message": "Planos para Equipes Iniciantes podem ter até $SEATCOUNT$ membros. Entre em contato com o proprietário da organização para melhorar o seu plano e convidar mais membros.",
+    "placeholders": {
+      "seatcount": {
+        "content": "$1",
+        "example": "10"
+      }
+    }
+  },
   "freeOrgMaxCollectionReachedManageBilling": {
     "message": "Free organizations may have up to $COLLECTIONCOUNT$ collections. Upgrade to a paid plan to add more collections.",
     "placeholders": {
@@ -6991,6 +7054,14 @@
     "message": "policy with automatic enrollment will turn on when this option is used.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The single organization policy, SSO required policy, and account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
+  "orgPermissionsUpdatedMustSetPassword": {
+    "message": "As permissões da sua organização foram atualizadas, exigindo que você defina uma senha mestra.",
+    "description": "Used as a card title description on the set password page to explain why the user is there"
+  },
+  "orgRequiresYouToSetPassword": {
+    "message": "Sua organização requer que você defina uma senha mestra.",
+    "description": "Used as a card title description on the set password page to explain why the user is there"
+  },
   "notFound": {
     "message": "$RESOURCE$ não encontrado",
     "placeholders": {
@@ -7225,16 +7296,16 @@
     }
   },
   "collectionManagement": {
-    "message": "Collection management"
+    "message": "Gerenciamento da coleção"
   },
   "collectionManagementDesc": {
-    "message": "Manage the collection behavior for the organization"
+    "message": "Gerenciar o comportamento da coleção para a organização"
   },
   "limitCollectionCreationDeletionDesc": {
-    "message": "Limit collection creation and deletion to owners and admins"
+    "message": "Limitar criação de coleção e exclusão a proprietários e administradores"
   },
   "collectionManagementUpdated": {
-    "message": "Collection management behavior saved"
+    "message": "Comportamento de Gerenciamento de Coleção salvo"
   },
   "passwordManagerPlanPrice": {
     "message": "Password Manager plan price"
@@ -7283,10 +7354,10 @@
     "message": "Beta"
   },
   "assignCollectionAccess": {
-    "message": "Assign collection access"
+    "message": "Atribuir acesso à coleção"
   },
   "editedCollections": {
-    "message": "Edited collections"
+    "message": "Coleções editadas"
   },
   "baseUrl": {
     "message": "URL do Servidor"
@@ -7298,13 +7369,13 @@
     "message": "Já tem uma conta?"
   },
   "customBillingStart": {
-    "message": "Custom billing is not reflected. Visit the "
+    "message": "O faturamento personalizado não é refletido. Visite o "
   },
   "customBillingEnd": {
-    "message": " page for latest invoicing."
+    "message": " página para faturamento mais recente."
   },
   "managePermissionRequired": {
-    "message": "At least one member or group must have can manage permission."
+    "message": "Pelo menos um membro ou grupo deve ter poder gerenciar a permissão."
   },
   "typePasskey": {
     "message": "Passkey"
@@ -7318,5 +7389,8 @@
   "seeDetailedInstructions": {
     "message": "Veja instruções detalhadas no nosso site de ajuda em",
     "description": "This is followed a by a hyperlink to the help website."
+  },
+  "projectAccessUpdated": {
+    "message": "Project access updated"
   }
 }

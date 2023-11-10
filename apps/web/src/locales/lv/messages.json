@@ -647,8 +647,23 @@
   "customPasskeyNameInfo": {
     "message": "Nosaukuma piešķiršana piekļuves atslēgai palīdz to atpazīt."
   },
+  "useForVaultEncryption": {
+    "message": "Izmantot glabātavas šifrēšanai"
+  },
+  "useForVaultEncryptionInfo": {
+    "message": "Pieteikšanās un atslēgšana atbalstītās ierīcēs bez galvenās paroles. Jāseko uzvednēm pārlūkā, lai pabeigtu uzstādīšanu."
+  },
+  "useForVaultEncryptionErrorReadingPasskey": {
+    "message": "Kļūda piekļuves atslēgas nolasīšanā. Jāmēģina vēlreiz vai jānoņem atzīme no šīs iespējas."
+  },
   "encryptionNotSupported": {
     "message": "Šifrēšana nav atbalstīta"
+  },
+  "encryptionNotEnabled": {
+    "message": "Šifrēšana nav iespējota"
+  },
+  "usedForEncryption": {
+    "message": "Izmantota šifrēšanai"
   },
   "loginWithPasskeyEnabled": {
     "message": "Pieteikšanās ar piekūves atslēgu ieslēgta"
@@ -2280,6 +2295,9 @@
   "contactSupport": {
     "message": "Sazinieties ar klientu atbalstu"
   },
+  "contactSupportShort": {
+    "message": "Sazināties ar atbalstu"
+  },
   "updatedPaymentMethod": {
     "message": "Apmaksas veids atjaunināts."
   },
@@ -2380,6 +2398,9 @@
   },
   "planDescTeams": {
     "message": "Uzņēmumiem un citām apvienībām."
+  },
+  "planNameTeamsStarter": {
+    "message": "Teams Starter"
   },
   "planNameEnterprise": {
     "message": "Uzņēmējdarbība"
@@ -2740,6 +2761,9 @@
   },
   "webVault": {
     "message": "Tīmekļa glabātava"
+  },
+  "cli": {
+    "message": "CLI"
   },
   "bitWebVault": {
     "message": "Bitwarden tīmekļa glabātava"
@@ -3485,6 +3509,15 @@
       }
     }
   },
+  "subscriptionUserSeatsWithoutAdditionalSeatsOption": {
+    "message": "Ir iespējams uzaicināt līdz $COUNT$ dalībniekiem bez papildu maksas. Jāsazinās ar klientu atbalstu, lai uzlabotu savu plānu un uzaicinātu vairāk dalībnieku.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "10"
+      }
+    }
+  },
   "subscriptionFreePlan": {
     "message": "Nevar uzaicināt vairāk kā $COUNT$ lietotāju(s) bez plāna paaugstināšanas.",
     "placeholders": {
@@ -3965,9 +3998,6 @@
   "setMasterPassword": {
     "message": "Uzstādīt galveno paroli"
   },
-  "ssoCompleteRegistration": {
-    "message": "Lai pabeigtu vienotās pieteikšanās uzstādīšanu, ir jānorāda galvenā parole, lai piekļūtu glabātavai un aizsargātu to."
-  },
   "identifier": {
     "message": "Identifikators"
   },
@@ -3985,6 +4015,21 @@
   },
   "includeAllTeamsFeatures": {
     "message": "Visas vienību iespējas, kā arī:"
+  },
+  "includeAllTeamsStarterFeatures": {
+    "message": "Visas Teams Starter iespējās, kā arī:"
+  },
+  "chooseMonthlyOrAnnualBilling": {
+    "message": "Jāizvēlas ikmēneša vai ikgadējie norēķini"
+  },
+  "abilityToAddMoreThanNMembers": {
+    "message": "Iespēja pievienot vairāk kā $COUNT$ dalībnieku",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "10"
+      }
+    }
   },
   "includeSsoAuthentication": {
     "message": "Vienotā autentificēšanās ar SAML 2.0 un OpenID Connect"
@@ -6601,6 +6646,24 @@
       }
     }
   },
+  "teamsStarterPlanInvLimitReachedManageBilling": {
+    "message": "Teams Starter plānā var būt līdz $SEATCOUNT$ dalībnieku. Jāsazinās ar klientu atbalstu, lai uzlabotu savu plānu un uzaicinātu vairāk dalībnieku.",
+    "placeholders": {
+      "seatcount": {
+        "content": "$1",
+        "example": "10"
+      }
+    }
+  },
+  "teamsStarterPlanInvLimitReachedNoManageBilling": {
+    "message": "Teams Starter plānā var būt līdz $SEATCOUNT$ dalībnieku. Jāsazinās savas apvienības īpašnieku, lai uzlabotu savu plānu un uzaicinātu vairāk dalībnieku.",
+    "placeholders": {
+      "seatcount": {
+        "content": "$1",
+        "example": "10"
+      }
+    }
+  },
   "freeOrgMaxCollectionReachedManageBilling": {
     "message": "Apvienībās, kuras izmanto Bitwarden bez maksas, var būt līdz $COLLECTIONCOUNT$ krājumiem. Jāpāriet uz maksas plānu, lai pievienotu vairāk krājumu.",
     "placeholders": {
@@ -6991,6 +7054,14 @@
     "message": "nosacījums ar automātisku ievietošanu sarakstā tiks ieslēgts, kad šī iespēja tiek izmantota.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The single organization policy, SSO required policy, and account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
+  "orgPermissionsUpdatedMustSetPassword": {
+    "message": "Apvienības atļaujas tika atjauninātas, un tās pieprasa iestatīt galveno paroli.",
+    "description": "Used as a card title description on the set password page to explain why the user is there"
+  },
+  "orgRequiresYouToSetPassword": {
+    "message": "Apvienība pieprasa iestatīt galveno paroli.",
+    "description": "Used as a card title description on the set password page to explain why the user is there"
+  },
   "notFound": {
     "message": "$RESOURCE$ netika atrasts",
     "placeholders": {
@@ -7318,5 +7389,8 @@
   "seeDetailedInstructions": {
     "message": "Izvērstas norādes ir aplūkojamas mūsu palīdzības vietnē",
     "description": "This is followed a by a hyperlink to the help website."
+  },
+  "projectAccessUpdated": {
+    "message": "Projekta piekļuve ir atjaunināta"
   }
 }

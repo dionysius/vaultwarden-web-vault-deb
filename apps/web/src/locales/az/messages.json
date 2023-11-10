@@ -615,7 +615,7 @@
     "message": "Parolla giriş et"
   },
   "loginWithPasskeyInfo": {
-    "message": "Use a generated passkey that will automatically log you in without a password. Biometrics, like facial recognition or fingerprint, or another FIDO2 security method will verify your identity."
+    "message": "Bir parol olmadan avtomatik olaraq giriş etməyinizi təmin edəcək bir keçid açarı istifadə edin. Üz tanıma və ya barmaq izi kimi biometrik, ya da başqa bir FIDO2 güvənlik üsulu kimliyinizi doğrulayacaq."
   },
   "newPasskey": {
     "message": "Yeni parol"
@@ -627,31 +627,46 @@
     "message": "Parol ayarlarına sahib girişi dəyişdirmək üçün ana parolunuzu daxil edin."
   },
   "creatingPasskeyLoading": {
-    "message": "Creating passkey..."
+    "message": "Keçid açarı yaradılır..."
   },
   "creatingPasskeyLoadingInfo": {
-    "message": "Keep this window open and follow prompts from your browser."
+    "message": "Bu pəncərəni açıq saxlayın və brauzerinizdən gələn sorğuları izləyin."
   },
   "errorCreatingPasskey": {
-    "message": "Error creating passkey"
+    "message": "Keçid açarının yaradılma xətası"
   },
   "errorCreatingPasskeyInfo": {
-    "message": "There was a problem creating your passkey."
+    "message": "Keçid açarınız yaradılarkən bir problem yarandı."
   },
   "passkeySuccessfullyCreated": {
-    "message": "Passkey successfully created!"
+    "message": "Keçid açarı uğurla yaradıldı!"
   },
   "customName": {
     "message": "Özəl ad"
   },
   "customPasskeyNameInfo": {
-    "message": "Name your passkey to help you identify it."
+    "message": "Müəyyənləşdirməyə kömək etmək üçün keçid açarınızı adlandırın."
+  },
+  "useForVaultEncryption": {
+    "message": "Kassa şifrələməsi üçün istifadə et"
+  },
+  "useForVaultEncryptionInfo": {
+    "message": "Dəstəklənən cihazlarda ana parolunuz olmadan giriş edin və kilidi açın. Quraşdırmanı tamamlamaq üçün təlimatları izləyin."
+  },
+  "useForVaultEncryptionErrorReadingPasskey": {
+    "message": "Keçid açarı oxunarkən xəta baş verdi. Yenidən sınayın və ya bu seçimi ləğv edin."
   },
   "encryptionNotSupported": {
     "message": "Şifrələmə dəstəklənmir"
   },
+  "encryptionNotEnabled": {
+    "message": "Şifrələmə fəal deyil"
+  },
+  "usedForEncryption": {
+    "message": "Şifrələmə üçün istifadə edilir"
+  },
   "loginWithPasskeyEnabled": {
-    "message": "Log in with passkey turned on"
+    "message": "Keçid açarı işlək olduqda giriş edin"
   },
   "passkeySaved": {
     "message": "$NAME$ saxlanıldı",
@@ -669,10 +684,10 @@
     "message": "Parolu sil"
   },
   "removePasskeyInfo": {
-    "message": "If all passkeys are removed, you will be unable to log into new devices without your master password."
+    "message": "Bütün keçid açarları silinsə, ana parolunuz olmadan yeni cihazlarda giriş edə bilməzsiniz."
   },
   "passkeyLimitReachedInfo": {
-    "message": "Passkey limit reached. Remove a passkey to add another."
+    "message": "Keçid açarı limitinə çatıldı. Başqasını əlavə etmək üçün bir keçid açarı silin."
   },
   "tryAgain": {
     "message": "Yenidən sına"
@@ -2280,6 +2295,9 @@
   "contactSupport": {
     "message": "Müştəri dəstəyi ilə əlaqə"
   },
+  "contactSupportShort": {
+    "message": "Dəstəklə əlaqə"
+  },
   "updatedPaymentMethod": {
     "message": "Ödəniş metodu güncəlləndi."
   },
@@ -2380,6 +2398,9 @@
   },
   "planDescTeams": {
     "message": "Biznes və digər komanda təşkilatları üçün."
+  },
+  "planNameTeamsStarter": {
+    "message": "Teams Starter"
   },
   "planNameEnterprise": {
     "message": "Müəssisə"
@@ -2740,6 +2761,9 @@
   },
   "webVault": {
     "message": "Veb anbar"
+  },
+  "cli": {
+    "message": "CLI"
   },
   "bitWebVault": {
     "message": "Bitwarden Web anbarı"
@@ -3465,7 +3489,7 @@
     "message": "Abunəlik güncəlləndi"
   },
   "subscribedToSecretsManager": {
-    "message": "Subscription updated. You now have access to Secrets Manager."
+    "message": "Abunəlik güncəlləndi. Artıq \"Secrets Menecer\"ə müraciətiniz var."
   },
   "additionalOptions": {
     "message": "Əlavə seçimlər"
@@ -3482,6 +3506,15 @@
       "max": {
         "content": "$1",
         "example": "50"
+      }
+    }
+  },
+  "subscriptionUserSeatsWithoutAdditionalSeatsOption": {
+    "message": "Heç bir əlavə ödəniş etmədən $COUNT$ ədədə qədər üzv dəvət edə bilərsiniz. Planınızı yüksəltmək və daha çox üzv dəvət etmək üçün Müştəri Dəstəyi ilə əlaqə saxlayın.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "10"
       }
     }
   },
@@ -3965,9 +3998,6 @@
   "setMasterPassword": {
     "message": "Ana parolu tənzimlə"
   },
-  "ssoCompleteRegistration": {
-    "message": "SSO ilə giriş prosesini tamamlamaq üçün zəhmət olmasa anbarınıza müraciət etmək və onu qorumaq üçün bir ana parol tənzimləyin."
-  },
   "identifier": {
     "message": "İdentifikator"
   },
@@ -3985,6 +4015,21 @@
   },
   "includeAllTeamsFeatures": {
     "message": "Bütün komanda özəllikləri, əlavə olaraq:"
+  },
+  "includeAllTeamsStarterFeatures": {
+    "message": "Bütün Teams Starter özəllikləri, əlavə olaraq:"
+  },
+  "chooseMonthlyOrAnnualBilling": {
+    "message": "Aylıq və ya illik fakturanı seçin"
+  },
+  "abilityToAddMoreThanNMembers": {
+    "message": "$COUNT$+ üzv əlavə etmə imkanı",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "10"
+      }
+    }
   },
   "includeSsoAuthentication": {
     "message": "SAML2.0 və OpenID Connect SSO Kimlik təsdiqləmə"
@@ -6601,6 +6646,24 @@
       }
     }
   },
+  "teamsStarterPlanInvLimitReachedManageBilling": {
+    "message": "Teams Starter planlarında ən çox $SEATCOUNT$ üzv ola bilər. Planınızı yüksəltmək və daha çox üzv dəvət etmək üçün Müştəri Dəstəyi ilə əlaqə saxlayın.",
+    "placeholders": {
+      "seatcount": {
+        "content": "$1",
+        "example": "10"
+      }
+    }
+  },
+  "teamsStarterPlanInvLimitReachedNoManageBilling": {
+    "message": "Teams Starter planlarında ən çox $SEATCOUNT$ üzv ola bilər. Planınızı yüksəltmək və daha çox üzv dəvət etmək üçün təşkilatınızın sahibi ilə əlaqə saxlayın.",
+    "placeholders": {
+      "seatcount": {
+        "content": "$1",
+        "example": "10"
+      }
+    }
+  },
   "freeOrgMaxCollectionReachedManageBilling": {
     "message": "Ödənişsiz təşkilatların ən çox $COLLECTIONCOUNT$ kolleksiyası ola bilər. Daha çox kolleksiya əlavə etmək üçün ödənişli bir plana yüksəldin.",
     "placeholders": {
@@ -6743,7 +6806,7 @@
     "message": "\"Secrets Manager\"ə istifadəçi müraciətini aktivləşdir."
   },
   "userAccessSecretsManagerGA": {
-    "message": "This user can access Secrets Manager"
+    "message": "Bu istifadəçi \"Secrets Manager\"ə müraciət edə bilər"
   },
   "important": {
     "message": "Vacib:"
@@ -6990,6 +7053,14 @@
   "memberDecryptionOptionTdeDescriptionPartFour": {
     "message": "bu seçim istifadə edildikdə avto-qeydiyyat ilə işə salınacaq.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The single organization policy, SSO required policy, and account recovery administration policy with automatic enrollment will turn on when this option is used.'"
+  },
+  "orgPermissionsUpdatedMustSetPassword": {
+    "message": "Təşkilatınızın icazələri güncəlləndi və bir ana parol ayarlamağınızı tələb edir.",
+    "description": "Used as a card title description on the set password page to explain why the user is there"
+  },
+  "orgRequiresYouToSetPassword": {
+    "message": "Təşkilatınız bir ana parol ayarlamağı tələb edir.",
+    "description": "Used as a card title description on the set password page to explain why the user is there"
   },
   "notFound": {
     "message": "$RESOURCE$ tapılmadı",
@@ -7318,5 +7389,8 @@
   "seeDetailedInstructions": {
     "message": "Kömək saytımızda detallı təlimatlara baxın",
     "description": "This is followed a by a hyperlink to the help website."
+  },
+  "projectAccessUpdated": {
+    "message": "Project access updated"
   }
 }

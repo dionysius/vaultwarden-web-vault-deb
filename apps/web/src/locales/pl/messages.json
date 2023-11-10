@@ -647,8 +647,23 @@
   "customPasskeyNameInfo": {
     "message": "Nazwij swój passkey, aby pomóc Ci go zidentyfikować."
   },
+  "useForVaultEncryption": {
+    "message": "Użyj do szyfrowania sejfu"
+  },
+  "useForVaultEncryptionInfo": {
+    "message": "Log in and unlock on supported devices without your master password. Follow the prompts from your browser to finalize setup."
+  },
+  "useForVaultEncryptionErrorReadingPasskey": {
+    "message": "Error reading passkey. Try again or uncheck this option."
+  },
   "encryptionNotSupported": {
     "message": "Szyfrowanie nie jest obsługiwane"
+  },
+  "encryptionNotEnabled": {
+    "message": "Encryption not enabled"
+  },
+  "usedForEncryption": {
+    "message": "Used for encryption"
   },
   "loginWithPasskeyEnabled": {
     "message": "Logowanie za pomocą passkey zostało włączone"
@@ -2280,6 +2295,9 @@
   "contactSupport": {
     "message": "Skontaktuj się z działem obsługi klienta"
   },
+  "contactSupportShort": {
+    "message": "Skontaktuj się z pomocą techniczną"
+  },
   "updatedPaymentMethod": {
     "message": "Metoda płatności została zaktualizowana."
   },
@@ -2380,6 +2398,9 @@
   },
   "planDescTeams": {
     "message": "Dla firm i innych zorganizowanych zespołów."
+  },
+  "planNameTeamsStarter": {
+    "message": "Teams Starter"
   },
   "planNameEnterprise": {
     "message": "Przedsiębiorstwo"
@@ -2740,6 +2761,9 @@
   },
   "webVault": {
     "message": "Sejf internetowy"
+  },
+  "cli": {
+    "message": "CLI"
   },
   "bitWebVault": {
     "message": "Sejf internetowy Bitwarden"
@@ -3485,6 +3509,15 @@
       }
     }
   },
+  "subscriptionUserSeatsWithoutAdditionalSeatsOption": {
+    "message": "Możesz zaprosić do $COUNT$ członków bez dodatkowych opłat. Skontaktuj się z działem obsługi klienta, aby ulepszyć swój plan i zaprosić więcej członków.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "10"
+      }
+    }
+  },
   "subscriptionFreePlan": {
     "message": "W obecnym planie nie możesz zaprosić więcej niż $COUNT$ użytkowników.",
     "placeholders": {
@@ -3965,9 +3998,6 @@
   "setMasterPassword": {
     "message": "Ustaw hasło główne"
   },
-  "ssoCompleteRegistration": {
-    "message": "W celu zakończenia jednokrotnego logowania SSO, ustaw hasło główne, aby uzyskać dostęp do sejfu."
-  },
   "identifier": {
     "message": "Identyfikator"
   },
@@ -3985,6 +4015,21 @@
   },
   "includeAllTeamsFeatures": {
     "message": "Wszystkie funkcje zespołów oraz:"
+  },
+  "includeAllTeamsStarterFeatures": {
+    "message": "All Teams Starter features, plus:"
+  },
+  "chooseMonthlyOrAnnualBilling": {
+    "message": "Wybierz miesięczną lub roczną płatność"
+  },
+  "abilityToAddMoreThanNMembers": {
+    "message": "Możliwość dodania więcej niż $COUNT$ członków",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "10"
+      }
+    }
   },
   "includeSsoAuthentication": {
     "message": "Logowanie jednokrotne SSO za pomocą protokołu SAML2.0 i OpenID Connect"
@@ -6601,6 +6646,24 @@
       }
     }
   },
+  "teamsStarterPlanInvLimitReachedManageBilling": {
+    "message": "Teams Starter plans may have up to $SEATCOUNT$ members. Contact Customer Support to upgrade your plan and invite more members.",
+    "placeholders": {
+      "seatcount": {
+        "content": "$1",
+        "example": "10"
+      }
+    }
+  },
+  "teamsStarterPlanInvLimitReachedNoManageBilling": {
+    "message": "Teams Starter plans may have up to $SEATCOUNT$ members. Contact your organization owner to upgrade your plan and invite more members.",
+    "placeholders": {
+      "seatcount": {
+        "content": "$1",
+        "example": "10"
+      }
+    }
+  },
   "freeOrgMaxCollectionReachedManageBilling": {
     "message": "Darmowe organizacje mogą mieć maksymalnie $COLLECTIONCOUNT$ kolekcji. Przejdź na płatny plan, aby dodać więcej kolekcji.",
     "placeholders": {
@@ -6991,6 +7054,14 @@
     "message": "z automatycznym zapisem włączy się, gdy ta opcja jest używana.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The single organization policy, SSO required policy, and account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
+  "orgPermissionsUpdatedMustSetPassword": {
+    "message": "Uprawnienia w Twojej organizacji zostały zaktualizowane, musisz teraz ustawić hasło główne.",
+    "description": "Used as a card title description on the set password page to explain why the user is there"
+  },
+  "orgRequiresYouToSetPassword": {
+    "message": "Twoja organizacja wymaga ustawienia hasła głównego.",
+    "description": "Used as a card title description on the set password page to explain why the user is there"
+  },
   "notFound": {
     "message": "$RESOURCE$ nie znaleziony",
     "placeholders": {
@@ -7318,5 +7389,8 @@
   "seeDetailedInstructions": {
     "message": "Zobacz szczegółowe instrukcje na naszej stronie pomocy pod adresem",
     "description": "This is followed a by a hyperlink to the help website."
+  },
+  "projectAccessUpdated": {
+    "message": "Project access updated"
   }
 }

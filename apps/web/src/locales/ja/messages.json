@@ -647,8 +647,23 @@
   "customPasskeyNameInfo": {
     "message": "パスキーに名前を付けて、識別しやすいようにしましょう。"
   },
+  "useForVaultEncryption": {
+    "message": "保管庫の暗号化に使用"
+  },
+  "useForVaultEncryptionInfo": {
+    "message": "対応デバイスではマスターパスワードなしでログインとロック解除をできます。ブラウザの指示に従ってセットアップを完了してください。"
+  },
+  "useForVaultEncryptionErrorReadingPasskey": {
+    "message": "パスキーの読み込みに失敗しました。もう一度試すか、このオプションのチェックを外してください。"
+  },
   "encryptionNotSupported": {
     "message": "暗号化はサポートされていません"
+  },
+  "encryptionNotEnabled": {
+    "message": "暗号化が有効ではありません"
+  },
+  "usedForEncryption": {
+    "message": "暗号化に使用中"
   },
   "loginWithPasskeyEnabled": {
     "message": "パスキーをオンにしてログイン"
@@ -2280,6 +2295,9 @@
   "contactSupport": {
     "message": "カスタマーサポートに連絡"
   },
+  "contactSupportShort": {
+    "message": "サポートに連絡する"
+  },
   "updatedPaymentMethod": {
     "message": "お支払い方法を更新しました。"
   },
@@ -2380,6 +2398,9 @@
   },
   "planDescTeams": {
     "message": "ビジネスやチーム組織のために。"
+  },
+  "planNameTeamsStarter": {
+    "message": "Teams Starter"
   },
   "planNameEnterprise": {
     "message": "エンタープライズ"
@@ -2740,6 +2761,9 @@
   },
   "webVault": {
     "message": "ウェブ保管庫"
+  },
+  "cli": {
+    "message": "CLI"
   },
   "bitWebVault": {
     "message": "Bitwarden ウェブ保管庫"
@@ -3485,6 +3509,15 @@
       }
     }
   },
+  "subscriptionUserSeatsWithoutAdditionalSeatsOption": {
+    "message": "追加料金なしで最大 $COUNT$ 人のメンバーを招待できます。さらにメンバーを招待するには、カスタマーサポートに連絡してプランをアップグレードしてください。",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "10"
+      }
+    }
+  },
   "subscriptionFreePlan": {
     "message": "プランをアップグレードしないと、$COUNT$名以上のユーザーを招待することはできません。",
     "placeholders": {
@@ -3965,9 +3998,6 @@
   "setMasterPassword": {
     "message": "マスターパスワードを設定"
   },
-  "ssoCompleteRegistration": {
-    "message": "SSO ログインを完了するには、保管庫にアクセス・保護するためのマスターパスワードを設定してください。"
-  },
   "identifier": {
     "message": "識別子"
   },
@@ -3985,6 +4015,21 @@
   },
   "includeAllTeamsFeatures": {
     "message": "すべてのチームの機能に加えて:"
+  },
+  "includeAllTeamsStarterFeatures": {
+    "message": "すべての Teams Starter の機能 ＋"
+  },
+  "chooseMonthlyOrAnnualBilling": {
+    "message": "月額または年間の請求期間を選択してください"
+  },
+  "abilityToAddMoreThanNMembers": {
+    "message": "$COUNT$ 人以上のメンバーを追加可能",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "10"
+      }
+    }
   },
   "includeSsoAuthentication": {
     "message": "SAML2.0 と OpenID Connect による SSO 認証"
@@ -6601,6 +6646,24 @@
       }
     }
   },
+  "teamsStarterPlanInvLimitReachedManageBilling": {
+    "message": "Teams Starter プランは $SEATCOUNT$ 人のメンバーまでです。さらにメンバーを招待するには、カスタマーサポートに連絡してプランをアップグレードしてください。",
+    "placeholders": {
+      "seatcount": {
+        "content": "$1",
+        "example": "10"
+      }
+    }
+  },
+  "teamsStarterPlanInvLimitReachedNoManageBilling": {
+    "message": "Teams Starter プランは $SEATCOUNT$ 人のメンバーまでです。さらにメンバーを招待するには、組織の所有者に連絡してプランをアップグレードしてもらってください。",
+    "placeholders": {
+      "seatcount": {
+        "content": "$1",
+        "example": "10"
+      }
+    }
+  },
   "freeOrgMaxCollectionReachedManageBilling": {
     "message": "無料の組織では最大 $COLLECTIONCOUNT$ コレクションまでです。さらにコレクションを追加するには有料プランにアップグレードしてください。",
     "placeholders": {
@@ -6991,6 +7054,14 @@
     "message": "自動登録のポリシーがオンになります。",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The single organization policy, SSO required policy, and account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
+  "orgPermissionsUpdatedMustSetPassword": {
+    "message": "組織の権限が更新され、マスターパスワードの設定が必要になりました。",
+    "description": "Used as a card title description on the set password page to explain why the user is there"
+  },
+  "orgRequiresYouToSetPassword": {
+    "message": "あなたの組織では、マスターパスワードの設定を義務付けています。",
+    "description": "Used as a card title description on the set password page to explain why the user is there"
+  },
   "notFound": {
     "message": "$RESOURCE$ が見つかりません",
     "placeholders": {
@@ -7318,5 +7389,8 @@
   "seeDetailedInstructions": {
     "message": "詳細な手順はこちらをご覧ください：",
     "description": "This is followed a by a hyperlink to the help website."
+  },
+  "projectAccessUpdated": {
+    "message": "プロジェクトへのアクセスを更新しました"
   }
 }

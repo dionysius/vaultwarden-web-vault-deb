@@ -647,8 +647,23 @@
   "customPasskeyNameInfo": {
     "message": "Dajte prístupovému kľúču názov aby ste ho mohli ľahšie identifikovať."
   },
+  "useForVaultEncryption": {
+    "message": "Use for vault encryption"
+  },
+  "useForVaultEncryptionInfo": {
+    "message": "Log in and unlock on supported devices without your master password. Follow the prompts from your browser to finalize setup."
+  },
+  "useForVaultEncryptionErrorReadingPasskey": {
+    "message": "Error reading passkey. Try again or uncheck this option."
+  },
   "encryptionNotSupported": {
     "message": "Šifrovanie nie je podporované"
+  },
+  "encryptionNotEnabled": {
+    "message": "Encryption not enabled"
+  },
+  "usedForEncryption": {
+    "message": "Used for encryption"
   },
   "loginWithPasskeyEnabled": {
     "message": "Prihlásenie s prístupovým kľúčom zapnuté"
@@ -2280,6 +2295,9 @@
   "contactSupport": {
     "message": "Kontaktujte zákaznícku podporu"
   },
+  "contactSupportShort": {
+    "message": "Kontaktovať podporu"
+  },
   "updatedPaymentMethod": {
     "message": "Aktualizovať spôsob platby."
   },
@@ -2380,6 +2398,9 @@
   },
   "planDescTeams": {
     "message": "Pre firmy a iné organizácie."
+  },
+  "planNameTeamsStarter": {
+    "message": "Teams Starter"
   },
   "planNameEnterprise": {
     "message": "Spoločnosť"
@@ -2740,6 +2761,9 @@
   },
   "webVault": {
     "message": "Webový trezor"
+  },
+  "cli": {
+    "message": "CLI"
   },
   "bitWebVault": {
     "message": "Webový trezor Bitwarden"
@@ -3485,6 +3509,15 @@
       }
     }
   },
+  "subscriptionUserSeatsWithoutAdditionalSeatsOption": {
+    "message": "Bez dodatočných poplatkov môžete pozvať až $COUNT$ členov. Kontaktujte zákaznícku podporu pre navýšenie predplatného ak chcete pozvať viac členov.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "10"
+      }
+    }
+  },
   "subscriptionFreePlan": {
     "message": "Nemôžete pozvať viac ako $COUNT$ používateľov bez navýšenia vášho plánu.",
     "placeholders": {
@@ -3965,9 +3998,6 @@
   "setMasterPassword": {
     "message": "Nastaviť hlavné heslo"
   },
-  "ssoCompleteRegistration": {
-    "message": "Aby ste dokončili nastavenie prihlasovacieho portálu (SSO), prosím nastavte hlavné heslo na prístup a ochranu vášho trezora."
-  },
   "identifier": {
     "message": "Identifikátor"
   },
@@ -3985,6 +4015,21 @@
   },
   "includeAllTeamsFeatures": {
     "message": "Všetky funkcie verzie pre Tímy, plus:"
+  },
+  "includeAllTeamsStarterFeatures": {
+    "message": "Všetky funkcie verzie Teams Starter, plus:"
+  },
+  "chooseMonthlyOrAnnualBilling": {
+    "message": "Vyberte mesačný alebo ročný plán fakturácie"
+  },
+  "abilityToAddMoreThanNMembers": {
+    "message": "Možnosť pridať viac než $COUNT$ členov",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "10"
+      }
+    }
   },
   "includeSsoAuthentication": {
     "message": "SSO prihlásenie cez SAML2.0 a OpenID Connect"
@@ -6601,6 +6646,24 @@
       }
     }
   },
+  "teamsStarterPlanInvLimitReachedManageBilling": {
+    "message": "Plány Teams Starters môžu mať maximálne $SEATCOUNT$ členov. Kontaktujte zákaznícku podporu pre navýšenie predplatného a pozvite ďalších členov.",
+    "placeholders": {
+      "seatcount": {
+        "content": "$1",
+        "example": "10"
+      }
+    }
+  },
+  "teamsStarterPlanInvLimitReachedNoManageBilling": {
+    "message": "Plány Teams Starters môžu mať maximálne $SEATCOUNT$ členov. Kontaktujte vlastnika vašej organizácie pre navýšenie predplatného a pozvite ďalších členov.",
+    "placeholders": {
+      "seatcount": {
+        "content": "$1",
+        "example": "10"
+      }
+    }
+  },
   "freeOrgMaxCollectionReachedManageBilling": {
     "message": "Free organizations may have up to $COLLECTIONCOUNT$ collections. Upgrade to a paid plan to add more collections.",
     "placeholders": {
@@ -6991,6 +7054,14 @@
     "message": "policy with automatic enrollment will turn on when this option is used.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The single organization policy, SSO required policy, and account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
+  "orgPermissionsUpdatedMustSetPassword": {
+    "message": "Povolenia vašej organizácie boli aktualizované, čo si vyžaduje nastavenie hlavného hesla.",
+    "description": "Used as a card title description on the set password page to explain why the user is there"
+  },
+  "orgRequiresYouToSetPassword": {
+    "message": "Vaša organizácia vyžaduje, aby ste nastavili hlavné heslo.",
+    "description": "Used as a card title description on the set password page to explain why the user is there"
+  },
   "notFound": {
     "message": "$RESOURCE$ nenájdené",
     "placeholders": {
@@ -7318,5 +7389,8 @@
   "seeDetailedInstructions": {
     "message": "Podrobné pokyny nájdete na našej stránke pomoci na adrese",
     "description": "This is followed a by a hyperlink to the help website."
+  },
+  "projectAccessUpdated": {
+    "message": "Prístup k projektu aktualizovaný"
   }
 }

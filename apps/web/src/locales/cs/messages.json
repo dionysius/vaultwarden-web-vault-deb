@@ -647,8 +647,23 @@
   "customPasskeyNameInfo": {
     "message": "Pojmenujte Váš přístupový klíč, abyste jej mohli snáze identifikovat."
   },
+  "useForVaultEncryption": {
+    "message": "Použít pro šifrování trezoru"
+  },
+  "useForVaultEncryptionInfo": {
+    "message": "Přihlaste se a odemykejte na podporovaných zařízeních bez hlavního hesla. Postupujte podle výzev Vašeho prohlížeče a dokončete nastavení."
+  },
+  "useForVaultEncryptionErrorReadingPasskey": {
+    "message": "Chyba při čtení přístupového klíče. Zkuste to znovu nebo zrušte zaškrtnutí této volby."
+  },
   "encryptionNotSupported": {
     "message": "Šifrování není podporováno"
+  },
+  "encryptionNotEnabled": {
+    "message": "Šifrování nebylo zapnuto"
+  },
+  "usedForEncryption": {
+    "message": "Použito pro šifrování"
   },
   "loginWithPasskeyEnabled": {
     "message": "Přihlásit se se zapnutým přístupovým klíčem"
@@ -2280,6 +2295,9 @@
   "contactSupport": {
     "message": "Kontaktovat zákaznickou podporu"
   },
+  "contactSupportShort": {
+    "message": "Kontaktovat podporu"
+  },
   "updatedPaymentMethod": {
     "message": "Platební metoda byla aktualizována."
   },
@@ -2380,6 +2398,9 @@
   },
   "planDescTeams": {
     "message": "Pro společnosti a různé týmy."
+  },
+  "planNameTeamsStarter": {
+    "message": "Teams Starter"
   },
   "planNameEnterprise": {
     "message": "Podniky"
@@ -2740,6 +2761,9 @@
   },
   "webVault": {
     "message": "Webový trezor"
+  },
+  "cli": {
+    "message": "CLI"
   },
   "bitWebVault": {
     "message": "Webový trezor Bitwardenu"
@@ -3485,6 +3509,15 @@
       }
     }
   },
+  "subscriptionUserSeatsWithoutAdditionalSeatsOption": {
+    "message": "Můžete pozvat až $COUNT$ členů bez dalších poplatků. Obraťte se na zákaznickou podporu a aktualizujte Váš plán a pozvěte více členů.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "10"
+      }
+    }
+  },
   "subscriptionFreePlan": {
     "message": "Bez aktualizace Vašeho plánu nemůžete pozvat více než $COUNT$ členů.",
     "placeholders": {
@@ -3965,9 +3998,6 @@
   "setMasterPassword": {
     "message": "Nastavit hlavní heslo"
   },
-  "ssoCompleteRegistration": {
-    "message": "Chcete-li dokončit přihlášení pomocí SSO, nastavte hlavní přístupové heslo k Vašemu trezoru."
-  },
   "identifier": {
     "message": "Identifikátor"
   },
@@ -3985,6 +4015,21 @@
   },
   "includeAllTeamsFeatures": {
     "message": "Všechny funkce týmů, navíc:"
+  },
+  "includeAllTeamsStarterFeatures": {
+    "message": "Všechny funkce Teams Starter, plus:"
+  },
+  "chooseMonthlyOrAnnualBilling": {
+    "message": "Vyberte měsíční nebo roční fakturaci"
+  },
+  "abilityToAddMoreThanNMembers": {
+    "message": "Možnost přidání více než $COUNT$ členů",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "10"
+      }
+    }
   },
   "includeSsoAuthentication": {
     "message": "Podnikové přihlášení prostřednictvím SAML2.0 a OpenID Connect"
@@ -6601,6 +6646,24 @@
       }
     }
   },
+  "teamsStarterPlanInvLimitReachedManageBilling": {
+    "message": "Plány Teams Starter mohou mít až $SEATCOUNT$ členů. Obraťte se na zákaznickou podporu a aktualizujte Váš plán a pozvěte více členů.",
+    "placeholders": {
+      "seatcount": {
+        "content": "$1",
+        "example": "10"
+      }
+    }
+  },
+  "teamsStarterPlanInvLimitReachedNoManageBilling": {
+    "message": "Plány Teams Starter mohou mít až $SEATCOUNT$ členů. Obraťte se na vlastníka organizace a aktualizujte Váš plán a pozvěte více členů.",
+    "placeholders": {
+      "seatcount": {
+        "content": "$1",
+        "example": "10"
+      }
+    }
+  },
   "freeOrgMaxCollectionReachedManageBilling": {
     "message": "Bezplatné organizace mohou mít až $COLLECTIONCOUNT$ kolekcí. Chcete-li přidat více kolekcí, přejděte na placený tarif.",
     "placeholders": {
@@ -6991,6 +7054,14 @@
     "message": "s automatickým zápisem.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The single organization policy, SSO required policy, and account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
+  "orgPermissionsUpdatedMustSetPassword": {
+    "message": "Oprávnění Vaší organizace byla aktualizována. To vyžaduje nastavení hlavního hesla.",
+    "description": "Used as a card title description on the set password page to explain why the user is there"
+  },
+  "orgRequiresYouToSetPassword": {
+    "message": "Vaše organizace vyžaduje nastavení hlavního hesla.",
+    "description": "Used as a card title description on the set password page to explain why the user is there"
+  },
   "notFound": {
     "message": "$RESOURCE$ nebyl nalezen",
     "placeholders": {
@@ -7318,5 +7389,8 @@
   "seeDetailedInstructions": {
     "message": "Podívejte se na podrobné pokyny na našem webu s nápovědou na",
     "description": "This is followed a by a hyperlink to the help website."
+  },
+  "projectAccessUpdated": {
+    "message": "Přístup k projektu byl aktualizován"
   }
 }
