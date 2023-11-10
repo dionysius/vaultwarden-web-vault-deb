@@ -1533,8 +1533,13 @@
   "setMasterPassword": {
     "message": "Ana parolu tənzimlə"
   },
-  "ssoCompleteRegistration": {
-    "message": "SSO ilə giriş prosesini tamamlamaq üçün zəhmət olmasa anbarınıza müraciət etmək və onu qorumaq üçün bir ana parol tənzimləyin."
+  "orgPermissionsUpdatedMustSetPassword": {
+    "message": "Təşkilatınızın icazələri güncəlləndi və bir ana parol ayarlamağınızı tələb edir.",
+    "description": "Used as a card title description on the set password page to explain why the user is there"
+  },
+  "orgRequiresYouToSetPassword": {
+    "message": "Təşkilatınız bir ana parol ayarlamağı tələb edir.",
+    "description": "Used as a card title description on the set password page to explain why the user is there"
   },
   "currentMasterPass": {
     "message": "Hazırkı ana parol"
@@ -2420,38 +2425,38 @@
     "message": "Alt menyu"
   },
   "typePasskey": {
-    "message": "Passkey"
+    "message": "Keçid açarı"
   },
   "passkeyNotCopied": {
-    "message": "Passkey will not be copied"
+    "message": "Keçid açarı kopyalanmır"
   },
   "passkeyNotCopiedAlert": {
-    "message": "The passkey will not be copied to the cloned item. Do you want to continue cloning this item?"
+    "message": "Keçid açarı, klonlanmış elementə kopyalanmayacaq. Bu elementi klonlamağa davam etmək istəyirsiniz?"
   },
   "aliasDomain": {
     "message": "Domen ləqəbi"
   },
   "importData": {
-    "message": "Import data",
+    "message": "Datanı daxilə köçür",
     "description": "Used for the desktop menu item and the header of the import dialog"
   },
   "importError": {
-    "message": "Import error"
+    "message": "Daxilə köçürmə xətası"
   },
   "importErrorDesc": {
     "message": "There was a problem with the data you tried to import. Please resolve the errors listed below in your source file and try again."
   },
   "resolveTheErrorsBelowAndTryAgain": {
-    "message": "Resolve the errors below and try again."
+    "message": "Aşağıdakı xətaları həll edin və yenidən sınayın."
   },
   "description": {
-    "message": "Description"
+    "message": "Açıqlama"
   },
   "importSuccess": {
-    "message": "Data successfully imported"
+    "message": "Data uğurla daxilə köçürüldü"
   },
   "importSuccessNumberOfItems": {
-    "message": "A total of $AMOUNT$ items were imported.",
+    "message": "Cəmi $AMOUNT$ element daxilə köçürüldü.",
     "placeholders": {
       "amount": {
         "content": "$1",
@@ -2460,10 +2465,10 @@
     }
   },
   "total": {
-    "message": "Total"
+    "message": "Cəmi"
   },
   "importWarning": {
-    "message": "You are importing data to $ORGANIZATION$. Your data may be shared with members of this organization. Do you want to proceed?",
+    "message": "Datanı $ORGANIZATION$ təşkilatına köçürürsünüz. Datanızı bu təşkilatın üzvləri ilə paylaşa bilərsiniz. Davam etmək istəyirsiniz?",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -2472,31 +2477,31 @@
     }
   },
   "importFormatError": {
-    "message": "Data is not formatted correctly. Please check your import file and try again."
+    "message": "Data doğru format edilməyib. Lütfən daxilə köçürmə faylınızı yoxlayıb yenidən sınayın."
   },
   "importNothingError": {
-    "message": "Nothing was imported."
+    "message": "Heç nə daxilə köçürülmədi."
   },
   "importEncKeyError": {
-    "message": "Error decrypting the exported file. Your encryption key does not match the encryption key used export the data."
+    "message": "Xaricə köçürülən faylın şifrəsi açılarkən xəta baş verdi. Şifrələmə açarınız, datanın xaricə köçürülməsi zamanı istifadə edilən şifrələmə açarı ilə uyğunlaşmır."
   },
   "invalidFilePassword": {
-    "message": "Invalid file password, please use the password you entered when you created the export file."
+    "message": "Yararsız fayl parolu, lütfən xaricə köçürmə faylını yaradarkən daxil etdiyiniz parolu istifadə edin."
   },
   "importDestination": {
-    "message": "Import destination"
+    "message": "Hədəfi daxilə köçür"
   },
   "learnAboutImportOptions": {
-    "message": "Learn about your import options"
+    "message": "Daxilə köçürmə seçimlərinizi öyrənin"
   },
   "selectImportFolder": {
-    "message": "Select a folder"
+    "message": "Bir qovluq seçin"
   },
   "selectImportCollection": {
-    "message": "Select a collection"
+    "message": "Bir kolleksiya seçin"
   },
   "importTargetHint": {
-    "message": "Select this option if you want the imported file contents moved to a $DESTINATION$",
+    "message": "Daxilə köçürülən fayl məzmununun $DESTINATION$ yerinə daşınmasını istəyirsinizsə bu variantı seçin",
     "description": "Located as a hint under the import target. Will be appended by either folder or collection, depending if the user is importing into an individual or an organizational vault.",
     "placeholders": {
       "destination": {
@@ -2506,25 +2511,25 @@
     }
   },
   "importUnassignedItemsError": {
-    "message": "File contains unassigned items."
+    "message": "Faylda təyin edilməmiş elementlər var."
   },
   "selectFormat": {
-    "message": "Select the format of the import file"
+    "message": "Daxilə köçürmə faylının formatını seçin"
   },
   "selectImportFile": {
-    "message": "Select the import file"
+    "message": "Daxilə köçürmə faylını seçin"
   },
   "chooseFile": {
-    "message": "Choose File"
+    "message": "Fayl seç"
   },
   "noFileChosen": {
-    "message": "No file chosen"
+    "message": "Heç bir fayl seçilməyib"
   },
   "orCopyPasteFileContents": {
-    "message": "or copy/paste the import file contents"
+    "message": "və ya daxilə köçürmə faylının məzmununu kopyalayın/yapışdırın"
   },
   "instructionsFor": {
-    "message": "$NAME$ Instructions",
+    "message": "$NAME$ Təlimatları",
     "description": "The title for the import tool instructions.",
     "placeholders": {
       "name": {
@@ -2534,13 +2539,13 @@
     }
   },
   "confirmVaultImport": {
-    "message": "Confirm vault import"
+    "message": "Anbarın daxilə köçürülməsini təsdiqləyin"
   },
   "confirmVaultImportDesc": {
-    "message": "This file is password-protected. Please enter the file password to import data."
+    "message": "Bu fayl parolla qorunur. Məlumatları daxilə köçürmək üçün fayl parolunu daxil edin."
   },
   "confirmFilePassword": {
-    "message": "Confirm file password"
+    "message": "Fayl parolunu təsdiqlə"
   },
   "multifactorAuthenticationCancelled": {
     "message": "Çox faktorlu kimlik doğrulama ləğv edildi"

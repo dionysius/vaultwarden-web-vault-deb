@@ -1533,8 +1533,13 @@
   "setMasterPassword": {
     "message": "Ange huvudlösenord"
   },
-  "ssoCompleteRegistration": {
-    "message": "För att slutföra inloggning med SSO, ange ett huvudlösenord för att komma åt och skydda ditt valv."
+  "orgPermissionsUpdatedMustSetPassword": {
+    "message": "Your organization permissions were updated, requiring you to set a master password.",
+    "description": "Used as a card title description on the set password page to explain why the user is there"
+  },
+  "orgRequiresYouToSetPassword": {
+    "message": "Your organization requires you to set a master password.",
+    "description": "Used as a card title description on the set password page to explain why the user is there"
   },
   "currentMasterPass": {
     "message": "Nuvarande huvudlösenord"
@@ -2445,7 +2450,7 @@
     "message": "Resolve the errors below and try again."
   },
   "description": {
-    "message": "Description"
+    "message": "Beskrivning"
   },
   "importSuccess": {
     "message": "Data successfully imported"
@@ -2490,10 +2495,10 @@
     "message": "Learn about your import options"
   },
   "selectImportFolder": {
-    "message": "Select a folder"
+    "message": "Välj en mapp"
   },
   "selectImportCollection": {
-    "message": "Select a collection"
+    "message": "Välj en samling"
   },
   "importTargetHint": {
     "message": "Select this option if you want the imported file contents moved to a $DESTINATION$",
@@ -2515,10 +2520,10 @@
     "message": "Select the import file"
   },
   "chooseFile": {
-    "message": "Choose File"
+    "message": "Välj fil"
   },
   "noFileChosen": {
-    "message": "No file chosen"
+    "message": "Ingen fil vald"
   },
   "orCopyPasteFileContents": {
     "message": "or copy/paste the import file contents"

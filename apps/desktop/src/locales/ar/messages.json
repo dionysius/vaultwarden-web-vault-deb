@@ -1533,8 +1533,13 @@
   "setMasterPassword": {
     "message": "تعيين كلمة المرور الرئيسية"
   },
-  "ssoCompleteRegistration": {
-    "message": "من أجل إكمال تسجيل الدخول باستخدام SSO، يرجى تعيين كلمة مرور رئيسية للوصول وحماية خزنتك."
+  "orgPermissionsUpdatedMustSetPassword": {
+    "message": "تم تحديث أذونات مؤسستك ، مما يتطلب عليك تعيين كلمة مرور رئيسية.",
+    "description": "Used as a card title description on the set password page to explain why the user is there"
+  },
+  "orgRequiresYouToSetPassword": {
+    "message": "تتطلب مؤسستك تعيين كلمة مرور رئيسية.",
+    "description": "Used as a card title description on the set password page to explain why the user is there"
   },
   "currentMasterPass": {
     "message": "كلمة المرور الرئيسية الحالية"
@@ -2595,15 +2600,15 @@
     "message": "استيراد مباشرة من LastPass"
   },
   "importFromCSV": {
-    "message": "Import from CSV"
+    "message": "استيراد من CSV"
   },
   "lastPassTryAgainCheckEmail": {
-    "message": "Try again or look for an email from LastPass to verify it's you."
+    "message": "حاول مرة أخرى أو ابحث عن بريد إلكتروني من LastPass للتحقق منك."
   },
   "collection": {
-    "message": "Collection"
+    "message": "مجموعات"
   },
   "lastPassYubikeyDesc": {
-    "message": "Insert the YubiKey associated with your LastPass account into your computer's USB port, then touch its button."
+    "message": "أدخل YubiKey المرتبط بحسابك LastPass في منفذ USB الخاص بك، ثم المس الزر."
   }
 }

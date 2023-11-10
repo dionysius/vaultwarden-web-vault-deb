@@ -1533,8 +1533,13 @@
   "setMasterPassword": {
     "message": "പ്രാഥമിക പാസ്‌വേഡ് സജ്ജമാക്കുക"
   },
-  "ssoCompleteRegistration": {
-    "message": "SSO ഉപയോഗിച്ച് പ്രവേശനം പൂർത്തിയാക്കാനും, നിങ്ങളുടെ വാൾട് ആക്സസ് ചെയ്യാനും സുരക്ഷിതമാക്കാനും ഒരു പ്രാഥമിക പാസ്‌വേഡ് സജ്ജമാക്കുക."
+  "orgPermissionsUpdatedMustSetPassword": {
+    "message": "Your organization permissions were updated, requiring you to set a master password.",
+    "description": "Used as a card title description on the set password page to explain why the user is there"
+  },
+  "orgRequiresYouToSetPassword": {
+    "message": "Your organization requires you to set a master password.",
+    "description": "Used as a card title description on the set password page to explain why the user is there"
   },
   "currentMasterPass": {
     "message": "Current master password"
