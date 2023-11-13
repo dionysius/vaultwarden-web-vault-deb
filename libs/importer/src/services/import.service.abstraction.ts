@@ -11,7 +11,7 @@ export abstract class ImportServiceAbstraction {
     fileContents: string,
     organizationId?: string,
     selectedImportTarget?: string,
-    isUserAdmin?: boolean
+    canAccessImportExport?: boolean
   ) => Promise<ImportResult>;
   getImporter: (
     format: ImportType | "bitwardenpasswordprotected",

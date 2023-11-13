@@ -361,7 +361,7 @@ export class ImportComponent implements OnInit, OnDestroy {
         fileContents,
         this.organizationId,
         this.formGroup.controls.targetSelector.value,
-        this.isUserAdmin(this.organizationId)
+        this.canAccessImportExport(this.organizationId)
       );
 
       //No errors, display success message
@@ -384,6 +384,13 @@ export class ImportComponent implements OnInit, OnDestroy {
       return false;
     }
     return this.organizationService.get(this.organizationId)?.isAdmin;
+  }
+
+  private canAccessImportExport(organizationId?: string): boolean {
+    if (!organizationId) {
+      return false;
+    }
+    return this.organizationService.get(this.organizationId)?.canAccessImportExport;
   }
 
   getFormatInstructionTitle() {
