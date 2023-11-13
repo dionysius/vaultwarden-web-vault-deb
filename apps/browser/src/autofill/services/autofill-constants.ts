@@ -28,6 +28,7 @@ export class AutoFillConstants {
     "2facode",
     "mfacode",
     "twofactor",
+    "twoFa",
     "twofactorcode",
   ];
 
