@@ -34,6 +34,7 @@ export class SetPinComponent implements OnInit {
   async submit() {
     if (Utils.isNullOrWhitespace(this.pin)) {
       this.modalRef.close(false);
+      return;
     }
 
     const pinKey = await this.cryptoService.makePinKey(
