@@ -26,10 +26,19 @@ export class AutoFillConstants {
     "mfa",
     "totpcode",
     "2facode",
+    "approvals_code",
+    "code",
     "mfacode",
+    "otc",
+    "otc-code",
+    "otp-code",
+    "otpcode",
+    "pin",
+    "security_code",
     "twofactor",
-    "twoFa",
+    "twofa",
     "twofactorcode",
+    "verificationCode",
   ];
 
   static readonly PasswordFieldIgnoreList: string[] = [
