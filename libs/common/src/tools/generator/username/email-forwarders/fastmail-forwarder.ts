@@ -35,7 +35,7 @@ export class FastmailForwarder implements Forwarder {
               "new-masked-email": {
                 state: "enabled",
                 description: "",
-                url: options.website,
+                forDomain: options.website,
                 emailPrefix: options.fastmail.prefix,
               },
             },
