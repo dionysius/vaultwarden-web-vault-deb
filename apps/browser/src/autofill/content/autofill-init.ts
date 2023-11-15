@@ -1,5 +1,4 @@
 import AutofillPageDetails from "../models/autofill-page-details";
-import AutofillScript from "../models/autofill-script";
 import CollectAutofillContentService from "../services/collect-autofill-content.service";
 import DomElementVisibilityService from "../services/dom-element-visibility.service";
 import InsertAutofillContentService from "../services/insert-autofill-content.service";
@@ -17,7 +16,7 @@ class AutofillInit implements AutofillInitInterface {
   private readonly extensionMessageHandlers: AutofillExtensionMessageHandlers = {
     collectPageDetails: ({ message }) => this.collectPageDetails(message),
     collectPageDetailsImmediately: ({ message }) => this.collectPageDetails(message, true),
-    fillForm: ({ message }) => this.fillForm(message.fillScript),
+    fillForm: ({ message }) => this.fillForm(message),
   };
 
   /**
@@ -76,10 +75,14 @@ class AutofillInit implements AutofillInitInterface {
 
   /**
    * Fills the form with the given fill script.
-   * @param {AutofillScript} fillScript
-   * @private
+   *
+   * @param {AutofillExtensionMessage} message
    */
-  private fillForm(fillScript: AutofillScript) {
+  private fillForm({ fillScript, pageDetailsUrl }: AutofillExtensionMessage) {
+    if ((document.defaultView || window).location.href !== pageDetailsUrl) {
+      return;
+    }
+
     this.insertAutofillContentService.fillForm(fillScript);
   }
 
