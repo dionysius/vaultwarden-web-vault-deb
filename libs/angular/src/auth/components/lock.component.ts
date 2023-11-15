@@ -23,7 +23,6 @@ import { LogService } from "@bitwarden/common/platform/abstractions/log.service"
 import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
-import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { EncString } from "@bitwarden/common/platform/models/domain/enc-string";
 import { UserKey } from "@bitwarden/common/platform/models/domain/symmetric-crypto-key";
 import { PinLockType } from "@bitwarden/common/services/vault-timeout/vault-timeout-settings.service";
@@ -377,10 +376,7 @@ export class LockComponent implements OnInit, OnDestroy {
     this.biometricText = await this.stateService.getBiometricText();
     this.email = await this.stateService.getEmail();
 
-    const webVaultUrl = this.environmentService.getWebVaultUrl();
-    const vaultUrl =
-      webVaultUrl === "https://vault.bitwarden.com" ? "https://bitwarden.com" : webVaultUrl;
-    this.webVaultHostname = Utils.getHostname(vaultUrl);
+    this.webVaultHostname = await this.environmentService.getHost();
   }
 
   /**

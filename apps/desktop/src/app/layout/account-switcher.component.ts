@@ -7,6 +7,7 @@ import { concatMap, Subject, takeUntil } from "rxjs";
 import { AuthService } from "@bitwarden/common/auth/abstractions/auth.service";
 import { TokenService } from "@bitwarden/common/auth/abstractions/token.service";
 import { AuthenticationStatus } from "@bitwarden/common/auth/enums/authentication-status";
+import { EnvironmentService } from "@bitwarden/common/platform/abstractions/environment.service";
 import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
 import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
@@ -17,24 +18,12 @@ type ActiveAccount = {
   name: string;
   email: string;
   avatarColor: string;
+  server: string;
 };
 
-export class SwitcherAccount extends Account {
-  get serverUrl() {
-    return this.removeWebProtocolFromString(
-      this.settings?.environmentUrls?.base ??
-        this.settings?.environmentUrls.api ??
-        "https://bitwarden.com"
-    );
-  }
-
-  avatarColor: string;
-
-  private removeWebProtocolFromString(urlString: string) {
-    const regex = /http(s)?(:)?(\/\/)?|(\/\/)?(www\.)?/g;
-    return urlString.replace(regex, "");
-  }
-}
+type InactiveAccount = ActiveAccount & {
+  authenticationStatus: AuthenticationStatus;
+};
 
 @Component({
   selector: "app-account-switcher",
@@ -61,13 +50,12 @@ export class SwitcherAccount extends Account {
   ],
 })
 export class AccountSwitcherComponent implements OnInit, OnDestroy {
-  private destroy$ = new Subject<void>();
+  activeAccount?: ActiveAccount;
+  inactiveAccounts: { [userId: string]: InactiveAccount } = {};
+
+  authStatus = AuthenticationStatus;
 
   isOpen = false;
-  accounts: { [userId: string]: SwitcherAccount } = {};
-  activeAccount?: ActiveAccount;
-  serverUrl: string;
-  authStatus = AuthenticationStatus;
   overlayPosition: ConnectedPosition[] = [
     {
       originX: "end",
@@ -77,18 +65,20 @@ export class AccountSwitcherComponent implements OnInit, OnDestroy {
     },
   ];
 
+  private destroy$ = new Subject<void>();
+
   get showSwitcher() {
     const userIsInAVault = !Utils.isNullOrWhitespace(this.activeAccount?.email);
-    const userIsAddingAnAdditionalAccount = Object.keys(this.accounts).length > 0;
+    const userIsAddingAnAdditionalAccount = Object.keys(this.inactiveAccounts).length > 0;
     return userIsInAVault || userIsAddingAnAdditionalAccount;
   }
 
   get numberOfAccounts() {
-    if (this.accounts == null) {
+    if (this.inactiveAccounts == null) {
       this.isOpen = false;
       return 0;
     }
-    return Object.keys(this.accounts).length;
+    return Object.keys(this.inactiveAccounts).length;
   }
 
   constructor(
@@ -96,26 +86,23 @@ export class AccountSwitcherComponent implements OnInit, OnDestroy {
     private authService: AuthService,
     private messagingService: MessagingService,
     private router: Router,
-    private tokenService: TokenService
+    private tokenService: TokenService,
+    private environmentService: EnvironmentService
   ) {}
 
   async ngOnInit(): Promise<void> {
     this.stateService.accounts$
       .pipe(
         concatMap(async (accounts: { [userId: string]: Account }) => {
-          for (const userId in accounts) {
-            accounts[userId].profile.authenticationStatus = await this.authService.getAuthStatus(
-              userId
-            );
-          }
+          this.inactiveAccounts = await this.createInactiveAccounts(accounts);
 
-          this.accounts = await this.createSwitcherAccounts(accounts);
           try {
             this.activeAccount = {
               id: await this.tokenService.getUserId(),
               name: (await this.tokenService.getName()) ?? (await this.tokenService.getEmail()),
               email: await this.tokenService.getEmail(),
               avatarColor: await this.stateService.getAvatarColor(),
+              server: await this.environmentService.getHost(),
             };
           } catch {
             this.activeAccount = undefined;
@@ -152,24 +139,26 @@ export class AccountSwitcherComponent implements OnInit, OnDestroy {
     this.router.navigate(["/login"]);
   }
 
-  private async createSwitcherAccounts(baseAccounts: {
+  private async createInactiveAccounts(baseAccounts: {
     [userId: string]: Account;
-  }): Promise<{ [userId: string]: SwitcherAccount }> {
-    const switcherAccounts: { [userId: string]: SwitcherAccount } = {};
+  }): Promise<{ [userId: string]: InactiveAccount }> {
+    const inactiveAccounts: { [userId: string]: InactiveAccount } = {};
+
     for (const userId in baseAccounts) {
       if (userId == null || userId === (await this.stateService.getUserId())) {
         continue;
       }
 
-      // environmentUrls are stored on disk and must be retrieved separately from the in memory state offered from subscribing to accounts
-      baseAccounts[userId].settings.environmentUrls = await this.stateService.getEnvironmentUrls({
-        userId: userId,
-      });
-      switcherAccounts[userId] = new SwitcherAccount(baseAccounts[userId]);
-      switcherAccounts[userId].avatarColor = await this.stateService.getAvatarColor({
-        userId: userId,
-      });
+      inactiveAccounts[userId] = {
+        id: userId,
+        name: baseAccounts[userId].profile.name,
+        email: baseAccounts[userId].profile.email,
+        authenticationStatus: await this.authService.getAuthStatus(userId),
+        avatarColor: await this.stateService.getAvatarColor({ userId: userId }),
+        server: await this.environmentService.getHost(userId),
+      };
     }
-    return switcherAccounts;
+
+    return inactiveAccounts;
   }
 }

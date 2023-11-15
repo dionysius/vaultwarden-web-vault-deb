@@ -1,7 +1,7 @@
 .header {
   -webkit-app-region: drag;
-  min-height: 44px;
-  max-height: 44px;
+  min-height: 54px;
+  max-height: 54px;
   border-bottom: 1px solid #000000;
   display: grid;
   grid-template-columns: 25% 1fr 25%;
@@ -102,7 +102,7 @@
 .account-switcher {
   display: grid;
   grid-template-columns: auto 1fr auto;
-  grid-column-gap: 5px;
+  grid-column-gap: 10px;
   align-items: center;
   justify-items: center;
   padding: 0 10px;
@@ -121,11 +121,22 @@
     display: block;
   }
 
-  span {
+  .active-account {
     width: 100%;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    text-align: left;
+
+    div {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    span {
+      font-size: $font-size-small;
+    }
   }
 
   &:hover {

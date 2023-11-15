@@ -20,10 +20,11 @@
       *ngIf="activeAccount.email != null"
       aria-hidden="true"
     ></app-avatar>
-    <span
-      >{{ activeAccount.email
-      }}<span class="sr-only">&nbsp;({{ "switchAccount" | i18n }})</span></span
-    >
+    <div class="active-account">
+      <div>{{ activeAccount.email }}</div>
+      <span>{{ activeAccount.server }}</span>
+      <span class="sr-only">&nbsp;({{ "switchAccount" | i18n }})</span>
+    </div>
   </ng-container>
   <ng-template #noActiveAccount>
     <span>{{ "switchAccount" | i18n }}</span>
@@ -55,38 +56,40 @@
     aria-modal="true"
   >
     <div class="accounts" *ngIf="numberOfAccounts > 0">
-      <button *ngFor="let a of accounts | keyvalue" class="account" (click)="switch(a.key)">
+      <button
+        *ngFor="let account of inactiveAccounts | keyvalue"
+        class="account"
+        (click)="switch(account.key)"
+      >
         <app-avatar
-          [text]="a.value.profile.name ?? a.value.profile.email"
-          [id]="a.value.profile.userId"
+          [text]="account.value.name ?? account.value.email"
+          [id]="account.value.id"
           [size]="25"
           [circle]="true"
           [fontSize]="14"
           [dynamic]="true"
-          [color]="a.value.avatarColor"
-          *ngIf="a.value.profile.email != null"
+          [color]="account.value.avatarColor"
+          *ngIf="account.value.email != null"
           aria-hidden="true"
         ></app-avatar>
         <div class="accountInfo">
           <span class="sr-only">{{ "switchAccount" | i18n }}:&nbsp;</span>
-          <span class="email">{{ a.value.profile.email }}</span>
-          <span class="server" *ngIf="a.value.serverUrl != 'bitwarden.com'">
-            <span class="sr-only"> / </span>
-            {{ a.value.serverUrl }}
+          <span class="email" aria-hidden="true">{{ account.value.email }}</span>
+          <span class="server" aria-hidden="true">
+            <span class="sr-only"> / </span>{{ account.value.server }}
           </span>
-          <span class="status">
-            <span class="sr-only">&nbsp;(</span>
-            {{
-              (a.value.profile.authenticationStatus === authStatus.Unlocked ? "unlocked" : "locked")
+          <span class="status" aria-hidden="true"
+            ><span class="sr-only">&nbsp;(</span
+            >{{
+              (account.value.authenticationStatus === authStatus.Unlocked ? "unlocked" : "locked")
                 | i18n
-            }}
-            <span class="sr-only">)</span>
-          </span>
+            }}<span class="sr-only">)</span></span
+          >
         </div>
         <i
           class="bwi bwi-2x text-muted"
           [ngClass]="
-            a.value.profile.authenticationStatus == authStatus.Unlocked ? 'bwi-unlock' : 'bwi-lock'
+            account.value.authenticationStatus === authStatus.Unlocked ? 'bwi-unlock' : 'bwi-lock'
           "
           aria-hidden="true"
         ></i>
@@ -99,7 +102,7 @@
           <i class="bwi bwi-plus" aria-hidden="true"></i> {{ "addAccount" | i18n }}
         </button>
       </ng-container>
-      <ng-container *ngIf="numberOfAccounts == 4">
+      <ng-container *ngIf="numberOfAccounts === 4">
         <span class="accountLimitReached">{{ "accountSwitcherLimitReached" | i18n }} </span>
       </ng-container>
     </ng-container>
