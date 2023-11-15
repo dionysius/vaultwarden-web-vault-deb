@@ -289,7 +289,10 @@ export class Utils {
     }
 
     try {
-      const parseResult = parse(uriString, { validHosts: this.validHosts });
+      const parseResult = parse(uriString, {
+        validHosts: this.validHosts,
+        allowPrivateDomains: true,
+      });
       if (parseResult != null && parseResult.hostname != null) {
         if (parseResult.hostname === "localhost" || parseResult.isIp) {
           return parseResult.hostname;
