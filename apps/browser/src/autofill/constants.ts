@@ -27,3 +27,5 @@ export const GENERATE_PASSWORD_ID = "generate-password";
 export const NOOP_COMMAND_SUFFIX = "noop";
 export const ROOT_ID = "root";
 export const SEPARATOR_ID = "separator";
+
+export const NOTIFICATION_BAR_LIFESPAN_MS = 150000; // 150 seconds

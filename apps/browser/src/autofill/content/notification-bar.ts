@@ -325,6 +325,10 @@ async function loadNotificationBar() {
       // On first load or page change, start observing the DOM as early as possible
       // to avoid missing any forms that are added after the page loads
       observeDom();
+
+      sendPlatformMessage({
+        command: "checkNotificationQueue",
+      });
     }
 
     // This is a safeguard in case the observer misses a SPA page change.
