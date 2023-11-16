@@ -11,6 +11,9 @@ import { fromChromeEvent } from "../../browser/from-chrome-event";
 export default abstract class AbstractChromeStorageService implements AbstractStorageService {
   constructor(protected chromeStorageApi: chrome.storage.StorageArea) {}
 
+  get valuesRequireDeserialization(): boolean {
+    return true;
+  }
   get updates$(): Observable<StorageUpdate> {
     return fromChromeEvent(this.chromeStorageApi.onChanged).pipe(
       mergeMap(([changes]) => {
@@ -27,7 +30,6 @@ export default abstract class AbstractChromeStorageService implements AbstractSt
             key: key,
             // For removes this property will not exist but then it will just be
             // undefined which is fine.
-            value: change.newValue,
             updateType: updateType,
           };
         });

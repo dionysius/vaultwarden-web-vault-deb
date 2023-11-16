@@ -14,6 +14,10 @@ export class NodeEnvSecureStorageService implements AbstractStorageService {
     private cryptoService: () => CryptoService
   ) {}
 
+  get valuesRequireDeserialization(): boolean {
+    return true;
+  }
+
   get updates$() {
     return throwError(
       () => new Error("Secure storage implementations cannot have their updates subscribed to.")

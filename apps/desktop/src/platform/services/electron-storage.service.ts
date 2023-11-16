@@ -65,6 +65,9 @@ export class ElectronStorageService implements AbstractStorageService {
     });
   }
 
+  get valuesRequireDeserialization(): boolean {
+    return true;
+  }
   get updates$() {
     return this.updatesSubject.asObservable();
   }
@@ -84,13 +87,13 @@ export class ElectronStorageService implements AbstractStorageService {
       obj = Array.from(obj);
     }
     this.store.set(key, obj);
-    this.updatesSubject.next({ key, value: obj, updateType: "save" });
+    this.updatesSubject.next({ key, updateType: "save" });
     return Promise.resolve();
   }
 
   remove(key: string): Promise<void> {
     this.store.delete(key);
-    this.updatesSubject.next({ key, value: null, updateType: "remove" });
+    this.updatesSubject.next({ key, updateType: "remove" });
     return Promise.resolve();
   }
 }

@@ -8,6 +8,9 @@ import {
 export class ElectronRendererStorageService implements AbstractStorageService {
   private updatesSubject = new Subject<StorageUpdate>();
 
+  get valuesRequireDeserialization(): boolean {
+    return true;
+  }
   get updates$() {
     return this.updatesSubject.asObservable();
   }
@@ -22,11 +25,11 @@ export class ElectronRendererStorageService implements AbstractStorageService {
 
   async save<T>(key: string, obj: T): Promise<void> {
     await ipc.platform.storage.save(key, obj);
-    this.updatesSubject.next({ key, value: obj, updateType: "save" });
+    this.updatesSubject.next({ key, updateType: "save" });
   }
 
   async remove(key: string): Promise<void> {
     await ipc.platform.storage.remove(key);
-    this.updatesSubject.next({ key, value: null, updateType: "remove" });
+    this.updatesSubject.next({ key, updateType: "remove" });
   }
 }

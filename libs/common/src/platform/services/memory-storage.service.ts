@@ -6,6 +6,9 @@ export class MemoryStorageService extends AbstractMemoryStorageService {
   private store = new Map<string, unknown>();
   private updatesSubject = new Subject<StorageUpdate>();
 
+  get valuesRequireDeserialization(): boolean {
+    return false;
+  }
   get updates$() {
     return this.updatesSubject.asObservable();
   }
@@ -27,13 +30,13 @@ export class MemoryStorageService extends AbstractMemoryStorageService {
       return this.remove(key);
     }
     this.store.set(key, obj);
-    this.updatesSubject.next({ key, value: obj, updateType: "save" });
+    this.updatesSubject.next({ key, updateType: "save" });
     return Promise.resolve();
   }
 
   remove(key: string): Promise<void> {
     this.store.delete(key);
-    this.updatesSubject.next({ key, value: null, updateType: "remove" });
+    this.updatesSubject.next({ key, updateType: "remove" });
     return Promise.resolve();
   }
 

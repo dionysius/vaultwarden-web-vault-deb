@@ -84,3 +84,11 @@ function clone(value: any): any {
     return JSON.parse(JSON.stringify(value));
   }
 }
+
+export async function awaitAsync(ms = 0) {
+  if (ms < 1) {
+    await Promise.resolve();
+  } else {
+    await new Promise((resolve) => setTimeout(resolve, ms));
+  }
+}

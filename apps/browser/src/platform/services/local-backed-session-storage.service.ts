@@ -35,6 +35,10 @@ export class LocalBackedSessionStorageService extends AbstractMemoryStorageServi
     super();
   }
 
+  get valuesRequireDeserialization(): boolean {
+    return true;
+  }
+
   get updates$() {
     return this.updatesSubject.asObservable();
   }

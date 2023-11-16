@@ -1,4 +1,4 @@
-import { awaitAsync } from "@bitwarden/angular/../test-utils";
+import { awaitAsync } from "@bitwarden/common/../spec/utils";
 import { mock, MockProxy } from "jest-mock-extended";
 import { BehaviorSubject, ReplaySubject } from "rxjs";
 

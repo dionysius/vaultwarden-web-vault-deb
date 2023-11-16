@@ -9,8 +9,8 @@ import {
   firstValueFrom,
   combineLatestWith,
   filter,
+  timeout,
 } from "rxjs";
-import { Jsonify } from "type-fest";
 
 import { AccountService } from "../../../auth/abstractions/account.service";
 import { UserId } from "../../../types/guid";
@@ -18,9 +18,11 @@ import { EncryptService } from "../../abstractions/encrypt.service";
 import { AbstractStorageService } from "../../abstractions/storage.service";
 import { DerivedUserState } from "../derived-user-state";
 import { KeyDefinition, userKeyBuilder } from "../key-definition";
+import { StateUpdateOptions, populateOptionsWithDefault } from "../state-update-options";
 import { Converter, UserState } from "../user-state";
 
 import { DefaultDerivedUserState } from "./default-derived-state";
+import { getStoredValue } from "./util";
 
 const FAKE_DEFAULT = Symbol("fakeDefault");
 
@@ -54,9 +56,11 @@ export class DefaultUserState<T> implements UserState<T> {
         if (key == null) {
           return FAKE_DEFAULT;
         }
-        const jsonData = await this.chosenStorageLocation.get<Jsonify<T>>(key);
-        const data = keyDefinition.deserializer(jsonData);
-        return data;
+        return await getStoredValue(
+          key,
+          this.chosenStorageLocation,
+          this.keyDefinition.deserializer
+        );
       }),
       // Share the execution
       shareReplay({ refCount: false, bufferSize: 1 })
@@ -65,8 +69,16 @@ export class DefaultUserState<T> implements UserState<T> {
     const storageUpdates$ = this.chosenStorageLocation.updates$.pipe(
       combineLatestWith(this.formattedKey$),
       filter(([update, key]) => key !== null && update.key === key),
-      map(([update]) => {
-        return keyDefinition.deserializer(update.value as Jsonify<T>);
+      switchMap(async ([update, key]) => {
+        if (update.updateType === "remove") {
+          return null;
+        }
+        const data = await getStoredValue(
+          key,
+          this.chosenStorageLocation,
+          this.keyDefinition.deserializer
+        );
+        return data;
       })
     );
 
@@ -94,23 +106,53 @@ export class DefaultUserState<T> implements UserState<T> {
       .pipe(filter<T>((value) => value != FAKE_DEFAULT));
   }
 
-  async update(configureState: (state: T) => T): Promise<T> {
+  async update<TCombine>(
+    configureState: (state: T, dependency: TCombine) => T,
+    options: StateUpdateOptions<T, TCombine> = {}
+  ): Promise<T> {
+    options = populateOptionsWithDefault(options);
     const key = await this.createKey();
     const currentState = await this.getGuaranteedState(key);
-    const newState = configureState(currentState);
+    const combinedDependencies =
+      options.combineLatestWith != null
+        ? await firstValueFrom(options.combineLatestWith.pipe(timeout(options.msTimeout)))
+        : null;
+
+    if (!options.shouldUpdate(currentState, combinedDependencies)) {
+      return;
+    }
+
+    const newState = configureState(currentState, combinedDependencies);
     await this.saveToStorage(key, newState);
     return newState;
   }
 
-  async updateFor(userId: UserId, configureState: (state: T) => T): Promise<T> {
+  async updateFor<TCombine>(
+    userId: UserId,
+    configureState: (state: T, dependencies: TCombine) => T,
+    options: StateUpdateOptions<T, TCombine> = {}
+  ): Promise<T> {
     if (userId == null) {
       throw new Error("Attempting to update user state, but no userId has been supplied.");
     }
+    options = populateOptionsWithDefault(options);
 
     const key = userKeyBuilder(userId, this.keyDefinition);
-    const currentStore = await this.chosenStorageLocation.get<Jsonify<T>>(key);
-    const currentState = this.keyDefinition.deserializer(currentStore);
-    const newState = configureState(currentState);
+    const currentState = await getStoredValue(
+      key,
+      this.chosenStorageLocation,
+      this.keyDefinition.deserializer
+    );
+    const combinedDependencies =
+      options.combineLatestWith != null
+        ? await firstValueFrom(options.combineLatestWith.pipe(timeout(options.msTimeout)))
+        : null;
+
+    if (!options.shouldUpdate(currentState, combinedDependencies)) {
+      return;
+    }
+
+    const newState = configureState(currentState, combinedDependencies);
     await this.saveToStorage(key, newState);
 
     return newState;
@@ -118,8 +160,7 @@ export class DefaultUserState<T> implements UserState<T> {
 
   async getFromState(): Promise<T> {
     const key = await this.createKey();
-    const data = await this.chosenStorageLocation.get<Jsonify<T>>(key);
-    return this.keyDefinition.deserializer(data);
+    return await getStoredValue(key, this.chosenStorageLocation, this.keyDefinition.deserializer);
   }
 
   createDerived<TTo>(converter: Converter<T, TTo>): DerivedUserState<TTo> {
@@ -140,10 +181,13 @@ export class DefaultUserState<T> implements UserState<T> {
   }
 
   private async seedInitial(key: string): Promise<T> {
-    const data = await this.chosenStorageLocation.get<Jsonify<T>>(key);
-    const serializedData = this.keyDefinition.deserializer(data);
-    this.stateSubject.next(serializedData);
-    return serializedData;
+    const value = await getStoredValue(
+      key,
+      this.chosenStorageLocation,
+      this.keyDefinition.deserializer
+    );
+    this.stateSubject.next(value);
+    return value;
   }
 
   protected saveToStorage(key: string, data: T): Promise<void> {

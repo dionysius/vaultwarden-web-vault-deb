@@ -107,6 +107,9 @@ export class LowdbStorageService implements AbstractStorageService {
     this.ready = true;
   }
 
+  get valuesRequireDeserialization(): boolean {
+    return true;
+  }
   get updates$() {
     return this.updatesSubject.asObservable();
   }
@@ -133,7 +136,7 @@ export class LowdbStorageService implements AbstractStorageService {
     return this.lockDbFile(() => {
       this.readForNoCache();
       this.db.set(key, obj).write();
-      this.updatesSubject.next({ key, value: obj, updateType: "save" });
+      this.updatesSubject.next({ key, updateType: "save" });
       this.logService.debug(`Successfully wrote ${key} to db`);
       return;
     });
@@ -144,7 +147,7 @@ export class LowdbStorageService implements AbstractStorageService {
     return this.lockDbFile(() => {
       this.readForNoCache();
       this.db.unset(key).write();
-      this.updatesSubject.next({ key, value: null, updateType: "remove" });
+      this.updatesSubject.next({ key, updateType: "remove" });
       this.logService.debug(`Successfully removed ${key} from db`);
       return;
     });

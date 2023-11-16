@@ -6,6 +6,22 @@ import { Utils } from "../misc/utils";
 import { StateDefinition } from "./state-definition";
 
 /**
+ * A set of options for customizing the behavior of a {@link KeyDefinition}
+ */
+type KeyDefinitionOptions<T> = {
+  /**
+   * A function to use to safely convert your type from json to your expected type.
+   *
+   * **Important:** Your data may be serialized/deserialized at any time and this
+   *  callback needs to be able to faithfully re-initialize from the JSON object representation of your type.
+   *
+   * @param jsonValue The JSON object representation of your state.
+   * @returns The fully typed version of your state.
+   */
+  readonly deserializer: (jsonValue: Jsonify<T>) => T;
+};
+
+/**
  * KeyDefinitions describe the precise location to store data for a given piece of state.
  * The StateDefinition is used to describe the domain of the state, and the KeyDefinition
  * sub-divides that domain into specific keys.
@@ -14,30 +30,61 @@ export class KeyDefinition<T> {
   /**
    * Creates a new instance of a KeyDefinition
    * @param stateDefinition The state definition for which this key belongs to.
-   * @param key The name of the key, this should be unique per domain
-   * @param deserializer A function to use to safely convert your type from json to your expected type.
+   * @param key The name of the key, this should be unique per domain.
+   * @param options A set of options to customize the behavior of {@link KeyDefinition}. All options are required.
+   * @param options.deserializer A function to use to safely convert your type from json to your expected type.
+   *   Your data may be serialized/deserialized at any time and this needs callback needs to be able to faithfully re-initialize
+   *   from the JSON object representation of your type.
    */
   constructor(
     readonly stateDefinition: StateDefinition,
     readonly key: string,
-    readonly deserializer: (jsonValue: Jsonify<T>) => T
-  ) {}
+    private readonly options: KeyDefinitionOptions<T>
+  ) {
+    if (options.deserializer == null) {
+      throw new Error(
+        `'deserializer' is a required property on key ${stateDefinition.name} > ${key}`
+      );
+    }
+  }
+
+  /**
+   * Gets the deserializer configured for this {@link KeyDefinition}
+   */
+  get deserializer() {
+    return this.options.deserializer;
+  }
 
   /**
    * Creates a {@link KeyDefinition} for state that is an array.
    * @param stateDefinition The state definition to be added to the KeyDefinition
    * @param key The key to be added to the KeyDefinition
-   * @param deserializer The deserializer for the element of the array in your state.
-   * @returns A {@link KeyDefinition} that contains a serializer that will run the provided deserializer for each
-   * element of an array **unless that array is null in which case it will return an empty list.**
+   * @param options The options to customize the final {@link KeyDefinition}.
+   * @returns A {@link KeyDefinition} initialized for arrays, the options run
+   * the deserializer on the provided options for each element of an array
+   * **unless that array is null, in which case it will return an empty list.**
+   *
+   * @example
+   * ```typescript
+   * const MY_KEY = KeyDefinition.array<MyArrayElement>(MY_STATE, "key", {
+   *   deserializer: (myJsonElement) => convertToElement(myJsonElement),
+   * });
+   * ```
    */
   static array<T>(
     stateDefinition: StateDefinition,
     key: string,
-    deserializer: (jsonValue: Jsonify<T>) => T
+    // We have them provide options for the element of the array, depending on future options we add, this could get a little weird.
+    options: KeyDefinitionOptions<T> // The array helper forces  an initialValue of an empty array
   ) {
-    return new KeyDefinition<T[]>(stateDefinition, key, (jsonValue) => {
-      return jsonValue?.map((v) => deserializer(v)) ?? [];
+    return new KeyDefinition<T[]>(stateDefinition, key, {
+      ...options,
+      deserializer: (jsonValue) => {
+        if (jsonValue == null) {
+          return null;
+        }
+        return jsonValue.map((v) => options.deserializer(v));
+      },
     });
   }
 
@@ -45,32 +92,42 @@ export class KeyDefinition<T> {
    * Creates a {@link KeyDefinition} for state that is a record.
    * @param stateDefinition The state definition to be added to the KeyDefinition
    * @param key The key to be added to the KeyDefinition
-   * @param deserializer The deserializer for the value part of a record.
+   * @param options The options to customize the final {@link KeyDefinition}.
    * @returns A {@link KeyDefinition} that contains a serializer that will run the provided deserializer for each
-   * value in a record and returns every key as a string **unless that record is null in which case it will return an record.**
+   * value in a record and returns every key as a string **unless that record is null, in which case it will return an record.**
+   *
+   * @example
+   * ```typescript
+   * const MY_KEY = KeyDefinition.record<MyRecordValue>(MY_STATE, "key", {
+   *   deserializer: (myJsonValue) => convertToValue(myJsonValue),
+   * });
+   * ```
    */
-  static record<T>(
+  static record<T, TKey extends string = string>(
     stateDefinition: StateDefinition,
     key: string,
-    deserializer: (jsonValue: Jsonify<T>) => T
+    // We have them provide options for the value of the record, depending on future options we add, this could get a little weird.
+    options: KeyDefinitionOptions<T> // The array helper forces an initialValue of an empty record
   ) {
-    return new KeyDefinition<Record<string, T>>(stateDefinition, key, (jsonValue) => {
-      const output: Record<string, T> = {};
+    return new KeyDefinition<Record<TKey, T>>(stateDefinition, key, {
+      ...options,
+      deserializer: (jsonValue) => {
+        if (jsonValue == null) {
+          return null;
+        }
 
-      if (jsonValue == null) {
+        const output: Record<string, T> = {};
+        for (const key in jsonValue) {
+          output[key] = options.deserializer((jsonValue as Record<string, Jsonify<T>>)[key]);
+        }
         return output;
-      }
-
-      for (const key in jsonValue) {
-        output[key] = deserializer((jsonValue as Record<string, Jsonify<T>>)[key]);
-      }
-      return output;
+      },
     });
   }
 
   /**
-   *
-   * @returns
+   * Create a string that should be unique across the entire application.
+   * @returns A string that can be used to cache instances created via this key.
    */
   buildCacheKey(): string {
     return `${this.stateDefinition.storageLocation}_${this.stateDefinition.name}_${this.key}`;

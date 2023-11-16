@@ -16,6 +16,9 @@ export class HtmlStorageService implements AbstractStorageService {
     return { htmlStorageLocation: HtmlStorageLocation.Session };
   }
 
+  get valuesRequireDeserialization(): boolean {
+    return true;
+  }
   get updates$() {
     return this.updatesSubject.asObservable();
   }
@@ -62,7 +65,7 @@ export class HtmlStorageService implements AbstractStorageService {
         window.sessionStorage.setItem(key, json);
         break;
     }
-    this.updatesSubject.next({ key, value: obj, updateType: "save" });
+    this.updatesSubject.next({ key, updateType: "save" });
     return Promise.resolve();
   }
 
@@ -76,7 +79,7 @@ export class HtmlStorageService implements AbstractStorageService {
         window.sessionStorage.removeItem(key);
         break;
     }
-    this.updatesSubject.next({ key, value: null, updateType: "remove" });
+    this.updatesSubject.next({ key, updateType: "remove" });
     return Promise.resolve();
   }
 }
