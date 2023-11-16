@@ -1,6 +1,8 @@
 import { Component, HostBinding, OnDestroy, OnInit } from "@angular/core";
 import { Subject, takeUntil } from "rxjs";
 
+import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
+import { PolicyType } from "@bitwarden/common/admin-console/enums";
 import { DialogService } from "@bitwarden/components";
 
 import { WebauthnLoginAdminService } from "../../core";
@@ -28,7 +30,8 @@ export class WebauthnLoginSettingsComponent implements OnInit, OnDestroy {
 
   constructor(
     private webauthnService: WebauthnLoginAdminService,
-    private dialogService: DialogService
+    private dialogService: DialogService,
+    private policyService: PolicyService
   ) {}
 
   @HostBinding("attr.aria-busy")
@@ -48,7 +51,16 @@ export class WebauthnLoginSettingsComponent implements OnInit, OnDestroy {
     return this.credentials?.length >= this.MaxCredentialCount;
   }
 
+  requireSsoPolicyEnabled = false;
+
   ngOnInit(): void {
+    this.policyService
+      .policyAppliesToActiveUser$(PolicyType.RequireSso)
+      .pipe(takeUntil(this.destroy$))
+      .subscribe((enabled) => {
+        this.requireSsoPolicyEnabled = enabled;
+      });
+
     this.webauthnService
       .getCredentials$()
       .pipe(takeUntil(this.destroy$))
