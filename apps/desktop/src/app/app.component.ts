@@ -537,6 +537,19 @@ export class AppComponent implements OnInit, OnDestroy {
       this.keyConnectorService.clear(),
     ]);
 
+    const preLogoutActiveUserId = this.activeUserId;
+    await this.stateService.clean({ userId: userBeingLoggedOut });
+
+    if (this.activeUserId == null) {
+      this.router.navigate(["login"]);
+    } else if (preLogoutActiveUserId !== this.activeUserId) {
+      this.messagingService.send("switchAccount");
+    }
+
+    await this.updateAppMenu();
+
+    // This must come last otherwise the logout will prematurely trigger
+    // a process reload before all the state service user data can be cleaned up
     if (userBeingLoggedOut === this.activeUserId) {
       this.searchService.clearIndex();
       this.authService.logOut(async () => {
@@ -549,17 +562,6 @@ export class AppComponent implements OnInit, OnDestroy {
         }
       });
     }
-
-    const preLogoutActiveUserId = this.activeUserId;
-    await this.stateService.clean({ userId: userBeingLoggedOut });
-
-    if (this.activeUserId == null) {
-      this.router.navigate(["login"]);
-    } else if (preLogoutActiveUserId !== this.activeUserId) {
-      this.messagingService.send("switchAccount");
-    }
-
-    await this.updateAppMenu();
   }
 
   private async recordActivity() {
