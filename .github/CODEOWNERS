@@ -71,6 +71,7 @@ apps/web/src/app/platform @bitwarden/team-platform-dev
 libs/angular/src/platform @bitwarden/team-platform-dev
 libs/common/src/platform @bitwarden/team-platform-dev
 libs/common/spec @bitwarden/team-platform-dev
+libs/common/src/state-migrations @bitwarden/team-platform-dev
 # Node-specifc platform files
 libs/node @bitwarden/team-platform-dev
 # Web utils used across app and connectors
