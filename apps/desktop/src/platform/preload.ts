@@ -2,6 +2,7 @@ import { ipcRenderer } from "electron";
 
 import { DeviceType, ThemeType, KeySuffixOptions } from "@bitwarden/common/enums";
 
+import { EncryptedMessageResponse, UnencryptedMessageResponse } from "../models/native-messaging";
 import { BiometricMessage, BiometricAction } from "../types/biometric-message";
 import { isDev, isWindowsStore } from "../utils";
 
@@ -51,6 +52,12 @@ const clipboard = {
   write: (message: ClipboardWriteMessage) => ipcRenderer.invoke("clipboard.write", message),
 };
 
+const nativeMessaging = {
+  sendReply: (message: EncryptedMessageResponse | UnencryptedMessageResponse) => {
+    ipcRenderer.send("nativeMessagingReply", message);
+  },
+};
+
 export default {
   versions: {
     app: (): Promise<string> => ipcRenderer.invoke("appVersion"),
@@ -93,6 +100,7 @@ export default {
   passwords,
   biometric,
   clipboard,
+  nativeMessaging,
 };
 
 function deviceType(): DeviceType {
