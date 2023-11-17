@@ -17,6 +17,20 @@ describe("MigrationBuilder", () => {
     }
   }
 
+  class TestMigratorWithInstanceMethod extends Migrator<0, 1> {
+    private async instanceMethod(helper: MigrationHelper, value: string) {
+      await helper.set("test", value);
+    }
+
+    async migrate(helper: MigrationHelper): Promise<void> {
+      await this.instanceMethod(helper, "migrate");
+    }
+
+    async rollback(helper: MigrationHelper): Promise<void> {
+      await this.instanceMethod(helper, "rollback");
+    }
+  }
+
   let sut: MigrationBuilder<number>;
 
   beforeEach(() => {
@@ -113,5 +127,10 @@ describe("MigrationBuilder", () => {
       expect(migrate).not.toBeCalled();
       expect(rollback).not.toBeCalled();
     });
+  });
+
+  it("should be able to call instance methods", async () => {
+    const helper = new MigrationHelper(0, mock(), mock());
+    await sut.with(TestMigratorWithInstanceMethod, 0, 1).migrate(helper);
   });
 });

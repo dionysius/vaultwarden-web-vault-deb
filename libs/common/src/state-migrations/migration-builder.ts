@@ -93,7 +93,7 @@ export class MigrationBuilder<TCurrent extends number = 0> {
     );
     if (shouldMigrate) {
       const method = direction === "up" ? migrator.migrate : migrator.rollback;
-      await method(helper);
+      await method.bind(migrator)(helper);
       helper.info(
         `Migrator ${migrator.constructor.name} (to version ${migrator.toVersion}) migrated - ${direction}`
       );

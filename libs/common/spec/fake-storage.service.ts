@@ -33,6 +33,10 @@ export class FakeStorageService implements AbstractStorageService {
     this.store = store;
   }
 
+  get internalStore() {
+    return this.store;
+  }
+
   internalUpdateValuesRequireDeserialization(value: boolean) {
     this._valuesRequireDeserialization = value;
   }

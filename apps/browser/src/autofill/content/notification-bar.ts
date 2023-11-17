@@ -3,7 +3,7 @@ import ChangePasswordRuntimeMessage from "../../background/models/changePassword
 import AutofillField from "../models/autofill-field";
 import { WatchedForm } from "../models/watched-form";
 import { FormData } from "../services/abstractions/autofill.service";
-import { UserSettings } from "../types";
+import { GlobalSettings, UserSettings } from "../types";
 
 interface HTMLElementWithFormOpId extends HTMLElement {
   formOpId: string;
@@ -97,6 +97,7 @@ async function loadNotificationBar() {
   const userSettingsStorageValue = await getFromLocalStorage(activeUserId);
   if (userSettingsStorageValue[activeUserId]) {
     const userSettings: UserSettings = userSettingsStorageValue[activeUserId].settings;
+    const globalSettings: GlobalSettings = await getFromLocalStorage("global");
 
     // Do not show the notification bar on the Bitwarden vault
     // because they can add logins and change passwords there
@@ -107,11 +108,11 @@ async function loadNotificationBar() {
       // show the notification bar on (for login detail collection or password change).
       // It is managed in the Settings > Excluded Domains page in the browser extension.
       // Example: '{"bitwarden.com":null}'
-      const excludedDomainsDict = userSettings.neverDomains;
+      const excludedDomainsDict = globalSettings.neverDomains;
       if (!excludedDomainsDict || !(window.location.hostname in excludedDomainsDict)) {
         // Set local disabled preferences
-        disabledAddLoginNotification = userSettings.disableAddLoginNotification;
-        disabledChangedPasswordNotification = userSettings.disableChangedPasswordNotification;
+        disabledAddLoginNotification = globalSettings.disableAddLoginNotification;
+        disabledChangedPasswordNotification = globalSettings.disableChangedPasswordNotification;
 
         if (!disabledAddLoginNotification || !disabledChangedPasswordNotification) {
           // If the user has not disabled both notifications, then handle the initial page change (null -> actual page)

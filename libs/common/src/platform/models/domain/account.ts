@@ -222,12 +222,9 @@ export class AccountSettings {
   clearClipboard?: number;
   collapsedGroupings?: string[];
   defaultUriMatch?: UriMatchType;
-  disableAddLoginNotification?: boolean;
   disableAutoBiometricsPrompt?: boolean;
   disableAutoTotpCopy?: boolean;
   disableBadgeCounter?: boolean;
-  disableChangedPasswordNotification?: boolean;
-  disableContextMenuItem?: boolean;
   disableGa?: boolean;
   dismissedAutoFillOnPageLoadCallout?: boolean;
   dontShowCardsCurrentTab?: boolean;
@@ -239,7 +236,6 @@ export class AccountSettings {
   environmentUrls: EnvironmentUrls = new EnvironmentUrls();
   equivalentDomains?: any;
   minimizeOnCopyToClipboard?: boolean;
-  neverDomains?: { [id: string]: any };
   passwordGenerationOptions?: PasswordGeneratorOptions;
   usernameGenerationOptions?: UsernameGeneratorOptions;
   generatorOptions?: GeneratorOptions;

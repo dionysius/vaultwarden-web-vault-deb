@@ -11,10 +11,11 @@ import { AddKeyTypeToOrgKeysMigrator } from "./migrations/5-add-key-type-to-org-
 import { RemoveLegacyEtmKeyMigrator } from "./migrations/6-remove-legacy-etm-key";
 import { MoveBiometricAutoPromptToAccount } from "./migrations/7-move-biometric-auto-prompt-to-account";
 import { MoveStateVersionMigrator } from "./migrations/8-move-state-version";
+import { MoveBrowserSettingsToGlobal } from "./migrations/9-move-browser-settings-to-global";
 import { MinVersionMigrator } from "./migrations/min-version";
 
 export const MIN_VERSION = 2;
-export const CURRENT_VERSION = 8;
+export const CURRENT_VERSION = 9;
 export type MinVersion = typeof MIN_VERSION;
 
 export async function migrate(
@@ -38,7 +39,8 @@ export async function migrate(
     .with(AddKeyTypeToOrgKeysMigrator, 4, 5)
     .with(RemoveLegacyEtmKeyMigrator, 5, 6)
     .with(MoveBiometricAutoPromptToAccount, 6, 7)
-    .with(MoveStateVersionMigrator, 7, CURRENT_VERSION)
+    .with(MoveStateVersionMigrator, 7, 8)
+    .with(MoveBrowserSettingsToGlobal, 8, CURRENT_VERSION)
     .migrate(migrationHelper);
 }
 
