@@ -142,9 +142,11 @@ export class Vault {
     );
     if (response.status === HttpStatusCode.Ok) {
       const json = await response.json();
-      const k1 = json?.extensions?.LastPassK1 as string;
-      if (k1 != null) {
-        return Utils.fromB64ToArray(k1);
+      if (json?.extensions != null && json.extensions.length > 0) {
+        const k1 = json.extensions[0].LastPassK1 as string;
+        if (k1 != null) {
+          return Utils.fromB64ToArray(k1);
+        }
       }
     }
     return null;
