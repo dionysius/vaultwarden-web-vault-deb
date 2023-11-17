@@ -1,16 +1,14 @@
 import { Component, OnInit } from "@angular/core";
+import { FormBuilder } from "@angular/forms";
 import { ActivatedRoute } from "@angular/router";
 
-import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { SEND_KDF_ITERATIONS } from "@bitwarden/common/enums";
 import { ErrorResponse } from "@bitwarden/common/models/response/error.response";
 import { CryptoFunctionService } from "@bitwarden/common/platform/abstractions/crypto-function.service";
 import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
-import { FileDownloadService } from "@bitwarden/common/platform/abstractions/file-download/file-download.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
-import { EncArrayBuffer } from "@bitwarden/common/platform/models/domain/enc-array-buffer";
 import { SymmetricCryptoKey } from "@bitwarden/common/platform/models/domain/symmetric-crypto-key";
 import { SendType } from "@bitwarden/common/tools/send/enums/send-type";
 import { SendAccess } from "@bitwarden/common/tools/send/models/domain/send-access";
@@ -18,56 +16,65 @@ import { SendAccessRequest } from "@bitwarden/common/tools/send/models/request/s
 import { SendAccessResponse } from "@bitwarden/common/tools/send/models/response/send-access.response";
 import { SendAccessView } from "@bitwarden/common/tools/send/models/view/send-access.view";
 import { SendApiService } from "@bitwarden/common/tools/send/services/send-api.service.abstraction";
+import { NoItemsModule } from "@bitwarden/components";
+
+import { SharedModule } from "../../shared";
+
+import { ExpiredSend } from "./icons/expired-send.icon";
+import { SendAccessFileComponent } from "./send-access-file.component";
+import { SendAccessPasswordComponent } from "./send-access-password.component";
+import { SendAccessTextComponent } from "./send-access-text.component";
 
 @Component({
   selector: "app-send-access",
   templateUrl: "access.component.html",
+  standalone: true,
+  imports: [
+    SendAccessFileComponent,
+    SendAccessTextComponent,
+    SendAccessPasswordComponent,
+    SharedModule,
+    NoItemsModule,
+  ],
 })
 // eslint-disable-next-line rxjs-angular/prefer-takeuntil
 export class AccessComponent implements OnInit {
-  send: SendAccessView;
-  sendType = SendType;
-  downloading = false;
-  loading = true;
-  passwordRequired = false;
-  formPromise: Promise<SendAccessResponse>;
-  password: string;
-  showText = false;
-  unavailable = false;
-  error = false;
-  hideEmail = false;
+  protected send: SendAccessView;
+  protected sendType = SendType;
+  protected loading = true;
+  protected passwordRequired = false;
+  protected formPromise: Promise<SendAccessResponse>;
+  protected password: string;
+  protected unavailable = false;
+  protected error = false;
+  protected hideEmail = false;
+  protected decKey: SymmetricCryptoKey;
+  protected accessRequest: SendAccessRequest;
+  protected expiredSendIcon = ExpiredSend;
+
+  protected formGroup = this.formBuilder.group({});
 
   private id: string;
   private key: string;
-  private decKey: SymmetricCryptoKey;
-  private accessRequest: SendAccessRequest;
 
   constructor(
-    private i18nService: I18nService,
     private cryptoFunctionService: CryptoFunctionService,
-    private apiService: ApiService,
-    private platformUtilsService: PlatformUtilsService,
     private route: ActivatedRoute,
     private cryptoService: CryptoService,
-    private fileDownloadService: FileDownloadService,
-    private sendApiService: SendApiService
+    private sendApiService: SendApiService,
+    private platformUtilsService: PlatformUtilsService,
+    private i18nService: I18nService,
+    protected formBuilder: FormBuilder
   ) {}
 
-  get sendText() {
-    if (this.send == null || this.send.text == null) {
-      return null;
-    }
-    return this.showText ? this.send.text.text : this.send.text.maskedText;
-  }
-
-  get expirationDate() {
+  protected get expirationDate() {
     if (this.send == null || this.send.expirationDate == null) {
       return null;
     }
     return this.send.expirationDate;
   }
 
-  get creatorIdentifier() {
+  protected get creatorIdentifier() {
     if (this.send == null || this.send.creatorIdentifier == null) {
       return null;
     }
@@ -86,77 +93,22 @@ export class AccessComponent implements OnInit {
     });
   }
 
-  async download() {
-    if (this.send == null || this.decKey == null) {
-      return;
-    }
-
-    if (this.downloading) {
-      return;
-    }
-
-    const downloadData = await this.sendApiService.getSendFileDownloadData(
-      this.send,
-      this.accessRequest
-    );
-
-    if (Utils.isNullOrWhitespace(downloadData.url)) {
-      this.platformUtilsService.showToast("error", null, this.i18nService.t("missingSendFile"));
-      return;
-    }
-
-    this.downloading = true;
-    const response = await fetch(new Request(downloadData.url, { cache: "no-store" }));
-    if (response.status !== 200) {
-      this.platformUtilsService.showToast("error", null, this.i18nService.t("errorOccurred"));
-      this.downloading = false;
-      return;
-    }
-
-    try {
-      const encBuf = await EncArrayBuffer.fromResponse(response);
-      const decBuf = await this.cryptoService.decryptFromBytes(encBuf, this.decKey);
-      this.fileDownloadService.download({
-        fileName: this.send.file.fileName,
-        blobData: decBuf,
-        downloadMethod: "save",
-      });
-    } catch (e) {
-      this.platformUtilsService.showToast("error", null, this.i18nService.t("errorOccurred"));
-    }
-
-    this.downloading = false;
-  }
-
-  copyText() {
-    this.platformUtilsService.copyToClipboard(this.send.text.text);
-    this.platformUtilsService.showToast(
-      "success",
-      null,
-      this.i18nService.t("valueCopied", this.i18nService.t("sendTypeText"))
-    );
-  }
-
-  toggleText() {
-    this.showText = !this.showText;
-  }
-
-  async load() {
+  protected load = async () => {
     this.unavailable = false;
     this.error = false;
     this.hideEmail = false;
-    const keyArray = Utils.fromUrlB64ToArray(this.key);
-    this.accessRequest = new SendAccessRequest();
-    if (this.password != null) {
-      const passwordHash = await this.cryptoFunctionService.pbkdf2(
-        this.password,
-        keyArray,
-        "sha256",
-        SEND_KDF_ITERATIONS
-      );
-      this.accessRequest.password = Utils.fromBufferToB64(passwordHash);
-    }
     try {
+      const keyArray = Utils.fromUrlB64ToArray(this.key);
+      this.accessRequest = new SendAccessRequest();
+      if (this.password != null) {
+        const passwordHash = await this.cryptoFunctionService.pbkdf2(
+          this.password,
+          keyArray,
+          "sha256",
+          SEND_KDF_ITERATIONS
+        );
+        this.accessRequest.password = Utils.fromBufferToB64(passwordHash);
+      }
       let sendResponse: SendAccessResponse = null;
       if (this.loading) {
         sendResponse = await this.sendApiService.postSendAccess(this.id, this.accessRequest);
@@ -168,16 +120,23 @@ export class AccessComponent implements OnInit {
       const sendAccess = new SendAccess(sendResponse);
       this.decKey = await this.cryptoService.makeSendKey(keyArray);
       this.send = await sendAccess.decrypt(this.decKey);
-      this.showText = this.send.text != null ? !this.send.text.hidden : true;
     } catch (e) {
       if (e instanceof ErrorResponse) {
         if (e.statusCode === 401) {
           this.passwordRequired = true;
         } else if (e.statusCode === 404) {
           this.unavailable = true;
+        } else if (e.statusCode === 400) {
+          this.platformUtilsService.showToast(
+            "error",
+            this.i18nService.t("errorOccurred"),
+            e.message
+          );
         } else {
           this.error = true;
         }
+      } else {
+        this.error = true;
       }
     }
     this.loading = false;
@@ -186,5 +145,9 @@ export class AccessComponent implements OnInit {
       !this.passwordRequired &&
       !this.loading &&
       !this.unavailable;
+  };
+
+  protected setPassword(password: string) {
+    this.password = password;
   }
 }

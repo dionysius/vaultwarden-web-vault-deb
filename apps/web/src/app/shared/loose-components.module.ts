@@ -73,7 +73,6 @@ import { SettingsComponent } from "../settings/settings.component";
 import { VaultTimeoutInputComponent } from "../settings/vault-timeout-input.component";
 import { GeneratorComponent } from "../tools/generator.component";
 import { PasswordGeneratorHistoryComponent } from "../tools/password-generator-history.component";
-import { AccessComponent } from "../tools/send/access.component";
 import { AddEditComponent as SendAddEditComponent } from "../tools/send/add-edit.component";
 import { ToolsComponent } from "../tools/tools.component";
 import { PremiumBadgeComponent } from "../vault/components/premium-badge.component";
@@ -108,7 +107,6 @@ import { SharedModule } from "./shared.module";
   declarations: [
     AcceptFamilySponsorshipComponent,
     AcceptOrganizationComponent,
-    AccessComponent,
     AccountComponent,
     AddEditComponent,
     AddEditCustomFieldsComponent,
@@ -191,7 +189,6 @@ import { SharedModule } from "./shared.module";
     UserVerificationModule,
     PremiumBadgeComponent,
     AcceptOrganizationComponent,
-    AccessComponent,
     AccountComponent,
     AddEditComponent,
     AddEditCustomFieldsComponent,
