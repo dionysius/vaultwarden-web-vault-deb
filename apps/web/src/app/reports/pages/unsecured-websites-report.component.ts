@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 
 import { ModalService } from "@bitwarden/angular/services/modal.service";
-import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
+import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
 import { CipherType } from "@bitwarden/common/vault/enums/cipher-type";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
@@ -14,13 +14,15 @@ import { CipherReportComponent } from "./cipher-report.component";
   templateUrl: "unsecured-websites-report.component.html",
 })
 export class UnsecuredWebsitesReportComponent extends CipherReportComponent implements OnInit {
+  disabled = true;
+
   constructor(
     protected cipherService: CipherService,
+    protected organizationService: OrganizationService,
     modalService: ModalService,
-    messagingService: MessagingService,
     passwordRepromptService: PasswordRepromptService
   ) {
-    super(modalService, messagingService, true, passwordRepromptService);
+    super(modalService, passwordRepromptService, organizationService);
   }
 
   async ngOnInit() {
@@ -35,7 +37,9 @@ export class UnsecuredWebsitesReportComponent extends CipherReportComponent impl
       }
       return c.login.uris.some((u) => u.uri != null && u.uri.indexOf("http://") === 0);
     });
-    this.ciphers = unsecuredCiphers;
+    this.ciphers = unsecuredCiphers.filter(
+      (c) => (!this.organization && c.edit) || (this.organization && !c.edit)
+    );
   }
 
   protected getAllCiphers(): Promise<CipherView[]> {

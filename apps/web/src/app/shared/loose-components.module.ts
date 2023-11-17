@@ -81,6 +81,8 @@ import { AddEditComponent } from "../vault/individual-vault/add-edit.component";
 import { AttachmentsComponent } from "../vault/individual-vault/attachments.component";
 import { CollectionsComponent } from "../vault/individual-vault/collections.component";
 import { FolderAddEditComponent } from "../vault/individual-vault/folder-add-edit.component";
+import { OrganizationBadgeModule } from "../vault/individual-vault/organization-badge/organization-badge.module";
+import { PipesModule } from "../vault/individual-vault/pipes/pipes.module";
 import { ShareComponent } from "../vault/individual-vault/share.component";
 import { AddEditComponent as OrgAddEditComponent } from "../vault/org-vault/add-edit.component";
 import { AttachmentsComponent as OrgAttachmentsComponent } from "../vault/org-vault/attachments.component";
@@ -102,6 +104,8 @@ import { SharedModule } from "./shared.module";
     DynamicAvatarComponent,
     EnvironmentSelectorModule,
     AccountFingerprintComponent,
+    OrganizationBadgeModule,
+    PipesModule,
     PasswordCalloutComponent,
   ],
   declarations: [

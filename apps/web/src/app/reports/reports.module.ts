@@ -2,6 +2,8 @@ import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 
 import { SharedModule } from "../shared";
+import { OrganizationBadgeModule } from "../vault/individual-vault/organization-badge/organization-badge.module";
+import { PipesModule } from "../vault/individual-vault/pipes/pipes.module";
 
 import { BreachReportComponent } from "./pages/breach-report.component";
 import { ExposedPasswordsReportComponent } from "./pages/exposed-passwords-report.component";
@@ -15,7 +17,14 @@ import { ReportsRoutingModule } from "./reports-routing.module";
 import { ReportsSharedModule } from "./shared";
 
 @NgModule({
-  imports: [CommonModule, SharedModule, ReportsSharedModule, ReportsRoutingModule],
+  imports: [
+    CommonModule,
+    SharedModule,
+    ReportsSharedModule,
+    ReportsRoutingModule,
+    OrganizationBadgeModule,
+    PipesModule,
+  ],
   declarations: [
     BreachReportComponent,
     ExposedPasswordsReportComponent,
@@ -24,7 +33,6 @@ import { ReportsSharedModule } from "./shared";
     ReportsHomeComponent,
     ReusedPasswordsReportComponent,
     UnsecuredWebsitesReportComponent,
-    WeakPasswordsReportComponent,
     WeakPasswordsReportComponent,
   ],
 })

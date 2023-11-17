@@ -59,6 +59,16 @@
             <br />
             <small>{{ c.subTitle }}</small>
           </td>
+          <td>
+            <app-org-badge
+              *ngIf="!organization"
+              [disabled]="disabled"
+              [organizationId]="c.organizationId"
+              [organizationName]="c.organizationId | orgNameFromId : (organizations$ | async)"
+              appStopProp
+            >
+            </app-org-badge>
+          </td>
         </tr>
       </tbody>
     </table>

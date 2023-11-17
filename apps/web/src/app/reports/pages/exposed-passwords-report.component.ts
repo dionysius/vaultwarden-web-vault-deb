@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 
 import { ModalService } from "@bitwarden/angular/services/modal.service";
 import { AuditService } from "@bitwarden/common/abstractions/audit.service";
-import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
+import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
 import { CipherType } from "@bitwarden/common/vault/enums/cipher-type";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
@@ -16,15 +16,16 @@ import { CipherReportComponent } from "./cipher-report.component";
 })
 export class ExposedPasswordsReportComponent extends CipherReportComponent implements OnInit {
   exposedPasswordMap = new Map<string, number>();
+  disabled = true;
 
   constructor(
     protected cipherService: CipherService,
     protected auditService: AuditService,
+    protected organizationService: OrganizationService,
     modalService: ModalService,
-    messagingService: MessagingService,
     passwordRepromptService: PasswordRepromptService
   ) {
-    super(modalService, messagingService, true, passwordRepromptService);
+    super(modalService, passwordRepromptService, organizationService);
   }
 
   async ngOnInit() {
@@ -35,25 +36,28 @@ export class ExposedPasswordsReportComponent extends CipherReportComponent imple
     const allCiphers = await this.getAllCiphers();
     const exposedPasswordCiphers: CipherView[] = [];
     const promises: Promise<void>[] = [];
-    allCiphers.forEach((c) => {
+    allCiphers.forEach((ciph) => {
+      const { type, login, isDeleted, edit, viewPassword, id } = ciph;
       if (
-        c.type !== CipherType.Login ||
-        c.login.password == null ||
-        c.login.password === "" ||
-        c.isDeleted
+        type !== CipherType.Login ||
+        login.password == null ||
+        login.password === "" ||
+        isDeleted ||
+        (!this.organization && !edit) ||
+        !viewPassword
       ) {
         return;
       }
-      const promise = this.auditService.passwordLeaked(c.login.password).then((exposedCount) => {
+      const promise = this.auditService.passwordLeaked(login.password).then((exposedCount) => {
         if (exposedCount > 0) {
-          exposedPasswordCiphers.push(c);
-          this.exposedPasswordMap.set(c.id, exposedCount);
+          exposedPasswordCiphers.push(ciph);
+          this.exposedPasswordMap.set(id, exposedCount);
         }
       });
       promises.push(promise);
     });
     await Promise.all(promises);
-    this.ciphers = exposedPasswordCiphers;
+    this.ciphers = [...exposedPasswordCiphers];
   }
 
   protected getAllCiphers(): Promise<CipherView[]> {

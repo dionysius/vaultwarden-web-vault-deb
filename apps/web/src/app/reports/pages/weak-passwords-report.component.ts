@@ -1,7 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 
 import { ModalService } from "@bitwarden/angular/services/modal.service";
-import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
+import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
+import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { PasswordStrengthServiceAbstraction } from "@bitwarden/common/tools/password-strength";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
 import { CipherType } from "@bitwarden/common/vault/enums/cipher-type";
@@ -17,17 +18,19 @@ import { CipherReportComponent } from "./cipher-report.component";
 })
 export class WeakPasswordsReportComponent extends CipherReportComponent implements OnInit {
   passwordStrengthMap = new Map<string, [string, BadgeTypes]>();
+  disabled = true;
 
   private passwordStrengthCache = new Map<string, number>();
+  weakPasswordCiphers: CipherView[] = [];
 
   constructor(
     protected cipherService: CipherService,
     protected passwordStrengthService: PasswordStrengthServiceAbstraction,
+    protected organizationService: OrganizationService,
     modalService: ModalService,
-    messagingService: MessagingService,
     passwordRepromptService: PasswordRepromptService
   ) {
-    super(modalService, messagingService, true, passwordRepromptService);
+    super(modalService, passwordRepromptService, organizationService);
   }
 
   async ngOnInit() {
@@ -36,33 +39,32 @@ export class WeakPasswordsReportComponent extends CipherReportComponent implemen
 
   async setCiphers() {
     const allCiphers = await this.getAllCiphers();
-    const weakPasswordCiphers: CipherView[] = [];
-    const isUserNameNotEmpty = (c: CipherView): boolean => {
-      return c.login.username != null && c.login.username.trim() !== "";
-    };
-    const getCacheKey = (c: CipherView): string => {
-      return c.login.password + "_____" + (isUserNameNotEmpty(c) ? c.login.username : "");
-    };
+    this.findWeakPasswords(allCiphers);
+  }
 
-    allCiphers.forEach((c) => {
+  protected findWeakPasswords(ciphers: any[]): void {
+    ciphers.forEach((ciph) => {
+      const { type, login, isDeleted, edit, viewPassword, id } = ciph;
       if (
-        c.type !== CipherType.Login ||
-        c.login.password == null ||
-        c.login.password === "" ||
-        c.isDeleted
+        type !== CipherType.Login ||
+        login.password == null ||
+        login.password === "" ||
+        isDeleted ||
+        (!this.organization && !edit) ||
+        !viewPassword
       ) {
         return;
       }
-      const hasUserName = isUserNameNotEmpty(c);
-      const cacheKey = getCacheKey(c);
+      const hasUserName = this.isUserNameNotEmpty(ciph);
+      const cacheKey = this.getCacheKey(ciph);
       if (!this.passwordStrengthCache.has(cacheKey)) {
         let userInput: string[] = [];
         if (hasUserName) {
-          const atPosition = c.login.username.indexOf("@");
+          const atPosition = login.username.indexOf("@");
           if (atPosition > -1) {
             userInput = userInput
               .concat(
-                c.login.username
+                login.username
                   .substr(0, atPosition)
                   .trim()
                   .toLowerCase()
@@ -70,15 +72,15 @@ export class WeakPasswordsReportComponent extends CipherReportComponent implemen
               )
               .filter((i) => i.length >= 3);
           } else {
-            userInput = c.login.username
+            userInput = login.username
               .trim()
               .toLowerCase()
               .split(/[^A-Za-z0-9]/)
-              .filter((i) => i.length >= 3);
+              .filter((i: any) => i.length >= 3);
           }
         }
         const result = this.passwordStrengthService.getPasswordStrength(
-          c.login.password,
+          login.password,
           null,
           userInput.length > 0 ? userInput : null
         );
@@ -86,17 +88,17 @@ export class WeakPasswordsReportComponent extends CipherReportComponent implemen
       }
       const score = this.passwordStrengthCache.get(cacheKey);
       if (score != null && score <= 2) {
-        this.passwordStrengthMap.set(c.id, this.scoreKey(score));
-        weakPasswordCiphers.push(c);
+        this.passwordStrengthMap.set(id, this.scoreKey(score));
+        this.weakPasswordCiphers.push(ciph);
       }
     });
-    weakPasswordCiphers.sort((a, b) => {
+    this.weakPasswordCiphers.sort((a, b) => {
       return (
-        this.passwordStrengthCache.get(getCacheKey(a)) -
-        this.passwordStrengthCache.get(getCacheKey(b))
+        this.passwordStrengthCache.get(this.getCacheKey(a)) -
+        this.passwordStrengthCache.get(this.getCacheKey(b))
       );
     });
-    this.ciphers = weakPasswordCiphers;
+    this.ciphers = [...this.weakPasswordCiphers];
   }
 
   protected getAllCiphers(): Promise<CipherView[]> {
@@ -106,6 +108,14 @@ export class WeakPasswordsReportComponent extends CipherReportComponent implemen
   protected canManageCipher(c: CipherView): boolean {
     // this will only ever be false from the org view;
     return true;
+  }
+
+  private isUserNameNotEmpty(c: CipherView): boolean {
+    return !Utils.isNullOrWhitespace(c.login.username);
+  }
+
+  private getCacheKey(c: CipherView): string {
+    return c.login.password + "_____" + (this.isUserNameNotEmpty(c) ? c.login.username : "");
   }
 
   private scoreKey(score: number): [string, BadgeTypes] {

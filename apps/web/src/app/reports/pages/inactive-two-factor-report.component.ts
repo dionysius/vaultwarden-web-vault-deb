@@ -1,8 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 
 import { ModalService } from "@bitwarden/angular/services/modal.service";
+import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
-import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
 import { CipherType } from "@bitwarden/common/vault/enums/cipher-type";
@@ -18,15 +18,16 @@ import { CipherReportComponent } from "./cipher-report.component";
 export class InactiveTwoFactorReportComponent extends CipherReportComponent implements OnInit {
   services = new Map<string, string>();
   cipherDocs = new Map<string, string>();
+  disabled = true;
 
   constructor(
     protected cipherService: CipherService,
+    protected organizationService: OrganizationService,
     modalService: ModalService,
-    messagingService: MessagingService,
     private logService: LogService,
     passwordRepromptService: PasswordRepromptService
   ) {
-    super(modalService, messagingService, true, passwordRepromptService);
+    super(modalService, passwordRepromptService, organizationService);
   }
 
   async ngOnInit() {
@@ -43,33 +44,34 @@ export class InactiveTwoFactorReportComponent extends CipherReportComponent impl
     if (this.services.size > 0) {
       const allCiphers = await this.getAllCiphers();
       const inactive2faCiphers: CipherView[] = [];
-      const promises: Promise<void>[] = [];
       const docs = new Map<string, string>();
-      allCiphers.forEach((c) => {
+
+      allCiphers.forEach((ciph) => {
+        const { type, login, isDeleted, edit, id } = ciph;
         if (
-          c.type !== CipherType.Login ||
-          (c.login.totp != null && c.login.totp !== "") ||
-          !c.login.hasUris ||
-          c.isDeleted
+          type !== CipherType.Login ||
+          (login.totp != null && login.totp !== "") ||
+          !login.hasUris ||
+          isDeleted ||
+          (!this.organization && !edit)
         ) {
           return;
         }
-        for (let i = 0; i < c.login.uris.length; i++) {
-          const u = c.login.uris[i];
+        for (let i = 0; i < login.uris.length; i++) {
+          const u = login.uris[i];
           if (u.uri != null && u.uri !== "") {
             const uri = u.uri.replace("www.", "");
             const domain = Utils.getDomain(uri);
             if (domain != null && this.services.has(domain)) {
               if (this.services.get(domain) != null) {
-                docs.set(c.id, this.services.get(domain));
+                docs.set(id, this.services.get(domain));
               }
-              inactive2faCiphers.push(c);
+              inactive2faCiphers.push(ciph);
             }
           }
         }
       });
-      await Promise.all(promises);
-      this.ciphers = inactive2faCiphers;
+      this.ciphers = [...inactive2faCiphers];
       this.cipherDocs = docs;
     }
   }
