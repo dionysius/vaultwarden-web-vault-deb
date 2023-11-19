@@ -370,13 +370,13 @@
     "message": "项目已发送到回收站"
   },
   "overwritePasswordConfirmation": {
-    "message": "您确定要覆盖当前密码吗？"
+    "message": "确定要覆盖当前密码吗？"
   },
   "overwriteUsername": {
     "message": "覆盖用户名"
   },
   "overwriteUsernameConfirmation": {
-    "message": "您确定要覆盖当前用户名吗？"
+    "message": "确定要覆盖当前用户名吗？"
   },
   "noneFolder": {
     "message": "无文件夹",
@@ -461,7 +461,7 @@
     "message": "附件已删除"
   },
   "deleteAttachmentConfirmation": {
-    "message": "您确定要删除此附件吗？"
+    "message": "确定要删除此附件吗？"
   },
   "attachmentSaved": {
     "message": "附件已保存"
@@ -485,7 +485,7 @@
     "message": "文件夹已添加"
   },
   "deleteFolderConfirmation": {
-    "message": "您确定要删除此文件夹吗？"
+    "message": "确定要删除此文件夹吗？"
   },
   "deletedFolder": {
     "message": "文件夹已删除"
@@ -738,7 +738,7 @@
     "message": "您的登录会话已过期。"
   },
   "logOutConfirmation": {
-    "message": "您确定要注销吗？"
+    "message": "确定要注销吗？"
   },
   "logOut": {
     "message": "注销"
@@ -1472,7 +1472,7 @@
     "message": "隐私条款"
   },
   "unsavedChangesConfirmation": {
-    "message": "您确定要退出吗？如果您现在退出，您当前的信息不会被保存。"
+    "message": "确定要离开吗？如果您现在离开，您当前的信息不会被保存。"
   },
   "unsavedChangesTitle": {
     "message": "更改未保存"
@@ -1510,7 +1510,7 @@
     "message": "永久删除项目"
   },
   "permanentlyDeleteItemConfirmation": {
-    "message": "您确定要永久删除此项目吗？"
+    "message": "确定要永久删除此项目吗？"
   },
   "permanentlyDeletedItem": {
     "message": "项目已永久删除"
@@ -1948,7 +1948,7 @@
     "message": "退出组织"
   },
   "leaveOrganizationConfirmation": {
-    "message": "您确定要退出这个组织吗？"
+    "message": "确定要退出该组织吗？"
   },
   "leftOrganization": {
     "message": "您已经退出该组织。"
@@ -2085,7 +2085,7 @@
     "message": "无法访问已停用组织中的项目。请联系您的组织所有者获取协助。"
   },
   "neverLockWarning": {
-    "message": "确定要使用「从不」选项吗？将锁定选项设置为「从不」会将密码库的加密密钥存储在您的设备上。如果使用此选项，应确保您的设备得到妥善的保护。"
+    "message": "确定要使用「从不」选项吗？将锁定选项设置为「从不」会将密码库的加密密钥存储在您的设备上。如果使用此选项，您必须确保您的设备安全。"
   },
   "vault": {
     "message": "密码库"
@@ -2501,7 +2501,7 @@
     "message": "选择一个集合"
   },
   "importTargetHint": {
-    "message": "如果您希望将导入的文件内容移动到 $DESTINATION$，请选择此选项",
+    "message": "如果您希望将导入的文件内容移动到某个 $DESTINATION$，请选择此选项",
     "description": "Located as a hint under the import target. Will be appended by either folder or collection, depending if the user is importing into an individual or an organizational vault.",
     "placeholders": {
       "destination": {
@@ -2560,7 +2560,7 @@
     "message": "多重身份验证失败"
   },
   "includeSharedFolders": {
-    "message": "包含已共享的文件夹"
+    "message": "包含共享的文件夹"
   },
   "lastPassEmail": {
     "message": "LastPass Email"
