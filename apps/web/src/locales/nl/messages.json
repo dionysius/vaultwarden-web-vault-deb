@@ -4218,8 +4218,8 @@
     "message": "Deze Send is standaard verborgen. Je kunt de zichtbaarheid ervan in- en uitschakelen met de knop hieronder.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
-  "downloadFile": {
-    "message": "Bestand downloaden"
+  "downloadAttachments": {
+    "message": "Bijlagen downloaden"
   },
   "sendAccessUnavailable": {
     "message": "De Send die je probeert te benaderen is niet (langer) beschikbaar.",
@@ -4609,8 +4609,8 @@
     "message": "om het vandaag te proberen.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Learn more about Bitwarden Send or sign up to **try it today.**'"
   },
-  "sendCreatorIdentifier": {
-    "message": "Bitwarden-gebruiker $USER_IDENTIFIER$ heeft het volgende met je gedeeld",
+  "sendAccessCreatorIdentifier": {
+    "message": "Bitwarden-lid $USER_IDENTIFIER$ heeft het volgende met je gedeeld",
     "placeholders": {
       "user_identifier": {
         "content": "$1",
@@ -7182,6 +7182,9 @@
   "next": {
     "message": "Volgende"
   },
+  "ssoLoginIsRequired": {
+    "message": "SSO login is required"
+  },
   "selectedRegionFlag": {
     "message": "Geselecteerde regionale vlag"
   },
@@ -7392,5 +7395,8 @@
   },
   "projectAccessUpdated": {
     "message": "Projecttoegang bijgewerkt"
+  },
+  "unexpectedErrorSend": {
+    "message": "Er is een onverwachte fout opgetreden tijdens het laden van deze Send. Probeer het later opnieuw."
   }
 }

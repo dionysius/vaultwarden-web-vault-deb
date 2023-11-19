@@ -4218,8 +4218,8 @@
     "message": "Denne Send er som standard skjult. Dens synlighed kan ændres vha. knappen nedenfor.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
-  "downloadFile": {
-    "message": "Download fil"
+  "downloadAttachments": {
+    "message": "Download vedhæftninger"
   },
   "sendAccessUnavailable": {
     "message": "Den Send, der forsøges tilgået, findes ikke, eller er ikke længere tilgængelig.",
@@ -4609,8 +4609,8 @@
     "message": "for at prøve det i dag.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Learn more about Bitwarden Send or sign up to **try it today.**'"
   },
-  "sendCreatorIdentifier": {
-    "message": "Bitwarden-bruger $USER_IDENTIFIER$ delte flg. med dig",
+  "sendAccessCreatorIdentifier": {
+    "message": "Bitwarden-brugeren $USER_IDENTIFIER$ delte flg. med dig",
     "placeholders": {
       "user_identifier": {
         "content": "$1",
@@ -7182,6 +7182,9 @@
   "next": {
     "message": "Næste"
   },
+  "ssoLoginIsRequired": {
+    "message": "SSO-login er obligatorisk"
+  },
   "selectedRegionFlag": {
     "message": "Valgte områdeflag"
   },
@@ -7392,5 +7395,8 @@
   },
   "projectAccessUpdated": {
     "message": "Projektadgang opdateret"
+  },
+  "unexpectedErrorSend": {
+    "message": "En uventet fejl opstod under indlæsning af denne Send. Forsøg igen senere."
   }
 }

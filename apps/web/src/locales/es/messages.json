@@ -4218,8 +4218,8 @@
     "message": "Este Send está oculto por defecto. Puede cambiar su visibilidad usando el botón de abajo.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
-  "downloadFile": {
-    "message": "Descargar archivo"
+  "downloadAttachments": {
+    "message": "Download attachments"
   },
   "sendAccessUnavailable": {
     "message": "El envío al que está intentando acceder no existe o ya no está disponible.",
@@ -4252,7 +4252,7 @@
     "message": "Añadir contacto de emergencia"
   },
   "designatedEmergencyContacts": {
-    "message": "Diseñado como contacto de emergencia"
+    "message": "Designado como contacto de emergencia"
   },
   "noGrantedAccess": {
     "message": "Aún no has sido designado como un contacto de emergencia para nadie."
@@ -4609,8 +4609,8 @@
     "message": "pruébalo hoy.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Learn more about Bitwarden Send or sign up to **try it today.**'"
   },
-  "sendCreatorIdentifier": {
-    "message": "Usuario $USER_IDENTIFIER$ de Bitwarden compartió contigo",
+  "sendAccessCreatorIdentifier": {
+    "message": "Bitwarden member $USER_IDENTIFIER$ shared the following with you",
     "placeholders": {
       "user_identifier": {
         "content": "$1",
@@ -7182,6 +7182,9 @@
   "next": {
     "message": "Siguiente"
   },
+  "ssoLoginIsRequired": {
+    "message": "SSO login is required"
+  },
   "selectedRegionFlag": {
     "message": "Región seleccionada"
   },
@@ -7392,5 +7395,8 @@
   },
   "projectAccessUpdated": {
     "message": "Project access updated"
+  },
+  "unexpectedErrorSend": {
+    "message": "An unexpected error has occurred while loading this Send. Try again later."
   }
 }

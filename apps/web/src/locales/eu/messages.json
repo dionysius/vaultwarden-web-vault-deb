@@ -4218,8 +4218,8 @@
     "message": "Send hau modu lehenetsian ezkutatuta dago. Beheko botoia sakatuz alda dezakezu ikusgarritasuna.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
-  "downloadFile": {
-    "message": "Deskargatu fitxategia"
+  "downloadAttachments": {
+    "message": "Download attachments"
   },
   "sendAccessUnavailable": {
     "message": "Sartzen saiatzen ari zaren Send-a ez da existitzen edo ez dago erabilgarri.",
@@ -4609,8 +4609,8 @@
     "message": "gaur probatzeko.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Learn more about Bitwarden Send or sign up to **try it today.**'"
   },
-  "sendCreatorIdentifier": {
-    "message": "$USER_IDENTIFIER$ Bitwarden erabiltzaileak, ondorengoa zurekin partekatu du",
+  "sendAccessCreatorIdentifier": {
+    "message": "Bitwarden member $USER_IDENTIFIER$ shared the following with you",
     "placeholders": {
       "user_identifier": {
         "content": "$1",
@@ -7182,6 +7182,9 @@
   "next": {
     "message": "Next"
   },
+  "ssoLoginIsRequired": {
+    "message": "SSO login is required"
+  },
   "selectedRegionFlag": {
     "message": "Selected region flag"
   },
@@ -7392,5 +7395,8 @@
   },
   "projectAccessUpdated": {
     "message": "Project access updated"
+  },
+  "unexpectedErrorSend": {
+    "message": "An unexpected error has occurred while loading this Send. Try again later."
   }
 }

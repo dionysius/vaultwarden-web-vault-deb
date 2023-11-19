@@ -4218,8 +4218,8 @@
     "message": "Ĉi tiu sendado estas kaŝita defaŭlte. Vi povas ŝalti ĝian videblecon per la suba butono.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
-  "downloadFile": {
-    "message": "Elŝuti dosieron"
+  "downloadAttachments": {
+    "message": "Download attachments"
   },
   "sendAccessUnavailable": {
     "message": "La Sendo, kiun vi provas aliri, ne ekzistas aŭ ne plu haveblas.",
@@ -4609,8 +4609,8 @@
     "message": "provi ĝin hodiaŭ.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Learn more about Bitwarden Send or sign up to **try it today.**'"
   },
-  "sendCreatorIdentifier": {
-    "message": "Bitwarden-uzanto $USER_IDENTIFIER$ dividis la jenon kun vi",
+  "sendAccessCreatorIdentifier": {
+    "message": "Bitwarden member $USER_IDENTIFIER$ shared the following with you",
     "placeholders": {
       "user_identifier": {
         "content": "$1",
@@ -7182,6 +7182,9 @@
   "next": {
     "message": "Next"
   },
+  "ssoLoginIsRequired": {
+    "message": "SSO login is required"
+  },
   "selectedRegionFlag": {
     "message": "Selected region flag"
   },
@@ -7392,5 +7395,8 @@
   },
   "projectAccessUpdated": {
     "message": "Project access updated"
+  },
+  "unexpectedErrorSend": {
+    "message": "An unexpected error has occurred while loading this Send. Try again later."
   }
 }

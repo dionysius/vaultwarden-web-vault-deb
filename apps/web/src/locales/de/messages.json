@@ -648,22 +648,22 @@
     "message": "Benenne deinen Passkey, um ihn zu identifizieren."
   },
   "useForVaultEncryption": {
-    "message": "Use for vault encryption"
+    "message": "Zur Tresorverschlüsselung verwenden"
   },
   "useForVaultEncryptionInfo": {
-    "message": "Log in and unlock on supported devices without your master password. Follow the prompts from your browser to finalize setup."
+    "message": "Anmelden und Entsperren auf unterstützten Geräten ohne dein Master-Passwort. Folge den Anweisungen deines Browsers, um die Einrichtung abzuschließen."
   },
   "useForVaultEncryptionErrorReadingPasskey": {
-    "message": "Error reading passkey. Try again or uncheck this option."
+    "message": "Fehler beim Lesen des Passkeys. Versuche es erneut oder deaktiviere diese Option."
   },
   "encryptionNotSupported": {
     "message": "Verschlüsselung nicht unterstützt"
   },
   "encryptionNotEnabled": {
-    "message": "Encryption not enabled"
+    "message": "Verschlüsselung nicht aktiviert"
   },
   "usedForEncryption": {
-    "message": "Used for encryption"
+    "message": "Wird für die Verschlüsselung verwendet"
   },
   "loginWithPasskeyEnabled": {
     "message": "Anmeldung mit Passkey aktiviert"
@@ -4020,7 +4020,7 @@
     "message": "All Teams Starter features, plus:"
   },
   "chooseMonthlyOrAnnualBilling": {
-    "message": "Choose monthly or annual billing"
+    "message": "Monatliche oder jährliche Abrechnung wählen"
   },
   "abilityToAddMoreThanNMembers": {
     "message": "Ability to add more than $COUNT$ members",
@@ -4218,8 +4218,8 @@
     "message": "Dieses Send ist standardmäßig ausgeblendet. Du kannst die Sichtbarkeit mit dem Button unten umschalten.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
-  "downloadFile": {
-    "message": "Datei herunterladen"
+  "downloadAttachments": {
+    "message": "Anhänge herunterladen"
   },
   "sendAccessUnavailable": {
     "message": "Das Send, auf das du zugreifen möchtest, existiert nicht oder ist nicht mehr verfügbar.",
@@ -4609,8 +4609,8 @@
     "message": "um es heute auszuprobieren.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Learn more about Bitwarden Send or sign up to **try it today.**'"
   },
-  "sendCreatorIdentifier": {
-    "message": "Bitwarden Benutzer $USER_IDENTIFIER$ hat Folgendes mit dir geteilt",
+  "sendAccessCreatorIdentifier": {
+    "message": "Bitwarden-Mitglied $USER_IDENTIFIER$ hat Folgendes mit dir geteilt",
     "placeholders": {
       "user_identifier": {
         "content": "$1",
@@ -7182,6 +7182,9 @@
   "next": {
     "message": "Weiter"
   },
+  "ssoLoginIsRequired": {
+    "message": "SSO-Anmeldung ist erforderlich"
+  },
   "selectedRegionFlag": {
     "message": "Flagge der ausgewählten Region"
   },
@@ -7302,7 +7305,7 @@
     "message": "Manage the collection behavior for the organization"
   },
   "limitCollectionCreationDeletionDesc": {
-    "message": "Limit collection creation and deletion to owners and admins"
+    "message": "Sammlungserstellung und -löschung auf Eigentümer und Administratoren beschränken"
   },
   "collectionManagementUpdated": {
     "message": "Collection management behavior saved"
@@ -7354,10 +7357,10 @@
     "message": "Beta"
   },
   "assignCollectionAccess": {
-    "message": "Assign collection access"
+    "message": "Sammlungszugriff zuweisen"
   },
   "editedCollections": {
-    "message": "Edited collections"
+    "message": "Bearbeitete Sammlungen"
   },
   "baseUrl": {
     "message": "Server-URL"
@@ -7391,6 +7394,9 @@
     "description": "This is followed a by a hyperlink to the help website."
   },
   "projectAccessUpdated": {
-    "message": "Project access updated"
+    "message": "Projektzugriff aktualisiert"
+  },
+  "unexpectedErrorSend": {
+    "message": "Beim Laden dieses Sends ist ein unerwarteter Fehler aufgetreten. Versuche es später erneut."
   }
 }

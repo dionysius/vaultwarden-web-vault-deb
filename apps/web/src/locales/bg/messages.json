@@ -2763,7 +2763,7 @@
     "message": "Трезор по уеб"
   },
   "cli": {
-    "message": "CLI"
+    "message": "ИКР"
   },
   "bitWebVault": {
     "message": "Трезор по уеб"
@@ -4218,8 +4218,8 @@
     "message": "Стандартно изпращането е скрито. Може да промените това като натиснете бутона по-долу.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
-  "downloadFile": {
-    "message": "Изтеглете файл"
+  "downloadAttachments": {
+    "message": "Сваляне на прикачените файлове"
   },
   "sendAccessUnavailable": {
     "message": "Изпращането, което се опитвате да достъпите, е изтрито или вече не е налично.",
@@ -4609,8 +4609,8 @@
     "message": "за да го пробвате още днес.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Learn more about Bitwarden Send or sign up to **try it today.**'"
   },
-  "sendCreatorIdentifier": {
-    "message": "Потребителят на Битуорден — $USER_IDENTIFIER$, сподели следното с вас",
+  "sendAccessCreatorIdentifier": {
+    "message": "Членът на Битуорден — $USER_IDENTIFIER$, сподели следното с вас",
     "placeholders": {
       "user_identifier": {
         "content": "$1",
@@ -7182,6 +7182,9 @@
   "next": {
     "message": "Next"
   },
+  "ssoLoginIsRequired": {
+    "message": "Необходимо е вписване чрез еднократно удостоверяване"
+  },
   "selectedRegionFlag": {
     "message": "Знаме на избрания регион"
   },
@@ -7392,5 +7395,8 @@
   },
   "projectAccessUpdated": {
     "message": "Достъпът до проекта е актуализиран"
+  },
+  "unexpectedErrorSend": {
+    "message": "Възникна неочаквана грешка при зареждането на това изпращане. Опитайте отново по-късно."
   }
 }

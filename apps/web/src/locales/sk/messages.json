@@ -4218,8 +4218,8 @@
     "message": "Tento Send je normálne skrytý. Tlačidlom nižšie môžete prepnúť jeho viditeľnosť.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
-  "downloadFile": {
-    "message": "Stiahnuť súbor"
+  "downloadAttachments": {
+    "message": "Stiahnuť prílohy"
   },
   "sendAccessUnavailable": {
     "message": "Odoslanie, ku ktorému sa pokúšate získať prístup, neexistuje alebo už nie je k dispozícii.",
@@ -4609,8 +4609,8 @@
     "message": "skúste to ešte dnes.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Learn more about Bitwarden Send or sign up to **try it today.**'"
   },
-  "sendCreatorIdentifier": {
-    "message": "Bitwarden používateľ $USER_IDENTIFIER$ zdieľal nasledujúce s vami",
+  "sendAccessCreatorIdentifier": {
+    "message": "Bitwarden člen $USER_IDENTIFIER$ zdieľal s vami nasledujúce",
     "placeholders": {
       "user_identifier": {
         "content": "$1",
@@ -7182,6 +7182,9 @@
   "next": {
     "message": "Ďalej"
   },
+  "ssoLoginIsRequired": {
+    "message": "Vyžaduje sa prihlásenie cez SSO"
+  },
   "selectedRegionFlag": {
     "message": "Selected region flag"
   },
@@ -7392,5 +7395,8 @@
   },
   "projectAccessUpdated": {
     "message": "Prístup k projektu aktualizovaný"
+  },
+  "unexpectedErrorSend": {
+    "message": "Nastal neočakávaný problém pri načítavaní tohto Sendu. Skúste to neskôr."
   }
 }

@@ -4218,8 +4218,8 @@
     "message": "این ارسال به طور پیش‌فرض پنهان است. با استفاده از دکمه زیر می‌توانید نمایان بودن آن را تغییر دهید.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
-  "downloadFile": {
-    "message": "بارگیری پرونده"
+  "downloadAttachments": {
+    "message": "Download attachments"
   },
   "sendAccessUnavailable": {
     "message": "ارسالی که می‌خواهید به آن دسترسی پیدا کنید وجود ندارد یا دیگر در دسترس نیست.",
@@ -4609,8 +4609,8 @@
     "message": "برای امتحان کردن امروز.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Learn more about Bitwarden Send or sign up to **try it today.**'"
   },
-  "sendCreatorIdentifier": {
-    "message": "کاربر Bitwarden $USER_IDENTIFIER$ موارد زیر را با شما به اشتراک گذاشت",
+  "sendAccessCreatorIdentifier": {
+    "message": "Bitwarden member $USER_IDENTIFIER$ shared the following with you",
     "placeholders": {
       "user_identifier": {
         "content": "$1",
@@ -7182,6 +7182,9 @@
   "next": {
     "message": "بعدی"
   },
+  "ssoLoginIsRequired": {
+    "message": "SSO login is required"
+  },
   "selectedRegionFlag": {
     "message": "پرچم منطقه انتخاب شد"
   },
@@ -7392,5 +7395,8 @@
   },
   "projectAccessUpdated": {
     "message": "Project access updated"
+  },
+  "unexpectedErrorSend": {
+    "message": "An unexpected error has occurred while loading this Send. Try again later."
   }
 }

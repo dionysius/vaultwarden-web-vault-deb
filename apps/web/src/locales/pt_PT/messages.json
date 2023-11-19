@@ -648,7 +648,7 @@
     "message": "Dê um nome à sua chave de acesso para o ajudar a identificá-la."
   },
   "useForVaultEncryption": {
-    "message": "Utilização para encriptação de cofre"
+    "message": "Utilizar para encriptação de cofre"
   },
   "useForVaultEncryptionInfo": {
     "message": "Inicie sessão e desbloqueie em dispositivos suportados sem a sua palavra-passe mestra. Siga as instruções do seu navegador para finalizar a configuração."
@@ -1273,7 +1273,7 @@
     "message": "Zona de perigo"
   },
   "dangerZoneDesc": {
-    "message": "Cuidado, estas ações não são reversíveis!"
+    "message": "Cuidado, estas ações são irreversíveis!"
   },
   "deauthorizeSessions": {
     "message": "Desautorizar sessões"
@@ -4218,8 +4218,8 @@
     "message": "Este Send está oculto por defeito. Pode alternar a sua visibilidade utilizando o botão abaixo.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
-  "downloadFile": {
-    "message": "Transferir ficheiro"
+  "downloadAttachments": {
+    "message": "Transferir anexos"
   },
   "sendAccessUnavailable": {
     "message": "O Send a que está a tentar aceder não existe ou já não está disponível.",
@@ -4609,8 +4609,8 @@
     "message": "para o experimentar hoje.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Learn more about Bitwarden Send or sign up to **try it today.**'"
   },
-  "sendCreatorIdentifier": {
-    "message": "O utilizador $USER_IDENTIFIER$ do Bitwarden partilhou o seguinte consigo",
+  "sendAccessCreatorIdentifier": {
+    "message": "O membro $USER_IDENTIFIER$ do Bitwarden partilhou consigo o seguinte",
     "placeholders": {
       "user_identifier": {
         "content": "$1",
@@ -7182,6 +7182,9 @@
   "next": {
     "message": "Avançar"
   },
+  "ssoLoginIsRequired": {
+    "message": "É necessário um início de sessão SSO"
+  },
   "selectedRegionFlag": {
     "message": "Bandeira da região selecionada"
   },
@@ -7392,5 +7395,8 @@
   },
   "projectAccessUpdated": {
     "message": "Acesso ao projeto atualizado"
+  },
+  "unexpectedErrorSend": {
+    "message": "Ocorreu um erro inesperado ao carregar este Send. Tente novamente mais tarde."
   }
 }

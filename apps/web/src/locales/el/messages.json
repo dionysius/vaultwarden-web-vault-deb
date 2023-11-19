@@ -4218,8 +4218,8 @@
     "message": "Αυτό το send είναι κρυμμένο από προεπιλογή. Μπορείτε να αλλάξετε την ορατότητά του χρησιμοποιώντας το παρακάτω κουμπί.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
-  "downloadFile": {
-    "message": "Λήψη Αρχείου"
+  "downloadAttachments": {
+    "message": "Download attachments"
   },
   "sendAccessUnavailable": {
     "message": "Το Send που προσπαθείτε να αποκτήσετε πρόσβαση, δεν υπάρχει ή δεν είναι πλέον διαθέσιμο.",
@@ -4609,8 +4609,8 @@
     "message": "για να το δοκιμάσετε σήμερα.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Learn more about Bitwarden Send or sign up to **try it today.**'"
   },
-  "sendCreatorIdentifier": {
-    "message": "Ο χρήστης Bitwarden $USER_IDENTIFIER$ κοινοποίησε τα ακόλουθα μαζί σας",
+  "sendAccessCreatorIdentifier": {
+    "message": "Bitwarden member $USER_IDENTIFIER$ shared the following with you",
     "placeholders": {
       "user_identifier": {
         "content": "$1",
@@ -7182,6 +7182,9 @@
   "next": {
     "message": "Next"
   },
+  "ssoLoginIsRequired": {
+    "message": "SSO login is required"
+  },
   "selectedRegionFlag": {
     "message": "Selected region flag"
   },
@@ -7392,5 +7395,8 @@
   },
   "projectAccessUpdated": {
     "message": "Project access updated"
+  },
+  "unexpectedErrorSend": {
+    "message": "An unexpected error has occurred while loading this Send. Try again later."
   }
 }

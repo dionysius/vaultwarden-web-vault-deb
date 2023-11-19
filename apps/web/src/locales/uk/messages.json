@@ -4218,8 +4218,8 @@
     "message": "Це відправлення типово приховане. Ви можете змінити його видимість кнопкою нижче.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
-  "downloadFile": {
-    "message": "Завантажити файл"
+  "downloadAttachments": {
+    "message": "Завантажити вкладення"
   },
   "sendAccessUnavailable": {
     "message": "Відправлення, до якого ви намагаєтесь отримати доступ, не існує, або більше недоступне.",
@@ -4609,8 +4609,8 @@
     "message": "щоб спробувати.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Learn more about Bitwarden Send or sign up to **try it today.**'"
   },
-  "sendCreatorIdentifier": {
-    "message": "Користувач Bitwarden $USER_IDENTIFIER$ ділиться з вами таким",
+  "sendAccessCreatorIdentifier": {
+    "message": "Учасник Bitwarden $USER_IDENTIFIER$ ділиться з вами таким",
     "placeholders": {
       "user_identifier": {
         "content": "$1",
@@ -7182,6 +7182,9 @@
   "next": {
     "message": "Далі"
   },
+  "ssoLoginIsRequired": {
+    "message": "Потрібно увійти через SSO"
+  },
   "selectedRegionFlag": {
     "message": "Прапор вибраного регіону"
   },
@@ -7391,6 +7394,9 @@
     "description": "This is followed a by a hyperlink to the help website."
   },
   "projectAccessUpdated": {
-    "message": "Project access updated"
+    "message": "Доступ до проєкту оновлено"
+  },
+  "unexpectedErrorSend": {
+    "message": "Під час завантаження цього відправлення сталася неочікувана помилка. Повторіть спробу пізніше."
   }
 }

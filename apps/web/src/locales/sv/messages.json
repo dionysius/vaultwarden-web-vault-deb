@@ -4218,8 +4218,8 @@
     "message": "Denna Send är dold som standard. Du kan växla dess synlighet med hjälp av knappen nedan.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
-  "downloadFile": {
-    "message": "Ladda ner fil"
+  "downloadAttachments": {
+    "message": "Ladda ner bilagor"
   },
   "sendAccessUnavailable": {
     "message": "Den Send du försöker komma åt finns inte eller är inte längre tillgänglig.",
@@ -4609,8 +4609,8 @@
     "message": "att prova det idag.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Learn more about Bitwarden Send or sign up to **try it today.**'"
   },
-  "sendCreatorIdentifier": {
-    "message": "Bitwarden-användaren $USER_IDENTIFIER$ delade följande med dig",
+  "sendAccessCreatorIdentifier": {
+    "message": "Bitwarden member $USER_IDENTIFIER$ shared the following with you",
     "placeholders": {
       "user_identifier": {
         "content": "$1",
@@ -7182,6 +7182,9 @@
   "next": {
     "message": "Nästa"
   },
+  "ssoLoginIsRequired": {
+    "message": "SSO login is required"
+  },
   "selectedRegionFlag": {
     "message": "Selected region flag"
   },
@@ -7392,5 +7395,8 @@
   },
   "projectAccessUpdated": {
     "message": "Project access updated"
+  },
+  "unexpectedErrorSend": {
+    "message": "Ett oväntat fel inträffade när denna Send laddades. Försök igen senare."
   }
 }

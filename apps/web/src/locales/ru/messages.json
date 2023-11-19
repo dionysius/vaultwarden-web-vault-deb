@@ -4218,8 +4218,8 @@
     "message": "Эта Send по умолчанию скрыта. Вы можете переключить ее видимость с помощью кнопки ниже.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
-  "downloadFile": {
-    "message": "Скачать файл"
+  "downloadAttachments": {
+    "message": "Скачать вложения"
   },
   "sendAccessUnavailable": {
     "message": "Send, к которой вы пытаетесь получить доступ, больше не существует или недоступна.",
@@ -4609,7 +4609,7 @@
     "message": "чтобы попробовать уже сегодня.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Learn more about Bitwarden Send or sign up to **try it today.**'"
   },
-  "sendCreatorIdentifier": {
+  "sendAccessCreatorIdentifier": {
     "message": "Пользователь Bitwarden $USER_IDENTIFIER$ поделился с вами следующим",
     "placeholders": {
       "user_identifier": {
@@ -7182,6 +7182,9 @@
   "next": {
     "message": "Далее"
   },
+  "ssoLoginIsRequired": {
+    "message": "Требуется логин SSO"
+  },
   "selectedRegionFlag": {
     "message": "Флаг выбранного региона"
   },
@@ -7392,5 +7395,8 @@
   },
   "projectAccessUpdated": {
     "message": "Доступ к проекту обновлен"
+  },
+  "unexpectedErrorSend": {
+    "message": "При загрузке этой Send произошла непредвиденная ошибка. Повторите попытку позже."
   }
 }

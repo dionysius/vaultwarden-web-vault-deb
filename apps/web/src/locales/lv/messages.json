@@ -4218,8 +4218,8 @@
     "message": "Šis Send ir paslēpts pēc noklusējuma. Tā redzamību var pārslēgt ar zemāk esošo pogu.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
-  "downloadFile": {
-    "message": "Lejupielādēt datni"
+  "downloadAttachments": {
+    "message": "Lejupielādēt pielikumus"
   },
   "sendAccessUnavailable": {
     "message": "Send, kuram mēģini piekļūt, nepastāv vai vairs nav pieejams.",
@@ -4609,8 +4609,8 @@
     "message": "izmēģinātu šodien.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Learn more about Bitwarden Send or sign up to **try it today.**'"
   },
-  "sendCreatorIdentifier": {
-    "message": "Bitwarden lietotājs $USER_IDENTIFIER$ kopīgoja sekojošo",
+  "sendAccessCreatorIdentifier": {
+    "message": "Bitwarden dalībnieks $USER_IDENTIFIER$ kopīgoja sekojošo",
     "placeholders": {
       "user_identifier": {
         "content": "$1",
@@ -7182,6 +7182,9 @@
   "next": {
     "message": "Turpināt"
   },
+  "ssoLoginIsRequired": {
+    "message": "Vienotā pieteikšanās ir nepieciešama"
+  },
   "selectedRegionFlag": {
     "message": "Atlasītā apgabala karogs"
   },
@@ -7392,5 +7395,8 @@
   },
   "projectAccessUpdated": {
     "message": "Projekta piekļuve ir atjaunināta"
+  },
+  "unexpectedErrorSend": {
+    "message": "Atgadījās neparedzēta kļūda šī Send ielādēšanas laikā. Vēlāk jāmēģina vēlreiz."
   }
 }

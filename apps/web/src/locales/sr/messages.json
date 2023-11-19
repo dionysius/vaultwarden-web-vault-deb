@@ -648,22 +648,22 @@
     "message": "Именујте Ваш приступачни кључ за лакшу идентификацију."
   },
   "useForVaultEncryption": {
-    "message": "Use for vault encryption"
+    "message": "Користи се за шифровање сефа"
   },
   "useForVaultEncryptionInfo": {
-    "message": "Log in and unlock on supported devices without your master password. Follow the prompts from your browser to finalize setup."
+    "message": "Пријавите се и откључајте на подржаним уређајима без ваше главне лозинке. Пратите упутства из прегледача да бисте завршили подешавање."
   },
   "useForVaultEncryptionErrorReadingPasskey": {
-    "message": "Error reading passkey. Try again or uncheck this option."
+    "message": "Грешка при читању кључа. Покушајте поново или опозовите избор ове опције."
   },
   "encryptionNotSupported": {
     "message": "Шифровање није подржано"
   },
   "encryptionNotEnabled": {
-    "message": "Encryption not enabled"
+    "message": "Шифрирање није омогућено"
   },
   "usedForEncryption": {
-    "message": "Used for encryption"
+    "message": "Употребљено за шифровање"
   },
   "loginWithPasskeyEnabled": {
     "message": "Пријављивање са упаљеним приступчним кључем"
@@ -4218,8 +4218,8 @@
     "message": "Ово Слање је подразумевано скривено. Можете да пребацујете његову видљивост помоћу дугмета испод.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
-  "downloadFile": {
-    "message": "Преузми датотеку"
+  "downloadAttachments": {
+    "message": "Download attachments"
   },
   "sendAccessUnavailable": {
     "message": "„Send“ које покушавате да приступите не постоји или више није доступан.",
@@ -4609,8 +4609,8 @@
     "message": "да пробаш одмах.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Learn more about Bitwarden Send or sign up to **try it today.**'"
   },
-  "sendCreatorIdentifier": {
-    "message": "Bitwarden корисник $USER_IDENTIFIER$ је поделио следеће са тобом",
+  "sendAccessCreatorIdentifier": {
+    "message": "Bitwarden member $USER_IDENTIFIER$ shared the following with you",
     "placeholders": {
       "user_identifier": {
         "content": "$1",
@@ -7182,6 +7182,9 @@
   "next": {
     "message": "Следеће"
   },
+  "ssoLoginIsRequired": {
+    "message": "SSO login is required"
+  },
   "selectedRegionFlag": {
     "message": "Одабрана застава"
   },
@@ -7391,6 +7394,9 @@
     "description": "This is followed a by a hyperlink to the help website."
   },
   "projectAccessUpdated": {
-    "message": "Project access updated"
+    "message": "Приступ пројекту је ажуриран"
+  },
+  "unexpectedErrorSend": {
+    "message": "An unexpected error has occurred while loading this Send. Try again later."
   }
 }

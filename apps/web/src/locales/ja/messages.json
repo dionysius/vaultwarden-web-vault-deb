@@ -4218,8 +4218,8 @@
     "message": "このSendはデフォルトでは非表示になっています。下のボタンで表示・非表示が切り替え可能です。",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
-  "downloadFile": {
-    "message": "ファイルをダウンロード"
+  "downloadAttachments": {
+    "message": "添付ファイルをダウンロード"
   },
   "sendAccessUnavailable": {
     "message": "アクセスしようとしているSendは存在しないか、利用できません。",
@@ -4609,8 +4609,8 @@
     "message": "試してみてください",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Learn more about Bitwarden Send or sign up to **try it today.**'"
   },
-  "sendCreatorIdentifier": {
-    "message": "Bitwarden ユーザー $USER_IDENTIFIER$ が共有しました",
+  "sendAccessCreatorIdentifier": {
+    "message": "Bitwarden メンバー $USER_IDENTIFIER$ が共有しました",
     "placeholders": {
       "user_identifier": {
         "content": "$1",
@@ -7182,6 +7182,9 @@
   "next": {
     "message": "次へ"
   },
+  "ssoLoginIsRequired": {
+    "message": "SSO ログインが必要です"
+  },
   "selectedRegionFlag": {
     "message": "リージョン選択"
   },
@@ -7392,5 +7395,8 @@
   },
   "projectAccessUpdated": {
     "message": "プロジェクトへのアクセスを更新しました"
+  },
+  "unexpectedErrorSend": {
+    "message": "この Send の読み込み中に予期しないエラーが発生しました。後でもう一度お試しください。"
   }
 }

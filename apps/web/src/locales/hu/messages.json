@@ -4218,8 +4218,8 @@
     "message": "Ez a Send alapértelmezésben rejtett. Az alábbi gombbal átváltható a láthatósága.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
-  "downloadFile": {
-    "message": "Fájl letöltése"
+  "downloadAttachments": {
+    "message": "Mellékletek letöltése"
   },
   "sendAccessUnavailable": {
     "message": "Az elérendő küldés nem létezik vagy már nem elérhető.",
@@ -4609,7 +4609,7 @@
     "message": "próbáljuk ki még ma.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Learn more about Bitwarden Send or sign up to **try it today.**'"
   },
-  "sendCreatorIdentifier": {
+  "sendAccessCreatorIdentifier": {
     "message": "$USER_IDENTIFIER$ Bitwarden felhasználó megosztotta a következőket",
     "placeholders": {
       "user_identifier": {
@@ -7182,6 +7182,9 @@
   "next": {
     "message": "Következő"
   },
+  "ssoLoginIsRequired": {
+    "message": "SSO bejelentkezés szükséges"
+  },
   "selectedRegionFlag": {
     "message": "Kiválasztott régió zászló"
   },
@@ -7392,5 +7395,8 @@
   },
   "projectAccessUpdated": {
     "message": "A projekt elérés frissítésre került."
+  },
+  "unexpectedErrorSend": {
+    "message": "Váratlan hiba történt a Send betöltésekor. Próbáljuk újra később."
   }
 }

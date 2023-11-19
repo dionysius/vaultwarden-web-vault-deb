@@ -4218,8 +4218,8 @@
     "message": "Bu Send varsayılan olarak gizlidir. Aşağıdaki düğmeyi kullanarak görünürlüğünü değiştirebilirsiniz.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
-  "downloadFile": {
-    "message": "Dosyayı indir"
+  "downloadAttachments": {
+    "message": "Ekleri indir"
   },
   "sendAccessUnavailable": {
     "message": "Erişmeye çalıştığınız Send yok veya artık mevcut değil.",
@@ -4609,8 +4609,8 @@
     "message": "hemen deneyin.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Learn more about Bitwarden Send or sign up to **try it today.**'"
   },
-  "sendCreatorIdentifier": {
-    "message": "Bitwarden kullanıcısı $USER_IDENTIFIER$ aşağıdakileri sizinle paylaştı",
+  "sendAccessCreatorIdentifier": {
+    "message": "Bitwarden üyesi $USER_IDENTIFIER$ aşağıdakileri sizinle paylaştı",
     "placeholders": {
       "user_identifier": {
         "content": "$1",
@@ -7182,6 +7182,9 @@
   "next": {
     "message": "İleri"
   },
+  "ssoLoginIsRequired": {
+    "message": "SSO girişi gereklidir"
+  },
   "selectedRegionFlag": {
     "message": "Seçilen bölgenin bayrağı"
   },
@@ -7392,5 +7395,8 @@
   },
   "projectAccessUpdated": {
     "message": "Proje erişimi güncellendi"
+  },
+  "unexpectedErrorSend": {
+    "message": "Bu Gönderim yüklenirken beklenmeyen bir hata oluştu. Daha sonra tekrar deneyin."
   }
 }

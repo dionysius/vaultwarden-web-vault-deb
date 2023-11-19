@@ -4218,8 +4218,8 @@
     "message": "Send on oletusarvoisesti piilotettu. Voit vaihtaa sen näkyvyyttä alla olevalla painikkeella.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
-  "downloadFile": {
-    "message": "Lataa tiedosto"
+  "downloadAttachments": {
+    "message": "Lataa liitteet"
   },
   "sendAccessUnavailable": {
     "message": "Sendiä, jota yrität avata, ei ole olemassa tai se ei ole enää käytettävissä.",
@@ -4609,8 +4609,8 @@
     "message": "kokeillaksesi sitä tänään.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Learn more about Bitwarden Send or sign up to **try it today.**'"
   },
-  "sendCreatorIdentifier": {
-    "message": "Bitwarden-käyttäjä $USER_IDENTIFIER$ jakoi kanssasi seuraavat",
+  "sendAccessCreatorIdentifier": {
+    "message": "Bitwarden-jäsen $USER_IDENTIFIER$ jakoi sinulle seuraavat",
     "placeholders": {
       "user_identifier": {
         "content": "$1",
@@ -7182,6 +7182,9 @@
   "next": {
     "message": "Seuraava"
   },
+  "ssoLoginIsRequired": {
+    "message": "Kertakirjautuminen vaaditaan"
+  },
   "selectedRegionFlag": {
     "message": "Valitun alueen lippu"
   },
@@ -7391,6 +7394,9 @@
     "description": "This is followed a by a hyperlink to the help website."
   },
   "projectAccessUpdated": {
-    "message": "Project access updated"
+    "message": "Projektin käyttöoikeudet on muutettu"
+  },
+  "unexpectedErrorSend": {
+    "message": "Odottamaton virhe ladattaessa Sendiä. Yritä myöhemmin uudelleen."
   }
 }

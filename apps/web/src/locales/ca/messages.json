@@ -4218,8 +4218,8 @@
     "message": "Aquest Send està ocult per defecte. Podeu canviar la seua visibilitat mitjançant el botó següent.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
-  "downloadFile": {
-    "message": "Baixa el fitxer"
+  "downloadAttachments": {
+    "message": "Baixa els fitxers adjunts"
   },
   "sendAccessUnavailable": {
     "message": "L'enviament al qual intenteu accedir no existeix o ja no està disponible.",
@@ -4609,8 +4609,8 @@
     "message": "per provar-ho hui.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Learn more about Bitwarden Send or sign up to **try it today.**'"
   },
-  "sendCreatorIdentifier": {
-    "message": "L'usuari bitwarden $USER_IDENTIFIER$ ha compartit el següent amb vosaltres",
+  "sendAccessCreatorIdentifier": {
+    "message": "El membre de Bitwarden $USER_IDENTIFIER$ us ha compartit això",
     "placeholders": {
       "user_identifier": {
         "content": "$1",
@@ -7182,6 +7182,9 @@
   "next": {
     "message": "Següent"
   },
+  "ssoLoginIsRequired": {
+    "message": "Inici de sessió SSO necessari"
+  },
   "selectedRegionFlag": {
     "message": "Bandera de la regió seleccionada"
   },
@@ -7392,5 +7395,8 @@
   },
   "projectAccessUpdated": {
     "message": "S'ha actualitzat l'accés al projecte"
+  },
+  "unexpectedErrorSend": {
+    "message": "S'ha produït un error inesperat en carregar aquest enviament. Torneu a provar-ho més tard."
   }
 }
