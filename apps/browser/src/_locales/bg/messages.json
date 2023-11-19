@@ -442,7 +442,7 @@
     "message": "При заключване на системата"
   },
   "onRestart": {
-    "message": "При повторно пускане на четеца"
+    "message": "При повторно пускане на браузъра"
   },
   "never": {
     "message": "Никога"
@@ -2191,13 +2191,13 @@
     "message": "Вписването е стартирано"
   },
   "exposedMasterPassword": {
-    "message": "Exposed Master Password"
+    "message": "Разобличена главна парола"
   },
   "exposedMasterPasswordDesc": {
     "message": "Паролата е намерена в пробив на данни. Използвайте уникална парола, за да защитите вашия акаунт. Наистина ли искате да използвате слаба парола?"
   },
   "weakAndExposedMasterPassword": {
-    "message": "Weak and Exposed Master Password"
+    "message": "Слаба и разобличена главна парола"
   },
   "weakAndBreachedMasterPasswordDesc": {
     "message": "Разпозната е слаба парола, която присъства в известен случай на изтекли данни. Използвайте сложна и уникална парола, за да защитите данните си. Наистина ли искате да използвате тази парола?"
@@ -2575,7 +2575,7 @@
     "message": "Секретният ключ няма да бъде копиран в клонирания елемент. Искате ли да продължите с клонирането на елемента?"
   },
   "passkeyFeatureIsNotImplementedForAccountsWithoutMasterPassword": {
-    "message": "Verification required by the initiating site. This feature is not yet implemented for accounts without master password."
+    "message": "Изисква се проверка от иницииращия сайт. Тази функция все още не е внедрена за акаунти без главна парола."
   },
   "logInWithPasskey": {
     "message": "Вписване със секретен ключ?"

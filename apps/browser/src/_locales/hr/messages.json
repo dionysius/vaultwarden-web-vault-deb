@@ -92,13 +92,13 @@
     "message": "Auto-ispuna"
   },
   "autoFillLogin": {
-    "message": "Auto-fill login"
+    "message": "Auto-ispuna prijave"
   },
   "autoFillCard": {
-    "message": "Auto-fill card"
+    "message": "Auto-ispuna kartice"
   },
   "autoFillIdentity": {
-    "message": "Auto-fill identity"
+    "message": "Auto-ispuna identiteta"
   },
   "generatePasswordCopied": {
     "message": "Generiraj lozinku (i kopiraj)"
@@ -110,19 +110,19 @@
     "message": "Nema podudarajućih prijava"
   },
   "noCards": {
-    "message": "No cards"
+    "message": "Nema kartica"
   },
   "noIdentities": {
-    "message": "No identities"
+    "message": "Nema identiteta"
   },
   "addLoginMenu": {
-    "message": "Add login"
+    "message": "Dodaj prijavu"
   },
   "addCardMenu": {
-    "message": "Add card"
+    "message": "Dodaj karticu"
   },
   "addIdentityMenu": {
-    "message": "Add identity"
+    "message": "Dodaj identitet"
   },
   "unlockVaultMenu": {
     "message": "Otključaj svoj trezor"
@@ -1254,7 +1254,7 @@
     "message": "Identitet"
   },
   "typePasskey": {
-    "message": "Passkey"
+    "message": "Pristupni ključ"
   },
   "passwordHistory": {
     "message": "Povijest"
@@ -1657,7 +1657,7 @@
     "message": "Pravila organizacije utječu na tvoje mogućnosti vlasništva. "
   },
   "personalOwnershipPolicyInEffectImports": {
-    "message": "An organization policy has blocked importing items into your individual vault."
+    "message": "Organizacijsko pravilo onemogućuje uvoz stavki u tvoj osobni trezor."
   },
   "excludedDomains": {
     "message": "Izuzete domene"
@@ -1926,11 +1926,11 @@
     "message": "Odaberi mapu..."
   },
   "orgPermissionsUpdatedMustSetPassword": {
-    "message": "Your organization permissions were updated, requiring you to set a master password.",
+    "message": "Moraš postaviti glavnu lozinku jer su dopuštenja tvoje organizacije ažurirana.",
     "description": "Used as a card title description on the set password page to explain why the user is there"
   },
   "orgRequiresYouToSetPassword": {
-    "message": "Your organization requires you to set a master password.",
+    "message": "Tvoja organizacija zahtijeva da postaviš glavnu lozinku.",
     "description": "Used as a card title description on the set password page to explain why the user is there"
   },
   "hours": {
@@ -2458,26 +2458,26 @@
     "description": "Message appearing below the autofill on load message when master password reprompt is set for a vault item."
   },
   "importData": {
-    "message": "Import data",
+    "message": "Uvezi podatke",
     "description": "Used for the header of the import dialog, the import button and within the file-password-prompt"
   },
   "importError": {
-    "message": "Import error"
+    "message": "Greška prilikom uvoza"
   },
   "importErrorDesc": {
-    "message": "There was a problem with the data you tried to import. Please resolve the errors listed below in your source file and try again."
+    "message": "Postoji problem s podacima za uvoz. Potrebno je razriješiti doljenavedene greške u izvornoj datoteci i pokušati ponovno."
   },
   "resolveTheErrorsBelowAndTryAgain": {
-    "message": "Resolve the errors below and try again."
+    "message": "Popravi navedene greške i pokušaj ponovo."
   },
   "description": {
-    "message": "Description"
+    "message": "Opis"
   },
   "importSuccess": {
-    "message": "Data successfully imported"
+    "message": "Uvoz podataka u trezor je uspio"
   },
   "importSuccessNumberOfItems": {
-    "message": "A total of $AMOUNT$ items were imported.",
+    "message": "Ukupno je uvezeno $AMOUNT$ stavaka.",
     "placeholders": {
       "amount": {
         "content": "$1",
@@ -2486,10 +2486,10 @@
     }
   },
   "total": {
-    "message": "Total"
+    "message": "Ukupno"
   },
   "importWarning": {
-    "message": "You are importing data to $ORGANIZATION$. Your data may be shared with members of this organization. Do you want to proceed?",
+    "message": "Uvoziš podatke u $ORGANIZATION$. Tvoji podaci možda će biti podijeljeni s članovima ove organizacije. Želiš li svejedno uvesti podatke?",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -2498,31 +2498,31 @@
     }
   },
   "importFormatError": {
-    "message": "Data is not formatted correctly. Please check your import file and try again."
+    "message": "Podaci nisu ispravno formatirani. Provjeri uvoznu datoteku i pokušaj ponovno."
   },
   "importNothingError": {
-    "message": "Nothing was imported."
+    "message": "Ništa nije uvezeno."
   },
   "importEncKeyError": {
-    "message": "Error decrypting the exported file. Your encryption key does not match the encryption key used export the data."
+    "message": "Greška u dešifriranju izvozne datoteke. Ovaj ključ za šifriranje ne odgovara ključu za šifriranje korištenom pri izvozu datoteke."
   },
   "invalidFilePassword": {
-    "message": "Invalid file password, please use the password you entered when you created the export file."
+    "message": "Nesipravna lozinka datoteke. Unesi lozinku izvozne datoteke."
   },
   "importDestination": {
-    "message": "Import destination"
+    "message": "Odredište uvoza"
   },
   "learnAboutImportOptions": {
-    "message": "Learn about your import options"
+    "message": "Više o mogućnostima uvoza"
   },
   "selectImportFolder": {
-    "message": "Select a folder"
+    "message": "Odaberi mapu"
   },
   "selectImportCollection": {
-    "message": "Select a collection"
+    "message": "Odaberi zbirku"
   },
   "importTargetHint": {
-    "message": "Select this option if you want the imported file contents moved to a $DESTINATION$",
+    "message": "Odaberi ovu opciju ako sadržaj uvezene datoteke želiš spremiti u $DESTINATION$",
     "description": "Located as a hint under the import target. Will be appended by either folder or collection, depending if the user is importing into an individual or an organizational vault.",
     "placeholders": {
       "destination": {
@@ -2532,25 +2532,25 @@
     }
   },
   "importUnassignedItemsError": {
-    "message": "File contains unassigned items."
+    "message": "Datoteka sadrži nedodijeljene stavke."
   },
   "selectFormat": {
-    "message": "Select the format of the import file"
+    "message": "Odaberi format datoteke za uvoz"
   },
   "selectImportFile": {
-    "message": "Select the import file"
+    "message": "Odaberi datoteku za uvoz"
   },
   "chooseFile": {
-    "message": "Choose File"
+    "message": "Odaberi datoteku"
   },
   "noFileChosen": {
-    "message": "No file chosen"
+    "message": "Nije odabrana datoteka"
   },
   "orCopyPasteFileContents": {
-    "message": "or copy/paste the import file contents"
+    "message": "ili kopiraj/zalijepi sadržaj uvozne datoteke"
   },
   "instructionsFor": {
-    "message": "$NAME$ Instructions",
+    "message": "$NAME$ upute",
     "description": "The title for the import tool instructions.",
     "placeholders": {
       "name": {
@@ -2560,127 +2560,127 @@
     }
   },
   "confirmVaultImport": {
-    "message": "Confirm vault import"
+    "message": "Potvrdi uvoz trezora"
   },
   "confirmVaultImportDesc": {
-    "message": "This file is password-protected. Please enter the file password to import data."
+    "message": "Ova je datoteka zaštićena lozinkom. Unesi lozinku za nastavak uvoza."
   },
   "confirmFilePassword": {
-    "message": "Confirm file password"
+    "message": "Potvrdi lozinku datoteke"
   },
   "passkeyNotCopied": {
-    "message": "Passkey will not be copied"
+    "message": "Pristupni ključ neće biti kopiran"
   },
   "passkeyNotCopiedAlert": {
-    "message": "The passkey will not be copied to the cloned item. Do you want to continue cloning this item?"
+    "message": "Pristupni ključ se neće kopirati u kloniranu stavku. Želiš li nastaviti klonirati ovu stavku?"
   },
   "passkeyFeatureIsNotImplementedForAccountsWithoutMasterPassword": {
-    "message": "Verification required by the initiating site. This feature is not yet implemented for accounts without master password."
+    "message": "Ishodišna stranica zahtijeva verifikaciju. Ova značajka još nije implementirana za račune bez glavne lozinke."
   },
   "logInWithPasskey": {
-    "message": "Log in with passkey?"
+    "message": "Prijava pristupnim ključem?"
   },
   "passkeyAlreadyExists": {
-    "message": "A passkey already exists for this application."
+    "message": "Za ovu aplikaciju već postoji pristupni ključ."
   },
   "noPasskeysFoundForThisApplication": {
-    "message": "No passkeys found for this application."
+    "message": "Za ovu aplikaciju nema pristupnih ključeva."
   },
   "noMatchingPasskeyLogin": {
-    "message": "You do not have a matching login for this site."
+    "message": "Nema odgovarajuće prijavu za ovu stranicu."
   },
   "confirm": {
-    "message": "Confirm"
+    "message": "Autoriziraj"
   },
   "savePasskey": {
-    "message": "Save passkey"
+    "message": "Spremi pristupni ključ"
   },
   "savePasskeyNewLogin": {
-    "message": "Save passkey as new login"
+    "message": "Spremi pristupni ključ kao novu prijavu"
   },
   "choosePasskey": {
-    "message": "Choose a login to save this passkey to"
+    "message": "Odaberi prijavu za spremanje ovog pristupnog ključa"
   },
   "passkeyItem": {
-    "message": "Passkey Item"
+    "message": "Stavka pristupnog ključa"
   },
   "overwritePasskey": {
-    "message": "Overwrite passkey?"
+    "message": "Prebriši pristupni ključ?"
   },
   "overwritePasskeyAlert": {
-    "message": "This item already contains a passkey. Are you sure you want to overwrite the current passkey?"
+    "message": "Ova stavka već sadrži pristupni ključ. Sigurno želiš prebrisati trenutni pristupni ključ?"
   },
   "featureNotSupported": {
-    "message": "Feature not yet supported"
+    "message": "Značajka još nije podržana"
   },
   "yourPasskeyIsLocked": {
-    "message": "Authentication required to use passkey. Verify your identity to continue."
+    "message": "Za korištenje pristpnog ključa potrebna je autentifikacija. Potvrdi svoj identitet."
   },
   "useBrowserName": {
-    "message": "Use browser"
+    "message": "Koristi preglednik"
   },
   "multifactorAuthenticationCancelled": {
-    "message": "Multifactor authentication cancelled"
+    "message": "Multifaktorska autentifikacija otkazana"
   },
   "noLastPassDataFound": {
-    "message": "No LastPass data found"
+    "message": "Nisu nađeni LastPass podaci"
   },
   "incorrectUsernameOrPassword": {
-    "message": "Incorrect username or password"
+    "message": "Neispravno korisničko ime ili lozinka"
   },
   "multifactorAuthenticationFailed": {
-    "message": "Multifactor authentication failed"
+    "message": "Multifaktorska autentifikacija nije uspjela"
   },
   "includeSharedFolders": {
-    "message": "Include shared folders"
+    "message": "Uključi dijeljene mape"
   },
   "lastPassEmail": {
-    "message": "LastPass Email"
+    "message": "LastPass e-pošta"
   },
   "importingYourAccount": {
-    "message": "Importing your account..."
+    "message": "Uvoz tvog računa..."
   },
   "lastPassMFARequired": {
-    "message": "LastPass multifactor authentication required"
+    "message": "Potrebna LastPass multifaktorska autenfikacija"
   },
   "lastPassMFADesc": {
-    "message": "Enter your one-time passcode from your authentication app"
+    "message": "Unesi svoj jednokratni kôd iz aplikacije za autentifikaciju"
   },
   "lastPassOOBDesc": {
-    "message": "Approve the login request in your authentication app or enter a one-time passcode."
+    "message": "Odobri svoj zahtjev za prijavu u svojoj aplikaciji za autentifikaciju ili unesi jednokratni kôd."
   },
   "passcode": {
     "message": "Passcode"
   },
   "lastPassMasterPassword": {
-    "message": "LastPass master password"
+    "message": "LastPass glavna lozinka"
   },
   "lastPassAuthRequired": {
-    "message": "LastPass authentication required"
+    "message": "Potrebna LastPass autentifikacija"
   },
   "awaitingSSO": {
-    "message": "Awaiting SSO authentication"
+    "message": "Čekanje SSO autentifikacije"
   },
   "awaitingSSODesc": {
-    "message": "Please continue to log in using your company credentials."
+    "message": "Prijavi se koristeći pristupne podatke svoje tvrtke."
   },
   "seeDetailedInstructions": {
-    "message": "See detailed instructions on our help site at",
+    "message": "Detaljne upute za pomoć pronađi na našoj stranici za pomoć na",
     "description": "This is followed a by a hyperlink to the help website."
   },
   "importDirectlyFromLastPass": {
-    "message": "Import directly from LastPass"
+    "message": "Uvezi direktno iz LastPass-a"
   },
   "importFromCSV": {
-    "message": "Import from CSV"
+    "message": "Uvezi iz CSV-a"
   },
   "lastPassTryAgainCheckEmail": {
-    "message": "Try again or look for an email from LastPass to verify it's you."
+    "message": "Pokušaj ponovno ili pogledaj e-poštu od LastPass-a za potvrdu."
   },
   "collection": {
-    "message": "Collection"
+    "message": "Zbirka"
   },
   "lastPassYubikeyDesc": {
-    "message": "Insert the YubiKey associated with your LastPass account into your computer's USB port, then touch its button."
+    "message": "Umetni YubiKey pridružen svojem LastPass računu u USB priključak račuanala, a zatim dodirni njegovu tipku."
   }
 }

@@ -510,7 +510,7 @@
     "message": "您的登录会话已过期。"
   },
   "logOutConfirmation": {
-    "message": "您确定要注销吗？"
+    "message": "确定要注销吗？"
   },
   "yes": {
     "message": "是"
@@ -540,7 +540,7 @@
     "message": "文件夹已保存"
   },
   "deleteFolderConfirmation": {
-    "message": "您确定要删除此文件夹吗？"
+    "message": "确定要删除此文件夹吗？"
   },
   "deletedFolder": {
     "message": "文件夹已删除"
@@ -592,13 +592,13 @@
     "message": "覆盖密码"
   },
   "overwritePasswordConfirmation": {
-    "message": "您确定要覆盖当前密码吗？"
+    "message": "确定要覆盖当前密码吗？"
   },
   "overwriteUsername": {
     "message": "覆盖用户名"
   },
   "overwriteUsernameConfirmation": {
-    "message": "您确定要覆盖当前用户名吗？"
+    "message": "确定要覆盖当前用户名吗？"
   },
   "searchFolder": {
     "message": "搜索文件夹"
@@ -769,7 +769,7 @@
     "message": "删除附件"
   },
   "deleteAttachmentConfirmation": {
-    "message": "您确定要删除此附件吗？"
+    "message": "确定要删除此附件吗？"
   },
   "deletedAttachment": {
     "message": "附件已删除"
@@ -1378,7 +1378,7 @@
     "description": "ex. Date this password was updated"
   },
   "neverLockWarning": {
-    "message": "您确定要使用「从不」选项吗？将锁定选项设置为「从不」会将密码库的加密密钥存储在您的设备上。如果使用此选项，您必须确保您的设备安全。"
+    "message": "确定要使用「从不」选项吗？将锁定选项设置为「从不」会将密码库的加密密钥存储在您的设备上。如果使用此选项，您必须确保您的设备安全。"
   },
   "noOrganizationsList": {
     "message": "您没有加入任何组织。组织允许您与其他用户安全地共享项目。"
@@ -1468,7 +1468,7 @@
     "message": "永久删除项目"
   },
   "permanentlyDeleteItemConfirmation": {
-    "message": "您确定要永久删除此项目吗？"
+    "message": "确定要永久删除此项目吗？"
   },
   "permanentlyDeletedItem": {
     "message": "项目已永久删除"
@@ -2012,7 +2012,7 @@
     "message": "主密码已移除"
   },
   "leaveOrganizationConfirmation": {
-    "message": "您确定要退出该组织吗？"
+    "message": "确定要退出该组织吗？"
   },
   "leftOrganization": {
     "message": "您已经退出该组织。"
@@ -2522,7 +2522,7 @@
     "message": "选择一个集合"
   },
   "importTargetHint": {
-    "message": "如果您希望将导入的文件内容移动到 $DESTINATION$，请选择此选项",
+    "message": "如果您希望将导入的文件内容移动到某个 $DESTINATION$，请选择此选项",
     "description": "Located as a hint under the import target. Will be appended by either folder or collection, depending if the user is importing into an individual or an organizational vault.",
     "placeholders": {
       "destination": {
@@ -2608,7 +2608,7 @@
     "message": "覆盖通行密钥吗？"
   },
   "overwritePasskeyAlert": {
-    "message": "此项目已包含一个通行密钥。您确定要覆盖当前的通行密钥吗？"
+    "message": "此项目已包含一个通行密钥。确定要覆盖当前的通行密钥吗？"
   },
   "featureNotSupported": {
     "message": "功能尚不被支持"
@@ -2632,7 +2632,7 @@
     "message": "多重身份验证失败"
   },
   "includeSharedFolders": {
-    "message": "包含已共享的文件夹"
+    "message": "包含共享的文件夹"
   },
   "lastPassEmail": {
     "message": "LastPass Email"
