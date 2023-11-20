@@ -279,7 +279,7 @@ export class UpdateBadge {
         logoutCallback: () => Promise.reject("not implemented"),
       },
       i18nServiceOptions: {
-        systemLanguage: BrowserApi.getUILanguage(self),
+        systemLanguage: BrowserApi.getUILanguage(),
       },
     };
     this.stateService = await stateServiceFactory(serviceCache, opts);

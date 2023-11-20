@@ -1,14 +1,20 @@
 ﻿@import "~nord/src/sass/nord.scss";
 
+$dark-icon-themes: "theme_dark", "theme_solarizedDark", "theme_nord";
+
 $font-family-sans-serif: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 $font-size-base: 14px;
-$text-color: #333333;
+$text-color: #212529;
+$muted-text-color: #6c747c;
+$border-color: #ced4dc;
 $border-color-dark: #ddd;
 $border-radius: 3px;
+$focus-outline-color: #1252a3;
 
 $brand-primary: #175ddc;
 
-$background-color: #f0f0f0;
+$background-color: #ffffff;
+$background-offset-color: #f0f0f0;
 
 $solarizedDarkBase0: #839496;
 $solarizedDarkBase03: #002b36;
@@ -21,50 +27,62 @@ $solarizedDarkGreen: #859900;
 $themes: (
   light: (
     textColor: $text-color,
-    mutedTextColor: #6d757e,
+    mutedTextColor: $muted-text-color,
     backgroundColor: $background-color,
+    backgroundOffsetColor: $background-offset-color,
     primaryColor: $brand-primary,
     buttonPrimaryColor: $brand-primary,
     textContrast: $background-color,
-    inputBorderColor: darken($border-color-dark, 7%),
+    inputBorderColor: darken($border-color-dark, 2.75%),
     inputBackgroundColor: #ffffff,
+    borderColor: $border-color,
+    focusOutlineColor: $focus-outline-color,
   ),
   dark: (
     textColor: #ffffff,
     mutedTextColor: #bac0ce,
     backgroundColor: #2f343d,
+    backgroundOffsetColor: darken(#2f343d, 2.75%),
     buttonPrimaryColor: #6f9df1,
     primaryColor: #6f9df1,
     textContrast: #2f343d,
     inputBorderColor: #4c525f,
     inputBackgroundColor: #2f343d,
+    borderColor: #4c525f,
+    focusOutlineColor: $focus-outline-color,
   ),
   nord: (
     textColor: $nord5,
     mutedTextColor: $nord4,
     backgroundColor: $nord1,
+    backgroundOffsetColor: darken($nord1, 2.75%),
     buttonPrimaryColor: $nord8,
     primaryColor: $nord9,
     textContrast: $nord2,
     inputBorderColor: $nord0,
     inputBackgroundColor: $nord2,
+    borderColor: $nord0,
+    focusOutlineColor: $focus-outline-color,
   ),
   solarizedDark: (
     textColor: $solarizedDarkBase2,
     // Muted uses main text color to avoid contrast issues
     mutedTextColor: $solarizedDarkBase2,
     backgroundColor: $solarizedDarkBase03,
+    backgroundOffsetColor: darken($solarizedDarkBase03, 2.75%),
     buttonPrimaryColor: $solarizedDarkCyan,
     primaryColor: $solarizedDarkGreen,
     textContrast: $solarizedDarkBase02,
     inputBorderColor: rgba($solarizedDarkBase2, 0.2),
     inputBackgroundColor: $solarizedDarkBase01,
+    borderColor: $solarizedDarkBase2,
+    focusOutlineColor: $focus-outline-color,
   ),
 );
 
 @mixin themify($themes: $themes) {
   @each $theme, $map in $themes {
-    html.theme_#{$theme} & {
+    .theme_#{$theme} & {
       $theme-map: () !global;
       @each $key, $submap in $map {
         $value: map-get(map-get($themes, $theme), "#{$key}");

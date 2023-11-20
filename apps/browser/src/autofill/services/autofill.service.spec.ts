@@ -35,6 +35,7 @@ import { triggerTestFailure } from "../jest/testing-utils";
 import AutofillField from "../models/autofill-field";
 import AutofillPageDetails from "../models/autofill-page-details";
 import AutofillScript from "../models/autofill-script";
+import { AutofillOverlayVisibility } from "../utils/autofill-overlay.enum";
 
 import {
   AutoFillOptions,
@@ -73,7 +74,8 @@ describe("AutofillService", () => {
 
   describe("injectAutofillScripts", () => {
     const autofillV1Script = "autofill.js";
-    const autofillV2Script = "autofill-init.js";
+    const autofillV2BootstrapScript = "bootstrap-autofill.js";
+    const autofillOverlayBootstrapScript = "bootstrap-autofill-overlay.js";
     const defaultAutofillScripts = ["autofiller.js", "notificationBar.js", "contextMenuHandler.js"];
     const defaultExecuteScriptOptions = { runAt: "document_start" };
     let tabMock: chrome.tabs.Tab;
@@ -96,17 +98,60 @@ describe("AutofillService", () => {
         });
       });
       expect(BrowserApi.executeScriptInTab).not.toHaveBeenCalledWith(tabMock.id, {
-        file: `content/${autofillV2Script}`,
+        file: `content/${autofillV2BootstrapScript}`,
         frameId: sender.frameId,
         ...defaultExecuteScriptOptions,
       });
     });
 
-    it("will inject the autofill-init class if the enableAutofillV2 flag is set", () => {
-      autofillService.injectAutofillScripts(sender, true);
+    it("will inject the bootstrap-autofill script if the enableAutofillV2 flag is set", async () => {
+      await autofillService.injectAutofillScripts(sender, true);
 
       expect(BrowserApi.executeScriptInTab).toHaveBeenCalledWith(tabMock.id, {
-        file: `content/${autofillV2Script}`,
+        file: `content/${autofillV2BootstrapScript}`,
+        frameId: sender.frameId,
+        ...defaultExecuteScriptOptions,
+      });
+      expect(BrowserApi.executeScriptInTab).not.toHaveBeenCalledWith(tabMock.id, {
+        file: `content/${autofillV1Script}`,
+        frameId: sender.frameId,
+        ...defaultExecuteScriptOptions,
+      });
+    });
+
+    it("will inject the bootstrap-autofill-overlay script if the enableAutofillOverlay flag is set and the user has the autofill overlay enabled", async () => {
+      jest
+        .spyOn(autofillService["settingsService"], "getAutoFillOverlayVisibility")
+        .mockResolvedValue(AutofillOverlayVisibility.OnFieldFocus);
+
+      await autofillService.injectAutofillScripts(sender, true, true);
+
+      expect(BrowserApi.executeScriptInTab).toHaveBeenCalledWith(tabMock.id, {
+        file: `content/${autofillOverlayBootstrapScript}`,
+        frameId: sender.frameId,
+        ...defaultExecuteScriptOptions,
+      });
+      expect(BrowserApi.executeScriptInTab).not.toHaveBeenCalledWith(tabMock.id, {
+        file: `content/${autofillV1Script}`,
+        frameId: sender.frameId,
+        ...defaultExecuteScriptOptions,
+      });
+      expect(BrowserApi.executeScriptInTab).not.toHaveBeenCalledWith(tabMock.id, {
+        file: `content/${autofillV2BootstrapScript}`,
+        frameId: sender.frameId,
+        ...defaultExecuteScriptOptions,
+      });
+    });
+
+    it("will inject the bootstrap-autofill script if the enableAutofillOverlay flag is set but the user does not have the autofill overlay enabled", async () => {
+      jest
+        .spyOn(autofillService["settingsService"], "getAutoFillOverlayVisibility")
+        .mockResolvedValue(AutofillOverlayVisibility.Off);
+
+      await autofillService.injectAutofillScripts(sender, true, true);
+
+      expect(BrowserApi.executeScriptInTab).toHaveBeenCalledWith(tabMock.id, {
+        file: `content/${autofillV2BootstrapScript}`,
         ...defaultExecuteScriptOptions,
       });
       expect(BrowserApi.executeScriptInTab).not.toHaveBeenCalledWith(tabMock.id, {
@@ -843,11 +888,115 @@ describe("AutofillService", () => {
       jest.spyOn(autofillService as any, "getActiveTab").mockResolvedValueOnce(tab);
       jest.spyOn(autofillService, "doAutoFillOnTab").mockResolvedValueOnce(totp);
 
-      const result = await autofillService.doAutoFillActiveTab(pageDetails, fromCommand);
+      const result = await autofillService.doAutoFillActiveTab(
+        pageDetails,
+        fromCommand,
+        CipherType.Login
+      );
 
       expect(autofillService["getActiveTab"]).toHaveBeenCalled();
       expect(autofillService.doAutoFillOnTab).toHaveBeenCalledWith(pageDetails, tab, fromCommand);
       expect(result).toBe(totp);
+    });
+
+    it("auto-fills card cipher types", async () => {
+      const cardFormPageDetails = [
+        {
+          frameId: 1,
+          tab: createChromeTabMock(),
+          details: createAutofillPageDetailsMock({
+            fields: [
+              createAutofillFieldMock({
+                opid: "number-field",
+                form: "validFormId",
+                elementNumber: 1,
+              }),
+              createAutofillFieldMock({
+                opid: "ccv-field",
+                form: "validFormId",
+                elementNumber: 2,
+              }),
+            ],
+          }),
+        },
+      ];
+      const cardCipher = mock<CipherView>({
+        type: CipherType.Card,
+        reprompt: CipherRepromptType.None,
+      });
+      jest.spyOn(autofillService as any, "getActiveTab").mockResolvedValueOnce(tab);
+      jest.spyOn(autofillService, "doAutoFill").mockImplementation();
+      jest
+        .spyOn(autofillService["cipherService"], "getAllDecryptedForUrl")
+        .mockResolvedValueOnce([cardCipher]);
+
+      await autofillService.doAutoFillActiveTab(cardFormPageDetails, false, CipherType.Card);
+
+      expect(autofillService["cipherService"].getAllDecryptedForUrl).toHaveBeenCalled();
+      expect(autofillService.doAutoFill).toHaveBeenCalledWith({
+        tab: tab,
+        cipher: cardCipher,
+        pageDetails: cardFormPageDetails,
+        skipLastUsed: true,
+        skipUsernameOnlyFill: true,
+        onlyEmptyFields: true,
+        onlyVisibleFields: true,
+        fillNewPassword: false,
+        allowUntrustedIframe: false,
+        allowTotpAutofill: false,
+      });
+    });
+
+    it("auto-fills identity cipher types", async () => {
+      const identityFormPageDetails = [
+        {
+          frameId: 1,
+          tab: createChromeTabMock(),
+          details: createAutofillPageDetailsMock({
+            fields: [
+              createAutofillFieldMock({
+                opid: "name-field",
+                form: "validFormId",
+                elementNumber: 1,
+              }),
+              createAutofillFieldMock({
+                opid: "address-field",
+                form: "validFormId",
+                elementNumber: 2,
+              }),
+            ],
+          }),
+        },
+      ];
+      const identityCipher = mock<CipherView>({
+        type: CipherType.Identity,
+        reprompt: CipherRepromptType.None,
+      });
+      jest.spyOn(autofillService as any, "getActiveTab").mockResolvedValueOnce(tab);
+      jest.spyOn(autofillService, "doAutoFill").mockImplementation();
+      jest
+        .spyOn(autofillService["cipherService"], "getAllDecryptedForUrl")
+        .mockResolvedValueOnce([identityCipher]);
+
+      await autofillService.doAutoFillActiveTab(
+        identityFormPageDetails,
+        false,
+        CipherType.Identity
+      );
+
+      expect(autofillService["cipherService"].getAllDecryptedForUrl).toHaveBeenCalled();
+      expect(autofillService.doAutoFill).toHaveBeenCalledWith({
+        tab: tab,
+        cipher: identityCipher,
+        pageDetails: identityFormPageDetails,
+        skipLastUsed: true,
+        skipUsernameOnlyFill: true,
+        onlyEmptyFields: true,
+        onlyVisibleFields: true,
+        fillNewPassword: false,
+        allowUntrustedIframe: false,
+        allowTotpAutofill: false,
+      });
     });
   });
 
@@ -4275,6 +4424,16 @@ describe("AutofillService", () => {
       const result = autofillService["isDebouncingPasswordRepromptPopout"]();
 
       expect(result).toBe(true);
+    });
+
+    it("resets the currentlyOpeningPasswordRepromptPopout value to false after the debounce has occurred", () => {
+      jest.useFakeTimers();
+
+      const result = autofillService["isDebouncingPasswordRepromptPopout"]();
+      jest.advanceTimersByTime(100);
+
+      expect(result).toBe(false);
+      expect(autofillService["currentlyOpeningPasswordRepromptPopout"]).toBe(false);
     });
   });
 });

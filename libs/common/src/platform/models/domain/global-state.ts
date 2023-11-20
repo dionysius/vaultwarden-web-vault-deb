@@ -40,4 +40,5 @@ export class GlobalState {
   disableAddLoginNotification?: boolean;
   disableChangedPasswordNotification?: boolean;
   disableContextMenuItem?: boolean;
+  autoFillOverlayVisibility?: number;
 }

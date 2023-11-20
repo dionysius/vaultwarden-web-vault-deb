@@ -59,8 +59,12 @@
     "webRequest",
     "webRequestBlocking"
   ],
-  "optional_permissions": ["nativeMessaging"],
+  "optional_permissions": ["nativeMessaging", "privacy"],
   "content_security_policy": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self'",
+  "sandbox": {
+    "pages": ["overlay/button.html", "overlay/list.html"],
+    "content_security_policy": "sandbox allow-scripts; script-src 'self'"
+  },
   "commands": {
     "_execute_browser_action": {
       "suggested_key": {
@@ -96,7 +100,10 @@
     "content/fido2/page-script.js",
     "notification/bar.html",
     "images/icon38.png",
-    "images/icon38_locked.png"
+    "images/icon38_locked.png",
+    "overlay/button.html",
+    "overlay/list.html",
+    "popup/fonts/*"
   ],
   "applications": {
     "gecko": {

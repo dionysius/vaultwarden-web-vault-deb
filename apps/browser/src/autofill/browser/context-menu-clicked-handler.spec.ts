@@ -15,7 +15,7 @@ import {
   AUTOFILL_ID,
   COPY_PASSWORD_ID,
   COPY_USERNAME_ID,
-  COPY_VERIFICATIONCODE_ID,
+  COPY_VERIFICATION_CODE_ID,
   GENERATE_PASSWORD_ID,
   NOOP_COMMAND_SUFFIX,
 } from "../constants";
@@ -165,7 +165,7 @@ describe("ContextMenuClickedHandler", () => {
         return Promise.resolve("654321");
       });
 
-      await sut.run(createData(`${COPY_VERIFICATIONCODE_ID}_1`, COPY_VERIFICATIONCODE_ID), {
+      await sut.run(createData(`${COPY_VERIFICATION_CODE_ID}_1`, COPY_VERIFICATION_CODE_ID), {
         url: "https://test.com",
       } as any);
 

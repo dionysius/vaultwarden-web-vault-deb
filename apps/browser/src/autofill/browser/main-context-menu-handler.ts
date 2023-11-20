@@ -28,7 +28,7 @@ import {
   COPY_IDENTIFIER_ID,
   COPY_PASSWORD_ID,
   COPY_USERNAME_ID,
-  COPY_VERIFICATIONCODE_ID,
+  COPY_VERIFICATION_CODE_ID,
   CREATE_CARD_ID,
   CREATE_IDENTITY_ID,
   CREATE_LOGIN_ID,
@@ -139,7 +139,7 @@ export class MainContextMenuHandler {
 
       if (await this.stateService.getCanAccessPremium()) {
         await create({
-          id: COPY_VERIFICATIONCODE_ID,
+          id: COPY_VERIFICATION_CODE_ID,
           parentId: ROOT_ID,
           title: this.i18nService.t("copyVerificationCode"),
         });
@@ -250,7 +250,7 @@ export class MainContextMenuHandler {
 
       const canAccessPremium = await this.stateService.getCanAccessPremium();
       if (canAccessPremium && (!cipher || !Utils.isNullOrEmpty(cipher.login?.totp))) {
-        await createChildItem(COPY_VERIFICATIONCODE_ID);
+        await createChildItem(COPY_VERIFICATION_CODE_ID);
       }
 
       if ((!cipher || cipher.type === CipherType.Card) && optionId !== CREATE_LOGIN_ID) {

@@ -84,7 +84,7 @@ export class CipherView implements View, InitializerMetadata {
   }
 
   get subTitle(): string {
-    return this.item.subTitle;
+    return this.item?.subTitle;
   }
 
   get hasPasswordHistory(): boolean {
@@ -124,7 +124,7 @@ export class CipherView implements View, InitializerMetadata {
   }
 
   get linkedFieldOptions() {
-    return this.item.linkedFieldOptions;
+    return this.item?.linkedFieldOptions;
   }
 
   linkedFieldValue(id: LinkedIdType) {

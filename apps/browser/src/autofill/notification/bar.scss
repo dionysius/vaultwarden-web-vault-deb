@@ -1,4 +1,4 @@
-﻿@import "variables.scss";
+﻿@import "../shared/styles/variables";
 
 body {
   padding: 0;
@@ -104,7 +104,7 @@ button.secondary:not(.neutral) {
 
   &:hover {
     @include themify($themes) {
-      background-color: darken(themed("backgroundColor"), 1.5%);
+      background-color: themed("backgroundOffsetColor");
       color: darken(themed("mutedTextColor"), 6%);
     }
   }

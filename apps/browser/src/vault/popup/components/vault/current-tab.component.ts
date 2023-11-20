@@ -18,6 +18,7 @@ import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 import { PasswordRepromptService } from "@bitwarden/vault";
 
 import { AutofillService } from "../../../../autofill/services/abstractions/autofill.service";
+import { AutofillOverlayVisibility } from "../../../../autofill/utils/autofill-overlay.enum";
 import { BrowserApi } from "../../../../platform/browser/browser-api";
 import BrowserPopupUtils from "../../../../platform/popup/browser-popup-utils";
 import { VaultFilterService } from "../../../services/vault-filter.service";
@@ -294,6 +295,7 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
   private async setCallout() {
     this.showHowToAutofill =
       this.loginCiphers.length > 0 &&
+      (await this.stateService.getAutoFillOverlayVisibility()) === AutofillOverlayVisibility.Off &&
       !(await this.stateService.getEnableAutoFillOnPageLoad()) &&
       !(await this.stateService.getDismissedAutofillCallout());
 

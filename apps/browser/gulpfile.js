@@ -60,6 +60,7 @@ function dist(browserName, manifest) {
 function distFirefox() {
   return dist("firefox", (manifest) => {
     delete manifest.storage;
+    delete manifest.sandbox;
     return manifest;
   });
 }

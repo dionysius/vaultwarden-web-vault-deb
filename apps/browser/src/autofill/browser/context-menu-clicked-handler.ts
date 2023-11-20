@@ -44,7 +44,7 @@ import {
   COPY_IDENTIFIER_ID,
   COPY_PASSWORD_ID,
   COPY_USERNAME_ID,
-  COPY_VERIFICATIONCODE_ID,
+  COPY_VERIFICATION_CODE_ID,
   CREATE_CARD_ID,
   CREATE_IDENTITY_ID,
   CREATE_LOGIN_ID,
@@ -281,7 +281,7 @@ export class ContextMenuClickedHandler {
         }
 
         break;
-      case COPY_VERIFICATIONCODE_ID:
+      case COPY_VERIFICATION_CODE_ID:
         if (menuItemId === CREATE_LOGIN_ID) {
           await openAddEditVaultItemPopout(tab, { cipherType: CipherType.Login });
           break;
@@ -290,7 +290,7 @@ export class ContextMenuClickedHandler {
         if (await this.isPasswordRepromptRequired(cipher)) {
           await openVaultItemPasswordRepromptPopout(tab, {
             cipherId: cipher.id,
-            action: COPY_VERIFICATIONCODE_ID,
+            action: COPY_VERIFICATION_CODE_ID,
           });
         } else {
           this.copyToClipboard({

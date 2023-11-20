@@ -8,16 +8,18 @@ import {
   FormElementWithAttribute,
 } from "../types";
 
+import { AutofillOverlayContentService } from "./abstractions/autofill-overlay-content.service";
 import {
   UpdateAutofillDataAttributeParams,
   AutofillFieldElements,
   AutofillFormElements,
   CollectAutofillContentService as CollectAutofillContentServiceInterface,
 } from "./abstractions/collect-autofill-content.service";
-import DomElementVisibilityService from "./dom-element-visibility.service";
+import { DomElementVisibilityService } from "./abstractions/dom-element-visibility.service";
 
 class CollectAutofillContentService implements CollectAutofillContentServiceInterface {
   private readonly domElementVisibilityService: DomElementVisibilityService;
+  private readonly autofillOverlayContentService: AutofillOverlayContentService;
   private noFieldsFound = false;
   private domRecentlyMutated = true;
   private autofillFormElements: AutofillFormElements = new Map();
@@ -27,8 +29,12 @@ class CollectAutofillContentService implements CollectAutofillContentServiceInte
   private updateAutofillElementsAfterMutationTimeout: NodeJS.Timeout;
   private readonly updateAfterMutationTimeoutDelay = 1000;
 
-  constructor(domElementVisibilityService: DomElementVisibilityService) {
+  constructor(
+    domElementVisibilityService: DomElementVisibilityService,
+    autofillOverlayContentService?: AutofillOverlayContentService
+  ) {
     this.domElementVisibilityService = domElementVisibilityService;
+    this.autofillOverlayContentService = autofillOverlayContentService;
   }
 
   /**
@@ -320,6 +326,10 @@ class CollectAutofillContentService implements CollectAutofillContentServiceInte
 
     if (element instanceof HTMLSpanElement) {
       this.autofillFieldElements.set(element, autofillFieldBase);
+      this.autofillOverlayContentService?.setupAutofillOverlayListenerOnField(
+        element,
+        autofillFieldBase
+      );
       return autofillFieldBase;
     }
 
@@ -357,6 +367,7 @@ class CollectAutofillContentService implements CollectAutofillContentServiceInte
     };
 
     this.autofillFieldElements.set(element, autofillField);
+    this.autofillOverlayContentService?.setupAutofillOverlayListenerOnField(element, autofillField);
     return autofillField;
   };
 
@@ -445,7 +456,7 @@ class CollectAutofillContentService implements CollectAutofillContentServiceInte
         labelElementsSet.add(currentElement);
       }
 
-      currentElement = currentElement.parentElement.closest("label");
+      currentElement = currentElement.parentElement?.closest("label");
     }
 
     if (
@@ -926,6 +937,9 @@ class CollectAutofillContentService implements CollectAutofillContentServiceInte
           this.isAutofillElementNodeMutated(mutation.addedNodes))
       ) {
         this.domRecentlyMutated = true;
+        if (this.autofillOverlayContentService) {
+          this.autofillOverlayContentService.pageDetailsUpdateRequired = true;
+        }
         this.noFieldsFound = false;
         continue;
       }
@@ -949,6 +963,9 @@ class CollectAutofillContentService implements CollectAutofillContentServiceInte
     this.currentLocationHref = globalThis.location.href;
 
     this.domRecentlyMutated = true;
+    if (this.autofillOverlayContentService) {
+      this.autofillOverlayContentService.pageDetailsUpdateRequired = true;
+    }
     this.noFieldsFound = false;
 
     this.autofillFormElements.clear();
@@ -993,13 +1010,23 @@ class CollectAutofillContentService implements CollectAutofillContentServiceInte
       }
     }
 
-    if (isRemovingNodes) {
-      for (let elementIndex = 0; elementIndex < mutatedElements.length; elementIndex++) {
+    for (let elementIndex = 0; elementIndex < mutatedElements.length; elementIndex++) {
+      const node = mutatedElements[elementIndex];
+      if (isRemovingNodes) {
         this.deleteCachedAutofillElement(
-          mutatedElements[elementIndex] as
-            | ElementWithOpId<HTMLFormElement>
-            | ElementWithOpId<FormFieldElement>
+          node as ElementWithOpId<HTMLFormElement> | ElementWithOpId<FormFieldElement>
         );
+        continue;
+      }
+
+      if (
+        this.autofillOverlayContentService &&
+        this.isNodeFormFieldElement(node) &&
+        !this.autofillFieldElements.get(node as ElementWithOpId<FormFieldElement>)
+      ) {
+        // We are setting this item to a -1 index because we do not know its position in the DOM.
+        // This value should be updated with the next call to collect page details.
+        this.buildAutofillFieldItem(node as ElementWithOpId<FormFieldElement>, -1);
       }
     }
 

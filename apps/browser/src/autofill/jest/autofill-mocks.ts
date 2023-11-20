@@ -1,12 +1,18 @@
 import { mock } from "jest-mock-extended";
 
+import { AuthenticationStatus } from "@bitwarden/common/auth/enums/authentication-status";
 import { UriMatchType } from "@bitwarden/common/enums";
+import { CipherRepromptType } from "@bitwarden/common/vault/enums/cipher-reprompt-type";
+import { CipherType } from "@bitwarden/common/vault/enums/cipher-type";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 
+import { OverlayCipherData } from "../background/abstractions/overlay.background";
 import AutofillField from "../models/autofill-field";
 import AutofillPageDetails from "../models/autofill-page-details";
 import AutofillScript, { FillScript } from "../models/autofill-script";
-import { GenerateFillScriptOptions } from "../services/abstractions/autofill.service";
+import { InitAutofillOverlayButtonMessage } from "../overlay/abstractions/autofill-overlay-button";
+import { InitAutofillOverlayListMessage } from "../overlay/abstractions/autofill-overlay-list";
+import { GenerateFillScriptOptions, PageDetail } from "../services/abstractions/autofill.service";
 
 function createAutofillFieldMock(customFields = {}): AutofillField {
   return {
@@ -34,6 +40,15 @@ function createAutofillFieldMock(customFields = {}): AutofillField {
     selectInfo: "",
     maxLength: 0,
     tagName: "input",
+    ...customFields,
+  };
+}
+
+function createPageDetailMock(customFields = {}): PageDetail {
+  return {
+    frameId: 0,
+    tab: createChromeTabMock(),
+    details: createAutofillPageDetailsMock(),
     ...customFields,
   };
 }
@@ -71,7 +86,7 @@ function createChromeTabMock(customFields = {}): chrome.tabs.Tab {
     discarded: false,
     autoDiscardable: false,
     groupId: 2,
-    url: "https://tacos.com",
+    url: "https://jest-testing-website.com",
     ...customFields,
   };
 }
@@ -84,7 +99,7 @@ function createGenerateFillScriptOptionsMock(customFields = {}): GenerateFillScr
     fillNewPassword: false,
     allowTotpAutofill: false,
     cipher: mock<CipherView>(),
-    tabUrl: "https://tacos.com",
+    tabUrl: "https://jest-testing-website.com",
     defaultUriMatch: UriMatchType.Domain,
     ...customFields,
   };
@@ -122,10 +137,135 @@ function createAutofillScriptMock(
   };
 }
 
+const overlayPagesTranslations = {
+  locale: "en",
+  buttonPageTitle: "buttonPageTitle",
+  listPageTitle: "listPageTitle",
+  opensInANewWindow: "opensInANewWindow",
+  toggleBitwardenVaultOverlay: "toggleBitwardenVaultOverlay",
+  unlockYourAccount: "unlockYourAccount",
+  unlockAccount: "unlockAccount",
+  fillCredentialsFor: "fillCredentialsFor",
+  partialUsername: "partialUsername",
+  view: "view",
+  noItemsToShow: "noItemsToShow",
+  newItem: "newItem",
+  addNewVaultItem: "addNewVaultItem",
+};
+function createInitAutofillOverlayButtonMessageMock(
+  customFields = {}
+): InitAutofillOverlayButtonMessage {
+  return {
+    command: "initAutofillOverlayButton",
+    translations: overlayPagesTranslations,
+    styleSheetUrl: "https://jest-testing-website.com",
+    authStatus: AuthenticationStatus.Unlocked,
+    ...customFields,
+  };
+}
+function createAutofillOverlayCipherDataMock(index: number, customFields = {}): OverlayCipherData {
+  return {
+    id: String(index),
+    name: `website login ${index}`,
+    login: { username: `username${index}` },
+    type: CipherType.Login,
+    reprompt: CipherRepromptType.None,
+    favorite: false,
+    icon: {
+      imageEnabled: true,
+      image: "https://jest-testing-website.com/image.png",
+      fallbackImage: "https://jest-testing-website.com/fallback.png",
+      icon: "bw-icon",
+    },
+    ...customFields,
+  };
+}
+
+function createInitAutofillOverlayListMessageMock(
+  customFields = {}
+): InitAutofillOverlayListMessage {
+  return {
+    command: "initAutofillOverlayList",
+    translations: overlayPagesTranslations,
+    styleSheetUrl: "https://jest-testing-website.com",
+    theme: "light",
+    authStatus: AuthenticationStatus.Unlocked,
+    ciphers: [
+      createAutofillOverlayCipherDataMock(1, {
+        icon: {
+          imageEnabled: true,
+          image: "https://jest-testing-website.com/image.png",
+          fallbackImage: "",
+          icon: "bw-icon",
+        },
+      }),
+      createAutofillOverlayCipherDataMock(2, {
+        icon: {
+          imageEnabled: true,
+          image: "",
+          fallbackImage: "https://jest-testing-website.com/fallback.png",
+          icon: "bw-icon",
+        },
+      }),
+      createAutofillOverlayCipherDataMock(3, {
+        name: "",
+        login: { username: "" },
+        icon: { imageEnabled: true, image: "", fallbackImage: "", icon: "bw-icon" },
+      }),
+      createAutofillOverlayCipherDataMock(4, {
+        icon: { imageEnabled: false, image: "", fallbackImage: "", icon: "" },
+      }),
+      createAutofillOverlayCipherDataMock(5),
+      createAutofillOverlayCipherDataMock(6),
+      createAutofillOverlayCipherDataMock(7),
+      createAutofillOverlayCipherDataMock(8),
+    ],
+    ...customFields,
+  };
+}
+
+function createFocusedFieldDataMock(customFields = {}) {
+  return {
+    focusedFieldRects: {
+      top: 1,
+      left: 2,
+      height: 3,
+      width: 4,
+    },
+    focusedFieldStyles: {
+      paddingRight: "6px",
+      paddingLeft: "6px",
+    },
+    ...customFields,
+  };
+}
+
+function createPortSpyMock(name: string) {
+  return mock<chrome.runtime.Port>({
+    name,
+    onMessage: {
+      addListener: jest.fn(),
+      removeListener: jest.fn(),
+    },
+    onDisconnect: {
+      addListener: jest.fn(),
+    },
+    postMessage: jest.fn(),
+    sender: {
+      tab: createChromeTabMock(),
+    },
+  });
+}
+
 export {
   createAutofillFieldMock,
+  createPageDetailMock,
   createAutofillPageDetailsMock,
   createChromeTabMock,
   createGenerateFillScriptOptionsMock,
   createAutofillScriptMock,
+  createInitAutofillOverlayButtonMessageMock,
+  createInitAutofillOverlayListMessageMock,
+  createFocusedFieldDataMock,
+  createPortSpyMock,
 };

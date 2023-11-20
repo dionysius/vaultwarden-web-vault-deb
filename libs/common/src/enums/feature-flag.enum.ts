@@ -4,6 +4,7 @@ export enum FeatureFlag {
   TrustedDeviceEncryption = "trusted-device-encryption",
   PasswordlessLogin = "passwordless-login",
   AutofillV2 = "autofill-v2",
+  AutofillOverlay = "autofill-overlay",
   BrowserFilelessImport = "browser-fileless-import",
   ItemShare = "item-share",
   FlexibleCollections = "flexible-collections",

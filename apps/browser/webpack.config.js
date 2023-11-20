@@ -107,6 +107,16 @@ const plugins = [
     filename: "notification/bar.html",
     chunks: ["notification/bar"],
   }),
+  new HtmlWebpackPlugin({
+    template: "./src/autofill/overlay/pages/button/button.html",
+    filename: "overlay/button.html",
+    chunks: ["overlay/button"],
+  }),
+  new HtmlWebpackPlugin({
+    template: "./src/autofill/overlay/pages/list/list.html",
+    filename: "overlay/list.html",
+    chunks: ["overlay/list"],
+  }),
   new CopyWebpackPlugin({
     patterns: [
       manifestVersion == 3
@@ -135,7 +145,7 @@ const plugins = [
     process: "process/browser.js",
   }),
   new webpack.SourceMapDevToolPlugin({
-    exclude: [/content\/.*/, /notification\/.*/],
+    exclude: [/content\/.*/, /notification\/.*/, /overlay\/.*/],
     filename: "[file].map",
   }),
   ...requiredPlugins,
@@ -155,7 +165,8 @@ const mainConfig = {
     "content/trigger-autofill-script-injection":
       "./src/autofill/content/trigger-autofill-script-injection.ts",
     "content/autofill": "./src/autofill/content/autofill.js",
-    "content/autofill-init": "./src/autofill/content/autofill-init.ts",
+    "content/bootstrap-autofill": "./src/autofill/content/bootstrap-autofill.ts",
+    "content/bootstrap-autofill-overlay": "./src/autofill/content/bootstrap-autofill-overlay.ts",
     "content/autofiller": "./src/autofill/content/autofiller.ts",
     "content/notificationBar": "./src/autofill/content/notification-bar.ts",
     "content/contextMenuHandler": "./src/autofill/content/context-menu-handler.ts",
@@ -163,13 +174,15 @@ const mainConfig = {
     "content/fido2/content-script": "./src/vault/fido2/content/content-script.ts",
     "content/fido2/page-script": "./src/vault/fido2/content/page-script.ts",
     "notification/bar": "./src/autofill/notification/bar.ts",
+    "overlay/button": "./src/autofill/overlay/pages/button/bootstrap-autofill-overlay-button.ts",
+    "overlay/list": "./src/autofill/overlay/pages/list/bootstrap-autofill-overlay-list.ts",
     "encrypt-worker": "../../libs/common/src/platform/services/cryptography/encrypt.worker.ts",
   },
   optimization: {
     minimize: ENV !== "development",
     minimizer: [
       new TerserPlugin({
-        exclude: [/content\/.*/, /notification\/.*/],
+        exclude: [/content\/.*/, /notification\/.*/, /overlay\/.*/],
         terserOptions: {
           // Replicate Angular CLI behaviour
           compress: {

@@ -54,7 +54,7 @@ const doAutoFillLogin = async (tab: chrome.tabs.Tab): Promise<void> => {
       logoutCallback: () => Promise.resolve(),
     },
     i18nServiceOptions: {
-      systemLanguage: BrowserApi.getUILanguage(self),
+      systemLanguage: BrowserApi.getUILanguage(),
     },
   };
   const logService = await logServiceFactory(cachedServices, opts);

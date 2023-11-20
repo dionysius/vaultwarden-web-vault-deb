@@ -24,6 +24,7 @@
 		55E0377F2577FA6F00979016 /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 55E037762577FA6F00979016 /* manifest.json */; };
 		55E037802577FA6F00979016 /* background.html in Resources */ = {isa = PBXBuildFile; fileRef = 55E037772577FA6F00979016 /* background.html */; };
 		55E037812577FA6F00979016 /* _locales in Resources */ = {isa = PBXBuildFile; fileRef = 55E037782577FA6F00979016 /* _locales */; };
+		55E037822577FA6F00979016 /* overlay in Resources */ = {isa = PBXBuildFile; fileRef = 55E037832577FA6F00979016 /* overlay */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,7 @@
 		55E037762577FA6F00979016 /* manifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = manifest.json; path = ../../../build/manifest.json; sourceTree = "<group>"; };
 		55E037772577FA6F00979016 /* background.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = background.html; path = ../../../build/background.html; sourceTree = "<group>"; };
 		55E037782577FA6F00979016 /* _locales */ = {isa = PBXFileReference; lastKnownFileType = folder; name = _locales; path = ../../../build/_locales; sourceTree = "<group>"; };
+		55E037832577FA6F00979016 /* overlay */ = {isa = PBXFileReference; lastKnownFileType = folder; name = overlay; path = ../../../build/overlay; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +162,7 @@
 				55E037762577FA6F00979016 /* manifest.json */,
 				55E037772577FA6F00979016 /* background.html */,
 				55E037782577FA6F00979016 /* _locales */,
+				55E037832577FA6F00979016 /* overlay */,
 			);
 			name = Resources;
 			path = safari;
@@ -270,6 +273,7 @@
 				55E0377C2577FA6F00979016 /* notification in Resources */,
 				55E0377E2577FA6F00979016 /* vendor.js in Resources */,
 				55E0377D2577FA6F00979016 /* content in Resources */,
+				55E037822577FA6F00979016 /* overlay in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
