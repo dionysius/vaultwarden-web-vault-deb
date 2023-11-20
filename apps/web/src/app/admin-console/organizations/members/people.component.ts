@@ -427,6 +427,15 @@ export class PeopleComponent
   }
 
   async edit(user: OrganizationUserView, initialTab: MemberDialogTab = MemberDialogTab.Role) {
+    if (!user && this.organization.hasReseller && this.organization.seats === this.confirmedCount) {
+      this.platformUtilsService.showToast(
+        "error",
+        this.i18nService.t("seatLimitReached"),
+        this.i18nService.t("contactYourProvider")
+      );
+      return;
+    }
+
     // Invite User: Add Flow
     // Click on user email: Edit Flow
 
@@ -450,6 +459,7 @@ export class PeopleComponent
         allOrganizationUserEmails: this.allUsers?.map((user) => user.email) ?? [],
         usesKeyConnector: user?.usesKeyConnector,
         initialTab: initialTab,
+        numConfirmedMembers: this.confirmedCount,
       },
     });
 
