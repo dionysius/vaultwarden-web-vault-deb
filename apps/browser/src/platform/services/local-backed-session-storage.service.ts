@@ -27,20 +27,18 @@ export class LocalBackedSessionStorageService extends AbstractMemoryStorageServi
   private localStorage = new BrowserLocalStorageService();
   private sessionStorage = new BrowserMemoryStorageService();
   private updatesSubject = new Subject<StorageUpdate>();
+  updates$;
 
   constructor(
     private encryptService: EncryptService,
     private keyGenerationService: AbstractKeyGenerationService
   ) {
     super();
+    this.updates$ = this.updatesSubject.asObservable();
   }
 
   get valuesRequireDeserialization(): boolean {
     return true;
-  }
-
-  get updates$() {
-    return this.updatesSubject.asObservable();
   }
 
   async get<T>(key: string, options?: MemoryStorageOptions<T>): Promise<T> {

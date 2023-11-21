@@ -15,7 +15,10 @@ import {
 import { AccountService } from "../../../auth/abstractions/account.service";
 import { UserId } from "../../../types/guid";
 import { EncryptService } from "../../abstractions/encrypt.service";
-import { AbstractStorageService } from "../../abstractions/storage.service";
+import {
+  AbstractStorageService,
+  ObservableStorageService,
+} from "../../abstractions/storage.service";
 import { DerivedUserState } from "../derived-user-state";
 import { KeyDefinition, userKeyBuilder } from "../key-definition";
 import { StateUpdateOptions, populateOptionsWithDefault } from "../state-update-options";
@@ -40,7 +43,7 @@ export class DefaultUserState<T> implements UserState<T> {
     protected keyDefinition: KeyDefinition<T>,
     private accountService: AccountService,
     private encryptService: EncryptService,
-    private chosenStorageLocation: AbstractStorageService
+    private chosenStorageLocation: AbstractStorageService & ObservableStorageService
   ) {
     this.formattedKey$ = this.accountService.activeAccount$.pipe(
       map((account) =>

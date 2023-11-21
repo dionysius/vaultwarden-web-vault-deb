@@ -10,7 +10,10 @@ import {
   timeout,
 } from "rxjs";
 
-import { AbstractStorageService } from "../../abstractions/storage.service";
+import {
+  AbstractStorageService,
+  ObservableStorageService,
+} from "../../abstractions/storage.service";
 import { GlobalState } from "../global-state";
 import { KeyDefinition, globalKeyBuilder } from "../key-definition";
 import { StateUpdateOptions, populateOptionsWithDefault } from "../state-update-options";
@@ -29,7 +32,7 @@ export class DefaultGlobalState<T> implements GlobalState<T> {
 
   constructor(
     private keyDefinition: KeyDefinition<T>,
-    private chosenLocation: AbstractStorageService
+    private chosenLocation: AbstractStorageService & ObservableStorageService
   ) {
     this.storageKey = globalKeyBuilder(this.keyDefinition);
 

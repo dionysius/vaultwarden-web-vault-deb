@@ -1,21 +1,20 @@
-import { Observable, mergeMap } from "rxjs";
+import { mergeMap } from "rxjs";
 
 import {
   AbstractStorageService,
-  StorageUpdate,
+  ObservableStorageService,
   StorageUpdateType,
 } from "@bitwarden/common/platform/abstractions/storage.service";
 
 import { fromChromeEvent } from "../../browser/from-chrome-event";
 
-export default abstract class AbstractChromeStorageService implements AbstractStorageService {
-  constructor(protected chromeStorageApi: chrome.storage.StorageArea) {}
+export default abstract class AbstractChromeStorageService
+  implements AbstractStorageService, ObservableStorageService
+{
+  updates$;
 
-  get valuesRequireDeserialization(): boolean {
-    return true;
-  }
-  get updates$(): Observable<StorageUpdate> {
-    return fromChromeEvent(this.chromeStorageApi.onChanged).pipe(
+  constructor(protected chromeStorageApi: chrome.storage.StorageArea) {
+    this.updates$ = fromChromeEvent(this.chromeStorageApi.onChanged).pipe(
       mergeMap(([changes]) => {
         return Object.entries(changes).map(([key, change]) => {
           // The `newValue` property isn't on the StorageChange object
@@ -35,6 +34,10 @@ export default abstract class AbstractChromeStorageService implements AbstractSt
         });
       })
     );
+  }
+
+  get valuesRequireDeserialization(): boolean {
+    return true;
   }
 
   async get<T>(key: string): Promise<T> {

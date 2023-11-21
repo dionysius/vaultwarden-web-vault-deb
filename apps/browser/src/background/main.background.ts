@@ -60,9 +60,11 @@ import { ContainerService } from "@bitwarden/common/platform/services/container.
 import { EncryptServiceImplementation } from "@bitwarden/common/platform/services/cryptography/encrypt.service.implementation";
 import { MultithreadEncryptServiceImplementation } from "@bitwarden/common/platform/services/cryptography/multithread-encrypt.service.implementation";
 import { FileUploadService } from "@bitwarden/common/platform/services/file-upload/file-upload.service";
-import { MemoryStorageService } from "@bitwarden/common/platform/services/memory-storage.service";
 import { SystemService } from "@bitwarden/common/platform/services/system.service";
 import { WebCryptoFunctionService } from "@bitwarden/common/platform/services/web-crypto-function.service";
+import { GlobalStateProvider } from "@bitwarden/common/platform/state";
+// eslint-disable-next-line import/no-restricted-paths -- We need the implementation to inject, but generally this should not be accessed
+import { DefaultGlobalStateProvider } from "@bitwarden/common/platform/state/implementations/default-global-state.provider";
 import { AvatarUpdateService } from "@bitwarden/common/services/account/avatar-update.service";
 import { ApiService } from "@bitwarden/common/services/api.service";
 import { AuditService } from "@bitwarden/common/services/audit.service";
@@ -145,6 +147,7 @@ import BrowserPlatformUtilsService from "../platform/services/browser-platform-u
 import { BrowserStateService } from "../platform/services/browser-state.service";
 import { KeyGenerationService } from "../platform/services/key-generation.service";
 import { LocalBackedSessionStorageService } from "../platform/services/local-backed-session-storage.service";
+import { BackgroundMemoryStorageService } from "../platform/storage/background-memory-storage.service";
 import { BrowserSendService } from "../services/browser-send.service";
 import { BrowserSettingsService } from "../services/browser-settings.service";
 import VaultTimeoutService from "../services/vault-timeout/vault-timeout.service";
@@ -225,6 +228,7 @@ export default class MainBackground {
   deviceTrustCryptoService: DeviceTrustCryptoServiceAbstraction;
   authRequestCryptoService: AuthRequestCryptoServiceAbstraction;
   accountService: AccountServiceAbstraction;
+  globalStateProvider: GlobalStateProvider;
 
   // Passed to the popup for Safari to workaround issues with theming, downloading, etc.
   backgroundWindow = window;
@@ -279,8 +283,16 @@ export default class MainBackground {
             new EncryptServiceImplementation(this.cryptoFunctionService, this.logService, false),
             new KeyGenerationService(this.cryptoFunctionService)
           )
-        : new MemoryStorageService();
-    this.accountService = new AccountServiceImplementation(this.messagingService, this.logService);
+        : new BackgroundMemoryStorageService();
+    this.globalStateProvider = new DefaultGlobalStateProvider(
+      this.memoryStorageService as BackgroundMemoryStorageService,
+      this.storageService as BrowserLocalStorageService
+    );
+    this.accountService = new AccountServiceImplementation(
+      this.messagingService,
+      this.logService,
+      this.globalStateProvider
+    );
     this.stateService = new BrowserStateService(
       this.storageService,
       this.secureStorageService,

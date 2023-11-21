@@ -40,6 +40,7 @@ type Options = BaseOptions<"get"> | BaseOptions<"has"> | SaveOptions | BaseOptio
 export class ElectronStorageService implements AbstractStorageService {
   private store: ElectronStore;
   private updatesSubject = new Subject<StorageUpdate>();
+  updates$;
 
   constructor(dir: string, defaults = {}) {
     if (!fs.existsSync(dir)) {
@@ -50,6 +51,7 @@ export class ElectronStorageService implements AbstractStorageService {
       name: "data",
     };
     this.store = new Store(storeConfig);
+    this.updates$ = this.updatesSubject.asObservable();
 
     ipcMain.handle("storageService", (event, options: Options) => {
       switch (options.action) {
@@ -67,9 +69,6 @@ export class ElectronStorageService implements AbstractStorageService {
 
   get valuesRequireDeserialization(): boolean {
     return true;
-  }
-  get updates$() {
-    return this.updatesSubject.asObservable();
   }
 
   get<T>(key: string): Promise<T> {

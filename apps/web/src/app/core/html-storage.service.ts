@@ -19,8 +19,10 @@ export class HtmlStorageService implements AbstractStorageService {
   get valuesRequireDeserialization(): boolean {
     return true;
   }
-  get updates$() {
-    return this.updatesSubject.asObservable();
+  updates$;
+
+  constructor() {
+    this.updates$ = this.updatesSubject.asObservable();
   }
 
   get<T>(key: string, options: StorageOptions = this.defaultOptions): Promise<T> {

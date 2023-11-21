@@ -6,6 +6,9 @@ import { AccountServiceImplementation } from "@bitwarden/common/auth/services/ac
 import { StateFactory } from "@bitwarden/common/platform/factories/state-factory";
 import { GlobalState } from "@bitwarden/common/platform/models/domain/global-state";
 import { MemoryStorageService } from "@bitwarden/common/platform/services/memory-storage.service";
+import { NoopMessagingService } from "@bitwarden/common/platform/services/noop-messaging.service";
+// eslint-disable-next-line import/no-restricted-paths -- We need the implementation to inject, but generally this should not be accessed
+import { DefaultGlobalStateProvider } from "@bitwarden/common/platform/state/implementations/default-global-state.provider";
 
 import { MenuMain } from "./main/menu/menu.main";
 import { MessagingMain } from "./main/messaging.main";
@@ -85,6 +88,10 @@ export class Main {
     storageDefaults["global.vaultTimeoutAction"] = "lock";
     this.storageService = new ElectronStorageService(app.getPath("userData"), storageDefaults);
     this.memoryStorageService = new MemoryStorageService();
+    const globalStateProvider = new DefaultGlobalStateProvider(
+      this.memoryStorageService,
+      this.storageService
+    );
 
     // TODO: this state service will have access to on disk storage, but not in memory storage.
     // If we could get this to work using the stateService singleton that the rest of the app uses we could save
@@ -95,7 +102,11 @@ export class Main {
       this.memoryStorageService,
       this.logService,
       new StateFactory(GlobalState, Account),
-      new AccountServiceImplementation(null, this.logService), // will not broadcast logouts. This is a hack until we can remove messaging dependency
+      new AccountServiceImplementation(
+        new NoopMessagingService(),
+        this.logService,
+        globalStateProvider
+      ), // will not broadcast logouts. This is a hack until we can remove messaging dependency
       false // Do not use disk caching because this will get out of sync with the renderer service
     );
 

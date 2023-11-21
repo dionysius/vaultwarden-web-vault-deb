@@ -3,11 +3,19 @@ import { Observable } from "rxjs";
 import { UserId } from "../../types/guid";
 import { AuthenticationStatus } from "../enums/authentication-status";
 
+/**
+ * Holds information about an account for use in the AccountService
+ * if more information is added, be sure to update the equality method.
+ */
 export type AccountInfo = {
   status: AuthenticationStatus;
   email: string;
   name: string | undefined;
 };
+
+export function accountInfoEqual(a: AccountInfo, b: AccountInfo) {
+  return a.status == b.status && a.email == b.email && a.name == b.name;
+}
 
 export abstract class AccountService {
   accounts$: Observable<Record<UserId, AccountInfo>>;

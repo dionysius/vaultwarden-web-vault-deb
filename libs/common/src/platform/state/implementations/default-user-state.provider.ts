@@ -3,6 +3,7 @@ import { EncryptService } from "../../abstractions/encrypt.service";
 import {
   AbstractMemoryStorageService,
   AbstractStorageService,
+  ObservableStorageService,
 } from "../../abstractions/storage.service";
 import { KeyDefinition } from "../key-definition";
 import { StorageLocation } from "../state-definition";
@@ -17,8 +18,8 @@ export class DefaultUserStateProvider implements UserStateProvider {
   constructor(
     protected accountService: AccountService,
     protected encryptService: EncryptService,
-    protected memoryStorage: AbstractMemoryStorageService,
-    protected diskStorage: AbstractStorageService
+    protected memoryStorage: AbstractMemoryStorageService & ObservableStorageService,
+    protected diskStorage: AbstractStorageService & ObservableStorageService
   ) {}
 
   get<T>(keyDefinition: KeyDefinition<T>): UserState<T> {

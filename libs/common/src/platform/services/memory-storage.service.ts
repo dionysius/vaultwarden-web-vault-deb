@@ -3,7 +3,7 @@ import { Subject } from "rxjs";
 import { AbstractMemoryStorageService, StorageUpdate } from "../abstractions/storage.service";
 
 export class MemoryStorageService extends AbstractMemoryStorageService {
-  private store = new Map<string, unknown>();
+  protected store = new Map<string, unknown>();
   private updatesSubject = new Subject<StorageUpdate>();
 
   get valuesRequireDeserialization(): boolean {

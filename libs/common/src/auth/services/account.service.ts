@@ -1,50 +1,80 @@
-import {
-  BehaviorSubject,
-  Subject,
-  combineLatestWith,
-  map,
-  distinctUntilChanged,
-  shareReplay,
-} from "rxjs";
+import { Subject, combineLatestWith, map, distinctUntilChanged, shareReplay } from "rxjs";
+import { Jsonify } from "type-fest";
 
-import { AccountInfo, InternalAccountService } from "../../auth/abstractions/account.service";
+import {
+  AccountInfo,
+  InternalAccountService,
+  accountInfoEqual,
+} from "../../auth/abstractions/account.service";
 import { LogService } from "../../platform/abstractions/log.service";
 import { MessagingService } from "../../platform/abstractions/messaging.service";
+import {
+  ACCOUNT_ACCOUNTS,
+  ACCOUNT_ACTIVE_ACCOUNT_ID,
+  GlobalState,
+  GlobalStateProvider,
+} from "../../platform/state";
 import { UserId } from "../../types/guid";
 import { AuthenticationStatus } from "../enums/authentication-status";
 
+export function AccountsDeserializer(
+  accounts: Jsonify<Record<UserId, AccountInfo> | null>
+): Record<UserId, AccountInfo> {
+  if (accounts == null) {
+    return {};
+  }
+
+  return accounts;
+}
+
 export class AccountServiceImplementation implements InternalAccountService {
-  private accounts = new BehaviorSubject<Record<UserId, AccountInfo>>({});
-  private activeAccountId = new BehaviorSubject<UserId | undefined>(undefined);
   private lock = new Subject<UserId>();
   private logout = new Subject<UserId>();
+  private accountsState: GlobalState<Record<UserId, AccountInfo>>;
+  private activeAccountIdState: GlobalState<UserId | undefined>;
 
-  accounts$ = this.accounts.asObservable();
-  activeAccount$ = this.activeAccountId.pipe(
-    combineLatestWith(this.accounts$),
-    map(([id, accounts]) => (id ? { id, ...accounts[id] } : undefined)),
-    distinctUntilChanged(),
-    shareReplay({ bufferSize: 1, refCount: false })
-  );
+  accounts$;
+  activeAccount$;
   accountLock$ = this.lock.asObservable();
   accountLogout$ = this.logout.asObservable();
-  constructor(private messagingService: MessagingService, private logService: LogService) {}
+
+  constructor(
+    private messagingService: MessagingService,
+    private logService: LogService,
+    private globalStateProvider: GlobalStateProvider
+  ) {
+    this.accountsState = this.globalStateProvider.get(ACCOUNT_ACCOUNTS);
+    this.activeAccountIdState = this.globalStateProvider.get(ACCOUNT_ACTIVE_ACCOUNT_ID);
+
+    this.accounts$ = this.accountsState.state$.pipe(
+      map((accounts) => (accounts == null ? {} : accounts))
+    );
+    this.activeAccount$ = this.activeAccountIdState.state$.pipe(
+      combineLatestWith(this.accounts$),
+      map(([id, accounts]) => (id ? { id, ...accounts[id] } : undefined)),
+      distinctUntilChanged(),
+      shareReplay({ bufferSize: 1, refCount: false })
+    );
+  }
 
   addAccount(userId: UserId, accountData: AccountInfo): void {
-    this.accounts.value[userId] = accountData;
-    this.accounts.next(this.accounts.value);
+    this.accountsState.update((accounts) => {
+      accounts ||= {};
+      accounts[userId] = accountData;
+      return accounts;
+    });
   }
 
   setAccountName(userId: UserId, name: string): void {
-    this.setAccountInfo(userId, { ...this.accounts.value[userId], name });
+    this.setAccountInfo(userId, { name });
   }
 
   setAccountEmail(userId: UserId, email: string): void {
-    this.setAccountInfo(userId, { ...this.accounts.value[userId], email });
+    this.setAccountInfo(userId, { email });
   }
 
   setAccountStatus(userId: UserId, status: AuthenticationStatus): void {
-    this.setAccountInfo(userId, { ...this.accounts.value[userId], status });
+    this.setAccountInfo(userId, { status });
 
     if (status === AuthenticationStatus.LoggedOut) {
       this.logout.next(userId);
@@ -54,16 +84,22 @@ export class AccountServiceImplementation implements InternalAccountService {
   }
 
   switchAccount(userId: UserId) {
-    if (userId == null) {
-      // indicates no account is active
-      this.activeAccountId.next(undefined);
-      return;
-    }
+    this.activeAccountIdState.update(
+      (_, accounts) => {
+        if (userId == null) {
+          // indicates no account is active
+          return undefined;
+        }
 
-    if (this.accounts.value[userId] == null) {
-      throw new Error("Account does not exist");
-    }
-    this.activeAccountId.next(userId);
+        if (accounts?.[userId] == null) {
+          throw new Error("Account does not exist");
+        }
+        return userId;
+      },
+      {
+        combineLatestWith: this.accounts$,
+      }
+    );
   }
 
   // TODO: update to use our own account status settings. Requires inverting direction of state service accounts flow
@@ -76,18 +112,26 @@ export class AccountServiceImplementation implements InternalAccountService {
     }
   }
 
-  private setAccountInfo(userId: UserId, accountInfo: AccountInfo) {
-    if (this.accounts.value[userId] == null) {
-      throw new Error("Account does not exist");
+  private setAccountInfo(userId: UserId, update: Partial<AccountInfo>) {
+    function newAccountInfo(oldAccountInfo: AccountInfo): AccountInfo {
+      return { ...oldAccountInfo, ...update };
     }
+    this.accountsState.update(
+      (accounts) => {
+        accounts[userId] = newAccountInfo(accounts[userId]);
+        return accounts;
+      },
+      {
+        // Avoid unnecessary updates
+        // TODO: Faster comparison, maybe include a hash on the objects?
+        shouldUpdate: (accounts) => {
+          if (accounts?.[userId] == null) {
+            throw new Error("Account does not exist");
+          }
 
-    // Avoid unnecessary updates
-    // TODO: Faster comparison, maybe include a hash on the objects?
-    if (JSON.stringify(this.accounts.value[userId]) === JSON.stringify(accountInfo)) {
-      return;
-    }
-
-    this.accounts.value[userId] = accountInfo;
-    this.accounts.next(this.accounts.value);
+          return !accountInfoEqual(accounts[userId], newAccountInfo(accounts[userId]));
+        },
+      }
+    );
   }
 }

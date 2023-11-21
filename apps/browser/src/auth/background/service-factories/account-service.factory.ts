@@ -7,6 +7,10 @@ import {
   factory,
 } from "../../../platform/background/service-factories/factory-options";
 import {
+  GlobalStateProviderInitOptions,
+  globalStateProviderFactory,
+} from "../../../platform/background/service-factories/global-state-provider.factory";
+import {
   LogServiceInitOptions,
   logServiceFactory,
 } from "../../../platform/background/service-factories/log-service.factory";
@@ -19,7 +23,8 @@ type AccountServiceFactoryOptions = FactoryOptions;
 
 export type AccountServiceInitOptions = AccountServiceFactoryOptions &
   MessagingServiceInitOptions &
-  LogServiceInitOptions;
+  LogServiceInitOptions &
+  GlobalStateProviderInitOptions;
 
 export function accountServiceFactory(
   cache: { accountService?: AccountService } & CachedServices,
@@ -32,7 +37,8 @@ export function accountServiceFactory(
     async () =>
       new AccountServiceImplementation(
         await messagingServiceFactory(cache, opts),
-        await logServiceFactory(cache, opts)
+        await logServiceFactory(cache, opts),
+        await globalStateProviderFactory(cache, opts)
       )
   );
 }

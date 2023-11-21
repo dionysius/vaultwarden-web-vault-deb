@@ -25,6 +25,7 @@ const runtime = {
   sendMessage: jest.fn(),
   getManifest: jest.fn(),
   getURL: jest.fn((path) => `chrome-extension://id/${path}`),
+  connect: jest.fn(),
   onConnect: {
     addListener: jest.fn(),
   },

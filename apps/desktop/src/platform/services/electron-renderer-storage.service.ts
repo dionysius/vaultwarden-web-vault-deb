@@ -11,8 +11,10 @@ export class ElectronRendererStorageService implements AbstractStorageService {
   get valuesRequireDeserialization(): boolean {
     return true;
   }
-  get updates$() {
-    return this.updatesSubject.asObservable();
+  updates$;
+
+  constructor() {
+    this.updates$ = this.updatesSubject.asObservable();
   }
 
   get<T>(key: string): Promise<T> {

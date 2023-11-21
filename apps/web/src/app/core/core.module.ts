@@ -8,6 +8,8 @@ import {
   LOCALES_DIRECTORY,
   SYSTEM_LANGUAGE,
   MEMORY_STORAGE,
+  OBSERVABLE_MEMORY_STORAGE,
+  OBSERVABLE_DISK_STORAGE,
 } from "@bitwarden/angular/services/injection-tokens";
 import { JslibServicesModule } from "@bitwarden/angular/services/jslib-services.module";
 import { ModalService as ModalServiceAbstraction } from "@bitwarden/angular/services/modal.service";
@@ -74,6 +76,8 @@ import { WebPlatformUtilsService } from "./web-platform-utils.service";
       provide: MEMORY_STORAGE,
       useClass: MemoryStorageService,
     },
+    { provide: OBSERVABLE_MEMORY_STORAGE, useExisting: MEMORY_STORAGE },
+    { provide: OBSERVABLE_DISK_STORAGE, useExisting: AbstractStorageService },
     {
       provide: PlatformUtilsServiceAbstraction,
       useClass: WebPlatformUtilsService,

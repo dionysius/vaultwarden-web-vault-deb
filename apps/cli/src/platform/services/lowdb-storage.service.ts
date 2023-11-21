@@ -29,6 +29,7 @@ export class LowdbStorageService implements AbstractStorageService {
   private defaults: any;
   private ready = false;
   private updatesSubject = new Subject<StorageUpdate>();
+  updates$;
 
   constructor(
     protected logService: LogService,
@@ -38,6 +39,7 @@ export class LowdbStorageService implements AbstractStorageService {
     private requireLock = false
   ) {
     this.defaults = defaults;
+    this.updates$ = this.updatesSubject.asObservable();
   }
 
   @sequentialize(() => "lowdbStorageInit")
@@ -109,9 +111,6 @@ export class LowdbStorageService implements AbstractStorageService {
 
   get valuesRequireDeserialization(): boolean {
     return true;
-  }
-  get updates$() {
-    return this.updatesSubject.asObservable();
   }
 
   async get<T>(key: string): Promise<T> {

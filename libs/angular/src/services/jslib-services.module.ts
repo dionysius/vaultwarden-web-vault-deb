@@ -101,6 +101,9 @@ import { NoopNotificationsService } from "@bitwarden/common/platform/services/no
 import { StateService } from "@bitwarden/common/platform/services/state.service";
 import { ValidationService } from "@bitwarden/common/platform/services/validation.service";
 import { WebCryptoFunctionService } from "@bitwarden/common/platform/services/web-crypto-function.service";
+import { GlobalStateProvider } from "@bitwarden/common/platform/state";
+// eslint-disable-next-line import/no-restricted-paths -- We need the implementation to inject, but generally this should not be accessed
+import { DefaultGlobalStateProvider } from "@bitwarden/common/platform/state/implementations/default-global-state.provider";
 import { AvatarUpdateService } from "@bitwarden/common/services/account/avatar-update.service";
 import { AnonymousHubService } from "@bitwarden/common/services/anonymousHub.service";
 import { ApiService } from "@bitwarden/common/services/api.service";
@@ -170,6 +173,8 @@ import {
   LOG_MAC_FAILURES,
   LOGOUT_CALLBACK,
   MEMORY_STORAGE,
+  OBSERVABLE_DISK_STORAGE,
+  OBSERVABLE_MEMORY_STORAGE,
   SECURE_STORAGE,
   STATE_FACTORY,
   STATE_SERVICE_USE_CACHE,
@@ -337,7 +342,7 @@ import { AbstractThemingService } from "./theming/theming.service.abstraction";
     {
       provide: AccountServiceAbstraction,
       useClass: AccountServiceImplementation,
-      deps: [MessagingServiceAbstraction, LogService],
+      deps: [MessagingServiceAbstraction, LogService, GlobalStateProvider],
     },
     {
       provide: InternalAccountService,
@@ -746,6 +751,11 @@ import { AbstractThemingService } from "./theming/theming.service.abstraction";
       provide: AuthRequestCryptoServiceAbstraction,
       useClass: AuthRequestCryptoServiceImplementation,
       deps: [CryptoServiceAbstraction],
+    },
+    {
+      provide: GlobalStateProvider,
+      useClass: DefaultGlobalStateProvider,
+      deps: [OBSERVABLE_MEMORY_STORAGE, OBSERVABLE_DISK_STORAGE],
     },
   ],
 })

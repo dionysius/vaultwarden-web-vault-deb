@@ -1,6 +1,7 @@
 import {
   AbstractMemoryStorageService,
   AbstractStorageService,
+  ObservableStorageService,
 } from "../../abstractions/storage.service";
 import { GlobalState } from "../global-state";
 import { GlobalStateProvider } from "../global-state.provider";
@@ -13,8 +14,8 @@ export class DefaultGlobalStateProvider implements GlobalStateProvider {
   private globalStateCache: Record<string, GlobalState<unknown>> = {};
 
   constructor(
-    private memoryStorage: AbstractMemoryStorageService,
-    private diskStorage: AbstractStorageService
+    private memoryStorage: AbstractMemoryStorageService & ObservableStorageService,
+    private diskStorage: AbstractStorageService & ObservableStorageService
   ) {}
 
   get<T>(keyDefinition: KeyDefinition<T>): GlobalState<T> {
