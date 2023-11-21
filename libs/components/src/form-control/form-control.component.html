@@ -1,13 +1,13 @@
 <label [class]="labelClasses">
   <ng-content></ng-content>
   <span [class]="labelContentClasses">
-    <ng-content select="bit-label"></ng-content>
-    <span *ngIf="required" class="tw-text-xs tw-font-normal"> ({{ "required" | i18n }})</span>
+    <span>
+      <ng-content select="bit-label"></ng-content>
+      <span *ngIf="required" class="tw-text-xs tw-font-normal"> ({{ "required" | i18n }})</span>
+    </span>
+    <ng-content select="bit-hint" *ngIf="!hasError"></ng-content>
   </span>
 </label>
-<div>
-  <ng-content select="bit-hint" *ngIf="!hasError"></ng-content>
-</div>
 <div *ngIf="hasError" class="tw-mt-1 tw-text-danger">
   <i class="bwi bwi-error"></i> {{ displayError }}
 </div>

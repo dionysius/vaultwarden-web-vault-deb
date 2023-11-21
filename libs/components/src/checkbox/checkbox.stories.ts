@@ -1,5 +1,12 @@
 import { Component, Input } from "@angular/core";
-import { FormsModule, ReactiveFormsModule, FormBuilder, Validators } from "@angular/forms";
+import {
+  FormsModule,
+  ReactiveFormsModule,
+  FormBuilder,
+  Validators,
+  FormGroup,
+  FormControl,
+} from "@angular/forms";
 import { Meta, StoryObj, moduleMetadata } from "@storybook/angular";
 
 import { I18nService } from "@bitwarden/common/src/platform/abstractions/i18n.service";
@@ -15,7 +22,8 @@ const template = `
       <input type="checkbox" bitCheckbox formControlName="checkbox">
       <bit-label>Click me</bit-label>
     </bit-form-control>
-  </form>`;
+  </form>
+`;
 
 @Component({
   selector: "app-example",
@@ -75,6 +83,40 @@ export const Default: Story = {
   render: (args) => ({
     props: args,
     template: `<app-example [checked]="checked" [disabled]="disabled"></app-example>`,
+  }),
+  parameters: {
+    docs: {
+      source: {
+        code: template,
+      },
+    },
+  },
+  args: {
+    checked: false,
+    disabled: false,
+  },
+};
+
+export const Hint: Story = {
+  render: (args) => ({
+    props: {
+      formObj: new FormGroup({
+        checkbox: new FormControl(false),
+      }),
+    },
+    template: `
+      <form [formGroup]="formObj">
+        <bit-form-control>
+          <input type="checkbox" bitCheckbox formControlName="checkbox">
+          <bit-label>Really long value that never ends.</bit-label>
+          <bit-hint>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur iaculis consequat enim vitae elementum.
+            Ut non odio est. Duis eu nisi ultrices, porttitor lorem eget, ornare libero. Fusce ex ante, consequat ac
+            sem et, euismod placerat tellus.
+          </bit-hint>
+        </bit-form-control>
+      </form>
+    `,
   }),
   parameters: {
     docs: {

@@ -29,6 +29,7 @@ export class RadioInputComponent implements BitFormControlAbstraction {
     "tw-h-3.5",
     "tw-mr-1.5",
     "tw-bottom-[-1px]", // Fix checkbox looking off-center
+    "tw-flex-none", // Flexbox fix for bit-form-control
 
     "hover:tw-border-2",
     "[&>label:hover]:tw-border-2",

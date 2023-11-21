@@ -6,7 +6,7 @@ let nextId = 0;
 @Directive({
   selector: "bit-hint",
   host: {
-    class: "tw-text-muted tw-inline-block tw-mt-1",
+    class: "tw-text-muted tw-font-normal tw-inline-block tw-mt-1",
   },
 })
 export class BitHintComponent {
