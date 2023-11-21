@@ -1,8 +1,14 @@
 import { ipcRenderer } from "electron";
 
 import { DeviceType, ThemeType, KeySuffixOptions } from "@bitwarden/common/enums";
+import { EncString } from "@bitwarden/common/platform/models/domain/enc-string";
 
-import { EncryptedMessageResponse, UnencryptedMessageResponse } from "../models/native-messaging";
+import {
+  EncryptedMessageResponse,
+  LegacyMessageWrapper,
+  Message,
+  UnencryptedMessageResponse,
+} from "../models/native-messaging";
 import { BiometricMessage, BiometricAction } from "../types/biometric-message";
 import { isDev, isWindowsStore } from "../utils";
 
@@ -55,6 +61,17 @@ const clipboard = {
 const nativeMessaging = {
   sendReply: (message: EncryptedMessageResponse | UnencryptedMessageResponse) => {
     ipcRenderer.send("nativeMessagingReply", message);
+  },
+  sendMessage: (message: {
+    appId: string;
+    command?: string;
+    sharedSecret?: string;
+    message?: EncString;
+  }) => {
+    ipcRenderer.send("nativeMessagingReply", message);
+  },
+  onMessage: (callback: (message: LegacyMessageWrapper | Message) => void) => {
+    ipcRenderer.on("nativeMessaging", (_event, message) => callback(message));
   },
 };
 
