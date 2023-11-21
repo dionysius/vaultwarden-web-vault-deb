@@ -42,6 +42,9 @@
             </option>
           </select>
         </div>
+        <div class="box-footer" *ngIf="accountSwitcherEnabled">
+          {{ "showAutoFillMenuOnFormFieldsDescAlt" | i18n }}
+        </div>
       </div>
     </div>
   </ng-container>

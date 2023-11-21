@@ -36,6 +36,7 @@ import { DialogService } from "@bitwarden/components";
 import { SetPinComponent } from "../../auth/popup/components/set-pin.component";
 import { BiometricErrors, BiometricErrorTypes } from "../../models/biometricErrors";
 import { BrowserApi } from "../../platform/browser/browser-api";
+import { flagEnabled } from "../../platform/flags";
 import BrowserPopupUtils from "../../platform/popup/browser-popup-utils";
 
 import { AboutComponent } from "./about.component";
@@ -71,6 +72,7 @@ export class SettingsComponent implements OnInit {
   }>;
   supportsBiometric: boolean;
   showChangeMasterPass = true;
+  accountSwitcherEnabled = false;
 
   form = this.formBuilder.group({
     vaultTimeout: [null as number | null],
@@ -99,7 +101,9 @@ export class SettingsComponent implements OnInit {
     private userVerificationService: UserVerificationService,
     private dialogService: DialogService,
     private changeDetectorRef: ChangeDetectorRef
-  ) {}
+  ) {
+    this.accountSwitcherEnabled = flagEnabled("accountSwitching");
+  }
 
   async ngOnInit() {
     const maximumVaultTimeoutPolicy = this.policyService.get$(PolicyType.MaximumVaultTimeout);

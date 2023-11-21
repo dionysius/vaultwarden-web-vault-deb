@@ -109,7 +109,9 @@
         />
       </div>
       <button
-        *ngIf="availableVaultTimeoutActions.includes(VaultTimeoutAction.Lock)"
+        *ngIf="
+          !accountSwitcherEnabled && availableVaultTimeoutActions.includes(VaultTimeoutAction.Lock)
+        "
         type="button"
         class="box-content-row box-content-row-flex text-default"
         appStopClick
@@ -163,6 +165,7 @@
         <i class="bwi bwi-angle-right bwi-lg row-sub-icon" aria-hidden="true"></i>
       </button>
       <button
+        *ngIf="!accountSwitcherEnabled"
         type="button"
         class="box-content-row box-content-row-flex text-default"
         appStopClick

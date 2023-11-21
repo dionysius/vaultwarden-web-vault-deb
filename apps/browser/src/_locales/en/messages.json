@@ -619,6 +619,9 @@
   "addLoginNotificationDesc": {
     "message": "Ask to add an item if one isn't found in your vault."
   },
+  "addLoginNotificationDescAlt": {
+    "message": "Ask to add an item if one isn't found in your vault. Applies to all logged in accounts."
+  },
   "showCardsCurrentTab": {
     "message": "Show cards on Tab page"
   },
@@ -651,6 +654,9 @@
   "changedPasswordNotificationDesc": {
     "message": "Ask to update a login's password when a change is detected on a website."
   },
+  "changedPasswordNotificationDescAlt": {
+    "message": "Ask to update a login's password when a change is detected on a website. Applies to all logged in accounts."
+  },
   "notificationChangeDesc": {
     "message": "Do you want to update this password in Bitwarden?"
   },
@@ -667,7 +673,10 @@
     "message": "Show context menu options"
   },
   "contextMenuItemDesc": {
-    "message": "Use a secondary click to access password generation and matching logins for the website. "
+    "message": "Use a secondary click to access password generation and matching logins for the website."
+  },
+  "contextMenuItemDescAlt": {
+    "message": "Use a secondary click to access password generation and matching logins for the website. Applies to all logged in accounts."
   },
   "defaultUriMatchDetection": {
     "message": "Default URI match detection",
@@ -681,6 +690,9 @@
   },
   "themeDesc": {
     "message": "Change the application's color theme."
+  },
+  "themeDescAlt": {
+    "message": "Change the application's color theme. Applies to all logged in accounts."
   },
   "dark": {
     "message": "Dark",
@@ -1005,6 +1017,9 @@
   "showAutoFillMenuOnFormFields": {
     "message": "Show auto-fill menu on form fields",
     "description": "Represents the message for allowing the user to enable the auto-fill overlay"
+  },
+  "showAutoFillMenuOnFormFieldsDescAlt": {
+    "message": "Applies to all logged in accounts."
   },
   "autofillOverlayVisibilityOff": {
     "message": "Off",
@@ -1677,6 +1692,9 @@
   },
   "excludedDomainsDesc": {
     "message": "Bitwarden will not ask to save login details for these domains. You must refresh the page for changes to take effect."
+  },
+  "excludedDomainsDescAlt": {
+    "message": "Bitwarden will not ask to save login details for these domains for all logged in accounts. You must refresh the page for changes to take effect."
   },
   "excludedDomainsInvalidDomain": {
     "message": "$DOMAIN$ is not a valid domain",

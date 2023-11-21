@@ -74,7 +74,11 @@
         </div>
       </div>
       <div id="addlogin-notification-barHelp" class="box-footer">
-        {{ "addLoginNotificationDesc" | i18n }}
+        {{
+          accountSwitcherEnabled
+            ? ("addLoginNotificationDescAlt" | i18n)
+            : ("addLoginNotificationDesc" | i18n)
+        }}
       </div>
     </div>
     <div class="box">
@@ -93,7 +97,11 @@
         </div>
       </div>
       <div id="changedpass-notification-barHelp" class="box-footer">
-        {{ "changedPasswordNotificationDesc" | i18n }}
+        {{
+          accountSwitcherEnabled
+            ? ("changedPasswordNotificationDescAlt" | i18n)
+            : ("changedPasswordNotificationDesc" | i18n)
+        }}
       </div>
     </div>
     <div class="box">
@@ -109,7 +117,13 @@
           />
         </div>
       </div>
-      <div id="context-menuHelp" class="box-footer">{{ "contextMenuItemDesc" | i18n }}</div>
+      <div id="context-menuHelp" class="box-footer">
+        {{
+          accountSwitcherEnabled
+            ? ("contextMenuItemDescAlt" | i18n)
+            : ("contextMenuItemDesc" | i18n)
+        }}
+      </div>
     </div>
   </ng-container>
   <div class="box box-section-divider">
@@ -206,7 +220,9 @@
           </select>
         </div>
       </div>
-      <div id="themeHelp" class="box-footer">{{ "themeDesc" | i18n }}</div>
+      <div id="themeHelp" class="box-footer">
+        {{ accountSwitcherEnabled ? ("themeDescAlt" | i18n) : ("themeDesc" | i18n) }}
+      </div>
     </div>
   </ng-container>
 </main>

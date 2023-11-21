@@ -11,6 +11,7 @@ import { DialogService } from "@bitwarden/components";
 
 import { AutofillOverlayVisibility } from "../../autofill/utils/autofill-overlay.enum";
 import { BrowserApi } from "../../platform/browser/browser-api";
+import { flagEnabled } from "../../platform/flags";
 
 @Component({
   selector: "app-autofill",
@@ -28,6 +29,7 @@ export class AutofillComponent implements OnInit {
   defaultUriMatch = UriMatchType.Domain;
   uriMatchOptions: any[];
   autofillKeyboardHelperText: string;
+  accountSwitcherEnabled = false;
 
   constructor(
     private stateService: StateService,
@@ -63,6 +65,8 @@ export class AutofillComponent implements OnInit {
       { name: i18nService.t("exact"), value: UriMatchType.Exact },
       { name: i18nService.t("never"), value: UriMatchType.Never },
     ];
+
+    this.accountSwitcherEnabled = flagEnabled("accountSwitching");
   }
 
   async ngOnInit() {
