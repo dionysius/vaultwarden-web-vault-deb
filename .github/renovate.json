@@ -91,6 +91,7 @@
     },
     {
       "matchPackageNames": [
+        "@webcomponents/custom-elements",
         "concurrently",
         "cross-env",
         "del",
@@ -105,6 +106,7 @@
         "prettier",
         "prettier-plugin-tailwindcss",
         "rimraf",
+        "tabbable",
         "wait-on"
       ],
       "description": "Autofill owned dependencies",
