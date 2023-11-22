@@ -2386,23 +2386,6 @@ export class StateService<
     );
   }
 
-  async getEmergencyAccessInvitation(options?: StorageOptions): Promise<any> {
-    return (
-      await this.getGlobals(this.reconcileOptions(options, await this.defaultOnDiskOptions()))
-    )?.emergencyAccessInvitation;
-  }
-
-  async setEmergencyAccessInvitation(value: any, options?: StorageOptions): Promise<void> {
-    const globals = await this.getGlobals(
-      this.reconcileOptions(options, await this.defaultOnDiskOptions())
-    );
-    globals.emergencyAccessInvitation = value;
-    await this.saveGlobals(
-      globals,
-      this.reconcileOptions(options, await this.defaultOnDiskOptions())
-    );
-  }
-
   /**
    * @deprecated Do not call this directly, use OrganizationService
    */
@@ -2881,6 +2864,23 @@ export class StateService<
     return await this.saveAccount(
       account,
       this.reconcileOptions(options, await this.defaultOnDiskLocalOptions())
+    );
+  }
+
+  async getDeepLinkRedirectUrl(options?: StorageOptions): Promise<string> {
+    return (
+      await this.getGlobals(this.reconcileOptions(options, await this.defaultOnDiskOptions()))
+    )?.deepLinkRedirectUrl;
+  }
+
+  async setDeepLinkRedirectUrl(url: string, options?: StorageOptions): Promise<void> {
+    const globals = await this.getGlobals(
+      this.reconcileOptions(options, await this.defaultOnDiskOptions())
+    );
+    globals.deepLinkRedirectUrl = url;
+    await this.saveGlobals(
+      globals,
+      this.reconcileOptions(options, await this.defaultOnDiskOptions())
     );
   }
 

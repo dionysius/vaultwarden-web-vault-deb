@@ -172,13 +172,8 @@ export class LoginComponent extends BaseLoginComponent implements OnInit {
       }
     }
 
-    const previousUrl = this.routerService.getPreviousUrl();
-    if (previousUrl) {
-      this.router.navigateByUrl(previousUrl);
-    } else {
-      this.loginService.clearValues();
-      this.router.navigate([this.successRoute]);
-    }
+    this.loginService.clearValues();
+    this.router.navigate([this.successRoute]);
   }
 
   goToHint() {

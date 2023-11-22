@@ -18,6 +18,8 @@ import { FamiliesForEnterpriseSetupComponent } from "./admin-console/organizatio
 import { CreateOrganizationComponent } from "./admin-console/settings/create-organization.component";
 import { SponsoredFamiliesComponent } from "./admin-console/settings/sponsored-families.component";
 import { AcceptOrganizationComponent } from "./auth/accept-organization.component";
+import { AcceptEmergencyComponent } from "./auth/emergency-access/accept/accept-emergency.component";
+import { deepLinkGuard } from "./auth/guards/deep-link.guard";
 import { HintComponent } from "./auth/hint.component";
 import { LockComponent } from "./auth/lock.component";
 import { LoginDecryptionOptionsComponent } from "./auth/login/login-decryption-options/login-decryption-options.component";
@@ -113,16 +115,19 @@ const routes: Routes = [
       {
         path: "lock",
         component: LockComponent,
-        canActivate: [lockGuard()],
+        canActivate: [deepLinkGuard(), lockGuard()],
       },
       { path: "verify-email", component: VerifyEmailTokenComponent },
       {
         path: "accept-organization",
         component: AcceptOrganizationComponent,
+        canActivate: [deepLinkGuard()],
         data: { titleId: "joinOrganization", doNotSaveUrl: false },
       },
       {
         path: "accept-emergency",
+        component: AcceptEmergencyComponent,
+        canActivate: [deepLinkGuard()],
         data: { titleId: "acceptEmergency", doNotSaveUrl: false },
         loadComponent: () =>
           import("./auth/emergency-access/accept/accept-emergency.component").then(
@@ -132,6 +137,7 @@ const routes: Routes = [
       {
         path: "accept-families-for-enterprise",
         component: AcceptFamilySponsorshipComponent,
+        canActivate: [deepLinkGuard()],
         data: { titleId: "acceptFamilySponsorship", doNotSaveUrl: false },
       },
       { path: "recover", pathMatch: "full", redirectTo: "recover-2fa" },
@@ -188,7 +194,7 @@ const routes: Routes = [
   {
     path: "",
     component: UserLayoutComponent,
-    canActivate: [AuthGuard],
+    canActivate: [deepLinkGuard(), AuthGuard],
     children: [
       {
         path: "vault",

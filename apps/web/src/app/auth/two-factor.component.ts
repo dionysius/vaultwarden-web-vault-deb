@@ -18,8 +18,6 @@ import { LogService } from "@bitwarden/common/platform/abstractions/log.service"
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
 
-import { RouterService } from "../core";
-
 import { TwoFactorOptionsComponent } from "./two-factor-options.component";
 
 @Component({
@@ -44,7 +42,6 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
     logService: LogService,
     twoFactorService: TwoFactorService,
     appIdService: AppIdService,
-    private routerService: RouterService,
     loginService: LoginService,
     configService: ConfigServiceAbstraction,
     @Inject(WINDOW) protected win: Window
@@ -97,29 +94,10 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
 
   goAfterLogIn = async () => {
     this.loginService.clearValues();
-    const previousUrl = this.routerService.getPreviousUrl();
-    if (previousUrl) {
-      this.router.navigateByUrl(previousUrl);
-    } else {
-      // if we have an emergency access invite, redirect to emergency access
-      const emergencyAccessInvite = await this.stateService.getEmergencyAccessInvitation();
-      if (emergencyAccessInvite != null) {
-        this.router.navigate(["/accept-emergency"], {
-          queryParams: {
-            id: emergencyAccessInvite.id,
-            name: emergencyAccessInvite.name,
-            email: emergencyAccessInvite.email,
-            token: emergencyAccessInvite.token,
-          },
-        });
-        return;
-      }
-
-      this.router.navigate([this.successRoute], {
-        queryParams: {
-          identifier: this.orgIdentifier,
-        },
-      });
-    }
+    this.router.navigate([this.successRoute], {
+      queryParams: {
+        identifier: this.orgIdentifier,
+      },
+    });
   };
 }

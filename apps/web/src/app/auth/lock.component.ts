@@ -19,8 +19,6 @@ import { StateService } from "@bitwarden/common/platform/abstractions/state.serv
 import { PasswordStrengthServiceAbstraction } from "@bitwarden/common/tools/password-strength";
 import { DialogService } from "@bitwarden/components";
 
-import { RouterService } from "../core";
-
 @Component({
   selector: "app-lock",
   templateUrl: "lock.component.html",
@@ -35,7 +33,6 @@ export class LockComponent extends BaseLockComponent {
     vaultTimeoutService: VaultTimeoutService,
     vaultTimeoutSettingsService: VaultTimeoutSettingsService,
     environmentService: EnvironmentService,
-    private routerService: RouterService,
     stateService: StateService,
     apiService: ApiService,
     logService: LogService,
@@ -72,10 +69,6 @@ export class LockComponent extends BaseLockComponent {
   async ngOnInit() {
     await super.ngOnInit();
     this.onSuccessfulSubmit = async () => {
-      const previousUrl = this.routerService.getPreviousUrl();
-      if (previousUrl && previousUrl !== "/" && previousUrl.indexOf("lock") === -1) {
-        this.successRoute = previousUrl;
-      }
       this.router.navigateByUrl(this.successRoute);
     };
   }
