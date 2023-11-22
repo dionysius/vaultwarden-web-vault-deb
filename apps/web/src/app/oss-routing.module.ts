@@ -18,7 +18,6 @@ import { FamiliesForEnterpriseSetupComponent } from "./admin-console/organizatio
 import { CreateOrganizationComponent } from "./admin-console/settings/create-organization.component";
 import { SponsoredFamiliesComponent } from "./admin-console/settings/sponsored-families.component";
 import { AcceptOrganizationComponent } from "./auth/accept-organization.component";
-import { AcceptEmergencyComponent } from "./auth/emergency-access/accept/accept-emergency.component";
 import { deepLinkGuard } from "./auth/guards/deep-link.guard";
 import { HintComponent } from "./auth/hint.component";
 import { LockComponent } from "./auth/lock.component";
@@ -132,7 +131,6 @@ const routes: Routes = [
       },
       {
         path: "accept-emergency",
-        component: AcceptEmergencyComponent,
         canActivate: [deepLinkGuard()],
         data: { titleId: "acceptEmergency", doNotSaveUrl: false },
         loadComponent: () =>
