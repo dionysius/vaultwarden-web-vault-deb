@@ -1,5 +1,10 @@
-import { MasterKey, UserKey } from "../../../platform/models/domain/symmetric-crypto-key";
+import {
+  MasterKey,
+  UserKey,
+  SymmetricCryptoKey,
+} from "../../../platform/models/domain/symmetric-crypto-key";
 import { AuthenticationType } from "../../enums/authentication-type";
+import { WebAuthnLoginAssertionResponseRequest } from "../../services/webauthn-login/request/webauthn-login-assertion-response.request";
 import { TokenTwoFactorRequest } from "../request/identity-token/token-two-factor.request";
 
 export class PasswordLoginCredentials {
@@ -42,5 +47,15 @@ export class AuthRequestLoginCredentials {
     public decryptedMasterKey: MasterKey,
     public decryptedMasterKeyHash: string,
     public twoFactor?: TokenTwoFactorRequest
+  ) {}
+}
+
+export class WebAuthnLoginCredentials {
+  readonly type = AuthenticationType.WebAuthn;
+
+  constructor(
+    public token: string,
+    public deviceResponse: WebAuthnLoginAssertionResponseRequest,
+    public prfKey?: SymmetricCryptoKey
   ) {}
 }

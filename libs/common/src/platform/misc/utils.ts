@@ -170,6 +170,43 @@ export class Utils {
     }
   }
 
+  /**
+   * Converts a hex string to an ArrayBuffer.
+   * Note: this doesn't need any Node specific code as parseInt() / ArrayBuffer / Uint8Array
+   * work the same in Node and the browser.
+   * @param {string} hexString - A string of hexadecimal characters.
+   * @returns {ArrayBuffer} The ArrayBuffer representation of the hex string.
+   */
+  static hexStringToArrayBuffer(hexString: string): ArrayBuffer {
+    // Check if the hexString has an even length, as each hex digit represents half a byte (4 bits),
+    // and it takes two hex digits to represent a full byte (8 bits).
+    if (hexString.length % 2 !== 0) {
+      throw "HexString has to be an even length";
+    }
+
+    // Create an ArrayBuffer with a length that is half the length of the hex string,
+    // because each pair of hex digits will become a single byte.
+    const arrayBuffer = new ArrayBuffer(hexString.length / 2);
+
+    // Create a Uint8Array view on top of the ArrayBuffer (each position represents a byte)
+    // as ArrayBuffers cannot be edited directly.
+    const uint8Array = new Uint8Array(arrayBuffer);
+
+    // Loop through the bytes
+    for (let i = 0; i < uint8Array.length; i++) {
+      // Extract two hex characters (1 byte)
+      const hexByte = hexString.substr(i * 2, 2);
+
+      // Convert hexByte into a decimal value from base 16. (ex: ff --> 255)
+      const byteValue = parseInt(hexByte, 16);
+
+      // Place the byte value into the uint8Array
+      uint8Array[i] = byteValue;
+    }
+
+    return arrayBuffer;
+  }
+
   static fromUrlB64ToB64(urlB64Str: string): string {
     let output = urlB64Str.replace(/-/g, "+").replace(/_/g, "/");
     switch (output.length % 4) {

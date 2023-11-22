@@ -24,6 +24,7 @@ import { HintComponent } from "./auth/hint.component";
 import { LockComponent } from "./auth/lock.component";
 import { LoginDecryptionOptionsComponent } from "./auth/login/login-decryption-options/login-decryption-options.component";
 import { LoginViaAuthRequestComponent } from "./auth/login/login-via-auth-request.component";
+import { LoginViaWebAuthnComponent } from "./auth/login/login-via-webauthn/login-via-webauthn.component";
 import { LoginComponent } from "./auth/login/login.component";
 import { RecoverDeleteComponent } from "./auth/recover-delete.component";
 import { RecoverTwoFactorComponent } from "./auth/recover-two-factor.component";
@@ -69,6 +70,11 @@ const routes: Routes = [
         path: "login-with-device",
         component: LoginViaAuthRequestComponent,
         data: { titleId: "loginWithDevice" },
+      },
+      {
+        path: "login-with-passkey",
+        component: LoginViaWebAuthnComponent,
+        data: { titleId: "loginWithPasskey" },
       },
       {
         path: "admin-approval-requested",

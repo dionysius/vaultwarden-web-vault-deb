@@ -7,6 +7,7 @@ import { FormValidationErrorsService } from "@bitwarden/angular/platform/abstrac
 import { AuthService } from "@bitwarden/common/auth/abstractions/auth.service";
 import { DevicesApiServiceAbstraction } from "@bitwarden/common/auth/abstractions/devices-api.service.abstraction";
 import { LoginService } from "@bitwarden/common/auth/abstractions/login.service";
+import { WebAuthnLoginServiceAbstraction } from "@bitwarden/common/auth/abstractions/webauthn/webauthn-login.service.abstraction";
 import { AppIdService } from "@bitwarden/common/platform/abstractions/app-id.service";
 import { CryptoFunctionService } from "@bitwarden/common/platform/abstractions/crypto-function.service";
 import { EnvironmentService } from "@bitwarden/common/platform/abstractions/environment.service";
@@ -43,7 +44,8 @@ export class LoginComponent extends BaseLoginComponent {
     formBuilder: FormBuilder,
     formValidationErrorService: FormValidationErrorsService,
     route: ActivatedRoute,
-    loginService: LoginService
+    loginService: LoginService,
+    webAuthnLoginService: WebAuthnLoginServiceAbstraction
   ) {
     super(
       devicesApiService,
@@ -61,7 +63,8 @@ export class LoginComponent extends BaseLoginComponent {
       formBuilder,
       formValidationErrorService,
       route,
-      loginService
+      loginService,
+      webAuthnLoginService
     );
     super.onSuccessfulLogin = async () => {
       await syncService.fullSync(true);

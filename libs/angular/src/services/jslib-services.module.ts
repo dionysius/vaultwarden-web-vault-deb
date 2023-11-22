@@ -54,6 +54,9 @@ import { TokenService as TokenServiceAbstraction } from "@bitwarden/common/auth/
 import { TwoFactorService as TwoFactorServiceAbstraction } from "@bitwarden/common/auth/abstractions/two-factor.service";
 import { UserVerificationApiServiceAbstraction } from "@bitwarden/common/auth/abstractions/user-verification/user-verification-api.service.abstraction";
 import { UserVerificationService as UserVerificationServiceAbstraction } from "@bitwarden/common/auth/abstractions/user-verification/user-verification.service.abstraction";
+import { WebAuthnLoginApiServiceAbstraction } from "@bitwarden/common/auth/abstractions/webauthn/webauthn-login-api.service.abstraction";
+import { WebAuthnLoginPrfCryptoServiceAbstraction } from "@bitwarden/common/auth/abstractions/webauthn/webauthn-login-prf-crypto.service.abstraction";
+import { WebAuthnLoginServiceAbstraction } from "@bitwarden/common/auth/abstractions/webauthn/webauthn-login.service.abstraction";
 import { AccountApiServiceImplementation } from "@bitwarden/common/auth/services/account-api.service";
 import { AccountServiceImplementation } from "@bitwarden/common/auth/services/account.service";
 import { AuthRequestCryptoServiceImplementation } from "@bitwarden/common/auth/services/auth-request-crypto.service.implementation";
@@ -68,6 +71,9 @@ import { TokenService } from "@bitwarden/common/auth/services/token.service";
 import { TwoFactorService } from "@bitwarden/common/auth/services/two-factor.service";
 import { UserVerificationApiService } from "@bitwarden/common/auth/services/user-verification/user-verification-api.service";
 import { UserVerificationService } from "@bitwarden/common/auth/services/user-verification/user-verification.service";
+import { WebAuthnLoginApiService } from "@bitwarden/common/auth/services/webauthn-login/webauthn-login-api.service";
+import { WebAuthnLoginPrfCryptoService } from "@bitwarden/common/auth/services/webauthn-login/webauthn-login-prf-crypto.service";
+import { WebAuthnLoginService } from "@bitwarden/common/auth/services/webauthn-login/webauthn-login.service";
 import { AppIdService as AppIdServiceAbstraction } from "@bitwarden/common/platform/abstractions/app-id.service";
 import { BroadcasterService as BroadcasterServiceAbstraction } from "@bitwarden/common/platform/abstractions/broadcaster.service";
 import { ConfigApiServiceAbstraction } from "@bitwarden/common/platform/abstractions/config/config-api.service.abstraction";
@@ -751,6 +757,28 @@ import { AbstractThemingService } from "./theming/theming.service.abstraction";
       provide: AuthRequestCryptoServiceAbstraction,
       useClass: AuthRequestCryptoServiceImplementation,
       deps: [CryptoServiceAbstraction],
+    },
+    {
+      provide: WebAuthnLoginPrfCryptoServiceAbstraction,
+      useClass: WebAuthnLoginPrfCryptoService,
+      deps: [CryptoFunctionServiceAbstraction],
+    },
+    {
+      provide: WebAuthnLoginApiServiceAbstraction,
+      useClass: WebAuthnLoginApiService,
+      deps: [ApiServiceAbstraction, EnvironmentServiceAbstraction],
+    },
+    {
+      provide: WebAuthnLoginServiceAbstraction,
+      useClass: WebAuthnLoginService,
+      deps: [
+        WebAuthnLoginApiServiceAbstraction,
+        AuthServiceAbstraction,
+        ConfigServiceAbstraction,
+        WebAuthnLoginPrfCryptoServiceAbstraction,
+        WINDOW,
+        LogService,
+      ],
     },
     {
       provide: GlobalStateProvider,

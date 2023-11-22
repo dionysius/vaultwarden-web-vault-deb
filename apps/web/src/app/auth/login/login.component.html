@@ -51,6 +51,23 @@
             </button>
           </div>
 
+          <div
+            class="tw-mb-3 tw-flex tw-flex-col tw-items-center tw-justify-center"
+            *ngIf="showWebauthnLogin$ | async"
+          >
+            <p class="tw-mb-3">{{ "or" | i18n }}</p>
+
+            <a
+              bitLink
+              block
+              linkType="primary"
+              routerLink="/login-with-passkey"
+              (mousedown)="$event.preventDefault()"
+            >
+              <span><i class="bwi bwi-passkey"></i> {{ "loginWithPasskey" | i18n }}</span>
+            </a>
+          </div>
+
           <hr />
 
           <p class="tw-m-0 tw-text-sm">

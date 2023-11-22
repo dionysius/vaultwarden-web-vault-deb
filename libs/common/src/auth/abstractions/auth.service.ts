@@ -9,6 +9,7 @@ import {
   PasswordLoginCredentials,
   SsoLoginCredentials,
   AuthRequestLoginCredentials,
+  WebAuthnLoginCredentials,
 } from "../models/domain/login-credentials";
 import { TokenTwoFactorRequest } from "../models/request/identity-token/token-two-factor.request";
 import { AuthRequestResponse } from "../models/response/auth-request.response";
@@ -26,6 +27,7 @@ export abstract class AuthService {
       | PasswordLoginCredentials
       | SsoLoginCredentials
       | AuthRequestLoginCredentials
+      | WebAuthnLoginCredentials
   ) => Promise<AuthResult>;
   logInTwoFactor: (
     twoFactor: TokenTwoFactorRequest,

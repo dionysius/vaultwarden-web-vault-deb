@@ -15,6 +15,7 @@ import { PolicyResponse } from "@bitwarden/common/admin-console/models/response/
 import { AuthService } from "@bitwarden/common/auth/abstractions/auth.service";
 import { DevicesApiServiceAbstraction } from "@bitwarden/common/auth/abstractions/devices-api.service.abstraction";
 import { LoginService } from "@bitwarden/common/auth/abstractions/login.service";
+import { WebAuthnLoginServiceAbstraction } from "@bitwarden/common/auth/abstractions/webauthn/webauthn-login.service.abstraction";
 import { AuthResult } from "@bitwarden/common/auth/models/domain/auth-result";
 import { ListResponse } from "@bitwarden/common/models/response/list.response";
 import { AppIdService } from "@bitwarden/common/platform/abstractions/app-id.service";
@@ -62,7 +63,8 @@ export class LoginComponent extends BaseLoginComponent implements OnInit {
     private routerService: RouterService,
     formBuilder: FormBuilder,
     formValidationErrorService: FormValidationErrorsService,
-    loginService: LoginService
+    loginService: LoginService,
+    webAuthnLoginService: WebAuthnLoginServiceAbstraction
   ) {
     super(
       devicesApiService,
@@ -80,7 +82,8 @@ export class LoginComponent extends BaseLoginComponent implements OnInit {
       formBuilder,
       formValidationErrorService,
       route,
-      loginService
+      loginService,
+      webAuthnLoginService
     );
     this.onSuccessfulLogin = async () => {
       this.messagingService.send("setFullWidth");

@@ -38,6 +38,7 @@ import { EmailRequest } from "../auth/models/request/email.request";
 import { PasswordTokenRequest } from "../auth/models/request/identity-token/password-token.request";
 import { SsoTokenRequest } from "../auth/models/request/identity-token/sso-token.request";
 import { UserApiTokenRequest } from "../auth/models/request/identity-token/user-api-token.request";
+import { WebAuthnLoginTokenRequest } from "../auth/models/request/identity-token/webauthn-login-token.request";
 import { KeyConnectorUserKeyRequest } from "../auth/models/request/key-connector-user-key.request";
 import { PasswordHintRequest } from "../auth/models/request/password-hint.request";
 import { PasswordRequest } from "../auth/models/request/password.request";
@@ -144,7 +145,11 @@ export abstract class ApiService {
   ) => Promise<any>;
 
   postIdentityToken: (
-    request: PasswordTokenRequest | SsoTokenRequest | UserApiTokenRequest
+    request:
+      | PasswordTokenRequest
+      | SsoTokenRequest
+      | UserApiTokenRequest
+      | WebAuthnLoginTokenRequest
   ) => Promise<IdentityTokenResponse | IdentityTwoFactorResponse | IdentityCaptchaResponse>;
   refreshIdentityToken: () => Promise<any>;
 

@@ -42,6 +42,7 @@ import { PasswordTokenRequest } from "../auth/models/request/identity-token/pass
 import { SsoTokenRequest } from "../auth/models/request/identity-token/sso-token.request";
 import { TokenTwoFactorRequest } from "../auth/models/request/identity-token/token-two-factor.request";
 import { UserApiTokenRequest } from "../auth/models/request/identity-token/user-api-token.request";
+import { WebAuthnLoginTokenRequest } from "../auth/models/request/identity-token/webauthn-login-token.request";
 import { KeyConnectorUserKeyRequest } from "../auth/models/request/key-connector-user-key.request";
 import { PasswordHintRequest } from "../auth/models/request/password-hint.request";
 import { PasswordRequest } from "../auth/models/request/password.request";
@@ -180,7 +181,11 @@ export class ApiService implements ApiServiceAbstraction {
   // Auth APIs
 
   async postIdentityToken(
-    request: UserApiTokenRequest | PasswordTokenRequest | SsoTokenRequest
+    request:
+      | UserApiTokenRequest
+      | PasswordTokenRequest
+      | SsoTokenRequest
+      | WebAuthnLoginTokenRequest
   ): Promise<IdentityTokenResponse | IdentityTwoFactorResponse | IdentityCaptchaResponse> {
     const headers = new Headers({
       "Content-Type": "application/x-www-form-urlencoded; charset=utf-8",
