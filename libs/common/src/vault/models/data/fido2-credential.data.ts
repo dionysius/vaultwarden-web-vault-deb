@@ -8,6 +8,7 @@ export class Fido2CredentialData {
   keyValue: string;
   rpId: string;
   userHandle: string;
+  userName: string;
   counter: string;
   rpName: string;
   userDisplayName: string;
@@ -26,6 +27,7 @@ export class Fido2CredentialData {
     this.keyValue = data.keyValue;
     this.rpId = data.rpId;
     this.userHandle = data.userHandle;
+    this.userName = data.userName;
     this.counter = data.counter;
     this.rpName = data.rpName;
     this.userDisplayName = data.userDisplayName;

@@ -10,6 +10,7 @@ export class Fido2CredentialView extends ItemView {
   keyValue: string;
   rpId: string;
   userHandle: string;
+  userName: string;
   counter: number;
   rpName: string;
   userDisplayName: string;

@@ -45,6 +45,7 @@ export class WebauthnUtils {
       user: {
         id: Fido2Utils.bufferToString(keyOptions.user.id),
         displayName: keyOptions.user.displayName,
+        name: keyOptions.user.name,
       },
       timeout: keyOptions.timeout,
       sameOriginWithAncestors,

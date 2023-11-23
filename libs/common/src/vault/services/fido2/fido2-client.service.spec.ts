@@ -58,7 +58,7 @@ describe("FidoAuthenticatorService", () => {
 
       // Spec: If the length of options.user.id is not between 1 and 64 bytes (inclusive) then return a TypeError.
       it("should throw error if user.id is too small", async () => {
-        const params = createParams({ user: { id: "", displayName: "name" } });
+        const params = createParams({ user: { id: "", displayName: "displayName", name: "name" } });
 
         const result = async () => await client.createCredential(params, tab);
 
@@ -70,7 +70,8 @@ describe("FidoAuthenticatorService", () => {
         const params = createParams({
           user: {
             id: "YWJzb2x1dGVseS13YXktd2F5LXRvby1sYXJnZS1iYXNlNjQtZW5jb2RlZC11c2VyLWlkLWJpbmFyeS1zZXF1ZW5jZQ",
-            displayName: "name",
+            displayName: "displayName",
+            name: "name",
           },
         });
 
@@ -261,6 +262,7 @@ describe("FidoAuthenticatorService", () => {
         user: params.user ?? {
           id: "YmFzZTY0LWVuY29kZWQtdXNlci1pZA",
           displayName: "User Name",
+          name: "name",
         },
         fallbackSupported: params.fallbackSupported ?? false,
         timeout: params.timeout,

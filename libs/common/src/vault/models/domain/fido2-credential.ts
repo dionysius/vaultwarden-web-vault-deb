@@ -14,6 +14,7 @@ export class Fido2Credential extends Domain {
   keyValue: EncString;
   rpId: EncString;
   userHandle: EncString;
+  userName: EncString;
   counter: EncString;
   rpName: EncString;
   userDisplayName: EncString;
@@ -37,6 +38,7 @@ export class Fido2Credential extends Domain {
         keyValue: null,
         rpId: null,
         userHandle: null,
+        userName: null,
         counter: null,
         rpName: null,
         userDisplayName: null,
@@ -58,6 +60,7 @@ export class Fido2Credential extends Domain {
         keyValue: null,
         rpId: null,
         userHandle: null,
+        userName: null,
         rpName: null,
         userDisplayName: null,
         discoverable: null,
@@ -102,6 +105,7 @@ export class Fido2Credential extends Domain {
       keyValue: null,
       rpId: null,
       userHandle: null,
+      userName: null,
       counter: null,
       rpName: null,
       userDisplayName: null,
@@ -122,6 +126,7 @@ export class Fido2Credential extends Domain {
     const keyValue = EncString.fromJSON(obj.keyValue);
     const rpId = EncString.fromJSON(obj.rpId);
     const userHandle = EncString.fromJSON(obj.userHandle);
+    const userName = EncString.fromJSON(obj.userName);
     const counter = EncString.fromJSON(obj.counter);
     const rpName = EncString.fromJSON(obj.rpName);
     const userDisplayName = EncString.fromJSON(obj.userDisplayName);
@@ -136,6 +141,7 @@ export class Fido2Credential extends Domain {
       keyValue,
       rpId,
       userHandle,
+      userName,
       counter,
       rpName,
       userDisplayName,

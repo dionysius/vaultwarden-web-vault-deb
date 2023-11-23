@@ -25,6 +25,7 @@ describe("Fido2Credential", () => {
         keyValue: null,
         rpId: null,
         userHandle: null,
+        userName: null,
         rpName: null,
         userDisplayName: null,
         counter: null,
@@ -42,6 +43,7 @@ describe("Fido2Credential", () => {
         keyValue: "keyValue",
         rpId: "rpId",
         userHandle: "userHandle",
+        userName: "userName",
         counter: "counter",
         rpName: "rpName",
         userDisplayName: "userDisplayName",
@@ -58,6 +60,7 @@ describe("Fido2Credential", () => {
         keyValue: { encryptedString: "keyValue", encryptionType: 0 },
         rpId: { encryptedString: "rpId", encryptionType: 0 },
         userHandle: { encryptedString: "userHandle", encryptionType: 0 },
+        userName: { encryptedString: "userName", encryptionType: 0 },
         counter: { encryptedString: "counter", encryptionType: 0 },
         rpName: { encryptedString: "rpName", encryptionType: 0 },
         userDisplayName: { encryptedString: "userDisplayName", encryptionType: 0 },
@@ -85,6 +88,7 @@ describe("Fido2Credential", () => {
       credential.keyValue = mockEnc("keyValue");
       credential.rpId = mockEnc("rpId");
       credential.userHandle = mockEnc("userHandle");
+      credential.userName = mockEnc("userName");
       credential.counter = mockEnc("2");
       credential.rpName = mockEnc("rpName");
       credential.userDisplayName = mockEnc("userDisplayName");
@@ -101,6 +105,7 @@ describe("Fido2Credential", () => {
         keyValue: "keyValue",
         rpId: "rpId",
         userHandle: "userHandle",
+        userName: "userName",
         rpName: "rpName",
         userDisplayName: "userDisplayName",
         counter: 2,
@@ -120,6 +125,7 @@ describe("Fido2Credential", () => {
         keyValue: "keyValue",
         rpId: "rpId",
         userHandle: "userHandle",
+        userName: "userName",
         counter: "2",
         rpName: "rpName",
         userDisplayName: "userDisplayName",
@@ -144,6 +150,7 @@ describe("Fido2Credential", () => {
       credential.keyValue = createEncryptedEncString("keyValue");
       credential.rpId = createEncryptedEncString("rpId");
       credential.userHandle = createEncryptedEncString("userHandle");
+      credential.userName = createEncryptedEncString("userName");
       credential.counter = createEncryptedEncString("2");
       credential.rpName = createEncryptedEncString("rpName");
       credential.userDisplayName = createEncryptedEncString("userDisplayName");

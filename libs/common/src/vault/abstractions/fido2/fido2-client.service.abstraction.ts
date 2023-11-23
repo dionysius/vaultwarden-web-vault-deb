@@ -103,6 +103,7 @@ export interface CreateCredentialParams {
   user: {
     id: string; // b64 encoded
     displayName: string;
+    name: string;
   };
   /** Forwarded to user interface */
   fallbackSupported: boolean;

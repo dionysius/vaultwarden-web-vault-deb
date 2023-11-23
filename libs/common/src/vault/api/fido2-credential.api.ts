@@ -8,6 +8,7 @@ export class Fido2CredentialApi extends BaseResponse {
   keyValue: string;
   rpId: string;
   userHandle: string;
+  userName: string;
   counter: string;
   rpName: string;
   userDisplayName: string;
@@ -27,6 +28,7 @@ export class Fido2CredentialApi extends BaseResponse {
     this.keyValue = this.getResponseProperty("keyValue");
     this.rpId = this.getResponseProperty("RpId");
     this.userHandle = this.getResponseProperty("UserHandle");
+    this.userName = this.getResponseProperty("UserName");
     this.counter = this.getResponseProperty("Counter");
     this.rpName = this.getResponseProperty("RpName");
     this.userDisplayName = this.getResponseProperty("UserDisplayName");

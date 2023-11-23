@@ -401,6 +401,7 @@ async function createKeyView(
   fido2Credential.keyValue = Fido2Utils.bufferToString(pkcs8Key);
   fido2Credential.rpId = params.rpEntity.id;
   fido2Credential.userHandle = Fido2Utils.bufferToString(params.userEntity.id);
+  fido2Credential.userName = params.userEntity.name;
   fido2Credential.counter = 0;
   fido2Credential.rpName = params.rpEntity.name;
   fido2Credential.userDisplayName = params.userEntity.displayName;

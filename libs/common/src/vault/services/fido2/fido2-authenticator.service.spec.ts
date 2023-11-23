@@ -247,6 +247,7 @@ describe("FidoAuthenticatorService", () => {
                   rpId: params.rpEntity.id,
                   rpName: params.rpEntity.name,
                   userHandle: Fido2Utils.bufferToString(params.userEntity.id),
+                  userName: params.userEntity.name,
                   counter: 0,
                   userDisplayName: params.userEntity.displayName,
                   discoverable: false,
@@ -796,6 +797,7 @@ function createCipherView(
   fido2CredentialView.counter = fido2Credential.counter ?? 0;
   fido2CredentialView.userHandle =
     fido2Credential.userHandle ?? Fido2Utils.bufferToString(randomBytes(16));
+  fido2CredentialView.userName = fido2Credential.userName;
   fido2CredentialView.keyAlgorithm = fido2Credential.keyAlgorithm ?? "ECDSA";
   fido2CredentialView.keyCurve = fido2Credential.keyCurve ?? "P-256";
   fido2CredentialView.discoverable = fido2Credential.discoverable ?? true;

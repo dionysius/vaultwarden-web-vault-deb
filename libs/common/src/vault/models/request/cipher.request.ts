@@ -81,6 +81,7 @@ export class CipherRequest {
             keyApi.rpName = key.rpName != null ? key.rpName.encryptedString : null;
             keyApi.counter = key.counter != null ? key.counter.encryptedString : null;
             keyApi.userHandle = key.userHandle != null ? key.userHandle.encryptedString : null;
+            keyApi.userName = key.userName != null ? key.userName.encryptedString : null;
             keyApi.userDisplayName =
               key.userDisplayName != null ? key.userDisplayName.encryptedString : null;
             keyApi.discoverable =

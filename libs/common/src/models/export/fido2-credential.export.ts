@@ -19,6 +19,7 @@ export class Fido2CredentialExport {
     req.keyValue = "keyValue";
     req.rpId = "rpId";
     req.userHandle = "userHandle";
+    req.userName = "userName";
     req.counter = "counter";
     req.rpName = "rpName";
     req.userDisplayName = "userDisplayName";
@@ -41,6 +42,7 @@ export class Fido2CredentialExport {
     view.keyValue = req.keyValue;
     view.rpId = req.rpId;
     view.userHandle = req.userHandle;
+    view.userName = req.userName;
     view.counter = parseInt(req.counter);
     view.rpName = req.rpName;
     view.userDisplayName = req.userDisplayName;
@@ -63,6 +65,7 @@ export class Fido2CredentialExport {
     domain.keyValue = req.keyValue != null ? new EncString(req.keyValue) : null;
     domain.rpId = req.rpId != null ? new EncString(req.rpId) : null;
     domain.userHandle = req.userHandle != null ? new EncString(req.userHandle) : null;
+    domain.userName = req.userName != null ? new EncString(req.userName) : null;
     domain.counter = req.counter != null ? new EncString(req.counter) : null;
     domain.rpName = req.rpName != null ? new EncString(req.rpName) : null;
     domain.userDisplayName =
@@ -79,6 +82,7 @@ export class Fido2CredentialExport {
   keyValue: string;
   rpId: string;
   userHandle: string;
+  userName: string;
   counter: string;
   rpName: string;
   userDisplayName: string;
@@ -103,6 +107,7 @@ export class Fido2CredentialExport {
       this.keyValue = o.keyValue;
       this.rpId = o.rpId;
       this.userHandle = o.userHandle;
+      this.userName = o.userName;
       this.counter = String(o.counter);
       this.rpName = o.rpName;
       this.userDisplayName = o.userDisplayName;
@@ -115,6 +120,7 @@ export class Fido2CredentialExport {
       this.keyValue = o.keyValue?.encryptedString;
       this.rpId = o.rpId?.encryptedString;
       this.userHandle = o.userHandle?.encryptedString;
+      this.userName = o.userName?.encryptedString;
       this.counter = o.counter?.encryptedString;
       this.rpName = o.rpName?.encryptedString;
       this.userDisplayName = o.userDisplayName?.encryptedString;
