@@ -26,7 +26,7 @@ export class WindowMain {
   isQuitting = false;
   isClosing = false;
 
-  private windowStateChangeTimer: NodeJS.Timer;
+  private windowStateChangeTimer: NodeJS.Timeout;
   private windowStates: { [key: string]: WindowState } = {};
   private enableAlwaysOnTop = false;
   private session: Electron.Session;

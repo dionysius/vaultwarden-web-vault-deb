@@ -12,7 +12,7 @@ import { MenuUpdateRequest } from "./menu/menu.updater";
 const SyncInterval = 5 * 60 * 1000; // 5 minutes
 
 export class MessagingMain {
-  private syncTimeout: NodeJS.Timer;
+  private syncTimeout: NodeJS.Timeout;
 
   constructor(private main: Main, private stateService: StateService) {}
 
