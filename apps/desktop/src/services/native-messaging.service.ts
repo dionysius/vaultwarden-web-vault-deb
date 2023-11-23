@@ -125,8 +125,7 @@ export class NativeMessagingService {
 
     switch (message.command) {
       case "biometricUnlock": {
-        // eslint-disable-next-line @typescript-eslint/no-misused-promises
-        if (!this.platformUtilService.supportsBiometric()) {
+        if (!(await this.platformUtilService.supportsBiometric())) {
           return this.send({ command: "biometricUnlock", response: "not supported" }, appId);
         }
 
