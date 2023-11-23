@@ -107,6 +107,23 @@
     <div class="box">
       <div class="box-content">
         <div class="box-content-row box-content-row-checkbox" appBoxRow>
+          <label for="use-passkeys">{{ "enableUsePasskeys" | i18n }}</label>
+          <input
+            id="use-passkeys"
+            type="checkbox"
+            aria-describedby="use-passkeysHelp"
+            (change)="updateEnablePasskeys()"
+            [(ngModel)]="enablePasskeys"
+          />
+        </div>
+      </div>
+      <div id="use-passkeysHelp" class="box-footer">
+        {{ "usePasskeysDesc" | i18n }}
+      </div>
+    </div>
+    <div class="box">
+      <div class="box-content">
+        <div class="box-content-row box-content-row-checkbox" appBoxRow>
           <label for="context-menu">{{ "enableContextMenuItem" | i18n }}</label>
           <input
             id="context-menu"

@@ -1213,6 +1213,24 @@ export class StateService<
     );
   }
 
+  async getEnablePasskeys(options?: StorageOptions): Promise<boolean> {
+    return (
+      (await this.getGlobals(this.reconcileOptions(options, await this.defaultOnDiskOptions())))
+        ?.enablePasskeys ?? true
+    );
+  }
+
+  async setEnablePasskeys(value: boolean, options?: StorageOptions): Promise<void> {
+    const globals = await this.getGlobals(
+      this.reconcileOptions(options, await this.defaultOnDiskOptions())
+    );
+    globals.enablePasskeys = value;
+    await this.saveGlobals(
+      globals,
+      this.reconcileOptions(options, await this.defaultOnDiskOptions())
+    );
+  }
+
   async getDisableContextMenuItem(options?: StorageOptions): Promise<boolean> {
     return (
       (await this.getGlobals(this.reconcileOptions(options, await this.defaultOnDiskOptions())))

@@ -36,6 +36,7 @@ export class GlobalState {
   enableDuckDuckGoBrowserIntegration?: boolean;
   region?: string;
   neverDomains?: { [id: string]: unknown };
+  enablePasskeys?: boolean;
   disableAddLoginNotification?: boolean;
   disableChangedPasswordNotification?: boolean;
   disableContextMenuItem?: boolean;

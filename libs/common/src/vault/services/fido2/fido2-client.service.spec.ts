@@ -40,6 +40,7 @@ describe("FidoAuthenticatorService", () => {
 
     client = new Fido2ClientService(authenticator, configService, authService, stateService);
     configService.getFeatureFlag.mockResolvedValue(true);
+    stateService.getEnablePasskeys.mockResolvedValue(true);
     tab = { id: 123, windowId: 456 } as chrome.tabs.Tab;
   });
 
@@ -229,6 +230,16 @@ describe("FidoAuthenticatorService", () => {
         await rejects.toThrow(FallbackRequestedError);
       });
 
+      it("should throw FallbackRequestedError if passkeys state is not enabled", async () => {
+        const params = createParams();
+        stateService.getEnablePasskeys.mockResolvedValue(false);
+
+        const result = async () => await client.createCredential(params, tab);
+
+        const rejects = expect(result).rejects;
+        await rejects.toThrow(FallbackRequestedError);
+      });
+
       it("should throw FallbackRequestedError if user is logged out", async () => {
         const params = createParams();
         authService.getAuthStatus.mockResolvedValue(AuthenticationStatus.LoggedOut);
@@ -382,6 +393,16 @@ describe("FidoAuthenticatorService", () => {
       it("should throw FallbackRequestedError if feature flag is not enabled", async () => {
         const params = createParams();
         configService.getFeatureFlag.mockResolvedValue(false);
+
+        const result = async () => await client.assertCredential(params, tab);
+
+        const rejects = expect(result).rejects;
+        await rejects.toThrow(FallbackRequestedError);
+      });
+
+      it("should throw FallbackRequestedError if passkeys state is not enabled", async () => {
+        const params = createParams();
+        stateService.getEnablePasskeys.mockResolvedValue(false);
 
         const result = async () => await client.assertCredential(params, tab);
 

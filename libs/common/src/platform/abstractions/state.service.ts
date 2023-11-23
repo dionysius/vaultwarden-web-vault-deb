@@ -243,6 +243,8 @@ export abstract class StateService<T extends Account = Account> {
     value: boolean,
     options?: StorageOptions
   ) => Promise<void>;
+  getEnablePasskeys: (options?: StorageOptions) => Promise<boolean>;
+  setEnablePasskeys: (value: boolean, options?: StorageOptions) => Promise<void>;
   getDisableContextMenuItem: (options?: StorageOptions) => Promise<boolean>;
   setDisableContextMenuItem: (value: boolean, options?: StorageOptions) => Promise<void>;
   /**
