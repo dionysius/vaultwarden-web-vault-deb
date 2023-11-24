@@ -614,6 +614,12 @@
   "loginWithPasskey": {
     "message": "Geçiş anahtarıyla giriş yap"
   },
+  "invalidPasskeyPleaseTryAgain": {
+    "message": "Geçersiz geçiş anahtarı. Lütfen tekrar deneyin."
+  },
+  "twoFactorForPasskeysNotSupportedOnClientUpdateToLogIn": {
+    "message": "Geçiş anahtarları için 2FA desteklebmiyor. Giriş yapmak için uygulamayı güncelleyin."
+  },
   "loginWithPasskeyInfo": {
     "message": "Parola kullanmadan otomatik olarak giriş yapmanızı sağlayacak bir geçiş anahtarı kullanabilirsiniz. Kimliğinizi doğrulamak için yüz tanıma veya parmak izi gibi biyometri özellikleri ya da başka bir FIDO2 güvenlik yöntemi kullanılacaktır."
   },
@@ -7398,5 +7404,14 @@
   },
   "unexpectedErrorSend": {
     "message": "Bu Gönderim yüklenirken beklenmeyen bir hata oluştu. Daha sonra tekrar deneyin."
+  },
+  "seatLimitReached": {
+    "message": "Seat limit has been reached"
+  },
+  "contactYourProvider": {
+    "message": "Contact your provider to purchase additional seats."
+  },
+  "seatLimitReachedContactYourProvider": {
+    "message": "Seat limit has been reached. Contact your provider to purchase additional seats."
   }
 }

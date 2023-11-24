@@ -614,6 +614,12 @@
   "loginWithPasskey": {
     "message": "Iniciar sessão com a chave de acesso"
   },
+  "invalidPasskeyPleaseTryAgain": {
+    "message": "Invalid Passkey. Please try again."
+  },
+  "twoFactorForPasskeysNotSupportedOnClientUpdateToLogIn": {
+    "message": "2FA for passkeys is not supported. Update the app to log in."
+  },
   "loginWithPasskeyInfo": {
     "message": "Use uma senha gerada que fará o login automaticamente sem uma senha. Biometrias como reconhecimento facial ou impressão digital, ou outro método de segurança FIDO2 verificarão sua identidade."
   },
@@ -4219,7 +4225,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "downloadAttachments": {
-    "message": "Download attachments"
+    "message": "Baixar anexos"
   },
   "sendAccessUnavailable": {
     "message": "O Send que você está tentando acessar não existe ou não está mais disponível.",
@@ -4610,7 +4616,7 @@
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Learn more about Bitwarden Send or sign up to **try it today.**'"
   },
   "sendAccessCreatorIdentifier": {
-    "message": "Bitwarden member $USER_IDENTIFIER$ shared the following with you",
+    "message": "O usuário $USER_IDENTIFIER$ do Bitwarden compartilhou o seguinte com você",
     "placeholders": {
       "user_identifier": {
         "content": "$1",
@@ -7183,7 +7189,7 @@
     "message": "Avançar"
   },
   "ssoLoginIsRequired": {
-    "message": "SSO login is required"
+    "message": "Login SSO é obrigatório"
   },
   "selectedRegionFlag": {
     "message": "Sinalização de região selecionada"
@@ -7397,6 +7403,15 @@
     "message": "Project access updated"
   },
   "unexpectedErrorSend": {
-    "message": "An unexpected error has occurred while loading this Send. Try again later."
+    "message": "Ocorreu um erro inesperado ao carregar este Envio. Tente novamente mais tarde."
+  },
+  "seatLimitReached": {
+    "message": "Limite de lugares foi atingido"
+  },
+  "contactYourProvider": {
+    "message": "Entre em contato com seu provedor para comprar lugares adicionais."
+  },
+  "seatLimitReachedContactYourProvider": {
+    "message": "O limite de lugares foi atingido. Entre em contato com seu provedor para comprar lugares adicionais."
   }
 }

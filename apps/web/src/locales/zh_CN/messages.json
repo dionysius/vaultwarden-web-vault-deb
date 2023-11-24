@@ -614,6 +614,12 @@
   "loginWithPasskey": {
     "message": "使用通行密钥登录"
   },
+  "invalidPasskeyPleaseTryAgain": {
+    "message": "通行密钥无效。请重试。"
+  },
+  "twoFactorForPasskeysNotSupportedOnClientUpdateToLogIn": {
+    "message": "2FA for passkeys is not supported. Update the app to log in."
+  },
   "loginWithPasskeyInfo": {
     "message": "使用已生成的通行密钥，无需密码即可自动登录。生物识别（例如面部识别或指纹）或其他 FIDO2 安全方法将用于验证您的身份。"
   },
@@ -4219,7 +4225,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "downloadAttachments": {
-    "message": "Download attachments"
+    "message": "下载附件"
   },
   "sendAccessUnavailable": {
     "message": "您尝试访问的 Send 不存在或不再可用。",
@@ -4610,7 +4616,7 @@
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Learn more about Bitwarden Send or sign up to **try it today.**'"
   },
   "sendAccessCreatorIdentifier": {
-    "message": "Bitwarden member $USER_IDENTIFIER$ shared the following with you",
+    "message": "Bitwarden 成员 $USER_IDENTIFIER$ 与您分享了以下内容",
     "placeholders": {
       "user_identifier": {
         "content": "$1",
@@ -7183,7 +7189,7 @@
     "message": "下一步"
   },
   "ssoLoginIsRequired": {
-    "message": "SSO login is required"
+    "message": "要求 SSO 登录"
   },
   "selectedRegionFlag": {
     "message": "选择的区域旗帜"
@@ -7397,6 +7403,15 @@
     "message": "工程访问权限已更新"
   },
   "unexpectedErrorSend": {
-    "message": "An unexpected error has occurred while loading this Send. Try again later."
+    "message": "加载此 Send 时发生意外错误。请稍后再试。"
+  },
+  "seatLimitReached": {
+    "message": "已达到席位限制"
+  },
+  "contactYourProvider": {
+    "message": "请联系您的供应商购买更多席位。"
+  },
+  "seatLimitReachedContactYourProvider": {
+    "message": "已达到席位限制。请联系您的供应商购买更多席位。"
   }
 }

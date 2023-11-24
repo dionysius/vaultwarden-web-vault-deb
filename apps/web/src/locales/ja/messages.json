@@ -614,6 +614,12 @@
   "loginWithPasskey": {
     "message": "パスキー でログイン"
   },
+  "invalidPasskeyPleaseTryAgain": {
+    "message": "無効なパスキーです。もう一度やり直してください。"
+  },
+  "twoFactorForPasskeysNotSupportedOnClientUpdateToLogIn": {
+    "message": "パスキーの2段階認証はサポートされていません。ログインするにはアプリを更新してください。"
+  },
   "loginWithPasskeyInfo": {
     "message": "パスワードなしで自動的にログインできる、生成されたパスキーを使用します。顔や指紋などの生体認証、または他の FIDO2 認証方式で本人確認を行います。"
   },
@@ -7398,5 +7404,14 @@
   },
   "unexpectedErrorSend": {
     "message": "この Send の読み込み中に予期しないエラーが発生しました。後でもう一度お試しください。"
+  },
+  "seatLimitReached": {
+    "message": "シート数の上限に達しました"
+  },
+  "contactYourProvider": {
+    "message": "追加のシートを購入するには、プロバイダに連絡してください。"
+  },
+  "seatLimitReachedContactYourProvider": {
+    "message": "シート数の上限に達しました。追加のシートを購入するには、プロバイダに連絡してください。"
   }
 }

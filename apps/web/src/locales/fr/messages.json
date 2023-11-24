@@ -614,6 +614,12 @@
   "loginWithPasskey": {
     "message": "Se connecter avec la clé d'accès"
   },
+  "invalidPasskeyPleaseTryAgain": {
+    "message": "Passkey invalide. Veuillez réessayer de nouveau."
+  },
+  "twoFactorForPasskeysNotSupportedOnClientUpdateToLogIn": {
+    "message": "La 2FA pour les Passkey n'est pas pris en charge. Mettez à jour l'application pour vous connecter."
+  },
   "loginWithPasskeyInfo": {
     "message": "Utilisez une clé d'accès générée qui vous connectera automatiquement sans mot de passe. Les fonctions biométriques, comme la reconnaissance faciale, l'empreinte digitale, ou une autre méthode de sécurité FIDO2 vérifiera votre identité."
   },
@@ -7398,5 +7404,14 @@
   },
   "unexpectedErrorSend": {
     "message": "Une erreur inattendue est survenue lors du chargement de ce Send. Réessayez plus tard."
+  },
+  "seatLimitReached": {
+    "message": "La limite de places a été atteinte"
+  },
+  "contactYourProvider": {
+    "message": "Contactez votre fournisseur pour acheter des places supplémentaires."
+  },
+  "seatLimitReachedContactYourProvider": {
+    "message": "La limite de places a été atteinte. Contactez votre fournisseur pour acheter des places supplémentaires."
   }
 }

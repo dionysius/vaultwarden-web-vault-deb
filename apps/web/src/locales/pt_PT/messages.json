@@ -614,6 +614,12 @@
   "loginWithPasskey": {
     "message": "Iniciar sessão com a chave de acesso"
   },
+  "invalidPasskeyPleaseTryAgain": {
+    "message": "Chave de acesso inválida. Por favor, tente novamente."
+  },
+  "twoFactorForPasskeysNotSupportedOnClientUpdateToLogIn": {
+    "message": "A 2FA para chaves de acesso não é suportada. Atualize a aplicação para iniciar sessão."
+  },
   "loginWithPasskeyInfo": {
     "message": "Utilize uma chave de acesso gerada que lhe permitirá iniciar sessão automaticamente sem uma palavra-passe. A biometria, como o reconhecimento facial ou a impressão digital ou outro método de segurança FIDO2, verificará a sua identidade."
   },
@@ -7398,5 +7404,14 @@
   },
   "unexpectedErrorSend": {
     "message": "Ocorreu um erro inesperado ao carregar este Send. Tente novamente mais tarde."
+  },
+  "seatLimitReached": {
+    "message": "O limite de lugares foi atingido"
+  },
+  "contactYourProvider": {
+    "message": "Contacte o seu fornecedor para adquirir lugares adicionais."
+  },
+  "seatLimitReachedContactYourProvider": {
+    "message": "O limite de lugares foi atingido. Contacte o seu fornecedor para adquirir lugares adicionais."
   }
 }

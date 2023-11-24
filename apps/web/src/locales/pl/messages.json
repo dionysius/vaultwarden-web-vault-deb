@@ -614,6 +614,12 @@
   "loginWithPasskey": {
     "message": "Zaloguj się za pomocą passkey"
   },
+  "invalidPasskeyPleaseTryAgain": {
+    "message": "Błędny passkey. Spróbuj ponownie."
+  },
+  "twoFactorForPasskeysNotSupportedOnClientUpdateToLogIn": {
+    "message": "2FA dla passkey nie jest obsługiwane. Zaktualizuj aplikację, aby się zalogować."
+  },
   "loginWithPasskeyInfo": {
     "message": "Użyj wygenerowanego passkey'a, który automatycznie zaloguje Cię bez hasła. Biometrie, takie jak rozpoznawanie twarzy lub odcisk palca, lub inna metoda zabezpieczeń FIDO2, zweryfikują Twoją tożsamość."
   },
@@ -7398,5 +7404,14 @@
   },
   "unexpectedErrorSend": {
     "message": "An unexpected error has occurred while loading this Send. Try again later."
+  },
+  "seatLimitReached": {
+    "message": "Seat limit has been reached"
+  },
+  "contactYourProvider": {
+    "message": "Contact your provider to purchase additional seats."
+  },
+  "seatLimitReachedContactYourProvider": {
+    "message": "Seat limit has been reached. Contact your provider to purchase additional seats."
   }
 }

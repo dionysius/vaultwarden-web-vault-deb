@@ -614,6 +614,12 @@
   "loginWithPasskey": {
     "message": "Inicieu sessió amb la clau de pas"
   },
+  "invalidPasskeyPleaseTryAgain": {
+    "message": "Clau d'accés no vàlida. Torneu-ho a provar."
+  },
+  "twoFactorForPasskeysNotSupportedOnClientUpdateToLogIn": {
+    "message": "No és compatible 2FA per a claus de pas. Actualitza l'aplicació per iniciar sessió."
+  },
   "loginWithPasskeyInfo": {
     "message": "Utilitzeu una contrasenya generada que us iniciarà automàticament sense contrasenya. La biometria, com ara el reconeixement facial o l'empremta digital, o un altre mètode de seguretat FIDO2 verificarà la vostra identitat."
   },
@@ -7398,5 +7404,14 @@
   },
   "unexpectedErrorSend": {
     "message": "S'ha produït un error inesperat en carregar aquest enviament. Torneu a provar-ho més tard."
+  },
+  "seatLimitReached": {
+    "message": "S'ha arribat al límit de places"
+  },
+  "contactYourProvider": {
+    "message": "Contacta amb el teu proveïdor per comprar places addicionals."
+  },
+  "seatLimitReachedContactYourProvider": {
+    "message": "S'ha arribat al límit de places. Contacta amb el teu proveïdor per comprar places addicionals."
   }
 }

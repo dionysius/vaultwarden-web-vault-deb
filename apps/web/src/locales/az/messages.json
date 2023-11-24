@@ -614,6 +614,12 @@
   "loginWithPasskey": {
     "message": "Parolla giriş et"
   },
+  "invalidPasskeyPleaseTryAgain": {
+    "message": "Yararsız keçid açarı. Lütfən yenidən sınayın."
+  },
+  "twoFactorForPasskeysNotSupportedOnClientUpdateToLogIn": {
+    "message": "Keçid açarları üçün 2FA dəstəklənmir. Giriş etmək üçün tətbiqi güncəlləyin."
+  },
   "loginWithPasskeyInfo": {
     "message": "Bir parol olmadan avtomatik olaraq giriş etməyinizi təmin edəcək bir keçid açarı istifadə edin. Üz tanıma və ya barmaq izi kimi biometrik, ya da başqa bir FIDO2 güvənlik üsulu kimliyinizi doğrulayacaq."
   },
@@ -4219,7 +4225,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "downloadAttachments": {
-    "message": "Download attachments"
+    "message": "Qoşmaları endir"
   },
   "sendAccessUnavailable": {
     "message": "Müraciət etməyə çalışdığınız Send yoxdur və ya artıq əlçatmazdır.",
@@ -4610,7 +4616,7 @@
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Learn more about Bitwarden Send or sign up to **try it today.**'"
   },
   "sendAccessCreatorIdentifier": {
-    "message": "Bitwarden member $USER_IDENTIFIER$ shared the following with you",
+    "message": "$USER_IDENTIFIER$ Bitwarden üzvü aşağıdakıları sizinlə paylaşdı",
     "placeholders": {
       "user_identifier": {
         "content": "$1",
@@ -7397,6 +7403,15 @@
     "message": "Project access updated"
   },
   "unexpectedErrorSend": {
-    "message": "An unexpected error has occurred while loading this Send. Try again later."
+    "message": "Bu Send yüklənərkən gözlənilməz bir xəta baş verdi. Daha sonra yenidən sınayın."
+  },
+  "seatLimitReached": {
+    "message": "Oturacaq limitinə çatıldı"
+  },
+  "contactYourProvider": {
+    "message": "Əlavə oturacaq satın almaq üçün provayderinizlə əlaqə saxlayın."
+  },
+  "seatLimitReachedContactYourProvider": {
+    "message": "Oturacaq limitinə çatıldı. Əlavə oturacaq satın almaq üçün provayderinizlə əlaqə saxlayın."
   }
 }

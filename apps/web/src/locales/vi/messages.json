@@ -614,6 +614,12 @@
   "loginWithPasskey": {
     "message": "Log in with passkey"
   },
+  "invalidPasskeyPleaseTryAgain": {
+    "message": "PassKey sai. Hãy thử lại."
+  },
+  "twoFactorForPasskeysNotSupportedOnClientUpdateToLogIn": {
+    "message": "Chưa hỗ trợ 2FA cho PassKey. Cập nhật app để đăng nhập."
+  },
   "loginWithPasskeyInfo": {
     "message": "Use a generated passkey that will automatically log you in without a password. Biometrics, like facial recognition or fingerprint, or another FIDO2 security method will verify your identity."
   },
@@ -7398,5 +7404,14 @@
   },
   "unexpectedErrorSend": {
     "message": "Đã xảy ra lỗi khi tải mục Gửi này. Hãy thử lại sau."
+  },
+  "seatLimitReached": {
+    "message": "Số ghế sử dụng hàng tháng đã đạt đến giới hạn"
+  },
+  "contactYourProvider": {
+    "message": "Liên hệ nhà cung cấp của bạn để mua thêm ghế."
+  },
+  "seatLimitReachedContactYourProvider": {
+    "message": "Số ghế sử dụng hàng tháng đã đạt đến giới hạn. Liên hệ nhà cung cấp để mua thêm."
   }
 }

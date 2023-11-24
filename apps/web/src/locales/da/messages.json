@@ -614,6 +614,12 @@
   "loginWithPasskey": {
     "message": "Log ind med adgangsnøgle"
   },
+  "invalidPasskeyPleaseTryAgain": {
+    "message": "Ugyldig adgangsnøgle. Prøv igen."
+  },
+  "twoFactorForPasskeysNotSupportedOnClientUpdateToLogIn": {
+    "message": "2FA til adgangsnøgler understøttes ikke. Opdatér appen for at logge ind."
+  },
   "loginWithPasskeyInfo": {
     "message": "Brug en genereret adgangsnøgle, der automatisk logger dig ind uden en adgangskode. Biometri, såsom ansigtsgenkendelse eller fingeraftryk, eller en anden FIDO2-sikkerhedsmetode, vil bekræfte din identitet."
   },
@@ -7398,5 +7404,14 @@
   },
   "unexpectedErrorSend": {
     "message": "En uventet fejl opstod under indlæsning af denne Send. Forsøg igen senere."
+  },
+  "seatLimitReached": {
+    "message": "Pladskvote er opbrugt"
+  },
+  "contactYourProvider": {
+    "message": "Kontakt udbyderen for at tilkøbe yderligere pladser."
+  },
+  "seatLimitReachedContactYourProvider": {
+    "message": "Pladskvote er opbrugt. Kontakt udbyderen for at tilkøbe yderligere pladser."
   }
 }

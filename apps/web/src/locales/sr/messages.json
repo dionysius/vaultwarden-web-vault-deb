@@ -614,6 +614,12 @@
   "loginWithPasskey": {
     "message": "Пријавите се са приступачним кључем"
   },
+  "invalidPasskeyPleaseTryAgain": {
+    "message": "Неважећи приступни кључ. Молим вас, покушајте поново."
+  },
+  "twoFactorForPasskeysNotSupportedOnClientUpdateToLogIn": {
+    "message": "2FA за приступни кључ није подржано. Надоградити апликацјиу за пријаву."
+  },
   "loginWithPasskeyInfo": {
     "message": "Користите генерисан passkey који ће вас аутоматски пријавити без лозинке. Биометрија, као што је препознавање лица или отисак прста, или неки други FIDO2 метод за проверу идентитета."
   },
@@ -4219,7 +4225,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "downloadAttachments": {
-    "message": "Download attachments"
+    "message": "Преузмите прилоге"
   },
   "sendAccessUnavailable": {
     "message": "„Send“ које покушавате да приступите не постоји или више није доступан.",
@@ -4610,7 +4616,7 @@
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Learn more about Bitwarden Send or sign up to **try it today.**'"
   },
   "sendAccessCreatorIdentifier": {
-    "message": "Bitwarden member $USER_IDENTIFIER$ shared the following with you",
+    "message": "Bitwarden члан $USER_IDENTIFIER$ је поделио следеће са тобом",
     "placeholders": {
       "user_identifier": {
         "content": "$1",
@@ -7183,7 +7189,7 @@
     "message": "Следеће"
   },
   "ssoLoginIsRequired": {
-    "message": "SSO login is required"
+    "message": "SSO пријава је потребна"
   },
   "selectedRegionFlag": {
     "message": "Одабрана застава"
@@ -7397,6 +7403,15 @@
     "message": "Приступ пројекту је ажуриран"
   },
   "unexpectedErrorSend": {
-    "message": "An unexpected error has occurred while loading this Send. Try again later."
+    "message": "Дошло је до неочекиване грешке при учитавању овога Send. Покушати поново касније."
+  },
+  "seatLimitReached": {
+    "message": "Достигнуто је ограничење броја места"
+  },
+  "contactYourProvider": {
+    "message": "Обратите се свом провајдеру да бисте купили додатна места."
+  },
+  "seatLimitReachedContactYourProvider": {
+    "message": "Достигнуто је ограничење броја места. Обратите се свом провајдеру да бисте купили додатна места."
   }
 }

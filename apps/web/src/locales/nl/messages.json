@@ -614,6 +614,12 @@
   "loginWithPasskey": {
     "message": "Inloggen met passkey"
   },
+  "invalidPasskeyPleaseTryAgain": {
+    "message": "Ongeldige Passkey. Probeer het opnieuw."
+  },
+  "twoFactorForPasskeysNotSupportedOnClientUpdateToLogIn": {
+    "message": "2FA voor Passkeys is niet ondersteund. Werk de app bij om in te loggen."
+  },
   "loginWithPasskeyInfo": {
     "message": "Gebruik een gegenereerde passkey die je automatisch inlogt zonder wachtwoord. Biometrie, zoals gezichtsherkenning of vingerafdruk, of een andere FIDO2-beveiligingsmethode controleren je identiteit."
   },
@@ -7398,5 +7404,14 @@
   },
   "unexpectedErrorSend": {
     "message": "Er is een onverwachte fout opgetreden tijdens het laden van deze Send. Probeer het later opnieuw."
+  },
+  "seatLimitReached": {
+    "message": "Seat limit has been reached"
+  },
+  "contactYourProvider": {
+    "message": "Contact your provider to purchase additional seats."
+  },
+  "seatLimitReachedContactYourProvider": {
+    "message": "Seat limit has been reached. Contact your provider to purchase additional seats."
   }
 }

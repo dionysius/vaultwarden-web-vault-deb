@@ -614,6 +614,12 @@
   "loginWithPasskey": {
     "message": "با کلید عبور وارد شوید"
   },
+  "invalidPasskeyPleaseTryAgain": {
+    "message": "Invalid Passkey. Please try again."
+  },
+  "twoFactorForPasskeysNotSupportedOnClientUpdateToLogIn": {
+    "message": "2FA for passkeys is not supported. Update the app to log in."
+  },
   "loginWithPasskeyInfo": {
     "message": "از یک کلمه عبور ایجاد شده استفاده کنید که به طور خودکار بدون کلمه عبور شما را وارد می‌کند. بیومتریک‌ها، مانند تشخیص چهره یا اثر انگشت، یا سایر روش‌های امنیتی FIDO2 هویت شما را تأیید می‌کنند."
   },
@@ -7398,5 +7404,14 @@
   },
   "unexpectedErrorSend": {
     "message": "An unexpected error has occurred while loading this Send. Try again later."
+  },
+  "seatLimitReached": {
+    "message": "Seat limit has been reached"
+  },
+  "contactYourProvider": {
+    "message": "Contact your provider to purchase additional seats."
+  },
+  "seatLimitReachedContactYourProvider": {
+    "message": "Seat limit has been reached. Contact your provider to purchase additional seats."
   }
 }

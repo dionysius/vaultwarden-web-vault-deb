@@ -614,6 +614,12 @@
   "loginWithPasskey": {
     "message": "Přihlásit se pomocí přístupového klíče"
   },
+  "invalidPasskeyPleaseTryAgain": {
+    "message": "Neplatný přístupový klíč. Zkuste to znovu."
+  },
+  "twoFactorForPasskeysNotSupportedOnClientUpdateToLogIn": {
+    "message": "Dvoufaktorové ověření pro přístupový klíč není povoleno. Aktualizujte aplikaci pro přihlášení."
+  },
   "loginWithPasskeyInfo": {
     "message": "Použijte vygenerovaný přístupový klíč, který Vás automaticky přihlásí bez hesla. Biometriky, jako je rozpoznávání obličeje, otisky prstů nebo jiná bezpečnostní metoda FIDO2 ověří Vaši totožnost."
   },
@@ -7398,5 +7404,14 @@
   },
   "unexpectedErrorSend": {
     "message": "Při načítání tohoto Sendu došlo k neočekávané chybě. Zkuste to znovu později."
+  },
+  "seatLimitReached": {
+    "message": "Dosažen limit počtu uživatelů"
+  },
+  "contactYourProvider": {
+    "message": "Obraťte se na svého poskytovatele pro nákup dalších uživatelů."
+  },
+  "seatLimitReachedContactYourProvider": {
+    "message": "Byl dosažen limit počtu uživatelů. Kontaktujte svého poskytovatele pro zakoupení dalších uživatelů."
   }
 }

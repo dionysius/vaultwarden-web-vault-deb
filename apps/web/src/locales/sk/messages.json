@@ -614,6 +614,12 @@
   "loginWithPasskey": {
     "message": "Prihlásiť sa s prístupovým kľúčom"
   },
+  "invalidPasskeyPleaseTryAgain": {
+    "message": "Nesprávne Passkey heslo. Prosím skúste to znovu."
+  },
+  "twoFactorForPasskeysNotSupportedOnClientUpdateToLogIn": {
+    "message": "2FA pre Passkey nie je podporované. Pre prihlásenie aktualizujte aplikáciu."
+  },
   "loginWithPasskeyInfo": {
     "message": "Použite vygenerovaný prístupový kľúč, ktorý vás automaticky prihlási bez zadávania hesla. Vaša identita bude overená pomocou biometrie, ako napríklad rozpoznanie tváre alebo odtlačok prsta, alebo pomocou ďalšej FIDO2 bezpečnostnej metódy."
   },
@@ -7398,5 +7404,14 @@
   },
   "unexpectedErrorSend": {
     "message": "Nastal neočakávaný problém pri načítavaní tohto Sendu. Skúste to neskôr."
+  },
+  "seatLimitReached": {
+    "message": "Bol dosiahnutý limit počtu používateľských licencií"
+  },
+  "contactYourProvider": {
+    "message": "Kontaktujte vášho poskytovateľa pre zakúpenie dodatočných licencií."
+  },
+  "seatLimitReachedContactYourProvider": {
+    "message": "Bol dosiahnutý limit počtu používateľských licencií. Kontaktujte vášho poskytovateľa pre zakúpenie dodatočných licencií."
   }
 }

@@ -614,6 +614,12 @@
   "loginWithPasskey": {
     "message": "Accedi con passkey"
   },
+  "invalidPasskeyPleaseTryAgain": {
+    "message": "Passkey non valida. Riprova."
+  },
+  "twoFactorForPasskeysNotSupportedOnClientUpdateToLogIn": {
+    "message": "La 2FA per le passkey non è supportata. Aggiorna l'app per accedere."
+  },
   "loginWithPasskeyInfo": {
     "message": "Usa una passkey che ti farà accedere automaticamente senza una password. L'autenticazione biometrica, come il riconoscimento facciale o l'impronta digitale, o un altro metodo di sicurezza FIDO2 verificherà la tua identità."
   },
@@ -7398,5 +7404,14 @@
   },
   "unexpectedErrorSend": {
     "message": "Si è verificato un errore imprevisto durante il caricamento di questo Send. Riprova più tardi."
+  },
+  "seatLimitReached": {
+    "message": "Il limite degli slot è stato raggiunto"
+  },
+  "contactYourProvider": {
+    "message": "Contatta il tuo fornitore per acquistare slot aggiuntivi."
+  },
+  "seatLimitReachedContactYourProvider": {
+    "message": "Il limite degli slot è stato raggiunto. Contatta il tuo fornitore per acquistare slot aggiuntivi."
   }
 }

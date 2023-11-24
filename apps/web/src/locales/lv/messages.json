@@ -614,6 +614,12 @@
   "loginWithPasskey": {
     "message": "Pieteikties ar piekļuves atslēgu"
   },
+  "invalidPasskeyPleaseTryAgain": {
+    "message": "Nederīga piekļuves atslēga. Lūgums mēģināt vēlreiz."
+  },
+  "twoFactorForPasskeysNotSupportedOnClientUpdateToLogIn": {
+    "message": "Divpakāpju pieteikšanās netiek atbalstīta piekļuves atslēgām. Jāatjaunina lietotne, lai pieteiktos."
+  },
   "loginWithPasskeyInfo": {
     "message": "Piekļuves atslēga ir izmantojama, lai automātiski pieteiktos bez paroles. Biometrija, piemēram, sejas atpazīšana vai pirkstu nospiedums, vai cits FIDO2 drošības veids apstiprinās identitāti."
   },
@@ -4937,7 +4943,7 @@
     "message": "Apvienība tika veiksmīgi pievienota sniedzējam"
   },
   "accessingUsingProvider": {
-    "message": "Piekļūst apvienībai ar sniedzēju $PROVIDER$",
+    "message": "Piekļūst apvienībai ar nodrošinātāju $PROVIDER$",
     "placeholders": {
       "provider": {
         "content": "$1",
@@ -7398,5 +7404,14 @@
   },
   "unexpectedErrorSend": {
     "message": "Atgadījās neparedzēta kļūda šī Send ielādēšanas laikā. Vēlāk jāmēģina vēlreiz."
+  },
+  "seatLimitReached": {
+    "message": "Ir sasniegts vietu ierobežojums"
+  },
+  "contactYourProvider": {
+    "message": "Jāsazinās ar nodrošinātāju, lai iegādātos papildu vietas."
+  },
+  "seatLimitReachedContactYourProvider": {
+    "message": "Ir sasniegts vietu ierobežojums. Jāsazinās ar savu nodrošinātāju, lai iegādātos papildu vietas."
   }
 }

@@ -614,6 +614,12 @@
   "loginWithPasskey": {
     "message": "Mit Passkey anmelden"
   },
+  "invalidPasskeyPleaseTryAgain": {
+    "message": "Ungültiger Passkey. Bitte versuche es erneut."
+  },
+  "twoFactorForPasskeysNotSupportedOnClientUpdateToLogIn": {
+    "message": "2FA für Passkeys wird nicht unterstützt. Aktualisiere die App, um dich anzumelden."
+  },
   "loginWithPasskeyInfo": {
     "message": "Verwende einen generierten Passkey, der dich automatisch ohne Passwort anmeldet. Biometrische Merkmale wie Gesichtserkennung oder Fingerabdruck oder eine andere FIDO2-Sicherheitsmethode verifizieren deine Identität."
   },
@@ -7398,5 +7404,14 @@
   },
   "unexpectedErrorSend": {
     "message": "Beim Laden dieses Sends ist ein unerwarteter Fehler aufgetreten. Versuche es später erneut."
+  },
+  "seatLimitReached": {
+    "message": "Benutzerplatzlimit wurde erreicht"
+  },
+  "contactYourProvider": {
+    "message": "Kontaktiere deinen Anbieter, um zusätzliche Benutzerplätze zu erwerben."
+  },
+  "seatLimitReachedContactYourProvider": {
+    "message": "Das Benutzerplatzlimit wurde erreicht. Kontaktiere deinen Anbieter, um zusätzliche Benutzerplätze zu erwerben."
   }
 }

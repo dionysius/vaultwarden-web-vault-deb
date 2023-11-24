@@ -614,6 +614,12 @@
   "loginWithPasskey": {
     "message": "Bejelentkezés jelszóval"
   },
+  "invalidPasskeyPleaseTryAgain": {
+    "message": "Érvénytelen jelszó. Próbálja újra."
+  },
+  "twoFactorForPasskeysNotSupportedOnClientUpdateToLogIn": {
+    "message": "A 2FA a jelszónál nem támogatott. A bejelentkezéshez frissítsük az alkalmazást."
+  },
   "loginWithPasskeyInfo": {
     "message": "Használjunk generált jelszót, amely automatikusan, jelszó nélkül bejelentkeztet. A biometrikus adatok, például az arcfelismerés vagy az ujjlenyomat, vagy más FIDO2 biztonsági módszer igazolja személyazonosságot."
   },
@@ -7398,5 +7404,14 @@
   },
   "unexpectedErrorSend": {
     "message": "Váratlan hiba történt a Send betöltésekor. Próbáljuk újra később."
+  },
+  "seatLimitReached": {
+    "message": "A hely korlát elérésre került."
+  },
+  "contactYourProvider": {
+    "message": "További helyek vásárlásához forduljunk a  szolgáltatóhoz."
+  },
+  "seatLimitReachedContactYourProvider": {
+    "message": "A helyek száma elérésre került.  További helyek vásárlásához forduljunk a szolgáltatóhoz."
   }
 }
