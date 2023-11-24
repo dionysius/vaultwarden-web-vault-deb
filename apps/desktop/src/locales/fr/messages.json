@@ -1534,11 +1534,11 @@
     "message": "Définir le mot de passe principal"
   },
   "orgPermissionsUpdatedMustSetPassword": {
-    "message": "Your organization permissions were updated, requiring you to set a master password.",
+    "message": "Les autorisations de votre organisation ont été mises à jour, vous obligeant à définir un mot de passe principal.",
     "description": "Used as a card title description on the set password page to explain why the user is there"
   },
   "orgRequiresYouToSetPassword": {
-    "message": "Your organization requires you to set a master password.",
+    "message": "Votre organisation exige que vous définissiez un mot de passe principal.",
     "description": "Used as a card title description on the set password page to explain why the user is there"
   },
   "currentMasterPass": {
@@ -2557,10 +2557,10 @@
     "message": "Nom d'utilisateur ou mot de passe incorrect"
   },
   "multifactorAuthenticationFailed": {
-    "message": "Multifactor authentication failed"
+    "message": "Authentification multifacteur échouée"
   },
   "includeSharedFolders": {
-    "message": "Include shared folders"
+    "message": "Inclure les dossiers partagés"
   },
   "lastPassEmail": {
     "message": "Courriel LastPass"
@@ -2569,22 +2569,22 @@
     "message": "Importation de votre compte..."
   },
   "lastPassMFARequired": {
-    "message": "LastPass multifactor authentication required"
+    "message": "Authentification multifacteur LastPass requise"
   },
   "lastPassMFADesc": {
     "message": "Enter your one-time passcode from your authentication app"
   },
   "lastPassOOBDesc": {
-    "message": "Approve the login request in your authentication app or enter a one-time passcode."
+    "message": "Approuvez la demande de connexion dans votre application d'authentification ou saisissez le code d'accès à usage unique."
   },
   "passcode": {
-    "message": "Passcode"
+    "message": "Code d'accès"
   },
   "lastPassMasterPassword": {
     "message": "Mot de passe principal LastPass"
   },
   "lastPassAuthRequired": {
-    "message": "LastPass authentication required"
+    "message": "Authentification LastPass requise"
   },
   "awaitingSSO": {
     "message": "En attente de l'authentification SSO"
