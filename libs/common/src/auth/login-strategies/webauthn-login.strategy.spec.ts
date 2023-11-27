@@ -179,7 +179,11 @@ describe("WebAuthnLoginStrategy", () => {
     // Act
     await webAuthnLoginStrategy.logIn(webAuthnCredentials);
 
-    // // Assert
+    // Assert
+    // Master key encrypted user key should be set
+    expect(cryptoService.setMasterKeyEncryptedUserKey).toHaveBeenCalledTimes(1);
+    expect(cryptoService.setMasterKeyEncryptedUserKey).toHaveBeenCalledWith(idTokenResponse.key);
+
     expect(cryptoService.decryptToBytes).toHaveBeenCalledTimes(1);
     expect(cryptoService.decryptToBytes).toHaveBeenCalledWith(
       idTokenResponse.userDecryptionOptions.webAuthnPrfOption.encryptedPrivateKey,

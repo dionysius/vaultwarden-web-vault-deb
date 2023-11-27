@@ -15,6 +15,13 @@ export class WebAuthnLoginStrategy extends LoginStrategy {
   }
 
   protected override async setUserKey(idTokenResponse: IdentityTokenResponse) {
+    const masterKeyEncryptedUserKey = idTokenResponse.key;
+
+    if (masterKeyEncryptedUserKey) {
+      // set the master key encrypted user key if it exists
+      await this.cryptoService.setMasterKeyEncryptedUserKey(masterKeyEncryptedUserKey);
+    }
+
     const userDecryptionOptions = idTokenResponse?.userDecryptionOptions;
 
     if (userDecryptionOptions?.webAuthnPrfOption) {
