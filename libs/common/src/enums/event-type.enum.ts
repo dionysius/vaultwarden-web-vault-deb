@@ -64,6 +64,7 @@ export enum EventType {
   Organization_EnabledKeyConnector = 1606,
   Organization_DisabledKeyConnector = 1607,
   Organization_SponsorshipsSynced = 1608,
+  Organization_CollectionManagementUpdated = 1609,
 
   Policy_Updated = 1700,
 

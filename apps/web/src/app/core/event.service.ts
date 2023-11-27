@@ -352,6 +352,14 @@ export class EventService {
       case EventType.Organization_SponsorshipsSynced:
         msg = humanReadableMsg = this.i18nService.t("sponsorshipsSynced");
         break;
+      case EventType.Organization_CollectionManagementUpdated:
+        msg = this.i18nService.t("modifiedCollectionManagement", this.formatOrganizationId(ev));
+        humanReadableMsg = this.i18nService.t(
+          "modifiedCollectionManagement",
+          this.getShortId(ev.organizationId)
+        );
+        break;
+
       // Policies
       case EventType.Policy_Updated: {
         msg = this.i18nService.t("modifiedPolicyId", this.formatPolicyId(ev));
@@ -566,6 +574,13 @@ export class EventService {
     const shortId = this.getShortId(ev.providerOrganizationId);
     const a = this.makeAnchor(shortId);
     a.setAttribute("href", "#/providers/" + ev.providerId + "/clients?search=" + shortId);
+    return a.outerHTML;
+  }
+
+  private formatOrganizationId(ev: EventResponse) {
+    const shortId = this.getShortId(ev.organizationId);
+    const a = this.makeAnchor(shortId);
+    a.setAttribute("href", "#/organizations/" + ev.organizationId + "/settings/account");
     return a.outerHTML;
   }
 
