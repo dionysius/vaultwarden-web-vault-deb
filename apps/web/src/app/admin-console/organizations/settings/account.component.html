@@ -64,6 +64,7 @@
     <input type="checkbox" bitCheckbox formControlName="limitCollectionCreationDeletion" />
   </bit-form-control>
   <button
+    *ngIf="!selfHosted"
     type="submit"
     bitButton
     bitFormButton
