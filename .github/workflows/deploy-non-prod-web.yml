@@ -11,6 +11,8 @@ on:
         type: choice
         options:
           - QA
+          - EUQA
+          - USPROD
 
   workflow_call:
     inputs:
@@ -29,6 +31,8 @@ jobs:
       environment-name: ${{ steps.config.outputs.environment-name }}
       environment-branch: ${{ steps.config.outputs.environment-branch }}
       environment-artifact: ${{ steps.config.outputs.environment-artifact }}
+      azure-login-creds: ${{ steps.config.outputs.azure-login-creds }}
+      retrieve-secrets-keyvault: ${{ steps.config.outputs.retrieve-secrets-keyvault }}
     steps:
       - name: Configure
         id: config
@@ -39,7 +43,19 @@ jobs:
           echo "environment-url=http://vault.$ENV_NAME_LOWER.bitwarden.pw" >> $GITHUB_OUTPUT
           echo "environment-name=Web Vault - ${{ inputs.environment }}" >> $GITHUB_OUTPUT
           echo "environment-branch=cf-pages-$ENV_NAME_LOWER" >> $GITHUB_OUTPUT
-          echo "environment-artifact=web-*-cloud-${{ inputs.environment }}.zip" >> $GITHUB_OUTPUT
+          if [ ${{ inputs.environment }} == "QA" ]; then
+            echo "azure-login-creds=AZURE_KV_US_QA_SERVICE_PRINCIPAL" >> $GITHUB_OUTPUT
+            echo "retrieve-secrets-keyvault=bw-webvault-rlktusqa-kv" >> $GITHUB_OUTPUT
+            echo "environment-artifact=web-*-cloud-QA.zip" >> $GITHUB_OUTPUT
+          elif [ ${{ inputs.environment }} == "EUQA" ]; then
+            echo "azure-login-creds=AZURE_KV_EU_QA_SERVICE_PRINCIPAL" >> $GITHUB_OUTPUT
+            echo "retrieve-secrets-keyvault=webvaulteu-westeurope-qa" >> $GITHUB_OUTPUT
+            echo "environment-artifact=web-*-cloud-euqa.zip" >> $GITHUB_OUTPUT
+          elif [ ${{ inputs.environment }} == "USPROD" ]; then
+            echo "azure-login-creds=AZURE_KV_US_PROD_SERVICE_PRINCIPAL" >> $GITHUB_OUTPUT
+            echo "retrieve-secrets-keyvault=bw-webvault-klrt-kv" >> $GITHUB_OUTPUT
+            echo "environment-artifact=web-*-cloud-COMMERCIAL.zip" >> $GITHUB_OUTPUT
+          fi
 
   artifact-check:
     name: Check if Web artifact is present
@@ -86,6 +102,7 @@ jobs:
 
   cfpages-deploy:
     name: Deploy Web Vault to ${{ inputs.environment }} CloudFlare Pages branch
+    if : ${{ inputs.environment == 'QA' }}
     needs:
       - setup
       - artifact-check
@@ -170,6 +187,57 @@ jobs:
           environment-url: ${{ env._ENVIRONMENT_URL }}
           state: 'failure'
           deployment-id: ${{ steps.deployment.outputs.deployment_id }}
+
+  azure-deploy:
+    name: Deploy Web Vault to ${{ inputs.environment }} Storage Account
+    needs:
+      - setup
+      - artifact-check
+    runs-on: ubuntu-22.04
+    env:
+      _ENVIRONMENT_ARTIFACT: ${{ needs.setup.outputs.environment-artifact }}
+    steps:
+      - name: Login to Azure
+        uses: Azure/login@92a5484dfaf04ca78a94597f4f19fea633851fa2 # v1.4.7
+        with:
+          creds: ${{ secrets[needs.setup.outputs.azure-login-creds] }}
+
+      - name: Retrieve Storage Account connection string
+        id: retrieve-secrets
+        uses: bitwarden/gh-actions/get-keyvault-secrets@main
+        with:
+          keyvault: ${{ needs.setup.outputs.retrieve-secrets-keyvault }}
+          secrets: "sa-bitwarden-web-vault-dev-key-temp"
+
+      - name: Download latest cloud asset
+        uses: bitwarden/gh-actions/download-artifacts@main
+        with:
+          workflow: build-web.yml
+          path: apps/web
+          workflow_conclusion: success
+          branch: ${{ github.event.inputs.tag }}
+          artifacts: ${{ env._ENVIRONMENT_ARTIFACT }}
+
+      - name: Unzip build asset
+        working-directory: apps/web
+        run: unzip ${{ env._ENVIRONMENT_ARTIFACT }}
+
+      - name: Empty container in Storage Account
+        run: |
+          az storage blob delete-batch \
+            --source '$web' \
+            --pattern '*' \
+            --connection-string "${{ steps.retrieve-secrets.outputs.sa-bitwarden-web-vault-dev-key-temp }}"
+
+      - name: Deploy to Azure Storage Account
+        working-directory: apps/web
+        run: |
+          az storage blob upload-batch \
+            --source "./build" \
+            --destination '$web' \
+            --connection-string "${{ steps.retrieve-secrets.outputs.sa-bitwarden-web-vault-dev-key-temp }}" \
+            --overwrite \
+            --no-progress
 
   notify:
     name: Notify Slack with result
