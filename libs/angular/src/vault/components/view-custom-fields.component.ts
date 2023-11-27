@@ -1,7 +1,8 @@
 import { Directive, Input } from "@angular/core";
 
 import { EventCollectionService } from "@bitwarden/common/abstractions/event/event-collection.service";
-import { EventType, FieldType } from "@bitwarden/common/enums";
+import { EventType } from "@bitwarden/common/enums";
+import { FieldType } from "@bitwarden/common/vault/enums";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 import { FieldView } from "@bitwarden/common/vault/models/view/field.view";
 

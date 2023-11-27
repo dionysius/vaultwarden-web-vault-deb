@@ -1,4 +1,4 @@
-import { CipherType } from "@bitwarden/common/vault/enums/cipher-type";
+import { CipherType } from "@bitwarden/common/vault/enums";
 
 import { DashlaneCsvImporter } from "../src/importers";
 

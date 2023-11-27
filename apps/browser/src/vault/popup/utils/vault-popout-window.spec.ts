@@ -1,6 +1,6 @@
 import { mock } from "jest-mock-extended";
 
-import { CipherType } from "@bitwarden/common/vault/enums/cipher-type";
+import { CipherType } from "@bitwarden/common/vault/enums";
 
 import BrowserPopupUtils from "../../../platform/popup/browser-popup-utils";
 

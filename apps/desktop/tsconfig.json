@@ -17,6 +17,7 @@
       "@bitwarden/exporter/*": ["../../libs/exporter/src/*"],
       "@bitwarden/importer/core": ["../../libs/importer/src"],
       "@bitwarden/importer/ui": ["../../libs/importer/src/components"],
+      "@bitwarden/node/*": ["../../libs/node/src/*"],
       "@bitwarden/vault": ["../../libs/vault/src"]
     },
     "useDefineForClassFields": false

@@ -1,4 +1,4 @@
-import { LoginApi } from "../../../models/api/login.api";
+import { LoginApi } from "../api/login.api";
 
 import { Fido2CredentialData } from "./fido2-credential.data";
 import { LoginUriData } from "./login-uri.data";

@@ -1,5 +1,5 @@
+import { CipherType } from "@bitwarden/common/vault/enums";
 import { CipherRepromptType } from "@bitwarden/common/vault/enums/cipher-reprompt-type";
-import { CipherType } from "@bitwarden/common/vault/enums/cipher-type";
 
 import AutofillPageDetails from "../../models/autofill-page-details";
 

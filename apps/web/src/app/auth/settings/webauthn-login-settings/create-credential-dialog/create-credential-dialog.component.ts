@@ -4,11 +4,11 @@ import { FormBuilder, Validators } from "@angular/forms";
 import { firstValueFrom, map, Observable } from "rxjs";
 
 import { PrfKeySet } from "@bitwarden/auth";
+import { Verification } from "@bitwarden/common/auth/types/verification";
 import { ErrorResponse } from "@bitwarden/common/models/response/error.response";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
-import { Verification } from "@bitwarden/common/types/verification";
 import { DialogService } from "@bitwarden/components";
 
 import { WebauthnLoginAdminService } from "../../../core";

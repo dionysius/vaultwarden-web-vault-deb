@@ -1,12 +1,12 @@
 import { Component, OnInit } from "@angular/core";
 
 import { SettingsService } from "@bitwarden/common/abstractions/settings.service";
-import { UriMatchType } from "@bitwarden/common/enums";
 import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
 import { ConfigServiceAbstraction } from "@bitwarden/common/platform/abstractions/config/config.service.abstraction";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
+import { UriMatchType } from "@bitwarden/common/vault/enums";
 import { DialogService } from "@bitwarden/components";
 
 import { AutofillOverlayVisibility } from "../../autofill/utils/autofill-overlay.enum";

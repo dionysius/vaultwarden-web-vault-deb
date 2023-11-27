@@ -1,5 +1,4 @@
 import { EventCollectionService } from "@bitwarden/common/abstractions/event/event-collection.service";
-import { TotpService } from "@bitwarden/common/abstractions/totp.service";
 import { AuthService } from "@bitwarden/common/auth/abstractions/auth.service";
 import { UserVerificationService } from "@bitwarden/common/auth/abstractions/user-verification/user-verification.service.abstraction";
 import { AuthenticationStatus } from "@bitwarden/common/auth/enums/authentication-status";
@@ -8,15 +7,15 @@ import { StateService } from "@bitwarden/common/platform/abstractions/state.serv
 import { StateFactory } from "@bitwarden/common/platform/factories/state-factory";
 import { GlobalState } from "@bitwarden/common/platform/models/domain/global-state";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
+import { TotpService } from "@bitwarden/common/vault/abstractions/totp.service";
+import { CipherType } from "@bitwarden/common/vault/enums";
 import { CipherRepromptType } from "@bitwarden/common/vault/enums/cipher-reprompt-type";
-import { CipherType } from "@bitwarden/common/vault/enums/cipher-type";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 
 import {
   authServiceFactory,
   AuthServiceInitOptions,
 } from "../../auth/background/service-factories/auth-service.factory";
-import { totpServiceFactory } from "../../auth/background/service-factories/totp-service.factory";
 import { userVerificationServiceFactory } from "../../auth/background/service-factories/user-verification-service.factory";
 import { openUnlockPopout } from "../../auth/popup/utils/auth-popout-window";
 import LockedVaultPendingNotificationsItem from "../../background/models/lockedVaultPendingNotificationsItem";
@@ -30,6 +29,7 @@ import {
   cipherServiceFactory,
   CipherServiceInitOptions,
 } from "../../vault/background/service_factories/cipher-service.factory";
+import { totpServiceFactory } from "../../vault/background/service_factories/totp-service.factory";
 import {
   openAddEditVaultItemPopout,
   openVaultItemPasswordRepromptPopout,

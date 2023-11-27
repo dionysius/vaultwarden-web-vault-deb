@@ -2,7 +2,7 @@ import { Component, OnDestroy, OnInit } from "@angular/core";
 import { FormBuilder, FormControl, FormGroup, Validators } from "@angular/forms";
 import { map, Observable, Subject, takeUntil } from "rxjs";
 
-import { notAllowedValueAsync } from "@bitwarden/angular/validators/notAllowedValueAsync.validator";
+import { notAllowedValueAsync } from "@bitwarden/angular/admin-console/validators/not-allowed-value-async.validator";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";

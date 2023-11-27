@@ -1,5 +1,5 @@
-import { KdfType } from "../../../enums";
 import { BaseResponse } from "../../../models/response/base.response";
+import { KdfType } from "../../../platform/enums";
 
 export class PreloginResponse extends BaseResponse {
   kdf: KdfType;

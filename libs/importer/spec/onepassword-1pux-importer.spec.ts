@@ -1,6 +1,5 @@
-import { FieldType, SecureNoteType } from "@bitwarden/common/enums";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
-import { CipherType } from "@bitwarden/common/vault/enums/cipher-type";
+import { FieldType, SecureNoteType, CipherType } from "@bitwarden/common/vault/enums";
 import { FieldView } from "@bitwarden/common/vault/models/view/field.view";
 
 import { OnePassword1PuxImporter } from "../src/importers";

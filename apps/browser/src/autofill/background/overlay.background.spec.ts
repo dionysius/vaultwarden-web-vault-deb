@@ -2,12 +2,12 @@ import { mock, mockReset } from "jest-mock-extended";
 
 import { AuthenticationStatus } from "@bitwarden/common/auth/enums/authentication-status";
 import { AuthService } from "@bitwarden/common/auth/services/auth.service";
-import { ThemeType } from "@bitwarden/common/enums";
+import { ThemeType } from "@bitwarden/common/platform/enums";
 import { EnvironmentService } from "@bitwarden/common/platform/services/environment.service";
 import { I18nService } from "@bitwarden/common/platform/services/i18n.service";
 import { SettingsService } from "@bitwarden/common/services/settings.service";
+import { CipherType } from "@bitwarden/common/vault/enums";
 import { CipherRepromptType } from "@bitwarden/common/vault/enums/cipher-reprompt-type";
-import { CipherType } from "@bitwarden/common/vault/enums/cipher-type";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 import { CipherService } from "@bitwarden/common/vault/services/cipher.service";
 

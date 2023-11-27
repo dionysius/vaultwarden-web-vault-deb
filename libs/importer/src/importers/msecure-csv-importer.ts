@@ -1,5 +1,4 @@
-import { SecureNoteType } from "@bitwarden/common/enums";
-import { CipherType } from "@bitwarden/common/vault/enums/cipher-type";
+import { SecureNoteType, CipherType } from "@bitwarden/common/vault/enums";
 import { SecureNoteView } from "@bitwarden/common/vault/models/view/secure-note.view";
 
 import { ImportResult } from "../models/import-result";

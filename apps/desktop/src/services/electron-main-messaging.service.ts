@@ -12,8 +12,8 @@ import {
   shell,
 } from "electron";
 
-import { ThemeType } from "@bitwarden/common/enums";
 import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
+import { ThemeType } from "@bitwarden/common/platform/enums";
 import { SafeUrls } from "@bitwarden/common/platform/misc/safe-urls";
 
 import { WindowMain } from "../main/window.main";

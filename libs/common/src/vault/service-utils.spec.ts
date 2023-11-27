@@ -1,6 +1,5 @@
-import { ITreeNodeObject, TreeNode } from "../models/domain/tree-node";
-
-import { ServiceUtils } from "./serviceUtils";
+import { ITreeNodeObject, TreeNode } from "./models/domain/tree-node";
+import { ServiceUtils } from "./service-utils";
 
 type FakeObject = { id: string; name: string };
 

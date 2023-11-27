@@ -1,4 +1,4 @@
-import { ITreeNodeObject, TreeNode } from "@bitwarden/common/models/domain/tree-node";
+import { ITreeNodeObject, TreeNode } from "@bitwarden/common/vault/models/domain/tree-node";
 
 export class DynamicTreeNode<T extends ITreeNodeObject> {
   fullList: T[];

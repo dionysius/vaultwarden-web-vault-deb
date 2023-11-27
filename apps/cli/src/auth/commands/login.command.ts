@@ -24,7 +24,6 @@ import { TokenTwoFactorRequest } from "@bitwarden/common/auth/models/request/ide
 import { PasswordRequest } from "@bitwarden/common/auth/models/request/password.request";
 import { TwoFactorEmailRequest } from "@bitwarden/common/auth/models/request/two-factor-email.request";
 import { UpdateTempPasswordRequest } from "@bitwarden/common/auth/models/request/update-temp-password.request";
-import { NodeUtils } from "@bitwarden/common/misc/nodeUtils";
 import { ErrorResponse } from "@bitwarden/common/models/response/error.response";
 import { CryptoFunctionService } from "@bitwarden/common/platform/abstractions/crypto-function.service";
 import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
@@ -37,6 +36,7 @@ import { SymmetricCryptoKey } from "@bitwarden/common/platform/models/domain/sym
 import { PasswordGenerationServiceAbstraction } from "@bitwarden/common/tools/generator/password";
 import { PasswordStrengthServiceAbstraction } from "@bitwarden/common/tools/password-strength";
 import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
+import { NodeUtils } from "@bitwarden/node/node-utils";
 
 import { Response } from "../../models/response";
 import { MessageResponse } from "../../models/response/message.response";

@@ -11,7 +11,6 @@ import { ForceSetPasswordReason } from "../../../auth/models/domain/force-set-pa
 import { KeyConnectorUserDecryptionOption } from "../../../auth/models/domain/user-decryption-options/key-connector-user-decryption-option";
 import { TrustedDeviceUserDecryptionOption } from "../../../auth/models/domain/user-decryption-options/trusted-device-user-decryption-option";
 import { IdentityTokenResponse } from "../../../auth/models/response/identity-token.response";
-import { KdfType, UriMatchType } from "../../../enums";
 import { EventData } from "../../../models/data/event.data";
 import { GeneratorOptions } from "../../../tools/generator/generator-options";
 import {
@@ -22,11 +21,13 @@ import { UsernameGeneratorOptions } from "../../../tools/generator/username/user
 import { SendData } from "../../../tools/send/models/data/send.data";
 import { SendView } from "../../../tools/send/models/view/send.view";
 import { DeepJsonify } from "../../../types/deep-jsonify";
+import { UriMatchType } from "../../../vault/enums";
 import { CipherData } from "../../../vault/models/data/cipher.data";
 import { CollectionData } from "../../../vault/models/data/collection.data";
 import { FolderData } from "../../../vault/models/data/folder.data";
 import { CipherView } from "../../../vault/models/view/cipher.view";
 import { CollectionView } from "../../../vault/models/view/collection.view";
+import { KdfType } from "../../enums";
 import { Utils } from "../../misc/utils";
 import { ServerConfigData } from "../../models/data/server-config.data";
 

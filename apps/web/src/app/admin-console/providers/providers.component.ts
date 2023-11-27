@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 
 import { ProviderService } from "@bitwarden/common/admin-console/abstractions/provider.service";
-import { Provider } from "@bitwarden/common/models/domain/provider";
+import { Provider } from "@bitwarden/common/admin-console/models/domain/provider";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
 

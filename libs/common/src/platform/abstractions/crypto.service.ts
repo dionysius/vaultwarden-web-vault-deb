@@ -2,7 +2,7 @@ import { ProfileOrganizationResponse } from "../../admin-console/models/response
 import { ProfileProviderOrganizationResponse } from "../../admin-console/models/response/profile-provider-organization.response";
 import { ProfileProviderResponse } from "../../admin-console/models/response/profile-provider.response";
 import { KdfConfig } from "../../auth/models/domain/kdf-config";
-import { KeySuffixOptions, KdfType, HashPurpose } from "../../enums";
+import { KeySuffixOptions, KdfType, HashPurpose } from "../enums";
 import { EncArrayBuffer } from "../models/domain/enc-array-buffer";
 import { EncString } from "../models/domain/enc-string";
 import {

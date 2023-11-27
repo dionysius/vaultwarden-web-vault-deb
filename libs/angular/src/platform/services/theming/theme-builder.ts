@@ -1,4 +1,4 @@
-import { ThemeType } from "@bitwarden/common/enums";
+import { ThemeType } from "@bitwarden/common/platform/enums";
 
 import { Theme } from "./theme";
 

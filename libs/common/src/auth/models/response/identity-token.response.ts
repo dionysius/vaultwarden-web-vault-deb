@@ -1,5 +1,5 @@
-import { KdfType } from "../../../enums";
 import { BaseResponse } from "../../../models/response/base.response";
+import { KdfType } from "../../../platform/enums";
 
 import { MasterPasswordPolicyResponse } from "./master-password-policy.response";
 import { UserDecryptionOptionsResponse } from "./user-decryption-options/user-decryption-options.response";

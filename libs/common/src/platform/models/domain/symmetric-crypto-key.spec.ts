@@ -1,5 +1,5 @@
 import { makeStaticByteArray } from "../../../../spec";
-import { EncryptionType } from "../../../enums";
+import { EncryptionType } from "../../enums";
 
 import { SymmetricCryptoKey } from "./symmetric-crypto-key";
 

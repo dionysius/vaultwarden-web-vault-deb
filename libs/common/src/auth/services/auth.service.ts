@@ -2,7 +2,6 @@ import { Observable, Subject } from "rxjs";
 
 import { ApiService } from "../../abstractions/api.service";
 import { PolicyService } from "../../admin-console/abstractions/policy/policy.service.abstraction";
-import { KdfType, KeySuffixOptions } from "../../enums";
 import { PreloginRequest } from "../../models/request/prelogin.request";
 import { ErrorResponse } from "../../models/response/error.response";
 import { AuthRequestPushNotification } from "../../models/response/notification.response";
@@ -15,6 +14,7 @@ import { LogService } from "../../platform/abstractions/log.service";
 import { MessagingService } from "../../platform/abstractions/messaging.service";
 import { PlatformUtilsService } from "../../platform/abstractions/platform-utils.service";
 import { StateService } from "../../platform/abstractions/state.service";
+import { KdfType, KeySuffixOptions } from "../../platform/enums";
 import { Utils } from "../../platform/misc/utils";
 import { MasterKey } from "../../platform/models/domain/symmetric-crypto-key";
 import { PasswordStrengthServiceAbstraction } from "../../tools/password-strength";

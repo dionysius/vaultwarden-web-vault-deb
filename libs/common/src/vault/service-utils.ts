@@ -1,4 +1,4 @@
-import { ITreeNodeObject, TreeNode } from "../models/domain/tree-node";
+import { ITreeNodeObject, TreeNode } from "./models/domain/tree-node";
 
 export class ServiceUtils {
   /**

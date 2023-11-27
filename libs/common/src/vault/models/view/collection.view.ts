@@ -1,7 +1,7 @@
 import { Organization } from "../../../admin-console/models/domain/organization";
-import { ITreeNodeObject } from "../../../models/domain/tree-node";
 import { View } from "../../../models/view/view";
 import { Collection } from "../domain/collection";
+import { ITreeNodeObject } from "../domain/tree-node";
 import { CollectionAccessDetailsResponse } from "../response/collection.response";
 
 export const NestingDelimiter = "/";

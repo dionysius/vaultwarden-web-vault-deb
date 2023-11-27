@@ -1,5 +1,5 @@
 import { makeStaticByteArray } from "../../../../spec";
-import { EncryptionType } from "../../../enums";
+import { EncryptionType } from "../../enums";
 
 import { EncArrayBuffer } from "./enc-array-buffer";
 

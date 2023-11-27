@@ -1,4 +1,4 @@
-import { Fido2CredentialApi } from "../../api/fido2-credential.api";
+import { Fido2CredentialApi } from "../api/fido2-credential.api";
 
 export class Fido2CredentialData {
   credentialId: string;

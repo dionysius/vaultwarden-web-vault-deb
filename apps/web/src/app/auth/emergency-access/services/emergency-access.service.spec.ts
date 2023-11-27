@@ -2,12 +2,12 @@ import { MockProxy } from "jest-mock-extended";
 import mock from "jest-mock-extended/lib/Mock";
 
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
-import { EncryptionType, KdfType } from "@bitwarden/common/enums";
 import { ListResponse } from "@bitwarden/common/models/response/list.response";
 import { UserKeyResponse } from "@bitwarden/common/models/response/user-key.response";
 import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
 import { EncryptService } from "@bitwarden/common/platform/abstractions/encrypt.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
+import { EncryptionType, KdfType } from "@bitwarden/common/platform/enums";
 import { EncString } from "@bitwarden/common/platform/models/domain/enc-string";
 import {
   UserKey,

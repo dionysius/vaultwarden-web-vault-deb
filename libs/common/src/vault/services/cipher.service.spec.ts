@@ -5,7 +5,6 @@ import { makeStaticByteArray } from "../../../spec/utils";
 import { ApiService } from "../../abstractions/api.service";
 import { SearchService } from "../../abstractions/search.service";
 import { SettingsService } from "../../abstractions/settings.service";
-import { UriMatchType, FieldType } from "../../enums";
 import { ConfigServiceAbstraction } from "../../platform/abstractions/config/config.service.abstraction";
 import { CryptoService } from "../../platform/abstractions/crypto.service";
 import { EncryptService } from "../../platform/abstractions/encrypt.service";
@@ -20,6 +19,7 @@ import {
 } from "../../platform/models/domain/symmetric-crypto-key";
 import { ContainerService } from "../../platform/services/container.service";
 import { CipherFileUploadService } from "../abstractions/file-upload/cipher-file-upload.service";
+import { UriMatchType, FieldType } from "../enums";
 import { CipherRepromptType } from "../enums/cipher-reprompt-type";
 import { CipherType } from "../enums/cipher-type";
 import { CipherData } from "../models/data/cipher.data";

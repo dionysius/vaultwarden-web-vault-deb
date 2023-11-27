@@ -1,6 +1,6 @@
 import { Jsonify } from "type-fest";
 
-import { SecureNoteType } from "../../../enums";
+import { SecureNoteType } from "../../enums";
 import { SecureNote } from "../domain/secure-note";
 
 import { ItemView } from "./item.view";

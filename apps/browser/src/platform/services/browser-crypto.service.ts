@@ -1,4 +1,4 @@
-import { KeySuffixOptions } from "@bitwarden/common/enums";
+import { KeySuffixOptions } from "@bitwarden/common/platform/enums";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
 import {
   SymmetricCryptoKey,

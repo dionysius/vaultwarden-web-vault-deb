@@ -1,8 +1,8 @@
 import { Jsonify } from "type-fest";
 
-import { LoginLinkedId as LinkedId, UriMatchType } from "../../../enums";
-import { linkedFieldOption } from "../../../misc/linkedFieldOption.decorator";
 import { Utils } from "../../../platform/misc/utils";
+import { LoginLinkedId as LinkedId, UriMatchType } from "../../enums";
+import { linkedFieldOption } from "../../linked-field-option.decorator";
 import { Login } from "../domain/login";
 
 import { Fido2CredentialView } from "./fido2-credential.view";

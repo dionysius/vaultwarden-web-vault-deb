@@ -2,13 +2,13 @@ import { DOCUMENT } from "@angular/common";
 import { Inject, Injectable } from "@angular/core";
 import { BehaviorSubject, filter, fromEvent, Observable } from "rxjs";
 
-import { ThemeType } from "@bitwarden/common/enums";
 import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
+import { ThemeType } from "@bitwarden/common/platform/enums";
 
-import { WINDOW } from "../injection-tokens";
+import { WINDOW } from "../../../services/injection-tokens";
 
 import { Theme } from "./theme";
-import { ThemeBuilder } from "./themeBuilder";
+import { ThemeBuilder } from "./theme-builder";
 import { AbstractThemingService } from "./theming.service.abstraction";
 
 @Injectable()

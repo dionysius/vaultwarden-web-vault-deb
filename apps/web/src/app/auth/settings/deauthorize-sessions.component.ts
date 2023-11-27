@@ -2,11 +2,11 @@ import { Component } from "@angular/core";
 
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { UserVerificationService } from "@bitwarden/common/auth/abstractions/user-verification/user-verification.service.abstraction";
+import { Verification } from "@bitwarden/common/auth/types/verification";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
-import { Verification } from "@bitwarden/common/types/verification";
 
 @Component({
   selector: "app-deauthorize-sessions",

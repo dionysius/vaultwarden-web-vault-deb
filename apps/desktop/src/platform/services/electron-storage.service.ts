@@ -3,11 +3,11 @@ import * as fs from "fs";
 import { ipcMain } from "electron";
 import { Subject } from "rxjs";
 
-import { NodeUtils } from "@bitwarden/common/misc/nodeUtils";
 import {
   AbstractStorageService,
   StorageUpdate,
 } from "@bitwarden/common/platform/abstractions/storage.service";
+import { NodeUtils } from "@bitwarden/node/node-utils";
 
 // See: https://github.com/sindresorhus/electron-store/blob/main/index.d.ts
 interface ElectronStoreOptions {

@@ -1,12 +1,13 @@
 import { Component, OnInit } from "@angular/core";
 
-import { AbstractThemingService } from "@bitwarden/angular/services/theming/theming.service.abstraction";
+import { AbstractThemingService } from "@bitwarden/angular/platform/services/theming/theming.service.abstraction";
 import { SettingsService } from "@bitwarden/common/abstractions/settings.service";
-import { TotpService } from "@bitwarden/common/abstractions/totp.service";
-import { ThemeType, UriMatchType } from "@bitwarden/common/enums";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
 import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
+import { ThemeType } from "@bitwarden/common/platform/enums";
+import { TotpService } from "@bitwarden/common/vault/abstractions/totp.service";
+import { UriMatchType } from "@bitwarden/common/vault/enums";
 
 import { flagEnabled } from "../../platform/flags";
 

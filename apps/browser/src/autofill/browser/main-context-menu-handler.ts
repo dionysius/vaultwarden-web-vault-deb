@@ -3,7 +3,7 @@ import { LogService } from "@bitwarden/common/platform/abstractions/log.service"
 import { StateFactory } from "@bitwarden/common/platform/factories/state-factory";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { GlobalState } from "@bitwarden/common/platform/models/domain/global-state";
-import { CipherType } from "@bitwarden/common/vault/enums/cipher-type";
+import { CipherType } from "@bitwarden/common/vault/enums";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 
 import { Account } from "../../models/account";

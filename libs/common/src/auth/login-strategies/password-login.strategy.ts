@@ -1,13 +1,13 @@
 import { ApiService } from "../../abstractions/api.service";
 import { PolicyService } from "../../admin-console/abstractions/policy/policy.service.abstraction";
 import { MasterPasswordPolicyOptions } from "../../admin-console/models/domain/master-password-policy-options";
-import { HashPurpose } from "../../enums";
 import { AppIdService } from "../../platform/abstractions/app-id.service";
 import { CryptoService } from "../../platform/abstractions/crypto.service";
 import { LogService } from "../../platform/abstractions/log.service";
 import { MessagingService } from "../../platform/abstractions/messaging.service";
 import { PlatformUtilsService } from "../../platform/abstractions/platform-utils.service";
 import { StateService } from "../../platform/abstractions/state.service";
+import { HashPurpose } from "../../platform/enums";
 import { MasterKey } from "../../platform/models/domain/symmetric-crypto-key";
 import { PasswordStrengthServiceAbstraction } from "../../tools/password-strength";
 import { AuthService } from "../abstractions/auth.service";

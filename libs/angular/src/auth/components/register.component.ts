@@ -7,7 +7,6 @@ import { AuditService } from "@bitwarden/common/abstractions/audit.service";
 import { AuthService } from "@bitwarden/common/auth/abstractions/auth.service";
 import { PasswordLoginCredentials } from "@bitwarden/common/auth/models/domain/login-credentials";
 import { RegisterResponse } from "@bitwarden/common/auth/models/response/register.response";
-import { DEFAULT_KDF_CONFIG, DEFAULT_KDF_TYPE } from "@bitwarden/common/enums";
 import { KeysRequest } from "@bitwarden/common/models/request/keys.request";
 import { ReferenceEventRequest } from "@bitwarden/common/models/request/reference-event.request";
 import { RegisterRequest } from "@bitwarden/common/models/request/register.request";
@@ -17,6 +16,7 @@ import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.servic
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
+import { DEFAULT_KDF_CONFIG, DEFAULT_KDF_TYPE } from "@bitwarden/common/platform/enums";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { PasswordGenerationServiceAbstraction } from "@bitwarden/common/tools/generator/password";
 import { DialogService } from "@bitwarden/components";
@@ -26,7 +26,7 @@ import {
   FormValidationErrorsService,
 } from "../../platform/abstractions/form-validation-errors.service";
 import { PasswordColorText } from "../../shared/components/password-strength/password-strength.component";
-import { InputsFieldMatch } from "../../validators/inputsFieldMatch.validator";
+import { InputsFieldMatch } from "../validators/inputs-field-match.validator";
 
 import { CaptchaProtectedComponent } from "./captcha-protected.component";
 

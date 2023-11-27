@@ -1,7 +1,7 @@
-import { Organization } from "@bitwarden/common/src/admin-console/models/domain/organization";
-import { ITreeNodeObject } from "@bitwarden/common/src/models/domain/tree-node";
+import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
 import { FolderView } from "@bitwarden/common/src/vault/models/view/folder.view";
-import { CipherType } from "@bitwarden/common/vault/enums/cipher-type";
+import { CipherType } from "@bitwarden/common/vault/enums";
+import { ITreeNodeObject } from "@bitwarden/common/vault/models/domain/tree-node";
 
 import { CollectionAdminView } from "../../../../core/views/collection-admin.view";
 

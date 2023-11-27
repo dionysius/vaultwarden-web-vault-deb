@@ -4,7 +4,6 @@ import { SemVer } from "semver";
 import { ApiService } from "../../abstractions/api.service";
 import { SearchService } from "../../abstractions/search.service";
 import { SettingsService } from "../../abstractions/settings.service";
-import { FieldType, UriMatchType } from "../../enums";
 import { ErrorResponse } from "../../models/response/error.response";
 import { View } from "../../models/view/view";
 import { ConfigServiceAbstraction } from "../../platform/abstractions/config/config.service.abstraction";
@@ -25,6 +24,7 @@ import {
 } from "../../platform/models/domain/symmetric-crypto-key";
 import { CipherService as CipherServiceAbstraction } from "../abstractions/cipher.service";
 import { CipherFileUploadService } from "../abstractions/file-upload/cipher-file-upload.service";
+import { FieldType, UriMatchType } from "../enums";
 import { CipherType } from "../enums/cipher-type";
 import { CipherData } from "../models/data/cipher.data";
 import { Attachment } from "../models/domain/attachment";

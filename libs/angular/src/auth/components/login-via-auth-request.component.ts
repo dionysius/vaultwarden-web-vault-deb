@@ -2,8 +2,8 @@ import { Directive, OnDestroy, OnInit } from "@angular/core";
 import { IsActiveMatchOptions, Router } from "@angular/router";
 import { Subject, takeUntil } from "rxjs";
 
-import { AnonymousHubService } from "@bitwarden/common/abstractions/anonymousHub.service";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
+import { AnonymousHubService } from "@bitwarden/common/auth/abstractions/anonymous-hub.service";
 import { AuthRequestCryptoServiceAbstraction } from "@bitwarden/common/auth/abstractions/auth-request-crypto.service.abstraction";
 import { AuthService } from "@bitwarden/common/auth/abstractions/auth.service";
 import { DeviceTrustCryptoServiceAbstraction } from "@bitwarden/common/auth/abstractions/device-trust-crypto.service.abstraction";

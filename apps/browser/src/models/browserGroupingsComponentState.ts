@@ -1,6 +1,6 @@
 import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { DeepJsonify } from "@bitwarden/common/types/deep-jsonify";
-import { CipherType } from "@bitwarden/common/vault/enums/cipher-type";
+import { CipherType } from "@bitwarden/common/vault/enums";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 import { CollectionView } from "@bitwarden/common/vault/models/view/collection.view";
 import { FolderView } from "@bitwarden/common/vault/models/view/folder.view";

@@ -1,6 +1,7 @@
 import { ipcRenderer } from "electron";
 
-import { DeviceType, ThemeType, KeySuffixOptions } from "@bitwarden/common/enums";
+import { DeviceType } from "@bitwarden/common/enums";
+import { ThemeType, KeySuffixOptions } from "@bitwarden/common/platform/enums";
 import { EncString } from "@bitwarden/common/platform/models/domain/enc-string";
 
 import {

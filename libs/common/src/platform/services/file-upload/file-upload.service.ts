@@ -1,9 +1,9 @@
-import { FileUploadType } from "../../../enums";
 import {
   FileUploadApiMethods,
   FileUploadService as FileUploadServiceAbstraction,
 } from "../../abstractions/file-upload/file-upload.service";
 import { LogService } from "../../abstractions/log.service";
+import { FileUploadType } from "../../enums";
 import { EncArrayBuffer } from "../../models/domain/enc-array-buffer";
 import { EncString } from "../../models/domain/enc-string";
 

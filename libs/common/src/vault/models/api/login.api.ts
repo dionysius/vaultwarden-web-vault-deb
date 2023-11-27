@@ -1,8 +1,8 @@
 import { JsonObject } from "type-fest";
 
-import { Fido2CredentialApi } from "../../vault/api/fido2-credential.api";
-import { BaseResponse } from "../response/base.response";
+import { BaseResponse } from "../../../models/response/base.response";
 
+import { Fido2CredentialApi } from "./fido2-credential.api";
 import { LoginUriApi } from "./login-uri.api";
 
 export class LoginApi extends BaseResponse {

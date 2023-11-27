@@ -6,6 +6,13 @@ import { ProfileOrganizationResponse } from "../../admin-console/models/response
 import { ProfileProviderOrganizationResponse } from "../../admin-console/models/response/profile-provider-organization.response";
 import { ProfileProviderResponse } from "../../admin-console/models/response/profile-provider.response";
 import { KdfConfig } from "../../auth/models/domain/kdf-config";
+import { Utils } from "../../platform/misc/utils";
+import { CryptoFunctionService } from "../abstractions/crypto-function.service";
+import { CryptoService as CryptoServiceAbstraction } from "../abstractions/crypto.service";
+import { EncryptService } from "../abstractions/encrypt.service";
+import { LogService } from "../abstractions/log.service";
+import { PlatformUtilsService } from "../abstractions/platform-utils.service";
+import { StateService } from "../abstractions/state.service";
 import {
   KeySuffixOptions,
   HashPurpose,
@@ -14,14 +21,7 @@ import {
   DEFAULT_ARGON2_MEMORY,
   DEFAULT_ARGON2_PARALLELISM,
   EncryptionType,
-} from "../../enums";
-import { Utils } from "../../platform/misc/utils";
-import { CryptoFunctionService } from "../abstractions/crypto-function.service";
-import { CryptoService as CryptoServiceAbstraction } from "../abstractions/crypto.service";
-import { EncryptService } from "../abstractions/encrypt.service";
-import { LogService } from "../abstractions/log.service";
-import { PlatformUtilsService } from "../abstractions/platform-utils.service";
-import { StateService } from "../abstractions/state.service";
+} from "../enums";
 import { sequentialize } from "../misc/sequentialize";
 import { EFFLongWordList } from "../misc/wordlist";
 import { EncArrayBuffer } from "../models/domain/enc-array-buffer";

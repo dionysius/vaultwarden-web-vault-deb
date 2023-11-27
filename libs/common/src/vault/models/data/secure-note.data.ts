@@ -1,5 +1,5 @@
-import { SecureNoteType } from "../../../enums";
-import { SecureNoteApi } from "../../../models/api/secure-note.api";
+import { SecureNoteType } from "../../enums";
+import { SecureNoteApi } from "../api/secure-note.api";
 
 export class SecureNoteData {
   type: SecureNoteType;

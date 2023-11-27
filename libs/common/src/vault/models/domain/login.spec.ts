@@ -1,13 +1,13 @@
 import { mock } from "jest-mock-extended";
 
 import { mockEnc, mockFromJson } from "../../../../spec";
-import { UriMatchType } from "../../../enums";
 import { EncryptedString, EncString } from "../../../platform/models/domain/enc-string";
-import { Fido2CredentialApi } from "../../api/fido2-credential.api";
+import { UriMatchType } from "../../enums";
 import { LoginData } from "../../models/data/login.data";
 import { Login } from "../../models/domain/login";
 import { LoginUri } from "../../models/domain/login-uri";
 import { LoginUriView } from "../../models/view/login-uri.view";
+import { Fido2CredentialApi } from "../api/fido2-credential.api";
 import { Fido2CredentialData } from "../data/fido2-credential.data";
 import { Fido2CredentialView } from "../view/fido2-credential.view";
 

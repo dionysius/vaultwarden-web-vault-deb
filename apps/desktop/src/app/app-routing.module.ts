@@ -7,7 +7,7 @@ import {
   redirectGuard,
   tdeDecryptionRequiredGuard,
 } from "@bitwarden/angular/auth/guards";
-import { canAccessFeature } from "@bitwarden/angular/guard/feature-flag.guard";
+import { canAccessFeature } from "@bitwarden/angular/platform/guard/feature-flag.guard";
 import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
 
 import { AccessibilityCookieComponent } from "../auth/accessibility-cookie.component";

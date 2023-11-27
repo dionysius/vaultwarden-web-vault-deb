@@ -1,7 +1,7 @@
 import { Region } from "@bitwarden/common/platform/abstractions/environment.service";
 import { GlobalState } from "@bitwarden/common/platform/models/domain/global-state";
 import { VaultTimeoutAction } from "@bitwarden/common/src/enums/vault-timeout-action.enum";
-import { CipherType } from "@bitwarden/common/vault/enums/cipher-type";
+import { CipherType } from "@bitwarden/common/vault/enums";
 
 export type UserSettings = {
   avatarColor: string | null;

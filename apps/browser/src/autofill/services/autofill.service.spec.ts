@@ -1,19 +1,18 @@
 import { mock, mockReset } from "jest-mock-extended";
 
 import { UserVerificationService } from "@bitwarden/common/auth/services/user-verification/user-verification.service";
+import { EventType } from "@bitwarden/common/enums";
+import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
+import { EventCollectionService } from "@bitwarden/common/services/event/event-collection.service";
+import { SettingsService } from "@bitwarden/common/services/settings.service";
 import {
-  EventType,
   FieldType,
   LinkedIdType,
   LoginLinkedId,
   UriMatchType,
-} from "@bitwarden/common/enums";
-import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
-import { EventCollectionService } from "@bitwarden/common/services/event/event-collection.service";
-import { SettingsService } from "@bitwarden/common/services/settings.service";
-import { TotpService } from "@bitwarden/common/services/totp.service";
+  CipherType,
+} from "@bitwarden/common/vault/enums";
 import { CipherRepromptType } from "@bitwarden/common/vault/enums/cipher-reprompt-type";
-import { CipherType } from "@bitwarden/common/vault/enums/cipher-type";
 import { CardView } from "@bitwarden/common/vault/models/view/card.view";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 import { FieldView } from "@bitwarden/common/vault/models/view/field.view";
@@ -21,6 +20,7 @@ import { IdentityView } from "@bitwarden/common/vault/models/view/identity.view"
 import { LoginUriView } from "@bitwarden/common/vault/models/view/login-uri.view";
 import { LoginView } from "@bitwarden/common/vault/models/view/login.view";
 import { CipherService } from "@bitwarden/common/vault/services/cipher.service";
+import { TotpService } from "@bitwarden/common/vault/services/totp.service";
 
 import { BrowserApi } from "../../platform/browser/browser-api";
 import { BrowserStateService } from "../../platform/services/browser-state.service";

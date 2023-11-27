@@ -1,5 +1,5 @@
-import { KdfType } from "../../../../enums";
 import { BaseResponse } from "../../../../models/response/base.response";
+import { KdfType } from "../../../../platform/enums";
 import { OrganizationUserStatusType, OrganizationUserType } from "../../../enums";
 import { PermissionsApi } from "../../../models/api/permissions.api";
 import { SelectionReadOnlyResponse } from "../../../models/response/selection-read-only.response";

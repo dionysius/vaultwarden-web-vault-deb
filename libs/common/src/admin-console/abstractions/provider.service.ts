@@ -1,5 +1,5 @@
-import { Provider } from "../../models/domain/provider";
 import { ProviderData } from "../models/data/provider.data";
+import { Provider } from "../models/domain/provider";
 
 export abstract class ProviderService {
   get: (id: string) => Promise<Provider>;

@@ -1,11 +1,11 @@
 import { Injectable } from "@angular/core";
 import { Subject } from "rxjs";
 
-import { HtmlStorageLocation } from "@bitwarden/common/enums";
 import {
   AbstractStorageService,
   StorageUpdate,
 } from "@bitwarden/common/platform/abstractions/storage.service";
+import { HtmlStorageLocation } from "@bitwarden/common/platform/enums";
 import { StorageOptions } from "@bitwarden/common/platform/models/domain/storage-options";
 
 @Injectable()

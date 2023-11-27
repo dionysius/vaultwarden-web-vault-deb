@@ -2,7 +2,7 @@ import * as path from "path";
 
 import log from "electron-log";
 
-import { LogLevelType } from "@bitwarden/common/enums";
+import { LogLevelType } from "@bitwarden/common/platform/enums/log-level-type.enum";
 import { ConsoleLogService as BaseLogService } from "@bitwarden/common/platform/services/console-log.service";
 
 import { isDev } from "../../utils";

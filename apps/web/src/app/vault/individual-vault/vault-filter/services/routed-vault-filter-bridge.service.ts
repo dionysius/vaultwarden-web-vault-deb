@@ -2,8 +2,8 @@ import { Injectable } from "@angular/core";
 import { Router } from "@angular/router";
 import { combineLatest, map, Observable } from "rxjs";
 
-import { ServiceUtils } from "@bitwarden/common/misc/serviceUtils";
-import { TreeNode } from "@bitwarden/common/models/domain/tree-node";
+import { TreeNode } from "@bitwarden/common/vault/models/domain/tree-node";
+import { ServiceUtils } from "@bitwarden/common/vault/service-utils";
 
 import { RoutedVaultFilterBridge } from "../shared/models/routed-vault-filter-bridge.model";
 import {

@@ -8,10 +8,10 @@ import { OrganizationApiKeyType } from "@bitwarden/common/admin-console/enums";
 import { OrganizationApiKeyRequest } from "@bitwarden/common/admin-console/models/request/organization-api-key.request";
 import { UserVerificationService } from "@bitwarden/common/auth/abstractions/user-verification/user-verification.service.abstraction";
 import { ApiKeyResponse } from "@bitwarden/common/auth/models/response/api-key.response";
+import { Verification } from "@bitwarden/common/auth/types/verification";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
-import { Verification } from "@bitwarden/common/types/verification";
 import { DialogService } from "@bitwarden/components";
 
 export interface BillingSyncApiModalData {

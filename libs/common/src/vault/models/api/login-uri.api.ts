@@ -1,5 +1,5 @@
+import { BaseResponse } from "../../../models/response/base.response";
 import { UriMatchType } from "../../enums";
-import { BaseResponse } from "../response/base.response";
 
 export class LoginUriApi extends BaseResponse {
   uri: string;

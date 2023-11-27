@@ -1,9 +1,9 @@
 import { Jsonify } from "type-fest";
 
-import { UriMatchType } from "../../../enums";
 import Domain from "../../../platform/models/domain/domain-base";
 import { EncString } from "../../../platform/models/domain/enc-string";
 import { SymmetricCryptoKey } from "../../../platform/models/domain/symmetric-crypto-key";
+import { UriMatchType } from "../../enums";
 import { LoginUriData } from "../data/login-uri.data";
 import { LoginUriView } from "../view/login-uri.view";
 

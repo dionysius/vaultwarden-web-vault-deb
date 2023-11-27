@@ -1,4 +1,4 @@
-import { CipherType } from "@bitwarden/common/vault/enums/cipher-type";
+import { CipherType } from "@bitwarden/common/vault/enums";
 
 import { FSecureFskImporter as Importer } from "./fsecure-fsk-importer";
 import { CreditCardTestEntry, LoginTestEntry } from "./fsk-test-data";

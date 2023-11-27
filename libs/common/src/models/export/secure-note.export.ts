@@ -1,4 +1,4 @@
-import { SecureNoteType } from "../../enums";
+import { SecureNoteType } from "../../vault/enums";
 import { SecureNote as SecureNoteDomain } from "../../vault/models/domain/secure-note";
 import { SecureNoteView } from "../../vault/models/view/secure-note.view";
 

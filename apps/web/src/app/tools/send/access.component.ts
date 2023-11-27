@@ -2,7 +2,6 @@ import { Component, OnInit } from "@angular/core";
 import { FormBuilder } from "@angular/forms";
 import { ActivatedRoute } from "@angular/router";
 
-import { SEND_KDF_ITERATIONS } from "@bitwarden/common/enums";
 import { ErrorResponse } from "@bitwarden/common/models/response/error.response";
 import { CryptoFunctionService } from "@bitwarden/common/platform/abstractions/crypto-function.service";
 import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
@@ -15,6 +14,7 @@ import { SendAccess } from "@bitwarden/common/tools/send/models/domain/send-acce
 import { SendAccessRequest } from "@bitwarden/common/tools/send/models/request/send-access.request";
 import { SendAccessResponse } from "@bitwarden/common/tools/send/models/response/send-access.response";
 import { SendAccessView } from "@bitwarden/common/tools/send/models/view/send-access.view";
+import { SEND_KDF_ITERATIONS } from "@bitwarden/common/tools/send/send-kdf";
 import { SendApiService } from "@bitwarden/common/tools/send/services/send-api.service.abstraction";
 import { NoItemsModule } from "@bitwarden/components";
 

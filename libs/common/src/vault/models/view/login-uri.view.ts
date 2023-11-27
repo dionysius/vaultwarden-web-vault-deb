@@ -1,9 +1,9 @@
 import { Jsonify } from "type-fest";
 
-import { UriMatchType } from "../../../enums";
 import { View } from "../../../models/view/view";
 import { SafeUrls } from "../../../platform/misc/safe-urls";
 import { Utils } from "../../../platform/misc/utils";
+import { UriMatchType } from "../../enums";
 import { LoginUri } from "../domain/login-uri";
 
 export class LoginUriView implements View {

@@ -2,7 +2,6 @@ import * as program from "commander";
 import * as inquirer from "inquirer";
 
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
-import { NodeUtils } from "@bitwarden/common/misc/nodeUtils";
 import { ErrorResponse } from "@bitwarden/common/models/response/error.response";
 import { CryptoFunctionService } from "@bitwarden/common/platform/abstractions/crypto-function.service";
 import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
@@ -15,6 +14,7 @@ import { SendAccess } from "@bitwarden/common/tools/send/models/domain/send-acce
 import { SendAccessRequest } from "@bitwarden/common/tools/send/models/request/send-access.request";
 import { SendAccessView } from "@bitwarden/common/tools/send/models/view/send-access.view";
 import { SendApiService } from "@bitwarden/common/tools/send/services/send-api.service.abstraction";
+import { NodeUtils } from "@bitwarden/node/node-utils";
 
 import { DownloadCommand } from "../../../commands/download.command";
 import { Response } from "../../../models/response";

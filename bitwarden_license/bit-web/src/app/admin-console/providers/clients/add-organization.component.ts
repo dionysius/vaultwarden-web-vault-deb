@@ -3,7 +3,7 @@ import { Component, Inject, OnInit } from "@angular/core";
 
 import { ProviderService } from "@bitwarden/common/admin-console/abstractions/provider.service";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
-import { Provider } from "@bitwarden/common/models/domain/provider";
+import { Provider } from "@bitwarden/common/admin-console/models/domain/provider";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { ValidationService } from "@bitwarden/common/platform/abstractions/validation.service";

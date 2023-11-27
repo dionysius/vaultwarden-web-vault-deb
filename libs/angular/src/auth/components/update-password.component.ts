@@ -7,6 +7,7 @@ import { MasterPasswordPolicyOptions } from "@bitwarden/common/admin-console/mod
 import { UserVerificationService } from "@bitwarden/common/auth/abstractions/user-verification/user-verification.service.abstraction";
 import { VerificationType } from "@bitwarden/common/auth/enums/verification-type";
 import { PasswordRequest } from "@bitwarden/common/auth/models/request/password.request";
+import { Verification } from "@bitwarden/common/auth/types/verification";
 import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
@@ -16,7 +17,6 @@ import { StateService } from "@bitwarden/common/platform/abstractions/state.serv
 import { EncString } from "@bitwarden/common/platform/models/domain/enc-string";
 import { MasterKey, UserKey } from "@bitwarden/common/platform/models/domain/symmetric-crypto-key";
 import { PasswordGenerationServiceAbstraction } from "@bitwarden/common/tools/generator/password";
-import { Verification } from "@bitwarden/common/types/verification";
 import { DialogService } from "@bitwarden/components";
 
 import { ChangePasswordComponent as BaseChangePasswordComponent } from "./change-password.component";

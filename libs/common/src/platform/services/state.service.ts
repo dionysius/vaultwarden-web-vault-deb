@@ -14,13 +14,6 @@ import { EnvironmentUrls } from "../../auth/models/domain/environment-urls";
 import { ForceSetPasswordReason } from "../../auth/models/domain/force-set-password-reason";
 import { KdfConfig } from "../../auth/models/domain/kdf-config";
 import { BiometricKey } from "../../auth/types/biometric-key";
-import {
-  HtmlStorageLocation,
-  KdfType,
-  StorageLocation,
-  ThemeType,
-  UriMatchType,
-} from "../../enums";
 import { VaultTimeoutAction } from "../../enums/vault-timeout-action.enum";
 import { EventData } from "../../models/data/event.data";
 import { WindowState } from "../../models/domain/window-state";
@@ -31,6 +24,7 @@ import { UsernameGeneratorOptions } from "../../tools/generator/username";
 import { SendData } from "../../tools/send/models/data/send.data";
 import { SendView } from "../../tools/send/models/view/send.view";
 import { UserId } from "../../types/guid";
+import { UriMatchType } from "../../vault/enums";
 import { CipherData } from "../../vault/models/data/cipher.data";
 import { CollectionData } from "../../vault/models/data/collection.data";
 import { FolderData } from "../../vault/models/data/folder.data";
@@ -44,6 +38,7 @@ import {
   AbstractMemoryStorageService,
   AbstractStorageService,
 } from "../abstractions/storage.service";
+import { HtmlStorageLocation, KdfType, StorageLocation, ThemeType } from "../enums";
 import { StateFactory } from "../factories/state-factory";
 import { Utils } from "../misc/utils";
 import { ServerConfigData } from "../models/data/server-config.data";

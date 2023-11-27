@@ -1,7 +1,6 @@
 import { matches, mock } from "jest-mock-extended";
 
 import { DeviceType } from "../../enums";
-import { EncryptionType } from "../../enums/encryption-type.enum";
 import { AppIdService } from "../../platform/abstractions/app-id.service";
 import { CryptoFunctionService } from "../../platform/abstractions/crypto-function.service";
 import { CryptoService } from "../../platform/abstractions/crypto.service";
@@ -9,6 +8,7 @@ import { EncryptService } from "../../platform/abstractions/encrypt.service";
 import { I18nService } from "../../platform/abstractions/i18n.service";
 import { PlatformUtilsService } from "../../platform/abstractions/platform-utils.service";
 import { StateService } from "../../platform/abstractions/state.service";
+import { EncryptionType } from "../../platform/enums/encryption-type.enum";
 import { EncString } from "../../platform/models/domain/enc-string";
 import {
   SymmetricCryptoKey,

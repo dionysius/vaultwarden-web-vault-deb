@@ -1,10 +1,10 @@
 import * as lunr from "lunr";
 
 import { SearchService as SearchServiceAbstraction } from "../abstractions/search.service";
-import { FieldType, UriMatchType } from "../enums";
 import { I18nService } from "../platform/abstractions/i18n.service";
 import { LogService } from "../platform/abstractions/log.service";
 import { SendView } from "../tools/send/models/view/send.view";
+import { FieldType, UriMatchType } from "../vault/enums";
 import { CipherType } from "../vault/enums/cipher-type";
 import { CipherView } from "../vault/models/view/cipher.view";
 

@@ -1,4 +1,4 @@
-import { FileUploadType } from "../../../enums";
+import { FileUploadType } from "../../enums";
 import { EncArrayBuffer } from "../../models/domain/enc-array-buffer";
 import { EncString } from "../../models/domain/enc-string";
 

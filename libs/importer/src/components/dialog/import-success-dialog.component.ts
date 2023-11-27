@@ -3,7 +3,7 @@ import { CommonModule } from "@angular/common";
 import { Component, Inject, OnInit } from "@angular/core";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
-import { CipherType } from "@bitwarden/common/vault/enums/cipher-type";
+import { CipherType } from "@bitwarden/common/vault/enums";
 import { ButtonModule, DialogModule, TableDataSource, TableModule } from "@bitwarden/components";
 
 import { ImportResult } from "../../models";

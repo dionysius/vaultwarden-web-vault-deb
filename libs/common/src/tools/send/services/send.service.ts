@@ -1,6 +1,5 @@
 import { BehaviorSubject, concatMap } from "rxjs";
 
-import { SEND_KDF_ITERATIONS } from "../../../enums";
 import { CryptoFunctionService } from "../../../platform/abstractions/crypto-function.service";
 import { CryptoService } from "../../../platform/abstractions/crypto.service";
 import { I18nService } from "../../../platform/abstractions/i18n.service";
@@ -15,6 +14,7 @@ import { Send } from "../models/domain/send";
 import { SendFile } from "../models/domain/send-file";
 import { SendText } from "../models/domain/send-text";
 import { SendView } from "../models/view/send.view";
+import { SEND_KDF_ITERATIONS } from "../send-kdf";
 
 import { InternalSendService as InternalSendServiceAbstraction } from "./send.service.abstraction";
 

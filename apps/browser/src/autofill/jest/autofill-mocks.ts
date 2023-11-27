@@ -1,9 +1,8 @@
 import { mock } from "jest-mock-extended";
 
 import { AuthenticationStatus } from "@bitwarden/common/auth/enums/authentication-status";
-import { UriMatchType } from "@bitwarden/common/enums";
+import { UriMatchType, CipherType } from "@bitwarden/common/vault/enums";
 import { CipherRepromptType } from "@bitwarden/common/vault/enums/cipher-reprompt-type";
-import { CipherType } from "@bitwarden/common/vault/enums/cipher-type";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 
 import { OverlayCipherData } from "../background/abstractions/overlay.background";
