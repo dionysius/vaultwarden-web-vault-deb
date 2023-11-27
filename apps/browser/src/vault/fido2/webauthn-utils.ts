@@ -67,7 +67,7 @@ export class WebauthnUtils {
         },
 
         getPublicKey(): ArrayBuffer {
-          return null;
+          return Fido2Utils.stringToBuffer(result.publicKey);
         },
 
         getPublicKeyAlgorithm(): number {

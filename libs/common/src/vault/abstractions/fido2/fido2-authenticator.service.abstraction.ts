@@ -109,6 +109,7 @@ export interface Fido2AuthenticatorMakeCredentialResult {
   credentialId: BufferSource;
   attestationObject: BufferSource;
   authData: BufferSource;
+  publicKey: BufferSource;
   publicKeyAlgorithm: number;
 }
 

@@ -285,6 +285,7 @@ describe("FidoAuthenticatorService", () => {
         credentialId: guidToRawFormat(Utils.newGuid()),
         attestationObject: randomBytes(128),
         authData: randomBytes(64),
+        publicKey: randomBytes(64),
         publicKeyAlgorithm: -7,
       };
     }

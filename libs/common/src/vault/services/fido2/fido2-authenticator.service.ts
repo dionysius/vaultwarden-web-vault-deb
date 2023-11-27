@@ -109,6 +109,7 @@ export class Fido2AuthenticatorService implements Fido2AuthenticatorServiceAbstr
       let keyPair: CryptoKeyPair;
       let userVerified = false;
       let credentialId: string;
+      let pubKeyDer: ArrayBuffer;
       const response = await userInterfaceSession.confirmNewCredential({
         credentialName: params.rpEntity.name,
         userName: params.userEntity.displayName,
@@ -126,7 +127,7 @@ export class Fido2AuthenticatorService implements Fido2AuthenticatorServiceAbstr
 
       try {
         keyPair = await createKeyPair();
-
+        pubKeyDer = await crypto.subtle.exportKey("spki", keyPair.publicKey);
         const encrypted = await this.cipherService.get(cipherId);
         cipher = await encrypted.decrypt(
           await this.cipherService.getKeyForCipherKeyDecryption(encrypted)
@@ -174,6 +175,7 @@ export class Fido2AuthenticatorService implements Fido2AuthenticatorServiceAbstr
         credentialId: guidToRawFormat(credentialId),
         attestationObject,
         authData,
+        publicKey: pubKeyDer,
         publicKeyAlgorithm: -7,
       };
     } finally {
