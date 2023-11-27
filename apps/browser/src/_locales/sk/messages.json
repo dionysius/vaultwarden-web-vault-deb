@@ -619,6 +619,9 @@
   "addLoginNotificationDesc": {
     "message": "Opýtať sa na pridanie prihlasovacích údajov ak ich ešte nemáte v trezore."
   },
+  "addLoginNotificationDescAlt": {
+    "message": "Požiada o pridanie položky, ak sa v trezore nenachádza. Platí pre všetky prihlásené účty."
+  },
   "showCardsCurrentTab": {
     "message": "Zobraziť karty na stránke \"Aktuálna karta\""
   },
@@ -651,6 +654,15 @@
   "changedPasswordNotificationDesc": {
     "message": "Požiadať o aktualizáciu prihlasovacieho hesla, ak sa zistí zmena na stránke."
   },
+  "changedPasswordNotificationDescAlt": {
+    "message": "Požiada o aktualizáciu hesla na prihlásenie, keď sa zistí zmena na webe. Platí pre všetky prihlásené účty."
+  },
+  "enableUsePasskeys": {
+    "message": "Požiadať o uloženie a používanie prístupových kľúčov"
+  },
+  "usePasskeysDesc": {
+    "message": "Požiadať o uloženie nových prístupových kľúčov alebo prihlásenie s prístupovými kľúčmi uloženými v trezore. Platí pre všetky prihlásené účty."
+  },
   "notificationChangeDesc": {
     "message": "Chcete aktualizovať toto heslo v Bitwarden?"
   },
@@ -669,6 +681,9 @@
   "contextMenuItemDesc": {
     "message": "Sekundárnym kliknutím získate prístup k vygenerovaniu hesiel a zodpovedajúcim prihláseniam pre webovú stránku. "
   },
+  "contextMenuItemDescAlt": {
+    "message": "Sekundárnym kliknutím získate prístup k vygenerovaniu hesiel a zodpovedajúcim prihláseniam pre webovú stránku. Platí pre všetky prihlásené účty."
+  },
   "defaultUriMatchDetection": {
     "message": "Predvolené mapovanie",
     "description": "Default URI match detection for auto-fill."
@@ -681,6 +696,9 @@
   },
   "themeDesc": {
     "message": "Zmeniť motív aplikácie."
+  },
+  "themeDescAlt": {
+    "message": "Zmení farebný motív aplikácie. Platí pre všetky prihlásené účty."
   },
   "dark": {
     "message": "Tmavý",
@@ -1002,6 +1020,25 @@
   "environmentSaved": {
     "message": "URL prostredia boli uložené."
   },
+  "showAutoFillMenuOnFormFields": {
+    "message": "Zobraziť ponuku automatického vypĺňania na poliach formulára",
+    "description": "Represents the message for allowing the user to enable the auto-fill overlay"
+  },
+  "showAutoFillMenuOnFormFieldsDescAlt": {
+    "message": "Platí pre všetky prihlásené účty."
+  },
+  "autofillOverlayVisibilityOff": {
+    "message": "Vypnuté",
+    "description": "Overlay setting select option for disabling autofill overlay"
+  },
+  "autofillOverlayVisibilityOnFieldFocus": {
+    "message": "Keď je vybrané pole (zamerané)",
+    "description": "Overlay appearance select option for showing the field on focus of the input element"
+  },
+  "autofillOverlayVisibilityOnButtonClick": {
+    "message": "Keď je vybratá ikona automatického vypĺňania",
+    "description": "Overlay appearance select option for showing the field on click of the overlay icon"
+  },
   "enableAutoFillOnPageLoad": {
     "message": "Povoliť automatické vypĺňanie pri načítaní stránky"
   },
@@ -1252,9 +1289,6 @@
   },
   "typeIdentity": {
     "message": "Identita"
-  },
-  "typePasskey": {
-    "message": "Prístupový kľúč"
   },
   "passwordHistory": {
     "message": "História hesla"
@@ -1664,6 +1698,9 @@
   },
   "excludedDomainsDesc": {
     "message": "Bitwarden nebude požadovať ukladanie prihlasovacích údajov pre tieto domény. Aby sa zmeny prejavili, musíte stránku obnoviť."
+  },
+  "excludedDomainsDescAlt": {
+    "message": "Bitwarden nebude požadovať ukladanie prihlasovacích údajov pre tieto domény pre všetky prihlásené účty. Aby sa zmeny prejavili, musíte stránku obnoviť."
   },
   "excludedDomainsInvalidDomain": {
     "message": "$DOMAIN$ nie je platná doména",
@@ -2456,6 +2493,80 @@
   "turnOffMasterPasswordPromptToEditField": {
     "message": "Vypnite výzvu na opätovné zadanie hlavného hesla na úpravu tohto poľa",
     "description": "Message appearing below the autofill on load message when master password reprompt is set for a vault item."
+  },
+  "bitwardenOverlayButton": {
+    "message": "Tlačidlo ponuky automatického vypĺňania Bitwardenu",
+    "description": "Page title for the iframe containing the overlay button"
+  },
+  "toggleBitwardenVaultOverlay": {
+    "message": "Prepnúť ponuku automatického vypĺňania Bitwardenu",
+    "description": "Screen reader and tool tip label for the overlay button"
+  },
+  "bitwardenVault": {
+    "message": "Ponuka automatického vypĺňania Bitwardenu",
+    "description": "Page title in overlay"
+  },
+  "unlockYourAccountToViewMatchingLogins": {
+    "message": "Odomknite svoj účet na zobrazenie zodpovedajúcich prihlasovacích údajov",
+    "description": "Text to display in overlay when the account is locked."
+  },
+  "unlockAccount": {
+    "message": "Odomknúť účet",
+    "description": "Button text to display in overlay when the account is locked."
+  },
+  "fillCredentialsFor": {
+    "message": "Vyplňte prihlasovacie údaje pre",
+    "description": "Screen reader text for when overlay item is in focused"
+  },
+  "partialUsername": {
+    "message": "Čiastočné používateľské meno",
+    "description": "Screen reader text for when a login item is focused where a partial username is displayed. SR will announce this phrase before reading the text of the partial username"
+  },
+  "noItemsToShow": {
+    "message": "Žiadne položky na zobrazenie",
+    "description": "Text to show in overlay if there are no matching items"
+  },
+  "newItem": {
+    "message": "Nová položka",
+    "description": "Button text to display in overlay when there are no matching items"
+  },
+  "addNewVaultItem": {
+    "message": "Pridať novú položku trezoru",
+    "description": "Screen reader text (aria-label) for new item button in overlay"
+  },
+  "bitwardenOverlayMenuAvailable": {
+    "message": "K dispozícii je ponuka automatického vyplňovania Bitwardenu. Stlačte tlačidlo so šípkou nadol a vyberte.",
+    "description": "Screen reader text for announcing when the overlay opens on the page"
+  },
+  "overrideBrowserAutofillTitle": {
+    "message": "Prepísať automatické vypĺňanie prehliadača?",
+    "description": "Dialog title facilitating the ability to override a chrome browser's default autofill behavior"
+  },
+  "overrideBrowserAutofillDescription": {
+    "message": "Ak necháte toto nastavenie vypnuté, môže to spôsobiť konflikty medzi ponukou automatického vypĺňania Bitwardenu a ponukou vášho prehliadača.",
+    "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
+  },
+  "overrideBrowserAutofillPrivacyRequiredDescription": {
+    "message": "Ak necháte toto nastavenie vypnuté, môže to spôsobiť konflikty medzi ponukou automatického vypĺňania Bitwardenu a ponukou vášho prehliadača. Zapnutím nastavenia sa rozšírenie Bitwarden reštartuje.",
+    "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
+  },
+  "turnOn": {
+    "message": "Zapnúť"
+  },
+  "ignore": {
+    "message": "Ignorovať"
+  },
+  "overrideBrowserAutoFillSettings": {
+    "message": "Prepísať automatické vypĺňanie prehliadača",
+    "description": "Label for the setting that allows overriding the default browser autofill settings"
+  },
+  "extensionPrivacyPermissionNotGrantedTitle": {
+    "message": "Nedá sa prepísať automatické vypĺňanie prehliadača",
+    "description": "Title for the dialog that appears when the user has not granted the extension permission to set privacy settings"
+  },
+  "extensionPrivacyPermissionNotGrantedDescription": {
+    "message": "Bitwarden musí mať povolenie rozšírenia na nastavenie súkromia, aby mohol zrušiť nastavenia automatického vypĺňania prehliadača.",
+    "description": "Description for the dialog that appears when the user has not granted the extension permission to set privacy settings"
   },
   "importData": {
     "message": "Import údajov",

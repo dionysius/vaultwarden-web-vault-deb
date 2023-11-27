@@ -619,6 +619,9 @@
   "addLoginNotificationDesc": {
     "message": "A \"Bejelentkezés értesítés hozzáadása\" automatikusan felajánlja a bejelentkezés széfbe mentését az első bejelentkezéskor."
   },
+  "addLoginNotificationDescAlt": {
+    "message": "Egy elem hozzáadásának kérése, ha az nem található a széfben. Minden bejelentkezett fiókra vonatkozik."
+  },
   "showCardsCurrentTab": {
     "message": "Kártyák megjelenítése a Fül oldalon"
   },
@@ -651,6 +654,15 @@
   "changedPasswordNotificationDesc": {
     "message": "A bejelentkezési jelszó frissítésének kérése a webhelyen történő változás érzékelésekor."
   },
+  "changedPasswordNotificationDescAlt": {
+    "message": "A bejelentkezési jelszó frissítésének kérése, ha változást lett érzékelve egy webhelyen. Minden bejelentkezett fiókra vonatkozik."
+  },
+  "enableUsePasskeys": {
+    "message": "Kérés a jelszó mentésére és használatára"
+  },
+  "usePasskeysDesc": {
+    "message": "Kérés az új jelszavak mentésére vagy bejelentkezés a széfben tárolt jelszavakkal. Minden bejelentkezett fiókra vonatkozik."
+  },
   "notificationChangeDesc": {
     "message": "Frissítésre kerüljön a jelszó a Bitwardenben?"
   },
@@ -669,6 +681,9 @@
   "contextMenuItemDesc": {
     "message": "Másodlagos kattintással férhetünk hozzá a webhely jelszó-generálásához és a egyező bejelentkezésekhez."
   },
+  "contextMenuItemDescAlt": {
+    "message": "Másodlagos kattintással eléérhető a jelszógenerálás és a megfelelő bejelentkezési adatok a webhelyhez. Minden bejelentkezett fiókra vonatkozik."
+  },
   "defaultUriMatchDetection": {
     "message": "Alapértelmezett URI egyezés érzékelés",
     "description": "Default URI match detection for auto-fill."
@@ -681,6 +696,9 @@
   },
   "themeDesc": {
     "message": "Az alkalmazás színtémájának megváltoztatása."
+  },
+  "themeDescAlt": {
+    "message": "Az alkalmazás színtéma módosítása. Minden bejelentkezett fiókra vonatkozik."
   },
   "dark": {
     "message": "Sötét",
@@ -1002,6 +1020,25 @@
   "environmentSaved": {
     "message": "A környezeti webcímek mentésre kerültek."
   },
+  "showAutoFillMenuOnFormFields": {
+    "message": "Show auto-fill menu on form fields",
+    "description": "Represents the message for allowing the user to enable the auto-fill overlay"
+  },
+  "showAutoFillMenuOnFormFieldsDescAlt": {
+    "message": "Minden bejelentkezett fiókra vonatkozik."
+  },
+  "autofillOverlayVisibilityOff": {
+    "message": "Off",
+    "description": "Overlay setting select option for disabling autofill overlay"
+  },
+  "autofillOverlayVisibilityOnFieldFocus": {
+    "message": "When field is selected (on focus)",
+    "description": "Overlay appearance select option for showing the field on focus of the input element"
+  },
+  "autofillOverlayVisibilityOnButtonClick": {
+    "message": "When auto-fill icon is selected",
+    "description": "Overlay appearance select option for showing the field on click of the overlay icon"
+  },
   "enableAutoFillOnPageLoad": {
     "message": "Automatikus kitöltés oldalbetöltésnél"
   },
@@ -1252,9 +1289,6 @@
   },
   "typeIdentity": {
     "message": "Személyazonosság"
-  },
-  "typePasskey": {
-    "message": "Hozzáférési kulcs"
   },
   "passwordHistory": {
     "message": "Jelszó előzmények"
@@ -1664,6 +1698,9 @@
   },
   "excludedDomainsDesc": {
     "message": "A Bitwarden nem fogja kérni a domainek bejelentkezési adatainak mentését. A változások életbe lépéséhez frissíteni kell az oldalt."
+  },
+  "excludedDomainsDescAlt": {
+    "message": "A Bitwarden nem kéri a bejelentkezési adatok mentését ezeknél a tartományoknál az összes bejelentkezési fiókra vonatkozva. A változtatások életbe lépéséhez frissíteni kell az oldalt."
   },
   "excludedDomainsInvalidDomain": {
     "message": "$DOMAIN$ nem érvényes domain.",
@@ -2456,6 +2493,80 @@
   "turnOffMasterPasswordPromptToEditField": {
     "message": "Kapcsoljuk ki a mesterjelszó újbóli bekérését a mező szerkesztéséhez.",
     "description": "Message appearing below the autofill on load message when master password reprompt is set for a vault item."
+  },
+  "bitwardenOverlayButton": {
+    "message": "Bitwarden auto-fill menu button",
+    "description": "Page title for the iframe containing the overlay button"
+  },
+  "toggleBitwardenVaultOverlay": {
+    "message": "Toggle Bitwarden auto-fill menu",
+    "description": "Screen reader and tool tip label for the overlay button"
+  },
+  "bitwardenVault": {
+    "message": "Bitwarden auto-fill menu",
+    "description": "Page title in overlay"
+  },
+  "unlockYourAccountToViewMatchingLogins": {
+    "message": "Unlock your account to view matching logins",
+    "description": "Text to display in overlay when the account is locked."
+  },
+  "unlockAccount": {
+    "message": "Unlock account",
+    "description": "Button text to display in overlay when the account is locked."
+  },
+  "fillCredentialsFor": {
+    "message": "Fill credentials for",
+    "description": "Screen reader text for when overlay item is in focused"
+  },
+  "partialUsername": {
+    "message": "Partial username",
+    "description": "Screen reader text for when a login item is focused where a partial username is displayed. SR will announce this phrase before reading the text of the partial username"
+  },
+  "noItemsToShow": {
+    "message": "No items to show",
+    "description": "Text to show in overlay if there are no matching items"
+  },
+  "newItem": {
+    "message": "New item",
+    "description": "Button text to display in overlay when there are no matching items"
+  },
+  "addNewVaultItem": {
+    "message": "Add new vault item",
+    "description": "Screen reader text (aria-label) for new item button in overlay"
+  },
+  "bitwardenOverlayMenuAvailable": {
+    "message": "Bitwarden auto-fill menu available. Press the down arrow key to select.",
+    "description": "Screen reader text for announcing when the overlay opens on the page"
+  },
+  "overrideBrowserAutofillTitle": {
+    "message": "Override browser auto-fill?",
+    "description": "Dialog title facilitating the ability to override a chrome browser's default autofill behavior"
+  },
+  "overrideBrowserAutofillDescription": {
+    "message": "Leaving this setting off may cause conflicts between the Bitwarden auto-fill menu and your browser’s.",
+    "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
+  },
+  "overrideBrowserAutofillPrivacyRequiredDescription": {
+    "message": "Leaving this setting off may cause conflicts between the Bitwarden auto-fill menu and your browser’s. Turning this on will restart the Bitwarden extension.",
+    "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
+  },
+  "turnOn": {
+    "message": "Turn on"
+  },
+  "ignore": {
+    "message": "Ignore"
+  },
+  "overrideBrowserAutoFillSettings": {
+    "message": "Override browser auto-fill settings",
+    "description": "Label for the setting that allows overriding the default browser autofill settings"
+  },
+  "extensionPrivacyPermissionNotGrantedTitle": {
+    "message": "Unable to override browser auto-fill",
+    "description": "Title for the dialog that appears when the user has not granted the extension permission to set privacy settings"
+  },
+  "extensionPrivacyPermissionNotGrantedDescription": {
+    "message": "Bitwarden must have access to the extension's privacy permission to override browser auto-fill settings.",
+    "description": "Description for the dialog that appears when the user has not granted the extension permission to set privacy settings"
   },
   "importData": {
     "message": "Adatok importálása",

@@ -619,6 +619,9 @@
   "addLoginNotificationDesc": {
     "message": "在密码库中找不到匹配项目时询问添加一个。"
   },
+  "addLoginNotificationDescAlt": {
+    "message": "Ask to add an item if one isn't found in your vault. Applies to all logged in accounts."
+  },
   "showCardsCurrentTab": {
     "message": "在标签页上显示支付卡"
   },
@@ -651,6 +654,15 @@
   "changedPasswordNotificationDesc": {
     "message": "在网站上检测到更改时询问更新登录密码。"
   },
+  "changedPasswordNotificationDescAlt": {
+    "message": "Ask to update a login's password when a change is detected on a website. Applies to all logged in accounts."
+  },
+  "enableUsePasskeys": {
+    "message": "Ask to save and use passkeys"
+  },
+  "usePasskeysDesc": {
+    "message": "Ask to save new passkeys or log in with passkeys stored in your vault. Applies to all logged in accounts."
+  },
   "notificationChangeDesc": {
     "message": "是否要在 Bitwarden 中更新此密码？"
   },
@@ -669,6 +681,9 @@
   "contextMenuItemDesc": {
     "message": "使用辅助点击来访问密码生成和匹配的网站登录项目。 "
   },
+  "contextMenuItemDescAlt": {
+    "message": "Use a secondary click to access password generation and matching logins for the website. Applies to all logged in accounts."
+  },
   "defaultUriMatchDetection": {
     "message": "默认 URI 匹配检测",
     "description": "Default URI match detection for auto-fill."
@@ -681,6 +696,9 @@
   },
   "themeDesc": {
     "message": "更改本应用程序的颜色主题。"
+  },
+  "themeDescAlt": {
+    "message": "更改应用程序的颜色主题。适用于所有已登录的账户。"
   },
   "dark": {
     "message": "深色",
@@ -1002,6 +1020,25 @@
   "environmentSaved": {
     "message": "环境 URL 已保存"
   },
+  "showAutoFillMenuOnFormFields": {
+    "message": "在表单字段中显示自动填充菜单",
+    "description": "Represents the message for allowing the user to enable the auto-fill overlay"
+  },
+  "showAutoFillMenuOnFormFieldsDescAlt": {
+    "message": "适用于所有已登录的账户。"
+  },
+  "autofillOverlayVisibilityOff": {
+    "message": "关闭",
+    "description": "Overlay setting select option for disabling autofill overlay"
+  },
+  "autofillOverlayVisibilityOnFieldFocus": {
+    "message": "当选中字段时 (焦点)",
+    "description": "Overlay appearance select option for showing the field on focus of the input element"
+  },
+  "autofillOverlayVisibilityOnButtonClick": {
+    "message": "选中自动填充图标时",
+    "description": "Overlay appearance select option for showing the field on click of the overlay icon"
+  },
   "enableAutoFillOnPageLoad": {
     "message": "页面加载时自动填充"
   },
@@ -1252,9 +1289,6 @@
   },
   "typeIdentity": {
     "message": "身份"
-  },
-  "typePasskey": {
-    "message": "通行密钥"
   },
   "passwordHistory": {
     "message": "密码历史记录"
@@ -1664,6 +1698,9 @@
   },
   "excludedDomainsDesc": {
     "message": "Bitwarden 将不会询问是否为这些域名保存登录信息。您必须刷新页面才能使更改生效。"
+  },
+  "excludedDomainsDescAlt": {
+    "message": "Bitwarden will not ask to save login details for these domains for all logged in accounts. You must refresh the page for changes to take effect."
   },
   "excludedDomainsInvalidDomain": {
     "message": "$DOMAIN$ 不是一个有效的域名",
@@ -2456,6 +2493,80 @@
   "turnOffMasterPasswordPromptToEditField": {
     "message": "关闭主密码重新提示以编辑此字段",
     "description": "Message appearing below the autofill on load message when master password reprompt is set for a vault item."
+  },
+  "bitwardenOverlayButton": {
+    "message": "Bitwarden 自动填充菜单按钮",
+    "description": "Page title for the iframe containing the overlay button"
+  },
+  "toggleBitwardenVaultOverlay": {
+    "message": "切换 Bitwarden 自动填充菜单",
+    "description": "Screen reader and tool tip label for the overlay button"
+  },
+  "bitwardenVault": {
+    "message": "Bitwarden 自动填充菜单",
+    "description": "Page title in overlay"
+  },
+  "unlockYourAccountToViewMatchingLogins": {
+    "message": "解锁您的账户以查看匹配的登录",
+    "description": "Text to display in overlay when the account is locked."
+  },
+  "unlockAccount": {
+    "message": "解锁账户",
+    "description": "Button text to display in overlay when the account is locked."
+  },
+  "fillCredentialsFor": {
+    "message": "填写凭据",
+    "description": "Screen reader text for when overlay item is in focused"
+  },
+  "partialUsername": {
+    "message": "部分用户名",
+    "description": "Screen reader text for when a login item is focused where a partial username is displayed. SR will announce this phrase before reading the text of the partial username"
+  },
+  "noItemsToShow": {
+    "message": "没有可显示的项目",
+    "description": "Text to show in overlay if there are no matching items"
+  },
+  "newItem": {
+    "message": "新增项目",
+    "description": "Button text to display in overlay when there are no matching items"
+  },
+  "addNewVaultItem": {
+    "message": "添加新的密码库项目",
+    "description": "Screen reader text (aria-label) for new item button in overlay"
+  },
+  "bitwardenOverlayMenuAvailable": {
+    "message": "Bitwarden 自动填充菜单可用。按向下箭头键进行选择。",
+    "description": "Screen reader text for announcing when the overlay opens on the page"
+  },
+  "overrideBrowserAutofillTitle": {
+    "message": "覆盖浏览器自动填充？",
+    "description": "Dialog title facilitating the ability to override a chrome browser's default autofill behavior"
+  },
+  "overrideBrowserAutofillDescription": {
+    "message": "离开此设置可能会在 Bitwarden 自动填充菜单和您的浏览器之间造成冲突。",
+    "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
+  },
+  "overrideBrowserAutofillPrivacyRequiredDescription": {
+    "message": "离开此设置可能会导致 Bitwarden 自动填充菜单和您的浏览器之间的冲突。打开此选项将重启Bitwarden扩展。",
+    "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
+  },
+  "turnOn": {
+    "message": "开启"
+  },
+  "ignore": {
+    "message": "忽略"
+  },
+  "overrideBrowserAutoFillSettings": {
+    "message": "覆盖浏览器的自动填充设置？",
+    "description": "Label for the setting that allows overriding the default browser autofill settings"
+  },
+  "extensionPrivacyPermissionNotGrantedTitle": {
+    "message": "无法覆盖浏览器自动填充",
+    "description": "Title for the dialog that appears when the user has not granted the extension permission to set privacy settings"
+  },
+  "extensionPrivacyPermissionNotGrantedDescription": {
+    "message": "Bitwarden 必须拥有访问扩展隐私的权限，才能覆盖浏览器的自动填充设置。",
+    "description": "Description for the dialog that appears when the user has not granted the extension permission to set privacy settings"
   },
   "importData": {
     "message": "导入数据",

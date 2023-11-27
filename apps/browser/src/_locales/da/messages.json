@@ -619,6 +619,9 @@
   "addLoginNotificationDesc": {
     "message": "Spørg om at tilføje et element, hvis et ikke findes i din boks."
   },
+  "addLoginNotificationDescAlt": {
+    "message": "Anmod om at tilføje et emne, hvis intet ikke findes i boksen. Gælder alle indloggede konti."
+  },
   "showCardsCurrentTab": {
     "message": "Vis kort på fanebladet"
   },
@@ -651,6 +654,15 @@
   "changedPasswordNotificationDesc": {
     "message": "Bed om at opdatere et logins adgangskode, når der registreres en ændring på en hjemmeside."
   },
+  "changedPasswordNotificationDescAlt": {
+    "message": "Anmod om at opdatere en login-adgangskode ved registreret ændring på et websted. Gælder alle indloggede konti."
+  },
+  "enableUsePasskeys": {
+    "message": "Spørg om at gemme og bruge adgangsnøgler"
+  },
+  "usePasskeysDesc": {
+    "message": "Spørg om at gemme nye adgangsnøgler eller logge ind med adgangsnøgler gemt i Boksen. Gælder for alle indloggede konti."
+  },
   "notificationChangeDesc": {
     "message": "Vil du opdatere denne adgangskode i Bitwarden?"
   },
@@ -669,6 +681,9 @@
   "contextMenuItemDesc": {
     "message": "Brug et sekundært klik for at få adgang til adgangskodegenerering og matchende logins til hjemmesiden."
   },
+  "contextMenuItemDescAlt": {
+    "message": "Brug et sekundært klik for at få adgang til adgangskodegenerering og matchende logins til webstedet. Gælder alle indloggede konti."
+  },
   "defaultUriMatchDetection": {
     "message": "Standard URI matchmetode",
     "description": "Default URI match detection for auto-fill."
@@ -681,6 +696,9 @@
   },
   "themeDesc": {
     "message": "Skift applikationens farvetema."
+  },
+  "themeDescAlt": {
+    "message": "Skift applikationens farvetema. Gælder for alle indloggede konti."
   },
   "dark": {
     "message": "Mørk",
@@ -1002,6 +1020,25 @@
   "environmentSaved": {
     "message": "Miljøets URLs er blevet gemt."
   },
+  "showAutoFillMenuOnFormFields": {
+    "message": "Vis autoudfyld-menu i formularfelter",
+    "description": "Represents the message for allowing the user to enable the auto-fill overlay"
+  },
+  "showAutoFillMenuOnFormFieldsDescAlt": {
+    "message": "Gælder for alle indloggede konti."
+  },
+  "autofillOverlayVisibilityOff": {
+    "message": "Fra",
+    "description": "Overlay setting select option for disabling autofill overlay"
+  },
+  "autofillOverlayVisibilityOnFieldFocus": {
+    "message": "Når felt er valgt (i fokus)",
+    "description": "Overlay appearance select option for showing the field on focus of the input element"
+  },
+  "autofillOverlayVisibilityOnButtonClick": {
+    "message": "Når autoudfyld-ikon vælges",
+    "description": "Overlay appearance select option for showing the field on click of the overlay icon"
+  },
   "enableAutoFillOnPageLoad": {
     "message": "Auto-udfyld ved sideindlæsning"
   },
@@ -1252,9 +1289,6 @@
   },
   "typeIdentity": {
     "message": "Identitet"
-  },
-  "typePasskey": {
-    "message": "Adgangsnøgle"
   },
   "passwordHistory": {
     "message": "Adgangskodehistorik"
@@ -1664,6 +1698,9 @@
   },
   "excludedDomainsDesc": {
     "message": "Bitwarden vil ikke bede om at gemme login-detaljer for disse domæner. Du skal opdatere siden for at ændringerne kan træde i kraft."
+  },
+  "excludedDomainsDescAlt": {
+    "message": "Bitwarden vil ikke anmode om at gemme login-detaljer for disse domæner for alle indloggede konti. Siden skal opfriskes for at effektuere ændringerne."
   },
   "excludedDomainsInvalidDomain": {
     "message": "$DOMAIN$ er ikke et gyldigt domæne",
@@ -2456,6 +2493,80 @@
   "turnOffMasterPasswordPromptToEditField": {
     "message": "Slå anmodning om hovedadgangskode igen fra for at redigere dette felt",
     "description": "Message appearing below the autofill on load message when master password reprompt is set for a vault item."
+  },
+  "bitwardenOverlayButton": {
+    "message": "Bitwarden autoudfyld-menuknap",
+    "description": "Page title for the iframe containing the overlay button"
+  },
+  "toggleBitwardenVaultOverlay": {
+    "message": "Slå Bitwarden autoudfyld--menu til/fra",
+    "description": "Screen reader and tool tip label for the overlay button"
+  },
+  "bitwardenVault": {
+    "message": "Bitwarden autoudfyld-menu",
+    "description": "Page title in overlay"
+  },
+  "unlockYourAccountToViewMatchingLogins": {
+    "message": "Oplås kontoen for at se matchende logins",
+    "description": "Text to display in overlay when the account is locked."
+  },
+  "unlockAccount": {
+    "message": "Oplås konto",
+    "description": "Button text to display in overlay when the account is locked."
+  },
+  "fillCredentialsFor": {
+    "message": "Angiv legitimationsoplysninger for",
+    "description": "Screen reader text for when overlay item is in focused"
+  },
+  "partialUsername": {
+    "message": "Delvis brugernavn",
+    "description": "Screen reader text for when a login item is focused where a partial username is displayed. SR will announce this phrase before reading the text of the partial username"
+  },
+  "noItemsToShow": {
+    "message": "Ingen emner at vise",
+    "description": "Text to show in overlay if there are no matching items"
+  },
+  "newItem": {
+    "message": "Nyt emne",
+    "description": "Button text to display in overlay when there are no matching items"
+  },
+  "addNewVaultItem": {
+    "message": "Tilføj nyt Boks-emne",
+    "description": "Screen reader text (aria-label) for new item button in overlay"
+  },
+  "bitwardenOverlayMenuAvailable": {
+    "message": "Bitwarden autoudfyld-menu tilgængelig. Tryk på pil ned-tasten for at vælge.",
+    "description": "Screen reader text for announcing when the overlay opens on the page"
+  },
+  "overrideBrowserAutofillTitle": {
+    "message": "Tilsidesæt browser-autoudfyldning?",
+    "description": "Dialog title facilitating the ability to override a chrome browser's default autofill behavior"
+  },
+  "overrideBrowserAutofillDescription": {
+    "message": "Lades denne indstilling deaktiveret, kan det forårsage konflikter mellem Bitwardens autoudfyld-menu og webbrowsere.",
+    "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
+  },
+  "overrideBrowserAutofillPrivacyRequiredDescription": {
+    "message": "Lades denne indstilling deaktiveret, kan det forårsage konflikter mellem Bitwardens autoudfyld-menu og webbrowsere. Aktiveres indstillingen, genstartes Bitwarden-udvidelsen.",
+    "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
+  },
+  "turnOn": {
+    "message": "Slå til"
+  },
+  "ignore": {
+    "message": "Ignorér"
+  },
+  "overrideBrowserAutoFillSettings": {
+    "message": "Tilsidesæt webbrowser autoudfyld-indstillinger",
+    "description": "Label for the setting that allows overriding the default browser autofill settings"
+  },
+  "extensionPrivacyPermissionNotGrantedTitle": {
+    "message": "Kan ikke tilsidesætte webbrowser-autoudfyld",
+    "description": "Title for the dialog that appears when the user has not granted the extension permission to set privacy settings"
+  },
+  "extensionPrivacyPermissionNotGrantedDescription": {
+    "message": "Bitwarden skal kunne tilgå udvidelsens fortrolighedstilladelse for at tilsidesætte indstillinger for webbrowser-autoudfyld.",
+    "description": "Description for the dialog that appears when the user has not granted the extension permission to set privacy settings"
   },
   "importData": {
     "message": "Importér data",

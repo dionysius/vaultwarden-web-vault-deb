@@ -619,6 +619,9 @@
   "addLoginNotificationDesc": {
     "message": "Vaicāt pievienot vienumu, ja tāds nav atrodams glabātavā."
   },
+  "addLoginNotificationDescAlt": {
+    "message": "Ask to add an item if one isn't found in your vault. Applies to all logged in accounts."
+  },
   "showCardsCurrentTab": {
     "message": "Rādīt kartes cilnes lapā"
   },
@@ -651,6 +654,15 @@
   "changedPasswordNotificationDesc": {
     "message": "Vaicāt atjaunināt pieteikšanās vienuma paroli, ja vietnē ir noteiktas tās izmaiņas."
   },
+  "changedPasswordNotificationDescAlt": {
+    "message": "Ask to update a login's password when a change is detected on a website. Applies to all logged in accounts."
+  },
+  "enableUsePasskeys": {
+    "message": "Ask to save and use passkeys"
+  },
+  "usePasskeysDesc": {
+    "message": "Ask to save new passkeys or log in with passkeys stored in your vault. Applies to all logged in accounts."
+  },
   "notificationChangeDesc": {
     "message": "Vai atjaunināt šo paroli Bitwarden?"
   },
@@ -669,6 +681,9 @@
   "contextMenuItemDesc": {
     "message": "Izmantot orējo klikšķi, lai piekļūtu paroļu veidošanai un vietnei atbilstošajiem pieteikšanās vienumiem. "
   },
+  "contextMenuItemDescAlt": {
+    "message": "Use a secondary click to access password generation and matching logins for the website. Applies to all logged in accounts."
+  },
   "defaultUriMatchDetection": {
     "message": "Noklusējuma URI atbilstības noteikšana",
     "description": "Default URI match detection for auto-fill."
@@ -681,6 +696,9 @@
   },
   "themeDesc": {
     "message": "Mainīt lietotnes izskata krāsas."
+  },
+  "themeDescAlt": {
+    "message": "Change the application's color theme. Applies to all logged in accounts."
   },
   "dark": {
     "message": "Tumšs",
@@ -1002,6 +1020,25 @@
   "environmentSaved": {
     "message": "Vides URL ir saglabāti."
   },
+  "showAutoFillMenuOnFormFields": {
+    "message": "Rādīt automātiskās aizpildes izvēlni veidlapu laukos",
+    "description": "Represents the message for allowing the user to enable the auto-fill overlay"
+  },
+  "showAutoFillMenuOnFormFieldsDescAlt": {
+    "message": "Applies to all logged in accounts."
+  },
+  "autofillOverlayVisibilityOff": {
+    "message": "Izslēgts",
+    "description": "Overlay setting select option for disabling autofill overlay"
+  },
+  "autofillOverlayVisibilityOnFieldFocus": {
+    "message": "Kad lauks ir atlasīts (atlasot)",
+    "description": "Overlay appearance select option for showing the field on focus of the input element"
+  },
+  "autofillOverlayVisibilityOnButtonClick": {
+    "message": "Kad tiek atlasīta automātiskās aizpildes ikona",
+    "description": "Overlay appearance select option for showing the field on click of the overlay icon"
+  },
   "enableAutoFillOnPageLoad": {
     "message": "Iespējot aizpildīšanu lapas ielādes brīdī"
   },
@@ -1252,9 +1289,6 @@
   },
   "typeIdentity": {
     "message": "Identitāte"
-  },
-  "typePasskey": {
-    "message": "Piekļuves atslēga"
   },
   "passwordHistory": {
     "message": "Paroļu vēsture"
@@ -1664,6 +1698,9 @@
   },
   "excludedDomainsDesc": {
     "message": "Bitwarden nevaicās saglabāt pieteikšanās datus šiem domēniem. Ir jāpārlādē lapa, lai izmaiņas iedarbotos."
+  },
+  "excludedDomainsDescAlt": {
+    "message": "Bitwarden will not ask to save login details for these domains for all logged in accounts. You must refresh the page for changes to take effect."
   },
   "excludedDomainsInvalidDomain": {
     "message": "$DOMAIN$ nav derīgs domēns",
@@ -2456,6 +2493,80 @@
   "turnOffMasterPasswordPromptToEditField": {
     "message": "Jāizslēdz galvenās paroles pārvaicāšana, lai labotu šo lauku",
     "description": "Message appearing below the autofill on load message when master password reprompt is set for a vault item."
+  },
+  "bitwardenOverlayButton": {
+    "message": "Bitwarden automātiskās aizpildes izvēlnes poga",
+    "description": "Page title for the iframe containing the overlay button"
+  },
+  "toggleBitwardenVaultOverlay": {
+    "message": "Pārslēgt Bitwarden automātiskās aizpildes izvēlni",
+    "description": "Screen reader and tool tip label for the overlay button"
+  },
+  "bitwardenVault": {
+    "message": "Bitwarden automātiskās aizpildes izvēlne",
+    "description": "Page title in overlay"
+  },
+  "unlockYourAccountToViewMatchingLogins": {
+    "message": "Jāatslēdz savs konts, lai apskatītu atbilstošus pieteikšanās vienumus",
+    "description": "Text to display in overlay when the account is locked."
+  },
+  "unlockAccount": {
+    "message": "Atslēgt kontu",
+    "description": "Button text to display in overlay when the account is locked."
+  },
+  "fillCredentialsFor": {
+    "message": "Aizpildīt pieteikšanās datus",
+    "description": "Screen reader text for when overlay item is in focused"
+  },
+  "partialUsername": {
+    "message": "Daļējs lietotājvārds",
+    "description": "Screen reader text for when a login item is focused where a partial username is displayed. SR will announce this phrase before reading the text of the partial username"
+  },
+  "noItemsToShow": {
+    "message": "Nav vienumu, ko parādīt",
+    "description": "Text to show in overlay if there are no matching items"
+  },
+  "newItem": {
+    "message": "Jauns vienums",
+    "description": "Button text to display in overlay when there are no matching items"
+  },
+  "addNewVaultItem": {
+    "message": "Pievienot jaunu glabātavas vienumu",
+    "description": "Screen reader text (aria-label) for new item button in overlay"
+  },
+  "bitwardenOverlayMenuAvailable": {
+    "message": "Ir pieejama Bitwarden automātiskās aizpildes izvēlne. Jānospiež poga ar bultu uz leju, lai atlasītu.",
+    "description": "Screen reader text for announcing when the overlay opens on the page"
+  },
+  "overrideBrowserAutofillTitle": {
+    "message": "Aizvietot pārlūka automātisko aizpildi?",
+    "description": "Dialog title facilitating the ability to override a chrome browser's default autofill behavior"
+  },
+  "overrideBrowserAutofillDescription": {
+    "message": "Šī iestatījuma neieslēgšana var radīt nesaderības starp Bitwarden automātiskās aizpildes izvēlni un pārlūku.",
+    "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
+  },
+  "overrideBrowserAutofillPrivacyRequiredDescription": {
+    "message": "Šī iestatījuma neieslēgšana var radīt nesaderības starp Bitwarden automātiskās aizpildes izvēlni un pārlūku. Ieslēgšana pārsāknēs Bitwarden paplašinājumu.",
+    "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
+  },
+  "turnOn": {
+    "message": "Ieslēgt"
+  },
+  "ignore": {
+    "message": "Neņemt vērā"
+  },
+  "overrideBrowserAutoFillSettings": {
+    "message": "Aizvietot pārlūka automātiskās aizpildes iestatījumus",
+    "description": "Label for the setting that allows overriding the default browser autofill settings"
+  },
+  "extensionPrivacyPermissionNotGrantedTitle": {
+    "message": "Nebija iespējams aizvietot pārlūka automātisko aizpildi",
+    "description": "Title for the dialog that appears when the user has not granted the extension permission to set privacy settings"
+  },
+  "extensionPrivacyPermissionNotGrantedDescription": {
+    "message": "Bitwarden ir jābūt piekļuvei paplašinājuma privātuma atļaujai, lai aizvietotu pārlūka automātiskās aizpildes iestatījumus.",
+    "description": "Description for the dialog that appears when the user has not granted the extension permission to set privacy settings"
   },
   "importData": {
     "message": "Ievietot datus",

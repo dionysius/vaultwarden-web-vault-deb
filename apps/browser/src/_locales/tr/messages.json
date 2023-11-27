@@ -619,6 +619,9 @@
   "addLoginNotificationDesc": {
     "message": "\"Hesap ekle\" bildirimi, ilk kez kullandığınız hesap bilgilerini kasanıza kaydetmek isteyip istemediğinizi otomatik olarak sorar."
   },
+  "addLoginNotificationDescAlt": {
+    "message": "Kasanızda bulunmayan bir öğenin eklenmesini isteyin. Oturum açmış tüm hesaplar için geçerlidir."
+  },
   "showCardsCurrentTab": {
     "message": "Sekme sayfasında kartları göster"
   },
@@ -651,6 +654,15 @@
   "changedPasswordNotificationDesc": {
     "message": "Sitede bir değişiklik tespit edildiğinde hesap parolasını güncellemeyi öner."
   },
+  "changedPasswordNotificationDescAlt": {
+    "message": "Bir web sitesinde bir değişiklik tespit edildiğinde oturum açma şifresinin güncellenmesini isteyin. Oturum açmış tüm hesaplar için geçerlidir."
+  },
+  "enableUsePasskeys": {
+    "message": "Ask to save and use passkeys"
+  },
+  "usePasskeysDesc": {
+    "message": "Ask to save new passkeys or log in with passkeys stored in your vault. Applies to all logged in accounts."
+  },
   "notificationChangeDesc": {
     "message": "Bu parolayı Bitwarden'da güncellemek ister misiniz?"
   },
@@ -669,6 +681,9 @@
   "contextMenuItemDesc": {
     "message": "Parola oluşturma ve eşlesen hesaplara ulaşmak için sağ tıklamayı kullan."
   },
+  "contextMenuItemDescAlt": {
+    "message": "Web sitesi için şifre oluşturmaya ve eşleşen oturum açma bilgilerine erişmek için ikincil bir tıklama kullanın. Oturum açmış tüm hesaplar için geçerlidir."
+  },
   "defaultUriMatchDetection": {
     "message": "Varsayılan URI eşleşme tespiti",
     "description": "Default URI match detection for auto-fill."
@@ -681,6 +696,9 @@
   },
   "themeDesc": {
     "message": "Uygulamanın renk temasını değiştir."
+  },
+  "themeDescAlt": {
+    "message": "Uygulamanın renk temasını değiştirin. Oturum açmış tüm hesaplar için geçerlidir."
   },
   "dark": {
     "message": "Koyu",
@@ -1002,6 +1020,25 @@
   "environmentSaved": {
     "message": "Ortam URL'leri kaydedildi"
   },
+  "showAutoFillMenuOnFormFields": {
+    "message": "Show auto-fill menu on form fields",
+    "description": "Represents the message for allowing the user to enable the auto-fill overlay"
+  },
+  "showAutoFillMenuOnFormFieldsDescAlt": {
+    "message": "Oturum açmış tüm hesaplara uygulanır."
+  },
+  "autofillOverlayVisibilityOff": {
+    "message": "Kapalı",
+    "description": "Overlay setting select option for disabling autofill overlay"
+  },
+  "autofillOverlayVisibilityOnFieldFocus": {
+    "message": "When field is selected (on focus)",
+    "description": "Overlay appearance select option for showing the field on focus of the input element"
+  },
+  "autofillOverlayVisibilityOnButtonClick": {
+    "message": "Otomatik doldurma simgesi seçildiğinde",
+    "description": "Overlay appearance select option for showing the field on click of the overlay icon"
+  },
   "enableAutoFillOnPageLoad": {
     "message": "Sayfa yüklendiğinde otomatik doldur"
   },
@@ -1252,9 +1289,6 @@
   },
   "typeIdentity": {
     "message": "Kimlik"
-  },
-  "typePasskey": {
-    "message": "Geçiş anahtarı"
   },
   "passwordHistory": {
     "message": "Parola geçmişi"
@@ -1664,6 +1698,9 @@
   },
   "excludedDomainsDesc": {
     "message": "Bitwarden bu alan adlarında hesaplarınızı kaydetmeyi sormayacaktır. Değişikliklerin etkili olması için sayfayı yenilemelisiniz."
+  },
+  "excludedDomainsDescAlt": {
+    "message": "Bitwarden, oturum açmış tüm hesaplar için bu alan adlarının oturum açma ayrıntılarını kaydetmeyi istemeyecektir. Değişikliklerin etkili olması için sayfayı yenilemeniz gerekir."
   },
   "excludedDomainsInvalidDomain": {
     "message": "$DOMAIN$ geçerli bir alan adı değil",
@@ -2456,6 +2493,80 @@
   "turnOffMasterPasswordPromptToEditField": {
     "message": "Bu alanı düzenlemek için ana parolayı yeniden istemeyi kapatın",
     "description": "Message appearing below the autofill on load message when master password reprompt is set for a vault item."
+  },
+  "bitwardenOverlayButton": {
+    "message": "Bitwarden otomatik doldurma menüsü düğmesi",
+    "description": "Page title for the iframe containing the overlay button"
+  },
+  "toggleBitwardenVaultOverlay": {
+    "message": "Toggle Bitwarden auto-fill menu",
+    "description": "Screen reader and tool tip label for the overlay button"
+  },
+  "bitwardenVault": {
+    "message": "Bitwarden otomatik doldurma menüsü",
+    "description": "Page title in overlay"
+  },
+  "unlockYourAccountToViewMatchingLogins": {
+    "message": "Eşleşen giriş bilgilerini görüntülemek için hesabınızın kilidini açın",
+    "description": "Text to display in overlay when the account is locked."
+  },
+  "unlockAccount": {
+    "message": "Hesabın kilidini açın",
+    "description": "Button text to display in overlay when the account is locked."
+  },
+  "fillCredentialsFor": {
+    "message": "Kimlik bilgilerini doldurun",
+    "description": "Screen reader text for when overlay item is in focused"
+  },
+  "partialUsername": {
+    "message": "Kısmi kullanıcı adı",
+    "description": "Screen reader text for when a login item is focused where a partial username is displayed. SR will announce this phrase before reading the text of the partial username"
+  },
+  "noItemsToShow": {
+    "message": "Gösterilecek öğe yok",
+    "description": "Text to show in overlay if there are no matching items"
+  },
+  "newItem": {
+    "message": "Yeni öge",
+    "description": "Button text to display in overlay when there are no matching items"
+  },
+  "addNewVaultItem": {
+    "message": "Add new vault item",
+    "description": "Screen reader text (aria-label) for new item button in overlay"
+  },
+  "bitwardenOverlayMenuAvailable": {
+    "message": "Bitwarden auto-fill menu available. Press the down arrow key to select.",
+    "description": "Screen reader text for announcing when the overlay opens on the page"
+  },
+  "overrideBrowserAutofillTitle": {
+    "message": "Override browser auto-fill?",
+    "description": "Dialog title facilitating the ability to override a chrome browser's default autofill behavior"
+  },
+  "overrideBrowserAutofillDescription": {
+    "message": "Bu ayarı kapalı bırakmak, Bitwarden otomatik doldurma menüsü ile tarayıcınızınki arasında çakışmalara neden olabilir.",
+    "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
+  },
+  "overrideBrowserAutofillPrivacyRequiredDescription": {
+    "message": "Leaving this setting off may cause conflicts between the Bitwarden auto-fill menu and your browser’s. Turning this on will restart the Bitwarden extension.",
+    "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
+  },
+  "turnOn": {
+    "message": "Turn on"
+  },
+  "ignore": {
+    "message": "Yoksay"
+  },
+  "overrideBrowserAutoFillSettings": {
+    "message": "Tarayıcının otomatik doldurma ayarlarını geçersiz kıl",
+    "description": "Label for the setting that allows overriding the default browser autofill settings"
+  },
+  "extensionPrivacyPermissionNotGrantedTitle": {
+    "message": "Unable to override browser auto-fill",
+    "description": "Title for the dialog that appears when the user has not granted the extension permission to set privacy settings"
+  },
+  "extensionPrivacyPermissionNotGrantedDescription": {
+    "message": "Bitwarden must have access to the extension's privacy permission to override browser auto-fill settings.",
+    "description": "Description for the dialog that appears when the user has not granted the extension permission to set privacy settings"
   },
   "importData": {
     "message": "Verileri içe aktar",

@@ -619,6 +619,9 @@
   "addLoginNotificationDesc": {
     "message": "Nach dem Hinzufügen eines Eintrags fragen, wenn dieser nicht in deinem Tresor gefunden wurde."
   },
+  "addLoginNotificationDescAlt": {
+    "message": "Nach dem Hinzufügen eines Eintrags fragen, wenn er nicht in deinem Tresor gefunden wurde. Gilt für alle angemeldeten Konten."
+  },
   "showCardsCurrentTab": {
     "message": "Karten auf Tab Seite anzeigen"
   },
@@ -651,6 +654,15 @@
   "changedPasswordNotificationDesc": {
     "message": "Nach dem Aktualisieren eines Passworts fragen, wenn eine Änderung auf einer Website erkannt wird."
   },
+  "changedPasswordNotificationDescAlt": {
+    "message": "Nach dem Aktualisieren des Passworts von Zugangsdaten fragen, wenn eine Änderung auf einer Website erkannt wird. Gilt für alle angemeldeten Konten."
+  },
+  "enableUsePasskeys": {
+    "message": "Nach dem Speichern und Verwenden von Passkeys fragen"
+  },
+  "usePasskeysDesc": {
+    "message": "Danach fragen neue Passkeys zu speichern oder sich mit in deinem Tresor gespeicherten Passkeys anmelden. Gilt für alle angemeldeten Konten."
+  },
   "notificationChangeDesc": {
     "message": "Möchtest du dieses Passwort in Bitwarden aktualisieren?"
   },
@@ -669,6 +681,9 @@
   "contextMenuItemDesc": {
     "message": "Greife über einen Rechtsklick auf die Erstellung von Passwörtern und passende Zugangsdaten für die Website zu."
   },
+  "contextMenuItemDescAlt": {
+    "message": "Use a secondary click to access password generation and matching logins for the website. Applies to all logged in accounts."
+  },
   "defaultUriMatchDetection": {
     "message": "Standard URI-Übereinstimmungserkennung",
     "description": "Default URI match detection for auto-fill."
@@ -681,6 +696,9 @@
   },
   "themeDesc": {
     "message": "Ändere das Farbschema der Anwendung."
+  },
+  "themeDescAlt": {
+    "message": "Change the application's color theme. Applies to all logged in accounts."
   },
   "dark": {
     "message": "Dunkel",
@@ -1002,6 +1020,25 @@
   "environmentSaved": {
     "message": "URLs der Umgebung gespeichert"
   },
+  "showAutoFillMenuOnFormFields": {
+    "message": "Show auto-fill menu on form fields",
+    "description": "Represents the message for allowing the user to enable the auto-fill overlay"
+  },
+  "showAutoFillMenuOnFormFieldsDescAlt": {
+    "message": "Gilt für alle angemeldeten Konten."
+  },
+  "autofillOverlayVisibilityOff": {
+    "message": "Aus",
+    "description": "Overlay setting select option for disabling autofill overlay"
+  },
+  "autofillOverlayVisibilityOnFieldFocus": {
+    "message": "When field is selected (on focus)",
+    "description": "Overlay appearance select option for showing the field on focus of the input element"
+  },
+  "autofillOverlayVisibilityOnButtonClick": {
+    "message": "When auto-fill icon is selected",
+    "description": "Overlay appearance select option for showing the field on click of the overlay icon"
+  },
   "enableAutoFillOnPageLoad": {
     "message": "Auto-Ausfüllen beim Laden einer Seite aktivieren"
   },
@@ -1252,9 +1289,6 @@
   },
   "typeIdentity": {
     "message": "Identität"
-  },
-  "typePasskey": {
-    "message": "Passkey"
   },
   "passwordHistory": {
     "message": "Passwortverlauf"
@@ -1664,6 +1698,9 @@
   },
   "excludedDomainsDesc": {
     "message": "Bitwarden wird keine Login-Daten für diese Domäne speichern. Du musst die Seite aktualisieren, damit die Änderungen wirksam werden."
+  },
+  "excludedDomainsDescAlt": {
+    "message": "Bitwarden wird für alle angemeldeten Konten nicht danach fragen Zugangsdaten für diese Domains speichern. Du musst die Seite neu laden, damit die Änderungen wirksam werden."
   },
   "excludedDomainsInvalidDomain": {
     "message": "$DOMAIN$ ist keine gültige Domain",
@@ -2456,6 +2493,80 @@
   "turnOffMasterPasswordPromptToEditField": {
     "message": "Deaktiviere die erneute Abfrage des Master-Passworts, um dieses Feld zu bearbeiten",
     "description": "Message appearing below the autofill on load message when master password reprompt is set for a vault item."
+  },
+  "bitwardenOverlayButton": {
+    "message": "Bitwarden Auto-Ausfüllen Menütaste",
+    "description": "Page title for the iframe containing the overlay button"
+  },
+  "toggleBitwardenVaultOverlay": {
+    "message": "Bitwarden Auto-Ausfüllen Menü umschalten",
+    "description": "Screen reader and tool tip label for the overlay button"
+  },
+  "bitwardenVault": {
+    "message": "Bitwarden Auto-Ausfüllen Menü",
+    "description": "Page title in overlay"
+  },
+  "unlockYourAccountToViewMatchingLogins": {
+    "message": "Unlock your account to view matching logins",
+    "description": "Text to display in overlay when the account is locked."
+  },
+  "unlockAccount": {
+    "message": "Konto entsperren",
+    "description": "Button text to display in overlay when the account is locked."
+  },
+  "fillCredentialsFor": {
+    "message": "Zugangsdaten ausfüllen für",
+    "description": "Screen reader text for when overlay item is in focused"
+  },
+  "partialUsername": {
+    "message": "Partial username",
+    "description": "Screen reader text for when a login item is focused where a partial username is displayed. SR will announce this phrase before reading the text of the partial username"
+  },
+  "noItemsToShow": {
+    "message": "Kein Eintrag zum Anzeigen",
+    "description": "Text to show in overlay if there are no matching items"
+  },
+  "newItem": {
+    "message": "Neuer Eintrag",
+    "description": "Button text to display in overlay when there are no matching items"
+  },
+  "addNewVaultItem": {
+    "message": "Neuen Tresor-Eintrag hinzufügen",
+    "description": "Screen reader text (aria-label) for new item button in overlay"
+  },
+  "bitwardenOverlayMenuAvailable": {
+    "message": "Bitwarden auto-fill menu available. Press the down arrow key to select.",
+    "description": "Screen reader text for announcing when the overlay opens on the page"
+  },
+  "overrideBrowserAutofillTitle": {
+    "message": "Override browser auto-fill?",
+    "description": "Dialog title facilitating the ability to override a chrome browser's default autofill behavior"
+  },
+  "overrideBrowserAutofillDescription": {
+    "message": "Leaving this setting off may cause conflicts between the Bitwarden auto-fill menu and your browser’s.",
+    "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
+  },
+  "overrideBrowserAutofillPrivacyRequiredDescription": {
+    "message": "Leaving this setting off may cause conflicts between the Bitwarden auto-fill menu and your browser’s. Turning this on will restart the Bitwarden extension.",
+    "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
+  },
+  "turnOn": {
+    "message": "Einschalten"
+  },
+  "ignore": {
+    "message": "Ignorieren"
+  },
+  "overrideBrowserAutoFillSettings": {
+    "message": "Override browser auto-fill settings",
+    "description": "Label for the setting that allows overriding the default browser autofill settings"
+  },
+  "extensionPrivacyPermissionNotGrantedTitle": {
+    "message": "Unable to override browser auto-fill",
+    "description": "Title for the dialog that appears when the user has not granted the extension permission to set privacy settings"
+  },
+  "extensionPrivacyPermissionNotGrantedDescription": {
+    "message": "Bitwarden must have access to the extension's privacy permission to override browser auto-fill settings.",
+    "description": "Description for the dialog that appears when the user has not granted the extension permission to set privacy settings"
   },
   "importData": {
     "message": "Daten importieren",

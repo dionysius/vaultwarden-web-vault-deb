@@ -619,6 +619,9 @@
   "addLoginNotificationDesc": {
     "message": "\"Dodaj powiadomienia logowania\" automatycznie wyświetla monit o zapisanie nowych danych logowania do sejfu przy każdym pierwszym logowaniu."
   },
+  "addLoginNotificationDescAlt": {
+    "message": "Poproś o dodanie elementu, jeśli nie zostanie znaleziony w Twoim sejfie. Dotyczy wszystkich zalogowanych kont."
+  },
   "showCardsCurrentTab": {
     "message": "Pokaż karty na stronie głównej"
   },
@@ -651,6 +654,15 @@
   "changedPasswordNotificationDesc": {
     "message": "Poproś o aktualizację hasła danych logowania po wykryciu zmiany w witrynie."
   },
+  "changedPasswordNotificationDescAlt": {
+    "message": "Poproś o aktualizację hasła, gdy zmiana zostanie wykryta na stronie. Dotyczy wszystkich zalogowanych kont."
+  },
+  "enableUsePasskeys": {
+    "message": "Pytaj o zapisywanie i używanie passkey"
+  },
+  "usePasskeysDesc": {
+    "message": "Pytaj o zapisywanie nowych passkey albo danych logowania z passkey w Twoim sejfie. Dotyczy wszystkich zalogowanych kont."
+  },
   "notificationChangeDesc": {
     "message": "Czy chcesz zaktualizować to hasło w Bitwarden?"
   },
@@ -669,6 +681,9 @@
   "contextMenuItemDesc": {
     "message": "Użyj drugiego kliknięcia, aby uzyskać dostęp do generowania haseł i pasujących danych logowania do witryny. "
   },
+  "contextMenuItemDescAlt": {
+    "message": "Użyj drugiego kliknięcia, aby uzyskać dostęp do generowania haseł i pasujących danych logowania do witryny. Dotyczy wszystkich zalogowanych kont."
+  },
   "defaultUriMatchDetection": {
     "message": "Domyślne wykrywanie dopasowania",
     "description": "Default URI match detection for auto-fill."
@@ -681,6 +696,9 @@
   },
   "themeDesc": {
     "message": "Zmień motyw kolorystyczny aplikacji."
+  },
+  "themeDescAlt": {
+    "message": "Zmień kolor motywu aplikacji. Dotyczy wszystkich zalogowanych kont."
   },
   "dark": {
     "message": "Ciemny",
@@ -1002,6 +1020,25 @@
   "environmentSaved": {
     "message": "Adresy URL środowiska zostały zapisane"
   },
+  "showAutoFillMenuOnFormFields": {
+    "message": "Pokaż menu autouzupełniania na polach formularza",
+    "description": "Represents the message for allowing the user to enable the auto-fill overlay"
+  },
+  "showAutoFillMenuOnFormFieldsDescAlt": {
+    "message": "Dotyczy wszystkich zalogowanych kont."
+  },
+  "autofillOverlayVisibilityOff": {
+    "message": "Wył.",
+    "description": "Overlay setting select option for disabling autofill overlay"
+  },
+  "autofillOverlayVisibilityOnFieldFocus": {
+    "message": "Gdy pole jest zaznaczone",
+    "description": "Overlay appearance select option for showing the field on focus of the input element"
+  },
+  "autofillOverlayVisibilityOnButtonClick": {
+    "message": "Gdy wybrano ikonę autouzupełniania",
+    "description": "Overlay appearance select option for showing the field on click of the overlay icon"
+  },
   "enableAutoFillOnPageLoad": {
     "message": "Włącz autouzupełnianie po załadowaniu strony"
   },
@@ -1252,9 +1289,6 @@
   },
   "typeIdentity": {
     "message": "Tożsamość"
-  },
-  "typePasskey": {
-    "message": "Passkey"
   },
   "passwordHistory": {
     "message": "Historia hasła"
@@ -1664,6 +1698,9 @@
   },
   "excludedDomainsDesc": {
     "message": "Aplikacja Bitwarden nie będzie proponować zapisywania danych logowania dla tych domen. Musisz odświeżyć stronę, aby zastosowywać zmiany."
+  },
+  "excludedDomainsDescAlt": {
+    "message": "Aplikacja Bitwarden nie będzie proponować zapisywania danych logowania dla tych domen dla wszystkich zalogowanych kont. Musisz odświeżyć stronę, aby zastosowywać zmiany."
   },
   "excludedDomainsInvalidDomain": {
     "message": "$DOMAIN$ nie jest prawidłową nazwą domeny",
@@ -2456,6 +2493,80 @@
   "turnOffMasterPasswordPromptToEditField": {
     "message": "Wyłącz prośbę o podanie hasła głównego, aby edytować to pole",
     "description": "Message appearing below the autofill on load message when master password reprompt is set for a vault item."
+  },
+  "bitwardenOverlayButton": {
+    "message": "Przycisk menu autouzupełniania Bitwarden",
+    "description": "Page title for the iframe containing the overlay button"
+  },
+  "toggleBitwardenVaultOverlay": {
+    "message": "Przełącz menu autouzupełniania Bitwarden",
+    "description": "Screen reader and tool tip label for the overlay button"
+  },
+  "bitwardenVault": {
+    "message": "Menu autouzupełniania Bitwarden",
+    "description": "Page title in overlay"
+  },
+  "unlockYourAccountToViewMatchingLogins": {
+    "message": "Odblokuj swoje konto, aby wyświetlić pasujące elementy",
+    "description": "Text to display in overlay when the account is locked."
+  },
+  "unlockAccount": {
+    "message": "Odblokuj konto",
+    "description": "Button text to display in overlay when the account is locked."
+  },
+  "fillCredentialsFor": {
+    "message": "Wypełnij dane logowania dla",
+    "description": "Screen reader text for when overlay item is in focused"
+  },
+  "partialUsername": {
+    "message": "Częściowa nazwa użytkownika",
+    "description": "Screen reader text for when a login item is focused where a partial username is displayed. SR will announce this phrase before reading the text of the partial username"
+  },
+  "noItemsToShow": {
+    "message": "Brak elementów do wyświetlenia",
+    "description": "Text to show in overlay if there are no matching items"
+  },
+  "newItem": {
+    "message": "Nowy element",
+    "description": "Button text to display in overlay when there are no matching items"
+  },
+  "addNewVaultItem": {
+    "message": "Dodaj nowy element do sejfu",
+    "description": "Screen reader text (aria-label) for new item button in overlay"
+  },
+  "bitwardenOverlayMenuAvailable": {
+    "message": "Dostępne menu autouzupełniania Bitwarden. Naciśnij przycisk strzałki w dół, aby wybrać.",
+    "description": "Screen reader text for announcing when the overlay opens on the page"
+  },
+  "overrideBrowserAutofillTitle": {
+    "message": "Zastąpić automatyczne wypełnianie przeglądarki?",
+    "description": "Dialog title facilitating the ability to override a chrome browser's default autofill behavior"
+  },
+  "overrideBrowserAutofillDescription": {
+    "message": "Pozostawienie tego ustawienia jako wyłączonego może spowodować konflikty pomiędzy menu autouzupełniania Bitwarden a przeglądarką.",
+    "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
+  },
+  "overrideBrowserAutofillPrivacyRequiredDescription": {
+    "message": "Pozostawienie tego ustawienia jako wyłączonego może spowodować konflikty pomiędzy menu autouzupełniania Bitwarden a przeglądarką. Włączenie tego spowoduje ponowne uruchomienie rozszerzenia Bitwarden.",
+    "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
+  },
+  "turnOn": {
+    "message": "Włącz"
+  },
+  "ignore": {
+    "message": "Ignoruj"
+  },
+  "overrideBrowserAutoFillSettings": {
+    "message": "Nadpisz ustawienia autouzupełniania przeglądarki",
+    "description": "Label for the setting that allows overriding the default browser autofill settings"
+  },
+  "extensionPrivacyPermissionNotGrantedTitle": {
+    "message": "Nie można napisać autouzupełniania przeglądarki",
+    "description": "Title for the dialog that appears when the user has not granted the extension permission to set privacy settings"
+  },
+  "extensionPrivacyPermissionNotGrantedDescription": {
+    "message": "Bitwarden musi mieć dostęp do uprawnień prywatności rozszerzenia, aby nadpisać ustawienia autouzupełniania przeglądarki.",
+    "description": "Description for the dialog that appears when the user has not granted the extension permission to set privacy settings"
   },
   "importData": {
     "message": "Importuj dane",

@@ -92,13 +92,13 @@
     "message": "自動填入"
   },
   "autoFillLogin": {
-    "message": "自動填入登入"
+    "message": "自動填入登入資訊"
   },
   "autoFillCard": {
     "message": "自動填入支付卡"
   },
   "autoFillIdentity": {
-    "message": "自動填入身分"
+    "message": "自動填入身分資訊"
   },
   "generatePasswordCopied": {
     "message": "產生及複製密碼"
@@ -113,16 +113,16 @@
     "message": "無支付卡"
   },
   "noIdentities": {
-    "message": "無身分"
+    "message": "無身分資訊"
   },
   "addLoginMenu": {
-    "message": "新增登入"
+    "message": "新增登入資訊"
   },
   "addCardMenu": {
     "message": "新增支付卡"
   },
   "addIdentityMenu": {
-    "message": "新增身分"
+    "message": "新增身分資訊"
   },
   "unlockVaultMenu": {
     "message": "解鎖您的密碼庫"
@@ -363,7 +363,7 @@
     "message": "其他"
   },
   "unlockMethodNeededToChangeTimeoutActionDesc": {
-    "message": "設定解鎖方法來變更您的密碼庫逾時動作。"
+    "message": "設定一個解鎖方式來變更您的密碼庫逾時動作。"
   },
   "rateExtension": {
     "message": "為本套件評分"
@@ -619,6 +619,9 @@
   "addLoginNotificationDesc": {
     "message": "在密碼庫中找不到相符的項目時詢問是否新增項目。"
   },
+  "addLoginNotificationDescAlt": {
+    "message": "Ask to add an item if one isn't found in your vault. Applies to all logged in accounts."
+  },
   "showCardsCurrentTab": {
     "message": "於分頁頁面顯示支付卡"
   },
@@ -651,6 +654,15 @@
   "changedPasswordNotificationDesc": {
     "message": "偵測到網站密碼變更時，詢問是否更新登入資料密碼。"
   },
+  "changedPasswordNotificationDescAlt": {
+    "message": "Ask to update a login's password when a change is detected on a website. Applies to all logged in accounts."
+  },
+  "enableUsePasskeys": {
+    "message": "Ask to save and use passkeys"
+  },
+  "usePasskeysDesc": {
+    "message": "Ask to save new passkeys or log in with passkeys stored in your vault. Applies to all logged in accounts."
+  },
   "notificationChangeDesc": {
     "message": "是否要在 Bitwarden 中更新此密碼？"
   },
@@ -669,6 +681,9 @@
   "contextMenuItemDesc": {
     "message": "使用輔助點選（右鍵選單）來存取密碼產生和匹配的網站登入項目。 "
   },
+  "contextMenuItemDescAlt": {
+    "message": "Use a secondary click to access password generation and matching logins for the website. Applies to all logged in accounts."
+  },
   "defaultUriMatchDetection": {
     "message": "預設的 URI 一致性偵測",
     "description": "Default URI match detection for auto-fill."
@@ -681,6 +696,9 @@
   },
   "themeDesc": {
     "message": "變更應用程式的主題色彩。"
+  },
+  "themeDescAlt": {
+    "message": "Change the application's color theme. Applies to all logged in accounts."
   },
   "dark": {
     "message": "深色",
@@ -1002,6 +1020,25 @@
   "environmentSaved": {
     "message": "環境 URL 已儲存"
   },
+  "showAutoFillMenuOnFormFields": {
+    "message": "Show auto-fill menu on form fields",
+    "description": "Represents the message for allowing the user to enable the auto-fill overlay"
+  },
+  "showAutoFillMenuOnFormFieldsDescAlt": {
+    "message": "Applies to all logged in accounts."
+  },
+  "autofillOverlayVisibilityOff": {
+    "message": "Off",
+    "description": "Overlay setting select option for disabling autofill overlay"
+  },
+  "autofillOverlayVisibilityOnFieldFocus": {
+    "message": "When field is selected (on focus)",
+    "description": "Overlay appearance select option for showing the field on focus of the input element"
+  },
+  "autofillOverlayVisibilityOnButtonClick": {
+    "message": "When auto-fill icon is selected",
+    "description": "Overlay appearance select option for showing the field on click of the overlay icon"
+  },
   "enableAutoFillOnPageLoad": {
     "message": "頁面載入時自動填入"
   },
@@ -1009,7 +1046,7 @@
     "message": "網頁載入時如果偵測到登入表單，則執行自動填入。"
   },
   "experimentalFeature": {
-    "message": "被入侵或不可信任的網站可以利用網頁載入時的自動填入功能。"
+    "message": "被入侵或不可信任的網站可不當利用頁面加載時的自動填入功能。"
   },
   "learnMoreAboutAutofill": {
     "message": "進一步瞭解「自動填入」功能"
@@ -1253,9 +1290,6 @@
   "typeIdentity": {
     "message": "身分"
   },
-  "typePasskey": {
-    "message": "密碼金鑰"
-  },
   "passwordHistory": {
     "message": "密碼歷史記錄"
   },
@@ -1498,7 +1532,7 @@
     "message": "警告：這是不安全的 HTTP 頁面，任何您送出的資訊均可能被其他人看見和更改。此登入資訊原先是在安全的 (HTTPS) 頁面儲存的。"
   },
   "insecurePageWarningFillPrompt": {
-    "message": "您依然想要填充此登入資訊嗎？"
+    "message": "您仍要填入此登入資訊嗎？"
   },
   "autofillIframeWarning": {
     "message": "這個表單寄放在不同的網域，而非您儲存登入資訊的 URI。選擇「確認」則依然自動填入，「取消」則停止本動作。"
@@ -1636,7 +1670,7 @@
     "message": "生物特徵辨識失敗"
   },
   "biometricsFailedDesc": {
-    "message": "生物特徵辨識無法完成，請考慮使用主密碼或登出。如果這種情況仍然存在，請聯絡 Bitwarden 支援。"
+    "message": "生物特徵辨識無法完成，請考慮使用主密碼或登出。若仍無法解決，請聯絡 Bitwarden 客服。"
   },
   "nativeMessaginPermissionErrorTitle": {
     "message": "未提供權限"
@@ -1664,6 +1698,9 @@
   },
   "excludedDomainsDesc": {
     "message": "Bitwarden 不會要求儲存這些網域的詳細登入資訊。必須重新整理頁面才能使變更生效。"
+  },
+  "excludedDomainsDescAlt": {
+    "message": "Bitwarden will not ask to save login details for these domains for all logged in accounts. You must refresh the page for changes to take effect."
   },
   "excludedDomainsInvalidDomain": {
     "message": "$DOMAIN$ 不是一個有效的網域",
@@ -2209,7 +2246,7 @@
     "message": "重要："
   },
   "masterPasswordHint": {
-    "message": "如果您忘記主密碼，沒有復原的方法！"
+    "message": "若您忘記主密碼，將會無法找回！"
   },
   "characterMinimum": {
     "message": "$LENGTH$ 個字元以上",
@@ -2221,7 +2258,7 @@
     }
   },
   "autofillPageLoadPolicyActivated": {
-    "message": "您的組織政策已經開啟了自動填入功能。"
+    "message": "您的組織原則已啟用頁面加載時自動填入的功能。"
   },
   "howToAutofill": {
     "message": "如何自動填入"
@@ -2281,7 +2318,7 @@
     "message": "記住這個裝置"
   },
   "uncheckIfPublicDevice": {
-    "message": "若使用公用裝置，请勿選中"
+    "message": "若使用公用裝置，請勿選中"
   },
   "approveFromYourOtherDevice": {
     "message": "從其他裝置核准"
@@ -2456,6 +2493,80 @@
   "turnOffMasterPasswordPromptToEditField": {
     "message": "關閉主密碼重新提示以編輯此欄位",
     "description": "Message appearing below the autofill on load message when master password reprompt is set for a vault item."
+  },
+  "bitwardenOverlayButton": {
+    "message": "Bitwarden auto-fill menu button",
+    "description": "Page title for the iframe containing the overlay button"
+  },
+  "toggleBitwardenVaultOverlay": {
+    "message": "Toggle Bitwarden auto-fill menu",
+    "description": "Screen reader and tool tip label for the overlay button"
+  },
+  "bitwardenVault": {
+    "message": "Bitwarden auto-fill menu",
+    "description": "Page title in overlay"
+  },
+  "unlockYourAccountToViewMatchingLogins": {
+    "message": "Unlock your account to view matching logins",
+    "description": "Text to display in overlay when the account is locked."
+  },
+  "unlockAccount": {
+    "message": "Unlock account",
+    "description": "Button text to display in overlay when the account is locked."
+  },
+  "fillCredentialsFor": {
+    "message": "Fill credentials for",
+    "description": "Screen reader text for when overlay item is in focused"
+  },
+  "partialUsername": {
+    "message": "Partial username",
+    "description": "Screen reader text for when a login item is focused where a partial username is displayed. SR will announce this phrase before reading the text of the partial username"
+  },
+  "noItemsToShow": {
+    "message": "No items to show",
+    "description": "Text to show in overlay if there are no matching items"
+  },
+  "newItem": {
+    "message": "New item",
+    "description": "Button text to display in overlay when there are no matching items"
+  },
+  "addNewVaultItem": {
+    "message": "Add new vault item",
+    "description": "Screen reader text (aria-label) for new item button in overlay"
+  },
+  "bitwardenOverlayMenuAvailable": {
+    "message": "Bitwarden auto-fill menu available. Press the down arrow key to select.",
+    "description": "Screen reader text for announcing when the overlay opens on the page"
+  },
+  "overrideBrowserAutofillTitle": {
+    "message": "Override browser auto-fill?",
+    "description": "Dialog title facilitating the ability to override a chrome browser's default autofill behavior"
+  },
+  "overrideBrowserAutofillDescription": {
+    "message": "Leaving this setting off may cause conflicts between the Bitwarden auto-fill menu and your browser’s.",
+    "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
+  },
+  "overrideBrowserAutofillPrivacyRequiredDescription": {
+    "message": "Leaving this setting off may cause conflicts between the Bitwarden auto-fill menu and your browser’s. Turning this on will restart the Bitwarden extension.",
+    "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
+  },
+  "turnOn": {
+    "message": "Turn on"
+  },
+  "ignore": {
+    "message": "Ignore"
+  },
+  "overrideBrowserAutoFillSettings": {
+    "message": "Override browser auto-fill settings",
+    "description": "Label for the setting that allows overriding the default browser autofill settings"
+  },
+  "extensionPrivacyPermissionNotGrantedTitle": {
+    "message": "Unable to override browser auto-fill",
+    "description": "Title for the dialog that appears when the user has not granted the extension permission to set privacy settings"
+  },
+  "extensionPrivacyPermissionNotGrantedDescription": {
+    "message": "Bitwarden must have access to the extension's privacy permission to override browser auto-fill settings.",
+    "description": "Description for the dialog that appears when the user has not granted the extension permission to set privacy settings"
   },
   "importData": {
     "message": "匯入資料",

@@ -92,13 +92,13 @@
     "message": "Auto-fill sa Filipino ay Awtomatikong Pagpuno"
   },
   "autoFillLogin": {
-    "message": "Auto-fill login"
+    "message": "Auto-fill na pag-login"
   },
   "autoFillCard": {
     "message": "Auto-fill card"
   },
   "autoFillIdentity": {
-    "message": "Auto-fill identity"
+    "message": "Awtomatikong punan ang pagkakakilanlan"
   },
   "generatePasswordCopied": {
     "message": "Maglagay ng Password"
@@ -110,19 +110,19 @@
     "message": "Walang tumutugmang mga login"
   },
   "noCards": {
-    "message": "No cards"
+    "message": "Walang card"
   },
   "noIdentities": {
-    "message": "No identities"
+    "message": "Walang pagkakakilanlan"
   },
   "addLoginMenu": {
-    "message": "Add login"
+    "message": "Magdagdag ng login"
   },
   "addCardMenu": {
-    "message": "Add card"
+    "message": "Magdagdag ng card"
   },
   "addIdentityMenu": {
-    "message": "Add identity"
+    "message": "Magdagdag ng pagkakakilanlan"
   },
   "unlockVaultMenu": {
     "message": "Buksan ang iyong kahadeyero"
@@ -363,7 +363,7 @@
     "message": "Iba pa"
   },
   "unlockMethodNeededToChangeTimeoutActionDesc": {
-    "message": "Set up an unlock method to change your vault timeout action."
+    "message": "Mag-set up ng paraan ng pag-unlock upang baguhin ang iyong pagkilos sa pag-timeout ng vault."
   },
   "rateExtension": {
     "message": "I-rate ang extension"
@@ -619,6 +619,9 @@
   "addLoginNotificationDesc": {
     "message": "Tanungin na magdagdag ng isang item kung wala itong nakita sa iyong vault."
   },
+  "addLoginNotificationDescAlt": {
+    "message": "Hilingin na magdagdag ng isang item kung ang isa ay hindi mahanap sa iyong vault. Nalalapat sa lahat ng naka-log in na account."
+  },
   "showCardsCurrentTab": {
     "message": "Ipakita ang mga card sa Tab page"
   },
@@ -651,6 +654,15 @@
   "changedPasswordNotificationDesc": {
     "message": "Tanungin ang update ng password ng isang login kapag napansin ang pagbabago sa websi."
   },
+  "changedPasswordNotificationDescAlt": {
+    "message": "Hilingin na i-update ang password ng login kapag may nakitang pagbabago sa isang website. Nalalapat sa lahat ng naka-log in na account.\nI-unlock ang iyong Bitwarden vault para makumpleto ang kahilingan sa auto-fill."
+  },
+  "enableUsePasskeys": {
+    "message": "Ask to save and use passkeys"
+  },
+  "usePasskeysDesc": {
+    "message": "Ask to save new passkeys or log in with passkeys stored in your vault. Applies to all logged in accounts."
+  },
   "notificationChangeDesc": {
     "message": "Nais mo bang i-update ang password na ito sa Bitwarden?"
   },
@@ -658,16 +670,19 @@
     "message": "I-update"
   },
   "notificationUnlockDesc": {
-    "message": "Unlock your Bitwarden vault to complete the auto-fill request."
+    "message": "I-unlock ang iyong Bitwarden vault para makumpleto ang kahilingan sa auto-fill."
   },
   "notificationUnlock": {
-    "message": "Unlock"
+    "message": "I-unlock"
   },
   "enableContextMenuItem": {
     "message": "Ipakita ang mga opsyon ng menu ng konteksto"
   },
   "contextMenuItemDesc": {
     "message": "Gamitin ang pangalawang pag-click upang ma-access ang password generation at matching logins para sa website. "
+  },
+  "contextMenuItemDescAlt": {
+    "message": "Gumamit ng pangalawang pag-click upang ma-access ang pagbuo ng password at pagtutugma ng mga login para sa website. Nalalapat sa lahat ng naka-log in na account."
   },
   "defaultUriMatchDetection": {
     "message": "Default na pagtukoy ng tugma ng URI",
@@ -681,6 +696,9 @@
   },
   "themeDesc": {
     "message": "Baguhin ang tema ng kulay ng application."
+  },
+  "themeDescAlt": {
+    "message": "Baguhin ang tema ng kulay ng application. Nalalapat sa lahat ng naka-log in na account."
   },
   "dark": {
     "message": "Madilim",
@@ -796,7 +814,7 @@
     "message": "Hindi magagamit ang tampok"
   },
   "encryptionKeyMigrationRequired": {
-    "message": "Encryption key migration required. Please login through the web vault to update your encryption key."
+    "message": "Kinakailangan ang paglilipat ng encryption key. Mangyaring mag-login sa pamamagitan ng web vault upang i-update ang iyong encryption key."
   },
   "premiumMembership": {
     "message": "Pagiging miyembro ng premium"
@@ -820,7 +838,7 @@
     "message": "1 GB encrypted storage para sa mga file attachment."
   },
   "premiumSignUpTwoStepOptions": {
-    "message": "Proprietary two-step login options such as YubiKey and Duo."
+    "message": "Pagmamay-ari na dalawang hakbang na opsyon sa pag-log in gaya ng YubiKey at Duo."
   },
   "ppremiumSignUpReports": {
     "message": "Pasahod higiyena, kalusugan ng account, at mga ulat sa data breach upang panatilihing ligtas ang iyong vault."
@@ -1001,6 +1019,25 @@
   },
   "environmentSaved": {
     "message": "Nai-save ang mga URL ng Kapaligiran"
+  },
+  "showAutoFillMenuOnFormFields": {
+    "message": "Show auto-fill menu on form fields",
+    "description": "Represents the message for allowing the user to enable the auto-fill overlay"
+  },
+  "showAutoFillMenuOnFormFieldsDescAlt": {
+    "message": "Applies to all logged in accounts."
+  },
+  "autofillOverlayVisibilityOff": {
+    "message": "Nakasara",
+    "description": "Overlay setting select option for disabling autofill overlay"
+  },
+  "autofillOverlayVisibilityOnFieldFocus": {
+    "message": "When field is selected (on focus)",
+    "description": "Overlay appearance select option for showing the field on focus of the input element"
+  },
+  "autofillOverlayVisibilityOnButtonClick": {
+    "message": "When auto-fill icon is selected",
+    "description": "Overlay appearance select option for showing the field on click of the overlay icon"
   },
   "enableAutoFillOnPageLoad": {
     "message": "Awtomatikong punan sa pagkarga ng pahina"
@@ -1252,9 +1289,6 @@
   },
   "typeIdentity": {
     "message": "Pagkakakilanlan"
-  },
-  "typePasskey": {
-    "message": "Passkey"
   },
   "passwordHistory": {
     "message": "Kasaysayan ng Password"
@@ -1519,10 +1553,10 @@
     "message": "Current master password"
   },
   "newMasterPass": {
-    "message": "New master password"
+    "message": "Bagong master password"
   },
   "confirmNewMasterPass": {
-    "message": "Confirm new master password"
+    "message": "Kumpirmahin ang bagong master password"
   },
   "masterPasswordPolicyInEffect": {
     "message": "Isang o higit pang mga patakaran ng organisasyon ay nangangailangan ng iyong master password upang matugunan ang sumusunod na kinakailangan:"
@@ -1657,13 +1691,16 @@
     "message": "Isang organisasyon policy ang nakakaapekto sa iyong mga pagpipilian sa ownership."
   },
   "personalOwnershipPolicyInEffectImports": {
-    "message": "An organization policy has blocked importing items into your individual vault."
+    "message": "Hinarang ng isang patakaran ng organisasyon ang pag-import ng mga item sa iyong vault."
   },
   "excludedDomains": {
     "message": "Inilayo na Domain"
   },
   "excludedDomainsDesc": {
     "message": "Hindi tatanungin ng Bitwarden na i-save ang mga detalye ng pag-login para sa mga domain na ito. Kailangan mo nang i-refresh ang page para maipatupad ang mga pagbabago."
+  },
+  "excludedDomainsDescAlt": {
+    "message": "Bitwarden will not ask to save login details for these domains for all logged in accounts. You must refresh the page for changes to take effect."
   },
   "excludedDomainsInvalidDomain": {
     "message": "$DOMAIN$ ay hindi isang valid domain",
@@ -2227,7 +2264,7 @@
     "message": "Paano mag-auto-fill"
   },
   "autofillSelectInfoWithCommand": {
-    "message": "Select an item from this page or use the shortcut: $COMMAND$",
+    "message": "Select an item from this screen, use the shortcut $COMMAND$, or explore other options in settings.",
     "placeholders": {
       "command": {
         "content": "$1",
@@ -2236,7 +2273,7 @@
     }
   },
   "autofillSelectInfoWithoutCommand": {
-    "message": "Select an item from this page or set a shortcut in settings."
+    "message": "Select an item from this screen, or explore other options in settings."
   },
   "gotIt": {
     "message": "Nakuha ko"
@@ -2456,6 +2493,80 @@
   "turnOffMasterPasswordPromptToEditField": {
     "message": "Turn off master password re-prompt to edit this field",
     "description": "Message appearing below the autofill on load message when master password reprompt is set for a vault item."
+  },
+  "bitwardenOverlayButton": {
+    "message": "Bitwarden auto-fill menu button",
+    "description": "Page title for the iframe containing the overlay button"
+  },
+  "toggleBitwardenVaultOverlay": {
+    "message": "Toggle Bitwarden auto-fill menu",
+    "description": "Screen reader and tool tip label for the overlay button"
+  },
+  "bitwardenVault": {
+    "message": "Bitwarden auto-fill menu",
+    "description": "Page title in overlay"
+  },
+  "unlockYourAccountToViewMatchingLogins": {
+    "message": "Unlock your account to view matching logins",
+    "description": "Text to display in overlay when the account is locked."
+  },
+  "unlockAccount": {
+    "message": "Unlock account",
+    "description": "Button text to display in overlay when the account is locked."
+  },
+  "fillCredentialsFor": {
+    "message": "Fill credentials for",
+    "description": "Screen reader text for when overlay item is in focused"
+  },
+  "partialUsername": {
+    "message": "Partial username",
+    "description": "Screen reader text for when a login item is focused where a partial username is displayed. SR will announce this phrase before reading the text of the partial username"
+  },
+  "noItemsToShow": {
+    "message": "No items to show",
+    "description": "Text to show in overlay if there are no matching items"
+  },
+  "newItem": {
+    "message": "New item",
+    "description": "Button text to display in overlay when there are no matching items"
+  },
+  "addNewVaultItem": {
+    "message": "Add new vault item",
+    "description": "Screen reader text (aria-label) for new item button in overlay"
+  },
+  "bitwardenOverlayMenuAvailable": {
+    "message": "Bitwarden auto-fill menu available. Press the down arrow key to select.",
+    "description": "Screen reader text for announcing when the overlay opens on the page"
+  },
+  "overrideBrowserAutofillTitle": {
+    "message": "Override browser auto-fill?",
+    "description": "Dialog title facilitating the ability to override a chrome browser's default autofill behavior"
+  },
+  "overrideBrowserAutofillDescription": {
+    "message": "Leaving this setting off may cause conflicts between the Bitwarden auto-fill menu and your browser’s.",
+    "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
+  },
+  "overrideBrowserAutofillPrivacyRequiredDescription": {
+    "message": "Leaving this setting off may cause conflicts between the Bitwarden auto-fill menu and your browser’s. Turning this on will restart the Bitwarden extension.",
+    "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
+  },
+  "turnOn": {
+    "message": "Turn on"
+  },
+  "ignore": {
+    "message": "Ignore"
+  },
+  "overrideBrowserAutoFillSettings": {
+    "message": "Override browser auto-fill settings",
+    "description": "Label for the setting that allows overriding the default browser autofill settings"
+  },
+  "extensionPrivacyPermissionNotGrantedTitle": {
+    "message": "Unable to override browser auto-fill",
+    "description": "Title for the dialog that appears when the user has not granted the extension permission to set privacy settings"
+  },
+  "extensionPrivacyPermissionNotGrantedDescription": {
+    "message": "Bitwarden must have access to the extension's privacy permission to override browser auto-fill settings.",
+    "description": "Description for the dialog that appears when the user has not granted the extension permission to set privacy settings"
   },
   "importData": {
     "message": "Import data",

@@ -619,6 +619,9 @@
   "addLoginNotificationDesc": {
     "message": "Известията за запазване на регистрации автоматично ви подканят да запазите новите регистрации в трезора при първото ви вписване в тях."
   },
+  "addLoginNotificationDescAlt": {
+    "message": "Питане за добавяне на елемент, ако такъв не бъде намерен в трезора. Прилага се за всички регистрации, в които сте вписан(а)."
+  },
   "showCardsCurrentTab": {
     "message": "Показване на карти в страницата с разделите"
   },
@@ -651,6 +654,15 @@
   "changedPasswordNotificationDesc": {
     "message": "Питане за обновяване на паролата към даден запис, когато бъде засечена промяна в съответния уеб сайт."
   },
+  "changedPasswordNotificationDescAlt": {
+    "message": "Питане за обновяване на паролата за дадена регистрация, ако бъде засечена промяна в съответния уеб сайт. Прилага се за всички регистрации, в които сте вписан(а)."
+  },
+  "enableUsePasskeys": {
+    "message": "Питане за запазване и ползване на секретни ключове"
+  },
+  "usePasskeysDesc": {
+    "message": "Питане за запазване на нови секретни ключове или за вписване чрез секретни ключове, пазени в трезора. Прилага се за всички регистрации, в които сте вписан(а)."
+  },
   "notificationChangeDesc": {
     "message": "Да се обнови ли паролата в Bitwarden?"
   },
@@ -669,6 +681,9 @@
   "contextMenuItemDesc": {
     "message": "Щракване с десния бутон на мишката дава достъп до генератора на пароли и съответстващите за уеб сайта записи. "
   },
+  "contextMenuItemDescAlt": {
+    "message": "Щракване с десния бутон на мишката дава достъп до генератора на пароли и съответстващите за уеб сайта записи. Прилага се за всички регистрации, в които сте вписан(а)."
+  },
   "defaultUriMatchDetection": {
     "message": "Стандартно засичане на адреси",
     "description": "Default URI match detection for auto-fill."
@@ -681,6 +696,9 @@
   },
   "themeDesc": {
     "message": "Промяна на цветовия облик на програмата."
+  },
+  "themeDescAlt": {
+    "message": "Промяна на цветовата тема на приложението. Прилага се за всички регистрации, в които сте вписан(а)."
   },
   "dark": {
     "message": "Тъмен",
@@ -1002,6 +1020,25 @@
   "environmentSaved": {
     "message": "Средата с адресите е запазена."
   },
+  "showAutoFillMenuOnFormFields": {
+    "message": "Показване на меню за авт. попълване при полетата на формулярите",
+    "description": "Represents the message for allowing the user to enable the auto-fill overlay"
+  },
+  "showAutoFillMenuOnFormFieldsDescAlt": {
+    "message": "Прилага се за всички регистрации, в които сте вписан(а)."
+  },
+  "autofillOverlayVisibilityOff": {
+    "message": "Изключено",
+    "description": "Overlay setting select option for disabling autofill overlay"
+  },
+  "autofillOverlayVisibilityOnFieldFocus": {
+    "message": "Когато полето бъде избрано (на фокус)",
+    "description": "Overlay appearance select option for showing the field on focus of the input element"
+  },
+  "autofillOverlayVisibilityOnButtonClick": {
+    "message": "Когато бъде избрана иконката за авт. попълване",
+    "description": "Overlay appearance select option for showing the field on click of the overlay icon"
+  },
   "enableAutoFillOnPageLoad": {
     "message": "Включване на автоматичното попълване"
   },
@@ -1252,9 +1289,6 @@
   },
   "typeIdentity": {
     "message": "Самоличност"
-  },
-  "typePasskey": {
-    "message": "Секретен ключ"
   },
   "passwordHistory": {
     "message": "Хронология на паролата"
@@ -1664,6 +1698,9 @@
   },
   "excludedDomainsDesc": {
     "message": "Битуорден няма да пита дали да запазва данните за вход в тези сайтове. За да влезе правилото в сила, презаредете страницата."
+  },
+  "excludedDomainsDescAlt": {
+    "message": "Битуорден няма да пита дали да запазва данните за вход в тези сайтове за всички регистрации, в които сте вписан(а). За да влезе правилото в сила, презаредете страницата."
   },
   "excludedDomainsInvalidDomain": {
     "message": "$DOMAIN$ не е валиден домейн",
@@ -2134,7 +2171,7 @@
     "message": "Трета страна"
   },
   "thirdPartyServerMessage": {
-    "message": "Connected to third-party server implementation, $SERVERNAME$. Please verify bugs using the official server, or report them to the third-party server.",
+    "message": "Свързан(а) сте със сървърна имплементация от трета страна — $SERVERNAME$. Ако се сблъскате с проблем, може да проверите официалния сървър, или да го докладвате в сървъра на третата страна.",
     "placeholders": {
       "servername": {
         "content": "$1",
@@ -2457,6 +2494,80 @@
     "message": "Изключете повторното въвеждане на главната парола, за да редактирате това поле",
     "description": "Message appearing below the autofill on load message when master password reprompt is set for a vault item."
   },
+  "bitwardenOverlayButton": {
+    "message": "Бутон на менюто за авт. попълване на Битуорден",
+    "description": "Page title for the iframe containing the overlay button"
+  },
+  "toggleBitwardenVaultOverlay": {
+    "message": "Превключване на менюто за авт. попълване на Битуорден",
+    "description": "Screen reader and tool tip label for the overlay button"
+  },
+  "bitwardenVault": {
+    "message": "Меню за авт. попълване на Битуорден",
+    "description": "Page title in overlay"
+  },
+  "unlockYourAccountToViewMatchingLogins": {
+    "message": "Отключете регистрацията си, за да видите съвпадащите записи за вписване",
+    "description": "Text to display in overlay when the account is locked."
+  },
+  "unlockAccount": {
+    "message": "Отключване на регистрацията",
+    "description": "Button text to display in overlay when the account is locked."
+  },
+  "fillCredentialsFor": {
+    "message": "Попълване на данните за",
+    "description": "Screen reader text for when overlay item is in focused"
+  },
+  "partialUsername": {
+    "message": "Частично потребителско име",
+    "description": "Screen reader text for when a login item is focused where a partial username is displayed. SR will announce this phrase before reading the text of the partial username"
+  },
+  "noItemsToShow": {
+    "message": "Няма елементи за показване",
+    "description": "Text to show in overlay if there are no matching items"
+  },
+  "newItem": {
+    "message": "Нов елемент",
+    "description": "Button text to display in overlay when there are no matching items"
+  },
+  "addNewVaultItem": {
+    "message": "Добавяне на нов елемент в трезора",
+    "description": "Screen reader text (aria-label) for new item button in overlay"
+  },
+  "bitwardenOverlayMenuAvailable": {
+    "message": "Има налично меню за авт. попълване на Битуорден. Натиснете стрелката надолу, за да го изберете.",
+    "description": "Screen reader text for announcing when the overlay opens on the page"
+  },
+  "overrideBrowserAutofillTitle": {
+    "message": "Замяна на автоматичното попълване на браузъра?",
+    "description": "Dialog title facilitating the ability to override a chrome browser's default autofill behavior"
+  },
+  "overrideBrowserAutofillDescription": {
+    "message": "Ако оставите тази настройка изключена, може да има конфликт между менюто за автоматично попълване на Битуорден и това на браузъра.",
+    "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
+  },
+  "overrideBrowserAutofillPrivacyRequiredDescription": {
+    "message": "Ако оставите тази настройка изключена, може да има конфликт между менюто за автоматично попълване на Битуорден и това на браузъра. Ако я включите, разширението на Битуорден ще трябва да бъде рестартирано.",
+    "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
+  },
+  "turnOn": {
+    "message": "Включване"
+  },
+  "ignore": {
+    "message": "Пренебрегване"
+  },
+  "overrideBrowserAutoFillSettings": {
+    "message": "Настройки за замяна на автоматичното попълване на браузъра",
+    "description": "Label for the setting that allows overriding the default browser autofill settings"
+  },
+  "extensionPrivacyPermissionNotGrantedTitle": {
+    "message": "Автоматичното попълване на браузъра не може да бъде заменено",
+    "description": "Title for the dialog that appears when the user has not granted the extension permission to set privacy settings"
+  },
+  "extensionPrivacyPermissionNotGrantedDescription": {
+    "message": "Битуорден трябва да има разрешение за достъп до поверителността на разширението, за да може да замени настройките за автоматично попълване на браузъра.",
+    "description": "Description for the dialog that appears when the user has not granted the extension permission to set privacy settings"
+  },
   "importData": {
     "message": "Внасяне на данни",
     "description": "Used for the header of the import dialog, the import button and within the file-password-prompt"
@@ -2602,7 +2713,7 @@
     "message": "Изберете елемент, в който да запазите този секретен ключ"
   },
   "passkeyItem": {
-    "message": "Passkey Item"
+    "message": "Секретен ключ"
   },
   "overwritePasskey": {
     "message": "Да се замени ли секретният ключ?"

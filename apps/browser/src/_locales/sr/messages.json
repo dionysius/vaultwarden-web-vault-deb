@@ -619,6 +619,9 @@
   "addLoginNotificationDesc": {
     "message": "„Нотификације Додај Лозинку“ аутоматски тражи да сачувате нове пријаве у сефу кад год се први пут пријавите на њих."
   },
+  "addLoginNotificationDescAlt": {
+    "message": "Затражите да додате ставку ако она није пронађена у вашем сефу. Односи се на све пријављене налоге."
+  },
   "showCardsCurrentTab": {
     "message": "Прикажи кредитне картице на страници картице"
   },
@@ -651,6 +654,15 @@
   "changedPasswordNotificationDesc": {
     "message": "Прикажи потврду за ажурирање тренутне лозинке за пријаву када се промена препозна на Web страници."
   },
+  "changedPasswordNotificationDescAlt": {
+    "message": "Затражите ажурирање лозинке за пријаву када се открије промена на веб локацији. Односи се на све пријављене налоге."
+  },
+  "enableUsePasskeys": {
+    "message": "Затражите за сачувавање и коришћење приступне кључеве"
+  },
+  "usePasskeysDesc": {
+    "message": "Затражите да сачувате нове приступне кључеве или се пријавите са приступним кључевима ускладиштеним у вашем сефу. Односи се на све пријављене налоге."
+  },
   "notificationChangeDesc": {
     "message": "Да ли желите да ажурирате ову лозинку за Bitwarden?"
   },
@@ -669,6 +681,9 @@
   "contextMenuItemDesc": {
     "message": "Користите други клик за приступање генерисању лозинки и пријавама за тренутну web страницу. "
   },
+  "contextMenuItemDescAlt": {
+    "message": "Користите други клик за приступање генерисању лозинки и пријавама за тренутну web страницу. Односи се на све пријављене налоге."
+  },
   "defaultUriMatchDetection": {
     "message": "Стандардно налажење УРЛ",
     "description": "Default URI match detection for auto-fill."
@@ -681,6 +696,9 @@
   },
   "themeDesc": {
     "message": "Промени боје апликације"
+  },
+  "themeDescAlt": {
+    "message": "Промените тему боје апликације. Односи се на све пријављене налоге."
   },
   "dark": {
     "message": "Тамна",
@@ -1002,6 +1020,25 @@
   "environmentSaved": {
     "message": "УРЛ адресе окружења су сачуване."
   },
+  "showAutoFillMenuOnFormFields": {
+    "message": "Прикажи мени за ауто-попуњавање на пољима обрасца",
+    "description": "Represents the message for allowing the user to enable the auto-fill overlay"
+  },
+  "showAutoFillMenuOnFormFieldsDescAlt": {
+    "message": "Односи се на све пријављене налоге."
+  },
+  "autofillOverlayVisibilityOff": {
+    "message": "Искључено",
+    "description": "Overlay setting select option for disabling autofill overlay"
+  },
+  "autofillOverlayVisibilityOnFieldFocus": {
+    "message": "Када је поље изабрано (у фокусу)",
+    "description": "Overlay appearance select option for showing the field on focus of the input element"
+  },
+  "autofillOverlayVisibilityOnButtonClick": {
+    "message": "Када је изабрана икона ауто-попуњавања",
+    "description": "Overlay appearance select option for showing the field on click of the overlay icon"
+  },
   "enableAutoFillOnPageLoad": {
     "message": "Омогући аутоматско попуњавање након учитавања странице"
   },
@@ -1252,9 +1289,6 @@
   },
   "typeIdentity": {
     "message": "Идентитет"
-  },
-  "typePasskey": {
-    "message": "Приступачни кључ"
   },
   "passwordHistory": {
     "message": "Историја Лозинке"
@@ -1664,6 +1698,9 @@
   },
   "excludedDomainsDesc": {
     "message": "Bitwarden неће тражити да сачува податке за пријављивање за ове домене. Морате освежити страницу да би промене ступиле на снагу."
+  },
+  "excludedDomainsDescAlt": {
+    "message": "Bitwarden неће тражити да сачува податке за пријављивање за ове домене за све пријављене налоге. Морате освежити страницу да би промене ступиле на снагу."
   },
   "excludedDomainsInvalidDomain": {
     "message": "$DOMAIN$ није важећи домен",
@@ -2456,6 +2493,80 @@
   "turnOffMasterPasswordPromptToEditField": {
     "message": "Искључите поновни упит главне лозинке да бисте уредили ово поље",
     "description": "Message appearing below the autofill on load message when master password reprompt is set for a vault item."
+  },
+  "bitwardenOverlayButton": {
+    "message": "Bitwarden мени дугмета ауто-попуњавања",
+    "description": "Page title for the iframe containing the overlay button"
+  },
+  "toggleBitwardenVaultOverlay": {
+    "message": "Пребаци мени ауто-попуњавања Bitwarden-а",
+    "description": "Screen reader and tool tip label for the overlay button"
+  },
+  "bitwardenVault": {
+    "message": "Bitwarden мени ауто-попуњавања",
+    "description": "Page title in overlay"
+  },
+  "unlockYourAccountToViewMatchingLogins": {
+    "message": "Откључајте налог да бисте видели подударне пријаве",
+    "description": "Text to display in overlay when the account is locked."
+  },
+  "unlockAccount": {
+    "message": "Откључај налог",
+    "description": "Button text to display in overlay when the account is locked."
+  },
+  "fillCredentialsFor": {
+    "message": "Попунити акредитиве за",
+    "description": "Screen reader text for when overlay item is in focused"
+  },
+  "partialUsername": {
+    "message": "Делимично корисничко име",
+    "description": "Screen reader text for when a login item is focused where a partial username is displayed. SR will announce this phrase before reading the text of the partial username"
+  },
+  "noItemsToShow": {
+    "message": "Нема ставки за приказивање",
+    "description": "Text to show in overlay if there are no matching items"
+  },
+  "newItem": {
+    "message": "Нова ставке",
+    "description": "Button text to display in overlay when there are no matching items"
+  },
+  "addNewVaultItem": {
+    "message": "Додајте нову ставку сефу",
+    "description": "Screen reader text (aria-label) for new item button in overlay"
+  },
+  "bitwardenOverlayMenuAvailable": {
+    "message": "Мени ауто-попуњавања Bitwarden-а је доступан. Притисните тастер са стрелицом надоле да бисте изабрали.",
+    "description": "Screen reader text for announcing when the overlay opens on the page"
+  },
+  "overrideBrowserAutofillTitle": {
+    "message": "Заменити ауто-попуњавање прегледача?",
+    "description": "Dialog title facilitating the ability to override a chrome browser's default autofill behavior"
+  },
+  "overrideBrowserAutofillDescription": {
+    "message": "Ако ову поставку оставите искљученом, може доћи до сукоба између Bitwarden менија ауто-попуњавања и вашег претраживача.",
+    "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
+  },
+  "overrideBrowserAutofillPrivacyRequiredDescription": {
+    "message": "Ако ову поставку оставите искљученом, може доћи до сукоба између Битварден менија аутоматског попуњавања и вашег претраживача. Ако упалите, то ће поново покренути Bitwarden додатак.",
+    "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
+  },
+  "turnOn": {
+    "message": "Укључи"
+  },
+  "ignore": {
+    "message": "Игнориши"
+  },
+  "overrideBrowserAutoFillSettings": {
+    "message": "Заменити ауто-попуњавање прегледача",
+    "description": "Label for the setting that allows overriding the default browser autofill settings"
+  },
+  "extensionPrivacyPermissionNotGrantedTitle": {
+    "message": "Није могуће заменити ауто-попуњавање прегледача",
+    "description": "Title for the dialog that appears when the user has not granted the extension permission to set privacy settings"
+  },
+  "extensionPrivacyPermissionNotGrantedDescription": {
+    "message": "Bitwarden мора имати приступ дозволи приватности екстензије да би заменио подешавања ауто-попуњавања прегледача.",
+    "description": "Description for the dialog that appears when the user has not granted the extension permission to set privacy settings"
   },
   "importData": {
     "message": "Увези податке",
