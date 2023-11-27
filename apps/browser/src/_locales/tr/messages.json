@@ -658,10 +658,10 @@
     "message": "Bir web sitesinde bir değişiklik tespit edildiğinde oturum açma şifresinin güncellenmesini isteyin. Oturum açmış tüm hesaplar için geçerlidir."
   },
   "enableUsePasskeys": {
-    "message": "Ask to save and use passkeys"
+    "message": "Geçiş anahtarlarını kaydet ve kullan"
   },
   "usePasskeysDesc": {
-    "message": "Ask to save new passkeys or log in with passkeys stored in your vault. Applies to all logged in accounts."
+    "message": "Yeni geçiş anahtarlarını kaydetmek ve kasanızda saklanan geçiş anahtarlarıyla giriş yapmak için sor. Giriş yapmış tüm hesaplar için geçerlidir."
   },
   "notificationChangeDesc": {
     "message": "Bu parolayı Bitwarden'da güncellemek ister misiniz?"
@@ -2264,7 +2264,7 @@
     "message": "Otomatik doldurma nasıl yapılır?"
   },
   "autofillSelectInfoWithCommand": {
-    "message": "Bu sayfadan bir kayıt seçin veya $COMMAND$ kısayolunu kullanın.",
+    "message": "Select an item from this screen, use the shortcut $COMMAND$, or explore other options in settings.",
     "placeholders": {
       "command": {
         "content": "$1",
@@ -2273,7 +2273,7 @@
     }
   },
   "autofillSelectInfoWithoutCommand": {
-    "message": "Bu sayfadan bir kayıt seçin veya ayarlardan bir kısayol ayarlayın."
+    "message": "Select an item from this screen, or explore other options in settings."
   },
   "gotIt": {
     "message": "Anladım"

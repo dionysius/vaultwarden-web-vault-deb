@@ -2264,7 +2264,7 @@
     "message": "自動入力する方法"
   },
   "autofillSelectInfoWithCommand": {
-    "message": "このページからアイテムを選択するか、ショートカットを使用してください: $COMMAND$",
+    "message": "Select an item from this screen, use the shortcut $COMMAND$, or explore other options in settings.",
     "placeholders": {
       "command": {
         "content": "$1",
@@ -2273,7 +2273,7 @@
     }
   },
   "autofillSelectInfoWithoutCommand": {
-    "message": "このページからアイテムを選択するか、設定でショートカットを設定してください。"
+    "message": "Select an item from this screen, or explore other options in settings."
   },
   "gotIt": {
     "message": "了解"

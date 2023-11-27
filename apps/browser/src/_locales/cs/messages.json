@@ -658,10 +658,10 @@
     "message": "Vyžádá aktualizaci hesla k přihlášení, pokud je na webu zjištěna změna. Platí pro všechny přihlášené účty."
   },
   "enableUsePasskeys": {
-    "message": "Ask to save and use passkeys"
+    "message": "Zeptat se na uložení a použití přístupových hesel"
   },
   "usePasskeysDesc": {
-    "message": "Ask to save new passkeys or log in with passkeys stored in your vault. Applies to all logged in accounts."
+    "message": "Zeptá se na uložení nového hesla nebo se přihlásí pomocí přístupových hesel uložených ve Vašem trezoru. Platí pro všechny přihlášené účty."
   },
   "notificationChangeDesc": {
     "message": "Chcete aktualizovat toto heslo v Bitwardenu?"
@@ -2264,7 +2264,7 @@
     "message": "Jak na automatické vyplňování"
   },
   "autofillSelectInfoWithCommand": {
-    "message": "Vyberte položku z této stránky nebo použijte zkratku: $COMMAND$",
+    "message": "Select an item from this screen, use the shortcut $COMMAND$, or explore other options in settings.",
     "placeholders": {
       "command": {
         "content": "$1",
@@ -2273,7 +2273,7 @@
     }
   },
   "autofillSelectInfoWithoutCommand": {
-    "message": "Vyberte položku z této stránky nebo nastavte zkratku v nastavení."
+    "message": "Select an item from this screen, or explore other options in settings."
   },
   "gotIt": {
     "message": "Rozumím"

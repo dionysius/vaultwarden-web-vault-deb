@@ -2264,7 +2264,7 @@
     "message": "Hur du fyller i automatiskt"
   },
   "autofillSelectInfoWithCommand": {
-    "message": "Välj ett objekt från denna sida eller använd genvägen: $COMMAND$",
+    "message": "Select an item from this screen, use the shortcut $COMMAND$, or explore other options in settings.",
     "placeholders": {
       "command": {
         "content": "$1",
@@ -2273,7 +2273,7 @@
     }
   },
   "autofillSelectInfoWithoutCommand": {
-    "message": "Välj ett objekt från den här sidan eller ange en genväg i inställningarna."
+    "message": "Select an item from this screen, or explore other options in settings."
   },
   "gotIt": {
     "message": "Förstått"
@@ -2527,11 +2527,11 @@
     "description": "Text to show in overlay if there are no matching items"
   },
   "newItem": {
-    "message": "New item",
+    "message": "Nytt objekt",
     "description": "Button text to display in overlay when there are no matching items"
   },
   "addNewVaultItem": {
-    "message": "Add new vault item",
+    "message": "Lägg till nytt valvobjekt",
     "description": "Screen reader text (aria-label) for new item button in overlay"
   },
   "bitwardenOverlayMenuAvailable": {
@@ -2554,7 +2554,7 @@
     "message": "Turn on"
   },
   "ignore": {
-    "message": "Ignore"
+    "message": "Ignorera"
   },
   "overrideBrowserAutoFillSettings": {
     "message": "Override browser auto-fill settings",

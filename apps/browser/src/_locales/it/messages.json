@@ -2264,7 +2264,7 @@
     "message": "Come riempire automaticamente"
   },
   "autofillSelectInfoWithCommand": {
-    "message": "Seleziona un elemento da questa pagina o usa la scorciatoia: $COMMAND$",
+    "message": "Select an item from this screen, use the shortcut $COMMAND$, or explore other options in settings.",
     "placeholders": {
       "command": {
         "content": "$1",
@@ -2273,7 +2273,7 @@
     }
   },
   "autofillSelectInfoWithoutCommand": {
-    "message": "Seleziona un elemento da questa pagina o imposta una scorciatoia nelle impostazioni."
+    "message": "Select an item from this screen, or explore other options in settings."
   },
   "gotIt": {
     "message": "Ok"

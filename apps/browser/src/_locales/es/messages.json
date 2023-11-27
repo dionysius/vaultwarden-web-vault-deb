@@ -2264,7 +2264,7 @@
     "message": "Cómo autorellenar"
   },
   "autofillSelectInfoWithCommand": {
-    "message": "Seleccione un elemento de esta página o utilice el acceso directo: $COMMAND$",
+    "message": "Select an item from this screen, use the shortcut $COMMAND$, or explore other options in settings.",
     "placeholders": {
       "command": {
         "content": "$1",
@@ -2273,7 +2273,7 @@
     }
   },
   "autofillSelectInfoWithoutCommand": {
-    "message": "Seleccione un elemento de esta página o establezca un acceso directo en los ajustes."
+    "message": "Select an item from this screen, or explore other options in settings."
   },
   "gotIt": {
     "message": "Entendido"

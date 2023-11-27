@@ -2264,7 +2264,7 @@
     "message": "Sut i lenwi'n awtomatig"
   },
   "autofillSelectInfoWithCommand": {
-    "message": "Dewiswch eitem o'r dudalen hon neu ddefnyddio'r llwybr byr: $COMMAND$",
+    "message": "Select an item from this screen, use the shortcut $COMMAND$, or explore other options in settings.",
     "placeholders": {
       "command": {
         "content": "$1",

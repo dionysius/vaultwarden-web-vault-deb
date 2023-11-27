@@ -658,7 +658,7 @@
     "message": "Ask to update a login's password when a change is detected on a website. Applies to all logged in accounts."
   },
   "enableUsePasskeys": {
-    "message": "Ask to save and use passkeys"
+    "message": "Demander à enregistrer et utiliser les mots de passe"
   },
   "usePasskeysDesc": {
     "message": "Ask to save new passkeys or log in with passkeys stored in your vault. Applies to all logged in accounts."
@@ -1025,7 +1025,7 @@
     "description": "Represents the message for allowing the user to enable the auto-fill overlay"
   },
   "showAutoFillMenuOnFormFieldsDescAlt": {
-    "message": "Applies to all logged in accounts."
+    "message": "Appliquer à tous les comptes connectés."
   },
   "autofillOverlayVisibilityOff": {
     "message": "Off",
@@ -2264,7 +2264,7 @@
     "message": "Comment saisir automatiquement"
   },
   "autofillSelectInfoWithCommand": {
-    "message": "Sélectionnez un élément depuis cette page ou utilisez le raccourci : $COMMAND$",
+    "message": "Select an item from this screen, use the shortcut $COMMAND$, or explore other options in settings.",
     "placeholders": {
       "command": {
         "content": "$1",
@@ -2273,7 +2273,7 @@
     }
   },
   "autofillSelectInfoWithoutCommand": {
-    "message": "Sélectionnez un élément depuis cette page ou définissez un raccourci dans les paramètres."
+    "message": "Select an item from this screen, or explore other options in settings."
   },
   "gotIt": {
     "message": "Compris"
@@ -2511,11 +2511,11 @@
     "description": "Text to display in overlay when the account is locked."
   },
   "unlockAccount": {
-    "message": "Unlock account",
+    "message": "Déverrouiller le compte",
     "description": "Button text to display in overlay when the account is locked."
   },
   "fillCredentialsFor": {
-    "message": "Fill credentials for",
+    "message": "Remplir les identifiants pour",
     "description": "Screen reader text for when overlay item is in focused"
   },
   "partialUsername": {
@@ -2523,11 +2523,11 @@
     "description": "Screen reader text for when a login item is focused where a partial username is displayed. SR will announce this phrase before reading the text of the partial username"
   },
   "noItemsToShow": {
-    "message": "No items to show",
+    "message": "Aucun élément à afficher",
     "description": "Text to show in overlay if there are no matching items"
   },
   "newItem": {
-    "message": "New item",
+    "message": "Nouvel élément",
     "description": "Button text to display in overlay when there are no matching items"
   },
   "addNewVaultItem": {
@@ -2551,10 +2551,10 @@
     "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
   },
   "turnOn": {
-    "message": "Turn on"
+    "message": "Activer"
   },
   "ignore": {
-    "message": "Ignore"
+    "message": "Ignorer"
   },
   "overrideBrowserAutoFillSettings": {
     "message": "Override browser auto-fill settings",
@@ -2573,7 +2573,7 @@
     "description": "Used for the header of the import dialog, the import button and within the file-password-prompt"
   },
   "importError": {
-    "message": "Import error"
+    "message": "Erreur lors de l'importation"
   },
   "importErrorDesc": {
     "message": "Il y a eu un problème avec les données que vous avez essayé d'importer. Veuillez résoudre les erreurs listées ci-dessous dans votre fichier source et réessayer."
@@ -2585,10 +2585,10 @@
     "message": "Description"
   },
   "importSuccess": {
-    "message": "Data successfully imported"
+    "message": "Données importées avec succès"
   },
   "importSuccessNumberOfItems": {
-    "message": "A total of $AMOUNT$ items were imported.",
+    "message": "Un total de $AMOUNT$ élément(s) a été importé.",
     "placeholders": {
       "amount": {
         "content": "$1",
@@ -2609,10 +2609,10 @@
     }
   },
   "importFormatError": {
-    "message": "Data is not formatted correctly. Please check your import file and try again."
+    "message": "Les données ne sont pas formatées correctement. Veuillez vérifier votre fichier d'origine et réessayer."
   },
   "importNothingError": {
-    "message": "Nothing was imported."
+    "message": "Rien n'a été importé."
   },
   "importEncKeyError": {
     "message": "Error decrypting the exported file. Your encryption key does not match the encryption key used export the data."
@@ -2624,16 +2624,16 @@
     "message": "Import destination"
   },
   "learnAboutImportOptions": {
-    "message": "Learn about your import options"
+    "message": "En savoir plus sur vos options d'importation"
   },
   "selectImportFolder": {
-    "message": "Select a folder"
+    "message": "Choisir un dossier"
   },
   "selectImportCollection": {
-    "message": "Select a collection"
+    "message": "Sélectionner une collection"
   },
   "importTargetHint": {
-    "message": "Select this option if you want the imported file contents moved to a $DESTINATION$",
+    "message": "Sélectionnez cette option si vous voulez que le contenu du fichier importé soit déplacé vers un(e) $DESTINATION$",
     "description": "Located as a hint under the import target. Will be appended by either folder or collection, depending if the user is importing into an individual or an organizational vault.",
     "placeholders": {
       "destination": {
@@ -2652,7 +2652,7 @@
     "message": "Select the import file"
   },
   "chooseFile": {
-    "message": "Choose File"
+    "message": "Choisir le fichier"
   },
   "noFileChosen": {
     "message": "Aucun fichier choisi"

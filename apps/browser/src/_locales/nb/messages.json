@@ -2264,7 +2264,7 @@
     "message": "Hvordan bruke auto-utfylling"
   },
   "autofillSelectInfoWithCommand": {
-    "message": "Velg et element fra denne siden eller bruk snarveien: $COMMAND$",
+    "message": "Select an item from this screen, use the shortcut $COMMAND$, or explore other options in settings.",
     "placeholders": {
       "command": {
         "content": "$1",
@@ -2273,7 +2273,7 @@
     }
   },
   "autofillSelectInfoWithoutCommand": {
-    "message": "Velg et element fra denne siden eller angi en snarvei i innstillingene."
+    "message": "Select an item from this screen, or explore other options in settings."
   },
   "gotIt": {
     "message": "Skjønner"

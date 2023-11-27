@@ -2264,7 +2264,7 @@
     "message": "Jak autouzupełniać"
   },
   "autofillSelectInfoWithCommand": {
-    "message": "Wybierz element z tej strony lub użyj skrótu: $COMMAND$",
+    "message": "Select an item from this screen, use the shortcut $COMMAND$, or explore other options in settings.",
     "placeholders": {
       "command": {
         "content": "$1",
@@ -2273,7 +2273,7 @@
     }
   },
   "autofillSelectInfoWithoutCommand": {
-    "message": "Wybierz element z tej strony lub ustaw skrót w ustawieniach."
+    "message": "Select an item from this screen, or explore other options in settings."
   },
   "gotIt": {
     "message": "Rozumiem"

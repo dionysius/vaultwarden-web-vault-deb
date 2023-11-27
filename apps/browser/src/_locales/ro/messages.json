@@ -2264,7 +2264,7 @@
     "message": "Instrucțiuni de auto-completare"
   },
   "autofillSelectInfoWithCommand": {
-    "message": "Selectați un element din această pagină sau utilizați comanda rapidă: $COMMAND$",
+    "message": "Select an item from this screen, use the shortcut $COMMAND$, or explore other options in settings.",
     "placeholders": {
       "command": {
         "content": "$1",
@@ -2273,7 +2273,7 @@
     }
   },
   "autofillSelectInfoWithoutCommand": {
-    "message": "Selectați un element din această pagină sau setați o comandă rapidă în setări."
+    "message": "Select an item from this screen, or explore other options in settings."
   },
   "gotIt": {
     "message": "Am înțeles"

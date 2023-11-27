@@ -2264,7 +2264,7 @@
     "message": "Kuidas automaatselt täita"
   },
   "autofillSelectInfoWithCommand": {
-    "message": "Vali sellele lehelt kirje või kasuta otseteed: $COMMAND$",
+    "message": "Select an item from this screen, use the shortcut $COMMAND$, or explore other options in settings.",
     "placeholders": {
       "command": {
         "content": "$1",
@@ -2273,7 +2273,7 @@
     }
   },
   "autofillSelectInfoWithoutCommand": {
-    "message": "Vali sellelt lehelt kirje või määra seadetes otsetee."
+    "message": "Select an item from this screen, or explore other options in settings."
   },
   "gotIt": {
     "message": "Selge"

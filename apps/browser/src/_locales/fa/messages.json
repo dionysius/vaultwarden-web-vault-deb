@@ -2264,7 +2264,7 @@
     "message": "نحوه پر کردن خودکار"
   },
   "autofillSelectInfoWithCommand": {
-    "message": "یک مورد را از این صفحه انتخاب کنید یا از میانبر استفاده کنید: $COMMAND$",
+    "message": "Select an item from this screen, use the shortcut $COMMAND$, or explore other options in settings.",
     "placeholders": {
       "command": {
         "content": "$1",
@@ -2273,7 +2273,7 @@
     }
   },
   "autofillSelectInfoWithoutCommand": {
-    "message": "یک مورد را از این صفحه انتخاب کنید یا یک میانبر در تنظیمات تنظیم کنید."
+    "message": "Select an item from this screen, or explore other options in settings."
   },
   "gotIt": {
     "message": "متوجه شدم"

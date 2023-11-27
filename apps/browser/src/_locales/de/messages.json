@@ -682,7 +682,7 @@
     "message": "Greife über einen Rechtsklick auf die Erstellung von Passwörtern und passende Zugangsdaten für die Website zu."
   },
   "contextMenuItemDescAlt": {
-    "message": "Use a secondary click to access password generation and matching logins for the website. Applies to all logged in accounts."
+    "message": "Verwende einen Rechtsklick, um auf die Passwortgenerierung und die passenden Zugangsdaten für die Website zuzugreifen. Gilt für alle angemeldeten Konten."
   },
   "defaultUriMatchDetection": {
     "message": "Standard URI-Übereinstimmungserkennung",
@@ -698,7 +698,7 @@
     "message": "Ändere das Farbschema der Anwendung."
   },
   "themeDescAlt": {
-    "message": "Change the application's color theme. Applies to all logged in accounts."
+    "message": "Ändere das Farbschema der Anwendung. Gilt für alle angemeldeten Konten."
   },
   "dark": {
     "message": "Dunkel",
@@ -1021,7 +1021,7 @@
     "message": "URLs der Umgebung gespeichert"
   },
   "showAutoFillMenuOnFormFields": {
-    "message": "Show auto-fill menu on form fields",
+    "message": "Auto-Ausfüllen Menü in Formularfeldern anzeigen",
     "description": "Represents the message for allowing the user to enable the auto-fill overlay"
   },
   "showAutoFillMenuOnFormFieldsDescAlt": {
@@ -1032,11 +1032,11 @@
     "description": "Overlay setting select option for disabling autofill overlay"
   },
   "autofillOverlayVisibilityOnFieldFocus": {
-    "message": "When field is selected (on focus)",
+    "message": "Wenn Feld ausgewählt ist (im Fokus)",
     "description": "Overlay appearance select option for showing the field on focus of the input element"
   },
   "autofillOverlayVisibilityOnButtonClick": {
-    "message": "When auto-fill icon is selected",
+    "message": "Wenn das Auto-Ausfüllen Symbol ausgewählt ist",
     "description": "Overlay appearance select option for showing the field on click of the overlay icon"
   },
   "enableAutoFillOnPageLoad": {
@@ -1963,11 +1963,11 @@
     "message": "Ordner auswählen..."
   },
   "orgPermissionsUpdatedMustSetPassword": {
-    "message": "Your organization permissions were updated, requiring you to set a master password.",
+    "message": "Deine Organisationsberechtigungen wurden aktualisiert und verlangen, dass du ein Master-Passwort festlegen musst.",
     "description": "Used as a card title description on the set password page to explain why the user is there"
   },
   "orgRequiresYouToSetPassword": {
-    "message": "Your organization requires you to set a master password.",
+    "message": "Deine Organisation verlangt, dass du ein Master-Passwort festlegen musst.",
     "description": "Used as a card title description on the set password page to explain why the user is there"
   },
   "hours": {
@@ -2264,7 +2264,7 @@
     "message": "So funktioniert Auto-Ausfüllen"
   },
   "autofillSelectInfoWithCommand": {
-    "message": "Wähle einen Eintrag von dieser Seite aus oder verwende das Tastaturkürzel: $COMMAND$",
+    "message": "Select an item from this screen, use the shortcut $COMMAND$, or explore other options in settings.",
     "placeholders": {
       "command": {
         "content": "$1",
@@ -2273,7 +2273,7 @@
     }
   },
   "autofillSelectInfoWithoutCommand": {
-    "message": "Wähle einen Eintrag von dieser Seite aus oder lege ein Tastaturkürzel in den Einstellungen fest."
+    "message": "Select an item from this screen, or explore other options in settings."
   },
   "gotIt": {
     "message": "Verstanden"
@@ -2507,7 +2507,7 @@
     "description": "Page title in overlay"
   },
   "unlockYourAccountToViewMatchingLogins": {
-    "message": "Unlock your account to view matching logins",
+    "message": "Entsperre dein Konto, um passende Zugangsdaten anzuzeigen",
     "description": "Text to display in overlay when the account is locked."
   },
   "unlockAccount": {
@@ -2519,7 +2519,7 @@
     "description": "Screen reader text for when overlay item is in focused"
   },
   "partialUsername": {
-    "message": "Partial username",
+    "message": "Teil-Benutzername",
     "description": "Screen reader text for when a login item is focused where a partial username is displayed. SR will announce this phrase before reading the text of the partial username"
   },
   "noItemsToShow": {
@@ -2535,19 +2535,19 @@
     "description": "Screen reader text (aria-label) for new item button in overlay"
   },
   "bitwardenOverlayMenuAvailable": {
-    "message": "Bitwarden auto-fill menu available. Press the down arrow key to select.",
+    "message": "Bitwarden Auto-Ausfüllen Menü verfügbar. Drücke die Pfeiltaste nach unten zum Auswählen.",
     "description": "Screen reader text for announcing when the overlay opens on the page"
   },
   "overrideBrowserAutofillTitle": {
-    "message": "Override browser auto-fill?",
+    "message": "Auto-Ausfüllen Funktion des Browsers überschreiben?",
     "description": "Dialog title facilitating the ability to override a chrome browser's default autofill behavior"
   },
   "overrideBrowserAutofillDescription": {
-    "message": "Leaving this setting off may cause conflicts between the Bitwarden auto-fill menu and your browser’s.",
+    "message": "Wenn du diese Einstellung deaktivierst, kann dies zu Konflikten zwischen dem Bitwarden Auto-Ausfüllen Menü und dem des Browsers führen.",
     "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
   },
   "overrideBrowserAutofillPrivacyRequiredDescription": {
-    "message": "Leaving this setting off may cause conflicts between the Bitwarden auto-fill menu and your browser’s. Turning this on will restart the Bitwarden extension.",
+    "message": "Wenn du diese Einstellung deaktivierst, kann es zu Konflikten zwischen dem Bitwarden Auto-Ausfüllen Menü und dem des Browsers kommen. Wenn du diese Einstellung aktivierst, wird die Bitwarden-Erweiterung neu gestartet.",
     "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
   },
   "turnOn": {
@@ -2557,15 +2557,15 @@
     "message": "Ignorieren"
   },
   "overrideBrowserAutoFillSettings": {
-    "message": "Override browser auto-fill settings",
+    "message": "Auto-Ausfüllen Einstellungen des Browsers überschreiben",
     "description": "Label for the setting that allows overriding the default browser autofill settings"
   },
   "extensionPrivacyPermissionNotGrantedTitle": {
-    "message": "Unable to override browser auto-fill",
+    "message": "Konnte Auto-Ausfüllen Einstellungen des Browsers nicht überschreiben",
     "description": "Title for the dialog that appears when the user has not granted the extension permission to set privacy settings"
   },
   "extensionPrivacyPermissionNotGrantedDescription": {
-    "message": "Bitwarden must have access to the extension's privacy permission to override browser auto-fill settings.",
+    "message": "Bitwarden muss Zugriff auf die Datenschutz-Berechtigung der Erweiterung haben, um die Auto-Ausfüllen-Einstellungen des Browsers zu überschreiben.",
     "description": "Description for the dialog that appears when the user has not granted the extension permission to set privacy settings"
   },
   "importData": {

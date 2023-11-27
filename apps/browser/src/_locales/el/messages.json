@@ -2264,7 +2264,7 @@
     "message": "Πώς να συμπληρώσετε αυτόματα"
   },
   "autofillSelectInfoWithCommand": {
-    "message": "Επιλέξτε ένα στοιχείο από αυτή τη σελίδα ή χρησιμοποιήστε τη συντόμευση: $COMMAND$",
+    "message": "Select an item from this screen, use the shortcut $COMMAND$, or explore other options in settings.",
     "placeholders": {
       "command": {
         "content": "$1",
@@ -2273,7 +2273,7 @@
     }
   },
   "autofillSelectInfoWithoutCommand": {
-    "message": "Επιλέξτε ένα στοιχείο από αυτή τη σελίδα ή ορίστε μια συντόμευση στις ρυθμίσεις."
+    "message": "Select an item from this screen, or explore other options in settings."
   },
   "gotIt": {
     "message": "Το κατάλαβα"

@@ -2264,7 +2264,7 @@
     "message": "Miten täytetään automaattisesti"
   },
   "autofillSelectInfoWithCommand": {
-    "message": "Valitse tälle sivulle sopiva kohde tai käytä pikanäppäintä $COMMAND$.",
+    "message": "Select an item from this screen, use the shortcut $COMMAND$, or explore other options in settings.",
     "placeholders": {
       "command": {
         "content": "$1",
@@ -2273,7 +2273,7 @@
     }
   },
   "autofillSelectInfoWithoutCommand": {
-    "message": "Valitse tälle sivulle sopiva kohde tai määritä pikanäppäin asetuksista."
+    "message": "Select an item from this screen, or explore other options in settings."
   },
   "gotIt": {
     "message": "Selvä"
