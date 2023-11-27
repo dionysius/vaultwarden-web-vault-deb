@@ -53,12 +53,16 @@
   </button>
 </ng-container>
 <form
-  *ngIf="org && !loading && (showCollectionManagementSettings$ | async)"
+  *ngIf="org && !loading && (flexibleCollectionsEnabled$ | async)"
   [bitSubmit]="submitCollectionManagement"
   [formGroup]="collectionManagementFormGroup"
 >
   <h1 bitTypography="h1" class="tw-mt-16 tw-pb-2.5">{{ "collectionManagement" | i18n }}</h1>
   <p>{{ "collectionManagementDesc" | i18n }}</p>
+  <bit-form-control *ngIf="flexibleCollectionsV1Enabled$ | async">
+    <bit-label>{{ "allowAdminAccessToAllCollectionItemsDesc" | i18n }}</bit-label>
+    <input type="checkbox" bitCheckbox formControlName="allowAdminAccessToAllCollectionItems" />
+  </bit-form-control>
   <bit-form-control>
     <bit-label>{{ "limitCollectionCreationDeletionDesc" | i18n }}</bit-label>
     <input type="checkbox" bitCheckbox formControlName="limitCollectionCreationDeletion" />

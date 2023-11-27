@@ -8,6 +8,7 @@ export enum FeatureFlag {
   BrowserFilelessImport = "browser-fileless-import",
   ItemShare = "item-share",
   FlexibleCollections = "flexible-collections",
+  FlexibleCollectionsV1 = "flexible-collections-v-1", // v-1 is intentional
   BulkCollectionAccess = "bulk-collection-access",
 }
 
