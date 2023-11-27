@@ -611,6 +611,15 @@
   "loginWithMasterPassword": {
     "message": "マスターパスワードでログイン"
   },
+  "readingPasskeyLoading": {
+    "message": "パスキーを読み込み中..."
+  },
+  "readingPasskeyLoadingInfo": {
+    "message": "このウィンドウを開いたままにして、ブラウザの指示に従ってください。"
+  },
+  "useADifferentLogInMethod": {
+    "message": "別のログイン方法を使用する"
+  },
   "loginWithPasskey": {
     "message": "パスキー でログイン"
   },

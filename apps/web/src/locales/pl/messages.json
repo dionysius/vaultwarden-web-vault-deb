@@ -611,6 +611,15 @@
   "loginWithMasterPassword": {
     "message": "Logowanie hasłem głównym"
   },
+  "readingPasskeyLoading": {
+    "message": "Odczytywanie passkey..."
+  },
+  "readingPasskeyLoadingInfo": {
+    "message": "Pozostaw to okno otwarte i postępuj zgodnie z instrukcjami z przeglądarki."
+  },
+  "useADifferentLogInMethod": {
+    "message": "Użyj innej metody logowania"
+  },
   "loginWithPasskey": {
     "message": "Zaloguj się za pomocą passkey"
   },

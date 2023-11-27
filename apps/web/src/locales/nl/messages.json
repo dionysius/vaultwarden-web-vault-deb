@@ -611,14 +611,23 @@
   "loginWithMasterPassword": {
     "message": "Inloggen met je hoofdwachtwoord"
   },
+  "readingPasskeyLoading": {
+    "message": "Passkey uitlezen..."
+  },
+  "readingPasskeyLoadingInfo": {
+    "message": "Houd dit venster open en volg de aanwijzingen van je browser."
+  },
+  "useADifferentLogInMethod": {
+    "message": "Gebruik een andere loginmethode"
+  },
   "loginWithPasskey": {
     "message": "Inloggen met passkey"
   },
   "invalidPasskeyPleaseTryAgain": {
-    "message": "Ongeldige Passkey. Probeer het opnieuw."
+    "message": "Ongeldige passkey. Probeer het opnieuw."
   },
   "twoFactorForPasskeysNotSupportedOnClientUpdateToLogIn": {
-    "message": "2FA voor Passkeys is niet ondersteund. Werk de app bij om in te loggen."
+    "message": "2FA voor passkeys is niet ondersteund. Werk de app bij om in te loggen."
   },
   "loginWithPasskeyInfo": {
     "message": "Gebruik een gegenereerde passkey die je automatisch inlogt zonder wachtwoord. Biometrie, zoals gezichtsherkenning of vingerafdruk, of een andere FIDO2-beveiligingsmethode controleren je identiteit."

@@ -611,6 +611,15 @@
   "loginWithMasterPassword": {
     "message": "Войти с мастер-паролем"
   },
+  "readingPasskeyLoading": {
+    "message": "Чтение ключа доступа..."
+  },
+  "readingPasskeyLoadingInfo": {
+    "message": "Не закрывайте это окно и следуйте запросам браузера."
+  },
+  "useADifferentLogInMethod": {
+    "message": "Использовать другой способ авторизации"
+  },
   "loginWithPasskey": {
     "message": "Войти с ключом доступа"
   },
