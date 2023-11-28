@@ -136,16 +136,10 @@ jobs:
           cache-dependency-path: '**/package-lock.json'
           node-version: ${{ env._NODE_VERSION }}
 
-      - name: Install node-gyp
-        run: |
-          npm install -g node-gyp
-          node-gyp install $(node -v)
-
       - name: Print environment
         run: |
           node --version
           npm --version
-          node-gyp --version
 
       - name: Build sources for reviewers
         run: |

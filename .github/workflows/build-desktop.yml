@@ -162,11 +162,6 @@ jobs:
       - name: Set Node options
         run: echo "NODE_OPTIONS=--max_old_space_size=4096" >> $GITHUB_ENV
 
-      - name: Install node-gyp
-        run: |
-          npm install -g node-gyp
-          node-gyp install $(node -v)
-
       - name: Set up environment
         run: |
           sudo apt-get update
@@ -278,11 +273,6 @@ jobs:
 
       - name: Set Node options
         run: echo "NODE_OPTIONS=--max_old_space_size=4096" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
-
-      - name: Install node-gyp
-        run: |
-          npm install -g node-gyp
-          node-gyp install $(node -v)
 
       - name: Install AST
         run: dotnet tool install --global AzureSignTool --version 4.0.1
@@ -493,11 +483,6 @@ jobs:
       - name: Set Node options
         run: echo "NODE_OPTIONS=--max_old_space_size=4096" >> $GITHUB_ENV
 
-      - name: Install node-gyp
-        run: |
-          npm install -g node-gyp
-          node-gyp install $(node -v)
-
       - name: Rust
         shell: pwsh
         run: rustup target install aarch64-apple-darwin
@@ -645,11 +630,6 @@ jobs:
 
       - name: Set Node options
         run: echo "NODE_OPTIONS=--max_old_space_size=4096" >> $GITHUB_ENV
-
-      - name: Install node-gyp
-        run: |
-          npm install -g node-gyp
-          node-gyp install $(node -v)
 
       - name: Rust
         shell: pwsh
@@ -844,11 +824,6 @@ jobs:
       - name: Set Node options
         run: echo "NODE_OPTIONS=--max_old_space_size=4096" >> $GITHUB_ENV
 
-      - name: Install node-gyp
-        run: |
-          npm install -g node-gyp
-          node-gyp install $(node -v)
-
       - name: Rust
         shell: pwsh
         run: rustup target install aarch64-apple-darwin
@@ -1033,11 +1008,6 @@ jobs:
 
       - name: Set Node options
         run: echo "NODE_OPTIONS=--max_old_space_size=4096" >> $GITHUB_ENV
-
-      - name: Install node-gyp
-        run: |
-          npm install -g node-gyp
-          node-gyp install $(node -v)
 
       - name: Print environment
         run: |
