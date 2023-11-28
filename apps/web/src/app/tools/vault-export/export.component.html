@@ -86,24 +86,29 @@
         <br />
 
         <ng-container *ngIf="fileEncryptionType == encryptedExportType.FileEncrypted">
-          <bit-form-field>
-            <bit-label>{{ "filePassword" | i18n }}</bit-label>
-            <input
-              bitInput
-              type="password"
-              id="filePassword"
-              formControlName="filePassword"
-              name="password"
-            />
-            <button
-              type="button"
-              bitSuffix
-              bitIconButton
-              bitPasswordInputToggle
-              [(toggled)]="showFilePassword"
-            ></button>
-            <bit-hint>{{ "exportPasswordDescription" | i18n }}</bit-hint>
-          </bit-form-field>
+          <div class="tw-mb-3">
+            <bit-form-field>
+              <bit-label>{{ "filePassword" | i18n }}</bit-label>
+              <input
+                bitInput
+                type="password"
+                id="filePassword"
+                formControlName="filePassword"
+                name="password"
+              />
+              <button
+                type="button"
+                bitSuffix
+                bitIconButton
+                bitPasswordInputToggle
+                [(toggled)]="showFilePassword"
+              ></button>
+              <bit-hint>{{ "exportPasswordDescription" | i18n }}</bit-hint>
+            </bit-form-field>
+            <app-password-strength [password]="filePassword" [showText]="true">
+            </app-password-strength>
+          </div>
+
           <bit-form-field>
             <bit-label>{{ "confirmFilePassword" | i18n }}</bit-label>
             <input
