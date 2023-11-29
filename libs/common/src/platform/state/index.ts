@@ -3,5 +3,6 @@ export { GlobalState } from "./global-state";
 export { GlobalStateProvider } from "./global-state.provider";
 export { UserState } from "./user-state";
 export { UserStateProvider } from "./user-state.provider";
+export { KeyDefinition } from "./key-definition";
 
-export * from "./key-definitions";
+export * from "./state-definitions";

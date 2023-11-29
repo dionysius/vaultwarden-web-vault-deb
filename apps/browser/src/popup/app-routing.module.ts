@@ -366,7 +366,7 @@ const routes: Routes = [
   {
     path: "account-switcher",
     component: AccountSwitcherComponent,
-    data: { state: "account-switcher" },
+    data: { state: "account-switcher", doNotSaveUrl: true },
   },
 ];
 

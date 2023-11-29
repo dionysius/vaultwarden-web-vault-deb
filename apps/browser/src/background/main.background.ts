@@ -24,6 +24,8 @@ import { TokenService as TokenServiceAbstraction } from "@bitwarden/common/auth/
 import { TwoFactorService as TwoFactorServiceAbstraction } from "@bitwarden/common/auth/abstractions/two-factor.service";
 import { UserVerificationApiServiceAbstraction } from "@bitwarden/common/auth/abstractions/user-verification/user-verification-api.service.abstraction";
 import { UserVerificationService as UserVerificationServiceAbstraction } from "@bitwarden/common/auth/abstractions/user-verification/user-verification.service.abstraction";
+import { AuthenticationStatus } from "@bitwarden/common/auth/enums/authentication-status";
+import { ForceSetPasswordReason } from "@bitwarden/common/auth/models/domain/force-set-password-reason";
 import { AccountServiceImplementation } from "@bitwarden/common/auth/services/account.service";
 import { AuthRequestCryptoServiceImplementation } from "@bitwarden/common/auth/services/auth-request-crypto.service.implementation";
 import { AuthService } from "@bitwarden/common/auth/services/auth.service";
@@ -87,6 +89,7 @@ import {
 import { SendApiService } from "@bitwarden/common/tools/send/services/send-api.service";
 import { SendApiService as SendApiServiceAbstraction } from "@bitwarden/common/tools/send/services/send-api.service.abstraction";
 import { InternalSendService as InternalSendServiceAbstraction } from "@bitwarden/common/tools/send/services/send.service.abstraction";
+import { UserId } from "@bitwarden/common/types/guid";
 import { CipherService as CipherServiceAbstraction } from "@bitwarden/common/vault/abstractions/cipher.service";
 import { CollectionService as CollectionServiceAbstraction } from "@bitwarden/common/vault/abstractions/collection.service";
 import { Fido2AuthenticatorService as Fido2AuthenticatorServiceAbstraction } from "@bitwarden/common/vault/abstractions/fido2/fido2-authenticator.service.abstraction";
@@ -829,6 +832,32 @@ export default class MainBackground {
     }
   }
 
+  async switchAccount(userId: UserId) {
+    if (userId != null) {
+      await this.stateService.setActiveUser(userId);
+    }
+
+    const status = await this.authService.getAuthStatus(userId);
+    const forcePasswordReset =
+      (await this.stateService.getForceSetPasswordReason({ userId: userId })) !=
+      ForceSetPasswordReason.None;
+
+    await this.systemService.clearPendingClipboard();
+    await this.notificationsService.updateConnection(false);
+
+    if (status === AuthenticationStatus.Locked) {
+      this.messagingService.send("locked", { userId: userId });
+    } else if (forcePasswordReset) {
+      this.messagingService.send("update-temp-password", { userId: userId });
+    } else {
+      this.messagingService.send("unlocked", { userId: userId });
+      await this.refreshBadge();
+      await this.refreshMenu();
+      await this.syncService.fullSync(false);
+      this.messagingService.send("switchAccountFinish", { userId: userId });
+    }
+  }
+
   async logout(expired: boolean, userId?: string) {
     await this.eventUploadService.uploadEvents(userId);
 
@@ -849,7 +878,14 @@ export default class MainBackground {
     //Needs to be checked before state is cleaned
     const needStorageReseed = await this.needsStorageReseed();
 
-    await this.stateService.clean({ userId: userId });
+    const newActiveUser = await this.stateService.clean({ userId: userId });
+
+    if (newActiveUser != null) {
+      // we have a new active user, do not continue tearing down application
+      this.switchAccount(newActiveUser as UserId);
+      this.messagingService.send("switchAccountFinish");
+      return;
+    }
 
     if (userId == null || userId === (await this.stateService.getUserId())) {
       this.searchService.clearIndex();

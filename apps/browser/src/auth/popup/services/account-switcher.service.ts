@@ -54,7 +54,7 @@ export class AccountSwitcherService {
       return;
     }
 
-    this.accountService.switchAccount(id as UserId);
+    await this.accountService.switchAccount(id as UserId);
     this.messagingService.send("switchAccount", { userId: id });
   }
 }

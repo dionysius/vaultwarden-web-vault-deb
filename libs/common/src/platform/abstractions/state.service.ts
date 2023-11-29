@@ -17,6 +17,7 @@ import { GeneratedPasswordHistory, PasswordGeneratorOptions } from "../../tools/
 import { UsernameGeneratorOptions } from "../../tools/generator/username";
 import { SendData } from "../../tools/send/models/data/send.data";
 import { SendView } from "../../tools/send/models/view/send.view";
+import { UserId } from "../../types/guid";
 import { UriMatchType } from "../../vault/enums";
 import { CipherData } from "../../vault/models/data/cipher.data";
 import { CollectionData } from "../../vault/models/data/collection.data";
@@ -48,7 +49,7 @@ export abstract class StateService<T extends Account = Account> {
 
   addAccount: (account: T) => Promise<void>;
   setActiveUser: (userId: string) => Promise<void>;
-  clean: (options?: StorageOptions) => Promise<void>;
+  clean: (options?: StorageOptions) => Promise<UserId>;
   init: () => Promise<void>;
 
   getAccessToken: (options?: StorageOptions) => Promise<string>;

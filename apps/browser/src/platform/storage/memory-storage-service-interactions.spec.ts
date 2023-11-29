@@ -1,3 +1,8 @@
+/**
+ * need to update test environment so structuredClone works appropriately
+ * @jest-environment ../../libs/shared/test.environment.ts
+ */
+
 import { trackEmissions } from "@bitwarden/common/../spec/utils";
 
 import { BackgroundMemoryStorageService } from "./background-memory-storage.service";
