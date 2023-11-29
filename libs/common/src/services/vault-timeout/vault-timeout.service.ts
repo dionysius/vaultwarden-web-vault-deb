@@ -71,7 +71,7 @@ export class VaultTimeoutService implements VaultTimeoutServiceAbstraction {
     }
 
     const availableActions = await firstValueFrom(
-      this.vaultTimeoutSettingsService.availableVaultTimeoutActions$()
+      this.vaultTimeoutSettingsService.availableVaultTimeoutActions$(userId)
     );
     const supportsLock = availableActions.includes(VaultTimeoutAction.Lock);
     if (!supportsLock) {
